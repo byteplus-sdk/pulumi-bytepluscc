@@ -14,31 +14,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq.Inputs
     public sealed class PublicAddressEndpointGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
+        /// Access point type of the instance. RabbitMQ instance provides the following access point types: WEB: Web UI access point, AMQP0*9*1: AMQP access point, MQTT: MQTT access point, WEB_MQTT: WEB and MQTT access point, STOMP: STOMP access point.
         /// </summary>
         [Input("endpointType")]
         public Input<string>? EndpointType { get; set; }
 
         /// <summary>
-        /// 实例的私网访问域名。
+        /// Instance private network access domain name.
         /// </summary>
         [Input("internalEndpoint")]
         public Input<string>? InternalEndpoint { get; set; }
 
         /// <summary>
-        /// 公共服务区 IP 接入点。
+        /// Public service zone IP access point.
         /// </summary>
         [Input("internalIpEndpoint")]
         public Input<string>? InternalIpEndpoint { get; set; }
 
         /// <summary>
-        /// 接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
+        /// Network type of the access point. PrivateNetwork indicates private VPC network.
         /// </summary>
         [Input("networkType")]
         public Input<string>? NetworkType { get; set; }
 
         /// <summary>
-        /// 实例公网访问域名。仅在开启公网访问之后显示。
+        /// Instance public access domain name. Displayed only after public access is enabled.
         /// </summary>
         [Input("publicEndpoint")]
         public Input<string>? PublicEndpoint { get; set; }

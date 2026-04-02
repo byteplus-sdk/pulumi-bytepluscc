@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud.Inputs
     public sealed class InstanceInstanceConfigurationNodeSpecsAssignExtraPerformanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 当您的数据节点选择使用 FlexPL 存储类型，且存储规格配置为 500GiB 及以上时，支持购买带宽包增加磁盘带宽。单位为MiB，调整步长为10MiB。当前支持的存储规格及对应额外性能包吞吐量上限如下：es.volume.essd.flexpl-standard：650
+        /// When your data node uses the FlexPL storage type and the storage specification is 500 GiB or above, you can purchase a bandwidth package to increase disk bandwidth. Unit: MiB; adjustment step: 10 MiB. Supported storage specifications and corresponding maximum throughput for additional performance packages are as follows: es.volume.essd.flexpl-standard: 650.
         /// </summary>
         [Input("throughput")]
         public Input<int>? Throughput { get; set; }

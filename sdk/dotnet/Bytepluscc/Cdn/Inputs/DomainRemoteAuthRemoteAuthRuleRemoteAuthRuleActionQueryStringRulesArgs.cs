@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示鉴权请求参数的设置策略。
+        /// Indicates the strategy for setting authentication request parameters.
         /// </summary>
         [Input("queryStringComponents")]
         public Input<Inputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponentsArgs>? QueryStringComponents { get; set; }

@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 流日志对网卡出入流量的日志数据按需聚合处理后，投递至 日志服务 存储和检索分析，您可以根据流日志的分析监控网络流量、排查网络问题、优化网络架构。VPC流日志记录VPC网络流量的详细信息，用于网络监控、流量分析和故障排查。
+ * After aggregating log data for inbound and outbound traffic on network interfaces as needed, flow logs are delivered to Log Service for storage and analysis. You can use flow log analysis to monitor network traffic, troubleshoot network issues, and optimize network architecture. VPC flow logs record detailed information about VPC network traffic for network monitoring, traffic analysis, and troubleshooting.
  *
  * ## Example Usage
  *
@@ -68,80 +68,80 @@ export class FlowLog extends pulumi.CustomResource {
     }
 
     /**
-     * 流日志的采样间隔。取值如下。1：1分钟。5：5分钟。10（默认值）：10分钟。
+     * Stream log sampling interval. Options: 1: 1 minute. 5: 5 minutes. 10 (default): 10 minutes.
      */
     public readonly aggregationInterval!: pulumi.Output<number>;
     /**
-     * 流日志是否被锁定。Normal: 正常。FinancialLocked: 被锁定。
+     * Whether the flow log is locked. Normal: normal. FinancialLocked: locked.
      */
     public /*out*/ readonly businessStatus!: pulumi.Output<string>;
     /**
-     * 流日志的创建时间。
+     * Creation time of the flow log.
      */
     public /*out*/ readonly createdAt!: pulumi.Output<string>;
     /**
-     * 流日志的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * Description of the stream log. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 是否自动配置索引。索引用于检索分析数据，流日志在检索分析之前，必须先配置索引。true：是。false（默认值）：否。
+     * Whether to automatically configure indexes. Indexes are used for retrieving and analyzing data. Stream logs must have indexes configured before retrieval and analysis. true: Yes. false (default): No.
      */
     public /*out*/ readonly enableIndex!: pulumi.Output<boolean>;
     /**
-     * 流日志的ID。
+     * Stream log ID.
      */
     public /*out*/ readonly flowLogId!: pulumi.Output<string>;
     /**
-     * 流日志的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为流日志实例的ID。
+     * Name of the flow log. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the flow log instance ID.
      */
     public readonly flowLogName!: pulumi.Output<string>;
     /**
-     * 流日志被锁定的原因。financial: 因欠费被锁定。unlock：欠费关停后充值恢复过程中。空值 : 没有被锁定。
+     * Reason for stream log lock. financial: Locked due to overdue payment. unlock: In the process of restoring after payment following suspension due to overdue payment. Empty value: Not locked.
      */
     public /*out*/ readonly lockReason!: pulumi.Output<string>;
     /**
-     * 流日志项目的ID。
+     * Flow log project ID.
      */
     public /*out*/ readonly logProjectId!: pulumi.Output<string>;
     /**
-     * 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+     * Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
      */
     public readonly logProjectName!: pulumi.Output<string>;
     /**
-     * 流日志主题的ID。
+     * Flow log topic ID.
      */
     public /*out*/ readonly logTopicId!: pulumi.Output<string>;
     /**
-     * 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+     * Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
      */
     public readonly logTopicName!: pulumi.Output<string>;
     /**
-     * 流流日志所属项目的名称。
+     * Name of the project to which the flow log belongs.
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 要捕获流量的资源ID。
+     * Resource ID for traffic capture.
      */
     public readonly resourceId!: pulumi.Output<string>;
     /**
-     * 要采集流量的资源类型，取值如下：vpc：私有网络。subnet：子网。eni：网卡。
+     * Resource type for traffic collection. Values: vpc: Virtual Private Cloud. subnet: subnet. eni: network interface.
      */
     public readonly resourceType!: pulumi.Output<string>;
     /**
-     * 流日志的状态。取值如下：Active：启动状态。Pending：正在操作中。Inactive：未启动状态。Creating：正在创建中。Deleting：正在删除中。
+     * Status of the flow log. Values: Active: active. Pending: pending. Inactive: inactive. Creating: creating. Deleting: deleting.
      */
     public readonly status!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.vpc.FlowLogTag[]>;
     /**
-     * 采集的流量类型。取值如下：All：全部流量。Allow：网络ACL和安全组允许的流量。Drop：网络ACL和安全组拒绝的流量。
+     * Type of traffic collected. Values: All: all traffic. Allow: traffic allowed by network ACLs and security groups. Drop: traffic denied by network ACLs and security groups.
      */
     public readonly trafficType!: pulumi.Output<string>;
     /**
-     * 更新流日志的时间。
+     * Time when the stream log was updated.
      */
     public /*out*/ readonly updatedAt!: pulumi.Output<string>;
     /**
-     * 流日志的VPC的ID。
+     * VPC ID for the flow log.
      */
     public /*out*/ readonly vpcId!: pulumi.Output<string>;
 
@@ -232,80 +232,80 @@ export class FlowLog extends pulumi.CustomResource {
  */
 export interface FlowLogState {
     /**
-     * 流日志的采样间隔。取值如下。1：1分钟。5：5分钟。10（默认值）：10分钟。
+     * Stream log sampling interval. Options: 1: 1 minute. 5: 5 minutes. 10 (default): 10 minutes.
      */
     aggregationInterval?: pulumi.Input<number>;
     /**
-     * 流日志是否被锁定。Normal: 正常。FinancialLocked: 被锁定。
+     * Whether the flow log is locked. Normal: normal. FinancialLocked: locked.
      */
     businessStatus?: pulumi.Input<string>;
     /**
-     * 流日志的创建时间。
+     * Creation time of the flow log.
      */
     createdAt?: pulumi.Input<string>;
     /**
-     * 流日志的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * Description of the stream log. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
      */
     description?: pulumi.Input<string>;
     /**
-     * 是否自动配置索引。索引用于检索分析数据，流日志在检索分析之前，必须先配置索引。true：是。false（默认值）：否。
+     * Whether to automatically configure indexes. Indexes are used for retrieving and analyzing data. Stream logs must have indexes configured before retrieval and analysis. true: Yes. false (default): No.
      */
     enableIndex?: pulumi.Input<boolean>;
     /**
-     * 流日志的ID。
+     * Stream log ID.
      */
     flowLogId?: pulumi.Input<string>;
     /**
-     * 流日志的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为流日志实例的ID。
+     * Name of the flow log. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the flow log instance ID.
      */
     flowLogName?: pulumi.Input<string>;
     /**
-     * 流日志被锁定的原因。financial: 因欠费被锁定。unlock：欠费关停后充值恢复过程中。空值 : 没有被锁定。
+     * Reason for stream log lock. financial: Locked due to overdue payment. unlock: In the process of restoring after payment following suspension due to overdue payment. Empty value: Not locked.
      */
     lockReason?: pulumi.Input<string>;
     /**
-     * 流日志项目的ID。
+     * Flow log project ID.
      */
     logProjectId?: pulumi.Input<string>;
     /**
-     * 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+     * Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
      */
     logProjectName?: pulumi.Input<string>;
     /**
-     * 流日志主题的ID。
+     * Flow log topic ID.
      */
     logTopicId?: pulumi.Input<string>;
     /**
-     * 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+     * Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
      */
     logTopicName?: pulumi.Input<string>;
     /**
-     * 流流日志所属项目的名称。
+     * Name of the project to which the flow log belongs.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 要捕获流量的资源ID。
+     * Resource ID for traffic capture.
      */
     resourceId?: pulumi.Input<string>;
     /**
-     * 要采集流量的资源类型，取值如下：vpc：私有网络。subnet：子网。eni：网卡。
+     * Resource type for traffic collection. Values: vpc: Virtual Private Cloud. subnet: subnet. eni: network interface.
      */
     resourceType?: pulumi.Input<string>;
     /**
-     * 流日志的状态。取值如下：Active：启动状态。Pending：正在操作中。Inactive：未启动状态。Creating：正在创建中。Deleting：正在删除中。
+     * Status of the flow log. Values: Active: active. Pending: pending. Inactive: inactive. Creating: creating. Deleting: deleting.
      */
     status?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.vpc.FlowLogTag>[]>;
     /**
-     * 采集的流量类型。取值如下：All：全部流量。Allow：网络ACL和安全组允许的流量。Drop：网络ACL和安全组拒绝的流量。
+     * Type of traffic collected. Values: All: all traffic. Allow: traffic allowed by network ACLs and security groups. Drop: traffic denied by network ACLs and security groups.
      */
     trafficType?: pulumi.Input<string>;
     /**
-     * 更新流日志的时间。
+     * Time when the stream log was updated.
      */
     updatedAt?: pulumi.Input<string>;
     /**
-     * 流日志的VPC的ID。
+     * VPC ID for the flow log.
      */
     vpcId?: pulumi.Input<string>;
 }
@@ -315,44 +315,44 @@ export interface FlowLogState {
  */
 export interface FlowLogArgs {
     /**
-     * 流日志的采样间隔。取值如下。1：1分钟。5：5分钟。10（默认值）：10分钟。
+     * Stream log sampling interval. Options: 1: 1 minute. 5: 5 minutes. 10 (default): 10 minutes.
      */
     aggregationInterval: pulumi.Input<number>;
     /**
-     * 流日志的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * Description of the stream log. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
      */
     description?: pulumi.Input<string>;
     /**
-     * 流日志的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为流日志实例的ID。
+     * Name of the flow log. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the flow log instance ID.
      */
     flowLogName: pulumi.Input<string>;
     /**
-     * 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+     * Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
      */
     logProjectName: pulumi.Input<string>;
     /**
-     * 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+     * Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
      */
     logTopicName: pulumi.Input<string>;
     /**
-     * 流流日志所属项目的名称。
+     * Name of the project to which the flow log belongs.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 要捕获流量的资源ID。
+     * Resource ID for traffic capture.
      */
     resourceId: pulumi.Input<string>;
     /**
-     * 要采集流量的资源类型，取值如下：vpc：私有网络。subnet：子网。eni：网卡。
+     * Resource type for traffic collection. Values: vpc: Virtual Private Cloud. subnet: subnet. eni: network interface.
      */
     resourceType: pulumi.Input<string>;
     /**
-     * 流日志的状态。取值如下：Active：启动状态。Pending：正在操作中。Inactive：未启动状态。Creating：正在创建中。Deleting：正在删除中。
+     * Status of the flow log. Values: Active: active. Pending: pending. Inactive: inactive. Creating: creating. Deleting: deleting.
      */
     status?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.vpc.FlowLogTag>[]>;
     /**
-     * 采集的流量类型。取值如下：All：全部流量。Allow：网络ACL和安全组允许的流量。Drop：网络ACL和安全组拒绝的流量。
+     * Type of traffic collected. Values: All: all traffic. Allow: traffic allowed by network ACLs and security groups. Drop: traffic denied by network ACLs and security groups.
      */
     trafficType: pulumi.Input<string>;
 }

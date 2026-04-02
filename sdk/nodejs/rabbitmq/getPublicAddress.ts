@@ -31,35 +31,35 @@ export interface GetPublicAddressArgs {
  */
 export interface GetPublicAddressResult {
     /**
-     * 创建实例的主账号ID。
+     * Main account ID that created the instance.
      */
     readonly accountId: string;
     /**
-     * 是否已开启公网解析功能。true：已开启, false：已关闭。
+     * Whether public DNS resolution is enabled. true: enabled, false: disabled.
      */
     readonly applyPrivateDnsToPublic: boolean;
     /**
-     * 实例的类型，即集群版或单机版。
+     * Instance type: cluster or standalone.
      */
     readonly archType: string;
     /**
-     * 实例的计费方式等计费信息。
+     * Instance billing method and related billing information.
      */
     readonly chargeDetail: outputs.rabbitmq.GetPublicAddressChargeDetail;
     /**
-     * RabbitMQ实例的计算规格。
+     * RabbitMQ instance compute specification.
      */
     readonly computeSpec: string;
     /**
-     * 实例的创建时间。
+     * Instance creation time.
      */
     readonly createdTime: string;
     /**
-     * EIP的ID。
+     * EIP ID.
      */
     readonly eipId: string;
     /**
-     * 实例的连接信息。
+     * Instance connection information.
      */
     readonly endpoints: outputs.rabbitmq.GetPublicAddressEndpoint[];
     /**
@@ -67,63 +67,63 @@ export interface GetPublicAddressResult {
      */
     readonly id: string;
     /**
-     * 实例的简单描述。
+     * Brief description of the instance.
      */
     readonly instanceDescription: string;
     /**
-     * RabbitMQ 实例 ID。
+     * RabbitMQ instance ID.
      */
     readonly instanceId: string;
     /**
-     * RabbitMQ 实例名称。
+     * RabbitMQ instance name.
      */
     readonly instanceName: string;
     /**
-     * 实例状态。
+     * Instance status.
      */
     readonly instanceStatus: string;
     /**
-     * 是否开启了云盘加密。
+     * Whether cloud disk encryption is enabled.
      */
     readonly isEncrypted: boolean;
     /**
-     * 实例所属的IAM项目。
+     * IAM project the instance belongs to.
      */
     readonly projectName: string;
     /**
-     * 实例总存储空间。单位为 GiB。
+     * Total storage space of the instance, in GiB.
      */
     readonly storageSpace: number;
     /**
-     * VPC的子网ID。
+     * VPC subnet ID.
      */
     readonly subnetId: string;
     /**
-     * 实例绑定的标签。
+     * Tags bound to the instance.
      */
     readonly tags: outputs.rabbitmq.GetPublicAddressTag[];
     /**
-     * 实例已用存储空间。单位为 GiB。
+     * Used storage space of the instance, in GiB.
      */
     readonly usedStorageSpace: number;
     /**
-     * RabbitMQ WebUI管理员账号名。
+     * RabbitMQ WebUI administrator account name.
      */
     readonly userName: string;
     /**
-     * 支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
+     * Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
      */
     readonly version: string;
     /**
-     * 私有网络（VPC）ID。
+     * Private network (VPC) ID.
      */
     readonly vpcId: string;
     /**
-     * 可用区的描述信息。
+     * Description of the availability zone.
      */
     readonly zoneDescription: string;
     /**
-     * 实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
+     * Availability zone ID where the instance is located. For high availability instances across AZs, multiple availability zone IDs are returned.
      */
     readonly zoneId: string;
 }

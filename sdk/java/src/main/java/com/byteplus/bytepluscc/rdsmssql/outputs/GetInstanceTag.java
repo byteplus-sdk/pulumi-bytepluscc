@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceTag {
     /**
-     * @return 用户标签的标签键。
+     * @return Tag key for user tags.
      * 
      */
     private String key;
     /**
-     * @return 用户标签的标签值。
+     * @return User tag value.
      * 
      */
     private String value;
 
     private GetInstanceTag() {}
     /**
-     * @return 用户标签的标签键。
+     * @return Tag key for user tags.
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return 用户标签的标签值。
+     * @return User tag value.
      * 
      */
     public String value() {

@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 给指定的账号部署权限集。
+// Deploy permission set to the specified account
 //
 // ## Example Usage
 //
@@ -49,19 +49,19 @@ import (
 type PermissionSetProvisioning struct {
 	pulumi.CustomResourceState
 
-	// 创建时间。
+	// Creation time
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// 权限集 ID。
+	// Permission set ID
 	PermissionSetId pulumi.StringOutput `pulumi:"permissionSetId"`
-	// 权限集名。
+	// Permission set name
 	PermissionSetName pulumi.StringOutput `pulumi:"permissionSetName"`
-	// 权限集状态 Running：运行中,Reprovision Required：需要重新部署,Provision Failed：部署失败,Provisioned：已部署
+	// Permission set status Running: In progress, Reprovision Required: Redeployment required, Provision Failed: Deployment failed, Provisioned: Deployed
 	ProvisioningStatus pulumi.StringOutput `pulumi:"provisioningStatus"`
-	// 授权的账号 ID。
+	// Authorized account ID
 	TargetId pulumi.StringOutput `pulumi:"targetId"`
-	// 账号名。
+	// Account name
 	TargetName pulumi.StringOutput `pulumi:"targetName"`
-	// 更新时间。
+	// Update time
 	UpdatedTime pulumi.StringOutput `pulumi:"updatedTime"`
 }
 
@@ -101,36 +101,36 @@ func GetPermissionSetProvisioning(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering PermissionSetProvisioning resources.
 type permissionSetProvisioningState struct {
-	// 创建时间。
+	// Creation time
 	CreatedTime *string `pulumi:"createdTime"`
-	// 权限集 ID。
+	// Permission set ID
 	PermissionSetId *string `pulumi:"permissionSetId"`
-	// 权限集名。
+	// Permission set name
 	PermissionSetName *string `pulumi:"permissionSetName"`
-	// 权限集状态 Running：运行中,Reprovision Required：需要重新部署,Provision Failed：部署失败,Provisioned：已部署
+	// Permission set status Running: In progress, Reprovision Required: Redeployment required, Provision Failed: Deployment failed, Provisioned: Deployed
 	ProvisioningStatus *string `pulumi:"provisioningStatus"`
-	// 授权的账号 ID。
+	// Authorized account ID
 	TargetId *string `pulumi:"targetId"`
-	// 账号名。
+	// Account name
 	TargetName *string `pulumi:"targetName"`
-	// 更新时间。
+	// Update time
 	UpdatedTime *string `pulumi:"updatedTime"`
 }
 
 type PermissionSetProvisioningState struct {
-	// 创建时间。
+	// Creation time
 	CreatedTime pulumi.StringPtrInput
-	// 权限集 ID。
+	// Permission set ID
 	PermissionSetId pulumi.StringPtrInput
-	// 权限集名。
+	// Permission set name
 	PermissionSetName pulumi.StringPtrInput
-	// 权限集状态 Running：运行中,Reprovision Required：需要重新部署,Provision Failed：部署失败,Provisioned：已部署
+	// Permission set status Running: In progress, Reprovision Required: Redeployment required, Provision Failed: Deployment failed, Provisioned: Deployed
 	ProvisioningStatus pulumi.StringPtrInput
-	// 授权的账号 ID。
+	// Authorized account ID
 	TargetId pulumi.StringPtrInput
-	// 账号名。
+	// Account name
 	TargetName pulumi.StringPtrInput
-	// 更新时间。
+	// Update time
 	UpdatedTime pulumi.StringPtrInput
 }
 
@@ -139,17 +139,17 @@ func (PermissionSetProvisioningState) ElementType() reflect.Type {
 }
 
 type permissionSetProvisioningArgs struct {
-	// 权限集 ID。
+	// Permission set ID
 	PermissionSetId string `pulumi:"permissionSetId"`
-	// 授权的账号 ID。
+	// Authorized account ID
 	TargetId string `pulumi:"targetId"`
 }
 
 // The set of arguments for constructing a PermissionSetProvisioning resource.
 type PermissionSetProvisioningArgs struct {
-	// 权限集 ID。
+	// Permission set ID
 	PermissionSetId pulumi.StringInput
-	// 授权的账号 ID。
+	// Authorized account ID
 	TargetId pulumi.StringInput
 }
 
@@ -240,37 +240,37 @@ func (o PermissionSetProvisioningOutput) ToPermissionSetProvisioningOutputWithCo
 	return o
 }
 
-// 创建时间。
+// Creation time
 func (o PermissionSetProvisioningOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *PermissionSetProvisioning) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 权限集 ID。
+// Permission set ID
 func (o PermissionSetProvisioningOutput) PermissionSetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PermissionSetProvisioning) pulumi.StringOutput { return v.PermissionSetId }).(pulumi.StringOutput)
 }
 
-// 权限集名。
+// Permission set name
 func (o PermissionSetProvisioningOutput) PermissionSetName() pulumi.StringOutput {
 	return o.ApplyT(func(v *PermissionSetProvisioning) pulumi.StringOutput { return v.PermissionSetName }).(pulumi.StringOutput)
 }
 
-// 权限集状态 Running：运行中,Reprovision Required：需要重新部署,Provision Failed：部署失败,Provisioned：已部署
+// Permission set status Running: In progress, Reprovision Required: Redeployment required, Provision Failed: Deployment failed, Provisioned: Deployed
 func (o PermissionSetProvisioningOutput) ProvisioningStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *PermissionSetProvisioning) pulumi.StringOutput { return v.ProvisioningStatus }).(pulumi.StringOutput)
 }
 
-// 授权的账号 ID。
+// Authorized account ID
 func (o PermissionSetProvisioningOutput) TargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PermissionSetProvisioning) pulumi.StringOutput { return v.TargetId }).(pulumi.StringOutput)
 }
 
-// 账号名。
+// Account name
 func (o PermissionSetProvisioningOutput) TargetName() pulumi.StringOutput {
 	return o.ApplyT(func(v *PermissionSetProvisioning) pulumi.StringOutput { return v.TargetName }).(pulumi.StringOutput)
 }
 
-// 更新时间。
+// Update time
 func (o PermissionSetProvisioningOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *PermissionSetProvisioning) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }

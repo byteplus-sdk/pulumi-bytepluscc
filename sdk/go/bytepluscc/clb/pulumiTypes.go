@@ -14,9 +14,9 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type AclAclEntry struct {
-	// IP条目的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+	// Description of the IP entry. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters.
 	Description *string `pulumi:"description"`
-	// IP条目的地址段，只支持CIDR地址。支持同时传入IPv4和IPv6条目。
+	// Address range of the IP entry. Only CIDR addresses are supported. Both IPv4 and IPv6 entries can be provided.
 	Entry *string `pulumi:"entry"`
 }
 
@@ -32,9 +32,9 @@ type AclAclEntryInput interface {
 }
 
 type AclAclEntryArgs struct {
-	// IP条目的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+	// Description of the IP entry. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// IP条目的地址段，只支持CIDR地址。支持同时传入IPv4和IPv6条目。
+	// Address range of the IP entry. Only CIDR addresses are supported. Both IPv4 and IPv6 entries can be provided.
 	Entry pulumi.StringPtrInput `pulumi:"entry"`
 }
 
@@ -89,12 +89,12 @@ func (o AclAclEntryOutput) ToAclAclEntryOutputWithContext(ctx context.Context) A
 	return o
 }
 
-// IP条目的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+// Description of the IP entry. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters.
 func (o AclAclEntryOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AclAclEntry) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// IP条目的地址段，只支持CIDR地址。支持同时传入IPv4和IPv6条目。
+// Address range of the IP entry. Only CIDR addresses are supported. Both IPv4 and IPv6 entries can be provided.
 func (o AclAclEntryOutput) Entry() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AclAclEntry) *string { return v.Entry }).(pulumi.StringPtrOutput)
 }
@@ -120,15 +120,15 @@ func (o AclAclEntryArrayOutput) Index(i pulumi.IntInput) AclAclEntryOutput {
 }
 
 type AclListener struct {
-	// 监听器对本访问控制策略组的控制方式。white：白名单。监听器监听CLB的流量时，CLB仅转发其白名单关联访问控制策略组中IP地址的请求。black：黑名单。监听器监听CLB的流量时，对于黑名单关联访问控制策略组中IP地址的请求，CLB拒绝转发。
+	// Listener control mode for this access control policy group. white: allowlist. When the listener monitors CLB traffic, CLB only forwards requests from IP addresses associated with the allowlist access control policy group. black: denylist. When the listener monitors CLB traffic, CLB rejects requests from IP addresses associated with the denylist access control policy group.
 	AclType *string `pulumi:"aclType"`
-	// 监听器的ID。
+	// Listener ID
 	ListenerId *string `pulumi:"listenerId"`
-	// 监听器的名称。
+	// Listener name
 	ListenerName *string `pulumi:"listenerName"`
-	// 监听器的端口。
+	// Listener port
 	Port *int `pulumi:"port"`
-	// 监听器的协议。包括 TCP、UDP、HTTP、HTTPS。
+	// Listener protocol. Includes TCP, UDP, HTTP, HTTPS.
 	Protocol *string `pulumi:"protocol"`
 }
 
@@ -144,15 +144,15 @@ type AclListenerInput interface {
 }
 
 type AclListenerArgs struct {
-	// 监听器对本访问控制策略组的控制方式。white：白名单。监听器监听CLB的流量时，CLB仅转发其白名单关联访问控制策略组中IP地址的请求。black：黑名单。监听器监听CLB的流量时，对于黑名单关联访问控制策略组中IP地址的请求，CLB拒绝转发。
+	// Listener control mode for this access control policy group. white: allowlist. When the listener monitors CLB traffic, CLB only forwards requests from IP addresses associated with the allowlist access control policy group. black: denylist. When the listener monitors CLB traffic, CLB rejects requests from IP addresses associated with the denylist access control policy group.
 	AclType pulumi.StringPtrInput `pulumi:"aclType"`
-	// 监听器的ID。
+	// Listener ID
 	ListenerId pulumi.StringPtrInput `pulumi:"listenerId"`
-	// 监听器的名称。
+	// Listener name
 	ListenerName pulumi.StringPtrInput `pulumi:"listenerName"`
-	// 监听器的端口。
+	// Listener port
 	Port pulumi.IntPtrInput `pulumi:"port"`
-	// 监听器的协议。包括 TCP、UDP、HTTP、HTTPS。
+	// Listener protocol. Includes TCP, UDP, HTTP, HTTPS.
 	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
 }
 
@@ -207,27 +207,27 @@ func (o AclListenerOutput) ToAclListenerOutputWithContext(ctx context.Context) A
 	return o
 }
 
-// 监听器对本访问控制策略组的控制方式。white：白名单。监听器监听CLB的流量时，CLB仅转发其白名单关联访问控制策略组中IP地址的请求。black：黑名单。监听器监听CLB的流量时，对于黑名单关联访问控制策略组中IP地址的请求，CLB拒绝转发。
+// Listener control mode for this access control policy group. white: allowlist. When the listener monitors CLB traffic, CLB only forwards requests from IP addresses associated with the allowlist access control policy group. black: denylist. When the listener monitors CLB traffic, CLB rejects requests from IP addresses associated with the denylist access control policy group.
 func (o AclListenerOutput) AclType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AclListener) *string { return v.AclType }).(pulumi.StringPtrOutput)
 }
 
-// 监听器的ID。
+// Listener ID
 func (o AclListenerOutput) ListenerId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AclListener) *string { return v.ListenerId }).(pulumi.StringPtrOutput)
 }
 
-// 监听器的名称。
+// Listener name
 func (o AclListenerOutput) ListenerName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AclListener) *string { return v.ListenerName }).(pulumi.StringPtrOutput)
 }
 
-// 监听器的端口。
+// Listener port
 func (o AclListenerOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AclListener) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
-// 监听器的协议。包括 TCP、UDP、HTTP、HTTPS。
+// Listener protocol. Includes TCP, UDP, HTTP, HTTPS.
 func (o AclListenerOutput) Protocol() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AclListener) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
@@ -253,9 +253,9 @@ func (o AclListenerArrayOutput) Index(i pulumi.IntInput) AclListenerOutput {
 }
 
 type AclTag struct {
-	// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	// User tag key. Length must be 1–128 characters. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system automatically removes it.
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	// User tag value. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system automatically removes it.
 	Value *string `pulumi:"value"`
 }
 
@@ -271,9 +271,9 @@ type AclTagInput interface {
 }
 
 type AclTagArgs struct {
-	// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	// User tag key. Length must be 1–128 characters. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system automatically removes it.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	// User tag value. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system automatically removes it.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -328,12 +328,12 @@ func (o AclTagOutput) ToAclTagOutputWithContext(ctx context.Context) AclTagOutpu
 	return o
 }
 
-// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+// User tag key. Length must be 1–128 characters. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system automatically removes it.
 func (o AclTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AclTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+// User tag value. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system automatically removes it.
 func (o AclTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AclTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -359,9 +359,9 @@ func (o AclTagArrayOutput) Index(i pulumi.IntInput) AclTagOutput {
 }
 
 type CertificateTag struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value *string `pulumi:"value"`
 }
 
@@ -377,9 +377,9 @@ type CertificateTagInput interface {
 }
 
 type CertificateTagArgs struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -434,12 +434,12 @@ func (o CertificateTagOutput) ToCertificateTagOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 用户标签的标签键。
+// User tag key.
 func (o CertificateTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CertificateTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。
+// User tag value.
 func (o CertificateTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CertificateTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -465,15 +465,15 @@ func (o CertificateTagArrayOutput) Index(i pulumi.IntInput) CertificateTagOutput
 }
 
 type ClbAccessLog struct {
-	// 存储七层访问日志的对象存储桶的名称。
+	// Name of the object storage bucket for storing Layer 7 access logs
 	BucketName *string `pulumi:"bucketName"`
-	// 日志投递类型。取值如下：tos（默认值）: 将日志投递至对象存储服务TOS。tls：将日志投递至日志服务TLS。
+	// Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
 	DeliveryType *string `pulumi:"deliveryType"`
-	// 是否开启访问日志（七层）投递至对象存储TOS的功能。
+	// Enable access log (Layer 7) delivery to object storage TOS
 	Enabled *bool `pulumi:"enabled"`
-	// 日志项目。
+	// Log project
 	TlsProjectId *string `pulumi:"tlsProjectId"`
-	// 日志主题。
+	// Log topic
 	TlsTopicId *string `pulumi:"tlsTopicId"`
 }
 
@@ -489,15 +489,15 @@ type ClbAccessLogInput interface {
 }
 
 type ClbAccessLogArgs struct {
-	// 存储七层访问日志的对象存储桶的名称。
+	// Name of the object storage bucket for storing Layer 7 access logs
 	BucketName pulumi.StringPtrInput `pulumi:"bucketName"`
-	// 日志投递类型。取值如下：tos（默认值）: 将日志投递至对象存储服务TOS。tls：将日志投递至日志服务TLS。
+	// Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
 	DeliveryType pulumi.StringPtrInput `pulumi:"deliveryType"`
-	// 是否开启访问日志（七层）投递至对象存储TOS的功能。
+	// Enable access log (Layer 7) delivery to object storage TOS
 	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
-	// 日志项目。
+	// Log project
 	TlsProjectId pulumi.StringPtrInput `pulumi:"tlsProjectId"`
-	// 日志主题。
+	// Log topic
 	TlsTopicId pulumi.StringPtrInput `pulumi:"tlsTopicId"`
 }
 
@@ -578,27 +578,27 @@ func (o ClbAccessLogOutput) ToClbAccessLogPtrOutputWithContext(ctx context.Conte
 	}).(ClbAccessLogPtrOutput)
 }
 
-// 存储七层访问日志的对象存储桶的名称。
+// Name of the object storage bucket for storing Layer 7 access logs
 func (o ClbAccessLogOutput) BucketName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClbAccessLog) *string { return v.BucketName }).(pulumi.StringPtrOutput)
 }
 
-// 日志投递类型。取值如下：tos（默认值）: 将日志投递至对象存储服务TOS。tls：将日志投递至日志服务TLS。
+// Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
 func (o ClbAccessLogOutput) DeliveryType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClbAccessLog) *string { return v.DeliveryType }).(pulumi.StringPtrOutput)
 }
 
-// 是否开启访问日志（七层）投递至对象存储TOS的功能。
+// Enable access log (Layer 7) delivery to object storage TOS
 func (o ClbAccessLogOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ClbAccessLog) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
 }
 
-// 日志项目。
+// Log project
 func (o ClbAccessLogOutput) TlsProjectId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClbAccessLog) *string { return v.TlsProjectId }).(pulumi.StringPtrOutput)
 }
 
-// 日志主题。
+// Log topic
 func (o ClbAccessLogOutput) TlsTopicId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClbAccessLog) *string { return v.TlsTopicId }).(pulumi.StringPtrOutput)
 }
@@ -627,7 +627,7 @@ func (o ClbAccessLogPtrOutput) Elem() ClbAccessLogOutput {
 	}).(ClbAccessLogOutput)
 }
 
-// 存储七层访问日志的对象存储桶的名称。
+// Name of the object storage bucket for storing Layer 7 access logs
 func (o ClbAccessLogPtrOutput) BucketName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClbAccessLog) *string {
 		if v == nil {
@@ -637,7 +637,7 @@ func (o ClbAccessLogPtrOutput) BucketName() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 日志投递类型。取值如下：tos（默认值）: 将日志投递至对象存储服务TOS。tls：将日志投递至日志服务TLS。
+// Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
 func (o ClbAccessLogPtrOutput) DeliveryType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClbAccessLog) *string {
 		if v == nil {
@@ -647,7 +647,7 @@ func (o ClbAccessLogPtrOutput) DeliveryType() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 是否开启访问日志（七层）投递至对象存储TOS的功能。
+// Enable access log (Layer 7) delivery to object storage TOS
 func (o ClbAccessLogPtrOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ClbAccessLog) *bool {
 		if v == nil {
@@ -657,7 +657,7 @@ func (o ClbAccessLogPtrOutput) Enabled() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 日志项目。
+// Log project
 func (o ClbAccessLogPtrOutput) TlsProjectId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClbAccessLog) *string {
 		if v == nil {
@@ -667,7 +667,7 @@ func (o ClbAccessLogPtrOutput) TlsProjectId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 日志主题。
+// Log topic
 func (o ClbAccessLogPtrOutput) TlsTopicId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClbAccessLog) *string {
 		if v == nil {
@@ -678,17 +678,17 @@ func (o ClbAccessLogPtrOutput) TlsTopicId() pulumi.StringPtrOutput {
 }
 
 type ClbEip struct {
-	// 带宽峰值。
+	// Peak bandwidth
 	Bandwidth *float64 `pulumi:"bandwidth"`
-	// 共享带宽包ID。
+	// Shared bandwidth package ID
 	BandwidthPackageId *string `pulumi:"bandwidthPackageId"`
-	// 计费方式。
+	// Billing method
 	EipBillingType *float64 `pulumi:"eipBillingType"`
-	// 线路类型。
+	// Line type
 	Isp *string `pulumi:"isp"`
-	// 防护包ID。
+	// Protection package ID
 	SecurityProtectionInstanceId *float64 `pulumi:"securityProtectionInstanceId"`
-	// 安全防护类型。
+	// Security protection type
 	SecurityProtectionTypes []string `pulumi:"securityProtectionTypes"`
 }
 
@@ -704,17 +704,17 @@ type ClbEipInput interface {
 }
 
 type ClbEipArgs struct {
-	// 带宽峰值。
+	// Peak bandwidth
 	Bandwidth pulumi.Float64PtrInput `pulumi:"bandwidth"`
-	// 共享带宽包ID。
+	// Shared bandwidth package ID
 	BandwidthPackageId pulumi.StringPtrInput `pulumi:"bandwidthPackageId"`
-	// 计费方式。
+	// Billing method
 	EipBillingType pulumi.Float64PtrInput `pulumi:"eipBillingType"`
-	// 线路类型。
+	// Line type
 	Isp pulumi.StringPtrInput `pulumi:"isp"`
-	// 防护包ID。
+	// Protection package ID
 	SecurityProtectionInstanceId pulumi.Float64PtrInput `pulumi:"securityProtectionInstanceId"`
-	// 安全防护类型。
+	// Security protection type
 	SecurityProtectionTypes pulumi.StringArrayInput `pulumi:"securityProtectionTypes"`
 }
 
@@ -795,32 +795,32 @@ func (o ClbEipOutput) ToClbEipPtrOutputWithContext(ctx context.Context) ClbEipPt
 	}).(ClbEipPtrOutput)
 }
 
-// 带宽峰值。
+// Peak bandwidth
 func (o ClbEipOutput) Bandwidth() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v ClbEip) *float64 { return v.Bandwidth }).(pulumi.Float64PtrOutput)
 }
 
-// 共享带宽包ID。
+// Shared bandwidth package ID
 func (o ClbEipOutput) BandwidthPackageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClbEip) *string { return v.BandwidthPackageId }).(pulumi.StringPtrOutput)
 }
 
-// 计费方式。
+// Billing method
 func (o ClbEipOutput) EipBillingType() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v ClbEip) *float64 { return v.EipBillingType }).(pulumi.Float64PtrOutput)
 }
 
-// 线路类型。
+// Line type
 func (o ClbEipOutput) Isp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClbEip) *string { return v.Isp }).(pulumi.StringPtrOutput)
 }
 
-// 防护包ID。
+// Protection package ID
 func (o ClbEipOutput) SecurityProtectionInstanceId() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v ClbEip) *float64 { return v.SecurityProtectionInstanceId }).(pulumi.Float64PtrOutput)
 }
 
-// 安全防护类型。
+// Security protection type
 func (o ClbEipOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClbEip) []string { return v.SecurityProtectionTypes }).(pulumi.StringArrayOutput)
 }
@@ -849,7 +849,7 @@ func (o ClbEipPtrOutput) Elem() ClbEipOutput {
 	}).(ClbEipOutput)
 }
 
-// 带宽峰值。
+// Peak bandwidth
 func (o ClbEipPtrOutput) Bandwidth() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *ClbEip) *float64 {
 		if v == nil {
@@ -859,7 +859,7 @@ func (o ClbEipPtrOutput) Bandwidth() pulumi.Float64PtrOutput {
 	}).(pulumi.Float64PtrOutput)
 }
 
-// 共享带宽包ID。
+// Shared bandwidth package ID
 func (o ClbEipPtrOutput) BandwidthPackageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClbEip) *string {
 		if v == nil {
@@ -869,7 +869,7 @@ func (o ClbEipPtrOutput) BandwidthPackageId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 计费方式。
+// Billing method
 func (o ClbEipPtrOutput) EipBillingType() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *ClbEip) *float64 {
 		if v == nil {
@@ -879,7 +879,7 @@ func (o ClbEipPtrOutput) EipBillingType() pulumi.Float64PtrOutput {
 	}).(pulumi.Float64PtrOutput)
 }
 
-// 线路类型。
+// Line type
 func (o ClbEipPtrOutput) Isp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClbEip) *string {
 		if v == nil {
@@ -889,7 +889,7 @@ func (o ClbEipPtrOutput) Isp() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 防护包ID。
+// Protection package ID
 func (o ClbEipPtrOutput) SecurityProtectionInstanceId() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *ClbEip) *float64 {
 		if v == nil {
@@ -899,7 +899,7 @@ func (o ClbEipPtrOutput) SecurityProtectionInstanceId() pulumi.Float64PtrOutput 
 	}).(pulumi.Float64PtrOutput)
 }
 
-// 安全防护类型。
+// Security protection type
 func (o ClbEipPtrOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClbEip) []string {
 		if v == nil {
@@ -910,9 +910,9 @@ func (o ClbEipPtrOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
 }
 
 type ClbEni struct {
-	// 负载均衡实例的私网IP地址。
+	// Private IP address of the load balancer instance
 	EniAddress *string `pulumi:"eniAddress"`
-	// 负载均衡实例占用的网卡ID。
+	// Network interface ID occupied by the load balancer instance
 	EniId *string `pulumi:"eniId"`
 }
 
@@ -928,9 +928,9 @@ type ClbEniInput interface {
 }
 
 type ClbEniArgs struct {
-	// 负载均衡实例的私网IP地址。
+	// Private IP address of the load balancer instance
 	EniAddress pulumi.StringPtrInput `pulumi:"eniAddress"`
-	// 负载均衡实例占用的网卡ID。
+	// Network interface ID occupied by the load balancer instance
 	EniId pulumi.StringPtrInput `pulumi:"eniId"`
 }
 
@@ -1011,12 +1011,12 @@ func (o ClbEniOutput) ToClbEniPtrOutputWithContext(ctx context.Context) ClbEniPt
 	}).(ClbEniPtrOutput)
 }
 
-// 负载均衡实例的私网IP地址。
+// Private IP address of the load balancer instance
 func (o ClbEniOutput) EniAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClbEni) *string { return v.EniAddress }).(pulumi.StringPtrOutput)
 }
 
-// 负载均衡实例占用的网卡ID。
+// Network interface ID occupied by the load balancer instance
 func (o ClbEniOutput) EniId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClbEni) *string { return v.EniId }).(pulumi.StringPtrOutput)
 }
@@ -1045,7 +1045,7 @@ func (o ClbEniPtrOutput) Elem() ClbEniOutput {
 	}).(ClbEniOutput)
 }
 
-// 负载均衡实例的私网IP地址。
+// Private IP address of the load balancer instance
 func (o ClbEniPtrOutput) EniAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClbEni) *string {
 		if v == nil {
@@ -1055,7 +1055,7 @@ func (o ClbEniPtrOutput) EniAddress() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 负载均衡实例占用的网卡ID。
+// Network interface ID occupied by the load balancer instance
 func (o ClbEniPtrOutput) EniId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClbEni) *string {
 		if v == nil {
@@ -1066,9 +1066,9 @@ func (o ClbEniPtrOutput) EniId() pulumi.StringPtrOutput {
 }
 
 type ClbEnis struct {
-	// 负载均衡实例的私网IP地址。
+	// Private IP address of the load balancer instance
 	EniAddress *string `pulumi:"eniAddress"`
-	// 负载均衡实例占用的网卡ID。
+	// Network interface ID occupied by the load balancer instance
 	EniId *string `pulumi:"eniId"`
 }
 
@@ -1084,9 +1084,9 @@ type ClbEnisInput interface {
 }
 
 type ClbEnisArgs struct {
-	// 负载均衡实例的私网IP地址。
+	// Private IP address of the load balancer instance
 	EniAddress pulumi.StringPtrInput `pulumi:"eniAddress"`
-	// 负载均衡实例占用的网卡ID。
+	// Network interface ID occupied by the load balancer instance
 	EniId pulumi.StringPtrInput `pulumi:"eniId"`
 }
 
@@ -1167,12 +1167,12 @@ func (o ClbEnisOutput) ToClbEnisPtrOutputWithContext(ctx context.Context) ClbEni
 	}).(ClbEnisPtrOutput)
 }
 
-// 负载均衡实例的私网IP地址。
+// Private IP address of the load balancer instance
 func (o ClbEnisOutput) EniAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClbEnis) *string { return v.EniAddress }).(pulumi.StringPtrOutput)
 }
 
-// 负载均衡实例占用的网卡ID。
+// Network interface ID occupied by the load balancer instance
 func (o ClbEnisOutput) EniId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClbEnis) *string { return v.EniId }).(pulumi.StringPtrOutput)
 }
@@ -1201,7 +1201,7 @@ func (o ClbEnisPtrOutput) Elem() ClbEnisOutput {
 	}).(ClbEnisOutput)
 }
 
-// 负载均衡实例的私网IP地址。
+// Private IP address of the load balancer instance
 func (o ClbEnisPtrOutput) EniAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClbEnis) *string {
 		if v == nil {
@@ -1211,7 +1211,7 @@ func (o ClbEnisPtrOutput) EniAddress() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 负载均衡实例占用的网卡ID。
+// Network interface ID occupied by the load balancer instance
 func (o ClbEnisPtrOutput) EniId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClbEnis) *string {
 		if v == nil {
@@ -1222,9 +1222,9 @@ func (o ClbEnisPtrOutput) EniId() pulumi.StringPtrOutput {
 }
 
 type ClbListener struct {
-	// 监听器的ID。
+	// Listener ID
 	ListenerId *string `pulumi:"listenerId"`
-	// 监听器的名称。
+	// Listener name
 	ListenerName *string `pulumi:"listenerName"`
 }
 
@@ -1240,9 +1240,9 @@ type ClbListenerInput interface {
 }
 
 type ClbListenerArgs struct {
-	// 监听器的ID。
+	// Listener ID
 	ListenerId pulumi.StringPtrInput `pulumi:"listenerId"`
-	// 监听器的名称。
+	// Listener name
 	ListenerName pulumi.StringPtrInput `pulumi:"listenerName"`
 }
 
@@ -1297,12 +1297,12 @@ func (o ClbListenerOutput) ToClbListenerOutputWithContext(ctx context.Context) C
 	return o
 }
 
-// 监听器的ID。
+// Listener ID
 func (o ClbListenerOutput) ListenerId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClbListener) *string { return v.ListenerId }).(pulumi.StringPtrOutput)
 }
 
-// 监听器的名称。
+// Listener name
 func (o ClbListenerOutput) ListenerName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClbListener) *string { return v.ListenerName }).(pulumi.StringPtrOutput)
 }
@@ -1328,9 +1328,9 @@ func (o ClbListenerArrayOutput) Index(i pulumi.IntInput) ClbListenerOutput {
 }
 
 type ClbServerGroup struct {
-	// 负载均衡实例中后端服务器组的ID。
+	// ID of the backend server group in the load balancer instance
 	ServerGroupId *string `pulumi:"serverGroupId"`
-	// 负载均衡实例中后端服务器组的名称。
+	// Name of the backend server group in the load balancer instance
 	ServerGroupName *string `pulumi:"serverGroupName"`
 }
 
@@ -1346,9 +1346,9 @@ type ClbServerGroupInput interface {
 }
 
 type ClbServerGroupArgs struct {
-	// 负载均衡实例中后端服务器组的ID。
+	// ID of the backend server group in the load balancer instance
 	ServerGroupId pulumi.StringPtrInput `pulumi:"serverGroupId"`
-	// 负载均衡实例中后端服务器组的名称。
+	// Name of the backend server group in the load balancer instance
 	ServerGroupName pulumi.StringPtrInput `pulumi:"serverGroupName"`
 }
 
@@ -1403,12 +1403,12 @@ func (o ClbServerGroupOutput) ToClbServerGroupOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 负载均衡实例中后端服务器组的ID。
+// ID of the backend server group in the load balancer instance
 func (o ClbServerGroupOutput) ServerGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClbServerGroup) *string { return v.ServerGroupId }).(pulumi.StringPtrOutput)
 }
 
-// 负载均衡实例中后端服务器组的名称。
+// Name of the backend server group in the load balancer instance
 func (o ClbServerGroupOutput) ServerGroupName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClbServerGroup) *string { return v.ServerGroupName }).(pulumi.StringPtrOutput)
 }
@@ -1434,9 +1434,9 @@ func (o ClbServerGroupArrayOutput) Index(i pulumi.IntInput) ClbServerGroupOutput
 }
 
 type ClbTag struct {
-	// 标签键。
+	// Tag key
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value *string `pulumi:"value"`
 }
 
@@ -1452,9 +1452,9 @@ type ClbTagInput interface {
 }
 
 type ClbTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -1509,12 +1509,12 @@ func (o ClbTagOutput) ToClbTagOutputWithContext(ctx context.Context) ClbTagOutpu
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o ClbTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClbTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value
 func (o ClbTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClbTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -1540,29 +1540,29 @@ func (o ClbTagArrayOutput) Index(i pulumi.IntInput) ClbTagOutput {
 }
 
 type ListenerHealthCheck struct {
-	// 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。需至少包含一个点号（.），且不允许以点号（.）开头或结尾。单个字符串由母、数字、中划线（-）、点号（.）字符组成，中划线（-）不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示CLB使用各后端服务器的私网IP地址进行健康检查。
+	// Domain name for health check. Must be set to the actual address provided by the backend server. This parameter takes effect when Protocol is set to HTTP or HTTPS and HealthCheck.Enabled is on. Must contain at least one period (.), and cannot start or end with a period (.). Each string can include letters, numbers, hyphens (-), and periods (.), with hyphens (-) not allowed at the beginning or end of the string. Length limit: 1 to 128 characters. If this parameter is not provided or no value is specified, the default is empty, meaning CLB uses the private IP address of each backend server for health checks.
 	Domain *string `pulumi:"domain"`
-	// 监听器是否开启健康检查功能。on（默认值）：开启。off：不开启。
+	// Whether health check is enabled for the listener. on (default): enabled. off: disabled.
 	Enabled *string `pulumi:"enabled"`
-	// 健康阈值，即连续健康检查成功的次数。取值范围为2 ～ 10，默认值为3，单位为次。
+	// Health threshold, i.e., the number of consecutive successful health checks. Range: 2–10, default is 3, unit: times.
 	HealthyThreshold *int `pulumi:"healthyThreshold"`
-	// 健康检查正常的HTTP状态码。当参数Protocol取HTTP或HTTPS，且HealthCheck.Enabled取on时，参数生效。取值如下：http*2xx （默认值）、http*3xx、http*4xx、http*5xx。多个状态码间用半角逗号“,”分隔。
+	// HTTP status codes for healthy checks. This parameter is effective when Protocol is HTTP or HTTPS and HealthCheck.Enabled is on. Values: http*2xx (default), http*3xx, http*4xx, http*5xx. Separate multiple status codes with a comma (,).
 	HttpCode *string `pulumi:"httpCode"`
-	// 执行健康检查的时间间隔，取值范围为1 ～ 300 ，默认值为2，单位为秒。
+	// Interval for performing health checks. Range: 1–300, default is 2, in seconds.
 	Interval *int `pulumi:"interval"`
-	// 监听器健康检查的方法。GET：服务器需支持GET方法。HEAD：服务器仅返回HEAD头部信息，可以降低后端开销，但要求服务器支持HEAD方法。
+	// Listener health check method. GET: server must support the GET method. HEAD: server returns only HEAD header information, which reduces backend overhead, but requires server support for the HEAD method.
 	Method *string `pulumi:"method"`
-	// 健康检查的端口，取值范围为1-65535。
+	// Health check port. Value range: 1–65535.
 	Port *int `pulumi:"port"`
-	// 健康检查的响应超时时间，表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查“异常”。取值范围为1 ～ 60，默认值为2，单位为秒。
+	// Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered 'abnormal'. Value range: 1 to 60. Default: 2. Unit: seconds.
 	Timeout *int `pulumi:"timeout"`
-	// 健康检查的预期响应字符串。只允许包含字母和数字，最大长度限制为64个字符。当参数Protocol配置UDP，且参数HealthCheck.Enabled配置为on时，该参数生效。参数HealthCheck.UdpRequest和HealthCheck.UdpExpect的取值只能同时为空或同时不为空。
+	// Expected response string for health check. Only letters and numbers are allowed, with a maximum length of 64 characters. This parameter takes effect when Protocol is set to UDP and HealthCheck.Enabled is set to on. HealthCheck.UdpRequest and HealthCheck.UdpExpect must either both be empty or both be non-empty.
 	UdpExpect *string `pulumi:"udpExpect"`
-	// 执行健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字。当参数Protocol配置为UDP，且参数HealthCheck.Enabled配置为on时，该参数生效。参数HealthCheck.UdpRequest和HealthCheck.UdpExpect的取值只能同时为空或同时不为空。
+	// Request string for performing health checks. Only letters and numbers are allowed, with a maximum length of 64 characters. This parameter takes effect when Protocol is set to UDP and HealthCheck.Enabled is set to on. The values of HealthCheck.UdpRequest and HealthCheck.UdpExpect must either both be empty or both be non-empty.
 	UdpRequest *string `pulumi:"udpRequest"`
-	// 不健康阈值，即连续健康检查失败的次数。取值范围为2 ～ 10，默认值为3，单位为次。
+	// Unhealthy threshold, which is the number of consecutive health check failures. Value range: 2–10. Default: 3. Unit: occurrences.
 	UnhealthyThreshold *int `pulumi:"unhealthyThreshold"`
-	// 健康检查的路径，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。必须以字符‘/’开头。仅包含字母、数字、中划线（-）、下划线（_）、斜线/）、点号（.）、百分号（%）、英文问号（?）、#、&、等号（＝）字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+	// Health check path. Must be configured as the actual address provided by the backend server. This parameter takes effect when Protocol is set to HTTP or HTTPS and HealthCheck.Enabled is on. Must start with '/'. Only letters, digits, hyphens (-), underscores (_), slashes (/), periods (.), percent signs (%), question marks (?), #, &, and equals signs (=) are allowed. Length: 1–128 characters. If not specified or no value is provided, the default is '/'.
 	Uri *string `pulumi:"uri"`
 }
 
@@ -1578,29 +1578,29 @@ type ListenerHealthCheckInput interface {
 }
 
 type ListenerHealthCheckArgs struct {
-	// 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。需至少包含一个点号（.），且不允许以点号（.）开头或结尾。单个字符串由母、数字、中划线（-）、点号（.）字符组成，中划线（-）不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示CLB使用各后端服务器的私网IP地址进行健康检查。
+	// Domain name for health check. Must be set to the actual address provided by the backend server. This parameter takes effect when Protocol is set to HTTP or HTTPS and HealthCheck.Enabled is on. Must contain at least one period (.), and cannot start or end with a period (.). Each string can include letters, numbers, hyphens (-), and periods (.), with hyphens (-) not allowed at the beginning or end of the string. Length limit: 1 to 128 characters. If this parameter is not provided or no value is specified, the default is empty, meaning CLB uses the private IP address of each backend server for health checks.
 	Domain pulumi.StringPtrInput `pulumi:"domain"`
-	// 监听器是否开启健康检查功能。on（默认值）：开启。off：不开启。
+	// Whether health check is enabled for the listener. on (default): enabled. off: disabled.
 	Enabled pulumi.StringPtrInput `pulumi:"enabled"`
-	// 健康阈值，即连续健康检查成功的次数。取值范围为2 ～ 10，默认值为3，单位为次。
+	// Health threshold, i.e., the number of consecutive successful health checks. Range: 2–10, default is 3, unit: times.
 	HealthyThreshold pulumi.IntPtrInput `pulumi:"healthyThreshold"`
-	// 健康检查正常的HTTP状态码。当参数Protocol取HTTP或HTTPS，且HealthCheck.Enabled取on时，参数生效。取值如下：http*2xx （默认值）、http*3xx、http*4xx、http*5xx。多个状态码间用半角逗号“,”分隔。
+	// HTTP status codes for healthy checks. This parameter is effective when Protocol is HTTP or HTTPS and HealthCheck.Enabled is on. Values: http*2xx (default), http*3xx, http*4xx, http*5xx. Separate multiple status codes with a comma (,).
 	HttpCode pulumi.StringPtrInput `pulumi:"httpCode"`
-	// 执行健康检查的时间间隔，取值范围为1 ～ 300 ，默认值为2，单位为秒。
+	// Interval for performing health checks. Range: 1–300, default is 2, in seconds.
 	Interval pulumi.IntPtrInput `pulumi:"interval"`
-	// 监听器健康检查的方法。GET：服务器需支持GET方法。HEAD：服务器仅返回HEAD头部信息，可以降低后端开销，但要求服务器支持HEAD方法。
+	// Listener health check method. GET: server must support the GET method. HEAD: server returns only HEAD header information, which reduces backend overhead, but requires server support for the HEAD method.
 	Method pulumi.StringPtrInput `pulumi:"method"`
-	// 健康检查的端口，取值范围为1-65535。
+	// Health check port. Value range: 1–65535.
 	Port pulumi.IntPtrInput `pulumi:"port"`
-	// 健康检查的响应超时时间，表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查“异常”。取值范围为1 ～ 60，默认值为2，单位为秒。
+	// Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered 'abnormal'. Value range: 1 to 60. Default: 2. Unit: seconds.
 	Timeout pulumi.IntPtrInput `pulumi:"timeout"`
-	// 健康检查的预期响应字符串。只允许包含字母和数字，最大长度限制为64个字符。当参数Protocol配置UDP，且参数HealthCheck.Enabled配置为on时，该参数生效。参数HealthCheck.UdpRequest和HealthCheck.UdpExpect的取值只能同时为空或同时不为空。
+	// Expected response string for health check. Only letters and numbers are allowed, with a maximum length of 64 characters. This parameter takes effect when Protocol is set to UDP and HealthCheck.Enabled is set to on. HealthCheck.UdpRequest and HealthCheck.UdpExpect must either both be empty or both be non-empty.
 	UdpExpect pulumi.StringPtrInput `pulumi:"udpExpect"`
-	// 执行健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字。当参数Protocol配置为UDP，且参数HealthCheck.Enabled配置为on时，该参数生效。参数HealthCheck.UdpRequest和HealthCheck.UdpExpect的取值只能同时为空或同时不为空。
+	// Request string for performing health checks. Only letters and numbers are allowed, with a maximum length of 64 characters. This parameter takes effect when Protocol is set to UDP and HealthCheck.Enabled is set to on. The values of HealthCheck.UdpRequest and HealthCheck.UdpExpect must either both be empty or both be non-empty.
 	UdpRequest pulumi.StringPtrInput `pulumi:"udpRequest"`
-	// 不健康阈值，即连续健康检查失败的次数。取值范围为2 ～ 10，默认值为3，单位为次。
+	// Unhealthy threshold, which is the number of consecutive health check failures. Value range: 2–10. Default: 3. Unit: occurrences.
 	UnhealthyThreshold pulumi.IntPtrInput `pulumi:"unhealthyThreshold"`
-	// 健康检查的路径，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。必须以字符‘/’开头。仅包含字母、数字、中划线（-）、下划线（_）、斜线/）、点号（.）、百分号（%）、英文问号（?）、#、&、等号（＝）字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+	// Health check path. Must be configured as the actual address provided by the backend server. This parameter takes effect when Protocol is set to HTTP or HTTPS and HealthCheck.Enabled is on. Must start with '/'. Only letters, digits, hyphens (-), underscores (_), slashes (/), periods (.), percent signs (%), question marks (?), #, &, and equals signs (=) are allowed. Length: 1–128 characters. If not specified or no value is provided, the default is '/'.
 	Uri pulumi.StringPtrInput `pulumi:"uri"`
 }
 
@@ -1681,62 +1681,62 @@ func (o ListenerHealthCheckOutput) ToListenerHealthCheckPtrOutputWithContext(ctx
 	}).(ListenerHealthCheckPtrOutput)
 }
 
-// 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。需至少包含一个点号（.），且不允许以点号（.）开头或结尾。单个字符串由母、数字、中划线（-）、点号（.）字符组成，中划线（-）不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示CLB使用各后端服务器的私网IP地址进行健康检查。
+// Domain name for health check. Must be set to the actual address provided by the backend server. This parameter takes effect when Protocol is set to HTTP or HTTPS and HealthCheck.Enabled is on. Must contain at least one period (.), and cannot start or end with a period (.). Each string can include letters, numbers, hyphens (-), and periods (.), with hyphens (-) not allowed at the beginning or end of the string. Length limit: 1 to 128 characters. If this parameter is not provided or no value is specified, the default is empty, meaning CLB uses the private IP address of each backend server for health checks.
 func (o ListenerHealthCheckOutput) Domain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ListenerHealthCheck) *string { return v.Domain }).(pulumi.StringPtrOutput)
 }
 
-// 监听器是否开启健康检查功能。on（默认值）：开启。off：不开启。
+// Whether health check is enabled for the listener. on (default): enabled. off: disabled.
 func (o ListenerHealthCheckOutput) Enabled() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ListenerHealthCheck) *string { return v.Enabled }).(pulumi.StringPtrOutput)
 }
 
-// 健康阈值，即连续健康检查成功的次数。取值范围为2 ～ 10，默认值为3，单位为次。
+// Health threshold, i.e., the number of consecutive successful health checks. Range: 2–10, default is 3, unit: times.
 func (o ListenerHealthCheckOutput) HealthyThreshold() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ListenerHealthCheck) *int { return v.HealthyThreshold }).(pulumi.IntPtrOutput)
 }
 
-// 健康检查正常的HTTP状态码。当参数Protocol取HTTP或HTTPS，且HealthCheck.Enabled取on时，参数生效。取值如下：http*2xx （默认值）、http*3xx、http*4xx、http*5xx。多个状态码间用半角逗号“,”分隔。
+// HTTP status codes for healthy checks. This parameter is effective when Protocol is HTTP or HTTPS and HealthCheck.Enabled is on. Values: http*2xx (default), http*3xx, http*4xx, http*5xx. Separate multiple status codes with a comma (,).
 func (o ListenerHealthCheckOutput) HttpCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ListenerHealthCheck) *string { return v.HttpCode }).(pulumi.StringPtrOutput)
 }
 
-// 执行健康检查的时间间隔，取值范围为1 ～ 300 ，默认值为2，单位为秒。
+// Interval for performing health checks. Range: 1–300, default is 2, in seconds.
 func (o ListenerHealthCheckOutput) Interval() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ListenerHealthCheck) *int { return v.Interval }).(pulumi.IntPtrOutput)
 }
 
-// 监听器健康检查的方法。GET：服务器需支持GET方法。HEAD：服务器仅返回HEAD头部信息，可以降低后端开销，但要求服务器支持HEAD方法。
+// Listener health check method. GET: server must support the GET method. HEAD: server returns only HEAD header information, which reduces backend overhead, but requires server support for the HEAD method.
 func (o ListenerHealthCheckOutput) Method() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ListenerHealthCheck) *string { return v.Method }).(pulumi.StringPtrOutput)
 }
 
-// 健康检查的端口，取值范围为1-65535。
+// Health check port. Value range: 1–65535.
 func (o ListenerHealthCheckOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ListenerHealthCheck) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
-// 健康检查的响应超时时间，表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查“异常”。取值范围为1 ～ 60，默认值为2，单位为秒。
+// Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered 'abnormal'. Value range: 1 to 60. Default: 2. Unit: seconds.
 func (o ListenerHealthCheckOutput) Timeout() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ListenerHealthCheck) *int { return v.Timeout }).(pulumi.IntPtrOutput)
 }
 
-// 健康检查的预期响应字符串。只允许包含字母和数字，最大长度限制为64个字符。当参数Protocol配置UDP，且参数HealthCheck.Enabled配置为on时，该参数生效。参数HealthCheck.UdpRequest和HealthCheck.UdpExpect的取值只能同时为空或同时不为空。
+// Expected response string for health check. Only letters and numbers are allowed, with a maximum length of 64 characters. This parameter takes effect when Protocol is set to UDP and HealthCheck.Enabled is set to on. HealthCheck.UdpRequest and HealthCheck.UdpExpect must either both be empty or both be non-empty.
 func (o ListenerHealthCheckOutput) UdpExpect() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ListenerHealthCheck) *string { return v.UdpExpect }).(pulumi.StringPtrOutput)
 }
 
-// 执行健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字。当参数Protocol配置为UDP，且参数HealthCheck.Enabled配置为on时，该参数生效。参数HealthCheck.UdpRequest和HealthCheck.UdpExpect的取值只能同时为空或同时不为空。
+// Request string for performing health checks. Only letters and numbers are allowed, with a maximum length of 64 characters. This parameter takes effect when Protocol is set to UDP and HealthCheck.Enabled is set to on. The values of HealthCheck.UdpRequest and HealthCheck.UdpExpect must either both be empty or both be non-empty.
 func (o ListenerHealthCheckOutput) UdpRequest() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ListenerHealthCheck) *string { return v.UdpRequest }).(pulumi.StringPtrOutput)
 }
 
-// 不健康阈值，即连续健康检查失败的次数。取值范围为2 ～ 10，默认值为3，单位为次。
+// Unhealthy threshold, which is the number of consecutive health check failures. Value range: 2–10. Default: 3. Unit: occurrences.
 func (o ListenerHealthCheckOutput) UnhealthyThreshold() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ListenerHealthCheck) *int { return v.UnhealthyThreshold }).(pulumi.IntPtrOutput)
 }
 
-// 健康检查的路径，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。必须以字符‘/’开头。仅包含字母、数字、中划线（-）、下划线（_）、斜线/）、点号（.）、百分号（%）、英文问号（?）、#、&、等号（＝）字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+// Health check path. Must be configured as the actual address provided by the backend server. This parameter takes effect when Protocol is set to HTTP or HTTPS and HealthCheck.Enabled is on. Must start with '/'. Only letters, digits, hyphens (-), underscores (_), slashes (/), periods (.), percent signs (%), question marks (?), #, &, and equals signs (=) are allowed. Length: 1–128 characters. If not specified or no value is provided, the default is '/'.
 func (o ListenerHealthCheckOutput) Uri() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ListenerHealthCheck) *string { return v.Uri }).(pulumi.StringPtrOutput)
 }
@@ -1765,7 +1765,7 @@ func (o ListenerHealthCheckPtrOutput) Elem() ListenerHealthCheckOutput {
 	}).(ListenerHealthCheckOutput)
 }
 
-// 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。需至少包含一个点号（.），且不允许以点号（.）开头或结尾。单个字符串由母、数字、中划线（-）、点号（.）字符组成，中划线（-）不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示CLB使用各后端服务器的私网IP地址进行健康检查。
+// Domain name for health check. Must be set to the actual address provided by the backend server. This parameter takes effect when Protocol is set to HTTP or HTTPS and HealthCheck.Enabled is on. Must contain at least one period (.), and cannot start or end with a period (.). Each string can include letters, numbers, hyphens (-), and periods (.), with hyphens (-) not allowed at the beginning or end of the string. Length limit: 1 to 128 characters. If this parameter is not provided or no value is specified, the default is empty, meaning CLB uses the private IP address of each backend server for health checks.
 func (o ListenerHealthCheckPtrOutput) Domain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ListenerHealthCheck) *string {
 		if v == nil {
@@ -1775,7 +1775,7 @@ func (o ListenerHealthCheckPtrOutput) Domain() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 监听器是否开启健康检查功能。on（默认值）：开启。off：不开启。
+// Whether health check is enabled for the listener. on (default): enabled. off: disabled.
 func (o ListenerHealthCheckPtrOutput) Enabled() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ListenerHealthCheck) *string {
 		if v == nil {
@@ -1785,7 +1785,7 @@ func (o ListenerHealthCheckPtrOutput) Enabled() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 健康阈值，即连续健康检查成功的次数。取值范围为2 ～ 10，默认值为3，单位为次。
+// Health threshold, i.e., the number of consecutive successful health checks. Range: 2–10, default is 3, unit: times.
 func (o ListenerHealthCheckPtrOutput) HealthyThreshold() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ListenerHealthCheck) *int {
 		if v == nil {
@@ -1795,7 +1795,7 @@ func (o ListenerHealthCheckPtrOutput) HealthyThreshold() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 健康检查正常的HTTP状态码。当参数Protocol取HTTP或HTTPS，且HealthCheck.Enabled取on时，参数生效。取值如下：http*2xx （默认值）、http*3xx、http*4xx、http*5xx。多个状态码间用半角逗号“,”分隔。
+// HTTP status codes for healthy checks. This parameter is effective when Protocol is HTTP or HTTPS and HealthCheck.Enabled is on. Values: http*2xx (default), http*3xx, http*4xx, http*5xx. Separate multiple status codes with a comma (,).
 func (o ListenerHealthCheckPtrOutput) HttpCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ListenerHealthCheck) *string {
 		if v == nil {
@@ -1805,7 +1805,7 @@ func (o ListenerHealthCheckPtrOutput) HttpCode() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 执行健康检查的时间间隔，取值范围为1 ～ 300 ，默认值为2，单位为秒。
+// Interval for performing health checks. Range: 1–300, default is 2, in seconds.
 func (o ListenerHealthCheckPtrOutput) Interval() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ListenerHealthCheck) *int {
 		if v == nil {
@@ -1815,7 +1815,7 @@ func (o ListenerHealthCheckPtrOutput) Interval() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 监听器健康检查的方法。GET：服务器需支持GET方法。HEAD：服务器仅返回HEAD头部信息，可以降低后端开销，但要求服务器支持HEAD方法。
+// Listener health check method. GET: server must support the GET method. HEAD: server returns only HEAD header information, which reduces backend overhead, but requires server support for the HEAD method.
 func (o ListenerHealthCheckPtrOutput) Method() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ListenerHealthCheck) *string {
 		if v == nil {
@@ -1825,7 +1825,7 @@ func (o ListenerHealthCheckPtrOutput) Method() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 健康检查的端口，取值范围为1-65535。
+// Health check port. Value range: 1–65535.
 func (o ListenerHealthCheckPtrOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ListenerHealthCheck) *int {
 		if v == nil {
@@ -1835,7 +1835,7 @@ func (o ListenerHealthCheckPtrOutput) Port() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 健康检查的响应超时时间，表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查“异常”。取值范围为1 ～ 60，默认值为2，单位为秒。
+// Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered 'abnormal'. Value range: 1 to 60. Default: 2. Unit: seconds.
 func (o ListenerHealthCheckPtrOutput) Timeout() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ListenerHealthCheck) *int {
 		if v == nil {
@@ -1845,7 +1845,7 @@ func (o ListenerHealthCheckPtrOutput) Timeout() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 健康检查的预期响应字符串。只允许包含字母和数字，最大长度限制为64个字符。当参数Protocol配置UDP，且参数HealthCheck.Enabled配置为on时，该参数生效。参数HealthCheck.UdpRequest和HealthCheck.UdpExpect的取值只能同时为空或同时不为空。
+// Expected response string for health check. Only letters and numbers are allowed, with a maximum length of 64 characters. This parameter takes effect when Protocol is set to UDP and HealthCheck.Enabled is set to on. HealthCheck.UdpRequest and HealthCheck.UdpExpect must either both be empty or both be non-empty.
 func (o ListenerHealthCheckPtrOutput) UdpExpect() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ListenerHealthCheck) *string {
 		if v == nil {
@@ -1855,7 +1855,7 @@ func (o ListenerHealthCheckPtrOutput) UdpExpect() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 执行健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字。当参数Protocol配置为UDP，且参数HealthCheck.Enabled配置为on时，该参数生效。参数HealthCheck.UdpRequest和HealthCheck.UdpExpect的取值只能同时为空或同时不为空。
+// Request string for performing health checks. Only letters and numbers are allowed, with a maximum length of 64 characters. This parameter takes effect when Protocol is set to UDP and HealthCheck.Enabled is set to on. The values of HealthCheck.UdpRequest and HealthCheck.UdpExpect must either both be empty or both be non-empty.
 func (o ListenerHealthCheckPtrOutput) UdpRequest() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ListenerHealthCheck) *string {
 		if v == nil {
@@ -1865,7 +1865,7 @@ func (o ListenerHealthCheckPtrOutput) UdpRequest() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 不健康阈值，即连续健康检查失败的次数。取值范围为2 ～ 10，默认值为3，单位为次。
+// Unhealthy threshold, which is the number of consecutive health check failures. Value range: 2–10. Default: 3. Unit: occurrences.
 func (o ListenerHealthCheckPtrOutput) UnhealthyThreshold() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ListenerHealthCheck) *int {
 		if v == nil {
@@ -1875,7 +1875,7 @@ func (o ListenerHealthCheckPtrOutput) UnhealthyThreshold() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 健康检查的路径，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。必须以字符‘/’开头。仅包含字母、数字、中划线（-）、下划线（_）、斜线/）、点号（.）、百分号（%）、英文问号（?）、#、&、等号（＝）字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+// Health check path. Must be configured as the actual address provided by the backend server. This parameter takes effect when Protocol is set to HTTP or HTTPS and HealthCheck.Enabled is on. Must start with '/'. Only letters, digits, hyphens (-), underscores (_), slashes (/), periods (.), percent signs (%), question marks (?), #, &, and equals signs (=) are allowed. Length: 1–128 characters. If not specified or no value is provided, the default is '/'.
 func (o ListenerHealthCheckPtrOutput) Uri() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ListenerHealthCheck) *string {
 		if v == nil {
@@ -1886,9 +1886,9 @@ func (o ListenerHealthCheckPtrOutput) Uri() pulumi.StringPtrOutput {
 }
 
 type ListenerTag struct {
-	// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	// Tag key for user tags. Length range: 1–128 characters. Supports input of characters from all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system automatically removes it.
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	// Tag value for user tags. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
 	Value *string `pulumi:"value"`
 }
 
@@ -1904,9 +1904,9 @@ type ListenerTagInput interface {
 }
 
 type ListenerTagArgs struct {
-	// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	// Tag key for user tags. Length range: 1–128 characters. Supports input of characters from all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system automatically removes it.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	// Tag value for user tags. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -1961,12 +1961,12 @@ func (o ListenerTagOutput) ToListenerTagOutputWithContext(ctx context.Context) L
 	return o
 }
 
-// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+// Tag key for user tags. Length range: 1–128 characters. Supports input of characters from all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system automatically removes it.
 func (o ListenerTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ListenerTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+// Tag value for user tags. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
 func (o ListenerTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ListenerTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -1992,11 +1992,11 @@ func (o ListenerTagArrayOutput) Index(i pulumi.IntInput) ListenerTagOutput {
 }
 
 type NlbAccessLog struct {
-	// 是否开启访问日志。true：是。flase：否。
+	// Enable access logs. true: yes. false: no.
 	AccessLogEnabled *bool `pulumi:"accessLogEnabled"`
-	// 日志项目的ID。
+	// Log project ID.
 	ProjectId *string `pulumi:"projectId"`
-	// 日志主题的ID。
+	// Log topic ID.
 	TopicId *string `pulumi:"topicId"`
 }
 
@@ -2012,11 +2012,11 @@ type NlbAccessLogInput interface {
 }
 
 type NlbAccessLogArgs struct {
-	// 是否开启访问日志。true：是。flase：否。
+	// Enable access logs. true: yes. false: no.
 	AccessLogEnabled pulumi.BoolPtrInput `pulumi:"accessLogEnabled"`
-	// 日志项目的ID。
+	// Log project ID.
 	ProjectId pulumi.StringPtrInput `pulumi:"projectId"`
-	// 日志主题的ID。
+	// Log topic ID.
 	TopicId pulumi.StringPtrInput `pulumi:"topicId"`
 }
 
@@ -2097,17 +2097,17 @@ func (o NlbAccessLogOutput) ToNlbAccessLogPtrOutputWithContext(ctx context.Conte
 	}).(NlbAccessLogPtrOutput)
 }
 
-// 是否开启访问日志。true：是。flase：否。
+// Enable access logs. true: yes. false: no.
 func (o NlbAccessLogOutput) AccessLogEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NlbAccessLog) *bool { return v.AccessLogEnabled }).(pulumi.BoolPtrOutput)
 }
 
-// 日志项目的ID。
+// Log project ID.
 func (o NlbAccessLogOutput) ProjectId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbAccessLog) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
 
-// 日志主题的ID。
+// Log topic ID.
 func (o NlbAccessLogOutput) TopicId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbAccessLog) *string { return v.TopicId }).(pulumi.StringPtrOutput)
 }
@@ -2136,7 +2136,7 @@ func (o NlbAccessLogPtrOutput) Elem() NlbAccessLogOutput {
 	}).(NlbAccessLogOutput)
 }
 
-// 是否开启访问日志。true：是。flase：否。
+// Enable access logs. true: yes. false: no.
 func (o NlbAccessLogPtrOutput) AccessLogEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NlbAccessLog) *bool {
 		if v == nil {
@@ -2146,7 +2146,7 @@ func (o NlbAccessLogPtrOutput) AccessLogEnabled() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 日志项目的ID。
+// Log project ID.
 func (o NlbAccessLogPtrOutput) ProjectId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NlbAccessLog) *string {
 		if v == nil {
@@ -2156,7 +2156,7 @@ func (o NlbAccessLogPtrOutput) ProjectId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 日志主题的ID。
+// Log topic ID.
 func (o NlbAccessLogPtrOutput) TopicId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NlbAccessLog) *string {
 		if v == nil {
@@ -2167,21 +2167,21 @@ func (o NlbAccessLogPtrOutput) TopicId() pulumi.StringPtrOutput {
 }
 
 type NlbListenerHealth struct {
-	// 后端服务器的实例 ID或IP地址。
+	// Backend server instance ID or IP address
 	InstanceId *string `pulumi:"instanceId"`
-	// 后端服务器的IP地址。
+	// Backend server IP address
 	Ip *string `pulumi:"ip"`
-	// 后端服务器提供服务的端口。
+	// Port on which the backend server provides services
 	Port *int `pulumi:"port"`
-	// 后端服务器ID。
+	// Backend server ID
 	ServerId *string `pulumi:"serverId"`
-	// 后端服务器的类型。ecs：云服务器实例（即主网卡）；eni：辅助网卡；ip：IP地址
+	// Backend server type: ecs (cloud server instance, i.e., primary network interface); eni (secondary network interface); ip (IP address)
 	ServerType *string `pulumi:"serverType"`
-	// 后端服务器的健康状态。Up：正常；Down：异常；Unused：未被使用（NLB实例已关闭跨可用区转发，且没有来自该后端服务器可用区的访问流量）。
+	// Backend server health status: Up (normal); Down (abnormal); Unused (not in use—NLB instance has disabled cross-zone forwarding and there is no traffic from this backend server's zone)
 	Status *string `pulumi:"status"`
-	// 健康状态最后更新时间。
+	// Last update time of health status
 	UpdatedTime *string `pulumi:"updatedTime"`
-	// 后端服务器接收访问流量的可用区ID。
+	// Zone ID where the backend server receives traffic
 	ZoneId *string `pulumi:"zoneId"`
 }
 
@@ -2197,21 +2197,21 @@ type NlbListenerHealthInput interface {
 }
 
 type NlbListenerHealthArgs struct {
-	// 后端服务器的实例 ID或IP地址。
+	// Backend server instance ID or IP address
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
-	// 后端服务器的IP地址。
+	// Backend server IP address
 	Ip pulumi.StringPtrInput `pulumi:"ip"`
-	// 后端服务器提供服务的端口。
+	// Port on which the backend server provides services
 	Port pulumi.IntPtrInput `pulumi:"port"`
-	// 后端服务器ID。
+	// Backend server ID
 	ServerId pulumi.StringPtrInput `pulumi:"serverId"`
-	// 后端服务器的类型。ecs：云服务器实例（即主网卡）；eni：辅助网卡；ip：IP地址
+	// Backend server type: ecs (cloud server instance, i.e., primary network interface); eni (secondary network interface); ip (IP address)
 	ServerType pulumi.StringPtrInput `pulumi:"serverType"`
-	// 后端服务器的健康状态。Up：正常；Down：异常；Unused：未被使用（NLB实例已关闭跨可用区转发，且没有来自该后端服务器可用区的访问流量）。
+	// Backend server health status: Up (normal); Down (abnormal); Unused (not in use—NLB instance has disabled cross-zone forwarding and there is no traffic from this backend server's zone)
 	Status pulumi.StringPtrInput `pulumi:"status"`
-	// 健康状态最后更新时间。
+	// Last update time of health status
 	UpdatedTime pulumi.StringPtrInput `pulumi:"updatedTime"`
-	// 后端服务器接收访问流量的可用区ID。
+	// Zone ID where the backend server receives traffic
 	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
 }
 
@@ -2266,42 +2266,42 @@ func (o NlbListenerHealthOutput) ToNlbListenerHealthOutputWithContext(ctx contex
 	return o
 }
 
-// 后端服务器的实例 ID或IP地址。
+// Backend server instance ID or IP address
 func (o NlbListenerHealthOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbListenerHealth) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
 
-// 后端服务器的IP地址。
+// Backend server IP address
 func (o NlbListenerHealthOutput) Ip() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbListenerHealth) *string { return v.Ip }).(pulumi.StringPtrOutput)
 }
 
-// 后端服务器提供服务的端口。
+// Port on which the backend server provides services
 func (o NlbListenerHealthOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NlbListenerHealth) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
-// 后端服务器ID。
+// Backend server ID
 func (o NlbListenerHealthOutput) ServerId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbListenerHealth) *string { return v.ServerId }).(pulumi.StringPtrOutput)
 }
 
-// 后端服务器的类型。ecs：云服务器实例（即主网卡）；eni：辅助网卡；ip：IP地址
+// Backend server type: ecs (cloud server instance, i.e., primary network interface); eni (secondary network interface); ip (IP address)
 func (o NlbListenerHealthOutput) ServerType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbListenerHealth) *string { return v.ServerType }).(pulumi.StringPtrOutput)
 }
 
-// 后端服务器的健康状态。Up：正常；Down：异常；Unused：未被使用（NLB实例已关闭跨可用区转发，且没有来自该后端服务器可用区的访问流量）。
+// Backend server health status: Up (normal); Down (abnormal); Unused (not in use—NLB instance has disabled cross-zone forwarding and there is no traffic from this backend server's zone)
 func (o NlbListenerHealthOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbListenerHealth) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
-// 健康状态最后更新时间。
+// Last update time of health status
 func (o NlbListenerHealthOutput) UpdatedTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbListenerHealth) *string { return v.UpdatedTime }).(pulumi.StringPtrOutput)
 }
 
-// 后端服务器接收访问流量的可用区ID。
+// Zone ID where the backend server receives traffic
 func (o NlbListenerHealthOutput) ZoneId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbListenerHealth) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
 }
@@ -2327,9 +2327,9 @@ func (o NlbListenerHealthArrayOutput) Index(i pulumi.IntInput) NlbListenerHealth
 }
 
 type NlbListenerTag struct {
-	// 标签键。
+	// Tag key
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value *string `pulumi:"value"`
 }
 
@@ -2345,9 +2345,9 @@ type NlbListenerTagInput interface {
 }
 
 type NlbListenerTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -2402,12 +2402,12 @@ func (o NlbListenerTagOutput) ToNlbListenerTagOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o NlbListenerTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbListenerTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value
 func (o NlbListenerTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbListenerTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -2433,9 +2433,9 @@ func (o NlbListenerTagArrayOutput) Index(i pulumi.IntInput) NlbListenerTagOutput
 }
 
 type NlbSecurityPolicyTag struct {
-	// 用户标签的标签键。
+	// User tag key
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value
 	Value *string `pulumi:"value"`
 }
 
@@ -2451,9 +2451,9 @@ type NlbSecurityPolicyTagInput interface {
 }
 
 type NlbSecurityPolicyTagArgs struct {
-	// 用户标签的标签键。
+	// User tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -2508,12 +2508,12 @@ func (o NlbSecurityPolicyTagOutput) ToNlbSecurityPolicyTagOutputWithContext(ctx 
 	return o
 }
 
-// 用户标签的标签键。
+// User tag key
 func (o NlbSecurityPolicyTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbSecurityPolicyTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。
+// User tag value
 func (o NlbSecurityPolicyTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbSecurityPolicyTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -2539,31 +2539,31 @@ func (o NlbSecurityPolicyTagArrayOutput) Index(i pulumi.IntInput) NlbSecurityPol
 }
 
 type NlbServerGroupHealthCheck struct {
-	// 健康检查的域名。
+	// Health check domain name
 	Domain *string `pulumi:"domain"`
-	// 是否开启健康检查。
+	// Enable health check
 	Enabled *bool `pulumi:"enabled"`
-	// 健康检查的健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“正常”的后端服务器将被判定为健康检查“正常”。
+	// Health check healthy threshold. Range: 2–10 times, default: 3 times. If the backend server passes the specified number of consecutive health checks with 'normal' results, it is considered health check 'normal'
 	HealthyThreshold *int `pulumi:"healthyThreshold"`
-	// 健康检查正常的HTTP状态码。
+	// HTTP status codes indicating a healthy health check.
 	HttpCode *string `pulumi:"httpCode"`
-	// 健康检查的时间间隔，取值范围为1 ～ 300秒，默认值为10秒。
+	// Health check interval, range: 1–300 seconds, default: 10 seconds.
 	Interval *int `pulumi:"interval"`
-	// 健康检查的请求方法。
+	// Health check request method
 	Method *string `pulumi:"method"`
-	// 健康检查的端口，取值范围 1～65535。服务器组未开启全端口转发时，该参数默认为0，表示使用后端服务器的端口进行健康检查。服务器组开启全端口转发时，必须指定该参数。
+	// Health check port. Range: 1–65535. If full port forwarding is not enabled for the server group, this parameter defaults to 0, meaning the backend server's port is used for health checks. If full port forwarding is enabled, this parameter must be specified
 	Port *int `pulumi:"port"`
-	// 健康检查的响应超时时间，取值范围为1 ～ 60秒，默认值为3秒。如果后端服务器在指定时间内没有正确响应，则判定为健康检查“异常”。
+	// Health check response timeout. Range: 1–60 seconds, default: 3 seconds. If the backend server does not respond correctly within the specified time, it is considered health check 'abnormal'
 	Timeout *int `pulumi:"timeout"`
-	// 健康检查的协议类型。取值如下：取值如下：TCP（默认值）、HTTP、UDP
+	// Health check protocol type. Options: TCP (default), HTTP, UDP
 	Type *string `pulumi:"type"`
-	// UDP健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字符。
+	// UDP health check request string. Only letters and numbers are allowed, with a maximum length of 64 characters.
 	UdpExpect *string `pulumi:"udpExpect"`
-	// UDP健康检查的预期响应字符串。
+	// Expected response string for UDP health check
 	UdpRequest *string `pulumi:"udpRequest"`
-	// 健康检查的不健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“异常”的后端服务器将被判定为健康检查异常。
+	// Health check unhealthy threshold. Range: 2–10 times, default: 3 times. If the backend server fails the specified number of consecutive health checks with 'abnormal' results, it is considered health check abnormal
 	UnhealthyThreshold *int `pulumi:"unhealthyThreshold"`
-	// 健康检查的路径。
+	// Health check path
 	Uri *string `pulumi:"uri"`
 }
 
@@ -2579,31 +2579,31 @@ type NlbServerGroupHealthCheckInput interface {
 }
 
 type NlbServerGroupHealthCheckArgs struct {
-	// 健康检查的域名。
+	// Health check domain name
 	Domain pulumi.StringPtrInput `pulumi:"domain"`
-	// 是否开启健康检查。
+	// Enable health check
 	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
-	// 健康检查的健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“正常”的后端服务器将被判定为健康检查“正常”。
+	// Health check healthy threshold. Range: 2–10 times, default: 3 times. If the backend server passes the specified number of consecutive health checks with 'normal' results, it is considered health check 'normal'
 	HealthyThreshold pulumi.IntPtrInput `pulumi:"healthyThreshold"`
-	// 健康检查正常的HTTP状态码。
+	// HTTP status codes indicating a healthy health check.
 	HttpCode pulumi.StringPtrInput `pulumi:"httpCode"`
-	// 健康检查的时间间隔，取值范围为1 ～ 300秒，默认值为10秒。
+	// Health check interval, range: 1–300 seconds, default: 10 seconds.
 	Interval pulumi.IntPtrInput `pulumi:"interval"`
-	// 健康检查的请求方法。
+	// Health check request method
 	Method pulumi.StringPtrInput `pulumi:"method"`
-	// 健康检查的端口，取值范围 1～65535。服务器组未开启全端口转发时，该参数默认为0，表示使用后端服务器的端口进行健康检查。服务器组开启全端口转发时，必须指定该参数。
+	// Health check port. Range: 1–65535. If full port forwarding is not enabled for the server group, this parameter defaults to 0, meaning the backend server's port is used for health checks. If full port forwarding is enabled, this parameter must be specified
 	Port pulumi.IntPtrInput `pulumi:"port"`
-	// 健康检查的响应超时时间，取值范围为1 ～ 60秒，默认值为3秒。如果后端服务器在指定时间内没有正确响应，则判定为健康检查“异常”。
+	// Health check response timeout. Range: 1–60 seconds, default: 3 seconds. If the backend server does not respond correctly within the specified time, it is considered health check 'abnormal'
 	Timeout pulumi.IntPtrInput `pulumi:"timeout"`
-	// 健康检查的协议类型。取值如下：取值如下：TCP（默认值）、HTTP、UDP
+	// Health check protocol type. Options: TCP (default), HTTP, UDP
 	Type pulumi.StringPtrInput `pulumi:"type"`
-	// UDP健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字符。
+	// UDP health check request string. Only letters and numbers are allowed, with a maximum length of 64 characters.
 	UdpExpect pulumi.StringPtrInput `pulumi:"udpExpect"`
-	// UDP健康检查的预期响应字符串。
+	// Expected response string for UDP health check
 	UdpRequest pulumi.StringPtrInput `pulumi:"udpRequest"`
-	// 健康检查的不健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“异常”的后端服务器将被判定为健康检查异常。
+	// Health check unhealthy threshold. Range: 2–10 times, default: 3 times. If the backend server fails the specified number of consecutive health checks with 'abnormal' results, it is considered health check abnormal
 	UnhealthyThreshold pulumi.IntPtrInput `pulumi:"unhealthyThreshold"`
-	// 健康检查的路径。
+	// Health check path
 	Uri pulumi.StringPtrInput `pulumi:"uri"`
 }
 
@@ -2684,67 +2684,67 @@ func (o NlbServerGroupHealthCheckOutput) ToNlbServerGroupHealthCheckPtrOutputWit
 	}).(NlbServerGroupHealthCheckPtrOutput)
 }
 
-// 健康检查的域名。
+// Health check domain name
 func (o NlbServerGroupHealthCheckOutput) Domain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbServerGroupHealthCheck) *string { return v.Domain }).(pulumi.StringPtrOutput)
 }
 
-// 是否开启健康检查。
+// Enable health check
 func (o NlbServerGroupHealthCheckOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NlbServerGroupHealthCheck) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
 }
 
-// 健康检查的健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“正常”的后端服务器将被判定为健康检查“正常”。
+// Health check healthy threshold. Range: 2–10 times, default: 3 times. If the backend server passes the specified number of consecutive health checks with 'normal' results, it is considered health check 'normal'
 func (o NlbServerGroupHealthCheckOutput) HealthyThreshold() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NlbServerGroupHealthCheck) *int { return v.HealthyThreshold }).(pulumi.IntPtrOutput)
 }
 
-// 健康检查正常的HTTP状态码。
+// HTTP status codes indicating a healthy health check.
 func (o NlbServerGroupHealthCheckOutput) HttpCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbServerGroupHealthCheck) *string { return v.HttpCode }).(pulumi.StringPtrOutput)
 }
 
-// 健康检查的时间间隔，取值范围为1 ～ 300秒，默认值为10秒。
+// Health check interval, range: 1–300 seconds, default: 10 seconds.
 func (o NlbServerGroupHealthCheckOutput) Interval() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NlbServerGroupHealthCheck) *int { return v.Interval }).(pulumi.IntPtrOutput)
 }
 
-// 健康检查的请求方法。
+// Health check request method
 func (o NlbServerGroupHealthCheckOutput) Method() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbServerGroupHealthCheck) *string { return v.Method }).(pulumi.StringPtrOutput)
 }
 
-// 健康检查的端口，取值范围 1～65535。服务器组未开启全端口转发时，该参数默认为0，表示使用后端服务器的端口进行健康检查。服务器组开启全端口转发时，必须指定该参数。
+// Health check port. Range: 1–65535. If full port forwarding is not enabled for the server group, this parameter defaults to 0, meaning the backend server's port is used for health checks. If full port forwarding is enabled, this parameter must be specified
 func (o NlbServerGroupHealthCheckOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NlbServerGroupHealthCheck) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
-// 健康检查的响应超时时间，取值范围为1 ～ 60秒，默认值为3秒。如果后端服务器在指定时间内没有正确响应，则判定为健康检查“异常”。
+// Health check response timeout. Range: 1–60 seconds, default: 3 seconds. If the backend server does not respond correctly within the specified time, it is considered health check 'abnormal'
 func (o NlbServerGroupHealthCheckOutput) Timeout() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NlbServerGroupHealthCheck) *int { return v.Timeout }).(pulumi.IntPtrOutput)
 }
 
-// 健康检查的协议类型。取值如下：取值如下：TCP（默认值）、HTTP、UDP
+// Health check protocol type. Options: TCP (default), HTTP, UDP
 func (o NlbServerGroupHealthCheckOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbServerGroupHealthCheck) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
-// UDP健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字符。
+// UDP health check request string. Only letters and numbers are allowed, with a maximum length of 64 characters.
 func (o NlbServerGroupHealthCheckOutput) UdpExpect() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbServerGroupHealthCheck) *string { return v.UdpExpect }).(pulumi.StringPtrOutput)
 }
 
-// UDP健康检查的预期响应字符串。
+// Expected response string for UDP health check
 func (o NlbServerGroupHealthCheckOutput) UdpRequest() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbServerGroupHealthCheck) *string { return v.UdpRequest }).(pulumi.StringPtrOutput)
 }
 
-// 健康检查的不健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“异常”的后端服务器将被判定为健康检查异常。
+// Health check unhealthy threshold. Range: 2–10 times, default: 3 times. If the backend server fails the specified number of consecutive health checks with 'abnormal' results, it is considered health check abnormal
 func (o NlbServerGroupHealthCheckOutput) UnhealthyThreshold() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NlbServerGroupHealthCheck) *int { return v.UnhealthyThreshold }).(pulumi.IntPtrOutput)
 }
 
-// 健康检查的路径。
+// Health check path
 func (o NlbServerGroupHealthCheckOutput) Uri() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbServerGroupHealthCheck) *string { return v.Uri }).(pulumi.StringPtrOutput)
 }
@@ -2773,7 +2773,7 @@ func (o NlbServerGroupHealthCheckPtrOutput) Elem() NlbServerGroupHealthCheckOutp
 	}).(NlbServerGroupHealthCheckOutput)
 }
 
-// 健康检查的域名。
+// Health check domain name
 func (o NlbServerGroupHealthCheckPtrOutput) Domain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NlbServerGroupHealthCheck) *string {
 		if v == nil {
@@ -2783,7 +2783,7 @@ func (o NlbServerGroupHealthCheckPtrOutput) Domain() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 是否开启健康检查。
+// Enable health check
 func (o NlbServerGroupHealthCheckPtrOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NlbServerGroupHealthCheck) *bool {
 		if v == nil {
@@ -2793,7 +2793,7 @@ func (o NlbServerGroupHealthCheckPtrOutput) Enabled() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 健康检查的健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“正常”的后端服务器将被判定为健康检查“正常”。
+// Health check healthy threshold. Range: 2–10 times, default: 3 times. If the backend server passes the specified number of consecutive health checks with 'normal' results, it is considered health check 'normal'
 func (o NlbServerGroupHealthCheckPtrOutput) HealthyThreshold() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NlbServerGroupHealthCheck) *int {
 		if v == nil {
@@ -2803,7 +2803,7 @@ func (o NlbServerGroupHealthCheckPtrOutput) HealthyThreshold() pulumi.IntPtrOutp
 	}).(pulumi.IntPtrOutput)
 }
 
-// 健康检查正常的HTTP状态码。
+// HTTP status codes indicating a healthy health check.
 func (o NlbServerGroupHealthCheckPtrOutput) HttpCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NlbServerGroupHealthCheck) *string {
 		if v == nil {
@@ -2813,7 +2813,7 @@ func (o NlbServerGroupHealthCheckPtrOutput) HttpCode() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 健康检查的时间间隔，取值范围为1 ～ 300秒，默认值为10秒。
+// Health check interval, range: 1–300 seconds, default: 10 seconds.
 func (o NlbServerGroupHealthCheckPtrOutput) Interval() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NlbServerGroupHealthCheck) *int {
 		if v == nil {
@@ -2823,7 +2823,7 @@ func (o NlbServerGroupHealthCheckPtrOutput) Interval() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 健康检查的请求方法。
+// Health check request method
 func (o NlbServerGroupHealthCheckPtrOutput) Method() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NlbServerGroupHealthCheck) *string {
 		if v == nil {
@@ -2833,7 +2833,7 @@ func (o NlbServerGroupHealthCheckPtrOutput) Method() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 健康检查的端口，取值范围 1～65535。服务器组未开启全端口转发时，该参数默认为0，表示使用后端服务器的端口进行健康检查。服务器组开启全端口转发时，必须指定该参数。
+// Health check port. Range: 1–65535. If full port forwarding is not enabled for the server group, this parameter defaults to 0, meaning the backend server's port is used for health checks. If full port forwarding is enabled, this parameter must be specified
 func (o NlbServerGroupHealthCheckPtrOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NlbServerGroupHealthCheck) *int {
 		if v == nil {
@@ -2843,7 +2843,7 @@ func (o NlbServerGroupHealthCheckPtrOutput) Port() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 健康检查的响应超时时间，取值范围为1 ～ 60秒，默认值为3秒。如果后端服务器在指定时间内没有正确响应，则判定为健康检查“异常”。
+// Health check response timeout. Range: 1–60 seconds, default: 3 seconds. If the backend server does not respond correctly within the specified time, it is considered health check 'abnormal'
 func (o NlbServerGroupHealthCheckPtrOutput) Timeout() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NlbServerGroupHealthCheck) *int {
 		if v == nil {
@@ -2853,7 +2853,7 @@ func (o NlbServerGroupHealthCheckPtrOutput) Timeout() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 健康检查的协议类型。取值如下：取值如下：TCP（默认值）、HTTP、UDP
+// Health check protocol type. Options: TCP (default), HTTP, UDP
 func (o NlbServerGroupHealthCheckPtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NlbServerGroupHealthCheck) *string {
 		if v == nil {
@@ -2863,7 +2863,7 @@ func (o NlbServerGroupHealthCheckPtrOutput) Type() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// UDP健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字符。
+// UDP health check request string. Only letters and numbers are allowed, with a maximum length of 64 characters.
 func (o NlbServerGroupHealthCheckPtrOutput) UdpExpect() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NlbServerGroupHealthCheck) *string {
 		if v == nil {
@@ -2873,7 +2873,7 @@ func (o NlbServerGroupHealthCheckPtrOutput) UdpExpect() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// UDP健康检查的预期响应字符串。
+// Expected response string for UDP health check
 func (o NlbServerGroupHealthCheckPtrOutput) UdpRequest() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NlbServerGroupHealthCheck) *string {
 		if v == nil {
@@ -2883,7 +2883,7 @@ func (o NlbServerGroupHealthCheckPtrOutput) UdpRequest() pulumi.StringPtrOutput 
 	}).(pulumi.StringPtrOutput)
 }
 
-// 健康检查的不健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“异常”的后端服务器将被判定为健康检查异常。
+// Health check unhealthy threshold. Range: 2–10 times, default: 3 times. If the backend server fails the specified number of consecutive health checks with 'abnormal' results, it is considered health check abnormal
 func (o NlbServerGroupHealthCheckPtrOutput) UnhealthyThreshold() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NlbServerGroupHealthCheck) *int {
 		if v == nil {
@@ -2893,7 +2893,7 @@ func (o NlbServerGroupHealthCheckPtrOutput) UnhealthyThreshold() pulumi.IntPtrOu
 	}).(pulumi.IntPtrOutput)
 }
 
-// 健康检查的路径。
+// Health check path
 func (o NlbServerGroupHealthCheckPtrOutput) Uri() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NlbServerGroupHealthCheck) *string {
 		if v == nil {
@@ -2904,21 +2904,21 @@ func (o NlbServerGroupHealthCheckPtrOutput) Uri() pulumi.StringPtrOutput {
 }
 
 type NlbServerGroupServer struct {
-	// 后端服务器的描述，默认值为空字符串。
+	// Description of the backend server, default is an empty string.
 	Description *string `pulumi:"description"`
-	// 服务器实例的ID或IP地址。服务器类型为“ecs”时，传入云服务器实例的ID。您可以调用DescribeInstances接口云服务器实例ID。服务器类型为“eni”时，传入已绑定云服务器实例的网卡ID。您可以调用DescribeNetworkInterfaces接口获取网卡ID。服务器类型为“ip”时，传入后端服务器的IP地址。
+	// Server instance ID or IP address. If the server type is 'ecs', enter the cloud server instance ID. You can call the DescribeInstances API to obtain the cloud server instance ID. If the server type is 'eni', enter the network interface card ID bound to the cloud server instance. You can call the DescribeNetworkInterfaces API to obtain the network interface card ID. If the server type is 'ip', enter the backend server's IP address.
 	InstanceId *string `pulumi:"instanceId"`
-	// 后端服务器的私网IP地址。您可以调用DescribeInstances接口获取“ecs”类型后端服务器的私网IP地址。您可以调用DescribeNetworkInterfaces接口获取“eni”类型后端服务器的私网IP地址。
+	// Private IP address of the backend server. You can call the DescribeInstances API to obtain the private IP address of an 'ecs' type backend server. You can call the DescribeNetworkInterfaces API to obtain the private IP address of an 'eni' type backend server.
 	Ip *string `pulumi:"ip"`
-	// 后端服务器接收请求的端口号，取值范围为 1～65535。参数AnyPortEnabled为“false”，即服务器组未开启全端口转发时，该参数为必填。参数AnyPortEnabled为“true”，即服务器组开启全端口转发时，该参数默认为0。
+	// Port number on which the backend server receives requests, range: 1–65535. If AnyPortEnabled is 'false' (all-port forwarding is disabled), this parameter is required. If AnyPortEnabled is 'true' (all-port forwarding is enabled), the default value is 0.
 	Port *int `pulumi:"port"`
-	// 后端服务器 ID。
+	// Backend server ID
 	ServerId *string `pulumi:"serverId"`
-	// 后端服务器的类型。取值如下：ecs：云服务器实例（即主网卡）。eni：辅助网卡。ip：IP地址。
+	// Backend server type. Available values: ecs: cloud server instance (primary network interface). eni: auxiliary network interface. ip: IP address.
 	Type *string `pulumi:"type"`
-	// 后端服务器的权重，取值范围为0 ～ 100。权重为0，表示不会将请求转发给该服务器。该参数不传入，则默认为0。
+	// Backend server weight, range: 0–100. Weight of 0 means requests will not be forwarded to this server. If not specified, the default is 0.
 	Weight *int `pulumi:"weight"`
-	// 指定后端服务器关联的NLB实例可用区。当参数Servers.N.Type为ip时，此参数必填。NLB实例开启跨可用区转发功能时，该后端服务器可以接收来自NLB实例所有可用区的流量。NLB实例关闭跨可用区转发功能时，则该后端服务器仅接收来自指定可用区的流量。
+	// Specify the availability zone of the NLB instance associated with the backend server. This parameter is required when Servers.N.Type is ip. If the NLB instance enables cross-zone forwarding, the backend server can receive traffic from all availability zones of the NLB instance. If cross-zone forwarding is disabled, the backend server only receives traffic from the specified availability zone
 	ZoneId *string `pulumi:"zoneId"`
 }
 
@@ -2934,21 +2934,21 @@ type NlbServerGroupServerInput interface {
 }
 
 type NlbServerGroupServerArgs struct {
-	// 后端服务器的描述，默认值为空字符串。
+	// Description of the backend server, default is an empty string.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 服务器实例的ID或IP地址。服务器类型为“ecs”时，传入云服务器实例的ID。您可以调用DescribeInstances接口云服务器实例ID。服务器类型为“eni”时，传入已绑定云服务器实例的网卡ID。您可以调用DescribeNetworkInterfaces接口获取网卡ID。服务器类型为“ip”时，传入后端服务器的IP地址。
+	// Server instance ID or IP address. If the server type is 'ecs', enter the cloud server instance ID. You can call the DescribeInstances API to obtain the cloud server instance ID. If the server type is 'eni', enter the network interface card ID bound to the cloud server instance. You can call the DescribeNetworkInterfaces API to obtain the network interface card ID. If the server type is 'ip', enter the backend server's IP address.
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
-	// 后端服务器的私网IP地址。您可以调用DescribeInstances接口获取“ecs”类型后端服务器的私网IP地址。您可以调用DescribeNetworkInterfaces接口获取“eni”类型后端服务器的私网IP地址。
+	// Private IP address of the backend server. You can call the DescribeInstances API to obtain the private IP address of an 'ecs' type backend server. You can call the DescribeNetworkInterfaces API to obtain the private IP address of an 'eni' type backend server.
 	Ip pulumi.StringPtrInput `pulumi:"ip"`
-	// 后端服务器接收请求的端口号，取值范围为 1～65535。参数AnyPortEnabled为“false”，即服务器组未开启全端口转发时，该参数为必填。参数AnyPortEnabled为“true”，即服务器组开启全端口转发时，该参数默认为0。
+	// Port number on which the backend server receives requests, range: 1–65535. If AnyPortEnabled is 'false' (all-port forwarding is disabled), this parameter is required. If AnyPortEnabled is 'true' (all-port forwarding is enabled), the default value is 0.
 	Port pulumi.IntPtrInput `pulumi:"port"`
-	// 后端服务器 ID。
+	// Backend server ID
 	ServerId pulumi.StringPtrInput `pulumi:"serverId"`
-	// 后端服务器的类型。取值如下：ecs：云服务器实例（即主网卡）。eni：辅助网卡。ip：IP地址。
+	// Backend server type. Available values: ecs: cloud server instance (primary network interface). eni: auxiliary network interface. ip: IP address.
 	Type pulumi.StringPtrInput `pulumi:"type"`
-	// 后端服务器的权重，取值范围为0 ～ 100。权重为0，表示不会将请求转发给该服务器。该参数不传入，则默认为0。
+	// Backend server weight, range: 0–100. Weight of 0 means requests will not be forwarded to this server. If not specified, the default is 0.
 	Weight pulumi.IntPtrInput `pulumi:"weight"`
-	// 指定后端服务器关联的NLB实例可用区。当参数Servers.N.Type为ip时，此参数必填。NLB实例开启跨可用区转发功能时，该后端服务器可以接收来自NLB实例所有可用区的流量。NLB实例关闭跨可用区转发功能时，则该后端服务器仅接收来自指定可用区的流量。
+	// Specify the availability zone of the NLB instance associated with the backend server. This parameter is required when Servers.N.Type is ip. If the NLB instance enables cross-zone forwarding, the backend server can receive traffic from all availability zones of the NLB instance. If cross-zone forwarding is disabled, the backend server only receives traffic from the specified availability zone
 	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
 }
 
@@ -3003,42 +3003,42 @@ func (o NlbServerGroupServerOutput) ToNlbServerGroupServerOutputWithContext(ctx 
 	return o
 }
 
-// 后端服务器的描述，默认值为空字符串。
+// Description of the backend server, default is an empty string.
 func (o NlbServerGroupServerOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbServerGroupServer) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 服务器实例的ID或IP地址。服务器类型为“ecs”时，传入云服务器实例的ID。您可以调用DescribeInstances接口云服务器实例ID。服务器类型为“eni”时，传入已绑定云服务器实例的网卡ID。您可以调用DescribeNetworkInterfaces接口获取网卡ID。服务器类型为“ip”时，传入后端服务器的IP地址。
+// Server instance ID or IP address. If the server type is 'ecs', enter the cloud server instance ID. You can call the DescribeInstances API to obtain the cloud server instance ID. If the server type is 'eni', enter the network interface card ID bound to the cloud server instance. You can call the DescribeNetworkInterfaces API to obtain the network interface card ID. If the server type is 'ip', enter the backend server's IP address.
 func (o NlbServerGroupServerOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbServerGroupServer) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
 
-// 后端服务器的私网IP地址。您可以调用DescribeInstances接口获取“ecs”类型后端服务器的私网IP地址。您可以调用DescribeNetworkInterfaces接口获取“eni”类型后端服务器的私网IP地址。
+// Private IP address of the backend server. You can call the DescribeInstances API to obtain the private IP address of an 'ecs' type backend server. You can call the DescribeNetworkInterfaces API to obtain the private IP address of an 'eni' type backend server.
 func (o NlbServerGroupServerOutput) Ip() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbServerGroupServer) *string { return v.Ip }).(pulumi.StringPtrOutput)
 }
 
-// 后端服务器接收请求的端口号，取值范围为 1～65535。参数AnyPortEnabled为“false”，即服务器组未开启全端口转发时，该参数为必填。参数AnyPortEnabled为“true”，即服务器组开启全端口转发时，该参数默认为0。
+// Port number on which the backend server receives requests, range: 1–65535. If AnyPortEnabled is 'false' (all-port forwarding is disabled), this parameter is required. If AnyPortEnabled is 'true' (all-port forwarding is enabled), the default value is 0.
 func (o NlbServerGroupServerOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NlbServerGroupServer) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
-// 后端服务器 ID。
+// Backend server ID
 func (o NlbServerGroupServerOutput) ServerId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbServerGroupServer) *string { return v.ServerId }).(pulumi.StringPtrOutput)
 }
 
-// 后端服务器的类型。取值如下：ecs：云服务器实例（即主网卡）。eni：辅助网卡。ip：IP地址。
+// Backend server type. Available values: ecs: cloud server instance (primary network interface). eni: auxiliary network interface. ip: IP address.
 func (o NlbServerGroupServerOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbServerGroupServer) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
-// 后端服务器的权重，取值范围为0 ～ 100。权重为0，表示不会将请求转发给该服务器。该参数不传入，则默认为0。
+// Backend server weight, range: 0–100. Weight of 0 means requests will not be forwarded to this server. If not specified, the default is 0.
 func (o NlbServerGroupServerOutput) Weight() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NlbServerGroupServer) *int { return v.Weight }).(pulumi.IntPtrOutput)
 }
 
-// 指定后端服务器关联的NLB实例可用区。当参数Servers.N.Type为ip时，此参数必填。NLB实例开启跨可用区转发功能时，该后端服务器可以接收来自NLB实例所有可用区的流量。NLB实例关闭跨可用区转发功能时，则该后端服务器仅接收来自指定可用区的流量。
+// Specify the availability zone of the NLB instance associated with the backend server. This parameter is required when Servers.N.Type is ip. If the NLB instance enables cross-zone forwarding, the backend server can receive traffic from all availability zones of the NLB instance. If cross-zone forwarding is disabled, the backend server only receives traffic from the specified availability zone
 func (o NlbServerGroupServerOutput) ZoneId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbServerGroupServer) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
 }
@@ -3064,9 +3064,9 @@ func (o NlbServerGroupServerArrayOutput) Index(i pulumi.IntInput) NlbServerGroup
 }
 
 type NlbServerGroupTag struct {
-	// 标签键。
+	// Tag key
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value *string `pulumi:"value"`
 }
 
@@ -3082,9 +3082,9 @@ type NlbServerGroupTagInput interface {
 }
 
 type NlbServerGroupTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -3139,12 +3139,12 @@ func (o NlbServerGroupTagOutput) ToNlbServerGroupTagOutputWithContext(ctx contex
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o NlbServerGroupTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbServerGroupTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value
 func (o NlbServerGroupTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbServerGroupTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -3170,9 +3170,9 @@ func (o NlbServerGroupTagArrayOutput) Index(i pulumi.IntInput) NlbServerGroupTag
 }
 
 type NlbTag struct {
-	// 标签键。
+	// Tag key.
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value *string `pulumi:"value"`
 }
 
@@ -3188,9 +3188,9 @@ type NlbTagInput interface {
 }
 
 type NlbTagArgs struct {
-	// 标签键。
+	// Tag key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -3245,12 +3245,12 @@ func (o NlbTagOutput) ToNlbTagOutputWithContext(ctx context.Context) NlbTagOutpu
 	return o
 }
 
-// 标签键。
+// Tag key.
 func (o NlbTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value.
 func (o NlbTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -3276,29 +3276,29 @@ func (o NlbTagArrayOutput) Index(i pulumi.IntInput) NlbTagOutput {
 }
 
 type NlbZoneMapping struct {
-	// 网卡ID。
+	// Network interface card ID.
 	EniId *string `pulumi:"eniId"`
-	// NLB实例的私网IPv4 VIP地址。该参数不传入，则系统自动从子网中分配一个可用的IPv4地址。
+	// Private IPv4 VIP address of the NLB instance. If this parameter is not provided, the system automatically assigns an available IPv4 address from the subnet.
 	Ipv4Address *string `pulumi:"ipv4Address"`
-	// NLB实例的公网IPv4 EIP地址。
+	// Public IPv4 EIP address of the NLB instance.
 	Ipv4EipAddress *string `pulumi:"ipv4EipAddress"`
-	// NLB实例的公网IPv4 EIP ID。
+	// Public IPv4 EIP ID of the NLB instance.
 	Ipv4EipId *string `pulumi:"ipv4EipId"`
-	// NLB实例私网IPv4地址的健康状态。Healthy：健康。Unhealthy：异常。
+	// Health status of the NLB instance's private IPv4 address. Healthy: healthy. Unhealthy: abnormal.
 	Ipv4HcStatus *string `pulumi:"ipv4HcStatus"`
-	// NLB实例的私网IPv4 LIP地址。
+	// Private IPv4 LIP address of the NLB instance.
 	Ipv4LocalAddresses []string `pulumi:"ipv4LocalAddresses"`
-	// NLB实例的私网IPv6 VIP地址。
+	// Private IPv6 VIP address of the NLB instance.
 	Ipv6Address *string `pulumi:"ipv6Address"`
-	// NLB实例关联的IPv6公网带宽的ID。
+	// ID of the IPv6 public bandwidth associated with the NLB instance.
 	Ipv6EipId *string `pulumi:"ipv6EipId"`
-	// NLB实例私网IPv6地址的健康状态。Healthy：健康。Unhealthy：异常。
+	// Health status of the NLB instance's private IPv6 address. Healthy: healthy. Unhealthy: abnormal.
 	Ipv6HcStatus *string `pulumi:"ipv6HcStatus"`
-	// NLB实例的私网IPv6 LIP地址。
+	// Private IPv6 LIP address of the NLB instance.
 	Ipv6LocalAddresses []string `pulumi:"ipv6LocalAddresses"`
-	// NLB实例所属的子网ID。
+	// Subnet ID to which the NLB instance belongs.
 	SubnetId *string `pulumi:"subnetId"`
-	// NLB实例所属的可用区ID。
+	// Availability zone ID to which the NLB instance belongs.
 	ZoneId *string `pulumi:"zoneId"`
 }
 
@@ -3314,29 +3314,29 @@ type NlbZoneMappingInput interface {
 }
 
 type NlbZoneMappingArgs struct {
-	// 网卡ID。
+	// Network interface card ID.
 	EniId pulumi.StringPtrInput `pulumi:"eniId"`
-	// NLB实例的私网IPv4 VIP地址。该参数不传入，则系统自动从子网中分配一个可用的IPv4地址。
+	// Private IPv4 VIP address of the NLB instance. If this parameter is not provided, the system automatically assigns an available IPv4 address from the subnet.
 	Ipv4Address pulumi.StringPtrInput `pulumi:"ipv4Address"`
-	// NLB实例的公网IPv4 EIP地址。
+	// Public IPv4 EIP address of the NLB instance.
 	Ipv4EipAddress pulumi.StringPtrInput `pulumi:"ipv4EipAddress"`
-	// NLB实例的公网IPv4 EIP ID。
+	// Public IPv4 EIP ID of the NLB instance.
 	Ipv4EipId pulumi.StringPtrInput `pulumi:"ipv4EipId"`
-	// NLB实例私网IPv4地址的健康状态。Healthy：健康。Unhealthy：异常。
+	// Health status of the NLB instance's private IPv4 address. Healthy: healthy. Unhealthy: abnormal.
 	Ipv4HcStatus pulumi.StringPtrInput `pulumi:"ipv4HcStatus"`
-	// NLB实例的私网IPv4 LIP地址。
+	// Private IPv4 LIP address of the NLB instance.
 	Ipv4LocalAddresses pulumi.StringArrayInput `pulumi:"ipv4LocalAddresses"`
-	// NLB实例的私网IPv6 VIP地址。
+	// Private IPv6 VIP address of the NLB instance.
 	Ipv6Address pulumi.StringPtrInput `pulumi:"ipv6Address"`
-	// NLB实例关联的IPv6公网带宽的ID。
+	// ID of the IPv6 public bandwidth associated with the NLB instance.
 	Ipv6EipId pulumi.StringPtrInput `pulumi:"ipv6EipId"`
-	// NLB实例私网IPv6地址的健康状态。Healthy：健康。Unhealthy：异常。
+	// Health status of the NLB instance's private IPv6 address. Healthy: healthy. Unhealthy: abnormal.
 	Ipv6HcStatus pulumi.StringPtrInput `pulumi:"ipv6HcStatus"`
-	// NLB实例的私网IPv6 LIP地址。
+	// Private IPv6 LIP address of the NLB instance.
 	Ipv6LocalAddresses pulumi.StringArrayInput `pulumi:"ipv6LocalAddresses"`
-	// NLB实例所属的子网ID。
+	// Subnet ID to which the NLB instance belongs.
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
-	// NLB实例所属的可用区ID。
+	// Availability zone ID to which the NLB instance belongs.
 	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
 }
 
@@ -3391,62 +3391,62 @@ func (o NlbZoneMappingOutput) ToNlbZoneMappingOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 网卡ID。
+// Network interface card ID.
 func (o NlbZoneMappingOutput) EniId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbZoneMapping) *string { return v.EniId }).(pulumi.StringPtrOutput)
 }
 
-// NLB实例的私网IPv4 VIP地址。该参数不传入，则系统自动从子网中分配一个可用的IPv4地址。
+// Private IPv4 VIP address of the NLB instance. If this parameter is not provided, the system automatically assigns an available IPv4 address from the subnet.
 func (o NlbZoneMappingOutput) Ipv4Address() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbZoneMapping) *string { return v.Ipv4Address }).(pulumi.StringPtrOutput)
 }
 
-// NLB实例的公网IPv4 EIP地址。
+// Public IPv4 EIP address of the NLB instance.
 func (o NlbZoneMappingOutput) Ipv4EipAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbZoneMapping) *string { return v.Ipv4EipAddress }).(pulumi.StringPtrOutput)
 }
 
-// NLB实例的公网IPv4 EIP ID。
+// Public IPv4 EIP ID of the NLB instance.
 func (o NlbZoneMappingOutput) Ipv4EipId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbZoneMapping) *string { return v.Ipv4EipId }).(pulumi.StringPtrOutput)
 }
 
-// NLB实例私网IPv4地址的健康状态。Healthy：健康。Unhealthy：异常。
+// Health status of the NLB instance's private IPv4 address. Healthy: healthy. Unhealthy: abnormal.
 func (o NlbZoneMappingOutput) Ipv4HcStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbZoneMapping) *string { return v.Ipv4HcStatus }).(pulumi.StringPtrOutput)
 }
 
-// NLB实例的私网IPv4 LIP地址。
+// Private IPv4 LIP address of the NLB instance.
 func (o NlbZoneMappingOutput) Ipv4LocalAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NlbZoneMapping) []string { return v.Ipv4LocalAddresses }).(pulumi.StringArrayOutput)
 }
 
-// NLB实例的私网IPv6 VIP地址。
+// Private IPv6 VIP address of the NLB instance.
 func (o NlbZoneMappingOutput) Ipv6Address() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbZoneMapping) *string { return v.Ipv6Address }).(pulumi.StringPtrOutput)
 }
 
-// NLB实例关联的IPv6公网带宽的ID。
+// ID of the IPv6 public bandwidth associated with the NLB instance.
 func (o NlbZoneMappingOutput) Ipv6EipId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbZoneMapping) *string { return v.Ipv6EipId }).(pulumi.StringPtrOutput)
 }
 
-// NLB实例私网IPv6地址的健康状态。Healthy：健康。Unhealthy：异常。
+// Health status of the NLB instance's private IPv6 address. Healthy: healthy. Unhealthy: abnormal.
 func (o NlbZoneMappingOutput) Ipv6HcStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbZoneMapping) *string { return v.Ipv6HcStatus }).(pulumi.StringPtrOutput)
 }
 
-// NLB实例的私网IPv6 LIP地址。
+// Private IPv6 LIP address of the NLB instance.
 func (o NlbZoneMappingOutput) Ipv6LocalAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NlbZoneMapping) []string { return v.Ipv6LocalAddresses }).(pulumi.StringArrayOutput)
 }
 
-// NLB实例所属的子网ID。
+// Subnet ID to which the NLB instance belongs.
 func (o NlbZoneMappingOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbZoneMapping) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
-// NLB实例所属的可用区ID。
+// Availability zone ID to which the NLB instance belongs.
 func (o NlbZoneMappingOutput) ZoneId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NlbZoneMapping) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
 }
@@ -3472,15 +3472,15 @@ func (o NlbZoneMappingArrayOutput) Index(i pulumi.IntInput) NlbZoneMappingOutput
 }
 
 type RuleRedirectConfig struct {
-	// 转发规则重定向的域名，当前仅支持精确域名。规范如下：需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含字母、数字、‘.’、‘-‘。长度限制为1 ～ 128个字符。符合域名规范的精确域名，例如：www.test.com。
+	// The domain name for forwarding rule redirection currently supports only exact domain names. Specifications: Must contain at least one '.', and cannot start or end with '.'. Only letters, numbers, '.', and '-' are allowed. Length must be between 1 and 128 characters. Example of a valid exact domain name: www.test.com.
 	Host *string `pulumi:"host"`
-	// 转发规则重定向的路径。规范如下：必须以正斜线“/”开头，字符‘/’不能连续出现。仅允许包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’等字符。长度限制为1 ～ 128个字符。
+	// Path for forwarding rule redirection. Specifications: Must start with a forward slash '/'. Consecutive '/' characters are not allowed. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=', and other specified characters are allowed. Length must be between 1 and 128 characters.
 	Path *string `pulumi:"path"`
-	// 转发规则重定向的端口，取值范围为 1~65535。
+	// Port for forwarding rule redirection. Value range: 1~65535.
 	Port *string `pulumi:"port"`
-	// 转发规则重定向的协议。取值如下：HTTP。HTTPS（默认值）。
+	// Protocol for forwarding rule redirection. Options: HTTP. HTTPS (default).
 	Protocol *string `pulumi:"protocol"`
-	// 转发规则重定向的状态码。取值如下：301（默认）：表示请求的资源已被永久移动到新的 URL，客户端应该使用新的 URL 进行后续请求。302：表示请求的资源被临时移动到新的 URL，但未来可能会再次更改，客户端应该使用新的 URL 进行后续请求。307：与 302 类似，但在重定向时要求客户端保持请求方法不变。例如，原来是 GET 请求，则重定向后仍然是 GET 请求。308：与 301 类似，但在重定向时要求客户端保持请求方法不变。
+	// Status code for forwarding rule redirection. Options: 301 (default): Indicates the requested resource has been permanently moved to a new URL. The client should use the new URL for subsequent requests. 302: Indicates the requested resource has been temporarily moved to a new URL and may change again in the future. The client should use the new URL for subsequent requests. 307: Similar to 302, but requires the client to keep the request method unchanged during redirection. For example, if the original request is GET, the redirected request remains GET. 308: Similar to 301, but requires the client to keep the request method unchanged during redirection.
 	StatusCode *string `pulumi:"statusCode"`
 }
 
@@ -3496,15 +3496,15 @@ type RuleRedirectConfigInput interface {
 }
 
 type RuleRedirectConfigArgs struct {
-	// 转发规则重定向的域名，当前仅支持精确域名。规范如下：需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含字母、数字、‘.’、‘-‘。长度限制为1 ～ 128个字符。符合域名规范的精确域名，例如：www.test.com。
+	// The domain name for forwarding rule redirection currently supports only exact domain names. Specifications: Must contain at least one '.', and cannot start or end with '.'. Only letters, numbers, '.', and '-' are allowed. Length must be between 1 and 128 characters. Example of a valid exact domain name: www.test.com.
 	Host pulumi.StringPtrInput `pulumi:"host"`
-	// 转发规则重定向的路径。规范如下：必须以正斜线“/”开头，字符‘/’不能连续出现。仅允许包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’等字符。长度限制为1 ～ 128个字符。
+	// Path for forwarding rule redirection. Specifications: Must start with a forward slash '/'. Consecutive '/' characters are not allowed. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=', and other specified characters are allowed. Length must be between 1 and 128 characters.
 	Path pulumi.StringPtrInput `pulumi:"path"`
-	// 转发规则重定向的端口，取值范围为 1~65535。
+	// Port for forwarding rule redirection. Value range: 1~65535.
 	Port pulumi.StringPtrInput `pulumi:"port"`
-	// 转发规则重定向的协议。取值如下：HTTP。HTTPS（默认值）。
+	// Protocol for forwarding rule redirection. Options: HTTP. HTTPS (default).
 	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
-	// 转发规则重定向的状态码。取值如下：301（默认）：表示请求的资源已被永久移动到新的 URL，客户端应该使用新的 URL 进行后续请求。302：表示请求的资源被临时移动到新的 URL，但未来可能会再次更改，客户端应该使用新的 URL 进行后续请求。307：与 302 类似，但在重定向时要求客户端保持请求方法不变。例如，原来是 GET 请求，则重定向后仍然是 GET 请求。308：与 301 类似，但在重定向时要求客户端保持请求方法不变。
+	// Status code for forwarding rule redirection. Options: 301 (default): Indicates the requested resource has been permanently moved to a new URL. The client should use the new URL for subsequent requests. 302: Indicates the requested resource has been temporarily moved to a new URL and may change again in the future. The client should use the new URL for subsequent requests. 307: Similar to 302, but requires the client to keep the request method unchanged during redirection. For example, if the original request is GET, the redirected request remains GET. 308: Similar to 301, but requires the client to keep the request method unchanged during redirection.
 	StatusCode pulumi.StringPtrInput `pulumi:"statusCode"`
 }
 
@@ -3585,27 +3585,27 @@ func (o RuleRedirectConfigOutput) ToRuleRedirectConfigPtrOutputWithContext(ctx c
 	}).(RuleRedirectConfigPtrOutput)
 }
 
-// 转发规则重定向的域名，当前仅支持精确域名。规范如下：需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含字母、数字、‘.’、‘-‘。长度限制为1 ～ 128个字符。符合域名规范的精确域名，例如：www.test.com。
+// The domain name for forwarding rule redirection currently supports only exact domain names. Specifications: Must contain at least one '.', and cannot start or end with '.'. Only letters, numbers, '.', and '-' are allowed. Length must be between 1 and 128 characters. Example of a valid exact domain name: www.test.com.
 func (o RuleRedirectConfigOutput) Host() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleRedirectConfig) *string { return v.Host }).(pulumi.StringPtrOutput)
 }
 
-// 转发规则重定向的路径。规范如下：必须以正斜线“/”开头，字符‘/’不能连续出现。仅允许包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’等字符。长度限制为1 ～ 128个字符。
+// Path for forwarding rule redirection. Specifications: Must start with a forward slash '/'. Consecutive '/' characters are not allowed. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=', and other specified characters are allowed. Length must be between 1 and 128 characters.
 func (o RuleRedirectConfigOutput) Path() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleRedirectConfig) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
 
-// 转发规则重定向的端口，取值范围为 1~65535。
+// Port for forwarding rule redirection. Value range: 1~65535.
 func (o RuleRedirectConfigOutput) Port() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleRedirectConfig) *string { return v.Port }).(pulumi.StringPtrOutput)
 }
 
-// 转发规则重定向的协议。取值如下：HTTP。HTTPS（默认值）。
+// Protocol for forwarding rule redirection. Options: HTTP. HTTPS (default).
 func (o RuleRedirectConfigOutput) Protocol() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleRedirectConfig) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
-// 转发规则重定向的状态码。取值如下：301（默认）：表示请求的资源已被永久移动到新的 URL，客户端应该使用新的 URL 进行后续请求。302：表示请求的资源被临时移动到新的 URL，但未来可能会再次更改，客户端应该使用新的 URL 进行后续请求。307：与 302 类似，但在重定向时要求客户端保持请求方法不变。例如，原来是 GET 请求，则重定向后仍然是 GET 请求。308：与 301 类似，但在重定向时要求客户端保持请求方法不变。
+// Status code for forwarding rule redirection. Options: 301 (default): Indicates the requested resource has been permanently moved to a new URL. The client should use the new URL for subsequent requests. 302: Indicates the requested resource has been temporarily moved to a new URL and may change again in the future. The client should use the new URL for subsequent requests. 307: Similar to 302, but requires the client to keep the request method unchanged during redirection. For example, if the original request is GET, the redirected request remains GET. 308: Similar to 301, but requires the client to keep the request method unchanged during redirection.
 func (o RuleRedirectConfigOutput) StatusCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleRedirectConfig) *string { return v.StatusCode }).(pulumi.StringPtrOutput)
 }
@@ -3634,7 +3634,7 @@ func (o RuleRedirectConfigPtrOutput) Elem() RuleRedirectConfigOutput {
 	}).(RuleRedirectConfigOutput)
 }
 
-// 转发规则重定向的域名，当前仅支持精确域名。规范如下：需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含字母、数字、‘.’、‘-‘。长度限制为1 ～ 128个字符。符合域名规范的精确域名，例如：www.test.com。
+// The domain name for forwarding rule redirection currently supports only exact domain names. Specifications: Must contain at least one '.', and cannot start or end with '.'. Only letters, numbers, '.', and '-' are allowed. Length must be between 1 and 128 characters. Example of a valid exact domain name: www.test.com.
 func (o RuleRedirectConfigPtrOutput) Host() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RuleRedirectConfig) *string {
 		if v == nil {
@@ -3644,7 +3644,7 @@ func (o RuleRedirectConfigPtrOutput) Host() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 转发规则重定向的路径。规范如下：必须以正斜线“/”开头，字符‘/’不能连续出现。仅允许包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’等字符。长度限制为1 ～ 128个字符。
+// Path for forwarding rule redirection. Specifications: Must start with a forward slash '/'. Consecutive '/' characters are not allowed. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=', and other specified characters are allowed. Length must be between 1 and 128 characters.
 func (o RuleRedirectConfigPtrOutput) Path() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RuleRedirectConfig) *string {
 		if v == nil {
@@ -3654,7 +3654,7 @@ func (o RuleRedirectConfigPtrOutput) Path() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 转发规则重定向的端口，取值范围为 1~65535。
+// Port for forwarding rule redirection. Value range: 1~65535.
 func (o RuleRedirectConfigPtrOutput) Port() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RuleRedirectConfig) *string {
 		if v == nil {
@@ -3664,7 +3664,7 @@ func (o RuleRedirectConfigPtrOutput) Port() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 转发规则重定向的协议。取值如下：HTTP。HTTPS（默认值）。
+// Protocol for forwarding rule redirection. Options: HTTP. HTTPS (default).
 func (o RuleRedirectConfigPtrOutput) Protocol() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RuleRedirectConfig) *string {
 		if v == nil {
@@ -3674,7 +3674,7 @@ func (o RuleRedirectConfigPtrOutput) Protocol() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 转发规则重定向的状态码。取值如下：301（默认）：表示请求的资源已被永久移动到新的 URL，客户端应该使用新的 URL 进行后续请求。302：表示请求的资源被临时移动到新的 URL，但未来可能会再次更改，客户端应该使用新的 URL 进行后续请求。307：与 302 类似，但在重定向时要求客户端保持请求方法不变。例如，原来是 GET 请求，则重定向后仍然是 GET 请求。308：与 301 类似，但在重定向时要求客户端保持请求方法不变。
+// Status code for forwarding rule redirection. Options: 301 (default): Indicates the requested resource has been permanently moved to a new URL. The client should use the new URL for subsequent requests. 302: Indicates the requested resource has been temporarily moved to a new URL and may change again in the future. The client should use the new URL for subsequent requests. 307: Similar to 302, but requires the client to keep the request method unchanged during redirection. For example, if the original request is GET, the redirected request remains GET. 308: Similar to 301, but requires the client to keep the request method unchanged during redirection.
 func (o RuleRedirectConfigPtrOutput) StatusCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RuleRedirectConfig) *string {
 		if v == nil {
@@ -3685,9 +3685,9 @@ func (o RuleRedirectConfigPtrOutput) StatusCode() pulumi.StringPtrOutput {
 }
 
 type RuleTag struct {
-	// 标签键。
+	// Tag key.
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value *string `pulumi:"value"`
 }
 
@@ -3703,9 +3703,9 @@ type RuleTagInput interface {
 }
 
 type RuleTagArgs struct {
-	// 标签键。
+	// Tag key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -3760,12 +3760,12 @@ func (o RuleTagOutput) ToRuleTagOutputWithContext(ctx context.Context) RuleTagOu
 	return o
 }
 
-// 标签键。
+// Tag key.
 func (o RuleTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value.
 func (o RuleTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -3791,7 +3791,7 @@ func (o RuleTagArrayOutput) Index(i pulumi.IntInput) RuleTagOutput {
 }
 
 type ServerGroupListener struct {
-	// 监听器的ID。
+	// Listener ID.
 	ListenerId *string `pulumi:"listenerId"`
 }
 
@@ -3807,7 +3807,7 @@ type ServerGroupListenerInput interface {
 }
 
 type ServerGroupListenerArgs struct {
-	// 监听器的ID。
+	// Listener ID.
 	ListenerId pulumi.StringPtrInput `pulumi:"listenerId"`
 }
 
@@ -3862,7 +3862,7 @@ func (o ServerGroupListenerOutput) ToServerGroupListenerOutputWithContext(ctx co
 	return o
 }
 
-// 监听器的ID。
+// Listener ID.
 func (o ServerGroupListenerOutput) ListenerId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ServerGroupListener) *string { return v.ListenerId }).(pulumi.StringPtrOutput)
 }
@@ -3888,17 +3888,17 @@ func (o ServerGroupListenerArrayOutput) Index(i pulumi.IntInput) ServerGroupList
 }
 
 type ServerGroupServer struct {
-	// 后端服务器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255字符。不填则默认为空字符串。
+	// Backend server description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
 	Description *string `pulumi:"description"`
-	// 后端服务器。取值情况如下：当 Type 取ecs时，传云服务器实例的ID。当Type 取eni时，传已挂载至云服务器的辅助网卡的ID。当 Type 取ip时，传IP地址作为后端服务器。
+	// Backend server. Value options: When Type is ecs, provide the cloud server instance ID. When Type is eni, provide the ID of the auxiliary network card attached to the cloud server. When Type is ip, provide the IP address as the backend server.
 	InstanceId *string `pulumi:"instanceId"`
-	// 后端服务器的私网IP地址。多个后端服务器IP之间使用“&”分隔。
+	// Private IP address of the backend server. Use '&' to separate multiple backend server IP addresses.
 	Ip *string `pulumi:"ip"`
-	// 后端服务器接收请求的端口号。取值范围为1～65535。参数AnyPortEnabled为“off”，且需要同时添加后端服务器时，该参数必须传入；参数AnyPortEnabled为“on”时，该参数默认为0。
+	// Port number on which the backend server receives requests. Value range: 1–65535. If the AnyPortEnabled parameter is 'off' and you need to add backend servers at the same time, this parameter must be provided. If AnyPortEnabled is 'on', this parameter defaults to 0.
 	Port *int `pulumi:"port"`
-	// 后端服务器实例类型。当参数Type取instance时，取值如下：ecs：云服务器实例。eni：网卡。当参数Type取ip时，本参数取值为ip。
+	// Backend server instance type. When the Type parameter is instance, value options are: ecs: cloud server instance. eni: auxiliary network card. When the Type parameter is ip, this parameter value is ip.
 	Type *string `pulumi:"type"`
-	// 后端服务器的权重，取值范围为0 ～ 100。不填则默认为0。0表示不会将请求转发给该后端服务器。
+	// Backend server weight, range: 0–100. If not specified, defaults to 0. 0 means requests will not be forwarded to this backend server.
 	Weight *int `pulumi:"weight"`
 }
 
@@ -3914,17 +3914,17 @@ type ServerGroupServerInput interface {
 }
 
 type ServerGroupServerArgs struct {
-	// 后端服务器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255字符。不填则默认为空字符串。
+	// Backend server description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 后端服务器。取值情况如下：当 Type 取ecs时，传云服务器实例的ID。当Type 取eni时，传已挂载至云服务器的辅助网卡的ID。当 Type 取ip时，传IP地址作为后端服务器。
+	// Backend server. Value options: When Type is ecs, provide the cloud server instance ID. When Type is eni, provide the ID of the auxiliary network card attached to the cloud server. When Type is ip, provide the IP address as the backend server.
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
-	// 后端服务器的私网IP地址。多个后端服务器IP之间使用“&”分隔。
+	// Private IP address of the backend server. Use '&' to separate multiple backend server IP addresses.
 	Ip pulumi.StringPtrInput `pulumi:"ip"`
-	// 后端服务器接收请求的端口号。取值范围为1～65535。参数AnyPortEnabled为“off”，且需要同时添加后端服务器时，该参数必须传入；参数AnyPortEnabled为“on”时，该参数默认为0。
+	// Port number on which the backend server receives requests. Value range: 1–65535. If the AnyPortEnabled parameter is 'off' and you need to add backend servers at the same time, this parameter must be provided. If AnyPortEnabled is 'on', this parameter defaults to 0.
 	Port pulumi.IntPtrInput `pulumi:"port"`
-	// 后端服务器实例类型。当参数Type取instance时，取值如下：ecs：云服务器实例。eni：网卡。当参数Type取ip时，本参数取值为ip。
+	// Backend server instance type. When the Type parameter is instance, value options are: ecs: cloud server instance. eni: auxiliary network card. When the Type parameter is ip, this parameter value is ip.
 	Type pulumi.StringPtrInput `pulumi:"type"`
-	// 后端服务器的权重，取值范围为0 ～ 100。不填则默认为0。0表示不会将请求转发给该后端服务器。
+	// Backend server weight, range: 0–100. If not specified, defaults to 0. 0 means requests will not be forwarded to this backend server.
 	Weight pulumi.IntPtrInput `pulumi:"weight"`
 }
 
@@ -3979,32 +3979,32 @@ func (o ServerGroupServerOutput) ToServerGroupServerOutputWithContext(ctx contex
 	return o
 }
 
-// 后端服务器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255字符。不填则默认为空字符串。
+// Backend server description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
 func (o ServerGroupServerOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ServerGroupServer) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 后端服务器。取值情况如下：当 Type 取ecs时，传云服务器实例的ID。当Type 取eni时，传已挂载至云服务器的辅助网卡的ID。当 Type 取ip时，传IP地址作为后端服务器。
+// Backend server. Value options: When Type is ecs, provide the cloud server instance ID. When Type is eni, provide the ID of the auxiliary network card attached to the cloud server. When Type is ip, provide the IP address as the backend server.
 func (o ServerGroupServerOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ServerGroupServer) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
 
-// 后端服务器的私网IP地址。多个后端服务器IP之间使用“&”分隔。
+// Private IP address of the backend server. Use '&' to separate multiple backend server IP addresses.
 func (o ServerGroupServerOutput) Ip() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ServerGroupServer) *string { return v.Ip }).(pulumi.StringPtrOutput)
 }
 
-// 后端服务器接收请求的端口号。取值范围为1～65535。参数AnyPortEnabled为“off”，且需要同时添加后端服务器时，该参数必须传入；参数AnyPortEnabled为“on”时，该参数默认为0。
+// Port number on which the backend server receives requests. Value range: 1–65535. If the AnyPortEnabled parameter is 'off' and you need to add backend servers at the same time, this parameter must be provided. If AnyPortEnabled is 'on', this parameter defaults to 0.
 func (o ServerGroupServerOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ServerGroupServer) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
-// 后端服务器实例类型。当参数Type取instance时，取值如下：ecs：云服务器实例。eni：网卡。当参数Type取ip时，本参数取值为ip。
+// Backend server instance type. When the Type parameter is instance, value options are: ecs: cloud server instance. eni: auxiliary network card. When the Type parameter is ip, this parameter value is ip.
 func (o ServerGroupServerOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ServerGroupServer) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
-// 后端服务器的权重，取值范围为0 ～ 100。不填则默认为0。0表示不会将请求转发给该后端服务器。
+// Backend server weight, range: 0–100. If not specified, defaults to 0. 0 means requests will not be forwarded to this backend server.
 func (o ServerGroupServerOutput) Weight() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ServerGroupServer) *int { return v.Weight }).(pulumi.IntPtrOutput)
 }
@@ -4030,9 +4030,9 @@ func (o ServerGroupServerArrayOutput) Index(i pulumi.IntInput) ServerGroupServer
 }
 
 type ServerGroupTag struct {
-	// 绑定的标签键信息。
+	// Information about bound tag keys.
 	Key *string `pulumi:"key"`
-	// 绑定的标签值信息。
+	// Bound tag value information.
 	Value *string `pulumi:"value"`
 }
 
@@ -4048,9 +4048,9 @@ type ServerGroupTagInput interface {
 }
 
 type ServerGroupTagArgs struct {
-	// 绑定的标签键信息。
+	// Information about bound tag keys.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 绑定的标签值信息。
+	// Bound tag value information.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -4105,12 +4105,12 @@ func (o ServerGroupTagOutput) ToServerGroupTagOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 绑定的标签键信息。
+// Information about bound tag keys.
 func (o ServerGroupTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ServerGroupTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 绑定的标签值信息。
+// Bound tag value information.
 func (o ServerGroupTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ServerGroupTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -4136,9 +4136,9 @@ func (o ServerGroupTagArrayOutput) Index(i pulumi.IntInput) ServerGroupTagOutput
 }
 
 type GetAclAclEntry struct {
-	// IP条目的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+	// Description of the IP entry. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters.
 	Description string `pulumi:"description"`
-	// IP条目的地址段，只支持CIDR地址。支持同时传入IPv4和IPv6条目。
+	// Address range of the IP entry. Only CIDR addresses are supported. Both IPv4 and IPv6 entries can be provided.
 	Entry string `pulumi:"entry"`
 }
 
@@ -4154,9 +4154,9 @@ type GetAclAclEntryInput interface {
 }
 
 type GetAclAclEntryArgs struct {
-	// IP条目的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+	// Description of the IP entry. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters.
 	Description pulumi.StringInput `pulumi:"description"`
-	// IP条目的地址段，只支持CIDR地址。支持同时传入IPv4和IPv6条目。
+	// Address range of the IP entry. Only CIDR addresses are supported. Both IPv4 and IPv6 entries can be provided.
 	Entry pulumi.StringInput `pulumi:"entry"`
 }
 
@@ -4211,12 +4211,12 @@ func (o GetAclAclEntryOutput) ToGetAclAclEntryOutputWithContext(ctx context.Cont
 	return o
 }
 
-// IP条目的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+// Description of the IP entry. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters.
 func (o GetAclAclEntryOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAclAclEntry) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// IP条目的地址段，只支持CIDR地址。支持同时传入IPv4和IPv6条目。
+// Address range of the IP entry. Only CIDR addresses are supported. Both IPv4 and IPv6 entries can be provided.
 func (o GetAclAclEntryOutput) Entry() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAclAclEntry) string { return v.Entry }).(pulumi.StringOutput)
 }
@@ -4242,15 +4242,15 @@ func (o GetAclAclEntryArrayOutput) Index(i pulumi.IntInput) GetAclAclEntryOutput
 }
 
 type GetAclListener struct {
-	// 监听器对本访问控制策略组的控制方式。white：白名单。监听器监听CLB的流量时，CLB仅转发其白名单关联访问控制策略组中IP地址的请求。black：黑名单。监听器监听CLB的流量时，对于黑名单关联访问控制策略组中IP地址的请求，CLB拒绝转发。
+	// Listener control mode for this access control policy group. white: allowlist. When the listener monitors CLB traffic, CLB only forwards requests from IP addresses associated with the allowlist access control policy group. black: denylist. When the listener monitors CLB traffic, CLB rejects requests from IP addresses associated with the denylist access control policy group.
 	AclType string `pulumi:"aclType"`
-	// 监听器的ID。
+	// Listener ID
 	ListenerId string `pulumi:"listenerId"`
-	// 监听器的名称。
+	// Listener name
 	ListenerName string `pulumi:"listenerName"`
-	// 监听器的端口。
+	// Listener port
 	Port int `pulumi:"port"`
-	// 监听器的协议。包括 TCP、UDP、HTTP、HTTPS。
+	// Listener protocol. Includes TCP, UDP, HTTP, HTTPS.
 	Protocol string `pulumi:"protocol"`
 }
 
@@ -4266,15 +4266,15 @@ type GetAclListenerInput interface {
 }
 
 type GetAclListenerArgs struct {
-	// 监听器对本访问控制策略组的控制方式。white：白名单。监听器监听CLB的流量时，CLB仅转发其白名单关联访问控制策略组中IP地址的请求。black：黑名单。监听器监听CLB的流量时，对于黑名单关联访问控制策略组中IP地址的请求，CLB拒绝转发。
+	// Listener control mode for this access control policy group. white: allowlist. When the listener monitors CLB traffic, CLB only forwards requests from IP addresses associated with the allowlist access control policy group. black: denylist. When the listener monitors CLB traffic, CLB rejects requests from IP addresses associated with the denylist access control policy group.
 	AclType pulumi.StringInput `pulumi:"aclType"`
-	// 监听器的ID。
+	// Listener ID
 	ListenerId pulumi.StringInput `pulumi:"listenerId"`
-	// 监听器的名称。
+	// Listener name
 	ListenerName pulumi.StringInput `pulumi:"listenerName"`
-	// 监听器的端口。
+	// Listener port
 	Port pulumi.IntInput `pulumi:"port"`
-	// 监听器的协议。包括 TCP、UDP、HTTP、HTTPS。
+	// Listener protocol. Includes TCP, UDP, HTTP, HTTPS.
 	Protocol pulumi.StringInput `pulumi:"protocol"`
 }
 
@@ -4329,27 +4329,27 @@ func (o GetAclListenerOutput) ToGetAclListenerOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 监听器对本访问控制策略组的控制方式。white：白名单。监听器监听CLB的流量时，CLB仅转发其白名单关联访问控制策略组中IP地址的请求。black：黑名单。监听器监听CLB的流量时，对于黑名单关联访问控制策略组中IP地址的请求，CLB拒绝转发。
+// Listener control mode for this access control policy group. white: allowlist. When the listener monitors CLB traffic, CLB only forwards requests from IP addresses associated with the allowlist access control policy group. black: denylist. When the listener monitors CLB traffic, CLB rejects requests from IP addresses associated with the denylist access control policy group.
 func (o GetAclListenerOutput) AclType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAclListener) string { return v.AclType }).(pulumi.StringOutput)
 }
 
-// 监听器的ID。
+// Listener ID
 func (o GetAclListenerOutput) ListenerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAclListener) string { return v.ListenerId }).(pulumi.StringOutput)
 }
 
-// 监听器的名称。
+// Listener name
 func (o GetAclListenerOutput) ListenerName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAclListener) string { return v.ListenerName }).(pulumi.StringOutput)
 }
 
-// 监听器的端口。
+// Listener port
 func (o GetAclListenerOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAclListener) int { return v.Port }).(pulumi.IntOutput)
 }
 
-// 监听器的协议。包括 TCP、UDP、HTTP、HTTPS。
+// Listener protocol. Includes TCP, UDP, HTTP, HTTPS.
 func (o GetAclListenerOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAclListener) string { return v.Protocol }).(pulumi.StringOutput)
 }
@@ -4375,9 +4375,9 @@ func (o GetAclListenerArrayOutput) Index(i pulumi.IntInput) GetAclListenerOutput
 }
 
 type GetAclTag struct {
-	// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	// User tag key. Length must be 1–128 characters. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system automatically removes it.
 	Key string `pulumi:"key"`
-	// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	// User tag value. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system automatically removes it.
 	Value string `pulumi:"value"`
 }
 
@@ -4393,9 +4393,9 @@ type GetAclTagInput interface {
 }
 
 type GetAclTagArgs struct {
-	// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	// User tag key. Length must be 1–128 characters. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system automatically removes it.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	// User tag value. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system automatically removes it.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -4450,12 +4450,12 @@ func (o GetAclTagOutput) ToGetAclTagOutputWithContext(ctx context.Context) GetAc
 	return o
 }
 
-// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+// User tag key. Length must be 1–128 characters. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system automatically removes it.
 func (o GetAclTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAclTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+// User tag value. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system automatically removes it.
 func (o GetAclTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAclTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -4481,9 +4481,9 @@ func (o GetAclTagArrayOutput) Index(i pulumi.IntInput) GetAclTagOutput {
 }
 
 type GetCertificateTag struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key string `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value string `pulumi:"value"`
 }
 
@@ -4499,9 +4499,9 @@ type GetCertificateTagInput interface {
 }
 
 type GetCertificateTagArgs struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -4556,12 +4556,12 @@ func (o GetCertificateTagOutput) ToGetCertificateTagOutputWithContext(ctx contex
 	return o
 }
 
-// 用户标签的标签键。
+// User tag key.
 func (o GetCertificateTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificateTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。
+// User tag value.
 func (o GetCertificateTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificateTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -4587,15 +4587,15 @@ func (o GetCertificateTagArrayOutput) Index(i pulumi.IntInput) GetCertificateTag
 }
 
 type GetClbAccessLog struct {
-	// 存储七层访问日志的对象存储桶的名称。
+	// Name of the object storage bucket for storing Layer 7 access logs
 	BucketName string `pulumi:"bucketName"`
-	// 日志投递类型。取值如下：tos（默认值）: 将日志投递至对象存储服务TOS。tls：将日志投递至日志服务TLS。
+	// Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
 	DeliveryType string `pulumi:"deliveryType"`
-	// 是否开启访问日志（七层）投递至对象存储TOS的功能。
+	// Enable access log (Layer 7) delivery to object storage TOS
 	Enabled bool `pulumi:"enabled"`
-	// 日志项目。
+	// Log project
 	TlsProjectId string `pulumi:"tlsProjectId"`
-	// 日志主题。
+	// Log topic
 	TlsTopicId string `pulumi:"tlsTopicId"`
 }
 
@@ -4611,15 +4611,15 @@ type GetClbAccessLogInput interface {
 }
 
 type GetClbAccessLogArgs struct {
-	// 存储七层访问日志的对象存储桶的名称。
+	// Name of the object storage bucket for storing Layer 7 access logs
 	BucketName pulumi.StringInput `pulumi:"bucketName"`
-	// 日志投递类型。取值如下：tos（默认值）: 将日志投递至对象存储服务TOS。tls：将日志投递至日志服务TLS。
+	// Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
 	DeliveryType pulumi.StringInput `pulumi:"deliveryType"`
-	// 是否开启访问日志（七层）投递至对象存储TOS的功能。
+	// Enable access log (Layer 7) delivery to object storage TOS
 	Enabled pulumi.BoolInput `pulumi:"enabled"`
-	// 日志项目。
+	// Log project
 	TlsProjectId pulumi.StringInput `pulumi:"tlsProjectId"`
-	// 日志主题。
+	// Log topic
 	TlsTopicId pulumi.StringInput `pulumi:"tlsTopicId"`
 }
 
@@ -4649,43 +4649,43 @@ func (o GetClbAccessLogOutput) ToGetClbAccessLogOutputWithContext(ctx context.Co
 	return o
 }
 
-// 存储七层访问日志的对象存储桶的名称。
+// Name of the object storage bucket for storing Layer 7 access logs
 func (o GetClbAccessLogOutput) BucketName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClbAccessLog) string { return v.BucketName }).(pulumi.StringOutput)
 }
 
-// 日志投递类型。取值如下：tos（默认值）: 将日志投递至对象存储服务TOS。tls：将日志投递至日志服务TLS。
+// Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
 func (o GetClbAccessLogOutput) DeliveryType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClbAccessLog) string { return v.DeliveryType }).(pulumi.StringOutput)
 }
 
-// 是否开启访问日志（七层）投递至对象存储TOS的功能。
+// Enable access log (Layer 7) delivery to object storage TOS
 func (o GetClbAccessLogOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetClbAccessLog) bool { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// 日志项目。
+// Log project
 func (o GetClbAccessLogOutput) TlsProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClbAccessLog) string { return v.TlsProjectId }).(pulumi.StringOutput)
 }
 
-// 日志主题。
+// Log topic
 func (o GetClbAccessLogOutput) TlsTopicId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClbAccessLog) string { return v.TlsTopicId }).(pulumi.StringOutput)
 }
 
 type GetClbEip struct {
-	// 带宽峰值。
+	// Peak bandwidth
 	Bandwidth float64 `pulumi:"bandwidth"`
-	// 共享带宽包ID。
+	// Shared bandwidth package ID
 	BandwidthPackageId string `pulumi:"bandwidthPackageId"`
-	// 计费方式。
+	// Billing method
 	EipBillingType float64 `pulumi:"eipBillingType"`
-	// 线路类型。
+	// Line type
 	Isp string `pulumi:"isp"`
-	// 防护包ID。
+	// Protection package ID
 	SecurityProtectionInstanceId float64 `pulumi:"securityProtectionInstanceId"`
-	// 安全防护类型。
+	// Security protection type
 	SecurityProtectionTypes []string `pulumi:"securityProtectionTypes"`
 }
 
@@ -4701,17 +4701,17 @@ type GetClbEipInput interface {
 }
 
 type GetClbEipArgs struct {
-	// 带宽峰值。
+	// Peak bandwidth
 	Bandwidth pulumi.Float64Input `pulumi:"bandwidth"`
-	// 共享带宽包ID。
+	// Shared bandwidth package ID
 	BandwidthPackageId pulumi.StringInput `pulumi:"bandwidthPackageId"`
-	// 计费方式。
+	// Billing method
 	EipBillingType pulumi.Float64Input `pulumi:"eipBillingType"`
-	// 线路类型。
+	// Line type
 	Isp pulumi.StringInput `pulumi:"isp"`
-	// 防护包ID。
+	// Protection package ID
 	SecurityProtectionInstanceId pulumi.Float64Input `pulumi:"securityProtectionInstanceId"`
-	// 安全防护类型。
+	// Security protection type
 	SecurityProtectionTypes pulumi.StringArrayInput `pulumi:"securityProtectionTypes"`
 }
 
@@ -4741,40 +4741,40 @@ func (o GetClbEipOutput) ToGetClbEipOutputWithContext(ctx context.Context) GetCl
 	return o
 }
 
-// 带宽峰值。
+// Peak bandwidth
 func (o GetClbEipOutput) Bandwidth() pulumi.Float64Output {
 	return o.ApplyT(func(v GetClbEip) float64 { return v.Bandwidth }).(pulumi.Float64Output)
 }
 
-// 共享带宽包ID。
+// Shared bandwidth package ID
 func (o GetClbEipOutput) BandwidthPackageId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClbEip) string { return v.BandwidthPackageId }).(pulumi.StringOutput)
 }
 
-// 计费方式。
+// Billing method
 func (o GetClbEipOutput) EipBillingType() pulumi.Float64Output {
 	return o.ApplyT(func(v GetClbEip) float64 { return v.EipBillingType }).(pulumi.Float64Output)
 }
 
-// 线路类型。
+// Line type
 func (o GetClbEipOutput) Isp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClbEip) string { return v.Isp }).(pulumi.StringOutput)
 }
 
-// 防护包ID。
+// Protection package ID
 func (o GetClbEipOutput) SecurityProtectionInstanceId() pulumi.Float64Output {
 	return o.ApplyT(func(v GetClbEip) float64 { return v.SecurityProtectionInstanceId }).(pulumi.Float64Output)
 }
 
-// 安全防护类型。
+// Security protection type
 func (o GetClbEipOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClbEip) []string { return v.SecurityProtectionTypes }).(pulumi.StringArrayOutput)
 }
 
 type GetClbEni struct {
-	// 负载均衡实例的私网IP地址。
+	// Private IP address of the load balancer instance
 	EniAddress string `pulumi:"eniAddress"`
-	// 负载均衡实例占用的网卡ID。
+	// Network interface ID occupied by the load balancer instance
 	EniId string `pulumi:"eniId"`
 }
 
@@ -4790,9 +4790,9 @@ type GetClbEniInput interface {
 }
 
 type GetClbEniArgs struct {
-	// 负载均衡实例的私网IP地址。
+	// Private IP address of the load balancer instance
 	EniAddress pulumi.StringInput `pulumi:"eniAddress"`
-	// 负载均衡实例占用的网卡ID。
+	// Network interface ID occupied by the load balancer instance
 	EniId pulumi.StringInput `pulumi:"eniId"`
 }
 
@@ -4822,20 +4822,20 @@ func (o GetClbEniOutput) ToGetClbEniOutputWithContext(ctx context.Context) GetCl
 	return o
 }
 
-// 负载均衡实例的私网IP地址。
+// Private IP address of the load balancer instance
 func (o GetClbEniOutput) EniAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClbEni) string { return v.EniAddress }).(pulumi.StringOutput)
 }
 
-// 负载均衡实例占用的网卡ID。
+// Network interface ID occupied by the load balancer instance
 func (o GetClbEniOutput) EniId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClbEni) string { return v.EniId }).(pulumi.StringOutput)
 }
 
 type GetClbEnis struct {
-	// 负载均衡实例的私网IP地址。
+	// Private IP address of the load balancer instance
 	EniAddress string `pulumi:"eniAddress"`
-	// 负载均衡实例占用的网卡ID。
+	// Network interface ID occupied by the load balancer instance
 	EniId string `pulumi:"eniId"`
 }
 
@@ -4851,9 +4851,9 @@ type GetClbEnisInput interface {
 }
 
 type GetClbEnisArgs struct {
-	// 负载均衡实例的私网IP地址。
+	// Private IP address of the load balancer instance
 	EniAddress pulumi.StringInput `pulumi:"eniAddress"`
-	// 负载均衡实例占用的网卡ID。
+	// Network interface ID occupied by the load balancer instance
 	EniId pulumi.StringInput `pulumi:"eniId"`
 }
 
@@ -4883,20 +4883,20 @@ func (o GetClbEnisOutput) ToGetClbEnisOutputWithContext(ctx context.Context) Get
 	return o
 }
 
-// 负载均衡实例的私网IP地址。
+// Private IP address of the load balancer instance
 func (o GetClbEnisOutput) EniAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClbEnis) string { return v.EniAddress }).(pulumi.StringOutput)
 }
 
-// 负载均衡实例占用的网卡ID。
+// Network interface ID occupied by the load balancer instance
 func (o GetClbEnisOutput) EniId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClbEnis) string { return v.EniId }).(pulumi.StringOutput)
 }
 
 type GetClbListener struct {
-	// 监听器的ID。
+	// Listener ID
 	ListenerId string `pulumi:"listenerId"`
-	// 监听器的名称。
+	// Listener name
 	ListenerName string `pulumi:"listenerName"`
 }
 
@@ -4912,9 +4912,9 @@ type GetClbListenerInput interface {
 }
 
 type GetClbListenerArgs struct {
-	// 监听器的ID。
+	// Listener ID
 	ListenerId pulumi.StringInput `pulumi:"listenerId"`
-	// 监听器的名称。
+	// Listener name
 	ListenerName pulumi.StringInput `pulumi:"listenerName"`
 }
 
@@ -4969,12 +4969,12 @@ func (o GetClbListenerOutput) ToGetClbListenerOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 监听器的ID。
+// Listener ID
 func (o GetClbListenerOutput) ListenerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClbListener) string { return v.ListenerId }).(pulumi.StringOutput)
 }
 
-// 监听器的名称。
+// Listener name
 func (o GetClbListenerOutput) ListenerName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClbListener) string { return v.ListenerName }).(pulumi.StringOutput)
 }
@@ -5000,9 +5000,9 @@ func (o GetClbListenerArrayOutput) Index(i pulumi.IntInput) GetClbListenerOutput
 }
 
 type GetClbServerGroup struct {
-	// 负载均衡实例中后端服务器组的ID。
+	// ID of the backend server group in the load balancer instance
 	ServerGroupId string `pulumi:"serverGroupId"`
-	// 负载均衡实例中后端服务器组的名称。
+	// Name of the backend server group in the load balancer instance
 	ServerGroupName string `pulumi:"serverGroupName"`
 }
 
@@ -5018,9 +5018,9 @@ type GetClbServerGroupInput interface {
 }
 
 type GetClbServerGroupArgs struct {
-	// 负载均衡实例中后端服务器组的ID。
+	// ID of the backend server group in the load balancer instance
 	ServerGroupId pulumi.StringInput `pulumi:"serverGroupId"`
-	// 负载均衡实例中后端服务器组的名称。
+	// Name of the backend server group in the load balancer instance
 	ServerGroupName pulumi.StringInput `pulumi:"serverGroupName"`
 }
 
@@ -5075,12 +5075,12 @@ func (o GetClbServerGroupOutput) ToGetClbServerGroupOutputWithContext(ctx contex
 	return o
 }
 
-// 负载均衡实例中后端服务器组的ID。
+// ID of the backend server group in the load balancer instance
 func (o GetClbServerGroupOutput) ServerGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClbServerGroup) string { return v.ServerGroupId }).(pulumi.StringOutput)
 }
 
-// 负载均衡实例中后端服务器组的名称。
+// Name of the backend server group in the load balancer instance
 func (o GetClbServerGroupOutput) ServerGroupName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClbServerGroup) string { return v.ServerGroupName }).(pulumi.StringOutput)
 }
@@ -5106,9 +5106,9 @@ func (o GetClbServerGroupArrayOutput) Index(i pulumi.IntInput) GetClbServerGroup
 }
 
 type GetClbTag struct {
-	// 标签键。
+	// Tag key
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value string `pulumi:"value"`
 }
 
@@ -5124,9 +5124,9 @@ type GetClbTagInput interface {
 }
 
 type GetClbTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -5181,12 +5181,12 @@ func (o GetClbTagOutput) ToGetClbTagOutputWithContext(ctx context.Context) GetCl
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o GetClbTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClbTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value
 func (o GetClbTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClbTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -5212,29 +5212,29 @@ func (o GetClbTagArrayOutput) Index(i pulumi.IntInput) GetClbTagOutput {
 }
 
 type GetListenerHealthCheck struct {
-	// 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。需至少包含一个点号（.），且不允许以点号（.）开头或结尾。单个字符串由母、数字、中划线（-）、点号（.）字符组成，中划线（-）不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示CLB使用各后端服务器的私网IP地址进行健康检查。
+	// Domain name for health check. Must be set to the actual address provided by the backend server. This parameter takes effect when Protocol is set to HTTP or HTTPS and HealthCheck.Enabled is on. Must contain at least one period (.), and cannot start or end with a period (.). Each string can include letters, numbers, hyphens (-), and periods (.), with hyphens (-) not allowed at the beginning or end of the string. Length limit: 1 to 128 characters. If this parameter is not provided or no value is specified, the default is empty, meaning CLB uses the private IP address of each backend server for health checks.
 	Domain string `pulumi:"domain"`
-	// 监听器是否开启健康检查功能。on（默认值）：开启。off：不开启。
+	// Whether health check is enabled for the listener. on (default): enabled. off: disabled.
 	Enabled string `pulumi:"enabled"`
-	// 健康阈值，即连续健康检查成功的次数。取值范围为2 ～ 10，默认值为3，单位为次。
+	// Health threshold, i.e., the number of consecutive successful health checks. Range: 2–10, default is 3, unit: times.
 	HealthyThreshold int `pulumi:"healthyThreshold"`
-	// 健康检查正常的HTTP状态码。当参数Protocol取HTTP或HTTPS，且HealthCheck.Enabled取on时，参数生效。取值如下：http*2xx （默认值）、http*3xx、http*4xx、http*5xx。多个状态码间用半角逗号“,”分隔。
+	// HTTP status codes for healthy checks. This parameter is effective when Protocol is HTTP or HTTPS and HealthCheck.Enabled is on. Values: http*2xx (default), http*3xx, http*4xx, http*5xx. Separate multiple status codes with a comma (,).
 	HttpCode string `pulumi:"httpCode"`
-	// 执行健康检查的时间间隔，取值范围为1 ～ 300 ，默认值为2，单位为秒。
+	// Interval for performing health checks. Range: 1–300, default is 2, in seconds.
 	Interval int `pulumi:"interval"`
-	// 监听器健康检查的方法。GET：服务器需支持GET方法。HEAD：服务器仅返回HEAD头部信息，可以降低后端开销，但要求服务器支持HEAD方法。
+	// Listener health check method. GET: server must support the GET method. HEAD: server returns only HEAD header information, which reduces backend overhead, but requires server support for the HEAD method.
 	Method string `pulumi:"method"`
-	// 健康检查的端口，取值范围为1-65535。
+	// Health check port. Value range: 1–65535.
 	Port int `pulumi:"port"`
-	// 健康检查的响应超时时间，表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查“异常”。取值范围为1 ～ 60，默认值为2，单位为秒。
+	// Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered 'abnormal'. Value range: 1 to 60. Default: 2. Unit: seconds.
 	Timeout int `pulumi:"timeout"`
-	// 健康检查的预期响应字符串。只允许包含字母和数字，最大长度限制为64个字符。当参数Protocol配置UDP，且参数HealthCheck.Enabled配置为on时，该参数生效。参数HealthCheck.UdpRequest和HealthCheck.UdpExpect的取值只能同时为空或同时不为空。
+	// Expected response string for health check. Only letters and numbers are allowed, with a maximum length of 64 characters. This parameter takes effect when Protocol is set to UDP and HealthCheck.Enabled is set to on. HealthCheck.UdpRequest and HealthCheck.UdpExpect must either both be empty or both be non-empty.
 	UdpExpect string `pulumi:"udpExpect"`
-	// 执行健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字。当参数Protocol配置为UDP，且参数HealthCheck.Enabled配置为on时，该参数生效。参数HealthCheck.UdpRequest和HealthCheck.UdpExpect的取值只能同时为空或同时不为空。
+	// Request string for performing health checks. Only letters and numbers are allowed, with a maximum length of 64 characters. This parameter takes effect when Protocol is set to UDP and HealthCheck.Enabled is set to on. The values of HealthCheck.UdpRequest and HealthCheck.UdpExpect must either both be empty or both be non-empty.
 	UdpRequest string `pulumi:"udpRequest"`
-	// 不健康阈值，即连续健康检查失败的次数。取值范围为2 ～ 10，默认值为3，单位为次。
+	// Unhealthy threshold, which is the number of consecutive health check failures. Value range: 2–10. Default: 3. Unit: occurrences.
 	UnhealthyThreshold int `pulumi:"unhealthyThreshold"`
-	// 健康检查的路径，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。必须以字符‘/’开头。仅包含字母、数字、中划线（-）、下划线（_）、斜线/）、点号（.）、百分号（%）、英文问号（?）、#、&、等号（＝）字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+	// Health check path. Must be configured as the actual address provided by the backend server. This parameter takes effect when Protocol is set to HTTP or HTTPS and HealthCheck.Enabled is on. Must start with '/'. Only letters, digits, hyphens (-), underscores (_), slashes (/), periods (.), percent signs (%), question marks (?), #, &, and equals signs (=) are allowed. Length: 1–128 characters. If not specified or no value is provided, the default is '/'.
 	Uri string `pulumi:"uri"`
 }
 
@@ -5250,29 +5250,29 @@ type GetListenerHealthCheckInput interface {
 }
 
 type GetListenerHealthCheckArgs struct {
-	// 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。需至少包含一个点号（.），且不允许以点号（.）开头或结尾。单个字符串由母、数字、中划线（-）、点号（.）字符组成，中划线（-）不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示CLB使用各后端服务器的私网IP地址进行健康检查。
+	// Domain name for health check. Must be set to the actual address provided by the backend server. This parameter takes effect when Protocol is set to HTTP or HTTPS and HealthCheck.Enabled is on. Must contain at least one period (.), and cannot start or end with a period (.). Each string can include letters, numbers, hyphens (-), and periods (.), with hyphens (-) not allowed at the beginning or end of the string. Length limit: 1 to 128 characters. If this parameter is not provided or no value is specified, the default is empty, meaning CLB uses the private IP address of each backend server for health checks.
 	Domain pulumi.StringInput `pulumi:"domain"`
-	// 监听器是否开启健康检查功能。on（默认值）：开启。off：不开启。
+	// Whether health check is enabled for the listener. on (default): enabled. off: disabled.
 	Enabled pulumi.StringInput `pulumi:"enabled"`
-	// 健康阈值，即连续健康检查成功的次数。取值范围为2 ～ 10，默认值为3，单位为次。
+	// Health threshold, i.e., the number of consecutive successful health checks. Range: 2–10, default is 3, unit: times.
 	HealthyThreshold pulumi.IntInput `pulumi:"healthyThreshold"`
-	// 健康检查正常的HTTP状态码。当参数Protocol取HTTP或HTTPS，且HealthCheck.Enabled取on时，参数生效。取值如下：http*2xx （默认值）、http*3xx、http*4xx、http*5xx。多个状态码间用半角逗号“,”分隔。
+	// HTTP status codes for healthy checks. This parameter is effective when Protocol is HTTP or HTTPS and HealthCheck.Enabled is on. Values: http*2xx (default), http*3xx, http*4xx, http*5xx. Separate multiple status codes with a comma (,).
 	HttpCode pulumi.StringInput `pulumi:"httpCode"`
-	// 执行健康检查的时间间隔，取值范围为1 ～ 300 ，默认值为2，单位为秒。
+	// Interval for performing health checks. Range: 1–300, default is 2, in seconds.
 	Interval pulumi.IntInput `pulumi:"interval"`
-	// 监听器健康检查的方法。GET：服务器需支持GET方法。HEAD：服务器仅返回HEAD头部信息，可以降低后端开销，但要求服务器支持HEAD方法。
+	// Listener health check method. GET: server must support the GET method. HEAD: server returns only HEAD header information, which reduces backend overhead, but requires server support for the HEAD method.
 	Method pulumi.StringInput `pulumi:"method"`
-	// 健康检查的端口，取值范围为1-65535。
+	// Health check port. Value range: 1–65535.
 	Port pulumi.IntInput `pulumi:"port"`
-	// 健康检查的响应超时时间，表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查“异常”。取值范围为1 ～ 60，默认值为2，单位为秒。
+	// Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered 'abnormal'. Value range: 1 to 60. Default: 2. Unit: seconds.
 	Timeout pulumi.IntInput `pulumi:"timeout"`
-	// 健康检查的预期响应字符串。只允许包含字母和数字，最大长度限制为64个字符。当参数Protocol配置UDP，且参数HealthCheck.Enabled配置为on时，该参数生效。参数HealthCheck.UdpRequest和HealthCheck.UdpExpect的取值只能同时为空或同时不为空。
+	// Expected response string for health check. Only letters and numbers are allowed, with a maximum length of 64 characters. This parameter takes effect when Protocol is set to UDP and HealthCheck.Enabled is set to on. HealthCheck.UdpRequest and HealthCheck.UdpExpect must either both be empty or both be non-empty.
 	UdpExpect pulumi.StringInput `pulumi:"udpExpect"`
-	// 执行健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字。当参数Protocol配置为UDP，且参数HealthCheck.Enabled配置为on时，该参数生效。参数HealthCheck.UdpRequest和HealthCheck.UdpExpect的取值只能同时为空或同时不为空。
+	// Request string for performing health checks. Only letters and numbers are allowed, with a maximum length of 64 characters. This parameter takes effect when Protocol is set to UDP and HealthCheck.Enabled is set to on. The values of HealthCheck.UdpRequest and HealthCheck.UdpExpect must either both be empty or both be non-empty.
 	UdpRequest pulumi.StringInput `pulumi:"udpRequest"`
-	// 不健康阈值，即连续健康检查失败的次数。取值范围为2 ～ 10，默认值为3，单位为次。
+	// Unhealthy threshold, which is the number of consecutive health check failures. Value range: 2–10. Default: 3. Unit: occurrences.
 	UnhealthyThreshold pulumi.IntInput `pulumi:"unhealthyThreshold"`
-	// 健康检查的路径，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。必须以字符‘/’开头。仅包含字母、数字、中划线（-）、下划线（_）、斜线/）、点号（.）、百分号（%）、英文问号（?）、#、&、等号（＝）字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+	// Health check path. Must be configured as the actual address provided by the backend server. This parameter takes effect when Protocol is set to HTTP or HTTPS and HealthCheck.Enabled is on. Must start with '/'. Only letters, digits, hyphens (-), underscores (_), slashes (/), periods (.), percent signs (%), question marks (?), #, &, and equals signs (=) are allowed. Length: 1–128 characters. If not specified or no value is provided, the default is '/'.
 	Uri pulumi.StringInput `pulumi:"uri"`
 }
 
@@ -5302,70 +5302,70 @@ func (o GetListenerHealthCheckOutput) ToGetListenerHealthCheckOutputWithContext(
 	return o
 }
 
-// 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。需至少包含一个点号（.），且不允许以点号（.）开头或结尾。单个字符串由母、数字、中划线（-）、点号（.）字符组成，中划线（-）不得出现在字符串的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示CLB使用各后端服务器的私网IP地址进行健康检查。
+// Domain name for health check. Must be set to the actual address provided by the backend server. This parameter takes effect when Protocol is set to HTTP or HTTPS and HealthCheck.Enabled is on. Must contain at least one period (.), and cannot start or end with a period (.). Each string can include letters, numbers, hyphens (-), and periods (.), with hyphens (-) not allowed at the beginning or end of the string. Length limit: 1 to 128 characters. If this parameter is not provided or no value is specified, the default is empty, meaning CLB uses the private IP address of each backend server for health checks.
 func (o GetListenerHealthCheckOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListenerHealthCheck) string { return v.Domain }).(pulumi.StringOutput)
 }
 
-// 监听器是否开启健康检查功能。on（默认值）：开启。off：不开启。
+// Whether health check is enabled for the listener. on (default): enabled. off: disabled.
 func (o GetListenerHealthCheckOutput) Enabled() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListenerHealthCheck) string { return v.Enabled }).(pulumi.StringOutput)
 }
 
-// 健康阈值，即连续健康检查成功的次数。取值范围为2 ～ 10，默认值为3，单位为次。
+// Health threshold, i.e., the number of consecutive successful health checks. Range: 2–10, default is 3, unit: times.
 func (o GetListenerHealthCheckOutput) HealthyThreshold() pulumi.IntOutput {
 	return o.ApplyT(func(v GetListenerHealthCheck) int { return v.HealthyThreshold }).(pulumi.IntOutput)
 }
 
-// 健康检查正常的HTTP状态码。当参数Protocol取HTTP或HTTPS，且HealthCheck.Enabled取on时，参数生效。取值如下：http*2xx （默认值）、http*3xx、http*4xx、http*5xx。多个状态码间用半角逗号“,”分隔。
+// HTTP status codes for healthy checks. This parameter is effective when Protocol is HTTP or HTTPS and HealthCheck.Enabled is on. Values: http*2xx (default), http*3xx, http*4xx, http*5xx. Separate multiple status codes with a comma (,).
 func (o GetListenerHealthCheckOutput) HttpCode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListenerHealthCheck) string { return v.HttpCode }).(pulumi.StringOutput)
 }
 
-// 执行健康检查的时间间隔，取值范围为1 ～ 300 ，默认值为2，单位为秒。
+// Interval for performing health checks. Range: 1–300, default is 2, in seconds.
 func (o GetListenerHealthCheckOutput) Interval() pulumi.IntOutput {
 	return o.ApplyT(func(v GetListenerHealthCheck) int { return v.Interval }).(pulumi.IntOutput)
 }
 
-// 监听器健康检查的方法。GET：服务器需支持GET方法。HEAD：服务器仅返回HEAD头部信息，可以降低后端开销，但要求服务器支持HEAD方法。
+// Listener health check method. GET: server must support the GET method. HEAD: server returns only HEAD header information, which reduces backend overhead, but requires server support for the HEAD method.
 func (o GetListenerHealthCheckOutput) Method() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListenerHealthCheck) string { return v.Method }).(pulumi.StringOutput)
 }
 
-// 健康检查的端口，取值范围为1-65535。
+// Health check port. Value range: 1–65535.
 func (o GetListenerHealthCheckOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetListenerHealthCheck) int { return v.Port }).(pulumi.IntOutput)
 }
 
-// 健康检查的响应超时时间，表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查“异常”。取值范围为1 ～ 60，默认值为2，单位为秒。
+// Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered 'abnormal'. Value range: 1 to 60. Default: 2. Unit: seconds.
 func (o GetListenerHealthCheckOutput) Timeout() pulumi.IntOutput {
 	return o.ApplyT(func(v GetListenerHealthCheck) int { return v.Timeout }).(pulumi.IntOutput)
 }
 
-// 健康检查的预期响应字符串。只允许包含字母和数字，最大长度限制为64个字符。当参数Protocol配置UDP，且参数HealthCheck.Enabled配置为on时，该参数生效。参数HealthCheck.UdpRequest和HealthCheck.UdpExpect的取值只能同时为空或同时不为空。
+// Expected response string for health check. Only letters and numbers are allowed, with a maximum length of 64 characters. This parameter takes effect when Protocol is set to UDP and HealthCheck.Enabled is set to on. HealthCheck.UdpRequest and HealthCheck.UdpExpect must either both be empty or both be non-empty.
 func (o GetListenerHealthCheckOutput) UdpExpect() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListenerHealthCheck) string { return v.UdpExpect }).(pulumi.StringOutput)
 }
 
-// 执行健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字。当参数Protocol配置为UDP，且参数HealthCheck.Enabled配置为on时，该参数生效。参数HealthCheck.UdpRequest和HealthCheck.UdpExpect的取值只能同时为空或同时不为空。
+// Request string for performing health checks. Only letters and numbers are allowed, with a maximum length of 64 characters. This parameter takes effect when Protocol is set to UDP and HealthCheck.Enabled is set to on. The values of HealthCheck.UdpRequest and HealthCheck.UdpExpect must either both be empty or both be non-empty.
 func (o GetListenerHealthCheckOutput) UdpRequest() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListenerHealthCheck) string { return v.UdpRequest }).(pulumi.StringOutput)
 }
 
-// 不健康阈值，即连续健康检查失败的次数。取值范围为2 ～ 10，默认值为3，单位为次。
+// Unhealthy threshold, which is the number of consecutive health check failures. Value range: 2–10. Default: 3. Unit: occurrences.
 func (o GetListenerHealthCheckOutput) UnhealthyThreshold() pulumi.IntOutput {
 	return o.ApplyT(func(v GetListenerHealthCheck) int { return v.UnhealthyThreshold }).(pulumi.IntOutput)
 }
 
-// 健康检查的路径，需配置为后端服务器上真实对外提供服务的地址。当参数Protocol取HTTP或HTTPS，HealthCheck.Enabled取on时，本参数生效。必须以字符‘/’开头。仅包含字母、数字、中划线（-）、下划线（_）、斜线/）、点号（.）、百分号（%）、英文问号（?）、#、&、等号（＝）字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+// Health check path. Must be configured as the actual address provided by the backend server. This parameter takes effect when Protocol is set to HTTP or HTTPS and HealthCheck.Enabled is on. Must start with '/'. Only letters, digits, hyphens (-), underscores (_), slashes (/), periods (.), percent signs (%), question marks (?), #, &, and equals signs (=) are allowed. Length: 1–128 characters. If not specified or no value is provided, the default is '/'.
 func (o GetListenerHealthCheckOutput) Uri() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListenerHealthCheck) string { return v.Uri }).(pulumi.StringOutput)
 }
 
 type GetListenerTag struct {
-	// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	// Tag key for user tags. Length range: 1–128 characters. Supports input of characters from all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system automatically removes it.
 	Key string `pulumi:"key"`
-	// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	// Tag value for user tags. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
 	Value string `pulumi:"value"`
 }
 
@@ -5381,9 +5381,9 @@ type GetListenerTagInput interface {
 }
 
 type GetListenerTagArgs struct {
-	// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+	// Tag key for user tags. Length range: 1–128 characters. Supports input of characters from all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system automatically removes it.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+	// Tag value for user tags. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -5438,12 +5438,12 @@ func (o GetListenerTagOutput) ToGetListenerTagOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+// Tag key for user tags. Length range: 1–128 characters. Supports input of characters from all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system automatically removes it.
 func (o GetListenerTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListenerTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+// Tag value for user tags. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
 func (o GetListenerTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListenerTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -5469,11 +5469,11 @@ func (o GetListenerTagArrayOutput) Index(i pulumi.IntInput) GetListenerTagOutput
 }
 
 type GetNlbAccessLog struct {
-	// 是否开启访问日志。true：是。flase：否。
+	// Enable access logs. true: yes. false: no.
 	AccessLogEnabled bool `pulumi:"accessLogEnabled"`
-	// 日志项目的ID。
+	// Log project ID.
 	ProjectId string `pulumi:"projectId"`
-	// 日志主题的ID。
+	// Log topic ID.
 	TopicId string `pulumi:"topicId"`
 }
 
@@ -5489,11 +5489,11 @@ type GetNlbAccessLogInput interface {
 }
 
 type GetNlbAccessLogArgs struct {
-	// 是否开启访问日志。true：是。flase：否。
+	// Enable access logs. true: yes. false: no.
 	AccessLogEnabled pulumi.BoolInput `pulumi:"accessLogEnabled"`
-	// 日志项目的ID。
+	// Log project ID.
 	ProjectId pulumi.StringInput `pulumi:"projectId"`
-	// 日志主题的ID。
+	// Log topic ID.
 	TopicId pulumi.StringInput `pulumi:"topicId"`
 }
 
@@ -5523,37 +5523,37 @@ func (o GetNlbAccessLogOutput) ToGetNlbAccessLogOutputWithContext(ctx context.Co
 	return o
 }
 
-// 是否开启访问日志。true：是。flase：否。
+// Enable access logs. true: yes. false: no.
 func (o GetNlbAccessLogOutput) AccessLogEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNlbAccessLog) bool { return v.AccessLogEnabled }).(pulumi.BoolOutput)
 }
 
-// 日志项目的ID。
+// Log project ID.
 func (o GetNlbAccessLogOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbAccessLog) string { return v.ProjectId }).(pulumi.StringOutput)
 }
 
-// 日志主题的ID。
+// Log topic ID.
 func (o GetNlbAccessLogOutput) TopicId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbAccessLog) string { return v.TopicId }).(pulumi.StringOutput)
 }
 
 type GetNlbListenerHealth struct {
-	// 后端服务器的实例 ID或IP地址。
+	// Backend server instance ID or IP address
 	InstanceId string `pulumi:"instanceId"`
-	// 后端服务器的IP地址。
+	// Backend server IP address
 	Ip string `pulumi:"ip"`
-	// 后端服务器提供服务的端口。
+	// Port on which the backend server provides services
 	Port int `pulumi:"port"`
-	// 后端服务器ID。
+	// Backend server ID
 	ServerId string `pulumi:"serverId"`
-	// 后端服务器的类型。ecs：云服务器实例（即主网卡）；eni：辅助网卡；ip：IP地址
+	// Backend server type: ecs (cloud server instance, i.e., primary network interface); eni (secondary network interface); ip (IP address)
 	ServerType string `pulumi:"serverType"`
-	// 后端服务器的健康状态。Up：正常；Down：异常；Unused：未被使用（NLB实例已关闭跨可用区转发，且没有来自该后端服务器可用区的访问流量）。
+	// Backend server health status: Up (normal); Down (abnormal); Unused (not in use—NLB instance has disabled cross-zone forwarding and there is no traffic from this backend server's zone)
 	Status string `pulumi:"status"`
-	// 健康状态最后更新时间。
+	// Last update time of health status
 	UpdatedTime string `pulumi:"updatedTime"`
-	// 后端服务器接收访问流量的可用区ID。
+	// Zone ID where the backend server receives traffic
 	ZoneId string `pulumi:"zoneId"`
 }
 
@@ -5569,21 +5569,21 @@ type GetNlbListenerHealthInput interface {
 }
 
 type GetNlbListenerHealthArgs struct {
-	// 后端服务器的实例 ID或IP地址。
+	// Backend server instance ID or IP address
 	InstanceId pulumi.StringInput `pulumi:"instanceId"`
-	// 后端服务器的IP地址。
+	// Backend server IP address
 	Ip pulumi.StringInput `pulumi:"ip"`
-	// 后端服务器提供服务的端口。
+	// Port on which the backend server provides services
 	Port pulumi.IntInput `pulumi:"port"`
-	// 后端服务器ID。
+	// Backend server ID
 	ServerId pulumi.StringInput `pulumi:"serverId"`
-	// 后端服务器的类型。ecs：云服务器实例（即主网卡）；eni：辅助网卡；ip：IP地址
+	// Backend server type: ecs (cloud server instance, i.e., primary network interface); eni (secondary network interface); ip (IP address)
 	ServerType pulumi.StringInput `pulumi:"serverType"`
-	// 后端服务器的健康状态。Up：正常；Down：异常；Unused：未被使用（NLB实例已关闭跨可用区转发，且没有来自该后端服务器可用区的访问流量）。
+	// Backend server health status: Up (normal); Down (abnormal); Unused (not in use—NLB instance has disabled cross-zone forwarding and there is no traffic from this backend server's zone)
 	Status pulumi.StringInput `pulumi:"status"`
-	// 健康状态最后更新时间。
+	// Last update time of health status
 	UpdatedTime pulumi.StringInput `pulumi:"updatedTime"`
-	// 后端服务器接收访问流量的可用区ID。
+	// Zone ID where the backend server receives traffic
 	ZoneId pulumi.StringInput `pulumi:"zoneId"`
 }
 
@@ -5638,42 +5638,42 @@ func (o GetNlbListenerHealthOutput) ToGetNlbListenerHealthOutputWithContext(ctx 
 	return o
 }
 
-// 后端服务器的实例 ID或IP地址。
+// Backend server instance ID or IP address
 func (o GetNlbListenerHealthOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbListenerHealth) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 后端服务器的IP地址。
+// Backend server IP address
 func (o GetNlbListenerHealthOutput) Ip() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbListenerHealth) string { return v.Ip }).(pulumi.StringOutput)
 }
 
-// 后端服务器提供服务的端口。
+// Port on which the backend server provides services
 func (o GetNlbListenerHealthOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNlbListenerHealth) int { return v.Port }).(pulumi.IntOutput)
 }
 
-// 后端服务器ID。
+// Backend server ID
 func (o GetNlbListenerHealthOutput) ServerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbListenerHealth) string { return v.ServerId }).(pulumi.StringOutput)
 }
 
-// 后端服务器的类型。ecs：云服务器实例（即主网卡）；eni：辅助网卡；ip：IP地址
+// Backend server type: ecs (cloud server instance, i.e., primary network interface); eni (secondary network interface); ip (IP address)
 func (o GetNlbListenerHealthOutput) ServerType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbListenerHealth) string { return v.ServerType }).(pulumi.StringOutput)
 }
 
-// 后端服务器的健康状态。Up：正常；Down：异常；Unused：未被使用（NLB实例已关闭跨可用区转发，且没有来自该后端服务器可用区的访问流量）。
+// Backend server health status: Up (normal); Down (abnormal); Unused (not in use—NLB instance has disabled cross-zone forwarding and there is no traffic from this backend server's zone)
 func (o GetNlbListenerHealthOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbListenerHealth) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 健康状态最后更新时间。
+// Last update time of health status
 func (o GetNlbListenerHealthOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbListenerHealth) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// 后端服务器接收访问流量的可用区ID。
+// Zone ID where the backend server receives traffic
 func (o GetNlbListenerHealthOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbListenerHealth) string { return v.ZoneId }).(pulumi.StringOutput)
 }
@@ -5699,9 +5699,9 @@ func (o GetNlbListenerHealthArrayOutput) Index(i pulumi.IntInput) GetNlbListener
 }
 
 type GetNlbListenerTag struct {
-	// 标签键。
+	// Tag key
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value string `pulumi:"value"`
 }
 
@@ -5717,9 +5717,9 @@ type GetNlbListenerTagInput interface {
 }
 
 type GetNlbListenerTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -5774,12 +5774,12 @@ func (o GetNlbListenerTagOutput) ToGetNlbListenerTagOutputWithContext(ctx contex
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o GetNlbListenerTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbListenerTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value
 func (o GetNlbListenerTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbListenerTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -5805,9 +5805,9 @@ func (o GetNlbListenerTagArrayOutput) Index(i pulumi.IntInput) GetNlbListenerTag
 }
 
 type GetNlbSecurityPolicyTag struct {
-	// 用户标签的标签键。
+	// User tag key
 	Key string `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value
 	Value string `pulumi:"value"`
 }
 
@@ -5823,9 +5823,9 @@ type GetNlbSecurityPolicyTagInput interface {
 }
 
 type GetNlbSecurityPolicyTagArgs struct {
-	// 用户标签的标签键。
+	// User tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -5880,12 +5880,12 @@ func (o GetNlbSecurityPolicyTagOutput) ToGetNlbSecurityPolicyTagOutputWithContex
 	return o
 }
 
-// 用户标签的标签键。
+// User tag key
 func (o GetNlbSecurityPolicyTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbSecurityPolicyTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。
+// User tag value
 func (o GetNlbSecurityPolicyTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbSecurityPolicyTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -5911,31 +5911,31 @@ func (o GetNlbSecurityPolicyTagArrayOutput) Index(i pulumi.IntInput) GetNlbSecur
 }
 
 type GetNlbServerGroupHealthCheck struct {
-	// 健康检查的域名。
+	// Health check domain name
 	Domain string `pulumi:"domain"`
-	// 是否开启健康检查。
+	// Enable health check
 	Enabled bool `pulumi:"enabled"`
-	// 健康检查的健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“正常”的后端服务器将被判定为健康检查“正常”。
+	// Health check healthy threshold. Range: 2–10 times, default: 3 times. If the backend server passes the specified number of consecutive health checks with 'normal' results, it is considered health check 'normal'
 	HealthyThreshold int `pulumi:"healthyThreshold"`
-	// 健康检查正常的HTTP状态码。
+	// HTTP status codes indicating a healthy health check.
 	HttpCode string `pulumi:"httpCode"`
-	// 健康检查的时间间隔，取值范围为1 ～ 300秒，默认值为10秒。
+	// Health check interval, range: 1–300 seconds, default: 10 seconds.
 	Interval int `pulumi:"interval"`
-	// 健康检查的请求方法。
+	// Health check request method
 	Method string `pulumi:"method"`
-	// 健康检查的端口，取值范围 1～65535。服务器组未开启全端口转发时，该参数默认为0，表示使用后端服务器的端口进行健康检查。服务器组开启全端口转发时，必须指定该参数。
+	// Health check port. Range: 1–65535. If full port forwarding is not enabled for the server group, this parameter defaults to 0, meaning the backend server's port is used for health checks. If full port forwarding is enabled, this parameter must be specified
 	Port int `pulumi:"port"`
-	// 健康检查的响应超时时间，取值范围为1 ～ 60秒，默认值为3秒。如果后端服务器在指定时间内没有正确响应，则判定为健康检查“异常”。
+	// Health check response timeout. Range: 1–60 seconds, default: 3 seconds. If the backend server does not respond correctly within the specified time, it is considered health check 'abnormal'
 	Timeout int `pulumi:"timeout"`
-	// 健康检查的协议类型。取值如下：取值如下：TCP（默认值）、HTTP、UDP
+	// Health check protocol type. Options: TCP (default), HTTP, UDP
 	Type string `pulumi:"type"`
-	// UDP健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字符。
+	// UDP health check request string. Only letters and numbers are allowed, with a maximum length of 64 characters.
 	UdpExpect string `pulumi:"udpExpect"`
-	// UDP健康检查的预期响应字符串。
+	// Expected response string for UDP health check
 	UdpRequest string `pulumi:"udpRequest"`
-	// 健康检查的不健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“异常”的后端服务器将被判定为健康检查异常。
+	// Health check unhealthy threshold. Range: 2–10 times, default: 3 times. If the backend server fails the specified number of consecutive health checks with 'abnormal' results, it is considered health check abnormal
 	UnhealthyThreshold int `pulumi:"unhealthyThreshold"`
-	// 健康检查的路径。
+	// Health check path
 	Uri string `pulumi:"uri"`
 }
 
@@ -5951,31 +5951,31 @@ type GetNlbServerGroupHealthCheckInput interface {
 }
 
 type GetNlbServerGroupHealthCheckArgs struct {
-	// 健康检查的域名。
+	// Health check domain name
 	Domain pulumi.StringInput `pulumi:"domain"`
-	// 是否开启健康检查。
+	// Enable health check
 	Enabled pulumi.BoolInput `pulumi:"enabled"`
-	// 健康检查的健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“正常”的后端服务器将被判定为健康检查“正常”。
+	// Health check healthy threshold. Range: 2–10 times, default: 3 times. If the backend server passes the specified number of consecutive health checks with 'normal' results, it is considered health check 'normal'
 	HealthyThreshold pulumi.IntInput `pulumi:"healthyThreshold"`
-	// 健康检查正常的HTTP状态码。
+	// HTTP status codes indicating a healthy health check.
 	HttpCode pulumi.StringInput `pulumi:"httpCode"`
-	// 健康检查的时间间隔，取值范围为1 ～ 300秒，默认值为10秒。
+	// Health check interval, range: 1–300 seconds, default: 10 seconds.
 	Interval pulumi.IntInput `pulumi:"interval"`
-	// 健康检查的请求方法。
+	// Health check request method
 	Method pulumi.StringInput `pulumi:"method"`
-	// 健康检查的端口，取值范围 1～65535。服务器组未开启全端口转发时，该参数默认为0，表示使用后端服务器的端口进行健康检查。服务器组开启全端口转发时，必须指定该参数。
+	// Health check port. Range: 1–65535. If full port forwarding is not enabled for the server group, this parameter defaults to 0, meaning the backend server's port is used for health checks. If full port forwarding is enabled, this parameter must be specified
 	Port pulumi.IntInput `pulumi:"port"`
-	// 健康检查的响应超时时间，取值范围为1 ～ 60秒，默认值为3秒。如果后端服务器在指定时间内没有正确响应，则判定为健康检查“异常”。
+	// Health check response timeout. Range: 1–60 seconds, default: 3 seconds. If the backend server does not respond correctly within the specified time, it is considered health check 'abnormal'
 	Timeout pulumi.IntInput `pulumi:"timeout"`
-	// 健康检查的协议类型。取值如下：取值如下：TCP（默认值）、HTTP、UDP
+	// Health check protocol type. Options: TCP (default), HTTP, UDP
 	Type pulumi.StringInput `pulumi:"type"`
-	// UDP健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字符。
+	// UDP health check request string. Only letters and numbers are allowed, with a maximum length of 64 characters.
 	UdpExpect pulumi.StringInput `pulumi:"udpExpect"`
-	// UDP健康检查的预期响应字符串。
+	// Expected response string for UDP health check
 	UdpRequest pulumi.StringInput `pulumi:"udpRequest"`
-	// 健康检查的不健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“异常”的后端服务器将被判定为健康检查异常。
+	// Health check unhealthy threshold. Range: 2–10 times, default: 3 times. If the backend server fails the specified number of consecutive health checks with 'abnormal' results, it is considered health check abnormal
 	UnhealthyThreshold pulumi.IntInput `pulumi:"unhealthyThreshold"`
-	// 健康检查的路径。
+	// Health check path
 	Uri pulumi.StringInput `pulumi:"uri"`
 }
 
@@ -6005,87 +6005,87 @@ func (o GetNlbServerGroupHealthCheckOutput) ToGetNlbServerGroupHealthCheckOutput
 	return o
 }
 
-// 健康检查的域名。
+// Health check domain name
 func (o GetNlbServerGroupHealthCheckOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbServerGroupHealthCheck) string { return v.Domain }).(pulumi.StringOutput)
 }
 
-// 是否开启健康检查。
+// Enable health check
 func (o GetNlbServerGroupHealthCheckOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNlbServerGroupHealthCheck) bool { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// 健康检查的健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“正常”的后端服务器将被判定为健康检查“正常”。
+// Health check healthy threshold. Range: 2–10 times, default: 3 times. If the backend server passes the specified number of consecutive health checks with 'normal' results, it is considered health check 'normal'
 func (o GetNlbServerGroupHealthCheckOutput) HealthyThreshold() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNlbServerGroupHealthCheck) int { return v.HealthyThreshold }).(pulumi.IntOutput)
 }
 
-// 健康检查正常的HTTP状态码。
+// HTTP status codes indicating a healthy health check.
 func (o GetNlbServerGroupHealthCheckOutput) HttpCode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbServerGroupHealthCheck) string { return v.HttpCode }).(pulumi.StringOutput)
 }
 
-// 健康检查的时间间隔，取值范围为1 ～ 300秒，默认值为10秒。
+// Health check interval, range: 1–300 seconds, default: 10 seconds.
 func (o GetNlbServerGroupHealthCheckOutput) Interval() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNlbServerGroupHealthCheck) int { return v.Interval }).(pulumi.IntOutput)
 }
 
-// 健康检查的请求方法。
+// Health check request method
 func (o GetNlbServerGroupHealthCheckOutput) Method() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbServerGroupHealthCheck) string { return v.Method }).(pulumi.StringOutput)
 }
 
-// 健康检查的端口，取值范围 1～65535。服务器组未开启全端口转发时，该参数默认为0，表示使用后端服务器的端口进行健康检查。服务器组开启全端口转发时，必须指定该参数。
+// Health check port. Range: 1–65535. If full port forwarding is not enabled for the server group, this parameter defaults to 0, meaning the backend server's port is used for health checks. If full port forwarding is enabled, this parameter must be specified
 func (o GetNlbServerGroupHealthCheckOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNlbServerGroupHealthCheck) int { return v.Port }).(pulumi.IntOutput)
 }
 
-// 健康检查的响应超时时间，取值范围为1 ～ 60秒，默认值为3秒。如果后端服务器在指定时间内没有正确响应，则判定为健康检查“异常”。
+// Health check response timeout. Range: 1–60 seconds, default: 3 seconds. If the backend server does not respond correctly within the specified time, it is considered health check 'abnormal'
 func (o GetNlbServerGroupHealthCheckOutput) Timeout() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNlbServerGroupHealthCheck) int { return v.Timeout }).(pulumi.IntOutput)
 }
 
-// 健康检查的协议类型。取值如下：取值如下：TCP（默认值）、HTTP、UDP
+// Health check protocol type. Options: TCP (default), HTTP, UDP
 func (o GetNlbServerGroupHealthCheckOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbServerGroupHealthCheck) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// UDP健康检查的请求字符串。只允许包含字母和数字，最大长度限制为64个字符。
+// UDP health check request string. Only letters and numbers are allowed, with a maximum length of 64 characters.
 func (o GetNlbServerGroupHealthCheckOutput) UdpExpect() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbServerGroupHealthCheck) string { return v.UdpExpect }).(pulumi.StringOutput)
 }
 
-// UDP健康检查的预期响应字符串。
+// Expected response string for UDP health check
 func (o GetNlbServerGroupHealthCheckOutput) UdpRequest() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbServerGroupHealthCheck) string { return v.UdpRequest }).(pulumi.StringOutput)
 }
 
-// 健康检查的不健康阈值，取值范围为2 ～ 10次，默认值为3次。连续执行指定次数的健康检查，结果均为“异常”的后端服务器将被判定为健康检查异常。
+// Health check unhealthy threshold. Range: 2–10 times, default: 3 times. If the backend server fails the specified number of consecutive health checks with 'abnormal' results, it is considered health check abnormal
 func (o GetNlbServerGroupHealthCheckOutput) UnhealthyThreshold() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNlbServerGroupHealthCheck) int { return v.UnhealthyThreshold }).(pulumi.IntOutput)
 }
 
-// 健康检查的路径。
+// Health check path
 func (o GetNlbServerGroupHealthCheckOutput) Uri() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbServerGroupHealthCheck) string { return v.Uri }).(pulumi.StringOutput)
 }
 
 type GetNlbServerGroupServer struct {
-	// 后端服务器的描述，默认值为空字符串。
+	// Description of the backend server, default is an empty string.
 	Description string `pulumi:"description"`
-	// 服务器实例的ID或IP地址。服务器类型为“ecs”时，传入云服务器实例的ID。您可以调用DescribeInstances接口云服务器实例ID。服务器类型为“eni”时，传入已绑定云服务器实例的网卡ID。您可以调用DescribeNetworkInterfaces接口获取网卡ID。服务器类型为“ip”时，传入后端服务器的IP地址。
+	// Server instance ID or IP address. If the server type is 'ecs', enter the cloud server instance ID. You can call the DescribeInstances API to obtain the cloud server instance ID. If the server type is 'eni', enter the network interface card ID bound to the cloud server instance. You can call the DescribeNetworkInterfaces API to obtain the network interface card ID. If the server type is 'ip', enter the backend server's IP address.
 	InstanceId string `pulumi:"instanceId"`
-	// 后端服务器的私网IP地址。您可以调用DescribeInstances接口获取“ecs”类型后端服务器的私网IP地址。您可以调用DescribeNetworkInterfaces接口获取“eni”类型后端服务器的私网IP地址。
+	// Private IP address of the backend server. You can call the DescribeInstances API to obtain the private IP address of an 'ecs' type backend server. You can call the DescribeNetworkInterfaces API to obtain the private IP address of an 'eni' type backend server.
 	Ip string `pulumi:"ip"`
-	// 后端服务器接收请求的端口号，取值范围为 1～65535。参数AnyPortEnabled为“false”，即服务器组未开启全端口转发时，该参数为必填。参数AnyPortEnabled为“true”，即服务器组开启全端口转发时，该参数默认为0。
+	// Port number on which the backend server receives requests, range: 1–65535. If AnyPortEnabled is 'false' (all-port forwarding is disabled), this parameter is required. If AnyPortEnabled is 'true' (all-port forwarding is enabled), the default value is 0.
 	Port int `pulumi:"port"`
-	// 后端服务器 ID。
+	// Backend server ID
 	ServerId string `pulumi:"serverId"`
-	// 后端服务器的类型。取值如下：ecs：云服务器实例（即主网卡）。eni：辅助网卡。ip：IP地址。
+	// Backend server type. Available values: ecs: cloud server instance (primary network interface). eni: auxiliary network interface. ip: IP address.
 	Type string `pulumi:"type"`
-	// 后端服务器的权重，取值范围为0 ～ 100。权重为0，表示不会将请求转发给该服务器。该参数不传入，则默认为0。
+	// Backend server weight, range: 0–100. Weight of 0 means requests will not be forwarded to this server. If not specified, the default is 0.
 	Weight int `pulumi:"weight"`
-	// 指定后端服务器关联的NLB实例可用区。当参数Servers.N.Type为ip时，此参数必填。NLB实例开启跨可用区转发功能时，该后端服务器可以接收来自NLB实例所有可用区的流量。NLB实例关闭跨可用区转发功能时，则该后端服务器仅接收来自指定可用区的流量。
+	// Specify the availability zone of the NLB instance associated with the backend server. This parameter is required when Servers.N.Type is ip. If the NLB instance enables cross-zone forwarding, the backend server can receive traffic from all availability zones of the NLB instance. If cross-zone forwarding is disabled, the backend server only receives traffic from the specified availability zone
 	ZoneId string `pulumi:"zoneId"`
 }
 
@@ -6101,21 +6101,21 @@ type GetNlbServerGroupServerInput interface {
 }
 
 type GetNlbServerGroupServerArgs struct {
-	// 后端服务器的描述，默认值为空字符串。
+	// Description of the backend server, default is an empty string.
 	Description pulumi.StringInput `pulumi:"description"`
-	// 服务器实例的ID或IP地址。服务器类型为“ecs”时，传入云服务器实例的ID。您可以调用DescribeInstances接口云服务器实例ID。服务器类型为“eni”时，传入已绑定云服务器实例的网卡ID。您可以调用DescribeNetworkInterfaces接口获取网卡ID。服务器类型为“ip”时，传入后端服务器的IP地址。
+	// Server instance ID or IP address. If the server type is 'ecs', enter the cloud server instance ID. You can call the DescribeInstances API to obtain the cloud server instance ID. If the server type is 'eni', enter the network interface card ID bound to the cloud server instance. You can call the DescribeNetworkInterfaces API to obtain the network interface card ID. If the server type is 'ip', enter the backend server's IP address.
 	InstanceId pulumi.StringInput `pulumi:"instanceId"`
-	// 后端服务器的私网IP地址。您可以调用DescribeInstances接口获取“ecs”类型后端服务器的私网IP地址。您可以调用DescribeNetworkInterfaces接口获取“eni”类型后端服务器的私网IP地址。
+	// Private IP address of the backend server. You can call the DescribeInstances API to obtain the private IP address of an 'ecs' type backend server. You can call the DescribeNetworkInterfaces API to obtain the private IP address of an 'eni' type backend server.
 	Ip pulumi.StringInput `pulumi:"ip"`
-	// 后端服务器接收请求的端口号，取值范围为 1～65535。参数AnyPortEnabled为“false”，即服务器组未开启全端口转发时，该参数为必填。参数AnyPortEnabled为“true”，即服务器组开启全端口转发时，该参数默认为0。
+	// Port number on which the backend server receives requests, range: 1–65535. If AnyPortEnabled is 'false' (all-port forwarding is disabled), this parameter is required. If AnyPortEnabled is 'true' (all-port forwarding is enabled), the default value is 0.
 	Port pulumi.IntInput `pulumi:"port"`
-	// 后端服务器 ID。
+	// Backend server ID
 	ServerId pulumi.StringInput `pulumi:"serverId"`
-	// 后端服务器的类型。取值如下：ecs：云服务器实例（即主网卡）。eni：辅助网卡。ip：IP地址。
+	// Backend server type. Available values: ecs: cloud server instance (primary network interface). eni: auxiliary network interface. ip: IP address.
 	Type pulumi.StringInput `pulumi:"type"`
-	// 后端服务器的权重，取值范围为0 ～ 100。权重为0，表示不会将请求转发给该服务器。该参数不传入，则默认为0。
+	// Backend server weight, range: 0–100. Weight of 0 means requests will not be forwarded to this server. If not specified, the default is 0.
 	Weight pulumi.IntInput `pulumi:"weight"`
-	// 指定后端服务器关联的NLB实例可用区。当参数Servers.N.Type为ip时，此参数必填。NLB实例开启跨可用区转发功能时，该后端服务器可以接收来自NLB实例所有可用区的流量。NLB实例关闭跨可用区转发功能时，则该后端服务器仅接收来自指定可用区的流量。
+	// Specify the availability zone of the NLB instance associated with the backend server. This parameter is required when Servers.N.Type is ip. If the NLB instance enables cross-zone forwarding, the backend server can receive traffic from all availability zones of the NLB instance. If cross-zone forwarding is disabled, the backend server only receives traffic from the specified availability zone
 	ZoneId pulumi.StringInput `pulumi:"zoneId"`
 }
 
@@ -6170,42 +6170,42 @@ func (o GetNlbServerGroupServerOutput) ToGetNlbServerGroupServerOutputWithContex
 	return o
 }
 
-// 后端服务器的描述，默认值为空字符串。
+// Description of the backend server, default is an empty string.
 func (o GetNlbServerGroupServerOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbServerGroupServer) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 服务器实例的ID或IP地址。服务器类型为“ecs”时，传入云服务器实例的ID。您可以调用DescribeInstances接口云服务器实例ID。服务器类型为“eni”时，传入已绑定云服务器实例的网卡ID。您可以调用DescribeNetworkInterfaces接口获取网卡ID。服务器类型为“ip”时，传入后端服务器的IP地址。
+// Server instance ID or IP address. If the server type is 'ecs', enter the cloud server instance ID. You can call the DescribeInstances API to obtain the cloud server instance ID. If the server type is 'eni', enter the network interface card ID bound to the cloud server instance. You can call the DescribeNetworkInterfaces API to obtain the network interface card ID. If the server type is 'ip', enter the backend server's IP address.
 func (o GetNlbServerGroupServerOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbServerGroupServer) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 后端服务器的私网IP地址。您可以调用DescribeInstances接口获取“ecs”类型后端服务器的私网IP地址。您可以调用DescribeNetworkInterfaces接口获取“eni”类型后端服务器的私网IP地址。
+// Private IP address of the backend server. You can call the DescribeInstances API to obtain the private IP address of an 'ecs' type backend server. You can call the DescribeNetworkInterfaces API to obtain the private IP address of an 'eni' type backend server.
 func (o GetNlbServerGroupServerOutput) Ip() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbServerGroupServer) string { return v.Ip }).(pulumi.StringOutput)
 }
 
-// 后端服务器接收请求的端口号，取值范围为 1～65535。参数AnyPortEnabled为“false”，即服务器组未开启全端口转发时，该参数为必填。参数AnyPortEnabled为“true”，即服务器组开启全端口转发时，该参数默认为0。
+// Port number on which the backend server receives requests, range: 1–65535. If AnyPortEnabled is 'false' (all-port forwarding is disabled), this parameter is required. If AnyPortEnabled is 'true' (all-port forwarding is enabled), the default value is 0.
 func (o GetNlbServerGroupServerOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNlbServerGroupServer) int { return v.Port }).(pulumi.IntOutput)
 }
 
-// 后端服务器 ID。
+// Backend server ID
 func (o GetNlbServerGroupServerOutput) ServerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbServerGroupServer) string { return v.ServerId }).(pulumi.StringOutput)
 }
 
-// 后端服务器的类型。取值如下：ecs：云服务器实例（即主网卡）。eni：辅助网卡。ip：IP地址。
+// Backend server type. Available values: ecs: cloud server instance (primary network interface). eni: auxiliary network interface. ip: IP address.
 func (o GetNlbServerGroupServerOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbServerGroupServer) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// 后端服务器的权重，取值范围为0 ～ 100。权重为0，表示不会将请求转发给该服务器。该参数不传入，则默认为0。
+// Backend server weight, range: 0–100. Weight of 0 means requests will not be forwarded to this server. If not specified, the default is 0.
 func (o GetNlbServerGroupServerOutput) Weight() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNlbServerGroupServer) int { return v.Weight }).(pulumi.IntOutput)
 }
 
-// 指定后端服务器关联的NLB实例可用区。当参数Servers.N.Type为ip时，此参数必填。NLB实例开启跨可用区转发功能时，该后端服务器可以接收来自NLB实例所有可用区的流量。NLB实例关闭跨可用区转发功能时，则该后端服务器仅接收来自指定可用区的流量。
+// Specify the availability zone of the NLB instance associated with the backend server. This parameter is required when Servers.N.Type is ip. If the NLB instance enables cross-zone forwarding, the backend server can receive traffic from all availability zones of the NLB instance. If cross-zone forwarding is disabled, the backend server only receives traffic from the specified availability zone
 func (o GetNlbServerGroupServerOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbServerGroupServer) string { return v.ZoneId }).(pulumi.StringOutput)
 }
@@ -6231,9 +6231,9 @@ func (o GetNlbServerGroupServerArrayOutput) Index(i pulumi.IntInput) GetNlbServe
 }
 
 type GetNlbServerGroupTag struct {
-	// 标签键。
+	// Tag key
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value string `pulumi:"value"`
 }
 
@@ -6249,9 +6249,9 @@ type GetNlbServerGroupTagInput interface {
 }
 
 type GetNlbServerGroupTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -6306,12 +6306,12 @@ func (o GetNlbServerGroupTagOutput) ToGetNlbServerGroupTagOutputWithContext(ctx 
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o GetNlbServerGroupTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbServerGroupTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value
 func (o GetNlbServerGroupTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbServerGroupTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -6337,9 +6337,9 @@ func (o GetNlbServerGroupTagArrayOutput) Index(i pulumi.IntInput) GetNlbServerGr
 }
 
 type GetNlbTag struct {
-	// 标签键。
+	// Tag key.
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value string `pulumi:"value"`
 }
 
@@ -6355,9 +6355,9 @@ type GetNlbTagInput interface {
 }
 
 type GetNlbTagArgs struct {
-	// 标签键。
+	// Tag key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -6412,12 +6412,12 @@ func (o GetNlbTagOutput) ToGetNlbTagOutputWithContext(ctx context.Context) GetNl
 	return o
 }
 
-// 标签键。
+// Tag key.
 func (o GetNlbTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value.
 func (o GetNlbTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -6443,29 +6443,29 @@ func (o GetNlbTagArrayOutput) Index(i pulumi.IntInput) GetNlbTagOutput {
 }
 
 type GetNlbZoneMapping struct {
-	// 网卡ID。
+	// Network interface card ID.
 	EniId string `pulumi:"eniId"`
-	// NLB实例的私网IPv4 VIP地址。该参数不传入，则系统自动从子网中分配一个可用的IPv4地址。
+	// Private IPv4 VIP address of the NLB instance. If this parameter is not provided, the system automatically assigns an available IPv4 address from the subnet.
 	Ipv4Address string `pulumi:"ipv4Address"`
-	// NLB实例的公网IPv4 EIP地址。
+	// Public IPv4 EIP address of the NLB instance.
 	Ipv4EipAddress string `pulumi:"ipv4EipAddress"`
-	// NLB实例的公网IPv4 EIP ID。
+	// Public IPv4 EIP ID of the NLB instance.
 	Ipv4EipId string `pulumi:"ipv4EipId"`
-	// NLB实例私网IPv4地址的健康状态。Healthy：健康。Unhealthy：异常。
+	// Health status of the NLB instance's private IPv4 address. Healthy: healthy. Unhealthy: abnormal.
 	Ipv4HcStatus string `pulumi:"ipv4HcStatus"`
-	// NLB实例的私网IPv4 LIP地址。
+	// Private IPv4 LIP address of the NLB instance.
 	Ipv4LocalAddresses []string `pulumi:"ipv4LocalAddresses"`
-	// NLB实例的私网IPv6 VIP地址。
+	// Private IPv6 VIP address of the NLB instance.
 	Ipv6Address string `pulumi:"ipv6Address"`
-	// NLB实例关联的IPv6公网带宽的ID。
+	// ID of the IPv6 public bandwidth associated with the NLB instance.
 	Ipv6EipId string `pulumi:"ipv6EipId"`
-	// NLB实例私网IPv6地址的健康状态。Healthy：健康。Unhealthy：异常。
+	// Health status of the NLB instance's private IPv6 address. Healthy: healthy. Unhealthy: abnormal.
 	Ipv6HcStatus string `pulumi:"ipv6HcStatus"`
-	// NLB实例的私网IPv6 LIP地址。
+	// Private IPv6 LIP address of the NLB instance.
 	Ipv6LocalAddresses []string `pulumi:"ipv6LocalAddresses"`
-	// NLB实例所属的子网ID。
+	// Subnet ID to which the NLB instance belongs.
 	SubnetId string `pulumi:"subnetId"`
-	// NLB实例所属的可用区ID。
+	// Availability zone ID to which the NLB instance belongs.
 	ZoneId string `pulumi:"zoneId"`
 }
 
@@ -6481,29 +6481,29 @@ type GetNlbZoneMappingInput interface {
 }
 
 type GetNlbZoneMappingArgs struct {
-	// 网卡ID。
+	// Network interface card ID.
 	EniId pulumi.StringInput `pulumi:"eniId"`
-	// NLB实例的私网IPv4 VIP地址。该参数不传入，则系统自动从子网中分配一个可用的IPv4地址。
+	// Private IPv4 VIP address of the NLB instance. If this parameter is not provided, the system automatically assigns an available IPv4 address from the subnet.
 	Ipv4Address pulumi.StringInput `pulumi:"ipv4Address"`
-	// NLB实例的公网IPv4 EIP地址。
+	// Public IPv4 EIP address of the NLB instance.
 	Ipv4EipAddress pulumi.StringInput `pulumi:"ipv4EipAddress"`
-	// NLB实例的公网IPv4 EIP ID。
+	// Public IPv4 EIP ID of the NLB instance.
 	Ipv4EipId pulumi.StringInput `pulumi:"ipv4EipId"`
-	// NLB实例私网IPv4地址的健康状态。Healthy：健康。Unhealthy：异常。
+	// Health status of the NLB instance's private IPv4 address. Healthy: healthy. Unhealthy: abnormal.
 	Ipv4HcStatus pulumi.StringInput `pulumi:"ipv4HcStatus"`
-	// NLB实例的私网IPv4 LIP地址。
+	// Private IPv4 LIP address of the NLB instance.
 	Ipv4LocalAddresses pulumi.StringArrayInput `pulumi:"ipv4LocalAddresses"`
-	// NLB实例的私网IPv6 VIP地址。
+	// Private IPv6 VIP address of the NLB instance.
 	Ipv6Address pulumi.StringInput `pulumi:"ipv6Address"`
-	// NLB实例关联的IPv6公网带宽的ID。
+	// ID of the IPv6 public bandwidth associated with the NLB instance.
 	Ipv6EipId pulumi.StringInput `pulumi:"ipv6EipId"`
-	// NLB实例私网IPv6地址的健康状态。Healthy：健康。Unhealthy：异常。
+	// Health status of the NLB instance's private IPv6 address. Healthy: healthy. Unhealthy: abnormal.
 	Ipv6HcStatus pulumi.StringInput `pulumi:"ipv6HcStatus"`
-	// NLB实例的私网IPv6 LIP地址。
+	// Private IPv6 LIP address of the NLB instance.
 	Ipv6LocalAddresses pulumi.StringArrayInput `pulumi:"ipv6LocalAddresses"`
-	// NLB实例所属的子网ID。
+	// Subnet ID to which the NLB instance belongs.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-	// NLB实例所属的可用区ID。
+	// Availability zone ID to which the NLB instance belongs.
 	ZoneId pulumi.StringInput `pulumi:"zoneId"`
 }
 
@@ -6558,62 +6558,62 @@ func (o GetNlbZoneMappingOutput) ToGetNlbZoneMappingOutputWithContext(ctx contex
 	return o
 }
 
-// 网卡ID。
+// Network interface card ID.
 func (o GetNlbZoneMappingOutput) EniId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbZoneMapping) string { return v.EniId }).(pulumi.StringOutput)
 }
 
-// NLB实例的私网IPv4 VIP地址。该参数不传入，则系统自动从子网中分配一个可用的IPv4地址。
+// Private IPv4 VIP address of the NLB instance. If this parameter is not provided, the system automatically assigns an available IPv4 address from the subnet.
 func (o GetNlbZoneMappingOutput) Ipv4Address() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbZoneMapping) string { return v.Ipv4Address }).(pulumi.StringOutput)
 }
 
-// NLB实例的公网IPv4 EIP地址。
+// Public IPv4 EIP address of the NLB instance.
 func (o GetNlbZoneMappingOutput) Ipv4EipAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbZoneMapping) string { return v.Ipv4EipAddress }).(pulumi.StringOutput)
 }
 
-// NLB实例的公网IPv4 EIP ID。
+// Public IPv4 EIP ID of the NLB instance.
 func (o GetNlbZoneMappingOutput) Ipv4EipId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbZoneMapping) string { return v.Ipv4EipId }).(pulumi.StringOutput)
 }
 
-// NLB实例私网IPv4地址的健康状态。Healthy：健康。Unhealthy：异常。
+// Health status of the NLB instance's private IPv4 address. Healthy: healthy. Unhealthy: abnormal.
 func (o GetNlbZoneMappingOutput) Ipv4HcStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbZoneMapping) string { return v.Ipv4HcStatus }).(pulumi.StringOutput)
 }
 
-// NLB实例的私网IPv4 LIP地址。
+// Private IPv4 LIP address of the NLB instance.
 func (o GetNlbZoneMappingOutput) Ipv4LocalAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNlbZoneMapping) []string { return v.Ipv4LocalAddresses }).(pulumi.StringArrayOutput)
 }
 
-// NLB实例的私网IPv6 VIP地址。
+// Private IPv6 VIP address of the NLB instance.
 func (o GetNlbZoneMappingOutput) Ipv6Address() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbZoneMapping) string { return v.Ipv6Address }).(pulumi.StringOutput)
 }
 
-// NLB实例关联的IPv6公网带宽的ID。
+// ID of the IPv6 public bandwidth associated with the NLB instance.
 func (o GetNlbZoneMappingOutput) Ipv6EipId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbZoneMapping) string { return v.Ipv6EipId }).(pulumi.StringOutput)
 }
 
-// NLB实例私网IPv6地址的健康状态。Healthy：健康。Unhealthy：异常。
+// Health status of the NLB instance's private IPv6 address. Healthy: healthy. Unhealthy: abnormal.
 func (o GetNlbZoneMappingOutput) Ipv6HcStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbZoneMapping) string { return v.Ipv6HcStatus }).(pulumi.StringOutput)
 }
 
-// NLB实例的私网IPv6 LIP地址。
+// Private IPv6 LIP address of the NLB instance.
 func (o GetNlbZoneMappingOutput) Ipv6LocalAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNlbZoneMapping) []string { return v.Ipv6LocalAddresses }).(pulumi.StringArrayOutput)
 }
 
-// NLB实例所属的子网ID。
+// Subnet ID to which the NLB instance belongs.
 func (o GetNlbZoneMappingOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbZoneMapping) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// NLB实例所属的可用区ID。
+// Availability zone ID to which the NLB instance belongs.
 func (o GetNlbZoneMappingOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNlbZoneMapping) string { return v.ZoneId }).(pulumi.StringOutput)
 }
@@ -6639,15 +6639,15 @@ func (o GetNlbZoneMappingArrayOutput) Index(i pulumi.IntInput) GetNlbZoneMapping
 }
 
 type GetRuleRedirectConfig struct {
-	// 转发规则重定向的域名，当前仅支持精确域名。规范如下：需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含字母、数字、‘.’、‘-‘。长度限制为1 ～ 128个字符。符合域名规范的精确域名，例如：www.test.com。
+	// The domain name for forwarding rule redirection currently supports only exact domain names. Specifications: Must contain at least one '.', and cannot start or end with '.'. Only letters, numbers, '.', and '-' are allowed. Length must be between 1 and 128 characters. Example of a valid exact domain name: www.test.com.
 	Host string `pulumi:"host"`
-	// 转发规则重定向的路径。规范如下：必须以正斜线“/”开头，字符‘/’不能连续出现。仅允许包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’等字符。长度限制为1 ～ 128个字符。
+	// Path for forwarding rule redirection. Specifications: Must start with a forward slash '/'. Consecutive '/' characters are not allowed. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=', and other specified characters are allowed. Length must be between 1 and 128 characters.
 	Path string `pulumi:"path"`
-	// 转发规则重定向的端口，取值范围为 1~65535。
+	// Port for forwarding rule redirection. Value range: 1~65535.
 	Port string `pulumi:"port"`
-	// 转发规则重定向的协议。取值如下：HTTP。HTTPS（默认值）。
+	// Protocol for forwarding rule redirection. Options: HTTP. HTTPS (default).
 	Protocol string `pulumi:"protocol"`
-	// 转发规则重定向的状态码。取值如下：301（默认）：表示请求的资源已被永久移动到新的 URL，客户端应该使用新的 URL 进行后续请求。302：表示请求的资源被临时移动到新的 URL，但未来可能会再次更改，客户端应该使用新的 URL 进行后续请求。307：与 302 类似，但在重定向时要求客户端保持请求方法不变。例如，原来是 GET 请求，则重定向后仍然是 GET 请求。308：与 301 类似，但在重定向时要求客户端保持请求方法不变。
+	// Status code for forwarding rule redirection. Options: 301 (default): Indicates the requested resource has been permanently moved to a new URL. The client should use the new URL for subsequent requests. 302: Indicates the requested resource has been temporarily moved to a new URL and may change again in the future. The client should use the new URL for subsequent requests. 307: Similar to 302, but requires the client to keep the request method unchanged during redirection. For example, if the original request is GET, the redirected request remains GET. 308: Similar to 301, but requires the client to keep the request method unchanged during redirection.
 	StatusCode string `pulumi:"statusCode"`
 }
 
@@ -6663,15 +6663,15 @@ type GetRuleRedirectConfigInput interface {
 }
 
 type GetRuleRedirectConfigArgs struct {
-	// 转发规则重定向的域名，当前仅支持精确域名。规范如下：需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含字母、数字、‘.’、‘-‘。长度限制为1 ～ 128个字符。符合域名规范的精确域名，例如：www.test.com。
+	// The domain name for forwarding rule redirection currently supports only exact domain names. Specifications: Must contain at least one '.', and cannot start or end with '.'. Only letters, numbers, '.', and '-' are allowed. Length must be between 1 and 128 characters. Example of a valid exact domain name: www.test.com.
 	Host pulumi.StringInput `pulumi:"host"`
-	// 转发规则重定向的路径。规范如下：必须以正斜线“/”开头，字符‘/’不能连续出现。仅允许包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’等字符。长度限制为1 ～ 128个字符。
+	// Path for forwarding rule redirection. Specifications: Must start with a forward slash '/'. Consecutive '/' characters are not allowed. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=', and other specified characters are allowed. Length must be between 1 and 128 characters.
 	Path pulumi.StringInput `pulumi:"path"`
-	// 转发规则重定向的端口，取值范围为 1~65535。
+	// Port for forwarding rule redirection. Value range: 1~65535.
 	Port pulumi.StringInput `pulumi:"port"`
-	// 转发规则重定向的协议。取值如下：HTTP。HTTPS（默认值）。
+	// Protocol for forwarding rule redirection. Options: HTTP. HTTPS (default).
 	Protocol pulumi.StringInput `pulumi:"protocol"`
-	// 转发规则重定向的状态码。取值如下：301（默认）：表示请求的资源已被永久移动到新的 URL，客户端应该使用新的 URL 进行后续请求。302：表示请求的资源被临时移动到新的 URL，但未来可能会再次更改，客户端应该使用新的 URL 进行后续请求。307：与 302 类似，但在重定向时要求客户端保持请求方法不变。例如，原来是 GET 请求，则重定向后仍然是 GET 请求。308：与 301 类似，但在重定向时要求客户端保持请求方法不变。
+	// Status code for forwarding rule redirection. Options: 301 (default): Indicates the requested resource has been permanently moved to a new URL. The client should use the new URL for subsequent requests. 302: Indicates the requested resource has been temporarily moved to a new URL and may change again in the future. The client should use the new URL for subsequent requests. 307: Similar to 302, but requires the client to keep the request method unchanged during redirection. For example, if the original request is GET, the redirected request remains GET. 308: Similar to 301, but requires the client to keep the request method unchanged during redirection.
 	StatusCode pulumi.StringInput `pulumi:"statusCode"`
 }
 
@@ -6701,35 +6701,35 @@ func (o GetRuleRedirectConfigOutput) ToGetRuleRedirectConfigOutputWithContext(ct
 	return o
 }
 
-// 转发规则重定向的域名，当前仅支持精确域名。规范如下：需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含字母、数字、‘.’、‘-‘。长度限制为1 ～ 128个字符。符合域名规范的精确域名，例如：www.test.com。
+// The domain name for forwarding rule redirection currently supports only exact domain names. Specifications: Must contain at least one '.', and cannot start or end with '.'. Only letters, numbers, '.', and '-' are allowed. Length must be between 1 and 128 characters. Example of a valid exact domain name: www.test.com.
 func (o GetRuleRedirectConfigOutput) Host() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleRedirectConfig) string { return v.Host }).(pulumi.StringOutput)
 }
 
-// 转发规则重定向的路径。规范如下：必须以正斜线“/”开头，字符‘/’不能连续出现。仅允许包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’等字符。长度限制为1 ～ 128个字符。
+// Path for forwarding rule redirection. Specifications: Must start with a forward slash '/'. Consecutive '/' characters are not allowed. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=', and other specified characters are allowed. Length must be between 1 and 128 characters.
 func (o GetRuleRedirectConfigOutput) Path() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleRedirectConfig) string { return v.Path }).(pulumi.StringOutput)
 }
 
-// 转发规则重定向的端口，取值范围为 1~65535。
+// Port for forwarding rule redirection. Value range: 1~65535.
 func (o GetRuleRedirectConfigOutput) Port() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleRedirectConfig) string { return v.Port }).(pulumi.StringOutput)
 }
 
-// 转发规则重定向的协议。取值如下：HTTP。HTTPS（默认值）。
+// Protocol for forwarding rule redirection. Options: HTTP. HTTPS (default).
 func (o GetRuleRedirectConfigOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleRedirectConfig) string { return v.Protocol }).(pulumi.StringOutput)
 }
 
-// 转发规则重定向的状态码。取值如下：301（默认）：表示请求的资源已被永久移动到新的 URL，客户端应该使用新的 URL 进行后续请求。302：表示请求的资源被临时移动到新的 URL，但未来可能会再次更改，客户端应该使用新的 URL 进行后续请求。307：与 302 类似，但在重定向时要求客户端保持请求方法不变。例如，原来是 GET 请求，则重定向后仍然是 GET 请求。308：与 301 类似，但在重定向时要求客户端保持请求方法不变。
+// Status code for forwarding rule redirection. Options: 301 (default): Indicates the requested resource has been permanently moved to a new URL. The client should use the new URL for subsequent requests. 302: Indicates the requested resource has been temporarily moved to a new URL and may change again in the future. The client should use the new URL for subsequent requests. 307: Similar to 302, but requires the client to keep the request method unchanged during redirection. For example, if the original request is GET, the redirected request remains GET. 308: Similar to 301, but requires the client to keep the request method unchanged during redirection.
 func (o GetRuleRedirectConfigOutput) StatusCode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleRedirectConfig) string { return v.StatusCode }).(pulumi.StringOutput)
 }
 
 type GetRuleTag struct {
-	// 标签键。
+	// Tag key.
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value string `pulumi:"value"`
 }
 
@@ -6745,9 +6745,9 @@ type GetRuleTagInput interface {
 }
 
 type GetRuleTagArgs struct {
-	// 标签键。
+	// Tag key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -6802,12 +6802,12 @@ func (o GetRuleTagOutput) ToGetRuleTagOutputWithContext(ctx context.Context) Get
 	return o
 }
 
-// 标签键。
+// Tag key.
 func (o GetRuleTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value.
 func (o GetRuleTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -6833,7 +6833,7 @@ func (o GetRuleTagArrayOutput) Index(i pulumi.IntInput) GetRuleTagOutput {
 }
 
 type GetServerGroupListener struct {
-	// 监听器的ID。
+	// Listener ID.
 	ListenerId string `pulumi:"listenerId"`
 }
 
@@ -6849,7 +6849,7 @@ type GetServerGroupListenerInput interface {
 }
 
 type GetServerGroupListenerArgs struct {
-	// 监听器的ID。
+	// Listener ID.
 	ListenerId pulumi.StringInput `pulumi:"listenerId"`
 }
 
@@ -6904,7 +6904,7 @@ func (o GetServerGroupListenerOutput) ToGetServerGroupListenerOutputWithContext(
 	return o
 }
 
-// 监听器的ID。
+// Listener ID.
 func (o GetServerGroupListenerOutput) ListenerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServerGroupListener) string { return v.ListenerId }).(pulumi.StringOutput)
 }
@@ -6930,21 +6930,21 @@ func (o GetServerGroupListenerArrayOutput) Index(i pulumi.IntInput) GetServerGro
 }
 
 type GetServerGroupServer struct {
-	// 是否开启全端口转发。on：开启。off（默认值）：关闭。
+	// Enable all-port forwarding. on: enabled. off (default): disabled.
 	AnyPortEnabled string `pulumi:"anyPortEnabled"`
-	// 后端服务器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255字符。不填则默认为空字符串。
+	// Backend server description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
 	Description string `pulumi:"description"`
-	// 后端服务器。取值情况如下：当 Type 取ecs时，传云服务器实例的ID。当Type 取eni时，传已挂载至云服务器的辅助网卡的ID。当 Type 取ip时，传IP地址作为后端服务器。
+	// Backend server. Value options: When Type is ecs, provide the cloud server instance ID. When Type is eni, provide the ID of the auxiliary network card attached to the cloud server. When Type is ip, provide the IP address as the backend server.
 	InstanceId string `pulumi:"instanceId"`
-	// 后端服务器的私网IP地址。多个后端服务器IP之间使用“&”分隔。
+	// Private IP address of the backend server. Use '&' to separate multiple backend server IP addresses.
 	Ip string `pulumi:"ip"`
-	// 后端服务器接收请求的端口号。取值范围为1～65535。参数AnyPortEnabled为“off”，且需要同时添加后端服务器时，该参数必须传入；参数AnyPortEnabled为“on”时，该参数默认为0。
+	// Port number on which the backend server receives requests. Value range: 1–65535. If the AnyPortEnabled parameter is 'off' and you need to add backend servers at the same time, this parameter must be provided. If AnyPortEnabled is 'on', this parameter defaults to 0.
 	Port int `pulumi:"port"`
-	// 后端服务器ID。
+	// Backend server ID.
 	ServerId string `pulumi:"serverId"`
-	// 后端服务器实例类型。当参数Type取instance时，取值如下：ecs：云服务器实例。eni：网卡。当参数Type取ip时，本参数取值为ip。
+	// Backend server instance type. When the Type parameter is instance, value options are: ecs: cloud server instance. eni: auxiliary network card. When the Type parameter is ip, this parameter value is ip.
 	Type string `pulumi:"type"`
-	// 后端服务器的权重，取值范围为0 ～ 100。不填则默认为0。0表示不会将请求转发给该后端服务器。
+	// Backend server weight, range: 0–100. If not specified, defaults to 0. 0 means requests will not be forwarded to this backend server.
 	Weight int `pulumi:"weight"`
 }
 
@@ -6960,21 +6960,21 @@ type GetServerGroupServerInput interface {
 }
 
 type GetServerGroupServerArgs struct {
-	// 是否开启全端口转发。on：开启。off（默认值）：关闭。
+	// Enable all-port forwarding. on: enabled. off (default): disabled.
 	AnyPortEnabled pulumi.StringInput `pulumi:"anyPortEnabled"`
-	// 后端服务器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255字符。不填则默认为空字符串。
+	// Backend server description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
 	Description pulumi.StringInput `pulumi:"description"`
-	// 后端服务器。取值情况如下：当 Type 取ecs时，传云服务器实例的ID。当Type 取eni时，传已挂载至云服务器的辅助网卡的ID。当 Type 取ip时，传IP地址作为后端服务器。
+	// Backend server. Value options: When Type is ecs, provide the cloud server instance ID. When Type is eni, provide the ID of the auxiliary network card attached to the cloud server. When Type is ip, provide the IP address as the backend server.
 	InstanceId pulumi.StringInput `pulumi:"instanceId"`
-	// 后端服务器的私网IP地址。多个后端服务器IP之间使用“&”分隔。
+	// Private IP address of the backend server. Use '&' to separate multiple backend server IP addresses.
 	Ip pulumi.StringInput `pulumi:"ip"`
-	// 后端服务器接收请求的端口号。取值范围为1～65535。参数AnyPortEnabled为“off”，且需要同时添加后端服务器时，该参数必须传入；参数AnyPortEnabled为“on”时，该参数默认为0。
+	// Port number on which the backend server receives requests. Value range: 1–65535. If the AnyPortEnabled parameter is 'off' and you need to add backend servers at the same time, this parameter must be provided. If AnyPortEnabled is 'on', this parameter defaults to 0.
 	Port pulumi.IntInput `pulumi:"port"`
-	// 后端服务器ID。
+	// Backend server ID.
 	ServerId pulumi.StringInput `pulumi:"serverId"`
-	// 后端服务器实例类型。当参数Type取instance时，取值如下：ecs：云服务器实例。eni：网卡。当参数Type取ip时，本参数取值为ip。
+	// Backend server instance type. When the Type parameter is instance, value options are: ecs: cloud server instance. eni: auxiliary network card. When the Type parameter is ip, this parameter value is ip.
 	Type pulumi.StringInput `pulumi:"type"`
-	// 后端服务器的权重，取值范围为0 ～ 100。不填则默认为0。0表示不会将请求转发给该后端服务器。
+	// Backend server weight, range: 0–100. If not specified, defaults to 0. 0 means requests will not be forwarded to this backend server.
 	Weight pulumi.IntInput `pulumi:"weight"`
 }
 
@@ -7029,42 +7029,42 @@ func (o GetServerGroupServerOutput) ToGetServerGroupServerOutputWithContext(ctx 
 	return o
 }
 
-// 是否开启全端口转发。on：开启。off（默认值）：关闭。
+// Enable all-port forwarding. on: enabled. off (default): disabled.
 func (o GetServerGroupServerOutput) AnyPortEnabled() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServerGroupServer) string { return v.AnyPortEnabled }).(pulumi.StringOutput)
 }
 
-// 后端服务器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255字符。不填则默认为空字符串。
+// Backend server description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
 func (o GetServerGroupServerOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServerGroupServer) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 后端服务器。取值情况如下：当 Type 取ecs时，传云服务器实例的ID。当Type 取eni时，传已挂载至云服务器的辅助网卡的ID。当 Type 取ip时，传IP地址作为后端服务器。
+// Backend server. Value options: When Type is ecs, provide the cloud server instance ID. When Type is eni, provide the ID of the auxiliary network card attached to the cloud server. When Type is ip, provide the IP address as the backend server.
 func (o GetServerGroupServerOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServerGroupServer) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 后端服务器的私网IP地址。多个后端服务器IP之间使用“&”分隔。
+// Private IP address of the backend server. Use '&' to separate multiple backend server IP addresses.
 func (o GetServerGroupServerOutput) Ip() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServerGroupServer) string { return v.Ip }).(pulumi.StringOutput)
 }
 
-// 后端服务器接收请求的端口号。取值范围为1～65535。参数AnyPortEnabled为“off”，且需要同时添加后端服务器时，该参数必须传入；参数AnyPortEnabled为“on”时，该参数默认为0。
+// Port number on which the backend server receives requests. Value range: 1–65535. If the AnyPortEnabled parameter is 'off' and you need to add backend servers at the same time, this parameter must be provided. If AnyPortEnabled is 'on', this parameter defaults to 0.
 func (o GetServerGroupServerOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetServerGroupServer) int { return v.Port }).(pulumi.IntOutput)
 }
 
-// 后端服务器ID。
+// Backend server ID.
 func (o GetServerGroupServerOutput) ServerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServerGroupServer) string { return v.ServerId }).(pulumi.StringOutput)
 }
 
-// 后端服务器实例类型。当参数Type取instance时，取值如下：ecs：云服务器实例。eni：网卡。当参数Type取ip时，本参数取值为ip。
+// Backend server instance type. When the Type parameter is instance, value options are: ecs: cloud server instance. eni: auxiliary network card. When the Type parameter is ip, this parameter value is ip.
 func (o GetServerGroupServerOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServerGroupServer) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// 后端服务器的权重，取值范围为0 ～ 100。不填则默认为0。0表示不会将请求转发给该后端服务器。
+// Backend server weight, range: 0–100. If not specified, defaults to 0. 0 means requests will not be forwarded to this backend server.
 func (o GetServerGroupServerOutput) Weight() pulumi.IntOutput {
 	return o.ApplyT(func(v GetServerGroupServer) int { return v.Weight }).(pulumi.IntOutput)
 }
@@ -7090,9 +7090,9 @@ func (o GetServerGroupServerArrayOutput) Index(i pulumi.IntInput) GetServerGroup
 }
 
 type GetServerGroupTag struct {
-	// 绑定的标签键信息。
+	// Information about bound tag keys.
 	Key string `pulumi:"key"`
-	// 绑定的标签值信息。
+	// Bound tag value information.
 	Value string `pulumi:"value"`
 }
 
@@ -7108,9 +7108,9 @@ type GetServerGroupTagInput interface {
 }
 
 type GetServerGroupTagArgs struct {
-	// 绑定的标签键信息。
+	// Information about bound tag keys.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 绑定的标签值信息。
+	// Bound tag value information.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -7165,12 +7165,12 @@ func (o GetServerGroupTagOutput) ToGetServerGroupTagOutputWithContext(ctx contex
 	return o
 }
 
-// 绑定的标签键信息。
+// Information about bound tag keys.
 func (o GetServerGroupTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServerGroupTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 绑定的标签值信息。
+// Bound tag value information.
 func (o GetServerGroupTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServerGroupTag) string { return v.Value }).(pulumi.StringOutput)
 }

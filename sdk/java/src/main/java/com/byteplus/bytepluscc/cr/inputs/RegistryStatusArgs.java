@@ -17,14 +17,30 @@ public final class RegistryStatusArgs extends com.pulumi.resources.ResourceArgs 
     public static final RegistryStatusArgs Empty = new RegistryStatusArgs();
 
     /**
-     * Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+     * Creating, [ Progressing ]: Creating
+     * Running, [ Ok ]: Running
+     * Running, [ Degraded ]: Running
+     * Stopped, [ Balance ]: Suspended due to insufficient balance
+     * Stopped, [ Released ]: Pending reclamation
+     * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+     * Starting, [ Progressing ]: Starting
+     * Deleting, [ Progressing ]: Deleting
+     * Failed, [ Unknown ]: Abnormal
      * 
      */
     @Import(name="conditions")
     private @Nullable Output<List<String>> conditions;
 
     /**
-     * @return Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+     * @return Creating, [ Progressing ]: Creating
+     * Running, [ Ok ]: Running
+     * Running, [ Degraded ]: Running
+     * Stopped, [ Balance ]: Suspended due to insufficient balance
+     * Stopped, [ Released ]: Pending reclamation
+     * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+     * Starting, [ Progressing ]: Starting
+     * Deleting, [ Progressing ]: Deleting
+     * Failed, [ Unknown ]: Abnormal
      * 
      */
     public Optional<Output<List<String>>> conditions() {
@@ -32,14 +48,30 @@ public final class RegistryStatusArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+     * Creating, [ Progressing ]: Creating
+     * Running, [ Ok ]: Running
+     * Running, [ Degraded ]: Running
+     * Stopped, [ Balance ]: Suspended due to insufficient balance
+     * Stopped, [ Released ]: Pending reclamation
+     * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+     * Starting, [ Progressing ]: Starting
+     * Deleting, [ Progressing ]: Deleting
+     * Failed, [ Unknown ]: Abnormal
      * 
      */
     @Import(name="phase")
     private @Nullable Output<String> phase;
 
     /**
-     * @return Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+     * @return Creating, [ Progressing ]: Creating
+     * Running, [ Ok ]: Running
+     * Running, [ Degraded ]: Running
+     * Stopped, [ Balance ]: Suspended due to insufficient balance
+     * Stopped, [ Released ]: Pending reclamation
+     * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+     * Starting, [ Progressing ]: Starting
+     * Deleting, [ Progressing ]: Deleting
+     * Failed, [ Unknown ]: Abnormal
      * 
      */
     public Optional<Output<String>> phase() {
@@ -72,7 +104,15 @@ public final class RegistryStatusArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param conditions Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+         * @param conditions Creating, [ Progressing ]: Creating
+         * Running, [ Ok ]: Running
+         * Running, [ Degraded ]: Running
+         * Stopped, [ Balance ]: Suspended due to insufficient balance
+         * Stopped, [ Released ]: Pending reclamation
+         * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+         * Starting, [ Progressing ]: Starting
+         * Deleting, [ Progressing ]: Deleting
+         * Failed, [ Unknown ]: Abnormal
          * 
          * @return builder
          * 
@@ -83,7 +123,15 @@ public final class RegistryStatusArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param conditions Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+         * @param conditions Creating, [ Progressing ]: Creating
+         * Running, [ Ok ]: Running
+         * Running, [ Degraded ]: Running
+         * Stopped, [ Balance ]: Suspended due to insufficient balance
+         * Stopped, [ Released ]: Pending reclamation
+         * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+         * Starting, [ Progressing ]: Starting
+         * Deleting, [ Progressing ]: Deleting
+         * Failed, [ Unknown ]: Abnormal
          * 
          * @return builder
          * 
@@ -93,7 +141,15 @@ public final class RegistryStatusArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param conditions Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+         * @param conditions Creating, [ Progressing ]: Creating
+         * Running, [ Ok ]: Running
+         * Running, [ Degraded ]: Running
+         * Stopped, [ Balance ]: Suspended due to insufficient balance
+         * Stopped, [ Released ]: Pending reclamation
+         * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+         * Starting, [ Progressing ]: Starting
+         * Deleting, [ Progressing ]: Deleting
+         * Failed, [ Unknown ]: Abnormal
          * 
          * @return builder
          * 
@@ -103,7 +159,15 @@ public final class RegistryStatusArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param phase Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+         * @param phase Creating, [ Progressing ]: Creating
+         * Running, [ Ok ]: Running
+         * Running, [ Degraded ]: Running
+         * Stopped, [ Balance ]: Suspended due to insufficient balance
+         * Stopped, [ Released ]: Pending reclamation
+         * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+         * Starting, [ Progressing ]: Starting
+         * Deleting, [ Progressing ]: Deleting
+         * Failed, [ Unknown ]: Abnormal
          * 
          * @return builder
          * 
@@ -114,7 +178,15 @@ public final class RegistryStatusArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param phase Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+         * @param phase Creating, [ Progressing ]: Creating
+         * Running, [ Ok ]: Running
+         * Running, [ Degraded ]: Running
+         * Stopped, [ Balance ]: Suspended due to insufficient balance
+         * Stopped, [ Released ]: Pending reclamation
+         * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+         * Starting, [ Progressing ]: Starting
+         * Deleting, [ Progressing ]: Deleting
+         * Failed, [ Unknown ]: Abnormal
          * 
          * @return builder
          * 

@@ -19,14 +19,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     public static final InstanceArgs Empty = new InstanceArgs();
 
     /**
-     * 实例配置详情信息。
+     * Instance configuration details
      * 
      */
     @Import(name="instanceConfiguration", required=true)
     private Output<InstanceInstanceConfigurationArgs> instanceConfiguration;
 
     /**
-     * @return 实例配置详情信息。
+     * @return Instance configuration details
      * 
      */
     public Output<InstanceInstanceConfigurationArgs> instanceConfiguration() {
@@ -34,14 +34,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的可维护日期。
+     * Instance maintenance date.
      * 
      */
     @Import(name="maintenanceDays")
     private @Nullable Output<List<String>> maintenanceDays;
 
     /**
-     * @return 实例的可维护日期。
+     * @return Instance maintenance date.
      * 
      */
     public Optional<Output<List<String>>> maintenanceDays() {
@@ -49,14 +49,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的可维护时间段。
+     * Instance maintenance window.
      * 
      */
     @Import(name="maintenanceTime")
     private @Nullable Output<String> maintenanceTime;
 
     /**
-     * @return 实例的可维护时间段。
+     * @return Instance maintenance window.
      * 
      */
     public Optional<Output<String>> maintenanceTime() {
@@ -90,7 +90,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceConfiguration 实例配置详情信息。
+         * @param instanceConfiguration Instance configuration details
          * 
          * @return builder
          * 
@@ -101,7 +101,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceConfiguration 实例配置详情信息。
+         * @param instanceConfiguration Instance configuration details
          * 
          * @return builder
          * 
@@ -111,7 +111,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maintenanceDays 实例的可维护日期。
+         * @param maintenanceDays Instance maintenance date.
          * 
          * @return builder
          * 
@@ -122,7 +122,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maintenanceDays 实例的可维护日期。
+         * @param maintenanceDays Instance maintenance date.
          * 
          * @return builder
          * 
@@ -132,7 +132,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maintenanceDays 实例的可维护日期。
+         * @param maintenanceDays Instance maintenance date.
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maintenanceTime 实例的可维护时间段。
+         * @param maintenanceTime Instance maintenance window.
          * 
          * @return builder
          * 
@@ -153,7 +153,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maintenanceTime 实例的可维护时间段。
+         * @param maintenanceTime Instance maintenance window.
          * 
          * @return builder
          * 

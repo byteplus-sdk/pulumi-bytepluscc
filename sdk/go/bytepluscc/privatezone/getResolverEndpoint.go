@@ -30,33 +30,33 @@ type LookupResolverEndpointArgs struct {
 
 // A collection of values returned by getResolverEndpoint.
 type LookupResolverEndpointResult struct {
-	// 创建时间
+	// Creation time
 	CreatedTime string `pulumi:"createdTime"`
-	// 终端节点的 DNS 请求转发方向。OUTBOUND：（默认）出站终端节点，把来自 VPC 内的 DNS 查询请求转发到外部的 DNS 服务器。INBOUND：入站终端节点，把来自外部的 DNS 查询请求转发到解析器。
+	// DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
 	Direction string `pulumi:"direction"`
-	// 终端节点的 ID。
+	// Endpoint ID
 	EndpointId string `pulumi:"endpointId"`
-	// 终端节点类型。IPv4：IPv4 节点。DualStack：双栈节点。
+	// Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
 	EndpointType string `pulumi:"endpointType"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 终端节点的可用区、子网和 IP 配置。
+	// Availability zone, subnet, and IP configuration for the endpoint
 	IpConfigs []GetResolverEndpointIpConfig `pulumi:"ipConfigs"`
-	// 终端节点的名称。支持 UTF-8 格式。
+	// Endpoint name. Supports UTF-8 format
 	Name string `pulumi:"name"`
-	// 终端节点所属的项目名称。默认为 default。
+	// Project name to which the endpoint belongs. Default is default
 	ProjectName string `pulumi:"projectName"`
-	// 适用于终端节点 IP 地址的安全组 ID。终端节点默认会使用预设安全组：对于出站终端节点：入方向拒绝流量通行；出方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口。对于入站终端节点：入方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口；出方向拒绝流量通行。
+	// Security group ID for the endpoint IP address. The endpoint uses a default security group: For outbound endpoints, inbound traffic is denied; outbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0. For inbound endpoints, inbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0; outbound traffic is denied
 	SecurityGroupId string `pulumi:"securityGroupId"`
-	// 终端节点的状态。Creating：创建中。Running：运行中。Updating：更新中。Error：运行异常。
+	// Endpoint status. Creating: creating. Running: running. Updating: updating. Error: abnormal operation
 	Status string `pulumi:"status"`
-	// 标签列表。
+	// Tag list
 	Tags []GetResolverEndpointTag `pulumi:"tags"`
-	// 更新时间
+	// Update time
 	UpdatedTime string `pulumi:"updatedTime"`
-	// 终端节点所在的 VPC 的 ID。
+	// VPC ID where the endpoint is located
 	VpcId string `pulumi:"vpcId"`
-	// 终端节点所在的 VPC 的地域。
+	// Region of the VPC where the endpoint is located
 	VpcRegion string `pulumi:"vpcRegion"`
 }
 
@@ -94,22 +94,22 @@ func (o LookupResolverEndpointResultOutput) ToLookupResolverEndpointResultOutput
 	return o
 }
 
-// 创建时间
+// Creation time
 func (o LookupResolverEndpointResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResolverEndpointResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 终端节点的 DNS 请求转发方向。OUTBOUND：（默认）出站终端节点，把来自 VPC 内的 DNS 查询请求转发到外部的 DNS 服务器。INBOUND：入站终端节点，把来自外部的 DNS 查询请求转发到解析器。
+// DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
 func (o LookupResolverEndpointResultOutput) Direction() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResolverEndpointResult) string { return v.Direction }).(pulumi.StringOutput)
 }
 
-// 终端节点的 ID。
+// Endpoint ID
 func (o LookupResolverEndpointResultOutput) EndpointId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResolverEndpointResult) string { return v.EndpointId }).(pulumi.StringOutput)
 }
 
-// 终端节点类型。IPv4：IPv4 节点。DualStack：双栈节点。
+// Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
 func (o LookupResolverEndpointResultOutput) EndpointType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResolverEndpointResult) string { return v.EndpointType }).(pulumi.StringOutput)
 }
@@ -119,47 +119,47 @@ func (o LookupResolverEndpointResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResolverEndpointResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 终端节点的可用区、子网和 IP 配置。
+// Availability zone, subnet, and IP configuration for the endpoint
 func (o LookupResolverEndpointResultOutput) IpConfigs() GetResolverEndpointIpConfigArrayOutput {
 	return o.ApplyT(func(v LookupResolverEndpointResult) []GetResolverEndpointIpConfig { return v.IpConfigs }).(GetResolverEndpointIpConfigArrayOutput)
 }
 
-// 终端节点的名称。支持 UTF-8 格式。
+// Endpoint name. Supports UTF-8 format
 func (o LookupResolverEndpointResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResolverEndpointResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 终端节点所属的项目名称。默认为 default。
+// Project name to which the endpoint belongs. Default is default
 func (o LookupResolverEndpointResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResolverEndpointResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 适用于终端节点 IP 地址的安全组 ID。终端节点默认会使用预设安全组：对于出站终端节点：入方向拒绝流量通行；出方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口。对于入站终端节点：入方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口；出方向拒绝流量通行。
+// Security group ID for the endpoint IP address. The endpoint uses a default security group: For outbound endpoints, inbound traffic is denied; outbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0. For inbound endpoints, inbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0; outbound traffic is denied
 func (o LookupResolverEndpointResultOutput) SecurityGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResolverEndpointResult) string { return v.SecurityGroupId }).(pulumi.StringOutput)
 }
 
-// 终端节点的状态。Creating：创建中。Running：运行中。Updating：更新中。Error：运行异常。
+// Endpoint status. Creating: creating. Running: running. Updating: updating. Error: abnormal operation
 func (o LookupResolverEndpointResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResolverEndpointResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 标签列表。
+// Tag list
 func (o LookupResolverEndpointResultOutput) Tags() GetResolverEndpointTagArrayOutput {
 	return o.ApplyT(func(v LookupResolverEndpointResult) []GetResolverEndpointTag { return v.Tags }).(GetResolverEndpointTagArrayOutput)
 }
 
-// 更新时间
+// Update time
 func (o LookupResolverEndpointResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResolverEndpointResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// 终端节点所在的 VPC 的 ID。
+// VPC ID where the endpoint is located
 func (o LookupResolverEndpointResultOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResolverEndpointResult) string { return v.VpcId }).(pulumi.StringOutput)
 }
 
-// 终端节点所在的 VPC 的地域。
+// Region of the VPC where the endpoint is located
 func (o LookupResolverEndpointResultOutput) VpcRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResolverEndpointResult) string { return v.VpcRegion }).(pulumi.StringOutput)
 }

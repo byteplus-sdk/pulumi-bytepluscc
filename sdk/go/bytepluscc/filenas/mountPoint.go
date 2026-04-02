@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 挂载点是 NAS 文件系统在网络环境中的连接点。NAS 文件系统需要挂载在计算节点中才能完成数据的访问与存储。挂载是将计算节点与 NAS 文件系统相连接的操作。
+// Mount point is the connection point for the NAS file system in a network environment. The NAS file system must be mounted on a compute node to enable data access and storage. Mounting is the operation that connects the compute node to the NAS file system.
 //
 // ## Example Usage
 //
@@ -53,33 +53,33 @@ type MountPoint struct {
 	pulumi.CustomResourceState
 
 	Clients MountPointClientArrayOutput `pulumi:"clients"`
-	// 挂载点创建时间。
+	// Mount point creation time.
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// DNS 地址。
+	// DNS address.
 	Domain pulumi.StringOutput `pulumi:"domain"`
-	// 文件系统 ID。
+	// File system ID.
 	FileSystemId pulumi.StringOutput `pulumi:"fileSystemId"`
-	// 挂载点地址。
+	// Mount point address.
 	Ip pulumi.StringOutput `pulumi:"ip"`
-	// 挂载点 ID。
+	// Mount point ID.
 	MountPointId pulumi.StringOutput `pulumi:"mountPointId"`
-	// 挂载点名称。
+	// Mount point name.
 	MountPointName pulumi.StringOutput `pulumi:"mountPointName"`
-	// 挂载点绑定的权限组信息。
+	// Permission group information bound to the mount point.
 	PermissionGroup MountPointPermissionGroupOutput `pulumi:"permissionGroup"`
-	// 权限组 ID。
+	// Permission group ID.
 	PermissionGroupId pulumi.StringOutput `pulumi:"permissionGroupId"`
-	// 挂载点状态。取值：Running：运行中。Creating：创建中。Updating：更新中。Error：异常。Deleting：删除中。DeleteError：删除异常。Deleted：已删除。Stopped：已停止。
+	// Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
 	Status pulumi.StringOutput `pulumi:"status"`
-	// 子网 ID。
+	// Subnet ID.
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
-	// 子网名称。
+	// Subnet name.
 	SubnetName pulumi.StringOutput `pulumi:"subnetName"`
-	// 挂载点更新时间。
+	// Mount point update time.
 	UpdatedTime pulumi.StringOutput `pulumi:"updatedTime"`
-	// 私有网络 ID。
+	// Private network ID.
 	VpcId pulumi.StringOutput `pulumi:"vpcId"`
-	// 私有网络名称。
+	// Private network name.
 	VpcName pulumi.StringOutput `pulumi:"vpcName"`
 }
 
@@ -129,65 +129,65 @@ func GetMountPoint(ctx *pulumi.Context,
 // Input properties used for looking up and filtering MountPoint resources.
 type mountPointState struct {
 	Clients []MountPointClient `pulumi:"clients"`
-	// 挂载点创建时间。
+	// Mount point creation time.
 	CreatedTime *string `pulumi:"createdTime"`
-	// DNS 地址。
+	// DNS address.
 	Domain *string `pulumi:"domain"`
-	// 文件系统 ID。
+	// File system ID.
 	FileSystemId *string `pulumi:"fileSystemId"`
-	// 挂载点地址。
+	// Mount point address.
 	Ip *string `pulumi:"ip"`
-	// 挂载点 ID。
+	// Mount point ID.
 	MountPointId *string `pulumi:"mountPointId"`
-	// 挂载点名称。
+	// Mount point name.
 	MountPointName *string `pulumi:"mountPointName"`
-	// 挂载点绑定的权限组信息。
+	// Permission group information bound to the mount point.
 	PermissionGroup *MountPointPermissionGroup `pulumi:"permissionGroup"`
-	// 权限组 ID。
+	// Permission group ID.
 	PermissionGroupId *string `pulumi:"permissionGroupId"`
-	// 挂载点状态。取值：Running：运行中。Creating：创建中。Updating：更新中。Error：异常。Deleting：删除中。DeleteError：删除异常。Deleted：已删除。Stopped：已停止。
+	// Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
 	Status *string `pulumi:"status"`
-	// 子网 ID。
+	// Subnet ID.
 	SubnetId *string `pulumi:"subnetId"`
-	// 子网名称。
+	// Subnet name.
 	SubnetName *string `pulumi:"subnetName"`
-	// 挂载点更新时间。
+	// Mount point update time.
 	UpdatedTime *string `pulumi:"updatedTime"`
-	// 私有网络 ID。
+	// Private network ID.
 	VpcId *string `pulumi:"vpcId"`
-	// 私有网络名称。
+	// Private network name.
 	VpcName *string `pulumi:"vpcName"`
 }
 
 type MountPointState struct {
 	Clients MountPointClientArrayInput
-	// 挂载点创建时间。
+	// Mount point creation time.
 	CreatedTime pulumi.StringPtrInput
-	// DNS 地址。
+	// DNS address.
 	Domain pulumi.StringPtrInput
-	// 文件系统 ID。
+	// File system ID.
 	FileSystemId pulumi.StringPtrInput
-	// 挂载点地址。
+	// Mount point address.
 	Ip pulumi.StringPtrInput
-	// 挂载点 ID。
+	// Mount point ID.
 	MountPointId pulumi.StringPtrInput
-	// 挂载点名称。
+	// Mount point name.
 	MountPointName pulumi.StringPtrInput
-	// 挂载点绑定的权限组信息。
+	// Permission group information bound to the mount point.
 	PermissionGroup MountPointPermissionGroupPtrInput
-	// 权限组 ID。
+	// Permission group ID.
 	PermissionGroupId pulumi.StringPtrInput
-	// 挂载点状态。取值：Running：运行中。Creating：创建中。Updating：更新中。Error：异常。Deleting：删除中。DeleteError：删除异常。Deleted：已删除。Stopped：已停止。
+	// Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
 	Status pulumi.StringPtrInput
-	// 子网 ID。
+	// Subnet ID.
 	SubnetId pulumi.StringPtrInput
-	// 子网名称。
+	// Subnet name.
 	SubnetName pulumi.StringPtrInput
-	// 挂载点更新时间。
+	// Mount point update time.
 	UpdatedTime pulumi.StringPtrInput
-	// 私有网络 ID。
+	// Private network ID.
 	VpcId pulumi.StringPtrInput
-	// 私有网络名称。
+	// Private network name.
 	VpcName pulumi.StringPtrInput
 }
 
@@ -196,29 +196,29 @@ func (MountPointState) ElementType() reflect.Type {
 }
 
 type mountPointArgs struct {
-	// 文件系统 ID。
+	// File system ID.
 	FileSystemId string `pulumi:"fileSystemId"`
-	// 挂载点名称。
+	// Mount point name.
 	MountPointName string `pulumi:"mountPointName"`
-	// 权限组 ID。
+	// Permission group ID.
 	PermissionGroupId string `pulumi:"permissionGroupId"`
-	// 子网 ID。
+	// Subnet ID.
 	SubnetId string `pulumi:"subnetId"`
-	// 私有网络 ID。
+	// Private network ID.
 	VpcId string `pulumi:"vpcId"`
 }
 
 // The set of arguments for constructing a MountPoint resource.
 type MountPointArgs struct {
-	// 文件系统 ID。
+	// File system ID.
 	FileSystemId pulumi.StringInput
-	// 挂载点名称。
+	// Mount point name.
 	MountPointName pulumi.StringInput
-	// 权限组 ID。
+	// Permission group ID.
 	PermissionGroupId pulumi.StringInput
-	// 子网 ID。
+	// Subnet ID.
 	SubnetId pulumi.StringInput
-	// 私有网络 ID。
+	// Private network ID.
 	VpcId pulumi.StringInput
 }
 
@@ -313,72 +313,72 @@ func (o MountPointOutput) Clients() MountPointClientArrayOutput {
 	return o.ApplyT(func(v *MountPoint) MountPointClientArrayOutput { return v.Clients }).(MountPointClientArrayOutput)
 }
 
-// 挂载点创建时间。
+// Mount point creation time.
 func (o MountPointOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *MountPoint) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// DNS 地址。
+// DNS address.
 func (o MountPointOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v *MountPoint) pulumi.StringOutput { return v.Domain }).(pulumi.StringOutput)
 }
 
-// 文件系统 ID。
+// File system ID.
 func (o MountPointOutput) FileSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MountPoint) pulumi.StringOutput { return v.FileSystemId }).(pulumi.StringOutput)
 }
 
-// 挂载点地址。
+// Mount point address.
 func (o MountPointOutput) Ip() pulumi.StringOutput {
 	return o.ApplyT(func(v *MountPoint) pulumi.StringOutput { return v.Ip }).(pulumi.StringOutput)
 }
 
-// 挂载点 ID。
+// Mount point ID.
 func (o MountPointOutput) MountPointId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MountPoint) pulumi.StringOutput { return v.MountPointId }).(pulumi.StringOutput)
 }
 
-// 挂载点名称。
+// Mount point name.
 func (o MountPointOutput) MountPointName() pulumi.StringOutput {
 	return o.ApplyT(func(v *MountPoint) pulumi.StringOutput { return v.MountPointName }).(pulumi.StringOutput)
 }
 
-// 挂载点绑定的权限组信息。
+// Permission group information bound to the mount point.
 func (o MountPointOutput) PermissionGroup() MountPointPermissionGroupOutput {
 	return o.ApplyT(func(v *MountPoint) MountPointPermissionGroupOutput { return v.PermissionGroup }).(MountPointPermissionGroupOutput)
 }
 
-// 权限组 ID。
+// Permission group ID.
 func (o MountPointOutput) PermissionGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MountPoint) pulumi.StringOutput { return v.PermissionGroupId }).(pulumi.StringOutput)
 }
 
-// 挂载点状态。取值：Running：运行中。Creating：创建中。Updating：更新中。Error：异常。Deleting：删除中。DeleteError：删除异常。Deleted：已删除。Stopped：已停止。
+// Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
 func (o MountPointOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *MountPoint) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
 
-// 子网 ID。
+// Subnet ID.
 func (o MountPointOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MountPoint) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// 子网名称。
+// Subnet name.
 func (o MountPointOutput) SubnetName() pulumi.StringOutput {
 	return o.ApplyT(func(v *MountPoint) pulumi.StringOutput { return v.SubnetName }).(pulumi.StringOutput)
 }
 
-// 挂载点更新时间。
+// Mount point update time.
 func (o MountPointOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *MountPoint) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// 私有网络 ID。
+// Private network ID.
 func (o MountPointOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MountPoint) pulumi.StringOutput { return v.VpcId }).(pulumi.StringOutput)
 }
 
-// 私有网络名称。
+// Private network name.
 func (o MountPointOutput) VpcName() pulumi.StringOutput {
 	return o.ApplyT(func(v *MountPoint) pulumi.StringOutput { return v.VpcName }).(pulumi.StringOutput)
 }

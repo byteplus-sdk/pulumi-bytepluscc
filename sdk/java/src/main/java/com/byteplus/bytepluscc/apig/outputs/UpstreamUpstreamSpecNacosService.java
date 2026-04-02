@@ -12,62 +12,62 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UpstreamUpstreamSpecNacosService {
     /**
-     * @return 分组。
+     * @return Group
      * 
      */
     private @Nullable String group;
     /**
-     * @return 命名空间。
+     * @return Namespace
      * 
      */
     private @Nullable String namespace;
     /**
-     * @return 命名空间ID。
+     * @return Namespace ID
      * 
      */
     private @Nullable String namespaceId;
     /**
-     * @return 服务。
+     * @return Service
      * 
      */
     private @Nullable String service;
     /**
-     * @return Upstream来源ID。
+     * @return Upstream source ID
      * 
      */
     private @Nullable String upstreamSourceId;
 
     private UpstreamUpstreamSpecNacosService() {}
     /**
-     * @return 分组。
+     * @return Group
      * 
      */
     public Optional<String> group() {
         return Optional.ofNullable(this.group);
     }
     /**
-     * @return 命名空间。
+     * @return Namespace
      * 
      */
     public Optional<String> namespace() {
         return Optional.ofNullable(this.namespace);
     }
     /**
-     * @return 命名空间ID。
+     * @return Namespace ID
      * 
      */
     public Optional<String> namespaceId() {
         return Optional.ofNullable(this.namespaceId);
     }
     /**
-     * @return 服务。
+     * @return Service
      * 
      */
     public Optional<String> service() {
         return Optional.ofNullable(this.service);
     }
     /**
-     * @return Upstream来源ID。
+     * @return Upstream source ID
      * 
      */
     public Optional<String> upstreamSourceId() {

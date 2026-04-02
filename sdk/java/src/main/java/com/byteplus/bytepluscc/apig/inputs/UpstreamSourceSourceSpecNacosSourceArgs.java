@@ -17,14 +17,14 @@ public final class UpstreamSourceSourceSpecNacosSourceArgs extends com.pulumi.re
     public static final UpstreamSourceSourceSpecNacosSourceArgs Empty = new UpstreamSourceSourceSpecNacosSourceArgs();
 
     /**
-     * 认证配置。
+     * Authentication configuration
      * 
      */
     @Import(name="authConfig")
     private @Nullable Output<UpstreamSourceSourceSpecNacosSourceAuthConfigArgs> authConfig;
 
     /**
-     * @return 认证配置。
+     * @return Authentication configuration
      * 
      */
     public Optional<Output<UpstreamSourceSourceSpecNacosSourceAuthConfigArgs>> authConfig() {
@@ -47,14 +47,14 @@ public final class UpstreamSourceSourceSpecNacosSourceArgs extends com.pulumi.re
     }
 
     /**
-     * Nacos名称。
+     * Nacos name
      * 
      */
     @Import(name="nacosName")
     private @Nullable Output<String> nacosName;
 
     /**
-     * @return Nacos名称。
+     * @return Nacos name
      * 
      */
     public Optional<Output<String>> nacosName() {
@@ -88,7 +88,7 @@ public final class UpstreamSourceSourceSpecNacosSourceArgs extends com.pulumi.re
         }
 
         /**
-         * @param authConfig 认证配置。
+         * @param authConfig Authentication configuration
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class UpstreamSourceSourceSpecNacosSourceArgs extends com.pulumi.re
         }
 
         /**
-         * @param authConfig 认证配置。
+         * @param authConfig Authentication configuration
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class UpstreamSourceSourceSpecNacosSourceArgs extends com.pulumi.re
         }
 
         /**
-         * @param nacosName Nacos名称。
+         * @param nacosName Nacos name
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class UpstreamSourceSourceSpecNacosSourceArgs extends com.pulumi.re
         }
 
         /**
-         * @param nacosName Nacos名称。
+         * @param nacosName Nacos name
          * 
          * @return builder
          * 

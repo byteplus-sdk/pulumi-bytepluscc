@@ -13,158 +13,158 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceNodeDetailInfo {
     /**
-     * @return 节点的创建时间。
+     * @return Node creation time.
      * 
      */
     private @Nullable String createTime;
     /**
-     * @return 节点主机名。
+     * @return Node hostname.
      * 
      */
     private @Nullable String hostName;
     /**
-     * @return 实例ID。
+     * @return Instance ID.
      * 
      */
     private @Nullable String instanceId;
     /**
-     * @return 内存大小，单位为 GiB。
+     * @return Memory size, in GiB.
      * 
      */
     private @Nullable Integer memory;
     /**
-     * @return 节点ID。
+     * @return Node ID.
      * 
      */
     private @Nullable String nodeId;
     /**
-     * @return 节点IP。
+     * @return Node IP.
      * 
      */
     private @Nullable String nodeIp;
     /**
-     * @return 节点规格。
+     * @return Node specification.
      * 
      */
     private @Nullable String nodeSpec;
     /**
-     * @return 节点状态，取值为：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主备切换中。Error：错误。
+     * @return Node status. Possible values: Running: running. Creating: creating. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: master/standby switching. Error: error.
      * 
      */
     private @Nullable String nodeStatus;
     /**
-     * @return 节点类型。取值：Primary：表示主节点终端。ReadOnly：表示只读节点终端。Secondary：表示备节点终端。
+     * @return Node type. Possible values: Primary: primary node terminal. ReadOnly: read-only node terminal. Secondary: standby node terminal.
      * 
      */
     private @Nullable String nodeType;
     /**
-     * @return 区域ID。
+     * @return Region ID.
      * 
      */
     private @Nullable String regionId;
     /**
-     * @return 更新时间。
+     * @return Update time.
      * 
      */
     private @Nullable String updateTime;
     /**
-     * @return vCPU 数量。
+     * @return vCPU count.
      * 
      */
     private @Nullable Integer vcpu;
     /**
-     * @return 可用区ID。
+     * @return Availability zone ID.
      * 
      */
     private @Nullable String zoneId;
 
     private InstanceNodeDetailInfo() {}
     /**
-     * @return 节点的创建时间。
+     * @return Node creation time.
      * 
      */
     public Optional<String> createTime() {
         return Optional.ofNullable(this.createTime);
     }
     /**
-     * @return 节点主机名。
+     * @return Node hostname.
      * 
      */
     public Optional<String> hostName() {
         return Optional.ofNullable(this.hostName);
     }
     /**
-     * @return 实例ID。
+     * @return Instance ID.
      * 
      */
     public Optional<String> instanceId() {
         return Optional.ofNullable(this.instanceId);
     }
     /**
-     * @return 内存大小，单位为 GiB。
+     * @return Memory size, in GiB.
      * 
      */
     public Optional<Integer> memory() {
         return Optional.ofNullable(this.memory);
     }
     /**
-     * @return 节点ID。
+     * @return Node ID.
      * 
      */
     public Optional<String> nodeId() {
         return Optional.ofNullable(this.nodeId);
     }
     /**
-     * @return 节点IP。
+     * @return Node IP.
      * 
      */
     public Optional<String> nodeIp() {
         return Optional.ofNullable(this.nodeIp);
     }
     /**
-     * @return 节点规格。
+     * @return Node specification.
      * 
      */
     public Optional<String> nodeSpec() {
         return Optional.ofNullable(this.nodeSpec);
     }
     /**
-     * @return 节点状态，取值为：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主备切换中。Error：错误。
+     * @return Node status. Possible values: Running: running. Creating: creating. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: master/standby switching. Error: error.
      * 
      */
     public Optional<String> nodeStatus() {
         return Optional.ofNullable(this.nodeStatus);
     }
     /**
-     * @return 节点类型。取值：Primary：表示主节点终端。ReadOnly：表示只读节点终端。Secondary：表示备节点终端。
+     * @return Node type. Possible values: Primary: primary node terminal. ReadOnly: read-only node terminal. Secondary: standby node terminal.
      * 
      */
     public Optional<String> nodeType() {
         return Optional.ofNullable(this.nodeType);
     }
     /**
-     * @return 区域ID。
+     * @return Region ID.
      * 
      */
     public Optional<String> regionId() {
         return Optional.ofNullable(this.regionId);
     }
     /**
-     * @return 更新时间。
+     * @return Update time.
      * 
      */
     public Optional<String> updateTime() {
         return Optional.ofNullable(this.updateTime);
     }
     /**
-     * @return vCPU 数量。
+     * @return vCPU count.
      * 
      */
     public Optional<Integer> vcpu() {
         return Optional.ofNullable(this.vcpu);
     }
     /**
-     * @return 可用区ID。
+     * @return Availability zone ID.
      * 
      */
     public Optional<String> zoneId() {

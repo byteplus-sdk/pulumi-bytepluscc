@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class EniPrivateIpSetAssociatedElasticIp {
     /**
-     * @return 公网IP的ID。
+     * @return Public IP ID
      * 
      */
     private @Nullable String allocationId;
 
     private EniPrivateIpSetAssociatedElasticIp() {}
     /**
-     * @return 公网IP的ID。
+     * @return Public IP ID
      * 
      */
     public Optional<String> allocationId() {

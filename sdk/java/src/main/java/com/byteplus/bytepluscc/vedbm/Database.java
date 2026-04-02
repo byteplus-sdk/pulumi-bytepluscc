@@ -16,7 +16,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 云数据库管理
+ * Cloud Database Management
  * 
  * ## Example Usage
  * 
@@ -33,14 +33,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:vedbm/database:Database")
 public class Database extends com.pulumi.resources.CustomResource {
     /**
-     * 数据库字符集，可选值：utf8mb4（默认）、utf8、latin1、ascii
+     * Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
      * 
      */
     @Export(name="characterSetName", refs={String.class}, tree="[0]")
     private Output<String> characterSetName;
 
     /**
-     * @return 数据库字符集，可选值：utf8mb4（默认）、utf8、latin1、ascii
+     * @return Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
      * 
      */
     public Output<String> characterSetName() {
@@ -53,42 +53,42 @@ public class Database extends com.pulumi.resources.CustomResource {
         return this.databasesPrivileges;
     }
     /**
-     * 数据库描述信息，长度0~256字符，可包含数字、中文、英文、下划线(_)、中划线(-)
+     * Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
      * 
      */
     @Export(name="dbDesc", refs={String.class}, tree="[0]")
     private Output<String> dbDesc;
 
     /**
-     * @return 数据库描述信息，长度0~256字符，可包含数字、中文、英文、下划线(_)、中划线(-)
+     * @return Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
      * 
      */
     public Output<String> dbDesc() {
         return this.dbDesc;
     }
     /**
-     * 数据库名称。命名规则：当前实例下唯一；长度2~64字符；以字母开头，字母/数字结尾；由字母、数字、下划线(_)、中划线(-)组成；不能使用预留字
+     * Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
      * 
      */
     @Export(name="dbName", refs={String.class}, tree="[0]")
     private Output<String> dbName;
 
     /**
-     * @return 数据库名称。命名规则：当前实例下唯一；长度2~64字符；以字母开头，字母/数字结尾；由字母、数字、下划线(_)、中划线(-)组成；不能使用预留字
+     * @return Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
      * 
      */
     public Output<String> dbName() {
         return this.dbName;
     }
     /**
-     * 实例ID。
+     * Instance ID
      * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
-     * @return 实例ID。
+     * @return Instance ID
      * 
      */
     public Output<String> instanceId() {

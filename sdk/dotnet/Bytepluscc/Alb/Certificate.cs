@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Alb
 {
     /// <summary>
-    /// ALB 支持上传服务器证书、CA 证书到控制台，对上传的证书单独管理。
+    /// ALB supports uploading server certificates and CA certificates to the console and manages uploaded certificates separately
     /// 
     /// ## Example Usage
     /// 
@@ -53,79 +53,79 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
     public partial class Certificate : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 证书ID。
+        /// Certificate ID
         /// </summary>
         [Output("certificateId")]
         public Output<string> CertificateId { get; private set; } = null!;
 
         /// <summary>
-        /// 证书名称，长度限制为1 ～ 128个字符，必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。
+        /// Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
         /// </summary>
         [Output("certificateName")]
         public Output<string> CertificateName { get; private set; } = null!;
 
         /// <summary>
-        /// 证书类型，取值：CA：CA证书、Server：服务器证书。
+        /// Certificate type. Options: CA: CA certificate; Server: server certificate
         /// </summary>
         [Output("certificateType")]
         public Output<string> CertificateType { get; private set; } = null!;
 
         /// <summary>
-        /// 证书创建时间。
+        /// Certificate creation time
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 证书描述。
+        /// Certificate description
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 证书域名。
+        /// Certificate domain name
         /// </summary>
         [Output("domainName")]
         public Output<string> DomainName { get; private set; } = null!;
 
         /// <summary>
-        /// 证书过期时间。
+        /// Certificate expiration time
         /// </summary>
         [Output("expiredAt")]
         public Output<string> ExpiredAt { get; private set; } = null!;
 
         /// <summary>
-        /// 证书关联的监听器列表。
+        /// List of listeners associated with the certificate
         /// </summary>
         [Output("listeners")]
         public Output<ImmutableArray<string>> Listeners { get; private set; } = null!;
 
         /// <summary>
-        /// 服务器证书的私钥，当证书类型为Server时必填。
+        /// Server certificate private key. Required when certificate type is Server
         /// </summary>
         [Output("privateKey")]
         public Output<string> PrivateKey { get; private set; } = null!;
 
         /// <summary>
-        /// 项目名称。
+        /// Project name
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 服务器证书的公钥。
+        /// Server certificate public key
         /// </summary>
         [Output("publicKey")]
         public Output<string> PublicKey { get; private set; } = null!;
 
         /// <summary>
-        /// 证书扩展域名列表，用英文',' 分隔多个域名， 包含(commonName,DnsName,IP)。
+        /// Certificate subject alternative name list. Use English ',' to separate multiple domain names. Includes (commonName, DnsName, IP)
         /// </summary>
         [Output("san")]
         public Output<string> San { get; private set; } = null!;
 
         /// <summary>
-        /// 证书的状态，取值为：Creating：创建中。Active：运行中。Deleting：删除中。
+        /// Certificate status. Options: Creating: creating; Active: active; Deleting: deleting
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -181,37 +181,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
     public sealed class CertificateArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 证书名称，长度限制为1 ～ 128个字符，必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。
+        /// Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
         /// </summary>
         [Input("certificateName")]
         public Input<string>? CertificateName { get; set; }
 
         /// <summary>
-        /// 证书类型，取值：CA：CA证书、Server：服务器证书。
+        /// Certificate type. Options: CA: CA certificate; Server: server certificate
         /// </summary>
         [Input("certificateType", required: true)]
         public Input<string> CertificateType { get; set; } = null!;
 
         /// <summary>
-        /// 证书描述。
+        /// Certificate description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 服务器证书的私钥，当证书类型为Server时必填。
+        /// Server certificate private key. Required when certificate type is Server
         /// </summary>
         [Input("privateKey")]
         public Input<string>? PrivateKey { get; set; }
 
         /// <summary>
-        /// 项目名称。
+        /// Project name
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 服务器证书的公钥。
+        /// Server certificate public key
         /// </summary>
         [Input("publicKey", required: true)]
         public Input<string> PublicKey { get; set; } = null!;
@@ -233,43 +233,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
     public sealed class CertificateState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 证书ID。
+        /// Certificate ID
         /// </summary>
         [Input("certificateId")]
         public Input<string>? CertificateId { get; set; }
 
         /// <summary>
-        /// 证书名称，长度限制为1 ～ 128个字符，必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。
+        /// Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
         /// </summary>
         [Input("certificateName")]
         public Input<string>? CertificateName { get; set; }
 
         /// <summary>
-        /// 证书类型，取值：CA：CA证书、Server：服务器证书。
+        /// Certificate type. Options: CA: CA certificate; Server: server certificate
         /// </summary>
         [Input("certificateType")]
         public Input<string>? CertificateType { get; set; }
 
         /// <summary>
-        /// 证书创建时间。
+        /// Certificate creation time
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 证书描述。
+        /// Certificate description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 证书域名。
+        /// Certificate domain name
         /// </summary>
         [Input("domainName")]
         public Input<string>? DomainName { get; set; }
 
         /// <summary>
-        /// 证书过期时间。
+        /// Certificate expiration time
         /// </summary>
         [Input("expiredAt")]
         public Input<string>? ExpiredAt { get; set; }
@@ -278,7 +278,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         private InputList<string>? _listeners;
 
         /// <summary>
-        /// 证书关联的监听器列表。
+        /// List of listeners associated with the certificate
         /// </summary>
         public InputList<string> Listeners
         {
@@ -287,31 +287,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         }
 
         /// <summary>
-        /// 服务器证书的私钥，当证书类型为Server时必填。
+        /// Server certificate private key. Required when certificate type is Server
         /// </summary>
         [Input("privateKey")]
         public Input<string>? PrivateKey { get; set; }
 
         /// <summary>
-        /// 项目名称。
+        /// Project name
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 服务器证书的公钥。
+        /// Server certificate public key
         /// </summary>
         [Input("publicKey")]
         public Input<string>? PublicKey { get; set; }
 
         /// <summary>
-        /// 证书扩展域名列表，用英文',' 分隔多个域名， 包含(commonName,DnsName,IP)。
+        /// Certificate subject alternative name list. Use English ',' to separate multiple domain names. Includes (commonName, DnsName, IP)
         /// </summary>
         [Input("san")]
         public Input<string>? San { get; set; }
 
         /// <summary>
-        /// 证书的状态，取值为：Creating：创建中。Active：运行中。Deleting：删除中。
+        /// Certificate status. Options: Creating: creating; Active: active; Deleting: deleting
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }

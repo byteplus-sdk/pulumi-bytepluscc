@@ -19,14 +19,14 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
     public static final GroupArgs Empty = new GroupArgs();
 
     /**
-     * 描述。
+     * Description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 描述。
+     * @return Description
      * 
      */
     public Optional<Output<String>> description() {
@@ -34,14 +34,14 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 显示名。
+     * Display Name
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return 显示名。
+     * @return Display Name
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -49,14 +49,14 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 用户组名称。
+     * User Group Name
      * 
      */
     @Import(name="groupName", required=true)
     private Output<String> groupName;
 
     /**
-     * @return 用户组名称。
+     * @return User Group Name
      * 
      */
     public Output<String> groupName() {
@@ -64,14 +64,14 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 用户组类型。
+     * User Group Type
      * 
      */
     @Import(name="joinType", required=true)
     private Output<String> joinType;
 
     /**
-     * @return 用户组类型。
+     * @return User Group Type
      * 
      */
     public Output<String> joinType() {
@@ -114,7 +114,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 描述。
+         * @param description Description
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 描述。
+         * @param description Description
          * 
          * @return builder
          * 
@@ -135,7 +135,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName 显示名。
+         * @param displayName Display Name
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName 显示名。
+         * @param displayName Display Name
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupName 用户组名称。
+         * @param groupName User Group Name
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupName 用户组名称。
+         * @param groupName User Group Name
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param joinType 用户组类型。
+         * @param joinType User Group Type
          * 
          * @return builder
          * 
@@ -188,7 +188,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param joinType 用户组类型。
+         * @param joinType User Group Type
          * 
          * @return builder
          * 

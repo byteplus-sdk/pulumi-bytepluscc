@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 转发规则用于将指定域名和URL的请求引流至指定的后端服务器组。
+// The forwarding rule directs requests for specified domain names and URLs to the designated backend server group.
 //
 // ## Example Usage
 //
@@ -59,22 +59,22 @@ import (
 type Rule struct {
 	pulumi.CustomResourceState
 
-	// 转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。
+	// Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
 	ActionType pulumi.StringOutput `pulumi:"actionType"`
-	// 转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+	// Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// 转发规则的域名。
+	// Domain name of the forwarding rule.
 	Domain pulumi.StringOutput `pulumi:"domain"`
-	// 监听器ID。
+	// Listener ID.
 	ListenerId pulumi.StringOutput `pulumi:"listenerId"`
-	// 重定向相关配置信息。
+	// Redirection-related configuration information.
 	RedirectConfig RuleRedirectConfigOutput `pulumi:"redirectConfig"`
-	// 转发规则ID。
+	// Forwarding rule ID.
 	RuleId pulumi.StringOutput `pulumi:"ruleId"`
-	// 转发规则关联的后端服务器组的ID。
+	// ID of the backend server group associated with the forwarding rule.
 	ServerGroupId pulumi.StringOutput `pulumi:"serverGroupId"`
 	Tags          RuleTagArrayOutput  `pulumi:"tags"`
-	// 转发规则的URL。
+	// URL of the forwarding rule.
 	Url pulumi.StringOutput `pulumi:"url"`
 }
 
@@ -111,42 +111,42 @@ func GetRule(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Rule resources.
 type ruleState struct {
-	// 转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。
+	// Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
 	ActionType *string `pulumi:"actionType"`
-	// 转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+	// Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
 	Description *string `pulumi:"description"`
-	// 转发规则的域名。
+	// Domain name of the forwarding rule.
 	Domain *string `pulumi:"domain"`
-	// 监听器ID。
+	// Listener ID.
 	ListenerId *string `pulumi:"listenerId"`
-	// 重定向相关配置信息。
+	// Redirection-related configuration information.
 	RedirectConfig *RuleRedirectConfig `pulumi:"redirectConfig"`
-	// 转发规则ID。
+	// Forwarding rule ID.
 	RuleId *string `pulumi:"ruleId"`
-	// 转发规则关联的后端服务器组的ID。
+	// ID of the backend server group associated with the forwarding rule.
 	ServerGroupId *string   `pulumi:"serverGroupId"`
 	Tags          []RuleTag `pulumi:"tags"`
-	// 转发规则的URL。
+	// URL of the forwarding rule.
 	Url *string `pulumi:"url"`
 }
 
 type RuleState struct {
-	// 转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。
+	// Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
 	ActionType pulumi.StringPtrInput
-	// 转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+	// Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
 	Description pulumi.StringPtrInput
-	// 转发规则的域名。
+	// Domain name of the forwarding rule.
 	Domain pulumi.StringPtrInput
-	// 监听器ID。
+	// Listener ID.
 	ListenerId pulumi.StringPtrInput
-	// 重定向相关配置信息。
+	// Redirection-related configuration information.
 	RedirectConfig RuleRedirectConfigPtrInput
-	// 转发规则ID。
+	// Forwarding rule ID.
 	RuleId pulumi.StringPtrInput
-	// 转发规则关联的后端服务器组的ID。
+	// ID of the backend server group associated with the forwarding rule.
 	ServerGroupId pulumi.StringPtrInput
 	Tags          RuleTagArrayInput
-	// 转发规则的URL。
+	// URL of the forwarding rule.
 	Url pulumi.StringPtrInput
 }
 
@@ -155,39 +155,39 @@ func (RuleState) ElementType() reflect.Type {
 }
 
 type ruleArgs struct {
-	// 转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。
+	// Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
 	ActionType *string `pulumi:"actionType"`
-	// 转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+	// Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
 	Description *string `pulumi:"description"`
-	// 转发规则的域名。
+	// Domain name of the forwarding rule.
 	Domain *string `pulumi:"domain"`
-	// 监听器ID。
+	// Listener ID.
 	ListenerId string `pulumi:"listenerId"`
-	// 重定向相关配置信息。
+	// Redirection-related configuration information.
 	RedirectConfig *RuleRedirectConfig `pulumi:"redirectConfig"`
-	// 转发规则关联的后端服务器组的ID。
+	// ID of the backend server group associated with the forwarding rule.
 	ServerGroupId *string   `pulumi:"serverGroupId"`
 	Tags          []RuleTag `pulumi:"tags"`
-	// 转发规则的URL。
+	// URL of the forwarding rule.
 	Url *string `pulumi:"url"`
 }
 
 // The set of arguments for constructing a Rule resource.
 type RuleArgs struct {
-	// 转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。
+	// Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
 	ActionType pulumi.StringPtrInput
-	// 转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+	// Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
 	Description pulumi.StringPtrInput
-	// 转发规则的域名。
+	// Domain name of the forwarding rule.
 	Domain pulumi.StringPtrInput
-	// 监听器ID。
+	// Listener ID.
 	ListenerId pulumi.StringInput
-	// 重定向相关配置信息。
+	// Redirection-related configuration information.
 	RedirectConfig RuleRedirectConfigPtrInput
-	// 转发规则关联的后端服务器组的ID。
+	// ID of the backend server group associated with the forwarding rule.
 	ServerGroupId pulumi.StringPtrInput
 	Tags          RuleTagArrayInput
-	// 转发规则的URL。
+	// URL of the forwarding rule.
 	Url pulumi.StringPtrInput
 }
 
@@ -278,37 +278,37 @@ func (o RuleOutput) ToRuleOutputWithContext(ctx context.Context) RuleOutput {
 	return o
 }
 
-// 转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。
+// Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
 func (o RuleOutput) ActionType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.ActionType }).(pulumi.StringOutput)
 }
 
-// 转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+// Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
 func (o RuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// 转发规则的域名。
+// Domain name of the forwarding rule.
 func (o RuleOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.Domain }).(pulumi.StringOutput)
 }
 
-// 监听器ID。
+// Listener ID.
 func (o RuleOutput) ListenerId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.ListenerId }).(pulumi.StringOutput)
 }
 
-// 重定向相关配置信息。
+// Redirection-related configuration information.
 func (o RuleOutput) RedirectConfig() RuleRedirectConfigOutput {
 	return o.ApplyT(func(v *Rule) RuleRedirectConfigOutput { return v.RedirectConfig }).(RuleRedirectConfigOutput)
 }
 
-// 转发规则ID。
+// Forwarding rule ID.
 func (o RuleOutput) RuleId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.RuleId }).(pulumi.StringOutput)
 }
 
-// 转发规则关联的后端服务器组的ID。
+// ID of the backend server group associated with the forwarding rule.
 func (o RuleOutput) ServerGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.ServerGroupId }).(pulumi.StringOutput)
 }
@@ -317,7 +317,7 @@ func (o RuleOutput) Tags() RuleTagArrayOutput {
 	return o.ApplyT(func(v *Rule) RuleTagArrayOutput { return v.Tags }).(RuleTagArrayOutput)
 }
 
-// 转发规则的URL。
+// URL of the forwarding rule.
 func (o RuleOutput) Url() pulumi.StringOutput {
 	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.Url }).(pulumi.StringOutput)
 }

@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf.Outputs
     public sealed class GetDomainProtocolPortsResult
     {
         /// <summary>
-        /// HTTP 协议的端口号。
+        /// HTTP protocol port number
         /// </summary>
         public readonly ImmutableArray<int> Http;
         /// <summary>
-        /// HTTPS 协议的端口号。
+        /// HTTPS protocol port number
         /// </summary>
         public readonly ImmutableArray<int> Https;
 

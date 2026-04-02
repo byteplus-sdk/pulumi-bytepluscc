@@ -30,63 +30,63 @@ type LookupInvocationArgs struct {
 
 // A collection of values returned by getInvocation.
 type LookupInvocationResult struct {
-	// 命令内容。
+	// Command content.
 	CommandContent string `pulumi:"commandContent"`
-	// 被调用命令的描述。
+	// Description of the invoked command.
 	CommandDescription string `pulumi:"commandDescription"`
-	// 命令ID。
+	// Command ID.
 	CommandId string `pulumi:"commandId"`
-	// 任务触发时的命令名称。
+	// Command name when the task is triggered.
 	CommandName string `pulumi:"commandName"`
-	// 被调用命令的提供方。
+	// Provider of the invoked command.
 	CommandProvider string `pulumi:"commandProvider"`
-	// 作业触发的命令类型。
+	// Command type triggered by the job.
 	CommandType string `pulumi:"commandType"`
-	// 被调用命令是否使用自定义参数。true：已启用。false：未启用。
+	// Whether the invoked command uses custom parameters. true: enabled. false: not enabled.
 	EnableParameter bool `pulumi:"enableParameter"`
-	// 任务结束时间。
+	// Task end time.
 	EndTime string `pulumi:"endTime"`
-	// 执行频率。RepeatMode=Rate 时本参数必填。格式：<执行间隔数值><执行间隔单位>，执行间隔单位：支持分钟（5m-60m）、小时（1h-24h）和天（1d-7d）。执行间隔基于固定频率，与作业实际执行需要的时间无关。创建作业后基于LaunchTime执行一次，根据间隔设置确定下一次执行时间。
+	// Execution frequency. This parameter is required when RepeatMode=Rate. Format: \n\n\n\n. Interval units supported: minutes (5m–60m), hours (1h–24h), and days (1d–7d). The interval is based on a fixed frequency and is independent of the actual job execution time. After job creation, it executes once based on LaunchTime, and the next execution time is determined by the interval setting.
 	Frequency string `pulumi:"frequency"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 实例ID列表，最多支持200个ID。
+	// Instance ID list, supports up to 200 IDs.
 	InstanceIds []string `pulumi:"instanceIds"`
-	// 执行实例数量。
+	// Number of instances executed.
 	InstanceNumber int `pulumi:"instanceNumber"`
-	// 作业描述，默认为空字符串，不超过256个字符。
+	// Job description. Defaults to an empty string and must not exceed 256 characters.
 	InvocationDescription string `pulumi:"invocationDescription"`
-	// 任务执行 ID。
+	// Task execution ID.
 	InvocationId string `pulumi:"invocationId"`
-	// 作业名称。不超过64个字符。暂不限制特殊字符。同地域下作业名称可重复。
+	// Job name. Maximum 64 characters. No restriction on special characters. Job names can be duplicated within the same region.
 	InvocationName string `pulumi:"invocationName"`
-	// 单台实例执行命令的结果。
+	// Result of command execution on a single instance.
 	InvocationResults []GetInvocationInvocationResult `pulumi:"invocationResults"`
-	// 命令执行的总执行状态。
+	// Overall execution status of the command.
 	InvocationStatus string `pulumi:"invocationStatus"`
-	// 执行时间。
+	// Execution time.
 	LaunchTime string `pulumi:"launchTime"`
-	// 任务触发时的命令自定义参数定义。
+	// Custom parameter definition for the command triggered by the task.
 	ParameterDefinitions []GetInvocationParameterDefinition `pulumi:"parameterDefinitions"`
-	// 命令中包含自定义参数时，需通过本参数传入自定义参数的键值对。自定义参数个数范围为0~60。Key不允许为空字符串，最多支持64个字符。Value允许为空字符串。自定义参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的自定义参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+	// When the command includes custom parameters, use this parameter to pass custom parameter key-value pairs. The number of custom parameters ranges from 0 to 60. Key cannot be an empty string and supports up to 64 characters. Value can be an empty string. The combined length of custom parameters and original command content after Base64 encoding must not exceed 16 KB. The set of custom parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
 	Parameters string `pulumi:"parameters"`
-	// 资源所属项目，一个资源只能归属于一个项目。
+	// Project to which the resource belongs; each resource can belong to only one project.
 	ProjectName string `pulumi:"projectName"`
-	// 周期结束时间，仅适用于周期任务（Rate）。
+	// Cycle end time, applicable only to periodic tasks (Rate).
 	RecurrenceEndTime string `pulumi:"recurrenceEndTime"`
-	// 设置命令执行的方式。Once：默认，表示立即执行命令。Rate：周期执行命令，需要通过Frequency参数传入Rate表达式指定执行周期。Fixed：定时执行命令，需要通过LaunchTime参数指定的执行时间。
+	// Set the command execution mode. Once: Default, executes the command immediately. Rate: Executes the command periodically; specify the execution cycle using the Frequency parameter and Rate expression. Fixed: Executes the command at a scheduled time; specify the execution time using the LaunchTime parameter.
 	RepeatMode string `pulumi:"repeatMode"`
-	// 任务开始时间。
+	// Task start time.
 	StartTime string `pulumi:"startTime"`
-	// 标签键值对。
+	// Tag key-value pair.
 	Tags []GetInvocationTag `pulumi:"tags"`
-	// 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。默认值：60。可选范围为：30~86400。
+	// Maximum timeout for command execution in ECS instances, in seconds. Default: 60. Optional range: 30–86400.
 	Timeout int `pulumi:"timeout"`
-	// 在ECS实例中执行命令的用户名称。
+	// User name for executing the command in the ECS instance.
 	Username string `pulumi:"username"`
-	// 自定义windows用户的密码。
+	// Password for custom Windows user.
 	WindowsPassword string `pulumi:"windowsPassword"`
-	// 创建的命令在ECS实例中运行的目录。
+	// Directory where the created command runs in the ECS instance.
 	WorkingDir string `pulumi:"workingDir"`
 }
 
@@ -124,47 +124,47 @@ func (o LookupInvocationResultOutput) ToLookupInvocationResultOutputWithContext(
 	return o
 }
 
-// 命令内容。
+// Command content.
 func (o LookupInvocationResultOutput) CommandContent() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInvocationResult) string { return v.CommandContent }).(pulumi.StringOutput)
 }
 
-// 被调用命令的描述。
+// Description of the invoked command.
 func (o LookupInvocationResultOutput) CommandDescription() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInvocationResult) string { return v.CommandDescription }).(pulumi.StringOutput)
 }
 
-// 命令ID。
+// Command ID.
 func (o LookupInvocationResultOutput) CommandId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInvocationResult) string { return v.CommandId }).(pulumi.StringOutput)
 }
 
-// 任务触发时的命令名称。
+// Command name when the task is triggered.
 func (o LookupInvocationResultOutput) CommandName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInvocationResult) string { return v.CommandName }).(pulumi.StringOutput)
 }
 
-// 被调用命令的提供方。
+// Provider of the invoked command.
 func (o LookupInvocationResultOutput) CommandProvider() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInvocationResult) string { return v.CommandProvider }).(pulumi.StringOutput)
 }
 
-// 作业触发的命令类型。
+// Command type triggered by the job.
 func (o LookupInvocationResultOutput) CommandType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInvocationResult) string { return v.CommandType }).(pulumi.StringOutput)
 }
 
-// 被调用命令是否使用自定义参数。true：已启用。false：未启用。
+// Whether the invoked command uses custom parameters. true: enabled. false: not enabled.
 func (o LookupInvocationResultOutput) EnableParameter() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupInvocationResult) bool { return v.EnableParameter }).(pulumi.BoolOutput)
 }
 
-// 任务结束时间。
+// Task end time.
 func (o LookupInvocationResultOutput) EndTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInvocationResult) string { return v.EndTime }).(pulumi.StringOutput)
 }
 
-// 执行频率。RepeatMode=Rate 时本参数必填。格式：<执行间隔数值><执行间隔单位>，执行间隔单位：支持分钟（5m-60m）、小时（1h-24h）和天（1d-7d）。执行间隔基于固定频率，与作业实际执行需要的时间无关。创建作业后基于LaunchTime执行一次，根据间隔设置确定下一次执行时间。
+// Execution frequency. This parameter is required when RepeatMode=Rate. Format: \n\n\n\n. Interval units supported: minutes (5m–60m), hours (1h–24h), and days (1d–7d). The interval is based on a fixed frequency and is independent of the actual job execution time. After job creation, it executes once based on LaunchTime, and the next execution time is determined by the interval setting.
 func (o LookupInvocationResultOutput) Frequency() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInvocationResult) string { return v.Frequency }).(pulumi.StringOutput)
 }
@@ -174,97 +174,97 @@ func (o LookupInvocationResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInvocationResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 实例ID列表，最多支持200个ID。
+// Instance ID list, supports up to 200 IDs.
 func (o LookupInvocationResultOutput) InstanceIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupInvocationResult) []string { return v.InstanceIds }).(pulumi.StringArrayOutput)
 }
 
-// 执行实例数量。
+// Number of instances executed.
 func (o LookupInvocationResultOutput) InstanceNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInvocationResult) int { return v.InstanceNumber }).(pulumi.IntOutput)
 }
 
-// 作业描述，默认为空字符串，不超过256个字符。
+// Job description. Defaults to an empty string and must not exceed 256 characters.
 func (o LookupInvocationResultOutput) InvocationDescription() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInvocationResult) string { return v.InvocationDescription }).(pulumi.StringOutput)
 }
 
-// 任务执行 ID。
+// Task execution ID.
 func (o LookupInvocationResultOutput) InvocationId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInvocationResult) string { return v.InvocationId }).(pulumi.StringOutput)
 }
 
-// 作业名称。不超过64个字符。暂不限制特殊字符。同地域下作业名称可重复。
+// Job name. Maximum 64 characters. No restriction on special characters. Job names can be duplicated within the same region.
 func (o LookupInvocationResultOutput) InvocationName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInvocationResult) string { return v.InvocationName }).(pulumi.StringOutput)
 }
 
-// 单台实例执行命令的结果。
+// Result of command execution on a single instance.
 func (o LookupInvocationResultOutput) InvocationResults() GetInvocationInvocationResultArrayOutput {
 	return o.ApplyT(func(v LookupInvocationResult) []GetInvocationInvocationResult { return v.InvocationResults }).(GetInvocationInvocationResultArrayOutput)
 }
 
-// 命令执行的总执行状态。
+// Overall execution status of the command.
 func (o LookupInvocationResultOutput) InvocationStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInvocationResult) string { return v.InvocationStatus }).(pulumi.StringOutput)
 }
 
-// 执行时间。
+// Execution time.
 func (o LookupInvocationResultOutput) LaunchTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInvocationResult) string { return v.LaunchTime }).(pulumi.StringOutput)
 }
 
-// 任务触发时的命令自定义参数定义。
+// Custom parameter definition for the command triggered by the task.
 func (o LookupInvocationResultOutput) ParameterDefinitions() GetInvocationParameterDefinitionArrayOutput {
 	return o.ApplyT(func(v LookupInvocationResult) []GetInvocationParameterDefinition { return v.ParameterDefinitions }).(GetInvocationParameterDefinitionArrayOutput)
 }
 
-// 命令中包含自定义参数时，需通过本参数传入自定义参数的键值对。自定义参数个数范围为0~60。Key不允许为空字符串，最多支持64个字符。Value允许为空字符串。自定义参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的自定义参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+// When the command includes custom parameters, use this parameter to pass custom parameter key-value pairs. The number of custom parameters ranges from 0 to 60. Key cannot be an empty string and supports up to 64 characters. Value can be an empty string. The combined length of custom parameters and original command content after Base64 encoding must not exceed 16 KB. The set of custom parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
 func (o LookupInvocationResultOutput) Parameters() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInvocationResult) string { return v.Parameters }).(pulumi.StringOutput)
 }
 
-// 资源所属项目，一个资源只能归属于一个项目。
+// Project to which the resource belongs; each resource can belong to only one project.
 func (o LookupInvocationResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInvocationResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 周期结束时间，仅适用于周期任务（Rate）。
+// Cycle end time, applicable only to periodic tasks (Rate).
 func (o LookupInvocationResultOutput) RecurrenceEndTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInvocationResult) string { return v.RecurrenceEndTime }).(pulumi.StringOutput)
 }
 
-// 设置命令执行的方式。Once：默认，表示立即执行命令。Rate：周期执行命令，需要通过Frequency参数传入Rate表达式指定执行周期。Fixed：定时执行命令，需要通过LaunchTime参数指定的执行时间。
+// Set the command execution mode. Once: Default, executes the command immediately. Rate: Executes the command periodically; specify the execution cycle using the Frequency parameter and Rate expression. Fixed: Executes the command at a scheduled time; specify the execution time using the LaunchTime parameter.
 func (o LookupInvocationResultOutput) RepeatMode() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInvocationResult) string { return v.RepeatMode }).(pulumi.StringOutput)
 }
 
-// 任务开始时间。
+// Task start time.
 func (o LookupInvocationResultOutput) StartTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInvocationResult) string { return v.StartTime }).(pulumi.StringOutput)
 }
 
-// 标签键值对。
+// Tag key-value pair.
 func (o LookupInvocationResultOutput) Tags() GetInvocationTagArrayOutput {
 	return o.ApplyT(func(v LookupInvocationResult) []GetInvocationTag { return v.Tags }).(GetInvocationTagArrayOutput)
 }
 
-// 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。默认值：60。可选范围为：30~86400。
+// Maximum timeout for command execution in ECS instances, in seconds. Default: 60. Optional range: 30–86400.
 func (o LookupInvocationResultOutput) Timeout() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInvocationResult) int { return v.Timeout }).(pulumi.IntOutput)
 }
 
-// 在ECS实例中执行命令的用户名称。
+// User name for executing the command in the ECS instance.
 func (o LookupInvocationResultOutput) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInvocationResult) string { return v.Username }).(pulumi.StringOutput)
 }
 
-// 自定义windows用户的密码。
+// Password for custom Windows user.
 func (o LookupInvocationResultOutput) WindowsPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInvocationResult) string { return v.WindowsPassword }).(pulumi.StringOutput)
 }
 
-// 创建的命令在ECS实例中运行的目录。
+// Directory where the created command runs in the ECS instance.
 func (o LookupInvocationResultOutput) WorkingDir() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInvocationResult) string { return v.WorkingDir }).(pulumi.StringOutput)
 }

@@ -14,43 +14,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
     public sealed class LaunchTemplateVersionVolumeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 云盘是否随实例释放。
+        /// Whether the disk is released with the instance
         /// </summary>
         [Input("deleteWithInstance")]
         public Input<bool>? DeleteWithInstance { get; set; }
 
         /// <summary>
-        /// 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+        /// Extra IOPS performance size for the disk, supported only by ESSD FlexPL data disks, measured in operations per second. This parameter must be set when ExtraPerformanceTypeId is Balance or IOPS. Value ranges for each type: IOPS: 1–50000. Balance: 1–50000
         /// </summary>
         [Input("extraPerformanceIops")]
         public Input<int>? ExtraPerformanceIops { get; set; }
 
         /// <summary>
-        /// 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+        /// Additional disk throughput performance in MB/s. Supported only by ESSD FlexPL data disks. Set this parameter when ExtraPerformanceTypeId is Throughput. Value range: 1–650.
         /// </summary>
         [Input("extraPerformanceThroughputMb")]
         public Input<int>? ExtraPerformanceThroughputMb { get; set; }
 
         /// <summary>
-        /// 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+        /// Type of extra disk performance, supported only by ESSD FlexPL data disks. For more information about extra performance, see Extra Disk Performance. Values: Balance: Balanced extra performance. IOPS: IOPS extra performance. Throughput: Throughput extra performance
         /// </summary>
         [Input("extraPerformanceTypeId")]
         public Input<string>? ExtraPerformanceTypeId { get; set; }
 
         /// <summary>
-        /// 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+        /// Disk size, measured in GB. System disk: ESSD*PL0: 20–2048, PTSSD: 10–500. Data disk: ESSD*PL0: 10–32768, PTSSD: 20–8192
         /// </summary>
         [Input("size")]
         public Input<int>? Size { get; set; }
 
         /// <summary>
-        /// 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+        /// Create a cloud disk from a snapshot. Only data disks are supported. You can call the DescribeSnapshots API to query the snapshot ID.
         /// </summary>
         [Input("snapshotId")]
         public Input<string>? SnapshotId { get; set; }
 
         /// <summary>
-        /// 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+        /// Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
         /// </summary>
         [Input("volumeType")]
         public Input<string>? VolumeType { get; set; }

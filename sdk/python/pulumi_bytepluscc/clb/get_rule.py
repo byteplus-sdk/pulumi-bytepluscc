@@ -64,7 +64,7 @@ class GetRuleResult:
     @pulumi.getter(name="actionType")
     def action_type(self) -> builtins.str:
         """
-        转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。
+        Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
         """
         return pulumi.get(self, "action_type")
 
@@ -72,7 +72,7 @@ class GetRuleResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+        Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
         """
         return pulumi.get(self, "description")
 
@@ -80,7 +80,7 @@ class GetRuleResult:
     @pulumi.getter
     def domain(self) -> builtins.str:
         """
-        转发规则的域名。
+        Domain name of the forwarding rule.
         """
         return pulumi.get(self, "domain")
 
@@ -96,7 +96,7 @@ class GetRuleResult:
     @pulumi.getter(name="listenerId")
     def listener_id(self) -> builtins.str:
         """
-        监听器ID。
+        Listener ID.
         """
         return pulumi.get(self, "listener_id")
 
@@ -104,7 +104,7 @@ class GetRuleResult:
     @pulumi.getter(name="redirectConfig")
     def redirect_config(self) -> 'outputs.GetRuleRedirectConfigResult':
         """
-        重定向相关配置信息。
+        Redirection-related configuration information.
         """
         return pulumi.get(self, "redirect_config")
 
@@ -112,7 +112,7 @@ class GetRuleResult:
     @pulumi.getter(name="ruleId")
     def rule_id(self) -> builtins.str:
         """
-        转发规则ID。
+        Forwarding rule ID.
         """
         return pulumi.get(self, "rule_id")
 
@@ -120,7 +120,7 @@ class GetRuleResult:
     @pulumi.getter(name="serverGroupId")
     def server_group_id(self) -> builtins.str:
         """
-        转发规则关联的后端服务器组的ID。
+        ID of the backend server group associated with the forwarding rule.
         """
         return pulumi.get(self, "server_group_id")
 
@@ -128,7 +128,7 @@ class GetRuleResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetRuleTagResult']:
         """
-        标签列表。
+        Tag list.
         """
         return pulumi.get(self, "tags")
 
@@ -136,7 +136,7 @@ class GetRuleResult:
     @pulumi.getter
     def url(self) -> builtins.str:
         """
-        转发规则的URL。
+        URL of the forwarding rule.
         """
         return pulumi.get(self, "url")
 

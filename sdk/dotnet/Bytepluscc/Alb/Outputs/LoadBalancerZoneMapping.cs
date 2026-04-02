@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class LoadBalancerZoneMapping
     {
         /// <summary>
-        /// 可用区内提供服务的子网ID。
+        /// Subnet ID providing services within the availability zone.
         /// </summary>
         public readonly string? SubnetId;
         /// <summary>
-        /// 可用区的唯一标识符。
+        /// Unique identifier of the availability zone.
         /// </summary>
         public readonly string? ZoneId;
 

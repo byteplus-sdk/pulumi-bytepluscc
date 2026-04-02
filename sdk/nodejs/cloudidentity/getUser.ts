@@ -29,19 +29,19 @@ export interface GetUserArgs {
  */
 export interface GetUserResult {
     /**
-     * 创建时间。
+     * Creation Time.
      */
     readonly createdTime: string;
     /**
-     * 用户描述。
+     * User Description.
      */
     readonly description: string;
     /**
-     * 用户显示名。
+     * User Display Name.
      */
     readonly displayName: string;
     /**
-     * 邮箱。
+     * Email.
      */
     readonly email: string;
     /**
@@ -49,35 +49,35 @@ export interface GetUserResult {
      */
     readonly id: string;
     /**
-     * 身份类型。
+     * Identity Type.
      */
     readonly identityType: string;
     /**
-     * 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+     * Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
      */
     readonly password: string;
     /**
-     * 首次登陆需不需要重置密码。
+     * Is password reset required on first login?
      */
     readonly passwordResetRequired: boolean;
     /**
-     * 手机号。
+     * Mobile Number.
      */
     readonly phone: string;
     /**
-     * 用户来源。
+     * User Source.
      */
     readonly source: string;
     /**
-     * 更新时间。
+     * Update Time.
      */
     readonly updatedTime: string;
     /**
-     * 用户id。
+     * User ID.
      */
     readonly userId: string;
     /**
-     * 用户名。
+     * Username.
      */
     readonly userName: string;
 }

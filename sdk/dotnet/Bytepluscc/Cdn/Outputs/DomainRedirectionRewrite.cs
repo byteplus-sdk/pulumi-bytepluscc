@@ -16,7 +16,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     {
         public readonly ImmutableArray<Outputs.DomainRedirectionRewriteRedirectionRule> RedirectionRules;
         /// <summary>
-        /// 表示是否启用该配置。该参数有以下取值：true：表示启用 URL 重定向改写。false：表示禁用 URL 重定向改写。
+        /// Indicates whether this configuration is enabled. This parameter has the following values: true: enables URL redirect rewrite. false: disables URL redirect rewrite.
         /// </summary>
         public readonly bool? Switch;
 

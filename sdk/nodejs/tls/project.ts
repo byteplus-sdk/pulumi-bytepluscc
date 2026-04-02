@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 日志项目是数据的项目管理单元，用于租户资源隔离和控制，通常一个日志项目对应一个应用、业务或产品。
+ * A log project is a data management unit used for tenant resource isolation and control. Typically, each log project corresponds to an application, service, or product
  *
  * ## Example Usage
  *
@@ -61,32 +61,32 @@ export class Project extends pulumi.CustomResource {
     }
 
     /**
-     * 日志项目创建时间。
+     * Log project creation time
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 日志项目的简单描述。
+     * Brief description of the log project
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 日志项目所属的 IAM 项目。
+     * The IAM project associated with the log project
      */
     public readonly iamProjectName!: pulumi.Output<string>;
     /**
-     * 私网连接域名。
+     * Private network connection domain name
      */
     public /*out*/ readonly innerNetDomain!: pulumi.Output<string>;
     /**
-     * 日志项目的 ID。
+     * Log project ID
      */
     public /*out*/ readonly projectId!: pulumi.Output<string>;
     /**
-     * 日志项目名称。
+     * Log project name
      */
     public readonly projectName!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.tls.ProjectTag[]>;
     /**
-     * 当前日志项目下的日志主题数量。
+     * Number of log topics in the current log project
      */
     public /*out*/ readonly topicCount!: pulumi.Output<number>;
 
@@ -135,32 +135,32 @@ export class Project extends pulumi.CustomResource {
  */
 export interface ProjectState {
     /**
-     * 日志项目创建时间。
+     * Log project creation time
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 日志项目的简单描述。
+     * Brief description of the log project
      */
     description?: pulumi.Input<string>;
     /**
-     * 日志项目所属的 IAM 项目。
+     * The IAM project associated with the log project
      */
     iamProjectName?: pulumi.Input<string>;
     /**
-     * 私网连接域名。
+     * Private network connection domain name
      */
     innerNetDomain?: pulumi.Input<string>;
     /**
-     * 日志项目的 ID。
+     * Log project ID
      */
     projectId?: pulumi.Input<string>;
     /**
-     * 日志项目名称。
+     * Log project name
      */
     projectName?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.tls.ProjectTag>[]>;
     /**
-     * 当前日志项目下的日志主题数量。
+     * Number of log topics in the current log project
      */
     topicCount?: pulumi.Input<number>;
 }
@@ -170,15 +170,15 @@ export interface ProjectState {
  */
 export interface ProjectArgs {
     /**
-     * 日志项目的简单描述。
+     * Brief description of the log project
      */
     description?: pulumi.Input<string>;
     /**
-     * 日志项目所属的 IAM 项目。
+     * The IAM project associated with the log project
      */
     iamProjectName?: pulumi.Input<string>;
     /**
-     * 日志项目名称。
+     * Log project name
      */
     projectName: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.tls.ProjectTag>[]>;

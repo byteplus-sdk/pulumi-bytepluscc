@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Apig
 {
     /// <summary>
-    /// 服务作为业务对外暴露的入口，可以通过绑定域名功能，将您的自定义域名绑定至服务。
+    /// The service serves as the entry point for external access. You can bind your custom domain to the service using the domain binding feature
     /// 
     /// ## Example Usage
     /// 
@@ -50,61 +50,61 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
     public partial class CustomDomain : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 自定义域名证书ID。
+        /// Custom Domain Certificate ID
         /// </summary>
         [Output("certificateId")]
         public Output<string> CertificateId { get; private set; } = null!;
 
         /// <summary>
-        /// 备注。
+        /// Remarks
         /// </summary>
         [Output("comments")]
         public Output<string> Comments { get; private set; } = null!;
 
         /// <summary>
-        /// 创建时间。
+        /// Creation Time
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 自定义域名ID。
+        /// Custom Domain ID
         /// </summary>
         [Output("customDomainId")]
         public Output<string> CustomDomainId { get; private set; } = null!;
 
         /// <summary>
-        /// 自定义域名。
+        /// Custom Domain
         /// </summary>
         [Output("domain")]
         public Output<string> Domain { get; private set; } = null!;
 
         /// <summary>
-        /// 协议，取值：HTTP。HTTPS。
+        /// Protocol. Values: HTTP, HTTPS
         /// </summary>
         [Output("protocols")]
         public Output<ImmutableArray<string>> Protocols { get; private set; } = null!;
 
         /// <summary>
-        /// 服务ID。
+        /// Service ID
         /// </summary>
         [Output("serviceId")]
         public Output<string> ServiceId { get; private set; } = null!;
 
         /// <summary>
-        /// 重定向到HTTPS。
+        /// Redirect to HTTPS
         /// </summary>
         [Output("sslRedirect")]
         public Output<bool> SslRedirect { get; private set; } = null!;
 
         /// <summary>
-        /// 状态，取值：Creating：配置中。CreationFailed：配置失败。Deleting：删除中。DeletionFailed：删除失败。Verified：正常。
+        /// Status. Values: Creating: configuring; CreationFailed: configuration failed; Deleting: deleting; DeletionFailed: deletion failed; Verified: active
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// 更新时间。
+        /// Update Time
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
@@ -157,19 +157,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
     public sealed class CustomDomainArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 自定义域名证书ID。
+        /// Custom Domain Certificate ID
         /// </summary>
         [Input("certificateId")]
         public Input<string>? CertificateId { get; set; }
 
         /// <summary>
-        /// 备注。
+        /// Remarks
         /// </summary>
         [Input("comments")]
         public Input<string>? Comments { get; set; }
 
         /// <summary>
-        /// 自定义域名。
+        /// Custom Domain
         /// </summary>
         [Input("domain", required: true)]
         public Input<string> Domain { get; set; } = null!;
@@ -178,7 +178,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         private InputList<string>? _protocols;
 
         /// <summary>
-        /// 协议，取值：HTTP。HTTPS。
+        /// Protocol. Values: HTTP, HTTPS
         /// </summary>
         public InputList<string> Protocols
         {
@@ -187,13 +187,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         }
 
         /// <summary>
-        /// 服务ID。
+        /// Service ID
         /// </summary>
         [Input("serviceId", required: true)]
         public Input<string> ServiceId { get; set; } = null!;
 
         /// <summary>
-        /// 重定向到HTTPS。
+        /// Redirect to HTTPS
         /// </summary>
         [Input("sslRedirect")]
         public Input<bool>? SslRedirect { get; set; }
@@ -207,31 +207,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
     public sealed class CustomDomainState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 自定义域名证书ID。
+        /// Custom Domain Certificate ID
         /// </summary>
         [Input("certificateId")]
         public Input<string>? CertificateId { get; set; }
 
         /// <summary>
-        /// 备注。
+        /// Remarks
         /// </summary>
         [Input("comments")]
         public Input<string>? Comments { get; set; }
 
         /// <summary>
-        /// 创建时间。
+        /// Creation Time
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 自定义域名ID。
+        /// Custom Domain ID
         /// </summary>
         [Input("customDomainId")]
         public Input<string>? CustomDomainId { get; set; }
 
         /// <summary>
-        /// 自定义域名。
+        /// Custom Domain
         /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }
@@ -240,7 +240,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         private InputList<string>? _protocols;
 
         /// <summary>
-        /// 协议，取值：HTTP。HTTPS。
+        /// Protocol. Values: HTTP, HTTPS
         /// </summary>
         public InputList<string> Protocols
         {
@@ -249,25 +249,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         }
 
         /// <summary>
-        /// 服务ID。
+        /// Service ID
         /// </summary>
         [Input("serviceId")]
         public Input<string>? ServiceId { get; set; }
 
         /// <summary>
-        /// 重定向到HTTPS。
+        /// Redirect to HTTPS
         /// </summary>
         [Input("sslRedirect")]
         public Input<bool>? SslRedirect { get; set; }
 
         /// <summary>
-        /// 状态，取值：Creating：配置中。CreationFailed：配置失败。Deleting：删除中。DeletionFailed：删除失败。Verified：正常。
+        /// Status. Values: Creating: configuring; CreationFailed: configuration failed; Deleting: deleting; DeletionFailed: deletion failed; Verified: active
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// 更新时间。
+        /// Update Time
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }

@@ -11,38 +11,38 @@ import java.util.Objects;
 @CustomType
 public final class GetDirectConnectGatewayAssociateCen {
     /**
-     * @return CEN的ID。
+     * @return ID of CEN.
      * 
      */
     private String cenId;
     /**
-     * @return CEN的用户ID。
+     * @return User ID of CEN.
      * 
      */
     private String cenOwnerId;
     /**
-     * @return 实例在CEN中的状态。Attaching：加载中。Attached：已加载。
+     * @return Status of the instance in CEN. Attaching: attaching. Attached: attached.
      * 
      */
     private String cenStatus;
 
     private GetDirectConnectGatewayAssociateCen() {}
     /**
-     * @return CEN的ID。
+     * @return ID of CEN.
      * 
      */
     public String cenId() {
         return this.cenId;
     }
     /**
-     * @return CEN的用户ID。
+     * @return User ID of CEN.
      * 
      */
     public String cenOwnerId() {
         return this.cenOwnerId;
     }
     /**
-     * @return 实例在CEN中的状态。Attaching：加载中。Attached：已加载。
+     * @return Status of the instance in CEN. Attaching: attaching. Attached: attached.
      * 
      */
     public String cenStatus() {

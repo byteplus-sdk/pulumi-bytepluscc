@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class GetDefaultNodePoolKubernetesConfigKubeletConfigSystemReservedResult
     {
         /// <summary>
-        /// 资源名称，取值为 cpu 或 memory。
+        /// Resource name. Values: cpu or memory.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G。
+        /// Resource quantity for the specified resource.   - For cpu, example value: 200m   - For memory, example value: 1G
         /// </summary>
         public readonly string Quantity;
 

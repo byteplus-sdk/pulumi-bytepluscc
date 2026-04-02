@@ -15,50 +15,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RuleDimensionConditions {
     /**
-     * @return 根据资源名称选择告警对象的条件。当Type为meta时必填。
+     * @return Condition for selecting alert objects based on resource name. Required when Type is meta.
      * 
      */
     private @Nullable RuleDimensionConditionsMetaCondition metaCondition;
     /**
-     * @return 根据项目选择告警对象的条件。当Type为project时必填。
+     * @return Condition for selecting alert targets by project. Required when Type is project.
      * 
      */
     private @Nullable RuleDimensionConditionsProjectCondition projectCondition;
     /**
-     * @return 根据标签选择告警对象的条件。当Type为tag时必填。
+     * @return Condition for selecting alert objects by tag. Required when Type is tag.
      * 
      */
     private @Nullable RuleDimensionConditionsTagCondition tagCondition;
     /**
-     * @return Dimensions 类型。取值：project：根据项目选择告警对象。tag：根据标签选择告警对象。meta：根据资源名称选择告警对象。
+     * @return Dimensions type. Values: project: Select alert targets by project. tag: Select alert targets by tag. meta: Select alert targets by resource name.
      * 
      */
     private @Nullable String type;
 
     private RuleDimensionConditions() {}
     /**
-     * @return 根据资源名称选择告警对象的条件。当Type为meta时必填。
+     * @return Condition for selecting alert objects based on resource name. Required when Type is meta.
      * 
      */
     public Optional<RuleDimensionConditionsMetaCondition> metaCondition() {
         return Optional.ofNullable(this.metaCondition);
     }
     /**
-     * @return 根据项目选择告警对象的条件。当Type为project时必填。
+     * @return Condition for selecting alert targets by project. Required when Type is project.
      * 
      */
     public Optional<RuleDimensionConditionsProjectCondition> projectCondition() {
         return Optional.ofNullable(this.projectCondition);
     }
     /**
-     * @return 根据标签选择告警对象的条件。当Type为tag时必填。
+     * @return Condition for selecting alert objects by tag. Required when Type is tag.
      * 
      */
     public Optional<RuleDimensionConditionsTagCondition> tagCondition() {
         return Optional.ofNullable(this.tagCondition);
     }
     /**
-     * @return Dimensions 类型。取值：project：根据项目选择告警对象。tag：根据标签选择告警对象。meta：根据资源名称选择告警对象。
+     * @return Dimensions type. Values: project: Select alert targets by project. tag: Select alert targets by tag. meta: Select alert targets by resource name.
      * 
      */
     public Optional<String> type() {

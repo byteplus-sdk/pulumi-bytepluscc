@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 云数据库 veDB MySQL 版是火山引擎自研新一代云原生关系型数据库。云数据库 veDB MySQL 版 100% 兼容 MySQL，适用于企业多样化的数据库应用场景。
+// veDB MySQL Edition is Volcano Engine's self-developed next-generation cloud-native relational database. veDB MySQL Edition is fully compatible with MySQL and supports diverse enterprise database application scenarios.
 //
 // ## Import
 //
@@ -22,62 +22,62 @@ import (
 type Instance struct {
 	pulumi.CustomResourceState
 
-	// 计费详细信息。
+	// Billing details.
 	ChargeDetail InstanceChargeDetailOutput `pulumi:"chargeDetail"`
-	// 实例的创建时间，格式：YYYY-MM-DDTHH:MM:SSZ（UTC 时间）。
+	// Instance creation time, format: YYYY-MM-DDTHH:MM:SSZ (UTC time)
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// 实例兼容版本。取值范围：MySQL*8*0：表示兼容社区 MySQL 8.0 版本。MySQL*5*7：表示兼容社区 MySQL 5.7 版本。
+	// Instance compatible version. Options: MySQL*8*0: Compatible with community MySQL 8.0. MySQL*5*7: Compatible with community MySQL 5.7
 	DbEngineVersion pulumi.StringOutput `pulumi:"dbEngineVersion"`
-	// 根据兼容版本，选择 veDB MySQL 小版本。当 DBEngineVersion 取值为 MySQL*5*7 时，该参数取值默认为 2.0。当 DBEngineVersion 取值为 MySQL*8*0 时，该参数取值范围如下：3.0（默认）：veDB MySQL 稳定版，100% 兼容 MySQL 8.0。3.1：原生支持 HTAP 应用场景，加速复杂查询。3.2：原生支持 HTAP 应用场景，加速复杂查询。
+	// Select the veDB MySQL minor version based on compatibility. When DBEngineVersion is set to MySQL*5*7, the default value for this parameter is 2.0. When DBEngineVersion is set to MySQL*8*0, the parameter value options are as follows: 3.0 (default): veDB MySQL stable version, 100% compatible with MySQL 8.0. 3.1: Native support for HTAP scenarios, accelerates complex queries. 3.2: Native support for HTAP scenarios, accelerates complex queries.
 	DbMinorVersion pulumi.StringOutput `pulumi:"dbMinorVersion"`
-	// 实例的内核版本。
+	// Instance kernel version.
 	DbRevisionVersion pulumi.StringOutput `pulumi:"dbRevisionVersion"`
-	// 实例是否开启了删除保护功能。取值范围：enabled：开启。disabled：关闭。
+	// Whether deletion protection is enabled for the instance. Value range: enabled: enabled. disabled: disabled.
 	DeletionProtection pulumi.StringOutput         `pulumi:"deletionProtection"`
 	Endpoints          InstanceEndpointArrayOutput `pulumi:"endpoints"`
-	// 实例 ID。
+	// Instance ID.
 	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
-	// 实例名称。命名规则：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需在 1~128 个字符内。
+	// Instance name. Naming rules: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
 	InstanceName pulumi.StringOutput `pulumi:"instanceName"`
-	// 实例状态。
+	// Instance status.
 	InstanceStatus pulumi.StringOutput `pulumi:"instanceStatus"`
-	// 表名是否区分大小写。取值范围：0：表名称大小写敏感，后端根据实际表名存储。1：表名称不区分大小写，后端存储时将表名称统一为小写字母。
+	// Whether table names are case-sensitive. Value range: 0: table names are case-sensitive; backend stores according to actual table name. 1: table names are not case-sensitive; backend stores table names in lowercase.
 	LowerCaseTableNames pulumi.StringOutput `pulumi:"lowerCaseTableNames"`
-	// 实例的可维护时间窗口信息。
+	// Instance maintenance window information
 	MaintenanceWindow InstanceMaintenanceWindowOutput `pulumi:"maintenanceWindow"`
-	// 实例节点数量。取值范围为 2~16 个。
+	// Number of instance nodes. Value range: 2–16.
 	NodeNumber pulumi.IntOutput `pulumi:"nodeNumber"`
-	// 实例的节点规格代码。
+	// Instance node specification code.
 	NodeSpec pulumi.StringOutput     `pulumi:"nodeSpec"`
 	Nodes    InstanceNodeArrayOutput `pulumi:"nodes"`
-	// 创建的实例数量，取值范围 1~50，默认值为 1。
+	// Number of instances to create. Range: 1~50. Default: 1
 	Number pulumi.IntOutput `pulumi:"number"`
-	// 为实例默认创建的连接终端指定私网端口号。默认取值为 3306，取值范围为 1000~65534。
+	// Specify the private network port number for the default connection endpoint created for the instance. Default value is 3306. Value range: 1000–65534.
 	Port pulumi.IntOutput `pulumi:"port"`
-	// 预付费的存储总容量大小，单位 GiB。
+	// Total prepaid storage capacity, in GiB
 	PrePaidStorageInGb pulumi.IntOutput `pulumi:"prePaidStorageInGb"`
-	// 实例所属的项目名称。
+	// Project name to which the instance belongs.
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
-	// 实例规格类型，取值：General：通用型。Exclusive：独享型。
+	// Instance specification type. Values: General: general purpose. Exclusive: dedicated.
 	SpecFamily pulumi.StringOutput `pulumi:"specFamily"`
-	// 存储计费类型，不传入该参数时，存储计费类型默认与计算计费类型取值一致。取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+	// Storage billing type. If this parameter is not specified, the storage billing type defaults to the same value as the compute billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription (prepaid).
 	StorageChargeType pulumi.StringOutput `pulumi:"storageChargeType"`
-	// 已使用存储空间大小，单位 GiB。
+	// Used storage space, in GiB
 	StorageUsedGiB pulumi.Float64Output `pulumi:"storageUsedGiB"`
-	// 子网 ID。子网必须属于所选的可用区。
+	// Subnet ID. The subnet must belong to the selected availability zone.
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
-	// 高权限用户的账号名称。账号名称需满足以下要求：名称唯一，且长度在 2~32 个字符内。由字母、数字、中划线（-）、下划线（_）组成。以字母开头，以字母或数字结尾。名称内不能包含禁用关键词。
+	// Account name for privileged user. Requirements: Must be unique, 2–32 characters. Letters, numbers, hyphens (-), and underscores (_) only. Must start with a letter and end with a letter or number. Cannot contain prohibited keywords
 	SuperAccountName pulumi.StringOutput `pulumi:"superAccountName"`
-	// 高权限账号的密码。账号密码需满足以下要求：只能包含大小写字母、数字和特殊字符（如 ~!@#$%^&*_-+=`|(){}[]:;'<>,.?/）。长度需在 8~32 个字符内。至少包含大写字母、小写字母、数字或特殊字符中的 3 种。
+	// Password for high-privilege account. The password must meet the following requirements: can only contain uppercase and lowercase letters, numbers, and special characters (such as ~!@#$%^&*_-+=`|(){}[]:;'<>,.?/). Length must be between 8 and 32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, or special characters.
 	SuperAccountPassword pulumi.StringOutput    `pulumi:"superAccountPassword"`
 	Tags                 InstanceTagArrayOutput `pulumi:"tags"`
-	// 参数模板 ID。
+	// Parameter template ID
 	TemplateId pulumi.StringOutput `pulumi:"templateId"`
-	// 实例的时区。国内所有地域默认时区为 UTC +08:00。
+	// Instance time zone. The default time zone for all regions in China is UTC +08:00.
 	TimeZone pulumi.StringOutput `pulumi:"timeZone"`
-	// 私有网络（VPC） ID。
+	// Private network (VPC) ID.
 	VpcId pulumi.StringOutput `pulumi:"vpcId"`
-	// 可用区 ID。
+	// Availability zone ID
 	ZoneIds pulumi.StringOutput `pulumi:"zoneIds"`
 }
 
@@ -129,122 +129,122 @@ func GetInstance(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Instance resources.
 type instanceState struct {
-	// 计费详细信息。
+	// Billing details.
 	ChargeDetail *InstanceChargeDetail `pulumi:"chargeDetail"`
-	// 实例的创建时间，格式：YYYY-MM-DDTHH:MM:SSZ（UTC 时间）。
+	// Instance creation time, format: YYYY-MM-DDTHH:MM:SSZ (UTC time)
 	CreatedTime *string `pulumi:"createdTime"`
-	// 实例兼容版本。取值范围：MySQL*8*0：表示兼容社区 MySQL 8.0 版本。MySQL*5*7：表示兼容社区 MySQL 5.7 版本。
+	// Instance compatible version. Options: MySQL*8*0: Compatible with community MySQL 8.0. MySQL*5*7: Compatible with community MySQL 5.7
 	DbEngineVersion *string `pulumi:"dbEngineVersion"`
-	// 根据兼容版本，选择 veDB MySQL 小版本。当 DBEngineVersion 取值为 MySQL*5*7 时，该参数取值默认为 2.0。当 DBEngineVersion 取值为 MySQL*8*0 时，该参数取值范围如下：3.0（默认）：veDB MySQL 稳定版，100% 兼容 MySQL 8.0。3.1：原生支持 HTAP 应用场景，加速复杂查询。3.2：原生支持 HTAP 应用场景，加速复杂查询。
+	// Select the veDB MySQL minor version based on compatibility. When DBEngineVersion is set to MySQL*5*7, the default value for this parameter is 2.0. When DBEngineVersion is set to MySQL*8*0, the parameter value options are as follows: 3.0 (default): veDB MySQL stable version, 100% compatible with MySQL 8.0. 3.1: Native support for HTAP scenarios, accelerates complex queries. 3.2: Native support for HTAP scenarios, accelerates complex queries.
 	DbMinorVersion *string `pulumi:"dbMinorVersion"`
-	// 实例的内核版本。
+	// Instance kernel version.
 	DbRevisionVersion *string `pulumi:"dbRevisionVersion"`
-	// 实例是否开启了删除保护功能。取值范围：enabled：开启。disabled：关闭。
+	// Whether deletion protection is enabled for the instance. Value range: enabled: enabled. disabled: disabled.
 	DeletionProtection *string            `pulumi:"deletionProtection"`
 	Endpoints          []InstanceEndpoint `pulumi:"endpoints"`
-	// 实例 ID。
+	// Instance ID.
 	InstanceId *string `pulumi:"instanceId"`
-	// 实例名称。命名规则：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需在 1~128 个字符内。
+	// Instance name. Naming rules: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
 	InstanceName *string `pulumi:"instanceName"`
-	// 实例状态。
+	// Instance status.
 	InstanceStatus *string `pulumi:"instanceStatus"`
-	// 表名是否区分大小写。取值范围：0：表名称大小写敏感，后端根据实际表名存储。1：表名称不区分大小写，后端存储时将表名称统一为小写字母。
+	// Whether table names are case-sensitive. Value range: 0: table names are case-sensitive; backend stores according to actual table name. 1: table names are not case-sensitive; backend stores table names in lowercase.
 	LowerCaseTableNames *string `pulumi:"lowerCaseTableNames"`
-	// 实例的可维护时间窗口信息。
+	// Instance maintenance window information
 	MaintenanceWindow *InstanceMaintenanceWindow `pulumi:"maintenanceWindow"`
-	// 实例节点数量。取值范围为 2~16 个。
+	// Number of instance nodes. Value range: 2–16.
 	NodeNumber *int `pulumi:"nodeNumber"`
-	// 实例的节点规格代码。
+	// Instance node specification code.
 	NodeSpec *string        `pulumi:"nodeSpec"`
 	Nodes    []InstanceNode `pulumi:"nodes"`
-	// 创建的实例数量，取值范围 1~50，默认值为 1。
+	// Number of instances to create. Range: 1~50. Default: 1
 	Number *int `pulumi:"number"`
-	// 为实例默认创建的连接终端指定私网端口号。默认取值为 3306，取值范围为 1000~65534。
+	// Specify the private network port number for the default connection endpoint created for the instance. Default value is 3306. Value range: 1000–65534.
 	Port *int `pulumi:"port"`
-	// 预付费的存储总容量大小，单位 GiB。
+	// Total prepaid storage capacity, in GiB
 	PrePaidStorageInGb *int `pulumi:"prePaidStorageInGb"`
-	// 实例所属的项目名称。
+	// Project name to which the instance belongs.
 	ProjectName *string `pulumi:"projectName"`
-	// 实例规格类型，取值：General：通用型。Exclusive：独享型。
+	// Instance specification type. Values: General: general purpose. Exclusive: dedicated.
 	SpecFamily *string `pulumi:"specFamily"`
-	// 存储计费类型，不传入该参数时，存储计费类型默认与计算计费类型取值一致。取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+	// Storage billing type. If this parameter is not specified, the storage billing type defaults to the same value as the compute billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription (prepaid).
 	StorageChargeType *string `pulumi:"storageChargeType"`
-	// 已使用存储空间大小，单位 GiB。
+	// Used storage space, in GiB
 	StorageUsedGiB *float64 `pulumi:"storageUsedGiB"`
-	// 子网 ID。子网必须属于所选的可用区。
+	// Subnet ID. The subnet must belong to the selected availability zone.
 	SubnetId *string `pulumi:"subnetId"`
-	// 高权限用户的账号名称。账号名称需满足以下要求：名称唯一，且长度在 2~32 个字符内。由字母、数字、中划线（-）、下划线（_）组成。以字母开头，以字母或数字结尾。名称内不能包含禁用关键词。
+	// Account name for privileged user. Requirements: Must be unique, 2–32 characters. Letters, numbers, hyphens (-), and underscores (_) only. Must start with a letter and end with a letter or number. Cannot contain prohibited keywords
 	SuperAccountName *string `pulumi:"superAccountName"`
-	// 高权限账号的密码。账号密码需满足以下要求：只能包含大小写字母、数字和特殊字符（如 ~!@#$%^&*_-+=`|(){}[]:;'<>,.?/）。长度需在 8~32 个字符内。至少包含大写字母、小写字母、数字或特殊字符中的 3 种。
+	// Password for high-privilege account. The password must meet the following requirements: can only contain uppercase and lowercase letters, numbers, and special characters (such as ~!@#$%^&*_-+=`|(){}[]:;'<>,.?/). Length must be between 8 and 32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, or special characters.
 	SuperAccountPassword *string       `pulumi:"superAccountPassword"`
 	Tags                 []InstanceTag `pulumi:"tags"`
-	// 参数模板 ID。
+	// Parameter template ID
 	TemplateId *string `pulumi:"templateId"`
-	// 实例的时区。国内所有地域默认时区为 UTC +08:00。
+	// Instance time zone. The default time zone for all regions in China is UTC +08:00.
 	TimeZone *string `pulumi:"timeZone"`
-	// 私有网络（VPC） ID。
+	// Private network (VPC) ID.
 	VpcId *string `pulumi:"vpcId"`
-	// 可用区 ID。
+	// Availability zone ID
 	ZoneIds *string `pulumi:"zoneIds"`
 }
 
 type InstanceState struct {
-	// 计费详细信息。
+	// Billing details.
 	ChargeDetail InstanceChargeDetailPtrInput
-	// 实例的创建时间，格式：YYYY-MM-DDTHH:MM:SSZ（UTC 时间）。
+	// Instance creation time, format: YYYY-MM-DDTHH:MM:SSZ (UTC time)
 	CreatedTime pulumi.StringPtrInput
-	// 实例兼容版本。取值范围：MySQL*8*0：表示兼容社区 MySQL 8.0 版本。MySQL*5*7：表示兼容社区 MySQL 5.7 版本。
+	// Instance compatible version. Options: MySQL*8*0: Compatible with community MySQL 8.0. MySQL*5*7: Compatible with community MySQL 5.7
 	DbEngineVersion pulumi.StringPtrInput
-	// 根据兼容版本，选择 veDB MySQL 小版本。当 DBEngineVersion 取值为 MySQL*5*7 时，该参数取值默认为 2.0。当 DBEngineVersion 取值为 MySQL*8*0 时，该参数取值范围如下：3.0（默认）：veDB MySQL 稳定版，100% 兼容 MySQL 8.0。3.1：原生支持 HTAP 应用场景，加速复杂查询。3.2：原生支持 HTAP 应用场景，加速复杂查询。
+	// Select the veDB MySQL minor version based on compatibility. When DBEngineVersion is set to MySQL*5*7, the default value for this parameter is 2.0. When DBEngineVersion is set to MySQL*8*0, the parameter value options are as follows: 3.0 (default): veDB MySQL stable version, 100% compatible with MySQL 8.0. 3.1: Native support for HTAP scenarios, accelerates complex queries. 3.2: Native support for HTAP scenarios, accelerates complex queries.
 	DbMinorVersion pulumi.StringPtrInput
-	// 实例的内核版本。
+	// Instance kernel version.
 	DbRevisionVersion pulumi.StringPtrInput
-	// 实例是否开启了删除保护功能。取值范围：enabled：开启。disabled：关闭。
+	// Whether deletion protection is enabled for the instance. Value range: enabled: enabled. disabled: disabled.
 	DeletionProtection pulumi.StringPtrInput
 	Endpoints          InstanceEndpointArrayInput
-	// 实例 ID。
+	// Instance ID.
 	InstanceId pulumi.StringPtrInput
-	// 实例名称。命名规则：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需在 1~128 个字符内。
+	// Instance name. Naming rules: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
 	InstanceName pulumi.StringPtrInput
-	// 实例状态。
+	// Instance status.
 	InstanceStatus pulumi.StringPtrInput
-	// 表名是否区分大小写。取值范围：0：表名称大小写敏感，后端根据实际表名存储。1：表名称不区分大小写，后端存储时将表名称统一为小写字母。
+	// Whether table names are case-sensitive. Value range: 0: table names are case-sensitive; backend stores according to actual table name. 1: table names are not case-sensitive; backend stores table names in lowercase.
 	LowerCaseTableNames pulumi.StringPtrInput
-	// 实例的可维护时间窗口信息。
+	// Instance maintenance window information
 	MaintenanceWindow InstanceMaintenanceWindowPtrInput
-	// 实例节点数量。取值范围为 2~16 个。
+	// Number of instance nodes. Value range: 2–16.
 	NodeNumber pulumi.IntPtrInput
-	// 实例的节点规格代码。
+	// Instance node specification code.
 	NodeSpec pulumi.StringPtrInput
 	Nodes    InstanceNodeArrayInput
-	// 创建的实例数量，取值范围 1~50，默认值为 1。
+	// Number of instances to create. Range: 1~50. Default: 1
 	Number pulumi.IntPtrInput
-	// 为实例默认创建的连接终端指定私网端口号。默认取值为 3306，取值范围为 1000~65534。
+	// Specify the private network port number for the default connection endpoint created for the instance. Default value is 3306. Value range: 1000–65534.
 	Port pulumi.IntPtrInput
-	// 预付费的存储总容量大小，单位 GiB。
+	// Total prepaid storage capacity, in GiB
 	PrePaidStorageInGb pulumi.IntPtrInput
-	// 实例所属的项目名称。
+	// Project name to which the instance belongs.
 	ProjectName pulumi.StringPtrInput
-	// 实例规格类型，取值：General：通用型。Exclusive：独享型。
+	// Instance specification type. Values: General: general purpose. Exclusive: dedicated.
 	SpecFamily pulumi.StringPtrInput
-	// 存储计费类型，不传入该参数时，存储计费类型默认与计算计费类型取值一致。取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+	// Storage billing type. If this parameter is not specified, the storage billing type defaults to the same value as the compute billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription (prepaid).
 	StorageChargeType pulumi.StringPtrInput
-	// 已使用存储空间大小，单位 GiB。
+	// Used storage space, in GiB
 	StorageUsedGiB pulumi.Float64PtrInput
-	// 子网 ID。子网必须属于所选的可用区。
+	// Subnet ID. The subnet must belong to the selected availability zone.
 	SubnetId pulumi.StringPtrInput
-	// 高权限用户的账号名称。账号名称需满足以下要求：名称唯一，且长度在 2~32 个字符内。由字母、数字、中划线（-）、下划线（_）组成。以字母开头，以字母或数字结尾。名称内不能包含禁用关键词。
+	// Account name for privileged user. Requirements: Must be unique, 2–32 characters. Letters, numbers, hyphens (-), and underscores (_) only. Must start with a letter and end with a letter or number. Cannot contain prohibited keywords
 	SuperAccountName pulumi.StringPtrInput
-	// 高权限账号的密码。账号密码需满足以下要求：只能包含大小写字母、数字和特殊字符（如 ~!@#$%^&*_-+=`|(){}[]:;'<>,.?/）。长度需在 8~32 个字符内。至少包含大写字母、小写字母、数字或特殊字符中的 3 种。
+	// Password for high-privilege account. The password must meet the following requirements: can only contain uppercase and lowercase letters, numbers, and special characters (such as ~!@#$%^&*_-+=`|(){}[]:;'<>,.?/). Length must be between 8 and 32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, or special characters.
 	SuperAccountPassword pulumi.StringPtrInput
 	Tags                 InstanceTagArrayInput
-	// 参数模板 ID。
+	// Parameter template ID
 	TemplateId pulumi.StringPtrInput
-	// 实例的时区。国内所有地域默认时区为 UTC +08:00。
+	// Instance time zone. The default time zone for all regions in China is UTC +08:00.
 	TimeZone pulumi.StringPtrInput
-	// 私有网络（VPC） ID。
+	// Private network (VPC) ID.
 	VpcId pulumi.StringPtrInput
-	// 可用区 ID。
+	// Availability zone ID
 	ZoneIds pulumi.StringPtrInput
 }
 
@@ -253,97 +253,97 @@ func (InstanceState) ElementType() reflect.Type {
 }
 
 type instanceArgs struct {
-	// 计费详细信息。
+	// Billing details.
 	ChargeDetail *InstanceChargeDetail `pulumi:"chargeDetail"`
-	// 实例兼容版本。取值范围：MySQL*8*0：表示兼容社区 MySQL 8.0 版本。MySQL*5*7：表示兼容社区 MySQL 5.7 版本。
+	// Instance compatible version. Options: MySQL*8*0: Compatible with community MySQL 8.0. MySQL*5*7: Compatible with community MySQL 5.7
 	DbEngineVersion string `pulumi:"dbEngineVersion"`
-	// 根据兼容版本，选择 veDB MySQL 小版本。当 DBEngineVersion 取值为 MySQL*5*7 时，该参数取值默认为 2.0。当 DBEngineVersion 取值为 MySQL*8*0 时，该参数取值范围如下：3.0（默认）：veDB MySQL 稳定版，100% 兼容 MySQL 8.0。3.1：原生支持 HTAP 应用场景，加速复杂查询。3.2：原生支持 HTAP 应用场景，加速复杂查询。
+	// Select the veDB MySQL minor version based on compatibility. When DBEngineVersion is set to MySQL*5*7, the default value for this parameter is 2.0. When DBEngineVersion is set to MySQL*8*0, the parameter value options are as follows: 3.0 (default): veDB MySQL stable version, 100% compatible with MySQL 8.0. 3.1: Native support for HTAP scenarios, accelerates complex queries. 3.2: Native support for HTAP scenarios, accelerates complex queries.
 	DbMinorVersion *string `pulumi:"dbMinorVersion"`
-	// 实例是否开启了删除保护功能。取值范围：enabled：开启。disabled：关闭。
+	// Whether deletion protection is enabled for the instance. Value range: enabled: enabled. disabled: disabled.
 	DeletionProtection *string `pulumi:"deletionProtection"`
-	// 实例名称。命名规则：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需在 1~128 个字符内。
+	// Instance name. Naming rules: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
 	InstanceName *string `pulumi:"instanceName"`
-	// 表名是否区分大小写。取值范围：0：表名称大小写敏感，后端根据实际表名存储。1：表名称不区分大小写，后端存储时将表名称统一为小写字母。
+	// Whether table names are case-sensitive. Value range: 0: table names are case-sensitive; backend stores according to actual table name. 1: table names are not case-sensitive; backend stores table names in lowercase.
 	LowerCaseTableNames *string `pulumi:"lowerCaseTableNames"`
-	// 实例的可维护时间窗口信息。
+	// Instance maintenance window information
 	MaintenanceWindow *InstanceMaintenanceWindow `pulumi:"maintenanceWindow"`
-	// 实例节点数量。取值范围为 2~16 个。
+	// Number of instance nodes. Value range: 2–16.
 	NodeNumber int `pulumi:"nodeNumber"`
-	// 实例的节点规格代码。
+	// Instance node specification code.
 	NodeSpec string         `pulumi:"nodeSpec"`
 	Nodes    []InstanceNode `pulumi:"nodes"`
-	// 创建的实例数量，取值范围 1~50，默认值为 1。
+	// Number of instances to create. Range: 1~50. Default: 1
 	Number *int `pulumi:"number"`
-	// 为实例默认创建的连接终端指定私网端口号。默认取值为 3306，取值范围为 1000~65534。
+	// Specify the private network port number for the default connection endpoint created for the instance. Default value is 3306. Value range: 1000–65534.
 	Port *int `pulumi:"port"`
-	// 预付费的存储总容量大小，单位 GiB。
+	// Total prepaid storage capacity, in GiB
 	PrePaidStorageInGb *int `pulumi:"prePaidStorageInGb"`
-	// 实例所属的项目名称。
+	// Project name to which the instance belongs.
 	ProjectName *string `pulumi:"projectName"`
-	// 存储计费类型，不传入该参数时，存储计费类型默认与计算计费类型取值一致。取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+	// Storage billing type. If this parameter is not specified, the storage billing type defaults to the same value as the compute billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription (prepaid).
 	StorageChargeType *string `pulumi:"storageChargeType"`
-	// 子网 ID。子网必须属于所选的可用区。
+	// Subnet ID. The subnet must belong to the selected availability zone.
 	SubnetId string `pulumi:"subnetId"`
-	// 高权限用户的账号名称。账号名称需满足以下要求：名称唯一，且长度在 2~32 个字符内。由字母、数字、中划线（-）、下划线（_）组成。以字母开头，以字母或数字结尾。名称内不能包含禁用关键词。
+	// Account name for privileged user. Requirements: Must be unique, 2–32 characters. Letters, numbers, hyphens (-), and underscores (_) only. Must start with a letter and end with a letter or number. Cannot contain prohibited keywords
 	SuperAccountName *string `pulumi:"superAccountName"`
-	// 高权限账号的密码。账号密码需满足以下要求：只能包含大小写字母、数字和特殊字符（如 ~!@#$%^&*_-+=`|(){}[]:;'<>,.?/）。长度需在 8~32 个字符内。至少包含大写字母、小写字母、数字或特殊字符中的 3 种。
+	// Password for high-privilege account. The password must meet the following requirements: can only contain uppercase and lowercase letters, numbers, and special characters (such as ~!@#$%^&*_-+=`|(){}[]:;'<>,.?/). Length must be between 8 and 32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, or special characters.
 	SuperAccountPassword *string       `pulumi:"superAccountPassword"`
 	Tags                 []InstanceTag `pulumi:"tags"`
-	// 参数模板 ID。
+	// Parameter template ID
 	TemplateId *string `pulumi:"templateId"`
-	// 实例的时区。国内所有地域默认时区为 UTC +08:00。
+	// Instance time zone. The default time zone for all regions in China is UTC +08:00.
 	TimeZone *string `pulumi:"timeZone"`
-	// 私有网络（VPC） ID。
+	// Private network (VPC) ID.
 	VpcId string `pulumi:"vpcId"`
-	// 可用区 ID。
+	// Availability zone ID
 	ZoneIds string `pulumi:"zoneIds"`
 }
 
 // The set of arguments for constructing a Instance resource.
 type InstanceArgs struct {
-	// 计费详细信息。
+	// Billing details.
 	ChargeDetail InstanceChargeDetailPtrInput
-	// 实例兼容版本。取值范围：MySQL*8*0：表示兼容社区 MySQL 8.0 版本。MySQL*5*7：表示兼容社区 MySQL 5.7 版本。
+	// Instance compatible version. Options: MySQL*8*0: Compatible with community MySQL 8.0. MySQL*5*7: Compatible with community MySQL 5.7
 	DbEngineVersion pulumi.StringInput
-	// 根据兼容版本，选择 veDB MySQL 小版本。当 DBEngineVersion 取值为 MySQL*5*7 时，该参数取值默认为 2.0。当 DBEngineVersion 取值为 MySQL*8*0 时，该参数取值范围如下：3.0（默认）：veDB MySQL 稳定版，100% 兼容 MySQL 8.0。3.1：原生支持 HTAP 应用场景，加速复杂查询。3.2：原生支持 HTAP 应用场景，加速复杂查询。
+	// Select the veDB MySQL minor version based on compatibility. When DBEngineVersion is set to MySQL*5*7, the default value for this parameter is 2.0. When DBEngineVersion is set to MySQL*8*0, the parameter value options are as follows: 3.0 (default): veDB MySQL stable version, 100% compatible with MySQL 8.0. 3.1: Native support for HTAP scenarios, accelerates complex queries. 3.2: Native support for HTAP scenarios, accelerates complex queries.
 	DbMinorVersion pulumi.StringPtrInput
-	// 实例是否开启了删除保护功能。取值范围：enabled：开启。disabled：关闭。
+	// Whether deletion protection is enabled for the instance. Value range: enabled: enabled. disabled: disabled.
 	DeletionProtection pulumi.StringPtrInput
-	// 实例名称。命名规则：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需在 1~128 个字符内。
+	// Instance name. Naming rules: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
 	InstanceName pulumi.StringPtrInput
-	// 表名是否区分大小写。取值范围：0：表名称大小写敏感，后端根据实际表名存储。1：表名称不区分大小写，后端存储时将表名称统一为小写字母。
+	// Whether table names are case-sensitive. Value range: 0: table names are case-sensitive; backend stores according to actual table name. 1: table names are not case-sensitive; backend stores table names in lowercase.
 	LowerCaseTableNames pulumi.StringPtrInput
-	// 实例的可维护时间窗口信息。
+	// Instance maintenance window information
 	MaintenanceWindow InstanceMaintenanceWindowPtrInput
-	// 实例节点数量。取值范围为 2~16 个。
+	// Number of instance nodes. Value range: 2–16.
 	NodeNumber pulumi.IntInput
-	// 实例的节点规格代码。
+	// Instance node specification code.
 	NodeSpec pulumi.StringInput
 	Nodes    InstanceNodeArrayInput
-	// 创建的实例数量，取值范围 1~50，默认值为 1。
+	// Number of instances to create. Range: 1~50. Default: 1
 	Number pulumi.IntPtrInput
-	// 为实例默认创建的连接终端指定私网端口号。默认取值为 3306，取值范围为 1000~65534。
+	// Specify the private network port number for the default connection endpoint created for the instance. Default value is 3306. Value range: 1000–65534.
 	Port pulumi.IntPtrInput
-	// 预付费的存储总容量大小，单位 GiB。
+	// Total prepaid storage capacity, in GiB
 	PrePaidStorageInGb pulumi.IntPtrInput
-	// 实例所属的项目名称。
+	// Project name to which the instance belongs.
 	ProjectName pulumi.StringPtrInput
-	// 存储计费类型，不传入该参数时，存储计费类型默认与计算计费类型取值一致。取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+	// Storage billing type. If this parameter is not specified, the storage billing type defaults to the same value as the compute billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription (prepaid).
 	StorageChargeType pulumi.StringPtrInput
-	// 子网 ID。子网必须属于所选的可用区。
+	// Subnet ID. The subnet must belong to the selected availability zone.
 	SubnetId pulumi.StringInput
-	// 高权限用户的账号名称。账号名称需满足以下要求：名称唯一，且长度在 2~32 个字符内。由字母、数字、中划线（-）、下划线（_）组成。以字母开头，以字母或数字结尾。名称内不能包含禁用关键词。
+	// Account name for privileged user. Requirements: Must be unique, 2–32 characters. Letters, numbers, hyphens (-), and underscores (_) only. Must start with a letter and end with a letter or number. Cannot contain prohibited keywords
 	SuperAccountName pulumi.StringPtrInput
-	// 高权限账号的密码。账号密码需满足以下要求：只能包含大小写字母、数字和特殊字符（如 ~!@#$%^&*_-+=`|(){}[]:;'<>,.?/）。长度需在 8~32 个字符内。至少包含大写字母、小写字母、数字或特殊字符中的 3 种。
+	// Password for high-privilege account. The password must meet the following requirements: can only contain uppercase and lowercase letters, numbers, and special characters (such as ~!@#$%^&*_-+=`|(){}[]:;'<>,.?/). Length must be between 8 and 32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, or special characters.
 	SuperAccountPassword pulumi.StringPtrInput
 	Tags                 InstanceTagArrayInput
-	// 参数模板 ID。
+	// Parameter template ID
 	TemplateId pulumi.StringPtrInput
-	// 实例的时区。国内所有地域默认时区为 UTC +08:00。
+	// Instance time zone. The default time zone for all regions in China is UTC +08:00.
 	TimeZone pulumi.StringPtrInput
-	// 私有网络（VPC） ID。
+	// Private network (VPC) ID.
 	VpcId pulumi.StringInput
-	// 可用区 ID。
+	// Availability zone ID
 	ZoneIds pulumi.StringInput
 }
 
@@ -434,32 +434,32 @@ func (o InstanceOutput) ToInstanceOutputWithContext(ctx context.Context) Instanc
 	return o
 }
 
-// 计费详细信息。
+// Billing details.
 func (o InstanceOutput) ChargeDetail() InstanceChargeDetailOutput {
 	return o.ApplyT(func(v *Instance) InstanceChargeDetailOutput { return v.ChargeDetail }).(InstanceChargeDetailOutput)
 }
 
-// 实例的创建时间，格式：YYYY-MM-DDTHH:MM:SSZ（UTC 时间）。
+// Instance creation time, format: YYYY-MM-DDTHH:MM:SSZ (UTC time)
 func (o InstanceOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 实例兼容版本。取值范围：MySQL*8*0：表示兼容社区 MySQL 8.0 版本。MySQL*5*7：表示兼容社区 MySQL 5.7 版本。
+// Instance compatible version. Options: MySQL*8*0: Compatible with community MySQL 8.0. MySQL*5*7: Compatible with community MySQL 5.7
 func (o InstanceOutput) DbEngineVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.DbEngineVersion }).(pulumi.StringOutput)
 }
 
-// 根据兼容版本，选择 veDB MySQL 小版本。当 DBEngineVersion 取值为 MySQL*5*7 时，该参数取值默认为 2.0。当 DBEngineVersion 取值为 MySQL*8*0 时，该参数取值范围如下：3.0（默认）：veDB MySQL 稳定版，100% 兼容 MySQL 8.0。3.1：原生支持 HTAP 应用场景，加速复杂查询。3.2：原生支持 HTAP 应用场景，加速复杂查询。
+// Select the veDB MySQL minor version based on compatibility. When DBEngineVersion is set to MySQL*5*7, the default value for this parameter is 2.0. When DBEngineVersion is set to MySQL*8*0, the parameter value options are as follows: 3.0 (default): veDB MySQL stable version, 100% compatible with MySQL 8.0. 3.1: Native support for HTAP scenarios, accelerates complex queries. 3.2: Native support for HTAP scenarios, accelerates complex queries.
 func (o InstanceOutput) DbMinorVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.DbMinorVersion }).(pulumi.StringOutput)
 }
 
-// 实例的内核版本。
+// Instance kernel version.
 func (o InstanceOutput) DbRevisionVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.DbRevisionVersion }).(pulumi.StringOutput)
 }
 
-// 实例是否开启了删除保护功能。取值范围：enabled：开启。disabled：关闭。
+// Whether deletion protection is enabled for the instance. Value range: enabled: enabled. disabled: disabled.
 func (o InstanceOutput) DeletionProtection() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.DeletionProtection }).(pulumi.StringOutput)
 }
@@ -468,37 +468,37 @@ func (o InstanceOutput) Endpoints() InstanceEndpointArrayOutput {
 	return o.ApplyT(func(v *Instance) InstanceEndpointArrayOutput { return v.Endpoints }).(InstanceEndpointArrayOutput)
 }
 
-// 实例 ID。
+// Instance ID.
 func (o InstanceOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 实例名称。命名规则：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需在 1~128 个字符内。
+// Instance name. Naming rules: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
 func (o InstanceOutput) InstanceName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.InstanceName }).(pulumi.StringOutput)
 }
 
-// 实例状态。
+// Instance status.
 func (o InstanceOutput) InstanceStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.InstanceStatus }).(pulumi.StringOutput)
 }
 
-// 表名是否区分大小写。取值范围：0：表名称大小写敏感，后端根据实际表名存储。1：表名称不区分大小写，后端存储时将表名称统一为小写字母。
+// Whether table names are case-sensitive. Value range: 0: table names are case-sensitive; backend stores according to actual table name. 1: table names are not case-sensitive; backend stores table names in lowercase.
 func (o InstanceOutput) LowerCaseTableNames() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.LowerCaseTableNames }).(pulumi.StringOutput)
 }
 
-// 实例的可维护时间窗口信息。
+// Instance maintenance window information
 func (o InstanceOutput) MaintenanceWindow() InstanceMaintenanceWindowOutput {
 	return o.ApplyT(func(v *Instance) InstanceMaintenanceWindowOutput { return v.MaintenanceWindow }).(InstanceMaintenanceWindowOutput)
 }
 
-// 实例节点数量。取值范围为 2~16 个。
+// Number of instance nodes. Value range: 2–16.
 func (o InstanceOutput) NodeNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.NodeNumber }).(pulumi.IntOutput)
 }
 
-// 实例的节点规格代码。
+// Instance node specification code.
 func (o InstanceOutput) NodeSpec() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.NodeSpec }).(pulumi.StringOutput)
 }
@@ -507,52 +507,52 @@ func (o InstanceOutput) Nodes() InstanceNodeArrayOutput {
 	return o.ApplyT(func(v *Instance) InstanceNodeArrayOutput { return v.Nodes }).(InstanceNodeArrayOutput)
 }
 
-// 创建的实例数量，取值范围 1~50，默认值为 1。
+// Number of instances to create. Range: 1~50. Default: 1
 func (o InstanceOutput) Number() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.Number }).(pulumi.IntOutput)
 }
 
-// 为实例默认创建的连接终端指定私网端口号。默认取值为 3306，取值范围为 1000~65534。
+// Specify the private network port number for the default connection endpoint created for the instance. Default value is 3306. Value range: 1000–65534.
 func (o InstanceOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.Port }).(pulumi.IntOutput)
 }
 
-// 预付费的存储总容量大小，单位 GiB。
+// Total prepaid storage capacity, in GiB
 func (o InstanceOutput) PrePaidStorageInGb() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.PrePaidStorageInGb }).(pulumi.IntOutput)
 }
 
-// 实例所属的项目名称。
+// Project name to which the instance belongs.
 func (o InstanceOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 实例规格类型，取值：General：通用型。Exclusive：独享型。
+// Instance specification type. Values: General: general purpose. Exclusive: dedicated.
 func (o InstanceOutput) SpecFamily() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.SpecFamily }).(pulumi.StringOutput)
 }
 
-// 存储计费类型，不传入该参数时，存储计费类型默认与计算计费类型取值一致。取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+// Storage billing type. If this parameter is not specified, the storage billing type defaults to the same value as the compute billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription (prepaid).
 func (o InstanceOutput) StorageChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.StorageChargeType }).(pulumi.StringOutput)
 }
 
-// 已使用存储空间大小，单位 GiB。
+// Used storage space, in GiB
 func (o InstanceOutput) StorageUsedGiB() pulumi.Float64Output {
 	return o.ApplyT(func(v *Instance) pulumi.Float64Output { return v.StorageUsedGiB }).(pulumi.Float64Output)
 }
 
-// 子网 ID。子网必须属于所选的可用区。
+// Subnet ID. The subnet must belong to the selected availability zone.
 func (o InstanceOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// 高权限用户的账号名称。账号名称需满足以下要求：名称唯一，且长度在 2~32 个字符内。由字母、数字、中划线（-）、下划线（_）组成。以字母开头，以字母或数字结尾。名称内不能包含禁用关键词。
+// Account name for privileged user. Requirements: Must be unique, 2–32 characters. Letters, numbers, hyphens (-), and underscores (_) only. Must start with a letter and end with a letter or number. Cannot contain prohibited keywords
 func (o InstanceOutput) SuperAccountName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.SuperAccountName }).(pulumi.StringOutput)
 }
 
-// 高权限账号的密码。账号密码需满足以下要求：只能包含大小写字母、数字和特殊字符（如 ~!@#$%^&*_-+=`|(){}[]:;'<>,.?/）。长度需在 8~32 个字符内。至少包含大写字母、小写字母、数字或特殊字符中的 3 种。
+// Password for high-privilege account. The password must meet the following requirements: can only contain uppercase and lowercase letters, numbers, and special characters (such as ~!@#$%^&*_-+=`|(){}[]:;'<>,.?/). Length must be between 8 and 32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, or special characters.
 func (o InstanceOutput) SuperAccountPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.SuperAccountPassword }).(pulumi.StringOutput)
 }
@@ -561,22 +561,22 @@ func (o InstanceOutput) Tags() InstanceTagArrayOutput {
 	return o.ApplyT(func(v *Instance) InstanceTagArrayOutput { return v.Tags }).(InstanceTagArrayOutput)
 }
 
-// 参数模板 ID。
+// Parameter template ID
 func (o InstanceOutput) TemplateId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.TemplateId }).(pulumi.StringOutput)
 }
 
-// 实例的时区。国内所有地域默认时区为 UTC +08:00。
+// Instance time zone. The default time zone for all regions in China is UTC +08:00.
 func (o InstanceOutput) TimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.TimeZone }).(pulumi.StringOutput)
 }
 
-// 私有网络（VPC） ID。
+// Private network (VPC) ID.
 func (o InstanceOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.VpcId }).(pulumi.StringOutput)
 }
 
-// 可用区 ID。
+// Availability zone ID
 func (o InstanceOutput) ZoneIds() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.ZoneIds }).(pulumi.StringOutput)
 }

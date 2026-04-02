@@ -65,19 +65,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq
     public sealed class GetInstancePluginResult
     {
         /// <summary>
-        /// 插件描述。
+        /// Plugin description
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 关闭此插件的注意事项说明。
+        /// Notes for disabling this plugin
         /// </summary>
         public readonly string DisablePrompt;
         /// <summary>
-        /// 开启此插件的注意事项说明。
+        /// Notes for enabling this plugin
         /// </summary>
         public readonly string EnablePrompt;
         /// <summary>
-        /// 是否已开启插件。true：插件已开启。false：插件已关闭。
+        /// Whether the plugin is enabled. true: The plugin is enabled. false: The plugin is disabled
         /// </summary>
         public readonly bool Enabled;
         /// <summary>
@@ -85,23 +85,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID
         /// </summary>
         public readonly string InstanceId;
         /// <summary>
-        /// 开启或关闭插件是否会引发 RabbitMQ 实例重启。true：会重启实例。false：不会重启实例。
+        /// Whether enabling or disabling the plugin will cause a RabbitMQ instance restart. true: The instance will restart. false: The instance will not restart
         /// </summary>
         public readonly bool NeedRebootOnChange;
         /// <summary>
-        /// 插件名称。
+        /// Plugin name
         /// </summary>
         public readonly string PluginName;
         /// <summary>
-        /// 插件监听的端口。
+        /// Plugin listening port
         /// </summary>
         public readonly int Port;
         /// <summary>
-        /// 插件版本。
+        /// Plugin version
         /// </summary>
         public readonly string Version;
 

@@ -13,98 +13,98 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceAddressObject {
     /**
-     * @return false：私网解析（默认）。true：私网以及公网解析。
+     * @return false: private network resolution (default). true: private and public network resolution.
      * 
      */
     private @Nullable Boolean dnsVisibility;
     /**
-     * @return 连接域名。
+     * @return Connection domain name
      * 
      */
     private @Nullable String domain;
     /**
-     * @return EIP 的 ID，仅对 Public 地址有效。
+     * @return EIP ID, valid only for Public addresses.
      * 
      */
     private @Nullable String eipId;
     /**
-     * @return IP 协议版本。取值为 IPv4。
+     * @return IP protocol version. Value: IPv4.
      * 
      */
     private @Nullable String internetProtocol;
     /**
-     * @return IP 地址。
+     * @return IP address.
      * 
      */
     private @Nullable String ipAddress;
     /**
-     * @return 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+     * @return Network address type. Values: Private: private address. Public: public address
      * 
      */
     private @Nullable String networkType;
     /**
-     * @return 端口。
+     * @return Port
      * 
      */
     private @Nullable String port;
     /**
-     * @return 子网 ID，仅对 Private 地址有效。
+     * @return Subnet ID, valid only for Private addresses
      * 
      */
     private @Nullable String subnetId;
 
     private InstanceAddressObject() {}
     /**
-     * @return false：私网解析（默认）。true：私网以及公网解析。
+     * @return false: private network resolution (default). true: private and public network resolution.
      * 
      */
     public Optional<Boolean> dnsVisibility() {
         return Optional.ofNullable(this.dnsVisibility);
     }
     /**
-     * @return 连接域名。
+     * @return Connection domain name
      * 
      */
     public Optional<String> domain() {
         return Optional.ofNullable(this.domain);
     }
     /**
-     * @return EIP 的 ID，仅对 Public 地址有效。
+     * @return EIP ID, valid only for Public addresses.
      * 
      */
     public Optional<String> eipId() {
         return Optional.ofNullable(this.eipId);
     }
     /**
-     * @return IP 协议版本。取值为 IPv4。
+     * @return IP protocol version. Value: IPv4.
      * 
      */
     public Optional<String> internetProtocol() {
         return Optional.ofNullable(this.internetProtocol);
     }
     /**
-     * @return IP 地址。
+     * @return IP address.
      * 
      */
     public Optional<String> ipAddress() {
         return Optional.ofNullable(this.ipAddress);
     }
     /**
-     * @return 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+     * @return Network address type. Values: Private: private address. Public: public address
      * 
      */
     public Optional<String> networkType() {
         return Optional.ofNullable(this.networkType);
     }
     /**
-     * @return 端口。
+     * @return Port
      * 
      */
     public Optional<String> port() {
         return Optional.ofNullable(this.port);
     }
     /**
-     * @return 子网 ID，仅对 Private 地址有效。
+     * @return Subnet ID, valid only for Private addresses
      * 
      */
     public Optional<String> subnetId() {

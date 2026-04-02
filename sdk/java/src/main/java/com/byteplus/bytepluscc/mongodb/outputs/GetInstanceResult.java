@@ -20,72 +20,72 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceResult {
     /**
-     * @return 白名单 ID 列表。新建实例会被绑定到指定白名单。
+     * @return Allowlist ID list. New instances are bound to the specified allowlist.
      * 
      */
     private List<String> allowListIds;
     /**
-     * @return 是否开启自动续费，取值范围如下：false（默认）：不开启自动续费。true：开启自动续费。
+     * @return Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
      * 
      */
     private Boolean autoRenew;
     /**
-     * @return 实例计费状态，取值范围如下：Normal：正常。WaitingPaid：等待支付。ChangingPayType：计费变更中。Renewing：续费中。Overdue：已到期。Owing：欠费中。Unsubscribing：退订中。
+     * @return Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
      * 
      */
     private String chargeStatus;
     /**
-     * @return 实例计费类型，取值范围如下：PostPaid（默认）：按量计费（也称后付费）。Prepaid：包年包月（也称预付费）。
+     * @return Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
      * 
      */
     private String chargeType;
     /**
-     * @return 计划关停时间（UTC）。
+     * @return Scheduled shutdown time (UTC).
      * 
      */
     private String closedTime;
     /**
-     * @return 分片集群中 ConfigServer 节点的规格码。默认值为 mongo.config.1c2g。
+     * @return ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
      * 
      */
     private String configServerNodeSpec;
     /**
-     * @return 分片集群中 ConfigServer 的存储空间，单位：GiB。步长为 10，默认值：20。
+     * @return ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
      * 
      */
     private Integer configServerStorageSpaceGb;
     /**
-     * @return ConfigServers 的信息列表。
+     * @return ConfigServer information list.
      * 
      */
     private List<GetInstanceConfigServer> configServers;
     /**
-     * @return ConfigServer 的 ID。
+     * @return ConfigServer ID
      * 
      */
     private String configServersId;
     /**
-     * @return 实例创建时间（UTC）。
+     * @return Instance creation time (UTC).
      * 
      */
     private String createdTime;
     /**
-     * @return 数据库引擎。取值固定为 MongoDB
+     * @return Database engine. The value is fixed as MongoDB
      * 
      */
     private String dbEngine;
     /**
-     * @return 数据库引擎版本，取值范围如下：MongoDB*4*0（默认）：MongoDB 4.0 版本。MongoDB*4*2：MongoDB 4.2 版本。MongoDB*4*4：MongoDB 4.4 版本。MongoDB*5*0：MongoDB 5.0 版本。MongoDB*6*0：MongoDB 6.0 版本。MongoDB*7*0：MongoDB 7.0 版本。
+     * @return Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
      * 
      */
     private String dbEngineVersion;
     /**
-     * @return 数据库引擎版本的字符串。
+     * @return Database engine version string
      * 
      */
     private String dbEngineVersionStr;
     /**
-     * @return 实例到期时间（UTC）。
+     * @return Instance expiration time (UTC).
      * 
      */
     private String expiredTime;
@@ -95,250 +95,250 @@ public final class GetInstanceResult {
      */
     private String id;
     /**
-     * @return 需要创建的实例数量。取值为大于等于 1 的正整数，默认值为1。
+     * @return Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
      * 
      */
     private Integer instanceCount;
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     private String instanceId;
     /**
-     * @return 实例名称。名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 2~64 个字符。
+     * @return Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
      * 
      */
     private String instanceName;
     /**
-     * @return 实例状态。创建中：Creating。运行中：Running。白名单维护中：AllowListMaintaining。变更配置中：Scaling。重启中：Restarting。网络维护中：NetworkMaintaining。恢复中：Restoring。升级版本中：Upgrading。不可用：Unavailable。关停中：Closing。删除中：Deleting。已关停：Closed。SSL SSL变更中：SSLUpdating。主节点切换中：SwitchMastering。角色切换中：RoleChanging。迁移中：Migrating。
+     * @return Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
      * 
      */
     private String instanceStatus;
     /**
-     * @return MongoDB 的实例类型，取值范围如下：ReplicaSet（默认）：副本集。ShardedCluster：分片集群 。
+     * @return MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
      * 
      */
     private String instanceType;
     /**
-     * @return Mongos 的信息列表。
+     * @return Mongos information list
      * 
      */
     private List<GetInstanceMongo> mongos;
     /**
-     * @return Mongos 的 ID。
+     * @return Mongos ID.
      * 
      */
     private String mongosId;
     /**
-     * @return 分片集群中 Mongos 节点的数量。取值范围：2~32。
+     * @return Number of Mongos nodes in the sharded cluster. Range: 2~32.
      * 
      */
     private Integer mongosNodeNumber;
     /**
-     * @return 分片集群中 Mongos 节点的规格码。
+     * @return Specification code for Mongos nodes in a sharded cluster.
      * 
      */
     private String mongosNodeSpec;
     /**
-     * @return 添加只读节点信息，包括只读节点所在的可用区和数量。
+     * @return Add read-only node information, including the availability zone and quantity of read-only nodes.
      * 
      */
     private List<GetInstanceNodeAvailabilityZone> nodeAvailabilityZones;
     /**
-     * @return 节点数量，其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点数量。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示每个 Shard 分片中的节点数量。
+     * @return Node count. When the instance type is ReplicaSet, this parameter indicates the number of compute nodes in the replica set instance. When the instance type is ShardedCluster, it indicates the number of nodes in each shard.
      * 
      */
     private Integer nodeNumber;
     /**
-     * @return 实例的规格码。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点规格。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示 Shard 节点的规格。
+     * @return Instance specification code. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this parameter specifies the compute node specification for the replica set instance. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this parameter specifies the specification for Shard nodes.
      * 
      */
     private String nodeSpec;
     /**
-     * @return 副本集实例中各节点或分片集群 Shard 分片中各节点的信息列表。
+     * @return Information list for each node in the replica set instance or each node in the sharded cluster shard
      * 
      */
     private List<GetInstanceNode> nodes;
     /**
-     * @return 包年包月实例的购买时长，其中：当 PeriodUnit 为 Year 时，Period 取值为 1~3。当 PeriodUnit 为 Month 时，Period 取值为 1~9。
+     * @return Subscription instance purchase duration. When PeriodUnit is Year, Period can be 1–3. When PeriodUnit is Month, Period can be 1–9.
      * 
      */
     private Integer period;
     /**
-     * @return 指定包年包月实例为包年或者包月类型。取值如下：Year：包年。Month：包月。
+     * @return Specify whether the subscription instance is yearly or monthly. Options: Year: yearly. Month: monthly.
      * 
      */
     private String periodUnit;
     /**
-     * @return 实例私网连接地址的字符串信息。
+     * @return String information for the instance&#39;s private network connection address.
      * 
      */
     private String privateEndpoint;
     /**
-     * @return 选择实例所属的项目。若该参数留空，新建实例会默认加入 default 项目。
+     * @return Select the project for the instance. If left blank, the new instance will be added to the default project.
      * 
      */
     private String projectName;
     /**
-     * @return 实例的只读节点数量。
+     * @return Number of read-only nodes in the instance
      * 
      */
     private Integer readOnlyNodeNumber;
     /**
-     * @return 实例的计划回收时间（UTC）。
+     * @return Scheduled recycle time for the instance (UTC)
      * 
      */
     private String reclaimTime;
     /**
-     * @return 分片集群中 Shard 分片的数量。取值范围：2~32。
+     * @return Number of shards in the sharded cluster. Range: 2–32.
      * 
      */
     private Integer shardNumber;
     /**
-     * @return Shards 的信息列表。
+     * @return Shard information list
      * 
      */
     private List<GetInstanceShard> shards;
     /**
-     * @return 副本集实例的总存储空间，或分片集群中单个 Shard 分片的存储空间，单位：GiB，步长为 10。
+     * @return Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
      * 
      */
     private Integer storageSpaceGb;
     /**
-     * @return 实例的存储类型。当前仅支持本地 SSD 盘（即 LocalSSD）存储。
+     * @return Instance storage type. Currently, only local SSD disks (LocalSSD) are supported.
      * 
      */
     private String storageType;
     /**
-     * @return 子网 ID。
+     * @return Subnet ID.
      * 
      */
     private String subnetId;
     /**
-     * @return 数据库账号名称。当前仅支持在创建实例时设置超级管理员账号，账号名称固定为 root。
+     * @return Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
      * 
      */
     private String superAccountName;
     /**
-     * @return root 账号的密码。密码需同时满足如下条件：只能为大小写字母、数字及以下特殊字符 _#!{@literal @}$%^&amp;*()+=-。长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意三种。不允许使用极易被破解的弱密码（如 Admin{@literal @}123）。
+     * @return Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!{@literal @}$%^&amp;*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin{@literal @}123) are not allowed.
      * 
      */
     private String superAccountPassword;
     /**
-     * @return MongoDB实例的标签信息
+     * @return MongoDB instance tag information
      * 
      */
     private List<GetInstanceTag> tags;
     /**
-     * @return 实例的更新时间（UTC）。
+     * @return Instance update time (UTC).
      * 
      */
     private String updatedTime;
     /**
-     * @return 私有网络 ID。
+     * @return Private network ID.
      * 
      */
     private String vpcId;
     /**
-     * @return 实例所在可用区的 ID。
+     * @return Availability zone ID where the instance is located.
      * 
      */
     private String zoneId;
 
     private GetInstanceResult() {}
     /**
-     * @return 白名单 ID 列表。新建实例会被绑定到指定白名单。
+     * @return Allowlist ID list. New instances are bound to the specified allowlist.
      * 
      */
     public List<String> allowListIds() {
         return this.allowListIds;
     }
     /**
-     * @return 是否开启自动续费，取值范围如下：false（默认）：不开启自动续费。true：开启自动续费。
+     * @return Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
      * 
      */
     public Boolean autoRenew() {
         return this.autoRenew;
     }
     /**
-     * @return 实例计费状态，取值范围如下：Normal：正常。WaitingPaid：等待支付。ChangingPayType：计费变更中。Renewing：续费中。Overdue：已到期。Owing：欠费中。Unsubscribing：退订中。
+     * @return Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
      * 
      */
     public String chargeStatus() {
         return this.chargeStatus;
     }
     /**
-     * @return 实例计费类型，取值范围如下：PostPaid（默认）：按量计费（也称后付费）。Prepaid：包年包月（也称预付费）。
+     * @return Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
      * 
      */
     public String chargeType() {
         return this.chargeType;
     }
     /**
-     * @return 计划关停时间（UTC）。
+     * @return Scheduled shutdown time (UTC).
      * 
      */
     public String closedTime() {
         return this.closedTime;
     }
     /**
-     * @return 分片集群中 ConfigServer 节点的规格码。默认值为 mongo.config.1c2g。
+     * @return ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
      * 
      */
     public String configServerNodeSpec() {
         return this.configServerNodeSpec;
     }
     /**
-     * @return 分片集群中 ConfigServer 的存储空间，单位：GiB。步长为 10，默认值：20。
+     * @return ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
      * 
      */
     public Integer configServerStorageSpaceGb() {
         return this.configServerStorageSpaceGb;
     }
     /**
-     * @return ConfigServers 的信息列表。
+     * @return ConfigServer information list.
      * 
      */
     public List<GetInstanceConfigServer> configServers() {
         return this.configServers;
     }
     /**
-     * @return ConfigServer 的 ID。
+     * @return ConfigServer ID
      * 
      */
     public String configServersId() {
         return this.configServersId;
     }
     /**
-     * @return 实例创建时间（UTC）。
+     * @return Instance creation time (UTC).
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 数据库引擎。取值固定为 MongoDB
+     * @return Database engine. The value is fixed as MongoDB
      * 
      */
     public String dbEngine() {
         return this.dbEngine;
     }
     /**
-     * @return 数据库引擎版本，取值范围如下：MongoDB*4*0（默认）：MongoDB 4.0 版本。MongoDB*4*2：MongoDB 4.2 版本。MongoDB*4*4：MongoDB 4.4 版本。MongoDB*5*0：MongoDB 5.0 版本。MongoDB*6*0：MongoDB 6.0 版本。MongoDB*7*0：MongoDB 7.0 版本。
+     * @return Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
      * 
      */
     public String dbEngineVersion() {
         return this.dbEngineVersion;
     }
     /**
-     * @return 数据库引擎版本的字符串。
+     * @return Database engine version string
      * 
      */
     public String dbEngineVersionStr() {
         return this.dbEngineVersionStr;
     }
     /**
-     * @return 实例到期时间（UTC）。
+     * @return Instance expiration time (UTC).
      * 
      */
     public String expiredTime() {
@@ -352,210 +352,210 @@ public final class GetInstanceResult {
         return this.id;
     }
     /**
-     * @return 需要创建的实例数量。取值为大于等于 1 的正整数，默认值为1。
+     * @return Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
      * 
      */
     public Integer instanceCount() {
         return this.instanceCount;
     }
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return 实例名称。名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 2~64 个字符。
+     * @return Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
      * 
      */
     public String instanceName() {
         return this.instanceName;
     }
     /**
-     * @return 实例状态。创建中：Creating。运行中：Running。白名单维护中：AllowListMaintaining。变更配置中：Scaling。重启中：Restarting。网络维护中：NetworkMaintaining。恢复中：Restoring。升级版本中：Upgrading。不可用：Unavailable。关停中：Closing。删除中：Deleting。已关停：Closed。SSL SSL变更中：SSLUpdating。主节点切换中：SwitchMastering。角色切换中：RoleChanging。迁移中：Migrating。
+     * @return Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
      * 
      */
     public String instanceStatus() {
         return this.instanceStatus;
     }
     /**
-     * @return MongoDB 的实例类型，取值范围如下：ReplicaSet（默认）：副本集。ShardedCluster：分片集群 。
+     * @return MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
      * 
      */
     public String instanceType() {
         return this.instanceType;
     }
     /**
-     * @return Mongos 的信息列表。
+     * @return Mongos information list
      * 
      */
     public List<GetInstanceMongo> mongos() {
         return this.mongos;
     }
     /**
-     * @return Mongos 的 ID。
+     * @return Mongos ID.
      * 
      */
     public String mongosId() {
         return this.mongosId;
     }
     /**
-     * @return 分片集群中 Mongos 节点的数量。取值范围：2~32。
+     * @return Number of Mongos nodes in the sharded cluster. Range: 2~32.
      * 
      */
     public Integer mongosNodeNumber() {
         return this.mongosNodeNumber;
     }
     /**
-     * @return 分片集群中 Mongos 节点的规格码。
+     * @return Specification code for Mongos nodes in a sharded cluster.
      * 
      */
     public String mongosNodeSpec() {
         return this.mongosNodeSpec;
     }
     /**
-     * @return 添加只读节点信息，包括只读节点所在的可用区和数量。
+     * @return Add read-only node information, including the availability zone and quantity of read-only nodes.
      * 
      */
     public List<GetInstanceNodeAvailabilityZone> nodeAvailabilityZones() {
         return this.nodeAvailabilityZones;
     }
     /**
-     * @return 节点数量，其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点数量。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示每个 Shard 分片中的节点数量。
+     * @return Node count. When the instance type is ReplicaSet, this parameter indicates the number of compute nodes in the replica set instance. When the instance type is ShardedCluster, it indicates the number of nodes in each shard.
      * 
      */
     public Integer nodeNumber() {
         return this.nodeNumber;
     }
     /**
-     * @return 实例的规格码。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点规格。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示 Shard 节点的规格。
+     * @return Instance specification code. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this parameter specifies the compute node specification for the replica set instance. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this parameter specifies the specification for Shard nodes.
      * 
      */
     public String nodeSpec() {
         return this.nodeSpec;
     }
     /**
-     * @return 副本集实例中各节点或分片集群 Shard 分片中各节点的信息列表。
+     * @return Information list for each node in the replica set instance or each node in the sharded cluster shard
      * 
      */
     public List<GetInstanceNode> nodes() {
         return this.nodes;
     }
     /**
-     * @return 包年包月实例的购买时长，其中：当 PeriodUnit 为 Year 时，Period 取值为 1~3。当 PeriodUnit 为 Month 时，Period 取值为 1~9。
+     * @return Subscription instance purchase duration. When PeriodUnit is Year, Period can be 1–3. When PeriodUnit is Month, Period can be 1–9.
      * 
      */
     public Integer period() {
         return this.period;
     }
     /**
-     * @return 指定包年包月实例为包年或者包月类型。取值如下：Year：包年。Month：包月。
+     * @return Specify whether the subscription instance is yearly or monthly. Options: Year: yearly. Month: monthly.
      * 
      */
     public String periodUnit() {
         return this.periodUnit;
     }
     /**
-     * @return 实例私网连接地址的字符串信息。
+     * @return String information for the instance&#39;s private network connection address.
      * 
      */
     public String privateEndpoint() {
         return this.privateEndpoint;
     }
     /**
-     * @return 选择实例所属的项目。若该参数留空，新建实例会默认加入 default 项目。
+     * @return Select the project for the instance. If left blank, the new instance will be added to the default project.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 实例的只读节点数量。
+     * @return Number of read-only nodes in the instance
      * 
      */
     public Integer readOnlyNodeNumber() {
         return this.readOnlyNodeNumber;
     }
     /**
-     * @return 实例的计划回收时间（UTC）。
+     * @return Scheduled recycle time for the instance (UTC)
      * 
      */
     public String reclaimTime() {
         return this.reclaimTime;
     }
     /**
-     * @return 分片集群中 Shard 分片的数量。取值范围：2~32。
+     * @return Number of shards in the sharded cluster. Range: 2–32.
      * 
      */
     public Integer shardNumber() {
         return this.shardNumber;
     }
     /**
-     * @return Shards 的信息列表。
+     * @return Shard information list
      * 
      */
     public List<GetInstanceShard> shards() {
         return this.shards;
     }
     /**
-     * @return 副本集实例的总存储空间，或分片集群中单个 Shard 分片的存储空间，单位：GiB，步长为 10。
+     * @return Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
      * 
      */
     public Integer storageSpaceGb() {
         return this.storageSpaceGb;
     }
     /**
-     * @return 实例的存储类型。当前仅支持本地 SSD 盘（即 LocalSSD）存储。
+     * @return Instance storage type. Currently, only local SSD disks (LocalSSD) are supported.
      * 
      */
     public String storageType() {
         return this.storageType;
     }
     /**
-     * @return 子网 ID。
+     * @return Subnet ID.
      * 
      */
     public String subnetId() {
         return this.subnetId;
     }
     /**
-     * @return 数据库账号名称。当前仅支持在创建实例时设置超级管理员账号，账号名称固定为 root。
+     * @return Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
      * 
      */
     public String superAccountName() {
         return this.superAccountName;
     }
     /**
-     * @return root 账号的密码。密码需同时满足如下条件：只能为大小写字母、数字及以下特殊字符 _#!{@literal @}$%^&amp;*()+=-。长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意三种。不允许使用极易被破解的弱密码（如 Admin{@literal @}123）。
+     * @return Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!{@literal @}$%^&amp;*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin{@literal @}123) are not allowed.
      * 
      */
     public String superAccountPassword() {
         return this.superAccountPassword;
     }
     /**
-     * @return MongoDB实例的标签信息
+     * @return MongoDB instance tag information
      * 
      */
     public List<GetInstanceTag> tags() {
         return this.tags;
     }
     /**
-     * @return 实例的更新时间（UTC）。
+     * @return Instance update time (UTC).
      * 
      */
     public String updatedTime() {
         return this.updatedTime;
     }
     /**
-     * @return 私有网络 ID。
+     * @return Private network ID.
      * 
      */
     public String vpcId() {
         return this.vpcId;
     }
     /**
-     * @return 实例所在可用区的 ID。
+     * @return Availability zone ID where the instance is located.
      * 
      */
     public String zoneId() {

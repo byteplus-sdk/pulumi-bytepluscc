@@ -65,31 +65,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
     public sealed class GetNodeGroupResult
     {
         /// <summary>
-        /// 当前节点组可布局的组件名称列表。
+        /// List of component names that can be deployed in the current node group.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNodeGroupApplicationLayoutResult> ApplicationLayouts;
         /// <summary>
-        /// 包周期付费配置。
+        /// Subscription payment configuration.
         /// </summary>
         public readonly Outputs.GetNodeGroupChargePreConfigResult ChargePreConfig;
         /// <summary>
-        /// 付费类型。PRE表示包月，POST表示按量计费。
+        /// Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
         /// </summary>
         public readonly string ChargeType;
         /// <summary>
-        /// 集群ID。
+        /// Cluster ID.
         /// </summary>
         public readonly string ClusterId;
         /// <summary>
-        /// 创建时间。
+        /// Creation time.
         /// </summary>
         public readonly int CreatedTime;
         /// <summary>
-        /// 数据盘配置。
+        /// Data disk configuration.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNodeGroupDataDiskResult> DataDisks;
         /// <summary>
-        /// ECS实例规格列表。当前修改仅支持单个实例规格。
+        /// ECS instance specification list. Currently, only a single instance specification can be modified.
         /// </summary>
         public readonly ImmutableArray<string> EcsInstanceTypes;
         /// <summary>
@@ -97,55 +97,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 返回的节点组组件的自定义配置参数列表。
+        /// Custom configuration parameter list for the returned node group components.
         /// </summary>
         public readonly ImmutableArray<string> LayoutComponentNames;
         /// <summary>
-        /// 节点数量。取值范围：1~1000。
+        /// Node count. Value range: 1~1000.
         /// </summary>
         public readonly int NodeCount;
         /// <summary>
-        /// 节点组ID。
+        /// Node group ID.
         /// </summary>
         public readonly string NodeGroupId;
         /// <summary>
-        /// 节点组名称。
+        /// Node group name.
         /// </summary>
         public readonly string NodeGroupName;
         /// <summary>
-        /// 节点组状态。RUNNING：运行中。EXTENDING：扩容中。REDUCING：缩容中。DISK_EXTENDING：磁盘扩容中。MODIFYING：变配中。
+        /// Node group status. RUNNING: Running. EXTENDING: Expanding. REDUCING: Shrinking. DISK_EXTENDING: Disk expansion. MODIFYING: Configuration modification in progress.
         /// </summary>
         public readonly string NodeGroupState;
         /// <summary>
-        /// 节点组类型。
+        /// Node group type.
         /// </summary>
         public readonly string NodeGroupType;
         /// <summary>
-        /// 节点列表。
+        /// Node list.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNodeGroupNodeResult> Nodes;
         /// <summary>
-        /// 子网ID列表。
+        /// Subnet ID list.
         /// </summary>
         public readonly ImmutableArray<string> SubnetIds;
         /// <summary>
-        /// 系统盘。
+        /// System disk.
         /// </summary>
         public readonly Outputs.GetNodeGroupSystemDiskResult SystemDisk;
         /// <summary>
-        /// 待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
+        /// Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
         /// </summary>
         public readonly int TargetDiskSize;
         /// <summary>
-        /// 集群终止时间。
+        /// Cluster termination time.
         /// </summary>
         public readonly string TerminateTime;
         /// <summary>
-        /// ECS是否附带公网IP。
+        /// Whether the ECS instance includes a public IP.
         /// </summary>
         public readonly bool WithPublicIp;
         /// <summary>
-        /// zoneId，为空时默认复用集群的zoneId。
+        /// zoneId. If empty, the cluster's zoneId is reused by default.
         /// </summary>
         public readonly string ZoneId;
 

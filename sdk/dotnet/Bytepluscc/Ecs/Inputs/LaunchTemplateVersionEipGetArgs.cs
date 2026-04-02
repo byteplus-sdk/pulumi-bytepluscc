@@ -14,37 +14,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
     public sealed class LaunchTemplateVersionEipGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+        /// Maximum bandwidth for the public IP, measured in Mbps. Value range: 1–200. Default: 1
         /// </summary>
         [Input("bandwidth")]
         public Input<int>? Bandwidth { get; set; }
 
         /// <summary>
-        /// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+        /// Shared bandwidth package ID, indicating that the public IP is added to the shared bandwidth package
         /// </summary>
         [Input("bandwidthPackageId")]
         public Input<string>? BandwidthPackageId { get; set; }
 
         /// <summary>
-        /// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+        /// Billing method for the public IP. Values: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic
         /// </summary>
         [Input("billingType")]
         public Input<int>? BillingType { get; set; }
 
         /// <summary>
-        /// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+        /// Line type of the public IP. Values: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line
         /// </summary>
         [Input("isp")]
         public Input<string>? Isp { get; set; }
 
         /// <summary>
-        /// 公网IP是否随实例删除，仅按量计费公网IP生效。
+        /// Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs.
         /// </summary>
         [Input("releaseWithInstance")]
         public Input<bool>? ReleaseWithInstance { get; set; }
 
         /// <summary>
-        /// 安全防护包ID。
+        /// Security protection package ID.
         /// </summary>
         [Input("securityProtectionInstanceId")]
         public Input<int>? SecurityProtectionInstanceId { get; set; }
@@ -53,7 +53,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
         private InputList<string>? _securityProtectionTypes;
 
         /// <summary>
-        /// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+        /// Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
         /// </summary>
         public InputList<string> SecurityProtectionTypes
         {

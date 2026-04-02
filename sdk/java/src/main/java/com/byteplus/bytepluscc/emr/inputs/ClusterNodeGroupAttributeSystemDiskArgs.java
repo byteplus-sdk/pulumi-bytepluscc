@@ -17,14 +17,14 @@ public final class ClusterNodeGroupAttributeSystemDiskArgs extends com.pulumi.re
     public static final ClusterNodeGroupAttributeSystemDiskArgs Empty = new ClusterNodeGroupAttributeSystemDiskArgs();
 
     /**
-     * 磁盘大小。
+     * Disk size.
      * 
      */
     @Import(name="size")
     private @Nullable Output<Integer> size;
 
     /**
-     * @return 磁盘大小。
+     * @return Disk size.
      * 
      */
     public Optional<Output<Integer>> size() {
@@ -32,14 +32,14 @@ public final class ClusterNodeGroupAttributeSystemDiskArgs extends com.pulumi.re
     }
 
     /**
-     * 磁盘类型。
+     * Disk type.
      * 
      */
     @Import(name="volumeType")
     private @Nullable Output<String> volumeType;
 
     /**
-     * @return 磁盘类型。
+     * @return Disk type.
      * 
      */
     public Optional<Output<String>> volumeType() {
@@ -72,7 +72,7 @@ public final class ClusterNodeGroupAttributeSystemDiskArgs extends com.pulumi.re
         }
 
         /**
-         * @param size 磁盘大小。
+         * @param size Disk size.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class ClusterNodeGroupAttributeSystemDiskArgs extends com.pulumi.re
         }
 
         /**
-         * @param size 磁盘大小。
+         * @param size Disk size.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class ClusterNodeGroupAttributeSystemDiskArgs extends com.pulumi.re
         }
 
         /**
-         * @param volumeType 磁盘类型。
+         * @param volumeType Disk type.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class ClusterNodeGroupAttributeSystemDiskArgs extends com.pulumi.re
         }
 
         /**
-         * @param volumeType 磁盘类型。
+         * @param volumeType Disk type.
          * 
          * @return builder
          * 

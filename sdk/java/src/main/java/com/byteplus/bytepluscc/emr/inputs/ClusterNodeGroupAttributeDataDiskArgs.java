@@ -17,14 +17,14 @@ public final class ClusterNodeGroupAttributeDataDiskArgs extends com.pulumi.reso
     public static final ClusterNodeGroupAttributeDataDiskArgs Empty = new ClusterNodeGroupAttributeDataDiskArgs();
 
     /**
-     * 磁盘块数，默认值4，最大15，最小1。
+     * Number of disk blocks. Default is 4, maximum is 15, minimum is 1.
      * 
      */
     @Import(name="count")
     private @Nullable Output<Integer> count;
 
     /**
-     * @return 磁盘块数，默认值4，最大15，最小1。
+     * @return Number of disk blocks. Default is 4, maximum is 15, minimum is 1.
      * 
      */
     public Optional<Output<Integer>> count() {
@@ -32,14 +32,14 @@ public final class ClusterNodeGroupAttributeDataDiskArgs extends com.pulumi.reso
     }
 
     /**
-     * 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+     * Disk size. Default is 80GB, minimum is 60GB, maximum is 2048GB, unit: GB.
      * 
      */
     @Import(name="size")
     private @Nullable Output<Integer> size;
 
     /**
-     * @return 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+     * @return Disk size. Default is 80GB, minimum is 60GB, maximum is 2048GB, unit: GB.
      * 
      */
     public Optional<Output<Integer>> size() {
@@ -47,14 +47,14 @@ public final class ClusterNodeGroupAttributeDataDiskArgs extends com.pulumi.reso
     }
 
     /**
-     * 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV
+     * Disk type. ESSD*PL0: Ultra SSD*PL0. ESSD*PL1: Ultra SSD*PL1. ESSD*PL2: Ultra SSD*PL2. ESSD*PL3: Ultra SSD*PL3. ESSD*FLEXPL: Ultra SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
      * 
      */
     @Import(name="volumeType")
     private @Nullable Output<String> volumeType;
 
     /**
-     * @return 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV
+     * @return Disk type. ESSD*PL0: Ultra SSD*PL0. ESSD*PL1: Ultra SSD*PL1. ESSD*PL2: Ultra SSD*PL2. ESSD*PL3: Ultra SSD*PL3. ESSD*FLEXPL: Ultra SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
      * 
      */
     public Optional<Output<String>> volumeType() {
@@ -88,7 +88,7 @@ public final class ClusterNodeGroupAttributeDataDiskArgs extends com.pulumi.reso
         }
 
         /**
-         * @param count 磁盘块数，默认值4，最大15，最小1。
+         * @param count Number of disk blocks. Default is 4, maximum is 15, minimum is 1.
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class ClusterNodeGroupAttributeDataDiskArgs extends com.pulumi.reso
         }
 
         /**
-         * @param count 磁盘块数，默认值4，最大15，最小1。
+         * @param count Number of disk blocks. Default is 4, maximum is 15, minimum is 1.
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class ClusterNodeGroupAttributeDataDiskArgs extends com.pulumi.reso
         }
 
         /**
-         * @param size 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+         * @param size Disk size. Default is 80GB, minimum is 60GB, maximum is 2048GB, unit: GB.
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class ClusterNodeGroupAttributeDataDiskArgs extends com.pulumi.reso
         }
 
         /**
-         * @param size 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+         * @param size Disk size. Default is 80GB, minimum is 60GB, maximum is 2048GB, unit: GB.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class ClusterNodeGroupAttributeDataDiskArgs extends com.pulumi.reso
         }
 
         /**
-         * @param volumeType 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV
+         * @param volumeType Disk type. ESSD*PL0: Ultra SSD*PL0. ESSD*PL1: Ultra SSD*PL1. ESSD*PL2: Ultra SSD*PL2. ESSD*PL3: Ultra SSD*PL3. ESSD*FLEXPL: Ultra SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class ClusterNodeGroupAttributeDataDiskArgs extends com.pulumi.reso
         }
 
         /**
-         * @param volumeType 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV
+         * @param volumeType Disk type. ESSD*PL0: Ultra SSD*PL0. ESSD*PL1: Ultra SSD*PL1. ESSD*PL2: Ultra SSD*PL2. ESSD*PL3: Ultra SSD*PL3. ESSD*FLEXPL: Ultra SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
          * 
          * @return builder
          * 

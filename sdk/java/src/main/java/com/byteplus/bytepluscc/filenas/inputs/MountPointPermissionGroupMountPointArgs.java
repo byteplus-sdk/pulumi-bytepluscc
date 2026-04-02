@@ -16,14 +16,14 @@ public final class MountPointPermissionGroupMountPointArgs extends com.pulumi.re
     public static final MountPointPermissionGroupMountPointArgs Empty = new MountPointPermissionGroupMountPointArgs();
 
     /**
-     * 文件系统 ID。
+     * File system ID.
      * 
      */
     @Import(name="fileSystemId")
     private @Nullable Output<String> fileSystemId;
 
     /**
-     * @return 文件系统 ID。
+     * @return File system ID.
      * 
      */
     public Optional<Output<String>> fileSystemId() {
@@ -31,14 +31,14 @@ public final class MountPointPermissionGroupMountPointArgs extends com.pulumi.re
     }
 
     /**
-     * 挂载点 ID。
+     * Mount point ID.
      * 
      */
     @Import(name="mountPointId")
     private @Nullable Output<String> mountPointId;
 
     /**
-     * @return 挂载点 ID。
+     * @return Mount point ID.
      * 
      */
     public Optional<Output<String>> mountPointId() {
@@ -46,14 +46,14 @@ public final class MountPointPermissionGroupMountPointArgs extends com.pulumi.re
     }
 
     /**
-     * 挂载点名称。
+     * Mount point name.
      * 
      */
     @Import(name="mountPointName")
     private @Nullable Output<String> mountPointName;
 
     /**
-     * @return 挂载点名称。
+     * @return Mount point name.
      * 
      */
     public Optional<Output<String>> mountPointName() {
@@ -87,7 +87,7 @@ public final class MountPointPermissionGroupMountPointArgs extends com.pulumi.re
         }
 
         /**
-         * @param fileSystemId 文件系统 ID。
+         * @param fileSystemId File system ID.
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class MountPointPermissionGroupMountPointArgs extends com.pulumi.re
         }
 
         /**
-         * @param fileSystemId 文件系统 ID。
+         * @param fileSystemId File system ID.
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class MountPointPermissionGroupMountPointArgs extends com.pulumi.re
         }
 
         /**
-         * @param mountPointId 挂载点 ID。
+         * @param mountPointId Mount point ID.
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class MountPointPermissionGroupMountPointArgs extends com.pulumi.re
         }
 
         /**
-         * @param mountPointId 挂载点 ID。
+         * @param mountPointId Mount point ID.
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class MountPointPermissionGroupMountPointArgs extends com.pulumi.re
         }
 
         /**
-         * @param mountPointName 挂载点名称。
+         * @param mountPointName Mount point name.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class MountPointPermissionGroupMountPointArgs extends com.pulumi.re
         }
 
         /**
-         * @param mountPointName 挂载点名称。
+         * @param mountPointName Mount point name.
          * 
          * @return builder
          * 

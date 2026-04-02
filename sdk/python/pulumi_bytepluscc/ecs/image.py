@@ -23,8 +23,17 @@ __all__ = ['ImageArgs', 'Image']
 class ImageArgs:
     def __init__(__self__, *,
                  image_name: pulumi.Input[builtins.str],
+                 architecture: Optional[pulumi.Input[builtins.str]] = None,
+                 boot_mode: Optional[pulumi.Input[builtins.str]] = None,
+                 create_whole_image: Optional[pulumi.Input[builtins.bool]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
+                 import_image: Optional[pulumi.Input['ImageImportImageArgs']] = None,
                  instance_id: Optional[pulumi.Input[builtins.str]] = None,
+                 license_type: Optional[pulumi.Input[builtins.str]] = None,
+                 need_detection: Optional[pulumi.Input[builtins.bool]] = None,
+                 os_type: Optional[pulumi.Input[builtins.str]] = None,
+                 platform: Optional[pulumi.Input[builtins.str]] = None,
+                 platform_version: Optional[pulumi.Input[builtins.str]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  share_permissions: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  snapshot_group_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -32,19 +41,46 @@ class ImageArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['ImageTagArgs']]]] = None):
         """
         The set of arguments for constructing a Image resource.
-        :param pulumi.Input[builtins.str] image_name: 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
-        :param pulumi.Input[builtins.str] description: 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
-        :param pulumi.Input[builtins.str] instance_id: 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
-        :param pulumi.Input[builtins.str] project_name: 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] share_permissions: 镜像共享的账户
-        :param pulumi.Input[builtins.str] snapshot_group_id: 快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
-        :param pulumi.Input[builtins.str] snapshot_id: 系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
+        :param pulumi.Input[builtins.str] image_name: Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores "_", hyphens "-", and periods ".". Length: 1–128 characters
+        :param pulumi.Input[builtins.str] architecture: Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
+        :param pulumi.Input[builtins.str] boot_mode: Image boot mode. You can select BIOS or UEFI
+        :param pulumi.Input[builtins.bool] create_whole_image: Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+        :param pulumi.Input[builtins.str] description: Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores "_", hyphens "-", equals signs "=", English commas ",", English periods ".", Chinese commas "，", Chinese periods "。", and spaces. Length: 0–255 characters. If left blank, defaults to empty.
+        :param pulumi.Input['ImageImportImageArgs'] import_image: Imported image information
+        :param pulumi.Input[builtins.str] instance_id: Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
+        :param pulumi.Input[builtins.str] license_type: Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
+        :param pulumi.Input[builtins.bool] need_detection: Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+        :param pulumi.Input[builtins.str] os_type: Operating system type
+        :param pulumi.Input[builtins.str] platform: Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
+        :param pulumi.Input[builtins.str] platform_version: Image release version.
+        :param pulumi.Input[builtins.str] project_name: Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] share_permissions: Accounts with which the image is shared
+        :param pulumi.Input[builtins.str] snapshot_group_id: Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
+        :param pulumi.Input[builtins.str] snapshot_id: System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
         """
         pulumi.set(__self__, "image_name", image_name)
+        if architecture is not None:
+            pulumi.set(__self__, "architecture", architecture)
+        if boot_mode is not None:
+            pulumi.set(__self__, "boot_mode", boot_mode)
+        if create_whole_image is not None:
+            pulumi.set(__self__, "create_whole_image", create_whole_image)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if import_image is not None:
+            pulumi.set(__self__, "import_image", import_image)
         if instance_id is not None:
             pulumi.set(__self__, "instance_id", instance_id)
+        if license_type is not None:
+            pulumi.set(__self__, "license_type", license_type)
+        if need_detection is not None:
+            pulumi.set(__self__, "need_detection", need_detection)
+        if os_type is not None:
+            pulumi.set(__self__, "os_type", os_type)
+        if platform is not None:
+            pulumi.set(__self__, "platform", platform)
+        if platform_version is not None:
+            pulumi.set(__self__, "platform_version", platform_version)
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
         if share_permissions is not None:
@@ -60,7 +96,7 @@ class ImageArgs:
     @pulumi.getter(name="imageName")
     def image_name(self) -> pulumi.Input[builtins.str]:
         """
-        镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
+        Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores "_", hyphens "-", and periods ".". Length: 1–128 characters
         """
         return pulumi.get(self, "image_name")
 
@@ -70,9 +106,45 @@ class ImageArgs:
 
     @property
     @pulumi.getter
+    def architecture(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
+        """
+        return pulumi.get(self, "architecture")
+
+    @architecture.setter
+    def architecture(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "architecture", value)
+
+    @property
+    @pulumi.getter(name="bootMode")
+    def boot_mode(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Image boot mode. You can select BIOS or UEFI
+        """
+        return pulumi.get(self, "boot_mode")
+
+    @boot_mode.setter
+    def boot_mode(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "boot_mode", value)
+
+    @property
+    @pulumi.getter(name="createWholeImage")
+    def create_whole_image(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+        """
+        return pulumi.get(self, "create_whole_image")
+
+    @create_whole_image.setter
+    def create_whole_image(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "create_whole_image", value)
+
+    @property
+    @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
+        Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores "_", hyphens "-", equals signs "=", English commas ",", English periods ".", Chinese commas "，", Chinese periods "。", and spaces. Length: 0–255 characters. If left blank, defaults to empty.
         """
         return pulumi.get(self, "description")
 
@@ -81,10 +153,22 @@ class ImageArgs:
         pulumi.set(self, "description", value)
 
     @property
+    @pulumi.getter(name="importImage")
+    def import_image(self) -> Optional[pulumi.Input['ImageImportImageArgs']]:
+        """
+        Imported image information
+        """
+        return pulumi.get(self, "import_image")
+
+    @import_image.setter
+    def import_image(self, value: Optional[pulumi.Input['ImageImportImageArgs']]):
+        pulumi.set(self, "import_image", value)
+
+    @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
+        Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
         """
         return pulumi.get(self, "instance_id")
 
@@ -93,10 +177,70 @@ class ImageArgs:
         pulumi.set(self, "instance_id", value)
 
     @property
+    @pulumi.getter(name="licenseType")
+    def license_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
+        """
+        return pulumi.get(self, "license_type")
+
+    @license_type.setter
+    def license_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "license_type", value)
+
+    @property
+    @pulumi.getter(name="needDetection")
+    def need_detection(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+        """
+        return pulumi.get(self, "need_detection")
+
+    @need_detection.setter
+    def need_detection(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "need_detection", value)
+
+    @property
+    @pulumi.getter(name="osType")
+    def os_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Operating system type
+        """
+        return pulumi.get(self, "os_type")
+
+    @os_type.setter
+    def os_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "os_type", value)
+
+    @property
+    @pulumi.getter
+    def platform(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
+        """
+        return pulumi.get(self, "platform")
+
+    @platform.setter
+    def platform(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "platform", value)
+
+    @property
+    @pulumi.getter(name="platformVersion")
+    def platform_version(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Image release version.
+        """
+        return pulumi.get(self, "platform_version")
+
+    @platform_version.setter
+    def platform_version(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "platform_version", value)
+
+    @property
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
+        Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
         """
         return pulumi.get(self, "project_name")
 
@@ -108,7 +252,7 @@ class ImageArgs:
     @pulumi.getter(name="sharePermissions")
     def share_permissions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        镜像共享的账户
+        Accounts with which the image is shared
         """
         return pulumi.get(self, "share_permissions")
 
@@ -120,7 +264,7 @@ class ImageArgs:
     @pulumi.getter(name="snapshotGroupId")
     def snapshot_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
+        Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
         """
         return pulumi.get(self, "snapshot_group_id")
 
@@ -132,7 +276,7 @@ class ImageArgs:
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
+        System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
         """
         return pulumi.get(self, "snapshot_id")
 
@@ -155,22 +299,26 @@ class _ImageState:
     def __init__(__self__, *,
                  architecture: Optional[pulumi.Input[builtins.str]] = None,
                  boot_mode: Optional[pulumi.Input[builtins.str]] = None,
+                 create_whole_image: Optional[pulumi.Input[builtins.bool]] = None,
                  created_at: Optional[pulumi.Input[builtins.str]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  detection_results: Optional[pulumi.Input['ImageDetectionResultsArgs']] = None,
                  image_id: Optional[pulumi.Input[builtins.str]] = None,
                  image_name: Optional[pulumi.Input[builtins.str]] = None,
                  image_owner_id: Optional[pulumi.Input[builtins.str]] = None,
+                 import_image: Optional[pulumi.Input['ImageImportImageArgs']] = None,
                  instance_id: Optional[pulumi.Input[builtins.str]] = None,
                  is_install_run_command_agent: Optional[pulumi.Input[builtins.bool]] = None,
                  is_lts: Optional[pulumi.Input[builtins.bool]] = None,
                  is_support_cloud_init: Optional[pulumi.Input[builtins.bool]] = None,
                  kernel: Optional[pulumi.Input[builtins.str]] = None,
                  license_type: Optional[pulumi.Input[builtins.str]] = None,
+                 need_detection: Optional[pulumi.Input[builtins.bool]] = None,
                  os_name: Optional[pulumi.Input[builtins.str]] = None,
                  os_type: Optional[pulumi.Input[builtins.str]] = None,
                  platform: Optional[pulumi.Input[builtins.str]] = None,
                  platform_version: Optional[pulumi.Input[builtins.str]] = None,
+                 product_code: Optional[pulumi.Input[builtins.str]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  share_permissions: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  share_status: Optional[pulumi.Input[builtins.str]] = None,
@@ -185,39 +333,45 @@ class _ImageState:
                  visibility: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Image resources.
-        :param pulumi.Input[builtins.str] architecture: 镜像的架构类型。可以选择amd64（x86计算）、arm64（ARM计算）类型。
-        :param pulumi.Input[builtins.str] boot_mode: 镜像的启动模式。可以选择BIOS、UEFI类型。
-        :param pulumi.Input[builtins.str] created_at: 镜像创建时间
-        :param pulumi.Input[builtins.str] description: 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
-        :param pulumi.Input['ImageDetectionResultsArgs'] detection_results: 镜像的检测结果。
-        :param pulumi.Input[builtins.str] image_id: 镜像ID。
-        :param pulumi.Input[builtins.str] image_name: 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
-        :param pulumi.Input[builtins.str] image_owner_id: 镜像所属的账号ID。
-        :param pulumi.Input[builtins.str] instance_id: 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
-        :param pulumi.Input[builtins.bool] is_install_run_command_agent: 镜像中是否安装了云助手Agent。
-        :param pulumi.Input[builtins.bool] is_lts: 公共镜像是否长期维护。
-        :param pulumi.Input[builtins.bool] is_support_cloud_init: 镜像是否支持Cloud-init。
-        :param pulumi.Input[builtins.str] kernel: 镜像的内核版本。
-        :param pulumi.Input[builtins.str] license_type: 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
-        :param pulumi.Input[builtins.str] os_name: 镜像操作系统的名称。
-        :param pulumi.Input[builtins.str] os_type: 操作系统类型。
-        :param pulumi.Input[builtins.str] platform: 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
-        :param pulumi.Input[builtins.str] platform_version: 镜像的发行版本。
-        :param pulumi.Input[builtins.str] project_name: 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] share_permissions: 镜像共享的账户
-        :param pulumi.Input[builtins.str] share_status: 镜像共享状态。HasShared：自定义镜像已被共享给其他用户。当自定义镜像未被共享或使用公共镜像时，ShareStatus返回为空。
-        :param pulumi.Input[builtins.int] size: 镜像大小，单位为GiB。
-        :param pulumi.Input[builtins.str] snapshot_group_id: 快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
-        :param pulumi.Input[builtins.str] snapshot_id: 系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
-        :param pulumi.Input[builtins.str] status: 镜像的状态。
-        :param pulumi.Input[builtins.str] updated_at: 镜像更新时间
-        :param pulumi.Input[builtins.float] virtual_size: 镜像大小，单位为Byte。
-        :param pulumi.Input[builtins.str] visibility: 镜像的可见性。public：公共镜像。private：私有镜像。shared：共享镜像。
+        :param pulumi.Input[builtins.str] architecture: Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
+        :param pulumi.Input[builtins.str] boot_mode: Image boot mode. You can select BIOS or UEFI
+        :param pulumi.Input[builtins.bool] create_whole_image: Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+        :param pulumi.Input[builtins.str] created_at: Image creation time
+        :param pulumi.Input[builtins.str] description: Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores "_", hyphens "-", equals signs "=", English commas ",", English periods ".", Chinese commas "，", Chinese periods "。", and spaces. Length: 0–255 characters. If left blank, defaults to empty.
+        :param pulumi.Input['ImageDetectionResultsArgs'] detection_results: Image check result.
+        :param pulumi.Input[builtins.str] image_id: Image ID
+        :param pulumi.Input[builtins.str] image_name: Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores "_", hyphens "-", and periods ".". Length: 1–128 characters
+        :param pulumi.Input[builtins.str] image_owner_id: Account ID to which the image belongs.
+        :param pulumi.Input['ImageImportImageArgs'] import_image: Imported image information
+        :param pulumi.Input[builtins.str] instance_id: Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
+        :param pulumi.Input[builtins.bool] is_install_run_command_agent: Whether Cloud Assistant Agent is installed in the image
+        :param pulumi.Input[builtins.bool] is_lts: Whether the public image is maintained long-term.
+        :param pulumi.Input[builtins.bool] is_support_cloud_init: Whether the image supports Cloud-init.
+        :param pulumi.Input[builtins.str] kernel: Image kernel version.
+        :param pulumi.Input[builtins.str] license_type: Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
+        :param pulumi.Input[builtins.bool] need_detection: Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+        :param pulumi.Input[builtins.str] os_name: Name of the image operating system.
+        :param pulumi.Input[builtins.str] os_type: Operating system type
+        :param pulumi.Input[builtins.str] platform: Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
+        :param pulumi.Input[builtins.str] platform_version: Image release version.
+        :param pulumi.Input[builtins.str] product_code: Product code for marketplace image
+        :param pulumi.Input[builtins.str] project_name: Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] share_permissions: Accounts with which the image is shared
+        :param pulumi.Input[builtins.str] share_status: Image sharing status. HasShared: The custom image has been shared with other users. If the custom image is not shared or a public image is used, ShareStatus returns empty.
+        :param pulumi.Input[builtins.int] size: Image size, in GiB.
+        :param pulumi.Input[builtins.str] snapshot_group_id: Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
+        :param pulumi.Input[builtins.str] snapshot_id: System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
+        :param pulumi.Input[builtins.str] status: Image status.
+        :param pulumi.Input[builtins.str] updated_at: Image update time
+        :param pulumi.Input[builtins.float] virtual_size: Image size, in Bytes.
+        :param pulumi.Input[builtins.str] visibility: Image visibility. public: Public image. private: Private image. shared: Shared image.
         """
         if architecture is not None:
             pulumi.set(__self__, "architecture", architecture)
         if boot_mode is not None:
             pulumi.set(__self__, "boot_mode", boot_mode)
+        if create_whole_image is not None:
+            pulumi.set(__self__, "create_whole_image", create_whole_image)
         if created_at is not None:
             pulumi.set(__self__, "created_at", created_at)
         if description is not None:
@@ -230,6 +384,8 @@ class _ImageState:
             pulumi.set(__self__, "image_name", image_name)
         if image_owner_id is not None:
             pulumi.set(__self__, "image_owner_id", image_owner_id)
+        if import_image is not None:
+            pulumi.set(__self__, "import_image", import_image)
         if instance_id is not None:
             pulumi.set(__self__, "instance_id", instance_id)
         if is_install_run_command_agent is not None:
@@ -242,6 +398,8 @@ class _ImageState:
             pulumi.set(__self__, "kernel", kernel)
         if license_type is not None:
             pulumi.set(__self__, "license_type", license_type)
+        if need_detection is not None:
+            pulumi.set(__self__, "need_detection", need_detection)
         if os_name is not None:
             pulumi.set(__self__, "os_name", os_name)
         if os_type is not None:
@@ -250,6 +408,8 @@ class _ImageState:
             pulumi.set(__self__, "platform", platform)
         if platform_version is not None:
             pulumi.set(__self__, "platform_version", platform_version)
+        if product_code is not None:
+            pulumi.set(__self__, "product_code", product_code)
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
         if share_permissions is not None:
@@ -279,7 +439,7 @@ class _ImageState:
     @pulumi.getter
     def architecture(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像的架构类型。可以选择amd64（x86计算）、arm64（ARM计算）类型。
+        Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
         """
         return pulumi.get(self, "architecture")
 
@@ -291,7 +451,7 @@ class _ImageState:
     @pulumi.getter(name="bootMode")
     def boot_mode(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像的启动模式。可以选择BIOS、UEFI类型。
+        Image boot mode. You can select BIOS or UEFI
         """
         return pulumi.get(self, "boot_mode")
 
@@ -300,10 +460,22 @@ class _ImageState:
         pulumi.set(self, "boot_mode", value)
 
     @property
+    @pulumi.getter(name="createWholeImage")
+    def create_whole_image(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+        """
+        return pulumi.get(self, "create_whole_image")
+
+    @create_whole_image.setter
+    def create_whole_image(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "create_whole_image", value)
+
+    @property
     @pulumi.getter(name="createdAt")
     def created_at(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像创建时间
+        Image creation time
         """
         return pulumi.get(self, "created_at")
 
@@ -315,7 +487,7 @@ class _ImageState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
+        Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores "_", hyphens "-", equals signs "=", English commas ",", English periods ".", Chinese commas "，", Chinese periods "。", and spaces. Length: 0–255 characters. If left blank, defaults to empty.
         """
         return pulumi.get(self, "description")
 
@@ -327,7 +499,7 @@ class _ImageState:
     @pulumi.getter(name="detectionResults")
     def detection_results(self) -> Optional[pulumi.Input['ImageDetectionResultsArgs']]:
         """
-        镜像的检测结果。
+        Image check result.
         """
         return pulumi.get(self, "detection_results")
 
@@ -339,7 +511,7 @@ class _ImageState:
     @pulumi.getter(name="imageId")
     def image_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像ID。
+        Image ID
         """
         return pulumi.get(self, "image_id")
 
@@ -351,7 +523,7 @@ class _ImageState:
     @pulumi.getter(name="imageName")
     def image_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
+        Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores "_", hyphens "-", and periods ".". Length: 1–128 characters
         """
         return pulumi.get(self, "image_name")
 
@@ -363,7 +535,7 @@ class _ImageState:
     @pulumi.getter(name="imageOwnerId")
     def image_owner_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像所属的账号ID。
+        Account ID to which the image belongs.
         """
         return pulumi.get(self, "image_owner_id")
 
@@ -372,10 +544,22 @@ class _ImageState:
         pulumi.set(self, "image_owner_id", value)
 
     @property
+    @pulumi.getter(name="importImage")
+    def import_image(self) -> Optional[pulumi.Input['ImageImportImageArgs']]:
+        """
+        Imported image information
+        """
+        return pulumi.get(self, "import_image")
+
+    @import_image.setter
+    def import_image(self, value: Optional[pulumi.Input['ImageImportImageArgs']]):
+        pulumi.set(self, "import_image", value)
+
+    @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
+        Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
         """
         return pulumi.get(self, "instance_id")
 
@@ -387,7 +571,7 @@ class _ImageState:
     @pulumi.getter(name="isInstallRunCommandAgent")
     def is_install_run_command_agent(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        镜像中是否安装了云助手Agent。
+        Whether Cloud Assistant Agent is installed in the image
         """
         return pulumi.get(self, "is_install_run_command_agent")
 
@@ -399,7 +583,7 @@ class _ImageState:
     @pulumi.getter(name="isLts")
     def is_lts(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        公共镜像是否长期维护。
+        Whether the public image is maintained long-term.
         """
         return pulumi.get(self, "is_lts")
 
@@ -411,7 +595,7 @@ class _ImageState:
     @pulumi.getter(name="isSupportCloudInit")
     def is_support_cloud_init(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        镜像是否支持Cloud-init。
+        Whether the image supports Cloud-init.
         """
         return pulumi.get(self, "is_support_cloud_init")
 
@@ -423,7 +607,7 @@ class _ImageState:
     @pulumi.getter
     def kernel(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像的内核版本。
+        Image kernel version.
         """
         return pulumi.get(self, "kernel")
 
@@ -435,7 +619,7 @@ class _ImageState:
     @pulumi.getter(name="licenseType")
     def license_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
+        Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
         """
         return pulumi.get(self, "license_type")
 
@@ -444,10 +628,22 @@ class _ImageState:
         pulumi.set(self, "license_type", value)
 
     @property
+    @pulumi.getter(name="needDetection")
+    def need_detection(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+        """
+        return pulumi.get(self, "need_detection")
+
+    @need_detection.setter
+    def need_detection(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "need_detection", value)
+
+    @property
     @pulumi.getter(name="osName")
     def os_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像操作系统的名称。
+        Name of the image operating system.
         """
         return pulumi.get(self, "os_name")
 
@@ -459,7 +655,7 @@ class _ImageState:
     @pulumi.getter(name="osType")
     def os_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        操作系统类型。
+        Operating system type
         """
         return pulumi.get(self, "os_type")
 
@@ -471,7 +667,7 @@ class _ImageState:
     @pulumi.getter
     def platform(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
+        Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
         """
         return pulumi.get(self, "platform")
 
@@ -483,7 +679,7 @@ class _ImageState:
     @pulumi.getter(name="platformVersion")
     def platform_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像的发行版本。
+        Image release version.
         """
         return pulumi.get(self, "platform_version")
 
@@ -492,10 +688,22 @@ class _ImageState:
         pulumi.set(self, "platform_version", value)
 
     @property
+    @pulumi.getter(name="productCode")
+    def product_code(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Product code for marketplace image
+        """
+        return pulumi.get(self, "product_code")
+
+    @product_code.setter
+    def product_code(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "product_code", value)
+
+    @property
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
+        Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
         """
         return pulumi.get(self, "project_name")
 
@@ -507,7 +715,7 @@ class _ImageState:
     @pulumi.getter(name="sharePermissions")
     def share_permissions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        镜像共享的账户
+        Accounts with which the image is shared
         """
         return pulumi.get(self, "share_permissions")
 
@@ -519,7 +727,7 @@ class _ImageState:
     @pulumi.getter(name="shareStatus")
     def share_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像共享状态。HasShared：自定义镜像已被共享给其他用户。当自定义镜像未被共享或使用公共镜像时，ShareStatus返回为空。
+        Image sharing status. HasShared: The custom image has been shared with other users. If the custom image is not shared or a public image is used, ShareStatus returns empty.
         """
         return pulumi.get(self, "share_status")
 
@@ -531,7 +739,7 @@ class _ImageState:
     @pulumi.getter
     def size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        镜像大小，单位为GiB。
+        Image size, in GiB.
         """
         return pulumi.get(self, "size")
 
@@ -543,7 +751,7 @@ class _ImageState:
     @pulumi.getter(name="snapshotGroupId")
     def snapshot_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
+        Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
         """
         return pulumi.get(self, "snapshot_group_id")
 
@@ -555,7 +763,7 @@ class _ImageState:
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
+        System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
         """
         return pulumi.get(self, "snapshot_id")
 
@@ -576,7 +784,7 @@ class _ImageState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像的状态。
+        Image status.
         """
         return pulumi.get(self, "status")
 
@@ -597,7 +805,7 @@ class _ImageState:
     @pulumi.getter(name="updatedAt")
     def updated_at(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像更新时间
+        Image update time
         """
         return pulumi.get(self, "updated_at")
 
@@ -609,7 +817,7 @@ class _ImageState:
     @pulumi.getter(name="virtualSize")
     def virtual_size(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        镜像大小，单位为Byte。
+        Image size, in Bytes.
         """
         return pulumi.get(self, "virtual_size")
 
@@ -621,7 +829,7 @@ class _ImageState:
     @pulumi.getter
     def visibility(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像的可见性。public：公共镜像。private：私有镜像。shared：共享镜像。
+        Image visibility. public: Public image. private: Private image. shared: Shared image.
         """
         return pulumi.get(self, "visibility")
 
@@ -636,9 +844,18 @@ class Image(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 architecture: Optional[pulumi.Input[builtins.str]] = None,
+                 boot_mode: Optional[pulumi.Input[builtins.str]] = None,
+                 create_whole_image: Optional[pulumi.Input[builtins.bool]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  image_name: Optional[pulumi.Input[builtins.str]] = None,
+                 import_image: Optional[pulumi.Input[Union['ImageImportImageArgs', 'ImageImportImageArgsDict']]] = None,
                  instance_id: Optional[pulumi.Input[builtins.str]] = None,
+                 license_type: Optional[pulumi.Input[builtins.str]] = None,
+                 need_detection: Optional[pulumi.Input[builtins.bool]] = None,
+                 os_type: Optional[pulumi.Input[builtins.str]] = None,
+                 platform: Optional[pulumi.Input[builtins.str]] = None,
+                 platform_version: Optional[pulumi.Input[builtins.str]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  share_permissions: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  snapshot_group_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -646,7 +863,7 @@ class Image(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImageTagArgs', 'ImageTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        镜像是包含了云服务器实例所需的基本操作系统、应用数据的特殊文件。创建实例时，必须选择镜像。
+        An image is a special file containing the basic operating system and application data required for a cloud server instance. You must select an image when creating an instance.
 
         ## Example Usage
 
@@ -674,13 +891,22 @@ class Image(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
-        :param pulumi.Input[builtins.str] image_name: 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
-        :param pulumi.Input[builtins.str] instance_id: 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
-        :param pulumi.Input[builtins.str] project_name: 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] share_permissions: 镜像共享的账户
-        :param pulumi.Input[builtins.str] snapshot_group_id: 快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
-        :param pulumi.Input[builtins.str] snapshot_id: 系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
+        :param pulumi.Input[builtins.str] architecture: Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
+        :param pulumi.Input[builtins.str] boot_mode: Image boot mode. You can select BIOS or UEFI
+        :param pulumi.Input[builtins.bool] create_whole_image: Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+        :param pulumi.Input[builtins.str] description: Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores "_", hyphens "-", equals signs "=", English commas ",", English periods ".", Chinese commas "，", Chinese periods "。", and spaces. Length: 0–255 characters. If left blank, defaults to empty.
+        :param pulumi.Input[builtins.str] image_name: Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores "_", hyphens "-", and periods ".". Length: 1–128 characters
+        :param pulumi.Input[Union['ImageImportImageArgs', 'ImageImportImageArgsDict']] import_image: Imported image information
+        :param pulumi.Input[builtins.str] instance_id: Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
+        :param pulumi.Input[builtins.str] license_type: Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
+        :param pulumi.Input[builtins.bool] need_detection: Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+        :param pulumi.Input[builtins.str] os_type: Operating system type
+        :param pulumi.Input[builtins.str] platform: Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
+        :param pulumi.Input[builtins.str] platform_version: Image release version.
+        :param pulumi.Input[builtins.str] project_name: Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] share_permissions: Accounts with which the image is shared
+        :param pulumi.Input[builtins.str] snapshot_group_id: Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
+        :param pulumi.Input[builtins.str] snapshot_id: System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
         """
         ...
     @overload
@@ -689,7 +915,7 @@ class Image(pulumi.CustomResource):
                  args: ImageArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        镜像是包含了云服务器实例所需的基本操作系统、应用数据的特殊文件。创建实例时，必须选择镜像。
+        An image is a special file containing the basic operating system and application data required for a cloud server instance. You must select an image when creating an instance.
 
         ## Example Usage
 
@@ -730,9 +956,18 @@ class Image(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 architecture: Optional[pulumi.Input[builtins.str]] = None,
+                 boot_mode: Optional[pulumi.Input[builtins.str]] = None,
+                 create_whole_image: Optional[pulumi.Input[builtins.bool]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  image_name: Optional[pulumi.Input[builtins.str]] = None,
+                 import_image: Optional[pulumi.Input[Union['ImageImportImageArgs', 'ImageImportImageArgsDict']]] = None,
                  instance_id: Optional[pulumi.Input[builtins.str]] = None,
+                 license_type: Optional[pulumi.Input[builtins.str]] = None,
+                 need_detection: Optional[pulumi.Input[builtins.bool]] = None,
+                 os_type: Optional[pulumi.Input[builtins.str]] = None,
+                 platform: Optional[pulumi.Input[builtins.str]] = None,
+                 platform_version: Optional[pulumi.Input[builtins.str]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  share_permissions: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  snapshot_group_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -747,18 +982,25 @@ class Image(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ImageArgs.__new__(ImageArgs)
 
+            __props__.__dict__["architecture"] = architecture
+            __props__.__dict__["boot_mode"] = boot_mode
+            __props__.__dict__["create_whole_image"] = create_whole_image
             __props__.__dict__["description"] = description
             if image_name is None and not opts.urn:
                 raise TypeError("Missing required property 'image_name'")
             __props__.__dict__["image_name"] = image_name
+            __props__.__dict__["import_image"] = import_image
             __props__.__dict__["instance_id"] = instance_id
+            __props__.__dict__["license_type"] = license_type
+            __props__.__dict__["need_detection"] = need_detection
+            __props__.__dict__["os_type"] = os_type
+            __props__.__dict__["platform"] = platform
+            __props__.__dict__["platform_version"] = platform_version
             __props__.__dict__["project_name"] = project_name
             __props__.__dict__["share_permissions"] = share_permissions
             __props__.__dict__["snapshot_group_id"] = snapshot_group_id
             __props__.__dict__["snapshot_id"] = snapshot_id
             __props__.__dict__["tags"] = tags
-            __props__.__dict__["architecture"] = None
-            __props__.__dict__["boot_mode"] = None
             __props__.__dict__["created_at"] = None
             __props__.__dict__["detection_results"] = None
             __props__.__dict__["image_id"] = None
@@ -767,11 +1009,8 @@ class Image(pulumi.CustomResource):
             __props__.__dict__["is_lts"] = None
             __props__.__dict__["is_support_cloud_init"] = None
             __props__.__dict__["kernel"] = None
-            __props__.__dict__["license_type"] = None
             __props__.__dict__["os_name"] = None
-            __props__.__dict__["os_type"] = None
-            __props__.__dict__["platform"] = None
-            __props__.__dict__["platform_version"] = None
+            __props__.__dict__["product_code"] = None
             __props__.__dict__["share_status"] = None
             __props__.__dict__["size"] = None
             __props__.__dict__["snapshots"] = None
@@ -791,22 +1030,26 @@ class Image(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             architecture: Optional[pulumi.Input[builtins.str]] = None,
             boot_mode: Optional[pulumi.Input[builtins.str]] = None,
+            create_whole_image: Optional[pulumi.Input[builtins.bool]] = None,
             created_at: Optional[pulumi.Input[builtins.str]] = None,
             description: Optional[pulumi.Input[builtins.str]] = None,
             detection_results: Optional[pulumi.Input[Union['ImageDetectionResultsArgs', 'ImageDetectionResultsArgsDict']]] = None,
             image_id: Optional[pulumi.Input[builtins.str]] = None,
             image_name: Optional[pulumi.Input[builtins.str]] = None,
             image_owner_id: Optional[pulumi.Input[builtins.str]] = None,
+            import_image: Optional[pulumi.Input[Union['ImageImportImageArgs', 'ImageImportImageArgsDict']]] = None,
             instance_id: Optional[pulumi.Input[builtins.str]] = None,
             is_install_run_command_agent: Optional[pulumi.Input[builtins.bool]] = None,
             is_lts: Optional[pulumi.Input[builtins.bool]] = None,
             is_support_cloud_init: Optional[pulumi.Input[builtins.bool]] = None,
             kernel: Optional[pulumi.Input[builtins.str]] = None,
             license_type: Optional[pulumi.Input[builtins.str]] = None,
+            need_detection: Optional[pulumi.Input[builtins.bool]] = None,
             os_name: Optional[pulumi.Input[builtins.str]] = None,
             os_type: Optional[pulumi.Input[builtins.str]] = None,
             platform: Optional[pulumi.Input[builtins.str]] = None,
             platform_version: Optional[pulumi.Input[builtins.str]] = None,
+            product_code: Optional[pulumi.Input[builtins.str]] = None,
             project_name: Optional[pulumi.Input[builtins.str]] = None,
             share_permissions: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
             share_status: Optional[pulumi.Input[builtins.str]] = None,
@@ -826,34 +1069,38 @@ class Image(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] architecture: 镜像的架构类型。可以选择amd64（x86计算）、arm64（ARM计算）类型。
-        :param pulumi.Input[builtins.str] boot_mode: 镜像的启动模式。可以选择BIOS、UEFI类型。
-        :param pulumi.Input[builtins.str] created_at: 镜像创建时间
-        :param pulumi.Input[builtins.str] description: 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
-        :param pulumi.Input[Union['ImageDetectionResultsArgs', 'ImageDetectionResultsArgsDict']] detection_results: 镜像的检测结果。
-        :param pulumi.Input[builtins.str] image_id: 镜像ID。
-        :param pulumi.Input[builtins.str] image_name: 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
-        :param pulumi.Input[builtins.str] image_owner_id: 镜像所属的账号ID。
-        :param pulumi.Input[builtins.str] instance_id: 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
-        :param pulumi.Input[builtins.bool] is_install_run_command_agent: 镜像中是否安装了云助手Agent。
-        :param pulumi.Input[builtins.bool] is_lts: 公共镜像是否长期维护。
-        :param pulumi.Input[builtins.bool] is_support_cloud_init: 镜像是否支持Cloud-init。
-        :param pulumi.Input[builtins.str] kernel: 镜像的内核版本。
-        :param pulumi.Input[builtins.str] license_type: 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
-        :param pulumi.Input[builtins.str] os_name: 镜像操作系统的名称。
-        :param pulumi.Input[builtins.str] os_type: 操作系统类型。
-        :param pulumi.Input[builtins.str] platform: 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
-        :param pulumi.Input[builtins.str] platform_version: 镜像的发行版本。
-        :param pulumi.Input[builtins.str] project_name: 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] share_permissions: 镜像共享的账户
-        :param pulumi.Input[builtins.str] share_status: 镜像共享状态。HasShared：自定义镜像已被共享给其他用户。当自定义镜像未被共享或使用公共镜像时，ShareStatus返回为空。
-        :param pulumi.Input[builtins.int] size: 镜像大小，单位为GiB。
-        :param pulumi.Input[builtins.str] snapshot_group_id: 快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
-        :param pulumi.Input[builtins.str] snapshot_id: 系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
-        :param pulumi.Input[builtins.str] status: 镜像的状态。
-        :param pulumi.Input[builtins.str] updated_at: 镜像更新时间
-        :param pulumi.Input[builtins.float] virtual_size: 镜像大小，单位为Byte。
-        :param pulumi.Input[builtins.str] visibility: 镜像的可见性。public：公共镜像。private：私有镜像。shared：共享镜像。
+        :param pulumi.Input[builtins.str] architecture: Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
+        :param pulumi.Input[builtins.str] boot_mode: Image boot mode. You can select BIOS or UEFI
+        :param pulumi.Input[builtins.bool] create_whole_image: Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+        :param pulumi.Input[builtins.str] created_at: Image creation time
+        :param pulumi.Input[builtins.str] description: Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores "_", hyphens "-", equals signs "=", English commas ",", English periods ".", Chinese commas "，", Chinese periods "。", and spaces. Length: 0–255 characters. If left blank, defaults to empty.
+        :param pulumi.Input[Union['ImageDetectionResultsArgs', 'ImageDetectionResultsArgsDict']] detection_results: Image check result.
+        :param pulumi.Input[builtins.str] image_id: Image ID
+        :param pulumi.Input[builtins.str] image_name: Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores "_", hyphens "-", and periods ".". Length: 1–128 characters
+        :param pulumi.Input[builtins.str] image_owner_id: Account ID to which the image belongs.
+        :param pulumi.Input[Union['ImageImportImageArgs', 'ImageImportImageArgsDict']] import_image: Imported image information
+        :param pulumi.Input[builtins.str] instance_id: Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
+        :param pulumi.Input[builtins.bool] is_install_run_command_agent: Whether Cloud Assistant Agent is installed in the image
+        :param pulumi.Input[builtins.bool] is_lts: Whether the public image is maintained long-term.
+        :param pulumi.Input[builtins.bool] is_support_cloud_init: Whether the image supports Cloud-init.
+        :param pulumi.Input[builtins.str] kernel: Image kernel version.
+        :param pulumi.Input[builtins.str] license_type: Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
+        :param pulumi.Input[builtins.bool] need_detection: Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+        :param pulumi.Input[builtins.str] os_name: Name of the image operating system.
+        :param pulumi.Input[builtins.str] os_type: Operating system type
+        :param pulumi.Input[builtins.str] platform: Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
+        :param pulumi.Input[builtins.str] platform_version: Image release version.
+        :param pulumi.Input[builtins.str] product_code: Product code for marketplace image
+        :param pulumi.Input[builtins.str] project_name: Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] share_permissions: Accounts with which the image is shared
+        :param pulumi.Input[builtins.str] share_status: Image sharing status. HasShared: The custom image has been shared with other users. If the custom image is not shared or a public image is used, ShareStatus returns empty.
+        :param pulumi.Input[builtins.int] size: Image size, in GiB.
+        :param pulumi.Input[builtins.str] snapshot_group_id: Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
+        :param pulumi.Input[builtins.str] snapshot_id: System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
+        :param pulumi.Input[builtins.str] status: Image status.
+        :param pulumi.Input[builtins.str] updated_at: Image update time
+        :param pulumi.Input[builtins.float] virtual_size: Image size, in Bytes.
+        :param pulumi.Input[builtins.str] visibility: Image visibility. public: Public image. private: Private image. shared: Shared image.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -861,22 +1108,26 @@ class Image(pulumi.CustomResource):
 
         __props__.__dict__["architecture"] = architecture
         __props__.__dict__["boot_mode"] = boot_mode
+        __props__.__dict__["create_whole_image"] = create_whole_image
         __props__.__dict__["created_at"] = created_at
         __props__.__dict__["description"] = description
         __props__.__dict__["detection_results"] = detection_results
         __props__.__dict__["image_id"] = image_id
         __props__.__dict__["image_name"] = image_name
         __props__.__dict__["image_owner_id"] = image_owner_id
+        __props__.__dict__["import_image"] = import_image
         __props__.__dict__["instance_id"] = instance_id
         __props__.__dict__["is_install_run_command_agent"] = is_install_run_command_agent
         __props__.__dict__["is_lts"] = is_lts
         __props__.__dict__["is_support_cloud_init"] = is_support_cloud_init
         __props__.__dict__["kernel"] = kernel
         __props__.__dict__["license_type"] = license_type
+        __props__.__dict__["need_detection"] = need_detection
         __props__.__dict__["os_name"] = os_name
         __props__.__dict__["os_type"] = os_type
         __props__.__dict__["platform"] = platform
         __props__.__dict__["platform_version"] = platform_version
+        __props__.__dict__["product_code"] = product_code
         __props__.__dict__["project_name"] = project_name
         __props__.__dict__["share_permissions"] = share_permissions
         __props__.__dict__["share_status"] = share_status
@@ -895,7 +1146,7 @@ class Image(pulumi.CustomResource):
     @pulumi.getter
     def architecture(self) -> pulumi.Output[builtins.str]:
         """
-        镜像的架构类型。可以选择amd64（x86计算）、arm64（ARM计算）类型。
+        Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
         """
         return pulumi.get(self, "architecture")
 
@@ -903,15 +1154,23 @@ class Image(pulumi.CustomResource):
     @pulumi.getter(name="bootMode")
     def boot_mode(self) -> pulumi.Output[builtins.str]:
         """
-        镜像的启动模式。可以选择BIOS、UEFI类型。
+        Image boot mode. You can select BIOS or UEFI
         """
         return pulumi.get(self, "boot_mode")
+
+    @property
+    @pulumi.getter(name="createWholeImage")
+    def create_whole_image(self) -> pulumi.Output[builtins.bool]:
+        """
+        Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+        """
+        return pulumi.get(self, "create_whole_image")
 
     @property
     @pulumi.getter(name="createdAt")
     def created_at(self) -> pulumi.Output[builtins.str]:
         """
-        镜像创建时间
+        Image creation time
         """
         return pulumi.get(self, "created_at")
 
@@ -919,7 +1178,7 @@ class Image(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
+        Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores "_", hyphens "-", equals signs "=", English commas ",", English periods ".", Chinese commas "，", Chinese periods "。", and spaces. Length: 0–255 characters. If left blank, defaults to empty.
         """
         return pulumi.get(self, "description")
 
@@ -927,7 +1186,7 @@ class Image(pulumi.CustomResource):
     @pulumi.getter(name="detectionResults")
     def detection_results(self) -> pulumi.Output['outputs.ImageDetectionResults']:
         """
-        镜像的检测结果。
+        Image check result.
         """
         return pulumi.get(self, "detection_results")
 
@@ -935,7 +1194,7 @@ class Image(pulumi.CustomResource):
     @pulumi.getter(name="imageId")
     def image_id(self) -> pulumi.Output[builtins.str]:
         """
-        镜像ID。
+        Image ID
         """
         return pulumi.get(self, "image_id")
 
@@ -943,7 +1202,7 @@ class Image(pulumi.CustomResource):
     @pulumi.getter(name="imageName")
     def image_name(self) -> pulumi.Output[builtins.str]:
         """
-        镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
+        Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores "_", hyphens "-", and periods ".". Length: 1–128 characters
         """
         return pulumi.get(self, "image_name")
 
@@ -951,15 +1210,23 @@ class Image(pulumi.CustomResource):
     @pulumi.getter(name="imageOwnerId")
     def image_owner_id(self) -> pulumi.Output[builtins.str]:
         """
-        镜像所属的账号ID。
+        Account ID to which the image belongs.
         """
         return pulumi.get(self, "image_owner_id")
+
+    @property
+    @pulumi.getter(name="importImage")
+    def import_image(self) -> pulumi.Output['outputs.ImageImportImage']:
+        """
+        Imported image information
+        """
+        return pulumi.get(self, "import_image")
 
     @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
+        Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
         """
         return pulumi.get(self, "instance_id")
 
@@ -967,7 +1234,7 @@ class Image(pulumi.CustomResource):
     @pulumi.getter(name="isInstallRunCommandAgent")
     def is_install_run_command_agent(self) -> pulumi.Output[builtins.bool]:
         """
-        镜像中是否安装了云助手Agent。
+        Whether Cloud Assistant Agent is installed in the image
         """
         return pulumi.get(self, "is_install_run_command_agent")
 
@@ -975,7 +1242,7 @@ class Image(pulumi.CustomResource):
     @pulumi.getter(name="isLts")
     def is_lts(self) -> pulumi.Output[builtins.bool]:
         """
-        公共镜像是否长期维护。
+        Whether the public image is maintained long-term.
         """
         return pulumi.get(self, "is_lts")
 
@@ -983,7 +1250,7 @@ class Image(pulumi.CustomResource):
     @pulumi.getter(name="isSupportCloudInit")
     def is_support_cloud_init(self) -> pulumi.Output[builtins.bool]:
         """
-        镜像是否支持Cloud-init。
+        Whether the image supports Cloud-init.
         """
         return pulumi.get(self, "is_support_cloud_init")
 
@@ -991,7 +1258,7 @@ class Image(pulumi.CustomResource):
     @pulumi.getter
     def kernel(self) -> pulumi.Output[builtins.str]:
         """
-        镜像的内核版本。
+        Image kernel version.
         """
         return pulumi.get(self, "kernel")
 
@@ -999,15 +1266,23 @@ class Image(pulumi.CustomResource):
     @pulumi.getter(name="licenseType")
     def license_type(self) -> pulumi.Output[builtins.str]:
         """
-        镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
+        Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
         """
         return pulumi.get(self, "license_type")
+
+    @property
+    @pulumi.getter(name="needDetection")
+    def need_detection(self) -> pulumi.Output[builtins.bool]:
+        """
+        Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+        """
+        return pulumi.get(self, "need_detection")
 
     @property
     @pulumi.getter(name="osName")
     def os_name(self) -> pulumi.Output[builtins.str]:
         """
-        镜像操作系统的名称。
+        Name of the image operating system.
         """
         return pulumi.get(self, "os_name")
 
@@ -1015,7 +1290,7 @@ class Image(pulumi.CustomResource):
     @pulumi.getter(name="osType")
     def os_type(self) -> pulumi.Output[builtins.str]:
         """
-        操作系统类型。
+        Operating system type
         """
         return pulumi.get(self, "os_type")
 
@@ -1023,7 +1298,7 @@ class Image(pulumi.CustomResource):
     @pulumi.getter
     def platform(self) -> pulumi.Output[builtins.str]:
         """
-        镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
+        Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
         """
         return pulumi.get(self, "platform")
 
@@ -1031,15 +1306,23 @@ class Image(pulumi.CustomResource):
     @pulumi.getter(name="platformVersion")
     def platform_version(self) -> pulumi.Output[builtins.str]:
         """
-        镜像的发行版本。
+        Image release version.
         """
         return pulumi.get(self, "platform_version")
+
+    @property
+    @pulumi.getter(name="productCode")
+    def product_code(self) -> pulumi.Output[builtins.str]:
+        """
+        Product code for marketplace image
+        """
+        return pulumi.get(self, "product_code")
 
     @property
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
+        Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
         """
         return pulumi.get(self, "project_name")
 
@@ -1047,7 +1330,7 @@ class Image(pulumi.CustomResource):
     @pulumi.getter(name="sharePermissions")
     def share_permissions(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        镜像共享的账户
+        Accounts with which the image is shared
         """
         return pulumi.get(self, "share_permissions")
 
@@ -1055,7 +1338,7 @@ class Image(pulumi.CustomResource):
     @pulumi.getter(name="shareStatus")
     def share_status(self) -> pulumi.Output[builtins.str]:
         """
-        镜像共享状态。HasShared：自定义镜像已被共享给其他用户。当自定义镜像未被共享或使用公共镜像时，ShareStatus返回为空。
+        Image sharing status. HasShared: The custom image has been shared with other users. If the custom image is not shared or a public image is used, ShareStatus returns empty.
         """
         return pulumi.get(self, "share_status")
 
@@ -1063,7 +1346,7 @@ class Image(pulumi.CustomResource):
     @pulumi.getter
     def size(self) -> pulumi.Output[builtins.int]:
         """
-        镜像大小，单位为GiB。
+        Image size, in GiB.
         """
         return pulumi.get(self, "size")
 
@@ -1071,7 +1354,7 @@ class Image(pulumi.CustomResource):
     @pulumi.getter(name="snapshotGroupId")
     def snapshot_group_id(self) -> pulumi.Output[builtins.str]:
         """
-        快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
+        Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
         """
         return pulumi.get(self, "snapshot_group_id")
 
@@ -1079,7 +1362,7 @@ class Image(pulumi.CustomResource):
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> pulumi.Output[builtins.str]:
         """
-        系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
+        System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
         """
         return pulumi.get(self, "snapshot_id")
 
@@ -1092,7 +1375,7 @@ class Image(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        镜像的状态。
+        Image status.
         """
         return pulumi.get(self, "status")
 
@@ -1105,7 +1388,7 @@ class Image(pulumi.CustomResource):
     @pulumi.getter(name="updatedAt")
     def updated_at(self) -> pulumi.Output[builtins.str]:
         """
-        镜像更新时间
+        Image update time
         """
         return pulumi.get(self, "updated_at")
 
@@ -1113,7 +1396,7 @@ class Image(pulumi.CustomResource):
     @pulumi.getter(name="virtualSize")
     def virtual_size(self) -> pulumi.Output[builtins.float]:
         """
-        镜像大小，单位为Byte。
+        Image size, in Bytes.
         """
         return pulumi.get(self, "virtual_size")
 
@@ -1121,7 +1404,7 @@ class Image(pulumi.CustomResource):
     @pulumi.getter
     def visibility(self) -> pulumi.Output[builtins.str]:
         """
-        镜像的可见性。public：公共镜像。private：私有镜像。shared：共享镜像。
+        Image visibility. public: Public image. private: Private image. shared: Shared image.
         """
         return pulumi.get(self, "visibility")
 

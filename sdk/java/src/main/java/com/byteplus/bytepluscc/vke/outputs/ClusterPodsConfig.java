@@ -14,38 +14,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ClusterPodsConfig {
     /**
-     * @return Flannel 网络配置。
+     * @return Flannel network configuration.
      * 
      */
     private @Nullable ClusterPodsConfigFlannelConfig flannelConfig;
     /**
-     * @return 容器（Pod）网络模型（CNI），参数值说明：Flannel：Flannel 网络模型，独立的 Underlay 容器网络模型。VpcCniShared：VPC-CNI 网络模型，基于私有网络的弹性网卡 ENI 实现的 Underlay 容器网络模型。
+     * @return Container (Pod) network model (CNI). Parameter values: Flannel: Flannel network model, an independent underlay container network model. VpcCniShared: VPC-CNI network model, an underlay container network model implemented with ENI (Elastic Network Interface) on a private network.
      * 
      */
     private @Nullable String podNetworkMode;
     /**
-     * @return VPC-CNI 网络配置。
+     * @return VPC-CNI network configuration.
      * 
      */
     private @Nullable ClusterPodsConfigVpcCniConfig vpcCniConfig;
 
     private ClusterPodsConfig() {}
     /**
-     * @return Flannel 网络配置。
+     * @return Flannel network configuration.
      * 
      */
     public Optional<ClusterPodsConfigFlannelConfig> flannelConfig() {
         return Optional.ofNullable(this.flannelConfig);
     }
     /**
-     * @return 容器（Pod）网络模型（CNI），参数值说明：Flannel：Flannel 网络模型，独立的 Underlay 容器网络模型。VpcCniShared：VPC-CNI 网络模型，基于私有网络的弹性网卡 ENI 实现的 Underlay 容器网络模型。
+     * @return Container (Pod) network model (CNI). Parameter values: Flannel: Flannel network model, an independent underlay container network model. VpcCniShared: VPC-CNI network model, an underlay container network model implemented with ENI (Elastic Network Interface) on a private network.
      * 
      */
     public Optional<String> podNetworkMode() {
         return Optional.ofNullable(this.podNetworkMode);
     }
     /**
-     * @return VPC-CNI 网络配置。
+     * @return VPC-CNI network configuration.
      * 
      */
     public Optional<ClusterPodsConfigVpcCniConfig> vpcCniConfig() {

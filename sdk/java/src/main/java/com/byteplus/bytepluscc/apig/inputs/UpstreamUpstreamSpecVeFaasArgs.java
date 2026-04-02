@@ -16,14 +16,14 @@ public final class UpstreamUpstreamSpecVeFaasArgs extends com.pulumi.resources.R
     public static final UpstreamUpstreamSpecVeFaasArgs Empty = new UpstreamUpstreamSpecVeFaasArgs();
 
     /**
-     * 函数ID。
+     * Function ID
      * 
      */
     @Import(name="functionId")
     private @Nullable Output<String> functionId;
 
     /**
-     * @return 函数ID。
+     * @return Function ID
      * 
      */
     public Optional<Output<String>> functionId() {
@@ -55,7 +55,7 @@ public final class UpstreamUpstreamSpecVeFaasArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param functionId 函数ID。
+         * @param functionId Function ID
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class UpstreamUpstreamSpecVeFaasArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param functionId 函数ID。
+         * @param functionId Function ID
          * 
          * @return builder
          * 

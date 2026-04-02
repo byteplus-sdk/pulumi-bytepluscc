@@ -14,86 +14,86 @@ import java.util.Objects;
 @CustomType
 public final class GetMountPointPermissionGroup {
     /**
-     * @return 权限组创建时间。
+     * @return Permission group creation time.
      * 
      */
     private String createTime;
     /**
-     * @return 权限组描述信息。
+     * @return Permission group description information.
      * 
      */
     private String description;
     /**
-     * @return 关联该权限组的文件系统数量。
+     * @return Number of file systems associated with this permission group.
      * 
      */
     private Integer fileSystemCount;
     /**
-     * @return 文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+     * @return File system type. Value explanation: Extreme: NAS extreme type. Capacity: NAS capacity type. Cache: NAS cache type.
      * 
      */
     private String fileSystemType;
     /**
-     * @return 使用该权限组的挂载点信息。
+     * @return Information about mount points that use this permission group.
      * 
      */
     private List<GetMountPointPermissionGroupMountPoint> mountPoints;
     /**
-     * @return 权限组名称。
+     * @return Permission group name.
      * 
      */
     private String permissionGroupName;
     /**
-     * @return 权限规则数量。
+     * @return Number of permission rules.
      * 
      */
     private Integer permissionRuleCount;
 
     private GetMountPointPermissionGroup() {}
     /**
-     * @return 权限组创建时间。
+     * @return Permission group creation time.
      * 
      */
     public String createTime() {
         return this.createTime;
     }
     /**
-     * @return 权限组描述信息。
+     * @return Permission group description information.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 关联该权限组的文件系统数量。
+     * @return Number of file systems associated with this permission group.
      * 
      */
     public Integer fileSystemCount() {
         return this.fileSystemCount;
     }
     /**
-     * @return 文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+     * @return File system type. Value explanation: Extreme: NAS extreme type. Capacity: NAS capacity type. Cache: NAS cache type.
      * 
      */
     public String fileSystemType() {
         return this.fileSystemType;
     }
     /**
-     * @return 使用该权限组的挂载点信息。
+     * @return Information about mount points that use this permission group.
      * 
      */
     public List<GetMountPointPermissionGroupMountPoint> mountPoints() {
         return this.mountPoints;
     }
     /**
-     * @return 权限组名称。
+     * @return Permission group name.
      * 
      */
     public String permissionGroupName() {
         return this.permissionGroupName;
     }
     /**
-     * @return 权限规则数量。
+     * @return Number of permission rules.
      * 
      */
     public Integer permissionRuleCount() {

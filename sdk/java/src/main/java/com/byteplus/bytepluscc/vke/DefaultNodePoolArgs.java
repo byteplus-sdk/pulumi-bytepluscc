@@ -21,14 +21,14 @@ public final class DefaultNodePoolArgs extends com.pulumi.resources.ResourceArgs
     public static final DefaultNodePoolArgs Empty = new DefaultNodePoolArgs();
 
     /**
-     * 节点池所在集群的 ID。
+     * Cluster ID where the node pool is located
      * 
      */
     @Import(name="clusterId", required=true)
     private Output<String> clusterId;
 
     /**
-     * @return 节点池所在集群的 ID。
+     * @return Cluster ID where the node pool is located
      * 
      */
     public Output<String> clusterId() {
@@ -36,14 +36,14 @@ public final class DefaultNodePoolArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 节点池 Kubernetes 相关配置。
+     * Kubernetes-related configuration for the node pool
      * 
      */
     @Import(name="kubernetesConfig")
     private @Nullable Output<DefaultNodePoolKubernetesConfigArgs> kubernetesConfig;
 
     /**
-     * @return 节点池 Kubernetes 相关配置。
+     * @return Kubernetes-related configuration for the node pool
      * 
      */
     public Optional<Output<DefaultNodePoolKubernetesConfigArgs>> kubernetesConfig() {
@@ -51,14 +51,14 @@ public final class DefaultNodePoolArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 节点池中云服务器（ECS）实例配置。
+     * Cloud server (ECS) instance configuration in the node pool
      * 
      */
     @Import(name="nodeConfig", required=true)
     private Output<DefaultNodePoolNodeConfigArgs> nodeConfig;
 
     /**
-     * @return 节点池中云服务器（ECS）实例配置。
+     * @return Cloud server (ECS) instance configuration in the node pool
      * 
      */
     public Output<DefaultNodePoolNodeConfigArgs> nodeConfig() {
@@ -100,7 +100,7 @@ public final class DefaultNodePoolArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param clusterId 节点池所在集群的 ID。
+         * @param clusterId Cluster ID where the node pool is located
          * 
          * @return builder
          * 
@@ -111,7 +111,7 @@ public final class DefaultNodePoolArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param clusterId 节点池所在集群的 ID。
+         * @param clusterId Cluster ID where the node pool is located
          * 
          * @return builder
          * 
@@ -121,7 +121,7 @@ public final class DefaultNodePoolArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param kubernetesConfig 节点池 Kubernetes 相关配置。
+         * @param kubernetesConfig Kubernetes-related configuration for the node pool
          * 
          * @return builder
          * 
@@ -132,7 +132,7 @@ public final class DefaultNodePoolArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param kubernetesConfig 节点池 Kubernetes 相关配置。
+         * @param kubernetesConfig Kubernetes-related configuration for the node pool
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class DefaultNodePoolArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param nodeConfig 节点池中云服务器（ECS）实例配置。
+         * @param nodeConfig Cloud server (ECS) instance configuration in the node pool
          * 
          * @return builder
          * 
@@ -153,7 +153,7 @@ public final class DefaultNodePoolArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param nodeConfig 节点池中云服务器（ECS）实例配置。
+         * @param nodeConfig Cloud server (ECS) instance configuration in the node pool
          * 
          * @return builder
          * 

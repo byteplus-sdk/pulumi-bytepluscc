@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * API请求参数 - 创建RDS SQL Server白名单（CreateAllowList）。
+ * API request parameter - Create RDS SQL Server allowlist (CreateAllowList)
  *
  * ## Import
  *
@@ -44,48 +44,48 @@ export class AllowList extends pulumi.CustomResource {
     }
 
     /**
-     * IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+     * IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
      */
     public readonly allowList!: pulumi.Output<string>;
     /**
-     * 白名单分类。
+     * Allowlist category
      */
     public readonly allowListCategory!: pulumi.Output<string>;
     /**
-     * 白名单描述。
+     * Allowlist description
      */
     public readonly allowListDesc!: pulumi.Output<string>;
     /**
-     * 白名单的id。
+     * Allowlist ID
      */
     public /*out*/ readonly allowListId!: pulumi.Output<string>;
     /**
-     * AllowListIP数量。
+     * Allowlist IP count
      */
     public /*out*/ readonly allowListIpNum!: pulumi.Output<number>;
     /**
-     * 白名单名称。
+     * Allowlist name
      */
     public readonly allowListName!: pulumi.Output<string>;
     /**
-     * 白名单内的IP地址类型，当前仅支持IPv4。
+     * IP address type in the allowlist. Only IPv4 is supported
      */
     public readonly allowListType!: pulumi.Output<string>;
     /**
-     * 绑定的实例数量。解绑实例的白名单时必传。
+     * Number of bound instances. Required when unbinding an instance from the allowlist
      */
     public readonly associatedInstanceNum!: pulumi.Output<number>;
     public readonly associatedInstances!: pulumi.Output<outputs.rdsmssql.AllowListAssociatedInstance[]>;
     /**
-     * 实例ID。
+     * Instance ID
      */
     public readonly instanceId!: pulumi.Output<string>;
     /**
-     * 项目名称。
+     * Project name
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 安全组之外的、需要加入白名单的IP地址，可输入IP地址或CIDR格式的IP地址段。如果该字段与AllowList同时指定，以AllowList为准。
+     * IP addresses outside the security group that need to be added to the allowlist. Enter IP addresses or CIDR-formatted IP ranges. If both this field and AllowList are specified, AllowList takes precedence
      */
     public readonly userAllowList!: pulumi.Output<string>;
 
@@ -142,48 +142,48 @@ export class AllowList extends pulumi.CustomResource {
  */
 export interface AllowListState {
     /**
-     * IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+     * IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
      */
     allowList?: pulumi.Input<string>;
     /**
-     * 白名单分类。
+     * Allowlist category
      */
     allowListCategory?: pulumi.Input<string>;
     /**
-     * 白名单描述。
+     * Allowlist description
      */
     allowListDesc?: pulumi.Input<string>;
     /**
-     * 白名单的id。
+     * Allowlist ID
      */
     allowListId?: pulumi.Input<string>;
     /**
-     * AllowListIP数量。
+     * Allowlist IP count
      */
     allowListIpNum?: pulumi.Input<number>;
     /**
-     * 白名单名称。
+     * Allowlist name
      */
     allowListName?: pulumi.Input<string>;
     /**
-     * 白名单内的IP地址类型，当前仅支持IPv4。
+     * IP address type in the allowlist. Only IPv4 is supported
      */
     allowListType?: pulumi.Input<string>;
     /**
-     * 绑定的实例数量。解绑实例的白名单时必传。
+     * Number of bound instances. Required when unbinding an instance from the allowlist
      */
     associatedInstanceNum?: pulumi.Input<number>;
     associatedInstances?: pulumi.Input<pulumi.Input<inputs.rdsmssql.AllowListAssociatedInstance>[]>;
     /**
-     * 实例ID。
+     * Instance ID
      */
     instanceId?: pulumi.Input<string>;
     /**
-     * 项目名称。
+     * Project name
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 安全组之外的、需要加入白名单的IP地址，可输入IP地址或CIDR格式的IP地址段。如果该字段与AllowList同时指定，以AllowList为准。
+     * IP addresses outside the security group that need to be added to the allowlist. Enter IP addresses or CIDR-formatted IP ranges. If both this field and AllowList are specified, AllowList takes precedence
      */
     userAllowList?: pulumi.Input<string>;
 }
@@ -193,40 +193,40 @@ export interface AllowListState {
  */
 export interface AllowListArgs {
     /**
-     * IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+     * IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
      */
     allowList?: pulumi.Input<string>;
     /**
-     * 白名单分类。
+     * Allowlist category
      */
     allowListCategory?: pulumi.Input<string>;
     /**
-     * 白名单描述。
+     * Allowlist description
      */
     allowListDesc?: pulumi.Input<string>;
     /**
-     * 白名单名称。
+     * Allowlist name
      */
     allowListName: pulumi.Input<string>;
     /**
-     * 白名单内的IP地址类型，当前仅支持IPv4。
+     * IP address type in the allowlist. Only IPv4 is supported
      */
     allowListType?: pulumi.Input<string>;
     /**
-     * 绑定的实例数量。解绑实例的白名单时必传。
+     * Number of bound instances. Required when unbinding an instance from the allowlist
      */
     associatedInstanceNum?: pulumi.Input<number>;
     associatedInstances?: pulumi.Input<pulumi.Input<inputs.rdsmssql.AllowListAssociatedInstance>[]>;
     /**
-     * 实例ID。
+     * Instance ID
      */
     instanceId?: pulumi.Input<string>;
     /**
-     * 项目名称。
+     * Project name
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 安全组之外的、需要加入白名单的IP地址，可输入IP地址或CIDR格式的IP地址段。如果该字段与AllowList同时指定，以AllowList为准。
+     * IP addresses outside the security group that need to be added to the allowlist. Enter IP addresses or CIDR-formatted IP ranges. If both this field and AllowList are specified, AllowList takes precedence
      */
     userAllowList?: pulumi.Input<string>;
 }

@@ -12,38 +12,38 @@ import java.util.Objects;
 @CustomType
 public final class GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookie {
     /**
-     * @return 名称。支持ASCII可打印字符，长度限制为0~256个字符。
+     * @return Name. Supports printable ASCII characters. Length: 0~256 characters
      * 
      */
     private String name;
     /**
-     * @return 路径。支持ASCII可打印字符，长度限制为1~256个字符。
+     * @return Path. Supports printable ASCII characters. Length: 1~256 characters
      * 
      */
     private String path;
     /**
-     * @return 有效期。单位为秒。
+     * @return Validity period, in seconds
      * 
      */
     private Integer ttl;
 
     private GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookie() {}
     /**
-     * @return 名称。支持ASCII可打印字符，长度限制为0~256个字符。
+     * @return Name. Supports printable ASCII characters. Length: 0~256 characters
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 路径。支持ASCII可打印字符，长度限制为1~256个字符。
+     * @return Path. Supports printable ASCII characters. Length: 1~256 characters
      * 
      */
     public String path() {
         return this.path;
     }
     /**
-     * @return 有效期。单位为秒。
+     * @return Validity period, in seconds
      * 
      */
     public Integer ttl() {

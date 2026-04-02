@@ -56,12 +56,12 @@ if not MYPY:
     class GroupAttachedPolicyArgsDict(TypedDict):
         policy_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        策略名。
+        Policy name.
         """
         policy_scopes: NotRequired[pulumi.Input[Sequence[pulumi.Input['GroupAttachedPolicyPolicyScopeArgsDict']]]]
         policy_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        策略类型。System代表系统预设策略，Custom代表自定义策略。
+        Policy type. System indicates a system predefined policy; Custom indicates a custom policy.
         """
 elif False:
     GroupAttachedPolicyArgsDict: TypeAlias = Mapping[str, Any]
@@ -73,8 +73,8 @@ class GroupAttachedPolicyArgs:
                  policy_scopes: Optional[pulumi.Input[Sequence[pulumi.Input['GroupAttachedPolicyPolicyScopeArgs']]]] = None,
                  policy_type: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] policy_name: 策略名。
-        :param pulumi.Input[builtins.str] policy_type: 策略类型。System代表系统预设策略，Custom代表自定义策略。
+        :param pulumi.Input[builtins.str] policy_name: Policy name.
+        :param pulumi.Input[builtins.str] policy_type: Policy type. System indicates a system predefined policy; Custom indicates a custom policy.
         """
         if policy_name is not None:
             pulumi.set(__self__, "policy_name", policy_name)
@@ -87,7 +87,7 @@ class GroupAttachedPolicyArgs:
     @pulumi.getter(name="policyName")
     def policy_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        策略名。
+        Policy name.
         """
         return pulumi.get(self, "policy_name")
 
@@ -108,7 +108,7 @@ class GroupAttachedPolicyArgs:
     @pulumi.getter(name="policyType")
     def policy_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        策略类型。System代表系统预设策略，Custom代表自定义策略。
+        Policy type. System indicates a system predefined policy; Custom indicates a custom policy.
         """
         return pulumi.get(self, "policy_type")
 
@@ -121,19 +121,19 @@ if not MYPY:
     class GroupAttachedPolicyPolicyScopeArgsDict(TypedDict):
         attach_time: NotRequired[pulumi.Input[builtins.str]]
         """
-        项目授权时间。
+        Project authorization time.
         """
         policy_scope_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        授权类型。Global代表全局授权（不限制项目），Project代表按项目授权。
+        Authorization type. Global indicates global authorization (not limited by project); Project indicates project-based authorization.
         """
         project_display_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        按项目授权时的项目显示名。
+        Project display name for project-based authorization.
         """
         project_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        按项目授权时的项目名。
+        Project name for project-based authorization.
         """
 elif False:
     GroupAttachedPolicyPolicyScopeArgsDict: TypeAlias = Mapping[str, Any]
@@ -146,10 +146,10 @@ class GroupAttachedPolicyPolicyScopeArgs:
                  project_display_name: Optional[pulumi.Input[builtins.str]] = None,
                  project_name: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] attach_time: 项目授权时间。
-        :param pulumi.Input[builtins.str] policy_scope_type: 授权类型。Global代表全局授权（不限制项目），Project代表按项目授权。
-        :param pulumi.Input[builtins.str] project_display_name: 按项目授权时的项目显示名。
-        :param pulumi.Input[builtins.str] project_name: 按项目授权时的项目名。
+        :param pulumi.Input[builtins.str] attach_time: Project authorization time.
+        :param pulumi.Input[builtins.str] policy_scope_type: Authorization type. Global indicates global authorization (not limited by project); Project indicates project-based authorization.
+        :param pulumi.Input[builtins.str] project_display_name: Project display name for project-based authorization.
+        :param pulumi.Input[builtins.str] project_name: Project name for project-based authorization.
         """
         if attach_time is not None:
             pulumi.set(__self__, "attach_time", attach_time)
@@ -164,7 +164,7 @@ class GroupAttachedPolicyPolicyScopeArgs:
     @pulumi.getter(name="attachTime")
     def attach_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        项目授权时间。
+        Project authorization time.
         """
         return pulumi.get(self, "attach_time")
 
@@ -176,7 +176,7 @@ class GroupAttachedPolicyPolicyScopeArgs:
     @pulumi.getter(name="policyScopeType")
     def policy_scope_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        授权类型。Global代表全局授权（不限制项目），Project代表按项目授权。
+        Authorization type. Global indicates global authorization (not limited by project); Project indicates project-based authorization.
         """
         return pulumi.get(self, "policy_scope_type")
 
@@ -188,7 +188,7 @@ class GroupAttachedPolicyPolicyScopeArgs:
     @pulumi.getter(name="projectDisplayName")
     def project_display_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        按项目授权时的项目显示名。
+        Project display name for project-based authorization.
         """
         return pulumi.get(self, "project_display_name")
 
@@ -200,7 +200,7 @@ class GroupAttachedPolicyPolicyScopeArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        按项目授权时的项目名。
+        Project name for project-based authorization.
         """
         return pulumi.get(self, "project_name")
 
@@ -213,7 +213,7 @@ if not MYPY:
     class GroupUserArgsDict(TypedDict):
         user_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        用户名。
+        Username.
         """
 elif False:
     GroupUserArgsDict: TypeAlias = Mapping[str, Any]
@@ -223,7 +223,7 @@ class GroupUserArgs:
     def __init__(__self__, *,
                  user_name: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] user_name: 用户名。
+        :param pulumi.Input[builtins.str] user_name: Username.
         """
         if user_name is not None:
             pulumi.set(__self__, "user_name", user_name)
@@ -232,7 +232,7 @@ class GroupUserArgs:
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户名。
+        Username.
         """
         return pulumi.get(self, "user_name")
 
@@ -245,7 +245,7 @@ if not MYPY:
     class PolicyPolicyRoleArgsDict(TypedDict):
         name: NotRequired[pulumi.Input[builtins.str]]
         """
-        对应用户、角色、用户组的名称。
+        Name of the corresponding user, role, or user group.
         """
         policy_scopes: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyPolicyRolePolicyScopeArgsDict']]]]
 elif False:
@@ -257,7 +257,7 @@ class PolicyPolicyRoleArgs:
                  name: Optional[pulumi.Input[builtins.str]] = None,
                  policy_scopes: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyPolicyRolePolicyScopeArgs']]]] = None):
         """
-        :param pulumi.Input[builtins.str] name: 对应用户、角色、用户组的名称。
+        :param pulumi.Input[builtins.str] name: Name of the corresponding user, role, or user group.
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -268,7 +268,7 @@ class PolicyPolicyRoleArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        对应用户、角色、用户组的名称。
+        Name of the corresponding user, role, or user group.
         """
         return pulumi.get(self, "name")
 
@@ -290,7 +290,7 @@ if not MYPY:
     class PolicyPolicyRolePolicyScopeArgsDict(TypedDict):
         project_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        项目名。
+        Project name.
         """
 elif False:
     PolicyPolicyRolePolicyScopeArgsDict: TypeAlias = Mapping[str, Any]
@@ -300,7 +300,7 @@ class PolicyPolicyRolePolicyScopeArgs:
     def __init__(__self__, *,
                  project_name: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] project_name: 项目名。
+        :param pulumi.Input[builtins.str] project_name: Project name.
         """
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
@@ -309,7 +309,7 @@ class PolicyPolicyRolePolicyScopeArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        项目名。
+        Project name.
         """
         return pulumi.get(self, "project_name")
 
@@ -322,7 +322,7 @@ if not MYPY:
     class PolicyPolicyUserArgsDict(TypedDict):
         name: NotRequired[pulumi.Input[builtins.str]]
         """
-        对应用户、角色、用户组的名称。
+        Name of the corresponding user, role, or user group.
         """
         policy_scopes: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyPolicyUserPolicyScopeArgsDict']]]]
 elif False:
@@ -334,7 +334,7 @@ class PolicyPolicyUserArgs:
                  name: Optional[pulumi.Input[builtins.str]] = None,
                  policy_scopes: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyPolicyUserPolicyScopeArgs']]]] = None):
         """
-        :param pulumi.Input[builtins.str] name: 对应用户、角色、用户组的名称。
+        :param pulumi.Input[builtins.str] name: Name of the corresponding user, role, or user group.
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -345,7 +345,7 @@ class PolicyPolicyUserArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        对应用户、角色、用户组的名称。
+        Name of the corresponding user, role, or user group.
         """
         return pulumi.get(self, "name")
 
@@ -367,7 +367,7 @@ if not MYPY:
     class PolicyPolicyUserGroupArgsDict(TypedDict):
         name: NotRequired[pulumi.Input[builtins.str]]
         """
-        对应用户、角色、用户组的名称。
+        Name of the corresponding user, role, or user group.
         """
         policy_scopes: NotRequired[pulumi.Input[Sequence[pulumi.Input['PolicyPolicyUserGroupPolicyScopeArgsDict']]]]
 elif False:
@@ -379,7 +379,7 @@ class PolicyPolicyUserGroupArgs:
                  name: Optional[pulumi.Input[builtins.str]] = None,
                  policy_scopes: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyPolicyUserGroupPolicyScopeArgs']]]] = None):
         """
-        :param pulumi.Input[builtins.str] name: 对应用户、角色、用户组的名称。
+        :param pulumi.Input[builtins.str] name: Name of the corresponding user, role, or user group.
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -390,7 +390,7 @@ class PolicyPolicyUserGroupArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        对应用户、角色、用户组的名称。
+        Name of the corresponding user, role, or user group.
         """
         return pulumi.get(self, "name")
 
@@ -412,7 +412,7 @@ if not MYPY:
     class PolicyPolicyUserGroupPolicyScopeArgsDict(TypedDict):
         project_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        项目名。
+        Project name.
         """
 elif False:
     PolicyPolicyUserGroupPolicyScopeArgsDict: TypeAlias = Mapping[str, Any]
@@ -422,7 +422,7 @@ class PolicyPolicyUserGroupPolicyScopeArgs:
     def __init__(__self__, *,
                  project_name: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] project_name: 项目名。
+        :param pulumi.Input[builtins.str] project_name: Project name.
         """
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
@@ -431,7 +431,7 @@ class PolicyPolicyUserGroupPolicyScopeArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        项目名。
+        Project name.
         """
         return pulumi.get(self, "project_name")
 
@@ -444,7 +444,7 @@ if not MYPY:
     class PolicyPolicyUserPolicyScopeArgsDict(TypedDict):
         project_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        项目名。
+        Project name.
         """
 elif False:
     PolicyPolicyUserPolicyScopeArgsDict: TypeAlias = Mapping[str, Any]
@@ -454,7 +454,7 @@ class PolicyPolicyUserPolicyScopeArgs:
     def __init__(__self__, *,
                  project_name: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] project_name: 项目名。
+        :param pulumi.Input[builtins.str] project_name: Project name.
         """
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
@@ -463,7 +463,7 @@ class PolicyPolicyUserPolicyScopeArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        项目名。
+        Project name.
         """
         return pulumi.get(self, "project_name")
 
@@ -476,11 +476,11 @@ if not MYPY:
     class RolePolicyArgsDict(TypedDict):
         policy_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        策略名。
+        Policy name
         """
         policy_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+        Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
         """
 elif False:
     RolePolicyArgsDict: TypeAlias = Mapping[str, Any]
@@ -491,8 +491,8 @@ class RolePolicyArgs:
                  policy_name: Optional[pulumi.Input[builtins.str]] = None,
                  policy_type: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] policy_name: 策略名。
-        :param pulumi.Input[builtins.str] policy_type: 策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+        :param pulumi.Input[builtins.str] policy_name: Policy name
+        :param pulumi.Input[builtins.str] policy_type: Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
         """
         if policy_name is not None:
             pulumi.set(__self__, "policy_name", policy_name)
@@ -503,7 +503,7 @@ class RolePolicyArgs:
     @pulumi.getter(name="policyName")
     def policy_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        策略名。
+        Policy name
         """
         return pulumi.get(self, "policy_name")
 
@@ -515,7 +515,7 @@ class RolePolicyArgs:
     @pulumi.getter(name="policyType")
     def policy_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+        Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
         """
         return pulumi.get(self, "policy_type")
 
@@ -528,11 +528,11 @@ if not MYPY:
     class RoleTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签键。
+        Tag key
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签值。
+        Tag value
         """
 elif False:
     RoleTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -543,8 +543,8 @@ class RoleTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 标签键。
-        :param pulumi.Input[builtins.str] value: 标签值。
+        :param pulumi.Input[builtins.str] key: Tag key
+        :param pulumi.Input[builtins.str] value: Tag value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -555,7 +555,7 @@ class RoleTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -567,7 +567,7 @@ class RoleTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -580,35 +580,35 @@ if not MYPY:
     class UserAccessKeyArgsDict(TypedDict):
         access_key_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        访问密钥ID。
+        Access key ID.
         """
         create_date: NotRequired[pulumi.Input[builtins.str]]
         """
-        访问密钥创建时间。
+        Access key creation time.
         """
         region: NotRequired[pulumi.Input[builtins.str]]
         """
-        最近一次使用的服务区域。
+        Most recently used service region.
         """
         request_time: NotRequired[pulumi.Input[builtins.str]]
         """
-        访问密钥最近一次使用时间。
+        Last used time of the access key.
         """
         service: NotRequired[pulumi.Input[builtins.str]]
         """
-        最近一次使用的服务名称。
+        Name of the most recently used service.
         """
         status: NotRequired[pulumi.Input[builtins.str]]
         """
-        访问密钥状态。Active代表启用，Inactive代表禁用。
+        Access key status. 'Active' means enabled, 'Inactive' means disabled.
         """
         update_date: NotRequired[pulumi.Input[builtins.str]]
         """
-        访问密钥更新时间。
+        Access key update time.
         """
         user_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        访问密钥Secret。
+        Access key Secret.
         """
 elif False:
     UserAccessKeyArgsDict: TypeAlias = Mapping[str, Any]
@@ -625,14 +625,14 @@ class UserAccessKeyArgs:
                  update_date: Optional[pulumi.Input[builtins.str]] = None,
                  user_name: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] access_key_id: 访问密钥ID。
-        :param pulumi.Input[builtins.str] create_date: 访问密钥创建时间。
-        :param pulumi.Input[builtins.str] region: 最近一次使用的服务区域。
-        :param pulumi.Input[builtins.str] request_time: 访问密钥最近一次使用时间。
-        :param pulumi.Input[builtins.str] service: 最近一次使用的服务名称。
-        :param pulumi.Input[builtins.str] status: 访问密钥状态。Active代表启用，Inactive代表禁用。
-        :param pulumi.Input[builtins.str] update_date: 访问密钥更新时间。
-        :param pulumi.Input[builtins.str] user_name: 访问密钥Secret。
+        :param pulumi.Input[builtins.str] access_key_id: Access key ID.
+        :param pulumi.Input[builtins.str] create_date: Access key creation time.
+        :param pulumi.Input[builtins.str] region: Most recently used service region.
+        :param pulumi.Input[builtins.str] request_time: Last used time of the access key.
+        :param pulumi.Input[builtins.str] service: Name of the most recently used service.
+        :param pulumi.Input[builtins.str] status: Access key status. 'Active' means enabled, 'Inactive' means disabled.
+        :param pulumi.Input[builtins.str] update_date: Access key update time.
+        :param pulumi.Input[builtins.str] user_name: Access key Secret.
         """
         if access_key_id is not None:
             pulumi.set(__self__, "access_key_id", access_key_id)
@@ -655,7 +655,7 @@ class UserAccessKeyArgs:
     @pulumi.getter(name="accessKeyId")
     def access_key_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        访问密钥ID。
+        Access key ID.
         """
         return pulumi.get(self, "access_key_id")
 
@@ -667,7 +667,7 @@ class UserAccessKeyArgs:
     @pulumi.getter(name="createDate")
     def create_date(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        访问密钥创建时间。
+        Access key creation time.
         """
         return pulumi.get(self, "create_date")
 
@@ -679,7 +679,7 @@ class UserAccessKeyArgs:
     @pulumi.getter
     def region(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        最近一次使用的服务区域。
+        Most recently used service region.
         """
         return pulumi.get(self, "region")
 
@@ -691,7 +691,7 @@ class UserAccessKeyArgs:
     @pulumi.getter(name="requestTime")
     def request_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        访问密钥最近一次使用时间。
+        Last used time of the access key.
         """
         return pulumi.get(self, "request_time")
 
@@ -703,7 +703,7 @@ class UserAccessKeyArgs:
     @pulumi.getter
     def service(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        最近一次使用的服务名称。
+        Name of the most recently used service.
         """
         return pulumi.get(self, "service")
 
@@ -715,7 +715,7 @@ class UserAccessKeyArgs:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        访问密钥状态。Active代表启用，Inactive代表禁用。
+        Access key status. 'Active' means enabled, 'Inactive' means disabled.
         """
         return pulumi.get(self, "status")
 
@@ -727,7 +727,7 @@ class UserAccessKeyArgs:
     @pulumi.getter(name="updateDate")
     def update_date(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        访问密钥更新时间。
+        Access key update time.
         """
         return pulumi.get(self, "update_date")
 
@@ -739,7 +739,7 @@ class UserAccessKeyArgs:
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        访问密钥Secret。
+        Access key Secret.
         """
         return pulumi.get(self, "user_name")
 
@@ -752,63 +752,63 @@ if not MYPY:
     class UserLoginProfileArgsDict(TypedDict):
         create_date: NotRequired[pulumi.Input[builtins.str]]
         """
-        登录配置创建时间。
+        Login configuration creation time.
         """
         last_login_date: NotRequired[pulumi.Input[builtins.str]]
         """
-        上次登录时间。
+        Last login time.
         """
         last_login_ip: NotRequired[pulumi.Input[builtins.str]]
         """
-        上次登录IP。
+        Last login IP.
         """
-        last_reset_password_time: NotRequired[pulumi.Input[builtins.float]]
+        last_reset_password_time: NotRequired[pulumi.Input[builtins.int]]
         """
-        上次重置密码的时间，上次重置密码的时间。0代表未设置过密码，非0代表过期时间的时间戳。
+        Last password reset time. Last password reset time. 0 means no password has been set; a non-zero value means the timestamp when the password expires.
         """
         login_allowed: NotRequired[pulumi.Input[builtins.bool]]
         """
-        是否允许登录，是否允许登录。true代表允许，false代表不允许，默认为false。
+        Whether login is allowed. 'true' means allowed, 'false' means not allowed. Default is 'false'.
         """
         login_locked: NotRequired[pulumi.Input[builtins.bool]]
         """
-        登录是否被锁定。true代表已锁定，false代表未锁定。管理员设置错误密码重试次数限制后，用户命中后登录会被锁定。
+        Whether login is locked. 'true' means locked, 'false' means not locked. After the administrator sets a limit for incorrect password retry attempts, login will be locked if the user exceeds the limit.
         """
         password: NotRequired[pulumi.Input[builtins.str]]
         """
-        登录密码。
+        Login password.
         """
-        password_expire_at: NotRequired[pulumi.Input[builtins.float]]
+        password_expire_at: NotRequired[pulumi.Input[builtins.int]]
         """
-        密码过期时间。0代表永不过期，非0代表过期时间的时间戳。
+        Password expiration time. '0' means never expires; non-zero means the expiration timestamp.
         """
         password_reset_required: NotRequired[pulumi.Input[builtins.bool]]
         """
-        下次登录是否需要重设密码，下次登录是否需要重设密码。true代表允许，false代表不允许，默认为false。
+        Whether password reset is required on next login. Whether password reset is required on next login. 'true' means password reset is required, 'false' means not required. Default is 'false'.
         """
         safe_auth_exempt_duration: NotRequired[pulumi.Input[builtins.float]]
         """
-        登录保护豁免时长，登录保护豁免时长。支持设置1至7（天），或1至168（小时），或5至1440（分钟）。单位设置请参考SafeAuthExemptUnit参数。
+        Login protection exemption duration. Supports setting 1 to 7 (days), 1 to 168 (hours), or 5 to 1440 (minutes). For unit settings, refer to the SafeAuthExemptUnit parameter.
         """
         safe_auth_exempt_required: NotRequired[pulumi.Input[builtins.float]]
         """
-        是否开启登录保护豁免，是否开启登录保护豁免。0代表不开启，1代表开启。开启登录保护豁免后，验证完成后一定时间内登录将不再进行验证。
+        Whether login protection exemption is enabled. Whether login protection exemption is enabled. 0 means disabled, 1 means enabled. When login protection exemption is enabled, after verification is completed, login will not require verification again within a certain period.
         """
         safe_auth_exempt_unit: NotRequired[pulumi.Input[builtins.float]]
         """
-        登录保护豁免的时间单位，登录保护豁免的时间单位。0代表分钟，1代表小时，2代表天。
+        Login protection exemption time unit. Login protection exemption time unit. 0 represents minutes, 1 represents hours, 2 represents days.
         """
         safe_auth_flag: NotRequired[pulumi.Input[builtins.bool]]
         """
-        是否开启登录保护，是否开启登录保护。true代表开启，false代表不开启，默认为false。
+        Whether login protection is enabled. 'true' means enabled, 'false' means disabled. Default is 'false'.
         """
         safe_auth_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        登录保护类型，登录保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。可选vmfa, phone, email, 多个选项逗号隔开。
+        Login protection type. Login protection type. 'phone' represents mobile verification, 'email' represents email verification, 'vmfa' represents MFA device verification. Multiple login protection types can be set, separated by commas. Options: vmfa, phone, email, separated by commas.
         """
         update_date: NotRequired[pulumi.Input[builtins.str]]
         """
-        登录配置更新时间。
+        Login configuration update time.
         """
 elif False:
     UserLoginProfileArgsDict: TypeAlias = Mapping[str, Any]
@@ -819,11 +819,11 @@ class UserLoginProfileArgs:
                  create_date: Optional[pulumi.Input[builtins.str]] = None,
                  last_login_date: Optional[pulumi.Input[builtins.str]] = None,
                  last_login_ip: Optional[pulumi.Input[builtins.str]] = None,
-                 last_reset_password_time: Optional[pulumi.Input[builtins.float]] = None,
+                 last_reset_password_time: Optional[pulumi.Input[builtins.int]] = None,
                  login_allowed: Optional[pulumi.Input[builtins.bool]] = None,
                  login_locked: Optional[pulumi.Input[builtins.bool]] = None,
                  password: Optional[pulumi.Input[builtins.str]] = None,
-                 password_expire_at: Optional[pulumi.Input[builtins.float]] = None,
+                 password_expire_at: Optional[pulumi.Input[builtins.int]] = None,
                  password_reset_required: Optional[pulumi.Input[builtins.bool]] = None,
                  safe_auth_exempt_duration: Optional[pulumi.Input[builtins.float]] = None,
                  safe_auth_exempt_required: Optional[pulumi.Input[builtins.float]] = None,
@@ -832,21 +832,21 @@ class UserLoginProfileArgs:
                  safe_auth_type: Optional[pulumi.Input[builtins.str]] = None,
                  update_date: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] create_date: 登录配置创建时间。
-        :param pulumi.Input[builtins.str] last_login_date: 上次登录时间。
-        :param pulumi.Input[builtins.str] last_login_ip: 上次登录IP。
-        :param pulumi.Input[builtins.float] last_reset_password_time: 上次重置密码的时间，上次重置密码的时间。0代表未设置过密码，非0代表过期时间的时间戳。
-        :param pulumi.Input[builtins.bool] login_allowed: 是否允许登录，是否允许登录。true代表允许，false代表不允许，默认为false。
-        :param pulumi.Input[builtins.bool] login_locked: 登录是否被锁定。true代表已锁定，false代表未锁定。管理员设置错误密码重试次数限制后，用户命中后登录会被锁定。
-        :param pulumi.Input[builtins.str] password: 登录密码。
-        :param pulumi.Input[builtins.float] password_expire_at: 密码过期时间。0代表永不过期，非0代表过期时间的时间戳。
-        :param pulumi.Input[builtins.bool] password_reset_required: 下次登录是否需要重设密码，下次登录是否需要重设密码。true代表允许，false代表不允许，默认为false。
-        :param pulumi.Input[builtins.float] safe_auth_exempt_duration: 登录保护豁免时长，登录保护豁免时长。支持设置1至7（天），或1至168（小时），或5至1440（分钟）。单位设置请参考SafeAuthExemptUnit参数。
-        :param pulumi.Input[builtins.float] safe_auth_exempt_required: 是否开启登录保护豁免，是否开启登录保护豁免。0代表不开启，1代表开启。开启登录保护豁免后，验证完成后一定时间内登录将不再进行验证。
-        :param pulumi.Input[builtins.float] safe_auth_exempt_unit: 登录保护豁免的时间单位，登录保护豁免的时间单位。0代表分钟，1代表小时，2代表天。
-        :param pulumi.Input[builtins.bool] safe_auth_flag: 是否开启登录保护，是否开启登录保护。true代表开启，false代表不开启，默认为false。
-        :param pulumi.Input[builtins.str] safe_auth_type: 登录保护类型，登录保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。可选vmfa, phone, email, 多个选项逗号隔开。
-        :param pulumi.Input[builtins.str] update_date: 登录配置更新时间。
+        :param pulumi.Input[builtins.str] create_date: Login configuration creation time.
+        :param pulumi.Input[builtins.str] last_login_date: Last login time.
+        :param pulumi.Input[builtins.str] last_login_ip: Last login IP.
+        :param pulumi.Input[builtins.int] last_reset_password_time: Last password reset time. Last password reset time. 0 means no password has been set; a non-zero value means the timestamp when the password expires.
+        :param pulumi.Input[builtins.bool] login_allowed: Whether login is allowed. 'true' means allowed, 'false' means not allowed. Default is 'false'.
+        :param pulumi.Input[builtins.bool] login_locked: Whether login is locked. 'true' means locked, 'false' means not locked. After the administrator sets a limit for incorrect password retry attempts, login will be locked if the user exceeds the limit.
+        :param pulumi.Input[builtins.str] password: Login password.
+        :param pulumi.Input[builtins.int] password_expire_at: Password expiration time. '0' means never expires; non-zero means the expiration timestamp.
+        :param pulumi.Input[builtins.bool] password_reset_required: Whether password reset is required on next login. Whether password reset is required on next login. 'true' means password reset is required, 'false' means not required. Default is 'false'.
+        :param pulumi.Input[builtins.float] safe_auth_exempt_duration: Login protection exemption duration. Supports setting 1 to 7 (days), 1 to 168 (hours), or 5 to 1440 (minutes). For unit settings, refer to the SafeAuthExemptUnit parameter.
+        :param pulumi.Input[builtins.float] safe_auth_exempt_required: Whether login protection exemption is enabled. Whether login protection exemption is enabled. 0 means disabled, 1 means enabled. When login protection exemption is enabled, after verification is completed, login will not require verification again within a certain period.
+        :param pulumi.Input[builtins.float] safe_auth_exempt_unit: Login protection exemption time unit. Login protection exemption time unit. 0 represents minutes, 1 represents hours, 2 represents days.
+        :param pulumi.Input[builtins.bool] safe_auth_flag: Whether login protection is enabled. 'true' means enabled, 'false' means disabled. Default is 'false'.
+        :param pulumi.Input[builtins.str] safe_auth_type: Login protection type. Login protection type. 'phone' represents mobile verification, 'email' represents email verification, 'vmfa' represents MFA device verification. Multiple login protection types can be set, separated by commas. Options: vmfa, phone, email, separated by commas.
+        :param pulumi.Input[builtins.str] update_date: Login configuration update time.
         """
         if create_date is not None:
             pulumi.set(__self__, "create_date", create_date)
@@ -883,7 +883,7 @@ class UserLoginProfileArgs:
     @pulumi.getter(name="createDate")
     def create_date(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        登录配置创建时间。
+        Login configuration creation time.
         """
         return pulumi.get(self, "create_date")
 
@@ -895,7 +895,7 @@ class UserLoginProfileArgs:
     @pulumi.getter(name="lastLoginDate")
     def last_login_date(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        上次登录时间。
+        Last login time.
         """
         return pulumi.get(self, "last_login_date")
 
@@ -907,7 +907,7 @@ class UserLoginProfileArgs:
     @pulumi.getter(name="lastLoginIp")
     def last_login_ip(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        上次登录IP。
+        Last login IP.
         """
         return pulumi.get(self, "last_login_ip")
 
@@ -917,21 +917,21 @@ class UserLoginProfileArgs:
 
     @property
     @pulumi.getter(name="lastResetPasswordTime")
-    def last_reset_password_time(self) -> Optional[pulumi.Input[builtins.float]]:
+    def last_reset_password_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        上次重置密码的时间，上次重置密码的时间。0代表未设置过密码，非0代表过期时间的时间戳。
+        Last password reset time. Last password reset time. 0 means no password has been set; a non-zero value means the timestamp when the password expires.
         """
         return pulumi.get(self, "last_reset_password_time")
 
     @last_reset_password_time.setter
-    def last_reset_password_time(self, value: Optional[pulumi.Input[builtins.float]]):
+    def last_reset_password_time(self, value: Optional[pulumi.Input[builtins.int]]):
         pulumi.set(self, "last_reset_password_time", value)
 
     @property
     @pulumi.getter(name="loginAllowed")
     def login_allowed(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否允许登录，是否允许登录。true代表允许，false代表不允许，默认为false。
+        Whether login is allowed. 'true' means allowed, 'false' means not allowed. Default is 'false'.
         """
         return pulumi.get(self, "login_allowed")
 
@@ -943,7 +943,7 @@ class UserLoginProfileArgs:
     @pulumi.getter(name="loginLocked")
     def login_locked(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        登录是否被锁定。true代表已锁定，false代表未锁定。管理员设置错误密码重试次数限制后，用户命中后登录会被锁定。
+        Whether login is locked. 'true' means locked, 'false' means not locked. After the administrator sets a limit for incorrect password retry attempts, login will be locked if the user exceeds the limit.
         """
         return pulumi.get(self, "login_locked")
 
@@ -955,7 +955,7 @@ class UserLoginProfileArgs:
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        登录密码。
+        Login password.
         """
         return pulumi.get(self, "password")
 
@@ -965,21 +965,21 @@ class UserLoginProfileArgs:
 
     @property
     @pulumi.getter(name="passwordExpireAt")
-    def password_expire_at(self) -> Optional[pulumi.Input[builtins.float]]:
+    def password_expire_at(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        密码过期时间。0代表永不过期，非0代表过期时间的时间戳。
+        Password expiration time. '0' means never expires; non-zero means the expiration timestamp.
         """
         return pulumi.get(self, "password_expire_at")
 
     @password_expire_at.setter
-    def password_expire_at(self, value: Optional[pulumi.Input[builtins.float]]):
+    def password_expire_at(self, value: Optional[pulumi.Input[builtins.int]]):
         pulumi.set(self, "password_expire_at", value)
 
     @property
     @pulumi.getter(name="passwordResetRequired")
     def password_reset_required(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        下次登录是否需要重设密码，下次登录是否需要重设密码。true代表允许，false代表不允许，默认为false。
+        Whether password reset is required on next login. Whether password reset is required on next login. 'true' means password reset is required, 'false' means not required. Default is 'false'.
         """
         return pulumi.get(self, "password_reset_required")
 
@@ -991,7 +991,7 @@ class UserLoginProfileArgs:
     @pulumi.getter(name="safeAuthExemptDuration")
     def safe_auth_exempt_duration(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        登录保护豁免时长，登录保护豁免时长。支持设置1至7（天），或1至168（小时），或5至1440（分钟）。单位设置请参考SafeAuthExemptUnit参数。
+        Login protection exemption duration. Supports setting 1 to 7 (days), 1 to 168 (hours), or 5 to 1440 (minutes). For unit settings, refer to the SafeAuthExemptUnit parameter.
         """
         return pulumi.get(self, "safe_auth_exempt_duration")
 
@@ -1003,7 +1003,7 @@ class UserLoginProfileArgs:
     @pulumi.getter(name="safeAuthExemptRequired")
     def safe_auth_exempt_required(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        是否开启登录保护豁免，是否开启登录保护豁免。0代表不开启，1代表开启。开启登录保护豁免后，验证完成后一定时间内登录将不再进行验证。
+        Whether login protection exemption is enabled. Whether login protection exemption is enabled. 0 means disabled, 1 means enabled. When login protection exemption is enabled, after verification is completed, login will not require verification again within a certain period.
         """
         return pulumi.get(self, "safe_auth_exempt_required")
 
@@ -1015,7 +1015,7 @@ class UserLoginProfileArgs:
     @pulumi.getter(name="safeAuthExemptUnit")
     def safe_auth_exempt_unit(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        登录保护豁免的时间单位，登录保护豁免的时间单位。0代表分钟，1代表小时，2代表天。
+        Login protection exemption time unit. Login protection exemption time unit. 0 represents minutes, 1 represents hours, 2 represents days.
         """
         return pulumi.get(self, "safe_auth_exempt_unit")
 
@@ -1027,7 +1027,7 @@ class UserLoginProfileArgs:
     @pulumi.getter(name="safeAuthFlag")
     def safe_auth_flag(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启登录保护，是否开启登录保护。true代表开启，false代表不开启，默认为false。
+        Whether login protection is enabled. 'true' means enabled, 'false' means disabled. Default is 'false'.
         """
         return pulumi.get(self, "safe_auth_flag")
 
@@ -1039,7 +1039,7 @@ class UserLoginProfileArgs:
     @pulumi.getter(name="safeAuthType")
     def safe_auth_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        登录保护类型，登录保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。可选vmfa, phone, email, 多个选项逗号隔开。
+        Login protection type. Login protection type. 'phone' represents mobile verification, 'email' represents email verification, 'vmfa' represents MFA device verification. Multiple login protection types can be set, separated by commas. Options: vmfa, phone, email, separated by commas.
         """
         return pulumi.get(self, "safe_auth_type")
 
@@ -1051,7 +1051,7 @@ class UserLoginProfileArgs:
     @pulumi.getter(name="updateDate")
     def update_date(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        登录配置更新时间。
+        Login configuration update time.
         """
         return pulumi.get(self, "update_date")
 
@@ -1064,11 +1064,11 @@ if not MYPY:
     class UserPolicyArgsDict(TypedDict):
         policy_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        权限策略名称，长度1~64，支持英文、数字和+=,.@-_符号。
+        Permission policy name. Length: 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
         """
         policy_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        权限策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+        Permission policy type. 'System' indicates system preset policy, 'Custom' indicates custom policy.
         """
 elif False:
     UserPolicyArgsDict: TypeAlias = Mapping[str, Any]
@@ -1079,8 +1079,8 @@ class UserPolicyArgs:
                  policy_name: Optional[pulumi.Input[builtins.str]] = None,
                  policy_type: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] policy_name: 权限策略名称，长度1~64，支持英文、数字和+=,.@-_符号。
-        :param pulumi.Input[builtins.str] policy_type: 权限策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+        :param pulumi.Input[builtins.str] policy_name: Permission policy name. Length: 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
+        :param pulumi.Input[builtins.str] policy_type: Permission policy type. 'System' indicates system preset policy, 'Custom' indicates custom policy.
         """
         if policy_name is not None:
             pulumi.set(__self__, "policy_name", policy_name)
@@ -1091,7 +1091,7 @@ class UserPolicyArgs:
     @pulumi.getter(name="policyName")
     def policy_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        权限策略名称，长度1~64，支持英文、数字和+=,.@-_符号。
+        Permission policy name. Length: 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
         """
         return pulumi.get(self, "policy_name")
 
@@ -1103,7 +1103,7 @@ class UserPolicyArgs:
     @pulumi.getter(name="policyType")
     def policy_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        权限策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+        Permission policy type. 'System' indicates system preset policy, 'Custom' indicates custom policy.
         """
         return pulumi.get(self, "policy_type")
 
@@ -1116,15 +1116,15 @@ if not MYPY:
     class UserSecurityConfigArgsDict(TypedDict):
         safe_auth_close: NotRequired[pulumi.Input[builtins.float]]
         """
-        是否开启操作保护。0代表开启，1代表关闭。
+        Whether operation protection is enabled. 0 means enabled, 1 means disabled.
         """
         safe_auth_exempt_duration: NotRequired[pulumi.Input[builtins.float]]
         """
-        操作保护的豁免时间，完成验证后在豁免时间内将不再进行验证。支持设置5至30，默认值为10。单位为分钟。
+        Operation protection exemption time. After verification is completed, no further verification is required within the exemption period. Supports values from 5 to 30; the default value is 10. Unit: minutes.
         """
         safe_auth_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        操作保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。
+        Operation protection type. 'phone' indicates phone verification, 'email' indicates email verification, 'vmfa' indicates MFA device verification. Multiple operation protection types can be set, separated by commas.
         """
 elif False:
     UserSecurityConfigArgsDict: TypeAlias = Mapping[str, Any]
@@ -1136,9 +1136,9 @@ class UserSecurityConfigArgs:
                  safe_auth_exempt_duration: Optional[pulumi.Input[builtins.float]] = None,
                  safe_auth_type: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.float] safe_auth_close: 是否开启操作保护。0代表开启，1代表关闭。
-        :param pulumi.Input[builtins.float] safe_auth_exempt_duration: 操作保护的豁免时间，完成验证后在豁免时间内将不再进行验证。支持设置5至30，默认值为10。单位为分钟。
-        :param pulumi.Input[builtins.str] safe_auth_type: 操作保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。
+        :param pulumi.Input[builtins.float] safe_auth_close: Whether operation protection is enabled. 0 means enabled, 1 means disabled.
+        :param pulumi.Input[builtins.float] safe_auth_exempt_duration: Operation protection exemption time. After verification is completed, no further verification is required within the exemption period. Supports values from 5 to 30; the default value is 10. Unit: minutes.
+        :param pulumi.Input[builtins.str] safe_auth_type: Operation protection type. 'phone' indicates phone verification, 'email' indicates email verification, 'vmfa' indicates MFA device verification. Multiple operation protection types can be set, separated by commas.
         """
         if safe_auth_close is not None:
             pulumi.set(__self__, "safe_auth_close", safe_auth_close)
@@ -1151,7 +1151,7 @@ class UserSecurityConfigArgs:
     @pulumi.getter(name="safeAuthClose")
     def safe_auth_close(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        是否开启操作保护。0代表开启，1代表关闭。
+        Whether operation protection is enabled. 0 means enabled, 1 means disabled.
         """
         return pulumi.get(self, "safe_auth_close")
 
@@ -1163,7 +1163,7 @@ class UserSecurityConfigArgs:
     @pulumi.getter(name="safeAuthExemptDuration")
     def safe_auth_exempt_duration(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        操作保护的豁免时间，完成验证后在豁免时间内将不再进行验证。支持设置5至30，默认值为10。单位为分钟。
+        Operation protection exemption time. After verification is completed, no further verification is required within the exemption period. Supports values from 5 to 30; the default value is 10. Unit: minutes.
         """
         return pulumi.get(self, "safe_auth_exempt_duration")
 
@@ -1175,7 +1175,7 @@ class UserSecurityConfigArgs:
     @pulumi.getter(name="safeAuthType")
     def safe_auth_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        操作保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。
+        Operation protection type. 'phone' indicates phone verification, 'email' indicates email verification, 'vmfa' indicates MFA device verification. Multiple operation protection types can be set, separated by commas.
         """
         return pulumi.get(self, "safe_auth_type")
 
@@ -1188,11 +1188,11 @@ if not MYPY:
     class UserTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签键。
+        Tag key.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签值。
+        Tag value.
         """
 elif False:
     UserTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -1203,8 +1203,8 @@ class UserTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 标签键。
-        :param pulumi.Input[builtins.str] value: 标签值。
+        :param pulumi.Input[builtins.str] key: Tag key.
+        :param pulumi.Input[builtins.str] value: Tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -1215,7 +1215,7 @@ class UserTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签键。
+        Tag key.
         """
         return pulumi.get(self, "key")
 
@@ -1227,7 +1227,7 @@ class UserTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 

@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Filenas
 {
     /// <summary>
-    /// 挂载点是 NAS 文件系统在网络环境中的连接点。NAS 文件系统需要挂载在计算节点中才能完成数据的访问与存储。挂载是将计算节点与 NAS 文件系统相连接的操作。
+    /// Mount point is the connection point for the NAS file system in a network environment. The NAS file system must be mounted on a compute node to enable data access and storage. Mounting is the operation that connects the compute node to the NAS file system.
     /// 
     /// ## Example Usage
     /// 
@@ -48,85 +48,85 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas
         public Output<ImmutableArray<Outputs.MountPointClient>> Clients { get; private set; } = null!;
 
         /// <summary>
-        /// 挂载点创建时间。
+        /// Mount point creation time.
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// DNS 地址。
+        /// DNS address.
         /// </summary>
         [Output("domain")]
         public Output<string> Domain { get; private set; } = null!;
 
         /// <summary>
-        /// 文件系统 ID。
+        /// File system ID.
         /// </summary>
         [Output("fileSystemId")]
         public Output<string> FileSystemId { get; private set; } = null!;
 
         /// <summary>
-        /// 挂载点地址。
+        /// Mount point address.
         /// </summary>
         [Output("ip")]
         public Output<string> Ip { get; private set; } = null!;
 
         /// <summary>
-        /// 挂载点 ID。
+        /// Mount point ID.
         /// </summary>
         [Output("mountPointId")]
         public Output<string> MountPointId { get; private set; } = null!;
 
         /// <summary>
-        /// 挂载点名称。
+        /// Mount point name.
         /// </summary>
         [Output("mountPointName")]
         public Output<string> MountPointName { get; private set; } = null!;
 
         /// <summary>
-        /// 挂载点绑定的权限组信息。
+        /// Permission group information bound to the mount point.
         /// </summary>
         [Output("permissionGroup")]
         public Output<Outputs.MountPointPermissionGroup> PermissionGroup { get; private set; } = null!;
 
         /// <summary>
-        /// 权限组 ID。
+        /// Permission group ID.
         /// </summary>
         [Output("permissionGroupId")]
         public Output<string> PermissionGroupId { get; private set; } = null!;
 
         /// <summary>
-        /// 挂载点状态。取值：Running：运行中。Creating：创建中。Updating：更新中。Error：异常。Deleting：删除中。DeleteError：删除异常。Deleted：已删除。Stopped：已停止。
+        /// Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// 子网 ID。
+        /// Subnet ID.
         /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
 
         /// <summary>
-        /// 子网名称。
+        /// Subnet name.
         /// </summary>
         [Output("subnetName")]
         public Output<string> SubnetName { get; private set; } = null!;
 
         /// <summary>
-        /// 挂载点更新时间。
+        /// Mount point update time.
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 私有网络 ID。
+        /// Private network ID.
         /// </summary>
         [Output("vpcId")]
         public Output<string> VpcId { get; private set; } = null!;
 
         /// <summary>
-        /// 私有网络名称。
+        /// Private network name.
         /// </summary>
         [Output("vpcName")]
         public Output<string> VpcName { get; private set; } = null!;
@@ -179,31 +179,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas
     public sealed class MountPointArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 文件系统 ID。
+        /// File system ID.
         /// </summary>
         [Input("fileSystemId", required: true)]
         public Input<string> FileSystemId { get; set; } = null!;
 
         /// <summary>
-        /// 挂载点名称。
+        /// Mount point name.
         /// </summary>
         [Input("mountPointName", required: true)]
         public Input<string> MountPointName { get; set; } = null!;
 
         /// <summary>
-        /// 权限组 ID。
+        /// Permission group ID.
         /// </summary>
         [Input("permissionGroupId", required: true)]
         public Input<string> PermissionGroupId { get; set; } = null!;
 
         /// <summary>
-        /// 子网 ID。
+        /// Subnet ID.
         /// </summary>
         [Input("subnetId", required: true)]
         public Input<string> SubnetId { get; set; } = null!;
 
         /// <summary>
-        /// 私有网络 ID。
+        /// Private network ID.
         /// </summary>
         [Input("vpcId", required: true)]
         public Input<string> VpcId { get; set; } = null!;
@@ -225,85 +225,85 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas
         }
 
         /// <summary>
-        /// 挂载点创建时间。
+        /// Mount point creation time.
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// DNS 地址。
+        /// DNS address.
         /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }
 
         /// <summary>
-        /// 文件系统 ID。
+        /// File system ID.
         /// </summary>
         [Input("fileSystemId")]
         public Input<string>? FileSystemId { get; set; }
 
         /// <summary>
-        /// 挂载点地址。
+        /// Mount point address.
         /// </summary>
         [Input("ip")]
         public Input<string>? Ip { get; set; }
 
         /// <summary>
-        /// 挂载点 ID。
+        /// Mount point ID.
         /// </summary>
         [Input("mountPointId")]
         public Input<string>? MountPointId { get; set; }
 
         /// <summary>
-        /// 挂载点名称。
+        /// Mount point name.
         /// </summary>
         [Input("mountPointName")]
         public Input<string>? MountPointName { get; set; }
 
         /// <summary>
-        /// 挂载点绑定的权限组信息。
+        /// Permission group information bound to the mount point.
         /// </summary>
         [Input("permissionGroup")]
         public Input<Inputs.MountPointPermissionGroupGetArgs>? PermissionGroup { get; set; }
 
         /// <summary>
-        /// 权限组 ID。
+        /// Permission group ID.
         /// </summary>
         [Input("permissionGroupId")]
         public Input<string>? PermissionGroupId { get; set; }
 
         /// <summary>
-        /// 挂载点状态。取值：Running：运行中。Creating：创建中。Updating：更新中。Error：异常。Deleting：删除中。DeleteError：删除异常。Deleted：已删除。Stopped：已停止。
+        /// Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// 子网 ID。
+        /// Subnet ID.
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
 
         /// <summary>
-        /// 子网名称。
+        /// Subnet name.
         /// </summary>
         [Input("subnetName")]
         public Input<string>? SubnetName { get; set; }
 
         /// <summary>
-        /// 挂载点更新时间。
+        /// Mount point update time.
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }
 
         /// <summary>
-        /// 私有网络 ID。
+        /// Private network ID.
         /// </summary>
         [Input("vpcId")]
         public Input<string>? VpcId { get; set; }
 
         /// <summary>
-        /// 私有网络名称。
+        /// Private network name.
         /// </summary>
         [Input("vpcName")]
         public Input<string>? VpcName { get; set; }

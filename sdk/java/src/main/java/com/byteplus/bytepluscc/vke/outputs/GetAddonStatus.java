@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetAddonStatus {
     /**
-     * @return 组件当前主状态下的状态条件。
+     * @return Status conditions under the component&#39;s current primary state.
      * 
      */
     private List<GetAddonStatusCondition> conditions;
     /**
-     * @return 组件的状态，参数值有：Running, Failed, Creating, Deleting, Updating
+     * @return Component status. Parameter values include: Running, Failed, Creating, Deleting, Updating
      * 
      */
     private String phase;
 
     private GetAddonStatus() {}
     /**
-     * @return 组件当前主状态下的状态条件。
+     * @return Status conditions under the component&#39;s current primary state.
      * 
      */
     public List<GetAddonStatusCondition> conditions() {
         return this.conditions;
     }
     /**
-     * @return 组件的状态，参数值有：Running, Failed, Creating, Deleting, Updating
+     * @return Component status. Parameter values include: Running, Failed, Creating, Deleting, Updating
      * 
      */
     public String phase() {

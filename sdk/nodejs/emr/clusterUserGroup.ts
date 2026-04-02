@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * E-MapReduce（EMR）集群中支持对用户进行组管理，允许您创建、编辑和删除用户组。
+ * User group management is supported in E-MapReduce (EMR) clusters, allowing you to create, edit, and delete user groups.
  *
  * ## Example Usage
  *
@@ -59,19 +59,19 @@ export class ClusterUserGroup extends pulumi.CustomResource {
     }
 
     /**
-     * 集群ID。
+     * Cluster ID.
      */
     public readonly clusterId!: pulumi.Output<string>;
     /**
-     * 用户组描述。
+     * User group description.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 用户组成员。不支持操作特殊用户，如admin等。
+     * Operations on special users, such as admin, are not supported.
      */
     public readonly members!: pulumi.Output<string[]>;
     /**
-     * 用户组名称。
+     * User group name.
      */
     public readonly userGroupName!: pulumi.Output<string>;
 
@@ -115,19 +115,19 @@ export class ClusterUserGroup extends pulumi.CustomResource {
  */
 export interface ClusterUserGroupState {
     /**
-     * 集群ID。
+     * Cluster ID.
      */
     clusterId?: pulumi.Input<string>;
     /**
-     * 用户组描述。
+     * User group description.
      */
     description?: pulumi.Input<string>;
     /**
-     * 用户组成员。不支持操作特殊用户，如admin等。
+     * Operations on special users, such as admin, are not supported.
      */
     members?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 用户组名称。
+     * User group name.
      */
     userGroupName?: pulumi.Input<string>;
 }
@@ -137,19 +137,19 @@ export interface ClusterUserGroupState {
  */
 export interface ClusterUserGroupArgs {
     /**
-     * 集群ID。
+     * Cluster ID.
      */
     clusterId: pulumi.Input<string>;
     /**
-     * 用户组描述。
+     * User group description.
      */
     description?: pulumi.Input<string>;
     /**
-     * 用户组成员。不支持操作特殊用户，如admin等。
+     * Operations on special users, such as admin, are not supported.
      */
     members?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 用户组名称。
+     * User group name.
      */
     userGroupName: pulumi.Input<string>;
 }

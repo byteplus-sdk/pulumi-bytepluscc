@@ -15,122 +15,122 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainOriginOriginActionOriginLine {
     /**
-     * @return 表示源站地址。该参数有以下说明：如果 InstanceType 是 ip，您可以设置一个 IP 地址。IP 地址可以是 IPv4 或 IPv6 地址。如果 InstanceType 是 domain，您可以设置一个域名。该域名不能是泛域名。如果 InstanceType 是 tos，您可以设置一个对象存储桶的域名。该存储桶可以来自阿里云、腾讯云、AWS。如果您在该 API 请求中指定了多个源站配置：所有主源站配置中的 InstanceType 必须相同。所有备源站配置中的 InstanceType 也必须相同。如果主源站配置中的 InstanceType 是 ip 或者 domain，备源站配置中的 InstanceType 必须是 ip 或者 domain。主源站地址和和备源站地址的总数不能超过 50 个。
+     * @return Indicates the origin address. The parameter has the following instructions: If InstanceType is ip, you can set an IP address. The IP address can be either IPv4 or IPv6. If InstanceType is domain, you can set a domain name. The domain name cannot be a wildcard domain. If InstanceType is tos, you can set the domain name of an object storage bucket. The bucket can be from Alibaba Cloud, Tencent Cloud, or AWS. If you specify multiple origin configurations in this API request: All primary origin configurations must have the same InstanceType. All backup origin configurations must also have the same InstanceType. If the InstanceType in the primary origin configuration is ip or domain, the InstanceType in the backup origin configuration must also be ip or domain. The total number of primary and backup origin addresses cannot exceed 50.
      * 
      */
     private String address;
     /**
-     * @return 表示内容分发网络使用 HTTP 协议访问该源站时所访问的端口，取值范围是 1-65535，默认值是 80。如果源站不支持该端口的访问，您指定默认值即可。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
+     * @return Indicates the port used by the content delivery network to access the origin server via the HTTP protocol. The value range is 1–65535, and the default value is 80. If the origin server does not support access on this port, you can specify the default value. This parameter is only valid when InstanceType is ip or domain.
      * 
      */
     private @Nullable String httpPort;
     /**
-     * @return 表示内容分发网络使用 HTTPS 协议访问该源站时所访问的端口，取值范围是 1-65535，默认值是 443。如果源站不支持该端口的访问，您指定默认值即可。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
+     * @return Indicates the port used by the content delivery network to access the origin server via HTTPS. The value range is 1-65535, and the default value is 443. If the origin server does not support access on this port, you can specify the default value. This parameter is only valid when InstanceType is ip or domain.
      * 
      */
     private @Nullable String httpsPort;
     /**
-     * @return 表示源站的类型。该参数有以下取值：ip：表示源站是通过 IP 地址来访问的。domain：表示源站是通过域名来访问的。tos：表示源站是一个对象存储桶。
+     * @return Indicates the type of origin server. This parameter has the following values: ip: The origin server is accessed via IP address. domain: The origin server is accessed via domain name. tos: The origin server is an object storage bucket.
      * 
      */
     private String instanceType;
     /**
-     * @return 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+     * @return If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
      * 
      */
     private @Nullable String originHost;
     /**
-     * @return 表示源站的类别。该参数有以下取值：   - primary：表示主源站。   - backup：表示备源站。 该 API 请求中至少需要包含一个主源站配置。备源站配置是可选的。
+     * @return Indicates the type of origin server. This parameter has the following values:   - primary: Primary origin server.   - backup: Backup origin server. At least one primary origin server configuration must be included in this API request. Backup origin server configuration is optional.
      * 
      */
     private String originType;
     /**
-     * @return 表示对象存储桶是否开启了私有读权限。该参数仅当 InstanceType 为 tos 时才有效。该参数有以下取值：true：表示开启了该权限。false：表示未开启该权限。该参数的默认值是 false。
+     * @return Indicates whether private read permissions are enabled for the object storage bucket. This parameter is only valid when InstanceType is tos. The parameter values are: true: Enabled. false: Not enabled. The default value is false.
      * 
      */
     private @Nullable Boolean privateBucketAccess;
     /**
-     * @return 表示第三方云厂商的对象存储桶的鉴权信息。
+     * @return Represents the authentication information for the object storage bucket of a third-party cloud provider.
      * 
      */
     private @Nullable DomainOriginOriginActionOriginLinePrivateBucketAuth privateBucketAuth;
     /**
-     * @return 该参数暂不对外开放，请勿使用该参数。
+     * @return This parameter is not currently available externally. Do not use this parameter.
      * 
      */
     private @Nullable String region;
     /**
-     * @return 表示该源站的权重，取值范围是 1-100，默认值是 1。权重越大，该源站在内容分发网络发送回源请求时被选择到的概率也越大。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
+     * @return Specifies the weight of the origin. Value range is 1–100, default is 1. The higher the weight, the more likely this origin is selected when the content delivery network sends a request to the origin. This parameter is only valid when InstanceType is ip or domain.
      * 
      */
     private @Nullable String weight;
 
     private DomainOriginOriginActionOriginLine() {}
     /**
-     * @return 表示源站地址。该参数有以下说明：如果 InstanceType 是 ip，您可以设置一个 IP 地址。IP 地址可以是 IPv4 或 IPv6 地址。如果 InstanceType 是 domain，您可以设置一个域名。该域名不能是泛域名。如果 InstanceType 是 tos，您可以设置一个对象存储桶的域名。该存储桶可以来自阿里云、腾讯云、AWS。如果您在该 API 请求中指定了多个源站配置：所有主源站配置中的 InstanceType 必须相同。所有备源站配置中的 InstanceType 也必须相同。如果主源站配置中的 InstanceType 是 ip 或者 domain，备源站配置中的 InstanceType 必须是 ip 或者 domain。主源站地址和和备源站地址的总数不能超过 50 个。
+     * @return Indicates the origin address. The parameter has the following instructions: If InstanceType is ip, you can set an IP address. The IP address can be either IPv4 or IPv6. If InstanceType is domain, you can set a domain name. The domain name cannot be a wildcard domain. If InstanceType is tos, you can set the domain name of an object storage bucket. The bucket can be from Alibaba Cloud, Tencent Cloud, or AWS. If you specify multiple origin configurations in this API request: All primary origin configurations must have the same InstanceType. All backup origin configurations must also have the same InstanceType. If the InstanceType in the primary origin configuration is ip or domain, the InstanceType in the backup origin configuration must also be ip or domain. The total number of primary and backup origin addresses cannot exceed 50.
      * 
      */
     public String address() {
         return this.address;
     }
     /**
-     * @return 表示内容分发网络使用 HTTP 协议访问该源站时所访问的端口，取值范围是 1-65535，默认值是 80。如果源站不支持该端口的访问，您指定默认值即可。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
+     * @return Indicates the port used by the content delivery network to access the origin server via the HTTP protocol. The value range is 1–65535, and the default value is 80. If the origin server does not support access on this port, you can specify the default value. This parameter is only valid when InstanceType is ip or domain.
      * 
      */
     public Optional<String> httpPort() {
         return Optional.ofNullable(this.httpPort);
     }
     /**
-     * @return 表示内容分发网络使用 HTTPS 协议访问该源站时所访问的端口，取值范围是 1-65535，默认值是 443。如果源站不支持该端口的访问，您指定默认值即可。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
+     * @return Indicates the port used by the content delivery network to access the origin server via HTTPS. The value range is 1-65535, and the default value is 443. If the origin server does not support access on this port, you can specify the default value. This parameter is only valid when InstanceType is ip or domain.
      * 
      */
     public Optional<String> httpsPort() {
         return Optional.ofNullable(this.httpsPort);
     }
     /**
-     * @return 表示源站的类型。该参数有以下取值：ip：表示源站是通过 IP 地址来访问的。domain：表示源站是通过域名来访问的。tos：表示源站是一个对象存储桶。
+     * @return Indicates the type of origin server. This parameter has the following values: ip: The origin server is accessed via IP address. domain: The origin server is accessed via domain name. tos: The origin server is an object storage bucket.
      * 
      */
     public String instanceType() {
         return this.instanceType;
     }
     /**
-     * @return 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+     * @return If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
      * 
      */
     public Optional<String> originHost() {
         return Optional.ofNullable(this.originHost);
     }
     /**
-     * @return 表示源站的类别。该参数有以下取值：   - primary：表示主源站。   - backup：表示备源站。 该 API 请求中至少需要包含一个主源站配置。备源站配置是可选的。
+     * @return Indicates the type of origin server. This parameter has the following values:   - primary: Primary origin server.   - backup: Backup origin server. At least one primary origin server configuration must be included in this API request. Backup origin server configuration is optional.
      * 
      */
     public String originType() {
         return this.originType;
     }
     /**
-     * @return 表示对象存储桶是否开启了私有读权限。该参数仅当 InstanceType 为 tos 时才有效。该参数有以下取值：true：表示开启了该权限。false：表示未开启该权限。该参数的默认值是 false。
+     * @return Indicates whether private read permissions are enabled for the object storage bucket. This parameter is only valid when InstanceType is tos. The parameter values are: true: Enabled. false: Not enabled. The default value is false.
      * 
      */
     public Optional<Boolean> privateBucketAccess() {
         return Optional.ofNullable(this.privateBucketAccess);
     }
     /**
-     * @return 表示第三方云厂商的对象存储桶的鉴权信息。
+     * @return Represents the authentication information for the object storage bucket of a third-party cloud provider.
      * 
      */
     public Optional<DomainOriginOriginActionOriginLinePrivateBucketAuth> privateBucketAuth() {
         return Optional.ofNullable(this.privateBucketAuth);
     }
     /**
-     * @return 该参数暂不对外开放，请勿使用该参数。
+     * @return This parameter is not currently available externally. Do not use this parameter.
      * 
      */
     public Optional<String> region() {
         return Optional.ofNullable(this.region);
     }
     /**
-     * @return 表示该源站的权重，取值范围是 1-100，默认值是 1。权重越大，该源站在内容分发网络发送回源请求时被选择到的概率也越大。该参数仅当 InstanceType 为 ip 或 domain 时才有效。
+     * @return Specifies the weight of the origin. Value range is 1–100, default is 1. The higher the weight, the more likely this origin is selected when the content delivery network sends a request to the origin. This parameter is only valid when InstanceType is ip or domain.
      * 
      */
     public Optional<String> weight() {

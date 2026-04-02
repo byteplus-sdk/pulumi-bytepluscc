@@ -65,11 +65,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     public sealed class GetPermissionSetResult
     {
         /// <summary>
-        /// 创建时间。
+        /// Creation Time
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 权限集描述。
+        /// Permission Set Description
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -77,31 +77,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 权限集名称。
+        /// Permission Set Name
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// 权限集下的策略列表。
+        /// Policy List Under Permission Set
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPermissionSetPermissionPolicyResult> PermissionPolicies;
         /// <summary>
-        /// 权限集 ID。
+        /// Permission Set ID
         /// </summary>
         public readonly string PermissionSetId;
         /// <summary>
-        /// 跳转控制台 URL。
+        /// Console Redirect URL
         /// </summary>
         public readonly string RelayState;
         /// <summary>
-        /// session 过期时间，单位秒。
+        /// Session Expiration Time (seconds)
         /// </summary>
         public readonly int SessionDuration;
         /// <summary>
-        /// 状态通知配置。
+        /// Status Notification Configuration
         /// </summary>
         public readonly ImmutableArray<string> StatusNotifications;
         /// <summary>
-        /// 更新时间。
+        /// Update Time
         /// </summary>
         public readonly string UpdatedTime;
 

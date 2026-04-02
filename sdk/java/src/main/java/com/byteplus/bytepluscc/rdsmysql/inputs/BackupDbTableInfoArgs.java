@@ -17,14 +17,14 @@ public final class BackupDbTableInfoArgs extends com.pulumi.resources.ResourceAr
     public static final BackupDbTableInfoArgs Empty = new BackupDbTableInfoArgs();
 
     /**
-     * 数据库名。
+     * Database name
      * 
      */
     @Import(name="database")
     private @Nullable Output<String> database;
 
     /**
-     * @return 数据库名。
+     * @return Database name
      * 
      */
     public Optional<Output<String>> database() {
@@ -32,14 +32,14 @@ public final class BackupDbTableInfoArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 表名列表。
+     * Table name list
      * 
      */
     @Import(name="tables")
     private @Nullable Output<List<String>> tables;
 
     /**
-     * @return 表名列表。
+     * @return Table name list
      * 
      */
     public Optional<Output<List<String>>> tables() {
@@ -72,7 +72,7 @@ public final class BackupDbTableInfoArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param database 数据库名。
+         * @param database Database name
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class BackupDbTableInfoArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param database 数据库名。
+         * @param database Database name
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class BackupDbTableInfoArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param tables 表名列表。
+         * @param tables Table name list
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class BackupDbTableInfoArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param tables 表名列表。
+         * @param tables Table name list
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class BackupDbTableInfoArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param tables 表名列表。
+         * @param tables Table name list
          * 
          * @return builder
          * 

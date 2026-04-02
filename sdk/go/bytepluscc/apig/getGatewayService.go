@@ -30,39 +30,39 @@ type LookupGatewayServiceArgs struct {
 
 // A collection of values returned by getGatewayService.
 type LookupGatewayServiceResult struct {
-	// 认证配置。
+	// Authentication configuration.
 	AuthSpec GetGatewayServiceAuthSpec `pulumi:"authSpec"`
-	// 备注，长度限制为0~253个字符。
+	// Remarks. Length must be 0–253 characters.
 	Comments string `pulumi:"comments"`
-	// 创建时间。
+	// Creation time.
 	CreatedTime string `pulumi:"createdTime"`
-	// 自定义域名列表。
+	// Custom domain list.
 	CustomDomains []GetGatewayServiceCustomDomain `pulumi:"customDomains"`
-	// 域名详情。
+	// Domain details.
 	DomainSpec GetGatewayServiceDomainSpec `pulumi:"domainSpec"`
-	// 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+	// Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
 	DomainType string `pulumi:"domainType"`
-	// 默认域名。
+	// Default domain.
 	Domains []GetGatewayServiceDomain `pulumi:"domains"`
-	// 网关ID。
+	// Gateway ID.
 	GatewayId string `pulumi:"gatewayId"`
-	// 网关名称。
+	// Gateway name.
 	GatewayName string `pulumi:"gatewayName"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 服务创建失败、删除失败或异常时的错误信息。
+	// Error message for service creation failure, deletion failure, or abnormal status.
 	Message string `pulumi:"message"`
-	// 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
+	// Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
 	Protocols []string `pulumi:"protocols"`
-	// 服务ID。
+	// Service ID.
 	ServiceId string `pulumi:"serviceId"`
-	// 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+	// Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
 	ServiceName string `pulumi:"serviceName"`
-	// 服务默认域名网络配置。。
+	// Default domain network configuration..
 	ServiceNetworkSpec GetGatewayServiceServiceNetworkSpec `pulumi:"serviceNetworkSpec"`
-	// 服务类型，取值：AIProvider：AI模型代理。
+	// Service type. Options: AIProvider: AI model proxy.
 	ServiceType string `pulumi:"serviceType"`
-	// Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+	// Creating: Creating. CreatedFailed: Creation failed. Running: Running. Deleting: Deleting. DeletedFailed: Deletion failed. Abnormal: Abnormal.
 	Status string `pulumi:"status"`
 }
 
@@ -100,47 +100,47 @@ func (o LookupGatewayServiceResultOutput) ToLookupGatewayServiceResultOutputWith
 	return o
 }
 
-// 认证配置。
+// Authentication configuration.
 func (o LookupGatewayServiceResultOutput) AuthSpec() GetGatewayServiceAuthSpecOutput {
 	return o.ApplyT(func(v LookupGatewayServiceResult) GetGatewayServiceAuthSpec { return v.AuthSpec }).(GetGatewayServiceAuthSpecOutput)
 }
 
-// 备注，长度限制为0~253个字符。
+// Remarks. Length must be 0–253 characters.
 func (o LookupGatewayServiceResultOutput) Comments() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGatewayServiceResult) string { return v.Comments }).(pulumi.StringOutput)
 }
 
-// 创建时间。
+// Creation time.
 func (o LookupGatewayServiceResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGatewayServiceResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 自定义域名列表。
+// Custom domain list.
 func (o LookupGatewayServiceResultOutput) CustomDomains() GetGatewayServiceCustomDomainArrayOutput {
 	return o.ApplyT(func(v LookupGatewayServiceResult) []GetGatewayServiceCustomDomain { return v.CustomDomains }).(GetGatewayServiceCustomDomainArrayOutput)
 }
 
-// 域名详情。
+// Domain details.
 func (o LookupGatewayServiceResultOutput) DomainSpec() GetGatewayServiceDomainSpecOutput {
 	return o.ApplyT(func(v LookupGatewayServiceResult) GetGatewayServiceDomainSpec { return v.DomainSpec }).(GetGatewayServiceDomainSpecOutput)
 }
 
-// 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+// Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
 func (o LookupGatewayServiceResultOutput) DomainType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGatewayServiceResult) string { return v.DomainType }).(pulumi.StringOutput)
 }
 
-// 默认域名。
+// Default domain.
 func (o LookupGatewayServiceResultOutput) Domains() GetGatewayServiceDomainArrayOutput {
 	return o.ApplyT(func(v LookupGatewayServiceResult) []GetGatewayServiceDomain { return v.Domains }).(GetGatewayServiceDomainArrayOutput)
 }
 
-// 网关ID。
+// Gateway ID.
 func (o LookupGatewayServiceResultOutput) GatewayId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGatewayServiceResult) string { return v.GatewayId }).(pulumi.StringOutput)
 }
 
-// 网关名称。
+// Gateway name.
 func (o LookupGatewayServiceResultOutput) GatewayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGatewayServiceResult) string { return v.GatewayName }).(pulumi.StringOutput)
 }
@@ -150,37 +150,37 @@ func (o LookupGatewayServiceResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGatewayServiceResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 服务创建失败、删除失败或异常时的错误信息。
+// Error message for service creation failure, deletion failure, or abnormal status.
 func (o LookupGatewayServiceResultOutput) Message() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGatewayServiceResult) string { return v.Message }).(pulumi.StringOutput)
 }
 
-// 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
+// Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
 func (o LookupGatewayServiceResultOutput) Protocols() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupGatewayServiceResult) []string { return v.Protocols }).(pulumi.StringArrayOutput)
 }
 
-// 服务ID。
+// Service ID.
 func (o LookupGatewayServiceResultOutput) ServiceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGatewayServiceResult) string { return v.ServiceId }).(pulumi.StringOutput)
 }
 
-// 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+// Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
 func (o LookupGatewayServiceResultOutput) ServiceName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGatewayServiceResult) string { return v.ServiceName }).(pulumi.StringOutput)
 }
 
-// 服务默认域名网络配置。。
+// Default domain network configuration..
 func (o LookupGatewayServiceResultOutput) ServiceNetworkSpec() GetGatewayServiceServiceNetworkSpecOutput {
 	return o.ApplyT(func(v LookupGatewayServiceResult) GetGatewayServiceServiceNetworkSpec { return v.ServiceNetworkSpec }).(GetGatewayServiceServiceNetworkSpecOutput)
 }
 
-// 服务类型，取值：AIProvider：AI模型代理。
+// Service type. Options: AIProvider: AI model proxy.
 func (o LookupGatewayServiceResultOutput) ServiceType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGatewayServiceResult) string { return v.ServiceType }).(pulumi.StringOutput)
 }
 
-// Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+// Creating: Creating. CreatedFailed: Creation failed. Running: Running. Deleting: Deleting. DeletedFailed: Deletion failed. Abnormal: Abnormal.
 func (o LookupGatewayServiceResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGatewayServiceResult) string { return v.Status }).(pulumi.StringOutput)
 }

@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetPrefixListTag {
     /**
-     * @return 用户标签的标签键。
+     * @return Tag key of the user tag.
      * 
      */
     private String key;
     /**
-     * @return 用户标签的标签值。
+     * @return Tag value of the user tag.
      * 
      */
     private String value;
 
     private GetPrefixListTag() {}
     /**
-     * @return 用户标签的标签键。
+     * @return Tag key of the user tag.
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return 用户标签的标签值。
+     * @return Tag value of the user tag.
      * 
      */
     public String value() {

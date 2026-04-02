@@ -17,14 +17,14 @@ public final class DatabaseDatabasesPrivilegeArgs extends com.pulumi.resources.R
     public static final DatabaseDatabasesPrivilegeArgs Empty = new DatabaseDatabasesPrivilegeArgs();
 
     /**
-     * 需授权的账号名称
+     * Account name to be authorized
      * 
      */
     @Import(name="accountName")
     private @Nullable Output<String> accountName;
 
     /**
-     * @return 需授权的账号名称
+     * @return Account name to be authorized
      * 
      */
     public Optional<Output<String>> accountName() {
@@ -32,14 +32,14 @@ public final class DatabaseDatabasesPrivilegeArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+     * Database permission type: ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
      * 
      */
     @Import(name="accountPrivilege")
     private @Nullable Output<String> accountPrivilege;
 
     /**
-     * @return 授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+     * @return Database permission type: ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
      * 
      */
     public Optional<Output<String>> accountPrivilege() {
@@ -47,14 +47,14 @@ public final class DatabaseDatabasesPrivilegeArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+     * Specific SQL operation permissions, separated by English commas; required for Custom type
      * 
      */
     @Import(name="accountPrivilegeDetails")
     private @Nullable Output<List<String>> accountPrivilegeDetails;
 
     /**
-     * @return 具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+     * @return Specific SQL operation permissions, separated by English commas; required for Custom type
      * 
      */
     public Optional<Output<List<String>>> accountPrivilegeDetails() {
@@ -88,7 +88,7 @@ public final class DatabaseDatabasesPrivilegeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param accountName 需授权的账号名称
+         * @param accountName Account name to be authorized
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class DatabaseDatabasesPrivilegeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param accountName 需授权的账号名称
+         * @param accountName Account name to be authorized
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class DatabaseDatabasesPrivilegeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param accountPrivilege 授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+         * @param accountPrivilege Database permission type: ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class DatabaseDatabasesPrivilegeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param accountPrivilege 授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+         * @param accountPrivilege Database permission type: ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class DatabaseDatabasesPrivilegeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param accountPrivilegeDetails 具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+         * @param accountPrivilegeDetails Specific SQL operation permissions, separated by English commas; required for Custom type
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class DatabaseDatabasesPrivilegeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param accountPrivilegeDetails 具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+         * @param accountPrivilegeDetails Specific SQL operation permissions, separated by English commas; required for Custom type
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class DatabaseDatabasesPrivilegeArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param accountPrivilegeDetails 具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+         * @param accountPrivilegeDetails Specific SQL operation permissions, separated by English commas; required for Custom type
          * 
          * @return builder
          * 

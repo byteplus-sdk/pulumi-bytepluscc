@@ -17,110 +17,110 @@ import java.util.Objects;
 @CustomType
 public final class GetNodePoolKubernetesConfig {
     /**
-     * @return 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+     * @return Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
      * 
      */
     private Boolean autoSyncDisabled;
     /**
-     * @return 节点池 Containerd 相关配置。
+     * @return Node pool Containerd configuration
      * 
      */
     private GetNodePoolKubernetesConfigContainerdConfig containerdConfig;
     /**
-     * @return 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+     * @return Node blocking configuration. Parameter values: false: not blocked; true: blocked
      * 
      */
     private Boolean cordon;
     /**
-     * @return Kubelet 组件的相关配置
+     * @return Kubelet component configuration
      * 
      */
     private GetNodePoolKubernetesConfigKubeletConfig kubeletConfig;
     /**
-     * @return 节点池/节点的 Kubernetes 标签（Labels）信息。
+     * @return Kubernetes label information for node pools/nodes
      * 
      */
     private List<GetNodePoolKubernetesConfigLabel> labels;
     /**
-     * @return Kubernetes 中节点对象的元数据名称前缀。
+     * @return Prefix for node object metadata name in Kubernetes
      * 
      */
     private String namePrefix;
     /**
-     * @return Kubernetes 中节点对象的元数据名称后缀。
+     * @return Suffix for node object metadata name in Kubernetes
      * 
      */
     private String nameSuffix;
     /**
-     * @return Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+     * @return Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
      * 
      */
     private Boolean nameUseHostname;
     /**
-     * @return 节点池/节点的 Kubernetes 污点（Taints）信息。
+     * @return Kubernetes taint information for node pools/nodes
      * 
      */
     private List<GetNodePoolKubernetesConfigTaint> taints;
 
     private GetNodePoolKubernetesConfig() {}
     /**
-     * @return 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+     * @return Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
      * 
      */
     public Boolean autoSyncDisabled() {
         return this.autoSyncDisabled;
     }
     /**
-     * @return 节点池 Containerd 相关配置。
+     * @return Node pool Containerd configuration
      * 
      */
     public GetNodePoolKubernetesConfigContainerdConfig containerdConfig() {
         return this.containerdConfig;
     }
     /**
-     * @return 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+     * @return Node blocking configuration. Parameter values: false: not blocked; true: blocked
      * 
      */
     public Boolean cordon() {
         return this.cordon;
     }
     /**
-     * @return Kubelet 组件的相关配置
+     * @return Kubelet component configuration
      * 
      */
     public GetNodePoolKubernetesConfigKubeletConfig kubeletConfig() {
         return this.kubeletConfig;
     }
     /**
-     * @return 节点池/节点的 Kubernetes 标签（Labels）信息。
+     * @return Kubernetes label information for node pools/nodes
      * 
      */
     public List<GetNodePoolKubernetesConfigLabel> labels() {
         return this.labels;
     }
     /**
-     * @return Kubernetes 中节点对象的元数据名称前缀。
+     * @return Prefix for node object metadata name in Kubernetes
      * 
      */
     public String namePrefix() {
         return this.namePrefix;
     }
     /**
-     * @return Kubernetes 中节点对象的元数据名称后缀。
+     * @return Suffix for node object metadata name in Kubernetes
      * 
      */
     public String nameSuffix() {
         return this.nameSuffix;
     }
     /**
-     * @return Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+     * @return Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
      * 
      */
     public Boolean nameUseHostname() {
         return this.nameUseHostname;
     }
     /**
-     * @return 节点池/节点的 Kubernetes 污点（Taints）信息。
+     * @return Kubernetes taint information for node pools/nodes
      * 
      */
     public List<GetNodePoolKubernetesConfigTaint> taints() {

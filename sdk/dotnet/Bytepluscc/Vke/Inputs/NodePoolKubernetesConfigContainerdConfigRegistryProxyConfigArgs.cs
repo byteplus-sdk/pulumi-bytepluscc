@@ -17,7 +17,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         private InputList<string>? _proxyEndpoints;
 
         /// <summary>
-        /// 代理地址。
+        /// Proxy address.
         /// </summary>
         public InputList<string> ProxyEndpoints
         {
@@ -26,7 +26,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         }
 
         /// <summary>
-        /// 容器镜像仓库地址。
+        /// Container image repository address.
         /// </summary>
         [Input("registry")]
         public Input<string>? Registry { get; set; }

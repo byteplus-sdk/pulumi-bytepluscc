@@ -16,14 +16,14 @@ public final class UpstreamSourceSourceSpecK8SSourceArgs extends com.pulumi.reso
     public static final UpstreamSourceSourceSpecK8SSourceArgs Empty = new UpstreamSourceSourceSpecK8SSourceArgs();
 
     /**
-     * 集群ID。
+     * Cluster ID
      * 
      */
     @Import(name="clusterId")
     private @Nullable Output<String> clusterId;
 
     /**
-     * @return 集群ID。
+     * @return Cluster ID
      * 
      */
     public Optional<Output<String>> clusterId() {
@@ -31,14 +31,14 @@ public final class UpstreamSourceSourceSpecK8SSourceArgs extends com.pulumi.reso
     }
 
     /**
-     * 集群类型。
+     * Cluster type
      * 
      */
     @Import(name="clusterType")
     private @Nullable Output<String> clusterType;
 
     /**
-     * @return 集群类型。
+     * @return Cluster type
      * 
      */
     public Optional<Output<String>> clusterType() {
@@ -71,7 +71,7 @@ public final class UpstreamSourceSourceSpecK8SSourceArgs extends com.pulumi.reso
         }
 
         /**
-         * @param clusterId 集群ID。
+         * @param clusterId Cluster ID
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class UpstreamSourceSourceSpecK8SSourceArgs extends com.pulumi.reso
         }
 
         /**
-         * @param clusterId 集群ID。
+         * @param clusterId Cluster ID
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class UpstreamSourceSourceSpecK8SSourceArgs extends com.pulumi.reso
         }
 
         /**
-         * @param clusterType 集群类型。
+         * @param clusterType Cluster type
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class UpstreamSourceSourceSpecK8SSourceArgs extends com.pulumi.reso
         }
 
         /**
-         * @param clusterType 集群类型。
+         * @param clusterType Cluster type
          * 
          * @return builder
          * 

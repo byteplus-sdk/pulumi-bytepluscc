@@ -18,14 +18,14 @@ public final class OrganizationState extends com.pulumi.resources.ResourceArgs {
     public static final OrganizationState Empty = new OrganizationState();
 
     /**
-     * 组织详情
+     * Organization Details
      * 
      */
     @Import(name="organization")
     private @Nullable Output<OrganizationOrganizationArgs> organization;
 
     /**
-     * @return 组织详情
+     * @return Organization Details
      * 
      */
     public Optional<Output<OrganizationOrganizationArgs>> organization() {
@@ -33,14 +33,14 @@ public final class OrganizationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 组织ID
+     * Organization ID
      * 
      */
     @Import(name="organizationId")
     private @Nullable Output<String> organizationId;
 
     /**
-     * @return 组织ID
+     * @return Organization ID
      * 
      */
     public Optional<Output<String>> organizationId() {
@@ -48,14 +48,14 @@ public final class OrganizationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 管理员详情
+     * Administrator Details
      * 
      */
     @Import(name="owner")
     private @Nullable Output<OrganizationOwnerArgs> owner;
 
     /**
-     * @return 管理员详情
+     * @return Administrator Details
      * 
      */
     public Optional<Output<OrganizationOwnerArgs>> owner() {
@@ -89,7 +89,7 @@ public final class OrganizationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param organization 组织详情
+         * @param organization Organization Details
          * 
          * @return builder
          * 
@@ -100,7 +100,7 @@ public final class OrganizationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param organization 组织详情
+         * @param organization Organization Details
          * 
          * @return builder
          * 
@@ -110,7 +110,7 @@ public final class OrganizationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param organizationId 组织ID
+         * @param organizationId Organization ID
          * 
          * @return builder
          * 
@@ -121,7 +121,7 @@ public final class OrganizationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param organizationId 组织ID
+         * @param organizationId Organization ID
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class OrganizationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param owner 管理员详情
+         * @param owner Administrator Details
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class OrganizationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param owner 管理员详情
+         * @param owner Administrator Details
          * 
          * @return builder
          * 

@@ -16,14 +16,14 @@ public final class ResolverEndpointTagArgs extends com.pulumi.resources.Resource
     public static final ResolverEndpointTagArgs Empty = new ResolverEndpointTagArgs();
 
     /**
-     * 用户标签的标签键。
+     * User tag key
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 用户标签的标签键。
+     * @return User tag key
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class ResolverEndpointTagArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 用户标签的标签值。
+     * User tag value
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 用户标签的标签值。
+     * @return User tag value
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class ResolverEndpointTagArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param key 用户标签的标签键。
+         * @param key User tag key
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class ResolverEndpointTagArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param key 用户标签的标签键。
+         * @param key User tag key
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class ResolverEndpointTagArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param value 用户标签的标签值。
+         * @param value User tag value
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class ResolverEndpointTagArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param value 用户标签的标签值。
+         * @param value User tag value
          * 
          * @return builder
          * 

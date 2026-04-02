@@ -13,98 +13,98 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ServerGroupServer {
     /**
-     * @return 后端服务器的描述。
+     * @return Description of the backend server.
      * 
      */
     private @Nullable String description;
     /**
-     * @return 云服务器实例或网卡的ID。
+     * @return ID of the cloud server instance or network interface card.
      * 
      */
     private @Nullable String instanceId;
     /**
-     * @return 后端服务器的私网IP地址。
+     * @return Private IP address of the backend server.
      * 
      */
     private @Nullable String ip;
     /**
-     * @return 后端服务器接收请求的端口号。
+     * @return Port number on which the backend server receives requests.
      * 
      */
     private @Nullable Integer port;
     /**
-     * @return 是否开启远端IP功能。当后端服务器实例类型为IP地址，即 Type 取值为 ip 时，此字段有效。取值：on：开启。off（默认值）：不开启。
+     * @return Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
      * 
      */
     private @Nullable String remoteEnabled;
     /**
-     * @return 后端服务器ID。
+     * @return Backend server ID.
      * 
      */
     private @Nullable String serverId;
     /**
-     * @return 后端服务器实例类型。ecs：云服务器实例。eni：辅助网卡。ip：IP地址（仅 Ip 类型服务器组有效）。
+     * @return Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
      * 
      */
     private @Nullable String type;
     /**
-     * @return 后端服务器的权重。
+     * @return Weight of the backend server.
      * 
      */
     private @Nullable Integer weight;
 
     private ServerGroupServer() {}
     /**
-     * @return 后端服务器的描述。
+     * @return Description of the backend server.
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return 云服务器实例或网卡的ID。
+     * @return ID of the cloud server instance or network interface card.
      * 
      */
     public Optional<String> instanceId() {
         return Optional.ofNullable(this.instanceId);
     }
     /**
-     * @return 后端服务器的私网IP地址。
+     * @return Private IP address of the backend server.
      * 
      */
     public Optional<String> ip() {
         return Optional.ofNullable(this.ip);
     }
     /**
-     * @return 后端服务器接收请求的端口号。
+     * @return Port number on which the backend server receives requests.
      * 
      */
     public Optional<Integer> port() {
         return Optional.ofNullable(this.port);
     }
     /**
-     * @return 是否开启远端IP功能。当后端服务器实例类型为IP地址，即 Type 取值为 ip 时，此字段有效。取值：on：开启。off（默认值）：不开启。
+     * @return Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
      * 
      */
     public Optional<String> remoteEnabled() {
         return Optional.ofNullable(this.remoteEnabled);
     }
     /**
-     * @return 后端服务器ID。
+     * @return Backend server ID.
      * 
      */
     public Optional<String> serverId() {
         return Optional.ofNullable(this.serverId);
     }
     /**
-     * @return 后端服务器实例类型。ecs：云服务器实例。eni：辅助网卡。ip：IP地址（仅 Ip 类型服务器组有效）。
+     * @return Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
      * 
      */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }
     /**
-     * @return 后端服务器的权重。
+     * @return Weight of the backend server.
      * 
      */
     public Optional<Integer> weight() {

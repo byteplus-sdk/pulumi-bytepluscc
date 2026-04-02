@@ -12,50 +12,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AllowListAssociatedInstance {
     /**
-     * @return 已绑定当前白名单的实例 ID。
+     * @return Instance ID bound to the current allowlist.
      * 
      */
     private @Nullable String instanceId;
     /**
-     * @return 已绑定当前白名单的实例名称。
+     * @return Instance name bound to the current allowlist.
      * 
      */
     private @Nullable String instanceName;
     /**
-     * @return 实例所属的项目名称。
+     * @return Project name of the instance.
      * 
      */
     private @Nullable String projectName;
     /**
-     * @return 实例所属的私有网络 ID。
+     * @return Private network ID of the instance.
      * 
      */
     private @Nullable String vpc;
 
     private AllowListAssociatedInstance() {}
     /**
-     * @return 已绑定当前白名单的实例 ID。
+     * @return Instance ID bound to the current allowlist.
      * 
      */
     public Optional<String> instanceId() {
         return Optional.ofNullable(this.instanceId);
     }
     /**
-     * @return 已绑定当前白名单的实例名称。
+     * @return Instance name bound to the current allowlist.
      * 
      */
     public Optional<String> instanceName() {
         return Optional.ofNullable(this.instanceName);
     }
     /**
-     * @return 实例所属的项目名称。
+     * @return Project name of the instance.
      * 
      */
     public Optional<String> projectName() {
         return Optional.ofNullable(this.projectName);
     }
     /**
-     * @return 实例所属的私有网络 ID。
+     * @return Private network ID of the instance.
      * 
      */
     public Optional<String> vpc() {

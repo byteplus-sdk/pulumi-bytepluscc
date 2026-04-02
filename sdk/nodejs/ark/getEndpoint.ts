@@ -31,27 +31,27 @@ export interface GetEndpointArgs {
  */
 export interface GetEndpointResult {
     /**
-     * 是否只支持 BatchChat。如果为true，只能访问 Batch 推理接口，否则只能访问在线推理接口。
+     * Whether only BatchChat is supported. If true, only batch inference interfaces can be accessed; otherwise, only online inference interfaces can be accessed
      */
     readonly batchOnly: boolean;
     /**
-     * 证书信息。
+     * Certificate information
      */
     readonly certificate: outputs.ark.GetEndpointCertificate;
     /**
-     * 接入点创建时间，RFC3339格式。
+     * Endpoint creation time, RFC3339 format
      */
     readonly createTime: string;
     /**
-     * 接入点描述。
+     * Endpoint description
      */
     readonly description: string;
     /**
-     * 推理接入点的ID。
+     * Inference access point ID.
      */
     readonly endpointId: string;
     /**
-     * 接入点模型类型。取值:FoundationModel为基础模型;CustomModel为定制模型。
+     * Access point model type. Options: FoundationModel for base model; CustomModel for custom model.
      */
     readonly endpointModelType: string;
     /**
@@ -59,59 +59,59 @@ export interface GetEndpointResult {
      */
     readonly id: string;
     /**
-     * 接入点接入模型。
+     * Endpoint access model
      */
     readonly modelReference: outputs.ark.GetEndpointModelReference;
     /**
-     * 模型单元，为空表示后付费；否则预付费。
+     * Model unit. If empty, indicates postpaid; otherwise, prepaid.
      */
     readonly modelUnitId: string;
     /**
-     * 内容护栏方案。
+     * Content guardrail scheme
      */
     readonly moderation: outputs.ark.GetEndpointModeration;
     /**
-     * 接入点名称。
+     * Endpoint name
      */
     readonly name: string;
     /**
-     * 资源所属的项目名称，默认值为default。
+     * Project name the resource belongs to; default value is "default"
      */
     readonly projectName: string;
     /**
-     * 接入点限流。
+     * Endpoint rate limiting
      */
     readonly rateLimit: outputs.ark.GetEndpointRateLimit;
     /**
-     * 接入点切换的Id。
+     * Endpoint switch ID
      */
     readonly rollingId: string;
     /**
-     * 如果存在 TPM 保障包，则为 TPM 保障包 ID。
+     * If a TPM protection package exists, this is the TPM protection package ID.
      */
     readonly scaleTierId: string;
     /**
-     * 接入点状态。
+     * Endpoint status
      */
     readonly status: string;
     /**
-     * 状态附加说明信息。
+     * Additional status information
      */
     readonly statusReason: string;
     /**
-     * 是否支持接入点切换模型版本。
+     * Whether endpoint supports switching model versions
      */
     readonly supportRolling: boolean;
     /**
-     * 是否支持TPM保障包。
+     * Whether TPM protection package is supported
      */
     readonly supportScaleTier: boolean;
     /**
-     * 接入点绑定的标签。
+     * Tags bound to the endpoint
      */
     readonly tags: outputs.ark.GetEndpointTag[];
     /**
-     * 接入点更新时间，RFC3339格式。
+     * Endpoint update time, RFC3339 format
      */
     readonly updateTime: string;
 }

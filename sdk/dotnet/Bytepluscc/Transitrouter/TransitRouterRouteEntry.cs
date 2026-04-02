@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
 {
     /// <summary>
-    /// 通过为网络实例连接或跨地域连接关联的路由表创建或删除静态路由，能够灵活地控制中转路由器中的流量走向。
+    /// By creating or deleting static routes in route tables associated with network instance connections or cross-region connections, you can flexibly control traffic direction in the transit router
     /// 
     /// ## Import
     /// 
@@ -23,85 +23,85 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
     public partial class TransitRouterRouteEntry : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 路由条目的AS路径。
+        /// AS path of the route entry
         /// </summary>
         [Output("asPaths")]
         public Output<ImmutableArray<string>> AsPaths { get; private set; } = null!;
 
         /// <summary>
-        /// 路由条目的创建时间。
+        /// Creation time of the route entry
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// TR路由表路由条目的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        /// Description of the TR route table entry. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 路由条目的目标网段。
+        /// Destination CIDR block of the route entry
         /// </summary>
         [Output("destinationCidrBlock")]
         public Output<string> DestinationCidrBlock { get; private set; } = null!;
 
         /// <summary>
-        /// 路由条目的状态。Available：可用。Creating：创建中。Pending：配置中。Deleting：删除中。Conflicted：未生效。
+        /// Status of the route entry. Available: Available. Creating: Creating. Pending: Configuring. Deleting: Deleting. Conflicted: Inactive
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// TR路由条目的ID。
+        /// ID of the TR route entry
         /// </summary>
         [Output("transitRouterRouteEntryId")]
         public Output<string> TransitRouterRouteEntryId { get; private set; } = null!;
 
         /// <summary>
-        /// 路由条目的名称。
+        /// Name of the route entry
         /// </summary>
         [Output("transitRouterRouteEntryName")]
         public Output<string> TransitRouterRouteEntryName { get; private set; } = null!;
 
         /// <summary>
-        /// 路由条目的下一跳ID。
+        /// Next hop ID of the route entry
         /// </summary>
         [Output("transitRouterRouteEntryNextHopId")]
         public Output<string> TransitRouterRouteEntryNextHopId { get; private set; } = null!;
 
         /// <summary>
-        /// 路由条目下一跳网络实例ID。
+        /// Next hop network instance ID of the route entry
         /// </summary>
         [Output("transitRouterRouteEntryNextHopResourceId")]
         public Output<string> TransitRouterRouteEntryNextHopResourceId { get; private set; } = null!;
 
         /// <summary>
-        /// 路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+        /// Type of the next hop network instance for the route entry. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
         /// </summary>
         [Output("transitRouterRouteEntryNextHopResourceType")]
         public Output<string> TransitRouterRouteEntryNextHopResourceType { get; private set; } = null!;
 
         /// <summary>
-        /// 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
+        /// Next hop type of the route entry. Valid values: Attachment: Network instance. Traffic matching this route entry will be forwarded to the specified network instance. BlackHole: Black hole. Traffic matching this route entry will be dropped
         /// </summary>
         [Output("transitRouterRouteEntryNextHopType")]
         public Output<string> TransitRouterRouteEntryNextHopType { get; private set; } = null!;
 
         /// <summary>
-        /// 路由条目的类型。Static：静态路由。Propagated：自动学习路由。
+        /// Type of the route entry. Static: Static route. Propagated: Learned route
         /// </summary>
         [Output("transitRouterRouteEntryType")]
         public Output<string> TransitRouterRouteEntryType { get; private set; } = null!;
 
         /// <summary>
-        /// 中转路由器实例关联的路由表的ID。
+        /// ID of the route table associated with the transit router instance
         /// </summary>
         [Output("transitRouterRouteTableId")]
         public Output<string> TransitRouterRouteTableId { get; private set; } = null!;
 
         /// <summary>
-        /// 路由条目的更新时间。
+        /// Last updated time of the route entry
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
@@ -154,37 +154,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
     public sealed class TransitRouterRouteEntryArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// TR路由表路由条目的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        /// Description of the TR route table entry. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 路由条目的目标网段。
+        /// Destination CIDR block of the route entry
         /// </summary>
         [Input("destinationCidrBlock", required: true)]
         public Input<string> DestinationCidrBlock { get; set; } = null!;
 
         /// <summary>
-        /// 路由条目的名称。
+        /// Name of the route entry
         /// </summary>
         [Input("transitRouterRouteEntryName")]
         public Input<string>? TransitRouterRouteEntryName { get; set; }
 
         /// <summary>
-        /// 路由条目的下一跳ID。
+        /// Next hop ID of the route entry
         /// </summary>
         [Input("transitRouterRouteEntryNextHopId")]
         public Input<string>? TransitRouterRouteEntryNextHopId { get; set; }
 
         /// <summary>
-        /// 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
+        /// Next hop type of the route entry. Valid values: Attachment: Network instance. Traffic matching this route entry will be forwarded to the specified network instance. BlackHole: Black hole. Traffic matching this route entry will be dropped
         /// </summary>
         [Input("transitRouterRouteEntryNextHopType", required: true)]
         public Input<string> TransitRouterRouteEntryNextHopType { get; set; } = null!;
 
         /// <summary>
-        /// 中转路由器实例关联的路由表的ID。
+        /// ID of the route table associated with the transit router instance
         /// </summary>
         [Input("transitRouterRouteTableId", required: true)]
         public Input<string> TransitRouterRouteTableId { get; set; } = null!;
@@ -201,7 +201,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
         private InputList<string>? _asPaths;
 
         /// <summary>
-        /// 路由条目的AS路径。
+        /// AS path of the route entry
         /// </summary>
         public InputList<string> AsPaths
         {
@@ -210,79 +210,79 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
         }
 
         /// <summary>
-        /// 路由条目的创建时间。
+        /// Creation time of the route entry
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// TR路由表路由条目的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        /// Description of the TR route table entry. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 路由条目的目标网段。
+        /// Destination CIDR block of the route entry
         /// </summary>
         [Input("destinationCidrBlock")]
         public Input<string>? DestinationCidrBlock { get; set; }
 
         /// <summary>
-        /// 路由条目的状态。Available：可用。Creating：创建中。Pending：配置中。Deleting：删除中。Conflicted：未生效。
+        /// Status of the route entry. Available: Available. Creating: Creating. Pending: Configuring. Deleting: Deleting. Conflicted: Inactive
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// TR路由条目的ID。
+        /// ID of the TR route entry
         /// </summary>
         [Input("transitRouterRouteEntryId")]
         public Input<string>? TransitRouterRouteEntryId { get; set; }
 
         /// <summary>
-        /// 路由条目的名称。
+        /// Name of the route entry
         /// </summary>
         [Input("transitRouterRouteEntryName")]
         public Input<string>? TransitRouterRouteEntryName { get; set; }
 
         /// <summary>
-        /// 路由条目的下一跳ID。
+        /// Next hop ID of the route entry
         /// </summary>
         [Input("transitRouterRouteEntryNextHopId")]
         public Input<string>? TransitRouterRouteEntryNextHopId { get; set; }
 
         /// <summary>
-        /// 路由条目下一跳网络实例ID。
+        /// Next hop network instance ID of the route entry
         /// </summary>
         [Input("transitRouterRouteEntryNextHopResourceId")]
         public Input<string>? TransitRouterRouteEntryNextHopResourceId { get; set; }
 
         /// <summary>
-        /// 路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+        /// Type of the next hop network instance for the route entry. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
         /// </summary>
         [Input("transitRouterRouteEntryNextHopResourceType")]
         public Input<string>? TransitRouterRouteEntryNextHopResourceType { get; set; }
 
         /// <summary>
-        /// 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
+        /// Next hop type of the route entry. Valid values: Attachment: Network instance. Traffic matching this route entry will be forwarded to the specified network instance. BlackHole: Black hole. Traffic matching this route entry will be dropped
         /// </summary>
         [Input("transitRouterRouteEntryNextHopType")]
         public Input<string>? TransitRouterRouteEntryNextHopType { get; set; }
 
         /// <summary>
-        /// 路由条目的类型。Static：静态路由。Propagated：自动学习路由。
+        /// Type of the route entry. Static: Static route. Propagated: Learned route
         /// </summary>
         [Input("transitRouterRouteEntryType")]
         public Input<string>? TransitRouterRouteEntryType { get; set; }
 
         /// <summary>
-        /// 中转路由器实例关联的路由表的ID。
+        /// ID of the route table associated with the transit router instance
         /// </summary>
         [Input("transitRouterRouteTableId")]
         public Input<string>? TransitRouterRouteTableId { get; set; }
 
         /// <summary>
-        /// 路由条目的更新时间。
+        /// Last updated time of the route entry
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }

@@ -18,14 +18,14 @@ public final class DefaultNodePoolAutoScalingArgs extends com.pulumi.resources.R
     public static final DefaultNodePoolAutoScalingArgs Empty = new DefaultNodePoolAutoScalingArgs();
 
     /**
-     * 配置节点池的期望节点数。
+     * Configure the desired number of nodes in the node pool.
      * 
      */
     @Import(name="desiredReplicas")
     private @Nullable Output<Integer> desiredReplicas;
 
     /**
-     * @return 配置节点池的期望节点数。
+     * @return Configure the desired number of nodes in the node pool.
      * 
      */
     public Optional<Output<Integer>> desiredReplicas() {
@@ -33,14 +33,14 @@ public final class DefaultNodePoolAutoScalingArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+     * Configure the switch for node pool auto scaling. Parameter values: false: disabled true: enabled
      * 
      */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
     /**
-     * @return 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+     * @return Configure the switch for node pool auto scaling. Parameter values: false: disabled true: enabled
      * 
      */
     public Optional<Output<Boolean>> enabled() {
@@ -48,14 +48,14 @@ public final class DefaultNodePoolAutoScalingArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 配置节点池的最大节点数。
+     * Configure the maximum number of nodes in the node pool
      * 
      */
     @Import(name="maxReplicas")
     private @Nullable Output<Integer> maxReplicas;
 
     /**
-     * @return 配置节点池的最大节点数。
+     * @return Configure the maximum number of nodes in the node pool
      * 
      */
     public Optional<Output<Integer>> maxReplicas() {
@@ -63,14 +63,14 @@ public final class DefaultNodePoolAutoScalingArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 配置节点池的最小节点数。
+     * Configure the minimum number of nodes in the node pool
      * 
      */
     @Import(name="minReplicas")
     private @Nullable Output<Integer> minReplicas;
 
     /**
-     * @return 配置节点池的最小节点数。
+     * @return Configure the minimum number of nodes in the node pool
      * 
      */
     public Optional<Output<Integer>> minReplicas() {
@@ -78,14 +78,14 @@ public final class DefaultNodePoolAutoScalingArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 优先级。
+     * Priority
      * 
      */
     @Import(name="priority")
     private @Nullable Output<Integer> priority;
 
     /**
-     * @return 优先级。
+     * @return Priority
      * 
      */
     public Optional<Output<Integer>> priority() {
@@ -93,14 +93,14 @@ public final class DefaultNodePoolAutoScalingArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 伸缩组ID。
+     * Scaling group ID
      * 
      */
     @Import(name="scalingGroupId")
     private @Nullable Output<String> scalingGroupId;
 
     /**
-     * @return 伸缩组ID。
+     * @return Scaling group ID
      * 
      */
     public Optional<Output<String>> scalingGroupId() {
@@ -108,14 +108,14 @@ public final class DefaultNodePoolAutoScalingArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+     * Multi-subnet scheduling policy for the node pool. Parameter value description: ZoneBalance: availability zone balancing policy. Priority: subnet priority policy.
      * 
      */
     @Import(name="subnetPolicy")
     private @Nullable Output<String> subnetPolicy;
 
     /**
-     * @return 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+     * @return Multi-subnet scheduling policy for the node pool. Parameter value description: ZoneBalance: availability zone balancing policy. Priority: subnet priority policy.
      * 
      */
     public Optional<Output<String>> subnetPolicy() {
@@ -153,7 +153,7 @@ public final class DefaultNodePoolAutoScalingArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param desiredReplicas 配置节点池的期望节点数。
+         * @param desiredReplicas Configure the desired number of nodes in the node pool.
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class DefaultNodePoolAutoScalingArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param desiredReplicas 配置节点池的期望节点数。
+         * @param desiredReplicas Configure the desired number of nodes in the node pool.
          * 
          * @return builder
          * 
@@ -174,7 +174,7 @@ public final class DefaultNodePoolAutoScalingArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param enabled 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+         * @param enabled Configure the switch for node pool auto scaling. Parameter values: false: disabled true: enabled
          * 
          * @return builder
          * 
@@ -185,7 +185,7 @@ public final class DefaultNodePoolAutoScalingArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param enabled 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+         * @param enabled Configure the switch for node pool auto scaling. Parameter values: false: disabled true: enabled
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class DefaultNodePoolAutoScalingArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param maxReplicas 配置节点池的最大节点数。
+         * @param maxReplicas Configure the maximum number of nodes in the node pool
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class DefaultNodePoolAutoScalingArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param maxReplicas 配置节点池的最大节点数。
+         * @param maxReplicas Configure the maximum number of nodes in the node pool
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class DefaultNodePoolAutoScalingArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param minReplicas 配置节点池的最小节点数。
+         * @param minReplicas Configure the minimum number of nodes in the node pool
          * 
          * @return builder
          * 
@@ -227,7 +227,7 @@ public final class DefaultNodePoolAutoScalingArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param minReplicas 配置节点池的最小节点数。
+         * @param minReplicas Configure the minimum number of nodes in the node pool
          * 
          * @return builder
          * 
@@ -237,7 +237,7 @@ public final class DefaultNodePoolAutoScalingArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param priority 优先级。
+         * @param priority Priority
          * 
          * @return builder
          * 
@@ -248,7 +248,7 @@ public final class DefaultNodePoolAutoScalingArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param priority 优先级。
+         * @param priority Priority
          * 
          * @return builder
          * 
@@ -258,7 +258,7 @@ public final class DefaultNodePoolAutoScalingArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param scalingGroupId 伸缩组ID。
+         * @param scalingGroupId Scaling group ID
          * 
          * @return builder
          * 
@@ -269,7 +269,7 @@ public final class DefaultNodePoolAutoScalingArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param scalingGroupId 伸缩组ID。
+         * @param scalingGroupId Scaling group ID
          * 
          * @return builder
          * 
@@ -279,7 +279,7 @@ public final class DefaultNodePoolAutoScalingArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param subnetPolicy 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+         * @param subnetPolicy Multi-subnet scheduling policy for the node pool. Parameter value description: ZoneBalance: availability zone balancing policy. Priority: subnet priority policy.
          * 
          * @return builder
          * 
@@ -290,7 +290,7 @@ public final class DefaultNodePoolAutoScalingArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param subnetPolicy 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+         * @param subnetPolicy Multi-subnet scheduling policy for the node pool. Parameter value description: ZoneBalance: availability zone balancing policy. Priority: subnet priority policy.
          * 
          * @return builder
          * 

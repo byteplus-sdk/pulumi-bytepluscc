@@ -253,7 +253,7 @@ class GetDomainResult:
     @pulumi.getter(name="accessMode")
     def access_mode(self) -> builtins.int:
         """
-        接入模式。10：CNAME 接入，11：负载均衡（CLB）7 层接入。
+        Access mode. 10: CNAME access, 11: Layer 7 load balancing (CLB) access.
         """
         return pulumi.get(self, "access_mode")
 
@@ -261,7 +261,7 @@ class GetDomainResult:
     @pulumi.getter(name="advancedDefenseIp")
     def advanced_defense_ip(self) -> builtins.str:
         """
-        高防实例 IP。高防型 WAF 接入展示，否则为空。
+        High defense instance IP. Displayed for high-defense WAF access; otherwise blank.
         """
         return pulumi.get(self, "advanced_defense_ip")
 
@@ -269,7 +269,7 @@ class GetDomainResult:
     @pulumi.getter(name="advancedDefenseIpv6")
     def advanced_defense_ipv6(self) -> builtins.str:
         """
-        高防实例 Ipv6。高防型 WAF 接入展示，否则为空。
+        High defense instance IPv6. Displayed for high-defense WAF access; otherwise blank.
         """
         return pulumi.get(self, "advanced_defense_ipv6")
 
@@ -277,7 +277,7 @@ class GetDomainResult:
     @pulumi.getter(name="apiEnable")
     def api_enable(self) -> builtins.int:
         """
-        是否开启了 API 防护策略。0：关闭，1：开启。
+        API protection policy enabled. 0: Off, 1: On
         """
         return pulumi.get(self, "api_enable")
 
@@ -285,7 +285,7 @@ class GetDomainResult:
     @pulumi.getter(name="attackStatus")
     def attack_status(self) -> builtins.int:
         """
-        攻击状态。0:未发现攻击,1:发现攻击。
+        Attack status. 0: No attack detected, 1: Attack detected.
         """
         return pulumi.get(self, "attack_status")
 
@@ -293,7 +293,7 @@ class GetDomainResult:
     @pulumi.getter(name="autoCcEnable")
     def auto_cc_enable(self) -> builtins.int:
         """
-        是否开启智能 CC 防护策略。0：关闭，1：开启。
+        Whether to enable intelligent CC protection policy. 0: Disabled, 1: Enabled.
         """
         return pulumi.get(self, "auto_cc_enable")
 
@@ -301,7 +301,7 @@ class GetDomainResult:
     @pulumi.getter(name="automaticBlackEnable")
     def automatic_black_enable(self) -> builtins.int:
         """
-        是否开启自动封禁。0：关闭，1：开启。
+        Whether to enable automatic blocking. 0: Disabled, 1: Enabled.
         """
         return pulumi.get(self, "automatic_black_enable")
 
@@ -309,7 +309,7 @@ class GetDomainResult:
     @pulumi.getter(name="backendGroups")
     def backend_groups(self) -> Sequence['outputs.GetDomainBackendGroupResult']:
         """
-        源站配置。
+        Origin configuration.
         """
         return pulumi.get(self, "backend_groups")
 
@@ -317,7 +317,7 @@ class GetDomainResult:
     @pulumi.getter(name="blackIpEnable")
     def black_ip_enable(self) -> builtins.int:
         """
-        是否开启了黑名单策略。0：关闭, 1：开启。
+        Denylist policy enabled. 0: Off, 1: On
         """
         return pulumi.get(self, "black_ip_enable")
 
@@ -325,7 +325,7 @@ class GetDomainResult:
     @pulumi.getter(name="blackLctEnable")
     def black_lct_enable(self) -> builtins.int:
         """
-        是否开启了区域封禁策略。0：关闭;1：开启。
+        Whether to enable regional blocking policy. 0: Disabled; 1: Enabled.
         """
         return pulumi.get(self, "black_lct_enable")
 
@@ -333,7 +333,7 @@ class GetDomainResult:
     @pulumi.getter(name="botDytokenEnable")
     def bot_dytoken_enable(self) -> builtins.int:
         """
-        是否开启动态Token防护。
+        Dynamic token protection enabled
         """
         return pulumi.get(self, "bot_dytoken_enable")
 
@@ -341,9 +341,9 @@ class GetDomainResult:
     @pulumi.getter(name="botFrequencyEnable")
     def bot_frequency_enable(self) -> builtins.int:
         """
-        是否开启 bot 频率限制策略。
-        0：关闭
-        1：开启。
+        Bot rate limit policy enabled.
+        0: Off
+        1: On
         """
         return pulumi.get(self, "bot_frequency_enable")
 
@@ -351,9 +351,9 @@ class GetDomainResult:
     @pulumi.getter(name="botRepeatEnable")
     def bot_repeat_enable(self) -> builtins.int:
         """
-        是否开启 bot 统计防护策略。
-        0：关闭
-        1：开启。
+        Bot statistics protection policy enabled.
+        0: Off
+        1: On
         """
         return pulumi.get(self, "bot_repeat_enable")
 
@@ -361,11 +361,11 @@ class GetDomainResult:
     @pulumi.getter(name="botSequenceDefaultAction")
     def bot_sequence_default_action(self) -> builtins.int:
         """
-        设置 bot 行为地图策略默认动作，当 BotSequenceEnable = 1 开启状态时生效。默认为 0 （观察）。
-        0：观察
-        2：拦截
-        6：JS 挑战
-        7：人机验证。
+        Set the default action for the bot behavior map policy. Effective when BotSequenceEnable = 1 is enabled. Default is 0 (Observe).
+        0: Observe
+        2: Intercept
+        6: JS Challenge
+        7: CAPTCHA.
         """
         return pulumi.get(self, "bot_sequence_default_action")
 
@@ -373,9 +373,9 @@ class GetDomainResult:
     @pulumi.getter(name="botSequenceEnable")
     def bot_sequence_enable(self) -> builtins.int:
         """
-        是否开启 bot 行为地图。
-        0：关闭
-        1：开启。
+        Whether to enable bot behavior map.
+        0: Off
+        1: On.
         """
         return pulumi.get(self, "bot_sequence_enable")
 
@@ -383,9 +383,9 @@ class GetDomainResult:
     @pulumi.getter(name="ccEnable")
     def cc_enable(self) -> builtins.int:
         """
-        是否开启 CC 防护策略。
-        0：关闭
-        1：开启。
+        Whether to enable CC protection policy.
+        0: Disabled
+        1: Enabled.
         """
         return pulumi.get(self, "cc_enable")
 
@@ -393,7 +393,7 @@ class GetDomainResult:
     @pulumi.getter(name="certificateId")
     def certificate_id(self) -> builtins.str:
         """
-        托管至证书中心的证书ID。
+        Certificate ID managed in Certificate Center
         """
         return pulumi.get(self, "certificate_id")
 
@@ -401,7 +401,7 @@ class GetDomainResult:
     @pulumi.getter(name="certificateName")
     def certificate_name(self) -> builtins.str:
         """
-        证书名称，协议类型包含 HTTPS 时显示。
+        Certificate name. Displayed when protocol type includes HTTPS.
         """
         return pulumi.get(self, "certificate_name")
 
@@ -409,7 +409,7 @@ class GetDomainResult:
     @pulumi.getter(name="certificatePlatform")
     def certificate_platform(self) -> builtins.str:
         """
-        证书托管平台:waf/certificate_service。
+        Certificate hosting platform: waf/certificate_service.
         """
         return pulumi.get(self, "certificate_platform")
 
@@ -417,7 +417,7 @@ class GetDomainResult:
     @pulumi.getter(name="clbInstanceIds")
     def clb_instance_ids(self) -> builtins.str:
         """
-        CLB实例ID。
+        CLB instance ID.
         """
         return pulumi.get(self, "clb_instance_ids")
 
@@ -425,7 +425,7 @@ class GetDomainResult:
     @pulumi.getter(name="clbListenerId")
     def clb_listener_id(self) -> builtins.str:
         """
-        CLB监听器ID。
+        CLB listener ID.
         """
         return pulumi.get(self, "clb_listener_id")
 
@@ -433,7 +433,7 @@ class GetDomainResult:
     @pulumi.getter(name="clbPoolId")
     def clb_pool_id(self) -> builtins.str:
         """
-        CLB后端服务器组ID。
+        CLB backend server group ID.
         """
         return pulumi.get(self, "clb_pool_id")
 
@@ -441,7 +441,7 @@ class GetDomainResult:
     @pulumi.getter(name="clbServerId")
     def clb_server_id(self) -> builtins.str:
         """
-        CLB后端服务器ID。
+        CLB backend server ID
         """
         return pulumi.get(self, "clb_server_id")
 
@@ -449,7 +449,7 @@ class GetDomainResult:
     @pulumi.getter(name="clientIpLocation")
     def client_ip_location(self) -> builtins.int:
         """
-        客户端IP获取方式。0:自定义Header字段,1:通过X-Forwarded-For(XFF)字段中第一个公网IP地址作为客户端真实IP地址。
+        Client IP acquisition method. 0: Custom header field, 1: Use the first public IP address in the X-Forwarded-For (XFF) field as the real client IP address.
         """
         return pulumi.get(self, "client_ip_location")
 
@@ -457,7 +457,7 @@ class GetDomainResult:
     @pulumi.getter(name="clientMaxBodySize")
     def client_max_body_size(self) -> builtins.int:
         """
-        客户端请求body最大值(MB)。
+        Maximum client request body size (MB).
         """
         return pulumi.get(self, "client_max_body_size")
 
@@ -465,7 +465,7 @@ class GetDomainResult:
     @pulumi.getter(name="cloudAccessConfigs")
     def cloud_access_configs(self) -> Sequence['outputs.GetDomainCloudAccessConfigResult']:
         """
-        LB接入参数。
+        LB access parameters.
         """
         return pulumi.get(self, "cloud_access_configs")
 
@@ -473,7 +473,7 @@ class GetDomainResult:
     @pulumi.getter
     def cname(self) -> builtins.str:
         """
-        CNAME记录。
+        CNAME record.
         """
         return pulumi.get(self, "cname")
 
@@ -481,7 +481,7 @@ class GetDomainResult:
     @pulumi.getter(name="customBotEnable")
     def custom_bot_enable(self) -> builtins.int:
         """
-        是否开启自定义BOT防护。
+        Whether to enable custom bot protection.
         """
         return pulumi.get(self, "custom_bot_enable")
 
@@ -489,7 +489,7 @@ class GetDomainResult:
     @pulumi.getter(name="customHeaders")
     def custom_headers(self) -> Sequence[builtins.str]:
         """
-        自定义Header。
+        Custom header.
         """
         return pulumi.get(self, "custom_headers")
 
@@ -497,7 +497,7 @@ class GetDomainResult:
     @pulumi.getter(name="customRspEnable")
     def custom_rsp_enable(self) -> builtins.int:
         """
-        是否开启自定义响应。
+        Whether to enable custom response.
         """
         return pulumi.get(self, "custom_rsp_enable")
 
@@ -505,7 +505,7 @@ class GetDomainResult:
     @pulumi.getter(name="customSni")
     def custom_sni(self) -> builtins.str:
         """
-        自定义SNI。
+        Custom SNI.
         """
         return pulumi.get(self, "custom_sni")
 
@@ -513,14 +513,14 @@ class GetDomainResult:
     @pulumi.getter(name="defenceMode")
     def defence_mode(self) -> builtins.int:
         """
-        为例外 ALB 实例设置防护模式。
-        1：启用防护，已配置的防护策略生效。
-        2：暂停防护，仅执行转发而不检测，已配置的防护策略不生效。
-        3：回源模式，直接将请求解析至源站，不再转发至 WAF 实例。
-        设置例外防护实例后，域名可能还会存在以下防护状态：
-        5：部分启用，默认防护模式为启用防护，但存在例外实例为暂停防护或回源模式状态。
-        6：部分暂停，默认防护模式为暂停防护，但存在例外实例为启用防护或回源模式状态。
-        7：部分回源，默认防护模式为回源模式，但存在例外实例为启用防护或暂停防护状态。
+        Set protection mode for exception ALB instances.
+        1: Enable protection. The configured protection policies take effect.
+        2: Pause protection. Only forwarding is performed without inspection; the configured protection policies do not take effect.
+        3: Origin mode. Requests are sent directly to the origin server and are no longer forwarded to the WAF instance.
+        After configuring exception protection instances, the domain may also have the following protection statuses:
+        5: Partially enabled. The default protection mode is enabled, but some exception instances are in paused protection or origin mode.
+        6: Partially paused. The default protection mode is paused, but some exception instances are in enabled protection or origin mode.
+        7: Partially origin. The default protection mode is origin mode, but some exception instances are in enabled protection or paused protection.
         """
         return pulumi.get(self, "defence_mode")
 
@@ -528,7 +528,7 @@ class GetDomainResult:
     @pulumi.getter(name="dlpEnable")
     def dlp_enable(self) -> builtins.int:
         """
-        是否开启数据泄露防护。
+        Data leakage protection enabled
         """
         return pulumi.get(self, "dlp_enable")
 
@@ -536,7 +536,7 @@ class GetDomainResult:
     @pulumi.getter
     def domain(self) -> builtins.str:
         """
-        防护的域名信息，支持泛域名和精确域名。
+        Protected domain information. Supports wildcard and exact domains
         """
         return pulumi.get(self, "domain")
 
@@ -544,7 +544,7 @@ class GetDomainResult:
     @pulumi.getter(name="enableCustomRedirect")
     def enable_custom_redirect(self) -> builtins.int:
         """
-        是否开启用户自定义重定向。0:关闭,1:开启。
+        User-defined redirection enabled. 0: Off, 1: On
         """
         return pulumi.get(self, "enable_custom_redirect")
 
@@ -552,7 +552,7 @@ class GetDomainResult:
     @pulumi.getter(name="enableHttp2")
     def enable_http2(self) -> builtins.int:
         """
-        是否开启HTTP2.0。0:关闭,1:开启。
+        Whether to enable HTTP/2.0. 0: Disabled, 1: Enabled.
         """
         return pulumi.get(self, "enable_http2")
 
@@ -560,7 +560,7 @@ class GetDomainResult:
     @pulumi.getter(name="enableIpv6")
     def enable_ipv6(self) -> builtins.int:
         """
-        是否支持防护Ipv6请求。0:关闭,1:开启。
+        IPv6 request protection supported. 0: Off, 1: On
         """
         return pulumi.get(self, "enable_ipv6")
 
@@ -568,7 +568,7 @@ class GetDomainResult:
     @pulumi.getter(name="enableSni")
     def enable_sni(self) -> builtins.int:
         """
-        是否开启SNI配置。0:关闭,1:开启。
+        Whether to enable SNI configuration. 0: Off, 1: On.
         """
         return pulumi.get(self, "enable_sni")
 
@@ -584,7 +584,7 @@ class GetDomainResult:
     @pulumi.getter(name="keepAliveRequest")
     def keep_alive_request(self) -> builtins.int:
         """
-        长连接复用个数。
+        Persistent connection reuse count
         """
         return pulumi.get(self, "keep_alive_request")
 
@@ -592,7 +592,7 @@ class GetDomainResult:
     @pulumi.getter(name="keepAliveTimeout")
     def keep_alive_timeout(self) -> builtins.int:
         """
-        长连接保持时间(秒)。
+        Persistent connection keep-alive time (seconds)
         """
         return pulumi.get(self, "keep_alive_timeout")
 
@@ -600,7 +600,7 @@ class GetDomainResult:
     @pulumi.getter(name="lbAlgorithm")
     def lb_algorithm(self) -> builtins.str:
         """
-        负载均衡算法类型。wrr:加权轮询,wlc:加权最小连接数,sh:源地址哈希。
+        Load balancing algorithm type. wrr: Weighted round robin, wlc: Weighted least connections, sh: Source address hash.
         """
         return pulumi.get(self, "lb_algorithm")
 
@@ -608,7 +608,7 @@ class GetDomainResult:
     @pulumi.getter
     def port(self) -> builtins.int:
         """
-        端口号。
+        Port number
         """
         return pulumi.get(self, "port")
 
@@ -616,7 +616,7 @@ class GetDomainResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        项目名称。
+        Project name.
         """
         return pulumi.get(self, "project_name")
 
@@ -624,7 +624,7 @@ class GetDomainResult:
     @pulumi.getter(name="protocolFollow")
     def protocol_follow(self) -> builtins.int:
         """
-        是否开启协议跟随。0:关闭,1:开启。
+        Protocol following enabled. 0: Off, 1: On
         """
         return pulumi.get(self, "protocol_follow")
 
@@ -632,7 +632,7 @@ class GetDomainResult:
     @pulumi.getter(name="protocolPorts")
     def protocol_ports(self) -> 'outputs.GetDomainProtocolPortsResult':
         """
-        接入端口信息。
+        Access port information
         """
         return pulumi.get(self, "protocol_ports")
 
@@ -640,7 +640,7 @@ class GetDomainResult:
     @pulumi.getter
     def protocols(self) -> Sequence[builtins.str]:
         """
-        接入协议类型,支持HTTP/HTTPS。
+        Access protocol type: supports HTTP/HTTPS
         """
         return pulumi.get(self, "protocols")
 
@@ -648,7 +648,7 @@ class GetDomainResult:
     @pulumi.getter(name="proxyConfig")
     def proxy_config(self) -> builtins.int:
         """
-        是否开启代理配置。0:关闭,1:开启。
+        Proxy configuration enabled. 0: Off, 1: On
         """
         return pulumi.get(self, "proxy_config")
 
@@ -656,7 +656,7 @@ class GetDomainResult:
     @pulumi.getter(name="proxyConnectTimeout")
     def proxy_connect_timeout(self) -> builtins.int:
         """
-        WAF和后端服务器的建连超时时间(秒)。
+        Connection timeout between WAF and backend server (seconds).
         """
         return pulumi.get(self, "proxy_connect_timeout")
 
@@ -664,7 +664,7 @@ class GetDomainResult:
     @pulumi.getter(name="proxyKeepAlive")
     def proxy_keep_alive(self) -> builtins.int:
         """
-        WAF回源长连接可复用个数。
+        Number of reusable WAF origin persistent connections.
         """
         return pulumi.get(self, "proxy_keep_alive")
 
@@ -672,7 +672,7 @@ class GetDomainResult:
     @pulumi.getter(name="proxyKeepAliveTimeout")
     def proxy_keep_alive_timeout(self) -> builtins.int:
         """
-        空闲长连接超时时间(秒)。
+        Idle persistent connection timeout (seconds)
         """
         return pulumi.get(self, "proxy_keep_alive_timeout")
 
@@ -680,7 +680,7 @@ class GetDomainResult:
     @pulumi.getter(name="proxyReadTimeout")
     def proxy_read_timeout(self) -> builtins.int:
         """
-        WAF从后端服务器读取响应的超时时间(秒)。
+        Timeout for WAF to read response from backend server (seconds).
         """
         return pulumi.get(self, "proxy_read_timeout")
 
@@ -688,7 +688,7 @@ class GetDomainResult:
     @pulumi.getter(name="proxyRetry")
     def proxy_retry(self) -> builtins.int:
         """
-        WAF回源重试次数。
+        WAF origin retry count.
         """
         return pulumi.get(self, "proxy_retry")
 
@@ -696,7 +696,7 @@ class GetDomainResult:
     @pulumi.getter(name="proxyWriteTimeout")
     def proxy_write_timeout(self) -> builtins.int:
         """
-        WAF将请求传输到后端服务器的超时时间(秒)。
+        Timeout for WAF to transmit request to backend server (seconds).
         """
         return pulumi.get(self, "proxy_write_timeout")
 
@@ -704,7 +704,7 @@ class GetDomainResult:
     @pulumi.getter(name="publicRealServer")
     def public_real_server(self) -> builtins.int:
         """
-        CNAME接入回源方式。0:私网回源,1:公网回源。
+        CNAME access origin method. 0: Private network origin, 1: Public network origin.
         """
         return pulumi.get(self, "public_real_server")
 
@@ -712,7 +712,7 @@ class GetDomainResult:
     @pulumi.getter(name="rspAbnormalEnable")
     def rsp_abnormal_enable(self) -> builtins.int:
         """
-        是否开启异常响应防护。
+        Whether to enable abnormal response protection.
         """
         return pulumi.get(self, "rsp_abnormal_enable")
 
@@ -720,7 +720,7 @@ class GetDomainResult:
     @pulumi.getter(name="serverIps")
     def server_ips(self) -> builtins.str:
         """
-        服务IP。
+        Service IP
         """
         return pulumi.get(self, "server_ips")
 
@@ -728,7 +728,7 @@ class GetDomainResult:
     @pulumi.getter(name="srcIps")
     def src_ips(self) -> builtins.str:
         """
-        WAF回源IP。
+        WAF origin IP.
         """
         return pulumi.get(self, "src_ips")
 
@@ -736,7 +736,7 @@ class GetDomainResult:
     @pulumi.getter(name="srcProtocol")
     def src_protocol(self) -> builtins.str:
         """
-        源站协议。
+        Origin protocol.
         """
         return pulumi.get(self, "src_protocol")
 
@@ -744,7 +744,7 @@ class GetDomainResult:
     @pulumi.getter(name="sslCiphers")
     def ssl_ciphers(self) -> Sequence[builtins.str]:
         """
-        加密套件。
+        Cipher suite
         """
         return pulumi.get(self, "ssl_ciphers")
 
@@ -752,7 +752,7 @@ class GetDomainResult:
     @pulumi.getter(name="sslProtocols")
     def ssl_protocols(self) -> Sequence[builtins.str]:
         """
-        TLS协议版本。如:TLSv1,TLSv1.1,TLSv1.2,TLSv1.3。
+        TLS protocol version. For example: TLSv1, TLSv1.1, TLSv1.2, TLSv1.3
         """
         return pulumi.get(self, "ssl_protocols")
 
@@ -760,7 +760,7 @@ class GetDomainResult:
     @pulumi.getter
     def status(self) -> builtins.int:
         """
-        接入状态。0:正常,1:DNS未解析,2:配置中,3:配置失败,4:配置未生效,5:更新中,6:实例已删除。
+        Access status. 0: Normal, 1: DNS not resolved, 2: Configuring, 3: Configuration failed, 4: Configuration not effective, 5: Updating, 6: Instance deleted.
         """
         return pulumi.get(self, "status")
 
@@ -768,7 +768,7 @@ class GetDomainResult:
     @pulumi.getter(name="systemBotEnable")
     def system_bot_enable(self) -> builtins.int:
         """
-        是否开启托管BOT防护。
+        Whether to enable managed bot protection.
         """
         return pulumi.get(self, "system_bot_enable")
 
@@ -776,7 +776,7 @@ class GetDomainResult:
     @pulumi.getter(name="tamperProofEnable")
     def tamper_proof_enable(self) -> builtins.int:
         """
-        是否开启防篡改。
+        Whether to enable anti-tampering.
         """
         return pulumi.get(self, "tamper_proof_enable")
 
@@ -784,7 +784,7 @@ class GetDomainResult:
     @pulumi.getter(name="tcpListenerConfigs")
     def tcp_listener_configs(self) -> Sequence['outputs.GetDomainTcpListenerConfigResult']:
         """
-        TCP监听器配置。
+        TCP listener configuration.
         """
         return pulumi.get(self, "tcp_listener_configs")
 
@@ -792,7 +792,7 @@ class GetDomainResult:
     @pulumi.getter(name="tlsEnable")
     def tls_enable(self) -> builtins.int:
         """
-        是否开启日志服务。0:关闭,1:开启。
+        Log service enabled. 0: Off, 1: On
         """
         return pulumi.get(self, "tls_enable")
 
@@ -800,7 +800,7 @@ class GetDomainResult:
     @pulumi.getter(name="tlsFieldsConfig")
     def tls_fields_config(self) -> 'outputs.GetDomainTlsFieldsConfigResult':
         """
-        日志字段配置详情。
+        Log field configuration details
         """
         return pulumi.get(self, "tls_fields_config")
 
@@ -808,7 +808,7 @@ class GetDomainResult:
     @pulumi.getter(name="updateTime")
     def update_time(self) -> builtins.str:
         """
-        更新时间。
+        Update time
         """
         return pulumi.get(self, "update_time")
 
@@ -824,7 +824,7 @@ class GetDomainResult:
     @pulumi.getter(name="wafEnable")
     def waf_enable(self) -> builtins.int:
         """
-        是否开启WAF防护。
+        WAF protection enabled
         """
         return pulumi.get(self, "waf_enable")
 
@@ -832,7 +832,7 @@ class GetDomainResult:
     @pulumi.getter(name="wafWhiteReqEnable")
     def waf_white_req_enable(self) -> builtins.int:
         """
-        是否开启白名单请求防护。
+        Allowlist request protection enabled
         """
         return pulumi.get(self, "waf_white_req_enable")
 
@@ -840,7 +840,7 @@ class GetDomainResult:
     @pulumi.getter(name="whiteEnable")
     def white_enable(self) -> builtins.int:
         """
-        是否开启白名单防护。
+        Whether to enable allowlist protection.
         """
         return pulumi.get(self, "white_enable")
 
@@ -848,7 +848,7 @@ class GetDomainResult:
     @pulumi.getter(name="whiteFieldEnable")
     def white_field_enable(self) -> builtins.int:
         """
-        是否开启字段白名单防护。
+        Field allowlist protection enabled
         """
         return pulumi.get(self, "white_field_enable")
 

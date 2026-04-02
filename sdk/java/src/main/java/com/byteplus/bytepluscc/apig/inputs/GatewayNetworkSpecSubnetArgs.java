@@ -16,14 +16,14 @@ public final class GatewayNetworkSpecSubnetArgs extends com.pulumi.resources.Res
     public static final GatewayNetworkSpecSubnetArgs Empty = new GatewayNetworkSpecSubnetArgs();
 
     /**
-     * 可用区。
+     * Availability zone
      * 
      */
     @Import(name="az")
     private @Nullable Output<String> az;
 
     /**
-     * @return 可用区。
+     * @return Availability zone
      * 
      */
     public Optional<Output<String>> az() {
@@ -31,14 +31,14 @@ public final class GatewayNetworkSpecSubnetArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 子网ID。
+     * Subnet ID
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return 子网ID。
+     * @return Subnet ID
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -46,14 +46,14 @@ public final class GatewayNetworkSpecSubnetArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 子网名称。
+     * Subnet name
      * 
      */
     @Import(name="subnetName")
     private @Nullable Output<String> subnetName;
 
     /**
-     * @return 子网名称。
+     * @return Subnet name
      * 
      */
     public Optional<Output<String>> subnetName() {
@@ -87,7 +87,7 @@ public final class GatewayNetworkSpecSubnetArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param az 可用区。
+         * @param az Availability zone
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class GatewayNetworkSpecSubnetArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param az 可用区。
+         * @param az Availability zone
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class GatewayNetworkSpecSubnetArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param subnetId 子网ID。
+         * @param subnetId Subnet ID
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class GatewayNetworkSpecSubnetArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param subnetId 子网ID。
+         * @param subnetId Subnet ID
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class GatewayNetworkSpecSubnetArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param subnetName 子网名称。
+         * @param subnetName Subnet name
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class GatewayNetworkSpecSubnetArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param subnetName 子网名称。
+         * @param subnetName Subnet name
          * 
          * @return builder
          * 

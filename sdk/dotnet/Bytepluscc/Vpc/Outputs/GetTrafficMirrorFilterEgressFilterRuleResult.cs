@@ -15,55 +15,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc.Outputs
     public sealed class GetTrafficMirrorFilterEgressFilterRuleResult
     {
         /// <summary>
-        /// 筛选规则实例描述。
+        /// Filter rule instance description
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 筛选规则目的地址。
+        /// Filter rule destination address
         /// </summary>
         public readonly string DestinationCidrBlock;
         /// <summary>
-        /// 筛选规则目的端口范围。
+        /// Filter rule destination port range
         /// </summary>
         public readonly string DestinationPortRange;
         /// <summary>
-        /// 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+        /// Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
         /// </summary>
         public readonly string Policy;
         /// <summary>
-        /// 筛选规则优先级。
+        /// Filter rule priority
         /// </summary>
         public readonly int Priority;
         /// <summary>
-        /// 所属项目的名称。
+        /// Project name
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// 筛选规则协议类型。
+        /// Filter rule protocol type
         /// </summary>
         public readonly string Protocol;
         /// <summary>
-        /// 筛选规则源地址。
+        /// Filter rule source address
         /// </summary>
         public readonly string SourceCidrBlock;
         /// <summary>
-        /// 筛选规则源端口范围。
+        /// Filter rule source port range
         /// </summary>
         public readonly string SourcePortRange;
         /// <summary>
-        /// 筛选规则状态。
+        /// Filter rule status
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// 筛选规则方向。egress：出方向。ingress：入方向。
+        /// Filter rule direction. egress: Outbound. ingress: Inbound
         /// </summary>
         public readonly string TrafficDirection;
         /// <summary>
-        /// 筛选条件实例ID。
+        /// Filter condition instance ID
         /// </summary>
         public readonly string TrafficMirrorFilterId;
         /// <summary>
-        /// 筛选规则实例ID。
+        /// Filter rule instance ID
         /// </summary>
         public readonly string TrafficMirrorFilterRuleId;
 

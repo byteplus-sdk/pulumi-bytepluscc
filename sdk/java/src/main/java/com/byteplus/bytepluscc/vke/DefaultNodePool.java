@@ -22,7 +22,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 除标准的自定义节点池外，容器服务支持 默认节点池（固定名称vke-default-nodepool）能力，用来纳管已有云服务器（ECS）实例。默认节点池的安全配置、高级配置、更多配置等配置能力与标准节点池一致，但不具备扩缩容、编辑数量等能力。
+ * In addition to standard custom node pools, container service supports the default node pool (fixed name vke-default-nodepool) for managing existing cloud server (ECS) instances. The default node pool has the same security, advanced, and additional configuration capabilities as standard node pools, but does not support scaling or editing the number of nodes.
  * 
  * ## Example Usage
  * 
@@ -39,140 +39,140 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:vke/defaultNodePool:DefaultNodePool")
 public class DefaultNodePool extends com.pulumi.resources.CustomResource {
     /**
-     * 节点池伸缩策略配置。
+     * Node pool scaling policy configuration
      * 
      */
     @Export(name="autoScaling", refs={DefaultNodePoolAutoScaling.class}, tree="[0]")
     private Output<DefaultNodePoolAutoScaling> autoScaling;
 
     /**
-     * @return 节点池伸缩策略配置。
+     * @return Node pool scaling policy configuration
      * 
      */
     public Output<DefaultNodePoolAutoScaling> autoScaling() {
         return this.autoScaling;
     }
     /**
-     * 节点池所在集群的 ID。
+     * Cluster ID where the node pool is located
      * 
      */
     @Export(name="clusterId", refs={String.class}, tree="[0]")
     private Output<String> clusterId;
 
     /**
-     * @return 节点池所在集群的 ID。
+     * @return Cluster ID where the node pool is located
      * 
      */
     public Output<String> clusterId() {
         return this.clusterId;
     }
     /**
-     * 创建节点池的时间。
+     * Node pool creation time
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 创建节点池的时间。
+     * @return Node pool creation time
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 节点池 Kubernetes 相关配置。
+     * Kubernetes-related configuration for the node pool
      * 
      */
     @Export(name="kubernetesConfig", refs={DefaultNodePoolKubernetesConfig.class}, tree="[0]")
     private Output<DefaultNodePoolKubernetesConfig> kubernetesConfig;
 
     /**
-     * @return 节点池 Kubernetes 相关配置。
+     * @return Kubernetes-related configuration for the node pool
      * 
      */
     public Output<DefaultNodePoolKubernetesConfig> kubernetesConfig() {
         return this.kubernetesConfig;
     }
     /**
-     * 托管节点池配置。
+     * Managed node pool configuration
      * 
      */
     @Export(name="management", refs={DefaultNodePoolManagement.class}, tree="[0]")
     private Output<DefaultNodePoolManagement> management;
 
     /**
-     * @return 托管节点池配置。
+     * @return Managed node pool configuration
      * 
      */
     public Output<DefaultNodePoolManagement> management() {
         return this.management;
     }
     /**
-     * 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+     * Node pool name. Must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length: 2–64 characters
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+     * @return Node pool name. Must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length: 2–64 characters
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * 节点池中云服务器（ECS）实例配置。
+     * Cloud server (ECS) instance configuration in the node pool
      * 
      */
     @Export(name="nodeConfig", refs={DefaultNodePoolNodeConfig.class}, tree="[0]")
     private Output<DefaultNodePoolNodeConfig> nodeConfig;
 
     /**
-     * @return 节点池中云服务器（ECS）实例配置。
+     * @return Cloud server (ECS) instance configuration in the node pool
      * 
      */
     public Output<DefaultNodePoolNodeConfig> nodeConfig() {
         return this.nodeConfig;
     }
     /**
-     * 节点池 ID 。
+     * Node pool ID
      * 
      */
     @Export(name="nodePoolId", refs={String.class}, tree="[0]")
     private Output<String> nodePoolId;
 
     /**
-     * @return 节点池 ID 。
+     * @return Node pool ID
      * 
      */
     public Output<String> nodePoolId() {
         return this.nodePoolId;
     }
     /**
-     * 节点池中的节点统计。
+     * Node statistics in the node pool.
      * 
      */
     @Export(name="nodeStatistics", refs={DefaultNodePoolNodeStatistics.class}, tree="[0]")
     private Output<DefaultNodePoolNodeStatistics> nodeStatistics;
 
     /**
-     * @return 节点池中的节点统计。
+     * @return Node statistics in the node pool.
      * 
      */
     public Output<DefaultNodePoolNodeStatistics> nodeStatistics() {
         return this.nodeStatistics;
     }
     /**
-     * 节点池状态。
+     * Node pool status
      * 
      */
     @Export(name="status", refs={DefaultNodePoolStatus.class}, tree="[0]")
     private Output<DefaultNodePoolStatus> status;
 
     /**
-     * @return 节点池状态。
+     * @return Node pool status
      * 
      */
     public Output<DefaultNodePoolStatus> status() {
@@ -185,14 +185,14 @@ public class DefaultNodePool extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 更新节点池的时间。
+     * Time when the node pool was updated
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 更新节点池的时间。
+     * @return Time when the node pool was updated
      * 
      */
     public Output<String> updatedTime() {

@@ -31,174 +31,174 @@ export interface GetDomainArgs {
  */
 export interface GetDomainResult {
     /**
-     * 接入模式。10：CNAME 接入，11：负载均衡（CLB）7 层接入。
+     * Access mode. 10: CNAME access, 11: Layer 7 load balancing (CLB) access.
      */
     readonly accessMode: number;
     /**
-     * 高防实例 IP。高防型 WAF 接入展示，否则为空。
+     * High defense instance IP. Displayed for high-defense WAF access; otherwise blank.
      */
     readonly advancedDefenseIp: string;
     /**
-     * 高防实例 Ipv6。高防型 WAF 接入展示，否则为空。
+     * High defense instance IPv6. Displayed for high-defense WAF access; otherwise blank.
      */
     readonly advancedDefenseIpv6: string;
     /**
-     * 是否开启了 API 防护策略。0：关闭，1：开启。
+     * API protection policy enabled. 0: Off, 1: On
      */
     readonly apiEnable: number;
     /**
-     * 攻击状态。0:未发现攻击,1:发现攻击。
+     * Attack status. 0: No attack detected, 1: Attack detected.
      */
     readonly attackStatus: number;
     /**
-     * 是否开启智能 CC 防护策略。0：关闭，1：开启。
+     * Whether to enable intelligent CC protection policy. 0: Disabled, 1: Enabled.
      */
     readonly autoCcEnable: number;
     /**
-     * 是否开启自动封禁。0：关闭，1：开启。
+     * Whether to enable automatic blocking. 0: Disabled, 1: Enabled.
      */
     readonly automaticBlackEnable: number;
     /**
-     * 源站配置。
+     * Origin configuration.
      */
     readonly backendGroups: outputs.waf.GetDomainBackendGroup[];
     /**
-     * 是否开启了黑名单策略。0：关闭, 1：开启。
+     * Denylist policy enabled. 0: Off, 1: On
      */
     readonly blackIpEnable: number;
     /**
-     * 是否开启了区域封禁策略。0：关闭;1：开启。
+     * Whether to enable regional blocking policy. 0: Disabled; 1: Enabled.
      */
     readonly blackLctEnable: number;
     /**
-     * 是否开启动态Token防护。
+     * Dynamic token protection enabled
      */
     readonly botDytokenEnable: number;
     /**
-     * 是否开启 bot 频率限制策略。
-     * 0：关闭
-     * 1：开启。
+     * Bot rate limit policy enabled.
+     * 0: Off
+     * 1: On
      */
     readonly botFrequencyEnable: number;
     /**
-     * 是否开启 bot 统计防护策略。
-     * 0：关闭
-     * 1：开启。
+     * Bot statistics protection policy enabled.
+     * 0: Off
+     * 1: On
      */
     readonly botRepeatEnable: number;
     /**
-     * 设置 bot 行为地图策略默认动作，当 BotSequenceEnable = 1 开启状态时生效。默认为 0 （观察）。
-     * 0：观察
-     * 2：拦截
-     * 6：JS 挑战
-     * 7：人机验证。
+     * Set the default action for the bot behavior map policy. Effective when BotSequenceEnable = 1 is enabled. Default is 0 (Observe).
+     * 0: Observe
+     * 2: Intercept
+     * 6: JS Challenge
+     * 7: CAPTCHA.
      */
     readonly botSequenceDefaultAction: number;
     /**
-     * 是否开启 bot 行为地图。
-     * 0：关闭
-     * 1：开启。
+     * Whether to enable bot behavior map.
+     * 0: Off
+     * 1: On.
      */
     readonly botSequenceEnable: number;
     /**
-     * 是否开启 CC 防护策略。
-     * 0：关闭
-     * 1：开启。
+     * Whether to enable CC protection policy.
+     * 0: Disabled
+     * 1: Enabled.
      */
     readonly ccEnable: number;
     /**
-     * 托管至证书中心的证书ID。
+     * Certificate ID managed in Certificate Center
      */
     readonly certificateId: string;
     /**
-     * 证书名称，协议类型包含 HTTPS 时显示。
+     * Certificate name. Displayed when protocol type includes HTTPS.
      */
     readonly certificateName: string;
     /**
-     * 证书托管平台:waf/certificate_service。
+     * Certificate hosting platform: waf/certificate_service.
      */
     readonly certificatePlatform: string;
     /**
-     * CLB实例ID。
+     * CLB instance ID.
      */
     readonly clbInstanceIds: string;
     /**
-     * CLB监听器ID。
+     * CLB listener ID.
      */
     readonly clbListenerId: string;
     /**
-     * CLB后端服务器组ID。
+     * CLB backend server group ID.
      */
     readonly clbPoolId: string;
     /**
-     * CLB后端服务器ID。
+     * CLB backend server ID
      */
     readonly clbServerId: string;
     /**
-     * 客户端IP获取方式。0:自定义Header字段,1:通过X-Forwarded-For(XFF)字段中第一个公网IP地址作为客户端真实IP地址。
+     * Client IP acquisition method. 0: Custom header field, 1: Use the first public IP address in the X-Forwarded-For (XFF) field as the real client IP address.
      */
     readonly clientIpLocation: number;
     /**
-     * 客户端请求body最大值(MB)。
+     * Maximum client request body size (MB).
      */
     readonly clientMaxBodySize: number;
     /**
-     * LB接入参数。
+     * LB access parameters.
      */
     readonly cloudAccessConfigs: outputs.waf.GetDomainCloudAccessConfig[];
     /**
-     * CNAME记录。
+     * CNAME record.
      */
     readonly cname: string;
     /**
-     * 是否开启自定义BOT防护。
+     * Whether to enable custom bot protection.
      */
     readonly customBotEnable: number;
     /**
-     * 自定义Header。
+     * Custom header.
      */
     readonly customHeaders: string[];
     /**
-     * 是否开启自定义响应。
+     * Whether to enable custom response.
      */
     readonly customRspEnable: number;
     /**
-     * 自定义SNI。
+     * Custom SNI.
      */
     readonly customSni: string;
     /**
-     * 为例外 ALB 实例设置防护模式。
-     * 1：启用防护，已配置的防护策略生效。
-     * 2：暂停防护，仅执行转发而不检测，已配置的防护策略不生效。
-     * 3：回源模式，直接将请求解析至源站，不再转发至 WAF 实例。
-     * 设置例外防护实例后，域名可能还会存在以下防护状态：
-     * 5：部分启用，默认防护模式为启用防护，但存在例外实例为暂停防护或回源模式状态。
-     * 6：部分暂停，默认防护模式为暂停防护，但存在例外实例为启用防护或回源模式状态。
-     * 7：部分回源，默认防护模式为回源模式，但存在例外实例为启用防护或暂停防护状态。
+     * Set protection mode for exception ALB instances.
+     * 1: Enable protection. The configured protection policies take effect.
+     * 2: Pause protection. Only forwarding is performed without inspection; the configured protection policies do not take effect.
+     * 3: Origin mode. Requests are sent directly to the origin server and are no longer forwarded to the WAF instance.
+     * After configuring exception protection instances, the domain may also have the following protection statuses:
+     * 5: Partially enabled. The default protection mode is enabled, but some exception instances are in paused protection or origin mode.
+     * 6: Partially paused. The default protection mode is paused, but some exception instances are in enabled protection or origin mode.
+     * 7: Partially origin. The default protection mode is origin mode, but some exception instances are in enabled protection or paused protection.
      */
     readonly defenceMode: number;
     /**
-     * 是否开启数据泄露防护。
+     * Data leakage protection enabled
      */
     readonly dlpEnable: number;
     /**
-     * 防护的域名信息，支持泛域名和精确域名。
+     * Protected domain information. Supports wildcard and exact domains
      */
     readonly domain: string;
     /**
-     * 是否开启用户自定义重定向。0:关闭,1:开启。
+     * User-defined redirection enabled. 0: Off, 1: On
      */
     readonly enableCustomRedirect: number;
     /**
-     * 是否开启HTTP2.0。0:关闭,1:开启。
+     * Whether to enable HTTP/2.0. 0: Disabled, 1: Enabled.
      */
     readonly enableHttp2: number;
     /**
-     * 是否支持防护Ipv6请求。0:关闭,1:开启。
+     * IPv6 request protection supported. 0: Off, 1: On
      */
     readonly enableIpv6: number;
     /**
-     * 是否开启SNI配置。0:关闭,1:开启。
+     * Whether to enable SNI configuration. 0: Off, 1: On.
      */
     readonly enableSni: number;
     /**
@@ -206,119 +206,119 @@ export interface GetDomainResult {
      */
     readonly id: string;
     /**
-     * 长连接复用个数。
+     * Persistent connection reuse count
      */
     readonly keepAliveRequest: number;
     /**
-     * 长连接保持时间(秒)。
+     * Persistent connection keep-alive time (seconds)
      */
     readonly keepAliveTimeout: number;
     /**
-     * 负载均衡算法类型。wrr:加权轮询,wlc:加权最小连接数,sh:源地址哈希。
+     * Load balancing algorithm type. wrr: Weighted round robin, wlc: Weighted least connections, sh: Source address hash.
      */
     readonly lbAlgorithm: string;
     /**
-     * 端口号。
+     * Port number
      */
     readonly port: number;
     /**
-     * 项目名称。
+     * Project name.
      */
     readonly projectName: string;
     /**
-     * 是否开启协议跟随。0:关闭,1:开启。
+     * Protocol following enabled. 0: Off, 1: On
      */
     readonly protocolFollow: number;
     /**
-     * 接入端口信息。
+     * Access port information
      */
     readonly protocolPorts: outputs.waf.GetDomainProtocolPorts;
     /**
-     * 接入协议类型,支持HTTP/HTTPS。
+     * Access protocol type: supports HTTP/HTTPS
      */
     readonly protocols: string[];
     /**
-     * 是否开启代理配置。0:关闭,1:开启。
+     * Proxy configuration enabled. 0: Off, 1: On
      */
     readonly proxyConfig: number;
     /**
-     * WAF和后端服务器的建连超时时间(秒)。
+     * Connection timeout between WAF and backend server (seconds).
      */
     readonly proxyConnectTimeout: number;
     /**
-     * WAF回源长连接可复用个数。
+     * Number of reusable WAF origin persistent connections.
      */
     readonly proxyKeepAlive: number;
     /**
-     * 空闲长连接超时时间(秒)。
+     * Idle persistent connection timeout (seconds)
      */
     readonly proxyKeepAliveTimeout: number;
     /**
-     * WAF从后端服务器读取响应的超时时间(秒)。
+     * Timeout for WAF to read response from backend server (seconds).
      */
     readonly proxyReadTimeout: number;
     /**
-     * WAF回源重试次数。
+     * WAF origin retry count.
      */
     readonly proxyRetry: number;
     /**
-     * WAF将请求传输到后端服务器的超时时间(秒)。
+     * Timeout for WAF to transmit request to backend server (seconds).
      */
     readonly proxyWriteTimeout: number;
     /**
-     * CNAME接入回源方式。0:私网回源,1:公网回源。
+     * CNAME access origin method. 0: Private network origin, 1: Public network origin.
      */
     readonly publicRealServer: number;
     /**
-     * 是否开启异常响应防护。
+     * Whether to enable abnormal response protection.
      */
     readonly rspAbnormalEnable: number;
     /**
-     * 服务IP。
+     * Service IP
      */
     readonly serverIps: string;
     /**
-     * WAF回源IP。
+     * WAF origin IP.
      */
     readonly srcIps: string;
     /**
-     * 源站协议。
+     * Origin protocol.
      */
     readonly srcProtocol: string;
     /**
-     * 加密套件。
+     * Cipher suite
      */
     readonly sslCiphers: string[];
     /**
-     * TLS协议版本。如:TLSv1,TLSv1.1,TLSv1.2,TLSv1.3。
+     * TLS protocol version. For example: TLSv1, TLSv1.1, TLSv1.2, TLSv1.3
      */
     readonly sslProtocols: string[];
     /**
-     * 接入状态。0:正常,1:DNS未解析,2:配置中,3:配置失败,4:配置未生效,5:更新中,6:实例已删除。
+     * Access status. 0: Normal, 1: DNS not resolved, 2: Configuring, 3: Configuration failed, 4: Configuration not effective, 5: Updating, 6: Instance deleted.
      */
     readonly status: number;
     /**
-     * 是否开启托管BOT防护。
+     * Whether to enable managed bot protection.
      */
     readonly systemBotEnable: number;
     /**
-     * 是否开启防篡改。
+     * Whether to enable anti-tampering.
      */
     readonly tamperProofEnable: number;
     /**
-     * TCP监听器配置。
+     * TCP listener configuration.
      */
     readonly tcpListenerConfigs: outputs.waf.GetDomainTcpListenerConfig[];
     /**
-     * 是否开启日志服务。0:关闭,1:开启。
+     * Log service enabled. 0: Off, 1: On
      */
     readonly tlsEnable: number;
     /**
-     * 日志字段配置详情。
+     * Log field configuration details
      */
     readonly tlsFieldsConfig: outputs.waf.GetDomainTlsFieldsConfig;
     /**
-     * 更新时间。
+     * Update time
      */
     readonly updateTime: string;
     /**
@@ -326,19 +326,19 @@ export interface GetDomainResult {
      */
     readonly vpcId: string;
     /**
-     * 是否开启WAF防护。
+     * WAF protection enabled
      */
     readonly wafEnable: number;
     /**
-     * 是否开启白名单请求防护。
+     * Allowlist request protection enabled
      */
     readonly wafWhiteReqEnable: number;
     /**
-     * 是否开启白名单防护。
+     * Whether to enable allowlist protection.
      */
     readonly whiteEnable: number;
     /**
-     * 是否开启字段白名单防护。
+     * Field allowlist protection enabled
      */
     readonly whiteFieldEnable: number;
 }

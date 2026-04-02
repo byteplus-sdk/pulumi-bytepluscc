@@ -13,98 +13,98 @@ import java.util.Objects;
 @CustomType
 public final class GetLoadBalancerZoneMappingLoadBalancerAddress {
     /**
-     * @return 弹性公网IP（EIP）的详细信息。
+     * @return Detailed information of the Elastic Public IP (EIP).
      * 
      */
     private GetLoadBalancerZoneMappingLoadBalancerAddressEip eip;
     /**
-     * @return 绑定的弹性公网IP（EIP）的地址。
+     * @return Address of the bound Elastic Public IP (EIP).
      * 
      */
     private String eipAddress;
     /**
-     * @return 绑定的弹性公网IP（EIP）的ID。
+     * @return ID of the bound Elastic IP (EIP).
      * 
      */
     private String eipId;
     /**
-     * @return 弹性网卡（ENI）上的私网IP地址。
+     * @return Private IP address on the Elastic Network Interface (ENI).
      * 
      */
     private String eniAddress;
     /**
-     * @return IP地址所属的弹性网卡（ENI）的ID。
+     * @return ID of the Elastic Network Interface (ENI) to which the IP address belongs.
      * 
      */
     private String eniId;
     /**
-     * @return 弹性网卡（ENI）上的IPv6私网地址。
+     * @return IPv6 private address on the Elastic Network Interface (ENI).
      * 
      */
     private String eniIpv6Address;
     /**
-     * @return IPv6弹性公网IP的详细信息。
+     * @return Detailed information about the IPv6 Elastic Public IP.
      * 
      */
     private GetLoadBalancerZoneMappingLoadBalancerAddressIpv6Eip ipv6Eip;
     /**
-     * @return 绑定的IPv6 EIP的ID。
+     * @return ID of the bound IPv6 EIP.
      * 
      */
     private String ipv6EipId;
 
     private GetLoadBalancerZoneMappingLoadBalancerAddress() {}
     /**
-     * @return 弹性公网IP（EIP）的详细信息。
+     * @return Detailed information of the Elastic Public IP (EIP).
      * 
      */
     public GetLoadBalancerZoneMappingLoadBalancerAddressEip eip() {
         return this.eip;
     }
     /**
-     * @return 绑定的弹性公网IP（EIP）的地址。
+     * @return Address of the bound Elastic Public IP (EIP).
      * 
      */
     public String eipAddress() {
         return this.eipAddress;
     }
     /**
-     * @return 绑定的弹性公网IP（EIP）的ID。
+     * @return ID of the bound Elastic IP (EIP).
      * 
      */
     public String eipId() {
         return this.eipId;
     }
     /**
-     * @return 弹性网卡（ENI）上的私网IP地址。
+     * @return Private IP address on the Elastic Network Interface (ENI).
      * 
      */
     public String eniAddress() {
         return this.eniAddress;
     }
     /**
-     * @return IP地址所属的弹性网卡（ENI）的ID。
+     * @return ID of the Elastic Network Interface (ENI) to which the IP address belongs.
      * 
      */
     public String eniId() {
         return this.eniId;
     }
     /**
-     * @return 弹性网卡（ENI）上的IPv6私网地址。
+     * @return IPv6 private address on the Elastic Network Interface (ENI).
      * 
      */
     public String eniIpv6Address() {
         return this.eniIpv6Address;
     }
     /**
-     * @return IPv6弹性公网IP的详细信息。
+     * @return Detailed information about the IPv6 Elastic Public IP.
      * 
      */
     public GetLoadBalancerZoneMappingLoadBalancerAddressIpv6Eip ipv6Eip() {
         return this.ipv6Eip;
     }
     /**
-     * @return 绑定的IPv6 EIP的ID。
+     * @return ID of the bound IPv6 EIP.
      * 
      */
     public String ipv6EipId() {

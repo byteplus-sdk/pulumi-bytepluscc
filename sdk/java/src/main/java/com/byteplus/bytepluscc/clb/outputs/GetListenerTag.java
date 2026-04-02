@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetListenerTag {
     /**
-     * @return 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和{@literal @}（{@literal @}）。若标签键开头或结尾存在空格，系统会自动为其去除。
+     * @return Tag key for user tags. Length range: 1–128 characters. Supports input of characters from all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and {@literal @} ({@literal @}). If the tag key starts or ends with a space, the system automatically removes it.
      * 
      */
     private String key;
     /**
-     * @return 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和{@literal @}（{@literal @}）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+     * @return Tag value for user tags. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and {@literal @} ({@literal @}). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
      * 
      */
     private String value;
 
     private GetListenerTag() {}
     /**
-     * @return 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和{@literal @}（{@literal @}）。若标签键开头或结尾存在空格，系统会自动为其去除。
+     * @return Tag key for user tags. Length range: 1–128 characters. Supports input of characters from all languages, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and {@literal @} ({@literal @}). If the tag key starts or ends with a space, the system automatically removes it.
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和{@literal @}（{@literal @}）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+     * @return Tag value for user tags. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and {@literal @} ({@literal @}). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
      * 
      */
     public String value() {

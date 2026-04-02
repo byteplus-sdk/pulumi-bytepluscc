@@ -16,7 +16,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * IPv6网关服务的运行载体，创建IPv6网关实例是进行IPv6公网配置的前提。
+ * Carrier for the IPv6 gateway service. Creating an IPv6 gateway instance is required for IPv6 public network configuration
  * 
  * ## Example Usage
  * 
@@ -71,98 +71,98 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:vpc/ipv6Gateway:Ipv6Gateway")
 public class Ipv6Gateway extends com.pulumi.resources.CustomResource {
     /**
-     * IPv6网关实例的创建时间。
+     * Creation time of the IPv6 gateway instance
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return IPv6网关实例的创建时间。
+     * @return Creation time of the IPv6 gateway instance
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * IPv6网关实例的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * Description of the IPv6 gateway instance. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。)
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return IPv6网关实例的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * @return Description of the IPv6 gateway instance. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。)
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * IPv6网关实例的ID。
+     * IPv6 gateway instance ID
      * 
      */
     @Export(name="ipv6GatewayId", refs={String.class}, tree="[0]")
     private Output<String> ipv6GatewayId;
 
     /**
-     * @return IPv6网关实例的ID。
+     * @return IPv6 gateway instance ID
      * 
      */
     public Output<String> ipv6GatewayId() {
         return this.ipv6GatewayId;
     }
     /**
-     * IPv6网关实例的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为IPv6网关ID。
+     * Name of the IPv6 gateway instance. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the IPv6 gateway ID
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return IPv6网关实例的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为IPv6网关ID。
+     * @return Name of the IPv6 gateway instance. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the IPv6 gateway ID
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * IPv6网关所属项目的名称。
+     * Name of the project to which the IPv6 gateway belongs
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return IPv6网关所属项目的名称。
+     * @return Name of the project to which the IPv6 gateway belongs
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * IPv6网关实例关联的路由表ID。
+     * Route table ID associated with the IPv6 gateway instance
      * 
      */
     @Export(name="routeTableId", refs={String.class}, tree="[0]")
     private Output<String> routeTableId;
 
     /**
-     * @return IPv6网关实例关联的路由表ID。
+     * @return Route table ID associated with the IPv6 gateway instance
      * 
      */
     public Output<String> routeTableId() {
         return this.routeTableId;
     }
     /**
-     * IPv6网关实例的运行状态。取值如下：Creating：创建中。Deleting：删除中。Available：可用。
+     * Operating status of the IPv6 gateway instance. Possible values: Creating: Creating. Deleting: Deleting. Available: Available
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return IPv6网关实例的运行状态。取值如下：Creating：创建中。Deleting：删除中。Available：可用。
+     * @return Operating status of the IPv6 gateway instance. Possible values: Creating: Creating. Deleting: Deleting. Available: Available
      * 
      */
     public Output<String> status() {
@@ -175,28 +175,28 @@ public class Ipv6Gateway extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * IPv6网关实例的修改时间。
+     * Modification time of the IPv6 gateway instance
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return IPv6网关实例的修改时间。
+     * @return Modification time of the IPv6 gateway instance
      * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
-     * 需关联IPv6网关实例的VPC ID。每个VPC只能关联一个IPv6网关实例，需确保待关联的VPC未关联其他IPv6网关实例。
+     * VPC ID to be associated with the IPv6 gateway instance. Each VPC can only be associated with one IPv6 gateway instance. Ensure the VPC to be associated is not linked to another IPv6 gateway instance
      * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
-     * @return 需关联IPv6网关实例的VPC ID。每个VPC只能关联一个IPv6网关实例，需确保待关联的VPC未关联其他IPv6网关实例。
+     * @return VPC ID to be associated with the IPv6 gateway instance. Each VPC can only be associated with one IPv6 gateway instance. Ensure the VPC to be associated is not linked to another IPv6 gateway instance
      * 
      */
     public Output<String> vpcId() {

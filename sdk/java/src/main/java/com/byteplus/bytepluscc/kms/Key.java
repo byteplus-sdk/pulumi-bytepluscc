@@ -19,7 +19,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 密钥管理服务（Key Management Service）是火山引擎上一站式的密钥管理和数据加密服务平台。提供简单易用的加密接口，KMS 帮助用户轻松管理密钥、保护云上核心数据的安全。同时极大降低用户自行部署密码基础设施的采购、研发成本。帮助业务轻松满足监管和合规需求。
+ * Key Management Service (KMS) is a one-stop key management and data encryption platform on Volcano Engine. It provides easy-to-use encryption interfaces. KMS helps users easily manage keys and protect the security of core cloud data. It also greatly reduces the procurement and development costs for users to deploy their own cryptographic infrastructure. KMS helps businesses easily meet regulatory and compliance requirements.
  * 
  * ## Example Usage
  * 
@@ -36,294 +36,294 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:kms/key:Key")
 public class Key extends com.pulumi.resources.CustomResource {
     /**
-     * 密钥创建时间。
+     * Key creation time.
      * 
      */
     @Export(name="createdTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> createdTime;
 
     /**
-     * @return 密钥创建时间。
+     * @return Key creation time.
      * 
      */
     public Output<Integer> createdTime() {
         return this.createdTime;
     }
     /**
-     * 密钥描述:长度为 0   - 8192 个字符。
+     * Key description: Length 0–8192 characters.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 密钥描述:长度为 0   - 8192 个字符。
+     * @return Key description: Length 0–8192 characters.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+     * User master key archive operation (enter 1 to archive, 2 to unarchive).
      * 
      */
     @Export(name="keyArchiveOperation", refs={Integer.class}, tree="[0]")
     private Output<Integer> keyArchiveOperation;
 
     /**
-     * @return 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+     * @return User master key archive operation (enter 1 to archive, 2 to unarchive).
      * 
      */
     public Output<Integer> keyArchiveOperation() {
         return this.keyArchiveOperation;
     }
     /**
-     * 用户主密钥启用操作（用户输入1=启用，2=禁用）
+     * User master key enable operation (enter 1 to enable, 2 to disable).
      * 
      */
     @Export(name="keyEnableOperation", refs={Integer.class}, tree="[0]")
     private Output<Integer> keyEnableOperation;
 
     /**
-     * @return 用户主密钥启用操作（用户输入1=启用，2=禁用）
+     * @return User master key enable operation (enter 1 to enable, 2 to disable).
      * 
      */
     public Output<Integer> keyEnableOperation() {
         return this.keyEnableOperation;
     }
     /**
-     * 密钥唯一标识符，UUID形式。
+     * Key unique identifier in UUID format.
      * 
      */
     @Export(name="keyId", refs={String.class}, tree="[0]")
     private Output<String> keyId;
 
     /**
-     * @return 密钥唯一标识符，UUID形式。
+     * @return Key unique identifier in UUID format.
      * 
      */
     public Output<String> keyId() {
         return this.keyId;
     }
     /**
-     * 密钥材料过期时间，当值为空时表示不会过期。
+     * Key material expiration time. If empty, the key does not expire.
      * 
      */
     @Export(name="keyMaterialExpireTime", refs={String.class}, tree="[0]")
     private Output<String> keyMaterialExpireTime;
 
     /**
-     * @return 密钥材料过期时间，当值为空时表示不会过期。
+     * @return Key material expiration time. If empty, the key does not expire.
      * 
      */
     public Output<String> keyMaterialExpireTime() {
         return this.keyMaterialExpireTime;
     }
     /**
-     * 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+     * Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
      * 
      */
     @Export(name="keyName", refs={String.class}, tree="[0]")
     private Output<String> keyName;
 
     /**
-     * @return 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+     * @return Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
      * 
      */
     public Output<String> keyName() {
         return this.keyName;
     }
     /**
-     * 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+     * User master key rotation operation (enter 1 to enable, 2 to disable).
      * 
      */
     @Export(name="keyRotationOperation", refs={Integer.class}, tree="[0]")
     private Output<Integer> keyRotationOperation;
 
     /**
-     * @return 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+     * @return User master key rotation operation (enter 1 to enable, 2 to disable).
      * 
      */
     public Output<Integer> keyRotationOperation() {
         return this.keyRotationOperation;
     }
     /**
-     * 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
+     * Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
      * 
      */
     @Export(name="keySpec", refs={String.class}, tree="[0]")
     private Output<String> keySpec;
 
     /**
-     * @return 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
+     * @return Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
      * 
      */
     public Output<String> keySpec() {
         return this.keySpec;
     }
     /**
-     * 密钥状态：Enable，Disable，PendingDelete，Archived，PendingImport。
+     * Key status: Enable, Disable, PendingDelete, Archived, PendingImport.
      * 
      */
     @Export(name="keyState", refs={String.class}, tree="[0]")
     private Output<String> keyState;
 
     /**
-     * @return 密钥状态：Enable，Disable，PendingDelete，Archived，PendingImport。
+     * @return Key status: Enable, Disable, PendingDelete, Archived, PendingImport.
      * 
      */
     public Output<String> keyState() {
         return this.keyState;
     }
     /**
-     * 密钥用途，取值：ENCRYPT*DECRYPT，SIGN*VERIFY，GENERATE*VERIFY*MAC。
+     * Key usage. Options: ENCRYPT*DECRYPT, SIGN*VERIFY, GENERATE*VERIFY*MAC.
      * 
      */
     @Export(name="keyUsage", refs={String.class}, tree="[0]")
     private Output<String> keyUsage;
 
     /**
-     * @return 密钥用途，取值：ENCRYPT*DECRYPT，SIGN*VERIFY，GENERATE*VERIFY*MAC。
+     * @return Key usage. Options: ENCRYPT*DECRYPT, SIGN*VERIFY, GENERATE*VERIFY*MAC.
      * 
      */
     public Output<String> keyUsage() {
         return this.keyUsage;
     }
     /**
-     * 密钥环名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+     * Key ring name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
      * 
      */
     @Export(name="keyringName", refs={String.class}, tree="[0]")
     private Output<String> keyringName;
 
     /**
-     * @return 密钥环名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+     * @return Key ring name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
      * 
      */
     public Output<String> keyringName() {
         return this.keyringName;
     }
     /**
-     * 密钥最后轮转时间。
+     * Key last rotation time.
      * 
      */
     @Export(name="lastRotationTime", refs={String.class}, tree="[0]")
     private Output<String> lastRotationTime;
 
     /**
-     * @return 密钥最后轮转时间。
+     * @return Key last rotation time.
      * 
      */
     public Output<String> lastRotationTime() {
         return this.lastRotationTime;
     }
     /**
-     * 是否为 Multi-region 类型的主密钥。
+     * Is this a multi-region type master key.
      * 
      */
     @Export(name="multiRegion", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> multiRegion;
 
     /**
-     * @return 是否为 Multi-region 类型的主密钥。
+     * @return Is this a multi-region type master key.
      * 
      */
     public Output<Boolean> multiRegion() {
         return this.multiRegion;
     }
     /**
-     * Multi-region key 配置信息。
+     * Multi-region key configuration information.
      * 
      */
     @Export(name="multiRegionConfiguration", refs={KeyMultiRegionConfiguration.class}, tree="[0]")
     private Output<KeyMultiRegionConfiguration> multiRegionConfiguration;
 
     /**
-     * @return Multi-region key 配置信息。
+     * @return Multi-region key configuration information.
      * 
      */
     public Output<KeyMultiRegionConfiguration> multiRegionConfiguration() {
         return this.multiRegionConfiguration;
     }
     /**
-     * 密钥来源，取值：CloudKMS，External，ExternalKeyStore。
+     * Key source. Options: CloudKMS, External, ExternalKeyStore.
      * 
      */
     @Export(name="origin", refs={String.class}, tree="[0]")
     private Output<String> origin;
 
     /**
-     * @return 密钥来源，取值：CloudKMS，External，ExternalKeyStore。
+     * @return Key source. Options: CloudKMS, External, ExternalKeyStore.
      * 
      */
     public Output<String> origin() {
         return this.origin;
     }
     /**
-     * 密钥保护级别，取值：SOFTWARE，HSM。
+     * Key protection level. Options: SOFTWARE, HSM.
      * 
      */
     @Export(name="protectionLevel", refs={String.class}, tree="[0]")
     private Output<String> protectionLevel;
 
     /**
-     * @return 密钥保护级别，取值：SOFTWARE，HSM。
+     * @return Key protection level. Options: SOFTWARE, HSM.
      * 
      */
     public Output<String> protectionLevel() {
         return this.protectionLevel;
     }
     /**
-     * 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+     * Key rotation period (days). Range: [90, 2560].
      * 
      */
     @Export(name="rotateInterval", refs={Integer.class}, tree="[0]")
     private Output<Integer> rotateInterval;
 
     /**
-     * @return 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+     * @return Key rotation period (days). Range: [90, 2560].
      * 
      */
     public Output<Integer> rotateInterval() {
         return this.rotateInterval;
     }
     /**
-     * 密钥轮转状态，取值：Enable，Disable。
+     * Key rotation status. Options: Enable, Disable.
      * 
      */
     @Export(name="rotateState", refs={String.class}, tree="[0]")
     private Output<String> rotateState;
 
     /**
-     * @return 密钥轮转状态，取值：Enable，Disable。
+     * @return Key rotation status. Options: Enable, Disable.
      * 
      */
     public Output<String> rotateState() {
         return this.rotateState;
     }
     /**
-     * 密钥删除时间。
+     * Key deletion time.
      * 
      */
     @Export(name="scheduleDeleteTime", refs={String.class}, tree="[0]")
     private Output<String> scheduleDeleteTime;
 
     /**
-     * @return 密钥删除时间。
+     * @return Key deletion time.
      * 
      */
     public Output<String> scheduleDeleteTime() {
         return this.scheduleDeleteTime;
     }
     /**
-     * 密钥轮转时间。
+     * Key rotation time.
      * 
      */
     @Export(name="scheduleRotationTime", refs={String.class}, tree="[0]")
     private Output<String> scheduleRotationTime;
 
     /**
-     * @return 密钥轮转时间。
+     * @return Key rotation time.
      * 
      */
     public Output<String> scheduleRotationTime() {
@@ -336,28 +336,28 @@ public class Key extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 资源名称，格式应为 trn:${Service}:${Region}:${AccountID}:${ResourcePath}。
+     * Resource name. Format should be trn:${Service}:${Region}:${AccountID}:${ResourcePath}.
      * 
      */
     @Export(name="trn", refs={String.class}, tree="[0]")
     private Output<String> trn;
 
     /**
-     * @return 资源名称，格式应为 trn:${Service}:${Region}:${AccountID}:${ResourcePath}。
+     * @return Resource name. Format should be trn:${Service}:${Region}:${AccountID}:${ResourcePath}.
      * 
      */
     public Output<String> trn() {
         return this.trn;
     }
     /**
-     * 密钥更新时间。
+     * Key update time.
      * 
      */
     @Export(name="updatedTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> updatedTime;
 
     /**
-     * @return 密钥更新时间。
+     * @return Key update time.
      * 
      */
     public Output<Integer> updatedTime() {

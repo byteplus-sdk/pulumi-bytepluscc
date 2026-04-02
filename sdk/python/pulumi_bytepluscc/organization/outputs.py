@@ -59,12 +59,12 @@ class AccountSecureContactInfo(dict):
                  phone: Optional[builtins.str] = None,
                  phone_verified: Optional[builtins.int] = None):
         """
-        :param builtins.str email: 安全邮箱。
-        :param builtins.int email_verified: 安全邮箱是否验证，1: 未验证，2: 已验证。
-        :param builtins.str new_email: 变更中的新邮箱。
-        :param builtins.str new_phone: 变更中的新手机号。
-        :param builtins.str phone: 安全手机号。
-        :param builtins.int phone_verified: 安全手机号是否验证，1: 未验证，2: 已验证。
+        :param builtins.str email: Security email
+        :param builtins.int email_verified: Security email verification status: 1. Not verified, 2. Verified
+        :param builtins.str new_email: New email being changed
+        :param builtins.str new_phone: New mobile number being changed
+        :param builtins.str phone: Security mobile number
+        :param builtins.int phone_verified: Security mobile number verification status: 1. Not verified, 2. Verified
         """
         if email is not None:
             pulumi.set(__self__, "email", email)
@@ -83,7 +83,7 @@ class AccountSecureContactInfo(dict):
     @pulumi.getter
     def email(self) -> Optional[builtins.str]:
         """
-        安全邮箱。
+        Security email
         """
         return pulumi.get(self, "email")
 
@@ -91,7 +91,7 @@ class AccountSecureContactInfo(dict):
     @pulumi.getter(name="emailVerified")
     def email_verified(self) -> Optional[builtins.int]:
         """
-        安全邮箱是否验证，1: 未验证，2: 已验证。
+        Security email verification status: 1. Not verified, 2. Verified
         """
         return pulumi.get(self, "email_verified")
 
@@ -99,7 +99,7 @@ class AccountSecureContactInfo(dict):
     @pulumi.getter(name="newEmail")
     def new_email(self) -> Optional[builtins.str]:
         """
-        变更中的新邮箱。
+        New email being changed
         """
         return pulumi.get(self, "new_email")
 
@@ -107,7 +107,7 @@ class AccountSecureContactInfo(dict):
     @pulumi.getter(name="newPhone")
     def new_phone(self) -> Optional[builtins.str]:
         """
-        变更中的新手机号。
+        New mobile number being changed
         """
         return pulumi.get(self, "new_phone")
 
@@ -115,7 +115,7 @@ class AccountSecureContactInfo(dict):
     @pulumi.getter
     def phone(self) -> Optional[builtins.str]:
         """
-        安全手机号。
+        Security mobile number
         """
         return pulumi.get(self, "phone")
 
@@ -123,7 +123,7 @@ class AccountSecureContactInfo(dict):
     @pulumi.getter(name="phoneVerified")
     def phone_verified(self) -> Optional[builtins.int]:
         """
-        安全手机号是否验证，1: 未验证，2: 已验证。
+        Security mobile number verification status: 1. Not verified, 2. Verified
         """
         return pulumi.get(self, "phone_verified")
 
@@ -134,8 +134,8 @@ class AccountTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -146,7 +146,7 @@ class AccountTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -154,7 +154,7 @@ class AccountTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -189,13 +189,13 @@ class OrganizationOrganization(dict):
                  type: Optional[builtins.int] = None,
                  updated_time: Optional[builtins.str] = None):
         """
-        :param builtins.str created_time: 创建时间
-        :param builtins.str description: 描述
-        :param builtins.str name: 组织名称
-        :param builtins.str owner: 管理员ID
-        :param builtins.int status: 状态
-        :param builtins.int type: 组织类型，企业组织固定是 1
-        :param builtins.str updated_time: 更新时间
+        :param builtins.str created_time: Creation Time
+        :param builtins.str description: Description
+        :param builtins.str name: Organization Name
+        :param builtins.str owner: Administrator ID
+        :param builtins.int status: Status
+        :param builtins.int type: Organization type, enterprise organization is always 1
+        :param builtins.str updated_time: Last Updated
         """
         if created_time is not None:
             pulumi.set(__self__, "created_time", created_time)
@@ -216,7 +216,7 @@ class OrganizationOrganization(dict):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[builtins.str]:
         """
-        创建时间
+        Creation Time
         """
         return pulumi.get(self, "created_time")
 
@@ -224,7 +224,7 @@ class OrganizationOrganization(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        描述
+        Description
         """
         return pulumi.get(self, "description")
 
@@ -232,7 +232,7 @@ class OrganizationOrganization(dict):
     @pulumi.getter
     def name(self) -> Optional[builtins.str]:
         """
-        组织名称
+        Organization Name
         """
         return pulumi.get(self, "name")
 
@@ -240,7 +240,7 @@ class OrganizationOrganization(dict):
     @pulumi.getter
     def owner(self) -> Optional[builtins.str]:
         """
-        管理员ID
+        Administrator ID
         """
         return pulumi.get(self, "owner")
 
@@ -248,7 +248,7 @@ class OrganizationOrganization(dict):
     @pulumi.getter
     def status(self) -> Optional[builtins.int]:
         """
-        状态
+        Status
         """
         return pulumi.get(self, "status")
 
@@ -256,7 +256,7 @@ class OrganizationOrganization(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.int]:
         """
-        组织类型，企业组织固定是 1
+        Organization type, enterprise organization is always 1
         """
         return pulumi.get(self, "type")
 
@@ -264,7 +264,7 @@ class OrganizationOrganization(dict):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[builtins.str]:
         """
-        更新时间
+        Last Updated
         """
         return pulumi.get(self, "updated_time")
 
@@ -297,9 +297,9 @@ class OrganizationOwner(dict):
                  account_name: Optional[builtins.str] = None,
                  main_name: Optional[builtins.str] = None):
         """
-        :param builtins.int account_id: 账号ID
-        :param builtins.str account_name: 账号名称
-        :param builtins.str main_name: 主体名称
+        :param builtins.int account_id: Account ID
+        :param builtins.str account_name: Account Name
+        :param builtins.str main_name: Entity Name
         """
         if account_id is not None:
             pulumi.set(__self__, "account_id", account_id)
@@ -312,7 +312,7 @@ class OrganizationOwner(dict):
     @pulumi.getter(name="accountId")
     def account_id(self) -> Optional[builtins.int]:
         """
-        账号ID
+        Account ID
         """
         return pulumi.get(self, "account_id")
 
@@ -320,7 +320,7 @@ class OrganizationOwner(dict):
     @pulumi.getter(name="accountName")
     def account_name(self) -> Optional[builtins.str]:
         """
-        账号名称
+        Account Name
         """
         return pulumi.get(self, "account_name")
 
@@ -328,7 +328,7 @@ class OrganizationOwner(dict):
     @pulumi.getter(name="mainName")
     def main_name(self) -> Optional[builtins.str]:
         """
-        主体名称
+        Entity Name
         """
         return pulumi.get(self, "main_name")
 
@@ -343,12 +343,12 @@ class GetAccountSecureContactInfoResult(dict):
                  phone: builtins.str,
                  phone_verified: builtins.int):
         """
-        :param builtins.str email: 安全邮箱。
-        :param builtins.int email_verified: 安全邮箱是否验证，1: 未验证，2: 已验证。
-        :param builtins.str new_email: 变更中的新邮箱。
-        :param builtins.str new_phone: 变更中的新手机号。
-        :param builtins.str phone: 安全手机号。
-        :param builtins.int phone_verified: 安全手机号是否验证，1: 未验证，2: 已验证。
+        :param builtins.str email: Security email
+        :param builtins.int email_verified: Security email verification status: 1. Not verified, 2. Verified
+        :param builtins.str new_email: New email being changed
+        :param builtins.str new_phone: New mobile number being changed
+        :param builtins.str phone: Security mobile number
+        :param builtins.int phone_verified: Security mobile number verification status: 1. Not verified, 2. Verified
         """
         pulumi.set(__self__, "email", email)
         pulumi.set(__self__, "email_verified", email_verified)
@@ -361,7 +361,7 @@ class GetAccountSecureContactInfoResult(dict):
     @pulumi.getter
     def email(self) -> builtins.str:
         """
-        安全邮箱。
+        Security email
         """
         return pulumi.get(self, "email")
 
@@ -369,7 +369,7 @@ class GetAccountSecureContactInfoResult(dict):
     @pulumi.getter(name="emailVerified")
     def email_verified(self) -> builtins.int:
         """
-        安全邮箱是否验证，1: 未验证，2: 已验证。
+        Security email verification status: 1. Not verified, 2. Verified
         """
         return pulumi.get(self, "email_verified")
 
@@ -377,7 +377,7 @@ class GetAccountSecureContactInfoResult(dict):
     @pulumi.getter(name="newEmail")
     def new_email(self) -> builtins.str:
         """
-        变更中的新邮箱。
+        New email being changed
         """
         return pulumi.get(self, "new_email")
 
@@ -385,7 +385,7 @@ class GetAccountSecureContactInfoResult(dict):
     @pulumi.getter(name="newPhone")
     def new_phone(self) -> builtins.str:
         """
-        变更中的新手机号。
+        New mobile number being changed
         """
         return pulumi.get(self, "new_phone")
 
@@ -393,7 +393,7 @@ class GetAccountSecureContactInfoResult(dict):
     @pulumi.getter
     def phone(self) -> builtins.str:
         """
-        安全手机号。
+        Security mobile number
         """
         return pulumi.get(self, "phone")
 
@@ -401,7 +401,7 @@ class GetAccountSecureContactInfoResult(dict):
     @pulumi.getter(name="phoneVerified")
     def phone_verified(self) -> builtins.int:
         """
-        安全手机号是否验证，1: 未验证，2: 已验证。
+        Security mobile number verification status: 1. Not verified, 2. Verified
         """
         return pulumi.get(self, "phone_verified")
 
@@ -412,8 +412,8 @@ class GetAccountTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -422,7 +422,7 @@ class GetAccountTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -430,7 +430,7 @@ class GetAccountTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -446,13 +446,13 @@ class GetOrganizationOrganizationResult(dict):
                  type: builtins.int,
                  updated_time: builtins.str):
         """
-        :param builtins.str created_time: 创建时间
-        :param builtins.str description: 描述
-        :param builtins.str name: 组织名称
-        :param builtins.str owner: 管理员ID
-        :param builtins.int status: 状态
-        :param builtins.int type: 组织类型，企业组织固定是 1
-        :param builtins.str updated_time: 更新时间
+        :param builtins.str created_time: Creation Time
+        :param builtins.str description: Description
+        :param builtins.str name: Organization Name
+        :param builtins.str owner: Administrator ID
+        :param builtins.int status: Status
+        :param builtins.int type: Organization type, enterprise organization is always 1
+        :param builtins.str updated_time: Last Updated
         """
         pulumi.set(__self__, "created_time", created_time)
         pulumi.set(__self__, "description", description)
@@ -466,7 +466,7 @@ class GetOrganizationOrganizationResult(dict):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        创建时间
+        Creation Time
         """
         return pulumi.get(self, "created_time")
 
@@ -474,7 +474,7 @@ class GetOrganizationOrganizationResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        描述
+        Description
         """
         return pulumi.get(self, "description")
 
@@ -482,7 +482,7 @@ class GetOrganizationOrganizationResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        组织名称
+        Organization Name
         """
         return pulumi.get(self, "name")
 
@@ -490,7 +490,7 @@ class GetOrganizationOrganizationResult(dict):
     @pulumi.getter
     def owner(self) -> builtins.str:
         """
-        管理员ID
+        Administrator ID
         """
         return pulumi.get(self, "owner")
 
@@ -498,7 +498,7 @@ class GetOrganizationOrganizationResult(dict):
     @pulumi.getter
     def status(self) -> builtins.int:
         """
-        状态
+        Status
         """
         return pulumi.get(self, "status")
 
@@ -506,7 +506,7 @@ class GetOrganizationOrganizationResult(dict):
     @pulumi.getter
     def type(self) -> builtins.int:
         """
-        组织类型，企业组织固定是 1
+        Organization type, enterprise organization is always 1
         """
         return pulumi.get(self, "type")
 
@@ -514,7 +514,7 @@ class GetOrganizationOrganizationResult(dict):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        更新时间
+        Last Updated
         """
         return pulumi.get(self, "updated_time")
 
@@ -526,9 +526,9 @@ class GetOrganizationOwnerResult(dict):
                  account_name: builtins.str,
                  main_name: builtins.str):
         """
-        :param builtins.int account_id: 账号ID
-        :param builtins.str account_name: 账号名称
-        :param builtins.str main_name: 主体名称
+        :param builtins.int account_id: Account ID
+        :param builtins.str account_name: Account Name
+        :param builtins.str main_name: Entity Name
         """
         pulumi.set(__self__, "account_id", account_id)
         pulumi.set(__self__, "account_name", account_name)
@@ -538,7 +538,7 @@ class GetOrganizationOwnerResult(dict):
     @pulumi.getter(name="accountId")
     def account_id(self) -> builtins.int:
         """
-        账号ID
+        Account ID
         """
         return pulumi.get(self, "account_id")
 
@@ -546,7 +546,7 @@ class GetOrganizationOwnerResult(dict):
     @pulumi.getter(name="accountName")
     def account_name(self) -> builtins.str:
         """
-        账号名称
+        Account Name
         """
         return pulumi.get(self, "account_name")
 
@@ -554,7 +554,7 @@ class GetOrganizationOwnerResult(dict):
     @pulumi.getter(name="mainName")
     def main_name(self) -> builtins.str:
         """
-        主体名称
+        Entity Name
         """
         return pulumi.get(self, "main_name")
 

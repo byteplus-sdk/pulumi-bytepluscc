@@ -20,14 +20,14 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
     public static final SnapshotArgs Empty = new SnapshotArgs();
 
     /**
-     * 快照描述信息，默认为空，长度限制为0~255个字符。
+     * Snapshot description. Default is empty. Length must be between 0 and 255 characters.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 快照描述信息，默认为空，长度限制为0~255个字符。
+     * @return Snapshot description. Default is empty. Length must be between 0 and 255 characters.
      * 
      */
     public Optional<Output<String>> description() {
@@ -35,14 +35,14 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 快照所要加入的Project（项目）名称。注意快照不会继承云盘的项目，即快照与云盘可以所属不同的项目。如果您在创建快照时未设置ProjectName，快照会默认加入default项目。
+     * Name of the Project to which the snapshot will be added. Note: snapshots do not inherit the project of the cloud disk, so snapshots and cloud disks can belong to different projects. If you do not set ProjectName when creating the snapshot, it will be added to the default project.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 快照所要加入的Project（项目）名称。注意快照不会继承云盘的项目，即快照与云盘可以所属不同的项目。如果您在创建快照时未设置ProjectName，快照会默认加入default项目。
+     * @return Name of the Project to which the snapshot will be added. Note: snapshots do not inherit the project of the cloud disk, so snapshots and cloud disks can belong to different projects. If you do not set ProjectName when creating the snapshot, it will be added to the default project.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -50,14 +50,14 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 快照保留时间，单位为天，取值说明如下：空：永久保留快照 。1~65536：指定保存天数。默认为空，即默认永久保留快照。说明快照保留时间从快照创建时刻开始计算。
+     * Snapshot retention period, in days. Value options: empty: retain snapshot permanently. 1~65536: specify retention days. Default is empty, which means retain snapshot permanently. Snapshot retention period is calculated from the snapshot creation time.
      * 
      */
     @Import(name="retentionDays")
     private @Nullable Output<Integer> retentionDays;
 
     /**
-     * @return 快照保留时间，单位为天，取值说明如下：空：永久保留快照 。1~65536：指定保存天数。默认为空，即默认永久保留快照。说明快照保留时间从快照创建时刻开始计算。
+     * @return Snapshot retention period, in days. Value options: empty: retain snapshot permanently. 1~65536: specify retention days. Default is empty, which means retain snapshot permanently. Snapshot retention period is calculated from the snapshot creation time.
      * 
      */
     public Optional<Output<Integer>> retentionDays() {
@@ -65,14 +65,14 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建的快照名称。命名规范如下：长度限制为1~128个字符。只能包含中文、字母、数字、下划线（_）、中划线（-）和英文句号（.）。为防止和自动快照的名称冲突，不能以“auto”开头。
+     * Name of the created snapshot. Naming rules: length must be between 1 and 128 characters. Only Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) are allowed. To avoid conflicts with automatic snapshot names, the name cannot start with &#39;auto&#39;.
      * 
      */
     @Import(name="snapshotName", required=true)
     private Output<String> snapshotName;
 
     /**
-     * @return 创建的快照名称。命名规范如下：长度限制为1~128个字符。只能包含中文、字母、数字、下划线（_）、中划线（-）和英文句号（.）。为防止和自动快照的名称冲突，不能以“auto”开头。
+     * @return Name of the created snapshot. Naming rules: length must be between 1 and 128 characters. Only Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) are allowed. To avoid conflicts with automatic snapshot names, the name cannot start with &#39;auto&#39;.
      * 
      */
     public Output<String> snapshotName() {
@@ -87,14 +87,14 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 快照相关的云盘ID。
+     * Cloud disk ID associated with the snapshot.
      * 
      */
     @Import(name="volumeId", required=true)
     private Output<String> volumeId;
 
     /**
-     * @return 快照相关的云盘ID。
+     * @return Cloud disk ID associated with the snapshot.
      * 
      */
     public Output<String> volumeId() {
@@ -131,7 +131,7 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 快照描述信息，默认为空，长度限制为0~255个字符。
+         * @param description Snapshot description. Default is empty. Length must be between 0 and 255 characters.
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 快照描述信息，默认为空，长度限制为0~255个字符。
+         * @param description Snapshot description. Default is empty. Length must be between 0 and 255 characters.
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 快照所要加入的Project（项目）名称。注意快照不会继承云盘的项目，即快照与云盘可以所属不同的项目。如果您在创建快照时未设置ProjectName，快照会默认加入default项目。
+         * @param projectName Name of the Project to which the snapshot will be added. Note: snapshots do not inherit the project of the cloud disk, so snapshots and cloud disks can belong to different projects. If you do not set ProjectName when creating the snapshot, it will be added to the default project.
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 快照所要加入的Project（项目）名称。注意快照不会继承云盘的项目，即快照与云盘可以所属不同的项目。如果您在创建快照时未设置ProjectName，快照会默认加入default项目。
+         * @param projectName Name of the Project to which the snapshot will be added. Note: snapshots do not inherit the project of the cloud disk, so snapshots and cloud disks can belong to different projects. If you do not set ProjectName when creating the snapshot, it will be added to the default project.
          * 
          * @return builder
          * 
@@ -173,7 +173,7 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param retentionDays 快照保留时间，单位为天，取值说明如下：空：永久保留快照 。1~65536：指定保存天数。默认为空，即默认永久保留快照。说明快照保留时间从快照创建时刻开始计算。
+         * @param retentionDays Snapshot retention period, in days. Value options: empty: retain snapshot permanently. 1~65536: specify retention days. Default is empty, which means retain snapshot permanently. Snapshot retention period is calculated from the snapshot creation time.
          * 
          * @return builder
          * 
@@ -184,7 +184,7 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param retentionDays 快照保留时间，单位为天，取值说明如下：空：永久保留快照 。1~65536：指定保存天数。默认为空，即默认永久保留快照。说明快照保留时间从快照创建时刻开始计算。
+         * @param retentionDays Snapshot retention period, in days. Value options: empty: retain snapshot permanently. 1~65536: specify retention days. Default is empty, which means retain snapshot permanently. Snapshot retention period is calculated from the snapshot creation time.
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snapshotName 创建的快照名称。命名规范如下：长度限制为1~128个字符。只能包含中文、字母、数字、下划线（_）、中划线（-）和英文句号（.）。为防止和自动快照的名称冲突，不能以“auto”开头。
+         * @param snapshotName Name of the created snapshot. Naming rules: length must be between 1 and 128 characters. Only Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) are allowed. To avoid conflicts with automatic snapshot names, the name cannot start with &#39;auto&#39;.
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snapshotName 创建的快照名称。命名规范如下：长度限制为1~128个字符。只能包含中文、字母、数字、下划线（_）、中划线（-）和英文句号（.）。为防止和自动快照的名称冲突，不能以“auto”开头。
+         * @param snapshotName Name of the created snapshot. Naming rules: length must be between 1 and 128 characters. Only Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) are allowed. To avoid conflicts with automatic snapshot names, the name cannot start with &#39;auto&#39;.
          * 
          * @return builder
          * 
@@ -228,7 +228,7 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param volumeId 快照相关的云盘ID。
+         * @param volumeId Cloud disk ID associated with the snapshot.
          * 
          * @return builder
          * 
@@ -239,7 +239,7 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param volumeId 快照相关的云盘ID。
+         * @param volumeId Cloud disk ID associated with the snapshot.
          * 
          * @return builder
          * 

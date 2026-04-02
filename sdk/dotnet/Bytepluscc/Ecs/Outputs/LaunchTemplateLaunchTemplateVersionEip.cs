@@ -15,31 +15,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
     public sealed class LaunchTemplateLaunchTemplateVersionEip
     {
         /// <summary>
-        /// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+        /// Public IP bandwidth cap, unit: Mbps. Value range: 1–200. Default: 1.
         /// </summary>
         public readonly int? Bandwidth;
         /// <summary>
-        /// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+        /// Shared bandwidth package ID, indicates adding the public IP to the shared bandwidth package.
         /// </summary>
         public readonly string? BandwidthPackageId;
         /// <summary>
-        /// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+        /// Billing method for public IP. Values: 2: Pay-as-you-go—by bandwidth cap. 3: Pay-as-you-go—by actual traffic.
         /// </summary>
         public readonly int? BillingType;
         /// <summary>
-        /// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+        /// Line type for the public IP. Options: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line.
         /// </summary>
         public readonly string? Isp;
         /// <summary>
-        /// 公网IP是否随实例删除，仅按量计费公网IP生效。
+        /// Whether the public IP is released with the instance; only applies to pay-as-you-go public IPs
         /// </summary>
         public readonly bool? ReleaseWithInstance;
         /// <summary>
-        /// 安全防护包ID。
+        /// Security protection package ID
         /// </summary>
         public readonly int? SecurityProtectionInstanceId;
         /// <summary>
-        /// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+        /// Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS Native Protection (Enterprise Edition) instance.
         /// </summary>
         public readonly ImmutableArray<string> SecurityProtectionTypes;
 

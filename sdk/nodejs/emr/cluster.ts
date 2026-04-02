@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * E-MapReduce（EMR）是开源 Hadoop 生态的企业级大数据分析系统，完全兼容开源，为您提供 Hadoop、Spark、Hive、Hudi、Iceberg 等生态组件集成和管理。
+ * E-MapReduce (EMR) is an enterprise-grade big data analytics system based on the open-source Hadoop ecosystem. It is fully compatible with open source and provides integration and management for ecosystem components such as Hadoop, Spark, Hive, Hudi, and Iceberg.
  *
  * ## Import
  *
@@ -44,104 +44,104 @@ export class Cluster extends pulumi.CustomResource {
     }
 
     /**
-     * 账号ID。
+     * Account ID.
      */
     public /*out*/ readonly accountId!: pulumi.Output<number>;
     public readonly applicationExtras!: pulumi.Output<outputs.emr.ClusterApplicationExtra[]>;
     /**
-     * 集群安装的服务名称列表。创建字段。
+     * List of service names installed in the cluster. Creation-related field.
      */
     public readonly applicationNames!: pulumi.Output<string[]>;
     public /*out*/ readonly applications!: pulumi.Output<outputs.emr.ClusterApplication[]>;
     public readonly bootstrapScripts!: pulumi.Output<outputs.emr.ClusterBootstrapScript[]>;
     /**
-     * 包月的配置参数，当chargeType=PRE时，必选。
+     * Monthly subscription configuration parameters. Required when chargeType=PRE.
      */
     public readonly chargePreConfig!: pulumi.Output<outputs.emr.ClusterChargePreConfig>;
     /**
-     * 付费类型，PRE表示包月，POST表示按量计费。
+     * Payment type. PRE means monthly subscription, POST means pay-as-you-go.
      */
     public readonly chargeType!: pulumi.Output<string>;
     /**
-     * 集群dns域名后缀列表。
+     * Cluster DNS domain suffix list.
      */
     public /*out*/ readonly clusterDomainNames!: pulumi.Output<string[]>;
     /**
-     * 集群ID。
+     * Cluster ID.
      */
     public /*out*/ readonly clusterId!: pulumi.Output<string>;
     /**
-     * 集群名称。
+     * Cluster name.
      */
     public readonly clusterName!: pulumi.Output<string>;
     /**
-     * 集群状态。
+     * Cluster status.
      */
     public /*out*/ readonly clusterState!: pulumi.Output<string>;
     /**
-     * 集群类型。
+     * Cluster type.
      */
     public readonly clusterType!: pulumi.Output<string>;
     /**
-     * 集群创建时间。
+     * Cluster creation time.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<number>;
     /**
-     * 创建者ID。
+     * Creator ID.
      */
     public /*out*/ readonly creatorId!: pulumi.Output<number>;
     /**
-     * 创建者名称。
+     * Creator name.
      */
     public /*out*/ readonly creatorName!: pulumi.Output<string>;
     /**
-     * 部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
+     * Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
      */
     public readonly deployMode!: pulumi.Output<string>;
     /**
-     * ECS镜像ID。
+     * ECS image ID.
      */
     public /*out*/ readonly ecsImageId!: pulumi.Output<string>;
     /**
-     * 集群过期时间。
+     * Cluster expiration time.
      */
     public /*out*/ readonly expireTime!: pulumi.Output<number>;
     /**
-     * HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
+     * HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
      */
     public readonly historyServerMode!: pulumi.Output<string>;
     /**
-     * 集群全局的节点信息。
+     * Cluster global node information.
      */
     public readonly nodeAttribute!: pulumi.Output<outputs.emr.ClusterNodeAttribute>;
     public readonly nodeGroupAttributes!: pulumi.Output<outputs.emr.ClusterNodeGroupAttribute[]>;
     /**
-     * 资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+     * Project to which the resource belongs. Default is 'default'. Each resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length is 64 characters.
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 集群创建完成时间。
+     * Cluster creation completion time.
      */
     public /*out*/ readonly readyTime!: pulumi.Output<number>;
     /**
-     * 集群版本。
+     * Cluster version.
      */
     public readonly releaseVersion!: pulumi.Output<string>;
     /**
-     * 集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+     * Cluster global security group ID. All ECS in node groups will join this security group.
      */
     public readonly securityGroupId!: pulumi.Output<string>;
     /**
-     * 安全模式。
+     * Security mode.
      */
     public readonly securityMode!: pulumi.Output<string>;
     /**
-     * 状态变更原因。
+     * Status change reason.
      */
     public /*out*/ readonly stateChangeReason!: pulumi.Output<outputs.emr.ClusterStateChangeReason>;
     public readonly tags!: pulumi.Output<outputs.emr.ClusterTag[]>;
     /**
-     * 集群终止时间。
+     * Cluster termination time.
      */
     public /*out*/ readonly terminateTime!: pulumi.Output<number>;
     /**
@@ -256,104 +256,104 @@ export class Cluster extends pulumi.CustomResource {
  */
 export interface ClusterState {
     /**
-     * 账号ID。
+     * Account ID.
      */
     accountId?: pulumi.Input<number>;
     applicationExtras?: pulumi.Input<pulumi.Input<inputs.emr.ClusterApplicationExtra>[]>;
     /**
-     * 集群安装的服务名称列表。创建字段。
+     * List of service names installed in the cluster. Creation-related field.
      */
     applicationNames?: pulumi.Input<pulumi.Input<string>[]>;
     applications?: pulumi.Input<pulumi.Input<inputs.emr.ClusterApplication>[]>;
     bootstrapScripts?: pulumi.Input<pulumi.Input<inputs.emr.ClusterBootstrapScript>[]>;
     /**
-     * 包月的配置参数，当chargeType=PRE时，必选。
+     * Monthly subscription configuration parameters. Required when chargeType=PRE.
      */
     chargePreConfig?: pulumi.Input<inputs.emr.ClusterChargePreConfig>;
     /**
-     * 付费类型，PRE表示包月，POST表示按量计费。
+     * Payment type. PRE means monthly subscription, POST means pay-as-you-go.
      */
     chargeType?: pulumi.Input<string>;
     /**
-     * 集群dns域名后缀列表。
+     * Cluster DNS domain suffix list.
      */
     clusterDomainNames?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 集群ID。
+     * Cluster ID.
      */
     clusterId?: pulumi.Input<string>;
     /**
-     * 集群名称。
+     * Cluster name.
      */
     clusterName?: pulumi.Input<string>;
     /**
-     * 集群状态。
+     * Cluster status.
      */
     clusterState?: pulumi.Input<string>;
     /**
-     * 集群类型。
+     * Cluster type.
      */
     clusterType?: pulumi.Input<string>;
     /**
-     * 集群创建时间。
+     * Cluster creation time.
      */
     createdTime?: pulumi.Input<number>;
     /**
-     * 创建者ID。
+     * Creator ID.
      */
     creatorId?: pulumi.Input<number>;
     /**
-     * 创建者名称。
+     * Creator name.
      */
     creatorName?: pulumi.Input<string>;
     /**
-     * 部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
+     * Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
      */
     deployMode?: pulumi.Input<string>;
     /**
-     * ECS镜像ID。
+     * ECS image ID.
      */
     ecsImageId?: pulumi.Input<string>;
     /**
-     * 集群过期时间。
+     * Cluster expiration time.
      */
     expireTime?: pulumi.Input<number>;
     /**
-     * HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
+     * HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
      */
     historyServerMode?: pulumi.Input<string>;
     /**
-     * 集群全局的节点信息。
+     * Cluster global node information.
      */
     nodeAttribute?: pulumi.Input<inputs.emr.ClusterNodeAttribute>;
     nodeGroupAttributes?: pulumi.Input<pulumi.Input<inputs.emr.ClusterNodeGroupAttribute>[]>;
     /**
-     * 资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+     * Project to which the resource belongs. Default is 'default'. Each resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length is 64 characters.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 集群创建完成时间。
+     * Cluster creation completion time.
      */
     readyTime?: pulumi.Input<number>;
     /**
-     * 集群版本。
+     * Cluster version.
      */
     releaseVersion?: pulumi.Input<string>;
     /**
-     * 集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+     * Cluster global security group ID. All ECS in node groups will join this security group.
      */
     securityGroupId?: pulumi.Input<string>;
     /**
-     * 安全模式。
+     * Security mode.
      */
     securityMode?: pulumi.Input<string>;
     /**
-     * 状态变更原因。
+     * Status change reason.
      */
     stateChangeReason?: pulumi.Input<inputs.emr.ClusterStateChangeReason>;
     tags?: pulumi.Input<pulumi.Input<inputs.emr.ClusterTag>[]>;
     /**
-     * 集群终止时间。
+     * Cluster termination time.
      */
     terminateTime?: pulumi.Input<number>;
     /**
@@ -368,53 +368,53 @@ export interface ClusterState {
 export interface ClusterArgs {
     applicationExtras?: pulumi.Input<pulumi.Input<inputs.emr.ClusterApplicationExtra>[]>;
     /**
-     * 集群安装的服务名称列表。创建字段。
+     * List of service names installed in the cluster. Creation-related field.
      */
     applicationNames?: pulumi.Input<pulumi.Input<string>[]>;
     bootstrapScripts?: pulumi.Input<pulumi.Input<inputs.emr.ClusterBootstrapScript>[]>;
     /**
-     * 包月的配置参数，当chargeType=PRE时，必选。
+     * Monthly subscription configuration parameters. Required when chargeType=PRE.
      */
     chargePreConfig?: pulumi.Input<inputs.emr.ClusterChargePreConfig>;
     /**
-     * 付费类型，PRE表示包月，POST表示按量计费。
+     * Payment type. PRE means monthly subscription, POST means pay-as-you-go.
      */
     chargeType: pulumi.Input<string>;
     /**
-     * 集群名称。
+     * Cluster name.
      */
     clusterName: pulumi.Input<string>;
     /**
-     * 集群类型。
+     * Cluster type.
      */
     clusterType: pulumi.Input<string>;
     /**
-     * 部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
+     * Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
      */
     deployMode?: pulumi.Input<string>;
     /**
-     * HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
+     * HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
      */
     historyServerMode?: pulumi.Input<string>;
     /**
-     * 集群全局的节点信息。
+     * Cluster global node information.
      */
     nodeAttribute: pulumi.Input<inputs.emr.ClusterNodeAttribute>;
     nodeGroupAttributes?: pulumi.Input<pulumi.Input<inputs.emr.ClusterNodeGroupAttribute>[]>;
     /**
-     * 资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+     * Project to which the resource belongs. Default is 'default'. Each resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length is 64 characters.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 集群版本。
+     * Cluster version.
      */
     releaseVersion: pulumi.Input<string>;
     /**
-     * 集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+     * Cluster global security group ID. All ECS in node groups will join this security group.
      */
     securityGroupId: pulumi.Input<string>;
     /**
-     * 安全模式。
+     * Security mode.
      */
     securityMode?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.emr.ClusterTag>[]>;

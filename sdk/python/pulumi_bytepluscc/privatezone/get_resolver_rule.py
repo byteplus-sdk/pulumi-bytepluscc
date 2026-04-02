@@ -79,7 +79,7 @@ class GetResolverRuleResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        转发规则的创建时间
+        Creation time of the forwarding rule
         """
         return pulumi.get(self, "created_time")
 
@@ -87,7 +87,7 @@ class GetResolverRuleResult:
     @pulumi.getter
     def enable(self) -> builtins.bool:
         """
-        转发规则是否被启用。true：启用。false：禁用。
+        Whether the forwarding rule is enabled. true: enabled. false: disabled
         """
         return pulumi.get(self, "enable")
 
@@ -95,7 +95,7 @@ class GetResolverRuleResult:
     @pulumi.getter(name="endpointId")
     def endpoint_id(self) -> builtins.int:
         """
-        终端节点的 ID。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
+        Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
         """
         return pulumi.get(self, "endpoint_id")
 
@@ -103,7 +103,7 @@ class GetResolverRuleResult:
     @pulumi.getter(name="forwardIPs")
     def forward_ips(self) -> Sequence['outputs.GetResolverRuleForwardIPResult']:
         """
-        外部的 DNS 服务器的 IP 地址和端口。您最多只能添加 10 个 IP 地址。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
+        IP address and port of the external DNS server. You can add up to 10 IP addresses. This parameter is only valid and required when the Type parameter is OUTBOUND
         """
         return pulumi.get(self, "forward_ips")
 
@@ -119,7 +119,7 @@ class GetResolverRuleResult:
     @pulumi.getter(name="lastOperator")
     def last_operator(self) -> builtins.str:
         """
-        最近一次更新转发规则的账号的 ID
+        Account ID of the last update to the forwarding rule
         """
         return pulumi.get(self, "last_operator")
 
@@ -127,7 +127,7 @@ class GetResolverRuleResult:
     @pulumi.getter
     def line(self) -> builtins.str:
         """
-        递归 DNS 服务器的出口 IP 地址的运营商。该参数仅在 Type 参数是 LINE 时有效。支持的取值：移动：中国移动，电信：中国电信，联通：中国联通
+        Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
         """
         return pulumi.get(self, "line")
 
@@ -135,7 +135,7 @@ class GetResolverRuleResult:
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        转发规则的名称。支持 UTF-8 格式。
+        Name of the forwarding rule. Supports UTF-8 format
         """
         return pulumi.get(self, "name")
 
@@ -143,7 +143,7 @@ class GetResolverRuleResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        转发规则所属的项目名称。默认为 default。
+        Project name associated with the forwarding rule. Default is default
         """
         return pulumi.get(self, "project_name")
 
@@ -151,7 +151,7 @@ class GetResolverRuleResult:
     @pulumi.getter(name="ruleId")
     def rule_id(self) -> builtins.str:
         """
-        转发规则的 ID。
+        Forwarding rule ID
         """
         return pulumi.get(self, "rule_id")
 
@@ -159,7 +159,7 @@ class GetResolverRuleResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetResolverRuleTagResult']:
         """
-        转发规则所属的一个或多个标签
+        One or more tags associated with the forwarding rule
         """
         return pulumi.get(self, "tags")
 
@@ -167,7 +167,7 @@ class GetResolverRuleResult:
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        转发规则类型。OUTBOUND：转发到外部的 DNS 服务器。LINE：自定义公网递归 DNS 服务器的出口 IP 地址的运营商。
+        Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
         """
         return pulumi.get(self, "type")
 
@@ -175,7 +175,7 @@ class GetResolverRuleResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        转发规则的更新时间
+        Update time of the forwarding rule
         """
         return pulumi.get(self, "updated_time")
 
@@ -183,7 +183,7 @@ class GetResolverRuleResult:
     @pulumi.getter(name="vpCs")
     def vp_cs(self) -> Sequence['outputs.GetResolverRuleVpCResult']:
         """
-        转发规则所关联的 VPC。转发规则在关联的 VPC 中生效。Type 参数是 OUTBOUND 时，VPC 的地域必须和终端节点所在的地域相同。
+        VPC associated with the forwarding rule. The forwarding rule takes effect in the associated VPC. When the Type parameter is OUTBOUND, the VPC region must match the region of the endpoint
         """
         return pulumi.get(self, "vp_cs")
 
@@ -191,7 +191,7 @@ class GetResolverRuleResult:
     @pulumi.getter(name="zoneName")
     def zone_name(self) -> builtins.str:
         """
-        转发规则转发规则所关联的域名。您可以输入一个或多个域名。多个域名之间使用英文逗号, 分隔。最多支持输入 500 个域名。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。如果您把该参数设置为 *，则转发规则适用于 VPC 关联的所有域名。
+        Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
         """
         return pulumi.get(self, "zone_name")
 

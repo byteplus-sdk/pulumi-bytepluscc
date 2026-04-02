@@ -22,62 +22,62 @@ import java.util.Objects;
 @CustomType
 public final class GetRuleResult {
     /**
-     * @return 告警通知的方式。Email：邮件 Phone：电话 SMS：短信 Webhook：告警回调。
+     * @return Alert notification method. Email: email, Phone: phone, SMS: SMS, Webhook: webhook callback.
      * 
      */
     private List<String> alertMethods;
     /**
-     * @return 告警状态。 alerting：告警中 normal：正常。
+     * @return Alert status. alerting: In alert; normal: Normal.
      * 
      */
     private String alertState;
     /**
-     * @return 多指标判定条件。&amp;&amp;：多个指标同时成立才判定为触发告警,||：任意指标满足条件触发判定为告警。
+     * @return Multi-metric determination condition. &amp;&amp;: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
      * 
      */
     private String conditionOperator;
     /**
-     * @return 告警条件。数组形式，支持填写多个指标判断语句，最多 10 个。
+     * @return Alert conditions. Array format; supports multiple metric evaluation statements, up to 10.
      * 
      */
     private List<GetRuleCondition> conditions;
     /**
-     * @return 告警策略绑定的告警通知组 ID。
+     * @return Alert notification group ID bound to the alert policy.
      * 
      */
     private List<String> contactGroupIds;
     /**
-     * @return 告警策略创建时间，时间戳格式。
+     * @return Alert policy creation time, in timestamp format.
      * 
      */
     private String createdAt;
     /**
-     * @return 告警策略描述信息。
+     * @return Alert policy description.
      * 
      */
     private String description;
     /**
-     * @return Dimension 配置。
+     * @return Dimension configuration.
      * 
      */
     private GetRuleDimensionConditions dimensionConditions;
     /**
-     * @return 策略生效的截止时间，格式为HH:MM。
+     * @return Policy expiration time, in HH:MM format.
      * 
      */
     private String effectEndAt;
     /**
-     * @return 告警策略生效的开始时间，格式为HH:MM。
+     * @return Policy start time, in HH:MM format.
      * 
      */
     private String effectStartAt;
     /**
-     * @return 告警策略的开启状态。,enable：开启,disable：禁用
+     * @return Alert policy status. enable: enabled, disable: disabled
      * 
      */
     private String enableState;
     /**
-     * @return 触发告警需要持续的周期。单位为分钟。
+     * @return Duration required to trigger an alert, in minutes.
      * 
      */
     private Integer evaluationCount;
@@ -87,191 +87,191 @@ public final class GetRuleResult {
      */
     private String id;
     /**
-     * @return 告警级别。critical：严重,warning：警告,notice：通知
+     * @return Alert level. critical: critical, warning: warning, notice: notification
      * 
      */
     private String level;
     /**
-     * @return 告警分级配置。
+     * @return Alert severity configuration.
      * 
      */
     private List<GetRuleLevelCondition> levelConditions;
     /**
-     * @return 告警策略是否用多指标。true：多指标,false：单指标（默认）。
+     * @return Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
      * 
      */
     private Boolean multipleConditions;
     /**
-     * @return 监控指标所属的云产品。详情请参见 云产品监控指标 下各产品的 Namespace。
+     * @return Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
      * 
      */
     private String namespace;
     /**
-     * @return 无数据告警。
+     * @return No data alert.
      * 
      */
     private GetRuleNoData noData;
     /**
-     * @return 通知策略 ID。
+     * @return Notification policy ID.
      * 
      */
     private String notificationId;
     /**
-     * @return 通知模版配置。
+     * @return Notification template configuration.
      * 
      */
     private List<GetRuleNotifyTemplate> notifyTemplates;
     /**
-     * @return 告警策略检测的资源 ID。
+     * @return Resource ID detected by the alert policy.
      * 
      */
     private GetRuleOriginalDimensions originalDimensions;
     /**
-     * @return 告警策略所属项目。
+     * @return Project to which the alert policy belongs.
      * 
      */
     private String projectName;
     /**
-     * @return 告警恢复通知。
+     * @return Alert recovery notification.
      * 
      */
     private GetRuleRecoveryNotify recoveryNotify;
     /**
-     * @return 云产品所属可用区 ID。
+     * @return Availability zone ID of the cloud product.
      * 
      */
     private List<String> regions;
     /**
-     * @return 告警策略检测的资源类型。
+     * @return Resource type detected by the alert policy.
      * 
      */
     private String resourceType;
     /**
-     * @return 告警策略 ID。
+     * @return Alarm policy ID.
      * 
      */
     private String ruleId;
     /**
-     * @return 告警策略名称。
+     * @return Alert policy name.
      * 
      */
     private String ruleName;
     /**
-     * @return 告警策略的类型。static：手动选择。dynamic：通过资源名称、项目和标签选择。
+     * @return Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
      * 
      */
     private String ruleType;
     /**
-     * @return 告警发送周期。单位为分钟。支持配置为 5、10、15、30、60、180、360、720、1440。
+     * @return Alert sending interval, in minutes. Supported values: 5, 10, 15, 30, 60, 180, 360, 720, 1440.
      * 
      */
     private Integer silenceTime;
     /**
-     * @return 此策略引用的指标所属的维度。详情请参见 云产品监控指标 下各产品的 SubNamespace。
+     * @return Dimension of the metric referenced by this policy. For details, see SubNamespace for each product in Cloud Product Monitoring Metrics.
      * 
      */
     private String subNamespace;
     /**
-     * @return 告警策略绑定 Tag。
+     * @return Bind alert policy to Tag.
      * 
      */
     private List<GetRuleTag> tags;
     /**
-     * @return 告警策略更新时间，时间戳格式。
+     * @return Alarm policy update time, in timestamp format.
      * 
      */
     private String updatedAt;
     /**
-     * @return 告警策略绑定的告警回调 URL 地址。
+     * @return Alarm callback URL bound to the alarm policy.
      * 
      */
     private String webhook;
     /**
-     * @return 告警发生时告警回调 ID 列表。
+     * @return Alarm callback ID list when an alarm occurs.
      * 
      */
     private List<String> webhookIds;
 
     private GetRuleResult() {}
     /**
-     * @return 告警通知的方式。Email：邮件 Phone：电话 SMS：短信 Webhook：告警回调。
+     * @return Alert notification method. Email: email, Phone: phone, SMS: SMS, Webhook: webhook callback.
      * 
      */
     public List<String> alertMethods() {
         return this.alertMethods;
     }
     /**
-     * @return 告警状态。 alerting：告警中 normal：正常。
+     * @return Alert status. alerting: In alert; normal: Normal.
      * 
      */
     public String alertState() {
         return this.alertState;
     }
     /**
-     * @return 多指标判定条件。&amp;&amp;：多个指标同时成立才判定为触发告警,||：任意指标满足条件触发判定为告警。
+     * @return Multi-metric determination condition. &amp;&amp;: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
      * 
      */
     public String conditionOperator() {
         return this.conditionOperator;
     }
     /**
-     * @return 告警条件。数组形式，支持填写多个指标判断语句，最多 10 个。
+     * @return Alert conditions. Array format; supports multiple metric evaluation statements, up to 10.
      * 
      */
     public List<GetRuleCondition> conditions() {
         return this.conditions;
     }
     /**
-     * @return 告警策略绑定的告警通知组 ID。
+     * @return Alert notification group ID bound to the alert policy.
      * 
      */
     public List<String> contactGroupIds() {
         return this.contactGroupIds;
     }
     /**
-     * @return 告警策略创建时间，时间戳格式。
+     * @return Alert policy creation time, in timestamp format.
      * 
      */
     public String createdAt() {
         return this.createdAt;
     }
     /**
-     * @return 告警策略描述信息。
+     * @return Alert policy description.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return Dimension 配置。
+     * @return Dimension configuration.
      * 
      */
     public GetRuleDimensionConditions dimensionConditions() {
         return this.dimensionConditions;
     }
     /**
-     * @return 策略生效的截止时间，格式为HH:MM。
+     * @return Policy expiration time, in HH:MM format.
      * 
      */
     public String effectEndAt() {
         return this.effectEndAt;
     }
     /**
-     * @return 告警策略生效的开始时间，格式为HH:MM。
+     * @return Policy start time, in HH:MM format.
      * 
      */
     public String effectStartAt() {
         return this.effectStartAt;
     }
     /**
-     * @return 告警策略的开启状态。,enable：开启,disable：禁用
+     * @return Alert policy status. enable: enabled, disable: disabled
      * 
      */
     public String enableState() {
         return this.enableState;
     }
     /**
-     * @return 触发告警需要持续的周期。单位为分钟。
+     * @return Duration required to trigger an alert, in minutes.
      * 
      */
     public Integer evaluationCount() {
@@ -285,147 +285,147 @@ public final class GetRuleResult {
         return this.id;
     }
     /**
-     * @return 告警级别。critical：严重,warning：警告,notice：通知
+     * @return Alert level. critical: critical, warning: warning, notice: notification
      * 
      */
     public String level() {
         return this.level;
     }
     /**
-     * @return 告警分级配置。
+     * @return Alert severity configuration.
      * 
      */
     public List<GetRuleLevelCondition> levelConditions() {
         return this.levelConditions;
     }
     /**
-     * @return 告警策略是否用多指标。true：多指标,false：单指标（默认）。
+     * @return Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
      * 
      */
     public Boolean multipleConditions() {
         return this.multipleConditions;
     }
     /**
-     * @return 监控指标所属的云产品。详情请参见 云产品监控指标 下各产品的 Namespace。
+     * @return Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
      * 
      */
     public String namespace() {
         return this.namespace;
     }
     /**
-     * @return 无数据告警。
+     * @return No data alert.
      * 
      */
     public GetRuleNoData noData() {
         return this.noData;
     }
     /**
-     * @return 通知策略 ID。
+     * @return Notification policy ID.
      * 
      */
     public String notificationId() {
         return this.notificationId;
     }
     /**
-     * @return 通知模版配置。
+     * @return Notification template configuration.
      * 
      */
     public List<GetRuleNotifyTemplate> notifyTemplates() {
         return this.notifyTemplates;
     }
     /**
-     * @return 告警策略检测的资源 ID。
+     * @return Resource ID detected by the alert policy.
      * 
      */
     public GetRuleOriginalDimensions originalDimensions() {
         return this.originalDimensions;
     }
     /**
-     * @return 告警策略所属项目。
+     * @return Project to which the alert policy belongs.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 告警恢复通知。
+     * @return Alert recovery notification.
      * 
      */
     public GetRuleRecoveryNotify recoveryNotify() {
         return this.recoveryNotify;
     }
     /**
-     * @return 云产品所属可用区 ID。
+     * @return Availability zone ID of the cloud product.
      * 
      */
     public List<String> regions() {
         return this.regions;
     }
     /**
-     * @return 告警策略检测的资源类型。
+     * @return Resource type detected by the alert policy.
      * 
      */
     public String resourceType() {
         return this.resourceType;
     }
     /**
-     * @return 告警策略 ID。
+     * @return Alarm policy ID.
      * 
      */
     public String ruleId() {
         return this.ruleId;
     }
     /**
-     * @return 告警策略名称。
+     * @return Alert policy name.
      * 
      */
     public String ruleName() {
         return this.ruleName;
     }
     /**
-     * @return 告警策略的类型。static：手动选择。dynamic：通过资源名称、项目和标签选择。
+     * @return Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
      * 
      */
     public String ruleType() {
         return this.ruleType;
     }
     /**
-     * @return 告警发送周期。单位为分钟。支持配置为 5、10、15、30、60、180、360、720、1440。
+     * @return Alert sending interval, in minutes. Supported values: 5, 10, 15, 30, 60, 180, 360, 720, 1440.
      * 
      */
     public Integer silenceTime() {
         return this.silenceTime;
     }
     /**
-     * @return 此策略引用的指标所属的维度。详情请参见 云产品监控指标 下各产品的 SubNamespace。
+     * @return Dimension of the metric referenced by this policy. For details, see SubNamespace for each product in Cloud Product Monitoring Metrics.
      * 
      */
     public String subNamespace() {
         return this.subNamespace;
     }
     /**
-     * @return 告警策略绑定 Tag。
+     * @return Bind alert policy to Tag.
      * 
      */
     public List<GetRuleTag> tags() {
         return this.tags;
     }
     /**
-     * @return 告警策略更新时间，时间戳格式。
+     * @return Alarm policy update time, in timestamp format.
      * 
      */
     public String updatedAt() {
         return this.updatedAt;
     }
     /**
-     * @return 告警策略绑定的告警回调 URL 地址。
+     * @return Alarm callback URL bound to the alarm policy.
      * 
      */
     public String webhook() {
         return this.webhook;
     }
     /**
-     * @return 告警发生时告警回调 ID 列表。
+     * @return Alarm callback ID list when an alarm occurs.
      * 
      */
     public List<String> webhookIds() {

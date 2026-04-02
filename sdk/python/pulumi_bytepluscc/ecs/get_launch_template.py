@@ -64,7 +64,7 @@ class GetLaunchTemplateResult:
     @pulumi.getter(name="createdAt")
     def created_at(self) -> builtins.str:
         """
-        实例启动模板的创建时间。
+        Instance launch template creation time
         """
         return pulumi.get(self, "created_at")
 
@@ -72,7 +72,7 @@ class GetLaunchTemplateResult:
     @pulumi.getter(name="defaultVersionNumber")
     def default_version_number(self) -> builtins.int:
         """
-        实例启动模板的默认版本号。
+        Instance launch template default version number
         """
         return pulumi.get(self, "default_version_number")
 
@@ -88,7 +88,7 @@ class GetLaunchTemplateResult:
     @pulumi.getter(name="latestVersionNumber")
     def latest_version_number(self) -> builtins.int:
         """
-        实例启动模的最新版本号。
+        Latest version number of the instance launch template.
         """
         return pulumi.get(self, "latest_version_number")
 
@@ -96,7 +96,7 @@ class GetLaunchTemplateResult:
     @pulumi.getter(name="launchTemplateId")
     def launch_template_id(self) -> builtins.str:
         """
-        实例启动模板 ID。
+        Instance launch template ID
         """
         return pulumi.get(self, "launch_template_id")
 
@@ -104,7 +104,7 @@ class GetLaunchTemplateResult:
     @pulumi.getter(name="launchTemplateName")
     def launch_template_name(self) -> builtins.str:
         """
-        实例启动模板名称。
+        Instance launch template name.
         """
         return pulumi.get(self, "launch_template_name")
 
@@ -112,7 +112,7 @@ class GetLaunchTemplateResult:
     @pulumi.getter(name="launchTemplateProjectName")
     def launch_template_project_name(self) -> builtins.str:
         """
-        实例启动模版所属项目。
+        Project associated with the instance launch template.
         """
         return pulumi.get(self, "launch_template_project_name")
 
@@ -120,7 +120,7 @@ class GetLaunchTemplateResult:
     @pulumi.getter(name="launchTemplateTags")
     def launch_template_tags(self) -> Sequence['outputs.GetLaunchTemplateLaunchTemplateTagResult']:
         """
-        实例启动模版的标签信息。
+        Instance launch template tag information
         """
         return pulumi.get(self, "launch_template_tags")
 
@@ -128,7 +128,7 @@ class GetLaunchTemplateResult:
     @pulumi.getter(name="launchTemplateVersion")
     def launch_template_version(self) -> 'outputs.GetLaunchTemplateLaunchTemplateVersionResult':
         """
-        实例启动模板版本信息。
+        Instance launch template version information
         """
         return pulumi.get(self, "launch_template_version")
 
@@ -136,7 +136,7 @@ class GetLaunchTemplateResult:
     @pulumi.getter(name="updatedAt")
     def updated_at(self) -> builtins.str:
         """
-        实例启动模板的更新时间。
+        Instance launch template update time
         """
         return pulumi.get(self, "updated_at")
 
@@ -162,7 +162,7 @@ class AwaitableGetLaunchTemplateResult(GetLaunchTemplateResult):
 def get_launch_template(id: Optional[builtins.str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLaunchTemplateResult:
     """
-    Data Source schema for Byteplus::ECS::Launchtemplate
+    Data Source schema for Byteplus::ECS::LaunchTemplate
 
 
     :param builtins.str id: Uniquely identifies the resource.
@@ -186,7 +186,7 @@ def get_launch_template(id: Optional[builtins.str] = None,
 def get_launch_template_output(id: Optional[pulumi.Input[builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLaunchTemplateResult]:
     """
-    Data Source schema for Byteplus::ECS::Launchtemplate
+    Data Source schema for Byteplus::ECS::LaunchTemplate
 
 
     :param builtins.str id: Uniquely identifies the resource.

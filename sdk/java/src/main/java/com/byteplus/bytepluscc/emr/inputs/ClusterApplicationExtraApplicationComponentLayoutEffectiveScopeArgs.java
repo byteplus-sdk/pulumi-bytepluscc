@@ -17,14 +17,14 @@ public final class ClusterApplicationExtraApplicationComponentLayoutEffectiveSco
     public static final ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeArgs Empty = new ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeArgs();
 
     /**
-     * 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+     * Component name list. Required when EffectiveType=COMPONENT_NAME.
      * 
      */
     @Import(name="componentNames")
     private @Nullable Output<List<String>> componentNames;
 
     /**
-     * @return 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+     * @return Component name list. Required when EffectiveType=COMPONENT_NAME.
      * 
      */
     public Optional<Output<List<String>>> componentNames() {
@@ -32,14 +32,14 @@ public final class ClusterApplicationExtraApplicationComponentLayoutEffectiveSco
     }
 
     /**
-     * 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+     * Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
      * 
      */
     @Import(name="effectiveType")
     private @Nullable Output<String> effectiveType;
 
     /**
-     * @return 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+     * @return Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
      * 
      */
     public Optional<Output<String>> effectiveType() {
@@ -47,14 +47,14 @@ public final class ClusterApplicationExtraApplicationComponentLayoutEffectiveSco
     }
 
     /**
-     * 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+     * Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
      * 
      */
     @Import(name="nodeGroupIds")
     private @Nullable Output<List<String>> nodeGroupIds;
 
     /**
-     * @return 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+     * @return Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
      * 
      */
     public Optional<Output<List<String>>> nodeGroupIds() {
@@ -62,14 +62,14 @@ public final class ClusterApplicationExtraApplicationComponentLayoutEffectiveSco
     }
 
     /**
-     * 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+     * Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
      * 
      */
     @Import(name="nodeGroupNames")
     private @Nullable Output<List<String>> nodeGroupNames;
 
     /**
-     * @return 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+     * @return Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
      * 
      */
     public Optional<Output<List<String>>> nodeGroupNames() {
@@ -77,14 +77,14 @@ public final class ClusterApplicationExtraApplicationComponentLayoutEffectiveSco
     }
 
     /**
-     * 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+     * Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
      * 
      */
     @Import(name="nodeGroupTypes")
     private @Nullable Output<List<String>> nodeGroupTypes;
 
     /**
-     * @return 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+     * @return Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
      * 
      */
     public Optional<Output<List<String>>> nodeGroupTypes() {
@@ -92,14 +92,14 @@ public final class ClusterApplicationExtraApplicationComponentLayoutEffectiveSco
     }
 
     /**
-     * 节点ID列表，EffectiveType=NODE_ID时，必选。
+     * Node ID list. Required when EffectiveType=NODE_ID.
      * 
      */
     @Import(name="nodeIds")
     private @Nullable Output<List<String>> nodeIds;
 
     /**
-     * @return 节点ID列表，EffectiveType=NODE_ID时，必选。
+     * @return Node ID list. Required when EffectiveType=NODE_ID.
      * 
      */
     public Optional<Output<List<String>>> nodeIds() {
@@ -107,14 +107,14 @@ public final class ClusterApplicationExtraApplicationComponentLayoutEffectiveSco
     }
 
     /**
-     * 节点名列表，EffectiveType=NODE_NAME时，必选。
+     * Node name list. Required when EffectiveType=NODE_NAME.
      * 
      */
     @Import(name="nodeNames")
     private @Nullable Output<List<String>> nodeNames;
 
     /**
-     * @return 节点名列表，EffectiveType=NODE_NAME时，必选。
+     * @return Node name list. Required when EffectiveType=NODE_NAME.
      * 
      */
     public Optional<Output<List<String>>> nodeNames() {
@@ -152,7 +152,7 @@ public final class ClusterApplicationExtraApplicationComponentLayoutEffectiveSco
         }
 
         /**
-         * @param componentNames 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+         * @param componentNames Component name list. Required when EffectiveType=COMPONENT_NAME.
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class ClusterApplicationExtraApplicationComponentLayoutEffectiveSco
         }
 
         /**
-         * @param componentNames 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+         * @param componentNames Component name list. Required when EffectiveType=COMPONENT_NAME.
          * 
          * @return builder
          * 
@@ -173,7 +173,7 @@ public final class ClusterApplicationExtraApplicationComponentLayoutEffectiveSco
         }
 
         /**
-         * @param componentNames 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+         * @param componentNames Component name list. Required when EffectiveType=COMPONENT_NAME.
          * 
          * @return builder
          * 
@@ -183,7 +183,7 @@ public final class ClusterApplicationExtraApplicationComponentLayoutEffectiveSco
         }
 
         /**
-         * @param effectiveType 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+         * @param effectiveType Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class ClusterApplicationExtraApplicationComponentLayoutEffectiveSco
         }
 
         /**
-         * @param effectiveType 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+         * @param effectiveType Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
          * 
          * @return builder
          * 
@@ -204,7 +204,7 @@ public final class ClusterApplicationExtraApplicationComponentLayoutEffectiveSco
         }
 
         /**
-         * @param nodeGroupIds 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+         * @param nodeGroupIds Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class ClusterApplicationExtraApplicationComponentLayoutEffectiveSco
         }
 
         /**
-         * @param nodeGroupIds 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+         * @param nodeGroupIds Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
          * 
          * @return builder
          * 
@@ -225,7 +225,7 @@ public final class ClusterApplicationExtraApplicationComponentLayoutEffectiveSco
         }
 
         /**
-         * @param nodeGroupIds 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+         * @param nodeGroupIds Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
          * 
          * @return builder
          * 
@@ -235,7 +235,7 @@ public final class ClusterApplicationExtraApplicationComponentLayoutEffectiveSco
         }
 
         /**
-         * @param nodeGroupNames 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+         * @param nodeGroupNames Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
          * 
          * @return builder
          * 
@@ -246,7 +246,7 @@ public final class ClusterApplicationExtraApplicationComponentLayoutEffectiveSco
         }
 
         /**
-         * @param nodeGroupNames 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+         * @param nodeGroupNames Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
          * 
          * @return builder
          * 
@@ -256,7 +256,7 @@ public final class ClusterApplicationExtraApplicationComponentLayoutEffectiveSco
         }
 
         /**
-         * @param nodeGroupNames 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+         * @param nodeGroupNames Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
          * 
          * @return builder
          * 
@@ -266,7 +266,7 @@ public final class ClusterApplicationExtraApplicationComponentLayoutEffectiveSco
         }
 
         /**
-         * @param nodeGroupTypes 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+         * @param nodeGroupTypes Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
          * 
          * @return builder
          * 
@@ -277,7 +277,7 @@ public final class ClusterApplicationExtraApplicationComponentLayoutEffectiveSco
         }
 
         /**
-         * @param nodeGroupTypes 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+         * @param nodeGroupTypes Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
          * 
          * @return builder
          * 
@@ -287,7 +287,7 @@ public final class ClusterApplicationExtraApplicationComponentLayoutEffectiveSco
         }
 
         /**
-         * @param nodeGroupTypes 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+         * @param nodeGroupTypes Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
          * 
          * @return builder
          * 
@@ -297,7 +297,7 @@ public final class ClusterApplicationExtraApplicationComponentLayoutEffectiveSco
         }
 
         /**
-         * @param nodeIds 节点ID列表，EffectiveType=NODE_ID时，必选。
+         * @param nodeIds Node ID list. Required when EffectiveType=NODE_ID.
          * 
          * @return builder
          * 
@@ -308,7 +308,7 @@ public final class ClusterApplicationExtraApplicationComponentLayoutEffectiveSco
         }
 
         /**
-         * @param nodeIds 节点ID列表，EffectiveType=NODE_ID时，必选。
+         * @param nodeIds Node ID list. Required when EffectiveType=NODE_ID.
          * 
          * @return builder
          * 
@@ -318,7 +318,7 @@ public final class ClusterApplicationExtraApplicationComponentLayoutEffectiveSco
         }
 
         /**
-         * @param nodeIds 节点ID列表，EffectiveType=NODE_ID时，必选。
+         * @param nodeIds Node ID list. Required when EffectiveType=NODE_ID.
          * 
          * @return builder
          * 
@@ -328,7 +328,7 @@ public final class ClusterApplicationExtraApplicationComponentLayoutEffectiveSco
         }
 
         /**
-         * @param nodeNames 节点名列表，EffectiveType=NODE_NAME时，必选。
+         * @param nodeNames Node name list. Required when EffectiveType=NODE_NAME.
          * 
          * @return builder
          * 
@@ -339,7 +339,7 @@ public final class ClusterApplicationExtraApplicationComponentLayoutEffectiveSco
         }
 
         /**
-         * @param nodeNames 节点名列表，EffectiveType=NODE_NAME时，必选。
+         * @param nodeNames Node name list. Required when EffectiveType=NODE_NAME.
          * 
          * @return builder
          * 
@@ -349,7 +349,7 @@ public final class ClusterApplicationExtraApplicationComponentLayoutEffectiveSco
         }
 
         /**
-         * @param nodeNames 节点名列表，EffectiveType=NODE_NAME时，必选。
+         * @param nodeNames Node name list. Required when EffectiveType=NODE_NAME.
          * 
          * @return builder
          * 

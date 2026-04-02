@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class GetNodePoolManagementRemedyConfigResult
     {
         /// <summary>
-        /// 是否开启检查自愈。
+        /// Enable self-healing check
         /// </summary>
         public readonly bool Enabled;
         /// <summary>
-        /// 检查自愈规则ID。
+        /// Self-healing rule ID
         /// </summary>
         public readonly string RemedyId;
 

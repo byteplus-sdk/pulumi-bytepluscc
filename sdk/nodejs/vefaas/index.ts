@@ -5,6 +5,21 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { FunctionArgs, FunctionState } from "./function";
+export type Function = import("./function").Function;
+export const Function: typeof import("./function").Function = null as any;
+utilities.lazyLoad(exports, ["Function"], () => require("./function"));
+
+export { GetFunctionArgs, GetFunctionResult, GetFunctionOutputArgs } from "./getFunction";
+export const getFunction: typeof import("./getFunction").getFunction = null as any;
+export const getFunctionOutput: typeof import("./getFunction").getFunctionOutput = null as any;
+utilities.lazyLoad(exports, ["getFunction","getFunctionOutput"], () => require("./getFunction"));
+
+export { GetFunctionsResult } from "./getFunctions";
+export const getFunctions: typeof import("./getFunctions").getFunctions = null as any;
+export const getFunctionsOutput: typeof import("./getFunctions").getFunctionsOutput = null as any;
+utilities.lazyLoad(exports, ["getFunctions","getFunctionsOutput"], () => require("./getFunctions"));
+
 export { GetKafkaTriggerArgs, GetKafkaTriggerResult, GetKafkaTriggerOutputArgs } from "./getKafkaTrigger";
 export const getKafkaTrigger: typeof import("./getKafkaTrigger").getKafkaTrigger = null as any;
 export const getKafkaTriggerOutput: typeof import("./getKafkaTrigger").getKafkaTriggerOutput = null as any;
@@ -40,6 +55,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:vefaas/function:Function":
+                return new Function(name, <any>undefined, { urn })
             case "bytepluscc:vefaas/kafkaTrigger:KafkaTrigger":
                 return new KafkaTrigger(name, <any>undefined, { urn })
             case "bytepluscc:vefaas/sandbox:Sandbox":
@@ -49,5 +66,6 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "vefaas/function", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vefaas/kafkaTrigger", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vefaas/sandbox", _module)

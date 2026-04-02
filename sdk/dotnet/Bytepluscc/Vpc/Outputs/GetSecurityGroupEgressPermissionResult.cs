@@ -15,55 +15,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc.Outputs
     public sealed class GetSecurityGroupEgressPermissionResult
     {
         /// <summary>
-        /// 源地址的IPv4 CIDR或IPv6 CIDR
+        /// IPv4 CIDR or IPv6 CIDR of the source address
         /// </summary>
         public readonly string CidrIp;
         /// <summary>
-        /// 安全组规则创建时间。
+        /// Security group rule creation time
         /// </summary>
         public readonly string CreationTime;
         /// <summary>
-        /// 安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
+        /// Description for the security group rule. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1–255 characters. If not specified, the original configuration is retained
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 安全组规则方向。ingress：入方向。egress：出方向
+        /// Security group rule direction. ingress: inbound direction. egress: outbound direction
         /// </summary>
         public readonly string Direction;
         /// <summary>
-        /// 访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
+        /// Access policy. For resources specified by CidrIp, SourceGroupId, or PrefixListId, refers to the NICs in the security group. Values: accept (allow), drop (deny)
         /// </summary>
         public readonly string Policy;
         /// <summary>
-        /// 端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+        /// Port range end value. 1. When Protocol is set to tcp or udp, the valid range is 1–65535. 2. When Protocol is set to icmp, icmpv6, or all, only -1 is supported, indicating no port restriction
         /// </summary>
         public readonly int PortEnd;
         /// <summary>
-        /// 端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+        /// Port range start value. 1. When Protocol is tcp or udp, range is 1–65535. 2. When Protocol is icmp, icmpv6, or all, only -1 is supported, meaning no port restriction
         /// </summary>
         public readonly int PortStart;
         /// <summary>
-        /// 前缀列表的CIDR。
+        /// Prefix list CIDR
         /// </summary>
         public readonly ImmutableArray<string> PrefixListCidrs;
         /// <summary>
-        /// 前缀列表的ID
+        /// Prefix list ID
         /// </summary>
         public readonly string PrefixListId;
         /// <summary>
-        /// 安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
+        /// Security group rule priority. Lower numbers indicate higher priority. Value range: 1–100. Default: 1 if not specified
         /// </summary>
         public readonly int Priority;
         /// <summary>
-        /// 协议类型。tcp、udp、icmp、icmpv6、all
+        /// Protocol type. tcp, udp, icmp, icmpv6, all
         /// </summary>
         public readonly string Protocol;
         /// <summary>
-        /// 源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
+        /// Source address security group ID. All NIC addresses in this security group are used as source addresses
         /// </summary>
         public readonly string SourceGroupId;
         /// <summary>
-        /// 安全组规则更新时间。
+        /// Security group rule update time
         /// </summary>
         public readonly string UpdateTime;
 

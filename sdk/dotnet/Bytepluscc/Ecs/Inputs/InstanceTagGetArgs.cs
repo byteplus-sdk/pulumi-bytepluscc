@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
     public sealed class InstanceTagGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 实例的键。
+        /// Instance key.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// 实例的值。
+        /// Instance value.
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

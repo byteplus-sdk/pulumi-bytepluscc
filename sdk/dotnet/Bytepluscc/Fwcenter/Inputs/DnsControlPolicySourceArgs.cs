@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Fwcenter.Inputs
     public sealed class DnsControlPolicySourceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// VPC地域信息。
+        /// VPC region information.
         /// </summary>
         [Input("region")]
         public Input<string>? Region { get; set; }

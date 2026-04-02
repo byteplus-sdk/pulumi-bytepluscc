@@ -14,21 +14,21 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type ClusterApplication struct {
-	// 应用配置路径。
+	// Application configuration path.
 	ApplicationConfigHome *string `pulumi:"applicationConfigHome"`
-	// 应用安装路径。
+	// Application installation path.
 	ApplicationHome *string `pulumi:"applicationHome"`
-	// 应用名称。
+	// Application name.
 	ApplicationName *string `pulumi:"applicationName"`
-	// 服务状态。NORMAL：正常；WARNING：告警；STOPPED：已停止；INIT：初始化中；INSTALLING：安装中；INSTALLED：已安装；STARTING：启动中；STARTED：已启动；STOPPING：停止中；UNINSTALLING：卸载中；UNINSTALLED：已卸载；EXCEPTION：异常。
+	// Service status. NORMAL: normal; WARNING: alert; STOPPED: stopped; INIT: initializing; INSTALLING: installing; INSTALLED: installed; STARTING: starting; STARTED: started; STOPPING: stopping; UNINSTALLING: uninstalling; UNINSTALLED: uninstalled; EXCEPTION: exception.
 	ApplicationState *string `pulumi:"applicationState"`
-	// 应用版本。
+	// Application version.
 	ApplicationVersion *string `pulumi:"applicationVersion"`
-	// 应用用户组。
+	// Application user group.
 	Group *string `pulumi:"group"`
-	// 是否支持客户端。
+	// Whether client is supported.
 	SupportClient *bool `pulumi:"supportClient"`
-	// 应用用户。
+	// Application user.
 	User *string `pulumi:"user"`
 }
 
@@ -44,21 +44,21 @@ type ClusterApplicationInput interface {
 }
 
 type ClusterApplicationArgs struct {
-	// 应用配置路径。
+	// Application configuration path.
 	ApplicationConfigHome pulumi.StringPtrInput `pulumi:"applicationConfigHome"`
-	// 应用安装路径。
+	// Application installation path.
 	ApplicationHome pulumi.StringPtrInput `pulumi:"applicationHome"`
-	// 应用名称。
+	// Application name.
 	ApplicationName pulumi.StringPtrInput `pulumi:"applicationName"`
-	// 服务状态。NORMAL：正常；WARNING：告警；STOPPED：已停止；INIT：初始化中；INSTALLING：安装中；INSTALLED：已安装；STARTING：启动中；STARTED：已启动；STOPPING：停止中；UNINSTALLING：卸载中；UNINSTALLED：已卸载；EXCEPTION：异常。
+	// Service status. NORMAL: normal; WARNING: alert; STOPPED: stopped; INIT: initializing; INSTALLING: installing; INSTALLED: installed; STARTING: starting; STARTED: started; STOPPING: stopping; UNINSTALLING: uninstalling; UNINSTALLED: uninstalled; EXCEPTION: exception.
 	ApplicationState pulumi.StringPtrInput `pulumi:"applicationState"`
-	// 应用版本。
+	// Application version.
 	ApplicationVersion pulumi.StringPtrInput `pulumi:"applicationVersion"`
-	// 应用用户组。
+	// Application user group.
 	Group pulumi.StringPtrInput `pulumi:"group"`
-	// 是否支持客户端。
+	// Whether client is supported.
 	SupportClient pulumi.BoolPtrInput `pulumi:"supportClient"`
-	// 应用用户。
+	// Application user.
 	User pulumi.StringPtrInput `pulumi:"user"`
 }
 
@@ -113,42 +113,42 @@ func (o ClusterApplicationOutput) ToClusterApplicationOutputWithContext(ctx cont
 	return o
 }
 
-// 应用配置路径。
+// Application configuration path.
 func (o ClusterApplicationOutput) ApplicationConfigHome() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterApplication) *string { return v.ApplicationConfigHome }).(pulumi.StringPtrOutput)
 }
 
-// 应用安装路径。
+// Application installation path.
 func (o ClusterApplicationOutput) ApplicationHome() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterApplication) *string { return v.ApplicationHome }).(pulumi.StringPtrOutput)
 }
 
-// 应用名称。
+// Application name.
 func (o ClusterApplicationOutput) ApplicationName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterApplication) *string { return v.ApplicationName }).(pulumi.StringPtrOutput)
 }
 
-// 服务状态。NORMAL：正常；WARNING：告警；STOPPED：已停止；INIT：初始化中；INSTALLING：安装中；INSTALLED：已安装；STARTING：启动中；STARTED：已启动；STOPPING：停止中；UNINSTALLING：卸载中；UNINSTALLED：已卸载；EXCEPTION：异常。
+// Service status. NORMAL: normal; WARNING: alert; STOPPED: stopped; INIT: initializing; INSTALLING: installing; INSTALLED: installed; STARTING: starting; STARTED: started; STOPPING: stopping; UNINSTALLING: uninstalling; UNINSTALLED: uninstalled; EXCEPTION: exception.
 func (o ClusterApplicationOutput) ApplicationState() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterApplication) *string { return v.ApplicationState }).(pulumi.StringPtrOutput)
 }
 
-// 应用版本。
+// Application version.
 func (o ClusterApplicationOutput) ApplicationVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterApplication) *string { return v.ApplicationVersion }).(pulumi.StringPtrOutput)
 }
 
-// 应用用户组。
+// Application user group.
 func (o ClusterApplicationOutput) Group() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterApplication) *string { return v.Group }).(pulumi.StringPtrOutput)
 }
 
-// 是否支持客户端。
+// Whether client is supported.
 func (o ClusterApplicationOutput) SupportClient() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ClusterApplication) *bool { return v.SupportClient }).(pulumi.BoolPtrOutput)
 }
 
-// 应用用户。
+// Application user.
 func (o ClusterApplicationOutput) User() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterApplication) *string { return v.User }).(pulumi.StringPtrOutput)
 }
@@ -176,11 +176,11 @@ func (o ClusterApplicationArrayOutput) Index(i pulumi.IntInput) ClusterApplicati
 type ClusterApplicationExtra struct {
 	ApplicationComponentLayouts []ClusterApplicationExtraApplicationComponentLayout `pulumi:"applicationComponentLayouts"`
 	ApplicationConfigs          []ClusterApplicationExtraApplicationConfig          `pulumi:"applicationConfigs"`
-	// 应用名称。
+	// Application name.
 	ApplicationName *string `pulumi:"applicationName"`
-	// 元数据连接id。
+	// Metadata connection ID.
 	ConnectionId *string `pulumi:"connectionId"`
-	// 元数据连接类型。BUILT*IN*MYSQL：内置数据库。EXTERNAL*MYSQL：外置数据库。HIVE*METASTORE：HMS。
+	// Metadata connection type. BUILT*IN*MYSQL: built-in database. EXTERNAL*MYSQL: external database. HIVE*METASTORE: HMS.
 	ConnectionType *string `pulumi:"connectionType"`
 }
 
@@ -198,11 +198,11 @@ type ClusterApplicationExtraInput interface {
 type ClusterApplicationExtraArgs struct {
 	ApplicationComponentLayouts ClusterApplicationExtraApplicationComponentLayoutArrayInput `pulumi:"applicationComponentLayouts"`
 	ApplicationConfigs          ClusterApplicationExtraApplicationConfigArrayInput          `pulumi:"applicationConfigs"`
-	// 应用名称。
+	// Application name.
 	ApplicationName pulumi.StringPtrInput `pulumi:"applicationName"`
-	// 元数据连接id。
+	// Metadata connection ID.
 	ConnectionId pulumi.StringPtrInput `pulumi:"connectionId"`
-	// 元数据连接类型。BUILT*IN*MYSQL：内置数据库。EXTERNAL*MYSQL：外置数据库。HIVE*METASTORE：HMS。
+	// Metadata connection type. BUILT*IN*MYSQL: built-in database. EXTERNAL*MYSQL: external database. HIVE*METASTORE: HMS.
 	ConnectionType pulumi.StringPtrInput `pulumi:"connectionType"`
 }
 
@@ -269,17 +269,17 @@ func (o ClusterApplicationExtraOutput) ApplicationConfigs() ClusterApplicationEx
 	}).(ClusterApplicationExtraApplicationConfigArrayOutput)
 }
 
-// 应用名称。
+// Application name.
 func (o ClusterApplicationExtraOutput) ApplicationName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterApplicationExtra) *string { return v.ApplicationName }).(pulumi.StringPtrOutput)
 }
 
-// 元数据连接id。
+// Metadata connection ID.
 func (o ClusterApplicationExtraOutput) ConnectionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterApplicationExtra) *string { return v.ConnectionId }).(pulumi.StringPtrOutput)
 }
 
-// 元数据连接类型。BUILT*IN*MYSQL：内置数据库。EXTERNAL*MYSQL：外置数据库。HIVE*METASTORE：HMS。
+// Metadata connection type. BUILT*IN*MYSQL: built-in database. EXTERNAL*MYSQL: external database. HIVE*METASTORE: HMS.
 func (o ClusterApplicationExtraOutput) ConnectionType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterApplicationExtra) *string { return v.ConnectionType }).(pulumi.StringPtrOutput)
 }
@@ -305,9 +305,9 @@ func (o ClusterApplicationExtraArrayOutput) Index(i pulumi.IntInput) ClusterAppl
 }
 
 type ClusterApplicationExtraApplicationComponentLayout struct {
-	// 组件名称。
+	// Component name.
 	ComponentName *string `pulumi:"componentName"`
-	// 组件的布局范围。
+	// Component layout scope.
 	EffectiveScope *ClusterApplicationExtraApplicationComponentLayoutEffectiveScope `pulumi:"effectiveScope"`
 }
 
@@ -323,9 +323,9 @@ type ClusterApplicationExtraApplicationComponentLayoutInput interface {
 }
 
 type ClusterApplicationExtraApplicationComponentLayoutArgs struct {
-	// 组件名称。
+	// Component name.
 	ComponentName pulumi.StringPtrInput `pulumi:"componentName"`
-	// 组件的布局范围。
+	// Component layout scope.
 	EffectiveScope ClusterApplicationExtraApplicationComponentLayoutEffectiveScopePtrInput `pulumi:"effectiveScope"`
 }
 
@@ -380,12 +380,12 @@ func (o ClusterApplicationExtraApplicationComponentLayoutOutput) ToClusterApplic
 	return o
 }
 
-// 组件名称。
+// Component name.
 func (o ClusterApplicationExtraApplicationComponentLayoutOutput) ComponentName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterApplicationExtraApplicationComponentLayout) *string { return v.ComponentName }).(pulumi.StringPtrOutput)
 }
 
-// 组件的布局范围。
+// Component layout scope.
 func (o ClusterApplicationExtraApplicationComponentLayoutOutput) EffectiveScope() ClusterApplicationExtraApplicationComponentLayoutEffectiveScopePtrOutput {
 	return o.ApplyT(func(v ClusterApplicationExtraApplicationComponentLayout) *ClusterApplicationExtraApplicationComponentLayoutEffectiveScope {
 		return v.EffectiveScope
@@ -413,19 +413,19 @@ func (o ClusterApplicationExtraApplicationComponentLayoutArrayOutput) Index(i pu
 }
 
 type ClusterApplicationExtraApplicationComponentLayoutEffectiveScope struct {
-	// 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+	// Component name list. Required when EffectiveType=COMPONENT_NAME.
 	ComponentNames []string `pulumi:"componentNames"`
-	// 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+	// Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
 	EffectiveType *string `pulumi:"effectiveType"`
-	// 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+	// Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
 	NodeGroupIds []string `pulumi:"nodeGroupIds"`
-	// 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+	// Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
 	NodeGroupNames []string `pulumi:"nodeGroupNames"`
-	// 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+	// Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
 	NodeGroupTypes []string `pulumi:"nodeGroupTypes"`
-	// 节点ID列表，EffectiveType=NODE_ID时，必选。
+	// Node ID list. Required when EffectiveType=NODE_ID.
 	NodeIds []string `pulumi:"nodeIds"`
-	// 节点名列表，EffectiveType=NODE_NAME时，必选。
+	// Node name list. Required when EffectiveType=NODE_NAME.
 	NodeNames []string `pulumi:"nodeNames"`
 }
 
@@ -441,19 +441,19 @@ type ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeInput interf
 }
 
 type ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeArgs struct {
-	// 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+	// Component name list. Required when EffectiveType=COMPONENT_NAME.
 	ComponentNames pulumi.StringArrayInput `pulumi:"componentNames"`
-	// 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+	// Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
 	EffectiveType pulumi.StringPtrInput `pulumi:"effectiveType"`
-	// 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+	// Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
 	NodeGroupIds pulumi.StringArrayInput `pulumi:"nodeGroupIds"`
-	// 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+	// Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
 	NodeGroupNames pulumi.StringArrayInput `pulumi:"nodeGroupNames"`
-	// 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+	// Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
 	NodeGroupTypes pulumi.StringArrayInput `pulumi:"nodeGroupTypes"`
-	// 节点ID列表，EffectiveType=NODE_ID时，必选。
+	// Node ID list. Required when EffectiveType=NODE_ID.
 	NodeIds pulumi.StringArrayInput `pulumi:"nodeIds"`
-	// 节点名列表，EffectiveType=NODE_NAME时，必选。
+	// Node name list. Required when EffectiveType=NODE_NAME.
 	NodeNames pulumi.StringArrayInput `pulumi:"nodeNames"`
 }
 
@@ -534,47 +534,47 @@ func (o ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeOutput) T
 	}).(ClusterApplicationExtraApplicationComponentLayoutEffectiveScopePtrOutput)
 }
 
-// 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+// Component name list. Required when EffectiveType=COMPONENT_NAME.
 func (o ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeOutput) ComponentNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClusterApplicationExtraApplicationComponentLayoutEffectiveScope) []string {
 		return v.ComponentNames
 	}).(pulumi.StringArrayOutput)
 }
 
-// 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+// Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
 func (o ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeOutput) EffectiveType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterApplicationExtraApplicationComponentLayoutEffectiveScope) *string {
 		return v.EffectiveType
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+// Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
 func (o ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeOutput) NodeGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClusterApplicationExtraApplicationComponentLayoutEffectiveScope) []string {
 		return v.NodeGroupIds
 	}).(pulumi.StringArrayOutput)
 }
 
-// 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+// Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
 func (o ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeOutput) NodeGroupNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClusterApplicationExtraApplicationComponentLayoutEffectiveScope) []string {
 		return v.NodeGroupNames
 	}).(pulumi.StringArrayOutput)
 }
 
-// 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+// Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
 func (o ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeOutput) NodeGroupTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClusterApplicationExtraApplicationComponentLayoutEffectiveScope) []string {
 		return v.NodeGroupTypes
 	}).(pulumi.StringArrayOutput)
 }
 
-// 节点ID列表，EffectiveType=NODE_ID时，必选。
+// Node ID list. Required when EffectiveType=NODE_ID.
 func (o ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeOutput) NodeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClusterApplicationExtraApplicationComponentLayoutEffectiveScope) []string { return v.NodeIds }).(pulumi.StringArrayOutput)
 }
 
-// 节点名列表，EffectiveType=NODE_NAME时，必选。
+// Node name list. Required when EffectiveType=NODE_NAME.
 func (o ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeOutput) NodeNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClusterApplicationExtraApplicationComponentLayoutEffectiveScope) []string { return v.NodeNames }).(pulumi.StringArrayOutput)
 }
@@ -603,7 +603,7 @@ func (o ClusterApplicationExtraApplicationComponentLayoutEffectiveScopePtrOutput
 	}).(ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeOutput)
 }
 
-// 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+// Component name list. Required when EffectiveType=COMPONENT_NAME.
 func (o ClusterApplicationExtraApplicationComponentLayoutEffectiveScopePtrOutput) ComponentNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterApplicationExtraApplicationComponentLayoutEffectiveScope) []string {
 		if v == nil {
@@ -613,7 +613,7 @@ func (o ClusterApplicationExtraApplicationComponentLayoutEffectiveScopePtrOutput
 	}).(pulumi.StringArrayOutput)
 }
 
-// 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+// Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
 func (o ClusterApplicationExtraApplicationComponentLayoutEffectiveScopePtrOutput) EffectiveType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClusterApplicationExtraApplicationComponentLayoutEffectiveScope) *string {
 		if v == nil {
@@ -623,7 +623,7 @@ func (o ClusterApplicationExtraApplicationComponentLayoutEffectiveScopePtrOutput
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+// Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
 func (o ClusterApplicationExtraApplicationComponentLayoutEffectiveScopePtrOutput) NodeGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterApplicationExtraApplicationComponentLayoutEffectiveScope) []string {
 		if v == nil {
@@ -633,7 +633,7 @@ func (o ClusterApplicationExtraApplicationComponentLayoutEffectiveScopePtrOutput
 	}).(pulumi.StringArrayOutput)
 }
 
-// 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+// Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
 func (o ClusterApplicationExtraApplicationComponentLayoutEffectiveScopePtrOutput) NodeGroupNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterApplicationExtraApplicationComponentLayoutEffectiveScope) []string {
 		if v == nil {
@@ -643,7 +643,7 @@ func (o ClusterApplicationExtraApplicationComponentLayoutEffectiveScopePtrOutput
 	}).(pulumi.StringArrayOutput)
 }
 
-// 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+// Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
 func (o ClusterApplicationExtraApplicationComponentLayoutEffectiveScopePtrOutput) NodeGroupTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterApplicationExtraApplicationComponentLayoutEffectiveScope) []string {
 		if v == nil {
@@ -653,7 +653,7 @@ func (o ClusterApplicationExtraApplicationComponentLayoutEffectiveScopePtrOutput
 	}).(pulumi.StringArrayOutput)
 }
 
-// 节点ID列表，EffectiveType=NODE_ID时，必选。
+// Node ID list. Required when EffectiveType=NODE_ID.
 func (o ClusterApplicationExtraApplicationComponentLayoutEffectiveScopePtrOutput) NodeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterApplicationExtraApplicationComponentLayoutEffectiveScope) []string {
 		if v == nil {
@@ -663,7 +663,7 @@ func (o ClusterApplicationExtraApplicationComponentLayoutEffectiveScopePtrOutput
 	}).(pulumi.StringArrayOutput)
 }
 
-// 节点名列表，EffectiveType=NODE_NAME时，必选。
+// Node name list. Required when EffectiveType=NODE_NAME.
 func (o ClusterApplicationExtraApplicationComponentLayoutEffectiveScopePtrOutput) NodeNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterApplicationExtraApplicationComponentLayoutEffectiveScope) []string {
 		if v == nil {
@@ -674,19 +674,19 @@ func (o ClusterApplicationExtraApplicationComponentLayoutEffectiveScopePtrOutput
 }
 
 type ClusterApplicationExtraApplicationConfig struct {
-	// 组件实例名称。
+	// Component instance name.
 	ComponentInstanceName *string `pulumi:"componentInstanceName"`
-	// 组件名称。
+	// Component name.
 	ComponentName *string `pulumi:"componentName"`
-	// 配置文件名。
+	// Configuration file name.
 	ConfigFileName *string `pulumi:"configFileName"`
-	// 配置项名称。
+	// Configuration item name.
 	ConfigItemKey *string `pulumi:"configItemKey"`
-	// 配置项值。
+	// Configuration item value.
 	ConfigItemValue *string `pulumi:"configItemValue"`
-	// 是否删除。
+	// Whether to delete.
 	Deleted *bool `pulumi:"deleted"`
-	// 影响组件。
+	// Affected component.
 	EffectiveScope *ClusterApplicationExtraApplicationConfigEffectiveScope `pulumi:"effectiveScope"`
 }
 
@@ -702,19 +702,19 @@ type ClusterApplicationExtraApplicationConfigInput interface {
 }
 
 type ClusterApplicationExtraApplicationConfigArgs struct {
-	// 组件实例名称。
+	// Component instance name.
 	ComponentInstanceName pulumi.StringPtrInput `pulumi:"componentInstanceName"`
-	// 组件名称。
+	// Component name.
 	ComponentName pulumi.StringPtrInput `pulumi:"componentName"`
-	// 配置文件名。
+	// Configuration file name.
 	ConfigFileName pulumi.StringPtrInput `pulumi:"configFileName"`
-	// 配置项名称。
+	// Configuration item name.
 	ConfigItemKey pulumi.StringPtrInput `pulumi:"configItemKey"`
-	// 配置项值。
+	// Configuration item value.
 	ConfigItemValue pulumi.StringPtrInput `pulumi:"configItemValue"`
-	// 是否删除。
+	// Whether to delete.
 	Deleted pulumi.BoolPtrInput `pulumi:"deleted"`
-	// 影响组件。
+	// Affected component.
 	EffectiveScope ClusterApplicationExtraApplicationConfigEffectiveScopePtrInput `pulumi:"effectiveScope"`
 }
 
@@ -769,37 +769,37 @@ func (o ClusterApplicationExtraApplicationConfigOutput) ToClusterApplicationExtr
 	return o
 }
 
-// 组件实例名称。
+// Component instance name.
 func (o ClusterApplicationExtraApplicationConfigOutput) ComponentInstanceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterApplicationExtraApplicationConfig) *string { return v.ComponentInstanceName }).(pulumi.StringPtrOutput)
 }
 
-// 组件名称。
+// Component name.
 func (o ClusterApplicationExtraApplicationConfigOutput) ComponentName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterApplicationExtraApplicationConfig) *string { return v.ComponentName }).(pulumi.StringPtrOutput)
 }
 
-// 配置文件名。
+// Configuration file name.
 func (o ClusterApplicationExtraApplicationConfigOutput) ConfigFileName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterApplicationExtraApplicationConfig) *string { return v.ConfigFileName }).(pulumi.StringPtrOutput)
 }
 
-// 配置项名称。
+// Configuration item name.
 func (o ClusterApplicationExtraApplicationConfigOutput) ConfigItemKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterApplicationExtraApplicationConfig) *string { return v.ConfigItemKey }).(pulumi.StringPtrOutput)
 }
 
-// 配置项值。
+// Configuration item value.
 func (o ClusterApplicationExtraApplicationConfigOutput) ConfigItemValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterApplicationExtraApplicationConfig) *string { return v.ConfigItemValue }).(pulumi.StringPtrOutput)
 }
 
-// 是否删除。
+// Whether to delete.
 func (o ClusterApplicationExtraApplicationConfigOutput) Deleted() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ClusterApplicationExtraApplicationConfig) *bool { return v.Deleted }).(pulumi.BoolPtrOutput)
 }
 
-// 影响组件。
+// Affected component.
 func (o ClusterApplicationExtraApplicationConfigOutput) EffectiveScope() ClusterApplicationExtraApplicationConfigEffectiveScopePtrOutput {
 	return o.ApplyT(func(v ClusterApplicationExtraApplicationConfig) *ClusterApplicationExtraApplicationConfigEffectiveScope {
 		return v.EffectiveScope
@@ -827,19 +827,19 @@ func (o ClusterApplicationExtraApplicationConfigArrayOutput) Index(i pulumi.IntI
 }
 
 type ClusterApplicationExtraApplicationConfigEffectiveScope struct {
-	// 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+	// Component name list. Required when EffectiveType=COMPONENT_NAME.
 	ComponentNames []string `pulumi:"componentNames"`
-	// 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+	// Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
 	EffectiveType *string `pulumi:"effectiveType"`
-	// 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+	// Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
 	NodeGroupIds []string `pulumi:"nodeGroupIds"`
-	// 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+	// Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
 	NodeGroupNames []string `pulumi:"nodeGroupNames"`
-	// 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+	// Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
 	NodeGroupTypes []string `pulumi:"nodeGroupTypes"`
-	// 节点ID列表，EffectiveType=NODE_ID时，必选。
+	// Node ID list. Required when EffectiveType=NODE_ID.
 	NodeIds []string `pulumi:"nodeIds"`
-	// 节点名列表，EffectiveType=NODE_NAME时，必选。
+	// Node name list. Required when EffectiveType=NODE_NAME.
 	NodeNames []string `pulumi:"nodeNames"`
 }
 
@@ -855,19 +855,19 @@ type ClusterApplicationExtraApplicationConfigEffectiveScopeInput interface {
 }
 
 type ClusterApplicationExtraApplicationConfigEffectiveScopeArgs struct {
-	// 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+	// Component name list. Required when EffectiveType=COMPONENT_NAME.
 	ComponentNames pulumi.StringArrayInput `pulumi:"componentNames"`
-	// 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+	// Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
 	EffectiveType pulumi.StringPtrInput `pulumi:"effectiveType"`
-	// 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+	// Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
 	NodeGroupIds pulumi.StringArrayInput `pulumi:"nodeGroupIds"`
-	// 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+	// Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
 	NodeGroupNames pulumi.StringArrayInput `pulumi:"nodeGroupNames"`
-	// 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+	// Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
 	NodeGroupTypes pulumi.StringArrayInput `pulumi:"nodeGroupTypes"`
-	// 节点ID列表，EffectiveType=NODE_ID时，必选。
+	// Node ID list. Required when EffectiveType=NODE_ID.
 	NodeIds pulumi.StringArrayInput `pulumi:"nodeIds"`
-	// 节点名列表，EffectiveType=NODE_NAME时，必选。
+	// Node name list. Required when EffectiveType=NODE_NAME.
 	NodeNames pulumi.StringArrayInput `pulumi:"nodeNames"`
 }
 
@@ -948,37 +948,37 @@ func (o ClusterApplicationExtraApplicationConfigEffectiveScopeOutput) ToClusterA
 	}).(ClusterApplicationExtraApplicationConfigEffectiveScopePtrOutput)
 }
 
-// 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+// Component name list. Required when EffectiveType=COMPONENT_NAME.
 func (o ClusterApplicationExtraApplicationConfigEffectiveScopeOutput) ComponentNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClusterApplicationExtraApplicationConfigEffectiveScope) []string { return v.ComponentNames }).(pulumi.StringArrayOutput)
 }
 
-// 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+// Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
 func (o ClusterApplicationExtraApplicationConfigEffectiveScopeOutput) EffectiveType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterApplicationExtraApplicationConfigEffectiveScope) *string { return v.EffectiveType }).(pulumi.StringPtrOutput)
 }
 
-// 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+// Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
 func (o ClusterApplicationExtraApplicationConfigEffectiveScopeOutput) NodeGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClusterApplicationExtraApplicationConfigEffectiveScope) []string { return v.NodeGroupIds }).(pulumi.StringArrayOutput)
 }
 
-// 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+// Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
 func (o ClusterApplicationExtraApplicationConfigEffectiveScopeOutput) NodeGroupNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClusterApplicationExtraApplicationConfigEffectiveScope) []string { return v.NodeGroupNames }).(pulumi.StringArrayOutput)
 }
 
-// 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+// Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
 func (o ClusterApplicationExtraApplicationConfigEffectiveScopeOutput) NodeGroupTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClusterApplicationExtraApplicationConfigEffectiveScope) []string { return v.NodeGroupTypes }).(pulumi.StringArrayOutput)
 }
 
-// 节点ID列表，EffectiveType=NODE_ID时，必选。
+// Node ID list. Required when EffectiveType=NODE_ID.
 func (o ClusterApplicationExtraApplicationConfigEffectiveScopeOutput) NodeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClusterApplicationExtraApplicationConfigEffectiveScope) []string { return v.NodeIds }).(pulumi.StringArrayOutput)
 }
 
-// 节点名列表，EffectiveType=NODE_NAME时，必选。
+// Node name list. Required when EffectiveType=NODE_NAME.
 func (o ClusterApplicationExtraApplicationConfigEffectiveScopeOutput) NodeNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClusterApplicationExtraApplicationConfigEffectiveScope) []string { return v.NodeNames }).(pulumi.StringArrayOutput)
 }
@@ -1007,7 +1007,7 @@ func (o ClusterApplicationExtraApplicationConfigEffectiveScopePtrOutput) Elem() 
 	}).(ClusterApplicationExtraApplicationConfigEffectiveScopeOutput)
 }
 
-// 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+// Component name list. Required when EffectiveType=COMPONENT_NAME.
 func (o ClusterApplicationExtraApplicationConfigEffectiveScopePtrOutput) ComponentNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterApplicationExtraApplicationConfigEffectiveScope) []string {
 		if v == nil {
@@ -1017,7 +1017,7 @@ func (o ClusterApplicationExtraApplicationConfigEffectiveScopePtrOutput) Compone
 	}).(pulumi.StringArrayOutput)
 }
 
-// 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+// Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
 func (o ClusterApplicationExtraApplicationConfigEffectiveScopePtrOutput) EffectiveType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClusterApplicationExtraApplicationConfigEffectiveScope) *string {
 		if v == nil {
@@ -1027,7 +1027,7 @@ func (o ClusterApplicationExtraApplicationConfigEffectiveScopePtrOutput) Effecti
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+// Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
 func (o ClusterApplicationExtraApplicationConfigEffectiveScopePtrOutput) NodeGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterApplicationExtraApplicationConfigEffectiveScope) []string {
 		if v == nil {
@@ -1037,7 +1037,7 @@ func (o ClusterApplicationExtraApplicationConfigEffectiveScopePtrOutput) NodeGro
 	}).(pulumi.StringArrayOutput)
 }
 
-// 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+// Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
 func (o ClusterApplicationExtraApplicationConfigEffectiveScopePtrOutput) NodeGroupNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterApplicationExtraApplicationConfigEffectiveScope) []string {
 		if v == nil {
@@ -1047,7 +1047,7 @@ func (o ClusterApplicationExtraApplicationConfigEffectiveScopePtrOutput) NodeGro
 	}).(pulumi.StringArrayOutput)
 }
 
-// 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+// Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
 func (o ClusterApplicationExtraApplicationConfigEffectiveScopePtrOutput) NodeGroupTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterApplicationExtraApplicationConfigEffectiveScope) []string {
 		if v == nil {
@@ -1057,7 +1057,7 @@ func (o ClusterApplicationExtraApplicationConfigEffectiveScopePtrOutput) NodeGro
 	}).(pulumi.StringArrayOutput)
 }
 
-// 节点ID列表，EffectiveType=NODE_ID时，必选。
+// Node ID list. Required when EffectiveType=NODE_ID.
 func (o ClusterApplicationExtraApplicationConfigEffectiveScopePtrOutput) NodeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterApplicationExtraApplicationConfigEffectiveScope) []string {
 		if v == nil {
@@ -1067,7 +1067,7 @@ func (o ClusterApplicationExtraApplicationConfigEffectiveScopePtrOutput) NodeIds
 	}).(pulumi.StringArrayOutput)
 }
 
-// 节点名列表，EffectiveType=NODE_NAME时，必选。
+// Node name list. Required when EffectiveType=NODE_NAME.
 func (o ClusterApplicationExtraApplicationConfigEffectiveScopePtrOutput) NodeNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterApplicationExtraApplicationConfigEffectiveScope) []string {
 		if v == nil {
@@ -1078,21 +1078,21 @@ func (o ClusterApplicationExtraApplicationConfigEffectiveScopePtrOutput) NodeNam
 }
 
 type ClusterBootstrapScript struct {
-	// 脚本执行范围。
+	// Script execution scope.
 	EffectiveScope *ClusterBootstrapScriptEffectiveScope `pulumi:"effectiveScope"`
-	// 执行失败策略。取值范围：FAILED*CONTINUE：失败后继续执行其他任务。FAILED*BLOCK：失败后中断，不再继续执行后续任务。当脚本为BOOTSTRAP时，会导致创建集群、扩容节点组操作中断并失败。默认值：FAILED_BLOCK。
+	// Execution failure policy. Range: FAILED*CONTINUE: Continue with other tasks after failure. FAILED*BLOCK: Stop and do not execute subsequent tasks after failure. If the script is BOOTSTRAP, this will interrupt and fail cluster creation or node group expansion. Default: FAILED_BLOCK.
 	ExecutionFailStrategy *string `pulumi:"executionFailStrategy"`
-	// 脚本的执行时机。仅scriptType=BOOTSTRAP时生效。BEFORE*APPLICATION*INSTALL：应用安装前。AFTER*APPLICATION*STARTED：应用启动后。默认值：BEFORE*APP*INSTALL
+	// Script execution timing. Only effective when scriptType=BOOTSTRAP. BEFORE*APPLICATION*INSTALL: before application installation. AFTER*APPLICATION*STARTED: after application startup. Default: BEFORE*APP*INSTALL.
 	ExecutionMoment *string `pulumi:"executionMoment"`
-	// 脚本执行优先级。取值范围：1~1000。默认值1。
+	// Script execution priority. Range: 1~1000. Default: 1.
 	Priority *string `pulumi:"priority"`
-	// 脚本参数。
+	// Script parameters.
 	ScriptArgs *string `pulumi:"scriptArgs"`
-	// 脚本名称。必填。长度为1~128个字符，必须以大小字母或中文开头，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+	// Script name (required). Length: 1–128 characters. Must start with an uppercase or lowercase letter or Chinese character. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
 	ScriptName *string `pulumi:"scriptName"`
-	// 脚本所在TOS路径。必填。以 tos:： 开头。
+	// Script TOS path. Required. Must start with 'tos:'.
 	ScriptPath *string `pulumi:"scriptPath"`
-	// 脚本类型。NORMAL：普通脚本。BOOTSTRAP：引导脚本。
+	// Script type. NORMAL: normal script. BOOTSTRAP: bootstrap script.
 	ScriptType *string `pulumi:"scriptType"`
 }
 
@@ -1108,21 +1108,21 @@ type ClusterBootstrapScriptInput interface {
 }
 
 type ClusterBootstrapScriptArgs struct {
-	// 脚本执行范围。
+	// Script execution scope.
 	EffectiveScope ClusterBootstrapScriptEffectiveScopePtrInput `pulumi:"effectiveScope"`
-	// 执行失败策略。取值范围：FAILED*CONTINUE：失败后继续执行其他任务。FAILED*BLOCK：失败后中断，不再继续执行后续任务。当脚本为BOOTSTRAP时，会导致创建集群、扩容节点组操作中断并失败。默认值：FAILED_BLOCK。
+	// Execution failure policy. Range: FAILED*CONTINUE: Continue with other tasks after failure. FAILED*BLOCK: Stop and do not execute subsequent tasks after failure. If the script is BOOTSTRAP, this will interrupt and fail cluster creation or node group expansion. Default: FAILED_BLOCK.
 	ExecutionFailStrategy pulumi.StringPtrInput `pulumi:"executionFailStrategy"`
-	// 脚本的执行时机。仅scriptType=BOOTSTRAP时生效。BEFORE*APPLICATION*INSTALL：应用安装前。AFTER*APPLICATION*STARTED：应用启动后。默认值：BEFORE*APP*INSTALL
+	// Script execution timing. Only effective when scriptType=BOOTSTRAP. BEFORE*APPLICATION*INSTALL: before application installation. AFTER*APPLICATION*STARTED: after application startup. Default: BEFORE*APP*INSTALL.
 	ExecutionMoment pulumi.StringPtrInput `pulumi:"executionMoment"`
-	// 脚本执行优先级。取值范围：1~1000。默认值1。
+	// Script execution priority. Range: 1~1000. Default: 1.
 	Priority pulumi.StringPtrInput `pulumi:"priority"`
-	// 脚本参数。
+	// Script parameters.
 	ScriptArgs pulumi.StringPtrInput `pulumi:"scriptArgs"`
-	// 脚本名称。必填。长度为1~128个字符，必须以大小字母或中文开头，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+	// Script name (required). Length: 1–128 characters. Must start with an uppercase or lowercase letter or Chinese character. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
 	ScriptName pulumi.StringPtrInput `pulumi:"scriptName"`
-	// 脚本所在TOS路径。必填。以 tos:： 开头。
+	// Script TOS path. Required. Must start with 'tos:'.
 	ScriptPath pulumi.StringPtrInput `pulumi:"scriptPath"`
-	// 脚本类型。NORMAL：普通脚本。BOOTSTRAP：引导脚本。
+	// Script type. NORMAL: normal script. BOOTSTRAP: bootstrap script.
 	ScriptType pulumi.StringPtrInput `pulumi:"scriptType"`
 }
 
@@ -1177,42 +1177,42 @@ func (o ClusterBootstrapScriptOutput) ToClusterBootstrapScriptOutputWithContext(
 	return o
 }
 
-// 脚本执行范围。
+// Script execution scope.
 func (o ClusterBootstrapScriptOutput) EffectiveScope() ClusterBootstrapScriptEffectiveScopePtrOutput {
 	return o.ApplyT(func(v ClusterBootstrapScript) *ClusterBootstrapScriptEffectiveScope { return v.EffectiveScope }).(ClusterBootstrapScriptEffectiveScopePtrOutput)
 }
 
-// 执行失败策略。取值范围：FAILED*CONTINUE：失败后继续执行其他任务。FAILED*BLOCK：失败后中断，不再继续执行后续任务。当脚本为BOOTSTRAP时，会导致创建集群、扩容节点组操作中断并失败。默认值：FAILED_BLOCK。
+// Execution failure policy. Range: FAILED*CONTINUE: Continue with other tasks after failure. FAILED*BLOCK: Stop and do not execute subsequent tasks after failure. If the script is BOOTSTRAP, this will interrupt and fail cluster creation or node group expansion. Default: FAILED_BLOCK.
 func (o ClusterBootstrapScriptOutput) ExecutionFailStrategy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterBootstrapScript) *string { return v.ExecutionFailStrategy }).(pulumi.StringPtrOutput)
 }
 
-// 脚本的执行时机。仅scriptType=BOOTSTRAP时生效。BEFORE*APPLICATION*INSTALL：应用安装前。AFTER*APPLICATION*STARTED：应用启动后。默认值：BEFORE*APP*INSTALL
+// Script execution timing. Only effective when scriptType=BOOTSTRAP. BEFORE*APPLICATION*INSTALL: before application installation. AFTER*APPLICATION*STARTED: after application startup. Default: BEFORE*APP*INSTALL.
 func (o ClusterBootstrapScriptOutput) ExecutionMoment() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterBootstrapScript) *string { return v.ExecutionMoment }).(pulumi.StringPtrOutput)
 }
 
-// 脚本执行优先级。取值范围：1~1000。默认值1。
+// Script execution priority. Range: 1~1000. Default: 1.
 func (o ClusterBootstrapScriptOutput) Priority() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterBootstrapScript) *string { return v.Priority }).(pulumi.StringPtrOutput)
 }
 
-// 脚本参数。
+// Script parameters.
 func (o ClusterBootstrapScriptOutput) ScriptArgs() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterBootstrapScript) *string { return v.ScriptArgs }).(pulumi.StringPtrOutput)
 }
 
-// 脚本名称。必填。长度为1~128个字符，必须以大小字母或中文开头，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+// Script name (required). Length: 1–128 characters. Must start with an uppercase or lowercase letter or Chinese character. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
 func (o ClusterBootstrapScriptOutput) ScriptName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterBootstrapScript) *string { return v.ScriptName }).(pulumi.StringPtrOutput)
 }
 
-// 脚本所在TOS路径。必填。以 tos:： 开头。
+// Script TOS path. Required. Must start with 'tos:'.
 func (o ClusterBootstrapScriptOutput) ScriptPath() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterBootstrapScript) *string { return v.ScriptPath }).(pulumi.StringPtrOutput)
 }
 
-// 脚本类型。NORMAL：普通脚本。BOOTSTRAP：引导脚本。
+// Script type. NORMAL: normal script. BOOTSTRAP: bootstrap script.
 func (o ClusterBootstrapScriptOutput) ScriptType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterBootstrapScript) *string { return v.ScriptType }).(pulumi.StringPtrOutput)
 }
@@ -1238,19 +1238,19 @@ func (o ClusterBootstrapScriptArrayOutput) Index(i pulumi.IntInput) ClusterBoots
 }
 
 type ClusterBootstrapScriptEffectiveScope struct {
-	// 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+	// Component name list. Required when EffectiveType=COMPONENT_NAME.
 	ComponentNames []string `pulumi:"componentNames"`
-	// 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+	// Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
 	EffectiveType *string `pulumi:"effectiveType"`
-	// 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+	// Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
 	NodeGroupIds []string `pulumi:"nodeGroupIds"`
-	// 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+	// Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
 	NodeGroupNames []string `pulumi:"nodeGroupNames"`
-	// 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+	// Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
 	NodeGroupTypes []string `pulumi:"nodeGroupTypes"`
-	// 节点ID列表，EffectiveType=NODE_ID时，必选。
+	// Node ID list. Required when EffectiveType=NODE_ID.
 	NodeIds []string `pulumi:"nodeIds"`
-	// 节点名列表，EffectiveType=NODE_NAME时，必选。
+	// Node name list. Required when EffectiveType=NODE_NAME.
 	NodeNames []string `pulumi:"nodeNames"`
 }
 
@@ -1266,19 +1266,19 @@ type ClusterBootstrapScriptEffectiveScopeInput interface {
 }
 
 type ClusterBootstrapScriptEffectiveScopeArgs struct {
-	// 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+	// Component name list. Required when EffectiveType=COMPONENT_NAME.
 	ComponentNames pulumi.StringArrayInput `pulumi:"componentNames"`
-	// 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+	// Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
 	EffectiveType pulumi.StringPtrInput `pulumi:"effectiveType"`
-	// 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+	// Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
 	NodeGroupIds pulumi.StringArrayInput `pulumi:"nodeGroupIds"`
-	// 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+	// Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
 	NodeGroupNames pulumi.StringArrayInput `pulumi:"nodeGroupNames"`
-	// 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+	// Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
 	NodeGroupTypes pulumi.StringArrayInput `pulumi:"nodeGroupTypes"`
-	// 节点ID列表，EffectiveType=NODE_ID时，必选。
+	// Node ID list. Required when EffectiveType=NODE_ID.
 	NodeIds pulumi.StringArrayInput `pulumi:"nodeIds"`
-	// 节点名列表，EffectiveType=NODE_NAME时，必选。
+	// Node name list. Required when EffectiveType=NODE_NAME.
 	NodeNames pulumi.StringArrayInput `pulumi:"nodeNames"`
 }
 
@@ -1359,37 +1359,37 @@ func (o ClusterBootstrapScriptEffectiveScopeOutput) ToClusterBootstrapScriptEffe
 	}).(ClusterBootstrapScriptEffectiveScopePtrOutput)
 }
 
-// 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+// Component name list. Required when EffectiveType=COMPONENT_NAME.
 func (o ClusterBootstrapScriptEffectiveScopeOutput) ComponentNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClusterBootstrapScriptEffectiveScope) []string { return v.ComponentNames }).(pulumi.StringArrayOutput)
 }
 
-// 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+// Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
 func (o ClusterBootstrapScriptEffectiveScopeOutput) EffectiveType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterBootstrapScriptEffectiveScope) *string { return v.EffectiveType }).(pulumi.StringPtrOutput)
 }
 
-// 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+// Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
 func (o ClusterBootstrapScriptEffectiveScopeOutput) NodeGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClusterBootstrapScriptEffectiveScope) []string { return v.NodeGroupIds }).(pulumi.StringArrayOutput)
 }
 
-// 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+// Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
 func (o ClusterBootstrapScriptEffectiveScopeOutput) NodeGroupNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClusterBootstrapScriptEffectiveScope) []string { return v.NodeGroupNames }).(pulumi.StringArrayOutput)
 }
 
-// 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+// Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
 func (o ClusterBootstrapScriptEffectiveScopeOutput) NodeGroupTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClusterBootstrapScriptEffectiveScope) []string { return v.NodeGroupTypes }).(pulumi.StringArrayOutput)
 }
 
-// 节点ID列表，EffectiveType=NODE_ID时，必选。
+// Node ID list. Required when EffectiveType=NODE_ID.
 func (o ClusterBootstrapScriptEffectiveScopeOutput) NodeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClusterBootstrapScriptEffectiveScope) []string { return v.NodeIds }).(pulumi.StringArrayOutput)
 }
 
-// 节点名列表，EffectiveType=NODE_NAME时，必选。
+// Node name list. Required when EffectiveType=NODE_NAME.
 func (o ClusterBootstrapScriptEffectiveScopeOutput) NodeNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClusterBootstrapScriptEffectiveScope) []string { return v.NodeNames }).(pulumi.StringArrayOutput)
 }
@@ -1418,7 +1418,7 @@ func (o ClusterBootstrapScriptEffectiveScopePtrOutput) Elem() ClusterBootstrapSc
 	}).(ClusterBootstrapScriptEffectiveScopeOutput)
 }
 
-// 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+// Component name list. Required when EffectiveType=COMPONENT_NAME.
 func (o ClusterBootstrapScriptEffectiveScopePtrOutput) ComponentNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterBootstrapScriptEffectiveScope) []string {
 		if v == nil {
@@ -1428,7 +1428,7 @@ func (o ClusterBootstrapScriptEffectiveScopePtrOutput) ComponentNames() pulumi.S
 	}).(pulumi.StringArrayOutput)
 }
 
-// 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+// Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
 func (o ClusterBootstrapScriptEffectiveScopePtrOutput) EffectiveType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClusterBootstrapScriptEffectiveScope) *string {
 		if v == nil {
@@ -1438,7 +1438,7 @@ func (o ClusterBootstrapScriptEffectiveScopePtrOutput) EffectiveType() pulumi.St
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+// Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
 func (o ClusterBootstrapScriptEffectiveScopePtrOutput) NodeGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterBootstrapScriptEffectiveScope) []string {
 		if v == nil {
@@ -1448,7 +1448,7 @@ func (o ClusterBootstrapScriptEffectiveScopePtrOutput) NodeGroupIds() pulumi.Str
 	}).(pulumi.StringArrayOutput)
 }
 
-// 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+// Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
 func (o ClusterBootstrapScriptEffectiveScopePtrOutput) NodeGroupNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterBootstrapScriptEffectiveScope) []string {
 		if v == nil {
@@ -1458,7 +1458,7 @@ func (o ClusterBootstrapScriptEffectiveScopePtrOutput) NodeGroupNames() pulumi.S
 	}).(pulumi.StringArrayOutput)
 }
 
-// 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+// Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
 func (o ClusterBootstrapScriptEffectiveScopePtrOutput) NodeGroupTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterBootstrapScriptEffectiveScope) []string {
 		if v == nil {
@@ -1468,7 +1468,7 @@ func (o ClusterBootstrapScriptEffectiveScopePtrOutput) NodeGroupTypes() pulumi.S
 	}).(pulumi.StringArrayOutput)
 }
 
-// 节点ID列表，EffectiveType=NODE_ID时，必选。
+// Node ID list. Required when EffectiveType=NODE_ID.
 func (o ClusterBootstrapScriptEffectiveScopePtrOutput) NodeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterBootstrapScriptEffectiveScope) []string {
 		if v == nil {
@@ -1478,7 +1478,7 @@ func (o ClusterBootstrapScriptEffectiveScopePtrOutput) NodeIds() pulumi.StringAr
 	}).(pulumi.StringArrayOutput)
 }
 
-// 节点名列表，EffectiveType=NODE_NAME时，必选。
+// Node name list. Required when EffectiveType=NODE_NAME.
 func (o ClusterBootstrapScriptEffectiveScopePtrOutput) NodeNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterBootstrapScriptEffectiveScope) []string {
 		if v == nil {
@@ -1489,17 +1489,17 @@ func (o ClusterBootstrapScriptEffectiveScopePtrOutput) NodeNames() pulumi.String
 }
 
 type ClusterChargePreConfig struct {
-	// 是否开启自动续费。取值范围：true：开启。false：不开启。
+	// Enable auto-renewal. Options: true (enabled), false (disabled).
 	AutoRenew *bool `pulumi:"autoRenew"`
-	// 自动续费触发时的续费时长，当AutoRenew=true时，默认值=1。
+	// Renewal duration when auto-renewal is triggered. When AutoRenew=true, the default value is 1.
 	AutoRenewPeriod *int `pulumi:"autoRenewPeriod"`
-	// 自动续费触发时的续费时长单位，当AutoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+	// Renewal duration unit when auto-renewal is triggered. When AutoRenew=true, default is Month. Options: Month, Year.
 	AutoRenewPeriodUnit *string `pulumi:"autoRenewPeriodUnit"`
-	// chargeType=PRE默认值=1，包月的购买时长单位。
+	// When chargeType=PRE, default value=1. Unit for monthly subscription duration.
 	ChargePeriod *int `pulumi:"chargePeriod"`
-	// chargeType=PRE时，默认值=Month，包月的购买时长单位，取值范围：Month：月。Year：年。
+	// When chargeType=PRE, default value=Month. Unit for monthly subscription duration. Range: Month: month. Year: year.
 	ChargePeriodUnit *string `pulumi:"chargePeriodUnit"`
-	// 付费类型，取值范围：PRE，POST。
+	// Payment type. Options: PRE, POST.
 	ChargeType *string `pulumi:"chargeType"`
 }
 
@@ -1515,17 +1515,17 @@ type ClusterChargePreConfigInput interface {
 }
 
 type ClusterChargePreConfigArgs struct {
-	// 是否开启自动续费。取值范围：true：开启。false：不开启。
+	// Enable auto-renewal. Options: true (enabled), false (disabled).
 	AutoRenew pulumi.BoolPtrInput `pulumi:"autoRenew"`
-	// 自动续费触发时的续费时长，当AutoRenew=true时，默认值=1。
+	// Renewal duration when auto-renewal is triggered. When AutoRenew=true, the default value is 1.
 	AutoRenewPeriod pulumi.IntPtrInput `pulumi:"autoRenewPeriod"`
-	// 自动续费触发时的续费时长单位，当AutoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+	// Renewal duration unit when auto-renewal is triggered. When AutoRenew=true, default is Month. Options: Month, Year.
 	AutoRenewPeriodUnit pulumi.StringPtrInput `pulumi:"autoRenewPeriodUnit"`
-	// chargeType=PRE默认值=1，包月的购买时长单位。
+	// When chargeType=PRE, default value=1. Unit for monthly subscription duration.
 	ChargePeriod pulumi.IntPtrInput `pulumi:"chargePeriod"`
-	// chargeType=PRE时，默认值=Month，包月的购买时长单位，取值范围：Month：月。Year：年。
+	// When chargeType=PRE, default value=Month. Unit for monthly subscription duration. Range: Month: month. Year: year.
 	ChargePeriodUnit pulumi.StringPtrInput `pulumi:"chargePeriodUnit"`
-	// 付费类型，取值范围：PRE，POST。
+	// Payment type. Options: PRE, POST.
 	ChargeType pulumi.StringPtrInput `pulumi:"chargeType"`
 }
 
@@ -1606,32 +1606,32 @@ func (o ClusterChargePreConfigOutput) ToClusterChargePreConfigPtrOutputWithConte
 	}).(ClusterChargePreConfigPtrOutput)
 }
 
-// 是否开启自动续费。取值范围：true：开启。false：不开启。
+// Enable auto-renewal. Options: true (enabled), false (disabled).
 func (o ClusterChargePreConfigOutput) AutoRenew() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ClusterChargePreConfig) *bool { return v.AutoRenew }).(pulumi.BoolPtrOutput)
 }
 
-// 自动续费触发时的续费时长，当AutoRenew=true时，默认值=1。
+// Renewal duration when auto-renewal is triggered. When AutoRenew=true, the default value is 1.
 func (o ClusterChargePreConfigOutput) AutoRenewPeriod() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ClusterChargePreConfig) *int { return v.AutoRenewPeriod }).(pulumi.IntPtrOutput)
 }
 
-// 自动续费触发时的续费时长单位，当AutoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+// Renewal duration unit when auto-renewal is triggered. When AutoRenew=true, default is Month. Options: Month, Year.
 func (o ClusterChargePreConfigOutput) AutoRenewPeriodUnit() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterChargePreConfig) *string { return v.AutoRenewPeriodUnit }).(pulumi.StringPtrOutput)
 }
 
-// chargeType=PRE默认值=1，包月的购买时长单位。
+// When chargeType=PRE, default value=1. Unit for monthly subscription duration.
 func (o ClusterChargePreConfigOutput) ChargePeriod() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ClusterChargePreConfig) *int { return v.ChargePeriod }).(pulumi.IntPtrOutput)
 }
 
-// chargeType=PRE时，默认值=Month，包月的购买时长单位，取值范围：Month：月。Year：年。
+// When chargeType=PRE, default value=Month. Unit for monthly subscription duration. Range: Month: month. Year: year.
 func (o ClusterChargePreConfigOutput) ChargePeriodUnit() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterChargePreConfig) *string { return v.ChargePeriodUnit }).(pulumi.StringPtrOutput)
 }
 
-// 付费类型，取值范围：PRE，POST。
+// Payment type. Options: PRE, POST.
 func (o ClusterChargePreConfigOutput) ChargeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterChargePreConfig) *string { return v.ChargeType }).(pulumi.StringPtrOutput)
 }
@@ -1660,7 +1660,7 @@ func (o ClusterChargePreConfigPtrOutput) Elem() ClusterChargePreConfigOutput {
 	}).(ClusterChargePreConfigOutput)
 }
 
-// 是否开启自动续费。取值范围：true：开启。false：不开启。
+// Enable auto-renewal. Options: true (enabled), false (disabled).
 func (o ClusterChargePreConfigPtrOutput) AutoRenew() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ClusterChargePreConfig) *bool {
 		if v == nil {
@@ -1670,7 +1670,7 @@ func (o ClusterChargePreConfigPtrOutput) AutoRenew() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 自动续费触发时的续费时长，当AutoRenew=true时，默认值=1。
+// Renewal duration when auto-renewal is triggered. When AutoRenew=true, the default value is 1.
 func (o ClusterChargePreConfigPtrOutput) AutoRenewPeriod() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ClusterChargePreConfig) *int {
 		if v == nil {
@@ -1680,7 +1680,7 @@ func (o ClusterChargePreConfigPtrOutput) AutoRenewPeriod() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 自动续费触发时的续费时长单位，当AutoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+// Renewal duration unit when auto-renewal is triggered. When AutoRenew=true, default is Month. Options: Month, Year.
 func (o ClusterChargePreConfigPtrOutput) AutoRenewPeriodUnit() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClusterChargePreConfig) *string {
 		if v == nil {
@@ -1690,7 +1690,7 @@ func (o ClusterChargePreConfigPtrOutput) AutoRenewPeriodUnit() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// chargeType=PRE默认值=1，包月的购买时长单位。
+// When chargeType=PRE, default value=1. Unit for monthly subscription duration.
 func (o ClusterChargePreConfigPtrOutput) ChargePeriod() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ClusterChargePreConfig) *int {
 		if v == nil {
@@ -1700,7 +1700,7 @@ func (o ClusterChargePreConfigPtrOutput) ChargePeriod() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// chargeType=PRE时，默认值=Month，包月的购买时长单位，取值范围：Month：月。Year：年。
+// When chargeType=PRE, default value=Month. Unit for monthly subscription duration. Range: Month: month. Year: year.
 func (o ClusterChargePreConfigPtrOutput) ChargePeriodUnit() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClusterChargePreConfig) *string {
 		if v == nil {
@@ -1710,7 +1710,7 @@ func (o ClusterChargePreConfigPtrOutput) ChargePeriodUnit() pulumi.StringPtrOutp
 	}).(pulumi.StringPtrOutput)
 }
 
-// 付费类型，取值范围：PRE，POST。
+// Payment type. Options: PRE, POST.
 func (o ClusterChargePreConfigPtrOutput) ChargeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClusterChargePreConfig) *string {
 		if v == nil {
@@ -1721,9 +1721,9 @@ func (o ClusterChargePreConfigPtrOutput) ChargeType() pulumi.StringPtrOutput {
 }
 
 type ClusterNodeAttribute struct {
-	// ECS实例角色。
+	// ECS instance role.
 	EcsIamRole *string `pulumi:"ecsIamRole"`
-	// 可用区ID。
+	// Zone ID.
 	ZoneId *string `pulumi:"zoneId"`
 }
 
@@ -1739,9 +1739,9 @@ type ClusterNodeAttributeInput interface {
 }
 
 type ClusterNodeAttributeArgs struct {
-	// ECS实例角色。
+	// ECS instance role.
 	EcsIamRole pulumi.StringPtrInput `pulumi:"ecsIamRole"`
-	// 可用区ID。
+	// Zone ID.
 	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
 }
 
@@ -1822,12 +1822,12 @@ func (o ClusterNodeAttributeOutput) ToClusterNodeAttributePtrOutputWithContext(c
 	}).(ClusterNodeAttributePtrOutput)
 }
 
-// ECS实例角色。
+// ECS instance role.
 func (o ClusterNodeAttributeOutput) EcsIamRole() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterNodeAttribute) *string { return v.EcsIamRole }).(pulumi.StringPtrOutput)
 }
 
-// 可用区ID。
+// Zone ID.
 func (o ClusterNodeAttributeOutput) ZoneId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterNodeAttribute) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
 }
@@ -1856,7 +1856,7 @@ func (o ClusterNodeAttributePtrOutput) Elem() ClusterNodeAttributeOutput {
 	}).(ClusterNodeAttributeOutput)
 }
 
-// ECS实例角色。
+// ECS instance role.
 func (o ClusterNodeAttributePtrOutput) EcsIamRole() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClusterNodeAttribute) *string {
 		if v == nil {
@@ -1866,7 +1866,7 @@ func (o ClusterNodeAttributePtrOutput) EcsIamRole() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 可用区ID。
+// Zone ID.
 func (o ClusterNodeAttributePtrOutput) ZoneId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClusterNodeAttribute) *string {
 		if v == nil {
@@ -1877,30 +1877,30 @@ func (o ClusterNodeAttributePtrOutput) ZoneId() pulumi.StringPtrOutput {
 }
 
 type ClusterNodeGroupAttribute struct {
-	// 公网带宽。默认值 8M。后续如果用户侧调整了，emr侧需要同步该信息。
+	// Public bandwidth. Default is 8M. If the user changes it later, EMR needs to synchronize this information.
 	Bandwidth *int `pulumi:"bandwidth"`
-	// 节点组付费类型。为空时，复用集群的chargeType。Master、Core组必须复用集群维度的付费类型。当集群的chargeType为PRE时，task节点组的chargeType允许设置为POST；当集群的chargeType为POST时，节点组的chargeType默认为POST，节点组上的此参数设置无效。
+	// Node group billing type. If empty, reuses the cluster's chargeType. Master and Core groups must reuse the cluster-level billing type. When the cluster's chargeType is PRE, the task node group's chargeType can be set to POST. When the cluster's chargeType is POST, the node group's chargeType defaults to POST, and this parameter setting on the node group is invalid.
 	ChargeType *string                             `pulumi:"chargeType"`
 	DataDisks  []ClusterNodeGroupAttributeDataDisk `pulumi:"dataDisks"`
-	// 节点组的ecs机型列表。当前只支持设置1个机型。即List的长度限制为1。
+	// Node group's ECS instance type list. Only one instance type can be set. The list length is limited to 1.
 	EcsInstanceTypes []string `pulumi:"ecsInstanceTypes"`
-	// ecs的密钥对名称。
+	// ECS key pair name.
 	EcsKeyPairName *string `pulumi:"ecsKeyPairName"`
-	// Ecs root账号的密码。
+	// Password for ECS root account.
 	EcsPassword *string `pulumi:"ecsPassword"`
-	// 节点组当前期望购买的节点数量。
+	// Current expected number of nodes to purchase for the node group.
 	NodeCount *int `pulumi:"nodeCount"`
-	// 长度为1~128个字符，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+	// Length: 1–128 characters. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
 	NodeGroupName *string `pulumi:"nodeGroupName"`
-	// 节点组类型。
+	// Node group type.
 	NodeGroupType *string `pulumi:"nodeGroupType"`
-	// 子网Id列表，目前只能传递一个参数，且各节点组的子网Id都是相同的。
+	// Subnet ID list. Currently, only one parameter can be passed, and all node groups must use the same subnet ID.
 	SubnetIds []string `pulumi:"subnetIds"`
-	// 系统盘配置。
+	// System disk configuration.
 	SystemDisk *ClusterNodeGroupAttributeSystemDisk `pulumi:"systemDisk"`
-	// 是否挂载公网ip。
+	// Whether to attach public IP.
 	WithPublicIp *bool `pulumi:"withPublicIp"`
-	// 可用区ID。
+	// Availability zone ID.
 	ZoneId *string `pulumi:"zoneId"`
 }
 
@@ -1916,30 +1916,30 @@ type ClusterNodeGroupAttributeInput interface {
 }
 
 type ClusterNodeGroupAttributeArgs struct {
-	// 公网带宽。默认值 8M。后续如果用户侧调整了，emr侧需要同步该信息。
+	// Public bandwidth. Default is 8M. If the user changes it later, EMR needs to synchronize this information.
 	Bandwidth pulumi.IntPtrInput `pulumi:"bandwidth"`
-	// 节点组付费类型。为空时，复用集群的chargeType。Master、Core组必须复用集群维度的付费类型。当集群的chargeType为PRE时，task节点组的chargeType允许设置为POST；当集群的chargeType为POST时，节点组的chargeType默认为POST，节点组上的此参数设置无效。
+	// Node group billing type. If empty, reuses the cluster's chargeType. Master and Core groups must reuse the cluster-level billing type. When the cluster's chargeType is PRE, the task node group's chargeType can be set to POST. When the cluster's chargeType is POST, the node group's chargeType defaults to POST, and this parameter setting on the node group is invalid.
 	ChargeType pulumi.StringPtrInput                       `pulumi:"chargeType"`
 	DataDisks  ClusterNodeGroupAttributeDataDiskArrayInput `pulumi:"dataDisks"`
-	// 节点组的ecs机型列表。当前只支持设置1个机型。即List的长度限制为1。
+	// Node group's ECS instance type list. Only one instance type can be set. The list length is limited to 1.
 	EcsInstanceTypes pulumi.StringArrayInput `pulumi:"ecsInstanceTypes"`
-	// ecs的密钥对名称。
+	// ECS key pair name.
 	EcsKeyPairName pulumi.StringPtrInput `pulumi:"ecsKeyPairName"`
-	// Ecs root账号的密码。
+	// Password for ECS root account.
 	EcsPassword pulumi.StringPtrInput `pulumi:"ecsPassword"`
-	// 节点组当前期望购买的节点数量。
+	// Current expected number of nodes to purchase for the node group.
 	NodeCount pulumi.IntPtrInput `pulumi:"nodeCount"`
-	// 长度为1~128个字符，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+	// Length: 1–128 characters. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
 	NodeGroupName pulumi.StringPtrInput `pulumi:"nodeGroupName"`
-	// 节点组类型。
+	// Node group type.
 	NodeGroupType pulumi.StringPtrInput `pulumi:"nodeGroupType"`
-	// 子网Id列表，目前只能传递一个参数，且各节点组的子网Id都是相同的。
+	// Subnet ID list. Currently, only one parameter can be passed, and all node groups must use the same subnet ID.
 	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
-	// 系统盘配置。
+	// System disk configuration.
 	SystemDisk ClusterNodeGroupAttributeSystemDiskPtrInput `pulumi:"systemDisk"`
-	// 是否挂载公网ip。
+	// Whether to attach public IP.
 	WithPublicIp pulumi.BoolPtrInput `pulumi:"withPublicIp"`
-	// 可用区ID。
+	// Availability zone ID.
 	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
 }
 
@@ -1994,12 +1994,12 @@ func (o ClusterNodeGroupAttributeOutput) ToClusterNodeGroupAttributeOutputWithCo
 	return o
 }
 
-// 公网带宽。默认值 8M。后续如果用户侧调整了，emr侧需要同步该信息。
+// Public bandwidth. Default is 8M. If the user changes it later, EMR needs to synchronize this information.
 func (o ClusterNodeGroupAttributeOutput) Bandwidth() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ClusterNodeGroupAttribute) *int { return v.Bandwidth }).(pulumi.IntPtrOutput)
 }
 
-// 节点组付费类型。为空时，复用集群的chargeType。Master、Core组必须复用集群维度的付费类型。当集群的chargeType为PRE时，task节点组的chargeType允许设置为POST；当集群的chargeType为POST时，节点组的chargeType默认为POST，节点组上的此参数设置无效。
+// Node group billing type. If empty, reuses the cluster's chargeType. Master and Core groups must reuse the cluster-level billing type. When the cluster's chargeType is PRE, the task node group's chargeType can be set to POST. When the cluster's chargeType is POST, the node group's chargeType defaults to POST, and this parameter setting on the node group is invalid.
 func (o ClusterNodeGroupAttributeOutput) ChargeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterNodeGroupAttribute) *string { return v.ChargeType }).(pulumi.StringPtrOutput)
 }
@@ -2008,52 +2008,52 @@ func (o ClusterNodeGroupAttributeOutput) DataDisks() ClusterNodeGroupAttributeDa
 	return o.ApplyT(func(v ClusterNodeGroupAttribute) []ClusterNodeGroupAttributeDataDisk { return v.DataDisks }).(ClusterNodeGroupAttributeDataDiskArrayOutput)
 }
 
-// 节点组的ecs机型列表。当前只支持设置1个机型。即List的长度限制为1。
+// Node group's ECS instance type list. Only one instance type can be set. The list length is limited to 1.
 func (o ClusterNodeGroupAttributeOutput) EcsInstanceTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClusterNodeGroupAttribute) []string { return v.EcsInstanceTypes }).(pulumi.StringArrayOutput)
 }
 
-// ecs的密钥对名称。
+// ECS key pair name.
 func (o ClusterNodeGroupAttributeOutput) EcsKeyPairName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterNodeGroupAttribute) *string { return v.EcsKeyPairName }).(pulumi.StringPtrOutput)
 }
 
-// Ecs root账号的密码。
+// Password for ECS root account.
 func (o ClusterNodeGroupAttributeOutput) EcsPassword() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterNodeGroupAttribute) *string { return v.EcsPassword }).(pulumi.StringPtrOutput)
 }
 
-// 节点组当前期望购买的节点数量。
+// Current expected number of nodes to purchase for the node group.
 func (o ClusterNodeGroupAttributeOutput) NodeCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ClusterNodeGroupAttribute) *int { return v.NodeCount }).(pulumi.IntPtrOutput)
 }
 
-// 长度为1~128个字符，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+// Length: 1–128 characters. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
 func (o ClusterNodeGroupAttributeOutput) NodeGroupName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterNodeGroupAttribute) *string { return v.NodeGroupName }).(pulumi.StringPtrOutput)
 }
 
-// 节点组类型。
+// Node group type.
 func (o ClusterNodeGroupAttributeOutput) NodeGroupType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterNodeGroupAttribute) *string { return v.NodeGroupType }).(pulumi.StringPtrOutput)
 }
 
-// 子网Id列表，目前只能传递一个参数，且各节点组的子网Id都是相同的。
+// Subnet ID list. Currently, only one parameter can be passed, and all node groups must use the same subnet ID.
 func (o ClusterNodeGroupAttributeOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ClusterNodeGroupAttribute) []string { return v.SubnetIds }).(pulumi.StringArrayOutput)
 }
 
-// 系统盘配置。
+// System disk configuration.
 func (o ClusterNodeGroupAttributeOutput) SystemDisk() ClusterNodeGroupAttributeSystemDiskPtrOutput {
 	return o.ApplyT(func(v ClusterNodeGroupAttribute) *ClusterNodeGroupAttributeSystemDisk { return v.SystemDisk }).(ClusterNodeGroupAttributeSystemDiskPtrOutput)
 }
 
-// 是否挂载公网ip。
+// Whether to attach public IP.
 func (o ClusterNodeGroupAttributeOutput) WithPublicIp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ClusterNodeGroupAttribute) *bool { return v.WithPublicIp }).(pulumi.BoolPtrOutput)
 }
 
-// 可用区ID。
+// Availability zone ID.
 func (o ClusterNodeGroupAttributeOutput) ZoneId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterNodeGroupAttribute) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
 }
@@ -2079,11 +2079,11 @@ func (o ClusterNodeGroupAttributeArrayOutput) Index(i pulumi.IntInput) ClusterNo
 }
 
 type ClusterNodeGroupAttributeDataDisk struct {
-	// 磁盘块数，默认值4，最大15，最小1。
+	// Number of disk blocks. Default is 4, maximum is 15, minimum is 1.
 	Count *int `pulumi:"count"`
-	// 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+	// Disk size. Default is 80GB, minimum is 60GB, maximum is 2048GB, unit: GB.
 	Size *int `pulumi:"size"`
-	// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV
+	// Disk type. ESSD*PL0: Ultra SSD*PL0. ESSD*PL1: Ultra SSD*PL1. ESSD*PL2: Ultra SSD*PL2. ESSD*PL3: Ultra SSD*PL3. ESSD*FLEXPL: Ultra SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
 	VolumeType *string `pulumi:"volumeType"`
 }
 
@@ -2099,11 +2099,11 @@ type ClusterNodeGroupAttributeDataDiskInput interface {
 }
 
 type ClusterNodeGroupAttributeDataDiskArgs struct {
-	// 磁盘块数，默认值4，最大15，最小1。
+	// Number of disk blocks. Default is 4, maximum is 15, minimum is 1.
 	Count pulumi.IntPtrInput `pulumi:"count"`
-	// 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+	// Disk size. Default is 80GB, minimum is 60GB, maximum is 2048GB, unit: GB.
 	Size pulumi.IntPtrInput `pulumi:"size"`
-	// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV
+	// Disk type. ESSD*PL0: Ultra SSD*PL0. ESSD*PL1: Ultra SSD*PL1. ESSD*PL2: Ultra SSD*PL2. ESSD*PL3: Ultra SSD*PL3. ESSD*FLEXPL: Ultra SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
 	VolumeType pulumi.StringPtrInput `pulumi:"volumeType"`
 }
 
@@ -2158,17 +2158,17 @@ func (o ClusterNodeGroupAttributeDataDiskOutput) ToClusterNodeGroupAttributeData
 	return o
 }
 
-// 磁盘块数，默认值4，最大15，最小1。
+// Number of disk blocks. Default is 4, maximum is 15, minimum is 1.
 func (o ClusterNodeGroupAttributeDataDiskOutput) Count() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ClusterNodeGroupAttributeDataDisk) *int { return v.Count }).(pulumi.IntPtrOutput)
 }
 
-// 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+// Disk size. Default is 80GB, minimum is 60GB, maximum is 2048GB, unit: GB.
 func (o ClusterNodeGroupAttributeDataDiskOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ClusterNodeGroupAttributeDataDisk) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
 
-// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV
+// Disk type. ESSD*PL0: Ultra SSD*PL0. ESSD*PL1: Ultra SSD*PL1. ESSD*PL2: Ultra SSD*PL2. ESSD*PL3: Ultra SSD*PL3. ESSD*FLEXPL: Ultra SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
 func (o ClusterNodeGroupAttributeDataDiskOutput) VolumeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterNodeGroupAttributeDataDisk) *string { return v.VolumeType }).(pulumi.StringPtrOutput)
 }
@@ -2194,9 +2194,9 @@ func (o ClusterNodeGroupAttributeDataDiskArrayOutput) Index(i pulumi.IntInput) C
 }
 
 type ClusterNodeGroupAttributeSystemDisk struct {
-	// 磁盘大小。
+	// Disk size.
 	Size *int `pulumi:"size"`
-	// 磁盘类型。
+	// Disk type.
 	VolumeType *string `pulumi:"volumeType"`
 }
 
@@ -2212,9 +2212,9 @@ type ClusterNodeGroupAttributeSystemDiskInput interface {
 }
 
 type ClusterNodeGroupAttributeSystemDiskArgs struct {
-	// 磁盘大小。
+	// Disk size.
 	Size pulumi.IntPtrInput `pulumi:"size"`
-	// 磁盘类型。
+	// Disk type.
 	VolumeType pulumi.StringPtrInput `pulumi:"volumeType"`
 }
 
@@ -2295,12 +2295,12 @@ func (o ClusterNodeGroupAttributeSystemDiskOutput) ToClusterNodeGroupAttributeSy
 	}).(ClusterNodeGroupAttributeSystemDiskPtrOutput)
 }
 
-// 磁盘大小。
+// Disk size.
 func (o ClusterNodeGroupAttributeSystemDiskOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ClusterNodeGroupAttributeSystemDisk) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
 
-// 磁盘类型。
+// Disk type.
 func (o ClusterNodeGroupAttributeSystemDiskOutput) VolumeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterNodeGroupAttributeSystemDisk) *string { return v.VolumeType }).(pulumi.StringPtrOutput)
 }
@@ -2329,7 +2329,7 @@ func (o ClusterNodeGroupAttributeSystemDiskPtrOutput) Elem() ClusterNodeGroupAtt
 	}).(ClusterNodeGroupAttributeSystemDiskOutput)
 }
 
-// 磁盘大小。
+// Disk size.
 func (o ClusterNodeGroupAttributeSystemDiskPtrOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ClusterNodeGroupAttributeSystemDisk) *int {
 		if v == nil {
@@ -2339,7 +2339,7 @@ func (o ClusterNodeGroupAttributeSystemDiskPtrOutput) Size() pulumi.IntPtrOutput
 	}).(pulumi.IntPtrOutput)
 }
 
-// 磁盘类型。
+// Disk type.
 func (o ClusterNodeGroupAttributeSystemDiskPtrOutput) VolumeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClusterNodeGroupAttributeSystemDisk) *string {
 		if v == nil {
@@ -2350,9 +2350,9 @@ func (o ClusterNodeGroupAttributeSystemDiskPtrOutput) VolumeType() pulumi.String
 }
 
 type ClusterStateChangeReason struct {
-	// 状态更新码。
+	// Status update code.
 	Code *string `pulumi:"code"`
-	// 状态更新原因。
+	// Status update reason.
 	Reason *string `pulumi:"reason"`
 }
 
@@ -2368,9 +2368,9 @@ type ClusterStateChangeReasonInput interface {
 }
 
 type ClusterStateChangeReasonArgs struct {
-	// 状态更新码。
+	// Status update code.
 	Code pulumi.StringPtrInput `pulumi:"code"`
-	// 状态更新原因。
+	// Status update reason.
 	Reason pulumi.StringPtrInput `pulumi:"reason"`
 }
 
@@ -2451,12 +2451,12 @@ func (o ClusterStateChangeReasonOutput) ToClusterStateChangeReasonPtrOutputWithC
 	}).(ClusterStateChangeReasonPtrOutput)
 }
 
-// 状态更新码。
+// Status update code.
 func (o ClusterStateChangeReasonOutput) Code() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterStateChangeReason) *string { return v.Code }).(pulumi.StringPtrOutput)
 }
 
-// 状态更新原因。
+// Status update reason.
 func (o ClusterStateChangeReasonOutput) Reason() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterStateChangeReason) *string { return v.Reason }).(pulumi.StringPtrOutput)
 }
@@ -2485,7 +2485,7 @@ func (o ClusterStateChangeReasonPtrOutput) Elem() ClusterStateChangeReasonOutput
 	}).(ClusterStateChangeReasonOutput)
 }
 
-// 状态更新码。
+// Status update code.
 func (o ClusterStateChangeReasonPtrOutput) Code() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClusterStateChangeReason) *string {
 		if v == nil {
@@ -2495,7 +2495,7 @@ func (o ClusterStateChangeReasonPtrOutput) Code() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 状态更新原因。
+// Status update reason.
 func (o ClusterStateChangeReasonPtrOutput) Reason() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClusterStateChangeReason) *string {
 		if v == nil {
@@ -2506,9 +2506,9 @@ func (o ClusterStateChangeReasonPtrOutput) Reason() pulumi.StringPtrOutput {
 }
 
 type ClusterTag struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value *string `pulumi:"value"`
 }
 
@@ -2524,9 +2524,9 @@ type ClusterTagInput interface {
 }
 
 type ClusterTagArgs struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -2581,12 +2581,12 @@ func (o ClusterTagOutput) ToClusterTagOutputWithContext(ctx context.Context) Clu
 	return o
 }
 
-// 用户标签的标签键。
+// User tag key.
 func (o ClusterTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。
+// User tag value.
 func (o ClusterTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -2612,9 +2612,9 @@ func (o ClusterTagArrayOutput) Index(i pulumi.IntInput) ClusterTagOutput {
 }
 
 type NodeGroupApplicationLayout struct {
-	// 应用名称。
+	// Application name.
 	ApplicationName *string `pulumi:"applicationName"`
-	// 组件的自定义配置参数列表。
+	// Custom configuration parameter list for the component.
 	LayoutComponentNames []string `pulumi:"layoutComponentNames"`
 }
 
@@ -2630,9 +2630,9 @@ type NodeGroupApplicationLayoutInput interface {
 }
 
 type NodeGroupApplicationLayoutArgs struct {
-	// 应用名称。
+	// Application name.
 	ApplicationName pulumi.StringPtrInput `pulumi:"applicationName"`
-	// 组件的自定义配置参数列表。
+	// Custom configuration parameter list for the component.
 	LayoutComponentNames pulumi.StringArrayInput `pulumi:"layoutComponentNames"`
 }
 
@@ -2687,12 +2687,12 @@ func (o NodeGroupApplicationLayoutOutput) ToNodeGroupApplicationLayoutOutputWith
 	return o
 }
 
-// 应用名称。
+// Application name.
 func (o NodeGroupApplicationLayoutOutput) ApplicationName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodeGroupApplicationLayout) *string { return v.ApplicationName }).(pulumi.StringPtrOutput)
 }
 
-// 组件的自定义配置参数列表。
+// Custom configuration parameter list for the component.
 func (o NodeGroupApplicationLayoutOutput) LayoutComponentNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NodeGroupApplicationLayout) []string { return v.LayoutComponentNames }).(pulumi.StringArrayOutput)
 }
@@ -2718,17 +2718,17 @@ func (o NodeGroupApplicationLayoutArrayOutput) Index(i pulumi.IntInput) NodeGrou
 }
 
 type NodeGroupChargePreConfig struct {
-	// 是否开启自动续费。
+	// Whether to enable auto-renewal.
 	AutoRenew *bool `pulumi:"autoRenew"`
-	// 自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+	// Renewal duration when auto-renewal is triggered. When autoRenew=true, the default value is 1.
 	AutoRenewPeriod *int `pulumi:"autoRenewPeriod"`
-	// 自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+	// Renewal duration unit when auto-renewal is triggered. When autoRenew=true, the default value is Month. Value range: Month: month. Year: year.
 	AutoRenewPeriodUnit *string `pulumi:"autoRenewPeriodUnit"`
-	// chargeType=PRE默认值=1，包月的购买时长单位。
+	// When chargeType=PRE, the default value is 1. The unit for the purchase duration when chargeType=PRE is monthly subscription.
 	ChargePeriod *int `pulumi:"chargePeriod"`
-	// chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+	// When chargeType=PRE, the default value is Month. The unit for the purchase duration when chargeType=PRE is monthly subscription. Value range: Month (month), Year (year).
 	ChargePeriodUnit *string `pulumi:"chargePeriodUnit"`
-	// 付费类型，枚举值：POST，PRE。
+	// Payment type. Enum values: POST, PRE.
 	ChargeType *string `pulumi:"chargeType"`
 }
 
@@ -2744,17 +2744,17 @@ type NodeGroupChargePreConfigInput interface {
 }
 
 type NodeGroupChargePreConfigArgs struct {
-	// 是否开启自动续费。
+	// Whether to enable auto-renewal.
 	AutoRenew pulumi.BoolPtrInput `pulumi:"autoRenew"`
-	// 自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+	// Renewal duration when auto-renewal is triggered. When autoRenew=true, the default value is 1.
 	AutoRenewPeriod pulumi.IntPtrInput `pulumi:"autoRenewPeriod"`
-	// 自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+	// Renewal duration unit when auto-renewal is triggered. When autoRenew=true, the default value is Month. Value range: Month: month. Year: year.
 	AutoRenewPeriodUnit pulumi.StringPtrInput `pulumi:"autoRenewPeriodUnit"`
-	// chargeType=PRE默认值=1，包月的购买时长单位。
+	// When chargeType=PRE, the default value is 1. The unit for the purchase duration when chargeType=PRE is monthly subscription.
 	ChargePeriod pulumi.IntPtrInput `pulumi:"chargePeriod"`
-	// chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+	// When chargeType=PRE, the default value is Month. The unit for the purchase duration when chargeType=PRE is monthly subscription. Value range: Month (month), Year (year).
 	ChargePeriodUnit pulumi.StringPtrInput `pulumi:"chargePeriodUnit"`
-	// 付费类型，枚举值：POST，PRE。
+	// Payment type. Enum values: POST, PRE.
 	ChargeType pulumi.StringPtrInput `pulumi:"chargeType"`
 }
 
@@ -2835,32 +2835,32 @@ func (o NodeGroupChargePreConfigOutput) ToNodeGroupChargePreConfigPtrOutputWithC
 	}).(NodeGroupChargePreConfigPtrOutput)
 }
 
-// 是否开启自动续费。
+// Whether to enable auto-renewal.
 func (o NodeGroupChargePreConfigOutput) AutoRenew() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodeGroupChargePreConfig) *bool { return v.AutoRenew }).(pulumi.BoolPtrOutput)
 }
 
-// 自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+// Renewal duration when auto-renewal is triggered. When autoRenew=true, the default value is 1.
 func (o NodeGroupChargePreConfigOutput) AutoRenewPeriod() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodeGroupChargePreConfig) *int { return v.AutoRenewPeriod }).(pulumi.IntPtrOutput)
 }
 
-// 自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+// Renewal duration unit when auto-renewal is triggered. When autoRenew=true, the default value is Month. Value range: Month: month. Year: year.
 func (o NodeGroupChargePreConfigOutput) AutoRenewPeriodUnit() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodeGroupChargePreConfig) *string { return v.AutoRenewPeriodUnit }).(pulumi.StringPtrOutput)
 }
 
-// chargeType=PRE默认值=1，包月的购买时长单位。
+// When chargeType=PRE, the default value is 1. The unit for the purchase duration when chargeType=PRE is monthly subscription.
 func (o NodeGroupChargePreConfigOutput) ChargePeriod() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodeGroupChargePreConfig) *int { return v.ChargePeriod }).(pulumi.IntPtrOutput)
 }
 
-// chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+// When chargeType=PRE, the default value is Month. The unit for the purchase duration when chargeType=PRE is monthly subscription. Value range: Month (month), Year (year).
 func (o NodeGroupChargePreConfigOutput) ChargePeriodUnit() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodeGroupChargePreConfig) *string { return v.ChargePeriodUnit }).(pulumi.StringPtrOutput)
 }
 
-// 付费类型，枚举值：POST，PRE。
+// Payment type. Enum values: POST, PRE.
 func (o NodeGroupChargePreConfigOutput) ChargeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodeGroupChargePreConfig) *string { return v.ChargeType }).(pulumi.StringPtrOutput)
 }
@@ -2889,7 +2889,7 @@ func (o NodeGroupChargePreConfigPtrOutput) Elem() NodeGroupChargePreConfigOutput
 	}).(NodeGroupChargePreConfigOutput)
 }
 
-// 是否开启自动续费。
+// Whether to enable auto-renewal.
 func (o NodeGroupChargePreConfigPtrOutput) AutoRenew() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodeGroupChargePreConfig) *bool {
 		if v == nil {
@@ -2899,7 +2899,7 @@ func (o NodeGroupChargePreConfigPtrOutput) AutoRenew() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+// Renewal duration when auto-renewal is triggered. When autoRenew=true, the default value is 1.
 func (o NodeGroupChargePreConfigPtrOutput) AutoRenewPeriod() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodeGroupChargePreConfig) *int {
 		if v == nil {
@@ -2909,7 +2909,7 @@ func (o NodeGroupChargePreConfigPtrOutput) AutoRenewPeriod() pulumi.IntPtrOutput
 	}).(pulumi.IntPtrOutput)
 }
 
-// 自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+// Renewal duration unit when auto-renewal is triggered. When autoRenew=true, the default value is Month. Value range: Month: month. Year: year.
 func (o NodeGroupChargePreConfigPtrOutput) AutoRenewPeriodUnit() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodeGroupChargePreConfig) *string {
 		if v == nil {
@@ -2919,7 +2919,7 @@ func (o NodeGroupChargePreConfigPtrOutput) AutoRenewPeriodUnit() pulumi.StringPt
 	}).(pulumi.StringPtrOutput)
 }
 
-// chargeType=PRE默认值=1，包月的购买时长单位。
+// When chargeType=PRE, the default value is 1. The unit for the purchase duration when chargeType=PRE is monthly subscription.
 func (o NodeGroupChargePreConfigPtrOutput) ChargePeriod() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodeGroupChargePreConfig) *int {
 		if v == nil {
@@ -2929,7 +2929,7 @@ func (o NodeGroupChargePreConfigPtrOutput) ChargePeriod() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+// When chargeType=PRE, the default value is Month. The unit for the purchase duration when chargeType=PRE is monthly subscription. Value range: Month (month), Year (year).
 func (o NodeGroupChargePreConfigPtrOutput) ChargePeriodUnit() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodeGroupChargePreConfig) *string {
 		if v == nil {
@@ -2939,7 +2939,7 @@ func (o NodeGroupChargePreConfigPtrOutput) ChargePeriodUnit() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
-// 付费类型，枚举值：POST，PRE。
+// Payment type. Enum values: POST, PRE.
 func (o NodeGroupChargePreConfigPtrOutput) ChargeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodeGroupChargePreConfig) *string {
 		if v == nil {
@@ -2950,11 +2950,11 @@ func (o NodeGroupChargePreConfigPtrOutput) ChargeType() pulumi.StringPtrOutput {
 }
 
 type NodeGroupDataDisk struct {
-	// 磁盘块数，默认值4，最大15，最小1。
+	// Number of disk blocks. Default value: 4. Maximum: 15. Minimum: 1.
 	Count *int `pulumi:"count"`
-	// 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+	// Disk size. Default value: 80GB. Minimum: 60GB. Maximum: 2048GB. Unit: GB.
 	Size *int `pulumi:"size"`
-	// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+	// Disk type. ESSD*PL0: Ultra-fast SSD*PL0. ESSD*PL1: Ultra-fast SSD*PL1. ESSD*PL2: Ultra-fast SSD*PL2. ESSD*PL3: Ultra-fast SSD*PL3. ESSD*FLEXPL: Ultra-fast SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
 	VolumeType *string `pulumi:"volumeType"`
 }
 
@@ -2970,11 +2970,11 @@ type NodeGroupDataDiskInput interface {
 }
 
 type NodeGroupDataDiskArgs struct {
-	// 磁盘块数，默认值4，最大15，最小1。
+	// Number of disk blocks. Default value: 4. Maximum: 15. Minimum: 1.
 	Count pulumi.IntPtrInput `pulumi:"count"`
-	// 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+	// Disk size. Default value: 80GB. Minimum: 60GB. Maximum: 2048GB. Unit: GB.
 	Size pulumi.IntPtrInput `pulumi:"size"`
-	// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+	// Disk type. ESSD*PL0: Ultra-fast SSD*PL0. ESSD*PL1: Ultra-fast SSD*PL1. ESSD*PL2: Ultra-fast SSD*PL2. ESSD*PL3: Ultra-fast SSD*PL3. ESSD*FLEXPL: Ultra-fast SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
 	VolumeType pulumi.StringPtrInput `pulumi:"volumeType"`
 }
 
@@ -3029,17 +3029,17 @@ func (o NodeGroupDataDiskOutput) ToNodeGroupDataDiskOutputWithContext(ctx contex
 	return o
 }
 
-// 磁盘块数，默认值4，最大15，最小1。
+// Number of disk blocks. Default value: 4. Maximum: 15. Minimum: 1.
 func (o NodeGroupDataDiskOutput) Count() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodeGroupDataDisk) *int { return v.Count }).(pulumi.IntPtrOutput)
 }
 
-// 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+// Disk size. Default value: 80GB. Minimum: 60GB. Maximum: 2048GB. Unit: GB.
 func (o NodeGroupDataDiskOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodeGroupDataDisk) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
 
-// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+// Disk type. ESSD*PL0: Ultra-fast SSD*PL0. ESSD*PL1: Ultra-fast SSD*PL1. ESSD*PL2: Ultra-fast SSD*PL2. ESSD*PL3: Ultra-fast SSD*PL3. ESSD*FLEXPL: Ultra-fast SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
 func (o NodeGroupDataDiskOutput) VolumeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodeGroupDataDisk) *string { return v.VolumeType }).(pulumi.StringPtrOutput)
 }
@@ -3065,25 +3065,25 @@ func (o NodeGroupDataDiskArrayOutput) Index(i pulumi.IntInput) NodeGroupDataDisk
 }
 
 type NodeGroupNode struct {
-	// 节点创建时间。
+	// Node creation time.
 	CreatedTime *int `pulumi:"createdTime"`
-	// ecs实例规格。
+	// ecs instance specification.
 	EcsInstanceType *string `pulumi:"ecsInstanceType"`
-	// 节点FQDN。
+	// Node FQDN.
 	NodeFqdn *string `pulumi:"nodeFqdn"`
-	// 节点ID。
+	// Node ID.
 	NodeId *string `pulumi:"nodeId"`
-	// 节点名称。
+	// Node name.
 	NodeName *string `pulumi:"nodeName"`
-	// 节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+	// Node status. UNKNOWN: Unknown. CREATING: Creating. RUNNING: Running. STOPPING: Stopping. STOPPED: Stopped. REBOOTING: Rebooting. DELETED: Deleted.
 	NodeState *string `pulumi:"nodeState"`
-	// 私有IP。
+	// Private IP.
 	PrivateIp *string `pulumi:"privateIp"`
-	// 公网IP。
+	// Public IP.
 	PublicIp *string `pulumi:"publicIp"`
-	// 准备完毕时间。
+	// Ready time.
 	ReadyTime *int `pulumi:"readyTime"`
-	// 集群终止时间。
+	// Cluster termination time.
 	TerminateTime *int `pulumi:"terminateTime"`
 }
 
@@ -3099,25 +3099,25 @@ type NodeGroupNodeInput interface {
 }
 
 type NodeGroupNodeArgs struct {
-	// 节点创建时间。
+	// Node creation time.
 	CreatedTime pulumi.IntPtrInput `pulumi:"createdTime"`
-	// ecs实例规格。
+	// ecs instance specification.
 	EcsInstanceType pulumi.StringPtrInput `pulumi:"ecsInstanceType"`
-	// 节点FQDN。
+	// Node FQDN.
 	NodeFqdn pulumi.StringPtrInput `pulumi:"nodeFqdn"`
-	// 节点ID。
+	// Node ID.
 	NodeId pulumi.StringPtrInput `pulumi:"nodeId"`
-	// 节点名称。
+	// Node name.
 	NodeName pulumi.StringPtrInput `pulumi:"nodeName"`
-	// 节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+	// Node status. UNKNOWN: Unknown. CREATING: Creating. RUNNING: Running. STOPPING: Stopping. STOPPED: Stopped. REBOOTING: Rebooting. DELETED: Deleted.
 	NodeState pulumi.StringPtrInput `pulumi:"nodeState"`
-	// 私有IP。
+	// Private IP.
 	PrivateIp pulumi.StringPtrInput `pulumi:"privateIp"`
-	// 公网IP。
+	// Public IP.
 	PublicIp pulumi.StringPtrInput `pulumi:"publicIp"`
-	// 准备完毕时间。
+	// Ready time.
 	ReadyTime pulumi.IntPtrInput `pulumi:"readyTime"`
-	// 集群终止时间。
+	// Cluster termination time.
 	TerminateTime pulumi.IntPtrInput `pulumi:"terminateTime"`
 }
 
@@ -3172,52 +3172,52 @@ func (o NodeGroupNodeOutput) ToNodeGroupNodeOutputWithContext(ctx context.Contex
 	return o
 }
 
-// 节点创建时间。
+// Node creation time.
 func (o NodeGroupNodeOutput) CreatedTime() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodeGroupNode) *int { return v.CreatedTime }).(pulumi.IntPtrOutput)
 }
 
-// ecs实例规格。
+// ecs instance specification.
 func (o NodeGroupNodeOutput) EcsInstanceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodeGroupNode) *string { return v.EcsInstanceType }).(pulumi.StringPtrOutput)
 }
 
-// 节点FQDN。
+// Node FQDN.
 func (o NodeGroupNodeOutput) NodeFqdn() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodeGroupNode) *string { return v.NodeFqdn }).(pulumi.StringPtrOutput)
 }
 
-// 节点ID。
+// Node ID.
 func (o NodeGroupNodeOutput) NodeId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodeGroupNode) *string { return v.NodeId }).(pulumi.StringPtrOutput)
 }
 
-// 节点名称。
+// Node name.
 func (o NodeGroupNodeOutput) NodeName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodeGroupNode) *string { return v.NodeName }).(pulumi.StringPtrOutput)
 }
 
-// 节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+// Node status. UNKNOWN: Unknown. CREATING: Creating. RUNNING: Running. STOPPING: Stopping. STOPPED: Stopped. REBOOTING: Rebooting. DELETED: Deleted.
 func (o NodeGroupNodeOutput) NodeState() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodeGroupNode) *string { return v.NodeState }).(pulumi.StringPtrOutput)
 }
 
-// 私有IP。
+// Private IP.
 func (o NodeGroupNodeOutput) PrivateIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodeGroupNode) *string { return v.PrivateIp }).(pulumi.StringPtrOutput)
 }
 
-// 公网IP。
+// Public IP.
 func (o NodeGroupNodeOutput) PublicIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodeGroupNode) *string { return v.PublicIp }).(pulumi.StringPtrOutput)
 }
 
-// 准备完毕时间。
+// Ready time.
 func (o NodeGroupNodeOutput) ReadyTime() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodeGroupNode) *int { return v.ReadyTime }).(pulumi.IntPtrOutput)
 }
 
-// 集群终止时间。
+// Cluster termination time.
 func (o NodeGroupNodeOutput) TerminateTime() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodeGroupNode) *int { return v.TerminateTime }).(pulumi.IntPtrOutput)
 }
@@ -3243,9 +3243,9 @@ func (o NodeGroupNodeArrayOutput) Index(i pulumi.IntInput) NodeGroupNodeOutput {
 }
 
 type NodeGroupSystemDisk struct {
-	// 系统盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+	// System disk size. Default value: 80GB. Minimum: 60GB. Maximum: 2048GB. Unit: GB.
 	Size *int `pulumi:"size"`
-	// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+	// Disk type. ESSD*PL0: Ultra-fast SSD*PL0. ESSD*PL1: Ultra-fast SSD*PL1. ESSD*PL2: Ultra-fast SSD*PL2. ESSD*PL3: Ultra-fast SSD*PL3. ESSD*FLEXPL: Ultra-fast SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
 	VolumeType *string `pulumi:"volumeType"`
 }
 
@@ -3261,9 +3261,9 @@ type NodeGroupSystemDiskInput interface {
 }
 
 type NodeGroupSystemDiskArgs struct {
-	// 系统盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+	// System disk size. Default value: 80GB. Minimum: 60GB. Maximum: 2048GB. Unit: GB.
 	Size pulumi.IntPtrInput `pulumi:"size"`
-	// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+	// Disk type. ESSD*PL0: Ultra-fast SSD*PL0. ESSD*PL1: Ultra-fast SSD*PL1. ESSD*PL2: Ultra-fast SSD*PL2. ESSD*PL3: Ultra-fast SSD*PL3. ESSD*FLEXPL: Ultra-fast SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
 	VolumeType pulumi.StringPtrInput `pulumi:"volumeType"`
 }
 
@@ -3344,12 +3344,12 @@ func (o NodeGroupSystemDiskOutput) ToNodeGroupSystemDiskPtrOutputWithContext(ctx
 	}).(NodeGroupSystemDiskPtrOutput)
 }
 
-// 系统盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+// System disk size. Default value: 80GB. Minimum: 60GB. Maximum: 2048GB. Unit: GB.
 func (o NodeGroupSystemDiskOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodeGroupSystemDisk) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
 
-// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+// Disk type. ESSD*PL0: Ultra-fast SSD*PL0. ESSD*PL1: Ultra-fast SSD*PL1. ESSD*PL2: Ultra-fast SSD*PL2. ESSD*PL3: Ultra-fast SSD*PL3. ESSD*FLEXPL: Ultra-fast SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
 func (o NodeGroupSystemDiskOutput) VolumeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodeGroupSystemDisk) *string { return v.VolumeType }).(pulumi.StringPtrOutput)
 }
@@ -3378,7 +3378,7 @@ func (o NodeGroupSystemDiskPtrOutput) Elem() NodeGroupSystemDiskOutput {
 	}).(NodeGroupSystemDiskOutput)
 }
 
-// 系统盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+// System disk size. Default value: 80GB. Minimum: 60GB. Maximum: 2048GB. Unit: GB.
 func (o NodeGroupSystemDiskPtrOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodeGroupSystemDisk) *int {
 		if v == nil {
@@ -3388,7 +3388,7 @@ func (o NodeGroupSystemDiskPtrOutput) Size() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+// Disk type. ESSD*PL0: Ultra-fast SSD*PL0. ESSD*PL1: Ultra-fast SSD*PL1. ESSD*PL2: Ultra-fast SSD*PL2. ESSD*PL3: Ultra-fast SSD*PL3. ESSD*FLEXPL: Ultra-fast SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
 func (o NodeGroupSystemDiskPtrOutput) VolumeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodeGroupSystemDisk) *string {
 		if v == nil {
@@ -3399,21 +3399,21 @@ func (o NodeGroupSystemDiskPtrOutput) VolumeType() pulumi.StringPtrOutput {
 }
 
 type GetClusterApplication struct {
-	// 应用配置路径。
+	// Application configuration path.
 	ApplicationConfigHome string `pulumi:"applicationConfigHome"`
-	// 应用安装路径。
+	// Application installation path.
 	ApplicationHome string `pulumi:"applicationHome"`
-	// 应用名称。
+	// Application name.
 	ApplicationName string `pulumi:"applicationName"`
-	// 服务状态。NORMAL：正常；WARNING：告警；STOPPED：已停止；INIT：初始化中；INSTALLING：安装中；INSTALLED：已安装；STARTING：启动中；STARTED：已启动；STOPPING：停止中；UNINSTALLING：卸载中；UNINSTALLED：已卸载；EXCEPTION：异常。
+	// Service status. NORMAL: normal; WARNING: alert; STOPPED: stopped; INIT: initializing; INSTALLING: installing; INSTALLED: installed; STARTING: starting; STARTED: started; STOPPING: stopping; UNINSTALLING: uninstalling; UNINSTALLED: uninstalled; EXCEPTION: exception.
 	ApplicationState string `pulumi:"applicationState"`
-	// 应用版本。
+	// Application version.
 	ApplicationVersion string `pulumi:"applicationVersion"`
-	// 应用用户组。
+	// Application user group.
 	Group string `pulumi:"group"`
-	// 是否支持客户端。
+	// Whether client is supported.
 	SupportClient bool `pulumi:"supportClient"`
-	// 应用用户。
+	// Application user.
 	User string `pulumi:"user"`
 }
 
@@ -3429,21 +3429,21 @@ type GetClusterApplicationInput interface {
 }
 
 type GetClusterApplicationArgs struct {
-	// 应用配置路径。
+	// Application configuration path.
 	ApplicationConfigHome pulumi.StringInput `pulumi:"applicationConfigHome"`
-	// 应用安装路径。
+	// Application installation path.
 	ApplicationHome pulumi.StringInput `pulumi:"applicationHome"`
-	// 应用名称。
+	// Application name.
 	ApplicationName pulumi.StringInput `pulumi:"applicationName"`
-	// 服务状态。NORMAL：正常；WARNING：告警；STOPPED：已停止；INIT：初始化中；INSTALLING：安装中；INSTALLED：已安装；STARTING：启动中；STARTED：已启动；STOPPING：停止中；UNINSTALLING：卸载中；UNINSTALLED：已卸载；EXCEPTION：异常。
+	// Service status. NORMAL: normal; WARNING: alert; STOPPED: stopped; INIT: initializing; INSTALLING: installing; INSTALLED: installed; STARTING: starting; STARTED: started; STOPPING: stopping; UNINSTALLING: uninstalling; UNINSTALLED: uninstalled; EXCEPTION: exception.
 	ApplicationState pulumi.StringInput `pulumi:"applicationState"`
-	// 应用版本。
+	// Application version.
 	ApplicationVersion pulumi.StringInput `pulumi:"applicationVersion"`
-	// 应用用户组。
+	// Application user group.
 	Group pulumi.StringInput `pulumi:"group"`
-	// 是否支持客户端。
+	// Whether client is supported.
 	SupportClient pulumi.BoolInput `pulumi:"supportClient"`
-	// 应用用户。
+	// Application user.
 	User pulumi.StringInput `pulumi:"user"`
 }
 
@@ -3498,42 +3498,42 @@ func (o GetClusterApplicationOutput) ToGetClusterApplicationOutputWithContext(ct
 	return o
 }
 
-// 应用配置路径。
+// Application configuration path.
 func (o GetClusterApplicationOutput) ApplicationConfigHome() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterApplication) string { return v.ApplicationConfigHome }).(pulumi.StringOutput)
 }
 
-// 应用安装路径。
+// Application installation path.
 func (o GetClusterApplicationOutput) ApplicationHome() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterApplication) string { return v.ApplicationHome }).(pulumi.StringOutput)
 }
 
-// 应用名称。
+// Application name.
 func (o GetClusterApplicationOutput) ApplicationName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterApplication) string { return v.ApplicationName }).(pulumi.StringOutput)
 }
 
-// 服务状态。NORMAL：正常；WARNING：告警；STOPPED：已停止；INIT：初始化中；INSTALLING：安装中；INSTALLED：已安装；STARTING：启动中；STARTED：已启动；STOPPING：停止中；UNINSTALLING：卸载中；UNINSTALLED：已卸载；EXCEPTION：异常。
+// Service status. NORMAL: normal; WARNING: alert; STOPPED: stopped; INIT: initializing; INSTALLING: installing; INSTALLED: installed; STARTING: starting; STARTED: started; STOPPING: stopping; UNINSTALLING: uninstalling; UNINSTALLED: uninstalled; EXCEPTION: exception.
 func (o GetClusterApplicationOutput) ApplicationState() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterApplication) string { return v.ApplicationState }).(pulumi.StringOutput)
 }
 
-// 应用版本。
+// Application version.
 func (o GetClusterApplicationOutput) ApplicationVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterApplication) string { return v.ApplicationVersion }).(pulumi.StringOutput)
 }
 
-// 应用用户组。
+// Application user group.
 func (o GetClusterApplicationOutput) Group() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterApplication) string { return v.Group }).(pulumi.StringOutput)
 }
 
-// 是否支持客户端。
+// Whether client is supported.
 func (o GetClusterApplicationOutput) SupportClient() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetClusterApplication) bool { return v.SupportClient }).(pulumi.BoolOutput)
 }
 
-// 应用用户。
+// Application user.
 func (o GetClusterApplicationOutput) User() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterApplication) string { return v.User }).(pulumi.StringOutput)
 }
@@ -3559,15 +3559,15 @@ func (o GetClusterApplicationArrayOutput) Index(i pulumi.IntInput) GetClusterApp
 }
 
 type GetClusterApplicationExtra struct {
-	// 服务组件的自定义部署拓扑列表。
+	// Custom deployment topology list for service components.
 	ApplicationComponentLayouts []GetClusterApplicationExtraApplicationComponentLayout `pulumi:"applicationComponentLayouts"`
-	// 服务的自定义配置参数列表。
+	// Custom configuration parameter list for services.
 	ApplicationConfigs []GetClusterApplicationExtraApplicationConfig `pulumi:"applicationConfigs"`
-	// 应用名称。
+	// Application name.
 	ApplicationName string `pulumi:"applicationName"`
-	// 元数据连接id。
+	// Metadata connection ID.
 	ConnectionId string `pulumi:"connectionId"`
-	// 元数据连接类型。BUILT*IN*MYSQL：内置数据库。EXTERNAL*MYSQL：外置数据库。HIVE*METASTORE：HMS。
+	// Metadata connection type. BUILT*IN*MYSQL: built-in database. EXTERNAL*MYSQL: external database. HIVE*METASTORE: HMS.
 	ConnectionType string `pulumi:"connectionType"`
 }
 
@@ -3583,15 +3583,15 @@ type GetClusterApplicationExtraInput interface {
 }
 
 type GetClusterApplicationExtraArgs struct {
-	// 服务组件的自定义部署拓扑列表。
+	// Custom deployment topology list for service components.
 	ApplicationComponentLayouts GetClusterApplicationExtraApplicationComponentLayoutArrayInput `pulumi:"applicationComponentLayouts"`
-	// 服务的自定义配置参数列表。
+	// Custom configuration parameter list for services.
 	ApplicationConfigs GetClusterApplicationExtraApplicationConfigArrayInput `pulumi:"applicationConfigs"`
-	// 应用名称。
+	// Application name.
 	ApplicationName pulumi.StringInput `pulumi:"applicationName"`
-	// 元数据连接id。
+	// Metadata connection ID.
 	ConnectionId pulumi.StringInput `pulumi:"connectionId"`
-	// 元数据连接类型。BUILT*IN*MYSQL：内置数据库。EXTERNAL*MYSQL：外置数据库。HIVE*METASTORE：HMS。
+	// Metadata connection type. BUILT*IN*MYSQL: built-in database. EXTERNAL*MYSQL: external database. HIVE*METASTORE: HMS.
 	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
 }
 
@@ -3646,31 +3646,31 @@ func (o GetClusterApplicationExtraOutput) ToGetClusterApplicationExtraOutputWith
 	return o
 }
 
-// 服务组件的自定义部署拓扑列表。
+// Custom deployment topology list for service components.
 func (o GetClusterApplicationExtraOutput) ApplicationComponentLayouts() GetClusterApplicationExtraApplicationComponentLayoutArrayOutput {
 	return o.ApplyT(func(v GetClusterApplicationExtra) []GetClusterApplicationExtraApplicationComponentLayout {
 		return v.ApplicationComponentLayouts
 	}).(GetClusterApplicationExtraApplicationComponentLayoutArrayOutput)
 }
 
-// 服务的自定义配置参数列表。
+// Custom configuration parameter list for services.
 func (o GetClusterApplicationExtraOutput) ApplicationConfigs() GetClusterApplicationExtraApplicationConfigArrayOutput {
 	return o.ApplyT(func(v GetClusterApplicationExtra) []GetClusterApplicationExtraApplicationConfig {
 		return v.ApplicationConfigs
 	}).(GetClusterApplicationExtraApplicationConfigArrayOutput)
 }
 
-// 应用名称。
+// Application name.
 func (o GetClusterApplicationExtraOutput) ApplicationName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterApplicationExtra) string { return v.ApplicationName }).(pulumi.StringOutput)
 }
 
-// 元数据连接id。
+// Metadata connection ID.
 func (o GetClusterApplicationExtraOutput) ConnectionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterApplicationExtra) string { return v.ConnectionId }).(pulumi.StringOutput)
 }
 
-// 元数据连接类型。BUILT*IN*MYSQL：内置数据库。EXTERNAL*MYSQL：外置数据库。HIVE*METASTORE：HMS。
+// Metadata connection type. BUILT*IN*MYSQL: built-in database. EXTERNAL*MYSQL: external database. HIVE*METASTORE: HMS.
 func (o GetClusterApplicationExtraOutput) ConnectionType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterApplicationExtra) string { return v.ConnectionType }).(pulumi.StringOutput)
 }
@@ -3696,9 +3696,9 @@ func (o GetClusterApplicationExtraArrayOutput) Index(i pulumi.IntInput) GetClust
 }
 
 type GetClusterApplicationExtraApplicationComponentLayout struct {
-	// 组件名称。
+	// Component name.
 	ComponentName string `pulumi:"componentName"`
-	// 组件的布局范围。
+	// Component layout scope.
 	EffectiveScope GetClusterApplicationExtraApplicationComponentLayoutEffectiveScope `pulumi:"effectiveScope"`
 }
 
@@ -3714,9 +3714,9 @@ type GetClusterApplicationExtraApplicationComponentLayoutInput interface {
 }
 
 type GetClusterApplicationExtraApplicationComponentLayoutArgs struct {
-	// 组件名称。
+	// Component name.
 	ComponentName pulumi.StringInput `pulumi:"componentName"`
-	// 组件的布局范围。
+	// Component layout scope.
 	EffectiveScope GetClusterApplicationExtraApplicationComponentLayoutEffectiveScopeInput `pulumi:"effectiveScope"`
 }
 
@@ -3771,12 +3771,12 @@ func (o GetClusterApplicationExtraApplicationComponentLayoutOutput) ToGetCluster
 	return o
 }
 
-// 组件名称。
+// Component name.
 func (o GetClusterApplicationExtraApplicationComponentLayoutOutput) ComponentName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterApplicationExtraApplicationComponentLayout) string { return v.ComponentName }).(pulumi.StringOutput)
 }
 
-// 组件的布局范围。
+// Component layout scope.
 func (o GetClusterApplicationExtraApplicationComponentLayoutOutput) EffectiveScope() GetClusterApplicationExtraApplicationComponentLayoutEffectiveScopeOutput {
 	return o.ApplyT(func(v GetClusterApplicationExtraApplicationComponentLayout) GetClusterApplicationExtraApplicationComponentLayoutEffectiveScope {
 		return v.EffectiveScope
@@ -3804,19 +3804,19 @@ func (o GetClusterApplicationExtraApplicationComponentLayoutArrayOutput) Index(i
 }
 
 type GetClusterApplicationExtraApplicationComponentLayoutEffectiveScope struct {
-	// 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+	// Component name list. Required when EffectiveType=COMPONENT_NAME.
 	ComponentNames []string `pulumi:"componentNames"`
-	// 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+	// Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
 	EffectiveType string `pulumi:"effectiveType"`
-	// 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+	// Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
 	NodeGroupIds []string `pulumi:"nodeGroupIds"`
-	// 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+	// Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
 	NodeGroupNames []string `pulumi:"nodeGroupNames"`
-	// 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+	// Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
 	NodeGroupTypes []string `pulumi:"nodeGroupTypes"`
-	// 节点ID列表，EffectiveType=NODE_ID时，必选。
+	// Node ID list. Required when EffectiveType=NODE_ID.
 	NodeIds []string `pulumi:"nodeIds"`
-	// 节点名列表，EffectiveType=NODE_NAME时，必选。
+	// Node name list. Required when EffectiveType=NODE_NAME.
 	NodeNames []string `pulumi:"nodeNames"`
 }
 
@@ -3832,19 +3832,19 @@ type GetClusterApplicationExtraApplicationComponentLayoutEffectiveScopeInput int
 }
 
 type GetClusterApplicationExtraApplicationComponentLayoutEffectiveScopeArgs struct {
-	// 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+	// Component name list. Required when EffectiveType=COMPONENT_NAME.
 	ComponentNames pulumi.StringArrayInput `pulumi:"componentNames"`
-	// 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+	// Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
 	EffectiveType pulumi.StringInput `pulumi:"effectiveType"`
-	// 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+	// Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
 	NodeGroupIds pulumi.StringArrayInput `pulumi:"nodeGroupIds"`
-	// 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+	// Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
 	NodeGroupNames pulumi.StringArrayInput `pulumi:"nodeGroupNames"`
-	// 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+	// Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
 	NodeGroupTypes pulumi.StringArrayInput `pulumi:"nodeGroupTypes"`
-	// 节点ID列表，EffectiveType=NODE_ID时，必选。
+	// Node ID list. Required when EffectiveType=NODE_ID.
 	NodeIds pulumi.StringArrayInput `pulumi:"nodeIds"`
-	// 节点名列表，EffectiveType=NODE_NAME时，必选。
+	// Node name list. Required when EffectiveType=NODE_NAME.
 	NodeNames pulumi.StringArrayInput `pulumi:"nodeNames"`
 }
 
@@ -3874,47 +3874,47 @@ func (o GetClusterApplicationExtraApplicationComponentLayoutEffectiveScopeOutput
 	return o
 }
 
-// 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+// Component name list. Required when EffectiveType=COMPONENT_NAME.
 func (o GetClusterApplicationExtraApplicationComponentLayoutEffectiveScopeOutput) ComponentNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterApplicationExtraApplicationComponentLayoutEffectiveScope) []string {
 		return v.ComponentNames
 	}).(pulumi.StringArrayOutput)
 }
 
-// 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+// Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
 func (o GetClusterApplicationExtraApplicationComponentLayoutEffectiveScopeOutput) EffectiveType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterApplicationExtraApplicationComponentLayoutEffectiveScope) string {
 		return v.EffectiveType
 	}).(pulumi.StringOutput)
 }
 
-// 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+// Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
 func (o GetClusterApplicationExtraApplicationComponentLayoutEffectiveScopeOutput) NodeGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterApplicationExtraApplicationComponentLayoutEffectiveScope) []string {
 		return v.NodeGroupIds
 	}).(pulumi.StringArrayOutput)
 }
 
-// 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+// Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
 func (o GetClusterApplicationExtraApplicationComponentLayoutEffectiveScopeOutput) NodeGroupNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterApplicationExtraApplicationComponentLayoutEffectiveScope) []string {
 		return v.NodeGroupNames
 	}).(pulumi.StringArrayOutput)
 }
 
-// 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+// Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
 func (o GetClusterApplicationExtraApplicationComponentLayoutEffectiveScopeOutput) NodeGroupTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterApplicationExtraApplicationComponentLayoutEffectiveScope) []string {
 		return v.NodeGroupTypes
 	}).(pulumi.StringArrayOutput)
 }
 
-// 节点ID列表，EffectiveType=NODE_ID时，必选。
+// Node ID list. Required when EffectiveType=NODE_ID.
 func (o GetClusterApplicationExtraApplicationComponentLayoutEffectiveScopeOutput) NodeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterApplicationExtraApplicationComponentLayoutEffectiveScope) []string { return v.NodeIds }).(pulumi.StringArrayOutput)
 }
 
-// 节点名列表，EffectiveType=NODE_NAME时，必选。
+// Node name list. Required when EffectiveType=NODE_NAME.
 func (o GetClusterApplicationExtraApplicationComponentLayoutEffectiveScopeOutput) NodeNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterApplicationExtraApplicationComponentLayoutEffectiveScope) []string {
 		return v.NodeNames
@@ -3922,19 +3922,19 @@ func (o GetClusterApplicationExtraApplicationComponentLayoutEffectiveScopeOutput
 }
 
 type GetClusterApplicationExtraApplicationConfig struct {
-	// 组件实例名称。
+	// Component instance name.
 	ComponentInstanceName string `pulumi:"componentInstanceName"`
-	// 组件名称。
+	// Component name.
 	ComponentName string `pulumi:"componentName"`
-	// 配置文件名。
+	// Configuration file name.
 	ConfigFileName string `pulumi:"configFileName"`
-	// 配置项名称。
+	// Configuration item name.
 	ConfigItemKey string `pulumi:"configItemKey"`
-	// 配置项值。
+	// Configuration item value.
 	ConfigItemValue string `pulumi:"configItemValue"`
-	// 是否删除。
+	// Whether to delete.
 	Deleted bool `pulumi:"deleted"`
-	// 影响组件。
+	// Affected component.
 	EffectiveScope GetClusterApplicationExtraApplicationConfigEffectiveScope `pulumi:"effectiveScope"`
 }
 
@@ -3950,19 +3950,19 @@ type GetClusterApplicationExtraApplicationConfigInput interface {
 }
 
 type GetClusterApplicationExtraApplicationConfigArgs struct {
-	// 组件实例名称。
+	// Component instance name.
 	ComponentInstanceName pulumi.StringInput `pulumi:"componentInstanceName"`
-	// 组件名称。
+	// Component name.
 	ComponentName pulumi.StringInput `pulumi:"componentName"`
-	// 配置文件名。
+	// Configuration file name.
 	ConfigFileName pulumi.StringInput `pulumi:"configFileName"`
-	// 配置项名称。
+	// Configuration item name.
 	ConfigItemKey pulumi.StringInput `pulumi:"configItemKey"`
-	// 配置项值。
+	// Configuration item value.
 	ConfigItemValue pulumi.StringInput `pulumi:"configItemValue"`
-	// 是否删除。
+	// Whether to delete.
 	Deleted pulumi.BoolInput `pulumi:"deleted"`
-	// 影响组件。
+	// Affected component.
 	EffectiveScope GetClusterApplicationExtraApplicationConfigEffectiveScopeInput `pulumi:"effectiveScope"`
 }
 
@@ -4017,37 +4017,37 @@ func (o GetClusterApplicationExtraApplicationConfigOutput) ToGetClusterApplicati
 	return o
 }
 
-// 组件实例名称。
+// Component instance name.
 func (o GetClusterApplicationExtraApplicationConfigOutput) ComponentInstanceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterApplicationExtraApplicationConfig) string { return v.ComponentInstanceName }).(pulumi.StringOutput)
 }
 
-// 组件名称。
+// Component name.
 func (o GetClusterApplicationExtraApplicationConfigOutput) ComponentName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterApplicationExtraApplicationConfig) string { return v.ComponentName }).(pulumi.StringOutput)
 }
 
-// 配置文件名。
+// Configuration file name.
 func (o GetClusterApplicationExtraApplicationConfigOutput) ConfigFileName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterApplicationExtraApplicationConfig) string { return v.ConfigFileName }).(pulumi.StringOutput)
 }
 
-// 配置项名称。
+// Configuration item name.
 func (o GetClusterApplicationExtraApplicationConfigOutput) ConfigItemKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterApplicationExtraApplicationConfig) string { return v.ConfigItemKey }).(pulumi.StringOutput)
 }
 
-// 配置项值。
+// Configuration item value.
 func (o GetClusterApplicationExtraApplicationConfigOutput) ConfigItemValue() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterApplicationExtraApplicationConfig) string { return v.ConfigItemValue }).(pulumi.StringOutput)
 }
 
-// 是否删除。
+// Whether to delete.
 func (o GetClusterApplicationExtraApplicationConfigOutput) Deleted() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetClusterApplicationExtraApplicationConfig) bool { return v.Deleted }).(pulumi.BoolOutput)
 }
 
-// 影响组件。
+// Affected component.
 func (o GetClusterApplicationExtraApplicationConfigOutput) EffectiveScope() GetClusterApplicationExtraApplicationConfigEffectiveScopeOutput {
 	return o.ApplyT(func(v GetClusterApplicationExtraApplicationConfig) GetClusterApplicationExtraApplicationConfigEffectiveScope {
 		return v.EffectiveScope
@@ -4075,19 +4075,19 @@ func (o GetClusterApplicationExtraApplicationConfigArrayOutput) Index(i pulumi.I
 }
 
 type GetClusterApplicationExtraApplicationConfigEffectiveScope struct {
-	// 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+	// Component name list. Required when EffectiveType=COMPONENT_NAME.
 	ComponentNames []string `pulumi:"componentNames"`
-	// 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+	// Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
 	EffectiveType string `pulumi:"effectiveType"`
-	// 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+	// Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
 	NodeGroupIds []string `pulumi:"nodeGroupIds"`
-	// 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+	// Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
 	NodeGroupNames []string `pulumi:"nodeGroupNames"`
-	// 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+	// Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
 	NodeGroupTypes []string `pulumi:"nodeGroupTypes"`
-	// 节点ID列表，EffectiveType=NODE_ID时，必选。
+	// Node ID list. Required when EffectiveType=NODE_ID.
 	NodeIds []string `pulumi:"nodeIds"`
-	// 节点名列表，EffectiveType=NODE_NAME时，必选。
+	// Node name list. Required when EffectiveType=NODE_NAME.
 	NodeNames []string `pulumi:"nodeNames"`
 }
 
@@ -4103,19 +4103,19 @@ type GetClusterApplicationExtraApplicationConfigEffectiveScopeInput interface {
 }
 
 type GetClusterApplicationExtraApplicationConfigEffectiveScopeArgs struct {
-	// 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+	// Component name list. Required when EffectiveType=COMPONENT_NAME.
 	ComponentNames pulumi.StringArrayInput `pulumi:"componentNames"`
-	// 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+	// Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
 	EffectiveType pulumi.StringInput `pulumi:"effectiveType"`
-	// 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+	// Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
 	NodeGroupIds pulumi.StringArrayInput `pulumi:"nodeGroupIds"`
-	// 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+	// Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
 	NodeGroupNames pulumi.StringArrayInput `pulumi:"nodeGroupNames"`
-	// 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+	// Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
 	NodeGroupTypes pulumi.StringArrayInput `pulumi:"nodeGroupTypes"`
-	// 节点ID列表，EffectiveType=NODE_ID时，必选。
+	// Node ID list. Required when EffectiveType=NODE_ID.
 	NodeIds pulumi.StringArrayInput `pulumi:"nodeIds"`
-	// 节点名列表，EffectiveType=NODE_NAME时，必选。
+	// Node name list. Required when EffectiveType=NODE_NAME.
 	NodeNames pulumi.StringArrayInput `pulumi:"nodeNames"`
 }
 
@@ -4145,57 +4145,57 @@ func (o GetClusterApplicationExtraApplicationConfigEffectiveScopeOutput) ToGetCl
 	return o
 }
 
-// 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+// Component name list. Required when EffectiveType=COMPONENT_NAME.
 func (o GetClusterApplicationExtraApplicationConfigEffectiveScopeOutput) ComponentNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterApplicationExtraApplicationConfigEffectiveScope) []string { return v.ComponentNames }).(pulumi.StringArrayOutput)
 }
 
-// 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+// Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
 func (o GetClusterApplicationExtraApplicationConfigEffectiveScopeOutput) EffectiveType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterApplicationExtraApplicationConfigEffectiveScope) string { return v.EffectiveType }).(pulumi.StringOutput)
 }
 
-// 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+// Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
 func (o GetClusterApplicationExtraApplicationConfigEffectiveScopeOutput) NodeGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterApplicationExtraApplicationConfigEffectiveScope) []string { return v.NodeGroupIds }).(pulumi.StringArrayOutput)
 }
 
-// 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+// Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
 func (o GetClusterApplicationExtraApplicationConfigEffectiveScopeOutput) NodeGroupNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterApplicationExtraApplicationConfigEffectiveScope) []string { return v.NodeGroupNames }).(pulumi.StringArrayOutput)
 }
 
-// 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+// Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
 func (o GetClusterApplicationExtraApplicationConfigEffectiveScopeOutput) NodeGroupTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterApplicationExtraApplicationConfigEffectiveScope) []string { return v.NodeGroupTypes }).(pulumi.StringArrayOutput)
 }
 
-// 节点ID列表，EffectiveType=NODE_ID时，必选。
+// Node ID list. Required when EffectiveType=NODE_ID.
 func (o GetClusterApplicationExtraApplicationConfigEffectiveScopeOutput) NodeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterApplicationExtraApplicationConfigEffectiveScope) []string { return v.NodeIds }).(pulumi.StringArrayOutput)
 }
 
-// 节点名列表，EffectiveType=NODE_NAME时，必选。
+// Node name list. Required when EffectiveType=NODE_NAME.
 func (o GetClusterApplicationExtraApplicationConfigEffectiveScopeOutput) NodeNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterApplicationExtraApplicationConfigEffectiveScope) []string { return v.NodeNames }).(pulumi.StringArrayOutput)
 }
 
 type GetClusterBootstrapScript struct {
-	// 脚本执行范围。
+	// Script execution scope.
 	EffectiveScope GetClusterBootstrapScriptEffectiveScope `pulumi:"effectiveScope"`
-	// 执行失败策略。取值范围：FAILED*CONTINUE：失败后继续执行其他任务。FAILED*BLOCK：失败后中断，不再继续执行后续任务。当脚本为BOOTSTRAP时，会导致创建集群、扩容节点组操作中断并失败。默认值：FAILED_BLOCK。
+	// Execution failure policy. Range: FAILED*CONTINUE: Continue with other tasks after failure. FAILED*BLOCK: Stop and do not execute subsequent tasks after failure. If the script is BOOTSTRAP, this will interrupt and fail cluster creation or node group expansion. Default: FAILED_BLOCK.
 	ExecutionFailStrategy string `pulumi:"executionFailStrategy"`
-	// 脚本的执行时机。仅scriptType=BOOTSTRAP时生效。BEFORE*APPLICATION*INSTALL：应用安装前。AFTER*APPLICATION*STARTED：应用启动后。默认值：BEFORE*APP*INSTALL
+	// Script execution timing. Only effective when scriptType=BOOTSTRAP. BEFORE*APPLICATION*INSTALL: before application installation. AFTER*APPLICATION*STARTED: after application startup. Default: BEFORE*APP*INSTALL.
 	ExecutionMoment string `pulumi:"executionMoment"`
-	// 脚本执行优先级。取值范围：1~1000。默认值1。
+	// Script execution priority. Range: 1~1000. Default: 1.
 	Priority string `pulumi:"priority"`
-	// 脚本参数。
+	// Script parameters.
 	ScriptArgs string `pulumi:"scriptArgs"`
-	// 脚本名称。必填。长度为1~128个字符，必须以大小字母或中文开头，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+	// Script name (required). Length: 1–128 characters. Must start with an uppercase or lowercase letter or Chinese character. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
 	ScriptName string `pulumi:"scriptName"`
-	// 脚本所在TOS路径。必填。以 tos:： 开头。
+	// Script TOS path. Required. Must start with 'tos:'.
 	ScriptPath string `pulumi:"scriptPath"`
-	// 脚本类型。NORMAL：普通脚本。BOOTSTRAP：引导脚本。
+	// Script type. NORMAL: normal script. BOOTSTRAP: bootstrap script.
 	ScriptType string `pulumi:"scriptType"`
 }
 
@@ -4211,21 +4211,21 @@ type GetClusterBootstrapScriptInput interface {
 }
 
 type GetClusterBootstrapScriptArgs struct {
-	// 脚本执行范围。
+	// Script execution scope.
 	EffectiveScope GetClusterBootstrapScriptEffectiveScopeInput `pulumi:"effectiveScope"`
-	// 执行失败策略。取值范围：FAILED*CONTINUE：失败后继续执行其他任务。FAILED*BLOCK：失败后中断，不再继续执行后续任务。当脚本为BOOTSTRAP时，会导致创建集群、扩容节点组操作中断并失败。默认值：FAILED_BLOCK。
+	// Execution failure policy. Range: FAILED*CONTINUE: Continue with other tasks after failure. FAILED*BLOCK: Stop and do not execute subsequent tasks after failure. If the script is BOOTSTRAP, this will interrupt and fail cluster creation or node group expansion. Default: FAILED_BLOCK.
 	ExecutionFailStrategy pulumi.StringInput `pulumi:"executionFailStrategy"`
-	// 脚本的执行时机。仅scriptType=BOOTSTRAP时生效。BEFORE*APPLICATION*INSTALL：应用安装前。AFTER*APPLICATION*STARTED：应用启动后。默认值：BEFORE*APP*INSTALL
+	// Script execution timing. Only effective when scriptType=BOOTSTRAP. BEFORE*APPLICATION*INSTALL: before application installation. AFTER*APPLICATION*STARTED: after application startup. Default: BEFORE*APP*INSTALL.
 	ExecutionMoment pulumi.StringInput `pulumi:"executionMoment"`
-	// 脚本执行优先级。取值范围：1~1000。默认值1。
+	// Script execution priority. Range: 1~1000. Default: 1.
 	Priority pulumi.StringInput `pulumi:"priority"`
-	// 脚本参数。
+	// Script parameters.
 	ScriptArgs pulumi.StringInput `pulumi:"scriptArgs"`
-	// 脚本名称。必填。长度为1~128个字符，必须以大小字母或中文开头，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+	// Script name (required). Length: 1–128 characters. Must start with an uppercase or lowercase letter or Chinese character. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
 	ScriptName pulumi.StringInput `pulumi:"scriptName"`
-	// 脚本所在TOS路径。必填。以 tos:： 开头。
+	// Script TOS path. Required. Must start with 'tos:'.
 	ScriptPath pulumi.StringInput `pulumi:"scriptPath"`
-	// 脚本类型。NORMAL：普通脚本。BOOTSTRAP：引导脚本。
+	// Script type. NORMAL: normal script. BOOTSTRAP: bootstrap script.
 	ScriptType pulumi.StringInput `pulumi:"scriptType"`
 }
 
@@ -4280,42 +4280,42 @@ func (o GetClusterBootstrapScriptOutput) ToGetClusterBootstrapScriptOutputWithCo
 	return o
 }
 
-// 脚本执行范围。
+// Script execution scope.
 func (o GetClusterBootstrapScriptOutput) EffectiveScope() GetClusterBootstrapScriptEffectiveScopeOutput {
 	return o.ApplyT(func(v GetClusterBootstrapScript) GetClusterBootstrapScriptEffectiveScope { return v.EffectiveScope }).(GetClusterBootstrapScriptEffectiveScopeOutput)
 }
 
-// 执行失败策略。取值范围：FAILED*CONTINUE：失败后继续执行其他任务。FAILED*BLOCK：失败后中断，不再继续执行后续任务。当脚本为BOOTSTRAP时，会导致创建集群、扩容节点组操作中断并失败。默认值：FAILED_BLOCK。
+// Execution failure policy. Range: FAILED*CONTINUE: Continue with other tasks after failure. FAILED*BLOCK: Stop and do not execute subsequent tasks after failure. If the script is BOOTSTRAP, this will interrupt and fail cluster creation or node group expansion. Default: FAILED_BLOCK.
 func (o GetClusterBootstrapScriptOutput) ExecutionFailStrategy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterBootstrapScript) string { return v.ExecutionFailStrategy }).(pulumi.StringOutput)
 }
 
-// 脚本的执行时机。仅scriptType=BOOTSTRAP时生效。BEFORE*APPLICATION*INSTALL：应用安装前。AFTER*APPLICATION*STARTED：应用启动后。默认值：BEFORE*APP*INSTALL
+// Script execution timing. Only effective when scriptType=BOOTSTRAP. BEFORE*APPLICATION*INSTALL: before application installation. AFTER*APPLICATION*STARTED: after application startup. Default: BEFORE*APP*INSTALL.
 func (o GetClusterBootstrapScriptOutput) ExecutionMoment() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterBootstrapScript) string { return v.ExecutionMoment }).(pulumi.StringOutput)
 }
 
-// 脚本执行优先级。取值范围：1~1000。默认值1。
+// Script execution priority. Range: 1~1000. Default: 1.
 func (o GetClusterBootstrapScriptOutput) Priority() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterBootstrapScript) string { return v.Priority }).(pulumi.StringOutput)
 }
 
-// 脚本参数。
+// Script parameters.
 func (o GetClusterBootstrapScriptOutput) ScriptArgs() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterBootstrapScript) string { return v.ScriptArgs }).(pulumi.StringOutput)
 }
 
-// 脚本名称。必填。长度为1~128个字符，必须以大小字母或中文开头，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+// Script name (required). Length: 1–128 characters. Must start with an uppercase or lowercase letter or Chinese character. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
 func (o GetClusterBootstrapScriptOutput) ScriptName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterBootstrapScript) string { return v.ScriptName }).(pulumi.StringOutput)
 }
 
-// 脚本所在TOS路径。必填。以 tos:： 开头。
+// Script TOS path. Required. Must start with 'tos:'.
 func (o GetClusterBootstrapScriptOutput) ScriptPath() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterBootstrapScript) string { return v.ScriptPath }).(pulumi.StringOutput)
 }
 
-// 脚本类型。NORMAL：普通脚本。BOOTSTRAP：引导脚本。
+// Script type. NORMAL: normal script. BOOTSTRAP: bootstrap script.
 func (o GetClusterBootstrapScriptOutput) ScriptType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterBootstrapScript) string { return v.ScriptType }).(pulumi.StringOutput)
 }
@@ -4341,19 +4341,19 @@ func (o GetClusterBootstrapScriptArrayOutput) Index(i pulumi.IntInput) GetCluste
 }
 
 type GetClusterBootstrapScriptEffectiveScope struct {
-	// 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+	// Component name list. Required when EffectiveType=COMPONENT_NAME.
 	ComponentNames []string `pulumi:"componentNames"`
-	// 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+	// Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
 	EffectiveType string `pulumi:"effectiveType"`
-	// 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+	// Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
 	NodeGroupIds []string `pulumi:"nodeGroupIds"`
-	// 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+	// Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
 	NodeGroupNames []string `pulumi:"nodeGroupNames"`
-	// 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+	// Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
 	NodeGroupTypes []string `pulumi:"nodeGroupTypes"`
-	// 节点ID列表，EffectiveType=NODE_ID时，必选。
+	// Node ID list. Required when EffectiveType=NODE_ID.
 	NodeIds []string `pulumi:"nodeIds"`
-	// 节点名列表，EffectiveType=NODE_NAME时，必选。
+	// Node name list. Required when EffectiveType=NODE_NAME.
 	NodeNames []string `pulumi:"nodeNames"`
 }
 
@@ -4369,19 +4369,19 @@ type GetClusterBootstrapScriptEffectiveScopeInput interface {
 }
 
 type GetClusterBootstrapScriptEffectiveScopeArgs struct {
-	// 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+	// Component name list. Required when EffectiveType=COMPONENT_NAME.
 	ComponentNames pulumi.StringArrayInput `pulumi:"componentNames"`
-	// 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+	// Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
 	EffectiveType pulumi.StringInput `pulumi:"effectiveType"`
-	// 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+	// Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
 	NodeGroupIds pulumi.StringArrayInput `pulumi:"nodeGroupIds"`
-	// 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+	// Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
 	NodeGroupNames pulumi.StringArrayInput `pulumi:"nodeGroupNames"`
-	// 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+	// Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
 	NodeGroupTypes pulumi.StringArrayInput `pulumi:"nodeGroupTypes"`
-	// 节点ID列表，EffectiveType=NODE_ID时，必选。
+	// Node ID list. Required when EffectiveType=NODE_ID.
 	NodeIds pulumi.StringArrayInput `pulumi:"nodeIds"`
-	// 节点名列表，EffectiveType=NODE_NAME时，必选。
+	// Node name list. Required when EffectiveType=NODE_NAME.
 	NodeNames pulumi.StringArrayInput `pulumi:"nodeNames"`
 }
 
@@ -4411,53 +4411,53 @@ func (o GetClusterBootstrapScriptEffectiveScopeOutput) ToGetClusterBootstrapScri
 	return o
 }
 
-// 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+// Component name list. Required when EffectiveType=COMPONENT_NAME.
 func (o GetClusterBootstrapScriptEffectiveScopeOutput) ComponentNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterBootstrapScriptEffectiveScope) []string { return v.ComponentNames }).(pulumi.StringArrayOutput)
 }
 
-// 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+// Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
 func (o GetClusterBootstrapScriptEffectiveScopeOutput) EffectiveType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterBootstrapScriptEffectiveScope) string { return v.EffectiveType }).(pulumi.StringOutput)
 }
 
-// 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+// Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
 func (o GetClusterBootstrapScriptEffectiveScopeOutput) NodeGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterBootstrapScriptEffectiveScope) []string { return v.NodeGroupIds }).(pulumi.StringArrayOutput)
 }
 
-// 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+// Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
 func (o GetClusterBootstrapScriptEffectiveScopeOutput) NodeGroupNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterBootstrapScriptEffectiveScope) []string { return v.NodeGroupNames }).(pulumi.StringArrayOutput)
 }
 
-// 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+// Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
 func (o GetClusterBootstrapScriptEffectiveScopeOutput) NodeGroupTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterBootstrapScriptEffectiveScope) []string { return v.NodeGroupTypes }).(pulumi.StringArrayOutput)
 }
 
-// 节点ID列表，EffectiveType=NODE_ID时，必选。
+// Node ID list. Required when EffectiveType=NODE_ID.
 func (o GetClusterBootstrapScriptEffectiveScopeOutput) NodeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterBootstrapScriptEffectiveScope) []string { return v.NodeIds }).(pulumi.StringArrayOutput)
 }
 
-// 节点名列表，EffectiveType=NODE_NAME时，必选。
+// Node name list. Required when EffectiveType=NODE_NAME.
 func (o GetClusterBootstrapScriptEffectiveScopeOutput) NodeNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterBootstrapScriptEffectiveScope) []string { return v.NodeNames }).(pulumi.StringArrayOutput)
 }
 
 type GetClusterChargePreConfig struct {
-	// 是否开启自动续费。取值范围：true：开启。false：不开启。
+	// Enable auto-renewal. Options: true (enabled), false (disabled).
 	AutoRenew bool `pulumi:"autoRenew"`
-	// 自动续费触发时的续费时长，当AutoRenew=true时，默认值=1。
+	// Renewal duration when auto-renewal is triggered. When AutoRenew=true, the default value is 1.
 	AutoRenewPeriod int `pulumi:"autoRenewPeriod"`
-	// 自动续费触发时的续费时长单位，当AutoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+	// Renewal duration unit when auto-renewal is triggered. When AutoRenew=true, default is Month. Options: Month, Year.
 	AutoRenewPeriodUnit string `pulumi:"autoRenewPeriodUnit"`
-	// chargeType=PRE默认值=1，包月的购买时长单位。
+	// When chargeType=PRE, default value=1. Unit for monthly subscription duration.
 	ChargePeriod int `pulumi:"chargePeriod"`
-	// chargeType=PRE时，默认值=Month，包月的购买时长单位，取值范围：Month：月。Year：年。
+	// When chargeType=PRE, default value=Month. Unit for monthly subscription duration. Range: Month: month. Year: year.
 	ChargePeriodUnit string `pulumi:"chargePeriodUnit"`
-	// 付费类型，取值范围：PRE，POST。
+	// Payment type. Options: PRE, POST.
 	ChargeType string `pulumi:"chargeType"`
 }
 
@@ -4473,17 +4473,17 @@ type GetClusterChargePreConfigInput interface {
 }
 
 type GetClusterChargePreConfigArgs struct {
-	// 是否开启自动续费。取值范围：true：开启。false：不开启。
+	// Enable auto-renewal. Options: true (enabled), false (disabled).
 	AutoRenew pulumi.BoolInput `pulumi:"autoRenew"`
-	// 自动续费触发时的续费时长，当AutoRenew=true时，默认值=1。
+	// Renewal duration when auto-renewal is triggered. When AutoRenew=true, the default value is 1.
 	AutoRenewPeriod pulumi.IntInput `pulumi:"autoRenewPeriod"`
-	// 自动续费触发时的续费时长单位，当AutoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+	// Renewal duration unit when auto-renewal is triggered. When AutoRenew=true, default is Month. Options: Month, Year.
 	AutoRenewPeriodUnit pulumi.StringInput `pulumi:"autoRenewPeriodUnit"`
-	// chargeType=PRE默认值=1，包月的购买时长单位。
+	// When chargeType=PRE, default value=1. Unit for monthly subscription duration.
 	ChargePeriod pulumi.IntInput `pulumi:"chargePeriod"`
-	// chargeType=PRE时，默认值=Month，包月的购买时长单位，取值范围：Month：月。Year：年。
+	// When chargeType=PRE, default value=Month. Unit for monthly subscription duration. Range: Month: month. Year: year.
 	ChargePeriodUnit pulumi.StringInput `pulumi:"chargePeriodUnit"`
-	// 付费类型，取值范围：PRE，POST。
+	// Payment type. Options: PRE, POST.
 	ChargeType pulumi.StringInput `pulumi:"chargeType"`
 }
 
@@ -4513,40 +4513,40 @@ func (o GetClusterChargePreConfigOutput) ToGetClusterChargePreConfigOutputWithCo
 	return o
 }
 
-// 是否开启自动续费。取值范围：true：开启。false：不开启。
+// Enable auto-renewal. Options: true (enabled), false (disabled).
 func (o GetClusterChargePreConfigOutput) AutoRenew() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetClusterChargePreConfig) bool { return v.AutoRenew }).(pulumi.BoolOutput)
 }
 
-// 自动续费触发时的续费时长，当AutoRenew=true时，默认值=1。
+// Renewal duration when auto-renewal is triggered. When AutoRenew=true, the default value is 1.
 func (o GetClusterChargePreConfigOutput) AutoRenewPeriod() pulumi.IntOutput {
 	return o.ApplyT(func(v GetClusterChargePreConfig) int { return v.AutoRenewPeriod }).(pulumi.IntOutput)
 }
 
-// 自动续费触发时的续费时长单位，当AutoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+// Renewal duration unit when auto-renewal is triggered. When AutoRenew=true, default is Month. Options: Month, Year.
 func (o GetClusterChargePreConfigOutput) AutoRenewPeriodUnit() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterChargePreConfig) string { return v.AutoRenewPeriodUnit }).(pulumi.StringOutput)
 }
 
-// chargeType=PRE默认值=1，包月的购买时长单位。
+// When chargeType=PRE, default value=1. Unit for monthly subscription duration.
 func (o GetClusterChargePreConfigOutput) ChargePeriod() pulumi.IntOutput {
 	return o.ApplyT(func(v GetClusterChargePreConfig) int { return v.ChargePeriod }).(pulumi.IntOutput)
 }
 
-// chargeType=PRE时，默认值=Month，包月的购买时长单位，取值范围：Month：月。Year：年。
+// When chargeType=PRE, default value=Month. Unit for monthly subscription duration. Range: Month: month. Year: year.
 func (o GetClusterChargePreConfigOutput) ChargePeriodUnit() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterChargePreConfig) string { return v.ChargePeriodUnit }).(pulumi.StringOutput)
 }
 
-// 付费类型，取值范围：PRE，POST。
+// Payment type. Options: PRE, POST.
 func (o GetClusterChargePreConfigOutput) ChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterChargePreConfig) string { return v.ChargeType }).(pulumi.StringOutput)
 }
 
 type GetClusterNodeAttribute struct {
-	// ECS实例角色。
+	// ECS instance role.
 	EcsIamRole string `pulumi:"ecsIamRole"`
-	// 可用区ID。
+	// Zone ID.
 	ZoneId string `pulumi:"zoneId"`
 }
 
@@ -4562,9 +4562,9 @@ type GetClusterNodeAttributeInput interface {
 }
 
 type GetClusterNodeAttributeArgs struct {
-	// ECS实例角色。
+	// ECS instance role.
 	EcsIamRole pulumi.StringInput `pulumi:"ecsIamRole"`
-	// 可用区ID。
+	// Zone ID.
 	ZoneId pulumi.StringInput `pulumi:"zoneId"`
 }
 
@@ -4594,50 +4594,50 @@ func (o GetClusterNodeAttributeOutput) ToGetClusterNodeAttributeOutputWithContex
 	return o
 }
 
-// ECS实例角色。
+// ECS instance role.
 func (o GetClusterNodeAttributeOutput) EcsIamRole() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterNodeAttribute) string { return v.EcsIamRole }).(pulumi.StringOutput)
 }
 
-// 可用区ID。
+// Zone ID.
 func (o GetClusterNodeAttributeOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterNodeAttribute) string { return v.ZoneId }).(pulumi.StringOutput)
 }
 
 type GetClusterNodeGroupAttribute struct {
-	// 公网带宽。默认值 8M。后续如果用户侧调整了，emr侧需要同步该信息。
+	// Public bandwidth. Default is 8M. If the user changes it later, EMR needs to synchronize this information.
 	Bandwidth int `pulumi:"bandwidth"`
-	// 节点组付费类型。为空时，复用集群的chargeType。Master、Core组必须复用集群维度的付费类型。当集群的chargeType为PRE时，task节点组的chargeType允许设置为POST；当集群的chargeType为POST时，节点组的chargeType默认为POST，节点组上的此参数设置无效。
+	// Node group billing type. If empty, reuses the cluster's chargeType. Master and Core groups must reuse the cluster-level billing type. When the cluster's chargeType is PRE, the task node group's chargeType can be set to POST. When the cluster's chargeType is POST, the node group's chargeType defaults to POST, and this parameter setting on the node group is invalid.
 	ChargeType string `pulumi:"chargeType"`
-	// 节点组创建时间。
+	// Node group creation time.
 	CreateTime int `pulumi:"createTime"`
-	// 数据盘配置。当前单个节点组内只支持同规格的数据盘。即List的长度限制为1。
+	// Data disk configuration. Only disks of the same specification are supported within a single node group. The list length is limited to 1.
 	DataDisks []GetClusterNodeGroupAttributeDataDisk `pulumi:"dataDisks"`
-	// 节点组的ecs机型列表。当前只支持设置1个机型。即List的长度限制为1。
+	// Node group's ECS instance type list. Only one instance type can be set. The list length is limited to 1.
 	EcsInstanceTypes []string `pulumi:"ecsInstanceTypes"`
-	// ecs的密钥对名称。
+	// ECS key pair name.
 	EcsKeyPairName string `pulumi:"ecsKeyPairName"`
-	// Ecs root账号的密码。
+	// Password for ECS root account.
 	EcsPassword string `pulumi:"ecsPassword"`
-	// 部署的组件名称列表。
+	// List of deployed component names.
 	LayoutComponentNames []string `pulumi:"layoutComponentNames"`
-	// 节点组当前期望购买的节点数量。
+	// Current expected number of nodes to purchase for the node group.
 	NodeCount int `pulumi:"nodeCount"`
-	// 节点组ID。
+	// Node group ID.
 	NodeGroupId string `pulumi:"nodeGroupId"`
-	// 长度为1~128个字符，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+	// Length: 1–128 characters. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
 	NodeGroupName string `pulumi:"nodeGroupName"`
-	// 节点组状态。RUNNING,运行中。EXTENDING，扩容中。REDUCING，缩容中。DISK_EXTENDING，磁盘扩容中。MODIFYING，变配中
+	// Node group status. RUNNING: running. EXTENDING: scaling out. REDUCING: scaling in. DISK_EXTENDING: disk scaling out. MODIFYING: configuration change.
 	NodeGroupState string `pulumi:"nodeGroupState"`
-	// 节点组类型。
+	// Node group type.
 	NodeGroupType string `pulumi:"nodeGroupType"`
-	// 子网Id列表，目前只能传递一个参数，且各节点组的子网Id都是相同的。
+	// Subnet ID list. Currently, only one parameter can be passed, and all node groups must use the same subnet ID.
 	SubnetIds []string `pulumi:"subnetIds"`
-	// 系统盘配置。
+	// System disk configuration.
 	SystemDisk GetClusterNodeGroupAttributeSystemDisk `pulumi:"systemDisk"`
-	// 是否挂载公网ip。
+	// Whether to attach public IP.
 	WithPublicIp bool `pulumi:"withPublicIp"`
-	// 可用区ID。
+	// Availability zone ID.
 	ZoneId string `pulumi:"zoneId"`
 }
 
@@ -4653,39 +4653,39 @@ type GetClusterNodeGroupAttributeInput interface {
 }
 
 type GetClusterNodeGroupAttributeArgs struct {
-	// 公网带宽。默认值 8M。后续如果用户侧调整了，emr侧需要同步该信息。
+	// Public bandwidth. Default is 8M. If the user changes it later, EMR needs to synchronize this information.
 	Bandwidth pulumi.IntInput `pulumi:"bandwidth"`
-	// 节点组付费类型。为空时，复用集群的chargeType。Master、Core组必须复用集群维度的付费类型。当集群的chargeType为PRE时，task节点组的chargeType允许设置为POST；当集群的chargeType为POST时，节点组的chargeType默认为POST，节点组上的此参数设置无效。
+	// Node group billing type. If empty, reuses the cluster's chargeType. Master and Core groups must reuse the cluster-level billing type. When the cluster's chargeType is PRE, the task node group's chargeType can be set to POST. When the cluster's chargeType is POST, the node group's chargeType defaults to POST, and this parameter setting on the node group is invalid.
 	ChargeType pulumi.StringInput `pulumi:"chargeType"`
-	// 节点组创建时间。
+	// Node group creation time.
 	CreateTime pulumi.IntInput `pulumi:"createTime"`
-	// 数据盘配置。当前单个节点组内只支持同规格的数据盘。即List的长度限制为1。
+	// Data disk configuration. Only disks of the same specification are supported within a single node group. The list length is limited to 1.
 	DataDisks GetClusterNodeGroupAttributeDataDiskArrayInput `pulumi:"dataDisks"`
-	// 节点组的ecs机型列表。当前只支持设置1个机型。即List的长度限制为1。
+	// Node group's ECS instance type list. Only one instance type can be set. The list length is limited to 1.
 	EcsInstanceTypes pulumi.StringArrayInput `pulumi:"ecsInstanceTypes"`
-	// ecs的密钥对名称。
+	// ECS key pair name.
 	EcsKeyPairName pulumi.StringInput `pulumi:"ecsKeyPairName"`
-	// Ecs root账号的密码。
+	// Password for ECS root account.
 	EcsPassword pulumi.StringInput `pulumi:"ecsPassword"`
-	// 部署的组件名称列表。
+	// List of deployed component names.
 	LayoutComponentNames pulumi.StringArrayInput `pulumi:"layoutComponentNames"`
-	// 节点组当前期望购买的节点数量。
+	// Current expected number of nodes to purchase for the node group.
 	NodeCount pulumi.IntInput `pulumi:"nodeCount"`
-	// 节点组ID。
+	// Node group ID.
 	NodeGroupId pulumi.StringInput `pulumi:"nodeGroupId"`
-	// 长度为1~128个字符，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+	// Length: 1–128 characters. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
 	NodeGroupName pulumi.StringInput `pulumi:"nodeGroupName"`
-	// 节点组状态。RUNNING,运行中。EXTENDING，扩容中。REDUCING，缩容中。DISK_EXTENDING，磁盘扩容中。MODIFYING，变配中
+	// Node group status. RUNNING: running. EXTENDING: scaling out. REDUCING: scaling in. DISK_EXTENDING: disk scaling out. MODIFYING: configuration change.
 	NodeGroupState pulumi.StringInput `pulumi:"nodeGroupState"`
-	// 节点组类型。
+	// Node group type.
 	NodeGroupType pulumi.StringInput `pulumi:"nodeGroupType"`
-	// 子网Id列表，目前只能传递一个参数，且各节点组的子网Id都是相同的。
+	// Subnet ID list. Currently, only one parameter can be passed, and all node groups must use the same subnet ID.
 	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
-	// 系统盘配置。
+	// System disk configuration.
 	SystemDisk GetClusterNodeGroupAttributeSystemDiskInput `pulumi:"systemDisk"`
-	// 是否挂载公网ip。
+	// Whether to attach public IP.
 	WithPublicIp pulumi.BoolInput `pulumi:"withPublicIp"`
-	// 可用区ID。
+	// Availability zone ID.
 	ZoneId pulumi.StringInput `pulumi:"zoneId"`
 }
 
@@ -4740,87 +4740,87 @@ func (o GetClusterNodeGroupAttributeOutput) ToGetClusterNodeGroupAttributeOutput
 	return o
 }
 
-// 公网带宽。默认值 8M。后续如果用户侧调整了，emr侧需要同步该信息。
+// Public bandwidth. Default is 8M. If the user changes it later, EMR needs to synchronize this information.
 func (o GetClusterNodeGroupAttributeOutput) Bandwidth() pulumi.IntOutput {
 	return o.ApplyT(func(v GetClusterNodeGroupAttribute) int { return v.Bandwidth }).(pulumi.IntOutput)
 }
 
-// 节点组付费类型。为空时，复用集群的chargeType。Master、Core组必须复用集群维度的付费类型。当集群的chargeType为PRE时，task节点组的chargeType允许设置为POST；当集群的chargeType为POST时，节点组的chargeType默认为POST，节点组上的此参数设置无效。
+// Node group billing type. If empty, reuses the cluster's chargeType. Master and Core groups must reuse the cluster-level billing type. When the cluster's chargeType is PRE, the task node group's chargeType can be set to POST. When the cluster's chargeType is POST, the node group's chargeType defaults to POST, and this parameter setting on the node group is invalid.
 func (o GetClusterNodeGroupAttributeOutput) ChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterNodeGroupAttribute) string { return v.ChargeType }).(pulumi.StringOutput)
 }
 
-// 节点组创建时间。
+// Node group creation time.
 func (o GetClusterNodeGroupAttributeOutput) CreateTime() pulumi.IntOutput {
 	return o.ApplyT(func(v GetClusterNodeGroupAttribute) int { return v.CreateTime }).(pulumi.IntOutput)
 }
 
-// 数据盘配置。当前单个节点组内只支持同规格的数据盘。即List的长度限制为1。
+// Data disk configuration. Only disks of the same specification are supported within a single node group. The list length is limited to 1.
 func (o GetClusterNodeGroupAttributeOutput) DataDisks() GetClusterNodeGroupAttributeDataDiskArrayOutput {
 	return o.ApplyT(func(v GetClusterNodeGroupAttribute) []GetClusterNodeGroupAttributeDataDisk { return v.DataDisks }).(GetClusterNodeGroupAttributeDataDiskArrayOutput)
 }
 
-// 节点组的ecs机型列表。当前只支持设置1个机型。即List的长度限制为1。
+// Node group's ECS instance type list. Only one instance type can be set. The list length is limited to 1.
 func (o GetClusterNodeGroupAttributeOutput) EcsInstanceTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterNodeGroupAttribute) []string { return v.EcsInstanceTypes }).(pulumi.StringArrayOutput)
 }
 
-// ecs的密钥对名称。
+// ECS key pair name.
 func (o GetClusterNodeGroupAttributeOutput) EcsKeyPairName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterNodeGroupAttribute) string { return v.EcsKeyPairName }).(pulumi.StringOutput)
 }
 
-// Ecs root账号的密码。
+// Password for ECS root account.
 func (o GetClusterNodeGroupAttributeOutput) EcsPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterNodeGroupAttribute) string { return v.EcsPassword }).(pulumi.StringOutput)
 }
 
-// 部署的组件名称列表。
+// List of deployed component names.
 func (o GetClusterNodeGroupAttributeOutput) LayoutComponentNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterNodeGroupAttribute) []string { return v.LayoutComponentNames }).(pulumi.StringArrayOutput)
 }
 
-// 节点组当前期望购买的节点数量。
+// Current expected number of nodes to purchase for the node group.
 func (o GetClusterNodeGroupAttributeOutput) NodeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetClusterNodeGroupAttribute) int { return v.NodeCount }).(pulumi.IntOutput)
 }
 
-// 节点组ID。
+// Node group ID.
 func (o GetClusterNodeGroupAttributeOutput) NodeGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterNodeGroupAttribute) string { return v.NodeGroupId }).(pulumi.StringOutput)
 }
 
-// 长度为1~128个字符，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+// Length: 1–128 characters. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
 func (o GetClusterNodeGroupAttributeOutput) NodeGroupName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterNodeGroupAttribute) string { return v.NodeGroupName }).(pulumi.StringOutput)
 }
 
-// 节点组状态。RUNNING,运行中。EXTENDING，扩容中。REDUCING，缩容中。DISK_EXTENDING，磁盘扩容中。MODIFYING，变配中
+// Node group status. RUNNING: running. EXTENDING: scaling out. REDUCING: scaling in. DISK_EXTENDING: disk scaling out. MODIFYING: configuration change.
 func (o GetClusterNodeGroupAttributeOutput) NodeGroupState() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterNodeGroupAttribute) string { return v.NodeGroupState }).(pulumi.StringOutput)
 }
 
-// 节点组类型。
+// Node group type.
 func (o GetClusterNodeGroupAttributeOutput) NodeGroupType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterNodeGroupAttribute) string { return v.NodeGroupType }).(pulumi.StringOutput)
 }
 
-// 子网Id列表，目前只能传递一个参数，且各节点组的子网Id都是相同的。
+// Subnet ID list. Currently, only one parameter can be passed, and all node groups must use the same subnet ID.
 func (o GetClusterNodeGroupAttributeOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterNodeGroupAttribute) []string { return v.SubnetIds }).(pulumi.StringArrayOutput)
 }
 
-// 系统盘配置。
+// System disk configuration.
 func (o GetClusterNodeGroupAttributeOutput) SystemDisk() GetClusterNodeGroupAttributeSystemDiskOutput {
 	return o.ApplyT(func(v GetClusterNodeGroupAttribute) GetClusterNodeGroupAttributeSystemDisk { return v.SystemDisk }).(GetClusterNodeGroupAttributeSystemDiskOutput)
 }
 
-// 是否挂载公网ip。
+// Whether to attach public IP.
 func (o GetClusterNodeGroupAttributeOutput) WithPublicIp() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetClusterNodeGroupAttribute) bool { return v.WithPublicIp }).(pulumi.BoolOutput)
 }
 
-// 可用区ID。
+// Availability zone ID.
 func (o GetClusterNodeGroupAttributeOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterNodeGroupAttribute) string { return v.ZoneId }).(pulumi.StringOutput)
 }
@@ -4846,11 +4846,11 @@ func (o GetClusterNodeGroupAttributeArrayOutput) Index(i pulumi.IntInput) GetClu
 }
 
 type GetClusterNodeGroupAttributeDataDisk struct {
-	// 磁盘块数，默认值4，最大15，最小1。
+	// Number of disk blocks. Default is 4, maximum is 15, minimum is 1.
 	Count int `pulumi:"count"`
-	// 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+	// Disk size. Default is 80GB, minimum is 60GB, maximum is 2048GB, unit: GB.
 	Size int `pulumi:"size"`
-	// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV
+	// Disk type. ESSD*PL0: Ultra SSD*PL0. ESSD*PL1: Ultra SSD*PL1. ESSD*PL2: Ultra SSD*PL2. ESSD*PL3: Ultra SSD*PL3. ESSD*FLEXPL: Ultra SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
 	VolumeType string `pulumi:"volumeType"`
 }
 
@@ -4866,11 +4866,11 @@ type GetClusterNodeGroupAttributeDataDiskInput interface {
 }
 
 type GetClusterNodeGroupAttributeDataDiskArgs struct {
-	// 磁盘块数，默认值4，最大15，最小1。
+	// Number of disk blocks. Default is 4, maximum is 15, minimum is 1.
 	Count pulumi.IntInput `pulumi:"count"`
-	// 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+	// Disk size. Default is 80GB, minimum is 60GB, maximum is 2048GB, unit: GB.
 	Size pulumi.IntInput `pulumi:"size"`
-	// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV
+	// Disk type. ESSD*PL0: Ultra SSD*PL0. ESSD*PL1: Ultra SSD*PL1. ESSD*PL2: Ultra SSD*PL2. ESSD*PL3: Ultra SSD*PL3. ESSD*FLEXPL: Ultra SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
 	VolumeType pulumi.StringInput `pulumi:"volumeType"`
 }
 
@@ -4925,17 +4925,17 @@ func (o GetClusterNodeGroupAttributeDataDiskOutput) ToGetClusterNodeGroupAttribu
 	return o
 }
 
-// 磁盘块数，默认值4，最大15，最小1。
+// Number of disk blocks. Default is 4, maximum is 15, minimum is 1.
 func (o GetClusterNodeGroupAttributeDataDiskOutput) Count() pulumi.IntOutput {
 	return o.ApplyT(func(v GetClusterNodeGroupAttributeDataDisk) int { return v.Count }).(pulumi.IntOutput)
 }
 
-// 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+// Disk size. Default is 80GB, minimum is 60GB, maximum is 2048GB, unit: GB.
 func (o GetClusterNodeGroupAttributeDataDiskOutput) Size() pulumi.IntOutput {
 	return o.ApplyT(func(v GetClusterNodeGroupAttributeDataDisk) int { return v.Size }).(pulumi.IntOutput)
 }
 
-// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV
+// Disk type. ESSD*PL0: Ultra SSD*PL0. ESSD*PL1: Ultra SSD*PL1. ESSD*PL2: Ultra SSD*PL2. ESSD*PL3: Ultra SSD*PL3. ESSD*FLEXPL: Ultra SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
 func (o GetClusterNodeGroupAttributeDataDiskOutput) VolumeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterNodeGroupAttributeDataDisk) string { return v.VolumeType }).(pulumi.StringOutput)
 }
@@ -4961,9 +4961,9 @@ func (o GetClusterNodeGroupAttributeDataDiskArrayOutput) Index(i pulumi.IntInput
 }
 
 type GetClusterNodeGroupAttributeSystemDisk struct {
-	// 磁盘大小。
+	// Disk size.
 	Size int `pulumi:"size"`
-	// 磁盘类型。
+	// Disk type.
 	VolumeType string `pulumi:"volumeType"`
 }
 
@@ -4979,9 +4979,9 @@ type GetClusterNodeGroupAttributeSystemDiskInput interface {
 }
 
 type GetClusterNodeGroupAttributeSystemDiskArgs struct {
-	// 磁盘大小。
+	// Disk size.
 	Size pulumi.IntInput `pulumi:"size"`
-	// 磁盘类型。
+	// Disk type.
 	VolumeType pulumi.StringInput `pulumi:"volumeType"`
 }
 
@@ -5011,20 +5011,20 @@ func (o GetClusterNodeGroupAttributeSystemDiskOutput) ToGetClusterNodeGroupAttri
 	return o
 }
 
-// 磁盘大小。
+// Disk size.
 func (o GetClusterNodeGroupAttributeSystemDiskOutput) Size() pulumi.IntOutput {
 	return o.ApplyT(func(v GetClusterNodeGroupAttributeSystemDisk) int { return v.Size }).(pulumi.IntOutput)
 }
 
-// 磁盘类型。
+// Disk type.
 func (o GetClusterNodeGroupAttributeSystemDiskOutput) VolumeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterNodeGroupAttributeSystemDisk) string { return v.VolumeType }).(pulumi.StringOutput)
 }
 
 type GetClusterStateChangeReason struct {
-	// 状态更新码。
+	// Status update code.
 	Code string `pulumi:"code"`
-	// 状态更新原因。
+	// Status update reason.
 	Reason string `pulumi:"reason"`
 }
 
@@ -5040,9 +5040,9 @@ type GetClusterStateChangeReasonInput interface {
 }
 
 type GetClusterStateChangeReasonArgs struct {
-	// 状态更新码。
+	// Status update code.
 	Code pulumi.StringInput `pulumi:"code"`
-	// 状态更新原因。
+	// Status update reason.
 	Reason pulumi.StringInput `pulumi:"reason"`
 }
 
@@ -5072,20 +5072,20 @@ func (o GetClusterStateChangeReasonOutput) ToGetClusterStateChangeReasonOutputWi
 	return o
 }
 
-// 状态更新码。
+// Status update code.
 func (o GetClusterStateChangeReasonOutput) Code() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterStateChangeReason) string { return v.Code }).(pulumi.StringOutput)
 }
 
-// 状态更新原因。
+// Status update reason.
 func (o GetClusterStateChangeReasonOutput) Reason() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterStateChangeReason) string { return v.Reason }).(pulumi.StringOutput)
 }
 
 type GetClusterTag struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key string `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value string `pulumi:"value"`
 }
 
@@ -5101,9 +5101,9 @@ type GetClusterTagInput interface {
 }
 
 type GetClusterTagArgs struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -5158,12 +5158,12 @@ func (o GetClusterTagOutput) ToGetClusterTagOutputWithContext(ctx context.Contex
 	return o
 }
 
-// 用户标签的标签键。
+// User tag key.
 func (o GetClusterTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。
+// User tag value.
 func (o GetClusterTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -5189,9 +5189,9 @@ func (o GetClusterTagArrayOutput) Index(i pulumi.IntInput) GetClusterTagOutput {
 }
 
 type GetNodeGroupApplicationLayout struct {
-	// 应用名称。
+	// Application name.
 	ApplicationName string `pulumi:"applicationName"`
-	// 组件的自定义配置参数列表。
+	// Custom configuration parameter list for the component.
 	LayoutComponentNames []string `pulumi:"layoutComponentNames"`
 }
 
@@ -5207,9 +5207,9 @@ type GetNodeGroupApplicationLayoutInput interface {
 }
 
 type GetNodeGroupApplicationLayoutArgs struct {
-	// 应用名称。
+	// Application name.
 	ApplicationName pulumi.StringInput `pulumi:"applicationName"`
-	// 组件的自定义配置参数列表。
+	// Custom configuration parameter list for the component.
 	LayoutComponentNames pulumi.StringArrayInput `pulumi:"layoutComponentNames"`
 }
 
@@ -5264,12 +5264,12 @@ func (o GetNodeGroupApplicationLayoutOutput) ToGetNodeGroupApplicationLayoutOutp
 	return o
 }
 
-// 应用名称。
+// Application name.
 func (o GetNodeGroupApplicationLayoutOutput) ApplicationName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodeGroupApplicationLayout) string { return v.ApplicationName }).(pulumi.StringOutput)
 }
 
-// 组件的自定义配置参数列表。
+// Custom configuration parameter list for the component.
 func (o GetNodeGroupApplicationLayoutOutput) LayoutComponentNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNodeGroupApplicationLayout) []string { return v.LayoutComponentNames }).(pulumi.StringArrayOutput)
 }
@@ -5295,17 +5295,17 @@ func (o GetNodeGroupApplicationLayoutArrayOutput) Index(i pulumi.IntInput) GetNo
 }
 
 type GetNodeGroupChargePreConfig struct {
-	// 是否开启自动续费。
+	// Whether to enable auto-renewal.
 	AutoRenew bool `pulumi:"autoRenew"`
-	// 自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+	// Renewal duration when auto-renewal is triggered. When autoRenew=true, the default value is 1.
 	AutoRenewPeriod int `pulumi:"autoRenewPeriod"`
-	// 自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+	// Renewal duration unit when auto-renewal is triggered. When autoRenew=true, the default value is Month. Value range: Month: month. Year: year.
 	AutoRenewPeriodUnit string `pulumi:"autoRenewPeriodUnit"`
-	// chargeType=PRE默认值=1，包月的购买时长单位。
+	// When chargeType=PRE, the default value is 1. The unit for the purchase duration when chargeType=PRE is monthly subscription.
 	ChargePeriod int `pulumi:"chargePeriod"`
-	// chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+	// When chargeType=PRE, the default value is Month. The unit for the purchase duration when chargeType=PRE is monthly subscription. Value range: Month (month), Year (year).
 	ChargePeriodUnit string `pulumi:"chargePeriodUnit"`
-	// 付费类型，枚举值：POST，PRE。
+	// Payment type. Enum values: POST, PRE.
 	ChargeType string `pulumi:"chargeType"`
 }
 
@@ -5321,17 +5321,17 @@ type GetNodeGroupChargePreConfigInput interface {
 }
 
 type GetNodeGroupChargePreConfigArgs struct {
-	// 是否开启自动续费。
+	// Whether to enable auto-renewal.
 	AutoRenew pulumi.BoolInput `pulumi:"autoRenew"`
-	// 自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+	// Renewal duration when auto-renewal is triggered. When autoRenew=true, the default value is 1.
 	AutoRenewPeriod pulumi.IntInput `pulumi:"autoRenewPeriod"`
-	// 自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+	// Renewal duration unit when auto-renewal is triggered. When autoRenew=true, the default value is Month. Value range: Month: month. Year: year.
 	AutoRenewPeriodUnit pulumi.StringInput `pulumi:"autoRenewPeriodUnit"`
-	// chargeType=PRE默认值=1，包月的购买时长单位。
+	// When chargeType=PRE, the default value is 1. The unit for the purchase duration when chargeType=PRE is monthly subscription.
 	ChargePeriod pulumi.IntInput `pulumi:"chargePeriod"`
-	// chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+	// When chargeType=PRE, the default value is Month. The unit for the purchase duration when chargeType=PRE is monthly subscription. Value range: Month (month), Year (year).
 	ChargePeriodUnit pulumi.StringInput `pulumi:"chargePeriodUnit"`
-	// 付费类型，枚举值：POST，PRE。
+	// Payment type. Enum values: POST, PRE.
 	ChargeType pulumi.StringInput `pulumi:"chargeType"`
 }
 
@@ -5361,42 +5361,42 @@ func (o GetNodeGroupChargePreConfigOutput) ToGetNodeGroupChargePreConfigOutputWi
 	return o
 }
 
-// 是否开启自动续费。
+// Whether to enable auto-renewal.
 func (o GetNodeGroupChargePreConfigOutput) AutoRenew() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodeGroupChargePreConfig) bool { return v.AutoRenew }).(pulumi.BoolOutput)
 }
 
-// 自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+// Renewal duration when auto-renewal is triggered. When autoRenew=true, the default value is 1.
 func (o GetNodeGroupChargePreConfigOutput) AutoRenewPeriod() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodeGroupChargePreConfig) int { return v.AutoRenewPeriod }).(pulumi.IntOutput)
 }
 
-// 自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+// Renewal duration unit when auto-renewal is triggered. When autoRenew=true, the default value is Month. Value range: Month: month. Year: year.
 func (o GetNodeGroupChargePreConfigOutput) AutoRenewPeriodUnit() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodeGroupChargePreConfig) string { return v.AutoRenewPeriodUnit }).(pulumi.StringOutput)
 }
 
-// chargeType=PRE默认值=1，包月的购买时长单位。
+// When chargeType=PRE, the default value is 1. The unit for the purchase duration when chargeType=PRE is monthly subscription.
 func (o GetNodeGroupChargePreConfigOutput) ChargePeriod() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodeGroupChargePreConfig) int { return v.ChargePeriod }).(pulumi.IntOutput)
 }
 
-// chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+// When chargeType=PRE, the default value is Month. The unit for the purchase duration when chargeType=PRE is monthly subscription. Value range: Month (month), Year (year).
 func (o GetNodeGroupChargePreConfigOutput) ChargePeriodUnit() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodeGroupChargePreConfig) string { return v.ChargePeriodUnit }).(pulumi.StringOutput)
 }
 
-// 付费类型，枚举值：POST，PRE。
+// Payment type. Enum values: POST, PRE.
 func (o GetNodeGroupChargePreConfigOutput) ChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodeGroupChargePreConfig) string { return v.ChargeType }).(pulumi.StringOutput)
 }
 
 type GetNodeGroupDataDisk struct {
-	// 磁盘块数，默认值4，最大15，最小1。
+	// Number of disk blocks. Default value: 4. Maximum: 15. Minimum: 1.
 	Count int `pulumi:"count"`
-	// 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+	// Disk size. Default value: 80GB. Minimum: 60GB. Maximum: 2048GB. Unit: GB.
 	Size int `pulumi:"size"`
-	// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+	// Disk type. ESSD*PL0: Ultra-fast SSD*PL0. ESSD*PL1: Ultra-fast SSD*PL1. ESSD*PL2: Ultra-fast SSD*PL2. ESSD*PL3: Ultra-fast SSD*PL3. ESSD*FLEXPL: Ultra-fast SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
 	VolumeType string `pulumi:"volumeType"`
 }
 
@@ -5412,11 +5412,11 @@ type GetNodeGroupDataDiskInput interface {
 }
 
 type GetNodeGroupDataDiskArgs struct {
-	// 磁盘块数，默认值4，最大15，最小1。
+	// Number of disk blocks. Default value: 4. Maximum: 15. Minimum: 1.
 	Count pulumi.IntInput `pulumi:"count"`
-	// 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+	// Disk size. Default value: 80GB. Minimum: 60GB. Maximum: 2048GB. Unit: GB.
 	Size pulumi.IntInput `pulumi:"size"`
-	// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+	// Disk type. ESSD*PL0: Ultra-fast SSD*PL0. ESSD*PL1: Ultra-fast SSD*PL1. ESSD*PL2: Ultra-fast SSD*PL2. ESSD*PL3: Ultra-fast SSD*PL3. ESSD*FLEXPL: Ultra-fast SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
 	VolumeType pulumi.StringInput `pulumi:"volumeType"`
 }
 
@@ -5471,17 +5471,17 @@ func (o GetNodeGroupDataDiskOutput) ToGetNodeGroupDataDiskOutputWithContext(ctx 
 	return o
 }
 
-// 磁盘块数，默认值4，最大15，最小1。
+// Number of disk blocks. Default value: 4. Maximum: 15. Minimum: 1.
 func (o GetNodeGroupDataDiskOutput) Count() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodeGroupDataDisk) int { return v.Count }).(pulumi.IntOutput)
 }
 
-// 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+// Disk size. Default value: 80GB. Minimum: 60GB. Maximum: 2048GB. Unit: GB.
 func (o GetNodeGroupDataDiskOutput) Size() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodeGroupDataDisk) int { return v.Size }).(pulumi.IntOutput)
 }
 
-// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+// Disk type. ESSD*PL0: Ultra-fast SSD*PL0. ESSD*PL1: Ultra-fast SSD*PL1. ESSD*PL2: Ultra-fast SSD*PL2. ESSD*PL3: Ultra-fast SSD*PL3. ESSD*FLEXPL: Ultra-fast SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
 func (o GetNodeGroupDataDiskOutput) VolumeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodeGroupDataDisk) string { return v.VolumeType }).(pulumi.StringOutput)
 }
@@ -5507,25 +5507,25 @@ func (o GetNodeGroupDataDiskArrayOutput) Index(i pulumi.IntInput) GetNodeGroupDa
 }
 
 type GetNodeGroupNode struct {
-	// 节点创建时间。
+	// Node creation time.
 	CreatedTime int `pulumi:"createdTime"`
-	// ecs实例规格。
+	// ecs instance specification.
 	EcsInstanceType string `pulumi:"ecsInstanceType"`
-	// 节点FQDN。
+	// Node FQDN.
 	NodeFqdn string `pulumi:"nodeFqdn"`
-	// 节点ID。
+	// Node ID.
 	NodeId string `pulumi:"nodeId"`
-	// 节点名称。
+	// Node name.
 	NodeName string `pulumi:"nodeName"`
-	// 节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+	// Node status. UNKNOWN: Unknown. CREATING: Creating. RUNNING: Running. STOPPING: Stopping. STOPPED: Stopped. REBOOTING: Rebooting. DELETED: Deleted.
 	NodeState string `pulumi:"nodeState"`
-	// 私有IP。
+	// Private IP.
 	PrivateIp string `pulumi:"privateIp"`
-	// 公网IP。
+	// Public IP.
 	PublicIp string `pulumi:"publicIp"`
-	// 准备完毕时间。
+	// Ready time.
 	ReadyTime int `pulumi:"readyTime"`
-	// 集群终止时间。
+	// Cluster termination time.
 	TerminateTime int `pulumi:"terminateTime"`
 }
 
@@ -5541,25 +5541,25 @@ type GetNodeGroupNodeInput interface {
 }
 
 type GetNodeGroupNodeArgs struct {
-	// 节点创建时间。
+	// Node creation time.
 	CreatedTime pulumi.IntInput `pulumi:"createdTime"`
-	// ecs实例规格。
+	// ecs instance specification.
 	EcsInstanceType pulumi.StringInput `pulumi:"ecsInstanceType"`
-	// 节点FQDN。
+	// Node FQDN.
 	NodeFqdn pulumi.StringInput `pulumi:"nodeFqdn"`
-	// 节点ID。
+	// Node ID.
 	NodeId pulumi.StringInput `pulumi:"nodeId"`
-	// 节点名称。
+	// Node name.
 	NodeName pulumi.StringInput `pulumi:"nodeName"`
-	// 节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+	// Node status. UNKNOWN: Unknown. CREATING: Creating. RUNNING: Running. STOPPING: Stopping. STOPPED: Stopped. REBOOTING: Rebooting. DELETED: Deleted.
 	NodeState pulumi.StringInput `pulumi:"nodeState"`
-	// 私有IP。
+	// Private IP.
 	PrivateIp pulumi.StringInput `pulumi:"privateIp"`
-	// 公网IP。
+	// Public IP.
 	PublicIp pulumi.StringInput `pulumi:"publicIp"`
-	// 准备完毕时间。
+	// Ready time.
 	ReadyTime pulumi.IntInput `pulumi:"readyTime"`
-	// 集群终止时间。
+	// Cluster termination time.
 	TerminateTime pulumi.IntInput `pulumi:"terminateTime"`
 }
 
@@ -5614,52 +5614,52 @@ func (o GetNodeGroupNodeOutput) ToGetNodeGroupNodeOutputWithContext(ctx context.
 	return o
 }
 
-// 节点创建时间。
+// Node creation time.
 func (o GetNodeGroupNodeOutput) CreatedTime() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodeGroupNode) int { return v.CreatedTime }).(pulumi.IntOutput)
 }
 
-// ecs实例规格。
+// ecs instance specification.
 func (o GetNodeGroupNodeOutput) EcsInstanceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodeGroupNode) string { return v.EcsInstanceType }).(pulumi.StringOutput)
 }
 
-// 节点FQDN。
+// Node FQDN.
 func (o GetNodeGroupNodeOutput) NodeFqdn() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodeGroupNode) string { return v.NodeFqdn }).(pulumi.StringOutput)
 }
 
-// 节点ID。
+// Node ID.
 func (o GetNodeGroupNodeOutput) NodeId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodeGroupNode) string { return v.NodeId }).(pulumi.StringOutput)
 }
 
-// 节点名称。
+// Node name.
 func (o GetNodeGroupNodeOutput) NodeName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodeGroupNode) string { return v.NodeName }).(pulumi.StringOutput)
 }
 
-// 节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+// Node status. UNKNOWN: Unknown. CREATING: Creating. RUNNING: Running. STOPPING: Stopping. STOPPED: Stopped. REBOOTING: Rebooting. DELETED: Deleted.
 func (o GetNodeGroupNodeOutput) NodeState() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodeGroupNode) string { return v.NodeState }).(pulumi.StringOutput)
 }
 
-// 私有IP。
+// Private IP.
 func (o GetNodeGroupNodeOutput) PrivateIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodeGroupNode) string { return v.PrivateIp }).(pulumi.StringOutput)
 }
 
-// 公网IP。
+// Public IP.
 func (o GetNodeGroupNodeOutput) PublicIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodeGroupNode) string { return v.PublicIp }).(pulumi.StringOutput)
 }
 
-// 准备完毕时间。
+// Ready time.
 func (o GetNodeGroupNodeOutput) ReadyTime() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodeGroupNode) int { return v.ReadyTime }).(pulumi.IntOutput)
 }
 
-// 集群终止时间。
+// Cluster termination time.
 func (o GetNodeGroupNodeOutput) TerminateTime() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodeGroupNode) int { return v.TerminateTime }).(pulumi.IntOutput)
 }
@@ -5685,9 +5685,9 @@ func (o GetNodeGroupNodeArrayOutput) Index(i pulumi.IntInput) GetNodeGroupNodeOu
 }
 
 type GetNodeGroupSystemDisk struct {
-	// 系统盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+	// System disk size. Default value: 80GB. Minimum: 60GB. Maximum: 2048GB. Unit: GB.
 	Size int `pulumi:"size"`
-	// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+	// Disk type. ESSD*PL0: Ultra-fast SSD*PL0. ESSD*PL1: Ultra-fast SSD*PL1. ESSD*PL2: Ultra-fast SSD*PL2. ESSD*PL3: Ultra-fast SSD*PL3. ESSD*FLEXPL: Ultra-fast SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
 	VolumeType string `pulumi:"volumeType"`
 }
 
@@ -5703,9 +5703,9 @@ type GetNodeGroupSystemDiskInput interface {
 }
 
 type GetNodeGroupSystemDiskArgs struct {
-	// 系统盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+	// System disk size. Default value: 80GB. Minimum: 60GB. Maximum: 2048GB. Unit: GB.
 	Size pulumi.IntInput `pulumi:"size"`
-	// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+	// Disk type. ESSD*PL0: Ultra-fast SSD*PL0. ESSD*PL1: Ultra-fast SSD*PL1. ESSD*PL2: Ultra-fast SSD*PL2. ESSD*PL3: Ultra-fast SSD*PL3. ESSD*FLEXPL: Ultra-fast SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
 	VolumeType pulumi.StringInput `pulumi:"volumeType"`
 }
 
@@ -5735,12 +5735,12 @@ func (o GetNodeGroupSystemDiskOutput) ToGetNodeGroupSystemDiskOutputWithContext(
 	return o
 }
 
-// 系统盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+// System disk size. Default value: 80GB. Minimum: 60GB. Maximum: 2048GB. Unit: GB.
 func (o GetNodeGroupSystemDiskOutput) Size() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodeGroupSystemDisk) int { return v.Size }).(pulumi.IntOutput)
 }
 
-// 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+// Disk type. ESSD*PL0: Ultra-fast SSD*PL0. ESSD*PL1: Ultra-fast SSD*PL1. ESSD*PL2: Ultra-fast SSD*PL2. ESSD*PL3: Ultra-fast SSD*PL3. ESSD*FLEXPL: Ultra-fast SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
 func (o GetNodeGroupSystemDiskOutput) VolumeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodeGroupSystemDisk) string { return v.VolumeType }).(pulumi.StringOutput)
 }

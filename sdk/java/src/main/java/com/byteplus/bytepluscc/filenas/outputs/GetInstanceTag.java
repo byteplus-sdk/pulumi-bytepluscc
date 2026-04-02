@@ -11,38 +11,38 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceTag {
     /**
-     * @return 标签键。
+     * @return Tag key
      * 
      */
     private String key;
     /**
-     * @return 标签类型。
+     * @return Tag type
      * 
      */
     private String type;
     /**
-     * @return 标签值。
+     * @return Tag value
      * 
      */
     private String value;
 
     private GetInstanceTag() {}
     /**
-     * @return 标签键。
+     * @return Tag key
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return 标签类型。
+     * @return Tag type
      * 
      */
     public String type() {
         return this.type;
     }
     /**
-     * @return 标签值。
+     * @return Tag value
      * 
      */
     public String value() {

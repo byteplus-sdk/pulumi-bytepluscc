@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainCacheKey {
     /**
-     * @return 表示在 Condition 情况下，内容分发网络执行的操作。
+     * @return Indicates the action performed by the content delivery network under the Condition scenario.
      * 
      */
     private GetDomainCacheKeyCacheKeyAction cacheKeyAction;
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     private GetDomainCacheKeyCondition condition;
 
     private GetDomainCacheKey() {}
     /**
-     * @return 表示在 Condition 情况下，内容分发网络执行的操作。
+     * @return Indicates the action performed by the content delivery network under the Condition scenario.
      * 
      */
     public GetDomainCacheKeyCacheKeyAction cacheKeyAction() {
         return this.cacheKeyAction;
     }
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public GetDomainCacheKeyCondition condition() {

@@ -17,14 +17,14 @@ public final class ServerGroupStickySessionConfigArgs extends com.pulumi.resourc
     public static final ServerGroupStickySessionConfigArgs Empty = new ServerGroupStickySessionConfigArgs();
 
     /**
-     * 服务配置的会话保持 Cookie 名称。仅在开启会话保持功能并选择重写 Cookie 时有效。 具体规则如下：Cookie 名称长度为1~200个字符。名称只能包含 ASCII 英文字母和数字字符，不能包含半角逗号（,）、半角分号（;）或空格，也不能以美元符号（$）开头。当 tickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 server时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，该参数无效。
+     * Name of the session persistence Cookie for service configuration. This is only valid when session persistence is enabled and Cookie overwrite is selected. The specific rules are as follows: The Cookie name must be 1–200 characters long. The name can only contain ASCII letters and digits, cannot contain commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). This parameter is required when tickySessionConfig.StickySessionEnabled is set to on and StickySessionConfig.StickySessionType is server. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert.
      * 
      */
     @Import(name="cookie")
     private @Nullable Output<String> cookie;
 
     /**
-     * @return 服务配置的会话保持 Cookie 名称。仅在开启会话保持功能并选择重写 Cookie 时有效。 具体规则如下：Cookie 名称长度为1~200个字符。名称只能包含 ASCII 英文字母和数字字符，不能包含半角逗号（,）、半角分号（;）或空格，也不能以美元符号（$）开头。当 tickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 server时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，该参数无效。
+     * @return Name of the session persistence Cookie for service configuration. This is only valid when session persistence is enabled and Cookie overwrite is selected. The specific rules are as follows: The Cookie name must be 1–200 characters long. The name can only contain ASCII letters and digits, cannot contain commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). This parameter is required when tickySessionConfig.StickySessionEnabled is set to on and StickySessionConfig.StickySessionType is server. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert.
      * 
      */
     public Optional<Output<String>> cookie() {
@@ -32,14 +32,14 @@ public final class ServerGroupStickySessionConfigArgs extends com.pulumi.resourc
     }
 
     /**
-     * 会话保持 Cookie 超时时间。仅在开启会话保持功能并选择植入 Cookie 时有效。 单位：秒。具体规则如下：超时时间的取值范围：1～86400。 默认值为：1000。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionType 为 server 时，此参数无效。
+     * Session persistence cookie timeout. Only valid when session persistence is enabled and the insert cookie option is selected. Unit: seconds. Rules: Timeout range: 1–86400. Default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
      * 
      */
     @Import(name="cookieTimeout")
     private @Nullable Output<Integer> cookieTimeout;
 
     /**
-     * @return 会话保持 Cookie 超时时间。仅在开启会话保持功能并选择植入 Cookie 时有效。 单位：秒。具体规则如下：超时时间的取值范围：1～86400。 默认值为：1000。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionType 为 server 时，此参数无效。
+     * @return Session persistence cookie timeout. Only valid when session persistence is enabled and the insert cookie option is selected. Unit: seconds. Rules: Timeout range: 1–86400. Default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
      * 
      */
     public Optional<Output<Integer>> cookieTimeout() {
@@ -47,14 +47,14 @@ public final class ServerGroupStickySessionConfigArgs extends com.pulumi.resourc
     }
 
     /**
-     * 是否开启会话保持功能。on：开启；off（默认值）：关闭。
+     * Enable session persistence. on: Enable; off (default): Disable.
      * 
      */
     @Import(name="stickySessionEnabled")
     private @Nullable Output<String> stickySessionEnabled;
 
     /**
-     * @return 是否开启会话保持功能。on：开启；off（默认值）：关闭。
+     * @return Enable session persistence. on: Enable; off (default): Disable.
      * 
      */
     public Optional<Output<String>> stickySessionEnabled() {
@@ -62,14 +62,14 @@ public final class ServerGroupStickySessionConfigArgs extends com.pulumi.resourc
     }
 
     /**
-     * 对 Cookie 的处理方式。当 StickySessionConfig.StickySessionEnabled 值为 on 时，此字段参数必填。取值如下：insert：植入 Cookie；ALB 会记录客户端请求第一次转发到的后端服务器。ALB 在返回请求中植入 Cookie ，后续客户端请求携带此 Cookie，ALB 会将请求转发到之前记录的后端服务器上。server：重写 Cookie；开启重写 Cookie 的会话保持后，在客户端请求第一次转发到后端服务器后，ALB 在返回请求中发现您自定义的 Cookie 时，会对原来的 Cookie 进行重写。后续客户端请求携带改写后的 Cookie，ALB 会将请求转发到之前记录的后端服务器上。
+     * Cookie handling method. This field is required when StickySessionConfig.StickySessionEnabled is set to on. Parameter values: insert: Inserts a Cookie. ALB records the backend server to which the client&#39;s first request is forwarded. ALB inserts a Cookie in the response. Subsequent client requests carry this Cookie, and ALB forwards the requests to the previously recorded backend server. server: Overwrites the Cookie. When session persistence with Cookie overwrite is enabled, after the client&#39;s first request is forwarded to the backend server, if ALB detects your custom Cookie in the response, it overwrites the original Cookie. Subsequent client requests carry the overwritten Cookie, and ALB forwards the requests to the previously recorded backend server.
      * 
      */
     @Import(name="stickySessionType")
     private @Nullable Output<String> stickySessionType;
 
     /**
-     * @return 对 Cookie 的处理方式。当 StickySessionConfig.StickySessionEnabled 值为 on 时，此字段参数必填。取值如下：insert：植入 Cookie；ALB 会记录客户端请求第一次转发到的后端服务器。ALB 在返回请求中植入 Cookie ，后续客户端请求携带此 Cookie，ALB 会将请求转发到之前记录的后端服务器上。server：重写 Cookie；开启重写 Cookie 的会话保持后，在客户端请求第一次转发到后端服务器后，ALB 在返回请求中发现您自定义的 Cookie 时，会对原来的 Cookie 进行重写。后续客户端请求携带改写后的 Cookie，ALB 会将请求转发到之前记录的后端服务器上。
+     * @return Cookie handling method. This field is required when StickySessionConfig.StickySessionEnabled is set to on. Parameter values: insert: Inserts a Cookie. ALB records the backend server to which the client&#39;s first request is forwarded. ALB inserts a Cookie in the response. Subsequent client requests carry this Cookie, and ALB forwards the requests to the previously recorded backend server. server: Overwrites the Cookie. When session persistence with Cookie overwrite is enabled, after the client&#39;s first request is forwarded to the backend server, if ALB detects your custom Cookie in the response, it overwrites the original Cookie. Subsequent client requests carry the overwritten Cookie, and ALB forwards the requests to the previously recorded backend server.
      * 
      */
     public Optional<Output<String>> stickySessionType() {
@@ -104,7 +104,7 @@ public final class ServerGroupStickySessionConfigArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param cookie 服务配置的会话保持 Cookie 名称。仅在开启会话保持功能并选择重写 Cookie 时有效。 具体规则如下：Cookie 名称长度为1~200个字符。名称只能包含 ASCII 英文字母和数字字符，不能包含半角逗号（,）、半角分号（;）或空格，也不能以美元符号（$）开头。当 tickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 server时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，该参数无效。
+         * @param cookie Name of the session persistence Cookie for service configuration. This is only valid when session persistence is enabled and Cookie overwrite is selected. The specific rules are as follows: The Cookie name must be 1–200 characters long. The name can only contain ASCII letters and digits, cannot contain commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). This parameter is required when tickySessionConfig.StickySessionEnabled is set to on and StickySessionConfig.StickySessionType is server. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert.
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class ServerGroupStickySessionConfigArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param cookie 服务配置的会话保持 Cookie 名称。仅在开启会话保持功能并选择重写 Cookie 时有效。 具体规则如下：Cookie 名称长度为1~200个字符。名称只能包含 ASCII 英文字母和数字字符，不能包含半角逗号（,）、半角分号（;）或空格，也不能以美元符号（$）开头。当 tickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 server时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，该参数无效。
+         * @param cookie Name of the session persistence Cookie for service configuration. This is only valid when session persistence is enabled and Cookie overwrite is selected. The specific rules are as follows: The Cookie name must be 1–200 characters long. The name can only contain ASCII letters and digits, cannot contain commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). This parameter is required when tickySessionConfig.StickySessionEnabled is set to on and StickySessionConfig.StickySessionType is server. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert.
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class ServerGroupStickySessionConfigArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param cookieTimeout 会话保持 Cookie 超时时间。仅在开启会话保持功能并选择植入 Cookie 时有效。 单位：秒。具体规则如下：超时时间的取值范围：1～86400。 默认值为：1000。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionType 为 server 时，此参数无效。
+         * @param cookieTimeout Session persistence cookie timeout. Only valid when session persistence is enabled and the insert cookie option is selected. Unit: seconds. Rules: Timeout range: 1–86400. Default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class ServerGroupStickySessionConfigArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param cookieTimeout 会话保持 Cookie 超时时间。仅在开启会话保持功能并选择植入 Cookie 时有效。 单位：秒。具体规则如下：超时时间的取值范围：1～86400。 默认值为：1000。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionType 为 server 时，此参数无效。
+         * @param cookieTimeout Session persistence cookie timeout. Only valid when session persistence is enabled and the insert cookie option is selected. Unit: seconds. Rules: Timeout range: 1–86400. Default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class ServerGroupStickySessionConfigArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param stickySessionEnabled 是否开启会话保持功能。on：开启；off（默认值）：关闭。
+         * @param stickySessionEnabled Enable session persistence. on: Enable; off (default): Disable.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class ServerGroupStickySessionConfigArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param stickySessionEnabled 是否开启会话保持功能。on：开启；off（默认值）：关闭。
+         * @param stickySessionEnabled Enable session persistence. on: Enable; off (default): Disable.
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class ServerGroupStickySessionConfigArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param stickySessionType 对 Cookie 的处理方式。当 StickySessionConfig.StickySessionEnabled 值为 on 时，此字段参数必填。取值如下：insert：植入 Cookie；ALB 会记录客户端请求第一次转发到的后端服务器。ALB 在返回请求中植入 Cookie ，后续客户端请求携带此 Cookie，ALB 会将请求转发到之前记录的后端服务器上。server：重写 Cookie；开启重写 Cookie 的会话保持后，在客户端请求第一次转发到后端服务器后，ALB 在返回请求中发现您自定义的 Cookie 时，会对原来的 Cookie 进行重写。后续客户端请求携带改写后的 Cookie，ALB 会将请求转发到之前记录的后端服务器上。
+         * @param stickySessionType Cookie handling method. This field is required when StickySessionConfig.StickySessionEnabled is set to on. Parameter values: insert: Inserts a Cookie. ALB records the backend server to which the client&#39;s first request is forwarded. ALB inserts a Cookie in the response. Subsequent client requests carry this Cookie, and ALB forwards the requests to the previously recorded backend server. server: Overwrites the Cookie. When session persistence with Cookie overwrite is enabled, after the client&#39;s first request is forwarded to the backend server, if ALB detects your custom Cookie in the response, it overwrites the original Cookie. Subsequent client requests carry the overwritten Cookie, and ALB forwards the requests to the previously recorded backend server.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class ServerGroupStickySessionConfigArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param stickySessionType 对 Cookie 的处理方式。当 StickySessionConfig.StickySessionEnabled 值为 on 时，此字段参数必填。取值如下：insert：植入 Cookie；ALB 会记录客户端请求第一次转发到的后端服务器。ALB 在返回请求中植入 Cookie ，后续客户端请求携带此 Cookie，ALB 会将请求转发到之前记录的后端服务器上。server：重写 Cookie；开启重写 Cookie 的会话保持后，在客户端请求第一次转发到后端服务器后，ALB 在返回请求中发现您自定义的 Cookie 时，会对原来的 Cookie 进行重写。后续客户端请求携带改写后的 Cookie，ALB 会将请求转发到之前记录的后端服务器上。
+         * @param stickySessionType Cookie handling method. This field is required when StickySessionConfig.StickySessionEnabled is set to on. Parameter values: insert: Inserts a Cookie. ALB records the backend server to which the client&#39;s first request is forwarded. ALB inserts a Cookie in the response. Subsequent client requests carry this Cookie, and ALB forwards the requests to the previously recorded backend server. server: Overwrites the Cookie. When session persistence with Cookie overwrite is enabled, after the client&#39;s first request is forwarded to the backend server, if ALB detects your custom Cookie in the response, it overwrites the original Cookie. Subsequent client requests carry the overwritten Cookie, and ALB forwards the requests to the previously recorded backend server.
          * 
          * @return builder
          * 

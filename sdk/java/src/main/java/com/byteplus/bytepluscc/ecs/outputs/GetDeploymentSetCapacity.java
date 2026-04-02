@@ -12,38 +12,38 @@ import java.util.Objects;
 @CustomType
 public final class GetDeploymentSetCapacity {
     /**
-     * @return 该可用区内，还可以加入当前部署集的ECS实例数量。
+     * @return You can also include the number of ECS instances in the current deployment set within this availability zone.
      * 
      */
     private Integer availableCount;
     /**
-     * @return 部署集内属于该可用区的ECS实例数量。
+     * @return Number of ECS instances in the deployment set that belong to this availability zone.
      * 
      */
     private Integer usedCount;
     /**
-     * @return 可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
+     * @return Availability zone ID. Only returns the availability zone ID for ECS instances in the deployment set.
      * 
      */
     private String zoneId;
 
     private GetDeploymentSetCapacity() {}
     /**
-     * @return 该可用区内，还可以加入当前部署集的ECS实例数量。
+     * @return You can also include the number of ECS instances in the current deployment set within this availability zone.
      * 
      */
     public Integer availableCount() {
         return this.availableCount;
     }
     /**
-     * @return 部署集内属于该可用区的ECS实例数量。
+     * @return Number of ECS instances in the deployment set that belong to this availability zone.
      * 
      */
     public Integer usedCount() {
         return this.usedCount;
     }
     /**
-     * @return 可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
+     * @return Availability zone ID. Only returns the availability zone ID for ECS instances in the deployment set.
      * 
      */
     public String zoneId() {

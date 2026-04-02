@@ -65,23 +65,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     public sealed class GetClusterResult
     {
         /// <summary>
-        /// 集群控制面及部分节点的网络配置。
+        /// Network configuration for the cluster control plane and some nodes.
         /// </summary>
         public readonly Outputs.GetClusterClusterConfigResult ClusterConfig;
         /// <summary>
-        /// 集群 ID。
+        /// Cluster ID.
         /// </summary>
         public readonly string ClusterId;
         /// <summary>
-        /// 集群创建时间。标准 RFC3339 格式的 UTC+0 时间。
+        /// Cluster creation time. Standard RFC3339 format, UTC+0.
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
+        /// Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
         /// </summary>
         public readonly bool DeleteProtectionEnabled;
         /// <summary>
-        /// 集群描述。长度限制为 300 个字符以内。
+        /// Cluster description. Maximum length is 300 characters.
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -89,67 +89,67 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// IRSA（IAM Role for Service Account）能力相关参数配置。
+        /// IRSA (IAM Role for Service Account) capability parameter configuration
         /// </summary>
         public readonly Outputs.GetClusterIrsaConfigResult IrsaConfig;
         /// <summary>
-        /// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
+        /// Cluster Kubernetes version in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version (for query use)
         /// </summary>
         public readonly string KubernetesVersion;
         /// <summary>
-        /// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
+        /// Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
         /// </summary>
         public readonly string KubernetesVersionCreate;
         /// <summary>
-        /// 集群的日志配置信息。
+        /// Cluster log configuration information.
         /// </summary>
         public readonly Outputs.GetClusterLoggingConfigResult LoggingConfig;
         /// <summary>
-        /// 集群状态描述。
+        /// Cluster status description.
         /// </summary>
         public readonly string Message;
         /// <summary>
-        /// 监控配置信息。
+        /// Monitoring configuration information.
         /// </summary>
         public readonly Outputs.GetClusterMonitoringConfigResult MonitoringConfig;
         /// <summary>
-        /// 集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+        /// Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// 集群中各主状态下对应的节点数量统计。
+        /// Statistics of node counts for each main status in the cluster.
         /// </summary>
         public readonly Outputs.GetClusterNodeStatisticsResult NodeStatistics;
         /// <summary>
-        /// Pod 的网络配置。
+        /// Pod network configuration.
         /// </summary>
         public readonly Outputs.GetClusterPodsConfigResult PodsConfig;
         /// <summary>
-        /// 集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
+        /// Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// 服务的网络配置。
+        /// Network configuration for the service.
         /// </summary>
         public readonly Outputs.GetClusterServicesConfigResult ServicesConfig;
         /// <summary>
-        /// 集群源地域。
+        /// Cluster source region
         /// </summary>
         public readonly string SourceRegion;
         /// <summary>
-        /// 集群状态。
+        /// Cluster status.
         /// </summary>
         public readonly Outputs.GetClusterStatusResult Status;
         /// <summary>
-        /// 集群的标签。
+        /// Cluster tags.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterTagResult> Tags;
         /// <summary>
-        /// 集群类型。
+        /// Cluster type.
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// 集群最近一次更新的时间。标准 RFC3339 格式的 UTC+0 时间。
+        /// Last update time of the cluster. Standard RFC3339 format, UTC+0.
         /// </summary>
         public readonly string UpdatedTime;
 

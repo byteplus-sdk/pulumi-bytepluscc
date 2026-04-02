@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 解析记录是域名与 VPC 内资源信息的映射。
+// A DNS record maps a domain name to resource information within a VPC.
 //
 // ## Example Usage
 //
@@ -56,33 +56,33 @@ import (
 type Record struct {
 	pulumi.CustomResourceState
 
-	// 解析记录的创建时间。
+	// Creation time of the DNS record.
 	CreatedAt pulumi.StringOutput `pulumi:"createdAt"`
-	// 解析记录是否被启用。
+	// Indicates whether the DNS record is enabled.
 	Enable pulumi.BoolOutput `pulumi:"enable"`
-	// 子域名的域名前缀。
+	// Domain prefix for the subdomain.
 	Host pulumi.StringOutput `pulumi:"host"`
-	// 最近一次更新解析记录的账号 ID。
+	// Account ID of the most recent update to the DNS record.
 	LastOperator pulumi.StringOutput `pulumi:"lastOperator"`
-	// 解析记录的线路，只能是默认线路 default。
+	// DNS record route, only the default route 'default' is supported.
 	Line pulumi.StringOutput `pulumi:"line"`
-	// 解析记录 ID。
+	// DNS record ID.
 	RecordId pulumi.StringOutput `pulumi:"recordId"`
-	// 备注。支持 UTF-8 字符。不能超过 16 个字符。默认值为空字符串。
+	// Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
 	Remark pulumi.StringOutput `pulumi:"remark"`
-	// 解析记录的过期时间。单位为秒。默认值为 600。
+	// DNS record TTL (time to live), in seconds. Default is 600.
 	Ttl pulumi.IntOutput `pulumi:"ttl"`
-	// 解析记录类型。该参数的取值如下：A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。
+	// DNS record type. Valid values are: A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record. A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record.
 	Type pulumi.StringOutput `pulumi:"type"`
-	// 解析记录最近一次的更新时间。
+	// Last update time of the DNS record.
 	UpdatedAt pulumi.StringOutput `pulumi:"updatedAt"`
-	// 记录值。
+	// Record value.
 	Value pulumi.StringOutput `pulumi:"value"`
-	// 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
+	// Record weight. The weight takes effect only when load balancing is enabled for the domain name.
 	Weight pulumi.IntOutput `pulumi:"weight"`
-	// 该记录集是否开启了负载均衡。
+	// Indicates whether load balancing is enabled for this record set.
 	WeightEnabled pulumi.BoolOutput `pulumi:"weightEnabled"`
-	// 域名 ID。
+	// Domain name ID.
 	Zid pulumi.IntOutput `pulumi:"zid"`
 }
 
@@ -128,64 +128,64 @@ func GetRecord(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Record resources.
 type recordState struct {
-	// 解析记录的创建时间。
+	// Creation time of the DNS record.
 	CreatedAt *string `pulumi:"createdAt"`
-	// 解析记录是否被启用。
+	// Indicates whether the DNS record is enabled.
 	Enable *bool `pulumi:"enable"`
-	// 子域名的域名前缀。
+	// Domain prefix for the subdomain.
 	Host *string `pulumi:"host"`
-	// 最近一次更新解析记录的账号 ID。
+	// Account ID of the most recent update to the DNS record.
 	LastOperator *string `pulumi:"lastOperator"`
-	// 解析记录的线路，只能是默认线路 default。
+	// DNS record route, only the default route 'default' is supported.
 	Line *string `pulumi:"line"`
-	// 解析记录 ID。
+	// DNS record ID.
 	RecordId *string `pulumi:"recordId"`
-	// 备注。支持 UTF-8 字符。不能超过 16 个字符。默认值为空字符串。
+	// Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
 	Remark *string `pulumi:"remark"`
-	// 解析记录的过期时间。单位为秒。默认值为 600。
+	// DNS record TTL (time to live), in seconds. Default is 600.
 	Ttl *int `pulumi:"ttl"`
-	// 解析记录类型。该参数的取值如下：A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。
+	// DNS record type. Valid values are: A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record. A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record.
 	Type *string `pulumi:"type"`
-	// 解析记录最近一次的更新时间。
+	// Last update time of the DNS record.
 	UpdatedAt *string `pulumi:"updatedAt"`
-	// 记录值。
+	// Record value.
 	Value *string `pulumi:"value"`
-	// 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
+	// Record weight. The weight takes effect only when load balancing is enabled for the domain name.
 	Weight *int `pulumi:"weight"`
-	// 该记录集是否开启了负载均衡。
+	// Indicates whether load balancing is enabled for this record set.
 	WeightEnabled *bool `pulumi:"weightEnabled"`
-	// 域名 ID。
+	// Domain name ID.
 	Zid *int `pulumi:"zid"`
 }
 
 type RecordState struct {
-	// 解析记录的创建时间。
+	// Creation time of the DNS record.
 	CreatedAt pulumi.StringPtrInput
-	// 解析记录是否被启用。
+	// Indicates whether the DNS record is enabled.
 	Enable pulumi.BoolPtrInput
-	// 子域名的域名前缀。
+	// Domain prefix for the subdomain.
 	Host pulumi.StringPtrInput
-	// 最近一次更新解析记录的账号 ID。
+	// Account ID of the most recent update to the DNS record.
 	LastOperator pulumi.StringPtrInput
-	// 解析记录的线路，只能是默认线路 default。
+	// DNS record route, only the default route 'default' is supported.
 	Line pulumi.StringPtrInput
-	// 解析记录 ID。
+	// DNS record ID.
 	RecordId pulumi.StringPtrInput
-	// 备注。支持 UTF-8 字符。不能超过 16 个字符。默认值为空字符串。
+	// Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
 	Remark pulumi.StringPtrInput
-	// 解析记录的过期时间。单位为秒。默认值为 600。
+	// DNS record TTL (time to live), in seconds. Default is 600.
 	Ttl pulumi.IntPtrInput
-	// 解析记录类型。该参数的取值如下：A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。
+	// DNS record type. Valid values are: A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record. A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record.
 	Type pulumi.StringPtrInput
-	// 解析记录最近一次的更新时间。
+	// Last update time of the DNS record.
 	UpdatedAt pulumi.StringPtrInput
-	// 记录值。
+	// Record value.
 	Value pulumi.StringPtrInput
-	// 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
+	// Record weight. The weight takes effect only when load balancing is enabled for the domain name.
 	Weight pulumi.IntPtrInput
-	// 该记录集是否开启了负载均衡。
+	// Indicates whether load balancing is enabled for this record set.
 	WeightEnabled pulumi.BoolPtrInput
-	// 域名 ID。
+	// Domain name ID.
 	Zid pulumi.IntPtrInput
 }
 
@@ -194,49 +194,49 @@ func (RecordState) ElementType() reflect.Type {
 }
 
 type recordArgs struct {
-	// 解析记录是否被启用。
+	// Indicates whether the DNS record is enabled.
 	Enable *bool `pulumi:"enable"`
-	// 子域名的域名前缀。
+	// Domain prefix for the subdomain.
 	Host string `pulumi:"host"`
-	// 解析记录的线路，只能是默认线路 default。
+	// DNS record route, only the default route 'default' is supported.
 	Line *string `pulumi:"line"`
-	// 备注。支持 UTF-8 字符。不能超过 16 个字符。默认值为空字符串。
+	// Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
 	Remark *string `pulumi:"remark"`
-	// 解析记录的过期时间。单位为秒。默认值为 600。
+	// DNS record TTL (time to live), in seconds. Default is 600.
 	Ttl *int `pulumi:"ttl"`
-	// 解析记录类型。该参数的取值如下：A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。
+	// DNS record type. Valid values are: A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record. A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record.
 	Type string `pulumi:"type"`
-	// 记录值。
+	// Record value.
 	Value string `pulumi:"value"`
-	// 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
+	// Record weight. The weight takes effect only when load balancing is enabled for the domain name.
 	Weight *int `pulumi:"weight"`
-	// 该记录集是否开启了负载均衡。
+	// Indicates whether load balancing is enabled for this record set.
 	WeightEnabled *bool `pulumi:"weightEnabled"`
-	// 域名 ID。
+	// Domain name ID.
 	Zid int `pulumi:"zid"`
 }
 
 // The set of arguments for constructing a Record resource.
 type RecordArgs struct {
-	// 解析记录是否被启用。
+	// Indicates whether the DNS record is enabled.
 	Enable pulumi.BoolPtrInput
-	// 子域名的域名前缀。
+	// Domain prefix for the subdomain.
 	Host pulumi.StringInput
-	// 解析记录的线路，只能是默认线路 default。
+	// DNS record route, only the default route 'default' is supported.
 	Line pulumi.StringPtrInput
-	// 备注。支持 UTF-8 字符。不能超过 16 个字符。默认值为空字符串。
+	// Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
 	Remark pulumi.StringPtrInput
-	// 解析记录的过期时间。单位为秒。默认值为 600。
+	// DNS record TTL (time to live), in seconds. Default is 600.
 	Ttl pulumi.IntPtrInput
-	// 解析记录类型。该参数的取值如下：A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。
+	// DNS record type. Valid values are: A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record. A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record.
 	Type pulumi.StringInput
-	// 记录值。
+	// Record value.
 	Value pulumi.StringInput
-	// 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
+	// Record weight. The weight takes effect only when load balancing is enabled for the domain name.
 	Weight pulumi.IntPtrInput
-	// 该记录集是否开启了负载均衡。
+	// Indicates whether load balancing is enabled for this record set.
 	WeightEnabled pulumi.BoolPtrInput
-	// 域名 ID。
+	// Domain name ID.
 	Zid pulumi.IntInput
 }
 
@@ -327,72 +327,72 @@ func (o RecordOutput) ToRecordOutputWithContext(ctx context.Context) RecordOutpu
 	return o
 }
 
-// 解析记录的创建时间。
+// Creation time of the DNS record.
 func (o RecordOutput) CreatedAt() pulumi.StringOutput {
 	return o.ApplyT(func(v *Record) pulumi.StringOutput { return v.CreatedAt }).(pulumi.StringOutput)
 }
 
-// 解析记录是否被启用。
+// Indicates whether the DNS record is enabled.
 func (o RecordOutput) Enable() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Record) pulumi.BoolOutput { return v.Enable }).(pulumi.BoolOutput)
 }
 
-// 子域名的域名前缀。
+// Domain prefix for the subdomain.
 func (o RecordOutput) Host() pulumi.StringOutput {
 	return o.ApplyT(func(v *Record) pulumi.StringOutput { return v.Host }).(pulumi.StringOutput)
 }
 
-// 最近一次更新解析记录的账号 ID。
+// Account ID of the most recent update to the DNS record.
 func (o RecordOutput) LastOperator() pulumi.StringOutput {
 	return o.ApplyT(func(v *Record) pulumi.StringOutput { return v.LastOperator }).(pulumi.StringOutput)
 }
 
-// 解析记录的线路，只能是默认线路 default。
+// DNS record route, only the default route 'default' is supported.
 func (o RecordOutput) Line() pulumi.StringOutput {
 	return o.ApplyT(func(v *Record) pulumi.StringOutput { return v.Line }).(pulumi.StringOutput)
 }
 
-// 解析记录 ID。
+// DNS record ID.
 func (o RecordOutput) RecordId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Record) pulumi.StringOutput { return v.RecordId }).(pulumi.StringOutput)
 }
 
-// 备注。支持 UTF-8 字符。不能超过 16 个字符。默认值为空字符串。
+// Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
 func (o RecordOutput) Remark() pulumi.StringOutput {
 	return o.ApplyT(func(v *Record) pulumi.StringOutput { return v.Remark }).(pulumi.StringOutput)
 }
 
-// 解析记录的过期时间。单位为秒。默认值为 600。
+// DNS record TTL (time to live), in seconds. Default is 600.
 func (o RecordOutput) Ttl() pulumi.IntOutput {
 	return o.ApplyT(func(v *Record) pulumi.IntOutput { return v.Ttl }).(pulumi.IntOutput)
 }
 
-// 解析记录类型。该参数的取值如下：A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。
+// DNS record type. Valid values are: A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record. A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record.
 func (o RecordOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *Record) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }
 
-// 解析记录最近一次的更新时间。
+// Last update time of the DNS record.
 func (o RecordOutput) UpdatedAt() pulumi.StringOutput {
 	return o.ApplyT(func(v *Record) pulumi.StringOutput { return v.UpdatedAt }).(pulumi.StringOutput)
 }
 
-// 记录值。
+// Record value.
 func (o RecordOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v *Record) pulumi.StringOutput { return v.Value }).(pulumi.StringOutput)
 }
 
-// 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
+// Record weight. The weight takes effect only when load balancing is enabled for the domain name.
 func (o RecordOutput) Weight() pulumi.IntOutput {
 	return o.ApplyT(func(v *Record) pulumi.IntOutput { return v.Weight }).(pulumi.IntOutput)
 }
 
-// 该记录集是否开启了负载均衡。
+// Indicates whether load balancing is enabled for this record set.
 func (o RecordOutput) WeightEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Record) pulumi.BoolOutput { return v.WeightEnabled }).(pulumi.BoolOutput)
 }
 
-// 域名 ID。
+// Domain name ID.
 func (o RecordOutput) Zid() pulumi.IntOutput {
 	return o.ApplyT(func(v *Record) pulumi.IntOutput { return v.Zid }).(pulumi.IntOutput)
 }

@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class ShareConfigDenyIpAccessRule
     {
         /// <summary>
-        /// 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access_rule。
+        /// Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access_rule.
         /// </summary>
         public readonly ImmutableArray<string> Rules;
 

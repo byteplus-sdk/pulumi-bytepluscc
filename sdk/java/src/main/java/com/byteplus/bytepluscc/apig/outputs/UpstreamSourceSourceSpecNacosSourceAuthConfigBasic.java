@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UpstreamSourceSourceSpecNacosSourceAuthConfigBasic {
     /**
-     * @return 密码。
+     * @return Password
      * 
      */
     private @Nullable String password;
     /**
-     * @return 用户名。
+     * @return Username
      * 
      */
     private @Nullable String username;
 
     private UpstreamSourceSourceSpecNacosSourceAuthConfigBasic() {}
     /**
-     * @return 密码。
+     * @return Password
      * 
      */
     public Optional<String> password() {
         return Optional.ofNullable(this.password);
     }
     /**
-     * @return 用户名。
+     * @return Username
      * 
      */
     public Optional<String> username() {

@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetAclAclEntry {
     /**
-     * @return IP条目的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+     * @return Description of the IP entry. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters.
      * 
      */
     private String description;
     /**
-     * @return IP条目的地址段，只支持CIDR地址。支持同时传入IPv4和IPv6条目。
+     * @return Address range of the IP entry. Only CIDR addresses are supported. Both IPv4 and IPv6 entries can be provided.
      * 
      */
     private String entry;
 
     private GetAclAclEntry() {}
     /**
-     * @return IP条目的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+     * @return Description of the IP entry. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return IP条目的地址段，只支持CIDR地址。支持同时传入IPv4和IPv6条目。
+     * @return Address range of the IP entry. Only CIDR addresses are supported. Both IPv4 and IPv6 entries can be provided.
      * 
      */
     public String entry() {

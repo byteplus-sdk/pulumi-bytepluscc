@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Outputs
     public sealed class RuleTag
     {
         /// <summary>
-        /// 标签键。支持中文、英文大写字母、英文小写字母、数字和空格。支持以下特殊字符_.:/=+-@。不能以空格为开头或结尾。volc:和/sys:为系统预留的标签键，添加标签时，标签键的开头不能设置为任何大小写形式的volc:和/sys:。标签键的长度需为 1～128 个字符。
+        /// Tag key. Supports Chinese, uppercase and lowercase English letters, numbers, and spaces. The following special characters are supported: _ . : / = +   - @. Cannot start or end with a space. volc: and /sys: are system-reserved tag keys. When adding a tag, the tag key cannot start with any case form of volc: or /sys:. Tag key length must be 1–128 characters.
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// 标签值。支持中文、英文大写字母、英文小写字母、数字和空格。支持以下特殊字符_.:/=+-@。不能以空格为开头或结尾。标签键的长度需为 0～255 个字符。
+        /// Tag value. Supports Chinese, uppercase and lowercase English letters, numbers, and spaces. The following special characters are supported: _ . : / = +   - @. Cannot start or end with a space. Tag key length must be 0–255 characters.
         /// </summary>
         public readonly string? Value;
 

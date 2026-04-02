@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainTimeoutTimeoutRuleTimeoutActionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示 HTTP 请求的超时时间。该参数的取值范围是 5-60。
+        /// Indicates the timeout period for HTTP requests. The value range for this parameter is 5–60.
         /// </summary>
         [Input("httpTimeout")]
         public Input<int>? HttpTimeout { get; set; }
 
         /// <summary>
-        /// 表示 TCP 请求的超时时间。该参数的取值范围是 2-60。
+        /// Indicates the timeout for TCP requests. The valid range for this parameter is 2–60.
         /// </summary>
         [Input("tcpTimeout")]
         public Input<int>? TcpTimeout { get; set; }

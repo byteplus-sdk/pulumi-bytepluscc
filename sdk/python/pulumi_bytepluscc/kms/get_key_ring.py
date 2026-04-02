@@ -63,7 +63,7 @@ class GetKeyRingResult:
     @pulumi.getter(name="createDate")
     def create_date(self) -> builtins.int:
         """
-        密钥环创建日期。
+        Keyring creation date
         """
         return pulumi.get(self, "create_date")
 
@@ -71,7 +71,7 @@ class GetKeyRingResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        密钥环描述，长度为 0   - 8192 个字符。
+        Keyring description, length: 0–8192 characters
         """
         return pulumi.get(self, "description")
 
@@ -87,7 +87,7 @@ class GetKeyRingResult:
     @pulumi.getter(name="keyCount")
     def key_count(self) -> builtins.int:
         """
-        密钥环密钥次数。
+        Number of keys in keyring
         """
         return pulumi.get(self, "key_count")
 
@@ -95,7 +95,7 @@ class GetKeyRingResult:
     @pulumi.getter(name="keyRingId")
     def key_ring_id(self) -> builtins.str:
         """
-        密钥环唯一标识符，UUID形式。
+        Keyring unique identifier, in UUID format
         """
         return pulumi.get(self, "key_ring_id")
 
@@ -103,7 +103,7 @@ class GetKeyRingResult:
     @pulumi.getter(name="keyringName")
     def keyring_name(self) -> builtins.str:
         """
-        密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+        Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
         """
         return pulumi.get(self, "keyring_name")
 
@@ -111,7 +111,7 @@ class GetKeyRingResult:
     @pulumi.getter(name="keyringType")
     def keyring_type(self) -> builtins.str:
         """
-        密钥环类型，取值：CustomKeyring。
+        Keyring type, value: CustomKeyring
         """
         return pulumi.get(self, "keyring_type")
 
@@ -119,7 +119,7 @@ class GetKeyRingResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        项目名称，默认值：default。
+        Project name, default value: default
         """
         return pulumi.get(self, "project_name")
 
@@ -127,7 +127,7 @@ class GetKeyRingResult:
     @pulumi.getter
     def uid(self) -> builtins.str:
         """
-        密钥环租户ID。
+        Keyring tenant ID
         """
         return pulumi.get(self, "uid")
 
@@ -135,7 +135,7 @@ class GetKeyRingResult:
     @pulumi.getter(name="updateDate")
     def update_date(self) -> builtins.int:
         """
-        密钥环更新日期。
+        Keyring update date
         """
         return pulumi.get(self, "update_date")
 

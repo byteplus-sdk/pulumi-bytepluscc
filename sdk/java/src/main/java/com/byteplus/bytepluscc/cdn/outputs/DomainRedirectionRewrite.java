@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 public final class DomainRedirectionRewrite {
     private @Nullable List<DomainRedirectionRewriteRedirectionRule> redirectionRules;
     /**
-     * @return 表示是否启用该配置。该参数有以下取值：true：表示启用 URL 重定向改写。false：表示禁用 URL 重定向改写。
+     * @return Indicates whether this configuration is enabled. This parameter has the following values: true: enables URL redirect rewrite. false: disables URL redirect rewrite.
      * 
      */
     private @Nullable Boolean switch_;
@@ -25,7 +25,7 @@ public final class DomainRedirectionRewrite {
         return this.redirectionRules == null ? List.of() : this.redirectionRules;
     }
     /**
-     * @return 表示是否启用该配置。该参数有以下取值：true：表示启用 URL 重定向改写。false：表示禁用 URL 重定向改写。
+     * @return Indicates whether this configuration is enabled. This parameter has the following values: true: enables URL redirect rewrite. false: disables URL redirect rewrite.
      * 
      */
     public Optional<Boolean> switch_() {

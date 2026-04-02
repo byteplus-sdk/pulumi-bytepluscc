@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
     public sealed class ClusterLoggingConfigLogSetupGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 是否开启该日志选项，参数值说明：true：已开启。false：未开启。
+        /// Whether to enable this log option. Parameter values: true: enabled; false: not enabled.
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// 日志在日志服务中的保存时间，单位为天。 3650 天表示永久存储。
+        /// Retention period of logs in log service, in days. 3650 days means permanent storage.
         /// </summary>
         [Input("logTtl")]
         public Input<int>? LogTtl { get; set; }
 
         /// <summary>
-        /// 当前开启的日志类型，参数值说明：Audit：集群审计日志。KubeApiServer：kube-apiserver 组件日志。KubeScheduler：kube-scheduler 组件日志。KubeControllerManager：kube-controller-manager 组件日志。
+        /// Currently enabled log types. Parameter values: Audit: cluster audit log; KubeApiServer: kube-apiserver component log; KubeScheduler: kube-scheduler component log; KubeControllerManager: kube-controller-manager component log.
         /// </summary>
         [Input("logType")]
         public Input<string>? LogType { get; set; }

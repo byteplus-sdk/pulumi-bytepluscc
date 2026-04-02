@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 public final class ClusterStatus {
     private @Nullable List<ClusterStatusCondition> conditions;
     /**
-     * @return 集群状态阶段
+     * @return Cluster status phase.
      * 
      */
     private @Nullable String phase;
@@ -25,7 +25,7 @@ public final class ClusterStatus {
         return this.conditions == null ? List.of() : this.conditions;
     }
     /**
-     * @return 集群状态阶段
+     * @return Cluster status phase.
      * 
      */
     public Optional<String> phase() {

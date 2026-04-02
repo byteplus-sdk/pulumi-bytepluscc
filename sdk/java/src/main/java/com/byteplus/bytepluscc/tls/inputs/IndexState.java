@@ -22,14 +22,14 @@ public final class IndexState extends com.pulumi.resources.ResourceArgs {
     public static final IndexState Empty = new IndexState();
 
     /**
-     * 索引创建的时间。
+     * Index creation time.
      * 
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
-     * @return 索引创建的时间。
+     * @return Index creation time.
      * 
      */
     public Optional<Output<String>> createTime() {
@@ -37,14 +37,14 @@ public final class IndexState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启索引自动更新，开启后系统将根据新出现的字段自动添加到键值索引。true：开启自动更新。false：不开启自动更新。
+     * Enable automatic index updates? When enabled, the system will automatically add newly detected fields to the key-value index. true: Enable automatic updates. false: Do not enable automatic updates.
      * 
      */
     @Import(name="enableAutoIndex")
     private @Nullable Output<Boolean> enableAutoIndex;
 
     /**
-     * @return 是否开启索引自动更新，开启后系统将根据新出现的字段自动添加到键值索引。true：开启自动更新。false：不开启自动更新。
+     * @return Enable automatic index updates? When enabled, the system will automatically add newly detected fields to the key-value index. true: Enable automatic updates. false: Do not enable automatic updates.
      * 
      */
     public Optional<Output<Boolean>> enableAutoIndex() {
@@ -52,14 +52,14 @@ public final class IndexState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 全文索引配置。此字段为 null 或者未配置，表示不开启全文索引。全文索引配置和键值索引配置至少配置一项，即 FullText 和 KeyValue 之间应至少指定一个参数。
+     * Full-text index configuration. If this field is null or not configured, full-text indexing is disabled. At least one of full-text index or key-value index must be configured; that is, at least one parameter between FullText and KeyValue must be specified.
      * 
      */
     @Import(name="fullText")
     private @Nullable Output<IndexFullTextArgs> fullText;
 
     /**
-     * @return 全文索引配置。此字段为 null 或者未配置，表示不开启全文索引。全文索引配置和键值索引配置至少配置一项，即 FullText 和 KeyValue 之间应至少指定一个参数。
+     * @return Full-text index configuration. If this field is null or not configured, full-text indexing is disabled. At least one of full-text index or key-value index must be configured; that is, at least one parameter between FullText and KeyValue must be specified.
      * 
      */
     public Optional<Output<IndexFullTextArgs>> fullText() {
@@ -74,14 +74,14 @@ public final class IndexState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 统计字段值的最大长度，默认为 2048，取值范围为 64~16384，单位为字节。说明单个字段值的长度超过您所指定的最大长度时，超出部分将被截断，不参与分析。字段最大长度更新后，只对增量数据有效。
+     * Set the maximum length for field values. The default is 2048. The valid range is 64–16384 bytes. If a single field value exceeds the specified maximum length, the excess part will be truncated and excluded from analysis. After updating the maximum field length, only incremental data is affected.
      * 
      */
     @Import(name="maxTextLen")
     private @Nullable Output<Integer> maxTextLen;
 
     /**
-     * @return 统计字段值的最大长度，默认为 2048，取值范围为 64~16384，单位为字节。说明单个字段值的长度超过您所指定的最大长度时，超出部分将被截断，不参与分析。字段最大长度更新后，只对增量数据有效。
+     * @return Set the maximum length for field values. The default is 2048. The valid range is 64–16384 bytes. If a single field value exceeds the specified maximum length, the excess part will be truncated and excluded from analysis. After updating the maximum field length, only incremental data is affected.
      * 
      */
     public Optional<Output<Integer>> maxTextLen() {
@@ -89,14 +89,14 @@ public final class IndexState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 索引最近修改的时间。
+     * Last modified time of the index.
      * 
      */
     @Import(name="modifyTime")
     private @Nullable Output<String> modifyTime;
 
     /**
-     * @return 索引最近修改的时间。
+     * @return Last modified time of the index.
      * 
      */
     public Optional<Output<String>> modifyTime() {
@@ -104,14 +104,14 @@ public final class IndexState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 日志主题ID。
+     * Log topic ID.
      * 
      */
     @Import(name="topicId")
     private @Nullable Output<String> topicId;
 
     /**
-     * @return 日志主题ID。
+     * @return Log topic ID.
      * 
      */
     public Optional<Output<String>> topicId() {
@@ -157,7 +157,7 @@ public final class IndexState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createTime 索引创建的时间。
+         * @param createTime Index creation time.
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class IndexState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createTime 索引创建的时间。
+         * @param createTime Index creation time.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class IndexState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableAutoIndex 是否开启索引自动更新，开启后系统将根据新出现的字段自动添加到键值索引。true：开启自动更新。false：不开启自动更新。
+         * @param enableAutoIndex Enable automatic index updates? When enabled, the system will automatically add newly detected fields to the key-value index. true: Enable automatic updates. false: Do not enable automatic updates.
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class IndexState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableAutoIndex 是否开启索引自动更新，开启后系统将根据新出现的字段自动添加到键值索引。true：开启自动更新。false：不开启自动更新。
+         * @param enableAutoIndex Enable automatic index updates? When enabled, the system will automatically add newly detected fields to the key-value index. true: Enable automatic updates. false: Do not enable automatic updates.
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class IndexState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fullText 全文索引配置。此字段为 null 或者未配置，表示不开启全文索引。全文索引配置和键值索引配置至少配置一项，即 FullText 和 KeyValue 之间应至少指定一个参数。
+         * @param fullText Full-text index configuration. If this field is null or not configured, full-text indexing is disabled. At least one of full-text index or key-value index must be configured; that is, at least one parameter between FullText and KeyValue must be specified.
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class IndexState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fullText 全文索引配置。此字段为 null 或者未配置，表示不开启全文索引。全文索引配置和键值索引配置至少配置一项，即 FullText 和 KeyValue 之间应至少指定一个参数。
+         * @param fullText Full-text index configuration. If this field is null or not configured, full-text indexing is disabled. At least one of full-text index or key-value index must be configured; that is, at least one parameter between FullText and KeyValue must be specified.
          * 
          * @return builder
          * 
@@ -233,7 +233,7 @@ public final class IndexState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maxTextLen 统计字段值的最大长度，默认为 2048，取值范围为 64~16384，单位为字节。说明单个字段值的长度超过您所指定的最大长度时，超出部分将被截断，不参与分析。字段最大长度更新后，只对增量数据有效。
+         * @param maxTextLen Set the maximum length for field values. The default is 2048. The valid range is 64–16384 bytes. If a single field value exceeds the specified maximum length, the excess part will be truncated and excluded from analysis. After updating the maximum field length, only incremental data is affected.
          * 
          * @return builder
          * 
@@ -244,7 +244,7 @@ public final class IndexState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maxTextLen 统计字段值的最大长度，默认为 2048，取值范围为 64~16384，单位为字节。说明单个字段值的长度超过您所指定的最大长度时，超出部分将被截断，不参与分析。字段最大长度更新后，只对增量数据有效。
+         * @param maxTextLen Set the maximum length for field values. The default is 2048. The valid range is 64–16384 bytes. If a single field value exceeds the specified maximum length, the excess part will be truncated and excluded from analysis. After updating the maximum field length, only incremental data is affected.
          * 
          * @return builder
          * 
@@ -254,7 +254,7 @@ public final class IndexState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modifyTime 索引最近修改的时间。
+         * @param modifyTime Last modified time of the index.
          * 
          * @return builder
          * 
@@ -265,7 +265,7 @@ public final class IndexState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modifyTime 索引最近修改的时间。
+         * @param modifyTime Last modified time of the index.
          * 
          * @return builder
          * 
@@ -275,7 +275,7 @@ public final class IndexState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param topicId 日志主题ID。
+         * @param topicId Log topic ID.
          * 
          * @return builder
          * 
@@ -286,7 +286,7 @@ public final class IndexState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param topicId 日志主题ID。
+         * @param topicId Log topic ID.
          * 
          * @return builder
          * 

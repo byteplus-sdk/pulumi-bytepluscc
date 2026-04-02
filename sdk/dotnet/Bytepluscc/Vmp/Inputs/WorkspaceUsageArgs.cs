@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp.Inputs
     public sealed class WorkspaceUsageArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 活跃时序数。
+        /// Active time series count
         /// </summary>
         [Input("activeSeries")]
         public Input<int>? ActiveSeries { get; set; }
 
         /// <summary>
-        /// 每秒写入样本数。
+        /// Samples written per second
         /// </summary>
         [Input("ingestedSamplesPerSecond")]
         public Input<double>? IngestedSamplesPerSecond { get; set; }

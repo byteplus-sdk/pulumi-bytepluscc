@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Ark.Inputs
     public sealed class EndpointRateLimitArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Requests Per Minute，每分钟请求数。
+        /// Requests Per Minute, number of requests per minute
         /// </summary>
         [Input("rpm")]
         public Input<int>? Rpm { get; set; }
 
         /// <summary>
-        /// Tokens Per Minute，每分钟请求 token 数。
+        /// Tokens Per Minute, number of tokens requested per minute
         /// </summary>
         [Input("tpm")]
         public Input<int>? Tpm { get; set; }

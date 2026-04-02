@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql.Inputs
     public sealed class AllowListAssociatedInstanceGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 实例ID。
+        /// Instance ID
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }

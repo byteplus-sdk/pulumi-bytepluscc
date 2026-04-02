@@ -31,31 +31,31 @@ export interface GetNodeGroupArgs {
  */
 export interface GetNodeGroupResult {
     /**
-     * 当前节点组可布局的组件名称列表。
+     * List of component names that can be deployed in the current node group.
      */
     readonly applicationLayouts: outputs.emr.GetNodeGroupApplicationLayout[];
     /**
-     * 包周期付费配置。
+     * Subscription payment configuration.
      */
     readonly chargePreConfig: outputs.emr.GetNodeGroupChargePreConfig;
     /**
-     * 付费类型。PRE表示包月，POST表示按量计费。
+     * Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
      */
     readonly chargeType: string;
     /**
-     * 集群ID。
+     * Cluster ID.
      */
     readonly clusterId: string;
     /**
-     * 创建时间。
+     * Creation time.
      */
     readonly createdTime: number;
     /**
-     * 数据盘配置。
+     * Data disk configuration.
      */
     readonly dataDisks: outputs.emr.GetNodeGroupDataDisk[];
     /**
-     * ECS实例规格列表。当前修改仅支持单个实例规格。
+     * ECS instance specification list. Currently, only a single instance specification can be modified.
      */
     readonly ecsInstanceTypes: string[];
     /**
@@ -63,55 +63,55 @@ export interface GetNodeGroupResult {
      */
     readonly id: string;
     /**
-     * 返回的节点组组件的自定义配置参数列表。
+     * Custom configuration parameter list for the returned node group components.
      */
     readonly layoutComponentNames: string[];
     /**
-     * 节点数量。取值范围：1~1000。
+     * Node count. Value range: 1~1000.
      */
     readonly nodeCount: number;
     /**
-     * 节点组ID。
+     * Node group ID.
      */
     readonly nodeGroupId: string;
     /**
-     * 节点组名称。
+     * Node group name.
      */
     readonly nodeGroupName: string;
     /**
-     * 节点组状态。RUNNING：运行中。EXTENDING：扩容中。REDUCING：缩容中。DISK_EXTENDING：磁盘扩容中。MODIFYING：变配中。
+     * Node group status. RUNNING: Running. EXTENDING: Expanding. REDUCING: Shrinking. DISK_EXTENDING: Disk expansion. MODIFYING: Configuration modification in progress.
      */
     readonly nodeGroupState: string;
     /**
-     * 节点组类型。
+     * Node group type.
      */
     readonly nodeGroupType: string;
     /**
-     * 节点列表。
+     * Node list.
      */
     readonly nodes: outputs.emr.GetNodeGroupNode[];
     /**
-     * 子网ID列表。
+     * Subnet ID list.
      */
     readonly subnetIds: string[];
     /**
-     * 系统盘。
+     * System disk.
      */
     readonly systemDisk: outputs.emr.GetNodeGroupSystemDisk;
     /**
-     * 待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
+     * Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
      */
     readonly targetDiskSize: number;
     /**
-     * 集群终止时间。
+     * Cluster termination time.
      */
     readonly terminateTime: string;
     /**
-     * ECS是否附带公网IP。
+     * Whether the ECS instance includes a public IP.
      */
     readonly withPublicIp: boolean;
     /**
-     * zoneId，为空时默认复用集群的zoneId。
+     * zoneId. If empty, the cluster's zoneId is reused by default.
      */
     readonly zoneId: string;
 }

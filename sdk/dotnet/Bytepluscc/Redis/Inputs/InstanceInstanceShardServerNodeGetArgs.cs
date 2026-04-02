@@ -14,25 +14,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis.Inputs
     public sealed class InstanceInstanceShardServerNodeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 节点当前的角色。取值范围如下：PrimaryNode：主节点。SecondaryNode：从节点。
+        /// Current role of the node. Valid values: PrimaryNode: primary node; SecondaryNode: secondary node.
         /// </summary>
         [Input("currentRole")]
         public Input<string>? CurrentRole { get; set; }
 
         /// <summary>
-        /// 节点 ID。
+        /// Node ID.
         /// </summary>
         [Input("nodeId")]
         public Input<string>? NodeId { get; set; }
 
         /// <summary>
-        /// 节点状态。取值范围如下：deploy：启动中。running：运行中。loading：数据加载中。error：错误。
+        /// Node status. Valid values: deploy: starting; running: running; loading: loading data; error: error.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// 节点所在的可用区。
+        /// Availability zone where the node is located.
         /// </summary>
         [Input("zoneId")]
         public Input<string>? ZoneId { get; set; }

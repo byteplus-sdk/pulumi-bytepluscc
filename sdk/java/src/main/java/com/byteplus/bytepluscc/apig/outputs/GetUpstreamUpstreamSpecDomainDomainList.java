@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetUpstreamUpstreamSpecDomainDomainList {
     /**
-     * @return 域名。
+     * @return Domain name
      * 
      */
     private String domain;
     /**
-     * @return 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+     * @return Port. Default: 80 for HTTP, 443 for HTTPS
      * 
      */
     private Integer port;
 
     private GetUpstreamUpstreamSpecDomainDomainList() {}
     /**
-     * @return 域名。
+     * @return Domain name
      * 
      */
     public String domain() {
         return this.domain;
     }
     /**
-     * @return 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+     * @return Port. Default: 80 for HTTP, 443 for HTTPS
      * 
      */
     public Integer port() {

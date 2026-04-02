@@ -21,14 +21,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     public static final RegistryState Empty = new RegistryState();
 
     /**
-     * 镜像仓库实例的付费类型，目前仅支持 PostCharge按量付费模式。
+     * Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
      * 
      */
     @Import(name="chargeType")
     private @Nullable Output<String> chargeType;
 
     /**
-     * @return 镜像仓库实例的付费类型，目前仅支持 PostCharge按量付费模式。
+     * @return Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
      * 
      */
     public Optional<Output<String>> chargeType() {
@@ -36,14 +36,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建镜像仓库实例的时间。
+     * Creation time of the container registry instance
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 创建镜像仓库实例的时间。
+     * @return Creation time of the container registry instance
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -51,14 +51,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 仅计费类型为HybridCharge有值，实例到期时间
+     * Instance expiration time is only available for HybridCharge billing type
      * 
      */
     @Import(name="expireTime")
     private @Nullable Output<String> expireTime;
 
     /**
-     * @return 仅计费类型为HybridCharge有值，实例到期时间
+     * @return Instance expiration time is only available for HybridCharge billing type
      * 
      */
     public Optional<Output<String>> expireTime() {
@@ -66,14 +66,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 标准版实例名称，同一个地域下，名称必须唯一。支持小写英文字母、数字、短划线（-）且数字不能在首位，短划线（-）不能在首位或末位，长度限制为 3～30 个字符。
+     * Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 标准版实例名称，同一个地域下，名称必须唯一。支持小写英文字母、数字、短划线（-）且数字不能在首位，短划线（-）不能在首位或末位，长度限制为 3～30 个字符。
+     * @return Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
      * 
      */
     public Optional<Output<String>> name() {
@@ -81,14 +81,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 填写实例需要关联的项目。一个实例仅支持关联一个项目
+     * Enter the project to associate with the instance. Each instance can only be associated with one project
      * 
      */
     @Import(name="project")
     private @Nullable Output<String> project;
 
     /**
-     * @return 填写实例需要关联的项目。一个实例仅支持关联一个项目
+     * @return Enter the project to associate with the instance. Each instance can only be associated with one project
      * 
      */
     public Optional<Output<String>> project() {
@@ -96,14 +96,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * ProxyCache配置，设置为ProxyCache时必填
+     * ProxyCache configuration. Required when set as ProxyCache
      * 
      */
     @Import(name="proxyCache")
     private @Nullable Output<RegistryProxyCacheArgs> proxyCache;
 
     /**
-     * @return ProxyCache配置，设置为ProxyCache时必填
+     * @return ProxyCache configuration. Required when set as ProxyCache
      * 
      */
     public Optional<Output<RegistryProxyCacheArgs>> proxyCache() {
@@ -111,14 +111,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否设置为ProxyCache实例
+     * Set as ProxyCache instance
      * 
      */
     @Import(name="proxyCacheEnabled")
     private @Nullable Output<Boolean> proxyCacheEnabled;
 
     /**
-     * @return 是否设置为ProxyCache实例
+     * @return Set as ProxyCache instance
      * 
      */
     public Optional<Output<Boolean>> proxyCacheEnabled() {
@@ -126,14 +126,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 仅计费类型为HybridCharge有值，实例自动续费类型
+     * Instance auto-renewal type is only available for HybridCharge billing type
      * 
      */
     @Import(name="renewType")
     private @Nullable Output<String> renewType;
 
     /**
-     * @return 仅计费类型为HybridCharge有值，实例自动续费类型
+     * @return Instance auto-renewal type is only available for HybridCharge billing type
      * 
      */
     public Optional<Output<String>> renewType() {
@@ -141,14 +141,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
+     * Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
      * 
      */
     @Import(name="status")
     private @Nullable Output<RegistryStatusArgs> status;
 
     /**
-     * @return 镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
+     * @return Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
      * 
      */
     public Optional<Output<RegistryStatusArgs>> status() {
@@ -163,14 +163,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
+     * If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
+     * @return If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
      * 
      */
     public Optional<Output<String>> type() {
@@ -212,7 +212,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeType 镜像仓库实例的付费类型，目前仅支持 PostCharge按量付费模式。
+         * @param chargeType Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
          * 
          * @return builder
          * 
@@ -223,7 +223,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeType 镜像仓库实例的付费类型，目前仅支持 PostCharge按量付费模式。
+         * @param chargeType Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
          * 
          * @return builder
          * 
@@ -233,7 +233,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 创建镜像仓库实例的时间。
+         * @param createdTime Creation time of the container registry instance
          * 
          * @return builder
          * 
@@ -244,7 +244,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 创建镜像仓库实例的时间。
+         * @param createdTime Creation time of the container registry instance
          * 
          * @return builder
          * 
@@ -254,7 +254,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expireTime 仅计费类型为HybridCharge有值，实例到期时间
+         * @param expireTime Instance expiration time is only available for HybridCharge billing type
          * 
          * @return builder
          * 
@@ -265,7 +265,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expireTime 仅计费类型为HybridCharge有值，实例到期时间
+         * @param expireTime Instance expiration time is only available for HybridCharge billing type
          * 
          * @return builder
          * 
@@ -275,7 +275,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 标准版实例名称，同一个地域下，名称必须唯一。支持小写英文字母、数字、短划线（-）且数字不能在首位，短划线（-）不能在首位或末位，长度限制为 3～30 个字符。
+         * @param name Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
          * 
          * @return builder
          * 
@@ -286,7 +286,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 标准版实例名称，同一个地域下，名称必须唯一。支持小写英文字母、数字、短划线（-）且数字不能在首位，短划线（-）不能在首位或末位，长度限制为 3～30 个字符。
+         * @param name Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
          * 
          * @return builder
          * 
@@ -296,7 +296,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param project 填写实例需要关联的项目。一个实例仅支持关联一个项目
+         * @param project Enter the project to associate with the instance. Each instance can only be associated with one project
          * 
          * @return builder
          * 
@@ -307,7 +307,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param project 填写实例需要关联的项目。一个实例仅支持关联一个项目
+         * @param project Enter the project to associate with the instance. Each instance can only be associated with one project
          * 
          * @return builder
          * 
@@ -317,7 +317,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyCache ProxyCache配置，设置为ProxyCache时必填
+         * @param proxyCache ProxyCache configuration. Required when set as ProxyCache
          * 
          * @return builder
          * 
@@ -328,7 +328,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyCache ProxyCache配置，设置为ProxyCache时必填
+         * @param proxyCache ProxyCache configuration. Required when set as ProxyCache
          * 
          * @return builder
          * 
@@ -338,7 +338,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyCacheEnabled 是否设置为ProxyCache实例
+         * @param proxyCacheEnabled Set as ProxyCache instance
          * 
          * @return builder
          * 
@@ -349,7 +349,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyCacheEnabled 是否设置为ProxyCache实例
+         * @param proxyCacheEnabled Set as ProxyCache instance
          * 
          * @return builder
          * 
@@ -359,7 +359,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param renewType 仅计费类型为HybridCharge有值，实例自动续费类型
+         * @param renewType Instance auto-renewal type is only available for HybridCharge billing type
          * 
          * @return builder
          * 
@@ -370,7 +370,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param renewType 仅计费类型为HybridCharge有值，实例自动续费类型
+         * @param renewType Instance auto-renewal type is only available for HybridCharge billing type
          * 
          * @return builder
          * 
@@ -380,7 +380,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
+         * @param status Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
          * 
          * @return builder
          * 
@@ -391,7 +391,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
+         * @param status Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
          * 
          * @return builder
          * 
@@ -414,7 +414,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type 不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
+         * @param type If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
          * 
          * @return builder
          * 
@@ -425,7 +425,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type 不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
+         * @param type If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
          * 
          * @return builder
          * 

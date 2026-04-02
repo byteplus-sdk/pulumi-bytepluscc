@@ -15,47 +15,47 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Outputs
     public sealed class GetInstanceNodeResult
     {
         /// <summary>
-        /// 节点的创建时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+        /// Node creation time (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
         /// </summary>
         public readonly string CreateTime;
         /// <summary>
-        /// 只读节点的延迟复制时间，取值为 0~604800，单位为秒。
+        /// Replication delay time for read-only nodes. Value range: 0–604800, unit: seconds
         /// </summary>
         public readonly int DelayReplicationTime;
         /// <summary>
-        /// 内存大小，单位为 GB。
+        /// Memory size, in GB.
         /// </summary>
         public readonly int Memory;
         /// <summary>
-        /// 节点 ID。
+        /// Node ID.
         /// </summary>
         public readonly string NodeId;
         /// <summary>
-        /// 节点规格。
+        /// Node specification.
         /// </summary>
         public readonly string NodeSpec;
         /// <summary>
-        /// 节点状态，取值：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Restoring：恢复中。Updating：变更中。Upgrading：升级中。Error：错误。
+        /// Node status. Values: Running: running. Creating: creating. Deleting: deleting. Restarting: restarting. Restoring: restoring. Updating: updating. Upgrading: upgrading. Error: error
         /// </summary>
         public readonly string NodeStatus;
         /// <summary>
-        /// 节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。
+        /// Node type. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node.
         /// </summary>
         public readonly string NodeType;
         /// <summary>
-        /// 节点与主节点之间的延迟时间。单位为毫秒（ms）。
+        /// Latency between node and primary node, in milliseconds (ms).
         /// </summary>
         public readonly int SyncDelay;
         /// <summary>
-        /// 节点更新本地时间。
+        /// Node updates local time.
         /// </summary>
         public readonly string UpdateTime;
         /// <summary>
-        /// 节点的 CPU 核数。
+        /// Number of CPU cores for the node
         /// </summary>
         public readonly int Vcpu;
         /// <summary>
-        /// 可用区 ID。
+        /// Availability zone ID
         /// </summary>
         public readonly string ZoneId;
 

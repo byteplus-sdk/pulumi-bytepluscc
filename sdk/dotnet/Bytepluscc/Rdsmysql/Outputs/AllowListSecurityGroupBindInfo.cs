@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Outputs
     public sealed class AllowListSecurityGroupBindInfo
     {
         /// <summary>
-        /// 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。说明在 CreateAllowList 接口中，SecurityGroupBindInfoObject 的 BindMode 和 SecurityGroupId 字段为必填项。
+        /// Mode for associating security groups. Values: IngressDirectionIp: Inbound IP. AssociateEcsIp: Associate ECS IP. Note: In the CreateAllowList API, the BindMode and SecurityGroupId fields of SecurityGroupBindInfoObject are required.
         /// </summary>
         public readonly string? BindMode;
         /// <summary>
-        /// 安全组的 IP 地址列表。
+        /// Security group IP address list.
         /// </summary>
         public readonly ImmutableArray<string> IpLists;
         /// <summary>
-        /// 安全组 ID。
+        /// Security group ID.
         /// </summary>
         public readonly string? SecurityGroupId;
         /// <summary>
-        /// 安全组名称。
+        /// Security group name.
         /// </summary>
         public readonly string? SecurityGroupName;
 

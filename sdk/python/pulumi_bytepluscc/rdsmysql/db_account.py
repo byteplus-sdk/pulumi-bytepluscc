@@ -32,12 +32,12 @@ class DbAccountArgs:
                  table_column_privileges: Optional[pulumi.Input[Sequence[pulumi.Input['DbAccountTableColumnPrivilegeArgs']]]] = None):
         """
         The set of arguments for constructing a DbAccount resource.
-        :param pulumi.Input[builtins.str] account_name: 数据库账号名称。命名规则如下：长度为 2~32 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）和中划线（-）组成。账号名称在实例内必须是唯一的。不能使用某些预留字，被禁用的预留字请参见禁用词列表。说明在高权限账号名称中可使用关键字 root 和 admin。
-        :param pulumi.Input[builtins.str] account_password: 数据库账号的密码。规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=,.&?|/。
-        :param pulumi.Input[builtins.str] account_type: 账号类型，取值范围：Super：高权限账号。Normal：普通账号。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
-        :param pulumi.Input[builtins.str] account_desc: 账号信息描述信息，长度不超过 256 个字符。
-        :param pulumi.Input[builtins.str] host: 指定的数据库账号可以访问数据库的 IP 地址。
+        :param pulumi.Input[builtins.str] account_name: Database account name. Naming rules: Must be 2–32 characters long. Must start with a letter and end with a letter or number. Can contain letters, numbers, underscores (_), and hyphens (-). The account name must be unique within the instance. Certain reserved words cannot be used; for disabled reserved words, see the disabled word list. Note: The keywords root and admin can be used in high-privilege account names.
+        :param pulumi.Input[builtins.str] account_password: Database account password. Rules: Length must be 8–32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !@#$%^&*()_+-=,.&?|/.
+        :param pulumi.Input[builtins.str] account_type: Account type. Value options: Super: high-privilege account. Normal: regular account.
+        :param pulumi.Input[builtins.str] instance_id: Instance ID.
+        :param pulumi.Input[builtins.str] account_desc: Account information description, maximum length 256 characters.
+        :param pulumi.Input[builtins.str] host: IP address from which the specified database account can access the database.
         """
         pulumi.set(__self__, "account_name", account_name)
         pulumi.set(__self__, "account_password", account_password)
@@ -56,7 +56,7 @@ class DbAccountArgs:
     @pulumi.getter(name="accountName")
     def account_name(self) -> pulumi.Input[builtins.str]:
         """
-        数据库账号名称。命名规则如下：长度为 2~32 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）和中划线（-）组成。账号名称在实例内必须是唯一的。不能使用某些预留字，被禁用的预留字请参见禁用词列表。说明在高权限账号名称中可使用关键字 root 和 admin。
+        Database account name. Naming rules: Must be 2–32 characters long. Must start with a letter and end with a letter or number. Can contain letters, numbers, underscores (_), and hyphens (-). The account name must be unique within the instance. Certain reserved words cannot be used; for disabled reserved words, see the disabled word list. Note: The keywords root and admin can be used in high-privilege account names.
         """
         return pulumi.get(self, "account_name")
 
@@ -68,7 +68,7 @@ class DbAccountArgs:
     @pulumi.getter(name="accountPassword")
     def account_password(self) -> pulumi.Input[builtins.str]:
         """
-        数据库账号的密码。规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=,.&?|/。
+        Database account password. Rules: Length must be 8–32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !@#$%^&*()_+-=,.&?|/.
         """
         return pulumi.get(self, "account_password")
 
@@ -80,7 +80,7 @@ class DbAccountArgs:
     @pulumi.getter(name="accountType")
     def account_type(self) -> pulumi.Input[builtins.str]:
         """
-        账号类型，取值范围：Super：高权限账号。Normal：普通账号。
+        Account type. Value options: Super: high-privilege account. Normal: regular account.
         """
         return pulumi.get(self, "account_type")
 
@@ -92,7 +92,7 @@ class DbAccountArgs:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Input[builtins.str]:
         """
-        实例 ID。
+        Instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -104,7 +104,7 @@ class DbAccountArgs:
     @pulumi.getter(name="accountDesc")
     def account_desc(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        账号信息描述信息，长度不超过 256 个字符。
+        Account information description, maximum length 256 characters.
         """
         return pulumi.get(self, "account_desc")
 
@@ -125,7 +125,7 @@ class DbAccountArgs:
     @pulumi.getter
     def host(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        指定的数据库账号可以访问数据库的 IP 地址。
+        IP address from which the specified database account can access the database.
         """
         return pulumi.get(self, "host")
 
@@ -159,15 +159,15 @@ class _DbAccountState:
                  table_column_privileges: Optional[pulumi.Input[Sequence[pulumi.Input['DbAccountTableColumnPrivilegeArgs']]]] = None):
         """
         Input properties used for looking up and filtering DbAccount resources.
-        :param pulumi.Input[builtins.str] account_desc: 账号信息描述信息，长度不超过 256 个字符。
-        :param pulumi.Input[builtins.str] account_name: 数据库账号名称。命名规则如下：长度为 2~32 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）和中划线（-）组成。账号名称在实例内必须是唯一的。不能使用某些预留字，被禁用的预留字请参见禁用词列表。说明在高权限账号名称中可使用关键字 root 和 admin。
-        :param pulumi.Input[builtins.str] account_password: 数据库账号的密码。规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=,.&?|/。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] account_privileges_sqls: 账号的指定数据库权限信息的 SQL 语句。
-        :param pulumi.Input[builtins.str] account_status: 账号状态，取值为：Unavailable：不可用。Available：可用。
-        :param pulumi.Input[builtins.str] account_type: 账号类型，取值范围：Super：高权限账号。Normal：普通账号。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] has_table_column_privilege_db_names: 账号拥有的表列权限所属的数据库。说明如果账号没有表列权限，则不返回该字段。
-        :param pulumi.Input[builtins.str] host: 指定的数据库账号可以访问数据库的 IP 地址。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
+        :param pulumi.Input[builtins.str] account_desc: Account information description, maximum length 256 characters.
+        :param pulumi.Input[builtins.str] account_name: Database account name. Naming rules: Must be 2–32 characters long. Must start with a letter and end with a letter or number. Can contain letters, numbers, underscores (_), and hyphens (-). The account name must be unique within the instance. Certain reserved words cannot be used; for disabled reserved words, see the disabled word list. Note: The keywords root and admin can be used in high-privilege account names.
+        :param pulumi.Input[builtins.str] account_password: Database account password. Rules: Length must be 8–32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !@#$%^&*()_+-=,.&?|/.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] account_privileges_sqls: SQL statement for the account's specified database permission information.
+        :param pulumi.Input[builtins.str] account_status: Account status. Values: Unavailable: unavailable. Available: available.
+        :param pulumi.Input[builtins.str] account_type: Account type. Value options: Super: high-privilege account. Normal: regular account.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] has_table_column_privilege_db_names: The database to which the account's table/column privileges belong. Note: If the account does not have table/column privileges, this field will not be returned.
+        :param pulumi.Input[builtins.str] host: IP address from which the specified database account can access the database.
+        :param pulumi.Input[builtins.str] instance_id: Instance ID.
         """
         if account_desc is not None:
             pulumi.set(__self__, "account_desc", account_desc)
@@ -196,7 +196,7 @@ class _DbAccountState:
     @pulumi.getter(name="accountDesc")
     def account_desc(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        账号信息描述信息，长度不超过 256 个字符。
+        Account information description, maximum length 256 characters.
         """
         return pulumi.get(self, "account_desc")
 
@@ -208,7 +208,7 @@ class _DbAccountState:
     @pulumi.getter(name="accountName")
     def account_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        数据库账号名称。命名规则如下：长度为 2~32 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）和中划线（-）组成。账号名称在实例内必须是唯一的。不能使用某些预留字，被禁用的预留字请参见禁用词列表。说明在高权限账号名称中可使用关键字 root 和 admin。
+        Database account name. Naming rules: Must be 2–32 characters long. Must start with a letter and end with a letter or number. Can contain letters, numbers, underscores (_), and hyphens (-). The account name must be unique within the instance. Certain reserved words cannot be used; for disabled reserved words, see the disabled word list. Note: The keywords root and admin can be used in high-privilege account names.
         """
         return pulumi.get(self, "account_name")
 
@@ -220,7 +220,7 @@ class _DbAccountState:
     @pulumi.getter(name="accountPassword")
     def account_password(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        数据库账号的密码。规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=,.&?|/。
+        Database account password. Rules: Length must be 8–32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !@#$%^&*()_+-=,.&?|/.
         """
         return pulumi.get(self, "account_password")
 
@@ -241,7 +241,7 @@ class _DbAccountState:
     @pulumi.getter(name="accountPrivilegesSqls")
     def account_privileges_sqls(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        账号的指定数据库权限信息的 SQL 语句。
+        SQL statement for the account's specified database permission information.
         """
         return pulumi.get(self, "account_privileges_sqls")
 
@@ -253,7 +253,7 @@ class _DbAccountState:
     @pulumi.getter(name="accountStatus")
     def account_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        账号状态，取值为：Unavailable：不可用。Available：可用。
+        Account status. Values: Unavailable: unavailable. Available: available.
         """
         return pulumi.get(self, "account_status")
 
@@ -265,7 +265,7 @@ class _DbAccountState:
     @pulumi.getter(name="accountType")
     def account_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        账号类型，取值范围：Super：高权限账号。Normal：普通账号。
+        Account type. Value options: Super: high-privilege account. Normal: regular account.
         """
         return pulumi.get(self, "account_type")
 
@@ -277,7 +277,7 @@ class _DbAccountState:
     @pulumi.getter(name="hasTableColumnPrivilegeDbNames")
     def has_table_column_privilege_db_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        账号拥有的表列权限所属的数据库。说明如果账号没有表列权限，则不返回该字段。
+        The database to which the account's table/column privileges belong. Note: If the account does not have table/column privileges, this field will not be returned.
         """
         return pulumi.get(self, "has_table_column_privilege_db_names")
 
@@ -289,7 +289,7 @@ class _DbAccountState:
     @pulumi.getter
     def host(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        指定的数据库账号可以访问数据库的 IP 地址。
+        IP address from which the specified database account can access the database.
         """
         return pulumi.get(self, "host")
 
@@ -301,7 +301,7 @@ class _DbAccountState:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例 ID。
+        Instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -335,7 +335,7 @@ class DbAccount(pulumi.CustomResource):
                  table_column_privileges: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbAccountTableColumnPrivilegeArgs', 'DbAccountTableColumnPrivilegeArgsDict']]]]] = None,
                  __props__=None):
         """
-        数据库账号
+        Database account.
 
         ## Import
 
@@ -345,12 +345,12 @@ class DbAccount(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] account_desc: 账号信息描述信息，长度不超过 256 个字符。
-        :param pulumi.Input[builtins.str] account_name: 数据库账号名称。命名规则如下：长度为 2~32 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）和中划线（-）组成。账号名称在实例内必须是唯一的。不能使用某些预留字，被禁用的预留字请参见禁用词列表。说明在高权限账号名称中可使用关键字 root 和 admin。
-        :param pulumi.Input[builtins.str] account_password: 数据库账号的密码。规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=,.&?|/。
-        :param pulumi.Input[builtins.str] account_type: 账号类型，取值范围：Super：高权限账号。Normal：普通账号。
-        :param pulumi.Input[builtins.str] host: 指定的数据库账号可以访问数据库的 IP 地址。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
+        :param pulumi.Input[builtins.str] account_desc: Account information description, maximum length 256 characters.
+        :param pulumi.Input[builtins.str] account_name: Database account name. Naming rules: Must be 2–32 characters long. Must start with a letter and end with a letter or number. Can contain letters, numbers, underscores (_), and hyphens (-). The account name must be unique within the instance. Certain reserved words cannot be used; for disabled reserved words, see the disabled word list. Note: The keywords root and admin can be used in high-privilege account names.
+        :param pulumi.Input[builtins.str] account_password: Database account password. Rules: Length must be 8–32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !@#$%^&*()_+-=,.&?|/.
+        :param pulumi.Input[builtins.str] account_type: Account type. Value options: Super: high-privilege account. Normal: regular account.
+        :param pulumi.Input[builtins.str] host: IP address from which the specified database account can access the database.
+        :param pulumi.Input[builtins.str] instance_id: Instance ID.
         """
         ...
     @overload
@@ -359,7 +359,7 @@ class DbAccount(pulumi.CustomResource):
                  args: DbAccountArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        数据库账号
+        Database account.
 
         ## Import
 
@@ -446,15 +446,15 @@ class DbAccount(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] account_desc: 账号信息描述信息，长度不超过 256 个字符。
-        :param pulumi.Input[builtins.str] account_name: 数据库账号名称。命名规则如下：长度为 2~32 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）和中划线（-）组成。账号名称在实例内必须是唯一的。不能使用某些预留字，被禁用的预留字请参见禁用词列表。说明在高权限账号名称中可使用关键字 root 和 admin。
-        :param pulumi.Input[builtins.str] account_password: 数据库账号的密码。规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=,.&?|/。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] account_privileges_sqls: 账号的指定数据库权限信息的 SQL 语句。
-        :param pulumi.Input[builtins.str] account_status: 账号状态，取值为：Unavailable：不可用。Available：可用。
-        :param pulumi.Input[builtins.str] account_type: 账号类型，取值范围：Super：高权限账号。Normal：普通账号。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] has_table_column_privilege_db_names: 账号拥有的表列权限所属的数据库。说明如果账号没有表列权限，则不返回该字段。
-        :param pulumi.Input[builtins.str] host: 指定的数据库账号可以访问数据库的 IP 地址。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
+        :param pulumi.Input[builtins.str] account_desc: Account information description, maximum length 256 characters.
+        :param pulumi.Input[builtins.str] account_name: Database account name. Naming rules: Must be 2–32 characters long. Must start with a letter and end with a letter or number. Can contain letters, numbers, underscores (_), and hyphens (-). The account name must be unique within the instance. Certain reserved words cannot be used; for disabled reserved words, see the disabled word list. Note: The keywords root and admin can be used in high-privilege account names.
+        :param pulumi.Input[builtins.str] account_password: Database account password. Rules: Length must be 8–32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !@#$%^&*()_+-=,.&?|/.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] account_privileges_sqls: SQL statement for the account's specified database permission information.
+        :param pulumi.Input[builtins.str] account_status: Account status. Values: Unavailable: unavailable. Available: available.
+        :param pulumi.Input[builtins.str] account_type: Account type. Value options: Super: high-privilege account. Normal: regular account.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] has_table_column_privilege_db_names: The database to which the account's table/column privileges belong. Note: If the account does not have table/column privileges, this field will not be returned.
+        :param pulumi.Input[builtins.str] host: IP address from which the specified database account can access the database.
+        :param pulumi.Input[builtins.str] instance_id: Instance ID.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -477,7 +477,7 @@ class DbAccount(pulumi.CustomResource):
     @pulumi.getter(name="accountDesc")
     def account_desc(self) -> pulumi.Output[builtins.str]:
         """
-        账号信息描述信息，长度不超过 256 个字符。
+        Account information description, maximum length 256 characters.
         """
         return pulumi.get(self, "account_desc")
 
@@ -485,7 +485,7 @@ class DbAccount(pulumi.CustomResource):
     @pulumi.getter(name="accountName")
     def account_name(self) -> pulumi.Output[builtins.str]:
         """
-        数据库账号名称。命名规则如下：长度为 2~32 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）和中划线（-）组成。账号名称在实例内必须是唯一的。不能使用某些预留字，被禁用的预留字请参见禁用词列表。说明在高权限账号名称中可使用关键字 root 和 admin。
+        Database account name. Naming rules: Must be 2–32 characters long. Must start with a letter and end with a letter or number. Can contain letters, numbers, underscores (_), and hyphens (-). The account name must be unique within the instance. Certain reserved words cannot be used; for disabled reserved words, see the disabled word list. Note: The keywords root and admin can be used in high-privilege account names.
         """
         return pulumi.get(self, "account_name")
 
@@ -493,7 +493,7 @@ class DbAccount(pulumi.CustomResource):
     @pulumi.getter(name="accountPassword")
     def account_password(self) -> pulumi.Output[builtins.str]:
         """
-        数据库账号的密码。规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=,.&?|/。
+        Database account password. Rules: Length must be 8–32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !@#$%^&*()_+-=,.&?|/.
         """
         return pulumi.get(self, "account_password")
 
@@ -506,7 +506,7 @@ class DbAccount(pulumi.CustomResource):
     @pulumi.getter(name="accountPrivilegesSqls")
     def account_privileges_sqls(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        账号的指定数据库权限信息的 SQL 语句。
+        SQL statement for the account's specified database permission information.
         """
         return pulumi.get(self, "account_privileges_sqls")
 
@@ -514,7 +514,7 @@ class DbAccount(pulumi.CustomResource):
     @pulumi.getter(name="accountStatus")
     def account_status(self) -> pulumi.Output[builtins.str]:
         """
-        账号状态，取值为：Unavailable：不可用。Available：可用。
+        Account status. Values: Unavailable: unavailable. Available: available.
         """
         return pulumi.get(self, "account_status")
 
@@ -522,7 +522,7 @@ class DbAccount(pulumi.CustomResource):
     @pulumi.getter(name="accountType")
     def account_type(self) -> pulumi.Output[builtins.str]:
         """
-        账号类型，取值范围：Super：高权限账号。Normal：普通账号。
+        Account type. Value options: Super: high-privilege account. Normal: regular account.
         """
         return pulumi.get(self, "account_type")
 
@@ -530,7 +530,7 @@ class DbAccount(pulumi.CustomResource):
     @pulumi.getter(name="hasTableColumnPrivilegeDbNames")
     def has_table_column_privilege_db_names(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        账号拥有的表列权限所属的数据库。说明如果账号没有表列权限，则不返回该字段。
+        The database to which the account's table/column privileges belong. Note: If the account does not have table/column privileges, this field will not be returned.
         """
         return pulumi.get(self, "has_table_column_privilege_db_names")
 
@@ -538,7 +538,7 @@ class DbAccount(pulumi.CustomResource):
     @pulumi.getter
     def host(self) -> pulumi.Output[builtins.str]:
         """
-        指定的数据库账号可以访问数据库的 IP 地址。
+        IP address from which the specified database account can access the database.
         """
         return pulumi.get(self, "host")
 
@@ -546,7 +546,7 @@ class DbAccount(pulumi.CustomResource):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例 ID。
+        Instance ID.
         """
         return pulumi.get(self, "instance_id")
 

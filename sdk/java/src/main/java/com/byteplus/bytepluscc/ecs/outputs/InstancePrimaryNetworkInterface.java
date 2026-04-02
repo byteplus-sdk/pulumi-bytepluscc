@@ -14,110 +14,110 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstancePrimaryNetworkInterface {
     /**
-     * @return 实例的IPv6地址数量。
+     * @return The number of IPv6 addresses for the instance.
      * 
      */
     private @Nullable Integer ipv6AddressCount;
     /**
-     * @return 实例的IPv6地址。
+     * @return IPv6 address of the instance.
      * 
      */
     private @Nullable List<String> ipv6Addresses;
     /**
-     * @return 实例的MAC地址。
+     * @return Instance MAC address.
      * 
      */
     private @Nullable String macAddress;
     /**
-     * @return 实例的网络接口ID。
+     * @return The network interface ID of the instance.
      * 
      */
     private @Nullable String networkInterfaceId;
     /**
-     * @return 实例的主IP地址。
+     * @return Instance primary IP address
      * 
      */
     private @Nullable String primaryIpAddress;
     /**
-     * @return 实例的私有IP地址。
+     * @return Instance private IP address.
      * 
      */
     private @Nullable List<String> privateIpAddresses;
     /**
-     * @return 实例的安全组ID。
+     * @return Instance security group ID
      * 
      */
     private @Nullable List<String> securityGroupIds;
     /**
-     * @return 实例的子网ID。
+     * @return Instance subnet ID.
      * 
      */
     private @Nullable String subnetId;
     /**
-     * @return 实例的VPC ID。
+     * @return VPC ID of the instance.
      * 
      */
     private @Nullable String vpcId;
 
     private InstancePrimaryNetworkInterface() {}
     /**
-     * @return 实例的IPv6地址数量。
+     * @return The number of IPv6 addresses for the instance.
      * 
      */
     public Optional<Integer> ipv6AddressCount() {
         return Optional.ofNullable(this.ipv6AddressCount);
     }
     /**
-     * @return 实例的IPv6地址。
+     * @return IPv6 address of the instance.
      * 
      */
     public List<String> ipv6Addresses() {
         return this.ipv6Addresses == null ? List.of() : this.ipv6Addresses;
     }
     /**
-     * @return 实例的MAC地址。
+     * @return Instance MAC address.
      * 
      */
     public Optional<String> macAddress() {
         return Optional.ofNullable(this.macAddress);
     }
     /**
-     * @return 实例的网络接口ID。
+     * @return The network interface ID of the instance.
      * 
      */
     public Optional<String> networkInterfaceId() {
         return Optional.ofNullable(this.networkInterfaceId);
     }
     /**
-     * @return 实例的主IP地址。
+     * @return Instance primary IP address
      * 
      */
     public Optional<String> primaryIpAddress() {
         return Optional.ofNullable(this.primaryIpAddress);
     }
     /**
-     * @return 实例的私有IP地址。
+     * @return Instance private IP address.
      * 
      */
     public List<String> privateIpAddresses() {
         return this.privateIpAddresses == null ? List.of() : this.privateIpAddresses;
     }
     /**
-     * @return 实例的安全组ID。
+     * @return Instance security group ID
      * 
      */
     public List<String> securityGroupIds() {
         return this.securityGroupIds == null ? List.of() : this.securityGroupIds;
     }
     /**
-     * @return 实例的子网ID。
+     * @return Instance subnet ID.
      * 
      */
     public Optional<String> subnetId() {
         return Optional.ofNullable(this.subnetId);
     }
     /**
-     * @return 实例的VPC ID。
+     * @return VPC ID of the instance.
      * 
      */
     public Optional<String> vpcId() {

@@ -13,12 +13,12 @@ import java.util.Objects;
 @CustomType
 public final class GetTrafficMirrorTargetResult {
     /**
-     * @return 镜像会话的创建时间。
+     * @return Creation time of the mirror session.
      * 
      */
     private String createdAt;
     /**
-     * @return 监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
+     * @return Listener description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, the default value is an empty string.
      * 
      */
     private String description;
@@ -28,56 +28,56 @@ public final class GetTrafficMirrorTargetResult {
      */
     private String id;
     /**
-     * @return 镜像目的的资源ID。
+     * @return Resource ID of the mirror target.
      * 
      */
     private String instanceId;
     /**
-     * @return 镜像目的的资源类型。NetworkInterface：弹性网卡。ClbInstance：传统型负载均衡。
+     * @return Resource type of the mirror target. NetworkInterface: Elastic network interface. ClbInstance: Classic load balancer.
      * 
      */
     private String instanceType;
     /**
-     * @return 镜像目的所属项目的名称。不填默认加入default项目。
+     * @return Name of the project to which the mirror target belongs. If not specified, it will be added to the default project.
      * 
      */
     private String projectName;
     /**
-     * @return 镜像目的状态。Available：可用。Creating：创建中。
+     * @return Status of the mirror target. Available: Available. Creating: Creating.
      * 
      */
     private String status;
     /**
-     * @return 镜像目的的标签信息。
+     * @return Tag information of the mirror target.
      * 
      */
     private List<GetTrafficMirrorTargetTag> tags;
     /**
-     * @return 镜像目的的ID。
+     * @return ID of the mirror target.
      * 
      */
     private String trafficMirrorTargetId;
     /**
-     * @return 监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
+     * @return Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, the default is &#39;protocol-port&#39; as the listener name.
      * 
      */
     private String trafficMirrorTargetName;
     /**
-     * @return 镜像会话的更新时间。
+     * @return Update time of the mirror session.
      * 
      */
     private String updatedAt;
 
     private GetTrafficMirrorTargetResult() {}
     /**
-     * @return 镜像会话的创建时间。
+     * @return Creation time of the mirror session.
      * 
      */
     public String createdAt() {
         return this.createdAt;
     }
     /**
-     * @return 监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
+     * @return Listener description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, the default value is an empty string.
      * 
      */
     public String description() {
@@ -91,56 +91,56 @@ public final class GetTrafficMirrorTargetResult {
         return this.id;
     }
     /**
-     * @return 镜像目的的资源ID。
+     * @return Resource ID of the mirror target.
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return 镜像目的的资源类型。NetworkInterface：弹性网卡。ClbInstance：传统型负载均衡。
+     * @return Resource type of the mirror target. NetworkInterface: Elastic network interface. ClbInstance: Classic load balancer.
      * 
      */
     public String instanceType() {
         return this.instanceType;
     }
     /**
-     * @return 镜像目的所属项目的名称。不填默认加入default项目。
+     * @return Name of the project to which the mirror target belongs. If not specified, it will be added to the default project.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 镜像目的状态。Available：可用。Creating：创建中。
+     * @return Status of the mirror target. Available: Available. Creating: Creating.
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 镜像目的的标签信息。
+     * @return Tag information of the mirror target.
      * 
      */
     public List<GetTrafficMirrorTargetTag> tags() {
         return this.tags;
     }
     /**
-     * @return 镜像目的的ID。
+     * @return ID of the mirror target.
      * 
      */
     public String trafficMirrorTargetId() {
         return this.trafficMirrorTargetId;
     }
     /**
-     * @return 监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
+     * @return Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, the default is &#39;protocol-port&#39; as the listener name.
      * 
      */
     public String trafficMirrorTargetName() {
         return this.trafficMirrorTargetName;
     }
     /**
-     * @return 镜像会话的更新时间。
+     * @return Update time of the mirror session.
      * 
      */
     public String updatedAt() {

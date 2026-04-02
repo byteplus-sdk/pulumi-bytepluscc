@@ -12,122 +12,122 @@ import java.util.Objects;
 @CustomType
 public final class GetEndpointAddress {
     /**
-     * @return false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+     * @return false: Volcano Engine private network resolution (default). true: Volcano Engine private network and public network resolution.
      * 
      */
     private Boolean dnsVisibility;
     /**
-     * @return 连接域名。
+     * @return Connection domain name.
      * 
      */
     private String domain;
     /**
-     * @return 连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+     * @return Connection address prefix. The prefix must meet the following rules: start with a lowercase letter and end with a lowercase letter or digit; contain at least two of the following: lowercase letters, digits, or hyphens (-); be at least 8 characters long; and the total connection address length (prefix + suffix) must not exceed 63 characters.
      * 
      */
     private String domainPrefix;
     /**
-     * @return EIP 的 ID，仅对 Public 地址有效。
+     * @return EIP ID, valid only for Public addresses.
      * 
      */
     private String eipId;
     /**
-     * @return 连接终端使用的 EIP 是否因欠费关停。取值：true：是。false：否。
+     * @return Whether the EIP used by the connection endpoint is suspended due to overdue payment. Options: true: yes. false: no.
      * 
      */
     private Boolean eipLocked;
     /**
-     * @return IP 协议版本。取值为 IPv4。
+     * @return IP protocol version. Value: IPv4.
      * 
      */
     private String internetProtocol;
     /**
-     * @return IP 地址。
+     * @return IP address.
      * 
      */
     private String ipAddress;
     /**
-     * @return 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+     * @return Network address type. Options: Private: private network address. Public: public network address.
      * 
      */
     private String networkType;
     /**
-     * @return 端口。
+     * @return Port.
      * 
      */
     private String port;
     /**
-     * @return 子网 ID，仅对 Private 地址有效。
+     * @return Subnet ID, valid only for Private addresses.
      * 
      */
     private String subnetId;
 
     private GetEndpointAddress() {}
     /**
-     * @return false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+     * @return false: Volcano Engine private network resolution (default). true: Volcano Engine private network and public network resolution.
      * 
      */
     public Boolean dnsVisibility() {
         return this.dnsVisibility;
     }
     /**
-     * @return 连接域名。
+     * @return Connection domain name.
      * 
      */
     public String domain() {
         return this.domain;
     }
     /**
-     * @return 连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+     * @return Connection address prefix. The prefix must meet the following rules: start with a lowercase letter and end with a lowercase letter or digit; contain at least two of the following: lowercase letters, digits, or hyphens (-); be at least 8 characters long; and the total connection address length (prefix + suffix) must not exceed 63 characters.
      * 
      */
     public String domainPrefix() {
         return this.domainPrefix;
     }
     /**
-     * @return EIP 的 ID，仅对 Public 地址有效。
+     * @return EIP ID, valid only for Public addresses.
      * 
      */
     public String eipId() {
         return this.eipId;
     }
     /**
-     * @return 连接终端使用的 EIP 是否因欠费关停。取值：true：是。false：否。
+     * @return Whether the EIP used by the connection endpoint is suspended due to overdue payment. Options: true: yes. false: no.
      * 
      */
     public Boolean eipLocked() {
         return this.eipLocked;
     }
     /**
-     * @return IP 协议版本。取值为 IPv4。
+     * @return IP protocol version. Value: IPv4.
      * 
      */
     public String internetProtocol() {
         return this.internetProtocol;
     }
     /**
-     * @return IP 地址。
+     * @return IP address.
      * 
      */
     public String ipAddress() {
         return this.ipAddress;
     }
     /**
-     * @return 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+     * @return Network address type. Options: Private: private network address. Public: public network address.
      * 
      */
     public String networkType() {
         return this.networkType;
     }
     /**
-     * @return 端口。
+     * @return Port.
      * 
      */
     public String port() {
         return this.port;
     }
     /**
-     * @return 子网 ID，仅对 Private 地址有效。
+     * @return Subnet ID, valid only for Private addresses.
      * 
      */
     public String subnetId() {

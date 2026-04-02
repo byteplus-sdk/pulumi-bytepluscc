@@ -12,38 +12,38 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceAutoStorageScalingConfig {
     /**
-     * @return 是否开启实例的自动扩容功能。取值：true：是。false：否。
+     * @return Whether to enable automatic scaling for the instance. Values: true: Yes. false: No.
      * 
      */
     private Boolean enableStorageAutoScale;
     /**
-     * @return 触发自动扩容的可用存储空间占比。取值范围为 10~50，默认值为 10，单位为 %。
+     * @return Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
      * 
      */
     private Integer storageThreshold;
     /**
-     * @return 可自动扩容的存储空间上限。该字段的取值下限为实例存储空间+20GB；取值上限为实例主节点规格对应的存储空间取值范围的上限，单位为 GB。关于不同规格可选择存储空间取值范围的详细信息。
+     * @return Maximum storage space for automatic expansion. The minimum value is instance storage space + 20 GB; the maximum value is the upper limit of the storage space range for the primary node specification, in GB. See details about selectable storage space ranges for different specifications.
      * 
      */
     private Integer storageUpperBound;
 
     private GetInstanceAutoStorageScalingConfig() {}
     /**
-     * @return 是否开启实例的自动扩容功能。取值：true：是。false：否。
+     * @return Whether to enable automatic scaling for the instance. Values: true: Yes. false: No.
      * 
      */
     public Boolean enableStorageAutoScale() {
         return this.enableStorageAutoScale;
     }
     /**
-     * @return 触发自动扩容的可用存储空间占比。取值范围为 10~50，默认值为 10，单位为 %。
+     * @return Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
      * 
      */
     public Integer storageThreshold() {
         return this.storageThreshold;
     }
     /**
-     * @return 可自动扩容的存储空间上限。该字段的取值下限为实例存储空间+20GB；取值上限为实例主节点规格对应的存储空间取值范围的上限，单位为 GB。关于不同规格可选择存储空间取值范围的详细信息。
+     * @return Maximum storage space for automatic expansion. The minimum value is instance storage space + 20 GB; the maximum value is the upper limit of the storage space range for the primary node specification, in GB. See details about selectable storage space ranges for different specifications.
      * 
      */
     public Integer storageUpperBound() {

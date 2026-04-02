@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 创建 Kafka 实例时，可以按需为其绑定白名单，绑定白名单与 Kafka 实例之后，仅配置在白名单中的 IP 地址与地址段才能访问消息队列 Kafka版实例。安全起见，建议您创建白名单，并将客户端的 IP 地址或 IP 地址段添加到 Kafka 实例的白名单中。建议您定期维护和管理白名单，提高 Kafka 实例访问的安全性。
+// When creating a Kafka instance, you can bind an allowlist as needed. After binding the allowlist to the Kafka instance, only IP addresses and address ranges specified in the allowlist can access the Kafka message queue instance. For security, we recommend creating an allowlist and adding the client IP address or IP address range to the Kafka instance's allowlist. Regularly maintain and manage the allowlist to enhance the security of Kafka instance access
 //
 // ## Example Usage
 //
@@ -59,19 +59,19 @@ import (
 type AllowList struct {
 	pulumi.CustomResourceState
 
-	// 白名单规则列表。支持指定为 IP 地址或者 IP 网段。多个 IP 地址或网段之间使用英文逗号（,）分隔。每个白名单最多可配置 300 个 IP 地址或网段。
+	// Allowlist rule list. Supports specifying IP addresses or IP ranges. Separate multiple IP addresses or ranges with commas (,). Each allowlist can contain up to 300 IP addresses or ranges
 	AllowList pulumi.StringOutput `pulumi:"allowList"`
-	// 白名单描述。长度不超过200个字符。
+	// Allowlist description. Maximum length: 200 characters
 	AllowListDesc pulumi.StringOutput `pulumi:"allowListDesc"`
-	// 白名单 ID。
+	// Allowlist ID
 	AllowListId pulumi.StringOutput `pulumi:"allowListId"`
-	// 白名单指定的规则个数。
+	// Number of rules specified in the allowlist
 	AllowListIpNum pulumi.IntOutput `pulumi:"allowListIpNum"`
-	// 白名单规则名称。长度为 1～128 个字符。只能包含中文、字母、数字、下划线和连字符（-）。不能以数字或连字符（-）开头。白名单名称在当前地域下唯一。
+	// Allowlist rule name. Length: 1–128 characters. Can only contain Chinese characters, letters, numbers, underscores, and hyphens (-). Cannot start with a number or hyphen (-). The allowlist name must be unique within the current region
 	AllowListName pulumi.StringOutput `pulumi:"allowListName"`
-	// 此白名单已绑定的实例数量。若指定 AllowList 参数，则此字段必填，用于指定规则修改后预期将会影响到的实例个数。若预期影响个数与实际影响个数不符，则请求失败。
+	// Number of instances already bound to this allowlist. If the AllowList parameter is specified, this field is required to indicate the expected number of instances affected after rule modification. If the expected number does not match the actual number, the request fails
 	ApplyInstanceNum pulumi.IntOutput `pulumi:"applyInstanceNum"`
-	// 白名单绑定的实例个数。
+	// Number of instances bound to the allowlist
 	AssociatedInstanceNum pulumi.IntOutput                       `pulumi:"associatedInstanceNum"`
 	AssociatedInstances   AllowListAssociatedInstanceArrayOutput `pulumi:"associatedInstances"`
 }
@@ -112,37 +112,37 @@ func GetAllowList(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AllowList resources.
 type allowListState struct {
-	// 白名单规则列表。支持指定为 IP 地址或者 IP 网段。多个 IP 地址或网段之间使用英文逗号（,）分隔。每个白名单最多可配置 300 个 IP 地址或网段。
+	// Allowlist rule list. Supports specifying IP addresses or IP ranges. Separate multiple IP addresses or ranges with commas (,). Each allowlist can contain up to 300 IP addresses or ranges
 	AllowList *string `pulumi:"allowList"`
-	// 白名单描述。长度不超过200个字符。
+	// Allowlist description. Maximum length: 200 characters
 	AllowListDesc *string `pulumi:"allowListDesc"`
-	// 白名单 ID。
+	// Allowlist ID
 	AllowListId *string `pulumi:"allowListId"`
-	// 白名单指定的规则个数。
+	// Number of rules specified in the allowlist
 	AllowListIpNum *int `pulumi:"allowListIpNum"`
-	// 白名单规则名称。长度为 1～128 个字符。只能包含中文、字母、数字、下划线和连字符（-）。不能以数字或连字符（-）开头。白名单名称在当前地域下唯一。
+	// Allowlist rule name. Length: 1–128 characters. Can only contain Chinese characters, letters, numbers, underscores, and hyphens (-). Cannot start with a number or hyphen (-). The allowlist name must be unique within the current region
 	AllowListName *string `pulumi:"allowListName"`
-	// 此白名单已绑定的实例数量。若指定 AllowList 参数，则此字段必填，用于指定规则修改后预期将会影响到的实例个数。若预期影响个数与实际影响个数不符，则请求失败。
+	// Number of instances already bound to this allowlist. If the AllowList parameter is specified, this field is required to indicate the expected number of instances affected after rule modification. If the expected number does not match the actual number, the request fails
 	ApplyInstanceNum *int `pulumi:"applyInstanceNum"`
-	// 白名单绑定的实例个数。
+	// Number of instances bound to the allowlist
 	AssociatedInstanceNum *int                          `pulumi:"associatedInstanceNum"`
 	AssociatedInstances   []AllowListAssociatedInstance `pulumi:"associatedInstances"`
 }
 
 type AllowListState struct {
-	// 白名单规则列表。支持指定为 IP 地址或者 IP 网段。多个 IP 地址或网段之间使用英文逗号（,）分隔。每个白名单最多可配置 300 个 IP 地址或网段。
+	// Allowlist rule list. Supports specifying IP addresses or IP ranges. Separate multiple IP addresses or ranges with commas (,). Each allowlist can contain up to 300 IP addresses or ranges
 	AllowList pulumi.StringPtrInput
-	// 白名单描述。长度不超过200个字符。
+	// Allowlist description. Maximum length: 200 characters
 	AllowListDesc pulumi.StringPtrInput
-	// 白名单 ID。
+	// Allowlist ID
 	AllowListId pulumi.StringPtrInput
-	// 白名单指定的规则个数。
+	// Number of rules specified in the allowlist
 	AllowListIpNum pulumi.IntPtrInput
-	// 白名单规则名称。长度为 1～128 个字符。只能包含中文、字母、数字、下划线和连字符（-）。不能以数字或连字符（-）开头。白名单名称在当前地域下唯一。
+	// Allowlist rule name. Length: 1–128 characters. Can only contain Chinese characters, letters, numbers, underscores, and hyphens (-). Cannot start with a number or hyphen (-). The allowlist name must be unique within the current region
 	AllowListName pulumi.StringPtrInput
-	// 此白名单已绑定的实例数量。若指定 AllowList 参数，则此字段必填，用于指定规则修改后预期将会影响到的实例个数。若预期影响个数与实际影响个数不符，则请求失败。
+	// Number of instances already bound to this allowlist. If the AllowList parameter is specified, this field is required to indicate the expected number of instances affected after rule modification. If the expected number does not match the actual number, the request fails
 	ApplyInstanceNum pulumi.IntPtrInput
-	// 白名单绑定的实例个数。
+	// Number of instances bound to the allowlist
 	AssociatedInstanceNum pulumi.IntPtrInput
 	AssociatedInstances   AllowListAssociatedInstanceArrayInput
 }
@@ -152,26 +152,26 @@ func (AllowListState) ElementType() reflect.Type {
 }
 
 type allowListArgs struct {
-	// 白名单规则列表。支持指定为 IP 地址或者 IP 网段。多个 IP 地址或网段之间使用英文逗号（,）分隔。每个白名单最多可配置 300 个 IP 地址或网段。
+	// Allowlist rule list. Supports specifying IP addresses or IP ranges. Separate multiple IP addresses or ranges with commas (,). Each allowlist can contain up to 300 IP addresses or ranges
 	AllowList string `pulumi:"allowList"`
-	// 白名单描述。长度不超过200个字符。
+	// Allowlist description. Maximum length: 200 characters
 	AllowListDesc *string `pulumi:"allowListDesc"`
-	// 白名单规则名称。长度为 1～128 个字符。只能包含中文、字母、数字、下划线和连字符（-）。不能以数字或连字符（-）开头。白名单名称在当前地域下唯一。
+	// Allowlist rule name. Length: 1–128 characters. Can only contain Chinese characters, letters, numbers, underscores, and hyphens (-). Cannot start with a number or hyphen (-). The allowlist name must be unique within the current region
 	AllowListName string `pulumi:"allowListName"`
-	// 此白名单已绑定的实例数量。若指定 AllowList 参数，则此字段必填，用于指定规则修改后预期将会影响到的实例个数。若预期影响个数与实际影响个数不符，则请求失败。
+	// Number of instances already bound to this allowlist. If the AllowList parameter is specified, this field is required to indicate the expected number of instances affected after rule modification. If the expected number does not match the actual number, the request fails
 	ApplyInstanceNum    *int                          `pulumi:"applyInstanceNum"`
 	AssociatedInstances []AllowListAssociatedInstance `pulumi:"associatedInstances"`
 }
 
 // The set of arguments for constructing a AllowList resource.
 type AllowListArgs struct {
-	// 白名单规则列表。支持指定为 IP 地址或者 IP 网段。多个 IP 地址或网段之间使用英文逗号（,）分隔。每个白名单最多可配置 300 个 IP 地址或网段。
+	// Allowlist rule list. Supports specifying IP addresses or IP ranges. Separate multiple IP addresses or ranges with commas (,). Each allowlist can contain up to 300 IP addresses or ranges
 	AllowList pulumi.StringInput
-	// 白名单描述。长度不超过200个字符。
+	// Allowlist description. Maximum length: 200 characters
 	AllowListDesc pulumi.StringPtrInput
-	// 白名单规则名称。长度为 1～128 个字符。只能包含中文、字母、数字、下划线和连字符（-）。不能以数字或连字符（-）开头。白名单名称在当前地域下唯一。
+	// Allowlist rule name. Length: 1–128 characters. Can only contain Chinese characters, letters, numbers, underscores, and hyphens (-). Cannot start with a number or hyphen (-). The allowlist name must be unique within the current region
 	AllowListName pulumi.StringInput
-	// 此白名单已绑定的实例数量。若指定 AllowList 参数，则此字段必填，用于指定规则修改后预期将会影响到的实例个数。若预期影响个数与实际影响个数不符，则请求失败。
+	// Number of instances already bound to this allowlist. If the AllowList parameter is specified, this field is required to indicate the expected number of instances affected after rule modification. If the expected number does not match the actual number, the request fails
 	ApplyInstanceNum    pulumi.IntPtrInput
 	AssociatedInstances AllowListAssociatedInstanceArrayInput
 }
@@ -263,37 +263,37 @@ func (o AllowListOutput) ToAllowListOutputWithContext(ctx context.Context) Allow
 	return o
 }
 
-// 白名单规则列表。支持指定为 IP 地址或者 IP 网段。多个 IP 地址或网段之间使用英文逗号（,）分隔。每个白名单最多可配置 300 个 IP 地址或网段。
+// Allowlist rule list. Supports specifying IP addresses or IP ranges. Separate multiple IP addresses or ranges with commas (,). Each allowlist can contain up to 300 IP addresses or ranges
 func (o AllowListOutput) AllowList() pulumi.StringOutput {
 	return o.ApplyT(func(v *AllowList) pulumi.StringOutput { return v.AllowList }).(pulumi.StringOutput)
 }
 
-// 白名单描述。长度不超过200个字符。
+// Allowlist description. Maximum length: 200 characters
 func (o AllowListOutput) AllowListDesc() pulumi.StringOutput {
 	return o.ApplyT(func(v *AllowList) pulumi.StringOutput { return v.AllowListDesc }).(pulumi.StringOutput)
 }
 
-// 白名单 ID。
+// Allowlist ID
 func (o AllowListOutput) AllowListId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AllowList) pulumi.StringOutput { return v.AllowListId }).(pulumi.StringOutput)
 }
 
-// 白名单指定的规则个数。
+// Number of rules specified in the allowlist
 func (o AllowListOutput) AllowListIpNum() pulumi.IntOutput {
 	return o.ApplyT(func(v *AllowList) pulumi.IntOutput { return v.AllowListIpNum }).(pulumi.IntOutput)
 }
 
-// 白名单规则名称。长度为 1～128 个字符。只能包含中文、字母、数字、下划线和连字符（-）。不能以数字或连字符（-）开头。白名单名称在当前地域下唯一。
+// Allowlist rule name. Length: 1–128 characters. Can only contain Chinese characters, letters, numbers, underscores, and hyphens (-). Cannot start with a number or hyphen (-). The allowlist name must be unique within the current region
 func (o AllowListOutput) AllowListName() pulumi.StringOutput {
 	return o.ApplyT(func(v *AllowList) pulumi.StringOutput { return v.AllowListName }).(pulumi.StringOutput)
 }
 
-// 此白名单已绑定的实例数量。若指定 AllowList 参数，则此字段必填，用于指定规则修改后预期将会影响到的实例个数。若预期影响个数与实际影响个数不符，则请求失败。
+// Number of instances already bound to this allowlist. If the AllowList parameter is specified, this field is required to indicate the expected number of instances affected after rule modification. If the expected number does not match the actual number, the request fails
 func (o AllowListOutput) ApplyInstanceNum() pulumi.IntOutput {
 	return o.ApplyT(func(v *AllowList) pulumi.IntOutput { return v.ApplyInstanceNum }).(pulumi.IntOutput)
 }
 
-// 白名单绑定的实例个数。
+// Number of instances bound to the allowlist
 func (o AllowListOutput) AssociatedInstanceNum() pulumi.IntOutput {
 	return o.ApplyT(func(v *AllowList) pulumi.IntOutput { return v.AssociatedInstanceNum }).(pulumi.IntOutput)
 }

@@ -31,10 +31,10 @@ class PolicyArgs:
                  policy_users: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyPolicyUserArgs']]]] = None):
         """
         The set of arguments for constructing a Policy resource.
-        :param pulumi.Input[builtins.str] policy_document: 策略语法内容，例如：{"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
-        :param pulumi.Input[builtins.str] policy_name: 策略名，长度1~64，支持英文、数字和+=,.@-_符号。
-        :param pulumi.Input[builtins.str] policy_type: 策略类型。System代表系统预设策略，Custom代表自定义策略。
-        :param pulumi.Input[builtins.str] description: 策略描述，长度不超过128。
+        :param pulumi.Input[builtins.str] policy_document: Policy syntax content, for example: {"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
+        :param pulumi.Input[builtins.str] policy_name: Policy name, 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
+        :param pulumi.Input[builtins.str] policy_type: Policy type. System indicates a system preset policy; Custom indicates a custom policy.
+        :param pulumi.Input[builtins.str] description: Policy description, no more than 128 characters.
         """
         pulumi.set(__self__, "policy_document", policy_document)
         pulumi.set(__self__, "policy_name", policy_name)
@@ -52,7 +52,7 @@ class PolicyArgs:
     @pulumi.getter(name="policyDocument")
     def policy_document(self) -> pulumi.Input[builtins.str]:
         """
-        策略语法内容，例如：{"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
+        Policy syntax content, for example: {"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
         """
         return pulumi.get(self, "policy_document")
 
@@ -64,7 +64,7 @@ class PolicyArgs:
     @pulumi.getter(name="policyName")
     def policy_name(self) -> pulumi.Input[builtins.str]:
         """
-        策略名，长度1~64，支持英文、数字和+=,.@-_符号。
+        Policy name, 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
         """
         return pulumi.get(self, "policy_name")
 
@@ -76,7 +76,7 @@ class PolicyArgs:
     @pulumi.getter(name="policyType")
     def policy_type(self) -> pulumi.Input[builtins.str]:
         """
-        策略类型。System代表系统预设策略，Custom代表自定义策略。
+        Policy type. System indicates a system preset policy; Custom indicates a custom policy.
         """
         return pulumi.get(self, "policy_type")
 
@@ -88,7 +88,7 @@ class PolicyArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        策略描述，长度不超过128。
+        Policy description, no more than 128 characters.
         """
         return pulumi.get(self, "description")
 
@@ -142,16 +142,16 @@ class _PolicyState:
                  updated_time: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Policy resources.
-        :param pulumi.Input[builtins.int] attachment_count: 策略绑定的身份数量。
-        :param pulumi.Input[builtins.str] category: 系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
-        :param pulumi.Input[builtins.str] created_time: 策略创建时间。
-        :param pulumi.Input[builtins.str] description: 策略描述，长度不超过128。
-        :param pulumi.Input[builtins.int] is_service_role_policy: 是否是服务关联角色的策略，0代表否，1代表是。
-        :param pulumi.Input[builtins.str] policy_document: 策略语法内容，例如：{"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
-        :param pulumi.Input[builtins.str] policy_name: 策略名，长度1~64，支持英文、数字和+=,.@-_符号。
-        :param pulumi.Input[builtins.str] policy_trn: 策略的TRN。
-        :param pulumi.Input[builtins.str] policy_type: 策略类型。System代表系统预设策略，Custom代表自定义策略。
-        :param pulumi.Input[builtins.str] updated_time: 策略更新时间。
+        :param pulumi.Input[builtins.int] attachment_count: Number of identities bound to the policy.
+        :param pulumi.Input[builtins.str] category: Category of the system preset policy, usually the service code. This field is not returned for custom policies.
+        :param pulumi.Input[builtins.str] created_time: Policy creation time.
+        :param pulumi.Input[builtins.str] description: Policy description, no more than 128 characters.
+        :param pulumi.Input[builtins.int] is_service_role_policy: Indicates whether the policy is for a service-linked role. 0 means no; 1 means yes.
+        :param pulumi.Input[builtins.str] policy_document: Policy syntax content, for example: {"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
+        :param pulumi.Input[builtins.str] policy_name: Policy name, 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
+        :param pulumi.Input[builtins.str] policy_trn: Policy TRN.
+        :param pulumi.Input[builtins.str] policy_type: Policy type. System indicates a system preset policy; Custom indicates a custom policy.
+        :param pulumi.Input[builtins.str] updated_time: Policy update time.
         """
         if attachment_count is not None:
             pulumi.set(__self__, "attachment_count", attachment_count)
@@ -184,7 +184,7 @@ class _PolicyState:
     @pulumi.getter(name="attachmentCount")
     def attachment_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        策略绑定的身份数量。
+        Number of identities bound to the policy.
         """
         return pulumi.get(self, "attachment_count")
 
@@ -196,7 +196,7 @@ class _PolicyState:
     @pulumi.getter
     def category(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
+        Category of the system preset policy, usually the service code. This field is not returned for custom policies.
         """
         return pulumi.get(self, "category")
 
@@ -208,7 +208,7 @@ class _PolicyState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        策略创建时间。
+        Policy creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -220,7 +220,7 @@ class _PolicyState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        策略描述，长度不超过128。
+        Policy description, no more than 128 characters.
         """
         return pulumi.get(self, "description")
 
@@ -232,7 +232,7 @@ class _PolicyState:
     @pulumi.getter(name="isServiceRolePolicy")
     def is_service_role_policy(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        是否是服务关联角色的策略，0代表否，1代表是。
+        Indicates whether the policy is for a service-linked role. 0 means no; 1 means yes.
         """
         return pulumi.get(self, "is_service_role_policy")
 
@@ -244,7 +244,7 @@ class _PolicyState:
     @pulumi.getter(name="policyDocument")
     def policy_document(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        策略语法内容，例如：{"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
+        Policy syntax content, for example: {"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
         """
         return pulumi.get(self, "policy_document")
 
@@ -256,7 +256,7 @@ class _PolicyState:
     @pulumi.getter(name="policyName")
     def policy_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        策略名，长度1~64，支持英文、数字和+=,.@-_符号。
+        Policy name, 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
         """
         return pulumi.get(self, "policy_name")
 
@@ -277,7 +277,7 @@ class _PolicyState:
     @pulumi.getter(name="policyTrn")
     def policy_trn(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        策略的TRN。
+        Policy TRN.
         """
         return pulumi.get(self, "policy_trn")
 
@@ -289,7 +289,7 @@ class _PolicyState:
     @pulumi.getter(name="policyType")
     def policy_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        策略类型。System代表系统预设策略，Custom代表自定义策略。
+        Policy type. System indicates a system preset policy; Custom indicates a custom policy.
         """
         return pulumi.get(self, "policy_type")
 
@@ -319,7 +319,7 @@ class _PolicyState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        策略更新时间。
+        Policy update time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -343,7 +343,7 @@ class Policy(pulumi.CustomResource):
                  policy_users: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PolicyPolicyUserArgs', 'PolicyPolicyUserArgsDict']]]]] = None,
                  __props__=None):
         """
-        策略是对权限的一种描述，IAM用户、用户组或角色均需通过关联策略来赋予权限。当系统预设策略不能满足要求时，您可以创建自定义策略，对权限进行细粒度的定义。
+        A policy describes permissions. IAM users, user groups, or roles must be granted permissions by associating policies. If system preset policies do not meet your requirements, you can create custom policies for fine-grained permission definition.
 
         ## Import
 
@@ -353,10 +353,10 @@ class Policy(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: 策略描述，长度不超过128。
-        :param pulumi.Input[builtins.str] policy_document: 策略语法内容，例如：{"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
-        :param pulumi.Input[builtins.str] policy_name: 策略名，长度1~64，支持英文、数字和+=,.@-_符号。
-        :param pulumi.Input[builtins.str] policy_type: 策略类型。System代表系统预设策略，Custom代表自定义策略。
+        :param pulumi.Input[builtins.str] description: Policy description, no more than 128 characters.
+        :param pulumi.Input[builtins.str] policy_document: Policy syntax content, for example: {"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
+        :param pulumi.Input[builtins.str] policy_name: Policy name, 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
+        :param pulumi.Input[builtins.str] policy_type: Policy type. System indicates a system preset policy; Custom indicates a custom policy.
         """
         ...
     @overload
@@ -365,7 +365,7 @@ class Policy(pulumi.CustomResource):
                  args: PolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        策略是对权限的一种描述，IAM用户、用户组或角色均需通过关联策略来赋予权限。当系统预设策略不能满足要求时，您可以创建自定义策略，对权限进行细粒度的定义。
+        A policy describes permissions. IAM users, user groups, or roles must be granted permissions by associating policies. If system preset policies do not meet your requirements, you can create custom policies for fine-grained permission definition.
 
         ## Import
 
@@ -453,16 +453,16 @@ class Policy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] attachment_count: 策略绑定的身份数量。
-        :param pulumi.Input[builtins.str] category: 系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
-        :param pulumi.Input[builtins.str] created_time: 策略创建时间。
-        :param pulumi.Input[builtins.str] description: 策略描述，长度不超过128。
-        :param pulumi.Input[builtins.int] is_service_role_policy: 是否是服务关联角色的策略，0代表否，1代表是。
-        :param pulumi.Input[builtins.str] policy_document: 策略语法内容，例如：{"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
-        :param pulumi.Input[builtins.str] policy_name: 策略名，长度1~64，支持英文、数字和+=,.@-_符号。
-        :param pulumi.Input[builtins.str] policy_trn: 策略的TRN。
-        :param pulumi.Input[builtins.str] policy_type: 策略类型。System代表系统预设策略，Custom代表自定义策略。
-        :param pulumi.Input[builtins.str] updated_time: 策略更新时间。
+        :param pulumi.Input[builtins.int] attachment_count: Number of identities bound to the policy.
+        :param pulumi.Input[builtins.str] category: Category of the system preset policy, usually the service code. This field is not returned for custom policies.
+        :param pulumi.Input[builtins.str] created_time: Policy creation time.
+        :param pulumi.Input[builtins.str] description: Policy description, no more than 128 characters.
+        :param pulumi.Input[builtins.int] is_service_role_policy: Indicates whether the policy is for a service-linked role. 0 means no; 1 means yes.
+        :param pulumi.Input[builtins.str] policy_document: Policy syntax content, for example: {"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
+        :param pulumi.Input[builtins.str] policy_name: Policy name, 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
+        :param pulumi.Input[builtins.str] policy_trn: Policy TRN.
+        :param pulumi.Input[builtins.str] policy_type: Policy type. System indicates a system preset policy; Custom indicates a custom policy.
+        :param pulumi.Input[builtins.str] updated_time: Policy update time.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -487,7 +487,7 @@ class Policy(pulumi.CustomResource):
     @pulumi.getter(name="attachmentCount")
     def attachment_count(self) -> pulumi.Output[builtins.int]:
         """
-        策略绑定的身份数量。
+        Number of identities bound to the policy.
         """
         return pulumi.get(self, "attachment_count")
 
@@ -495,7 +495,7 @@ class Policy(pulumi.CustomResource):
     @pulumi.getter
     def category(self) -> pulumi.Output[builtins.str]:
         """
-        系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
+        Category of the system preset policy, usually the service code. This field is not returned for custom policies.
         """
         return pulumi.get(self, "category")
 
@@ -503,7 +503,7 @@ class Policy(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        策略创建时间。
+        Policy creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -511,7 +511,7 @@ class Policy(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        策略描述，长度不超过128。
+        Policy description, no more than 128 characters.
         """
         return pulumi.get(self, "description")
 
@@ -519,7 +519,7 @@ class Policy(pulumi.CustomResource):
     @pulumi.getter(name="isServiceRolePolicy")
     def is_service_role_policy(self) -> pulumi.Output[builtins.int]:
         """
-        是否是服务关联角色的策略，0代表否，1代表是。
+        Indicates whether the policy is for a service-linked role. 0 means no; 1 means yes.
         """
         return pulumi.get(self, "is_service_role_policy")
 
@@ -527,7 +527,7 @@ class Policy(pulumi.CustomResource):
     @pulumi.getter(name="policyDocument")
     def policy_document(self) -> pulumi.Output[builtins.str]:
         """
-        策略语法内容，例如：{"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
+        Policy syntax content, for example: {"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
         """
         return pulumi.get(self, "policy_document")
 
@@ -535,7 +535,7 @@ class Policy(pulumi.CustomResource):
     @pulumi.getter(name="policyName")
     def policy_name(self) -> pulumi.Output[builtins.str]:
         """
-        策略名，长度1~64，支持英文、数字和+=,.@-_符号。
+        Policy name, 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
         """
         return pulumi.get(self, "policy_name")
 
@@ -548,7 +548,7 @@ class Policy(pulumi.CustomResource):
     @pulumi.getter(name="policyTrn")
     def policy_trn(self) -> pulumi.Output[builtins.str]:
         """
-        策略的TRN。
+        Policy TRN.
         """
         return pulumi.get(self, "policy_trn")
 
@@ -556,7 +556,7 @@ class Policy(pulumi.CustomResource):
     @pulumi.getter(name="policyType")
     def policy_type(self) -> pulumi.Output[builtins.str]:
         """
-        策略类型。System代表系统预设策略，Custom代表自定义策略。
+        Policy type. System indicates a system preset policy; Custom indicates a custom policy.
         """
         return pulumi.get(self, "policy_type")
 
@@ -574,7 +574,7 @@ class Policy(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        策略更新时间。
+        Policy update time.
         """
         return pulumi.get(self, "updated_time")
 

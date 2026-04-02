@@ -13,50 +13,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NodePoolNodeConfigSystemVolume {
     /**
-     * @return 放置组Id
+     * @return Placement group ID
      * 
      */
     private @Nullable String placementGroupId;
     /**
-     * @return 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+     * @return Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
      * 
      */
     private @Nullable Integer size;
     /**
-     * @return 放置子组
+     * @return Placement subgroup
      * 
      */
     private @Nullable Integer subgroupNumber;
     /**
-     * @return 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+     * @return Cloud disk types: ESSD*PL0: (default) Ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: Ultra-fast SSD cloud disk with performance level PL1.
      * 
      */
     private @Nullable String type;
 
     private NodePoolNodeConfigSystemVolume() {}
     /**
-     * @return 放置组Id
+     * @return Placement group ID
      * 
      */
     public Optional<String> placementGroupId() {
         return Optional.ofNullable(this.placementGroupId);
     }
     /**
-     * @return 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+     * @return Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
      * 
      */
     public Optional<Integer> size() {
         return Optional.ofNullable(this.size);
     }
     /**
-     * @return 放置子组
+     * @return Placement subgroup
      * 
      */
     public Optional<Integer> subgroupNumber() {
         return Optional.ofNullable(this.subgroupNumber);
     }
     /**
-     * @return 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+     * @return Cloud disk types: ESSD*PL0: (default) Ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: Ultra-fast SSD cloud disk with performance level PL1.
      * 
      */
     public Optional<String> type() {

@@ -63,7 +63,7 @@ class GetSnatentryResult:
     @pulumi.getter(name="eipAddress")
     def eip_address(self) -> builtins.str:
         """
-        SNAT规则关联的公网IP的IP地址。返回单个公网IP的IP地址。 返回多个公网IP的IP地址。
+        IP address of the public IP associated with the SNAT rule. Returns the IP address for a single public IP. Returns IP addresses for multiple public IPs.
         """
         return pulumi.get(self, "eip_address")
 
@@ -71,7 +71,7 @@ class GetSnatentryResult:
     @pulumi.getter(name="eipId")
     def eip_id(self) -> builtins.str:
         """
-        SNAT规则关联的公网IP的ID。返回单个公网IP的ID。 返回多个公网IP的ID。
+        ID of the public IP associated with the SNAT rule. Returns the ID for a single public IP. Returns IDs for multiple public IPs.
         """
         return pulumi.get(self, "eip_id")
 
@@ -87,7 +87,7 @@ class GetSnatentryResult:
     @pulumi.getter(name="natGatewayId")
     def nat_gateway_id(self) -> builtins.str:
         """
-        SNAT规则所属NAT网关的ID。
+        ID of the NAT gateway associated with the SNAT rule
         """
         return pulumi.get(self, "nat_gateway_id")
 
@@ -95,7 +95,7 @@ class GetSnatentryResult:
     @pulumi.getter(name="natIpId")
     def nat_ip_id(self) -> builtins.str:
         """
-        私网NAT网关的中转IP的ID。
+        ID of the transit IP for the private NAT gateway
         """
         return pulumi.get(self, "nat_ip_id")
 
@@ -103,7 +103,7 @@ class GetSnatentryResult:
     @pulumi.getter(name="snatEntryId")
     def snat_entry_id(self) -> builtins.str:
         """
-        SNAT规则的ID。
+        ID of the SNAT rule
         """
         return pulumi.get(self, "snat_entry_id")
 
@@ -111,7 +111,7 @@ class GetSnatentryResult:
     @pulumi.getter(name="snatEntryName")
     def snat_entry_name(self) -> builtins.str:
         """
-        SNAT规则的名称。
+        Name of the SNAT rule
         """
         return pulumi.get(self, "snat_entry_name")
 
@@ -119,7 +119,7 @@ class GetSnatentryResult:
     @pulumi.getter(name="sourceCidr")
     def source_cidr(self) -> builtins.str:
         """
-        SNAT规则对应的网段。
+        Network segment corresponding to the SNAT rule
         """
         return pulumi.get(self, "source_cidr")
 
@@ -127,7 +127,7 @@ class GetSnatentryResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        SNAT规则的状态。Creating：创建中。Deleting：删除中。Available：可用。
+        Status of the SNAT rule. Creating: being created. Deleting: being deleted. Available: available.
         """
         return pulumi.get(self, "status")
 
@@ -135,7 +135,7 @@ class GetSnatentryResult:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> builtins.str:
         """
-        SNAT规则关联子网的ID。
+        ID of the subnet associated with the SNAT rule
         """
         return pulumi.get(self, "subnet_id")
 

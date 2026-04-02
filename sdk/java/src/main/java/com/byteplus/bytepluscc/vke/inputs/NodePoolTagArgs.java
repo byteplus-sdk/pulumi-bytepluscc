@@ -16,14 +16,14 @@ public final class NodePoolTagArgs extends com.pulumi.resources.ResourceArgs {
     public static final NodePoolTagArgs Empty = new NodePoolTagArgs();
 
     /**
-     * 标签键。
+     * Label key
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 标签键。
+     * @return Label key
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class NodePoolTagArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 标签值。
+     * Label value.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 标签值。
+     * @return Label value.
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class NodePoolTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param key 标签键。
+         * @param key Label key
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class NodePoolTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param key 标签键。
+         * @param key Label key
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class NodePoolTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value 标签值。
+         * @param value Label value.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class NodePoolTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value 标签值。
+         * @param value Label value.
          * 
          * @return builder
          * 

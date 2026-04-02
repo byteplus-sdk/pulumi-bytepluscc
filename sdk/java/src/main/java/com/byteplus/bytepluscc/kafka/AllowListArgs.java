@@ -20,14 +20,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
     public static final AllowListArgs Empty = new AllowListArgs();
 
     /**
-     * 白名单规则列表。支持指定为 IP 地址或者 IP 网段。多个 IP 地址或网段之间使用英文逗号（,）分隔。每个白名单最多可配置 300 个 IP 地址或网段。
+     * Allowlist rule list. Supports specifying IP addresses or IP ranges. Separate multiple IP addresses or ranges with commas (,). Each allowlist can contain up to 300 IP addresses or ranges
      * 
      */
     @Import(name="allowList", required=true)
     private Output<String> allowList;
 
     /**
-     * @return 白名单规则列表。支持指定为 IP 地址或者 IP 网段。多个 IP 地址或网段之间使用英文逗号（,）分隔。每个白名单最多可配置 300 个 IP 地址或网段。
+     * @return Allowlist rule list. Supports specifying IP addresses or IP ranges. Separate multiple IP addresses or ranges with commas (,). Each allowlist can contain up to 300 IP addresses or ranges
      * 
      */
     public Output<String> allowList() {
@@ -35,14 +35,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 白名单描述。长度不超过200个字符。
+     * Allowlist description. Maximum length: 200 characters
      * 
      */
     @Import(name="allowListDesc")
     private @Nullable Output<String> allowListDesc;
 
     /**
-     * @return 白名单描述。长度不超过200个字符。
+     * @return Allowlist description. Maximum length: 200 characters
      * 
      */
     public Optional<Output<String>> allowListDesc() {
@@ -50,14 +50,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 白名单规则名称。长度为 1～128 个字符。只能包含中文、字母、数字、下划线和连字符（-）。不能以数字或连字符（-）开头。白名单名称在当前地域下唯一。
+     * Allowlist rule name. Length: 1–128 characters. Can only contain Chinese characters, letters, numbers, underscores, and hyphens (-). Cannot start with a number or hyphen (-). The allowlist name must be unique within the current region
      * 
      */
     @Import(name="allowListName", required=true)
     private Output<String> allowListName;
 
     /**
-     * @return 白名单规则名称。长度为 1～128 个字符。只能包含中文、字母、数字、下划线和连字符（-）。不能以数字或连字符（-）开头。白名单名称在当前地域下唯一。
+     * @return Allowlist rule name. Length: 1–128 characters. Can only contain Chinese characters, letters, numbers, underscores, and hyphens (-). Cannot start with a number or hyphen (-). The allowlist name must be unique within the current region
      * 
      */
     public Output<String> allowListName() {
@@ -65,14 +65,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 此白名单已绑定的实例数量。若指定 AllowList 参数，则此字段必填，用于指定规则修改后预期将会影响到的实例个数。若预期影响个数与实际影响个数不符，则请求失败。
+     * Number of instances already bound to this allowlist. If the AllowList parameter is specified, this field is required to indicate the expected number of instances affected after rule modification. If the expected number does not match the actual number, the request fails
      * 
      */
     @Import(name="applyInstanceNum")
     private @Nullable Output<Integer> applyInstanceNum;
 
     /**
-     * @return 此白名单已绑定的实例数量。若指定 AllowList 参数，则此字段必填，用于指定规则修改后预期将会影响到的实例个数。若预期影响个数与实际影响个数不符，则请求失败。
+     * @return Number of instances already bound to this allowlist. If the AllowList parameter is specified, this field is required to indicate the expected number of instances affected after rule modification. If the expected number does not match the actual number, the request fails
      * 
      */
     public Optional<Output<Integer>> applyInstanceNum() {
@@ -115,7 +115,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowList 白名单规则列表。支持指定为 IP 地址或者 IP 网段。多个 IP 地址或网段之间使用英文逗号（,）分隔。每个白名单最多可配置 300 个 IP 地址或网段。
+         * @param allowList Allowlist rule list. Supports specifying IP addresses or IP ranges. Separate multiple IP addresses or ranges with commas (,). Each allowlist can contain up to 300 IP addresses or ranges
          * 
          * @return builder
          * 
@@ -126,7 +126,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowList 白名单规则列表。支持指定为 IP 地址或者 IP 网段。多个 IP 地址或网段之间使用英文逗号（,）分隔。每个白名单最多可配置 300 个 IP 地址或网段。
+         * @param allowList Allowlist rule list. Supports specifying IP addresses or IP ranges. Separate multiple IP addresses or ranges with commas (,). Each allowlist can contain up to 300 IP addresses or ranges
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListDesc 白名单描述。长度不超过200个字符。
+         * @param allowListDesc Allowlist description. Maximum length: 200 characters
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListDesc 白名单描述。长度不超过200个字符。
+         * @param allowListDesc Allowlist description. Maximum length: 200 characters
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListName 白名单规则名称。长度为 1～128 个字符。只能包含中文、字母、数字、下划线和连字符（-）。不能以数字或连字符（-）开头。白名单名称在当前地域下唯一。
+         * @param allowListName Allowlist rule name. Length: 1–128 characters. Can only contain Chinese characters, letters, numbers, underscores, and hyphens (-). Cannot start with a number or hyphen (-). The allowlist name must be unique within the current region
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListName 白名单规则名称。长度为 1～128 个字符。只能包含中文、字母、数字、下划线和连字符（-）。不能以数字或连字符（-）开头。白名单名称在当前地域下唯一。
+         * @param allowListName Allowlist rule name. Length: 1–128 characters. Can only contain Chinese characters, letters, numbers, underscores, and hyphens (-). Cannot start with a number or hyphen (-). The allowlist name must be unique within the current region
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param applyInstanceNum 此白名单已绑定的实例数量。若指定 AllowList 参数，则此字段必填，用于指定规则修改后预期将会影响到的实例个数。若预期影响个数与实际影响个数不符，则请求失败。
+         * @param applyInstanceNum Number of instances already bound to this allowlist. If the AllowList parameter is specified, this field is required to indicate the expected number of instances affected after rule modification. If the expected number does not match the actual number, the request fails
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param applyInstanceNum 此白名单已绑定的实例数量。若指定 AllowList 参数，则此字段必填，用于指定规则修改后预期将会影响到的实例个数。若预期影响个数与实际影响个数不符，则请求失败。
+         * @param applyInstanceNum Number of instances already bound to this allowlist. If the AllowList parameter is specified, this field is required to indicate the expected number of instances affected after rule modification. If the expected number does not match the actual number, the request fails
          * 
          * @return builder
          * 

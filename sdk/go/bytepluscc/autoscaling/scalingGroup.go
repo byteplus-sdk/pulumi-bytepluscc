@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 伸缩组用于管理一组云资源实例。通过伸缩组可以定义云资源池中的实例数/容量、冷却时间、负载均衡等信息。
+// Scaling groups are used to manage a set of cloud resource instances. You can use scaling groups to define the number/capacity of instances in the resource pool, cooldown time, load balancing, and other information.
 //
 // ## Import
 //
@@ -22,60 +22,62 @@ import (
 type ScalingGroup struct {
 	pulumi.CustomResourceState
 
-	// 伸缩组绑定的伸缩配置的ID。
+	// ID of the scaling configuration bound to the scaling group
 	ActiveScalingConfigurationId pulumi.StringOutput `pulumi:"activeScalingConfigurationId"`
-	// 伸缩组创建时间。
+	// Scaling group creation time
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// RDS数据库实例的ID。
+	// ID of the RDS database instance.
 	DbInstanceIds pulumi.StringArrayOutput `pulumi:"dbInstanceIds"`
-	// 执行一次伸缩活动（添加或移出ECS实例）结束后的冷却时间。冷却时间内，该伸缩组不执行其它的伸缩活动，仅针对云监控报警任务触发的伸缩活动和伸缩规则有效。取值范围：5 ~ 86400，单位：秒。默认值：300。
+	// Cooldown period after a scaling activity (adding or removing ECS instances) completes. During the cooldown period, the scaling group does not perform other scaling activities; only scaling activities triggered by Cloud Monitoring alarms and scaling rules are effective. Value range: 5 ~ 86400 seconds. Default value: 300.
 	DefaultCooldown pulumi.IntOutput `pulumi:"defaultCooldown"`
-	// 伸缩组中期望运行的实例个数。1、不小于最小实例数MinInstanceNumber且不大于最大实例数MaxInstanceNumber。2、默认值：-1，表示不开启期望实例数能力。此时，伸缩组创建完成后会立即开始伸缩活动自动添加相应个数的实例。
+	// Expected number of running instances in the scaling group. 1. Must be no less than MinInstanceNumber and no greater than MaxInstanceNumber. 2. Default value: -1, which means the expected instance count feature is disabled. In this case, after the scaling group is created, scaling activities will automatically add the corresponding number of instances.
 	DesireInstanceNumber pulumi.IntOutput `pulumi:"desireInstanceNumber"`
-	// 伸缩组的健康检查方式。1、NONE：不做实例健康状态检查。2、ECS（默认）：对伸缩组内的ECS实例做健康检查。
-	HealthCheckType pulumi.StringOutput `pulumi:"healthCheckType"`
-	// 实例移除策略，1、OldestInstance：移出最早加入 （包括自动创建和手动添加）伸缩组的实例。2、NewestInstance：移出最晚加入（包括自动创建和手动添加）伸缩组的实例。3、OldestScalingConfigurationWithOldestInstance（默认）：移出最早与伸缩组绑定的伸缩配置中，最早由伸缩组 自动创建 的实例。4、OldestScalingConfigurationWithNewestInstance：移出最早与伸缩组绑定的伸缩配置中，最晚由伸缩组 自动创建 的实例。
-	InstanceTerminatePolicy pulumi.StringOutput `pulumi:"instanceTerminatePolicy"`
-	// 实例分布策略。
+	// Health check mode for the scaling group. 1. NONE: No instance health check. 2. ECS (default): Performs health checks on ECS instances in the scaling group.
+	HealthCheckType        pulumi.StringOutput                         `pulumi:"healthCheckType"`
+	InstanceRemovePolicies ScalingGroupInstanceRemovePolicyArrayOutput `pulumi:"instanceRemovePolicies"`
+	// Instance removal policies: 1. OldestInstance: Removes the earliest instance added to the scaling group (including both automatically created and manually added instances). 2. NewestInstance: Removes the latest instance added to the scaling group (including both automatically created and manually added instances). 3. OldestScalingConfigurationWithOldestInstance (default): Removes the earliest automatically created instance in the scaling configuration that was first associated with the scaling group. 4. OldestScalingConfigurationWithNewestInstance: Removes the latest automatically created instance in the scaling configuration that was first associated with the scaling group.
+	InstanceTerminatePolicy pulumi.StringOutput             `pulumi:"instanceTerminatePolicy"`
+	Instances               ScalingGroupInstanceArrayOutput `pulumi:"instances"`
+	// Instance distribution policy.
 	InstancesDistribution ScalingGroupInstancesDistributionOutput `pulumi:"instancesDistribution"`
-	// 是否启用伸缩组。true：启用。false：停止
+	// Whether to enable the scaling group. true: enabled. false: stopped
 	IsEnableScalingGroup pulumi.BoolOutput `pulumi:"isEnableScalingGroup"`
-	// 实例启动模板ID，配置后表示选择启动模版作为伸缩配置来源。
+	// Instance launch template ID. When configured, it indicates that the launch template is used as the source for the scaling configuration.
 	LaunchTemplateId        pulumi.StringOutput                           `pulumi:"launchTemplateId"`
 	LaunchTemplateOverrides ScalingGroupLaunchTemplateOverrideArrayOutput `pulumi:"launchTemplateOverrides"`
-	// 实例启动模板的版本。1、模板的某个版本号。2、Default（默认）：始终使用模板默认版本。3、Latest：始终使用模板最新版本。
+	// Instance launch template version. 1. A specific template version number. 2. Default: always use the default template version. 3. Latest: always use the latest template version.
 	LaunchTemplateVersion pulumi.StringOutput `pulumi:"launchTemplateVersion"`
-	// 伸缩组的状态。Active：已启用。InActive：未激活。Deleting：删除中。Locked: 已锁定。CoolingDown: 冷却中。Unknown: 未知状态。
+	// Status of the scaling group. Active: enabled. InActive: not activated. Deleting: deleting. Locked: locked. CoolingDown: cooling down. Unknown: unknown status.
 	LifecycleState pulumi.StringOutput `pulumi:"lifecycleState"`
-	// 伸缩组实例CLB健康状况检查宽限期。
+	// Grace period for CLB health checks on scaling group instances
 	LoadBalancerHealthCheckGracePeriod pulumi.IntOutput `pulumi:"loadBalancerHealthCheckGracePeriod"`
-	// 伸缩组中实例个数的最大值，默认取值0 ～ 100。您可以通过配额中心调整。
+	// Maximum number of instances in the scaling group. Default value: 0 ~ 100. You can adjust this in the Quota Center.
 	MaxInstanceNumber pulumi.IntOutput `pulumi:"maxInstanceNumber"`
-	// 伸缩组中实例个数的最小值，默认取值0 ～ 100。您可以通过配额中心调整。
+	// Minimum number of instances in the scaling group. Default value: 0–100. You can adjust this in the quota center.
 	MinInstanceNumber pulumi.IntOutput `pulumi:"minInstanceNumber"`
-	// 扩缩容策略，如果您选择了多个子网，需配置本参数。1、PRIORITY（默认）：优先级策略。2、BALANCE：均衡分布策略。
+	// Scaling strategy. If you select multiple subnets, you must configure this parameter. 1. PRIORITY (default): priority strategy. 2. BALANCE: balanced distribution strategy.
 	MultiAzPolicy pulumi.StringOutput `pulumi:"multiAzPolicy"`
-	// 伸缩组所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+	// Project to which the scaling group belongs. Default is 'default'. A resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length: 64 characters.
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
-	// 伸缩组ID。
+	// Scaling group ID.
 	ScalingGroupId pulumi.StringOutput `pulumi:"scalingGroupId"`
-	// 伸缩组名称，同一地域下伸缩组名称唯一。只能以中文、字母开头，只能包含中文、字母、数字、下划线和中划线 。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+	// Scaling group name, unique within the same region. Must start with a Chinese character or letter, and can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length limit: 1 ~ 128 characters. Special characters are not supported.
 	ScalingGroupName pulumi.StringOutput `pulumi:"scalingGroupName"`
-	// 伸缩组的实例回收模式。1、release（默认）：释放模式。2、recycle：停机回收模式。
+	// Instance recycling mode for the scaling group. 1. release (default): Release mode. 2. recycle: Stop-and-recycle mode.
 	ScalingMode           pulumi.StringOutput                         `pulumi:"scalingMode"`
 	ServerGroupAttributes ScalingGroupServerGroupAttributeArrayOutput `pulumi:"serverGroupAttributes"`
-	// 伸缩组内处于停用中状态的实例数量。
+	// Number of instances in the scaling group that are in the disabled state.
 	StoppedInstanceCount pulumi.IntOutput `pulumi:"stoppedInstanceCount"`
-	// 伸缩组中实例主网卡的子网ID列表。
+	// List of subnet IDs for the primary network interface of instances in the scaling group
 	SubnetIds pulumi.StringArrayOutput `pulumi:"subnetIds"`
-	// 暂停中的流程，无暂停中流程则返回空值。ScaleIn：缩容流程。ScaleOut：扩容流程。HealthCheck：健康检查。AlarmNotification：报警任务。ScheduledAction：定时任务。
+	// Paused processes. If there are no paused processes, returns an empty value. ScaleIn: scale-in process. ScaleOut: scale-out process. HealthCheck: health check. AlarmNotification: alarm task. ScheduledAction: scheduled task.
 	SuspendedProcesses pulumi.StringArrayOutput   `pulumi:"suspendedProcesses"`
 	Tags               ScalingGroupTagArrayOutput `pulumi:"tags"`
-	// 当前伸缩组内实例的个数。
+	// Number of instances currently in the scaling group
 	TotalInstanceCount pulumi.IntOutput `pulumi:"totalInstanceCount"`
-	// 伸缩组更新时间。
+	// Scaling group update time.
 	UpdatedTime pulumi.StringOutput `pulumi:"updatedTime"`
-	// 伸缩组所属私有网络ID。
+	// VPC ID to which the scaling group belongs
 	VpcId pulumi.StringOutput `pulumi:"vpcId"`
 }
 
@@ -121,118 +123,122 @@ func GetScalingGroup(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ScalingGroup resources.
 type scalingGroupState struct {
-	// 伸缩组绑定的伸缩配置的ID。
+	// ID of the scaling configuration bound to the scaling group
 	ActiveScalingConfigurationId *string `pulumi:"activeScalingConfigurationId"`
-	// 伸缩组创建时间。
+	// Scaling group creation time
 	CreatedTime *string `pulumi:"createdTime"`
-	// RDS数据库实例的ID。
+	// ID of the RDS database instance.
 	DbInstanceIds []string `pulumi:"dbInstanceIds"`
-	// 执行一次伸缩活动（添加或移出ECS实例）结束后的冷却时间。冷却时间内，该伸缩组不执行其它的伸缩活动，仅针对云监控报警任务触发的伸缩活动和伸缩规则有效。取值范围：5 ~ 86400，单位：秒。默认值：300。
+	// Cooldown period after a scaling activity (adding or removing ECS instances) completes. During the cooldown period, the scaling group does not perform other scaling activities; only scaling activities triggered by Cloud Monitoring alarms and scaling rules are effective. Value range: 5 ~ 86400 seconds. Default value: 300.
 	DefaultCooldown *int `pulumi:"defaultCooldown"`
-	// 伸缩组中期望运行的实例个数。1、不小于最小实例数MinInstanceNumber且不大于最大实例数MaxInstanceNumber。2、默认值：-1，表示不开启期望实例数能力。此时，伸缩组创建完成后会立即开始伸缩活动自动添加相应个数的实例。
+	// Expected number of running instances in the scaling group. 1. Must be no less than MinInstanceNumber and no greater than MaxInstanceNumber. 2. Default value: -1, which means the expected instance count feature is disabled. In this case, after the scaling group is created, scaling activities will automatically add the corresponding number of instances.
 	DesireInstanceNumber *int `pulumi:"desireInstanceNumber"`
-	// 伸缩组的健康检查方式。1、NONE：不做实例健康状态检查。2、ECS（默认）：对伸缩组内的ECS实例做健康检查。
-	HealthCheckType *string `pulumi:"healthCheckType"`
-	// 实例移除策略，1、OldestInstance：移出最早加入 （包括自动创建和手动添加）伸缩组的实例。2、NewestInstance：移出最晚加入（包括自动创建和手动添加）伸缩组的实例。3、OldestScalingConfigurationWithOldestInstance（默认）：移出最早与伸缩组绑定的伸缩配置中，最早由伸缩组 自动创建 的实例。4、OldestScalingConfigurationWithNewestInstance：移出最早与伸缩组绑定的伸缩配置中，最晚由伸缩组 自动创建 的实例。
-	InstanceTerminatePolicy *string `pulumi:"instanceTerminatePolicy"`
-	// 实例分布策略。
+	// Health check mode for the scaling group. 1. NONE: No instance health check. 2. ECS (default): Performs health checks on ECS instances in the scaling group.
+	HealthCheckType        *string                            `pulumi:"healthCheckType"`
+	InstanceRemovePolicies []ScalingGroupInstanceRemovePolicy `pulumi:"instanceRemovePolicies"`
+	// Instance removal policies: 1. OldestInstance: Removes the earliest instance added to the scaling group (including both automatically created and manually added instances). 2. NewestInstance: Removes the latest instance added to the scaling group (including both automatically created and manually added instances). 3. OldestScalingConfigurationWithOldestInstance (default): Removes the earliest automatically created instance in the scaling configuration that was first associated with the scaling group. 4. OldestScalingConfigurationWithNewestInstance: Removes the latest automatically created instance in the scaling configuration that was first associated with the scaling group.
+	InstanceTerminatePolicy *string                `pulumi:"instanceTerminatePolicy"`
+	Instances               []ScalingGroupInstance `pulumi:"instances"`
+	// Instance distribution policy.
 	InstancesDistribution *ScalingGroupInstancesDistribution `pulumi:"instancesDistribution"`
-	// 是否启用伸缩组。true：启用。false：停止
+	// Whether to enable the scaling group. true: enabled. false: stopped
 	IsEnableScalingGroup *bool `pulumi:"isEnableScalingGroup"`
-	// 实例启动模板ID，配置后表示选择启动模版作为伸缩配置来源。
+	// Instance launch template ID. When configured, it indicates that the launch template is used as the source for the scaling configuration.
 	LaunchTemplateId        *string                              `pulumi:"launchTemplateId"`
 	LaunchTemplateOverrides []ScalingGroupLaunchTemplateOverride `pulumi:"launchTemplateOverrides"`
-	// 实例启动模板的版本。1、模板的某个版本号。2、Default（默认）：始终使用模板默认版本。3、Latest：始终使用模板最新版本。
+	// Instance launch template version. 1. A specific template version number. 2. Default: always use the default template version. 3. Latest: always use the latest template version.
 	LaunchTemplateVersion *string `pulumi:"launchTemplateVersion"`
-	// 伸缩组的状态。Active：已启用。InActive：未激活。Deleting：删除中。Locked: 已锁定。CoolingDown: 冷却中。Unknown: 未知状态。
+	// Status of the scaling group. Active: enabled. InActive: not activated. Deleting: deleting. Locked: locked. CoolingDown: cooling down. Unknown: unknown status.
 	LifecycleState *string `pulumi:"lifecycleState"`
-	// 伸缩组实例CLB健康状况检查宽限期。
+	// Grace period for CLB health checks on scaling group instances
 	LoadBalancerHealthCheckGracePeriod *int `pulumi:"loadBalancerHealthCheckGracePeriod"`
-	// 伸缩组中实例个数的最大值，默认取值0 ～ 100。您可以通过配额中心调整。
+	// Maximum number of instances in the scaling group. Default value: 0 ~ 100. You can adjust this in the Quota Center.
 	MaxInstanceNumber *int `pulumi:"maxInstanceNumber"`
-	// 伸缩组中实例个数的最小值，默认取值0 ～ 100。您可以通过配额中心调整。
+	// Minimum number of instances in the scaling group. Default value: 0–100. You can adjust this in the quota center.
 	MinInstanceNumber *int `pulumi:"minInstanceNumber"`
-	// 扩缩容策略，如果您选择了多个子网，需配置本参数。1、PRIORITY（默认）：优先级策略。2、BALANCE：均衡分布策略。
+	// Scaling strategy. If you select multiple subnets, you must configure this parameter. 1. PRIORITY (default): priority strategy. 2. BALANCE: balanced distribution strategy.
 	MultiAzPolicy *string `pulumi:"multiAzPolicy"`
-	// 伸缩组所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+	// Project to which the scaling group belongs. Default is 'default'. A resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length: 64 characters.
 	ProjectName *string `pulumi:"projectName"`
-	// 伸缩组ID。
+	// Scaling group ID.
 	ScalingGroupId *string `pulumi:"scalingGroupId"`
-	// 伸缩组名称，同一地域下伸缩组名称唯一。只能以中文、字母开头，只能包含中文、字母、数字、下划线和中划线 。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+	// Scaling group name, unique within the same region. Must start with a Chinese character or letter, and can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length limit: 1 ~ 128 characters. Special characters are not supported.
 	ScalingGroupName *string `pulumi:"scalingGroupName"`
-	// 伸缩组的实例回收模式。1、release（默认）：释放模式。2、recycle：停机回收模式。
+	// Instance recycling mode for the scaling group. 1. release (default): Release mode. 2. recycle: Stop-and-recycle mode.
 	ScalingMode           *string                            `pulumi:"scalingMode"`
 	ServerGroupAttributes []ScalingGroupServerGroupAttribute `pulumi:"serverGroupAttributes"`
-	// 伸缩组内处于停用中状态的实例数量。
+	// Number of instances in the scaling group that are in the disabled state.
 	StoppedInstanceCount *int `pulumi:"stoppedInstanceCount"`
-	// 伸缩组中实例主网卡的子网ID列表。
+	// List of subnet IDs for the primary network interface of instances in the scaling group
 	SubnetIds []string `pulumi:"subnetIds"`
-	// 暂停中的流程，无暂停中流程则返回空值。ScaleIn：缩容流程。ScaleOut：扩容流程。HealthCheck：健康检查。AlarmNotification：报警任务。ScheduledAction：定时任务。
+	// Paused processes. If there are no paused processes, returns an empty value. ScaleIn: scale-in process. ScaleOut: scale-out process. HealthCheck: health check. AlarmNotification: alarm task. ScheduledAction: scheduled task.
 	SuspendedProcesses []string          `pulumi:"suspendedProcesses"`
 	Tags               []ScalingGroupTag `pulumi:"tags"`
-	// 当前伸缩组内实例的个数。
+	// Number of instances currently in the scaling group
 	TotalInstanceCount *int `pulumi:"totalInstanceCount"`
-	// 伸缩组更新时间。
+	// Scaling group update time.
 	UpdatedTime *string `pulumi:"updatedTime"`
-	// 伸缩组所属私有网络ID。
+	// VPC ID to which the scaling group belongs
 	VpcId *string `pulumi:"vpcId"`
 }
 
 type ScalingGroupState struct {
-	// 伸缩组绑定的伸缩配置的ID。
+	// ID of the scaling configuration bound to the scaling group
 	ActiveScalingConfigurationId pulumi.StringPtrInput
-	// 伸缩组创建时间。
+	// Scaling group creation time
 	CreatedTime pulumi.StringPtrInput
-	// RDS数据库实例的ID。
+	// ID of the RDS database instance.
 	DbInstanceIds pulumi.StringArrayInput
-	// 执行一次伸缩活动（添加或移出ECS实例）结束后的冷却时间。冷却时间内，该伸缩组不执行其它的伸缩活动，仅针对云监控报警任务触发的伸缩活动和伸缩规则有效。取值范围：5 ~ 86400，单位：秒。默认值：300。
+	// Cooldown period after a scaling activity (adding or removing ECS instances) completes. During the cooldown period, the scaling group does not perform other scaling activities; only scaling activities triggered by Cloud Monitoring alarms and scaling rules are effective. Value range: 5 ~ 86400 seconds. Default value: 300.
 	DefaultCooldown pulumi.IntPtrInput
-	// 伸缩组中期望运行的实例个数。1、不小于最小实例数MinInstanceNumber且不大于最大实例数MaxInstanceNumber。2、默认值：-1，表示不开启期望实例数能力。此时，伸缩组创建完成后会立即开始伸缩活动自动添加相应个数的实例。
+	// Expected number of running instances in the scaling group. 1. Must be no less than MinInstanceNumber and no greater than MaxInstanceNumber. 2. Default value: -1, which means the expected instance count feature is disabled. In this case, after the scaling group is created, scaling activities will automatically add the corresponding number of instances.
 	DesireInstanceNumber pulumi.IntPtrInput
-	// 伸缩组的健康检查方式。1、NONE：不做实例健康状态检查。2、ECS（默认）：对伸缩组内的ECS实例做健康检查。
-	HealthCheckType pulumi.StringPtrInput
-	// 实例移除策略，1、OldestInstance：移出最早加入 （包括自动创建和手动添加）伸缩组的实例。2、NewestInstance：移出最晚加入（包括自动创建和手动添加）伸缩组的实例。3、OldestScalingConfigurationWithOldestInstance（默认）：移出最早与伸缩组绑定的伸缩配置中，最早由伸缩组 自动创建 的实例。4、OldestScalingConfigurationWithNewestInstance：移出最早与伸缩组绑定的伸缩配置中，最晚由伸缩组 自动创建 的实例。
+	// Health check mode for the scaling group. 1. NONE: No instance health check. 2. ECS (default): Performs health checks on ECS instances in the scaling group.
+	HealthCheckType        pulumi.StringPtrInput
+	InstanceRemovePolicies ScalingGroupInstanceRemovePolicyArrayInput
+	// Instance removal policies: 1. OldestInstance: Removes the earliest instance added to the scaling group (including both automatically created and manually added instances). 2. NewestInstance: Removes the latest instance added to the scaling group (including both automatically created and manually added instances). 3. OldestScalingConfigurationWithOldestInstance (default): Removes the earliest automatically created instance in the scaling configuration that was first associated with the scaling group. 4. OldestScalingConfigurationWithNewestInstance: Removes the latest automatically created instance in the scaling configuration that was first associated with the scaling group.
 	InstanceTerminatePolicy pulumi.StringPtrInput
-	// 实例分布策略。
+	Instances               ScalingGroupInstanceArrayInput
+	// Instance distribution policy.
 	InstancesDistribution ScalingGroupInstancesDistributionPtrInput
-	// 是否启用伸缩组。true：启用。false：停止
+	// Whether to enable the scaling group. true: enabled. false: stopped
 	IsEnableScalingGroup pulumi.BoolPtrInput
-	// 实例启动模板ID，配置后表示选择启动模版作为伸缩配置来源。
+	// Instance launch template ID. When configured, it indicates that the launch template is used as the source for the scaling configuration.
 	LaunchTemplateId        pulumi.StringPtrInput
 	LaunchTemplateOverrides ScalingGroupLaunchTemplateOverrideArrayInput
-	// 实例启动模板的版本。1、模板的某个版本号。2、Default（默认）：始终使用模板默认版本。3、Latest：始终使用模板最新版本。
+	// Instance launch template version. 1. A specific template version number. 2. Default: always use the default template version. 3. Latest: always use the latest template version.
 	LaunchTemplateVersion pulumi.StringPtrInput
-	// 伸缩组的状态。Active：已启用。InActive：未激活。Deleting：删除中。Locked: 已锁定。CoolingDown: 冷却中。Unknown: 未知状态。
+	// Status of the scaling group. Active: enabled. InActive: not activated. Deleting: deleting. Locked: locked. CoolingDown: cooling down. Unknown: unknown status.
 	LifecycleState pulumi.StringPtrInput
-	// 伸缩组实例CLB健康状况检查宽限期。
+	// Grace period for CLB health checks on scaling group instances
 	LoadBalancerHealthCheckGracePeriod pulumi.IntPtrInput
-	// 伸缩组中实例个数的最大值，默认取值0 ～ 100。您可以通过配额中心调整。
+	// Maximum number of instances in the scaling group. Default value: 0 ~ 100. You can adjust this in the Quota Center.
 	MaxInstanceNumber pulumi.IntPtrInput
-	// 伸缩组中实例个数的最小值，默认取值0 ～ 100。您可以通过配额中心调整。
+	// Minimum number of instances in the scaling group. Default value: 0–100. You can adjust this in the quota center.
 	MinInstanceNumber pulumi.IntPtrInput
-	// 扩缩容策略，如果您选择了多个子网，需配置本参数。1、PRIORITY（默认）：优先级策略。2、BALANCE：均衡分布策略。
+	// Scaling strategy. If you select multiple subnets, you must configure this parameter. 1. PRIORITY (default): priority strategy. 2. BALANCE: balanced distribution strategy.
 	MultiAzPolicy pulumi.StringPtrInput
-	// 伸缩组所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+	// Project to which the scaling group belongs. Default is 'default'. A resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length: 64 characters.
 	ProjectName pulumi.StringPtrInput
-	// 伸缩组ID。
+	// Scaling group ID.
 	ScalingGroupId pulumi.StringPtrInput
-	// 伸缩组名称，同一地域下伸缩组名称唯一。只能以中文、字母开头，只能包含中文、字母、数字、下划线和中划线 。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+	// Scaling group name, unique within the same region. Must start with a Chinese character or letter, and can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length limit: 1 ~ 128 characters. Special characters are not supported.
 	ScalingGroupName pulumi.StringPtrInput
-	// 伸缩组的实例回收模式。1、release（默认）：释放模式。2、recycle：停机回收模式。
+	// Instance recycling mode for the scaling group. 1. release (default): Release mode. 2. recycle: Stop-and-recycle mode.
 	ScalingMode           pulumi.StringPtrInput
 	ServerGroupAttributes ScalingGroupServerGroupAttributeArrayInput
-	// 伸缩组内处于停用中状态的实例数量。
+	// Number of instances in the scaling group that are in the disabled state.
 	StoppedInstanceCount pulumi.IntPtrInput
-	// 伸缩组中实例主网卡的子网ID列表。
+	// List of subnet IDs for the primary network interface of instances in the scaling group
 	SubnetIds pulumi.StringArrayInput
-	// 暂停中的流程，无暂停中流程则返回空值。ScaleIn：缩容流程。ScaleOut：扩容流程。HealthCheck：健康检查。AlarmNotification：报警任务。ScheduledAction：定时任务。
+	// Paused processes. If there are no paused processes, returns an empty value. ScaleIn: scale-in process. ScaleOut: scale-out process. HealthCheck: health check. AlarmNotification: alarm task. ScheduledAction: scheduled task.
 	SuspendedProcesses pulumi.StringArrayInput
 	Tags               ScalingGroupTagArrayInput
-	// 当前伸缩组内实例的个数。
+	// Number of instances currently in the scaling group
 	TotalInstanceCount pulumi.IntPtrInput
-	// 伸缩组更新时间。
+	// Scaling group update time.
 	UpdatedTime pulumi.StringPtrInput
-	// 伸缩组所属私有网络ID。
+	// VPC ID to which the scaling group belongs
 	VpcId pulumi.StringPtrInput
 }
 
@@ -241,82 +247,86 @@ func (ScalingGroupState) ElementType() reflect.Type {
 }
 
 type scalingGroupArgs struct {
-	// 伸缩组绑定的伸缩配置的ID。
+	// ID of the scaling configuration bound to the scaling group
 	ActiveScalingConfigurationId *string `pulumi:"activeScalingConfigurationId"`
-	// 执行一次伸缩活动（添加或移出ECS实例）结束后的冷却时间。冷却时间内，该伸缩组不执行其它的伸缩活动，仅针对云监控报警任务触发的伸缩活动和伸缩规则有效。取值范围：5 ~ 86400，单位：秒。默认值：300。
+	// Cooldown period after a scaling activity (adding or removing ECS instances) completes. During the cooldown period, the scaling group does not perform other scaling activities; only scaling activities triggered by Cloud Monitoring alarms and scaling rules are effective. Value range: 5 ~ 86400 seconds. Default value: 300.
 	DefaultCooldown *int `pulumi:"defaultCooldown"`
-	// 伸缩组中期望运行的实例个数。1、不小于最小实例数MinInstanceNumber且不大于最大实例数MaxInstanceNumber。2、默认值：-1，表示不开启期望实例数能力。此时，伸缩组创建完成后会立即开始伸缩活动自动添加相应个数的实例。
+	// Expected number of running instances in the scaling group. 1. Must be no less than MinInstanceNumber and no greater than MaxInstanceNumber. 2. Default value: -1, which means the expected instance count feature is disabled. In this case, after the scaling group is created, scaling activities will automatically add the corresponding number of instances.
 	DesireInstanceNumber *int `pulumi:"desireInstanceNumber"`
-	// 伸缩组的健康检查方式。1、NONE：不做实例健康状态检查。2、ECS（默认）：对伸缩组内的ECS实例做健康检查。
-	HealthCheckType *string `pulumi:"healthCheckType"`
-	// 实例移除策略，1、OldestInstance：移出最早加入 （包括自动创建和手动添加）伸缩组的实例。2、NewestInstance：移出最晚加入（包括自动创建和手动添加）伸缩组的实例。3、OldestScalingConfigurationWithOldestInstance（默认）：移出最早与伸缩组绑定的伸缩配置中，最早由伸缩组 自动创建 的实例。4、OldestScalingConfigurationWithNewestInstance：移出最早与伸缩组绑定的伸缩配置中，最晚由伸缩组 自动创建 的实例。
-	InstanceTerminatePolicy *string `pulumi:"instanceTerminatePolicy"`
-	// 实例分布策略。
+	// Health check mode for the scaling group. 1. NONE: No instance health check. 2. ECS (default): Performs health checks on ECS instances in the scaling group.
+	HealthCheckType        *string                            `pulumi:"healthCheckType"`
+	InstanceRemovePolicies []ScalingGroupInstanceRemovePolicy `pulumi:"instanceRemovePolicies"`
+	// Instance removal policies: 1. OldestInstance: Removes the earliest instance added to the scaling group (including both automatically created and manually added instances). 2. NewestInstance: Removes the latest instance added to the scaling group (including both automatically created and manually added instances). 3. OldestScalingConfigurationWithOldestInstance (default): Removes the earliest automatically created instance in the scaling configuration that was first associated with the scaling group. 4. OldestScalingConfigurationWithNewestInstance: Removes the latest automatically created instance in the scaling configuration that was first associated with the scaling group.
+	InstanceTerminatePolicy *string                `pulumi:"instanceTerminatePolicy"`
+	Instances               []ScalingGroupInstance `pulumi:"instances"`
+	// Instance distribution policy.
 	InstancesDistribution *ScalingGroupInstancesDistribution `pulumi:"instancesDistribution"`
-	// 是否启用伸缩组。true：启用。false：停止
+	// Whether to enable the scaling group. true: enabled. false: stopped
 	IsEnableScalingGroup *bool `pulumi:"isEnableScalingGroup"`
-	// 实例启动模板ID，配置后表示选择启动模版作为伸缩配置来源。
+	// Instance launch template ID. When configured, it indicates that the launch template is used as the source for the scaling configuration.
 	LaunchTemplateId        *string                              `pulumi:"launchTemplateId"`
 	LaunchTemplateOverrides []ScalingGroupLaunchTemplateOverride `pulumi:"launchTemplateOverrides"`
-	// 实例启动模板的版本。1、模板的某个版本号。2、Default（默认）：始终使用模板默认版本。3、Latest：始终使用模板最新版本。
+	// Instance launch template version. 1. A specific template version number. 2. Default: always use the default template version. 3. Latest: always use the latest template version.
 	LaunchTemplateVersion *string `pulumi:"launchTemplateVersion"`
-	// 伸缩组中实例个数的最大值，默认取值0 ～ 100。您可以通过配额中心调整。
+	// Maximum number of instances in the scaling group. Default value: 0 ~ 100. You can adjust this in the Quota Center.
 	MaxInstanceNumber int `pulumi:"maxInstanceNumber"`
-	// 伸缩组中实例个数的最小值，默认取值0 ～ 100。您可以通过配额中心调整。
+	// Minimum number of instances in the scaling group. Default value: 0–100. You can adjust this in the quota center.
 	MinInstanceNumber int `pulumi:"minInstanceNumber"`
-	// 扩缩容策略，如果您选择了多个子网，需配置本参数。1、PRIORITY（默认）：优先级策略。2、BALANCE：均衡分布策略。
+	// Scaling strategy. If you select multiple subnets, you must configure this parameter. 1. PRIORITY (default): priority strategy. 2. BALANCE: balanced distribution strategy.
 	MultiAzPolicy *string `pulumi:"multiAzPolicy"`
-	// 伸缩组所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+	// Project to which the scaling group belongs. Default is 'default'. A resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length: 64 characters.
 	ProjectName *string `pulumi:"projectName"`
-	// 伸缩组名称，同一地域下伸缩组名称唯一。只能以中文、字母开头，只能包含中文、字母、数字、下划线和中划线 。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+	// Scaling group name, unique within the same region. Must start with a Chinese character or letter, and can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length limit: 1 ~ 128 characters. Special characters are not supported.
 	ScalingGroupName string `pulumi:"scalingGroupName"`
-	// 伸缩组的实例回收模式。1、release（默认）：释放模式。2、recycle：停机回收模式。
+	// Instance recycling mode for the scaling group. 1. release (default): Release mode. 2. recycle: Stop-and-recycle mode.
 	ScalingMode           *string                            `pulumi:"scalingMode"`
 	ServerGroupAttributes []ScalingGroupServerGroupAttribute `pulumi:"serverGroupAttributes"`
-	// 伸缩组中实例主网卡的子网ID列表。
+	// List of subnet IDs for the primary network interface of instances in the scaling group
 	SubnetIds []string `pulumi:"subnetIds"`
-	// 暂停中的流程，无暂停中流程则返回空值。ScaleIn：缩容流程。ScaleOut：扩容流程。HealthCheck：健康检查。AlarmNotification：报警任务。ScheduledAction：定时任务。
+	// Paused processes. If there are no paused processes, returns an empty value. ScaleIn: scale-in process. ScaleOut: scale-out process. HealthCheck: health check. AlarmNotification: alarm task. ScheduledAction: scheduled task.
 	SuspendedProcesses []string          `pulumi:"suspendedProcesses"`
 	Tags               []ScalingGroupTag `pulumi:"tags"`
 }
 
 // The set of arguments for constructing a ScalingGroup resource.
 type ScalingGroupArgs struct {
-	// 伸缩组绑定的伸缩配置的ID。
+	// ID of the scaling configuration bound to the scaling group
 	ActiveScalingConfigurationId pulumi.StringPtrInput
-	// 执行一次伸缩活动（添加或移出ECS实例）结束后的冷却时间。冷却时间内，该伸缩组不执行其它的伸缩活动，仅针对云监控报警任务触发的伸缩活动和伸缩规则有效。取值范围：5 ~ 86400，单位：秒。默认值：300。
+	// Cooldown period after a scaling activity (adding or removing ECS instances) completes. During the cooldown period, the scaling group does not perform other scaling activities; only scaling activities triggered by Cloud Monitoring alarms and scaling rules are effective. Value range: 5 ~ 86400 seconds. Default value: 300.
 	DefaultCooldown pulumi.IntPtrInput
-	// 伸缩组中期望运行的实例个数。1、不小于最小实例数MinInstanceNumber且不大于最大实例数MaxInstanceNumber。2、默认值：-1，表示不开启期望实例数能力。此时，伸缩组创建完成后会立即开始伸缩活动自动添加相应个数的实例。
+	// Expected number of running instances in the scaling group. 1. Must be no less than MinInstanceNumber and no greater than MaxInstanceNumber. 2. Default value: -1, which means the expected instance count feature is disabled. In this case, after the scaling group is created, scaling activities will automatically add the corresponding number of instances.
 	DesireInstanceNumber pulumi.IntPtrInput
-	// 伸缩组的健康检查方式。1、NONE：不做实例健康状态检查。2、ECS（默认）：对伸缩组内的ECS实例做健康检查。
-	HealthCheckType pulumi.StringPtrInput
-	// 实例移除策略，1、OldestInstance：移出最早加入 （包括自动创建和手动添加）伸缩组的实例。2、NewestInstance：移出最晚加入（包括自动创建和手动添加）伸缩组的实例。3、OldestScalingConfigurationWithOldestInstance（默认）：移出最早与伸缩组绑定的伸缩配置中，最早由伸缩组 自动创建 的实例。4、OldestScalingConfigurationWithNewestInstance：移出最早与伸缩组绑定的伸缩配置中，最晚由伸缩组 自动创建 的实例。
+	// Health check mode for the scaling group. 1. NONE: No instance health check. 2. ECS (default): Performs health checks on ECS instances in the scaling group.
+	HealthCheckType        pulumi.StringPtrInput
+	InstanceRemovePolicies ScalingGroupInstanceRemovePolicyArrayInput
+	// Instance removal policies: 1. OldestInstance: Removes the earliest instance added to the scaling group (including both automatically created and manually added instances). 2. NewestInstance: Removes the latest instance added to the scaling group (including both automatically created and manually added instances). 3. OldestScalingConfigurationWithOldestInstance (default): Removes the earliest automatically created instance in the scaling configuration that was first associated with the scaling group. 4. OldestScalingConfigurationWithNewestInstance: Removes the latest automatically created instance in the scaling configuration that was first associated with the scaling group.
 	InstanceTerminatePolicy pulumi.StringPtrInput
-	// 实例分布策略。
+	Instances               ScalingGroupInstanceArrayInput
+	// Instance distribution policy.
 	InstancesDistribution ScalingGroupInstancesDistributionPtrInput
-	// 是否启用伸缩组。true：启用。false：停止
+	// Whether to enable the scaling group. true: enabled. false: stopped
 	IsEnableScalingGroup pulumi.BoolPtrInput
-	// 实例启动模板ID，配置后表示选择启动模版作为伸缩配置来源。
+	// Instance launch template ID. When configured, it indicates that the launch template is used as the source for the scaling configuration.
 	LaunchTemplateId        pulumi.StringPtrInput
 	LaunchTemplateOverrides ScalingGroupLaunchTemplateOverrideArrayInput
-	// 实例启动模板的版本。1、模板的某个版本号。2、Default（默认）：始终使用模板默认版本。3、Latest：始终使用模板最新版本。
+	// Instance launch template version. 1. A specific template version number. 2. Default: always use the default template version. 3. Latest: always use the latest template version.
 	LaunchTemplateVersion pulumi.StringPtrInput
-	// 伸缩组中实例个数的最大值，默认取值0 ～ 100。您可以通过配额中心调整。
+	// Maximum number of instances in the scaling group. Default value: 0 ~ 100. You can adjust this in the Quota Center.
 	MaxInstanceNumber pulumi.IntInput
-	// 伸缩组中实例个数的最小值，默认取值0 ～ 100。您可以通过配额中心调整。
+	// Minimum number of instances in the scaling group. Default value: 0–100. You can adjust this in the quota center.
 	MinInstanceNumber pulumi.IntInput
-	// 扩缩容策略，如果您选择了多个子网，需配置本参数。1、PRIORITY（默认）：优先级策略。2、BALANCE：均衡分布策略。
+	// Scaling strategy. If you select multiple subnets, you must configure this parameter. 1. PRIORITY (default): priority strategy. 2. BALANCE: balanced distribution strategy.
 	MultiAzPolicy pulumi.StringPtrInput
-	// 伸缩组所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+	// Project to which the scaling group belongs. Default is 'default'. A resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length: 64 characters.
 	ProjectName pulumi.StringPtrInput
-	// 伸缩组名称，同一地域下伸缩组名称唯一。只能以中文、字母开头，只能包含中文、字母、数字、下划线和中划线 。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+	// Scaling group name, unique within the same region. Must start with a Chinese character or letter, and can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length limit: 1 ~ 128 characters. Special characters are not supported.
 	ScalingGroupName pulumi.StringInput
-	// 伸缩组的实例回收模式。1、release（默认）：释放模式。2、recycle：停机回收模式。
+	// Instance recycling mode for the scaling group. 1. release (default): Release mode. 2. recycle: Stop-and-recycle mode.
 	ScalingMode           pulumi.StringPtrInput
 	ServerGroupAttributes ScalingGroupServerGroupAttributeArrayInput
-	// 伸缩组中实例主网卡的子网ID列表。
+	// List of subnet IDs for the primary network interface of instances in the scaling group
 	SubnetIds pulumi.StringArrayInput
-	// 暂停中的流程，无暂停中流程则返回空值。ScaleIn：缩容流程。ScaleOut：扩容流程。HealthCheck：健康检查。AlarmNotification：报警任务。ScheduledAction：定时任务。
+	// Paused processes. If there are no paused processes, returns an empty value. ScaleIn: scale-in process. ScaleOut: scale-out process. HealthCheck: health check. AlarmNotification: alarm task. ScheduledAction: scheduled task.
 	SuspendedProcesses pulumi.StringArrayInput
 	Tags               ScalingGroupTagArrayInput
 }
@@ -408,52 +418,60 @@ func (o ScalingGroupOutput) ToScalingGroupOutputWithContext(ctx context.Context)
 	return o
 }
 
-// 伸缩组绑定的伸缩配置的ID。
+// ID of the scaling configuration bound to the scaling group
 func (o ScalingGroupOutput) ActiveScalingConfigurationId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ScalingGroup) pulumi.StringOutput { return v.ActiveScalingConfigurationId }).(pulumi.StringOutput)
 }
 
-// 伸缩组创建时间。
+// Scaling group creation time
 func (o ScalingGroupOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *ScalingGroup) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// RDS数据库实例的ID。
+// ID of the RDS database instance.
 func (o ScalingGroupOutput) DbInstanceIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ScalingGroup) pulumi.StringArrayOutput { return v.DbInstanceIds }).(pulumi.StringArrayOutput)
 }
 
-// 执行一次伸缩活动（添加或移出ECS实例）结束后的冷却时间。冷却时间内，该伸缩组不执行其它的伸缩活动，仅针对云监控报警任务触发的伸缩活动和伸缩规则有效。取值范围：5 ~ 86400，单位：秒。默认值：300。
+// Cooldown period after a scaling activity (adding or removing ECS instances) completes. During the cooldown period, the scaling group does not perform other scaling activities; only scaling activities triggered by Cloud Monitoring alarms and scaling rules are effective. Value range: 5 ~ 86400 seconds. Default value: 300.
 func (o ScalingGroupOutput) DefaultCooldown() pulumi.IntOutput {
 	return o.ApplyT(func(v *ScalingGroup) pulumi.IntOutput { return v.DefaultCooldown }).(pulumi.IntOutput)
 }
 
-// 伸缩组中期望运行的实例个数。1、不小于最小实例数MinInstanceNumber且不大于最大实例数MaxInstanceNumber。2、默认值：-1，表示不开启期望实例数能力。此时，伸缩组创建完成后会立即开始伸缩活动自动添加相应个数的实例。
+// Expected number of running instances in the scaling group. 1. Must be no less than MinInstanceNumber and no greater than MaxInstanceNumber. 2. Default value: -1, which means the expected instance count feature is disabled. In this case, after the scaling group is created, scaling activities will automatically add the corresponding number of instances.
 func (o ScalingGroupOutput) DesireInstanceNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v *ScalingGroup) pulumi.IntOutput { return v.DesireInstanceNumber }).(pulumi.IntOutput)
 }
 
-// 伸缩组的健康检查方式。1、NONE：不做实例健康状态检查。2、ECS（默认）：对伸缩组内的ECS实例做健康检查。
+// Health check mode for the scaling group. 1. NONE: No instance health check. 2. ECS (default): Performs health checks on ECS instances in the scaling group.
 func (o ScalingGroupOutput) HealthCheckType() pulumi.StringOutput {
 	return o.ApplyT(func(v *ScalingGroup) pulumi.StringOutput { return v.HealthCheckType }).(pulumi.StringOutput)
 }
 
-// 实例移除策略，1、OldestInstance：移出最早加入 （包括自动创建和手动添加）伸缩组的实例。2、NewestInstance：移出最晚加入（包括自动创建和手动添加）伸缩组的实例。3、OldestScalingConfigurationWithOldestInstance（默认）：移出最早与伸缩组绑定的伸缩配置中，最早由伸缩组 自动创建 的实例。4、OldestScalingConfigurationWithNewestInstance：移出最早与伸缩组绑定的伸缩配置中，最晚由伸缩组 自动创建 的实例。
+func (o ScalingGroupOutput) InstanceRemovePolicies() ScalingGroupInstanceRemovePolicyArrayOutput {
+	return o.ApplyT(func(v *ScalingGroup) ScalingGroupInstanceRemovePolicyArrayOutput { return v.InstanceRemovePolicies }).(ScalingGroupInstanceRemovePolicyArrayOutput)
+}
+
+// Instance removal policies: 1. OldestInstance: Removes the earliest instance added to the scaling group (including both automatically created and manually added instances). 2. NewestInstance: Removes the latest instance added to the scaling group (including both automatically created and manually added instances). 3. OldestScalingConfigurationWithOldestInstance (default): Removes the earliest automatically created instance in the scaling configuration that was first associated with the scaling group. 4. OldestScalingConfigurationWithNewestInstance: Removes the latest automatically created instance in the scaling configuration that was first associated with the scaling group.
 func (o ScalingGroupOutput) InstanceTerminatePolicy() pulumi.StringOutput {
 	return o.ApplyT(func(v *ScalingGroup) pulumi.StringOutput { return v.InstanceTerminatePolicy }).(pulumi.StringOutput)
 }
 
-// 实例分布策略。
+func (o ScalingGroupOutput) Instances() ScalingGroupInstanceArrayOutput {
+	return o.ApplyT(func(v *ScalingGroup) ScalingGroupInstanceArrayOutput { return v.Instances }).(ScalingGroupInstanceArrayOutput)
+}
+
+// Instance distribution policy.
 func (o ScalingGroupOutput) InstancesDistribution() ScalingGroupInstancesDistributionOutput {
 	return o.ApplyT(func(v *ScalingGroup) ScalingGroupInstancesDistributionOutput { return v.InstancesDistribution }).(ScalingGroupInstancesDistributionOutput)
 }
 
-// 是否启用伸缩组。true：启用。false：停止
+// Whether to enable the scaling group. true: enabled. false: stopped
 func (o ScalingGroupOutput) IsEnableScalingGroup() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ScalingGroup) pulumi.BoolOutput { return v.IsEnableScalingGroup }).(pulumi.BoolOutput)
 }
 
-// 实例启动模板ID，配置后表示选择启动模版作为伸缩配置来源。
+// Instance launch template ID. When configured, it indicates that the launch template is used as the source for the scaling configuration.
 func (o ScalingGroupOutput) LaunchTemplateId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ScalingGroup) pulumi.StringOutput { return v.LaunchTemplateId }).(pulumi.StringOutput)
 }
@@ -462,52 +480,52 @@ func (o ScalingGroupOutput) LaunchTemplateOverrides() ScalingGroupLaunchTemplate
 	return o.ApplyT(func(v *ScalingGroup) ScalingGroupLaunchTemplateOverrideArrayOutput { return v.LaunchTemplateOverrides }).(ScalingGroupLaunchTemplateOverrideArrayOutput)
 }
 
-// 实例启动模板的版本。1、模板的某个版本号。2、Default（默认）：始终使用模板默认版本。3、Latest：始终使用模板最新版本。
+// Instance launch template version. 1. A specific template version number. 2. Default: always use the default template version. 3. Latest: always use the latest template version.
 func (o ScalingGroupOutput) LaunchTemplateVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *ScalingGroup) pulumi.StringOutput { return v.LaunchTemplateVersion }).(pulumi.StringOutput)
 }
 
-// 伸缩组的状态。Active：已启用。InActive：未激活。Deleting：删除中。Locked: 已锁定。CoolingDown: 冷却中。Unknown: 未知状态。
+// Status of the scaling group. Active: enabled. InActive: not activated. Deleting: deleting. Locked: locked. CoolingDown: cooling down. Unknown: unknown status.
 func (o ScalingGroupOutput) LifecycleState() pulumi.StringOutput {
 	return o.ApplyT(func(v *ScalingGroup) pulumi.StringOutput { return v.LifecycleState }).(pulumi.StringOutput)
 }
 
-// 伸缩组实例CLB健康状况检查宽限期。
+// Grace period for CLB health checks on scaling group instances
 func (o ScalingGroupOutput) LoadBalancerHealthCheckGracePeriod() pulumi.IntOutput {
 	return o.ApplyT(func(v *ScalingGroup) pulumi.IntOutput { return v.LoadBalancerHealthCheckGracePeriod }).(pulumi.IntOutput)
 }
 
-// 伸缩组中实例个数的最大值，默认取值0 ～ 100。您可以通过配额中心调整。
+// Maximum number of instances in the scaling group. Default value: 0 ~ 100. You can adjust this in the Quota Center.
 func (o ScalingGroupOutput) MaxInstanceNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v *ScalingGroup) pulumi.IntOutput { return v.MaxInstanceNumber }).(pulumi.IntOutput)
 }
 
-// 伸缩组中实例个数的最小值，默认取值0 ～ 100。您可以通过配额中心调整。
+// Minimum number of instances in the scaling group. Default value: 0–100. You can adjust this in the quota center.
 func (o ScalingGroupOutput) MinInstanceNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v *ScalingGroup) pulumi.IntOutput { return v.MinInstanceNumber }).(pulumi.IntOutput)
 }
 
-// 扩缩容策略，如果您选择了多个子网，需配置本参数。1、PRIORITY（默认）：优先级策略。2、BALANCE：均衡分布策略。
+// Scaling strategy. If you select multiple subnets, you must configure this parameter. 1. PRIORITY (default): priority strategy. 2. BALANCE: balanced distribution strategy.
 func (o ScalingGroupOutput) MultiAzPolicy() pulumi.StringOutput {
 	return o.ApplyT(func(v *ScalingGroup) pulumi.StringOutput { return v.MultiAzPolicy }).(pulumi.StringOutput)
 }
 
-// 伸缩组所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+// Project to which the scaling group belongs. Default is 'default'. A resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length: 64 characters.
 func (o ScalingGroupOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ScalingGroup) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 伸缩组ID。
+// Scaling group ID.
 func (o ScalingGroupOutput) ScalingGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ScalingGroup) pulumi.StringOutput { return v.ScalingGroupId }).(pulumi.StringOutput)
 }
 
-// 伸缩组名称，同一地域下伸缩组名称唯一。只能以中文、字母开头，只能包含中文、字母、数字、下划线和中划线 。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+// Scaling group name, unique within the same region. Must start with a Chinese character or letter, and can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length limit: 1 ~ 128 characters. Special characters are not supported.
 func (o ScalingGroupOutput) ScalingGroupName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ScalingGroup) pulumi.StringOutput { return v.ScalingGroupName }).(pulumi.StringOutput)
 }
 
-// 伸缩组的实例回收模式。1、release（默认）：释放模式。2、recycle：停机回收模式。
+// Instance recycling mode for the scaling group. 1. release (default): Release mode. 2. recycle: Stop-and-recycle mode.
 func (o ScalingGroupOutput) ScalingMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *ScalingGroup) pulumi.StringOutput { return v.ScalingMode }).(pulumi.StringOutput)
 }
@@ -516,17 +534,17 @@ func (o ScalingGroupOutput) ServerGroupAttributes() ScalingGroupServerGroupAttri
 	return o.ApplyT(func(v *ScalingGroup) ScalingGroupServerGroupAttributeArrayOutput { return v.ServerGroupAttributes }).(ScalingGroupServerGroupAttributeArrayOutput)
 }
 
-// 伸缩组内处于停用中状态的实例数量。
+// Number of instances in the scaling group that are in the disabled state.
 func (o ScalingGroupOutput) StoppedInstanceCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *ScalingGroup) pulumi.IntOutput { return v.StoppedInstanceCount }).(pulumi.IntOutput)
 }
 
-// 伸缩组中实例主网卡的子网ID列表。
+// List of subnet IDs for the primary network interface of instances in the scaling group
 func (o ScalingGroupOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ScalingGroup) pulumi.StringArrayOutput { return v.SubnetIds }).(pulumi.StringArrayOutput)
 }
 
-// 暂停中的流程，无暂停中流程则返回空值。ScaleIn：缩容流程。ScaleOut：扩容流程。HealthCheck：健康检查。AlarmNotification：报警任务。ScheduledAction：定时任务。
+// Paused processes. If there are no paused processes, returns an empty value. ScaleIn: scale-in process. ScaleOut: scale-out process. HealthCheck: health check. AlarmNotification: alarm task. ScheduledAction: scheduled task.
 func (o ScalingGroupOutput) SuspendedProcesses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ScalingGroup) pulumi.StringArrayOutput { return v.SuspendedProcesses }).(pulumi.StringArrayOutput)
 }
@@ -535,17 +553,17 @@ func (o ScalingGroupOutput) Tags() ScalingGroupTagArrayOutput {
 	return o.ApplyT(func(v *ScalingGroup) ScalingGroupTagArrayOutput { return v.Tags }).(ScalingGroupTagArrayOutput)
 }
 
-// 当前伸缩组内实例的个数。
+// Number of instances currently in the scaling group
 func (o ScalingGroupOutput) TotalInstanceCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *ScalingGroup) pulumi.IntOutput { return v.TotalInstanceCount }).(pulumi.IntOutput)
 }
 
-// 伸缩组更新时间。
+// Scaling group update time.
 func (o ScalingGroupOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *ScalingGroup) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// 伸缩组所属私有网络ID。
+// VPC ID to which the scaling group belongs
 func (o ScalingGroupOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ScalingGroup) pulumi.StringOutput { return v.VpcId }).(pulumi.StringOutput)
 }

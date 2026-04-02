@@ -19,14 +19,14 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
     public static final ProjectState Empty = new ProjectState();
 
     /**
-     * 日志项目创建时间。
+     * Log project creation time
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 日志项目创建时间。
+     * @return Log project creation time
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -34,14 +34,14 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 日志项目的简单描述。
+     * Brief description of the log project
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 日志项目的简单描述。
+     * @return Brief description of the log project
      * 
      */
     public Optional<Output<String>> description() {
@@ -49,14 +49,14 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 日志项目所属的 IAM 项目。
+     * The IAM project associated with the log project
      * 
      */
     @Import(name="iamProjectName")
     private @Nullable Output<String> iamProjectName;
 
     /**
-     * @return 日志项目所属的 IAM 项目。
+     * @return The IAM project associated with the log project
      * 
      */
     public Optional<Output<String>> iamProjectName() {
@@ -64,14 +64,14 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 私网连接域名。
+     * Private network connection domain name
      * 
      */
     @Import(name="innerNetDomain")
     private @Nullable Output<String> innerNetDomain;
 
     /**
-     * @return 私网连接域名。
+     * @return Private network connection domain name
      * 
      */
     public Optional<Output<String>> innerNetDomain() {
@@ -79,14 +79,14 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 日志项目的 ID。
+     * Log project ID
      * 
      */
     @Import(name="projectId")
     private @Nullable Output<String> projectId;
 
     /**
-     * @return 日志项目的 ID。
+     * @return Log project ID
      * 
      */
     public Optional<Output<String>> projectId() {
@@ -94,14 +94,14 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 日志项目名称。
+     * Log project name
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 日志项目名称。
+     * @return Log project name
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -116,14 +116,14 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 当前日志项目下的日志主题数量。
+     * Number of log topics in the current log project
      * 
      */
     @Import(name="topicCount")
     private @Nullable Output<Integer> topicCount;
 
     /**
-     * @return 当前日志项目下的日志主题数量。
+     * @return Number of log topics in the current log project
      * 
      */
     public Optional<Output<Integer>> topicCount() {
@@ -162,7 +162,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 日志项目创建时间。
+         * @param createdTime Log project creation time
          * 
          * @return builder
          * 
@@ -173,7 +173,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 日志项目创建时间。
+         * @param createdTime Log project creation time
          * 
          * @return builder
          * 
@@ -183,7 +183,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 日志项目的简单描述。
+         * @param description Brief description of the log project
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 日志项目的简单描述。
+         * @param description Brief description of the log project
          * 
          * @return builder
          * 
@@ -204,7 +204,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param iamProjectName 日志项目所属的 IAM 项目。
+         * @param iamProjectName The IAM project associated with the log project
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param iamProjectName 日志项目所属的 IAM 项目。
+         * @param iamProjectName The IAM project associated with the log project
          * 
          * @return builder
          * 
@@ -225,7 +225,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param innerNetDomain 私网连接域名。
+         * @param innerNetDomain Private network connection domain name
          * 
          * @return builder
          * 
@@ -236,7 +236,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param innerNetDomain 私网连接域名。
+         * @param innerNetDomain Private network connection domain name
          * 
          * @return builder
          * 
@@ -246,7 +246,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectId 日志项目的 ID。
+         * @param projectId Log project ID
          * 
          * @return builder
          * 
@@ -257,7 +257,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectId 日志项目的 ID。
+         * @param projectId Log project ID
          * 
          * @return builder
          * 
@@ -267,7 +267,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 日志项目名称。
+         * @param projectName Log project name
          * 
          * @return builder
          * 
@@ -278,7 +278,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 日志项目名称。
+         * @param projectName Log project name
          * 
          * @return builder
          * 
@@ -301,7 +301,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param topicCount 当前日志项目下的日志主题数量。
+         * @param topicCount Number of log topics in the current log project
          * 
          * @return builder
          * 
@@ -312,7 +312,7 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param topicCount 当前日志项目下的日志主题数量。
+         * @param topicCount Number of log topics in the current log project
          * 
          * @return builder
          * 

@@ -68,7 +68,7 @@ class GetNatIpResult:
     @pulumi.getter(name="isDefault")
     def is_default(self) -> builtins.bool:
         """
-        是否为默认中转IP。true：是。false：否。
+        Whether this is the default transit IP. true: Yes. false: No.
         """
         return pulumi.get(self, "is_default")
 
@@ -76,7 +76,7 @@ class GetNatIpResult:
     @pulumi.getter(name="natGatewayId")
     def nat_gateway_id(self) -> builtins.str:
         """
-        私网NAT网关ID。
+        Private NAT gateway ID.
         """
         return pulumi.get(self, "nat_gateway_id")
 
@@ -84,7 +84,7 @@ class GetNatIpResult:
     @pulumi.getter(name="natIp")
     def nat_ip(self) -> builtins.str:
         """
-        中转IP的地址。若不填，则系统自动从私网NAT网关所在子网随机分配一个空闲的IP地址。
+        Transit IP address. If not specified, the system automatically randomly assigns an available IP address from the subnet of the private NAT gateway.
         """
         return pulumi.get(self, "nat_ip")
 
@@ -92,7 +92,7 @@ class GetNatIpResult:
     @pulumi.getter(name="natIpDescription")
     def nat_ip_description(self) -> builtins.str:
         """
-        中转IP的描述。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        Description of the transit IP. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
         """
         return pulumi.get(self, "nat_ip_description")
 
@@ -100,7 +100,7 @@ class GetNatIpResult:
     @pulumi.getter(name="natIpId")
     def nat_ip_id(self) -> builtins.str:
         """
-        中转IP的ID。
+        Transit IP ID.
         """
         return pulumi.get(self, "nat_ip_id")
 
@@ -108,7 +108,7 @@ class GetNatIpResult:
     @pulumi.getter(name="natIpName")
     def nat_ip_name(self) -> builtins.str:
         """
-        中转IP的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。不填默认为中转IP的ID。
+        Name of the transit IP. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number; can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the transit IP ID.
         """
         return pulumi.get(self, "nat_ip_name")
 
@@ -116,7 +116,7 @@ class GetNatIpResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        中转IP的状态。Creating：创建中。Available：可用。Deleting：删除中。Deleted：已删除。
+        Status of the transit IP. Creating: Being created. Available: Available. Deleting: Being deleted. Deleted: Deleted.
         """
         return pulumi.get(self, "status")
 
@@ -124,7 +124,7 @@ class GetNatIpResult:
     @pulumi.getter(name="usingStatus")
     def using_status(self) -> builtins.str:
         """
-        中转IP的使用状态。Idle：未使用。UsedBySnat：被SNAT规则使用。UsedByDnat：被DNAT规则使用。UsedByNat：被SNAT/DNAT规则同时使用。
+        Usage status of the transit IP. Idle: Not used. UsedBySnat: Used by SNAT rule. UsedByDnat: Used by DNAT rule. UsedByNat: Used by both SNAT and DNAT rules.
         """
         return pulumi.get(self, "using_status")
 

@@ -13,98 +13,98 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainTcpListenerConfig {
     /**
-     * @return 接入协议类型。
+     * @return Access protocol type
      * 
      */
     private @Nullable String accessProtocol;
     /**
-     * @return 防护模式。
+     * @return Protection mode
      * 
      */
     private @Nullable Integer defenceMode;
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     private @Nullable String instanceId;
     /**
-     * @return 实例名称。
+     * @return Instance name.
      * 
      */
     private @Nullable String instanceName;
     /**
-     * @return 监听器 ID。
+     * @return Listener ID.
      * 
      */
     private @Nullable String listenerId;
     /**
-     * @return 是否从 ALB 中丢失关联。
+     * @return Disassociated from ALB
      * 
      */
     private @Nullable Integer lostAssociationFromAlb;
     /**
-     * @return 监听器的端口号。
+     * @return Listener port number
      * 
      */
     private @Nullable String port;
     /**
-     * @return 监听器协议类型。
+     * @return Listener protocol type.
      * 
      */
     private @Nullable String protocol;
 
     private DomainTcpListenerConfig() {}
     /**
-     * @return 接入协议类型。
+     * @return Access protocol type
      * 
      */
     public Optional<String> accessProtocol() {
         return Optional.ofNullable(this.accessProtocol);
     }
     /**
-     * @return 防护模式。
+     * @return Protection mode
      * 
      */
     public Optional<Integer> defenceMode() {
         return Optional.ofNullable(this.defenceMode);
     }
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     public Optional<String> instanceId() {
         return Optional.ofNullable(this.instanceId);
     }
     /**
-     * @return 实例名称。
+     * @return Instance name.
      * 
      */
     public Optional<String> instanceName() {
         return Optional.ofNullable(this.instanceName);
     }
     /**
-     * @return 监听器 ID。
+     * @return Listener ID.
      * 
      */
     public Optional<String> listenerId() {
         return Optional.ofNullable(this.listenerId);
     }
     /**
-     * @return 是否从 ALB 中丢失关联。
+     * @return Disassociated from ALB
      * 
      */
     public Optional<Integer> lostAssociationFromAlb() {
         return Optional.ofNullable(this.lostAssociationFromAlb);
     }
     /**
-     * @return 监听器的端口号。
+     * @return Listener port number
      * 
      */
     public Optional<String> port() {
         return Optional.ofNullable(this.port);
     }
     /**
-     * @return 监听器协议类型。
+     * @return Listener protocol type.
      * 
      */
     public Optional<String> protocol() {

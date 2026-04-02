@@ -17,12 +17,40 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'FunctionAsyncTaskConfig',
+    'FunctionAsyncTaskConfigDestinationConfig',
+    'FunctionAsyncTaskConfigDestinationConfigOnFailure',
+    'FunctionAsyncTaskConfigDestinationConfigOnSuccess',
+    'FunctionEnv',
+    'FunctionNasStorage',
+    'FunctionNasStorageNasConfig',
+    'FunctionSourceAccessConfig',
+    'FunctionTag',
+    'FunctionTlsConfig',
+    'FunctionTosMountConfig',
+    'FunctionTosMountConfigCredentials',
+    'FunctionTosMountConfigMountPoint',
+    'FunctionVpcConfig',
     'KafkaTriggerKafkaCredentials',
     'SandboxEnv',
     'SandboxInstanceImageInfo',
     'SandboxInstanceTosMountConfig',
     'SandboxInstanceTosMountConfigTosMountPoint',
     'SandboxMetadata',
+    'GetFunctionAsyncTaskConfigResult',
+    'GetFunctionAsyncTaskConfigDestinationConfigResult',
+    'GetFunctionAsyncTaskConfigDestinationConfigOnFailureResult',
+    'GetFunctionAsyncTaskConfigDestinationConfigOnSuccessResult',
+    'GetFunctionEnvResult',
+    'GetFunctionNasStorageResult',
+    'GetFunctionNasStorageNasConfigResult',
+    'GetFunctionSourceAccessConfigResult',
+    'GetFunctionTagResult',
+    'GetFunctionTlsConfigResult',
+    'GetFunctionTosMountConfigResult',
+    'GetFunctionTosMountConfigCredentialsResult',
+    'GetFunctionTosMountConfigMountPointResult',
+    'GetFunctionVpcConfigResult',
     'GetKafkaTriggerKafkaCredentialsResult',
     'GetSandboxEnvResult',
     'GetSandboxInstanceImageInfoResult',
@@ -32,53 +60,165 @@ __all__ = [
 ]
 
 @pulumi.output_type
-class KafkaTriggerKafkaCredentials(dict):
+class FunctionAsyncTaskConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "destinationConfig":
+            suggest = "destination_config"
+        elif key == "enableAsyncTask":
+            suggest = "enable_async_task"
+        elif key == "maxRetry":
+            suggest = "max_retry"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FunctionAsyncTaskConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FunctionAsyncTaskConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FunctionAsyncTaskConfig.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
-                 mechanism: builtins.str,
-                 password: builtins.str,
-                 username: builtins.str):
+                 destination_config: Optional['outputs.FunctionAsyncTaskConfigDestinationConfig'] = None,
+                 enable_async_task: Optional[builtins.bool] = None,
+                 max_retry: Optional[builtins.int] = None):
         """
-        :param builtins.str mechanism: Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
-        :param builtins.str password: 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
-        :param builtins.str username: 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
+        :param 'FunctionAsyncTaskConfigDestinationConfigArgs' destination_config: Asynchronous task callback target configuration
+        :param builtins.bool enable_async_task: Whether to enable asynchronous task
+        :param builtins.int max_retry: Number of retry attempts for asynchronous task failures. Available values: 0–3
         """
-        pulumi.set(__self__, "mechanism", mechanism)
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        if destination_config is not None:
+            pulumi.set(__self__, "destination_config", destination_config)
+        if enable_async_task is not None:
+            pulumi.set(__self__, "enable_async_task", enable_async_task)
+        if max_retry is not None:
+            pulumi.set(__self__, "max_retry", max_retry)
 
     @property
-    @pulumi.getter
-    def mechanism(self) -> builtins.str:
+    @pulumi.getter(name="destinationConfig")
+    def destination_config(self) -> Optional['outputs.FunctionAsyncTaskConfigDestinationConfig']:
         """
-        Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
+        Asynchronous task callback target configuration
         """
-        return pulumi.get(self, "mechanism")
+        return pulumi.get(self, "destination_config")
 
     @property
-    @pulumi.getter
-    def password(self) -> builtins.str:
+    @pulumi.getter(name="enableAsyncTask")
+    def enable_async_task(self) -> Optional[builtins.bool]:
         """
-        创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
+        Whether to enable asynchronous task
         """
-        return pulumi.get(self, "password")
+        return pulumi.get(self, "enable_async_task")
 
     @property
-    @pulumi.getter
-    def username(self) -> builtins.str:
+    @pulumi.getter(name="maxRetry")
+    def max_retry(self) -> Optional[builtins.int]:
         """
-        创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
+        Number of retry attempts for asynchronous task failures. Available values: 0–3
         """
-        return pulumi.get(self, "username")
+        return pulumi.get(self, "max_retry")
 
 
 @pulumi.output_type
-class SandboxEnv(dict):
+class FunctionAsyncTaskConfigDestinationConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "onFailure":
+            suggest = "on_failure"
+        elif key == "onSuccess":
+            suggest = "on_success"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FunctionAsyncTaskConfigDestinationConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FunctionAsyncTaskConfigDestinationConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FunctionAsyncTaskConfigDestinationConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 on_failure: Optional['outputs.FunctionAsyncTaskConfigDestinationConfigOnFailure'] = None,
+                 on_success: Optional['outputs.FunctionAsyncTaskConfigDestinationConfigOnSuccess'] = None):
+        """
+        :param 'FunctionAsyncTaskConfigDestinationConfigOnFailureArgs' on_failure: Callback target configuration when the task fails
+        :param 'FunctionAsyncTaskConfigDestinationConfigOnSuccessArgs' on_success: Callback target configuration when the task succeeds
+        """
+        if on_failure is not None:
+            pulumi.set(__self__, "on_failure", on_failure)
+        if on_success is not None:
+            pulumi.set(__self__, "on_success", on_success)
+
+    @property
+    @pulumi.getter(name="onFailure")
+    def on_failure(self) -> Optional['outputs.FunctionAsyncTaskConfigDestinationConfigOnFailure']:
+        """
+        Callback target configuration when the task fails
+        """
+        return pulumi.get(self, "on_failure")
+
+    @property
+    @pulumi.getter(name="onSuccess")
+    def on_success(self) -> Optional['outputs.FunctionAsyncTaskConfigDestinationConfigOnSuccess']:
+        """
+        Callback target configuration when the task succeeds
+        """
+        return pulumi.get(self, "on_success")
+
+
+@pulumi.output_type
+class FunctionAsyncTaskConfigDestinationConfigOnFailure(dict):
+    def __init__(__self__, *,
+                 destination: Optional[builtins.str] = None):
+        """
+        :param builtins.str destination: Specific callback target. Set the value to empty ("") to disable this callback
+        """
+        if destination is not None:
+            pulumi.set(__self__, "destination", destination)
+
+    @property
+    @pulumi.getter
+    def destination(self) -> Optional[builtins.str]:
+        """
+        Specific callback target. Set the value to empty ("") to disable this callback
+        """
+        return pulumi.get(self, "destination")
+
+
+@pulumi.output_type
+class FunctionAsyncTaskConfigDestinationConfigOnSuccess(dict):
+    def __init__(__self__, *,
+                 destination: Optional[builtins.str] = None):
+        """
+        :param builtins.str destination: Specific callback target. Set the value to empty ("") to disable this callback
+        """
+        if destination is not None:
+            pulumi.set(__self__, "destination", destination)
+
+    @property
+    @pulumi.getter
+    def destination(self) -> Optional[builtins.str]:
+        """
+        Specific callback target. Set the value to empty ("") to disable this callback
+        """
+        return pulumi.get(self, "destination")
+
+
+@pulumi.output_type
+class FunctionEnv(dict):
     def __init__(__self__, *,
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 环境变量键。
-        :param builtins.str value: 环境变量值。
+        :param builtins.str key: Environment variable key. 1–63 characters; can include letters, numbers, and underscores (_), but cannot start with a number. Key must be unique within the same function
+        :param builtins.str value: Environment variable value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -89,7 +229,7 @@ class SandboxEnv(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        环境变量键。
+        Environment variable key. 1–63 characters; can include letters, numbers, and underscores (_), but cannot start with a number. Key must be unique within the same function
         """
         return pulumi.get(self, "key")
 
@@ -97,7 +237,642 @@ class SandboxEnv(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        环境变量值。
+        Environment variable value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class FunctionNasStorage(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enableNas":
+            suggest = "enable_nas"
+        elif key == "nasConfigs":
+            suggest = "nas_configs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FunctionNasStorage. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FunctionNasStorage.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FunctionNasStorage.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_nas: Optional[builtins.bool] = None,
+                 nas_configs: Optional[Sequence['outputs.FunctionNasStorageNasConfig']] = None):
+        """
+        :param builtins.bool enable_nas: Enable NAS storage mount. true: enabled, store data in NAS. false: disabled.
+        """
+        if enable_nas is not None:
+            pulumi.set(__self__, "enable_nas", enable_nas)
+        if nas_configs is not None:
+            pulumi.set(__self__, "nas_configs", nas_configs)
+
+    @property
+    @pulumi.getter(name="enableNas")
+    def enable_nas(self) -> Optional[builtins.bool]:
+        """
+        Enable NAS storage mount. true: enabled, store data in NAS. false: disabled.
+        """
+        return pulumi.get(self, "enable_nas")
+
+    @property
+    @pulumi.getter(name="nasConfigs")
+    def nas_configs(self) -> Optional[Sequence['outputs.FunctionNasStorageNasConfig']]:
+        return pulumi.get(self, "nas_configs")
+
+
+@pulumi.output_type
+class FunctionNasStorageNasConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "fileSystemId":
+            suggest = "file_system_id"
+        elif key == "localMountPath":
+            suggest = "local_mount_path"
+        elif key == "mountPointId":
+            suggest = "mount_point_id"
+        elif key == "remotePath":
+            suggest = "remote_path"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FunctionNasStorageNasConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FunctionNasStorageNasConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FunctionNasStorageNasConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 file_system_id: Optional[builtins.str] = None,
+                 gid: Optional[builtins.int] = None,
+                 local_mount_path: Optional[builtins.str] = None,
+                 mount_point_id: Optional[builtins.str] = None,
+                 remote_path: Optional[builtins.str] = None,
+                 uid: Optional[builtins.int] = None):
+        """
+        :param builtins.str file_system_id: NAS file system ID.
+        :param builtins.int gid: User group in the file system. Customization is not currently supported. If this parameter is provided, its value is 1000 (consistent with the function run user gid)
+        :param builtins.str local_mount_path: Function local mount directory. Length: 1–128 characters, must start with “/”, supports uppercase and lowercase letters, numbers, and special characters (  - . _ ~ / : @ = + ? #).
+        :param builtins.str mount_point_id: NAS mount point ID
+        :param builtins.str remote_path: Remote directory in the file system. Length: 1–128 characters, must start with “/”, supports uppercase and lowercase letters, numbers, and special characters (  - . _ ~ / : @ = + ? #)
+        :param builtins.int uid: The user in the file system cannot be customized for now. If this parameter is provided, the value must be 1000 (consistent with the function run user uid).
+        """
+        if file_system_id is not None:
+            pulumi.set(__self__, "file_system_id", file_system_id)
+        if gid is not None:
+            pulumi.set(__self__, "gid", gid)
+        if local_mount_path is not None:
+            pulumi.set(__self__, "local_mount_path", local_mount_path)
+        if mount_point_id is not None:
+            pulumi.set(__self__, "mount_point_id", mount_point_id)
+        if remote_path is not None:
+            pulumi.set(__self__, "remote_path", remote_path)
+        if uid is not None:
+            pulumi.set(__self__, "uid", uid)
+
+    @property
+    @pulumi.getter(name="fileSystemId")
+    def file_system_id(self) -> Optional[builtins.str]:
+        """
+        NAS file system ID.
+        """
+        return pulumi.get(self, "file_system_id")
+
+    @property
+    @pulumi.getter
+    def gid(self) -> Optional[builtins.int]:
+        """
+        User group in the file system. Customization is not currently supported. If this parameter is provided, its value is 1000 (consistent with the function run user gid)
+        """
+        return pulumi.get(self, "gid")
+
+    @property
+    @pulumi.getter(name="localMountPath")
+    def local_mount_path(self) -> Optional[builtins.str]:
+        """
+        Function local mount directory. Length: 1–128 characters, must start with “/”, supports uppercase and lowercase letters, numbers, and special characters (  - . _ ~ / : @ = + ? #).
+        """
+        return pulumi.get(self, "local_mount_path")
+
+    @property
+    @pulumi.getter(name="mountPointId")
+    def mount_point_id(self) -> Optional[builtins.str]:
+        """
+        NAS mount point ID
+        """
+        return pulumi.get(self, "mount_point_id")
+
+    @property
+    @pulumi.getter(name="remotePath")
+    def remote_path(self) -> Optional[builtins.str]:
+        """
+        Remote directory in the file system. Length: 1–128 characters, must start with “/”, supports uppercase and lowercase letters, numbers, and special characters (  - . _ ~ / : @ = + ? #)
+        """
+        return pulumi.get(self, "remote_path")
+
+    @property
+    @pulumi.getter
+    def uid(self) -> Optional[builtins.int]:
+        """
+        The user in the file system cannot be customized for now. If this parameter is provided, the value must be 1000 (consistent with the function run user uid).
+        """
+        return pulumi.get(self, "uid")
+
+
+@pulumi.output_type
+class FunctionSourceAccessConfig(dict):
+    def __init__(__self__, *,
+                 password: Optional[builtins.str] = None,
+                 username: Optional[builtins.str] = None):
+        """
+        :param builtins.str password: Image repository password
+        :param builtins.str username: Image repository username
+        """
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter
+    def password(self) -> Optional[builtins.str]:
+        """
+        Image repository password
+        """
+        return pulumi.get(self, "password")
+
+    @property
+    @pulumi.getter
+    def username(self) -> Optional[builtins.str]:
+        """
+        Image repository username
+        """
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class FunctionTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Function tag key
+        :param builtins.str value: Function tag value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Function tag key
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        Function tag value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class FunctionTlsConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enableLog":
+            suggest = "enable_log"
+        elif key == "tlsProjectId":
+            suggest = "tls_project_id"
+        elif key == "tlsTopicId":
+            suggest = "tls_topic_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FunctionTlsConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FunctionTlsConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FunctionTlsConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_log: Optional[builtins.bool] = None,
+                 tls_project_id: Optional[builtins.str] = None,
+                 tls_topic_id: Optional[builtins.str] = None):
+        """
+        :param builtins.bool enable_log: TLS log feature toggle. true: enabled, function stdout/stderr logs will be collected to the specified log project and log topic in Log Service. false: disabled, logs will not be collected
+        :param builtins.str tls_project_id: TLS log project ID
+        :param builtins.str tls_topic_id: TLS log topic ID.
+        """
+        if enable_log is not None:
+            pulumi.set(__self__, "enable_log", enable_log)
+        if tls_project_id is not None:
+            pulumi.set(__self__, "tls_project_id", tls_project_id)
+        if tls_topic_id is not None:
+            pulumi.set(__self__, "tls_topic_id", tls_topic_id)
+
+    @property
+    @pulumi.getter(name="enableLog")
+    def enable_log(self) -> Optional[builtins.bool]:
+        """
+        TLS log feature toggle. true: enabled, function stdout/stderr logs will be collected to the specified log project and log topic in Log Service. false: disabled, logs will not be collected
+        """
+        return pulumi.get(self, "enable_log")
+
+    @property
+    @pulumi.getter(name="tlsProjectId")
+    def tls_project_id(self) -> Optional[builtins.str]:
+        """
+        TLS log project ID
+        """
+        return pulumi.get(self, "tls_project_id")
+
+    @property
+    @pulumi.getter(name="tlsTopicId")
+    def tls_topic_id(self) -> Optional[builtins.str]:
+        """
+        TLS log topic ID.
+        """
+        return pulumi.get(self, "tls_topic_id")
+
+
+@pulumi.output_type
+class FunctionTosMountConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enableTos":
+            suggest = "enable_tos"
+        elif key == "mountPoints":
+            suggest = "mount_points"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FunctionTosMountConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FunctionTosMountConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FunctionTosMountConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 credentials: Optional['outputs.FunctionTosMountConfigCredentials'] = None,
+                 enable_tos: Optional[builtins.bool] = None,
+                 mount_points: Optional[Sequence['outputs.FunctionTosMountConfigMountPoint']] = None):
+        """
+        :param 'FunctionTosMountConfigCredentialsArgs' credentials: AKSK with TOS domain access permission.
+        :param builtins.bool enable_tos: Enable TOS storage mount.
+        """
+        if credentials is not None:
+            pulumi.set(__self__, "credentials", credentials)
+        if enable_tos is not None:
+            pulumi.set(__self__, "enable_tos", enable_tos)
+        if mount_points is not None:
+            pulumi.set(__self__, "mount_points", mount_points)
+
+    @property
+    @pulumi.getter
+    def credentials(self) -> Optional['outputs.FunctionTosMountConfigCredentials']:
+        """
+        AKSK with TOS domain access permission.
+        """
+        return pulumi.get(self, "credentials")
+
+    @property
+    @pulumi.getter(name="enableTos")
+    def enable_tos(self) -> Optional[builtins.bool]:
+        """
+        Enable TOS storage mount.
+        """
+        return pulumi.get(self, "enable_tos")
+
+    @property
+    @pulumi.getter(name="mountPoints")
+    def mount_points(self) -> Optional[Sequence['outputs.FunctionTosMountConfigMountPoint']]:
+        return pulumi.get(self, "mount_points")
+
+
+@pulumi.output_type
+class FunctionTosMountConfigCredentials(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "accessKeyId":
+            suggest = "access_key_id"
+        elif key == "secretAccessKey":
+            suggest = "secret_access_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FunctionTosMountConfigCredentials. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FunctionTosMountConfigCredentials.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FunctionTosMountConfigCredentials.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 access_key_id: Optional[builtins.str] = None,
+                 secret_access_key: Optional[builtins.str] = None):
+        """
+        :param builtins.str access_key_id: Account AccessKey ID
+        :param builtins.str secret_access_key: Account Secret Access Key
+        """
+        if access_key_id is not None:
+            pulumi.set(__self__, "access_key_id", access_key_id)
+        if secret_access_key is not None:
+            pulumi.set(__self__, "secret_access_key", secret_access_key)
+
+    @property
+    @pulumi.getter(name="accessKeyId")
+    def access_key_id(self) -> Optional[builtins.str]:
+        """
+        Account AccessKey ID
+        """
+        return pulumi.get(self, "access_key_id")
+
+    @property
+    @pulumi.getter(name="secretAccessKey")
+    def secret_access_key(self) -> Optional[builtins.str]:
+        """
+        Account Secret Access Key
+        """
+        return pulumi.get(self, "secret_access_key")
+
+
+@pulumi.output_type
+class FunctionTosMountConfigMountPoint(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "bucketName":
+            suggest = "bucket_name"
+        elif key == "bucketPath":
+            suggest = "bucket_path"
+        elif key == "localMountPath":
+            suggest = "local_mount_path"
+        elif key == "readOnly":
+            suggest = "read_only"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FunctionTosMountConfigMountPoint. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FunctionTosMountConfigMountPoint.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FunctionTosMountConfigMountPoint.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 bucket_name: Optional[builtins.str] = None,
+                 bucket_path: Optional[builtins.str] = None,
+                 endpoint: Optional[builtins.str] = None,
+                 local_mount_path: Optional[builtins.str] = None,
+                 read_only: Optional[builtins.bool] = None):
+        """
+        :param builtins.str bucket_name: TOS bucket name.
+        :param builtins.str bucket_path: Mounted TOS Bucket path.
+        :param builtins.str endpoint: TOS access domain name.
+        :param builtins.str local_mount_path: Function local mount directory.
+        :param builtins.bool read_only: Function local directory access permission. After mounting a TOS bucket, whether the function's local mount directory is read-only. true: read-only; false (default): read/write
+        """
+        if bucket_name is not None:
+            pulumi.set(__self__, "bucket_name", bucket_name)
+        if bucket_path is not None:
+            pulumi.set(__self__, "bucket_path", bucket_path)
+        if endpoint is not None:
+            pulumi.set(__self__, "endpoint", endpoint)
+        if local_mount_path is not None:
+            pulumi.set(__self__, "local_mount_path", local_mount_path)
+        if read_only is not None:
+            pulumi.set(__self__, "read_only", read_only)
+
+    @property
+    @pulumi.getter(name="bucketName")
+    def bucket_name(self) -> Optional[builtins.str]:
+        """
+        TOS bucket name.
+        """
+        return pulumi.get(self, "bucket_name")
+
+    @property
+    @pulumi.getter(name="bucketPath")
+    def bucket_path(self) -> Optional[builtins.str]:
+        """
+        Mounted TOS Bucket path.
+        """
+        return pulumi.get(self, "bucket_path")
+
+    @property
+    @pulumi.getter
+    def endpoint(self) -> Optional[builtins.str]:
+        """
+        TOS access domain name.
+        """
+        return pulumi.get(self, "endpoint")
+
+    @property
+    @pulumi.getter(name="localMountPath")
+    def local_mount_path(self) -> Optional[builtins.str]:
+        """
+        Function local mount directory.
+        """
+        return pulumi.get(self, "local_mount_path")
+
+    @property
+    @pulumi.getter(name="readOnly")
+    def read_only(self) -> Optional[builtins.bool]:
+        """
+        Function local directory access permission. After mounting a TOS bucket, whether the function's local mount directory is read-only. true: read-only; false (default): read/write
+        """
+        return pulumi.get(self, "read_only")
+
+
+@pulumi.output_type
+class FunctionVpcConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enableSharedInternetAccess":
+            suggest = "enable_shared_internet_access"
+        elif key == "enableVpc":
+            suggest = "enable_vpc"
+        elif key == "securityGroupIds":
+            suggest = "security_group_ids"
+        elif key == "subnetIds":
+            suggest = "subnet_ids"
+        elif key == "vpcId":
+            suggest = "vpc_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FunctionVpcConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FunctionVpcConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FunctionVpcConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_shared_internet_access: Optional[builtins.bool] = None,
+                 enable_vpc: Optional[builtins.bool] = None,
+                 security_group_ids: Optional[Sequence[builtins.str]] = None,
+                 subnet_ids: Optional[Sequence[builtins.str]] = None,
+                 vpc_id: Optional[builtins.str] = None):
+        """
+        :param builtins.bool enable_shared_internet_access: Function public network access switch. Whether to access the public network via veFaaS VPC shared NAT gateway. Values: true: enabled, access public network via default network interface. Public outbound traffic fees apply. false: disabled, function cannot access public network via default network interface.
+        :param builtins.bool enable_vpc: Whether the function enables private network access
+        :param Sequence[builtins.str] security_group_ids: Security group ID
+        :param Sequence[builtins.str] subnet_ids: Subnet ID
+        :param builtins.str vpc_id: VPC ID. If the VPC ID is an empty string, it means the current VPC configuration will be deleted
+        """
+        if enable_shared_internet_access is not None:
+            pulumi.set(__self__, "enable_shared_internet_access", enable_shared_internet_access)
+        if enable_vpc is not None:
+            pulumi.set(__self__, "enable_vpc", enable_vpc)
+        if security_group_ids is not None:
+            pulumi.set(__self__, "security_group_ids", security_group_ids)
+        if subnet_ids is not None:
+            pulumi.set(__self__, "subnet_ids", subnet_ids)
+        if vpc_id is not None:
+            pulumi.set(__self__, "vpc_id", vpc_id)
+
+    @property
+    @pulumi.getter(name="enableSharedInternetAccess")
+    def enable_shared_internet_access(self) -> Optional[builtins.bool]:
+        """
+        Function public network access switch. Whether to access the public network via veFaaS VPC shared NAT gateway. Values: true: enabled, access public network via default network interface. Public outbound traffic fees apply. false: disabled, function cannot access public network via default network interface.
+        """
+        return pulumi.get(self, "enable_shared_internet_access")
+
+    @property
+    @pulumi.getter(name="enableVpc")
+    def enable_vpc(self) -> Optional[builtins.bool]:
+        """
+        Whether the function enables private network access
+        """
+        return pulumi.get(self, "enable_vpc")
+
+    @property
+    @pulumi.getter(name="securityGroupIds")
+    def security_group_ids(self) -> Optional[Sequence[builtins.str]]:
+        """
+        Security group ID
+        """
+        return pulumi.get(self, "security_group_ids")
+
+    @property
+    @pulumi.getter(name="subnetIds")
+    def subnet_ids(self) -> Optional[Sequence[builtins.str]]:
+        """
+        Subnet ID
+        """
+        return pulumi.get(self, "subnet_ids")
+
+    @property
+    @pulumi.getter(name="vpcId")
+    def vpc_id(self) -> Optional[builtins.str]:
+        """
+        VPC ID. If the VPC ID is an empty string, it means the current VPC configuration will be deleted
+        """
+        return pulumi.get(self, "vpc_id")
+
+
+@pulumi.output_type
+class KafkaTriggerKafkaCredentials(dict):
+    def __init__(__self__, *,
+                 mechanism: builtins.str,
+                 password: builtins.str,
+                 username: builtins.str):
+        """
+        :param builtins.str mechanism: Kafka authentication mechanism. Options: PLAIN, SCRAM-SHA-256.
+        :param builtins.str password: SASL/PLAIN password set when creating the Kafka instance.
+        :param builtins.str username: SASL/PLAIN username set when creating the Kafka instance.
+        """
+        pulumi.set(__self__, "mechanism", mechanism)
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter
+    def mechanism(self) -> builtins.str:
+        """
+        Kafka authentication mechanism. Options: PLAIN, SCRAM-SHA-256.
+        """
+        return pulumi.get(self, "mechanism")
+
+    @property
+    @pulumi.getter
+    def password(self) -> builtins.str:
+        """
+        SASL/PLAIN password set when creating the Kafka instance.
+        """
+        return pulumi.get(self, "password")
+
+    @property
+    @pulumi.getter
+    def username(self) -> builtins.str:
+        """
+        SASL/PLAIN username set when creating the Kafka instance.
+        """
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class SandboxEnv(dict):
+    def __init__(__self__, *,
+                 key: Optional[builtins.str] = None,
+                 value: Optional[builtins.str] = None):
+        """
+        :param builtins.str key: Environment variable key
+        :param builtins.str value: Environment variable value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[builtins.str]:
+        """
+        Environment variable key
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[builtins.str]:
+        """
+        Environment variable value
         """
         return pulumi.get(self, "value")
 
@@ -127,10 +902,10 @@ class SandboxInstanceImageInfo(dict):
                  image_id: Optional[builtins.str] = None,
                  port: Optional[builtins.int] = None):
         """
-        :param builtins.str command: 沙箱实例程序的启动命令。如需指定脚本文件，请使用绝对路径，并确保脚本具有相应的可执行权限。
-        :param builtins.str image: 沙箱实例使用的已预热镜像地址。
-        :param builtins.str image_id: 沙箱实例使用的已预热镜像 ID。
-        :param builtins.int port: 沙箱实例镜像监听端口。
+        :param builtins.str command: Startup command for the sandbox instance program. To specify a script file, use an absolute path and ensure the script has executable permissions
+        :param builtins.str image: Preheated image address used by the sandbox instance
+        :param builtins.str image_id: Pre-warmed image ID used by the sandbox instance.
+        :param builtins.int port: Listening port of the sandbox instance image.
         """
         if command is not None:
             pulumi.set(__self__, "command", command)
@@ -145,7 +920,7 @@ class SandboxInstanceImageInfo(dict):
     @pulumi.getter
     def command(self) -> Optional[builtins.str]:
         """
-        沙箱实例程序的启动命令。如需指定脚本文件，请使用绝对路径，并确保脚本具有相应的可执行权限。
+        Startup command for the sandbox instance program. To specify a script file, use an absolute path and ensure the script has executable permissions
         """
         return pulumi.get(self, "command")
 
@@ -153,7 +928,7 @@ class SandboxInstanceImageInfo(dict):
     @pulumi.getter
     def image(self) -> Optional[builtins.str]:
         """
-        沙箱实例使用的已预热镜像地址。
+        Preheated image address used by the sandbox instance
         """
         return pulumi.get(self, "image")
 
@@ -161,7 +936,7 @@ class SandboxInstanceImageInfo(dict):
     @pulumi.getter(name="imageId")
     def image_id(self) -> Optional[builtins.str]:
         """
-        沙箱实例使用的已预热镜像 ID。
+        Pre-warmed image ID used by the sandbox instance.
         """
         return pulumi.get(self, "image_id")
 
@@ -169,7 +944,7 @@ class SandboxInstanceImageInfo(dict):
     @pulumi.getter
     def port(self) -> Optional[builtins.int]:
         """
-        沙箱实例镜像监听端口。
+        Listening port of the sandbox instance image.
         """
         return pulumi.get(self, "port")
 
@@ -197,7 +972,7 @@ class SandboxInstanceTosMountConfig(dict):
                  enable: Optional[builtins.bool] = None,
                  tos_mount_points: Optional[Sequence['outputs.SandboxInstanceTosMountConfigTosMountPoint']] = None):
         """
-        :param builtins.bool enable: 沙箱实例是否启用了实例级别的 TOS 挂载，参数值说明：true：是，false：否。
+        :param builtins.bool enable: Whether instance-level TOS mount is enabled for the sandbox instance. Parameter description: true: yes, false: no
         """
         if enable is not None:
             pulumi.set(__self__, "enable", enable)
@@ -208,7 +983,7 @@ class SandboxInstanceTosMountConfig(dict):
     @pulumi.getter
     def enable(self) -> Optional[builtins.bool]:
         """
-        沙箱实例是否启用了实例级别的 TOS 挂载，参数值说明：true：是，false：否。
+        Whether instance-level TOS mount is enabled for the sandbox instance. Parameter description: true: yes, false: no
         """
         return pulumi.get(self, "enable")
 
@@ -243,8 +1018,8 @@ class SandboxInstanceTosMountConfigTosMountPoint(dict):
                  bucket_path: Optional[builtins.str] = None,
                  local_mount_path: Optional[builtins.str] = None):
         """
-        :param builtins.str bucket_path: 沙箱实例挂载的 TOS 远端目录。
-        :param builtins.str local_mount_path: 沙箱实例挂载的 TOS 存储桶本地目录。该目录为沙箱应用已配置的 TOS 存储挂载的本地目录时，系统根据指定的本地目录，修改与之对应的 TOS BucketPath。
+        :param builtins.str bucket_path: TOS remote directory mounted by the sandbox instance
+        :param builtins.str local_mount_path: Local directory of the TOS bucket mounted by the sandbox instance. If this directory is the local directory configured for TOS storage mount in the sandbox application, the system modifies the corresponding TOS BucketPath based on the specified local directory
         """
         if bucket_path is not None:
             pulumi.set(__self__, "bucket_path", bucket_path)
@@ -255,7 +1030,7 @@ class SandboxInstanceTosMountConfigTosMountPoint(dict):
     @pulumi.getter(name="bucketPath")
     def bucket_path(self) -> Optional[builtins.str]:
         """
-        沙箱实例挂载的 TOS 远端目录。
+        TOS remote directory mounted by the sandbox instance
         """
         return pulumi.get(self, "bucket_path")
 
@@ -263,7 +1038,7 @@ class SandboxInstanceTosMountConfigTosMountPoint(dict):
     @pulumi.getter(name="localMountPath")
     def local_mount_path(self) -> Optional[builtins.str]:
         """
-        沙箱实例挂载的 TOS 存储桶本地目录。该目录为沙箱应用已配置的 TOS 存储挂载的本地目录时，系统根据指定的本地目录，修改与之对应的 TOS BucketPath。
+        Local directory of the TOS bucket mounted by the sandbox instance. If this directory is the local directory configured for TOS storage mount in the sandbox application, the system modifies the corresponding TOS BucketPath based on the specified local directory
         """
         return pulumi.get(self, "local_mount_path")
 
@@ -274,8 +1049,8 @@ class SandboxMetadata(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -286,7 +1061,7 @@ class SandboxMetadata(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -294,9 +1069,536 @@ class SandboxMetadata(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetFunctionAsyncTaskConfigResult(dict):
+    def __init__(__self__, *,
+                 destination_config: 'outputs.GetFunctionAsyncTaskConfigDestinationConfigResult',
+                 enable_async_task: builtins.bool,
+                 max_retry: builtins.int):
+        """
+        :param 'GetFunctionAsyncTaskConfigDestinationConfigArgs' destination_config: Asynchronous task callback target configuration
+        :param builtins.bool enable_async_task: Whether to enable asynchronous task
+        :param builtins.int max_retry: Number of retry attempts for asynchronous task failures. Available values: 0–3
+        """
+        pulumi.set(__self__, "destination_config", destination_config)
+        pulumi.set(__self__, "enable_async_task", enable_async_task)
+        pulumi.set(__self__, "max_retry", max_retry)
+
+    @property
+    @pulumi.getter(name="destinationConfig")
+    def destination_config(self) -> 'outputs.GetFunctionAsyncTaskConfigDestinationConfigResult':
+        """
+        Asynchronous task callback target configuration
+        """
+        return pulumi.get(self, "destination_config")
+
+    @property
+    @pulumi.getter(name="enableAsyncTask")
+    def enable_async_task(self) -> builtins.bool:
+        """
+        Whether to enable asynchronous task
+        """
+        return pulumi.get(self, "enable_async_task")
+
+    @property
+    @pulumi.getter(name="maxRetry")
+    def max_retry(self) -> builtins.int:
+        """
+        Number of retry attempts for asynchronous task failures. Available values: 0–3
+        """
+        return pulumi.get(self, "max_retry")
+
+
+@pulumi.output_type
+class GetFunctionAsyncTaskConfigDestinationConfigResult(dict):
+    def __init__(__self__, *,
+                 on_failure: 'outputs.GetFunctionAsyncTaskConfigDestinationConfigOnFailureResult',
+                 on_success: 'outputs.GetFunctionAsyncTaskConfigDestinationConfigOnSuccessResult'):
+        """
+        :param 'GetFunctionAsyncTaskConfigDestinationConfigOnFailureArgs' on_failure: Callback target configuration when the task fails
+        :param 'GetFunctionAsyncTaskConfigDestinationConfigOnSuccessArgs' on_success: Callback target configuration when the task succeeds
+        """
+        pulumi.set(__self__, "on_failure", on_failure)
+        pulumi.set(__self__, "on_success", on_success)
+
+    @property
+    @pulumi.getter(name="onFailure")
+    def on_failure(self) -> 'outputs.GetFunctionAsyncTaskConfigDestinationConfigOnFailureResult':
+        """
+        Callback target configuration when the task fails
+        """
+        return pulumi.get(self, "on_failure")
+
+    @property
+    @pulumi.getter(name="onSuccess")
+    def on_success(self) -> 'outputs.GetFunctionAsyncTaskConfigDestinationConfigOnSuccessResult':
+        """
+        Callback target configuration when the task succeeds
+        """
+        return pulumi.get(self, "on_success")
+
+
+@pulumi.output_type
+class GetFunctionAsyncTaskConfigDestinationConfigOnFailureResult(dict):
+    def __init__(__self__, *,
+                 destination: builtins.str):
+        """
+        :param builtins.str destination: Specific callback target. Set the value to empty ("") to disable this callback
+        """
+        pulumi.set(__self__, "destination", destination)
+
+    @property
+    @pulumi.getter
+    def destination(self) -> builtins.str:
+        """
+        Specific callback target. Set the value to empty ("") to disable this callback
+        """
+        return pulumi.get(self, "destination")
+
+
+@pulumi.output_type
+class GetFunctionAsyncTaskConfigDestinationConfigOnSuccessResult(dict):
+    def __init__(__self__, *,
+                 destination: builtins.str):
+        """
+        :param builtins.str destination: Specific callback target. Set the value to empty ("") to disable this callback
+        """
+        pulumi.set(__self__, "destination", destination)
+
+    @property
+    @pulumi.getter
+    def destination(self) -> builtins.str:
+        """
+        Specific callback target. Set the value to empty ("") to disable this callback
+        """
+        return pulumi.get(self, "destination")
+
+
+@pulumi.output_type
+class GetFunctionEnvResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: Environment variable key. 1–63 characters; can include letters, numbers, and underscores (_), but cannot start with a number. Key must be unique within the same function
+        :param builtins.str value: Environment variable value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Environment variable key. 1–63 characters; can include letters, numbers, and underscores (_), but cannot start with a number. Key must be unique within the same function
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Environment variable value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetFunctionNasStorageResult(dict):
+    def __init__(__self__, *,
+                 enable_nas: builtins.bool,
+                 nas_configs: Sequence['outputs.GetFunctionNasStorageNasConfigResult']):
+        """
+        :param builtins.bool enable_nas: Enable NAS storage mount. true: enabled, store data in NAS. false: disabled.
+        :param Sequence['GetFunctionNasStorageNasConfigArgs'] nas_configs: NAS storage configuration
+        """
+        pulumi.set(__self__, "enable_nas", enable_nas)
+        pulumi.set(__self__, "nas_configs", nas_configs)
+
+    @property
+    @pulumi.getter(name="enableNas")
+    def enable_nas(self) -> builtins.bool:
+        """
+        Enable NAS storage mount. true: enabled, store data in NAS. false: disabled.
+        """
+        return pulumi.get(self, "enable_nas")
+
+    @property
+    @pulumi.getter(name="nasConfigs")
+    def nas_configs(self) -> Sequence['outputs.GetFunctionNasStorageNasConfigResult']:
+        """
+        NAS storage configuration
+        """
+        return pulumi.get(self, "nas_configs")
+
+
+@pulumi.output_type
+class GetFunctionNasStorageNasConfigResult(dict):
+    def __init__(__self__, *,
+                 file_system_id: builtins.str,
+                 gid: builtins.int,
+                 local_mount_path: builtins.str,
+                 mount_point_id: builtins.str,
+                 remote_path: builtins.str,
+                 uid: builtins.int):
+        """
+        :param builtins.str file_system_id: NAS file system ID.
+        :param builtins.int gid: User group in the file system. Customization is not currently supported. If this parameter is provided, its value is 1000 (consistent with the function run user gid)
+        :param builtins.str local_mount_path: Function local mount directory. Length: 1–128 characters, must start with “/”, supports uppercase and lowercase letters, numbers, and special characters (  - . _ ~ / : @ = + ? #).
+        :param builtins.str mount_point_id: NAS mount point ID
+        :param builtins.str remote_path: Remote directory in the file system. Length: 1–128 characters, must start with “/”, supports uppercase and lowercase letters, numbers, and special characters (  - . _ ~ / : @ = + ? #)
+        :param builtins.int uid: The user in the file system cannot be customized for now. If this parameter is provided, the value must be 1000 (consistent with the function run user uid).
+        """
+        pulumi.set(__self__, "file_system_id", file_system_id)
+        pulumi.set(__self__, "gid", gid)
+        pulumi.set(__self__, "local_mount_path", local_mount_path)
+        pulumi.set(__self__, "mount_point_id", mount_point_id)
+        pulumi.set(__self__, "remote_path", remote_path)
+        pulumi.set(__self__, "uid", uid)
+
+    @property
+    @pulumi.getter(name="fileSystemId")
+    def file_system_id(self) -> builtins.str:
+        """
+        NAS file system ID.
+        """
+        return pulumi.get(self, "file_system_id")
+
+    @property
+    @pulumi.getter
+    def gid(self) -> builtins.int:
+        """
+        User group in the file system. Customization is not currently supported. If this parameter is provided, its value is 1000 (consistent with the function run user gid)
+        """
+        return pulumi.get(self, "gid")
+
+    @property
+    @pulumi.getter(name="localMountPath")
+    def local_mount_path(self) -> builtins.str:
+        """
+        Function local mount directory. Length: 1–128 characters, must start with “/”, supports uppercase and lowercase letters, numbers, and special characters (  - . _ ~ / : @ = + ? #).
+        """
+        return pulumi.get(self, "local_mount_path")
+
+    @property
+    @pulumi.getter(name="mountPointId")
+    def mount_point_id(self) -> builtins.str:
+        """
+        NAS mount point ID
+        """
+        return pulumi.get(self, "mount_point_id")
+
+    @property
+    @pulumi.getter(name="remotePath")
+    def remote_path(self) -> builtins.str:
+        """
+        Remote directory in the file system. Length: 1–128 characters, must start with “/”, supports uppercase and lowercase letters, numbers, and special characters (  - . _ ~ / : @ = + ? #)
+        """
+        return pulumi.get(self, "remote_path")
+
+    @property
+    @pulumi.getter
+    def uid(self) -> builtins.int:
+        """
+        The user in the file system cannot be customized for now. If this parameter is provided, the value must be 1000 (consistent with the function run user uid).
+        """
+        return pulumi.get(self, "uid")
+
+
+@pulumi.output_type
+class GetFunctionSourceAccessConfigResult(dict):
+    def __init__(__self__, *,
+                 password: builtins.str,
+                 username: builtins.str):
+        """
+        :param builtins.str password: Image repository password
+        :param builtins.str username: Image repository username
+        """
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter
+    def password(self) -> builtins.str:
+        """
+        Image repository password
+        """
+        return pulumi.get(self, "password")
+
+    @property
+    @pulumi.getter
+    def username(self) -> builtins.str:
+        """
+        Image repository username
+        """
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetFunctionTagResult(dict):
+    def __init__(__self__, *,
+                 key: builtins.str,
+                 value: builtins.str):
+        """
+        :param builtins.str key: Function tag key
+        :param builtins.str value: Function tag value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> builtins.str:
+        """
+        Function tag key
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> builtins.str:
+        """
+        Function tag value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetFunctionTlsConfigResult(dict):
+    def __init__(__self__, *,
+                 enable_log: builtins.bool,
+                 tls_project_id: builtins.str,
+                 tls_topic_id: builtins.str):
+        """
+        :param builtins.bool enable_log: TLS log feature toggle. true: enabled, function stdout/stderr logs will be collected to the specified log project and log topic in Log Service. false: disabled, logs will not be collected
+        :param builtins.str tls_project_id: TLS log project ID
+        :param builtins.str tls_topic_id: TLS log topic ID.
+        """
+        pulumi.set(__self__, "enable_log", enable_log)
+        pulumi.set(__self__, "tls_project_id", tls_project_id)
+        pulumi.set(__self__, "tls_topic_id", tls_topic_id)
+
+    @property
+    @pulumi.getter(name="enableLog")
+    def enable_log(self) -> builtins.bool:
+        """
+        TLS log feature toggle. true: enabled, function stdout/stderr logs will be collected to the specified log project and log topic in Log Service. false: disabled, logs will not be collected
+        """
+        return pulumi.get(self, "enable_log")
+
+    @property
+    @pulumi.getter(name="tlsProjectId")
+    def tls_project_id(self) -> builtins.str:
+        """
+        TLS log project ID
+        """
+        return pulumi.get(self, "tls_project_id")
+
+    @property
+    @pulumi.getter(name="tlsTopicId")
+    def tls_topic_id(self) -> builtins.str:
+        """
+        TLS log topic ID.
+        """
+        return pulumi.get(self, "tls_topic_id")
+
+
+@pulumi.output_type
+class GetFunctionTosMountConfigResult(dict):
+    def __init__(__self__, *,
+                 credentials: 'outputs.GetFunctionTosMountConfigCredentialsResult',
+                 enable_tos: builtins.bool,
+                 mount_points: Sequence['outputs.GetFunctionTosMountConfigMountPointResult']):
+        """
+        :param 'GetFunctionTosMountConfigCredentialsArgs' credentials: AKSK with TOS domain access permission.
+        :param builtins.bool enable_tos: Enable TOS storage mount.
+        :param Sequence['GetFunctionTosMountConfigMountPointArgs'] mount_points: TOS storage configuration list
+        """
+        pulumi.set(__self__, "credentials", credentials)
+        pulumi.set(__self__, "enable_tos", enable_tos)
+        pulumi.set(__self__, "mount_points", mount_points)
+
+    @property
+    @pulumi.getter
+    def credentials(self) -> 'outputs.GetFunctionTosMountConfigCredentialsResult':
+        """
+        AKSK with TOS domain access permission.
+        """
+        return pulumi.get(self, "credentials")
+
+    @property
+    @pulumi.getter(name="enableTos")
+    def enable_tos(self) -> builtins.bool:
+        """
+        Enable TOS storage mount.
+        """
+        return pulumi.get(self, "enable_tos")
+
+    @property
+    @pulumi.getter(name="mountPoints")
+    def mount_points(self) -> Sequence['outputs.GetFunctionTosMountConfigMountPointResult']:
+        """
+        TOS storage configuration list
+        """
+        return pulumi.get(self, "mount_points")
+
+
+@pulumi.output_type
+class GetFunctionTosMountConfigCredentialsResult(dict):
+    def __init__(__self__, *,
+                 access_key_id: builtins.str,
+                 secret_access_key: builtins.str):
+        """
+        :param builtins.str access_key_id: Account AccessKey ID
+        :param builtins.str secret_access_key: Account Secret Access Key
+        """
+        pulumi.set(__self__, "access_key_id", access_key_id)
+        pulumi.set(__self__, "secret_access_key", secret_access_key)
+
+    @property
+    @pulumi.getter(name="accessKeyId")
+    def access_key_id(self) -> builtins.str:
+        """
+        Account AccessKey ID
+        """
+        return pulumi.get(self, "access_key_id")
+
+    @property
+    @pulumi.getter(name="secretAccessKey")
+    def secret_access_key(self) -> builtins.str:
+        """
+        Account Secret Access Key
+        """
+        return pulumi.get(self, "secret_access_key")
+
+
+@pulumi.output_type
+class GetFunctionTosMountConfigMountPointResult(dict):
+    def __init__(__self__, *,
+                 bucket_name: builtins.str,
+                 bucket_path: builtins.str,
+                 endpoint: builtins.str,
+                 local_mount_path: builtins.str,
+                 read_only: builtins.bool):
+        """
+        :param builtins.str bucket_name: TOS bucket name.
+        :param builtins.str bucket_path: Mounted TOS Bucket path.
+        :param builtins.str endpoint: TOS access domain name.
+        :param builtins.str local_mount_path: Function local mount directory.
+        :param builtins.bool read_only: Function local directory access permission. After mounting a TOS bucket, whether the function's local mount directory is read-only. true: read-only; false (default): read/write
+        """
+        pulumi.set(__self__, "bucket_name", bucket_name)
+        pulumi.set(__self__, "bucket_path", bucket_path)
+        pulumi.set(__self__, "endpoint", endpoint)
+        pulumi.set(__self__, "local_mount_path", local_mount_path)
+        pulumi.set(__self__, "read_only", read_only)
+
+    @property
+    @pulumi.getter(name="bucketName")
+    def bucket_name(self) -> builtins.str:
+        """
+        TOS bucket name.
+        """
+        return pulumi.get(self, "bucket_name")
+
+    @property
+    @pulumi.getter(name="bucketPath")
+    def bucket_path(self) -> builtins.str:
+        """
+        Mounted TOS Bucket path.
+        """
+        return pulumi.get(self, "bucket_path")
+
+    @property
+    @pulumi.getter
+    def endpoint(self) -> builtins.str:
+        """
+        TOS access domain name.
+        """
+        return pulumi.get(self, "endpoint")
+
+    @property
+    @pulumi.getter(name="localMountPath")
+    def local_mount_path(self) -> builtins.str:
+        """
+        Function local mount directory.
+        """
+        return pulumi.get(self, "local_mount_path")
+
+    @property
+    @pulumi.getter(name="readOnly")
+    def read_only(self) -> builtins.bool:
+        """
+        Function local directory access permission. After mounting a TOS bucket, whether the function's local mount directory is read-only. true: read-only; false (default): read/write
+        """
+        return pulumi.get(self, "read_only")
+
+
+@pulumi.output_type
+class GetFunctionVpcConfigResult(dict):
+    def __init__(__self__, *,
+                 enable_shared_internet_access: builtins.bool,
+                 enable_vpc: builtins.bool,
+                 security_group_ids: Sequence[builtins.str],
+                 subnet_ids: Sequence[builtins.str],
+                 vpc_id: builtins.str):
+        """
+        :param builtins.bool enable_shared_internet_access: Function public network access switch. Whether to access the public network via veFaaS VPC shared NAT gateway. Values: true: enabled, access public network via default network interface. Public outbound traffic fees apply. false: disabled, function cannot access public network via default network interface.
+        :param builtins.bool enable_vpc: Whether the function enables private network access
+        :param Sequence[builtins.str] security_group_ids: Security group ID
+        :param Sequence[builtins.str] subnet_ids: Subnet ID
+        :param builtins.str vpc_id: VPC ID. If the VPC ID is an empty string, it means the current VPC configuration will be deleted
+        """
+        pulumi.set(__self__, "enable_shared_internet_access", enable_shared_internet_access)
+        pulumi.set(__self__, "enable_vpc", enable_vpc)
+        pulumi.set(__self__, "security_group_ids", security_group_ids)
+        pulumi.set(__self__, "subnet_ids", subnet_ids)
+        pulumi.set(__self__, "vpc_id", vpc_id)
+
+    @property
+    @pulumi.getter(name="enableSharedInternetAccess")
+    def enable_shared_internet_access(self) -> builtins.bool:
+        """
+        Function public network access switch. Whether to access the public network via veFaaS VPC shared NAT gateway. Values: true: enabled, access public network via default network interface. Public outbound traffic fees apply. false: disabled, function cannot access public network via default network interface.
+        """
+        return pulumi.get(self, "enable_shared_internet_access")
+
+    @property
+    @pulumi.getter(name="enableVpc")
+    def enable_vpc(self) -> builtins.bool:
+        """
+        Whether the function enables private network access
+        """
+        return pulumi.get(self, "enable_vpc")
+
+    @property
+    @pulumi.getter(name="securityGroupIds")
+    def security_group_ids(self) -> Sequence[builtins.str]:
+        """
+        Security group ID
+        """
+        return pulumi.get(self, "security_group_ids")
+
+    @property
+    @pulumi.getter(name="subnetIds")
+    def subnet_ids(self) -> Sequence[builtins.str]:
+        """
+        Subnet ID
+        """
+        return pulumi.get(self, "subnet_ids")
+
+    @property
+    @pulumi.getter(name="vpcId")
+    def vpc_id(self) -> builtins.str:
+        """
+        VPC ID. If the VPC ID is an empty string, it means the current VPC configuration will be deleted
+        """
+        return pulumi.get(self, "vpc_id")
 
 
 @pulumi.output_type
@@ -306,9 +1608,9 @@ class GetKafkaTriggerKafkaCredentialsResult(dict):
                  password: builtins.str,
                  username: builtins.str):
         """
-        :param builtins.str mechanism: Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
-        :param builtins.str password: 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
-        :param builtins.str username: 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
+        :param builtins.str mechanism: Kafka authentication mechanism. Options: PLAIN, SCRAM-SHA-256.
+        :param builtins.str password: SASL/PLAIN password set when creating the Kafka instance.
+        :param builtins.str username: SASL/PLAIN username set when creating the Kafka instance.
         """
         pulumi.set(__self__, "mechanism", mechanism)
         pulumi.set(__self__, "password", password)
@@ -318,7 +1620,7 @@ class GetKafkaTriggerKafkaCredentialsResult(dict):
     @pulumi.getter
     def mechanism(self) -> builtins.str:
         """
-        Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
+        Kafka authentication mechanism. Options: PLAIN, SCRAM-SHA-256.
         """
         return pulumi.get(self, "mechanism")
 
@@ -326,7 +1628,7 @@ class GetKafkaTriggerKafkaCredentialsResult(dict):
     @pulumi.getter
     def password(self) -> builtins.str:
         """
-        创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
+        SASL/PLAIN password set when creating the Kafka instance.
         """
         return pulumi.get(self, "password")
 
@@ -334,7 +1636,7 @@ class GetKafkaTriggerKafkaCredentialsResult(dict):
     @pulumi.getter
     def username(self) -> builtins.str:
         """
-        创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
+        SASL/PLAIN username set when creating the Kafka instance.
         """
         return pulumi.get(self, "username")
 
@@ -345,8 +1647,8 @@ class GetSandboxEnvResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 环境变量键。
-        :param builtins.str value: 环境变量值。
+        :param builtins.str key: Environment variable key
+        :param builtins.str value: Environment variable value
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -355,7 +1657,7 @@ class GetSandboxEnvResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        环境变量键。
+        Environment variable key
         """
         return pulumi.get(self, "key")
 
@@ -363,7 +1665,7 @@ class GetSandboxEnvResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        环境变量值。
+        Environment variable value
         """
         return pulumi.get(self, "value")
 
@@ -376,10 +1678,10 @@ class GetSandboxInstanceImageInfoResult(dict):
                  image_id: builtins.str,
                  port: builtins.int):
         """
-        :param builtins.str command: 沙箱实例程序的启动命令。如需指定脚本文件，请使用绝对路径，并确保脚本具有相应的可执行权限。
-        :param builtins.str image: 沙箱实例使用的已预热镜像地址。
-        :param builtins.str image_id: 沙箱实例使用的已预热镜像 ID。
-        :param builtins.int port: 沙箱实例镜像监听端口。
+        :param builtins.str command: Startup command for the sandbox instance program. To specify a script file, use an absolute path and ensure the script has executable permissions
+        :param builtins.str image: Preheated image address used by the sandbox instance
+        :param builtins.str image_id: Pre-warmed image ID used by the sandbox instance.
+        :param builtins.int port: Listening port of the sandbox instance image.
         """
         pulumi.set(__self__, "command", command)
         pulumi.set(__self__, "image", image)
@@ -390,7 +1692,7 @@ class GetSandboxInstanceImageInfoResult(dict):
     @pulumi.getter
     def command(self) -> builtins.str:
         """
-        沙箱实例程序的启动命令。如需指定脚本文件，请使用绝对路径，并确保脚本具有相应的可执行权限。
+        Startup command for the sandbox instance program. To specify a script file, use an absolute path and ensure the script has executable permissions
         """
         return pulumi.get(self, "command")
 
@@ -398,7 +1700,7 @@ class GetSandboxInstanceImageInfoResult(dict):
     @pulumi.getter
     def image(self) -> builtins.str:
         """
-        沙箱实例使用的已预热镜像地址。
+        Preheated image address used by the sandbox instance
         """
         return pulumi.get(self, "image")
 
@@ -406,7 +1708,7 @@ class GetSandboxInstanceImageInfoResult(dict):
     @pulumi.getter(name="imageId")
     def image_id(self) -> builtins.str:
         """
-        沙箱实例使用的已预热镜像 ID。
+        Pre-warmed image ID used by the sandbox instance.
         """
         return pulumi.get(self, "image_id")
 
@@ -414,7 +1716,7 @@ class GetSandboxInstanceImageInfoResult(dict):
     @pulumi.getter
     def port(self) -> builtins.int:
         """
-        沙箱实例镜像监听端口。
+        Listening port of the sandbox instance image.
         """
         return pulumi.get(self, "port")
 
@@ -425,8 +1727,8 @@ class GetSandboxInstanceTosMountConfigResult(dict):
                  enable: builtins.bool,
                  tos_mount_points: Sequence['outputs.GetSandboxInstanceTosMountConfigTosMountPointResult']):
         """
-        :param builtins.bool enable: 沙箱实例是否启用了实例级别的 TOS 挂载，参数值说明：true：是，false：否。
-        :param Sequence['GetSandboxInstanceTosMountConfigTosMountPointArgs'] tos_mount_points: 启用了实例级别 TOS 挂载的沙箱实例具体 TOS 挂载目录信息。
+        :param builtins.bool enable: Whether instance-level TOS mount is enabled for the sandbox instance. Parameter description: true: yes, false: no
+        :param Sequence['GetSandboxInstanceTosMountConfigTosMountPointArgs'] tos_mount_points: Detailed TOS mount directory information for sandbox instances with instance-level TOS mount enabled
         """
         pulumi.set(__self__, "enable", enable)
         pulumi.set(__self__, "tos_mount_points", tos_mount_points)
@@ -435,7 +1737,7 @@ class GetSandboxInstanceTosMountConfigResult(dict):
     @pulumi.getter
     def enable(self) -> builtins.bool:
         """
-        沙箱实例是否启用了实例级别的 TOS 挂载，参数值说明：true：是，false：否。
+        Whether instance-level TOS mount is enabled for the sandbox instance. Parameter description: true: yes, false: no
         """
         return pulumi.get(self, "enable")
 
@@ -443,7 +1745,7 @@ class GetSandboxInstanceTosMountConfigResult(dict):
     @pulumi.getter(name="tosMountPoints")
     def tos_mount_points(self) -> Sequence['outputs.GetSandboxInstanceTosMountConfigTosMountPointResult']:
         """
-        启用了实例级别 TOS 挂载的沙箱实例具体 TOS 挂载目录信息。
+        Detailed TOS mount directory information for sandbox instances with instance-level TOS mount enabled
         """
         return pulumi.get(self, "tos_mount_points")
 
@@ -454,8 +1756,8 @@ class GetSandboxInstanceTosMountConfigTosMountPointResult(dict):
                  bucket_path: builtins.str,
                  local_mount_path: builtins.str):
         """
-        :param builtins.str bucket_path: 沙箱实例挂载的 TOS 远端目录。
-        :param builtins.str local_mount_path: 沙箱实例挂载的 TOS 存储桶本地目录。该目录为沙箱应用已配置的 TOS 存储挂载的本地目录时，系统根据指定的本地目录，修改与之对应的 TOS BucketPath。
+        :param builtins.str bucket_path: TOS remote directory mounted by the sandbox instance
+        :param builtins.str local_mount_path: Local directory of the TOS bucket mounted by the sandbox instance. If this directory is the local directory configured for TOS storage mount in the sandbox application, the system modifies the corresponding TOS BucketPath based on the specified local directory
         """
         pulumi.set(__self__, "bucket_path", bucket_path)
         pulumi.set(__self__, "local_mount_path", local_mount_path)
@@ -464,7 +1766,7 @@ class GetSandboxInstanceTosMountConfigTosMountPointResult(dict):
     @pulumi.getter(name="bucketPath")
     def bucket_path(self) -> builtins.str:
         """
-        沙箱实例挂载的 TOS 远端目录。
+        TOS remote directory mounted by the sandbox instance
         """
         return pulumi.get(self, "bucket_path")
 
@@ -472,7 +1774,7 @@ class GetSandboxInstanceTosMountConfigTosMountPointResult(dict):
     @pulumi.getter(name="localMountPath")
     def local_mount_path(self) -> builtins.str:
         """
-        沙箱实例挂载的 TOS 存储桶本地目录。该目录为沙箱应用已配置的 TOS 存储挂载的本地目录时，系统根据指定的本地目录，修改与之对应的 TOS BucketPath。
+        Local directory of the TOS bucket mounted by the sandbox instance. If this directory is the local directory configured for TOS storage mount in the sandbox application, the system modifies the corresponding TOS BucketPath based on the specified local directory
         """
         return pulumi.get(self, "local_mount_path")
 
@@ -483,8 +1785,8 @@ class GetSandboxMetadataResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -493,7 +1795,7 @@ class GetSandboxMetadataResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -501,7 +1803,7 @@ class GetSandboxMetadataResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 

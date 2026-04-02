@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AclTag {
     /**
-     * @return 用户标签的标签键。长度限制为1～128个字符。大小写敏感。不能以volc:和sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和{@literal @}。同一资源的标签键不允许重复。
+     * @return User tag key. Length limit: 1–128 characters. Case sensitive. Cannot start with any combination of volc: or sys: (case insensitive). Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and {@literal @}. Tag keys for the same resource must be unique
      * 
      */
     private @Nullable String key;
     /**
-     * @return 用户标签的标签值。长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和{@literal @}。
+     * @return User tag value. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and {@literal @}
      * 
      */
     private @Nullable String value;
 
     private AclTag() {}
     /**
-     * @return 用户标签的标签键。长度限制为1～128个字符。大小写敏感。不能以volc:和sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和{@literal @}。同一资源的标签键不允许重复。
+     * @return User tag key. Length limit: 1–128 characters. Case sensitive. Cannot start with any combination of volc: or sys: (case insensitive). Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and {@literal @}. Tag keys for the same resource must be unique
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return 用户标签的标签值。长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和{@literal @}。
+     * @return User tag value. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and {@literal @}
      * 
      */
     public Optional<String> value() {

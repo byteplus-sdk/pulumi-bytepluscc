@@ -28,14 +28,14 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 访问控制策略组包含的IP条目数量。
+     * Number of IP entries in the access control policy group
      * 
      */
     @Import(name="aclEntryCount")
     private @Nullable Output<Integer> aclEntryCount;
 
     /**
-     * @return 访问控制策略组包含的IP条目数量。
+     * @return Number of IP entries in the access control policy group
      * 
      */
     public Optional<Output<Integer>> aclEntryCount() {
@@ -43,14 +43,14 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 访问控制策略组的ID。
+     * Access control policy group ID
      * 
      */
     @Import(name="aclId")
     private @Nullable Output<String> aclId;
 
     /**
-     * @return 访问控制策略组的ID。
+     * @return Access control policy group ID
      * 
      */
     public Optional<Output<String>> aclId() {
@@ -58,14 +58,14 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 访问控制策略组的名字。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ～ 128个字符。不填默认为访问控制策略组ID。
+     * Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
      * 
      */
     @Import(name="aclName")
     private @Nullable Output<String> aclName;
 
     /**
-     * @return 访问控制策略组的名字。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ～ 128个字符。不填默认为访问控制策略组ID。
+     * @return Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
      * 
      */
     public Optional<Output<String>> aclName() {
@@ -73,14 +73,14 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 访问控制策略组的创建时间。
+     * Creation time of the access control policy group
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 访问控制策略组的创建时间。
+     * @return Creation time of the access control policy group
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -88,14 +88,14 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 访问控制策略组的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+     * Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 访问控制策略组的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+     * @return Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
      * 
      */
     public Optional<Output<String>> description() {
@@ -110,14 +110,14 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 访问控制策略组所属项目名称。
+     * Project name to which the access control policy group belongs
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 访问控制策略组所属项目名称。
+     * @return Project name to which the access control policy group belongs
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -125,14 +125,14 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 访问控制策略组的状态。Creating：创建中。Active：正常可用。Configuring：配置中。Deleting：删除中。
+     * Status of the access control policy group. Creating: Creating. Active: Available. Configuring: Configuring. Deleting: Deleting
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 访问控制策略组的状态。Creating：创建中。Active：正常可用。Configuring：配置中。Deleting：删除中。
+     * @return Status of the access control policy group. Creating: Creating. Active: Available. Configuring: Configuring. Deleting: Deleting
      * 
      */
     public Optional<Output<String>> status() {
@@ -147,14 +147,14 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 访问控制策略组的最近操作时间。
+     * Last operation time of the access control policy group
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 访问控制策略组的最近操作时间。
+     * @return Last operation time of the access control policy group
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -209,7 +209,7 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclEntryCount 访问控制策略组包含的IP条目数量。
+         * @param aclEntryCount Number of IP entries in the access control policy group
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclEntryCount 访问控制策略组包含的IP条目数量。
+         * @param aclEntryCount Number of IP entries in the access control policy group
          * 
          * @return builder
          * 
@@ -230,7 +230,7 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclId 访问控制策略组的ID。
+         * @param aclId Access control policy group ID
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclId 访问控制策略组的ID。
+         * @param aclId Access control policy group ID
          * 
          * @return builder
          * 
@@ -251,7 +251,7 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclName 访问控制策略组的名字。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ～ 128个字符。不填默认为访问控制策略组ID。
+         * @param aclName Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
          * 
          * @return builder
          * 
@@ -262,7 +262,7 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclName 访问控制策略组的名字。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ～ 128个字符。不填默认为访问控制策略组ID。
+         * @param aclName Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
          * 
          * @return builder
          * 
@@ -272,7 +272,7 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 访问控制策略组的创建时间。
+         * @param createdTime Creation time of the access control policy group
          * 
          * @return builder
          * 
@@ -283,7 +283,7 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 访问控制策略组的创建时间。
+         * @param createdTime Creation time of the access control policy group
          * 
          * @return builder
          * 
@@ -293,7 +293,7 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 访问控制策略组的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+         * @param description Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
          * 
          * @return builder
          * 
@@ -304,7 +304,7 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 访问控制策略组的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+         * @param description Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
          * 
          * @return builder
          * 
@@ -327,7 +327,7 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 访问控制策略组所属项目名称。
+         * @param projectName Project name to which the access control policy group belongs
          * 
          * @return builder
          * 
@@ -338,7 +338,7 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 访问控制策略组所属项目名称。
+         * @param projectName Project name to which the access control policy group belongs
          * 
          * @return builder
          * 
@@ -348,7 +348,7 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 访问控制策略组的状态。Creating：创建中。Active：正常可用。Configuring：配置中。Deleting：删除中。
+         * @param status Status of the access control policy group. Creating: Creating. Active: Available. Configuring: Configuring. Deleting: Deleting
          * 
          * @return builder
          * 
@@ -359,7 +359,7 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 访问控制策略组的状态。Creating：创建中。Active：正常可用。Configuring：配置中。Deleting：删除中。
+         * @param status Status of the access control policy group. Creating: Creating. Active: Available. Configuring: Configuring. Deleting: Deleting
          * 
          * @return builder
          * 
@@ -382,7 +382,7 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 访问控制策略组的最近操作时间。
+         * @param updatedTime Last operation time of the access control policy group
          * 
          * @return builder
          * 
@@ -393,7 +393,7 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 访问控制策略组的最近操作时间。
+         * @param updatedTime Last operation time of the access control policy group
          * 
          * @return builder
          * 

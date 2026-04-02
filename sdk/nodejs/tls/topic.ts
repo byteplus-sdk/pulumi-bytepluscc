@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 日志主题是日志服务进行日志管理的基本单位，日志接入、检索分析、消费等功能都是基于日志主题的粒度进行操作。
+ * Log topic is the basic unit for log management in the log service. Log ingestion, search and analysis, and consumption are all performed at the log topic level.
  *
  * ## Example Usage
  *
@@ -73,84 +73,84 @@ export class Topic extends pulumi.CustomResource {
     }
 
     /**
-     * 指定日志主题是否已开启了 Kafka 协议消费功能。true：已开启。false：未开启。
+     * Indicates whether Kafka protocol consumption is enabled for the log topic. true: enabled. false: not enabled.
      */
     public readonly allowConsume!: pulumi.Output<boolean>;
     /**
-     * 归档存储时长。该时长取值范围为 60~3650。满足如下任一条件时，可实现归档存储。标准存储时长 30 天及以上。标准存储时长 7 天及以上且低频存储时长 30 天及以上。此参数仅在 EnableHotTtl 为 true 时生效。
+     * Archive storage duration. The value range is 60~3650. Archive storage can be enabled if any of the following conditions are met: Standard storage duration is 30 days or longer; standard storage duration is 7 days or longer and infrequent storage duration is 30 days or longer. This parameter is only effective when EnableHotTtl is set to true.
      */
     public readonly archiveTtl!: pulumi.Output<number>;
     /**
-     * 是否开启分区的自动分裂功能。true：当写入的数据量连续 5 分钟超过已有分区服务能力时，日志服务会根据数据量自动分裂分区以满足业务需求，但分裂后的分区数量不可超出最大分裂数。最近 15 分钟内分裂出来的新分区不会自动分裂。false：不开启分区的自动分裂。
+     * Enable automatic partition splitting. true: If the amount of data written exceeds the capacity of existing partitions for 5 consecutive minutes, the log service will automatically split partitions based on data volume to meet business needs, but the number of partitions after splitting cannot exceed the maximum split limit. New partitions created within the last 15 minutes will not be automatically split. false: Disable automatic partition splitting.
      */
     public readonly autoSplit!: pulumi.Output<boolean>;
     /**
-     * 低频存储时长。该时长取值范围为 30~3650。标准存储时长 7 天及以上可实现低频存储。此参数仅在 EnableHotTtl 为 true 时生效。
+     * Low-frequency storage duration. Value range: 30–3650. Low-frequency storage is available when standard storage duration is 7 days or longer. This parameter is effective only when EnableHotTtl is true.
      */
     public readonly coldTtl!: pulumi.Output<number>;
     /**
-     * Kafka 协议消费主题 ID，格式为 out+日志主题 ID。通过 Kafka 协议消费此日志主题中的日志数据时，Topic 应指定为此 ID。
+     * Kafka protocol consumption topic ID, formatted as out+log topic ID. When consuming log data from this log topic via the Kafka protocol, set Topic to this ID.
      */
     public /*out*/ readonly consumeTopic!: pulumi.Output<string>;
     /**
-     * 日志主题创建时间。
+     * Log topic creation time.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 日志主题描述信息。不支持 <>、'、\、\、所有 emoji 表情符号。长度为 0~64 个字符。
+     * Log topic description. Does not support <>, ', \, \, or any emoji symbols. Length: 0–64 characters.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 是否开启分层存储。开启后，日志服务支持标准存储、低频存储和归档存储。设置 HotTtl、ArchiveTtl、ColdTtl 后，如果数据存储时间超过对应时长，那么数据会自动沉降至低频存储、归档存储进行后续保存，直到日志采集到服务端的总时长达到 Ttl 时，被后端服务自动清理。
+     * Enable tiered storage. When enabled, the log service supports standard storage, low-frequency storage, and archive storage. After setting HotTtl, ArchiveTtl, and ColdTtl, if data storage duration exceeds the corresponding value, data will automatically move to low-frequency or archive storage for continued retention until the total log retention duration reaches Ttl, after which backend services will automatically clean up the data.
      */
     public readonly enableHotTtl!: pulumi.Output<boolean>;
     /**
-     * 是否开启 WebTracking 功能，开启后，可以通过 WebTracking 快速采集前端埋点数据。true：开启 WebTracking功能。false：（默认）关闭 WebTracking 功能。为日志主题开启 Web Tracking 后，通过 API 接口 WebTracks 写入数据时无需经过鉴权，相当于面向公网开放了匿名写入权限，可能产生脏数据。
+     * Enable WebTracking. When enabled, you can quickly collect frontend tracking data using WebTracking. true: Enable WebTracking. false (default): Disable WebTracking. After enabling Web Tracking for the log topic, data written via the WebTracks API does not require authentication, which grants anonymous write access to the public network and may result in dirty data.
      */
     public readonly enableTracking!: pulumi.Output<boolean>;
     /**
-     * 标准存储时长。该时长默认为 30 天，取值范围为 7~3650。此参数仅在 EnableHotTtl 为 true 时生效。
+     * Standard storage duration. Default is 30 days; value range: 7–3650. This parameter is effective only when EnableHotTtl is true.
      */
     public readonly hotTtl!: pulumi.Output<number>;
     /**
-     * 是否开启记录外网 IP 功能。默认为开启状态。开启后日志服务会自动在日志内容中添加以下元数据字段。**tag****client_ip**：日志来源设备的公网 IP 地址。使用日志服务的私网域名写入日志数据时，则记录私网 IP 地址。**tag****receive_time**：日志达到服务端的时间，格式为 10 位的 Unixtime 时间戳。
+     * Enable external IP recording. Enabled by default. When enabled, the log service automatically adds the following metadata fields to the log content: **tag****client_ip**: Public IP address of the device sending the log. If logs are written using the log service's private domain name, the private IP address is recorded. **tag****receive_time**: Time when the log reaches the server, formatted as a 10-digit Unix timestamp.
      */
     public readonly logPublicIp!: pulumi.Output<boolean>;
     /**
-     * 分区的最大分裂数，即分区分裂后，所有分区的最大数量。取值范围为 1~256，默认为 256。仅在开启自动分裂日志分区，即 AutoSplit 为 true 时必选。MaxSplitShard 必须大于指定的 ShardCount，否则日志服务无法自动分裂分区。
+     * Maximum partition split count, which is the maximum number of partitions after splitting. Value range: 1–256, default is 256. Required only when automatic log partition splitting is enabled (AutoSplit is true). MaxSplitShard must be greater than the specified ShardCount; otherwise, the log service cannot automatically split partitions.
      */
     public readonly maxSplitShard!: pulumi.Output<number>;
     /**
-     * 日志主题所属的日志项目 ID。
+     * Log project ID to which the log topic belongs.
      */
     public readonly projectId!: pulumi.Output<string>;
     /**
-     * 日志分区的数量，默认创建 1 个分区，取值范围为 1～10。 每个分区提供的写入能力为 5MiB/s、500 次/s，读取能力为 20 MiB/s、100 次/s。请在创建日志主题时合理规划分区，创建后暂不支持修改分区数量。
+     * Number of log partitions. By default, 1 partition is created; value range: 1–10. Each partition provides write capacity of 5 MiB/s, 500 ops/s, and read capacity of 20 MiB/s, 100 ops/s. Plan partitions appropriately when creating a log topic; partition count cannot be modified after creation.
      */
     public readonly shardCount!: pulumi.Output<number>;
     public readonly tags!: pulumi.Output<outputs.tls.TopicTag[]>;
     /**
-     * 时间格式
+     * Time format
      */
     public readonly timeFormat!: pulumi.Output<string>;
     /**
-     * 时间字段名
+     * Time field name
      */
     public readonly timeKey!: pulumi.Output<string>;
     /**
-     * 日志主题 ID。
+     * Log topic ID.
      */
     public /*out*/ readonly topicId!: pulumi.Output<string>;
     /**
-     * 日志主题名称。
+     * Log topic name.
      */
     public readonly topicName!: pulumi.Output<string>;
     /**
-     * 日志在日志服务中的总保存时间，超过指定的日志存储时长后，此日志主题中的过期日志会被自动清除。单位为天，默认为 30 天。取值范围为 1～3650，指定为 3650 天表示永久存储。
+     * Total log retention time in the log service. After the specified log storage duration is exceeded, expired logs in this log topic will be automatically cleared. Unit: days. Default is 30 days. Value range is 1–3650. Setting to 3650 days means permanent storage.
      */
     public readonly ttl!: pulumi.Output<number>;
     /**
-     * 日志主题修改时间。
+     * Log topic modification time.
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
 
@@ -231,84 +231,84 @@ export class Topic extends pulumi.CustomResource {
  */
 export interface TopicState {
     /**
-     * 指定日志主题是否已开启了 Kafka 协议消费功能。true：已开启。false：未开启。
+     * Indicates whether Kafka protocol consumption is enabled for the log topic. true: enabled. false: not enabled.
      */
     allowConsume?: pulumi.Input<boolean>;
     /**
-     * 归档存储时长。该时长取值范围为 60~3650。满足如下任一条件时，可实现归档存储。标准存储时长 30 天及以上。标准存储时长 7 天及以上且低频存储时长 30 天及以上。此参数仅在 EnableHotTtl 为 true 时生效。
+     * Archive storage duration. The value range is 60~3650. Archive storage can be enabled if any of the following conditions are met: Standard storage duration is 30 days or longer; standard storage duration is 7 days or longer and infrequent storage duration is 30 days or longer. This parameter is only effective when EnableHotTtl is set to true.
      */
     archiveTtl?: pulumi.Input<number>;
     /**
-     * 是否开启分区的自动分裂功能。true：当写入的数据量连续 5 分钟超过已有分区服务能力时，日志服务会根据数据量自动分裂分区以满足业务需求，但分裂后的分区数量不可超出最大分裂数。最近 15 分钟内分裂出来的新分区不会自动分裂。false：不开启分区的自动分裂。
+     * Enable automatic partition splitting. true: If the amount of data written exceeds the capacity of existing partitions for 5 consecutive minutes, the log service will automatically split partitions based on data volume to meet business needs, but the number of partitions after splitting cannot exceed the maximum split limit. New partitions created within the last 15 minutes will not be automatically split. false: Disable automatic partition splitting.
      */
     autoSplit?: pulumi.Input<boolean>;
     /**
-     * 低频存储时长。该时长取值范围为 30~3650。标准存储时长 7 天及以上可实现低频存储。此参数仅在 EnableHotTtl 为 true 时生效。
+     * Low-frequency storage duration. Value range: 30–3650. Low-frequency storage is available when standard storage duration is 7 days or longer. This parameter is effective only when EnableHotTtl is true.
      */
     coldTtl?: pulumi.Input<number>;
     /**
-     * Kafka 协议消费主题 ID，格式为 out+日志主题 ID。通过 Kafka 协议消费此日志主题中的日志数据时，Topic 应指定为此 ID。
+     * Kafka protocol consumption topic ID, formatted as out+log topic ID. When consuming log data from this log topic via the Kafka protocol, set Topic to this ID.
      */
     consumeTopic?: pulumi.Input<string>;
     /**
-     * 日志主题创建时间。
+     * Log topic creation time.
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 日志主题描述信息。不支持 <>、'、\、\、所有 emoji 表情符号。长度为 0~64 个字符。
+     * Log topic description. Does not support <>, ', \, \, or any emoji symbols. Length: 0–64 characters.
      */
     description?: pulumi.Input<string>;
     /**
-     * 是否开启分层存储。开启后，日志服务支持标准存储、低频存储和归档存储。设置 HotTtl、ArchiveTtl、ColdTtl 后，如果数据存储时间超过对应时长，那么数据会自动沉降至低频存储、归档存储进行后续保存，直到日志采集到服务端的总时长达到 Ttl 时，被后端服务自动清理。
+     * Enable tiered storage. When enabled, the log service supports standard storage, low-frequency storage, and archive storage. After setting HotTtl, ArchiveTtl, and ColdTtl, if data storage duration exceeds the corresponding value, data will automatically move to low-frequency or archive storage for continued retention until the total log retention duration reaches Ttl, after which backend services will automatically clean up the data.
      */
     enableHotTtl?: pulumi.Input<boolean>;
     /**
-     * 是否开启 WebTracking 功能，开启后，可以通过 WebTracking 快速采集前端埋点数据。true：开启 WebTracking功能。false：（默认）关闭 WebTracking 功能。为日志主题开启 Web Tracking 后，通过 API 接口 WebTracks 写入数据时无需经过鉴权，相当于面向公网开放了匿名写入权限，可能产生脏数据。
+     * Enable WebTracking. When enabled, you can quickly collect frontend tracking data using WebTracking. true: Enable WebTracking. false (default): Disable WebTracking. After enabling Web Tracking for the log topic, data written via the WebTracks API does not require authentication, which grants anonymous write access to the public network and may result in dirty data.
      */
     enableTracking?: pulumi.Input<boolean>;
     /**
-     * 标准存储时长。该时长默认为 30 天，取值范围为 7~3650。此参数仅在 EnableHotTtl 为 true 时生效。
+     * Standard storage duration. Default is 30 days; value range: 7–3650. This parameter is effective only when EnableHotTtl is true.
      */
     hotTtl?: pulumi.Input<number>;
     /**
-     * 是否开启记录外网 IP 功能。默认为开启状态。开启后日志服务会自动在日志内容中添加以下元数据字段。**tag****client_ip**：日志来源设备的公网 IP 地址。使用日志服务的私网域名写入日志数据时，则记录私网 IP 地址。**tag****receive_time**：日志达到服务端的时间，格式为 10 位的 Unixtime 时间戳。
+     * Enable external IP recording. Enabled by default. When enabled, the log service automatically adds the following metadata fields to the log content: **tag****client_ip**: Public IP address of the device sending the log. If logs are written using the log service's private domain name, the private IP address is recorded. **tag****receive_time**: Time when the log reaches the server, formatted as a 10-digit Unix timestamp.
      */
     logPublicIp?: pulumi.Input<boolean>;
     /**
-     * 分区的最大分裂数，即分区分裂后，所有分区的最大数量。取值范围为 1~256，默认为 256。仅在开启自动分裂日志分区，即 AutoSplit 为 true 时必选。MaxSplitShard 必须大于指定的 ShardCount，否则日志服务无法自动分裂分区。
+     * Maximum partition split count, which is the maximum number of partitions after splitting. Value range: 1–256, default is 256. Required only when automatic log partition splitting is enabled (AutoSplit is true). MaxSplitShard must be greater than the specified ShardCount; otherwise, the log service cannot automatically split partitions.
      */
     maxSplitShard?: pulumi.Input<number>;
     /**
-     * 日志主题所属的日志项目 ID。
+     * Log project ID to which the log topic belongs.
      */
     projectId?: pulumi.Input<string>;
     /**
-     * 日志分区的数量，默认创建 1 个分区，取值范围为 1～10。 每个分区提供的写入能力为 5MiB/s、500 次/s，读取能力为 20 MiB/s、100 次/s。请在创建日志主题时合理规划分区，创建后暂不支持修改分区数量。
+     * Number of log partitions. By default, 1 partition is created; value range: 1–10. Each partition provides write capacity of 5 MiB/s, 500 ops/s, and read capacity of 20 MiB/s, 100 ops/s. Plan partitions appropriately when creating a log topic; partition count cannot be modified after creation.
      */
     shardCount?: pulumi.Input<number>;
     tags?: pulumi.Input<pulumi.Input<inputs.tls.TopicTag>[]>;
     /**
-     * 时间格式
+     * Time format
      */
     timeFormat?: pulumi.Input<string>;
     /**
-     * 时间字段名
+     * Time field name
      */
     timeKey?: pulumi.Input<string>;
     /**
-     * 日志主题 ID。
+     * Log topic ID.
      */
     topicId?: pulumi.Input<string>;
     /**
-     * 日志主题名称。
+     * Log topic name.
      */
     topicName?: pulumi.Input<string>;
     /**
-     * 日志在日志服务中的总保存时间，超过指定的日志存储时长后，此日志主题中的过期日志会被自动清除。单位为天，默认为 30 天。取值范围为 1～3650，指定为 3650 天表示永久存储。
+     * Total log retention time in the log service. After the specified log storage duration is exceeded, expired logs in this log topic will be automatically cleared. Unit: days. Default is 30 days. Value range is 1–3650. Setting to 3650 days means permanent storage.
      */
     ttl?: pulumi.Input<number>;
     /**
-     * 日志主题修改时间。
+     * Log topic modification time.
      */
     updatedTime?: pulumi.Input<string>;
 }
@@ -318,68 +318,68 @@ export interface TopicState {
  */
 export interface TopicArgs {
     /**
-     * 指定日志主题是否已开启了 Kafka 协议消费功能。true：已开启。false：未开启。
+     * Indicates whether Kafka protocol consumption is enabled for the log topic. true: enabled. false: not enabled.
      */
     allowConsume?: pulumi.Input<boolean>;
     /**
-     * 归档存储时长。该时长取值范围为 60~3650。满足如下任一条件时，可实现归档存储。标准存储时长 30 天及以上。标准存储时长 7 天及以上且低频存储时长 30 天及以上。此参数仅在 EnableHotTtl 为 true 时生效。
+     * Archive storage duration. The value range is 60~3650. Archive storage can be enabled if any of the following conditions are met: Standard storage duration is 30 days or longer; standard storage duration is 7 days or longer and infrequent storage duration is 30 days or longer. This parameter is only effective when EnableHotTtl is set to true.
      */
     archiveTtl?: pulumi.Input<number>;
     /**
-     * 是否开启分区的自动分裂功能。true：当写入的数据量连续 5 分钟超过已有分区服务能力时，日志服务会根据数据量自动分裂分区以满足业务需求，但分裂后的分区数量不可超出最大分裂数。最近 15 分钟内分裂出来的新分区不会自动分裂。false：不开启分区的自动分裂。
+     * Enable automatic partition splitting. true: If the amount of data written exceeds the capacity of existing partitions for 5 consecutive minutes, the log service will automatically split partitions based on data volume to meet business needs, but the number of partitions after splitting cannot exceed the maximum split limit. New partitions created within the last 15 minutes will not be automatically split. false: Disable automatic partition splitting.
      */
     autoSplit?: pulumi.Input<boolean>;
     /**
-     * 低频存储时长。该时长取值范围为 30~3650。标准存储时长 7 天及以上可实现低频存储。此参数仅在 EnableHotTtl 为 true 时生效。
+     * Low-frequency storage duration. Value range: 30–3650. Low-frequency storage is available when standard storage duration is 7 days or longer. This parameter is effective only when EnableHotTtl is true.
      */
     coldTtl?: pulumi.Input<number>;
     /**
-     * 日志主题描述信息。不支持 <>、'、\、\、所有 emoji 表情符号。长度为 0~64 个字符。
+     * Log topic description. Does not support <>, ', \, \, or any emoji symbols. Length: 0–64 characters.
      */
     description?: pulumi.Input<string>;
     /**
-     * 是否开启分层存储。开启后，日志服务支持标准存储、低频存储和归档存储。设置 HotTtl、ArchiveTtl、ColdTtl 后，如果数据存储时间超过对应时长，那么数据会自动沉降至低频存储、归档存储进行后续保存，直到日志采集到服务端的总时长达到 Ttl 时，被后端服务自动清理。
+     * Enable tiered storage. When enabled, the log service supports standard storage, low-frequency storage, and archive storage. After setting HotTtl, ArchiveTtl, and ColdTtl, if data storage duration exceeds the corresponding value, data will automatically move to low-frequency or archive storage for continued retention until the total log retention duration reaches Ttl, after which backend services will automatically clean up the data.
      */
     enableHotTtl?: pulumi.Input<boolean>;
     /**
-     * 是否开启 WebTracking 功能，开启后，可以通过 WebTracking 快速采集前端埋点数据。true：开启 WebTracking功能。false：（默认）关闭 WebTracking 功能。为日志主题开启 Web Tracking 后，通过 API 接口 WebTracks 写入数据时无需经过鉴权，相当于面向公网开放了匿名写入权限，可能产生脏数据。
+     * Enable WebTracking. When enabled, you can quickly collect frontend tracking data using WebTracking. true: Enable WebTracking. false (default): Disable WebTracking. After enabling Web Tracking for the log topic, data written via the WebTracks API does not require authentication, which grants anonymous write access to the public network and may result in dirty data.
      */
     enableTracking?: pulumi.Input<boolean>;
     /**
-     * 标准存储时长。该时长默认为 30 天，取值范围为 7~3650。此参数仅在 EnableHotTtl 为 true 时生效。
+     * Standard storage duration. Default is 30 days; value range: 7–3650. This parameter is effective only when EnableHotTtl is true.
      */
     hotTtl?: pulumi.Input<number>;
     /**
-     * 是否开启记录外网 IP 功能。默认为开启状态。开启后日志服务会自动在日志内容中添加以下元数据字段。**tag****client_ip**：日志来源设备的公网 IP 地址。使用日志服务的私网域名写入日志数据时，则记录私网 IP 地址。**tag****receive_time**：日志达到服务端的时间，格式为 10 位的 Unixtime 时间戳。
+     * Enable external IP recording. Enabled by default. When enabled, the log service automatically adds the following metadata fields to the log content: **tag****client_ip**: Public IP address of the device sending the log. If logs are written using the log service's private domain name, the private IP address is recorded. **tag****receive_time**: Time when the log reaches the server, formatted as a 10-digit Unix timestamp.
      */
     logPublicIp?: pulumi.Input<boolean>;
     /**
-     * 分区的最大分裂数，即分区分裂后，所有分区的最大数量。取值范围为 1~256，默认为 256。仅在开启自动分裂日志分区，即 AutoSplit 为 true 时必选。MaxSplitShard 必须大于指定的 ShardCount，否则日志服务无法自动分裂分区。
+     * Maximum partition split count, which is the maximum number of partitions after splitting. Value range: 1–256, default is 256. Required only when automatic log partition splitting is enabled (AutoSplit is true). MaxSplitShard must be greater than the specified ShardCount; otherwise, the log service cannot automatically split partitions.
      */
     maxSplitShard?: pulumi.Input<number>;
     /**
-     * 日志主题所属的日志项目 ID。
+     * Log project ID to which the log topic belongs.
      */
     projectId: pulumi.Input<string>;
     /**
-     * 日志分区的数量，默认创建 1 个分区，取值范围为 1～10。 每个分区提供的写入能力为 5MiB/s、500 次/s，读取能力为 20 MiB/s、100 次/s。请在创建日志主题时合理规划分区，创建后暂不支持修改分区数量。
+     * Number of log partitions. By default, 1 partition is created; value range: 1–10. Each partition provides write capacity of 5 MiB/s, 500 ops/s, and read capacity of 20 MiB/s, 100 ops/s. Plan partitions appropriately when creating a log topic; partition count cannot be modified after creation.
      */
     shardCount: pulumi.Input<number>;
     tags?: pulumi.Input<pulumi.Input<inputs.tls.TopicTag>[]>;
     /**
-     * 时间格式
+     * Time format
      */
     timeFormat?: pulumi.Input<string>;
     /**
-     * 时间字段名
+     * Time field name
      */
     timeKey?: pulumi.Input<string>;
     /**
-     * 日志主题名称。
+     * Log topic name.
      */
     topicName: pulumi.Input<string>;
     /**
-     * 日志在日志服务中的总保存时间，超过指定的日志存储时长后，此日志主题中的过期日志会被自动清除。单位为天，默认为 30 天。取值范围为 1～3650，指定为 3650 天表示永久存储。
+     * Total log retention time in the log service. After the specified log storage duration is exceeded, expired logs in this log topic will be automatically cleared. Unit: days. Default is 30 days. Value range is 1–3650. Setting to 3650 days means permanent storage.
      */
     ttl?: pulumi.Input<number>;
 }

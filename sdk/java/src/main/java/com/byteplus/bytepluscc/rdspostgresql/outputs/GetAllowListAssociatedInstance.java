@@ -11,38 +11,38 @@ import java.util.Objects;
 @CustomType
 public final class GetAllowListAssociatedInstance {
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     private String instanceId;
     /**
-     * @return 实例名称。
+     * @return Instance name.
      * 
      */
     private String instanceName;
     /**
-     * @return 实例所属的 VPC ID。
+     * @return VPC ID to which the instance belongs.
      * 
      */
     private String vpc;
 
     private GetAllowListAssociatedInstance() {}
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return 实例名称。
+     * @return Instance name.
      * 
      */
     public String instanceName() {
         return this.instanceName;
     }
     /**
-     * @return 实例所属的 VPC ID。
+     * @return VPC ID to which the instance belongs.
      * 
      */
     public String vpc() {

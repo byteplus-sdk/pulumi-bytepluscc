@@ -11,50 +11,50 @@ import java.util.Objects;
 @CustomType
 public final class GetPermissionSetPermissionPolicy {
     /**
-     * @return 策略创建时间。
+     * @return Policy Creation Time
      * 
      */
     private String createdTime;
     /**
-     * @return 策略语法内容。语法可参考 策略语法说明。
+     * @return Policy syntax content. Refer to policy syntax documentation
      * 
      */
     private String permissionPolicyDocument;
     /**
-     * @return 策略名称。
+     * @return Policy Name
      * 
      */
     private String permissionPolicyName;
     /**
-     * @return 策略类型，System or Inline。
+     * @return Policy Type: System or Inline
      * 
      */
     private String permissionPolicyType;
 
     private GetPermissionSetPermissionPolicy() {}
     /**
-     * @return 策略创建时间。
+     * @return Policy Creation Time
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 策略语法内容。语法可参考 策略语法说明。
+     * @return Policy syntax content. Refer to policy syntax documentation
      * 
      */
     public String permissionPolicyDocument() {
         return this.permissionPolicyDocument;
     }
     /**
-     * @return 策略名称。
+     * @return Policy Name
      * 
      */
     public String permissionPolicyName() {
         return this.permissionPolicyName;
     }
     /**
-     * @return 策略类型，System or Inline。
+     * @return Policy Type: System or Inline
      * 
      */
     public String permissionPolicyType() {

@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class GatewayResourceSpecNetworkTypeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 是否启用私网。
+        /// Whether to enable private network
         /// </summary>
         [Input("enablePrivateNetwork")]
         public Input<bool>? EnablePrivateNetwork { get; set; }
 
         /// <summary>
-        /// 是否启用公网。
+        /// Whether to enable public network
         /// </summary>
         [Input("enablePublicNetwork")]
         public Input<bool>? EnablePublicNetwork { get; set; }

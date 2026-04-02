@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class DomainOriginArgOriginArgActionOriginArgComponent
     {
         /// <summary>
-        /// include: 表示回源请求 URL 中包含用户请求 URL 中的全部查询参数。exclude：表示回源请求 URL 中不包含用户请求 URL 中的任何查询参数。addPart：表示回源请求 URL 中包含用户请求 URL 中的全部查询参数，并额外包含 Subobject 中指定的查询参数。includePart：表示如果用户请求 URL 中包含 Subobject 中指定的查询参数，那么回源请求 URL 中包含这些指定的查询参数。excludePart：表示回源请求 URL 中包含用户请求 URL 中的全部查询参数，除了Subobject 中指定的查询参数。set：表示回源请求 URL 中包含用户请求 URL 中的全部查询参数。同时，对于您在 Subobject 中指定的查询参数和参数值，CDN 会执行以下操作:如果这些查询参数在用户请求 URL 中，CDN 会在回源请求 URL 中将这些参数的值设置为您指定的值。如果用户请求 URL 中不包含这些查询参数，CDN 会在回源请求 URL 中添加这些查询参数。
+        /// include: Indicates that the origin request URL includes all query parameters from the user request URL. exclude: Indicates that the origin request URL does not include any query parameters from the user request URL. addPart: Indicates that the origin request URL includes all query parameters from the user request URL, plus the query parameters specified in the Subobject. includePart: Indicates that if the user request URL contains the query parameters specified in the Subobject, the origin request URL will include these specified query parameters. excludePart: Indicates that the origin request URL includes all query parameters from the user request URL except those specified in the Subobject. set: Indicates that the origin request URL includes all query parameters from the user request URL. For the query parameters and values you specify in the Subobject, CDN will perform the following actions: If these query parameters exist in the user request URL, CDN will set their values in the origin request URL to the values you specify. If the user request URL does not contain these query parameters, CDN will add them to the origin request URL.
         /// </summary>
         public readonly string? Action;
         /// <summary>
-        /// 表示 CDN 对哪个对象执行 Action。当前，该参数值只能是 queryString，表示请求 URL 中的查询字符串。
+        /// Indicates which object the CDN performs the Action on. Currently, this parameter can only be set to queryString, which refers to the query string in the request URL.
         /// </summary>
         public readonly string? Object;
         /// <summary>
-        /// 表示一个或者多个查询参数。多个查询参数之间使用分号（;）分隔，总长度不能超过 1,024 个字符。Subobject 只能包含字母、数字、下划线（_）、逗号（,）、短横线（-）、句点（.）和感叹号（!）。在匹配请求 URL 中的查询参数时，Subobject 中的参数是大小写敏感的。Subobject 的额外说明如下：当 Action 是 include 或 exclude 时，Subobject 必须是 *，表示请求 URL 中的所有查询参数。当 Action 是 includePart 或 excludePart 时，Subobject 表示一个或者多个查询参数。例如 param1;param2。当 Action 是 addPart 或 set 时，Subobject 表示一个或者多个查询参数和参数值，格式是 key=value。例如 param1=val1;param2=val2;param3=val3。
+        /// Represents one or more query parameters. Use semicolons (;) to separate multiple query parameters. The total length must not exceed 1,024 characters. Subobject can only contain letters, numbers, underscores (_), commas (,), hyphens (-), periods (.), and exclamation marks (!). When matching query parameters in the request URL, parameters in Subobject are case-sensitive. Additional notes for Subobject: When Action is include or exclude, Subobject must be *, which represents all query parameters in the request URL. When Action is includePart or excludePart, Subobject represents one or more query parameters, for example, param1;param2. When Action is addPart or set, Subobject represents one or more query parameters and their values in the format key=value, for example, param1=val1;param2=val2;param3=val3.
         /// </summary>
         public readonly string? Subobject;
 

@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetSnapshotTag {
     /**
-     * @return 为资源添加的用户标签的标签键。命名规则如下：不能以任何大小写形式的volc:或sys:开头。volc:或sys:开头为系统预留标签键禁止创建。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“{@literal @}”。长度限制在1～128个字符之间。
+     * @return User tag key added to the resource. Naming rules: Cannot start with volc: or sys: in any case. Keys starting with volc: or sys: are reserved system tag keys and cannot be created. Only language characters, numbers, spaces, and the following English symbols are allowed: &#39;_&#39;, &#39;.&#39;, &#39;:&#39;, &#39;/&#39;, &#39;=&#39;, &#39;+&#39;, &#39;-&#39;, &#39;{@literal @}&#39;. Length must be between 1 and 128 characters.
      * 
      */
     private String key;
     /**
-     * @return 为资源添加的用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“{@literal @}”。允许为空，长度限制在0～256个字符之间。
+     * @return User tag value added to the resource. Naming rules: Only language characters, numbers, spaces, and the following English symbols are allowed: &#39;_&#39;, &#39;.&#39;, &#39;:&#39;, &#39;/&#39;, &#39;=&#39;, &#39;+&#39;, &#39;-&#39;, &#39;{@literal @}&#39;. Can be empty. Length must be between 0 and 256 characters.
      * 
      */
     private String value;
 
     private GetSnapshotTag() {}
     /**
-     * @return 为资源添加的用户标签的标签键。命名规则如下：不能以任何大小写形式的volc:或sys:开头。volc:或sys:开头为系统预留标签键禁止创建。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“{@literal @}”。长度限制在1～128个字符之间。
+     * @return User tag key added to the resource. Naming rules: Cannot start with volc: or sys: in any case. Keys starting with volc: or sys: are reserved system tag keys and cannot be created. Only language characters, numbers, spaces, and the following English symbols are allowed: &#39;_&#39;, &#39;.&#39;, &#39;:&#39;, &#39;/&#39;, &#39;=&#39;, &#39;+&#39;, &#39;-&#39;, &#39;{@literal @}&#39;. Length must be between 1 and 128 characters.
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return 为资源添加的用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“{@literal @}”。允许为空，长度限制在0～256个字符之间。
+     * @return User tag value added to the resource. Naming rules: Only language characters, numbers, spaces, and the following English symbols are allowed: &#39;_&#39;, &#39;.&#39;, &#39;:&#39;, &#39;/&#39;, &#39;=&#39;, &#39;+&#39;, &#39;-&#39;, &#39;{@literal @}&#39;. Can be empty. Length must be between 0 and 256 characters.
      * 
      */
     public String value() {

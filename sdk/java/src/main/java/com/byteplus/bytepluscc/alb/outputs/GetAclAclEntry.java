@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetAclAclEntry {
     /**
-     * @return IP条目的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+     * @return Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
      * 
      */
     private String description;
     /**
-     * @return IP条目的地址段，只支持CIDR地址。
+     * @return IP entry address range; only CIDR addresses are supported
      * 
      */
     private String entry;
 
     private GetAclAclEntry() {}
     /**
-     * @return IP条目的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+     * @return Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return IP条目的地址段，只支持CIDR地址。
+     * @return IP entry address range; only CIDR addresses are supported
      * 
      */
     public String entry() {

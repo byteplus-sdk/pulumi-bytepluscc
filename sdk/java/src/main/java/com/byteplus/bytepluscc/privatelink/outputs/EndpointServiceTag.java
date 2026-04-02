@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class EndpointServiceTag {
     /**
-     * @return 终端节点服务标签的标签键。
+     * @return Tag keys for endpoint service tags.
      * 
      */
     private @Nullable String key;
     /**
-     * @return 终端节点服务标签的标签值。
+     * @return Tag value of the endpoint service tag.
      * 
      */
     private @Nullable String value;
 
     private EndpointServiceTag() {}
     /**
-     * @return 终端节点服务标签的标签键。
+     * @return Tag keys for endpoint service tags.
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return 终端节点服务标签的标签值。
+     * @return Tag value of the endpoint service tag.
      * 
      */
     public Optional<String> value() {

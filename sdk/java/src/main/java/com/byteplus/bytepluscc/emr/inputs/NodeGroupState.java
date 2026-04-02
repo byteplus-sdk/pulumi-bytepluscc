@@ -31,14 +31,14 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 包周期付费配置。
+     * Subscription payment configuration.
      * 
      */
     @Import(name="chargePreConfig")
     private @Nullable Output<NodeGroupChargePreConfigArgs> chargePreConfig;
 
     /**
-     * @return 包周期付费配置。
+     * @return Subscription payment configuration.
      * 
      */
     public Optional<Output<NodeGroupChargePreConfigArgs>> chargePreConfig() {
@@ -46,14 +46,14 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 付费类型。PRE表示包月，POST表示按量计费。
+     * Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
      * 
      */
     @Import(name="chargeType")
     private @Nullable Output<String> chargeType;
 
     /**
-     * @return 付费类型。PRE表示包月，POST表示按量计费。
+     * @return Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
      * 
      */
     public Optional<Output<String>> chargeType() {
@@ -61,14 +61,14 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 集群ID。
+     * Cluster ID.
      * 
      */
     @Import(name="clusterId")
     private @Nullable Output<String> clusterId;
 
     /**
-     * @return 集群ID。
+     * @return Cluster ID.
      * 
      */
     public Optional<Output<String>> clusterId() {
@@ -76,14 +76,14 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建时间。
+     * Creation time.
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<Integer> createdTime;
 
     /**
-     * @return 创建时间。
+     * @return Creation time.
      * 
      */
     public Optional<Output<Integer>> createdTime() {
@@ -98,14 +98,14 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * ECS实例规格列表。当前修改仅支持单个实例规格。
+     * ECS instance specification list. Currently, only a single instance specification can be modified.
      * 
      */
     @Import(name="ecsInstanceTypes")
     private @Nullable Output<List<String>> ecsInstanceTypes;
 
     /**
-     * @return ECS实例规格列表。当前修改仅支持单个实例规格。
+     * @return ECS instance specification list. Currently, only a single instance specification can be modified.
      * 
      */
     public Optional<Output<List<String>>> ecsInstanceTypes() {
@@ -113,14 +113,14 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 返回的节点组组件的自定义配置参数列表。
+     * Custom configuration parameter list for the returned node group components.
      * 
      */
     @Import(name="layoutComponentNames")
     private @Nullable Output<List<String>> layoutComponentNames;
 
     /**
-     * @return 返回的节点组组件的自定义配置参数列表。
+     * @return Custom configuration parameter list for the returned node group components.
      * 
      */
     public Optional<Output<List<String>>> layoutComponentNames() {
@@ -128,14 +128,14 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点数量。取值范围：1~1000。
+     * Node count. Value range: 1~1000.
      * 
      */
     @Import(name="nodeCount")
     private @Nullable Output<Integer> nodeCount;
 
     /**
-     * @return 节点数量。取值范围：1~1000。
+     * @return Node count. Value range: 1~1000.
      * 
      */
     public Optional<Output<Integer>> nodeCount() {
@@ -143,14 +143,14 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点组ID。
+     * Node group ID.
      * 
      */
     @Import(name="nodeGroupId")
     private @Nullable Output<String> nodeGroupId;
 
     /**
-     * @return 节点组ID。
+     * @return Node group ID.
      * 
      */
     public Optional<Output<String>> nodeGroupId() {
@@ -158,14 +158,14 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点组名称。
+     * Node group name.
      * 
      */
     @Import(name="nodeGroupName")
     private @Nullable Output<String> nodeGroupName;
 
     /**
-     * @return 节点组名称。
+     * @return Node group name.
      * 
      */
     public Optional<Output<String>> nodeGroupName() {
@@ -173,14 +173,14 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点组状态。RUNNING：运行中。EXTENDING：扩容中。REDUCING：缩容中。DISK_EXTENDING：磁盘扩容中。MODIFYING：变配中。
+     * Node group status. RUNNING: Running. EXTENDING: Expanding. REDUCING: Shrinking. DISK_EXTENDING: Disk expansion. MODIFYING: Configuration modification in progress.
      * 
      */
     @Import(name="nodeGroupState")
     private @Nullable Output<String> nodeGroupState;
 
     /**
-     * @return 节点组状态。RUNNING：运行中。EXTENDING：扩容中。REDUCING：缩容中。DISK_EXTENDING：磁盘扩容中。MODIFYING：变配中。
+     * @return Node group status. RUNNING: Running. EXTENDING: Expanding. REDUCING: Shrinking. DISK_EXTENDING: Disk expansion. MODIFYING: Configuration modification in progress.
      * 
      */
     public Optional<Output<String>> nodeGroupState() {
@@ -188,14 +188,14 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点组类型。
+     * Node group type.
      * 
      */
     @Import(name="nodeGroupType")
     private @Nullable Output<String> nodeGroupType;
 
     /**
-     * @return 节点组类型。
+     * @return Node group type.
      * 
      */
     public Optional<Output<String>> nodeGroupType() {
@@ -210,14 +210,14 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子网ID列表。
+     * Subnet ID list.
      * 
      */
     @Import(name="subnetIds")
     private @Nullable Output<List<String>> subnetIds;
 
     /**
-     * @return 子网ID列表。
+     * @return Subnet ID list.
      * 
      */
     public Optional<Output<List<String>>> subnetIds() {
@@ -225,14 +225,14 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 系统盘。
+     * System disk.
      * 
      */
     @Import(name="systemDisk")
     private @Nullable Output<NodeGroupSystemDiskArgs> systemDisk;
 
     /**
-     * @return 系统盘。
+     * @return System disk.
      * 
      */
     public Optional<Output<NodeGroupSystemDiskArgs>> systemDisk() {
@@ -240,14 +240,14 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
+     * Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
      * 
      */
     @Import(name="targetDiskSize")
     private @Nullable Output<Integer> targetDiskSize;
 
     /**
-     * @return 待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
+     * @return Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
      * 
      */
     public Optional<Output<Integer>> targetDiskSize() {
@@ -255,14 +255,14 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 集群终止时间。
+     * Cluster termination time.
      * 
      */
     @Import(name="terminateTime")
     private @Nullable Output<String> terminateTime;
 
     /**
-     * @return 集群终止时间。
+     * @return Cluster termination time.
      * 
      */
     public Optional<Output<String>> terminateTime() {
@@ -270,14 +270,14 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * ECS是否附带公网IP。
+     * Whether the ECS instance includes a public IP.
      * 
      */
     @Import(name="withPublicIp")
     private @Nullable Output<Boolean> withPublicIp;
 
     /**
-     * @return ECS是否附带公网IP。
+     * @return Whether the ECS instance includes a public IP.
      * 
      */
     public Optional<Output<Boolean>> withPublicIp() {
@@ -285,14 +285,14 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * zoneId，为空时默认复用集群的zoneId。
+     * zoneId. If empty, the cluster&#39;s zoneId is reused by default.
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return zoneId，为空时默认复用集群的zoneId。
+     * @return zoneId. If empty, the cluster&#39;s zoneId is reused by default.
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -356,7 +356,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargePreConfig 包周期付费配置。
+         * @param chargePreConfig Subscription payment configuration.
          * 
          * @return builder
          * 
@@ -367,7 +367,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargePreConfig 包周期付费配置。
+         * @param chargePreConfig Subscription payment configuration.
          * 
          * @return builder
          * 
@@ -377,7 +377,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeType 付费类型。PRE表示包月，POST表示按量计费。
+         * @param chargeType Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
          * 
          * @return builder
          * 
@@ -388,7 +388,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeType 付费类型。PRE表示包月，POST表示按量计费。
+         * @param chargeType Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
          * 
          * @return builder
          * 
@@ -398,7 +398,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterId 集群ID。
+         * @param clusterId Cluster ID.
          * 
          * @return builder
          * 
@@ -409,7 +409,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterId 集群ID。
+         * @param clusterId Cluster ID.
          * 
          * @return builder
          * 
@@ -419,7 +419,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 创建时间。
+         * @param createdTime Creation time.
          * 
          * @return builder
          * 
@@ -430,7 +430,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 创建时间。
+         * @param createdTime Creation time.
          * 
          * @return builder
          * 
@@ -453,7 +453,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ecsInstanceTypes ECS实例规格列表。当前修改仅支持单个实例规格。
+         * @param ecsInstanceTypes ECS instance specification list. Currently, only a single instance specification can be modified.
          * 
          * @return builder
          * 
@@ -464,7 +464,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ecsInstanceTypes ECS实例规格列表。当前修改仅支持单个实例规格。
+         * @param ecsInstanceTypes ECS instance specification list. Currently, only a single instance specification can be modified.
          * 
          * @return builder
          * 
@@ -474,7 +474,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ecsInstanceTypes ECS实例规格列表。当前修改仅支持单个实例规格。
+         * @param ecsInstanceTypes ECS instance specification list. Currently, only a single instance specification can be modified.
          * 
          * @return builder
          * 
@@ -484,7 +484,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param layoutComponentNames 返回的节点组组件的自定义配置参数列表。
+         * @param layoutComponentNames Custom configuration parameter list for the returned node group components.
          * 
          * @return builder
          * 
@@ -495,7 +495,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param layoutComponentNames 返回的节点组组件的自定义配置参数列表。
+         * @param layoutComponentNames Custom configuration parameter list for the returned node group components.
          * 
          * @return builder
          * 
@@ -505,7 +505,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param layoutComponentNames 返回的节点组组件的自定义配置参数列表。
+         * @param layoutComponentNames Custom configuration parameter list for the returned node group components.
          * 
          * @return builder
          * 
@@ -515,7 +515,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeCount 节点数量。取值范围：1~1000。
+         * @param nodeCount Node count. Value range: 1~1000.
          * 
          * @return builder
          * 
@@ -526,7 +526,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeCount 节点数量。取值范围：1~1000。
+         * @param nodeCount Node count. Value range: 1~1000.
          * 
          * @return builder
          * 
@@ -536,7 +536,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeGroupId 节点组ID。
+         * @param nodeGroupId Node group ID.
          * 
          * @return builder
          * 
@@ -547,7 +547,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeGroupId 节点组ID。
+         * @param nodeGroupId Node group ID.
          * 
          * @return builder
          * 
@@ -557,7 +557,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeGroupName 节点组名称。
+         * @param nodeGroupName Node group name.
          * 
          * @return builder
          * 
@@ -568,7 +568,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeGroupName 节点组名称。
+         * @param nodeGroupName Node group name.
          * 
          * @return builder
          * 
@@ -578,7 +578,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeGroupState 节点组状态。RUNNING：运行中。EXTENDING：扩容中。REDUCING：缩容中。DISK_EXTENDING：磁盘扩容中。MODIFYING：变配中。
+         * @param nodeGroupState Node group status. RUNNING: Running. EXTENDING: Expanding. REDUCING: Shrinking. DISK_EXTENDING: Disk expansion. MODIFYING: Configuration modification in progress.
          * 
          * @return builder
          * 
@@ -589,7 +589,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeGroupState 节点组状态。RUNNING：运行中。EXTENDING：扩容中。REDUCING：缩容中。DISK_EXTENDING：磁盘扩容中。MODIFYING：变配中。
+         * @param nodeGroupState Node group status. RUNNING: Running. EXTENDING: Expanding. REDUCING: Shrinking. DISK_EXTENDING: Disk expansion. MODIFYING: Configuration modification in progress.
          * 
          * @return builder
          * 
@@ -599,7 +599,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeGroupType 节点组类型。
+         * @param nodeGroupType Node group type.
          * 
          * @return builder
          * 
@@ -610,7 +610,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeGroupType 节点组类型。
+         * @param nodeGroupType Node group type.
          * 
          * @return builder
          * 
@@ -633,7 +633,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetIds 子网ID列表。
+         * @param subnetIds Subnet ID list.
          * 
          * @return builder
          * 
@@ -644,7 +644,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetIds 子网ID列表。
+         * @param subnetIds Subnet ID list.
          * 
          * @return builder
          * 
@@ -654,7 +654,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetIds 子网ID列表。
+         * @param subnetIds Subnet ID list.
          * 
          * @return builder
          * 
@@ -664,7 +664,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param systemDisk 系统盘。
+         * @param systemDisk System disk.
          * 
          * @return builder
          * 
@@ -675,7 +675,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param systemDisk 系统盘。
+         * @param systemDisk System disk.
          * 
          * @return builder
          * 
@@ -685,7 +685,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param targetDiskSize 待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
+         * @param targetDiskSize Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
          * 
          * @return builder
          * 
@@ -696,7 +696,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param targetDiskSize 待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
+         * @param targetDiskSize Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
          * 
          * @return builder
          * 
@@ -706,7 +706,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param terminateTime 集群终止时间。
+         * @param terminateTime Cluster termination time.
          * 
          * @return builder
          * 
@@ -717,7 +717,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param terminateTime 集群终止时间。
+         * @param terminateTime Cluster termination time.
          * 
          * @return builder
          * 
@@ -727,7 +727,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param withPublicIp ECS是否附带公网IP。
+         * @param withPublicIp Whether the ECS instance includes a public IP.
          * 
          * @return builder
          * 
@@ -738,7 +738,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param withPublicIp ECS是否附带公网IP。
+         * @param withPublicIp Whether the ECS instance includes a public IP.
          * 
          * @return builder
          * 
@@ -748,7 +748,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId zoneId，为空时默认复用集群的zoneId。
+         * @param zoneId zoneId. If empty, the cluster&#39;s zoneId is reused by default.
          * 
          * @return builder
          * 
@@ -759,7 +759,7 @@ public final class NodeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId zoneId，为空时默认复用集群的zoneId。
+         * @param zoneId zoneId. If empty, the cluster&#39;s zoneId is reused by default.
          * 
          * @return builder
          * 

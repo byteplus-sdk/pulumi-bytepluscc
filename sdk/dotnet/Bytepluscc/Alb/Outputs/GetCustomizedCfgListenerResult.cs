@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class GetCustomizedCfgListenerResult
     {
         /// <summary>
-        /// 监听器的 ID。
+        /// Listener ID.
         /// </summary>
         public readonly string ListenerId;
         /// <summary>
-        /// 监听器的名称。
+        /// Listener name.
         /// </summary>
         public readonly string ListenerName;
         /// <summary>
-        /// 监听器的端口。
+        /// Listener port.
         /// </summary>
         public readonly int Port;
         /// <summary>
-        /// 监听器的协议。
+        /// Listener protocol.
         /// </summary>
         public readonly string Protocol;
 

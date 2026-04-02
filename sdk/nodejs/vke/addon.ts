@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 集群中支持安装多种类型的组件，包括 网络、存储、监控、DNS、安全、镜像、GPU 等，满足您多种业务场景需求。您可按需部署、升级或卸载组件。
+ * The cluster supports installation of various types of components, including network, storage, monitoring, DNS, security, image, GPU, and more, to meet your diverse business needs. You can deploy, upgrade, or uninstall components as needed.
  *
  * ## Example Usage
  *
@@ -60,39 +60,39 @@ export class Addon extends pulumi.CustomResource {
     }
 
     /**
-     * 组件所在集群 ID。
+     * Cluster ID where the component is located.
      */
     public readonly clusterId!: pulumi.Output<string>;
     /**
-     * 组件配置。
+     * Component configuration.
      */
     public readonly config!: pulumi.Output<string>;
     /**
-     * 安装组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+     * Component installation time. Standard RFC3339 format, UTC+0 time.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
+     * Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
      */
     public readonly deployMode!: pulumi.Output<string>;
     /**
-     * 部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
+     * Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
      */
     public readonly deployNodeType!: pulumi.Output<string>;
     /**
-     * 组件名称。
+     * Component name.
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * 组件状态。
+     * Component status.
      */
     public readonly status!: pulumi.Output<outputs.vke.AddonStatus>;
     /**
-     * 更新组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+     * Component update time. Standard RFC3339 format, UTC+0 time.
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
     /**
-     * 组件版本。
+     * Component version.
      */
     public readonly version!: pulumi.Output<string>;
 
@@ -140,39 +140,39 @@ export class Addon extends pulumi.CustomResource {
  */
 export interface AddonState {
     /**
-     * 组件所在集群 ID。
+     * Cluster ID where the component is located.
      */
     clusterId?: pulumi.Input<string>;
     /**
-     * 组件配置。
+     * Component configuration.
      */
     config?: pulumi.Input<string>;
     /**
-     * 安装组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+     * Component installation time. Standard RFC3339 format, UTC+0 time.
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
+     * Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
      */
     deployMode?: pulumi.Input<string>;
     /**
-     * 部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
+     * Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
      */
     deployNodeType?: pulumi.Input<string>;
     /**
-     * 组件名称。
+     * Component name.
      */
     name?: pulumi.Input<string>;
     /**
-     * 组件状态。
+     * Component status.
      */
     status?: pulumi.Input<inputs.vke.AddonStatus>;
     /**
-     * 更新组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+     * Component update time. Standard RFC3339 format, UTC+0 time.
      */
     updatedTime?: pulumi.Input<string>;
     /**
-     * 组件版本。
+     * Component version.
      */
     version?: pulumi.Input<string>;
 }
@@ -182,31 +182,31 @@ export interface AddonState {
  */
 export interface AddonArgs {
     /**
-     * 组件所在集群 ID。
+     * Cluster ID where the component is located.
      */
     clusterId?: pulumi.Input<string>;
     /**
-     * 组件配置。
+     * Component configuration.
      */
     config?: pulumi.Input<string>;
     /**
-     * 组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
+     * Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
      */
     deployMode?: pulumi.Input<string>;
     /**
-     * 部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
+     * Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
      */
     deployNodeType?: pulumi.Input<string>;
     /**
-     * 组件名称。
+     * Component name.
      */
     name?: pulumi.Input<string>;
     /**
-     * 组件状态。
+     * Component status.
      */
     status?: pulumi.Input<inputs.vke.AddonStatus>;
     /**
-     * 组件版本。
+     * Component version.
      */
     version?: pulumi.Input<string>;
 }

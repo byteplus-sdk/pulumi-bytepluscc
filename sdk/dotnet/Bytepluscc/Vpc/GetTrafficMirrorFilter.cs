@@ -65,15 +65,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class GetTrafficMirrorFilterResult
     {
         /// <summary>
-        /// 筛选条件的创建时间。
+        /// Filter condition creation time
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 筛选条件实例描述。
+        /// Filter condition instance description
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 出方向筛选规则的详细信息。
+        /// Outbound filter rule details
         /// </summary>
         public readonly ImmutableArray<Outputs.GetTrafficMirrorFilterEgressFilterRuleResult> EgressFilterRules;
         /// <summary>
@@ -81,27 +81,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 入方向筛选规则的详细信息。
+        /// Inbound filter rule details
         /// </summary>
         public readonly ImmutableArray<Outputs.GetTrafficMirrorFilterIngressFilterRuleResult> IngressFilterRules;
         /// <summary>
-        /// 筛选条件所属项目的名称。
+        /// Project name of the filter condition
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// 筛选条件状态。
+        /// Filter condition status
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// 标签信息
+        /// Tag information
         /// </summary>
         public readonly ImmutableArray<Outputs.GetTrafficMirrorFilterTagResult> Tags;
         /// <summary>
-        /// 筛选条件实例ID。
+        /// Filter condition instance ID
         /// </summary>
         public readonly string TrafficMirrorFilterId;
         /// <summary>
-        /// 筛选条件名称。
+        /// Filter condition name
         /// </summary>
         public readonly string TrafficMirrorFilterName;
 

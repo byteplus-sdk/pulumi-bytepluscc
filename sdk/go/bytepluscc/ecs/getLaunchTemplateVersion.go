@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Data Source schema for Byteplus::ECS::LaunchtemplateVersion
+// Data Source schema for Byteplus::ECS::LaunchTemplateVersion
 func LookupLaunchTemplateVersion(ctx *pulumi.Context, args *LookupLaunchTemplateVersionArgs, opts ...pulumi.InvokeOption) (*LookupLaunchTemplateVersionResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupLaunchTemplateVersionResult
@@ -30,65 +30,65 @@ type LookupLaunchTemplateVersionArgs struct {
 
 // A collection of values returned by getLaunchTemplateVersion.
 type LookupLaunchTemplateVersionResult struct {
-	// 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+	// When the deployment set policy for an ECS instance is set to AvailabilityGroup, use this parameter to specify the group number within the deployment set.
 	DeploymentSetGroupNumber int `pulumi:"deploymentSetGroupNumber"`
-	// 实例需要加入的部署集ID。
+	// Deployment set ID to join for the instance.
 	DeploymentSetId string `pulumi:"deploymentSetId"`
-	// 实例的描述。
+	// Instance description.
 	Description string `pulumi:"description"`
-	// 实例绑定的公网IP信息。
+	// Public IP information bound to the instance.
 	Eip GetLaunchTemplateVersionEip `pulumi:"eip"`
-	// 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+	// Instance hostname. Linux hostname length: 2–59 characters. Windows hostname length: 2–10 characters
 	HostName string `pulumi:"hostName"`
-	// 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+	// Specify the high-performance computing cluster ID when creating a high-performance computing GPU instance.
 	HpcClusterId string `pulumi:"hpcClusterId"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 镜像ID。
+	// Image ID
 	ImageId string `pulumi:"imageId"`
-	// 镜像名称。
+	// Image name.
 	ImageName string `pulumi:"imageName"`
-	// 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+	// Billing type for the instance and cloud disk. Value: PostPaid: Pay-as-you-go. PrePaid: Subscription. Esi: Elastic reservation instance. Segmented: Time-segmented elastic reservation instance.
 	InstanceChargeType string `pulumi:"instanceChargeType"`
-	// 实例的名称。
+	// Instance name.
 	InstanceName string `pulumi:"instanceName"`
-	// 实例的规格。
+	// Instance specifications
 	InstanceTypeId string `pulumi:"instanceTypeId"`
-	// 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+	// Retain image settings. Value: true: Retain image settings. If retained, the preset password or key pair in the image will be used to log in to the instance. false (default): Do not retain image settings.
 	KeepImageCredential bool `pulumi:"keepImageCredential"`
-	// 实例绑定的密钥对。
+	// Key pair bound to the instance.
 	KeyPairName string `pulumi:"keyPairName"`
-	// 实例启动模板 ID。
+	// Instance launch template ID.
 	LaunchTemplateId string `pulumi:"launchTemplateId"`
-	// 实例挂载的网卡信息。
+	// Network interface information attached to the instance
 	NetworkInterfaces []GetLaunchTemplateVersionNetworkInterface `pulumi:"networkInterfaces"`
-	// 实例所属项目。
+	// Project to which the instance belongs.
 	ProjectName string `pulumi:"projectName"`
-	// 弹性预约单信息。
+	// Elastic reservation order information
 	ScheduledInstance GetLaunchTemplateVersionScheduledInstance `pulumi:"scheduledInstance"`
-	// 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+	// Enable security hardening. Active: Enable security hardening, effective only for public images. InActive: Disable security hardening, effective for all images.
 	SecurityEnhancementStrategy string `pulumi:"securityEnhancementStrategy"`
-	// 抢占式实例的每小时最高价格。
+	// Maximum hourly price for preemptible instances.
 	SpotPriceLimit float64 `pulumi:"spotPriceLimit"`
-	// 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+	// Preemptive strategy for pay-as-you-go billing. Values: NoSpot: Creates a standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, creating a preemptive instance that follows the current market price. SpotWithPriceLimit: Creates a preemptive instance with a bid limit
 	SpotStrategy string `pulumi:"spotStrategy"`
-	// 有序后缀的起始序号。
+	// Starting sequence number for the ordered suffix.
 	SuffixIndex int `pulumi:"suffixIndex"`
-	// 实例的标签信息。
+	// Instance tag information
 	Tags []GetLaunchTemplateVersionTag `pulumi:"tags"`
-	// 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+	// Indicates whether to automatically add an ordered suffix to Hostname and InstanceName when creating multiple instances.
 	UniqueSuffix bool `pulumi:"uniqueSuffix"`
-	// 实例的自定义数据。
+	// Custom data for the instance.
 	UserData string `pulumi:"userData"`
-	// 模版版本描述。
+	// Template version description.
 	VersionDescription string `pulumi:"versionDescription"`
-	// 模板版本号。
+	// Template version number.
 	VersionNumber string `pulumi:"versionNumber"`
-	// 实例绑定的云盘信息。
+	// Disk information bound to the instance
 	Volumes []GetLaunchTemplateVersionVolume `pulumi:"volumes"`
-	// 私有网络ID。
+	// Private network ID
 	VpcId string `pulumi:"vpcId"`
-	// 实例所属可用区ID。
+	// Availability zone ID of the instance
 	ZoneId string `pulumi:"zoneId"`
 }
 
@@ -126,32 +126,32 @@ func (o LookupLaunchTemplateVersionResultOutput) ToLookupLaunchTemplateVersionRe
 	return o
 }
 
-// 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+// When the deployment set policy for an ECS instance is set to AvailabilityGroup, use this parameter to specify the group number within the deployment set.
 func (o LookupLaunchTemplateVersionResultOutput) DeploymentSetGroupNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) int { return v.DeploymentSetGroupNumber }).(pulumi.IntOutput)
 }
 
-// 实例需要加入的部署集ID。
+// Deployment set ID to join for the instance.
 func (o LookupLaunchTemplateVersionResultOutput) DeploymentSetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) string { return v.DeploymentSetId }).(pulumi.StringOutput)
 }
 
-// 实例的描述。
+// Instance description.
 func (o LookupLaunchTemplateVersionResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 实例绑定的公网IP信息。
+// Public IP information bound to the instance.
 func (o LookupLaunchTemplateVersionResultOutput) Eip() GetLaunchTemplateVersionEipOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) GetLaunchTemplateVersionEip { return v.Eip }).(GetLaunchTemplateVersionEipOutput)
 }
 
-// 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+// Instance hostname. Linux hostname length: 2–59 characters. Windows hostname length: 2–10 characters
 func (o LookupLaunchTemplateVersionResultOutput) HostName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) string { return v.HostName }).(pulumi.StringOutput)
 }
 
-// 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+// Specify the high-performance computing cluster ID when creating a high-performance computing GPU instance.
 func (o LookupLaunchTemplateVersionResultOutput) HpcClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) string { return v.HpcClusterId }).(pulumi.StringOutput)
 }
@@ -161,121 +161,121 @@ func (o LookupLaunchTemplateVersionResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 镜像ID。
+// Image ID
 func (o LookupLaunchTemplateVersionResultOutput) ImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) string { return v.ImageId }).(pulumi.StringOutput)
 }
 
-// 镜像名称。
+// Image name.
 func (o LookupLaunchTemplateVersionResultOutput) ImageName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) string { return v.ImageName }).(pulumi.StringOutput)
 }
 
-// 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+// Billing type for the instance and cloud disk. Value: PostPaid: Pay-as-you-go. PrePaid: Subscription. Esi: Elastic reservation instance. Segmented: Time-segmented elastic reservation instance.
 func (o LookupLaunchTemplateVersionResultOutput) InstanceChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) string { return v.InstanceChargeType }).(pulumi.StringOutput)
 }
 
-// 实例的名称。
+// Instance name.
 func (o LookupLaunchTemplateVersionResultOutput) InstanceName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) string { return v.InstanceName }).(pulumi.StringOutput)
 }
 
-// 实例的规格。
+// Instance specifications
 func (o LookupLaunchTemplateVersionResultOutput) InstanceTypeId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) string { return v.InstanceTypeId }).(pulumi.StringOutput)
 }
 
-// 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+// Retain image settings. Value: true: Retain image settings. If retained, the preset password or key pair in the image will be used to log in to the instance. false (default): Do not retain image settings.
 func (o LookupLaunchTemplateVersionResultOutput) KeepImageCredential() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) bool { return v.KeepImageCredential }).(pulumi.BoolOutput)
 }
 
-// 实例绑定的密钥对。
+// Key pair bound to the instance.
 func (o LookupLaunchTemplateVersionResultOutput) KeyPairName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) string { return v.KeyPairName }).(pulumi.StringOutput)
 }
 
-// 实例启动模板 ID。
+// Instance launch template ID.
 func (o LookupLaunchTemplateVersionResultOutput) LaunchTemplateId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) string { return v.LaunchTemplateId }).(pulumi.StringOutput)
 }
 
-// 实例挂载的网卡信息。
+// Network interface information attached to the instance
 func (o LookupLaunchTemplateVersionResultOutput) NetworkInterfaces() GetLaunchTemplateVersionNetworkInterfaceArrayOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) []GetLaunchTemplateVersionNetworkInterface {
 		return v.NetworkInterfaces
 	}).(GetLaunchTemplateVersionNetworkInterfaceArrayOutput)
 }
 
-// 实例所属项目。
+// Project to which the instance belongs.
 func (o LookupLaunchTemplateVersionResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 弹性预约单信息。
+// Elastic reservation order information
 func (o LookupLaunchTemplateVersionResultOutput) ScheduledInstance() GetLaunchTemplateVersionScheduledInstanceOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) GetLaunchTemplateVersionScheduledInstance {
 		return v.ScheduledInstance
 	}).(GetLaunchTemplateVersionScheduledInstanceOutput)
 }
 
-// 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+// Enable security hardening. Active: Enable security hardening, effective only for public images. InActive: Disable security hardening, effective for all images.
 func (o LookupLaunchTemplateVersionResultOutput) SecurityEnhancementStrategy() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) string { return v.SecurityEnhancementStrategy }).(pulumi.StringOutput)
 }
 
-// 抢占式实例的每小时最高价格。
+// Maximum hourly price for preemptible instances.
 func (o LookupLaunchTemplateVersionResultOutput) SpotPriceLimit() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) float64 { return v.SpotPriceLimit }).(pulumi.Float64Output)
 }
 
-// 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+// Preemptive strategy for pay-as-you-go billing. Values: NoSpot: Creates a standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, creating a preemptive instance that follows the current market price. SpotWithPriceLimit: Creates a preemptive instance with a bid limit
 func (o LookupLaunchTemplateVersionResultOutput) SpotStrategy() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) string { return v.SpotStrategy }).(pulumi.StringOutput)
 }
 
-// 有序后缀的起始序号。
+// Starting sequence number for the ordered suffix.
 func (o LookupLaunchTemplateVersionResultOutput) SuffixIndex() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) int { return v.SuffixIndex }).(pulumi.IntOutput)
 }
 
-// 实例的标签信息。
+// Instance tag information
 func (o LookupLaunchTemplateVersionResultOutput) Tags() GetLaunchTemplateVersionTagArrayOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) []GetLaunchTemplateVersionTag { return v.Tags }).(GetLaunchTemplateVersionTagArrayOutput)
 }
 
-// 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+// Indicates whether to automatically add an ordered suffix to Hostname and InstanceName when creating multiple instances.
 func (o LookupLaunchTemplateVersionResultOutput) UniqueSuffix() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) bool { return v.UniqueSuffix }).(pulumi.BoolOutput)
 }
 
-// 实例的自定义数据。
+// Custom data for the instance.
 func (o LookupLaunchTemplateVersionResultOutput) UserData() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) string { return v.UserData }).(pulumi.StringOutput)
 }
 
-// 模版版本描述。
+// Template version description.
 func (o LookupLaunchTemplateVersionResultOutput) VersionDescription() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) string { return v.VersionDescription }).(pulumi.StringOutput)
 }
 
-// 模板版本号。
+// Template version number.
 func (o LookupLaunchTemplateVersionResultOutput) VersionNumber() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) string { return v.VersionNumber }).(pulumi.StringOutput)
 }
 
-// 实例绑定的云盘信息。
+// Disk information bound to the instance
 func (o LookupLaunchTemplateVersionResultOutput) Volumes() GetLaunchTemplateVersionVolumeArrayOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) []GetLaunchTemplateVersionVolume { return v.Volumes }).(GetLaunchTemplateVersionVolumeArrayOutput)
 }
 
-// 私有网络ID。
+// Private network ID
 func (o LookupLaunchTemplateVersionResultOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) string { return v.VpcId }).(pulumi.StringOutput)
 }
 
-// 实例所属可用区ID。
+// Availability zone ID of the instance
 func (o LookupLaunchTemplateVersionResultOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLaunchTemplateVersionResult) string { return v.ZoneId }).(pulumi.StringOutput)
 }

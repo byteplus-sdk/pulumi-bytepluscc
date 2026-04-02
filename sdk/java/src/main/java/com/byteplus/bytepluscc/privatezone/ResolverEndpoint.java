@@ -17,7 +17,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 在把外部的 DNS 查询请求转发到解析器的场景中，您需要创建终端节点。收到解析器转发的 DNS 查询请求后，终端节点出站终端节点会把 DNS 查询请求转发到外部的 DNS 服务器。收到来自外部的 DNS 查询请求后，入站终端节点会把 DNS 查询请求转发到解析器。
+ * In scenarios where external DNS query requests are forwarded to the resolver, you need to create an endpoint. After receiving DNS query requests forwarded by the resolver, outbound endpoints forward DNS queries to external DNS servers. After receiving DNS query requests from external sources, inbound endpoints forward DNS queries to the resolver
  * 
  * ## Example Usage
  * 
@@ -34,56 +34,56 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:privatezone/resolverEndpoint:ResolverEndpoint")
 public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
     /**
-     * 创建时间
+     * Creation time
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 创建时间
+     * @return Creation time
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 终端节点的 DNS 请求转发方向。OUTBOUND：（默认）出站终端节点，把来自 VPC 内的 DNS 查询请求转发到外部的 DNS 服务器。INBOUND：入站终端节点，把来自外部的 DNS 查询请求转发到解析器。
+     * DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
      * 
      */
     @Export(name="direction", refs={String.class}, tree="[0]")
     private Output<String> direction;
 
     /**
-     * @return 终端节点的 DNS 请求转发方向。OUTBOUND：（默认）出站终端节点，把来自 VPC 内的 DNS 查询请求转发到外部的 DNS 服务器。INBOUND：入站终端节点，把来自外部的 DNS 查询请求转发到解析器。
+     * @return DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
      * 
      */
     public Output<String> direction() {
         return this.direction;
     }
     /**
-     * 终端节点的 ID。
+     * Endpoint ID
      * 
      */
     @Export(name="endpointId", refs={String.class}, tree="[0]")
     private Output<String> endpointId;
 
     /**
-     * @return 终端节点的 ID。
+     * @return Endpoint ID
      * 
      */
     public Output<String> endpointId() {
         return this.endpointId;
     }
     /**
-     * 终端节点类型。IPv4：IPv4 节点。DualStack：双栈节点。
+     * Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
      * 
      */
     @Export(name="endpointType", refs={String.class}, tree="[0]")
     private Output<String> endpointType;
 
     /**
-     * @return 终端节点类型。IPv4：IPv4 节点。DualStack：双栈节点。
+     * @return Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
      * 
      */
     public Output<String> endpointType() {
@@ -96,56 +96,56 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
         return this.ipConfigs;
     }
     /**
-     * 终端节点的名称。支持 UTF-8 格式。
+     * Endpoint name. Supports UTF-8 format
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return 终端节点的名称。支持 UTF-8 格式。
+     * @return Endpoint name. Supports UTF-8 format
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * 终端节点所属的项目名称。默认为 default。
+     * Project name to which the endpoint belongs. Default is default
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 终端节点所属的项目名称。默认为 default。
+     * @return Project name to which the endpoint belongs. Default is default
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 适用于终端节点 IP 地址的安全组 ID。终端节点默认会使用预设安全组：对于出站终端节点：入方向拒绝流量通行；出方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口。对于入站终端节点：入方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口；出方向拒绝流量通行。
+     * Security group ID for the endpoint IP address. The endpoint uses a default security group: For outbound endpoints, inbound traffic is denied; outbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0. For inbound endpoints, inbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0; outbound traffic is denied
      * 
      */
     @Export(name="securityGroupId", refs={String.class}, tree="[0]")
     private Output<String> securityGroupId;
 
     /**
-     * @return 适用于终端节点 IP 地址的安全组 ID。终端节点默认会使用预设安全组：对于出站终端节点：入方向拒绝流量通行；出方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口。对于入站终端节点：入方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口；出方向拒绝流量通行。
+     * @return Security group ID for the endpoint IP address. The endpoint uses a default security group: For outbound endpoints, inbound traffic is denied; outbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0. For inbound endpoints, inbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0; outbound traffic is denied
      * 
      */
     public Output<String> securityGroupId() {
         return this.securityGroupId;
     }
     /**
-     * 终端节点的状态。Creating：创建中。Running：运行中。Updating：更新中。Error：运行异常。
+     * Endpoint status. Creating: creating. Running: running. Updating: updating. Error: abnormal operation
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 终端节点的状态。Creating：创建中。Running：运行中。Updating：更新中。Error：运行异常。
+     * @return Endpoint status. Creating: creating. Running: running. Updating: updating. Error: abnormal operation
      * 
      */
     public Output<String> status() {
@@ -158,42 +158,42 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 更新时间
+     * Update time
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 更新时间
+     * @return Update time
      * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
-     * 终端节点所在的 VPC 的 ID。
+     * VPC ID where the endpoint is located
      * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
-     * @return 终端节点所在的 VPC 的 ID。
+     * @return VPC ID where the endpoint is located
      * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
-     * 终端节点所在的 VPC 的地域。
+     * Region of the VPC where the endpoint is located
      * 
      */
     @Export(name="vpcRegion", refs={String.class}, tree="[0]")
     private Output<String> vpcRegion;
 
     /**
-     * @return 终端节点所在的 VPC 的地域。
+     * @return Region of the VPC where the endpoint is located
      * 
      */
     public Output<String> vpcRegion() {

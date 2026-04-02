@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas.Inputs
     public sealed class SandboxInstanceTosMountConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 沙箱实例是否启用了实例级别的 TOS 挂载，参数值说明：true：是，false：否。
+        /// Whether instance-level TOS mount is enabled for the sandbox instance. Parameter description: true: yes, false: no
         /// </summary>
         [Input("enable")]
         public Input<bool>? Enable { get; set; }

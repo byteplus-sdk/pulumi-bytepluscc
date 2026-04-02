@@ -18,14 +18,14 @@ public final class InstanceInstanceConfigurationNetworkSpecArgs extends com.pulu
     public static final InstanceInstanceConfigurationNetworkSpecArgs Empty = new InstanceInstanceConfigurationNetworkSpecArgs();
 
     /**
-     * 公网IP的带宽上限，默认为“1”，单位：Mbps。
+     * Public IP bandwidth limit. Default is &#39;1&#39;, unit: Mbps.
      * 
      */
     @Import(name="bandwidth")
     private @Nullable Output<Integer> bandwidth;
 
     /**
-     * @return 公网IP的带宽上限，默认为“1”，单位：Mbps。
+     * @return Public IP bandwidth limit. Default is &#39;1&#39;, unit: Mbps.
      * 
      */
     public Optional<Output<Integer>> bandwidth() {
@@ -33,14 +33,14 @@ public final class InstanceInstanceConfigurationNetworkSpecArgs extends com.pulu
     }
 
     /**
-     * 开启/关闭
+     * Enable/Disable
      * 
      */
     @Import(name="isOpen")
     private @Nullable Output<Boolean> isOpen;
 
     /**
-     * @return 开启/关闭
+     * @return Enable/Disable
      * 
      */
     public Optional<Output<Boolean>> isOpen() {
@@ -48,14 +48,14 @@ public final class InstanceInstanceConfigurationNetworkSpecArgs extends com.pulu
     }
 
     /**
-     * 实例公网资源规格名称
+     * Instance public resource specification name
      * 
      */
     @Import(name="specName")
     private @Nullable Output<String> specName;
 
     /**
-     * @return 实例公网资源规格名称
+     * @return Instance public resource specification name
      * 
      */
     public Optional<Output<String>> specName() {
@@ -63,14 +63,14 @@ public final class InstanceInstanceConfigurationNetworkSpecArgs extends com.pulu
     }
 
     /**
-     * 公网应用类型 Elasticsearch：es实例使用。Kibana：Dashboard使用
+     * Public network application types: Elasticsearch—for ES instance usage. Kibana—for Dashboard usage
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 公网应用类型 Elasticsearch：es实例使用。Kibana：Dashboard使用
+     * @return Public network application types: Elasticsearch—for ES instance usage. Kibana—for Dashboard usage
      * 
      */
     public Optional<Output<String>> type() {
@@ -105,7 +105,7 @@ public final class InstanceInstanceConfigurationNetworkSpecArgs extends com.pulu
         }
 
         /**
-         * @param bandwidth 公网IP的带宽上限，默认为“1”，单位：Mbps。
+         * @param bandwidth Public IP bandwidth limit. Default is &#39;1&#39;, unit: Mbps.
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class InstanceInstanceConfigurationNetworkSpecArgs extends com.pulu
         }
 
         /**
-         * @param bandwidth 公网IP的带宽上限，默认为“1”，单位：Mbps。
+         * @param bandwidth Public IP bandwidth limit. Default is &#39;1&#39;, unit: Mbps.
          * 
          * @return builder
          * 
@@ -126,7 +126,7 @@ public final class InstanceInstanceConfigurationNetworkSpecArgs extends com.pulu
         }
 
         /**
-         * @param isOpen 开启/关闭
+         * @param isOpen Enable/Disable
          * 
          * @return builder
          * 
@@ -137,7 +137,7 @@ public final class InstanceInstanceConfigurationNetworkSpecArgs extends com.pulu
         }
 
         /**
-         * @param isOpen 开启/关闭
+         * @param isOpen Enable/Disable
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class InstanceInstanceConfigurationNetworkSpecArgs extends com.pulu
         }
 
         /**
-         * @param specName 实例公网资源规格名称
+         * @param specName Instance public resource specification name
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class InstanceInstanceConfigurationNetworkSpecArgs extends com.pulu
         }
 
         /**
-         * @param specName 实例公网资源规格名称
+         * @param specName Instance public resource specification name
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class InstanceInstanceConfigurationNetworkSpecArgs extends com.pulu
         }
 
         /**
-         * @param type 公网应用类型 Elasticsearch：es实例使用。Kibana：Dashboard使用
+         * @param type Public network application types: Elasticsearch—for ES instance usage. Kibana—for Dashboard usage
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class InstanceInstanceConfigurationNetworkSpecArgs extends com.pulu
         }
 
         /**
-         * @param type 公网应用类型 Elasticsearch：es实例使用。Kibana：Dashboard使用
+         * @param type Public network application types: Elasticsearch—for ES instance usage. Kibana—for Dashboard usage
          * 
          * @return builder
          * 

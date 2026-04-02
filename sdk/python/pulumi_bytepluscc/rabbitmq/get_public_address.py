@@ -106,7 +106,7 @@ class GetPublicAddressResult:
     @pulumi.getter(name="accountId")
     def account_id(self) -> builtins.str:
         """
-        创建实例的主账号ID。
+        Main account ID that created the instance.
         """
         return pulumi.get(self, "account_id")
 
@@ -114,7 +114,7 @@ class GetPublicAddressResult:
     @pulumi.getter(name="applyPrivateDnsToPublic")
     def apply_private_dns_to_public(self) -> builtins.bool:
         """
-        是否已开启公网解析功能。true：已开启, false：已关闭。
+        Whether public DNS resolution is enabled. true: enabled, false: disabled.
         """
         return pulumi.get(self, "apply_private_dns_to_public")
 
@@ -122,7 +122,7 @@ class GetPublicAddressResult:
     @pulumi.getter(name="archType")
     def arch_type(self) -> builtins.str:
         """
-        实例的类型，即集群版或单机版。
+        Instance type: cluster or standalone.
         """
         return pulumi.get(self, "arch_type")
 
@@ -130,7 +130,7 @@ class GetPublicAddressResult:
     @pulumi.getter(name="chargeDetail")
     def charge_detail(self) -> 'outputs.GetPublicAddressChargeDetailResult':
         """
-        实例的计费方式等计费信息。
+        Instance billing method and related billing information.
         """
         return pulumi.get(self, "charge_detail")
 
@@ -138,7 +138,7 @@ class GetPublicAddressResult:
     @pulumi.getter(name="computeSpec")
     def compute_spec(self) -> builtins.str:
         """
-        RabbitMQ实例的计算规格。
+        RabbitMQ instance compute specification.
         """
         return pulumi.get(self, "compute_spec")
 
@@ -146,7 +146,7 @@ class GetPublicAddressResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        实例的创建时间。
+        Instance creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -154,7 +154,7 @@ class GetPublicAddressResult:
     @pulumi.getter(name="eipId")
     def eip_id(self) -> builtins.str:
         """
-        EIP的ID。
+        EIP ID.
         """
         return pulumi.get(self, "eip_id")
 
@@ -162,7 +162,7 @@ class GetPublicAddressResult:
     @pulumi.getter
     def endpoints(self) -> Sequence['outputs.GetPublicAddressEndpointResult']:
         """
-        实例的连接信息。
+        Instance connection information.
         """
         return pulumi.get(self, "endpoints")
 
@@ -178,7 +178,7 @@ class GetPublicAddressResult:
     @pulumi.getter(name="instanceDescription")
     def instance_description(self) -> builtins.str:
         """
-        实例的简单描述。
+        Brief description of the instance.
         """
         return pulumi.get(self, "instance_description")
 
@@ -186,7 +186,7 @@ class GetPublicAddressResult:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> builtins.str:
         """
-        RabbitMQ 实例 ID。
+        RabbitMQ instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -194,7 +194,7 @@ class GetPublicAddressResult:
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> builtins.str:
         """
-        RabbitMQ 实例名称。
+        RabbitMQ instance name.
         """
         return pulumi.get(self, "instance_name")
 
@@ -202,7 +202,7 @@ class GetPublicAddressResult:
     @pulumi.getter(name="instanceStatus")
     def instance_status(self) -> builtins.str:
         """
-        实例状态。
+        Instance status.
         """
         return pulumi.get(self, "instance_status")
 
@@ -210,7 +210,7 @@ class GetPublicAddressResult:
     @pulumi.getter(name="isEncrypted")
     def is_encrypted(self) -> builtins.bool:
         """
-        是否开启了云盘加密。
+        Whether cloud disk encryption is enabled.
         """
         return pulumi.get(self, "is_encrypted")
 
@@ -218,7 +218,7 @@ class GetPublicAddressResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        实例所属的IAM项目。
+        IAM project the instance belongs to.
         """
         return pulumi.get(self, "project_name")
 
@@ -226,7 +226,7 @@ class GetPublicAddressResult:
     @pulumi.getter(name="storageSpace")
     def storage_space(self) -> builtins.int:
         """
-        实例总存储空间。单位为 GiB。
+        Total storage space of the instance, in GiB.
         """
         return pulumi.get(self, "storage_space")
 
@@ -234,7 +234,7 @@ class GetPublicAddressResult:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> builtins.str:
         """
-        VPC的子网ID。
+        VPC subnet ID.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -242,7 +242,7 @@ class GetPublicAddressResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetPublicAddressTagResult']:
         """
-        实例绑定的标签。
+        Tags bound to the instance.
         """
         return pulumi.get(self, "tags")
 
@@ -250,7 +250,7 @@ class GetPublicAddressResult:
     @pulumi.getter(name="usedStorageSpace")
     def used_storage_space(self) -> builtins.int:
         """
-        实例已用存储空间。单位为 GiB。
+        Used storage space of the instance, in GiB.
         """
         return pulumi.get(self, "used_storage_space")
 
@@ -258,7 +258,7 @@ class GetPublicAddressResult:
     @pulumi.getter(name="userName")
     def user_name(self) -> builtins.str:
         """
-        RabbitMQ WebUI管理员账号名。
+        RabbitMQ WebUI administrator account name.
         """
         return pulumi.get(self, "user_name")
 
@@ -266,7 +266,7 @@ class GetPublicAddressResult:
     @pulumi.getter
     def version(self) -> builtins.str:
         """
-        支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
+        Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
         """
         return pulumi.get(self, "version")
 
@@ -274,7 +274,7 @@ class GetPublicAddressResult:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> builtins.str:
         """
-        私有网络（VPC）ID。
+        Private network (VPC) ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -282,7 +282,7 @@ class GetPublicAddressResult:
     @pulumi.getter(name="zoneDescription")
     def zone_description(self) -> builtins.str:
         """
-        可用区的描述信息。
+        Description of the availability zone.
         """
         return pulumi.get(self, "zone_description")
 
@@ -290,7 +290,7 @@ class GetPublicAddressResult:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> builtins.str:
         """
-        实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
+        Availability zone ID where the instance is located. For high availability instances across AZs, multiple availability zone IDs are returned.
         """
         return pulumi.get(self, "zone_id")
 

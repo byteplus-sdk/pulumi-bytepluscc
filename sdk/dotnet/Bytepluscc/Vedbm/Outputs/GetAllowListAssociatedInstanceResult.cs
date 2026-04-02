@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm.Outputs
     public sealed class GetAllowListAssociatedInstanceResult
     {
         /// <summary>
-        /// 实例ID。
+        /// Instance ID.
         /// </summary>
         public readonly string InstanceId;
         /// <summary>
-        /// 实例名称。
+        /// Instance name.
         /// </summary>
         public readonly string InstanceName;
         /// <summary>
-        /// 实例所属VPC ID。
+        /// Instance VPC ID.
         /// </summary>
         public readonly string Vpc;
 

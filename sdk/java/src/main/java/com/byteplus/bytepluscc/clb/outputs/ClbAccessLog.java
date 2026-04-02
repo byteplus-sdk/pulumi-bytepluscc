@@ -13,62 +13,62 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ClbAccessLog {
     /**
-     * @return 存储七层访问日志的对象存储桶的名称。
+     * @return Name of the object storage bucket for storing Layer 7 access logs
      * 
      */
     private @Nullable String bucketName;
     /**
-     * @return 日志投递类型。取值如下：tos（默认值）: 将日志投递至对象存储服务TOS。tls：将日志投递至日志服务TLS。
+     * @return Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
      * 
      */
     private @Nullable String deliveryType;
     /**
-     * @return 是否开启访问日志（七层）投递至对象存储TOS的功能。
+     * @return Enable access log (Layer 7) delivery to object storage TOS
      * 
      */
     private @Nullable Boolean enabled;
     /**
-     * @return 日志项目。
+     * @return Log project
      * 
      */
     private @Nullable String tlsProjectId;
     /**
-     * @return 日志主题。
+     * @return Log topic
      * 
      */
     private @Nullable String tlsTopicId;
 
     private ClbAccessLog() {}
     /**
-     * @return 存储七层访问日志的对象存储桶的名称。
+     * @return Name of the object storage bucket for storing Layer 7 access logs
      * 
      */
     public Optional<String> bucketName() {
         return Optional.ofNullable(this.bucketName);
     }
     /**
-     * @return 日志投递类型。取值如下：tos（默认值）: 将日志投递至对象存储服务TOS。tls：将日志投递至日志服务TLS。
+     * @return Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
      * 
      */
     public Optional<String> deliveryType() {
         return Optional.ofNullable(this.deliveryType);
     }
     /**
-     * @return 是否开启访问日志（七层）投递至对象存储TOS的功能。
+     * @return Enable access log (Layer 7) delivery to object storage TOS
      * 
      */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
     /**
-     * @return 日志项目。
+     * @return Log project
      * 
      */
     public Optional<String> tlsProjectId() {
         return Optional.ofNullable(this.tlsProjectId);
     }
     /**
-     * @return 日志主题。
+     * @return Log topic
      * 
      */
     public Optional<String> tlsTopicId() {

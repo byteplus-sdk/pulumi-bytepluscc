@@ -31,31 +31,31 @@ export interface GetKafkaTriggerArgs {
  */
 export interface GetKafkaTriggerResult {
     /**
-     * 触发器批量消费的最长等待时间。单位为毫秒（ms），取值范围为 1000 ~ 60000 ms，默认值为 1000 ms。
+     * Maximum wait time for batch consumption by the trigger. Unit: milliseconds (ms). Valid range: 1000–60000 ms. Default: 1000 ms.
      */
     readonly batchFlushDurationMilliseconds: number;
     /**
-     * 触发器批量消费的每批次消息数。
+     * Number of messages per batch for trigger batch consumption.
      */
     readonly batchSize: number;
     /**
-     * 消息队列 Kafka 实例的消费组名字。
+     * Consumer group name of the Kafka message queue instance.
      */
     readonly consumerGroup: string;
     /**
-     * Kafka 触发器创建时间。
+     * Kafka trigger creation time.
      */
     readonly createdTime: string;
     /**
-     * Kafka 触发器描述。长度限制为 200 个字符以内。
+     * Description of the Kafka trigger. Limited to 200 characters.
      */
     readonly description: string;
     /**
-     * 是否在创建触发器的同时启用触发器。取值：true：启用。false：关闭。
+     * Enable the trigger when creating it. Options: true—enable. false—disable.
      */
     readonly enabled: boolean;
     /**
-     * 函数 ID。
+     * Function ID.
      */
     readonly functionId: string;
     /**
@@ -63,39 +63,39 @@ export interface GetKafkaTriggerResult {
      */
     readonly id: string;
     /**
-     * Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
+     * Kafka identity authentication. Function service uses Kafka ACL permission policies to authenticate message consumption for SASL users of types PLAIN and SCRAM-SHA-256.
      */
     readonly kafkaCredentials: outputs.vefaas.GetKafkaTriggerKafkaCredentials;
     /**
-     * Kafka 触发器 ID。
+     * Kafka trigger ID.
      */
     readonly kafkaTriggerId: string;
     /**
-     * 函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。
+     * Maximum number of retries when the function encounters a runtime error (including user code errors and runtime errors). Valid values: positive integers from 0 to 100.
      */
     readonly maximumRetryAttempts: number;
     /**
-     * 消息队列 Kafka 实例 ID。
+     * Kafka message queue instance ID.
      */
     readonly mqInstanceId: string;
     /**
-     * Kafka 触发器名字。同一函数下，触发器名称不可重复。只能包含大小写字母、数字、下划线，并且以字母开头，长度限制为 4~63 个字符。
+     * Kafka trigger name. Trigger names must be unique within the same function. Only uppercase and lowercase letters, numbers, and underscores are allowed, must start with a letter, and be 4–63 characters long.
      */
     readonly name: string;
     /**
-     * 指定开始消费 Topic 中消息的位置。取值：Latest：只消费订阅 Topic 后产生的消息。Earliest：从 Topic 中生产的第一条消息开始消费。
+     * Specify the starting position for consuming messages in the Topic. Options: Latest—consume only messages produced after subscribing to the Topic. Earliest—consume from the first message produced in the Topic.
      */
     readonly startingPosition: string;
     /**
-     * Kafka 触发器状态。参数值说明：ready：运行，failed：失败，pending：启动中
+     * Kafka trigger status. Parameter values: ready—running, failed—failed, pending—starting.
      */
     readonly status: string;
     /**
-     * 消息队列 Kafka 实例的 Topic 名称。
+     * Topic name of the Kafka message queue instance.
      */
     readonly topicName: string;
     /**
-     * Kafka 触发器最近一次更新时间。
+     * Last update time of the Kafka trigger.
      */
     readonly updatedTime: string;
 }

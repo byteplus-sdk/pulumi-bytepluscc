@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class UpstreamUpstreamSpecK8SServiceGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 容器服务名称。长度限制为2~63个字符。
+        /// Container Service Name. Length: 2–63 characters
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 命名空间。长度限制为2~63个字符。
+        /// Namespace. Length: 2~63 characters
         /// </summary>
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }
 
         /// <summary>
-        /// 端口。
+        /// Port
         /// </summary>
         [Input("port")]
         public Input<int>? Port { get; set; }

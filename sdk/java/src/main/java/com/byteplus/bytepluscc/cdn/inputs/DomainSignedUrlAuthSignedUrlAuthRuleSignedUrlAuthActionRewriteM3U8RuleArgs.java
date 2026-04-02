@@ -16,14 +16,14 @@ public final class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewrit
     public static final DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8RuleArgs Empty = new DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8RuleArgs();
 
     /**
-     * 表示在改写分片 URL 时是否保留 URL 中原有的参数。该参数有以下取值：true：表示删除原有参数。false：表示保留原有参数。
+     * Indicates whether to retain the original parameters in the URL when rewriting the shard URL. This parameter has the following values: true: removes the original parameters. false: retains the original parameters.
      * 
      */
     @Import(name="deleteParam")
     private @Nullable Output<Boolean> deleteParam;
 
     /**
-     * @return 表示在改写分片 URL 时是否保留 URL 中原有的参数。该参数有以下取值：true：表示删除原有参数。false：表示保留原有参数。
+     * @return Indicates whether to retain the original parameters in the URL when rewriting the shard URL. This parameter has the following values: true: removes the original parameters. false: retains the original parameters.
      * 
      */
     public Optional<Output<Boolean>> deleteParam() {
@@ -31,14 +31,14 @@ public final class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewrit
     }
 
     /**
-     * 表示是否将来自该 M3U8 文件请求的不表示签名的查询参数添加到分片 URL 中。该参数有以下取值：true：表示在分片 URL 中添加查询参数。false：表示不添加查询参数。
+     * Indicates whether to add unsigned query parameters from the M3U8 file request to the segment URL. The parameter has the following options: true: add query parameters to the segment URL. false: do not add query parameters.
      * 
      */
     @Import(name="keepM3U8Param")
     private @Nullable Output<Boolean> keepM3U8Param;
 
     /**
-     * @return 表示是否将来自该 M3U8 文件请求的不表示签名的查询参数添加到分片 URL 中。该参数有以下取值：true：表示在分片 URL 中添加查询参数。false：表示不添加查询参数。
+     * @return Indicates whether to add unsigned query parameters from the M3U8 file request to the segment URL. The parameter has the following options: true: add query parameters to the segment URL. false: do not add query parameters.
      * 
      */
     public Optional<Output<Boolean>> keepM3U8Param() {
@@ -71,7 +71,7 @@ public final class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewrit
         }
 
         /**
-         * @param deleteParam 表示在改写分片 URL 时是否保留 URL 中原有的参数。该参数有以下取值：true：表示删除原有参数。false：表示保留原有参数。
+         * @param deleteParam Indicates whether to retain the original parameters in the URL when rewriting the shard URL. This parameter has the following values: true: removes the original parameters. false: retains the original parameters.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewrit
         }
 
         /**
-         * @param deleteParam 表示在改写分片 URL 时是否保留 URL 中原有的参数。该参数有以下取值：true：表示删除原有参数。false：表示保留原有参数。
+         * @param deleteParam Indicates whether to retain the original parameters in the URL when rewriting the shard URL. This parameter has the following values: true: removes the original parameters. false: retains the original parameters.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewrit
         }
 
         /**
-         * @param keepM3U8Param 表示是否将来自该 M3U8 文件请求的不表示签名的查询参数添加到分片 URL 中。该参数有以下取值：true：表示在分片 URL 中添加查询参数。false：表示不添加查询参数。
+         * @param keepM3U8Param Indicates whether to add unsigned query parameters from the M3U8 file request to the segment URL. The parameter has the following options: true: add query parameters to the segment URL. false: do not add query parameters.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewrit
         }
 
         /**
-         * @param keepM3U8Param 表示是否将来自该 M3U8 文件请求的不表示签名的查询参数添加到分片 URL 中。该参数有以下取值：true：表示在分片 URL 中添加查询参数。false：表示不添加查询参数。
+         * @param keepM3U8Param Indicates whether to add unsigned query parameters from the M3U8 file request to the segment URL. The parameter has the following options: true: add query parameters to the segment URL. false: do not add query parameters.
          * 
          * @return builder
          * 

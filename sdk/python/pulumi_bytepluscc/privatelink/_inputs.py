@@ -30,19 +30,19 @@ if not MYPY:
     class EndpointServicePrivateDnsNameConfigurationArgsDict(TypedDict):
         name: NotRequired[pulumi.Input[builtins.str]]
         """
-        域验证名称。
+        Domain verification name.
         """
         status: NotRequired[pulumi.Input[builtins.str]]
         """
-        域验证状态。PendingVerification：待验证Verifying：验证中Verified：验证通过Failed：验证失败
+        Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
         """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
-        域验证类型。TXT：TXT记录。
+        Domain verification type. TXT: TXT record.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        域验证值。
+        Domain verification value.
         """
 elif False:
     EndpointServicePrivateDnsNameConfigurationArgsDict: TypeAlias = Mapping[str, Any]
@@ -55,10 +55,10 @@ class EndpointServicePrivateDnsNameConfigurationArgs:
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] name: 域验证名称。
-        :param pulumi.Input[builtins.str] status: 域验证状态。PendingVerification：待验证Verifying：验证中Verified：验证通过Failed：验证失败
-        :param pulumi.Input[builtins.str] type: 域验证类型。TXT：TXT记录。
-        :param pulumi.Input[builtins.str] value: 域验证值。
+        :param pulumi.Input[builtins.str] name: Domain verification name.
+        :param pulumi.Input[builtins.str] status: Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
+        :param pulumi.Input[builtins.str] type: Domain verification type. TXT: TXT record.
+        :param pulumi.Input[builtins.str] value: Domain verification value.
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -73,7 +73,7 @@ class EndpointServicePrivateDnsNameConfigurationArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        域验证名称。
+        Domain verification name.
         """
         return pulumi.get(self, "name")
 
@@ -85,7 +85,7 @@ class EndpointServicePrivateDnsNameConfigurationArgs:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        域验证状态。PendingVerification：待验证Verifying：验证中Verified：验证通过Failed：验证失败
+        Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
         """
         return pulumi.get(self, "status")
 
@@ -97,7 +97,7 @@ class EndpointServicePrivateDnsNameConfigurationArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        域验证类型。TXT：TXT记录。
+        Domain verification type. TXT: TXT record.
         """
         return pulumi.get(self, "type")
 
@@ -109,7 +109,7 @@ class EndpointServicePrivateDnsNameConfigurationArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        域验证值。
+        Domain verification value.
         """
         return pulumi.get(self, "value")
 
@@ -122,15 +122,15 @@ if not MYPY:
     class EndpointServiceResourceArgsDict(TypedDict):
         instance_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        终端节点服务ID。
+        Endpoint service ID.
         """
         resource_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        待添加到终端节点服务中的服务资源ID。
+        Service resource ID to be added to the endpoint service.
         """
         zone_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        负载均衡提供服务的可用区。
+        Availability zone where the load balancer provides service.
         """
 elif False:
     EndpointServiceResourceArgsDict: TypeAlias = Mapping[str, Any]
@@ -142,9 +142,9 @@ class EndpointServiceResourceArgs:
                  resource_id: Optional[pulumi.Input[builtins.str]] = None,
                  zone_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
-        :param pulumi.Input[builtins.str] instance_id: 终端节点服务ID。
-        :param pulumi.Input[builtins.str] resource_id: 待添加到终端节点服务中的服务资源ID。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] zone_ids: 负载均衡提供服务的可用区。
+        :param pulumi.Input[builtins.str] instance_id: Endpoint service ID.
+        :param pulumi.Input[builtins.str] resource_id: Service resource ID to be added to the endpoint service.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] zone_ids: Availability zone where the load balancer provides service.
         """
         if instance_id is not None:
             pulumi.set(__self__, "instance_id", instance_id)
@@ -157,7 +157,7 @@ class EndpointServiceResourceArgs:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        终端节点服务ID。
+        Endpoint service ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -169,7 +169,7 @@ class EndpointServiceResourceArgs:
     @pulumi.getter(name="resourceId")
     def resource_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        待添加到终端节点服务中的服务资源ID。
+        Service resource ID to be added to the endpoint service.
         """
         return pulumi.get(self, "resource_id")
 
@@ -181,7 +181,7 @@ class EndpointServiceResourceArgs:
     @pulumi.getter(name="zoneIds")
     def zone_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        负载均衡提供服务的可用区。
+        Availability zone where the load balancer provides service.
         """
         return pulumi.get(self, "zone_ids")
 
@@ -194,11 +194,11 @@ if not MYPY:
     class EndpointServiceTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        终端节点服务标签的标签键。
+        Tag keys for endpoint service tags.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        终端节点服务标签的标签值。
+        Tag value of the endpoint service tag.
         """
 elif False:
     EndpointServiceTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -209,8 +209,8 @@ class EndpointServiceTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 终端节点服务标签的标签键。
-        :param pulumi.Input[builtins.str] value: 终端节点服务标签的标签值。
+        :param pulumi.Input[builtins.str] key: Tag keys for endpoint service tags.
+        :param pulumi.Input[builtins.str] value: Tag value of the endpoint service tag.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -221,7 +221,7 @@ class EndpointServiceTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        终端节点服务标签的标签键。
+        Tag keys for endpoint service tags.
         """
         return pulumi.get(self, "key")
 
@@ -233,7 +233,7 @@ class EndpointServiceTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        终端节点服务标签的标签值。
+        Tag value of the endpoint service tag.
         """
         return pulumi.get(self, "value")
 

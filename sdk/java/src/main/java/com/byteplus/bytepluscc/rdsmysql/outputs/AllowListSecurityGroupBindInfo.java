@@ -13,50 +13,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AllowListSecurityGroupBindInfo {
     /**
-     * @return 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。说明在 CreateAllowList 接口中，SecurityGroupBindInfoObject 的 BindMode 和 SecurityGroupId 字段为必填项。
+     * @return Mode for associating security groups. Values: IngressDirectionIp: Inbound IP. AssociateEcsIp: Associate ECS IP. Note: In the CreateAllowList API, the BindMode and SecurityGroupId fields of SecurityGroupBindInfoObject are required.
      * 
      */
     private @Nullable String bindMode;
     /**
-     * @return 安全组的 IP 地址列表。
+     * @return Security group IP address list.
      * 
      */
     private @Nullable List<String> ipLists;
     /**
-     * @return 安全组 ID。
+     * @return Security group ID.
      * 
      */
     private @Nullable String securityGroupId;
     /**
-     * @return 安全组名称。
+     * @return Security group name.
      * 
      */
     private @Nullable String securityGroupName;
 
     private AllowListSecurityGroupBindInfo() {}
     /**
-     * @return 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。说明在 CreateAllowList 接口中，SecurityGroupBindInfoObject 的 BindMode 和 SecurityGroupId 字段为必填项。
+     * @return Mode for associating security groups. Values: IngressDirectionIp: Inbound IP. AssociateEcsIp: Associate ECS IP. Note: In the CreateAllowList API, the BindMode and SecurityGroupId fields of SecurityGroupBindInfoObject are required.
      * 
      */
     public Optional<String> bindMode() {
         return Optional.ofNullable(this.bindMode);
     }
     /**
-     * @return 安全组的 IP 地址列表。
+     * @return Security group IP address list.
      * 
      */
     public List<String> ipLists() {
         return this.ipLists == null ? List.of() : this.ipLists;
     }
     /**
-     * @return 安全组 ID。
+     * @return Security group ID.
      * 
      */
     public Optional<String> securityGroupId() {
         return Optional.ofNullable(this.securityGroupId);
     }
     /**
-     * @return 安全组名称。
+     * @return Security group name.
      * 
      */
     public Optional<String> securityGroupName() {

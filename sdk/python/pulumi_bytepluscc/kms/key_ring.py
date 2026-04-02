@@ -26,10 +26,10 @@ class KeyRingArgs:
                  project_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a KeyRing resource.
-        :param pulumi.Input[builtins.str] keyring_name: 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
-        :param pulumi.Input[builtins.str] description: 密钥环描述，长度为 0   - 8192 个字符。
-        :param pulumi.Input[builtins.str] keyring_type: 密钥环类型，取值：CustomKeyring。
-        :param pulumi.Input[builtins.str] project_name: 项目名称，默认值：default。
+        :param pulumi.Input[builtins.str] keyring_name: Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
+        :param pulumi.Input[builtins.str] description: Keyring description, length: 0–8192 characters
+        :param pulumi.Input[builtins.str] keyring_type: Keyring type, value: CustomKeyring
+        :param pulumi.Input[builtins.str] project_name: Project name, default value: default
         """
         pulumi.set(__self__, "keyring_name", keyring_name)
         if description is not None:
@@ -43,7 +43,7 @@ class KeyRingArgs:
     @pulumi.getter(name="keyringName")
     def keyring_name(self) -> pulumi.Input[builtins.str]:
         """
-        密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+        Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
         """
         return pulumi.get(self, "keyring_name")
 
@@ -55,7 +55,7 @@ class KeyRingArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        密钥环描述，长度为 0   - 8192 个字符。
+        Keyring description, length: 0–8192 characters
         """
         return pulumi.get(self, "description")
 
@@ -67,7 +67,7 @@ class KeyRingArgs:
     @pulumi.getter(name="keyringType")
     def keyring_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        密钥环类型，取值：CustomKeyring。
+        Keyring type, value: CustomKeyring
         """
         return pulumi.get(self, "keyring_type")
 
@@ -79,7 +79,7 @@ class KeyRingArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        项目名称，默认值：default。
+        Project name, default value: default
         """
         return pulumi.get(self, "project_name")
 
@@ -102,15 +102,15 @@ class _KeyRingState:
                  update_date: Optional[pulumi.Input[builtins.int]] = None):
         """
         Input properties used for looking up and filtering KeyRing resources.
-        :param pulumi.Input[builtins.int] create_date: 密钥环创建日期。
-        :param pulumi.Input[builtins.str] description: 密钥环描述，长度为 0   - 8192 个字符。
-        :param pulumi.Input[builtins.int] key_count: 密钥环密钥次数。
-        :param pulumi.Input[builtins.str] key_ring_id: 密钥环唯一标识符，UUID形式。
-        :param pulumi.Input[builtins.str] keyring_name: 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
-        :param pulumi.Input[builtins.str] keyring_type: 密钥环类型，取值：CustomKeyring。
-        :param pulumi.Input[builtins.str] project_name: 项目名称，默认值：default。
-        :param pulumi.Input[builtins.str] uid: 密钥环租户ID。
-        :param pulumi.Input[builtins.int] update_date: 密钥环更新日期。
+        :param pulumi.Input[builtins.int] create_date: Keyring creation date
+        :param pulumi.Input[builtins.str] description: Keyring description, length: 0–8192 characters
+        :param pulumi.Input[builtins.int] key_count: Number of keys in keyring
+        :param pulumi.Input[builtins.str] key_ring_id: Keyring unique identifier, in UUID format
+        :param pulumi.Input[builtins.str] keyring_name: Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
+        :param pulumi.Input[builtins.str] keyring_type: Keyring type, value: CustomKeyring
+        :param pulumi.Input[builtins.str] project_name: Project name, default value: default
+        :param pulumi.Input[builtins.str] uid: Keyring tenant ID
+        :param pulumi.Input[builtins.int] update_date: Keyring update date
         """
         if create_date is not None:
             pulumi.set(__self__, "create_date", create_date)
@@ -135,7 +135,7 @@ class _KeyRingState:
     @pulumi.getter(name="createDate")
     def create_date(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        密钥环创建日期。
+        Keyring creation date
         """
         return pulumi.get(self, "create_date")
 
@@ -147,7 +147,7 @@ class _KeyRingState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        密钥环描述，长度为 0   - 8192 个字符。
+        Keyring description, length: 0–8192 characters
         """
         return pulumi.get(self, "description")
 
@@ -159,7 +159,7 @@ class _KeyRingState:
     @pulumi.getter(name="keyCount")
     def key_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        密钥环密钥次数。
+        Number of keys in keyring
         """
         return pulumi.get(self, "key_count")
 
@@ -171,7 +171,7 @@ class _KeyRingState:
     @pulumi.getter(name="keyRingId")
     def key_ring_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        密钥环唯一标识符，UUID形式。
+        Keyring unique identifier, in UUID format
         """
         return pulumi.get(self, "key_ring_id")
 
@@ -183,7 +183,7 @@ class _KeyRingState:
     @pulumi.getter(name="keyringName")
     def keyring_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+        Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
         """
         return pulumi.get(self, "keyring_name")
 
@@ -195,7 +195,7 @@ class _KeyRingState:
     @pulumi.getter(name="keyringType")
     def keyring_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        密钥环类型，取值：CustomKeyring。
+        Keyring type, value: CustomKeyring
         """
         return pulumi.get(self, "keyring_type")
 
@@ -207,7 +207,7 @@ class _KeyRingState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        项目名称，默认值：default。
+        Project name, default value: default
         """
         return pulumi.get(self, "project_name")
 
@@ -219,7 +219,7 @@ class _KeyRingState:
     @pulumi.getter
     def uid(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        密钥环租户ID。
+        Keyring tenant ID
         """
         return pulumi.get(self, "uid")
 
@@ -231,7 +231,7 @@ class _KeyRingState:
     @pulumi.getter(name="updateDate")
     def update_date(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        密钥环更新日期。
+        Keyring update date
         """
         return pulumi.get(self, "update_date")
 
@@ -252,7 +252,7 @@ class KeyRing(pulumi.CustomResource):
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        用户管理密钥的集合，用户将相同类型或用途的密钥放在同一密钥环中以便于管理。
+        A collection for managing user keys; users place keys of the same type or purpose in the same keyring for easier management
 
         ## Example Usage
 
@@ -275,10 +275,10 @@ class KeyRing(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: 密钥环描述，长度为 0   - 8192 个字符。
-        :param pulumi.Input[builtins.str] keyring_name: 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
-        :param pulumi.Input[builtins.str] keyring_type: 密钥环类型，取值：CustomKeyring。
-        :param pulumi.Input[builtins.str] project_name: 项目名称，默认值：default。
+        :param pulumi.Input[builtins.str] description: Keyring description, length: 0–8192 characters
+        :param pulumi.Input[builtins.str] keyring_name: Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
+        :param pulumi.Input[builtins.str] keyring_type: Keyring type, value: CustomKeyring
+        :param pulumi.Input[builtins.str] project_name: Project name, default value: default
         """
         ...
     @overload
@@ -287,7 +287,7 @@ class KeyRing(pulumi.CustomResource):
                  args: KeyRingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        用户管理密钥的集合，用户将相同类型或用途的密钥放在同一密钥环中以便于管理。
+        A collection for managing user keys; users place keys of the same type or purpose in the same keyring for easier management
 
         ## Example Usage
 
@@ -373,15 +373,15 @@ class KeyRing(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] create_date: 密钥环创建日期。
-        :param pulumi.Input[builtins.str] description: 密钥环描述，长度为 0   - 8192 个字符。
-        :param pulumi.Input[builtins.int] key_count: 密钥环密钥次数。
-        :param pulumi.Input[builtins.str] key_ring_id: 密钥环唯一标识符，UUID形式。
-        :param pulumi.Input[builtins.str] keyring_name: 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
-        :param pulumi.Input[builtins.str] keyring_type: 密钥环类型，取值：CustomKeyring。
-        :param pulumi.Input[builtins.str] project_name: 项目名称，默认值：default。
-        :param pulumi.Input[builtins.str] uid: 密钥环租户ID。
-        :param pulumi.Input[builtins.int] update_date: 密钥环更新日期。
+        :param pulumi.Input[builtins.int] create_date: Keyring creation date
+        :param pulumi.Input[builtins.str] description: Keyring description, length: 0–8192 characters
+        :param pulumi.Input[builtins.int] key_count: Number of keys in keyring
+        :param pulumi.Input[builtins.str] key_ring_id: Keyring unique identifier, in UUID format
+        :param pulumi.Input[builtins.str] keyring_name: Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
+        :param pulumi.Input[builtins.str] keyring_type: Keyring type, value: CustomKeyring
+        :param pulumi.Input[builtins.str] project_name: Project name, default value: default
+        :param pulumi.Input[builtins.str] uid: Keyring tenant ID
+        :param pulumi.Input[builtins.int] update_date: Keyring update date
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -402,7 +402,7 @@ class KeyRing(pulumi.CustomResource):
     @pulumi.getter(name="createDate")
     def create_date(self) -> pulumi.Output[builtins.int]:
         """
-        密钥环创建日期。
+        Keyring creation date
         """
         return pulumi.get(self, "create_date")
 
@@ -410,7 +410,7 @@ class KeyRing(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        密钥环描述，长度为 0   - 8192 个字符。
+        Keyring description, length: 0–8192 characters
         """
         return pulumi.get(self, "description")
 
@@ -418,7 +418,7 @@ class KeyRing(pulumi.CustomResource):
     @pulumi.getter(name="keyCount")
     def key_count(self) -> pulumi.Output[builtins.int]:
         """
-        密钥环密钥次数。
+        Number of keys in keyring
         """
         return pulumi.get(self, "key_count")
 
@@ -426,7 +426,7 @@ class KeyRing(pulumi.CustomResource):
     @pulumi.getter(name="keyRingId")
     def key_ring_id(self) -> pulumi.Output[builtins.str]:
         """
-        密钥环唯一标识符，UUID形式。
+        Keyring unique identifier, in UUID format
         """
         return pulumi.get(self, "key_ring_id")
 
@@ -434,7 +434,7 @@ class KeyRing(pulumi.CustomResource):
     @pulumi.getter(name="keyringName")
     def keyring_name(self) -> pulumi.Output[builtins.str]:
         """
-        密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+        Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
         """
         return pulumi.get(self, "keyring_name")
 
@@ -442,7 +442,7 @@ class KeyRing(pulumi.CustomResource):
     @pulumi.getter(name="keyringType")
     def keyring_type(self) -> pulumi.Output[builtins.str]:
         """
-        密钥环类型，取值：CustomKeyring。
+        Keyring type, value: CustomKeyring
         """
         return pulumi.get(self, "keyring_type")
 
@@ -450,7 +450,7 @@ class KeyRing(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        项目名称，默认值：default。
+        Project name, default value: default
         """
         return pulumi.get(self, "project_name")
 
@@ -458,7 +458,7 @@ class KeyRing(pulumi.CustomResource):
     @pulumi.getter
     def uid(self) -> pulumi.Output[builtins.str]:
         """
-        密钥环租户ID。
+        Keyring tenant ID
         """
         return pulumi.get(self, "uid")
 
@@ -466,7 +466,7 @@ class KeyRing(pulumi.CustomResource):
     @pulumi.getter(name="updateDate")
     def update_date(self) -> pulumi.Output[builtins.int]:
         """
-        密钥环更新日期。
+        Keyring update date
         """
         return pulumi.get(self, "update_date")
 

@@ -115,7 +115,7 @@ class BandwidthPackageEipAddress(dict):
     def __init__(__self__, *,
                  allocation_id: Optional[builtins.str] = None):
         """
-        :param builtins.str allocation_id: 分配ID
+        :param builtins.str allocation_id: Allocation ID
         """
         if allocation_id is not None:
             pulumi.set(__self__, "allocation_id", allocation_id)
@@ -124,7 +124,7 @@ class BandwidthPackageEipAddress(dict):
     @pulumi.getter(name="allocationId")
     def allocation_id(self) -> Optional[builtins.str]:
         """
-        分配ID
+        Allocation ID
         """
         return pulumi.get(self, "allocation_id")
 
@@ -135,8 +135,8 @@ class BandwidthPackageTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: User tag key.
+        :param builtins.str value: User tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -147,7 +147,7 @@ class BandwidthPackageTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        用户标签的标签键。
+        User tag key.
         """
         return pulumi.get(self, "key")
 
@@ -155,7 +155,7 @@ class BandwidthPackageTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        用户标签的标签值。
+        User tag value.
         """
         return pulumi.get(self, "value")
 
@@ -166,8 +166,8 @@ class EipTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key.
+        :param builtins.str value: Tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -178,7 +178,7 @@ class EipTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键。
+        Tag key.
         """
         return pulumi.get(self, "key")
 
@@ -186,7 +186,7 @@ class EipTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 
@@ -217,9 +217,9 @@ class EniPrimaryIpAddress(dict):
                  primary: Optional[builtins.bool] = None,
                  private_ip_address: Optional[builtins.str] = None):
         """
-        :param 'EniPrimaryIpAddressAssociatedElasticIpArgs' associated_elastic_ip: 网卡主私网IPv4关联的公网IP的信息。
-        :param builtins.bool primary: 是否为主私网IPv4地址。
-        :param builtins.str private_ip_address: 网卡的私网IP地址。
+        :param 'EniPrimaryIpAddressAssociatedElasticIpArgs' associated_elastic_ip: Information about the public IP associated with the primary private IPv4 address of the network interface.
+        :param builtins.bool primary: Indicates whether this is the primary private IPv4 address.
+        :param builtins.str private_ip_address: Private IP address of the network interface.
         """
         if associated_elastic_ip is not None:
             pulumi.set(__self__, "associated_elastic_ip", associated_elastic_ip)
@@ -232,7 +232,7 @@ class EniPrimaryIpAddress(dict):
     @pulumi.getter(name="associatedElasticIp")
     def associated_elastic_ip(self) -> Optional['outputs.EniPrimaryIpAddressAssociatedElasticIp']:
         """
-        网卡主私网IPv4关联的公网IP的信息。
+        Information about the public IP associated with the primary private IPv4 address of the network interface.
         """
         return pulumi.get(self, "associated_elastic_ip")
 
@@ -240,7 +240,7 @@ class EniPrimaryIpAddress(dict):
     @pulumi.getter
     def primary(self) -> Optional[builtins.bool]:
         """
-        是否为主私网IPv4地址。
+        Indicates whether this is the primary private IPv4 address.
         """
         return pulumi.get(self, "primary")
 
@@ -248,7 +248,7 @@ class EniPrimaryIpAddress(dict):
     @pulumi.getter(name="privateIpAddress")
     def private_ip_address(self) -> Optional[builtins.str]:
         """
-        网卡的私网IP地址。
+        Private IP address of the network interface.
         """
         return pulumi.get(self, "private_ip_address")
 
@@ -281,9 +281,9 @@ class EniPrimaryIpAddressAssociatedElasticIp(dict):
                  eip_address: Optional[builtins.str] = None,
                  release_with_instance: Optional[builtins.bool] = None):
         """
-        :param builtins.str allocation_id: 公网IP的ID。
-        :param builtins.str eip_address: 公网IP的地址。
-        :param builtins.bool release_with_instance: 公网IP是否随云服务器实例删除。仅主网卡的主私网IP绑定按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放，true：是，false：否。
+        :param builtins.str allocation_id: Public IP ID
+        :param builtins.str eip_address: Public IP address
+        :param builtins.bool release_with_instance: Whether the public IP is released when the cloud server instance is deleted. Only pay-as-you-go public IPs bound to the primary NIC's primary private IP are valid. When enabled, if the cloud server instance is automatically reclaimed by the system (24 hours after unsubscription, upon expiration, or due to overdue payment) or deleted via the DeleteInstances API, the public IP is released along with the instance. true: yes, false: no
         """
         if allocation_id is not None:
             pulumi.set(__self__, "allocation_id", allocation_id)
@@ -296,7 +296,7 @@ class EniPrimaryIpAddressAssociatedElasticIp(dict):
     @pulumi.getter(name="allocationId")
     def allocation_id(self) -> Optional[builtins.str]:
         """
-        公网IP的ID。
+        Public IP ID
         """
         return pulumi.get(self, "allocation_id")
 
@@ -304,7 +304,7 @@ class EniPrimaryIpAddressAssociatedElasticIp(dict):
     @pulumi.getter(name="eipAddress")
     def eip_address(self) -> Optional[builtins.str]:
         """
-        公网IP的地址。
+        Public IP address
         """
         return pulumi.get(self, "eip_address")
 
@@ -312,7 +312,7 @@ class EniPrimaryIpAddressAssociatedElasticIp(dict):
     @pulumi.getter(name="releaseWithInstance")
     def release_with_instance(self) -> Optional[builtins.bool]:
         """
-        公网IP是否随云服务器实例删除。仅主网卡的主私网IP绑定按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放，true：是，false：否。
+        Whether the public IP is released when the cloud server instance is deleted. Only pay-as-you-go public IPs bound to the primary NIC's primary private IP are valid. When enabled, if the cloud server instance is automatically reclaimed by the system (24 hours after unsubscription, upon expiration, or due to overdue payment) or deleted via the DeleteInstances API, the public IP is released along with the instance. true: yes, false: no
         """
         return pulumi.get(self, "release_with_instance")
 
@@ -342,8 +342,8 @@ class EniPrivateIpSet(dict):
                  associated_elastic_ip: Optional['outputs.EniPrivateIpSetAssociatedElasticIp'] = None,
                  private_ip_address: Optional[builtins.str] = None):
         """
-        :param 'EniPrivateIpSetAssociatedElasticIpArgs' associated_elastic_ip: 网卡主私网IPv4关联的公网IP的信息。
-        :param builtins.str private_ip_address: 网卡的私网IP地址。
+        :param 'EniPrivateIpSetAssociatedElasticIpArgs' associated_elastic_ip: Information about the public IP associated with the primary private IPv4 address of the network interface.
+        :param builtins.str private_ip_address: Private IP address of the network interface.
         """
         if associated_elastic_ip is not None:
             pulumi.set(__self__, "associated_elastic_ip", associated_elastic_ip)
@@ -354,7 +354,7 @@ class EniPrivateIpSet(dict):
     @pulumi.getter(name="associatedElasticIp")
     def associated_elastic_ip(self) -> Optional['outputs.EniPrivateIpSetAssociatedElasticIp']:
         """
-        网卡主私网IPv4关联的公网IP的信息。
+        Information about the public IP associated with the primary private IPv4 address of the network interface.
         """
         return pulumi.get(self, "associated_elastic_ip")
 
@@ -362,7 +362,7 @@ class EniPrivateIpSet(dict):
     @pulumi.getter(name="privateIpAddress")
     def private_ip_address(self) -> Optional[builtins.str]:
         """
-        网卡的私网IP地址。
+        Private IP address of the network interface.
         """
         return pulumi.get(self, "private_ip_address")
 
@@ -389,7 +389,7 @@ class EniPrivateIpSetAssociatedElasticIp(dict):
     def __init__(__self__, *,
                  allocation_id: Optional[builtins.str] = None):
         """
-        :param builtins.str allocation_id: 公网IP的ID。
+        :param builtins.str allocation_id: Public IP ID
         """
         if allocation_id is not None:
             pulumi.set(__self__, "allocation_id", allocation_id)
@@ -398,7 +398,7 @@ class EniPrivateIpSetAssociatedElasticIp(dict):
     @pulumi.getter(name="allocationId")
     def allocation_id(self) -> Optional[builtins.str]:
         """
-        公网IP的ID。
+        Public IP ID
         """
         return pulumi.get(self, "allocation_id")
 
@@ -409,8 +409,8 @@ class EniTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: Tag key for the user tag.
+        :param builtins.str value: Tag value for the user tag.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -421,7 +421,7 @@ class EniTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        用户标签的标签键。
+        Tag key for the user tag.
         """
         return pulumi.get(self, "key")
 
@@ -429,7 +429,7 @@ class EniTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        用户标签的标签值。
+        Tag value for the user tag.
         """
         return pulumi.get(self, "value")
 
@@ -440,8 +440,8 @@ class FlowLogTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
-        :param builtins.str value: 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+        :param builtins.str key: User label tag key. Length must be 1–128 characters. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ symbols (@). If the tag key starts or ends with a space, the system automatically removes it.
+        :param builtins.str value: User tag value. Supports input in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -452,7 +452,7 @@ class FlowLogTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+        User label tag key. Length must be 1–128 characters. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ symbols (@). If the tag key starts or ends with a space, the system automatically removes it.
         """
         return pulumi.get(self, "key")
 
@@ -460,7 +460,7 @@ class FlowLogTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+        User tag value. Supports input in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
         """
         return pulumi.get(self, "value")
 
@@ -471,8 +471,8 @@ class HaVipTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
-        :param builtins.str value: 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+        :param builtins.str key: Tag key for user tags. Length range: 1–128 characters. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system automatically removes it
+        :param builtins.str value: Tag value for user tags. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system automatically removes it
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -483,7 +483,7 @@ class HaVipTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+        Tag key for user tags. Length range: 1–128 characters. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system automatically removes it
         """
         return pulumi.get(self, "key")
 
@@ -491,7 +491,7 @@ class HaVipTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+        Tag value for user tags. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system automatically removes it
         """
         return pulumi.get(self, "value")
 
@@ -502,8 +502,8 @@ class Ipv6AddressBandwidthTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -514,7 +514,7 @@ class Ipv6AddressBandwidthTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -522,7 +522,7 @@ class Ipv6AddressBandwidthTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -533,8 +533,8 @@ class Ipv6GatewayTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -545,7 +545,7 @@ class Ipv6GatewayTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -553,7 +553,7 @@ class Ipv6GatewayTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -591,14 +591,14 @@ class NetworkAclDefaultEgressAclEntry(dict):
                  priority: Optional[builtins.int] = None,
                  protocol: Optional[builtins.str] = None):
         """
-        :param builtins.str cidr_ip: 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
-        :param builtins.str description: 规则的描述信息。
-        :param builtins.str network_acl_entry_id: 规则的ID。
-        :param builtins.str network_acl_entry_name: 规则的名称。
-        :param builtins.str policy: 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
-        :param builtins.str port: 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
-        :param builtins.int priority: 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
-        :param builtins.str protocol: 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+        :param builtins.str cidr_ip: For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
+        :param builtins.str description: Rule description.
+        :param builtins.str network_acl_entry_id: Rule ID.
+        :param builtins.str network_acl_entry_name: Rule name.
+        :param builtins.str policy: Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
+        :param builtins.str port: Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
+        :param builtins.int priority: Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
+        :param builtins.str protocol: Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
         """
         if cidr_ip is not None:
             pulumi.set(__self__, "cidr_ip", cidr_ip)
@@ -621,7 +621,7 @@ class NetworkAclDefaultEgressAclEntry(dict):
     @pulumi.getter(name="cidrIp")
     def cidr_ip(self) -> Optional[builtins.str]:
         """
-        入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+        For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
         """
         return pulumi.get(self, "cidr_ip")
 
@@ -629,7 +629,7 @@ class NetworkAclDefaultEgressAclEntry(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        规则的描述信息。
+        Rule description.
         """
         return pulumi.get(self, "description")
 
@@ -637,7 +637,7 @@ class NetworkAclDefaultEgressAclEntry(dict):
     @pulumi.getter(name="networkAclEntryId")
     def network_acl_entry_id(self) -> Optional[builtins.str]:
         """
-        规则的ID。
+        Rule ID.
         """
         return pulumi.get(self, "network_acl_entry_id")
 
@@ -645,7 +645,7 @@ class NetworkAclDefaultEgressAclEntry(dict):
     @pulumi.getter(name="networkAclEntryName")
     def network_acl_entry_name(self) -> Optional[builtins.str]:
         """
-        规则的名称。
+        Rule name.
         """
         return pulumi.get(self, "network_acl_entry_name")
 
@@ -653,7 +653,7 @@ class NetworkAclDefaultEgressAclEntry(dict):
     @pulumi.getter
     def policy(self) -> Optional[builtins.str]:
         """
-        授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+        Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
         """
         return pulumi.get(self, "policy")
 
@@ -661,7 +661,7 @@ class NetworkAclDefaultEgressAclEntry(dict):
     @pulumi.getter
     def port(self) -> Optional[builtins.str]:
         """
-        规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+        Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
         """
         return pulumi.get(self, "port")
 
@@ -669,7 +669,7 @@ class NetworkAclDefaultEgressAclEntry(dict):
     @pulumi.getter
     def priority(self) -> Optional[builtins.int]:
         """
-        方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+        Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
         """
         return pulumi.get(self, "priority")
 
@@ -677,7 +677,7 @@ class NetworkAclDefaultEgressAclEntry(dict):
     @pulumi.getter
     def protocol(self) -> Optional[builtins.str]:
         """
-        协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+        Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
         """
         return pulumi.get(self, "protocol")
 
@@ -715,14 +715,14 @@ class NetworkAclDefaultIngressAclEntry(dict):
                  priority: Optional[builtins.int] = None,
                  protocol: Optional[builtins.str] = None):
         """
-        :param builtins.str cidr_ip: 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
-        :param builtins.str description: 规则的描述信息。
-        :param builtins.str network_acl_entry_id: 规则的ID。
-        :param builtins.str network_acl_entry_name: 规则的名称。
-        :param builtins.str policy: 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
-        :param builtins.str port: 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
-        :param builtins.int priority: 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
-        :param builtins.str protocol: 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+        :param builtins.str cidr_ip: For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
+        :param builtins.str description: Rule description.
+        :param builtins.str network_acl_entry_id: Rule ID.
+        :param builtins.str network_acl_entry_name: Rule name.
+        :param builtins.str policy: Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
+        :param builtins.str port: Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
+        :param builtins.int priority: Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
+        :param builtins.str protocol: Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
         """
         if cidr_ip is not None:
             pulumi.set(__self__, "cidr_ip", cidr_ip)
@@ -745,7 +745,7 @@ class NetworkAclDefaultIngressAclEntry(dict):
     @pulumi.getter(name="cidrIp")
     def cidr_ip(self) -> Optional[builtins.str]:
         """
-        入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+        For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
         """
         return pulumi.get(self, "cidr_ip")
 
@@ -753,7 +753,7 @@ class NetworkAclDefaultIngressAclEntry(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        规则的描述信息。
+        Rule description.
         """
         return pulumi.get(self, "description")
 
@@ -761,7 +761,7 @@ class NetworkAclDefaultIngressAclEntry(dict):
     @pulumi.getter(name="networkAclEntryId")
     def network_acl_entry_id(self) -> Optional[builtins.str]:
         """
-        规则的ID。
+        Rule ID.
         """
         return pulumi.get(self, "network_acl_entry_id")
 
@@ -769,7 +769,7 @@ class NetworkAclDefaultIngressAclEntry(dict):
     @pulumi.getter(name="networkAclEntryName")
     def network_acl_entry_name(self) -> Optional[builtins.str]:
         """
-        规则的名称。
+        Rule name.
         """
         return pulumi.get(self, "network_acl_entry_name")
 
@@ -777,7 +777,7 @@ class NetworkAclDefaultIngressAclEntry(dict):
     @pulumi.getter
     def policy(self) -> Optional[builtins.str]:
         """
-        授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+        Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
         """
         return pulumi.get(self, "policy")
 
@@ -785,7 +785,7 @@ class NetworkAclDefaultIngressAclEntry(dict):
     @pulumi.getter
     def port(self) -> Optional[builtins.str]:
         """
-        规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+        Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
         """
         return pulumi.get(self, "port")
 
@@ -793,7 +793,7 @@ class NetworkAclDefaultIngressAclEntry(dict):
     @pulumi.getter
     def priority(self) -> Optional[builtins.int]:
         """
-        方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+        Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
         """
         return pulumi.get(self, "priority")
 
@@ -801,7 +801,7 @@ class NetworkAclDefaultIngressAclEntry(dict):
     @pulumi.getter
     def protocol(self) -> Optional[builtins.str]:
         """
-        协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+        Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
         """
         return pulumi.get(self, "protocol")
 
@@ -835,12 +835,12 @@ class NetworkAclEgressAclEntry(dict):
                  port: Optional[builtins.str] = None,
                  protocol: Optional[builtins.str] = None):
         """
-        :param builtins.str cidr_ip: 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
-        :param builtins.str description: 规则的描述信息。
-        :param builtins.str network_acl_entry_name: 规则的名称。
-        :param builtins.str policy: 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
-        :param builtins.str port: 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
-        :param builtins.str protocol: 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+        :param builtins.str cidr_ip: For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
+        :param builtins.str description: Rule description.
+        :param builtins.str network_acl_entry_name: Rule name.
+        :param builtins.str policy: Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
+        :param builtins.str port: Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
+        :param builtins.str protocol: Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
         """
         if cidr_ip is not None:
             pulumi.set(__self__, "cidr_ip", cidr_ip)
@@ -859,7 +859,7 @@ class NetworkAclEgressAclEntry(dict):
     @pulumi.getter(name="cidrIp")
     def cidr_ip(self) -> Optional[builtins.str]:
         """
-        入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+        For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
         """
         return pulumi.get(self, "cidr_ip")
 
@@ -867,7 +867,7 @@ class NetworkAclEgressAclEntry(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        规则的描述信息。
+        Rule description.
         """
         return pulumi.get(self, "description")
 
@@ -875,7 +875,7 @@ class NetworkAclEgressAclEntry(dict):
     @pulumi.getter(name="networkAclEntryName")
     def network_acl_entry_name(self) -> Optional[builtins.str]:
         """
-        规则的名称。
+        Rule name.
         """
         return pulumi.get(self, "network_acl_entry_name")
 
@@ -883,7 +883,7 @@ class NetworkAclEgressAclEntry(dict):
     @pulumi.getter
     def policy(self) -> Optional[builtins.str]:
         """
-        授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+        Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
         """
         return pulumi.get(self, "policy")
 
@@ -891,7 +891,7 @@ class NetworkAclEgressAclEntry(dict):
     @pulumi.getter
     def port(self) -> Optional[builtins.str]:
         """
-        规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+        Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
         """
         return pulumi.get(self, "port")
 
@@ -899,7 +899,7 @@ class NetworkAclEgressAclEntry(dict):
     @pulumi.getter
     def protocol(self) -> Optional[builtins.str]:
         """
-        协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+        Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
         """
         return pulumi.get(self, "protocol")
 
@@ -933,12 +933,12 @@ class NetworkAclIngressAclEntry(dict):
                  port: Optional[builtins.str] = None,
                  protocol: Optional[builtins.str] = None):
         """
-        :param builtins.str cidr_ip: 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
-        :param builtins.str description: 规则的描述信息。
-        :param builtins.str network_acl_entry_name: 规则的名称。
-        :param builtins.str policy: 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
-        :param builtins.str port: 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
-        :param builtins.str protocol: 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+        :param builtins.str cidr_ip: For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
+        :param builtins.str description: Rule description.
+        :param builtins.str network_acl_entry_name: Rule name.
+        :param builtins.str policy: Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
+        :param builtins.str port: Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
+        :param builtins.str protocol: Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
         """
         if cidr_ip is not None:
             pulumi.set(__self__, "cidr_ip", cidr_ip)
@@ -957,7 +957,7 @@ class NetworkAclIngressAclEntry(dict):
     @pulumi.getter(name="cidrIp")
     def cidr_ip(self) -> Optional[builtins.str]:
         """
-        入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+        For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
         """
         return pulumi.get(self, "cidr_ip")
 
@@ -965,7 +965,7 @@ class NetworkAclIngressAclEntry(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        规则的描述信息。
+        Rule description.
         """
         return pulumi.get(self, "description")
 
@@ -973,7 +973,7 @@ class NetworkAclIngressAclEntry(dict):
     @pulumi.getter(name="networkAclEntryName")
     def network_acl_entry_name(self) -> Optional[builtins.str]:
         """
-        规则的名称。
+        Rule name.
         """
         return pulumi.get(self, "network_acl_entry_name")
 
@@ -981,7 +981,7 @@ class NetworkAclIngressAclEntry(dict):
     @pulumi.getter
     def policy(self) -> Optional[builtins.str]:
         """
-        授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+        Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
         """
         return pulumi.get(self, "policy")
 
@@ -989,7 +989,7 @@ class NetworkAclIngressAclEntry(dict):
     @pulumi.getter
     def port(self) -> Optional[builtins.str]:
         """
-        规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+        Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
         """
         return pulumi.get(self, "port")
 
@@ -997,7 +997,7 @@ class NetworkAclIngressAclEntry(dict):
     @pulumi.getter
     def protocol(self) -> Optional[builtins.str]:
         """
-        协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+        Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
         """
         return pulumi.get(self, "protocol")
 
@@ -1024,7 +1024,7 @@ class NetworkAclResource(dict):
     def __init__(__self__, *,
                  resource_id: Optional[builtins.str] = None):
         """
-        :param builtins.str resource_id: 关联资源的ID。
+        :param builtins.str resource_id: Associated resource ID.
         """
         if resource_id is not None:
             pulumi.set(__self__, "resource_id", resource_id)
@@ -1033,7 +1033,7 @@ class NetworkAclResource(dict):
     @pulumi.getter(name="resourceId")
     def resource_id(self) -> Optional[builtins.str]:
         """
-        关联资源的ID。
+        Associated resource ID.
         """
         return pulumi.get(self, "resource_id")
 
@@ -1044,8 +1044,8 @@ class NetworkAclTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: User tag key.
+        :param builtins.str value: User tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -1056,7 +1056,7 @@ class NetworkAclTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        用户标签的标签键。
+        User tag key.
         """
         return pulumi.get(self, "key")
 
@@ -1064,7 +1064,7 @@ class NetworkAclTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        用户标签的标签值。
+        User tag value.
         """
         return pulumi.get(self, "value")
 
@@ -1094,8 +1094,8 @@ class PrefixListAssociationsRouteTable(dict):
                  resource_id: Optional[builtins.str] = None,
                  resource_type: Optional[builtins.str] = None):
         """
-        :param builtins.str resource_id: 关联资源的ID。
-        :param builtins.str resource_type: 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+        :param builtins.str resource_id: ID of the associated resource.
+        :param builtins.str resource_type: Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
         """
         if resource_id is not None:
             pulumi.set(__self__, "resource_id", resource_id)
@@ -1106,7 +1106,7 @@ class PrefixListAssociationsRouteTable(dict):
     @pulumi.getter(name="resourceId")
     def resource_id(self) -> Optional[builtins.str]:
         """
-        关联资源的ID。
+        ID of the associated resource.
         """
         return pulumi.get(self, "resource_id")
 
@@ -1114,7 +1114,7 @@ class PrefixListAssociationsRouteTable(dict):
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> Optional[builtins.str]:
         """
-        关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+        Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
         """
         return pulumi.get(self, "resource_type")
 
@@ -1144,8 +1144,8 @@ class PrefixListAssociationsSecurityGroup(dict):
                  resource_id: Optional[builtins.str] = None,
                  resource_type: Optional[builtins.str] = None):
         """
-        :param builtins.str resource_id: 关联资源的ID。
-        :param builtins.str resource_type: 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+        :param builtins.str resource_id: ID of the associated resource.
+        :param builtins.str resource_type: Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
         """
         if resource_id is not None:
             pulumi.set(__self__, "resource_id", resource_id)
@@ -1156,7 +1156,7 @@ class PrefixListAssociationsSecurityGroup(dict):
     @pulumi.getter(name="resourceId")
     def resource_id(self) -> Optional[builtins.str]:
         """
-        关联资源的ID。
+        ID of the associated resource.
         """
         return pulumi.get(self, "resource_id")
 
@@ -1164,7 +1164,7 @@ class PrefixListAssociationsSecurityGroup(dict):
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> Optional[builtins.str]:
         """
-        关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+        Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
         """
         return pulumi.get(self, "resource_type")
 
@@ -1175,8 +1175,8 @@ class PrefixListPrefixListEntry(dict):
                  cidr: Optional[builtins.str] = None,
                  description: Optional[builtins.str] = None):
         """
-        :param builtins.str cidr: 前缀列表条目的CIDR。
-        :param builtins.str description: 前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        :param builtins.str cidr: CIDR of the prefix list entry.
+        :param builtins.str description: Description of the prefix list entry. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
         """
         if cidr is not None:
             pulumi.set(__self__, "cidr", cidr)
@@ -1187,7 +1187,7 @@ class PrefixListPrefixListEntry(dict):
     @pulumi.getter
     def cidr(self) -> Optional[builtins.str]:
         """
-        前缀列表条目的CIDR。
+        CIDR of the prefix list entry.
         """
         return pulumi.get(self, "cidr")
 
@@ -1195,7 +1195,7 @@ class PrefixListPrefixListEntry(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        Description of the prefix list entry. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
         """
         return pulumi.get(self, "description")
 
@@ -1206,8 +1206,8 @@ class PrefixListTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: Tag key of the user tag.
+        :param builtins.str value: Tag value of the user tag.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -1218,7 +1218,7 @@ class PrefixListTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        用户标签的标签键。
+        Tag key of the user tag.
         """
         return pulumi.get(self, "key")
 
@@ -1226,7 +1226,7 @@ class PrefixListTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        用户标签的标签值。
+        Tag value of the user tag.
         """
         return pulumi.get(self, "value")
 
@@ -1269,13 +1269,13 @@ class RouteTableCustomRouteEntry(dict):
                  next_hop_type: Optional[builtins.str] = None,
                  route_entry_name: Optional[builtins.str] = None):
         """
-        :param builtins.str description: 路由条目描述。
-        :param builtins.str destination_cidr_block: 路由条目的目标网段。
-        :param builtins.str destination_prefix_list_id: 前缀列表ID。
-        :param builtins.str next_hop_id: 下一跳资源ID。
-        :param builtins.str next_hop_name: 路由条目下一跳资源的名称。
-        :param builtins.str next_hop_type: 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
-        :param builtins.str route_entry_name: 路由条目名称。
+        :param builtins.str description: Route Entry Description
+        :param builtins.str destination_cidr_block: Destination CIDR of the route entry
+        :param builtins.str destination_prefix_list_id: Prefix List ID
+        :param builtins.str next_hop_id: Next Hop Resource ID
+        :param builtins.str next_hop_name: Name of the next hop resource for the route entry
+        :param builtins.str next_hop_type: Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
+        :param builtins.str route_entry_name: Route Entry Name
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -1296,7 +1296,7 @@ class RouteTableCustomRouteEntry(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        路由条目描述。
+        Route Entry Description
         """
         return pulumi.get(self, "description")
 
@@ -1304,7 +1304,7 @@ class RouteTableCustomRouteEntry(dict):
     @pulumi.getter(name="destinationCidrBlock")
     def destination_cidr_block(self) -> Optional[builtins.str]:
         """
-        路由条目的目标网段。
+        Destination CIDR of the route entry
         """
         return pulumi.get(self, "destination_cidr_block")
 
@@ -1312,7 +1312,7 @@ class RouteTableCustomRouteEntry(dict):
     @pulumi.getter(name="destinationPrefixListId")
     def destination_prefix_list_id(self) -> Optional[builtins.str]:
         """
-        前缀列表ID。
+        Prefix List ID
         """
         return pulumi.get(self, "destination_prefix_list_id")
 
@@ -1320,7 +1320,7 @@ class RouteTableCustomRouteEntry(dict):
     @pulumi.getter(name="nextHopId")
     def next_hop_id(self) -> Optional[builtins.str]:
         """
-        下一跳资源ID。
+        Next Hop Resource ID
         """
         return pulumi.get(self, "next_hop_id")
 
@@ -1328,7 +1328,7 @@ class RouteTableCustomRouteEntry(dict):
     @pulumi.getter(name="nextHopName")
     def next_hop_name(self) -> Optional[builtins.str]:
         """
-        路由条目下一跳资源的名称。
+        Name of the next hop resource for the route entry
         """
         return pulumi.get(self, "next_hop_name")
 
@@ -1336,7 +1336,7 @@ class RouteTableCustomRouteEntry(dict):
     @pulumi.getter(name="nextHopType")
     def next_hop_type(self) -> Optional[builtins.str]:
         """
-        自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+        Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
         """
         return pulumi.get(self, "next_hop_type")
 
@@ -1344,7 +1344,7 @@ class RouteTableCustomRouteEntry(dict):
     @pulumi.getter(name="routeEntryName")
     def route_entry_name(self) -> Optional[builtins.str]:
         """
-        路由条目名称。
+        Route Entry Name
         """
         return pulumi.get(self, "route_entry_name")
 
@@ -1401,19 +1401,19 @@ class RouteTableSystemRouteEntry(dict):
                  type: Optional[builtins.str] = None,
                  vpc_id: Optional[builtins.str] = None):
         """
-        :param builtins.str description: 路由条目描述。
-        :param builtins.str destination_cidr_block: 路由条目的目标网段。
-        :param builtins.str destination_prefix_list_id: 前缀列表ID。
-        :param builtins.str next_hop_id: 下一跳资源ID。
-        :param builtins.str next_hop_name: 路由条目下一跳资源的名称。
-        :param builtins.str next_hop_type: 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
-        :param Sequence[builtins.str] prefix_list_cidr_blocks: 前缀列表的CIDR。
-        :param builtins.str route_entry_id: 路由条目ID。
-        :param builtins.str route_entry_name: 路由条目名称。
-        :param builtins.str route_table_id: 路由表ID。
-        :param builtins.str status: 路由条目状态。1、Pending：待创建。2、Available：可用。
-        :param builtins.str type: 路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
-        :param builtins.str vpc_id: 路由条目所属私有网络的ID。
+        :param builtins.str description: Route Entry Description
+        :param builtins.str destination_cidr_block: Destination CIDR of the route entry
+        :param builtins.str destination_prefix_list_id: Prefix List ID
+        :param builtins.str next_hop_id: Next Hop Resource ID
+        :param builtins.str next_hop_name: Name of the next hop resource for the route entry
+        :param builtins.str next_hop_type: Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
+        :param Sequence[builtins.str] prefix_list_cidr_blocks: Prefix List CIDR
+        :param builtins.str route_entry_id: Route Entry ID
+        :param builtins.str route_entry_name: Route Entry Name
+        :param builtins.str route_table_id: Route Table ID
+        :param builtins.str status: Route entry status. 1. Pending: Pending creation 2. Available: Available
+        :param builtins.str type: Route entry type. 1. Custom: Custom route entry 2. System: System default route entry
+        :param builtins.str vpc_id: ID of the private network to which the route entry belongs
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -1446,7 +1446,7 @@ class RouteTableSystemRouteEntry(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        路由条目描述。
+        Route Entry Description
         """
         return pulumi.get(self, "description")
 
@@ -1454,7 +1454,7 @@ class RouteTableSystemRouteEntry(dict):
     @pulumi.getter(name="destinationCidrBlock")
     def destination_cidr_block(self) -> Optional[builtins.str]:
         """
-        路由条目的目标网段。
+        Destination CIDR of the route entry
         """
         return pulumi.get(self, "destination_cidr_block")
 
@@ -1462,7 +1462,7 @@ class RouteTableSystemRouteEntry(dict):
     @pulumi.getter(name="destinationPrefixListId")
     def destination_prefix_list_id(self) -> Optional[builtins.str]:
         """
-        前缀列表ID。
+        Prefix List ID
         """
         return pulumi.get(self, "destination_prefix_list_id")
 
@@ -1470,7 +1470,7 @@ class RouteTableSystemRouteEntry(dict):
     @pulumi.getter(name="nextHopId")
     def next_hop_id(self) -> Optional[builtins.str]:
         """
-        下一跳资源ID。
+        Next Hop Resource ID
         """
         return pulumi.get(self, "next_hop_id")
 
@@ -1478,7 +1478,7 @@ class RouteTableSystemRouteEntry(dict):
     @pulumi.getter(name="nextHopName")
     def next_hop_name(self) -> Optional[builtins.str]:
         """
-        路由条目下一跳资源的名称。
+        Name of the next hop resource for the route entry
         """
         return pulumi.get(self, "next_hop_name")
 
@@ -1486,7 +1486,7 @@ class RouteTableSystemRouteEntry(dict):
     @pulumi.getter(name="nextHopType")
     def next_hop_type(self) -> Optional[builtins.str]:
         """
-        自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+        Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
         """
         return pulumi.get(self, "next_hop_type")
 
@@ -1494,7 +1494,7 @@ class RouteTableSystemRouteEntry(dict):
     @pulumi.getter(name="prefixListCidrBlocks")
     def prefix_list_cidr_blocks(self) -> Optional[Sequence[builtins.str]]:
         """
-        前缀列表的CIDR。
+        Prefix List CIDR
         """
         return pulumi.get(self, "prefix_list_cidr_blocks")
 
@@ -1502,7 +1502,7 @@ class RouteTableSystemRouteEntry(dict):
     @pulumi.getter(name="routeEntryId")
     def route_entry_id(self) -> Optional[builtins.str]:
         """
-        路由条目ID。
+        Route Entry ID
         """
         return pulumi.get(self, "route_entry_id")
 
@@ -1510,7 +1510,7 @@ class RouteTableSystemRouteEntry(dict):
     @pulumi.getter(name="routeEntryName")
     def route_entry_name(self) -> Optional[builtins.str]:
         """
-        路由条目名称。
+        Route Entry Name
         """
         return pulumi.get(self, "route_entry_name")
 
@@ -1518,7 +1518,7 @@ class RouteTableSystemRouteEntry(dict):
     @pulumi.getter(name="routeTableId")
     def route_table_id(self) -> Optional[builtins.str]:
         """
-        路由表ID。
+        Route Table ID
         """
         return pulumi.get(self, "route_table_id")
 
@@ -1526,7 +1526,7 @@ class RouteTableSystemRouteEntry(dict):
     @pulumi.getter
     def status(self) -> Optional[builtins.str]:
         """
-        路由条目状态。1、Pending：待创建。2、Available：可用。
+        Route entry status. 1. Pending: Pending creation 2. Available: Available
         """
         return pulumi.get(self, "status")
 
@@ -1534,7 +1534,7 @@ class RouteTableSystemRouteEntry(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
+        Route entry type. 1. Custom: Custom route entry 2. System: System default route entry
         """
         return pulumi.get(self, "type")
 
@@ -1542,7 +1542,7 @@ class RouteTableSystemRouteEntry(dict):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[builtins.str]:
         """
-        路由条目所属私有网络的ID。
+        ID of the private network to which the route entry belongs
         """
         return pulumi.get(self, "vpc_id")
 
@@ -1553,8 +1553,8 @@ class RouteTableTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: User tag key
+        :param builtins.str value: User tag value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -1565,7 +1565,7 @@ class RouteTableTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        用户标签的标签键。
+        User tag key
         """
         return pulumi.get(self, "key")
 
@@ -1573,7 +1573,7 @@ class RouteTableTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        用户标签的标签值。
+        User tag value
         """
         return pulumi.get(self, "value")
 
@@ -1617,16 +1617,16 @@ class SecurityGroupEgressPermission(dict):
                  protocol: Optional[builtins.str] = None,
                  source_group_id: Optional[builtins.str] = None):
         """
-        :param builtins.str cidr_ip: 源地址的IPv4 CIDR或IPv6 CIDR
-        :param builtins.str description: 安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
-        :param builtins.str direction: 安全组规则方向。ingress：入方向。egress：出方向
-        :param builtins.str policy: 访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
-        :param builtins.int port_end: 端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
-        :param builtins.int port_start: 端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
-        :param builtins.str prefix_list_id: 前缀列表的ID
-        :param builtins.int priority: 安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
-        :param builtins.str protocol: 协议类型。tcp、udp、icmp、icmpv6、all
-        :param builtins.str source_group_id: 源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
+        :param builtins.str cidr_ip: IPv4 CIDR or IPv6 CIDR of the source address
+        :param builtins.str description: Description for the security group rule. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1–255 characters. If not specified, the original configuration is retained
+        :param builtins.str direction: Security group rule direction. ingress: inbound direction. egress: outbound direction
+        :param builtins.str policy: Access policy. For resources specified by CidrIp, SourceGroupId, or PrefixListId, refers to the NICs in the security group. Values: accept (allow), drop (deny)
+        :param builtins.int port_end: Port range end value. 1. When Protocol is set to tcp or udp, the valid range is 1–65535. 2. When Protocol is set to icmp, icmpv6, or all, only -1 is supported, indicating no port restriction
+        :param builtins.int port_start: Port range start value. 1. When Protocol is tcp or udp, range is 1–65535. 2. When Protocol is icmp, icmpv6, or all, only -1 is supported, meaning no port restriction
+        :param builtins.str prefix_list_id: Prefix list ID
+        :param builtins.int priority: Security group rule priority. Lower numbers indicate higher priority. Value range: 1–100. Default: 1 if not specified
+        :param builtins.str protocol: Protocol type. tcp, udp, icmp, icmpv6, all
+        :param builtins.str source_group_id: Source address security group ID. All NIC addresses in this security group are used as source addresses
         """
         if cidr_ip is not None:
             pulumi.set(__self__, "cidr_ip", cidr_ip)
@@ -1653,7 +1653,7 @@ class SecurityGroupEgressPermission(dict):
     @pulumi.getter(name="cidrIp")
     def cidr_ip(self) -> Optional[builtins.str]:
         """
-        源地址的IPv4 CIDR或IPv6 CIDR
+        IPv4 CIDR or IPv6 CIDR of the source address
         """
         return pulumi.get(self, "cidr_ip")
 
@@ -1661,7 +1661,7 @@ class SecurityGroupEgressPermission(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
+        Description for the security group rule. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1–255 characters. If not specified, the original configuration is retained
         """
         return pulumi.get(self, "description")
 
@@ -1669,7 +1669,7 @@ class SecurityGroupEgressPermission(dict):
     @pulumi.getter
     def direction(self) -> Optional[builtins.str]:
         """
-        安全组规则方向。ingress：入方向。egress：出方向
+        Security group rule direction. ingress: inbound direction. egress: outbound direction
         """
         return pulumi.get(self, "direction")
 
@@ -1677,7 +1677,7 @@ class SecurityGroupEgressPermission(dict):
     @pulumi.getter
     def policy(self) -> Optional[builtins.str]:
         """
-        访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
+        Access policy. For resources specified by CidrIp, SourceGroupId, or PrefixListId, refers to the NICs in the security group. Values: accept (allow), drop (deny)
         """
         return pulumi.get(self, "policy")
 
@@ -1685,7 +1685,7 @@ class SecurityGroupEgressPermission(dict):
     @pulumi.getter(name="portEnd")
     def port_end(self) -> Optional[builtins.int]:
         """
-        端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+        Port range end value. 1. When Protocol is set to tcp or udp, the valid range is 1–65535. 2. When Protocol is set to icmp, icmpv6, or all, only -1 is supported, indicating no port restriction
         """
         return pulumi.get(self, "port_end")
 
@@ -1693,7 +1693,7 @@ class SecurityGroupEgressPermission(dict):
     @pulumi.getter(name="portStart")
     def port_start(self) -> Optional[builtins.int]:
         """
-        端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+        Port range start value. 1. When Protocol is tcp or udp, range is 1–65535. 2. When Protocol is icmp, icmpv6, or all, only -1 is supported, meaning no port restriction
         """
         return pulumi.get(self, "port_start")
 
@@ -1701,7 +1701,7 @@ class SecurityGroupEgressPermission(dict):
     @pulumi.getter(name="prefixListId")
     def prefix_list_id(self) -> Optional[builtins.str]:
         """
-        前缀列表的ID
+        Prefix list ID
         """
         return pulumi.get(self, "prefix_list_id")
 
@@ -1709,7 +1709,7 @@ class SecurityGroupEgressPermission(dict):
     @pulumi.getter
     def priority(self) -> Optional[builtins.int]:
         """
-        安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
+        Security group rule priority. Lower numbers indicate higher priority. Value range: 1–100. Default: 1 if not specified
         """
         return pulumi.get(self, "priority")
 
@@ -1717,7 +1717,7 @@ class SecurityGroupEgressPermission(dict):
     @pulumi.getter
     def protocol(self) -> Optional[builtins.str]:
         """
-        协议类型。tcp、udp、icmp、icmpv6、all
+        Protocol type. tcp, udp, icmp, icmpv6, all
         """
         return pulumi.get(self, "protocol")
 
@@ -1725,7 +1725,7 @@ class SecurityGroupEgressPermission(dict):
     @pulumi.getter(name="sourceGroupId")
     def source_group_id(self) -> Optional[builtins.str]:
         """
-        源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
+        Source address security group ID. All NIC addresses in this security group are used as source addresses
         """
         return pulumi.get(self, "source_group_id")
 
@@ -1769,16 +1769,16 @@ class SecurityGroupIngressPermission(dict):
                  protocol: Optional[builtins.str] = None,
                  source_group_id: Optional[builtins.str] = None):
         """
-        :param builtins.str cidr_ip: 源地址的IPv4 CIDR或IPv6 CIDR
-        :param builtins.str description: 安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
-        :param builtins.str direction: 安全组规则方向。ingress：入方向。egress：出方向
-        :param builtins.str policy: 访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
-        :param builtins.int port_end: 端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
-        :param builtins.int port_start: 端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
-        :param builtins.str prefix_list_id: 前缀列表的ID
-        :param builtins.int priority: 安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
-        :param builtins.str protocol: 协议类型。tcp、udp、icmp、icmpv6、all
-        :param builtins.str source_group_id: 源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
+        :param builtins.str cidr_ip: IPv4 CIDR or IPv6 CIDR of the source address
+        :param builtins.str description: Description for the security group rule. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1–255 characters. If not specified, the original configuration is retained
+        :param builtins.str direction: Security group rule direction. ingress: inbound direction. egress: outbound direction
+        :param builtins.str policy: Access policy. For resources specified by CidrIp, SourceGroupId, or PrefixListId, refers to the NICs in the security group. Values: accept (allow), drop (deny)
+        :param builtins.int port_end: Port range end value. 1. When Protocol is set to tcp or udp, the valid range is 1–65535. 2. When Protocol is set to icmp, icmpv6, or all, only -1 is supported, indicating no port restriction
+        :param builtins.int port_start: Port range start value. 1. When Protocol is tcp or udp, range is 1–65535. 2. When Protocol is icmp, icmpv6, or all, only -1 is supported, meaning no port restriction
+        :param builtins.str prefix_list_id: Prefix list ID
+        :param builtins.int priority: Security group rule priority. Lower numbers indicate higher priority. Value range: 1–100. Default: 1 if not specified
+        :param builtins.str protocol: Protocol type. tcp, udp, icmp, icmpv6, all
+        :param builtins.str source_group_id: Source address security group ID. All NIC addresses in this security group are used as source addresses
         """
         if cidr_ip is not None:
             pulumi.set(__self__, "cidr_ip", cidr_ip)
@@ -1805,7 +1805,7 @@ class SecurityGroupIngressPermission(dict):
     @pulumi.getter(name="cidrIp")
     def cidr_ip(self) -> Optional[builtins.str]:
         """
-        源地址的IPv4 CIDR或IPv6 CIDR
+        IPv4 CIDR or IPv6 CIDR of the source address
         """
         return pulumi.get(self, "cidr_ip")
 
@@ -1813,7 +1813,7 @@ class SecurityGroupIngressPermission(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
+        Description for the security group rule. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1–255 characters. If not specified, the original configuration is retained
         """
         return pulumi.get(self, "description")
 
@@ -1821,7 +1821,7 @@ class SecurityGroupIngressPermission(dict):
     @pulumi.getter
     def direction(self) -> Optional[builtins.str]:
         """
-        安全组规则方向。ingress：入方向。egress：出方向
+        Security group rule direction. ingress: inbound direction. egress: outbound direction
         """
         return pulumi.get(self, "direction")
 
@@ -1829,7 +1829,7 @@ class SecurityGroupIngressPermission(dict):
     @pulumi.getter
     def policy(self) -> Optional[builtins.str]:
         """
-        访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
+        Access policy. For resources specified by CidrIp, SourceGroupId, or PrefixListId, refers to the NICs in the security group. Values: accept (allow), drop (deny)
         """
         return pulumi.get(self, "policy")
 
@@ -1837,7 +1837,7 @@ class SecurityGroupIngressPermission(dict):
     @pulumi.getter(name="portEnd")
     def port_end(self) -> Optional[builtins.int]:
         """
-        端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+        Port range end value. 1. When Protocol is set to tcp or udp, the valid range is 1–65535. 2. When Protocol is set to icmp, icmpv6, or all, only -1 is supported, indicating no port restriction
         """
         return pulumi.get(self, "port_end")
 
@@ -1845,7 +1845,7 @@ class SecurityGroupIngressPermission(dict):
     @pulumi.getter(name="portStart")
     def port_start(self) -> Optional[builtins.int]:
         """
-        端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+        Port range start value. 1. When Protocol is tcp or udp, range is 1–65535. 2. When Protocol is icmp, icmpv6, or all, only -1 is supported, meaning no port restriction
         """
         return pulumi.get(self, "port_start")
 
@@ -1853,7 +1853,7 @@ class SecurityGroupIngressPermission(dict):
     @pulumi.getter(name="prefixListId")
     def prefix_list_id(self) -> Optional[builtins.str]:
         """
-        前缀列表的ID
+        Prefix list ID
         """
         return pulumi.get(self, "prefix_list_id")
 
@@ -1861,7 +1861,7 @@ class SecurityGroupIngressPermission(dict):
     @pulumi.getter
     def priority(self) -> Optional[builtins.int]:
         """
-        安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
+        Security group rule priority. Lower numbers indicate higher priority. Value range: 1–100. Default: 1 if not specified
         """
         return pulumi.get(self, "priority")
 
@@ -1869,7 +1869,7 @@ class SecurityGroupIngressPermission(dict):
     @pulumi.getter
     def protocol(self) -> Optional[builtins.str]:
         """
-        协议类型。tcp、udp、icmp、icmpv6、all
+        Protocol type. tcp, udp, icmp, icmpv6, all
         """
         return pulumi.get(self, "protocol")
 
@@ -1877,7 +1877,7 @@ class SecurityGroupIngressPermission(dict):
     @pulumi.getter(name="sourceGroupId")
     def source_group_id(self) -> Optional[builtins.str]:
         """
-        源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
+        Source address security group ID. All NIC addresses in this security group are used as source addresses
         """
         return pulumi.get(self, "source_group_id")
 
@@ -1888,8 +1888,8 @@ class SecurityGroupTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: User tag key
+        :param builtins.str value: User tag value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -1900,7 +1900,7 @@ class SecurityGroupTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        用户标签的标签键。
+        User tag key
         """
         return pulumi.get(self, "key")
 
@@ -1908,7 +1908,7 @@ class SecurityGroupTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        用户标签的标签值。
+        User tag value
         """
         return pulumi.get(self, "value")
 
@@ -1938,8 +1938,8 @@ class SubnetRouteTable(dict):
                  route_table_id: Optional[builtins.str] = None,
                  route_table_type: Optional[builtins.str] = None):
         """
-        :param builtins.str route_table_id: 子网关联的路由表ID。
-        :param builtins.str route_table_type: 子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+        :param builtins.str route_table_id: ID of the route table associated with the subnet
+        :param builtins.str route_table_type: Type of route table associated with the subnet. 1. System: System route table. 2. Custom: Custom route table
         """
         if route_table_id is not None:
             pulumi.set(__self__, "route_table_id", route_table_id)
@@ -1950,7 +1950,7 @@ class SubnetRouteTable(dict):
     @pulumi.getter(name="routeTableId")
     def route_table_id(self) -> Optional[builtins.str]:
         """
-        子网关联的路由表ID。
+        ID of the route table associated with the subnet
         """
         return pulumi.get(self, "route_table_id")
 
@@ -1958,7 +1958,7 @@ class SubnetRouteTable(dict):
     @pulumi.getter(name="routeTableType")
     def route_table_type(self) -> Optional[builtins.str]:
         """
-        子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+        Type of route table associated with the subnet. 1. System: System route table. 2. Custom: Custom route table
         """
         return pulumi.get(self, "route_table_type")
 
@@ -1969,8 +1969,8 @@ class SubnetTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: User tag key
+        :param builtins.str value: User tag value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -1981,7 +1981,7 @@ class SubnetTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        用户标签的标签键。
+        User tag key
         """
         return pulumi.get(self, "key")
 
@@ -1989,7 +1989,7 @@ class SubnetTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        用户标签的标签值。
+        User tag value
         """
         return pulumi.get(self, "value")
 
@@ -2042,19 +2042,19 @@ class TrafficMirrorFilterEgressFilterRule(dict):
                  traffic_mirror_filter_id: Optional[builtins.str] = None,
                  traffic_mirror_filter_rule_id: Optional[builtins.str] = None):
         """
-        :param builtins.str description: 筛选规则实例描述。
-        :param builtins.str destination_cidr_block: 筛选规则目的地址。
-        :param builtins.str destination_port_range: 筛选规则目的端口范围。
-        :param builtins.str policy: 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
-        :param builtins.int priority: 筛选规则优先级。
-        :param builtins.str project_name: 所属项目的名称。
-        :param builtins.str protocol: 筛选规则协议类型。
-        :param builtins.str source_cidr_block: 筛选规则源地址。
-        :param builtins.str source_port_range: 筛选规则源端口范围。
-        :param builtins.str status: 筛选规则状态。
-        :param builtins.str traffic_direction: 筛选规则方向。egress：出方向。ingress：入方向。
-        :param builtins.str traffic_mirror_filter_id: 筛选条件实例ID。
-        :param builtins.str traffic_mirror_filter_rule_id: 筛选规则实例ID。
+        :param builtins.str description: Filter rule instance description
+        :param builtins.str destination_cidr_block: Filter rule destination address
+        :param builtins.str destination_port_range: Filter rule destination port range
+        :param builtins.str policy: Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
+        :param builtins.int priority: Filter rule priority
+        :param builtins.str project_name: Project name
+        :param builtins.str protocol: Filter rule protocol type
+        :param builtins.str source_cidr_block: Filter rule source address
+        :param builtins.str source_port_range: Filter rule source port range
+        :param builtins.str status: Filter rule status
+        :param builtins.str traffic_direction: Filter rule direction. egress: Outbound. ingress: Inbound
+        :param builtins.str traffic_mirror_filter_id: Filter condition instance ID
+        :param builtins.str traffic_mirror_filter_rule_id: Filter rule instance ID
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -2087,7 +2087,7 @@ class TrafficMirrorFilterEgressFilterRule(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        筛选规则实例描述。
+        Filter rule instance description
         """
         return pulumi.get(self, "description")
 
@@ -2095,7 +2095,7 @@ class TrafficMirrorFilterEgressFilterRule(dict):
     @pulumi.getter(name="destinationCidrBlock")
     def destination_cidr_block(self) -> Optional[builtins.str]:
         """
-        筛选规则目的地址。
+        Filter rule destination address
         """
         return pulumi.get(self, "destination_cidr_block")
 
@@ -2103,7 +2103,7 @@ class TrafficMirrorFilterEgressFilterRule(dict):
     @pulumi.getter(name="destinationPortRange")
     def destination_port_range(self) -> Optional[builtins.str]:
         """
-        筛选规则目的端口范围。
+        Filter rule destination port range
         """
         return pulumi.get(self, "destination_port_range")
 
@@ -2111,7 +2111,7 @@ class TrafficMirrorFilterEgressFilterRule(dict):
     @pulumi.getter
     def policy(self) -> Optional[builtins.str]:
         """
-        筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+        Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
         """
         return pulumi.get(self, "policy")
 
@@ -2119,7 +2119,7 @@ class TrafficMirrorFilterEgressFilterRule(dict):
     @pulumi.getter
     def priority(self) -> Optional[builtins.int]:
         """
-        筛选规则优先级。
+        Filter rule priority
         """
         return pulumi.get(self, "priority")
 
@@ -2127,7 +2127,7 @@ class TrafficMirrorFilterEgressFilterRule(dict):
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[builtins.str]:
         """
-        所属项目的名称。
+        Project name
         """
         return pulumi.get(self, "project_name")
 
@@ -2135,7 +2135,7 @@ class TrafficMirrorFilterEgressFilterRule(dict):
     @pulumi.getter
     def protocol(self) -> Optional[builtins.str]:
         """
-        筛选规则协议类型。
+        Filter rule protocol type
         """
         return pulumi.get(self, "protocol")
 
@@ -2143,7 +2143,7 @@ class TrafficMirrorFilterEgressFilterRule(dict):
     @pulumi.getter(name="sourceCidrBlock")
     def source_cidr_block(self) -> Optional[builtins.str]:
         """
-        筛选规则源地址。
+        Filter rule source address
         """
         return pulumi.get(self, "source_cidr_block")
 
@@ -2151,7 +2151,7 @@ class TrafficMirrorFilterEgressFilterRule(dict):
     @pulumi.getter(name="sourcePortRange")
     def source_port_range(self) -> Optional[builtins.str]:
         """
-        筛选规则源端口范围。
+        Filter rule source port range
         """
         return pulumi.get(self, "source_port_range")
 
@@ -2159,7 +2159,7 @@ class TrafficMirrorFilterEgressFilterRule(dict):
     @pulumi.getter
     def status(self) -> Optional[builtins.str]:
         """
-        筛选规则状态。
+        Filter rule status
         """
         return pulumi.get(self, "status")
 
@@ -2167,7 +2167,7 @@ class TrafficMirrorFilterEgressFilterRule(dict):
     @pulumi.getter(name="trafficDirection")
     def traffic_direction(self) -> Optional[builtins.str]:
         """
-        筛选规则方向。egress：出方向。ingress：入方向。
+        Filter rule direction. egress: Outbound. ingress: Inbound
         """
         return pulumi.get(self, "traffic_direction")
 
@@ -2175,7 +2175,7 @@ class TrafficMirrorFilterEgressFilterRule(dict):
     @pulumi.getter(name="trafficMirrorFilterId")
     def traffic_mirror_filter_id(self) -> Optional[builtins.str]:
         """
-        筛选条件实例ID。
+        Filter condition instance ID
         """
         return pulumi.get(self, "traffic_mirror_filter_id")
 
@@ -2183,7 +2183,7 @@ class TrafficMirrorFilterEgressFilterRule(dict):
     @pulumi.getter(name="trafficMirrorFilterRuleId")
     def traffic_mirror_filter_rule_id(self) -> Optional[builtins.str]:
         """
-        筛选规则实例ID。
+        Filter rule instance ID
         """
         return pulumi.get(self, "traffic_mirror_filter_rule_id")
 
@@ -2236,19 +2236,19 @@ class TrafficMirrorFilterIngressFilterRule(dict):
                  traffic_mirror_filter_id: Optional[builtins.str] = None,
                  traffic_mirror_filter_rule_id: Optional[builtins.str] = None):
         """
-        :param builtins.str description: 筛选规则实例描述。
-        :param builtins.str destination_cidr_block: 筛选规则目的地址。
-        :param builtins.str destination_port_range: 筛选规则目的端口范围。
-        :param builtins.str policy: 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
-        :param builtins.int priority: 筛选规则优先级。
-        :param builtins.str project_name: 所属项目的名称。
-        :param builtins.str protocol: 筛选规则协议类型。
-        :param builtins.str source_cidr_block: 筛选规则源地址。
-        :param builtins.str source_port_range: 筛选规则源端口范围。
-        :param builtins.str status: 筛选规则状态。
-        :param builtins.str traffic_direction: 筛选规则方向。egress：出方向。ingress：入方向。
-        :param builtins.str traffic_mirror_filter_id: 筛选条件实例ID。
-        :param builtins.str traffic_mirror_filter_rule_id: 筛选规则实例ID。
+        :param builtins.str description: Filter rule instance description
+        :param builtins.str destination_cidr_block: Filter rule destination address
+        :param builtins.str destination_port_range: Filter rule destination port range
+        :param builtins.str policy: Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
+        :param builtins.int priority: Filter rule priority
+        :param builtins.str project_name: Project name
+        :param builtins.str protocol: Filter rule protocol type
+        :param builtins.str source_cidr_block: Filter rule source address
+        :param builtins.str source_port_range: Filter rule source port range
+        :param builtins.str status: Filter rule status
+        :param builtins.str traffic_direction: Filter rule direction. egress: Outbound. ingress: Inbound
+        :param builtins.str traffic_mirror_filter_id: Filter condition instance ID
+        :param builtins.str traffic_mirror_filter_rule_id: Filter rule instance ID
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -2281,7 +2281,7 @@ class TrafficMirrorFilterIngressFilterRule(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        筛选规则实例描述。
+        Filter rule instance description
         """
         return pulumi.get(self, "description")
 
@@ -2289,7 +2289,7 @@ class TrafficMirrorFilterIngressFilterRule(dict):
     @pulumi.getter(name="destinationCidrBlock")
     def destination_cidr_block(self) -> Optional[builtins.str]:
         """
-        筛选规则目的地址。
+        Filter rule destination address
         """
         return pulumi.get(self, "destination_cidr_block")
 
@@ -2297,7 +2297,7 @@ class TrafficMirrorFilterIngressFilterRule(dict):
     @pulumi.getter(name="destinationPortRange")
     def destination_port_range(self) -> Optional[builtins.str]:
         """
-        筛选规则目的端口范围。
+        Filter rule destination port range
         """
         return pulumi.get(self, "destination_port_range")
 
@@ -2305,7 +2305,7 @@ class TrafficMirrorFilterIngressFilterRule(dict):
     @pulumi.getter
     def policy(self) -> Optional[builtins.str]:
         """
-        筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+        Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
         """
         return pulumi.get(self, "policy")
 
@@ -2313,7 +2313,7 @@ class TrafficMirrorFilterIngressFilterRule(dict):
     @pulumi.getter
     def priority(self) -> Optional[builtins.int]:
         """
-        筛选规则优先级。
+        Filter rule priority
         """
         return pulumi.get(self, "priority")
 
@@ -2321,7 +2321,7 @@ class TrafficMirrorFilterIngressFilterRule(dict):
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[builtins.str]:
         """
-        所属项目的名称。
+        Project name
         """
         return pulumi.get(self, "project_name")
 
@@ -2329,7 +2329,7 @@ class TrafficMirrorFilterIngressFilterRule(dict):
     @pulumi.getter
     def protocol(self) -> Optional[builtins.str]:
         """
-        筛选规则协议类型。
+        Filter rule protocol type
         """
         return pulumi.get(self, "protocol")
 
@@ -2337,7 +2337,7 @@ class TrafficMirrorFilterIngressFilterRule(dict):
     @pulumi.getter(name="sourceCidrBlock")
     def source_cidr_block(self) -> Optional[builtins.str]:
         """
-        筛选规则源地址。
+        Filter rule source address
         """
         return pulumi.get(self, "source_cidr_block")
 
@@ -2345,7 +2345,7 @@ class TrafficMirrorFilterIngressFilterRule(dict):
     @pulumi.getter(name="sourcePortRange")
     def source_port_range(self) -> Optional[builtins.str]:
         """
-        筛选规则源端口范围。
+        Filter rule source port range
         """
         return pulumi.get(self, "source_port_range")
 
@@ -2353,7 +2353,7 @@ class TrafficMirrorFilterIngressFilterRule(dict):
     @pulumi.getter
     def status(self) -> Optional[builtins.str]:
         """
-        筛选规则状态。
+        Filter rule status
         """
         return pulumi.get(self, "status")
 
@@ -2361,7 +2361,7 @@ class TrafficMirrorFilterIngressFilterRule(dict):
     @pulumi.getter(name="trafficDirection")
     def traffic_direction(self) -> Optional[builtins.str]:
         """
-        筛选规则方向。egress：出方向。ingress：入方向。
+        Filter rule direction. egress: Outbound. ingress: Inbound
         """
         return pulumi.get(self, "traffic_direction")
 
@@ -2369,7 +2369,7 @@ class TrafficMirrorFilterIngressFilterRule(dict):
     @pulumi.getter(name="trafficMirrorFilterId")
     def traffic_mirror_filter_id(self) -> Optional[builtins.str]:
         """
-        筛选条件实例ID。
+        Filter condition instance ID
         """
         return pulumi.get(self, "traffic_mirror_filter_id")
 
@@ -2377,7 +2377,7 @@ class TrafficMirrorFilterIngressFilterRule(dict):
     @pulumi.getter(name="trafficMirrorFilterRuleId")
     def traffic_mirror_filter_rule_id(self) -> Optional[builtins.str]:
         """
-        筛选规则实例ID。
+        Filter rule instance ID
         """
         return pulumi.get(self, "traffic_mirror_filter_rule_id")
 
@@ -2388,8 +2388,8 @@ class TrafficMirrorFilterTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -2400,7 +2400,7 @@ class TrafficMirrorFilterTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -2408,7 +2408,7 @@ class TrafficMirrorFilterTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -2419,8 +2419,8 @@ class TrafficMirrorSessionTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -2431,7 +2431,7 @@ class TrafficMirrorSessionTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -2439,7 +2439,7 @@ class TrafficMirrorSessionTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -2450,8 +2450,8 @@ class TrafficMirrorTargetTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
-        :param builtins.str value: 标签的标签值。长度取值范围为0～256字符，不填默认为空。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+        :param builtins.str key: Tag key. Length must be between 1 and 128 characters. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system will automatically remove it.
+        :param builtins.str value: Tag value. Length must be between 0 and 256 characters. If not specified, the default is empty. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -2462,7 +2462,7 @@ class TrafficMirrorTargetTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+        Tag key. Length must be between 1 and 128 characters. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system will automatically remove it.
         """
         return pulumi.get(self, "key")
 
@@ -2470,7 +2470,7 @@ class TrafficMirrorTargetTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签的标签值。长度取值范围为0～256字符，不填默认为空。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+        Tag value. Length must be between 0 and 256 characters. If not specified, the default is empty. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
         """
         return pulumi.get(self, "value")
 
@@ -2503,9 +2503,9 @@ class VpcAssociateCen(dict):
                  cen_owner_id: Optional[builtins.str] = None,
                  cen_status: Optional[builtins.str] = None):
         """
-        :param builtins.str cen_id: CEN的ID。
-        :param builtins.str cen_owner_id: CEN的用户ID。
-        :param builtins.str cen_status: VPC在CEN中的状态。Attaching：加载中，Attached：已加载
+        :param builtins.str cen_id: ID of the CEN.
+        :param builtins.str cen_owner_id: User ID of the CEN.
+        :param builtins.str cen_status: Status of the VPC in the CEN. Loading: loading, Loaded: loaded
         """
         if cen_id is not None:
             pulumi.set(__self__, "cen_id", cen_id)
@@ -2518,7 +2518,7 @@ class VpcAssociateCen(dict):
     @pulumi.getter(name="cenId")
     def cen_id(self) -> Optional[builtins.str]:
         """
-        CEN的ID。
+        ID of the CEN.
         """
         return pulumi.get(self, "cen_id")
 
@@ -2526,7 +2526,7 @@ class VpcAssociateCen(dict):
     @pulumi.getter(name="cenOwnerId")
     def cen_owner_id(self) -> Optional[builtins.str]:
         """
-        CEN的用户ID。
+        User ID of the CEN.
         """
         return pulumi.get(self, "cen_owner_id")
 
@@ -2534,7 +2534,7 @@ class VpcAssociateCen(dict):
     @pulumi.getter(name="cenStatus")
     def cen_status(self) -> Optional[builtins.str]:
         """
-        VPC在CEN中的状态。Attaching：加载中，Attached：已加载
+        Status of the VPC in the CEN. Loading: loading, Loaded: loaded
         """
         return pulumi.get(self, "cen_status")
 
@@ -2545,8 +2545,8 @@ class VpcTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key.
+        :param builtins.str value: Tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -2557,7 +2557,7 @@ class VpcTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键。
+        Tag key.
         """
         return pulumi.get(self, "key")
 
@@ -2565,7 +2565,7 @@ class VpcTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 
@@ -2576,8 +2576,8 @@ class GetBandwidthPackageEipAddressResult(dict):
                  allocation_id: builtins.str,
                  eip_address: builtins.str):
         """
-        :param builtins.str allocation_id: 分配ID
-        :param builtins.str eip_address: 弹性IP地址
+        :param builtins.str allocation_id: Allocation ID
+        :param builtins.str eip_address: Elastic IP address
         """
         pulumi.set(__self__, "allocation_id", allocation_id)
         pulumi.set(__self__, "eip_address", eip_address)
@@ -2586,7 +2586,7 @@ class GetBandwidthPackageEipAddressResult(dict):
     @pulumi.getter(name="allocationId")
     def allocation_id(self) -> builtins.str:
         """
-        分配ID
+        Allocation ID
         """
         return pulumi.get(self, "allocation_id")
 
@@ -2594,7 +2594,7 @@ class GetBandwidthPackageEipAddressResult(dict):
     @pulumi.getter(name="eipAddress")
     def eip_address(self) -> builtins.str:
         """
-        弹性IP地址
+        Elastic IP address
         """
         return pulumi.get(self, "eip_address")
 
@@ -2605,8 +2605,8 @@ class GetBandwidthPackageTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: User tag key.
+        :param builtins.str value: User tag value.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -2615,7 +2615,7 @@ class GetBandwidthPackageTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        用户标签的标签键。
+        User tag key.
         """
         return pulumi.get(self, "key")
 
@@ -2623,7 +2623,7 @@ class GetBandwidthPackageTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        用户标签的标签值。
+        User tag value.
         """
         return pulumi.get(self, "value")
 
@@ -2634,8 +2634,8 @@ class GetEipTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key.
+        :param builtins.str value: Tag value.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -2644,7 +2644,7 @@ class GetEipTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键。
+        Tag key.
         """
         return pulumi.get(self, "key")
 
@@ -2652,7 +2652,7 @@ class GetEipTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 
@@ -2664,9 +2664,9 @@ class GetEniPrimaryIpAddressResult(dict):
                  primary: builtins.bool,
                  private_ip_address: builtins.str):
         """
-        :param 'GetEniPrimaryIpAddressAssociatedElasticIpArgs' associated_elastic_ip: 网卡主私网IPv4关联的公网IP的信息。
-        :param builtins.bool primary: 是否为主私网IPv4地址。
-        :param builtins.str private_ip_address: 网卡的私网IP地址。
+        :param 'GetEniPrimaryIpAddressAssociatedElasticIpArgs' associated_elastic_ip: Information about the public IP associated with the primary private IPv4 address of the network interface.
+        :param builtins.bool primary: Indicates whether this is the primary private IPv4 address.
+        :param builtins.str private_ip_address: Private IP address of the network interface.
         """
         pulumi.set(__self__, "associated_elastic_ip", associated_elastic_ip)
         pulumi.set(__self__, "primary", primary)
@@ -2676,7 +2676,7 @@ class GetEniPrimaryIpAddressResult(dict):
     @pulumi.getter(name="associatedElasticIp")
     def associated_elastic_ip(self) -> 'outputs.GetEniPrimaryIpAddressAssociatedElasticIpResult':
         """
-        网卡主私网IPv4关联的公网IP的信息。
+        Information about the public IP associated with the primary private IPv4 address of the network interface.
         """
         return pulumi.get(self, "associated_elastic_ip")
 
@@ -2684,7 +2684,7 @@ class GetEniPrimaryIpAddressResult(dict):
     @pulumi.getter
     def primary(self) -> builtins.bool:
         """
-        是否为主私网IPv4地址。
+        Indicates whether this is the primary private IPv4 address.
         """
         return pulumi.get(self, "primary")
 
@@ -2692,7 +2692,7 @@ class GetEniPrimaryIpAddressResult(dict):
     @pulumi.getter(name="privateIpAddress")
     def private_ip_address(self) -> builtins.str:
         """
-        网卡的私网IP地址。
+        Private IP address of the network interface.
         """
         return pulumi.get(self, "private_ip_address")
 
@@ -2704,9 +2704,9 @@ class GetEniPrimaryIpAddressAssociatedElasticIpResult(dict):
                  eip_address: builtins.str,
                  release_with_instance: builtins.bool):
         """
-        :param builtins.str allocation_id: 公网IP的ID。
-        :param builtins.str eip_address: 公网IP的地址。
-        :param builtins.bool release_with_instance: 公网IP是否随云服务器实例删除。仅主网卡的主私网IP绑定按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放，true：是，false：否。
+        :param builtins.str allocation_id: Public IP ID
+        :param builtins.str eip_address: Public IP address
+        :param builtins.bool release_with_instance: Whether the public IP is released when the cloud server instance is deleted. Only pay-as-you-go public IPs bound to the primary NIC's primary private IP are valid. When enabled, if the cloud server instance is automatically reclaimed by the system (24 hours after unsubscription, upon expiration, or due to overdue payment) or deleted via the DeleteInstances API, the public IP is released along with the instance. true: yes, false: no
         """
         pulumi.set(__self__, "allocation_id", allocation_id)
         pulumi.set(__self__, "eip_address", eip_address)
@@ -2716,7 +2716,7 @@ class GetEniPrimaryIpAddressAssociatedElasticIpResult(dict):
     @pulumi.getter(name="allocationId")
     def allocation_id(self) -> builtins.str:
         """
-        公网IP的ID。
+        Public IP ID
         """
         return pulumi.get(self, "allocation_id")
 
@@ -2724,7 +2724,7 @@ class GetEniPrimaryIpAddressAssociatedElasticIpResult(dict):
     @pulumi.getter(name="eipAddress")
     def eip_address(self) -> builtins.str:
         """
-        公网IP的地址。
+        Public IP address
         """
         return pulumi.get(self, "eip_address")
 
@@ -2732,7 +2732,7 @@ class GetEniPrimaryIpAddressAssociatedElasticIpResult(dict):
     @pulumi.getter(name="releaseWithInstance")
     def release_with_instance(self) -> builtins.bool:
         """
-        公网IP是否随云服务器实例删除。仅主网卡的主私网IP绑定按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放，true：是，false：否。
+        Whether the public IP is released when the cloud server instance is deleted. Only pay-as-you-go public IPs bound to the primary NIC's primary private IP are valid. When enabled, if the cloud server instance is automatically reclaimed by the system (24 hours after unsubscription, upon expiration, or due to overdue payment) or deleted via the DeleteInstances API, the public IP is released along with the instance. true: yes, false: no
         """
         return pulumi.get(self, "release_with_instance")
 
@@ -2744,9 +2744,9 @@ class GetEniPrivateIpSetResult(dict):
                  primary: builtins.bool,
                  private_ip_address: builtins.str):
         """
-        :param 'GetEniPrivateIpSetAssociatedElasticIpArgs' associated_elastic_ip: 网卡主私网IPv4关联的公网IP的信息。
-        :param builtins.bool primary: 是否为主私网IPv4地址。
-        :param builtins.str private_ip_address: 网卡的私网IP地址。
+        :param 'GetEniPrivateIpSetAssociatedElasticIpArgs' associated_elastic_ip: Information about the public IP associated with the primary private IPv4 address of the network interface.
+        :param builtins.bool primary: Indicates whether this is the primary private IPv4 address.
+        :param builtins.str private_ip_address: Private IP address of the network interface.
         """
         pulumi.set(__self__, "associated_elastic_ip", associated_elastic_ip)
         pulumi.set(__self__, "primary", primary)
@@ -2756,7 +2756,7 @@ class GetEniPrivateIpSetResult(dict):
     @pulumi.getter(name="associatedElasticIp")
     def associated_elastic_ip(self) -> 'outputs.GetEniPrivateIpSetAssociatedElasticIpResult':
         """
-        网卡主私网IPv4关联的公网IP的信息。
+        Information about the public IP associated with the primary private IPv4 address of the network interface.
         """
         return pulumi.get(self, "associated_elastic_ip")
 
@@ -2764,7 +2764,7 @@ class GetEniPrivateIpSetResult(dict):
     @pulumi.getter
     def primary(self) -> builtins.bool:
         """
-        是否为主私网IPv4地址。
+        Indicates whether this is the primary private IPv4 address.
         """
         return pulumi.get(self, "primary")
 
@@ -2772,7 +2772,7 @@ class GetEniPrivateIpSetResult(dict):
     @pulumi.getter(name="privateIpAddress")
     def private_ip_address(self) -> builtins.str:
         """
-        网卡的私网IP地址。
+        Private IP address of the network interface.
         """
         return pulumi.get(self, "private_ip_address")
 
@@ -2784,9 +2784,9 @@ class GetEniPrivateIpSetAssociatedElasticIpResult(dict):
                  eip_address: builtins.str,
                  release_with_instance: builtins.bool):
         """
-        :param builtins.str allocation_id: 公网IP的ID。
-        :param builtins.str eip_address: 公网IP的地址。
-        :param builtins.bool release_with_instance: 公网IP是否随云服务器实例删除。仅主网卡的主私网IP绑定按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放，true：是，false：否。
+        :param builtins.str allocation_id: Public IP ID
+        :param builtins.str eip_address: Public IP address
+        :param builtins.bool release_with_instance: Whether the public IP is released when the cloud server instance is deleted. Only pay-as-you-go public IPs bound to the primary NIC's primary private IP are valid. When enabled, if the cloud server instance is automatically reclaimed by the system (24 hours after unsubscription, upon expiration, or due to overdue payment) or deleted via the DeleteInstances API, the public IP is released along with the instance. true: yes, false: no
         """
         pulumi.set(__self__, "allocation_id", allocation_id)
         pulumi.set(__self__, "eip_address", eip_address)
@@ -2796,7 +2796,7 @@ class GetEniPrivateIpSetAssociatedElasticIpResult(dict):
     @pulumi.getter(name="allocationId")
     def allocation_id(self) -> builtins.str:
         """
-        公网IP的ID。
+        Public IP ID
         """
         return pulumi.get(self, "allocation_id")
 
@@ -2804,7 +2804,7 @@ class GetEniPrivateIpSetAssociatedElasticIpResult(dict):
     @pulumi.getter(name="eipAddress")
     def eip_address(self) -> builtins.str:
         """
-        公网IP的地址。
+        Public IP address
         """
         return pulumi.get(self, "eip_address")
 
@@ -2812,7 +2812,7 @@ class GetEniPrivateIpSetAssociatedElasticIpResult(dict):
     @pulumi.getter(name="releaseWithInstance")
     def release_with_instance(self) -> builtins.bool:
         """
-        公网IP是否随云服务器实例删除。仅主网卡的主私网IP绑定按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放，true：是，false：否。
+        Whether the public IP is released when the cloud server instance is deleted. Only pay-as-you-go public IPs bound to the primary NIC's primary private IP are valid. When enabled, if the cloud server instance is automatically reclaimed by the system (24 hours after unsubscription, upon expiration, or due to overdue payment) or deleted via the DeleteInstances API, the public IP is released along with the instance. true: yes, false: no
         """
         return pulumi.get(self, "release_with_instance")
 
@@ -2823,8 +2823,8 @@ class GetEniTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: Tag key for the user tag.
+        :param builtins.str value: Tag value for the user tag.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -2833,7 +2833,7 @@ class GetEniTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        用户标签的标签键。
+        Tag key for the user tag.
         """
         return pulumi.get(self, "key")
 
@@ -2841,7 +2841,7 @@ class GetEniTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        用户标签的标签值。
+        Tag value for the user tag.
         """
         return pulumi.get(self, "value")
 
@@ -2852,8 +2852,8 @@ class GetFlowLogTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
-        :param builtins.str value: 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+        :param builtins.str key: User label tag key. Length must be 1–128 characters. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ symbols (@). If the tag key starts or ends with a space, the system automatically removes it.
+        :param builtins.str value: User tag value. Supports input in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -2862,7 +2862,7 @@ class GetFlowLogTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+        User label tag key. Length must be 1–128 characters. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ symbols (@). If the tag key starts or ends with a space, the system automatically removes it.
         """
         return pulumi.get(self, "key")
 
@@ -2870,7 +2870,7 @@ class GetFlowLogTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+        User tag value. Supports input in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
         """
         return pulumi.get(self, "value")
 
@@ -2881,8 +2881,8 @@ class GetHaVipTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
-        :param builtins.str value: 用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+        :param builtins.str key: Tag key for user tags. Length range: 1–128 characters. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system automatically removes it
+        :param builtins.str value: Tag value for user tags. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system automatically removes it
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -2891,7 +2891,7 @@ class GetHaVipTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        用户标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+        Tag key for user tags. Length range: 1–128 characters. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system automatically removes it
         """
         return pulumi.get(self, "key")
 
@@ -2899,7 +2899,7 @@ class GetHaVipTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        用户标签的标签值。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+        Tag value for user tags. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system automatically removes it
         """
         return pulumi.get(self, "value")
 
@@ -2910,8 +2910,8 @@ class GetIpv6AddressBandwidthTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -2920,7 +2920,7 @@ class GetIpv6AddressBandwidthTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -2928,7 +2928,7 @@ class GetIpv6AddressBandwidthTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -2939,8 +2939,8 @@ class GetIpv6GatewayTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -2949,7 +2949,7 @@ class GetIpv6GatewayTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -2957,7 +2957,7 @@ class GetIpv6GatewayTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -2974,14 +2974,14 @@ class GetNetworkAclDefaultEgressAclEntryResult(dict):
                  priority: builtins.int,
                  protocol: builtins.str):
         """
-        :param builtins.str cidr_ip: 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
-        :param builtins.str description: 规则的描述信息。
-        :param builtins.str network_acl_entry_id: 规则的ID。
-        :param builtins.str network_acl_entry_name: 规则的名称。
-        :param builtins.str policy: 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
-        :param builtins.str port: 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
-        :param builtins.int priority: 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
-        :param builtins.str protocol: 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+        :param builtins.str cidr_ip: For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
+        :param builtins.str description: Rule description.
+        :param builtins.str network_acl_entry_id: Rule ID.
+        :param builtins.str network_acl_entry_name: Rule name.
+        :param builtins.str policy: Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
+        :param builtins.str port: Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
+        :param builtins.int priority: Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
+        :param builtins.str protocol: Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
         """
         pulumi.set(__self__, "cidr_ip", cidr_ip)
         pulumi.set(__self__, "description", description)
@@ -2996,7 +2996,7 @@ class GetNetworkAclDefaultEgressAclEntryResult(dict):
     @pulumi.getter(name="cidrIp")
     def cidr_ip(self) -> builtins.str:
         """
-        入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+        For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
         """
         return pulumi.get(self, "cidr_ip")
 
@@ -3004,7 +3004,7 @@ class GetNetworkAclDefaultEgressAclEntryResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        规则的描述信息。
+        Rule description.
         """
         return pulumi.get(self, "description")
 
@@ -3012,7 +3012,7 @@ class GetNetworkAclDefaultEgressAclEntryResult(dict):
     @pulumi.getter(name="networkAclEntryId")
     def network_acl_entry_id(self) -> builtins.str:
         """
-        规则的ID。
+        Rule ID.
         """
         return pulumi.get(self, "network_acl_entry_id")
 
@@ -3020,7 +3020,7 @@ class GetNetworkAclDefaultEgressAclEntryResult(dict):
     @pulumi.getter(name="networkAclEntryName")
     def network_acl_entry_name(self) -> builtins.str:
         """
-        规则的名称。
+        Rule name.
         """
         return pulumi.get(self, "network_acl_entry_name")
 
@@ -3028,7 +3028,7 @@ class GetNetworkAclDefaultEgressAclEntryResult(dict):
     @pulumi.getter
     def policy(self) -> builtins.str:
         """
-        授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+        Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
         """
         return pulumi.get(self, "policy")
 
@@ -3036,7 +3036,7 @@ class GetNetworkAclDefaultEgressAclEntryResult(dict):
     @pulumi.getter
     def port(self) -> builtins.str:
         """
-        规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+        Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
         """
         return pulumi.get(self, "port")
 
@@ -3044,7 +3044,7 @@ class GetNetworkAclDefaultEgressAclEntryResult(dict):
     @pulumi.getter
     def priority(self) -> builtins.int:
         """
-        方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+        Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
         """
         return pulumi.get(self, "priority")
 
@@ -3052,7 +3052,7 @@ class GetNetworkAclDefaultEgressAclEntryResult(dict):
     @pulumi.getter
     def protocol(self) -> builtins.str:
         """
-        协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+        Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
         """
         return pulumi.get(self, "protocol")
 
@@ -3069,14 +3069,14 @@ class GetNetworkAclDefaultIngressAclEntryResult(dict):
                  priority: builtins.int,
                  protocol: builtins.str):
         """
-        :param builtins.str cidr_ip: 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
-        :param builtins.str description: 规则的描述信息。
-        :param builtins.str network_acl_entry_id: 规则的ID。
-        :param builtins.str network_acl_entry_name: 规则的名称。
-        :param builtins.str policy: 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
-        :param builtins.str port: 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
-        :param builtins.int priority: 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
-        :param builtins.str protocol: 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+        :param builtins.str cidr_ip: For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
+        :param builtins.str description: Rule description.
+        :param builtins.str network_acl_entry_id: Rule ID.
+        :param builtins.str network_acl_entry_name: Rule name.
+        :param builtins.str policy: Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
+        :param builtins.str port: Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
+        :param builtins.int priority: Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
+        :param builtins.str protocol: Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
         """
         pulumi.set(__self__, "cidr_ip", cidr_ip)
         pulumi.set(__self__, "description", description)
@@ -3091,7 +3091,7 @@ class GetNetworkAclDefaultIngressAclEntryResult(dict):
     @pulumi.getter(name="cidrIp")
     def cidr_ip(self) -> builtins.str:
         """
-        入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+        For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
         """
         return pulumi.get(self, "cidr_ip")
 
@@ -3099,7 +3099,7 @@ class GetNetworkAclDefaultIngressAclEntryResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        规则的描述信息。
+        Rule description.
         """
         return pulumi.get(self, "description")
 
@@ -3107,7 +3107,7 @@ class GetNetworkAclDefaultIngressAclEntryResult(dict):
     @pulumi.getter(name="networkAclEntryId")
     def network_acl_entry_id(self) -> builtins.str:
         """
-        规则的ID。
+        Rule ID.
         """
         return pulumi.get(self, "network_acl_entry_id")
 
@@ -3115,7 +3115,7 @@ class GetNetworkAclDefaultIngressAclEntryResult(dict):
     @pulumi.getter(name="networkAclEntryName")
     def network_acl_entry_name(self) -> builtins.str:
         """
-        规则的名称。
+        Rule name.
         """
         return pulumi.get(self, "network_acl_entry_name")
 
@@ -3123,7 +3123,7 @@ class GetNetworkAclDefaultIngressAclEntryResult(dict):
     @pulumi.getter
     def policy(self) -> builtins.str:
         """
-        授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+        Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
         """
         return pulumi.get(self, "policy")
 
@@ -3131,7 +3131,7 @@ class GetNetworkAclDefaultIngressAclEntryResult(dict):
     @pulumi.getter
     def port(self) -> builtins.str:
         """
-        规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+        Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
         """
         return pulumi.get(self, "port")
 
@@ -3139,7 +3139,7 @@ class GetNetworkAclDefaultIngressAclEntryResult(dict):
     @pulumi.getter
     def priority(self) -> builtins.int:
         """
-        方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+        Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
         """
         return pulumi.get(self, "priority")
 
@@ -3147,7 +3147,7 @@ class GetNetworkAclDefaultIngressAclEntryResult(dict):
     @pulumi.getter
     def protocol(self) -> builtins.str:
         """
-        协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+        Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
         """
         return pulumi.get(self, "protocol")
 
@@ -3164,14 +3164,14 @@ class GetNetworkAclEgressAclEntryResult(dict):
                  priority: builtins.int,
                  protocol: builtins.str):
         """
-        :param builtins.str cidr_ip: 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
-        :param builtins.str description: 规则的描述信息。
-        :param builtins.str network_acl_entry_id: 规则的ID。
-        :param builtins.str network_acl_entry_name: 规则的名称。
-        :param builtins.str policy: 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
-        :param builtins.str port: 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
-        :param builtins.int priority: 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
-        :param builtins.str protocol: 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+        :param builtins.str cidr_ip: For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
+        :param builtins.str description: Rule description.
+        :param builtins.str network_acl_entry_id: Rule ID.
+        :param builtins.str network_acl_entry_name: Rule name.
+        :param builtins.str policy: Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
+        :param builtins.str port: Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
+        :param builtins.int priority: Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
+        :param builtins.str protocol: Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
         """
         pulumi.set(__self__, "cidr_ip", cidr_ip)
         pulumi.set(__self__, "description", description)
@@ -3186,7 +3186,7 @@ class GetNetworkAclEgressAclEntryResult(dict):
     @pulumi.getter(name="cidrIp")
     def cidr_ip(self) -> builtins.str:
         """
-        入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+        For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
         """
         return pulumi.get(self, "cidr_ip")
 
@@ -3194,7 +3194,7 @@ class GetNetworkAclEgressAclEntryResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        规则的描述信息。
+        Rule description.
         """
         return pulumi.get(self, "description")
 
@@ -3202,7 +3202,7 @@ class GetNetworkAclEgressAclEntryResult(dict):
     @pulumi.getter(name="networkAclEntryId")
     def network_acl_entry_id(self) -> builtins.str:
         """
-        规则的ID。
+        Rule ID.
         """
         return pulumi.get(self, "network_acl_entry_id")
 
@@ -3210,7 +3210,7 @@ class GetNetworkAclEgressAclEntryResult(dict):
     @pulumi.getter(name="networkAclEntryName")
     def network_acl_entry_name(self) -> builtins.str:
         """
-        规则的名称。
+        Rule name.
         """
         return pulumi.get(self, "network_acl_entry_name")
 
@@ -3218,7 +3218,7 @@ class GetNetworkAclEgressAclEntryResult(dict):
     @pulumi.getter
     def policy(self) -> builtins.str:
         """
-        授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+        Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
         """
         return pulumi.get(self, "policy")
 
@@ -3226,7 +3226,7 @@ class GetNetworkAclEgressAclEntryResult(dict):
     @pulumi.getter
     def port(self) -> builtins.str:
         """
-        规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+        Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
         """
         return pulumi.get(self, "port")
 
@@ -3234,7 +3234,7 @@ class GetNetworkAclEgressAclEntryResult(dict):
     @pulumi.getter
     def priority(self) -> builtins.int:
         """
-        方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+        Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
         """
         return pulumi.get(self, "priority")
 
@@ -3242,7 +3242,7 @@ class GetNetworkAclEgressAclEntryResult(dict):
     @pulumi.getter
     def protocol(self) -> builtins.str:
         """
-        协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+        Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
         """
         return pulumi.get(self, "protocol")
 
@@ -3259,14 +3259,14 @@ class GetNetworkAclIngressAclEntryResult(dict):
                  priority: builtins.int,
                  protocol: builtins.str):
         """
-        :param builtins.str cidr_ip: 入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
-        :param builtins.str description: 规则的描述信息。
-        :param builtins.str network_acl_entry_id: 规则的ID。
-        :param builtins.str network_acl_entry_name: 规则的名称。
-        :param builtins.str policy: 授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
-        :param builtins.str port: 规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
-        :param builtins.int priority: 方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
-        :param builtins.str protocol: 协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+        :param builtins.str cidr_ip: For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
+        :param builtins.str description: Rule description.
+        :param builtins.str network_acl_entry_id: Rule ID.
+        :param builtins.str network_acl_entry_name: Rule name.
+        :param builtins.str policy: Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
+        :param builtins.str port: Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
+        :param builtins.int priority: Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
+        :param builtins.str protocol: Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
         """
         pulumi.set(__self__, "cidr_ip", cidr_ip)
         pulumi.set(__self__, "description", description)
@@ -3281,7 +3281,7 @@ class GetNetworkAclIngressAclEntryResult(dict):
     @pulumi.getter(name="cidrIp")
     def cidr_ip(self) -> builtins.str:
         """
-        入向规则时为源地址的网段。出向规则时为目标地址的网段。支持CIDR格式和IPv4格式的IP地址范围。默认值：无。
+        For inbound rules, specifies the source address range. For outbound rules, specifies the destination address range. Supports CIDR and IPv4 address ranges. Default value: none.
         """
         return pulumi.get(self, "cidr_ip")
 
@@ -3289,7 +3289,7 @@ class GetNetworkAclIngressAclEntryResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        规则的描述信息。
+        Rule description.
         """
         return pulumi.get(self, "description")
 
@@ -3297,7 +3297,7 @@ class GetNetworkAclIngressAclEntryResult(dict):
     @pulumi.getter(name="networkAclEntryId")
     def network_acl_entry_id(self) -> builtins.str:
         """
-        规则的ID。
+        Rule ID.
         """
         return pulumi.get(self, "network_acl_entry_id")
 
@@ -3305,7 +3305,7 @@ class GetNetworkAclIngressAclEntryResult(dict):
     @pulumi.getter(name="networkAclEntryName")
     def network_acl_entry_name(self) -> builtins.str:
         """
-        规则的名称。
+        Rule name.
         """
         return pulumi.get(self, "network_acl_entry_name")
 
@@ -3313,7 +3313,7 @@ class GetNetworkAclIngressAclEntryResult(dict):
     @pulumi.getter
     def policy(self) -> builtins.str:
         """
-        授权策略。accept：允许访问。drop：拒绝访问，不返回拒绝访问的信息，仅表现出发起端请求超时或类似无法建立连接的信息。
+        Authorization policy. accept: Allow access. drop: Deny access. No denial message is returned; the requester only experiences a timeout or similar connection failure.
         """
         return pulumi.get(self, "policy")
 
@@ -3321,7 +3321,7 @@ class GetNetworkAclIngressAclEntryResult(dict):
     @pulumi.getter
     def port(self) -> builtins.str:
         """
-        规则的目的端口范围。当方向规则的Protocol为all、icmp或gre时，端口范围为-1/-1，表示不限制端口。当方向规则的Protocol为tcp或udp时，端口范围为1~65535，格式为1/200、80/80，表示端口1到端口200、端口80。
+        Destination port range for the rule. If the direction rule protocol is all, icmp, or gre, the port range is -1/-1, meaning no port restriction. If the protocol is tcp or udp, the port range is 1–65535, formatted as 1/200, 80/80, indicating ports 1 to 200, or port 80.
         """
         return pulumi.get(self, "port")
 
@@ -3329,7 +3329,7 @@ class GetNetworkAclIngressAclEntryResult(dict):
     @pulumi.getter
     def priority(self) -> builtins.int:
         """
-        方向规则的优先级，数字越小，代表优先级越高。不填默认值：1。
+        Priority of direction rules. Lower numbers indicate higher priority. Default value if not specified: 1.
         """
         return pulumi.get(self, "priority")
 
@@ -3337,7 +3337,7 @@ class GetNetworkAclIngressAclEntryResult(dict):
     @pulumi.getter
     def protocol(self) -> builtins.str:
         """
-        协议类型。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。icmpv6：ICMPV6协议。gre：GRE协议。all：支持所有协议。
+        Protocol type. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol. icmpv6: ICMPV6 protocol. gre: GRE protocol. all: Supports all protocols.
         """
         return pulumi.get(self, "protocol")
 
@@ -3348,8 +3348,8 @@ class GetNetworkAclResourceResult(dict):
                  resource_id: builtins.str,
                  status: builtins.str):
         """
-        :param builtins.str resource_id: 关联资源的ID。
-        :param builtins.str status: 网络ACL关联资源的状态。BINDED：已绑定。BINDING：绑定中。UNBINDING：解绑中。
+        :param builtins.str resource_id: Associated resource ID.
+        :param builtins.str status: Status of resources associated with the network ACL. BINDED: Bound. BINDING: Binding. UNBINDING: Unbinding.
         """
         pulumi.set(__self__, "resource_id", resource_id)
         pulumi.set(__self__, "status", status)
@@ -3358,7 +3358,7 @@ class GetNetworkAclResourceResult(dict):
     @pulumi.getter(name="resourceId")
     def resource_id(self) -> builtins.str:
         """
-        关联资源的ID。
+        Associated resource ID.
         """
         return pulumi.get(self, "resource_id")
 
@@ -3366,7 +3366,7 @@ class GetNetworkAclResourceResult(dict):
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        网络ACL关联资源的状态。BINDED：已绑定。BINDING：绑定中。UNBINDING：解绑中。
+        Status of resources associated with the network ACL. BINDED: Bound. BINDING: Binding. UNBINDING: Unbinding.
         """
         return pulumi.get(self, "status")
 
@@ -3377,8 +3377,8 @@ class GetNetworkAclTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: User tag key.
+        :param builtins.str value: User tag value.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -3387,7 +3387,7 @@ class GetNetworkAclTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        用户标签的标签键。
+        User tag key.
         """
         return pulumi.get(self, "key")
 
@@ -3395,7 +3395,7 @@ class GetNetworkAclTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        用户标签的标签值。
+        User tag value.
         """
         return pulumi.get(self, "value")
 
@@ -3406,8 +3406,8 @@ class GetPrefixListAssociationsRouteTableResult(dict):
                  resource_id: builtins.str,
                  resource_type: builtins.str):
         """
-        :param builtins.str resource_id: 关联资源的ID。
-        :param builtins.str resource_type: 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+        :param builtins.str resource_id: ID of the associated resource.
+        :param builtins.str resource_type: Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
         """
         pulumi.set(__self__, "resource_id", resource_id)
         pulumi.set(__self__, "resource_type", resource_type)
@@ -3416,7 +3416,7 @@ class GetPrefixListAssociationsRouteTableResult(dict):
     @pulumi.getter(name="resourceId")
     def resource_id(self) -> builtins.str:
         """
-        关联资源的ID。
+        ID of the associated resource.
         """
         return pulumi.get(self, "resource_id")
 
@@ -3424,7 +3424,7 @@ class GetPrefixListAssociationsRouteTableResult(dict):
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> builtins.str:
         """
-        关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+        Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
         """
         return pulumi.get(self, "resource_type")
 
@@ -3435,8 +3435,8 @@ class GetPrefixListAssociationsSecurityGroupResult(dict):
                  resource_id: builtins.str,
                  resource_type: builtins.str):
         """
-        :param builtins.str resource_id: 关联资源的ID。
-        :param builtins.str resource_type: 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+        :param builtins.str resource_id: ID of the associated resource.
+        :param builtins.str resource_type: Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
         """
         pulumi.set(__self__, "resource_id", resource_id)
         pulumi.set(__self__, "resource_type", resource_type)
@@ -3445,7 +3445,7 @@ class GetPrefixListAssociationsSecurityGroupResult(dict):
     @pulumi.getter(name="resourceId")
     def resource_id(self) -> builtins.str:
         """
-        关联资源的ID。
+        ID of the associated resource.
         """
         return pulumi.get(self, "resource_id")
 
@@ -3453,7 +3453,7 @@ class GetPrefixListAssociationsSecurityGroupResult(dict):
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> builtins.str:
         """
-        关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+        Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
         """
         return pulumi.get(self, "resource_type")
 
@@ -3464,8 +3464,8 @@ class GetPrefixListPrefixListEntryResult(dict):
                  cidr: builtins.str,
                  description: builtins.str):
         """
-        :param builtins.str cidr: 前缀列表条目的CIDR。
-        :param builtins.str description: 前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        :param builtins.str cidr: CIDR of the prefix list entry.
+        :param builtins.str description: Description of the prefix list entry. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
         """
         pulumi.set(__self__, "cidr", cidr)
         pulumi.set(__self__, "description", description)
@@ -3474,7 +3474,7 @@ class GetPrefixListPrefixListEntryResult(dict):
     @pulumi.getter
     def cidr(self) -> builtins.str:
         """
-        前缀列表条目的CIDR。
+        CIDR of the prefix list entry.
         """
         return pulumi.get(self, "cidr")
 
@@ -3482,7 +3482,7 @@ class GetPrefixListPrefixListEntryResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        Description of the prefix list entry. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
         """
         return pulumi.get(self, "description")
 
@@ -3493,8 +3493,8 @@ class GetPrefixListTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: Tag key of the user tag.
+        :param builtins.str value: Tag value of the user tag.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -3503,7 +3503,7 @@ class GetPrefixListTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        用户标签的标签键。
+        Tag key of the user tag.
         """
         return pulumi.get(self, "key")
 
@@ -3511,7 +3511,7 @@ class GetPrefixListTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        用户标签的标签值。
+        Tag value of the user tag.
         """
         return pulumi.get(self, "value")
 
@@ -3533,19 +3533,19 @@ class GetRouteTableCustomRouteEntryResult(dict):
                  type: builtins.str,
                  vpc_id: builtins.str):
         """
-        :param builtins.str description: 路由条目描述。
-        :param builtins.str destination_cidr_block: 路由条目的目标网段。
-        :param builtins.str destination_prefix_list_id: 前缀列表ID。
-        :param builtins.str next_hop_id: 下一跳资源ID。
-        :param builtins.str next_hop_name: 路由条目下一跳资源的名称。
-        :param builtins.str next_hop_type: 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
-        :param Sequence[builtins.str] prefix_list_cidr_blocks: 前缀列表的CIDR。
-        :param builtins.str route_entry_id: 路由条目ID。
-        :param builtins.str route_entry_name: 路由条目名称。
-        :param builtins.str route_table_id: 路由表ID。
-        :param builtins.str status: 路由条目状态。1、Pending：待创建。2、Available：可用。
-        :param builtins.str type: 路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
-        :param builtins.str vpc_id: 路由条目所属私有网络的ID。
+        :param builtins.str description: Route Entry Description
+        :param builtins.str destination_cidr_block: Destination CIDR of the route entry
+        :param builtins.str destination_prefix_list_id: Prefix List ID
+        :param builtins.str next_hop_id: Next Hop Resource ID
+        :param builtins.str next_hop_name: Name of the next hop resource for the route entry
+        :param builtins.str next_hop_type: Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
+        :param Sequence[builtins.str] prefix_list_cidr_blocks: Prefix List CIDR
+        :param builtins.str route_entry_id: Route Entry ID
+        :param builtins.str route_entry_name: Route Entry Name
+        :param builtins.str route_table_id: Route Table ID
+        :param builtins.str status: Route entry status. 1. Pending: Pending creation 2. Available: Available
+        :param builtins.str type: Route entry type. 1. Custom: Custom route entry 2. System: System default route entry
+        :param builtins.str vpc_id: ID of the private network to which the route entry belongs
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "destination_cidr_block", destination_cidr_block)
@@ -3565,7 +3565,7 @@ class GetRouteTableCustomRouteEntryResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        路由条目描述。
+        Route Entry Description
         """
         return pulumi.get(self, "description")
 
@@ -3573,7 +3573,7 @@ class GetRouteTableCustomRouteEntryResult(dict):
     @pulumi.getter(name="destinationCidrBlock")
     def destination_cidr_block(self) -> builtins.str:
         """
-        路由条目的目标网段。
+        Destination CIDR of the route entry
         """
         return pulumi.get(self, "destination_cidr_block")
 
@@ -3581,7 +3581,7 @@ class GetRouteTableCustomRouteEntryResult(dict):
     @pulumi.getter(name="destinationPrefixListId")
     def destination_prefix_list_id(self) -> builtins.str:
         """
-        前缀列表ID。
+        Prefix List ID
         """
         return pulumi.get(self, "destination_prefix_list_id")
 
@@ -3589,7 +3589,7 @@ class GetRouteTableCustomRouteEntryResult(dict):
     @pulumi.getter(name="nextHopId")
     def next_hop_id(self) -> builtins.str:
         """
-        下一跳资源ID。
+        Next Hop Resource ID
         """
         return pulumi.get(self, "next_hop_id")
 
@@ -3597,7 +3597,7 @@ class GetRouteTableCustomRouteEntryResult(dict):
     @pulumi.getter(name="nextHopName")
     def next_hop_name(self) -> builtins.str:
         """
-        路由条目下一跳资源的名称。
+        Name of the next hop resource for the route entry
         """
         return pulumi.get(self, "next_hop_name")
 
@@ -3605,7 +3605,7 @@ class GetRouteTableCustomRouteEntryResult(dict):
     @pulumi.getter(name="nextHopType")
     def next_hop_type(self) -> builtins.str:
         """
-        自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+        Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
         """
         return pulumi.get(self, "next_hop_type")
 
@@ -3613,7 +3613,7 @@ class GetRouteTableCustomRouteEntryResult(dict):
     @pulumi.getter(name="prefixListCidrBlocks")
     def prefix_list_cidr_blocks(self) -> Sequence[builtins.str]:
         """
-        前缀列表的CIDR。
+        Prefix List CIDR
         """
         return pulumi.get(self, "prefix_list_cidr_blocks")
 
@@ -3621,7 +3621,7 @@ class GetRouteTableCustomRouteEntryResult(dict):
     @pulumi.getter(name="routeEntryId")
     def route_entry_id(self) -> builtins.str:
         """
-        路由条目ID。
+        Route Entry ID
         """
         return pulumi.get(self, "route_entry_id")
 
@@ -3629,7 +3629,7 @@ class GetRouteTableCustomRouteEntryResult(dict):
     @pulumi.getter(name="routeEntryName")
     def route_entry_name(self) -> builtins.str:
         """
-        路由条目名称。
+        Route Entry Name
         """
         return pulumi.get(self, "route_entry_name")
 
@@ -3637,7 +3637,7 @@ class GetRouteTableCustomRouteEntryResult(dict):
     @pulumi.getter(name="routeTableId")
     def route_table_id(self) -> builtins.str:
         """
-        路由表ID。
+        Route Table ID
         """
         return pulumi.get(self, "route_table_id")
 
@@ -3645,7 +3645,7 @@ class GetRouteTableCustomRouteEntryResult(dict):
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        路由条目状态。1、Pending：待创建。2、Available：可用。
+        Route entry status. 1. Pending: Pending creation 2. Available: Available
         """
         return pulumi.get(self, "status")
 
@@ -3653,7 +3653,7 @@ class GetRouteTableCustomRouteEntryResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
+        Route entry type. 1. Custom: Custom route entry 2. System: System default route entry
         """
         return pulumi.get(self, "type")
 
@@ -3661,7 +3661,7 @@ class GetRouteTableCustomRouteEntryResult(dict):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> builtins.str:
         """
-        路由条目所属私有网络的ID。
+        ID of the private network to which the route entry belongs
         """
         return pulumi.get(self, "vpc_id")
 
@@ -3683,19 +3683,19 @@ class GetRouteTableSystemRouteEntryResult(dict):
                  type: builtins.str,
                  vpc_id: builtins.str):
         """
-        :param builtins.str description: 路由条目描述。
-        :param builtins.str destination_cidr_block: 路由条目的目标网段。
-        :param builtins.str destination_prefix_list_id: 前缀列表ID。
-        :param builtins.str next_hop_id: 下一跳资源ID。
-        :param builtins.str next_hop_name: 路由条目下一跳资源的名称。
-        :param builtins.str next_hop_type: 自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
-        :param Sequence[builtins.str] prefix_list_cidr_blocks: 前缀列表的CIDR。
-        :param builtins.str route_entry_id: 路由条目ID。
-        :param builtins.str route_entry_name: 路由条目名称。
-        :param builtins.str route_table_id: 路由表ID。
-        :param builtins.str status: 路由条目状态。1、Pending：待创建。2、Available：可用。
-        :param builtins.str type: 路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
-        :param builtins.str vpc_id: 路由条目所属私有网络的ID。
+        :param builtins.str description: Route Entry Description
+        :param builtins.str destination_cidr_block: Destination CIDR of the route entry
+        :param builtins.str destination_prefix_list_id: Prefix List ID
+        :param builtins.str next_hop_id: Next Hop Resource ID
+        :param builtins.str next_hop_name: Name of the next hop resource for the route entry
+        :param builtins.str next_hop_type: Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
+        :param Sequence[builtins.str] prefix_list_cidr_blocks: Prefix List CIDR
+        :param builtins.str route_entry_id: Route Entry ID
+        :param builtins.str route_entry_name: Route Entry Name
+        :param builtins.str route_table_id: Route Table ID
+        :param builtins.str status: Route entry status. 1. Pending: Pending creation 2. Available: Available
+        :param builtins.str type: Route entry type. 1. Custom: Custom route entry 2. System: System default route entry
+        :param builtins.str vpc_id: ID of the private network to which the route entry belongs
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "destination_cidr_block", destination_cidr_block)
@@ -3715,7 +3715,7 @@ class GetRouteTableSystemRouteEntryResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        路由条目描述。
+        Route Entry Description
         """
         return pulumi.get(self, "description")
 
@@ -3723,7 +3723,7 @@ class GetRouteTableSystemRouteEntryResult(dict):
     @pulumi.getter(name="destinationCidrBlock")
     def destination_cidr_block(self) -> builtins.str:
         """
-        路由条目的目标网段。
+        Destination CIDR of the route entry
         """
         return pulumi.get(self, "destination_cidr_block")
 
@@ -3731,7 +3731,7 @@ class GetRouteTableSystemRouteEntryResult(dict):
     @pulumi.getter(name="destinationPrefixListId")
     def destination_prefix_list_id(self) -> builtins.str:
         """
-        前缀列表ID。
+        Prefix List ID
         """
         return pulumi.get(self, "destination_prefix_list_id")
 
@@ -3739,7 +3739,7 @@ class GetRouteTableSystemRouteEntryResult(dict):
     @pulumi.getter(name="nextHopId")
     def next_hop_id(self) -> builtins.str:
         """
-        下一跳资源ID。
+        Next Hop Resource ID
         """
         return pulumi.get(self, "next_hop_id")
 
@@ -3747,7 +3747,7 @@ class GetRouteTableSystemRouteEntryResult(dict):
     @pulumi.getter(name="nextHopName")
     def next_hop_name(self) -> builtins.str:
         """
-        路由条目下一跳资源的名称。
+        Name of the next hop resource for the route entry
         """
         return pulumi.get(self, "next_hop_name")
 
@@ -3755,7 +3755,7 @@ class GetRouteTableSystemRouteEntryResult(dict):
     @pulumi.getter(name="nextHopType")
     def next_hop_type(self) -> builtins.str:
         """
-        自定义路由条目的下一跳的类型。1、Instance：ECS实例。2、HaVip：高可用虚拟IP。3、NetworkInterface：辅助网卡。4、NatGW：NAT网关。5、VpnGW：VPN网关。6、TransitRouter：中转路由器。7、IPv6GW：IPv6网关。8、CloudConnector：云连接器。9、GWLBEndpoint：网关负载均衡终端节点。
+        Next hop type for custom route entry. 1. Instance: ECS instance 2. HaVip: High availability virtual IP 3. NetworkInterface: Secondary network interface 4. NatGW: NAT gateway 5. VpnGW: VPN gateway 6. TransitRouter: Transit router 7. IPv6GW: IPv6 gateway 8. CloudConnector: Cloud connector 9. GWLBEndpoint: Gateway load balancer endpoint
         """
         return pulumi.get(self, "next_hop_type")
 
@@ -3763,7 +3763,7 @@ class GetRouteTableSystemRouteEntryResult(dict):
     @pulumi.getter(name="prefixListCidrBlocks")
     def prefix_list_cidr_blocks(self) -> Sequence[builtins.str]:
         """
-        前缀列表的CIDR。
+        Prefix List CIDR
         """
         return pulumi.get(self, "prefix_list_cidr_blocks")
 
@@ -3771,7 +3771,7 @@ class GetRouteTableSystemRouteEntryResult(dict):
     @pulumi.getter(name="routeEntryId")
     def route_entry_id(self) -> builtins.str:
         """
-        路由条目ID。
+        Route Entry ID
         """
         return pulumi.get(self, "route_entry_id")
 
@@ -3779,7 +3779,7 @@ class GetRouteTableSystemRouteEntryResult(dict):
     @pulumi.getter(name="routeEntryName")
     def route_entry_name(self) -> builtins.str:
         """
-        路由条目名称。
+        Route Entry Name
         """
         return pulumi.get(self, "route_entry_name")
 
@@ -3787,7 +3787,7 @@ class GetRouteTableSystemRouteEntryResult(dict):
     @pulumi.getter(name="routeTableId")
     def route_table_id(self) -> builtins.str:
         """
-        路由表ID。
+        Route Table ID
         """
         return pulumi.get(self, "route_table_id")
 
@@ -3795,7 +3795,7 @@ class GetRouteTableSystemRouteEntryResult(dict):
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        路由条目状态。1、Pending：待创建。2、Available：可用。
+        Route entry status. 1. Pending: Pending creation 2. Available: Available
         """
         return pulumi.get(self, "status")
 
@@ -3803,7 +3803,7 @@ class GetRouteTableSystemRouteEntryResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        路由条目类型。1、Custom：自定义路由条目。2、System：系统默认路由条目。
+        Route entry type. 1. Custom: Custom route entry 2. System: System default route entry
         """
         return pulumi.get(self, "type")
 
@@ -3811,7 +3811,7 @@ class GetRouteTableSystemRouteEntryResult(dict):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> builtins.str:
         """
-        路由条目所属私有网络的ID。
+        ID of the private network to which the route entry belongs
         """
         return pulumi.get(self, "vpc_id")
 
@@ -3822,8 +3822,8 @@ class GetRouteTableTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: User tag key
+        :param builtins.str value: User tag value
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -3832,7 +3832,7 @@ class GetRouteTableTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        用户标签的标签键。
+        User tag key
         """
         return pulumi.get(self, "key")
 
@@ -3840,7 +3840,7 @@ class GetRouteTableTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        用户标签的标签值。
+        User tag value
         """
         return pulumi.get(self, "value")
 
@@ -3862,19 +3862,19 @@ class GetSecurityGroupEgressPermissionResult(dict):
                  source_group_id: builtins.str,
                  update_time: builtins.str):
         """
-        :param builtins.str cidr_ip: 源地址的IPv4 CIDR或IPv6 CIDR
-        :param builtins.str creation_time: 安全组规则创建时间。
-        :param builtins.str description: 安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
-        :param builtins.str direction: 安全组规则方向。ingress：入方向。egress：出方向
-        :param builtins.str policy: 访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
-        :param builtins.int port_end: 端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
-        :param builtins.int port_start: 端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
-        :param Sequence[builtins.str] prefix_list_cidrs: 前缀列表的CIDR。
-        :param builtins.str prefix_list_id: 前缀列表的ID
-        :param builtins.int priority: 安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
-        :param builtins.str protocol: 协议类型。tcp、udp、icmp、icmpv6、all
-        :param builtins.str source_group_id: 源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
-        :param builtins.str update_time: 安全组规则更新时间。
+        :param builtins.str cidr_ip: IPv4 CIDR or IPv6 CIDR of the source address
+        :param builtins.str creation_time: Security group rule creation time
+        :param builtins.str description: Description for the security group rule. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1–255 characters. If not specified, the original configuration is retained
+        :param builtins.str direction: Security group rule direction. ingress: inbound direction. egress: outbound direction
+        :param builtins.str policy: Access policy. For resources specified by CidrIp, SourceGroupId, or PrefixListId, refers to the NICs in the security group. Values: accept (allow), drop (deny)
+        :param builtins.int port_end: Port range end value. 1. When Protocol is set to tcp or udp, the valid range is 1–65535. 2. When Protocol is set to icmp, icmpv6, or all, only -1 is supported, indicating no port restriction
+        :param builtins.int port_start: Port range start value. 1. When Protocol is tcp or udp, range is 1–65535. 2. When Protocol is icmp, icmpv6, or all, only -1 is supported, meaning no port restriction
+        :param Sequence[builtins.str] prefix_list_cidrs: Prefix list CIDR
+        :param builtins.str prefix_list_id: Prefix list ID
+        :param builtins.int priority: Security group rule priority. Lower numbers indicate higher priority. Value range: 1–100. Default: 1 if not specified
+        :param builtins.str protocol: Protocol type. tcp, udp, icmp, icmpv6, all
+        :param builtins.str source_group_id: Source address security group ID. All NIC addresses in this security group are used as source addresses
+        :param builtins.str update_time: Security group rule update time
         """
         pulumi.set(__self__, "cidr_ip", cidr_ip)
         pulumi.set(__self__, "creation_time", creation_time)
@@ -3894,7 +3894,7 @@ class GetSecurityGroupEgressPermissionResult(dict):
     @pulumi.getter(name="cidrIp")
     def cidr_ip(self) -> builtins.str:
         """
-        源地址的IPv4 CIDR或IPv6 CIDR
+        IPv4 CIDR or IPv6 CIDR of the source address
         """
         return pulumi.get(self, "cidr_ip")
 
@@ -3902,7 +3902,7 @@ class GetSecurityGroupEgressPermissionResult(dict):
     @pulumi.getter(name="creationTime")
     def creation_time(self) -> builtins.str:
         """
-        安全组规则创建时间。
+        Security group rule creation time
         """
         return pulumi.get(self, "creation_time")
 
@@ -3910,7 +3910,7 @@ class GetSecurityGroupEgressPermissionResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
+        Description for the security group rule. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1–255 characters. If not specified, the original configuration is retained
         """
         return pulumi.get(self, "description")
 
@@ -3918,7 +3918,7 @@ class GetSecurityGroupEgressPermissionResult(dict):
     @pulumi.getter
     def direction(self) -> builtins.str:
         """
-        安全组规则方向。ingress：入方向。egress：出方向
+        Security group rule direction. ingress: inbound direction. egress: outbound direction
         """
         return pulumi.get(self, "direction")
 
@@ -3926,7 +3926,7 @@ class GetSecurityGroupEgressPermissionResult(dict):
     @pulumi.getter
     def policy(self) -> builtins.str:
         """
-        访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
+        Access policy. For resources specified by CidrIp, SourceGroupId, or PrefixListId, refers to the NICs in the security group. Values: accept (allow), drop (deny)
         """
         return pulumi.get(self, "policy")
 
@@ -3934,7 +3934,7 @@ class GetSecurityGroupEgressPermissionResult(dict):
     @pulumi.getter(name="portEnd")
     def port_end(self) -> builtins.int:
         """
-        端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+        Port range end value. 1. When Protocol is set to tcp or udp, the valid range is 1–65535. 2. When Protocol is set to icmp, icmpv6, or all, only -1 is supported, indicating no port restriction
         """
         return pulumi.get(self, "port_end")
 
@@ -3942,7 +3942,7 @@ class GetSecurityGroupEgressPermissionResult(dict):
     @pulumi.getter(name="portStart")
     def port_start(self) -> builtins.int:
         """
-        端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+        Port range start value. 1. When Protocol is tcp or udp, range is 1–65535. 2. When Protocol is icmp, icmpv6, or all, only -1 is supported, meaning no port restriction
         """
         return pulumi.get(self, "port_start")
 
@@ -3950,7 +3950,7 @@ class GetSecurityGroupEgressPermissionResult(dict):
     @pulumi.getter(name="prefixListCidrs")
     def prefix_list_cidrs(self) -> Sequence[builtins.str]:
         """
-        前缀列表的CIDR。
+        Prefix list CIDR
         """
         return pulumi.get(self, "prefix_list_cidrs")
 
@@ -3958,7 +3958,7 @@ class GetSecurityGroupEgressPermissionResult(dict):
     @pulumi.getter(name="prefixListId")
     def prefix_list_id(self) -> builtins.str:
         """
-        前缀列表的ID
+        Prefix list ID
         """
         return pulumi.get(self, "prefix_list_id")
 
@@ -3966,7 +3966,7 @@ class GetSecurityGroupEgressPermissionResult(dict):
     @pulumi.getter
     def priority(self) -> builtins.int:
         """
-        安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
+        Security group rule priority. Lower numbers indicate higher priority. Value range: 1–100. Default: 1 if not specified
         """
         return pulumi.get(self, "priority")
 
@@ -3974,7 +3974,7 @@ class GetSecurityGroupEgressPermissionResult(dict):
     @pulumi.getter
     def protocol(self) -> builtins.str:
         """
-        协议类型。tcp、udp、icmp、icmpv6、all
+        Protocol type. tcp, udp, icmp, icmpv6, all
         """
         return pulumi.get(self, "protocol")
 
@@ -3982,7 +3982,7 @@ class GetSecurityGroupEgressPermissionResult(dict):
     @pulumi.getter(name="sourceGroupId")
     def source_group_id(self) -> builtins.str:
         """
-        源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
+        Source address security group ID. All NIC addresses in this security group are used as source addresses
         """
         return pulumi.get(self, "source_group_id")
 
@@ -3990,7 +3990,7 @@ class GetSecurityGroupEgressPermissionResult(dict):
     @pulumi.getter(name="updateTime")
     def update_time(self) -> builtins.str:
         """
-        安全组规则更新时间。
+        Security group rule update time
         """
         return pulumi.get(self, "update_time")
 
@@ -4012,19 +4012,19 @@ class GetSecurityGroupIngressPermissionResult(dict):
                  source_group_id: builtins.str,
                  update_time: builtins.str):
         """
-        :param builtins.str cidr_ip: 源地址的IPv4 CIDR或IPv6 CIDR
-        :param builtins.str creation_time: 安全组规则创建时间。
-        :param builtins.str description: 安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
-        :param builtins.str direction: 安全组规则方向。ingress：入方向。egress：出方向
-        :param builtins.str policy: 访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
-        :param builtins.int port_end: 端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
-        :param builtins.int port_start: 端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
-        :param Sequence[builtins.str] prefix_list_cidrs: 前缀列表的CIDR。
-        :param builtins.str prefix_list_id: 前缀列表的ID
-        :param builtins.int priority: 安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
-        :param builtins.str protocol: 协议类型。tcp、udp、icmp、icmpv6、all
-        :param builtins.str source_group_id: 源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
-        :param builtins.str update_time: 安全组规则更新时间。
+        :param builtins.str cidr_ip: IPv4 CIDR or IPv6 CIDR of the source address
+        :param builtins.str creation_time: Security group rule creation time
+        :param builtins.str description: Description for the security group rule. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1–255 characters. If not specified, the original configuration is retained
+        :param builtins.str direction: Security group rule direction. ingress: inbound direction. egress: outbound direction
+        :param builtins.str policy: Access policy. For resources specified by CidrIp, SourceGroupId, or PrefixListId, refers to the NICs in the security group. Values: accept (allow), drop (deny)
+        :param builtins.int port_end: Port range end value. 1. When Protocol is set to tcp or udp, the valid range is 1–65535. 2. When Protocol is set to icmp, icmpv6, or all, only -1 is supported, indicating no port restriction
+        :param builtins.int port_start: Port range start value. 1. When Protocol is tcp or udp, range is 1–65535. 2. When Protocol is icmp, icmpv6, or all, only -1 is supported, meaning no port restriction
+        :param Sequence[builtins.str] prefix_list_cidrs: Prefix list CIDR
+        :param builtins.str prefix_list_id: Prefix list ID
+        :param builtins.int priority: Security group rule priority. Lower numbers indicate higher priority. Value range: 1–100. Default: 1 if not specified
+        :param builtins.str protocol: Protocol type. tcp, udp, icmp, icmpv6, all
+        :param builtins.str source_group_id: Source address security group ID. All NIC addresses in this security group are used as source addresses
+        :param builtins.str update_time: Security group rule update time
         """
         pulumi.set(__self__, "cidr_ip", cidr_ip)
         pulumi.set(__self__, "creation_time", creation_time)
@@ -4044,7 +4044,7 @@ class GetSecurityGroupIngressPermissionResult(dict):
     @pulumi.getter(name="cidrIp")
     def cidr_ip(self) -> builtins.str:
         """
-        源地址的IPv4 CIDR或IPv6 CIDR
+        IPv4 CIDR or IPv6 CIDR of the source address
         """
         return pulumi.get(self, "cidr_ip")
 
@@ -4052,7 +4052,7 @@ class GetSecurityGroupIngressPermissionResult(dict):
     @pulumi.getter(name="creationTime")
     def creation_time(self) -> builtins.str:
         """
-        安全组规则创建时间。
+        Security group rule creation time
         """
         return pulumi.get(self, "creation_time")
 
@@ -4060,7 +4060,7 @@ class GetSecurityGroupIngressPermissionResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        安全组规则的描述信息。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1~ 255个字符。不填保持原有配置。
+        Description for the security group rule. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1–255 characters. If not specified, the original configuration is retained
         """
         return pulumi.get(self, "description")
 
@@ -4068,7 +4068,7 @@ class GetSecurityGroupIngressPermissionResult(dict):
     @pulumi.getter
     def direction(self) -> builtins.str:
         """
-        安全组规则方向。ingress：入方向。egress：出方向
+        Security group rule direction. ingress: inbound direction. egress: outbound direction
         """
         return pulumi.get(self, "direction")
 
@@ -4076,7 +4076,7 @@ class GetSecurityGroupIngressPermissionResult(dict):
     @pulumi.getter
     def policy(self) -> builtins.str:
         """
-        访问策略。即CidrIp 、SourceGroupId 或 PrefixListId 对应的资源访问安全组内的网卡。取值如下：accept：允许；drop：拒绝。
+        Access policy. For resources specified by CidrIp, SourceGroupId, or PrefixListId, refers to the NICs in the security group. Values: accept (allow), drop (deny)
         """
         return pulumi.get(self, "policy")
 
@@ -4084,7 +4084,7 @@ class GetSecurityGroupIngressPermissionResult(dict):
     @pulumi.getter(name="portEnd")
     def port_end(self) -> builtins.int:
         """
-        端口范围结束值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+        Port range end value. 1. When Protocol is set to tcp or udp, the valid range is 1–65535. 2. When Protocol is set to icmp, icmpv6, or all, only -1 is supported, indicating no port restriction
         """
         return pulumi.get(self, "port_end")
 
@@ -4092,7 +4092,7 @@ class GetSecurityGroupIngressPermissionResult(dict):
     @pulumi.getter(name="portStart")
     def port_start(self) -> builtins.int:
         """
-        端口范围起始值。1、当Protocol 传入tcp或udp时，取值范围为1~65535。2、当Protocol 传入icmp、icmpv6或all时，仅支持传入-1，表示不限制端口
+        Port range start value. 1. When Protocol is tcp or udp, range is 1–65535. 2. When Protocol is icmp, icmpv6, or all, only -1 is supported, meaning no port restriction
         """
         return pulumi.get(self, "port_start")
 
@@ -4100,7 +4100,7 @@ class GetSecurityGroupIngressPermissionResult(dict):
     @pulumi.getter(name="prefixListCidrs")
     def prefix_list_cidrs(self) -> Sequence[builtins.str]:
         """
-        前缀列表的CIDR。
+        Prefix list CIDR
         """
         return pulumi.get(self, "prefix_list_cidrs")
 
@@ -4108,7 +4108,7 @@ class GetSecurityGroupIngressPermissionResult(dict):
     @pulumi.getter(name="prefixListId")
     def prefix_list_id(self) -> builtins.str:
         """
-        前缀列表的ID
+        Prefix list ID
         """
         return pulumi.get(self, "prefix_list_id")
 
@@ -4116,7 +4116,7 @@ class GetSecurityGroupIngressPermissionResult(dict):
     @pulumi.getter
     def priority(self) -> builtins.int:
         """
-        安全组规则优先级，数字越小，代表优先级越高。取值范围：1～100。不填默认值：1
+        Security group rule priority. Lower numbers indicate higher priority. Value range: 1–100. Default: 1 if not specified
         """
         return pulumi.get(self, "priority")
 
@@ -4124,7 +4124,7 @@ class GetSecurityGroupIngressPermissionResult(dict):
     @pulumi.getter
     def protocol(self) -> builtins.str:
         """
-        协议类型。tcp、udp、icmp、icmpv6、all
+        Protocol type. tcp, udp, icmp, icmpv6, all
         """
         return pulumi.get(self, "protocol")
 
@@ -4132,7 +4132,7 @@ class GetSecurityGroupIngressPermissionResult(dict):
     @pulumi.getter(name="sourceGroupId")
     def source_group_id(self) -> builtins.str:
         """
-        源地址安全组ID。即该安全组中的所有网卡的地址作为源地址。
+        Source address security group ID. All NIC addresses in this security group are used as source addresses
         """
         return pulumi.get(self, "source_group_id")
 
@@ -4140,7 +4140,7 @@ class GetSecurityGroupIngressPermissionResult(dict):
     @pulumi.getter(name="updateTime")
     def update_time(self) -> builtins.str:
         """
-        安全组规则更新时间。
+        Security group rule update time
         """
         return pulumi.get(self, "update_time")
 
@@ -4151,8 +4151,8 @@ class GetSecurityGroupTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: User tag key
+        :param builtins.str value: User tag value
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -4161,7 +4161,7 @@ class GetSecurityGroupTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        用户标签的标签键。
+        User tag key
         """
         return pulumi.get(self, "key")
 
@@ -4169,7 +4169,7 @@ class GetSecurityGroupTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        用户标签的标签值。
+        User tag value
         """
         return pulumi.get(self, "value")
 
@@ -4180,8 +4180,8 @@ class GetSubnetRouteTableResult(dict):
                  route_table_id: builtins.str,
                  route_table_type: builtins.str):
         """
-        :param builtins.str route_table_id: 子网关联的路由表ID。
-        :param builtins.str route_table_type: 子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+        :param builtins.str route_table_id: ID of the route table associated with the subnet
+        :param builtins.str route_table_type: Type of route table associated with the subnet. 1. System: System route table. 2. Custom: Custom route table
         """
         pulumi.set(__self__, "route_table_id", route_table_id)
         pulumi.set(__self__, "route_table_type", route_table_type)
@@ -4190,7 +4190,7 @@ class GetSubnetRouteTableResult(dict):
     @pulumi.getter(name="routeTableId")
     def route_table_id(self) -> builtins.str:
         """
-        子网关联的路由表ID。
+        ID of the route table associated with the subnet
         """
         return pulumi.get(self, "route_table_id")
 
@@ -4198,7 +4198,7 @@ class GetSubnetRouteTableResult(dict):
     @pulumi.getter(name="routeTableType")
     def route_table_type(self) -> builtins.str:
         """
-        子网关联的路由表的类型。1、System：表示系统路由表。2、Custom：表示自定义路由表。
+        Type of route table associated with the subnet. 1. System: System route table. 2. Custom: Custom route table
         """
         return pulumi.get(self, "route_table_type")
 
@@ -4209,8 +4209,8 @@ class GetSubnetTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: User tag key
+        :param builtins.str value: User tag value
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -4219,7 +4219,7 @@ class GetSubnetTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        用户标签的标签键。
+        User tag key
         """
         return pulumi.get(self, "key")
 
@@ -4227,7 +4227,7 @@ class GetSubnetTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        用户标签的标签值。
+        User tag value
         """
         return pulumi.get(self, "value")
 
@@ -4249,19 +4249,19 @@ class GetTrafficMirrorFilterEgressFilterRuleResult(dict):
                  traffic_mirror_filter_id: builtins.str,
                  traffic_mirror_filter_rule_id: builtins.str):
         """
-        :param builtins.str description: 筛选规则实例描述。
-        :param builtins.str destination_cidr_block: 筛选规则目的地址。
-        :param builtins.str destination_port_range: 筛选规则目的端口范围。
-        :param builtins.str policy: 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
-        :param builtins.int priority: 筛选规则优先级。
-        :param builtins.str project_name: 所属项目的名称。
-        :param builtins.str protocol: 筛选规则协议类型。
-        :param builtins.str source_cidr_block: 筛选规则源地址。
-        :param builtins.str source_port_range: 筛选规则源端口范围。
-        :param builtins.str status: 筛选规则状态。
-        :param builtins.str traffic_direction: 筛选规则方向。egress：出方向。ingress：入方向。
-        :param builtins.str traffic_mirror_filter_id: 筛选条件实例ID。
-        :param builtins.str traffic_mirror_filter_rule_id: 筛选规则实例ID。
+        :param builtins.str description: Filter rule instance description
+        :param builtins.str destination_cidr_block: Filter rule destination address
+        :param builtins.str destination_port_range: Filter rule destination port range
+        :param builtins.str policy: Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
+        :param builtins.int priority: Filter rule priority
+        :param builtins.str project_name: Project name
+        :param builtins.str protocol: Filter rule protocol type
+        :param builtins.str source_cidr_block: Filter rule source address
+        :param builtins.str source_port_range: Filter rule source port range
+        :param builtins.str status: Filter rule status
+        :param builtins.str traffic_direction: Filter rule direction. egress: Outbound. ingress: Inbound
+        :param builtins.str traffic_mirror_filter_id: Filter condition instance ID
+        :param builtins.str traffic_mirror_filter_rule_id: Filter rule instance ID
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "destination_cidr_block", destination_cidr_block)
@@ -4281,7 +4281,7 @@ class GetTrafficMirrorFilterEgressFilterRuleResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        筛选规则实例描述。
+        Filter rule instance description
         """
         return pulumi.get(self, "description")
 
@@ -4289,7 +4289,7 @@ class GetTrafficMirrorFilterEgressFilterRuleResult(dict):
     @pulumi.getter(name="destinationCidrBlock")
     def destination_cidr_block(self) -> builtins.str:
         """
-        筛选规则目的地址。
+        Filter rule destination address
         """
         return pulumi.get(self, "destination_cidr_block")
 
@@ -4297,7 +4297,7 @@ class GetTrafficMirrorFilterEgressFilterRuleResult(dict):
     @pulumi.getter(name="destinationPortRange")
     def destination_port_range(self) -> builtins.str:
         """
-        筛选规则目的端口范围。
+        Filter rule destination port range
         """
         return pulumi.get(self, "destination_port_range")
 
@@ -4305,7 +4305,7 @@ class GetTrafficMirrorFilterEgressFilterRuleResult(dict):
     @pulumi.getter
     def policy(self) -> builtins.str:
         """
-        筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+        Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
         """
         return pulumi.get(self, "policy")
 
@@ -4313,7 +4313,7 @@ class GetTrafficMirrorFilterEgressFilterRuleResult(dict):
     @pulumi.getter
     def priority(self) -> builtins.int:
         """
-        筛选规则优先级。
+        Filter rule priority
         """
         return pulumi.get(self, "priority")
 
@@ -4321,7 +4321,7 @@ class GetTrafficMirrorFilterEgressFilterRuleResult(dict):
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        所属项目的名称。
+        Project name
         """
         return pulumi.get(self, "project_name")
 
@@ -4329,7 +4329,7 @@ class GetTrafficMirrorFilterEgressFilterRuleResult(dict):
     @pulumi.getter
     def protocol(self) -> builtins.str:
         """
-        筛选规则协议类型。
+        Filter rule protocol type
         """
         return pulumi.get(self, "protocol")
 
@@ -4337,7 +4337,7 @@ class GetTrafficMirrorFilterEgressFilterRuleResult(dict):
     @pulumi.getter(name="sourceCidrBlock")
     def source_cidr_block(self) -> builtins.str:
         """
-        筛选规则源地址。
+        Filter rule source address
         """
         return pulumi.get(self, "source_cidr_block")
 
@@ -4345,7 +4345,7 @@ class GetTrafficMirrorFilterEgressFilterRuleResult(dict):
     @pulumi.getter(name="sourcePortRange")
     def source_port_range(self) -> builtins.str:
         """
-        筛选规则源端口范围。
+        Filter rule source port range
         """
         return pulumi.get(self, "source_port_range")
 
@@ -4353,7 +4353,7 @@ class GetTrafficMirrorFilterEgressFilterRuleResult(dict):
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        筛选规则状态。
+        Filter rule status
         """
         return pulumi.get(self, "status")
 
@@ -4361,7 +4361,7 @@ class GetTrafficMirrorFilterEgressFilterRuleResult(dict):
     @pulumi.getter(name="trafficDirection")
     def traffic_direction(self) -> builtins.str:
         """
-        筛选规则方向。egress：出方向。ingress：入方向。
+        Filter rule direction. egress: Outbound. ingress: Inbound
         """
         return pulumi.get(self, "traffic_direction")
 
@@ -4369,7 +4369,7 @@ class GetTrafficMirrorFilterEgressFilterRuleResult(dict):
     @pulumi.getter(name="trafficMirrorFilterId")
     def traffic_mirror_filter_id(self) -> builtins.str:
         """
-        筛选条件实例ID。
+        Filter condition instance ID
         """
         return pulumi.get(self, "traffic_mirror_filter_id")
 
@@ -4377,7 +4377,7 @@ class GetTrafficMirrorFilterEgressFilterRuleResult(dict):
     @pulumi.getter(name="trafficMirrorFilterRuleId")
     def traffic_mirror_filter_rule_id(self) -> builtins.str:
         """
-        筛选规则实例ID。
+        Filter rule instance ID
         """
         return pulumi.get(self, "traffic_mirror_filter_rule_id")
 
@@ -4399,19 +4399,19 @@ class GetTrafficMirrorFilterIngressFilterRuleResult(dict):
                  traffic_mirror_filter_id: builtins.str,
                  traffic_mirror_filter_rule_id: builtins.str):
         """
-        :param builtins.str description: 筛选规则实例描述。
-        :param builtins.str destination_cidr_block: 筛选规则目的地址。
-        :param builtins.str destination_port_range: 筛选规则目的端口范围。
-        :param builtins.str policy: 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
-        :param builtins.int priority: 筛选规则优先级。
-        :param builtins.str project_name: 所属项目的名称。
-        :param builtins.str protocol: 筛选规则协议类型。
-        :param builtins.str source_cidr_block: 筛选规则源地址。
-        :param builtins.str source_port_range: 筛选规则源端口范围。
-        :param builtins.str status: 筛选规则状态。
-        :param builtins.str traffic_direction: 筛选规则方向。egress：出方向。ingress：入方向。
-        :param builtins.str traffic_mirror_filter_id: 筛选条件实例ID。
-        :param builtins.str traffic_mirror_filter_rule_id: 筛选规则实例ID。
+        :param builtins.str description: Filter rule instance description
+        :param builtins.str destination_cidr_block: Filter rule destination address
+        :param builtins.str destination_port_range: Filter rule destination port range
+        :param builtins.str policy: Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
+        :param builtins.int priority: Filter rule priority
+        :param builtins.str project_name: Project name
+        :param builtins.str protocol: Filter rule protocol type
+        :param builtins.str source_cidr_block: Filter rule source address
+        :param builtins.str source_port_range: Filter rule source port range
+        :param builtins.str status: Filter rule status
+        :param builtins.str traffic_direction: Filter rule direction. egress: Outbound. ingress: Inbound
+        :param builtins.str traffic_mirror_filter_id: Filter condition instance ID
+        :param builtins.str traffic_mirror_filter_rule_id: Filter rule instance ID
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "destination_cidr_block", destination_cidr_block)
@@ -4431,7 +4431,7 @@ class GetTrafficMirrorFilterIngressFilterRuleResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        筛选规则实例描述。
+        Filter rule instance description
         """
         return pulumi.get(self, "description")
 
@@ -4439,7 +4439,7 @@ class GetTrafficMirrorFilterIngressFilterRuleResult(dict):
     @pulumi.getter(name="destinationCidrBlock")
     def destination_cidr_block(self) -> builtins.str:
         """
-        筛选规则目的地址。
+        Filter rule destination address
         """
         return pulumi.get(self, "destination_cidr_block")
 
@@ -4447,7 +4447,7 @@ class GetTrafficMirrorFilterIngressFilterRuleResult(dict):
     @pulumi.getter(name="destinationPortRange")
     def destination_port_range(self) -> builtins.str:
         """
-        筛选规则目的端口范围。
+        Filter rule destination port range
         """
         return pulumi.get(self, "destination_port_range")
 
@@ -4455,7 +4455,7 @@ class GetTrafficMirrorFilterIngressFilterRuleResult(dict):
     @pulumi.getter
     def policy(self) -> builtins.str:
         """
-        筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+        Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
         """
         return pulumi.get(self, "policy")
 
@@ -4463,7 +4463,7 @@ class GetTrafficMirrorFilterIngressFilterRuleResult(dict):
     @pulumi.getter
     def priority(self) -> builtins.int:
         """
-        筛选规则优先级。
+        Filter rule priority
         """
         return pulumi.get(self, "priority")
 
@@ -4471,7 +4471,7 @@ class GetTrafficMirrorFilterIngressFilterRuleResult(dict):
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        所属项目的名称。
+        Project name
         """
         return pulumi.get(self, "project_name")
 
@@ -4479,7 +4479,7 @@ class GetTrafficMirrorFilterIngressFilterRuleResult(dict):
     @pulumi.getter
     def protocol(self) -> builtins.str:
         """
-        筛选规则协议类型。
+        Filter rule protocol type
         """
         return pulumi.get(self, "protocol")
 
@@ -4487,7 +4487,7 @@ class GetTrafficMirrorFilterIngressFilterRuleResult(dict):
     @pulumi.getter(name="sourceCidrBlock")
     def source_cidr_block(self) -> builtins.str:
         """
-        筛选规则源地址。
+        Filter rule source address
         """
         return pulumi.get(self, "source_cidr_block")
 
@@ -4495,7 +4495,7 @@ class GetTrafficMirrorFilterIngressFilterRuleResult(dict):
     @pulumi.getter(name="sourcePortRange")
     def source_port_range(self) -> builtins.str:
         """
-        筛选规则源端口范围。
+        Filter rule source port range
         """
         return pulumi.get(self, "source_port_range")
 
@@ -4503,7 +4503,7 @@ class GetTrafficMirrorFilterIngressFilterRuleResult(dict):
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        筛选规则状态。
+        Filter rule status
         """
         return pulumi.get(self, "status")
 
@@ -4511,7 +4511,7 @@ class GetTrafficMirrorFilterIngressFilterRuleResult(dict):
     @pulumi.getter(name="trafficDirection")
     def traffic_direction(self) -> builtins.str:
         """
-        筛选规则方向。egress：出方向。ingress：入方向。
+        Filter rule direction. egress: Outbound. ingress: Inbound
         """
         return pulumi.get(self, "traffic_direction")
 
@@ -4519,7 +4519,7 @@ class GetTrafficMirrorFilterIngressFilterRuleResult(dict):
     @pulumi.getter(name="trafficMirrorFilterId")
     def traffic_mirror_filter_id(self) -> builtins.str:
         """
-        筛选条件实例ID。
+        Filter condition instance ID
         """
         return pulumi.get(self, "traffic_mirror_filter_id")
 
@@ -4527,7 +4527,7 @@ class GetTrafficMirrorFilterIngressFilterRuleResult(dict):
     @pulumi.getter(name="trafficMirrorFilterRuleId")
     def traffic_mirror_filter_rule_id(self) -> builtins.str:
         """
-        筛选规则实例ID。
+        Filter rule instance ID
         """
         return pulumi.get(self, "traffic_mirror_filter_rule_id")
 
@@ -4538,8 +4538,8 @@ class GetTrafficMirrorFilterTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -4548,7 +4548,7 @@ class GetTrafficMirrorFilterTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -4556,7 +4556,7 @@ class GetTrafficMirrorFilterTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -4567,8 +4567,8 @@ class GetTrafficMirrorSessionTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -4577,7 +4577,7 @@ class GetTrafficMirrorSessionTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -4585,7 +4585,7 @@ class GetTrafficMirrorSessionTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -4596,8 +4596,8 @@ class GetTrafficMirrorTargetTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
-        :param builtins.str value: 标签的标签值。长度取值范围为0～256字符，不填默认为空。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+        :param builtins.str key: Tag key. Length must be between 1 and 128 characters. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system will automatically remove it.
+        :param builtins.str value: Tag value. Length must be between 0 and 256 characters. If not specified, the default is empty. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -4606,7 +4606,7 @@ class GetTrafficMirrorTargetTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。若标签键开头或结尾存在空格，系统会自动为其去除。
+        Tag key. Length must be between 1 and 128 characters. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). If the tag key starts or ends with a space, the system will automatically remove it.
         """
         return pulumi.get(self, "key")
 
@@ -4614,7 +4614,7 @@ class GetTrafficMirrorTargetTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签的标签值。长度取值范围为0～256字符，不填默认为空。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和@（@）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+        Tag value. Length must be between 0 and 256 characters. If not specified, the default is empty. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
         """
         return pulumi.get(self, "value")
 
@@ -4626,9 +4626,9 @@ class GetVpcAssociateCenResult(dict):
                  cen_owner_id: builtins.str,
                  cen_status: builtins.str):
         """
-        :param builtins.str cen_id: CEN的ID。
-        :param builtins.str cen_owner_id: CEN的用户ID。
-        :param builtins.str cen_status: VPC在CEN中的状态。Attaching：加载中，Attached：已加载
+        :param builtins.str cen_id: ID of the CEN.
+        :param builtins.str cen_owner_id: User ID of the CEN.
+        :param builtins.str cen_status: Status of the VPC in the CEN. Loading: loading, Loaded: loaded
         """
         pulumi.set(__self__, "cen_id", cen_id)
         pulumi.set(__self__, "cen_owner_id", cen_owner_id)
@@ -4638,7 +4638,7 @@ class GetVpcAssociateCenResult(dict):
     @pulumi.getter(name="cenId")
     def cen_id(self) -> builtins.str:
         """
-        CEN的ID。
+        ID of the CEN.
         """
         return pulumi.get(self, "cen_id")
 
@@ -4646,7 +4646,7 @@ class GetVpcAssociateCenResult(dict):
     @pulumi.getter(name="cenOwnerId")
     def cen_owner_id(self) -> builtins.str:
         """
-        CEN的用户ID。
+        User ID of the CEN.
         """
         return pulumi.get(self, "cen_owner_id")
 
@@ -4654,7 +4654,7 @@ class GetVpcAssociateCenResult(dict):
     @pulumi.getter(name="cenStatus")
     def cen_status(self) -> builtins.str:
         """
-        VPC在CEN中的状态。Attaching：加载中，Attached：已加载
+        Status of the VPC in the CEN. Loading: loading, Loaded: loaded
         """
         return pulumi.get(self, "cen_status")
 
@@ -4665,8 +4665,8 @@ class GetVpcTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key.
+        :param builtins.str value: Tag value.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -4675,7 +4675,7 @@ class GetVpcTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键。
+        Tag key.
         """
         return pulumi.get(self, "key")
 
@@ -4683,7 +4683,7 @@ class GetVpcTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 

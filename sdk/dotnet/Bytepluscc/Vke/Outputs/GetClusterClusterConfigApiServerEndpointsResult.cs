@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class GetClusterClusterConfigApiServerEndpointsResult
     {
         /// <summary>
-        /// 集群 API Server 私网的 IPv4 地址。
+        /// Cluster API Server private IPv4 address.
         /// </summary>
         public readonly Outputs.GetClusterClusterConfigApiServerEndpointsPrivateIpResult PrivateIp;
         /// <summary>
-        /// 集群 API Server 公网的 IPv4 地址。
+        /// Cluster API Server public IPv4 address
         /// </summary>
         public readonly Outputs.GetClusterClusterConfigApiServerEndpointsPublicIpResult PublicIp;
 

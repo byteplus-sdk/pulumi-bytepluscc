@@ -132,7 +132,7 @@ class GatewayBackendSpec(dict):
                  is_vke_with_flannel_cni_supported: Optional[builtins.bool] = None,
                  vke_pod_cidr: Optional[builtins.str] = None):
         """
-        :param builtins.bool is_vke_with_flannel_cni_supported: 是否支持VKE Flannel CNI。
+        :param builtins.bool is_vke_with_flannel_cni_supported: Whether VKE Flannel CNI is supported
         :param builtins.str vke_pod_cidr: VKE Pod CIDR。
         """
         if is_vke_with_flannel_cni_supported is not None:
@@ -144,7 +144,7 @@ class GatewayBackendSpec(dict):
     @pulumi.getter(name="isVkeWithFlannelCniSupported")
     def is_vke_with_flannel_cni_supported(self) -> Optional[builtins.bool]:
         """
-        是否支持VKE Flannel CNI。
+        Whether VKE Flannel CNI is supported
         """
         return pulumi.get(self, "is_vke_with_flannel_cni_supported")
 
@@ -230,8 +230,8 @@ class GatewayCustomLogCustomVariable(dict):
                  aliases_in_log: Optional[builtins.str] = None,
                  key: Optional[builtins.str] = None):
         """
-        :param builtins.str aliases_in_log: 字段别名。
-        :param builtins.str key: 请求头键。
+        :param builtins.str aliases_in_log: Field alias
+        :param builtins.str key: Request header key
         """
         if aliases_in_log is not None:
             pulumi.set(__self__, "aliases_in_log", aliases_in_log)
@@ -242,7 +242,7 @@ class GatewayCustomLogCustomVariable(dict):
     @pulumi.getter(name="aliasesInLog")
     def aliases_in_log(self) -> Optional[builtins.str]:
         """
-        字段别名。
+        Field alias
         """
         return pulumi.get(self, "aliases_in_log")
 
@@ -250,7 +250,7 @@ class GatewayCustomLogCustomVariable(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        请求头键。
+        Request header key
         """
         return pulumi.get(self, "key")
 
@@ -278,8 +278,8 @@ class GatewayCustomLogRequestHeader(dict):
                  aliases_in_log: Optional[builtins.str] = None,
                  key: Optional[builtins.str] = None):
         """
-        :param builtins.str aliases_in_log: 字段别名。
-        :param builtins.str key: 请求头键。
+        :param builtins.str aliases_in_log: Field alias
+        :param builtins.str key: Request header key
         """
         if aliases_in_log is not None:
             pulumi.set(__self__, "aliases_in_log", aliases_in_log)
@@ -290,7 +290,7 @@ class GatewayCustomLogRequestHeader(dict):
     @pulumi.getter(name="aliasesInLog")
     def aliases_in_log(self) -> Optional[builtins.str]:
         """
-        字段别名。
+        Field alias
         """
         return pulumi.get(self, "aliases_in_log")
 
@@ -298,7 +298,7 @@ class GatewayCustomLogRequestHeader(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        请求头键。
+        Request header key
         """
         return pulumi.get(self, "key")
 
@@ -326,8 +326,8 @@ class GatewayCustomLogResponseHeader(dict):
                  aliases_in_log: Optional[builtins.str] = None,
                  key: Optional[builtins.str] = None):
         """
-        :param builtins.str aliases_in_log: 字段别名。
-        :param builtins.str key: 请求头键。
+        :param builtins.str aliases_in_log: Field alias
+        :param builtins.str key: Request header key
         """
         if aliases_in_log is not None:
             pulumi.set(__self__, "aliases_in_log", aliases_in_log)
@@ -338,7 +338,7 @@ class GatewayCustomLogResponseHeader(dict):
     @pulumi.getter(name="aliasesInLog")
     def aliases_in_log(self) -> Optional[builtins.str]:
         """
-        字段别名。
+        Field alias
         """
         return pulumi.get(self, "aliases_in_log")
 
@@ -346,7 +346,7 @@ class GatewayCustomLogResponseHeader(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        请求头键。
+        Request header key
         """
         return pulumi.get(self, "key")
 
@@ -376,10 +376,10 @@ class GatewayEvent(dict):
                  data: Optional[builtins.str] = None,
                  description: Optional[builtins.str] = None):
         """
-        :param builtins.str code: 事件代码。
-        :param builtins.str created_time: 事件创建时间。
-        :param builtins.str data: 附带信息。
-        :param builtins.str description: 事件描述。
+        :param builtins.str code: Event code
+        :param builtins.str created_time: Event creation time
+        :param builtins.str data: Additional information
+        :param builtins.str description: Event description
         """
         if code is not None:
             pulumi.set(__self__, "code", code)
@@ -394,7 +394,7 @@ class GatewayEvent(dict):
     @pulumi.getter
     def code(self) -> Optional[builtins.str]:
         """
-        事件代码。
+        Event code
         """
         return pulumi.get(self, "code")
 
@@ -402,7 +402,7 @@ class GatewayEvent(dict):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[builtins.str]:
         """
-        事件创建时间。
+        Event creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -410,7 +410,7 @@ class GatewayEvent(dict):
     @pulumi.getter
     def data(self) -> Optional[builtins.str]:
         """
-        附带信息。
+        Additional information
         """
         return pulumi.get(self, "data")
 
@@ -418,7 +418,7 @@ class GatewayEvent(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        事件描述。
+        Event description
         """
         return pulumi.get(self, "description")
 
@@ -449,9 +449,9 @@ class GatewayLogSpec(dict):
                  project_id: Optional[builtins.str] = None,
                  topic_id: Optional[builtins.str] = None):
         """
-        :param builtins.bool enable: 是否开启日志服务。
-        :param builtins.str project_id: 日志项目ID。
-        :param builtins.str topic_id: 日志主题ID。ProjectId 指定项目里面的日志主题。
+        :param builtins.bool enable: Whether to enable log service
+        :param builtins.str project_id: Log project ID
+        :param builtins.str topic_id: Log topic ID. ProjectId specifies the log topic within the project
         """
         if enable is not None:
             pulumi.set(__self__, "enable", enable)
@@ -464,7 +464,7 @@ class GatewayLogSpec(dict):
     @pulumi.getter
     def enable(self) -> Optional[builtins.bool]:
         """
-        是否开启日志服务。
+        Whether to enable log service
         """
         return pulumi.get(self, "enable")
 
@@ -472,7 +472,7 @@ class GatewayLogSpec(dict):
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[builtins.str]:
         """
-        日志项目ID。
+        Log project ID
         """
         return pulumi.get(self, "project_id")
 
@@ -480,7 +480,7 @@ class GatewayLogSpec(dict):
     @pulumi.getter(name="topicId")
     def topic_id(self) -> Optional[builtins.str]:
         """
-        日志主题ID。ProjectId 指定项目里面的日志主题。
+        Log topic ID. ProjectId specifies the log topic within the project
         """
         return pulumi.get(self, "topic_id")
 
@@ -508,8 +508,8 @@ class GatewayMonitorSpec(dict):
                  enable: Optional[builtins.bool] = None,
                  workspace_id: Optional[builtins.str] = None):
         """
-        :param builtins.bool enable: 托管Prometheus（VMP）服务。
-        :param builtins.str workspace_id: Prometheus工作区ID。
+        :param builtins.bool enable: Managed Prometheus (VMP) service
+        :param builtins.str workspace_id: Prometheus workspace ID
         """
         if enable is not None:
             pulumi.set(__self__, "enable", enable)
@@ -520,7 +520,7 @@ class GatewayMonitorSpec(dict):
     @pulumi.getter
     def enable(self) -> Optional[builtins.bool]:
         """
-        托管Prometheus（VMP）服务。
+        Managed Prometheus (VMP) service
         """
         return pulumi.get(self, "enable")
 
@@ -528,7 +528,7 @@ class GatewayMonitorSpec(dict):
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> Optional[builtins.str]:
         """
-        Prometheus工作区ID。
+        Prometheus workspace ID
         """
         return pulumi.get(self, "workspace_id")
 
@@ -560,7 +560,7 @@ class GatewayNetworkSpec(dict):
                  vpc_name: Optional[builtins.str] = None):
         """
         :param builtins.str vpc_id: VPC ID。
-        :param builtins.str vpc_name: VPC名称。
+        :param builtins.str vpc_name: VPC name
         """
         if subnets is not None:
             pulumi.set(__self__, "subnets", subnets)
@@ -586,7 +586,7 @@ class GatewayNetworkSpec(dict):
     @pulumi.getter(name="vpcName")
     def vpc_name(self) -> Optional[builtins.str]:
         """
-        VPC名称。
+        VPC name
         """
         return pulumi.get(self, "vpc_name")
 
@@ -617,9 +617,9 @@ class GatewayNetworkSpecSubnet(dict):
                  subnet_id: Optional[builtins.str] = None,
                  subnet_name: Optional[builtins.str] = None):
         """
-        :param builtins.str az: 可用区。
-        :param builtins.str subnet_id: 子网ID。
-        :param builtins.str subnet_name: 子网名称。
+        :param builtins.str az: Availability zone
+        :param builtins.str subnet_id: Subnet ID
+        :param builtins.str subnet_name: Subnet name
         """
         if az is not None:
             pulumi.set(__self__, "az", az)
@@ -632,7 +632,7 @@ class GatewayNetworkSpecSubnet(dict):
     @pulumi.getter
     def az(self) -> Optional[builtins.str]:
         """
-        可用区。
+        Availability zone
         """
         return pulumi.get(self, "az")
 
@@ -640,7 +640,7 @@ class GatewayNetworkSpecSubnet(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[builtins.str]:
         """
-        子网ID。
+        Subnet ID
         """
         return pulumi.get(self, "subnet_id")
 
@@ -648,7 +648,7 @@ class GatewayNetworkSpecSubnet(dict):
     @pulumi.getter(name="subnetName")
     def subnet_name(self) -> Optional[builtins.str]:
         """
-        子网名称。
+        Subnet name
         """
         return pulumi.get(self, "subnet_name")
 
@@ -688,12 +688,12 @@ class GatewayResourceSpec(dict):
                  public_network_billing_type: Optional[builtins.str] = None,
                  replicas: Optional[builtins.int] = None):
         """
-        :param builtins.str clb_spec_code: CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
-        :param builtins.str instance_spec_code: 节点规格，取值：1c2g。2c4g。4c8g。8c16g。
-        :param 'GatewayResourceSpecNetworkTypeArgs' network_type: 网络类型。默认值为开启公网，开启私网。
-        :param builtins.int public_network_bandwidth: 公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
-        :param builtins.str public_network_billing_type: 公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
-        :param builtins.int replicas: 节点数量。取值限制为2~100。
+        :param builtins.str clb_spec_code: CLB specification code. CLB specifications. Options: small*1: Small I; small*2: Small II; medium*1: Medium I; medium*2: Medium II; large*1: Large I; large*2: Large II
+        :param builtins.str instance_spec_code: Node specifications. Options: 1c2g, 2c4g, 4c8g, 8c16g
+        :param 'GatewayResourceSpecNetworkTypeArgs' network_type: Network type. Default value: enable public network, enable private network
+        :param builtins.int public_network_bandwidth: Public network bandwidth limit. This field is only used for the 'bandwidth limit billing' public network billing method. Unit: Mbps. Value range: 0–500. Default value: 0
+        :param builtins.str public_network_billing_type: Public network billing method. Options: traffic: billed by actual traffic; bandwidth: billed by bandwidth limit
+        :param builtins.int replicas: Node count. Value range: 2–100
         """
         if clb_spec_code is not None:
             pulumi.set(__self__, "clb_spec_code", clb_spec_code)
@@ -712,7 +712,7 @@ class GatewayResourceSpec(dict):
     @pulumi.getter(name="clbSpecCode")
     def clb_spec_code(self) -> Optional[builtins.str]:
         """
-        CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+        CLB specification code. CLB specifications. Options: small*1: Small I; small*2: Small II; medium*1: Medium I; medium*2: Medium II; large*1: Large I; large*2: Large II
         """
         return pulumi.get(self, "clb_spec_code")
 
@@ -720,7 +720,7 @@ class GatewayResourceSpec(dict):
     @pulumi.getter(name="instanceSpecCode")
     def instance_spec_code(self) -> Optional[builtins.str]:
         """
-        节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+        Node specifications. Options: 1c2g, 2c4g, 4c8g, 8c16g
         """
         return pulumi.get(self, "instance_spec_code")
 
@@ -728,7 +728,7 @@ class GatewayResourceSpec(dict):
     @pulumi.getter(name="networkType")
     def network_type(self) -> Optional['outputs.GatewayResourceSpecNetworkType']:
         """
-        网络类型。默认值为开启公网，开启私网。
+        Network type. Default value: enable public network, enable private network
         """
         return pulumi.get(self, "network_type")
 
@@ -736,7 +736,7 @@ class GatewayResourceSpec(dict):
     @pulumi.getter(name="publicNetworkBandwidth")
     def public_network_bandwidth(self) -> Optional[builtins.int]:
         """
-        公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+        Public network bandwidth limit. This field is only used for the 'bandwidth limit billing' public network billing method. Unit: Mbps. Value range: 0–500. Default value: 0
         """
         return pulumi.get(self, "public_network_bandwidth")
 
@@ -744,7 +744,7 @@ class GatewayResourceSpec(dict):
     @pulumi.getter(name="publicNetworkBillingType")
     def public_network_billing_type(self) -> Optional[builtins.str]:
         """
-        公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+        Public network billing method. Options: traffic: billed by actual traffic; bandwidth: billed by bandwidth limit
         """
         return pulumi.get(self, "public_network_billing_type")
 
@@ -752,7 +752,7 @@ class GatewayResourceSpec(dict):
     @pulumi.getter
     def replicas(self) -> Optional[builtins.int]:
         """
-        节点数量。取值限制为2~100。
+        Node count. Value range: 2–100
         """
         return pulumi.get(self, "replicas")
 
@@ -782,8 +782,8 @@ class GatewayResourceSpecNetworkType(dict):
                  enable_private_network: Optional[builtins.bool] = None,
                  enable_public_network: Optional[builtins.bool] = None):
         """
-        :param builtins.bool enable_private_network: 是否启用私网。
-        :param builtins.bool enable_public_network: 是否启用公网。
+        :param builtins.bool enable_private_network: Whether to enable private network
+        :param builtins.bool enable_public_network: Whether to enable public network
         """
         if enable_private_network is not None:
             pulumi.set(__self__, "enable_private_network", enable_private_network)
@@ -794,7 +794,7 @@ class GatewayResourceSpecNetworkType(dict):
     @pulumi.getter(name="enablePrivateNetwork")
     def enable_private_network(self) -> Optional[builtins.bool]:
         """
-        是否启用私网。
+        Whether to enable private network
         """
         return pulumi.get(self, "enable_private_network")
 
@@ -802,7 +802,7 @@ class GatewayResourceSpecNetworkType(dict):
     @pulumi.getter(name="enablePublicNetwork")
     def enable_public_network(self) -> Optional[builtins.bool]:
         """
-        是否启用公网。
+        Whether to enable public network
         """
         return pulumi.get(self, "enable_public_network")
 
@@ -812,7 +812,7 @@ class GatewayServiceAuthSpec(dict):
     def __init__(__self__, *,
                  enable: Optional[builtins.bool] = None):
         """
-        :param builtins.bool enable: 是否开启认证。
+        :param builtins.bool enable: Whether authentication is enabled.
         """
         if enable is not None:
             pulumi.set(__self__, "enable", enable)
@@ -821,7 +821,7 @@ class GatewayServiceAuthSpec(dict):
     @pulumi.getter
     def enable(self) -> Optional[builtins.bool]:
         """
-        是否开启认证。
+        Whether authentication is enabled.
         """
         return pulumi.get(self, "enable")
 
@@ -838,8 +838,8 @@ class GatewayServiceDomain(dict):
                  domain: Optional[builtins.str] = None,
                  type: Optional[builtins.str] = None):
         """
-        :param builtins.str domain: 域名。
-        :param builtins.str type: 域名类型。取值：public：公网。private：私网。
+        :param builtins.str domain: Domain.
+        :param builtins.str type: Domain type. Options: public: Public network. private: Private network.
         """
         if domain is not None:
             pulumi.set(__self__, "domain", domain)
@@ -850,7 +850,7 @@ class GatewayServiceDomain(dict):
     @pulumi.getter
     def domain(self) -> Optional[builtins.str]:
         """
-        域名。
+        Domain.
         """
         return pulumi.get(self, "domain")
 
@@ -858,7 +858,7 @@ class GatewayServiceDomain(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        域名类型。取值：public：公网。private：私网。
+        Domain type. Options: public: Public network. private: Private network.
         """
         return pulumi.get(self, "type")
 
@@ -885,7 +885,7 @@ class GatewayServiceDomainSpec(dict):
     def __init__(__self__, *,
                  enable_public_resolution: Optional[builtins.bool] = None):
         """
-        :param builtins.bool enable_public_resolution: 开启私网域名公网解析。
+        :param builtins.bool enable_public_resolution: Enable public resolution for private network domains.
         """
         if enable_public_resolution is not None:
             pulumi.set(__self__, "enable_public_resolution", enable_public_resolution)
@@ -894,7 +894,7 @@ class GatewayServiceDomainSpec(dict):
     @pulumi.getter(name="enablePublicResolution")
     def enable_public_resolution(self) -> Optional[builtins.bool]:
         """
-        开启私网域名公网解析。
+        Enable public resolution for private network domains.
         """
         return pulumi.get(self, "enable_public_resolution")
 
@@ -927,9 +927,9 @@ class GatewayServiceServiceNetworkSpec(dict):
                  enable_public_network: Optional[builtins.bool] = None,
                  private_network_ips: Optional[Sequence[builtins.str]] = None):
         """
-        :param builtins.bool enable_private_network: 开启私网。
-        :param builtins.bool enable_public_network: 开启公网。
-        :param Sequence[builtins.str] private_network_ips: 私网域名解析的目标IP。
+        :param builtins.bool enable_private_network: Enable private network.
+        :param builtins.bool enable_public_network: Enable public network.
+        :param Sequence[builtins.str] private_network_ips: Target IP for private network domain resolution.
         """
         if enable_private_network is not None:
             pulumi.set(__self__, "enable_private_network", enable_private_network)
@@ -942,7 +942,7 @@ class GatewayServiceServiceNetworkSpec(dict):
     @pulumi.getter(name="enablePrivateNetwork")
     def enable_private_network(self) -> Optional[builtins.bool]:
         """
-        开启私网。
+        Enable private network.
         """
         return pulumi.get(self, "enable_private_network")
 
@@ -950,7 +950,7 @@ class GatewayServiceServiceNetworkSpec(dict):
     @pulumi.getter(name="enablePublicNetwork")
     def enable_public_network(self) -> Optional[builtins.bool]:
         """
-        开启公网。
+        Enable public network.
         """
         return pulumi.get(self, "enable_public_network")
 
@@ -958,7 +958,7 @@ class GatewayServiceServiceNetworkSpec(dict):
     @pulumi.getter(name="privateNetworkIps")
     def private_network_ips(self) -> Optional[Sequence[builtins.str]]:
         """
-        私网域名解析的目标IP。
+        Target IP for private network domain resolution.
         """
         return pulumi.get(self, "private_network_ips")
 
@@ -992,10 +992,10 @@ class GatewayTraceSpec(dict):
                  tls_trace_spec: Optional['outputs.GatewayTraceSpecTlsTraceSpec'] = None,
                  trace_type: Optional[builtins.str] = None):
         """
-        :param 'GatewayTraceSpecApmTraceSpecArgs' apm_trace_spec: 应用性能监控全链路版链路追踪配置。
-        :param builtins.bool enable: 是否启用链路追踪。
-        :param 'GatewayTraceSpecTlsTraceSpecArgs' tls_trace_spec: 链路追踪配置信息。
-        :param builtins.str trace_type: 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+        :param 'GatewayTraceSpecApmTraceSpecArgs' apm_trace_spec: Application performance monitoring full-link trace configuration
+        :param builtins.bool enable: Whether to enable trace
+        :param 'GatewayTraceSpecTlsTraceSpecArgs' tls_trace_spec: Link tracing configuration information.
+        :param builtins.str trace_type: Link tracing type. Possible values: tls: Log Service. apm: Application Performance Monitoring (APM) end-to-end version.
         """
         if apm_trace_spec is not None:
             pulumi.set(__self__, "apm_trace_spec", apm_trace_spec)
@@ -1010,7 +1010,7 @@ class GatewayTraceSpec(dict):
     @pulumi.getter(name="apmTraceSpec")
     def apm_trace_spec(self) -> Optional['outputs.GatewayTraceSpecApmTraceSpec']:
         """
-        应用性能监控全链路版链路追踪配置。
+        Application performance monitoring full-link trace configuration
         """
         return pulumi.get(self, "apm_trace_spec")
 
@@ -1018,7 +1018,7 @@ class GatewayTraceSpec(dict):
     @pulumi.getter
     def enable(self) -> Optional[builtins.bool]:
         """
-        是否启用链路追踪。
+        Whether to enable trace
         """
         return pulumi.get(self, "enable")
 
@@ -1026,7 +1026,7 @@ class GatewayTraceSpec(dict):
     @pulumi.getter(name="tlsTraceSpec")
     def tls_trace_spec(self) -> Optional['outputs.GatewayTraceSpecTlsTraceSpec']:
         """
-        链路追踪配置信息。
+        Link tracing configuration information.
         """
         return pulumi.get(self, "tls_trace_spec")
 
@@ -1034,7 +1034,7 @@ class GatewayTraceSpec(dict):
     @pulumi.getter(name="traceType")
     def trace_type(self) -> Optional[builtins.str]:
         """
-        链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+        Link tracing type. Possible values: tls: Log Service. apm: Application Performance Monitoring (APM) end-to-end version.
         """
         return pulumi.get(self, "trace_type")
 
@@ -1108,7 +1108,7 @@ class GatewayTraceSpecTlsTraceSpec(dict):
         """
         :param builtins.str iam_user_ak: Access key。
         :param builtins.str iam_user_sk: Secret key。
-        :param builtins.str project_id: 日志项目ID。
+        :param builtins.str project_id: Log project ID
         :param builtins.str trace_id: Trace ID。
         """
         if iam_user_ak is not None:
@@ -1140,7 +1140,7 @@ class GatewayTraceSpecTlsTraceSpec(dict):
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[builtins.str]:
         """
-        日志项目ID。
+        Log project ID
         """
         return pulumi.get(self, "project_id")
 
@@ -1177,9 +1177,9 @@ class UpstreamBackendTarget(dict):
                  ip: Optional[builtins.str] = None,
                  port: Optional[builtins.int] = None):
         """
-        :param builtins.str health_status: 健康检查状态。
-        :param builtins.str ip: 后端节点IP。
-        :param builtins.int port: 后端节点端口。
+        :param builtins.str health_status: Health Check Status
+        :param builtins.str ip: Backend node IP
+        :param builtins.int port: Backend node port
         """
         if health_status is not None:
             pulumi.set(__self__, "health_status", health_status)
@@ -1192,7 +1192,7 @@ class UpstreamBackendTarget(dict):
     @pulumi.getter(name="healthStatus")
     def health_status(self) -> Optional[builtins.str]:
         """
-        健康检查状态。
+        Health Check Status
         """
         return pulumi.get(self, "health_status")
 
@@ -1200,7 +1200,7 @@ class UpstreamBackendTarget(dict):
     @pulumi.getter
     def ip(self) -> Optional[builtins.str]:
         """
-        后端节点IP。
+        Backend node IP
         """
         return pulumi.get(self, "ip")
 
@@ -1208,7 +1208,7 @@ class UpstreamBackendTarget(dict):
     @pulumi.getter
     def port(self) -> Optional[builtins.int]:
         """
-        后端节点端口。
+        Backend node port
         """
         return pulumi.get(self, "port")
 
@@ -1246,12 +1246,12 @@ class UpstreamCircuitBreakingSettings(dict):
                  max_ejection_percent: Optional[builtins.int] = None,
                  min_health_percent: Optional[builtins.int] = None):
         """
-        :param builtins.int base_ejection_time: 最小弹出时间。单位为毫秒。取值限制为1~86400000。默认值为30秒。
-        :param builtins.int consecutive_errors: 连续失败次数。取值限制为1~100。默认值为5。
-        :param builtins.bool enable: 开启。
-        :param builtins.int interval: 计算周期。单位为毫秒。取值限制为1~86400000。默认值为10秒。
-        :param builtins.int max_ejection_percent: 最大熔断比例。取值限制为1~100。默认值为20%。
-        :param builtins.int min_health_percent: 最小健康比例。取值限制为0~100。默认值为60%。
+        :param builtins.int base_ejection_time: Minimum pop time, in milliseconds. Value range: 1–86400000. Default: 30 seconds
+        :param builtins.int consecutive_errors: Consecutive failure count. Value range: 1~100. Default: 5
+        :param builtins.bool enable: Enable
+        :param builtins.int interval: Calculation cycle, in milliseconds. Value range: 1–86400000. Default: 10 seconds
+        :param builtins.int max_ejection_percent: Maximum circuit breaking ratio. Value range: 1~100. Default: 20%
+        :param builtins.int min_health_percent: Minimum health ratio. Value range: 0~100. Default: 60%
         """
         if base_ejection_time is not None:
             pulumi.set(__self__, "base_ejection_time", base_ejection_time)
@@ -1270,7 +1270,7 @@ class UpstreamCircuitBreakingSettings(dict):
     @pulumi.getter(name="baseEjectionTime")
     def base_ejection_time(self) -> Optional[builtins.int]:
         """
-        最小弹出时间。单位为毫秒。取值限制为1~86400000。默认值为30秒。
+        Minimum pop time, in milliseconds. Value range: 1–86400000. Default: 30 seconds
         """
         return pulumi.get(self, "base_ejection_time")
 
@@ -1278,7 +1278,7 @@ class UpstreamCircuitBreakingSettings(dict):
     @pulumi.getter(name="consecutiveErrors")
     def consecutive_errors(self) -> Optional[builtins.int]:
         """
-        连续失败次数。取值限制为1~100。默认值为5。
+        Consecutive failure count. Value range: 1~100. Default: 5
         """
         return pulumi.get(self, "consecutive_errors")
 
@@ -1286,7 +1286,7 @@ class UpstreamCircuitBreakingSettings(dict):
     @pulumi.getter
     def enable(self) -> Optional[builtins.bool]:
         """
-        开启。
+        Enable
         """
         return pulumi.get(self, "enable")
 
@@ -1294,7 +1294,7 @@ class UpstreamCircuitBreakingSettings(dict):
     @pulumi.getter
     def interval(self) -> Optional[builtins.int]:
         """
-        计算周期。单位为毫秒。取值限制为1~86400000。默认值为10秒。
+        Calculation cycle, in milliseconds. Value range: 1–86400000. Default: 10 seconds
         """
         return pulumi.get(self, "interval")
 
@@ -1302,7 +1302,7 @@ class UpstreamCircuitBreakingSettings(dict):
     @pulumi.getter(name="maxEjectionPercent")
     def max_ejection_percent(self) -> Optional[builtins.int]:
         """
-        最大熔断比例。取值限制为1~100。默认值为20%。
+        Maximum circuit breaking ratio. Value range: 1~100. Default: 20%
         """
         return pulumi.get(self, "max_ejection_percent")
 
@@ -1310,7 +1310,7 @@ class UpstreamCircuitBreakingSettings(dict):
     @pulumi.getter(name="minHealthPercent")
     def min_health_percent(self) -> Optional[builtins.int]:
         """
-        最小健康比例。取值限制为0~100。默认值为60%。
+        Minimum health ratio. Value range: 0~100. Default: 60%
         """
         return pulumi.get(self, "min_health_percent")
 
@@ -1344,10 +1344,10 @@ class UpstreamConnectionPoolSettings(dict):
                  idle_timeout: Optional[builtins.int] = None,
                  max_connections: Optional[builtins.int] = None):
         """
-        :param builtins.bool enable: 开启。
-        :param builtins.int http1_max_pending_requests: HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
-        :param builtins.int idle_timeout: 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
-        :param builtins.int max_connections: TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+        :param builtins.bool enable: Enable
+        :param builtins.int http1_max_pending_requests: Maximum HTTP/1 pending requests. Value range: 0~2^31-1. 0 means unlimited
+        :param builtins.int idle_timeout: Idle timeout, in seconds. Value range: 0–2^31-1. 0 means no limit
+        :param builtins.int max_connections: Maximum TCP connections. Value range: 0~2^31-1. 0 means unlimited
         """
         if enable is not None:
             pulumi.set(__self__, "enable", enable)
@@ -1362,7 +1362,7 @@ class UpstreamConnectionPoolSettings(dict):
     @pulumi.getter
     def enable(self) -> Optional[builtins.bool]:
         """
-        开启。
+        Enable
         """
         return pulumi.get(self, "enable")
 
@@ -1370,7 +1370,7 @@ class UpstreamConnectionPoolSettings(dict):
     @pulumi.getter(name="http1MaxPendingRequests")
     def http1_max_pending_requests(self) -> Optional[builtins.int]:
         """
-        HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+        Maximum HTTP/1 pending requests. Value range: 0~2^31-1. 0 means unlimited
         """
         return pulumi.get(self, "http1_max_pending_requests")
 
@@ -1378,7 +1378,7 @@ class UpstreamConnectionPoolSettings(dict):
     @pulumi.getter(name="idleTimeout")
     def idle_timeout(self) -> Optional[builtins.int]:
         """
-        空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+        Idle timeout, in seconds. Value range: 0–2^31-1. 0 means no limit
         """
         return pulumi.get(self, "idle_timeout")
 
@@ -1386,7 +1386,7 @@ class UpstreamConnectionPoolSettings(dict):
     @pulumi.getter(name="maxConnections")
     def max_connections(self) -> Optional[builtins.int]:
         """
-        TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+        Maximum TCP connections. Value range: 0~2^31-1. 0 means unlimited
         """
         return pulumi.get(self, "max_connections")
 
@@ -1422,10 +1422,10 @@ class UpstreamLoadBalancerSettings(dict):
                  simple_lb: Optional[builtins.str] = None,
                  warmup_duration: Optional[builtins.int] = None):
         """
-        :param 'UpstreamLoadBalancerSettingsConsistentHashLbArgs' consistent_hash_lb: 一致性哈希负载均衡。
-        :param builtins.str lb_policy: 负载均衡策略，取值：SimpleLB：简单负载均衡。ConsistentHashLB：一致性哈希负载均衡。
-        :param builtins.str simple_lb: 简单负载均衡，取值：ROUND*ROBIN：轮询。LEAST*CONN：最小连接数。RANDOM：随机。
-        :param builtins.int warmup_duration: 预热时间。单位为秒。
+        :param 'UpstreamLoadBalancerSettingsConsistentHashLbArgs' consistent_hash_lb: Consistent Hash Load Balancing
+        :param builtins.str lb_policy: Load balancing policy. Options: SimpleLB: simple load balancing. ConsistentHashLB: consistent hash load balancing
+        :param builtins.str simple_lb: Simple load balancing. Options: ROUND*ROBIN: round robin. LEAST*CONN: least connections. RANDOM: random
+        :param builtins.int warmup_duration: Warm-up time (seconds)
         """
         if consistent_hash_lb is not None:
             pulumi.set(__self__, "consistent_hash_lb", consistent_hash_lb)
@@ -1440,7 +1440,7 @@ class UpstreamLoadBalancerSettings(dict):
     @pulumi.getter(name="consistentHashLb")
     def consistent_hash_lb(self) -> Optional['outputs.UpstreamLoadBalancerSettingsConsistentHashLb']:
         """
-        一致性哈希负载均衡。
+        Consistent Hash Load Balancing
         """
         return pulumi.get(self, "consistent_hash_lb")
 
@@ -1448,7 +1448,7 @@ class UpstreamLoadBalancerSettings(dict):
     @pulumi.getter(name="lbPolicy")
     def lb_policy(self) -> Optional[builtins.str]:
         """
-        负载均衡策略，取值：SimpleLB：简单负载均衡。ConsistentHashLB：一致性哈希负载均衡。
+        Load balancing policy. Options: SimpleLB: simple load balancing. ConsistentHashLB: consistent hash load balancing
         """
         return pulumi.get(self, "lb_policy")
 
@@ -1456,7 +1456,7 @@ class UpstreamLoadBalancerSettings(dict):
     @pulumi.getter(name="simpleLb")
     def simple_lb(self) -> Optional[builtins.str]:
         """
-        简单负载均衡，取值：ROUND*ROBIN：轮询。LEAST*CONN：最小连接数。RANDOM：随机。
+        Simple load balancing. Options: ROUND*ROBIN: round robin. LEAST*CONN: least connections. RANDOM: random
         """
         return pulumi.get(self, "simple_lb")
 
@@ -1464,7 +1464,7 @@ class UpstreamLoadBalancerSettings(dict):
     @pulumi.getter(name="warmupDuration")
     def warmup_duration(self) -> Optional[builtins.int]:
         """
-        预热时间。单位为秒。
+        Warm-up time (seconds)
         """
         return pulumi.get(self, "warmup_duration")
 
@@ -1506,12 +1506,12 @@ class UpstreamLoadBalancerSettingsConsistentHashLb(dict):
                  http_query_parameter_name: Optional[builtins.str] = None,
                  use_source_ip: Optional[builtins.str] = None):
         """
-        :param builtins.int hash_balance_factor: 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
-        :param builtins.str hash_key: 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
+        :param builtins.int hash_balance_factor: Overload protection parameter. Value range: 100–200. When set to 120, overload protection is triggered if the current active request count of an upstream node exceeds 120% of the average active request count. When overload protection is triggered, even if the request hash matches a specific upstream node, the load balancer will randomly select an upstream node
+        :param builtins.str hash_key: Consistent hash method. Options: UseSourceIp: based on source IP address. HttpQueryParameterName: based on parameter. HttpHeaderName: based on header. HTTPCookie: based on cookie
         :param 'UpstreamLoadBalancerSettingsConsistentHashLbHttpCookieArgs' http_cookie: Cookie。
-        :param builtins.str http_header_name: 参数。支持ASCII可打印字符，长度限制为1~256个字符。
-        :param builtins.str http_query_parameter_name: 参数。支持ASCII可打印字符，长度限制为1~256个字符。
-        :param builtins.str use_source_ip: 源IP地址。
+        :param builtins.str http_header_name: Parameter. Supports printable ASCII characters, length: 1–256 characters
+        :param builtins.str http_query_parameter_name: Parameter. Supports printable ASCII characters, length: 1–256 characters
+        :param builtins.str use_source_ip: Source IP address
         """
         if hash_balance_factor is not None:
             pulumi.set(__self__, "hash_balance_factor", hash_balance_factor)
@@ -1530,7 +1530,7 @@ class UpstreamLoadBalancerSettingsConsistentHashLb(dict):
     @pulumi.getter(name="hashBalanceFactor")
     def hash_balance_factor(self) -> Optional[builtins.int]:
         """
-        过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+        Overload protection parameter. Value range: 100–200. When set to 120, overload protection is triggered if the current active request count of an upstream node exceeds 120% of the average active request count. When overload protection is triggered, even if the request hash matches a specific upstream node, the load balancer will randomly select an upstream node
         """
         return pulumi.get(self, "hash_balance_factor")
 
@@ -1538,7 +1538,7 @@ class UpstreamLoadBalancerSettingsConsistentHashLb(dict):
     @pulumi.getter(name="hashKey")
     def hash_key(self) -> Optional[builtins.str]:
         """
-        一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
+        Consistent hash method. Options: UseSourceIp: based on source IP address. HttpQueryParameterName: based on parameter. HttpHeaderName: based on header. HTTPCookie: based on cookie
         """
         return pulumi.get(self, "hash_key")
 
@@ -1554,7 +1554,7 @@ class UpstreamLoadBalancerSettingsConsistentHashLb(dict):
     @pulumi.getter(name="httpHeaderName")
     def http_header_name(self) -> Optional[builtins.str]:
         """
-        参数。支持ASCII可打印字符，长度限制为1~256个字符。
+        Parameter. Supports printable ASCII characters, length: 1–256 characters
         """
         return pulumi.get(self, "http_header_name")
 
@@ -1562,7 +1562,7 @@ class UpstreamLoadBalancerSettingsConsistentHashLb(dict):
     @pulumi.getter(name="httpQueryParameterName")
     def http_query_parameter_name(self) -> Optional[builtins.str]:
         """
-        参数。支持ASCII可打印字符，长度限制为1~256个字符。
+        Parameter. Supports printable ASCII characters, length: 1–256 characters
         """
         return pulumi.get(self, "http_query_parameter_name")
 
@@ -1570,7 +1570,7 @@ class UpstreamLoadBalancerSettingsConsistentHashLb(dict):
     @pulumi.getter(name="useSourceIp")
     def use_source_ip(self) -> Optional[builtins.str]:
         """
-        源IP地址。
+        Source IP address
         """
         return pulumi.get(self, "use_source_ip")
 
@@ -1582,9 +1582,9 @@ class UpstreamLoadBalancerSettingsConsistentHashLbHttpCookie(dict):
                  path: Optional[builtins.str] = None,
                  ttl: Optional[builtins.int] = None):
         """
-        :param builtins.str name: 名称。支持ASCII可打印字符，长度限制为0~256个字符。
-        :param builtins.str path: 路径。支持ASCII可打印字符，长度限制为1~256个字符。
-        :param builtins.int ttl: 有效期。单位为秒。
+        :param builtins.str name: Name. Supports printable ASCII characters. Length: 0~256 characters
+        :param builtins.str path: Path. Supports printable ASCII characters. Length: 1~256 characters
+        :param builtins.int ttl: Validity period, in seconds
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -1597,7 +1597,7 @@ class UpstreamLoadBalancerSettingsConsistentHashLbHttpCookie(dict):
     @pulumi.getter
     def name(self) -> Optional[builtins.str]:
         """
-        名称。支持ASCII可打印字符，长度限制为0~256个字符。
+        Name. Supports printable ASCII characters. Length: 0~256 characters
         """
         return pulumi.get(self, "name")
 
@@ -1605,7 +1605,7 @@ class UpstreamLoadBalancerSettingsConsistentHashLbHttpCookie(dict):
     @pulumi.getter
     def path(self) -> Optional[builtins.str]:
         """
-        路径。支持ASCII可打印字符，长度限制为1~256个字符。
+        Path. Supports printable ASCII characters. Length: 1~256 characters
         """
         return pulumi.get(self, "path")
 
@@ -1613,7 +1613,7 @@ class UpstreamLoadBalancerSettingsConsistentHashLbHttpCookie(dict):
     @pulumi.getter
     def ttl(self) -> Optional[builtins.int]:
         """
-        有效期。单位为秒。
+        Validity period, in seconds
         """
         return pulumi.get(self, "ttl")
 
@@ -1658,13 +1658,13 @@ class UpstreamSourceIngressSettings(dict):
                  update_status: Optional[builtins.bool] = None,
                  watch_namespaces: Optional[Sequence[builtins.str]] = None):
         """
-        :param builtins.bool enable_all_ingress_classes: 是否启用所有Ingress类。
-        :param builtins.bool enable_all_namespaces: 是否全部命名空间。
-        :param builtins.bool enable_ingress: 是否开启。
-        :param builtins.bool enable_ingress_without_ingress_class: 是否监听IngressClass为空的资源。
-        :param Sequence[builtins.str] ingress_classes: 指定IngressClass。
-        :param builtins.bool update_status: 流量入口切换。开启后，当前集群Ingress中Status的IP地址会被修改为当前网关的IP地址。
-        :param Sequence[builtins.str] watch_namespaces: 指定命名空间。
+        :param builtins.bool enable_all_ingress_classes: Whether to enable all Ingress classes
+        :param builtins.bool enable_all_namespaces: Whether all namespaces
+        :param builtins.bool enable_ingress: Whether enabled
+        :param builtins.bool enable_ingress_without_ingress_class: Whether to monitor resources with empty IngressClass
+        :param Sequence[builtins.str] ingress_classes: Specify IngressClass
+        :param builtins.bool update_status: Traffic entry switch. When enabled, the IP address in the Status of the current cluster's Ingress will be updated to the current gateway's IP address
+        :param Sequence[builtins.str] watch_namespaces: Specify namespace
         """
         if enable_all_ingress_classes is not None:
             pulumi.set(__self__, "enable_all_ingress_classes", enable_all_ingress_classes)
@@ -1685,7 +1685,7 @@ class UpstreamSourceIngressSettings(dict):
     @pulumi.getter(name="enableAllIngressClasses")
     def enable_all_ingress_classes(self) -> Optional[builtins.bool]:
         """
-        是否启用所有Ingress类。
+        Whether to enable all Ingress classes
         """
         return pulumi.get(self, "enable_all_ingress_classes")
 
@@ -1693,7 +1693,7 @@ class UpstreamSourceIngressSettings(dict):
     @pulumi.getter(name="enableAllNamespaces")
     def enable_all_namespaces(self) -> Optional[builtins.bool]:
         """
-        是否全部命名空间。
+        Whether all namespaces
         """
         return pulumi.get(self, "enable_all_namespaces")
 
@@ -1701,7 +1701,7 @@ class UpstreamSourceIngressSettings(dict):
     @pulumi.getter(name="enableIngress")
     def enable_ingress(self) -> Optional[builtins.bool]:
         """
-        是否开启。
+        Whether enabled
         """
         return pulumi.get(self, "enable_ingress")
 
@@ -1709,7 +1709,7 @@ class UpstreamSourceIngressSettings(dict):
     @pulumi.getter(name="enableIngressWithoutIngressClass")
     def enable_ingress_without_ingress_class(self) -> Optional[builtins.bool]:
         """
-        是否监听IngressClass为空的资源。
+        Whether to monitor resources with empty IngressClass
         """
         return pulumi.get(self, "enable_ingress_without_ingress_class")
 
@@ -1717,7 +1717,7 @@ class UpstreamSourceIngressSettings(dict):
     @pulumi.getter(name="ingressClasses")
     def ingress_classes(self) -> Optional[Sequence[builtins.str]]:
         """
-        指定IngressClass。
+        Specify IngressClass
         """
         return pulumi.get(self, "ingress_classes")
 
@@ -1725,7 +1725,7 @@ class UpstreamSourceIngressSettings(dict):
     @pulumi.getter(name="updateStatus")
     def update_status(self) -> Optional[builtins.bool]:
         """
-        流量入口切换。开启后，当前集群Ingress中Status的IP地址会被修改为当前网关的IP地址。
+        Traffic entry switch. When enabled, the IP address in the Status of the current cluster's Ingress will be updated to the current gateway's IP address
         """
         return pulumi.get(self, "update_status")
 
@@ -1733,7 +1733,7 @@ class UpstreamSourceIngressSettings(dict):
     @pulumi.getter(name="watchNamespaces")
     def watch_namespaces(self) -> Optional[Sequence[builtins.str]]:
         """
-        指定命名空间。
+        Specify namespace
         """
         return pulumi.get(self, "watch_namespaces")
 
@@ -1763,8 +1763,8 @@ class UpstreamSourceSourceSpec(dict):
                  k8_s_source: Optional['outputs.UpstreamSourceSourceSpecK8SSource'] = None,
                  nacos_source: Optional['outputs.UpstreamSourceSourceSpecNacosSource'] = None):
         """
-        :param 'UpstreamSourceSourceSpecK8SSourceArgs' k8_s_source: 容器集群来源。
-        :param 'UpstreamSourceSourceSpecNacosSourceArgs' nacos_source: 注册中心来源。
+        :param 'UpstreamSourceSourceSpecK8SSourceArgs' k8_s_source: Container cluster source
+        :param 'UpstreamSourceSourceSpecNacosSourceArgs' nacos_source: Registry source
         """
         if k8_s_source is not None:
             pulumi.set(__self__, "k8_s_source", k8_s_source)
@@ -1775,7 +1775,7 @@ class UpstreamSourceSourceSpec(dict):
     @pulumi.getter(name="k8SSource")
     def k8_s_source(self) -> Optional['outputs.UpstreamSourceSourceSpecK8SSource']:
         """
-        容器集群来源。
+        Container cluster source
         """
         return pulumi.get(self, "k8_s_source")
 
@@ -1783,7 +1783,7 @@ class UpstreamSourceSourceSpec(dict):
     @pulumi.getter(name="nacosSource")
     def nacos_source(self) -> Optional['outputs.UpstreamSourceSourceSpecNacosSource']:
         """
-        注册中心来源。
+        Registry source
         """
         return pulumi.get(self, "nacos_source")
 
@@ -1813,8 +1813,8 @@ class UpstreamSourceSourceSpecK8SSource(dict):
                  cluster_id: Optional[builtins.str] = None,
                  cluster_type: Optional[builtins.str] = None):
         """
-        :param builtins.str cluster_id: 集群ID。
-        :param builtins.str cluster_type: 集群类型。
+        :param builtins.str cluster_id: Cluster ID
+        :param builtins.str cluster_type: Cluster type
         """
         if cluster_id is not None:
             pulumi.set(__self__, "cluster_id", cluster_id)
@@ -1825,7 +1825,7 @@ class UpstreamSourceSourceSpecK8SSource(dict):
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> Optional[builtins.str]:
         """
-        集群ID。
+        Cluster ID
         """
         return pulumi.get(self, "cluster_id")
 
@@ -1833,7 +1833,7 @@ class UpstreamSourceSourceSpecK8SSource(dict):
     @pulumi.getter(name="clusterType")
     def cluster_type(self) -> Optional[builtins.str]:
         """
-        集群类型。
+        Cluster type
         """
         return pulumi.get(self, "cluster_type")
 
@@ -1866,9 +1866,9 @@ class UpstreamSourceSourceSpecNacosSource(dict):
                  nacos_id: Optional[builtins.str] = None,
                  nacos_name: Optional[builtins.str] = None):
         """
-        :param 'UpstreamSourceSourceSpecNacosSourceAuthConfigArgs' auth_config: 认证配置。
+        :param 'UpstreamSourceSourceSpecNacosSourceAuthConfigArgs' auth_config: Authentication configuration
         :param builtins.str nacos_id: Nacos ID。
-        :param builtins.str nacos_name: Nacos名称。
+        :param builtins.str nacos_name: Nacos name
         """
         if auth_config is not None:
             pulumi.set(__self__, "auth_config", auth_config)
@@ -1881,7 +1881,7 @@ class UpstreamSourceSourceSpecNacosSource(dict):
     @pulumi.getter(name="authConfig")
     def auth_config(self) -> Optional['outputs.UpstreamSourceSourceSpecNacosSourceAuthConfig']:
         """
-        认证配置。
+        Authentication configuration
         """
         return pulumi.get(self, "auth_config")
 
@@ -1897,7 +1897,7 @@ class UpstreamSourceSourceSpecNacosSource(dict):
     @pulumi.getter(name="nacosName")
     def nacos_name(self) -> Optional[builtins.str]:
         """
-        Nacos名称。
+        Nacos name
         """
         return pulumi.get(self, "nacos_name")
 
@@ -1907,7 +1907,7 @@ class UpstreamSourceSourceSpecNacosSourceAuthConfig(dict):
     def __init__(__self__, *,
                  basic: Optional['outputs.UpstreamSourceSourceSpecNacosSourceAuthConfigBasic'] = None):
         """
-        :param 'UpstreamSourceSourceSpecNacosSourceAuthConfigBasicArgs' basic: Basic认证。
+        :param 'UpstreamSourceSourceSpecNacosSourceAuthConfigBasicArgs' basic: Basic authentication
         """
         if basic is not None:
             pulumi.set(__self__, "basic", basic)
@@ -1916,7 +1916,7 @@ class UpstreamSourceSourceSpecNacosSourceAuthConfig(dict):
     @pulumi.getter
     def basic(self) -> Optional['outputs.UpstreamSourceSourceSpecNacosSourceAuthConfigBasic']:
         """
-        Basic认证。
+        Basic authentication
         """
         return pulumi.get(self, "basic")
 
@@ -1927,8 +1927,8 @@ class UpstreamSourceSourceSpecNacosSourceAuthConfigBasic(dict):
                  password: Optional[builtins.str] = None,
                  username: Optional[builtins.str] = None):
         """
-        :param builtins.str password: 密码。
-        :param builtins.str username: 用户名。
+        :param builtins.str password: Password
+        :param builtins.str username: Username
         """
         if password is not None:
             pulumi.set(__self__, "password", password)
@@ -1939,7 +1939,7 @@ class UpstreamSourceSourceSpecNacosSourceAuthConfigBasic(dict):
     @pulumi.getter
     def password(self) -> Optional[builtins.str]:
         """
-        密码。
+        Password
         """
         return pulumi.get(self, "password")
 
@@ -1947,7 +1947,7 @@ class UpstreamSourceSourceSpecNacosSourceAuthConfigBasic(dict):
     @pulumi.getter
     def username(self) -> Optional[builtins.str]:
         """
-        用户名。
+        Username
         """
         return pulumi.get(self, "username")
 
@@ -1975,8 +1975,8 @@ class UpstreamTlsSettings(dict):
                  sni: Optional[builtins.str] = None,
                  tls_mode: Optional[builtins.str] = None):
         """
-        :param builtins.str sni: SNI。留空时会将访问网关的域名透传到upstream。
-        :param builtins.str tls_mode: TLS模式，取值：DISABLE：关闭TLS。SIMPLE：单向TLS。
+        :param builtins.str sni: SNI. If left blank, the domain name accessed by the gateway will be passed through to the upstream
+        :param builtins.str tls_mode: TLS mode. Options: DISABLE: disable TLS. SIMPLE: one-way TLS
         """
         if sni is not None:
             pulumi.set(__self__, "sni", sni)
@@ -1987,7 +1987,7 @@ class UpstreamTlsSettings(dict):
     @pulumi.getter
     def sni(self) -> Optional[builtins.str]:
         """
-        SNI。留空时会将访问网关的域名透传到upstream。
+        SNI. If left blank, the domain name accessed by the gateway will be passed through to the upstream
         """
         return pulumi.get(self, "sni")
 
@@ -1995,7 +1995,7 @@ class UpstreamTlsSettings(dict):
     @pulumi.getter(name="tlsMode")
     def tls_mode(self) -> Optional[builtins.str]:
         """
-        TLS模式，取值：DISABLE：关闭TLS。SIMPLE：单向TLS。
+        TLS mode. Options: DISABLE: disable TLS. SIMPLE: one-way TLS
         """
         return pulumi.get(self, "tls_mode")
 
@@ -2035,11 +2035,11 @@ class UpstreamUpstreamSpec(dict):
                  nacos_service: Optional['outputs.UpstreamUpstreamSpecNacosService'] = None,
                  ve_faas: Optional['outputs.UpstreamUpstreamSpecVeFaas'] = None):
         """
-        :param 'UpstreamUpstreamSpecAiProviderArgs' ai_provider: AI模型代理。
-        :param 'UpstreamUpstreamSpecDomainArgs' domain: 固定域名。
-        :param 'UpstreamUpstreamSpecK8SServiceArgs' k8_s_service: 容器服务。
-        :param 'UpstreamUpstreamSpecNacosServiceArgs' nacos_service: 注册中心。
-        :param 'UpstreamUpstreamSpecVeFaasArgs' ve_faas: 函数服务。
+        :param 'UpstreamUpstreamSpecAiProviderArgs' ai_provider: AI model proxy
+        :param 'UpstreamUpstreamSpecDomainArgs' domain: Fixed domain name
+        :param 'UpstreamUpstreamSpecK8SServiceArgs' k8_s_service: Container Service
+        :param 'UpstreamUpstreamSpecNacosServiceArgs' nacos_service: Registry Center
+        :param 'UpstreamUpstreamSpecVeFaasArgs' ve_faas: Function service
         """
         if ai_provider is not None:
             pulumi.set(__self__, "ai_provider", ai_provider)
@@ -2058,7 +2058,7 @@ class UpstreamUpstreamSpec(dict):
     @pulumi.getter(name="aiProvider")
     def ai_provider(self) -> Optional['outputs.UpstreamUpstreamSpecAiProvider']:
         """
-        AI模型代理。
+        AI model proxy
         """
         return pulumi.get(self, "ai_provider")
 
@@ -2066,7 +2066,7 @@ class UpstreamUpstreamSpec(dict):
     @pulumi.getter
     def domain(self) -> Optional['outputs.UpstreamUpstreamSpecDomain']:
         """
-        固定域名。
+        Fixed domain name
         """
         return pulumi.get(self, "domain")
 
@@ -2079,7 +2079,7 @@ class UpstreamUpstreamSpec(dict):
     @pulumi.getter(name="k8SService")
     def k8_s_service(self) -> Optional['outputs.UpstreamUpstreamSpecK8SService']:
         """
-        容器服务。
+        Container Service
         """
         return pulumi.get(self, "k8_s_service")
 
@@ -2087,7 +2087,7 @@ class UpstreamUpstreamSpec(dict):
     @pulumi.getter(name="nacosService")
     def nacos_service(self) -> Optional['outputs.UpstreamUpstreamSpecNacosService']:
         """
-        注册中心。
+        Registry Center
         """
         return pulumi.get(self, "nacos_service")
 
@@ -2095,7 +2095,7 @@ class UpstreamUpstreamSpec(dict):
     @pulumi.getter(name="veFaas")
     def ve_faas(self) -> Optional['outputs.UpstreamUpstreamSpecVeFaas']:
         """
-        函数服务。
+        Function service
         """
         return pulumi.get(self, "ve_faas")
 
@@ -2127,10 +2127,10 @@ class UpstreamUpstreamSpecAiProvider(dict):
                  name: Optional[builtins.str] = None,
                  token: Optional[builtins.str] = None):
         """
-        :param builtins.str base_url: 模型地址。
-        :param 'UpstreamUpstreamSpecAiProviderCustomModelServiceArgs' custom_model_service: 火山自部署模型服务。
-        :param builtins.str name: 模型服务商名称。
-        :param builtins.str token: 模型API key。
+        :param builtins.str base_url: Model address
+        :param 'UpstreamUpstreamSpecAiProviderCustomModelServiceArgs' custom_model_service: Volcano Engine self-hosted model service
+        :param builtins.str name: Model Service Provider Name
+        :param builtins.str token: Model API key
         """
         if base_url is not None:
             pulumi.set(__self__, "base_url", base_url)
@@ -2145,7 +2145,7 @@ class UpstreamUpstreamSpecAiProvider(dict):
     @pulumi.getter(name="baseUrl")
     def base_url(self) -> Optional[builtins.str]:
         """
-        模型地址。
+        Model address
         """
         return pulumi.get(self, "base_url")
 
@@ -2153,7 +2153,7 @@ class UpstreamUpstreamSpecAiProvider(dict):
     @pulumi.getter(name="customModelService")
     def custom_model_service(self) -> Optional['outputs.UpstreamUpstreamSpecAiProviderCustomModelService']:
         """
-        火山自部署模型服务。
+        Volcano Engine self-hosted model service
         """
         return pulumi.get(self, "custom_model_service")
 
@@ -2161,7 +2161,7 @@ class UpstreamUpstreamSpecAiProvider(dict):
     @pulumi.getter
     def name(self) -> Optional[builtins.str]:
         """
-        模型服务商名称。
+        Model Service Provider Name
         """
         return pulumi.get(self, "name")
 
@@ -2169,7 +2169,7 @@ class UpstreamUpstreamSpecAiProvider(dict):
     @pulumi.getter
     def token(self) -> Optional[builtins.str]:
         """
-        模型API key。
+        Model API key
         """
         return pulumi.get(self, "token")
 
@@ -2181,9 +2181,9 @@ class UpstreamUpstreamSpecAiProviderCustomModelService(dict):
                  namespace: Optional[builtins.str] = None,
                  port: Optional[builtins.int] = None):
         """
-        :param builtins.str name: 模型服务名称。
-        :param builtins.str namespace: 命名空间。
-        :param builtins.int port: 端口。
+        :param builtins.str name: Model Service Name
+        :param builtins.str namespace: Namespace
+        :param builtins.int port: Port
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -2196,7 +2196,7 @@ class UpstreamUpstreamSpecAiProviderCustomModelService(dict):
     @pulumi.getter
     def name(self) -> Optional[builtins.str]:
         """
-        模型服务名称。
+        Model Service Name
         """
         return pulumi.get(self, "name")
 
@@ -2204,7 +2204,7 @@ class UpstreamUpstreamSpecAiProviderCustomModelService(dict):
     @pulumi.getter
     def namespace(self) -> Optional[builtins.str]:
         """
-        命名空间。
+        Namespace
         """
         return pulumi.get(self, "namespace")
 
@@ -2212,7 +2212,7 @@ class UpstreamUpstreamSpecAiProviderCustomModelService(dict):
     @pulumi.getter
     def port(self) -> Optional[builtins.int]:
         """
-        端口。
+        Port
         """
         return pulumi.get(self, "port")
 
@@ -2253,8 +2253,8 @@ class UpstreamUpstreamSpecDomainDomainList(dict):
                  domain: Optional[builtins.str] = None,
                  port: Optional[builtins.int] = None):
         """
-        :param builtins.str domain: 域名。
-        :param builtins.int port: 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+        :param builtins.str domain: Domain name
+        :param builtins.int port: Port. Default: 80 for HTTP, 443 for HTTPS
         """
         if domain is not None:
             pulumi.set(__self__, "domain", domain)
@@ -2265,7 +2265,7 @@ class UpstreamUpstreamSpecDomainDomainList(dict):
     @pulumi.getter
     def domain(self) -> Optional[builtins.str]:
         """
-        域名。
+        Domain name
         """
         return pulumi.get(self, "domain")
 
@@ -2273,7 +2273,7 @@ class UpstreamUpstreamSpecDomainDomainList(dict):
     @pulumi.getter
     def port(self) -> Optional[builtins.int]:
         """
-        端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+        Port. Default: 80 for HTTP, 443 for HTTPS
         """
         return pulumi.get(self, "port")
 
@@ -2302,9 +2302,9 @@ class UpstreamUpstreamSpecEcsInstance(dict):
                  ip: Optional[builtins.str] = None,
                  port: Optional[builtins.int] = None):
         """
-        :param builtins.str ecs_id: 云服务器ID。
-        :param builtins.str ip: IP地址。
-        :param builtins.int port: 端口。
+        :param builtins.str ecs_id: Cloud server ID
+        :param builtins.str ip: IP address
+        :param builtins.int port: Port
         """
         if ecs_id is not None:
             pulumi.set(__self__, "ecs_id", ecs_id)
@@ -2317,7 +2317,7 @@ class UpstreamUpstreamSpecEcsInstance(dict):
     @pulumi.getter(name="ecsId")
     def ecs_id(self) -> Optional[builtins.str]:
         """
-        云服务器ID。
+        Cloud server ID
         """
         return pulumi.get(self, "ecs_id")
 
@@ -2325,7 +2325,7 @@ class UpstreamUpstreamSpecEcsInstance(dict):
     @pulumi.getter
     def ip(self) -> Optional[builtins.str]:
         """
-        IP地址。
+        IP address
         """
         return pulumi.get(self, "ip")
 
@@ -2333,7 +2333,7 @@ class UpstreamUpstreamSpecEcsInstance(dict):
     @pulumi.getter
     def port(self) -> Optional[builtins.int]:
         """
-        端口。
+        Port
         """
         return pulumi.get(self, "port")
 
@@ -2345,9 +2345,9 @@ class UpstreamUpstreamSpecK8SService(dict):
                  namespace: Optional[builtins.str] = None,
                  port: Optional[builtins.int] = None):
         """
-        :param builtins.str name: 容器服务名称。长度限制为2~63个字符。
-        :param builtins.str namespace: 命名空间。长度限制为2~63个字符。
-        :param builtins.int port: 端口。
+        :param builtins.str name: Container Service Name. Length: 2–63 characters
+        :param builtins.str namespace: Namespace. Length: 2~63 characters
+        :param builtins.int port: Port
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -2360,7 +2360,7 @@ class UpstreamUpstreamSpecK8SService(dict):
     @pulumi.getter
     def name(self) -> Optional[builtins.str]:
         """
-        容器服务名称。长度限制为2~63个字符。
+        Container Service Name. Length: 2–63 characters
         """
         return pulumi.get(self, "name")
 
@@ -2368,7 +2368,7 @@ class UpstreamUpstreamSpecK8SService(dict):
     @pulumi.getter
     def namespace(self) -> Optional[builtins.str]:
         """
-        命名空间。长度限制为2~63个字符。
+        Namespace. Length: 2~63 characters
         """
         return pulumi.get(self, "namespace")
 
@@ -2376,7 +2376,7 @@ class UpstreamUpstreamSpecK8SService(dict):
     @pulumi.getter
     def port(self) -> Optional[builtins.int]:
         """
-        端口。
+        Port
         """
         return pulumi.get(self, "port")
 
@@ -2409,11 +2409,11 @@ class UpstreamUpstreamSpecNacosService(dict):
                  service: Optional[builtins.str] = None,
                  upstream_source_id: Optional[builtins.str] = None):
         """
-        :param builtins.str group: 分组。
-        :param builtins.str namespace: 命名空间。
-        :param builtins.str namespace_id: 命名空间ID。
-        :param builtins.str service: 服务。
-        :param builtins.str upstream_source_id: Upstream来源ID。
+        :param builtins.str group: Group
+        :param builtins.str namespace: Namespace
+        :param builtins.str namespace_id: Namespace ID
+        :param builtins.str service: Service
+        :param builtins.str upstream_source_id: Upstream source ID
         """
         if group is not None:
             pulumi.set(__self__, "group", group)
@@ -2430,7 +2430,7 @@ class UpstreamUpstreamSpecNacosService(dict):
     @pulumi.getter
     def group(self) -> Optional[builtins.str]:
         """
-        分组。
+        Group
         """
         return pulumi.get(self, "group")
 
@@ -2438,7 +2438,7 @@ class UpstreamUpstreamSpecNacosService(dict):
     @pulumi.getter
     def namespace(self) -> Optional[builtins.str]:
         """
-        命名空间。
+        Namespace
         """
         return pulumi.get(self, "namespace")
 
@@ -2446,7 +2446,7 @@ class UpstreamUpstreamSpecNacosService(dict):
     @pulumi.getter(name="namespaceId")
     def namespace_id(self) -> Optional[builtins.str]:
         """
-        命名空间ID。
+        Namespace ID
         """
         return pulumi.get(self, "namespace_id")
 
@@ -2454,7 +2454,7 @@ class UpstreamUpstreamSpecNacosService(dict):
     @pulumi.getter
     def service(self) -> Optional[builtins.str]:
         """
-        服务。
+        Service
         """
         return pulumi.get(self, "service")
 
@@ -2462,7 +2462,7 @@ class UpstreamUpstreamSpecNacosService(dict):
     @pulumi.getter(name="upstreamSourceId")
     def upstream_source_id(self) -> Optional[builtins.str]:
         """
-        Upstream来源ID。
+        Upstream source ID
         """
         return pulumi.get(self, "upstream_source_id")
 
@@ -2489,7 +2489,7 @@ class UpstreamUpstreamSpecVeFaas(dict):
     def __init__(__self__, *,
                  function_id: Optional[builtins.str] = None):
         """
-        :param builtins.str function_id: 函数ID。
+        :param builtins.str function_id: Function ID
         """
         if function_id is not None:
             pulumi.set(__self__, "function_id", function_id)
@@ -2498,7 +2498,7 @@ class UpstreamUpstreamSpecVeFaas(dict):
     @pulumi.getter(name="functionId")
     def function_id(self) -> Optional[builtins.str]:
         """
-        函数ID。
+        Function ID
         """
         return pulumi.get(self, "function_id")
 
@@ -2527,8 +2527,8 @@ class UpstreamVersionDetail(dict):
                  name: Optional[builtins.str] = None,
                  update_time: Optional[builtins.str] = None):
         """
-        :param builtins.str name: 版本名称。支持大小写字母、数字和中划线（-），长度限制为2~63个字符。不能以中划线（-）开头。
-        :param builtins.str update_time: 更新时间。
+        :param builtins.str name: Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
+        :param builtins.str update_time: Update time
         """
         if labels is not None:
             pulumi.set(__self__, "labels", labels)
@@ -2546,7 +2546,7 @@ class UpstreamVersionDetail(dict):
     @pulumi.getter
     def name(self) -> Optional[builtins.str]:
         """
-        版本名称。支持大小写字母、数字和中划线（-），长度限制为2~63个字符。不能以中划线（-）开头。
+        Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
         """
         return pulumi.get(self, "name")
 
@@ -2554,7 +2554,7 @@ class UpstreamVersionDetail(dict):
     @pulumi.getter(name="updateTime")
     def update_time(self) -> Optional[builtins.str]:
         """
-        更新时间。
+        Update time
         """
         return pulumi.get(self, "update_time")
 
@@ -2565,8 +2565,8 @@ class UpstreamVersionDetailLabel(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 键。
-        :param builtins.str value: 值。
+        :param builtins.str key: Key
+        :param builtins.str value: Value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -2577,7 +2577,7 @@ class UpstreamVersionDetailLabel(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        键。
+        Key
         """
         return pulumi.get(self, "key")
 
@@ -2585,7 +2585,7 @@ class UpstreamVersionDetailLabel(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        值。
+        Value
         """
         return pulumi.get(self, "value")
 
@@ -2596,7 +2596,7 @@ class GetGatewayBackendSpecResult(dict):
                  is_vke_with_flannel_cni_supported: builtins.bool,
                  vke_pod_cidr: builtins.str):
         """
-        :param builtins.bool is_vke_with_flannel_cni_supported: 是否支持VKE Flannel CNI。
+        :param builtins.bool is_vke_with_flannel_cni_supported: Whether VKE Flannel CNI is supported
         :param builtins.str vke_pod_cidr: VKE Pod CIDR。
         """
         pulumi.set(__self__, "is_vke_with_flannel_cni_supported", is_vke_with_flannel_cni_supported)
@@ -2606,7 +2606,7 @@ class GetGatewayBackendSpecResult(dict):
     @pulumi.getter(name="isVkeWithFlannelCniSupported")
     def is_vke_with_flannel_cni_supported(self) -> builtins.bool:
         """
-        是否支持VKE Flannel CNI。
+        Whether VKE Flannel CNI is supported
         """
         return pulumi.get(self, "is_vke_with_flannel_cni_supported")
 
@@ -2626,9 +2626,9 @@ class GetGatewayCustomLogResult(dict):
                  request_headers: Sequence['outputs.GetGatewayCustomLogRequestHeaderResult'],
                  response_headers: Sequence['outputs.GetGatewayCustomLogResponseHeaderResult']):
         """
-        :param Sequence['GetGatewayCustomLogCustomVariableArgs'] custom_variables: 自定义变量信息。
-        :param Sequence['GetGatewayCustomLogRequestHeaderArgs'] request_headers: 请求头信息。
-        :param Sequence['GetGatewayCustomLogResponseHeaderArgs'] response_headers: 响应头信息。
+        :param Sequence['GetGatewayCustomLogCustomVariableArgs'] custom_variables: Custom variable information
+        :param Sequence['GetGatewayCustomLogRequestHeaderArgs'] request_headers: Request header information
+        :param Sequence['GetGatewayCustomLogResponseHeaderArgs'] response_headers: Response header information
         """
         pulumi.set(__self__, "custom_variables", custom_variables)
         pulumi.set(__self__, "request_headers", request_headers)
@@ -2638,7 +2638,7 @@ class GetGatewayCustomLogResult(dict):
     @pulumi.getter(name="customVariables")
     def custom_variables(self) -> Sequence['outputs.GetGatewayCustomLogCustomVariableResult']:
         """
-        自定义变量信息。
+        Custom variable information
         """
         return pulumi.get(self, "custom_variables")
 
@@ -2646,7 +2646,7 @@ class GetGatewayCustomLogResult(dict):
     @pulumi.getter(name="requestHeaders")
     def request_headers(self) -> Sequence['outputs.GetGatewayCustomLogRequestHeaderResult']:
         """
-        请求头信息。
+        Request header information
         """
         return pulumi.get(self, "request_headers")
 
@@ -2654,7 +2654,7 @@ class GetGatewayCustomLogResult(dict):
     @pulumi.getter(name="responseHeaders")
     def response_headers(self) -> Sequence['outputs.GetGatewayCustomLogResponseHeaderResult']:
         """
-        响应头信息。
+        Response header information
         """
         return pulumi.get(self, "response_headers")
 
@@ -2665,8 +2665,8 @@ class GetGatewayCustomLogCustomVariableResult(dict):
                  aliases_in_log: builtins.str,
                  key: builtins.str):
         """
-        :param builtins.str aliases_in_log: 字段别名。
-        :param builtins.str key: 请求头键。
+        :param builtins.str aliases_in_log: Field alias
+        :param builtins.str key: Request header key
         """
         pulumi.set(__self__, "aliases_in_log", aliases_in_log)
         pulumi.set(__self__, "key", key)
@@ -2675,7 +2675,7 @@ class GetGatewayCustomLogCustomVariableResult(dict):
     @pulumi.getter(name="aliasesInLog")
     def aliases_in_log(self) -> builtins.str:
         """
-        字段别名。
+        Field alias
         """
         return pulumi.get(self, "aliases_in_log")
 
@@ -2683,7 +2683,7 @@ class GetGatewayCustomLogCustomVariableResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        请求头键。
+        Request header key
         """
         return pulumi.get(self, "key")
 
@@ -2694,8 +2694,8 @@ class GetGatewayCustomLogRequestHeaderResult(dict):
                  aliases_in_log: builtins.str,
                  key: builtins.str):
         """
-        :param builtins.str aliases_in_log: 字段别名。
-        :param builtins.str key: 请求头键。
+        :param builtins.str aliases_in_log: Field alias
+        :param builtins.str key: Request header key
         """
         pulumi.set(__self__, "aliases_in_log", aliases_in_log)
         pulumi.set(__self__, "key", key)
@@ -2704,7 +2704,7 @@ class GetGatewayCustomLogRequestHeaderResult(dict):
     @pulumi.getter(name="aliasesInLog")
     def aliases_in_log(self) -> builtins.str:
         """
-        字段别名。
+        Field alias
         """
         return pulumi.get(self, "aliases_in_log")
 
@@ -2712,7 +2712,7 @@ class GetGatewayCustomLogRequestHeaderResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        请求头键。
+        Request header key
         """
         return pulumi.get(self, "key")
 
@@ -2723,8 +2723,8 @@ class GetGatewayCustomLogResponseHeaderResult(dict):
                  aliases_in_log: builtins.str,
                  key: builtins.str):
         """
-        :param builtins.str aliases_in_log: 字段别名。
-        :param builtins.str key: 请求头键。
+        :param builtins.str aliases_in_log: Field alias
+        :param builtins.str key: Request header key
         """
         pulumi.set(__self__, "aliases_in_log", aliases_in_log)
         pulumi.set(__self__, "key", key)
@@ -2733,7 +2733,7 @@ class GetGatewayCustomLogResponseHeaderResult(dict):
     @pulumi.getter(name="aliasesInLog")
     def aliases_in_log(self) -> builtins.str:
         """
-        字段别名。
+        Field alias
         """
         return pulumi.get(self, "aliases_in_log")
 
@@ -2741,7 +2741,7 @@ class GetGatewayCustomLogResponseHeaderResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        请求头键。
+        Request header key
         """
         return pulumi.get(self, "key")
 
@@ -2754,10 +2754,10 @@ class GetGatewayEventResult(dict):
                  data: builtins.str,
                  description: builtins.str):
         """
-        :param builtins.str code: 事件代码。
-        :param builtins.str created_time: 事件创建时间。
-        :param builtins.str data: 附带信息。
-        :param builtins.str description: 事件描述。
+        :param builtins.str code: Event code
+        :param builtins.str created_time: Event creation time
+        :param builtins.str data: Additional information
+        :param builtins.str description: Event description
         """
         pulumi.set(__self__, "code", code)
         pulumi.set(__self__, "created_time", created_time)
@@ -2768,7 +2768,7 @@ class GetGatewayEventResult(dict):
     @pulumi.getter
     def code(self) -> builtins.str:
         """
-        事件代码。
+        Event code
         """
         return pulumi.get(self, "code")
 
@@ -2776,7 +2776,7 @@ class GetGatewayEventResult(dict):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        事件创建时间。
+        Event creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -2784,7 +2784,7 @@ class GetGatewayEventResult(dict):
     @pulumi.getter
     def data(self) -> builtins.str:
         """
-        附带信息。
+        Additional information
         """
         return pulumi.get(self, "data")
 
@@ -2792,7 +2792,7 @@ class GetGatewayEventResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        事件描述。
+        Event description
         """
         return pulumi.get(self, "description")
 
@@ -2804,9 +2804,9 @@ class GetGatewayLogSpecResult(dict):
                  project_id: builtins.str,
                  topic_id: builtins.str):
         """
-        :param builtins.bool enable: 是否开启日志服务。
-        :param builtins.str project_id: 日志项目ID。
-        :param builtins.str topic_id: 日志主题ID。ProjectId 指定项目里面的日志主题。
+        :param builtins.bool enable: Whether to enable log service
+        :param builtins.str project_id: Log project ID
+        :param builtins.str topic_id: Log topic ID. ProjectId specifies the log topic within the project
         """
         pulumi.set(__self__, "enable", enable)
         pulumi.set(__self__, "project_id", project_id)
@@ -2816,7 +2816,7 @@ class GetGatewayLogSpecResult(dict):
     @pulumi.getter
     def enable(self) -> builtins.bool:
         """
-        是否开启日志服务。
+        Whether to enable log service
         """
         return pulumi.get(self, "enable")
 
@@ -2824,7 +2824,7 @@ class GetGatewayLogSpecResult(dict):
     @pulumi.getter(name="projectId")
     def project_id(self) -> builtins.str:
         """
-        日志项目ID。
+        Log project ID
         """
         return pulumi.get(self, "project_id")
 
@@ -2832,7 +2832,7 @@ class GetGatewayLogSpecResult(dict):
     @pulumi.getter(name="topicId")
     def topic_id(self) -> builtins.str:
         """
-        日志主题ID。ProjectId 指定项目里面的日志主题。
+        Log topic ID. ProjectId specifies the log topic within the project
         """
         return pulumi.get(self, "topic_id")
 
@@ -2843,8 +2843,8 @@ class GetGatewayMonitorSpecResult(dict):
                  enable: builtins.bool,
                  workspace_id: builtins.str):
         """
-        :param builtins.bool enable: 托管Prometheus（VMP）服务。
-        :param builtins.str workspace_id: Prometheus工作区ID。
+        :param builtins.bool enable: Managed Prometheus (VMP) service
+        :param builtins.str workspace_id: Prometheus workspace ID
         """
         pulumi.set(__self__, "enable", enable)
         pulumi.set(__self__, "workspace_id", workspace_id)
@@ -2853,7 +2853,7 @@ class GetGatewayMonitorSpecResult(dict):
     @pulumi.getter
     def enable(self) -> builtins.bool:
         """
-        托管Prometheus（VMP）服务。
+        Managed Prometheus (VMP) service
         """
         return pulumi.get(self, "enable")
 
@@ -2861,7 +2861,7 @@ class GetGatewayMonitorSpecResult(dict):
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> builtins.str:
         """
-        Prometheus工作区ID。
+        Prometheus workspace ID
         """
         return pulumi.get(self, "workspace_id")
 
@@ -2873,9 +2873,9 @@ class GetGatewayNetworkSpecResult(dict):
                  vpc_id: builtins.str,
                  vpc_name: builtins.str):
         """
-        :param Sequence['GetGatewayNetworkSpecSubnetArgs'] subnets: 子网配置信息列表。
+        :param Sequence['GetGatewayNetworkSpecSubnetArgs'] subnets: Subnet configuration information list
         :param builtins.str vpc_id: VPC ID。
-        :param builtins.str vpc_name: VPC名称。
+        :param builtins.str vpc_name: VPC name
         """
         pulumi.set(__self__, "subnets", subnets)
         pulumi.set(__self__, "vpc_id", vpc_id)
@@ -2885,7 +2885,7 @@ class GetGatewayNetworkSpecResult(dict):
     @pulumi.getter
     def subnets(self) -> Sequence['outputs.GetGatewayNetworkSpecSubnetResult']:
         """
-        子网配置信息列表。
+        Subnet configuration information list
         """
         return pulumi.get(self, "subnets")
 
@@ -2901,7 +2901,7 @@ class GetGatewayNetworkSpecResult(dict):
     @pulumi.getter(name="vpcName")
     def vpc_name(self) -> builtins.str:
         """
-        VPC名称。
+        VPC name
         """
         return pulumi.get(self, "vpc_name")
 
@@ -2913,9 +2913,9 @@ class GetGatewayNetworkSpecSubnetResult(dict):
                  subnet_id: builtins.str,
                  subnet_name: builtins.str):
         """
-        :param builtins.str az: 可用区。
-        :param builtins.str subnet_id: 子网ID。
-        :param builtins.str subnet_name: 子网名称。
+        :param builtins.str az: Availability zone
+        :param builtins.str subnet_id: Subnet ID
+        :param builtins.str subnet_name: Subnet name
         """
         pulumi.set(__self__, "az", az)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -2925,7 +2925,7 @@ class GetGatewayNetworkSpecSubnetResult(dict):
     @pulumi.getter
     def az(self) -> builtins.str:
         """
-        可用区。
+        Availability zone
         """
         return pulumi.get(self, "az")
 
@@ -2933,7 +2933,7 @@ class GetGatewayNetworkSpecSubnetResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> builtins.str:
         """
-        子网ID。
+        Subnet ID
         """
         return pulumi.get(self, "subnet_id")
 
@@ -2941,7 +2941,7 @@ class GetGatewayNetworkSpecSubnetResult(dict):
     @pulumi.getter(name="subnetName")
     def subnet_name(self) -> builtins.str:
         """
-        子网名称。
+        Subnet name
         """
         return pulumi.get(self, "subnet_name")
 
@@ -2956,12 +2956,12 @@ class GetGatewayResourceSpecResult(dict):
                  public_network_billing_type: builtins.str,
                  replicas: builtins.int):
         """
-        :param builtins.str clb_spec_code: CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
-        :param builtins.str instance_spec_code: 节点规格，取值：1c2g。2c4g。4c8g。8c16g。
-        :param 'GetGatewayResourceSpecNetworkTypeArgs' network_type: 网络类型。默认值为开启公网，开启私网。
-        :param builtins.int public_network_bandwidth: 公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
-        :param builtins.str public_network_billing_type: 公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
-        :param builtins.int replicas: 节点数量。取值限制为2~100。
+        :param builtins.str clb_spec_code: CLB specification code. CLB specifications. Options: small*1: Small I; small*2: Small II; medium*1: Medium I; medium*2: Medium II; large*1: Large I; large*2: Large II
+        :param builtins.str instance_spec_code: Node specifications. Options: 1c2g, 2c4g, 4c8g, 8c16g
+        :param 'GetGatewayResourceSpecNetworkTypeArgs' network_type: Network type. Default value: enable public network, enable private network
+        :param builtins.int public_network_bandwidth: Public network bandwidth limit. This field is only used for the 'bandwidth limit billing' public network billing method. Unit: Mbps. Value range: 0–500. Default value: 0
+        :param builtins.str public_network_billing_type: Public network billing method. Options: traffic: billed by actual traffic; bandwidth: billed by bandwidth limit
+        :param builtins.int replicas: Node count. Value range: 2–100
         """
         pulumi.set(__self__, "clb_spec_code", clb_spec_code)
         pulumi.set(__self__, "instance_spec_code", instance_spec_code)
@@ -2974,7 +2974,7 @@ class GetGatewayResourceSpecResult(dict):
     @pulumi.getter(name="clbSpecCode")
     def clb_spec_code(self) -> builtins.str:
         """
-        CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+        CLB specification code. CLB specifications. Options: small*1: Small I; small*2: Small II; medium*1: Medium I; medium*2: Medium II; large*1: Large I; large*2: Large II
         """
         return pulumi.get(self, "clb_spec_code")
 
@@ -2982,7 +2982,7 @@ class GetGatewayResourceSpecResult(dict):
     @pulumi.getter(name="instanceSpecCode")
     def instance_spec_code(self) -> builtins.str:
         """
-        节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+        Node specifications. Options: 1c2g, 2c4g, 4c8g, 8c16g
         """
         return pulumi.get(self, "instance_spec_code")
 
@@ -2990,7 +2990,7 @@ class GetGatewayResourceSpecResult(dict):
     @pulumi.getter(name="networkType")
     def network_type(self) -> 'outputs.GetGatewayResourceSpecNetworkTypeResult':
         """
-        网络类型。默认值为开启公网，开启私网。
+        Network type. Default value: enable public network, enable private network
         """
         return pulumi.get(self, "network_type")
 
@@ -2998,7 +2998,7 @@ class GetGatewayResourceSpecResult(dict):
     @pulumi.getter(name="publicNetworkBandwidth")
     def public_network_bandwidth(self) -> builtins.int:
         """
-        公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+        Public network bandwidth limit. This field is only used for the 'bandwidth limit billing' public network billing method. Unit: Mbps. Value range: 0–500. Default value: 0
         """
         return pulumi.get(self, "public_network_bandwidth")
 
@@ -3006,7 +3006,7 @@ class GetGatewayResourceSpecResult(dict):
     @pulumi.getter(name="publicNetworkBillingType")
     def public_network_billing_type(self) -> builtins.str:
         """
-        公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+        Public network billing method. Options: traffic: billed by actual traffic; bandwidth: billed by bandwidth limit
         """
         return pulumi.get(self, "public_network_billing_type")
 
@@ -3014,7 +3014,7 @@ class GetGatewayResourceSpecResult(dict):
     @pulumi.getter
     def replicas(self) -> builtins.int:
         """
-        节点数量。取值限制为2~100。
+        Node count. Value range: 2–100
         """
         return pulumi.get(self, "replicas")
 
@@ -3025,8 +3025,8 @@ class GetGatewayResourceSpecNetworkTypeResult(dict):
                  enable_private_network: builtins.bool,
                  enable_public_network: builtins.bool):
         """
-        :param builtins.bool enable_private_network: 是否启用私网。
-        :param builtins.bool enable_public_network: 是否启用公网。
+        :param builtins.bool enable_private_network: Whether to enable private network
+        :param builtins.bool enable_public_network: Whether to enable public network
         """
         pulumi.set(__self__, "enable_private_network", enable_private_network)
         pulumi.set(__self__, "enable_public_network", enable_public_network)
@@ -3035,7 +3035,7 @@ class GetGatewayResourceSpecNetworkTypeResult(dict):
     @pulumi.getter(name="enablePrivateNetwork")
     def enable_private_network(self) -> builtins.bool:
         """
-        是否启用私网。
+        Whether to enable private network
         """
         return pulumi.get(self, "enable_private_network")
 
@@ -3043,7 +3043,7 @@ class GetGatewayResourceSpecNetworkTypeResult(dict):
     @pulumi.getter(name="enablePublicNetwork")
     def enable_public_network(self) -> builtins.bool:
         """
-        是否启用公网。
+        Whether to enable public network
         """
         return pulumi.get(self, "enable_public_network")
 
@@ -3053,7 +3053,7 @@ class GetGatewayServiceAuthSpecResult(dict):
     def __init__(__self__, *,
                  enable: builtins.bool):
         """
-        :param builtins.bool enable: 是否开启认证。
+        :param builtins.bool enable: Whether authentication is enabled.
         """
         pulumi.set(__self__, "enable", enable)
 
@@ -3061,7 +3061,7 @@ class GetGatewayServiceAuthSpecResult(dict):
     @pulumi.getter
     def enable(self) -> builtins.bool:
         """
-        是否开启认证。
+        Whether authentication is enabled.
         """
         return pulumi.get(self, "enable")
 
@@ -3072,8 +3072,8 @@ class GetGatewayServiceCustomDomainResult(dict):
                  domain: builtins.str,
                  domain_id: builtins.str):
         """
-        :param builtins.str domain: 自定义域名。
-        :param builtins.str domain_id: 自定义域名ID。
+        :param builtins.str domain: Custom domain.
+        :param builtins.str domain_id: Custom domain ID.
         """
         pulumi.set(__self__, "domain", domain)
         pulumi.set(__self__, "domain_id", domain_id)
@@ -3082,7 +3082,7 @@ class GetGatewayServiceCustomDomainResult(dict):
     @pulumi.getter
     def domain(self) -> builtins.str:
         """
-        自定义域名。
+        Custom domain.
         """
         return pulumi.get(self, "domain")
 
@@ -3090,7 +3090,7 @@ class GetGatewayServiceCustomDomainResult(dict):
     @pulumi.getter(name="domainId")
     def domain_id(self) -> builtins.str:
         """
-        自定义域名ID。
+        Custom domain ID.
         """
         return pulumi.get(self, "domain_id")
 
@@ -3101,8 +3101,8 @@ class GetGatewayServiceDomainResult(dict):
                  domain: builtins.str,
                  type: builtins.str):
         """
-        :param builtins.str domain: 域名。
-        :param builtins.str type: 域名类型。取值：public：公网。private：私网。
+        :param builtins.str domain: Domain.
+        :param builtins.str type: Domain type. Options: public: Public network. private: Private network.
         """
         pulumi.set(__self__, "domain", domain)
         pulumi.set(__self__, "type", type)
@@ -3111,7 +3111,7 @@ class GetGatewayServiceDomainResult(dict):
     @pulumi.getter
     def domain(self) -> builtins.str:
         """
-        域名。
+        Domain.
         """
         return pulumi.get(self, "domain")
 
@@ -3119,7 +3119,7 @@ class GetGatewayServiceDomainResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        域名类型。取值：public：公网。private：私网。
+        Domain type. Options: public: Public network. private: Private network.
         """
         return pulumi.get(self, "type")
 
@@ -3129,7 +3129,7 @@ class GetGatewayServiceDomainSpecResult(dict):
     def __init__(__self__, *,
                  enable_public_resolution: builtins.bool):
         """
-        :param builtins.bool enable_public_resolution: 开启私网域名公网解析。
+        :param builtins.bool enable_public_resolution: Enable public resolution for private network domains.
         """
         pulumi.set(__self__, "enable_public_resolution", enable_public_resolution)
 
@@ -3137,7 +3137,7 @@ class GetGatewayServiceDomainSpecResult(dict):
     @pulumi.getter(name="enablePublicResolution")
     def enable_public_resolution(self) -> builtins.bool:
         """
-        开启私网域名公网解析。
+        Enable public resolution for private network domains.
         """
         return pulumi.get(self, "enable_public_resolution")
 
@@ -3149,9 +3149,9 @@ class GetGatewayServiceServiceNetworkSpecResult(dict):
                  enable_public_network: builtins.bool,
                  private_network_ips: Sequence[builtins.str]):
         """
-        :param builtins.bool enable_private_network: 开启私网。
-        :param builtins.bool enable_public_network: 开启公网。
-        :param Sequence[builtins.str] private_network_ips: 私网域名解析的目标IP。
+        :param builtins.bool enable_private_network: Enable private network.
+        :param builtins.bool enable_public_network: Enable public network.
+        :param Sequence[builtins.str] private_network_ips: Target IP for private network domain resolution.
         """
         pulumi.set(__self__, "enable_private_network", enable_private_network)
         pulumi.set(__self__, "enable_public_network", enable_public_network)
@@ -3161,7 +3161,7 @@ class GetGatewayServiceServiceNetworkSpecResult(dict):
     @pulumi.getter(name="enablePrivateNetwork")
     def enable_private_network(self) -> builtins.bool:
         """
-        开启私网。
+        Enable private network.
         """
         return pulumi.get(self, "enable_private_network")
 
@@ -3169,7 +3169,7 @@ class GetGatewayServiceServiceNetworkSpecResult(dict):
     @pulumi.getter(name="enablePublicNetwork")
     def enable_public_network(self) -> builtins.bool:
         """
-        开启公网。
+        Enable public network.
         """
         return pulumi.get(self, "enable_public_network")
 
@@ -3177,7 +3177,7 @@ class GetGatewayServiceServiceNetworkSpecResult(dict):
     @pulumi.getter(name="privateNetworkIps")
     def private_network_ips(self) -> Sequence[builtins.str]:
         """
-        私网域名解析的目标IP。
+        Target IP for private network domain resolution.
         """
         return pulumi.get(self, "private_network_ips")
 
@@ -3190,10 +3190,10 @@ class GetGatewayTraceSpecResult(dict):
                  tls_trace_spec: 'outputs.GetGatewayTraceSpecTlsTraceSpecResult',
                  trace_type: builtins.str):
         """
-        :param 'GetGatewayTraceSpecApmTraceSpecArgs' apm_trace_spec: 应用性能监控全链路版链路追踪配置。
-        :param builtins.bool enable: 是否启用链路追踪。
-        :param 'GetGatewayTraceSpecTlsTraceSpecArgs' tls_trace_spec: 链路追踪配置信息。
-        :param builtins.str trace_type: 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+        :param 'GetGatewayTraceSpecApmTraceSpecArgs' apm_trace_spec: Application performance monitoring full-link trace configuration
+        :param builtins.bool enable: Whether to enable trace
+        :param 'GetGatewayTraceSpecTlsTraceSpecArgs' tls_trace_spec: Link tracing configuration information.
+        :param builtins.str trace_type: Link tracing type. Possible values: tls: Log Service. apm: Application Performance Monitoring (APM) end-to-end version.
         """
         pulumi.set(__self__, "apm_trace_spec", apm_trace_spec)
         pulumi.set(__self__, "enable", enable)
@@ -3204,7 +3204,7 @@ class GetGatewayTraceSpecResult(dict):
     @pulumi.getter(name="apmTraceSpec")
     def apm_trace_spec(self) -> 'outputs.GetGatewayTraceSpecApmTraceSpecResult':
         """
-        应用性能监控全链路版链路追踪配置。
+        Application performance monitoring full-link trace configuration
         """
         return pulumi.get(self, "apm_trace_spec")
 
@@ -3212,7 +3212,7 @@ class GetGatewayTraceSpecResult(dict):
     @pulumi.getter
     def enable(self) -> builtins.bool:
         """
-        是否启用链路追踪。
+        Whether to enable trace
         """
         return pulumi.get(self, "enable")
 
@@ -3220,7 +3220,7 @@ class GetGatewayTraceSpecResult(dict):
     @pulumi.getter(name="tlsTraceSpec")
     def tls_trace_spec(self) -> 'outputs.GetGatewayTraceSpecTlsTraceSpecResult':
         """
-        链路追踪配置信息。
+        Link tracing configuration information.
         """
         return pulumi.get(self, "tls_trace_spec")
 
@@ -3228,7 +3228,7 @@ class GetGatewayTraceSpecResult(dict):
     @pulumi.getter(name="traceType")
     def trace_type(self) -> builtins.str:
         """
-        链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+        Link tracing type. Possible values: tls: Log Service. apm: Application Performance Monitoring (APM) end-to-end version.
         """
         return pulumi.get(self, "trace_type")
 
@@ -3261,7 +3261,7 @@ class GetGatewayTraceSpecTlsTraceSpecResult(dict):
         """
         :param builtins.str iam_user_ak: Access key。
         :param builtins.str iam_user_sk: Secret key。
-        :param builtins.str project_id: 日志项目ID。
+        :param builtins.str project_id: Log project ID
         :param builtins.str trace_id: Trace ID。
         """
         pulumi.set(__self__, "iam_user_ak", iam_user_ak)
@@ -3289,7 +3289,7 @@ class GetGatewayTraceSpecTlsTraceSpecResult(dict):
     @pulumi.getter(name="projectId")
     def project_id(self) -> builtins.str:
         """
-        日志项目ID。
+        Log project ID
         """
         return pulumi.get(self, "project_id")
 
@@ -3309,9 +3309,9 @@ class GetUpstreamBackendTargetResult(dict):
                  ip: builtins.str,
                  port: builtins.int):
         """
-        :param builtins.str health_status: 健康检查状态。
-        :param builtins.str ip: 后端节点IP。
-        :param builtins.int port: 后端节点端口。
+        :param builtins.str health_status: Health Check Status
+        :param builtins.str ip: Backend node IP
+        :param builtins.int port: Backend node port
         """
         pulumi.set(__self__, "health_status", health_status)
         pulumi.set(__self__, "ip", ip)
@@ -3321,7 +3321,7 @@ class GetUpstreamBackendTargetResult(dict):
     @pulumi.getter(name="healthStatus")
     def health_status(self) -> builtins.str:
         """
-        健康检查状态。
+        Health Check Status
         """
         return pulumi.get(self, "health_status")
 
@@ -3329,7 +3329,7 @@ class GetUpstreamBackendTargetResult(dict):
     @pulumi.getter
     def ip(self) -> builtins.str:
         """
-        后端节点IP。
+        Backend node IP
         """
         return pulumi.get(self, "ip")
 
@@ -3337,7 +3337,7 @@ class GetUpstreamBackendTargetResult(dict):
     @pulumi.getter
     def port(self) -> builtins.int:
         """
-        后端节点端口。
+        Backend node port
         """
         return pulumi.get(self, "port")
 
@@ -3352,12 +3352,12 @@ class GetUpstreamCircuitBreakingSettingsResult(dict):
                  max_ejection_percent: builtins.int,
                  min_health_percent: builtins.int):
         """
-        :param builtins.int base_ejection_time: 最小弹出时间。单位为毫秒。取值限制为1~86400000。默认值为30秒。
-        :param builtins.int consecutive_errors: 连续失败次数。取值限制为1~100。默认值为5。
-        :param builtins.bool enable: 开启。
-        :param builtins.int interval: 计算周期。单位为毫秒。取值限制为1~86400000。默认值为10秒。
-        :param builtins.int max_ejection_percent: 最大熔断比例。取值限制为1~100。默认值为20%。
-        :param builtins.int min_health_percent: 最小健康比例。取值限制为0~100。默认值为60%。
+        :param builtins.int base_ejection_time: Minimum pop time, in milliseconds. Value range: 1–86400000. Default: 30 seconds
+        :param builtins.int consecutive_errors: Consecutive failure count. Value range: 1~100. Default: 5
+        :param builtins.bool enable: Enable
+        :param builtins.int interval: Calculation cycle, in milliseconds. Value range: 1–86400000. Default: 10 seconds
+        :param builtins.int max_ejection_percent: Maximum circuit breaking ratio. Value range: 1~100. Default: 20%
+        :param builtins.int min_health_percent: Minimum health ratio. Value range: 0~100. Default: 60%
         """
         pulumi.set(__self__, "base_ejection_time", base_ejection_time)
         pulumi.set(__self__, "consecutive_errors", consecutive_errors)
@@ -3370,7 +3370,7 @@ class GetUpstreamCircuitBreakingSettingsResult(dict):
     @pulumi.getter(name="baseEjectionTime")
     def base_ejection_time(self) -> builtins.int:
         """
-        最小弹出时间。单位为毫秒。取值限制为1~86400000。默认值为30秒。
+        Minimum pop time, in milliseconds. Value range: 1–86400000. Default: 30 seconds
         """
         return pulumi.get(self, "base_ejection_time")
 
@@ -3378,7 +3378,7 @@ class GetUpstreamCircuitBreakingSettingsResult(dict):
     @pulumi.getter(name="consecutiveErrors")
     def consecutive_errors(self) -> builtins.int:
         """
-        连续失败次数。取值限制为1~100。默认值为5。
+        Consecutive failure count. Value range: 1~100. Default: 5
         """
         return pulumi.get(self, "consecutive_errors")
 
@@ -3386,7 +3386,7 @@ class GetUpstreamCircuitBreakingSettingsResult(dict):
     @pulumi.getter
     def enable(self) -> builtins.bool:
         """
-        开启。
+        Enable
         """
         return pulumi.get(self, "enable")
 
@@ -3394,7 +3394,7 @@ class GetUpstreamCircuitBreakingSettingsResult(dict):
     @pulumi.getter
     def interval(self) -> builtins.int:
         """
-        计算周期。单位为毫秒。取值限制为1~86400000。默认值为10秒。
+        Calculation cycle, in milliseconds. Value range: 1–86400000. Default: 10 seconds
         """
         return pulumi.get(self, "interval")
 
@@ -3402,7 +3402,7 @@ class GetUpstreamCircuitBreakingSettingsResult(dict):
     @pulumi.getter(name="maxEjectionPercent")
     def max_ejection_percent(self) -> builtins.int:
         """
-        最大熔断比例。取值限制为1~100。默认值为20%。
+        Maximum circuit breaking ratio. Value range: 1~100. Default: 20%
         """
         return pulumi.get(self, "max_ejection_percent")
 
@@ -3410,7 +3410,7 @@ class GetUpstreamCircuitBreakingSettingsResult(dict):
     @pulumi.getter(name="minHealthPercent")
     def min_health_percent(self) -> builtins.int:
         """
-        最小健康比例。取值限制为0~100。默认值为60%。
+        Minimum health ratio. Value range: 0~100. Default: 60%
         """
         return pulumi.get(self, "min_health_percent")
 
@@ -3423,10 +3423,10 @@ class GetUpstreamConnectionPoolSettingsResult(dict):
                  idle_timeout: builtins.int,
                  max_connections: builtins.int):
         """
-        :param builtins.bool enable: 开启。
-        :param builtins.int http1_max_pending_requests: HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
-        :param builtins.int idle_timeout: 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
-        :param builtins.int max_connections: TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+        :param builtins.bool enable: Enable
+        :param builtins.int http1_max_pending_requests: Maximum HTTP/1 pending requests. Value range: 0~2^31-1. 0 means unlimited
+        :param builtins.int idle_timeout: Idle timeout, in seconds. Value range: 0–2^31-1. 0 means no limit
+        :param builtins.int max_connections: Maximum TCP connections. Value range: 0~2^31-1. 0 means unlimited
         """
         pulumi.set(__self__, "enable", enable)
         pulumi.set(__self__, "http1_max_pending_requests", http1_max_pending_requests)
@@ -3437,7 +3437,7 @@ class GetUpstreamConnectionPoolSettingsResult(dict):
     @pulumi.getter
     def enable(self) -> builtins.bool:
         """
-        开启。
+        Enable
         """
         return pulumi.get(self, "enable")
 
@@ -3445,7 +3445,7 @@ class GetUpstreamConnectionPoolSettingsResult(dict):
     @pulumi.getter(name="http1MaxPendingRequests")
     def http1_max_pending_requests(self) -> builtins.int:
         """
-        HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+        Maximum HTTP/1 pending requests. Value range: 0~2^31-1. 0 means unlimited
         """
         return pulumi.get(self, "http1_max_pending_requests")
 
@@ -3453,7 +3453,7 @@ class GetUpstreamConnectionPoolSettingsResult(dict):
     @pulumi.getter(name="idleTimeout")
     def idle_timeout(self) -> builtins.int:
         """
-        空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+        Idle timeout, in seconds. Value range: 0–2^31-1. 0 means no limit
         """
         return pulumi.get(self, "idle_timeout")
 
@@ -3461,7 +3461,7 @@ class GetUpstreamConnectionPoolSettingsResult(dict):
     @pulumi.getter(name="maxConnections")
     def max_connections(self) -> builtins.int:
         """
-        TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+        Maximum TCP connections. Value range: 0~2^31-1. 0 means unlimited
         """
         return pulumi.get(self, "max_connections")
 
@@ -3474,10 +3474,10 @@ class GetUpstreamLoadBalancerSettingsResult(dict):
                  simple_lb: builtins.str,
                  warmup_duration: builtins.int):
         """
-        :param 'GetUpstreamLoadBalancerSettingsConsistentHashLbArgs' consistent_hash_lb: 一致性哈希负载均衡。
-        :param builtins.str lb_policy: 负载均衡策略，取值：SimpleLB：简单负载均衡。ConsistentHashLB：一致性哈希负载均衡。
-        :param builtins.str simple_lb: 简单负载均衡，取值：ROUND*ROBIN：轮询。LEAST*CONN：最小连接数。RANDOM：随机。
-        :param builtins.int warmup_duration: 预热时间。单位为秒。
+        :param 'GetUpstreamLoadBalancerSettingsConsistentHashLbArgs' consistent_hash_lb: Consistent Hash Load Balancing
+        :param builtins.str lb_policy: Load balancing policy. Options: SimpleLB: simple load balancing. ConsistentHashLB: consistent hash load balancing
+        :param builtins.str simple_lb: Simple load balancing. Options: ROUND*ROBIN: round robin. LEAST*CONN: least connections. RANDOM: random
+        :param builtins.int warmup_duration: Warm-up time (seconds)
         """
         pulumi.set(__self__, "consistent_hash_lb", consistent_hash_lb)
         pulumi.set(__self__, "lb_policy", lb_policy)
@@ -3488,7 +3488,7 @@ class GetUpstreamLoadBalancerSettingsResult(dict):
     @pulumi.getter(name="consistentHashLb")
     def consistent_hash_lb(self) -> 'outputs.GetUpstreamLoadBalancerSettingsConsistentHashLbResult':
         """
-        一致性哈希负载均衡。
+        Consistent Hash Load Balancing
         """
         return pulumi.get(self, "consistent_hash_lb")
 
@@ -3496,7 +3496,7 @@ class GetUpstreamLoadBalancerSettingsResult(dict):
     @pulumi.getter(name="lbPolicy")
     def lb_policy(self) -> builtins.str:
         """
-        负载均衡策略，取值：SimpleLB：简单负载均衡。ConsistentHashLB：一致性哈希负载均衡。
+        Load balancing policy. Options: SimpleLB: simple load balancing. ConsistentHashLB: consistent hash load balancing
         """
         return pulumi.get(self, "lb_policy")
 
@@ -3504,7 +3504,7 @@ class GetUpstreamLoadBalancerSettingsResult(dict):
     @pulumi.getter(name="simpleLb")
     def simple_lb(self) -> builtins.str:
         """
-        简单负载均衡，取值：ROUND*ROBIN：轮询。LEAST*CONN：最小连接数。RANDOM：随机。
+        Simple load balancing. Options: ROUND*ROBIN: round robin. LEAST*CONN: least connections. RANDOM: random
         """
         return pulumi.get(self, "simple_lb")
 
@@ -3512,7 +3512,7 @@ class GetUpstreamLoadBalancerSettingsResult(dict):
     @pulumi.getter(name="warmupDuration")
     def warmup_duration(self) -> builtins.int:
         """
-        预热时间。单位为秒。
+        Warm-up time (seconds)
         """
         return pulumi.get(self, "warmup_duration")
 
@@ -3527,12 +3527,12 @@ class GetUpstreamLoadBalancerSettingsConsistentHashLbResult(dict):
                  http_query_parameter_name: builtins.str,
                  use_source_ip: builtins.str):
         """
-        :param builtins.int hash_balance_factor: 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
-        :param builtins.str hash_key: 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
+        :param builtins.int hash_balance_factor: Overload protection parameter. Value range: 100–200. When set to 120, overload protection is triggered if the current active request count of an upstream node exceeds 120% of the average active request count. When overload protection is triggered, even if the request hash matches a specific upstream node, the load balancer will randomly select an upstream node
+        :param builtins.str hash_key: Consistent hash method. Options: UseSourceIp: based on source IP address. HttpQueryParameterName: based on parameter. HttpHeaderName: based on header. HTTPCookie: based on cookie
         :param 'GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookieArgs' http_cookie: Cookie。
-        :param builtins.str http_header_name: 参数。支持ASCII可打印字符，长度限制为1~256个字符。
-        :param builtins.str http_query_parameter_name: 参数。支持ASCII可打印字符，长度限制为1~256个字符。
-        :param builtins.str use_source_ip: 源IP地址。
+        :param builtins.str http_header_name: Parameter. Supports printable ASCII characters, length: 1–256 characters
+        :param builtins.str http_query_parameter_name: Parameter. Supports printable ASCII characters, length: 1–256 characters
+        :param builtins.str use_source_ip: Source IP address
         """
         pulumi.set(__self__, "hash_balance_factor", hash_balance_factor)
         pulumi.set(__self__, "hash_key", hash_key)
@@ -3545,7 +3545,7 @@ class GetUpstreamLoadBalancerSettingsConsistentHashLbResult(dict):
     @pulumi.getter(name="hashBalanceFactor")
     def hash_balance_factor(self) -> builtins.int:
         """
-        过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+        Overload protection parameter. Value range: 100–200. When set to 120, overload protection is triggered if the current active request count of an upstream node exceeds 120% of the average active request count. When overload protection is triggered, even if the request hash matches a specific upstream node, the load balancer will randomly select an upstream node
         """
         return pulumi.get(self, "hash_balance_factor")
 
@@ -3553,7 +3553,7 @@ class GetUpstreamLoadBalancerSettingsConsistentHashLbResult(dict):
     @pulumi.getter(name="hashKey")
     def hash_key(self) -> builtins.str:
         """
-        一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
+        Consistent hash method. Options: UseSourceIp: based on source IP address. HttpQueryParameterName: based on parameter. HttpHeaderName: based on header. HTTPCookie: based on cookie
         """
         return pulumi.get(self, "hash_key")
 
@@ -3569,7 +3569,7 @@ class GetUpstreamLoadBalancerSettingsConsistentHashLbResult(dict):
     @pulumi.getter(name="httpHeaderName")
     def http_header_name(self) -> builtins.str:
         """
-        参数。支持ASCII可打印字符，长度限制为1~256个字符。
+        Parameter. Supports printable ASCII characters, length: 1–256 characters
         """
         return pulumi.get(self, "http_header_name")
 
@@ -3577,7 +3577,7 @@ class GetUpstreamLoadBalancerSettingsConsistentHashLbResult(dict):
     @pulumi.getter(name="httpQueryParameterName")
     def http_query_parameter_name(self) -> builtins.str:
         """
-        参数。支持ASCII可打印字符，长度限制为1~256个字符。
+        Parameter. Supports printable ASCII characters, length: 1–256 characters
         """
         return pulumi.get(self, "http_query_parameter_name")
 
@@ -3585,7 +3585,7 @@ class GetUpstreamLoadBalancerSettingsConsistentHashLbResult(dict):
     @pulumi.getter(name="useSourceIp")
     def use_source_ip(self) -> builtins.str:
         """
-        源IP地址。
+        Source IP address
         """
         return pulumi.get(self, "use_source_ip")
 
@@ -3597,9 +3597,9 @@ class GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookieResult(dict):
                  path: builtins.str,
                  ttl: builtins.int):
         """
-        :param builtins.str name: 名称。支持ASCII可打印字符，长度限制为0~256个字符。
-        :param builtins.str path: 路径。支持ASCII可打印字符，长度限制为1~256个字符。
-        :param builtins.int ttl: 有效期。单位为秒。
+        :param builtins.str name: Name. Supports printable ASCII characters. Length: 0~256 characters
+        :param builtins.str path: Path. Supports printable ASCII characters. Length: 1~256 characters
+        :param builtins.int ttl: Validity period, in seconds
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "path", path)
@@ -3609,7 +3609,7 @@ class GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookieResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        名称。支持ASCII可打印字符，长度限制为0~256个字符。
+        Name. Supports printable ASCII characters. Length: 0~256 characters
         """
         return pulumi.get(self, "name")
 
@@ -3617,7 +3617,7 @@ class GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookieResult(dict):
     @pulumi.getter
     def path(self) -> builtins.str:
         """
-        路径。支持ASCII可打印字符，长度限制为1~256个字符。
+        Path. Supports printable ASCII characters. Length: 1~256 characters
         """
         return pulumi.get(self, "path")
 
@@ -3625,7 +3625,7 @@ class GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookieResult(dict):
     @pulumi.getter
     def ttl(self) -> builtins.int:
         """
-        有效期。单位为秒。
+        Validity period, in seconds
         """
         return pulumi.get(self, "ttl")
 
@@ -3641,13 +3641,13 @@ class GetUpstreamSourceIngressSettingsResult(dict):
                  update_status: builtins.bool,
                  watch_namespaces: Sequence[builtins.str]):
         """
-        :param builtins.bool enable_all_ingress_classes: 是否启用所有Ingress类。
-        :param builtins.bool enable_all_namespaces: 是否全部命名空间。
-        :param builtins.bool enable_ingress: 是否开启。
-        :param builtins.bool enable_ingress_without_ingress_class: 是否监听IngressClass为空的资源。
-        :param Sequence[builtins.str] ingress_classes: 指定IngressClass。
-        :param builtins.bool update_status: 流量入口切换。开启后，当前集群Ingress中Status的IP地址会被修改为当前网关的IP地址。
-        :param Sequence[builtins.str] watch_namespaces: 指定命名空间。
+        :param builtins.bool enable_all_ingress_classes: Whether to enable all Ingress classes
+        :param builtins.bool enable_all_namespaces: Whether all namespaces
+        :param builtins.bool enable_ingress: Whether enabled
+        :param builtins.bool enable_ingress_without_ingress_class: Whether to monitor resources with empty IngressClass
+        :param Sequence[builtins.str] ingress_classes: Specify IngressClass
+        :param builtins.bool update_status: Traffic entry switch. When enabled, the IP address in the Status of the current cluster's Ingress will be updated to the current gateway's IP address
+        :param Sequence[builtins.str] watch_namespaces: Specify namespace
         """
         pulumi.set(__self__, "enable_all_ingress_classes", enable_all_ingress_classes)
         pulumi.set(__self__, "enable_all_namespaces", enable_all_namespaces)
@@ -3661,7 +3661,7 @@ class GetUpstreamSourceIngressSettingsResult(dict):
     @pulumi.getter(name="enableAllIngressClasses")
     def enable_all_ingress_classes(self) -> builtins.bool:
         """
-        是否启用所有Ingress类。
+        Whether to enable all Ingress classes
         """
         return pulumi.get(self, "enable_all_ingress_classes")
 
@@ -3669,7 +3669,7 @@ class GetUpstreamSourceIngressSettingsResult(dict):
     @pulumi.getter(name="enableAllNamespaces")
     def enable_all_namespaces(self) -> builtins.bool:
         """
-        是否全部命名空间。
+        Whether all namespaces
         """
         return pulumi.get(self, "enable_all_namespaces")
 
@@ -3677,7 +3677,7 @@ class GetUpstreamSourceIngressSettingsResult(dict):
     @pulumi.getter(name="enableIngress")
     def enable_ingress(self) -> builtins.bool:
         """
-        是否开启。
+        Whether enabled
         """
         return pulumi.get(self, "enable_ingress")
 
@@ -3685,7 +3685,7 @@ class GetUpstreamSourceIngressSettingsResult(dict):
     @pulumi.getter(name="enableIngressWithoutIngressClass")
     def enable_ingress_without_ingress_class(self) -> builtins.bool:
         """
-        是否监听IngressClass为空的资源。
+        Whether to monitor resources with empty IngressClass
         """
         return pulumi.get(self, "enable_ingress_without_ingress_class")
 
@@ -3693,7 +3693,7 @@ class GetUpstreamSourceIngressSettingsResult(dict):
     @pulumi.getter(name="ingressClasses")
     def ingress_classes(self) -> Sequence[builtins.str]:
         """
-        指定IngressClass。
+        Specify IngressClass
         """
         return pulumi.get(self, "ingress_classes")
 
@@ -3701,7 +3701,7 @@ class GetUpstreamSourceIngressSettingsResult(dict):
     @pulumi.getter(name="updateStatus")
     def update_status(self) -> builtins.bool:
         """
-        流量入口切换。开启后，当前集群Ingress中Status的IP地址会被修改为当前网关的IP地址。
+        Traffic entry switch. When enabled, the IP address in the Status of the current cluster's Ingress will be updated to the current gateway's IP address
         """
         return pulumi.get(self, "update_status")
 
@@ -3709,7 +3709,7 @@ class GetUpstreamSourceIngressSettingsResult(dict):
     @pulumi.getter(name="watchNamespaces")
     def watch_namespaces(self) -> Sequence[builtins.str]:
         """
-        指定命名空间。
+        Specify namespace
         """
         return pulumi.get(self, "watch_namespaces")
 
@@ -3720,8 +3720,8 @@ class GetUpstreamSourceSourceSpecResult(dict):
                  k8_s_source: 'outputs.GetUpstreamSourceSourceSpecK8SSourceResult',
                  nacos_source: 'outputs.GetUpstreamSourceSourceSpecNacosSourceResult'):
         """
-        :param 'GetUpstreamSourceSourceSpecK8SSourceArgs' k8_s_source: 容器集群来源。
-        :param 'GetUpstreamSourceSourceSpecNacosSourceArgs' nacos_source: 注册中心来源。
+        :param 'GetUpstreamSourceSourceSpecK8SSourceArgs' k8_s_source: Container cluster source
+        :param 'GetUpstreamSourceSourceSpecNacosSourceArgs' nacos_source: Registry source
         """
         pulumi.set(__self__, "k8_s_source", k8_s_source)
         pulumi.set(__self__, "nacos_source", nacos_source)
@@ -3730,7 +3730,7 @@ class GetUpstreamSourceSourceSpecResult(dict):
     @pulumi.getter(name="k8SSource")
     def k8_s_source(self) -> 'outputs.GetUpstreamSourceSourceSpecK8SSourceResult':
         """
-        容器集群来源。
+        Container cluster source
         """
         return pulumi.get(self, "k8_s_source")
 
@@ -3738,7 +3738,7 @@ class GetUpstreamSourceSourceSpecResult(dict):
     @pulumi.getter(name="nacosSource")
     def nacos_source(self) -> 'outputs.GetUpstreamSourceSourceSpecNacosSourceResult':
         """
-        注册中心来源。
+        Registry source
         """
         return pulumi.get(self, "nacos_source")
 
@@ -3749,8 +3749,8 @@ class GetUpstreamSourceSourceSpecK8SSourceResult(dict):
                  cluster_id: builtins.str,
                  cluster_type: builtins.str):
         """
-        :param builtins.str cluster_id: 集群ID。
-        :param builtins.str cluster_type: 集群类型。
+        :param builtins.str cluster_id: Cluster ID
+        :param builtins.str cluster_type: Cluster type
         """
         pulumi.set(__self__, "cluster_id", cluster_id)
         pulumi.set(__self__, "cluster_type", cluster_type)
@@ -3759,7 +3759,7 @@ class GetUpstreamSourceSourceSpecK8SSourceResult(dict):
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> builtins.str:
         """
-        集群ID。
+        Cluster ID
         """
         return pulumi.get(self, "cluster_id")
 
@@ -3767,7 +3767,7 @@ class GetUpstreamSourceSourceSpecK8SSourceResult(dict):
     @pulumi.getter(name="clusterType")
     def cluster_type(self) -> builtins.str:
         """
-        集群类型。
+        Cluster type
         """
         return pulumi.get(self, "cluster_type")
 
@@ -3779,9 +3779,9 @@ class GetUpstreamSourceSourceSpecNacosSourceResult(dict):
                  nacos_id: builtins.str,
                  nacos_name: builtins.str):
         """
-        :param 'GetUpstreamSourceSourceSpecNacosSourceAuthConfigArgs' auth_config: 认证配置。
+        :param 'GetUpstreamSourceSourceSpecNacosSourceAuthConfigArgs' auth_config: Authentication configuration
         :param builtins.str nacos_id: Nacos ID。
-        :param builtins.str nacos_name: Nacos名称。
+        :param builtins.str nacos_name: Nacos name
         """
         pulumi.set(__self__, "auth_config", auth_config)
         pulumi.set(__self__, "nacos_id", nacos_id)
@@ -3791,7 +3791,7 @@ class GetUpstreamSourceSourceSpecNacosSourceResult(dict):
     @pulumi.getter(name="authConfig")
     def auth_config(self) -> 'outputs.GetUpstreamSourceSourceSpecNacosSourceAuthConfigResult':
         """
-        认证配置。
+        Authentication configuration
         """
         return pulumi.get(self, "auth_config")
 
@@ -3807,7 +3807,7 @@ class GetUpstreamSourceSourceSpecNacosSourceResult(dict):
     @pulumi.getter(name="nacosName")
     def nacos_name(self) -> builtins.str:
         """
-        Nacos名称。
+        Nacos name
         """
         return pulumi.get(self, "nacos_name")
 
@@ -3817,7 +3817,7 @@ class GetUpstreamSourceSourceSpecNacosSourceAuthConfigResult(dict):
     def __init__(__self__, *,
                  basic: 'outputs.GetUpstreamSourceSourceSpecNacosSourceAuthConfigBasicResult'):
         """
-        :param 'GetUpstreamSourceSourceSpecNacosSourceAuthConfigBasicArgs' basic: Basic认证。
+        :param 'GetUpstreamSourceSourceSpecNacosSourceAuthConfigBasicArgs' basic: Basic authentication
         """
         pulumi.set(__self__, "basic", basic)
 
@@ -3825,7 +3825,7 @@ class GetUpstreamSourceSourceSpecNacosSourceAuthConfigResult(dict):
     @pulumi.getter
     def basic(self) -> 'outputs.GetUpstreamSourceSourceSpecNacosSourceAuthConfigBasicResult':
         """
-        Basic认证。
+        Basic authentication
         """
         return pulumi.get(self, "basic")
 
@@ -3836,8 +3836,8 @@ class GetUpstreamSourceSourceSpecNacosSourceAuthConfigBasicResult(dict):
                  password: builtins.str,
                  username: builtins.str):
         """
-        :param builtins.str password: 密码。
-        :param builtins.str username: 用户名。
+        :param builtins.str password: Password
+        :param builtins.str username: Username
         """
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "username", username)
@@ -3846,7 +3846,7 @@ class GetUpstreamSourceSourceSpecNacosSourceAuthConfigBasicResult(dict):
     @pulumi.getter
     def password(self) -> builtins.str:
         """
-        密码。
+        Password
         """
         return pulumi.get(self, "password")
 
@@ -3854,7 +3854,7 @@ class GetUpstreamSourceSourceSpecNacosSourceAuthConfigBasicResult(dict):
     @pulumi.getter
     def username(self) -> builtins.str:
         """
-        用户名。
+        Username
         """
         return pulumi.get(self, "username")
 
@@ -3865,8 +3865,8 @@ class GetUpstreamTlsSettingsResult(dict):
                  sni: builtins.str,
                  tls_mode: builtins.str):
         """
-        :param builtins.str sni: SNI。留空时会将访问网关的域名透传到upstream。
-        :param builtins.str tls_mode: TLS模式，取值：DISABLE：关闭TLS。SIMPLE：单向TLS。
+        :param builtins.str sni: SNI. If left blank, the domain name accessed by the gateway will be passed through to the upstream
+        :param builtins.str tls_mode: TLS mode. Options: DISABLE: disable TLS. SIMPLE: one-way TLS
         """
         pulumi.set(__self__, "sni", sni)
         pulumi.set(__self__, "tls_mode", tls_mode)
@@ -3875,7 +3875,7 @@ class GetUpstreamTlsSettingsResult(dict):
     @pulumi.getter
     def sni(self) -> builtins.str:
         """
-        SNI。留空时会将访问网关的域名透传到upstream。
+        SNI. If left blank, the domain name accessed by the gateway will be passed through to the upstream
         """
         return pulumi.get(self, "sni")
 
@@ -3883,7 +3883,7 @@ class GetUpstreamTlsSettingsResult(dict):
     @pulumi.getter(name="tlsMode")
     def tls_mode(self) -> builtins.str:
         """
-        TLS模式，取值：DISABLE：关闭TLS。SIMPLE：单向TLS。
+        TLS mode. Options: DISABLE: disable TLS. SIMPLE: one-way TLS
         """
         return pulumi.get(self, "tls_mode")
 
@@ -3898,12 +3898,12 @@ class GetUpstreamUpstreamSpecResult(dict):
                  nacos_service: 'outputs.GetUpstreamUpstreamSpecNacosServiceResult',
                  ve_faas: 'outputs.GetUpstreamUpstreamSpecVeFaasResult'):
         """
-        :param 'GetUpstreamUpstreamSpecAiProviderArgs' ai_provider: AI模型代理。
-        :param 'GetUpstreamUpstreamSpecDomainArgs' domain: 固定域名。
-        :param Sequence['GetUpstreamUpstreamSpecEcsInstanceArgs'] ecs_instances: 云服务器。
-        :param 'GetUpstreamUpstreamSpecK8SServiceArgs' k8_s_service: 容器服务。
-        :param 'GetUpstreamUpstreamSpecNacosServiceArgs' nacos_service: 注册中心。
-        :param 'GetUpstreamUpstreamSpecVeFaasArgs' ve_faas: 函数服务。
+        :param 'GetUpstreamUpstreamSpecAiProviderArgs' ai_provider: AI model proxy
+        :param 'GetUpstreamUpstreamSpecDomainArgs' domain: Fixed domain name
+        :param Sequence['GetUpstreamUpstreamSpecEcsInstanceArgs'] ecs_instances: Cloud server
+        :param 'GetUpstreamUpstreamSpecK8SServiceArgs' k8_s_service: Container Service
+        :param 'GetUpstreamUpstreamSpecNacosServiceArgs' nacos_service: Registry Center
+        :param 'GetUpstreamUpstreamSpecVeFaasArgs' ve_faas: Function service
         """
         pulumi.set(__self__, "ai_provider", ai_provider)
         pulumi.set(__self__, "domain", domain)
@@ -3916,7 +3916,7 @@ class GetUpstreamUpstreamSpecResult(dict):
     @pulumi.getter(name="aiProvider")
     def ai_provider(self) -> 'outputs.GetUpstreamUpstreamSpecAiProviderResult':
         """
-        AI模型代理。
+        AI model proxy
         """
         return pulumi.get(self, "ai_provider")
 
@@ -3924,7 +3924,7 @@ class GetUpstreamUpstreamSpecResult(dict):
     @pulumi.getter
     def domain(self) -> 'outputs.GetUpstreamUpstreamSpecDomainResult':
         """
-        固定域名。
+        Fixed domain name
         """
         return pulumi.get(self, "domain")
 
@@ -3932,7 +3932,7 @@ class GetUpstreamUpstreamSpecResult(dict):
     @pulumi.getter(name="ecsInstances")
     def ecs_instances(self) -> Sequence['outputs.GetUpstreamUpstreamSpecEcsInstanceResult']:
         """
-        云服务器。
+        Cloud server
         """
         return pulumi.get(self, "ecs_instances")
 
@@ -3940,7 +3940,7 @@ class GetUpstreamUpstreamSpecResult(dict):
     @pulumi.getter(name="k8SService")
     def k8_s_service(self) -> 'outputs.GetUpstreamUpstreamSpecK8SServiceResult':
         """
-        容器服务。
+        Container Service
         """
         return pulumi.get(self, "k8_s_service")
 
@@ -3948,7 +3948,7 @@ class GetUpstreamUpstreamSpecResult(dict):
     @pulumi.getter(name="nacosService")
     def nacos_service(self) -> 'outputs.GetUpstreamUpstreamSpecNacosServiceResult':
         """
-        注册中心。
+        Registry Center
         """
         return pulumi.get(self, "nacos_service")
 
@@ -3956,7 +3956,7 @@ class GetUpstreamUpstreamSpecResult(dict):
     @pulumi.getter(name="veFaas")
     def ve_faas(self) -> 'outputs.GetUpstreamUpstreamSpecVeFaasResult':
         """
-        函数服务。
+        Function service
         """
         return pulumi.get(self, "ve_faas")
 
@@ -3969,10 +3969,10 @@ class GetUpstreamUpstreamSpecAiProviderResult(dict):
                  name: builtins.str,
                  token: builtins.str):
         """
-        :param builtins.str base_url: 模型地址。
-        :param 'GetUpstreamUpstreamSpecAiProviderCustomModelServiceArgs' custom_model_service: 火山自部署模型服务。
-        :param builtins.str name: 模型服务商名称。
-        :param builtins.str token: 模型API key。
+        :param builtins.str base_url: Model address
+        :param 'GetUpstreamUpstreamSpecAiProviderCustomModelServiceArgs' custom_model_service: Volcano Engine self-hosted model service
+        :param builtins.str name: Model Service Provider Name
+        :param builtins.str token: Model API key
         """
         pulumi.set(__self__, "base_url", base_url)
         pulumi.set(__self__, "custom_model_service", custom_model_service)
@@ -3983,7 +3983,7 @@ class GetUpstreamUpstreamSpecAiProviderResult(dict):
     @pulumi.getter(name="baseUrl")
     def base_url(self) -> builtins.str:
         """
-        模型地址。
+        Model address
         """
         return pulumi.get(self, "base_url")
 
@@ -3991,7 +3991,7 @@ class GetUpstreamUpstreamSpecAiProviderResult(dict):
     @pulumi.getter(name="customModelService")
     def custom_model_service(self) -> 'outputs.GetUpstreamUpstreamSpecAiProviderCustomModelServiceResult':
         """
-        火山自部署模型服务。
+        Volcano Engine self-hosted model service
         """
         return pulumi.get(self, "custom_model_service")
 
@@ -3999,7 +3999,7 @@ class GetUpstreamUpstreamSpecAiProviderResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        模型服务商名称。
+        Model Service Provider Name
         """
         return pulumi.get(self, "name")
 
@@ -4007,7 +4007,7 @@ class GetUpstreamUpstreamSpecAiProviderResult(dict):
     @pulumi.getter
     def token(self) -> builtins.str:
         """
-        模型API key。
+        Model API key
         """
         return pulumi.get(self, "token")
 
@@ -4019,9 +4019,9 @@ class GetUpstreamUpstreamSpecAiProviderCustomModelServiceResult(dict):
                  namespace: builtins.str,
                  port: builtins.int):
         """
-        :param builtins.str name: 模型服务名称。
-        :param builtins.str namespace: 命名空间。
-        :param builtins.int port: 端口。
+        :param builtins.str name: Model Service Name
+        :param builtins.str namespace: Namespace
+        :param builtins.int port: Port
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "namespace", namespace)
@@ -4031,7 +4031,7 @@ class GetUpstreamUpstreamSpecAiProviderCustomModelServiceResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        模型服务名称。
+        Model Service Name
         """
         return pulumi.get(self, "name")
 
@@ -4039,7 +4039,7 @@ class GetUpstreamUpstreamSpecAiProviderCustomModelServiceResult(dict):
     @pulumi.getter
     def namespace(self) -> builtins.str:
         """
-        命名空间。
+        Namespace
         """
         return pulumi.get(self, "namespace")
 
@@ -4047,7 +4047,7 @@ class GetUpstreamUpstreamSpecAiProviderCustomModelServiceResult(dict):
     @pulumi.getter
     def port(self) -> builtins.int:
         """
-        端口。
+        Port
         """
         return pulumi.get(self, "port")
 
@@ -4057,7 +4057,7 @@ class GetUpstreamUpstreamSpecDomainResult(dict):
     def __init__(__self__, *,
                  domain_lists: Sequence['outputs.GetUpstreamUpstreamSpecDomainDomainListResult']):
         """
-        :param Sequence['GetUpstreamUpstreamSpecDomainDomainListArgs'] domain_lists: 域名列表。
+        :param Sequence['GetUpstreamUpstreamSpecDomainDomainListArgs'] domain_lists: Domain name list
         """
         pulumi.set(__self__, "domain_lists", domain_lists)
 
@@ -4065,7 +4065,7 @@ class GetUpstreamUpstreamSpecDomainResult(dict):
     @pulumi.getter(name="domainLists")
     def domain_lists(self) -> Sequence['outputs.GetUpstreamUpstreamSpecDomainDomainListResult']:
         """
-        域名列表。
+        Domain name list
         """
         return pulumi.get(self, "domain_lists")
 
@@ -4076,8 +4076,8 @@ class GetUpstreamUpstreamSpecDomainDomainListResult(dict):
                  domain: builtins.str,
                  port: builtins.int):
         """
-        :param builtins.str domain: 域名。
-        :param builtins.int port: 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+        :param builtins.str domain: Domain name
+        :param builtins.int port: Port. Default: 80 for HTTP, 443 for HTTPS
         """
         pulumi.set(__self__, "domain", domain)
         pulumi.set(__self__, "port", port)
@@ -4086,7 +4086,7 @@ class GetUpstreamUpstreamSpecDomainDomainListResult(dict):
     @pulumi.getter
     def domain(self) -> builtins.str:
         """
-        域名。
+        Domain name
         """
         return pulumi.get(self, "domain")
 
@@ -4094,7 +4094,7 @@ class GetUpstreamUpstreamSpecDomainDomainListResult(dict):
     @pulumi.getter
     def port(self) -> builtins.int:
         """
-        端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+        Port. Default: 80 for HTTP, 443 for HTTPS
         """
         return pulumi.get(self, "port")
 
@@ -4106,9 +4106,9 @@ class GetUpstreamUpstreamSpecEcsInstanceResult(dict):
                  ip: builtins.str,
                  port: builtins.int):
         """
-        :param builtins.str ecs_id: 云服务器ID。
-        :param builtins.str ip: IP地址。
-        :param builtins.int port: 端口。
+        :param builtins.str ecs_id: Cloud server ID
+        :param builtins.str ip: IP address
+        :param builtins.int port: Port
         """
         pulumi.set(__self__, "ecs_id", ecs_id)
         pulumi.set(__self__, "ip", ip)
@@ -4118,7 +4118,7 @@ class GetUpstreamUpstreamSpecEcsInstanceResult(dict):
     @pulumi.getter(name="ecsId")
     def ecs_id(self) -> builtins.str:
         """
-        云服务器ID。
+        Cloud server ID
         """
         return pulumi.get(self, "ecs_id")
 
@@ -4126,7 +4126,7 @@ class GetUpstreamUpstreamSpecEcsInstanceResult(dict):
     @pulumi.getter
     def ip(self) -> builtins.str:
         """
-        IP地址。
+        IP address
         """
         return pulumi.get(self, "ip")
 
@@ -4134,7 +4134,7 @@ class GetUpstreamUpstreamSpecEcsInstanceResult(dict):
     @pulumi.getter
     def port(self) -> builtins.int:
         """
-        端口。
+        Port
         """
         return pulumi.get(self, "port")
 
@@ -4146,9 +4146,9 @@ class GetUpstreamUpstreamSpecK8SServiceResult(dict):
                  namespace: builtins.str,
                  port: builtins.int):
         """
-        :param builtins.str name: 容器服务名称。长度限制为2~63个字符。
-        :param builtins.str namespace: 命名空间。长度限制为2~63个字符。
-        :param builtins.int port: 端口。
+        :param builtins.str name: Container Service Name. Length: 2–63 characters
+        :param builtins.str namespace: Namespace. Length: 2~63 characters
+        :param builtins.int port: Port
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "namespace", namespace)
@@ -4158,7 +4158,7 @@ class GetUpstreamUpstreamSpecK8SServiceResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        容器服务名称。长度限制为2~63个字符。
+        Container Service Name. Length: 2–63 characters
         """
         return pulumi.get(self, "name")
 
@@ -4166,7 +4166,7 @@ class GetUpstreamUpstreamSpecK8SServiceResult(dict):
     @pulumi.getter
     def namespace(self) -> builtins.str:
         """
-        命名空间。长度限制为2~63个字符。
+        Namespace. Length: 2~63 characters
         """
         return pulumi.get(self, "namespace")
 
@@ -4174,7 +4174,7 @@ class GetUpstreamUpstreamSpecK8SServiceResult(dict):
     @pulumi.getter
     def port(self) -> builtins.int:
         """
-        端口。
+        Port
         """
         return pulumi.get(self, "port")
 
@@ -4188,11 +4188,11 @@ class GetUpstreamUpstreamSpecNacosServiceResult(dict):
                  service: builtins.str,
                  upstream_source_id: builtins.str):
         """
-        :param builtins.str group: 分组。
-        :param builtins.str namespace: 命名空间。
-        :param builtins.str namespace_id: 命名空间ID。
-        :param builtins.str service: 服务。
-        :param builtins.str upstream_source_id: Upstream来源ID。
+        :param builtins.str group: Group
+        :param builtins.str namespace: Namespace
+        :param builtins.str namespace_id: Namespace ID
+        :param builtins.str service: Service
+        :param builtins.str upstream_source_id: Upstream source ID
         """
         pulumi.set(__self__, "group", group)
         pulumi.set(__self__, "namespace", namespace)
@@ -4204,7 +4204,7 @@ class GetUpstreamUpstreamSpecNacosServiceResult(dict):
     @pulumi.getter
     def group(self) -> builtins.str:
         """
-        分组。
+        Group
         """
         return pulumi.get(self, "group")
 
@@ -4212,7 +4212,7 @@ class GetUpstreamUpstreamSpecNacosServiceResult(dict):
     @pulumi.getter
     def namespace(self) -> builtins.str:
         """
-        命名空间。
+        Namespace
         """
         return pulumi.get(self, "namespace")
 
@@ -4220,7 +4220,7 @@ class GetUpstreamUpstreamSpecNacosServiceResult(dict):
     @pulumi.getter(name="namespaceId")
     def namespace_id(self) -> builtins.str:
         """
-        命名空间ID。
+        Namespace ID
         """
         return pulumi.get(self, "namespace_id")
 
@@ -4228,7 +4228,7 @@ class GetUpstreamUpstreamSpecNacosServiceResult(dict):
     @pulumi.getter
     def service(self) -> builtins.str:
         """
-        服务。
+        Service
         """
         return pulumi.get(self, "service")
 
@@ -4236,7 +4236,7 @@ class GetUpstreamUpstreamSpecNacosServiceResult(dict):
     @pulumi.getter(name="upstreamSourceId")
     def upstream_source_id(self) -> builtins.str:
         """
-        Upstream来源ID。
+        Upstream source ID
         """
         return pulumi.get(self, "upstream_source_id")
 
@@ -4246,7 +4246,7 @@ class GetUpstreamUpstreamSpecVeFaasResult(dict):
     def __init__(__self__, *,
                  function_id: builtins.str):
         """
-        :param builtins.str function_id: 函数ID。
+        :param builtins.str function_id: Function ID
         """
         pulumi.set(__self__, "function_id", function_id)
 
@@ -4254,7 +4254,7 @@ class GetUpstreamUpstreamSpecVeFaasResult(dict):
     @pulumi.getter(name="functionId")
     def function_id(self) -> builtins.str:
         """
-        函数ID。
+        Function ID
         """
         return pulumi.get(self, "function_id")
 
@@ -4266,9 +4266,9 @@ class GetUpstreamVersionDetailResult(dict):
                  name: builtins.str,
                  update_time: builtins.str):
         """
-        :param Sequence['GetUpstreamVersionDetailLabelArgs'] labels: 标签。
-        :param builtins.str name: 版本名称。支持大小写字母、数字和中划线（-），长度限制为2~63个字符。不能以中划线（-）开头。
-        :param builtins.str update_time: 更新时间。
+        :param Sequence['GetUpstreamVersionDetailLabelArgs'] labels: Tag
+        :param builtins.str name: Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
+        :param builtins.str update_time: Update time
         """
         pulumi.set(__self__, "labels", labels)
         pulumi.set(__self__, "name", name)
@@ -4278,7 +4278,7 @@ class GetUpstreamVersionDetailResult(dict):
     @pulumi.getter
     def labels(self) -> Sequence['outputs.GetUpstreamVersionDetailLabelResult']:
         """
-        标签。
+        Tag
         """
         return pulumi.get(self, "labels")
 
@@ -4286,7 +4286,7 @@ class GetUpstreamVersionDetailResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        版本名称。支持大小写字母、数字和中划线（-），长度限制为2~63个字符。不能以中划线（-）开头。
+        Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
         """
         return pulumi.get(self, "name")
 
@@ -4294,7 +4294,7 @@ class GetUpstreamVersionDetailResult(dict):
     @pulumi.getter(name="updateTime")
     def update_time(self) -> builtins.str:
         """
-        更新时间。
+        Update time
         """
         return pulumi.get(self, "update_time")
 
@@ -4305,8 +4305,8 @@ class GetUpstreamVersionDetailLabelResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 键。
-        :param builtins.str value: 值。
+        :param builtins.str key: Key
+        :param builtins.str value: Value
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -4315,7 +4315,7 @@ class GetUpstreamVersionDetailLabelResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        键。
+        Key
         """
         return pulumi.get(self, "key")
 
@@ -4323,7 +4323,7 @@ class GetUpstreamVersionDetailLabelResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        值。
+        Value
         """
         return pulumi.get(self, "value")
 

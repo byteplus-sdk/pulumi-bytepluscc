@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Vpc
 {
     /// <summary>
-    /// 通过流量镜像，您可以按自己设定的筛选条件复制网卡的流量，并将复制的流量私网转发到目标服务进行监控分析。
+    /// With traffic mirroring, you can mirror network interface traffic based on your filter conditions and forward the mirrored traffic over the private network to a target service for monitoring and analysis
     /// 
     /// ## Example Usage
     /// 
@@ -51,13 +51,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public partial class TrafficMirrorFilter : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 筛选条件的创建时间。
+        /// Filter condition creation time
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 筛选条件实例描述。
+        /// Filter condition instance description
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
@@ -69,13 +69,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         public Output<ImmutableArray<Outputs.TrafficMirrorFilterIngressFilterRule>> IngressFilterRules { get; private set; } = null!;
 
         /// <summary>
-        /// 筛选条件所属项目的名称。
+        /// Project name of the filter condition
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 筛选条件状态。
+        /// Filter condition status
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -84,13 +84,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         public Output<ImmutableArray<Outputs.TrafficMirrorFilterTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 筛选条件实例ID。
+        /// Filter condition instance ID
         /// </summary>
         [Output("trafficMirrorFilterId")]
         public Output<string> TrafficMirrorFilterId { get; private set; } = null!;
 
         /// <summary>
-        /// 筛选条件名称。
+        /// Filter condition name
         /// </summary>
         [Output("trafficMirrorFilterName")]
         public Output<string> TrafficMirrorFilterName { get; private set; } = null!;
@@ -143,13 +143,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class TrafficMirrorFilterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 筛选条件实例描述。
+        /// Filter condition instance description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 筛选条件所属项目的名称。
+        /// Project name of the filter condition
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
@@ -163,7 +163,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 筛选条件名称。
+        /// Filter condition name
         /// </summary>
         [Input("trafficMirrorFilterName")]
         public Input<string>? TrafficMirrorFilterName { get; set; }
@@ -177,13 +177,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class TrafficMirrorFilterState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 筛选条件的创建时间。
+        /// Filter condition creation time
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 筛选条件实例描述。
+        /// Filter condition instance description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -205,13 +205,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 筛选条件所属项目的名称。
+        /// Project name of the filter condition
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 筛选条件状态。
+        /// Filter condition status
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -225,13 +225,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 筛选条件实例ID。
+        /// Filter condition instance ID
         /// </summary>
         [Input("trafficMirrorFilterId")]
         public Input<string>? TrafficMirrorFilterId { get; set; }
 
         /// <summary>
-        /// 筛选条件名称。
+        /// Filter condition name
         /// </summary>
         [Input("trafficMirrorFilterName")]
         public Input<string>? TrafficMirrorFilterName { get; set; }

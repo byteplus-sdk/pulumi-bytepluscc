@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Vmp
 {
     /// <summary>
-    /// 工作区（Workspace）是 VMP 服务中采集数据和规则的抽象整合，为用户提供物理隔离或逻辑隔离的 Prometheus 能力。在 VMP 服务中可创建不同的工作区，不同工作区中的数据彼此隔离。
+    /// Workspace is an abstract integration of data collection and rules in the VMP service, providing users with physical or logical isolation for Prometheus capabilities. You can create different workspaces in the VMP service, and data in different workspaces is isolated from each other
     /// 
     /// ## Example Usage
     /// 
@@ -25,13 +25,17 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp
     /// {
     ///     var workspaceDemo = new Bytepluscc.Vmp.Workspace("WorkspaceDemo", new()
     ///     {
-    ///         Username = "WorkspaceDemo",
-    ///         Password = "***********",
-    ///         Name = "WorkspaceDemo",
-    ///         Description = "WorkspaceDemo",
+    ///         AuthType = "BearerToken",
+    ///         BearerToken = "M3cSN7gssM09-6wO8vdqo_xxxxxxxx",
     ///         DeleteProtectionEnabled = false,
-    ///         InstanceTypeId = "vmp.standard.xxx",
+    ///         Description = "test workspace",
+    ///         InstanceTypeId = "vmp.standard.30d",
+    ///         Name = "terraform_test_BearerToken",
     ///         ProjectName = "default",
+    ///         PublicAccessEnabled = true,
+    ///         PublicQueryBandwidth = 2,
+    ///         PublicWriteBandwidth = 50,
+    ///         SearchLatencyOffset = "32s",
     ///         Tags = new[]
     ///         {
     ///             new Bytepluscc.Vmp.Inputs.WorkspaceTagArgs
@@ -55,85 +59,139 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp
     public partial class Workspace : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 工作区创建时间，RFC3339 格式。
+        /// Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+        /// </summary>
+        [Output("authType")]
+        public Output<string> AuthType { get; private set; } = null!;
+
+        /// <summary>
+        /// Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+        /// </summary>
+        [Output("bearerToken")]
+        public Output<string> BearerToken { get; private set; } = null!;
+
+        /// <summary>
+        /// Workspace creation time, RFC3339 format
         /// </summary>
         [Output("createTime")]
         public Output<string> CreateTime { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启工作区删除保护,true：开启，false：关闭。
+        /// Enable workspace deletion protection: true for enabled, false for disabled
         /// </summary>
         [Output("deleteProtectionEnabled")]
         public Output<bool> DeleteProtectionEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// 工作区描述信息，字符串形式，长度限制为 0～200。
+        /// Workspace description, string, length limit 0–200
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 工作区规格详情。
+        /// Workspace specification details
         /// </summary>
         [Output("instanceType")]
         public Output<Outputs.WorkspaceInstanceType> InstanceType { get; private set; } = null!;
 
         /// <summary>
-        /// 工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
+        /// Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
         /// </summary>
         [Output("instanceTypeId")]
         public Output<string> InstanceTypeId { get; private set; } = null!;
 
         /// <summary>
-        /// 工作区名称，字符串形式，长度限制为 1～100。
+        /// Workspace name, string, length limit 1–100
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// 工作区预期欠费回收时间，RFC3339 格式。
+        /// Workspace expected overdue recovery time, RFC3339 format
         /// </summary>
         [Output("overdueReclaimTime")]
         public Output<string> OverdueReclaimTime { get; private set; } = null!;
 
         /// <summary>
-        /// 工作区 BasicAuth 密码。
+        /// Workspace BasicAuth password
         /// </summary>
         [Output("password")]
         public Output<string> Password { get; private set; } = null!;
 
         /// <summary>
-        /// 项目名称。
+        /// Project name
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 工作区 Push Gateway URL 地址。
+        /// Workspace public Push Gateway URL address.
+        /// </summary>
+        [Output("prometheusPushEndpoint")]
+        public Output<string> PrometheusPushEndpoint { get; private set; } = null!;
+
+        /// <summary>
+        /// Workspace Push Gateway URL address
         /// </summary>
         [Output("prometheusPushIntranetEndpoint")]
         public Output<string> PrometheusPushIntranetEndpoint { get; private set; } = null!;
 
         /// <summary>
-        /// 工作区 Query URL 地址。
+        /// Workspace public Query URL address.
+        /// </summary>
+        [Output("prometheusQueryEndpoint")]
+        public Output<string> PrometheusQueryEndpoint { get; private set; } = null!;
+
+        /// <summary>
+        /// Workspace Query URL address
         /// </summary>
         [Output("prometheusQueryIntranetEndpoint")]
         public Output<string> PrometheusQueryIntranetEndpoint { get; private set; } = null!;
 
         /// <summary>
-        /// 工作区 RemoteWrite URL 地址。
+        /// Workspace public RemoteWrite URL address.
+        /// </summary>
+        [Output("prometheusWriteEndpoint")]
+        public Output<string> PrometheusWriteEndpoint { get; private set; } = null!;
+
+        /// <summary>
+        /// Workspace RemoteWrite URL address
         /// </summary>
         [Output("prometheusWriteIntranetEndpoint")]
         public Output<string> PrometheusWriteIntranetEndpoint { get; private set; } = null!;
 
         /// <summary>
-        /// 工作区配额详情。
+        /// Whether to enable workspace public access capability. true: enabled, false: disabled.
+        /// </summary>
+        [Output("publicAccessEnabled")]
+        public Output<bool> PublicAccessEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// Workspace public Query bandwidth (Mbps).
+        /// </summary>
+        [Output("publicQueryBandwidth")]
+        public Output<int> PublicQueryBandwidth { get; private set; } = null!;
+
+        /// <summary>
+        /// Workspace public RemoteWrite bandwidth (Mbps).
+        /// </summary>
+        [Output("publicWriteBandwidth")]
+        public Output<int> PublicWriteBandwidth { get; private set; } = null!;
+
+        /// <summary>
+        /// Workspace quota details
         /// </summary>
         [Output("quota")]
         public Output<Outputs.WorkspaceQuota> Quota { get; private set; } = null!;
 
         /// <summary>
-        /// 工作区状态，取值：Creating：创建中 Active：正常 Updating：更新中 Deleting：删除中 OverdueShutted：欠费关停 Resuming：恢复中 Error：错误。
+        /// Workspace public Query search latency offset.
+        /// </summary>
+        [Output("searchLatencyOffset")]
+        public Output<string> SearchLatencyOffset { get; private set; } = null!;
+
+        /// <summary>
+        /// Workspace status. Values: Creating: creating Active: active Updating: updating Deleting: deleting OverdueShutted: overdue shutdown Resuming: resuming Error: error
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -142,19 +200,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp
         public Output<ImmutableArray<Outputs.WorkspaceTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 工作区用量。
+        /// Workspace usage
         /// </summary>
         [Output("usage")]
         public Output<Outputs.WorkspaceUsage> Usage { get; private set; } = null!;
 
         /// <summary>
-        /// 工作区 BasicAuth 用户名。
+        /// Workspace BasicAuth username
         /// </summary>
         [Output("username")]
         public Output<string> Username { get; private set; } = null!;
 
         /// <summary>
-        /// 工作区Id。
+        /// Workspace ID
         /// </summary>
         [Output("workspaceId")]
         public Output<string> WorkspaceId { get; private set; } = null!;
@@ -207,40 +265,82 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp
     public sealed class WorkspaceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 是否开启工作区删除保护,true：开启，false：关闭。
+        /// Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+        /// </summary>
+        [Input("authType")]
+        public Input<string>? AuthType { get; set; }
+
+        /// <summary>
+        /// Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+        /// </summary>
+        [Input("bearerToken")]
+        public Input<string>? BearerToken { get; set; }
+
+        /// <summary>
+        /// Enable workspace deletion protection: true for enabled, false for disabled
         /// </summary>
         [Input("deleteProtectionEnabled")]
         public Input<bool>? DeleteProtectionEnabled { get; set; }
 
         /// <summary>
-        /// 工作区描述信息，字符串形式，长度限制为 0～200。
+        /// Workspace description, string, length limit 0–200
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
+        /// Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
         /// </summary>
         [Input("instanceTypeId", required: true)]
         public Input<string> InstanceTypeId { get; set; } = null!;
 
         /// <summary>
-        /// 工作区名称，字符串形式，长度限制为 1～100。
+        /// Workspace name, string, length limit 1–100
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// 工作区 BasicAuth 密码。
+        /// Workspace BasicAuth password
         /// </summary>
         [Input("password")]
         public Input<string>? Password { get; set; }
 
         /// <summary>
-        /// 项目名称。
+        /// Project name
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
+
+        /// <summary>
+        /// Whether to enable workspace public access capability. true: enabled, false: disabled.
+        /// </summary>
+        [Input("publicAccessEnabled")]
+        public Input<bool>? PublicAccessEnabled { get; set; }
+
+        /// <summary>
+        /// Workspace public Query bandwidth (Mbps).
+        /// </summary>
+        [Input("publicQueryBandwidth")]
+        public Input<int>? PublicQueryBandwidth { get; set; }
+
+        /// <summary>
+        /// Workspace public RemoteWrite bandwidth (Mbps).
+        /// </summary>
+        [Input("publicWriteBandwidth")]
+        public Input<int>? PublicWriteBandwidth { get; set; }
+
+        /// <summary>
+        /// Workspace quota details
+        /// </summary>
+        [Input("quota")]
+        public Input<Inputs.WorkspaceQuotaArgs>? Quota { get; set; }
+
+        /// <summary>
+        /// Workspace public Query search latency offset.
+        /// </summary>
+        [Input("searchLatencyOffset")]
+        public Input<string>? SearchLatencyOffset { get; set; }
 
         [Input("tags")]
         private InputList<Inputs.WorkspaceTagArgs>? _tags;
@@ -251,7 +351,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp
         }
 
         /// <summary>
-        /// 工作区 BasicAuth 用户名。
+        /// Workspace BasicAuth username
         /// </summary>
         [Input("username")]
         public Input<string>? Username { get; set; }
@@ -265,85 +365,139 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp
     public sealed class WorkspaceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 工作区创建时间，RFC3339 格式。
+        /// Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+        /// </summary>
+        [Input("authType")]
+        public Input<string>? AuthType { get; set; }
+
+        /// <summary>
+        /// Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+        /// </summary>
+        [Input("bearerToken")]
+        public Input<string>? BearerToken { get; set; }
+
+        /// <summary>
+        /// Workspace creation time, RFC3339 format
         /// </summary>
         [Input("createTime")]
         public Input<string>? CreateTime { get; set; }
 
         /// <summary>
-        /// 是否开启工作区删除保护,true：开启，false：关闭。
+        /// Enable workspace deletion protection: true for enabled, false for disabled
         /// </summary>
         [Input("deleteProtectionEnabled")]
         public Input<bool>? DeleteProtectionEnabled { get; set; }
 
         /// <summary>
-        /// 工作区描述信息，字符串形式，长度限制为 0～200。
+        /// Workspace description, string, length limit 0–200
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 工作区规格详情。
+        /// Workspace specification details
         /// </summary>
         [Input("instanceType")]
         public Input<Inputs.WorkspaceInstanceTypeGetArgs>? InstanceType { get; set; }
 
         /// <summary>
-        /// 工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
+        /// Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
         /// </summary>
         [Input("instanceTypeId")]
         public Input<string>? InstanceTypeId { get; set; }
 
         /// <summary>
-        /// 工作区名称，字符串形式，长度限制为 1～100。
+        /// Workspace name, string, length limit 1–100
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 工作区预期欠费回收时间，RFC3339 格式。
+        /// Workspace expected overdue recovery time, RFC3339 format
         /// </summary>
         [Input("overdueReclaimTime")]
         public Input<string>? OverdueReclaimTime { get; set; }
 
         /// <summary>
-        /// 工作区 BasicAuth 密码。
+        /// Workspace BasicAuth password
         /// </summary>
         [Input("password")]
         public Input<string>? Password { get; set; }
 
         /// <summary>
-        /// 项目名称。
+        /// Project name
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 工作区 Push Gateway URL 地址。
+        /// Workspace public Push Gateway URL address.
+        /// </summary>
+        [Input("prometheusPushEndpoint")]
+        public Input<string>? PrometheusPushEndpoint { get; set; }
+
+        /// <summary>
+        /// Workspace Push Gateway URL address
         /// </summary>
         [Input("prometheusPushIntranetEndpoint")]
         public Input<string>? PrometheusPushIntranetEndpoint { get; set; }
 
         /// <summary>
-        /// 工作区 Query URL 地址。
+        /// Workspace public Query URL address.
+        /// </summary>
+        [Input("prometheusQueryEndpoint")]
+        public Input<string>? PrometheusQueryEndpoint { get; set; }
+
+        /// <summary>
+        /// Workspace Query URL address
         /// </summary>
         [Input("prometheusQueryIntranetEndpoint")]
         public Input<string>? PrometheusQueryIntranetEndpoint { get; set; }
 
         /// <summary>
-        /// 工作区 RemoteWrite URL 地址。
+        /// Workspace public RemoteWrite URL address.
+        /// </summary>
+        [Input("prometheusWriteEndpoint")]
+        public Input<string>? PrometheusWriteEndpoint { get; set; }
+
+        /// <summary>
+        /// Workspace RemoteWrite URL address
         /// </summary>
         [Input("prometheusWriteIntranetEndpoint")]
         public Input<string>? PrometheusWriteIntranetEndpoint { get; set; }
 
         /// <summary>
-        /// 工作区配额详情。
+        /// Whether to enable workspace public access capability. true: enabled, false: disabled.
+        /// </summary>
+        [Input("publicAccessEnabled")]
+        public Input<bool>? PublicAccessEnabled { get; set; }
+
+        /// <summary>
+        /// Workspace public Query bandwidth (Mbps).
+        /// </summary>
+        [Input("publicQueryBandwidth")]
+        public Input<int>? PublicQueryBandwidth { get; set; }
+
+        /// <summary>
+        /// Workspace public RemoteWrite bandwidth (Mbps).
+        /// </summary>
+        [Input("publicWriteBandwidth")]
+        public Input<int>? PublicWriteBandwidth { get; set; }
+
+        /// <summary>
+        /// Workspace quota details
         /// </summary>
         [Input("quota")]
         public Input<Inputs.WorkspaceQuotaGetArgs>? Quota { get; set; }
 
         /// <summary>
-        /// 工作区状态，取值：Creating：创建中 Active：正常 Updating：更新中 Deleting：删除中 OverdueShutted：欠费关停 Resuming：恢复中 Error：错误。
+        /// Workspace public Query search latency offset.
+        /// </summary>
+        [Input("searchLatencyOffset")]
+        public Input<string>? SearchLatencyOffset { get; set; }
+
+        /// <summary>
+        /// Workspace status. Values: Creating: creating Active: active Updating: updating Deleting: deleting OverdueShutted: overdue shutdown Resuming: resuming Error: error
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -357,19 +511,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp
         }
 
         /// <summary>
-        /// 工作区用量。
+        /// Workspace usage
         /// </summary>
         [Input("usage")]
         public Input<Inputs.WorkspaceUsageGetArgs>? Usage { get; set; }
 
         /// <summary>
-        /// 工作区 BasicAuth 用户名。
+        /// Workspace BasicAuth username
         /// </summary>
         [Input("username")]
         public Input<string>? Username { get; set; }
 
         /// <summary>
-        /// 工作区Id。
+        /// Workspace ID
         /// </summary>
         [Input("workspaceId")]
         public Input<string>? WorkspaceId { get; set; }

@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetPermissionSetAssignmentResult {
     /**
-     * @return 授权创建时间。
+     * @return Authorization creation time
      * 
      */
     private String createdTime;
@@ -21,44 +21,44 @@ public final class GetPermissionSetAssignmentResult {
      */
     private String id;
     /**
-     * @return 权限集 ID。
+     * @return Permission set ID
      * 
      */
     private String permissionSetId;
     /**
-     * @return 权限集名称。
+     * @return Permission set name
      * 
      */
     private String permissionSetName;
     /**
-     * @return 云身份中心对象 ID
+     * @return Cloud Identity Center object ID
      * 
      */
     private String principalId;
     /**
-     * @return 云身份中心对象名。
+     * @return Cloud Identity Center object name
      * 
      */
     private String principalName;
     /**
-     * @return 云身份中心对象类型，User 或者 Group。
+     * @return Cloud Identity Center object type: User or Group
      * 
      */
     private String principalType;
     /**
-     * @return 授权账号 ID。
+     * @return Authorized account ID
      * 
      */
     private String targetId;
     /**
-     * @return 授权账号名。
+     * @return Authorized account name
      * 
      */
     private String targetName;
 
     private GetPermissionSetAssignmentResult() {}
     /**
-     * @return 授权创建时间。
+     * @return Authorization creation time
      * 
      */
     public String createdTime() {
@@ -72,49 +72,49 @@ public final class GetPermissionSetAssignmentResult {
         return this.id;
     }
     /**
-     * @return 权限集 ID。
+     * @return Permission set ID
      * 
      */
     public String permissionSetId() {
         return this.permissionSetId;
     }
     /**
-     * @return 权限集名称。
+     * @return Permission set name
      * 
      */
     public String permissionSetName() {
         return this.permissionSetName;
     }
     /**
-     * @return 云身份中心对象 ID
+     * @return Cloud Identity Center object ID
      * 
      */
     public String principalId() {
         return this.principalId;
     }
     /**
-     * @return 云身份中心对象名。
+     * @return Cloud Identity Center object name
      * 
      */
     public String principalName() {
         return this.principalName;
     }
     /**
-     * @return 云身份中心对象类型，User 或者 Group。
+     * @return Cloud Identity Center object type: User or Group
      * 
      */
     public String principalType() {
         return this.principalType;
     }
     /**
-     * @return 授权账号 ID。
+     * @return Authorized account ID
      * 
      */
     public String targetId() {
         return this.targetId;
     }
     /**
-     * @return 授权账号名。
+     * @return Authorized account name
      * 
      */
     public String targetName() {

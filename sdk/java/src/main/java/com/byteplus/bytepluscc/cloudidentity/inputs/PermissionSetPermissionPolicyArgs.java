@@ -16,14 +16,14 @@ public final class PermissionSetPermissionPolicyArgs extends com.pulumi.resource
     public static final PermissionSetPermissionPolicyArgs Empty = new PermissionSetPermissionPolicyArgs();
 
     /**
-     * 策略语法内容。语法可参考 策略语法说明。
+     * Policy syntax content. Refer to policy syntax documentation
      * 
      */
     @Import(name="permissionPolicyDocument")
     private @Nullable Output<String> permissionPolicyDocument;
 
     /**
-     * @return 策略语法内容。语法可参考 策略语法说明。
+     * @return Policy syntax content. Refer to policy syntax documentation
      * 
      */
     public Optional<Output<String>> permissionPolicyDocument() {
@@ -31,14 +31,14 @@ public final class PermissionSetPermissionPolicyArgs extends com.pulumi.resource
     }
 
     /**
-     * 策略名称。
+     * Policy Name
      * 
      */
     @Import(name="permissionPolicyName")
     private @Nullable Output<String> permissionPolicyName;
 
     /**
-     * @return 策略名称。
+     * @return Policy Name
      * 
      */
     public Optional<Output<String>> permissionPolicyName() {
@@ -46,14 +46,14 @@ public final class PermissionSetPermissionPolicyArgs extends com.pulumi.resource
     }
 
     /**
-     * 策略类型，System or Inline。
+     * Policy Type: System or Inline
      * 
      */
     @Import(name="permissionPolicyType")
     private @Nullable Output<String> permissionPolicyType;
 
     /**
-     * @return 策略类型，System or Inline。
+     * @return Policy Type: System or Inline
      * 
      */
     public Optional<Output<String>> permissionPolicyType() {
@@ -87,7 +87,7 @@ public final class PermissionSetPermissionPolicyArgs extends com.pulumi.resource
         }
 
         /**
-         * @param permissionPolicyDocument 策略语法内容。语法可参考 策略语法说明。
+         * @param permissionPolicyDocument Policy syntax content. Refer to policy syntax documentation
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class PermissionSetPermissionPolicyArgs extends com.pulumi.resource
         }
 
         /**
-         * @param permissionPolicyDocument 策略语法内容。语法可参考 策略语法说明。
+         * @param permissionPolicyDocument Policy syntax content. Refer to policy syntax documentation
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class PermissionSetPermissionPolicyArgs extends com.pulumi.resource
         }
 
         /**
-         * @param permissionPolicyName 策略名称。
+         * @param permissionPolicyName Policy Name
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class PermissionSetPermissionPolicyArgs extends com.pulumi.resource
         }
 
         /**
-         * @param permissionPolicyName 策略名称。
+         * @param permissionPolicyName Policy Name
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class PermissionSetPermissionPolicyArgs extends com.pulumi.resource
         }
 
         /**
-         * @param permissionPolicyType 策略类型，System or Inline。
+         * @param permissionPolicyType Policy Type: System or Inline
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class PermissionSetPermissionPolicyArgs extends com.pulumi.resource
         }
 
         /**
-         * @param permissionPolicyType 策略类型，System or Inline。
+         * @param permissionPolicyType Policy Type: System or Inline
          * 
          * @return builder
          * 

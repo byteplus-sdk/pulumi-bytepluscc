@@ -13,50 +13,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class SandboxInstanceImageInfo {
     /**
-     * @return 沙箱实例程序的启动命令。如需指定脚本文件，请使用绝对路径，并确保脚本具有相应的可执行权限。
+     * @return Startup command for the sandbox instance program. To specify a script file, use an absolute path and ensure the script has executable permissions
      * 
      */
     private @Nullable String command;
     /**
-     * @return 沙箱实例使用的已预热镜像地址。
+     * @return Preheated image address used by the sandbox instance
      * 
      */
     private @Nullable String image;
     /**
-     * @return 沙箱实例使用的已预热镜像 ID。
+     * @return Pre-warmed image ID used by the sandbox instance.
      * 
      */
     private @Nullable String imageId;
     /**
-     * @return 沙箱实例镜像监听端口。
+     * @return Listening port of the sandbox instance image.
      * 
      */
     private @Nullable Integer port;
 
     private SandboxInstanceImageInfo() {}
     /**
-     * @return 沙箱实例程序的启动命令。如需指定脚本文件，请使用绝对路径，并确保脚本具有相应的可执行权限。
+     * @return Startup command for the sandbox instance program. To specify a script file, use an absolute path and ensure the script has executable permissions
      * 
      */
     public Optional<String> command() {
         return Optional.ofNullable(this.command);
     }
     /**
-     * @return 沙箱实例使用的已预热镜像地址。
+     * @return Preheated image address used by the sandbox instance
      * 
      */
     public Optional<String> image() {
         return Optional.ofNullable(this.image);
     }
     /**
-     * @return 沙箱实例使用的已预热镜像 ID。
+     * @return Pre-warmed image ID used by the sandbox instance.
      * 
      */
     public Optional<String> imageId() {
         return Optional.ofNullable(this.imageId);
     }
     /**
-     * @return 沙箱实例镜像监听端口。
+     * @return Listening port of the sandbox instance image.
      * 
      */
     public Optional<Integer> port() {

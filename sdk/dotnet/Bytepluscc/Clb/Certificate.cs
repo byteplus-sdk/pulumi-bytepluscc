@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Clb
 {
     /// <summary>
-    /// 针对HTTPS协议，提供统一的证书管理服务，证书无需上传到后端服务器，支持在CLB实例上解密处理，降低了后端服务器的CPU开销。
+    /// Provides unified certificate management service for HTTPS protocol. Certificates do not need to be uploaded to backend servers. Supports decryption processing on CLB instances, reducing CPU overhead on backend servers.
     /// 
     /// ## Example Usage
     /// 
@@ -55,73 +55,73 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
     public partial class Certificate : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 证书的ID。
+        /// Certificate ID.
         /// </summary>
         [Output("certificateId")]
         public Output<string> CertificateId { get; private set; } = null!;
 
         /// <summary>
-        /// 证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
+        /// Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
         /// </summary>
         [Output("certificateName")]
         public Output<string> CertificateName { get; private set; } = null!;
 
         /// <summary>
-        /// 证书的创建时间。
+        /// Certificate creation time.
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+        /// Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 证书的主域名。
+        /// Certificate primary domain name.
         /// </summary>
         [Output("domainName")]
         public Output<string> DomainName { get; private set; } = null!;
 
         /// <summary>
-        /// 证书的过期时间。
+        /// Certificate expiration time.
         /// </summary>
         [Output("expiredAt")]
         public Output<string> ExpiredAt { get; private set; } = null!;
 
         /// <summary>
-        /// 证书关联的监听器的ID。
+        /// ID of the listener associated with the certificate.
         /// </summary>
         [Output("listeners")]
         public Output<ImmutableArray<string>> Listeners { get; private set; } = null!;
 
         /// <summary>
-        /// 证书的私钥。
+        /// Certificate private key.
         /// </summary>
         [Output("privateKey")]
         public Output<string> PrivateKey { get; private set; } = null!;
 
         /// <summary>
-        /// 证书所属项目的名称。不填默认为default。
+        /// Name of the project the certificate belongs to. If not specified, defaults to 'default'.
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 证书的公钥。
+        /// Certificate public key.
         /// </summary>
         [Output("publicKey")]
         public Output<string> PublicKey { get; private set; } = null!;
 
         /// <summary>
-        /// 是否为托管资源。true：托管资源。false：非托管资源。
+        /// Managed resource status. true: managed resource. false: unmanaged resource.
         /// </summary>
         [Output("serviceManaged")]
         public Output<bool> ServiceManaged { get; private set; } = null!;
 
         /// <summary>
-        /// 证书的备用域名列表。
+        /// List of alternate domain names for the certificate.
         /// </summary>
         [Output("subjectAlternativeNames")]
         public Output<ImmutableArray<string>> SubjectAlternativeNames { get; private set; } = null!;
@@ -177,31 +177,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
     public sealed class CertificateArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
+        /// Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
         /// </summary>
         [Input("certificateName")]
         public Input<string>? CertificateName { get; set; }
 
         /// <summary>
-        /// 证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+        /// Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 证书的私钥。
+        /// Certificate private key.
         /// </summary>
         [Input("privateKey", required: true)]
         public Input<string> PrivateKey { get; set; } = null!;
 
         /// <summary>
-        /// 证书所属项目的名称。不填默认为default。
+        /// Name of the project the certificate belongs to. If not specified, defaults to 'default'.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 证书的公钥。
+        /// Certificate public key.
         /// </summary>
         [Input("publicKey", required: true)]
         public Input<string> PublicKey { get; set; } = null!;
@@ -223,37 +223,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
     public sealed class CertificateState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 证书的ID。
+        /// Certificate ID.
         /// </summary>
         [Input("certificateId")]
         public Input<string>? CertificateId { get; set; }
 
         /// <summary>
-        /// 证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
+        /// Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
         /// </summary>
         [Input("certificateName")]
         public Input<string>? CertificateName { get; set; }
 
         /// <summary>
-        /// 证书的创建时间。
+        /// Certificate creation time.
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+        /// Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 证书的主域名。
+        /// Certificate primary domain name.
         /// </summary>
         [Input("domainName")]
         public Input<string>? DomainName { get; set; }
 
         /// <summary>
-        /// 证书的过期时间。
+        /// Certificate expiration time.
         /// </summary>
         [Input("expiredAt")]
         public Input<string>? ExpiredAt { get; set; }
@@ -262,7 +262,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         private InputList<string>? _listeners;
 
         /// <summary>
-        /// 证书关联的监听器的ID。
+        /// ID of the listener associated with the certificate.
         /// </summary>
         public InputList<string> Listeners
         {
@@ -271,25 +271,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         }
 
         /// <summary>
-        /// 证书的私钥。
+        /// Certificate private key.
         /// </summary>
         [Input("privateKey")]
         public Input<string>? PrivateKey { get; set; }
 
         /// <summary>
-        /// 证书所属项目的名称。不填默认为default。
+        /// Name of the project the certificate belongs to. If not specified, defaults to 'default'.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 证书的公钥。
+        /// Certificate public key.
         /// </summary>
         [Input("publicKey")]
         public Input<string>? PublicKey { get; set; }
 
         /// <summary>
-        /// 是否为托管资源。true：托管资源。false：非托管资源。
+        /// Managed resource status. true: managed resource. false: unmanaged resource.
         /// </summary>
         [Input("serviceManaged")]
         public Input<bool>? ServiceManaged { get; set; }
@@ -298,7 +298,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         private InputList<string>? _subjectAlternativeNames;
 
         /// <summary>
-        /// 证书的备用域名列表。
+        /// List of alternate domain names for the certificate.
         /// </summary>
         public InputList<string> SubjectAlternativeNames
         {

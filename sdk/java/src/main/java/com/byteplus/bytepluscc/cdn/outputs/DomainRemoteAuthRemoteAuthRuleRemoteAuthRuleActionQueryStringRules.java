@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRules {
     /**
-     * @return 表示鉴权请求参数的设置策略。
+     * @return Indicates the strategy for setting authentication request parameters.
      * 
      */
     private @Nullable DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponents queryStringComponents;
@@ -22,7 +22,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryString
 
     private DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRules() {}
     /**
-     * @return 表示鉴权请求参数的设置策略。
+     * @return Indicates the strategy for setting authentication request parameters.
      * 
      */
     public Optional<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponents> queryStringComponents() {

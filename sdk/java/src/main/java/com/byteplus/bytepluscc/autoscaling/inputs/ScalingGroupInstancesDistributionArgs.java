@@ -17,14 +17,14 @@ public final class ScalingGroupInstancesDistributionArgs extends com.pulumi.reso
     public static final ScalingGroupInstancesDistributionArgs Empty = new ScalingGroupInstancesDistributionArgs();
 
     /**
-     * 当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+     * Whether pay-as-you-go instances are allowed to supplement spot capacity if spot instances cannot be created due to price or inventory constraints. true: allowed. false (default): not allowed.
      * 
      */
     @Import(name="compensateWithOnDemand")
     private @Nullable Output<Boolean> compensateWithOnDemand;
 
     /**
-     * @return 当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+     * @return Whether pay-as-you-go instances are allowed to supplement spot capacity if spot instances cannot be created due to price or inventory constraints. true: allowed. false (default): not allowed.
      * 
      */
     public Optional<Output<Boolean>> compensateWithOnDemand() {
@@ -32,14 +32,14 @@ public final class ScalingGroupInstancesDistributionArgs extends com.pulumi.reso
     }
 
     /**
-     * 伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+     * Minimum number of pay-as-you-go instances in the scaling group. Value range: 0~2000. If the number of pay-as-you-go instances in the group is less than this value, pay-as-you-go instances will be prioritized for creation.
      * 
      */
     @Import(name="onDemandBaseCapacity")
     private @Nullable Output<Integer> onDemandBaseCapacity;
 
     /**
-     * @return 伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+     * @return Minimum number of pay-as-you-go instances in the scaling group. Value range: 0~2000. If the number of pay-as-you-go instances in the group is less than this value, pay-as-you-go instances will be prioritized for creation.
      * 
      */
     public Optional<Output<Integer>> onDemandBaseCapacity() {
@@ -47,14 +47,14 @@ public final class ScalingGroupInstancesDistributionArgs extends com.pulumi.reso
     }
 
     /**
-     * 伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+     * After the scaling group meets the minimum number of pay-as-you-go instances, the proportion of pay-as-you-go instances among the excess instances. Value range: 0–100.
      * 
      */
     @Import(name="onDemandPercentageAboveBaseCapacity")
     private @Nullable Output<Integer> onDemandPercentageAboveBaseCapacity;
 
     /**
-     * @return 伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+     * @return After the scaling group meets the minimum number of pay-as-you-go instances, the proportion of pay-as-you-go instances among the excess instances. Value range: 0–100.
      * 
      */
     public Optional<Output<Integer>> onDemandPercentageAboveBaseCapacity() {
@@ -62,14 +62,14 @@ public final class ScalingGroupInstancesDistributionArgs extends com.pulumi.reso
     }
 
     /**
-     * 是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+     * Whether to allow preemptible instance replacement upon expiration. If enabled, the scaling group will proactively create a new preemptible instance to replace the current one about 5 minutes before the preemptible instance is reclaimed. true: allowed. false (default): not allowed.
      * 
      */
     @Import(name="spotInstanceRemedy")
     private @Nullable Output<Boolean> spotInstanceRemedy;
 
     /**
-     * @return 是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+     * @return Whether to allow preemptible instance replacement upon expiration. If enabled, the scaling group will proactively create a new preemptible instance to replace the current one about 5 minutes before the preemptible instance is reclaimed. true: allowed. false (default): not allowed.
      * 
      */
     public Optional<Output<Boolean>> spotInstanceRemedy() {
@@ -104,7 +104,7 @@ public final class ScalingGroupInstancesDistributionArgs extends com.pulumi.reso
         }
 
         /**
-         * @param compensateWithOnDemand 当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+         * @param compensateWithOnDemand Whether pay-as-you-go instances are allowed to supplement spot capacity if spot instances cannot be created due to price or inventory constraints. true: allowed. false (default): not allowed.
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class ScalingGroupInstancesDistributionArgs extends com.pulumi.reso
         }
 
         /**
-         * @param compensateWithOnDemand 当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+         * @param compensateWithOnDemand Whether pay-as-you-go instances are allowed to supplement spot capacity if spot instances cannot be created due to price or inventory constraints. true: allowed. false (default): not allowed.
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class ScalingGroupInstancesDistributionArgs extends com.pulumi.reso
         }
 
         /**
-         * @param onDemandBaseCapacity 伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+         * @param onDemandBaseCapacity Minimum number of pay-as-you-go instances in the scaling group. Value range: 0~2000. If the number of pay-as-you-go instances in the group is less than this value, pay-as-you-go instances will be prioritized for creation.
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class ScalingGroupInstancesDistributionArgs extends com.pulumi.reso
         }
 
         /**
-         * @param onDemandBaseCapacity 伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+         * @param onDemandBaseCapacity Minimum number of pay-as-you-go instances in the scaling group. Value range: 0~2000. If the number of pay-as-you-go instances in the group is less than this value, pay-as-you-go instances will be prioritized for creation.
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class ScalingGroupInstancesDistributionArgs extends com.pulumi.reso
         }
 
         /**
-         * @param onDemandPercentageAboveBaseCapacity 伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+         * @param onDemandPercentageAboveBaseCapacity After the scaling group meets the minimum number of pay-as-you-go instances, the proportion of pay-as-you-go instances among the excess instances. Value range: 0–100.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class ScalingGroupInstancesDistributionArgs extends com.pulumi.reso
         }
 
         /**
-         * @param onDemandPercentageAboveBaseCapacity 伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+         * @param onDemandPercentageAboveBaseCapacity After the scaling group meets the minimum number of pay-as-you-go instances, the proportion of pay-as-you-go instances among the excess instances. Value range: 0–100.
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class ScalingGroupInstancesDistributionArgs extends com.pulumi.reso
         }
 
         /**
-         * @param spotInstanceRemedy 是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+         * @param spotInstanceRemedy Whether to allow preemptible instance replacement upon expiration. If enabled, the scaling group will proactively create a new preemptible instance to replace the current one about 5 minutes before the preemptible instance is reclaimed. true: allowed. false (default): not allowed.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class ScalingGroupInstancesDistributionArgs extends com.pulumi.reso
         }
 
         /**
-         * @param spotInstanceRemedy 是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+         * @param spotInstanceRemedy Whether to allow preemptible instance replacement upon expiration. If enabled, the scaling group will proactively create a new preemptible instance to replace the current one about 5 minutes before the preemptible instance is reclaimed. true: allowed. false (default): not allowed.
          * 
          * @return builder
          * 

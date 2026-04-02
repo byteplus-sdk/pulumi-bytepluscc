@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfig {
     /**
-     * @return 代理地址。
+     * @return Proxy address.
      * 
      */
     private List<String> proxyEndpoints;
     /**
-     * @return 容器镜像仓库地址。
+     * @return Container image repository address.
      * 
      */
     private String registry;
 
     private GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfig() {}
     /**
-     * @return 代理地址。
+     * @return Proxy address.
      * 
      */
     public List<String> proxyEndpoints() {
         return this.proxyEndpoints;
     }
     /**
-     * @return 容器镜像仓库地址。
+     * @return Container image repository address.
      * 
      */
     public String registry() {

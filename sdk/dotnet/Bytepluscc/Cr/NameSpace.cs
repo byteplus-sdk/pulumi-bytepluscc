@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Cr
 {
     /// <summary>
-    /// 命名空间是 OCI 制品仓库的集合，管理多个具有关联属性的 OCI 制品仓库。命名空间的名称通常为企业内部的组织团队名称、产品项目名称或个人自定义名称。
+    /// A namespace is a collection of OCI artifact repositories that share related attributes. Namespace names are typically organization team names, product project names, or custom names within an enterprise.
     /// 
     /// ## Example Usage
     /// 
@@ -43,25 +43,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr
     public partial class NameSpace : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 命名空间的创建时间。
+        /// Namespace creation time.
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 命名空间名称。支持小写英文、数字、英文句号（.）、短划线（-）、下划线（_），标点符号不能出现在首位或末位，也不能连续输入。长度限制为 2～90 个字符。标准版实例：同一个镜像仓库实例下，名称必须唯一。体验版实例：同一地域下，所有账号范围内的命名空间名称需要保持唯一。如果您设置的命名空间名称已被占用，请尝试其他名称或者 购买标准版实例。
+        /// Namespace name. Supports lowercase English letters, numbers, periods (.), hyphens (-), and underscores (_). Punctuation cannot appear at the beginning or end, nor be used consecutively. Length must be between 2 and 90 characters. Standard edition instance: The name must be unique within the same image repository instance. Trial edition instance: The namespace name must be unique across all accounts within the same region. If the namespace name you set is already taken, try another name or purchase a standard edition instance.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// 命名空间所属项目的名称。参数值大小写敏感，不得超过 64 个字符。参数为空时，命名空间关联默认的 default项目。
+        /// Name of the project to which the namespace belongs. This parameter is case-sensitive and must not exceed 64 characters. If the parameter is empty, the namespace is associated with the default project.
         /// </summary>
         [Output("project")]
         public Output<string> Project { get; private set; } = null!;
 
         /// <summary>
-        /// 指定的镜像仓库实例名称。通过 ListRegistries 或在 镜像仓库控制台 的 实例列表页面获取。
+        /// Specify the image repository instance name. Obtain it via ListRegistries or from the instance list page in the image repository console.
         /// </summary>
         [Output("registry")]
         public Output<string> Registry { get; private set; } = null!;
@@ -114,19 +114,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr
     public sealed class NameSpaceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 命名空间名称。支持小写英文、数字、英文句号（.）、短划线（-）、下划线（_），标点符号不能出现在首位或末位，也不能连续输入。长度限制为 2～90 个字符。标准版实例：同一个镜像仓库实例下，名称必须唯一。体验版实例：同一地域下，所有账号范围内的命名空间名称需要保持唯一。如果您设置的命名空间名称已被占用，请尝试其他名称或者 购买标准版实例。
+        /// Namespace name. Supports lowercase English letters, numbers, periods (.), hyphens (-), and underscores (_). Punctuation cannot appear at the beginning or end, nor be used consecutively. Length must be between 2 and 90 characters. Standard edition instance: The name must be unique within the same image repository instance. Trial edition instance: The namespace name must be unique across all accounts within the same region. If the namespace name you set is already taken, try another name or purchase a standard edition instance.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// 命名空间所属项目的名称。参数值大小写敏感，不得超过 64 个字符。参数为空时，命名空间关联默认的 default项目。
+        /// Name of the project to which the namespace belongs. This parameter is case-sensitive and must not exceed 64 characters. If the parameter is empty, the namespace is associated with the default project.
         /// </summary>
         [Input("project")]
         public Input<string>? Project { get; set; }
 
         /// <summary>
-        /// 指定的镜像仓库实例名称。通过 ListRegistries 或在 镜像仓库控制台 的 实例列表页面获取。
+        /// Specify the image repository instance name. Obtain it via ListRegistries or from the instance list page in the image repository console.
         /// </summary>
         [Input("registry", required: true)]
         public Input<string> Registry { get; set; } = null!;
@@ -140,25 +140,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr
     public sealed class NameSpaceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 命名空间的创建时间。
+        /// Namespace creation time.
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 命名空间名称。支持小写英文、数字、英文句号（.）、短划线（-）、下划线（_），标点符号不能出现在首位或末位，也不能连续输入。长度限制为 2～90 个字符。标准版实例：同一个镜像仓库实例下，名称必须唯一。体验版实例：同一地域下，所有账号范围内的命名空间名称需要保持唯一。如果您设置的命名空间名称已被占用，请尝试其他名称或者 购买标准版实例。
+        /// Namespace name. Supports lowercase English letters, numbers, periods (.), hyphens (-), and underscores (_). Punctuation cannot appear at the beginning or end, nor be used consecutively. Length must be between 2 and 90 characters. Standard edition instance: The name must be unique within the same image repository instance. Trial edition instance: The namespace name must be unique across all accounts within the same region. If the namespace name you set is already taken, try another name or purchase a standard edition instance.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 命名空间所属项目的名称。参数值大小写敏感，不得超过 64 个字符。参数为空时，命名空间关联默认的 default项目。
+        /// Name of the project to which the namespace belongs. This parameter is case-sensitive and must not exceed 64 characters. If the parameter is empty, the namespace is associated with the default project.
         /// </summary>
         [Input("project")]
         public Input<string>? Project { get; set; }
 
         /// <summary>
-        /// 指定的镜像仓库实例名称。通过 ListRegistries 或在 镜像仓库控制台 的 实例列表页面获取。
+        /// Specify the image repository instance name. Obtain it via ListRegistries or from the instance list page in the image repository console.
         /// </summary>
         [Input("registry")]
         public Input<string>? Registry { get; set; }

@@ -29,10 +29,10 @@ class NlbSecurityPolicyArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['NlbSecurityPolicyTagArgs']]]] = None):
         """
         The set of arguments for constructing a NlbSecurityPolicy resource.
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ciphers: TLS自定义安全策略的加密套件，不同的TLS协议版本支持的加密套件如下：TLSv1.0 & TLSv1.1：ECDHE-ECDSA-AES128-SHA，ECDHE-ECDSA-AES256-SHA，ECDHE-RSA-AES128-SHA，ECDHE-RSA-AES256-SHA，AES128-SHA，AES256-SHA，DES-CBC3-SHA。TLSv1.2：ECDHE-ECDSA-AES128-GCM-SHA256，ECDHE-ECDSA-AES256-GCM-SHA384，ECDHE-ECDSA-AES128-SHA256，ECDHE-ECDSA-AES256-SHA384，ECDHE-RSA-AES128-GCM-SHA256，ECDHE-RSA-AES256-GCM-SHA384，ECDHE-RSA-AES128-SHA256，ECDHE-RSA-AES256-SHA384，AES128-GCM-SHA256，AES256-GCM-SHA384，AES128-SHA256，AES256-SHA256。TLSv1.3：TLS*CHACHA20*POLY1305*SHA256，TLS*AES*256*GCM*SHA384，TLS*AES*128*GCM*SHA256，TLS*AES*128*CCM*8*SHA256，TLS*AES*128*CCM*SHA256，TLS*SM4*GCM*SM3，TLS*SM4*CCM*SM3。当传入此参数时，需要传入待支持的全部加密套件，不支持通过此接口仅新增/删除加密套件。仅传入Ciphers.N，未传入TlsVersions.N，则依据当前监听器支持的TLS 协议版本和请求中传入的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS 协议版本和加密套件做校验。TLS*SM4*GCM*SM3和TLS*SM4*CCM*SM3两个加密套件正在邀测中，如需试用，请联系客户经理。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] tls_versions: 更新TLS自定义安全策略的TLS 协议版本。取值：TLSv1.0，TLSv1.1，TLSv1.2，TLSv1.3。当传入此参数时，需要传入待支持的全部TLS版本，不支持通过此接口仅新增/删除TLS协议版本。仅传入TlsVersions.N，未传入Ciphers.N，则依据请求中传入的TLS协议版本和当前监听器支持的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS协议版本和加密套件做校验。
-        :param pulumi.Input[builtins.str] project_name: TLS自定义安全策略所属项目的名称。不传则默认为defaul。
-        :param pulumi.Input[builtins.str] security_policy_name: 安全策略名称。必须以字母、数字或中文开头，可包含以下特殊字符：点（.）、下划线（_）和中划线（-）；长度限制为1 ～ 128个字符；该参数不传入，则默认为策略ID。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ciphers: Cipher suites for the TLS custom security policy. Supported cipher suites for different TLS protocol versions are as follows: TLSv1.0 & TLSv1.1: ECDHE-ECDSA-AES128-SHA, ECDHE-ECDSA-AES256-SHA, ECDHE-RSA-AES128-SHA, ECDHE-RSA-AES256-SHA, AES128-SHA, AES256-SHA, DES-CBC3-SHA. TLSv1.2: ECDHE-ECDSA-AES128-GCM-SHA256, ECDHE-ECDSA-AES256-GCM-SHA384, ECDHE-ECDSA-AES128-SHA256, ECDHE-ECDSA-AES256-SHA384, ECDHE-RSA-AES128-GCM-SHA256, ECDHE-RSA-AES256-GCM-SHA384, ECDHE-RSA-AES128-SHA256, ECDHE-RSA-AES256-SHA384, AES128-GCM-SHA256, AES256-GCM-SHA384, AES128-SHA256, AES256-SHA256. TLSv1.3: TLS*CHACHA20*POLY1305*SHA256, TLS*AES*256*GCM*SHA384, TLS*AES*128*GCM*SHA256, TLS*AES*128*CCM*8*SHA256, TLS*AES*128*CCM*SHA256, TLS*SM4*GCM*SM3, TLS*SM4*CCM*SM3. When specifying this parameter, you must provide all supported cipher suites. Adding or removing cipher suites individually is not supported via this interface. If only Ciphers.N is provided and TlsVersions.N is not, validation is based on the TLS protocol versions supported by the current listener and the cipher suites specified in the request. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request. TLS*SM4*GCM*SM3 and TLS*SM4*CCM*SM3 are currently in pilot testing. To request access, please contact your account manager
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] tls_versions: Update the TLS protocol versions for the TLS custom security policy. Valid values: TLSv1.0, TLSv1.1, TLSv1.2, TLSv1.3. When specifying this parameter, you must provide all supported TLS versions. Adding or removing TLS protocol versions individually is not supported via this interface. If only TlsVersions.N is provided and Ciphers.N is not, validation is based on the TLS protocol versions in the request and the cipher suites supported by the current listener. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the TLS custom security policy belongs. If not specified, defaults to default
+        :param pulumi.Input[builtins.str] security_policy_name: Security policy name. Must start with a letter, number, or Chinese character, and can include the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not specified, defaults to the policy ID
         """
         pulumi.set(__self__, "ciphers", ciphers)
         pulumi.set(__self__, "tls_versions", tls_versions)
@@ -47,7 +47,7 @@ class NlbSecurityPolicyArgs:
     @pulumi.getter
     def ciphers(self) -> pulumi.Input[Sequence[pulumi.Input[builtins.str]]]:
         """
-        TLS自定义安全策略的加密套件，不同的TLS协议版本支持的加密套件如下：TLSv1.0 & TLSv1.1：ECDHE-ECDSA-AES128-SHA，ECDHE-ECDSA-AES256-SHA，ECDHE-RSA-AES128-SHA，ECDHE-RSA-AES256-SHA，AES128-SHA，AES256-SHA，DES-CBC3-SHA。TLSv1.2：ECDHE-ECDSA-AES128-GCM-SHA256，ECDHE-ECDSA-AES256-GCM-SHA384，ECDHE-ECDSA-AES128-SHA256，ECDHE-ECDSA-AES256-SHA384，ECDHE-RSA-AES128-GCM-SHA256，ECDHE-RSA-AES256-GCM-SHA384，ECDHE-RSA-AES128-SHA256，ECDHE-RSA-AES256-SHA384，AES128-GCM-SHA256，AES256-GCM-SHA384，AES128-SHA256，AES256-SHA256。TLSv1.3：TLS*CHACHA20*POLY1305*SHA256，TLS*AES*256*GCM*SHA384，TLS*AES*128*GCM*SHA256，TLS*AES*128*CCM*8*SHA256，TLS*AES*128*CCM*SHA256，TLS*SM4*GCM*SM3，TLS*SM4*CCM*SM3。当传入此参数时，需要传入待支持的全部加密套件，不支持通过此接口仅新增/删除加密套件。仅传入Ciphers.N，未传入TlsVersions.N，则依据当前监听器支持的TLS 协议版本和请求中传入的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS 协议版本和加密套件做校验。TLS*SM4*GCM*SM3和TLS*SM4*CCM*SM3两个加密套件正在邀测中，如需试用，请联系客户经理。
+        Cipher suites for the TLS custom security policy. Supported cipher suites for different TLS protocol versions are as follows: TLSv1.0 & TLSv1.1: ECDHE-ECDSA-AES128-SHA, ECDHE-ECDSA-AES256-SHA, ECDHE-RSA-AES128-SHA, ECDHE-RSA-AES256-SHA, AES128-SHA, AES256-SHA, DES-CBC3-SHA. TLSv1.2: ECDHE-ECDSA-AES128-GCM-SHA256, ECDHE-ECDSA-AES256-GCM-SHA384, ECDHE-ECDSA-AES128-SHA256, ECDHE-ECDSA-AES256-SHA384, ECDHE-RSA-AES128-GCM-SHA256, ECDHE-RSA-AES256-GCM-SHA384, ECDHE-RSA-AES128-SHA256, ECDHE-RSA-AES256-SHA384, AES128-GCM-SHA256, AES256-GCM-SHA384, AES128-SHA256, AES256-SHA256. TLSv1.3: TLS*CHACHA20*POLY1305*SHA256, TLS*AES*256*GCM*SHA384, TLS*AES*128*GCM*SHA256, TLS*AES*128*CCM*8*SHA256, TLS*AES*128*CCM*SHA256, TLS*SM4*GCM*SM3, TLS*SM4*CCM*SM3. When specifying this parameter, you must provide all supported cipher suites. Adding or removing cipher suites individually is not supported via this interface. If only Ciphers.N is provided and TlsVersions.N is not, validation is based on the TLS protocol versions supported by the current listener and the cipher suites specified in the request. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request. TLS*SM4*GCM*SM3 and TLS*SM4*CCM*SM3 are currently in pilot testing. To request access, please contact your account manager
         """
         return pulumi.get(self, "ciphers")
 
@@ -59,7 +59,7 @@ class NlbSecurityPolicyArgs:
     @pulumi.getter(name="tlsVersions")
     def tls_versions(self) -> pulumi.Input[Sequence[pulumi.Input[builtins.str]]]:
         """
-        更新TLS自定义安全策略的TLS 协议版本。取值：TLSv1.0，TLSv1.1，TLSv1.2，TLSv1.3。当传入此参数时，需要传入待支持的全部TLS版本，不支持通过此接口仅新增/删除TLS协议版本。仅传入TlsVersions.N，未传入Ciphers.N，则依据请求中传入的TLS协议版本和当前监听器支持的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS协议版本和加密套件做校验。
+        Update the TLS protocol versions for the TLS custom security policy. Valid values: TLSv1.0, TLSv1.1, TLSv1.2, TLSv1.3. When specifying this parameter, you must provide all supported TLS versions. Adding or removing TLS protocol versions individually is not supported via this interface. If only TlsVersions.N is provided and Ciphers.N is not, validation is based on the TLS protocol versions in the request and the cipher suites supported by the current listener. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request
         """
         return pulumi.get(self, "tls_versions")
 
@@ -71,7 +71,7 @@ class NlbSecurityPolicyArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        TLS自定义安全策略所属项目的名称。不传则默认为defaul。
+        Name of the project to which the TLS custom security policy belongs. If not specified, defaults to default
         """
         return pulumi.get(self, "project_name")
 
@@ -83,7 +83,7 @@ class NlbSecurityPolicyArgs:
     @pulumi.getter(name="securityPolicyName")
     def security_policy_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        安全策略名称。必须以字母、数字或中文开头，可包含以下特殊字符：点（.）、下划线（_）和中划线（-）；长度限制为1 ～ 128个字符；该参数不传入，则默认为策略ID。
+        Security policy name. Must start with a letter, number, or Chinese character, and can include the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not specified, defaults to the policy ID
         """
         return pulumi.get(self, "security_policy_name")
 
@@ -117,16 +117,16 @@ class _NlbSecurityPolicyState:
                  updated_time: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering NlbSecurityPolicy resources.
-        :param pulumi.Input[builtins.str] account_id: TLS 安全策略所属的账号ID。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ciphers: TLS自定义安全策略的加密套件，不同的TLS协议版本支持的加密套件如下：TLSv1.0 & TLSv1.1：ECDHE-ECDSA-AES128-SHA，ECDHE-ECDSA-AES256-SHA，ECDHE-RSA-AES128-SHA，ECDHE-RSA-AES256-SHA，AES128-SHA，AES256-SHA，DES-CBC3-SHA。TLSv1.2：ECDHE-ECDSA-AES128-GCM-SHA256，ECDHE-ECDSA-AES256-GCM-SHA384，ECDHE-ECDSA-AES128-SHA256，ECDHE-ECDSA-AES256-SHA384，ECDHE-RSA-AES128-GCM-SHA256，ECDHE-RSA-AES256-GCM-SHA384，ECDHE-RSA-AES128-SHA256，ECDHE-RSA-AES256-SHA384，AES128-GCM-SHA256，AES256-GCM-SHA384，AES128-SHA256，AES256-SHA256。TLSv1.3：TLS*CHACHA20*POLY1305*SHA256，TLS*AES*256*GCM*SHA384，TLS*AES*128*GCM*SHA256，TLS*AES*128*CCM*8*SHA256，TLS*AES*128*CCM*SHA256，TLS*SM4*GCM*SM3，TLS*SM4*CCM*SM3。当传入此参数时，需要传入待支持的全部加密套件，不支持通过此接口仅新增/删除加密套件。仅传入Ciphers.N，未传入TlsVersions.N，则依据当前监听器支持的TLS 协议版本和请求中传入的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS 协议版本和加密套件做校验。TLS*SM4*GCM*SM3和TLS*SM4*CCM*SM3两个加密套件正在邀测中，如需试用，请联系客户经理。
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] project_name: TLS自定义安全策略所属项目的名称。不传则默认为defaul。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] related_listener_ids: TLS 安全策略关联的监听器。
-        :param pulumi.Input[builtins.str] security_policy_id: 安全策略ID。
-        :param pulumi.Input[builtins.str] security_policy_name: 安全策略名称。必须以字母、数字或中文开头，可包含以下特殊字符：点（.）、下划线（_）和中划线（-）；长度限制为1 ～ 128个字符；该参数不传入，则默认为策略ID。
-        :param pulumi.Input[builtins.str] status: TLS 自定义安全策略状态。Creating：创建中。Configuring：配置中。Active：正常。Deleting：删除中。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] tls_versions: 更新TLS自定义安全策略的TLS 协议版本。取值：TLSv1.0，TLSv1.1，TLSv1.2，TLSv1.3。当传入此参数时，需要传入待支持的全部TLS版本，不支持通过此接口仅新增/删除TLS协议版本。仅传入TlsVersions.N，未传入Ciphers.N，则依据请求中传入的TLS协议版本和当前监听器支持的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS协议版本和加密套件做校验。
-        :param pulumi.Input[builtins.str] updated_time: 更新时间。
+        :param pulumi.Input[builtins.str] account_id: Account ID associated with the TLS security policy
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ciphers: Cipher suites for the TLS custom security policy. Supported cipher suites for different TLS protocol versions are as follows: TLSv1.0 & TLSv1.1: ECDHE-ECDSA-AES128-SHA, ECDHE-ECDSA-AES256-SHA, ECDHE-RSA-AES128-SHA, ECDHE-RSA-AES256-SHA, AES128-SHA, AES256-SHA, DES-CBC3-SHA. TLSv1.2: ECDHE-ECDSA-AES128-GCM-SHA256, ECDHE-ECDSA-AES256-GCM-SHA384, ECDHE-ECDSA-AES128-SHA256, ECDHE-ECDSA-AES256-SHA384, ECDHE-RSA-AES128-GCM-SHA256, ECDHE-RSA-AES256-GCM-SHA384, ECDHE-RSA-AES128-SHA256, ECDHE-RSA-AES256-SHA384, AES128-GCM-SHA256, AES256-GCM-SHA384, AES128-SHA256, AES256-SHA256. TLSv1.3: TLS*CHACHA20*POLY1305*SHA256, TLS*AES*256*GCM*SHA384, TLS*AES*128*GCM*SHA256, TLS*AES*128*CCM*8*SHA256, TLS*AES*128*CCM*SHA256, TLS*SM4*GCM*SM3, TLS*SM4*CCM*SM3. When specifying this parameter, you must provide all supported cipher suites. Adding or removing cipher suites individually is not supported via this interface. If only Ciphers.N is provided and TlsVersions.N is not, validation is based on the TLS protocol versions supported by the current listener and the cipher suites specified in the request. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request. TLS*SM4*GCM*SM3 and TLS*SM4*CCM*SM3 are currently in pilot testing. To request access, please contact your account manager
+        :param pulumi.Input[builtins.str] created_time: Creation time
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the TLS custom security policy belongs. If not specified, defaults to default
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] related_listener_ids: Listener associated with the TLS security policy
+        :param pulumi.Input[builtins.str] security_policy_id: Security policy ID
+        :param pulumi.Input[builtins.str] security_policy_name: Security policy name. Must start with a letter, number, or Chinese character, and can include the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not specified, defaults to the policy ID
+        :param pulumi.Input[builtins.str] status: TLS custom security policy status. Creating: Being created. Configuring: Being configured. Active: Active. Deleting: Being deleted.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] tls_versions: Update the TLS protocol versions for the TLS custom security policy. Valid values: TLSv1.0, TLSv1.1, TLSv1.2, TLSv1.3. When specifying this parameter, you must provide all supported TLS versions. Adding or removing TLS protocol versions individually is not supported via this interface. If only TlsVersions.N is provided and Ciphers.N is not, validation is based on the TLS protocol versions in the request and the cipher suites supported by the current listener. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request
+        :param pulumi.Input[builtins.str] updated_time: Update time
         """
         if account_id is not None:
             pulumi.set(__self__, "account_id", account_id)
@@ -155,7 +155,7 @@ class _NlbSecurityPolicyState:
     @pulumi.getter(name="accountId")
     def account_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        TLS 安全策略所属的账号ID。
+        Account ID associated with the TLS security policy
         """
         return pulumi.get(self, "account_id")
 
@@ -167,7 +167,7 @@ class _NlbSecurityPolicyState:
     @pulumi.getter
     def ciphers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        TLS自定义安全策略的加密套件，不同的TLS协议版本支持的加密套件如下：TLSv1.0 & TLSv1.1：ECDHE-ECDSA-AES128-SHA，ECDHE-ECDSA-AES256-SHA，ECDHE-RSA-AES128-SHA，ECDHE-RSA-AES256-SHA，AES128-SHA，AES256-SHA，DES-CBC3-SHA。TLSv1.2：ECDHE-ECDSA-AES128-GCM-SHA256，ECDHE-ECDSA-AES256-GCM-SHA384，ECDHE-ECDSA-AES128-SHA256，ECDHE-ECDSA-AES256-SHA384，ECDHE-RSA-AES128-GCM-SHA256，ECDHE-RSA-AES256-GCM-SHA384，ECDHE-RSA-AES128-SHA256，ECDHE-RSA-AES256-SHA384，AES128-GCM-SHA256，AES256-GCM-SHA384，AES128-SHA256，AES256-SHA256。TLSv1.3：TLS*CHACHA20*POLY1305*SHA256，TLS*AES*256*GCM*SHA384，TLS*AES*128*GCM*SHA256，TLS*AES*128*CCM*8*SHA256，TLS*AES*128*CCM*SHA256，TLS*SM4*GCM*SM3，TLS*SM4*CCM*SM3。当传入此参数时，需要传入待支持的全部加密套件，不支持通过此接口仅新增/删除加密套件。仅传入Ciphers.N，未传入TlsVersions.N，则依据当前监听器支持的TLS 协议版本和请求中传入的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS 协议版本和加密套件做校验。TLS*SM4*GCM*SM3和TLS*SM4*CCM*SM3两个加密套件正在邀测中，如需试用，请联系客户经理。
+        Cipher suites for the TLS custom security policy. Supported cipher suites for different TLS protocol versions are as follows: TLSv1.0 & TLSv1.1: ECDHE-ECDSA-AES128-SHA, ECDHE-ECDSA-AES256-SHA, ECDHE-RSA-AES128-SHA, ECDHE-RSA-AES256-SHA, AES128-SHA, AES256-SHA, DES-CBC3-SHA. TLSv1.2: ECDHE-ECDSA-AES128-GCM-SHA256, ECDHE-ECDSA-AES256-GCM-SHA384, ECDHE-ECDSA-AES128-SHA256, ECDHE-ECDSA-AES256-SHA384, ECDHE-RSA-AES128-GCM-SHA256, ECDHE-RSA-AES256-GCM-SHA384, ECDHE-RSA-AES128-SHA256, ECDHE-RSA-AES256-SHA384, AES128-GCM-SHA256, AES256-GCM-SHA384, AES128-SHA256, AES256-SHA256. TLSv1.3: TLS*CHACHA20*POLY1305*SHA256, TLS*AES*256*GCM*SHA384, TLS*AES*128*GCM*SHA256, TLS*AES*128*CCM*8*SHA256, TLS*AES*128*CCM*SHA256, TLS*SM4*GCM*SM3, TLS*SM4*CCM*SM3. When specifying this parameter, you must provide all supported cipher suites. Adding or removing cipher suites individually is not supported via this interface. If only Ciphers.N is provided and TlsVersions.N is not, validation is based on the TLS protocol versions supported by the current listener and the cipher suites specified in the request. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request. TLS*SM4*GCM*SM3 and TLS*SM4*CCM*SM3 are currently in pilot testing. To request access, please contact your account manager
         """
         return pulumi.get(self, "ciphers")
 
@@ -179,7 +179,7 @@ class _NlbSecurityPolicyState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建时间。
+        Creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -191,7 +191,7 @@ class _NlbSecurityPolicyState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        TLS自定义安全策略所属项目的名称。不传则默认为defaul。
+        Name of the project to which the TLS custom security policy belongs. If not specified, defaults to default
         """
         return pulumi.get(self, "project_name")
 
@@ -203,7 +203,7 @@ class _NlbSecurityPolicyState:
     @pulumi.getter(name="relatedListenerIds")
     def related_listener_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        TLS 安全策略关联的监听器。
+        Listener associated with the TLS security policy
         """
         return pulumi.get(self, "related_listener_ids")
 
@@ -215,7 +215,7 @@ class _NlbSecurityPolicyState:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        安全策略ID。
+        Security policy ID
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -227,7 +227,7 @@ class _NlbSecurityPolicyState:
     @pulumi.getter(name="securityPolicyName")
     def security_policy_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        安全策略名称。必须以字母、数字或中文开头，可包含以下特殊字符：点（.）、下划线（_）和中划线（-）；长度限制为1 ～ 128个字符；该参数不传入，则默认为策略ID。
+        Security policy name. Must start with a letter, number, or Chinese character, and can include the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not specified, defaults to the policy ID
         """
         return pulumi.get(self, "security_policy_name")
 
@@ -239,7 +239,7 @@ class _NlbSecurityPolicyState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        TLS 自定义安全策略状态。Creating：创建中。Configuring：配置中。Active：正常。Deleting：删除中。
+        TLS custom security policy status. Creating: Being created. Configuring: Being configured. Active: Active. Deleting: Being deleted.
         """
         return pulumi.get(self, "status")
 
@@ -260,7 +260,7 @@ class _NlbSecurityPolicyState:
     @pulumi.getter(name="tlsVersions")
     def tls_versions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        更新TLS自定义安全策略的TLS 协议版本。取值：TLSv1.0，TLSv1.1，TLSv1.2，TLSv1.3。当传入此参数时，需要传入待支持的全部TLS版本，不支持通过此接口仅新增/删除TLS协议版本。仅传入TlsVersions.N，未传入Ciphers.N，则依据请求中传入的TLS协议版本和当前监听器支持的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS协议版本和加密套件做校验。
+        Update the TLS protocol versions for the TLS custom security policy. Valid values: TLSv1.0, TLSv1.1, TLSv1.2, TLSv1.3. When specifying this parameter, you must provide all supported TLS versions. Adding or removing TLS protocol versions individually is not supported via this interface. If only TlsVersions.N is provided and Ciphers.N is not, validation is based on the TLS protocol versions in the request and the cipher suites supported by the current listener. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request
         """
         return pulumi.get(self, "tls_versions")
 
@@ -272,7 +272,7 @@ class _NlbSecurityPolicyState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        更新时间。
+        Update time
         """
         return pulumi.get(self, "updated_time")
 
@@ -294,7 +294,7 @@ class NlbSecurityPolicy(pulumi.CustomResource):
                  tls_versions: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  __props__=None):
         """
-        基于一些常见的场景，为您预置了一些安全策略，若系统预置的策略不满足您的需求，您还可以自定义安全策略。
+        Some security policies are preset for common scenarios. If the system preset policies do not meet your needs, you can also customize security policies
 
         ## Example Usage
 
@@ -324,10 +324,10 @@ class NlbSecurityPolicy(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ciphers: TLS自定义安全策略的加密套件，不同的TLS协议版本支持的加密套件如下：TLSv1.0 & TLSv1.1：ECDHE-ECDSA-AES128-SHA，ECDHE-ECDSA-AES256-SHA，ECDHE-RSA-AES128-SHA，ECDHE-RSA-AES256-SHA，AES128-SHA，AES256-SHA，DES-CBC3-SHA。TLSv1.2：ECDHE-ECDSA-AES128-GCM-SHA256，ECDHE-ECDSA-AES256-GCM-SHA384，ECDHE-ECDSA-AES128-SHA256，ECDHE-ECDSA-AES256-SHA384，ECDHE-RSA-AES128-GCM-SHA256，ECDHE-RSA-AES256-GCM-SHA384，ECDHE-RSA-AES128-SHA256，ECDHE-RSA-AES256-SHA384，AES128-GCM-SHA256，AES256-GCM-SHA384，AES128-SHA256，AES256-SHA256。TLSv1.3：TLS*CHACHA20*POLY1305*SHA256，TLS*AES*256*GCM*SHA384，TLS*AES*128*GCM*SHA256，TLS*AES*128*CCM*8*SHA256，TLS*AES*128*CCM*SHA256，TLS*SM4*GCM*SM3，TLS*SM4*CCM*SM3。当传入此参数时，需要传入待支持的全部加密套件，不支持通过此接口仅新增/删除加密套件。仅传入Ciphers.N，未传入TlsVersions.N，则依据当前监听器支持的TLS 协议版本和请求中传入的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS 协议版本和加密套件做校验。TLS*SM4*GCM*SM3和TLS*SM4*CCM*SM3两个加密套件正在邀测中，如需试用，请联系客户经理。
-        :param pulumi.Input[builtins.str] project_name: TLS自定义安全策略所属项目的名称。不传则默认为defaul。
-        :param pulumi.Input[builtins.str] security_policy_name: 安全策略名称。必须以字母、数字或中文开头，可包含以下特殊字符：点（.）、下划线（_）和中划线（-）；长度限制为1 ～ 128个字符；该参数不传入，则默认为策略ID。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] tls_versions: 更新TLS自定义安全策略的TLS 协议版本。取值：TLSv1.0，TLSv1.1，TLSv1.2，TLSv1.3。当传入此参数时，需要传入待支持的全部TLS版本，不支持通过此接口仅新增/删除TLS协议版本。仅传入TlsVersions.N，未传入Ciphers.N，则依据请求中传入的TLS协议版本和当前监听器支持的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS协议版本和加密套件做校验。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ciphers: Cipher suites for the TLS custom security policy. Supported cipher suites for different TLS protocol versions are as follows: TLSv1.0 & TLSv1.1: ECDHE-ECDSA-AES128-SHA, ECDHE-ECDSA-AES256-SHA, ECDHE-RSA-AES128-SHA, ECDHE-RSA-AES256-SHA, AES128-SHA, AES256-SHA, DES-CBC3-SHA. TLSv1.2: ECDHE-ECDSA-AES128-GCM-SHA256, ECDHE-ECDSA-AES256-GCM-SHA384, ECDHE-ECDSA-AES128-SHA256, ECDHE-ECDSA-AES256-SHA384, ECDHE-RSA-AES128-GCM-SHA256, ECDHE-RSA-AES256-GCM-SHA384, ECDHE-RSA-AES128-SHA256, ECDHE-RSA-AES256-SHA384, AES128-GCM-SHA256, AES256-GCM-SHA384, AES128-SHA256, AES256-SHA256. TLSv1.3: TLS*CHACHA20*POLY1305*SHA256, TLS*AES*256*GCM*SHA384, TLS*AES*128*GCM*SHA256, TLS*AES*128*CCM*8*SHA256, TLS*AES*128*CCM*SHA256, TLS*SM4*GCM*SM3, TLS*SM4*CCM*SM3. When specifying this parameter, you must provide all supported cipher suites. Adding or removing cipher suites individually is not supported via this interface. If only Ciphers.N is provided and TlsVersions.N is not, validation is based on the TLS protocol versions supported by the current listener and the cipher suites specified in the request. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request. TLS*SM4*GCM*SM3 and TLS*SM4*CCM*SM3 are currently in pilot testing. To request access, please contact your account manager
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the TLS custom security policy belongs. If not specified, defaults to default
+        :param pulumi.Input[builtins.str] security_policy_name: Security policy name. Must start with a letter, number, or Chinese character, and can include the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not specified, defaults to the policy ID
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] tls_versions: Update the TLS protocol versions for the TLS custom security policy. Valid values: TLSv1.0, TLSv1.1, TLSv1.2, TLSv1.3. When specifying this parameter, you must provide all supported TLS versions. Adding or removing TLS protocol versions individually is not supported via this interface. If only TlsVersions.N is provided and Ciphers.N is not, validation is based on the TLS protocol versions in the request and the cipher suites supported by the current listener. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request
         """
         ...
     @overload
@@ -336,7 +336,7 @@ class NlbSecurityPolicy(pulumi.CustomResource):
                  args: NlbSecurityPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        基于一些常见的场景，为您预置了一些安全策略，若系统预置的策略不满足您的需求，您还可以自定义安全策略。
+        Some security policies are preset for common scenarios. If the system preset policies do not meet your needs, you can also customize security policies
 
         ## Example Usage
 
@@ -436,16 +436,16 @@ class NlbSecurityPolicy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] account_id: TLS 安全策略所属的账号ID。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ciphers: TLS自定义安全策略的加密套件，不同的TLS协议版本支持的加密套件如下：TLSv1.0 & TLSv1.1：ECDHE-ECDSA-AES128-SHA，ECDHE-ECDSA-AES256-SHA，ECDHE-RSA-AES128-SHA，ECDHE-RSA-AES256-SHA，AES128-SHA，AES256-SHA，DES-CBC3-SHA。TLSv1.2：ECDHE-ECDSA-AES128-GCM-SHA256，ECDHE-ECDSA-AES256-GCM-SHA384，ECDHE-ECDSA-AES128-SHA256，ECDHE-ECDSA-AES256-SHA384，ECDHE-RSA-AES128-GCM-SHA256，ECDHE-RSA-AES256-GCM-SHA384，ECDHE-RSA-AES128-SHA256，ECDHE-RSA-AES256-SHA384，AES128-GCM-SHA256，AES256-GCM-SHA384，AES128-SHA256，AES256-SHA256。TLSv1.3：TLS*CHACHA20*POLY1305*SHA256，TLS*AES*256*GCM*SHA384，TLS*AES*128*GCM*SHA256，TLS*AES*128*CCM*8*SHA256，TLS*AES*128*CCM*SHA256，TLS*SM4*GCM*SM3，TLS*SM4*CCM*SM3。当传入此参数时，需要传入待支持的全部加密套件，不支持通过此接口仅新增/删除加密套件。仅传入Ciphers.N，未传入TlsVersions.N，则依据当前监听器支持的TLS 协议版本和请求中传入的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS 协议版本和加密套件做校验。TLS*SM4*GCM*SM3和TLS*SM4*CCM*SM3两个加密套件正在邀测中，如需试用，请联系客户经理。
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] project_name: TLS自定义安全策略所属项目的名称。不传则默认为defaul。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] related_listener_ids: TLS 安全策略关联的监听器。
-        :param pulumi.Input[builtins.str] security_policy_id: 安全策略ID。
-        :param pulumi.Input[builtins.str] security_policy_name: 安全策略名称。必须以字母、数字或中文开头，可包含以下特殊字符：点（.）、下划线（_）和中划线（-）；长度限制为1 ～ 128个字符；该参数不传入，则默认为策略ID。
-        :param pulumi.Input[builtins.str] status: TLS 自定义安全策略状态。Creating：创建中。Configuring：配置中。Active：正常。Deleting：删除中。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] tls_versions: 更新TLS自定义安全策略的TLS 协议版本。取值：TLSv1.0，TLSv1.1，TLSv1.2，TLSv1.3。当传入此参数时，需要传入待支持的全部TLS版本，不支持通过此接口仅新增/删除TLS协议版本。仅传入TlsVersions.N，未传入Ciphers.N，则依据请求中传入的TLS协议版本和当前监听器支持的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS协议版本和加密套件做校验。
-        :param pulumi.Input[builtins.str] updated_time: 更新时间。
+        :param pulumi.Input[builtins.str] account_id: Account ID associated with the TLS security policy
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ciphers: Cipher suites for the TLS custom security policy. Supported cipher suites for different TLS protocol versions are as follows: TLSv1.0 & TLSv1.1: ECDHE-ECDSA-AES128-SHA, ECDHE-ECDSA-AES256-SHA, ECDHE-RSA-AES128-SHA, ECDHE-RSA-AES256-SHA, AES128-SHA, AES256-SHA, DES-CBC3-SHA. TLSv1.2: ECDHE-ECDSA-AES128-GCM-SHA256, ECDHE-ECDSA-AES256-GCM-SHA384, ECDHE-ECDSA-AES128-SHA256, ECDHE-ECDSA-AES256-SHA384, ECDHE-RSA-AES128-GCM-SHA256, ECDHE-RSA-AES256-GCM-SHA384, ECDHE-RSA-AES128-SHA256, ECDHE-RSA-AES256-SHA384, AES128-GCM-SHA256, AES256-GCM-SHA384, AES128-SHA256, AES256-SHA256. TLSv1.3: TLS*CHACHA20*POLY1305*SHA256, TLS*AES*256*GCM*SHA384, TLS*AES*128*GCM*SHA256, TLS*AES*128*CCM*8*SHA256, TLS*AES*128*CCM*SHA256, TLS*SM4*GCM*SM3, TLS*SM4*CCM*SM3. When specifying this parameter, you must provide all supported cipher suites. Adding or removing cipher suites individually is not supported via this interface. If only Ciphers.N is provided and TlsVersions.N is not, validation is based on the TLS protocol versions supported by the current listener and the cipher suites specified in the request. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request. TLS*SM4*GCM*SM3 and TLS*SM4*CCM*SM3 are currently in pilot testing. To request access, please contact your account manager
+        :param pulumi.Input[builtins.str] created_time: Creation time
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the TLS custom security policy belongs. If not specified, defaults to default
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] related_listener_ids: Listener associated with the TLS security policy
+        :param pulumi.Input[builtins.str] security_policy_id: Security policy ID
+        :param pulumi.Input[builtins.str] security_policy_name: Security policy name. Must start with a letter, number, or Chinese character, and can include the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not specified, defaults to the policy ID
+        :param pulumi.Input[builtins.str] status: TLS custom security policy status. Creating: Being created. Configuring: Being configured. Active: Active. Deleting: Being deleted.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] tls_versions: Update the TLS protocol versions for the TLS custom security policy. Valid values: TLSv1.0, TLSv1.1, TLSv1.2, TLSv1.3. When specifying this parameter, you must provide all supported TLS versions. Adding or removing TLS protocol versions individually is not supported via this interface. If only TlsVersions.N is provided and Ciphers.N is not, validation is based on the TLS protocol versions in the request and the cipher suites supported by the current listener. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request
+        :param pulumi.Input[builtins.str] updated_time: Update time
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -468,7 +468,7 @@ class NlbSecurityPolicy(pulumi.CustomResource):
     @pulumi.getter(name="accountId")
     def account_id(self) -> pulumi.Output[builtins.str]:
         """
-        TLS 安全策略所属的账号ID。
+        Account ID associated with the TLS security policy
         """
         return pulumi.get(self, "account_id")
 
@@ -476,7 +476,7 @@ class NlbSecurityPolicy(pulumi.CustomResource):
     @pulumi.getter
     def ciphers(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        TLS自定义安全策略的加密套件，不同的TLS协议版本支持的加密套件如下：TLSv1.0 & TLSv1.1：ECDHE-ECDSA-AES128-SHA，ECDHE-ECDSA-AES256-SHA，ECDHE-RSA-AES128-SHA，ECDHE-RSA-AES256-SHA，AES128-SHA，AES256-SHA，DES-CBC3-SHA。TLSv1.2：ECDHE-ECDSA-AES128-GCM-SHA256，ECDHE-ECDSA-AES256-GCM-SHA384，ECDHE-ECDSA-AES128-SHA256，ECDHE-ECDSA-AES256-SHA384，ECDHE-RSA-AES128-GCM-SHA256，ECDHE-RSA-AES256-GCM-SHA384，ECDHE-RSA-AES128-SHA256，ECDHE-RSA-AES256-SHA384，AES128-GCM-SHA256，AES256-GCM-SHA384，AES128-SHA256，AES256-SHA256。TLSv1.3：TLS*CHACHA20*POLY1305*SHA256，TLS*AES*256*GCM*SHA384，TLS*AES*128*GCM*SHA256，TLS*AES*128*CCM*8*SHA256，TLS*AES*128*CCM*SHA256，TLS*SM4*GCM*SM3，TLS*SM4*CCM*SM3。当传入此参数时，需要传入待支持的全部加密套件，不支持通过此接口仅新增/删除加密套件。仅传入Ciphers.N，未传入TlsVersions.N，则依据当前监听器支持的TLS 协议版本和请求中传入的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS 协议版本和加密套件做校验。TLS*SM4*GCM*SM3和TLS*SM4*CCM*SM3两个加密套件正在邀测中，如需试用，请联系客户经理。
+        Cipher suites for the TLS custom security policy. Supported cipher suites for different TLS protocol versions are as follows: TLSv1.0 & TLSv1.1: ECDHE-ECDSA-AES128-SHA, ECDHE-ECDSA-AES256-SHA, ECDHE-RSA-AES128-SHA, ECDHE-RSA-AES256-SHA, AES128-SHA, AES256-SHA, DES-CBC3-SHA. TLSv1.2: ECDHE-ECDSA-AES128-GCM-SHA256, ECDHE-ECDSA-AES256-GCM-SHA384, ECDHE-ECDSA-AES128-SHA256, ECDHE-ECDSA-AES256-SHA384, ECDHE-RSA-AES128-GCM-SHA256, ECDHE-RSA-AES256-GCM-SHA384, ECDHE-RSA-AES128-SHA256, ECDHE-RSA-AES256-SHA384, AES128-GCM-SHA256, AES256-GCM-SHA384, AES128-SHA256, AES256-SHA256. TLSv1.3: TLS*CHACHA20*POLY1305*SHA256, TLS*AES*256*GCM*SHA384, TLS*AES*128*GCM*SHA256, TLS*AES*128*CCM*8*SHA256, TLS*AES*128*CCM*SHA256, TLS*SM4*GCM*SM3, TLS*SM4*CCM*SM3. When specifying this parameter, you must provide all supported cipher suites. Adding or removing cipher suites individually is not supported via this interface. If only Ciphers.N is provided and TlsVersions.N is not, validation is based on the TLS protocol versions supported by the current listener and the cipher suites specified in the request. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request. TLS*SM4*GCM*SM3 and TLS*SM4*CCM*SM3 are currently in pilot testing. To request access, please contact your account manager
         """
         return pulumi.get(self, "ciphers")
 
@@ -484,7 +484,7 @@ class NlbSecurityPolicy(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        创建时间。
+        Creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -492,7 +492,7 @@ class NlbSecurityPolicy(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        TLS自定义安全策略所属项目的名称。不传则默认为defaul。
+        Name of the project to which the TLS custom security policy belongs. If not specified, defaults to default
         """
         return pulumi.get(self, "project_name")
 
@@ -500,7 +500,7 @@ class NlbSecurityPolicy(pulumi.CustomResource):
     @pulumi.getter(name="relatedListenerIds")
     def related_listener_ids(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        TLS 安全策略关联的监听器。
+        Listener associated with the TLS security policy
         """
         return pulumi.get(self, "related_listener_ids")
 
@@ -508,7 +508,7 @@ class NlbSecurityPolicy(pulumi.CustomResource):
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Output[builtins.str]:
         """
-        安全策略ID。
+        Security policy ID
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -516,7 +516,7 @@ class NlbSecurityPolicy(pulumi.CustomResource):
     @pulumi.getter(name="securityPolicyName")
     def security_policy_name(self) -> pulumi.Output[builtins.str]:
         """
-        安全策略名称。必须以字母、数字或中文开头，可包含以下特殊字符：点（.）、下划线（_）和中划线（-）；长度限制为1 ～ 128个字符；该参数不传入，则默认为策略ID。
+        Security policy name. Must start with a letter, number, or Chinese character, and can include the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not specified, defaults to the policy ID
         """
         return pulumi.get(self, "security_policy_name")
 
@@ -524,7 +524,7 @@ class NlbSecurityPolicy(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        TLS 自定义安全策略状态。Creating：创建中。Configuring：配置中。Active：正常。Deleting：删除中。
+        TLS custom security policy status. Creating: Being created. Configuring: Being configured. Active: Active. Deleting: Being deleted.
         """
         return pulumi.get(self, "status")
 
@@ -537,7 +537,7 @@ class NlbSecurityPolicy(pulumi.CustomResource):
     @pulumi.getter(name="tlsVersions")
     def tls_versions(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        更新TLS自定义安全策略的TLS 协议版本。取值：TLSv1.0，TLSv1.1，TLSv1.2，TLSv1.3。当传入此参数时，需要传入待支持的全部TLS版本，不支持通过此接口仅新增/删除TLS协议版本。仅传入TlsVersions.N，未传入Ciphers.N，则依据请求中传入的TLS协议版本和当前监听器支持的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS协议版本和加密套件做校验。
+        Update the TLS protocol versions for the TLS custom security policy. Valid values: TLSv1.0, TLSv1.1, TLSv1.2, TLSv1.3. When specifying this parameter, you must provide all supported TLS versions. Adding or removing TLS protocol versions individually is not supported via this interface. If only TlsVersions.N is provided and Ciphers.N is not, validation is based on the TLS protocol versions in the request and the cipher suites supported by the current listener. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request
         """
         return pulumi.get(self, "tls_versions")
 
@@ -545,7 +545,7 @@ class NlbSecurityPolicy(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        更新时间。
+        Update time
         """
         return pulumi.get(self, "updated_time")
 

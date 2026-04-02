@@ -19,14 +19,14 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
     public static final KeypairArgs Empty = new KeypairArgs();
 
     /**
-     * 密钥对的描述，默认值为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”长度限制在255个字符以内。
+     * Description of the key pair. The default value is an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, period (&#39;.&#39;), space, underscore (&#39;_&#39;), hyphen (&#39;-&#39;), equals sign (&#39;=&#39;), English comma (&#39;,&#39;), Chinese comma (&#39;，&#39;), and Chinese period (&#39;。&#39;). Length must not exceed 255 characters.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 密钥对的描述，默认值为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”长度限制在255个字符以内。
+     * @return Description of the key pair. The default value is an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, period (&#39;.&#39;), space, underscore (&#39;_&#39;), hyphen (&#39;-&#39;), equals sign (&#39;=&#39;), English comma (&#39;,&#39;), Chinese comma (&#39;，&#39;), and Chinese period (&#39;。&#39;). Length must not exceed 255 characters.
      * 
      */
     public Optional<Output<String>> description() {
@@ -34,14 +34,14 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 操作的实例ID。
+     * Instance ID for the operation.
      * 
      */
     @Import(name="instanceIds")
     private @Nullable Output<List<String>> instanceIds;
 
     /**
-     * @return 操作的实例ID。
+     * @return Instance ID for the operation.
      * 
      */
     public Optional<Output<List<String>>> instanceIds() {
@@ -49,14 +49,14 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 密钥对名称。不可与已有名称重复。长度限制在 2～64 个字符之间。允许使用点号“.”分隔字符成多段，每段允许使用大小写字母、数字或连字符“-”。不能以“-”和“.”开头或结尾，不能连续使用“-”或者“.”。
+     * Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods (&#39;.&#39;) can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens (&#39;-&#39;). The name cannot start or end with &#39;-&#39; or &#39;.&#39;, and cannot contain consecutive &#39;-&#39; or &#39;.&#39;.
      * 
      */
     @Import(name="keyPairName", required=true)
     private Output<String> keyPairName;
 
     /**
-     * @return 密钥对名称。不可与已有名称重复。长度限制在 2～64 个字符之间。允许使用点号“.”分隔字符成多段，每段允许使用大小写字母、数字或连字符“-”。不能以“-”和“.”开头或结尾，不能连续使用“-”或者“.”。
+     * @return Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods (&#39;.&#39;) can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens (&#39;-&#39;). The name cannot start or end with &#39;-&#39; or &#39;.&#39;, and cannot contain consecutive &#39;-&#39; or &#39;.&#39;.
      * 
      */
     public Output<String> keyPairName() {
@@ -64,14 +64,14 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 资源所属项目，一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+     * Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore (&#39;_&#39;), period (&#39;.&#39;), and hyphen (&#39;-&#39;). Length must not exceed 64 characters.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 资源所属项目，一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+     * @return Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore (&#39;_&#39;), period (&#39;.&#39;), and hyphen (&#39;-&#39;). Length must not exceed 64 characters.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -79,14 +79,14 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 密钥对的公钥信息。
+     * Public key information of the key pair.
      * 
      */
     @Import(name="publicKey")
     private @Nullable Output<String> publicKey;
 
     /**
-     * @return 密钥对的公钥信息。
+     * @return Public key information of the key pair.
      * 
      */
     public Optional<Output<String>> publicKey() {
@@ -130,7 +130,7 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 密钥对的描述，默认值为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”长度限制在255个字符以内。
+         * @param description Description of the key pair. The default value is an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, period (&#39;.&#39;), space, underscore (&#39;_&#39;), hyphen (&#39;-&#39;), equals sign (&#39;=&#39;), English comma (&#39;,&#39;), Chinese comma (&#39;，&#39;), and Chinese period (&#39;。&#39;). Length must not exceed 255 characters.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 密钥对的描述，默认值为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”长度限制在255个字符以内。
+         * @param description Description of the key pair. The default value is an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, period (&#39;.&#39;), space, underscore (&#39;_&#39;), hyphen (&#39;-&#39;), equals sign (&#39;=&#39;), English comma (&#39;,&#39;), Chinese comma (&#39;，&#39;), and Chinese period (&#39;。&#39;). Length must not exceed 255 characters.
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceIds 操作的实例ID。
+         * @param instanceIds Instance ID for the operation.
          * 
          * @return builder
          * 
@@ -162,7 +162,7 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceIds 操作的实例ID。
+         * @param instanceIds Instance ID for the operation.
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceIds 操作的实例ID。
+         * @param instanceIds Instance ID for the operation.
          * 
          * @return builder
          * 
@@ -182,7 +182,7 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyPairName 密钥对名称。不可与已有名称重复。长度限制在 2～64 个字符之间。允许使用点号“.”分隔字符成多段，每段允许使用大小写字母、数字或连字符“-”。不能以“-”和“.”开头或结尾，不能连续使用“-”或者“.”。
+         * @param keyPairName Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods (&#39;.&#39;) can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens (&#39;-&#39;). The name cannot start or end with &#39;-&#39; or &#39;.&#39;, and cannot contain consecutive &#39;-&#39; or &#39;.&#39;.
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keyPairName 密钥对名称。不可与已有名称重复。长度限制在 2～64 个字符之间。允许使用点号“.”分隔字符成多段，每段允许使用大小写字母、数字或连字符“-”。不能以“-”和“.”开头或结尾，不能连续使用“-”或者“.”。
+         * @param keyPairName Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods (&#39;.&#39;) can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens (&#39;-&#39;). The name cannot start or end with &#39;-&#39; or &#39;.&#39;, and cannot contain consecutive &#39;-&#39; or &#39;.&#39;.
          * 
          * @return builder
          * 
@@ -203,7 +203,7 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 资源所属项目，一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+         * @param projectName Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore (&#39;_&#39;), period (&#39;.&#39;), and hyphen (&#39;-&#39;). Length must not exceed 64 characters.
          * 
          * @return builder
          * 
@@ -214,7 +214,7 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 资源所属项目，一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+         * @param projectName Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore (&#39;_&#39;), period (&#39;.&#39;), and hyphen (&#39;-&#39;). Length must not exceed 64 characters.
          * 
          * @return builder
          * 
@@ -224,7 +224,7 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param publicKey 密钥对的公钥信息。
+         * @param publicKey Public key information of the key pair.
          * 
          * @return builder
          * 
@@ -235,7 +235,7 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param publicKey 密钥对的公钥信息。
+         * @param publicKey Public key information of the key pair.
          * 
          * @return builder
          * 

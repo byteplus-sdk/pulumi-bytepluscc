@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Outputs
     public sealed class InstanceResources
     {
         /// <summary>
-        /// 资源统计响应数据。
+        /// Resource statistics response data
         /// </summary>
         public readonly Outputs.InstanceResourcesStorage? Storage;
 

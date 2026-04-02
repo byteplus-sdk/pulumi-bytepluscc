@@ -14,17 +14,17 @@ import java.util.Objects;
 @CustomType
 public final class GetUpstreamSourceResult {
     /**
-     * @return 备注，长度限制为0~253个字符。
+     * @return Remarks, length limit: 0–253 characters
      * 
      */
     private String comments;
     /**
-     * @return 创建时间。
+     * @return Creation time
      * 
      */
     private String createdTime;
     /**
-     * @return 网关实例ID。
+     * @return Gateway instance ID
      * 
      */
     private String gatewayId;
@@ -34,63 +34,63 @@ public final class GetUpstreamSourceResult {
      */
     private String id;
     /**
-     * @return 路由同步。开启后，API网关会自动监听Ingress资源的变化，并将Ingress资源转义为服务，域名，Upstream等资源合并至当前网关。由Ingress转义的资源不支持在控制台操作。仅支持容器集群来源类型。
+     * @return Route synchronization. When enabled, the API Gateway automatically monitors changes to Ingress resources and converts them into services, domains, Upstream, and other resources, merging them into the current gateway. Resources converted from Ingress cannot be managed in the console. Only supported for container cluster source type
      * 
      */
     private GetUpstreamSourceIngressSettings ingressSettings;
     /**
-     * @return Upstream来源配置。
+     * @return Upstream source configuration
      * 
      */
     private GetUpstreamSourceSourceSpec sourceSpec;
     /**
-     * @return Upstream来源类型，取值：K8S：容器集群。Nacos：注册中心。
+     * @return Upstream source type. Options: K8S: Container cluster. Nacos: Registry
      * 
      */
     private String sourceType;
     /**
-     * @return 导入状态，取值：Syncing：导入中。SyncedSucceed：导入成功。SyncedFailed：导入失败。
+     * @return Import status. Options: Syncing: Importing. SyncedSucceed: Import successful. SyncedFailed: Import failed
      * 
      */
     private String status;
     /**
-     * @return 导入状态信息，取值：ConnectionFailed：Nacos集群无法连接。AuthenticationFailed：认证失败。PermissionFailed：Nacos集群无法连接。
+     * @return Import status information. Options: ConnectionFailed: Unable to connect to Nacos cluster. AuthenticationFailed: Authentication failed. PermissionFailed: Unable to connect to Nacos cluster
      * 
      */
     private String statusMessage;
     /**
-     * @return 更新时间。
+     * @return Update time
      * 
      */
     private String updatedTime;
     /**
-     * @return Upstream来源ID。
+     * @return Upstream source ID
      * 
      */
     private String upstreamSourceId;
     /**
-     * @return 指定命名空间。
+     * @return Specify namespace
      * 
      */
     private List<String> watchNamespaces;
 
     private GetUpstreamSourceResult() {}
     /**
-     * @return 备注，长度限制为0~253个字符。
+     * @return Remarks, length limit: 0–253 characters
      * 
      */
     public String comments() {
         return this.comments;
     }
     /**
-     * @return 创建时间。
+     * @return Creation time
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 网关实例ID。
+     * @return Gateway instance ID
      * 
      */
     public String gatewayId() {
@@ -104,56 +104,56 @@ public final class GetUpstreamSourceResult {
         return this.id;
     }
     /**
-     * @return 路由同步。开启后，API网关会自动监听Ingress资源的变化，并将Ingress资源转义为服务，域名，Upstream等资源合并至当前网关。由Ingress转义的资源不支持在控制台操作。仅支持容器集群来源类型。
+     * @return Route synchronization. When enabled, the API Gateway automatically monitors changes to Ingress resources and converts them into services, domains, Upstream, and other resources, merging them into the current gateway. Resources converted from Ingress cannot be managed in the console. Only supported for container cluster source type
      * 
      */
     public GetUpstreamSourceIngressSettings ingressSettings() {
         return this.ingressSettings;
     }
     /**
-     * @return Upstream来源配置。
+     * @return Upstream source configuration
      * 
      */
     public GetUpstreamSourceSourceSpec sourceSpec() {
         return this.sourceSpec;
     }
     /**
-     * @return Upstream来源类型，取值：K8S：容器集群。Nacos：注册中心。
+     * @return Upstream source type. Options: K8S: Container cluster. Nacos: Registry
      * 
      */
     public String sourceType() {
         return this.sourceType;
     }
     /**
-     * @return 导入状态，取值：Syncing：导入中。SyncedSucceed：导入成功。SyncedFailed：导入失败。
+     * @return Import status. Options: Syncing: Importing. SyncedSucceed: Import successful. SyncedFailed: Import failed
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 导入状态信息，取值：ConnectionFailed：Nacos集群无法连接。AuthenticationFailed：认证失败。PermissionFailed：Nacos集群无法连接。
+     * @return Import status information. Options: ConnectionFailed: Unable to connect to Nacos cluster. AuthenticationFailed: Authentication failed. PermissionFailed: Unable to connect to Nacos cluster
      * 
      */
     public String statusMessage() {
         return this.statusMessage;
     }
     /**
-     * @return 更新时间。
+     * @return Update time
      * 
      */
     public String updatedTime() {
         return this.updatedTime;
     }
     /**
-     * @return Upstream来源ID。
+     * @return Upstream source ID
      * 
      */
     public String upstreamSourceId() {
         return this.upstreamSourceId;
     }
     /**
-     * @return 指定命名空间。
+     * @return Specify namespace
      * 
      */
     public List<String> watchNamespaces() {

@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainRemoteAuthRemoteAuthRuleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示该配置模块的生效条件，由一组规则组成。
+        /// Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         /// </summary>
         [Input("condition")]
         public Input<Inputs.DomainRemoteAuthRemoteAuthRuleConditionGetArgs>? Condition { get; set; }
 
         /// <summary>
-        /// 表示具体的鉴权配置。
+        /// Indicates the specific authentication configuration.
         /// </summary>
         [Input("remoteAuthRuleAction")]
         public Input<Inputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionGetArgs>? RemoteAuthRuleAction { get; set; }

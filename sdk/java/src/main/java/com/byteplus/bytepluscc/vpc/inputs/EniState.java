@@ -22,14 +22,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
     public static final EniState Empty = new EniState();
 
     /**
-     * 网卡所有者ID。
+     * NIC owner ID
      * 
      */
     @Import(name="accountId")
     private @Nullable Output<String> accountId;
 
     /**
-     * @return 网卡所有者ID。
+     * @return NIC owner ID
      * 
      */
     public Optional<Output<String>> accountId() {
@@ -37,14 +37,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网卡创建时间。
+     * NIC creation time
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 网卡创建时间。
+     * @return NIC creation time
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -52,14 +52,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启随云服务器实例删除，true为开启，false为不开启。
+     * Enable release with cloud server instance deletion. true to enable, false to disable
      * 
      */
     @Import(name="deleteOnTermination")
     private @Nullable Output<Boolean> deleteOnTermination;
 
     /**
-     * @return 是否开启随云服务器实例删除，true为开启，false为不开启。
+     * @return Enable release with cloud server instance deletion. true to enable, false to disable
      * 
      */
     public Optional<Output<Boolean>> deleteOnTermination() {
@@ -67,14 +67,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 辅助网卡的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头；可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不填默认空字符串。
+     * Description for the auxiliary network interface. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Allowed characters include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 辅助网卡的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头；可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不填默认空字符串。
+     * @return Description for the auxiliary network interface. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Allowed characters include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string.
      * 
      */
     public Optional<Output<String>> description() {
@@ -82,14 +82,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网卡绑定实例的ID，如果网卡未挂载或参数ServiceManaged为true，则InstanceId返回值均为空。
+     * ID of the instance bound to the NIC. If the NIC is not attached or the ServiceManaged parameter is true, InstanceId returns empty
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 网卡绑定实例的ID，如果网卡未挂载或参数ServiceManaged为true，则InstanceId返回值均为空。
+     * @return ID of the instance bound to the NIC. If the NIC is not attached or the ServiceManaged parameter is true, InstanceId returns empty
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -97,14 +97,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 为网卡分配私网IPv6地址的数量，传入该参数，系统会自动从网卡所属子网中，分配相应数量的空闲私网IPv6地址，创建时与IPv6Sets不能同时传入。
+     * Number of private IPv6 addresses assigned to the network interface. When this parameter is specified, the system automatically assigns the corresponding number of available private IPv6 addresses from the subnet to which the network interface belongs. Cannot be used together with IPv6Sets during creation.
      * 
      */
     @Import(name="ipv6AddressCount")
     private @Nullable Output<Integer> ipv6AddressCount;
 
     /**
-     * @return 为网卡分配私网IPv6地址的数量，传入该参数，系统会自动从网卡所属子网中，分配相应数量的空闲私网IPv6地址，创建时与IPv6Sets不能同时传入。
+     * @return Number of private IPv6 addresses assigned to the network interface. When this parameter is specified, the system automatically assigns the corresponding number of available private IPv6 addresses from the subnet to which the network interface belongs. Cannot be used together with IPv6Sets during creation.
      * 
      */
     public Optional<Output<Integer>> ipv6AddressCount() {
@@ -112,14 +112,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网卡的IPv6地址列表，例如[2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf]。
+     * IPv6 address list of the network interface, for example [2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf].
      * 
      */
     @Import(name="ipv6Sets")
     private @Nullable Output<List<String>> ipv6Sets;
 
     /**
-     * @return 网卡的IPv6地址列表，例如[2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf]。
+     * @return IPv6 address list of the network interface, for example [2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf].
      * 
      */
     public Optional<Output<List<String>>> ipv6Sets() {
@@ -127,14 +127,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网卡的MAC地址。
+     * MAC address of the network interface.
      * 
      */
     @Import(name="macAddress")
     private @Nullable Output<String> macAddress;
 
     /**
-     * @return 网卡的MAC地址。
+     * @return MAC address of the network interface.
      * 
      */
     public Optional<Output<String>> macAddress() {
@@ -142,14 +142,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网卡ID。
+     * Network interface ID.
      * 
      */
     @Import(name="networkInterfaceId")
     private @Nullable Output<String> networkInterfaceId;
 
     /**
-     * @return 网卡ID。
+     * @return Network interface ID.
      * 
      */
     public Optional<Output<String>> networkInterfaceId() {
@@ -157,14 +157,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网卡名称，长度限制为1 ~ 128个字符，需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不填默认是辅助网卡的ID。
+     * NIC name. Length must be between 1 and 128 characters, starting with a letter, Chinese character, or number. Can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the ID of the secondary NIC
      * 
      */
     @Import(name="networkInterfaceName")
     private @Nullable Output<String> networkInterfaceName;
 
     /**
-     * @return 网卡名称，长度限制为1 ~ 128个字符，需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不填默认是辅助网卡的ID。
+     * @return NIC name. Length must be between 1 and 128 characters, starting with a letter, Chinese character, or number. Can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the ID of the secondary NIC
      * 
      */
     public Optional<Output<String>> networkInterfaceName() {
@@ -172,14 +172,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否为网卡开启源/目的地址检查，开启后，系统会自动阻止源地址或目的地址不是当前网卡的流量，true为开启，false为不开启（默认值）。
+     * Enable source/destination address check for the NIC. When enabled, the system automatically blocks traffic whose source or destination address does not match the current NIC. true to enable, false to disable (default)
      * 
      */
     @Import(name="portSecurityEnabled")
     private @Nullable Output<Boolean> portSecurityEnabled;
 
     /**
-     * @return 是否为网卡开启源/目的地址检查，开启后，系统会自动阻止源地址或目的地址不是当前网卡的流量，true为开启，false为不开启（默认值）。
+     * @return Enable source/destination address check for the NIC. When enabled, the system automatically blocks traffic whose source or destination address does not match the current NIC. true to enable, false to disable (default)
      * 
      */
     public Optional<Output<Boolean>> portSecurityEnabled() {
@@ -187,14 +187,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网卡的主私有IPv4地址，不支持修改地址，可以修改公网IP。如果指定，必须是对应子网中的一个空闲的私网IPv4地址，如果不指定，从对应子网中自动分配一个空闲的私网IPv4地址。例如：192.XX.XX.10。
+     * Primary private IPv4 address of the network interface. Address modification is not supported, but you can modify the public IP. If specified, it must be an available private IPv4 address in the corresponding subnet. If not specified, an available private IPv4 address will be automatically assigned from the corresponding subnet. For example: 192.XX.XX.10.
      * 
      */
     @Import(name="primaryIpAddress")
     private @Nullable Output<EniPrimaryIpAddressArgs> primaryIpAddress;
 
     /**
-     * @return 网卡的主私有IPv4地址，不支持修改地址，可以修改公网IP。如果指定，必须是对应子网中的一个空闲的私网IPv4地址，如果不指定，从对应子网中自动分配一个空闲的私网IPv4地址。例如：192.XX.XX.10。
+     * @return Primary private IPv4 address of the network interface. Address modification is not supported, but you can modify the public IP. If specified, it must be an available private IPv4 address in the corresponding subnet. If not specified, an available private IPv4 address will be automatically assigned from the corresponding subnet. For example: 192.XX.XX.10.
      * 
      */
     public Optional<Output<EniPrimaryIpAddressArgs>> primaryIpAddress() {
@@ -209,14 +209,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网卡所属项目的名称。
+     * Name of the project to which the NIC belongs
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 网卡所属项目的名称。
+     * @return Name of the project to which the NIC belongs
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -224,14 +224,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 为辅助网卡自动分配辅助私网IPv4地址数量，取值1~49。创建时不能与PrivateIpSets同时传入。
+     * Number of auxiliary private IPv4 addresses automatically assigned to the auxiliary network interface. Value range: 1–49. Cannot be used together with PrivateIpSets during creation.
      * 
      */
     @Import(name="secondaryPrivateIpAddressCount")
     private @Nullable Output<Integer> secondaryPrivateIpAddressCount;
 
     /**
-     * @return 为辅助网卡自动分配辅助私网IPv4地址数量，取值1~49。创建时不能与PrivateIpSets同时传入。
+     * @return Number of auxiliary private IPv4 addresses automatically assigned to the auxiliary network interface. Value range: 1–49. Cannot be used together with PrivateIpSets during creation.
      * 
      */
     public Optional<Output<Integer>> secondaryPrivateIpAddressCount() {
@@ -239,14 +239,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 辅助网卡加入一个或多个安全组的ID。
+     * ID of one or more security groups joined by the auxiliary network interface.
      * 
      */
     @Import(name="securityGroupIds")
     private @Nullable Output<List<String>> securityGroupIds;
 
     /**
-     * @return 辅助网卡加入一个或多个安全组的ID。
+     * @return ID of one or more security groups joined by the auxiliary network interface.
      * 
      */
     public Optional<Output<List<String>>> securityGroupIds() {
@@ -254,14 +254,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否为官方服务网卡，true为是，false为否。
+     * Indicates whether this is an official service network interface. true for yes, false for no.
      * 
      */
     @Import(name="serviceManaged")
     private @Nullable Output<Boolean> serviceManaged;
 
     /**
-     * @return 是否为官方服务网卡，true为是，false为否。
+     * @return Indicates whether this is an official service network interface. true for yes, false for no.
      * 
      */
     public Optional<Output<Boolean>> serviceManaged() {
@@ -269,14 +269,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网卡的绑定状态。Creating：创建中。Available：未挂载。Attaching：挂载中。InUse：已挂载。Detaching：卸载中。Deleting：删除中。
+     * Binding status of the network interface. Creating: In progress. Available: Not attached. Attaching: In progress. InUse: Attached. Detaching: In progress. Deleting: In progress.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 网卡的绑定状态。Creating：创建中。Available：未挂载。Attaching：挂载中。InUse：已挂载。Detaching：卸载中。Deleting：删除中。
+     * @return Binding status of the network interface. Creating: In progress. Available: Not attached. Attaching: In progress. InUse: Attached. Detaching: In progress. Deleting: In progress.
      * 
      */
     public Optional<Output<String>> status() {
@@ -284,14 +284,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 辅助网卡所在子网的ID。
+     * ID of the subnet where the auxiliary network interface resides.
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return 辅助网卡所在子网的ID。
+     * @return ID of the subnet where the auxiliary network interface resides.
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -306,14 +306,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网卡类型。primary：主网卡，secondary：辅助网卡
+     * NIC type. primary: primary NIC, secondary: secondary NIC
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 网卡类型。primary：主网卡，secondary：辅助网卡
+     * @return NIC type. primary: primary NIC, secondary: secondary NIC
      * 
      */
     public Optional<Output<String>> type() {
@@ -321,14 +321,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 更新网卡的时间。
+     * NIC update time
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 更新网卡的时间。
+     * @return NIC update time
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -336,14 +336,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网卡所属的VPC的ID。
+     * ID of the VPC to which the network interface belongs.
      * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
-     * @return 网卡所属的VPC的ID。
+     * @return ID of the VPC to which the network interface belongs.
      * 
      */
     public Optional<Output<String>> vpcId() {
@@ -351,14 +351,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网卡所属VPC的名称。
+     * Name of the VPC to which the NIC belongs
      * 
      */
     @Import(name="vpcName")
     private @Nullable Output<String> vpcName;
 
     /**
-     * @return 网卡所属VPC的名称。
+     * @return Name of the VPC to which the NIC belongs
      * 
      */
     public Optional<Output<String>> vpcName() {
@@ -366,14 +366,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网卡所属可用区的ID。
+     * ID of the availability zone to which the network interface belongs.
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return 网卡所属可用区的ID。
+     * @return ID of the availability zone to which the network interface belongs.
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -429,7 +429,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountId 网卡所有者ID。
+         * @param accountId NIC owner ID
          * 
          * @return builder
          * 
@@ -440,7 +440,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountId 网卡所有者ID。
+         * @param accountId NIC owner ID
          * 
          * @return builder
          * 
@@ -450,7 +450,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 网卡创建时间。
+         * @param createdTime NIC creation time
          * 
          * @return builder
          * 
@@ -461,7 +461,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 网卡创建时间。
+         * @param createdTime NIC creation time
          * 
          * @return builder
          * 
@@ -471,7 +471,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deleteOnTermination 是否开启随云服务器实例删除，true为开启，false为不开启。
+         * @param deleteOnTermination Enable release with cloud server instance deletion. true to enable, false to disable
          * 
          * @return builder
          * 
@@ -482,7 +482,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deleteOnTermination 是否开启随云服务器实例删除，true为开启，false为不开启。
+         * @param deleteOnTermination Enable release with cloud server instance deletion. true to enable, false to disable
          * 
          * @return builder
          * 
@@ -492,7 +492,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 辅助网卡的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头；可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不填默认空字符串。
+         * @param description Description for the auxiliary network interface. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Allowed characters include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string.
          * 
          * @return builder
          * 
@@ -503,7 +503,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 辅助网卡的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头；可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不填默认空字符串。
+         * @param description Description for the auxiliary network interface. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Allowed characters include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string.
          * 
          * @return builder
          * 
@@ -513,7 +513,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 网卡绑定实例的ID，如果网卡未挂载或参数ServiceManaged为true，则InstanceId返回值均为空。
+         * @param instanceId ID of the instance bound to the NIC. If the NIC is not attached or the ServiceManaged parameter is true, InstanceId returns empty
          * 
          * @return builder
          * 
@@ -524,7 +524,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 网卡绑定实例的ID，如果网卡未挂载或参数ServiceManaged为true，则InstanceId返回值均为空。
+         * @param instanceId ID of the instance bound to the NIC. If the NIC is not attached or the ServiceManaged parameter is true, InstanceId returns empty
          * 
          * @return builder
          * 
@@ -534,7 +534,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6AddressCount 为网卡分配私网IPv6地址的数量，传入该参数，系统会自动从网卡所属子网中，分配相应数量的空闲私网IPv6地址，创建时与IPv6Sets不能同时传入。
+         * @param ipv6AddressCount Number of private IPv6 addresses assigned to the network interface. When this parameter is specified, the system automatically assigns the corresponding number of available private IPv6 addresses from the subnet to which the network interface belongs. Cannot be used together with IPv6Sets during creation.
          * 
          * @return builder
          * 
@@ -545,7 +545,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6AddressCount 为网卡分配私网IPv6地址的数量，传入该参数，系统会自动从网卡所属子网中，分配相应数量的空闲私网IPv6地址，创建时与IPv6Sets不能同时传入。
+         * @param ipv6AddressCount Number of private IPv6 addresses assigned to the network interface. When this parameter is specified, the system automatically assigns the corresponding number of available private IPv6 addresses from the subnet to which the network interface belongs. Cannot be used together with IPv6Sets during creation.
          * 
          * @return builder
          * 
@@ -555,7 +555,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6Sets 网卡的IPv6地址列表，例如[2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf]。
+         * @param ipv6Sets IPv6 address list of the network interface, for example [2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf].
          * 
          * @return builder
          * 
@@ -566,7 +566,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6Sets 网卡的IPv6地址列表，例如[2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf]。
+         * @param ipv6Sets IPv6 address list of the network interface, for example [2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf].
          * 
          * @return builder
          * 
@@ -576,7 +576,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6Sets 网卡的IPv6地址列表，例如[2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf]。
+         * @param ipv6Sets IPv6 address list of the network interface, for example [2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf].
          * 
          * @return builder
          * 
@@ -586,7 +586,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param macAddress 网卡的MAC地址。
+         * @param macAddress MAC address of the network interface.
          * 
          * @return builder
          * 
@@ -597,7 +597,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param macAddress 网卡的MAC地址。
+         * @param macAddress MAC address of the network interface.
          * 
          * @return builder
          * 
@@ -607,7 +607,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkInterfaceId 网卡ID。
+         * @param networkInterfaceId Network interface ID.
          * 
          * @return builder
          * 
@@ -618,7 +618,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkInterfaceId 网卡ID。
+         * @param networkInterfaceId Network interface ID.
          * 
          * @return builder
          * 
@@ -628,7 +628,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkInterfaceName 网卡名称，长度限制为1 ~ 128个字符，需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不填默认是辅助网卡的ID。
+         * @param networkInterfaceName NIC name. Length must be between 1 and 128 characters, starting with a letter, Chinese character, or number. Can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the ID of the secondary NIC
          * 
          * @return builder
          * 
@@ -639,7 +639,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkInterfaceName 网卡名称，长度限制为1 ~ 128个字符，需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不填默认是辅助网卡的ID。
+         * @param networkInterfaceName NIC name. Length must be between 1 and 128 characters, starting with a letter, Chinese character, or number. Can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the ID of the secondary NIC
          * 
          * @return builder
          * 
@@ -649,7 +649,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param portSecurityEnabled 是否为网卡开启源/目的地址检查，开启后，系统会自动阻止源地址或目的地址不是当前网卡的流量，true为开启，false为不开启（默认值）。
+         * @param portSecurityEnabled Enable source/destination address check for the NIC. When enabled, the system automatically blocks traffic whose source or destination address does not match the current NIC. true to enable, false to disable (default)
          * 
          * @return builder
          * 
@@ -660,7 +660,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param portSecurityEnabled 是否为网卡开启源/目的地址检查，开启后，系统会自动阻止源地址或目的地址不是当前网卡的流量，true为开启，false为不开启（默认值）。
+         * @param portSecurityEnabled Enable source/destination address check for the NIC. When enabled, the system automatically blocks traffic whose source or destination address does not match the current NIC. true to enable, false to disable (default)
          * 
          * @return builder
          * 
@@ -670,7 +670,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param primaryIpAddress 网卡的主私有IPv4地址，不支持修改地址，可以修改公网IP。如果指定，必须是对应子网中的一个空闲的私网IPv4地址，如果不指定，从对应子网中自动分配一个空闲的私网IPv4地址。例如：192.XX.XX.10。
+         * @param primaryIpAddress Primary private IPv4 address of the network interface. Address modification is not supported, but you can modify the public IP. If specified, it must be an available private IPv4 address in the corresponding subnet. If not specified, an available private IPv4 address will be automatically assigned from the corresponding subnet. For example: 192.XX.XX.10.
          * 
          * @return builder
          * 
@@ -681,7 +681,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param primaryIpAddress 网卡的主私有IPv4地址，不支持修改地址，可以修改公网IP。如果指定，必须是对应子网中的一个空闲的私网IPv4地址，如果不指定，从对应子网中自动分配一个空闲的私网IPv4地址。例如：192.XX.XX.10。
+         * @param primaryIpAddress Primary private IPv4 address of the network interface. Address modification is not supported, but you can modify the public IP. If specified, it must be an available private IPv4 address in the corresponding subnet. If not specified, an available private IPv4 address will be automatically assigned from the corresponding subnet. For example: 192.XX.XX.10.
          * 
          * @return builder
          * 
@@ -704,7 +704,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 网卡所属项目的名称。
+         * @param projectName Name of the project to which the NIC belongs
          * 
          * @return builder
          * 
@@ -715,7 +715,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 网卡所属项目的名称。
+         * @param projectName Name of the project to which the NIC belongs
          * 
          * @return builder
          * 
@@ -725,7 +725,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param secondaryPrivateIpAddressCount 为辅助网卡自动分配辅助私网IPv4地址数量，取值1~49。创建时不能与PrivateIpSets同时传入。
+         * @param secondaryPrivateIpAddressCount Number of auxiliary private IPv4 addresses automatically assigned to the auxiliary network interface. Value range: 1–49. Cannot be used together with PrivateIpSets during creation.
          * 
          * @return builder
          * 
@@ -736,7 +736,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param secondaryPrivateIpAddressCount 为辅助网卡自动分配辅助私网IPv4地址数量，取值1~49。创建时不能与PrivateIpSets同时传入。
+         * @param secondaryPrivateIpAddressCount Number of auxiliary private IPv4 addresses automatically assigned to the auxiliary network interface. Value range: 1–49. Cannot be used together with PrivateIpSets during creation.
          * 
          * @return builder
          * 
@@ -746,7 +746,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityGroupIds 辅助网卡加入一个或多个安全组的ID。
+         * @param securityGroupIds ID of one or more security groups joined by the auxiliary network interface.
          * 
          * @return builder
          * 
@@ -757,7 +757,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityGroupIds 辅助网卡加入一个或多个安全组的ID。
+         * @param securityGroupIds ID of one or more security groups joined by the auxiliary network interface.
          * 
          * @return builder
          * 
@@ -767,7 +767,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityGroupIds 辅助网卡加入一个或多个安全组的ID。
+         * @param securityGroupIds ID of one or more security groups joined by the auxiliary network interface.
          * 
          * @return builder
          * 
@@ -777,7 +777,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serviceManaged 是否为官方服务网卡，true为是，false为否。
+         * @param serviceManaged Indicates whether this is an official service network interface. true for yes, false for no.
          * 
          * @return builder
          * 
@@ -788,7 +788,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serviceManaged 是否为官方服务网卡，true为是，false为否。
+         * @param serviceManaged Indicates whether this is an official service network interface. true for yes, false for no.
          * 
          * @return builder
          * 
@@ -798,7 +798,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 网卡的绑定状态。Creating：创建中。Available：未挂载。Attaching：挂载中。InUse：已挂载。Detaching：卸载中。Deleting：删除中。
+         * @param status Binding status of the network interface. Creating: In progress. Available: Not attached. Attaching: In progress. InUse: Attached. Detaching: In progress. Deleting: In progress.
          * 
          * @return builder
          * 
@@ -809,7 +809,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 网卡的绑定状态。Creating：创建中。Available：未挂载。Attaching：挂载中。InUse：已挂载。Detaching：卸载中。Deleting：删除中。
+         * @param status Binding status of the network interface. Creating: In progress. Available: Not attached. Attaching: In progress. InUse: Attached. Detaching: In progress. Deleting: In progress.
          * 
          * @return builder
          * 
@@ -819,7 +819,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId 辅助网卡所在子网的ID。
+         * @param subnetId ID of the subnet where the auxiliary network interface resides.
          * 
          * @return builder
          * 
@@ -830,7 +830,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId 辅助网卡所在子网的ID。
+         * @param subnetId ID of the subnet where the auxiliary network interface resides.
          * 
          * @return builder
          * 
@@ -853,7 +853,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type 网卡类型。primary：主网卡，secondary：辅助网卡
+         * @param type NIC type. primary: primary NIC, secondary: secondary NIC
          * 
          * @return builder
          * 
@@ -864,7 +864,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type 网卡类型。primary：主网卡，secondary：辅助网卡
+         * @param type NIC type. primary: primary NIC, secondary: secondary NIC
          * 
          * @return builder
          * 
@@ -874,7 +874,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 更新网卡的时间。
+         * @param updatedTime NIC update time
          * 
          * @return builder
          * 
@@ -885,7 +885,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 更新网卡的时间。
+         * @param updatedTime NIC update time
          * 
          * @return builder
          * 
@@ -895,7 +895,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 网卡所属的VPC的ID。
+         * @param vpcId ID of the VPC to which the network interface belongs.
          * 
          * @return builder
          * 
@@ -906,7 +906,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 网卡所属的VPC的ID。
+         * @param vpcId ID of the VPC to which the network interface belongs.
          * 
          * @return builder
          * 
@@ -916,7 +916,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcName 网卡所属VPC的名称。
+         * @param vpcName Name of the VPC to which the NIC belongs
          * 
          * @return builder
          * 
@@ -927,7 +927,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcName 网卡所属VPC的名称。
+         * @param vpcName Name of the VPC to which the NIC belongs
          * 
          * @return builder
          * 
@@ -937,7 +937,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 网卡所属可用区的ID。
+         * @param zoneId ID of the availability zone to which the network interface belongs.
          * 
          * @return builder
          * 
@@ -948,7 +948,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 网卡所属可用区的ID。
+         * @param zoneId ID of the availability zone to which the network interface belongs.
          * 
          * @return builder
          * 

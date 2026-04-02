@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutAction {
     /**
-     * @return 表示鉴权超时后，内容分发网络处理鉴权请求的策略。该参数有以下取值：reject：表示内容分发网络认为鉴权失败。pass：表示内容分发网络认为鉴权成功。
+     * @return Indicates the strategy for handling authentication requests after a timeout in the content delivery network. This parameter supports the following values: reject: The content delivery network considers authentication failed. pass: The content delivery network considers authentication successful.
      * 
      */
     private @Nullable String action;
     /**
-     * @return 表示鉴权超时的时间，单位是毫秒。该参数的默认值为 200，取值范围是 200   - 3600。
+     * @return Specifies the authentication timeout in milliseconds. The default value is 200. The valid range is 200–3600.
      * 
      */
     private @Nullable Integer time;
 
     private DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutAction() {}
     /**
-     * @return 表示鉴权超时后，内容分发网络处理鉴权请求的策略。该参数有以下取值：reject：表示内容分发网络认为鉴权失败。pass：表示内容分发网络认为鉴权成功。
+     * @return Indicates the strategy for handling authentication requests after a timeout in the content delivery network. This parameter supports the following values: reject: The content delivery network considers authentication failed. pass: The content delivery network considers authentication successful.
      * 
      */
     public Optional<String> action() {
         return Optional.ofNullable(this.action);
     }
     /**
-     * @return 表示鉴权超时的时间，单位是毫秒。该参数的默认值为 200，取值范围是 200   - 3600。
+     * @return Specifies the authentication timeout in milliseconds. The default value is 200. The valid range is 200–3600.
      * 
      */
     public Optional<Integer> time() {

@@ -16,14 +16,14 @@ public final class LaunchTemplateLaunchTemplateVersionTagArgs extends com.pulumi
     public static final LaunchTemplateLaunchTemplateVersionTagArgs Empty = new LaunchTemplateLaunchTemplateVersionTagArgs();
 
     /**
-     * 给资源添加的用户标签的标签键。
+     * Tag key for user tags added to the resource.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 给资源添加的用户标签的标签键。
+     * @return Tag key for user tags added to the resource.
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class LaunchTemplateLaunchTemplateVersionTagArgs extends com.pulumi
     }
 
     /**
-     * 给资源添加的用户标签的标签值。
+     * User tag value added to the resource
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 给资源添加的用户标签的标签值。
+     * @return User tag value added to the resource
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class LaunchTemplateLaunchTemplateVersionTagArgs extends com.pulumi
         }
 
         /**
-         * @param key 给资源添加的用户标签的标签键。
+         * @param key Tag key for user tags added to the resource.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class LaunchTemplateLaunchTemplateVersionTagArgs extends com.pulumi
         }
 
         /**
-         * @param key 给资源添加的用户标签的标签键。
+         * @param key Tag key for user tags added to the resource.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class LaunchTemplateLaunchTemplateVersionTagArgs extends com.pulumi
         }
 
         /**
-         * @param value 给资源添加的用户标签的标签值。
+         * @param value User tag value added to the resource
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class LaunchTemplateLaunchTemplateVersionTagArgs extends com.pulumi
         }
 
         /**
-         * @param value 给资源添加的用户标签的标签值。
+         * @param value User tag value added to the resource
          * 
          * @return builder
          * 

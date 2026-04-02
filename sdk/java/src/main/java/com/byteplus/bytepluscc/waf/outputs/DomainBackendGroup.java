@@ -15,20 +15,20 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainBackendGroup {
     /**
-     * @return 接入的端口号。
+     * @return Access port number.
      * 
      */
     private @Nullable List<Integer> accessPorts;
     private @Nullable List<DomainBackendGroupBackend> backends;
     /**
-     * @return 源站组名称。
+     * @return Origin group name.
      * 
      */
     private @Nullable String name;
 
     private DomainBackendGroup() {}
     /**
-     * @return 接入的端口号。
+     * @return Access port number.
      * 
      */
     public List<Integer> accessPorts() {
@@ -38,7 +38,7 @@ public final class DomainBackendGroup {
         return this.backends == null ? List.of() : this.backends;
     }
     /**
-     * @return 源站组名称。
+     * @return Origin group name.
      * 
      */
     public Optional<String> name() {

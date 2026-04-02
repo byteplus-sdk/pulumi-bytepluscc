@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class GetRuleRuleConditionMethodConfig {
     /**
-     * @return 请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+     * @return Request method. Supports HEAD, GET, POST, OPTIONS, PUT, PATCH, DELETE.
      * 
      */
     private List<String> values;
 
     private GetRuleRuleConditionMethodConfig() {}
     /**
-     * @return 请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+     * @return Request method. Supports HEAD, GET, POST, OPTIONS, PUT, PATCH, DELETE.
      * 
      */
     public List<String> values() {

@@ -17,14 +17,14 @@ public final class UpstreamUpstreamSpecK8SServiceArgs extends com.pulumi.resourc
     public static final UpstreamUpstreamSpecK8SServiceArgs Empty = new UpstreamUpstreamSpecK8SServiceArgs();
 
     /**
-     * 容器服务名称。长度限制为2~63个字符。
+     * Container Service Name. Length: 2–63 characters
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 容器服务名称。长度限制为2~63个字符。
+     * @return Container Service Name. Length: 2–63 characters
      * 
      */
     public Optional<Output<String>> name() {
@@ -32,14 +32,14 @@ public final class UpstreamUpstreamSpecK8SServiceArgs extends com.pulumi.resourc
     }
 
     /**
-     * 命名空间。长度限制为2~63个字符。
+     * Namespace. Length: 2~63 characters
      * 
      */
     @Import(name="namespace")
     private @Nullable Output<String> namespace;
 
     /**
-     * @return 命名空间。长度限制为2~63个字符。
+     * @return Namespace. Length: 2~63 characters
      * 
      */
     public Optional<Output<String>> namespace() {
@@ -47,14 +47,14 @@ public final class UpstreamUpstreamSpecK8SServiceArgs extends com.pulumi.resourc
     }
 
     /**
-     * 端口。
+     * Port
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return 端口。
+     * @return Port
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -88,7 +88,7 @@ public final class UpstreamUpstreamSpecK8SServiceArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param name 容器服务名称。长度限制为2~63个字符。
+         * @param name Container Service Name. Length: 2–63 characters
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class UpstreamUpstreamSpecK8SServiceArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param name 容器服务名称。长度限制为2~63个字符。
+         * @param name Container Service Name. Length: 2–63 characters
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class UpstreamUpstreamSpecK8SServiceArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param namespace 命名空间。长度限制为2~63个字符。
+         * @param namespace Namespace. Length: 2~63 characters
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class UpstreamUpstreamSpecK8SServiceArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param namespace 命名空间。长度限制为2~63个字符。
+         * @param namespace Namespace. Length: 2~63 characters
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class UpstreamUpstreamSpecK8SServiceArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param port 端口。
+         * @param port Port
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class UpstreamUpstreamSpecK8SServiceArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param port 端口。
+         * @param port Port
          * 
          * @return builder
          * 

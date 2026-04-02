@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity.Inputs
     public sealed class PermissionSetPermissionPolicyGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 策略语法内容。语法可参考 策略语法说明。
+        /// Policy syntax content. Refer to policy syntax documentation
         /// </summary>
         [Input("permissionPolicyDocument")]
         public Input<string>? PermissionPolicyDocument { get; set; }
 
         /// <summary>
-        /// 策略名称。
+        /// Policy Name
         /// </summary>
         [Input("permissionPolicyName")]
         public Input<string>? PermissionPolicyName { get; set; }
 
         /// <summary>
-        /// 策略类型，System or Inline。
+        /// Policy Type: System or Inline
         /// </summary>
         [Input("permissionPolicyType")]
         public Input<string>? PermissionPolicyType { get; set; }

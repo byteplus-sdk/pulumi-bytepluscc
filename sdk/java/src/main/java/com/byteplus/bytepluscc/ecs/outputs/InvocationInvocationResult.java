@@ -13,146 +13,146 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InvocationInvocationResult {
     /**
-     * @return 命令ID。
+     * @return Command ID.
      * 
      */
     private @Nullable String commandId;
     /**
-     * @return 命令执行的完成时间。
+     * @return Command execution completion time.
      * 
      */
     private @Nullable String endTime;
     /**
-     * @return 命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+     * @return Error codes for command execution failure. TaskDeliveryTimeout: Indicates command delivery timeout. TaskExecutionTimeout: Indicates command execution timeout. TaskExecutionFailed: Indicates command execution failure.
      * 
      */
     private @Nullable String errorCode;
     /**
-     * @return 命令执行失败的错误信息。
+     * @return Error message for command execution failure.
      * 
      */
     private @Nullable String errorMessage;
     /**
-     * @return 脚本执行后的退出状态码。
+     * @return Exit status code after script execution.
      * 
      */
     private @Nullable Integer exitCode;
     /**
-     * @return 实例ID。
+     * @return Instance ID.
      * 
      */
     private @Nullable String instanceId;
     /**
-     * @return 任务执行ID。
+     * @return Task execution ID.
      * 
      */
     private @Nullable String invocationId;
     /**
-     * @return 任务执行结果ID。
+     * @return Task execution result ID.
      * 
      */
     private @Nullable String invocationResultId;
     /**
-     * @return 单台实例的命令进度状态。
+     * @return Command progress status for a single instance.
      * 
      */
     private @Nullable String invocationResultStatus;
     /**
-     * @return 经过Base64编码的命令执行后输出信息。
+     * @return Output information after command execution, encoded in Base64.
      * 
      */
     private @Nullable String output;
     /**
-     * @return 命令在实例中开始执行的时间。
+     * @return Time when the command starts executing in the instance.
      * 
      */
     private @Nullable String startTime;
     /**
-     * @return 在实例中执行命令的用户名称。
+     * @return User name for executing the command in the instance.
      * 
      */
     private @Nullable String username;
 
     private InvocationInvocationResult() {}
     /**
-     * @return 命令ID。
+     * @return Command ID.
      * 
      */
     public Optional<String> commandId() {
         return Optional.ofNullable(this.commandId);
     }
     /**
-     * @return 命令执行的完成时间。
+     * @return Command execution completion time.
      * 
      */
     public Optional<String> endTime() {
         return Optional.ofNullable(this.endTime);
     }
     /**
-     * @return 命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+     * @return Error codes for command execution failure. TaskDeliveryTimeout: Indicates command delivery timeout. TaskExecutionTimeout: Indicates command execution timeout. TaskExecutionFailed: Indicates command execution failure.
      * 
      */
     public Optional<String> errorCode() {
         return Optional.ofNullable(this.errorCode);
     }
     /**
-     * @return 命令执行失败的错误信息。
+     * @return Error message for command execution failure.
      * 
      */
     public Optional<String> errorMessage() {
         return Optional.ofNullable(this.errorMessage);
     }
     /**
-     * @return 脚本执行后的退出状态码。
+     * @return Exit status code after script execution.
      * 
      */
     public Optional<Integer> exitCode() {
         return Optional.ofNullable(this.exitCode);
     }
     /**
-     * @return 实例ID。
+     * @return Instance ID.
      * 
      */
     public Optional<String> instanceId() {
         return Optional.ofNullable(this.instanceId);
     }
     /**
-     * @return 任务执行ID。
+     * @return Task execution ID.
      * 
      */
     public Optional<String> invocationId() {
         return Optional.ofNullable(this.invocationId);
     }
     /**
-     * @return 任务执行结果ID。
+     * @return Task execution result ID.
      * 
      */
     public Optional<String> invocationResultId() {
         return Optional.ofNullable(this.invocationResultId);
     }
     /**
-     * @return 单台实例的命令进度状态。
+     * @return Command progress status for a single instance.
      * 
      */
     public Optional<String> invocationResultStatus() {
         return Optional.ofNullable(this.invocationResultStatus);
     }
     /**
-     * @return 经过Base64编码的命令执行后输出信息。
+     * @return Output information after command execution, encoded in Base64.
      * 
      */
     public Optional<String> output() {
         return Optional.ofNullable(this.output);
     }
     /**
-     * @return 命令在实例中开始执行的时间。
+     * @return Time when the command starts executing in the instance.
      * 
      */
     public Optional<String> startTime() {
         return Optional.ofNullable(this.startTime);
     }
     /**
-     * @return 在实例中执行命令的用户名称。
+     * @return User name for executing the command in the instance.
      * 
      */
     public Optional<String> username() {

@@ -25,14 +25,14 @@ public final class DomainHttpsCertCheckArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
      * 
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
      * 
      */
     public Optional<Output<Boolean>> switch_() {
@@ -78,7 +78,7 @@ public final class DomainHttpsCertCheckArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param switch_ 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+         * @param switch_ Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
          * 
          * @return builder
          * 
@@ -89,7 +89,7 @@ public final class DomainHttpsCertCheckArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param switch_ 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+         * @param switch_ Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
          * 
          * @return builder
          * 

@@ -53,7 +53,7 @@ class AllowListAssociatedInstance(dict):
     def __init__(__self__, *,
                  instance_id: Optional[builtins.str] = None):
         """
-        :param builtins.str instance_id: 实例ID。
+        :param builtins.str instance_id: Instance ID
         """
         if instance_id is not None:
             pulumi.set(__self__, "instance_id", instance_id)
@@ -62,7 +62,7 @@ class AllowListAssociatedInstance(dict):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[builtins.str]:
         """
-        实例ID。
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -111,15 +111,15 @@ class InstanceChargeInfo(dict):
                  period: Optional[builtins.int] = None,
                  period_unit: Optional[builtins.str] = None):
         """
-        :param builtins.bool auto_renew: 预付费场景下是否自动续费。true：自动续费（默认）。false：不自动续费。
-        :param builtins.str charge_end_time: 计费到期时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
-        :param builtins.str charge_start_time: 计费开始时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
-        :param builtins.str charge_status: 付费状态。取值：Normal：表示实例正常。Overdue：表示实例欠费。Unpaid：表示实例等待支付。
-        :param builtins.str charge_type: 付费类型。取值：PostPaid：表示按量付费。PrePaid：表示包年包月。
-        :param builtins.str overdue_reclaim_time: 欠费关停时预计释放时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
-        :param builtins.str overdue_time: 欠费关停时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
-        :param builtins.int period: 预付费场景下的购买时长。默认值：1。
-        :param builtins.str period_unit: 预付费场景下的购买周期。Month：表示包月(默认值)。Year：表示包年。
+        :param builtins.bool auto_renew: Auto-renewal for prepaid scenarios. true: auto-renew (default). false: do not auto-renew.
+        :param builtins.str charge_end_time: Billing expiration time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
+        :param builtins.str charge_start_time: Billing start time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
+        :param builtins.str charge_status: Payment status. Possible values: Normal: instance is normal. Overdue: instance is overdue. Unpaid: instance is awaiting payment.
+        :param builtins.str charge_type: Billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription.
+        :param builtins.str overdue_reclaim_time: Estimated release time when service is suspended due to overdue payment. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time).
+        :param builtins.str overdue_time: Shutdown time due to overdue payment, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
+        :param builtins.int period: Purchase duration for prepaid scenarios. Default: 1 month.
+        :param builtins.str period_unit: Purchase cycle for prepaid scenarios. Month: monthly subscription (default). Year: annual subscription.
         """
         if auto_renew is not None:
             pulumi.set(__self__, "auto_renew", auto_renew)
@@ -144,7 +144,7 @@ class InstanceChargeInfo(dict):
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> Optional[builtins.bool]:
         """
-        预付费场景下是否自动续费。true：自动续费（默认）。false：不自动续费。
+        Auto-renewal for prepaid scenarios. true: auto-renew (default). false: do not auto-renew.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -152,7 +152,7 @@ class InstanceChargeInfo(dict):
     @pulumi.getter(name="chargeEndTime")
     def charge_end_time(self) -> Optional[builtins.str]:
         """
-        计费到期时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        Billing expiration time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
         """
         return pulumi.get(self, "charge_end_time")
 
@@ -160,7 +160,7 @@ class InstanceChargeInfo(dict):
     @pulumi.getter(name="chargeStartTime")
     def charge_start_time(self) -> Optional[builtins.str]:
         """
-        计费开始时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        Billing start time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
         """
         return pulumi.get(self, "charge_start_time")
 
@@ -168,7 +168,7 @@ class InstanceChargeInfo(dict):
     @pulumi.getter(name="chargeStatus")
     def charge_status(self) -> Optional[builtins.str]:
         """
-        付费状态。取值：Normal：表示实例正常。Overdue：表示实例欠费。Unpaid：表示实例等待支付。
+        Payment status. Possible values: Normal: instance is normal. Overdue: instance is overdue. Unpaid: instance is awaiting payment.
         """
         return pulumi.get(self, "charge_status")
 
@@ -176,7 +176,7 @@ class InstanceChargeInfo(dict):
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> Optional[builtins.str]:
         """
-        付费类型。取值：PostPaid：表示按量付费。PrePaid：表示包年包月。
+        Billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription.
         """
         return pulumi.get(self, "charge_type")
 
@@ -184,7 +184,7 @@ class InstanceChargeInfo(dict):
     @pulumi.getter(name="overdueReclaimTime")
     def overdue_reclaim_time(self) -> Optional[builtins.str]:
         """
-        欠费关停时预计释放时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        Estimated release time when service is suspended due to overdue payment. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time).
         """
         return pulumi.get(self, "overdue_reclaim_time")
 
@@ -192,7 +192,7 @@ class InstanceChargeInfo(dict):
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> Optional[builtins.str]:
         """
-        欠费关停时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        Shutdown time due to overdue payment, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
         """
         return pulumi.get(self, "overdue_time")
 
@@ -200,7 +200,7 @@ class InstanceChargeInfo(dict):
     @pulumi.getter
     def period(self) -> Optional[builtins.int]:
         """
-        预付费场景下的购买时长。默认值：1。
+        Purchase duration for prepaid scenarios. Default: 1 month.
         """
         return pulumi.get(self, "period")
 
@@ -208,7 +208,7 @@ class InstanceChargeInfo(dict):
     @pulumi.getter(name="periodUnit")
     def period_unit(self) -> Optional[builtins.str]:
         """
-        预付费场景下的购买周期。Month：表示包月(默认值)。Year：表示包年。
+        Purchase cycle for prepaid scenarios. Month: monthly subscription (default). Year: annual subscription.
         """
         return pulumi.get(self, "period_unit")
 
@@ -243,10 +243,10 @@ class InstanceConnectionInfo(dict):
                  endpoint_name: Optional[builtins.str] = None,
                  endpoint_type: Optional[builtins.str] = None):
         """
-        :param builtins.str description: 描述信息。
-        :param builtins.str endpoint_id: 终端 ID。
-        :param builtins.str endpoint_name: 终端名称。
-        :param builtins.str endpoint_type: 终端类型。取值如下：Primary：表示主节点终端。ROCluster：表示只读集群终端。RO：表示只读节点终端。
+        :param builtins.str description: Description.
+        :param builtins.str endpoint_id: Terminal ID.
+        :param builtins.str endpoint_name: Terminal name.
+        :param builtins.str endpoint_type: Terminal type. Possible values: Primary: primary node terminal. ROCluster: read-only cluster terminal. RO: read-only node terminal.
         """
         if addresses is not None:
             pulumi.set(__self__, "addresses", addresses)
@@ -268,7 +268,7 @@ class InstanceConnectionInfo(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        描述信息。
+        Description.
         """
         return pulumi.get(self, "description")
 
@@ -276,7 +276,7 @@ class InstanceConnectionInfo(dict):
     @pulumi.getter(name="endpointId")
     def endpoint_id(self) -> Optional[builtins.str]:
         """
-        终端 ID。
+        Terminal ID.
         """
         return pulumi.get(self, "endpoint_id")
 
@@ -284,7 +284,7 @@ class InstanceConnectionInfo(dict):
     @pulumi.getter(name="endpointName")
     def endpoint_name(self) -> Optional[builtins.str]:
         """
-        终端名称。
+        Terminal name.
         """
         return pulumi.get(self, "endpoint_name")
 
@@ -292,7 +292,7 @@ class InstanceConnectionInfo(dict):
     @pulumi.getter(name="endpointType")
     def endpoint_type(self) -> Optional[builtins.str]:
         """
-        终端类型。取值如下：Primary：表示主节点终端。ROCluster：表示只读集群终端。RO：表示只读节点终端。
+        Terminal type. Possible values: Primary: primary node terminal. ROCluster: read-only cluster terminal. RO: read-only node terminal.
         """
         return pulumi.get(self, "endpoint_type")
 
@@ -333,13 +333,13 @@ class InstanceConnectionInfoAddress(dict):
                  port: Optional[builtins.str] = None,
                  subnet_id: Optional[builtins.str] = None):
         """
-        :param builtins.bool dns_visibility: 表示是否开启私网到公网解析，取值如下：true：表示开启私网到公网解析。false：表示不开启私网到公网解析。
-        :param builtins.str domain: 域名。
-        :param builtins.str eip_id: EIP的ID，仅对公网地址有效。
-        :param builtins.str ip_address: IP地址。
-        :param builtins.str network_type: 网络地址类型。取值：Private：私网类型。Public：公网类型。
-        :param builtins.str port: 端口。
-        :param builtins.str subnet_id: 子网 ID，仅对私网地址有效。
+        :param builtins.bool dns_visibility: Indicates whether private network to public network resolution is enabled. Available values: true: enabled. false: disabled.
+        :param builtins.str domain: Domain name.
+        :param builtins.str eip_id: EIP ID, valid only for public addresses.
+        :param builtins.str ip_address: IP address.
+        :param builtins.str network_type: Network address type. Possible values: Private: private network type. Public: public network type.
+        :param builtins.str port: Port.
+        :param builtins.str subnet_id: Subnet ID, valid only for private network addresses.
         """
         if dns_visibility is not None:
             pulumi.set(__self__, "dns_visibility", dns_visibility)
@@ -360,7 +360,7 @@ class InstanceConnectionInfoAddress(dict):
     @pulumi.getter(name="dnsVisibility")
     def dns_visibility(self) -> Optional[builtins.bool]:
         """
-        表示是否开启私网到公网解析，取值如下：true：表示开启私网到公网解析。false：表示不开启私网到公网解析。
+        Indicates whether private network to public network resolution is enabled. Available values: true: enabled. false: disabled.
         """
         return pulumi.get(self, "dns_visibility")
 
@@ -368,7 +368,7 @@ class InstanceConnectionInfoAddress(dict):
     @pulumi.getter
     def domain(self) -> Optional[builtins.str]:
         """
-        域名。
+        Domain name.
         """
         return pulumi.get(self, "domain")
 
@@ -376,7 +376,7 @@ class InstanceConnectionInfoAddress(dict):
     @pulumi.getter(name="eipId")
     def eip_id(self) -> Optional[builtins.str]:
         """
-        EIP的ID，仅对公网地址有效。
+        EIP ID, valid only for public addresses.
         """
         return pulumi.get(self, "eip_id")
 
@@ -384,7 +384,7 @@ class InstanceConnectionInfoAddress(dict):
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[builtins.str]:
         """
-        IP地址。
+        IP address.
         """
         return pulumi.get(self, "ip_address")
 
@@ -392,7 +392,7 @@ class InstanceConnectionInfoAddress(dict):
     @pulumi.getter(name="networkType")
     def network_type(self) -> Optional[builtins.str]:
         """
-        网络地址类型。取值：Private：私网类型。Public：公网类型。
+        Network address type. Possible values: Private: private network type. Public: public network type.
         """
         return pulumi.get(self, "network_type")
 
@@ -400,7 +400,7 @@ class InstanceConnectionInfoAddress(dict):
     @pulumi.getter
     def port(self) -> Optional[builtins.str]:
         """
-        端口。
+        Port.
         """
         return pulumi.get(self, "port")
 
@@ -408,7 +408,7 @@ class InstanceConnectionInfoAddress(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[builtins.str]:
         """
-        子网 ID，仅对私网地址有效。
+        Subnet ID, valid only for private network addresses.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -467,19 +467,19 @@ class InstanceNodeDetailInfo(dict):
                  vcpu: Optional[builtins.int] = None,
                  zone_id: Optional[builtins.str] = None):
         """
-        :param builtins.str create_time: 节点的创建时间。
-        :param builtins.str host_name: 节点主机名。
-        :param builtins.str instance_id: 实例ID。
-        :param builtins.int memory: 内存大小，单位为 GiB。
-        :param builtins.str node_id: 节点ID。
-        :param builtins.str node_ip: 节点IP。
-        :param builtins.str node_spec: 节点规格。
-        :param builtins.str node_status: 节点状态，取值为：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主备切换中。Error：错误。
-        :param builtins.str node_type: 节点类型。取值：Primary：表示主节点终端。ReadOnly：表示只读节点终端。Secondary：表示备节点终端。
-        :param builtins.str region_id: 区域ID。
-        :param builtins.str update_time: 更新时间。
-        :param builtins.int vcpu: vCPU 数量。
-        :param builtins.str zone_id: 可用区ID。
+        :param builtins.str create_time: Node creation time.
+        :param builtins.str host_name: Node hostname.
+        :param builtins.str instance_id: Instance ID.
+        :param builtins.int memory: Memory size, in GiB.
+        :param builtins.str node_id: Node ID.
+        :param builtins.str node_ip: Node IP.
+        :param builtins.str node_spec: Node specification.
+        :param builtins.str node_status: Node status. Possible values: Running: running. Creating: creating. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: master/standby switching. Error: error.
+        :param builtins.str node_type: Node type. Possible values: Primary: primary node terminal. ReadOnly: read-only node terminal. Secondary: standby node terminal.
+        :param builtins.str region_id: Region ID.
+        :param builtins.str update_time: Update time.
+        :param builtins.int vcpu: vCPU count.
+        :param builtins.str zone_id: Availability zone ID.
         """
         if create_time is not None:
             pulumi.set(__self__, "create_time", create_time)
@@ -512,7 +512,7 @@ class InstanceNodeDetailInfo(dict):
     @pulumi.getter(name="createTime")
     def create_time(self) -> Optional[builtins.str]:
         """
-        节点的创建时间。
+        Node creation time.
         """
         return pulumi.get(self, "create_time")
 
@@ -520,7 +520,7 @@ class InstanceNodeDetailInfo(dict):
     @pulumi.getter(name="hostName")
     def host_name(self) -> Optional[builtins.str]:
         """
-        节点主机名。
+        Node hostname.
         """
         return pulumi.get(self, "host_name")
 
@@ -528,7 +528,7 @@ class InstanceNodeDetailInfo(dict):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[builtins.str]:
         """
-        实例ID。
+        Instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -536,7 +536,7 @@ class InstanceNodeDetailInfo(dict):
     @pulumi.getter
     def memory(self) -> Optional[builtins.int]:
         """
-        内存大小，单位为 GiB。
+        Memory size, in GiB.
         """
         return pulumi.get(self, "memory")
 
@@ -544,7 +544,7 @@ class InstanceNodeDetailInfo(dict):
     @pulumi.getter(name="nodeId")
     def node_id(self) -> Optional[builtins.str]:
         """
-        节点ID。
+        Node ID.
         """
         return pulumi.get(self, "node_id")
 
@@ -552,7 +552,7 @@ class InstanceNodeDetailInfo(dict):
     @pulumi.getter(name="nodeIp")
     def node_ip(self) -> Optional[builtins.str]:
         """
-        节点IP。
+        Node IP.
         """
         return pulumi.get(self, "node_ip")
 
@@ -560,7 +560,7 @@ class InstanceNodeDetailInfo(dict):
     @pulumi.getter(name="nodeSpec")
     def node_spec(self) -> Optional[builtins.str]:
         """
-        节点规格。
+        Node specification.
         """
         return pulumi.get(self, "node_spec")
 
@@ -568,7 +568,7 @@ class InstanceNodeDetailInfo(dict):
     @pulumi.getter(name="nodeStatus")
     def node_status(self) -> Optional[builtins.str]:
         """
-        节点状态，取值为：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主备切换中。Error：错误。
+        Node status. Possible values: Running: running. Creating: creating. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: master/standby switching. Error: error.
         """
         return pulumi.get(self, "node_status")
 
@@ -576,7 +576,7 @@ class InstanceNodeDetailInfo(dict):
     @pulumi.getter(name="nodeType")
     def node_type(self) -> Optional[builtins.str]:
         """
-        节点类型。取值：Primary：表示主节点终端。ReadOnly：表示只读节点终端。Secondary：表示备节点终端。
+        Node type. Possible values: Primary: primary node terminal. ReadOnly: read-only node terminal. Secondary: standby node terminal.
         """
         return pulumi.get(self, "node_type")
 
@@ -584,7 +584,7 @@ class InstanceNodeDetailInfo(dict):
     @pulumi.getter(name="regionId")
     def region_id(self) -> Optional[builtins.str]:
         """
-        区域ID。
+        Region ID.
         """
         return pulumi.get(self, "region_id")
 
@@ -592,7 +592,7 @@ class InstanceNodeDetailInfo(dict):
     @pulumi.getter(name="updateTime")
     def update_time(self) -> Optional[builtins.str]:
         """
-        更新时间。
+        Update time.
         """
         return pulumi.get(self, "update_time")
 
@@ -600,7 +600,7 @@ class InstanceNodeDetailInfo(dict):
     @pulumi.getter
     def vcpu(self) -> Optional[builtins.int]:
         """
-        vCPU 数量。
+        vCPU count.
         """
         return pulumi.get(self, "vcpu")
 
@@ -608,7 +608,7 @@ class InstanceNodeDetailInfo(dict):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[builtins.str]:
         """
-        可用区ID。
+        Availability zone ID.
         """
         return pulumi.get(self, "zone_id")
 
@@ -619,8 +619,8 @@ class InstanceTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: Tag key for user tags.
+        :param builtins.str value: User tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -631,7 +631,7 @@ class InstanceTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        用户标签的标签键。
+        Tag key for user tags.
         """
         return pulumi.get(self, "key")
 
@@ -639,7 +639,7 @@ class InstanceTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        用户标签的标签值。
+        User tag value.
         """
         return pulumi.get(self, "value")
 
@@ -654,12 +654,12 @@ class GetAllowListAssociatedInstanceResult(dict):
                  project_name: builtins.str,
                  vpc: builtins.str):
         """
-        :param builtins.str instance_id: 实例ID。
-        :param builtins.str instance_name: 实例名称。
-        :param builtins.str instance_status: 实例状态。
-        :param builtins.bool is_latest: 是否同步最新白名单 IP
-        :param builtins.str project_name: 实例所属项目名称。
-        :param builtins.str vpc: 实例所属VPC ID。
+        :param builtins.str instance_id: Instance ID
+        :param builtins.str instance_name: Instance name
+        :param builtins.str instance_status: Instance status
+        :param builtins.bool is_latest: Sync latest allowlist IP
+        :param builtins.str project_name: Project name of the instance
+        :param builtins.str vpc: VPC ID of the instance
         """
         pulumi.set(__self__, "instance_id", instance_id)
         pulumi.set(__self__, "instance_name", instance_name)
@@ -672,7 +672,7 @@ class GetAllowListAssociatedInstanceResult(dict):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> builtins.str:
         """
-        实例ID。
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -680,7 +680,7 @@ class GetAllowListAssociatedInstanceResult(dict):
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> builtins.str:
         """
-        实例名称。
+        Instance name
         """
         return pulumi.get(self, "instance_name")
 
@@ -688,7 +688,7 @@ class GetAllowListAssociatedInstanceResult(dict):
     @pulumi.getter(name="instanceStatus")
     def instance_status(self) -> builtins.str:
         """
-        实例状态。
+        Instance status
         """
         return pulumi.get(self, "instance_status")
 
@@ -696,7 +696,7 @@ class GetAllowListAssociatedInstanceResult(dict):
     @pulumi.getter(name="isLatest")
     def is_latest(self) -> builtins.bool:
         """
-        是否同步最新白名单 IP
+        Sync latest allowlist IP
         """
         return pulumi.get(self, "is_latest")
 
@@ -704,7 +704,7 @@ class GetAllowListAssociatedInstanceResult(dict):
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        实例所属项目名称。
+        Project name of the instance
         """
         return pulumi.get(self, "project_name")
 
@@ -712,7 +712,7 @@ class GetAllowListAssociatedInstanceResult(dict):
     @pulumi.getter
     def vpc(self) -> builtins.str:
         """
-        实例所属VPC ID。
+        VPC ID of the instance
         """
         return pulumi.get(self, "vpc")
 
@@ -730,15 +730,15 @@ class GetInstanceChargeInfoResult(dict):
                  period: builtins.int,
                  period_unit: builtins.str):
         """
-        :param builtins.bool auto_renew: 预付费场景下是否自动续费。true：自动续费（默认）。false：不自动续费。
-        :param builtins.str charge_end_time: 计费到期时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
-        :param builtins.str charge_start_time: 计费开始时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
-        :param builtins.str charge_status: 付费状态。取值：Normal：表示实例正常。Overdue：表示实例欠费。Unpaid：表示实例等待支付。
-        :param builtins.str charge_type: 付费类型。取值：PostPaid：表示按量付费。PrePaid：表示包年包月。
-        :param builtins.str overdue_reclaim_time: 欠费关停时预计释放时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
-        :param builtins.str overdue_time: 欠费关停时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
-        :param builtins.int period: 预付费场景下的购买时长。默认值：1。
-        :param builtins.str period_unit: 预付费场景下的购买周期。Month：表示包月(默认值)。Year：表示包年。
+        :param builtins.bool auto_renew: Auto-renewal for prepaid scenarios. true: auto-renew (default). false: do not auto-renew.
+        :param builtins.str charge_end_time: Billing expiration time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
+        :param builtins.str charge_start_time: Billing start time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
+        :param builtins.str charge_status: Payment status. Possible values: Normal: instance is normal. Overdue: instance is overdue. Unpaid: instance is awaiting payment.
+        :param builtins.str charge_type: Billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription.
+        :param builtins.str overdue_reclaim_time: Estimated release time when service is suspended due to overdue payment. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time).
+        :param builtins.str overdue_time: Shutdown time due to overdue payment, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
+        :param builtins.int period: Purchase duration for prepaid scenarios. Default: 1 month.
+        :param builtins.str period_unit: Purchase cycle for prepaid scenarios. Month: monthly subscription (default). Year: annual subscription.
         """
         pulumi.set(__self__, "auto_renew", auto_renew)
         pulumi.set(__self__, "charge_end_time", charge_end_time)
@@ -754,7 +754,7 @@ class GetInstanceChargeInfoResult(dict):
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> builtins.bool:
         """
-        预付费场景下是否自动续费。true：自动续费（默认）。false：不自动续费。
+        Auto-renewal for prepaid scenarios. true: auto-renew (default). false: do not auto-renew.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -762,7 +762,7 @@ class GetInstanceChargeInfoResult(dict):
     @pulumi.getter(name="chargeEndTime")
     def charge_end_time(self) -> builtins.str:
         """
-        计费到期时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        Billing expiration time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
         """
         return pulumi.get(self, "charge_end_time")
 
@@ -770,7 +770,7 @@ class GetInstanceChargeInfoResult(dict):
     @pulumi.getter(name="chargeStartTime")
     def charge_start_time(self) -> builtins.str:
         """
-        计费开始时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        Billing start time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
         """
         return pulumi.get(self, "charge_start_time")
 
@@ -778,7 +778,7 @@ class GetInstanceChargeInfoResult(dict):
     @pulumi.getter(name="chargeStatus")
     def charge_status(self) -> builtins.str:
         """
-        付费状态。取值：Normal：表示实例正常。Overdue：表示实例欠费。Unpaid：表示实例等待支付。
+        Payment status. Possible values: Normal: instance is normal. Overdue: instance is overdue. Unpaid: instance is awaiting payment.
         """
         return pulumi.get(self, "charge_status")
 
@@ -786,7 +786,7 @@ class GetInstanceChargeInfoResult(dict):
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> builtins.str:
         """
-        付费类型。取值：PostPaid：表示按量付费。PrePaid：表示包年包月。
+        Billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription.
         """
         return pulumi.get(self, "charge_type")
 
@@ -794,7 +794,7 @@ class GetInstanceChargeInfoResult(dict):
     @pulumi.getter(name="overdueReclaimTime")
     def overdue_reclaim_time(self) -> builtins.str:
         """
-        欠费关停时预计释放时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        Estimated release time when service is suspended due to overdue payment. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time).
         """
         return pulumi.get(self, "overdue_reclaim_time")
 
@@ -802,7 +802,7 @@ class GetInstanceChargeInfoResult(dict):
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> builtins.str:
         """
-        欠费关停时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        Shutdown time due to overdue payment, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
         """
         return pulumi.get(self, "overdue_time")
 
@@ -810,7 +810,7 @@ class GetInstanceChargeInfoResult(dict):
     @pulumi.getter
     def period(self) -> builtins.int:
         """
-        预付费场景下的购买时长。默认值：1。
+        Purchase duration for prepaid scenarios. Default: 1 month.
         """
         return pulumi.get(self, "period")
 
@@ -818,7 +818,7 @@ class GetInstanceChargeInfoResult(dict):
     @pulumi.getter(name="periodUnit")
     def period_unit(self) -> builtins.str:
         """
-        预付费场景下的购买周期。Month：表示包月(默认值)。Year：表示包年。
+        Purchase cycle for prepaid scenarios. Month: monthly subscription (default). Year: annual subscription.
         """
         return pulumi.get(self, "period_unit")
 
@@ -832,11 +832,11 @@ class GetInstanceConnectionInfoResult(dict):
                  endpoint_name: builtins.str,
                  endpoint_type: builtins.str):
         """
-        :param Sequence['GetInstanceConnectionInfoAddressArgs'] addresses: 地址列表。
-        :param builtins.str description: 描述信息。
-        :param builtins.str endpoint_id: 终端 ID。
-        :param builtins.str endpoint_name: 终端名称。
-        :param builtins.str endpoint_type: 终端类型。取值如下：Primary：表示主节点终端。ROCluster：表示只读集群终端。RO：表示只读节点终端。
+        :param Sequence['GetInstanceConnectionInfoAddressArgs'] addresses: Address list.
+        :param builtins.str description: Description.
+        :param builtins.str endpoint_id: Terminal ID.
+        :param builtins.str endpoint_name: Terminal name.
+        :param builtins.str endpoint_type: Terminal type. Possible values: Primary: primary node terminal. ROCluster: read-only cluster terminal. RO: read-only node terminal.
         """
         pulumi.set(__self__, "addresses", addresses)
         pulumi.set(__self__, "description", description)
@@ -848,7 +848,7 @@ class GetInstanceConnectionInfoResult(dict):
     @pulumi.getter
     def addresses(self) -> Sequence['outputs.GetInstanceConnectionInfoAddressResult']:
         """
-        地址列表。
+        Address list.
         """
         return pulumi.get(self, "addresses")
 
@@ -856,7 +856,7 @@ class GetInstanceConnectionInfoResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        描述信息。
+        Description.
         """
         return pulumi.get(self, "description")
 
@@ -864,7 +864,7 @@ class GetInstanceConnectionInfoResult(dict):
     @pulumi.getter(name="endpointId")
     def endpoint_id(self) -> builtins.str:
         """
-        终端 ID。
+        Terminal ID.
         """
         return pulumi.get(self, "endpoint_id")
 
@@ -872,7 +872,7 @@ class GetInstanceConnectionInfoResult(dict):
     @pulumi.getter(name="endpointName")
     def endpoint_name(self) -> builtins.str:
         """
-        终端名称。
+        Terminal name.
         """
         return pulumi.get(self, "endpoint_name")
 
@@ -880,7 +880,7 @@ class GetInstanceConnectionInfoResult(dict):
     @pulumi.getter(name="endpointType")
     def endpoint_type(self) -> builtins.str:
         """
-        终端类型。取值如下：Primary：表示主节点终端。ROCluster：表示只读集群终端。RO：表示只读节点终端。
+        Terminal type. Possible values: Primary: primary node terminal. ROCluster: read-only cluster terminal. RO: read-only node terminal.
         """
         return pulumi.get(self, "endpoint_type")
 
@@ -896,13 +896,13 @@ class GetInstanceConnectionInfoAddressResult(dict):
                  port: builtins.str,
                  subnet_id: builtins.str):
         """
-        :param builtins.bool dns_visibility: 表示是否开启私网到公网解析，取值如下：true：表示开启私网到公网解析。false：表示不开启私网到公网解析。
-        :param builtins.str domain: 域名。
-        :param builtins.str eip_id: EIP的ID，仅对公网地址有效。
-        :param builtins.str ip_address: IP地址。
-        :param builtins.str network_type: 网络地址类型。取值：Private：私网类型。Public：公网类型。
-        :param builtins.str port: 端口。
-        :param builtins.str subnet_id: 子网 ID，仅对私网地址有效。
+        :param builtins.bool dns_visibility: Indicates whether private network to public network resolution is enabled. Available values: true: enabled. false: disabled.
+        :param builtins.str domain: Domain name.
+        :param builtins.str eip_id: EIP ID, valid only for public addresses.
+        :param builtins.str ip_address: IP address.
+        :param builtins.str network_type: Network address type. Possible values: Private: private network type. Public: public network type.
+        :param builtins.str port: Port.
+        :param builtins.str subnet_id: Subnet ID, valid only for private network addresses.
         """
         pulumi.set(__self__, "dns_visibility", dns_visibility)
         pulumi.set(__self__, "domain", domain)
@@ -916,7 +916,7 @@ class GetInstanceConnectionInfoAddressResult(dict):
     @pulumi.getter(name="dnsVisibility")
     def dns_visibility(self) -> builtins.bool:
         """
-        表示是否开启私网到公网解析，取值如下：true：表示开启私网到公网解析。false：表示不开启私网到公网解析。
+        Indicates whether private network to public network resolution is enabled. Available values: true: enabled. false: disabled.
         """
         return pulumi.get(self, "dns_visibility")
 
@@ -924,7 +924,7 @@ class GetInstanceConnectionInfoAddressResult(dict):
     @pulumi.getter
     def domain(self) -> builtins.str:
         """
-        域名。
+        Domain name.
         """
         return pulumi.get(self, "domain")
 
@@ -932,7 +932,7 @@ class GetInstanceConnectionInfoAddressResult(dict):
     @pulumi.getter(name="eipId")
     def eip_id(self) -> builtins.str:
         """
-        EIP的ID，仅对公网地址有效。
+        EIP ID, valid only for public addresses.
         """
         return pulumi.get(self, "eip_id")
 
@@ -940,7 +940,7 @@ class GetInstanceConnectionInfoAddressResult(dict):
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> builtins.str:
         """
-        IP地址。
+        IP address.
         """
         return pulumi.get(self, "ip_address")
 
@@ -948,7 +948,7 @@ class GetInstanceConnectionInfoAddressResult(dict):
     @pulumi.getter(name="networkType")
     def network_type(self) -> builtins.str:
         """
-        网络地址类型。取值：Private：私网类型。Public：公网类型。
+        Network address type. Possible values: Private: private network type. Public: public network type.
         """
         return pulumi.get(self, "network_type")
 
@@ -956,7 +956,7 @@ class GetInstanceConnectionInfoAddressResult(dict):
     @pulumi.getter
     def port(self) -> builtins.str:
         """
-        端口。
+        Port.
         """
         return pulumi.get(self, "port")
 
@@ -964,7 +964,7 @@ class GetInstanceConnectionInfoAddressResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> builtins.str:
         """
-        子网 ID，仅对私网地址有效。
+        Subnet ID, valid only for private network addresses.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -986,19 +986,19 @@ class GetInstanceNodeDetailInfoResult(dict):
                  vcpu: builtins.int,
                  zone_id: builtins.str):
         """
-        :param builtins.str create_time: 节点的创建时间。
-        :param builtins.str host_name: 节点主机名。
-        :param builtins.str instance_id: 实例ID。
-        :param builtins.int memory: 内存大小，单位为 GiB。
-        :param builtins.str node_id: 节点ID。
-        :param builtins.str node_ip: 节点IP。
-        :param builtins.str node_spec: 节点规格。
-        :param builtins.str node_status: 节点状态，取值为：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主备切换中。Error：错误。
-        :param builtins.str node_type: 节点类型。取值：Primary：表示主节点终端。ReadOnly：表示只读节点终端。Secondary：表示备节点终端。
-        :param builtins.str region_id: 区域ID。
-        :param builtins.str update_time: 更新时间。
-        :param builtins.int vcpu: vCPU 数量。
-        :param builtins.str zone_id: 可用区ID。
+        :param builtins.str create_time: Node creation time.
+        :param builtins.str host_name: Node hostname.
+        :param builtins.str instance_id: Instance ID.
+        :param builtins.int memory: Memory size, in GiB.
+        :param builtins.str node_id: Node ID.
+        :param builtins.str node_ip: Node IP.
+        :param builtins.str node_spec: Node specification.
+        :param builtins.str node_status: Node status. Possible values: Running: running. Creating: creating. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: master/standby switching. Error: error.
+        :param builtins.str node_type: Node type. Possible values: Primary: primary node terminal. ReadOnly: read-only node terminal. Secondary: standby node terminal.
+        :param builtins.str region_id: Region ID.
+        :param builtins.str update_time: Update time.
+        :param builtins.int vcpu: vCPU count.
+        :param builtins.str zone_id: Availability zone ID.
         """
         pulumi.set(__self__, "create_time", create_time)
         pulumi.set(__self__, "host_name", host_name)
@@ -1018,7 +1018,7 @@ class GetInstanceNodeDetailInfoResult(dict):
     @pulumi.getter(name="createTime")
     def create_time(self) -> builtins.str:
         """
-        节点的创建时间。
+        Node creation time.
         """
         return pulumi.get(self, "create_time")
 
@@ -1026,7 +1026,7 @@ class GetInstanceNodeDetailInfoResult(dict):
     @pulumi.getter(name="hostName")
     def host_name(self) -> builtins.str:
         """
-        节点主机名。
+        Node hostname.
         """
         return pulumi.get(self, "host_name")
 
@@ -1034,7 +1034,7 @@ class GetInstanceNodeDetailInfoResult(dict):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> builtins.str:
         """
-        实例ID。
+        Instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -1042,7 +1042,7 @@ class GetInstanceNodeDetailInfoResult(dict):
     @pulumi.getter
     def memory(self) -> builtins.int:
         """
-        内存大小，单位为 GiB。
+        Memory size, in GiB.
         """
         return pulumi.get(self, "memory")
 
@@ -1050,7 +1050,7 @@ class GetInstanceNodeDetailInfoResult(dict):
     @pulumi.getter(name="nodeId")
     def node_id(self) -> builtins.str:
         """
-        节点ID。
+        Node ID.
         """
         return pulumi.get(self, "node_id")
 
@@ -1058,7 +1058,7 @@ class GetInstanceNodeDetailInfoResult(dict):
     @pulumi.getter(name="nodeIp")
     def node_ip(self) -> builtins.str:
         """
-        节点IP。
+        Node IP.
         """
         return pulumi.get(self, "node_ip")
 
@@ -1066,7 +1066,7 @@ class GetInstanceNodeDetailInfoResult(dict):
     @pulumi.getter(name="nodeSpec")
     def node_spec(self) -> builtins.str:
         """
-        节点规格。
+        Node specification.
         """
         return pulumi.get(self, "node_spec")
 
@@ -1074,7 +1074,7 @@ class GetInstanceNodeDetailInfoResult(dict):
     @pulumi.getter(name="nodeStatus")
     def node_status(self) -> builtins.str:
         """
-        节点状态，取值为：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主备切换中。Error：错误。
+        Node status. Possible values: Running: running. Creating: creating. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: master/standby switching. Error: error.
         """
         return pulumi.get(self, "node_status")
 
@@ -1082,7 +1082,7 @@ class GetInstanceNodeDetailInfoResult(dict):
     @pulumi.getter(name="nodeType")
     def node_type(self) -> builtins.str:
         """
-        节点类型。取值：Primary：表示主节点终端。ReadOnly：表示只读节点终端。Secondary：表示备节点终端。
+        Node type. Possible values: Primary: primary node terminal. ReadOnly: read-only node terminal. Secondary: standby node terminal.
         """
         return pulumi.get(self, "node_type")
 
@@ -1090,7 +1090,7 @@ class GetInstanceNodeDetailInfoResult(dict):
     @pulumi.getter(name="regionId")
     def region_id(self) -> builtins.str:
         """
-        区域ID。
+        Region ID.
         """
         return pulumi.get(self, "region_id")
 
@@ -1098,7 +1098,7 @@ class GetInstanceNodeDetailInfoResult(dict):
     @pulumi.getter(name="updateTime")
     def update_time(self) -> builtins.str:
         """
-        更新时间。
+        Update time.
         """
         return pulumi.get(self, "update_time")
 
@@ -1106,7 +1106,7 @@ class GetInstanceNodeDetailInfoResult(dict):
     @pulumi.getter
     def vcpu(self) -> builtins.int:
         """
-        vCPU 数量。
+        vCPU count.
         """
         return pulumi.get(self, "vcpu")
 
@@ -1114,7 +1114,7 @@ class GetInstanceNodeDetailInfoResult(dict):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> builtins.str:
         """
-        可用区ID。
+        Availability zone ID.
         """
         return pulumi.get(self, "zone_id")
 
@@ -1125,8 +1125,8 @@ class GetInstanceTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: Tag key for user tags.
+        :param builtins.str value: User tag value.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -1135,7 +1135,7 @@ class GetInstanceTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        用户标签的标签键。
+        Tag key for user tags.
         """
         return pulumi.get(self, "key")
 
@@ -1143,7 +1143,7 @@ class GetInstanceTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        用户标签的标签值。
+        User tag value.
         """
         return pulumi.get(self, "value")
 

@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainIpAccessRuleSharedConfig {
     /**
-     * @return 表示一个全局配置的名称。
+     * @return Indicates the name of a global configuration.
      * 
      */
     private @Nullable String configName;
 
     private DomainIpAccessRuleSharedConfig() {}
     /**
-     * @return 表示一个全局配置的名称。
+     * @return Indicates the name of a global configuration.
      * 
      */
     public Optional<String> configName() {

@@ -13,98 +13,98 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceConfigServer {
     /**
-     * @return ConfigServer 的节点 ID。
+     * @return ConfigServer node ID
      * 
      */
     private @Nullable String configServerNodeId;
     /**
-     * @return 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。
+     * @return Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node.
      * 
      */
     private @Nullable String nodeRole;
     /**
-     * @return 节点状态。
+     * @return Node status.
      * 
      */
     private @Nullable String nodeStatus;
     /**
-     * @return 总内存。单位：GiB。
+     * @return Total memory. Unit: GiB.
      * 
      */
     private @Nullable Double totalMemoryGb;
     /**
-     * @return 总核数。
+     * @return Total cores.
      * 
      */
     private @Nullable Double totalvCpu;
     /**
-     * @return 已用内存。单位：GiB。
+     * @return Used memory. Unit: GiB.
      * 
      */
     private @Nullable Double usedMemoryGb;
     /**
-     * @return 已用核数。
+     * @return Used cores.
      * 
      */
     private @Nullable Double usedvCpu;
     /**
-     * @return 当前节点所属的可用区 ID。
+     * @return Availability zone ID of the current node.
      * 
      */
     private @Nullable String zoneId;
 
     private InstanceConfigServer() {}
     /**
-     * @return ConfigServer 的节点 ID。
+     * @return ConfigServer node ID
      * 
      */
     public Optional<String> configServerNodeId() {
         return Optional.ofNullable(this.configServerNodeId);
     }
     /**
-     * @return 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。
+     * @return Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node.
      * 
      */
     public Optional<String> nodeRole() {
         return Optional.ofNullable(this.nodeRole);
     }
     /**
-     * @return 节点状态。
+     * @return Node status.
      * 
      */
     public Optional<String> nodeStatus() {
         return Optional.ofNullable(this.nodeStatus);
     }
     /**
-     * @return 总内存。单位：GiB。
+     * @return Total memory. Unit: GiB.
      * 
      */
     public Optional<Double> totalMemoryGb() {
         return Optional.ofNullable(this.totalMemoryGb);
     }
     /**
-     * @return 总核数。
+     * @return Total cores.
      * 
      */
     public Optional<Double> totalvCpu() {
         return Optional.ofNullable(this.totalvCpu);
     }
     /**
-     * @return 已用内存。单位：GiB。
+     * @return Used memory. Unit: GiB.
      * 
      */
     public Optional<Double> usedMemoryGb() {
         return Optional.ofNullable(this.usedMemoryGb);
     }
     /**
-     * @return 已用核数。
+     * @return Used cores.
      * 
      */
     public Optional<Double> usedvCpu() {
         return Optional.ofNullable(this.usedvCpu);
     }
     /**
-     * @return 当前节点所属的可用区 ID。
+     * @return Availability zone ID of the current node.
      * 
      */
     public Optional<String> zoneId() {

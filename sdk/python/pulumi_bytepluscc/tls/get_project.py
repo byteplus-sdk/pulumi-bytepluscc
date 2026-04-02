@@ -61,7 +61,7 @@ class GetProjectResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        日志项目创建时间。
+        Log project creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -69,7 +69,7 @@ class GetProjectResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        日志项目的简单描述。
+        Brief description of the log project
         """
         return pulumi.get(self, "description")
 
@@ -77,7 +77,7 @@ class GetProjectResult:
     @pulumi.getter(name="iamProjectName")
     def iam_project_name(self) -> builtins.str:
         """
-        日志项目所属的 IAM 项目。
+        The IAM project associated with the log project
         """
         return pulumi.get(self, "iam_project_name")
 
@@ -93,7 +93,7 @@ class GetProjectResult:
     @pulumi.getter(name="innerNetDomain")
     def inner_net_domain(self) -> builtins.str:
         """
-        私网连接域名。
+        Private network connection domain name
         """
         return pulumi.get(self, "inner_net_domain")
 
@@ -101,7 +101,7 @@ class GetProjectResult:
     @pulumi.getter(name="projectId")
     def project_id(self) -> builtins.str:
         """
-        日志项目的 ID。
+        Log project ID
         """
         return pulumi.get(self, "project_id")
 
@@ -109,7 +109,7 @@ class GetProjectResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        日志项目名称。
+        Log project name
         """
         return pulumi.get(self, "project_name")
 
@@ -117,7 +117,7 @@ class GetProjectResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetProjectTagResult']:
         """
-        标签信息。
+        Tag information
         """
         return pulumi.get(self, "tags")
 
@@ -125,7 +125,7 @@ class GetProjectResult:
     @pulumi.getter(name="topicCount")
     def topic_count(self) -> builtins.int:
         """
-        当前日志项目下的日志主题数量。
+        Number of log topics in the current log project
         """
         return pulumi.get(self, "topic_count")
 

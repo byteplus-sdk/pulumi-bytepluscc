@@ -12,38 +12,38 @@ import java.util.Objects;
 @CustomType
 public final class GetImageSnapshot {
     /**
-     * @return 快照大小。单位为GiB。
+     * @return Snapshot size (GiB)
      * 
      */
     private Integer size;
     /**
-     * @return 快照ID。
+     * @return Snapshot ID
      * 
      */
     private String snapshotId;
     /**
-     * @return 云盘种类。system：系统盘。data：数据盘。
+     * @return Cloud disk type. system: System disk. data: Data disk.
      * 
      */
     private String volumeKind;
 
     private GetImageSnapshot() {}
     /**
-     * @return 快照大小。单位为GiB。
+     * @return Snapshot size (GiB)
      * 
      */
     public Integer size() {
         return this.size;
     }
     /**
-     * @return 快照ID。
+     * @return Snapshot ID
      * 
      */
     public String snapshotId() {
         return this.snapshotId;
     }
     /**
-     * @return 云盘种类。system：系统盘。data：数据盘。
+     * @return Cloud disk type. system: System disk. data: Data disk.
      * 
      */
     public String volumeKind() {

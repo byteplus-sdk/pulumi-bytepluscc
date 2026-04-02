@@ -67,7 +67,7 @@ class GetGroupResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        Consumer Group 创建时间。
+        Consumer Group creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -75,7 +75,7 @@ class GetGroupResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        Consumer Group 描述。
+        Consumer Group description.
         """
         return pulumi.get(self, "description")
 
@@ -83,7 +83,7 @@ class GetGroupResult:
     @pulumi.getter(name="groupId")
     def group_id(self) -> builtins.str:
         """
-        Consumer Group 的 ID。
+        Consumer Group ID.
         """
         return pulumi.get(self, "group_id")
 
@@ -91,7 +91,7 @@ class GetGroupResult:
     @pulumi.getter(name="groupName")
     def group_name(self) -> builtins.str:
         """
-        自定义设置Consumer Group 的名称，约束限制如下：只能由小写英文字符、数字、下划线和中划线（-）组成。长度为 3~64 字符。
+        Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
         """
         return pulumi.get(self, "group_name")
 
@@ -107,7 +107,7 @@ class GetGroupResult:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> builtins.str:
         """
-        所属 BMQ 实例 ID。
+        BMQ instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -115,7 +115,7 @@ class GetGroupResult:
     @pulumi.getter(name="ownerId")
     def owner_id(self) -> builtins.str:
         """
-        Consumer Group 所属用户的 ID。
+        User ID associated with the Consumer Group.
         """
         return pulumi.get(self, "owner_id")
 
@@ -123,7 +123,7 @@ class GetGroupResult:
     @pulumi.getter(name="ownerName")
     def owner_name(self) -> builtins.str:
         """
-        Consumer Group 所属用户的名称。
+        Name of the user associated with the Consumer Group.
         """
         return pulumi.get(self, "owner_name")
 
@@ -131,7 +131,7 @@ class GetGroupResult:
     @pulumi.getter(name="resetInfo")
     def reset_info(self) -> 'outputs.GetGroupResetInfoResult':
         """
-        重置消费位点信息。
+        Reset consumption position information.
         """
         return pulumi.get(self, "reset_info")
 
@@ -139,7 +139,7 @@ class GetGroupResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        Consumer Group 的状态。
+        Consumer Group status.
         """
         return pulumi.get(self, "status")
 
@@ -147,7 +147,7 @@ class GetGroupResult:
     @pulumi.getter(name="topicInfos")
     def topic_infos(self) -> Sequence['outputs.GetGroupTopicInfoResult']:
         """
-        Topic 列表。
+        Topic list.
         """
         return pulumi.get(self, "topic_infos")
 

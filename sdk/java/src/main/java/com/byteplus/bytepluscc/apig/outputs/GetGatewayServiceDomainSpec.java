@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetGatewayServiceDomainSpec {
     /**
-     * @return 开启私网域名公网解析。
+     * @return Enable public resolution for private network domains.
      * 
      */
     private Boolean enablePublicResolution;
 
     private GetGatewayServiceDomainSpec() {}
     /**
-     * @return 开启私网域名公网解析。
+     * @return Enable public resolution for private network domains.
      * 
      */
     public Boolean enablePublicResolution() {

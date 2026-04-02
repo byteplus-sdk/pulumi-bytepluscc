@@ -29,23 +29,23 @@ export interface GetUserProvisioningArgs {
  */
 export interface GetUserProvisioningResult {
     /**
-     * 创建时间。
+     * Creation Time
      */
     readonly createdTime: string;
     /**
-     * 删除策略。
+     * Deletion Policy
      */
     readonly deletionStrategy: string;
     /**
-     * 任务描述。
+     * Task Description
      */
     readonly description: string;
     /**
-     * 用户名冲突策略。
+     * Username Conflict Policy
      */
     readonly duplicationStrategy: string;
     /**
-     * 本次同步IAM用户名称后缀。
+     * Suffix for IAM user name in this synchronization
      */
     readonly duplicationSuffix: string;
     /**
@@ -53,35 +53,35 @@ export interface GetUserProvisioningResult {
      */
     readonly id: string;
     /**
-     * 身份源冲突策略。
+     * Identity Source Conflict Policy
      */
     readonly identitySourceStrategy: string;
     /**
-     * 身份id。
+     * Identity ID
      */
     readonly principalId: string;
     /**
-     * 目标名称。
+     * Target Name
      */
     readonly principalName: string;
     /**
-     * 身份类型。
+     * Identity Type
      */
     readonly principalType: string;
     /**
-     * 授权任务状态。Provisioned 授权成功，Provisioning 正在授权，DeleteProvisioning 授权解除中，DeleteProvisioned 授权解除成功
+     * Authorization Task Status. Provisioned: authorization successful, Provisioning: authorizing, DeleteProvisioning: revoking authorization, DeleteProvisioned: authorization revoked successfully.
      */
     readonly provisionStatus: string;
     /**
-     * 目标id。
+     * Target ID
      */
     readonly targetId: string;
     /**
-     * 更新时间。
+     * Update Time
      */
     readonly updatedTime: string;
     /**
-     * IAM 用户同步任务ID。
+     * IAM User Synchronization Task ID
      */
     readonly userProvisioningId: string;
 }

@@ -30,49 +30,49 @@ type LookupClusterArgs struct {
 
 // A collection of values returned by getCluster.
 type LookupClusterResult struct {
-	// 集群控制面及部分节点的网络配置。
+	// Network configuration for the cluster control plane and some nodes.
 	ClusterConfig GetClusterClusterConfig `pulumi:"clusterConfig"`
-	// 集群 ID。
+	// Cluster ID.
 	ClusterId string `pulumi:"clusterId"`
-	// 集群创建时间。标准 RFC3339 格式的 UTC+0 时间。
+	// Cluster creation time. Standard RFC3339 format, UTC+0.
 	CreatedTime string `pulumi:"createdTime"`
-	// 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
+	// Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
 	DeleteProtectionEnabled bool `pulumi:"deleteProtectionEnabled"`
-	// 集群描述。长度限制为 300 个字符以内。
+	// Cluster description. Maximum length is 300 characters.
 	Description string `pulumi:"description"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// IRSA（IAM Role for Service Account）能力相关参数配置。
+	// IRSA (IAM Role for Service Account) capability parameter configuration
 	IrsaConfig GetClusterIrsaConfig `pulumi:"irsaConfig"`
-	// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
+	// Cluster Kubernetes version in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version (for query use)
 	KubernetesVersion string `pulumi:"kubernetesVersion"`
-	// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
+	// Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
 	KubernetesVersionCreate string `pulumi:"kubernetesVersionCreate"`
-	// 集群的日志配置信息。
+	// Cluster log configuration information.
 	LoggingConfig GetClusterLoggingConfig `pulumi:"loggingConfig"`
-	// 集群状态描述。
+	// Cluster status description.
 	Message string `pulumi:"message"`
-	// 监控配置信息。
+	// Monitoring configuration information.
 	MonitoringConfig GetClusterMonitoringConfig `pulumi:"monitoringConfig"`
-	// 集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+	// Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
 	Name string `pulumi:"name"`
-	// 集群中各主状态下对应的节点数量统计。
+	// Statistics of node counts for each main status in the cluster.
 	NodeStatistics GetClusterNodeStatistics `pulumi:"nodeStatistics"`
-	// Pod 的网络配置。
+	// Pod network configuration.
 	PodsConfig GetClusterPodsConfig `pulumi:"podsConfig"`
-	// 集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
+	// Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
 	ProjectName string `pulumi:"projectName"`
-	// 服务的网络配置。
+	// Network configuration for the service.
 	ServicesConfig GetClusterServicesConfig `pulumi:"servicesConfig"`
-	// 集群源地域。
+	// Cluster source region
 	SourceRegion string `pulumi:"sourceRegion"`
-	// 集群状态。
+	// Cluster status.
 	Status GetClusterStatus `pulumi:"status"`
-	// 集群的标签。
+	// Cluster tags.
 	Tags []GetClusterTag `pulumi:"tags"`
-	// 集群类型。
+	// Cluster type.
 	Type string `pulumi:"type"`
-	// 集群最近一次更新的时间。标准 RFC3339 格式的 UTC+0 时间。
+	// Last update time of the cluster. Standard RFC3339 format, UTC+0.
 	UpdatedTime string `pulumi:"updatedTime"`
 }
 
@@ -110,27 +110,27 @@ func (o LookupClusterResultOutput) ToLookupClusterResultOutputWithContext(ctx co
 	return o
 }
 
-// 集群控制面及部分节点的网络配置。
+// Network configuration for the cluster control plane and some nodes.
 func (o LookupClusterResultOutput) ClusterConfig() GetClusterClusterConfigOutput {
 	return o.ApplyT(func(v LookupClusterResult) GetClusterClusterConfig { return v.ClusterConfig }).(GetClusterClusterConfigOutput)
 }
 
-// 集群 ID。
+// Cluster ID.
 func (o LookupClusterResultOutput) ClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.ClusterId }).(pulumi.StringOutput)
 }
 
-// 集群创建时间。标准 RFC3339 格式的 UTC+0 时间。
+// Cluster creation time. Standard RFC3339 format, UTC+0.
 func (o LookupClusterResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
+// Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
 func (o LookupClusterResultOutput) DeleteProtectionEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupClusterResult) bool { return v.DeleteProtectionEnabled }).(pulumi.BoolOutput)
 }
 
-// 集群描述。长度限制为 300 个字符以内。
+// Cluster description. Maximum length is 300 characters.
 func (o LookupClusterResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -140,82 +140,82 @@ func (o LookupClusterResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// IRSA（IAM Role for Service Account）能力相关参数配置。
+// IRSA (IAM Role for Service Account) capability parameter configuration
 func (o LookupClusterResultOutput) IrsaConfig() GetClusterIrsaConfigOutput {
 	return o.ApplyT(func(v LookupClusterResult) GetClusterIrsaConfig { return v.IrsaConfig }).(GetClusterIrsaConfigOutput)
 }
 
-// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
+// Cluster Kubernetes version in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version (for query use)
 func (o LookupClusterResultOutput) KubernetesVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.KubernetesVersion }).(pulumi.StringOutput)
 }
 
-// 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
+// Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
 func (o LookupClusterResultOutput) KubernetesVersionCreate() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.KubernetesVersionCreate }).(pulumi.StringOutput)
 }
 
-// 集群的日志配置信息。
+// Cluster log configuration information.
 func (o LookupClusterResultOutput) LoggingConfig() GetClusterLoggingConfigOutput {
 	return o.ApplyT(func(v LookupClusterResult) GetClusterLoggingConfig { return v.LoggingConfig }).(GetClusterLoggingConfigOutput)
 }
 
-// 集群状态描述。
+// Cluster status description.
 func (o LookupClusterResultOutput) Message() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.Message }).(pulumi.StringOutput)
 }
 
-// 监控配置信息。
+// Monitoring configuration information.
 func (o LookupClusterResultOutput) MonitoringConfig() GetClusterMonitoringConfigOutput {
 	return o.ApplyT(func(v LookupClusterResult) GetClusterMonitoringConfig { return v.MonitoringConfig }).(GetClusterMonitoringConfigOutput)
 }
 
-// 集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+// Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
 func (o LookupClusterResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 集群中各主状态下对应的节点数量统计。
+// Statistics of node counts for each main status in the cluster.
 func (o LookupClusterResultOutput) NodeStatistics() GetClusterNodeStatisticsOutput {
 	return o.ApplyT(func(v LookupClusterResult) GetClusterNodeStatistics { return v.NodeStatistics }).(GetClusterNodeStatisticsOutput)
 }
 
-// Pod 的网络配置。
+// Pod network configuration.
 func (o LookupClusterResultOutput) PodsConfig() GetClusterPodsConfigOutput {
 	return o.ApplyT(func(v LookupClusterResult) GetClusterPodsConfig { return v.PodsConfig }).(GetClusterPodsConfigOutput)
 }
 
-// 集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
+// Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
 func (o LookupClusterResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 服务的网络配置。
+// Network configuration for the service.
 func (o LookupClusterResultOutput) ServicesConfig() GetClusterServicesConfigOutput {
 	return o.ApplyT(func(v LookupClusterResult) GetClusterServicesConfig { return v.ServicesConfig }).(GetClusterServicesConfigOutput)
 }
 
-// 集群源地域。
+// Cluster source region
 func (o LookupClusterResultOutput) SourceRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.SourceRegion }).(pulumi.StringOutput)
 }
 
-// 集群状态。
+// Cluster status.
 func (o LookupClusterResultOutput) Status() GetClusterStatusOutput {
 	return o.ApplyT(func(v LookupClusterResult) GetClusterStatus { return v.Status }).(GetClusterStatusOutput)
 }
 
-// 集群的标签。
+// Cluster tags.
 func (o LookupClusterResultOutput) Tags() GetClusterTagArrayOutput {
 	return o.ApplyT(func(v LookupClusterResult) []GetClusterTag { return v.Tags }).(GetClusterTagArrayOutput)
 }
 
-// 集群类型。
+// Cluster type.
 func (o LookupClusterResultOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// 集群最近一次更新的时间。标准 RFC3339 格式的 UTC+0 时间。
+// Last update time of the cluster. Standard RFC3339 format, UTC+0.
 func (o LookupClusterResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }

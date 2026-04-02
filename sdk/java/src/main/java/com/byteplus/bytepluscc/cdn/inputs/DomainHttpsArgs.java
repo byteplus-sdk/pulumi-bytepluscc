@@ -23,14 +23,14 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
     public static final DomainHttpsArgs Empty = new DomainHttpsArgs();
 
     /**
-     * 表示 &#34;访问双向认证&#34; 特性的配置模块。要配置 &#34;访问双向认证&#34;。
+     * Indicates the configuration module for the &#39;mutual authentication&#39; feature. To configure &#39;mutual authentication&#39;.
      * 
      */
     @Import(name="certCheck")
     private @Nullable Output<DomainHttpsCertCheckArgs> certCheck;
 
     /**
-     * @return 表示 &#34;访问双向认证&#34; 特性的配置模块。要配置 &#34;访问双向认证&#34;。
+     * @return Indicates the configuration module for the &#39;mutual authentication&#39; feature. To configure &#39;mutual authentication&#39;.
      * 
      */
     public Optional<Output<DomainHttpsCertCheckArgs>> certCheck() {
@@ -38,14 +38,14 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示要与加速域名关联的单本证书。
+     * Indicates the single certificate to be associated with the acceleration domain name.
      * 
      */
     @Import(name="certInfo")
     private @Nullable Output<DomainHttpsCertInfoArgs> certInfo;
 
     /**
-     * @return 表示要与加速域名关联的单本证书。
+     * @return Indicates the single certificate to be associated with the acceleration domain name.
      * 
      */
     public Optional<Output<DomainHttpsCertInfoArgs>> certInfo() {
@@ -60,14 +60,14 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示是否允许请求 URL 中 Scheme 是 HTTP 的请求。该参数有以下取值：true：表示允许 Scheme 是 HTTP 的请求。false：表示不允许 Scheme 是 HTTP 的请求。该参数的默认值是 false。
+     * Indicates whether to allow requests where the URL scheme is HTTP. The parameter values are: true: allows requests with HTTP scheme. false: does not allow requests with HTTP scheme. The default value is false.
      * 
      */
     @Import(name="disableHttp")
     private @Nullable Output<Boolean> disableHttp;
 
     /**
-     * @return 表示是否允许请求 URL 中 Scheme 是 HTTP 的请求。该参数有以下取值：true：表示允许 Scheme 是 HTTP 的请求。false：表示不允许 Scheme 是 HTTP 的请求。该参数的默认值是 false。
+     * @return Indicates whether to allow requests where the URL scheme is HTTP. The parameter values are: true: allows requests with HTTP scheme. false: does not allow requests with HTTP scheme. The default value is false.
      * 
      */
     public Optional<Output<Boolean>> disableHttp() {
@@ -75,14 +75,14 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 &#34;HTTP 强制跳转到 HTTPS&#34; 特性的配置模块。该特性默认是禁用。
+     * Indicates the configuration module for the &#39;HTTP Forced Redirect to HTTPS&#39; feature. This feature is disabled by default.
      * 
      */
     @Import(name="forcedRedirect")
     private @Nullable Output<DomainHttpsForcedRedirectArgs> forcedRedirect;
 
     /**
-     * @return 表示 &#34;HTTP 强制跳转到 HTTPS&#34; 特性的配置模块。该特性默认是禁用。
+     * @return Indicates the configuration module for the &#39;HTTP Forced Redirect to HTTPS&#39; feature. This feature is disabled by default.
      * 
      */
     public Optional<Output<DomainHttpsForcedRedirectArgs>> forcedRedirect() {
@@ -90,14 +90,14 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 HSTS 特性的配置模块。该特性默认是禁用。
+     * Indicates the configuration module for the HSTS feature. This feature is disabled by default.
      * 
      */
     @Import(name="hsts")
     private @Nullable Output<DomainHttpsHstsArgs> hsts;
 
     /**
-     * @return 表示 HSTS 特性的配置模块。该特性默认是禁用。
+     * @return Indicates the configuration module for the HSTS feature. This feature is disabled by default.
      * 
      */
     public Optional<Output<DomainHttpsHstsArgs>> hsts() {
@@ -105,14 +105,14 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * HTTP/2 配置开关。该参数有以下取值：true：表示启用 HTTP/2。false：表示禁用 HTTP/2。要启用 HTTP/2，您必须先启用 HTTPS。该功能默认是禁用。但是在以下场景中，HTTP/2 默认是启用的：加速域名的业务类型是网页，也就是 ServiceType 是 web。加速域名已经启用了 HTTPS。
+     * HTTP/2 configuration switch. This parameter has the following values: true: enables HTTP/2. false: disables HTTP/2. To enable HTTP/2, you must first enable HTTPS. This feature is disabled by default. However, HTTP/2 is enabled by default in the following scenarios: The business type of the accelerated domain is web (ServiceType is web). The accelerated domain has already enabled HTTPS.
      * 
      */
     @Import(name="http2")
     private @Nullable Output<Boolean> http2;
 
     /**
-     * @return HTTP/2 配置开关。该参数有以下取值：true：表示启用 HTTP/2。false：表示禁用 HTTP/2。要启用 HTTP/2，您必须先启用 HTTPS。该功能默认是禁用。但是在以下场景中，HTTP/2 默认是启用的：加速域名的业务类型是网页，也就是 ServiceType 是 web。加速域名已经启用了 HTTPS。
+     * @return HTTP/2 configuration switch. This parameter has the following values: true: enables HTTP/2. false: disables HTTP/2. To enable HTTP/2, you must first enable HTTPS. This feature is disabled by default. However, HTTP/2 is enabled by default in the following scenarios: The business type of the accelerated domain is web (ServiceType is web). The accelerated domain has already enabled HTTPS.
      * 
      */
     public Optional<Output<Boolean>> http2() {
@@ -120,14 +120,14 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 指定是否启用 OCSP 装订。该参数有以下取值：true：表示启用 OCSP 装订。false：表示禁用 OCSP 装订。要启用 OCSP 装订，您必须先启用 HTTPS。该参数的默认值是 false。
+     * Specify whether to enable OCSP stapling. This parameter has the following values: true: enables OCSP stapling. false: disables OCSP stapling. To enable OCSP stapling, you must first enable HTTPS. The default value is false.
      * 
      */
     @Import(name="ocsp")
     private @Nullable Output<Boolean> ocsp;
 
     /**
-     * @return 指定是否启用 OCSP 装订。该参数有以下取值：true：表示启用 OCSP 装订。false：表示禁用 OCSP 装订。要启用 OCSP 装订，您必须先启用 HTTPS。该参数的默认值是 false。
+     * @return Specify whether to enable OCSP stapling. This parameter has the following values: true: enables OCSP stapling. false: disables OCSP stapling. To enable OCSP stapling, you must first enable HTTPS. The default value is false.
      * 
      */
     public Optional<Output<Boolean>> ocsp() {
@@ -135,14 +135,14 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示是否启用 HTTPS 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。如果 Switch 是 true，您必须指定证书。如果您指定的是单本证书，您需要指定 CertInfo。如果您指定的是双证书，您需要指定 CertInfoList。您指定的证书可以是托管在证书中心，也可以是托管在内容分发网络。
+     * Indicates whether to enable the HTTPS feature. This parameter has the following values: true: enables the feature; false: disables the feature. If Switch is true, you must specify a certificate. If you specify a single certificate, you need to provide CertInfo. If you specify dual certificates, you need to provide CertInfoList. The certificate you specify can be hosted in the certificate center or on the content delivery network.
      * 
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
-     * @return 表示是否启用 HTTPS 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。如果 Switch 是 true，您必须指定证书。如果您指定的是单本证书，您需要指定 CertInfo。如果您指定的是双证书，您需要指定 CertInfoList。您指定的证书可以是托管在证书中心，也可以是托管在内容分发网络。
+     * @return Indicates whether to enable the HTTPS feature. This parameter has the following values: true: enables the feature; false: disables the feature. If Switch is true, you must specify a certificate. If you specify a single certificate, you need to provide CertInfo. If you specify dual certificates, you need to provide CertInfoList. The certificate you specify can be hosted in the certificate center or on the content delivery network.
      * 
      */
     public Optional<Output<Boolean>> switch_() {
@@ -150,14 +150,14 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 &#34;TLS 版本&#34; 特性的配置模块。该参数指定用户请求可以使用的 TLS 版本，有以下取值：tlsv1.0：表示 TLS 1.0。tlsv1.1：表示 TLS 1.1。tlsv1.2：表示 TLS 1.2。tlsv1.3：表示 TLS 1.3。该参数的默认值是 [&#34;tlsv1.1&#34;, &#34;tlsv1.2&#34;, &#34;tlsv1.3&#34;]
+     * Indicates the configuration module for the &#34;TLS Version&#34; feature. This parameter specifies the TLS versions that user requests can use, with the following options: tlsv1.0: TLS 1.0 tlsv1.1: TLS 1.1 tlsv1.2: TLS 1.2 tlsv1.3: TLS 1.3 The default value for this parameter is [&#34;tlsv1.1&#34;, &#34;tlsv1.2&#34;, &#34;tlsv1.3&#34;]
      * 
      */
     @Import(name="tlsVersions")
     private @Nullable Output<List<String>> tlsVersions;
 
     /**
-     * @return 表示 &#34;TLS 版本&#34; 特性的配置模块。该参数指定用户请求可以使用的 TLS 版本，有以下取值：tlsv1.0：表示 TLS 1.0。tlsv1.1：表示 TLS 1.1。tlsv1.2：表示 TLS 1.2。tlsv1.3：表示 TLS 1.3。该参数的默认值是 [&#34;tlsv1.1&#34;, &#34;tlsv1.2&#34;, &#34;tlsv1.3&#34;]
+     * @return Indicates the configuration module for the &#34;TLS Version&#34; feature. This parameter specifies the TLS versions that user requests can use, with the following options: tlsv1.0: TLS 1.0 tlsv1.1: TLS 1.1 tlsv1.2: TLS 1.2 tlsv1.3: TLS 1.3 The default value for this parameter is [&#34;tlsv1.1&#34;, &#34;tlsv1.2&#34;, &#34;tlsv1.3&#34;]
      * 
      */
     public Optional<Output<List<String>>> tlsVersions() {
@@ -198,7 +198,7 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certCheck 表示 &#34;访问双向认证&#34; 特性的配置模块。要配置 &#34;访问双向认证&#34;。
+         * @param certCheck Indicates the configuration module for the &#39;mutual authentication&#39; feature. To configure &#39;mutual authentication&#39;.
          * 
          * @return builder
          * 
@@ -209,7 +209,7 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certCheck 表示 &#34;访问双向认证&#34; 特性的配置模块。要配置 &#34;访问双向认证&#34;。
+         * @param certCheck Indicates the configuration module for the &#39;mutual authentication&#39; feature. To configure &#39;mutual authentication&#39;.
          * 
          * @return builder
          * 
@@ -219,7 +219,7 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certInfo 表示要与加速域名关联的单本证书。
+         * @param certInfo Indicates the single certificate to be associated with the acceleration domain name.
          * 
          * @return builder
          * 
@@ -230,7 +230,7 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certInfo 表示要与加速域名关联的单本证书。
+         * @param certInfo Indicates the single certificate to be associated with the acceleration domain name.
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param disableHttp 表示是否允许请求 URL 中 Scheme 是 HTTP 的请求。该参数有以下取值：true：表示允许 Scheme 是 HTTP 的请求。false：表示不允许 Scheme 是 HTTP 的请求。该参数的默认值是 false。
+         * @param disableHttp Indicates whether to allow requests where the URL scheme is HTTP. The parameter values are: true: allows requests with HTTP scheme. false: does not allow requests with HTTP scheme. The default value is false.
          * 
          * @return builder
          * 
@@ -264,7 +264,7 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param disableHttp 表示是否允许请求 URL 中 Scheme 是 HTTP 的请求。该参数有以下取值：true：表示允许 Scheme 是 HTTP 的请求。false：表示不允许 Scheme 是 HTTP 的请求。该参数的默认值是 false。
+         * @param disableHttp Indicates whether to allow requests where the URL scheme is HTTP. The parameter values are: true: allows requests with HTTP scheme. false: does not allow requests with HTTP scheme. The default value is false.
          * 
          * @return builder
          * 
@@ -274,7 +274,7 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param forcedRedirect 表示 &#34;HTTP 强制跳转到 HTTPS&#34; 特性的配置模块。该特性默认是禁用。
+         * @param forcedRedirect Indicates the configuration module for the &#39;HTTP Forced Redirect to HTTPS&#39; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -285,7 +285,7 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param forcedRedirect 表示 &#34;HTTP 强制跳转到 HTTPS&#34; 特性的配置模块。该特性默认是禁用。
+         * @param forcedRedirect Indicates the configuration module for the &#39;HTTP Forced Redirect to HTTPS&#39; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -295,7 +295,7 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param hsts 表示 HSTS 特性的配置模块。该特性默认是禁用。
+         * @param hsts Indicates the configuration module for the HSTS feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -306,7 +306,7 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param hsts 表示 HSTS 特性的配置模块。该特性默认是禁用。
+         * @param hsts Indicates the configuration module for the HSTS feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -316,7 +316,7 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param http2 HTTP/2 配置开关。该参数有以下取值：true：表示启用 HTTP/2。false：表示禁用 HTTP/2。要启用 HTTP/2，您必须先启用 HTTPS。该功能默认是禁用。但是在以下场景中，HTTP/2 默认是启用的：加速域名的业务类型是网页，也就是 ServiceType 是 web。加速域名已经启用了 HTTPS。
+         * @param http2 HTTP/2 configuration switch. This parameter has the following values: true: enables HTTP/2. false: disables HTTP/2. To enable HTTP/2, you must first enable HTTPS. This feature is disabled by default. However, HTTP/2 is enabled by default in the following scenarios: The business type of the accelerated domain is web (ServiceType is web). The accelerated domain has already enabled HTTPS.
          * 
          * @return builder
          * 
@@ -327,7 +327,7 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param http2 HTTP/2 配置开关。该参数有以下取值：true：表示启用 HTTP/2。false：表示禁用 HTTP/2。要启用 HTTP/2，您必须先启用 HTTPS。该功能默认是禁用。但是在以下场景中，HTTP/2 默认是启用的：加速域名的业务类型是网页，也就是 ServiceType 是 web。加速域名已经启用了 HTTPS。
+         * @param http2 HTTP/2 configuration switch. This parameter has the following values: true: enables HTTP/2. false: disables HTTP/2. To enable HTTP/2, you must first enable HTTPS. This feature is disabled by default. However, HTTP/2 is enabled by default in the following scenarios: The business type of the accelerated domain is web (ServiceType is web). The accelerated domain has already enabled HTTPS.
          * 
          * @return builder
          * 
@@ -337,7 +337,7 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ocsp 指定是否启用 OCSP 装订。该参数有以下取值：true：表示启用 OCSP 装订。false：表示禁用 OCSP 装订。要启用 OCSP 装订，您必须先启用 HTTPS。该参数的默认值是 false。
+         * @param ocsp Specify whether to enable OCSP stapling. This parameter has the following values: true: enables OCSP stapling. false: disables OCSP stapling. To enable OCSP stapling, you must first enable HTTPS. The default value is false.
          * 
          * @return builder
          * 
@@ -348,7 +348,7 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ocsp 指定是否启用 OCSP 装订。该参数有以下取值：true：表示启用 OCSP 装订。false：表示禁用 OCSP 装订。要启用 OCSP 装订，您必须先启用 HTTPS。该参数的默认值是 false。
+         * @param ocsp Specify whether to enable OCSP stapling. This parameter has the following values: true: enables OCSP stapling. false: disables OCSP stapling. To enable OCSP stapling, you must first enable HTTPS. The default value is false.
          * 
          * @return builder
          * 
@@ -358,7 +358,7 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param switch_ 表示是否启用 HTTPS 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。如果 Switch 是 true，您必须指定证书。如果您指定的是单本证书，您需要指定 CertInfo。如果您指定的是双证书，您需要指定 CertInfoList。您指定的证书可以是托管在证书中心，也可以是托管在内容分发网络。
+         * @param switch_ Indicates whether to enable the HTTPS feature. This parameter has the following values: true: enables the feature; false: disables the feature. If Switch is true, you must specify a certificate. If you specify a single certificate, you need to provide CertInfo. If you specify dual certificates, you need to provide CertInfoList. The certificate you specify can be hosted in the certificate center or on the content delivery network.
          * 
          * @return builder
          * 
@@ -369,7 +369,7 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param switch_ 表示是否启用 HTTPS 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。如果 Switch 是 true，您必须指定证书。如果您指定的是单本证书，您需要指定 CertInfo。如果您指定的是双证书，您需要指定 CertInfoList。您指定的证书可以是托管在证书中心，也可以是托管在内容分发网络。
+         * @param switch_ Indicates whether to enable the HTTPS feature. This parameter has the following values: true: enables the feature; false: disables the feature. If Switch is true, you must specify a certificate. If you specify a single certificate, you need to provide CertInfo. If you specify dual certificates, you need to provide CertInfoList. The certificate you specify can be hosted in the certificate center or on the content delivery network.
          * 
          * @return builder
          * 
@@ -379,7 +379,7 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param tlsVersions 表示 &#34;TLS 版本&#34; 特性的配置模块。该参数指定用户请求可以使用的 TLS 版本，有以下取值：tlsv1.0：表示 TLS 1.0。tlsv1.1：表示 TLS 1.1。tlsv1.2：表示 TLS 1.2。tlsv1.3：表示 TLS 1.3。该参数的默认值是 [&#34;tlsv1.1&#34;, &#34;tlsv1.2&#34;, &#34;tlsv1.3&#34;]
+         * @param tlsVersions Indicates the configuration module for the &#34;TLS Version&#34; feature. This parameter specifies the TLS versions that user requests can use, with the following options: tlsv1.0: TLS 1.0 tlsv1.1: TLS 1.1 tlsv1.2: TLS 1.2 tlsv1.3: TLS 1.3 The default value for this parameter is [&#34;tlsv1.1&#34;, &#34;tlsv1.2&#34;, &#34;tlsv1.3&#34;]
          * 
          * @return builder
          * 
@@ -390,7 +390,7 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param tlsVersions 表示 &#34;TLS 版本&#34; 特性的配置模块。该参数指定用户请求可以使用的 TLS 版本，有以下取值：tlsv1.0：表示 TLS 1.0。tlsv1.1：表示 TLS 1.1。tlsv1.2：表示 TLS 1.2。tlsv1.3：表示 TLS 1.3。该参数的默认值是 [&#34;tlsv1.1&#34;, &#34;tlsv1.2&#34;, &#34;tlsv1.3&#34;]
+         * @param tlsVersions Indicates the configuration module for the &#34;TLS Version&#34; feature. This parameter specifies the TLS versions that user requests can use, with the following options: tlsv1.0: TLS 1.0 tlsv1.1: TLS 1.1 tlsv1.2: TLS 1.2 tlsv1.3: TLS 1.3 The default value for this parameter is [&#34;tlsv1.1&#34;, &#34;tlsv1.2&#34;, &#34;tlsv1.3&#34;]
          * 
          * @return builder
          * 
@@ -400,7 +400,7 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param tlsVersions 表示 &#34;TLS 版本&#34; 特性的配置模块。该参数指定用户请求可以使用的 TLS 版本，有以下取值：tlsv1.0：表示 TLS 1.0。tlsv1.1：表示 TLS 1.1。tlsv1.2：表示 TLS 1.2。tlsv1.3：表示 TLS 1.3。该参数的默认值是 [&#34;tlsv1.1&#34;, &#34;tlsv1.2&#34;, &#34;tlsv1.3&#34;]
+         * @param tlsVersions Indicates the configuration module for the &#34;TLS Version&#34; feature. This parameter specifies the TLS versions that user requests can use, with the following options: tlsv1.0: TLS 1.0 tlsv1.1: TLS 1.1 tlsv1.2: TLS 1.2 tlsv1.3: TLS 1.3 The default value for this parameter is [&#34;tlsv1.1&#34;, &#34;tlsv1.2&#34;, &#34;tlsv1.3&#34;]
          * 
          * @return builder
          * 

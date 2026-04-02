@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainCompressionCompressionRule {
     /**
-     * @return 表示压缩操作的配置。
+     * @return Represents the configuration for compression operations.
      * 
      */
     private GetDomainCompressionCompressionRuleCompressionAction compressionAction;
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     private GetDomainCompressionCompressionRuleCondition condition;
 
     private GetDomainCompressionCompressionRule() {}
     /**
-     * @return 表示压缩操作的配置。
+     * @return Represents the configuration for compression operations.
      * 
      */
     public GetDomainCompressionCompressionRuleCompressionAction compressionAction() {
         return this.compressionAction;
     }
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public GetDomainCompressionCompressionRuleCondition condition() {

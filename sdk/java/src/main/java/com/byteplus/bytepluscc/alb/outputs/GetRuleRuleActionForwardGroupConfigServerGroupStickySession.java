@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetRuleRuleActionForwardGroupConfigServerGroupStickySession {
     /**
-     * @return 是否开启组间会话保持。on：开启。off：不开启。
+     * @return Whether to enable inter-group session persistence. on: enabled. off: disabled.
      * 
      */
     private String enabled;
     /**
-     * @return 组件回话保持的超时时间。单位：秒。
+     * @return Component session stickiness timeout. Unit: seconds.
      * 
      */
     private Integer timeout;
 
     private GetRuleRuleActionForwardGroupConfigServerGroupStickySession() {}
     /**
-     * @return 是否开启组间会话保持。on：开启。off：不开启。
+     * @return Whether to enable inter-group session persistence. on: enabled. off: disabled.
      * 
      */
     public String enabled() {
         return this.enabled;
     }
     /**
-     * @return 组件回话保持的超时时间。单位：秒。
+     * @return Component session stickiness timeout. Unit: seconds.
      * 
      */
     public Integer timeout() {

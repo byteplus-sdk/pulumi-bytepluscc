@@ -65,15 +65,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class GetSecurityGroupResult
     {
         /// <summary>
-        /// 安全组创建时间。
+        /// Security group creation time
         /// </summary>
         public readonly string CreationTime;
         /// <summary>
-        /// 安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
+        /// Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 安全组出向规则描述信息。未改动的信息按照原信息返回，未填或者变动的内容视为修改，请按需填写。
+        /// Description for outbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSecurityGroupEgressPermissionResult> EgressPermissions;
         /// <summary>
@@ -81,39 +81,39 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 安全组入向规则描述信息。未改动的信息按照原信息返回，未填或者变动的内容视为修改，请按需填写。
+        /// Description for inbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSecurityGroupIngressPermissionResult> IngressPermissions;
         /// <summary>
-        /// 安全组所属项目名称。不填默认项目为default。
+        /// Project name to which the security group belongs. Default project is 'default' if not specified
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// 安全组ID。
+        /// Security group ID
         /// </summary>
         public readonly string SecurityGroupId;
         /// <summary>
-        /// 安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
+        /// Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
         /// </summary>
         public readonly string SecurityGroupName;
         /// <summary>
-        /// 安全组是否为托管安全组。true为托管安全组，false为非托管安全组。
+        /// Indicates whether the security group is managed. true means managed security group, false means unmanaged security group
         /// </summary>
         public readonly bool ServiceManaged;
         /// <summary>
-        /// 安全组状态。Available为可用，Creating为创建中。
+        /// Security group status. Available means available for use, Creating means being created
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// 标签列表。
+        /// Tag list
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSecurityGroupTagResult> Tags;
         /// <summary>
-        /// 安全组类型。1、default：默认安全组。2、normal：自定义安全组。3、VpnGW： VPN网关安全组。4、NatGW： Nat网关安全组。 5、cidr_only：CIDR-Only安全组。
+        /// Security group type. 1. default: default security group. 2. normal: custom security group. 3. VpnGW: VPN gateway security group. 4. NatGW: NAT gateway security group. 5. cidr_only: CIDR-Only security group
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// 安全组所属的VPC ID。
+        /// VPC ID to which the security group belongs
         /// </summary>
         public readonly string VpcId;
 

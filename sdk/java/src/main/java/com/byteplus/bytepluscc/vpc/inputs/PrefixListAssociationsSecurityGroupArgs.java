@@ -16,14 +16,14 @@ public final class PrefixListAssociationsSecurityGroupArgs extends com.pulumi.re
     public static final PrefixListAssociationsSecurityGroupArgs Empty = new PrefixListAssociationsSecurityGroupArgs();
 
     /**
-     * 关联资源的ID。
+     * ID of the associated resource.
      * 
      */
     @Import(name="resourceId")
     private @Nullable Output<String> resourceId;
 
     /**
-     * @return 关联资源的ID。
+     * @return ID of the associated resource.
      * 
      */
     public Optional<Output<String>> resourceId() {
@@ -31,14 +31,14 @@ public final class PrefixListAssociationsSecurityGroupArgs extends com.pulumi.re
     }
 
     /**
-     * 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+     * Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
      * 
      */
     @Import(name="resourceType")
     private @Nullable Output<String> resourceType;
 
     /**
-     * @return 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+     * @return Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
      * 
      */
     public Optional<Output<String>> resourceType() {
@@ -71,7 +71,7 @@ public final class PrefixListAssociationsSecurityGroupArgs extends com.pulumi.re
         }
 
         /**
-         * @param resourceId 关联资源的ID。
+         * @param resourceId ID of the associated resource.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class PrefixListAssociationsSecurityGroupArgs extends com.pulumi.re
         }
 
         /**
-         * @param resourceId 关联资源的ID。
+         * @param resourceId ID of the associated resource.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class PrefixListAssociationsSecurityGroupArgs extends com.pulumi.re
         }
 
         /**
-         * @param resourceType 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+         * @param resourceType Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class PrefixListAssociationsSecurityGroupArgs extends com.pulumi.re
         }
 
         /**
-         * @param resourceType 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+         * @param resourceType Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
          * 
          * @return builder
          * 

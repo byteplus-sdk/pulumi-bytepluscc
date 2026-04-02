@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * Data Source schema for Byteplus::RDSMsSQL::Allowlist
+ * Data Source schema for Byteplus::RDSMsSQL::AllowList
  */
 export function getAllowList(args: GetAllowListArgs, opts?: pulumi.InvokeOptions): Promise<GetAllowListResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -31,39 +31,39 @@ export interface GetAllowListArgs {
  */
 export interface GetAllowListResult {
     /**
-     * IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+     * IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
      */
     readonly allowList: string;
     /**
-     * 白名单分类。
+     * Allowlist category
      */
     readonly allowListCategory: string;
     /**
-     * 白名单描述。
+     * Allowlist description
      */
     readonly allowListDesc: string;
     /**
-     * 白名单的id。
+     * Allowlist ID
      */
     readonly allowListId: string;
     /**
-     * AllowListIP数量。
+     * Allowlist IP count
      */
     readonly allowListIpNum: number;
     /**
-     * 白名单名称。
+     * Allowlist name
      */
     readonly allowListName: string;
     /**
-     * 白名单内的IP地址类型，当前仅支持IPv4。
+     * IP address type in the allowlist. Only IPv4 is supported
      */
     readonly allowListType: string;
     /**
-     * 绑定的实例数量。解绑实例的白名单时必传。
+     * Number of bound instances. Required when unbinding an instance from the allowlist
      */
     readonly associatedInstanceNum: number;
     /**
-     * 绑定的实例列表。
+     * Bound instance list
      */
     readonly associatedInstances: outputs.rdsmssql.GetAllowListAssociatedInstance[];
     /**
@@ -71,20 +71,20 @@ export interface GetAllowListResult {
      */
     readonly id: string;
     /**
-     * 实例ID。
+     * Instance ID
      */
     readonly instanceId: string;
     /**
-     * 项目名称。
+     * Project name
      */
     readonly projectName: string;
     /**
-     * 安全组之外的、需要加入白名单的IP地址，可输入IP地址或CIDR格式的IP地址段。如果该字段与AllowList同时指定，以AllowList为准。
+     * IP addresses outside the security group that need to be added to the allowlist. Enter IP addresses or CIDR-formatted IP ranges. If both this field and AllowList are specified, AllowList takes precedence
      */
     readonly userAllowList: string;
 }
 /**
- * Data Source schema for Byteplus::RDSMsSQL::Allowlist
+ * Data Source schema for Byteplus::RDSMsSQL::AllowList
  */
 export function getAllowListOutput(args: GetAllowListOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAllowListResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

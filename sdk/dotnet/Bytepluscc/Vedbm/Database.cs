@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Vedbm
 {
     /// <summary>
-    /// 云数据库管理
+    /// Cloud Database Management
     /// 
     /// ## Import
     /// 
@@ -23,7 +23,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm
     public partial class Database : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 数据库字符集，可选值：utf8mb4（默认）、utf8、latin1、ascii
+        /// Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
         /// </summary>
         [Output("characterSetName")]
         public Output<string> CharacterSetName { get; private set; } = null!;
@@ -32,19 +32,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm
         public Output<ImmutableArray<Outputs.DatabaseDatabasesPrivilege>> DatabasesPrivileges { get; private set; } = null!;
 
         /// <summary>
-        /// 数据库描述信息，长度0~256字符，可包含数字、中文、英文、下划线(_)、中划线(-)
+        /// Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
         /// </summary>
         [Output("dbDesc")]
         public Output<string> DbDesc { get; private set; } = null!;
 
         /// <summary>
-        /// 数据库名称。命名规则：当前实例下唯一；长度2~64字符；以字母开头，字母/数字结尾；由字母、数字、下划线(_)、中划线(-)组成；不能使用预留字
+        /// Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
         /// </summary>
         [Output("dbName")]
         public Output<string> DbName { get; private set; } = null!;
 
         /// <summary>
-        /// 实例ID。
+        /// Instance ID
         /// </summary>
         [Output("instanceId")]
         public Output<string> InstanceId { get; private set; } = null!;
@@ -97,7 +97,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm
     public sealed class DatabaseArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 数据库字符集，可选值：utf8mb4（默认）、utf8、latin1、ascii
+        /// Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
         /// </summary>
         [Input("characterSetName")]
         public Input<string>? CharacterSetName { get; set; }
@@ -111,19 +111,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm
         }
 
         /// <summary>
-        /// 数据库描述信息，长度0~256字符，可包含数字、中文、英文、下划线(_)、中划线(-)
+        /// Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
         /// </summary>
         [Input("dbDesc")]
         public Input<string>? DbDesc { get; set; }
 
         /// <summary>
-        /// 数据库名称。命名规则：当前实例下唯一；长度2~64字符；以字母开头，字母/数字结尾；由字母、数字、下划线(_)、中划线(-)组成；不能使用预留字
+        /// Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
         /// </summary>
         [Input("dbName")]
         public Input<string>? DbName { get; set; }
 
         /// <summary>
-        /// 实例ID。
+        /// Instance ID
         /// </summary>
         [Input("instanceId", required: true)]
         public Input<string> InstanceId { get; set; } = null!;
@@ -137,7 +137,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm
     public sealed class DatabaseState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 数据库字符集，可选值：utf8mb4（默认）、utf8、latin1、ascii
+        /// Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
         /// </summary>
         [Input("characterSetName")]
         public Input<string>? CharacterSetName { get; set; }
@@ -151,19 +151,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm
         }
 
         /// <summary>
-        /// 数据库描述信息，长度0~256字符，可包含数字、中文、英文、下划线(_)、中划线(-)
+        /// Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
         /// </summary>
         [Input("dbDesc")]
         public Input<string>? DbDesc { get; set; }
 
         /// <summary>
-        /// 数据库名称。命名规则：当前实例下唯一；长度2~64字符；以字母开头，字母/数字结尾；由字母、数字、下划线(_)、中划线(-)组成；不能使用预留字
+        /// Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
         /// </summary>
         [Input("dbName")]
         public Input<string>? DbName { get; set; }
 
         /// <summary>
-        /// 实例ID。
+        /// Instance ID
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }

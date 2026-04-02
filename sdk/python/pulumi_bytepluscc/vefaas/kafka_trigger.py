@@ -35,17 +35,17 @@ class KafkaTriggerArgs:
                  starting_position: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a KafkaTrigger resource.
-        :param pulumi.Input[builtins.str] function_id: 函数 ID。
-        :param pulumi.Input['KafkaTriggerKafkaCredentialsArgs'] kafka_credentials: Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
-        :param pulumi.Input[builtins.str] mq_instance_id: 消息队列 Kafka 实例 ID。
-        :param pulumi.Input[builtins.str] name: Kafka 触发器名字。同一函数下，触发器名称不可重复。只能包含大小写字母、数字、下划线，并且以字母开头，长度限制为 4~63 个字符。
-        :param pulumi.Input[builtins.str] topic_name: 消息队列 Kafka 实例的 Topic 名称。
-        :param pulumi.Input[builtins.int] batch_flush_duration_milliseconds: 触发器批量消费的最长等待时间。单位为毫秒（ms），取值范围为 1000 ~ 60000 ms，默认值为 1000 ms。
-        :param pulumi.Input[builtins.int] batch_size: 触发器批量消费的每批次消息数。
-        :param pulumi.Input[builtins.str] description: Kafka 触发器描述。长度限制为 200 个字符以内。
-        :param pulumi.Input[builtins.bool] enabled: 是否在创建触发器的同时启用触发器。取值：true：启用。false：关闭。
-        :param pulumi.Input[builtins.int] maximum_retry_attempts: 函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。
-        :param pulumi.Input[builtins.str] starting_position: 指定开始消费 Topic 中消息的位置。取值：Latest：只消费订阅 Topic 后产生的消息。Earliest：从 Topic 中生产的第一条消息开始消费。
+        :param pulumi.Input[builtins.str] function_id: Function ID.
+        :param pulumi.Input['KafkaTriggerKafkaCredentialsArgs'] kafka_credentials: Kafka identity authentication. Function service uses Kafka ACL permission policies to authenticate message consumption for SASL users of types PLAIN and SCRAM-SHA-256.
+        :param pulumi.Input[builtins.str] mq_instance_id: Kafka message queue instance ID.
+        :param pulumi.Input[builtins.str] name: Kafka trigger name. Trigger names must be unique within the same function. Only uppercase and lowercase letters, numbers, and underscores are allowed, must start with a letter, and be 4–63 characters long.
+        :param pulumi.Input[builtins.str] topic_name: Topic name of the Kafka message queue instance.
+        :param pulumi.Input[builtins.int] batch_flush_duration_milliseconds: Maximum wait time for batch consumption by the trigger. Unit: milliseconds (ms). Valid range: 1000–60000 ms. Default: 1000 ms.
+        :param pulumi.Input[builtins.int] batch_size: Number of messages per batch for trigger batch consumption.
+        :param pulumi.Input[builtins.str] description: Description of the Kafka trigger. Limited to 200 characters.
+        :param pulumi.Input[builtins.bool] enabled: Enable the trigger when creating it. Options: true—enable. false—disable.
+        :param pulumi.Input[builtins.int] maximum_retry_attempts: Maximum number of retries when the function encounters a runtime error (including user code errors and runtime errors). Valid values: positive integers from 0 to 100.
+        :param pulumi.Input[builtins.str] starting_position: Specify the starting position for consuming messages in the Topic. Options: Latest—consume only messages produced after subscribing to the Topic. Earliest—consume from the first message produced in the Topic.
         """
         pulumi.set(__self__, "function_id", function_id)
         pulumi.set(__self__, "kafka_credentials", kafka_credentials)
@@ -69,7 +69,7 @@ class KafkaTriggerArgs:
     @pulumi.getter(name="functionId")
     def function_id(self) -> pulumi.Input[builtins.str]:
         """
-        函数 ID。
+        Function ID.
         """
         return pulumi.get(self, "function_id")
 
@@ -81,7 +81,7 @@ class KafkaTriggerArgs:
     @pulumi.getter(name="kafkaCredentials")
     def kafka_credentials(self) -> pulumi.Input['KafkaTriggerKafkaCredentialsArgs']:
         """
-        Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
+        Kafka identity authentication. Function service uses Kafka ACL permission policies to authenticate message consumption for SASL users of types PLAIN and SCRAM-SHA-256.
         """
         return pulumi.get(self, "kafka_credentials")
 
@@ -93,7 +93,7 @@ class KafkaTriggerArgs:
     @pulumi.getter(name="mqInstanceId")
     def mq_instance_id(self) -> pulumi.Input[builtins.str]:
         """
-        消息队列 Kafka 实例 ID。
+        Kafka message queue instance ID.
         """
         return pulumi.get(self, "mq_instance_id")
 
@@ -105,7 +105,7 @@ class KafkaTriggerArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[builtins.str]:
         """
-        Kafka 触发器名字。同一函数下，触发器名称不可重复。只能包含大小写字母、数字、下划线，并且以字母开头，长度限制为 4~63 个字符。
+        Kafka trigger name. Trigger names must be unique within the same function. Only uppercase and lowercase letters, numbers, and underscores are allowed, must start with a letter, and be 4–63 characters long.
         """
         return pulumi.get(self, "name")
 
@@ -117,7 +117,7 @@ class KafkaTriggerArgs:
     @pulumi.getter(name="topicName")
     def topic_name(self) -> pulumi.Input[builtins.str]:
         """
-        消息队列 Kafka 实例的 Topic 名称。
+        Topic name of the Kafka message queue instance.
         """
         return pulumi.get(self, "topic_name")
 
@@ -129,7 +129,7 @@ class KafkaTriggerArgs:
     @pulumi.getter(name="batchFlushDurationMilliseconds")
     def batch_flush_duration_milliseconds(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        触发器批量消费的最长等待时间。单位为毫秒（ms），取值范围为 1000 ~ 60000 ms，默认值为 1000 ms。
+        Maximum wait time for batch consumption by the trigger. Unit: milliseconds (ms). Valid range: 1000–60000 ms. Default: 1000 ms.
         """
         return pulumi.get(self, "batch_flush_duration_milliseconds")
 
@@ -141,7 +141,7 @@ class KafkaTriggerArgs:
     @pulumi.getter(name="batchSize")
     def batch_size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        触发器批量消费的每批次消息数。
+        Number of messages per batch for trigger batch consumption.
         """
         return pulumi.get(self, "batch_size")
 
@@ -153,7 +153,7 @@ class KafkaTriggerArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Kafka 触发器描述。长度限制为 200 个字符以内。
+        Description of the Kafka trigger. Limited to 200 characters.
         """
         return pulumi.get(self, "description")
 
@@ -165,7 +165,7 @@ class KafkaTriggerArgs:
     @pulumi.getter
     def enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否在创建触发器的同时启用触发器。取值：true：启用。false：关闭。
+        Enable the trigger when creating it. Options: true—enable. false—disable.
         """
         return pulumi.get(self, "enabled")
 
@@ -177,7 +177,7 @@ class KafkaTriggerArgs:
     @pulumi.getter(name="maximumRetryAttempts")
     def maximum_retry_attempts(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。
+        Maximum number of retries when the function encounters a runtime error (including user code errors and runtime errors). Valid values: positive integers from 0 to 100.
         """
         return pulumi.get(self, "maximum_retry_attempts")
 
@@ -189,7 +189,7 @@ class KafkaTriggerArgs:
     @pulumi.getter(name="startingPosition")
     def starting_position(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        指定开始消费 Topic 中消息的位置。取值：Latest：只消费订阅 Topic 后产生的消息。Earliest：从 Topic 中生产的第一条消息开始消费。
+        Specify the starting position for consuming messages in the Topic. Options: Latest—consume only messages produced after subscribing to the Topic. Earliest—consume from the first message produced in the Topic.
         """
         return pulumi.get(self, "starting_position")
 
@@ -219,22 +219,22 @@ class _KafkaTriggerState:
                  updated_time: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering KafkaTrigger resources.
-        :param pulumi.Input[builtins.int] batch_flush_duration_milliseconds: 触发器批量消费的最长等待时间。单位为毫秒（ms），取值范围为 1000 ~ 60000 ms，默认值为 1000 ms。
-        :param pulumi.Input[builtins.int] batch_size: 触发器批量消费的每批次消息数。
-        :param pulumi.Input[builtins.str] consumer_group: 消息队列 Kafka 实例的消费组名字。
-        :param pulumi.Input[builtins.str] created_time: Kafka 触发器创建时间。
-        :param pulumi.Input[builtins.str] description: Kafka 触发器描述。长度限制为 200 个字符以内。
-        :param pulumi.Input[builtins.bool] enabled: 是否在创建触发器的同时启用触发器。取值：true：启用。false：关闭。
-        :param pulumi.Input[builtins.str] function_id: 函数 ID。
-        :param pulumi.Input['KafkaTriggerKafkaCredentialsArgs'] kafka_credentials: Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
-        :param pulumi.Input[builtins.str] kafka_trigger_id: Kafka 触发器 ID。
-        :param pulumi.Input[builtins.int] maximum_retry_attempts: 函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。
-        :param pulumi.Input[builtins.str] mq_instance_id: 消息队列 Kafka 实例 ID。
-        :param pulumi.Input[builtins.str] name: Kafka 触发器名字。同一函数下，触发器名称不可重复。只能包含大小写字母、数字、下划线，并且以字母开头，长度限制为 4~63 个字符。
-        :param pulumi.Input[builtins.str] starting_position: 指定开始消费 Topic 中消息的位置。取值：Latest：只消费订阅 Topic 后产生的消息。Earliest：从 Topic 中生产的第一条消息开始消费。
-        :param pulumi.Input[builtins.str] status: Kafka 触发器状态。参数值说明：ready：运行，failed：失败，pending：启动中
-        :param pulumi.Input[builtins.str] topic_name: 消息队列 Kafka 实例的 Topic 名称。
-        :param pulumi.Input[builtins.str] updated_time: Kafka 触发器最近一次更新时间。
+        :param pulumi.Input[builtins.int] batch_flush_duration_milliseconds: Maximum wait time for batch consumption by the trigger. Unit: milliseconds (ms). Valid range: 1000–60000 ms. Default: 1000 ms.
+        :param pulumi.Input[builtins.int] batch_size: Number of messages per batch for trigger batch consumption.
+        :param pulumi.Input[builtins.str] consumer_group: Consumer group name of the Kafka message queue instance.
+        :param pulumi.Input[builtins.str] created_time: Kafka trigger creation time.
+        :param pulumi.Input[builtins.str] description: Description of the Kafka trigger. Limited to 200 characters.
+        :param pulumi.Input[builtins.bool] enabled: Enable the trigger when creating it. Options: true—enable. false—disable.
+        :param pulumi.Input[builtins.str] function_id: Function ID.
+        :param pulumi.Input['KafkaTriggerKafkaCredentialsArgs'] kafka_credentials: Kafka identity authentication. Function service uses Kafka ACL permission policies to authenticate message consumption for SASL users of types PLAIN and SCRAM-SHA-256.
+        :param pulumi.Input[builtins.str] kafka_trigger_id: Kafka trigger ID.
+        :param pulumi.Input[builtins.int] maximum_retry_attempts: Maximum number of retries when the function encounters a runtime error (including user code errors and runtime errors). Valid values: positive integers from 0 to 100.
+        :param pulumi.Input[builtins.str] mq_instance_id: Kafka message queue instance ID.
+        :param pulumi.Input[builtins.str] name: Kafka trigger name. Trigger names must be unique within the same function. Only uppercase and lowercase letters, numbers, and underscores are allowed, must start with a letter, and be 4–63 characters long.
+        :param pulumi.Input[builtins.str] starting_position: Specify the starting position for consuming messages in the Topic. Options: Latest—consume only messages produced after subscribing to the Topic. Earliest—consume from the first message produced in the Topic.
+        :param pulumi.Input[builtins.str] status: Kafka trigger status. Parameter values: ready—running, failed—failed, pending—starting.
+        :param pulumi.Input[builtins.str] topic_name: Topic name of the Kafka message queue instance.
+        :param pulumi.Input[builtins.str] updated_time: Last update time of the Kafka trigger.
         """
         if batch_flush_duration_milliseconds is not None:
             pulumi.set(__self__, "batch_flush_duration_milliseconds", batch_flush_duration_milliseconds)
@@ -273,7 +273,7 @@ class _KafkaTriggerState:
     @pulumi.getter(name="batchFlushDurationMilliseconds")
     def batch_flush_duration_milliseconds(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        触发器批量消费的最长等待时间。单位为毫秒（ms），取值范围为 1000 ~ 60000 ms，默认值为 1000 ms。
+        Maximum wait time for batch consumption by the trigger. Unit: milliseconds (ms). Valid range: 1000–60000 ms. Default: 1000 ms.
         """
         return pulumi.get(self, "batch_flush_duration_milliseconds")
 
@@ -285,7 +285,7 @@ class _KafkaTriggerState:
     @pulumi.getter(name="batchSize")
     def batch_size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        触发器批量消费的每批次消息数。
+        Number of messages per batch for trigger batch consumption.
         """
         return pulumi.get(self, "batch_size")
 
@@ -297,7 +297,7 @@ class _KafkaTriggerState:
     @pulumi.getter(name="consumerGroup")
     def consumer_group(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        消息队列 Kafka 实例的消费组名字。
+        Consumer group name of the Kafka message queue instance.
         """
         return pulumi.get(self, "consumer_group")
 
@@ -309,7 +309,7 @@ class _KafkaTriggerState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Kafka 触发器创建时间。
+        Kafka trigger creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -321,7 +321,7 @@ class _KafkaTriggerState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Kafka 触发器描述。长度限制为 200 个字符以内。
+        Description of the Kafka trigger. Limited to 200 characters.
         """
         return pulumi.get(self, "description")
 
@@ -333,7 +333,7 @@ class _KafkaTriggerState:
     @pulumi.getter
     def enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否在创建触发器的同时启用触发器。取值：true：启用。false：关闭。
+        Enable the trigger when creating it. Options: true—enable. false—disable.
         """
         return pulumi.get(self, "enabled")
 
@@ -345,7 +345,7 @@ class _KafkaTriggerState:
     @pulumi.getter(name="functionId")
     def function_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        函数 ID。
+        Function ID.
         """
         return pulumi.get(self, "function_id")
 
@@ -357,7 +357,7 @@ class _KafkaTriggerState:
     @pulumi.getter(name="kafkaCredentials")
     def kafka_credentials(self) -> Optional[pulumi.Input['KafkaTriggerKafkaCredentialsArgs']]:
         """
-        Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
+        Kafka identity authentication. Function service uses Kafka ACL permission policies to authenticate message consumption for SASL users of types PLAIN and SCRAM-SHA-256.
         """
         return pulumi.get(self, "kafka_credentials")
 
@@ -369,7 +369,7 @@ class _KafkaTriggerState:
     @pulumi.getter(name="kafkaTriggerId")
     def kafka_trigger_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Kafka 触发器 ID。
+        Kafka trigger ID.
         """
         return pulumi.get(self, "kafka_trigger_id")
 
@@ -381,7 +381,7 @@ class _KafkaTriggerState:
     @pulumi.getter(name="maximumRetryAttempts")
     def maximum_retry_attempts(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。
+        Maximum number of retries when the function encounters a runtime error (including user code errors and runtime errors). Valid values: positive integers from 0 to 100.
         """
         return pulumi.get(self, "maximum_retry_attempts")
 
@@ -393,7 +393,7 @@ class _KafkaTriggerState:
     @pulumi.getter(name="mqInstanceId")
     def mq_instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        消息队列 Kafka 实例 ID。
+        Kafka message queue instance ID.
         """
         return pulumi.get(self, "mq_instance_id")
 
@@ -405,7 +405,7 @@ class _KafkaTriggerState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Kafka 触发器名字。同一函数下，触发器名称不可重复。只能包含大小写字母、数字、下划线，并且以字母开头，长度限制为 4~63 个字符。
+        Kafka trigger name. Trigger names must be unique within the same function. Only uppercase and lowercase letters, numbers, and underscores are allowed, must start with a letter, and be 4–63 characters long.
         """
         return pulumi.get(self, "name")
 
@@ -417,7 +417,7 @@ class _KafkaTriggerState:
     @pulumi.getter(name="startingPosition")
     def starting_position(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        指定开始消费 Topic 中消息的位置。取值：Latest：只消费订阅 Topic 后产生的消息。Earliest：从 Topic 中生产的第一条消息开始消费。
+        Specify the starting position for consuming messages in the Topic. Options: Latest—consume only messages produced after subscribing to the Topic. Earliest—consume from the first message produced in the Topic.
         """
         return pulumi.get(self, "starting_position")
 
@@ -429,7 +429,7 @@ class _KafkaTriggerState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Kafka 触发器状态。参数值说明：ready：运行，failed：失败，pending：启动中
+        Kafka trigger status. Parameter values: ready—running, failed—failed, pending—starting.
         """
         return pulumi.get(self, "status")
 
@@ -441,7 +441,7 @@ class _KafkaTriggerState:
     @pulumi.getter(name="topicName")
     def topic_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        消息队列 Kafka 实例的 Topic 名称。
+        Topic name of the Kafka message queue instance.
         """
         return pulumi.get(self, "topic_name")
 
@@ -453,7 +453,7 @@ class _KafkaTriggerState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Kafka 触发器最近一次更新时间。
+        Last update time of the Kafka trigger.
         """
         return pulumi.get(self, "updated_time")
 
@@ -481,7 +481,7 @@ class KafkaTrigger(pulumi.CustomResource):
                  topic_name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        函数服务支持对接消息队列 Kafka 版。通过创建 Kafka 触发器，函数服务将作为消费者消费 Kafka 中的消息，并将消息传递给用户函数，触发函数代码逻辑。您无需关心函数服务消费消息的细节，只需编写处理消息的函数。
+        Function service supports integration with Kafka message queue. By creating a Kafka trigger, the function service acts as a consumer to consume messages from Kafka and passes them to your function, triggering your function logic. You do not need to handle the details of message consumption; just write the function to process messages.
 
         ## Example Usage
 
@@ -515,17 +515,17 @@ class KafkaTrigger(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] batch_flush_duration_milliseconds: 触发器批量消费的最长等待时间。单位为毫秒（ms），取值范围为 1000 ~ 60000 ms，默认值为 1000 ms。
-        :param pulumi.Input[builtins.int] batch_size: 触发器批量消费的每批次消息数。
-        :param pulumi.Input[builtins.str] description: Kafka 触发器描述。长度限制为 200 个字符以内。
-        :param pulumi.Input[builtins.bool] enabled: 是否在创建触发器的同时启用触发器。取值：true：启用。false：关闭。
-        :param pulumi.Input[builtins.str] function_id: 函数 ID。
-        :param pulumi.Input[Union['KafkaTriggerKafkaCredentialsArgs', 'KafkaTriggerKafkaCredentialsArgsDict']] kafka_credentials: Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
-        :param pulumi.Input[builtins.int] maximum_retry_attempts: 函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。
-        :param pulumi.Input[builtins.str] mq_instance_id: 消息队列 Kafka 实例 ID。
-        :param pulumi.Input[builtins.str] name: Kafka 触发器名字。同一函数下，触发器名称不可重复。只能包含大小写字母、数字、下划线，并且以字母开头，长度限制为 4~63 个字符。
-        :param pulumi.Input[builtins.str] starting_position: 指定开始消费 Topic 中消息的位置。取值：Latest：只消费订阅 Topic 后产生的消息。Earliest：从 Topic 中生产的第一条消息开始消费。
-        :param pulumi.Input[builtins.str] topic_name: 消息队列 Kafka 实例的 Topic 名称。
+        :param pulumi.Input[builtins.int] batch_flush_duration_milliseconds: Maximum wait time for batch consumption by the trigger. Unit: milliseconds (ms). Valid range: 1000–60000 ms. Default: 1000 ms.
+        :param pulumi.Input[builtins.int] batch_size: Number of messages per batch for trigger batch consumption.
+        :param pulumi.Input[builtins.str] description: Description of the Kafka trigger. Limited to 200 characters.
+        :param pulumi.Input[builtins.bool] enabled: Enable the trigger when creating it. Options: true—enable. false—disable.
+        :param pulumi.Input[builtins.str] function_id: Function ID.
+        :param pulumi.Input[Union['KafkaTriggerKafkaCredentialsArgs', 'KafkaTriggerKafkaCredentialsArgsDict']] kafka_credentials: Kafka identity authentication. Function service uses Kafka ACL permission policies to authenticate message consumption for SASL users of types PLAIN and SCRAM-SHA-256.
+        :param pulumi.Input[builtins.int] maximum_retry_attempts: Maximum number of retries when the function encounters a runtime error (including user code errors and runtime errors). Valid values: positive integers from 0 to 100.
+        :param pulumi.Input[builtins.str] mq_instance_id: Kafka message queue instance ID.
+        :param pulumi.Input[builtins.str] name: Kafka trigger name. Trigger names must be unique within the same function. Only uppercase and lowercase letters, numbers, and underscores are allowed, must start with a letter, and be 4–63 characters long.
+        :param pulumi.Input[builtins.str] starting_position: Specify the starting position for consuming messages in the Topic. Options: Latest—consume only messages produced after subscribing to the Topic. Earliest—consume from the first message produced in the Topic.
+        :param pulumi.Input[builtins.str] topic_name: Topic name of the Kafka message queue instance.
         """
         ...
     @overload
@@ -534,7 +534,7 @@ class KafkaTrigger(pulumi.CustomResource):
                  args: KafkaTriggerArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        函数服务支持对接消息队列 Kafka 版。通过创建 Kafka 触发器，函数服务将作为消费者消费 Kafka 中的消息，并将消息传递给用户函数，触发函数代码逻辑。您无需关心函数服务消费消息的细节，只需编写处理消息的函数。
+        Function service supports integration with Kafka message queue. By creating a Kafka trigger, the function service acts as a consumer to consume messages from Kafka and passes them to your function, triggering your function logic. You do not need to handle the details of message consumption; just write the function to process messages.
 
         ## Example Usage
 
@@ -660,22 +660,22 @@ class KafkaTrigger(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] batch_flush_duration_milliseconds: 触发器批量消费的最长等待时间。单位为毫秒（ms），取值范围为 1000 ~ 60000 ms，默认值为 1000 ms。
-        :param pulumi.Input[builtins.int] batch_size: 触发器批量消费的每批次消息数。
-        :param pulumi.Input[builtins.str] consumer_group: 消息队列 Kafka 实例的消费组名字。
-        :param pulumi.Input[builtins.str] created_time: Kafka 触发器创建时间。
-        :param pulumi.Input[builtins.str] description: Kafka 触发器描述。长度限制为 200 个字符以内。
-        :param pulumi.Input[builtins.bool] enabled: 是否在创建触发器的同时启用触发器。取值：true：启用。false：关闭。
-        :param pulumi.Input[builtins.str] function_id: 函数 ID。
-        :param pulumi.Input[Union['KafkaTriggerKafkaCredentialsArgs', 'KafkaTriggerKafkaCredentialsArgsDict']] kafka_credentials: Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
-        :param pulumi.Input[builtins.str] kafka_trigger_id: Kafka 触发器 ID。
-        :param pulumi.Input[builtins.int] maximum_retry_attempts: 函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。
-        :param pulumi.Input[builtins.str] mq_instance_id: 消息队列 Kafka 实例 ID。
-        :param pulumi.Input[builtins.str] name: Kafka 触发器名字。同一函数下，触发器名称不可重复。只能包含大小写字母、数字、下划线，并且以字母开头，长度限制为 4~63 个字符。
-        :param pulumi.Input[builtins.str] starting_position: 指定开始消费 Topic 中消息的位置。取值：Latest：只消费订阅 Topic 后产生的消息。Earliest：从 Topic 中生产的第一条消息开始消费。
-        :param pulumi.Input[builtins.str] status: Kafka 触发器状态。参数值说明：ready：运行，failed：失败，pending：启动中
-        :param pulumi.Input[builtins.str] topic_name: 消息队列 Kafka 实例的 Topic 名称。
-        :param pulumi.Input[builtins.str] updated_time: Kafka 触发器最近一次更新时间。
+        :param pulumi.Input[builtins.int] batch_flush_duration_milliseconds: Maximum wait time for batch consumption by the trigger. Unit: milliseconds (ms). Valid range: 1000–60000 ms. Default: 1000 ms.
+        :param pulumi.Input[builtins.int] batch_size: Number of messages per batch for trigger batch consumption.
+        :param pulumi.Input[builtins.str] consumer_group: Consumer group name of the Kafka message queue instance.
+        :param pulumi.Input[builtins.str] created_time: Kafka trigger creation time.
+        :param pulumi.Input[builtins.str] description: Description of the Kafka trigger. Limited to 200 characters.
+        :param pulumi.Input[builtins.bool] enabled: Enable the trigger when creating it. Options: true—enable. false—disable.
+        :param pulumi.Input[builtins.str] function_id: Function ID.
+        :param pulumi.Input[Union['KafkaTriggerKafkaCredentialsArgs', 'KafkaTriggerKafkaCredentialsArgsDict']] kafka_credentials: Kafka identity authentication. Function service uses Kafka ACL permission policies to authenticate message consumption for SASL users of types PLAIN and SCRAM-SHA-256.
+        :param pulumi.Input[builtins.str] kafka_trigger_id: Kafka trigger ID.
+        :param pulumi.Input[builtins.int] maximum_retry_attempts: Maximum number of retries when the function encounters a runtime error (including user code errors and runtime errors). Valid values: positive integers from 0 to 100.
+        :param pulumi.Input[builtins.str] mq_instance_id: Kafka message queue instance ID.
+        :param pulumi.Input[builtins.str] name: Kafka trigger name. Trigger names must be unique within the same function. Only uppercase and lowercase letters, numbers, and underscores are allowed, must start with a letter, and be 4–63 characters long.
+        :param pulumi.Input[builtins.str] starting_position: Specify the starting position for consuming messages in the Topic. Options: Latest—consume only messages produced after subscribing to the Topic. Earliest—consume from the first message produced in the Topic.
+        :param pulumi.Input[builtins.str] status: Kafka trigger status. Parameter values: ready—running, failed—failed, pending—starting.
+        :param pulumi.Input[builtins.str] topic_name: Topic name of the Kafka message queue instance.
+        :param pulumi.Input[builtins.str] updated_time: Last update time of the Kafka trigger.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -703,7 +703,7 @@ class KafkaTrigger(pulumi.CustomResource):
     @pulumi.getter(name="batchFlushDurationMilliseconds")
     def batch_flush_duration_milliseconds(self) -> pulumi.Output[builtins.int]:
         """
-        触发器批量消费的最长等待时间。单位为毫秒（ms），取值范围为 1000 ~ 60000 ms，默认值为 1000 ms。
+        Maximum wait time for batch consumption by the trigger. Unit: milliseconds (ms). Valid range: 1000–60000 ms. Default: 1000 ms.
         """
         return pulumi.get(self, "batch_flush_duration_milliseconds")
 
@@ -711,7 +711,7 @@ class KafkaTrigger(pulumi.CustomResource):
     @pulumi.getter(name="batchSize")
     def batch_size(self) -> pulumi.Output[builtins.int]:
         """
-        触发器批量消费的每批次消息数。
+        Number of messages per batch for trigger batch consumption.
         """
         return pulumi.get(self, "batch_size")
 
@@ -719,7 +719,7 @@ class KafkaTrigger(pulumi.CustomResource):
     @pulumi.getter(name="consumerGroup")
     def consumer_group(self) -> pulumi.Output[builtins.str]:
         """
-        消息队列 Kafka 实例的消费组名字。
+        Consumer group name of the Kafka message queue instance.
         """
         return pulumi.get(self, "consumer_group")
 
@@ -727,7 +727,7 @@ class KafkaTrigger(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        Kafka 触发器创建时间。
+        Kafka trigger creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -735,7 +735,7 @@ class KafkaTrigger(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        Kafka 触发器描述。长度限制为 200 个字符以内。
+        Description of the Kafka trigger. Limited to 200 characters.
         """
         return pulumi.get(self, "description")
 
@@ -743,7 +743,7 @@ class KafkaTrigger(pulumi.CustomResource):
     @pulumi.getter
     def enabled(self) -> pulumi.Output[builtins.bool]:
         """
-        是否在创建触发器的同时启用触发器。取值：true：启用。false：关闭。
+        Enable the trigger when creating it. Options: true—enable. false—disable.
         """
         return pulumi.get(self, "enabled")
 
@@ -751,7 +751,7 @@ class KafkaTrigger(pulumi.CustomResource):
     @pulumi.getter(name="functionId")
     def function_id(self) -> pulumi.Output[builtins.str]:
         """
-        函数 ID。
+        Function ID.
         """
         return pulumi.get(self, "function_id")
 
@@ -759,7 +759,7 @@ class KafkaTrigger(pulumi.CustomResource):
     @pulumi.getter(name="kafkaCredentials")
     def kafka_credentials(self) -> pulumi.Output['outputs.KafkaTriggerKafkaCredentials']:
         """
-        Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
+        Kafka identity authentication. Function service uses Kafka ACL permission policies to authenticate message consumption for SASL users of types PLAIN and SCRAM-SHA-256.
         """
         return pulumi.get(self, "kafka_credentials")
 
@@ -767,7 +767,7 @@ class KafkaTrigger(pulumi.CustomResource):
     @pulumi.getter(name="kafkaTriggerId")
     def kafka_trigger_id(self) -> pulumi.Output[builtins.str]:
         """
-        Kafka 触发器 ID。
+        Kafka trigger ID.
         """
         return pulumi.get(self, "kafka_trigger_id")
 
@@ -775,7 +775,7 @@ class KafkaTrigger(pulumi.CustomResource):
     @pulumi.getter(name="maximumRetryAttempts")
     def maximum_retry_attempts(self) -> pulumi.Output[builtins.int]:
         """
-        函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。
+        Maximum number of retries when the function encounters a runtime error (including user code errors and runtime errors). Valid values: positive integers from 0 to 100.
         """
         return pulumi.get(self, "maximum_retry_attempts")
 
@@ -783,7 +783,7 @@ class KafkaTrigger(pulumi.CustomResource):
     @pulumi.getter(name="mqInstanceId")
     def mq_instance_id(self) -> pulumi.Output[builtins.str]:
         """
-        消息队列 Kafka 实例 ID。
+        Kafka message queue instance ID.
         """
         return pulumi.get(self, "mq_instance_id")
 
@@ -791,7 +791,7 @@ class KafkaTrigger(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[builtins.str]:
         """
-        Kafka 触发器名字。同一函数下，触发器名称不可重复。只能包含大小写字母、数字、下划线，并且以字母开头，长度限制为 4~63 个字符。
+        Kafka trigger name. Trigger names must be unique within the same function. Only uppercase and lowercase letters, numbers, and underscores are allowed, must start with a letter, and be 4–63 characters long.
         """
         return pulumi.get(self, "name")
 
@@ -799,7 +799,7 @@ class KafkaTrigger(pulumi.CustomResource):
     @pulumi.getter(name="startingPosition")
     def starting_position(self) -> pulumi.Output[builtins.str]:
         """
-        指定开始消费 Topic 中消息的位置。取值：Latest：只消费订阅 Topic 后产生的消息。Earliest：从 Topic 中生产的第一条消息开始消费。
+        Specify the starting position for consuming messages in the Topic. Options: Latest—consume only messages produced after subscribing to the Topic. Earliest—consume from the first message produced in the Topic.
         """
         return pulumi.get(self, "starting_position")
 
@@ -807,7 +807,7 @@ class KafkaTrigger(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        Kafka 触发器状态。参数值说明：ready：运行，failed：失败，pending：启动中
+        Kafka trigger status. Parameter values: ready—running, failed—failed, pending—starting.
         """
         return pulumi.get(self, "status")
 
@@ -815,7 +815,7 @@ class KafkaTrigger(pulumi.CustomResource):
     @pulumi.getter(name="topicName")
     def topic_name(self) -> pulumi.Output[builtins.str]:
         """
-        消息队列 Kafka 实例的 Topic 名称。
+        Topic name of the Kafka message queue instance.
         """
         return pulumi.get(self, "topic_name")
 
@@ -823,7 +823,7 @@ class KafkaTrigger(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        Kafka 触发器最近一次更新时间。
+        Last update time of the Kafka trigger.
         """
         return pulumi.get(self, "updated_time")
 

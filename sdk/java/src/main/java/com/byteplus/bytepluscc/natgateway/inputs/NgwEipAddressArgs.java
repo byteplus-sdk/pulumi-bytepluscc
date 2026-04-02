@@ -16,14 +16,14 @@ public final class NgwEipAddressArgs extends com.pulumi.resources.ResourceArgs {
     public static final NgwEipAddressArgs Empty = new NgwEipAddressArgs();
 
     /**
-     * 公网IP的ID。
+     * Public IP ID
      * 
      */
     @Import(name="allocationId")
     private @Nullable Output<String> allocationId;
 
     /**
-     * @return 公网IP的ID。
+     * @return Public IP ID
      * 
      */
     public Optional<Output<String>> allocationId() {
@@ -31,14 +31,14 @@ public final class NgwEipAddressArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 公网IP的地址。
+     * Public IP address
      * 
      */
     @Import(name="eipAddress")
     private @Nullable Output<String> eipAddress;
 
     /**
-     * @return 公网IP的地址。
+     * @return Public IP address
      * 
      */
     public Optional<Output<String>> eipAddress() {
@@ -46,14 +46,14 @@ public final class NgwEipAddressArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 公网IP的使用状态。Idle：未使用。UsedBySnat：被SNAT规则使用。UsedByDnat：被DNAT规则使用。UsedByNat：被SNAT/DNAT规则同时使用。
+     * Usage status of the public IP. Idle: Not used. UsedBySnat: Used by SNAT rule. UsedByDnat: Used by DNAT rule. UsedByNat: Used by both SNAT and DNAT rules.
      * 
      */
     @Import(name="usingStatus")
     private @Nullable Output<String> usingStatus;
 
     /**
-     * @return 公网IP的使用状态。Idle：未使用。UsedBySnat：被SNAT规则使用。UsedByDnat：被DNAT规则使用。UsedByNat：被SNAT/DNAT规则同时使用。
+     * @return Usage status of the public IP. Idle: Not used. UsedBySnat: Used by SNAT rule. UsedByDnat: Used by DNAT rule. UsedByNat: Used by both SNAT and DNAT rules.
      * 
      */
     public Optional<Output<String>> usingStatus() {
@@ -87,7 +87,7 @@ public final class NgwEipAddressArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allocationId 公网IP的ID。
+         * @param allocationId Public IP ID
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class NgwEipAddressArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allocationId 公网IP的ID。
+         * @param allocationId Public IP ID
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class NgwEipAddressArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eipAddress 公网IP的地址。
+         * @param eipAddress Public IP address
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class NgwEipAddressArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eipAddress 公网IP的地址。
+         * @param eipAddress Public IP address
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class NgwEipAddressArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param usingStatus 公网IP的使用状态。Idle：未使用。UsedBySnat：被SNAT规则使用。UsedByDnat：被DNAT规则使用。UsedByNat：被SNAT/DNAT规则同时使用。
+         * @param usingStatus Usage status of the public IP. Idle: Not used. UsedBySnat: Used by SNAT rule. UsedByDnat: Used by DNAT rule. UsedByNat: Used by both SNAT and DNAT rules.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class NgwEipAddressArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param usingStatus 公网IP的使用状态。Idle：未使用。UsedBySnat：被SNAT规则使用。UsedByDnat：被DNAT规则使用。UsedByNat：被SNAT/DNAT规则同时使用。
+         * @param usingStatus Usage status of the public IP. Idle: Not used. UsedBySnat: Used by SNAT rule. UsedByDnat: Used by DNAT rule. UsedByNat: Used by both SNAT and DNAT rules.
          * 
          * @return builder
          * 

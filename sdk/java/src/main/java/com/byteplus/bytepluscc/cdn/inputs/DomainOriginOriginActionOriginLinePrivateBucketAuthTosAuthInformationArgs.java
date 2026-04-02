@@ -16,14 +16,14 @@ public final class DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInf
     public static final DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformationArgs Empty = new DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformationArgs();
 
     /**
-     * 表示您阿里云账号的 AccessKey ID、腾讯云账号的 SecretId 或者 AWS 账号的 access key ID。
+     * Specifies the AccessKey ID for your Alibaba Cloud account, SecretId for your Tencent Cloud account, or access key ID for your AWS account.
      * 
      */
     @Import(name="accessKeyId")
     private @Nullable Output<String> accessKeyId;
 
     /**
-     * @return 表示您阿里云账号的 AccessKey ID、腾讯云账号的 SecretId 或者 AWS 账号的 access key ID。
+     * @return Specifies the AccessKey ID for your Alibaba Cloud account, SecretId for your Tencent Cloud account, or access key ID for your AWS account.
      * 
      */
     public Optional<Output<String>> accessKeyId() {
@@ -31,14 +31,14 @@ public final class DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInf
     }
 
     /**
-     * 表示您阿里云账号的 AccessKey Secret、腾讯云账号的 SecretKey 或者 AWS 账号的 secret access key。
+     * Indicates the AccessKey Secret for your Alibaba Cloud account, the SecretKey for your Tencent Cloud account, or the secret access key for your AWS account.
      * 
      */
     @Import(name="accessKeySecret")
     private @Nullable Output<String> accessKeySecret;
 
     /**
-     * @return 表示您阿里云账号的 AccessKey Secret、腾讯云账号的 SecretKey 或者 AWS 账号的 secret access key。
+     * @return Indicates the AccessKey Secret for your Alibaba Cloud account, the SecretKey for your Tencent Cloud account, or the secret access key for your AWS account.
      * 
      */
     public Optional<Output<String>> accessKeySecret() {
@@ -71,7 +71,7 @@ public final class DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInf
         }
 
         /**
-         * @param accessKeyId 表示您阿里云账号的 AccessKey ID、腾讯云账号的 SecretId 或者 AWS 账号的 access key ID。
+         * @param accessKeyId Specifies the AccessKey ID for your Alibaba Cloud account, SecretId for your Tencent Cloud account, or access key ID for your AWS account.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInf
         }
 
         /**
-         * @param accessKeyId 表示您阿里云账号的 AccessKey ID、腾讯云账号的 SecretId 或者 AWS 账号的 access key ID。
+         * @param accessKeyId Specifies the AccessKey ID for your Alibaba Cloud account, SecretId for your Tencent Cloud account, or access key ID for your AWS account.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInf
         }
 
         /**
-         * @param accessKeySecret 表示您阿里云账号的 AccessKey Secret、腾讯云账号的 SecretKey 或者 AWS 账号的 secret access key。
+         * @param accessKeySecret Indicates the AccessKey Secret for your Alibaba Cloud account, the SecretKey for your Tencent Cloud account, or the secret access key for your AWS account.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInf
         }
 
         /**
-         * @param accessKeySecret 表示您阿里云账号的 AccessKey Secret、腾讯云账号的 SecretKey 或者 AWS 账号的 secret access key。
+         * @param accessKeySecret Indicates the AccessKey Secret for your Alibaba Cloud account, the SecretKey for your Tencent Cloud account, or the secret access key for your AWS account.
          * 
          * @return builder
          * 

@@ -12,74 +12,74 @@ import java.util.Objects;
 @CustomType
 public final class GetAccountSecureContactInfo {
     /**
-     * @return 安全邮箱。
+     * @return Security email
      * 
      */
     private String email;
     /**
-     * @return 安全邮箱是否验证，1: 未验证，2: 已验证。
+     * @return Security email verification status: 1. Not verified, 2. Verified
      * 
      */
     private Integer emailVerified;
     /**
-     * @return 变更中的新邮箱。
+     * @return New email being changed
      * 
      */
     private String newEmail;
     /**
-     * @return 变更中的新手机号。
+     * @return New mobile number being changed
      * 
      */
     private String newPhone;
     /**
-     * @return 安全手机号。
+     * @return Security mobile number
      * 
      */
     private String phone;
     /**
-     * @return 安全手机号是否验证，1: 未验证，2: 已验证。
+     * @return Security mobile number verification status: 1. Not verified, 2. Verified
      * 
      */
     private Integer phoneVerified;
 
     private GetAccountSecureContactInfo() {}
     /**
-     * @return 安全邮箱。
+     * @return Security email
      * 
      */
     public String email() {
         return this.email;
     }
     /**
-     * @return 安全邮箱是否验证，1: 未验证，2: 已验证。
+     * @return Security email verification status: 1. Not verified, 2. Verified
      * 
      */
     public Integer emailVerified() {
         return this.emailVerified;
     }
     /**
-     * @return 变更中的新邮箱。
+     * @return New email being changed
      * 
      */
     public String newEmail() {
         return this.newEmail;
     }
     /**
-     * @return 变更中的新手机号。
+     * @return New mobile number being changed
      * 
      */
     public String newPhone() {
         return this.newPhone;
     }
     /**
-     * @return 安全手机号。
+     * @return Security mobile number
      * 
      */
     public String phone() {
         return this.phone;
     }
     /**
-     * @return 安全手机号是否验证，1: 未验证，2: 已验证。
+     * @return Security mobile number verification status: 1. Not verified, 2. Verified
      * 
      */
     public Integer phoneVerified() {

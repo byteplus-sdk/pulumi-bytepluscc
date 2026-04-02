@@ -16,14 +16,14 @@ public final class UpstreamVersionDetailLabelArgs extends com.pulumi.resources.R
     public static final UpstreamVersionDetailLabelArgs Empty = new UpstreamVersionDetailLabelArgs();
 
     /**
-     * 键。
+     * Key
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 键。
+     * @return Key
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class UpstreamVersionDetailLabelArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 值。
+     * Value
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 值。
+     * @return Value
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class UpstreamVersionDetailLabelArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param key 键。
+         * @param key Key
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class UpstreamVersionDetailLabelArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param key 键。
+         * @param key Key
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class UpstreamVersionDetailLabelArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param value 值。
+         * @param value Value
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class UpstreamVersionDetailLabelArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param value 值。
+         * @param value Value
          * 
          * @return builder
          * 

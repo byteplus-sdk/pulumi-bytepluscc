@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponentsResult
     {
         /// <summary>
-        /// 表示鉴权请求是否包含用户请求 URL 中的查询参数。该参数有以下取值：exclude：表示鉴权请求不包含任何查询参数。include：表示鉴权请求包含所有查询参数。includePart：表示鉴权请求包含指定的查询参数。
+        /// Indicates whether the authentication request includes query parameters from the user's request URL. The parameter accepts the following values: exclude: The authentication request does not include any query parameters. include: The authentication request includes all query parameters. includePart: The authentication request includes specified query parameters.
         /// </summary>
         public readonly string Action;
         /// <summary>
-        /// 表示 Action 参数所对应的参数值，长度不能超过1,024 个字符。该参数有以下取值：如果 Action 是 exclude 或 include，Value 必须是 *。如果 Action 是 includePart，您需要在 Value 参数中指定用户请求 URL 中的一个或者多个查询参数，多个查询参数使用英文分号（;）分隔。您不能指定 *。查询参数是区分大小写的，可以包含除了以下字符的可打印 ASCII 字符：双引号（"）、空格、Delete（ASCII code 127）该参数的默认值是 *。
+        /// Indicates the parameter value corresponding to the Action parameter. The length cannot exceed 1,024 characters. The parameter accepts the following values: If Action is exclude or include, Value must be *. If Action is includePart, you need to specify one or more query parameters from the user's request URL in the Value parameter, separated by semicolons (;). You cannot specify *. Query parameters are case-sensitive and can include printable ASCII characters except for the following: double quotes (") , spaces, and Delete (ASCII code 127). The default value for this parameter is *.
         /// </summary>
         public readonly string Value;
 

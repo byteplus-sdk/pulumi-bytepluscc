@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
 {
     /// <summary>
-    /// 数据库是 PostgreSQL 实例中的一个独立数据库，用于存储和管理数据。
+    /// The database is an independent database within a PostgreSQL instance, used to store and manage data.
     /// 
     /// ## Example Usage
     /// 
@@ -46,43 +46,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
     public partial class Database : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 字符分类。取值范围： C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX。
+        /// Character classification. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
         /// </summary>
         [Output("cType")]
         public Output<string> CType { get; private set; } = null!;
 
         /// <summary>
-        /// 数据库字符集。目前支持的字符集包含：utf8（默认）、latin1、ascii
+        /// Database character set. Supported character sets: utf8 (default), latin1, ascii
         /// </summary>
         [Output("characterSetName")]
         public Output<string> CharacterSetName { get; private set; } = null!;
 
         /// <summary>
-        /// 排序规则。取值范围：C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX
+        /// Collation. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
         /// </summary>
         [Output("collate")]
         public Output<string> Collate { get; private set; } = null!;
 
         /// <summary>
-        /// 数据库名称。命名规则如下：长度 2~63 个字符。由字母、数字、下划线或中划线组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。
+        /// Database name. Naming rules: Length must be 2–63 characters. Can contain letters, numbers, underscores, or hyphens. Must start with a letter and end with a letter or number. Reserved keywords are not allowed. For a list of all disabled keywords, see Disabled Keywords.
         /// </summary>
         [Output("dbName")]
         public Output<string> DbName { get; private set; } = null!;
 
         /// <summary>
-        /// 数据库状态：Unavailable：不可用。Available：可用。
+        /// Database status: Unavailable: Not available. Available: Available.
         /// </summary>
         [Output("dbStatus")]
         public Output<string> DbStatus { get; private set; } = null!;
 
         /// <summary>
-        /// 实例 ID
+        /// Instance ID
         /// </summary>
         [Output("instanceId")]
         public Output<string> InstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// 数据库的 owner。说明：实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为数据库的 owner。不传值或传空值时，会为该字段取值为 rds superuser
+        /// Database owner. Note: Read-only instance accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the database owner. If no value is provided or the value is empty, this field defaults to rds superuser
         /// </summary>
         [Output("owner")]
         public Output<string> Owner { get; private set; } = null!;
@@ -135,37 +135,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
     public sealed class DatabaseArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 字符分类。取值范围： C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX。
+        /// Character classification. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
         /// </summary>
         [Input("cType")]
         public Input<string>? CType { get; set; }
 
         /// <summary>
-        /// 数据库字符集。目前支持的字符集包含：utf8（默认）、latin1、ascii
+        /// Database character set. Supported character sets: utf8 (default), latin1, ascii
         /// </summary>
         [Input("characterSetName")]
         public Input<string>? CharacterSetName { get; set; }
 
         /// <summary>
-        /// 排序规则。取值范围：C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX
+        /// Collation. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
         /// </summary>
         [Input("collate")]
         public Input<string>? Collate { get; set; }
 
         /// <summary>
-        /// 数据库名称。命名规则如下：长度 2~63 个字符。由字母、数字、下划线或中划线组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。
+        /// Database name. Naming rules: Length must be 2–63 characters. Can contain letters, numbers, underscores, or hyphens. Must start with a letter and end with a letter or number. Reserved keywords are not allowed. For a list of all disabled keywords, see Disabled Keywords.
         /// </summary>
         [Input("dbName", required: true)]
         public Input<string> DbName { get; set; } = null!;
 
         /// <summary>
-        /// 实例 ID
+        /// Instance ID
         /// </summary>
         [Input("instanceId", required: true)]
         public Input<string> InstanceId { get; set; } = null!;
 
         /// <summary>
-        /// 数据库的 owner。说明：实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为数据库的 owner。不传值或传空值时，会为该字段取值为 rds superuser
+        /// Database owner. Note: Read-only instance accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the database owner. If no value is provided or the value is empty, this field defaults to rds superuser
         /// </summary>
         [Input("owner")]
         public Input<string>? Owner { get; set; }
@@ -179,43 +179,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
     public sealed class DatabaseState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 字符分类。取值范围： C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX。
+        /// Character classification. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
         /// </summary>
         [Input("cType")]
         public Input<string>? CType { get; set; }
 
         /// <summary>
-        /// 数据库字符集。目前支持的字符集包含：utf8（默认）、latin1、ascii
+        /// Database character set. Supported character sets: utf8 (default), latin1, ascii
         /// </summary>
         [Input("characterSetName")]
         public Input<string>? CharacterSetName { get; set; }
 
         /// <summary>
-        /// 排序规则。取值范围：C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX
+        /// Collation. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
         /// </summary>
         [Input("collate")]
         public Input<string>? Collate { get; set; }
 
         /// <summary>
-        /// 数据库名称。命名规则如下：长度 2~63 个字符。由字母、数字、下划线或中划线组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。
+        /// Database name. Naming rules: Length must be 2–63 characters. Can contain letters, numbers, underscores, or hyphens. Must start with a letter and end with a letter or number. Reserved keywords are not allowed. For a list of all disabled keywords, see Disabled Keywords.
         /// </summary>
         [Input("dbName")]
         public Input<string>? DbName { get; set; }
 
         /// <summary>
-        /// 数据库状态：Unavailable：不可用。Available：可用。
+        /// Database status: Unavailable: Not available. Available: Available.
         /// </summary>
         [Input("dbStatus")]
         public Input<string>? DbStatus { get; set; }
 
         /// <summary>
-        /// 实例 ID
+        /// Instance ID
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 数据库的 owner。说明：实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为数据库的 owner。不传值或传空值时，会为该字段取值为 rds superuser
+        /// Database owner. Note: Read-only instance accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the database owner. If no value is provided or the value is empty, this field defaults to rds superuser
         /// </summary>
         [Input("owner")]
         public Input<string>? Owner { get; set; }

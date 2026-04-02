@@ -22,14 +22,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     public static final EndpointArgs Empty = new EndpointArgs();
 
     /**
-     * 接入点描述。
+     * Endpoint description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 接入点描述。
+     * @return Endpoint description
      * 
      */
     public Optional<Output<String>> description() {
@@ -37,14 +37,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 接入点接入模型。
+     * Endpoint access model
      * 
      */
     @Import(name="modelReference", required=true)
     private Output<EndpointModelReferenceArgs> modelReference;
 
     /**
-     * @return 接入点接入模型。
+     * @return Endpoint access model
      * 
      */
     public Output<EndpointModelReferenceArgs> modelReference() {
@@ -52,14 +52,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 模型单元，为空表示后付费；否则预付费。
+     * Model unit. If empty, indicates postpaid; otherwise, prepaid.
      * 
      */
     @Import(name="modelUnitId")
     private @Nullable Output<String> modelUnitId;
 
     /**
-     * @return 模型单元，为空表示后付费；否则预付费。
+     * @return Model unit. If empty, indicates postpaid; otherwise, prepaid.
      * 
      */
     public Optional<Output<String>> modelUnitId() {
@@ -67,14 +67,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 内容护栏方案。
+     * Content guardrail scheme
      * 
      */
     @Import(name="moderation")
     private @Nullable Output<EndpointModerationArgs> moderation;
 
     /**
-     * @return 内容护栏方案。
+     * @return Content guardrail scheme
      * 
      */
     public Optional<Output<EndpointModerationArgs>> moderation() {
@@ -82,14 +82,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 接入点名称。
+     * Endpoint name
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return 接入点名称。
+     * @return Endpoint name
      * 
      */
     public Output<String> name() {
@@ -97,14 +97,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 资源所属的项目名称，默认值为default。
+     * Project name the resource belongs to; default value is &#34;default&#34;
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 资源所属的项目名称，默认值为default。
+     * @return Project name the resource belongs to; default value is &#34;default&#34;
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -112,14 +112,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 接入点限流。
+     * Endpoint rate limiting
      * 
      */
     @Import(name="rateLimit")
     private @Nullable Output<EndpointRateLimitArgs> rateLimit;
 
     /**
-     * @return 接入点限流。
+     * @return Endpoint rate limiting
      * 
      */
     public Optional<Output<EndpointRateLimitArgs>> rateLimit() {
@@ -165,7 +165,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 接入点描述。
+         * @param description Endpoint description
          * 
          * @return builder
          * 
@@ -176,7 +176,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 接入点描述。
+         * @param description Endpoint description
          * 
          * @return builder
          * 
@@ -186,7 +186,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modelReference 接入点接入模型。
+         * @param modelReference Endpoint access model
          * 
          * @return builder
          * 
@@ -197,7 +197,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modelReference 接入点接入模型。
+         * @param modelReference Endpoint access model
          * 
          * @return builder
          * 
@@ -207,7 +207,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modelUnitId 模型单元，为空表示后付费；否则预付费。
+         * @param modelUnitId Model unit. If empty, indicates postpaid; otherwise, prepaid.
          * 
          * @return builder
          * 
@@ -218,7 +218,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modelUnitId 模型单元，为空表示后付费；否则预付费。
+         * @param modelUnitId Model unit. If empty, indicates postpaid; otherwise, prepaid.
          * 
          * @return builder
          * 
@@ -228,7 +228,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param moderation 内容护栏方案。
+         * @param moderation Content guardrail scheme
          * 
          * @return builder
          * 
@@ -239,7 +239,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param moderation 内容护栏方案。
+         * @param moderation Content guardrail scheme
          * 
          * @return builder
          * 
@@ -249,7 +249,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 接入点名称。
+         * @param name Endpoint name
          * 
          * @return builder
          * 
@@ -260,7 +260,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 接入点名称。
+         * @param name Endpoint name
          * 
          * @return builder
          * 
@@ -270,7 +270,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 资源所属的项目名称，默认值为default。
+         * @param projectName Project name the resource belongs to; default value is &#34;default&#34;
          * 
          * @return builder
          * 
@@ -281,7 +281,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 资源所属的项目名称，默认值为default。
+         * @param projectName Project name the resource belongs to; default value is &#34;default&#34;
          * 
          * @return builder
          * 
@@ -291,7 +291,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param rateLimit 接入点限流。
+         * @param rateLimit Endpoint rate limiting
          * 
          * @return builder
          * 
@@ -302,7 +302,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param rateLimit 接入点限流。
+         * @param rateLimit Endpoint rate limiting
          * 
          * @return builder
          * 

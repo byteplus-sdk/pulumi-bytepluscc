@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainOriginOriginAction {
     /**
-     * @return 表示一个源站配置列表。每个配置可以包含一个或者多个源站。
+     * @return Indicates a list of origin configurations. Each configuration can include one or more origins.
      * 
      */
     private List<GetDomainOriginOriginActionOriginLine> originLines;
 
     private GetDomainOriginOriginAction() {}
     /**
-     * @return 表示一个源站配置列表。每个配置可以包含一个或者多个源站。
+     * @return Indicates a list of origin configurations. Each configuration can include one or more origins.
      * 
      */
     public List<GetDomainOriginOriginActionOriginLine> originLines() {

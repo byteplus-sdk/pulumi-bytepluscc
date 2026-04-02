@@ -16,14 +16,14 @@ public final class RuleRuleActionRedirectConfigArgs extends com.pulumi.resources
     public static final RuleRuleActionRedirectConfigArgs Empty = new RuleRuleActionRedirectConfigArgs();
 
     /**
-     * 重定向域名，仅支持精确域名。
+     * Redirect domain. Only exact domains are supported.
      * 
      */
     @Import(name="host")
     private @Nullable Output<String> host;
 
     /**
-     * @return 重定向域名，仅支持精确域名。
+     * @return Redirect domain. Only exact domains are supported.
      * 
      */
     public Optional<Output<String>> host() {
@@ -31,14 +31,14 @@ public final class RuleRuleActionRedirectConfigArgs extends com.pulumi.resources
     }
 
     /**
-     * 重定向状态码，支持301，302，307，308。
+     * Redirect status codes supported: 301, 302, 307, 308.
      * 
      */
     @Import(name="httpCode")
     private @Nullable Output<String> httpCode;
 
     /**
-     * @return 重定向状态码，支持301，302，307，308。
+     * @return Redirect status codes supported: 301, 302, 307, 308.
      * 
      */
     public Optional<Output<String>> httpCode() {
@@ -46,14 +46,14 @@ public final class RuleRuleActionRedirectConfigArgs extends com.pulumi.resources
     }
 
     /**
-     * 重定向 URI。。
+     * Redirect URI..
      * 
      */
     @Import(name="path")
     private @Nullable Output<String> path;
 
     /**
-     * @return 重定向 URI。。
+     * @return Redirect URI..
      * 
      */
     public Optional<Output<String>> path() {
@@ -61,14 +61,14 @@ public final class RuleRuleActionRedirectConfigArgs extends com.pulumi.resources
     }
 
     /**
-     * 重定向端口。
+     * Redirect port.
      * 
      */
     @Import(name="port")
     private @Nullable Output<String> port;
 
     /**
-     * @return 重定向端口。
+     * @return Redirect port.
      * 
      */
     public Optional<Output<String>> port() {
@@ -76,14 +76,14 @@ public final class RuleRuleActionRedirectConfigArgs extends com.pulumi.resources
     }
 
     /**
-     * 重定向使用的协议，支持HTTP，HTTPS。
+     * Protocol used for redirect. Supports HTTP and HTTPS.
      * 
      */
     @Import(name="protocol")
     private @Nullable Output<String> protocol;
 
     /**
-     * @return 重定向使用的协议，支持HTTP，HTTPS。
+     * @return Protocol used for redirect. Supports HTTP and HTTPS.
      * 
      */
     public Optional<Output<String>> protocol() {
@@ -119,7 +119,7 @@ public final class RuleRuleActionRedirectConfigArgs extends com.pulumi.resources
         }
 
         /**
-         * @param host 重定向域名，仅支持精确域名。
+         * @param host Redirect domain. Only exact domains are supported.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class RuleRuleActionRedirectConfigArgs extends com.pulumi.resources
         }
 
         /**
-         * @param host 重定向域名，仅支持精确域名。
+         * @param host Redirect domain. Only exact domains are supported.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class RuleRuleActionRedirectConfigArgs extends com.pulumi.resources
         }
 
         /**
-         * @param httpCode 重定向状态码，支持301，302，307，308。
+         * @param httpCode Redirect status codes supported: 301, 302, 307, 308.
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class RuleRuleActionRedirectConfigArgs extends com.pulumi.resources
         }
 
         /**
-         * @param httpCode 重定向状态码，支持301，302，307，308。
+         * @param httpCode Redirect status codes supported: 301, 302, 307, 308.
          * 
          * @return builder
          * 
@@ -161,7 +161,7 @@ public final class RuleRuleActionRedirectConfigArgs extends com.pulumi.resources
         }
 
         /**
-         * @param path 重定向 URI。。
+         * @param path Redirect URI..
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class RuleRuleActionRedirectConfigArgs extends com.pulumi.resources
         }
 
         /**
-         * @param path 重定向 URI。。
+         * @param path Redirect URI..
          * 
          * @return builder
          * 
@@ -182,7 +182,7 @@ public final class RuleRuleActionRedirectConfigArgs extends com.pulumi.resources
         }
 
         /**
-         * @param port 重定向端口。
+         * @param port Redirect port.
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class RuleRuleActionRedirectConfigArgs extends com.pulumi.resources
         }
 
         /**
-         * @param port 重定向端口。
+         * @param port Redirect port.
          * 
          * @return builder
          * 
@@ -203,7 +203,7 @@ public final class RuleRuleActionRedirectConfigArgs extends com.pulumi.resources
         }
 
         /**
-         * @param protocol 重定向使用的协议，支持HTTP，HTTPS。
+         * @param protocol Protocol used for redirect. Supports HTTP and HTTPS.
          * 
          * @return builder
          * 
@@ -214,7 +214,7 @@ public final class RuleRuleActionRedirectConfigArgs extends com.pulumi.resources
         }
 
         /**
-         * @param protocol 重定向使用的协议，支持HTTP，HTTPS。
+         * @param protocol Protocol used for redirect. Supports HTTP and HTTPS.
          * 
          * @return builder
          * 

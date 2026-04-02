@@ -17,14 +17,14 @@ public final class EndpointServiceResourceArgs extends com.pulumi.resources.Reso
     public static final EndpointServiceResourceArgs Empty = new EndpointServiceResourceArgs();
 
     /**
-     * 终端节点服务ID。
+     * Endpoint service ID.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 终端节点服务ID。
+     * @return Endpoint service ID.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -32,14 +32,14 @@ public final class EndpointServiceResourceArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 待添加到终端节点服务中的服务资源ID。
+     * Service resource ID to be added to the endpoint service.
      * 
      */
     @Import(name="resourceId")
     private @Nullable Output<String> resourceId;
 
     /**
-     * @return 待添加到终端节点服务中的服务资源ID。
+     * @return Service resource ID to be added to the endpoint service.
      * 
      */
     public Optional<Output<String>> resourceId() {
@@ -47,14 +47,14 @@ public final class EndpointServiceResourceArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 负载均衡提供服务的可用区。
+     * Availability zone where the load balancer provides service.
      * 
      */
     @Import(name="zoneIds")
     private @Nullable Output<List<String>> zoneIds;
 
     /**
-     * @return 负载均衡提供服务的可用区。
+     * @return Availability zone where the load balancer provides service.
      * 
      */
     public Optional<Output<List<String>>> zoneIds() {
@@ -88,7 +88,7 @@ public final class EndpointServiceResourceArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param instanceId 终端节点服务ID。
+         * @param instanceId Endpoint service ID.
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class EndpointServiceResourceArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param instanceId 终端节点服务ID。
+         * @param instanceId Endpoint service ID.
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class EndpointServiceResourceArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param resourceId 待添加到终端节点服务中的服务资源ID。
+         * @param resourceId Service resource ID to be added to the endpoint service.
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class EndpointServiceResourceArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param resourceId 待添加到终端节点服务中的服务资源ID。
+         * @param resourceId Service resource ID to be added to the endpoint service.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class EndpointServiceResourceArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param zoneIds 负载均衡提供服务的可用区。
+         * @param zoneIds Availability zone where the load balancer provides service.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class EndpointServiceResourceArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param zoneIds 负载均衡提供服务的可用区。
+         * @param zoneIds Availability zone where the load balancer provides service.
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class EndpointServiceResourceArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param zoneIds 负载均衡提供服务的可用区。
+         * @param zoneIds Availability zone where the load balancer provides service.
          * 
          * @return builder
          * 

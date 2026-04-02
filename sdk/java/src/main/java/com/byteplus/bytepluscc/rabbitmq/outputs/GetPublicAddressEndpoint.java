@@ -11,62 +11,62 @@ import java.util.Objects;
 @CustomType
 public final class GetPublicAddressEndpoint {
     /**
-     * @return 实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
+     * @return Access point type of the instance. RabbitMQ instance provides the following access point types: WEB: Web UI access point, AMQP0*9*1: AMQP access point, MQTT: MQTT access point, WEB_MQTT: WEB and MQTT access point, STOMP: STOMP access point.
      * 
      */
     private String endpointType;
     /**
-     * @return 实例的私网访问域名。
+     * @return Instance private network access domain name.
      * 
      */
     private String internalEndpoint;
     /**
-     * @return 公共服务区 IP 接入点。
+     * @return Public service zone IP access point.
      * 
      */
     private String internalIpEndpoint;
     /**
-     * @return 接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
+     * @return Network type of the access point. PrivateNetwork indicates private VPC network.
      * 
      */
     private String networkType;
     /**
-     * @return 实例公网访问域名。仅在开启公网访问之后显示。
+     * @return Instance public access domain name. Displayed only after public access is enabled.
      * 
      */
     private String publicEndpoint;
 
     private GetPublicAddressEndpoint() {}
     /**
-     * @return 实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
+     * @return Access point type of the instance. RabbitMQ instance provides the following access point types: WEB: Web UI access point, AMQP0*9*1: AMQP access point, MQTT: MQTT access point, WEB_MQTT: WEB and MQTT access point, STOMP: STOMP access point.
      * 
      */
     public String endpointType() {
         return this.endpointType;
     }
     /**
-     * @return 实例的私网访问域名。
+     * @return Instance private network access domain name.
      * 
      */
     public String internalEndpoint() {
         return this.internalEndpoint;
     }
     /**
-     * @return 公共服务区 IP 接入点。
+     * @return Public service zone IP access point.
      * 
      */
     public String internalIpEndpoint() {
         return this.internalIpEndpoint;
     }
     /**
-     * @return 接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
+     * @return Network type of the access point. PrivateNetwork indicates private VPC network.
      * 
      */
     public String networkType() {
         return this.networkType;
     }
     /**
-     * @return 实例公网访问域名。仅在开启公网访问之后显示。
+     * @return Instance public access domain name. Displayed only after public access is enabled.
      * 
      */
     public String publicEndpoint() {

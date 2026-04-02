@@ -30,11 +30,11 @@ class DirectConnectGatewayArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['DirectConnectGatewayTagArgs']]]] = None):
         """
         The set of arguments for constructing a DirectConnectGateway resource.
-        :param pulumi.Input[builtins.int] bgp_asn: 专线网关的ASN（Autonomous System Number）。专线网关ASN有效范围为：137718、64512 ～ 65534 、4200000000 ～ 4294967294，其中137718为火山引擎的ASN。如果专线网关仅在普通场景下使用（如本地IDC通过专线连接访问单个云上VPC资源），请使用火山引擎ASN（137718）。如果专线网关在特殊场景下使用（如单个IDC通过专线连接访问多个云企业网），每个专线网关均要自定义ASN且避免使用火山引擎ASN（137718），确保不同专线网关的ASN不重复。
-        :param pulumi.Input[builtins.str] description: 专线网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
-        :param pulumi.Input[builtins.str] direct_connect_gateway_name: 专线网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为专线网关的ID。
-        :param pulumi.Input[builtins.bool] enable_ipv6: 是否支持IPv6。true：支持。false：不支持。
-        :param pulumi.Input[builtins.str] project_name: 专线网关所属的项目。
+        :param pulumi.Input[builtins.int] bgp_asn: ASN (Autonomous System Number) of the Direct Connect Gateway. Valid ASN range: 137718, 64512–65534, 4200000000–4294967294, where 137718 is the ASN for Volcengine. If the Direct Connect Gateway is used in standard scenarios (such as a local IDC connecting to a single cloud VPC resource via dedicated connection), use the Volcengine ASN (137718). If used in special scenarios (such as a single IDC connecting to multiple Cloud Enterprise Networks via dedicated connection), each Direct Connect Gateway must use a custom ASN and avoid using the Volcengine ASN (137718), ensuring that ASNs are not duplicated across Direct Connect Gateways.
+        :param pulumi.Input[builtins.str] description: Description for the dedicated gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length is limited to 0 to 255 characters. If this parameter is not provided or no value is entered, the default is an empty string.
+        :param pulumi.Input[builtins.str] direct_connect_gateway_name: Name of the Direct Connect Gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the Direct Connect Gateway ID.
+        :param pulumi.Input[builtins.bool] enable_ipv6: Whether IPv6 is supported. true: supported. false: not supported.
+        :param pulumi.Input[builtins.str] project_name: Project to which the Direct Connect Gateway belongs.
         """
         if bgp_asn is not None:
             pulumi.set(__self__, "bgp_asn", bgp_asn)
@@ -53,7 +53,7 @@ class DirectConnectGatewayArgs:
     @pulumi.getter(name="bgpAsn")
     def bgp_asn(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        专线网关的ASN（Autonomous System Number）。专线网关ASN有效范围为：137718、64512 ～ 65534 、4200000000 ～ 4294967294，其中137718为火山引擎的ASN。如果专线网关仅在普通场景下使用（如本地IDC通过专线连接访问单个云上VPC资源），请使用火山引擎ASN（137718）。如果专线网关在特殊场景下使用（如单个IDC通过专线连接访问多个云企业网），每个专线网关均要自定义ASN且避免使用火山引擎ASN（137718），确保不同专线网关的ASN不重复。
+        ASN (Autonomous System Number) of the Direct Connect Gateway. Valid ASN range: 137718, 64512–65534, 4200000000–4294967294, where 137718 is the ASN for Volcengine. If the Direct Connect Gateway is used in standard scenarios (such as a local IDC connecting to a single cloud VPC resource via dedicated connection), use the Volcengine ASN (137718). If used in special scenarios (such as a single IDC connecting to multiple Cloud Enterprise Networks via dedicated connection), each Direct Connect Gateway must use a custom ASN and avoid using the Volcengine ASN (137718), ensuring that ASNs are not duplicated across Direct Connect Gateways.
         """
         return pulumi.get(self, "bgp_asn")
 
@@ -65,7 +65,7 @@ class DirectConnectGatewayArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        专线网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        Description for the dedicated gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length is limited to 0 to 255 characters. If this parameter is not provided or no value is entered, the default is an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -77,7 +77,7 @@ class DirectConnectGatewayArgs:
     @pulumi.getter(name="directConnectGatewayName")
     def direct_connect_gateway_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        专线网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为专线网关的ID。
+        Name of the Direct Connect Gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the Direct Connect Gateway ID.
         """
         return pulumi.get(self, "direct_connect_gateway_name")
 
@@ -89,7 +89,7 @@ class DirectConnectGatewayArgs:
     @pulumi.getter(name="enableIpv6")
     def enable_ipv6(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否支持IPv6。true：支持。false：不支持。
+        Whether IPv6 is supported. true: supported. false: not supported.
         """
         return pulumi.get(self, "enable_ipv6")
 
@@ -101,7 +101,7 @@ class DirectConnectGatewayArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        专线网关所属的项目。
+        Project to which the Direct Connect Gateway belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -141,21 +141,21 @@ class _DirectConnectGatewayState:
                  updated_time: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering DirectConnectGateway resources.
-        :param pulumi.Input[builtins.str] account_id: 专线网关所属账号的ID。
-        :param pulumi.Input['DirectConnectGatewayAssociateEicArgs'] associate_eic: 关联的EIC信息。
-        :param pulumi.Input[builtins.int] bgp_asn: 专线网关的ASN（Autonomous System Number）。专线网关ASN有效范围为：137718、64512 ～ 65534 、4200000000 ～ 4294967294，其中137718为火山引擎的ASN。如果专线网关仅在普通场景下使用（如本地IDC通过专线连接访问单个云上VPC资源），请使用火山引擎ASN（137718）。如果专线网关在特殊场景下使用（如单个IDC通过专线连接访问多个云企业网），每个专线网关均要自定义ASN且避免使用火山引擎ASN（137718），确保不同专线网关的ASN不重复。
-        :param pulumi.Input[builtins.str] business_status: 专线网关是否被锁定。Normal：正常。FinancialLocked：被锁定。
-        :param pulumi.Input[builtins.str] created_time: 创建专线网关的时间。
-        :param pulumi.Input[builtins.str] deleted_time: 预期资源强制回收时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
-        :param pulumi.Input[builtins.str] description: 专线网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
-        :param pulumi.Input[builtins.str] direct_connect_gateway_id: 专线网关的ID。
-        :param pulumi.Input[builtins.str] direct_connect_gateway_name: 专线网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为专线网关的ID。
-        :param pulumi.Input[builtins.bool] enable_ipv6: 是否支持IPv6。true：支持。false：不支持。
-        :param pulumi.Input[builtins.str] lock_reason: 专线网关被锁定的原因。unlock：解锁。financial：因欠费被锁定。security：因安全被锁定。
-        :param pulumi.Input[builtins.str] overdue_time: 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
-        :param pulumi.Input[builtins.str] project_name: 专线网关所属的项目。
-        :param pulumi.Input[builtins.str] status: 专线网关的状态。Creating：创建中。Deleting：删除中。Pending：配置中。Available：可用。
-        :param pulumi.Input[builtins.str] updated_time: 更新专线网关的时间。
+        :param pulumi.Input[builtins.str] account_id: ID of the account to which the Direct Connect Gateway belongs.
+        :param pulumi.Input['DirectConnectGatewayAssociateEicArgs'] associate_eic: Associated EIC information.
+        :param pulumi.Input[builtins.int] bgp_asn: ASN (Autonomous System Number) of the Direct Connect Gateway. Valid ASN range: 137718, 64512–65534, 4200000000–4294967294, where 137718 is the ASN for Volcengine. If the Direct Connect Gateway is used in standard scenarios (such as a local IDC connecting to a single cloud VPC resource via dedicated connection), use the Volcengine ASN (137718). If used in special scenarios (such as a single IDC connecting to multiple Cloud Enterprise Networks via dedicated connection), each Direct Connect Gateway must use a custom ASN and avoid using the Volcengine ASN (137718), ensuring that ASNs are not duplicated across Direct Connect Gateways.
+        :param pulumi.Input[builtins.str] business_status: Indicates whether the dedicated gateway is locked. Normal: normal. FinancialLocked: locked.
+        :param pulumi.Input[builtins.str] created_time: Time when the Direct Connect Gateway was created.
+        :param pulumi.Input[builtins.str] deleted_time: Expected forced resource reclamation time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
+        :param pulumi.Input[builtins.str] description: Description for the dedicated gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length is limited to 0 to 255 characters. If this parameter is not provided or no value is entered, the default is an empty string.
+        :param pulumi.Input[builtins.str] direct_connect_gateway_id: ID of the Direct Connect Gateway.
+        :param pulumi.Input[builtins.str] direct_connect_gateway_name: Name of the Direct Connect Gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the Direct Connect Gateway ID.
+        :param pulumi.Input[builtins.bool] enable_ipv6: Whether IPv6 is supported. true: supported. false: not supported.
+        :param pulumi.Input[builtins.str] lock_reason: Reason for Direct Connect Gateway lock. unlock: not locked; financial: locked due to overdue payment; security: locked due to security reasons.
+        :param pulumi.Input[builtins.str] overdue_time: Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
+        :param pulumi.Input[builtins.str] project_name: Project to which the Direct Connect Gateway belongs.
+        :param pulumi.Input[builtins.str] status: Status of the Direct Connect Gateway. Creating: creating. Deleting: deleting. Pending: configuring. Available: available.
+        :param pulumi.Input[builtins.str] updated_time: Time when the Direct Connect Gateway was updated.
         """
         if account_id is not None:
             pulumi.set(__self__, "account_id", account_id)
@@ -196,7 +196,7 @@ class _DirectConnectGatewayState:
     @pulumi.getter(name="accountId")
     def account_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        专线网关所属账号的ID。
+        ID of the account to which the Direct Connect Gateway belongs.
         """
         return pulumi.get(self, "account_id")
 
@@ -217,7 +217,7 @@ class _DirectConnectGatewayState:
     @pulumi.getter(name="associateEic")
     def associate_eic(self) -> Optional[pulumi.Input['DirectConnectGatewayAssociateEicArgs']]:
         """
-        关联的EIC信息。
+        Associated EIC information.
         """
         return pulumi.get(self, "associate_eic")
 
@@ -229,7 +229,7 @@ class _DirectConnectGatewayState:
     @pulumi.getter(name="bgpAsn")
     def bgp_asn(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        专线网关的ASN（Autonomous System Number）。专线网关ASN有效范围为：137718、64512 ～ 65534 、4200000000 ～ 4294967294，其中137718为火山引擎的ASN。如果专线网关仅在普通场景下使用（如本地IDC通过专线连接访问单个云上VPC资源），请使用火山引擎ASN（137718）。如果专线网关在特殊场景下使用（如单个IDC通过专线连接访问多个云企业网），每个专线网关均要自定义ASN且避免使用火山引擎ASN（137718），确保不同专线网关的ASN不重复。
+        ASN (Autonomous System Number) of the Direct Connect Gateway. Valid ASN range: 137718, 64512–65534, 4200000000–4294967294, where 137718 is the ASN for Volcengine. If the Direct Connect Gateway is used in standard scenarios (such as a local IDC connecting to a single cloud VPC resource via dedicated connection), use the Volcengine ASN (137718). If used in special scenarios (such as a single IDC connecting to multiple Cloud Enterprise Networks via dedicated connection), each Direct Connect Gateway must use a custom ASN and avoid using the Volcengine ASN (137718), ensuring that ASNs are not duplicated across Direct Connect Gateways.
         """
         return pulumi.get(self, "bgp_asn")
 
@@ -241,7 +241,7 @@ class _DirectConnectGatewayState:
     @pulumi.getter(name="businessStatus")
     def business_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        专线网关是否被锁定。Normal：正常。FinancialLocked：被锁定。
+        Indicates whether the dedicated gateway is locked. Normal: normal. FinancialLocked: locked.
         """
         return pulumi.get(self, "business_status")
 
@@ -253,7 +253,7 @@ class _DirectConnectGatewayState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建专线网关的时间。
+        Time when the Direct Connect Gateway was created.
         """
         return pulumi.get(self, "created_time")
 
@@ -265,7 +265,7 @@ class _DirectConnectGatewayState:
     @pulumi.getter(name="deletedTime")
     def deleted_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        预期资源强制回收时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+        Expected forced resource reclamation time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
         """
         return pulumi.get(self, "deleted_time")
 
@@ -277,7 +277,7 @@ class _DirectConnectGatewayState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        专线网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        Description for the dedicated gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length is limited to 0 to 255 characters. If this parameter is not provided or no value is entered, the default is an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -289,7 +289,7 @@ class _DirectConnectGatewayState:
     @pulumi.getter(name="directConnectGatewayId")
     def direct_connect_gateway_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        专线网关的ID。
+        ID of the Direct Connect Gateway.
         """
         return pulumi.get(self, "direct_connect_gateway_id")
 
@@ -301,7 +301,7 @@ class _DirectConnectGatewayState:
     @pulumi.getter(name="directConnectGatewayName")
     def direct_connect_gateway_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        专线网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为专线网关的ID。
+        Name of the Direct Connect Gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the Direct Connect Gateway ID.
         """
         return pulumi.get(self, "direct_connect_gateway_name")
 
@@ -313,7 +313,7 @@ class _DirectConnectGatewayState:
     @pulumi.getter(name="enableIpv6")
     def enable_ipv6(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否支持IPv6。true：支持。false：不支持。
+        Whether IPv6 is supported. true: supported. false: not supported.
         """
         return pulumi.get(self, "enable_ipv6")
 
@@ -325,7 +325,7 @@ class _DirectConnectGatewayState:
     @pulumi.getter(name="lockReason")
     def lock_reason(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        专线网关被锁定的原因。unlock：解锁。financial：因欠费被锁定。security：因安全被锁定。
+        Reason for Direct Connect Gateway lock. unlock: not locked; financial: locked due to overdue payment; security: locked due to security reasons.
         """
         return pulumi.get(self, "lock_reason")
 
@@ -337,7 +337,7 @@ class _DirectConnectGatewayState:
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+        Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
         """
         return pulumi.get(self, "overdue_time")
 
@@ -349,7 +349,7 @@ class _DirectConnectGatewayState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        专线网关所属的项目。
+        Project to which the Direct Connect Gateway belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -361,7 +361,7 @@ class _DirectConnectGatewayState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        专线网关的状态。Creating：创建中。Deleting：删除中。Pending：配置中。Available：可用。
+        Status of the Direct Connect Gateway. Creating: creating. Deleting: deleting. Pending: configuring. Available: available.
         """
         return pulumi.get(self, "status")
 
@@ -382,7 +382,7 @@ class _DirectConnectGatewayState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        更新专线网关的时间。
+        Time when the Direct Connect Gateway was updated.
         """
         return pulumi.get(self, "updated_time")
 
@@ -405,7 +405,7 @@ class DirectConnectGateway(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DirectConnectGatewayTagArgs', 'DirectConnectGatewayTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        专线网关是本地数据中心访问云上的入口，用于连接私有网络（VPC）与物理专线，实现云下数据中心（IDC）和云上私有网络（VPC）互访。
+        The Direct Connect Gateway is the entry point for local data centers to access the cloud. It connects private networks (VPC) and physical dedicated connections, enabling mutual access between on-premises data centers (IDC) and cloud private networks (VPC).
 
         ## Example Usage
 
@@ -432,11 +432,11 @@ class DirectConnectGateway(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] bgp_asn: 专线网关的ASN（Autonomous System Number）。专线网关ASN有效范围为：137718、64512 ～ 65534 、4200000000 ～ 4294967294，其中137718为火山引擎的ASN。如果专线网关仅在普通场景下使用（如本地IDC通过专线连接访问单个云上VPC资源），请使用火山引擎ASN（137718）。如果专线网关在特殊场景下使用（如单个IDC通过专线连接访问多个云企业网），每个专线网关均要自定义ASN且避免使用火山引擎ASN（137718），确保不同专线网关的ASN不重复。
-        :param pulumi.Input[builtins.str] description: 专线网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
-        :param pulumi.Input[builtins.str] direct_connect_gateway_name: 专线网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为专线网关的ID。
-        :param pulumi.Input[builtins.bool] enable_ipv6: 是否支持IPv6。true：支持。false：不支持。
-        :param pulumi.Input[builtins.str] project_name: 专线网关所属的项目。
+        :param pulumi.Input[builtins.int] bgp_asn: ASN (Autonomous System Number) of the Direct Connect Gateway. Valid ASN range: 137718, 64512–65534, 4200000000–4294967294, where 137718 is the ASN for Volcengine. If the Direct Connect Gateway is used in standard scenarios (such as a local IDC connecting to a single cloud VPC resource via dedicated connection), use the Volcengine ASN (137718). If used in special scenarios (such as a single IDC connecting to multiple Cloud Enterprise Networks via dedicated connection), each Direct Connect Gateway must use a custom ASN and avoid using the Volcengine ASN (137718), ensuring that ASNs are not duplicated across Direct Connect Gateways.
+        :param pulumi.Input[builtins.str] description: Description for the dedicated gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length is limited to 0 to 255 characters. If this parameter is not provided or no value is entered, the default is an empty string.
+        :param pulumi.Input[builtins.str] direct_connect_gateway_name: Name of the Direct Connect Gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the Direct Connect Gateway ID.
+        :param pulumi.Input[builtins.bool] enable_ipv6: Whether IPv6 is supported. true: supported. false: not supported.
+        :param pulumi.Input[builtins.str] project_name: Project to which the Direct Connect Gateway belongs.
         """
         ...
     @overload
@@ -445,7 +445,7 @@ class DirectConnectGateway(pulumi.CustomResource):
                  args: Optional[DirectConnectGatewayArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        专线网关是本地数据中心访问云上的入口，用于连接私有网络（VPC）与物理专线，实现云下数据中心（IDC）和云上私有网络（VPC）互访。
+        The Direct Connect Gateway is the entry point for local data centers to access the cloud. It connects private networks (VPC) and physical dedicated connections, enabling mutual access between on-premises data centers (IDC) and cloud private networks (VPC).
 
         ## Example Usage
 
@@ -551,21 +551,21 @@ class DirectConnectGateway(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] account_id: 专线网关所属账号的ID。
-        :param pulumi.Input[Union['DirectConnectGatewayAssociateEicArgs', 'DirectConnectGatewayAssociateEicArgsDict']] associate_eic: 关联的EIC信息。
-        :param pulumi.Input[builtins.int] bgp_asn: 专线网关的ASN（Autonomous System Number）。专线网关ASN有效范围为：137718、64512 ～ 65534 、4200000000 ～ 4294967294，其中137718为火山引擎的ASN。如果专线网关仅在普通场景下使用（如本地IDC通过专线连接访问单个云上VPC资源），请使用火山引擎ASN（137718）。如果专线网关在特殊场景下使用（如单个IDC通过专线连接访问多个云企业网），每个专线网关均要自定义ASN且避免使用火山引擎ASN（137718），确保不同专线网关的ASN不重复。
-        :param pulumi.Input[builtins.str] business_status: 专线网关是否被锁定。Normal：正常。FinancialLocked：被锁定。
-        :param pulumi.Input[builtins.str] created_time: 创建专线网关的时间。
-        :param pulumi.Input[builtins.str] deleted_time: 预期资源强制回收时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
-        :param pulumi.Input[builtins.str] description: 专线网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
-        :param pulumi.Input[builtins.str] direct_connect_gateway_id: 专线网关的ID。
-        :param pulumi.Input[builtins.str] direct_connect_gateway_name: 专线网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为专线网关的ID。
-        :param pulumi.Input[builtins.bool] enable_ipv6: 是否支持IPv6。true：支持。false：不支持。
-        :param pulumi.Input[builtins.str] lock_reason: 专线网关被锁定的原因。unlock：解锁。financial：因欠费被锁定。security：因安全被锁定。
-        :param pulumi.Input[builtins.str] overdue_time: 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
-        :param pulumi.Input[builtins.str] project_name: 专线网关所属的项目。
-        :param pulumi.Input[builtins.str] status: 专线网关的状态。Creating：创建中。Deleting：删除中。Pending：配置中。Available：可用。
-        :param pulumi.Input[builtins.str] updated_time: 更新专线网关的时间。
+        :param pulumi.Input[builtins.str] account_id: ID of the account to which the Direct Connect Gateway belongs.
+        :param pulumi.Input[Union['DirectConnectGatewayAssociateEicArgs', 'DirectConnectGatewayAssociateEicArgsDict']] associate_eic: Associated EIC information.
+        :param pulumi.Input[builtins.int] bgp_asn: ASN (Autonomous System Number) of the Direct Connect Gateway. Valid ASN range: 137718, 64512–65534, 4200000000–4294967294, where 137718 is the ASN for Volcengine. If the Direct Connect Gateway is used in standard scenarios (such as a local IDC connecting to a single cloud VPC resource via dedicated connection), use the Volcengine ASN (137718). If used in special scenarios (such as a single IDC connecting to multiple Cloud Enterprise Networks via dedicated connection), each Direct Connect Gateway must use a custom ASN and avoid using the Volcengine ASN (137718), ensuring that ASNs are not duplicated across Direct Connect Gateways.
+        :param pulumi.Input[builtins.str] business_status: Indicates whether the dedicated gateway is locked. Normal: normal. FinancialLocked: locked.
+        :param pulumi.Input[builtins.str] created_time: Time when the Direct Connect Gateway was created.
+        :param pulumi.Input[builtins.str] deleted_time: Expected forced resource reclamation time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
+        :param pulumi.Input[builtins.str] description: Description for the dedicated gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length is limited to 0 to 255 characters. If this parameter is not provided or no value is entered, the default is an empty string.
+        :param pulumi.Input[builtins.str] direct_connect_gateway_id: ID of the Direct Connect Gateway.
+        :param pulumi.Input[builtins.str] direct_connect_gateway_name: Name of the Direct Connect Gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the Direct Connect Gateway ID.
+        :param pulumi.Input[builtins.bool] enable_ipv6: Whether IPv6 is supported. true: supported. false: not supported.
+        :param pulumi.Input[builtins.str] lock_reason: Reason for Direct Connect Gateway lock. unlock: not locked; financial: locked due to overdue payment; security: locked due to security reasons.
+        :param pulumi.Input[builtins.str] overdue_time: Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
+        :param pulumi.Input[builtins.str] project_name: Project to which the Direct Connect Gateway belongs.
+        :param pulumi.Input[builtins.str] status: Status of the Direct Connect Gateway. Creating: creating. Deleting: deleting. Pending: configuring. Available: available.
+        :param pulumi.Input[builtins.str] updated_time: Time when the Direct Connect Gateway was updated.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -594,7 +594,7 @@ class DirectConnectGateway(pulumi.CustomResource):
     @pulumi.getter(name="accountId")
     def account_id(self) -> pulumi.Output[builtins.str]:
         """
-        专线网关所属账号的ID。
+        ID of the account to which the Direct Connect Gateway belongs.
         """
         return pulumi.get(self, "account_id")
 
@@ -607,7 +607,7 @@ class DirectConnectGateway(pulumi.CustomResource):
     @pulumi.getter(name="associateEic")
     def associate_eic(self) -> pulumi.Output['outputs.DirectConnectGatewayAssociateEic']:
         """
-        关联的EIC信息。
+        Associated EIC information.
         """
         return pulumi.get(self, "associate_eic")
 
@@ -615,7 +615,7 @@ class DirectConnectGateway(pulumi.CustomResource):
     @pulumi.getter(name="bgpAsn")
     def bgp_asn(self) -> pulumi.Output[builtins.int]:
         """
-        专线网关的ASN（Autonomous System Number）。专线网关ASN有效范围为：137718、64512 ～ 65534 、4200000000 ～ 4294967294，其中137718为火山引擎的ASN。如果专线网关仅在普通场景下使用（如本地IDC通过专线连接访问单个云上VPC资源），请使用火山引擎ASN（137718）。如果专线网关在特殊场景下使用（如单个IDC通过专线连接访问多个云企业网），每个专线网关均要自定义ASN且避免使用火山引擎ASN（137718），确保不同专线网关的ASN不重复。
+        ASN (Autonomous System Number) of the Direct Connect Gateway. Valid ASN range: 137718, 64512–65534, 4200000000–4294967294, where 137718 is the ASN for Volcengine. If the Direct Connect Gateway is used in standard scenarios (such as a local IDC connecting to a single cloud VPC resource via dedicated connection), use the Volcengine ASN (137718). If used in special scenarios (such as a single IDC connecting to multiple Cloud Enterprise Networks via dedicated connection), each Direct Connect Gateway must use a custom ASN and avoid using the Volcengine ASN (137718), ensuring that ASNs are not duplicated across Direct Connect Gateways.
         """
         return pulumi.get(self, "bgp_asn")
 
@@ -623,7 +623,7 @@ class DirectConnectGateway(pulumi.CustomResource):
     @pulumi.getter(name="businessStatus")
     def business_status(self) -> pulumi.Output[builtins.str]:
         """
-        专线网关是否被锁定。Normal：正常。FinancialLocked：被锁定。
+        Indicates whether the dedicated gateway is locked. Normal: normal. FinancialLocked: locked.
         """
         return pulumi.get(self, "business_status")
 
@@ -631,7 +631,7 @@ class DirectConnectGateway(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        创建专线网关的时间。
+        Time when the Direct Connect Gateway was created.
         """
         return pulumi.get(self, "created_time")
 
@@ -639,7 +639,7 @@ class DirectConnectGateway(pulumi.CustomResource):
     @pulumi.getter(name="deletedTime")
     def deleted_time(self) -> pulumi.Output[builtins.str]:
         """
-        预期资源强制回收时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+        Expected forced resource reclamation time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
         """
         return pulumi.get(self, "deleted_time")
 
@@ -647,7 +647,7 @@ class DirectConnectGateway(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        专线网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        Description for the dedicated gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length is limited to 0 to 255 characters. If this parameter is not provided or no value is entered, the default is an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -655,7 +655,7 @@ class DirectConnectGateway(pulumi.CustomResource):
     @pulumi.getter(name="directConnectGatewayId")
     def direct_connect_gateway_id(self) -> pulumi.Output[builtins.str]:
         """
-        专线网关的ID。
+        ID of the Direct Connect Gateway.
         """
         return pulumi.get(self, "direct_connect_gateway_id")
 
@@ -663,7 +663,7 @@ class DirectConnectGateway(pulumi.CustomResource):
     @pulumi.getter(name="directConnectGatewayName")
     def direct_connect_gateway_name(self) -> pulumi.Output[builtins.str]:
         """
-        专线网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为专线网关的ID。
+        Name of the Direct Connect Gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the Direct Connect Gateway ID.
         """
         return pulumi.get(self, "direct_connect_gateway_name")
 
@@ -671,7 +671,7 @@ class DirectConnectGateway(pulumi.CustomResource):
     @pulumi.getter(name="enableIpv6")
     def enable_ipv6(self) -> pulumi.Output[builtins.bool]:
         """
-        是否支持IPv6。true：支持。false：不支持。
+        Whether IPv6 is supported. true: supported. false: not supported.
         """
         return pulumi.get(self, "enable_ipv6")
 
@@ -679,7 +679,7 @@ class DirectConnectGateway(pulumi.CustomResource):
     @pulumi.getter(name="lockReason")
     def lock_reason(self) -> pulumi.Output[builtins.str]:
         """
-        专线网关被锁定的原因。unlock：解锁。financial：因欠费被锁定。security：因安全被锁定。
+        Reason for Direct Connect Gateway lock. unlock: not locked; financial: locked due to overdue payment; security: locked due to security reasons.
         """
         return pulumi.get(self, "lock_reason")
 
@@ -687,7 +687,7 @@ class DirectConnectGateway(pulumi.CustomResource):
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> pulumi.Output[builtins.str]:
         """
-        资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+        Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
         """
         return pulumi.get(self, "overdue_time")
 
@@ -695,7 +695,7 @@ class DirectConnectGateway(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        专线网关所属的项目。
+        Project to which the Direct Connect Gateway belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -703,7 +703,7 @@ class DirectConnectGateway(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        专线网关的状态。Creating：创建中。Deleting：删除中。Pending：配置中。Available：可用。
+        Status of the Direct Connect Gateway. Creating: creating. Deleting: deleting. Pending: configuring. Available: available.
         """
         return pulumi.get(self, "status")
 
@@ -716,7 +716,7 @@ class DirectConnectGateway(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        更新专线网关的时间。
+        Time when the Direct Connect Gateway was updated.
         """
         return pulumi.get(self, "updated_time")
 

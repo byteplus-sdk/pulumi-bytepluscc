@@ -15,12 +15,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf.Outputs
     public sealed class DomainBackendGroup
     {
         /// <summary>
-        /// 接入的端口号。
+        /// Access port number.
         /// </summary>
         public readonly ImmutableArray<int> AccessPorts;
         public readonly ImmutableArray<Outputs.DomainBackendGroupBackend> Backends;
         /// <summary>
-        /// 源站组名称。
+        /// Origin group name.
         /// </summary>
         public readonly string? Name;
 

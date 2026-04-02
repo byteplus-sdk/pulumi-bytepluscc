@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 沙箱实例是云沙箱中实际执行沙箱镜像的安全且隔离的容器运行环境。
+ * A sandbox instance is a secure and isolated container runtime environment that actually runs the sandbox image in the cloud sandbox
  *
  * ## Import
  *
@@ -44,77 +44,77 @@ export class Sandbox extends pulumi.CustomResource {
     }
 
     /**
-     * 沙箱实例所在可用区 ID。
+     * Availability zone ID of the sandbox instance
      */
     public /*out*/ readonly availabilityZone!: pulumi.Output<string>;
     /**
-     * 沙箱实例 CPU 规格：单位：milli cpu取值范围：250~16000,默认值：1000。
+     * Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
      */
     public readonly cpuMilli!: pulumi.Output<number>;
     /**
-     * 沙箱实例创建时间。
+     * Sandbox instance creation time.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     public readonly envs!: pulumi.Output<outputs.vefaas.SandboxEnv[]>;
     /**
-     * 沙箱实例启动失败错误码。参数值说明：internal*load*request*error：系统内部错误，function*initialize*failed：业务进程初始化错误，function*health*check*failed：健康检查错误，route_terminating：路由删除中，正常启动沙箱实例时，该字段为空。
+     * Sandbox instance startup failure error code. Parameter description: internal*load*request*error: internal system error, function*initialize*failed: business process initialization error, function*health*check*failed: health check error, route_terminating: route deletion in progress. This field is empty when the sandbox instance starts normally
      */
     public /*out*/ readonly errorCode!: pulumi.Output<string>;
     /**
-     * 沙箱实例启动失败的错误码详情。正常启动沙箱实例时，该字段为空。
+     * Details of the error code when the sandbox instance fails to start. This field is empty when the sandbox instance starts normally.
      */
     public /*out*/ readonly errorMessage!: pulumi.Output<string>;
     /**
-     * 沙箱实例存活时长。
+     * Sandbox instance uptime.
      */
     public /*out*/ readonly expireAt!: pulumi.Output<string>;
     /**
-     * 沙箱实例所属的沙箱应用 ID。
+     * Sandbox application ID to which the sandbox instance belongs
      */
     public readonly functionId!: pulumi.Output<string>;
     /**
-     * 沙箱实例镜像信息，包括镜像地址、启动命令、监听端口。
+     * Sandbox instance image information, including image address, startup command, and listening port.
      */
     public readonly instanceImageInfo!: pulumi.Output<outputs.vefaas.SandboxInstanceImageInfo>;
     /**
-     * 沙箱实例级别对象存储（TOS）存储挂载配置。
+     * Instance-level object storage (TOS) mount configuration for the sandbox instance
      */
     public readonly instanceTosMountConfig!: pulumi.Output<outputs.vefaas.SandboxInstanceTosMountConfig>;
     /**
-     * 沙箱实例类型 。参数值说明：elastic：弹性实例，frozen：冻结实例，activated：激活实例，reserved：预留实例。
+     * Sandbox instance type. Parameter description: elastic: elastic instance, frozen: frozen instance, activated: activated instance, reserved: reserved instance
      */
     public /*out*/ readonly instanceType!: pulumi.Output<string>;
     /**
-     * 单实例请求最大并发数：取值范围：10~1000,默认值：100。
+     * Maximum concurrent requests per instance: range: 10~1000, default: 100
      */
     public readonly maxConcurrency!: pulumi.Output<number>;
     /**
-     * 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
+     * Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
      */
     public readonly memoryMb!: pulumi.Output<number>;
     public readonly metadatas!: pulumi.Output<outputs.vefaas.SandboxMetadata[]>;
     /**
-     * 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
+     * Whether the sandbox instance is in Pending status. Parameter description: true: yes, false: no
      */
     public /*out*/ readonly pending!: pulumi.Output<boolean>;
     /**
-     * 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
+     * Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
      */
     public readonly requestTimeout!: pulumi.Output<number>;
     /**
-     * 函数实例版本编号。
+     * Function instance version number
      */
     public /*out*/ readonly revisionNumber!: pulumi.Output<number>;
     /**
-     * 沙箱实例 ID。
+     * Sandbox instance ID
      */
     public /*out*/ readonly sandboxId!: pulumi.Output<string>;
     /**
-     * 沙箱实例状态。 参数值说明：Starting：开始启动，Ready：启动完成，Failed：启动失败，Terminating：终止中。
+     * Sandbox instance status. Parameter description: Starting: starting, Ready: startup completed, Failed: startup failed, Terminating: terminating
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     /**
-     * 沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
+     * Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
      */
     public readonly timeout!: pulumi.Output<number>;
 
@@ -187,77 +187,77 @@ export class Sandbox extends pulumi.CustomResource {
  */
 export interface SandboxState {
     /**
-     * 沙箱实例所在可用区 ID。
+     * Availability zone ID of the sandbox instance
      */
     availabilityZone?: pulumi.Input<string>;
     /**
-     * 沙箱实例 CPU 规格：单位：milli cpu取值范围：250~16000,默认值：1000。
+     * Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
      */
     cpuMilli?: pulumi.Input<number>;
     /**
-     * 沙箱实例创建时间。
+     * Sandbox instance creation time.
      */
     createdTime?: pulumi.Input<string>;
     envs?: pulumi.Input<pulumi.Input<inputs.vefaas.SandboxEnv>[]>;
     /**
-     * 沙箱实例启动失败错误码。参数值说明：internal*load*request*error：系统内部错误，function*initialize*failed：业务进程初始化错误，function*health*check*failed：健康检查错误，route_terminating：路由删除中，正常启动沙箱实例时，该字段为空。
+     * Sandbox instance startup failure error code. Parameter description: internal*load*request*error: internal system error, function*initialize*failed: business process initialization error, function*health*check*failed: health check error, route_terminating: route deletion in progress. This field is empty when the sandbox instance starts normally
      */
     errorCode?: pulumi.Input<string>;
     /**
-     * 沙箱实例启动失败的错误码详情。正常启动沙箱实例时，该字段为空。
+     * Details of the error code when the sandbox instance fails to start. This field is empty when the sandbox instance starts normally.
      */
     errorMessage?: pulumi.Input<string>;
     /**
-     * 沙箱实例存活时长。
+     * Sandbox instance uptime.
      */
     expireAt?: pulumi.Input<string>;
     /**
-     * 沙箱实例所属的沙箱应用 ID。
+     * Sandbox application ID to which the sandbox instance belongs
      */
     functionId?: pulumi.Input<string>;
     /**
-     * 沙箱实例镜像信息，包括镜像地址、启动命令、监听端口。
+     * Sandbox instance image information, including image address, startup command, and listening port.
      */
     instanceImageInfo?: pulumi.Input<inputs.vefaas.SandboxInstanceImageInfo>;
     /**
-     * 沙箱实例级别对象存储（TOS）存储挂载配置。
+     * Instance-level object storage (TOS) mount configuration for the sandbox instance
      */
     instanceTosMountConfig?: pulumi.Input<inputs.vefaas.SandboxInstanceTosMountConfig>;
     /**
-     * 沙箱实例类型 。参数值说明：elastic：弹性实例，frozen：冻结实例，activated：激活实例，reserved：预留实例。
+     * Sandbox instance type. Parameter description: elastic: elastic instance, frozen: frozen instance, activated: activated instance, reserved: reserved instance
      */
     instanceType?: pulumi.Input<string>;
     /**
-     * 单实例请求最大并发数：取值范围：10~1000,默认值：100。
+     * Maximum concurrent requests per instance: range: 10~1000, default: 100
      */
     maxConcurrency?: pulumi.Input<number>;
     /**
-     * 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
+     * Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
      */
     memoryMb?: pulumi.Input<number>;
     metadatas?: pulumi.Input<pulumi.Input<inputs.vefaas.SandboxMetadata>[]>;
     /**
-     * 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
+     * Whether the sandbox instance is in Pending status. Parameter description: true: yes, false: no
      */
     pending?: pulumi.Input<boolean>;
     /**
-     * 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
+     * Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
      */
     requestTimeout?: pulumi.Input<number>;
     /**
-     * 函数实例版本编号。
+     * Function instance version number
      */
     revisionNumber?: pulumi.Input<number>;
     /**
-     * 沙箱实例 ID。
+     * Sandbox instance ID
      */
     sandboxId?: pulumi.Input<string>;
     /**
-     * 沙箱实例状态。 参数值说明：Starting：开始启动，Ready：启动完成，Failed：启动失败，Terminating：终止中。
+     * Sandbox instance status. Parameter description: Starting: starting, Ready: startup completed, Failed: startup failed, Terminating: terminating
      */
     status?: pulumi.Input<string>;
     /**
-     * 沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
+     * Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
      */
     timeout?: pulumi.Input<number>;
 }
@@ -267,37 +267,37 @@ export interface SandboxState {
  */
 export interface SandboxArgs {
     /**
-     * 沙箱实例 CPU 规格：单位：milli cpu取值范围：250~16000,默认值：1000。
+     * Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
      */
     cpuMilli?: pulumi.Input<number>;
     envs?: pulumi.Input<pulumi.Input<inputs.vefaas.SandboxEnv>[]>;
     /**
-     * 沙箱实例所属的沙箱应用 ID。
+     * Sandbox application ID to which the sandbox instance belongs
      */
     functionId: pulumi.Input<string>;
     /**
-     * 沙箱实例镜像信息，包括镜像地址、启动命令、监听端口。
+     * Sandbox instance image information, including image address, startup command, and listening port.
      */
     instanceImageInfo?: pulumi.Input<inputs.vefaas.SandboxInstanceImageInfo>;
     /**
-     * 沙箱实例级别对象存储（TOS）存储挂载配置。
+     * Instance-level object storage (TOS) mount configuration for the sandbox instance
      */
     instanceTosMountConfig?: pulumi.Input<inputs.vefaas.SandboxInstanceTosMountConfig>;
     /**
-     * 单实例请求最大并发数：取值范围：10~1000,默认值：100。
+     * Maximum concurrent requests per instance: range: 10~1000, default: 100
      */
     maxConcurrency?: pulumi.Input<number>;
     /**
-     * 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
+     * Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
      */
     memoryMb?: pulumi.Input<number>;
     metadatas?: pulumi.Input<pulumi.Input<inputs.vefaas.SandboxMetadata>[]>;
     /**
-     * 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
+     * Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
      */
     requestTimeout?: pulumi.Input<number>;
     /**
-     * 沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
+     * Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
      */
     timeout?: pulumi.Input<number>;
 }

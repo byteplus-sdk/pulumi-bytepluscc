@@ -14,25 +14,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class UpstreamSourceIngressSettingsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 是否启用所有Ingress类。
+        /// Whether to enable all Ingress classes
         /// </summary>
         [Input("enableAllIngressClasses")]
         public Input<bool>? EnableAllIngressClasses { get; set; }
 
         /// <summary>
-        /// 是否全部命名空间。
+        /// Whether all namespaces
         /// </summary>
         [Input("enableAllNamespaces")]
         public Input<bool>? EnableAllNamespaces { get; set; }
 
         /// <summary>
-        /// 是否开启。
+        /// Whether enabled
         /// </summary>
         [Input("enableIngress")]
         public Input<bool>? EnableIngress { get; set; }
 
         /// <summary>
-        /// 是否监听IngressClass为空的资源。
+        /// Whether to monitor resources with empty IngressClass
         /// </summary>
         [Input("enableIngressWithoutIngressClass")]
         public Input<bool>? EnableIngressWithoutIngressClass { get; set; }
@@ -41,7 +41,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
         private InputList<string>? _ingressClasses;
 
         /// <summary>
-        /// 指定IngressClass。
+        /// Specify IngressClass
         /// </summary>
         public InputList<string> IngressClasses
         {
@@ -50,7 +50,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
         }
 
         /// <summary>
-        /// 流量入口切换。开启后，当前集群Ingress中Status的IP地址会被修改为当前网关的IP地址。
+        /// Traffic entry switch. When enabled, the IP address in the Status of the current cluster's Ingress will be updated to the current gateway's IP address
         /// </summary>
         [Input("updateStatus")]
         public Input<bool>? UpdateStatus { get; set; }
@@ -59,7 +59,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
         private InputList<string>? _watchNamespaces;
 
         /// <summary>
-        /// 指定命名空间。
+        /// Specify namespace
         /// </summary>
         public InputList<string> WatchNamespaces
         {

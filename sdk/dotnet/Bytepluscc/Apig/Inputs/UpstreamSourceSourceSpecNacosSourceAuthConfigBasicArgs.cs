@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class UpstreamSourceSourceSpecNacosSourceAuthConfigBasicArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 密码。
+        /// Password
         /// </summary>
         [Input("password")]
         public Input<string>? Password { get; set; }
 
         /// <summary>
-        /// 用户名。
+        /// Username
         /// </summary>
         [Input("username")]
         public Input<string>? Username { get; set; }

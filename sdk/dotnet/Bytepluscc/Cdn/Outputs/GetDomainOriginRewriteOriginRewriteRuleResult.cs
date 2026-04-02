@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class GetDomainOriginRewriteOriginRewriteRuleResult
     {
         /// <summary>
-        /// 表示该配置模块的生效条件，由一组规则组成。
+        /// Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         /// </summary>
         public readonly Outputs.GetDomainOriginRewriteOriginRewriteRuleConditionResult Condition;
         /// <summary>
-        /// 表示一个回源路径改写的规则配置。
+        /// Indicates a rule configuration for origin path rewrite.
         /// </summary>
         public readonly Outputs.GetDomainOriginRewriteOriginRewriteRuleOriginRewriteActionResult OriginRewriteAction;
 

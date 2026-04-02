@@ -15,12 +15,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis.Outputs
     public sealed class InstanceInstanceShard
     {
         /// <summary>
-        /// 分片中的节点数量
+        /// Number of nodes in each shard
         /// </summary>
         public readonly int? NodeNumber;
         public readonly ImmutableArray<Outputs.InstanceInstanceShardServerNode> ServerNodes;
         /// <summary>
-        /// 分片 ID。
+        /// Shard ID.
         /// </summary>
         public readonly string? ShardId;
 

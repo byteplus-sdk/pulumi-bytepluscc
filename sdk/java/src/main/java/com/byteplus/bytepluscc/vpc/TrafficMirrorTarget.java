@@ -16,7 +16,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 镜像目的是收集流量的网卡或传统型负载均衡。您可以通过流量镜像，按自己设定的筛选条件复制网卡的流量，并将复制的流量私网转发到目标服务进行监控分析。
+ * The mirror target is the network interface or classic load balancer used to collect traffic. You can use traffic mirroring to replicate network interface traffic based on your filtering criteria and forward the replicated traffic over the private network to the target service for monitoring and analysis.
  * 
  * ## Example Usage
  * 
@@ -72,84 +72,84 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:vpc/trafficMirrorTarget:TrafficMirrorTarget")
 public class TrafficMirrorTarget extends com.pulumi.resources.CustomResource {
     /**
-     * 镜像会话的创建时间。
+     * Creation time of the mirror session.
      * 
      */
     @Export(name="createdAt", refs={String.class}, tree="[0]")
     private Output<String> createdAt;
 
     /**
-     * @return 镜像会话的创建时间。
+     * @return Creation time of the mirror session.
      * 
      */
     public Output<String> createdAt() {
         return this.createdAt;
     }
     /**
-     * 监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
+     * Listener description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, the default value is an empty string.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
+     * @return Listener description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, the default value is an empty string.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 镜像目的的资源ID。
+     * Resource ID of the mirror target.
      * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
-     * @return 镜像目的的资源ID。
+     * @return Resource ID of the mirror target.
      * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
-     * 镜像目的的资源类型。NetworkInterface：弹性网卡。ClbInstance：传统型负载均衡。
+     * Resource type of the mirror target. NetworkInterface: Elastic network interface. ClbInstance: Classic load balancer.
      * 
      */
     @Export(name="instanceType", refs={String.class}, tree="[0]")
     private Output<String> instanceType;
 
     /**
-     * @return 镜像目的的资源类型。NetworkInterface：弹性网卡。ClbInstance：传统型负载均衡。
+     * @return Resource type of the mirror target. NetworkInterface: Elastic network interface. ClbInstance: Classic load balancer.
      * 
      */
     public Output<String> instanceType() {
         return this.instanceType;
     }
     /**
-     * 镜像目的所属项目的名称。不填默认加入default项目。
+     * Name of the project to which the mirror target belongs. If not specified, it will be added to the default project.
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 镜像目的所属项目的名称。不填默认加入default项目。
+     * @return Name of the project to which the mirror target belongs. If not specified, it will be added to the default project.
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 镜像目的状态。Available：可用。Creating：创建中。
+     * Status of the mirror target. Available: Available. Creating: Creating.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 镜像目的状态。Available：可用。Creating：创建中。
+     * @return Status of the mirror target. Available: Available. Creating: Creating.
      * 
      */
     public Output<String> status() {
@@ -162,42 +162,42 @@ public class TrafficMirrorTarget extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 镜像目的的ID。
+     * ID of the mirror target.
      * 
      */
     @Export(name="trafficMirrorTargetId", refs={String.class}, tree="[0]")
     private Output<String> trafficMirrorTargetId;
 
     /**
-     * @return 镜像目的的ID。
+     * @return ID of the mirror target.
      * 
      */
     public Output<String> trafficMirrorTargetId() {
         return this.trafficMirrorTargetId;
     }
     /**
-     * 监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
+     * Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, the default is &#39;protocol-port&#39; as the listener name.
      * 
      */
     @Export(name="trafficMirrorTargetName", refs={String.class}, tree="[0]")
     private Output<String> trafficMirrorTargetName;
 
     /**
-     * @return 监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
+     * @return Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, the default is &#39;protocol-port&#39; as the listener name.
      * 
      */
     public Output<String> trafficMirrorTargetName() {
         return this.trafficMirrorTargetName;
     }
     /**
-     * 镜像会话的更新时间。
+     * Update time of the mirror session.
      * 
      */
     @Export(name="updatedAt", refs={String.class}, tree="[0]")
     private Output<String> updatedAt;
 
     /**
-     * @return 镜像会话的更新时间。
+     * @return Update time of the mirror session.
      * 
      */
     public Output<String> updatedAt() {

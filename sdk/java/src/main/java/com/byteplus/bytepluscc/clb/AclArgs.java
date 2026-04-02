@@ -26,14 +26,14 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 访问控制策略组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填默认为访问控制策略组ID。
+     * Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
      * 
      */
     @Import(name="aclName")
     private @Nullable Output<String> aclName;
 
     /**
-     * @return 访问控制策略组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填默认为访问控制策略组ID。
+     * @return Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
      * 
      */
     public Optional<Output<String>> aclName() {
@@ -41,14 +41,14 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 访问控制策略组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255字符。不填则默认为空字符串。
+     * Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 访问控制策略组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255字符。不填则默认为空字符串。
+     * @return Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
      * 
      */
     public Optional<Output<String>> description() {
@@ -56,14 +56,14 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 访问控制策略组所属项目的名称。不填默认为default。
+     * Name of the project to which the access control policy group belongs. If not specified, defaults to &#39;default&#39;.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 访问控制策略组所属项目的名称。不填默认为default。
+     * @return Name of the project to which the access control policy group belongs. If not specified, defaults to &#39;default&#39;.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -119,7 +119,7 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclName 访问控制策略组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填默认为访问控制策略组ID。
+         * @param aclName Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclName 访问控制策略组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填默认为访问控制策略组ID。
+         * @param aclName Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 访问控制策略组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255字符。不填则默认为空字符串。
+         * @param description Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 访问控制策略组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255字符。不填则默认为空字符串。
+         * @param description Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
          * 
          * @return builder
          * 
@@ -161,7 +161,7 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 访问控制策略组所属项目的名称。不填默认为default。
+         * @param projectName Name of the project to which the access control policy group belongs. If not specified, defaults to &#39;default&#39;.
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 访问控制策略组所属项目的名称。不填默认为default。
+         * @param projectName Name of the project to which the access control policy group belongs. If not specified, defaults to &#39;default&#39;.
          * 
          * @return builder
          * 

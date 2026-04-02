@@ -17,14 +17,14 @@ public final class RuleOriginalDimensionsArgs extends com.pulumi.resources.Resou
     public static final RuleOriginalDimensionsArgs Empty = new RuleOriginalDimensionsArgs();
 
     /**
-     * 指标 Dimension 名称，例如ResourceID、NodeName等。不同云产品的 Dimensions 名称不同，详情请参见 云监控指标查询。ResourceID为必填项，且大小写必须与 云监控指标查询 中的一致。支持同时填写多个 Dimension 名称，并基于多个 Dimension 名称进行分组。举例如下：当您仅填写ResourceID时，系统会按照ResourceID进行告警分组。当您同时填写ResourceID和NodeName时，系统会首先按照ResourceID进行告警分组。然后在每个分组内，再按照NodeName进行分组。
+     * Metric Dimension name, such as ResourceID, NodeName, etc. Dimension names vary by cloud product. For details, see Cloud Monitoring Metric Query. ResourceID is required, and its capitalization must match Cloud Monitoring Metric Query. Supports multiple Dimension names and grouping by multiple Dimension names. For example: If you only enter ResourceID, the system groups alerts by ResourceID. If you enter both ResourceID and NodeName, the system first groups alerts by ResourceID, then groups within each ResourceID group by NodeName.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 指标 Dimension 名称，例如ResourceID、NodeName等。不同云产品的 Dimensions 名称不同，详情请参见 云监控指标查询。ResourceID为必填项，且大小写必须与 云监控指标查询 中的一致。支持同时填写多个 Dimension 名称，并基于多个 Dimension 名称进行分组。举例如下：当您仅填写ResourceID时，系统会按照ResourceID进行告警分组。当您同时填写ResourceID和NodeName时，系统会首先按照ResourceID进行告警分组。然后在每个分组内，再按照NodeName进行分组。
+     * @return Metric Dimension name, such as ResourceID, NodeName, etc. Dimension names vary by cloud product. For details, see Cloud Monitoring Metric Query. ResourceID is required, and its capitalization must match Cloud Monitoring Metric Query. Supports multiple Dimension names and grouping by multiple Dimension names. For example: If you only enter ResourceID, the system groups alerts by ResourceID. If you enter both ResourceID and NodeName, the system first groups alerts by ResourceID, then groups within each ResourceID group by NodeName.
      * 
      */
     public Optional<Output<String>> key() {
@@ -32,14 +32,14 @@ public final class RuleOriginalDimensionsArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 指标 Dimension 值，数组形式。多个值之间使用英文半角逗号,分割。允许使用通配符*选择全部实例的值。例如：[&#34;*&#34;] 。
+     * Metric Dimension values, in array format. Separate multiple values with commas. Wildcard * can be used to select all instance values. For example: [&#34;*&#34;] .
      * 
      */
     @Import(name="values")
     private @Nullable Output<List<String>> values;
 
     /**
-     * @return 指标 Dimension 值，数组形式。多个值之间使用英文半角逗号,分割。允许使用通配符*选择全部实例的值。例如：[&#34;*&#34;] 。
+     * @return Metric Dimension values, in array format. Separate multiple values with commas. Wildcard * can be used to select all instance values. For example: [&#34;*&#34;] .
      * 
      */
     public Optional<Output<List<String>>> values() {
@@ -72,7 +72,7 @@ public final class RuleOriginalDimensionsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param key 指标 Dimension 名称，例如ResourceID、NodeName等。不同云产品的 Dimensions 名称不同，详情请参见 云监控指标查询。ResourceID为必填项，且大小写必须与 云监控指标查询 中的一致。支持同时填写多个 Dimension 名称，并基于多个 Dimension 名称进行分组。举例如下：当您仅填写ResourceID时，系统会按照ResourceID进行告警分组。当您同时填写ResourceID和NodeName时，系统会首先按照ResourceID进行告警分组。然后在每个分组内，再按照NodeName进行分组。
+         * @param key Metric Dimension name, such as ResourceID, NodeName, etc. Dimension names vary by cloud product. For details, see Cloud Monitoring Metric Query. ResourceID is required, and its capitalization must match Cloud Monitoring Metric Query. Supports multiple Dimension names and grouping by multiple Dimension names. For example: If you only enter ResourceID, the system groups alerts by ResourceID. If you enter both ResourceID and NodeName, the system first groups alerts by ResourceID, then groups within each ResourceID group by NodeName.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class RuleOriginalDimensionsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param key 指标 Dimension 名称，例如ResourceID、NodeName等。不同云产品的 Dimensions 名称不同，详情请参见 云监控指标查询。ResourceID为必填项，且大小写必须与 云监控指标查询 中的一致。支持同时填写多个 Dimension 名称，并基于多个 Dimension 名称进行分组。举例如下：当您仅填写ResourceID时，系统会按照ResourceID进行告警分组。当您同时填写ResourceID和NodeName时，系统会首先按照ResourceID进行告警分组。然后在每个分组内，再按照NodeName进行分组。
+         * @param key Metric Dimension name, such as ResourceID, NodeName, etc. Dimension names vary by cloud product. For details, see Cloud Monitoring Metric Query. ResourceID is required, and its capitalization must match Cloud Monitoring Metric Query. Supports multiple Dimension names and grouping by multiple Dimension names. For example: If you only enter ResourceID, the system groups alerts by ResourceID. If you enter both ResourceID and NodeName, the system first groups alerts by ResourceID, then groups within each ResourceID group by NodeName.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class RuleOriginalDimensionsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param values 指标 Dimension 值，数组形式。多个值之间使用英文半角逗号,分割。允许使用通配符*选择全部实例的值。例如：[&#34;*&#34;] 。
+         * @param values Metric Dimension values, in array format. Separate multiple values with commas. Wildcard * can be used to select all instance values. For example: [&#34;*&#34;] .
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class RuleOriginalDimensionsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param values 指标 Dimension 值，数组形式。多个值之间使用英文半角逗号,分割。允许使用通配符*选择全部实例的值。例如：[&#34;*&#34;] 。
+         * @param values Metric Dimension values, in array format. Separate multiple values with commas. Wildcard * can be used to select all instance values. For example: [&#34;*&#34;] .
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class RuleOriginalDimensionsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param values 指标 Dimension 值，数组形式。多个值之间使用英文半角逗号,分割。允许使用通配符*选择全部实例的值。例如：[&#34;*&#34;] 。
+         * @param values Metric Dimension values, in array format. Separate multiple values with commas. Wildcard * can be used to select all instance values. For example: [&#34;*&#34;] .
          * 
          * @return builder
          * 

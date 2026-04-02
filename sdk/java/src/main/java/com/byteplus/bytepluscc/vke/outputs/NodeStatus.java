@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 public final class NodeStatus {
     private @Nullable List<NodeStatusCondition> conditions;
     /**
-     * @return 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+     * @return Node status. Parameter values: Creating, Running, Deleting, Failed, Updating.
      * 
      */
     private @Nullable String phase;
@@ -25,7 +25,7 @@ public final class NodeStatus {
         return this.conditions == null ? List.of() : this.conditions;
     }
     /**
-     * @return 节点的状态，参数值有：Creating，Running，Deleting，Failed，Updating。
+     * @return Node status. Parameter values: Creating, Running, Deleting, Failed, Updating.
      * 
      */
     public Optional<String> phase() {

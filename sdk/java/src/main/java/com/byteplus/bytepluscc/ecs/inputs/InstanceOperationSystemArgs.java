@@ -16,14 +16,14 @@ public final class InstanceOperationSystemArgs extends com.pulumi.resources.Reso
     public static final InstanceOperationSystemArgs Empty = new InstanceOperationSystemArgs();
 
     /**
-     * 实例的操作系统名称。
+     * Instance operating system name.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 实例的操作系统名称。
+     * @return Instance operating system name.
      * 
      */
     public Optional<Output<String>> name() {
@@ -31,14 +31,14 @@ public final class InstanceOperationSystemArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+     * Operating system type of the instance. Linux: Linux system. Windows: Windows system.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+     * @return Operating system type of the instance. Linux: Linux system. Windows: Windows system.
      * 
      */
     public Optional<Output<String>> type() {
@@ -71,7 +71,7 @@ public final class InstanceOperationSystemArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param name 实例的操作系统名称。
+         * @param name Instance operating system name.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class InstanceOperationSystemArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param name 实例的操作系统名称。
+         * @param name Instance operating system name.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class InstanceOperationSystemArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param type 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+         * @param type Operating system type of the instance. Linux: Linux system. Windows: Windows system.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class InstanceOperationSystemArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param type 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+         * @param type Operating system type of the instance. Linux: Linux system. Windows: Windows system.
          * 
          * @return builder
          * 

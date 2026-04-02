@@ -30,25 +30,25 @@ type LookupAddonArgs struct {
 
 // A collection of values returned by getAddon.
 type LookupAddonResult struct {
-	// 组件所在集群 ID。
+	// Cluster ID where the component is located.
 	ClusterId string `pulumi:"clusterId"`
-	// 组件配置。
+	// Component configuration.
 	Config string `pulumi:"config"`
-	// 安装组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+	// Component installation time. Standard RFC3339 format, UTC+0 time.
 	CreatedTime string `pulumi:"createdTime"`
-	// 组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
+	// Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
 	DeployMode string `pulumi:"deployMode"`
-	// 部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
+	// Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
 	DeployNodeType string `pulumi:"deployNodeType"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 组件名称。
+	// Component name.
 	Name string `pulumi:"name"`
-	// 组件状态。
+	// Component status.
 	Status GetAddonStatus `pulumi:"status"`
-	// 更新组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+	// Component update time. Standard RFC3339 format, UTC+0 time.
 	UpdatedTime string `pulumi:"updatedTime"`
-	// 组件版本。
+	// Component version.
 	Version string `pulumi:"version"`
 }
 
@@ -86,27 +86,27 @@ func (o LookupAddonResultOutput) ToLookupAddonResultOutputWithContext(ctx contex
 	return o
 }
 
-// 组件所在集群 ID。
+// Cluster ID where the component is located.
 func (o LookupAddonResultOutput) ClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAddonResult) string { return v.ClusterId }).(pulumi.StringOutput)
 }
 
-// 组件配置。
+// Component configuration.
 func (o LookupAddonResultOutput) Config() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAddonResult) string { return v.Config }).(pulumi.StringOutput)
 }
 
-// 安装组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+// Component installation time. Standard RFC3339 format, UTC+0 time.
 func (o LookupAddonResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAddonResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
+// Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
 func (o LookupAddonResultOutput) DeployMode() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAddonResult) string { return v.DeployMode }).(pulumi.StringOutput)
 }
 
-// 部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
+// Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
 func (o LookupAddonResultOutput) DeployNodeType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAddonResult) string { return v.DeployNodeType }).(pulumi.StringOutput)
 }
@@ -116,22 +116,22 @@ func (o LookupAddonResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAddonResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 组件名称。
+// Component name.
 func (o LookupAddonResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAddonResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 组件状态。
+// Component status.
 func (o LookupAddonResultOutput) Status() GetAddonStatusOutput {
 	return o.ApplyT(func(v LookupAddonResult) GetAddonStatus { return v.Status }).(GetAddonStatusOutput)
 }
 
-// 更新组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+// Component update time. Standard RFC3339 format, UTC+0 time.
 func (o LookupAddonResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAddonResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// 组件版本。
+// Component version.
 func (o LookupAddonResultOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAddonResult) string { return v.Version }).(pulumi.StringOutput)
 }

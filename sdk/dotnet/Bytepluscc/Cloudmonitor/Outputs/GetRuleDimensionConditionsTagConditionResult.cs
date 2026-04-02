@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Outputs
     public sealed class GetRuleDimensionConditionsTagConditionResult
     {
         /// <summary>
-        /// 判断条件。and：全部满足。or：任意满足。
+        /// Condition. and: All conditions met. or: Any condition met.
         /// </summary>
         public readonly string Condition;
         /// <summary>
-        /// 标签列表。最多支持配置 10 个标签列表。标签值不能超过 50 个字符。
+        /// Tag list. Supports up to 10 tag lists. Tag value cannot exceed 50 characters.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRuleDimensionConditionsTagConditionTagResult> Tags;
 

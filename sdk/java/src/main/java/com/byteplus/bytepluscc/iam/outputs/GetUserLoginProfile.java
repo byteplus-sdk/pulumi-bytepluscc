@@ -7,188 +7,189 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Double;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 
 @CustomType
 public final class GetUserLoginProfile {
     /**
-     * @return 登录配置创建时间。
+     * @return Login configuration creation time.
      * 
      */
     private String createDate;
     /**
-     * @return 上次登录时间。
+     * @return Last login time.
      * 
      */
     private String lastLoginDate;
     /**
-     * @return 上次登录IP。
+     * @return Last login IP.
      * 
      */
     private String lastLoginIp;
     /**
-     * @return 上次重置密码的时间，上次重置密码的时间。0代表未设置过密码，非0代表过期时间的时间戳。
+     * @return Last password reset time. Last password reset time. 0 means no password has been set; a non-zero value means the timestamp when the password expires.
      * 
      */
-    private Double lastResetPasswordTime;
+    private Integer lastResetPasswordTime;
     /**
-     * @return 是否允许登录，是否允许登录。true代表允许，false代表不允许，默认为false。
+     * @return Whether login is allowed. &#39;true&#39; means allowed, &#39;false&#39; means not allowed. Default is &#39;false&#39;.
      * 
      */
     private Boolean loginAllowed;
     /**
-     * @return 登录是否被锁定。true代表已锁定，false代表未锁定。管理员设置错误密码重试次数限制后，用户命中后登录会被锁定。
+     * @return Whether login is locked. &#39;true&#39; means locked, &#39;false&#39; means not locked. After the administrator sets a limit for incorrect password retry attempts, login will be locked if the user exceeds the limit.
      * 
      */
     private Boolean loginLocked;
     /**
-     * @return 登录密码。
+     * @return Login password.
      * 
      */
     private String password;
     /**
-     * @return 密码过期时间。0代表永不过期，非0代表过期时间的时间戳。
+     * @return Password expiration time. &#39;0&#39; means never expires; non-zero means the expiration timestamp.
      * 
      */
-    private Double passwordExpireAt;
+    private Integer passwordExpireAt;
     /**
-     * @return 下次登录是否需要重设密码，下次登录是否需要重设密码。true代表允许，false代表不允许，默认为false。
+     * @return Whether password reset is required on next login. Whether password reset is required on next login. &#39;true&#39; means password reset is required, &#39;false&#39; means not required. Default is &#39;false&#39;.
      * 
      */
     private Boolean passwordResetRequired;
     /**
-     * @return 登录保护豁免时长，登录保护豁免时长。支持设置1至7（天），或1至168（小时），或5至1440（分钟）。单位设置请参考SafeAuthExemptUnit参数。
+     * @return Login protection exemption duration. Supports setting 1 to 7 (days), 1 to 168 (hours), or 5 to 1440 (minutes). For unit settings, refer to the SafeAuthExemptUnit parameter.
      * 
      */
     private Double safeAuthExemptDuration;
     /**
-     * @return 是否开启登录保护豁免，是否开启登录保护豁免。0代表不开启，1代表开启。开启登录保护豁免后，验证完成后一定时间内登录将不再进行验证。
+     * @return Whether login protection exemption is enabled. Whether login protection exemption is enabled. 0 means disabled, 1 means enabled. When login protection exemption is enabled, after verification is completed, login will not require verification again within a certain period.
      * 
      */
     private Double safeAuthExemptRequired;
     /**
-     * @return 登录保护豁免的时间单位，登录保护豁免的时间单位。0代表分钟，1代表小时，2代表天。
+     * @return Login protection exemption time unit. Login protection exemption time unit. 0 represents minutes, 1 represents hours, 2 represents days.
      * 
      */
     private Double safeAuthExemptUnit;
     /**
-     * @return 是否开启登录保护，是否开启登录保护。true代表开启，false代表不开启，默认为false。
+     * @return Whether login protection is enabled. &#39;true&#39; means enabled, &#39;false&#39; means disabled. Default is &#39;false&#39;.
      * 
      */
     private Boolean safeAuthFlag;
     /**
-     * @return 登录保护类型，登录保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。可选vmfa, phone, email, 多个选项逗号隔开。
+     * @return Login protection type. Login protection type. &#39;phone&#39; represents mobile verification, &#39;email&#39; represents email verification, &#39;vmfa&#39; represents MFA device verification. Multiple login protection types can be set, separated by commas. Options: vmfa, phone, email, separated by commas.
      * 
      */
     private String safeAuthType;
     /**
-     * @return 登录配置更新时间。
+     * @return Login configuration update time.
      * 
      */
     private String updateDate;
 
     private GetUserLoginProfile() {}
     /**
-     * @return 登录配置创建时间。
+     * @return Login configuration creation time.
      * 
      */
     public String createDate() {
         return this.createDate;
     }
     /**
-     * @return 上次登录时间。
+     * @return Last login time.
      * 
      */
     public String lastLoginDate() {
         return this.lastLoginDate;
     }
     /**
-     * @return 上次登录IP。
+     * @return Last login IP.
      * 
      */
     public String lastLoginIp() {
         return this.lastLoginIp;
     }
     /**
-     * @return 上次重置密码的时间，上次重置密码的时间。0代表未设置过密码，非0代表过期时间的时间戳。
+     * @return Last password reset time. Last password reset time. 0 means no password has been set; a non-zero value means the timestamp when the password expires.
      * 
      */
-    public Double lastResetPasswordTime() {
+    public Integer lastResetPasswordTime() {
         return this.lastResetPasswordTime;
     }
     /**
-     * @return 是否允许登录，是否允许登录。true代表允许，false代表不允许，默认为false。
+     * @return Whether login is allowed. &#39;true&#39; means allowed, &#39;false&#39; means not allowed. Default is &#39;false&#39;.
      * 
      */
     public Boolean loginAllowed() {
         return this.loginAllowed;
     }
     /**
-     * @return 登录是否被锁定。true代表已锁定，false代表未锁定。管理员设置错误密码重试次数限制后，用户命中后登录会被锁定。
+     * @return Whether login is locked. &#39;true&#39; means locked, &#39;false&#39; means not locked. After the administrator sets a limit for incorrect password retry attempts, login will be locked if the user exceeds the limit.
      * 
      */
     public Boolean loginLocked() {
         return this.loginLocked;
     }
     /**
-     * @return 登录密码。
+     * @return Login password.
      * 
      */
     public String password() {
         return this.password;
     }
     /**
-     * @return 密码过期时间。0代表永不过期，非0代表过期时间的时间戳。
+     * @return Password expiration time. &#39;0&#39; means never expires; non-zero means the expiration timestamp.
      * 
      */
-    public Double passwordExpireAt() {
+    public Integer passwordExpireAt() {
         return this.passwordExpireAt;
     }
     /**
-     * @return 下次登录是否需要重设密码，下次登录是否需要重设密码。true代表允许，false代表不允许，默认为false。
+     * @return Whether password reset is required on next login. Whether password reset is required on next login. &#39;true&#39; means password reset is required, &#39;false&#39; means not required. Default is &#39;false&#39;.
      * 
      */
     public Boolean passwordResetRequired() {
         return this.passwordResetRequired;
     }
     /**
-     * @return 登录保护豁免时长，登录保护豁免时长。支持设置1至7（天），或1至168（小时），或5至1440（分钟）。单位设置请参考SafeAuthExemptUnit参数。
+     * @return Login protection exemption duration. Supports setting 1 to 7 (days), 1 to 168 (hours), or 5 to 1440 (minutes). For unit settings, refer to the SafeAuthExemptUnit parameter.
      * 
      */
     public Double safeAuthExemptDuration() {
         return this.safeAuthExemptDuration;
     }
     /**
-     * @return 是否开启登录保护豁免，是否开启登录保护豁免。0代表不开启，1代表开启。开启登录保护豁免后，验证完成后一定时间内登录将不再进行验证。
+     * @return Whether login protection exemption is enabled. Whether login protection exemption is enabled. 0 means disabled, 1 means enabled. When login protection exemption is enabled, after verification is completed, login will not require verification again within a certain period.
      * 
      */
     public Double safeAuthExemptRequired() {
         return this.safeAuthExemptRequired;
     }
     /**
-     * @return 登录保护豁免的时间单位，登录保护豁免的时间单位。0代表分钟，1代表小时，2代表天。
+     * @return Login protection exemption time unit. Login protection exemption time unit. 0 represents minutes, 1 represents hours, 2 represents days.
      * 
      */
     public Double safeAuthExemptUnit() {
         return this.safeAuthExemptUnit;
     }
     /**
-     * @return 是否开启登录保护，是否开启登录保护。true代表开启，false代表不开启，默认为false。
+     * @return Whether login protection is enabled. &#39;true&#39; means enabled, &#39;false&#39; means disabled. Default is &#39;false&#39;.
      * 
      */
     public Boolean safeAuthFlag() {
         return this.safeAuthFlag;
     }
     /**
-     * @return 登录保护类型，登录保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。可选vmfa, phone, email, 多个选项逗号隔开。
+     * @return Login protection type. Login protection type. &#39;phone&#39; represents mobile verification, &#39;email&#39; represents email verification, &#39;vmfa&#39; represents MFA device verification. Multiple login protection types can be set, separated by commas. Options: vmfa, phone, email, separated by commas.
      * 
      */
     public String safeAuthType() {
         return this.safeAuthType;
     }
     /**
-     * @return 登录配置更新时间。
+     * @return Login configuration update time.
      * 
      */
     public String updateDate() {
@@ -207,11 +208,11 @@ public final class GetUserLoginProfile {
         private String createDate;
         private String lastLoginDate;
         private String lastLoginIp;
-        private Double lastResetPasswordTime;
+        private Integer lastResetPasswordTime;
         private Boolean loginAllowed;
         private Boolean loginLocked;
         private String password;
-        private Double passwordExpireAt;
+        private Integer passwordExpireAt;
         private Boolean passwordResetRequired;
         private Double safeAuthExemptDuration;
         private Double safeAuthExemptRequired;
@@ -264,7 +265,7 @@ public final class GetUserLoginProfile {
             return this;
         }
         @CustomType.Setter
-        public Builder lastResetPasswordTime(Double lastResetPasswordTime) {
+        public Builder lastResetPasswordTime(Integer lastResetPasswordTime) {
             if (lastResetPasswordTime == null) {
               throw new MissingRequiredPropertyException("GetUserLoginProfile", "lastResetPasswordTime");
             }
@@ -296,7 +297,7 @@ public final class GetUserLoginProfile {
             return this;
         }
         @CustomType.Setter
-        public Builder passwordExpireAt(Double passwordExpireAt) {
+        public Builder passwordExpireAt(Integer passwordExpireAt) {
             if (passwordExpireAt == null) {
               throw new MissingRequiredPropertyException("GetUserLoginProfile", "passwordExpireAt");
             }

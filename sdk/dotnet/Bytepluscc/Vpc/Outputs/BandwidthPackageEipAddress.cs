@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc.Outputs
     public sealed class BandwidthPackageEipAddress
     {
         /// <summary>
-        /// 分配ID
+        /// Allocation ID
         /// </summary>
         public readonly string? AllocationId;
 

@@ -16,14 +16,14 @@ public final class DomainOriginRewriteOriginRewriteRuleOriginRewriteActionArgs e
     public static final DomainOriginRewriteOriginRewriteRuleOriginRewriteActionArgs Empty = new DomainOriginRewriteOriginRewriteRuleOriginRewriteActionArgs();
 
     /**
-     * 表示改写类型。该参数有以下取值：rewrite*path：表示对请求 URL 中的路径进行改写。rewrite*url：表示对请求 URL 中的路径和查询字符串进行改写。该参数的默认值是 rewrite_path。
+     * Indicates the rewrite type. This parameter supports the following values: rewrite*path: rewrites the path in the request URL. rewrite*url: rewrites both the path and query string in the request URL. The default value is rewrite_path.
      * 
      */
     @Import(name="rewriteType")
     private @Nullable Output<String> rewriteType;
 
     /**
-     * @return 表示改写类型。该参数有以下取值：rewrite*path：表示对请求 URL 中的路径进行改写。rewrite*url：表示对请求 URL 中的路径和查询字符串进行改写。该参数的默认值是 rewrite_path。
+     * @return Indicates the rewrite type. This parameter supports the following values: rewrite*path: rewrites the path in the request URL. rewrite*url: rewrites both the path and query string in the request URL. The default value is rewrite_path.
      * 
      */
     public Optional<Output<String>> rewriteType() {
@@ -31,14 +31,14 @@ public final class DomainOriginRewriteOriginRewriteRuleOriginRewriteActionArgs e
     }
 
     /**
-     * 表示一个正则表达式，长度不能超过 1,024 个字符，用于匹配用户请求 URL 中的对象。对于一个用户请求，如果该正则表达式匹配了对象中的任何部分，这条规则就匹配了这个用户请求。当 RewriteType 是 rewrite*path 时，该对象指的是请求 URL 中的路径。当 RewriteType 是 rewrite*url 时，该对象指的是请求 URL 中的路径和查询字符串。
+     * Indicates a regular expression, with a maximum length of 1,024 characters, used to match objects in the user&#39;s request URL. For a user request, if the regular expression matches any part of the object, this rule applies to the request. When RewriteType is rewrite*path, the object refers to the path in the request URL. When RewriteType is rewrite*url, the object refers to both the path and query string in the request URL.
      * 
      */
     @Import(name="sourcePath")
     private @Nullable Output<String> sourcePath;
 
     /**
-     * @return 表示一个正则表达式，长度不能超过 1,024 个字符，用于匹配用户请求 URL 中的对象。对于一个用户请求，如果该正则表达式匹配了对象中的任何部分，这条规则就匹配了这个用户请求。当 RewriteType 是 rewrite*path 时，该对象指的是请求 URL 中的路径。当 RewriteType 是 rewrite*url 时，该对象指的是请求 URL 中的路径和查询字符串。
+     * @return Indicates a regular expression, with a maximum length of 1,024 characters, used to match objects in the user&#39;s request URL. For a user request, if the regular expression matches any part of the object, this rule applies to the request. When RewriteType is rewrite*path, the object refers to the path in the request URL. When RewriteType is rewrite*url, the object refers to both the path and query string in the request URL.
      * 
      */
     public Optional<Output<String>> sourcePath() {
@@ -46,14 +46,14 @@ public final class DomainOriginRewriteOriginRewriteRuleOriginRewriteActionArgs e
     }
 
     /**
-     * 表示改写后，回源请求 URL 中的对象。当 RewriteType 是 rewrite*path 时，该对象是回源请求 URL 中的路径。当 RewriteType 是 rewrite*url 时，该对象是回源请求 URL 中的路径和查询字符串。您可以在 TargetPath 中使用 $1、$2、$3 等表示您在 SourcePath 的正则表达式中定义的组。
+     * Indicates the object in the origin request URL after rewriting. When RewriteType is rewrite*path, this object is the path in the origin request URL. When RewriteType is rewrite*url, this object is the path and query string in the origin request URL. You can use $1, $2, $3, etc. in TargetPath to represent groups defined in the regular expression of SourcePath.
      * 
      */
     @Import(name="targetPath")
     private @Nullable Output<String> targetPath;
 
     /**
-     * @return 表示改写后，回源请求 URL 中的对象。当 RewriteType 是 rewrite*path 时，该对象是回源请求 URL 中的路径。当 RewriteType 是 rewrite*url 时，该对象是回源请求 URL 中的路径和查询字符串。您可以在 TargetPath 中使用 $1、$2、$3 等表示您在 SourcePath 的正则表达式中定义的组。
+     * @return Indicates the object in the origin request URL after rewriting. When RewriteType is rewrite*path, this object is the path in the origin request URL. When RewriteType is rewrite*url, this object is the path and query string in the origin request URL. You can use $1, $2, $3, etc. in TargetPath to represent groups defined in the regular expression of SourcePath.
      * 
      */
     public Optional<Output<String>> targetPath() {
@@ -87,7 +87,7 @@ public final class DomainOriginRewriteOriginRewriteRuleOriginRewriteActionArgs e
         }
 
         /**
-         * @param rewriteType 表示改写类型。该参数有以下取值：rewrite*path：表示对请求 URL 中的路径进行改写。rewrite*url：表示对请求 URL 中的路径和查询字符串进行改写。该参数的默认值是 rewrite_path。
+         * @param rewriteType Indicates the rewrite type. This parameter supports the following values: rewrite*path: rewrites the path in the request URL. rewrite*url: rewrites both the path and query string in the request URL. The default value is rewrite_path.
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class DomainOriginRewriteOriginRewriteRuleOriginRewriteActionArgs e
         }
 
         /**
-         * @param rewriteType 表示改写类型。该参数有以下取值：rewrite*path：表示对请求 URL 中的路径进行改写。rewrite*url：表示对请求 URL 中的路径和查询字符串进行改写。该参数的默认值是 rewrite_path。
+         * @param rewriteType Indicates the rewrite type. This parameter supports the following values: rewrite*path: rewrites the path in the request URL. rewrite*url: rewrites both the path and query string in the request URL. The default value is rewrite_path.
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class DomainOriginRewriteOriginRewriteRuleOriginRewriteActionArgs e
         }
 
         /**
-         * @param sourcePath 表示一个正则表达式，长度不能超过 1,024 个字符，用于匹配用户请求 URL 中的对象。对于一个用户请求，如果该正则表达式匹配了对象中的任何部分，这条规则就匹配了这个用户请求。当 RewriteType 是 rewrite*path 时，该对象指的是请求 URL 中的路径。当 RewriteType 是 rewrite*url 时，该对象指的是请求 URL 中的路径和查询字符串。
+         * @param sourcePath Indicates a regular expression, with a maximum length of 1,024 characters, used to match objects in the user&#39;s request URL. For a user request, if the regular expression matches any part of the object, this rule applies to the request. When RewriteType is rewrite*path, the object refers to the path in the request URL. When RewriteType is rewrite*url, the object refers to both the path and query string in the request URL.
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class DomainOriginRewriteOriginRewriteRuleOriginRewriteActionArgs e
         }
 
         /**
-         * @param sourcePath 表示一个正则表达式，长度不能超过 1,024 个字符，用于匹配用户请求 URL 中的对象。对于一个用户请求，如果该正则表达式匹配了对象中的任何部分，这条规则就匹配了这个用户请求。当 RewriteType 是 rewrite*path 时，该对象指的是请求 URL 中的路径。当 RewriteType 是 rewrite*url 时，该对象指的是请求 URL 中的路径和查询字符串。
+         * @param sourcePath Indicates a regular expression, with a maximum length of 1,024 characters, used to match objects in the user&#39;s request URL. For a user request, if the regular expression matches any part of the object, this rule applies to the request. When RewriteType is rewrite*path, the object refers to the path in the request URL. When RewriteType is rewrite*url, the object refers to both the path and query string in the request URL.
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class DomainOriginRewriteOriginRewriteRuleOriginRewriteActionArgs e
         }
 
         /**
-         * @param targetPath 表示改写后，回源请求 URL 中的对象。当 RewriteType 是 rewrite*path 时，该对象是回源请求 URL 中的路径。当 RewriteType 是 rewrite*url 时，该对象是回源请求 URL 中的路径和查询字符串。您可以在 TargetPath 中使用 $1、$2、$3 等表示您在 SourcePath 的正则表达式中定义的组。
+         * @param targetPath Indicates the object in the origin request URL after rewriting. When RewriteType is rewrite*path, this object is the path in the origin request URL. When RewriteType is rewrite*url, this object is the path and query string in the origin request URL. You can use $1, $2, $3, etc. in TargetPath to represent groups defined in the regular expression of SourcePath.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class DomainOriginRewriteOriginRewriteRuleOriginRewriteActionArgs e
         }
 
         /**
-         * @param targetPath 表示改写后，回源请求 URL 中的对象。当 RewriteType 是 rewrite*path 时，该对象是回源请求 URL 中的路径。当 RewriteType 是 rewrite*url 时，该对象是回源请求 URL 中的路径和查询字符串。您可以在 TargetPath 中使用 $1、$2、$3 等表示您在 SourcePath 的正则表达式中定义的组。
+         * @param targetPath Indicates the object in the origin request URL after rewriting. When RewriteType is rewrite*path, this object is the path in the origin request URL. When RewriteType is rewrite*url, this object is the path and query string in the origin request URL. You can use $1, $2, $3, etc. in TargetPath to represent groups defined in the regular expression of SourcePath.
          * 
          * @return builder
          * 

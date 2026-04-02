@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AclListener {
     /**
-     * @return 监听器对本访问控制策略组的控制方式。white：白名单方式；black：黑名单方式
+     * @return Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
      * 
      */
     private @Nullable String aclType;
 
     private AclListener() {}
     /**
-     * @return 监听器对本访问控制策略组的控制方式。white：白名单方式；black：黑名单方式
+     * @return Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
      * 
      */
     public Optional<String> aclType() {

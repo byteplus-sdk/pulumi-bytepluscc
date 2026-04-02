@@ -15,27 +15,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class GetDefaultNodePoolNodeStatisticsResult
     {
         /// <summary>
-        /// Phase=Creating的节点总数量。
+        /// Total number of nodes with Phase=Creating.
         /// </summary>
         public readonly int CreatingCount;
         /// <summary>
-        /// Phase=Deleting的节点总数量。
+        /// Total number of nodes with Phase=Deleting.
         /// </summary>
         public readonly int DeletingCount;
         /// <summary>
-        /// Phase=Failed的节点总数量。
+        /// Total number of nodes with Phase=Failed
         /// </summary>
         public readonly int FailedCount;
         /// <summary>
-        /// Phase=Running的节点总数量。
+        /// Total number of nodes with Phase=Running
         /// </summary>
         public readonly int RunningCount;
         /// <summary>
-        /// 节点池中的节点总数量。
+        /// Total number of nodes in the node pool.
         /// </summary>
         public readonly int TotalCount;
         /// <summary>
-        /// Phase=Updating的节点总数量。
+        /// Total number of nodes with Phase=Updating
         /// </summary>
         public readonly int UpdatingCount;
 

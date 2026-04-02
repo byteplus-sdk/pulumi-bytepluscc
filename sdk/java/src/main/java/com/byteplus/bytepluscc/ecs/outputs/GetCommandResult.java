@@ -16,32 +16,32 @@ import java.util.Objects;
 @CustomType
 public final class GetCommandResult {
     /**
-     * @return 命令内容。请根据ContentEncoding参数传入相应命令内容。命令内容不能超过16KB。
+     * @return Command content. Enter the command content according to the ContentEncoding parameter. Command content must not exceed 16 KB.
      * 
      */
     private String commandContent;
     /**
-     * @return 自定义命令ID。
+     * @return Custom command ID.
      * 
      */
     private String commandId;
     /**
-     * @return 命令内容是否经过Base64编码处理。Base64（默认）：经过Base64编码处理。PlainText： 未进行编码处理。
+     * @return Whether the command content is processed with Base64 encoding. Base64 (default): Processed with Base64 encoding. PlainText: Not encoded.
      * 
      */
     private String contentEncoding;
     /**
-     * @return 创建时间。
+     * @return Creation time.
      * 
      */
     private String createdTime;
     /**
-     * @return 命令描述，默认为空字符串。字符长度0~256。不限制特殊字符。
+     * @return Command description. Defaults to an empty string. Character length: 0~256. No restriction on special characters.
      * 
      */
     private String description;
     /**
-     * @return 创建的命令是否使用自定义参数。false：默认，表示不使用自定义参数。true：表示使用自定义参数。
+     * @return Whether the created command uses custom parameters. false: Default, does not use custom parameters. true: Uses custom parameters.
      * 
      */
     private Boolean enableParameter;
@@ -51,99 +51,99 @@ public final class GetCommandResult {
      */
     private String id;
     /**
-     * @return 命令被调用次数。
+     * @return Number of times the command has been invoked.
      * 
      */
     private Integer invocationTimes;
     /**
-     * @return 命令名称。字符长度1~32。不限制特殊字符。
+     * @return Command name. Character length: 1~32. No restriction on special characters.
      * 
      */
     private String name;
     /**
-     * @return 自定义参数定义信息。
+     * @return Custom parameter definition information.
      * 
      */
     private List<GetCommandParameterDefinition> parameterDefinitions;
     /**
-     * @return 资源所属项目，一个资源只能归属于一个项目。
+     * @return Project to which the resource belongs. Each resource can belong to only one project.
      * 
      */
     private String projectName;
     /**
-     * @return 命令的提供方。
+     * @return Command provider.
      * 
      */
     private String providerName;
     /**
-     * @return 标签键值对。
+     * @return Tag key-value pair.
      * 
      */
     private List<GetCommandTag> tags;
     /**
-     * @return 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。取值范围：30~86400。默认值：60。
+     * @return Maximum timeout for executing the created command on ECS instances, in seconds. Value range: 30~86400. Default: 60.
      * 
      */
     private Integer timeout;
     /**
-     * @return 命令的类型。Shell：表示创建一个在Linux实例中运行的Shell脚本。Python：表示创建一个Python脚本。Bat：表示创建一个Bat脚本。PowerShell：表示创建一个PowerShell脚本。
+     * @return Command type. Shell: Creates a Shell script for Linux instances. Python: Creates a Python script. Bat: Creates a Bat script. PowerShell: Creates a PowerShell script.
      * 
      */
     private String type;
     /**
-     * @return 更新时间。
+     * @return Update time.
      * 
      */
     private String updatedTime;
     /**
-     * @return 执行命令时的用户名。
+     * @return Username for executing the command.
      * 
      */
     private String username;
     /**
-     * @return 创建的命令在ECS实例中运行的目录。
+     * @return Directory where the created command runs on ECS instances.
      * 
      */
     private String workingDir;
 
     private GetCommandResult() {}
     /**
-     * @return 命令内容。请根据ContentEncoding参数传入相应命令内容。命令内容不能超过16KB。
+     * @return Command content. Enter the command content according to the ContentEncoding parameter. Command content must not exceed 16 KB.
      * 
      */
     public String commandContent() {
         return this.commandContent;
     }
     /**
-     * @return 自定义命令ID。
+     * @return Custom command ID.
      * 
      */
     public String commandId() {
         return this.commandId;
     }
     /**
-     * @return 命令内容是否经过Base64编码处理。Base64（默认）：经过Base64编码处理。PlainText： 未进行编码处理。
+     * @return Whether the command content is processed with Base64 encoding. Base64 (default): Processed with Base64 encoding. PlainText: Not encoded.
      * 
      */
     public String contentEncoding() {
         return this.contentEncoding;
     }
     /**
-     * @return 创建时间。
+     * @return Creation time.
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 命令描述，默认为空字符串。字符长度0~256。不限制特殊字符。
+     * @return Command description. Defaults to an empty string. Character length: 0~256. No restriction on special characters.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 创建的命令是否使用自定义参数。false：默认，表示不使用自定义参数。true：表示使用自定义参数。
+     * @return Whether the created command uses custom parameters. false: Default, does not use custom parameters. true: Uses custom parameters.
      * 
      */
     public Boolean enableParameter() {
@@ -157,77 +157,77 @@ public final class GetCommandResult {
         return this.id;
     }
     /**
-     * @return 命令被调用次数。
+     * @return Number of times the command has been invoked.
      * 
      */
     public Integer invocationTimes() {
         return this.invocationTimes;
     }
     /**
-     * @return 命令名称。字符长度1~32。不限制特殊字符。
+     * @return Command name. Character length: 1~32. No restriction on special characters.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 自定义参数定义信息。
+     * @return Custom parameter definition information.
      * 
      */
     public List<GetCommandParameterDefinition> parameterDefinitions() {
         return this.parameterDefinitions;
     }
     /**
-     * @return 资源所属项目，一个资源只能归属于一个项目。
+     * @return Project to which the resource belongs. Each resource can belong to only one project.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 命令的提供方。
+     * @return Command provider.
      * 
      */
     public String providerName() {
         return this.providerName;
     }
     /**
-     * @return 标签键值对。
+     * @return Tag key-value pair.
      * 
      */
     public List<GetCommandTag> tags() {
         return this.tags;
     }
     /**
-     * @return 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。取值范围：30~86400。默认值：60。
+     * @return Maximum timeout for executing the created command on ECS instances, in seconds. Value range: 30~86400. Default: 60.
      * 
      */
     public Integer timeout() {
         return this.timeout;
     }
     /**
-     * @return 命令的类型。Shell：表示创建一个在Linux实例中运行的Shell脚本。Python：表示创建一个Python脚本。Bat：表示创建一个Bat脚本。PowerShell：表示创建一个PowerShell脚本。
+     * @return Command type. Shell: Creates a Shell script for Linux instances. Python: Creates a Python script. Bat: Creates a Bat script. PowerShell: Creates a PowerShell script.
      * 
      */
     public String type() {
         return this.type;
     }
     /**
-     * @return 更新时间。
+     * @return Update time.
      * 
      */
     public String updatedTime() {
         return this.updatedTime;
     }
     /**
-     * @return 执行命令时的用户名。
+     * @return Username for executing the command.
      * 
      */
     public String username() {
         return this.username;
     }
     /**
-     * @return 创建的命令在ECS实例中运行的目录。
+     * @return Directory where the created command runs on ECS instances.
      * 
      */
     public String workingDir() {

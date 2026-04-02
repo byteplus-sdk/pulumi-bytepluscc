@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class UpstreamTlsSettingsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// SNI。留空时会将访问网关的域名透传到upstream。
+        /// SNI. If left blank, the domain name accessed by the gateway will be passed through to the upstream
         /// </summary>
         [Input("sni")]
         public Input<string>? Sni { get; set; }
 
         /// <summary>
-        /// TLS模式，取值：DISABLE：关闭TLS。SIMPLE：单向TLS。
+        /// TLS mode. Options: DISABLE: disable TLS. SIMPLE: one-way TLS
         /// </summary>
         [Input("tlsMode")]
         public Input<string>? TlsMode { get; set; }

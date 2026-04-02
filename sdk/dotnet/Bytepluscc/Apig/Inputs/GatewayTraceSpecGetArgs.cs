@@ -14,25 +14,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class GatewayTraceSpecGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 应用性能监控全链路版链路追踪配置。
+        /// Application performance monitoring full-link trace configuration
         /// </summary>
         [Input("apmTraceSpec")]
         public Input<Inputs.GatewayTraceSpecApmTraceSpecGetArgs>? ApmTraceSpec { get; set; }
 
         /// <summary>
-        /// 是否启用链路追踪。
+        /// Whether to enable trace
         /// </summary>
         [Input("enable")]
         public Input<bool>? Enable { get; set; }
 
         /// <summary>
-        /// 链路追踪配置信息。
+        /// Link tracing configuration information.
         /// </summary>
         [Input("tlsTraceSpec")]
         public Input<Inputs.GatewayTraceSpecTlsTraceSpecGetArgs>? TlsTraceSpec { get; set; }
 
         /// <summary>
-        /// 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+        /// Link tracing type. Possible values: tls: Log Service. apm: Application Performance Monitoring (APM) end-to-end version.
         /// </summary>
         [Input("traceType")]
         public Input<string>? TraceType { get; set; }

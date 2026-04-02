@@ -19,37 +19,37 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceResult {
     /**
-     * @return 计费详细信息。
+     * @return Billing details.
      * 
      */
     private GetInstanceChargeDetail chargeDetail;
     /**
-     * @return 实例的创建时间，格式：YYYY-MM-DDTHH:MM:SSZ（UTC 时间）。
+     * @return Instance creation time, format: YYYY-MM-DDTHH:MM:SSZ (UTC time)
      * 
      */
     private String createdTime;
     /**
-     * @return 实例兼容版本。取值范围：MySQL*8*0：表示兼容社区 MySQL 8.0 版本。MySQL*5*7：表示兼容社区 MySQL 5.7 版本。
+     * @return Instance compatible version. Options: MySQL*8*0: Compatible with community MySQL 8.0. MySQL*5*7: Compatible with community MySQL 5.7
      * 
      */
     private String dbEngineVersion;
     /**
-     * @return 根据兼容版本，选择 veDB MySQL 小版本。当 DBEngineVersion 取值为 MySQL*5*7 时，该参数取值默认为 2.0。当 DBEngineVersion 取值为 MySQL*8*0 时，该参数取值范围如下：3.0（默认）：veDB MySQL 稳定版，100% 兼容 MySQL 8.0。3.1：原生支持 HTAP 应用场景，加速复杂查询。3.2：原生支持 HTAP 应用场景，加速复杂查询。
+     * @return Select the veDB MySQL minor version based on compatibility. When DBEngineVersion is set to MySQL*5*7, the default value for this parameter is 2.0. When DBEngineVersion is set to MySQL*8*0, the parameter value options are as follows: 3.0 (default): veDB MySQL stable version, 100% compatible with MySQL 8.0. 3.1: Native support for HTAP scenarios, accelerates complex queries. 3.2: Native support for HTAP scenarios, accelerates complex queries.
      * 
      */
     private String dbMinorVersion;
     /**
-     * @return 实例的内核版本。
+     * @return Instance kernel version.
      * 
      */
     private String dbRevisionVersion;
     /**
-     * @return 实例是否开启了删除保护功能。取值范围：enabled：开启。disabled：关闭。
+     * @return Whether deletion protection is enabled for the instance. Value range: enabled: enabled. disabled: disabled.
      * 
      */
     private String deletionProtection;
     /**
-     * @return 连接终端的详细信息。
+     * @return Endpoint details
      * 
      */
     private List<GetInstanceEndpoint> endpoints;
@@ -59,166 +59,166 @@ public final class GetInstanceResult {
      */
     private String id;
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     private String instanceId;
     /**
-     * @return 实例名称。命名规则：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需在 1~128 个字符内。
+     * @return Instance name. Naming rules: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
      * 
      */
     private String instanceName;
     /**
-     * @return 实例状态。
+     * @return Instance status.
      * 
      */
     private String instanceStatus;
     /**
-     * @return 表名是否区分大小写。取值范围：0：表名称大小写敏感，后端根据实际表名存储。1：表名称不区分大小写，后端存储时将表名称统一为小写字母。
+     * @return Whether table names are case-sensitive. Value range: 0: table names are case-sensitive; backend stores according to actual table name. 1: table names are not case-sensitive; backend stores table names in lowercase.
      * 
      */
     private String lowerCaseTableNames;
     /**
-     * @return 实例的可维护时间窗口信息。
+     * @return Instance maintenance window information
      * 
      */
     private GetInstanceMaintenanceWindow maintenanceWindow;
     /**
-     * @return 实例节点数量。取值范围为 2~16 个。
+     * @return Number of instance nodes. Value range: 2–16.
      * 
      */
     private Integer nodeNumber;
     /**
-     * @return 实例的节点规格代码。
+     * @return Instance node specification code.
      * 
      */
     private String nodeSpec;
     /**
-     * @return 实例节点的详细信息。
+     * @return Instance node details
      * 
      */
     private List<GetInstanceNode> nodes;
     /**
-     * @return 创建的实例数量，取值范围 1~50，默认值为 1。
+     * @return Number of instances to create. Range: 1~50. Default: 1
      * 
      */
     private Integer number;
     /**
-     * @return 为实例默认创建的连接终端指定私网端口号。默认取值为 3306，取值范围为 1000~65534。
+     * @return Specify the private network port number for the default connection endpoint created for the instance. Default value is 3306. Value range: 1000–65534.
      * 
      */
     private Integer port;
     /**
-     * @return 预付费的存储总容量大小，单位 GiB。
+     * @return Total prepaid storage capacity, in GiB
      * 
      */
     private Integer prePaidStorageInGb;
     /**
-     * @return 实例所属的项目名称。
+     * @return Project name to which the instance belongs.
      * 
      */
     private String projectName;
     /**
-     * @return 实例规格类型，取值：General：通用型。Exclusive：独享型。
+     * @return Instance specification type. Values: General: general purpose. Exclusive: dedicated.
      * 
      */
     private String specFamily;
     /**
-     * @return 存储计费类型，不传入该参数时，存储计费类型默认与计算计费类型取值一致。取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+     * @return Storage billing type. If this parameter is not specified, the storage billing type defaults to the same value as the compute billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription (prepaid).
      * 
      */
     private String storageChargeType;
     /**
-     * @return 已使用存储空间大小，单位 GiB。
+     * @return Used storage space, in GiB
      * 
      */
     private Double storageUsedGiB;
     /**
-     * @return 子网 ID。子网必须属于所选的可用区。
+     * @return Subnet ID. The subnet must belong to the selected availability zone.
      * 
      */
     private String subnetId;
     /**
-     * @return 高权限用户的账号名称。账号名称需满足以下要求：名称唯一，且长度在 2~32 个字符内。由字母、数字、中划线（-）、下划线（_）组成。以字母开头，以字母或数字结尾。名称内不能包含禁用关键词。
+     * @return Account name for privileged user. Requirements: Must be unique, 2–32 characters. Letters, numbers, hyphens (-), and underscores (_) only. Must start with a letter and end with a letter or number. Cannot contain prohibited keywords
      * 
      */
     private String superAccountName;
     /**
-     * @return 高权限账号的密码。账号密码需满足以下要求：只能包含大小写字母、数字和特殊字符（如 ~!{@literal @}#$%^&amp;*_-+=`|(){}[]:;&#39;&lt;&gt;,.?/）。长度需在 8~32 个字符内。至少包含大写字母、小写字母、数字或特殊字符中的 3 种。
+     * @return Password for high-privilege account. The password must meet the following requirements: can only contain uppercase and lowercase letters, numbers, and special characters (such as ~!{@literal @}#$%^&amp;*_-+=`|(){}[]:;&#39;&lt;&gt;,.?/). Length must be between 8 and 32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, or special characters.
      * 
      */
     private String superAccountPassword;
     /**
-     * @return 实例绑定的标签键和标签值数组对象。
+     * @return Array object of tag keys and tag values bound to the instance.
      * 
      */
     private List<GetInstanceTag> tags;
     /**
-     * @return 参数模板 ID。
+     * @return Parameter template ID
      * 
      */
     private String templateId;
     /**
-     * @return 实例的时区。国内所有地域默认时区为 UTC +08:00。
+     * @return Instance time zone. The default time zone for all regions in China is UTC +08:00.
      * 
      */
     private String timeZone;
     /**
-     * @return 私有网络（VPC） ID。
+     * @return Private network (VPC) ID.
      * 
      */
     private String vpcId;
     /**
-     * @return 可用区 ID。
+     * @return Availability zone ID
      * 
      */
     private String zoneIds;
 
     private GetInstanceResult() {}
     /**
-     * @return 计费详细信息。
+     * @return Billing details.
      * 
      */
     public GetInstanceChargeDetail chargeDetail() {
         return this.chargeDetail;
     }
     /**
-     * @return 实例的创建时间，格式：YYYY-MM-DDTHH:MM:SSZ（UTC 时间）。
+     * @return Instance creation time, format: YYYY-MM-DDTHH:MM:SSZ (UTC time)
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 实例兼容版本。取值范围：MySQL*8*0：表示兼容社区 MySQL 8.0 版本。MySQL*5*7：表示兼容社区 MySQL 5.7 版本。
+     * @return Instance compatible version. Options: MySQL*8*0: Compatible with community MySQL 8.0. MySQL*5*7: Compatible with community MySQL 5.7
      * 
      */
     public String dbEngineVersion() {
         return this.dbEngineVersion;
     }
     /**
-     * @return 根据兼容版本，选择 veDB MySQL 小版本。当 DBEngineVersion 取值为 MySQL*5*7 时，该参数取值默认为 2.0。当 DBEngineVersion 取值为 MySQL*8*0 时，该参数取值范围如下：3.0（默认）：veDB MySQL 稳定版，100% 兼容 MySQL 8.0。3.1：原生支持 HTAP 应用场景，加速复杂查询。3.2：原生支持 HTAP 应用场景，加速复杂查询。
+     * @return Select the veDB MySQL minor version based on compatibility. When DBEngineVersion is set to MySQL*5*7, the default value for this parameter is 2.0. When DBEngineVersion is set to MySQL*8*0, the parameter value options are as follows: 3.0 (default): veDB MySQL stable version, 100% compatible with MySQL 8.0. 3.1: Native support for HTAP scenarios, accelerates complex queries. 3.2: Native support for HTAP scenarios, accelerates complex queries.
      * 
      */
     public String dbMinorVersion() {
         return this.dbMinorVersion;
     }
     /**
-     * @return 实例的内核版本。
+     * @return Instance kernel version.
      * 
      */
     public String dbRevisionVersion() {
         return this.dbRevisionVersion;
     }
     /**
-     * @return 实例是否开启了删除保护功能。取值范围：enabled：开启。disabled：关闭。
+     * @return Whether deletion protection is enabled for the instance. Value range: enabled: enabled. disabled: disabled.
      * 
      */
     public String deletionProtection() {
         return this.deletionProtection;
     }
     /**
-     * @return 连接终端的详细信息。
+     * @return Endpoint details
      * 
      */
     public List<GetInstanceEndpoint> endpoints() {
@@ -232,161 +232,161 @@ public final class GetInstanceResult {
         return this.id;
     }
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return 实例名称。命名规则：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需在 1~128 个字符内。
+     * @return Instance name. Naming rules: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
      * 
      */
     public String instanceName() {
         return this.instanceName;
     }
     /**
-     * @return 实例状态。
+     * @return Instance status.
      * 
      */
     public String instanceStatus() {
         return this.instanceStatus;
     }
     /**
-     * @return 表名是否区分大小写。取值范围：0：表名称大小写敏感，后端根据实际表名存储。1：表名称不区分大小写，后端存储时将表名称统一为小写字母。
+     * @return Whether table names are case-sensitive. Value range: 0: table names are case-sensitive; backend stores according to actual table name. 1: table names are not case-sensitive; backend stores table names in lowercase.
      * 
      */
     public String lowerCaseTableNames() {
         return this.lowerCaseTableNames;
     }
     /**
-     * @return 实例的可维护时间窗口信息。
+     * @return Instance maintenance window information
      * 
      */
     public GetInstanceMaintenanceWindow maintenanceWindow() {
         return this.maintenanceWindow;
     }
     /**
-     * @return 实例节点数量。取值范围为 2~16 个。
+     * @return Number of instance nodes. Value range: 2–16.
      * 
      */
     public Integer nodeNumber() {
         return this.nodeNumber;
     }
     /**
-     * @return 实例的节点规格代码。
+     * @return Instance node specification code.
      * 
      */
     public String nodeSpec() {
         return this.nodeSpec;
     }
     /**
-     * @return 实例节点的详细信息。
+     * @return Instance node details
      * 
      */
     public List<GetInstanceNode> nodes() {
         return this.nodes;
     }
     /**
-     * @return 创建的实例数量，取值范围 1~50，默认值为 1。
+     * @return Number of instances to create. Range: 1~50. Default: 1
      * 
      */
     public Integer number() {
         return this.number;
     }
     /**
-     * @return 为实例默认创建的连接终端指定私网端口号。默认取值为 3306，取值范围为 1000~65534。
+     * @return Specify the private network port number for the default connection endpoint created for the instance. Default value is 3306. Value range: 1000–65534.
      * 
      */
     public Integer port() {
         return this.port;
     }
     /**
-     * @return 预付费的存储总容量大小，单位 GiB。
+     * @return Total prepaid storage capacity, in GiB
      * 
      */
     public Integer prePaidStorageInGb() {
         return this.prePaidStorageInGb;
     }
     /**
-     * @return 实例所属的项目名称。
+     * @return Project name to which the instance belongs.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 实例规格类型，取值：General：通用型。Exclusive：独享型。
+     * @return Instance specification type. Values: General: general purpose. Exclusive: dedicated.
      * 
      */
     public String specFamily() {
         return this.specFamily;
     }
     /**
-     * @return 存储计费类型，不传入该参数时，存储计费类型默认与计算计费类型取值一致。取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+     * @return Storage billing type. If this parameter is not specified, the storage billing type defaults to the same value as the compute billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription (prepaid).
      * 
      */
     public String storageChargeType() {
         return this.storageChargeType;
     }
     /**
-     * @return 已使用存储空间大小，单位 GiB。
+     * @return Used storage space, in GiB
      * 
      */
     public Double storageUsedGiB() {
         return this.storageUsedGiB;
     }
     /**
-     * @return 子网 ID。子网必须属于所选的可用区。
+     * @return Subnet ID. The subnet must belong to the selected availability zone.
      * 
      */
     public String subnetId() {
         return this.subnetId;
     }
     /**
-     * @return 高权限用户的账号名称。账号名称需满足以下要求：名称唯一，且长度在 2~32 个字符内。由字母、数字、中划线（-）、下划线（_）组成。以字母开头，以字母或数字结尾。名称内不能包含禁用关键词。
+     * @return Account name for privileged user. Requirements: Must be unique, 2–32 characters. Letters, numbers, hyphens (-), and underscores (_) only. Must start with a letter and end with a letter or number. Cannot contain prohibited keywords
      * 
      */
     public String superAccountName() {
         return this.superAccountName;
     }
     /**
-     * @return 高权限账号的密码。账号密码需满足以下要求：只能包含大小写字母、数字和特殊字符（如 ~!{@literal @}#$%^&amp;*_-+=`|(){}[]:;&#39;&lt;&gt;,.?/）。长度需在 8~32 个字符内。至少包含大写字母、小写字母、数字或特殊字符中的 3 种。
+     * @return Password for high-privilege account. The password must meet the following requirements: can only contain uppercase and lowercase letters, numbers, and special characters (such as ~!{@literal @}#$%^&amp;*_-+=`|(){}[]:;&#39;&lt;&gt;,.?/). Length must be between 8 and 32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, or special characters.
      * 
      */
     public String superAccountPassword() {
         return this.superAccountPassword;
     }
     /**
-     * @return 实例绑定的标签键和标签值数组对象。
+     * @return Array object of tag keys and tag values bound to the instance.
      * 
      */
     public List<GetInstanceTag> tags() {
         return this.tags;
     }
     /**
-     * @return 参数模板 ID。
+     * @return Parameter template ID
      * 
      */
     public String templateId() {
         return this.templateId;
     }
     /**
-     * @return 实例的时区。国内所有地域默认时区为 UTC +08:00。
+     * @return Instance time zone. The default time zone for all regions in China is UTC +08:00.
      * 
      */
     public String timeZone() {
         return this.timeZone;
     }
     /**
-     * @return 私有网络（VPC） ID。
+     * @return Private network (VPC) ID.
      * 
      */
     public String vpcId() {
         return this.vpcId;
     }
     /**
-     * @return 可用区 ID。
+     * @return Availability zone ID
      * 
      */
     public String zoneIds() {

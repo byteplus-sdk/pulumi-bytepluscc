@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm.Inputs
     public sealed class InstanceMaintenanceWindowGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 可维护周期粒度，默认取值为：Week（周）。
+        /// Maintenance cycle granularity. Default value: Week.
         /// </summary>
         [Input("dayKind")]
         public Input<string>? DayKind { get; set; }
@@ -23,7 +23,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm.Inputs
         private InputList<int>? _dayOfMonths;
 
         /// <summary>
-        /// 指定每月哪一天为可维护时间段，默认为空，表示每天都指定。
+        /// Specify which day of the month is the maintenance window. Default is empty, meaning every day is specified.
         /// </summary>
         public InputList<int> DayOfMonths
         {
@@ -35,7 +35,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm.Inputs
         private InputList<string>? _dayOfWeeks;
 
         /// <summary>
-        /// 每周的哪一天为可维护时间段，默认取值为每一天：Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。
+        /// Which day of the week is the maintenance window. Default value is every day: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.
         /// </summary>
         public InputList<string> DayOfWeeks
         {
@@ -44,7 +44,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm.Inputs
         }
 
         /// <summary>
-        /// 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+        /// Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time).
         /// </summary>
         [Input("maintenanceTime")]
         public Input<string>? MaintenanceTime { get; set; }

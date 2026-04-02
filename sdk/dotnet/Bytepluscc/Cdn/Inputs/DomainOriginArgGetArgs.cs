@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainOriginArgGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示该配置模块的生效条件，由一组规则组成。
+        /// Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         /// </summary>
         [Input("condition")]
         public Input<Inputs.DomainOriginArgConditionGetArgs>? Condition { get; set; }
 
         /// <summary>
-        /// 表示在满足 Condition 条件时所执行的操作。
+        /// Represents the action performed when the Condition is met.
         /// </summary>
         [Input("originArgAction")]
         public Input<Inputs.DomainOriginArgOriginArgActionGetArgs>? OriginArgAction { get; set; }

@@ -14,31 +14,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud.Inputs
     public sealed class InstanceInstanceConfigurationKibanaNodeResourceSpecGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 节点规格的 CPU 资源，单位为核（Core）
+        /// CPU resources for node specification, measured in cores.
         /// </summary>
         [Input("cpu")]
         public Input<int>? Cpu { get; set; }
 
         /// <summary>
-        /// 节点规格的描述信息
+        /// Description of node specifications
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 节点规格的显示名称
+        /// Display name of node specification.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// 节点规格的内存容量，单位 GiB
+        /// Memory capacity for node specification, measured in GiB
         /// </summary>
         [Input("memory")]
         public Input<int>? Memory { get; set; }
 
         /// <summary>
-        /// 节点规格。如需了解节点规格类型和详情
+        /// Node specification. For information about node specification types and details, please refer to the documentation.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

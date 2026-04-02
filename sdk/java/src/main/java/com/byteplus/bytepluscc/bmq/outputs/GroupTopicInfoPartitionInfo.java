@@ -13,74 +13,74 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GroupTopicInfoPartitionInfo {
     /**
-     * @return 当前消费位点。
+     * @return Current consumption position.
      * 
      */
     private @Nullable Integer currentOffset;
     /**
-     * @return Consumer Group 的名称。
+     * @return Name of the Consumer Group.
      * 
      */
     private @Nullable String groupName;
     /**
-     * @return 分区中未被消费的消息条数。
+     * @return Number of unconsumed messages in the partition.
      * 
      */
     private @Nullable Integer lag;
     /**
-     * @return 最新消费位点。
+     * @return Latest consumption position.
      * 
      */
     private @Nullable Integer latestOffset;
     /**
-     * @return 分区序号。
+     * @return Partition number.
      * 
      */
     private @Nullable Integer partitionId;
     /**
-     * @return Consumer Group 订阅的 Topic 名称。
+     * @return Name of the Topic subscribed by the Consumer Group.
      * 
      */
     private @Nullable String topicName;
 
     private GroupTopicInfoPartitionInfo() {}
     /**
-     * @return 当前消费位点。
+     * @return Current consumption position.
      * 
      */
     public Optional<Integer> currentOffset() {
         return Optional.ofNullable(this.currentOffset);
     }
     /**
-     * @return Consumer Group 的名称。
+     * @return Name of the Consumer Group.
      * 
      */
     public Optional<String> groupName() {
         return Optional.ofNullable(this.groupName);
     }
     /**
-     * @return 分区中未被消费的消息条数。
+     * @return Number of unconsumed messages in the partition.
      * 
      */
     public Optional<Integer> lag() {
         return Optional.ofNullable(this.lag);
     }
     /**
-     * @return 最新消费位点。
+     * @return Latest consumption position.
      * 
      */
     public Optional<Integer> latestOffset() {
         return Optional.ofNullable(this.latestOffset);
     }
     /**
-     * @return 分区序号。
+     * @return Partition number.
      * 
      */
     public Optional<Integer> partitionId() {
         return Optional.ofNullable(this.partitionId);
     }
     /**
-     * @return Consumer Group 订阅的 Topic 名称。
+     * @return Name of the Topic subscribed by the Consumer Group.
      * 
      */
     public Optional<String> topicName() {

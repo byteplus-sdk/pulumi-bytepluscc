@@ -29,7 +29,7 @@ class RegistryProxyCache(dict):
     def __init__(__self__, *,
                  type: Optional[builtins.str] = None):
         """
-        :param builtins.str type: ProxyCache支持的镜像仓库实例类型，参数值说明如下：DockerHub：dockerhub 镜像仓库。
+        :param builtins.str type: Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
         """
         if type is not None:
             pulumi.set(__self__, "type", type)
@@ -38,7 +38,7 @@ class RegistryProxyCache(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        ProxyCache支持的镜像仓库实例类型，参数值说明如下：DockerHub：dockerhub 镜像仓库。
+        Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
         """
         return pulumi.get(self, "type")
 
@@ -49,8 +49,24 @@ class RegistryStatus(dict):
                  conditions: Optional[Sequence[builtins.str]] = None,
                  phase: Optional[builtins.str] = None):
         """
-        :param Sequence[builtins.str] conditions: Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
-        :param builtins.str phase: Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+        :param Sequence[builtins.str] conditions: Creating, [ Progressing ]: Creating
+               Running, [ Ok ]: Running
+               Running, [ Degraded ]: Running
+               Stopped, [ Balance ]: Suspended due to insufficient balance
+               Stopped, [ Released ]: Pending reclamation
+               Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+               Starting, [ Progressing ]: Starting
+               Deleting, [ Progressing ]: Deleting
+               Failed, [ Unknown ]: Abnormal
+        :param builtins.str phase: Creating, [ Progressing ]: Creating
+               Running, [ Ok ]: Running
+               Running, [ Degraded ]: Running
+               Stopped, [ Balance ]: Suspended due to insufficient balance
+               Stopped, [ Released ]: Pending reclamation
+               Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+               Starting, [ Progressing ]: Starting
+               Deleting, [ Progressing ]: Deleting
+               Failed, [ Unknown ]: Abnormal
         """
         if conditions is not None:
             pulumi.set(__self__, "conditions", conditions)
@@ -61,7 +77,15 @@ class RegistryStatus(dict):
     @pulumi.getter
     def conditions(self) -> Optional[Sequence[builtins.str]]:
         """
-        Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+        Creating, [ Progressing ]: Creating
+        Running, [ Ok ]: Running
+        Running, [ Degraded ]: Running
+        Stopped, [ Balance ]: Suspended due to insufficient balance
+        Stopped, [ Released ]: Pending reclamation
+        Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+        Starting, [ Progressing ]: Starting
+        Deleting, [ Progressing ]: Deleting
+        Failed, [ Unknown ]: Abnormal
         """
         return pulumi.get(self, "conditions")
 
@@ -69,7 +93,15 @@ class RegistryStatus(dict):
     @pulumi.getter
     def phase(self) -> Optional[builtins.str]:
         """
-        Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+        Creating, [ Progressing ]: Creating
+        Running, [ Ok ]: Running
+        Running, [ Degraded ]: Running
+        Stopped, [ Balance ]: Suspended due to insufficient balance
+        Stopped, [ Released ]: Pending reclamation
+        Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+        Starting, [ Progressing ]: Starting
+        Deleting, [ Progressing ]: Deleting
+        Failed, [ Unknown ]: Abnormal
         """
         return pulumi.get(self, "phase")
 
@@ -80,8 +112,8 @@ class RegistryTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签的 Key 值。
-        :param builtins.str value: 标签的 Value 值列表。
+        :param builtins.str key: Tag key values
+        :param builtins.str value: List of tag values
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -92,7 +124,7 @@ class RegistryTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签的 Key 值。
+        Tag key values
         """
         return pulumi.get(self, "key")
 
@@ -100,7 +132,7 @@ class RegistryTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签的 Value 值列表。
+        List of tag values
         """
         return pulumi.get(self, "value")
 
@@ -110,7 +142,7 @@ class GetRegistryProxyCacheResult(dict):
     def __init__(__self__, *,
                  type: builtins.str):
         """
-        :param builtins.str type: ProxyCache支持的镜像仓库实例类型，参数值说明如下：DockerHub：dockerhub 镜像仓库。
+        :param builtins.str type: Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
         """
         pulumi.set(__self__, "type", type)
 
@@ -118,7 +150,7 @@ class GetRegistryProxyCacheResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        ProxyCache支持的镜像仓库实例类型，参数值说明如下：DockerHub：dockerhub 镜像仓库。
+        Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
         """
         return pulumi.get(self, "type")
 
@@ -129,8 +161,24 @@ class GetRegistryStatusResult(dict):
                  conditions: Sequence[builtins.str],
                  phase: builtins.str):
         """
-        :param Sequence[builtins.str] conditions: Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
-        :param builtins.str phase: Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+        :param Sequence[builtins.str] conditions: Creating, [ Progressing ]: Creating
+               Running, [ Ok ]: Running
+               Running, [ Degraded ]: Running
+               Stopped, [ Balance ]: Suspended due to insufficient balance
+               Stopped, [ Released ]: Pending reclamation
+               Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+               Starting, [ Progressing ]: Starting
+               Deleting, [ Progressing ]: Deleting
+               Failed, [ Unknown ]: Abnormal
+        :param builtins.str phase: Creating, [ Progressing ]: Creating
+               Running, [ Ok ]: Running
+               Running, [ Degraded ]: Running
+               Stopped, [ Balance ]: Suspended due to insufficient balance
+               Stopped, [ Released ]: Pending reclamation
+               Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+               Starting, [ Progressing ]: Starting
+               Deleting, [ Progressing ]: Deleting
+               Failed, [ Unknown ]: Abnormal
         """
         pulumi.set(__self__, "conditions", conditions)
         pulumi.set(__self__, "phase", phase)
@@ -139,7 +187,15 @@ class GetRegistryStatusResult(dict):
     @pulumi.getter
     def conditions(self) -> Sequence[builtins.str]:
         """
-        Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+        Creating, [ Progressing ]: Creating
+        Running, [ Ok ]: Running
+        Running, [ Degraded ]: Running
+        Stopped, [ Balance ]: Suspended due to insufficient balance
+        Stopped, [ Released ]: Pending reclamation
+        Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+        Starting, [ Progressing ]: Starting
+        Deleting, [ Progressing ]: Deleting
+        Failed, [ Unknown ]: Abnormal
         """
         return pulumi.get(self, "conditions")
 
@@ -147,7 +203,15 @@ class GetRegistryStatusResult(dict):
     @pulumi.getter
     def phase(self) -> builtins.str:
         """
-        Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+        Creating, [ Progressing ]: Creating
+        Running, [ Ok ]: Running
+        Running, [ Degraded ]: Running
+        Stopped, [ Balance ]: Suspended due to insufficient balance
+        Stopped, [ Released ]: Pending reclamation
+        Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+        Starting, [ Progressing ]: Starting
+        Deleting, [ Progressing ]: Deleting
+        Failed, [ Unknown ]: Abnormal
         """
         return pulumi.get(self, "phase")
 
@@ -158,8 +222,8 @@ class GetRegistryTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签的 Key 值。
-        :param builtins.str value: 标签的 Value 值列表。
+        :param builtins.str key: Tag key values
+        :param builtins.str value: List of tag values
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -168,7 +232,7 @@ class GetRegistryTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签的 Key 值。
+        Tag key values
         """
         return pulumi.get(self, "key")
 
@@ -176,7 +240,7 @@ class GetRegistryTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签的 Value 值列表。
+        List of tag values
         """
         return pulumi.get(self, "value")
 

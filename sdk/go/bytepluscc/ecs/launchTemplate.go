@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 实例启动模板是一系列实例配置信息的集合，用于快速购买实例。在模板中，您可以存储除密码外的全部配置信息，包括密钥对、计算规格、云盘、网络等，如果配置信息均有效，便可以一键成功购买实例，无需进行重复配置。
+// An instance launch template is a collection of instance configuration information for quickly purchasing instances. You can store all configuration information except passwords in the template, including key pairs, compute specifications, cloud disks, networks, etc. If all configuration information is valid, you can purchase instances with one click without repeated configuration.
 //
 // ## Import
 //
@@ -22,22 +22,22 @@ import (
 type LaunchTemplate struct {
 	pulumi.CustomResourceState
 
-	// 实例启动模板的创建时间。
+	// Instance launch template creation time
 	CreatedAt pulumi.StringOutput `pulumi:"createdAt"`
-	// 实例启动模板的默认版本号。
+	// Instance launch template default version number
 	DefaultVersionNumber pulumi.IntOutput `pulumi:"defaultVersionNumber"`
-	// 实例启动模的最新版本号。
+	// Latest version number of the instance launch template.
 	LatestVersionNumber pulumi.IntOutput `pulumi:"latestVersionNumber"`
-	// 实例启动模板 ID。
+	// Instance launch template ID
 	LaunchTemplateId pulumi.StringOutput `pulumi:"launchTemplateId"`
-	// 实例启动模板名称。
+	// Instance launch template name.
 	LaunchTemplateName pulumi.StringOutput `pulumi:"launchTemplateName"`
-	// 实例启动模版所属项目。
+	// Project associated with the instance launch template.
 	LaunchTemplateProjectName pulumi.StringOutput                        `pulumi:"launchTemplateProjectName"`
 	LaunchTemplateTags        LaunchTemplateLaunchTemplateTagArrayOutput `pulumi:"launchTemplateTags"`
-	// 实例启动模板版本信息。
+	// Instance launch template version information
 	LaunchTemplateVersion LaunchTemplateLaunchTemplateVersionOutput `pulumi:"launchTemplateVersion"`
-	// 实例启动模板的更新时间。
+	// Instance launch template update time
 	UpdatedAt pulumi.StringOutput `pulumi:"updatedAt"`
 }
 
@@ -74,42 +74,42 @@ func GetLaunchTemplate(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering LaunchTemplate resources.
 type launchTemplateState struct {
-	// 实例启动模板的创建时间。
+	// Instance launch template creation time
 	CreatedAt *string `pulumi:"createdAt"`
-	// 实例启动模板的默认版本号。
+	// Instance launch template default version number
 	DefaultVersionNumber *int `pulumi:"defaultVersionNumber"`
-	// 实例启动模的最新版本号。
+	// Latest version number of the instance launch template.
 	LatestVersionNumber *int `pulumi:"latestVersionNumber"`
-	// 实例启动模板 ID。
+	// Instance launch template ID
 	LaunchTemplateId *string `pulumi:"launchTemplateId"`
-	// 实例启动模板名称。
+	// Instance launch template name.
 	LaunchTemplateName *string `pulumi:"launchTemplateName"`
-	// 实例启动模版所属项目。
+	// Project associated with the instance launch template.
 	LaunchTemplateProjectName *string                           `pulumi:"launchTemplateProjectName"`
 	LaunchTemplateTags        []LaunchTemplateLaunchTemplateTag `pulumi:"launchTemplateTags"`
-	// 实例启动模板版本信息。
+	// Instance launch template version information
 	LaunchTemplateVersion *LaunchTemplateLaunchTemplateVersion `pulumi:"launchTemplateVersion"`
-	// 实例启动模板的更新时间。
+	// Instance launch template update time
 	UpdatedAt *string `pulumi:"updatedAt"`
 }
 
 type LaunchTemplateState struct {
-	// 实例启动模板的创建时间。
+	// Instance launch template creation time
 	CreatedAt pulumi.StringPtrInput
-	// 实例启动模板的默认版本号。
+	// Instance launch template default version number
 	DefaultVersionNumber pulumi.IntPtrInput
-	// 实例启动模的最新版本号。
+	// Latest version number of the instance launch template.
 	LatestVersionNumber pulumi.IntPtrInput
-	// 实例启动模板 ID。
+	// Instance launch template ID
 	LaunchTemplateId pulumi.StringPtrInput
-	// 实例启动模板名称。
+	// Instance launch template name.
 	LaunchTemplateName pulumi.StringPtrInput
-	// 实例启动模版所属项目。
+	// Project associated with the instance launch template.
 	LaunchTemplateProjectName pulumi.StringPtrInput
 	LaunchTemplateTags        LaunchTemplateLaunchTemplateTagArrayInput
-	// 实例启动模板版本信息。
+	// Instance launch template version information
 	LaunchTemplateVersion LaunchTemplateLaunchTemplateVersionPtrInput
-	// 实例启动模板的更新时间。
+	// Instance launch template update time
 	UpdatedAt pulumi.StringPtrInput
 }
 
@@ -118,27 +118,27 @@ func (LaunchTemplateState) ElementType() reflect.Type {
 }
 
 type launchTemplateArgs struct {
-	// 实例启动模板的默认版本号。
+	// Instance launch template default version number
 	DefaultVersionNumber *int `pulumi:"defaultVersionNumber"`
-	// 实例启动模板名称。
+	// Instance launch template name.
 	LaunchTemplateName string `pulumi:"launchTemplateName"`
-	// 实例启动模版所属项目。
+	// Project associated with the instance launch template.
 	LaunchTemplateProjectName *string                           `pulumi:"launchTemplateProjectName"`
 	LaunchTemplateTags        []LaunchTemplateLaunchTemplateTag `pulumi:"launchTemplateTags"`
-	// 实例启动模板版本信息。
+	// Instance launch template version information
 	LaunchTemplateVersion *LaunchTemplateLaunchTemplateVersion `pulumi:"launchTemplateVersion"`
 }
 
 // The set of arguments for constructing a LaunchTemplate resource.
 type LaunchTemplateArgs struct {
-	// 实例启动模板的默认版本号。
+	// Instance launch template default version number
 	DefaultVersionNumber pulumi.IntPtrInput
-	// 实例启动模板名称。
+	// Instance launch template name.
 	LaunchTemplateName pulumi.StringInput
-	// 实例启动模版所属项目。
+	// Project associated with the instance launch template.
 	LaunchTemplateProjectName pulumi.StringPtrInput
 	LaunchTemplateTags        LaunchTemplateLaunchTemplateTagArrayInput
-	// 实例启动模板版本信息。
+	// Instance launch template version information
 	LaunchTemplateVersion LaunchTemplateLaunchTemplateVersionPtrInput
 }
 
@@ -229,32 +229,32 @@ func (o LaunchTemplateOutput) ToLaunchTemplateOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 实例启动模板的创建时间。
+// Instance launch template creation time
 func (o LaunchTemplateOutput) CreatedAt() pulumi.StringOutput {
 	return o.ApplyT(func(v *LaunchTemplate) pulumi.StringOutput { return v.CreatedAt }).(pulumi.StringOutput)
 }
 
-// 实例启动模板的默认版本号。
+// Instance launch template default version number
 func (o LaunchTemplateOutput) DefaultVersionNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v *LaunchTemplate) pulumi.IntOutput { return v.DefaultVersionNumber }).(pulumi.IntOutput)
 }
 
-// 实例启动模的最新版本号。
+// Latest version number of the instance launch template.
 func (o LaunchTemplateOutput) LatestVersionNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v *LaunchTemplate) pulumi.IntOutput { return v.LatestVersionNumber }).(pulumi.IntOutput)
 }
 
-// 实例启动模板 ID。
+// Instance launch template ID
 func (o LaunchTemplateOutput) LaunchTemplateId() pulumi.StringOutput {
 	return o.ApplyT(func(v *LaunchTemplate) pulumi.StringOutput { return v.LaunchTemplateId }).(pulumi.StringOutput)
 }
 
-// 实例启动模板名称。
+// Instance launch template name.
 func (o LaunchTemplateOutput) LaunchTemplateName() pulumi.StringOutput {
 	return o.ApplyT(func(v *LaunchTemplate) pulumi.StringOutput { return v.LaunchTemplateName }).(pulumi.StringOutput)
 }
 
-// 实例启动模版所属项目。
+// Project associated with the instance launch template.
 func (o LaunchTemplateOutput) LaunchTemplateProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *LaunchTemplate) pulumi.StringOutput { return v.LaunchTemplateProjectName }).(pulumi.StringOutput)
 }
@@ -263,12 +263,12 @@ func (o LaunchTemplateOutput) LaunchTemplateTags() LaunchTemplateLaunchTemplateT
 	return o.ApplyT(func(v *LaunchTemplate) LaunchTemplateLaunchTemplateTagArrayOutput { return v.LaunchTemplateTags }).(LaunchTemplateLaunchTemplateTagArrayOutput)
 }
 
-// 实例启动模板版本信息。
+// Instance launch template version information
 func (o LaunchTemplateOutput) LaunchTemplateVersion() LaunchTemplateLaunchTemplateVersionOutput {
 	return o.ApplyT(func(v *LaunchTemplate) LaunchTemplateLaunchTemplateVersionOutput { return v.LaunchTemplateVersion }).(LaunchTemplateLaunchTemplateVersionOutput)
 }
 
-// 实例启动模板的更新时间。
+// Instance launch template update time
 func (o LaunchTemplateOutput) UpdatedAt() pulumi.StringOutput {
 	return o.ApplyT(func(v *LaunchTemplate) pulumi.StringOutput { return v.UpdatedAt }).(pulumi.StringOutput)
 }

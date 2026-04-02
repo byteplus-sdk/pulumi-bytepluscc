@@ -16,14 +16,14 @@ public final class EndpointModerationArgs extends com.pulumi.resources.ResourceA
     public static final EndpointModerationArgs Empty = new EndpointModerationArgs();
 
     /**
-     * 内容安全护栏方案。取值:Default: 默认方案。更低延迟，广泛覆盖内容安全通用需求;Basic：基本方案（公测中）。支持在接口响应中提供命中的风险分类，暂时只包含严重违规和激进行为两类风险。注意：如果是流式接口调用，不建议此方案，会导致吐出的每个分片的长度变长，延时变高。
+     * Content safety guardrail scheme. Values: Default: default scheme. Lower latency, broadly covers general content safety requirements; Basic: basic scheme (public beta). Supports providing triggered risk categories in interface responses, currently only includes two risk types: severe violations and aggressive behavior. Note: If using streaming interface calls, this scheme is not recommended, as it will increase the length of each output fragment and raise latency
      * 
      */
     @Import(name="strategy")
     private @Nullable Output<String> strategy;
 
     /**
-     * @return 内容安全护栏方案。取值:Default: 默认方案。更低延迟，广泛覆盖内容安全通用需求;Basic：基本方案（公测中）。支持在接口响应中提供命中的风险分类，暂时只包含严重违规和激进行为两类风险。注意：如果是流式接口调用，不建议此方案，会导致吐出的每个分片的长度变长，延时变高。
+     * @return Content safety guardrail scheme. Values: Default: default scheme. Lower latency, broadly covers general content safety requirements; Basic: basic scheme (public beta). Supports providing triggered risk categories in interface responses, currently only includes two risk types: severe violations and aggressive behavior. Note: If using streaming interface calls, this scheme is not recommended, as it will increase the length of each output fragment and raise latency
      * 
      */
     public Optional<Output<String>> strategy() {
@@ -55,7 +55,7 @@ public final class EndpointModerationArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param strategy 内容安全护栏方案。取值:Default: 默认方案。更低延迟，广泛覆盖内容安全通用需求;Basic：基本方案（公测中）。支持在接口响应中提供命中的风险分类，暂时只包含严重违规和激进行为两类风险。注意：如果是流式接口调用，不建议此方案，会导致吐出的每个分片的长度变长，延时变高。
+         * @param strategy Content safety guardrail scheme. Values: Default: default scheme. Lower latency, broadly covers general content safety requirements; Basic: basic scheme (public beta). Supports providing triggered risk categories in interface responses, currently only includes two risk types: severe violations and aggressive behavior. Note: If using streaming interface calls, this scheme is not recommended, as it will increase the length of each output fragment and raise latency
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class EndpointModerationArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param strategy 内容安全护栏方案。取值:Default: 默认方案。更低延迟，广泛覆盖内容安全通用需求;Basic：基本方案（公测中）。支持在接口响应中提供命中的风险分类，暂时只包含严重违规和激进行为两类风险。注意：如果是流式接口调用，不建议此方案，会导致吐出的每个分片的长度变长，延时变高。
+         * @param strategy Content safety guardrail scheme. Values: Default: default scheme. Lower latency, broadly covers general content safety requirements; Basic: basic scheme (public beta). Supports providing triggered risk categories in interface responses, currently only includes two risk types: severe violations and aggressive behavior. Note: If using streaming interface calls, this scheme is not recommended, as it will increase the length of each output fragment and raise latency
          * 
          * @return builder
          * 

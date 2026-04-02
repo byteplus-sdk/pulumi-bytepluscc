@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Privatezone
 {
     /// <summary>
-    /// 解析记录是域名与 VPC 内资源信息的映射。
+    /// A DNS record maps a domain name to resource information within a VPC.
     /// 
     /// ## Example Usage
     /// 
@@ -49,85 +49,85 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
     public partial class Record : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 解析记录的创建时间。
+        /// Creation time of the DNS record.
         /// </summary>
         [Output("createdAt")]
         public Output<string> CreatedAt { get; private set; } = null!;
 
         /// <summary>
-        /// 解析记录是否被启用。
+        /// Indicates whether the DNS record is enabled.
         /// </summary>
         [Output("enable")]
         public Output<bool> Enable { get; private set; } = null!;
 
         /// <summary>
-        /// 子域名的域名前缀。
+        /// Domain prefix for the subdomain.
         /// </summary>
         [Output("host")]
         public Output<string> Host { get; private set; } = null!;
 
         /// <summary>
-        /// 最近一次更新解析记录的账号 ID。
+        /// Account ID of the most recent update to the DNS record.
         /// </summary>
         [Output("lastOperator")]
         public Output<string> LastOperator { get; private set; } = null!;
 
         /// <summary>
-        /// 解析记录的线路，只能是默认线路 default。
+        /// DNS record route, only the default route 'default' is supported.
         /// </summary>
         [Output("line")]
         public Output<string> Line { get; private set; } = null!;
 
         /// <summary>
-        /// 解析记录 ID。
+        /// DNS record ID.
         /// </summary>
         [Output("recordId")]
         public Output<string> RecordId { get; private set; } = null!;
 
         /// <summary>
-        /// 备注。支持 UTF-8 字符。不能超过 16 个字符。默认值为空字符串。
+        /// Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
         /// </summary>
         [Output("remark")]
         public Output<string> Remark { get; private set; } = null!;
 
         /// <summary>
-        /// 解析记录的过期时间。单位为秒。默认值为 600。
+        /// DNS record TTL (time to live), in seconds. Default is 600.
         /// </summary>
         [Output("ttl")]
         public Output<int> Ttl { get; private set; } = null!;
 
         /// <summary>
-        /// 解析记录类型。该参数的取值如下：A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。
+        /// DNS record type. Valid values are: A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record. A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record.
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
 
         /// <summary>
-        /// 解析记录最近一次的更新时间。
+        /// Last update time of the DNS record.
         /// </summary>
         [Output("updatedAt")]
         public Output<string> UpdatedAt { get; private set; } = null!;
 
         /// <summary>
-        /// 记录值。
+        /// Record value.
         /// </summary>
         [Output("value")]
         public Output<string> Value { get; private set; } = null!;
 
         /// <summary>
-        /// 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
+        /// Record weight. The weight takes effect only when load balancing is enabled for the domain name.
         /// </summary>
         [Output("weight")]
         public Output<int> Weight { get; private set; } = null!;
 
         /// <summary>
-        /// 该记录集是否开启了负载均衡。
+        /// Indicates whether load balancing is enabled for this record set.
         /// </summary>
         [Output("weightEnabled")]
         public Output<bool> WeightEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// 域名 ID。
+        /// Domain name ID.
         /// </summary>
         [Output("zid")]
         public Output<int> Zid { get; private set; } = null!;
@@ -180,61 +180,61 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
     public sealed class RecordArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 解析记录是否被启用。
+        /// Indicates whether the DNS record is enabled.
         /// </summary>
         [Input("enable")]
         public Input<bool>? Enable { get; set; }
 
         /// <summary>
-        /// 子域名的域名前缀。
+        /// Domain prefix for the subdomain.
         /// </summary>
         [Input("host", required: true)]
         public Input<string> Host { get; set; } = null!;
 
         /// <summary>
-        /// 解析记录的线路，只能是默认线路 default。
+        /// DNS record route, only the default route 'default' is supported.
         /// </summary>
         [Input("line")]
         public Input<string>? Line { get; set; }
 
         /// <summary>
-        /// 备注。支持 UTF-8 字符。不能超过 16 个字符。默认值为空字符串。
+        /// Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
         /// </summary>
         [Input("remark")]
         public Input<string>? Remark { get; set; }
 
         /// <summary>
-        /// 解析记录的过期时间。单位为秒。默认值为 600。
+        /// DNS record TTL (time to live), in seconds. Default is 600.
         /// </summary>
         [Input("ttl")]
         public Input<int>? Ttl { get; set; }
 
         /// <summary>
-        /// 解析记录类型。该参数的取值如下：A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。
+        /// DNS record type. Valid values are: A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record. A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 
         /// <summary>
-        /// 记录值。
+        /// Record value.
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;
 
         /// <summary>
-        /// 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
+        /// Record weight. The weight takes effect only when load balancing is enabled for the domain name.
         /// </summary>
         [Input("weight")]
         public Input<int>? Weight { get; set; }
 
         /// <summary>
-        /// 该记录集是否开启了负载均衡。
+        /// Indicates whether load balancing is enabled for this record set.
         /// </summary>
         [Input("weightEnabled")]
         public Input<bool>? WeightEnabled { get; set; }
 
         /// <summary>
-        /// 域名 ID。
+        /// Domain name ID.
         /// </summary>
         [Input("zid", required: true)]
         public Input<int> Zid { get; set; } = null!;
@@ -248,85 +248,85 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
     public sealed class RecordState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 解析记录的创建时间。
+        /// Creation time of the DNS record.
         /// </summary>
         [Input("createdAt")]
         public Input<string>? CreatedAt { get; set; }
 
         /// <summary>
-        /// 解析记录是否被启用。
+        /// Indicates whether the DNS record is enabled.
         /// </summary>
         [Input("enable")]
         public Input<bool>? Enable { get; set; }
 
         /// <summary>
-        /// 子域名的域名前缀。
+        /// Domain prefix for the subdomain.
         /// </summary>
         [Input("host")]
         public Input<string>? Host { get; set; }
 
         /// <summary>
-        /// 最近一次更新解析记录的账号 ID。
+        /// Account ID of the most recent update to the DNS record.
         /// </summary>
         [Input("lastOperator")]
         public Input<string>? LastOperator { get; set; }
 
         /// <summary>
-        /// 解析记录的线路，只能是默认线路 default。
+        /// DNS record route, only the default route 'default' is supported.
         /// </summary>
         [Input("line")]
         public Input<string>? Line { get; set; }
 
         /// <summary>
-        /// 解析记录 ID。
+        /// DNS record ID.
         /// </summary>
         [Input("recordId")]
         public Input<string>? RecordId { get; set; }
 
         /// <summary>
-        /// 备注。支持 UTF-8 字符。不能超过 16 个字符。默认值为空字符串。
+        /// Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
         /// </summary>
         [Input("remark")]
         public Input<string>? Remark { get; set; }
 
         /// <summary>
-        /// 解析记录的过期时间。单位为秒。默认值为 600。
+        /// DNS record TTL (time to live), in seconds. Default is 600.
         /// </summary>
         [Input("ttl")]
         public Input<int>? Ttl { get; set; }
 
         /// <summary>
-        /// 解析记录类型。该参数的取值如下：A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。
+        /// DNS record type. Valid values are: A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record. A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// 解析记录最近一次的更新时间。
+        /// Last update time of the DNS record.
         /// </summary>
         [Input("updatedAt")]
         public Input<string>? UpdatedAt { get; set; }
 
         /// <summary>
-        /// 记录值。
+        /// Record value.
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
 
         /// <summary>
-        /// 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
+        /// Record weight. The weight takes effect only when load balancing is enabled for the domain name.
         /// </summary>
         [Input("weight")]
         public Input<int>? Weight { get; set; }
 
         /// <summary>
-        /// 该记录集是否开启了负载均衡。
+        /// Indicates whether load balancing is enabled for this record set.
         /// </summary>
         [Input("weightEnabled")]
         public Input<bool>? WeightEnabled { get; set; }
 
         /// <summary>
-        /// 域名 ID。
+        /// Domain name ID.
         /// </summary>
         [Input("zid")]
         public Input<int>? Zid { get; set; }

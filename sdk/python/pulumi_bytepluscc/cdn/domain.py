@@ -73,46 +73,46 @@ class DomainArgs:
                  video_drag: Optional[pulumi.Input['DomainVideoDragArgs']] = None):
         """
         The set of arguments for constructing a Domain resource.
-        :param pulumi.Input[builtins.str] domain: 表示该加速域名。
-        :param pulumi.Input[builtins.str] service_type: 表示该域名的业务类型。该参数有以下取值：download：表示文件下载。web：表示网页。video：表示音视频点播。
-        :param pulumi.Input['DomainAreaAccessRuleArgs'] area_access_rule: 表示 "地域访问控制" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input['DomainCacheHostArgs'] cache_host: 表示 "共享缓存" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input['DomainCompressionArgs'] compression: 表示 "智能压缩" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input['DomainConditionalOriginArgs'] conditional_origin: 表示 "条件源站" 特性的配置模块。
-        :param pulumi.Input['DomainCustomErrorPageArgs'] custom_error_page: 表示 "自定义错误页面" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input['DomainCustomizeAccessRuleArgs'] customize_access_rule: 表示 "自定义头部黑白名单" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input['DomainDownloadSpeedLimitArgs'] download_speed_limit: 表示 "下载限速" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[builtins.bool] follow_redirect: 表示是否启用 "回源重定向跟随" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
-        :param pulumi.Input['DomainHttpForcedRedirectArgs'] http_forced_redirect: 表示 "HTTPS 强制跳转到 HTTP" 特性的配置模块。该特性默认是禁用。
-        :param pulumi.Input['DomainHttpsArgs'] https: 表示 HTTPS 配置模块。该功能默认是禁用。
-        :param pulumi.Input['DomainIPv6Args'] i_pv6: 表示 IPv6 特性的配置模块。
-        :param pulumi.Input['DomainIpAccessRuleArgs'] ip_access_rule: 表示 "IP 黑白名单" 特性的配置模块。该特性默认为禁用。该特性提供了两种配置方式：常规配置：指定 RuleType 和 Ip 对当前域名进行配置。全局配置：指定 SharedConfig 使用一个全局配置。全局配置是白名单功能。您只能选择一种配置方式。
-        :param pulumi.Input['DomainMethodDeniedRuleArgs'] method_denied_rule: 表示 "禁用 HTTP Method" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input['DomainMultiRangeArgs'] multi_range: 表示多重范围（multi-range) 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input['DomainOfflineCacheArgs'] offline_cache: 表示 "离线缓存" 特性的配置模块。
-        :param pulumi.Input['DomainOriginAccessRuleArgs'] origin_access_rule: 表示 "Origin 黑白名单" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input['DomainOriginCertCheckArgs'] origin_cert_check: 源站证书校验
-        :param pulumi.Input[builtins.str] origin_host: 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
-        :param pulumi.Input[builtins.str] origin_i_pv6: 表示 "IPv6 回源" 的配置。该参数有以下取值：ipv6*first：表示内容分发网络始终尝试获取源站域名的 IPv6 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv4 地址。ipv4*first：表示内容分发网络始终尝试获取源站域名的 IPv4 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv6 地址。followclient：表示内容分发网络尝试获取与用户请求相同类型的 IP 地址。该参数的默认值是 followclient。由于海外部分回源节点不支持向 IPv6 地址发送回源请求，该功能仅适用于位于中国内地的回源节点。
-        :param pulumi.Input[builtins.str] origin_protocol: 表示回源请求使用的协议。该参数有以下取值：http：表示回源请求使用 HTTP 协议。https：表示回源请求使用 HTTPS 协议。followclient：表示回源协议与用户请求使用的协议相同。
-        :param pulumi.Input[builtins.bool] origin_range: 表示是否启用 "Range 回源" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
-        :param pulumi.Input['DomainOriginRetryArgs'] origin_retry: 表示 "回源重试设置" 特性的配置模块。
-        :param pulumi.Input['DomainOriginRewriteArgs'] origin_rewrite: 表示 "回源 URL 改写" 特性的配置模块。
-        :param pulumi.Input['DomainOriginSniArgs'] origin_sni: 表示 "回源 SNI" 特性的配置模块。
-        :param pulumi.Input['DomainPageOptimizationArgs'] page_optimization: 表示 "页面优化" 特性的配置模块。
-        :param pulumi.Input[builtins.str] project: 表示该加速域名归属的项目。
-        :param pulumi.Input['DomainQuicArgs'] quic: 表示 QUIC 特性的配置模块。该特性默认是禁用。
-        :param pulumi.Input['DomainRedirectionRewriteArgs'] redirection_rewrite: 表示 "URL 重定向改写" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input['DomainRefererAccessRuleArgs'] referer_access_rule: 表示 "Referer 黑白名单" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input['DomainRemoteAuthArgs'] remote_auth: 表示 "远程鉴权" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input['DomainRequestBlockRuleArgs'] request_block_rule: 表示 "自定义拦截" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input['DomainRewriteHlsArgs'] rewrite_hls: 表示 "标准 HLS 加密改写" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[builtins.str] service_region: 表示该加速域名的加速区域。该参数有以下取值：chinese*mainland：表示中国内地。global：表示全球。outside*chinese_mainland：表示全球（不含中国内地）。
-        :param pulumi.Input['DomainSignedUrlAuthArgs'] signed_url_auth: 表示 "URL 鉴权" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input['DomainTimeoutArgs'] timeout: 表示 "回源超时时间" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input['DomainUaAccessRuleArgs'] ua_access_rule: 表示 "UA 黑白名单" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input['DomainUrlNormalizeArgs'] url_normalize: 表示 "URL 标准化" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input['DomainVideoDragArgs'] video_drag: 表示 "视频拖拽" 特性的配置模块。该特性默认为禁用。
+        :param pulumi.Input[builtins.str] domain: Indicates the acceleration domain name.
+        :param pulumi.Input[builtins.str] service_type: Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
+        :param pulumi.Input['DomainAreaAccessRuleArgs'] area_access_rule: Indicates the configuration module for the 'regional access control' feature. This feature is disabled by default.
+        :param pulumi.Input['DomainCacheHostArgs'] cache_host: Specifies the configuration module for the 'shared cache' feature. This feature is disabled by default.
+        :param pulumi.Input['DomainCompressionArgs'] compression: Represents the configuration module for the 'Smart Compression' feature. This feature is disabled by default.
+        :param pulumi.Input['DomainConditionalOriginArgs'] conditional_origin: Specifies the configuration module for the 'Conditional Origin' feature.
+        :param pulumi.Input['DomainCustomErrorPageArgs'] custom_error_page: Indicates the configuration module for the "Custom Error Page" feature. This feature is disabled by default.
+        :param pulumi.Input['DomainCustomizeAccessRuleArgs'] customize_access_rule: Represents the configuration module for the 'Custom Header Allowlist and Blocklist' feature. This feature is disabled by default.
+        :param pulumi.Input['DomainDownloadSpeedLimitArgs'] download_speed_limit: Represents the configuration module for the 'Download Speed Limit' feature. This feature is disabled by default.
+        :param pulumi.Input[builtins.bool] follow_redirect: Specifies whether to enable the 'origin redirect follow' feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
+        :param pulumi.Input['DomainHttpForcedRedirectArgs'] http_forced_redirect: Represents the configuration module for the 'Force HTTPS Redirect to HTTP' feature. This feature is disabled by default.
+        :param pulumi.Input['DomainHttpsArgs'] https: Indicates the HTTPS configuration module. This feature is disabled by default.
+        :param pulumi.Input['DomainIPv6Args'] i_pv6: Indicates the configuration module for the IPv6 feature.
+        :param pulumi.Input['DomainIpAccessRuleArgs'] ip_access_rule: Specifies the configuration module for the 'IP allowlist and blocklist' feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
+        :param pulumi.Input['DomainMethodDeniedRuleArgs'] method_denied_rule: Represents the configuration module for the 'Disable HTTP Method' feature. This feature is disabled by default.
+        :param pulumi.Input['DomainMultiRangeArgs'] multi_range: Indicates the configuration module for the multi-range feature. This feature is disabled by default
+        :param pulumi.Input['DomainOfflineCacheArgs'] offline_cache: Indicates the configuration module for the 'offline cache' feature.
+        :param pulumi.Input['DomainOriginAccessRuleArgs'] origin_access_rule: Indicates the configuration module for the 'Origin allowlist and blacklist' feature. This feature is disabled by default.
+        :param pulumi.Input['DomainOriginCertCheckArgs'] origin_cert_check: Origin certificate validation
+        :param pulumi.Input[builtins.str] origin_host: If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
+        :param pulumi.Input[builtins.str] origin_i_pv6: Indicates the configuration for "IPv6 origin fetch." This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user's request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
+        :param pulumi.Input[builtins.str] origin_protocol: Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user's request.
+        :param pulumi.Input[builtins.bool] origin_range: Indicates whether the 'Range Origin' feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
+        :param pulumi.Input['DomainOriginRetryArgs'] origin_retry: Indicates the configuration module for the "origin fetch retry settings" feature.
+        :param pulumi.Input['DomainOriginRewriteArgs'] origin_rewrite: Indicates the configuration module for the 'Origin URL Rewrite' feature.
+        :param pulumi.Input['DomainOriginSniArgs'] origin_sni: Indicates the configuration module for the 'origin SNI' feature.
+        :param pulumi.Input['DomainPageOptimizationArgs'] page_optimization: Specifies the configuration module for the 'page optimization' feature.
+        :param pulumi.Input[builtins.str] project: Indicates the project to which the acceleration domain belongs
+        :param pulumi.Input['DomainQuicArgs'] quic: Indicates the configuration module for the QUIC feature. This feature is disabled by default.
+        :param pulumi.Input['DomainRedirectionRewriteArgs'] redirection_rewrite: Represents the configuration module for the 'URL Redirect Rewrite' feature. This feature is disabled by default.
+        :param pulumi.Input['DomainRefererAccessRuleArgs'] referer_access_rule: Indicates the configuration module for the "Referer Allowlist and Denylist" feature. This feature is disabled by default.
+        :param pulumi.Input['DomainRemoteAuthArgs'] remote_auth: Indicates the configuration module for the 'remote authentication' feature. This feature is disabled by default.
+        :param pulumi.Input['DomainRequestBlockRuleArgs'] request_block_rule: Indicates the configuration module for the 'Custom Interception' feature. This feature is disabled by default
+        :param pulumi.Input['DomainRewriteHlsArgs'] rewrite_hls: Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
+        :param pulumi.Input[builtins.str] service_region: Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
+        :param pulumi.Input['DomainSignedUrlAuthArgs'] signed_url_auth: Indicates the configuration module for the 'URL Authentication' feature. This feature is disabled by default
+        :param pulumi.Input['DomainTimeoutArgs'] timeout: Indicates the configuration module for the 'origin timeout' feature. This feature is disabled by default.
+        :param pulumi.Input['DomainUaAccessRuleArgs'] ua_access_rule: Indicates the configuration module for the "UA allowlist and blocklist" feature. This feature is disabled by default.
+        :param pulumi.Input['DomainUrlNormalizeArgs'] url_normalize: Specifies the configuration module for the 'URL normalization' feature. This feature is disabled by default.
+        :param pulumi.Input['DomainVideoDragArgs'] video_drag: Indicates the configuration module for the "Video Drag" feature. This feature is disabled by default.
         """
         pulumi.set(__self__, "domain", domain)
         pulumi.set(__self__, "origins", origins)
@@ -214,7 +214,7 @@ class DomainArgs:
     @pulumi.getter
     def domain(self) -> pulumi.Input[builtins.str]:
         """
-        表示该加速域名。
+        Indicates the acceleration domain name.
         """
         return pulumi.get(self, "domain")
 
@@ -235,7 +235,7 @@ class DomainArgs:
     @pulumi.getter(name="serviceType")
     def service_type(self) -> pulumi.Input[builtins.str]:
         """
-        表示该域名的业务类型。该参数有以下取值：download：表示文件下载。web：表示网页。video：表示音视频点播。
+        Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
         """
         return pulumi.get(self, "service_type")
 
@@ -247,7 +247,7 @@ class DomainArgs:
     @pulumi.getter(name="areaAccessRule")
     def area_access_rule(self) -> Optional[pulumi.Input['DomainAreaAccessRuleArgs']]:
         """
-        表示 "地域访问控制" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the 'regional access control' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "area_access_rule")
 
@@ -268,7 +268,7 @@ class DomainArgs:
     @pulumi.getter(name="cacheHost")
     def cache_host(self) -> Optional[pulumi.Input['DomainCacheHostArgs']]:
         """
-        表示 "共享缓存" 特性的配置模块。该特性默认为禁用。
+        Specifies the configuration module for the 'shared cache' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "cache_host")
 
@@ -298,7 +298,7 @@ class DomainArgs:
     @pulumi.getter
     def compression(self) -> Optional[pulumi.Input['DomainCompressionArgs']]:
         """
-        表示 "智能压缩" 特性的配置模块。该特性默认为禁用。
+        Represents the configuration module for the 'Smart Compression' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "compression")
 
@@ -310,7 +310,7 @@ class DomainArgs:
     @pulumi.getter(name="conditionalOrigin")
     def conditional_origin(self) -> Optional[pulumi.Input['DomainConditionalOriginArgs']]:
         """
-        表示 "条件源站" 特性的配置模块。
+        Specifies the configuration module for the 'Conditional Origin' feature.
         """
         return pulumi.get(self, "conditional_origin")
 
@@ -322,7 +322,7 @@ class DomainArgs:
     @pulumi.getter(name="customErrorPage")
     def custom_error_page(self) -> Optional[pulumi.Input['DomainCustomErrorPageArgs']]:
         """
-        表示 "自定义错误页面" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the "Custom Error Page" feature. This feature is disabled by default.
         """
         return pulumi.get(self, "custom_error_page")
 
@@ -334,7 +334,7 @@ class DomainArgs:
     @pulumi.getter(name="customizeAccessRule")
     def customize_access_rule(self) -> Optional[pulumi.Input['DomainCustomizeAccessRuleArgs']]:
         """
-        表示 "自定义头部黑白名单" 特性的配置模块。该特性默认为禁用。
+        Represents the configuration module for the 'Custom Header Allowlist and Blocklist' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "customize_access_rule")
 
@@ -346,7 +346,7 @@ class DomainArgs:
     @pulumi.getter(name="downloadSpeedLimit")
     def download_speed_limit(self) -> Optional[pulumi.Input['DomainDownloadSpeedLimitArgs']]:
         """
-        表示 "下载限速" 特性的配置模块。该特性默认为禁用。
+        Represents the configuration module for the 'Download Speed Limit' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "download_speed_limit")
 
@@ -358,7 +358,7 @@ class DomainArgs:
     @pulumi.getter(name="followRedirect")
     def follow_redirect(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用 "回源重定向跟随" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        Specifies whether to enable the 'origin redirect follow' feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
         """
         return pulumi.get(self, "follow_redirect")
 
@@ -370,7 +370,7 @@ class DomainArgs:
     @pulumi.getter(name="httpForcedRedirect")
     def http_forced_redirect(self) -> Optional[pulumi.Input['DomainHttpForcedRedirectArgs']]:
         """
-        表示 "HTTPS 强制跳转到 HTTP" 特性的配置模块。该特性默认是禁用。
+        Represents the configuration module for the 'Force HTTPS Redirect to HTTP' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "http_forced_redirect")
 
@@ -382,7 +382,7 @@ class DomainArgs:
     @pulumi.getter
     def https(self) -> Optional[pulumi.Input['DomainHttpsArgs']]:
         """
-        表示 HTTPS 配置模块。该功能默认是禁用。
+        Indicates the HTTPS configuration module. This feature is disabled by default.
         """
         return pulumi.get(self, "https")
 
@@ -394,7 +394,7 @@ class DomainArgs:
     @pulumi.getter(name="iPv6")
     def i_pv6(self) -> Optional[pulumi.Input['DomainIPv6Args']]:
         """
-        表示 IPv6 特性的配置模块。
+        Indicates the configuration module for the IPv6 feature.
         """
         return pulumi.get(self, "i_pv6")
 
@@ -406,7 +406,7 @@ class DomainArgs:
     @pulumi.getter(name="ipAccessRule")
     def ip_access_rule(self) -> Optional[pulumi.Input['DomainIpAccessRuleArgs']]:
         """
-        表示 "IP 黑白名单" 特性的配置模块。该特性默认为禁用。该特性提供了两种配置方式：常规配置：指定 RuleType 和 Ip 对当前域名进行配置。全局配置：指定 SharedConfig 使用一个全局配置。全局配置是白名单功能。您只能选择一种配置方式。
+        Specifies the configuration module for the 'IP allowlist and blocklist' feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
         """
         return pulumi.get(self, "ip_access_rule")
 
@@ -418,7 +418,7 @@ class DomainArgs:
     @pulumi.getter(name="methodDeniedRule")
     def method_denied_rule(self) -> Optional[pulumi.Input['DomainMethodDeniedRuleArgs']]:
         """
-        表示 "禁用 HTTP Method" 特性的配置模块。该特性默认为禁用。
+        Represents the configuration module for the 'Disable HTTP Method' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "method_denied_rule")
 
@@ -430,7 +430,7 @@ class DomainArgs:
     @pulumi.getter(name="multiRange")
     def multi_range(self) -> Optional[pulumi.Input['DomainMultiRangeArgs']]:
         """
-        表示多重范围（multi-range) 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the multi-range feature. This feature is disabled by default
         """
         return pulumi.get(self, "multi_range")
 
@@ -451,7 +451,7 @@ class DomainArgs:
     @pulumi.getter(name="offlineCache")
     def offline_cache(self) -> Optional[pulumi.Input['DomainOfflineCacheArgs']]:
         """
-        表示 "离线缓存" 特性的配置模块。
+        Indicates the configuration module for the 'offline cache' feature.
         """
         return pulumi.get(self, "offline_cache")
 
@@ -463,7 +463,7 @@ class DomainArgs:
     @pulumi.getter(name="originAccessRule")
     def origin_access_rule(self) -> Optional[pulumi.Input['DomainOriginAccessRuleArgs']]:
         """
-        表示 "Origin 黑白名单" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the 'Origin allowlist and blacklist' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "origin_access_rule")
 
@@ -484,7 +484,7 @@ class DomainArgs:
     @pulumi.getter(name="originCertCheck")
     def origin_cert_check(self) -> Optional[pulumi.Input['DomainOriginCertCheckArgs']]:
         """
-        源站证书校验
+        Origin certificate validation
         """
         return pulumi.get(self, "origin_cert_check")
 
@@ -496,7 +496,7 @@ class DomainArgs:
     @pulumi.getter(name="originHost")
     def origin_host(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+        If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
         """
         return pulumi.get(self, "origin_host")
 
@@ -508,7 +508,7 @@ class DomainArgs:
     @pulumi.getter(name="originIPv6")
     def origin_i_pv6(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示 "IPv6 回源" 的配置。该参数有以下取值：ipv6*first：表示内容分发网络始终尝试获取源站域名的 IPv6 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv4 地址。ipv4*first：表示内容分发网络始终尝试获取源站域名的 IPv4 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv6 地址。followclient：表示内容分发网络尝试获取与用户请求相同类型的 IP 地址。该参数的默认值是 followclient。由于海外部分回源节点不支持向 IPv6 地址发送回源请求，该功能仅适用于位于中国内地的回源节点。
+        Indicates the configuration for "IPv6 origin fetch." This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user's request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
         """
         return pulumi.get(self, "origin_i_pv6")
 
@@ -520,7 +520,7 @@ class DomainArgs:
     @pulumi.getter(name="originProtocol")
     def origin_protocol(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示回源请求使用的协议。该参数有以下取值：http：表示回源请求使用 HTTP 协议。https：表示回源请求使用 HTTPS 协议。followclient：表示回源协议与用户请求使用的协议相同。
+        Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user's request.
         """
         return pulumi.get(self, "origin_protocol")
 
@@ -532,7 +532,7 @@ class DomainArgs:
     @pulumi.getter(name="originRange")
     def origin_range(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用 "Range 回源" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        Indicates whether the 'Range Origin' feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
         """
         return pulumi.get(self, "origin_range")
 
@@ -544,7 +544,7 @@ class DomainArgs:
     @pulumi.getter(name="originRetry")
     def origin_retry(self) -> Optional[pulumi.Input['DomainOriginRetryArgs']]:
         """
-        表示 "回源重试设置" 特性的配置模块。
+        Indicates the configuration module for the "origin fetch retry settings" feature.
         """
         return pulumi.get(self, "origin_retry")
 
@@ -556,7 +556,7 @@ class DomainArgs:
     @pulumi.getter(name="originRewrite")
     def origin_rewrite(self) -> Optional[pulumi.Input['DomainOriginRewriteArgs']]:
         """
-        表示 "回源 URL 改写" 特性的配置模块。
+        Indicates the configuration module for the 'Origin URL Rewrite' feature.
         """
         return pulumi.get(self, "origin_rewrite")
 
@@ -568,7 +568,7 @@ class DomainArgs:
     @pulumi.getter(name="originSni")
     def origin_sni(self) -> Optional[pulumi.Input['DomainOriginSniArgs']]:
         """
-        表示 "回源 SNI" 特性的配置模块。
+        Indicates the configuration module for the 'origin SNI' feature.
         """
         return pulumi.get(self, "origin_sni")
 
@@ -580,7 +580,7 @@ class DomainArgs:
     @pulumi.getter(name="pageOptimization")
     def page_optimization(self) -> Optional[pulumi.Input['DomainPageOptimizationArgs']]:
         """
-        表示 "页面优化" 特性的配置模块。
+        Specifies the configuration module for the 'page optimization' feature.
         """
         return pulumi.get(self, "page_optimization")
 
@@ -592,7 +592,7 @@ class DomainArgs:
     @pulumi.getter
     def project(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示该加速域名归属的项目。
+        Indicates the project to which the acceleration domain belongs
         """
         return pulumi.get(self, "project")
 
@@ -604,7 +604,7 @@ class DomainArgs:
     @pulumi.getter
     def quic(self) -> Optional[pulumi.Input['DomainQuicArgs']]:
         """
-        表示 QUIC 特性的配置模块。该特性默认是禁用。
+        Indicates the configuration module for the QUIC feature. This feature is disabled by default.
         """
         return pulumi.get(self, "quic")
 
@@ -616,7 +616,7 @@ class DomainArgs:
     @pulumi.getter(name="redirectionRewrite")
     def redirection_rewrite(self) -> Optional[pulumi.Input['DomainRedirectionRewriteArgs']]:
         """
-        表示 "URL 重定向改写" 特性的配置模块。该特性默认为禁用。
+        Represents the configuration module for the 'URL Redirect Rewrite' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "redirection_rewrite")
 
@@ -628,7 +628,7 @@ class DomainArgs:
     @pulumi.getter(name="refererAccessRule")
     def referer_access_rule(self) -> Optional[pulumi.Input['DomainRefererAccessRuleArgs']]:
         """
-        表示 "Referer 黑白名单" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the "Referer Allowlist and Denylist" feature. This feature is disabled by default.
         """
         return pulumi.get(self, "referer_access_rule")
 
@@ -640,7 +640,7 @@ class DomainArgs:
     @pulumi.getter(name="remoteAuth")
     def remote_auth(self) -> Optional[pulumi.Input['DomainRemoteAuthArgs']]:
         """
-        表示 "远程鉴权" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the 'remote authentication' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "remote_auth")
 
@@ -652,7 +652,7 @@ class DomainArgs:
     @pulumi.getter(name="requestBlockRule")
     def request_block_rule(self) -> Optional[pulumi.Input['DomainRequestBlockRuleArgs']]:
         """
-        表示 "自定义拦截" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the 'Custom Interception' feature. This feature is disabled by default
         """
         return pulumi.get(self, "request_block_rule")
 
@@ -682,7 +682,7 @@ class DomainArgs:
     @pulumi.getter(name="rewriteHls")
     def rewrite_hls(self) -> Optional[pulumi.Input['DomainRewriteHlsArgs']]:
         """
-        表示 "标准 HLS 加密改写" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
         """
         return pulumi.get(self, "rewrite_hls")
 
@@ -694,7 +694,7 @@ class DomainArgs:
     @pulumi.getter(name="serviceRegion")
     def service_region(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示该加速域名的加速区域。该参数有以下取值：chinese*mainland：表示中国内地。global：表示全球。outside*chinese_mainland：表示全球（不含中国内地）。
+        Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
         """
         return pulumi.get(self, "service_region")
 
@@ -706,7 +706,7 @@ class DomainArgs:
     @pulumi.getter(name="signedUrlAuth")
     def signed_url_auth(self) -> Optional[pulumi.Input['DomainSignedUrlAuthArgs']]:
         """
-        表示 "URL 鉴权" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the 'URL Authentication' feature. This feature is disabled by default
         """
         return pulumi.get(self, "signed_url_auth")
 
@@ -727,7 +727,7 @@ class DomainArgs:
     @pulumi.getter
     def timeout(self) -> Optional[pulumi.Input['DomainTimeoutArgs']]:
         """
-        表示 "回源超时时间" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the 'origin timeout' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "timeout")
 
@@ -739,7 +739,7 @@ class DomainArgs:
     @pulumi.getter(name="uaAccessRule")
     def ua_access_rule(self) -> Optional[pulumi.Input['DomainUaAccessRuleArgs']]:
         """
-        表示 "UA 黑白名单" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the "UA allowlist and blocklist" feature. This feature is disabled by default.
         """
         return pulumi.get(self, "ua_access_rule")
 
@@ -751,7 +751,7 @@ class DomainArgs:
     @pulumi.getter(name="urlNormalize")
     def url_normalize(self) -> Optional[pulumi.Input['DomainUrlNormalizeArgs']]:
         """
-        表示 "URL 标准化" 特性的配置模块。该特性默认为禁用。
+        Specifies the configuration module for the 'URL normalization' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "url_normalize")
 
@@ -763,7 +763,7 @@ class DomainArgs:
     @pulumi.getter(name="videoDrag")
     def video_drag(self) -> Optional[pulumi.Input['DomainVideoDragArgs']]:
         """
-        表示 "视频拖拽" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the "Video Drag" feature. This feature is disabled by default.
         """
         return pulumi.get(self, "video_drag")
 
@@ -837,58 +837,57 @@ class _DomainState:
                  video_drag: Optional[pulumi.Input['DomainVideoDragArgs']] = None):
         """
         Input properties used for looking up and filtering Domain resources.
-        :param pulumi.Input['DomainAreaAccessRuleArgs'] area_access_rule: 表示 "地域访问控制" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] backup_origins: 表示该域名配置的备源站列表。如果该域名没有配置任何备源站，该参数值是 null。
-        :param pulumi.Input['DomainCacheHostArgs'] cache_host: 表示 "共享缓存" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[builtins.str] cache_shared: 表示该域名在 "共享缓存" 配置中的角色。该参数有以下取值：target*host：表示 "目标域名"。cache*shared_on：表示 "配置域名"。如果该域名未在任何 "共享缓存" 配置中，该参数值是空（""）。
-        :param pulumi.Input[builtins.str] cache_shared_target_host: 如果 CacheShared 是 cache*shared*on，该参数表示该域名所在的 "共享缓存" 配置中的 "目标域名"。
-               如果 CacheShared 是 target_host，该参数值为空（""）。
-        :param pulumi.Input[builtins.str] cname: 表示内容分发网络为该加速域名分配的 CNAME。
-        :param pulumi.Input['DomainCompressionArgs'] compression: 表示 "智能压缩" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input['DomainConditionalOriginArgs'] conditional_origin: 表示 "条件源站" 特性的配置模块。
-        :param pulumi.Input[builtins.int] created_time: 表示该加速域名的创建时间，格式是 Unix 时间戳。
-        :param pulumi.Input['DomainCustomErrorPageArgs'] custom_error_page: 表示 "自定义错误页面" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input['DomainCustomizeAccessRuleArgs'] customize_access_rule: 表示 "自定义头部黑白名单" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[builtins.str] domain: 表示该加速域名。
-        :param pulumi.Input['DomainDomainLockArgs'] domain_lock: 表示该域名的锁定状态。
-        :param pulumi.Input['DomainDownloadSpeedLimitArgs'] download_speed_limit: 表示 "下载限速" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[builtins.bool] follow_redirect: 表示是否启用 "回源重定向跟随" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
-        :param pulumi.Input['DomainHttpForcedRedirectArgs'] http_forced_redirect: 表示 "HTTPS 强制跳转到 HTTP" 特性的配置模块。该特性默认是禁用。
-        :param pulumi.Input['DomainHttpsArgs'] https: 表示 HTTPS 配置模块。该功能默认是禁用。
-        :param pulumi.Input['DomainIPv6Args'] i_pv6: 表示 IPv6 特性的配置模块。
-        :param pulumi.Input['DomainIpAccessRuleArgs'] ip_access_rule: 表示 "IP 黑白名单" 特性的配置模块。该特性默认为禁用。该特性提供了两种配置方式：常规配置：指定 RuleType 和 Ip 对当前域名进行配置。全局配置：指定 SharedConfig 使用一个全局配置。全局配置是白名单功能。您只能选择一种配置方式。
-        :param pulumi.Input[builtins.bool] is_conflict_domain: 表示该域名是否是一个冲突域名。在 CDN 中，每个域名都是唯一的。如果您需要添加一个已存在于其他主账号下的域名，您需要提交工单。如果您成功在您的主账号下添加了该域名，则该域名就是一个冲突域名。该参数有以下取值：true：表示该域名是冲突域名。false：表示该域名不是冲突域名。
-        :param pulumi.Input[builtins.str] lock_status: 表示该域名的配置是否允许被变更。该参数有以下取值：on：表示允许。off：表示不允许。
-        :param pulumi.Input['DomainMethodDeniedRuleArgs'] method_denied_rule: 表示 "禁用 HTTP Method" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input['DomainMultiRangeArgs'] multi_range: 表示多重范围（multi-range) 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input['DomainOfflineCacheArgs'] offline_cache: 表示 "离线缓存" 特性的配置模块。
-        :param pulumi.Input['DomainOriginAccessRuleArgs'] origin_access_rule: 表示 "Origin 黑白名单" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input['DomainOriginCertCheckArgs'] origin_cert_check: 源站证书校验
-        :param pulumi.Input[builtins.str] origin_host: 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
-        :param pulumi.Input[builtins.str] origin_i_pv6: 表示 "IPv6 回源" 的配置。该参数有以下取值：ipv6*first：表示内容分发网络始终尝试获取源站域名的 IPv6 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv4 地址。ipv4*first：表示内容分发网络始终尝试获取源站域名的 IPv4 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv6 地址。followclient：表示内容分发网络尝试获取与用户请求相同类型的 IP 地址。该参数的默认值是 followclient。由于海外部分回源节点不支持向 IPv6 地址发送回源请求，该功能仅适用于位于中国内地的回源节点。
-        :param pulumi.Input[builtins.str] origin_protocol: 表示回源请求使用的协议。该参数有以下取值：http：表示回源请求使用 HTTP 协议。https：表示回源请求使用 HTTPS 协议。followclient：表示回源协议与用户请求使用的协议相同。
-        :param pulumi.Input[builtins.bool] origin_range: 表示是否启用 "Range 回源" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
-        :param pulumi.Input['DomainOriginRetryArgs'] origin_retry: 表示 "回源重试设置" 特性的配置模块。
-        :param pulumi.Input['DomainOriginRewriteArgs'] origin_rewrite: 表示 "回源 URL 改写" 特性的配置模块。
-        :param pulumi.Input['DomainOriginSniArgs'] origin_sni: 表示 "回源 SNI" 特性的配置模块。
-        :param pulumi.Input['DomainPageOptimizationArgs'] page_optimization: 表示 "页面优化" 特性的配置模块。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] primary_origins: 表示该域名配置的主源站列表。
-        :param pulumi.Input[builtins.str] project: 表示该加速域名归属的项目。
-        :param pulumi.Input['DomainQuicArgs'] quic: 表示 QUIC 特性的配置模块。该特性默认是禁用。
-        :param pulumi.Input['DomainRedirectionRewriteArgs'] redirection_rewrite: 表示 "URL 重定向改写" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input['DomainRefererAccessRuleArgs'] referer_access_rule: 表示 "Referer 黑白名单" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input['DomainRemoteAuthArgs'] remote_auth: 表示 "远程鉴权" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input['DomainRequestBlockRuleArgs'] request_block_rule: 表示 "自定义拦截" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input['DomainRewriteHlsArgs'] rewrite_hls: 表示 "标准 HLS 加密改写" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[builtins.str] service_region: 表示该加速域名的加速区域。该参数有以下取值：chinese*mainland：表示中国内地。global：表示全球。outside*chinese_mainland：表示全球（不含中国内地）。
-        :param pulumi.Input[builtins.str] service_type: 表示该域名的业务类型。该参数有以下取值：download：表示文件下载。web：表示网页。video：表示音视频点播。
-        :param pulumi.Input['DomainSignedUrlAuthArgs'] signed_url_auth: 表示 "URL 鉴权" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[builtins.str] status: 表示该加速域名的状态。该参数有以下取值：online：表示状态是 正常运行。configuring：表示状态是 配置中。offline：表示状态是 已下线。
-        :param pulumi.Input['DomainTimeoutArgs'] timeout: 表示 "回源超时时间" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input['DomainUaAccessRuleArgs'] ua_access_rule: 表示 "UA 黑白名单" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[builtins.int] updated_time: 表示该域名配置的最近一次的更新时间，格式是 Unix 时间戳。
-        :param pulumi.Input['DomainUrlNormalizeArgs'] url_normalize: 表示 "URL 标准化" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input['DomainVideoDragArgs'] video_drag: 表示 "视频拖拽" 特性的配置模块。该特性默认为禁用。
+        :param pulumi.Input['DomainAreaAccessRuleArgs'] area_access_rule: Indicates the configuration module for the 'regional access control' feature. This feature is disabled by default.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] backup_origins: Indicates the backup origin server list configured for this domain. If no backup origin server is configured for this domain, the parameter value is null.
+        :param pulumi.Input['DomainCacheHostArgs'] cache_host: Specifies the configuration module for the 'shared cache' feature. This feature is disabled by default.
+        :param pulumi.Input[builtins.str] cache_shared: Indicates the role of this domain in the 'shared cache' configuration. The parameter has the following values: target*host: indicates the 'target domain'. cache*shared_on: indicates the 'configured domain'. If this domain is not included in any 'shared cache' configuration, the parameter value is an empty string ('').
+        :param pulumi.Input[builtins.str] cache_shared_target_host: If CacheShared is cache*shared*on, this parameter indicates the 'Target Domain' in the 'Shared Cache' configuration for this domain name. If CacheShared is target_host, this parameter is empty ("").
+        :param pulumi.Input[builtins.str] cname: Indicates the CNAME assigned by the content delivery network to the acceleration domain name.
+        :param pulumi.Input['DomainCompressionArgs'] compression: Represents the configuration module for the 'Smart Compression' feature. This feature is disabled by default.
+        :param pulumi.Input['DomainConditionalOriginArgs'] conditional_origin: Specifies the configuration module for the 'Conditional Origin' feature.
+        :param pulumi.Input[builtins.int] created_time: Indicates the creation time of this accelerated domain name, in Unix timestamp format.
+        :param pulumi.Input['DomainCustomErrorPageArgs'] custom_error_page: Indicates the configuration module for the "Custom Error Page" feature. This feature is disabled by default.
+        :param pulumi.Input['DomainCustomizeAccessRuleArgs'] customize_access_rule: Represents the configuration module for the 'Custom Header Allowlist and Blocklist' feature. This feature is disabled by default.
+        :param pulumi.Input[builtins.str] domain: Indicates the acceleration domain name.
+        :param pulumi.Input['DomainDomainLockArgs'] domain_lock: Indicates the lock status of this domain name.
+        :param pulumi.Input['DomainDownloadSpeedLimitArgs'] download_speed_limit: Represents the configuration module for the 'Download Speed Limit' feature. This feature is disabled by default.
+        :param pulumi.Input[builtins.bool] follow_redirect: Specifies whether to enable the 'origin redirect follow' feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
+        :param pulumi.Input['DomainHttpForcedRedirectArgs'] http_forced_redirect: Represents the configuration module for the 'Force HTTPS Redirect to HTTP' feature. This feature is disabled by default.
+        :param pulumi.Input['DomainHttpsArgs'] https: Indicates the HTTPS configuration module. This feature is disabled by default.
+        :param pulumi.Input['DomainIPv6Args'] i_pv6: Indicates the configuration module for the IPv6 feature.
+        :param pulumi.Input['DomainIpAccessRuleArgs'] ip_access_rule: Specifies the configuration module for the 'IP allowlist and blocklist' feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
+        :param pulumi.Input[builtins.bool] is_conflict_domain: Indicates whether the domain is a conflicting domain. In CDN, each domain is unique. If you need to add a domain that already exists under another primary account, you must submit a ticket. If you successfully add the domain under your primary account, it becomes a conflicting domain. This parameter has the following values: true: the domain is a conflicting domain. false: the domain is not a conflicting domain.
+        :param pulumi.Input[builtins.str] lock_status: Indicates whether the configuration for this domain name can be changed. The parameter values are: on: Allowed. off: Not allowed.
+        :param pulumi.Input['DomainMethodDeniedRuleArgs'] method_denied_rule: Represents the configuration module for the 'Disable HTTP Method' feature. This feature is disabled by default.
+        :param pulumi.Input['DomainMultiRangeArgs'] multi_range: Indicates the configuration module for the multi-range feature. This feature is disabled by default
+        :param pulumi.Input['DomainOfflineCacheArgs'] offline_cache: Indicates the configuration module for the 'offline cache' feature.
+        :param pulumi.Input['DomainOriginAccessRuleArgs'] origin_access_rule: Indicates the configuration module for the 'Origin allowlist and blacklist' feature. This feature is disabled by default.
+        :param pulumi.Input['DomainOriginCertCheckArgs'] origin_cert_check: Origin certificate validation
+        :param pulumi.Input[builtins.str] origin_host: If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
+        :param pulumi.Input[builtins.str] origin_i_pv6: Indicates the configuration for "IPv6 origin fetch." This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user's request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
+        :param pulumi.Input[builtins.str] origin_protocol: Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user's request.
+        :param pulumi.Input[builtins.bool] origin_range: Indicates whether the 'Range Origin' feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
+        :param pulumi.Input['DomainOriginRetryArgs'] origin_retry: Indicates the configuration module for the "origin fetch retry settings" feature.
+        :param pulumi.Input['DomainOriginRewriteArgs'] origin_rewrite: Indicates the configuration module for the 'Origin URL Rewrite' feature.
+        :param pulumi.Input['DomainOriginSniArgs'] origin_sni: Indicates the configuration module for the 'origin SNI' feature.
+        :param pulumi.Input['DomainPageOptimizationArgs'] page_optimization: Specifies the configuration module for the 'page optimization' feature.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] primary_origins: Indicates the list of primary origin servers configured for this domain name.
+        :param pulumi.Input[builtins.str] project: Indicates the project to which the acceleration domain belongs
+        :param pulumi.Input['DomainQuicArgs'] quic: Indicates the configuration module for the QUIC feature. This feature is disabled by default.
+        :param pulumi.Input['DomainRedirectionRewriteArgs'] redirection_rewrite: Represents the configuration module for the 'URL Redirect Rewrite' feature. This feature is disabled by default.
+        :param pulumi.Input['DomainRefererAccessRuleArgs'] referer_access_rule: Indicates the configuration module for the "Referer Allowlist and Denylist" feature. This feature is disabled by default.
+        :param pulumi.Input['DomainRemoteAuthArgs'] remote_auth: Indicates the configuration module for the 'remote authentication' feature. This feature is disabled by default.
+        :param pulumi.Input['DomainRequestBlockRuleArgs'] request_block_rule: Indicates the configuration module for the 'Custom Interception' feature. This feature is disabled by default
+        :param pulumi.Input['DomainRewriteHlsArgs'] rewrite_hls: Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
+        :param pulumi.Input[builtins.str] service_region: Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
+        :param pulumi.Input[builtins.str] service_type: Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
+        :param pulumi.Input['DomainSignedUrlAuthArgs'] signed_url_auth: Indicates the configuration module for the 'URL Authentication' feature. This feature is disabled by default
+        :param pulumi.Input[builtins.str] status: Indicates the status of the acceleration domain name. The parameter values are as follows: online: indicates normal operation. configuring: indicates configuration in progress. offline: indicates offline status.
+        :param pulumi.Input['DomainTimeoutArgs'] timeout: Indicates the configuration module for the 'origin timeout' feature. This feature is disabled by default.
+        :param pulumi.Input['DomainUaAccessRuleArgs'] ua_access_rule: Indicates the configuration module for the "UA allowlist and blocklist" feature. This feature is disabled by default.
+        :param pulumi.Input[builtins.int] updated_time: Indicates the most recent update time for this domain configuration, in Unix timestamp format.
+        :param pulumi.Input['DomainUrlNormalizeArgs'] url_normalize: Specifies the configuration module for the 'URL normalization' feature. This feature is disabled by default.
+        :param pulumi.Input['DomainVideoDragArgs'] video_drag: Indicates the configuration module for the "Video Drag" feature. This feature is disabled by default.
         """
         if area_access_rule is not None:
             pulumi.set(__self__, "area_access_rule", area_access_rule)
@@ -1015,7 +1014,7 @@ class _DomainState:
     @pulumi.getter(name="areaAccessRule")
     def area_access_rule(self) -> Optional[pulumi.Input['DomainAreaAccessRuleArgs']]:
         """
-        表示 "地域访问控制" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the 'regional access control' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "area_access_rule")
 
@@ -1027,7 +1026,7 @@ class _DomainState:
     @pulumi.getter(name="backupOrigins")
     def backup_origins(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        表示该域名配置的备源站列表。如果该域名没有配置任何备源站，该参数值是 null。
+        Indicates the backup origin server list configured for this domain. If no backup origin server is configured for this domain, the parameter value is null.
         """
         return pulumi.get(self, "backup_origins")
 
@@ -1048,7 +1047,7 @@ class _DomainState:
     @pulumi.getter(name="cacheHost")
     def cache_host(self) -> Optional[pulumi.Input['DomainCacheHostArgs']]:
         """
-        表示 "共享缓存" 特性的配置模块。该特性默认为禁用。
+        Specifies the configuration module for the 'shared cache' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "cache_host")
 
@@ -1069,7 +1068,7 @@ class _DomainState:
     @pulumi.getter(name="cacheShared")
     def cache_shared(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示该域名在 "共享缓存" 配置中的角色。该参数有以下取值：target*host：表示 "目标域名"。cache*shared_on：表示 "配置域名"。如果该域名未在任何 "共享缓存" 配置中，该参数值是空（""）。
+        Indicates the role of this domain in the 'shared cache' configuration. The parameter has the following values: target*host: indicates the 'target domain'. cache*shared_on: indicates the 'configured domain'. If this domain is not included in any 'shared cache' configuration, the parameter value is an empty string ('').
         """
         return pulumi.get(self, "cache_shared")
 
@@ -1081,8 +1080,7 @@ class _DomainState:
     @pulumi.getter(name="cacheSharedTargetHost")
     def cache_shared_target_host(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        如果 CacheShared 是 cache*shared*on，该参数表示该域名所在的 "共享缓存" 配置中的 "目标域名"。
-        如果 CacheShared 是 target_host，该参数值为空（""）。
+        If CacheShared is cache*shared*on, this parameter indicates the 'Target Domain' in the 'Shared Cache' configuration for this domain name. If CacheShared is target_host, this parameter is empty ("").
         """
         return pulumi.get(self, "cache_shared_target_host")
 
@@ -1103,7 +1101,7 @@ class _DomainState:
     @pulumi.getter
     def cname(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示内容分发网络为该加速域名分配的 CNAME。
+        Indicates the CNAME assigned by the content delivery network to the acceleration domain name.
         """
         return pulumi.get(self, "cname")
 
@@ -1115,7 +1113,7 @@ class _DomainState:
     @pulumi.getter
     def compression(self) -> Optional[pulumi.Input['DomainCompressionArgs']]:
         """
-        表示 "智能压缩" 特性的配置模块。该特性默认为禁用。
+        Represents the configuration module for the 'Smart Compression' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "compression")
 
@@ -1127,7 +1125,7 @@ class _DomainState:
     @pulumi.getter(name="conditionalOrigin")
     def conditional_origin(self) -> Optional[pulumi.Input['DomainConditionalOriginArgs']]:
         """
-        表示 "条件源站" 特性的配置模块。
+        Specifies the configuration module for the 'Conditional Origin' feature.
         """
         return pulumi.get(self, "conditional_origin")
 
@@ -1139,7 +1137,7 @@ class _DomainState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        表示该加速域名的创建时间，格式是 Unix 时间戳。
+        Indicates the creation time of this accelerated domain name, in Unix timestamp format.
         """
         return pulumi.get(self, "created_time")
 
@@ -1151,7 +1149,7 @@ class _DomainState:
     @pulumi.getter(name="customErrorPage")
     def custom_error_page(self) -> Optional[pulumi.Input['DomainCustomErrorPageArgs']]:
         """
-        表示 "自定义错误页面" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the "Custom Error Page" feature. This feature is disabled by default.
         """
         return pulumi.get(self, "custom_error_page")
 
@@ -1163,7 +1161,7 @@ class _DomainState:
     @pulumi.getter(name="customizeAccessRule")
     def customize_access_rule(self) -> Optional[pulumi.Input['DomainCustomizeAccessRuleArgs']]:
         """
-        表示 "自定义头部黑白名单" 特性的配置模块。该特性默认为禁用。
+        Represents the configuration module for the 'Custom Header Allowlist and Blocklist' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "customize_access_rule")
 
@@ -1175,7 +1173,7 @@ class _DomainState:
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示该加速域名。
+        Indicates the acceleration domain name.
         """
         return pulumi.get(self, "domain")
 
@@ -1187,7 +1185,7 @@ class _DomainState:
     @pulumi.getter(name="domainLock")
     def domain_lock(self) -> Optional[pulumi.Input['DomainDomainLockArgs']]:
         """
-        表示该域名的锁定状态。
+        Indicates the lock status of this domain name.
         """
         return pulumi.get(self, "domain_lock")
 
@@ -1199,7 +1197,7 @@ class _DomainState:
     @pulumi.getter(name="downloadSpeedLimit")
     def download_speed_limit(self) -> Optional[pulumi.Input['DomainDownloadSpeedLimitArgs']]:
         """
-        表示 "下载限速" 特性的配置模块。该特性默认为禁用。
+        Represents the configuration module for the 'Download Speed Limit' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "download_speed_limit")
 
@@ -1211,7 +1209,7 @@ class _DomainState:
     @pulumi.getter(name="followRedirect")
     def follow_redirect(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用 "回源重定向跟随" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        Specifies whether to enable the 'origin redirect follow' feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
         """
         return pulumi.get(self, "follow_redirect")
 
@@ -1223,7 +1221,7 @@ class _DomainState:
     @pulumi.getter(name="httpForcedRedirect")
     def http_forced_redirect(self) -> Optional[pulumi.Input['DomainHttpForcedRedirectArgs']]:
         """
-        表示 "HTTPS 强制跳转到 HTTP" 特性的配置模块。该特性默认是禁用。
+        Represents the configuration module for the 'Force HTTPS Redirect to HTTP' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "http_forced_redirect")
 
@@ -1235,7 +1233,7 @@ class _DomainState:
     @pulumi.getter
     def https(self) -> Optional[pulumi.Input['DomainHttpsArgs']]:
         """
-        表示 HTTPS 配置模块。该功能默认是禁用。
+        Indicates the HTTPS configuration module. This feature is disabled by default.
         """
         return pulumi.get(self, "https")
 
@@ -1247,7 +1245,7 @@ class _DomainState:
     @pulumi.getter(name="iPv6")
     def i_pv6(self) -> Optional[pulumi.Input['DomainIPv6Args']]:
         """
-        表示 IPv6 特性的配置模块。
+        Indicates the configuration module for the IPv6 feature.
         """
         return pulumi.get(self, "i_pv6")
 
@@ -1259,7 +1257,7 @@ class _DomainState:
     @pulumi.getter(name="ipAccessRule")
     def ip_access_rule(self) -> Optional[pulumi.Input['DomainIpAccessRuleArgs']]:
         """
-        表示 "IP 黑白名单" 特性的配置模块。该特性默认为禁用。该特性提供了两种配置方式：常规配置：指定 RuleType 和 Ip 对当前域名进行配置。全局配置：指定 SharedConfig 使用一个全局配置。全局配置是白名单功能。您只能选择一种配置方式。
+        Specifies the configuration module for the 'IP allowlist and blocklist' feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
         """
         return pulumi.get(self, "ip_access_rule")
 
@@ -1271,7 +1269,7 @@ class _DomainState:
     @pulumi.getter(name="isConflictDomain")
     def is_conflict_domain(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示该域名是否是一个冲突域名。在 CDN 中，每个域名都是唯一的。如果您需要添加一个已存在于其他主账号下的域名，您需要提交工单。如果您成功在您的主账号下添加了该域名，则该域名就是一个冲突域名。该参数有以下取值：true：表示该域名是冲突域名。false：表示该域名不是冲突域名。
+        Indicates whether the domain is a conflicting domain. In CDN, each domain is unique. If you need to add a domain that already exists under another primary account, you must submit a ticket. If you successfully add the domain under your primary account, it becomes a conflicting domain. This parameter has the following values: true: the domain is a conflicting domain. false: the domain is not a conflicting domain.
         """
         return pulumi.get(self, "is_conflict_domain")
 
@@ -1283,7 +1281,7 @@ class _DomainState:
     @pulumi.getter(name="lockStatus")
     def lock_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示该域名的配置是否允许被变更。该参数有以下取值：on：表示允许。off：表示不允许。
+        Indicates whether the configuration for this domain name can be changed. The parameter values are: on: Allowed. off: Not allowed.
         """
         return pulumi.get(self, "lock_status")
 
@@ -1295,7 +1293,7 @@ class _DomainState:
     @pulumi.getter(name="methodDeniedRule")
     def method_denied_rule(self) -> Optional[pulumi.Input['DomainMethodDeniedRuleArgs']]:
         """
-        表示 "禁用 HTTP Method" 特性的配置模块。该特性默认为禁用。
+        Represents the configuration module for the 'Disable HTTP Method' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "method_denied_rule")
 
@@ -1307,7 +1305,7 @@ class _DomainState:
     @pulumi.getter(name="multiRange")
     def multi_range(self) -> Optional[pulumi.Input['DomainMultiRangeArgs']]:
         """
-        表示多重范围（multi-range) 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the multi-range feature. This feature is disabled by default
         """
         return pulumi.get(self, "multi_range")
 
@@ -1328,7 +1326,7 @@ class _DomainState:
     @pulumi.getter(name="offlineCache")
     def offline_cache(self) -> Optional[pulumi.Input['DomainOfflineCacheArgs']]:
         """
-        表示 "离线缓存" 特性的配置模块。
+        Indicates the configuration module for the 'offline cache' feature.
         """
         return pulumi.get(self, "offline_cache")
 
@@ -1340,7 +1338,7 @@ class _DomainState:
     @pulumi.getter(name="originAccessRule")
     def origin_access_rule(self) -> Optional[pulumi.Input['DomainOriginAccessRuleArgs']]:
         """
-        表示 "Origin 黑白名单" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the 'Origin allowlist and blacklist' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "origin_access_rule")
 
@@ -1361,7 +1359,7 @@ class _DomainState:
     @pulumi.getter(name="originCertCheck")
     def origin_cert_check(self) -> Optional[pulumi.Input['DomainOriginCertCheckArgs']]:
         """
-        源站证书校验
+        Origin certificate validation
         """
         return pulumi.get(self, "origin_cert_check")
 
@@ -1373,7 +1371,7 @@ class _DomainState:
     @pulumi.getter(name="originHost")
     def origin_host(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+        If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
         """
         return pulumi.get(self, "origin_host")
 
@@ -1385,7 +1383,7 @@ class _DomainState:
     @pulumi.getter(name="originIPv6")
     def origin_i_pv6(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示 "IPv6 回源" 的配置。该参数有以下取值：ipv6*first：表示内容分发网络始终尝试获取源站域名的 IPv6 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv4 地址。ipv4*first：表示内容分发网络始终尝试获取源站域名的 IPv4 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv6 地址。followclient：表示内容分发网络尝试获取与用户请求相同类型的 IP 地址。该参数的默认值是 followclient。由于海外部分回源节点不支持向 IPv6 地址发送回源请求，该功能仅适用于位于中国内地的回源节点。
+        Indicates the configuration for "IPv6 origin fetch." This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user's request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
         """
         return pulumi.get(self, "origin_i_pv6")
 
@@ -1397,7 +1395,7 @@ class _DomainState:
     @pulumi.getter(name="originProtocol")
     def origin_protocol(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示回源请求使用的协议。该参数有以下取值：http：表示回源请求使用 HTTP 协议。https：表示回源请求使用 HTTPS 协议。followclient：表示回源协议与用户请求使用的协议相同。
+        Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user's request.
         """
         return pulumi.get(self, "origin_protocol")
 
@@ -1409,7 +1407,7 @@ class _DomainState:
     @pulumi.getter(name="originRange")
     def origin_range(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示是否启用 "Range 回源" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        Indicates whether the 'Range Origin' feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
         """
         return pulumi.get(self, "origin_range")
 
@@ -1421,7 +1419,7 @@ class _DomainState:
     @pulumi.getter(name="originRetry")
     def origin_retry(self) -> Optional[pulumi.Input['DomainOriginRetryArgs']]:
         """
-        表示 "回源重试设置" 特性的配置模块。
+        Indicates the configuration module for the "origin fetch retry settings" feature.
         """
         return pulumi.get(self, "origin_retry")
 
@@ -1433,7 +1431,7 @@ class _DomainState:
     @pulumi.getter(name="originRewrite")
     def origin_rewrite(self) -> Optional[pulumi.Input['DomainOriginRewriteArgs']]:
         """
-        表示 "回源 URL 改写" 特性的配置模块。
+        Indicates the configuration module for the 'Origin URL Rewrite' feature.
         """
         return pulumi.get(self, "origin_rewrite")
 
@@ -1445,7 +1443,7 @@ class _DomainState:
     @pulumi.getter(name="originSni")
     def origin_sni(self) -> Optional[pulumi.Input['DomainOriginSniArgs']]:
         """
-        表示 "回源 SNI" 特性的配置模块。
+        Indicates the configuration module for the 'origin SNI' feature.
         """
         return pulumi.get(self, "origin_sni")
 
@@ -1466,7 +1464,7 @@ class _DomainState:
     @pulumi.getter(name="pageOptimization")
     def page_optimization(self) -> Optional[pulumi.Input['DomainPageOptimizationArgs']]:
         """
-        表示 "页面优化" 特性的配置模块。
+        Specifies the configuration module for the 'page optimization' feature.
         """
         return pulumi.get(self, "page_optimization")
 
@@ -1478,7 +1476,7 @@ class _DomainState:
     @pulumi.getter(name="primaryOrigins")
     def primary_origins(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        表示该域名配置的主源站列表。
+        Indicates the list of primary origin servers configured for this domain name.
         """
         return pulumi.get(self, "primary_origins")
 
@@ -1490,7 +1488,7 @@ class _DomainState:
     @pulumi.getter
     def project(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示该加速域名归属的项目。
+        Indicates the project to which the acceleration domain belongs
         """
         return pulumi.get(self, "project")
 
@@ -1502,7 +1500,7 @@ class _DomainState:
     @pulumi.getter
     def quic(self) -> Optional[pulumi.Input['DomainQuicArgs']]:
         """
-        表示 QUIC 特性的配置模块。该特性默认是禁用。
+        Indicates the configuration module for the QUIC feature. This feature is disabled by default.
         """
         return pulumi.get(self, "quic")
 
@@ -1514,7 +1512,7 @@ class _DomainState:
     @pulumi.getter(name="redirectionRewrite")
     def redirection_rewrite(self) -> Optional[pulumi.Input['DomainRedirectionRewriteArgs']]:
         """
-        表示 "URL 重定向改写" 特性的配置模块。该特性默认为禁用。
+        Represents the configuration module for the 'URL Redirect Rewrite' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "redirection_rewrite")
 
@@ -1526,7 +1524,7 @@ class _DomainState:
     @pulumi.getter(name="refererAccessRule")
     def referer_access_rule(self) -> Optional[pulumi.Input['DomainRefererAccessRuleArgs']]:
         """
-        表示 "Referer 黑白名单" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the "Referer Allowlist and Denylist" feature. This feature is disabled by default.
         """
         return pulumi.get(self, "referer_access_rule")
 
@@ -1538,7 +1536,7 @@ class _DomainState:
     @pulumi.getter(name="remoteAuth")
     def remote_auth(self) -> Optional[pulumi.Input['DomainRemoteAuthArgs']]:
         """
-        表示 "远程鉴权" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the 'remote authentication' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "remote_auth")
 
@@ -1550,7 +1548,7 @@ class _DomainState:
     @pulumi.getter(name="requestBlockRule")
     def request_block_rule(self) -> Optional[pulumi.Input['DomainRequestBlockRuleArgs']]:
         """
-        表示 "自定义拦截" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the 'Custom Interception' feature. This feature is disabled by default
         """
         return pulumi.get(self, "request_block_rule")
 
@@ -1580,7 +1578,7 @@ class _DomainState:
     @pulumi.getter(name="rewriteHls")
     def rewrite_hls(self) -> Optional[pulumi.Input['DomainRewriteHlsArgs']]:
         """
-        表示 "标准 HLS 加密改写" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
         """
         return pulumi.get(self, "rewrite_hls")
 
@@ -1592,7 +1590,7 @@ class _DomainState:
     @pulumi.getter(name="serviceRegion")
     def service_region(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示该加速域名的加速区域。该参数有以下取值：chinese*mainland：表示中国内地。global：表示全球。outside*chinese_mainland：表示全球（不含中国内地）。
+        Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
         """
         return pulumi.get(self, "service_region")
 
@@ -1604,7 +1602,7 @@ class _DomainState:
     @pulumi.getter(name="serviceType")
     def service_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示该域名的业务类型。该参数有以下取值：download：表示文件下载。web：表示网页。video：表示音视频点播。
+        Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
         """
         return pulumi.get(self, "service_type")
 
@@ -1616,7 +1614,7 @@ class _DomainState:
     @pulumi.getter(name="signedUrlAuth")
     def signed_url_auth(self) -> Optional[pulumi.Input['DomainSignedUrlAuthArgs']]:
         """
-        表示 "URL 鉴权" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the 'URL Authentication' feature. This feature is disabled by default
         """
         return pulumi.get(self, "signed_url_auth")
 
@@ -1628,7 +1626,7 @@ class _DomainState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表示该加速域名的状态。该参数有以下取值：online：表示状态是 正常运行。configuring：表示状态是 配置中。offline：表示状态是 已下线。
+        Indicates the status of the acceleration domain name. The parameter values are as follows: online: indicates normal operation. configuring: indicates configuration in progress. offline: indicates offline status.
         """
         return pulumi.get(self, "status")
 
@@ -1649,7 +1647,7 @@ class _DomainState:
     @pulumi.getter
     def timeout(self) -> Optional[pulumi.Input['DomainTimeoutArgs']]:
         """
-        表示 "回源超时时间" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the 'origin timeout' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "timeout")
 
@@ -1661,7 +1659,7 @@ class _DomainState:
     @pulumi.getter(name="uaAccessRule")
     def ua_access_rule(self) -> Optional[pulumi.Input['DomainUaAccessRuleArgs']]:
         """
-        表示 "UA 黑白名单" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the "UA allowlist and blocklist" feature. This feature is disabled by default.
         """
         return pulumi.get(self, "ua_access_rule")
 
@@ -1673,7 +1671,7 @@ class _DomainState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        表示该域名配置的最近一次的更新时间，格式是 Unix 时间戳。
+        Indicates the most recent update time for this domain configuration, in Unix timestamp format.
         """
         return pulumi.get(self, "updated_time")
 
@@ -1685,7 +1683,7 @@ class _DomainState:
     @pulumi.getter(name="urlNormalize")
     def url_normalize(self) -> Optional[pulumi.Input['DomainUrlNormalizeArgs']]:
         """
-        表示 "URL 标准化" 特性的配置模块。该特性默认为禁用。
+        Specifies the configuration module for the 'URL normalization' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "url_normalize")
 
@@ -1697,7 +1695,7 @@ class _DomainState:
     @pulumi.getter(name="videoDrag")
     def video_drag(self) -> Optional[pulumi.Input['DomainVideoDragArgs']]:
         """
-        表示 "视频拖拽" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the "Video Drag" feature. This feature is disabled by default.
         """
         return pulumi.get(self, "video_drag")
 
@@ -1763,7 +1761,7 @@ class Domain(pulumi.CustomResource):
                  video_drag: Optional[pulumi.Input[Union['DomainVideoDragArgs', 'DomainVideoDragArgsDict']]] = None,
                  __props__=None):
         """
-        加速域名是您希望加速内容传输的域名。当您将域名添加到内容分发网络中后，该域名在内容分发网络中就成了一个加速域名。内容分发网络会为该域名分配一个 CNAME。在您创建一条 DNS 记录将您的域名解析到该 CNAME 后，用户向您域名发送的请求就会被路由到您的加速域名，实现内容传输的加速。
+        An accelerated domain name is the domain you want to speed up content delivery for. After you add the domain to the content delivery network, it becomes an accelerated domain name in the CDN. The CDN assigns a CNAME to this domain. Once you create a DNS record to resolve your domain to this CNAME, requests sent by users to your domain are routed to your accelerated domain name, enabling faster content delivery.
 
         ## Import
 
@@ -1773,46 +1771,46 @@ class Domain(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['DomainAreaAccessRuleArgs', 'DomainAreaAccessRuleArgsDict']] area_access_rule: 表示 "地域访问控制" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[Union['DomainCacheHostArgs', 'DomainCacheHostArgsDict']] cache_host: 表示 "共享缓存" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[Union['DomainCompressionArgs', 'DomainCompressionArgsDict']] compression: 表示 "智能压缩" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[Union['DomainConditionalOriginArgs', 'DomainConditionalOriginArgsDict']] conditional_origin: 表示 "条件源站" 特性的配置模块。
-        :param pulumi.Input[Union['DomainCustomErrorPageArgs', 'DomainCustomErrorPageArgsDict']] custom_error_page: 表示 "自定义错误页面" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[Union['DomainCustomizeAccessRuleArgs', 'DomainCustomizeAccessRuleArgsDict']] customize_access_rule: 表示 "自定义头部黑白名单" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[builtins.str] domain: 表示该加速域名。
-        :param pulumi.Input[Union['DomainDownloadSpeedLimitArgs', 'DomainDownloadSpeedLimitArgsDict']] download_speed_limit: 表示 "下载限速" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[builtins.bool] follow_redirect: 表示是否启用 "回源重定向跟随" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
-        :param pulumi.Input[Union['DomainHttpForcedRedirectArgs', 'DomainHttpForcedRedirectArgsDict']] http_forced_redirect: 表示 "HTTPS 强制跳转到 HTTP" 特性的配置模块。该特性默认是禁用。
-        :param pulumi.Input[Union['DomainHttpsArgs', 'DomainHttpsArgsDict']] https: 表示 HTTPS 配置模块。该功能默认是禁用。
-        :param pulumi.Input[Union['DomainIPv6Args', 'DomainIPv6ArgsDict']] i_pv6: 表示 IPv6 特性的配置模块。
-        :param pulumi.Input[Union['DomainIpAccessRuleArgs', 'DomainIpAccessRuleArgsDict']] ip_access_rule: 表示 "IP 黑白名单" 特性的配置模块。该特性默认为禁用。该特性提供了两种配置方式：常规配置：指定 RuleType 和 Ip 对当前域名进行配置。全局配置：指定 SharedConfig 使用一个全局配置。全局配置是白名单功能。您只能选择一种配置方式。
-        :param pulumi.Input[Union['DomainMethodDeniedRuleArgs', 'DomainMethodDeniedRuleArgsDict']] method_denied_rule: 表示 "禁用 HTTP Method" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[Union['DomainMultiRangeArgs', 'DomainMultiRangeArgsDict']] multi_range: 表示多重范围（multi-range) 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[Union['DomainOfflineCacheArgs', 'DomainOfflineCacheArgsDict']] offline_cache: 表示 "离线缓存" 特性的配置模块。
-        :param pulumi.Input[Union['DomainOriginAccessRuleArgs', 'DomainOriginAccessRuleArgsDict']] origin_access_rule: 表示 "Origin 黑白名单" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[Union['DomainOriginCertCheckArgs', 'DomainOriginCertCheckArgsDict']] origin_cert_check: 源站证书校验
-        :param pulumi.Input[builtins.str] origin_host: 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
-        :param pulumi.Input[builtins.str] origin_i_pv6: 表示 "IPv6 回源" 的配置。该参数有以下取值：ipv6*first：表示内容分发网络始终尝试获取源站域名的 IPv6 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv4 地址。ipv4*first：表示内容分发网络始终尝试获取源站域名的 IPv4 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv6 地址。followclient：表示内容分发网络尝试获取与用户请求相同类型的 IP 地址。该参数的默认值是 followclient。由于海外部分回源节点不支持向 IPv6 地址发送回源请求，该功能仅适用于位于中国内地的回源节点。
-        :param pulumi.Input[builtins.str] origin_protocol: 表示回源请求使用的协议。该参数有以下取值：http：表示回源请求使用 HTTP 协议。https：表示回源请求使用 HTTPS 协议。followclient：表示回源协议与用户请求使用的协议相同。
-        :param pulumi.Input[builtins.bool] origin_range: 表示是否启用 "Range 回源" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
-        :param pulumi.Input[Union['DomainOriginRetryArgs', 'DomainOriginRetryArgsDict']] origin_retry: 表示 "回源重试设置" 特性的配置模块。
-        :param pulumi.Input[Union['DomainOriginRewriteArgs', 'DomainOriginRewriteArgsDict']] origin_rewrite: 表示 "回源 URL 改写" 特性的配置模块。
-        :param pulumi.Input[Union['DomainOriginSniArgs', 'DomainOriginSniArgsDict']] origin_sni: 表示 "回源 SNI" 特性的配置模块。
-        :param pulumi.Input[Union['DomainPageOptimizationArgs', 'DomainPageOptimizationArgsDict']] page_optimization: 表示 "页面优化" 特性的配置模块。
-        :param pulumi.Input[builtins.str] project: 表示该加速域名归属的项目。
-        :param pulumi.Input[Union['DomainQuicArgs', 'DomainQuicArgsDict']] quic: 表示 QUIC 特性的配置模块。该特性默认是禁用。
-        :param pulumi.Input[Union['DomainRedirectionRewriteArgs', 'DomainRedirectionRewriteArgsDict']] redirection_rewrite: 表示 "URL 重定向改写" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[Union['DomainRefererAccessRuleArgs', 'DomainRefererAccessRuleArgsDict']] referer_access_rule: 表示 "Referer 黑白名单" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[Union['DomainRemoteAuthArgs', 'DomainRemoteAuthArgsDict']] remote_auth: 表示 "远程鉴权" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[Union['DomainRequestBlockRuleArgs', 'DomainRequestBlockRuleArgsDict']] request_block_rule: 表示 "自定义拦截" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[Union['DomainRewriteHlsArgs', 'DomainRewriteHlsArgsDict']] rewrite_hls: 表示 "标准 HLS 加密改写" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[builtins.str] service_region: 表示该加速域名的加速区域。该参数有以下取值：chinese*mainland：表示中国内地。global：表示全球。outside*chinese_mainland：表示全球（不含中国内地）。
-        :param pulumi.Input[builtins.str] service_type: 表示该域名的业务类型。该参数有以下取值：download：表示文件下载。web：表示网页。video：表示音视频点播。
-        :param pulumi.Input[Union['DomainSignedUrlAuthArgs', 'DomainSignedUrlAuthArgsDict']] signed_url_auth: 表示 "URL 鉴权" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[Union['DomainTimeoutArgs', 'DomainTimeoutArgsDict']] timeout: 表示 "回源超时时间" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[Union['DomainUaAccessRuleArgs', 'DomainUaAccessRuleArgsDict']] ua_access_rule: 表示 "UA 黑白名单" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[Union['DomainUrlNormalizeArgs', 'DomainUrlNormalizeArgsDict']] url_normalize: 表示 "URL 标准化" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[Union['DomainVideoDragArgs', 'DomainVideoDragArgsDict']] video_drag: 表示 "视频拖拽" 特性的配置模块。该特性默认为禁用。
+        :param pulumi.Input[Union['DomainAreaAccessRuleArgs', 'DomainAreaAccessRuleArgsDict']] area_access_rule: Indicates the configuration module for the 'regional access control' feature. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainCacheHostArgs', 'DomainCacheHostArgsDict']] cache_host: Specifies the configuration module for the 'shared cache' feature. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainCompressionArgs', 'DomainCompressionArgsDict']] compression: Represents the configuration module for the 'Smart Compression' feature. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainConditionalOriginArgs', 'DomainConditionalOriginArgsDict']] conditional_origin: Specifies the configuration module for the 'Conditional Origin' feature.
+        :param pulumi.Input[Union['DomainCustomErrorPageArgs', 'DomainCustomErrorPageArgsDict']] custom_error_page: Indicates the configuration module for the "Custom Error Page" feature. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainCustomizeAccessRuleArgs', 'DomainCustomizeAccessRuleArgsDict']] customize_access_rule: Represents the configuration module for the 'Custom Header Allowlist and Blocklist' feature. This feature is disabled by default.
+        :param pulumi.Input[builtins.str] domain: Indicates the acceleration domain name.
+        :param pulumi.Input[Union['DomainDownloadSpeedLimitArgs', 'DomainDownloadSpeedLimitArgsDict']] download_speed_limit: Represents the configuration module for the 'Download Speed Limit' feature. This feature is disabled by default.
+        :param pulumi.Input[builtins.bool] follow_redirect: Specifies whether to enable the 'origin redirect follow' feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
+        :param pulumi.Input[Union['DomainHttpForcedRedirectArgs', 'DomainHttpForcedRedirectArgsDict']] http_forced_redirect: Represents the configuration module for the 'Force HTTPS Redirect to HTTP' feature. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainHttpsArgs', 'DomainHttpsArgsDict']] https: Indicates the HTTPS configuration module. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainIPv6Args', 'DomainIPv6ArgsDict']] i_pv6: Indicates the configuration module for the IPv6 feature.
+        :param pulumi.Input[Union['DomainIpAccessRuleArgs', 'DomainIpAccessRuleArgsDict']] ip_access_rule: Specifies the configuration module for the 'IP allowlist and blocklist' feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
+        :param pulumi.Input[Union['DomainMethodDeniedRuleArgs', 'DomainMethodDeniedRuleArgsDict']] method_denied_rule: Represents the configuration module for the 'Disable HTTP Method' feature. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainMultiRangeArgs', 'DomainMultiRangeArgsDict']] multi_range: Indicates the configuration module for the multi-range feature. This feature is disabled by default
+        :param pulumi.Input[Union['DomainOfflineCacheArgs', 'DomainOfflineCacheArgsDict']] offline_cache: Indicates the configuration module for the 'offline cache' feature.
+        :param pulumi.Input[Union['DomainOriginAccessRuleArgs', 'DomainOriginAccessRuleArgsDict']] origin_access_rule: Indicates the configuration module for the 'Origin allowlist and blacklist' feature. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainOriginCertCheckArgs', 'DomainOriginCertCheckArgsDict']] origin_cert_check: Origin certificate validation
+        :param pulumi.Input[builtins.str] origin_host: If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
+        :param pulumi.Input[builtins.str] origin_i_pv6: Indicates the configuration for "IPv6 origin fetch." This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user's request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
+        :param pulumi.Input[builtins.str] origin_protocol: Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user's request.
+        :param pulumi.Input[builtins.bool] origin_range: Indicates whether the 'Range Origin' feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
+        :param pulumi.Input[Union['DomainOriginRetryArgs', 'DomainOriginRetryArgsDict']] origin_retry: Indicates the configuration module for the "origin fetch retry settings" feature.
+        :param pulumi.Input[Union['DomainOriginRewriteArgs', 'DomainOriginRewriteArgsDict']] origin_rewrite: Indicates the configuration module for the 'Origin URL Rewrite' feature.
+        :param pulumi.Input[Union['DomainOriginSniArgs', 'DomainOriginSniArgsDict']] origin_sni: Indicates the configuration module for the 'origin SNI' feature.
+        :param pulumi.Input[Union['DomainPageOptimizationArgs', 'DomainPageOptimizationArgsDict']] page_optimization: Specifies the configuration module for the 'page optimization' feature.
+        :param pulumi.Input[builtins.str] project: Indicates the project to which the acceleration domain belongs
+        :param pulumi.Input[Union['DomainQuicArgs', 'DomainQuicArgsDict']] quic: Indicates the configuration module for the QUIC feature. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainRedirectionRewriteArgs', 'DomainRedirectionRewriteArgsDict']] redirection_rewrite: Represents the configuration module for the 'URL Redirect Rewrite' feature. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainRefererAccessRuleArgs', 'DomainRefererAccessRuleArgsDict']] referer_access_rule: Indicates the configuration module for the "Referer Allowlist and Denylist" feature. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainRemoteAuthArgs', 'DomainRemoteAuthArgsDict']] remote_auth: Indicates the configuration module for the 'remote authentication' feature. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainRequestBlockRuleArgs', 'DomainRequestBlockRuleArgsDict']] request_block_rule: Indicates the configuration module for the 'Custom Interception' feature. This feature is disabled by default
+        :param pulumi.Input[Union['DomainRewriteHlsArgs', 'DomainRewriteHlsArgsDict']] rewrite_hls: Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
+        :param pulumi.Input[builtins.str] service_region: Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
+        :param pulumi.Input[builtins.str] service_type: Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
+        :param pulumi.Input[Union['DomainSignedUrlAuthArgs', 'DomainSignedUrlAuthArgsDict']] signed_url_auth: Indicates the configuration module for the 'URL Authentication' feature. This feature is disabled by default
+        :param pulumi.Input[Union['DomainTimeoutArgs', 'DomainTimeoutArgsDict']] timeout: Indicates the configuration module for the 'origin timeout' feature. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainUaAccessRuleArgs', 'DomainUaAccessRuleArgsDict']] ua_access_rule: Indicates the configuration module for the "UA allowlist and blocklist" feature. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainUrlNormalizeArgs', 'DomainUrlNormalizeArgsDict']] url_normalize: Specifies the configuration module for the 'URL normalization' feature. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainVideoDragArgs', 'DomainVideoDragArgsDict']] video_drag: Indicates the configuration module for the "Video Drag" feature. This feature is disabled by default.
         """
         ...
     @overload
@@ -1821,7 +1819,7 @@ class Domain(pulumi.CustomResource):
                  args: DomainArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        加速域名是您希望加速内容传输的域名。当您将域名添加到内容分发网络中后，该域名在内容分发网络中就成了一个加速域名。内容分发网络会为该域名分配一个 CNAME。在您创建一条 DNS 记录将您的域名解析到该 CNAME 后，用户向您域名发送的请求就会被路由到您的加速域名，实现内容传输的加速。
+        An accelerated domain name is the domain you want to speed up content delivery for. After you add the domain to the content delivery network, it becomes an accelerated domain name in the CDN. The CDN assigns a CNAME to this domain. Once you create a DNS record to resolve your domain to this CNAME, requests sent by users to your domain are routed to your accelerated domain name, enabling faster content delivery.
 
         ## Import
 
@@ -2045,58 +2043,57 @@ class Domain(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['DomainAreaAccessRuleArgs', 'DomainAreaAccessRuleArgsDict']] area_access_rule: 表示 "地域访问控制" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] backup_origins: 表示该域名配置的备源站列表。如果该域名没有配置任何备源站，该参数值是 null。
-        :param pulumi.Input[Union['DomainCacheHostArgs', 'DomainCacheHostArgsDict']] cache_host: 表示 "共享缓存" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[builtins.str] cache_shared: 表示该域名在 "共享缓存" 配置中的角色。该参数有以下取值：target*host：表示 "目标域名"。cache*shared_on：表示 "配置域名"。如果该域名未在任何 "共享缓存" 配置中，该参数值是空（""）。
-        :param pulumi.Input[builtins.str] cache_shared_target_host: 如果 CacheShared 是 cache*shared*on，该参数表示该域名所在的 "共享缓存" 配置中的 "目标域名"。
-               如果 CacheShared 是 target_host，该参数值为空（""）。
-        :param pulumi.Input[builtins.str] cname: 表示内容分发网络为该加速域名分配的 CNAME。
-        :param pulumi.Input[Union['DomainCompressionArgs', 'DomainCompressionArgsDict']] compression: 表示 "智能压缩" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[Union['DomainConditionalOriginArgs', 'DomainConditionalOriginArgsDict']] conditional_origin: 表示 "条件源站" 特性的配置模块。
-        :param pulumi.Input[builtins.int] created_time: 表示该加速域名的创建时间，格式是 Unix 时间戳。
-        :param pulumi.Input[Union['DomainCustomErrorPageArgs', 'DomainCustomErrorPageArgsDict']] custom_error_page: 表示 "自定义错误页面" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[Union['DomainCustomizeAccessRuleArgs', 'DomainCustomizeAccessRuleArgsDict']] customize_access_rule: 表示 "自定义头部黑白名单" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[builtins.str] domain: 表示该加速域名。
-        :param pulumi.Input[Union['DomainDomainLockArgs', 'DomainDomainLockArgsDict']] domain_lock: 表示该域名的锁定状态。
-        :param pulumi.Input[Union['DomainDownloadSpeedLimitArgs', 'DomainDownloadSpeedLimitArgsDict']] download_speed_limit: 表示 "下载限速" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[builtins.bool] follow_redirect: 表示是否启用 "回源重定向跟随" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
-        :param pulumi.Input[Union['DomainHttpForcedRedirectArgs', 'DomainHttpForcedRedirectArgsDict']] http_forced_redirect: 表示 "HTTPS 强制跳转到 HTTP" 特性的配置模块。该特性默认是禁用。
-        :param pulumi.Input[Union['DomainHttpsArgs', 'DomainHttpsArgsDict']] https: 表示 HTTPS 配置模块。该功能默认是禁用。
-        :param pulumi.Input[Union['DomainIPv6Args', 'DomainIPv6ArgsDict']] i_pv6: 表示 IPv6 特性的配置模块。
-        :param pulumi.Input[Union['DomainIpAccessRuleArgs', 'DomainIpAccessRuleArgsDict']] ip_access_rule: 表示 "IP 黑白名单" 特性的配置模块。该特性默认为禁用。该特性提供了两种配置方式：常规配置：指定 RuleType 和 Ip 对当前域名进行配置。全局配置：指定 SharedConfig 使用一个全局配置。全局配置是白名单功能。您只能选择一种配置方式。
-        :param pulumi.Input[builtins.bool] is_conflict_domain: 表示该域名是否是一个冲突域名。在 CDN 中，每个域名都是唯一的。如果您需要添加一个已存在于其他主账号下的域名，您需要提交工单。如果您成功在您的主账号下添加了该域名，则该域名就是一个冲突域名。该参数有以下取值：true：表示该域名是冲突域名。false：表示该域名不是冲突域名。
-        :param pulumi.Input[builtins.str] lock_status: 表示该域名的配置是否允许被变更。该参数有以下取值：on：表示允许。off：表示不允许。
-        :param pulumi.Input[Union['DomainMethodDeniedRuleArgs', 'DomainMethodDeniedRuleArgsDict']] method_denied_rule: 表示 "禁用 HTTP Method" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[Union['DomainMultiRangeArgs', 'DomainMultiRangeArgsDict']] multi_range: 表示多重范围（multi-range) 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[Union['DomainOfflineCacheArgs', 'DomainOfflineCacheArgsDict']] offline_cache: 表示 "离线缓存" 特性的配置模块。
-        :param pulumi.Input[Union['DomainOriginAccessRuleArgs', 'DomainOriginAccessRuleArgsDict']] origin_access_rule: 表示 "Origin 黑白名单" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[Union['DomainOriginCertCheckArgs', 'DomainOriginCertCheckArgsDict']] origin_cert_check: 源站证书校验
-        :param pulumi.Input[builtins.str] origin_host: 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
-        :param pulumi.Input[builtins.str] origin_i_pv6: 表示 "IPv6 回源" 的配置。该参数有以下取值：ipv6*first：表示内容分发网络始终尝试获取源站域名的 IPv6 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv4 地址。ipv4*first：表示内容分发网络始终尝试获取源站域名的 IPv4 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv6 地址。followclient：表示内容分发网络尝试获取与用户请求相同类型的 IP 地址。该参数的默认值是 followclient。由于海外部分回源节点不支持向 IPv6 地址发送回源请求，该功能仅适用于位于中国内地的回源节点。
-        :param pulumi.Input[builtins.str] origin_protocol: 表示回源请求使用的协议。该参数有以下取值：http：表示回源请求使用 HTTP 协议。https：表示回源请求使用 HTTPS 协议。followclient：表示回源协议与用户请求使用的协议相同。
-        :param pulumi.Input[builtins.bool] origin_range: 表示是否启用 "Range 回源" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
-        :param pulumi.Input[Union['DomainOriginRetryArgs', 'DomainOriginRetryArgsDict']] origin_retry: 表示 "回源重试设置" 特性的配置模块。
-        :param pulumi.Input[Union['DomainOriginRewriteArgs', 'DomainOriginRewriteArgsDict']] origin_rewrite: 表示 "回源 URL 改写" 特性的配置模块。
-        :param pulumi.Input[Union['DomainOriginSniArgs', 'DomainOriginSniArgsDict']] origin_sni: 表示 "回源 SNI" 特性的配置模块。
-        :param pulumi.Input[Union['DomainPageOptimizationArgs', 'DomainPageOptimizationArgsDict']] page_optimization: 表示 "页面优化" 特性的配置模块。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] primary_origins: 表示该域名配置的主源站列表。
-        :param pulumi.Input[builtins.str] project: 表示该加速域名归属的项目。
-        :param pulumi.Input[Union['DomainQuicArgs', 'DomainQuicArgsDict']] quic: 表示 QUIC 特性的配置模块。该特性默认是禁用。
-        :param pulumi.Input[Union['DomainRedirectionRewriteArgs', 'DomainRedirectionRewriteArgsDict']] redirection_rewrite: 表示 "URL 重定向改写" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[Union['DomainRefererAccessRuleArgs', 'DomainRefererAccessRuleArgsDict']] referer_access_rule: 表示 "Referer 黑白名单" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[Union['DomainRemoteAuthArgs', 'DomainRemoteAuthArgsDict']] remote_auth: 表示 "远程鉴权" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[Union['DomainRequestBlockRuleArgs', 'DomainRequestBlockRuleArgsDict']] request_block_rule: 表示 "自定义拦截" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[Union['DomainRewriteHlsArgs', 'DomainRewriteHlsArgsDict']] rewrite_hls: 表示 "标准 HLS 加密改写" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[builtins.str] service_region: 表示该加速域名的加速区域。该参数有以下取值：chinese*mainland：表示中国内地。global：表示全球。outside*chinese_mainland：表示全球（不含中国内地）。
-        :param pulumi.Input[builtins.str] service_type: 表示该域名的业务类型。该参数有以下取值：download：表示文件下载。web：表示网页。video：表示音视频点播。
-        :param pulumi.Input[Union['DomainSignedUrlAuthArgs', 'DomainSignedUrlAuthArgsDict']] signed_url_auth: 表示 "URL 鉴权" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[builtins.str] status: 表示该加速域名的状态。该参数有以下取值：online：表示状态是 正常运行。configuring：表示状态是 配置中。offline：表示状态是 已下线。
-        :param pulumi.Input[Union['DomainTimeoutArgs', 'DomainTimeoutArgsDict']] timeout: 表示 "回源超时时间" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[Union['DomainUaAccessRuleArgs', 'DomainUaAccessRuleArgsDict']] ua_access_rule: 表示 "UA 黑白名单" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[builtins.int] updated_time: 表示该域名配置的最近一次的更新时间，格式是 Unix 时间戳。
-        :param pulumi.Input[Union['DomainUrlNormalizeArgs', 'DomainUrlNormalizeArgsDict']] url_normalize: 表示 "URL 标准化" 特性的配置模块。该特性默认为禁用。
-        :param pulumi.Input[Union['DomainVideoDragArgs', 'DomainVideoDragArgsDict']] video_drag: 表示 "视频拖拽" 特性的配置模块。该特性默认为禁用。
+        :param pulumi.Input[Union['DomainAreaAccessRuleArgs', 'DomainAreaAccessRuleArgsDict']] area_access_rule: Indicates the configuration module for the 'regional access control' feature. This feature is disabled by default.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] backup_origins: Indicates the backup origin server list configured for this domain. If no backup origin server is configured for this domain, the parameter value is null.
+        :param pulumi.Input[Union['DomainCacheHostArgs', 'DomainCacheHostArgsDict']] cache_host: Specifies the configuration module for the 'shared cache' feature. This feature is disabled by default.
+        :param pulumi.Input[builtins.str] cache_shared: Indicates the role of this domain in the 'shared cache' configuration. The parameter has the following values: target*host: indicates the 'target domain'. cache*shared_on: indicates the 'configured domain'. If this domain is not included in any 'shared cache' configuration, the parameter value is an empty string ('').
+        :param pulumi.Input[builtins.str] cache_shared_target_host: If CacheShared is cache*shared*on, this parameter indicates the 'Target Domain' in the 'Shared Cache' configuration for this domain name. If CacheShared is target_host, this parameter is empty ("").
+        :param pulumi.Input[builtins.str] cname: Indicates the CNAME assigned by the content delivery network to the acceleration domain name.
+        :param pulumi.Input[Union['DomainCompressionArgs', 'DomainCompressionArgsDict']] compression: Represents the configuration module for the 'Smart Compression' feature. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainConditionalOriginArgs', 'DomainConditionalOriginArgsDict']] conditional_origin: Specifies the configuration module for the 'Conditional Origin' feature.
+        :param pulumi.Input[builtins.int] created_time: Indicates the creation time of this accelerated domain name, in Unix timestamp format.
+        :param pulumi.Input[Union['DomainCustomErrorPageArgs', 'DomainCustomErrorPageArgsDict']] custom_error_page: Indicates the configuration module for the "Custom Error Page" feature. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainCustomizeAccessRuleArgs', 'DomainCustomizeAccessRuleArgsDict']] customize_access_rule: Represents the configuration module for the 'Custom Header Allowlist and Blocklist' feature. This feature is disabled by default.
+        :param pulumi.Input[builtins.str] domain: Indicates the acceleration domain name.
+        :param pulumi.Input[Union['DomainDomainLockArgs', 'DomainDomainLockArgsDict']] domain_lock: Indicates the lock status of this domain name.
+        :param pulumi.Input[Union['DomainDownloadSpeedLimitArgs', 'DomainDownloadSpeedLimitArgsDict']] download_speed_limit: Represents the configuration module for the 'Download Speed Limit' feature. This feature is disabled by default.
+        :param pulumi.Input[builtins.bool] follow_redirect: Specifies whether to enable the 'origin redirect follow' feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
+        :param pulumi.Input[Union['DomainHttpForcedRedirectArgs', 'DomainHttpForcedRedirectArgsDict']] http_forced_redirect: Represents the configuration module for the 'Force HTTPS Redirect to HTTP' feature. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainHttpsArgs', 'DomainHttpsArgsDict']] https: Indicates the HTTPS configuration module. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainIPv6Args', 'DomainIPv6ArgsDict']] i_pv6: Indicates the configuration module for the IPv6 feature.
+        :param pulumi.Input[Union['DomainIpAccessRuleArgs', 'DomainIpAccessRuleArgsDict']] ip_access_rule: Specifies the configuration module for the 'IP allowlist and blocklist' feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
+        :param pulumi.Input[builtins.bool] is_conflict_domain: Indicates whether the domain is a conflicting domain. In CDN, each domain is unique. If you need to add a domain that already exists under another primary account, you must submit a ticket. If you successfully add the domain under your primary account, it becomes a conflicting domain. This parameter has the following values: true: the domain is a conflicting domain. false: the domain is not a conflicting domain.
+        :param pulumi.Input[builtins.str] lock_status: Indicates whether the configuration for this domain name can be changed. The parameter values are: on: Allowed. off: Not allowed.
+        :param pulumi.Input[Union['DomainMethodDeniedRuleArgs', 'DomainMethodDeniedRuleArgsDict']] method_denied_rule: Represents the configuration module for the 'Disable HTTP Method' feature. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainMultiRangeArgs', 'DomainMultiRangeArgsDict']] multi_range: Indicates the configuration module for the multi-range feature. This feature is disabled by default
+        :param pulumi.Input[Union['DomainOfflineCacheArgs', 'DomainOfflineCacheArgsDict']] offline_cache: Indicates the configuration module for the 'offline cache' feature.
+        :param pulumi.Input[Union['DomainOriginAccessRuleArgs', 'DomainOriginAccessRuleArgsDict']] origin_access_rule: Indicates the configuration module for the 'Origin allowlist and blacklist' feature. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainOriginCertCheckArgs', 'DomainOriginCertCheckArgsDict']] origin_cert_check: Origin certificate validation
+        :param pulumi.Input[builtins.str] origin_host: If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
+        :param pulumi.Input[builtins.str] origin_i_pv6: Indicates the configuration for "IPv6 origin fetch." This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user's request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
+        :param pulumi.Input[builtins.str] origin_protocol: Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user's request.
+        :param pulumi.Input[builtins.bool] origin_range: Indicates whether the 'Range Origin' feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
+        :param pulumi.Input[Union['DomainOriginRetryArgs', 'DomainOriginRetryArgsDict']] origin_retry: Indicates the configuration module for the "origin fetch retry settings" feature.
+        :param pulumi.Input[Union['DomainOriginRewriteArgs', 'DomainOriginRewriteArgsDict']] origin_rewrite: Indicates the configuration module for the 'Origin URL Rewrite' feature.
+        :param pulumi.Input[Union['DomainOriginSniArgs', 'DomainOriginSniArgsDict']] origin_sni: Indicates the configuration module for the 'origin SNI' feature.
+        :param pulumi.Input[Union['DomainPageOptimizationArgs', 'DomainPageOptimizationArgsDict']] page_optimization: Specifies the configuration module for the 'page optimization' feature.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] primary_origins: Indicates the list of primary origin servers configured for this domain name.
+        :param pulumi.Input[builtins.str] project: Indicates the project to which the acceleration domain belongs
+        :param pulumi.Input[Union['DomainQuicArgs', 'DomainQuicArgsDict']] quic: Indicates the configuration module for the QUIC feature. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainRedirectionRewriteArgs', 'DomainRedirectionRewriteArgsDict']] redirection_rewrite: Represents the configuration module for the 'URL Redirect Rewrite' feature. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainRefererAccessRuleArgs', 'DomainRefererAccessRuleArgsDict']] referer_access_rule: Indicates the configuration module for the "Referer Allowlist and Denylist" feature. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainRemoteAuthArgs', 'DomainRemoteAuthArgsDict']] remote_auth: Indicates the configuration module for the 'remote authentication' feature. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainRequestBlockRuleArgs', 'DomainRequestBlockRuleArgsDict']] request_block_rule: Indicates the configuration module for the 'Custom Interception' feature. This feature is disabled by default
+        :param pulumi.Input[Union['DomainRewriteHlsArgs', 'DomainRewriteHlsArgsDict']] rewrite_hls: Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
+        :param pulumi.Input[builtins.str] service_region: Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
+        :param pulumi.Input[builtins.str] service_type: Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
+        :param pulumi.Input[Union['DomainSignedUrlAuthArgs', 'DomainSignedUrlAuthArgsDict']] signed_url_auth: Indicates the configuration module for the 'URL Authentication' feature. This feature is disabled by default
+        :param pulumi.Input[builtins.str] status: Indicates the status of the acceleration domain name. The parameter values are as follows: online: indicates normal operation. configuring: indicates configuration in progress. offline: indicates offline status.
+        :param pulumi.Input[Union['DomainTimeoutArgs', 'DomainTimeoutArgsDict']] timeout: Indicates the configuration module for the 'origin timeout' feature. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainUaAccessRuleArgs', 'DomainUaAccessRuleArgsDict']] ua_access_rule: Indicates the configuration module for the "UA allowlist and blocklist" feature. This feature is disabled by default.
+        :param pulumi.Input[builtins.int] updated_time: Indicates the most recent update time for this domain configuration, in Unix timestamp format.
+        :param pulumi.Input[Union['DomainUrlNormalizeArgs', 'DomainUrlNormalizeArgsDict']] url_normalize: Specifies the configuration module for the 'URL normalization' feature. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainVideoDragArgs', 'DomainVideoDragArgsDict']] video_drag: Indicates the configuration module for the "Video Drag" feature. This feature is disabled by default.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -2168,7 +2165,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="areaAccessRule")
     def area_access_rule(self) -> pulumi.Output['outputs.DomainAreaAccessRule']:
         """
-        表示 "地域访问控制" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the 'regional access control' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "area_access_rule")
 
@@ -2176,7 +2173,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="backupOrigins")
     def backup_origins(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        表示该域名配置的备源站列表。如果该域名没有配置任何备源站，该参数值是 null。
+        Indicates the backup origin server list configured for this domain. If no backup origin server is configured for this domain, the parameter value is null.
         """
         return pulumi.get(self, "backup_origins")
 
@@ -2189,7 +2186,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="cacheHost")
     def cache_host(self) -> pulumi.Output['outputs.DomainCacheHost']:
         """
-        表示 "共享缓存" 特性的配置模块。该特性默认为禁用。
+        Specifies the configuration module for the 'shared cache' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "cache_host")
 
@@ -2202,7 +2199,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="cacheShared")
     def cache_shared(self) -> pulumi.Output[builtins.str]:
         """
-        表示该域名在 "共享缓存" 配置中的角色。该参数有以下取值：target*host：表示 "目标域名"。cache*shared_on：表示 "配置域名"。如果该域名未在任何 "共享缓存" 配置中，该参数值是空（""）。
+        Indicates the role of this domain in the 'shared cache' configuration. The parameter has the following values: target*host: indicates the 'target domain'. cache*shared_on: indicates the 'configured domain'. If this domain is not included in any 'shared cache' configuration, the parameter value is an empty string ('').
         """
         return pulumi.get(self, "cache_shared")
 
@@ -2210,8 +2207,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="cacheSharedTargetHost")
     def cache_shared_target_host(self) -> pulumi.Output[builtins.str]:
         """
-        如果 CacheShared 是 cache*shared*on，该参数表示该域名所在的 "共享缓存" 配置中的 "目标域名"。
-        如果 CacheShared 是 target_host，该参数值为空（""）。
+        If CacheShared is cache*shared*on, this parameter indicates the 'Target Domain' in the 'Shared Cache' configuration for this domain name. If CacheShared is target_host, this parameter is empty ("").
         """
         return pulumi.get(self, "cache_shared_target_host")
 
@@ -2224,7 +2220,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter
     def cname(self) -> pulumi.Output[builtins.str]:
         """
-        表示内容分发网络为该加速域名分配的 CNAME。
+        Indicates the CNAME assigned by the content delivery network to the acceleration domain name.
         """
         return pulumi.get(self, "cname")
 
@@ -2232,7 +2228,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter
     def compression(self) -> pulumi.Output['outputs.DomainCompression']:
         """
-        表示 "智能压缩" 特性的配置模块。该特性默认为禁用。
+        Represents the configuration module for the 'Smart Compression' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "compression")
 
@@ -2240,7 +2236,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="conditionalOrigin")
     def conditional_origin(self) -> pulumi.Output['outputs.DomainConditionalOrigin']:
         """
-        表示 "条件源站" 特性的配置模块。
+        Specifies the configuration module for the 'Conditional Origin' feature.
         """
         return pulumi.get(self, "conditional_origin")
 
@@ -2248,7 +2244,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.int]:
         """
-        表示该加速域名的创建时间，格式是 Unix 时间戳。
+        Indicates the creation time of this accelerated domain name, in Unix timestamp format.
         """
         return pulumi.get(self, "created_time")
 
@@ -2256,7 +2252,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="customErrorPage")
     def custom_error_page(self) -> pulumi.Output['outputs.DomainCustomErrorPage']:
         """
-        表示 "自定义错误页面" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the "Custom Error Page" feature. This feature is disabled by default.
         """
         return pulumi.get(self, "custom_error_page")
 
@@ -2264,7 +2260,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="customizeAccessRule")
     def customize_access_rule(self) -> pulumi.Output['outputs.DomainCustomizeAccessRule']:
         """
-        表示 "自定义头部黑白名单" 特性的配置模块。该特性默认为禁用。
+        Represents the configuration module for the 'Custom Header Allowlist and Blocklist' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "customize_access_rule")
 
@@ -2272,7 +2268,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter
     def domain(self) -> pulumi.Output[builtins.str]:
         """
-        表示该加速域名。
+        Indicates the acceleration domain name.
         """
         return pulumi.get(self, "domain")
 
@@ -2280,7 +2276,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="domainLock")
     def domain_lock(self) -> pulumi.Output['outputs.DomainDomainLock']:
         """
-        表示该域名的锁定状态。
+        Indicates the lock status of this domain name.
         """
         return pulumi.get(self, "domain_lock")
 
@@ -2288,7 +2284,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="downloadSpeedLimit")
     def download_speed_limit(self) -> pulumi.Output['outputs.DomainDownloadSpeedLimit']:
         """
-        表示 "下载限速" 特性的配置模块。该特性默认为禁用。
+        Represents the configuration module for the 'Download Speed Limit' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "download_speed_limit")
 
@@ -2296,7 +2292,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="followRedirect")
     def follow_redirect(self) -> pulumi.Output[builtins.bool]:
         """
-        表示是否启用 "回源重定向跟随" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        Specifies whether to enable the 'origin redirect follow' feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
         """
         return pulumi.get(self, "follow_redirect")
 
@@ -2304,7 +2300,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="httpForcedRedirect")
     def http_forced_redirect(self) -> pulumi.Output['outputs.DomainHttpForcedRedirect']:
         """
-        表示 "HTTPS 强制跳转到 HTTP" 特性的配置模块。该特性默认是禁用。
+        Represents the configuration module for the 'Force HTTPS Redirect to HTTP' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "http_forced_redirect")
 
@@ -2312,7 +2308,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter
     def https(self) -> pulumi.Output['outputs.DomainHttps']:
         """
-        表示 HTTPS 配置模块。该功能默认是禁用。
+        Indicates the HTTPS configuration module. This feature is disabled by default.
         """
         return pulumi.get(self, "https")
 
@@ -2320,7 +2316,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="iPv6")
     def i_pv6(self) -> pulumi.Output['outputs.DomainIPv6']:
         """
-        表示 IPv6 特性的配置模块。
+        Indicates the configuration module for the IPv6 feature.
         """
         return pulumi.get(self, "i_pv6")
 
@@ -2328,7 +2324,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="ipAccessRule")
     def ip_access_rule(self) -> pulumi.Output['outputs.DomainIpAccessRule']:
         """
-        表示 "IP 黑白名单" 特性的配置模块。该特性默认为禁用。该特性提供了两种配置方式：常规配置：指定 RuleType 和 Ip 对当前域名进行配置。全局配置：指定 SharedConfig 使用一个全局配置。全局配置是白名单功能。您只能选择一种配置方式。
+        Specifies the configuration module for the 'IP allowlist and blocklist' feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
         """
         return pulumi.get(self, "ip_access_rule")
 
@@ -2336,7 +2332,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="isConflictDomain")
     def is_conflict_domain(self) -> pulumi.Output[builtins.bool]:
         """
-        表示该域名是否是一个冲突域名。在 CDN 中，每个域名都是唯一的。如果您需要添加一个已存在于其他主账号下的域名，您需要提交工单。如果您成功在您的主账号下添加了该域名，则该域名就是一个冲突域名。该参数有以下取值：true：表示该域名是冲突域名。false：表示该域名不是冲突域名。
+        Indicates whether the domain is a conflicting domain. In CDN, each domain is unique. If you need to add a domain that already exists under another primary account, you must submit a ticket. If you successfully add the domain under your primary account, it becomes a conflicting domain. This parameter has the following values: true: the domain is a conflicting domain. false: the domain is not a conflicting domain.
         """
         return pulumi.get(self, "is_conflict_domain")
 
@@ -2344,7 +2340,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="lockStatus")
     def lock_status(self) -> pulumi.Output[builtins.str]:
         """
-        表示该域名的配置是否允许被变更。该参数有以下取值：on：表示允许。off：表示不允许。
+        Indicates whether the configuration for this domain name can be changed. The parameter values are: on: Allowed. off: Not allowed.
         """
         return pulumi.get(self, "lock_status")
 
@@ -2352,7 +2348,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="methodDeniedRule")
     def method_denied_rule(self) -> pulumi.Output['outputs.DomainMethodDeniedRule']:
         """
-        表示 "禁用 HTTP Method" 特性的配置模块。该特性默认为禁用。
+        Represents the configuration module for the 'Disable HTTP Method' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "method_denied_rule")
 
@@ -2360,7 +2356,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="multiRange")
     def multi_range(self) -> pulumi.Output['outputs.DomainMultiRange']:
         """
-        表示多重范围（multi-range) 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the multi-range feature. This feature is disabled by default
         """
         return pulumi.get(self, "multi_range")
 
@@ -2373,7 +2369,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="offlineCache")
     def offline_cache(self) -> pulumi.Output['outputs.DomainOfflineCache']:
         """
-        表示 "离线缓存" 特性的配置模块。
+        Indicates the configuration module for the 'offline cache' feature.
         """
         return pulumi.get(self, "offline_cache")
 
@@ -2381,7 +2377,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="originAccessRule")
     def origin_access_rule(self) -> pulumi.Output['outputs.DomainOriginAccessRule']:
         """
-        表示 "Origin 黑白名单" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the 'Origin allowlist and blacklist' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "origin_access_rule")
 
@@ -2394,7 +2390,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="originCertCheck")
     def origin_cert_check(self) -> pulumi.Output['outputs.DomainOriginCertCheck']:
         """
-        源站证书校验
+        Origin certificate validation
         """
         return pulumi.get(self, "origin_cert_check")
 
@@ -2402,7 +2398,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="originHost")
     def origin_host(self) -> pulumi.Output[builtins.str]:
         """
-        如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+        If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
         """
         return pulumi.get(self, "origin_host")
 
@@ -2410,7 +2406,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="originIPv6")
     def origin_i_pv6(self) -> pulumi.Output[builtins.str]:
         """
-        表示 "IPv6 回源" 的配置。该参数有以下取值：ipv6*first：表示内容分发网络始终尝试获取源站域名的 IPv6 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv4 地址。ipv4*first：表示内容分发网络始终尝试获取源站域名的 IPv4 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv6 地址。followclient：表示内容分发网络尝试获取与用户请求相同类型的 IP 地址。该参数的默认值是 followclient。由于海外部分回源节点不支持向 IPv6 地址发送回源请求，该功能仅适用于位于中国内地的回源节点。
+        Indicates the configuration for "IPv6 origin fetch." This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user's request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
         """
         return pulumi.get(self, "origin_i_pv6")
 
@@ -2418,7 +2414,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="originProtocol")
     def origin_protocol(self) -> pulumi.Output[builtins.str]:
         """
-        表示回源请求使用的协议。该参数有以下取值：http：表示回源请求使用 HTTP 协议。https：表示回源请求使用 HTTPS 协议。followclient：表示回源协议与用户请求使用的协议相同。
+        Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user's request.
         """
         return pulumi.get(self, "origin_protocol")
 
@@ -2426,7 +2422,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="originRange")
     def origin_range(self) -> pulumi.Output[builtins.bool]:
         """
-        表示是否启用 "Range 回源" 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        Indicates whether the 'Range Origin' feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
         """
         return pulumi.get(self, "origin_range")
 
@@ -2434,7 +2430,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="originRetry")
     def origin_retry(self) -> pulumi.Output['outputs.DomainOriginRetry']:
         """
-        表示 "回源重试设置" 特性的配置模块。
+        Indicates the configuration module for the "origin fetch retry settings" feature.
         """
         return pulumi.get(self, "origin_retry")
 
@@ -2442,7 +2438,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="originRewrite")
     def origin_rewrite(self) -> pulumi.Output['outputs.DomainOriginRewrite']:
         """
-        表示 "回源 URL 改写" 特性的配置模块。
+        Indicates the configuration module for the 'Origin URL Rewrite' feature.
         """
         return pulumi.get(self, "origin_rewrite")
 
@@ -2450,7 +2446,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="originSni")
     def origin_sni(self) -> pulumi.Output['outputs.DomainOriginSni']:
         """
-        表示 "回源 SNI" 特性的配置模块。
+        Indicates the configuration module for the 'origin SNI' feature.
         """
         return pulumi.get(self, "origin_sni")
 
@@ -2463,7 +2459,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="pageOptimization")
     def page_optimization(self) -> pulumi.Output['outputs.DomainPageOptimization']:
         """
-        表示 "页面优化" 特性的配置模块。
+        Specifies the configuration module for the 'page optimization' feature.
         """
         return pulumi.get(self, "page_optimization")
 
@@ -2471,7 +2467,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="primaryOrigins")
     def primary_origins(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        表示该域名配置的主源站列表。
+        Indicates the list of primary origin servers configured for this domain name.
         """
         return pulumi.get(self, "primary_origins")
 
@@ -2479,7 +2475,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter
     def project(self) -> pulumi.Output[builtins.str]:
         """
-        表示该加速域名归属的项目。
+        Indicates the project to which the acceleration domain belongs
         """
         return pulumi.get(self, "project")
 
@@ -2487,7 +2483,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter
     def quic(self) -> pulumi.Output['outputs.DomainQuic']:
         """
-        表示 QUIC 特性的配置模块。该特性默认是禁用。
+        Indicates the configuration module for the QUIC feature. This feature is disabled by default.
         """
         return pulumi.get(self, "quic")
 
@@ -2495,7 +2491,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="redirectionRewrite")
     def redirection_rewrite(self) -> pulumi.Output['outputs.DomainRedirectionRewrite']:
         """
-        表示 "URL 重定向改写" 特性的配置模块。该特性默认为禁用。
+        Represents the configuration module for the 'URL Redirect Rewrite' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "redirection_rewrite")
 
@@ -2503,7 +2499,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="refererAccessRule")
     def referer_access_rule(self) -> pulumi.Output['outputs.DomainRefererAccessRule']:
         """
-        表示 "Referer 黑白名单" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the "Referer Allowlist and Denylist" feature. This feature is disabled by default.
         """
         return pulumi.get(self, "referer_access_rule")
 
@@ -2511,7 +2507,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="remoteAuth")
     def remote_auth(self) -> pulumi.Output['outputs.DomainRemoteAuth']:
         """
-        表示 "远程鉴权" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the 'remote authentication' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "remote_auth")
 
@@ -2519,7 +2515,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="requestBlockRule")
     def request_block_rule(self) -> pulumi.Output['outputs.DomainRequestBlockRule']:
         """
-        表示 "自定义拦截" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the 'Custom Interception' feature. This feature is disabled by default
         """
         return pulumi.get(self, "request_block_rule")
 
@@ -2537,7 +2533,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="rewriteHls")
     def rewrite_hls(self) -> pulumi.Output['outputs.DomainRewriteHls']:
         """
-        表示 "标准 HLS 加密改写" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
         """
         return pulumi.get(self, "rewrite_hls")
 
@@ -2545,7 +2541,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="serviceRegion")
     def service_region(self) -> pulumi.Output[builtins.str]:
         """
-        表示该加速域名的加速区域。该参数有以下取值：chinese*mainland：表示中国内地。global：表示全球。outside*chinese_mainland：表示全球（不含中国内地）。
+        Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
         """
         return pulumi.get(self, "service_region")
 
@@ -2553,7 +2549,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="serviceType")
     def service_type(self) -> pulumi.Output[builtins.str]:
         """
-        表示该域名的业务类型。该参数有以下取值：download：表示文件下载。web：表示网页。video：表示音视频点播。
+        Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
         """
         return pulumi.get(self, "service_type")
 
@@ -2561,7 +2557,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="signedUrlAuth")
     def signed_url_auth(self) -> pulumi.Output['outputs.DomainSignedUrlAuth']:
         """
-        表示 "URL 鉴权" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the 'URL Authentication' feature. This feature is disabled by default
         """
         return pulumi.get(self, "signed_url_auth")
 
@@ -2569,7 +2565,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        表示该加速域名的状态。该参数有以下取值：online：表示状态是 正常运行。configuring：表示状态是 配置中。offline：表示状态是 已下线。
+        Indicates the status of the acceleration domain name. The parameter values are as follows: online: indicates normal operation. configuring: indicates configuration in progress. offline: indicates offline status.
         """
         return pulumi.get(self, "status")
 
@@ -2582,7 +2578,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter
     def timeout(self) -> pulumi.Output['outputs.DomainTimeout']:
         """
-        表示 "回源超时时间" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the 'origin timeout' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "timeout")
 
@@ -2590,7 +2586,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="uaAccessRule")
     def ua_access_rule(self) -> pulumi.Output['outputs.DomainUaAccessRule']:
         """
-        表示 "UA 黑白名单" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the "UA allowlist and blocklist" feature. This feature is disabled by default.
         """
         return pulumi.get(self, "ua_access_rule")
 
@@ -2598,7 +2594,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.int]:
         """
-        表示该域名配置的最近一次的更新时间，格式是 Unix 时间戳。
+        Indicates the most recent update time for this domain configuration, in Unix timestamp format.
         """
         return pulumi.get(self, "updated_time")
 
@@ -2606,7 +2602,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="urlNormalize")
     def url_normalize(self) -> pulumi.Output['outputs.DomainUrlNormalize']:
         """
-        表示 "URL 标准化" 特性的配置模块。该特性默认为禁用。
+        Specifies the configuration module for the 'URL normalization' feature. This feature is disabled by default.
         """
         return pulumi.get(self, "url_normalize")
 
@@ -2614,7 +2610,7 @@ class Domain(pulumi.CustomResource):
     @pulumi.getter(name="videoDrag")
     def video_drag(self) -> pulumi.Output['outputs.DomainVideoDrag']:
         """
-        表示 "视频拖拽" 特性的配置模块。该特性默认为禁用。
+        Indicates the configuration module for the "Video Drag" feature. This feature is disabled by default.
         """
         return pulumi.get(self, "video_drag")
 

@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Ark.Inputs
     public sealed class EndpointModelReferenceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 定制模型的ID。
+        /// Custom model ID
         /// </summary>
         [Input("customModelId")]
         public Input<string>? CustomModelId { get; set; }
 
         /// <summary>
-        /// 基础模型。
+        /// Base model
         /// </summary>
         [Input("foundationModel")]
         public Input<Inputs.EndpointModelReferenceFoundationModelArgs>? FoundationModel { get; set; }

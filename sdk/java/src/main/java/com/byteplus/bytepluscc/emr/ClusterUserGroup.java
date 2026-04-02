@@ -15,7 +15,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * E-MapReduce（EMR）集群中支持对用户进行组管理，允许您创建、编辑和删除用户组。
+ * User group management is supported in E-MapReduce (EMR) clusters, allowing you to create, edit, and delete user groups.
  * 
  * ## Example Usage
  * 
@@ -67,56 +67,56 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:emr/clusterUserGroup:ClusterUserGroup")
 public class ClusterUserGroup extends com.pulumi.resources.CustomResource {
     /**
-     * 集群ID。
+     * Cluster ID.
      * 
      */
     @Export(name="clusterId", refs={String.class}, tree="[0]")
     private Output<String> clusterId;
 
     /**
-     * @return 集群ID。
+     * @return Cluster ID.
      * 
      */
     public Output<String> clusterId() {
         return this.clusterId;
     }
     /**
-     * 用户组描述。
+     * User group description.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 用户组描述。
+     * @return User group description.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 用户组成员。不支持操作特殊用户，如admin等。
+     * Operations on special users, such as admin, are not supported.
      * 
      */
     @Export(name="members", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> members;
 
     /**
-     * @return 用户组成员。不支持操作特殊用户，如admin等。
+     * @return Operations on special users, such as admin, are not supported.
      * 
      */
     public Output<List<String>> members() {
         return this.members;
     }
     /**
-     * 用户组名称。
+     * User group name.
      * 
      */
     @Export(name="userGroupName", refs={String.class}, tree="[0]")
     private Output<String> userGroupName;
 
     /**
-     * @return 用户组名称。
+     * @return User group name.
      * 
      */
     public Output<String> userGroupName() {

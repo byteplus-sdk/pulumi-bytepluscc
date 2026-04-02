@@ -97,7 +97,7 @@ class GetSubnetResult:
     @pulumi.getter(name="accountId")
     def account_id(self) -> builtins.str:
         """
-        子网所属账户的ID。
+        ID of the account to which the subnet belongs
         """
         return pulumi.get(self, "account_id")
 
@@ -105,7 +105,7 @@ class GetSubnetResult:
     @pulumi.getter(name="availableIpAddressCount")
     def available_ip_address_count(self) -> builtins.int:
         """
-        子网中可用的IP地址数量。
+        Number of available IP addresses in the subnet
         """
         return pulumi.get(self, "available_ip_address_count")
 
@@ -113,7 +113,7 @@ class GetSubnetResult:
     @pulumi.getter(name="cidrBlock")
     def cidr_block(self) -> builtins.str:
         """
-        子网的IPv4网段。
+        Subnet IPv4 CIDR block
         """
         return pulumi.get(self, "cidr_block")
 
@@ -121,7 +121,7 @@ class GetSubnetResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        子网的创建时间。
+        Subnet creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -129,7 +129,7 @@ class GetSubnetResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        子网的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不能以http://或https://开头。
+        Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
         """
         return pulumi.get(self, "description")
 
@@ -137,7 +137,7 @@ class GetSubnetResult:
     @pulumi.getter(name="enableIpv6")
     def enable_ipv6(self) -> builtins.bool:
         """
-        开启/关闭IPv6功能。仅当子网所属的VPC开通IPv6功能时，可配置此参数。1、true：开启。2、false：关闭。仅当子网内没有分配IPv6地址的云资源时，可配置此取值。
+        Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
         """
         return pulumi.get(self, "enable_ipv6")
 
@@ -153,7 +153,7 @@ class GetSubnetResult:
     @pulumi.getter(name="ipv6CidrBlock")
     def ipv6_cidr_block(self) -> builtins.str:
         """
-        子网IPv6网段。1、创建/修改时请输入子网IPv6网段的最后8比特位（子网的掩码固定为/64）。2、仅当EnableIpv6设置为true时，支持配置本参数。3、取值范围：0～255。掩码固定为/64。
+        Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
         """
         return pulumi.get(self, "ipv6_cidr_block")
 
@@ -161,7 +161,7 @@ class GetSubnetResult:
     @pulumi.getter(name="isDefault")
     def is_default(self) -> builtins.bool:
         """
-        该子网是否为默认子网。1、true：默认子网，表示该子网是创建ECS实例时系统自动创建的子网。2、false：非默认子网，表示该子网是用户手动创建的。
+        Whether the subnet is a default subnet. 1. true: Default subnet, created automatically when an ECS instance is created. 2. false: Non-default subnet, created manually by the user
         """
         return pulumi.get(self, "is_default")
 
@@ -169,7 +169,7 @@ class GetSubnetResult:
     @pulumi.getter(name="networkAclId")
     def network_acl_id(self) -> builtins.str:
         """
-        子网关联的网络ACL的ID。
+        ID of the network ACL associated with the subnet
         """
         return pulumi.get(self, "network_acl_id")
 
@@ -177,7 +177,7 @@ class GetSubnetResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        子网所在VPC实例所属项目的名称。
+        Name of the project associated with the VPC instance where the subnet resides
         """
         return pulumi.get(self, "project_name")
 
@@ -185,7 +185,7 @@ class GetSubnetResult:
     @pulumi.getter(name="readIpv6CidrBlock")
     def read_ipv6_cidr_block(self) -> builtins.str:
         """
-        只读字段，子网IPv6网段。
+        Read-only field, subnet IPv6 CIDR block
         """
         return pulumi.get(self, "read_ipv6_cidr_block")
 
@@ -193,7 +193,7 @@ class GetSubnetResult:
     @pulumi.getter(name="routeTable")
     def route_table(self) -> 'outputs.GetSubnetRouteTableResult':
         """
-        路由表信息。
+        Route table information
         """
         return pulumi.get(self, "route_table")
 
@@ -201,7 +201,7 @@ class GetSubnetResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        子网的状态。1、Pending：表示配置中。2、Available：表示可用。
+        Subnet status. 1. Pending: Configuring. 2. Available: Available
         """
         return pulumi.get(self, "status")
 
@@ -209,7 +209,7 @@ class GetSubnetResult:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> builtins.str:
         """
-        待修改信息的子网的ID。
+        ID of the subnet whose information is to be modified
         """
         return pulumi.get(self, "subnet_id")
 
@@ -217,7 +217,7 @@ class GetSubnetResult:
     @pulumi.getter(name="subnetName")
     def subnet_name(self) -> builtins.str:
         """
-        子网的名称，长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不能以http://或https://开头，不填默认是子网的ID。
+        Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
         """
         return pulumi.get(self, "subnet_name")
 
@@ -225,7 +225,7 @@ class GetSubnetResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetSubnetTagResult']:
         """
-        子网的标签信息。
+        Subnet tag information
         """
         return pulumi.get(self, "tags")
 
@@ -233,7 +233,7 @@ class GetSubnetResult:
     @pulumi.getter(name="totalIpv4Count")
     def total_ipv4_count(self) -> builtins.int:
         """
-        子网下可用IP总数。
+        Total number of available IPs in the subnet
         """
         return pulumi.get(self, "total_ipv4_count")
 
@@ -241,7 +241,7 @@ class GetSubnetResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        子网的更新时间。
+        Subnet update time
         """
         return pulumi.get(self, "updated_time")
 
@@ -249,7 +249,7 @@ class GetSubnetResult:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> builtins.str:
         """
-        子网所属VPC的ID。
+        ID of the VPC to which the subnet belongs
         """
         return pulumi.get(self, "vpc_id")
 
@@ -257,7 +257,7 @@ class GetSubnetResult:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> builtins.str:
         """
-        要创建的子网所属的可用区ID，更多可用区信息请参见地域和可用区。
+        Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
         """
         return pulumi.get(self, "zone_id")
 

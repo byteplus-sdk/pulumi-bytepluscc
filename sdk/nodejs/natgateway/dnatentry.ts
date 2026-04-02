@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * 目的地址转换。即当中转IP及端口被访问时，私网NAT网关将访问请求中的目的地址和端口替换成云服务器的私网IP及端口后，进行转发。
+ * Destination address translation. When the transit IP and port are accessed, the private NAT gateway replaces the destination address and port in the request with the private IP and port of the cloud server, then forwards the request.
  *
  * ## Example Usage
  *
@@ -60,43 +60,43 @@ export class Dnatentry extends pulumi.CustomResource {
     }
 
     /**
-     * DNAT规则的ID。
+     * ID of the DNAT rule.
      */
     public /*out*/ readonly dnatEntryId!: pulumi.Output<string>;
     /**
-     * DNAT规则的名称。
+     * Name of the DNAT rule.
      */
     public readonly dnatEntryName!: pulumi.Output<string>;
     /**
-     * NAT网关用于网络地址转换的IP地址。当NAT网关为公网NAT网关时，传入其绑定的公网IP地址。当NAT网关为私网NAT网关时，传入其中转IP地址。
+     * IP address used by the NAT gateway for network address translation. If the NAT gateway is a public NAT gateway, enter its bound public IP address. If the NAT gateway is a private NAT gateway, enter its transit IP address.
      */
     public readonly externalIp!: pulumi.Output<string>;
     /**
-     * 接收来自公网外部请求的端口或端口段。
+     * Port or port range that receives requests from the public network.
      */
     public readonly externalPort!: pulumi.Output<string>;
     /**
-     * 云服务器实例的私网IP。
+     * Private IP address of the cloud server instance.
      */
     public readonly internalIp!: pulumi.Output<string>;
     /**
-     * 云服务器实例私网IP的端口或端口段。
+     * Port or port range of the private IP address of the cloud server instance.
      */
     public readonly internalPort!: pulumi.Output<string>;
     /**
-     * DNAT规则所属NAT网关的ID。
+     * ID of the NAT gateway to which the DNAT rule belongs.
      */
     public readonly natGatewayId!: pulumi.Output<string>;
     /**
-     * DNAT规则的端口类型。specified：指定端口。any：任意端口。即IP映射。
+     * Port type of the DNAT rule. specified: Specified port. any: Any port, i.e., IP mapping.
      */
     public readonly portType!: pulumi.Output<string>;
     /**
-     * 协议类型。tcp：转发TCP协议的报文。udp：转发UDP协议的报文。
+     * Protocol type. tcp: Forwards TCP protocol packets. udp: Forwards UDP protocol packets.
      */
     public readonly protocol!: pulumi.Output<string>;
     /**
-     * DNAT规则的状态。Creating：创建中。Deleting：删除中。Available：可用。
+     * Status of the DNAT rule. Creating: Creating. Deleting: Deleting. Available: Available.
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
 
@@ -164,43 +164,43 @@ export class Dnatentry extends pulumi.CustomResource {
  */
 export interface DnatentryState {
     /**
-     * DNAT规则的ID。
+     * ID of the DNAT rule.
      */
     dnatEntryId?: pulumi.Input<string>;
     /**
-     * DNAT规则的名称。
+     * Name of the DNAT rule.
      */
     dnatEntryName?: pulumi.Input<string>;
     /**
-     * NAT网关用于网络地址转换的IP地址。当NAT网关为公网NAT网关时，传入其绑定的公网IP地址。当NAT网关为私网NAT网关时，传入其中转IP地址。
+     * IP address used by the NAT gateway for network address translation. If the NAT gateway is a public NAT gateway, enter its bound public IP address. If the NAT gateway is a private NAT gateway, enter its transit IP address.
      */
     externalIp?: pulumi.Input<string>;
     /**
-     * 接收来自公网外部请求的端口或端口段。
+     * Port or port range that receives requests from the public network.
      */
     externalPort?: pulumi.Input<string>;
     /**
-     * 云服务器实例的私网IP。
+     * Private IP address of the cloud server instance.
      */
     internalIp?: pulumi.Input<string>;
     /**
-     * 云服务器实例私网IP的端口或端口段。
+     * Port or port range of the private IP address of the cloud server instance.
      */
     internalPort?: pulumi.Input<string>;
     /**
-     * DNAT规则所属NAT网关的ID。
+     * ID of the NAT gateway to which the DNAT rule belongs.
      */
     natGatewayId?: pulumi.Input<string>;
     /**
-     * DNAT规则的端口类型。specified：指定端口。any：任意端口。即IP映射。
+     * Port type of the DNAT rule. specified: Specified port. any: Any port, i.e., IP mapping.
      */
     portType?: pulumi.Input<string>;
     /**
-     * 协议类型。tcp：转发TCP协议的报文。udp：转发UDP协议的报文。
+     * Protocol type. tcp: Forwards TCP protocol packets. udp: Forwards UDP protocol packets.
      */
     protocol?: pulumi.Input<string>;
     /**
-     * DNAT规则的状态。Creating：创建中。Deleting：删除中。Available：可用。
+     * Status of the DNAT rule. Creating: Creating. Deleting: Deleting. Available: Available.
      */
     status?: pulumi.Input<string>;
 }
@@ -210,35 +210,35 @@ export interface DnatentryState {
  */
 export interface DnatentryArgs {
     /**
-     * DNAT规则的名称。
+     * Name of the DNAT rule.
      */
     dnatEntryName?: pulumi.Input<string>;
     /**
-     * NAT网关用于网络地址转换的IP地址。当NAT网关为公网NAT网关时，传入其绑定的公网IP地址。当NAT网关为私网NAT网关时，传入其中转IP地址。
+     * IP address used by the NAT gateway for network address translation. If the NAT gateway is a public NAT gateway, enter its bound public IP address. If the NAT gateway is a private NAT gateway, enter its transit IP address.
      */
     externalIp: pulumi.Input<string>;
     /**
-     * 接收来自公网外部请求的端口或端口段。
+     * Port or port range that receives requests from the public network.
      */
     externalPort: pulumi.Input<string>;
     /**
-     * 云服务器实例的私网IP。
+     * Private IP address of the cloud server instance.
      */
     internalIp: pulumi.Input<string>;
     /**
-     * 云服务器实例私网IP的端口或端口段。
+     * Port or port range of the private IP address of the cloud server instance.
      */
     internalPort: pulumi.Input<string>;
     /**
-     * DNAT规则所属NAT网关的ID。
+     * ID of the NAT gateway to which the DNAT rule belongs.
      */
     natGatewayId: pulumi.Input<string>;
     /**
-     * DNAT规则的端口类型。specified：指定端口。any：任意端口。即IP映射。
+     * Port type of the DNAT rule. specified: Specified port. any: Any port, i.e., IP mapping.
      */
     portType?: pulumi.Input<string>;
     /**
-     * 协议类型。tcp：转发TCP协议的报文。udp：转发UDP协议的报文。
+     * Protocol type. tcp: Forwards TCP protocol packets. udp: Forwards UDP protocol packets.
      */
     protocol: pulumi.Input<string>;
 }

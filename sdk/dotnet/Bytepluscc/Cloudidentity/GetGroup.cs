@@ -65,23 +65,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     public sealed class GetGroupResult
     {
         /// <summary>
-        /// 创建时间。
+        /// Creation Time
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 描述。
+        /// Description
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 显示名。
+        /// Display Name
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// 用户组id。
+        /// User Group ID
         /// </summary>
         public readonly string GroupId;
         /// <summary>
-        /// 用户组名称。
+        /// User Group Name
         /// </summary>
         public readonly string GroupName;
         /// <summary>
@@ -89,19 +89,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 用户组类型。
+        /// User Group Type
         /// </summary>
         public readonly string JoinType;
         /// <summary>
-        /// 用户组成员列表
+        /// User Group Member List
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGroupMemberResult> Members;
         /// <summary>
-        /// 用户组来源。
+        /// User Group Source
         /// </summary>
         public readonly string Source;
         /// <summary>
-        /// 更新时间。
+        /// Update Time
         /// </summary>
         public readonly string UpdatedTime;
 

@@ -37,18 +37,18 @@ class ClusterArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterTagArgs']]]] = None):
         """
         The set of arguments for constructing a Cluster resource.
-        :param pulumi.Input[builtins.str] name: 集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
-        :param pulumi.Input['ClusterClusterConfigArgs'] cluster_config: 集群控制面及部分节点的网络配置。
-        :param pulumi.Input[builtins.bool] delete_protection_enabled: 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
-        :param pulumi.Input[builtins.str] description: 集群描述。长度限制为 300 个字符以内。
-        :param pulumi.Input['ClusterIrsaConfigArgs'] irsa_config: IRSA（IAM Role for Service Account）能力相关参数配置。
-        :param pulumi.Input[builtins.str] kubernetes_version_create: 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
-        :param pulumi.Input['ClusterLoggingConfigArgs'] logging_config: 集群的日志配置信息。
-        :param pulumi.Input['ClusterMonitoringConfigArgs'] monitoring_config: 监控配置信息。
-        :param pulumi.Input['ClusterPodsConfigArgs'] pods_config: Pod 的网络配置。
-        :param pulumi.Input[builtins.str] project_name: 集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
-        :param pulumi.Input['ClusterServicesConfigArgs'] services_config: 服务的网络配置。
-        :param pulumi.Input[builtins.str] source_region: 集群源地域。
+        :param pulumi.Input[builtins.str] name: Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
+        :param pulumi.Input['ClusterClusterConfigArgs'] cluster_config: Network configuration for the cluster control plane and some nodes.
+        :param pulumi.Input[builtins.bool] delete_protection_enabled: Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
+        :param pulumi.Input[builtins.str] description: Cluster description. Maximum length is 300 characters.
+        :param pulumi.Input['ClusterIrsaConfigArgs'] irsa_config: IRSA (IAM Role for Service Account) capability parameter configuration
+        :param pulumi.Input[builtins.str] kubernetes_version_create: Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
+        :param pulumi.Input['ClusterLoggingConfigArgs'] logging_config: Cluster log configuration information.
+        :param pulumi.Input['ClusterMonitoringConfigArgs'] monitoring_config: Monitoring configuration information.
+        :param pulumi.Input['ClusterPodsConfigArgs'] pods_config: Pod network configuration.
+        :param pulumi.Input[builtins.str] project_name: Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
+        :param pulumi.Input['ClusterServicesConfigArgs'] services_config: Network configuration for the service.
+        :param pulumi.Input[builtins.str] source_region: Cluster source region
         """
         pulumi.set(__self__, "name", name)
         if cluster_config is not None:
@@ -80,7 +80,7 @@ class ClusterArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[builtins.str]:
         """
-        集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+        Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
         """
         return pulumi.get(self, "name")
 
@@ -92,7 +92,7 @@ class ClusterArgs:
     @pulumi.getter(name="clusterConfig")
     def cluster_config(self) -> Optional[pulumi.Input['ClusterClusterConfigArgs']]:
         """
-        集群控制面及部分节点的网络配置。
+        Network configuration for the cluster control plane and some nodes.
         """
         return pulumi.get(self, "cluster_config")
 
@@ -104,7 +104,7 @@ class ClusterArgs:
     @pulumi.getter(name="deleteProtectionEnabled")
     def delete_protection_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
+        Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
         """
         return pulumi.get(self, "delete_protection_enabled")
 
@@ -116,7 +116,7 @@ class ClusterArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        集群描述。长度限制为 300 个字符以内。
+        Cluster description. Maximum length is 300 characters.
         """
         return pulumi.get(self, "description")
 
@@ -128,7 +128,7 @@ class ClusterArgs:
     @pulumi.getter(name="irsaConfig")
     def irsa_config(self) -> Optional[pulumi.Input['ClusterIrsaConfigArgs']]:
         """
-        IRSA（IAM Role for Service Account）能力相关参数配置。
+        IRSA (IAM Role for Service Account) capability parameter configuration
         """
         return pulumi.get(self, "irsa_config")
 
@@ -140,7 +140,7 @@ class ClusterArgs:
     @pulumi.getter(name="kubernetesVersionCreate")
     def kubernetes_version_create(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
+        Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
         """
         return pulumi.get(self, "kubernetes_version_create")
 
@@ -152,7 +152,7 @@ class ClusterArgs:
     @pulumi.getter(name="loggingConfig")
     def logging_config(self) -> Optional[pulumi.Input['ClusterLoggingConfigArgs']]:
         """
-        集群的日志配置信息。
+        Cluster log configuration information.
         """
         return pulumi.get(self, "logging_config")
 
@@ -164,7 +164,7 @@ class ClusterArgs:
     @pulumi.getter(name="monitoringConfig")
     def monitoring_config(self) -> Optional[pulumi.Input['ClusterMonitoringConfigArgs']]:
         """
-        监控配置信息。
+        Monitoring configuration information.
         """
         return pulumi.get(self, "monitoring_config")
 
@@ -176,7 +176,7 @@ class ClusterArgs:
     @pulumi.getter(name="podsConfig")
     def pods_config(self) -> Optional[pulumi.Input['ClusterPodsConfigArgs']]:
         """
-        Pod 的网络配置。
+        Pod network configuration.
         """
         return pulumi.get(self, "pods_config")
 
@@ -188,7 +188,7 @@ class ClusterArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
+        Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
         """
         return pulumi.get(self, "project_name")
 
@@ -200,7 +200,7 @@ class ClusterArgs:
     @pulumi.getter(name="servicesConfig")
     def services_config(self) -> Optional[pulumi.Input['ClusterServicesConfigArgs']]:
         """
-        服务的网络配置。
+        Network configuration for the service.
         """
         return pulumi.get(self, "services_config")
 
@@ -212,7 +212,7 @@ class ClusterArgs:
     @pulumi.getter(name="sourceRegion")
     def source_region(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        集群源地域。
+        Cluster source region
         """
         return pulumi.get(self, "source_region")
 
@@ -256,26 +256,26 @@ class _ClusterState:
                  updated_time: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Cluster resources.
-        :param pulumi.Input['ClusterClusterConfigArgs'] cluster_config: 集群控制面及部分节点的网络配置。
-        :param pulumi.Input[builtins.str] cluster_id: 集群 ID。
-        :param pulumi.Input[builtins.str] created_time: 集群创建时间。标准 RFC3339 格式的 UTC+0 时间。
-        :param pulumi.Input[builtins.bool] delete_protection_enabled: 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
-        :param pulumi.Input[builtins.str] description: 集群描述。长度限制为 300 个字符以内。
-        :param pulumi.Input['ClusterIrsaConfigArgs'] irsa_config: IRSA（IAM Role for Service Account）能力相关参数配置。
-        :param pulumi.Input[builtins.str] kubernetes_version: 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
-        :param pulumi.Input[builtins.str] kubernetes_version_create: 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
-        :param pulumi.Input['ClusterLoggingConfigArgs'] logging_config: 集群的日志配置信息。
-        :param pulumi.Input[builtins.str] message: 集群状态描述。
-        :param pulumi.Input['ClusterMonitoringConfigArgs'] monitoring_config: 监控配置信息。
-        :param pulumi.Input[builtins.str] name: 集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
-        :param pulumi.Input['ClusterNodeStatisticsArgs'] node_statistics: 集群中各主状态下对应的节点数量统计。
-        :param pulumi.Input['ClusterPodsConfigArgs'] pods_config: Pod 的网络配置。
-        :param pulumi.Input[builtins.str] project_name: 集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
-        :param pulumi.Input['ClusterServicesConfigArgs'] services_config: 服务的网络配置。
-        :param pulumi.Input[builtins.str] source_region: 集群源地域。
-        :param pulumi.Input['ClusterStatusArgs'] status: 集群状态。
-        :param pulumi.Input[builtins.str] type: 集群类型。
-        :param pulumi.Input[builtins.str] updated_time: 集群最近一次更新的时间。标准 RFC3339 格式的 UTC+0 时间。
+        :param pulumi.Input['ClusterClusterConfigArgs'] cluster_config: Network configuration for the cluster control plane and some nodes.
+        :param pulumi.Input[builtins.str] cluster_id: Cluster ID.
+        :param pulumi.Input[builtins.str] created_time: Cluster creation time. Standard RFC3339 format, UTC+0.
+        :param pulumi.Input[builtins.bool] delete_protection_enabled: Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
+        :param pulumi.Input[builtins.str] description: Cluster description. Maximum length is 300 characters.
+        :param pulumi.Input['ClusterIrsaConfigArgs'] irsa_config: IRSA (IAM Role for Service Account) capability parameter configuration
+        :param pulumi.Input[builtins.str] kubernetes_version: Cluster Kubernetes version in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version (for query use)
+        :param pulumi.Input[builtins.str] kubernetes_version_create: Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
+        :param pulumi.Input['ClusterLoggingConfigArgs'] logging_config: Cluster log configuration information.
+        :param pulumi.Input[builtins.str] message: Cluster status description.
+        :param pulumi.Input['ClusterMonitoringConfigArgs'] monitoring_config: Monitoring configuration information.
+        :param pulumi.Input[builtins.str] name: Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
+        :param pulumi.Input['ClusterNodeStatisticsArgs'] node_statistics: Statistics of node counts for each main status in the cluster.
+        :param pulumi.Input['ClusterPodsConfigArgs'] pods_config: Pod network configuration.
+        :param pulumi.Input[builtins.str] project_name: Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
+        :param pulumi.Input['ClusterServicesConfigArgs'] services_config: Network configuration for the service.
+        :param pulumi.Input[builtins.str] source_region: Cluster source region
+        :param pulumi.Input['ClusterStatusArgs'] status: Cluster status.
+        :param pulumi.Input[builtins.str] type: Cluster type.
+        :param pulumi.Input[builtins.str] updated_time: Last update time of the cluster. Standard RFC3339 format, UTC+0.
         """
         if cluster_config is not None:
             pulumi.set(__self__, "cluster_config", cluster_config)
@@ -324,7 +324,7 @@ class _ClusterState:
     @pulumi.getter(name="clusterConfig")
     def cluster_config(self) -> Optional[pulumi.Input['ClusterClusterConfigArgs']]:
         """
-        集群控制面及部分节点的网络配置。
+        Network configuration for the cluster control plane and some nodes.
         """
         return pulumi.get(self, "cluster_config")
 
@@ -336,7 +336,7 @@ class _ClusterState:
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        集群 ID。
+        Cluster ID.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -348,7 +348,7 @@ class _ClusterState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        集群创建时间。标准 RFC3339 格式的 UTC+0 时间。
+        Cluster creation time. Standard RFC3339 format, UTC+0.
         """
         return pulumi.get(self, "created_time")
 
@@ -360,7 +360,7 @@ class _ClusterState:
     @pulumi.getter(name="deleteProtectionEnabled")
     def delete_protection_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
+        Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
         """
         return pulumi.get(self, "delete_protection_enabled")
 
@@ -372,7 +372,7 @@ class _ClusterState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        集群描述。长度限制为 300 个字符以内。
+        Cluster description. Maximum length is 300 characters.
         """
         return pulumi.get(self, "description")
 
@@ -384,7 +384,7 @@ class _ClusterState:
     @pulumi.getter(name="irsaConfig")
     def irsa_config(self) -> Optional[pulumi.Input['ClusterIrsaConfigArgs']]:
         """
-        IRSA（IAM Role for Service Account）能力相关参数配置。
+        IRSA (IAM Role for Service Account) capability parameter configuration
         """
         return pulumi.get(self, "irsa_config")
 
@@ -396,7 +396,7 @@ class _ClusterState:
     @pulumi.getter(name="kubernetesVersion")
     def kubernetes_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
+        Cluster Kubernetes version in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version (for query use)
         """
         return pulumi.get(self, "kubernetes_version")
 
@@ -408,7 +408,7 @@ class _ClusterState:
     @pulumi.getter(name="kubernetesVersionCreate")
     def kubernetes_version_create(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
+        Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
         """
         return pulumi.get(self, "kubernetes_version_create")
 
@@ -420,7 +420,7 @@ class _ClusterState:
     @pulumi.getter(name="loggingConfig")
     def logging_config(self) -> Optional[pulumi.Input['ClusterLoggingConfigArgs']]:
         """
-        集群的日志配置信息。
+        Cluster log configuration information.
         """
         return pulumi.get(self, "logging_config")
 
@@ -432,7 +432,7 @@ class _ClusterState:
     @pulumi.getter
     def message(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        集群状态描述。
+        Cluster status description.
         """
         return pulumi.get(self, "message")
 
@@ -444,7 +444,7 @@ class _ClusterState:
     @pulumi.getter(name="monitoringConfig")
     def monitoring_config(self) -> Optional[pulumi.Input['ClusterMonitoringConfigArgs']]:
         """
-        监控配置信息。
+        Monitoring configuration information.
         """
         return pulumi.get(self, "monitoring_config")
 
@@ -456,7 +456,7 @@ class _ClusterState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+        Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
         """
         return pulumi.get(self, "name")
 
@@ -468,7 +468,7 @@ class _ClusterState:
     @pulumi.getter(name="nodeStatistics")
     def node_statistics(self) -> Optional[pulumi.Input['ClusterNodeStatisticsArgs']]:
         """
-        集群中各主状态下对应的节点数量统计。
+        Statistics of node counts for each main status in the cluster.
         """
         return pulumi.get(self, "node_statistics")
 
@@ -480,7 +480,7 @@ class _ClusterState:
     @pulumi.getter(name="podsConfig")
     def pods_config(self) -> Optional[pulumi.Input['ClusterPodsConfigArgs']]:
         """
-        Pod 的网络配置。
+        Pod network configuration.
         """
         return pulumi.get(self, "pods_config")
 
@@ -492,7 +492,7 @@ class _ClusterState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
+        Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
         """
         return pulumi.get(self, "project_name")
 
@@ -504,7 +504,7 @@ class _ClusterState:
     @pulumi.getter(name="servicesConfig")
     def services_config(self) -> Optional[pulumi.Input['ClusterServicesConfigArgs']]:
         """
-        服务的网络配置。
+        Network configuration for the service.
         """
         return pulumi.get(self, "services_config")
 
@@ -516,7 +516,7 @@ class _ClusterState:
     @pulumi.getter(name="sourceRegion")
     def source_region(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        集群源地域。
+        Cluster source region
         """
         return pulumi.get(self, "source_region")
 
@@ -528,7 +528,7 @@ class _ClusterState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input['ClusterStatusArgs']]:
         """
-        集群状态。
+        Cluster status.
         """
         return pulumi.get(self, "status")
 
@@ -549,7 +549,7 @@ class _ClusterState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        集群类型。
+        Cluster type.
         """
         return pulumi.get(self, "type")
 
@@ -561,7 +561,7 @@ class _ClusterState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        集群最近一次更新的时间。标准 RFC3339 格式的 UTC+0 时间。
+        Last update time of the cluster. Standard RFC3339 format, UTC+0.
         """
         return pulumi.get(self, "updated_time")
 
@@ -591,7 +591,7 @@ class Cluster(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterTagArgs', 'ClusterTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        容器服务通过深度融合新一代云原生技术，提供以容器为核心的高性能 Kubernetes 容器集群管理服务。在云端一键构建高可用 Kubernetes 集群，并实现容器化应用的可视化全生命周期管理，助力用户快速构建容器化应用。
+        Container Service deeply integrates next-generation cloud-native technologies to provide high-performance Kubernetes cluster management centered on containers. Build highly available Kubernetes clusters in the cloud with one click and achieve visualized full lifecycle management of containerized applications, helping users quickly build containerized applications.
 
         ## Import
 
@@ -601,18 +601,18 @@ class Cluster(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ClusterClusterConfigArgs', 'ClusterClusterConfigArgsDict']] cluster_config: 集群控制面及部分节点的网络配置。
-        :param pulumi.Input[builtins.bool] delete_protection_enabled: 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
-        :param pulumi.Input[builtins.str] description: 集群描述。长度限制为 300 个字符以内。
-        :param pulumi.Input[Union['ClusterIrsaConfigArgs', 'ClusterIrsaConfigArgsDict']] irsa_config: IRSA（IAM Role for Service Account）能力相关参数配置。
-        :param pulumi.Input[builtins.str] kubernetes_version_create: 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
-        :param pulumi.Input[Union['ClusterLoggingConfigArgs', 'ClusterLoggingConfigArgsDict']] logging_config: 集群的日志配置信息。
-        :param pulumi.Input[Union['ClusterMonitoringConfigArgs', 'ClusterMonitoringConfigArgsDict']] monitoring_config: 监控配置信息。
-        :param pulumi.Input[builtins.str] name: 集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
-        :param pulumi.Input[Union['ClusterPodsConfigArgs', 'ClusterPodsConfigArgsDict']] pods_config: Pod 的网络配置。
-        :param pulumi.Input[builtins.str] project_name: 集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
-        :param pulumi.Input[Union['ClusterServicesConfigArgs', 'ClusterServicesConfigArgsDict']] services_config: 服务的网络配置。
-        :param pulumi.Input[builtins.str] source_region: 集群源地域。
+        :param pulumi.Input[Union['ClusterClusterConfigArgs', 'ClusterClusterConfigArgsDict']] cluster_config: Network configuration for the cluster control plane and some nodes.
+        :param pulumi.Input[builtins.bool] delete_protection_enabled: Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
+        :param pulumi.Input[builtins.str] description: Cluster description. Maximum length is 300 characters.
+        :param pulumi.Input[Union['ClusterIrsaConfigArgs', 'ClusterIrsaConfigArgsDict']] irsa_config: IRSA (IAM Role for Service Account) capability parameter configuration
+        :param pulumi.Input[builtins.str] kubernetes_version_create: Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
+        :param pulumi.Input[Union['ClusterLoggingConfigArgs', 'ClusterLoggingConfigArgsDict']] logging_config: Cluster log configuration information.
+        :param pulumi.Input[Union['ClusterMonitoringConfigArgs', 'ClusterMonitoringConfigArgsDict']] monitoring_config: Monitoring configuration information.
+        :param pulumi.Input[builtins.str] name: Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
+        :param pulumi.Input[Union['ClusterPodsConfigArgs', 'ClusterPodsConfigArgsDict']] pods_config: Pod network configuration.
+        :param pulumi.Input[builtins.str] project_name: Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
+        :param pulumi.Input[Union['ClusterServicesConfigArgs', 'ClusterServicesConfigArgsDict']] services_config: Network configuration for the service.
+        :param pulumi.Input[builtins.str] source_region: Cluster source region
         """
         ...
     @overload
@@ -621,7 +621,7 @@ class Cluster(pulumi.CustomResource):
                  args: ClusterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        容器服务通过深度融合新一代云原生技术，提供以容器为核心的高性能 Kubernetes 容器集群管理服务。在云端一键构建高可用 Kubernetes 集群，并实现容器化应用的可视化全生命周期管理，助力用户快速构建容器化应用。
+        Container Service deeply integrates next-generation cloud-native technologies to provide high-performance Kubernetes cluster management centered on containers. Build highly available Kubernetes clusters in the cloud with one click and achieve visualized full lifecycle management of containerized applications, helping users quickly build containerized applications.
 
         ## Import
 
@@ -727,26 +727,26 @@ class Cluster(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ClusterClusterConfigArgs', 'ClusterClusterConfigArgsDict']] cluster_config: 集群控制面及部分节点的网络配置。
-        :param pulumi.Input[builtins.str] cluster_id: 集群 ID。
-        :param pulumi.Input[builtins.str] created_time: 集群创建时间。标准 RFC3339 格式的 UTC+0 时间。
-        :param pulumi.Input[builtins.bool] delete_protection_enabled: 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
-        :param pulumi.Input[builtins.str] description: 集群描述。长度限制为 300 个字符以内。
-        :param pulumi.Input[Union['ClusterIrsaConfigArgs', 'ClusterIrsaConfigArgsDict']] irsa_config: IRSA（IAM Role for Service Account）能力相关参数配置。
-        :param pulumi.Input[builtins.str] kubernetes_version: 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
-        :param pulumi.Input[builtins.str] kubernetes_version_create: 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
-        :param pulumi.Input[Union['ClusterLoggingConfigArgs', 'ClusterLoggingConfigArgsDict']] logging_config: 集群的日志配置信息。
-        :param pulumi.Input[builtins.str] message: 集群状态描述。
-        :param pulumi.Input[Union['ClusterMonitoringConfigArgs', 'ClusterMonitoringConfigArgsDict']] monitoring_config: 监控配置信息。
-        :param pulumi.Input[builtins.str] name: 集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
-        :param pulumi.Input[Union['ClusterNodeStatisticsArgs', 'ClusterNodeStatisticsArgsDict']] node_statistics: 集群中各主状态下对应的节点数量统计。
-        :param pulumi.Input[Union['ClusterPodsConfigArgs', 'ClusterPodsConfigArgsDict']] pods_config: Pod 的网络配置。
-        :param pulumi.Input[builtins.str] project_name: 集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
-        :param pulumi.Input[Union['ClusterServicesConfigArgs', 'ClusterServicesConfigArgsDict']] services_config: 服务的网络配置。
-        :param pulumi.Input[builtins.str] source_region: 集群源地域。
-        :param pulumi.Input[Union['ClusterStatusArgs', 'ClusterStatusArgsDict']] status: 集群状态。
-        :param pulumi.Input[builtins.str] type: 集群类型。
-        :param pulumi.Input[builtins.str] updated_time: 集群最近一次更新的时间。标准 RFC3339 格式的 UTC+0 时间。
+        :param pulumi.Input[Union['ClusterClusterConfigArgs', 'ClusterClusterConfigArgsDict']] cluster_config: Network configuration for the cluster control plane and some nodes.
+        :param pulumi.Input[builtins.str] cluster_id: Cluster ID.
+        :param pulumi.Input[builtins.str] created_time: Cluster creation time. Standard RFC3339 format, UTC+0.
+        :param pulumi.Input[builtins.bool] delete_protection_enabled: Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
+        :param pulumi.Input[builtins.str] description: Cluster description. Maximum length is 300 characters.
+        :param pulumi.Input[Union['ClusterIrsaConfigArgs', 'ClusterIrsaConfigArgsDict']] irsa_config: IRSA (IAM Role for Service Account) capability parameter configuration
+        :param pulumi.Input[builtins.str] kubernetes_version: Cluster Kubernetes version in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version (for query use)
+        :param pulumi.Input[builtins.str] kubernetes_version_create: Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
+        :param pulumi.Input[Union['ClusterLoggingConfigArgs', 'ClusterLoggingConfigArgsDict']] logging_config: Cluster log configuration information.
+        :param pulumi.Input[builtins.str] message: Cluster status description.
+        :param pulumi.Input[Union['ClusterMonitoringConfigArgs', 'ClusterMonitoringConfigArgsDict']] monitoring_config: Monitoring configuration information.
+        :param pulumi.Input[builtins.str] name: Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
+        :param pulumi.Input[Union['ClusterNodeStatisticsArgs', 'ClusterNodeStatisticsArgsDict']] node_statistics: Statistics of node counts for each main status in the cluster.
+        :param pulumi.Input[Union['ClusterPodsConfigArgs', 'ClusterPodsConfigArgsDict']] pods_config: Pod network configuration.
+        :param pulumi.Input[builtins.str] project_name: Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
+        :param pulumi.Input[Union['ClusterServicesConfigArgs', 'ClusterServicesConfigArgsDict']] services_config: Network configuration for the service.
+        :param pulumi.Input[builtins.str] source_region: Cluster source region
+        :param pulumi.Input[Union['ClusterStatusArgs', 'ClusterStatusArgsDict']] status: Cluster status.
+        :param pulumi.Input[builtins.str] type: Cluster type.
+        :param pulumi.Input[builtins.str] updated_time: Last update time of the cluster. Standard RFC3339 format, UTC+0.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -779,7 +779,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="clusterConfig")
     def cluster_config(self) -> pulumi.Output['outputs.ClusterClusterConfig']:
         """
-        集群控制面及部分节点的网络配置。
+        Network configuration for the cluster control plane and some nodes.
         """
         return pulumi.get(self, "cluster_config")
 
@@ -787,7 +787,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> pulumi.Output[builtins.str]:
         """
-        集群 ID。
+        Cluster ID.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -795,7 +795,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        集群创建时间。标准 RFC3339 格式的 UTC+0 时间。
+        Cluster creation time. Standard RFC3339 format, UTC+0.
         """
         return pulumi.get(self, "created_time")
 
@@ -803,7 +803,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="deleteProtectionEnabled")
     def delete_protection_enabled(self) -> pulumi.Output[builtins.bool]:
         """
-        集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
+        Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
         """
         return pulumi.get(self, "delete_protection_enabled")
 
@@ -811,7 +811,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        集群描述。长度限制为 300 个字符以内。
+        Cluster description. Maximum length is 300 characters.
         """
         return pulumi.get(self, "description")
 
@@ -819,7 +819,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="irsaConfig")
     def irsa_config(self) -> pulumi.Output['outputs.ClusterIrsaConfig']:
         """
-        IRSA（IAM Role for Service Account）能力相关参数配置。
+        IRSA (IAM Role for Service Account) capability parameter configuration
         """
         return pulumi.get(self, "irsa_config")
 
@@ -827,7 +827,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="kubernetesVersion")
     def kubernetes_version(self) -> pulumi.Output[builtins.str]:
         """
-        集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
+        Cluster Kubernetes version in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version (for query use)
         """
         return pulumi.get(self, "kubernetes_version")
 
@@ -835,7 +835,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="kubernetesVersionCreate")
     def kubernetes_version_create(self) -> pulumi.Output[builtins.str]:
         """
-        集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
+        Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
         """
         return pulumi.get(self, "kubernetes_version_create")
 
@@ -843,7 +843,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="loggingConfig")
     def logging_config(self) -> pulumi.Output['outputs.ClusterLoggingConfig']:
         """
-        集群的日志配置信息。
+        Cluster log configuration information.
         """
         return pulumi.get(self, "logging_config")
 
@@ -851,7 +851,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter
     def message(self) -> pulumi.Output[builtins.str]:
         """
-        集群状态描述。
+        Cluster status description.
         """
         return pulumi.get(self, "message")
 
@@ -859,7 +859,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="monitoringConfig")
     def monitoring_config(self) -> pulumi.Output['outputs.ClusterMonitoringConfig']:
         """
-        监控配置信息。
+        Monitoring configuration information.
         """
         return pulumi.get(self, "monitoring_config")
 
@@ -867,7 +867,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[builtins.str]:
         """
-        集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+        Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
         """
         return pulumi.get(self, "name")
 
@@ -875,7 +875,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="nodeStatistics")
     def node_statistics(self) -> pulumi.Output['outputs.ClusterNodeStatistics']:
         """
-        集群中各主状态下对应的节点数量统计。
+        Statistics of node counts for each main status in the cluster.
         """
         return pulumi.get(self, "node_statistics")
 
@@ -883,7 +883,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="podsConfig")
     def pods_config(self) -> pulumi.Output['outputs.ClusterPodsConfig']:
         """
-        Pod 的网络配置。
+        Pod network configuration.
         """
         return pulumi.get(self, "pods_config")
 
@@ -891,7 +891,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
+        Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
         """
         return pulumi.get(self, "project_name")
 
@@ -899,7 +899,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="servicesConfig")
     def services_config(self) -> pulumi.Output['outputs.ClusterServicesConfig']:
         """
-        服务的网络配置。
+        Network configuration for the service.
         """
         return pulumi.get(self, "services_config")
 
@@ -907,7 +907,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="sourceRegion")
     def source_region(self) -> pulumi.Output[builtins.str]:
         """
-        集群源地域。
+        Cluster source region
         """
         return pulumi.get(self, "source_region")
 
@@ -915,7 +915,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output['outputs.ClusterStatus']:
         """
-        集群状态。
+        Cluster status.
         """
         return pulumi.get(self, "status")
 
@@ -928,7 +928,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[builtins.str]:
         """
-        集群类型。
+        Cluster type.
         """
         return pulumi.get(self, "type")
 
@@ -936,7 +936,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        集群最近一次更新的时间。标准 RFC3339 格式的 UTC+0 时间。
+        Last update time of the cluster. Standard RFC3339 format, UTC+0.
         """
         return pulumi.get(self, "updated_time")
 

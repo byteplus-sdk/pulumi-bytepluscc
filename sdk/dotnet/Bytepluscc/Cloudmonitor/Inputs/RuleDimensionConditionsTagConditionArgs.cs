@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Inputs
     public sealed class RuleDimensionConditionsTagConditionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 判断条件。and：全部满足。or：任意满足。
+        /// Condition. and: All conditions met. or: Any condition met.
         /// </summary>
         [Input("condition")]
         public Input<string>? Condition { get; set; }

@@ -17,14 +17,14 @@ public final class UpstreamUpstreamSpecEcsInstanceArgs extends com.pulumi.resour
     public static final UpstreamUpstreamSpecEcsInstanceArgs Empty = new UpstreamUpstreamSpecEcsInstanceArgs();
 
     /**
-     * 云服务器ID。
+     * Cloud server ID
      * 
      */
     @Import(name="ecsId")
     private @Nullable Output<String> ecsId;
 
     /**
-     * @return 云服务器ID。
+     * @return Cloud server ID
      * 
      */
     public Optional<Output<String>> ecsId() {
@@ -32,14 +32,14 @@ public final class UpstreamUpstreamSpecEcsInstanceArgs extends com.pulumi.resour
     }
 
     /**
-     * IP地址。
+     * IP address
      * 
      */
     @Import(name="ip")
     private @Nullable Output<String> ip;
 
     /**
-     * @return IP地址。
+     * @return IP address
      * 
      */
     public Optional<Output<String>> ip() {
@@ -47,14 +47,14 @@ public final class UpstreamUpstreamSpecEcsInstanceArgs extends com.pulumi.resour
     }
 
     /**
-     * 端口。
+     * Port
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return 端口。
+     * @return Port
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -88,7 +88,7 @@ public final class UpstreamUpstreamSpecEcsInstanceArgs extends com.pulumi.resour
         }
 
         /**
-         * @param ecsId 云服务器ID。
+         * @param ecsId Cloud server ID
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class UpstreamUpstreamSpecEcsInstanceArgs extends com.pulumi.resour
         }
 
         /**
-         * @param ecsId 云服务器ID。
+         * @param ecsId Cloud server ID
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class UpstreamUpstreamSpecEcsInstanceArgs extends com.pulumi.resour
         }
 
         /**
-         * @param ip IP地址。
+         * @param ip IP address
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class UpstreamUpstreamSpecEcsInstanceArgs extends com.pulumi.resour
         }
 
         /**
-         * @param ip IP地址。
+         * @param ip IP address
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class UpstreamUpstreamSpecEcsInstanceArgs extends com.pulumi.resour
         }
 
         /**
-         * @param port 端口。
+         * @param port Port
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class UpstreamUpstreamSpecEcsInstanceArgs extends com.pulumi.resour
         }
 
         /**
-         * @param port 端口。
+         * @param port Port
          * 
          * @return builder
          * 

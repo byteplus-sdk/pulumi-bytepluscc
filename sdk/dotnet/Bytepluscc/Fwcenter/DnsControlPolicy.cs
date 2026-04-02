@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Fwcenter
 {
     /// <summary>
-    /// 域名黑名单访问控制策略。
+    /// Domain denylist access control policy.
     /// 
     /// ## Import
     /// 
@@ -23,31 +23,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Fwcenter
     public partial class DnsControlPolicy : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 用户的唯一标识ID。
+        /// User's unique identifier.
         /// </summary>
         [Output("accountId")]
         public Output<string> AccountId { get; private set; } = null!;
 
         /// <summary>
-        /// 策略的描述信息。
+        /// Policy description information.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
+        /// Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
         /// </summary>
         [Output("destination")]
         public Output<string> Destination { get; private set; } = null!;
 
         /// <summary>
-        /// 域名地址簿名称列表。
+        /// Domain address book name list.
         /// </summary>
         [Output("destinationGroupLists")]
         public Output<ImmutableArray<string>> DestinationGroupLists { get; private set; } = null!;
 
         /// <summary>
-        /// 访问目的的类型。domain：域名；group：域名地址簿。
+        /// Type of access target. domain: domain; group: domain address book.
         /// </summary>
         [Output("destinationType")]
         public Output<string> DestinationType { get; private set; } = null!;
@@ -56,31 +56,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Fwcenter
         public Output<ImmutableArray<Outputs.DnsControlPolicyDomainListV1>> DomainListV1s { get; private set; } = null!;
 
         /// <summary>
-        /// 域名列表。
+        /// Domain list.
         /// </summary>
         [Output("domainLists")]
         public Output<ImmutableArray<string>> DomainLists { get; private set; } = null!;
 
         /// <summary>
-        /// 命中计数，表示该域名黑名单访问控制策略被触发的次数。
+        /// Hit count, indicating the number of times the domain denylist access control policy was triggered.
         /// </summary>
         [Output("hitCnt")]
         public Output<int> HitCnt { get; private set; } = null!;
 
         /// <summary>
-        /// 互联网边界防火墙实例ID。
+        /// Internet border firewall instance ID.
         /// </summary>
         [Output("internetFirewallId")]
         public Output<string> InternetFirewallId { get; private set; } = null!;
 
         /// <summary>
-        /// 最近命中时间戳，表示该域名黑名单访问控制策略最后一次被触发的时间。
+        /// Latest hit timestamp, indicating the last time the domain denylist access control policy was triggered.
         /// </summary>
         [Output("lastHitTime")]
         public Output<int> LastHitTime { get; private set; } = null!;
 
         /// <summary>
-        /// 访问控制策略的唯一标识ID。
+        /// Unique identifier of the access control policy.
         /// </summary>
         [Output("ruleId")]
         public Output<string> RuleId { get; private set; } = null!;
@@ -89,13 +89,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Fwcenter
         public Output<ImmutableArray<Outputs.DnsControlPolicySource>> Sources { get; private set; } = null!;
 
         /// <summary>
-        /// 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
+        /// Switch status of the domain denylist access control policy. false: Off; true: On.
         /// </summary>
         [Output("status")]
         public Output<bool> Status { get; private set; } = null!;
 
         /// <summary>
-        /// 该域名黑名单访问控制策略占用的策略数量。
+        /// Number of policies occupied by this domain denylist access control policy.
         /// </summary>
         [Output("useCount")]
         public Output<int> UseCount { get; private set; } = null!;
@@ -148,25 +148,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Fwcenter
     public sealed class DnsControlPolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 策略的描述信息。
+        /// Policy description information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
+        /// Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
         /// </summary>
         [Input("destination", required: true)]
         public Input<string> Destination { get; set; } = null!;
 
         /// <summary>
-        /// 访问目的的类型。domain：域名；group：域名地址簿。
+        /// Type of access target. domain: domain; group: domain address book.
         /// </summary>
         [Input("destinationType", required: true)]
         public Input<string> DestinationType { get; set; } = null!;
 
         /// <summary>
-        /// 互联网边界防火墙实例ID。
+        /// Internet border firewall instance ID.
         /// </summary>
         [Input("internetFirewallId")]
         public Input<string>? InternetFirewallId { get; set; }
@@ -180,7 +180,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Fwcenter
         }
 
         /// <summary>
-        /// 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
+        /// Switch status of the domain denylist access control policy. false: Off; true: On.
         /// </summary>
         [Input("status")]
         public Input<bool>? Status { get; set; }
@@ -194,19 +194,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Fwcenter
     public sealed class DnsControlPolicyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 用户的唯一标识ID。
+        /// User's unique identifier.
         /// </summary>
         [Input("accountId")]
         public Input<string>? AccountId { get; set; }
 
         /// <summary>
-        /// 策略的描述信息。
+        /// Policy description information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
+        /// Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
         /// </summary>
         [Input("destination")]
         public Input<string>? Destination { get; set; }
@@ -215,7 +215,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Fwcenter
         private InputList<string>? _destinationGroupLists;
 
         /// <summary>
-        /// 域名地址簿名称列表。
+        /// Domain address book name list.
         /// </summary>
         public InputList<string> DestinationGroupLists
         {
@@ -224,7 +224,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Fwcenter
         }
 
         /// <summary>
-        /// 访问目的的类型。domain：域名；group：域名地址簿。
+        /// Type of access target. domain: domain; group: domain address book.
         /// </summary>
         [Input("destinationType")]
         public Input<string>? DestinationType { get; set; }
@@ -241,7 +241,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Fwcenter
         private InputList<string>? _domainLists;
 
         /// <summary>
-        /// 域名列表。
+        /// Domain list.
         /// </summary>
         public InputList<string> DomainLists
         {
@@ -250,25 +250,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Fwcenter
         }
 
         /// <summary>
-        /// 命中计数，表示该域名黑名单访问控制策略被触发的次数。
+        /// Hit count, indicating the number of times the domain denylist access control policy was triggered.
         /// </summary>
         [Input("hitCnt")]
         public Input<int>? HitCnt { get; set; }
 
         /// <summary>
-        /// 互联网边界防火墙实例ID。
+        /// Internet border firewall instance ID.
         /// </summary>
         [Input("internetFirewallId")]
         public Input<string>? InternetFirewallId { get; set; }
 
         /// <summary>
-        /// 最近命中时间戳，表示该域名黑名单访问控制策略最后一次被触发的时间。
+        /// Latest hit timestamp, indicating the last time the domain denylist access control policy was triggered.
         /// </summary>
         [Input("lastHitTime")]
         public Input<int>? LastHitTime { get; set; }
 
         /// <summary>
-        /// 访问控制策略的唯一标识ID。
+        /// Unique identifier of the access control policy.
         /// </summary>
         [Input("ruleId")]
         public Input<string>? RuleId { get; set; }
@@ -282,13 +282,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Fwcenter
         }
 
         /// <summary>
-        /// 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
+        /// Switch status of the domain denylist access control policy. false: Off; true: On.
         /// </summary>
         [Input("status")]
         public Input<bool>? Status { get; set; }
 
         /// <summary>
-        /// 该域名黑名单访问控制策略占用的策略数量。
+        /// Number of policies occupied by this domain denylist access control policy.
         /// </summary>
         [Input("useCount")]
         public Input<int>? UseCount { get; set; }

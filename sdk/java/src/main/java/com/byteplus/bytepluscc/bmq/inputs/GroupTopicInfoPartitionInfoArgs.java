@@ -17,14 +17,14 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
     public static final GroupTopicInfoPartitionInfoArgs Empty = new GroupTopicInfoPartitionInfoArgs();
 
     /**
-     * 当前消费位点。
+     * Current consumption position.
      * 
      */
     @Import(name="currentOffset")
     private @Nullable Output<Integer> currentOffset;
 
     /**
-     * @return 当前消费位点。
+     * @return Current consumption position.
      * 
      */
     public Optional<Output<Integer>> currentOffset() {
@@ -32,14 +32,14 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
     }
 
     /**
-     * Consumer Group 的名称。
+     * Name of the Consumer Group.
      * 
      */
     @Import(name="groupName")
     private @Nullable Output<String> groupName;
 
     /**
-     * @return Consumer Group 的名称。
+     * @return Name of the Consumer Group.
      * 
      */
     public Optional<Output<String>> groupName() {
@@ -47,14 +47,14 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
     }
 
     /**
-     * 分区中未被消费的消息条数。
+     * Number of unconsumed messages in the partition.
      * 
      */
     @Import(name="lag")
     private @Nullable Output<Integer> lag;
 
     /**
-     * @return 分区中未被消费的消息条数。
+     * @return Number of unconsumed messages in the partition.
      * 
      */
     public Optional<Output<Integer>> lag() {
@@ -62,14 +62,14 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
     }
 
     /**
-     * 最新消费位点。
+     * Latest consumption position.
      * 
      */
     @Import(name="latestOffset")
     private @Nullable Output<Integer> latestOffset;
 
     /**
-     * @return 最新消费位点。
+     * @return Latest consumption position.
      * 
      */
     public Optional<Output<Integer>> latestOffset() {
@@ -77,14 +77,14 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
     }
 
     /**
-     * 分区序号。
+     * Partition number.
      * 
      */
     @Import(name="partitionId")
     private @Nullable Output<Integer> partitionId;
 
     /**
-     * @return 分区序号。
+     * @return Partition number.
      * 
      */
     public Optional<Output<Integer>> partitionId() {
@@ -92,14 +92,14 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
     }
 
     /**
-     * Consumer Group 订阅的 Topic 名称。
+     * Name of the Topic subscribed by the Consumer Group.
      * 
      */
     @Import(name="topicName")
     private @Nullable Output<String> topicName;
 
     /**
-     * @return Consumer Group 订阅的 Topic 名称。
+     * @return Name of the Topic subscribed by the Consumer Group.
      * 
      */
     public Optional<Output<String>> topicName() {
@@ -136,7 +136,7 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param currentOffset 当前消费位点。
+         * @param currentOffset Current consumption position.
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param currentOffset 当前消费位点。
+         * @param currentOffset Current consumption position.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param groupName Consumer Group 的名称。
+         * @param groupName Name of the Consumer Group.
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param groupName Consumer Group 的名称。
+         * @param groupName Name of the Consumer Group.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param lag 分区中未被消费的消息条数。
+         * @param lag Number of unconsumed messages in the partition.
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param lag 分区中未被消费的消息条数。
+         * @param lag Number of unconsumed messages in the partition.
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param latestOffset 最新消费位点。
+         * @param latestOffset Latest consumption position.
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param latestOffset 最新消费位点。
+         * @param latestOffset Latest consumption position.
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param partitionId 分区序号。
+         * @param partitionId Partition number.
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param partitionId 分区序号。
+         * @param partitionId Partition number.
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param topicName Consumer Group 订阅的 Topic 名称。
+         * @param topicName Name of the Topic subscribed by the Consumer Group.
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class GroupTopicInfoPartitionInfoArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param topicName Consumer Group 订阅的 Topic 名称。
+         * @param topicName Name of the Topic subscribed by the Consumer Group.
          * 
          * @return builder
          * 

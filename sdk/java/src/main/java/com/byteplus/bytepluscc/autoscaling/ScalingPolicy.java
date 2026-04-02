@@ -18,7 +18,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * 伸缩规则用于定义触发扩缩容行为的条件和方式，包括规则类型、触发时间、伸缩行为、冷却时间等。在同一个伸缩组中，您可以启用多条伸缩规则，满足任意类型时均会执行伸缩动作。但当同一时间满足多个类型时，将优先执行手动触发的伸缩行为。
+ * Scaling rules define the conditions and methods for triggering scaling actions, including rule type, trigger time, scaling action, cooldown time. You can enable multiple scaling rules within the same scaling group. Scaling actions are executed when any rule type is met. If multiple rule types are met at the same time, manual scaling actions take priority.
  * 
  * ## Example Usage
  * 
@@ -35,154 +35,154 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:autoscaling/scalingPolicy:ScalingPolicy")
 public class ScalingPolicy extends com.pulumi.resources.CustomResource {
     /**
-     * 伸缩规则的伸缩行为，适用于简单规则和步进规则，QuantityChangeInCapacity：增加或减少指定数量的实例。PercentChangeInCapacity：增加或减少指定比例的实例。TotalCapacity： 将当前伸缩组的实例数量调整到指定数量。
+     * Scaling actions for the scaling rule, applicable to simple and step rules. QuantityChangeInCapacity: increase or decrease a specified number of instances. PercentChangeInCapacity: increase or decrease a specified percentage of instances. TotalCapacity: adjust the number of instances in the current scaling group to the specified value.
      * 
      */
     @Export(name="adjustmentType", refs={String.class}, tree="[0]")
     private Output<String> adjustmentType;
 
     /**
-     * @return 伸缩规则的伸缩行为，适用于简单规则和步进规则，QuantityChangeInCapacity：增加或减少指定数量的实例。PercentChangeInCapacity：增加或减少指定比例的实例。TotalCapacity： 将当前伸缩组的实例数量调整到指定数量。
+     * @return Scaling actions for the scaling rule, applicable to simple and step rules. QuantityChangeInCapacity: increase or decrease a specified number of instances. PercentChangeInCapacity: increase or decrease a specified percentage of instances. TotalCapacity: adjust the number of instances in the current scaling group to the specified value.
      * 
      */
     public Output<String> adjustmentType() {
         return this.adjustmentType;
     }
     /**
-     * 伸缩行为的调整数值，适用于简单规则和步进规则，当AdjustmentType参数取值为QuantityChangeInCapacity时：-100   - 100，不允许为0，单位：个。当AdjustmentType参数取值为PercentChangeInCapacity时：-100   - 10000，不允许为0，单位：%。当AdjustmentType参数取值为TotalCapacity时：默认为0   - 100，单位：个。
+     * Adjustment value for scaling actions, applicable to simple and step rules. When AdjustmentType is set to QuantityChangeInCapacity: -100 to 100, cannot be 0, unit: instances. When AdjustmentType is set to PercentChangeInCapacity: -100 to 10000, cannot be 0, unit: %. When AdjustmentType is set to TotalCapacity: defaults to 0 to 100, unit: instances.
      * 
      */
     @Export(name="adjustmentValue", refs={Integer.class}, tree="[0]")
     private Output<Integer> adjustmentValue;
 
     /**
-     * @return 伸缩行为的调整数值，适用于简单规则和步进规则，当AdjustmentType参数取值为QuantityChangeInCapacity时：-100   - 100，不允许为0，单位：个。当AdjustmentType参数取值为PercentChangeInCapacity时：-100   - 10000，不允许为0，单位：%。当AdjustmentType参数取值为TotalCapacity时：默认为0   - 100，单位：个。
+     * @return Adjustment value for scaling actions, applicable to simple and step rules. When AdjustmentType is set to QuantityChangeInCapacity: -100 to 100, cannot be 0, unit: instances. When AdjustmentType is set to PercentChangeInCapacity: -100 to 10000, cannot be 0, unit: %. When AdjustmentType is set to TotalCapacity: defaults to 0 to 100, unit: instances.
      * 
      */
     public Output<Integer> adjustmentValue() {
         return this.adjustmentValue;
     }
     /**
-     * 报警任务的详细信息。
+     * Detailed information about the alarm task.
      * 
      */
     @Export(name="alarmPolicy", refs={ScalingPolicyAlarmPolicy.class}, tree="[0]")
     private Output<ScalingPolicyAlarmPolicy> alarmPolicy;
 
     /**
-     * @return 报警任务的详细信息。
+     * @return Detailed information about the alarm task.
      * 
      */
     public Output<ScalingPolicyAlarmPolicy> alarmPolicy() {
         return this.alarmPolicy;
     }
     /**
-     * 伸缩规则的冷却时间。 取值：0-86400，单位：秒，不填则默认使用伸缩组的冷却时间。
+     * Cooldown time for scaling rules. Value: 0–86400, unit: seconds. If not specified, the scaling group&#39;s cooldown time is used by default.
      * 
      */
     @Export(name="cooldown", refs={Integer.class}, tree="[0]")
     private Output<Integer> cooldown;
 
     /**
-     * @return 伸缩规则的冷却时间。 取值：0-86400，单位：秒，不填则默认使用伸缩组的冷却时间。
+     * @return Cooldown time for scaling rules. Value: 0–86400, unit: seconds. If not specified, the scaling group&#39;s cooldown time is used by default.
      * 
      */
     public Output<Integer> cooldown() {
         return this.cooldown;
     }
     /**
-     * 伸缩规则的状态。取值：true：启用。false：停用。需保证伸缩组的状态为Active。
+     * Status of the scaling rule. Options: true: enabled. false: disabled. The scaling group must be in Active status.
      * 
      */
     @Export(name="isEnabledPolicy", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEnabledPolicy;
 
     /**
-     * @return 伸缩规则的状态。取值：true：启用。false：停用。需保证伸缩组的状态为Active。
+     * @return Status of the scaling rule. Options: true: enabled. false: disabled. The scaling group must be in Active status.
      * 
      */
     public Output<Boolean> isEnabledPolicy() {
         return this.isEnabledPolicy;
     }
     /**
-     * 伸缩组ID。
+     * Scaling group ID.
      * 
      */
     @Export(name="scalingGroupId", refs={String.class}, tree="[0]")
     private Output<String> scalingGroupId;
 
     /**
-     * @return 伸缩组ID。
+     * @return Scaling group ID.
      * 
      */
     public Output<String> scalingGroupId() {
         return this.scalingGroupId;
     }
     /**
-     * 伸缩规则ID。
+     * Scaling rule ID.
      * 
      */
     @Export(name="scalingPolicyId", refs={String.class}, tree="[0]")
     private Output<String> scalingPolicyId;
 
     /**
-     * @return 伸缩规则ID。
+     * @return Scaling rule ID.
      * 
      */
     public Output<String> scalingPolicyId() {
         return this.scalingPolicyId;
     }
     /**
-     * 伸缩规则名称。
+     * Name of the scaling rule.
      * 
      */
     @Export(name="scalingPolicyName", refs={String.class}, tree="[0]")
     private Output<String> scalingPolicyName;
 
     /**
-     * @return 伸缩规则名称。
+     * @return Name of the scaling rule.
      * 
      */
     public Output<String> scalingPolicyName() {
         return this.scalingPolicyName;
     }
     /**
-     * 伸缩规则的类型，取值：Scheduled：定时任务。Recurrence：周期任务。Alarm：报警任务。
+     * Type of scaling rule. Options: Scheduled: scheduled task. Recurrence: recurring task. Alarm: alarm task.
      * 
      */
     @Export(name="scalingPolicyType", refs={String.class}, tree="[0]")
     private Output<String> scalingPolicyType;
 
     /**
-     * @return 伸缩规则的类型，取值：Scheduled：定时任务。Recurrence：周期任务。Alarm：报警任务。
+     * @return Type of scaling rule. Options: Scheduled: scheduled task. Recurrence: recurring task. Alarm: alarm task.
      * 
      */
     public Output<String> scalingPolicyType() {
         return this.scalingPolicyType;
     }
     /**
-     * 定时任务/周期任务的详细信息。
+     * Detailed information for scheduled/recurring tasks.
      * 
      */
     @Export(name="scheduledPolicy", refs={ScalingPolicyScheduledPolicy.class}, tree="[0]")
     private Output<ScalingPolicyScheduledPolicy> scheduledPolicy;
 
     /**
-     * @return 定时任务/周期任务的详细信息。
+     * @return Detailed information for scheduled/recurring tasks.
      * 
      */
     public Output<ScalingPolicyScheduledPolicy> scheduledPolicy() {
         return this.scheduledPolicy;
     }
     /**
-     * 伸缩规则的状态。取值：Active：已启用。InActive：已停用。需保证伸缩组的状态为Active。
+     * Status of the scaling rule. Options: Active: enabled. Inactive: disabled. The scaling group must be in Active status.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 伸缩规则的状态。取值：Active：已启用。InActive：已停用。需保证伸缩组的状态为Active。
+     * @return Status of the scaling rule. Options: Active: enabled. Inactive: disabled. The scaling group must be in Active status.
      * 
      */
     public Output<String> status() {

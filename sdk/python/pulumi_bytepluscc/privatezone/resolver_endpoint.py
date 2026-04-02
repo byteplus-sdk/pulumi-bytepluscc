@@ -32,12 +32,12 @@ class ResolverEndpointArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['ResolverEndpointTagArgs']]]] = None):
         """
         The set of arguments for constructing a ResolverEndpoint resource.
-        :param pulumi.Input[builtins.str] name: 终端节点的名称。支持 UTF-8 格式。
-        :param pulumi.Input[builtins.str] vpc_id: 终端节点所在的 VPC 的 ID。
-        :param pulumi.Input[builtins.str] vpc_region: 终端节点所在的 VPC 的地域。
-        :param pulumi.Input[builtins.str] direction: 终端节点的 DNS 请求转发方向。OUTBOUND：（默认）出站终端节点，把来自 VPC 内的 DNS 查询请求转发到外部的 DNS 服务器。INBOUND：入站终端节点，把来自外部的 DNS 查询请求转发到解析器。
-        :param pulumi.Input[builtins.str] endpoint_type: 终端节点类型。IPv4：IPv4 节点。DualStack：双栈节点。
-        :param pulumi.Input[builtins.str] project_name: 终端节点所属的项目名称。默认为 default。
+        :param pulumi.Input[builtins.str] name: Endpoint name. Supports UTF-8 format
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID where the endpoint is located
+        :param pulumi.Input[builtins.str] vpc_region: Region of the VPC where the endpoint is located
+        :param pulumi.Input[builtins.str] direction: DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
+        :param pulumi.Input[builtins.str] endpoint_type: Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
+        :param pulumi.Input[builtins.str] project_name: Project name to which the endpoint belongs. Default is default
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "vpc_id", vpc_id)
@@ -57,7 +57,7 @@ class ResolverEndpointArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[builtins.str]:
         """
-        终端节点的名称。支持 UTF-8 格式。
+        Endpoint name. Supports UTF-8 format
         """
         return pulumi.get(self, "name")
 
@@ -69,7 +69,7 @@ class ResolverEndpointArgs:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Input[builtins.str]:
         """
-        终端节点所在的 VPC 的 ID。
+        VPC ID where the endpoint is located
         """
         return pulumi.get(self, "vpc_id")
 
@@ -81,7 +81,7 @@ class ResolverEndpointArgs:
     @pulumi.getter(name="vpcRegion")
     def vpc_region(self) -> pulumi.Input[builtins.str]:
         """
-        终端节点所在的 VPC 的地域。
+        Region of the VPC where the endpoint is located
         """
         return pulumi.get(self, "vpc_region")
 
@@ -93,7 +93,7 @@ class ResolverEndpointArgs:
     @pulumi.getter
     def direction(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        终端节点的 DNS 请求转发方向。OUTBOUND：（默认）出站终端节点，把来自 VPC 内的 DNS 查询请求转发到外部的 DNS 服务器。INBOUND：入站终端节点，把来自外部的 DNS 查询请求转发到解析器。
+        DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
         """
         return pulumi.get(self, "direction")
 
@@ -105,7 +105,7 @@ class ResolverEndpointArgs:
     @pulumi.getter(name="endpointType")
     def endpoint_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        终端节点类型。IPv4：IPv4 节点。DualStack：双栈节点。
+        Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
         """
         return pulumi.get(self, "endpoint_type")
 
@@ -126,7 +126,7 @@ class ResolverEndpointArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        终端节点所属的项目名称。默认为 default。
+        Project name to which the endpoint belongs. Default is default
         """
         return pulumi.get(self, "project_name")
 
@@ -162,17 +162,17 @@ class _ResolverEndpointState:
                  vpc_region: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering ResolverEndpoint resources.
-        :param pulumi.Input[builtins.str] created_time: 创建时间
-        :param pulumi.Input[builtins.str] direction: 终端节点的 DNS 请求转发方向。OUTBOUND：（默认）出站终端节点，把来自 VPC 内的 DNS 查询请求转发到外部的 DNS 服务器。INBOUND：入站终端节点，把来自外部的 DNS 查询请求转发到解析器。
-        :param pulumi.Input[builtins.str] endpoint_id: 终端节点的 ID。
-        :param pulumi.Input[builtins.str] endpoint_type: 终端节点类型。IPv4：IPv4 节点。DualStack：双栈节点。
-        :param pulumi.Input[builtins.str] name: 终端节点的名称。支持 UTF-8 格式。
-        :param pulumi.Input[builtins.str] project_name: 终端节点所属的项目名称。默认为 default。
-        :param pulumi.Input[builtins.str] security_group_id: 适用于终端节点 IP 地址的安全组 ID。终端节点默认会使用预设安全组：对于出站终端节点：入方向拒绝流量通行；出方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口。对于入站终端节点：入方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口；出方向拒绝流量通行。
-        :param pulumi.Input[builtins.str] status: 终端节点的状态。Creating：创建中。Running：运行中。Updating：更新中。Error：运行异常。
-        :param pulumi.Input[builtins.str] updated_time: 更新时间
-        :param pulumi.Input[builtins.str] vpc_id: 终端节点所在的 VPC 的 ID。
-        :param pulumi.Input[builtins.str] vpc_region: 终端节点所在的 VPC 的地域。
+        :param pulumi.Input[builtins.str] created_time: Creation time
+        :param pulumi.Input[builtins.str] direction: DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
+        :param pulumi.Input[builtins.str] endpoint_id: Endpoint ID
+        :param pulumi.Input[builtins.str] endpoint_type: Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
+        :param pulumi.Input[builtins.str] name: Endpoint name. Supports UTF-8 format
+        :param pulumi.Input[builtins.str] project_name: Project name to which the endpoint belongs. Default is default
+        :param pulumi.Input[builtins.str] security_group_id: Security group ID for the endpoint IP address. The endpoint uses a default security group: For outbound endpoints, inbound traffic is denied; outbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0. For inbound endpoints, inbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0; outbound traffic is denied
+        :param pulumi.Input[builtins.str] status: Endpoint status. Creating: creating. Running: running. Updating: updating. Error: abnormal operation
+        :param pulumi.Input[builtins.str] updated_time: Update time
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID where the endpoint is located
+        :param pulumi.Input[builtins.str] vpc_region: Region of the VPC where the endpoint is located
         """
         if created_time is not None:
             pulumi.set(__self__, "created_time", created_time)
@@ -205,7 +205,7 @@ class _ResolverEndpointState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建时间
+        Creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -217,7 +217,7 @@ class _ResolverEndpointState:
     @pulumi.getter
     def direction(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        终端节点的 DNS 请求转发方向。OUTBOUND：（默认）出站终端节点，把来自 VPC 内的 DNS 查询请求转发到外部的 DNS 服务器。INBOUND：入站终端节点，把来自外部的 DNS 查询请求转发到解析器。
+        DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
         """
         return pulumi.get(self, "direction")
 
@@ -229,7 +229,7 @@ class _ResolverEndpointState:
     @pulumi.getter(name="endpointId")
     def endpoint_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        终端节点的 ID。
+        Endpoint ID
         """
         return pulumi.get(self, "endpoint_id")
 
@@ -241,7 +241,7 @@ class _ResolverEndpointState:
     @pulumi.getter(name="endpointType")
     def endpoint_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        终端节点类型。IPv4：IPv4 节点。DualStack：双栈节点。
+        Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
         """
         return pulumi.get(self, "endpoint_type")
 
@@ -262,7 +262,7 @@ class _ResolverEndpointState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        终端节点的名称。支持 UTF-8 格式。
+        Endpoint name. Supports UTF-8 format
         """
         return pulumi.get(self, "name")
 
@@ -274,7 +274,7 @@ class _ResolverEndpointState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        终端节点所属的项目名称。默认为 default。
+        Project name to which the endpoint belongs. Default is default
         """
         return pulumi.get(self, "project_name")
 
@@ -286,7 +286,7 @@ class _ResolverEndpointState:
     @pulumi.getter(name="securityGroupId")
     def security_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        适用于终端节点 IP 地址的安全组 ID。终端节点默认会使用预设安全组：对于出站终端节点：入方向拒绝流量通行；出方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口。对于入站终端节点：入方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口；出方向拒绝流量通行。
+        Security group ID for the endpoint IP address. The endpoint uses a default security group: For outbound endpoints, inbound traffic is denied; outbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0. For inbound endpoints, inbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0; outbound traffic is denied
         """
         return pulumi.get(self, "security_group_id")
 
@@ -298,7 +298,7 @@ class _ResolverEndpointState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        终端节点的状态。Creating：创建中。Running：运行中。Updating：更新中。Error：运行异常。
+        Endpoint status. Creating: creating. Running: running. Updating: updating. Error: abnormal operation
         """
         return pulumi.get(self, "status")
 
@@ -319,7 +319,7 @@ class _ResolverEndpointState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        更新时间
+        Update time
         """
         return pulumi.get(self, "updated_time")
 
@@ -331,7 +331,7 @@ class _ResolverEndpointState:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        终端节点所在的 VPC 的 ID。
+        VPC ID where the endpoint is located
         """
         return pulumi.get(self, "vpc_id")
 
@@ -343,7 +343,7 @@ class _ResolverEndpointState:
     @pulumi.getter(name="vpcRegion")
     def vpc_region(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        终端节点所在的 VPC 的地域。
+        Region of the VPC where the endpoint is located
         """
         return pulumi.get(self, "vpc_region")
 
@@ -368,7 +368,7 @@ class ResolverEndpoint(pulumi.CustomResource):
                  vpc_region: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        在把外部的 DNS 查询请求转发到解析器的场景中，您需要创建终端节点。收到解析器转发的 DNS 查询请求后，终端节点出站终端节点会把 DNS 查询请求转发到外部的 DNS 服务器。收到来自外部的 DNS 查询请求后，入站终端节点会把 DNS 查询请求转发到解析器。
+        In scenarios where external DNS query requests are forwarded to the resolver, you need to create an endpoint. After receiving DNS query requests forwarded by the resolver, outbound endpoints forward DNS queries to external DNS servers. After receiving DNS query requests from external sources, inbound endpoints forward DNS queries to the resolver
 
         ## Import
 
@@ -378,12 +378,12 @@ class ResolverEndpoint(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] direction: 终端节点的 DNS 请求转发方向。OUTBOUND：（默认）出站终端节点，把来自 VPC 内的 DNS 查询请求转发到外部的 DNS 服务器。INBOUND：入站终端节点，把来自外部的 DNS 查询请求转发到解析器。
-        :param pulumi.Input[builtins.str] endpoint_type: 终端节点类型。IPv4：IPv4 节点。DualStack：双栈节点。
-        :param pulumi.Input[builtins.str] name: 终端节点的名称。支持 UTF-8 格式。
-        :param pulumi.Input[builtins.str] project_name: 终端节点所属的项目名称。默认为 default。
-        :param pulumi.Input[builtins.str] vpc_id: 终端节点所在的 VPC 的 ID。
-        :param pulumi.Input[builtins.str] vpc_region: 终端节点所在的 VPC 的地域。
+        :param pulumi.Input[builtins.str] direction: DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
+        :param pulumi.Input[builtins.str] endpoint_type: Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
+        :param pulumi.Input[builtins.str] name: Endpoint name. Supports UTF-8 format
+        :param pulumi.Input[builtins.str] project_name: Project name to which the endpoint belongs. Default is default
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID where the endpoint is located
+        :param pulumi.Input[builtins.str] vpc_region: Region of the VPC where the endpoint is located
         """
         ...
     @overload
@@ -392,7 +392,7 @@ class ResolverEndpoint(pulumi.CustomResource):
                  args: ResolverEndpointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        在把外部的 DNS 查询请求转发到解析器的场景中，您需要创建终端节点。收到解析器转发的 DNS 查询请求后，终端节点出站终端节点会把 DNS 查询请求转发到外部的 DNS 服务器。收到来自外部的 DNS 查询请求后，入站终端节点会把 DNS 查询请求转发到解析器。
+        In scenarios where external DNS query requests are forwarded to the resolver, you need to create an endpoint. After receiving DNS query requests forwarded by the resolver, outbound endpoints forward DNS queries to external DNS servers. After receiving DNS query requests from external sources, inbound endpoints forward DNS queries to the resolver
 
         ## Import
 
@@ -481,17 +481,17 @@ class ResolverEndpoint(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] created_time: 创建时间
-        :param pulumi.Input[builtins.str] direction: 终端节点的 DNS 请求转发方向。OUTBOUND：（默认）出站终端节点，把来自 VPC 内的 DNS 查询请求转发到外部的 DNS 服务器。INBOUND：入站终端节点，把来自外部的 DNS 查询请求转发到解析器。
-        :param pulumi.Input[builtins.str] endpoint_id: 终端节点的 ID。
-        :param pulumi.Input[builtins.str] endpoint_type: 终端节点类型。IPv4：IPv4 节点。DualStack：双栈节点。
-        :param pulumi.Input[builtins.str] name: 终端节点的名称。支持 UTF-8 格式。
-        :param pulumi.Input[builtins.str] project_name: 终端节点所属的项目名称。默认为 default。
-        :param pulumi.Input[builtins.str] security_group_id: 适用于终端节点 IP 地址的安全组 ID。终端节点默认会使用预设安全组：对于出站终端节点：入方向拒绝流量通行；出方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口。对于入站终端节点：入方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口；出方向拒绝流量通行。
-        :param pulumi.Input[builtins.str] status: 终端节点的状态。Creating：创建中。Running：运行中。Updating：更新中。Error：运行异常。
-        :param pulumi.Input[builtins.str] updated_time: 更新时间
-        :param pulumi.Input[builtins.str] vpc_id: 终端节点所在的 VPC 的 ID。
-        :param pulumi.Input[builtins.str] vpc_region: 终端节点所在的 VPC 的地域。
+        :param pulumi.Input[builtins.str] created_time: Creation time
+        :param pulumi.Input[builtins.str] direction: DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
+        :param pulumi.Input[builtins.str] endpoint_id: Endpoint ID
+        :param pulumi.Input[builtins.str] endpoint_type: Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
+        :param pulumi.Input[builtins.str] name: Endpoint name. Supports UTF-8 format
+        :param pulumi.Input[builtins.str] project_name: Project name to which the endpoint belongs. Default is default
+        :param pulumi.Input[builtins.str] security_group_id: Security group ID for the endpoint IP address. The endpoint uses a default security group: For outbound endpoints, inbound traffic is denied; outbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0. For inbound endpoints, inbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0; outbound traffic is denied
+        :param pulumi.Input[builtins.str] status: Endpoint status. Creating: creating. Running: running. Updating: updating. Error: abnormal operation
+        :param pulumi.Input[builtins.str] updated_time: Update time
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID where the endpoint is located
+        :param pulumi.Input[builtins.str] vpc_region: Region of the VPC where the endpoint is located
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -516,7 +516,7 @@ class ResolverEndpoint(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        创建时间
+        Creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -524,7 +524,7 @@ class ResolverEndpoint(pulumi.CustomResource):
     @pulumi.getter
     def direction(self) -> pulumi.Output[builtins.str]:
         """
-        终端节点的 DNS 请求转发方向。OUTBOUND：（默认）出站终端节点，把来自 VPC 内的 DNS 查询请求转发到外部的 DNS 服务器。INBOUND：入站终端节点，把来自外部的 DNS 查询请求转发到解析器。
+        DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
         """
         return pulumi.get(self, "direction")
 
@@ -532,7 +532,7 @@ class ResolverEndpoint(pulumi.CustomResource):
     @pulumi.getter(name="endpointId")
     def endpoint_id(self) -> pulumi.Output[builtins.str]:
         """
-        终端节点的 ID。
+        Endpoint ID
         """
         return pulumi.get(self, "endpoint_id")
 
@@ -540,7 +540,7 @@ class ResolverEndpoint(pulumi.CustomResource):
     @pulumi.getter(name="endpointType")
     def endpoint_type(self) -> pulumi.Output[builtins.str]:
         """
-        终端节点类型。IPv4：IPv4 节点。DualStack：双栈节点。
+        Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
         """
         return pulumi.get(self, "endpoint_type")
 
@@ -553,7 +553,7 @@ class ResolverEndpoint(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[builtins.str]:
         """
-        终端节点的名称。支持 UTF-8 格式。
+        Endpoint name. Supports UTF-8 format
         """
         return pulumi.get(self, "name")
 
@@ -561,7 +561,7 @@ class ResolverEndpoint(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        终端节点所属的项目名称。默认为 default。
+        Project name to which the endpoint belongs. Default is default
         """
         return pulumi.get(self, "project_name")
 
@@ -569,7 +569,7 @@ class ResolverEndpoint(pulumi.CustomResource):
     @pulumi.getter(name="securityGroupId")
     def security_group_id(self) -> pulumi.Output[builtins.str]:
         """
-        适用于终端节点 IP 地址的安全组 ID。终端节点默认会使用预设安全组：对于出站终端节点：入方向拒绝流量通行；出方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口。对于入站终端节点：入方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口；出方向拒绝流量通行。
+        Security group ID for the endpoint IP address. The endpoint uses a default security group: For outbound endpoints, inbound traffic is denied; outbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0. For inbound endpoints, inbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0; outbound traffic is denied
         """
         return pulumi.get(self, "security_group_id")
 
@@ -577,7 +577,7 @@ class ResolverEndpoint(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        终端节点的状态。Creating：创建中。Running：运行中。Updating：更新中。Error：运行异常。
+        Endpoint status. Creating: creating. Running: running. Updating: updating. Error: abnormal operation
         """
         return pulumi.get(self, "status")
 
@@ -590,7 +590,7 @@ class ResolverEndpoint(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        更新时间
+        Update time
         """
         return pulumi.get(self, "updated_time")
 
@@ -598,7 +598,7 @@ class ResolverEndpoint(pulumi.CustomResource):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Output[builtins.str]:
         """
-        终端节点所在的 VPC 的 ID。
+        VPC ID where the endpoint is located
         """
         return pulumi.get(self, "vpc_id")
 
@@ -606,7 +606,7 @@ class ResolverEndpoint(pulumi.CustomResource):
     @pulumi.getter(name="vpcRegion")
     def vpc_region(self) -> pulumi.Output[builtins.str]:
         """
-        终端节点所在的 VPC 的地域。
+        Region of the VPC where the endpoint is located
         """
         return pulumi.get(self, "vpc_region")
 

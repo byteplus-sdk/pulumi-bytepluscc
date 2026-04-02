@@ -15,31 +15,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class GetLoadBalancerZoneMappingLoadBalancerAddressEipResult
     {
         /// <summary>
-        /// EIP的绑定模式，例如Default或Normal。
+        /// EIP binding mode, such as Default or Normal.
         /// </summary>
         public readonly string AssociationMode;
         /// <summary>
-        /// EIP的带宽峰值，单位为Mbps。
+        /// Peak bandwidth of EIP, in Mbps.
         /// </summary>
         public readonly int Bandwidth;
         /// <summary>
-        /// 弹性公网IP（EIP）的地址。
+        /// Address of the Elastic IP (EIP).
         /// </summary>
         public readonly string EipAddress;
         /// <summary>
-        /// EIP的计费方式，2为按带宽计费，3为按流量计费。
+        /// EIP billing method: 2 for bandwidth-based, 3 for traffic-based.
         /// </summary>
         public readonly int EipBillingType;
         /// <summary>
-        /// EIP的类型，例如静态BGP。
+        /// EIP type, such as static BGP.
         /// </summary>
         public readonly string EipType;
         /// <summary>
-        /// 公网IP的线路类型，BGP表示多线。
+        /// Line type of the public IP, BGP indicates multi-line.
         /// </summary>
         public readonly string Isp;
         /// <summary>
-        /// EIP的接入点位置信息列表。
+        /// List of EIP access point location information.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationResult> PopLocations;
 

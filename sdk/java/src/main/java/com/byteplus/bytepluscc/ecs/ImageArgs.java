@@ -3,10 +3,12 @@
 
 package com.byteplus.bytepluscc.ecs;
 
+import com.byteplus.bytepluscc.ecs.inputs.ImageImportImageArgs;
 import com.byteplus.bytepluscc.ecs.inputs.ImageTagArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -19,14 +21,59 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
     public static final ImageArgs Empty = new ImageArgs();
 
     /**
-     * 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
+     * Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
+     * 
+     */
+    @Import(name="architecture")
+    private @Nullable Output<String> architecture;
+
+    /**
+     * @return Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
+     * 
+     */
+    public Optional<Output<String>> architecture() {
+        return Optional.ofNullable(this.architecture);
+    }
+
+    /**
+     * Image boot mode. You can select BIOS or UEFI
+     * 
+     */
+    @Import(name="bootMode")
+    private @Nullable Output<String> bootMode;
+
+    /**
+     * @return Image boot mode. You can select BIOS or UEFI
+     * 
+     */
+    public Optional<Output<String>> bootMode() {
+        return Optional.ofNullable(this.bootMode);
+    }
+
+    /**
+     * Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+     * 
+     */
+    @Import(name="createWholeImage")
+    private @Nullable Output<Boolean> createWholeImage;
+
+    /**
+     * @return Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+     * 
+     */
+    public Optional<Output<Boolean>> createWholeImage() {
+        return Optional.ofNullable(this.createWholeImage);
+    }
+
+    /**
+     * Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, equals signs &#34;=&#34;, English commas &#34;,&#34;, English periods &#34;.&#34;, Chinese commas &#34;，&#34;, Chinese periods &#34;。&#34;, and spaces. Length: 0–255 characters. If left blank, defaults to empty.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
+     * @return Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, equals signs &#34;=&#34;, English commas &#34;,&#34;, English periods &#34;.&#34;, Chinese commas &#34;，&#34;, Chinese periods &#34;。&#34;, and spaces. Length: 0–255 characters. If left blank, defaults to empty.
      * 
      */
     public Optional<Output<String>> description() {
@@ -34,14 +81,14 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
+     * Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34;. Length: 1–128 characters
      * 
      */
     @Import(name="imageName", required=true)
     private Output<String> imageName;
 
     /**
-     * @return 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
+     * @return Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34;. Length: 1–128 characters
      * 
      */
     public Output<String> imageName() {
@@ -49,14 +96,29 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
+     * Imported image information
+     * 
+     */
+    @Import(name="importImage")
+    private @Nullable Output<ImageImportImageArgs> importImage;
+
+    /**
+     * @return Imported image information
+     * 
+     */
+    public Optional<Output<ImageImportImageArgs>> importImage() {
+        return Optional.ofNullable(this.importImage);
+    }
+
+    /**
+     * Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
+     * @return Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -64,14 +126,89 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
+     * Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
+     * 
+     */
+    @Import(name="licenseType")
+    private @Nullable Output<String> licenseType;
+
+    /**
+     * @return Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
+     * 
+     */
+    public Optional<Output<String>> licenseType() {
+        return Optional.ofNullable(this.licenseType);
+    }
+
+    /**
+     * Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+     * 
+     */
+    @Import(name="needDetection")
+    private @Nullable Output<Boolean> needDetection;
+
+    /**
+     * @return Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+     * 
+     */
+    public Optional<Output<Boolean>> needDetection() {
+        return Optional.ofNullable(this.needDetection);
+    }
+
+    /**
+     * Operating system type
+     * 
+     */
+    @Import(name="osType")
+    private @Nullable Output<String> osType;
+
+    /**
+     * @return Operating system type
+     * 
+     */
+    public Optional<Output<String>> osType() {
+        return Optional.ofNullable(this.osType);
+    }
+
+    /**
+     * Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
+     * 
+     */
+    @Import(name="platform")
+    private @Nullable Output<String> platform;
+
+    /**
+     * @return Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
+     * 
+     */
+    public Optional<Output<String>> platform() {
+        return Optional.ofNullable(this.platform);
+    }
+
+    /**
+     * Image release version.
+     * 
+     */
+    @Import(name="platformVersion")
+    private @Nullable Output<String> platformVersion;
+
+    /**
+     * @return Image release version.
+     * 
+     */
+    public Optional<Output<String>> platformVersion() {
+        return Optional.ofNullable(this.platformVersion);
+    }
+
+    /**
+     * Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
+     * @return Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -79,14 +216,14 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 镜像共享的账户
+     * Accounts with which the image is shared
      * 
      */
     @Import(name="sharePermissions")
     private @Nullable Output<List<String>> sharePermissions;
 
     /**
-     * @return 镜像共享的账户
+     * @return Accounts with which the image is shared
      * 
      */
     public Optional<Output<List<String>>> sharePermissions() {
@@ -94,14 +231,14 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
+     * Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
      * 
      */
     @Import(name="snapshotGroupId")
     private @Nullable Output<String> snapshotGroupId;
 
     /**
-     * @return 快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
+     * @return Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
      * 
      */
     public Optional<Output<String>> snapshotGroupId() {
@@ -109,14 +246,14 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
+     * System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
      * 
      */
     @Import(name="snapshotId")
     private @Nullable Output<String> snapshotId;
 
     /**
-     * @return 系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
+     * @return System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
      * 
      */
     public Optional<Output<String>> snapshotId() {
@@ -133,9 +270,18 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
     private ImageArgs() {}
 
     private ImageArgs(ImageArgs $) {
+        this.architecture = $.architecture;
+        this.bootMode = $.bootMode;
+        this.createWholeImage = $.createWholeImage;
         this.description = $.description;
         this.imageName = $.imageName;
+        this.importImage = $.importImage;
         this.instanceId = $.instanceId;
+        this.licenseType = $.licenseType;
+        this.needDetection = $.needDetection;
+        this.osType = $.osType;
+        this.platform = $.platform;
+        this.platformVersion = $.platformVersion;
         this.projectName = $.projectName;
         this.sharePermissions = $.sharePermissions;
         this.snapshotGroupId = $.snapshotGroupId;
@@ -162,7 +308,70 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
+         * @param architecture Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder architecture(@Nullable Output<String> architecture) {
+            $.architecture = architecture;
+            return this;
+        }
+
+        /**
+         * @param architecture Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder architecture(String architecture) {
+            return architecture(Output.of(architecture));
+        }
+
+        /**
+         * @param bootMode Image boot mode. You can select BIOS or UEFI
+         * 
+         * @return builder
+         * 
+         */
+        public Builder bootMode(@Nullable Output<String> bootMode) {
+            $.bootMode = bootMode;
+            return this;
+        }
+
+        /**
+         * @param bootMode Image boot mode. You can select BIOS or UEFI
+         * 
+         * @return builder
+         * 
+         */
+        public Builder bootMode(String bootMode) {
+            return bootMode(Output.of(bootMode));
+        }
+
+        /**
+         * @param createWholeImage Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder createWholeImage(@Nullable Output<Boolean> createWholeImage) {
+            $.createWholeImage = createWholeImage;
+            return this;
+        }
+
+        /**
+         * @param createWholeImage Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder createWholeImage(Boolean createWholeImage) {
+            return createWholeImage(Output.of(createWholeImage));
+        }
+
+        /**
+         * @param description Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, equals signs &#34;=&#34;, English commas &#34;,&#34;, English periods &#34;.&#34;, Chinese commas &#34;，&#34;, Chinese periods &#34;。&#34;, and spaces. Length: 0–255 characters. If left blank, defaults to empty.
          * 
          * @return builder
          * 
@@ -173,7 +382,7 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
+         * @param description Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, equals signs &#34;=&#34;, English commas &#34;,&#34;, English periods &#34;.&#34;, Chinese commas &#34;，&#34;, Chinese periods &#34;。&#34;, and spaces. Length: 0–255 characters. If left blank, defaults to empty.
          * 
          * @return builder
          * 
@@ -183,7 +392,7 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param imageName 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
+         * @param imageName Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34;. Length: 1–128 characters
          * 
          * @return builder
          * 
@@ -194,7 +403,7 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param imageName 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
+         * @param imageName Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34;. Length: 1–128 characters
          * 
          * @return builder
          * 
@@ -204,7 +413,28 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
+         * @param importImage Imported image information
+         * 
+         * @return builder
+         * 
+         */
+        public Builder importImage(@Nullable Output<ImageImportImageArgs> importImage) {
+            $.importImage = importImage;
+            return this;
+        }
+
+        /**
+         * @param importImage Imported image information
+         * 
+         * @return builder
+         * 
+         */
+        public Builder importImage(ImageImportImageArgs importImage) {
+            return importImage(Output.of(importImage));
+        }
+
+        /**
+         * @param instanceId Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
          * 
          * @return builder
          * 
@@ -215,7 +445,7 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
+         * @param instanceId Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
          * 
          * @return builder
          * 
@@ -225,7 +455,112 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
+         * @param licenseType Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder licenseType(@Nullable Output<String> licenseType) {
+            $.licenseType = licenseType;
+            return this;
+        }
+
+        /**
+         * @param licenseType Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder licenseType(String licenseType) {
+            return licenseType(Output.of(licenseType));
+        }
+
+        /**
+         * @param needDetection Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder needDetection(@Nullable Output<Boolean> needDetection) {
+            $.needDetection = needDetection;
+            return this;
+        }
+
+        /**
+         * @param needDetection Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder needDetection(Boolean needDetection) {
+            return needDetection(Output.of(needDetection));
+        }
+
+        /**
+         * @param osType Operating system type
+         * 
+         * @return builder
+         * 
+         */
+        public Builder osType(@Nullable Output<String> osType) {
+            $.osType = osType;
+            return this;
+        }
+
+        /**
+         * @param osType Operating system type
+         * 
+         * @return builder
+         * 
+         */
+        public Builder osType(String osType) {
+            return osType(Output.of(osType));
+        }
+
+        /**
+         * @param platform Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder platform(@Nullable Output<String> platform) {
+            $.platform = platform;
+            return this;
+        }
+
+        /**
+         * @param platform Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder platform(String platform) {
+            return platform(Output.of(platform));
+        }
+
+        /**
+         * @param platformVersion Image release version.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder platformVersion(@Nullable Output<String> platformVersion) {
+            $.platformVersion = platformVersion;
+            return this;
+        }
+
+        /**
+         * @param platformVersion Image release version.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder platformVersion(String platformVersion) {
+            return platformVersion(Output.of(platformVersion));
+        }
+
+        /**
+         * @param projectName Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
          * 
          * @return builder
          * 
@@ -236,7 +571,7 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
+         * @param projectName Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
          * 
          * @return builder
          * 
@@ -246,7 +581,7 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sharePermissions 镜像共享的账户
+         * @param sharePermissions Accounts with which the image is shared
          * 
          * @return builder
          * 
@@ -257,7 +592,7 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sharePermissions 镜像共享的账户
+         * @param sharePermissions Accounts with which the image is shared
          * 
          * @return builder
          * 
@@ -267,7 +602,7 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sharePermissions 镜像共享的账户
+         * @param sharePermissions Accounts with which the image is shared
          * 
          * @return builder
          * 
@@ -277,7 +612,7 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snapshotGroupId 快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
+         * @param snapshotGroupId Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
          * 
          * @return builder
          * 
@@ -288,7 +623,7 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snapshotGroupId 快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
+         * @param snapshotGroupId Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
          * 
          * @return builder
          * 
@@ -298,7 +633,7 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snapshotId 系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
+         * @param snapshotId System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
          * 
          * @return builder
          * 
@@ -309,7 +644,7 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snapshotId 系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
+         * @param snapshotId System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
          * 
          * @return builder
          * 

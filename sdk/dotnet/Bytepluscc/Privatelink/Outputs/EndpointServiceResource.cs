@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink.Outputs
     public sealed class EndpointServiceResource
     {
         /// <summary>
-        /// 终端节点服务ID。
+        /// Endpoint service ID.
         /// </summary>
         public readonly string? InstanceId;
         /// <summary>
-        /// 待添加到终端节点服务中的服务资源ID。
+        /// Service resource ID to be added to the endpoint service.
         /// </summary>
         public readonly string? ResourceId;
         /// <summary>
-        /// 负载均衡提供服务的可用区。
+        /// Availability zone where the load balancer provides service.
         /// </summary>
         public readonly ImmutableArray<string> ZoneIds;
 

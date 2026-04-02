@@ -17,14 +17,14 @@ public final class GatewayBackendSpecArgs extends com.pulumi.resources.ResourceA
     public static final GatewayBackendSpecArgs Empty = new GatewayBackendSpecArgs();
 
     /**
-     * 是否支持VKE Flannel CNI。
+     * Whether VKE Flannel CNI is supported
      * 
      */
     @Import(name="isVkeWithFlannelCniSupported")
     private @Nullable Output<Boolean> isVkeWithFlannelCniSupported;
 
     /**
-     * @return 是否支持VKE Flannel CNI。
+     * @return Whether VKE Flannel CNI is supported
      * 
      */
     public Optional<Output<Boolean>> isVkeWithFlannelCniSupported() {
@@ -72,7 +72,7 @@ public final class GatewayBackendSpecArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param isVkeWithFlannelCniSupported 是否支持VKE Flannel CNI。
+         * @param isVkeWithFlannelCniSupported Whether VKE Flannel CNI is supported
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class GatewayBackendSpecArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param isVkeWithFlannelCniSupported 是否支持VKE Flannel CNI。
+         * @param isVkeWithFlannelCniSupported Whether VKE Flannel CNI is supported
          * 
          * @return builder
          * 

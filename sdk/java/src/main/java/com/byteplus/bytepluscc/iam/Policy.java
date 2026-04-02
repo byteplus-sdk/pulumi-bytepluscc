@@ -19,7 +19,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 策略是对权限的一种描述，IAM用户、用户组或角色均需通过关联策略来赋予权限。当系统预设策略不能满足要求时，您可以创建自定义策略，对权限进行细粒度的定义。
+ * A policy describes permissions. IAM users, user groups, or roles must be granted permissions by associating policies. If system preset policies do not meet your requirements, you can create custom policies for fine-grained permission definition.
  * 
  * ## Example Usage
  * 
@@ -36,98 +36,98 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:iam/policy:Policy")
 public class Policy extends com.pulumi.resources.CustomResource {
     /**
-     * 策略绑定的身份数量。
+     * Number of identities bound to the policy.
      * 
      */
     @Export(name="attachmentCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> attachmentCount;
 
     /**
-     * @return 策略绑定的身份数量。
+     * @return Number of identities bound to the policy.
      * 
      */
     public Output<Integer> attachmentCount() {
         return this.attachmentCount;
     }
     /**
-     * 系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
+     * Category of the system preset policy, usually the service code. This field is not returned for custom policies.
      * 
      */
     @Export(name="category", refs={String.class}, tree="[0]")
     private Output<String> category;
 
     /**
-     * @return 系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
+     * @return Category of the system preset policy, usually the service code. This field is not returned for custom policies.
      * 
      */
     public Output<String> category() {
         return this.category;
     }
     /**
-     * 策略创建时间。
+     * Policy creation time.
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 策略创建时间。
+     * @return Policy creation time.
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 策略描述，长度不超过128。
+     * Policy description, no more than 128 characters.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 策略描述，长度不超过128。
+     * @return Policy description, no more than 128 characters.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 是否是服务关联角色的策略，0代表否，1代表是。
+     * Indicates whether the policy is for a service-linked role. 0 means no; 1 means yes.
      * 
      */
     @Export(name="isServiceRolePolicy", refs={Integer.class}, tree="[0]")
     private Output<Integer> isServiceRolePolicy;
 
     /**
-     * @return 是否是服务关联角色的策略，0代表否，1代表是。
+     * @return Indicates whether the policy is for a service-linked role. 0 means no; 1 means yes.
      * 
      */
     public Output<Integer> isServiceRolePolicy() {
         return this.isServiceRolePolicy;
     }
     /**
-     * 策略语法内容，例如：{&#34;Statement&#34;:[{&#34;Effect&#34;:&#34;Allow&#34;,&#34;Action&#34;:[&#34;iam:&#34;,&#34;tag:&#34;],&#34;Resource&#34;:[&#34;*&#34;]}]}
+     * Policy syntax content, for example: {&#34;Statement&#34;:[{&#34;Effect&#34;:&#34;Allow&#34;,&#34;Action&#34;:[&#34;iam:&#34;,&#34;tag:&#34;],&#34;Resource&#34;:[&#34;*&#34;]}]}
      * 
      */
     @Export(name="policyDocument", refs={String.class}, tree="[0]")
     private Output<String> policyDocument;
 
     /**
-     * @return 策略语法内容，例如：{&#34;Statement&#34;:[{&#34;Effect&#34;:&#34;Allow&#34;,&#34;Action&#34;:[&#34;iam:&#34;,&#34;tag:&#34;],&#34;Resource&#34;:[&#34;*&#34;]}]}
+     * @return Policy syntax content, for example: {&#34;Statement&#34;:[{&#34;Effect&#34;:&#34;Allow&#34;,&#34;Action&#34;:[&#34;iam:&#34;,&#34;tag:&#34;],&#34;Resource&#34;:[&#34;*&#34;]}]}
      * 
      */
     public Output<String> policyDocument() {
         return this.policyDocument;
     }
     /**
-     * 策略名，长度1~64，支持英文、数字和+=,.{@literal @}-_符号。
+     * Policy name, 1–64 characters. Supports English letters, numbers, and +=,.{@literal @}-_ symbols.
      * 
      */
     @Export(name="policyName", refs={String.class}, tree="[0]")
     private Output<String> policyName;
 
     /**
-     * @return 策略名，长度1~64，支持英文、数字和+=,.{@literal @}-_符号。
+     * @return Policy name, 1–64 characters. Supports English letters, numbers, and +=,.{@literal @}-_ symbols.
      * 
      */
     public Output<String> policyName() {
@@ -140,28 +140,28 @@ public class Policy extends com.pulumi.resources.CustomResource {
         return this.policyRoles;
     }
     /**
-     * 策略的TRN。
+     * Policy TRN.
      * 
      */
     @Export(name="policyTrn", refs={String.class}, tree="[0]")
     private Output<String> policyTrn;
 
     /**
-     * @return 策略的TRN。
+     * @return Policy TRN.
      * 
      */
     public Output<String> policyTrn() {
         return this.policyTrn;
     }
     /**
-     * 策略类型。System代表系统预设策略，Custom代表自定义策略。
+     * Policy type. System indicates a system preset policy; Custom indicates a custom policy.
      * 
      */
     @Export(name="policyType", refs={String.class}, tree="[0]")
     private Output<String> policyType;
 
     /**
-     * @return 策略类型。System代表系统预设策略，Custom代表自定义策略。
+     * @return Policy type. System indicates a system preset policy; Custom indicates a custom policy.
      * 
      */
     public Output<String> policyType() {
@@ -180,14 +180,14 @@ public class Policy extends com.pulumi.resources.CustomResource {
         return this.policyUsers;
     }
     /**
-     * 策略更新时间。
+     * Policy update time.
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 策略更新时间。
+     * @return Policy update time.
      * 
      */
     public Output<String> updatedTime() {

@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NodePoolManagementRemedyConfig {
     /**
-     * @return 是否开启检查自愈。
+     * @return Enable self-healing check
      * 
      */
     private @Nullable Boolean enabled;
     /**
-     * @return 检查自愈规则ID。
+     * @return Self-healing rule ID
      * 
      */
     private @Nullable String remedyId;
 
     private NodePoolManagementRemedyConfig() {}
     /**
-     * @return 是否开启检查自愈。
+     * @return Enable self-healing check
      * 
      */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
     /**
-     * @return 检查自愈规则ID。
+     * @return Self-healing rule ID
      * 
      */
     public Optional<String> remedyId() {

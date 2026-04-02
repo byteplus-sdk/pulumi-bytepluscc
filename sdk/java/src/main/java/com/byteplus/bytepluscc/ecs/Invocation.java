@@ -20,7 +20,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 云助手是火山引擎打造的原生自动化运维工具。您可以创建立即执行、周期执行、定时执行的作业任务，创建完成后完，云助手客户端将按照执行模式自动开始执行。
+ * Cloud Assistant is a native automated operations tool developed by Volcano Engine. You can create jobs for immediate, periodic, or scheduled execution. After creation, the Cloud Assistant client automatically starts execution according to the execution mode.
  * 
  * ## Example Usage
  * 
@@ -85,196 +85,196 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:ecs/invocation:Invocation")
 public class Invocation extends com.pulumi.resources.CustomResource {
     /**
-     * 命令内容。
+     * Command content.
      * 
      */
     @Export(name="commandContent", refs={String.class}, tree="[0]")
     private Output<String> commandContent;
 
     /**
-     * @return 命令内容。
+     * @return Command content.
      * 
      */
     public Output<String> commandContent() {
         return this.commandContent;
     }
     /**
-     * 被调用命令的描述。
+     * Description of the invoked command.
      * 
      */
     @Export(name="commandDescription", refs={String.class}, tree="[0]")
     private Output<String> commandDescription;
 
     /**
-     * @return 被调用命令的描述。
+     * @return Description of the invoked command.
      * 
      */
     public Output<String> commandDescription() {
         return this.commandDescription;
     }
     /**
-     * 命令ID。
+     * Command ID.
      * 
      */
     @Export(name="commandId", refs={String.class}, tree="[0]")
     private Output<String> commandId;
 
     /**
-     * @return 命令ID。
+     * @return Command ID.
      * 
      */
     public Output<String> commandId() {
         return this.commandId;
     }
     /**
-     * 任务触发时的命令名称。
+     * Command name when the task is triggered.
      * 
      */
     @Export(name="commandName", refs={String.class}, tree="[0]")
     private Output<String> commandName;
 
     /**
-     * @return 任务触发时的命令名称。
+     * @return Command name when the task is triggered.
      * 
      */
     public Output<String> commandName() {
         return this.commandName;
     }
     /**
-     * 被调用命令的提供方。
+     * Provider of the invoked command.
      * 
      */
     @Export(name="commandProvider", refs={String.class}, tree="[0]")
     private Output<String> commandProvider;
 
     /**
-     * @return 被调用命令的提供方。
+     * @return Provider of the invoked command.
      * 
      */
     public Output<String> commandProvider() {
         return this.commandProvider;
     }
     /**
-     * 作业触发的命令类型。
+     * Command type triggered by the job.
      * 
      */
     @Export(name="commandType", refs={String.class}, tree="[0]")
     private Output<String> commandType;
 
     /**
-     * @return 作业触发的命令类型。
+     * @return Command type triggered by the job.
      * 
      */
     public Output<String> commandType() {
         return this.commandType;
     }
     /**
-     * 被调用命令是否使用自定义参数。true：已启用。false：未启用。
+     * Whether the invoked command uses custom parameters. true: enabled. false: not enabled.
      * 
      */
     @Export(name="enableParameter", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableParameter;
 
     /**
-     * @return 被调用命令是否使用自定义参数。true：已启用。false：未启用。
+     * @return Whether the invoked command uses custom parameters. true: enabled. false: not enabled.
      * 
      */
     public Output<Boolean> enableParameter() {
         return this.enableParameter;
     }
     /**
-     * 任务结束时间。
+     * Task end time.
      * 
      */
     @Export(name="endTime", refs={String.class}, tree="[0]")
     private Output<String> endTime;
 
     /**
-     * @return 任务结束时间。
+     * @return Task end time.
      * 
      */
     public Output<String> endTime() {
         return this.endTime;
     }
     /**
-     * 执行频率。RepeatMode=Rate 时本参数必填。格式：&lt;执行间隔数值&gt;&lt;执行间隔单位&gt;，执行间隔单位：支持分钟（5m-60m）、小时（1h-24h）和天（1d-7d）。执行间隔基于固定频率，与作业实际执行需要的时间无关。创建作业后基于LaunchTime执行一次，根据间隔设置确定下一次执行时间。
+     * Execution frequency. This parameter is required when RepeatMode=Rate. Format: \n\n\n\n. Interval units supported: minutes (5m–60m), hours (1h–24h), and days (1d–7d). The interval is based on a fixed frequency and is independent of the actual job execution time. After job creation, it executes once based on LaunchTime, and the next execution time is determined by the interval setting.
      * 
      */
     @Export(name="frequency", refs={String.class}, tree="[0]")
     private Output<String> frequency;
 
     /**
-     * @return 执行频率。RepeatMode=Rate 时本参数必填。格式：&lt;执行间隔数值&gt;&lt;执行间隔单位&gt;，执行间隔单位：支持分钟（5m-60m）、小时（1h-24h）和天（1d-7d）。执行间隔基于固定频率，与作业实际执行需要的时间无关。创建作业后基于LaunchTime执行一次，根据间隔设置确定下一次执行时间。
+     * @return Execution frequency. This parameter is required when RepeatMode=Rate. Format: \n\n\n\n. Interval units supported: minutes (5m–60m), hours (1h–24h), and days (1d–7d). The interval is based on a fixed frequency and is independent of the actual job execution time. After job creation, it executes once based on LaunchTime, and the next execution time is determined by the interval setting.
      * 
      */
     public Output<String> frequency() {
         return this.frequency;
     }
     /**
-     * 实例ID列表，最多支持200个ID。
+     * Instance ID list, supports up to 200 IDs.
      * 
      */
     @Export(name="instanceIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> instanceIds;
 
     /**
-     * @return 实例ID列表，最多支持200个ID。
+     * @return Instance ID list, supports up to 200 IDs.
      * 
      */
     public Output<List<String>> instanceIds() {
         return this.instanceIds;
     }
     /**
-     * 执行实例数量。
+     * Number of instances executed.
      * 
      */
     @Export(name="instanceNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> instanceNumber;
 
     /**
-     * @return 执行实例数量。
+     * @return Number of instances executed.
      * 
      */
     public Output<Integer> instanceNumber() {
         return this.instanceNumber;
     }
     /**
-     * 作业描述，默认为空字符串，不超过256个字符。
+     * Job description. Defaults to an empty string and must not exceed 256 characters.
      * 
      */
     @Export(name="invocationDescription", refs={String.class}, tree="[0]")
     private Output<String> invocationDescription;
 
     /**
-     * @return 作业描述，默认为空字符串，不超过256个字符。
+     * @return Job description. Defaults to an empty string and must not exceed 256 characters.
      * 
      */
     public Output<String> invocationDescription() {
         return this.invocationDescription;
     }
     /**
-     * 任务执行 ID。
+     * Task execution ID.
      * 
      */
     @Export(name="invocationId", refs={String.class}, tree="[0]")
     private Output<String> invocationId;
 
     /**
-     * @return 任务执行 ID。
+     * @return Task execution ID.
      * 
      */
     public Output<String> invocationId() {
         return this.invocationId;
     }
     /**
-     * 作业名称。不超过64个字符。暂不限制特殊字符。同地域下作业名称可重复。
+     * Job name. Maximum 64 characters. No restriction on special characters. Job names can be duplicated within the same region.
      * 
      */
     @Export(name="invocationName", refs={String.class}, tree="[0]")
     private Output<String> invocationName;
 
     /**
-     * @return 作业名称。不超过64个字符。暂不限制特殊字符。同地域下作业名称可重复。
+     * @return Job name. Maximum 64 characters. No restriction on special characters. Job names can be duplicated within the same region.
      * 
      */
     public Output<String> invocationName() {
@@ -287,28 +287,28 @@ public class Invocation extends com.pulumi.resources.CustomResource {
         return this.invocationResults;
     }
     /**
-     * 命令执行的总执行状态。
+     * Overall execution status of the command.
      * 
      */
     @Export(name="invocationStatus", refs={String.class}, tree="[0]")
     private Output<String> invocationStatus;
 
     /**
-     * @return 命令执行的总执行状态。
+     * @return Overall execution status of the command.
      * 
      */
     public Output<String> invocationStatus() {
         return this.invocationStatus;
     }
     /**
-     * 执行时间。
+     * Execution time.
      * 
      */
     @Export(name="launchTime", refs={String.class}, tree="[0]")
     private Output<String> launchTime;
 
     /**
-     * @return 执行时间。
+     * @return Execution time.
      * 
      */
     public Output<String> launchTime() {
@@ -321,70 +321,70 @@ public class Invocation extends com.pulumi.resources.CustomResource {
         return this.parameterDefinitions;
     }
     /**
-     * 命令中包含自定义参数时，需通过本参数传入自定义参数的键值对。自定义参数个数范围为0~60。Key不允许为空字符串，最多支持64个字符。Value允许为空字符串。自定义参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的自定义参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+     * When the command includes custom parameters, use this parameter to pass custom parameter key-value pairs. The number of custom parameters ranges from 0 to 60. Key cannot be an empty string and supports up to 64 characters. Value can be an empty string. The combined length of custom parameters and original command content after Base64 encoding must not exceed 16 KB. The set of custom parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
      * 
      */
     @Export(name="parameters", refs={String.class}, tree="[0]")
     private Output<String> parameters;
 
     /**
-     * @return 命令中包含自定义参数时，需通过本参数传入自定义参数的键值对。自定义参数个数范围为0~60。Key不允许为空字符串，最多支持64个字符。Value允许为空字符串。自定义参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的自定义参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+     * @return When the command includes custom parameters, use this parameter to pass custom parameter key-value pairs. The number of custom parameters ranges from 0 to 60. Key cannot be an empty string and supports up to 64 characters. Value can be an empty string. The combined length of custom parameters and original command content after Base64 encoding must not exceed 16 KB. The set of custom parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
      * 
      */
     public Output<String> parameters() {
         return this.parameters;
     }
     /**
-     * 资源所属项目，一个资源只能归属于一个项目。
+     * Project to which the resource belongs; each resource can belong to only one project.
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 资源所属项目，一个资源只能归属于一个项目。
+     * @return Project to which the resource belongs; each resource can belong to only one project.
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 周期结束时间，仅适用于周期任务（Rate）。
+     * Cycle end time, applicable only to periodic tasks (Rate).
      * 
      */
     @Export(name="recurrenceEndTime", refs={String.class}, tree="[0]")
     private Output<String> recurrenceEndTime;
 
     /**
-     * @return 周期结束时间，仅适用于周期任务（Rate）。
+     * @return Cycle end time, applicable only to periodic tasks (Rate).
      * 
      */
     public Output<String> recurrenceEndTime() {
         return this.recurrenceEndTime;
     }
     /**
-     * 设置命令执行的方式。Once：默认，表示立即执行命令。Rate：周期执行命令，需要通过Frequency参数传入Rate表达式指定执行周期。Fixed：定时执行命令，需要通过LaunchTime参数指定的执行时间。
+     * Set the command execution mode. Once: Default, executes the command immediately. Rate: Executes the command periodically; specify the execution cycle using the Frequency parameter and Rate expression. Fixed: Executes the command at a scheduled time; specify the execution time using the LaunchTime parameter.
      * 
      */
     @Export(name="repeatMode", refs={String.class}, tree="[0]")
     private Output<String> repeatMode;
 
     /**
-     * @return 设置命令执行的方式。Once：默认，表示立即执行命令。Rate：周期执行命令，需要通过Frequency参数传入Rate表达式指定执行周期。Fixed：定时执行命令，需要通过LaunchTime参数指定的执行时间。
+     * @return Set the command execution mode. Once: Default, executes the command immediately. Rate: Executes the command periodically; specify the execution cycle using the Frequency parameter and Rate expression. Fixed: Executes the command at a scheduled time; specify the execution time using the LaunchTime parameter.
      * 
      */
     public Output<String> repeatMode() {
         return this.repeatMode;
     }
     /**
-     * 任务开始时间。
+     * Task start time.
      * 
      */
     @Export(name="startTime", refs={String.class}, tree="[0]")
     private Output<String> startTime;
 
     /**
-     * @return 任务开始时间。
+     * @return Task start time.
      * 
      */
     public Output<String> startTime() {
@@ -397,56 +397,56 @@ public class Invocation extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。默认值：60。可选范围为：30~86400。
+     * Maximum timeout for command execution in ECS instances, in seconds. Default: 60. Optional range: 30–86400.
      * 
      */
     @Export(name="timeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> timeout;
 
     /**
-     * @return 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。默认值：60。可选范围为：30~86400。
+     * @return Maximum timeout for command execution in ECS instances, in seconds. Default: 60. Optional range: 30–86400.
      * 
      */
     public Output<Integer> timeout() {
         return this.timeout;
     }
     /**
-     * 在ECS实例中执行命令的用户名称。
+     * User name for executing the command in the ECS instance.
      * 
      */
     @Export(name="username", refs={String.class}, tree="[0]")
     private Output<String> username;
 
     /**
-     * @return 在ECS实例中执行命令的用户名称。
+     * @return User name for executing the command in the ECS instance.
      * 
      */
     public Output<String> username() {
         return this.username;
     }
     /**
-     * 自定义windows用户的密码。
+     * Password for custom Windows user.
      * 
      */
     @Export(name="windowsPassword", refs={String.class}, tree="[0]")
     private Output<String> windowsPassword;
 
     /**
-     * @return 自定义windows用户的密码。
+     * @return Password for custom Windows user.
      * 
      */
     public Output<String> windowsPassword() {
         return this.windowsPassword;
     }
     /**
-     * 创建的命令在ECS实例中运行的目录。
+     * Directory where the created command runs in the ECS instance.
      * 
      */
     @Export(name="workingDir", refs={String.class}, tree="[0]")
     private Output<String> workingDir;
 
     /**
-     * @return 创建的命令在ECS实例中运行的目录。
+     * @return Directory where the created command runs in the ECS instance.
      * 
      */
     public Output<String> workingDir() {

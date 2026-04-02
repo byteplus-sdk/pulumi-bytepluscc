@@ -22,14 +22,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     public static final NgwState Empty = new NgwState();
 
     /**
-     * NAT网关的计费方式。取值如下：1 ：包年包月。2（默认值）：按量计费-按规格计费。3：按量计费-按使用量计费。当NetworkType传入intranet时，本参数仅支持且必须传入3。
+     * NAT Gateway billing mode. Possible values: 1: Subscription. 2 (default): Pay-as-you-go by specification. 3: Pay-as-you-go by usage. When NetworkType is set to intranet, only 3 is supported and required for this parameter.
      * 
      */
     @Import(name="billingType")
     private @Nullable Output<Integer> billingType;
 
     /**
-     * @return NAT网关的计费方式。取值如下：1 ：包年包月。2（默认值）：按量计费-按规格计费。3：按量计费-按使用量计费。当NetworkType传入intranet时，本参数仅支持且必须传入3。
+     * @return NAT Gateway billing mode. Possible values: 1: Subscription. 2 (default): Pay-as-you-go by specification. 3: Pay-as-you-go by usage. When NetworkType is set to intranet, only 3 is supported and required for this parameter.
      * 
      */
     public Optional<Output<Integer>> billingType() {
@@ -37,14 +37,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NAT网关是否被锁定。空值：正常未被锁定。Normal：正常未被锁定。FinancialLocked：因欠费被锁定。
+     * Indicates whether the NAT gateway is locked. Empty: Normal, not locked. Normal: Normal, not locked. FinancialLocked: Locked due to overdue payment.
      * 
      */
     @Import(name="businessStatus")
     private @Nullable Output<String> businessStatus;
 
     /**
-     * @return NAT网关是否被锁定。空值：正常未被锁定。Normal：正常未被锁定。FinancialLocked：因欠费被锁定。
+     * @return Indicates whether the NAT gateway is locked. Empty: Normal, not locked. Normal: Normal, not locked. FinancialLocked: Locked due to overdue payment.
      * 
      */
     public Optional<Output<String>> businessStatus() {
@@ -52,14 +52,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建时间
+     * Creation time
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 创建时间
+     * @return Creation time
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -67,14 +67,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 删除时间
+     * Deletion time
      * 
      */
     @Import(name="deletedTime")
     private @Nullable Output<String> deletedTime;
 
     /**
-     * @return 删除时间
+     * @return Deletion time
      * 
      */
     public Optional<Output<String>> deletedTime() {
@@ -82,14 +82,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NAT网关的描述。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1 ～ 255个字符。不填默认空字符串。
+     * Description of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1 to 255 characters. If not specified, defaults to an empty string.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return NAT网关的描述。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1 ～ 255个字符。不填默认空字符串。
+     * @return Description of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1 to 255 characters. If not specified, defaults to an empty string.
      * 
      */
     public Optional<Output<String>> description() {
@@ -97,14 +97,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 标识该nat是直通还是非直通。   - true（默认）：EIP直通nat网关。   - false：非EIP直通nat网关。
+     * Indicates whether the NAT is direct or non-direct.   - true (default): EIP direct NAT gateway.   - false: Non-EIP direct NAT gateway.
      * 
      */
     @Import(name="directMode")
     private @Nullable Output<Boolean> directMode;
 
     /**
-     * @return 标识该nat是直通还是非直通。   - true（默认）：EIP直通nat网关。   - false：非EIP直通nat网关。
+     * @return Indicates whether the NAT is direct or non-direct.   - true (default): EIP direct NAT gateway.   - false: Non-EIP direct NAT gateway.
      * 
      */
     public Optional<Output<Boolean>> directMode() {
@@ -112,14 +112,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * DNAT规则ID列表。
+     * DNAT rule ID list.
      * 
      */
     @Import(name="dnatEntryIds")
     private @Nullable Output<List<String>> dnatEntryIds;
 
     /**
-     * @return DNAT规则ID列表。
+     * @return DNAT rule ID list.
      * 
      */
     public Optional<Output<List<String>>> dnatEntryIds() {
@@ -134,14 +134,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 包年包月NAT网关到期时间。仅包年包月计费类型的NAT网关会返回此参数。
+     * Expiration time for subscription NAT Gateway. Only NAT Gateways with subscription billing return this parameter.
      * 
      */
     @Import(name="expiredTime")
     private @Nullable Output<String> expiredTime;
 
     /**
-     * @return 包年包月NAT网关到期时间。仅包年包月计费类型的NAT网关会返回此参数。
+     * @return Expiration time for subscription NAT Gateway. Only NAT Gateways with subscription billing return this parameter.
      * 
      */
     public Optional<Output<String>> expiredTime() {
@@ -149,14 +149,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NAT被锁定的原因。financial：因欠费被锁定。security：因安全原因被锁定。
+     * Reason for NAT lock. financial: Locked due to overdue payment. security: Locked for security reasons.
      * 
      */
     @Import(name="lockReason")
     private @Nullable Output<String> lockReason;
 
     /**
-     * @return NAT被锁定的原因。financial：因欠费被锁定。security：因安全原因被锁定。
+     * @return Reason for NAT lock. financial: Locked due to overdue payment. security: Locked for security reasons.
      * 
      */
     public Optional<Output<String>> lockReason() {
@@ -164,14 +164,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NAT网关ID。
+     * NAT gateway ID.
      * 
      */
     @Import(name="natGatewayId")
     private @Nullable Output<String> natGatewayId;
 
     /**
-     * @return NAT网关ID。
+     * @return NAT gateway ID.
      * 
      */
     public Optional<Output<String>> natGatewayId() {
@@ -179,14 +179,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NAT网关的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。长度限制为1 ~ 128个字符。不填默认是NAT网关实例的ID。
+     * Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
      * 
      */
     @Import(name="natGatewayName")
     private @Nullable Output<String> natGatewayName;
 
     /**
-     * @return NAT网关的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。长度限制为1 ~ 128个字符。不填默认是NAT网关实例的ID。
+     * @return Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
      * 
      */
     public Optional<Output<String>> natGatewayName() {
@@ -201,14 +201,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NAT网关占用的网卡ID。
+     * Network interface ID occupied by the NAT gateway.
      * 
      */
     @Import(name="networkInterfaceId")
     private @Nullable Output<String> networkInterfaceId;
 
     /**
-     * @return NAT网关占用的网卡ID。
+     * @return Network interface ID occupied by the NAT gateway.
      * 
      */
     public Optional<Output<String>> networkInterfaceId() {
@@ -216,14 +216,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NAT网关类型。internet：公网NAT网关。intranet：私网NAT网关。
+     * NAT Gateway type. internet: Public NAT Gateway. intranet: Private NAT Gateway.
      * 
      */
     @Import(name="networkType")
     private @Nullable Output<String> networkType;
 
     /**
-     * @return NAT网关类型。internet：公网NAT网关。intranet：私网NAT网关。
+     * @return NAT Gateway type. internet: Public NAT Gateway. intranet: Private NAT Gateway.
      * 
      */
     public Optional<Output<String>> networkType() {
@@ -231,14 +231,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值。
+     * Resource freeze time. This parameter is returned only when the resource is frozen due to overdue payment.
      * 
      */
     @Import(name="overdueTime")
     private @Nullable Output<String> overdueTime;
 
     /**
-     * @return 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值。
+     * @return Resource freeze time. This parameter is returned only when the resource is frozen due to overdue payment.
      * 
      */
     public Optional<Output<String>> overdueTime() {
@@ -246,14 +246,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 购买包年包月NAT网关的时长，默认1。当PeriodUnit传入Month，Period取值范围：1 ~ 9、12、24、36。当PeriodUnit传入Year，Period取值范围：1 ~ 3。
+     * Duration for purchasing a subscription NAT Gateway, default is 1. If PeriodUnit is Month, Period can be 1 ~ 9, 12, 24, 36. If PeriodUnit is Year, Period can be 1 ~ 3.
      * 
      */
     @Import(name="period")
     private @Nullable Output<Integer> period;
 
     /**
-     * @return 购买包年包月NAT网关的时长，默认1。当PeriodUnit传入Month，Period取值范围：1 ~ 9、12、24、36。当PeriodUnit传入Year，Period取值范围：1 ~ 3。
+     * @return Duration for purchasing a subscription NAT Gateway, default is 1. If PeriodUnit is Month, Period can be 1 ~ 9, 12, 24, 36. If PeriodUnit is Year, Period can be 1 ~ 3.
      * 
      */
     public Optional<Output<Integer>> period() {
@@ -261,14 +261,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 购买包年包月NAT网关时长的单位，默认Month。Month ：月。Year ：年。
+     * Unit for subscription NAT Gateway duration, default is Month. Month: month. Year: year.
      * 
      */
     @Import(name="periodUnit")
     private @Nullable Output<String> periodUnit;
 
     /**
-     * @return 购买包年包月NAT网关时长的单位，默认Month。Month ：月。Year ：年。
+     * @return Unit for subscription NAT Gateway duration, default is Month. Month: month. Year: year.
      * 
      */
     public Optional<Output<String>> periodUnit() {
@@ -276,14 +276,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NAT网关所属项目的名称。不填默认加入default项目。
+     * Name of the project the NAT Gateway belongs to. If not specified, defaults to the &#39;default&#39; project.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return NAT网关所属项目的名称。不填默认加入default项目。
+     * @return Name of the project the NAT Gateway belongs to. If not specified, defaults to the &#39;default&#39; project.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -291,14 +291,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启智能调度。
+     * Whether to enable intelligent scheduling
      * 
      */
     @Import(name="smartScheduleEnabled")
     private @Nullable Output<Boolean> smartScheduleEnabled;
 
     /**
-     * @return 是否开启智能调度。
+     * @return Whether to enable intelligent scheduling
      * 
      */
     public Optional<Output<Boolean>> smartScheduleEnabled() {
@@ -306,14 +306,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 智能调度策略规则。ChinaMobile：中国移动。ChinaUnicom：中国联通。ChinaTelecom：中国电信。BGP：BGP多线。
+     * Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
      * 
      */
     @Import(name="smartScheduleRule")
     private @Nullable Output<String> smartScheduleRule;
 
     /**
-     * @return 智能调度策略规则。ChinaMobile：中国移动。ChinaUnicom：中国联通。ChinaTelecom：中国电信。BGP：BGP多线。
+     * @return Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
      * 
      */
     public Optional<Output<String>> smartScheduleRule() {
@@ -321,14 +321,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * SNAT规则ID列表。
+     * SNAT rule ID list
      * 
      */
     @Import(name="snatEntryIds")
     private @Nullable Output<List<String>> snatEntryIds;
 
     /**
-     * @return SNAT规则ID列表。
+     * @return SNAT rule ID list
      * 
      */
     public Optional<Output<List<String>>> snatEntryIds() {
@@ -336,14 +336,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NAT网关的规格。Small（默认）：小型。Medium：中型。Large：大型。Extra*Large*1：超大型-1。Extra*Large*2：超大型-2。
+     * NAT Gateway specification. Small (default): Small. Medium: Medium. Large: Large. Extra*Large*1: Extra Large 1. Extra*Large*2: Extra Large 2.
      * 
      */
     @Import(name="spec")
     private @Nullable Output<String> spec;
 
     /**
-     * @return NAT网关的规格。Small（默认）：小型。Medium：中型。Large：大型。Extra*Large*1：超大型-1。Extra*Large*2：超大型-2。
+     * @return NAT Gateway specification. Small (default): Small. Medium: Medium. Large: Large. Extra*Large*1: Extra Large 1. Extra*Large*2: Extra Large 2.
      * 
      */
     public Optional<Output<String>> spec() {
@@ -351,14 +351,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NAT网关的状态。Available：可用。Creating：创建中。Pending：操作中。Deleting：删除中。
+     * Status of the NAT Gateway. Available: Available. Creating: Creating. Pending: In progress. Deleting: Deleting.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return NAT网关的状态。Available：可用。Creating：创建中。Pending：操作中。Deleting：删除中。
+     * @return Status of the NAT Gateway. Available: Available. Creating: Creating. Pending: In progress. Deleting: Deleting.
      * 
      */
     public Optional<Output<String>> status() {
@@ -366,14 +366,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NAT网关所在子网的ID。传入的子网，必须是VpcId传入的私有网络的子网。子网内至少有一个可用的私网IP。系统自动生成的NAT网关网卡将占用该子网一个私网IP。子网所在的可用区需要已部署NAT网关资源。子网所在可用区将作为NAT网关的主可用区，并自动关联备可用区。当主可用区发生故障时，NAT网关自动切换到备可用区。
+     * ID of the subnet where the NAT gateway is located. The input subnet must be a subnet of the private network specified by VpcId. There must be at least one available private IP in the subnet. The system automatically generates a NAT gateway network interface that will occupy one private IP in this subnet. The availability zone of the subnet must have deployed NAT gateway resources. The availability zone of the subnet will be used as the primary availability zone for the NAT gateway and will automatically associate with a backup availability zone. When the primary availability zone fails, the NAT gateway automatically switches to the backup availability zone.
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return NAT网关所在子网的ID。传入的子网，必须是VpcId传入的私有网络的子网。子网内至少有一个可用的私网IP。系统自动生成的NAT网关网卡将占用该子网一个私网IP。子网所在的可用区需要已部署NAT网关资源。子网所在可用区将作为NAT网关的主可用区，并自动关联备可用区。当主可用区发生故障时，NAT网关自动切换到备可用区。
+     * @return ID of the subnet where the NAT gateway is located. The input subnet must be a subnet of the private network specified by VpcId. There must be at least one available private IP in the subnet. The system automatically generates a NAT gateway network interface that will occupy one private IP in this subnet. The availability zone of the subnet must have deployed NAT gateway resources. The availability zone of the subnet will be used as the primary availability zone for the NAT gateway and will automatically associate with a backup availability zone. When the primary availability zone fails, the NAT gateway automatically switches to the backup availability zone.
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -388,14 +388,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NAT网关的最后操作时间。
+     * Last operation time of the NAT Gateway
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return NAT网关的最后操作时间。
+     * @return Last operation time of the NAT Gateway
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -403,14 +403,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NAT网关所在私有网络的ID。
+     * ID of the private network where the NAT Gateway is located
      * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
-     * @return NAT网关所在私有网络的ID。
+     * @return ID of the private network where the NAT Gateway is located
      * 
      */
     public Optional<Output<String>> vpcId() {
@@ -418,14 +418,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NAT网关所属主可用区的ID。
+     * ID of the primary availability zone the NAT Gateway belongs to
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return NAT网关所属主可用区的ID。
+     * @return ID of the primary availability zone the NAT Gateway belongs to
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -485,7 +485,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param billingType NAT网关的计费方式。取值如下：1 ：包年包月。2（默认值）：按量计费-按规格计费。3：按量计费-按使用量计费。当NetworkType传入intranet时，本参数仅支持且必须传入3。
+         * @param billingType NAT Gateway billing mode. Possible values: 1: Subscription. 2 (default): Pay-as-you-go by specification. 3: Pay-as-you-go by usage. When NetworkType is set to intranet, only 3 is supported and required for this parameter.
          * 
          * @return builder
          * 
@@ -496,7 +496,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param billingType NAT网关的计费方式。取值如下：1 ：包年包月。2（默认值）：按量计费-按规格计费。3：按量计费-按使用量计费。当NetworkType传入intranet时，本参数仅支持且必须传入3。
+         * @param billingType NAT Gateway billing mode. Possible values: 1: Subscription. 2 (default): Pay-as-you-go by specification. 3: Pay-as-you-go by usage. When NetworkType is set to intranet, only 3 is supported and required for this parameter.
          * 
          * @return builder
          * 
@@ -506,7 +506,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param businessStatus NAT网关是否被锁定。空值：正常未被锁定。Normal：正常未被锁定。FinancialLocked：因欠费被锁定。
+         * @param businessStatus Indicates whether the NAT gateway is locked. Empty: Normal, not locked. Normal: Normal, not locked. FinancialLocked: Locked due to overdue payment.
          * 
          * @return builder
          * 
@@ -517,7 +517,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param businessStatus NAT网关是否被锁定。空值：正常未被锁定。Normal：正常未被锁定。FinancialLocked：因欠费被锁定。
+         * @param businessStatus Indicates whether the NAT gateway is locked. Empty: Normal, not locked. Normal: Normal, not locked. FinancialLocked: Locked due to overdue payment.
          * 
          * @return builder
          * 
@@ -527,7 +527,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 创建时间
+         * @param createdTime Creation time
          * 
          * @return builder
          * 
@@ -538,7 +538,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 创建时间
+         * @param createdTime Creation time
          * 
          * @return builder
          * 
@@ -548,7 +548,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deletedTime 删除时间
+         * @param deletedTime Deletion time
          * 
          * @return builder
          * 
@@ -559,7 +559,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deletedTime 删除时间
+         * @param deletedTime Deletion time
          * 
          * @return builder
          * 
@@ -569,7 +569,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description NAT网关的描述。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1 ～ 255个字符。不填默认空字符串。
+         * @param description Description of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1 to 255 characters. If not specified, defaults to an empty string.
          * 
          * @return builder
          * 
@@ -580,7 +580,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description NAT网关的描述。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1 ～ 255个字符。不填默认空字符串。
+         * @param description Description of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1 to 255 characters. If not specified, defaults to an empty string.
          * 
          * @return builder
          * 
@@ -590,7 +590,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param directMode 标识该nat是直通还是非直通。   - true（默认）：EIP直通nat网关。   - false：非EIP直通nat网关。
+         * @param directMode Indicates whether the NAT is direct or non-direct.   - true (default): EIP direct NAT gateway.   - false: Non-EIP direct NAT gateway.
          * 
          * @return builder
          * 
@@ -601,7 +601,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param directMode 标识该nat是直通还是非直通。   - true（默认）：EIP直通nat网关。   - false：非EIP直通nat网关。
+         * @param directMode Indicates whether the NAT is direct or non-direct.   - true (default): EIP direct NAT gateway.   - false: Non-EIP direct NAT gateway.
          * 
          * @return builder
          * 
@@ -611,7 +611,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dnatEntryIds DNAT规则ID列表。
+         * @param dnatEntryIds DNAT rule ID list.
          * 
          * @return builder
          * 
@@ -622,7 +622,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dnatEntryIds DNAT规则ID列表。
+         * @param dnatEntryIds DNAT rule ID list.
          * 
          * @return builder
          * 
@@ -632,7 +632,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dnatEntryIds DNAT规则ID列表。
+         * @param dnatEntryIds DNAT rule ID list.
          * 
          * @return builder
          * 
@@ -655,7 +655,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expiredTime 包年包月NAT网关到期时间。仅包年包月计费类型的NAT网关会返回此参数。
+         * @param expiredTime Expiration time for subscription NAT Gateway. Only NAT Gateways with subscription billing return this parameter.
          * 
          * @return builder
          * 
@@ -666,7 +666,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expiredTime 包年包月NAT网关到期时间。仅包年包月计费类型的NAT网关会返回此参数。
+         * @param expiredTime Expiration time for subscription NAT Gateway. Only NAT Gateways with subscription billing return this parameter.
          * 
          * @return builder
          * 
@@ -676,7 +676,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lockReason NAT被锁定的原因。financial：因欠费被锁定。security：因安全原因被锁定。
+         * @param lockReason Reason for NAT lock. financial: Locked due to overdue payment. security: Locked for security reasons.
          * 
          * @return builder
          * 
@@ -687,7 +687,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lockReason NAT被锁定的原因。financial：因欠费被锁定。security：因安全原因被锁定。
+         * @param lockReason Reason for NAT lock. financial: Locked due to overdue payment. security: Locked for security reasons.
          * 
          * @return builder
          * 
@@ -697,7 +697,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param natGatewayId NAT网关ID。
+         * @param natGatewayId NAT gateway ID.
          * 
          * @return builder
          * 
@@ -708,7 +708,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param natGatewayId NAT网关ID。
+         * @param natGatewayId NAT gateway ID.
          * 
          * @return builder
          * 
@@ -718,7 +718,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param natGatewayName NAT网关的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。长度限制为1 ~ 128个字符。不填默认是NAT网关实例的ID。
+         * @param natGatewayName Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
          * 
          * @return builder
          * 
@@ -729,7 +729,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param natGatewayName NAT网关的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。长度限制为1 ~ 128个字符。不填默认是NAT网关实例的ID。
+         * @param natGatewayName Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
          * 
          * @return builder
          * 
@@ -752,7 +752,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkInterfaceId NAT网关占用的网卡ID。
+         * @param networkInterfaceId Network interface ID occupied by the NAT gateway.
          * 
          * @return builder
          * 
@@ -763,7 +763,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkInterfaceId NAT网关占用的网卡ID。
+         * @param networkInterfaceId Network interface ID occupied by the NAT gateway.
          * 
          * @return builder
          * 
@@ -773,7 +773,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkType NAT网关类型。internet：公网NAT网关。intranet：私网NAT网关。
+         * @param networkType NAT Gateway type. internet: Public NAT Gateway. intranet: Private NAT Gateway.
          * 
          * @return builder
          * 
@@ -784,7 +784,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkType NAT网关类型。internet：公网NAT网关。intranet：私网NAT网关。
+         * @param networkType NAT Gateway type. internet: Public NAT Gateway. intranet: Private NAT Gateway.
          * 
          * @return builder
          * 
@@ -794,7 +794,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param overdueTime 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值。
+         * @param overdueTime Resource freeze time. This parameter is returned only when the resource is frozen due to overdue payment.
          * 
          * @return builder
          * 
@@ -805,7 +805,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param overdueTime 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值。
+         * @param overdueTime Resource freeze time. This parameter is returned only when the resource is frozen due to overdue payment.
          * 
          * @return builder
          * 
@@ -815,7 +815,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param period 购买包年包月NAT网关的时长，默认1。当PeriodUnit传入Month，Period取值范围：1 ~ 9、12、24、36。当PeriodUnit传入Year，Period取值范围：1 ~ 3。
+         * @param period Duration for purchasing a subscription NAT Gateway, default is 1. If PeriodUnit is Month, Period can be 1 ~ 9, 12, 24, 36. If PeriodUnit is Year, Period can be 1 ~ 3.
          * 
          * @return builder
          * 
@@ -826,7 +826,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param period 购买包年包月NAT网关的时长，默认1。当PeriodUnit传入Month，Period取值范围：1 ~ 9、12、24、36。当PeriodUnit传入Year，Period取值范围：1 ~ 3。
+         * @param period Duration for purchasing a subscription NAT Gateway, default is 1. If PeriodUnit is Month, Period can be 1 ~ 9, 12, 24, 36. If PeriodUnit is Year, Period can be 1 ~ 3.
          * 
          * @return builder
          * 
@@ -836,7 +836,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param periodUnit 购买包年包月NAT网关时长的单位，默认Month。Month ：月。Year ：年。
+         * @param periodUnit Unit for subscription NAT Gateway duration, default is Month. Month: month. Year: year.
          * 
          * @return builder
          * 
@@ -847,7 +847,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param periodUnit 购买包年包月NAT网关时长的单位，默认Month。Month ：月。Year ：年。
+         * @param periodUnit Unit for subscription NAT Gateway duration, default is Month. Month: month. Year: year.
          * 
          * @return builder
          * 
@@ -857,7 +857,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName NAT网关所属项目的名称。不填默认加入default项目。
+         * @param projectName Name of the project the NAT Gateway belongs to. If not specified, defaults to the &#39;default&#39; project.
          * 
          * @return builder
          * 
@@ -868,7 +868,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName NAT网关所属项目的名称。不填默认加入default项目。
+         * @param projectName Name of the project the NAT Gateway belongs to. If not specified, defaults to the &#39;default&#39; project.
          * 
          * @return builder
          * 
@@ -878,7 +878,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param smartScheduleEnabled 是否开启智能调度。
+         * @param smartScheduleEnabled Whether to enable intelligent scheduling
          * 
          * @return builder
          * 
@@ -889,7 +889,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param smartScheduleEnabled 是否开启智能调度。
+         * @param smartScheduleEnabled Whether to enable intelligent scheduling
          * 
          * @return builder
          * 
@@ -899,7 +899,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param smartScheduleRule 智能调度策略规则。ChinaMobile：中国移动。ChinaUnicom：中国联通。ChinaTelecom：中国电信。BGP：BGP多线。
+         * @param smartScheduleRule Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
          * 
          * @return builder
          * 
@@ -910,7 +910,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param smartScheduleRule 智能调度策略规则。ChinaMobile：中国移动。ChinaUnicom：中国联通。ChinaTelecom：中国电信。BGP：BGP多线。
+         * @param smartScheduleRule Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
          * 
          * @return builder
          * 
@@ -920,7 +920,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snatEntryIds SNAT规则ID列表。
+         * @param snatEntryIds SNAT rule ID list
          * 
          * @return builder
          * 
@@ -931,7 +931,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snatEntryIds SNAT规则ID列表。
+         * @param snatEntryIds SNAT rule ID list
          * 
          * @return builder
          * 
@@ -941,7 +941,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snatEntryIds SNAT规则ID列表。
+         * @param snatEntryIds SNAT rule ID list
          * 
          * @return builder
          * 
@@ -951,7 +951,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param spec NAT网关的规格。Small（默认）：小型。Medium：中型。Large：大型。Extra*Large*1：超大型-1。Extra*Large*2：超大型-2。
+         * @param spec NAT Gateway specification. Small (default): Small. Medium: Medium. Large: Large. Extra*Large*1: Extra Large 1. Extra*Large*2: Extra Large 2.
          * 
          * @return builder
          * 
@@ -962,7 +962,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param spec NAT网关的规格。Small（默认）：小型。Medium：中型。Large：大型。Extra*Large*1：超大型-1。Extra*Large*2：超大型-2。
+         * @param spec NAT Gateway specification. Small (default): Small. Medium: Medium. Large: Large. Extra*Large*1: Extra Large 1. Extra*Large*2: Extra Large 2.
          * 
          * @return builder
          * 
@@ -972,7 +972,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status NAT网关的状态。Available：可用。Creating：创建中。Pending：操作中。Deleting：删除中。
+         * @param status Status of the NAT Gateway. Available: Available. Creating: Creating. Pending: In progress. Deleting: Deleting.
          * 
          * @return builder
          * 
@@ -983,7 +983,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status NAT网关的状态。Available：可用。Creating：创建中。Pending：操作中。Deleting：删除中。
+         * @param status Status of the NAT Gateway. Available: Available. Creating: Creating. Pending: In progress. Deleting: Deleting.
          * 
          * @return builder
          * 
@@ -993,7 +993,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId NAT网关所在子网的ID。传入的子网，必须是VpcId传入的私有网络的子网。子网内至少有一个可用的私网IP。系统自动生成的NAT网关网卡将占用该子网一个私网IP。子网所在的可用区需要已部署NAT网关资源。子网所在可用区将作为NAT网关的主可用区，并自动关联备可用区。当主可用区发生故障时，NAT网关自动切换到备可用区。
+         * @param subnetId ID of the subnet where the NAT gateway is located. The input subnet must be a subnet of the private network specified by VpcId. There must be at least one available private IP in the subnet. The system automatically generates a NAT gateway network interface that will occupy one private IP in this subnet. The availability zone of the subnet must have deployed NAT gateway resources. The availability zone of the subnet will be used as the primary availability zone for the NAT gateway and will automatically associate with a backup availability zone. When the primary availability zone fails, the NAT gateway automatically switches to the backup availability zone.
          * 
          * @return builder
          * 
@@ -1004,7 +1004,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId NAT网关所在子网的ID。传入的子网，必须是VpcId传入的私有网络的子网。子网内至少有一个可用的私网IP。系统自动生成的NAT网关网卡将占用该子网一个私网IP。子网所在的可用区需要已部署NAT网关资源。子网所在可用区将作为NAT网关的主可用区，并自动关联备可用区。当主可用区发生故障时，NAT网关自动切换到备可用区。
+         * @param subnetId ID of the subnet where the NAT gateway is located. The input subnet must be a subnet of the private network specified by VpcId. There must be at least one available private IP in the subnet. The system automatically generates a NAT gateway network interface that will occupy one private IP in this subnet. The availability zone of the subnet must have deployed NAT gateway resources. The availability zone of the subnet will be used as the primary availability zone for the NAT gateway and will automatically associate with a backup availability zone. When the primary availability zone fails, the NAT gateway automatically switches to the backup availability zone.
          * 
          * @return builder
          * 
@@ -1027,7 +1027,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime NAT网关的最后操作时间。
+         * @param updatedTime Last operation time of the NAT Gateway
          * 
          * @return builder
          * 
@@ -1038,7 +1038,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime NAT网关的最后操作时间。
+         * @param updatedTime Last operation time of the NAT Gateway
          * 
          * @return builder
          * 
@@ -1048,7 +1048,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId NAT网关所在私有网络的ID。
+         * @param vpcId ID of the private network where the NAT Gateway is located
          * 
          * @return builder
          * 
@@ -1059,7 +1059,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId NAT网关所在私有网络的ID。
+         * @param vpcId ID of the private network where the NAT Gateway is located
          * 
          * @return builder
          * 
@@ -1069,7 +1069,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId NAT网关所属主可用区的ID。
+         * @param zoneId ID of the primary availability zone the NAT Gateway belongs to
          * 
          * @return builder
          * 
@@ -1080,7 +1080,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId NAT网关所属主可用区的ID。
+         * @param zoneId ID of the primary availability zone the NAT Gateway belongs to
          * 
          * @return builder
          * 

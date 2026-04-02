@@ -12,38 +12,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DirectConnectGatewayAssociateEic {
     /**
-     * @return EIC的ID。
+     * @return ID of EIC.
      * 
      */
     private @Nullable String eicId;
     /**
-     * @return EIC的用户ID。
+     * @return User ID of EIC.
      * 
      */
     private @Nullable String eicOwnerId;
     /**
-     * @return 实例在EIC中的状态。
+     * @return Status of the instance in EIC.
      * 
      */
     private @Nullable String eicStatus;
 
     private DirectConnectGatewayAssociateEic() {}
     /**
-     * @return EIC的ID。
+     * @return ID of EIC.
      * 
      */
     public Optional<String> eicId() {
         return Optional.ofNullable(this.eicId);
     }
     /**
-     * @return EIC的用户ID。
+     * @return User ID of EIC.
      * 
      */
     public Optional<String> eicOwnerId() {
         return Optional.ofNullable(this.eicOwnerId);
     }
     /**
-     * @return 实例在EIC中的状态。
+     * @return Status of the instance in EIC.
      * 
      */
     public Optional<String> eicStatus() {

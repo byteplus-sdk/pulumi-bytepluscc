@@ -17,14 +17,14 @@ public final class InstanceDisasterRecoveryInstanceArgs extends com.pulumi.resou
     public static final InstanceDisasterRecoveryInstanceArgs Empty = new InstanceDisasterRecoveryInstanceArgs();
 
     /**
-     * 主实例与灾备实例之间同步任务的 ID。
+     * ID of synchronization tasks between primary and disaster recovery instances.
      * 
      */
     @Import(name="dtsTaskId")
     private @Nullable Output<String> dtsTaskId;
 
     /**
-     * @return 主实例与灾备实例之间同步任务的 ID。
+     * @return ID of synchronization tasks between primary and disaster recovery instances.
      * 
      */
     public Optional<Output<String>> dtsTaskId() {
@@ -32,14 +32,14 @@ public final class InstanceDisasterRecoveryInstanceArgs extends com.pulumi.resou
     }
 
     /**
-     * 主实例与灾备实例之间同步任务的名称。
+     * Name of the synchronization task between the primary instance and the disaster recovery instance
      * 
      */
     @Import(name="dtsTaskName")
     private @Nullable Output<String> dtsTaskName;
 
     /**
-     * @return 主实例与灾备实例之间同步任务的名称。
+     * @return Name of the synchronization task between the primary instance and the disaster recovery instance
      * 
      */
     public Optional<Output<String>> dtsTaskName() {
@@ -47,14 +47,14 @@ public final class InstanceDisasterRecoveryInstanceArgs extends com.pulumi.resou
     }
 
     /**
-     * 主实例与灾备实例之间同步任务的状态。
+     * Status of synchronization tasks between the primary instance and the disaster recovery instance
      * 
      */
     @Import(name="dtsTaskStatus")
     private @Nullable Output<String> dtsTaskStatus;
 
     /**
-     * @return 主实例与灾备实例之间同步任务的状态。
+     * @return Status of synchronization tasks between the primary instance and the disaster recovery instance
      * 
      */
     public Optional<Output<String>> dtsTaskStatus() {
@@ -62,14 +62,14 @@ public final class InstanceDisasterRecoveryInstanceArgs extends com.pulumi.resou
     }
 
     /**
-     * 灾备实例的 ID。
+     * Disaster recovery instance ID.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 灾备实例的 ID。
+     * @return Disaster recovery instance ID.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -77,14 +77,14 @@ public final class InstanceDisasterRecoveryInstanceArgs extends com.pulumi.resou
     }
 
     /**
-     * 灾备实例的名称。
+     * Name of disaster recovery instance.
      * 
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
-     * @return 灾备实例的名称。
+     * @return Name of disaster recovery instance.
      * 
      */
     public Optional<Output<String>> instanceName() {
@@ -92,14 +92,14 @@ public final class InstanceDisasterRecoveryInstanceArgs extends com.pulumi.resou
     }
 
     /**
-     * 灾备实例与主实例之间的时延。
+     * Latency between the disaster recovery instance and the primary instance.
      * 
      */
     @Import(name="secondsBehindMaster")
     private @Nullable Output<Integer> secondsBehindMaster;
 
     /**
-     * @return 灾备实例与主实例之间的时延。
+     * @return Latency between the disaster recovery instance and the primary instance.
      * 
      */
     public Optional<Output<Integer>> secondsBehindMaster() {
@@ -136,7 +136,7 @@ public final class InstanceDisasterRecoveryInstanceArgs extends com.pulumi.resou
         }
 
         /**
-         * @param dtsTaskId 主实例与灾备实例之间同步任务的 ID。
+         * @param dtsTaskId ID of synchronization tasks between primary and disaster recovery instances.
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class InstanceDisasterRecoveryInstanceArgs extends com.pulumi.resou
         }
 
         /**
-         * @param dtsTaskId 主实例与灾备实例之间同步任务的 ID。
+         * @param dtsTaskId ID of synchronization tasks between primary and disaster recovery instances.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class InstanceDisasterRecoveryInstanceArgs extends com.pulumi.resou
         }
 
         /**
-         * @param dtsTaskName 主实例与灾备实例之间同步任务的名称。
+         * @param dtsTaskName Name of the synchronization task between the primary instance and the disaster recovery instance
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class InstanceDisasterRecoveryInstanceArgs extends com.pulumi.resou
         }
 
         /**
-         * @param dtsTaskName 主实例与灾备实例之间同步任务的名称。
+         * @param dtsTaskName Name of the synchronization task between the primary instance and the disaster recovery instance
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class InstanceDisasterRecoveryInstanceArgs extends com.pulumi.resou
         }
 
         /**
-         * @param dtsTaskStatus 主实例与灾备实例之间同步任务的状态。
+         * @param dtsTaskStatus Status of synchronization tasks between the primary instance and the disaster recovery instance
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class InstanceDisasterRecoveryInstanceArgs extends com.pulumi.resou
         }
 
         /**
-         * @param dtsTaskStatus 主实例与灾备实例之间同步任务的状态。
+         * @param dtsTaskStatus Status of synchronization tasks between the primary instance and the disaster recovery instance
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class InstanceDisasterRecoveryInstanceArgs extends com.pulumi.resou
         }
 
         /**
-         * @param instanceId 灾备实例的 ID。
+         * @param instanceId Disaster recovery instance ID.
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class InstanceDisasterRecoveryInstanceArgs extends com.pulumi.resou
         }
 
         /**
-         * @param instanceId 灾备实例的 ID。
+         * @param instanceId Disaster recovery instance ID.
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class InstanceDisasterRecoveryInstanceArgs extends com.pulumi.resou
         }
 
         /**
-         * @param instanceName 灾备实例的名称。
+         * @param instanceName Name of disaster recovery instance.
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class InstanceDisasterRecoveryInstanceArgs extends com.pulumi.resou
         }
 
         /**
-         * @param instanceName 灾备实例的名称。
+         * @param instanceName Name of disaster recovery instance.
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class InstanceDisasterRecoveryInstanceArgs extends com.pulumi.resou
         }
 
         /**
-         * @param secondsBehindMaster 灾备实例与主实例之间的时延。
+         * @param secondsBehindMaster Latency between the disaster recovery instance and the primary instance.
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class InstanceDisasterRecoveryInstanceArgs extends com.pulumi.resou
         }
 
         /**
-         * @param secondsBehindMaster 灾备实例与主实例之间的时延。
+         * @param secondsBehindMaster Latency between the disaster recovery instance and the primary instance.
          * 
          * @return builder
          * 

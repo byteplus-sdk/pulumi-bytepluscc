@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb.Inputs
     public sealed class ClbServerGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 负载均衡实例中后端服务器组的ID。
+        /// ID of the backend server group in the load balancer instance
         /// </summary>
         [Input("serverGroupId")]
         public Input<string>? ServerGroupId { get; set; }
 
         /// <summary>
-        /// 负载均衡实例中后端服务器组的名称。
+        /// Name of the backend server group in the load balancer instance
         /// </summary>
         [Input("serverGroupName")]
         public Input<string>? ServerGroupName { get; set; }

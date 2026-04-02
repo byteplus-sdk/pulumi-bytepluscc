@@ -13,62 +13,62 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceConnectionInfo {
     /**
-     * @return 地址列表。
+     * @return Address list.
      * 
      */
     private List<GetInstanceConnectionInfoAddress> addresses;
     /**
-     * @return 描述信息。
+     * @return Description.
      * 
      */
     private String description;
     /**
-     * @return 终端 ID。
+     * @return Terminal ID.
      * 
      */
     private String endpointId;
     /**
-     * @return 终端名称。
+     * @return Terminal name.
      * 
      */
     private String endpointName;
     /**
-     * @return 终端类型。取值如下：Primary：表示主节点终端。ROCluster：表示只读集群终端。RO：表示只读节点终端。
+     * @return Terminal type. Possible values: Primary: primary node terminal. ROCluster: read-only cluster terminal. RO: read-only node terminal.
      * 
      */
     private String endpointType;
 
     private GetInstanceConnectionInfo() {}
     /**
-     * @return 地址列表。
+     * @return Address list.
      * 
      */
     public List<GetInstanceConnectionInfoAddress> addresses() {
         return this.addresses;
     }
     /**
-     * @return 描述信息。
+     * @return Description.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 终端 ID。
+     * @return Terminal ID.
      * 
      */
     public String endpointId() {
         return this.endpointId;
     }
     /**
-     * @return 终端名称。
+     * @return Terminal name.
      * 
      */
     public String endpointName() {
         return this.endpointName;
     }
     /**
-     * @return 终端类型。取值如下：Primary：表示主节点终端。ROCluster：表示只读集群终端。RO：表示只读节点终端。
+     * @return Terminal type. Possible values: Primary: primary node terminal. ROCluster: read-only cluster terminal. RO: read-only node terminal.
      * 
      */
     public String endpointType() {

@@ -17,7 +17,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         private InputList<string>? _serviceCidrsv4s;
 
         /// <summary>
-        /// Kubernetes 服务（Service）暴露的 IPv4 私有网络地址。
+        /// IPv4 private network address exposed by Kubernetes Service.
         /// </summary>
         public InputList<string> ServiceCidrsv4s
         {

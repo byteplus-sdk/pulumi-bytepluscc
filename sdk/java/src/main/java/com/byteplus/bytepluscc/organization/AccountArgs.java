@@ -21,14 +21,14 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
     public static final AccountArgs Empty = new AccountArgs();
 
     /**
-     * 账户名称。5-20个字符。
+     * Account name. 5–20 characters
      * 
      */
     @Import(name="accountName", required=true)
     private Output<String> accountName;
 
     /**
-     * @return 账户名称。5-20个字符。
+     * @return Account name. 5–20 characters
      * 
      */
     public Output<String> accountName() {
@@ -36,14 +36,14 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 允许控制台访问，1: 允许，2: 不允许。
+     * Allow console access: 1. Allowed, 2. Not allowed
      * 
      */
     @Import(name="allowConsole")
     private @Nullable Output<Integer> allowConsole;
 
     /**
-     * @return 允许控制台访问，1: 允许，2: 不允许。
+     * @return Allow console access: 1. Allowed, 2. Not allowed
      * 
      */
     public Optional<Output<Integer>> allowConsole() {
@@ -51,14 +51,14 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 允许退出，1: 允许，2: 不允许。
+     * Allow exit: 1. Allowed, 2. Not allowed
      * 
      */
     @Import(name="allowExit")
     private @Nullable Output<Integer> allowExit;
 
     /**
-     * @return 允许退出，1: 允许，2: 不允许。
+     * @return Allow exit: 1. Allowed, 2. Not allowed
      * 
      */
     public Optional<Output<Integer>> allowExit() {
@@ -66,14 +66,14 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 删除标记。
+     * Deletion flag
      * 
      */
     @Import(name="deleteUk")
     private @Nullable Output<String> deleteUk;
 
     /**
-     * @return 删除标记。
+     * @return Deletion flag
      * 
      */
     public Optional<Output<String>> deleteUk() {
@@ -81,14 +81,14 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 描述。
+     * Description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 描述。
+     * @return Description
      * 
      */
     public Optional<Output<String>> description() {
@@ -96,14 +96,14 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 组织单元ID。传入 0 加入到 root 单元。
+     * Organizational unit ID. Enter 0 to join the root unit
      * 
      */
     @Import(name="orgUnitId")
     private @Nullable Output<String> orgUnitId;
 
     /**
-     * @return 组织单元ID。传入 0 加入到 root 单元。
+     * @return Organizational unit ID. Enter 0 to join the root unit
      * 
      */
     public Optional<Output<String>> orgUnitId() {
@@ -111,14 +111,14 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 账户密码。
+     * Account password
      * 
      */
     @Import(name="password")
     private @Nullable Output<String> password;
 
     /**
-     * @return 账户密码。
+     * @return Account password
      * 
      */
     public Optional<Output<String>> password() {
@@ -126,14 +126,14 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 安全联系信息。
+     * Security contact information
      * 
      */
     @Import(name="secureContactInfo")
     private @Nullable Output<AccountSecureContactInfoArgs> secureContactInfo;
 
     /**
-     * @return 安全联系信息。
+     * @return Security contact information
      * 
      */
     public Optional<Output<AccountSecureContactInfoArgs>> secureContactInfo() {
@@ -141,14 +141,14 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 显示名称。
+     * Display name
      * 
      */
     @Import(name="showName", required=true)
     private Output<String> showName;
 
     /**
-     * @return 显示名称。
+     * @return Display name
      * 
      */
     public Output<String> showName() {
@@ -163,14 +163,14 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+     * Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
      * 
      */
     @Import(name="verificationRelationId")
     private @Nullable Output<String> verificationRelationId;
 
     /**
-     * @return 被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+     * @return Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
      * 
      */
     public Optional<Output<String>> verificationRelationId() {
@@ -212,7 +212,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountName 账户名称。5-20个字符。
+         * @param accountName Account name. 5–20 characters
          * 
          * @return builder
          * 
@@ -223,7 +223,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountName 账户名称。5-20个字符。
+         * @param accountName Account name. 5–20 characters
          * 
          * @return builder
          * 
@@ -233,7 +233,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowConsole 允许控制台访问，1: 允许，2: 不允许。
+         * @param allowConsole Allow console access: 1. Allowed, 2. Not allowed
          * 
          * @return builder
          * 
@@ -244,7 +244,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowConsole 允许控制台访问，1: 允许，2: 不允许。
+         * @param allowConsole Allow console access: 1. Allowed, 2. Not allowed
          * 
          * @return builder
          * 
@@ -254,7 +254,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowExit 允许退出，1: 允许，2: 不允许。
+         * @param allowExit Allow exit: 1. Allowed, 2. Not allowed
          * 
          * @return builder
          * 
@@ -265,7 +265,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowExit 允许退出，1: 允许，2: 不允许。
+         * @param allowExit Allow exit: 1. Allowed, 2. Not allowed
          * 
          * @return builder
          * 
@@ -275,7 +275,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deleteUk 删除标记。
+         * @param deleteUk Deletion flag
          * 
          * @return builder
          * 
@@ -286,7 +286,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deleteUk 删除标记。
+         * @param deleteUk Deletion flag
          * 
          * @return builder
          * 
@@ -296,7 +296,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 描述。
+         * @param description Description
          * 
          * @return builder
          * 
@@ -307,7 +307,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 描述。
+         * @param description Description
          * 
          * @return builder
          * 
@@ -317,7 +317,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param orgUnitId 组织单元ID。传入 0 加入到 root 单元。
+         * @param orgUnitId Organizational unit ID. Enter 0 to join the root unit
          * 
          * @return builder
          * 
@@ -328,7 +328,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param orgUnitId 组织单元ID。传入 0 加入到 root 单元。
+         * @param orgUnitId Organizational unit ID. Enter 0 to join the root unit
          * 
          * @return builder
          * 
@@ -338,7 +338,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param password 账户密码。
+         * @param password Account password
          * 
          * @return builder
          * 
@@ -349,7 +349,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param password 账户密码。
+         * @param password Account password
          * 
          * @return builder
          * 
@@ -359,7 +359,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param secureContactInfo 安全联系信息。
+         * @param secureContactInfo Security contact information
          * 
          * @return builder
          * 
@@ -370,7 +370,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param secureContactInfo 安全联系信息。
+         * @param secureContactInfo Security contact information
          * 
          * @return builder
          * 
@@ -380,7 +380,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param showName 显示名称。
+         * @param showName Display name
          * 
          * @return builder
          * 
@@ -391,7 +391,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param showName 显示名称。
+         * @param showName Display name
          * 
          * @return builder
          * 
@@ -414,7 +414,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param verificationRelationId 被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+         * @param verificationRelationId Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
          * 
          * @return builder
          * 
@@ -425,7 +425,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param verificationRelationId 被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+         * @param verificationRelationId Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
          * 
          * @return builder
          * 

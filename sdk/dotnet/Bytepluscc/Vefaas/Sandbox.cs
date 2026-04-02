@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Vefaas
 {
     /// <summary>
-    /// 沙箱实例是云沙箱中实际执行沙箱镜像的安全且隔离的容器运行环境。
+    /// A sandbox instance is a secure and isolated container runtime environment that actually runs the sandbox image in the cloud sandbox
     /// 
     /// ## Import
     /// 
@@ -23,19 +23,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
     public partial class Sandbox : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 沙箱实例所在可用区 ID。
+        /// Availability zone ID of the sandbox instance
         /// </summary>
         [Output("availabilityZone")]
         public Output<string> AvailabilityZone { get; private set; } = null!;
 
         /// <summary>
-        /// 沙箱实例 CPU 规格：单位：milli cpu取值范围：250~16000,默认值：1000。
+        /// Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
         /// </summary>
         [Output("cpuMilli")]
         public Output<int> CpuMilli { get; private set; } = null!;
 
         /// <summary>
-        /// 沙箱实例创建时间。
+        /// Sandbox instance creation time.
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
@@ -44,55 +44,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
         public Output<ImmutableArray<Outputs.SandboxEnv>> Envs { get; private set; } = null!;
 
         /// <summary>
-        /// 沙箱实例启动失败错误码。参数值说明：internal*load*request*error：系统内部错误，function*initialize*failed：业务进程初始化错误，function*health*check*failed：健康检查错误，route_terminating：路由删除中，正常启动沙箱实例时，该字段为空。
+        /// Sandbox instance startup failure error code. Parameter description: internal*load*request*error: internal system error, function*initialize*failed: business process initialization error, function*health*check*failed: health check error, route_terminating: route deletion in progress. This field is empty when the sandbox instance starts normally
         /// </summary>
         [Output("errorCode")]
         public Output<string> ErrorCode { get; private set; } = null!;
 
         /// <summary>
-        /// 沙箱实例启动失败的错误码详情。正常启动沙箱实例时，该字段为空。
+        /// Details of the error code when the sandbox instance fails to start. This field is empty when the sandbox instance starts normally.
         /// </summary>
         [Output("errorMessage")]
         public Output<string> ErrorMessage { get; private set; } = null!;
 
         /// <summary>
-        /// 沙箱实例存活时长。
+        /// Sandbox instance uptime.
         /// </summary>
         [Output("expireAt")]
         public Output<string> ExpireAt { get; private set; } = null!;
 
         /// <summary>
-        /// 沙箱实例所属的沙箱应用 ID。
+        /// Sandbox application ID to which the sandbox instance belongs
         /// </summary>
         [Output("functionId")]
         public Output<string> FunctionId { get; private set; } = null!;
 
         /// <summary>
-        /// 沙箱实例镜像信息，包括镜像地址、启动命令、监听端口。
+        /// Sandbox instance image information, including image address, startup command, and listening port.
         /// </summary>
         [Output("instanceImageInfo")]
         public Output<Outputs.SandboxInstanceImageInfo> InstanceImageInfo { get; private set; } = null!;
 
         /// <summary>
-        /// 沙箱实例级别对象存储（TOS）存储挂载配置。
+        /// Instance-level object storage (TOS) mount configuration for the sandbox instance
         /// </summary>
         [Output("instanceTosMountConfig")]
         public Output<Outputs.SandboxInstanceTosMountConfig> InstanceTosMountConfig { get; private set; } = null!;
 
         /// <summary>
-        /// 沙箱实例类型 。参数值说明：elastic：弹性实例，frozen：冻结实例，activated：激活实例，reserved：预留实例。
+        /// Sandbox instance type. Parameter description: elastic: elastic instance, frozen: frozen instance, activated: activated instance, reserved: reserved instance
         /// </summary>
         [Output("instanceType")]
         public Output<string> InstanceType { get; private set; } = null!;
 
         /// <summary>
-        /// 单实例请求最大并发数：取值范围：10~1000,默认值：100。
+        /// Maximum concurrent requests per instance: range: 10~1000, default: 100
         /// </summary>
         [Output("maxConcurrency")]
         public Output<int> MaxConcurrency { get; private set; } = null!;
 
         /// <summary>
-        /// 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
+        /// Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
         /// </summary>
         [Output("memoryMb")]
         public Output<int> MemoryMb { get; private set; } = null!;
@@ -101,37 +101,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
         public Output<ImmutableArray<Outputs.SandboxMetadata>> Metadatas { get; private set; } = null!;
 
         /// <summary>
-        /// 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
+        /// Whether the sandbox instance is in Pending status. Parameter description: true: yes, false: no
         /// </summary>
         [Output("pending")]
         public Output<bool> Pending { get; private set; } = null!;
 
         /// <summary>
-        /// 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
+        /// Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
         /// </summary>
         [Output("requestTimeout")]
         public Output<int> RequestTimeout { get; private set; } = null!;
 
         /// <summary>
-        /// 函数实例版本编号。
+        /// Function instance version number
         /// </summary>
         [Output("revisionNumber")]
         public Output<int> RevisionNumber { get; private set; } = null!;
 
         /// <summary>
-        /// 沙箱实例 ID。
+        /// Sandbox instance ID
         /// </summary>
         [Output("sandboxId")]
         public Output<string> SandboxId { get; private set; } = null!;
 
         /// <summary>
-        /// 沙箱实例状态。 参数值说明：Starting：开始启动，Ready：启动完成，Failed：启动失败，Terminating：终止中。
+        /// Sandbox instance status. Parameter description: Starting: starting, Ready: startup completed, Failed: startup failed, Terminating: terminating
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// 沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
+        /// Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
         /// </summary>
         [Output("timeout")]
         public Output<int> Timeout { get; private set; } = null!;
@@ -184,7 +184,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
     public sealed class SandboxArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 沙箱实例 CPU 规格：单位：milli cpu取值范围：250~16000,默认值：1000。
+        /// Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
         /// </summary>
         [Input("cpuMilli")]
         public Input<int>? CpuMilli { get; set; }
@@ -198,31 +198,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
         }
 
         /// <summary>
-        /// 沙箱实例所属的沙箱应用 ID。
+        /// Sandbox application ID to which the sandbox instance belongs
         /// </summary>
         [Input("functionId", required: true)]
         public Input<string> FunctionId { get; set; } = null!;
 
         /// <summary>
-        /// 沙箱实例镜像信息，包括镜像地址、启动命令、监听端口。
+        /// Sandbox instance image information, including image address, startup command, and listening port.
         /// </summary>
         [Input("instanceImageInfo")]
         public Input<Inputs.SandboxInstanceImageInfoArgs>? InstanceImageInfo { get; set; }
 
         /// <summary>
-        /// 沙箱实例级别对象存储（TOS）存储挂载配置。
+        /// Instance-level object storage (TOS) mount configuration for the sandbox instance
         /// </summary>
         [Input("instanceTosMountConfig")]
         public Input<Inputs.SandboxInstanceTosMountConfigArgs>? InstanceTosMountConfig { get; set; }
 
         /// <summary>
-        /// 单实例请求最大并发数：取值范围：10~1000,默认值：100。
+        /// Maximum concurrent requests per instance: range: 10~1000, default: 100
         /// </summary>
         [Input("maxConcurrency")]
         public Input<int>? MaxConcurrency { get; set; }
 
         /// <summary>
-        /// 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
+        /// Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
         /// </summary>
         [Input("memoryMb")]
         public Input<int>? MemoryMb { get; set; }
@@ -236,13 +236,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
         }
 
         /// <summary>
-        /// 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
+        /// Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
         /// </summary>
         [Input("requestTimeout")]
         public Input<int>? RequestTimeout { get; set; }
 
         /// <summary>
-        /// 沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
+        /// Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
         /// </summary>
         [Input("timeout")]
         public Input<int>? Timeout { get; set; }
@@ -256,19 +256,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
     public sealed class SandboxState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 沙箱实例所在可用区 ID。
+        /// Availability zone ID of the sandbox instance
         /// </summary>
         [Input("availabilityZone")]
         public Input<string>? AvailabilityZone { get; set; }
 
         /// <summary>
-        /// 沙箱实例 CPU 规格：单位：milli cpu取值范围：250~16000,默认值：1000。
+        /// Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
         /// </summary>
         [Input("cpuMilli")]
         public Input<int>? CpuMilli { get; set; }
 
         /// <summary>
-        /// 沙箱实例创建时间。
+        /// Sandbox instance creation time.
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
@@ -282,55 +282,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
         }
 
         /// <summary>
-        /// 沙箱实例启动失败错误码。参数值说明：internal*load*request*error：系统内部错误，function*initialize*failed：业务进程初始化错误，function*health*check*failed：健康检查错误，route_terminating：路由删除中，正常启动沙箱实例时，该字段为空。
+        /// Sandbox instance startup failure error code. Parameter description: internal*load*request*error: internal system error, function*initialize*failed: business process initialization error, function*health*check*failed: health check error, route_terminating: route deletion in progress. This field is empty when the sandbox instance starts normally
         /// </summary>
         [Input("errorCode")]
         public Input<string>? ErrorCode { get; set; }
 
         /// <summary>
-        /// 沙箱实例启动失败的错误码详情。正常启动沙箱实例时，该字段为空。
+        /// Details of the error code when the sandbox instance fails to start. This field is empty when the sandbox instance starts normally.
         /// </summary>
         [Input("errorMessage")]
         public Input<string>? ErrorMessage { get; set; }
 
         /// <summary>
-        /// 沙箱实例存活时长。
+        /// Sandbox instance uptime.
         /// </summary>
         [Input("expireAt")]
         public Input<string>? ExpireAt { get; set; }
 
         /// <summary>
-        /// 沙箱实例所属的沙箱应用 ID。
+        /// Sandbox application ID to which the sandbox instance belongs
         /// </summary>
         [Input("functionId")]
         public Input<string>? FunctionId { get; set; }
 
         /// <summary>
-        /// 沙箱实例镜像信息，包括镜像地址、启动命令、监听端口。
+        /// Sandbox instance image information, including image address, startup command, and listening port.
         /// </summary>
         [Input("instanceImageInfo")]
         public Input<Inputs.SandboxInstanceImageInfoGetArgs>? InstanceImageInfo { get; set; }
 
         /// <summary>
-        /// 沙箱实例级别对象存储（TOS）存储挂载配置。
+        /// Instance-level object storage (TOS) mount configuration for the sandbox instance
         /// </summary>
         [Input("instanceTosMountConfig")]
         public Input<Inputs.SandboxInstanceTosMountConfigGetArgs>? InstanceTosMountConfig { get; set; }
 
         /// <summary>
-        /// 沙箱实例类型 。参数值说明：elastic：弹性实例，frozen：冻结实例，activated：激活实例，reserved：预留实例。
+        /// Sandbox instance type. Parameter description: elastic: elastic instance, frozen: frozen instance, activated: activated instance, reserved: reserved instance
         /// </summary>
         [Input("instanceType")]
         public Input<string>? InstanceType { get; set; }
 
         /// <summary>
-        /// 单实例请求最大并发数：取值范围：10~1000,默认值：100。
+        /// Maximum concurrent requests per instance: range: 10~1000, default: 100
         /// </summary>
         [Input("maxConcurrency")]
         public Input<int>? MaxConcurrency { get; set; }
 
         /// <summary>
-        /// 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
+        /// Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
         /// </summary>
         [Input("memoryMb")]
         public Input<int>? MemoryMb { get; set; }
@@ -344,37 +344,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
         }
 
         /// <summary>
-        /// 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
+        /// Whether the sandbox instance is in Pending status. Parameter description: true: yes, false: no
         /// </summary>
         [Input("pending")]
         public Input<bool>? Pending { get; set; }
 
         /// <summary>
-        /// 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
+        /// Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
         /// </summary>
         [Input("requestTimeout")]
         public Input<int>? RequestTimeout { get; set; }
 
         /// <summary>
-        /// 函数实例版本编号。
+        /// Function instance version number
         /// </summary>
         [Input("revisionNumber")]
         public Input<int>? RevisionNumber { get; set; }
 
         /// <summary>
-        /// 沙箱实例 ID。
+        /// Sandbox instance ID
         /// </summary>
         [Input("sandboxId")]
         public Input<string>? SandboxId { get; set; }
 
         /// <summary>
-        /// 沙箱实例状态。 参数值说明：Starting：开始启动，Ready：启动完成，Failed：启动失败，Terminating：终止中。
+        /// Sandbox instance status. Parameter description: Starting: starting, Ready: startup completed, Failed: startup failed, Terminating: terminating
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// 沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
+        /// Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
         /// </summary>
         [Input("timeout")]
         public Input<int>? Timeout { get; set; }

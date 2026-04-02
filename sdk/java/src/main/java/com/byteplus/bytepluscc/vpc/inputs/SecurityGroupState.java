@@ -21,14 +21,14 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
     public static final SecurityGroupState Empty = new SecurityGroupState();
 
     /**
-     * 安全组创建时间。
+     * Security group creation time
      * 
      */
     @Import(name="creationTime")
     private @Nullable Output<String> creationTime;
 
     /**
-     * @return 安全组创建时间。
+     * @return Security group creation time
      * 
      */
     public Optional<Output<String>> creationTime() {
@@ -36,14 +36,14 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
+     * Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
+     * @return Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
      * 
      */
     public Optional<Output<String>> description() {
@@ -65,14 +65,14 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 安全组所属项目名称。不填默认项目为default。
+     * Project name to which the security group belongs. Default project is &#39;default&#39; if not specified
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 安全组所属项目名称。不填默认项目为default。
+     * @return Project name to which the security group belongs. Default project is &#39;default&#39; if not specified
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -80,14 +80,14 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 安全组ID。
+     * Security group ID
      * 
      */
     @Import(name="securityGroupId")
     private @Nullable Output<String> securityGroupId;
 
     /**
-     * @return 安全组ID。
+     * @return Security group ID
      * 
      */
     public Optional<Output<String>> securityGroupId() {
@@ -95,14 +95,14 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
+     * Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
      * 
      */
     @Import(name="securityGroupName")
     private @Nullable Output<String> securityGroupName;
 
     /**
-     * @return 安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
+     * @return Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
      * 
      */
     public Optional<Output<String>> securityGroupName() {
@@ -110,14 +110,14 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 安全组是否为托管安全组。true为托管安全组，false为非托管安全组。
+     * Indicates whether the security group is managed. true means managed security group, false means unmanaged security group
      * 
      */
     @Import(name="serviceManaged")
     private @Nullable Output<Boolean> serviceManaged;
 
     /**
-     * @return 安全组是否为托管安全组。true为托管安全组，false为非托管安全组。
+     * @return Indicates whether the security group is managed. true means managed security group, false means unmanaged security group
      * 
      */
     public Optional<Output<Boolean>> serviceManaged() {
@@ -125,14 +125,14 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 安全组状态。Available为可用，Creating为创建中。
+     * Security group status. Available means available for use, Creating means being created
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 安全组状态。Available为可用，Creating为创建中。
+     * @return Security group status. Available means available for use, Creating means being created
      * 
      */
     public Optional<Output<String>> status() {
@@ -147,14 +147,14 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 安全组类型。1、default：默认安全组。2、normal：自定义安全组。3、VpnGW： VPN网关安全组。4、NatGW： Nat网关安全组。 5、cidr_only：CIDR-Only安全组。
+     * Security group type. 1. default: default security group. 2. normal: custom security group. 3. VpnGW: VPN gateway security group. 4. NatGW: NAT gateway security group. 5. cidr_only: CIDR-Only security group
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 安全组类型。1、default：默认安全组。2、normal：自定义安全组。3、VpnGW： VPN网关安全组。4、NatGW： Nat网关安全组。 5、cidr_only：CIDR-Only安全组。
+     * @return Security group type. 1. default: default security group. 2. normal: custom security group. 3. VpnGW: VPN gateway security group. 4. NatGW: NAT gateway security group. 5. cidr_only: CIDR-Only security group
      * 
      */
     public Optional<Output<String>> type() {
@@ -162,14 +162,14 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 安全组所属的VPC ID。
+     * VPC ID to which the security group belongs
      * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
-     * @return 安全组所属的VPC ID。
+     * @return VPC ID to which the security group belongs
      * 
      */
     public Optional<Output<String>> vpcId() {
@@ -212,7 +212,7 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param creationTime 安全组创建时间。
+         * @param creationTime Security group creation time
          * 
          * @return builder
          * 
@@ -223,7 +223,7 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param creationTime 安全组创建时间。
+         * @param creationTime Security group creation time
          * 
          * @return builder
          * 
@@ -233,7 +233,7 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param description 安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
+         * @param description Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
          * 
          * @return builder
          * 
@@ -244,7 +244,7 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param description 安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
+         * @param description Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
          * 
          * @return builder
          * 
@@ -280,7 +280,7 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param projectName 安全组所属项目名称。不填默认项目为default。
+         * @param projectName Project name to which the security group belongs. Default project is &#39;default&#39; if not specified
          * 
          * @return builder
          * 
@@ -291,7 +291,7 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param projectName 安全组所属项目名称。不填默认项目为default。
+         * @param projectName Project name to which the security group belongs. Default project is &#39;default&#39; if not specified
          * 
          * @return builder
          * 
@@ -301,7 +301,7 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param securityGroupId 安全组ID。
+         * @param securityGroupId Security group ID
          * 
          * @return builder
          * 
@@ -312,7 +312,7 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param securityGroupId 安全组ID。
+         * @param securityGroupId Security group ID
          * 
          * @return builder
          * 
@@ -322,7 +322,7 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param securityGroupName 安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
+         * @param securityGroupName Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
          * 
          * @return builder
          * 
@@ -333,7 +333,7 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param securityGroupName 安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
+         * @param securityGroupName Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
          * 
          * @return builder
          * 
@@ -343,7 +343,7 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param serviceManaged 安全组是否为托管安全组。true为托管安全组，false为非托管安全组。
+         * @param serviceManaged Indicates whether the security group is managed. true means managed security group, false means unmanaged security group
          * 
          * @return builder
          * 
@@ -354,7 +354,7 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param serviceManaged 安全组是否为托管安全组。true为托管安全组，false为非托管安全组。
+         * @param serviceManaged Indicates whether the security group is managed. true means managed security group, false means unmanaged security group
          * 
          * @return builder
          * 
@@ -364,7 +364,7 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param status 安全组状态。Available为可用，Creating为创建中。
+         * @param status Security group status. Available means available for use, Creating means being created
          * 
          * @return builder
          * 
@@ -375,7 +375,7 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param status 安全组状态。Available为可用，Creating为创建中。
+         * @param status Security group status. Available means available for use, Creating means being created
          * 
          * @return builder
          * 
@@ -398,7 +398,7 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param type 安全组类型。1、default：默认安全组。2、normal：自定义安全组。3、VpnGW： VPN网关安全组。4、NatGW： Nat网关安全组。 5、cidr_only：CIDR-Only安全组。
+         * @param type Security group type. 1. default: default security group. 2. normal: custom security group. 3. VpnGW: VPN gateway security group. 4. NatGW: NAT gateway security group. 5. cidr_only: CIDR-Only security group
          * 
          * @return builder
          * 
@@ -409,7 +409,7 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param type 安全组类型。1、default：默认安全组。2、normal：自定义安全组。3、VpnGW： VPN网关安全组。4、NatGW： Nat网关安全组。 5、cidr_only：CIDR-Only安全组。
+         * @param type Security group type. 1. default: default security group. 2. normal: custom security group. 3. VpnGW: VPN gateway security group. 4. NatGW: NAT gateway security group. 5. cidr_only: CIDR-Only security group
          * 
          * @return builder
          * 
@@ -419,7 +419,7 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param vpcId 安全组所属的VPC ID。
+         * @param vpcId VPC ID to which the security group belongs
          * 
          * @return builder
          * 
@@ -430,7 +430,7 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param vpcId 安全组所属的VPC ID。
+         * @param vpcId VPC ID to which the security group belongs
          * 
          * @return builder
          * 

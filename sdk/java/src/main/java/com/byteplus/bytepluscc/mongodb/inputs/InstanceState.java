@@ -25,14 +25,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     public static final InstanceState Empty = new InstanceState();
 
     /**
-     * 白名单 ID 列表。新建实例会被绑定到指定白名单。
+     * Allowlist ID list. New instances are bound to the specified allowlist.
      * 
      */
     @Import(name="allowListIds")
     private @Nullable Output<List<String>> allowListIds;
 
     /**
-     * @return 白名单 ID 列表。新建实例会被绑定到指定白名单。
+     * @return Allowlist ID list. New instances are bound to the specified allowlist.
      * 
      */
     public Optional<Output<List<String>>> allowListIds() {
@@ -40,14 +40,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启自动续费，取值范围如下：false（默认）：不开启自动续费。true：开启自动续费。
+     * Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
      * 
      */
     @Import(name="autoRenew")
     private @Nullable Output<Boolean> autoRenew;
 
     /**
-     * @return 是否开启自动续费，取值范围如下：false（默认）：不开启自动续费。true：开启自动续费。
+     * @return Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
      * 
      */
     public Optional<Output<Boolean>> autoRenew() {
@@ -55,14 +55,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例计费状态，取值范围如下：Normal：正常。WaitingPaid：等待支付。ChangingPayType：计费变更中。Renewing：续费中。Overdue：已到期。Owing：欠费中。Unsubscribing：退订中。
+     * Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
      * 
      */
     @Import(name="chargeStatus")
     private @Nullable Output<String> chargeStatus;
 
     /**
-     * @return 实例计费状态，取值范围如下：Normal：正常。WaitingPaid：等待支付。ChangingPayType：计费变更中。Renewing：续费中。Overdue：已到期。Owing：欠费中。Unsubscribing：退订中。
+     * @return Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
      * 
      */
     public Optional<Output<String>> chargeStatus() {
@@ -70,14 +70,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例计费类型，取值范围如下：PostPaid（默认）：按量计费（也称后付费）。Prepaid：包年包月（也称预付费）。
+     * Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
      * 
      */
     @Import(name="chargeType")
     private @Nullable Output<String> chargeType;
 
     /**
-     * @return 实例计费类型，取值范围如下：PostPaid（默认）：按量计费（也称后付费）。Prepaid：包年包月（也称预付费）。
+     * @return Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
      * 
      */
     public Optional<Output<String>> chargeType() {
@@ -85,14 +85,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 计划关停时间（UTC）。
+     * Scheduled shutdown time (UTC).
      * 
      */
     @Import(name="closedTime")
     private @Nullable Output<String> closedTime;
 
     /**
-     * @return 计划关停时间（UTC）。
+     * @return Scheduled shutdown time (UTC).
      * 
      */
     public Optional<Output<String>> closedTime() {
@@ -100,14 +100,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 分片集群中 ConfigServer 节点的规格码。默认值为 mongo.config.1c2g。
+     * ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
      * 
      */
     @Import(name="configServerNodeSpec")
     private @Nullable Output<String> configServerNodeSpec;
 
     /**
-     * @return 分片集群中 ConfigServer 节点的规格码。默认值为 mongo.config.1c2g。
+     * @return ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
      * 
      */
     public Optional<Output<String>> configServerNodeSpec() {
@@ -115,14 +115,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 分片集群中 ConfigServer 的存储空间，单位：GiB。步长为 10，默认值：20。
+     * ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
      * 
      */
     @Import(name="configServerStorageSpaceGb")
     private @Nullable Output<Integer> configServerStorageSpaceGb;
 
     /**
-     * @return 分片集群中 ConfigServer 的存储空间，单位：GiB。步长为 10，默认值：20。
+     * @return ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
      * 
      */
     public Optional<Output<Integer>> configServerStorageSpaceGb() {
@@ -137,14 +137,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * ConfigServer 的 ID。
+     * ConfigServer ID
      * 
      */
     @Import(name="configServersId")
     private @Nullable Output<String> configServersId;
 
     /**
-     * @return ConfigServer 的 ID。
+     * @return ConfigServer ID
      * 
      */
     public Optional<Output<String>> configServersId() {
@@ -152,14 +152,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例创建时间（UTC）。
+     * Instance creation time (UTC).
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 实例创建时间（UTC）。
+     * @return Instance creation time (UTC).
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -167,14 +167,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 数据库引擎。取值固定为 MongoDB
+     * Database engine. The value is fixed as MongoDB
      * 
      */
     @Import(name="dbEngine")
     private @Nullable Output<String> dbEngine;
 
     /**
-     * @return 数据库引擎。取值固定为 MongoDB
+     * @return Database engine. The value is fixed as MongoDB
      * 
      */
     public Optional<Output<String>> dbEngine() {
@@ -182,14 +182,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 数据库引擎版本，取值范围如下：MongoDB*4*0（默认）：MongoDB 4.0 版本。MongoDB*4*2：MongoDB 4.2 版本。MongoDB*4*4：MongoDB 4.4 版本。MongoDB*5*0：MongoDB 5.0 版本。MongoDB*6*0：MongoDB 6.0 版本。MongoDB*7*0：MongoDB 7.0 版本。
+     * Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
      * 
      */
     @Import(name="dbEngineVersion")
     private @Nullable Output<String> dbEngineVersion;
 
     /**
-     * @return 数据库引擎版本，取值范围如下：MongoDB*4*0（默认）：MongoDB 4.0 版本。MongoDB*4*2：MongoDB 4.2 版本。MongoDB*4*4：MongoDB 4.4 版本。MongoDB*5*0：MongoDB 5.0 版本。MongoDB*6*0：MongoDB 6.0 版本。MongoDB*7*0：MongoDB 7.0 版本。
+     * @return Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
      * 
      */
     public Optional<Output<String>> dbEngineVersion() {
@@ -197,14 +197,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 数据库引擎版本的字符串。
+     * Database engine version string
      * 
      */
     @Import(name="dbEngineVersionStr")
     private @Nullable Output<String> dbEngineVersionStr;
 
     /**
-     * @return 数据库引擎版本的字符串。
+     * @return Database engine version string
      * 
      */
     public Optional<Output<String>> dbEngineVersionStr() {
@@ -212,14 +212,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例到期时间（UTC）。
+     * Instance expiration time (UTC).
      * 
      */
     @Import(name="expiredTime")
     private @Nullable Output<String> expiredTime;
 
     /**
-     * @return 实例到期时间（UTC）。
+     * @return Instance expiration time (UTC).
      * 
      */
     public Optional<Output<String>> expiredTime() {
@@ -227,14 +227,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 需要创建的实例数量。取值为大于等于 1 的正整数，默认值为1。
+     * Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
      * 
      */
     @Import(name="instanceCount")
     private @Nullable Output<Integer> instanceCount;
 
     /**
-     * @return 需要创建的实例数量。取值为大于等于 1 的正整数，默认值为1。
+     * @return Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
      * 
      */
     public Optional<Output<Integer>> instanceCount() {
@@ -242,14 +242,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例 ID。
+     * Instance ID.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -257,14 +257,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例名称。名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 2~64 个字符。
+     * Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
      * 
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
-     * @return 实例名称。名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 2~64 个字符。
+     * @return Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
      * 
      */
     public Optional<Output<String>> instanceName() {
@@ -272,14 +272,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例状态。创建中：Creating。运行中：Running。白名单维护中：AllowListMaintaining。变更配置中：Scaling。重启中：Restarting。网络维护中：NetworkMaintaining。恢复中：Restoring。升级版本中：Upgrading。不可用：Unavailable。关停中：Closing。删除中：Deleting。已关停：Closed。SSL SSL变更中：SSLUpdating。主节点切换中：SwitchMastering。角色切换中：RoleChanging。迁移中：Migrating。
+     * Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
      * 
      */
     @Import(name="instanceStatus")
     private @Nullable Output<String> instanceStatus;
 
     /**
-     * @return 实例状态。创建中：Creating。运行中：Running。白名单维护中：AllowListMaintaining。变更配置中：Scaling。重启中：Restarting。网络维护中：NetworkMaintaining。恢复中：Restoring。升级版本中：Upgrading。不可用：Unavailable。关停中：Closing。删除中：Deleting。已关停：Closed。SSL SSL变更中：SSLUpdating。主节点切换中：SwitchMastering。角色切换中：RoleChanging。迁移中：Migrating。
+     * @return Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
      * 
      */
     public Optional<Output<String>> instanceStatus() {
@@ -287,14 +287,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * MongoDB 的实例类型，取值范围如下：ReplicaSet（默认）：副本集。ShardedCluster：分片集群 。
+     * MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
      * 
      */
     @Import(name="instanceType")
     private @Nullable Output<String> instanceType;
 
     /**
-     * @return MongoDB 的实例类型，取值范围如下：ReplicaSet（默认）：副本集。ShardedCluster：分片集群 。
+     * @return MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
      * 
      */
     public Optional<Output<String>> instanceType() {
@@ -309,14 +309,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Mongos 的 ID。
+     * Mongos ID.
      * 
      */
     @Import(name="mongosId")
     private @Nullable Output<String> mongosId;
 
     /**
-     * @return Mongos 的 ID。
+     * @return Mongos ID.
      * 
      */
     public Optional<Output<String>> mongosId() {
@@ -324,14 +324,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 分片集群中 Mongos 节点的数量。取值范围：2~32。
+     * Number of Mongos nodes in the sharded cluster. Range: 2~32.
      * 
      */
     @Import(name="mongosNodeNumber")
     private @Nullable Output<Integer> mongosNodeNumber;
 
     /**
-     * @return 分片集群中 Mongos 节点的数量。取值范围：2~32。
+     * @return Number of Mongos nodes in the sharded cluster. Range: 2~32.
      * 
      */
     public Optional<Output<Integer>> mongosNodeNumber() {
@@ -339,14 +339,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 分片集群中 Mongos 节点的规格码。
+     * Specification code for Mongos nodes in a sharded cluster.
      * 
      */
     @Import(name="mongosNodeSpec")
     private @Nullable Output<String> mongosNodeSpec;
 
     /**
-     * @return 分片集群中 Mongos 节点的规格码。
+     * @return Specification code for Mongos nodes in a sharded cluster.
      * 
      */
     public Optional<Output<String>> mongosNodeSpec() {
@@ -361,14 +361,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点数量，其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点数量。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示每个 Shard 分片中的节点数量。
+     * Node count. When the instance type is ReplicaSet, this parameter indicates the number of compute nodes in the replica set instance. When the instance type is ShardedCluster, it indicates the number of nodes in each shard.
      * 
      */
     @Import(name="nodeNumber")
     private @Nullable Output<Integer> nodeNumber;
 
     /**
-     * @return 节点数量，其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点数量。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示每个 Shard 分片中的节点数量。
+     * @return Node count. When the instance type is ReplicaSet, this parameter indicates the number of compute nodes in the replica set instance. When the instance type is ShardedCluster, it indicates the number of nodes in each shard.
      * 
      */
     public Optional<Output<Integer>> nodeNumber() {
@@ -376,14 +376,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的规格码。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点规格。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示 Shard 节点的规格。
+     * Instance specification code. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this parameter specifies the compute node specification for the replica set instance. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this parameter specifies the specification for Shard nodes.
      * 
      */
     @Import(name="nodeSpec")
     private @Nullable Output<String> nodeSpec;
 
     /**
-     * @return 实例的规格码。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点规格。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示 Shard 节点的规格。
+     * @return Instance specification code. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this parameter specifies the compute node specification for the replica set instance. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this parameter specifies the specification for Shard nodes.
      * 
      */
     public Optional<Output<String>> nodeSpec() {
@@ -398,14 +398,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 包年包月实例的购买时长，其中：当 PeriodUnit 为 Year 时，Period 取值为 1~3。当 PeriodUnit 为 Month 时，Period 取值为 1~9。
+     * Subscription instance purchase duration. When PeriodUnit is Year, Period can be 1–3. When PeriodUnit is Month, Period can be 1–9.
      * 
      */
     @Import(name="period")
     private @Nullable Output<Integer> period;
 
     /**
-     * @return 包年包月实例的购买时长，其中：当 PeriodUnit 为 Year 时，Period 取值为 1~3。当 PeriodUnit 为 Month 时，Period 取值为 1~9。
+     * @return Subscription instance purchase duration. When PeriodUnit is Year, Period can be 1–3. When PeriodUnit is Month, Period can be 1–9.
      * 
      */
     public Optional<Output<Integer>> period() {
@@ -413,14 +413,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 指定包年包月实例为包年或者包月类型。取值如下：Year：包年。Month：包月。
+     * Specify whether the subscription instance is yearly or monthly. Options: Year: yearly. Month: monthly.
      * 
      */
     @Import(name="periodUnit")
     private @Nullable Output<String> periodUnit;
 
     /**
-     * @return 指定包年包月实例为包年或者包月类型。取值如下：Year：包年。Month：包月。
+     * @return Specify whether the subscription instance is yearly or monthly. Options: Year: yearly. Month: monthly.
      * 
      */
     public Optional<Output<String>> periodUnit() {
@@ -428,14 +428,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例私网连接地址的字符串信息。
+     * String information for the instance&#39;s private network connection address.
      * 
      */
     @Import(name="privateEndpoint")
     private @Nullable Output<String> privateEndpoint;
 
     /**
-     * @return 实例私网连接地址的字符串信息。
+     * @return String information for the instance&#39;s private network connection address.
      * 
      */
     public Optional<Output<String>> privateEndpoint() {
@@ -443,14 +443,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 选择实例所属的项目。若该参数留空，新建实例会默认加入 default 项目。
+     * Select the project for the instance. If left blank, the new instance will be added to the default project.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 选择实例所属的项目。若该参数留空，新建实例会默认加入 default 项目。
+     * @return Select the project for the instance. If left blank, the new instance will be added to the default project.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -458,14 +458,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的只读节点数量。
+     * Number of read-only nodes in the instance
      * 
      */
     @Import(name="readOnlyNodeNumber")
     private @Nullable Output<Integer> readOnlyNodeNumber;
 
     /**
-     * @return 实例的只读节点数量。
+     * @return Number of read-only nodes in the instance
      * 
      */
     public Optional<Output<Integer>> readOnlyNodeNumber() {
@@ -473,14 +473,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的计划回收时间（UTC）。
+     * Scheduled recycle time for the instance (UTC)
      * 
      */
     @Import(name="reclaimTime")
     private @Nullable Output<String> reclaimTime;
 
     /**
-     * @return 实例的计划回收时间（UTC）。
+     * @return Scheduled recycle time for the instance (UTC)
      * 
      */
     public Optional<Output<String>> reclaimTime() {
@@ -488,14 +488,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 分片集群中 Shard 分片的数量。取值范围：2~32。
+     * Number of shards in the sharded cluster. Range: 2–32.
      * 
      */
     @Import(name="shardNumber")
     private @Nullable Output<Integer> shardNumber;
 
     /**
-     * @return 分片集群中 Shard 分片的数量。取值范围：2~32。
+     * @return Number of shards in the sharded cluster. Range: 2–32.
      * 
      */
     public Optional<Output<Integer>> shardNumber() {
@@ -510,14 +510,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 副本集实例的总存储空间，或分片集群中单个 Shard 分片的存储空间，单位：GiB，步长为 10。
+     * Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
      * 
      */
     @Import(name="storageSpaceGb")
     private @Nullable Output<Integer> storageSpaceGb;
 
     /**
-     * @return 副本集实例的总存储空间，或分片集群中单个 Shard 分片的存储空间，单位：GiB，步长为 10。
+     * @return Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
      * 
      */
     public Optional<Output<Integer>> storageSpaceGb() {
@@ -525,14 +525,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的存储类型。当前仅支持本地 SSD 盘（即 LocalSSD）存储。
+     * Instance storage type. Currently, only local SSD disks (LocalSSD) are supported.
      * 
      */
     @Import(name="storageType")
     private @Nullable Output<String> storageType;
 
     /**
-     * @return 实例的存储类型。当前仅支持本地 SSD 盘（即 LocalSSD）存储。
+     * @return Instance storage type. Currently, only local SSD disks (LocalSSD) are supported.
      * 
      */
     public Optional<Output<String>> storageType() {
@@ -540,14 +540,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子网 ID。
+     * Subnet ID.
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return 子网 ID。
+     * @return Subnet ID.
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -555,14 +555,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 数据库账号名称。当前仅支持在创建实例时设置超级管理员账号，账号名称固定为 root。
+     * Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
      * 
      */
     @Import(name="superAccountName")
     private @Nullable Output<String> superAccountName;
 
     /**
-     * @return 数据库账号名称。当前仅支持在创建实例时设置超级管理员账号，账号名称固定为 root。
+     * @return Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
      * 
      */
     public Optional<Output<String>> superAccountName() {
@@ -570,14 +570,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * root 账号的密码。密码需同时满足如下条件：只能为大小写字母、数字及以下特殊字符 _#!{@literal @}$%^&amp;*()+=-。长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意三种。不允许使用极易被破解的弱密码（如 Admin{@literal @}123）。
+     * Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!{@literal @}$%^&amp;*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin{@literal @}123) are not allowed.
      * 
      */
     @Import(name="superAccountPassword")
     private @Nullable Output<String> superAccountPassword;
 
     /**
-     * @return root 账号的密码。密码需同时满足如下条件：只能为大小写字母、数字及以下特殊字符 _#!{@literal @}$%^&amp;*()+=-。长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意三种。不允许使用极易被破解的弱密码（如 Admin{@literal @}123）。
+     * @return Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!{@literal @}$%^&amp;*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin{@literal @}123) are not allowed.
      * 
      */
     public Optional<Output<String>> superAccountPassword() {
@@ -592,14 +592,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的更新时间（UTC）。
+     * Instance update time (UTC).
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 实例的更新时间（UTC）。
+     * @return Instance update time (UTC).
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -607,14 +607,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 私有网络 ID。
+     * Private network ID.
      * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
-     * @return 私有网络 ID。
+     * @return Private network ID.
      * 
      */
     public Optional<Output<String>> vpcId() {
@@ -622,14 +622,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例所在可用区的 ID。
+     * Availability zone ID where the instance is located.
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return 实例所在可用区的 ID。
+     * @return Availability zone ID where the instance is located.
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -704,7 +704,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListIds 白名单 ID 列表。新建实例会被绑定到指定白名单。
+         * @param allowListIds Allowlist ID list. New instances are bound to the specified allowlist.
          * 
          * @return builder
          * 
@@ -715,7 +715,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListIds 白名单 ID 列表。新建实例会被绑定到指定白名单。
+         * @param allowListIds Allowlist ID list. New instances are bound to the specified allowlist.
          * 
          * @return builder
          * 
@@ -725,7 +725,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListIds 白名单 ID 列表。新建实例会被绑定到指定白名单。
+         * @param allowListIds Allowlist ID list. New instances are bound to the specified allowlist.
          * 
          * @return builder
          * 
@@ -735,7 +735,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoRenew 是否开启自动续费，取值范围如下：false（默认）：不开启自动续费。true：开启自动续费。
+         * @param autoRenew Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
          * 
          * @return builder
          * 
@@ -746,7 +746,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoRenew 是否开启自动续费，取值范围如下：false（默认）：不开启自动续费。true：开启自动续费。
+         * @param autoRenew Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
          * 
          * @return builder
          * 
@@ -756,7 +756,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeStatus 实例计费状态，取值范围如下：Normal：正常。WaitingPaid：等待支付。ChangingPayType：计费变更中。Renewing：续费中。Overdue：已到期。Owing：欠费中。Unsubscribing：退订中。
+         * @param chargeStatus Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
          * 
          * @return builder
          * 
@@ -767,7 +767,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeStatus 实例计费状态，取值范围如下：Normal：正常。WaitingPaid：等待支付。ChangingPayType：计费变更中。Renewing：续费中。Overdue：已到期。Owing：欠费中。Unsubscribing：退订中。
+         * @param chargeStatus Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
          * 
          * @return builder
          * 
@@ -777,7 +777,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeType 实例计费类型，取值范围如下：PostPaid（默认）：按量计费（也称后付费）。Prepaid：包年包月（也称预付费）。
+         * @param chargeType Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
          * 
          * @return builder
          * 
@@ -788,7 +788,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeType 实例计费类型，取值范围如下：PostPaid（默认）：按量计费（也称后付费）。Prepaid：包年包月（也称预付费）。
+         * @param chargeType Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
          * 
          * @return builder
          * 
@@ -798,7 +798,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param closedTime 计划关停时间（UTC）。
+         * @param closedTime Scheduled shutdown time (UTC).
          * 
          * @return builder
          * 
@@ -809,7 +809,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param closedTime 计划关停时间（UTC）。
+         * @param closedTime Scheduled shutdown time (UTC).
          * 
          * @return builder
          * 
@@ -819,7 +819,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configServerNodeSpec 分片集群中 ConfigServer 节点的规格码。默认值为 mongo.config.1c2g。
+         * @param configServerNodeSpec ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
          * 
          * @return builder
          * 
@@ -830,7 +830,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configServerNodeSpec 分片集群中 ConfigServer 节点的规格码。默认值为 mongo.config.1c2g。
+         * @param configServerNodeSpec ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
          * 
          * @return builder
          * 
@@ -840,7 +840,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configServerStorageSpaceGb 分片集群中 ConfigServer 的存储空间，单位：GiB。步长为 10，默认值：20。
+         * @param configServerStorageSpaceGb ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
          * 
          * @return builder
          * 
@@ -851,7 +851,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configServerStorageSpaceGb 分片集群中 ConfigServer 的存储空间，单位：GiB。步长为 10，默认值：20。
+         * @param configServerStorageSpaceGb ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
          * 
          * @return builder
          * 
@@ -874,7 +874,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configServersId ConfigServer 的 ID。
+         * @param configServersId ConfigServer ID
          * 
          * @return builder
          * 
@@ -885,7 +885,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configServersId ConfigServer 的 ID。
+         * @param configServersId ConfigServer ID
          * 
          * @return builder
          * 
@@ -895,7 +895,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 实例创建时间（UTC）。
+         * @param createdTime Instance creation time (UTC).
          * 
          * @return builder
          * 
@@ -906,7 +906,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 实例创建时间（UTC）。
+         * @param createdTime Instance creation time (UTC).
          * 
          * @return builder
          * 
@@ -916,7 +916,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbEngine 数据库引擎。取值固定为 MongoDB
+         * @param dbEngine Database engine. The value is fixed as MongoDB
          * 
          * @return builder
          * 
@@ -927,7 +927,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbEngine 数据库引擎。取值固定为 MongoDB
+         * @param dbEngine Database engine. The value is fixed as MongoDB
          * 
          * @return builder
          * 
@@ -937,7 +937,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbEngineVersion 数据库引擎版本，取值范围如下：MongoDB*4*0（默认）：MongoDB 4.0 版本。MongoDB*4*2：MongoDB 4.2 版本。MongoDB*4*4：MongoDB 4.4 版本。MongoDB*5*0：MongoDB 5.0 版本。MongoDB*6*0：MongoDB 6.0 版本。MongoDB*7*0：MongoDB 7.0 版本。
+         * @param dbEngineVersion Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
          * 
          * @return builder
          * 
@@ -948,7 +948,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbEngineVersion 数据库引擎版本，取值范围如下：MongoDB*4*0（默认）：MongoDB 4.0 版本。MongoDB*4*2：MongoDB 4.2 版本。MongoDB*4*4：MongoDB 4.4 版本。MongoDB*5*0：MongoDB 5.0 版本。MongoDB*6*0：MongoDB 6.0 版本。MongoDB*7*0：MongoDB 7.0 版本。
+         * @param dbEngineVersion Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
          * 
          * @return builder
          * 
@@ -958,7 +958,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbEngineVersionStr 数据库引擎版本的字符串。
+         * @param dbEngineVersionStr Database engine version string
          * 
          * @return builder
          * 
@@ -969,7 +969,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbEngineVersionStr 数据库引擎版本的字符串。
+         * @param dbEngineVersionStr Database engine version string
          * 
          * @return builder
          * 
@@ -979,7 +979,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expiredTime 实例到期时间（UTC）。
+         * @param expiredTime Instance expiration time (UTC).
          * 
          * @return builder
          * 
@@ -990,7 +990,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expiredTime 实例到期时间（UTC）。
+         * @param expiredTime Instance expiration time (UTC).
          * 
          * @return builder
          * 
@@ -1000,7 +1000,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceCount 需要创建的实例数量。取值为大于等于 1 的正整数，默认值为1。
+         * @param instanceCount Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
          * 
          * @return builder
          * 
@@ -1011,7 +1011,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceCount 需要创建的实例数量。取值为大于等于 1 的正整数，默认值为1。
+         * @param instanceCount Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
          * 
          * @return builder
          * 
@@ -1021,7 +1021,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID.
          * 
          * @return builder
          * 
@@ -1032,7 +1032,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID.
          * 
          * @return builder
          * 
@@ -1042,7 +1042,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceName 实例名称。名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 2~64 个字符。
+         * @param instanceName Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
          * 
          * @return builder
          * 
@@ -1053,7 +1053,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceName 实例名称。名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 2~64 个字符。
+         * @param instanceName Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
          * 
          * @return builder
          * 
@@ -1063,7 +1063,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceStatus 实例状态。创建中：Creating。运行中：Running。白名单维护中：AllowListMaintaining。变更配置中：Scaling。重启中：Restarting。网络维护中：NetworkMaintaining。恢复中：Restoring。升级版本中：Upgrading。不可用：Unavailable。关停中：Closing。删除中：Deleting。已关停：Closed。SSL SSL变更中：SSLUpdating。主节点切换中：SwitchMastering。角色切换中：RoleChanging。迁移中：Migrating。
+         * @param instanceStatus Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
          * 
          * @return builder
          * 
@@ -1074,7 +1074,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceStatus 实例状态。创建中：Creating。运行中：Running。白名单维护中：AllowListMaintaining。变更配置中：Scaling。重启中：Restarting。网络维护中：NetworkMaintaining。恢复中：Restoring。升级版本中：Upgrading。不可用：Unavailable。关停中：Closing。删除中：Deleting。已关停：Closed。SSL SSL变更中：SSLUpdating。主节点切换中：SwitchMastering。角色切换中：RoleChanging。迁移中：Migrating。
+         * @param instanceStatus Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
          * 
          * @return builder
          * 
@@ -1084,7 +1084,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceType MongoDB 的实例类型，取值范围如下：ReplicaSet（默认）：副本集。ShardedCluster：分片集群 。
+         * @param instanceType MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
          * 
          * @return builder
          * 
@@ -1095,7 +1095,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceType MongoDB 的实例类型，取值范围如下：ReplicaSet（默认）：副本集。ShardedCluster：分片集群 。
+         * @param instanceType MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
          * 
          * @return builder
          * 
@@ -1118,7 +1118,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mongosId Mongos 的 ID。
+         * @param mongosId Mongos ID.
          * 
          * @return builder
          * 
@@ -1129,7 +1129,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mongosId Mongos 的 ID。
+         * @param mongosId Mongos ID.
          * 
          * @return builder
          * 
@@ -1139,7 +1139,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mongosNodeNumber 分片集群中 Mongos 节点的数量。取值范围：2~32。
+         * @param mongosNodeNumber Number of Mongos nodes in the sharded cluster. Range: 2~32.
          * 
          * @return builder
          * 
@@ -1150,7 +1150,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mongosNodeNumber 分片集群中 Mongos 节点的数量。取值范围：2~32。
+         * @param mongosNodeNumber Number of Mongos nodes in the sharded cluster. Range: 2~32.
          * 
          * @return builder
          * 
@@ -1160,7 +1160,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mongosNodeSpec 分片集群中 Mongos 节点的规格码。
+         * @param mongosNodeSpec Specification code for Mongos nodes in a sharded cluster.
          * 
          * @return builder
          * 
@@ -1171,7 +1171,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mongosNodeSpec 分片集群中 Mongos 节点的规格码。
+         * @param mongosNodeSpec Specification code for Mongos nodes in a sharded cluster.
          * 
          * @return builder
          * 
@@ -1194,7 +1194,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeNumber 节点数量，其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点数量。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示每个 Shard 分片中的节点数量。
+         * @param nodeNumber Node count. When the instance type is ReplicaSet, this parameter indicates the number of compute nodes in the replica set instance. When the instance type is ShardedCluster, it indicates the number of nodes in each shard.
          * 
          * @return builder
          * 
@@ -1205,7 +1205,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeNumber 节点数量，其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点数量。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示每个 Shard 分片中的节点数量。
+         * @param nodeNumber Node count. When the instance type is ReplicaSet, this parameter indicates the number of compute nodes in the replica set instance. When the instance type is ShardedCluster, it indicates the number of nodes in each shard.
          * 
          * @return builder
          * 
@@ -1215,7 +1215,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeSpec 实例的规格码。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点规格。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示 Shard 节点的规格。
+         * @param nodeSpec Instance specification code. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this parameter specifies the compute node specification for the replica set instance. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this parameter specifies the specification for Shard nodes.
          * 
          * @return builder
          * 
@@ -1226,7 +1226,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeSpec 实例的规格码。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点规格。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示 Shard 节点的规格。
+         * @param nodeSpec Instance specification code. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this parameter specifies the compute node specification for the replica set instance. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this parameter specifies the specification for Shard nodes.
          * 
          * @return builder
          * 
@@ -1249,7 +1249,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param period 包年包月实例的购买时长，其中：当 PeriodUnit 为 Year 时，Period 取值为 1~3。当 PeriodUnit 为 Month 时，Period 取值为 1~9。
+         * @param period Subscription instance purchase duration. When PeriodUnit is Year, Period can be 1–3. When PeriodUnit is Month, Period can be 1–9.
          * 
          * @return builder
          * 
@@ -1260,7 +1260,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param period 包年包月实例的购买时长，其中：当 PeriodUnit 为 Year 时，Period 取值为 1~3。当 PeriodUnit 为 Month 时，Period 取值为 1~9。
+         * @param period Subscription instance purchase duration. When PeriodUnit is Year, Period can be 1–3. When PeriodUnit is Month, Period can be 1–9.
          * 
          * @return builder
          * 
@@ -1270,7 +1270,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param periodUnit 指定包年包月实例为包年或者包月类型。取值如下：Year：包年。Month：包月。
+         * @param periodUnit Specify whether the subscription instance is yearly or monthly. Options: Year: yearly. Month: monthly.
          * 
          * @return builder
          * 
@@ -1281,7 +1281,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param periodUnit 指定包年包月实例为包年或者包月类型。取值如下：Year：包年。Month：包月。
+         * @param periodUnit Specify whether the subscription instance is yearly or monthly. Options: Year: yearly. Month: monthly.
          * 
          * @return builder
          * 
@@ -1291,7 +1291,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param privateEndpoint 实例私网连接地址的字符串信息。
+         * @param privateEndpoint String information for the instance&#39;s private network connection address.
          * 
          * @return builder
          * 
@@ -1302,7 +1302,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param privateEndpoint 实例私网连接地址的字符串信息。
+         * @param privateEndpoint String information for the instance&#39;s private network connection address.
          * 
          * @return builder
          * 
@@ -1312,7 +1312,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 选择实例所属的项目。若该参数留空，新建实例会默认加入 default 项目。
+         * @param projectName Select the project for the instance. If left blank, the new instance will be added to the default project.
          * 
          * @return builder
          * 
@@ -1323,7 +1323,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 选择实例所属的项目。若该参数留空，新建实例会默认加入 default 项目。
+         * @param projectName Select the project for the instance. If left blank, the new instance will be added to the default project.
          * 
          * @return builder
          * 
@@ -1333,7 +1333,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param readOnlyNodeNumber 实例的只读节点数量。
+         * @param readOnlyNodeNumber Number of read-only nodes in the instance
          * 
          * @return builder
          * 
@@ -1344,7 +1344,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param readOnlyNodeNumber 实例的只读节点数量。
+         * @param readOnlyNodeNumber Number of read-only nodes in the instance
          * 
          * @return builder
          * 
@@ -1354,7 +1354,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param reclaimTime 实例的计划回收时间（UTC）。
+         * @param reclaimTime Scheduled recycle time for the instance (UTC)
          * 
          * @return builder
          * 
@@ -1365,7 +1365,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param reclaimTime 实例的计划回收时间（UTC）。
+         * @param reclaimTime Scheduled recycle time for the instance (UTC)
          * 
          * @return builder
          * 
@@ -1375,7 +1375,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shardNumber 分片集群中 Shard 分片的数量。取值范围：2~32。
+         * @param shardNumber Number of shards in the sharded cluster. Range: 2–32.
          * 
          * @return builder
          * 
@@ -1386,7 +1386,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shardNumber 分片集群中 Shard 分片的数量。取值范围：2~32。
+         * @param shardNumber Number of shards in the sharded cluster. Range: 2–32.
          * 
          * @return builder
          * 
@@ -1409,7 +1409,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageSpaceGb 副本集实例的总存储空间，或分片集群中单个 Shard 分片的存储空间，单位：GiB，步长为 10。
+         * @param storageSpaceGb Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
          * 
          * @return builder
          * 
@@ -1420,7 +1420,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageSpaceGb 副本集实例的总存储空间，或分片集群中单个 Shard 分片的存储空间，单位：GiB，步长为 10。
+         * @param storageSpaceGb Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
          * 
          * @return builder
          * 
@@ -1430,7 +1430,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageType 实例的存储类型。当前仅支持本地 SSD 盘（即 LocalSSD）存储。
+         * @param storageType Instance storage type. Currently, only local SSD disks (LocalSSD) are supported.
          * 
          * @return builder
          * 
@@ -1441,7 +1441,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storageType 实例的存储类型。当前仅支持本地 SSD 盘（即 LocalSSD）存储。
+         * @param storageType Instance storage type. Currently, only local SSD disks (LocalSSD) are supported.
          * 
          * @return builder
          * 
@@ -1451,7 +1451,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId 子网 ID。
+         * @param subnetId Subnet ID.
          * 
          * @return builder
          * 
@@ -1462,7 +1462,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId 子网 ID。
+         * @param subnetId Subnet ID.
          * 
          * @return builder
          * 
@@ -1472,7 +1472,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param superAccountName 数据库账号名称。当前仅支持在创建实例时设置超级管理员账号，账号名称固定为 root。
+         * @param superAccountName Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
          * 
          * @return builder
          * 
@@ -1483,7 +1483,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param superAccountName 数据库账号名称。当前仅支持在创建实例时设置超级管理员账号，账号名称固定为 root。
+         * @param superAccountName Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
          * 
          * @return builder
          * 
@@ -1493,7 +1493,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param superAccountPassword root 账号的密码。密码需同时满足如下条件：只能为大小写字母、数字及以下特殊字符 _#!{@literal @}$%^&amp;*()+=-。长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意三种。不允许使用极易被破解的弱密码（如 Admin{@literal @}123）。
+         * @param superAccountPassword Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!{@literal @}$%^&amp;*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin{@literal @}123) are not allowed.
          * 
          * @return builder
          * 
@@ -1504,7 +1504,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param superAccountPassword root 账号的密码。密码需同时满足如下条件：只能为大小写字母、数字及以下特殊字符 _#!{@literal @}$%^&amp;*()+=-。长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意三种。不允许使用极易被破解的弱密码（如 Admin{@literal @}123）。
+         * @param superAccountPassword Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!{@literal @}$%^&amp;*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin{@literal @}123) are not allowed.
          * 
          * @return builder
          * 
@@ -1527,7 +1527,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 实例的更新时间（UTC）。
+         * @param updatedTime Instance update time (UTC).
          * 
          * @return builder
          * 
@@ -1538,7 +1538,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 实例的更新时间（UTC）。
+         * @param updatedTime Instance update time (UTC).
          * 
          * @return builder
          * 
@@ -1548,7 +1548,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 私有网络 ID。
+         * @param vpcId Private network ID.
          * 
          * @return builder
          * 
@@ -1559,7 +1559,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 私有网络 ID。
+         * @param vpcId Private network ID.
          * 
          * @return builder
          * 
@@ -1569,7 +1569,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 实例所在可用区的 ID。
+         * @param zoneId Availability zone ID where the instance is located.
          * 
          * @return builder
          * 
@@ -1580,7 +1580,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 实例所在可用区的 ID。
+         * @param zoneId Availability zone ID where the instance is located.
          * 
          * @return builder
          * 

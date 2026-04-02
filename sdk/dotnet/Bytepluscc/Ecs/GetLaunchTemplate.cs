@@ -13,19 +13,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     public static class GetLaunchTemplate
     {
         /// <summary>
-        /// Data Source schema for Byteplus::ECS::Launchtemplate
+        /// Data Source schema for Byteplus::ECS::LaunchTemplate
         /// </summary>
         public static Task<GetLaunchTemplateResult> InvokeAsync(GetLaunchTemplateArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetLaunchTemplateResult>("bytepluscc:ecs/getLaunchTemplate:getLaunchTemplate", args ?? new GetLaunchTemplateArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Data Source schema for Byteplus::ECS::Launchtemplate
+        /// Data Source schema for Byteplus::ECS::LaunchTemplate
         /// </summary>
         public static Output<GetLaunchTemplateResult> Invoke(GetLaunchTemplateInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLaunchTemplateResult>("bytepluscc:ecs/getLaunchTemplate:getLaunchTemplate", args ?? new GetLaunchTemplateInvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Data Source schema for Byteplus::ECS::Launchtemplate
+        /// Data Source schema for Byteplus::ECS::LaunchTemplate
         /// </summary>
         public static Output<GetLaunchTemplateResult> Invoke(GetLaunchTemplateInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetLaunchTemplateResult>("bytepluscc:ecs/getLaunchTemplate:getLaunchTemplate", args ?? new GetLaunchTemplateInvokeArgs(), options.WithDefaults());
@@ -65,11 +65,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     public sealed class GetLaunchTemplateResult
     {
         /// <summary>
-        /// 实例启动模板的创建时间。
+        /// Instance launch template creation time
         /// </summary>
         public readonly string CreatedAt;
         /// <summary>
-        /// 实例启动模板的默认版本号。
+        /// Instance launch template default version number
         /// </summary>
         public readonly int DefaultVersionNumber;
         /// <summary>
@@ -77,31 +77,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 实例启动模的最新版本号。
+        /// Latest version number of the instance launch template.
         /// </summary>
         public readonly int LatestVersionNumber;
         /// <summary>
-        /// 实例启动模板 ID。
+        /// Instance launch template ID
         /// </summary>
         public readonly string LaunchTemplateId;
         /// <summary>
-        /// 实例启动模板名称。
+        /// Instance launch template name.
         /// </summary>
         public readonly string LaunchTemplateName;
         /// <summary>
-        /// 实例启动模版所属项目。
+        /// Project associated with the instance launch template.
         /// </summary>
         public readonly string LaunchTemplateProjectName;
         /// <summary>
-        /// 实例启动模版的标签信息。
+        /// Instance launch template tag information
         /// </summary>
         public readonly ImmutableArray<Outputs.GetLaunchTemplateLaunchTemplateTagResult> LaunchTemplateTags;
         /// <summary>
-        /// 实例启动模板版本信息。
+        /// Instance launch template version information
         /// </summary>
         public readonly Outputs.GetLaunchTemplateLaunchTemplateVersionResult LaunchTemplateVersion;
         /// <summary>
-        /// 实例启动模板的更新时间。
+        /// Instance launch template update time
         /// </summary>
         public readonly string UpdatedAt;
 

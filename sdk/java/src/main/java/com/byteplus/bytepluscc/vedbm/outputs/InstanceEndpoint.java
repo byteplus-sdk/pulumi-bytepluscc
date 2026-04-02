@@ -17,62 +17,62 @@ import javax.annotation.Nullable;
 public final class InstanceEndpoint {
     private @Nullable List<InstanceEndpointAddress> addresses;
     /**
-     * @return 是否允许自动加入新节点，取值：true：是。false：否。
+     * @return Whether to allow automatic addition of new nodes. Values: true: yes. false: no.
      * 
      */
     private @Nullable Boolean autoAddNewNodes;
     /**
-     * @return 一致性级别，仅对读写模式的连接终端有效。取值：Eventual：最终一致性。Session：会话一致性。Global：全局一致性。
+     * @return Consistency level, applicable only to read-write mode connection endpoints. Values: Eventual: eventual consistency. Session: session consistency. Global: global consistency.
      * 
      */
     private @Nullable String consistLevel;
     /**
-     * @return 延迟很大时，只读节点同步最新数据的超时时间，单位为 us，取值范围为 1us~100000000us。
+     * @return When latency is high, the timeout for read-only nodes to synchronize the latest data, in microseconds (us). Range: 1us~100000000us
      * 
      */
     private @Nullable Integer consistTimeout;
     /**
-     * @return 只读节点同步数据超时后的超时策略，支持以下两种策略：ReturnError：返回 SQL 报错（wait replication complete timeout, please retry）。ReadMaster：发送请求到主节点。
+     * @return Timeout policy for read-only node data synchronization. Supports the following two policies: ReturnError: Returns SQL error (wait replication complete timeout, please retry). ReadMaster: Sends request to the primary node.
      * 
      */
     private @Nullable String consistTimeoutAction;
     /**
-     * @return 地址描述。
+     * @return Address description
      * 
      */
     private @Nullable String description;
     /**
-     * @return 是否开启事务拆分，仅对读写模式的连接终端有效。取值：true：是。false：否。
+     * @return Whether to enable transaction splitting. Only effective for read-write mode endpoints. Values: true: yes. false: no.
      * 
      */
     private @Nullable Boolean distributedTransaction;
     /**
-     * @return 实例连接终端 ID。
+     * @return Instance connection endpoint ID.
      * 
      */
     private @Nullable String endpointId;
     /**
-     * @return 实例连接终端名称。
+     * @return Instance connection endpoint name.
      * 
      */
     private @Nullable String endpointName;
     /**
-     * @return 连接终端类型，取值：Cluster：默认终端。Primary：主节点终端。Custom：自定义终端。
+     * @return Connection endpoint type. Values: Cluster: default endpoint. Primary: primary node endpoint. Custom: custom endpoint.
      * 
      */
     private @Nullable String endpointType;
     /**
-     * @return 主节点是否接受读请求。仅对读写模式的连接终端有效。true：是。false：否。
+     * @return Whether the primary node accepts read requests. Applies only to read/write mode endpoints. true: Yes. false: No
      * 
      */
     private @Nullable Boolean masterAcceptReadRequests;
     /**
-     * @return 连接终端配置的节点列表。
+     * @return Node list configured for the connection endpoint.
      * 
      */
     private @Nullable List<String> nodeIds;
     /**
-     * @return 连接终端的读写模式，取值：ReadWrite: 读写。ReadOnly: 只读。
+     * @return Endpoint read/write mode. Options: ReadWrite: Read/write. ReadOnly: Read-only
      * 
      */
     private @Nullable String readWriteMode;
@@ -82,84 +82,84 @@ public final class InstanceEndpoint {
         return this.addresses == null ? List.of() : this.addresses;
     }
     /**
-     * @return 是否允许自动加入新节点，取值：true：是。false：否。
+     * @return Whether to allow automatic addition of new nodes. Values: true: yes. false: no.
      * 
      */
     public Optional<Boolean> autoAddNewNodes() {
         return Optional.ofNullable(this.autoAddNewNodes);
     }
     /**
-     * @return 一致性级别，仅对读写模式的连接终端有效。取值：Eventual：最终一致性。Session：会话一致性。Global：全局一致性。
+     * @return Consistency level, applicable only to read-write mode connection endpoints. Values: Eventual: eventual consistency. Session: session consistency. Global: global consistency.
      * 
      */
     public Optional<String> consistLevel() {
         return Optional.ofNullable(this.consistLevel);
     }
     /**
-     * @return 延迟很大时，只读节点同步最新数据的超时时间，单位为 us，取值范围为 1us~100000000us。
+     * @return When latency is high, the timeout for read-only nodes to synchronize the latest data, in microseconds (us). Range: 1us~100000000us
      * 
      */
     public Optional<Integer> consistTimeout() {
         return Optional.ofNullable(this.consistTimeout);
     }
     /**
-     * @return 只读节点同步数据超时后的超时策略，支持以下两种策略：ReturnError：返回 SQL 报错（wait replication complete timeout, please retry）。ReadMaster：发送请求到主节点。
+     * @return Timeout policy for read-only node data synchronization. Supports the following two policies: ReturnError: Returns SQL error (wait replication complete timeout, please retry). ReadMaster: Sends request to the primary node.
      * 
      */
     public Optional<String> consistTimeoutAction() {
         return Optional.ofNullable(this.consistTimeoutAction);
     }
     /**
-     * @return 地址描述。
+     * @return Address description
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return 是否开启事务拆分，仅对读写模式的连接终端有效。取值：true：是。false：否。
+     * @return Whether to enable transaction splitting. Only effective for read-write mode endpoints. Values: true: yes. false: no.
      * 
      */
     public Optional<Boolean> distributedTransaction() {
         return Optional.ofNullable(this.distributedTransaction);
     }
     /**
-     * @return 实例连接终端 ID。
+     * @return Instance connection endpoint ID.
      * 
      */
     public Optional<String> endpointId() {
         return Optional.ofNullable(this.endpointId);
     }
     /**
-     * @return 实例连接终端名称。
+     * @return Instance connection endpoint name.
      * 
      */
     public Optional<String> endpointName() {
         return Optional.ofNullable(this.endpointName);
     }
     /**
-     * @return 连接终端类型，取值：Cluster：默认终端。Primary：主节点终端。Custom：自定义终端。
+     * @return Connection endpoint type. Values: Cluster: default endpoint. Primary: primary node endpoint. Custom: custom endpoint.
      * 
      */
     public Optional<String> endpointType() {
         return Optional.ofNullable(this.endpointType);
     }
     /**
-     * @return 主节点是否接受读请求。仅对读写模式的连接终端有效。true：是。false：否。
+     * @return Whether the primary node accepts read requests. Applies only to read/write mode endpoints. true: Yes. false: No
      * 
      */
     public Optional<Boolean> masterAcceptReadRequests() {
         return Optional.ofNullable(this.masterAcceptReadRequests);
     }
     /**
-     * @return 连接终端配置的节点列表。
+     * @return Node list configured for the connection endpoint.
      * 
      */
     public List<String> nodeIds() {
         return this.nodeIds == null ? List.of() : this.nodeIds;
     }
     /**
-     * @return 连接终端的读写模式，取值：ReadWrite: 读写。ReadOnly: 只读。
+     * @return Endpoint read/write mode. Options: ReadWrite: Read/write. ReadOnly: Read-only
      * 
      */
     public Optional<String> readWriteMode() {

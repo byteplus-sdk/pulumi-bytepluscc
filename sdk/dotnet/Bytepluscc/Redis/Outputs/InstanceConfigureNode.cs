@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis.Outputs
     public sealed class InstanceConfigureNode
     {
         /// <summary>
-        /// 每个节点所属的可用区。
+        /// The availability zone each node belongs to.
         /// </summary>
         public readonly string? Az;
 

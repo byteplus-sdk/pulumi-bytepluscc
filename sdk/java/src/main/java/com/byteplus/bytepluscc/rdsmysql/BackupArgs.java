@@ -26,14 +26,14 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备份类型，取值：Physical（物理备份）、Logical（逻辑备份）、Snapshot（快照备份）。
+     * Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
      * 
      */
     @Import(name="backupMethod")
     private @Nullable Output<String> backupMethod;
 
     /**
-     * @return 备份类型，取值：Physical（物理备份）、Logical（逻辑备份）、Snapshot（快照备份）。
+     * @return Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
      * 
      */
     public Optional<Output<String>> backupMethod() {
@@ -41,14 +41,14 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备份方式，取值：Full（全量/库表备）、Increment（增量备份）、DumpAll（全库备份）。
+     * Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
      * 
      */
     @Import(name="backupType")
     private @Nullable Output<String> backupType;
 
     /**
-     * @return 备份方式，取值：Full（全量/库表备）、Increment（增量备份）、DumpAll（全库备份）。
+     * @return Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
      * 
      */
     public Optional<Output<String>> backupType() {
@@ -56,14 +56,14 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例 ID。
+     * Instance ID
      * 
      */
     @Import(name="instanceId", required=true)
     private Output<String> instanceId;
 
     /**
-     * @return 实例 ID。
+     * @return Instance ID
      * 
      */
     public Output<String> instanceId() {
@@ -111,7 +111,7 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupMethod 备份类型，取值：Physical（物理备份）、Logical（逻辑备份）、Snapshot（快照备份）。
+         * @param backupMethod Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
          * 
          * @return builder
          * 
@@ -122,7 +122,7 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupMethod 备份类型，取值：Physical（物理备份）、Logical（逻辑备份）、Snapshot（快照备份）。
+         * @param backupMethod Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
          * 
          * @return builder
          * 
@@ -132,7 +132,7 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupType 备份方式，取值：Full（全量/库表备）、Increment（增量备份）、DumpAll（全库备份）。
+         * @param backupType Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
          * 
          * @return builder
          * 
@@ -143,7 +143,7 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupType 备份方式，取值：Full（全量/库表备）、Increment（增量备份）、DumpAll（全库备份）。
+         * @param backupType Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
          * 
          * @return builder
          * 
@@ -153,7 +153,7 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID
          * 
          * @return builder
          * 

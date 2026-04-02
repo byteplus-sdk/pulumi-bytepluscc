@@ -28,14 +28,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入。Disable：不自动加入（默认）。
+     * When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
      * 
      */
     @Import(name="autoAddNewNodes")
     private @Nullable Output<String> autoAddNewNodes;
 
     /**
-     * @return 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入。Disable：不自动加入（默认）。
+     * @return When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
      * 
      */
     public Optional<Output<String>> autoAddNewNodes() {
@@ -43,14 +43,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 地址描述。
+     * Address description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 地址描述。
+     * @return Address description
      * 
      */
     public Optional<Output<String>> description() {
@@ -58,14 +58,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否已开启全局只读。Enable：开启。Disable：未开启。
+     * Whether global read-only is enabled. Enable: Enabled. Disable: Not enabled.
      * 
      */
     @Import(name="enableReadOnly")
     private @Nullable Output<String> enableReadOnly;
 
     /**
-     * @return 是否已开启全局只读。Enable：开启。Disable：未开启。
+     * @return Whether global read-only is enabled. Enable: Enabled. Disable: Not enabled.
      * 
      */
     public Optional<Output<String>> enableReadOnly() {
@@ -73,14 +73,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+     * Whether read/write splitting is enabled. Values: Enable: Enabled. Disable: Not enabled.
      * 
      */
     @Import(name="enableReadWriteSplitting")
     private @Nullable Output<String> enableReadWriteSplitting;
 
     /**
-     * @return 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+     * @return Whether read/write splitting is enabled. Values: Enable: Enabled. Disable: Not enabled.
      * 
      */
     public Optional<Output<String>> enableReadWriteSplitting() {
@@ -88,14 +88,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例连接终端 ID。
+     * Instance connection endpoint ID.
      * 
      */
     @Import(name="endpointId")
     private @Nullable Output<String> endpointId;
 
     /**
-     * @return 实例连接终端 ID。
+     * @return Instance connection endpoint ID.
      * 
      */
     public Optional<Output<String>> endpointId() {
@@ -103,14 +103,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例连接终端名称。
+     * Instance connection endpoint name.
      * 
      */
     @Import(name="endpointName")
     private @Nullable Output<String> endpointName;
 
     /**
-     * @return 实例连接终端名称。
+     * @return Instance connection endpoint name.
      * 
      */
     public Optional<Output<String>> endpointName() {
@@ -118,14 +118,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 终端类型：Cluster：默认终端（默认创建）。Custom：自定义终端。
+     * Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
      * 
      */
     @Import(name="endpointType")
     private @Nullable Output<String> endpointType;
 
     /**
-     * @return 终端类型：Cluster：默认终端（默认创建）。Custom：自定义终端。
+     * @return Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
      * 
      */
     public Optional<Output<String>> endpointType() {
@@ -133,14 +133,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例 ID。
+     * Instance ID.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -148,14 +148,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 连接终端配置的节点列表。说明当 EndpointType 为 Custom 时必选。主节点无需传节点 ID，传入 Primary 字符串即可。
+     * List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string &#39;Primary&#39;.
      * 
      */
     @Import(name="nodes")
     private @Nullable Output<String> nodes;
 
     /**
-     * @return 连接终端配置的节点列表。说明当 EndpointType 为 Custom 时必选。主节点无需传节点 ID，传入 Primary 字符串即可。
+     * @return List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string &#39;Primary&#39;.
      * 
      */
     public Optional<Output<String>> nodes() {
@@ -163,14 +163,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 只读权重分配模式。取值：Default：标准权重分配（默认值）。Custom：自定义权重分配。
+     * Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
      * 
      */
     @Import(name="readOnlyNodeDistributionType")
     private @Nullable Output<String> readOnlyNodeDistributionType;
 
     /**
-     * @return 只读权重分配模式。取值：Default：标准权重分配（默认值）。Custom：自定义权重分配。
+     * @return Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
      * 
      */
     public Optional<Output<String>> readOnlyNodeDistributionType() {
@@ -178,14 +178,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 只读节点的最大延迟阈值，当只读节点延迟时间超过该值时，读取流量不发往该节点，单位：秒。取值：0~3600。默认值：30。说明支持对开通了读写分离的默认终端设置此参数。
+     * Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
      * 
      */
     @Import(name="readOnlyNodeMaxDelayTime")
     private @Nullable Output<Integer> readOnlyNodeMaxDelayTime;
 
     /**
-     * @return 只读节点的最大延迟阈值，当只读节点延迟时间超过该值时，读取流量不发往该节点，单位：秒。取值：0~3600。默认值：30。说明支持对开通了读写分离的默认终端设置此参数。
+     * @return Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
      * 
      */
     public Optional<Output<Integer>> readOnlyNodeMaxDelayTime() {
@@ -200,14 +200,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 读写模式：ReadWrite：读写。ReadOnly：只读。
+     * Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
      * 
      */
     @Import(name="readWriteMode")
     private @Nullable Output<String> readWriteMode;
 
     /**
-     * @return 读写模式：ReadWrite：读写。ReadOnly：只读。
+     * @return Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
      * 
      */
     public Optional<Output<String>> readWriteMode() {
@@ -215,14 +215,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 终端开启读写分离后，为终端设置的代理连接数。代理连接数的取值下限为 20。代理连接数的取值上限取决于实例主节点的规格，不同规格支持的代理连接数上限不同，详细信息请参见产品规格。
+     * After enabling read/write splitting for the endpoint, set the number of proxy connections for the endpoint. The minimum value for proxy connections is 20. The maximum value depends on the specifications of the primary node; different specifications support different maximum proxy connections. For details, see product specifications.
      * 
      */
     @Import(name="readWriteProxyConnection")
     private @Nullable Output<Integer> readWriteProxyConnection;
 
     /**
-     * @return 终端开启读写分离后，为终端设置的代理连接数。代理连接数的取值下限为 20。代理连接数的取值上限取决于实例主节点的规格，不同规格支持的代理连接数上限不同，详细信息请参见产品规格。
+     * @return After enabling read/write splitting for the endpoint, set the number of proxy connections for the endpoint. The minimum value for proxy connections is 20. The maximum value depends on the specifications of the primary node; different specifications support different maximum proxy connections. For details, see product specifications.
      * 
      */
     public Optional<Output<Integer>> readWriteProxyConnection() {
@@ -230,14 +230,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 终端是否将写请求发送给写节点（目前仅主节点为写节点）。取值：true：是。默认值。false：否。
+     * Whether the endpoint sends write requests to the write node (currently only the primary node is the write node). Values: true: Yes (default). false: No.
      * 
      */
     @Import(name="writeNodeHaltWriting")
     private @Nullable Output<Boolean> writeNodeHaltWriting;
 
     /**
-     * @return 终端是否将写请求发送给写节点（目前仅主节点为写节点）。取值：true：是。默认值。false：否。
+     * @return Whether the endpoint sends write requests to the write node (currently only the primary node is the write node). Values: true: Yes (default). false: No.
      * 
      */
     public Optional<Output<Boolean>> writeNodeHaltWriting() {
@@ -297,7 +297,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoAddNewNodes 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入。Disable：不自动加入（默认）。
+         * @param autoAddNewNodes When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
          * 
          * @return builder
          * 
@@ -308,7 +308,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoAddNewNodes 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入。Disable：不自动加入（默认）。
+         * @param autoAddNewNodes When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
          * 
          * @return builder
          * 
@@ -318,7 +318,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 地址描述。
+         * @param description Address description
          * 
          * @return builder
          * 
@@ -329,7 +329,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 地址描述。
+         * @param description Address description
          * 
          * @return builder
          * 
@@ -339,7 +339,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableReadOnly 是否已开启全局只读。Enable：开启。Disable：未开启。
+         * @param enableReadOnly Whether global read-only is enabled. Enable: Enabled. Disable: Not enabled.
          * 
          * @return builder
          * 
@@ -350,7 +350,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableReadOnly 是否已开启全局只读。Enable：开启。Disable：未开启。
+         * @param enableReadOnly Whether global read-only is enabled. Enable: Enabled. Disable: Not enabled.
          * 
          * @return builder
          * 
@@ -360,7 +360,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableReadWriteSplitting 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+         * @param enableReadWriteSplitting Whether read/write splitting is enabled. Values: Enable: Enabled. Disable: Not enabled.
          * 
          * @return builder
          * 
@@ -371,7 +371,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableReadWriteSplitting 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+         * @param enableReadWriteSplitting Whether read/write splitting is enabled. Values: Enable: Enabled. Disable: Not enabled.
          * 
          * @return builder
          * 
@@ -381,7 +381,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpointId 实例连接终端 ID。
+         * @param endpointId Instance connection endpoint ID.
          * 
          * @return builder
          * 
@@ -392,7 +392,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpointId 实例连接终端 ID。
+         * @param endpointId Instance connection endpoint ID.
          * 
          * @return builder
          * 
@@ -402,7 +402,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpointName 实例连接终端名称。
+         * @param endpointName Instance connection endpoint name.
          * 
          * @return builder
          * 
@@ -413,7 +413,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpointName 实例连接终端名称。
+         * @param endpointName Instance connection endpoint name.
          * 
          * @return builder
          * 
@@ -423,7 +423,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpointType 终端类型：Cluster：默认终端（默认创建）。Custom：自定义终端。
+         * @param endpointType Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
          * 
          * @return builder
          * 
@@ -434,7 +434,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpointType 终端类型：Cluster：默认终端（默认创建）。Custom：自定义终端。
+         * @param endpointType Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
          * 
          * @return builder
          * 
@@ -444,7 +444,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID.
          * 
          * @return builder
          * 
@@ -455,7 +455,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID.
          * 
          * @return builder
          * 
@@ -465,7 +465,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodes 连接终端配置的节点列表。说明当 EndpointType 为 Custom 时必选。主节点无需传节点 ID，传入 Primary 字符串即可。
+         * @param nodes List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string &#39;Primary&#39;.
          * 
          * @return builder
          * 
@@ -476,7 +476,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodes 连接终端配置的节点列表。说明当 EndpointType 为 Custom 时必选。主节点无需传节点 ID，传入 Primary 字符串即可。
+         * @param nodes List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string &#39;Primary&#39;.
          * 
          * @return builder
          * 
@@ -486,7 +486,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param readOnlyNodeDistributionType 只读权重分配模式。取值：Default：标准权重分配（默认值）。Custom：自定义权重分配。
+         * @param readOnlyNodeDistributionType Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
          * 
          * @return builder
          * 
@@ -497,7 +497,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param readOnlyNodeDistributionType 只读权重分配模式。取值：Default：标准权重分配（默认值）。Custom：自定义权重分配。
+         * @param readOnlyNodeDistributionType Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
          * 
          * @return builder
          * 
@@ -507,7 +507,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param readOnlyNodeMaxDelayTime 只读节点的最大延迟阈值，当只读节点延迟时间超过该值时，读取流量不发往该节点，单位：秒。取值：0~3600。默认值：30。说明支持对开通了读写分离的默认终端设置此参数。
+         * @param readOnlyNodeMaxDelayTime Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
          * 
          * @return builder
          * 
@@ -518,7 +518,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param readOnlyNodeMaxDelayTime 只读节点的最大延迟阈值，当只读节点延迟时间超过该值时，读取流量不发往该节点，单位：秒。取值：0~3600。默认值：30。说明支持对开通了读写分离的默认终端设置此参数。
+         * @param readOnlyNodeMaxDelayTime Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
          * 
          * @return builder
          * 
@@ -541,7 +541,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param readWriteMode 读写模式：ReadWrite：读写。ReadOnly：只读。
+         * @param readWriteMode Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
          * 
          * @return builder
          * 
@@ -552,7 +552,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param readWriteMode 读写模式：ReadWrite：读写。ReadOnly：只读。
+         * @param readWriteMode Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
          * 
          * @return builder
          * 
@@ -562,7 +562,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param readWriteProxyConnection 终端开启读写分离后，为终端设置的代理连接数。代理连接数的取值下限为 20。代理连接数的取值上限取决于实例主节点的规格，不同规格支持的代理连接数上限不同，详细信息请参见产品规格。
+         * @param readWriteProxyConnection After enabling read/write splitting for the endpoint, set the number of proxy connections for the endpoint. The minimum value for proxy connections is 20. The maximum value depends on the specifications of the primary node; different specifications support different maximum proxy connections. For details, see product specifications.
          * 
          * @return builder
          * 
@@ -573,7 +573,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param readWriteProxyConnection 终端开启读写分离后，为终端设置的代理连接数。代理连接数的取值下限为 20。代理连接数的取值上限取决于实例主节点的规格，不同规格支持的代理连接数上限不同，详细信息请参见产品规格。
+         * @param readWriteProxyConnection After enabling read/write splitting for the endpoint, set the number of proxy connections for the endpoint. The minimum value for proxy connections is 20. The maximum value depends on the specifications of the primary node; different specifications support different maximum proxy connections. For details, see product specifications.
          * 
          * @return builder
          * 
@@ -583,7 +583,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param writeNodeHaltWriting 终端是否将写请求发送给写节点（目前仅主节点为写节点）。取值：true：是。默认值。false：否。
+         * @param writeNodeHaltWriting Whether the endpoint sends write requests to the write node (currently only the primary node is the write node). Values: true: Yes (default). false: No.
          * 
          * @return builder
          * 
@@ -594,7 +594,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param writeNodeHaltWriting 终端是否将写请求发送给写节点（目前仅主节点为写节点）。取值：true：是。默认值。false：否。
+         * @param writeNodeHaltWriting Whether the endpoint sends write requests to the write node (currently only the primary node is the write node). Values: true: Yes (default). false: No.
          * 
          * @return builder
          * 

@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class LoadBalancerIpv6EipBillingConfig
     {
         /// <summary>
-        /// IPv6 EIP的带宽峰值，单位为Mbps。
+        /// Peak bandwidth of IPv6 EIP, in Mbps.
         /// </summary>
         public readonly int? Bandwidth;
         /// <summary>
-        /// IPv6 EIP的计费方式，2为按带宽计费，3为按流量计费。
+        /// Billing method for IPv6 EIP: 2 for bandwidth-based, 3 for traffic-based.
         /// </summary>
         public readonly int? BillingType;
         /// <summary>
-        /// IPv6公网IP的线路类型，BGP表示多线。
+        /// Line type of IPv6 public IP; BGP indicates multi-line.
         /// </summary>
         public readonly string? Isp;
 

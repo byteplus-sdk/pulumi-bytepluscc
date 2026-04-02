@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Filenas
 {
     /// <summary>
-    /// 文件系统通过标准的 NFS 协议为您提供文件存储服务，用于网络文件远程访问，通过管理控制台创建挂载地址后，即可按需在客户端中通过标准的 POSIX 接口对文件系统进行访问。
+    /// The file system provides file storage services through the standard NFS protocol for remote network file access. After creating a mount point in the management console, you can access the file system on your client as needed using the standard POSIX interface
     /// 
     /// ## Example Usage
     /// 
@@ -49,85 +49,85 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas
     public partial class Instance : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 缓存型性能信息。
+        /// Cache performance information
         /// </summary>
         [Output("cachePerformance")]
         public Output<Outputs.InstanceCachePerformance> CachePerformance { get; private set; } = null!;
 
         /// <summary>
-        /// 文件系统容量。
+        /// File system capacity
         /// </summary>
         [Output("capacity")]
         public Output<Outputs.InstanceCapacity> Capacity { get; private set; } = null!;
 
         /// <summary>
-        /// 计费类型，取值 PayAsYouGo，表示按量计费。
+        /// Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
         /// </summary>
         [Output("chargeType")]
         public Output<string> ChargeType { get; private set; } = null!;
 
         /// <summary>
-        /// 创建时间
+        /// Creation time
         /// </summary>
         [Output("createTime")]
         public Output<string> CreateTime { get; private set; } = null!;
 
         /// <summary>
-        /// 描述信息。
+        /// Description
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 文件系统 ID。
+        /// File system ID
         /// </summary>
         [Output("fileSystemId")]
         public Output<string> FileSystemId { get; private set; } = null!;
 
         /// <summary>
-        /// 文件系统名称。
+        /// File system name
         /// </summary>
         [Output("fileSystemName")]
         public Output<string> FileSystemName { get; private set; } = null!;
 
         /// <summary>
-        /// 文件系统类型。取值说明：Extreme：NAS 极速型；Capacity：NAS 容量型；Cache：NAS 缓存型。
+        /// File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
         /// </summary>
         [Output("fileSystemType")]
         public Output<string> FileSystemType { get; private set; } = null!;
 
         /// <summary>
-        /// 所属项目，默认值为 default 项目。
+        /// Project, default value is the Default project
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 文件系统协议类型。取值 NFS，表示 NFS 协议，常用于 Linux 客户端。
+        /// File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
         /// </summary>
         [Output("protocolType")]
         public Output<string> ProtocolType { get; private set; } = null!;
 
         /// <summary>
-        /// 快照数量
+        /// Number of snapshots
         /// </summary>
         [Output("snapshotCount")]
         public Output<int> SnapshotCount { get; private set; } = null!;
 
         /// <summary>
-        /// 创建时使用的快照 ID。传入该参数后，将使用该快照新建文件系统。
+        /// Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
         /// </summary>
         [Output("snapshotId")]
         public Output<string> SnapshotId { get; private set; } = null!;
 
         /// <summary>
-        /// 文件系统状态。取值说明如下：Unknown：状态未知。Running：文件系统运行中。Creating：文件系统创建中。Expanding：文件系统升级中。Error：文件系统错误。Deleting：文件系统删除中。DeleteError：文件系统删除失败。Deleted：文件系统已删除。Stopped：文件系统已停服。
+        /// File system status. Possible values: Unknown: Status unknown. Running: File system running. Creating: File system being created. Expanding: File system being upgraded. Error: File system error. Deleting: File system being deleted. DeleteError: File system deletion failed. Deleted: File system deleted. Stopped: File system stopped.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// 存储类型，取值Standard，表示标准型。
+        /// Storage type. Value: Standard, indicates standard type
         /// </summary>
         [Output("storageType")]
         public Output<string> StorageType { get; private set; } = null!;
@@ -136,19 +136,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas
         public Output<ImmutableArray<Outputs.InstanceTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 更新时间
+        /// Update time
         /// </summary>
         [Output("updateTime")]
         public Output<string> UpdateTime { get; private set; } = null!;
 
         /// <summary>
-        /// 可用区 ID。
+        /// Availability Zone ID
         /// </summary>
         [Output("zoneId")]
         public Output<string> ZoneId { get; private set; } = null!;
 
         /// <summary>
-        /// 可用区名称。
+        /// Availability Zone name
         /// </summary>
         [Output("zoneName")]
         public Output<string> ZoneName { get; private set; } = null!;
@@ -201,61 +201,61 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas
     public sealed class InstanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 缓存型性能信息。
+        /// Cache performance information
         /// </summary>
         [Input("cachePerformance")]
         public Input<Inputs.InstanceCachePerformanceArgs>? CachePerformance { get; set; }
 
         /// <summary>
-        /// 文件系统容量。
+        /// File system capacity
         /// </summary>
         [Input("capacity")]
         public Input<Inputs.InstanceCapacityArgs>? Capacity { get; set; }
 
         /// <summary>
-        /// 计费类型，取值 PayAsYouGo，表示按量计费。
+        /// Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
         /// </summary>
         [Input("chargeType", required: true)]
         public Input<string> ChargeType { get; set; } = null!;
 
         /// <summary>
-        /// 描述信息。
+        /// Description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 文件系统名称。
+        /// File system name
         /// </summary>
         [Input("fileSystemName", required: true)]
         public Input<string> FileSystemName { get; set; } = null!;
 
         /// <summary>
-        /// 文件系统类型。取值说明：Extreme：NAS 极速型；Capacity：NAS 容量型；Cache：NAS 缓存型。
+        /// File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
         /// </summary>
         [Input("fileSystemType", required: true)]
         public Input<string> FileSystemType { get; set; } = null!;
 
         /// <summary>
-        /// 所属项目，默认值为 default 项目。
+        /// Project, default value is the Default project
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 文件系统协议类型。取值 NFS，表示 NFS 协议，常用于 Linux 客户端。
+        /// File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
         /// </summary>
         [Input("protocolType", required: true)]
         public Input<string> ProtocolType { get; set; } = null!;
 
         /// <summary>
-        /// 创建时使用的快照 ID。传入该参数后，将使用该快照新建文件系统。
+        /// Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
         /// </summary>
         [Input("snapshotId")]
         public Input<string>? SnapshotId { get; set; }
 
         /// <summary>
-        /// 存储类型，取值Standard，表示标准型。
+        /// Storage type. Value: Standard, indicates standard type
         /// </summary>
         [Input("storageType")]
         public Input<string>? StorageType { get; set; }
@@ -269,7 +269,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas
         }
 
         /// <summary>
-        /// 可用区 ID。
+        /// Availability Zone ID
         /// </summary>
         [Input("zoneId", required: true)]
         public Input<string> ZoneId { get; set; } = null!;
@@ -283,85 +283,85 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas
     public sealed class InstanceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 缓存型性能信息。
+        /// Cache performance information
         /// </summary>
         [Input("cachePerformance")]
         public Input<Inputs.InstanceCachePerformanceGetArgs>? CachePerformance { get; set; }
 
         /// <summary>
-        /// 文件系统容量。
+        /// File system capacity
         /// </summary>
         [Input("capacity")]
         public Input<Inputs.InstanceCapacityGetArgs>? Capacity { get; set; }
 
         /// <summary>
-        /// 计费类型，取值 PayAsYouGo，表示按量计费。
+        /// Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
         /// </summary>
         [Input("chargeType")]
         public Input<string>? ChargeType { get; set; }
 
         /// <summary>
-        /// 创建时间
+        /// Creation time
         /// </summary>
         [Input("createTime")]
         public Input<string>? CreateTime { get; set; }
 
         /// <summary>
-        /// 描述信息。
+        /// Description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 文件系统 ID。
+        /// File system ID
         /// </summary>
         [Input("fileSystemId")]
         public Input<string>? FileSystemId { get; set; }
 
         /// <summary>
-        /// 文件系统名称。
+        /// File system name
         /// </summary>
         [Input("fileSystemName")]
         public Input<string>? FileSystemName { get; set; }
 
         /// <summary>
-        /// 文件系统类型。取值说明：Extreme：NAS 极速型；Capacity：NAS 容量型；Cache：NAS 缓存型。
+        /// File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
         /// </summary>
         [Input("fileSystemType")]
         public Input<string>? FileSystemType { get; set; }
 
         /// <summary>
-        /// 所属项目，默认值为 default 项目。
+        /// Project, default value is the Default project
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 文件系统协议类型。取值 NFS，表示 NFS 协议，常用于 Linux 客户端。
+        /// File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
         /// </summary>
         [Input("protocolType")]
         public Input<string>? ProtocolType { get; set; }
 
         /// <summary>
-        /// 快照数量
+        /// Number of snapshots
         /// </summary>
         [Input("snapshotCount")]
         public Input<int>? SnapshotCount { get; set; }
 
         /// <summary>
-        /// 创建时使用的快照 ID。传入该参数后，将使用该快照新建文件系统。
+        /// Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
         /// </summary>
         [Input("snapshotId")]
         public Input<string>? SnapshotId { get; set; }
 
         /// <summary>
-        /// 文件系统状态。取值说明如下：Unknown：状态未知。Running：文件系统运行中。Creating：文件系统创建中。Expanding：文件系统升级中。Error：文件系统错误。Deleting：文件系统删除中。DeleteError：文件系统删除失败。Deleted：文件系统已删除。Stopped：文件系统已停服。
+        /// File system status. Possible values: Unknown: Status unknown. Running: File system running. Creating: File system being created. Expanding: File system being upgraded. Error: File system error. Deleting: File system being deleted. DeleteError: File system deletion failed. Deleted: File system deleted. Stopped: File system stopped.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// 存储类型，取值Standard，表示标准型。
+        /// Storage type. Value: Standard, indicates standard type
         /// </summary>
         [Input("storageType")]
         public Input<string>? StorageType { get; set; }
@@ -375,19 +375,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas
         }
 
         /// <summary>
-        /// 更新时间
+        /// Update time
         /// </summary>
         [Input("updateTime")]
         public Input<string>? UpdateTime { get; set; }
 
         /// <summary>
-        /// 可用区 ID。
+        /// Availability Zone ID
         /// </summary>
         [Input("zoneId")]
         public Input<string>? ZoneId { get; set; }
 
         /// <summary>
-        /// 可用区名称。
+        /// Availability Zone name
         /// </summary>
         [Input("zoneName")]
         public Input<string>? ZoneName { get; set; }

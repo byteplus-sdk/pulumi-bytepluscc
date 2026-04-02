@@ -14,139 +14,139 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud.Inputs
     public sealed class InstanceInstanceConfigurationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 管理员密码。
+        /// Administrator password.
         /// </summary>
         [Input("adminPassword")]
         public Input<string>? AdminPassword { get; set; }
 
         /// <summary>
-        /// 管理员用户名。
+        /// Administrator username.
         /// </summary>
         [Input("adminUserName")]
         public Input<string>? AdminUserName { get; set; }
 
         /// <summary>
-        /// 包年包月实例是否配置自动续费。true：自动续费，系统会在每次到期前自动为实例续费。false：未开启自动续费，需要在实例到期前进行手动续费。如需了解更多，请参见实例续费。
+        /// Whether the subscription instance is set to auto-renewal. true: Auto-renewal; the system will automatically renew the instance before each expiration. false: Auto-renewal is not enabled; manual renewal is required before the instance expires. For more information, see Instance renewal.
         /// </summary>
         [Input("autoRenew")]
         public Input<bool>? AutoRenew { get; set; }
 
         /// <summary>
-        /// 实例计费类型。PostPaid：按量计费。PrePaid：包年包月。
+        /// Instance billing type. PostPaid: Pay-as-you-go. PrePaid: Subscription
         /// </summary>
         [Input("chargeType")]
         public Input<string>? ChargeType { get; set; }
 
         /// <summary>
-        /// 冷节点数量。
+        /// Number of cold nodes.
         /// </summary>
         [Input("coldNodeNumber")]
         public Input<int>? ColdNodeNumber { get; set; }
 
         /// <summary>
-        /// 冷节点的节点规格配置详情。
+        /// Node specification details for cold nodes
         /// </summary>
         [Input("coldNodeResourceSpec")]
         public Input<Inputs.InstanceInstanceConfigurationColdNodeResourceSpecArgs>? ColdNodeResourceSpec { get; set; }
 
         /// <summary>
-        /// 冷节点的存储规格配置详情。
+        /// Details of cold node storage specification configuration
         /// </summary>
         [Input("coldNodeStorageSpec")]
         public Input<Inputs.InstanceInstanceConfigurationColdNodeStorageSpecArgs>? ColdNodeStorageSpec { get; set; }
 
         /// <summary>
-        /// 计费配置码，可以通过调用DescribeNodeAvailableSpecs接口获得。
+        /// Billing configuration code, obtainable via the DescribeNodeAvailableSpecs API.
         /// </summary>
         [Input("configurationCode")]
         public Input<string>? ConfigurationCode { get; set; }
 
         /// <summary>
-        /// 协调节点数量。
+        /// Coordinator node count
         /// </summary>
         [Input("coordinatorNodeNumber")]
         public Input<int>? CoordinatorNodeNumber { get; set; }
 
         /// <summary>
-        /// 协调节点的节点规格配置详情。
+        /// Node specification configuration details for coordinator node.
         /// </summary>
         [Input("coordinatorNodeResourceSpec")]
         public Input<Inputs.InstanceInstanceConfigurationCoordinatorNodeResourceSpecArgs>? CoordinatorNodeResourceSpec { get; set; }
 
         /// <summary>
-        /// 协调节点的存储规格配置详情。
+        /// Storage specification configuration details for coordinator node.
         /// </summary>
         [Input("coordinatorNodeStorageSpec")]
         public Input<Inputs.InstanceInstanceConfigurationCoordinatorNodeStorageSpecArgs>? CoordinatorNodeStorageSpec { get; set; }
 
         /// <summary>
-        /// 是否开启实例删除保护功能，取值说明如下：true：开启实例删除保护。false：关闭实例删除保护。说明开启实例删除保护后，您将无法通过控制台或者 API 删除实例。
+        /// Enable instance deletion protection. Values: true: Enable instance deletion protection. false: Disable instance deletion protection. Note: After enabling deletion protection, you cannot delete the instance via console or API
         /// </summary>
         [Input("deletionProtection")]
         public Input<bool>? DeletionProtection { get; set; }
 
         /// <summary>
-        /// 是否启用 HTTPS 访问协议。true：启用 HTTPS 访问。false：不启用 HTTPS，使用 HTTP 访问。说明如果选择使用 HTTP 访问，将无需安全认证即可访问，并使用 HTTP 明文传输数据。您需要确保访问环境的安全性，且不要将访问接口暴露在公网环境上。实例创建完成后，支持根据业务需求修改传输协议。相关文档，请参见切换实例传输协议。
+        /// Enable HTTPS access protocol. true: Enable HTTPS access. false: Disable HTTPS, use HTTP access. Note: If you choose HTTP access, you can access without security authentication and transmit data in plain HTTP. Ensure the security of your access environment and do not expose the API to the public network. After the instance is created, you can modify the transmission protocol as needed. For related documentation, see Switch Instance Transmission Protocol
         /// </summary>
         [Input("enableHttps")]
         public Input<bool>? EnableHttps { get; set; }
 
         /// <summary>
-        /// Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即使用 Hot 声明。
+        /// Whether the master node is dedicated. true: Master node is dedicated. false: Master node is combined with data node, that is, uses Hot node.
         /// </summary>
         [Input("enablePureMaster")]
         public Input<bool>? EnablePureMaster { get; set; }
 
         /// <summary>
-        /// 数据节点数量。
+        /// Number of data nodes
         /// </summary>
         [Input("hotNodeNumber")]
         public Input<int>? HotNodeNumber { get; set; }
 
         /// <summary>
-        /// 数据节点的节点规格配置详情。
+        /// Node specification configuration details for data node.
         /// </summary>
         [Input("hotNodeResourceSpec")]
         public Input<Inputs.InstanceInstanceConfigurationHotNodeResourceSpecArgs>? HotNodeResourceSpec { get; set; }
 
         /// <summary>
-        /// 数据节点的存储规格配置详情。
+        /// Data node storage specification configuration details
         /// </summary>
         [Input("hotNodeStorageSpec")]
         public Input<Inputs.InstanceInstanceConfigurationHotNodeStorageSpecArgs>? HotNodeStorageSpec { get; set; }
 
         /// <summary>
-        /// 自定义设置实例名称。只能包含中文、字母、数字、短横线（-）和下划线（_），开头和结尾不能是数字和短横线（-）。长度在 1～128 个字符内。
+        /// Set a custom instance name. Only Chinese characters, letters, numbers, hyphens (-), and underscores (_) are allowed. The name cannot start or end with a number or hyphen (-). Length must be between 1 and 128 characters.
         /// </summary>
         [Input("instanceName")]
         public Input<string>? InstanceName { get; set; }
 
         /// <summary>
-        /// kibana 节点数量。
+        /// Number of Kibana nodes
         /// </summary>
         [Input("kibanaNodeNumber")]
         public Input<int>? KibanaNodeNumber { get; set; }
 
         /// <summary>
-        /// Kibana 节点的节点规格配置详情。
+        /// Kibana node specification configuration details
         /// </summary>
         [Input("kibanaNodeResourceSpec")]
         public Input<Inputs.InstanceInstanceConfigurationKibanaNodeResourceSpecArgs>? KibanaNodeResourceSpec { get; set; }
 
         /// <summary>
-        /// master 节点数量。
+        /// Number of master nodes.
         /// </summary>
         [Input("masterNodeNumber")]
         public Input<int>? MasterNodeNumber { get; set; }
 
         /// <summary>
-        /// Master 节点的节点规格配置详情。
+        /// Master node specification configuration details
         /// </summary>
         [Input("masterNodeResourceSpec")]
         public Input<Inputs.InstanceInstanceConfigurationMasterNodeResourceSpecArgs>? MasterNodeResourceSpec { get; set; }
 
         /// <summary>
-        /// Master 节点的存储规格配置详情。
+        /// Storage specification details for master node
         /// </summary>
         [Input("masterNodeStorageSpec")]
         public Input<Inputs.InstanceInstanceConfigurationMasterNodeStorageSpecArgs>? MasterNodeStorageSpec { get; set; }
@@ -168,25 +168,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud.Inputs
         }
 
         /// <summary>
-        /// 包年包月实例的购买时长，单位：月。
+        /// Subscription instance purchase duration, in months.
         /// </summary>
         [Input("period")]
         public Input<int>? Period { get; set; }
 
         /// <summary>
-        /// 按需设置云搜索实例所属的项目，有利于云资源的分组管理。项目是提供的一种资源管理方式，有利于维护资源独立、数据安全；同时可从项目维度查看资源消费账单，便于计算云资源使用成本。如需了解更多信息，请参见项目概述
+        /// Set the project for your cloud search instance as needed to facilitate grouping and management of cloud resources. Projects provide a resource management method that helps maintain resource independence and data security. You can also view resource consumption bills by project, making it easier to calculate cloud resource usage costs. For more information, see Project Overview
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 实例所在区域。
+        /// Instance region
         /// </summary>
         [Input("regionId")]
         public Input<string>? RegionId { get; set; }
 
         /// <summary>
-        /// 设置实例的子网信息。说明设置的子网必须是主可用区中的子网。
+        /// Set subnet information for the instance. Note: The subnet must be in the primary zone.
         /// </summary>
         [Input("subnet")]
         public Input<Inputs.InstanceInstanceConfigurationSubnetArgs>? Subnet { get; set; }
@@ -200,43 +200,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud.Inputs
         }
 
         /// <summary>
-        /// API的版本，取值：2023-01-01。
+        /// API version. Value: 2023-01-01.
         /// </summary>
         [Input("version")]
         public Input<string>? Version { get; set; }
 
         /// <summary>
-        /// 设置实例的私有网络 VPC 信息。
+        /// Set VPC information for the instance
         /// </summary>
         [Input("vpc")]
         public Input<Inputs.InstanceInstanceConfigurationVpcArgs>? Vpc { get; set; }
 
         /// <summary>
-        /// 温节点数量。
+        /// Warm node count.
         /// </summary>
         [Input("warmNodeNumber")]
         public Input<int>? WarmNodeNumber { get; set; }
 
         /// <summary>
-        /// 温节点的节点规格配置详情。
+        /// Warm node specification configuration details.
         /// </summary>
         [Input("warmNodeResourceSpec")]
         public Input<Inputs.InstanceInstanceConfigurationWarmNodeResourceSpecArgs>? WarmNodeResourceSpec { get; set; }
 
         /// <summary>
-        /// 温节点的存储规格配置详情。
+        /// Storage specification details for warm nodes
         /// </summary>
         [Input("warmNodeStorageSpec")]
         public Input<Inputs.InstanceInstanceConfigurationWarmNodeStorageSpecArgs>? WarmNodeStorageSpec { get; set; }
 
         /// <summary>
-        /// 实例所在可用区。说明如果是多可用区部署，则填写多个 ZoneId，使用英文逗号分隔，如cn-beijing-a,cn-beijing-c。最左侧的 ZoneId 为主可用区，其余为备可用区。
+        /// Zone where the instance is located. Note: For multi-zone deployment, enter multiple ZoneIds separated by commas, e.g., cn-beijing-a,cn-beijing-c. The leftmost ZoneId is the primary zone, others are backup zones.
         /// </summary>
         [Input("zoneId")]
         public Input<string>? ZoneId { get; set; }
 
         /// <summary>
-        /// 实例的可用区数量。
+        /// Number of instance availability zones.
         /// </summary>
         [Input("zoneNumber")]
         public Input<int>? ZoneNumber { get; set; }

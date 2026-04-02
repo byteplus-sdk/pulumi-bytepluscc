@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * 用户管理密钥的集合，用户将相同类型或用途的密钥放在同一密钥环中以便于管理。
+ * A collection for managing user keys; users place keys of the same type or purpose in the same keyring for easier management
  *
  * ## Example Usage
  *
@@ -56,39 +56,39 @@ export class KeyRing extends pulumi.CustomResource {
     }
 
     /**
-     * 密钥环创建日期。
+     * Keyring creation date
      */
     public /*out*/ readonly createDate!: pulumi.Output<number>;
     /**
-     * 密钥环描述，长度为 0   - 8192 个字符。
+     * Keyring description, length: 0–8192 characters
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 密钥环密钥次数。
+     * Number of keys in keyring
      */
     public /*out*/ readonly keyCount!: pulumi.Output<number>;
     /**
-     * 密钥环唯一标识符，UUID形式。
+     * Keyring unique identifier, in UUID format
      */
     public /*out*/ readonly keyRingId!: pulumi.Output<string>;
     /**
-     * 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+     * Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
      */
     public readonly keyringName!: pulumi.Output<string>;
     /**
-     * 密钥环类型，取值：CustomKeyring。
+     * Keyring type, value: CustomKeyring
      */
     public readonly keyringType!: pulumi.Output<string>;
     /**
-     * 项目名称，默认值：default。
+     * Project name, default value: default
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 密钥环租户ID。
+     * Keyring tenant ID
      */
     public /*out*/ readonly uid!: pulumi.Output<string>;
     /**
-     * 密钥环更新日期。
+     * Keyring update date
      */
     public /*out*/ readonly updateDate!: pulumi.Output<number>;
 
@@ -139,39 +139,39 @@ export class KeyRing extends pulumi.CustomResource {
  */
 export interface KeyRingState {
     /**
-     * 密钥环创建日期。
+     * Keyring creation date
      */
     createDate?: pulumi.Input<number>;
     /**
-     * 密钥环描述，长度为 0   - 8192 个字符。
+     * Keyring description, length: 0–8192 characters
      */
     description?: pulumi.Input<string>;
     /**
-     * 密钥环密钥次数。
+     * Number of keys in keyring
      */
     keyCount?: pulumi.Input<number>;
     /**
-     * 密钥环唯一标识符，UUID形式。
+     * Keyring unique identifier, in UUID format
      */
     keyRingId?: pulumi.Input<string>;
     /**
-     * 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+     * Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
      */
     keyringName?: pulumi.Input<string>;
     /**
-     * 密钥环类型，取值：CustomKeyring。
+     * Keyring type, value: CustomKeyring
      */
     keyringType?: pulumi.Input<string>;
     /**
-     * 项目名称，默认值：default。
+     * Project name, default value: default
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 密钥环租户ID。
+     * Keyring tenant ID
      */
     uid?: pulumi.Input<string>;
     /**
-     * 密钥环更新日期。
+     * Keyring update date
      */
     updateDate?: pulumi.Input<number>;
 }
@@ -181,19 +181,19 @@ export interface KeyRingState {
  */
 export interface KeyRingArgs {
     /**
-     * 密钥环描述，长度为 0   - 8192 个字符。
+     * Keyring description, length: 0–8192 characters
      */
     description?: pulumi.Input<string>;
     /**
-     * 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+     * Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
      */
     keyringName: pulumi.Input<string>;
     /**
-     * 密钥环类型，取值：CustomKeyring。
+     * Keyring type, value: CustomKeyring
      */
     keyringType?: pulumi.Input<string>;
     /**
-     * 项目名称，默认值：default。
+     * Project name, default value: default
      */
     projectName?: pulumi.Input<string>;
 }

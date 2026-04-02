@@ -29,11 +29,11 @@ export interface GetClusterUserGroupArgs {
  */
 export interface GetClusterUserGroupResult {
     /**
-     * 集群ID。
+     * Cluster ID.
      */
     readonly clusterId: string;
     /**
-     * 用户组描述。
+     * User group description.
      */
     readonly description: string;
     /**
@@ -41,11 +41,11 @@ export interface GetClusterUserGroupResult {
      */
     readonly id: string;
     /**
-     * 用户组成员。不支持操作特殊用户，如admin等。
+     * Operations on special users, such as admin, are not supported.
      */
     readonly members: string[];
     /**
-     * 用户组名称。
+     * User group name.
      */
     readonly userGroupName: string;
 }

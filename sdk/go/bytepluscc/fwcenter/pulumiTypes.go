@@ -14,11 +14,11 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type DnsControlPolicyDomainListV1 struct {
-	// 具体地址信息。
+	// Specific address information.
 	Address *string `pulumi:"address"`
-	// 描述信息。
+	// Description information.
 	Description *string `pulumi:"description"`
-	// 地址类型。支持的取值如下所示。ip：IPv4 地址；ipv6：IPv6 地址；domain：域名；port：端口。
+	// Address type. Supported values are as follows. ip: IPv4 address; ipv6: IPv6 address; domain: domain name; port: port number.
 	Type *string `pulumi:"type"`
 }
 
@@ -34,11 +34,11 @@ type DnsControlPolicyDomainListV1Input interface {
 }
 
 type DnsControlPolicyDomainListV1Args struct {
-	// 具体地址信息。
+	// Specific address information.
 	Address pulumi.StringPtrInput `pulumi:"address"`
-	// 描述信息。
+	// Description information.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 地址类型。支持的取值如下所示。ip：IPv4 地址；ipv6：IPv6 地址；domain：域名；port：端口。
+	// Address type. Supported values are as follows. ip: IPv4 address; ipv6: IPv6 address; domain: domain name; port: port number.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -93,17 +93,17 @@ func (o DnsControlPolicyDomainListV1Output) ToDnsControlPolicyDomainListV1Output
 	return o
 }
 
-// 具体地址信息。
+// Specific address information.
 func (o DnsControlPolicyDomainListV1Output) Address() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DnsControlPolicyDomainListV1) *string { return v.Address }).(pulumi.StringPtrOutput)
 }
 
-// 描述信息。
+// Description information.
 func (o DnsControlPolicyDomainListV1Output) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DnsControlPolicyDomainListV1) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 地址类型。支持的取值如下所示。ip：IPv4 地址；ipv6：IPv6 地址；domain：域名；port：端口。
+// Address type. Supported values are as follows. ip: IPv4 address; ipv6: IPv6 address; domain: domain name; port: port number.
 func (o DnsControlPolicyDomainListV1Output) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DnsControlPolicyDomainListV1) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -129,7 +129,7 @@ func (o DnsControlPolicyDomainListV1ArrayOutput) Index(i pulumi.IntInput) DnsCon
 }
 
 type DnsControlPolicySource struct {
-	// VPC地域信息。
+	// VPC region information.
 	Region *string `pulumi:"region"`
 	// VPC ID。
 	VpcId *string `pulumi:"vpcId"`
@@ -147,7 +147,7 @@ type DnsControlPolicySourceInput interface {
 }
 
 type DnsControlPolicySourceArgs struct {
-	// VPC地域信息。
+	// VPC region information.
 	Region pulumi.StringPtrInput `pulumi:"region"`
 	// VPC ID。
 	VpcId pulumi.StringPtrInput `pulumi:"vpcId"`
@@ -204,7 +204,7 @@ func (o DnsControlPolicySourceOutput) ToDnsControlPolicySourceOutputWithContext(
 	return o
 }
 
-// VPC地域信息。
+// VPC region information.
 func (o DnsControlPolicySourceOutput) Region() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DnsControlPolicySource) *string { return v.Region }).(pulumi.StringPtrOutput)
 }
@@ -235,11 +235,11 @@ func (o DnsControlPolicySourceArrayOutput) Index(i pulumi.IntInput) DnsControlPo
 }
 
 type GetDnsControlPolicyDomainListV1 struct {
-	// 具体地址信息。
+	// Specific address information.
 	Address string `pulumi:"address"`
-	// 描述信息。
+	// Description information.
 	Description string `pulumi:"description"`
-	// 地址类型。支持的取值如下所示。ip：IPv4 地址；ipv6：IPv6 地址；domain：域名；port：端口。
+	// Address type. Supported values are as follows. ip: IPv4 address; ipv6: IPv6 address; domain: domain name; port: port number.
 	Type string `pulumi:"type"`
 }
 
@@ -255,11 +255,11 @@ type GetDnsControlPolicyDomainListV1Input interface {
 }
 
 type GetDnsControlPolicyDomainListV1Args struct {
-	// 具体地址信息。
+	// Specific address information.
 	Address pulumi.StringInput `pulumi:"address"`
-	// 描述信息。
+	// Description information.
 	Description pulumi.StringInput `pulumi:"description"`
-	// 地址类型。支持的取值如下所示。ip：IPv4 地址；ipv6：IPv6 地址；domain：域名；port：端口。
+	// Address type. Supported values are as follows. ip: IPv4 address; ipv6: IPv6 address; domain: domain name; port: port number.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -314,17 +314,17 @@ func (o GetDnsControlPolicyDomainListV1Output) ToGetDnsControlPolicyDomainListV1
 	return o
 }
 
-// 具体地址信息。
+// Specific address information.
 func (o GetDnsControlPolicyDomainListV1Output) Address() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDnsControlPolicyDomainListV1) string { return v.Address }).(pulumi.StringOutput)
 }
 
-// 描述信息。
+// Description information.
 func (o GetDnsControlPolicyDomainListV1Output) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDnsControlPolicyDomainListV1) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 地址类型。支持的取值如下所示。ip：IPv4 地址；ipv6：IPv6 地址；domain：域名；port：端口。
+// Address type. Supported values are as follows. ip: IPv4 address; ipv6: IPv6 address; domain: domain name; port: port number.
 func (o GetDnsControlPolicyDomainListV1Output) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDnsControlPolicyDomainListV1) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -350,7 +350,7 @@ func (o GetDnsControlPolicyDomainListV1ArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetDnsControlPolicySource struct {
-	// VPC地域信息。
+	// VPC region information.
 	Region string `pulumi:"region"`
 	// VPC ID。
 	VpcId string `pulumi:"vpcId"`
@@ -368,7 +368,7 @@ type GetDnsControlPolicySourceInput interface {
 }
 
 type GetDnsControlPolicySourceArgs struct {
-	// VPC地域信息。
+	// VPC region information.
 	Region pulumi.StringInput `pulumi:"region"`
 	// VPC ID。
 	VpcId pulumi.StringInput `pulumi:"vpcId"`
@@ -425,7 +425,7 @@ func (o GetDnsControlPolicySourceOutput) ToGetDnsControlPolicySourceOutputWithCo
 	return o
 }
 
-// VPC地域信息。
+// VPC region information.
 func (o GetDnsControlPolicySourceOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDnsControlPolicySource) string { return v.Region }).(pulumi.StringOutput)
 }

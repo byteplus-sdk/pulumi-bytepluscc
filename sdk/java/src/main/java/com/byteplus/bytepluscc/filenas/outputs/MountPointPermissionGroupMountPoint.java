@@ -12,38 +12,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class MountPointPermissionGroupMountPoint {
     /**
-     * @return 文件系统 ID。
+     * @return File system ID.
      * 
      */
     private @Nullable String fileSystemId;
     /**
-     * @return 挂载点 ID。
+     * @return Mount point ID.
      * 
      */
     private @Nullable String mountPointId;
     /**
-     * @return 挂载点名称。
+     * @return Mount point name.
      * 
      */
     private @Nullable String mountPointName;
 
     private MountPointPermissionGroupMountPoint() {}
     /**
-     * @return 文件系统 ID。
+     * @return File system ID.
      * 
      */
     public Optional<String> fileSystemId() {
         return Optional.ofNullable(this.fileSystemId);
     }
     /**
-     * @return 挂载点 ID。
+     * @return Mount point ID.
      * 
      */
     public Optional<String> mountPointId() {
         return Optional.ofNullable(this.mountPointId);
     }
     /**
-     * @return 挂载点名称。
+     * @return Mount point name.
      * 
      */
     public Optional<String> mountPointName() {

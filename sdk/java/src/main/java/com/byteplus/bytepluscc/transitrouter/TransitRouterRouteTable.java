@@ -16,7 +16,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 中转路由器转发流量的依据，具有关联转发、静态路由、路由学习、路由同步等能力。每个TR实例下可以创建多个TR路由表，分别用于转发具有不同访问需求的网络实例的流量。多条网络实例连接可以关联同一个TR路由表。
+ * Basis for Transit Router to forward traffic, supporting associated forwarding, static routing, route learning, and route synchronization. Multiple TR routing tables can be created under each TR instance to forward traffic for network instances with different access requirements. Multiple network instance connections can be associated with the same TR routing table.
  * 
  * ## Example Usage
  * 
@@ -70,70 +70,70 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:transitrouter/transitRouterRouteTable:TransitRouterRouteTable")
 public class TransitRouterRouteTable extends com.pulumi.resources.CustomResource {
     /**
-     * TR路由表的创建时间
+     * Creation time of the TR routing table
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return TR路由表的创建时间
+     * @return Creation time of the TR routing table
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * TR路由表的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * Description of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return TR路由表的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * @return Description of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * TR路由表关联的收方向路由策略的ID
+     * ID of the inbound routing policy associated with the TR routing table
      * 
      */
     @Export(name="inRoutePolicyTableId", refs={String.class}, tree="[0]")
     private Output<String> inRoutePolicyTableId;
 
     /**
-     * @return TR路由表关联的收方向路由策略的ID
+     * @return ID of the inbound routing policy associated with the TR routing table
      * 
      */
     public Output<String> inRoutePolicyTableId() {
         return this.inRoutePolicyTableId;
     }
     /**
-     * TR路由表关联的发方向路由策略的ID
+     * ID of the outbound routing policy associated with the TR routing table
      * 
      */
     @Export(name="outRoutePolicyTableId", refs={String.class}, tree="[0]")
     private Output<String> outRoutePolicyTableId;
 
     /**
-     * @return TR路由表关联的发方向路由策略的ID
+     * @return ID of the outbound routing policy associated with the TR routing table
      * 
      */
     public Output<String> outRoutePolicyTableId() {
         return this.outRoutePolicyTableId;
     }
     /**
-     * TR路由表的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用
+     * Status of the TR routing table. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return TR路由表的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用
+     * @return Status of the TR routing table. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
      * 
      */
     public Output<String> status() {
@@ -146,70 +146,70 @@ public class TransitRouterRouteTable extends com.pulumi.resources.CustomResource
         return this.tags;
     }
     /**
-     * 中转路由器实例的ID
+     * Transit Router instance ID
      * 
      */
     @Export(name="transitRouterId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterId;
 
     /**
-     * @return 中转路由器实例的ID
+     * @return Transit Router instance ID
      * 
      */
     public Output<String> transitRouterId() {
         return this.transitRouterId;
     }
     /**
-     * TR路由表的ID
+     * TR routing table ID
      * 
      */
     @Export(name="transitRouterRouteTableId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterRouteTableId;
 
     /**
-     * @return TR路由表的ID
+     * @return TR routing table ID
      * 
      */
     public Output<String> transitRouterRouteTableId() {
         return this.transitRouterRouteTableId;
     }
     /**
-     * TR路由表的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为TR路由表的ID
+     * Name of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the TR routing table ID
      * 
      */
     @Export(name="transitRouterRouteTableName", refs={String.class}, tree="[0]")
     private Output<String> transitRouterRouteTableName;
 
     /**
-     * @return TR路由表的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为TR路由表的ID
+     * @return Name of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the TR routing table ID
      * 
      */
     public Output<String> transitRouterRouteTableName() {
         return this.transitRouterRouteTableName;
     }
     /**
-     * TR路由表的类型。System：系统路由表。Custom：自定义路由表。
+     * Type of TR routing table. System: system routing table. Custom: custom routing table.
      * 
      */
     @Export(name="transitRouterRouteTableType", refs={String.class}, tree="[0]")
     private Output<String> transitRouterRouteTableType;
 
     /**
-     * @return TR路由表的类型。System：系统路由表。Custom：自定义路由表。
+     * @return Type of TR routing table. System: system routing table. Custom: custom routing table.
      * 
      */
     public Output<String> transitRouterRouteTableType() {
         return this.transitRouterRouteTableType;
     }
     /**
-     * TR路由表的最近操作时间
+     * Last operation time of the TR routing table
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return TR路由表的最近操作时间
+     * @return Last operation time of the TR routing table
      * 
      */
     public Output<String> updatedTime() {

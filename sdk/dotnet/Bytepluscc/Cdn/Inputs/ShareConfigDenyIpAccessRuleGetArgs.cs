@@ -17,7 +17,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
         private InputList<string>? _rules;
 
         /// <summary>
-        /// 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access_rule。
+        /// Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access_rule.
         /// </summary>
         public InputList<string> Rules
         {

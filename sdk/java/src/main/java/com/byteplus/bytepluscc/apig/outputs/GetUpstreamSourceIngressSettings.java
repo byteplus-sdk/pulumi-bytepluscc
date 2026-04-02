@@ -13,86 +13,86 @@ import java.util.Objects;
 @CustomType
 public final class GetUpstreamSourceIngressSettings {
     /**
-     * @return 是否启用所有Ingress类。
+     * @return Whether to enable all Ingress classes
      * 
      */
     private Boolean enableAllIngressClasses;
     /**
-     * @return 是否全部命名空间。
+     * @return Whether all namespaces
      * 
      */
     private Boolean enableAllNamespaces;
     /**
-     * @return 是否开启。
+     * @return Whether enabled
      * 
      */
     private Boolean enableIngress;
     /**
-     * @return 是否监听IngressClass为空的资源。
+     * @return Whether to monitor resources with empty IngressClass
      * 
      */
     private Boolean enableIngressWithoutIngressClass;
     /**
-     * @return 指定IngressClass。
+     * @return Specify IngressClass
      * 
      */
     private List<String> ingressClasses;
     /**
-     * @return 流量入口切换。开启后，当前集群Ingress中Status的IP地址会被修改为当前网关的IP地址。
+     * @return Traffic entry switch. When enabled, the IP address in the Status of the current cluster&#39;s Ingress will be updated to the current gateway&#39;s IP address
      * 
      */
     private Boolean updateStatus;
     /**
-     * @return 指定命名空间。
+     * @return Specify namespace
      * 
      */
     private List<String> watchNamespaces;
 
     private GetUpstreamSourceIngressSettings() {}
     /**
-     * @return 是否启用所有Ingress类。
+     * @return Whether to enable all Ingress classes
      * 
      */
     public Boolean enableAllIngressClasses() {
         return this.enableAllIngressClasses;
     }
     /**
-     * @return 是否全部命名空间。
+     * @return Whether all namespaces
      * 
      */
     public Boolean enableAllNamespaces() {
         return this.enableAllNamespaces;
     }
     /**
-     * @return 是否开启。
+     * @return Whether enabled
      * 
      */
     public Boolean enableIngress() {
         return this.enableIngress;
     }
     /**
-     * @return 是否监听IngressClass为空的资源。
+     * @return Whether to monitor resources with empty IngressClass
      * 
      */
     public Boolean enableIngressWithoutIngressClass() {
         return this.enableIngressWithoutIngressClass;
     }
     /**
-     * @return 指定IngressClass。
+     * @return Specify IngressClass
      * 
      */
     public List<String> ingressClasses() {
         return this.ingressClasses;
     }
     /**
-     * @return 流量入口切换。开启后，当前集群Ingress中Status的IP地址会被修改为当前网关的IP地址。
+     * @return Traffic entry switch. When enabled, the IP address in the Status of the current cluster&#39;s Ingress will be updated to the current gateway&#39;s IP address
      * 
      */
     public Boolean updateStatus() {
         return this.updateStatus;
     }
     /**
-     * @return 指定命名空间。
+     * @return Specify namespace
      * 
      */
     public List<String> watchNamespaces() {

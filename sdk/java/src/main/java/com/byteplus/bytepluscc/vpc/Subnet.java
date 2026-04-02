@@ -19,7 +19,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 子网是在指定可用区内分配的一段VPC网段内的网段，它为云上资源（如云服务器、负载均衡等）提供私网IP地址。
+ * The subnet is a segment allocated within a specified availability zone from a VPC CIDR block, providing private IP addresses for cloud resources such as cloud servers and load balancers
  * 
  * ## Example Usage
  * 
@@ -75,210 +75,210 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:vpc/subnet:Subnet")
 public class Subnet extends com.pulumi.resources.CustomResource {
     /**
-     * 子网所属账户的ID。
+     * ID of the account to which the subnet belongs
      * 
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
-     * @return 子网所属账户的ID。
+     * @return ID of the account to which the subnet belongs
      * 
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
-     * 子网中可用的IP地址数量。
+     * Number of available IP addresses in the subnet
      * 
      */
     @Export(name="availableIpAddressCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> availableIpAddressCount;
 
     /**
-     * @return 子网中可用的IP地址数量。
+     * @return Number of available IP addresses in the subnet
      * 
      */
     public Output<Integer> availableIpAddressCount() {
         return this.availableIpAddressCount;
     }
     /**
-     * 子网的IPv4网段。
+     * Subnet IPv4 CIDR block
      * 
      */
     @Export(name="cidrBlock", refs={String.class}, tree="[0]")
     private Output<String> cidrBlock;
 
     /**
-     * @return 子网的IPv4网段。
+     * @return Subnet IPv4 CIDR block
      * 
      */
     public Output<String> cidrBlock() {
         return this.cidrBlock;
     }
     /**
-     * 子网的创建时间。
+     * Subnet creation time
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 子网的创建时间。
+     * @return Subnet creation time
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 子网的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不能以http://或https://开头。
+     * Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 子网的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不能以http://或https://开头。
+     * @return Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 开启/关闭IPv6功能。仅当子网所属的VPC开通IPv6功能时，可配置此参数。1、true：开启。2、false：关闭。仅当子网内没有分配IPv6地址的云资源时，可配置此取值。
+     * Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
      * 
      */
     @Export(name="enableIpv6", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableIpv6;
 
     /**
-     * @return 开启/关闭IPv6功能。仅当子网所属的VPC开通IPv6功能时，可配置此参数。1、true：开启。2、false：关闭。仅当子网内没有分配IPv6地址的云资源时，可配置此取值。
+     * @return Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
      * 
      */
     public Output<Boolean> enableIpv6() {
         return this.enableIpv6;
     }
     /**
-     * 子网IPv6网段。1、创建/修改时请输入子网IPv6网段的最后8比特位（子网的掩码固定为/64）。2、仅当EnableIpv6设置为true时，支持配置本参数。3、取值范围：0～255。掩码固定为/64。
+     * Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
      * 
      */
     @Export(name="ipv6CidrBlock", refs={String.class}, tree="[0]")
     private Output<String> ipv6CidrBlock;
 
     /**
-     * @return 子网IPv6网段。1、创建/修改时请输入子网IPv6网段的最后8比特位（子网的掩码固定为/64）。2、仅当EnableIpv6设置为true时，支持配置本参数。3、取值范围：0～255。掩码固定为/64。
+     * @return Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
      * 
      */
     public Output<String> ipv6CidrBlock() {
         return this.ipv6CidrBlock;
     }
     /**
-     * 该子网是否为默认子网。1、true：默认子网，表示该子网是创建ECS实例时系统自动创建的子网。2、false：非默认子网，表示该子网是用户手动创建的。
+     * Whether the subnet is a default subnet. 1. true: Default subnet, created automatically when an ECS instance is created. 2. false: Non-default subnet, created manually by the user
      * 
      */
     @Export(name="isDefault", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isDefault;
 
     /**
-     * @return 该子网是否为默认子网。1、true：默认子网，表示该子网是创建ECS实例时系统自动创建的子网。2、false：非默认子网，表示该子网是用户手动创建的。
+     * @return Whether the subnet is a default subnet. 1. true: Default subnet, created automatically when an ECS instance is created. 2. false: Non-default subnet, created manually by the user
      * 
      */
     public Output<Boolean> isDefault() {
         return this.isDefault;
     }
     /**
-     * 子网关联的网络ACL的ID。
+     * ID of the network ACL associated with the subnet
      * 
      */
     @Export(name="networkAclId", refs={String.class}, tree="[0]")
     private Output<String> networkAclId;
 
     /**
-     * @return 子网关联的网络ACL的ID。
+     * @return ID of the network ACL associated with the subnet
      * 
      */
     public Output<String> networkAclId() {
         return this.networkAclId;
     }
     /**
-     * 子网所在VPC实例所属项目的名称。
+     * Name of the project associated with the VPC instance where the subnet resides
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 子网所在VPC实例所属项目的名称。
+     * @return Name of the project associated with the VPC instance where the subnet resides
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 只读字段，子网IPv6网段。
+     * Read-only field, subnet IPv6 CIDR block
      * 
      */
     @Export(name="readIpv6CidrBlock", refs={String.class}, tree="[0]")
     private Output<String> readIpv6CidrBlock;
 
     /**
-     * @return 只读字段，子网IPv6网段。
+     * @return Read-only field, subnet IPv6 CIDR block
      * 
      */
     public Output<String> readIpv6CidrBlock() {
         return this.readIpv6CidrBlock;
     }
     /**
-     * 路由表信息。
+     * Route table information
      * 
      */
     @Export(name="routeTable", refs={SubnetRouteTable.class}, tree="[0]")
     private Output<SubnetRouteTable> routeTable;
 
     /**
-     * @return 路由表信息。
+     * @return Route table information
      * 
      */
     public Output<SubnetRouteTable> routeTable() {
         return this.routeTable;
     }
     /**
-     * 子网的状态。1、Pending：表示配置中。2、Available：表示可用。
+     * Subnet status. 1. Pending: Configuring. 2. Available: Available
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 子网的状态。1、Pending：表示配置中。2、Available：表示可用。
+     * @return Subnet status. 1. Pending: Configuring. 2. Available: Available
      * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
-     * 待修改信息的子网的ID。
+     * ID of the subnet whose information is to be modified
      * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
-     * @return 待修改信息的子网的ID。
+     * @return ID of the subnet whose information is to be modified
      * 
      */
     public Output<String> subnetId() {
         return this.subnetId;
     }
     /**
-     * 子网的名称，长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不能以http://或https://开头，不填默认是子网的ID。
+     * Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
      * 
      */
     @Export(name="subnetName", refs={String.class}, tree="[0]")
     private Output<String> subnetName;
 
     /**
-     * @return 子网的名称，长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不能以http://或https://开头，不填默认是子网的ID。
+     * @return Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
      * 
      */
     public Output<String> subnetName() {
@@ -291,56 +291,56 @@ public class Subnet extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 子网下可用IP总数。
+     * Total number of available IPs in the subnet
      * 
      */
     @Export(name="totalIpv4Count", refs={Integer.class}, tree="[0]")
     private Output<Integer> totalIpv4Count;
 
     /**
-     * @return 子网下可用IP总数。
+     * @return Total number of available IPs in the subnet
      * 
      */
     public Output<Integer> totalIpv4Count() {
         return this.totalIpv4Count;
     }
     /**
-     * 子网的更新时间。
+     * Subnet update time
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 子网的更新时间。
+     * @return Subnet update time
      * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
-     * 子网所属VPC的ID。
+     * ID of the VPC to which the subnet belongs
      * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
-     * @return 子网所属VPC的ID。
+     * @return ID of the VPC to which the subnet belongs
      * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
-     * 要创建的子网所属的可用区ID，更多可用区信息请参见地域和可用区。
+     * Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
      * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
-     * @return 要创建的子网所属的可用区ID，更多可用区信息请参见地域和可用区。
+     * @return Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
      * 
      */
     public Output<String> zoneId() {

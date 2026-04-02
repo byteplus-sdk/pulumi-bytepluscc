@@ -64,7 +64,7 @@ class GetGroupResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        创建时间。
+        Creation Time
         """
         return pulumi.get(self, "created_time")
 
@@ -72,7 +72,7 @@ class GetGroupResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        描述。
+        Description
         """
         return pulumi.get(self, "description")
 
@@ -80,7 +80,7 @@ class GetGroupResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> builtins.str:
         """
-        显示名。
+        Display Name
         """
         return pulumi.get(self, "display_name")
 
@@ -88,7 +88,7 @@ class GetGroupResult:
     @pulumi.getter(name="groupId")
     def group_id(self) -> builtins.str:
         """
-        用户组id。
+        User Group ID
         """
         return pulumi.get(self, "group_id")
 
@@ -96,7 +96,7 @@ class GetGroupResult:
     @pulumi.getter(name="groupName")
     def group_name(self) -> builtins.str:
         """
-        用户组名称。
+        User Group Name
         """
         return pulumi.get(self, "group_name")
 
@@ -112,7 +112,7 @@ class GetGroupResult:
     @pulumi.getter(name="joinType")
     def join_type(self) -> builtins.str:
         """
-        用户组类型。
+        User Group Type
         """
         return pulumi.get(self, "join_type")
 
@@ -120,7 +120,7 @@ class GetGroupResult:
     @pulumi.getter
     def members(self) -> Sequence['outputs.GetGroupMemberResult']:
         """
-        用户组成员列表
+        User Group Member List
         """
         return pulumi.get(self, "members")
 
@@ -128,7 +128,7 @@ class GetGroupResult:
     @pulumi.getter
     def source(self) -> builtins.str:
         """
-        用户组来源。
+        User Group Source
         """
         return pulumi.get(self, "source")
 
@@ -136,7 +136,7 @@ class GetGroupResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        更新时间。
+        Update Time
         """
         return pulumi.get(self, "updated_time")
 

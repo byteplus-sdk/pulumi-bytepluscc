@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone.Outputs
     public sealed class ResolverRuleVpC
     {
         /// <summary>
-        /// VPC 的地域。
+        /// Region of the VPC
         /// </summary>
         public readonly string? Region;
         /// <summary>
-        /// VPC 的 ID。
+        /// VPC ID
         /// </summary>
         public readonly string? VpcId;
 

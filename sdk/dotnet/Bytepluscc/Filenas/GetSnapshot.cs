@@ -65,19 +65,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas
     public sealed class GetSnapshotResult
     {
         /// <summary>
-        /// 快照创建时间。
+        /// Snapshot Creation Time
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 快照描述信息。
+        /// Snapshot Description
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 文件系统 ID。
+        /// File System ID
         /// </summary>
         public readonly string FileSystemId;
         /// <summary>
-        /// 文件系统名称。
+        /// File System Name
         /// </summary>
         public readonly string FileSystemName;
         /// <summary>
@@ -85,43 +85,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 是否加密，当前仅支持false，即不加密。
+        /// Is encryption enabled. Currently only false is supported (not encrypted)
         /// </summary>
         public readonly bool IsEncrypt;
         /// <summary>
-        /// 快照创建进度。
+        /// Snapshot Creation Progress
         /// </summary>
         public readonly string Progress;
         /// <summary>
-        /// 快照保留时间，默认为2147483647，即永久保留。
+        /// Snapshot Retention Period. Default is 2147483647 (permanent retention)
         /// </summary>
         public readonly int RetentionDays;
         /// <summary>
-        /// 快照 ID。
+        /// Snapshot ID
         /// </summary>
         public readonly string SnapshotId;
         /// <summary>
-        /// 快照名称。
+        /// Snapshot Name
         /// </summary>
         public readonly string SnapshotName;
         /// <summary>
-        /// 快照类型，默认为Manual，即手动快照。
+        /// Snapshot Type. Default is Manual (manual snapshot)
         /// </summary>
         public readonly string SnapshotType;
         /// <summary>
-        /// 文件系统容量，单位为 GiB。
+        /// File System Capacity (GiB)
         /// </summary>
         public readonly int SourceSize;
         /// <summary>
-        /// 文件系统版本。
+        /// File System Version
         /// </summary>
         public readonly string SourceVersion;
         /// <summary>
-        /// 快照状态。说明如下：Progressing：正在创建。Accomplished：创建成功。Failed：创建失败。
+        /// Snapshot Status. Details: Progressing: Creating. Accomplished: Created successfully. Failed: Creation failed
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// 可用区 ID。
+        /// Availability Zone ID
         /// </summary>
         public readonly string ZoneId;
 

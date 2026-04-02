@@ -17,14 +17,14 @@ public final class DomainCacheKeyArgs extends com.pulumi.resources.ResourceArgs 
     public static final DomainCacheKeyArgs Empty = new DomainCacheKeyArgs();
 
     /**
-     * 表示在 Condition 情况下，内容分发网络执行的操作。
+     * Indicates the action performed by the content delivery network under the Condition scenario.
      * 
      */
     @Import(name="cacheKeyAction")
     private @Nullable Output<DomainCacheKeyCacheKeyActionArgs> cacheKeyAction;
 
     /**
-     * @return 表示在 Condition 情况下，内容分发网络执行的操作。
+     * @return Indicates the action performed by the content delivery network under the Condition scenario.
      * 
      */
     public Optional<Output<DomainCacheKeyCacheKeyActionArgs>> cacheKeyAction() {
@@ -32,14 +32,14 @@ public final class DomainCacheKeyArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 表示该配置模块的生效条件，由一组规则组成。
+     * Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<DomainCacheKeyConditionArgs> condition;
 
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public Optional<Output<DomainCacheKeyConditionArgs>> condition() {
@@ -72,7 +72,7 @@ public final class DomainCacheKeyArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param cacheKeyAction 表示在 Condition 情况下，内容分发网络执行的操作。
+         * @param cacheKeyAction Indicates the action performed by the content delivery network under the Condition scenario.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class DomainCacheKeyArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param cacheKeyAction 表示在 Condition 情况下，内容分发网络执行的操作。
+         * @param cacheKeyAction Indicates the action performed by the content delivery network under the Condition scenario.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class DomainCacheKeyArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param condition 表示该配置模块的生效条件，由一组规则组成。
+         * @param condition Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class DomainCacheKeyArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param condition 表示该配置模块的生效条件，由一组规则组成。
+         * @param condition Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
          * 
          * @return builder
          * 

@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 public final class DomainRemoteAuth {
     private @Nullable List<DomainRemoteAuthRemoteAuthRule> remoteAuthRules;
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+     * @return Indicates whether this feature is enabled. The parameter values are as follows: true: enables the feature. false: disables the feature.
      * 
      */
     private @Nullable Boolean switch_;
@@ -25,7 +25,7 @@ public final class DomainRemoteAuth {
         return this.remoteAuthRules == null ? List.of() : this.remoteAuthRules;
     }
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+     * @return Indicates whether this feature is enabled. The parameter values are as follows: true: enables the feature. false: disables the feature.
      * 
      */
     public Optional<Boolean> switch_() {

@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class GetRuleRuleConditionQueryStringConfigValueResult
     {
         /// <summary>
-        /// 查询字符串键。
+        /// Query string key.
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// 查询字符串值。
+        /// Query string value.
         /// </summary>
         public readonly string Value;
 

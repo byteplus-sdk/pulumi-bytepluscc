@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Ecs
 {
     /// <summary>
-    /// 云助手是火山引擎打造的原生自动化运维工具。您可以创建立即执行、周期执行、定时执行的作业任务，创建完成后完，云助手客户端将按照执行模式自动开始执行。
+    /// Cloud Assistant is a native automated operations tool developed by Volcano Engine. You can create jobs for immediate, periodic, or scheduled execution. After creation, the Cloud Assistant client automatically starts execution according to the execution mode.
     /// 
     /// ## Example Usage
     /// 
@@ -65,85 +65,85 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     public partial class Invocation : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 命令内容。
+        /// Command content.
         /// </summary>
         [Output("commandContent")]
         public Output<string> CommandContent { get; private set; } = null!;
 
         /// <summary>
-        /// 被调用命令的描述。
+        /// Description of the invoked command.
         /// </summary>
         [Output("commandDescription")]
         public Output<string> CommandDescription { get; private set; } = null!;
 
         /// <summary>
-        /// 命令ID。
+        /// Command ID.
         /// </summary>
         [Output("commandId")]
         public Output<string> CommandId { get; private set; } = null!;
 
         /// <summary>
-        /// 任务触发时的命令名称。
+        /// Command name when the task is triggered.
         /// </summary>
         [Output("commandName")]
         public Output<string> CommandName { get; private set; } = null!;
 
         /// <summary>
-        /// 被调用命令的提供方。
+        /// Provider of the invoked command.
         /// </summary>
         [Output("commandProvider")]
         public Output<string> CommandProvider { get; private set; } = null!;
 
         /// <summary>
-        /// 作业触发的命令类型。
+        /// Command type triggered by the job.
         /// </summary>
         [Output("commandType")]
         public Output<string> CommandType { get; private set; } = null!;
 
         /// <summary>
-        /// 被调用命令是否使用自定义参数。true：已启用。false：未启用。
+        /// Whether the invoked command uses custom parameters. true: enabled. false: not enabled.
         /// </summary>
         [Output("enableParameter")]
         public Output<bool> EnableParameter { get; private set; } = null!;
 
         /// <summary>
-        /// 任务结束时间。
+        /// Task end time.
         /// </summary>
         [Output("endTime")]
         public Output<string> EndTime { get; private set; } = null!;
 
         /// <summary>
-        /// 执行频率。RepeatMode=Rate 时本参数必填。格式：&lt;执行间隔数值&gt;&lt;执行间隔单位&gt;，执行间隔单位：支持分钟（5m-60m）、小时（1h-24h）和天（1d-7d）。执行间隔基于固定频率，与作业实际执行需要的时间无关。创建作业后基于LaunchTime执行一次，根据间隔设置确定下一次执行时间。
+        /// Execution frequency. This parameter is required when RepeatMode=Rate. Format: \n\n\n\n. Interval units supported: minutes (5m–60m), hours (1h–24h), and days (1d–7d). The interval is based on a fixed frequency and is independent of the actual job execution time. After job creation, it executes once based on LaunchTime, and the next execution time is determined by the interval setting.
         /// </summary>
         [Output("frequency")]
         public Output<string> Frequency { get; private set; } = null!;
 
         /// <summary>
-        /// 实例ID列表，最多支持200个ID。
+        /// Instance ID list, supports up to 200 IDs.
         /// </summary>
         [Output("instanceIds")]
         public Output<ImmutableArray<string>> InstanceIds { get; private set; } = null!;
 
         /// <summary>
-        /// 执行实例数量。
+        /// Number of instances executed.
         /// </summary>
         [Output("instanceNumber")]
         public Output<int> InstanceNumber { get; private set; } = null!;
 
         /// <summary>
-        /// 作业描述，默认为空字符串，不超过256个字符。
+        /// Job description. Defaults to an empty string and must not exceed 256 characters.
         /// </summary>
         [Output("invocationDescription")]
         public Output<string> InvocationDescription { get; private set; } = null!;
 
         /// <summary>
-        /// 任务执行 ID。
+        /// Task execution ID.
         /// </summary>
         [Output("invocationId")]
         public Output<string> InvocationId { get; private set; } = null!;
 
         /// <summary>
-        /// 作业名称。不超过64个字符。暂不限制特殊字符。同地域下作业名称可重复。
+        /// Job name. Maximum 64 characters. No restriction on special characters. Job names can be duplicated within the same region.
         /// </summary>
         [Output("invocationName")]
         public Output<string> InvocationName { get; private set; } = null!;
@@ -152,13 +152,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public Output<ImmutableArray<Outputs.InvocationInvocationResult>> InvocationResults { get; private set; } = null!;
 
         /// <summary>
-        /// 命令执行的总执行状态。
+        /// Overall execution status of the command.
         /// </summary>
         [Output("invocationStatus")]
         public Output<string> InvocationStatus { get; private set; } = null!;
 
         /// <summary>
-        /// 执行时间。
+        /// Execution time.
         /// </summary>
         [Output("launchTime")]
         public Output<string> LaunchTime { get; private set; } = null!;
@@ -167,31 +167,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public Output<ImmutableArray<Outputs.InvocationParameterDefinition>> ParameterDefinitions { get; private set; } = null!;
 
         /// <summary>
-        /// 命令中包含自定义参数时，需通过本参数传入自定义参数的键值对。自定义参数个数范围为0~60。Key不允许为空字符串，最多支持64个字符。Value允许为空字符串。自定义参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的自定义参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+        /// When the command includes custom parameters, use this parameter to pass custom parameter key-value pairs. The number of custom parameters ranges from 0 to 60. Key cannot be an empty string and supports up to 64 characters. Value can be an empty string. The combined length of custom parameters and original command content after Base64 encoding must not exceed 16 KB. The set of custom parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
         /// </summary>
         [Output("parameters")]
         public Output<string> Parameters { get; private set; } = null!;
 
         /// <summary>
-        /// 资源所属项目，一个资源只能归属于一个项目。
+        /// Project to which the resource belongs; each resource can belong to only one project.
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 周期结束时间，仅适用于周期任务（Rate）。
+        /// Cycle end time, applicable only to periodic tasks (Rate).
         /// </summary>
         [Output("recurrenceEndTime")]
         public Output<string> RecurrenceEndTime { get; private set; } = null!;
 
         /// <summary>
-        /// 设置命令执行的方式。Once：默认，表示立即执行命令。Rate：周期执行命令，需要通过Frequency参数传入Rate表达式指定执行周期。Fixed：定时执行命令，需要通过LaunchTime参数指定的执行时间。
+        /// Set the command execution mode. Once: Default, executes the command immediately. Rate: Executes the command periodically; specify the execution cycle using the Frequency parameter and Rate expression. Fixed: Executes the command at a scheduled time; specify the execution time using the LaunchTime parameter.
         /// </summary>
         [Output("repeatMode")]
         public Output<string> RepeatMode { get; private set; } = null!;
 
         /// <summary>
-        /// 任务开始时间。
+        /// Task start time.
         /// </summary>
         [Output("startTime")]
         public Output<string> StartTime { get; private set; } = null!;
@@ -200,25 +200,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public Output<ImmutableArray<Outputs.InvocationTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。默认值：60。可选范围为：30~86400。
+        /// Maximum timeout for command execution in ECS instances, in seconds. Default: 60. Optional range: 30–86400.
         /// </summary>
         [Output("timeout")]
         public Output<int> Timeout { get; private set; } = null!;
 
         /// <summary>
-        /// 在ECS实例中执行命令的用户名称。
+        /// User name for executing the command in the ECS instance.
         /// </summary>
         [Output("username")]
         public Output<string> Username { get; private set; } = null!;
 
         /// <summary>
-        /// 自定义windows用户的密码。
+        /// Password for custom Windows user.
         /// </summary>
         [Output("windowsPassword")]
         public Output<string> WindowsPassword { get; private set; } = null!;
 
         /// <summary>
-        /// 创建的命令在ECS实例中运行的目录。
+        /// Directory where the created command runs in the ECS instance.
         /// </summary>
         [Output("workingDir")]
         public Output<string> WorkingDir { get; private set; } = null!;
@@ -271,13 +271,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     public sealed class InvocationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 命令ID。
+        /// Command ID.
         /// </summary>
         [Input("commandId", required: true)]
         public Input<string> CommandId { get; set; } = null!;
 
         /// <summary>
-        /// 执行频率。RepeatMode=Rate 时本参数必填。格式：&lt;执行间隔数值&gt;&lt;执行间隔单位&gt;，执行间隔单位：支持分钟（5m-60m）、小时（1h-24h）和天（1d-7d）。执行间隔基于固定频率，与作业实际执行需要的时间无关。创建作业后基于LaunchTime执行一次，根据间隔设置确定下一次执行时间。
+        /// Execution frequency. This parameter is required when RepeatMode=Rate. Format: \n\n\n\n. Interval units supported: minutes (5m–60m), hours (1h–24h), and days (1d–7d). The interval is based on a fixed frequency and is independent of the actual job execution time. After job creation, it executes once based on LaunchTime, and the next execution time is determined by the interval setting.
         /// </summary>
         [Input("frequency")]
         public Input<string>? Frequency { get; set; }
@@ -286,7 +286,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         private InputList<string>? _instanceIds;
 
         /// <summary>
-        /// 实例ID列表，最多支持200个ID。
+        /// Instance ID list, supports up to 200 IDs.
         /// </summary>
         public InputList<string> InstanceIds
         {
@@ -295,43 +295,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         }
 
         /// <summary>
-        /// 作业描述，默认为空字符串，不超过256个字符。
+        /// Job description. Defaults to an empty string and must not exceed 256 characters.
         /// </summary>
         [Input("invocationDescription")]
         public Input<string>? InvocationDescription { get; set; }
 
         /// <summary>
-        /// 作业名称。不超过64个字符。暂不限制特殊字符。同地域下作业名称可重复。
+        /// Job name. Maximum 64 characters. No restriction on special characters. Job names can be duplicated within the same region.
         /// </summary>
         [Input("invocationName", required: true)]
         public Input<string> InvocationName { get; set; } = null!;
 
         /// <summary>
-        /// 执行时间。
+        /// Execution time.
         /// </summary>
         [Input("launchTime")]
         public Input<string>? LaunchTime { get; set; }
 
         /// <summary>
-        /// 命令中包含自定义参数时，需通过本参数传入自定义参数的键值对。自定义参数个数范围为0~60。Key不允许为空字符串，最多支持64个字符。Value允许为空字符串。自定义参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的自定义参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+        /// When the command includes custom parameters, use this parameter to pass custom parameter key-value pairs. The number of custom parameters ranges from 0 to 60. Key cannot be an empty string and supports up to 64 characters. Value can be an empty string. The combined length of custom parameters and original command content after Base64 encoding must not exceed 16 KB. The set of custom parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
         /// </summary>
         [Input("parameters")]
         public Input<string>? Parameters { get; set; }
 
         /// <summary>
-        /// 资源所属项目，一个资源只能归属于一个项目。
+        /// Project to which the resource belongs; each resource can belong to only one project.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 周期结束时间，仅适用于周期任务（Rate）。
+        /// Cycle end time, applicable only to periodic tasks (Rate).
         /// </summary>
         [Input("recurrenceEndTime")]
         public Input<string>? RecurrenceEndTime { get; set; }
 
         /// <summary>
-        /// 设置命令执行的方式。Once：默认，表示立即执行命令。Rate：周期执行命令，需要通过Frequency参数传入Rate表达式指定执行周期。Fixed：定时执行命令，需要通过LaunchTime参数指定的执行时间。
+        /// Set the command execution mode. Once: Default, executes the command immediately. Rate: Executes the command periodically; specify the execution cycle using the Frequency parameter and Rate expression. Fixed: Executes the command at a scheduled time; specify the execution time using the LaunchTime parameter.
         /// </summary>
         [Input("repeatMode")]
         public Input<string>? RepeatMode { get; set; }
@@ -345,25 +345,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         }
 
         /// <summary>
-        /// 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。默认值：60。可选范围为：30~86400。
+        /// Maximum timeout for command execution in ECS instances, in seconds. Default: 60. Optional range: 30–86400.
         /// </summary>
         [Input("timeout")]
         public Input<int>? Timeout { get; set; }
 
         /// <summary>
-        /// 在ECS实例中执行命令的用户名称。
+        /// User name for executing the command in the ECS instance.
         /// </summary>
         [Input("username")]
         public Input<string>? Username { get; set; }
 
         /// <summary>
-        /// 自定义windows用户的密码。
+        /// Password for custom Windows user.
         /// </summary>
         [Input("windowsPassword")]
         public Input<string>? WindowsPassword { get; set; }
 
         /// <summary>
-        /// 创建的命令在ECS实例中运行的目录。
+        /// Directory where the created command runs in the ECS instance.
         /// </summary>
         [Input("workingDir")]
         public Input<string>? WorkingDir { get; set; }
@@ -377,55 +377,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     public sealed class InvocationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 命令内容。
+        /// Command content.
         /// </summary>
         [Input("commandContent")]
         public Input<string>? CommandContent { get; set; }
 
         /// <summary>
-        /// 被调用命令的描述。
+        /// Description of the invoked command.
         /// </summary>
         [Input("commandDescription")]
         public Input<string>? CommandDescription { get; set; }
 
         /// <summary>
-        /// 命令ID。
+        /// Command ID.
         /// </summary>
         [Input("commandId")]
         public Input<string>? CommandId { get; set; }
 
         /// <summary>
-        /// 任务触发时的命令名称。
+        /// Command name when the task is triggered.
         /// </summary>
         [Input("commandName")]
         public Input<string>? CommandName { get; set; }
 
         /// <summary>
-        /// 被调用命令的提供方。
+        /// Provider of the invoked command.
         /// </summary>
         [Input("commandProvider")]
         public Input<string>? CommandProvider { get; set; }
 
         /// <summary>
-        /// 作业触发的命令类型。
+        /// Command type triggered by the job.
         /// </summary>
         [Input("commandType")]
         public Input<string>? CommandType { get; set; }
 
         /// <summary>
-        /// 被调用命令是否使用自定义参数。true：已启用。false：未启用。
+        /// Whether the invoked command uses custom parameters. true: enabled. false: not enabled.
         /// </summary>
         [Input("enableParameter")]
         public Input<bool>? EnableParameter { get; set; }
 
         /// <summary>
-        /// 任务结束时间。
+        /// Task end time.
         /// </summary>
         [Input("endTime")]
         public Input<string>? EndTime { get; set; }
 
         /// <summary>
-        /// 执行频率。RepeatMode=Rate 时本参数必填。格式：&lt;执行间隔数值&gt;&lt;执行间隔单位&gt;，执行间隔单位：支持分钟（5m-60m）、小时（1h-24h）和天（1d-7d）。执行间隔基于固定频率，与作业实际执行需要的时间无关。创建作业后基于LaunchTime执行一次，根据间隔设置确定下一次执行时间。
+        /// Execution frequency. This parameter is required when RepeatMode=Rate. Format: \n\n\n\n. Interval units supported: minutes (5m–60m), hours (1h–24h), and days (1d–7d). The interval is based on a fixed frequency and is independent of the actual job execution time. After job creation, it executes once based on LaunchTime, and the next execution time is determined by the interval setting.
         /// </summary>
         [Input("frequency")]
         public Input<string>? Frequency { get; set; }
@@ -434,7 +434,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         private InputList<string>? _instanceIds;
 
         /// <summary>
-        /// 实例ID列表，最多支持200个ID。
+        /// Instance ID list, supports up to 200 IDs.
         /// </summary>
         public InputList<string> InstanceIds
         {
@@ -443,25 +443,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         }
 
         /// <summary>
-        /// 执行实例数量。
+        /// Number of instances executed.
         /// </summary>
         [Input("instanceNumber")]
         public Input<int>? InstanceNumber { get; set; }
 
         /// <summary>
-        /// 作业描述，默认为空字符串，不超过256个字符。
+        /// Job description. Defaults to an empty string and must not exceed 256 characters.
         /// </summary>
         [Input("invocationDescription")]
         public Input<string>? InvocationDescription { get; set; }
 
         /// <summary>
-        /// 任务执行 ID。
+        /// Task execution ID.
         /// </summary>
         [Input("invocationId")]
         public Input<string>? InvocationId { get; set; }
 
         /// <summary>
-        /// 作业名称。不超过64个字符。暂不限制特殊字符。同地域下作业名称可重复。
+        /// Job name. Maximum 64 characters. No restriction on special characters. Job names can be duplicated within the same region.
         /// </summary>
         [Input("invocationName")]
         public Input<string>? InvocationName { get; set; }
@@ -475,13 +475,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         }
 
         /// <summary>
-        /// 命令执行的总执行状态。
+        /// Overall execution status of the command.
         /// </summary>
         [Input("invocationStatus")]
         public Input<string>? InvocationStatus { get; set; }
 
         /// <summary>
-        /// 执行时间。
+        /// Execution time.
         /// </summary>
         [Input("launchTime")]
         public Input<string>? LaunchTime { get; set; }
@@ -495,31 +495,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         }
 
         /// <summary>
-        /// 命令中包含自定义参数时，需通过本参数传入自定义参数的键值对。自定义参数个数范围为0~60。Key不允许为空字符串，最多支持64个字符。Value允许为空字符串。自定义参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的自定义参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+        /// When the command includes custom parameters, use this parameter to pass custom parameter key-value pairs. The number of custom parameters ranges from 0 to 60. Key cannot be an empty string and supports up to 64 characters. Value can be an empty string. The combined length of custom parameters and original command content after Base64 encoding must not exceed 16 KB. The set of custom parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
         /// </summary>
         [Input("parameters")]
         public Input<string>? Parameters { get; set; }
 
         /// <summary>
-        /// 资源所属项目，一个资源只能归属于一个项目。
+        /// Project to which the resource belongs; each resource can belong to only one project.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 周期结束时间，仅适用于周期任务（Rate）。
+        /// Cycle end time, applicable only to periodic tasks (Rate).
         /// </summary>
         [Input("recurrenceEndTime")]
         public Input<string>? RecurrenceEndTime { get; set; }
 
         /// <summary>
-        /// 设置命令执行的方式。Once：默认，表示立即执行命令。Rate：周期执行命令，需要通过Frequency参数传入Rate表达式指定执行周期。Fixed：定时执行命令，需要通过LaunchTime参数指定的执行时间。
+        /// Set the command execution mode. Once: Default, executes the command immediately. Rate: Executes the command periodically; specify the execution cycle using the Frequency parameter and Rate expression. Fixed: Executes the command at a scheduled time; specify the execution time using the LaunchTime parameter.
         /// </summary>
         [Input("repeatMode")]
         public Input<string>? RepeatMode { get; set; }
 
         /// <summary>
-        /// 任务开始时间。
+        /// Task start time.
         /// </summary>
         [Input("startTime")]
         public Input<string>? StartTime { get; set; }
@@ -533,25 +533,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         }
 
         /// <summary>
-        /// 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。默认值：60。可选范围为：30~86400。
+        /// Maximum timeout for command execution in ECS instances, in seconds. Default: 60. Optional range: 30–86400.
         /// </summary>
         [Input("timeout")]
         public Input<int>? Timeout { get; set; }
 
         /// <summary>
-        /// 在ECS实例中执行命令的用户名称。
+        /// User name for executing the command in the ECS instance.
         /// </summary>
         [Input("username")]
         public Input<string>? Username { get; set; }
 
         /// <summary>
-        /// 自定义windows用户的密码。
+        /// Password for custom Windows user.
         /// </summary>
         [Input("windowsPassword")]
         public Input<string>? WindowsPassword { get; set; }
 
         /// <summary>
-        /// 创建的命令在ECS实例中运行的目录。
+        /// Directory where the created command runs in the ECS instance.
         /// </summary>
         [Input("workingDir")]
         public Input<string>? WorkingDir { get; set; }

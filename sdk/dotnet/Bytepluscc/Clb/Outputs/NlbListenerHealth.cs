@@ -15,35 +15,35 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb.Outputs
     public sealed class NlbListenerHealth
     {
         /// <summary>
-        /// 后端服务器的实例 ID或IP地址。
+        /// Backend server instance ID or IP address
         /// </summary>
         public readonly string? InstanceId;
         /// <summary>
-        /// 后端服务器的IP地址。
+        /// Backend server IP address
         /// </summary>
         public readonly string? Ip;
         /// <summary>
-        /// 后端服务器提供服务的端口。
+        /// Port on which the backend server provides services
         /// </summary>
         public readonly int? Port;
         /// <summary>
-        /// 后端服务器ID。
+        /// Backend server ID
         /// </summary>
         public readonly string? ServerId;
         /// <summary>
-        /// 后端服务器的类型。ecs：云服务器实例（即主网卡）；eni：辅助网卡；ip：IP地址
+        /// Backend server type: ecs (cloud server instance, i.e., primary network interface); eni (secondary network interface); ip (IP address)
         /// </summary>
         public readonly string? ServerType;
         /// <summary>
-        /// 后端服务器的健康状态。Up：正常；Down：异常；Unused：未被使用（NLB实例已关闭跨可用区转发，且没有来自该后端服务器可用区的访问流量）。
+        /// Backend server health status: Up (normal); Down (abnormal); Unused (not in use—NLB instance has disabled cross-zone forwarding and there is no traffic from this backend server's zone)
         /// </summary>
         public readonly string? Status;
         /// <summary>
-        /// 健康状态最后更新时间。
+        /// Last update time of health status
         /// </summary>
         public readonly string? UpdatedTime;
         /// <summary>
-        /// 后端服务器接收访问流量的可用区ID。
+        /// Zone ID where the backend server receives traffic
         /// </summary>
         public readonly string? ZoneId;
 

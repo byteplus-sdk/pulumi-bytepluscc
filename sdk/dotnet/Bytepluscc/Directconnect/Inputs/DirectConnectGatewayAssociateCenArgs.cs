@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Directconnect.Inputs
     public sealed class DirectConnectGatewayAssociateCenArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// CEN的ID。
+        /// ID of CEN.
         /// </summary>
         [Input("cenId")]
         public Input<string>? CenId { get; set; }
 
         /// <summary>
-        /// CEN的用户ID。
+        /// User ID of CEN.
         /// </summary>
         [Input("cenOwnerId")]
         public Input<string>? CenOwnerId { get; set; }
 
         /// <summary>
-        /// 实例在CEN中的状态。Attaching：加载中。Attached：已加载。
+        /// Status of the instance in CEN. Attaching: attaching. Attached: attached.
         /// </summary>
         [Input("cenStatus")]
         public Input<string>? CenStatus { get; set; }

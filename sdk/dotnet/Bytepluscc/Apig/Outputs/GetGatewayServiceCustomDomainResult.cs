@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GetGatewayServiceCustomDomainResult
     {
         /// <summary>
-        /// 自定义域名。
+        /// Custom domain.
         /// </summary>
         public readonly string Domain;
         /// <summary>
-        /// 自定义域名ID。
+        /// Custom domain ID.
         /// </summary>
         public readonly string DomainId;
 

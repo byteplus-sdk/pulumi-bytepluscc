@@ -14,31 +14,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class UpstreamUpstreamSpecNacosServiceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 分组。
+        /// Group
         /// </summary>
         [Input("group")]
         public Input<string>? Group { get; set; }
 
         /// <summary>
-        /// 命名空间。
+        /// Namespace
         /// </summary>
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }
 
         /// <summary>
-        /// 命名空间ID。
+        /// Namespace ID
         /// </summary>
         [Input("namespaceId")]
         public Input<string>? NamespaceId { get; set; }
 
         /// <summary>
-        /// 服务。
+        /// Service
         /// </summary>
         [Input("service")]
         public Input<string>? Service { get; set; }
 
         /// <summary>
-        /// Upstream来源ID。
+        /// Upstream source ID
         /// </summary>
         [Input("upstreamSourceId")]
         public Input<string>? UpstreamSourceId { get; set; }

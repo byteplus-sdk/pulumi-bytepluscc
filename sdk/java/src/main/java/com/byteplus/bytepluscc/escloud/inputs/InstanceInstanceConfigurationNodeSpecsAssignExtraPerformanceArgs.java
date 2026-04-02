@@ -16,14 +16,14 @@ public final class InstanceInstanceConfigurationNodeSpecsAssignExtraPerformanceA
     public static final InstanceInstanceConfigurationNodeSpecsAssignExtraPerformanceArgs Empty = new InstanceInstanceConfigurationNodeSpecsAssignExtraPerformanceArgs();
 
     /**
-     * 当您的数据节点选择使用 FlexPL 存储类型，且存储规格配置为 500GiB 及以上时，支持购买带宽包增加磁盘带宽。单位为MiB，调整步长为10MiB。当前支持的存储规格及对应额外性能包吞吐量上限如下：es.volume.essd.flexpl-standard：650
+     * When your data node uses the FlexPL storage type and the storage specification is 500 GiB or above, you can purchase a bandwidth package to increase disk bandwidth. Unit: MiB; adjustment step: 10 MiB. Supported storage specifications and corresponding maximum throughput for additional performance packages are as follows: es.volume.essd.flexpl-standard: 650.
      * 
      */
     @Import(name="throughput")
     private @Nullable Output<Integer> throughput;
 
     /**
-     * @return 当您的数据节点选择使用 FlexPL 存储类型，且存储规格配置为 500GiB 及以上时，支持购买带宽包增加磁盘带宽。单位为MiB，调整步长为10MiB。当前支持的存储规格及对应额外性能包吞吐量上限如下：es.volume.essd.flexpl-standard：650
+     * @return When your data node uses the FlexPL storage type and the storage specification is 500 GiB or above, you can purchase a bandwidth package to increase disk bandwidth. Unit: MiB; adjustment step: 10 MiB. Supported storage specifications and corresponding maximum throughput for additional performance packages are as follows: es.volume.essd.flexpl-standard: 650.
      * 
      */
     public Optional<Output<Integer>> throughput() {
@@ -55,7 +55,7 @@ public final class InstanceInstanceConfigurationNodeSpecsAssignExtraPerformanceA
         }
 
         /**
-         * @param throughput 当您的数据节点选择使用 FlexPL 存储类型，且存储规格配置为 500GiB 及以上时，支持购买带宽包增加磁盘带宽。单位为MiB，调整步长为10MiB。当前支持的存储规格及对应额外性能包吞吐量上限如下：es.volume.essd.flexpl-standard：650
+         * @param throughput When your data node uses the FlexPL storage type and the storage specification is 500 GiB or above, you can purchase a bandwidth package to increase disk bandwidth. Unit: MiB; adjustment step: 10 MiB. Supported storage specifications and corresponding maximum throughput for additional performance packages are as follows: es.volume.essd.flexpl-standard: 650.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class InstanceInstanceConfigurationNodeSpecsAssignExtraPerformanceA
         }
 
         /**
-         * @param throughput 当您的数据节点选择使用 FlexPL 存储类型，且存储规格配置为 500GiB 及以上时，支持购买带宽包增加磁盘带宽。单位为MiB，调整步长为10MiB。当前支持的存储规格及对应额外性能包吞吐量上限如下：es.volume.essd.flexpl-standard：650
+         * @param throughput When your data node uses the FlexPL storage type and the storage specification is 500 GiB or above, you can purchase a bandwidth package to increase disk bandwidth. Unit: MiB; adjustment step: 10 MiB. Supported storage specifications and corresponding maximum throughput for additional performance packages are as follows: es.volume.essd.flexpl-standard: 650.
          * 
          * @return builder
          * 

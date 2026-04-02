@@ -18,14 +18,14 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
     public static final InstanceShardNodeArgs Empty = new InstanceShardNodeArgs();
 
     /**
-     * 节点延迟时间。单位：秒。
+     * Node latency. Unit: seconds.
      * 
      */
     @Import(name="nodeDelayTime")
     private @Nullable Output<Integer> nodeDelayTime;
 
     /**
-     * @return 节点延迟时间。单位：秒。
+     * @return Node latency. Unit: seconds.
      * 
      */
     public Optional<Output<Integer>> nodeDelayTime() {
@@ -33,14 +33,14 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 节点 ID。
+     * Node ID.
      * 
      */
     @Import(name="nodeId")
     private @Nullable Output<String> nodeId;
 
     /**
-     * @return 节点 ID。
+     * @return Node ID.
      * 
      */
     public Optional<Output<String>> nodeId() {
@@ -48,14 +48,14 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+     * Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node. ReadOnly: read-only node.
      * 
      */
     @Import(name="nodeRole")
     private @Nullable Output<String> nodeRole;
 
     /**
-     * @return 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+     * @return Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node. ReadOnly: read-only node.
      * 
      */
     public Optional<Output<String>> nodeRole() {
@@ -63,14 +63,14 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 节点规格。
+     * Node specification.
      * 
      */
     @Import(name="nodeSpec")
     private @Nullable Output<String> nodeSpec;
 
     /**
-     * @return 节点规格。
+     * @return Node specification.
      * 
      */
     public Optional<Output<String>> nodeSpec() {
@@ -78,14 +78,14 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 节点状态。
+     * Node status.
      * 
      */
     @Import(name="nodeStatus")
     private @Nullable Output<String> nodeStatus;
 
     /**
-     * @return 节点状态。
+     * @return Node status.
      * 
      */
     public Optional<Output<String>> nodeStatus() {
@@ -93,14 +93,14 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 总内存。单位：GiB。
+     * Total memory. Unit: GiB.
      * 
      */
     @Import(name="totalMemoryGb")
     private @Nullable Output<Double> totalMemoryGb;
 
     /**
-     * @return 总内存。单位：GiB。
+     * @return Total memory. Unit: GiB.
      * 
      */
     public Optional<Output<Double>> totalMemoryGb() {
@@ -108,14 +108,14 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 该节点的总存储空间。单位：GiB。
+     * Total storage space for this node. Unit: GiB.
      * 
      */
     @Import(name="totalStorageGb")
     private @Nullable Output<Double> totalStorageGb;
 
     /**
-     * @return 该节点的总存储空间。单位：GiB。
+     * @return Total storage space for this node. Unit: GiB.
      * 
      */
     public Optional<Output<Double>> totalStorageGb() {
@@ -123,14 +123,14 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 总核数。
+     * Total cores.
      * 
      */
     @Import(name="totalvCpu")
     private @Nullable Output<Double> totalvCpu;
 
     /**
-     * @return 总核数。
+     * @return Total cores.
      * 
      */
     public Optional<Output<Double>> totalvCpu() {
@@ -138,14 +138,14 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 已用内存。单位：GiB。
+     * Used memory. Unit: GiB.
      * 
      */
     @Import(name="usedMemoryGb")
     private @Nullable Output<Double> usedMemoryGb;
 
     /**
-     * @return 已用内存。单位：GiB。
+     * @return Used memory. Unit: GiB.
      * 
      */
     public Optional<Output<Double>> usedMemoryGb() {
@@ -153,14 +153,14 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 该节点已用的存储空间。单位：GiB。
+     * Storage space used by this node. Unit: GiB.
      * 
      */
     @Import(name="usedStorageGb")
     private @Nullable Output<Double> usedStorageGb;
 
     /**
-     * @return 该节点已用的存储空间。单位：GiB。
+     * @return Storage space used by this node. Unit: GiB.
      * 
      */
     public Optional<Output<Double>> usedStorageGb() {
@@ -168,14 +168,14 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 已用核数。
+     * Used cores.
      * 
      */
     @Import(name="usedvCpu")
     private @Nullable Output<Double> usedvCpu;
 
     /**
-     * @return 已用核数。
+     * @return Used cores.
      * 
      */
     public Optional<Output<Double>> usedvCpu() {
@@ -183,14 +183,14 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 当前节点所属的可用区 ID。
+     * Availability zone ID of the current node.
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return 当前节点所属的可用区 ID。
+     * @return Availability zone ID of the current node.
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -233,7 +233,7 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param nodeDelayTime 节点延迟时间。单位：秒。
+         * @param nodeDelayTime Node latency. Unit: seconds.
          * 
          * @return builder
          * 
@@ -244,7 +244,7 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param nodeDelayTime 节点延迟时间。单位：秒。
+         * @param nodeDelayTime Node latency. Unit: seconds.
          * 
          * @return builder
          * 
@@ -254,7 +254,7 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param nodeId 节点 ID。
+         * @param nodeId Node ID.
          * 
          * @return builder
          * 
@@ -265,7 +265,7 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param nodeId 节点 ID。
+         * @param nodeId Node ID.
          * 
          * @return builder
          * 
@@ -275,7 +275,7 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param nodeRole 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+         * @param nodeRole Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node. ReadOnly: read-only node.
          * 
          * @return builder
          * 
@@ -286,7 +286,7 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param nodeRole 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+         * @param nodeRole Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node. ReadOnly: read-only node.
          * 
          * @return builder
          * 
@@ -296,7 +296,7 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param nodeSpec 节点规格。
+         * @param nodeSpec Node specification.
          * 
          * @return builder
          * 
@@ -307,7 +307,7 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param nodeSpec 节点规格。
+         * @param nodeSpec Node specification.
          * 
          * @return builder
          * 
@@ -317,7 +317,7 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param nodeStatus 节点状态。
+         * @param nodeStatus Node status.
          * 
          * @return builder
          * 
@@ -328,7 +328,7 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param nodeStatus 节点状态。
+         * @param nodeStatus Node status.
          * 
          * @return builder
          * 
@@ -338,7 +338,7 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param totalMemoryGb 总内存。单位：GiB。
+         * @param totalMemoryGb Total memory. Unit: GiB.
          * 
          * @return builder
          * 
@@ -349,7 +349,7 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param totalMemoryGb 总内存。单位：GiB。
+         * @param totalMemoryGb Total memory. Unit: GiB.
          * 
          * @return builder
          * 
@@ -359,7 +359,7 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param totalStorageGb 该节点的总存储空间。单位：GiB。
+         * @param totalStorageGb Total storage space for this node. Unit: GiB.
          * 
          * @return builder
          * 
@@ -370,7 +370,7 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param totalStorageGb 该节点的总存储空间。单位：GiB。
+         * @param totalStorageGb Total storage space for this node. Unit: GiB.
          * 
          * @return builder
          * 
@@ -380,7 +380,7 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param totalvCpu 总核数。
+         * @param totalvCpu Total cores.
          * 
          * @return builder
          * 
@@ -391,7 +391,7 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param totalvCpu 总核数。
+         * @param totalvCpu Total cores.
          * 
          * @return builder
          * 
@@ -401,7 +401,7 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param usedMemoryGb 已用内存。单位：GiB。
+         * @param usedMemoryGb Used memory. Unit: GiB.
          * 
          * @return builder
          * 
@@ -412,7 +412,7 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param usedMemoryGb 已用内存。单位：GiB。
+         * @param usedMemoryGb Used memory. Unit: GiB.
          * 
          * @return builder
          * 
@@ -422,7 +422,7 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param usedStorageGb 该节点已用的存储空间。单位：GiB。
+         * @param usedStorageGb Storage space used by this node. Unit: GiB.
          * 
          * @return builder
          * 
@@ -433,7 +433,7 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param usedStorageGb 该节点已用的存储空间。单位：GiB。
+         * @param usedStorageGb Storage space used by this node. Unit: GiB.
          * 
          * @return builder
          * 
@@ -443,7 +443,7 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param usedvCpu 已用核数。
+         * @param usedvCpu Used cores.
          * 
          * @return builder
          * 
@@ -454,7 +454,7 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param usedvCpu 已用核数。
+         * @param usedvCpu Used cores.
          * 
          * @return builder
          * 
@@ -464,7 +464,7 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param zoneId 当前节点所属的可用区 ID。
+         * @param zoneId Availability zone ID of the current node.
          * 
          * @return builder
          * 
@@ -475,7 +475,7 @@ public final class InstanceShardNodeArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param zoneId 当前节点所属的可用区 ID。
+         * @param zoneId Availability zone ID of the current node.
          * 
          * @return builder
          * 

@@ -21,14 +21,14 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
     public static final DnsControlPolicyState Empty = new DnsControlPolicyState();
 
     /**
-     * 用户的唯一标识ID。
+     * User&#39;s unique identifier.
      * 
      */
     @Import(name="accountId")
     private @Nullable Output<String> accountId;
 
     /**
-     * @return 用户的唯一标识ID。
+     * @return User&#39;s unique identifier.
      * 
      */
     public Optional<Output<String>> accountId() {
@@ -36,14 +36,14 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 策略的描述信息。
+     * Policy description information.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 策略的描述信息。
+     * @return Policy description information.
      * 
      */
     public Optional<Output<String>> description() {
@@ -51,14 +51,14 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
+     * Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
      * 
      */
     @Import(name="destination")
     private @Nullable Output<String> destination;
 
     /**
-     * @return 访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
+     * @return Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
      * 
      */
     public Optional<Output<String>> destination() {
@@ -66,14 +66,14 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 域名地址簿名称列表。
+     * Domain address book name list.
      * 
      */
     @Import(name="destinationGroupLists")
     private @Nullable Output<List<String>> destinationGroupLists;
 
     /**
-     * @return 域名地址簿名称列表。
+     * @return Domain address book name list.
      * 
      */
     public Optional<Output<List<String>>> destinationGroupLists() {
@@ -81,14 +81,14 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 访问目的的类型。domain：域名；group：域名地址簿。
+     * Type of access target. domain: domain; group: domain address book.
      * 
      */
     @Import(name="destinationType")
     private @Nullable Output<String> destinationType;
 
     /**
-     * @return 访问目的的类型。domain：域名；group：域名地址簿。
+     * @return Type of access target. domain: domain; group: domain address book.
      * 
      */
     public Optional<Output<String>> destinationType() {
@@ -103,14 +103,14 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 域名列表。
+     * Domain list.
      * 
      */
     @Import(name="domainLists")
     private @Nullable Output<List<String>> domainLists;
 
     /**
-     * @return 域名列表。
+     * @return Domain list.
      * 
      */
     public Optional<Output<List<String>>> domainLists() {
@@ -118,14 +118,14 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 命中计数，表示该域名黑名单访问控制策略被触发的次数。
+     * Hit count, indicating the number of times the domain denylist access control policy was triggered.
      * 
      */
     @Import(name="hitCnt")
     private @Nullable Output<Integer> hitCnt;
 
     /**
-     * @return 命中计数，表示该域名黑名单访问控制策略被触发的次数。
+     * @return Hit count, indicating the number of times the domain denylist access control policy was triggered.
      * 
      */
     public Optional<Output<Integer>> hitCnt() {
@@ -133,14 +133,14 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 互联网边界防火墙实例ID。
+     * Internet border firewall instance ID.
      * 
      */
     @Import(name="internetFirewallId")
     private @Nullable Output<String> internetFirewallId;
 
     /**
-     * @return 互联网边界防火墙实例ID。
+     * @return Internet border firewall instance ID.
      * 
      */
     public Optional<Output<String>> internetFirewallId() {
@@ -148,14 +148,14 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 最近命中时间戳，表示该域名黑名单访问控制策略最后一次被触发的时间。
+     * Latest hit timestamp, indicating the last time the domain denylist access control policy was triggered.
      * 
      */
     @Import(name="lastHitTime")
     private @Nullable Output<Integer> lastHitTime;
 
     /**
-     * @return 最近命中时间戳，表示该域名黑名单访问控制策略最后一次被触发的时间。
+     * @return Latest hit timestamp, indicating the last time the domain denylist access control policy was triggered.
      * 
      */
     public Optional<Output<Integer>> lastHitTime() {
@@ -163,14 +163,14 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 访问控制策略的唯一标识ID。
+     * Unique identifier of the access control policy.
      * 
      */
     @Import(name="ruleId")
     private @Nullable Output<String> ruleId;
 
     /**
-     * @return 访问控制策略的唯一标识ID。
+     * @return Unique identifier of the access control policy.
      * 
      */
     public Optional<Output<String>> ruleId() {
@@ -185,14 +185,14 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
+     * Switch status of the domain denylist access control policy. false: Off; true: On.
      * 
      */
     @Import(name="status")
     private @Nullable Output<Boolean> status;
 
     /**
-     * @return 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
+     * @return Switch status of the domain denylist access control policy. false: Off; true: On.
      * 
      */
     public Optional<Output<Boolean>> status() {
@@ -200,14 +200,14 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 该域名黑名单访问控制策略占用的策略数量。
+     * Number of policies occupied by this domain denylist access control policy.
      * 
      */
     @Import(name="useCount")
     private @Nullable Output<Integer> useCount;
 
     /**
-     * @return 该域名黑名单访问控制策略占用的策略数量。
+     * @return Number of policies occupied by this domain denylist access control policy.
      * 
      */
     public Optional<Output<Integer>> useCount() {
@@ -252,7 +252,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param accountId 用户的唯一标识ID。
+         * @param accountId User&#39;s unique identifier.
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param accountId 用户的唯一标识ID。
+         * @param accountId User&#39;s unique identifier.
          * 
          * @return builder
          * 
@@ -273,7 +273,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param description 策略的描述信息。
+         * @param description Policy description information.
          * 
          * @return builder
          * 
@@ -284,7 +284,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param description 策略的描述信息。
+         * @param description Policy description information.
          * 
          * @return builder
          * 
@@ -294,7 +294,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param destination 访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
+         * @param destination Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
          * 
          * @return builder
          * 
@@ -305,7 +305,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param destination 访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
+         * @param destination Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
          * 
          * @return builder
          * 
@@ -315,7 +315,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param destinationGroupLists 域名地址簿名称列表。
+         * @param destinationGroupLists Domain address book name list.
          * 
          * @return builder
          * 
@@ -326,7 +326,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param destinationGroupLists 域名地址簿名称列表。
+         * @param destinationGroupLists Domain address book name list.
          * 
          * @return builder
          * 
@@ -336,7 +336,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param destinationGroupLists 域名地址簿名称列表。
+         * @param destinationGroupLists Domain address book name list.
          * 
          * @return builder
          * 
@@ -346,7 +346,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param destinationType 访问目的的类型。domain：域名；group：域名地址簿。
+         * @param destinationType Type of access target. domain: domain; group: domain address book.
          * 
          * @return builder
          * 
@@ -357,7 +357,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param destinationType 访问目的的类型。domain：域名；group：域名地址簿。
+         * @param destinationType Type of access target. domain: domain; group: domain address book.
          * 
          * @return builder
          * 
@@ -380,7 +380,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param domainLists 域名列表。
+         * @param domainLists Domain list.
          * 
          * @return builder
          * 
@@ -391,7 +391,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param domainLists 域名列表。
+         * @param domainLists Domain list.
          * 
          * @return builder
          * 
@@ -401,7 +401,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param domainLists 域名列表。
+         * @param domainLists Domain list.
          * 
          * @return builder
          * 
@@ -411,7 +411,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param hitCnt 命中计数，表示该域名黑名单访问控制策略被触发的次数。
+         * @param hitCnt Hit count, indicating the number of times the domain denylist access control policy was triggered.
          * 
          * @return builder
          * 
@@ -422,7 +422,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param hitCnt 命中计数，表示该域名黑名单访问控制策略被触发的次数。
+         * @param hitCnt Hit count, indicating the number of times the domain denylist access control policy was triggered.
          * 
          * @return builder
          * 
@@ -432,7 +432,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param internetFirewallId 互联网边界防火墙实例ID。
+         * @param internetFirewallId Internet border firewall instance ID.
          * 
          * @return builder
          * 
@@ -443,7 +443,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param internetFirewallId 互联网边界防火墙实例ID。
+         * @param internetFirewallId Internet border firewall instance ID.
          * 
          * @return builder
          * 
@@ -453,7 +453,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param lastHitTime 最近命中时间戳，表示该域名黑名单访问控制策略最后一次被触发的时间。
+         * @param lastHitTime Latest hit timestamp, indicating the last time the domain denylist access control policy was triggered.
          * 
          * @return builder
          * 
@@ -464,7 +464,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param lastHitTime 最近命中时间戳，表示该域名黑名单访问控制策略最后一次被触发的时间。
+         * @param lastHitTime Latest hit timestamp, indicating the last time the domain denylist access control policy was triggered.
          * 
          * @return builder
          * 
@@ -474,7 +474,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param ruleId 访问控制策略的唯一标识ID。
+         * @param ruleId Unique identifier of the access control policy.
          * 
          * @return builder
          * 
@@ -485,7 +485,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param ruleId 访问控制策略的唯一标识ID。
+         * @param ruleId Unique identifier of the access control policy.
          * 
          * @return builder
          * 
@@ -508,7 +508,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param status 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
+         * @param status Switch status of the domain denylist access control policy. false: Off; true: On.
          * 
          * @return builder
          * 
@@ -519,7 +519,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param status 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
+         * @param status Switch status of the domain denylist access control policy. false: Off; true: On.
          * 
          * @return builder
          * 
@@ -529,7 +529,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param useCount 该域名黑名单访问控制策略占用的策略数量。
+         * @param useCount Number of policies occupied by this domain denylist access control policy.
          * 
          * @return builder
          * 
@@ -540,7 +540,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param useCount 该域名黑名单访问控制策略占用的策略数量。
+         * @param useCount Number of policies occupied by this domain denylist access control policy.
          * 
          * @return builder
          * 

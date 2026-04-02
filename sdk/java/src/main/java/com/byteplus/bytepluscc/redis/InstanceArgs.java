@@ -22,14 +22,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     public static final InstanceArgs Empty = new InstanceArgs();
 
     /**
-     * 白名单 ID 列表。若该参数留空，新建实例默认不加入任何白名单。您可以调用 DescribeAllowLists 接口查询当前账号下指定地域内的所有 IP 白名单信息，包括白名单 ID 信息。每个实例最多支持绑定 100 个白名单，每次可最多批量绑定 100 个白名单。每个实例最多支持绑定 1000 个 IP 地址或 CIDR 格式的 IP 地址段。
+     * Allowlist ID list. If left empty, the new instance will not be added to any allowlist by default. You can call the DescribeAllowLists API to query all IP allowlist information, including allowlist IDs, for the specified region under your account. Each instance supports binding up to 100 allowlists, and you can batch bind up to 100 allowlists at a time. Each instance supports binding up to 1000 IP addresses or CIDR-format IP address ranges.
      * 
      */
     @Import(name="allowListIds")
     private @Nullable Output<List<String>> allowListIds;
 
     /**
-     * @return 白名单 ID 列表。若该参数留空，新建实例默认不加入任何白名单。您可以调用 DescribeAllowLists 接口查询当前账号下指定地域内的所有 IP 白名单信息，包括白名单 ID 信息。每个实例最多支持绑定 100 个白名单，每次可最多批量绑定 100 个白名单。每个实例最多支持绑定 1000 个 IP 地址或 CIDR 格式的 IP 地址段。
+     * @return Allowlist ID list. If left empty, the new instance will not be added to any allowlist by default. You can call the DescribeAllowLists API to query all IP allowlist information, including allowlist IDs, for the specified region under your account. Each instance supports binding up to 100 allowlists, and you can batch bind up to 100 allowlists at a time. Each instance supports binding up to 1000 IP addresses or CIDR-format IP address ranges.
      * 
      */
     public Optional<Output<List<String>>> allowListIds() {
@@ -37,14 +37,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启自动续费。取值范围如下：false（默认值）：不开启。true：开启。
+     * Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
      * 
      */
     @Import(name="autoRenew")
     private @Nullable Output<Boolean> autoRenew;
 
     /**
-     * @return 是否开启自动续费。取值范围如下：false（默认值）：不开启。true：开启。
+     * @return Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
      * 
      */
     public Optional<Output<Boolean>> autoRenew() {
@@ -52,14 +52,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 为变更前创建的全量备份设置备份名称。
+     * Set a backup name for the full backup created before changes.
      * 
      */
     @Import(name="backupPointName")
     private @Nullable Output<String> backupPointName;
 
     /**
-     * @return 为变更前创建的全量备份设置备份名称。
+     * @return Set a backup name for the full backup created before changes.
      * 
      */
     public Optional<Output<String>> backupPointName() {
@@ -67,14 +67,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例计费类型。取值范围如下：PrePaid：包年包月（也称预付费）。PostPaid：按量计费（也称后付费）。
+     * Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
      * 
      */
     @Import(name="chargeType")
     private @Nullable Output<String> chargeType;
 
     /**
-     * @return 实例计费类型。取值范围如下：PrePaid：包年包月（也称预付费）。PostPaid：按量计费（也称后付费）。
+     * @return Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
      * 
      */
     public Optional<Output<String>> chargeType() {
@@ -89,14 +89,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否在变更前创建备份。
+     * Whether to create a backup before making changes.
      * 
      */
     @Import(name="createBackup")
     private @Nullable Output<Boolean> createBackup;
 
     /**
-     * @return 是否在变更前创建备份。
+     * @return Whether to create a backup before making changes.
      * 
      */
     public Optional<Output<Boolean>> createBackup() {
@@ -104,14 +104,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 开启或关闭实例删除保护功能。
+     * Enable or disable instance deletion protection.
      * 
      */
     @Import(name="deletionProtection")
     private @Nullable Output<String> deletionProtection;
 
     /**
-     * @return 开启或关闭实例删除保护功能。
+     * @return Enable or disable instance deletion protection.
      * 
      */
     public Optional<Output<String>> deletionProtection() {
@@ -119,14 +119,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 数据库版本号。
+     * Database version number.
      * 
      */
     @Import(name="engineVersion", required=true)
     private Output<String> engineVersion;
 
     /**
-     * @return 数据库版本号。
+     * @return Database version number.
      * 
      */
     public Output<String> engineVersion() {
@@ -134,14 +134,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例名称。命名规则：不能以数字、中划线（-）开头；只能包含中文、字母、数字、下划线（_）和中划线（-）；长度需要在1~128个字符内。
+     * Instance name. Naming rules: Cannot start with a digit or hyphen (-); can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-); length must be 1–128 characters.
      * 
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
-     * @return 实例名称。命名规则：不能以数字、中划线（-）开头；只能包含中文、字母、数字、下划线（_）和中划线（-）；长度需要在1~128个字符内。
+     * @return Instance name. Naming rules: Cannot start with a digit or hyphen (-); can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-); length must be 1–128 characters.
      * 
      */
     public Optional<Output<String>> instanceName() {
@@ -149,14 +149,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 设置实例的可用区部署方案。
+     * Set the deployment scheme for the instance&#39;s availability zone.
      * 
      */
     @Import(name="multiAz", required=true)
     private Output<String> multiAz;
 
     /**
-     * @return 设置实例的可用区部署方案。
+     * @return Set the deployment scheme for the instance&#39;s availability zone.
      * 
      */
     public Output<String> multiAz() {
@@ -164,14 +164,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 为新建实例开启或关闭免密访问功能。取值范围如下：open：开启免密访问。close（默认值）：关闭免密访问。
+     * Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
      * 
      */
     @Import(name="noAuthMode")
     private @Nullable Output<String> noAuthMode;
 
     /**
-     * @return 为新建实例开启或关闭免密访问功能。取值范围如下：open：开启免密访问。close（默认值）：关闭免密访问。
+     * @return Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
      * 
      */
     public Optional<Output<String>> noAuthMode() {
@@ -179,14 +179,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 每个分片中的节点数。取值范围为1~6。每个账号在每个地域下默认最多可创建4个256MiB规格的节点，若需要调整配额上限为10个，请参见账号配额。取值为1时表示创建单节点实例；取值大于1时表示创建主备实例。关于两种类型实例的功能特性差异详情，请参见功能特性差异。
+     * Number of nodes in each shard. Value range: 1–6. By default, each account can create up to 4 nodes of 256 MiB specification per region. To increase the quota limit to 10, see Account Quotas. A value of 1 creates a single-node instance; a value greater than 1 creates a primary-secondary instance. For details on the differences between these two types of instances, see Feature Differences.
      * 
      */
     @Import(name="nodeNumber", required=true)
     private Output<Integer> nodeNumber;
 
     /**
-     * @return 每个分片中的节点数。取值范围为1~6。每个账号在每个地域下默认最多可创建4个256MiB规格的节点，若需要调整配额上限为10个，请参见账号配额。取值为1时表示创建单节点实例；取值大于1时表示创建主备实例。关于两种类型实例的功能特性差异详情，请参见功能特性差异。
+     * @return Number of nodes in each shard. Value range: 1–6. By default, each account can create up to 4 nodes of 256 MiB specification per region. To increase the quota limit to 10, see Account Quotas. A value of 1 creates a single-node instance; a value greater than 1 creates a primary-secondary instance. For details on the differences between these two types of instances, see Feature Differences.
      * 
      */
     public Output<Integer> nodeNumber() {
@@ -194,14 +194,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 需要应用到新实例的参数模板。缓存数据库 Redis 版为每个数据库版本都创建了一份默认的系统参数模板，模板中包含了该版本支持设置的所有参数和默认参数值。若该参数留空，默认会根据您设置的数据库版本（即 EngineVersion）为新建实例选择并应用对应版本的系统参数模板。您可以调用 DescribeParameterGroups 接口查询当前账号和地域下的所有参数模板的基本信息，包括参数模板 ID。
+     * The parameter template to be applied to the new instance. Redis for Cache Database creates a default system parameter template for each database version, which includes all parameters supported by that version and their default values. If this parameter is left blank, the system will select and apply the corresponding version&#39;s system parameter template for the new instance based on the database version you set (i.e., EngineVersion). You can call the DescribeParameterGroups API to query basic information about all parameter templates under your account and region, including the parameter template ID.
      * 
      */
     @Import(name="parameterGroupId")
     private @Nullable Output<String> parameterGroupId;
 
     /**
-     * @return 需要应用到新实例的参数模板。缓存数据库 Redis 版为每个数据库版本都创建了一份默认的系统参数模板，模板中包含了该版本支持设置的所有参数和默认参数值。若该参数留空，默认会根据您设置的数据库版本（即 EngineVersion）为新建实例选择并应用对应版本的系统参数模板。您可以调用 DescribeParameterGroups 接口查询当前账号和地域下的所有参数模板的基本信息，包括参数模板 ID。
+     * @return The parameter template to be applied to the new instance. Redis for Cache Database creates a default system parameter template for each database version, which includes all parameters supported by that version and their default values. If this parameter is left blank, the system will select and apply the corresponding version&#39;s system parameter template for the new instance based on the database version you set (i.e., EngineVersion). You can call the DescribeParameterGroups API to query basic information about all parameter templates under your account and region, including the parameter template ID.
      * 
      */
     public Optional<Output<String>> parameterGroupId() {
@@ -209,14 +209,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 设置默认数据库 default 账号的密码。
+     * Set the password for the default account of the default database.
      * 
      */
     @Import(name="password")
     private @Nullable Output<String> password;
 
     /**
-     * @return 设置默认数据库 default 账号的密码。
+     * @return Set the password for the default account of the default database.
      * 
      */
     public Optional<Output<String>> password() {
@@ -224,14 +224,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 自定义私网连接地址的端口号。取值范围：1024~65535。若该参数留空，私网连接地址默认使用6379端口。实例创建成功后，还可以修改私网地址的端口号，修改方法请参见修改端口号。
+     * Custom port number for the private network connection address. Value range: 1024~65535. If this parameter is left blank, the private network connection address uses port 6379 by default. After the instance is created, you can also modify the port number of the private network address. For instructions, see Modify Port Number.
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return 自定义私网连接地址的端口号。取值范围：1024~65535。若该参数留空，私网连接地址默认使用6379端口。实例创建成功后，还可以修改私网地址的端口号，修改方法请参见修改端口号。
+     * @return Custom port number for the private network connection address. Value range: 1024~65535. If this parameter is left blank, the private network connection address uses port 6379 by default. After the instance is created, you can also modify the port number of the private network address. For instructions, see Modify Port Number.
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -239,14 +239,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例所属的项目。
+     * Project to which the instance belongs.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 实例所属的项目。
+     * @return Project to which the instance belongs.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -254,14 +254,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 购买时长，单位：月。取值范围如下：按月购买：1，2，3，4，5，6，7，8，9。按年购买：12，24，36。当ChargeType为PrePaid时，该参数必填。
+     * Purchase duration, unit: month. Value options: Monthly purchase: 1, 2, 3, 4, 5, 6, 7, 8, 9. Annual purchase: 12, 24, 36. When ChargeType is PrePaid, this parameter is required.
      * 
      */
     @Import(name="purchaseMonths")
     private @Nullable Output<Integer> purchaseMonths;
 
     /**
-     * @return 购买时长，单位：月。取值范围如下：按月购买：1，2，3，4，5，6，7，8，9。按年购买：12，24，36。当ChargeType为PrePaid时，该参数必填。
+     * @return Purchase duration, unit: month. Value options: Monthly purchase: 1, 2, 3, 4, 5, 6, 7, 8, 9. Annual purchase: 12, 24, 36. When ChargeType is PrePaid, this parameter is required.
      * 
      */
     public Optional<Output<Integer>> purchaseMonths() {
@@ -269,14 +269,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 设置是否保留额外带宽
+     * Set whether to reserve additional bandwidth
      * 
      */
     @Import(name="reserveAdditionalBandwidth")
     private @Nullable Output<Boolean> reserveAdditionalBandwidth;
 
     /**
-     * @return 设置是否保留额外带宽
+     * @return Set whether to reserve additional bandwidth
      * 
      */
     public Optional<Output<Boolean>> reserveAdditionalBandwidth() {
@@ -284,14 +284,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例中每个分片的内存容量。单位：MiB。
+     * Memory capacity of each shard in the instance. Unit: MiB.
      * 
      */
     @Import(name="shardCapacity", required=true)
     private Output<Integer> shardCapacity;
 
     /**
-     * @return 实例中每个分片的内存容量。单位：MiB。
+     * @return Memory capacity of each shard in the instance. Unit: MiB.
      * 
      */
     public Output<Integer> shardCapacity() {
@@ -299,14 +299,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例中的分片数量。取值范围为 2~256。仅当 ShardedCluster 取值为 1（即启用分片集群）时，需要指定该参数。
+     * Number of shards in the instance. Value range: 2–256. Specify this parameter only when ShardedCluster is set to 1 (enabled).
      * 
      */
     @Import(name="shardNumber")
     private @Nullable Output<Integer> shardNumber;
 
     /**
-     * @return 实例中的分片数量。取值范围为 2~256。仅当 ShardedCluster 取值为 1（即启用分片集群）时，需要指定该参数。
+     * @return Number of shards in the instance. Value range: 2–256. Specify this parameter only when ShardedCluster is set to 1 (enabled).
      * 
      */
     public Optional<Output<Integer>> shardNumber() {
@@ -314,14 +314,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否启用分片集群。取值范围如下：0：不启用。1：启用。
+     * Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
      * 
      */
     @Import(name="shardedCluster", required=true)
     private Output<Integer> shardedCluster;
 
     /**
-     * @return 是否启用分片集群。取值范围如下：0：不启用。1：启用。
+     * @return Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
      * 
      */
     public Output<Integer> shardedCluster() {
@@ -329,14 +329,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 设置实例的子网ID。子网具有可用区属性，必须选择目标私有网络中与实例属于同一可用区下的子网。子网是私有网络内的IP地址块私有网络中的所有云资源都必须部署在子网内，子网为云资源分配私网IP地址，您可以调用CreateSubnet接口创建子网。您可以调用DescribeSubnets接口查询指定可用区内的所有子网列表信息，包括子网ID。
+     * Set the subnet ID for the instance. Subnets have availability zone attributes; you must select a subnet in the target private network that belongs to the same availability zone as the instance. A subnet is an IP address block within a private network. All cloud resources in the private network must be deployed in a subnet. The subnet assigns private IP addresses to cloud resources. You can call the CreateSubnet API to create a subnet. You can call the DescribeSubnets API to query the list of all subnets in a specified availability zone, including subnet IDs.
      * 
      */
     @Import(name="subnetId", required=true)
     private Output<String> subnetId;
 
     /**
-     * @return 设置实例的子网ID。子网具有可用区属性，必须选择目标私有网络中与实例属于同一可用区下的子网。子网是私有网络内的IP地址块私有网络中的所有云资源都必须部署在子网内，子网为云资源分配私网IP地址，您可以调用CreateSubnet接口创建子网。您可以调用DescribeSubnets接口查询指定可用区内的所有子网列表信息，包括子网ID。
+     * @return Set the subnet ID for the instance. Subnets have availability zone attributes; you must select a subnet in the target private network that belongs to the same availability zone as the instance. A subnet is an IP address block within a private network. All cloud resources in the private network must be deployed in a subnet. The subnet assigns private IP addresses to cloud resources. You can call the CreateSubnet API to create a subnet. You can call the DescribeSubnets API to query the list of all subnets in a specified availability zone, including subnet IDs.
      * 
      */
     public Output<String> subnetId() {
@@ -351,14 +351,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 设置实例的私有网络ID。建议Redis实例与需要连接的ECS实例在同一私有网络，否则它们无法通过内网互通来实现最佳性能。您可以调用CreateVpc接口创建私有网络。您可以调用DescribeVpcs接口查询符合指定条件的私有网络信息，包括私有网络ID。
+     * Set the private network ID for the instance. It is recommended that the Redis instance and the ECS instance you want to connect to are in the same private network; otherwise, they cannot communicate optimally via the internal network. You can call the CreateVpc API to create a private network. You can call the DescribeVpcs API to query private network information that meets specified conditions, including the private network ID.
      * 
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
-     * @return 设置实例的私有网络ID。建议Redis实例与需要连接的ECS实例在同一私有网络，否则它们无法通过内网互通来实现最佳性能。您可以调用CreateVpc接口创建私有网络。您可以调用DescribeVpcs接口查询符合指定条件的私有网络信息，包括私有网络ID。
+     * @return Set the private network ID for the instance. It is recommended that the Redis instance and the ECS instance you want to connect to are in the same private network; otherwise, they cannot communicate optimally via the internal network. You can call the CreateVpc API to create a private network. You can call the DescribeVpcs API to query private network information that meets specified conditions, including the private network ID.
      * 
      */
     public Output<String> vpcId() {
@@ -413,7 +413,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListIds 白名单 ID 列表。若该参数留空，新建实例默认不加入任何白名单。您可以调用 DescribeAllowLists 接口查询当前账号下指定地域内的所有 IP 白名单信息，包括白名单 ID 信息。每个实例最多支持绑定 100 个白名单，每次可最多批量绑定 100 个白名单。每个实例最多支持绑定 1000 个 IP 地址或 CIDR 格式的 IP 地址段。
+         * @param allowListIds Allowlist ID list. If left empty, the new instance will not be added to any allowlist by default. You can call the DescribeAllowLists API to query all IP allowlist information, including allowlist IDs, for the specified region under your account. Each instance supports binding up to 100 allowlists, and you can batch bind up to 100 allowlists at a time. Each instance supports binding up to 1000 IP addresses or CIDR-format IP address ranges.
          * 
          * @return builder
          * 
@@ -424,7 +424,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListIds 白名单 ID 列表。若该参数留空，新建实例默认不加入任何白名单。您可以调用 DescribeAllowLists 接口查询当前账号下指定地域内的所有 IP 白名单信息，包括白名单 ID 信息。每个实例最多支持绑定 100 个白名单，每次可最多批量绑定 100 个白名单。每个实例最多支持绑定 1000 个 IP 地址或 CIDR 格式的 IP 地址段。
+         * @param allowListIds Allowlist ID list. If left empty, the new instance will not be added to any allowlist by default. You can call the DescribeAllowLists API to query all IP allowlist information, including allowlist IDs, for the specified region under your account. Each instance supports binding up to 100 allowlists, and you can batch bind up to 100 allowlists at a time. Each instance supports binding up to 1000 IP addresses or CIDR-format IP address ranges.
          * 
          * @return builder
          * 
@@ -434,7 +434,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowListIds 白名单 ID 列表。若该参数留空，新建实例默认不加入任何白名单。您可以调用 DescribeAllowLists 接口查询当前账号下指定地域内的所有 IP 白名单信息，包括白名单 ID 信息。每个实例最多支持绑定 100 个白名单，每次可最多批量绑定 100 个白名单。每个实例最多支持绑定 1000 个 IP 地址或 CIDR 格式的 IP 地址段。
+         * @param allowListIds Allowlist ID list. If left empty, the new instance will not be added to any allowlist by default. You can call the DescribeAllowLists API to query all IP allowlist information, including allowlist IDs, for the specified region under your account. Each instance supports binding up to 100 allowlists, and you can batch bind up to 100 allowlists at a time. Each instance supports binding up to 1000 IP addresses or CIDR-format IP address ranges.
          * 
          * @return builder
          * 
@@ -444,7 +444,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoRenew 是否开启自动续费。取值范围如下：false（默认值）：不开启。true：开启。
+         * @param autoRenew Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
          * 
          * @return builder
          * 
@@ -455,7 +455,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoRenew 是否开启自动续费。取值范围如下：false（默认值）：不开启。true：开启。
+         * @param autoRenew Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
          * 
          * @return builder
          * 
@@ -465,7 +465,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupPointName 为变更前创建的全量备份设置备份名称。
+         * @param backupPointName Set a backup name for the full backup created before changes.
          * 
          * @return builder
          * 
@@ -476,7 +476,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupPointName 为变更前创建的全量备份设置备份名称。
+         * @param backupPointName Set a backup name for the full backup created before changes.
          * 
          * @return builder
          * 
@@ -486,7 +486,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeType 实例计费类型。取值范围如下：PrePaid：包年包月（也称预付费）。PostPaid：按量计费（也称后付费）。
+         * @param chargeType Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
          * 
          * @return builder
          * 
@@ -497,7 +497,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeType 实例计费类型。取值范围如下：PrePaid：包年包月（也称预付费）。PostPaid：按量计费（也称后付费）。
+         * @param chargeType Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
          * 
          * @return builder
          * 
@@ -520,7 +520,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createBackup 是否在变更前创建备份。
+         * @param createBackup Whether to create a backup before making changes.
          * 
          * @return builder
          * 
@@ -531,7 +531,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createBackup 是否在变更前创建备份。
+         * @param createBackup Whether to create a backup before making changes.
          * 
          * @return builder
          * 
@@ -541,7 +541,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deletionProtection 开启或关闭实例删除保护功能。
+         * @param deletionProtection Enable or disable instance deletion protection.
          * 
          * @return builder
          * 
@@ -552,7 +552,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deletionProtection 开启或关闭实例删除保护功能。
+         * @param deletionProtection Enable or disable instance deletion protection.
          * 
          * @return builder
          * 
@@ -562,7 +562,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param engineVersion 数据库版本号。
+         * @param engineVersion Database version number.
          * 
          * @return builder
          * 
@@ -573,7 +573,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param engineVersion 数据库版本号。
+         * @param engineVersion Database version number.
          * 
          * @return builder
          * 
@@ -583,7 +583,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceName 实例名称。命名规则：不能以数字、中划线（-）开头；只能包含中文、字母、数字、下划线（_）和中划线（-）；长度需要在1~128个字符内。
+         * @param instanceName Instance name. Naming rules: Cannot start with a digit or hyphen (-); can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-); length must be 1–128 characters.
          * 
          * @return builder
          * 
@@ -594,7 +594,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceName 实例名称。命名规则：不能以数字、中划线（-）开头；只能包含中文、字母、数字、下划线（_）和中划线（-）；长度需要在1~128个字符内。
+         * @param instanceName Instance name. Naming rules: Cannot start with a digit or hyphen (-); can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-); length must be 1–128 characters.
          * 
          * @return builder
          * 
@@ -604,7 +604,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param multiAz 设置实例的可用区部署方案。
+         * @param multiAz Set the deployment scheme for the instance&#39;s availability zone.
          * 
          * @return builder
          * 
@@ -615,7 +615,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param multiAz 设置实例的可用区部署方案。
+         * @param multiAz Set the deployment scheme for the instance&#39;s availability zone.
          * 
          * @return builder
          * 
@@ -625,7 +625,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param noAuthMode 为新建实例开启或关闭免密访问功能。取值范围如下：open：开启免密访问。close（默认值）：关闭免密访问。
+         * @param noAuthMode Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
          * 
          * @return builder
          * 
@@ -636,7 +636,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param noAuthMode 为新建实例开启或关闭免密访问功能。取值范围如下：open：开启免密访问。close（默认值）：关闭免密访问。
+         * @param noAuthMode Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
          * 
          * @return builder
          * 
@@ -646,7 +646,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeNumber 每个分片中的节点数。取值范围为1~6。每个账号在每个地域下默认最多可创建4个256MiB规格的节点，若需要调整配额上限为10个，请参见账号配额。取值为1时表示创建单节点实例；取值大于1时表示创建主备实例。关于两种类型实例的功能特性差异详情，请参见功能特性差异。
+         * @param nodeNumber Number of nodes in each shard. Value range: 1–6. By default, each account can create up to 4 nodes of 256 MiB specification per region. To increase the quota limit to 10, see Account Quotas. A value of 1 creates a single-node instance; a value greater than 1 creates a primary-secondary instance. For details on the differences between these two types of instances, see Feature Differences.
          * 
          * @return builder
          * 
@@ -657,7 +657,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeNumber 每个分片中的节点数。取值范围为1~6。每个账号在每个地域下默认最多可创建4个256MiB规格的节点，若需要调整配额上限为10个，请参见账号配额。取值为1时表示创建单节点实例；取值大于1时表示创建主备实例。关于两种类型实例的功能特性差异详情，请参见功能特性差异。
+         * @param nodeNumber Number of nodes in each shard. Value range: 1–6. By default, each account can create up to 4 nodes of 256 MiB specification per region. To increase the quota limit to 10, see Account Quotas. A value of 1 creates a single-node instance; a value greater than 1 creates a primary-secondary instance. For details on the differences between these two types of instances, see Feature Differences.
          * 
          * @return builder
          * 
@@ -667,7 +667,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param parameterGroupId 需要应用到新实例的参数模板。缓存数据库 Redis 版为每个数据库版本都创建了一份默认的系统参数模板，模板中包含了该版本支持设置的所有参数和默认参数值。若该参数留空，默认会根据您设置的数据库版本（即 EngineVersion）为新建实例选择并应用对应版本的系统参数模板。您可以调用 DescribeParameterGroups 接口查询当前账号和地域下的所有参数模板的基本信息，包括参数模板 ID。
+         * @param parameterGroupId The parameter template to be applied to the new instance. Redis for Cache Database creates a default system parameter template for each database version, which includes all parameters supported by that version and their default values. If this parameter is left blank, the system will select and apply the corresponding version&#39;s system parameter template for the new instance based on the database version you set (i.e., EngineVersion). You can call the DescribeParameterGroups API to query basic information about all parameter templates under your account and region, including the parameter template ID.
          * 
          * @return builder
          * 
@@ -678,7 +678,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param parameterGroupId 需要应用到新实例的参数模板。缓存数据库 Redis 版为每个数据库版本都创建了一份默认的系统参数模板，模板中包含了该版本支持设置的所有参数和默认参数值。若该参数留空，默认会根据您设置的数据库版本（即 EngineVersion）为新建实例选择并应用对应版本的系统参数模板。您可以调用 DescribeParameterGroups 接口查询当前账号和地域下的所有参数模板的基本信息，包括参数模板 ID。
+         * @param parameterGroupId The parameter template to be applied to the new instance. Redis for Cache Database creates a default system parameter template for each database version, which includes all parameters supported by that version and their default values. If this parameter is left blank, the system will select and apply the corresponding version&#39;s system parameter template for the new instance based on the database version you set (i.e., EngineVersion). You can call the DescribeParameterGroups API to query basic information about all parameter templates under your account and region, including the parameter template ID.
          * 
          * @return builder
          * 
@@ -688,7 +688,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param password 设置默认数据库 default 账号的密码。
+         * @param password Set the password for the default account of the default database.
          * 
          * @return builder
          * 
@@ -699,7 +699,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param password 设置默认数据库 default 账号的密码。
+         * @param password Set the password for the default account of the default database.
          * 
          * @return builder
          * 
@@ -709,7 +709,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param port 自定义私网连接地址的端口号。取值范围：1024~65535。若该参数留空，私网连接地址默认使用6379端口。实例创建成功后，还可以修改私网地址的端口号，修改方法请参见修改端口号。
+         * @param port Custom port number for the private network connection address. Value range: 1024~65535. If this parameter is left blank, the private network connection address uses port 6379 by default. After the instance is created, you can also modify the port number of the private network address. For instructions, see Modify Port Number.
          * 
          * @return builder
          * 
@@ -720,7 +720,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param port 自定义私网连接地址的端口号。取值范围：1024~65535。若该参数留空，私网连接地址默认使用6379端口。实例创建成功后，还可以修改私网地址的端口号，修改方法请参见修改端口号。
+         * @param port Custom port number for the private network connection address. Value range: 1024~65535. If this parameter is left blank, the private network connection address uses port 6379 by default. After the instance is created, you can also modify the port number of the private network address. For instructions, see Modify Port Number.
          * 
          * @return builder
          * 
@@ -730,7 +730,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 实例所属的项目。
+         * @param projectName Project to which the instance belongs.
          * 
          * @return builder
          * 
@@ -741,7 +741,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 实例所属的项目。
+         * @param projectName Project to which the instance belongs.
          * 
          * @return builder
          * 
@@ -751,7 +751,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param purchaseMonths 购买时长，单位：月。取值范围如下：按月购买：1，2，3，4，5，6，7，8，9。按年购买：12，24，36。当ChargeType为PrePaid时，该参数必填。
+         * @param purchaseMonths Purchase duration, unit: month. Value options: Monthly purchase: 1, 2, 3, 4, 5, 6, 7, 8, 9. Annual purchase: 12, 24, 36. When ChargeType is PrePaid, this parameter is required.
          * 
          * @return builder
          * 
@@ -762,7 +762,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param purchaseMonths 购买时长，单位：月。取值范围如下：按月购买：1，2，3，4，5，6，7，8，9。按年购买：12，24，36。当ChargeType为PrePaid时，该参数必填。
+         * @param purchaseMonths Purchase duration, unit: month. Value options: Monthly purchase: 1, 2, 3, 4, 5, 6, 7, 8, 9. Annual purchase: 12, 24, 36. When ChargeType is PrePaid, this parameter is required.
          * 
          * @return builder
          * 
@@ -772,7 +772,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param reserveAdditionalBandwidth 设置是否保留额外带宽
+         * @param reserveAdditionalBandwidth Set whether to reserve additional bandwidth
          * 
          * @return builder
          * 
@@ -783,7 +783,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param reserveAdditionalBandwidth 设置是否保留额外带宽
+         * @param reserveAdditionalBandwidth Set whether to reserve additional bandwidth
          * 
          * @return builder
          * 
@@ -793,7 +793,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shardCapacity 实例中每个分片的内存容量。单位：MiB。
+         * @param shardCapacity Memory capacity of each shard in the instance. Unit: MiB.
          * 
          * @return builder
          * 
@@ -804,7 +804,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shardCapacity 实例中每个分片的内存容量。单位：MiB。
+         * @param shardCapacity Memory capacity of each shard in the instance. Unit: MiB.
          * 
          * @return builder
          * 
@@ -814,7 +814,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shardNumber 实例中的分片数量。取值范围为 2~256。仅当 ShardedCluster 取值为 1（即启用分片集群）时，需要指定该参数。
+         * @param shardNumber Number of shards in the instance. Value range: 2–256. Specify this parameter only when ShardedCluster is set to 1 (enabled).
          * 
          * @return builder
          * 
@@ -825,7 +825,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shardNumber 实例中的分片数量。取值范围为 2~256。仅当 ShardedCluster 取值为 1（即启用分片集群）时，需要指定该参数。
+         * @param shardNumber Number of shards in the instance. Value range: 2–256. Specify this parameter only when ShardedCluster is set to 1 (enabled).
          * 
          * @return builder
          * 
@@ -835,7 +835,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shardedCluster 是否启用分片集群。取值范围如下：0：不启用。1：启用。
+         * @param shardedCluster Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
          * 
          * @return builder
          * 
@@ -846,7 +846,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shardedCluster 是否启用分片集群。取值范围如下：0：不启用。1：启用。
+         * @param shardedCluster Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
          * 
          * @return builder
          * 
@@ -856,7 +856,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId 设置实例的子网ID。子网具有可用区属性，必须选择目标私有网络中与实例属于同一可用区下的子网。子网是私有网络内的IP地址块私有网络中的所有云资源都必须部署在子网内，子网为云资源分配私网IP地址，您可以调用CreateSubnet接口创建子网。您可以调用DescribeSubnets接口查询指定可用区内的所有子网列表信息，包括子网ID。
+         * @param subnetId Set the subnet ID for the instance. Subnets have availability zone attributes; you must select a subnet in the target private network that belongs to the same availability zone as the instance. A subnet is an IP address block within a private network. All cloud resources in the private network must be deployed in a subnet. The subnet assigns private IP addresses to cloud resources. You can call the CreateSubnet API to create a subnet. You can call the DescribeSubnets API to query the list of all subnets in a specified availability zone, including subnet IDs.
          * 
          * @return builder
          * 
@@ -867,7 +867,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId 设置实例的子网ID。子网具有可用区属性，必须选择目标私有网络中与实例属于同一可用区下的子网。子网是私有网络内的IP地址块私有网络中的所有云资源都必须部署在子网内，子网为云资源分配私网IP地址，您可以调用CreateSubnet接口创建子网。您可以调用DescribeSubnets接口查询指定可用区内的所有子网列表信息，包括子网ID。
+         * @param subnetId Set the subnet ID for the instance. Subnets have availability zone attributes; you must select a subnet in the target private network that belongs to the same availability zone as the instance. A subnet is an IP address block within a private network. All cloud resources in the private network must be deployed in a subnet. The subnet assigns private IP addresses to cloud resources. You can call the CreateSubnet API to create a subnet. You can call the DescribeSubnets API to query the list of all subnets in a specified availability zone, including subnet IDs.
          * 
          * @return builder
          * 
@@ -890,7 +890,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 设置实例的私有网络ID。建议Redis实例与需要连接的ECS实例在同一私有网络，否则它们无法通过内网互通来实现最佳性能。您可以调用CreateVpc接口创建私有网络。您可以调用DescribeVpcs接口查询符合指定条件的私有网络信息，包括私有网络ID。
+         * @param vpcId Set the private network ID for the instance. It is recommended that the Redis instance and the ECS instance you want to connect to are in the same private network; otherwise, they cannot communicate optimally via the internal network. You can call the CreateVpc API to create a private network. You can call the DescribeVpcs API to query private network information that meets specified conditions, including the private network ID.
          * 
          * @return builder
          * 
@@ -901,7 +901,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 设置实例的私有网络ID。建议Redis实例与需要连接的ECS实例在同一私有网络，否则它们无法通过内网互通来实现最佳性能。您可以调用CreateVpc接口创建私有网络。您可以调用DescribeVpcs接口查询符合指定条件的私有网络信息，包括私有网络ID。
+         * @param vpcId Set the private network ID for the instance. It is recommended that the Redis instance and the ECS instance you want to connect to are in the same private network; otherwise, they cannot communicate optimally via the internal network. You can call the CreateVpc API to create a private network. You can call the DescribeVpcs API to query private network information that meets specified conditions, including the private network ID.
          * 
          * @return builder
          * 

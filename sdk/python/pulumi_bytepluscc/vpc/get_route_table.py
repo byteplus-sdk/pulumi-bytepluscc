@@ -88,7 +88,7 @@ class GetRouteTableResult:
     @pulumi.getter(name="accountId")
     def account_id(self) -> builtins.str:
         """
-        路由表所属账号的ID。
+        Account ID owning the route table
         """
         return pulumi.get(self, "account_id")
 
@@ -96,7 +96,7 @@ class GetRouteTableResult:
     @pulumi.getter(name="associateType")
     def associate_type(self) -> builtins.str:
         """
-        创建路由表输入的关联类型。1、Subnet：子网关联。2、Gateway：网关关联。
+        Association type for route table creation input. 1. Subnet: Subnet association 2. Gateway: Gateway association
         """
         return pulumi.get(self, "associate_type")
 
@@ -104,7 +104,7 @@ class GetRouteTableResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        路由表创建时间。
+        Route Table Creation Time
         """
         return pulumi.get(self, "created_time")
 
@@ -112,7 +112,7 @@ class GetRouteTableResult:
     @pulumi.getter(name="customRouteEntries")
     def custom_route_entries(self) -> Sequence['outputs.GetRouteTableCustomRouteEntryResult']:
         """
-        路由表关联的自定义路由条目列表。
+        List of custom route entries associated with the route table
         """
         return pulumi.get(self, "custom_route_entries")
 
@@ -120,7 +120,7 @@ class GetRouteTableResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        路由表描述信息。
+        Route Table Description
         """
         return pulumi.get(self, "description")
 
@@ -136,7 +136,7 @@ class GetRouteTableResult:
     @pulumi.getter(name="ipv4GatewayId")
     def ipv4_gateway_id(self) -> builtins.str:
         """
-        关联路由表的IPv4网关ID。
+        IPv4 Gateway ID associated with the route table
         """
         return pulumi.get(self, "ipv4_gateway_id")
 
@@ -144,7 +144,7 @@ class GetRouteTableResult:
     @pulumi.getter(name="ipv6GatewayId")
     def ipv6_gateway_id(self) -> builtins.str:
         """
-        关联路由表的IPv6网关ID。
+        IPv6 Gateway ID associated with the route table
         """
         return pulumi.get(self, "ipv6_gateway_id")
 
@@ -152,7 +152,7 @@ class GetRouteTableResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        路由表所属项目的名称。
+        Name of the project owning the route table
         """
         return pulumi.get(self, "project_name")
 
@@ -160,7 +160,7 @@ class GetRouteTableResult:
     @pulumi.getter(name="routeTableId")
     def route_table_id(self) -> builtins.str:
         """
-        路由表ID。
+        Route Table ID
         """
         return pulumi.get(self, "route_table_id")
 
@@ -168,7 +168,7 @@ class GetRouteTableResult:
     @pulumi.getter(name="routeTableName")
     def route_table_name(self) -> builtins.str:
         """
-        路由表名称。
+        Route Table Name
         """
         return pulumi.get(self, "route_table_name")
 
@@ -176,7 +176,7 @@ class GetRouteTableResult:
     @pulumi.getter(name="routeTableType")
     def route_table_type(self) -> builtins.str:
         """
-        路由表类型。1、Custom：自定义路由表。2、System：系统路由表。
+        Route table type. 1. Custom: Custom route table 2. System: System route table
         """
         return pulumi.get(self, "route_table_type")
 
@@ -184,7 +184,7 @@ class GetRouteTableResult:
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> Sequence[builtins.str]:
         """
-        关联的子网的ID列表。
+        List of associated subnet IDs
         """
         return pulumi.get(self, "subnet_ids")
 
@@ -192,7 +192,7 @@ class GetRouteTableResult:
     @pulumi.getter(name="systemRouteEntries")
     def system_route_entries(self) -> Sequence['outputs.GetRouteTableSystemRouteEntryResult']:
         """
-        路由表关联的系统默认路由条目列表。
+        List of system default route entries associated with the route table
         """
         return pulumi.get(self, "system_route_entries")
 
@@ -200,7 +200,7 @@ class GetRouteTableResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetRouteTableTagResult']:
         """
-        标签列表。
+        Tag List
         """
         return pulumi.get(self, "tags")
 
@@ -208,7 +208,7 @@ class GetRouteTableResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        路由表更新时间。
+        Route Table Last Updated Time
         """
         return pulumi.get(self, "updated_time")
 
@@ -216,7 +216,7 @@ class GetRouteTableResult:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> builtins.str:
         """
-        路由表所属VPC的ID。
+        ID of the VPC owning the route table
         """
         return pulumi.get(self, "vpc_id")
 
@@ -224,7 +224,7 @@ class GetRouteTableResult:
     @pulumi.getter(name="vpcName")
     def vpc_name(self) -> builtins.str:
         """
-        VPC的名称。
+        VPC Name
         """
         return pulumi.get(self, "vpc_name")
 

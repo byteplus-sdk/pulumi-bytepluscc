@@ -22,14 +22,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     public static final ListenerArgs Empty = new ListenerArgs();
 
     /**
-     * 监听器是否已开启“在访问日志中记录自定义header”的功能：on：表示该功能已开启。off：表示该功能未开启。
+     * Whether the listener has enabled the &#39;Log custom header in access logs&#39; feature: on: Feature is enabled. off: Feature is not enabled.
      * 
      */
     @Import(name="accessLogRecordCustomizedHeadersEnabled")
     private @Nullable Output<String> accessLogRecordCustomizedHeadersEnabled;
 
     /**
-     * @return 监听器是否已开启“在访问日志中记录自定义header”的功能：on：表示该功能已开启。off：表示该功能未开启。
+     * @return Whether the listener has enabled the &#39;Log custom header in access logs&#39; feature: on: Feature is enabled. off: Feature is not enabled.
      * 
      */
     public Optional<Output<String>> accessLogRecordCustomizedHeadersEnabled() {
@@ -37,14 +37,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器绑定的访问控制策略组 ID。当AclStatus参数配置为 on 时，AclIds为必填参数。
+     * Access control policy group ID bound to the listener. When the AclStatus parameter is set to on, AclIds is required.
      * 
      */
     @Import(name="aclIds")
     private @Nullable Output<List<String>> aclIds;
 
     /**
-     * @return 监听器绑定的访问控制策略组 ID。当AclStatus参数配置为 on 时，AclIds为必填参数。
+     * @return Access control policy group ID bound to the listener. When the AclStatus parameter is set to on, AclIds is required.
      * 
      */
     public Optional<Output<List<String>>> aclIds() {
@@ -52,14 +52,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启访问控制功能。取值如下：on：开启。off ：不开启（默认）。
+     * Enable access control. Values: on: enabled. off: disabled (default).
      * 
      */
     @Import(name="aclStatus")
     private @Nullable Output<String> aclStatus;
 
     /**
-     * @return 是否开启访问控制功能。取值如下：on：开启。off ：不开启（默认）。
+     * @return Enable access control. Values: on: enabled. off: disabled (default).
      * 
      */
     public Optional<Output<String>> aclStatus() {
@@ -67,14 +67,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 访问控制的方式，取值如下：white：白名单方式。表示监听器仅转发来自所选访问控制策略组中设置的IP地址或地址段的请求。 如果所选策略组中没有添加任何IP，则监听器不会转发任何请求。black：黑名单方式。表示仅拒绝来自所选访问控制策略组中设置的IP地址或地址段的请求。 如果所选策略组中没有添加任何IP，则监听器会转发全部请求。当AclStatus参数配置为 on 时，AclType为必填参数。
+     * Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
      * 
      */
     @Import(name="aclType")
     private @Nullable Output<String> aclType;
 
     /**
-     * @return 访问控制的方式，取值如下：white：白名单方式。表示监听器仅转发来自所选访问控制策略组中设置的IP地址或地址段的请求。 如果所选策略组中没有添加任何IP，则监听器不会转发任何请求。black：黑名单方式。表示仅拒绝来自所选访问控制策略组中设置的IP地址或地址段的请求。 如果所选策略组中没有添加任何IP，则监听器会转发全部请求。当AclStatus参数配置为 on 时，AclType为必填参数。
+     * @return Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
      * 
      */
     public Optional<Output<String>> aclType() {
@@ -82,14 +82,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 alb 时，必须指定 CACertificateId 参数。
+     * CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
      * 
      */
     @Import(name="caCertificateId")
     private @Nullable Output<String> caCertificateId;
 
     /**
-     * @return HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 alb 时，必须指定 CACertificateId 参数。
+     * @return CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
      * 
      */
     public Optional<Output<String>> caCertificateId() {
@@ -97,14 +97,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * HTTPS 监听器关联的 CA 证书的来源，用于双向认证。alb（默认）：表示通过 ALB 上传的证书。标准版 ALB 实例不支持此来源的证书。pca*root：表示通过火山引擎证书中心购买或上传的私有根 CA 证书。pca*sub：表示通过火山引擎证书中心购买或上传的私有子 CA 证书。
+     * Source of the CA certificate associated with the HTTPS listener, used for mutual authentication. alb (default): Certificate uploaded via ALB. Standard ALB instances do not support certificates from this source. pca*root: Private root CA certificate purchased or uploaded via Volcano Engine Certificate Center. pca*sub: Private subordinate CA certificate purchased or uploaded via Volcano Engine Certificate Center.
      * 
      */
     @Import(name="caCertificateSource")
     private @Nullable Output<String> caCertificateSource;
 
     /**
-     * @return HTTPS 监听器关联的 CA 证书的来源，用于双向认证。alb（默认）：表示通过 ALB 上传的证书。标准版 ALB 实例不支持此来源的证书。pca*root：表示通过火山引擎证书中心购买或上传的私有根 CA 证书。pca*sub：表示通过火山引擎证书中心购买或上传的私有子 CA 证书。
+     * @return Source of the CA certificate associated with the HTTPS listener, used for mutual authentication. alb (default): Certificate uploaded via ALB. Standard ALB instances do not support certificates from this source. pca*root: Private root CA certificate purchased or uploaded via Volcano Engine Certificate Center. pca*sub: Private subordinate CA certificate purchased or uploaded via Volcano Engine Certificate Center.
      * 
      */
     public Optional<Output<String>> caCertificateSource() {
@@ -112,14 +112,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * HTTPS监听器关联的证书 ID。创建 HTTPS 监听器且证书来源为 cert_center 时必传。
+     * Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
      * 
      */
     @Import(name="certCenterCertificateId")
     private @Nullable Output<String> certCenterCertificateId;
 
     /**
-     * @return HTTPS监听器关联的证书 ID。创建 HTTPS 监听器且证书来源为 cert_center 时必传。
+     * @return Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
      * 
      */
     public Optional<Output<String>> certCenterCertificateId() {
@@ -127,14 +127,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * HTTPS监听器关联的证书 ID。创建 HTTPS 监听器且证书来源为 alb 时必传。
+     * Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is alb.
      * 
      */
     @Import(name="certificateId")
     private @Nullable Output<String> certificateId;
 
     /**
-     * @return HTTPS监听器关联的证书 ID。创建 HTTPS 监听器且证书来源为 alb 时必传。
+     * @return Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is alb.
      * 
      */
     public Optional<Output<String>> certificateId() {
@@ -142,14 +142,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * HTTPS监听器关联的默认证书的来源，取值：alb：表示通过 ALB 上传的证书。cert*center：表示通过火山引擎证书中心购买或上传的 SSL 证书。pca*leaf：表示通过火山引擎证书中心购买或上传的私有叶子证书。
+     * The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
      * 
      */
     @Import(name="certificateSource")
     private @Nullable Output<String> certificateSource;
 
     /**
-     * @return HTTPS监听器关联的默认证书的来源，取值：alb：表示通过 ALB 上传的证书。cert*center：表示通过火山引擎证书中心购买或上传的 SSL 证书。pca*leaf：表示通过火山引擎证书中心购买或上传的私有叶子证书。
+     * @return The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
      * 
      */
     public Optional<Output<String>> certificateSource() {
@@ -157,14 +157,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 个性化配置ID，未绑定时值为空字符串。
+     * Personalized configuration ID. If not bound, the value is an empty string.
      * 
      */
     @Import(name="customizedCfgId")
     private @Nullable Output<String> customizedCfgId;
 
     /**
-     * @return 个性化配置ID，未绑定时值为空字符串。
+     * @return Personalized configuration ID. If not bound, the value is an empty string.
      * 
      */
     public Optional<Output<String>> customizedCfgId() {
@@ -172,14 +172,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+     * Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 监听器的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+     * @return Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
      * 
      */
     public Optional<Output<String>> description() {
@@ -194,14 +194,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * HTTP2.0 特性开关，该参数仅对 HTTPS 监听器有效。取值如下：on：开启。off：关闭（默认）。
+     * HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
      * 
      */
     @Import(name="enableHttp2")
     private @Nullable Output<String> enableHttp2;
 
     /**
-     * @return HTTP2.0 特性开关，该参数仅对 HTTPS 监听器有效。取值如下：on：开启。off：关闭（默认）。
+     * @return HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
      * 
      */
     public Optional<Output<String>> enableHttp2() {
@@ -209,14 +209,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * QUIC 特性开关，该参数仅对 HTTPS 监听器有效，取值如下：on：开启。off：关闭（默认）。只有标准版 ALB 实例支持 QUIC。
+     * QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
      * 
      */
     @Import(name="enableQuic")
     private @Nullable Output<String> enableQuic;
 
     /**
-     * @return QUIC 特性开关，该参数仅对 HTTPS 监听器有效，取值如下：on：开启。off：关闭（默认）。只有标准版 ALB 实例支持 QUIC。
+     * @return QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
      * 
      */
     public Optional<Output<String>> enableQuic() {
@@ -224,14 +224,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器开启/关闭，取值如下：on：开启（默认）。off：关闭。
+     * Listener on/off status. Values: on: On (default). off: Off.
      * 
      */
     @Import(name="enabled")
     private @Nullable Output<String> enabled;
 
     /**
-     * @return 监听器开启/关闭，取值如下：on：开启（默认）。off：关闭。
+     * @return Listener on/off status. Values: on: On (default). off: Off.
      * 
      */
     public Optional<Output<String>> enabled() {
@@ -239,14 +239,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器的名字。不填写时以“协议-端口”格式命名。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点（.）、下划线（_）和短横线（-）。长度限制在1-128字符之间。
+     * Listener name. If not specified, named in the format &#39;protocol-port&#39;. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
      * 
      */
     @Import(name="listenerName")
     private @Nullable Output<String> listenerName;
 
     /**
-     * @return 监听器的名字。不填写时以“协议-端口”格式命名。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点（.）、下划线（_）和短横线（-）。长度限制在1-128字符之间。
+     * @return Listener name. If not specified, named in the format &#39;protocol-port&#39;. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
      * 
      */
     public Optional<Output<String>> listenerName() {
@@ -254,14 +254,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器所属的负载均衡实例 ID。
+     * Load balancer instance ID to which the listener belongs.
      * 
      */
     @Import(name="loadBalancerId", required=true)
     private Output<String> loadBalancerId;
 
     /**
-     * @return 监听器所属的负载均衡实例 ID。
+     * @return Load balancer instance ID to which the listener belongs.
      * 
      */
     public Output<String> loadBalancerId() {
@@ -269,14 +269,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * HTTPS监听器关联的私有叶子证书 ID。创建 HTTPS 监听器且证书来源为 pca_leaf 时必传。
+     * Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
      * 
      */
     @Import(name="pcaLeafCertificateId")
     private @Nullable Output<String> pcaLeafCertificateId;
 
     /**
-     * @return HTTPS监听器关联的私有叶子证书 ID。创建 HTTPS 监听器且证书来源为 pca_leaf 时必传。
+     * @return Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
      * 
      */
     public Optional<Output<String>> pcaLeafCertificateId() {
@@ -284,14 +284,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pca_root 时，必须指定 PcaRootCACertificateId 参数。
+     * CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
      * 
      */
     @Import(name="pcaRootCaCertificateId")
     private @Nullable Output<String> pcaRootCaCertificateId;
 
     /**
-     * @return HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pca_root 时，必须指定 PcaRootCACertificateId 参数。
+     * @return CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
      * 
      */
     public Optional<Output<String>> pcaRootCaCertificateId() {
@@ -299,14 +299,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pca_sub 时，必须指定 PcaSubCACertificateId 参数。
+     * CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
      * 
      */
     @Import(name="pcaSubCaCertificateId")
     private @Nullable Output<String> pcaSubCaCertificateId;
 
     /**
-     * @return HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pca_sub 时，必须指定 PcaSubCACertificateId 参数。
+     * @return CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
      * 
      */
     public Optional<Output<String>> pcaSubCaCertificateId() {
@@ -314,14 +314,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器的监听端口，取值：1   - 65535 。
+     * The listener port. Values: 1   - 65535.
      * 
      */
     @Import(name="port", required=true)
     private Output<Integer> port;
 
     /**
-     * @return 监听器的监听端口，取值：1   - 65535 。
+     * @return The listener port. Values: 1   - 65535.
      * 
      */
     public Output<Integer> port() {
@@ -329,14 +329,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器的协议，支持 HTTP 协议和 HTTPS 协议。
+     * Listener protocol. Supports HTTP and HTTPS protocols.
      * 
      */
     @Import(name="protocol", required=true)
     private Output<String> protocol;
 
     /**
-     * @return 监听器的协议，支持 HTTP 协议和 HTTPS 协议。
+     * @return Listener protocol. Supports HTTP and HTTPS protocols.
      * 
      */
     public Output<String> protocol() {
@@ -344,14 +344,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器的默认服务器组。
+     * Default server group for the listener.
      * 
      */
     @Import(name="serverGroupId", required=true)
     private Output<String> serverGroupId;
 
     /**
-     * @return 监听器的默认服务器组。
+     * @return Default server group for the listener.
      * 
      */
     public Output<String> serverGroupId() {
@@ -421,7 +421,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accessLogRecordCustomizedHeadersEnabled 监听器是否已开启“在访问日志中记录自定义header”的功能：on：表示该功能已开启。off：表示该功能未开启。
+         * @param accessLogRecordCustomizedHeadersEnabled Whether the listener has enabled the &#39;Log custom header in access logs&#39; feature: on: Feature is enabled. off: Feature is not enabled.
          * 
          * @return builder
          * 
@@ -432,7 +432,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accessLogRecordCustomizedHeadersEnabled 监听器是否已开启“在访问日志中记录自定义header”的功能：on：表示该功能已开启。off：表示该功能未开启。
+         * @param accessLogRecordCustomizedHeadersEnabled Whether the listener has enabled the &#39;Log custom header in access logs&#39; feature: on: Feature is enabled. off: Feature is not enabled.
          * 
          * @return builder
          * 
@@ -442,7 +442,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclIds 监听器绑定的访问控制策略组 ID。当AclStatus参数配置为 on 时，AclIds为必填参数。
+         * @param aclIds Access control policy group ID bound to the listener. When the AclStatus parameter is set to on, AclIds is required.
          * 
          * @return builder
          * 
@@ -453,7 +453,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclIds 监听器绑定的访问控制策略组 ID。当AclStatus参数配置为 on 时，AclIds为必填参数。
+         * @param aclIds Access control policy group ID bound to the listener. When the AclStatus parameter is set to on, AclIds is required.
          * 
          * @return builder
          * 
@@ -463,7 +463,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclIds 监听器绑定的访问控制策略组 ID。当AclStatus参数配置为 on 时，AclIds为必填参数。
+         * @param aclIds Access control policy group ID bound to the listener. When the AclStatus parameter is set to on, AclIds is required.
          * 
          * @return builder
          * 
@@ -473,7 +473,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclStatus 是否开启访问控制功能。取值如下：on：开启。off ：不开启（默认）。
+         * @param aclStatus Enable access control. Values: on: enabled. off: disabled (default).
          * 
          * @return builder
          * 
@@ -484,7 +484,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclStatus 是否开启访问控制功能。取值如下：on：开启。off ：不开启（默认）。
+         * @param aclStatus Enable access control. Values: on: enabled. off: disabled (default).
          * 
          * @return builder
          * 
@@ -494,7 +494,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclType 访问控制的方式，取值如下：white：白名单方式。表示监听器仅转发来自所选访问控制策略组中设置的IP地址或地址段的请求。 如果所选策略组中没有添加任何IP，则监听器不会转发任何请求。black：黑名单方式。表示仅拒绝来自所选访问控制策略组中设置的IP地址或地址段的请求。 如果所选策略组中没有添加任何IP，则监听器会转发全部请求。当AclStatus参数配置为 on 时，AclType为必填参数。
+         * @param aclType Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
          * 
          * @return builder
          * 
@@ -505,7 +505,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclType 访问控制的方式，取值如下：white：白名单方式。表示监听器仅转发来自所选访问控制策略组中设置的IP地址或地址段的请求。 如果所选策略组中没有添加任何IP，则监听器不会转发任何请求。black：黑名单方式。表示仅拒绝来自所选访问控制策略组中设置的IP地址或地址段的请求。 如果所选策略组中没有添加任何IP，则监听器会转发全部请求。当AclStatus参数配置为 on 时，AclType为必填参数。
+         * @param aclType Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
          * 
          * @return builder
          * 
@@ -515,7 +515,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param caCertificateId HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 alb 时，必须指定 CACertificateId 参数。
+         * @param caCertificateId CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
          * 
          * @return builder
          * 
@@ -526,7 +526,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param caCertificateId HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 alb 时，必须指定 CACertificateId 参数。
+         * @param caCertificateId CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
          * 
          * @return builder
          * 
@@ -536,7 +536,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param caCertificateSource HTTPS 监听器关联的 CA 证书的来源，用于双向认证。alb（默认）：表示通过 ALB 上传的证书。标准版 ALB 实例不支持此来源的证书。pca*root：表示通过火山引擎证书中心购买或上传的私有根 CA 证书。pca*sub：表示通过火山引擎证书中心购买或上传的私有子 CA 证书。
+         * @param caCertificateSource Source of the CA certificate associated with the HTTPS listener, used for mutual authentication. alb (default): Certificate uploaded via ALB. Standard ALB instances do not support certificates from this source. pca*root: Private root CA certificate purchased or uploaded via Volcano Engine Certificate Center. pca*sub: Private subordinate CA certificate purchased or uploaded via Volcano Engine Certificate Center.
          * 
          * @return builder
          * 
@@ -547,7 +547,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param caCertificateSource HTTPS 监听器关联的 CA 证书的来源，用于双向认证。alb（默认）：表示通过 ALB 上传的证书。标准版 ALB 实例不支持此来源的证书。pca*root：表示通过火山引擎证书中心购买或上传的私有根 CA 证书。pca*sub：表示通过火山引擎证书中心购买或上传的私有子 CA 证书。
+         * @param caCertificateSource Source of the CA certificate associated with the HTTPS listener, used for mutual authentication. alb (default): Certificate uploaded via ALB. Standard ALB instances do not support certificates from this source. pca*root: Private root CA certificate purchased or uploaded via Volcano Engine Certificate Center. pca*sub: Private subordinate CA certificate purchased or uploaded via Volcano Engine Certificate Center.
          * 
          * @return builder
          * 
@@ -557,7 +557,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certCenterCertificateId HTTPS监听器关联的证书 ID。创建 HTTPS 监听器且证书来源为 cert_center 时必传。
+         * @param certCenterCertificateId Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
          * 
          * @return builder
          * 
@@ -568,7 +568,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certCenterCertificateId HTTPS监听器关联的证书 ID。创建 HTTPS 监听器且证书来源为 cert_center 时必传。
+         * @param certCenterCertificateId Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
          * 
          * @return builder
          * 
@@ -578,7 +578,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateId HTTPS监听器关联的证书 ID。创建 HTTPS 监听器且证书来源为 alb 时必传。
+         * @param certificateId Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is alb.
          * 
          * @return builder
          * 
@@ -589,7 +589,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateId HTTPS监听器关联的证书 ID。创建 HTTPS 监听器且证书来源为 alb 时必传。
+         * @param certificateId Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is alb.
          * 
          * @return builder
          * 
@@ -599,7 +599,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateSource HTTPS监听器关联的默认证书的来源，取值：alb：表示通过 ALB 上传的证书。cert*center：表示通过火山引擎证书中心购买或上传的 SSL 证书。pca*leaf：表示通过火山引擎证书中心购买或上传的私有叶子证书。
+         * @param certificateSource The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
          * 
          * @return builder
          * 
@@ -610,7 +610,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateSource HTTPS监听器关联的默认证书的来源，取值：alb：表示通过 ALB 上传的证书。cert*center：表示通过火山引擎证书中心购买或上传的 SSL 证书。pca*leaf：表示通过火山引擎证书中心购买或上传的私有叶子证书。
+         * @param certificateSource The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
          * 
          * @return builder
          * 
@@ -620,7 +620,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customizedCfgId 个性化配置ID，未绑定时值为空字符串。
+         * @param customizedCfgId Personalized configuration ID. If not bound, the value is an empty string.
          * 
          * @return builder
          * 
@@ -631,7 +631,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customizedCfgId 个性化配置ID，未绑定时值为空字符串。
+         * @param customizedCfgId Personalized configuration ID. If not bound, the value is an empty string.
          * 
          * @return builder
          * 
@@ -641,7 +641,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 监听器的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+         * @param description Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
          * 
          * @return builder
          * 
@@ -652,7 +652,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 监听器的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+         * @param description Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
          * 
          * @return builder
          * 
@@ -675,7 +675,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableHttp2 HTTP2.0 特性开关，该参数仅对 HTTPS 监听器有效。取值如下：on：开启。off：关闭（默认）。
+         * @param enableHttp2 HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
          * 
          * @return builder
          * 
@@ -686,7 +686,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableHttp2 HTTP2.0 特性开关，该参数仅对 HTTPS 监听器有效。取值如下：on：开启。off：关闭（默认）。
+         * @param enableHttp2 HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
          * 
          * @return builder
          * 
@@ -696,7 +696,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableQuic QUIC 特性开关，该参数仅对 HTTPS 监听器有效，取值如下：on：开启。off：关闭（默认）。只有标准版 ALB 实例支持 QUIC。
+         * @param enableQuic QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
          * 
          * @return builder
          * 
@@ -707,7 +707,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableQuic QUIC 特性开关，该参数仅对 HTTPS 监听器有效，取值如下：on：开启。off：关闭（默认）。只有标准版 ALB 实例支持 QUIC。
+         * @param enableQuic QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
          * 
          * @return builder
          * 
@@ -717,7 +717,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enabled 监听器开启/关闭，取值如下：on：开启（默认）。off：关闭。
+         * @param enabled Listener on/off status. Values: on: On (default). off: Off.
          * 
          * @return builder
          * 
@@ -728,7 +728,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enabled 监听器开启/关闭，取值如下：on：开启（默认）。off：关闭。
+         * @param enabled Listener on/off status. Values: on: On (default). off: Off.
          * 
          * @return builder
          * 
@@ -738,7 +738,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listenerName 监听器的名字。不填写时以“协议-端口”格式命名。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点（.）、下划线（_）和短横线（-）。长度限制在1-128字符之间。
+         * @param listenerName Listener name. If not specified, named in the format &#39;protocol-port&#39;. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
          * 
          * @return builder
          * 
@@ -749,7 +749,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listenerName 监听器的名字。不填写时以“协议-端口”格式命名。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点（.）、下划线（_）和短横线（-）。长度限制在1-128字符之间。
+         * @param listenerName Listener name. If not specified, named in the format &#39;protocol-port&#39;. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
          * 
          * @return builder
          * 
@@ -759,7 +759,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerId 监听器所属的负载均衡实例 ID。
+         * @param loadBalancerId Load balancer instance ID to which the listener belongs.
          * 
          * @return builder
          * 
@@ -770,7 +770,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerId 监听器所属的负载均衡实例 ID。
+         * @param loadBalancerId Load balancer instance ID to which the listener belongs.
          * 
          * @return builder
          * 
@@ -780,7 +780,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param pcaLeafCertificateId HTTPS监听器关联的私有叶子证书 ID。创建 HTTPS 监听器且证书来源为 pca_leaf 时必传。
+         * @param pcaLeafCertificateId Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
          * 
          * @return builder
          * 
@@ -791,7 +791,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param pcaLeafCertificateId HTTPS监听器关联的私有叶子证书 ID。创建 HTTPS 监听器且证书来源为 pca_leaf 时必传。
+         * @param pcaLeafCertificateId Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
          * 
          * @return builder
          * 
@@ -801,7 +801,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param pcaRootCaCertificateId HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pca_root 时，必须指定 PcaRootCACertificateId 参数。
+         * @param pcaRootCaCertificateId CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
          * 
          * @return builder
          * 
@@ -812,7 +812,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param pcaRootCaCertificateId HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pca_root 时，必须指定 PcaRootCACertificateId 参数。
+         * @param pcaRootCaCertificateId CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
          * 
          * @return builder
          * 
@@ -822,7 +822,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param pcaSubCaCertificateId HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pca_sub 时，必须指定 PcaSubCACertificateId 参数。
+         * @param pcaSubCaCertificateId CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
          * 
          * @return builder
          * 
@@ -833,7 +833,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param pcaSubCaCertificateId HTTPS 监听器关联的 CA 证书 ID。该参数用于 HTTPS 监听器的双向认证。当证书来源是 pca_sub 时，必须指定 PcaSubCACertificateId 参数。
+         * @param pcaSubCaCertificateId CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
          * 
          * @return builder
          * 
@@ -843,7 +843,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param port 监听器的监听端口，取值：1   - 65535 。
+         * @param port The listener port. Values: 1   - 65535.
          * 
          * @return builder
          * 
@@ -854,7 +854,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param port 监听器的监听端口，取值：1   - 65535 。
+         * @param port The listener port. Values: 1   - 65535.
          * 
          * @return builder
          * 
@@ -864,7 +864,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocol 监听器的协议，支持 HTTP 协议和 HTTPS 协议。
+         * @param protocol Listener protocol. Supports HTTP and HTTPS protocols.
          * 
          * @return builder
          * 
@@ -875,7 +875,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocol 监听器的协议，支持 HTTP 协议和 HTTPS 协议。
+         * @param protocol Listener protocol. Supports HTTP and HTTPS protocols.
          * 
          * @return builder
          * 
@@ -885,7 +885,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serverGroupId 监听器的默认服务器组。
+         * @param serverGroupId Default server group for the listener.
          * 
          * @return builder
          * 
@@ -896,7 +896,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serverGroupId 监听器的默认服务器组。
+         * @param serverGroupId Default server group for the listener.
          * 
          * @return builder
          * 

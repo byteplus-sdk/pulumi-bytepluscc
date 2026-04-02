@@ -55,8 +55,8 @@ class KeyMultiRegionConfiguration(dict):
                  primary_key: Optional['outputs.KeyMultiRegionConfigurationPrimaryKey'] = None,
                  replica_keys: Optional[Sequence['outputs.KeyMultiRegionConfigurationReplicaKey']] = None):
         """
-        :param builtins.str multi_region_key_type: 多区域密钥的类型。
-        :param 'KeyMultiRegionConfigurationPrimaryKeyArgs' primary_key: 主多区域键的事务识别号和区域 ID。
+        :param builtins.str multi_region_key_type: Multi-region key type.
+        :param 'KeyMultiRegionConfigurationPrimaryKeyArgs' primary_key: Primary multi-region key transaction identifier and region ID.
         """
         if multi_region_key_type is not None:
             pulumi.set(__self__, "multi_region_key_type", multi_region_key_type)
@@ -69,7 +69,7 @@ class KeyMultiRegionConfiguration(dict):
     @pulumi.getter(name="multiRegionKeyType")
     def multi_region_key_type(self) -> Optional[builtins.str]:
         """
-        多区域密钥的类型。
+        Multi-region key type.
         """
         return pulumi.get(self, "multi_region_key_type")
 
@@ -77,7 +77,7 @@ class KeyMultiRegionConfiguration(dict):
     @pulumi.getter(name="primaryKey")
     def primary_key(self) -> Optional['outputs.KeyMultiRegionConfigurationPrimaryKey']:
         """
-        主多区域键的事务识别号和区域 ID。
+        Primary multi-region key transaction identifier and region ID.
         """
         return pulumi.get(self, "primary_key")
 
@@ -93,8 +93,8 @@ class KeyMultiRegionConfigurationPrimaryKey(dict):
                  region: Optional[builtins.str] = None,
                  trn: Optional[builtins.str] = None):
         """
-        :param builtins.str region: 多区域密钥的区域 ID。
-        :param builtins.str trn: 多区域密钥的 TRN。
+        :param builtins.str region: Multi-region key region ID.
+        :param builtins.str trn: Multi-region key TRN.
         """
         if region is not None:
             pulumi.set(__self__, "region", region)
@@ -105,7 +105,7 @@ class KeyMultiRegionConfigurationPrimaryKey(dict):
     @pulumi.getter
     def region(self) -> Optional[builtins.str]:
         """
-        多区域密钥的区域 ID。
+        Multi-region key region ID.
         """
         return pulumi.get(self, "region")
 
@@ -113,7 +113,7 @@ class KeyMultiRegionConfigurationPrimaryKey(dict):
     @pulumi.getter
     def trn(self) -> Optional[builtins.str]:
         """
-        多区域密钥的 TRN。
+        Multi-region key TRN.
         """
         return pulumi.get(self, "trn")
 
@@ -124,8 +124,8 @@ class KeyMultiRegionConfigurationReplicaKey(dict):
                  region: Optional[builtins.str] = None,
                  trn: Optional[builtins.str] = None):
         """
-        :param builtins.str region: 多区域密钥的区域 ID。
-        :param builtins.str trn: 多区域密钥的转换。
+        :param builtins.str region: Multi-region key region ID.
+        :param builtins.str trn: Multi-region key conversion.
         """
         if region is not None:
             pulumi.set(__self__, "region", region)
@@ -136,7 +136,7 @@ class KeyMultiRegionConfigurationReplicaKey(dict):
     @pulumi.getter
     def region(self) -> Optional[builtins.str]:
         """
-        多区域密钥的区域 ID。
+        Multi-region key region ID.
         """
         return pulumi.get(self, "region")
 
@@ -144,7 +144,7 @@ class KeyMultiRegionConfigurationReplicaKey(dict):
     @pulumi.getter
     def trn(self) -> Optional[builtins.str]:
         """
-        多区域密钥的转换。
+        Multi-region key conversion.
         """
         return pulumi.get(self, "trn")
 
@@ -155,8 +155,8 @@ class KeyTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: KMS密钥的标签键
-        :param builtins.str value: KMS密钥的标签值
+        :param builtins.str key: KMS key label key.
+        :param builtins.str value: KMS key label value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -167,7 +167,7 @@ class KeyTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        KMS密钥的标签键
+        KMS key label key.
         """
         return pulumi.get(self, "key")
 
@@ -175,7 +175,7 @@ class KeyTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        KMS密钥的标签值
+        KMS key label value.
         """
         return pulumi.get(self, "value")
 
@@ -187,9 +187,9 @@ class GetKeyMultiRegionConfigurationResult(dict):
                  primary_key: 'outputs.GetKeyMultiRegionConfigurationPrimaryKeyResult',
                  replica_keys: Sequence['outputs.GetKeyMultiRegionConfigurationReplicaKeyResult']):
         """
-        :param builtins.str multi_region_key_type: 多区域密钥的类型。
-        :param 'GetKeyMultiRegionConfigurationPrimaryKeyArgs' primary_key: 主多区域键的事务识别号和区域 ID。
-        :param Sequence['GetKeyMultiRegionConfigurationReplicaKeyArgs'] replica_keys: 副本多区域密钥的事务记录编号和区域 ID。
+        :param builtins.str multi_region_key_type: Multi-region key type.
+        :param 'GetKeyMultiRegionConfigurationPrimaryKeyArgs' primary_key: Primary multi-region key transaction identifier and region ID.
+        :param Sequence['GetKeyMultiRegionConfigurationReplicaKeyArgs'] replica_keys: Replica multi-region key transaction record number and region ID.
         """
         pulumi.set(__self__, "multi_region_key_type", multi_region_key_type)
         pulumi.set(__self__, "primary_key", primary_key)
@@ -199,7 +199,7 @@ class GetKeyMultiRegionConfigurationResult(dict):
     @pulumi.getter(name="multiRegionKeyType")
     def multi_region_key_type(self) -> builtins.str:
         """
-        多区域密钥的类型。
+        Multi-region key type.
         """
         return pulumi.get(self, "multi_region_key_type")
 
@@ -207,7 +207,7 @@ class GetKeyMultiRegionConfigurationResult(dict):
     @pulumi.getter(name="primaryKey")
     def primary_key(self) -> 'outputs.GetKeyMultiRegionConfigurationPrimaryKeyResult':
         """
-        主多区域键的事务识别号和区域 ID。
+        Primary multi-region key transaction identifier and region ID.
         """
         return pulumi.get(self, "primary_key")
 
@@ -215,7 +215,7 @@ class GetKeyMultiRegionConfigurationResult(dict):
     @pulumi.getter(name="replicaKeys")
     def replica_keys(self) -> Sequence['outputs.GetKeyMultiRegionConfigurationReplicaKeyResult']:
         """
-        副本多区域密钥的事务记录编号和区域 ID。
+        Replica multi-region key transaction record number and region ID.
         """
         return pulumi.get(self, "replica_keys")
 
@@ -226,8 +226,8 @@ class GetKeyMultiRegionConfigurationPrimaryKeyResult(dict):
                  region: builtins.str,
                  trn: builtins.str):
         """
-        :param builtins.str region: 多区域密钥的区域 ID。
-        :param builtins.str trn: 多区域密钥的 TRN。
+        :param builtins.str region: Multi-region key region ID.
+        :param builtins.str trn: Multi-region key TRN.
         """
         pulumi.set(__self__, "region", region)
         pulumi.set(__self__, "trn", trn)
@@ -236,7 +236,7 @@ class GetKeyMultiRegionConfigurationPrimaryKeyResult(dict):
     @pulumi.getter
     def region(self) -> builtins.str:
         """
-        多区域密钥的区域 ID。
+        Multi-region key region ID.
         """
         return pulumi.get(self, "region")
 
@@ -244,7 +244,7 @@ class GetKeyMultiRegionConfigurationPrimaryKeyResult(dict):
     @pulumi.getter
     def trn(self) -> builtins.str:
         """
-        多区域密钥的 TRN。
+        Multi-region key TRN.
         """
         return pulumi.get(self, "trn")
 
@@ -255,8 +255,8 @@ class GetKeyMultiRegionConfigurationReplicaKeyResult(dict):
                  region: builtins.str,
                  trn: builtins.str):
         """
-        :param builtins.str region: 多区域密钥的区域 ID。
-        :param builtins.str trn: 多区域密钥的转换。
+        :param builtins.str region: Multi-region key region ID.
+        :param builtins.str trn: Multi-region key conversion.
         """
         pulumi.set(__self__, "region", region)
         pulumi.set(__self__, "trn", trn)
@@ -265,7 +265,7 @@ class GetKeyMultiRegionConfigurationReplicaKeyResult(dict):
     @pulumi.getter
     def region(self) -> builtins.str:
         """
-        多区域密钥的区域 ID。
+        Multi-region key region ID.
         """
         return pulumi.get(self, "region")
 
@@ -273,7 +273,7 @@ class GetKeyMultiRegionConfigurationReplicaKeyResult(dict):
     @pulumi.getter
     def trn(self) -> builtins.str:
         """
-        多区域密钥的转换。
+        Multi-region key conversion.
         """
         return pulumi.get(self, "trn")
 
@@ -284,8 +284,8 @@ class GetKeyTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: KMS密钥的标签键
-        :param builtins.str value: KMS密钥的标签值
+        :param builtins.str key: KMS key label key.
+        :param builtins.str value: KMS key label value.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -294,7 +294,7 @@ class GetKeyTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        KMS密钥的标签键
+        KMS key label key.
         """
         return pulumi.get(self, "key")
 
@@ -302,7 +302,7 @@ class GetKeyTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        KMS密钥的标签值
+        KMS key label value.
         """
         return pulumi.get(self, "value")
 

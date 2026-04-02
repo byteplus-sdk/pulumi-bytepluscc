@@ -13,38 +13,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RuleDimensionConditionsMetaConditionMeta {
     /**
-     * @return 标签匹配时的比较符。contain：包含not*contain：不包含prefix*match：前缀匹配suffix*match：后缀匹配equal：等于not*equal：不等于exist：存在。
+     * @return Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
      * 
      */
     private @Nullable String comparator;
     /**
-     * @return 标签键。
+     * @return Tag key.
      * 
      */
     private @Nullable String key;
     /**
-     * @return 标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+     * @return Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
      * 
      */
     private @Nullable List<String> values;
 
     private RuleDimensionConditionsMetaConditionMeta() {}
     /**
-     * @return 标签匹配时的比较符。contain：包含not*contain：不包含prefix*match：前缀匹配suffix*match：后缀匹配equal：等于not*equal：不等于exist：存在。
+     * @return Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
      * 
      */
     public Optional<String> comparator() {
         return Optional.ofNullable(this.comparator);
     }
     /**
-     * @return 标签键。
+     * @return Tag key.
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return 标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+     * @return Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
      * 
      */
     public List<String> values() {

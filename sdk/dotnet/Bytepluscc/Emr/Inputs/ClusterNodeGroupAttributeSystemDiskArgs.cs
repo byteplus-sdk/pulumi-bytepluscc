@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Inputs
     public sealed class ClusterNodeGroupAttributeSystemDiskArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 磁盘大小。
+        /// Disk size.
         /// </summary>
         [Input("size")]
         public Input<int>? Size { get; set; }
 
         /// <summary>
-        /// 磁盘类型。
+        /// Disk type.
         /// </summary>
         [Input("volumeType")]
         public Input<string>? VolumeType { get; set; }

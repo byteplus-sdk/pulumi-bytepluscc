@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
 {
     /// <summary>
-    /// 连接终端是位于数据库和应用程序之间的网络代理服务，用于代理应用程序访问数据库时的所有请求，具有高可用、高性能、可运维、简单易用等特点，支持读写分离和负载均衡等高级功能。云数据库 PostgreSQL 版提供了默认终端和自定义只读终端两种类型。
+    /// The connection endpoint is a network proxy service positioned between the database and the application, handling all requests from the application to the database. It features high availability, high performance, maintainability, and ease of use, and supports advanced functions such as read/write splitting and load balancing. The PostgreSQL cloud database provides two types of endpoints: default endpoint and custom read-only endpoint.
     /// 
     /// ## Example Usage
     /// 
@@ -48,67 +48,67 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         public Output<ImmutableArray<Outputs.DbEndpointAddress>> Addresses { get; private set; } = null!;
 
         /// <summary>
-        /// 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入。Disable：不自动加入（默认）。
+        /// When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
         /// </summary>
         [Output("autoAddNewNodes")]
         public Output<string> AutoAddNewNodes { get; private set; } = null!;
 
         /// <summary>
-        /// 地址描述。
+        /// Address description
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 是否已开启全局只读。Enable：开启。Disable：未开启。
+        /// Whether global read-only is enabled. Enable: Enabled. Disable: Not enabled.
         /// </summary>
         [Output("enableReadOnly")]
         public Output<string> EnableReadOnly { get; private set; } = null!;
 
         /// <summary>
-        /// 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+        /// Whether read/write splitting is enabled. Values: Enable: Enabled. Disable: Not enabled.
         /// </summary>
         [Output("enableReadWriteSplitting")]
         public Output<string> EnableReadWriteSplitting { get; private set; } = null!;
 
         /// <summary>
-        /// 实例连接终端 ID。
+        /// Instance connection endpoint ID.
         /// </summary>
         [Output("endpointId")]
         public Output<string> EndpointId { get; private set; } = null!;
 
         /// <summary>
-        /// 实例连接终端名称。
+        /// Instance connection endpoint name.
         /// </summary>
         [Output("endpointName")]
         public Output<string> EndpointName { get; private set; } = null!;
 
         /// <summary>
-        /// 终端类型：Cluster：默认终端（默认创建）。Custom：自定义终端。
+        /// Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
         /// </summary>
         [Output("endpointType")]
         public Output<string> EndpointType { get; private set; } = null!;
 
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID.
         /// </summary>
         [Output("instanceId")]
         public Output<string> InstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// 连接终端配置的节点列表。说明当 EndpointType 为 Custom 时必选。主节点无需传节点 ID，传入 Primary 字符串即可。
+        /// List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string 'Primary'.
         /// </summary>
         [Output("nodes")]
         public Output<string> Nodes { get; private set; } = null!;
 
         /// <summary>
-        /// 只读权重分配模式。取值：Default：标准权重分配（默认值）。Custom：自定义权重分配。
+        /// Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
         /// </summary>
         [Output("readOnlyNodeDistributionType")]
         public Output<string> ReadOnlyNodeDistributionType { get; private set; } = null!;
 
         /// <summary>
-        /// 只读节点的最大延迟阈值，当只读节点延迟时间超过该值时，读取流量不发往该节点，单位：秒。取值：0~3600。默认值：30。说明支持对开通了读写分离的默认终端设置此参数。
+        /// Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
         /// </summary>
         [Output("readOnlyNodeMaxDelayTime")]
         public Output<int> ReadOnlyNodeMaxDelayTime { get; private set; } = null!;
@@ -117,19 +117,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         public Output<ImmutableArray<Outputs.DbEndpointReadOnlyNodeWeight>> ReadOnlyNodeWeights { get; private set; } = null!;
 
         /// <summary>
-        /// 读写模式：ReadWrite：读写。ReadOnly：只读。
+        /// Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
         /// </summary>
         [Output("readWriteMode")]
         public Output<string> ReadWriteMode { get; private set; } = null!;
 
         /// <summary>
-        /// 终端开启读写分离后，为终端设置的代理连接数。代理连接数的取值下限为 20。代理连接数的取值上限取决于实例主节点的规格，不同规格支持的代理连接数上限不同，详细信息请参见产品规格。
+        /// After enabling read/write splitting for the endpoint, set the number of proxy connections for the endpoint. The minimum value for proxy connections is 20. The maximum value depends on the specifications of the primary node; different specifications support different maximum proxy connections. For details, see product specifications.
         /// </summary>
         [Output("readWriteProxyConnection")]
         public Output<int> ReadWriteProxyConnection { get; private set; } = null!;
 
         /// <summary>
-        /// 终端是否将写请求发送给写节点（目前仅主节点为写节点）。取值：true：是。默认值。false：否。
+        /// Whether the endpoint sends write requests to the write node (currently only the primary node is the write node). Values: true: Yes (default). false: No.
         /// </summary>
         [Output("writeNodeHaltWriting")]
         public Output<bool> WriteNodeHaltWriting { get; private set; } = null!;
@@ -190,43 +190,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         }
 
         /// <summary>
-        /// 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+        /// Whether read/write splitting is enabled. Values: Enable: Enabled. Disable: Not enabled.
         /// </summary>
         [Input("enableReadWriteSplitting")]
         public Input<string>? EnableReadWriteSplitting { get; set; }
 
         /// <summary>
-        /// 实例连接终端名称。
+        /// Instance connection endpoint name.
         /// </summary>
         [Input("endpointName")]
         public Input<string>? EndpointName { get; set; }
 
         /// <summary>
-        /// 终端类型：Cluster：默认终端（默认创建）。Custom：自定义终端。
+        /// Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
         /// </summary>
         [Input("endpointType")]
         public Input<string>? EndpointType { get; set; }
 
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID.
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 连接终端配置的节点列表。说明当 EndpointType 为 Custom 时必选。主节点无需传节点 ID，传入 Primary 字符串即可。
+        /// List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string 'Primary'.
         /// </summary>
         [Input("nodes")]
         public Input<string>? Nodes { get; set; }
 
         /// <summary>
-        /// 只读权重分配模式。取值：Default：标准权重分配（默认值）。Custom：自定义权重分配。
+        /// Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
         /// </summary>
         [Input("readOnlyNodeDistributionType")]
         public Input<string>? ReadOnlyNodeDistributionType { get; set; }
 
         /// <summary>
-        /// 只读节点的最大延迟阈值，当只读节点延迟时间超过该值时，读取流量不发往该节点，单位：秒。取值：0~3600。默认值：30。说明支持对开通了读写分离的默认终端设置此参数。
+        /// Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
         /// </summary>
         [Input("readOnlyNodeMaxDelayTime")]
         public Input<int>? ReadOnlyNodeMaxDelayTime { get; set; }
@@ -240,19 +240,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         }
 
         /// <summary>
-        /// 读写模式：ReadWrite：读写。ReadOnly：只读。
+        /// Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
         /// </summary>
         [Input("readWriteMode")]
         public Input<string>? ReadWriteMode { get; set; }
 
         /// <summary>
-        /// 终端开启读写分离后，为终端设置的代理连接数。代理连接数的取值下限为 20。代理连接数的取值上限取决于实例主节点的规格，不同规格支持的代理连接数上限不同，详细信息请参见产品规格。
+        /// After enabling read/write splitting for the endpoint, set the number of proxy connections for the endpoint. The minimum value for proxy connections is 20. The maximum value depends on the specifications of the primary node; different specifications support different maximum proxy connections. For details, see product specifications.
         /// </summary>
         [Input("readWriteProxyConnection")]
         public Input<int>? ReadWriteProxyConnection { get; set; }
 
         /// <summary>
-        /// 终端是否将写请求发送给写节点（目前仅主节点为写节点）。取值：true：是。默认值。false：否。
+        /// Whether the endpoint sends write requests to the write node (currently only the primary node is the write node). Values: true: Yes (default). false: No.
         /// </summary>
         [Input("writeNodeHaltWriting")]
         public Input<bool>? WriteNodeHaltWriting { get; set; }
@@ -274,67 +274,67 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         }
 
         /// <summary>
-        /// 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入。Disable：不自动加入（默认）。
+        /// When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
         /// </summary>
         [Input("autoAddNewNodes")]
         public Input<string>? AutoAddNewNodes { get; set; }
 
         /// <summary>
-        /// 地址描述。
+        /// Address description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 是否已开启全局只读。Enable：开启。Disable：未开启。
+        /// Whether global read-only is enabled. Enable: Enabled. Disable: Not enabled.
         /// </summary>
         [Input("enableReadOnly")]
         public Input<string>? EnableReadOnly { get; set; }
 
         /// <summary>
-        /// 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+        /// Whether read/write splitting is enabled. Values: Enable: Enabled. Disable: Not enabled.
         /// </summary>
         [Input("enableReadWriteSplitting")]
         public Input<string>? EnableReadWriteSplitting { get; set; }
 
         /// <summary>
-        /// 实例连接终端 ID。
+        /// Instance connection endpoint ID.
         /// </summary>
         [Input("endpointId")]
         public Input<string>? EndpointId { get; set; }
 
         /// <summary>
-        /// 实例连接终端名称。
+        /// Instance connection endpoint name.
         /// </summary>
         [Input("endpointName")]
         public Input<string>? EndpointName { get; set; }
 
         /// <summary>
-        /// 终端类型：Cluster：默认终端（默认创建）。Custom：自定义终端。
+        /// Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
         /// </summary>
         [Input("endpointType")]
         public Input<string>? EndpointType { get; set; }
 
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID.
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 连接终端配置的节点列表。说明当 EndpointType 为 Custom 时必选。主节点无需传节点 ID，传入 Primary 字符串即可。
+        /// List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string 'Primary'.
         /// </summary>
         [Input("nodes")]
         public Input<string>? Nodes { get; set; }
 
         /// <summary>
-        /// 只读权重分配模式。取值：Default：标准权重分配（默认值）。Custom：自定义权重分配。
+        /// Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
         /// </summary>
         [Input("readOnlyNodeDistributionType")]
         public Input<string>? ReadOnlyNodeDistributionType { get; set; }
 
         /// <summary>
-        /// 只读节点的最大延迟阈值，当只读节点延迟时间超过该值时，读取流量不发往该节点，单位：秒。取值：0~3600。默认值：30。说明支持对开通了读写分离的默认终端设置此参数。
+        /// Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
         /// </summary>
         [Input("readOnlyNodeMaxDelayTime")]
         public Input<int>? ReadOnlyNodeMaxDelayTime { get; set; }
@@ -348,19 +348,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         }
 
         /// <summary>
-        /// 读写模式：ReadWrite：读写。ReadOnly：只读。
+        /// Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
         /// </summary>
         [Input("readWriteMode")]
         public Input<string>? ReadWriteMode { get; set; }
 
         /// <summary>
-        /// 终端开启读写分离后，为终端设置的代理连接数。代理连接数的取值下限为 20。代理连接数的取值上限取决于实例主节点的规格，不同规格支持的代理连接数上限不同，详细信息请参见产品规格。
+        /// After enabling read/write splitting for the endpoint, set the number of proxy connections for the endpoint. The minimum value for proxy connections is 20. The maximum value depends on the specifications of the primary node; different specifications support different maximum proxy connections. For details, see product specifications.
         /// </summary>
         [Input("readWriteProxyConnection")]
         public Input<int>? ReadWriteProxyConnection { get; set; }
 
         /// <summary>
-        /// 终端是否将写请求发送给写节点（目前仅主节点为写节点）。取值：true：是。默认值。false：否。
+        /// Whether the endpoint sends write requests to the write node (currently only the primary node is the write node). Values: true: Yes (default). false: No.
         /// </summary>
         [Input("writeNodeHaltWriting")]
         public Input<bool>? WriteNodeHaltWriting { get; set; }

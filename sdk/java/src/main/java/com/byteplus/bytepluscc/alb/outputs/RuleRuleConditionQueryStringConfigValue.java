@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RuleRuleConditionQueryStringConfigValue {
     /**
-     * @return 查询字符串键。
+     * @return Query string key.
      * 
      */
     private @Nullable String key;
     /**
-     * @return 查询字符串值。
+     * @return Query string value.
      * 
      */
     private @Nullable String value;
 
     private RuleRuleConditionQueryStringConfigValue() {}
     /**
-     * @return 查询字符串键。
+     * @return Query string key.
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return 查询字符串值。
+     * @return Query string value.
      * 
      */
     public Optional<String> value() {

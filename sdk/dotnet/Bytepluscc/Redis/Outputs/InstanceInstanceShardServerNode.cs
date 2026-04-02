@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis.Outputs
     public sealed class InstanceInstanceShardServerNode
     {
         /// <summary>
-        /// 节点当前的角色。取值范围如下：PrimaryNode：主节点。SecondaryNode：从节点。
+        /// Current role of the node. Valid values: PrimaryNode: primary node; SecondaryNode: secondary node.
         /// </summary>
         public readonly string? CurrentRole;
         /// <summary>
-        /// 节点 ID。
+        /// Node ID.
         /// </summary>
         public readonly string? NodeId;
         /// <summary>
-        /// 节点状态。取值范围如下：deploy：启动中。running：运行中。loading：数据加载中。error：错误。
+        /// Node status. Valid values: deploy: starting; running: running; loading: loading data; error: error.
         /// </summary>
         public readonly string? Status;
         /// <summary>
-        /// 节点所在的可用区。
+        /// Availability zone where the node is located.
         /// </summary>
         public readonly string? ZoneId;
 

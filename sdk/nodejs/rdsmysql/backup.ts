@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 备份是数据库的重要运行时文件，基于备份文件，数据库能够实现容灾、恢复等功能。云数据库 MySQL 版提供了数据备份和日志备份两种备份能力：通过数据备份可将数据库恢复至某个备份集，通过日志备份可将数据库恢复至指定时间点。
+ * Backups are important runtime files for the database. Based on backup files, the database can achieve disaster recovery and restoration. MySQL Cloud Database provides two backup capabilities: data backup and log backup. Data backup allows you to restore the database to a specific backup set, while log backup enables restoration to a specified point in time
  *
  * ## Example Usage
  *
@@ -60,85 +60,85 @@ export class Backup extends pulumi.CustomResource {
     }
 
     /**
-     * 备份创建结束时间（UTC）。
+     * Backup creation end time (UTC)
      */
     public /*out*/ readonly backupEndTime!: pulumi.Output<string>;
     /**
-     * 备份文件名。
+     * Backup file name
      */
     public /*out*/ readonly backupFileName!: pulumi.Output<string>;
     /**
-     * 备份文件大小，单位为字节。
+     * Backup file size (bytes)
      */
     public /*out*/ readonly backupFileSize!: pulumi.Output<number>;
     /**
-     * 备份 ID。
+     * Backup ID
      */
     public /*out*/ readonly backupId!: pulumi.Output<string>;
     public readonly backupMetas!: pulumi.Output<outputs.rdsmysql.BackupBackupMeta[]>;
     /**
-     * 备份类型，取值：Physical（物理备份）、Logical（逻辑备份）、Snapshot（快照备份）。
+     * Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
      */
     public readonly backupMethod!: pulumi.Output<string>;
     /**
-     * 备份的名称。
+     * Backup name
      */
     public /*out*/ readonly backupName!: pulumi.Output<string>;
     /**
-     * 备份所在区域。
+     * Backup region
      */
     public /*out*/ readonly backupRegion!: pulumi.Output<string>;
     /**
-     * 备份创建开始时间（UTC）。
+     * Backup creation start time (UTC)
      */
     public /*out*/ readonly backupStartTime!: pulumi.Output<string>;
     /**
-     * 备份状态，取值：Success（成功）、Failed（失败）、Running（执行中）。
+     * Backup status. Values: Success, Failed, Running
      */
     public /*out*/ readonly backupStatus!: pulumi.Output<string>;
     /**
-     * 备份方式，取值：Full（全量/库表备）、Increment（增量备份）、DumpAll（全库备份）。
+     * Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
      */
     public readonly backupType!: pulumi.Output<string>;
     /**
-     * 一致性时间点。
+     * Consistency time point
      */
     public /*out*/ readonly consistentTime!: pulumi.Output<string>;
     /**
-     * 备份创建者，取值：System（系统）、User（用户）。
+     * Backup creator. Values: System (system), User (user)
      */
     public /*out*/ readonly createType!: pulumi.Output<string>;
     /**
-     * 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+     * Compatible version. Values: MySQL*5*7: MySQL 5.7 version; MySQL*8*0: MySQL 8.0 version
      */
     public /*out*/ readonly dbEngineVersion!: pulumi.Output<string>;
     public /*out*/ readonly dbTableInfos!: pulumi.Output<outputs.rdsmysql.BackupDbTableInfo[]>;
     /**
-     * 下载状态。
+     * Download status
      */
     public /*out*/ readonly downloadStatus!: pulumi.Output<string>;
     /**
-     * 数据库引擎类型。取值：InnoDB：InnoDB 引擎。RocksDB：RocksDB 引擎。
+     * Database engine type. Values: InnoDB: InnoDB engine; RocksDB: RocksDB engine
      */
     public /*out*/ readonly engineType!: pulumi.Output<string>;
     /**
-     * 备份失败的错误信息。
+     * Error message for backup failure
      */
     public /*out*/ readonly errorMessage!: pulumi.Output<string>;
     /**
-     * 备份过期时间（UTC）。
+     * Backup expiration time (UTC)
      */
     public /*out*/ readonly expiredTime!: pulumi.Output<string>;
     /**
-     * 实例 ID。
+     * Instance ID
      */
     public readonly instanceId!: pulumi.Output<string>;
     /**
-     * 是否加密。
+     * Whether encrypted
      */
     public /*out*/ readonly isEncrypted!: pulumi.Output<boolean>;
     /**
-     * 是否已过期。
+     * Whether expired
      */
     public /*out*/ readonly isExpired!: pulumi.Output<boolean>;
 
@@ -215,85 +215,85 @@ export class Backup extends pulumi.CustomResource {
  */
 export interface BackupState {
     /**
-     * 备份创建结束时间（UTC）。
+     * Backup creation end time (UTC)
      */
     backupEndTime?: pulumi.Input<string>;
     /**
-     * 备份文件名。
+     * Backup file name
      */
     backupFileName?: pulumi.Input<string>;
     /**
-     * 备份文件大小，单位为字节。
+     * Backup file size (bytes)
      */
     backupFileSize?: pulumi.Input<number>;
     /**
-     * 备份 ID。
+     * Backup ID
      */
     backupId?: pulumi.Input<string>;
     backupMetas?: pulumi.Input<pulumi.Input<inputs.rdsmysql.BackupBackupMeta>[]>;
     /**
-     * 备份类型，取值：Physical（物理备份）、Logical（逻辑备份）、Snapshot（快照备份）。
+     * Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
      */
     backupMethod?: pulumi.Input<string>;
     /**
-     * 备份的名称。
+     * Backup name
      */
     backupName?: pulumi.Input<string>;
     /**
-     * 备份所在区域。
+     * Backup region
      */
     backupRegion?: pulumi.Input<string>;
     /**
-     * 备份创建开始时间（UTC）。
+     * Backup creation start time (UTC)
      */
     backupStartTime?: pulumi.Input<string>;
     /**
-     * 备份状态，取值：Success（成功）、Failed（失败）、Running（执行中）。
+     * Backup status. Values: Success, Failed, Running
      */
     backupStatus?: pulumi.Input<string>;
     /**
-     * 备份方式，取值：Full（全量/库表备）、Increment（增量备份）、DumpAll（全库备份）。
+     * Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
      */
     backupType?: pulumi.Input<string>;
     /**
-     * 一致性时间点。
+     * Consistency time point
      */
     consistentTime?: pulumi.Input<string>;
     /**
-     * 备份创建者，取值：System（系统）、User（用户）。
+     * Backup creator. Values: System (system), User (user)
      */
     createType?: pulumi.Input<string>;
     /**
-     * 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+     * Compatible version. Values: MySQL*5*7: MySQL 5.7 version; MySQL*8*0: MySQL 8.0 version
      */
     dbEngineVersion?: pulumi.Input<string>;
     dbTableInfos?: pulumi.Input<pulumi.Input<inputs.rdsmysql.BackupDbTableInfo>[]>;
     /**
-     * 下载状态。
+     * Download status
      */
     downloadStatus?: pulumi.Input<string>;
     /**
-     * 数据库引擎类型。取值：InnoDB：InnoDB 引擎。RocksDB：RocksDB 引擎。
+     * Database engine type. Values: InnoDB: InnoDB engine; RocksDB: RocksDB engine
      */
     engineType?: pulumi.Input<string>;
     /**
-     * 备份失败的错误信息。
+     * Error message for backup failure
      */
     errorMessage?: pulumi.Input<string>;
     /**
-     * 备份过期时间（UTC）。
+     * Backup expiration time (UTC)
      */
     expiredTime?: pulumi.Input<string>;
     /**
-     * 实例 ID。
+     * Instance ID
      */
     instanceId?: pulumi.Input<string>;
     /**
-     * 是否加密。
+     * Whether encrypted
      */
     isEncrypted?: pulumi.Input<boolean>;
     /**
-     * 是否已过期。
+     * Whether expired
      */
     isExpired?: pulumi.Input<boolean>;
 }
@@ -304,15 +304,15 @@ export interface BackupState {
 export interface BackupArgs {
     backupMetas?: pulumi.Input<pulumi.Input<inputs.rdsmysql.BackupBackupMeta>[]>;
     /**
-     * 备份类型，取值：Physical（物理备份）、Logical（逻辑备份）、Snapshot（快照备份）。
+     * Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
      */
     backupMethod?: pulumi.Input<string>;
     /**
-     * 备份方式，取值：Full（全量/库表备）、Increment（增量备份）、DumpAll（全库备份）。
+     * Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
      */
     backupType?: pulumi.Input<string>;
     /**
-     * 实例 ID。
+     * Instance ID
      */
     instanceId: pulumi.Input<string>;
 }

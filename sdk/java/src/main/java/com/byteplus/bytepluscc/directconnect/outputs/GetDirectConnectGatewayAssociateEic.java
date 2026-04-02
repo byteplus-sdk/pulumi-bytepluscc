@@ -11,38 +11,38 @@ import java.util.Objects;
 @CustomType
 public final class GetDirectConnectGatewayAssociateEic {
     /**
-     * @return EIC的ID。
+     * @return ID of EIC.
      * 
      */
     private String eicId;
     /**
-     * @return EIC的用户ID。
+     * @return User ID of EIC.
      * 
      */
     private String eicOwnerId;
     /**
-     * @return 实例在EIC中的状态。
+     * @return Status of the instance in EIC.
      * 
      */
     private String eicStatus;
 
     private GetDirectConnectGatewayAssociateEic() {}
     /**
-     * @return EIC的ID。
+     * @return ID of EIC.
      * 
      */
     public String eicId() {
         return this.eicId;
     }
     /**
-     * @return EIC的用户ID。
+     * @return User ID of EIC.
      * 
      */
     public String eicOwnerId() {
         return this.eicOwnerId;
     }
     /**
-     * @return 实例在EIC中的状态。
+     * @return Status of the instance in EIC.
      * 
      */
     public String eicStatus() {

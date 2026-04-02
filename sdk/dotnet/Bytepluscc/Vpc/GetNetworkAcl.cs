@@ -65,23 +65,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class GetNetworkAclResult
     {
         /// <summary>
-        /// 网络ACL的创建时间。
+        /// Creation time of the network ACL.
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 默认出向ACL规则列表。
+        /// Default outbound ACL rule list.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkAclDefaultEgressAclEntryResult> DefaultEgressAclEntries;
         /// <summary>
-        /// 默认入向ACL规则列表。
+        /// Default inbound ACL rule list.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkAclDefaultIngressAclEntryResult> DefaultIngressAclEntries;
         /// <summary>
-        /// 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        /// Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 出向ACL规则列表。
+        /// Outbound ACL rule list.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkAclEgressAclEntryResult> EgressAclEntries;
         /// <summary>
@@ -89,39 +89,39 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 入向ACL规则列表。
+        /// Inbound ACL rule list.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkAclIngressAclEntryResult> IngressAclEntries;
         /// <summary>
-        /// 网络ACL的ID。
+        /// Network ACL ID.
         /// </summary>
         public readonly string NetworkAclId;
         /// <summary>
-        /// 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+        /// Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
         /// </summary>
         public readonly string NetworkAclName;
         /// <summary>
-        /// 网络ACL所属项目的名称。不填默认加入default项目。
+        /// Name of the project associated with the network ACL. If not specified, added to the default project.
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// 关联资源列表。
+        /// Associated resource list.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkAclResourceResult> Resources;
         /// <summary>
-        /// 网络ACL的状态。Available：可用，Creating：创建中
+        /// Status of the network ACL. Available: Available. Creating: Creating.
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// 标签列表。
+        /// Tag list.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkAclTagResult> Tags;
         /// <summary>
-        /// 网络ACL的更新时间。
+        /// Last updated time of the network ACL.
         /// </summary>
         public readonly string UpdatedTime;
         /// <summary>
-        /// 网络ACL所属VPC的ID。
+        /// ID of the VPC associated with the network ACL.
         /// </summary>
         public readonly string VpcId;
 

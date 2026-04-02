@@ -16,11 +16,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     {
         public readonly ImmutableArray<Outputs.UpstreamVersionDetailLabel> Labels;
         /// <summary>
-        /// 版本名称。支持大小写字母、数字和中划线（-），长度限制为2~63个字符。不能以中划线（-）开头。
+        /// Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// 更新时间。
+        /// Update time
         /// </summary>
         public readonly string? UpdateTime;
 

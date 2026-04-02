@@ -12,38 +12,38 @@ import java.util.Objects;
 @CustomType
 public final class GetNlbAccessLog {
     /**
-     * @return 是否开启访问日志。true：是。flase：否。
+     * @return Enable access logs. true: yes. false: no.
      * 
      */
     private Boolean accessLogEnabled;
     /**
-     * @return 日志项目的ID。
+     * @return Log project ID.
      * 
      */
     private String projectId;
     /**
-     * @return 日志主题的ID。
+     * @return Log topic ID.
      * 
      */
     private String topicId;
 
     private GetNlbAccessLog() {}
     /**
-     * @return 是否开启访问日志。true：是。flase：否。
+     * @return Enable access logs. true: yes. false: no.
      * 
      */
     public Boolean accessLogEnabled() {
         return this.accessLogEnabled;
     }
     /**
-     * @return 日志项目的ID。
+     * @return Log project ID.
      * 
      */
     public String projectId() {
         return this.projectId;
     }
     /**
-     * @return 日志主题的ID。
+     * @return Log topic ID.
      * 
      */
     public String topicId() {

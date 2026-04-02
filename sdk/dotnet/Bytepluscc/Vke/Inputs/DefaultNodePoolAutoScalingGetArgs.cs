@@ -14,43 +14,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
     public sealed class DefaultNodePoolAutoScalingGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 配置节点池的期望节点数。
+        /// Configure the desired number of nodes in the node pool.
         /// </summary>
         [Input("desiredReplicas")]
         public Input<int>? DesiredReplicas { get; set; }
 
         /// <summary>
-        /// 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+        /// Configure the switch for node pool auto scaling. Parameter values: false: disabled true: enabled
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// 配置节点池的最大节点数。
+        /// Configure the maximum number of nodes in the node pool
         /// </summary>
         [Input("maxReplicas")]
         public Input<int>? MaxReplicas { get; set; }
 
         /// <summary>
-        /// 配置节点池的最小节点数。
+        /// Configure the minimum number of nodes in the node pool
         /// </summary>
         [Input("minReplicas")]
         public Input<int>? MinReplicas { get; set; }
 
         /// <summary>
-        /// 优先级。
+        /// Priority
         /// </summary>
         [Input("priority")]
         public Input<int>? Priority { get; set; }
 
         /// <summary>
-        /// 伸缩组ID。
+        /// Scaling group ID
         /// </summary>
         [Input("scalingGroupId")]
         public Input<string>? ScalingGroupId { get; set; }
 
         /// <summary>
-        /// 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+        /// Multi-subnet scheduling policy for the node pool. Parameter value description: ZoneBalance: availability zone balancing policy. Priority: subnet priority policy.
         /// </summary>
         [Input("subnetPolicy")]
         public Input<string>? SubnetPolicy { get; set; }

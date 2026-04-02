@@ -38,76 +38,76 @@ if not MYPY:
     class TransitRouterAttachmentArgsDict(TypedDict):
         auto_publish_route_enabled: NotRequired[pulumi.Input[builtins.bool]]
         """
-        是否自动同步TR路由到网络实例路由表中。true：是。false：否。
+        Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
         """
         business_status: NotRequired[pulumi.Input[builtins.str]]
         """
-        网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
+        Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
         """
         creation_time: NotRequired[pulumi.Input[builtins.str]]
         """
-        网络实例连接的创建时间。
+        Creation time of the network instance connection.
         """
         deleted_time: NotRequired[pulumi.Input[builtins.str]]
         """
-        网络实例连接的删除时间。
+        Deletion time of the network instance connection.
         """
         description: NotRequired[pulumi.Input[builtins.str]]
         """
-        网络实例连接的描述信息。
+        Description of the network instance connection.
         """
         ipv6_enabled: NotRequired[pulumi.Input[builtins.bool]]
         """
-        是否开启IPv6功能。true：是。false：否。
+        Whether IPv6 is enabled. true: yes. false: no
         """
         overdue_time: NotRequired[pulumi.Input[builtins.str]]
         """
-        网络实例连接的欠费关停时间。
+        Shutdown time due to overdue payment for the network instance connection
         """
         resource_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        网络实例的ID。
+        ID of the network instance
         """
         resource_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        网络实例连接关联的网络实例类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+        Type of network instance associated with the network instance connection. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
         """
         status: NotRequired[pulumi.Input[builtins.str]]
         """
-        网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+        Status of the network instance connection. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
         """
         tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['TransitRouterAttachmentTagArgsDict']]]]
         transit_router_attachment_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        网络实例连接的ID。
+        Network instance connection ID.
         """
         transit_router_attachment_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        网络实例连接的名称。
+        Name of the network instance connection
         """
         transit_router_forward_policy_table_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        跨地域连接关联的转发策略的ID。
+        ID of the forwarding policy associated with the cross-region connection
         """
         transit_router_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        中转路由器实例的ID。
+        Transit router instance ID.
         """
         transit_router_route_table_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        网络实例连接关联转发的路由表ID。
+        Route table ID associated with the forwarding of the network instance connection.
         """
         transit_router_traffic_qos_marking_policy_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        跨地域连接关联的流标记策略的ID。
+        ID of the flow marking policy associated with the cross-region connection
         """
         transit_router_traffic_qos_queue_policy_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        跨地域连接关联的流队列策略的ID。
+        ID of the flow queue policy associated with the cross-region connection
         """
         update_time: NotRequired[pulumi.Input[builtins.str]]
         """
-        网络实例连接的最近操作时间。
+        Last operation time of the network instance connection
         """
 elif False:
     TransitRouterAttachmentArgsDict: TypeAlias = Mapping[str, Any]
@@ -135,24 +135,24 @@ class TransitRouterAttachmentArgs:
                  transit_router_traffic_qos_queue_policy_id: Optional[pulumi.Input[builtins.str]] = None,
                  update_time: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.bool] auto_publish_route_enabled: 是否自动同步TR路由到网络实例路由表中。true：是。false：否。
-        :param pulumi.Input[builtins.str] business_status: 网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
-        :param pulumi.Input[builtins.str] creation_time: 网络实例连接的创建时间。
-        :param pulumi.Input[builtins.str] deleted_time: 网络实例连接的删除时间。
-        :param pulumi.Input[builtins.str] description: 网络实例连接的描述信息。
-        :param pulumi.Input[builtins.bool] ipv6_enabled: 是否开启IPv6功能。true：是。false：否。
-        :param pulumi.Input[builtins.str] overdue_time: 网络实例连接的欠费关停时间。
-        :param pulumi.Input[builtins.str] resource_id: 网络实例的ID。
-        :param pulumi.Input[builtins.str] resource_type: 网络实例连接关联的网络实例类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
-        :param pulumi.Input[builtins.str] status: 网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
-        :param pulumi.Input[builtins.str] transit_router_attachment_id: 网络实例连接的ID。
-        :param pulumi.Input[builtins.str] transit_router_attachment_name: 网络实例连接的名称。
-        :param pulumi.Input[builtins.str] transit_router_forward_policy_table_id: 跨地域连接关联的转发策略的ID。
-        :param pulumi.Input[builtins.str] transit_router_id: 中转路由器实例的ID。
-        :param pulumi.Input[builtins.str] transit_router_route_table_id: 网络实例连接关联转发的路由表ID。
-        :param pulumi.Input[builtins.str] transit_router_traffic_qos_marking_policy_id: 跨地域连接关联的流标记策略的ID。
-        :param pulumi.Input[builtins.str] transit_router_traffic_qos_queue_policy_id: 跨地域连接关联的流队列策略的ID。
-        :param pulumi.Input[builtins.str] update_time: 网络实例连接的最近操作时间。
+        :param pulumi.Input[builtins.bool] auto_publish_route_enabled: Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
+        :param pulumi.Input[builtins.str] business_status: Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
+        :param pulumi.Input[builtins.str] creation_time: Creation time of the network instance connection.
+        :param pulumi.Input[builtins.str] deleted_time: Deletion time of the network instance connection.
+        :param pulumi.Input[builtins.str] description: Description of the network instance connection.
+        :param pulumi.Input[builtins.bool] ipv6_enabled: Whether IPv6 is enabled. true: yes. false: no
+        :param pulumi.Input[builtins.str] overdue_time: Shutdown time due to overdue payment for the network instance connection
+        :param pulumi.Input[builtins.str] resource_id: ID of the network instance
+        :param pulumi.Input[builtins.str] resource_type: Type of network instance associated with the network instance connection. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
+        :param pulumi.Input[builtins.str] status: Status of the network instance connection. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
+        :param pulumi.Input[builtins.str] transit_router_attachment_id: Network instance connection ID.
+        :param pulumi.Input[builtins.str] transit_router_attachment_name: Name of the network instance connection
+        :param pulumi.Input[builtins.str] transit_router_forward_policy_table_id: ID of the forwarding policy associated with the cross-region connection
+        :param pulumi.Input[builtins.str] transit_router_id: Transit router instance ID.
+        :param pulumi.Input[builtins.str] transit_router_route_table_id: Route table ID associated with the forwarding of the network instance connection.
+        :param pulumi.Input[builtins.str] transit_router_traffic_qos_marking_policy_id: ID of the flow marking policy associated with the cross-region connection
+        :param pulumi.Input[builtins.str] transit_router_traffic_qos_queue_policy_id: ID of the flow queue policy associated with the cross-region connection
+        :param pulumi.Input[builtins.str] update_time: Last operation time of the network instance connection
         """
         if auto_publish_route_enabled is not None:
             pulumi.set(__self__, "auto_publish_route_enabled", auto_publish_route_enabled)
@@ -197,7 +197,7 @@ class TransitRouterAttachmentArgs:
     @pulumi.getter(name="autoPublishRouteEnabled")
     def auto_publish_route_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否自动同步TR路由到网络实例路由表中。true：是。false：否。
+        Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
         """
         return pulumi.get(self, "auto_publish_route_enabled")
 
@@ -209,7 +209,7 @@ class TransitRouterAttachmentArgs:
     @pulumi.getter(name="businessStatus")
     def business_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
+        Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
         """
         return pulumi.get(self, "business_status")
 
@@ -221,7 +221,7 @@ class TransitRouterAttachmentArgs:
     @pulumi.getter(name="creationTime")
     def creation_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例连接的创建时间。
+        Creation time of the network instance connection.
         """
         return pulumi.get(self, "creation_time")
 
@@ -233,7 +233,7 @@ class TransitRouterAttachmentArgs:
     @pulumi.getter(name="deletedTime")
     def deleted_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例连接的删除时间。
+        Deletion time of the network instance connection.
         """
         return pulumi.get(self, "deleted_time")
 
@@ -245,7 +245,7 @@ class TransitRouterAttachmentArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例连接的描述信息。
+        Description of the network instance connection.
         """
         return pulumi.get(self, "description")
 
@@ -257,7 +257,7 @@ class TransitRouterAttachmentArgs:
     @pulumi.getter(name="ipv6Enabled")
     def ipv6_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启IPv6功能。true：是。false：否。
+        Whether IPv6 is enabled. true: yes. false: no
         """
         return pulumi.get(self, "ipv6_enabled")
 
@@ -269,7 +269,7 @@ class TransitRouterAttachmentArgs:
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例连接的欠费关停时间。
+        Shutdown time due to overdue payment for the network instance connection
         """
         return pulumi.get(self, "overdue_time")
 
@@ -281,7 +281,7 @@ class TransitRouterAttachmentArgs:
     @pulumi.getter(name="resourceId")
     def resource_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例的ID。
+        ID of the network instance
         """
         return pulumi.get(self, "resource_id")
 
@@ -293,7 +293,7 @@ class TransitRouterAttachmentArgs:
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例连接关联的网络实例类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+        Type of network instance associated with the network instance connection. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
         """
         return pulumi.get(self, "resource_type")
 
@@ -305,7 +305,7 @@ class TransitRouterAttachmentArgs:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+        Status of the network instance connection. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
         """
         return pulumi.get(self, "status")
 
@@ -326,7 +326,7 @@ class TransitRouterAttachmentArgs:
     @pulumi.getter(name="transitRouterAttachmentId")
     def transit_router_attachment_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例连接的ID。
+        Network instance connection ID.
         """
         return pulumi.get(self, "transit_router_attachment_id")
 
@@ -338,7 +338,7 @@ class TransitRouterAttachmentArgs:
     @pulumi.getter(name="transitRouterAttachmentName")
     def transit_router_attachment_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例连接的名称。
+        Name of the network instance connection
         """
         return pulumi.get(self, "transit_router_attachment_name")
 
@@ -350,7 +350,7 @@ class TransitRouterAttachmentArgs:
     @pulumi.getter(name="transitRouterForwardPolicyTableId")
     def transit_router_forward_policy_table_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        跨地域连接关联的转发策略的ID。
+        ID of the forwarding policy associated with the cross-region connection
         """
         return pulumi.get(self, "transit_router_forward_policy_table_id")
 
@@ -362,7 +362,7 @@ class TransitRouterAttachmentArgs:
     @pulumi.getter(name="transitRouterId")
     def transit_router_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        中转路由器实例的ID。
+        Transit router instance ID.
         """
         return pulumi.get(self, "transit_router_id")
 
@@ -374,7 +374,7 @@ class TransitRouterAttachmentArgs:
     @pulumi.getter(name="transitRouterRouteTableId")
     def transit_router_route_table_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例连接关联转发的路由表ID。
+        Route table ID associated with the forwarding of the network instance connection.
         """
         return pulumi.get(self, "transit_router_route_table_id")
 
@@ -386,7 +386,7 @@ class TransitRouterAttachmentArgs:
     @pulumi.getter(name="transitRouterTrafficQosMarkingPolicyId")
     def transit_router_traffic_qos_marking_policy_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        跨地域连接关联的流标记策略的ID。
+        ID of the flow marking policy associated with the cross-region connection
         """
         return pulumi.get(self, "transit_router_traffic_qos_marking_policy_id")
 
@@ -398,7 +398,7 @@ class TransitRouterAttachmentArgs:
     @pulumi.getter(name="transitRouterTrafficQosQueuePolicyId")
     def transit_router_traffic_qos_queue_policy_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        跨地域连接关联的流队列策略的ID。
+        ID of the flow queue policy associated with the cross-region connection
         """
         return pulumi.get(self, "transit_router_traffic_qos_queue_policy_id")
 
@@ -410,7 +410,7 @@ class TransitRouterAttachmentArgs:
     @pulumi.getter(name="updateTime")
     def update_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络实例连接的最近操作时间。
+        Last operation time of the network instance connection
         """
         return pulumi.get(self, "update_time")
 
@@ -423,11 +423,11 @@ if not MYPY:
     class TransitRouterAttachmentTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签键。
+        Tag key
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签值。
+        Tag value.
         """
 elif False:
     TransitRouterAttachmentTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -438,8 +438,8 @@ class TransitRouterAttachmentTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 标签键。
-        :param pulumi.Input[builtins.str] value: 标签值。
+        :param pulumi.Input[builtins.str] key: Tag key
+        :param pulumi.Input[builtins.str] value: Tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -450,7 +450,7 @@ class TransitRouterAttachmentTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -462,7 +462,7 @@ class TransitRouterAttachmentTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 
@@ -475,11 +475,11 @@ if not MYPY:
     class TransitRouterRouteTableTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签键
+        Tag key
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签值
+        Tag value
         """
 elif False:
     TransitRouterRouteTableTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -490,8 +490,8 @@ class TransitRouterRouteTableTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 标签键
-        :param pulumi.Input[builtins.str] value: 标签值
+        :param pulumi.Input[builtins.str] key: Tag key
+        :param pulumi.Input[builtins.str] value: Tag value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -502,7 +502,7 @@ class TransitRouterRouteTableTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签键
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -514,7 +514,7 @@ class TransitRouterRouteTableTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签值
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -527,11 +527,11 @@ if not MYPY:
     class TransitRouterTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签键。
+        Tag key
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签值。
+        Tag value.
         """
 elif False:
     TransitRouterTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -542,8 +542,8 @@ class TransitRouterTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 标签键。
-        :param pulumi.Input[builtins.str] value: 标签值。
+        :param pulumi.Input[builtins.str] key: Tag key
+        :param pulumi.Input[builtins.str] value: Tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -554,7 +554,7 @@ class TransitRouterTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -566,7 +566,7 @@ class TransitRouterTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 
@@ -579,11 +579,11 @@ if not MYPY:
     class VpcAttachmentAttachPointArgsDict(TypedDict):
         subnet_id: pulumi.Input[builtins.str]
         """
-        连接点的子网ID。
+        Subnet ID of the connection point.
         """
         zone_id: pulumi.Input[builtins.str]
         """
-        连接点的可用区ID。
+        Availability zone ID of the connection point.
         """
 elif False:
     VpcAttachmentAttachPointArgsDict: TypeAlias = Mapping[str, Any]
@@ -594,8 +594,8 @@ class VpcAttachmentAttachPointArgs:
                  subnet_id: pulumi.Input[builtins.str],
                  zone_id: pulumi.Input[builtins.str]):
         """
-        :param pulumi.Input[builtins.str] subnet_id: 连接点的子网ID。
-        :param pulumi.Input[builtins.str] zone_id: 连接点的可用区ID。
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID of the connection point.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID of the connection point.
         """
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "zone_id", zone_id)
@@ -604,7 +604,7 @@ class VpcAttachmentAttachPointArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[builtins.str]:
         """
-        连接点的子网ID。
+        Subnet ID of the connection point.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -616,7 +616,7 @@ class VpcAttachmentAttachPointArgs:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Input[builtins.str]:
         """
-        连接点的可用区ID。
+        Availability zone ID of the connection point.
         """
         return pulumi.get(self, "zone_id")
 
@@ -629,11 +629,11 @@ if not MYPY:
     class VpcAttachmentTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        用户标签的标签键。
+        Tag key for user tag.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        用户标签的标签值。
+        Tag value for user tag.
         """
 elif False:
     VpcAttachmentTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -644,8 +644,8 @@ class VpcAttachmentTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 用户标签的标签键。
-        :param pulumi.Input[builtins.str] value: 用户标签的标签值。
+        :param pulumi.Input[builtins.str] key: Tag key for user tag.
+        :param pulumi.Input[builtins.str] value: Tag value for user tag.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -656,7 +656,7 @@ class VpcAttachmentTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户标签的标签键。
+        Tag key for user tag.
         """
         return pulumi.get(self, "key")
 
@@ -668,7 +668,7 @@ class VpcAttachmentTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户标签的标签值。
+        Tag value for user tag.
         """
         return pulumi.get(self, "value")
 
@@ -681,11 +681,11 @@ if not MYPY:
     class VpnAttachmentTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        用户标签的标签键。
+        User tag key.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        用户标签的标签值。
+        User tag value.
         """
 elif False:
     VpnAttachmentTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -696,8 +696,8 @@ class VpnAttachmentTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 用户标签的标签键。
-        :param pulumi.Input[builtins.str] value: 用户标签的标签值。
+        :param pulumi.Input[builtins.str] key: User tag key.
+        :param pulumi.Input[builtins.str] value: User tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -708,7 +708,7 @@ class VpnAttachmentTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户标签的标签键。
+        User tag key.
         """
         return pulumi.get(self, "key")
 
@@ -720,7 +720,7 @@ class VpnAttachmentTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户标签的标签值。
+        User tag value.
         """
         return pulumi.get(self, "value")
 

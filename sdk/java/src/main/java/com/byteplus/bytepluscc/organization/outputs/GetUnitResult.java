@@ -12,27 +12,27 @@ import java.util.Objects;
 @CustomType
 public final class GetUnitResult {
     /**
-     * @return 创建时间。
+     * @return Creation time.
      * 
      */
     private String createdTime;
     /**
-     * @return 删除标识。
+     * @return Deletion flag.
      * 
      */
     private String deleteUk;
     /**
-     * @return 删除时间。
+     * @return Deletion time.
      * 
      */
     private String deletedTime;
     /**
-     * @return 深度。
+     * @return Depth.
      * 
      */
     private Integer depth;
     /**
-     * @return 描述。
+     * @return Description.
      * 
      */
     private String description;
@@ -42,72 +42,72 @@ public final class GetUnitResult {
      */
     private String id;
     /**
-     * @return 组织单元名称。
+     * @return Organizational unit name.
      * 
      */
     private String name;
     /**
-     * @return 组织ID。
+     * @return Organization ID.
      * 
      */
     private String orgId;
     /**
-     * @return 组织类型。企业组织： 1
+     * @return Organization type. Enterprise organization: 1
      * 
      */
     private Integer orgType;
     /**
-     * @return 组织单元ID。
+     * @return Organizational unit ID.
      * 
      */
     private String orgUnitId;
     /**
-     * @return 管理员ID。
+     * @return Administrator ID.
      * 
      */
     private String owner;
     /**
-     * @return 父单元Id。
+     * @return Parent unit ID.
      * 
      */
     private String parentId;
     /**
-     * @return 更新时间。
+     * @return Update time.
      * 
      */
     private String updatedTime;
 
     private GetUnitResult() {}
     /**
-     * @return 创建时间。
+     * @return Creation time.
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 删除标识。
+     * @return Deletion flag.
      * 
      */
     public String deleteUk() {
         return this.deleteUk;
     }
     /**
-     * @return 删除时间。
+     * @return Deletion time.
      * 
      */
     public String deletedTime() {
         return this.deletedTime;
     }
     /**
-     * @return 深度。
+     * @return Depth.
      * 
      */
     public Integer depth() {
         return this.depth;
     }
     /**
-     * @return 描述。
+     * @return Description.
      * 
      */
     public String description() {
@@ -121,49 +121,49 @@ public final class GetUnitResult {
         return this.id;
     }
     /**
-     * @return 组织单元名称。
+     * @return Organizational unit name.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 组织ID。
+     * @return Organization ID.
      * 
      */
     public String orgId() {
         return this.orgId;
     }
     /**
-     * @return 组织类型。企业组织： 1
+     * @return Organization type. Enterprise organization: 1
      * 
      */
     public Integer orgType() {
         return this.orgType;
     }
     /**
-     * @return 组织单元ID。
+     * @return Organizational unit ID.
      * 
      */
     public String orgUnitId() {
         return this.orgUnitId;
     }
     /**
-     * @return 管理员ID。
+     * @return Administrator ID.
      * 
      */
     public String owner() {
         return this.owner;
     }
     /**
-     * @return 父单元Id。
+     * @return Parent unit ID.
      * 
      */
     public String parentId() {
         return this.parentId;
     }
     /**
-     * @return 更新时间。
+     * @return Update time.
      * 
      */
     public String updatedTime() {

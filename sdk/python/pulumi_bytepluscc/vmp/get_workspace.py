@@ -28,7 +28,13 @@ class GetWorkspaceResult:
     """
     A collection of values returned by getWorkspace.
     """
-    def __init__(__self__, create_time=None, delete_protection_enabled=None, description=None, id=None, instance_type=None, instance_type_id=None, name=None, overdue_reclaim_time=None, password=None, project_name=None, prometheus_push_intranet_endpoint=None, prometheus_query_intranet_endpoint=None, prometheus_write_intranet_endpoint=None, quota=None, status=None, tags=None, usage=None, username=None, workspace_id=None):
+    def __init__(__self__, auth_type=None, bearer_token=None, create_time=None, delete_protection_enabled=None, description=None, id=None, instance_type=None, instance_type_id=None, name=None, overdue_reclaim_time=None, password=None, project_name=None, prometheus_push_endpoint=None, prometheus_push_intranet_endpoint=None, prometheus_query_endpoint=None, prometheus_query_intranet_endpoint=None, prometheus_write_endpoint=None, prometheus_write_intranet_endpoint=None, public_access_enabled=None, public_query_bandwidth=None, public_write_bandwidth=None, quota=None, search_latency_offset=None, status=None, tags=None, usage=None, username=None, workspace_id=None):
+        if auth_type and not isinstance(auth_type, str):
+            raise TypeError("Expected argument 'auth_type' to be a str")
+        pulumi.set(__self__, "auth_type", auth_type)
+        if bearer_token and not isinstance(bearer_token, str):
+            raise TypeError("Expected argument 'bearer_token' to be a str")
+        pulumi.set(__self__, "bearer_token", bearer_token)
         if create_time and not isinstance(create_time, str):
             raise TypeError("Expected argument 'create_time' to be a str")
         pulumi.set(__self__, "create_time", create_time)
@@ -59,18 +65,39 @@ class GetWorkspaceResult:
         if project_name and not isinstance(project_name, str):
             raise TypeError("Expected argument 'project_name' to be a str")
         pulumi.set(__self__, "project_name", project_name)
+        if prometheus_push_endpoint and not isinstance(prometheus_push_endpoint, str):
+            raise TypeError("Expected argument 'prometheus_push_endpoint' to be a str")
+        pulumi.set(__self__, "prometheus_push_endpoint", prometheus_push_endpoint)
         if prometheus_push_intranet_endpoint and not isinstance(prometheus_push_intranet_endpoint, str):
             raise TypeError("Expected argument 'prometheus_push_intranet_endpoint' to be a str")
         pulumi.set(__self__, "prometheus_push_intranet_endpoint", prometheus_push_intranet_endpoint)
+        if prometheus_query_endpoint and not isinstance(prometheus_query_endpoint, str):
+            raise TypeError("Expected argument 'prometheus_query_endpoint' to be a str")
+        pulumi.set(__self__, "prometheus_query_endpoint", prometheus_query_endpoint)
         if prometheus_query_intranet_endpoint and not isinstance(prometheus_query_intranet_endpoint, str):
             raise TypeError("Expected argument 'prometheus_query_intranet_endpoint' to be a str")
         pulumi.set(__self__, "prometheus_query_intranet_endpoint", prometheus_query_intranet_endpoint)
+        if prometheus_write_endpoint and not isinstance(prometheus_write_endpoint, str):
+            raise TypeError("Expected argument 'prometheus_write_endpoint' to be a str")
+        pulumi.set(__self__, "prometheus_write_endpoint", prometheus_write_endpoint)
         if prometheus_write_intranet_endpoint and not isinstance(prometheus_write_intranet_endpoint, str):
             raise TypeError("Expected argument 'prometheus_write_intranet_endpoint' to be a str")
         pulumi.set(__self__, "prometheus_write_intranet_endpoint", prometheus_write_intranet_endpoint)
+        if public_access_enabled and not isinstance(public_access_enabled, bool):
+            raise TypeError("Expected argument 'public_access_enabled' to be a bool")
+        pulumi.set(__self__, "public_access_enabled", public_access_enabled)
+        if public_query_bandwidth and not isinstance(public_query_bandwidth, int):
+            raise TypeError("Expected argument 'public_query_bandwidth' to be a int")
+        pulumi.set(__self__, "public_query_bandwidth", public_query_bandwidth)
+        if public_write_bandwidth and not isinstance(public_write_bandwidth, int):
+            raise TypeError("Expected argument 'public_write_bandwidth' to be a int")
+        pulumi.set(__self__, "public_write_bandwidth", public_write_bandwidth)
         if quota and not isinstance(quota, dict):
             raise TypeError("Expected argument 'quota' to be a dict")
         pulumi.set(__self__, "quota", quota)
+        if search_latency_offset and not isinstance(search_latency_offset, str):
+            raise TypeError("Expected argument 'search_latency_offset' to be a str")
+        pulumi.set(__self__, "search_latency_offset", search_latency_offset)
         if status and not isinstance(status, str):
             raise TypeError("Expected argument 'status' to be a str")
         pulumi.set(__self__, "status", status)
@@ -88,10 +115,26 @@ class GetWorkspaceResult:
         pulumi.set(__self__, "workspace_id", workspace_id)
 
     @property
+    @pulumi.getter(name="authType")
+    def auth_type(self) -> builtins.str:
+        """
+        Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+        """
+        return pulumi.get(self, "auth_type")
+
+    @property
+    @pulumi.getter(name="bearerToken")
+    def bearer_token(self) -> builtins.str:
+        """
+        Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+        """
+        return pulumi.get(self, "bearer_token")
+
+    @property
     @pulumi.getter(name="createTime")
     def create_time(self) -> builtins.str:
         """
-        工作区创建时间，RFC3339 格式。
+        Workspace creation time, RFC3339 format
         """
         return pulumi.get(self, "create_time")
 
@@ -99,7 +142,7 @@ class GetWorkspaceResult:
     @pulumi.getter(name="deleteProtectionEnabled")
     def delete_protection_enabled(self) -> builtins.bool:
         """
-        是否开启工作区删除保护,true：开启，false：关闭。
+        Enable workspace deletion protection: true for enabled, false for disabled
         """
         return pulumi.get(self, "delete_protection_enabled")
 
@@ -107,7 +150,7 @@ class GetWorkspaceResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        工作区描述信息，字符串形式，长度限制为 0～200。
+        Workspace description, string, length limit 0–200
         """
         return pulumi.get(self, "description")
 
@@ -123,7 +166,7 @@ class GetWorkspaceResult:
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> 'outputs.GetWorkspaceInstanceTypeResult':
         """
-        工作区规格详情。
+        Workspace specification details
         """
         return pulumi.get(self, "instance_type")
 
@@ -131,7 +174,7 @@ class GetWorkspaceResult:
     @pulumi.getter(name="instanceTypeId")
     def instance_type_id(self) -> builtins.str:
         """
-        工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
+        Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
         """
         return pulumi.get(self, "instance_type_id")
 
@@ -139,7 +182,7 @@ class GetWorkspaceResult:
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        工作区名称，字符串形式，长度限制为 1～100。
+        Workspace name, string, length limit 1–100
         """
         return pulumi.get(self, "name")
 
@@ -147,7 +190,7 @@ class GetWorkspaceResult:
     @pulumi.getter(name="overdueReclaimTime")
     def overdue_reclaim_time(self) -> builtins.str:
         """
-        工作区预期欠费回收时间，RFC3339 格式。
+        Workspace expected overdue recovery time, RFC3339 format
         """
         return pulumi.get(self, "overdue_reclaim_time")
 
@@ -155,7 +198,7 @@ class GetWorkspaceResult:
     @pulumi.getter
     def password(self) -> builtins.str:
         """
-        工作区 BasicAuth 密码。
+        Workspace BasicAuth password
         """
         return pulumi.get(self, "password")
 
@@ -163,47 +206,103 @@ class GetWorkspaceResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        项目名称。
+        Project name
         """
         return pulumi.get(self, "project_name")
+
+    @property
+    @pulumi.getter(name="prometheusPushEndpoint")
+    def prometheus_push_endpoint(self) -> builtins.str:
+        """
+        Workspace public Push Gateway URL address.
+        """
+        return pulumi.get(self, "prometheus_push_endpoint")
 
     @property
     @pulumi.getter(name="prometheusPushIntranetEndpoint")
     def prometheus_push_intranet_endpoint(self) -> builtins.str:
         """
-        工作区 Push Gateway URL 地址。
+        Workspace Push Gateway URL address
         """
         return pulumi.get(self, "prometheus_push_intranet_endpoint")
+
+    @property
+    @pulumi.getter(name="prometheusQueryEndpoint")
+    def prometheus_query_endpoint(self) -> builtins.str:
+        """
+        Workspace public Query URL address.
+        """
+        return pulumi.get(self, "prometheus_query_endpoint")
 
     @property
     @pulumi.getter(name="prometheusQueryIntranetEndpoint")
     def prometheus_query_intranet_endpoint(self) -> builtins.str:
         """
-        工作区 Query URL 地址。
+        Workspace Query URL address
         """
         return pulumi.get(self, "prometheus_query_intranet_endpoint")
+
+    @property
+    @pulumi.getter(name="prometheusWriteEndpoint")
+    def prometheus_write_endpoint(self) -> builtins.str:
+        """
+        Workspace public RemoteWrite URL address.
+        """
+        return pulumi.get(self, "prometheus_write_endpoint")
 
     @property
     @pulumi.getter(name="prometheusWriteIntranetEndpoint")
     def prometheus_write_intranet_endpoint(self) -> builtins.str:
         """
-        工作区 RemoteWrite URL 地址。
+        Workspace RemoteWrite URL address
         """
         return pulumi.get(self, "prometheus_write_intranet_endpoint")
+
+    @property
+    @pulumi.getter(name="publicAccessEnabled")
+    def public_access_enabled(self) -> builtins.bool:
+        """
+        Whether to enable workspace public access capability. true: enabled, false: disabled.
+        """
+        return pulumi.get(self, "public_access_enabled")
+
+    @property
+    @pulumi.getter(name="publicQueryBandwidth")
+    def public_query_bandwidth(self) -> builtins.int:
+        """
+        Workspace public Query bandwidth (Mbps).
+        """
+        return pulumi.get(self, "public_query_bandwidth")
+
+    @property
+    @pulumi.getter(name="publicWriteBandwidth")
+    def public_write_bandwidth(self) -> builtins.int:
+        """
+        Workspace public RemoteWrite bandwidth (Mbps).
+        """
+        return pulumi.get(self, "public_write_bandwidth")
 
     @property
     @pulumi.getter
     def quota(self) -> 'outputs.GetWorkspaceQuotaResult':
         """
-        工作区配额详情。
+        Workspace quota details
         """
         return pulumi.get(self, "quota")
+
+    @property
+    @pulumi.getter(name="searchLatencyOffset")
+    def search_latency_offset(self) -> builtins.str:
+        """
+        Workspace public Query search latency offset.
+        """
+        return pulumi.get(self, "search_latency_offset")
 
     @property
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        工作区状态，取值：Creating：创建中 Active：正常 Updating：更新中 Deleting：删除中 OverdueShutted：欠费关停 Resuming：恢复中 Error：错误。
+        Workspace status. Values: Creating: creating Active: active Updating: updating Deleting: deleting OverdueShutted: overdue shutdown Resuming: resuming Error: error
         """
         return pulumi.get(self, "status")
 
@@ -211,7 +310,7 @@ class GetWorkspaceResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetWorkspaceTagResult']:
         """
-        工作区标签。
+        Workspace tags
         """
         return pulumi.get(self, "tags")
 
@@ -219,7 +318,7 @@ class GetWorkspaceResult:
     @pulumi.getter
     def usage(self) -> 'outputs.GetWorkspaceUsageResult':
         """
-        工作区用量。
+        Workspace usage
         """
         return pulumi.get(self, "usage")
 
@@ -227,7 +326,7 @@ class GetWorkspaceResult:
     @pulumi.getter
     def username(self) -> builtins.str:
         """
-        工作区 BasicAuth 用户名。
+        Workspace BasicAuth username
         """
         return pulumi.get(self, "username")
 
@@ -235,7 +334,7 @@ class GetWorkspaceResult:
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> builtins.str:
         """
-        工作区Id。
+        Workspace ID
         """
         return pulumi.get(self, "workspace_id")
 
@@ -246,6 +345,8 @@ class AwaitableGetWorkspaceResult(GetWorkspaceResult):
         if False:
             yield self
         return GetWorkspaceResult(
+            auth_type=self.auth_type,
+            bearer_token=self.bearer_token,
             create_time=self.create_time,
             delete_protection_enabled=self.delete_protection_enabled,
             description=self.description,
@@ -256,10 +357,17 @@ class AwaitableGetWorkspaceResult(GetWorkspaceResult):
             overdue_reclaim_time=self.overdue_reclaim_time,
             password=self.password,
             project_name=self.project_name,
+            prometheus_push_endpoint=self.prometheus_push_endpoint,
             prometheus_push_intranet_endpoint=self.prometheus_push_intranet_endpoint,
+            prometheus_query_endpoint=self.prometheus_query_endpoint,
             prometheus_query_intranet_endpoint=self.prometheus_query_intranet_endpoint,
+            prometheus_write_endpoint=self.prometheus_write_endpoint,
             prometheus_write_intranet_endpoint=self.prometheus_write_intranet_endpoint,
+            public_access_enabled=self.public_access_enabled,
+            public_query_bandwidth=self.public_query_bandwidth,
+            public_write_bandwidth=self.public_write_bandwidth,
             quota=self.quota,
+            search_latency_offset=self.search_latency_offset,
             status=self.status,
             tags=self.tags,
             usage=self.usage,
@@ -281,6 +389,8 @@ def get_workspace(id: Optional[builtins.str] = None,
     __ret__ = pulumi.runtime.invoke('bytepluscc:vmp/getWorkspace:getWorkspace', __args__, opts=opts, typ=GetWorkspaceResult).value
 
     return AwaitableGetWorkspaceResult(
+        auth_type=pulumi.get(__ret__, 'auth_type'),
+        bearer_token=pulumi.get(__ret__, 'bearer_token'),
         create_time=pulumi.get(__ret__, 'create_time'),
         delete_protection_enabled=pulumi.get(__ret__, 'delete_protection_enabled'),
         description=pulumi.get(__ret__, 'description'),
@@ -291,10 +401,17 @@ def get_workspace(id: Optional[builtins.str] = None,
         overdue_reclaim_time=pulumi.get(__ret__, 'overdue_reclaim_time'),
         password=pulumi.get(__ret__, 'password'),
         project_name=pulumi.get(__ret__, 'project_name'),
+        prometheus_push_endpoint=pulumi.get(__ret__, 'prometheus_push_endpoint'),
         prometheus_push_intranet_endpoint=pulumi.get(__ret__, 'prometheus_push_intranet_endpoint'),
+        prometheus_query_endpoint=pulumi.get(__ret__, 'prometheus_query_endpoint'),
         prometheus_query_intranet_endpoint=pulumi.get(__ret__, 'prometheus_query_intranet_endpoint'),
+        prometheus_write_endpoint=pulumi.get(__ret__, 'prometheus_write_endpoint'),
         prometheus_write_intranet_endpoint=pulumi.get(__ret__, 'prometheus_write_intranet_endpoint'),
+        public_access_enabled=pulumi.get(__ret__, 'public_access_enabled'),
+        public_query_bandwidth=pulumi.get(__ret__, 'public_query_bandwidth'),
+        public_write_bandwidth=pulumi.get(__ret__, 'public_write_bandwidth'),
         quota=pulumi.get(__ret__, 'quota'),
+        search_latency_offset=pulumi.get(__ret__, 'search_latency_offset'),
         status=pulumi.get(__ret__, 'status'),
         tags=pulumi.get(__ret__, 'tags'),
         usage=pulumi.get(__ret__, 'usage'),
@@ -313,6 +430,8 @@ def get_workspace_output(id: Optional[pulumi.Input[builtins.str]] = None,
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('bytepluscc:vmp/getWorkspace:getWorkspace', __args__, opts=opts, typ=GetWorkspaceResult)
     return __ret__.apply(lambda __response__: GetWorkspaceResult(
+        auth_type=pulumi.get(__response__, 'auth_type'),
+        bearer_token=pulumi.get(__response__, 'bearer_token'),
         create_time=pulumi.get(__response__, 'create_time'),
         delete_protection_enabled=pulumi.get(__response__, 'delete_protection_enabled'),
         description=pulumi.get(__response__, 'description'),
@@ -323,10 +442,17 @@ def get_workspace_output(id: Optional[pulumi.Input[builtins.str]] = None,
         overdue_reclaim_time=pulumi.get(__response__, 'overdue_reclaim_time'),
         password=pulumi.get(__response__, 'password'),
         project_name=pulumi.get(__response__, 'project_name'),
+        prometheus_push_endpoint=pulumi.get(__response__, 'prometheus_push_endpoint'),
         prometheus_push_intranet_endpoint=pulumi.get(__response__, 'prometheus_push_intranet_endpoint'),
+        prometheus_query_endpoint=pulumi.get(__response__, 'prometheus_query_endpoint'),
         prometheus_query_intranet_endpoint=pulumi.get(__response__, 'prometheus_query_intranet_endpoint'),
+        prometheus_write_endpoint=pulumi.get(__response__, 'prometheus_write_endpoint'),
         prometheus_write_intranet_endpoint=pulumi.get(__response__, 'prometheus_write_intranet_endpoint'),
+        public_access_enabled=pulumi.get(__response__, 'public_access_enabled'),
+        public_query_bandwidth=pulumi.get(__response__, 'public_query_bandwidth'),
+        public_write_bandwidth=pulumi.get(__response__, 'public_write_bandwidth'),
         quota=pulumi.get(__response__, 'quota'),
+        search_latency_offset=pulumi.get(__response__, 'search_latency_offset'),
         status=pulumi.get(__response__, 'status'),
         tags=pulumi.get(__response__, 'tags'),
         usage=pulumi.get(__response__, 'usage'),

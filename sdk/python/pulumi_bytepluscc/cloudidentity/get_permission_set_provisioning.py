@@ -57,7 +57,7 @@ class GetPermissionSetProvisioningResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        创建时间。
+        Creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -73,7 +73,7 @@ class GetPermissionSetProvisioningResult:
     @pulumi.getter(name="permissionSetId")
     def permission_set_id(self) -> builtins.str:
         """
-        权限集 ID。
+        Permission set ID
         """
         return pulumi.get(self, "permission_set_id")
 
@@ -81,7 +81,7 @@ class GetPermissionSetProvisioningResult:
     @pulumi.getter(name="permissionSetName")
     def permission_set_name(self) -> builtins.str:
         """
-        权限集名。
+        Permission set name
         """
         return pulumi.get(self, "permission_set_name")
 
@@ -89,7 +89,7 @@ class GetPermissionSetProvisioningResult:
     @pulumi.getter(name="provisioningStatus")
     def provisioning_status(self) -> builtins.str:
         """
-        权限集状态 Running：运行中,Reprovision Required：需要重新部署,Provision Failed：部署失败,Provisioned：已部署
+        Permission set status Running: In progress, Reprovision Required: Redeployment required, Provision Failed: Deployment failed, Provisioned: Deployed
         """
         return pulumi.get(self, "provisioning_status")
 
@@ -97,7 +97,7 @@ class GetPermissionSetProvisioningResult:
     @pulumi.getter(name="targetId")
     def target_id(self) -> builtins.str:
         """
-        授权的账号 ID。
+        Authorized account ID
         """
         return pulumi.get(self, "target_id")
 
@@ -105,7 +105,7 @@ class GetPermissionSetProvisioningResult:
     @pulumi.getter(name="targetName")
     def target_name(self) -> builtins.str:
         """
-        账号名。
+        Account name
         """
         return pulumi.get(self, "target_name")
 
@@ -113,7 +113,7 @@ class GetPermissionSetProvisioningResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        更新时间。
+        Update time
         """
         return pulumi.get(self, "updated_time")
 

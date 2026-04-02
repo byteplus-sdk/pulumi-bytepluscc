@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Ecs
 {
     /// <summary>
-    /// 实例启动模板是一系列实例配置信息的集合，用于快速购买实例。在模板中，您可以存储除密码外的全部配置信息，包括密钥对、计算规格、云盘、网络等，如果配置信息均有效，便可以一键成功购买实例，无需进行重复配置。
+    /// An instance launch template is a collection of instance configuration information for quickly purchasing instances. You can store all configuration information except passwords in the template, including key pairs, compute specifications, cloud disks, networks, etc. If all configuration information is valid, you can purchase instances with one click without repeated configuration.
     /// 
     /// ## Import
     /// 
@@ -23,37 +23,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     public partial class LaunchTemplate : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 实例启动模板的创建时间。
+        /// Instance launch template creation time
         /// </summary>
         [Output("createdAt")]
         public Output<string> CreatedAt { get; private set; } = null!;
 
         /// <summary>
-        /// 实例启动模板的默认版本号。
+        /// Instance launch template default version number
         /// </summary>
         [Output("defaultVersionNumber")]
         public Output<int> DefaultVersionNumber { get; private set; } = null!;
 
         /// <summary>
-        /// 实例启动模的最新版本号。
+        /// Latest version number of the instance launch template.
         /// </summary>
         [Output("latestVersionNumber")]
         public Output<int> LatestVersionNumber { get; private set; } = null!;
 
         /// <summary>
-        /// 实例启动模板 ID。
+        /// Instance launch template ID
         /// </summary>
         [Output("launchTemplateId")]
         public Output<string> LaunchTemplateId { get; private set; } = null!;
 
         /// <summary>
-        /// 实例启动模板名称。
+        /// Instance launch template name.
         /// </summary>
         [Output("launchTemplateName")]
         public Output<string> LaunchTemplateName { get; private set; } = null!;
 
         /// <summary>
-        /// 实例启动模版所属项目。
+        /// Project associated with the instance launch template.
         /// </summary>
         [Output("launchTemplateProjectName")]
         public Output<string> LaunchTemplateProjectName { get; private set; } = null!;
@@ -62,13 +62,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public Output<ImmutableArray<Outputs.LaunchTemplateLaunchTemplateTag>> LaunchTemplateTags { get; private set; } = null!;
 
         /// <summary>
-        /// 实例启动模板版本信息。
+        /// Instance launch template version information
         /// </summary>
         [Output("launchTemplateVersion")]
         public Output<Outputs.LaunchTemplateLaunchTemplateVersion> LaunchTemplateVersion { get; private set; } = null!;
 
         /// <summary>
-        /// 实例启动模板的更新时间。
+        /// Instance launch template update time
         /// </summary>
         [Output("updatedAt")]
         public Output<string> UpdatedAt { get; private set; } = null!;
@@ -121,19 +121,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     public sealed class LaunchTemplateArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 实例启动模板的默认版本号。
+        /// Instance launch template default version number
         /// </summary>
         [Input("defaultVersionNumber")]
         public Input<int>? DefaultVersionNumber { get; set; }
 
         /// <summary>
-        /// 实例启动模板名称。
+        /// Instance launch template name.
         /// </summary>
         [Input("launchTemplateName", required: true)]
         public Input<string> LaunchTemplateName { get; set; } = null!;
 
         /// <summary>
-        /// 实例启动模版所属项目。
+        /// Project associated with the instance launch template.
         /// </summary>
         [Input("launchTemplateProjectName")]
         public Input<string>? LaunchTemplateProjectName { get; set; }
@@ -147,7 +147,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         }
 
         /// <summary>
-        /// 实例启动模板版本信息。
+        /// Instance launch template version information
         /// </summary>
         [Input("launchTemplateVersion")]
         public Input<Inputs.LaunchTemplateLaunchTemplateVersionArgs>? LaunchTemplateVersion { get; set; }
@@ -161,37 +161,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     public sealed class LaunchTemplateState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 实例启动模板的创建时间。
+        /// Instance launch template creation time
         /// </summary>
         [Input("createdAt")]
         public Input<string>? CreatedAt { get; set; }
 
         /// <summary>
-        /// 实例启动模板的默认版本号。
+        /// Instance launch template default version number
         /// </summary>
         [Input("defaultVersionNumber")]
         public Input<int>? DefaultVersionNumber { get; set; }
 
         /// <summary>
-        /// 实例启动模的最新版本号。
+        /// Latest version number of the instance launch template.
         /// </summary>
         [Input("latestVersionNumber")]
         public Input<int>? LatestVersionNumber { get; set; }
 
         /// <summary>
-        /// 实例启动模板 ID。
+        /// Instance launch template ID
         /// </summary>
         [Input("launchTemplateId")]
         public Input<string>? LaunchTemplateId { get; set; }
 
         /// <summary>
-        /// 实例启动模板名称。
+        /// Instance launch template name.
         /// </summary>
         [Input("launchTemplateName")]
         public Input<string>? LaunchTemplateName { get; set; }
 
         /// <summary>
-        /// 实例启动模版所属项目。
+        /// Project associated with the instance launch template.
         /// </summary>
         [Input("launchTemplateProjectName")]
         public Input<string>? LaunchTemplateProjectName { get; set; }
@@ -205,13 +205,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         }
 
         /// <summary>
-        /// 实例启动模板版本信息。
+        /// Instance launch template version information
         /// </summary>
         [Input("launchTemplateVersion")]
         public Input<Inputs.LaunchTemplateLaunchTemplateVersionGetArgs>? LaunchTemplateVersion { get; set; }
 
         /// <summary>
-        /// 实例启动模板的更新时间。
+        /// Instance launch template update time
         /// </summary>
         [Input("updatedAt")]
         public Input<string>? UpdatedAt { get; set; }

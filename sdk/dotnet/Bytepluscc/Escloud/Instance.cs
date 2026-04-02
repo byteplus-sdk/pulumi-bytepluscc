@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Escloud
 {
     /// <summary>
-    /// 云搜索服务（Cloud Search）是提供的全托管一站式信息检索和分析平台，兼容 Elasticsearch、OpenSearch、Kibana、Dashboards、Cerebro 以及常用的开源插件，可应用于全文搜索、向量搜索、混合搜索、AI 搜索、时空检索等场景。使用云搜索服务，您可以实现一键部署、弹性扩缩、简化运维，快速构建日志分析、信息检索分析等实际业务。
+    /// Cloud Search Service is a fully managed, one-stop information retrieval and analytics platform compatible with Elasticsearch, OpenSearch, Kibana, Dashboards, Cerebro, and common open-source plugins. It supports scenarios such as full-text search, vector search, hybrid search, AI search, and spatiotemporal retrieval. With Cloud Search Service, you can deploy with one click, scale elastically, simplify operations, and quickly build log analysis and information retrieval analytics for real-world business.
     /// 
     /// ## Import
     /// 
@@ -23,235 +23,235 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud
     public partial class Instance : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 是否开启 cerebro。true：开启 cerebrofalse：不开启 cerebro
+        /// Whether to enable cerebro. true: enable cerebro; false: do not enable cerebro.
         /// </summary>
         [Output("cerebroEnabled")]
         public Output<bool> CerebroEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// cerebro 私网访问地址。说明Cerebro 和 Kibana 共享域名。如果是历史实例，访问地址有可能是http(s)://kibana-***开头
+        /// Cerebro private network access address. Note: Cerebro and Kibana share the domain name. For legacy instances, the access address may start with http(s)://kibana-***
         /// </summary>
         [Output("cerebroPrivateDomain")]
         public Output<string> CerebroPrivateDomain { get; private set; } = null!;
 
         /// <summary>
-        /// erebro 公网访问地址。说明Cerebro 和 Kibana 共享域名。如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+        /// Cerebro public access address. Note: Cerebro and Kibana share the same domain name. For legacy instances, the access address may start with http(s)://kibana-***
         /// </summary>
         [Output("cerebroPublicDomain")]
         public Output<string> CerebroPublicDomain { get; private set; } = null!;
 
         /// <summary>
-        /// 实例是否开启了计费。取值说明如下：true：已开启计费false：未开启计费
+        /// Whether billing is enabled for the instance. Value description: true: Billing enabled false: Billing not enabled
         /// </summary>
         [Output("chargeEnabled")]
         public Output<bool> ChargeEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// 实例所属集群的 ID。
+        /// ID of the cluster to which the instance belongs.
         /// </summary>
         [Output("clusterId")]
         public Output<string> ClusterId { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的创建时间。
+        /// Instance creation time.
         /// </summary>
         [Output("createTime")]
         public Output<string> CreateTime { get; private set; } = null!;
 
         /// <summary>
-        /// 实例是否开启私网地址公网解析。true：已开启私网地址公网解析false：未开启私网地址公网解析
+        /// Whether the instance has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
         /// </summary>
         [Output("enableEsPrivateDomainPublic")]
         public Output<bool> EnableEsPrivateDomainPublic { get; private set; } = null!;
 
         /// <summary>
-        /// 实例是否开启了私网访问。true：默认值，开启私网访问false：未开启私网访问
+        /// Whether private network access is enabled for the instance. true: Default, private network access enabled; false: private network access not enabled.
         /// </summary>
         [Output("enableEsPrivateNetwork")]
         public Output<bool> EnableEsPrivateNetwork { get; private set; } = null!;
 
         /// <summary>
-        /// 实例是否开启了公网访问。true：已开启公网访问false：未开启公网访问
+        /// Whether the instance has enabled public access. true: Public access enabled. false: Public access not enabled
         /// </summary>
         [Output("enableEsPublicNetwork")]
         public Output<bool> EnableEsPublicNetwork { get; private set; } = null!;
 
         /// <summary>
-        /// Kibana 是否开启私网地址公网解析。true：已开启私网地址公网解析false：未开启私网地址公网解析
+        /// Whether Kibana has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
         /// </summary>
         [Output("enableKibanaPrivateDomainPublic")]
         public Output<bool> EnableKibanaPrivateDomainPublic { get; private set; } = null!;
 
         /// <summary>
-        /// Kibana 是否开启私网访问。true：默认值，已开启私网访问 false：未开启Kibana私网访问
+        /// Whether Kibana private network access is enabled. true: Default value, private network access enabled false: Kibana private network access not enabled
         /// </summary>
         [Output("enableKibanaPrivateNetwork")]
         public Output<bool> EnableKibanaPrivateNetwork { get; private set; } = null!;
 
         /// <summary>
-        /// Kibana 是否开启了公网访问。true：已开启公网访问 false：未开启公网访问
+        /// Whether Kibana has enabled public access. true: Public access enabled false: Public access not enabled
         /// </summary>
         [Output("enableKibanaPublicNetwork")]
         public Output<bool> EnableKibanaPublicNetwork { get; private set; } = null!;
 
         /// <summary>
-        /// 实例所绑定的 EIP。
+        /// EIP bound to the instance.
         /// </summary>
         [Output("esEip")]
         public Output<string> EsEip { get; private set; } = null!;
 
         /// <summary>
-        /// 实例所绑定的 EIP 的 ID。
+        /// ID of the EIP bound to the instance
         /// </summary>
         [Output("esEipId")]
         public Output<string> EsEipId { get; private set; } = null!;
 
         /// <summary>
-        /// 实例私网访问地址。
+        /// Instance private network access address.
         /// </summary>
         [Output("esPrivateEndpoint")]
         public Output<string> EsPrivateEndpoint { get; private set; } = null!;
 
         /// <summary>
-        /// 实例私网地址访问白名单。同 ESPrivateIpWhitelist
+        /// Instance private network address access allowlist. Same as ESPrivateIpWhitelist
         /// </summary>
         [Output("esPrivateIpAllowList")]
         public Output<string> EsPrivateIpAllowList { get; private set; } = null!;
 
         /// <summary>
-        /// 实例私网地址访问白名单。
+        /// Instance private network address access allowlist
         /// </summary>
         [Output("esPrivateIpWhitelist")]
         public Output<string> EsPrivateIpWhitelist { get; private set; } = null!;
 
         /// <summary>
-        /// ES公网带宽，单位:Mbps。
+        /// ES public network bandwidth, unit: Mbps.
         /// </summary>
         [Output("esPubBandwidth")]
         public Output<int> EsPubBandwidth { get; private set; } = null!;
 
         /// <summary>
-        /// 实例公网访问地址。
+        /// Instance public access address
         /// </summary>
         [Output("esPublicEndpoint")]
         public Output<string> EsPublicEndpoint { get; private set; } = null!;
 
         /// <summary>
-        /// 实例公网地址访问白名单。同 ESPublicIpWhitelist
+        /// Instance public IP address access allowlist. Same as ESPublicIpWhitelist
         /// </summary>
         [Output("esPublicIpAllowList")]
         public Output<string> EsPublicIpAllowList { get; private set; } = null!;
 
         /// <summary>
-        /// 实例公网地址访问白名单。
+        /// Allowlist for instance public network address access.
         /// </summary>
         [Output("esPublicIpWhitelist")]
         public Output<string> EsPublicIpWhitelist { get; private set; } = null!;
 
         /// <summary>
-        /// 包年包月实例的付费过期时间。
+        /// Expiration time for subscription instance payment
         /// </summary>
         [Output("expireDate")]
         public Output<string> ExpireDate { get; private set; } = null!;
 
         /// <summary>
-        /// 实例配置详情信息。
+        /// Instance configuration details
         /// </summary>
         [Output("instanceConfiguration")]
         public Output<Outputs.InstanceInstanceConfiguration> InstanceConfiguration { get; private set; } = null!;
 
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID
         /// </summary>
         [Output("instanceId")]
         public Output<string> InstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// Kibana 参数配置。
+        /// Kibana parameter configuration
         /// </summary>
         [Output("kibanaConfig")]
         public Output<Outputs.InstanceKibanaConfig> KibanaConfig { get; private set; } = null!;
 
         /// <summary>
-        /// Kibana 所绑定的 EIP。
+        /// EIP bound to Kibana
         /// </summary>
         [Output("kibanaEip")]
         public Output<string> KibanaEip { get; private set; } = null!;
 
         /// <summary>
-        /// Kibana 所绑定的 EIP 的 ID。
+        /// ID of the EIP bound to Kibana.
         /// </summary>
         [Output("kibanaEipId")]
         public Output<string> KibanaEipId { get; private set; } = null!;
 
         /// <summary>
-        /// Kibana 私网访问地址。说明如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+        /// Kibana private network access address. Note: For historical instances, the access address may start with http(s)://kibana-***.
         /// </summary>
         [Output("kibanaPrivateDomain")]
         public Output<string> KibanaPrivateDomain { get; private set; } = null!;
 
         /// <summary>
-        /// Kibana 私网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。同 KibanaPrivateIpWhitelist
+        /// Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPrivateIpWhitelist.
         /// </summary>
         [Output("kibanaPrivateIpAllowList")]
         public Output<string> KibanaPrivateIpAllowList { get; private set; } = null!;
 
         /// <summary>
-        /// Kibana 私网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。说明Cerebro 和 Kibana 共用一套白名单。
+        /// Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist.
         /// </summary>
         [Output("kibanaPrivateIpWhitelist")]
         public Output<string> KibanaPrivateIpWhitelist { get; private set; } = null!;
 
         /// <summary>
-        /// Kibana公网带宽，单位: Mbps
+        /// Kibana public network bandwidth, unit: Mbps
         /// </summary>
         [Output("kibanaPubBandwidth")]
         public Output<int> KibanaPubBandwidth { get; private set; } = null!;
 
         /// <summary>
-        /// Kibana 公网访问地址。说明如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+        /// Kibana public access address. Note: For legacy instances, the access address may start with http(s)://kibana-***
         /// </summary>
         [Output("kibanaPublicDomain")]
         public Output<string> KibanaPublicDomain { get; private set; } = null!;
 
         /// <summary>
-        /// Kibana 公网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。同 KibanaPublicIpWhitelist
+        /// Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPublicIpWhitelist
         /// </summary>
         [Output("kibanaPublicIpAllowList")]
         public Output<string> KibanaPublicIpAllowList { get; private set; } = null!;
 
         /// <summary>
-        /// Kibana 公网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。说明Cerebro 和 Kibana 共用一套白名单
+        /// Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist
         /// </summary>
         [Output("kibanaPublicIpWhitelist")]
         public Output<string> KibanaPublicIpWhitelist { get; private set; } = null!;
 
         /// <summary>
-        /// 主可用区
+        /// Primary availability zone
         /// </summary>
         [Output("mainZoneId")]
         public Output<string> MainZoneId { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的可维护日期。
+        /// Instance maintenance date.
         /// </summary>
         [Output("maintenanceDays")]
         public Output<ImmutableArray<string>> MaintenanceDays { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的可维护时间段。
+        /// Instance maintenance window.
         /// </summary>
         [Output("maintenanceTime")]
         public Output<string> MaintenanceTime { get; private set; } = null!;
 
         /// <summary>
-        /// 实例当前状态。
+        /// Current instance status
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// 子实例开启情况。
+        /// Sub-instance activation status
         /// </summary>
         [Output("subInstanceEnable")]
         public Output<string> SubInstanceEnable { get; private set; } = null!;
@@ -260,25 +260,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud
         public Output<ImmutableArray<Outputs.InstanceSubInstance>> SubInstances { get; private set; } = null!;
 
         /// <summary>
-        /// 是否支持冷节点。
+        /// Whether cold nodes are supported
         /// </summary>
         [Output("supportColdNode")]
         public Output<bool> SupportColdNode { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的总节点数。
+        /// Total number of nodes in the instance
         /// </summary>
         [Output("totalNodes")]
         public Output<int> TotalNodes { get; private set; } = null!;
 
         /// <summary>
-        /// 数据迁移任务信息。
+        /// Data migration task information
         /// </summary>
         [Output("transferInfo")]
         public Output<Outputs.InstanceTransferInfo> TransferInfo { get; private set; } = null!;
 
         /// <summary>
-        /// 实例所有者的用户 ID。
+        /// Instance owner's user ID
         /// </summary>
         [Output("userId")]
         public Output<string> UserId { get; private set; } = null!;
@@ -331,7 +331,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud
     public sealed class InstanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 实例配置详情信息。
+        /// Instance configuration details
         /// </summary>
         [Input("instanceConfiguration", required: true)]
         public Input<Inputs.InstanceInstanceConfigurationArgs> InstanceConfiguration { get; set; } = null!;
@@ -340,7 +340,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud
         private InputList<string>? _maintenanceDays;
 
         /// <summary>
-        /// 实例的可维护日期。
+        /// Instance maintenance date.
         /// </summary>
         public InputList<string> MaintenanceDays
         {
@@ -349,7 +349,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud
         }
 
         /// <summary>
-        /// 实例的可维护时间段。
+        /// Instance maintenance window.
         /// </summary>
         [Input("maintenanceTime")]
         public Input<string>? MaintenanceTime { get; set; }
@@ -363,211 +363,211 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud
     public sealed class InstanceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 是否开启 cerebro。true：开启 cerebrofalse：不开启 cerebro
+        /// Whether to enable cerebro. true: enable cerebro; false: do not enable cerebro.
         /// </summary>
         [Input("cerebroEnabled")]
         public Input<bool>? CerebroEnabled { get; set; }
 
         /// <summary>
-        /// cerebro 私网访问地址。说明Cerebro 和 Kibana 共享域名。如果是历史实例，访问地址有可能是http(s)://kibana-***开头
+        /// Cerebro private network access address. Note: Cerebro and Kibana share the domain name. For legacy instances, the access address may start with http(s)://kibana-***
         /// </summary>
         [Input("cerebroPrivateDomain")]
         public Input<string>? CerebroPrivateDomain { get; set; }
 
         /// <summary>
-        /// erebro 公网访问地址。说明Cerebro 和 Kibana 共享域名。如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+        /// Cerebro public access address. Note: Cerebro and Kibana share the same domain name. For legacy instances, the access address may start with http(s)://kibana-***
         /// </summary>
         [Input("cerebroPublicDomain")]
         public Input<string>? CerebroPublicDomain { get; set; }
 
         /// <summary>
-        /// 实例是否开启了计费。取值说明如下：true：已开启计费false：未开启计费
+        /// Whether billing is enabled for the instance. Value description: true: Billing enabled false: Billing not enabled
         /// </summary>
         [Input("chargeEnabled")]
         public Input<bool>? ChargeEnabled { get; set; }
 
         /// <summary>
-        /// 实例所属集群的 ID。
+        /// ID of the cluster to which the instance belongs.
         /// </summary>
         [Input("clusterId")]
         public Input<string>? ClusterId { get; set; }
 
         /// <summary>
-        /// 实例的创建时间。
+        /// Instance creation time.
         /// </summary>
         [Input("createTime")]
         public Input<string>? CreateTime { get; set; }
 
         /// <summary>
-        /// 实例是否开启私网地址公网解析。true：已开启私网地址公网解析false：未开启私网地址公网解析
+        /// Whether the instance has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
         /// </summary>
         [Input("enableEsPrivateDomainPublic")]
         public Input<bool>? EnableEsPrivateDomainPublic { get; set; }
 
         /// <summary>
-        /// 实例是否开启了私网访问。true：默认值，开启私网访问false：未开启私网访问
+        /// Whether private network access is enabled for the instance. true: Default, private network access enabled; false: private network access not enabled.
         /// </summary>
         [Input("enableEsPrivateNetwork")]
         public Input<bool>? EnableEsPrivateNetwork { get; set; }
 
         /// <summary>
-        /// 实例是否开启了公网访问。true：已开启公网访问false：未开启公网访问
+        /// Whether the instance has enabled public access. true: Public access enabled. false: Public access not enabled
         /// </summary>
         [Input("enableEsPublicNetwork")]
         public Input<bool>? EnableEsPublicNetwork { get; set; }
 
         /// <summary>
-        /// Kibana 是否开启私网地址公网解析。true：已开启私网地址公网解析false：未开启私网地址公网解析
+        /// Whether Kibana has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
         /// </summary>
         [Input("enableKibanaPrivateDomainPublic")]
         public Input<bool>? EnableKibanaPrivateDomainPublic { get; set; }
 
         /// <summary>
-        /// Kibana 是否开启私网访问。true：默认值，已开启私网访问 false：未开启Kibana私网访问
+        /// Whether Kibana private network access is enabled. true: Default value, private network access enabled false: Kibana private network access not enabled
         /// </summary>
         [Input("enableKibanaPrivateNetwork")]
         public Input<bool>? EnableKibanaPrivateNetwork { get; set; }
 
         /// <summary>
-        /// Kibana 是否开启了公网访问。true：已开启公网访问 false：未开启公网访问
+        /// Whether Kibana has enabled public access. true: Public access enabled false: Public access not enabled
         /// </summary>
         [Input("enableKibanaPublicNetwork")]
         public Input<bool>? EnableKibanaPublicNetwork { get; set; }
 
         /// <summary>
-        /// 实例所绑定的 EIP。
+        /// EIP bound to the instance.
         /// </summary>
         [Input("esEip")]
         public Input<string>? EsEip { get; set; }
 
         /// <summary>
-        /// 实例所绑定的 EIP 的 ID。
+        /// ID of the EIP bound to the instance
         /// </summary>
         [Input("esEipId")]
         public Input<string>? EsEipId { get; set; }
 
         /// <summary>
-        /// 实例私网访问地址。
+        /// Instance private network access address.
         /// </summary>
         [Input("esPrivateEndpoint")]
         public Input<string>? EsPrivateEndpoint { get; set; }
 
         /// <summary>
-        /// 实例私网地址访问白名单。同 ESPrivateIpWhitelist
+        /// Instance private network address access allowlist. Same as ESPrivateIpWhitelist
         /// </summary>
         [Input("esPrivateIpAllowList")]
         public Input<string>? EsPrivateIpAllowList { get; set; }
 
         /// <summary>
-        /// 实例私网地址访问白名单。
+        /// Instance private network address access allowlist
         /// </summary>
         [Input("esPrivateIpWhitelist")]
         public Input<string>? EsPrivateIpWhitelist { get; set; }
 
         /// <summary>
-        /// ES公网带宽，单位:Mbps。
+        /// ES public network bandwidth, unit: Mbps.
         /// </summary>
         [Input("esPubBandwidth")]
         public Input<int>? EsPubBandwidth { get; set; }
 
         /// <summary>
-        /// 实例公网访问地址。
+        /// Instance public access address
         /// </summary>
         [Input("esPublicEndpoint")]
         public Input<string>? EsPublicEndpoint { get; set; }
 
         /// <summary>
-        /// 实例公网地址访问白名单。同 ESPublicIpWhitelist
+        /// Instance public IP address access allowlist. Same as ESPublicIpWhitelist
         /// </summary>
         [Input("esPublicIpAllowList")]
         public Input<string>? EsPublicIpAllowList { get; set; }
 
         /// <summary>
-        /// 实例公网地址访问白名单。
+        /// Allowlist for instance public network address access.
         /// </summary>
         [Input("esPublicIpWhitelist")]
         public Input<string>? EsPublicIpWhitelist { get; set; }
 
         /// <summary>
-        /// 包年包月实例的付费过期时间。
+        /// Expiration time for subscription instance payment
         /// </summary>
         [Input("expireDate")]
         public Input<string>? ExpireDate { get; set; }
 
         /// <summary>
-        /// 实例配置详情信息。
+        /// Instance configuration details
         /// </summary>
         [Input("instanceConfiguration")]
         public Input<Inputs.InstanceInstanceConfigurationGetArgs>? InstanceConfiguration { get; set; }
 
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// Kibana 参数配置。
+        /// Kibana parameter configuration
         /// </summary>
         [Input("kibanaConfig")]
         public Input<Inputs.InstanceKibanaConfigGetArgs>? KibanaConfig { get; set; }
 
         /// <summary>
-        /// Kibana 所绑定的 EIP。
+        /// EIP bound to Kibana
         /// </summary>
         [Input("kibanaEip")]
         public Input<string>? KibanaEip { get; set; }
 
         /// <summary>
-        /// Kibana 所绑定的 EIP 的 ID。
+        /// ID of the EIP bound to Kibana.
         /// </summary>
         [Input("kibanaEipId")]
         public Input<string>? KibanaEipId { get; set; }
 
         /// <summary>
-        /// Kibana 私网访问地址。说明如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+        /// Kibana private network access address. Note: For historical instances, the access address may start with http(s)://kibana-***.
         /// </summary>
         [Input("kibanaPrivateDomain")]
         public Input<string>? KibanaPrivateDomain { get; set; }
 
         /// <summary>
-        /// Kibana 私网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。同 KibanaPrivateIpWhitelist
+        /// Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPrivateIpWhitelist.
         /// </summary>
         [Input("kibanaPrivateIpAllowList")]
         public Input<string>? KibanaPrivateIpAllowList { get; set; }
 
         /// <summary>
-        /// Kibana 私网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。说明Cerebro 和 Kibana 共用一套白名单。
+        /// Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist.
         /// </summary>
         [Input("kibanaPrivateIpWhitelist")]
         public Input<string>? KibanaPrivateIpWhitelist { get; set; }
 
         /// <summary>
-        /// Kibana公网带宽，单位: Mbps
+        /// Kibana public network bandwidth, unit: Mbps
         /// </summary>
         [Input("kibanaPubBandwidth")]
         public Input<int>? KibanaPubBandwidth { get; set; }
 
         /// <summary>
-        /// Kibana 公网访问地址。说明如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+        /// Kibana public access address. Note: For legacy instances, the access address may start with http(s)://kibana-***
         /// </summary>
         [Input("kibanaPublicDomain")]
         public Input<string>? KibanaPublicDomain { get; set; }
 
         /// <summary>
-        /// Kibana 公网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。同 KibanaPublicIpWhitelist
+        /// Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPublicIpWhitelist
         /// </summary>
         [Input("kibanaPublicIpAllowList")]
         public Input<string>? KibanaPublicIpAllowList { get; set; }
 
         /// <summary>
-        /// Kibana 公网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。说明Cerebro 和 Kibana 共用一套白名单
+        /// Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist
         /// </summary>
         [Input("kibanaPublicIpWhitelist")]
         public Input<string>? KibanaPublicIpWhitelist { get; set; }
 
         /// <summary>
-        /// 主可用区
+        /// Primary availability zone
         /// </summary>
         [Input("mainZoneId")]
         public Input<string>? MainZoneId { get; set; }
@@ -576,7 +576,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud
         private InputList<string>? _maintenanceDays;
 
         /// <summary>
-        /// 实例的可维护日期。
+        /// Instance maintenance date.
         /// </summary>
         public InputList<string> MaintenanceDays
         {
@@ -585,19 +585,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud
         }
 
         /// <summary>
-        /// 实例的可维护时间段。
+        /// Instance maintenance window.
         /// </summary>
         [Input("maintenanceTime")]
         public Input<string>? MaintenanceTime { get; set; }
 
         /// <summary>
-        /// 实例当前状态。
+        /// Current instance status
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// 子实例开启情况。
+        /// Sub-instance activation status
         /// </summary>
         [Input("subInstanceEnable")]
         public Input<string>? SubInstanceEnable { get; set; }
@@ -611,25 +611,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud
         }
 
         /// <summary>
-        /// 是否支持冷节点。
+        /// Whether cold nodes are supported
         /// </summary>
         [Input("supportColdNode")]
         public Input<bool>? SupportColdNode { get; set; }
 
         /// <summary>
-        /// 实例的总节点数。
+        /// Total number of nodes in the instance
         /// </summary>
         [Input("totalNodes")]
         public Input<int>? TotalNodes { get; set; }
 
         /// <summary>
-        /// 数据迁移任务信息。
+        /// Data migration task information
         /// </summary>
         [Input("transferInfo")]
         public Input<Inputs.InstanceTransferInfoGetArgs>? TransferInfo { get; set; }
 
         /// <summary>
-        /// 实例所有者的用户 ID。
+        /// Instance owner's user ID
         /// </summary>
         [Input("userId")]
         public Input<string>? UserId { get; set; }

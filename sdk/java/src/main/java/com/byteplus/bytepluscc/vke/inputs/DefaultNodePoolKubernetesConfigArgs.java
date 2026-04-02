@@ -21,14 +21,14 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
     public static final DefaultNodePoolKubernetesConfigArgs Empty = new DefaultNodePoolKubernetesConfigArgs();
 
     /**
-     * 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+     * Whether to disable the automatic synchronization of label taints to existing nodes. Parameter value description: true: disabled, automatic synchronization is turned off. false: not disabled, automatic synchronization is turned on.
      * 
      */
     @Import(name="autoSyncDisabled")
     private @Nullable Output<Boolean> autoSyncDisabled;
 
     /**
-     * @return 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+     * @return Whether to disable the automatic synchronization of label taints to existing nodes. Parameter value description: true: disabled, automatic synchronization is turned off. false: not disabled, automatic synchronization is turned on.
      * 
      */
     public Optional<Output<Boolean>> autoSyncDisabled() {
@@ -36,14 +36,14 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
     }
 
     /**
-     * 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+     * Node blocking configuration. Parameter value description: false: not blocked. true: blocked
      * 
      */
     @Import(name="cordon")
     private @Nullable Output<Boolean> cordon;
 
     /**
-     * @return 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+     * @return Node blocking configuration. Parameter value description: false: not blocked. true: blocked
      * 
      */
     public Optional<Output<Boolean>> cordon() {
@@ -51,14 +51,14 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
     }
 
     /**
-     * Kubelet 组件的相关配置
+     * Kubelet component configuration
      * 
      */
     @Import(name="kubeletConfig")
     private @Nullable Output<DefaultNodePoolKubernetesConfigKubeletConfigArgs> kubeletConfig;
 
     /**
-     * @return Kubelet 组件的相关配置
+     * @return Kubelet component configuration
      * 
      */
     public Optional<Output<DefaultNodePoolKubernetesConfigKubeletConfigArgs>> kubeletConfig() {
@@ -73,14 +73,14 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
     }
 
     /**
-     * Kubernetes 中节点对象的元数据名称前缀。
+     * Prefix of the metadata name for node objects in Kubernetes.
      * 
      */
     @Import(name="namePrefix")
     private @Nullable Output<String> namePrefix;
 
     /**
-     * @return Kubernetes 中节点对象的元数据名称前缀。
+     * @return Prefix of the metadata name for node objects in Kubernetes.
      * 
      */
     public Optional<Output<String>> namePrefix() {
@@ -88,14 +88,14 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
     }
 
     /**
-     * Kubernetes 中节点对象的元数据名称后缀。
+     * Suffix of the metadata name for node objects in Kubernetes.
      * 
      */
     @Import(name="nameSuffix")
     private @Nullable Output<String> nameSuffix;
 
     /**
-     * @return Kubernetes 中节点对象的元数据名称后缀。
+     * @return Suffix of the metadata name for node objects in Kubernetes.
      * 
      */
     public Optional<Output<String>> nameSuffix() {
@@ -103,14 +103,14 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
     }
 
     /**
-     * Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+     * Whether the metadata name of the node object in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name. false: do not use ECS host name as node name
      * 
      */
     @Import(name="nameUseHostname")
     private @Nullable Output<Boolean> nameUseHostname;
 
     /**
-     * @return Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+     * @return Whether the metadata name of the node object in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name. false: do not use ECS host name as node name
      * 
      */
     public Optional<Output<Boolean>> nameUseHostname() {
@@ -156,7 +156,7 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
         }
 
         /**
-         * @param autoSyncDisabled 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+         * @param autoSyncDisabled Whether to disable the automatic synchronization of label taints to existing nodes. Parameter value description: true: disabled, automatic synchronization is turned off. false: not disabled, automatic synchronization is turned on.
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
         }
 
         /**
-         * @param autoSyncDisabled 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+         * @param autoSyncDisabled Whether to disable the automatic synchronization of label taints to existing nodes. Parameter value description: true: disabled, automatic synchronization is turned off. false: not disabled, automatic synchronization is turned on.
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
         }
 
         /**
-         * @param cordon 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+         * @param cordon Node blocking configuration. Parameter value description: false: not blocked. true: blocked
          * 
          * @return builder
          * 
@@ -188,7 +188,7 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
         }
 
         /**
-         * @param cordon 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+         * @param cordon Node blocking configuration. Parameter value description: false: not blocked. true: blocked
          * 
          * @return builder
          * 
@@ -198,7 +198,7 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
         }
 
         /**
-         * @param kubeletConfig Kubelet 组件的相关配置
+         * @param kubeletConfig Kubelet component configuration
          * 
          * @return builder
          * 
@@ -209,7 +209,7 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
         }
 
         /**
-         * @param kubeletConfig Kubelet 组件的相关配置
+         * @param kubeletConfig Kubelet component configuration
          * 
          * @return builder
          * 
@@ -232,7 +232,7 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
         }
 
         /**
-         * @param namePrefix Kubernetes 中节点对象的元数据名称前缀。
+         * @param namePrefix Prefix of the metadata name for node objects in Kubernetes.
          * 
          * @return builder
          * 
@@ -243,7 +243,7 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
         }
 
         /**
-         * @param namePrefix Kubernetes 中节点对象的元数据名称前缀。
+         * @param namePrefix Prefix of the metadata name for node objects in Kubernetes.
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
         }
 
         /**
-         * @param nameSuffix Kubernetes 中节点对象的元数据名称后缀。
+         * @param nameSuffix Suffix of the metadata name for node objects in Kubernetes.
          * 
          * @return builder
          * 
@@ -264,7 +264,7 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
         }
 
         /**
-         * @param nameSuffix Kubernetes 中节点对象的元数据名称后缀。
+         * @param nameSuffix Suffix of the metadata name for node objects in Kubernetes.
          * 
          * @return builder
          * 
@@ -274,7 +274,7 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
         }
 
         /**
-         * @param nameUseHostname Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+         * @param nameUseHostname Whether the metadata name of the node object in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name. false: do not use ECS host name as node name
          * 
          * @return builder
          * 
@@ -285,7 +285,7 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
         }
 
         /**
-         * @param nameUseHostname Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+         * @param nameUseHostname Whether the metadata name of the node object in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name. false: do not use ECS host name as node name
          * 
          * @return builder
          * 

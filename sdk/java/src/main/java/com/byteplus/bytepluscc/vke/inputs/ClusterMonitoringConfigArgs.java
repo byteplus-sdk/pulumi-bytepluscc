@@ -26,14 +26,14 @@ public final class ClusterMonitoringConfigArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+     * Whether to enable external Prometheus to collect control plane component metrics for the cluster. Parameter values: true: enabled. false: not enabled.
      * 
      */
     @Import(name="enableMetricsExternalCollection")
     private @Nullable Output<Boolean> enableMetricsExternalCollection;
 
     /**
-     * @return 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+     * @return Whether to enable external Prometheus to collect control plane component metrics for the cluster. Parameter values: true: enabled. false: not enabled.
      * 
      */
     public Optional<Output<Boolean>> enableMetricsExternalCollection() {
@@ -41,14 +41,14 @@ public final class ClusterMonitoringConfigArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 监控数据所属的工作区 ID。
+     * Workspace ID to which the monitoring data belongs.
      * 
      */
     @Import(name="workspaceId")
     private @Nullable Output<String> workspaceId;
 
     /**
-     * @return 监控数据所属的工作区 ID。
+     * @return Workspace ID to which the monitoring data belongs.
      * 
      */
     public Optional<Output<String>> workspaceId() {
@@ -95,7 +95,7 @@ public final class ClusterMonitoringConfigArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param enableMetricsExternalCollection 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+         * @param enableMetricsExternalCollection Whether to enable external Prometheus to collect control plane component metrics for the cluster. Parameter values: true: enabled. false: not enabled.
          * 
          * @return builder
          * 
@@ -106,7 +106,7 @@ public final class ClusterMonitoringConfigArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param enableMetricsExternalCollection 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+         * @param enableMetricsExternalCollection Whether to enable external Prometheus to collect control plane component metrics for the cluster. Parameter values: true: enabled. false: not enabled.
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class ClusterMonitoringConfigArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param workspaceId 监控数据所属的工作区 ID。
+         * @param workspaceId Workspace ID to which the monitoring data belongs.
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class ClusterMonitoringConfigArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param workspaceId 监控数据所属的工作区 ID。
+         * @param workspaceId Workspace ID to which the monitoring data belongs.
          * 
          * @return builder
          * 

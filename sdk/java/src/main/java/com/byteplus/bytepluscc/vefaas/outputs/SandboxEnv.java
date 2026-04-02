@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class SandboxEnv {
     /**
-     * @return 环境变量键。
+     * @return Environment variable key
      * 
      */
     private @Nullable String key;
     /**
-     * @return 环境变量值。
+     * @return Environment variable value
      * 
      */
     private @Nullable String value;
 
     private SandboxEnv() {}
     /**
-     * @return 环境变量键。
+     * @return Environment variable key
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return 环境变量值。
+     * @return Environment variable value
      * 
      */
     public Optional<String> value() {

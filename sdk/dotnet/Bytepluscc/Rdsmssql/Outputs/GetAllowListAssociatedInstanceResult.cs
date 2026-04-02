@@ -15,27 +15,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql.Outputs
     public sealed class GetAllowListAssociatedInstanceResult
     {
         /// <summary>
-        /// 实例ID。
+        /// Instance ID
         /// </summary>
         public readonly string InstanceId;
         /// <summary>
-        /// 实例名称。
+        /// Instance name
         /// </summary>
         public readonly string InstanceName;
         /// <summary>
-        /// 实例状态。
+        /// Instance status
         /// </summary>
         public readonly string InstanceStatus;
         /// <summary>
-        /// 是否同步最新白名单 IP
+        /// Sync latest allowlist IP
         /// </summary>
         public readonly bool IsLatest;
         /// <summary>
-        /// 实例所属项目名称。
+        /// Project name of the instance
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// 实例所属VPC ID。
+        /// VPC ID of the instance
         /// </summary>
         public readonly string Vpc;
 

@@ -35,15 +35,15 @@ export interface GetOrganizationResult {
      */
     readonly id: string;
     /**
-     * 组织详情
+     * Organization Details
      */
     readonly organization: outputs.organization.GetOrganizationOrganization;
     /**
-     * 组织ID
+     * Organization ID
      */
     readonly organizationId: string;
     /**
-     * 管理员详情
+     * Administrator Details
      */
     readonly owner: outputs.organization.GetOrganizationOwner;
 }

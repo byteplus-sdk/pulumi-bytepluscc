@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class GatewayLogSpecGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 是否开启日志服务。
+        /// Whether to enable log service
         /// </summary>
         [Input("enable")]
         public Input<bool>? Enable { get; set; }
 
         /// <summary>
-        /// 日志项目ID。
+        /// Log project ID
         /// </summary>
         [Input("projectId")]
         public Input<string>? ProjectId { get; set; }
 
         /// <summary>
-        /// 日志主题ID。ProjectId 指定项目里面的日志主题。
+        /// Log topic ID. ProjectId specifies the log topic within the project
         /// </summary>
         [Input("topicId")]
         public Input<string>? TopicId { get; set; }

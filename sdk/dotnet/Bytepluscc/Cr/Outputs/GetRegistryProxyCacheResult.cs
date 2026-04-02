@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr.Outputs
     public sealed class GetRegistryProxyCacheResult
     {
         /// <summary>
-        /// ProxyCache支持的镜像仓库实例类型，参数值说明如下：DockerHub：dockerhub 镜像仓库。
+        /// Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
         /// </summary>
         public readonly string Type;
 

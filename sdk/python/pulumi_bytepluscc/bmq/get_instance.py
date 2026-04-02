@@ -112,7 +112,7 @@ class GetInstanceResult:
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> builtins.str:
         """
-        是否开启自动续费，取值如下：true：开启自动续费。false：关闭自动续费。
+        Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
         """
         return pulumi.get(self, "auto_renew")
 
@@ -120,7 +120,7 @@ class GetInstanceResult:
     @pulumi.getter(name="billingPeriod")
     def billing_period(self) -> builtins.str:
         """
-        购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+        Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
         """
         return pulumi.get(self, "billing_period")
 
@@ -128,7 +128,7 @@ class GetInstanceResult:
     @pulumi.getter(name="billingType")
     def billing_type(self) -> builtins.str:
         """
-        实例的计费方式，取值如下：POST：按量计费。MIX：包年包月。
+        Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
         """
         return pulumi.get(self, "billing_type")
 
@@ -136,7 +136,7 @@ class GetInstanceResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        实例的创建时间。
+        Instance creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -144,7 +144,7 @@ class GetInstanceResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        实例的描述语句。
+        Instance description statement
         """
         return pulumi.get(self, "description")
 
@@ -152,7 +152,7 @@ class GetInstanceResult:
     @pulumi.getter(name="eipId")
     def eip_id(self) -> builtins.str:
         """
-        实例是否开启公网访问。如果需要开启公网访问，请配置相同地域的公网 IP 的 ID。
+        Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
         """
         return pulumi.get(self, "eip_id")
 
@@ -160,7 +160,7 @@ class GetInstanceResult:
     @pulumi.getter
     def endpoints(self) -> 'outputs.GetInstanceEndpointsResult':
         """
-        实例所有接入点响应数据。
+        Response data for all instance endpoints
         """
         return pulumi.get(self, "endpoints")
 
@@ -168,7 +168,7 @@ class GetInstanceResult:
     @pulumi.getter(name="expirationTime")
     def expiration_time(self) -> builtins.str:
         """
-        实例过期时间。
+        Instance expiration time
         """
         return pulumi.get(self, "expiration_time")
 
@@ -176,7 +176,7 @@ class GetInstanceResult:
     @pulumi.getter(name="groupLimit")
     def group_limit(self) -> builtins.int:
         """
-        实例消费组数量上限。
+        Maximum number of consumer groups per instance
         """
         return pulumi.get(self, "group_limit")
 
@@ -192,7 +192,7 @@ class GetInstanceResult:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> builtins.str:
         """
-        实例ID。
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -200,7 +200,7 @@ class GetInstanceResult:
     @pulumi.getter(name="messageRetention")
     def message_retention(self) -> builtins.int:
         """
-        实例下所有 Topic 的消息保留时长，单位为小时。
+        Message retention period for all topics under the instance, in hours
         """
         return pulumi.get(self, "message_retention")
 
@@ -208,7 +208,7 @@ class GetInstanceResult:
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        自定设置 BMQ 实例的名称，约束限制如下：由小写字母、数字和中划线（-）组成。长度为 1~64 字符。
+        Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
         """
         return pulumi.get(self, "name")
 
@@ -216,7 +216,7 @@ class GetInstanceResult:
     @pulumi.getter(name="partitionLimit")
     def partition_limit(self) -> builtins.int:
         """
-        实例分区数量上限。
+        Maximum number of partitions per instance
         """
         return pulumi.get(self, "partition_limit")
 
@@ -224,7 +224,7 @@ class GetInstanceResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        实例所属项目名称。
+        Project name to which the instance belongs
         """
         return pulumi.get(self, "project_name")
 
@@ -232,7 +232,7 @@ class GetInstanceResult:
     @pulumi.getter(name="resourceTags")
     def resource_tags(self) -> Sequence['outputs.GetInstanceResourceTagResult']:
         """
-        实例资源标签列表。
+        Instance resource tag list
         """
         return pulumi.get(self, "resource_tags")
 
@@ -240,7 +240,7 @@ class GetInstanceResult:
     @pulumi.getter
     def resources(self) -> 'outputs.GetInstanceResourcesResult':
         """
-        实例资源统计响应数据。
+        Instance resource statistics response data
         """
         return pulumi.get(self, "resources")
 
@@ -248,7 +248,7 @@ class GetInstanceResult:
     @pulumi.getter(name="securityGroupIdLists")
     def security_group_id_lists(self) -> Sequence[builtins.str]:
         """
-        实例使用安全组列表。
+        List of security groups used by the instance
         """
         return pulumi.get(self, "security_group_id_lists")
 
@@ -256,7 +256,7 @@ class GetInstanceResult:
     @pulumi.getter
     def specification(self) -> builtins.str:
         """
-        实例规格。
+        Instance specification
         """
         return pulumi.get(self, "specification")
 
@@ -264,7 +264,7 @@ class GetInstanceResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        实例的状态。取值如下：INITIALIZING：初始化中，INITIALIZATION*FAILED：初始化失败，RUNNING：运行中，MODIFYING：更新中，MODIFY*FAILED：更新失败，RELEASING：释放中，STOPPING：停止中，STOPPED：停止，RECOVERING：恢复中，EXCEPTION：异常，CAPACITY*EXPAXION*FAILED：扩容失败，EXPANDING*CAPACITY：扩容中，CANCEL*EXPANDING_CAPACITY：扩容取消中，RESTARTING：重启中，UNPAID：未支付
+        Instance status. Possible values: INITIALIZING: Initializing, INITIALIZATION*FAILED: Initialization failed, RUNNING: Running, MODIFYING: Updating, MODIFY*FAILED: Update failed, RELEASING: Releasing, STOPPING: Stopping, STOPPED: Stopped, RECOVERING: Recovering, EXCEPTION: Exception, CAPACITY*EXPAXION*FAILED: Capacity expansion failed, EXPANDING*CAPACITY: Expanding capacity, CANCEL*EXPANDING_CAPACITY: Canceling capacity expansion, RESTARTING: Restarting, UNPAID: Unpaid
         """
         return pulumi.get(self, "status")
 
@@ -272,7 +272,7 @@ class GetInstanceResult:
     @pulumi.getter(name="subnetIdLists")
     def subnet_id_lists(self) -> Sequence[builtins.str]:
         """
-        实例使用的子网列表。
+        List of subnets used by the instance
         """
         return pulumi.get(self, "subnet_id_lists")
 
@@ -280,7 +280,7 @@ class GetInstanceResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetInstanceTagResult']:
         """
-        实例资源标签列表。
+        Instance resource tag list
         """
         return pulumi.get(self, "tags")
 
@@ -288,7 +288,7 @@ class GetInstanceResult:
     @pulumi.getter
     def times(self) -> builtins.int:
         """
-        包年包月类型实例的购买时长，单位为月。
+        Purchase duration for subscription instances, in months
         """
         return pulumi.get(self, "times")
 
@@ -296,7 +296,7 @@ class GetInstanceResult:
     @pulumi.getter(name="topicLimit")
     def topic_limit(self) -> builtins.int:
         """
-        实例Topic数量上限。
+        Maximum number of topics per instance
         """
         return pulumi.get(self, "topic_limit")
 
@@ -304,7 +304,7 @@ class GetInstanceResult:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> builtins.str:
         """
-        实例所在VPC ID。
+        VPC ID where the instance is located
         """
         return pulumi.get(self, "vpc_id")
 
@@ -312,7 +312,7 @@ class GetInstanceResult:
     @pulumi.getter(name="zoneIdLists")
     def zone_id_lists(self) -> Sequence[builtins.str]:
         """
-        实例所在可用区列表。
+        List of availability zones where the instance is located
         """
         return pulumi.get(self, "zone_id_lists")
 

@@ -11,110 +11,110 @@ import java.util.Objects;
 @CustomType
 public final class GetGroupMember {
     /**
-     * @return 用户描述信息
+     * @return User Description
      * 
      */
     private String description;
     /**
-     * @return 用户显示名称。
+     * @return User Display Name
      * 
      */
     private String displayName;
     /**
-     * @return 用户邮箱。
+     * @return User Email
      * 
      */
     private String email;
     /**
-     * @return 用户身份类型。
+     * @return User Identity Type
      * 
      */
     private String identityType;
     /**
-     * @return 用户加入用户组的时间。
+     * @return User Group Join Time
      * 
      */
     private String joinTime;
     /**
-     * @return 用户手机号。
+     * @return User Phone Number
      * 
      */
     private String phone;
     /**
-     * @return 用户来源。
+     * @return User Source
      * 
      */
     private String source;
     /**
-     * @return 用户id。
+     * @return User ID
      * 
      */
     private String userId;
     /**
-     * @return 用户名。
+     * @return Username
      * 
      */
     private String userName;
 
     private GetGroupMember() {}
     /**
-     * @return 用户描述信息
+     * @return User Description
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 用户显示名称。
+     * @return User Display Name
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return 用户邮箱。
+     * @return User Email
      * 
      */
     public String email() {
         return this.email;
     }
     /**
-     * @return 用户身份类型。
+     * @return User Identity Type
      * 
      */
     public String identityType() {
         return this.identityType;
     }
     /**
-     * @return 用户加入用户组的时间。
+     * @return User Group Join Time
      * 
      */
     public String joinTime() {
         return this.joinTime;
     }
     /**
-     * @return 用户手机号。
+     * @return User Phone Number
      * 
      */
     public String phone() {
         return this.phone;
     }
     /**
-     * @return 用户来源。
+     * @return User Source
      * 
      */
     public String source() {
         return this.source;
     }
     /**
-     * @return 用户id。
+     * @return User ID
      * 
      */
     public String userId() {
         return this.userId;
     }
     /**
-     * @return 用户名。
+     * @return Username
      * 
      */
     public String userName() {

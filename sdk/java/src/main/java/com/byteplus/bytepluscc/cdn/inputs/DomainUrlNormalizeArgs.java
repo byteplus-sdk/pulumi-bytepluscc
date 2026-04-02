@@ -18,14 +18,14 @@ public final class DomainUrlNormalizeArgs extends com.pulumi.resources.ResourceA
     public static final DomainUrlNormalizeArgs Empty = new DomainUrlNormalizeArgs();
 
     /**
-     * 表示您需要启用的 URL 标准化选项列表。当 Switch 为 true 时，该参数为必填。列表中可以包含以下选项：dot*segments：表示将请求 URL 中的以下内容进行替换：/./：替换为单个斜杠（/）。/../：如果 /../ 前还有一个级别的目录，则删除 /../ 与该目录。如果 /../ 前没有目录，则保留原 URL。back*slashes：表示将请求 URL 中的反斜杠（\）替换为单个斜杠（/）。successive_slashes：表示将请求 URL 中连续斜杠（//）替换为单个斜杠（/）。
+     * This specifies the list of URL normalization options you need to enable. When Switch is true, this parameter is required. The list can include the following options: dot*segments: replaces the following in the request URL: /./: replaced with a single slash (/). /../: if there is a directory level before /../, removes /../ and that directory. If there is no directory before /../, the original URL is retained. back*slashes: replaces backslashes () in the request URL with a single slash (/). successive_slashes: replaces consecutive slashes (//) in the request URL with a single slash (/).
      * 
      */
     @Import(name="normalizeObjects")
     private @Nullable Output<List<String>> normalizeObjects;
 
     /**
-     * @return 表示您需要启用的 URL 标准化选项列表。当 Switch 为 true 时，该参数为必填。列表中可以包含以下选项：dot*segments：表示将请求 URL 中的以下内容进行替换：/./：替换为单个斜杠（/）。/../：如果 /../ 前还有一个级别的目录，则删除 /../ 与该目录。如果 /../ 前没有目录，则保留原 URL。back*slashes：表示将请求 URL 中的反斜杠（\）替换为单个斜杠（/）。successive_slashes：表示将请求 URL 中连续斜杠（//）替换为单个斜杠（/）。
+     * @return This specifies the list of URL normalization options you need to enable. When Switch is true, this parameter is required. The list can include the following options: dot*segments: replaces the following in the request URL: /./: replaced with a single slash (/). /../: if there is a directory level before /../, removes /../ and that directory. If there is no directory before /../, the original URL is retained. back*slashes: replaces backslashes () in the request URL with a single slash (/). successive_slashes: replaces consecutive slashes (//) in the request URL with a single slash (/).
      * 
      */
     public Optional<Output<List<String>>> normalizeObjects() {
@@ -33,14 +33,14 @@ public final class DomainUrlNormalizeArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * 表示您需要启用的 URL 标准化选项列表。当 Switch 为 true 时，该参数为必填。列表中可以包含以下选项：dot*segments：表示将请求 URL 中的以下内容进行替换：/./：替换为单个斜杠（/）。/../：如果 /../ 前还有一个级别的目录，则删除 /../ 与该目录。如果 /../ 前没有目录，则保留原 URL。back*slashes：表示将请求 URL 中的反斜杠（\）替换为单个斜杠（/）。successive_slashes：表示将请求 URL 中连续斜杠（//）替换为单个斜杠（/）。
+     * This specifies the list of URL normalization options you need to enable. When Switch is true, this parameter is required. The list can include the following options: dot*segments: replaces the following in the request URL: /./: replaced with a single slash (/). /../: if there is a directory level before /../, removes /../ and that directory. If there is no directory before /../, the original URL is retained. back*slashes: replaces backslashes () in the request URL with a single slash (/). successive_slashes: replaces consecutive slashes (//) in the request URL with a single slash (/).
      * 
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
-     * @return 表示您需要启用的 URL 标准化选项列表。当 Switch 为 true 时，该参数为必填。列表中可以包含以下选项：dot*segments：表示将请求 URL 中的以下内容进行替换：/./：替换为单个斜杠（/）。/../：如果 /../ 前还有一个级别的目录，则删除 /../ 与该目录。如果 /../ 前没有目录，则保留原 URL。back*slashes：表示将请求 URL 中的反斜杠（\）替换为单个斜杠（/）。successive_slashes：表示将请求 URL 中连续斜杠（//）替换为单个斜杠（/）。
+     * @return This specifies the list of URL normalization options you need to enable. When Switch is true, this parameter is required. The list can include the following options: dot*segments: replaces the following in the request URL: /./: replaced with a single slash (/). /../: if there is a directory level before /../, removes /../ and that directory. If there is no directory before /../, the original URL is retained. back*slashes: replaces backslashes () in the request URL with a single slash (/). successive_slashes: replaces consecutive slashes (//) in the request URL with a single slash (/).
      * 
      */
     public Optional<Output<Boolean>> switch_() {
@@ -73,7 +73,7 @@ public final class DomainUrlNormalizeArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param normalizeObjects 表示您需要启用的 URL 标准化选项列表。当 Switch 为 true 时，该参数为必填。列表中可以包含以下选项：dot*segments：表示将请求 URL 中的以下内容进行替换：/./：替换为单个斜杠（/）。/../：如果 /../ 前还有一个级别的目录，则删除 /../ 与该目录。如果 /../ 前没有目录，则保留原 URL。back*slashes：表示将请求 URL 中的反斜杠（\）替换为单个斜杠（/）。successive_slashes：表示将请求 URL 中连续斜杠（//）替换为单个斜杠（/）。
+         * @param normalizeObjects This specifies the list of URL normalization options you need to enable. When Switch is true, this parameter is required. The list can include the following options: dot*segments: replaces the following in the request URL: /./: replaced with a single slash (/). /../: if there is a directory level before /../, removes /../ and that directory. If there is no directory before /../, the original URL is retained. back*slashes: replaces backslashes () in the request URL with a single slash (/). successive_slashes: replaces consecutive slashes (//) in the request URL with a single slash (/).
          * 
          * @return builder
          * 
@@ -84,7 +84,7 @@ public final class DomainUrlNormalizeArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param normalizeObjects 表示您需要启用的 URL 标准化选项列表。当 Switch 为 true 时，该参数为必填。列表中可以包含以下选项：dot*segments：表示将请求 URL 中的以下内容进行替换：/./：替换为单个斜杠（/）。/../：如果 /../ 前还有一个级别的目录，则删除 /../ 与该目录。如果 /../ 前没有目录，则保留原 URL。back*slashes：表示将请求 URL 中的反斜杠（\）替换为单个斜杠（/）。successive_slashes：表示将请求 URL 中连续斜杠（//）替换为单个斜杠（/）。
+         * @param normalizeObjects This specifies the list of URL normalization options you need to enable. When Switch is true, this parameter is required. The list can include the following options: dot*segments: replaces the following in the request URL: /./: replaced with a single slash (/). /../: if there is a directory level before /../, removes /../ and that directory. If there is no directory before /../, the original URL is retained. back*slashes: replaces backslashes () in the request URL with a single slash (/). successive_slashes: replaces consecutive slashes (//) in the request URL with a single slash (/).
          * 
          * @return builder
          * 
@@ -94,7 +94,7 @@ public final class DomainUrlNormalizeArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param normalizeObjects 表示您需要启用的 URL 标准化选项列表。当 Switch 为 true 时，该参数为必填。列表中可以包含以下选项：dot*segments：表示将请求 URL 中的以下内容进行替换：/./：替换为单个斜杠（/）。/../：如果 /../ 前还有一个级别的目录，则删除 /../ 与该目录。如果 /../ 前没有目录，则保留原 URL。back*slashes：表示将请求 URL 中的反斜杠（\）替换为单个斜杠（/）。successive_slashes：表示将请求 URL 中连续斜杠（//）替换为单个斜杠（/）。
+         * @param normalizeObjects This specifies the list of URL normalization options you need to enable. When Switch is true, this parameter is required. The list can include the following options: dot*segments: replaces the following in the request URL: /./: replaced with a single slash (/). /../: if there is a directory level before /../, removes /../ and that directory. If there is no directory before /../, the original URL is retained. back*slashes: replaces backslashes () in the request URL with a single slash (/). successive_slashes: replaces consecutive slashes (//) in the request URL with a single slash (/).
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class DomainUrlNormalizeArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param switch_ 表示您需要启用的 URL 标准化选项列表。当 Switch 为 true 时，该参数为必填。列表中可以包含以下选项：dot*segments：表示将请求 URL 中的以下内容进行替换：/./：替换为单个斜杠（/）。/../：如果 /../ 前还有一个级别的目录，则删除 /../ 与该目录。如果 /../ 前没有目录，则保留原 URL。back*slashes：表示将请求 URL 中的反斜杠（\）替换为单个斜杠（/）。successive_slashes：表示将请求 URL 中连续斜杠（//）替换为单个斜杠（/）。
+         * @param switch_ This specifies the list of URL normalization options you need to enable. When Switch is true, this parameter is required. The list can include the following options: dot*segments: replaces the following in the request URL: /./: replaced with a single slash (/). /../: if there is a directory level before /../, removes /../ and that directory. If there is no directory before /../, the original URL is retained. back*slashes: replaces backslashes () in the request URL with a single slash (/). successive_slashes: replaces consecutive slashes (//) in the request URL with a single slash (/).
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class DomainUrlNormalizeArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param switch_ 表示您需要启用的 URL 标准化选项列表。当 Switch 为 true 时，该参数为必填。列表中可以包含以下选项：dot*segments：表示将请求 URL 中的以下内容进行替换：/./：替换为单个斜杠（/）。/../：如果 /../ 前还有一个级别的目录，则删除 /../ 与该目录。如果 /../ 前没有目录，则保留原 URL。back*slashes：表示将请求 URL 中的反斜杠（\）替换为单个斜杠（/）。successive_slashes：表示将请求 URL 中连续斜杠（//）替换为单个斜杠（/）。
+         * @param switch_ This specifies the list of URL normalization options you need to enable. When Switch is true, this parameter is required. The list can include the following options: dot*segments: replaces the following in the request URL: /./: replaced with a single slash (/). /../: if there is a directory level before /../, removes /../ and that directory. If there is no directory before /../, the original URL is retained. back*slashes: replaces backslashes () in the request URL with a single slash (/). successive_slashes: replaces consecutive slashes (//) in the request URL with a single slash (/).
          * 
          * @return builder
          * 

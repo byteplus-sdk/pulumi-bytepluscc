@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc.Inputs
     public sealed class EniPrivateIpSetGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 网卡主私网IPv4关联的公网IP的信息。
+        /// Information about the public IP associated with the primary private IPv4 address of the network interface.
         /// </summary>
         [Input("associatedElasticIp")]
         public Input<Inputs.EniPrivateIpSetAssociatedElasticIpGetArgs>? AssociatedElasticIp { get; set; }
 
         /// <summary>
-        /// 网卡的私网IP地址。
+        /// Private IP address of the network interface.
         /// </summary>
         [Input("privateIpAddress")]
         public Input<string>? PrivateIpAddress { get; set; }

@@ -79,7 +79,7 @@ class GetVpcAttachmentResult:
     @pulumi.getter(name="applianceModeEnabled")
     def appliance_mode_enabled(self) -> builtins.bool:
         """
-        是否启动路径一致模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是。开启后，TR转发流量至该VPC连接时，将选择相同的可用区连接点转发请求流量和返回流量。false：否。
+        Whether to enable path consistency mode. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. When enabled, TR forwarding traffic to this VPC connection will select the same availability zone connection point for both request and return traffic. false: No.
         """
         return pulumi.get(self, "appliance_mode_enabled")
 
@@ -87,7 +87,7 @@ class GetVpcAttachmentResult:
     @pulumi.getter(name="attachPoints")
     def attach_points(self) -> Sequence['outputs.GetVpcAttachmentAttachPointResult']:
         """
-        网络实例连接列表。
+        Network instance connection list.
         """
         return pulumi.get(self, "attach_points")
 
@@ -95,7 +95,7 @@ class GetVpcAttachmentResult:
     @pulumi.getter(name="autoPublishRouteEnabled")
     def auto_publish_route_enabled(self) -> builtins.bool:
         """
-        是否自动同步TR路由到网络实例路由表中。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是，表示系统会自动同步该网络实例连接关联转发的TR路由表中的路由条目到网络实例的路由表中，仅当该参数配置为true，且网络实例连接关联转发的TR路由表中存在路由条目时，系统才会自动同步TR路由到网络实例的路由表中。false（默认值）：否。
+        Whether to automatically synchronize TR routes to the network instance route table. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. The system will automatically synchronize route entries from the TR route table associated with this network instance connection to the network instance's route table. The system will only synchronize TR routes if this parameter is set to true and there are route entries in the associated TR route table. false (default): No.
         """
         return pulumi.get(self, "auto_publish_route_enabled")
 
@@ -103,7 +103,7 @@ class GetVpcAttachmentResult:
     @pulumi.getter
     def bandwidth(self) -> builtins.int:
         """
-        网络实例连接的带宽上限，单位为Gbps。
+        Maximum bandwidth for the network instance connection, in Gbps.
         """
         return pulumi.get(self, "bandwidth")
 
@@ -111,7 +111,7 @@ class GetVpcAttachmentResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        创建时间。
+        Creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -119,7 +119,7 @@ class GetVpcAttachmentResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -135,7 +135,7 @@ class GetVpcAttachmentResult:
     @pulumi.getter(name="ipv6Enabled")
     def ipv6_enabled(self) -> builtins.bool:
         """
-        是否开启IPv6功能。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是。false：否。
+        Whether to enable IPv6. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. false: No.
         """
         return pulumi.get(self, "ipv6_enabled")
 
@@ -143,7 +143,7 @@ class GetVpcAttachmentResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+        Network instance connection status. Creating: Creating. Deleting: Deleting. Pending: Configuring. Available: Available.
         """
         return pulumi.get(self, "status")
 
@@ -151,7 +151,7 @@ class GetVpcAttachmentResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetVpcAttachmentTagResult']:
         """
-        标签列表。
+        Tag list.
         """
         return pulumi.get(self, "tags")
 
@@ -159,7 +159,7 @@ class GetVpcAttachmentResult:
     @pulumi.getter(name="transitRouterAttachmentId")
     def transit_router_attachment_id(self) -> builtins.str:
         """
-        网络实例连接的ID。
+        Network instance connection ID.
         """
         return pulumi.get(self, "transit_router_attachment_id")
 
@@ -167,7 +167,7 @@ class GetVpcAttachmentResult:
     @pulumi.getter(name="transitRouterAttachmentName")
     def transit_router_attachment_name(self) -> builtins.str:
         """
-        网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
+        Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
         """
         return pulumi.get(self, "transit_router_attachment_name")
 
@@ -175,7 +175,7 @@ class GetVpcAttachmentResult:
     @pulumi.getter(name="transitRouterId")
     def transit_router_id(self) -> builtins.str:
         """
-        中转路由器实例的ID。
+        Transit router instance ID.
         """
         return pulumi.get(self, "transit_router_id")
 
@@ -183,7 +183,7 @@ class GetVpcAttachmentResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        更新时间。
+        Update time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -191,7 +191,7 @@ class GetVpcAttachmentResult:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> builtins.str:
         """
-        私有网络实例的ID。
+        Private network instance ID.
         """
         return pulumi.get(self, "vpc_id")
 

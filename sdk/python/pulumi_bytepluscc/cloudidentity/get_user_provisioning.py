@@ -75,7 +75,7 @@ class GetUserProvisioningResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        创建时间。
+        Creation Time
         """
         return pulumi.get(self, "created_time")
 
@@ -83,7 +83,7 @@ class GetUserProvisioningResult:
     @pulumi.getter(name="deletionStrategy")
     def deletion_strategy(self) -> builtins.str:
         """
-        删除策略。
+        Deletion Policy
         """
         return pulumi.get(self, "deletion_strategy")
 
@@ -91,7 +91,7 @@ class GetUserProvisioningResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        任务描述。
+        Task Description
         """
         return pulumi.get(self, "description")
 
@@ -99,7 +99,7 @@ class GetUserProvisioningResult:
     @pulumi.getter(name="duplicationStrategy")
     def duplication_strategy(self) -> builtins.str:
         """
-        用户名冲突策略。
+        Username Conflict Policy
         """
         return pulumi.get(self, "duplication_strategy")
 
@@ -107,7 +107,7 @@ class GetUserProvisioningResult:
     @pulumi.getter(name="duplicationSuffix")
     def duplication_suffix(self) -> builtins.str:
         """
-        本次同步IAM用户名称后缀。
+        Suffix for IAM user name in this synchronization
         """
         return pulumi.get(self, "duplication_suffix")
 
@@ -123,7 +123,7 @@ class GetUserProvisioningResult:
     @pulumi.getter(name="identitySourceStrategy")
     def identity_source_strategy(self) -> builtins.str:
         """
-        身份源冲突策略。
+        Identity Source Conflict Policy
         """
         return pulumi.get(self, "identity_source_strategy")
 
@@ -131,7 +131,7 @@ class GetUserProvisioningResult:
     @pulumi.getter(name="principalId")
     def principal_id(self) -> builtins.str:
         """
-        身份id。
+        Identity ID
         """
         return pulumi.get(self, "principal_id")
 
@@ -139,7 +139,7 @@ class GetUserProvisioningResult:
     @pulumi.getter(name="principalName")
     def principal_name(self) -> builtins.str:
         """
-        目标名称。
+        Target Name
         """
         return pulumi.get(self, "principal_name")
 
@@ -147,7 +147,7 @@ class GetUserProvisioningResult:
     @pulumi.getter(name="principalType")
     def principal_type(self) -> builtins.str:
         """
-        身份类型。
+        Identity Type
         """
         return pulumi.get(self, "principal_type")
 
@@ -155,7 +155,7 @@ class GetUserProvisioningResult:
     @pulumi.getter(name="provisionStatus")
     def provision_status(self) -> builtins.str:
         """
-        授权任务状态。Provisioned 授权成功，Provisioning 正在授权，DeleteProvisioning 授权解除中，DeleteProvisioned 授权解除成功
+        Authorization Task Status. Provisioned: authorization successful, Provisioning: authorizing, DeleteProvisioning: revoking authorization, DeleteProvisioned: authorization revoked successfully.
         """
         return pulumi.get(self, "provision_status")
 
@@ -163,7 +163,7 @@ class GetUserProvisioningResult:
     @pulumi.getter(name="targetId")
     def target_id(self) -> builtins.str:
         """
-        目标id。
+        Target ID
         """
         return pulumi.get(self, "target_id")
 
@@ -171,7 +171,7 @@ class GetUserProvisioningResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        更新时间。
+        Update Time
         """
         return pulumi.get(self, "updated_time")
 
@@ -179,7 +179,7 @@ class GetUserProvisioningResult:
     @pulumi.getter(name="userProvisioningId")
     def user_provisioning_id(self) -> builtins.str:
         """
-        IAM 用户同步任务ID。
+        IAM User Synchronization Task ID
         """
         return pulumi.get(self, "user_provisioning_id")
 

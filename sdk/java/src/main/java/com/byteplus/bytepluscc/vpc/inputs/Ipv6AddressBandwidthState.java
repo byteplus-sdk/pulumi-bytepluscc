@@ -20,14 +20,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
     public static final Ipv6AddressBandwidthState Empty = new Ipv6AddressBandwidthState();
 
     /**
-     * IPv6公网带宽的ID。
+     * IPv6 public bandwidth ID
      * 
      */
     @Import(name="allocationId")
     private @Nullable Output<String> allocationId;
 
     /**
-     * @return IPv6公网带宽的ID。
+     * @return IPv6 public bandwidth ID
      * 
      */
     public Optional<Output<String>> allocationId() {
@@ -35,14 +35,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
     }
 
     /**
-     * IPv6公网带宽的带宽上限。
+     * IPv6 public bandwidth cap
      * 
      */
     @Import(name="bandwidth")
     private @Nullable Output<Integer> bandwidth;
 
     /**
-     * @return IPv6公网带宽的带宽上限。
+     * @return IPv6 public bandwidth cap
      * 
      */
     public Optional<Output<Integer>> bandwidth() {
@@ -50,14 +50,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
     }
 
     /**
-     * IPv6共享带宽包的ID。
+     * IPv6 shared bandwidth package ID
      * 
      */
     @Import(name="bandwidthPackageId")
     private @Nullable Output<String> bandwidthPackageId;
 
     /**
-     * @return IPv6共享带宽包的ID。
+     * @return IPv6 shared bandwidth package ID
      * 
      */
     public Optional<Output<String>> bandwidthPackageId() {
@@ -65,14 +65,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
     }
 
     /**
-     * IPv6公网带宽的计费类型。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+     * IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
      * 
      */
     @Import(name="billingType")
     private @Nullable Output<Integer> billingType;
 
     /**
-     * @return IPv6公网带宽的计费类型。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+     * @return IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
      * 
      */
     public Optional<Output<Integer>> billingType() {
@@ -80,14 +80,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
     }
 
     /**
-     * IPv6公网带宽是否被锁定。Normal：正常。FinancialLocked：被锁定。
+     * Whether IPv6 public bandwidth is locked. Normal: Normal. FinancialLocked: Locked.
      * 
      */
     @Import(name="businessStatus")
     private @Nullable Output<String> businessStatus;
 
     /**
-     * @return IPv6公网带宽是否被锁定。Normal：正常。FinancialLocked：被锁定。
+     * @return Whether IPv6 public bandwidth is locked. Normal: Normal. FinancialLocked: Locked.
      * 
      */
     public Optional<Output<String>> businessStatus() {
@@ -95,14 +95,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
     }
 
     /**
-     * IPv6公网带宽的开通时间。
+     * IPv6 public bandwidth activation time
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return IPv6公网带宽的开通时间。
+     * @return IPv6 public bandwidth activation time
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -110,14 +110,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
     }
 
     /**
-     * IPv6公网带宽的删除时间。
+     * IPv6 public bandwidth deletion time
      * 
      */
     @Import(name="deletedTime")
     private @Nullable Output<String> deletedTime;
 
     /**
-     * @return IPv6公网带宽的删除时间。
+     * @return IPv6 public bandwidth deletion time
      * 
      */
     public Optional<Output<String>> deletedTime() {
@@ -125,14 +125,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
     }
 
     /**
-     * IPv6公网带宽关联的实例ID。
+     * Instance ID associated with IPv6 public bandwidth
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return IPv6公网带宽关联的实例ID。
+     * @return Instance ID associated with IPv6 public bandwidth
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -140,14 +140,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
     }
 
     /**
-     * IPv6公网带宽关联的实例类型。EcsInstance：云服务器实例。ClbInstance：负载均衡。
+     * Instance type associated with IPv6 public bandwidth. EcsInstance: Cloud server instance. ClbInstance: Load balancer.
      * 
      */
     @Import(name="instanceType")
     private @Nullable Output<String> instanceType;
 
     /**
-     * @return IPv6公网带宽关联的实例类型。EcsInstance：云服务器实例。ClbInstance：负载均衡。
+     * @return Instance type associated with IPv6 public bandwidth. EcsInstance: Cloud server instance. ClbInstance: Load balancer.
      * 
      */
     public Optional<Output<String>> instanceType() {
@@ -155,14 +155,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
     }
 
     /**
-     * IPv6地址。
+     * IPv6 address
      * 
      */
     @Import(name="ipv6Address")
     private @Nullable Output<String> ipv6Address;
 
     /**
-     * @return IPv6地址。
+     * @return IPv6 address
      * 
      */
     public Optional<Output<String>> ipv6Address() {
@@ -170,14 +170,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
     }
 
     /**
-     * IPv6网关的ID。
+     * IPv6 gateway ID
      * 
      */
     @Import(name="ipv6GatewayId")
     private @Nullable Output<String> ipv6GatewayId;
 
     /**
-     * @return IPv6网关的ID。
+     * @return IPv6 gateway ID
      * 
      */
     public Optional<Output<String>> ipv6GatewayId() {
@@ -185,14 +185,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
     }
 
     /**
-     * IPv6公网带宽的线路类型。BGP：BGP（多线）。
+     * IPv6 public bandwidth line type. BGP: BGP (multi-line).
      * 
      */
     @Import(name="isp")
     private @Nullable Output<String> isp;
 
     /**
-     * @return IPv6公网带宽的线路类型。BGP：BGP（多线）。
+     * @return IPv6 public bandwidth line type. BGP: BGP (multi-line).
      * 
      */
     public Optional<Output<String>> isp() {
@@ -200,14 +200,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
     }
 
     /**
-     * IPv6公网带宽被锁定的原因。该参数只有IPv6公网带宽处于FinancialLocked状态时才有返回值。Financial：因欠费被锁定。Security：因安全被锁定。
+     * Reason for IPv6 public bandwidth lock. This parameter is returned only when IPv6 public bandwidth is in FinancialLocked status. Financial: Locked due to overdue payment. Security: Locked due to security reasons.
      * 
      */
     @Import(name="lockReason")
     private @Nullable Output<String> lockReason;
 
     /**
-     * @return IPv6公网带宽被锁定的原因。该参数只有IPv6公网带宽处于FinancialLocked状态时才有返回值。Financial：因欠费被锁定。Security：因安全被锁定。
+     * @return Reason for IPv6 public bandwidth lock. This parameter is returned only when IPv6 public bandwidth is in FinancialLocked status. Financial: Locked due to overdue payment. Security: Locked due to security reasons.
      * 
      */
     public Optional<Output<String>> lockReason() {
@@ -215,14 +215,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
     }
 
     /**
-     * IPv6地址的通信类型。Private：私网通信类型。Public：公网通信类型。
+     * IPv6 address communication type. Private: Private network communication type. Public: Public network communication type.
      * 
      */
     @Import(name="networkType")
     private @Nullable Output<String> networkType;
 
     /**
-     * @return IPv6地址的通信类型。Private：私网通信类型。Public：公网通信类型。
+     * @return IPv6 address communication type. Private: Private network communication type. Public: Public network communication type.
      * 
      */
     public Optional<Output<String>> networkType() {
@@ -230,14 +230,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
     }
 
     /**
-     * IPv6公网带宽欠费关停的时间。
+     * IPv6 public bandwidth deactivation time due to overdue payment
      * 
      */
     @Import(name="overdueTime")
     private @Nullable Output<String> overdueTime;
 
     /**
-     * @return IPv6公网带宽欠费关停的时间。
+     * @return IPv6 public bandwidth deactivation time due to overdue payment
      * 
      */
     public Optional<Output<String>> overdueTime() {
@@ -245,14 +245,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
     }
 
     /**
-     * IPv6公网带宽的项目。
+     * IPv6 public bandwidth project
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return IPv6公网带宽的项目。
+     * @return IPv6 public bandwidth project
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -260,14 +260,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 是否为服务托管。
+     * Service hosting status
      * 
      */
     @Import(name="serviceManaged")
     private @Nullable Output<Boolean> serviceManaged;
 
     /**
-     * @return 是否为服务托管。
+     * @return Service hosting status
      * 
      */
     public Optional<Output<Boolean>> serviceManaged() {
@@ -275,14 +275,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
     }
 
     /**
-     * IPv6公网带宽的状态。Creating：创建中。Available：可用。
+     * IPv6 public bandwidth status. Creating: Creating. Available: Available.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return IPv6公网带宽的状态。Creating：创建中。Available：可用。
+     * @return IPv6 public bandwidth status. Creating: Creating. Available: Available.
      * 
      */
     public Optional<Output<String>> status() {
@@ -297,14 +297,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
     }
 
     /**
-     * IPv6公网带宽的最近操作时间。
+     * IPv6 public bandwidth last operation time
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return IPv6公网带宽的最近操作时间。
+     * @return IPv6 public bandwidth last operation time
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -355,7 +355,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param allocationId IPv6公网带宽的ID。
+         * @param allocationId IPv6 public bandwidth ID
          * 
          * @return builder
          * 
@@ -366,7 +366,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param allocationId IPv6公网带宽的ID。
+         * @param allocationId IPv6 public bandwidth ID
          * 
          * @return builder
          * 
@@ -376,7 +376,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param bandwidth IPv6公网带宽的带宽上限。
+         * @param bandwidth IPv6 public bandwidth cap
          * 
          * @return builder
          * 
@@ -387,7 +387,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param bandwidth IPv6公网带宽的带宽上限。
+         * @param bandwidth IPv6 public bandwidth cap
          * 
          * @return builder
          * 
@@ -397,7 +397,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param bandwidthPackageId IPv6共享带宽包的ID。
+         * @param bandwidthPackageId IPv6 shared bandwidth package ID
          * 
          * @return builder
          * 
@@ -408,7 +408,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param bandwidthPackageId IPv6共享带宽包的ID。
+         * @param bandwidthPackageId IPv6 shared bandwidth package ID
          * 
          * @return builder
          * 
@@ -418,7 +418,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param billingType IPv6公网带宽的计费类型。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+         * @param billingType IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
          * 
          * @return builder
          * 
@@ -429,7 +429,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param billingType IPv6公网带宽的计费类型。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+         * @param billingType IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
          * 
          * @return builder
          * 
@@ -439,7 +439,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param businessStatus IPv6公网带宽是否被锁定。Normal：正常。FinancialLocked：被锁定。
+         * @param businessStatus Whether IPv6 public bandwidth is locked. Normal: Normal. FinancialLocked: Locked.
          * 
          * @return builder
          * 
@@ -450,7 +450,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param businessStatus IPv6公网带宽是否被锁定。Normal：正常。FinancialLocked：被锁定。
+         * @param businessStatus Whether IPv6 public bandwidth is locked. Normal: Normal. FinancialLocked: Locked.
          * 
          * @return builder
          * 
@@ -460,7 +460,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param createdTime IPv6公网带宽的开通时间。
+         * @param createdTime IPv6 public bandwidth activation time
          * 
          * @return builder
          * 
@@ -471,7 +471,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param createdTime IPv6公网带宽的开通时间。
+         * @param createdTime IPv6 public bandwidth activation time
          * 
          * @return builder
          * 
@@ -481,7 +481,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param deletedTime IPv6公网带宽的删除时间。
+         * @param deletedTime IPv6 public bandwidth deletion time
          * 
          * @return builder
          * 
@@ -492,7 +492,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param deletedTime IPv6公网带宽的删除时间。
+         * @param deletedTime IPv6 public bandwidth deletion time
          * 
          * @return builder
          * 
@@ -502,7 +502,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param instanceId IPv6公网带宽关联的实例ID。
+         * @param instanceId Instance ID associated with IPv6 public bandwidth
          * 
          * @return builder
          * 
@@ -513,7 +513,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param instanceId IPv6公网带宽关联的实例ID。
+         * @param instanceId Instance ID associated with IPv6 public bandwidth
          * 
          * @return builder
          * 
@@ -523,7 +523,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param instanceType IPv6公网带宽关联的实例类型。EcsInstance：云服务器实例。ClbInstance：负载均衡。
+         * @param instanceType Instance type associated with IPv6 public bandwidth. EcsInstance: Cloud server instance. ClbInstance: Load balancer.
          * 
          * @return builder
          * 
@@ -534,7 +534,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param instanceType IPv6公网带宽关联的实例类型。EcsInstance：云服务器实例。ClbInstance：负载均衡。
+         * @param instanceType Instance type associated with IPv6 public bandwidth. EcsInstance: Cloud server instance. ClbInstance: Load balancer.
          * 
          * @return builder
          * 
@@ -544,7 +544,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param ipv6Address IPv6地址。
+         * @param ipv6Address IPv6 address
          * 
          * @return builder
          * 
@@ -555,7 +555,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param ipv6Address IPv6地址。
+         * @param ipv6Address IPv6 address
          * 
          * @return builder
          * 
@@ -565,7 +565,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param ipv6GatewayId IPv6网关的ID。
+         * @param ipv6GatewayId IPv6 gateway ID
          * 
          * @return builder
          * 
@@ -576,7 +576,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param ipv6GatewayId IPv6网关的ID。
+         * @param ipv6GatewayId IPv6 gateway ID
          * 
          * @return builder
          * 
@@ -586,7 +586,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param isp IPv6公网带宽的线路类型。BGP：BGP（多线）。
+         * @param isp IPv6 public bandwidth line type. BGP: BGP (multi-line).
          * 
          * @return builder
          * 
@@ -597,7 +597,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param isp IPv6公网带宽的线路类型。BGP：BGP（多线）。
+         * @param isp IPv6 public bandwidth line type. BGP: BGP (multi-line).
          * 
          * @return builder
          * 
@@ -607,7 +607,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param lockReason IPv6公网带宽被锁定的原因。该参数只有IPv6公网带宽处于FinancialLocked状态时才有返回值。Financial：因欠费被锁定。Security：因安全被锁定。
+         * @param lockReason Reason for IPv6 public bandwidth lock. This parameter is returned only when IPv6 public bandwidth is in FinancialLocked status. Financial: Locked due to overdue payment. Security: Locked due to security reasons.
          * 
          * @return builder
          * 
@@ -618,7 +618,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param lockReason IPv6公网带宽被锁定的原因。该参数只有IPv6公网带宽处于FinancialLocked状态时才有返回值。Financial：因欠费被锁定。Security：因安全被锁定。
+         * @param lockReason Reason for IPv6 public bandwidth lock. This parameter is returned only when IPv6 public bandwidth is in FinancialLocked status. Financial: Locked due to overdue payment. Security: Locked due to security reasons.
          * 
          * @return builder
          * 
@@ -628,7 +628,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param networkType IPv6地址的通信类型。Private：私网通信类型。Public：公网通信类型。
+         * @param networkType IPv6 address communication type. Private: Private network communication type. Public: Public network communication type.
          * 
          * @return builder
          * 
@@ -639,7 +639,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param networkType IPv6地址的通信类型。Private：私网通信类型。Public：公网通信类型。
+         * @param networkType IPv6 address communication type. Private: Private network communication type. Public: Public network communication type.
          * 
          * @return builder
          * 
@@ -649,7 +649,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param overdueTime IPv6公网带宽欠费关停的时间。
+         * @param overdueTime IPv6 public bandwidth deactivation time due to overdue payment
          * 
          * @return builder
          * 
@@ -660,7 +660,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param overdueTime IPv6公网带宽欠费关停的时间。
+         * @param overdueTime IPv6 public bandwidth deactivation time due to overdue payment
          * 
          * @return builder
          * 
@@ -670,7 +670,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param projectName IPv6公网带宽的项目。
+         * @param projectName IPv6 public bandwidth project
          * 
          * @return builder
          * 
@@ -681,7 +681,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param projectName IPv6公网带宽的项目。
+         * @param projectName IPv6 public bandwidth project
          * 
          * @return builder
          * 
@@ -691,7 +691,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param serviceManaged 是否为服务托管。
+         * @param serviceManaged Service hosting status
          * 
          * @return builder
          * 
@@ -702,7 +702,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param serviceManaged 是否为服务托管。
+         * @param serviceManaged Service hosting status
          * 
          * @return builder
          * 
@@ -712,7 +712,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param status IPv6公网带宽的状态。Creating：创建中。Available：可用。
+         * @param status IPv6 public bandwidth status. Creating: Creating. Available: Available.
          * 
          * @return builder
          * 
@@ -723,7 +723,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param status IPv6公网带宽的状态。Creating：创建中。Available：可用。
+         * @param status IPv6 public bandwidth status. Creating: Creating. Available: Available.
          * 
          * @return builder
          * 
@@ -746,7 +746,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param updatedTime IPv6公网带宽的最近操作时间。
+         * @param updatedTime IPv6 public bandwidth last operation time
          * 
          * @return builder
          * 
@@ -757,7 +757,7 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param updatedTime IPv6公网带宽的最近操作时间。
+         * @param updatedTime IPv6 public bandwidth last operation time
          * 
          * @return builder
          * 

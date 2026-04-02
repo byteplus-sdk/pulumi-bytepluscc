@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas.Inputs
     public sealed class SandboxEnvGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 环境变量键。
+        /// Environment variable key
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// 环境变量值。
+        /// Environment variable value
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

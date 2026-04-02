@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class GetAclAclEntryResult
     {
         /// <summary>
-        /// IP条目的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+        /// Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// IP条目的地址段，只支持CIDR地址。
+        /// IP entry address range; only CIDR addresses are supported
         /// </summary>
         public readonly string Entry;
 

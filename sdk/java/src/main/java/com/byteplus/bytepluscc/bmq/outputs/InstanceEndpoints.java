@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceEndpoints {
     /**
-     * @return 实例私网访问接入点响应数据。
+     * @return Instance private network access endpoint response data
      * 
      */
     private @Nullable InstanceEndpointsOverlay overlay;
     /**
-     * @return 实例公网访问接入点响应数据。
+     * @return Instance public access endpoint response data
      * 
      */
     private @Nullable InstanceEndpointsPublic public_;
 
     private InstanceEndpoints() {}
     /**
-     * @return 实例私网访问接入点响应数据。
+     * @return Instance private network access endpoint response data
      * 
      */
     public Optional<InstanceEndpointsOverlay> overlay() {
         return Optional.ofNullable(this.overlay);
     }
     /**
-     * @return 实例公网访问接入点响应数据。
+     * @return Instance public access endpoint response data
      * 
      */
     public Optional<InstanceEndpointsPublic> public_() {

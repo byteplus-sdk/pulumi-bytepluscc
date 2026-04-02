@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceCapacity {
     /**
-     * @return 当前实例的内存总容量。单位：MiB。
+     * @return Total memory capacity of the current instance. Unit: MiB.
      * 
      */
     private Integer total;
     /**
-     * @return 当前实例已用容量。单位：MiB。
+     * @return Used capacity of the current instance. Unit: MiB.
      * 
      */
     private Integer used;
 
     private GetInstanceCapacity() {}
     /**
-     * @return 当前实例的内存总容量。单位：MiB。
+     * @return Total memory capacity of the current instance. Unit: MiB.
      * 
      */
     public Integer total() {
         return this.total;
     }
     /**
-     * @return 当前实例已用容量。单位：MiB。
+     * @return Used capacity of the current instance. Unit: MiB.
      * 
      */
     public Integer used() {

@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling.Inputs
     public sealed class ScalingGroupTagArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 用户标签的标签键。
+        /// User label tag key
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// 用户标签的标签值。
+        /// The value of the user tag.
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

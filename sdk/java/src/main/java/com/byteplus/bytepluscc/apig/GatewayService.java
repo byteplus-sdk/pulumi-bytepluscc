@@ -20,7 +20,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 服务是一组路由对外暴露的入口，用于区分流量的来源和协议，实现业务、环境、逻辑租户隔离。服务可以绑定独立的访问域名，以域名维度访问业务。
+ * A service is a set of routes exposed as entry points to distinguish traffic sources and protocols, enabling business, environment, and logical tenant isolation. Services can bind independent access domains, allowing access by domain.
  * 
  * ## Example Usage
  * 
@@ -37,42 +37,42 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:apig/gatewayService:GatewayService")
 public class GatewayService extends com.pulumi.resources.CustomResource {
     /**
-     * 认证配置。
+     * Authentication configuration.
      * 
      */
     @Export(name="authSpec", refs={GatewayServiceAuthSpec.class}, tree="[0]")
     private Output<GatewayServiceAuthSpec> authSpec;
 
     /**
-     * @return 认证配置。
+     * @return Authentication configuration.
      * 
      */
     public Output<GatewayServiceAuthSpec> authSpec() {
         return this.authSpec;
     }
     /**
-     * 备注，长度限制为0~253个字符。
+     * Remarks. Length must be 0–253 characters.
      * 
      */
     @Export(name="comments", refs={String.class}, tree="[0]")
     private Output<String> comments;
 
     /**
-     * @return 备注，长度限制为0~253个字符。
+     * @return Remarks. Length must be 0–253 characters.
      * 
      */
     public Output<String> comments() {
         return this.comments;
     }
     /**
-     * 创建时间。
+     * Creation time.
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 创建时间。
+     * @return Creation time.
      * 
      */
     public Output<String> createdTime() {
@@ -85,28 +85,28 @@ public class GatewayService extends com.pulumi.resources.CustomResource {
         return this.customDomains;
     }
     /**
-     * 域名详情。
+     * Domain details.
      * 
      */
     @Export(name="domainSpec", refs={GatewayServiceDomainSpec.class}, tree="[0]")
     private Output<GatewayServiceDomainSpec> domainSpec;
 
     /**
-     * @return 域名详情。
+     * @return Domain details.
      * 
      */
     public Output<GatewayServiceDomainSpec> domainSpec() {
         return this.domainSpec;
     }
     /**
-     * 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+     * Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
      * 
      */
     @Export(name="domainType", refs={String.class}, tree="[0]")
     private Output<String> domainType;
 
     /**
-     * @return 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+     * @return Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
      * 
      */
     public Output<String> domainType() {
@@ -119,126 +119,126 @@ public class GatewayService extends com.pulumi.resources.CustomResource {
         return this.domains;
     }
     /**
-     * 网关ID。
+     * Gateway ID.
      * 
      */
     @Export(name="gatewayId", refs={String.class}, tree="[0]")
     private Output<String> gatewayId;
 
     /**
-     * @return 网关ID。
+     * @return Gateway ID.
      * 
      */
     public Output<String> gatewayId() {
         return this.gatewayId;
     }
     /**
-     * 网关名称。
+     * Gateway name.
      * 
      */
     @Export(name="gatewayName", refs={String.class}, tree="[0]")
     private Output<String> gatewayName;
 
     /**
-     * @return 网关名称。
+     * @return Gateway name.
      * 
      */
     public Output<String> gatewayName() {
         return this.gatewayName;
     }
     /**
-     * 服务创建失败、删除失败或异常时的错误信息。
+     * Error message for service creation failure, deletion failure, or abnormal status.
      * 
      */
     @Export(name="message", refs={String.class}, tree="[0]")
     private Output<String> message;
 
     /**
-     * @return 服务创建失败、删除失败或异常时的错误信息。
+     * @return Error message for service creation failure, deletion failure, or abnormal status.
      * 
      */
     public Output<String> message() {
         return this.message;
     }
     /**
-     * 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
+     * Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
      * 
      */
     @Export(name="protocols", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> protocols;
 
     /**
-     * @return 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
+     * @return Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
      * 
      */
     public Output<List<String>> protocols() {
         return this.protocols;
     }
     /**
-     * 服务ID。
+     * Service ID.
      * 
      */
     @Export(name="serviceId", refs={String.class}, tree="[0]")
     private Output<String> serviceId;
 
     /**
-     * @return 服务ID。
+     * @return Service ID.
      * 
      */
     public Output<String> serviceId() {
         return this.serviceId;
     }
     /**
-     * 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+     * Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
      * 
      */
     @Export(name="serviceName", refs={String.class}, tree="[0]")
     private Output<String> serviceName;
 
     /**
-     * @return 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+     * @return Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
      * 
      */
     public Output<String> serviceName() {
         return this.serviceName;
     }
     /**
-     * 服务默认域名网络配置。。
+     * Default domain network configuration..
      * 
      */
     @Export(name="serviceNetworkSpec", refs={GatewayServiceServiceNetworkSpec.class}, tree="[0]")
     private Output<GatewayServiceServiceNetworkSpec> serviceNetworkSpec;
 
     /**
-     * @return 服务默认域名网络配置。。
+     * @return Default domain network configuration..
      * 
      */
     public Output<GatewayServiceServiceNetworkSpec> serviceNetworkSpec() {
         return this.serviceNetworkSpec;
     }
     /**
-     * 服务类型，取值：AIProvider：AI模型代理。
+     * Service type. Options: AIProvider: AI model proxy.
      * 
      */
     @Export(name="serviceType", refs={String.class}, tree="[0]")
     private Output<String> serviceType;
 
     /**
-     * @return 服务类型，取值：AIProvider：AI模型代理。
+     * @return Service type. Options: AIProvider: AI model proxy.
      * 
      */
     public Output<String> serviceType() {
         return this.serviceType;
     }
     /**
-     * Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+     * Creating: Creating. CreatedFailed: Creation failed. Running: Running. Deleting: Deleting. DeletedFailed: Deletion failed. Abnormal: Abnormal.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+     * @return Creating: Creating. CreatedFailed: Creation failed. Running: Running. Deleting: Deleting. DeletedFailed: Deletion failed. Abnormal: Abnormal.
      * 
      */
     public Output<String> status() {

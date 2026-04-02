@@ -19,7 +19,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 中转路由器服务的运行载体。接受来自网络实例的流量，并根据关联转发路由表进行转发。
+ * Platform on which the transit router service runs. Receives traffic from network instances and forwards it according to the associated forwarding route table
  * 
  * ## Example Usage
  * 
@@ -74,14 +74,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:transitrouter/transitRouter:TransitRouter")
 public class TransitRouter extends com.pulumi.resources.CustomResource {
     /**
-     * 中转路由器的ASN号。取值范围为64512 ～ 65534 和 4200000000 ～ 4294967294，默认值为64512。
+     * ASN of the transit router. Value range: 64512–65534 and 4200000000–4294967294. Default value: 64512
      * 
      */
     @Export(name="asn", refs={Integer.class}, tree="[0]")
     private Output<Integer> asn;
 
     /**
-     * @return 中转路由器的ASN号。取值范围为64512 ～ 65534 和 4200000000 ～ 4294967294，默认值为64512。
+     * @return ASN of the transit router. Value range: 64512–65534 and 4200000000–4294967294. Default value: 64512
      * 
      */
     public Output<Integer> asn() {
@@ -94,140 +94,140 @@ public class TransitRouter extends com.pulumi.resources.CustomResource {
         return this.attachments;
     }
     /**
-     * 网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
+     * Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
      * 
      */
     @Export(name="businessStatus", refs={String.class}, tree="[0]")
     private Output<String> businessStatus;
 
     /**
-     * @return 网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
+     * @return Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
      * 
      */
     public Output<String> businessStatus() {
         return this.businessStatus;
     }
     /**
-     * 网络实例连接的创建时间。
+     * Creation time of the network instance connection.
      * 
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
-     * @return 网络实例连接的创建时间。
+     * @return Creation time of the network instance connection.
      * 
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
-     * 网络实例连接的删除时间。
+     * Deletion time of the network instance connection.
      * 
      */
     @Export(name="deletedTime", refs={String.class}, tree="[0]")
     private Output<String> deletedTime;
 
     /**
-     * @return 网络实例连接的删除时间。
+     * @return Deletion time of the network instance connection.
      * 
      */
     public Output<String> deletedTime() {
         return this.deletedTime;
     }
     /**
-     * 中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * Description of the transit router instance. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is entered, the default is an empty string
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * @return Description of the transit router instance. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is entered, the default is an empty string
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+     * Sharing method of the transit router instance. rs: Shared via platform resource sharing. tr: Shared via transit router instance sharing
      * 
      */
     @Export(name="grantSourceType", refs={String.class}, tree="[0]")
     private Output<String> grantSourceType;
 
     /**
-     * @return 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+     * @return Sharing method of the transit router instance. rs: Shared via platform resource sharing. tr: Shared via transit router instance sharing
      * 
      */
     public Output<String> grantSourceType() {
         return this.grantSourceType;
     }
     /**
-     * 实例共享的状态。Accepted：已接受。Initial：待接受。
+     * Instance sharing status. Accepted: Received. Initial: Pending acceptance.
      * 
      */
     @Export(name="grantStatus", refs={String.class}, tree="[0]")
     private Output<String> grantStatus;
 
     /**
-     * @return 实例共享的状态。Accepted：已接受。Initial：待接受。
+     * @return Instance sharing status. Accepted: Received. Initial: Pending acceptance.
      * 
      */
     public Output<String> grantStatus() {
         return this.grantStatus;
     }
     /**
-     * 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+     * Whether multicast is enabled for the transit router. true: enabled. false (default): not enabled
      * 
      */
     @Export(name="multicastEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> multicastEnabled;
 
     /**
-     * @return 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+     * @return Whether multicast is enabled for the transit router. true: enabled. false (default): not enabled
      * 
      */
     public Output<Boolean> multicastEnabled() {
         return this.multicastEnabled;
     }
     /**
-     * 中转路由器实例的欠费关停时间。
+     * Shutdown time due to overdue payment for the transit router instance
      * 
      */
     @Export(name="overdueTime", refs={String.class}, tree="[0]")
     private Output<String> overdueTime;
 
     /**
-     * @return 中转路由器实例的欠费关停时间。
+     * @return Shutdown time due to overdue payment for the transit router instance
      * 
      */
     public Output<String> overdueTime() {
         return this.overdueTime;
     }
     /**
-     * 中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
+     * Name of the project to which the transit router instance belongs. If this parameter is not provided or no value is entered, the default is &#39;default&#39;
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
+     * @return Name of the project to which the transit router instance belongs. If this parameter is not provided or no value is entered, the default is &#39;default&#39;
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 中转路由器实例的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+     * Status of the transit router instance. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 中转路由器实例的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+     * @return Status of the transit router instance. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
      * 
      */
     public Output<String> status() {
@@ -240,42 +240,42 @@ public class TransitRouter extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 中转路由器实例的ID。
+     * Transit router instance ID.
      * 
      */
     @Export(name="transitRouterId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterId;
 
     /**
-     * @return 中转路由器实例的ID。
+     * @return Transit router instance ID.
      * 
      */
     public Output<String> transitRouterId() {
         return this.transitRouterId;
     }
     /**
-     * 中转路由器实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为中转路由器实例的ID。
+     * Name of the transit router instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
      * 
      */
     @Export(name="transitRouterName", refs={String.class}, tree="[0]")
     private Output<String> transitRouterName;
 
     /**
-     * @return 中转路由器实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为中转路由器实例的ID。
+     * @return Name of the transit router instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
      * 
      */
     public Output<String> transitRouterName() {
         return this.transitRouterName;
     }
     /**
-     * 中转路由器实例的最近操作时间。
+     * Last operation time of the transit router instance
      * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
-     * @return 中转路由器实例的最近操作时间。
+     * @return Last operation time of the transit router instance
      * 
      */
     public Output<String> updateTime() {

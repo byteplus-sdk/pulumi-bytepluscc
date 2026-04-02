@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas.Inputs
     public sealed class MountPointClientArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 客户端的私有网络 IP 地址。
+        /// Client's private network IP address.
         /// </summary>
         [Input("ip")]
         public Input<string>? Ip { get; set; }
 
         /// <summary>
-        /// 挂载协议版本号。取值：NFSv3。
+        /// Mount protocol version. Value: NFSv3.
         /// </summary>
         [Input("protocolVersion")]
         public Input<string>? ProtocolVersion { get; set; }
 
         /// <summary>
-        /// 私有网络名称。
+        /// Private network name.
         /// </summary>
         [Input("vpcName")]
         public Input<string>? VpcName { get; set; }

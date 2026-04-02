@@ -14,9 +14,9 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type CustomerGatewayTag struct {
-	// 用户标签的标签键。
+	// Tag key for user tag
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。
+	// Tag value for user tag
 	Value *string `pulumi:"value"`
 }
 
@@ -32,9 +32,9 @@ type CustomerGatewayTagInput interface {
 }
 
 type CustomerGatewayTagArgs struct {
-	// 用户标签的标签键。
+	// Tag key for user tag
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// Tag value for user tag
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -89,12 +89,12 @@ func (o CustomerGatewayTagOutput) ToCustomerGatewayTagOutputWithContext(ctx cont
 	return o
 }
 
-// 用户标签的标签键。
+// Tag key for user tag
 func (o CustomerGatewayTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CustomerGatewayTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。
+// Tag value for user tag
 func (o CustomerGatewayTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CustomerGatewayTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -119,10 +119,1809 @@ func (o CustomerGatewayTagArrayOutput) Index(i pulumi.IntInput) CustomerGatewayT
 	}).(CustomerGatewayTagOutput)
 }
 
-type VpnGatewayTag struct {
-	// VPN网关标签的标签键（Key）。参数   - N：表示标签键的序号，取值范围：1～20。多个标签键之间用&分隔。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。说明同一资源的标签键不允许重复。
+type VpnConnectionBgpInfo struct {
+	// Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+	EnableBgp *bool `pulumi:"enableBgp"`
+	// The ASN of the VPN gateway.
+	LocalAsn *int `pulumi:"localAsn"`
+	// The local tunnel IP, which is the BGP address configured on the VPN gateway and defaults to the first host address of BgpConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel subnet. If BgpConfig.EnableBgp is set to true, this parameter must be provided.
+	LocalBgpIp *string `pulumi:"localBgpIp"`
+	// ASN of the customer gateway.
+	PeerAsn *int `pulumi:"peerAsn"`
+	// BGP peer IP, that is, the BGP address on the customer gateway side.
+	PeerBgpIp *string `pulumi:"peerBgpIp"`
+	// Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
+	SessionStatus *string `pulumi:"sessionStatus"`
+	// CIDR address range for the local and peer IPs of the BGP session.
+	TunnelCidr *string `pulumi:"tunnelCidr"`
+}
+
+// VpnConnectionBgpInfoInput is an input type that accepts VpnConnectionBgpInfoArgs and VpnConnectionBgpInfoOutput values.
+// You can construct a concrete instance of `VpnConnectionBgpInfoInput` via:
+//
+//	VpnConnectionBgpInfoArgs{...}
+type VpnConnectionBgpInfoInput interface {
+	pulumi.Input
+
+	ToVpnConnectionBgpInfoOutput() VpnConnectionBgpInfoOutput
+	ToVpnConnectionBgpInfoOutputWithContext(context.Context) VpnConnectionBgpInfoOutput
+}
+
+type VpnConnectionBgpInfoArgs struct {
+	// Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+	EnableBgp pulumi.BoolPtrInput `pulumi:"enableBgp"`
+	// The ASN of the VPN gateway.
+	LocalAsn pulumi.IntPtrInput `pulumi:"localAsn"`
+	// The local tunnel IP, which is the BGP address configured on the VPN gateway and defaults to the first host address of BgpConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel subnet. If BgpConfig.EnableBgp is set to true, this parameter must be provided.
+	LocalBgpIp pulumi.StringPtrInput `pulumi:"localBgpIp"`
+	// ASN of the customer gateway.
+	PeerAsn pulumi.IntPtrInput `pulumi:"peerAsn"`
+	// BGP peer IP, that is, the BGP address on the customer gateway side.
+	PeerBgpIp pulumi.StringPtrInput `pulumi:"peerBgpIp"`
+	// Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
+	SessionStatus pulumi.StringPtrInput `pulumi:"sessionStatus"`
+	// CIDR address range for the local and peer IPs of the BGP session.
+	TunnelCidr pulumi.StringPtrInput `pulumi:"tunnelCidr"`
+}
+
+func (VpnConnectionBgpInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpnConnectionBgpInfo)(nil)).Elem()
+}
+
+func (i VpnConnectionBgpInfoArgs) ToVpnConnectionBgpInfoOutput() VpnConnectionBgpInfoOutput {
+	return i.ToVpnConnectionBgpInfoOutputWithContext(context.Background())
+}
+
+func (i VpnConnectionBgpInfoArgs) ToVpnConnectionBgpInfoOutputWithContext(ctx context.Context) VpnConnectionBgpInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpnConnectionBgpInfoOutput)
+}
+
+func (i VpnConnectionBgpInfoArgs) ToVpnConnectionBgpInfoPtrOutput() VpnConnectionBgpInfoPtrOutput {
+	return i.ToVpnConnectionBgpInfoPtrOutputWithContext(context.Background())
+}
+
+func (i VpnConnectionBgpInfoArgs) ToVpnConnectionBgpInfoPtrOutputWithContext(ctx context.Context) VpnConnectionBgpInfoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpnConnectionBgpInfoOutput).ToVpnConnectionBgpInfoPtrOutputWithContext(ctx)
+}
+
+// VpnConnectionBgpInfoPtrInput is an input type that accepts VpnConnectionBgpInfoArgs, VpnConnectionBgpInfoPtr and VpnConnectionBgpInfoPtrOutput values.
+// You can construct a concrete instance of `VpnConnectionBgpInfoPtrInput` via:
+//
+//	        VpnConnectionBgpInfoArgs{...}
+//
+//	or:
+//
+//	        nil
+type VpnConnectionBgpInfoPtrInput interface {
+	pulumi.Input
+
+	ToVpnConnectionBgpInfoPtrOutput() VpnConnectionBgpInfoPtrOutput
+	ToVpnConnectionBgpInfoPtrOutputWithContext(context.Context) VpnConnectionBgpInfoPtrOutput
+}
+
+type vpnConnectionBgpInfoPtrType VpnConnectionBgpInfoArgs
+
+func VpnConnectionBgpInfoPtr(v *VpnConnectionBgpInfoArgs) VpnConnectionBgpInfoPtrInput {
+	return (*vpnConnectionBgpInfoPtrType)(v)
+}
+
+func (*vpnConnectionBgpInfoPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VpnConnectionBgpInfo)(nil)).Elem()
+}
+
+func (i *vpnConnectionBgpInfoPtrType) ToVpnConnectionBgpInfoPtrOutput() VpnConnectionBgpInfoPtrOutput {
+	return i.ToVpnConnectionBgpInfoPtrOutputWithContext(context.Background())
+}
+
+func (i *vpnConnectionBgpInfoPtrType) ToVpnConnectionBgpInfoPtrOutputWithContext(ctx context.Context) VpnConnectionBgpInfoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpnConnectionBgpInfoPtrOutput)
+}
+
+type VpnConnectionBgpInfoOutput struct{ *pulumi.OutputState }
+
+func (VpnConnectionBgpInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpnConnectionBgpInfo)(nil)).Elem()
+}
+
+func (o VpnConnectionBgpInfoOutput) ToVpnConnectionBgpInfoOutput() VpnConnectionBgpInfoOutput {
+	return o
+}
+
+func (o VpnConnectionBgpInfoOutput) ToVpnConnectionBgpInfoOutputWithContext(ctx context.Context) VpnConnectionBgpInfoOutput {
+	return o
+}
+
+func (o VpnConnectionBgpInfoOutput) ToVpnConnectionBgpInfoPtrOutput() VpnConnectionBgpInfoPtrOutput {
+	return o.ToVpnConnectionBgpInfoPtrOutputWithContext(context.Background())
+}
+
+func (o VpnConnectionBgpInfoOutput) ToVpnConnectionBgpInfoPtrOutputWithContext(ctx context.Context) VpnConnectionBgpInfoPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VpnConnectionBgpInfo) *VpnConnectionBgpInfo {
+		return &v
+	}).(VpnConnectionBgpInfoPtrOutput)
+}
+
+// Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+func (o VpnConnectionBgpInfoOutput) EnableBgp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v VpnConnectionBgpInfo) *bool { return v.EnableBgp }).(pulumi.BoolPtrOutput)
+}
+
+// The ASN of the VPN gateway.
+func (o VpnConnectionBgpInfoOutput) LocalAsn() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v VpnConnectionBgpInfo) *int { return v.LocalAsn }).(pulumi.IntPtrOutput)
+}
+
+// The local tunnel IP, which is the BGP address configured on the VPN gateway and defaults to the first host address of BgpConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel subnet. If BgpConfig.EnableBgp is set to true, this parameter must be provided.
+func (o VpnConnectionBgpInfoOutput) LocalBgpIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionBgpInfo) *string { return v.LocalBgpIp }).(pulumi.StringPtrOutput)
+}
+
+// ASN of the customer gateway.
+func (o VpnConnectionBgpInfoOutput) PeerAsn() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v VpnConnectionBgpInfo) *int { return v.PeerAsn }).(pulumi.IntPtrOutput)
+}
+
+// BGP peer IP, that is, the BGP address on the customer gateway side.
+func (o VpnConnectionBgpInfoOutput) PeerBgpIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionBgpInfo) *string { return v.PeerBgpIp }).(pulumi.StringPtrOutput)
+}
+
+// Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
+func (o VpnConnectionBgpInfoOutput) SessionStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionBgpInfo) *string { return v.SessionStatus }).(pulumi.StringPtrOutput)
+}
+
+// CIDR address range for the local and peer IPs of the BGP session.
+func (o VpnConnectionBgpInfoOutput) TunnelCidr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionBgpInfo) *string { return v.TunnelCidr }).(pulumi.StringPtrOutput)
+}
+
+type VpnConnectionBgpInfoPtrOutput struct{ *pulumi.OutputState }
+
+func (VpnConnectionBgpInfoPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VpnConnectionBgpInfo)(nil)).Elem()
+}
+
+func (o VpnConnectionBgpInfoPtrOutput) ToVpnConnectionBgpInfoPtrOutput() VpnConnectionBgpInfoPtrOutput {
+	return o
+}
+
+func (o VpnConnectionBgpInfoPtrOutput) ToVpnConnectionBgpInfoPtrOutputWithContext(ctx context.Context) VpnConnectionBgpInfoPtrOutput {
+	return o
+}
+
+func (o VpnConnectionBgpInfoPtrOutput) Elem() VpnConnectionBgpInfoOutput {
+	return o.ApplyT(func(v *VpnConnectionBgpInfo) VpnConnectionBgpInfo {
+		if v != nil {
+			return *v
+		}
+		var ret VpnConnectionBgpInfo
+		return ret
+	}).(VpnConnectionBgpInfoOutput)
+}
+
+// Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+func (o VpnConnectionBgpInfoPtrOutput) EnableBgp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionBgpInfo) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.EnableBgp
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The ASN of the VPN gateway.
+func (o VpnConnectionBgpInfoPtrOutput) LocalAsn() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionBgpInfo) *int {
+		if v == nil {
+			return nil
+		}
+		return v.LocalAsn
+	}).(pulumi.IntPtrOutput)
+}
+
+// The local tunnel IP, which is the BGP address configured on the VPN gateway and defaults to the first host address of BgpConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel subnet. If BgpConfig.EnableBgp is set to true, this parameter must be provided.
+func (o VpnConnectionBgpInfoPtrOutput) LocalBgpIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionBgpInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LocalBgpIp
+	}).(pulumi.StringPtrOutput)
+}
+
+// ASN of the customer gateway.
+func (o VpnConnectionBgpInfoPtrOutput) PeerAsn() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionBgpInfo) *int {
+		if v == nil {
+			return nil
+		}
+		return v.PeerAsn
+	}).(pulumi.IntPtrOutput)
+}
+
+// BGP peer IP, that is, the BGP address on the customer gateway side.
+func (o VpnConnectionBgpInfoPtrOutput) PeerBgpIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionBgpInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PeerBgpIp
+	}).(pulumi.StringPtrOutput)
+}
+
+// Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
+func (o VpnConnectionBgpInfoPtrOutput) SessionStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionBgpInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SessionStatus
+	}).(pulumi.StringPtrOutput)
+}
+
+// CIDR address range for the local and peer IPs of the BGP session.
+func (o VpnConnectionBgpInfoPtrOutput) TunnelCidr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionBgpInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TunnelCidr
+	}).(pulumi.StringPtrOutput)
+}
+
+type VpnConnectionHealthChecker struct {
+	// Interval for performing health checks
+	CheckInterval *int `pulumi:"checkInterval"`
+	// Health check result. Up: Normal. Down: Abnormal.
+	CheckResult *string `pulumi:"checkResult"`
+	// ID of the IPsec connection health check
+	CheckerId *string `pulumi:"checkerId"`
+	// Health check unhealthy threshold. If the health check result is 'abnormal' for the specified number of consecutive times, the IPsec connection is considered unhealthy.
+	DownTime *int `pulumi:"downTime"`
+	// Health check source IP.
+	LocalIp *string `pulumi:"localIp"`
+	// Health check target IP.
+	RemoteIp *string `pulumi:"remoteIp"`
+	// Health check response timeout. If the IPsec connection does not respond correctly within the specified response time, it is considered 'abnormal' for health check.
+	Timeout *int `pulumi:"timeout"`
+	// Health check threshold. If the specified number of consecutive health checks are all 'healthy', the IPsec connection is considered 'healthy' by health check.
+	UpTime *int `pulumi:"upTime"`
+}
+
+// VpnConnectionHealthCheckerInput is an input type that accepts VpnConnectionHealthCheckerArgs and VpnConnectionHealthCheckerOutput values.
+// You can construct a concrete instance of `VpnConnectionHealthCheckerInput` via:
+//
+//	VpnConnectionHealthCheckerArgs{...}
+type VpnConnectionHealthCheckerInput interface {
+	pulumi.Input
+
+	ToVpnConnectionHealthCheckerOutput() VpnConnectionHealthCheckerOutput
+	ToVpnConnectionHealthCheckerOutputWithContext(context.Context) VpnConnectionHealthCheckerOutput
+}
+
+type VpnConnectionHealthCheckerArgs struct {
+	// Interval for performing health checks
+	CheckInterval pulumi.IntPtrInput `pulumi:"checkInterval"`
+	// Health check result. Up: Normal. Down: Abnormal.
+	CheckResult pulumi.StringPtrInput `pulumi:"checkResult"`
+	// ID of the IPsec connection health check
+	CheckerId pulumi.StringPtrInput `pulumi:"checkerId"`
+	// Health check unhealthy threshold. If the health check result is 'abnormal' for the specified number of consecutive times, the IPsec connection is considered unhealthy.
+	DownTime pulumi.IntPtrInput `pulumi:"downTime"`
+	// Health check source IP.
+	LocalIp pulumi.StringPtrInput `pulumi:"localIp"`
+	// Health check target IP.
+	RemoteIp pulumi.StringPtrInput `pulumi:"remoteIp"`
+	// Health check response timeout. If the IPsec connection does not respond correctly within the specified response time, it is considered 'abnormal' for health check.
+	Timeout pulumi.IntPtrInput `pulumi:"timeout"`
+	// Health check threshold. If the specified number of consecutive health checks are all 'healthy', the IPsec connection is considered 'healthy' by health check.
+	UpTime pulumi.IntPtrInput `pulumi:"upTime"`
+}
+
+func (VpnConnectionHealthCheckerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpnConnectionHealthChecker)(nil)).Elem()
+}
+
+func (i VpnConnectionHealthCheckerArgs) ToVpnConnectionHealthCheckerOutput() VpnConnectionHealthCheckerOutput {
+	return i.ToVpnConnectionHealthCheckerOutputWithContext(context.Background())
+}
+
+func (i VpnConnectionHealthCheckerArgs) ToVpnConnectionHealthCheckerOutputWithContext(ctx context.Context) VpnConnectionHealthCheckerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpnConnectionHealthCheckerOutput)
+}
+
+// VpnConnectionHealthCheckerArrayInput is an input type that accepts VpnConnectionHealthCheckerArray and VpnConnectionHealthCheckerArrayOutput values.
+// You can construct a concrete instance of `VpnConnectionHealthCheckerArrayInput` via:
+//
+//	VpnConnectionHealthCheckerArray{ VpnConnectionHealthCheckerArgs{...} }
+type VpnConnectionHealthCheckerArrayInput interface {
+	pulumi.Input
+
+	ToVpnConnectionHealthCheckerArrayOutput() VpnConnectionHealthCheckerArrayOutput
+	ToVpnConnectionHealthCheckerArrayOutputWithContext(context.Context) VpnConnectionHealthCheckerArrayOutput
+}
+
+type VpnConnectionHealthCheckerArray []VpnConnectionHealthCheckerInput
+
+func (VpnConnectionHealthCheckerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpnConnectionHealthChecker)(nil)).Elem()
+}
+
+func (i VpnConnectionHealthCheckerArray) ToVpnConnectionHealthCheckerArrayOutput() VpnConnectionHealthCheckerArrayOutput {
+	return i.ToVpnConnectionHealthCheckerArrayOutputWithContext(context.Background())
+}
+
+func (i VpnConnectionHealthCheckerArray) ToVpnConnectionHealthCheckerArrayOutputWithContext(ctx context.Context) VpnConnectionHealthCheckerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpnConnectionHealthCheckerArrayOutput)
+}
+
+type VpnConnectionHealthCheckerOutput struct{ *pulumi.OutputState }
+
+func (VpnConnectionHealthCheckerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpnConnectionHealthChecker)(nil)).Elem()
+}
+
+func (o VpnConnectionHealthCheckerOutput) ToVpnConnectionHealthCheckerOutput() VpnConnectionHealthCheckerOutput {
+	return o
+}
+
+func (o VpnConnectionHealthCheckerOutput) ToVpnConnectionHealthCheckerOutputWithContext(ctx context.Context) VpnConnectionHealthCheckerOutput {
+	return o
+}
+
+// Interval for performing health checks
+func (o VpnConnectionHealthCheckerOutput) CheckInterval() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v VpnConnectionHealthChecker) *int { return v.CheckInterval }).(pulumi.IntPtrOutput)
+}
+
+// Health check result. Up: Normal. Down: Abnormal.
+func (o VpnConnectionHealthCheckerOutput) CheckResult() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionHealthChecker) *string { return v.CheckResult }).(pulumi.StringPtrOutput)
+}
+
+// ID of the IPsec connection health check
+func (o VpnConnectionHealthCheckerOutput) CheckerId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionHealthChecker) *string { return v.CheckerId }).(pulumi.StringPtrOutput)
+}
+
+// Health check unhealthy threshold. If the health check result is 'abnormal' for the specified number of consecutive times, the IPsec connection is considered unhealthy.
+func (o VpnConnectionHealthCheckerOutput) DownTime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v VpnConnectionHealthChecker) *int { return v.DownTime }).(pulumi.IntPtrOutput)
+}
+
+// Health check source IP.
+func (o VpnConnectionHealthCheckerOutput) LocalIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionHealthChecker) *string { return v.LocalIp }).(pulumi.StringPtrOutput)
+}
+
+// Health check target IP.
+func (o VpnConnectionHealthCheckerOutput) RemoteIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionHealthChecker) *string { return v.RemoteIp }).(pulumi.StringPtrOutput)
+}
+
+// Health check response timeout. If the IPsec connection does not respond correctly within the specified response time, it is considered 'abnormal' for health check.
+func (o VpnConnectionHealthCheckerOutput) Timeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v VpnConnectionHealthChecker) *int { return v.Timeout }).(pulumi.IntPtrOutput)
+}
+
+// Health check threshold. If the specified number of consecutive health checks are all 'healthy', the IPsec connection is considered 'healthy' by health check.
+func (o VpnConnectionHealthCheckerOutput) UpTime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v VpnConnectionHealthChecker) *int { return v.UpTime }).(pulumi.IntPtrOutput)
+}
+
+type VpnConnectionHealthCheckerArrayOutput struct{ *pulumi.OutputState }
+
+func (VpnConnectionHealthCheckerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpnConnectionHealthChecker)(nil)).Elem()
+}
+
+func (o VpnConnectionHealthCheckerArrayOutput) ToVpnConnectionHealthCheckerArrayOutput() VpnConnectionHealthCheckerArrayOutput {
+	return o
+}
+
+func (o VpnConnectionHealthCheckerArrayOutput) ToVpnConnectionHealthCheckerArrayOutputWithContext(ctx context.Context) VpnConnectionHealthCheckerArrayOutput {
+	return o
+}
+
+func (o VpnConnectionHealthCheckerArrayOutput) Index(i pulumi.IntInput) VpnConnectionHealthCheckerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VpnConnectionHealthChecker {
+		return vs[0].([]VpnConnectionHealthChecker)[vs[1].(int)]
+	}).(VpnConnectionHealthCheckerOutput)
+}
+
+type VpnConnectionIkeConfig struct {
+	// Authentication algorithm for phase one.
+	AuthAlg *string `pulumi:"authAlg"`
+	// DH (Diffie-Hellman) key exchange algorithm used in phase 1 negotiation. Valid values: group1, group2 (default), group5, group14
+	DhGroup *string `pulumi:"dhGroup"`
+	// Encryption algorithm for phase 1 negotiation.
+	EncAlg *string `pulumi:"encAlg"`
+	// Lifetime of the SA for phase 1 negotiation. After the lifetime is exceeded, negotiation restarts. Value range: 900~86400, unit: seconds. Default: 86400.
+	Lifetime *int `pulumi:"lifetime"`
+	// Identifier of the VPN gateway, used for phase 1 negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the current VPN gateway's egress IP address. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ; and digits are allowed.
+	LocalId *string `pulumi:"localId"`
+	// Negotiation mode for phase 1. This parameter is required only when IkeConfig.Version is ikev1. Valid values: main (default), aggressive
+	Mode *string `pulumi:"mode"`
+	// Pre-shared key used for identity authentication between the VPN gateway and the user gateway in phase 1. Must not exceed 100 characters and can only contain uppercase and lowercase letters, special symbols ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and numbers.
+	Psk *string `pulumi:"psk"`
+	// Identifier of the customer gateway, used for phase one negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the public IP address of the currently selected customer gateway. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and digits are allowed.
+	RemoteId *string `pulumi:"remoteId"`
+	// Version of the IKE key exchange protocol. Valid values: ikev1, ikev2 (default).
+	Version *string `pulumi:"version"`
+}
+
+// VpnConnectionIkeConfigInput is an input type that accepts VpnConnectionIkeConfigArgs and VpnConnectionIkeConfigOutput values.
+// You can construct a concrete instance of `VpnConnectionIkeConfigInput` via:
+//
+//	VpnConnectionIkeConfigArgs{...}
+type VpnConnectionIkeConfigInput interface {
+	pulumi.Input
+
+	ToVpnConnectionIkeConfigOutput() VpnConnectionIkeConfigOutput
+	ToVpnConnectionIkeConfigOutputWithContext(context.Context) VpnConnectionIkeConfigOutput
+}
+
+type VpnConnectionIkeConfigArgs struct {
+	// Authentication algorithm for phase one.
+	AuthAlg pulumi.StringPtrInput `pulumi:"authAlg"`
+	// DH (Diffie-Hellman) key exchange algorithm used in phase 1 negotiation. Valid values: group1, group2 (default), group5, group14
+	DhGroup pulumi.StringPtrInput `pulumi:"dhGroup"`
+	// Encryption algorithm for phase 1 negotiation.
+	EncAlg pulumi.StringPtrInput `pulumi:"encAlg"`
+	// Lifetime of the SA for phase 1 negotiation. After the lifetime is exceeded, negotiation restarts. Value range: 900~86400, unit: seconds. Default: 86400.
+	Lifetime pulumi.IntPtrInput `pulumi:"lifetime"`
+	// Identifier of the VPN gateway, used for phase 1 negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the current VPN gateway's egress IP address. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ; and digits are allowed.
+	LocalId pulumi.StringPtrInput `pulumi:"localId"`
+	// Negotiation mode for phase 1. This parameter is required only when IkeConfig.Version is ikev1. Valid values: main (default), aggressive
+	Mode pulumi.StringPtrInput `pulumi:"mode"`
+	// Pre-shared key used for identity authentication between the VPN gateway and the user gateway in phase 1. Must not exceed 100 characters and can only contain uppercase and lowercase letters, special symbols ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and numbers.
+	Psk pulumi.StringPtrInput `pulumi:"psk"`
+	// Identifier of the customer gateway, used for phase one negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the public IP address of the currently selected customer gateway. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and digits are allowed.
+	RemoteId pulumi.StringPtrInput `pulumi:"remoteId"`
+	// Version of the IKE key exchange protocol. Valid values: ikev1, ikev2 (default).
+	Version pulumi.StringPtrInput `pulumi:"version"`
+}
+
+func (VpnConnectionIkeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpnConnectionIkeConfig)(nil)).Elem()
+}
+
+func (i VpnConnectionIkeConfigArgs) ToVpnConnectionIkeConfigOutput() VpnConnectionIkeConfigOutput {
+	return i.ToVpnConnectionIkeConfigOutputWithContext(context.Background())
+}
+
+func (i VpnConnectionIkeConfigArgs) ToVpnConnectionIkeConfigOutputWithContext(ctx context.Context) VpnConnectionIkeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpnConnectionIkeConfigOutput)
+}
+
+func (i VpnConnectionIkeConfigArgs) ToVpnConnectionIkeConfigPtrOutput() VpnConnectionIkeConfigPtrOutput {
+	return i.ToVpnConnectionIkeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i VpnConnectionIkeConfigArgs) ToVpnConnectionIkeConfigPtrOutputWithContext(ctx context.Context) VpnConnectionIkeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpnConnectionIkeConfigOutput).ToVpnConnectionIkeConfigPtrOutputWithContext(ctx)
+}
+
+// VpnConnectionIkeConfigPtrInput is an input type that accepts VpnConnectionIkeConfigArgs, VpnConnectionIkeConfigPtr and VpnConnectionIkeConfigPtrOutput values.
+// You can construct a concrete instance of `VpnConnectionIkeConfigPtrInput` via:
+//
+//	        VpnConnectionIkeConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type VpnConnectionIkeConfigPtrInput interface {
+	pulumi.Input
+
+	ToVpnConnectionIkeConfigPtrOutput() VpnConnectionIkeConfigPtrOutput
+	ToVpnConnectionIkeConfigPtrOutputWithContext(context.Context) VpnConnectionIkeConfigPtrOutput
+}
+
+type vpnConnectionIkeConfigPtrType VpnConnectionIkeConfigArgs
+
+func VpnConnectionIkeConfigPtr(v *VpnConnectionIkeConfigArgs) VpnConnectionIkeConfigPtrInput {
+	return (*vpnConnectionIkeConfigPtrType)(v)
+}
+
+func (*vpnConnectionIkeConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VpnConnectionIkeConfig)(nil)).Elem()
+}
+
+func (i *vpnConnectionIkeConfigPtrType) ToVpnConnectionIkeConfigPtrOutput() VpnConnectionIkeConfigPtrOutput {
+	return i.ToVpnConnectionIkeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *vpnConnectionIkeConfigPtrType) ToVpnConnectionIkeConfigPtrOutputWithContext(ctx context.Context) VpnConnectionIkeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpnConnectionIkeConfigPtrOutput)
+}
+
+type VpnConnectionIkeConfigOutput struct{ *pulumi.OutputState }
+
+func (VpnConnectionIkeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpnConnectionIkeConfig)(nil)).Elem()
+}
+
+func (o VpnConnectionIkeConfigOutput) ToVpnConnectionIkeConfigOutput() VpnConnectionIkeConfigOutput {
+	return o
+}
+
+func (o VpnConnectionIkeConfigOutput) ToVpnConnectionIkeConfigOutputWithContext(ctx context.Context) VpnConnectionIkeConfigOutput {
+	return o
+}
+
+func (o VpnConnectionIkeConfigOutput) ToVpnConnectionIkeConfigPtrOutput() VpnConnectionIkeConfigPtrOutput {
+	return o.ToVpnConnectionIkeConfigPtrOutputWithContext(context.Background())
+}
+
+func (o VpnConnectionIkeConfigOutput) ToVpnConnectionIkeConfigPtrOutputWithContext(ctx context.Context) VpnConnectionIkeConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VpnConnectionIkeConfig) *VpnConnectionIkeConfig {
+		return &v
+	}).(VpnConnectionIkeConfigPtrOutput)
+}
+
+// Authentication algorithm for phase one.
+func (o VpnConnectionIkeConfigOutput) AuthAlg() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionIkeConfig) *string { return v.AuthAlg }).(pulumi.StringPtrOutput)
+}
+
+// DH (Diffie-Hellman) key exchange algorithm used in phase 1 negotiation. Valid values: group1, group2 (default), group5, group14
+func (o VpnConnectionIkeConfigOutput) DhGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionIkeConfig) *string { return v.DhGroup }).(pulumi.StringPtrOutput)
+}
+
+// Encryption algorithm for phase 1 negotiation.
+func (o VpnConnectionIkeConfigOutput) EncAlg() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionIkeConfig) *string { return v.EncAlg }).(pulumi.StringPtrOutput)
+}
+
+// Lifetime of the SA for phase 1 negotiation. After the lifetime is exceeded, negotiation restarts. Value range: 900~86400, unit: seconds. Default: 86400.
+func (o VpnConnectionIkeConfigOutput) Lifetime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v VpnConnectionIkeConfig) *int { return v.Lifetime }).(pulumi.IntPtrOutput)
+}
+
+// Identifier of the VPN gateway, used for phase 1 negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the current VPN gateway's egress IP address. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ; and digits are allowed.
+func (o VpnConnectionIkeConfigOutput) LocalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionIkeConfig) *string { return v.LocalId }).(pulumi.StringPtrOutput)
+}
+
+// Negotiation mode for phase 1. This parameter is required only when IkeConfig.Version is ikev1. Valid values: main (default), aggressive
+func (o VpnConnectionIkeConfigOutput) Mode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionIkeConfig) *string { return v.Mode }).(pulumi.StringPtrOutput)
+}
+
+// Pre-shared key used for identity authentication between the VPN gateway and the user gateway in phase 1. Must not exceed 100 characters and can only contain uppercase and lowercase letters, special symbols ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and numbers.
+func (o VpnConnectionIkeConfigOutput) Psk() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionIkeConfig) *string { return v.Psk }).(pulumi.StringPtrOutput)
+}
+
+// Identifier of the customer gateway, used for phase one negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the public IP address of the currently selected customer gateway. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and digits are allowed.
+func (o VpnConnectionIkeConfigOutput) RemoteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionIkeConfig) *string { return v.RemoteId }).(pulumi.StringPtrOutput)
+}
+
+// Version of the IKE key exchange protocol. Valid values: ikev1, ikev2 (default).
+func (o VpnConnectionIkeConfigOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionIkeConfig) *string { return v.Version }).(pulumi.StringPtrOutput)
+}
+
+type VpnConnectionIkeConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (VpnConnectionIkeConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VpnConnectionIkeConfig)(nil)).Elem()
+}
+
+func (o VpnConnectionIkeConfigPtrOutput) ToVpnConnectionIkeConfigPtrOutput() VpnConnectionIkeConfigPtrOutput {
+	return o
+}
+
+func (o VpnConnectionIkeConfigPtrOutput) ToVpnConnectionIkeConfigPtrOutputWithContext(ctx context.Context) VpnConnectionIkeConfigPtrOutput {
+	return o
+}
+
+func (o VpnConnectionIkeConfigPtrOutput) Elem() VpnConnectionIkeConfigOutput {
+	return o.ApplyT(func(v *VpnConnectionIkeConfig) VpnConnectionIkeConfig {
+		if v != nil {
+			return *v
+		}
+		var ret VpnConnectionIkeConfig
+		return ret
+	}).(VpnConnectionIkeConfigOutput)
+}
+
+// Authentication algorithm for phase one.
+func (o VpnConnectionIkeConfigPtrOutput) AuthAlg() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionIkeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AuthAlg
+	}).(pulumi.StringPtrOutput)
+}
+
+// DH (Diffie-Hellman) key exchange algorithm used in phase 1 negotiation. Valid values: group1, group2 (default), group5, group14
+func (o VpnConnectionIkeConfigPtrOutput) DhGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionIkeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DhGroup
+	}).(pulumi.StringPtrOutput)
+}
+
+// Encryption algorithm for phase 1 negotiation.
+func (o VpnConnectionIkeConfigPtrOutput) EncAlg() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionIkeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EncAlg
+	}).(pulumi.StringPtrOutput)
+}
+
+// Lifetime of the SA for phase 1 negotiation. After the lifetime is exceeded, negotiation restarts. Value range: 900~86400, unit: seconds. Default: 86400.
+func (o VpnConnectionIkeConfigPtrOutput) Lifetime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionIkeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Lifetime
+	}).(pulumi.IntPtrOutput)
+}
+
+// Identifier of the VPN gateway, used for phase 1 negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the current VPN gateway's egress IP address. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ; and digits are allowed.
+func (o VpnConnectionIkeConfigPtrOutput) LocalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionIkeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LocalId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Negotiation mode for phase 1. This parameter is required only when IkeConfig.Version is ikev1. Valid values: main (default), aggressive
+func (o VpnConnectionIkeConfigPtrOutput) Mode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionIkeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Mode
+	}).(pulumi.StringPtrOutput)
+}
+
+// Pre-shared key used for identity authentication between the VPN gateway and the user gateway in phase 1. Must not exceed 100 characters and can only contain uppercase and lowercase letters, special symbols ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and numbers.
+func (o VpnConnectionIkeConfigPtrOutput) Psk() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionIkeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Psk
+	}).(pulumi.StringPtrOutput)
+}
+
+// Identifier of the customer gateway, used for phase one negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the public IP address of the currently selected customer gateway. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and digits are allowed.
+func (o VpnConnectionIkeConfigPtrOutput) RemoteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionIkeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RemoteId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Version of the IKE key exchange protocol. Valid values: ikev1, ikev2 (default).
+func (o VpnConnectionIkeConfigPtrOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionIkeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Version
+	}).(pulumi.StringPtrOutput)
+}
+
+type VpnConnectionIpsecConfig struct {
+	// Authentication algorithm for phase 2 negotiation
+	AuthAlg *string `pulumi:"authAlg"`
+	// DH (Diffie-Hellman) key exchange algorithm used in phase 2
+	DhGroup *string `pulumi:"dhGroup"`
+	// Encryption algorithm for phase 2 negotiation
+	EncAlg *string `pulumi:"encAlg"`
+	// Lifetime of the SA for phase 2 negotiation. Negotiation will be re-initiated after the lifetime expires.
+	Lifetime *int `pulumi:"lifetime"`
+}
+
+// VpnConnectionIpsecConfigInput is an input type that accepts VpnConnectionIpsecConfigArgs and VpnConnectionIpsecConfigOutput values.
+// You can construct a concrete instance of `VpnConnectionIpsecConfigInput` via:
+//
+//	VpnConnectionIpsecConfigArgs{...}
+type VpnConnectionIpsecConfigInput interface {
+	pulumi.Input
+
+	ToVpnConnectionIpsecConfigOutput() VpnConnectionIpsecConfigOutput
+	ToVpnConnectionIpsecConfigOutputWithContext(context.Context) VpnConnectionIpsecConfigOutput
+}
+
+type VpnConnectionIpsecConfigArgs struct {
+	// Authentication algorithm for phase 2 negotiation
+	AuthAlg pulumi.StringPtrInput `pulumi:"authAlg"`
+	// DH (Diffie-Hellman) key exchange algorithm used in phase 2
+	DhGroup pulumi.StringPtrInput `pulumi:"dhGroup"`
+	// Encryption algorithm for phase 2 negotiation
+	EncAlg pulumi.StringPtrInput `pulumi:"encAlg"`
+	// Lifetime of the SA for phase 2 negotiation. Negotiation will be re-initiated after the lifetime expires.
+	Lifetime pulumi.IntPtrInput `pulumi:"lifetime"`
+}
+
+func (VpnConnectionIpsecConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpnConnectionIpsecConfig)(nil)).Elem()
+}
+
+func (i VpnConnectionIpsecConfigArgs) ToVpnConnectionIpsecConfigOutput() VpnConnectionIpsecConfigOutput {
+	return i.ToVpnConnectionIpsecConfigOutputWithContext(context.Background())
+}
+
+func (i VpnConnectionIpsecConfigArgs) ToVpnConnectionIpsecConfigOutputWithContext(ctx context.Context) VpnConnectionIpsecConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpnConnectionIpsecConfigOutput)
+}
+
+func (i VpnConnectionIpsecConfigArgs) ToVpnConnectionIpsecConfigPtrOutput() VpnConnectionIpsecConfigPtrOutput {
+	return i.ToVpnConnectionIpsecConfigPtrOutputWithContext(context.Background())
+}
+
+func (i VpnConnectionIpsecConfigArgs) ToVpnConnectionIpsecConfigPtrOutputWithContext(ctx context.Context) VpnConnectionIpsecConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpnConnectionIpsecConfigOutput).ToVpnConnectionIpsecConfigPtrOutputWithContext(ctx)
+}
+
+// VpnConnectionIpsecConfigPtrInput is an input type that accepts VpnConnectionIpsecConfigArgs, VpnConnectionIpsecConfigPtr and VpnConnectionIpsecConfigPtrOutput values.
+// You can construct a concrete instance of `VpnConnectionIpsecConfigPtrInput` via:
+//
+//	        VpnConnectionIpsecConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type VpnConnectionIpsecConfigPtrInput interface {
+	pulumi.Input
+
+	ToVpnConnectionIpsecConfigPtrOutput() VpnConnectionIpsecConfigPtrOutput
+	ToVpnConnectionIpsecConfigPtrOutputWithContext(context.Context) VpnConnectionIpsecConfigPtrOutput
+}
+
+type vpnConnectionIpsecConfigPtrType VpnConnectionIpsecConfigArgs
+
+func VpnConnectionIpsecConfigPtr(v *VpnConnectionIpsecConfigArgs) VpnConnectionIpsecConfigPtrInput {
+	return (*vpnConnectionIpsecConfigPtrType)(v)
+}
+
+func (*vpnConnectionIpsecConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VpnConnectionIpsecConfig)(nil)).Elem()
+}
+
+func (i *vpnConnectionIpsecConfigPtrType) ToVpnConnectionIpsecConfigPtrOutput() VpnConnectionIpsecConfigPtrOutput {
+	return i.ToVpnConnectionIpsecConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *vpnConnectionIpsecConfigPtrType) ToVpnConnectionIpsecConfigPtrOutputWithContext(ctx context.Context) VpnConnectionIpsecConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpnConnectionIpsecConfigPtrOutput)
+}
+
+type VpnConnectionIpsecConfigOutput struct{ *pulumi.OutputState }
+
+func (VpnConnectionIpsecConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpnConnectionIpsecConfig)(nil)).Elem()
+}
+
+func (o VpnConnectionIpsecConfigOutput) ToVpnConnectionIpsecConfigOutput() VpnConnectionIpsecConfigOutput {
+	return o
+}
+
+func (o VpnConnectionIpsecConfigOutput) ToVpnConnectionIpsecConfigOutputWithContext(ctx context.Context) VpnConnectionIpsecConfigOutput {
+	return o
+}
+
+func (o VpnConnectionIpsecConfigOutput) ToVpnConnectionIpsecConfigPtrOutput() VpnConnectionIpsecConfigPtrOutput {
+	return o.ToVpnConnectionIpsecConfigPtrOutputWithContext(context.Background())
+}
+
+func (o VpnConnectionIpsecConfigOutput) ToVpnConnectionIpsecConfigPtrOutputWithContext(ctx context.Context) VpnConnectionIpsecConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VpnConnectionIpsecConfig) *VpnConnectionIpsecConfig {
+		return &v
+	}).(VpnConnectionIpsecConfigPtrOutput)
+}
+
+// Authentication algorithm for phase 2 negotiation
+func (o VpnConnectionIpsecConfigOutput) AuthAlg() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionIpsecConfig) *string { return v.AuthAlg }).(pulumi.StringPtrOutput)
+}
+
+// DH (Diffie-Hellman) key exchange algorithm used in phase 2
+func (o VpnConnectionIpsecConfigOutput) DhGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionIpsecConfig) *string { return v.DhGroup }).(pulumi.StringPtrOutput)
+}
+
+// Encryption algorithm for phase 2 negotiation
+func (o VpnConnectionIpsecConfigOutput) EncAlg() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionIpsecConfig) *string { return v.EncAlg }).(pulumi.StringPtrOutput)
+}
+
+// Lifetime of the SA for phase 2 negotiation. Negotiation will be re-initiated after the lifetime expires.
+func (o VpnConnectionIpsecConfigOutput) Lifetime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v VpnConnectionIpsecConfig) *int { return v.Lifetime }).(pulumi.IntPtrOutput)
+}
+
+type VpnConnectionIpsecConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (VpnConnectionIpsecConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VpnConnectionIpsecConfig)(nil)).Elem()
+}
+
+func (o VpnConnectionIpsecConfigPtrOutput) ToVpnConnectionIpsecConfigPtrOutput() VpnConnectionIpsecConfigPtrOutput {
+	return o
+}
+
+func (o VpnConnectionIpsecConfigPtrOutput) ToVpnConnectionIpsecConfigPtrOutputWithContext(ctx context.Context) VpnConnectionIpsecConfigPtrOutput {
+	return o
+}
+
+func (o VpnConnectionIpsecConfigPtrOutput) Elem() VpnConnectionIpsecConfigOutput {
+	return o.ApplyT(func(v *VpnConnectionIpsecConfig) VpnConnectionIpsecConfig {
+		if v != nil {
+			return *v
+		}
+		var ret VpnConnectionIpsecConfig
+		return ret
+	}).(VpnConnectionIpsecConfigOutput)
+}
+
+// Authentication algorithm for phase 2 negotiation
+func (o VpnConnectionIpsecConfigPtrOutput) AuthAlg() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionIpsecConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AuthAlg
+	}).(pulumi.StringPtrOutput)
+}
+
+// DH (Diffie-Hellman) key exchange algorithm used in phase 2
+func (o VpnConnectionIpsecConfigPtrOutput) DhGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionIpsecConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DhGroup
+	}).(pulumi.StringPtrOutput)
+}
+
+// Encryption algorithm for phase 2 negotiation
+func (o VpnConnectionIpsecConfigPtrOutput) EncAlg() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionIpsecConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EncAlg
+	}).(pulumi.StringPtrOutput)
+}
+
+// Lifetime of the SA for phase 2 negotiation. Negotiation will be re-initiated after the lifetime expires.
+func (o VpnConnectionIpsecConfigPtrOutput) Lifetime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionIpsecConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Lifetime
+	}).(pulumi.IntPtrOutput)
+}
+
+type VpnConnectionTag struct {
+	// Tag key.
 	Key *string `pulumi:"key"`
-	// VPN网关标签的标签值（Value）。参数   - N：表示标签值的序号，取值范围：1～20。多个标签值之间用&分隔。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。大小写敏感，不能以空格开头或结尾。说明传入Tags.N.Value则必须传入Tags.N.Key。
+	// Tag value
+	Value *string `pulumi:"value"`
+}
+
+// VpnConnectionTagInput is an input type that accepts VpnConnectionTagArgs and VpnConnectionTagOutput values.
+// You can construct a concrete instance of `VpnConnectionTagInput` via:
+//
+//	VpnConnectionTagArgs{...}
+type VpnConnectionTagInput interface {
+	pulumi.Input
+
+	ToVpnConnectionTagOutput() VpnConnectionTagOutput
+	ToVpnConnectionTagOutputWithContext(context.Context) VpnConnectionTagOutput
+}
+
+type VpnConnectionTagArgs struct {
+	// Tag key.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (VpnConnectionTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpnConnectionTag)(nil)).Elem()
+}
+
+func (i VpnConnectionTagArgs) ToVpnConnectionTagOutput() VpnConnectionTagOutput {
+	return i.ToVpnConnectionTagOutputWithContext(context.Background())
+}
+
+func (i VpnConnectionTagArgs) ToVpnConnectionTagOutputWithContext(ctx context.Context) VpnConnectionTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpnConnectionTagOutput)
+}
+
+// VpnConnectionTagArrayInput is an input type that accepts VpnConnectionTagArray and VpnConnectionTagArrayOutput values.
+// You can construct a concrete instance of `VpnConnectionTagArrayInput` via:
+//
+//	VpnConnectionTagArray{ VpnConnectionTagArgs{...} }
+type VpnConnectionTagArrayInput interface {
+	pulumi.Input
+
+	ToVpnConnectionTagArrayOutput() VpnConnectionTagArrayOutput
+	ToVpnConnectionTagArrayOutputWithContext(context.Context) VpnConnectionTagArrayOutput
+}
+
+type VpnConnectionTagArray []VpnConnectionTagInput
+
+func (VpnConnectionTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpnConnectionTag)(nil)).Elem()
+}
+
+func (i VpnConnectionTagArray) ToVpnConnectionTagArrayOutput() VpnConnectionTagArrayOutput {
+	return i.ToVpnConnectionTagArrayOutputWithContext(context.Background())
+}
+
+func (i VpnConnectionTagArray) ToVpnConnectionTagArrayOutputWithContext(ctx context.Context) VpnConnectionTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpnConnectionTagArrayOutput)
+}
+
+type VpnConnectionTagOutput struct{ *pulumi.OutputState }
+
+func (VpnConnectionTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpnConnectionTag)(nil)).Elem()
+}
+
+func (o VpnConnectionTagOutput) ToVpnConnectionTagOutput() VpnConnectionTagOutput {
+	return o
+}
+
+func (o VpnConnectionTagOutput) ToVpnConnectionTagOutputWithContext(ctx context.Context) VpnConnectionTagOutput {
+	return o
+}
+
+// Tag key.
+func (o VpnConnectionTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value
+func (o VpnConnectionTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type VpnConnectionTagArrayOutput struct{ *pulumi.OutputState }
+
+func (VpnConnectionTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpnConnectionTag)(nil)).Elem()
+}
+
+func (o VpnConnectionTagArrayOutput) ToVpnConnectionTagArrayOutput() VpnConnectionTagArrayOutput {
+	return o
+}
+
+func (o VpnConnectionTagArrayOutput) ToVpnConnectionTagArrayOutputWithContext(ctx context.Context) VpnConnectionTagArrayOutput {
+	return o
+}
+
+func (o VpnConnectionTagArrayOutput) Index(i pulumi.IntInput) VpnConnectionTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VpnConnectionTag {
+		return vs[0].([]VpnConnectionTag)[vs[1].(int)]
+	}).(VpnConnectionTagOutput)
+}
+
+type VpnConnectionTunnelOption struct {
+	// ID of the customer gateway associated with the IPsec connection.
+	CustomerGatewayId *string `pulumi:"customerGatewayId"`
+	// Status of the DPD feature.
+	DpdAction *string `pulumi:"dpdAction"`
+	// IKE configuration information for the IPsec connection.
+	IkeConfig *VpnConnectionTunnelOptionIkeConfig `pulumi:"ikeConfig"`
+	// Information about the IPsec configuration in the IPsec connection.
+	IpsecConfig *VpnConnectionTunnelOptionIpsecConfig `pulumi:"ipsecConfig"`
+	// Whether to enable NAT traversal
+	NatTraversal *bool `pulumi:"natTraversal"`
+	// The role of the tunnel.
+	Role *string `pulumi:"role"`
+	// BGP session information.
+	TunnelBgpInfo *VpnConnectionTunnelOptionTunnelBgpInfo `pulumi:"tunnelBgpInfo"`
+	// Tunnel ID of the IPsec connection.
+	TunnelId *string `pulumi:"tunnelId"`
+}
+
+// VpnConnectionTunnelOptionInput is an input type that accepts VpnConnectionTunnelOptionArgs and VpnConnectionTunnelOptionOutput values.
+// You can construct a concrete instance of `VpnConnectionTunnelOptionInput` via:
+//
+//	VpnConnectionTunnelOptionArgs{...}
+type VpnConnectionTunnelOptionInput interface {
+	pulumi.Input
+
+	ToVpnConnectionTunnelOptionOutput() VpnConnectionTunnelOptionOutput
+	ToVpnConnectionTunnelOptionOutputWithContext(context.Context) VpnConnectionTunnelOptionOutput
+}
+
+type VpnConnectionTunnelOptionArgs struct {
+	// ID of the customer gateway associated with the IPsec connection.
+	CustomerGatewayId pulumi.StringPtrInput `pulumi:"customerGatewayId"`
+	// Status of the DPD feature.
+	DpdAction pulumi.StringPtrInput `pulumi:"dpdAction"`
+	// IKE configuration information for the IPsec connection.
+	IkeConfig VpnConnectionTunnelOptionIkeConfigPtrInput `pulumi:"ikeConfig"`
+	// Information about the IPsec configuration in the IPsec connection.
+	IpsecConfig VpnConnectionTunnelOptionIpsecConfigPtrInput `pulumi:"ipsecConfig"`
+	// Whether to enable NAT traversal
+	NatTraversal pulumi.BoolPtrInput `pulumi:"natTraversal"`
+	// The role of the tunnel.
+	Role pulumi.StringPtrInput `pulumi:"role"`
+	// BGP session information.
+	TunnelBgpInfo VpnConnectionTunnelOptionTunnelBgpInfoPtrInput `pulumi:"tunnelBgpInfo"`
+	// Tunnel ID of the IPsec connection.
+	TunnelId pulumi.StringPtrInput `pulumi:"tunnelId"`
+}
+
+func (VpnConnectionTunnelOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpnConnectionTunnelOption)(nil)).Elem()
+}
+
+func (i VpnConnectionTunnelOptionArgs) ToVpnConnectionTunnelOptionOutput() VpnConnectionTunnelOptionOutput {
+	return i.ToVpnConnectionTunnelOptionOutputWithContext(context.Background())
+}
+
+func (i VpnConnectionTunnelOptionArgs) ToVpnConnectionTunnelOptionOutputWithContext(ctx context.Context) VpnConnectionTunnelOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpnConnectionTunnelOptionOutput)
+}
+
+// VpnConnectionTunnelOptionArrayInput is an input type that accepts VpnConnectionTunnelOptionArray and VpnConnectionTunnelOptionArrayOutput values.
+// You can construct a concrete instance of `VpnConnectionTunnelOptionArrayInput` via:
+//
+//	VpnConnectionTunnelOptionArray{ VpnConnectionTunnelOptionArgs{...} }
+type VpnConnectionTunnelOptionArrayInput interface {
+	pulumi.Input
+
+	ToVpnConnectionTunnelOptionArrayOutput() VpnConnectionTunnelOptionArrayOutput
+	ToVpnConnectionTunnelOptionArrayOutputWithContext(context.Context) VpnConnectionTunnelOptionArrayOutput
+}
+
+type VpnConnectionTunnelOptionArray []VpnConnectionTunnelOptionInput
+
+func (VpnConnectionTunnelOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpnConnectionTunnelOption)(nil)).Elem()
+}
+
+func (i VpnConnectionTunnelOptionArray) ToVpnConnectionTunnelOptionArrayOutput() VpnConnectionTunnelOptionArrayOutput {
+	return i.ToVpnConnectionTunnelOptionArrayOutputWithContext(context.Background())
+}
+
+func (i VpnConnectionTunnelOptionArray) ToVpnConnectionTunnelOptionArrayOutputWithContext(ctx context.Context) VpnConnectionTunnelOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpnConnectionTunnelOptionArrayOutput)
+}
+
+type VpnConnectionTunnelOptionOutput struct{ *pulumi.OutputState }
+
+func (VpnConnectionTunnelOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpnConnectionTunnelOption)(nil)).Elem()
+}
+
+func (o VpnConnectionTunnelOptionOutput) ToVpnConnectionTunnelOptionOutput() VpnConnectionTunnelOptionOutput {
+	return o
+}
+
+func (o VpnConnectionTunnelOptionOutput) ToVpnConnectionTunnelOptionOutputWithContext(ctx context.Context) VpnConnectionTunnelOptionOutput {
+	return o
+}
+
+// ID of the customer gateway associated with the IPsec connection.
+func (o VpnConnectionTunnelOptionOutput) CustomerGatewayId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOption) *string { return v.CustomerGatewayId }).(pulumi.StringPtrOutput)
+}
+
+// Status of the DPD feature.
+func (o VpnConnectionTunnelOptionOutput) DpdAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOption) *string { return v.DpdAction }).(pulumi.StringPtrOutput)
+}
+
+// IKE configuration information for the IPsec connection.
+func (o VpnConnectionTunnelOptionOutput) IkeConfig() VpnConnectionTunnelOptionIkeConfigPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOption) *VpnConnectionTunnelOptionIkeConfig { return v.IkeConfig }).(VpnConnectionTunnelOptionIkeConfigPtrOutput)
+}
+
+// Information about the IPsec configuration in the IPsec connection.
+func (o VpnConnectionTunnelOptionOutput) IpsecConfig() VpnConnectionTunnelOptionIpsecConfigPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOption) *VpnConnectionTunnelOptionIpsecConfig { return v.IpsecConfig }).(VpnConnectionTunnelOptionIpsecConfigPtrOutput)
+}
+
+// Whether to enable NAT traversal
+func (o VpnConnectionTunnelOptionOutput) NatTraversal() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOption) *bool { return v.NatTraversal }).(pulumi.BoolPtrOutput)
+}
+
+// The role of the tunnel.
+func (o VpnConnectionTunnelOptionOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOption) *string { return v.Role }).(pulumi.StringPtrOutput)
+}
+
+// BGP session information.
+func (o VpnConnectionTunnelOptionOutput) TunnelBgpInfo() VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOption) *VpnConnectionTunnelOptionTunnelBgpInfo { return v.TunnelBgpInfo }).(VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput)
+}
+
+// Tunnel ID of the IPsec connection.
+func (o VpnConnectionTunnelOptionOutput) TunnelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOption) *string { return v.TunnelId }).(pulumi.StringPtrOutput)
+}
+
+type VpnConnectionTunnelOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (VpnConnectionTunnelOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VpnConnectionTunnelOption)(nil)).Elem()
+}
+
+func (o VpnConnectionTunnelOptionArrayOutput) ToVpnConnectionTunnelOptionArrayOutput() VpnConnectionTunnelOptionArrayOutput {
+	return o
+}
+
+func (o VpnConnectionTunnelOptionArrayOutput) ToVpnConnectionTunnelOptionArrayOutputWithContext(ctx context.Context) VpnConnectionTunnelOptionArrayOutput {
+	return o
+}
+
+func (o VpnConnectionTunnelOptionArrayOutput) Index(i pulumi.IntInput) VpnConnectionTunnelOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VpnConnectionTunnelOption {
+		return vs[0].([]VpnConnectionTunnelOption)[vs[1].(int)]
+	}).(VpnConnectionTunnelOptionOutput)
+}
+
+type VpnConnectionTunnelOptionIkeConfig struct {
+	// Authentication algorithm for phase one.
+	AuthAlg *string `pulumi:"authAlg"`
+	// DH (Diffie-Hellman) key exchange algorithm used in phase 1 negotiation. Valid values: group1, group2 (default), group5, group14
+	DhGroup *string `pulumi:"dhGroup"`
+	// Encryption algorithm for phase 1 negotiation.
+	EncAlg *string `pulumi:"encAlg"`
+	// Lifetime of the SA for phase 1 negotiation. After the lifetime is exceeded, negotiation restarts. Value range: 900~86400, unit: seconds. Default: 86400.
+	Lifetime *int `pulumi:"lifetime"`
+	// Identifier of the VPN gateway, used for phase 1 negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the current VPN gateway's egress IP address. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ; and digits are allowed.
+	LocalId *string `pulumi:"localId"`
+	// Negotiation mode for phase 1. This parameter is required only when IkeConfig.Version is ikev1. Valid values: main (default), aggressive
+	Mode *string `pulumi:"mode"`
+	// Pre-shared key used for identity authentication between the VPN gateway and the user gateway in phase 1. Must not exceed 100 characters and can only contain uppercase and lowercase letters, special symbols ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and numbers.
+	Psk *string `pulumi:"psk"`
+	// Identifier of the customer gateway, used for phase one negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the public IP address of the currently selected customer gateway. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and digits are allowed.
+	RemoteId *string `pulumi:"remoteId"`
+	// Version of the IKE key exchange protocol. Valid values: ikev1, ikev2 (default).
+	Version *string `pulumi:"version"`
+}
+
+// VpnConnectionTunnelOptionIkeConfigInput is an input type that accepts VpnConnectionTunnelOptionIkeConfigArgs and VpnConnectionTunnelOptionIkeConfigOutput values.
+// You can construct a concrete instance of `VpnConnectionTunnelOptionIkeConfigInput` via:
+//
+//	VpnConnectionTunnelOptionIkeConfigArgs{...}
+type VpnConnectionTunnelOptionIkeConfigInput interface {
+	pulumi.Input
+
+	ToVpnConnectionTunnelOptionIkeConfigOutput() VpnConnectionTunnelOptionIkeConfigOutput
+	ToVpnConnectionTunnelOptionIkeConfigOutputWithContext(context.Context) VpnConnectionTunnelOptionIkeConfigOutput
+}
+
+type VpnConnectionTunnelOptionIkeConfigArgs struct {
+	// Authentication algorithm for phase one.
+	AuthAlg pulumi.StringPtrInput `pulumi:"authAlg"`
+	// DH (Diffie-Hellman) key exchange algorithm used in phase 1 negotiation. Valid values: group1, group2 (default), group5, group14
+	DhGroup pulumi.StringPtrInput `pulumi:"dhGroup"`
+	// Encryption algorithm for phase 1 negotiation.
+	EncAlg pulumi.StringPtrInput `pulumi:"encAlg"`
+	// Lifetime of the SA for phase 1 negotiation. After the lifetime is exceeded, negotiation restarts. Value range: 900~86400, unit: seconds. Default: 86400.
+	Lifetime pulumi.IntPtrInput `pulumi:"lifetime"`
+	// Identifier of the VPN gateway, used for phase 1 negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the current VPN gateway's egress IP address. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ; and digits are allowed.
+	LocalId pulumi.StringPtrInput `pulumi:"localId"`
+	// Negotiation mode for phase 1. This parameter is required only when IkeConfig.Version is ikev1. Valid values: main (default), aggressive
+	Mode pulumi.StringPtrInput `pulumi:"mode"`
+	// Pre-shared key used for identity authentication between the VPN gateway and the user gateway in phase 1. Must not exceed 100 characters and can only contain uppercase and lowercase letters, special symbols ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and numbers.
+	Psk pulumi.StringPtrInput `pulumi:"psk"`
+	// Identifier of the customer gateway, used for phase one negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the public IP address of the currently selected customer gateway. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and digits are allowed.
+	RemoteId pulumi.StringPtrInput `pulumi:"remoteId"`
+	// Version of the IKE key exchange protocol. Valid values: ikev1, ikev2 (default).
+	Version pulumi.StringPtrInput `pulumi:"version"`
+}
+
+func (VpnConnectionTunnelOptionIkeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpnConnectionTunnelOptionIkeConfig)(nil)).Elem()
+}
+
+func (i VpnConnectionTunnelOptionIkeConfigArgs) ToVpnConnectionTunnelOptionIkeConfigOutput() VpnConnectionTunnelOptionIkeConfigOutput {
+	return i.ToVpnConnectionTunnelOptionIkeConfigOutputWithContext(context.Background())
+}
+
+func (i VpnConnectionTunnelOptionIkeConfigArgs) ToVpnConnectionTunnelOptionIkeConfigOutputWithContext(ctx context.Context) VpnConnectionTunnelOptionIkeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpnConnectionTunnelOptionIkeConfigOutput)
+}
+
+func (i VpnConnectionTunnelOptionIkeConfigArgs) ToVpnConnectionTunnelOptionIkeConfigPtrOutput() VpnConnectionTunnelOptionIkeConfigPtrOutput {
+	return i.ToVpnConnectionTunnelOptionIkeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i VpnConnectionTunnelOptionIkeConfigArgs) ToVpnConnectionTunnelOptionIkeConfigPtrOutputWithContext(ctx context.Context) VpnConnectionTunnelOptionIkeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpnConnectionTunnelOptionIkeConfigOutput).ToVpnConnectionTunnelOptionIkeConfigPtrOutputWithContext(ctx)
+}
+
+// VpnConnectionTunnelOptionIkeConfigPtrInput is an input type that accepts VpnConnectionTunnelOptionIkeConfigArgs, VpnConnectionTunnelOptionIkeConfigPtr and VpnConnectionTunnelOptionIkeConfigPtrOutput values.
+// You can construct a concrete instance of `VpnConnectionTunnelOptionIkeConfigPtrInput` via:
+//
+//	        VpnConnectionTunnelOptionIkeConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type VpnConnectionTunnelOptionIkeConfigPtrInput interface {
+	pulumi.Input
+
+	ToVpnConnectionTunnelOptionIkeConfigPtrOutput() VpnConnectionTunnelOptionIkeConfigPtrOutput
+	ToVpnConnectionTunnelOptionIkeConfigPtrOutputWithContext(context.Context) VpnConnectionTunnelOptionIkeConfigPtrOutput
+}
+
+type vpnConnectionTunnelOptionIkeConfigPtrType VpnConnectionTunnelOptionIkeConfigArgs
+
+func VpnConnectionTunnelOptionIkeConfigPtr(v *VpnConnectionTunnelOptionIkeConfigArgs) VpnConnectionTunnelOptionIkeConfigPtrInput {
+	return (*vpnConnectionTunnelOptionIkeConfigPtrType)(v)
+}
+
+func (*vpnConnectionTunnelOptionIkeConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VpnConnectionTunnelOptionIkeConfig)(nil)).Elem()
+}
+
+func (i *vpnConnectionTunnelOptionIkeConfigPtrType) ToVpnConnectionTunnelOptionIkeConfigPtrOutput() VpnConnectionTunnelOptionIkeConfigPtrOutput {
+	return i.ToVpnConnectionTunnelOptionIkeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *vpnConnectionTunnelOptionIkeConfigPtrType) ToVpnConnectionTunnelOptionIkeConfigPtrOutputWithContext(ctx context.Context) VpnConnectionTunnelOptionIkeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpnConnectionTunnelOptionIkeConfigPtrOutput)
+}
+
+type VpnConnectionTunnelOptionIkeConfigOutput struct{ *pulumi.OutputState }
+
+func (VpnConnectionTunnelOptionIkeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpnConnectionTunnelOptionIkeConfig)(nil)).Elem()
+}
+
+func (o VpnConnectionTunnelOptionIkeConfigOutput) ToVpnConnectionTunnelOptionIkeConfigOutput() VpnConnectionTunnelOptionIkeConfigOutput {
+	return o
+}
+
+func (o VpnConnectionTunnelOptionIkeConfigOutput) ToVpnConnectionTunnelOptionIkeConfigOutputWithContext(ctx context.Context) VpnConnectionTunnelOptionIkeConfigOutput {
+	return o
+}
+
+func (o VpnConnectionTunnelOptionIkeConfigOutput) ToVpnConnectionTunnelOptionIkeConfigPtrOutput() VpnConnectionTunnelOptionIkeConfigPtrOutput {
+	return o.ToVpnConnectionTunnelOptionIkeConfigPtrOutputWithContext(context.Background())
+}
+
+func (o VpnConnectionTunnelOptionIkeConfigOutput) ToVpnConnectionTunnelOptionIkeConfigPtrOutputWithContext(ctx context.Context) VpnConnectionTunnelOptionIkeConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VpnConnectionTunnelOptionIkeConfig) *VpnConnectionTunnelOptionIkeConfig {
+		return &v
+	}).(VpnConnectionTunnelOptionIkeConfigPtrOutput)
+}
+
+// Authentication algorithm for phase one.
+func (o VpnConnectionTunnelOptionIkeConfigOutput) AuthAlg() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOptionIkeConfig) *string { return v.AuthAlg }).(pulumi.StringPtrOutput)
+}
+
+// DH (Diffie-Hellman) key exchange algorithm used in phase 1 negotiation. Valid values: group1, group2 (default), group5, group14
+func (o VpnConnectionTunnelOptionIkeConfigOutput) DhGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOptionIkeConfig) *string { return v.DhGroup }).(pulumi.StringPtrOutput)
+}
+
+// Encryption algorithm for phase 1 negotiation.
+func (o VpnConnectionTunnelOptionIkeConfigOutput) EncAlg() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOptionIkeConfig) *string { return v.EncAlg }).(pulumi.StringPtrOutput)
+}
+
+// Lifetime of the SA for phase 1 negotiation. After the lifetime is exceeded, negotiation restarts. Value range: 900~86400, unit: seconds. Default: 86400.
+func (o VpnConnectionTunnelOptionIkeConfigOutput) Lifetime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOptionIkeConfig) *int { return v.Lifetime }).(pulumi.IntPtrOutput)
+}
+
+// Identifier of the VPN gateway, used for phase 1 negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the current VPN gateway's egress IP address. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ; and digits are allowed.
+func (o VpnConnectionTunnelOptionIkeConfigOutput) LocalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOptionIkeConfig) *string { return v.LocalId }).(pulumi.StringPtrOutput)
+}
+
+// Negotiation mode for phase 1. This parameter is required only when IkeConfig.Version is ikev1. Valid values: main (default), aggressive
+func (o VpnConnectionTunnelOptionIkeConfigOutput) Mode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOptionIkeConfig) *string { return v.Mode }).(pulumi.StringPtrOutput)
+}
+
+// Pre-shared key used for identity authentication between the VPN gateway and the user gateway in phase 1. Must not exceed 100 characters and can only contain uppercase and lowercase letters, special symbols ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and numbers.
+func (o VpnConnectionTunnelOptionIkeConfigOutput) Psk() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOptionIkeConfig) *string { return v.Psk }).(pulumi.StringPtrOutput)
+}
+
+// Identifier of the customer gateway, used for phase one negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the public IP address of the currently selected customer gateway. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and digits are allowed.
+func (o VpnConnectionTunnelOptionIkeConfigOutput) RemoteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOptionIkeConfig) *string { return v.RemoteId }).(pulumi.StringPtrOutput)
+}
+
+// Version of the IKE key exchange protocol. Valid values: ikev1, ikev2 (default).
+func (o VpnConnectionTunnelOptionIkeConfigOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOptionIkeConfig) *string { return v.Version }).(pulumi.StringPtrOutput)
+}
+
+type VpnConnectionTunnelOptionIkeConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (VpnConnectionTunnelOptionIkeConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VpnConnectionTunnelOptionIkeConfig)(nil)).Elem()
+}
+
+func (o VpnConnectionTunnelOptionIkeConfigPtrOutput) ToVpnConnectionTunnelOptionIkeConfigPtrOutput() VpnConnectionTunnelOptionIkeConfigPtrOutput {
+	return o
+}
+
+func (o VpnConnectionTunnelOptionIkeConfigPtrOutput) ToVpnConnectionTunnelOptionIkeConfigPtrOutputWithContext(ctx context.Context) VpnConnectionTunnelOptionIkeConfigPtrOutput {
+	return o
+}
+
+func (o VpnConnectionTunnelOptionIkeConfigPtrOutput) Elem() VpnConnectionTunnelOptionIkeConfigOutput {
+	return o.ApplyT(func(v *VpnConnectionTunnelOptionIkeConfig) VpnConnectionTunnelOptionIkeConfig {
+		if v != nil {
+			return *v
+		}
+		var ret VpnConnectionTunnelOptionIkeConfig
+		return ret
+	}).(VpnConnectionTunnelOptionIkeConfigOutput)
+}
+
+// Authentication algorithm for phase one.
+func (o VpnConnectionTunnelOptionIkeConfigPtrOutput) AuthAlg() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionTunnelOptionIkeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AuthAlg
+	}).(pulumi.StringPtrOutput)
+}
+
+// DH (Diffie-Hellman) key exchange algorithm used in phase 1 negotiation. Valid values: group1, group2 (default), group5, group14
+func (o VpnConnectionTunnelOptionIkeConfigPtrOutput) DhGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionTunnelOptionIkeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DhGroup
+	}).(pulumi.StringPtrOutput)
+}
+
+// Encryption algorithm for phase 1 negotiation.
+func (o VpnConnectionTunnelOptionIkeConfigPtrOutput) EncAlg() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionTunnelOptionIkeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EncAlg
+	}).(pulumi.StringPtrOutput)
+}
+
+// Lifetime of the SA for phase 1 negotiation. After the lifetime is exceeded, negotiation restarts. Value range: 900~86400, unit: seconds. Default: 86400.
+func (o VpnConnectionTunnelOptionIkeConfigPtrOutput) Lifetime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionTunnelOptionIkeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Lifetime
+	}).(pulumi.IntPtrOutput)
+}
+
+// Identifier of the VPN gateway, used for phase 1 negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the current VPN gateway's egress IP address. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ; and digits are allowed.
+func (o VpnConnectionTunnelOptionIkeConfigPtrOutput) LocalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionTunnelOptionIkeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LocalId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Negotiation mode for phase 1. This parameter is required only when IkeConfig.Version is ikev1. Valid values: main (default), aggressive
+func (o VpnConnectionTunnelOptionIkeConfigPtrOutput) Mode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionTunnelOptionIkeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Mode
+	}).(pulumi.StringPtrOutput)
+}
+
+// Pre-shared key used for identity authentication between the VPN gateway and the user gateway in phase 1. Must not exceed 100 characters and can only contain uppercase and lowercase letters, special symbols ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and numbers.
+func (o VpnConnectionTunnelOptionIkeConfigPtrOutput) Psk() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionTunnelOptionIkeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Psk
+	}).(pulumi.StringPtrOutput)
+}
+
+// Identifier of the customer gateway, used for phase one negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the public IP address of the currently selected customer gateway. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and digits are allowed.
+func (o VpnConnectionTunnelOptionIkeConfigPtrOutput) RemoteId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionTunnelOptionIkeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RemoteId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Version of the IKE key exchange protocol. Valid values: ikev1, ikev2 (default).
+func (o VpnConnectionTunnelOptionIkeConfigPtrOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionTunnelOptionIkeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Version
+	}).(pulumi.StringPtrOutput)
+}
+
+type VpnConnectionTunnelOptionIpsecConfig struct {
+	// Authentication algorithm for phase 2 negotiation
+	AuthAlg *string `pulumi:"authAlg"`
+	// DH (Diffie-Hellman) key exchange algorithm used in phase 2
+	DhGroup *string `pulumi:"dhGroup"`
+	// Encryption algorithm for phase 2 negotiation
+	EncAlg *string `pulumi:"encAlg"`
+	// Lifetime of the SA for phase 2 negotiation. Negotiation will be re-initiated after the lifetime expires.
+	Lifetime *int `pulumi:"lifetime"`
+}
+
+// VpnConnectionTunnelOptionIpsecConfigInput is an input type that accepts VpnConnectionTunnelOptionIpsecConfigArgs and VpnConnectionTunnelOptionIpsecConfigOutput values.
+// You can construct a concrete instance of `VpnConnectionTunnelOptionIpsecConfigInput` via:
+//
+//	VpnConnectionTunnelOptionIpsecConfigArgs{...}
+type VpnConnectionTunnelOptionIpsecConfigInput interface {
+	pulumi.Input
+
+	ToVpnConnectionTunnelOptionIpsecConfigOutput() VpnConnectionTunnelOptionIpsecConfigOutput
+	ToVpnConnectionTunnelOptionIpsecConfigOutputWithContext(context.Context) VpnConnectionTunnelOptionIpsecConfigOutput
+}
+
+type VpnConnectionTunnelOptionIpsecConfigArgs struct {
+	// Authentication algorithm for phase 2 negotiation
+	AuthAlg pulumi.StringPtrInput `pulumi:"authAlg"`
+	// DH (Diffie-Hellman) key exchange algorithm used in phase 2
+	DhGroup pulumi.StringPtrInput `pulumi:"dhGroup"`
+	// Encryption algorithm for phase 2 negotiation
+	EncAlg pulumi.StringPtrInput `pulumi:"encAlg"`
+	// Lifetime of the SA for phase 2 negotiation. Negotiation will be re-initiated after the lifetime expires.
+	Lifetime pulumi.IntPtrInput `pulumi:"lifetime"`
+}
+
+func (VpnConnectionTunnelOptionIpsecConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpnConnectionTunnelOptionIpsecConfig)(nil)).Elem()
+}
+
+func (i VpnConnectionTunnelOptionIpsecConfigArgs) ToVpnConnectionTunnelOptionIpsecConfigOutput() VpnConnectionTunnelOptionIpsecConfigOutput {
+	return i.ToVpnConnectionTunnelOptionIpsecConfigOutputWithContext(context.Background())
+}
+
+func (i VpnConnectionTunnelOptionIpsecConfigArgs) ToVpnConnectionTunnelOptionIpsecConfigOutputWithContext(ctx context.Context) VpnConnectionTunnelOptionIpsecConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpnConnectionTunnelOptionIpsecConfigOutput)
+}
+
+func (i VpnConnectionTunnelOptionIpsecConfigArgs) ToVpnConnectionTunnelOptionIpsecConfigPtrOutput() VpnConnectionTunnelOptionIpsecConfigPtrOutput {
+	return i.ToVpnConnectionTunnelOptionIpsecConfigPtrOutputWithContext(context.Background())
+}
+
+func (i VpnConnectionTunnelOptionIpsecConfigArgs) ToVpnConnectionTunnelOptionIpsecConfigPtrOutputWithContext(ctx context.Context) VpnConnectionTunnelOptionIpsecConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpnConnectionTunnelOptionIpsecConfigOutput).ToVpnConnectionTunnelOptionIpsecConfigPtrOutputWithContext(ctx)
+}
+
+// VpnConnectionTunnelOptionIpsecConfigPtrInput is an input type that accepts VpnConnectionTunnelOptionIpsecConfigArgs, VpnConnectionTunnelOptionIpsecConfigPtr and VpnConnectionTunnelOptionIpsecConfigPtrOutput values.
+// You can construct a concrete instance of `VpnConnectionTunnelOptionIpsecConfigPtrInput` via:
+//
+//	        VpnConnectionTunnelOptionIpsecConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type VpnConnectionTunnelOptionIpsecConfigPtrInput interface {
+	pulumi.Input
+
+	ToVpnConnectionTunnelOptionIpsecConfigPtrOutput() VpnConnectionTunnelOptionIpsecConfigPtrOutput
+	ToVpnConnectionTunnelOptionIpsecConfigPtrOutputWithContext(context.Context) VpnConnectionTunnelOptionIpsecConfigPtrOutput
+}
+
+type vpnConnectionTunnelOptionIpsecConfigPtrType VpnConnectionTunnelOptionIpsecConfigArgs
+
+func VpnConnectionTunnelOptionIpsecConfigPtr(v *VpnConnectionTunnelOptionIpsecConfigArgs) VpnConnectionTunnelOptionIpsecConfigPtrInput {
+	return (*vpnConnectionTunnelOptionIpsecConfigPtrType)(v)
+}
+
+func (*vpnConnectionTunnelOptionIpsecConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VpnConnectionTunnelOptionIpsecConfig)(nil)).Elem()
+}
+
+func (i *vpnConnectionTunnelOptionIpsecConfigPtrType) ToVpnConnectionTunnelOptionIpsecConfigPtrOutput() VpnConnectionTunnelOptionIpsecConfigPtrOutput {
+	return i.ToVpnConnectionTunnelOptionIpsecConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *vpnConnectionTunnelOptionIpsecConfigPtrType) ToVpnConnectionTunnelOptionIpsecConfigPtrOutputWithContext(ctx context.Context) VpnConnectionTunnelOptionIpsecConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpnConnectionTunnelOptionIpsecConfigPtrOutput)
+}
+
+type VpnConnectionTunnelOptionIpsecConfigOutput struct{ *pulumi.OutputState }
+
+func (VpnConnectionTunnelOptionIpsecConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpnConnectionTunnelOptionIpsecConfig)(nil)).Elem()
+}
+
+func (o VpnConnectionTunnelOptionIpsecConfigOutput) ToVpnConnectionTunnelOptionIpsecConfigOutput() VpnConnectionTunnelOptionIpsecConfigOutput {
+	return o
+}
+
+func (o VpnConnectionTunnelOptionIpsecConfigOutput) ToVpnConnectionTunnelOptionIpsecConfigOutputWithContext(ctx context.Context) VpnConnectionTunnelOptionIpsecConfigOutput {
+	return o
+}
+
+func (o VpnConnectionTunnelOptionIpsecConfigOutput) ToVpnConnectionTunnelOptionIpsecConfigPtrOutput() VpnConnectionTunnelOptionIpsecConfigPtrOutput {
+	return o.ToVpnConnectionTunnelOptionIpsecConfigPtrOutputWithContext(context.Background())
+}
+
+func (o VpnConnectionTunnelOptionIpsecConfigOutput) ToVpnConnectionTunnelOptionIpsecConfigPtrOutputWithContext(ctx context.Context) VpnConnectionTunnelOptionIpsecConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VpnConnectionTunnelOptionIpsecConfig) *VpnConnectionTunnelOptionIpsecConfig {
+		return &v
+	}).(VpnConnectionTunnelOptionIpsecConfigPtrOutput)
+}
+
+// Authentication algorithm for phase 2 negotiation
+func (o VpnConnectionTunnelOptionIpsecConfigOutput) AuthAlg() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOptionIpsecConfig) *string { return v.AuthAlg }).(pulumi.StringPtrOutput)
+}
+
+// DH (Diffie-Hellman) key exchange algorithm used in phase 2
+func (o VpnConnectionTunnelOptionIpsecConfigOutput) DhGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOptionIpsecConfig) *string { return v.DhGroup }).(pulumi.StringPtrOutput)
+}
+
+// Encryption algorithm for phase 2 negotiation
+func (o VpnConnectionTunnelOptionIpsecConfigOutput) EncAlg() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOptionIpsecConfig) *string { return v.EncAlg }).(pulumi.StringPtrOutput)
+}
+
+// Lifetime of the SA for phase 2 negotiation. Negotiation will be re-initiated after the lifetime expires.
+func (o VpnConnectionTunnelOptionIpsecConfigOutput) Lifetime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOptionIpsecConfig) *int { return v.Lifetime }).(pulumi.IntPtrOutput)
+}
+
+type VpnConnectionTunnelOptionIpsecConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (VpnConnectionTunnelOptionIpsecConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VpnConnectionTunnelOptionIpsecConfig)(nil)).Elem()
+}
+
+func (o VpnConnectionTunnelOptionIpsecConfigPtrOutput) ToVpnConnectionTunnelOptionIpsecConfigPtrOutput() VpnConnectionTunnelOptionIpsecConfigPtrOutput {
+	return o
+}
+
+func (o VpnConnectionTunnelOptionIpsecConfigPtrOutput) ToVpnConnectionTunnelOptionIpsecConfigPtrOutputWithContext(ctx context.Context) VpnConnectionTunnelOptionIpsecConfigPtrOutput {
+	return o
+}
+
+func (o VpnConnectionTunnelOptionIpsecConfigPtrOutput) Elem() VpnConnectionTunnelOptionIpsecConfigOutput {
+	return o.ApplyT(func(v *VpnConnectionTunnelOptionIpsecConfig) VpnConnectionTunnelOptionIpsecConfig {
+		if v != nil {
+			return *v
+		}
+		var ret VpnConnectionTunnelOptionIpsecConfig
+		return ret
+	}).(VpnConnectionTunnelOptionIpsecConfigOutput)
+}
+
+// Authentication algorithm for phase 2 negotiation
+func (o VpnConnectionTunnelOptionIpsecConfigPtrOutput) AuthAlg() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionTunnelOptionIpsecConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AuthAlg
+	}).(pulumi.StringPtrOutput)
+}
+
+// DH (Diffie-Hellman) key exchange algorithm used in phase 2
+func (o VpnConnectionTunnelOptionIpsecConfigPtrOutput) DhGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionTunnelOptionIpsecConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DhGroup
+	}).(pulumi.StringPtrOutput)
+}
+
+// Encryption algorithm for phase 2 negotiation
+func (o VpnConnectionTunnelOptionIpsecConfigPtrOutput) EncAlg() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionTunnelOptionIpsecConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EncAlg
+	}).(pulumi.StringPtrOutput)
+}
+
+// Lifetime of the SA for phase 2 negotiation. Negotiation will be re-initiated after the lifetime expires.
+func (o VpnConnectionTunnelOptionIpsecConfigPtrOutput) Lifetime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionTunnelOptionIpsecConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Lifetime
+	}).(pulumi.IntPtrOutput)
+}
+
+type VpnConnectionTunnelOptionTunnelBgpInfo struct {
+	// BGP address. Defaults to the first host address of TunnelOptions.N.BGPConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel CIDR block. If EnableTunnelsBgp is set to true, this parameter must be specified.
+	LocalBgpIp *string `pulumi:"localBgpIp"`
+	// The CIDR address range for the local and peer IPs of the BGP session. This range must be within the 169.254.0.0/16 subnet with a subnet mask length of 30. If EnableTunnelsBgp is set to true, this parameter must be provided.
+	TunnelCidr *string `pulumi:"tunnelCidr"`
+}
+
+// VpnConnectionTunnelOptionTunnelBgpInfoInput is an input type that accepts VpnConnectionTunnelOptionTunnelBgpInfoArgs and VpnConnectionTunnelOptionTunnelBgpInfoOutput values.
+// You can construct a concrete instance of `VpnConnectionTunnelOptionTunnelBgpInfoInput` via:
+//
+//	VpnConnectionTunnelOptionTunnelBgpInfoArgs{...}
+type VpnConnectionTunnelOptionTunnelBgpInfoInput interface {
+	pulumi.Input
+
+	ToVpnConnectionTunnelOptionTunnelBgpInfoOutput() VpnConnectionTunnelOptionTunnelBgpInfoOutput
+	ToVpnConnectionTunnelOptionTunnelBgpInfoOutputWithContext(context.Context) VpnConnectionTunnelOptionTunnelBgpInfoOutput
+}
+
+type VpnConnectionTunnelOptionTunnelBgpInfoArgs struct {
+	// BGP address. Defaults to the first host address of TunnelOptions.N.BGPConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel CIDR block. If EnableTunnelsBgp is set to true, this parameter must be specified.
+	LocalBgpIp pulumi.StringPtrInput `pulumi:"localBgpIp"`
+	// The CIDR address range for the local and peer IPs of the BGP session. This range must be within the 169.254.0.0/16 subnet with a subnet mask length of 30. If EnableTunnelsBgp is set to true, this parameter must be provided.
+	TunnelCidr pulumi.StringPtrInput `pulumi:"tunnelCidr"`
+}
+
+func (VpnConnectionTunnelOptionTunnelBgpInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpnConnectionTunnelOptionTunnelBgpInfo)(nil)).Elem()
+}
+
+func (i VpnConnectionTunnelOptionTunnelBgpInfoArgs) ToVpnConnectionTunnelOptionTunnelBgpInfoOutput() VpnConnectionTunnelOptionTunnelBgpInfoOutput {
+	return i.ToVpnConnectionTunnelOptionTunnelBgpInfoOutputWithContext(context.Background())
+}
+
+func (i VpnConnectionTunnelOptionTunnelBgpInfoArgs) ToVpnConnectionTunnelOptionTunnelBgpInfoOutputWithContext(ctx context.Context) VpnConnectionTunnelOptionTunnelBgpInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpnConnectionTunnelOptionTunnelBgpInfoOutput)
+}
+
+func (i VpnConnectionTunnelOptionTunnelBgpInfoArgs) ToVpnConnectionTunnelOptionTunnelBgpInfoPtrOutput() VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput {
+	return i.ToVpnConnectionTunnelOptionTunnelBgpInfoPtrOutputWithContext(context.Background())
+}
+
+func (i VpnConnectionTunnelOptionTunnelBgpInfoArgs) ToVpnConnectionTunnelOptionTunnelBgpInfoPtrOutputWithContext(ctx context.Context) VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpnConnectionTunnelOptionTunnelBgpInfoOutput).ToVpnConnectionTunnelOptionTunnelBgpInfoPtrOutputWithContext(ctx)
+}
+
+// VpnConnectionTunnelOptionTunnelBgpInfoPtrInput is an input type that accepts VpnConnectionTunnelOptionTunnelBgpInfoArgs, VpnConnectionTunnelOptionTunnelBgpInfoPtr and VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput values.
+// You can construct a concrete instance of `VpnConnectionTunnelOptionTunnelBgpInfoPtrInput` via:
+//
+//	        VpnConnectionTunnelOptionTunnelBgpInfoArgs{...}
+//
+//	or:
+//
+//	        nil
+type VpnConnectionTunnelOptionTunnelBgpInfoPtrInput interface {
+	pulumi.Input
+
+	ToVpnConnectionTunnelOptionTunnelBgpInfoPtrOutput() VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput
+	ToVpnConnectionTunnelOptionTunnelBgpInfoPtrOutputWithContext(context.Context) VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput
+}
+
+type vpnConnectionTunnelOptionTunnelBgpInfoPtrType VpnConnectionTunnelOptionTunnelBgpInfoArgs
+
+func VpnConnectionTunnelOptionTunnelBgpInfoPtr(v *VpnConnectionTunnelOptionTunnelBgpInfoArgs) VpnConnectionTunnelOptionTunnelBgpInfoPtrInput {
+	return (*vpnConnectionTunnelOptionTunnelBgpInfoPtrType)(v)
+}
+
+func (*vpnConnectionTunnelOptionTunnelBgpInfoPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VpnConnectionTunnelOptionTunnelBgpInfo)(nil)).Elem()
+}
+
+func (i *vpnConnectionTunnelOptionTunnelBgpInfoPtrType) ToVpnConnectionTunnelOptionTunnelBgpInfoPtrOutput() VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput {
+	return i.ToVpnConnectionTunnelOptionTunnelBgpInfoPtrOutputWithContext(context.Background())
+}
+
+func (i *vpnConnectionTunnelOptionTunnelBgpInfoPtrType) ToVpnConnectionTunnelOptionTunnelBgpInfoPtrOutputWithContext(ctx context.Context) VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput)
+}
+
+type VpnConnectionTunnelOptionTunnelBgpInfoOutput struct{ *pulumi.OutputState }
+
+func (VpnConnectionTunnelOptionTunnelBgpInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VpnConnectionTunnelOptionTunnelBgpInfo)(nil)).Elem()
+}
+
+func (o VpnConnectionTunnelOptionTunnelBgpInfoOutput) ToVpnConnectionTunnelOptionTunnelBgpInfoOutput() VpnConnectionTunnelOptionTunnelBgpInfoOutput {
+	return o
+}
+
+func (o VpnConnectionTunnelOptionTunnelBgpInfoOutput) ToVpnConnectionTunnelOptionTunnelBgpInfoOutputWithContext(ctx context.Context) VpnConnectionTunnelOptionTunnelBgpInfoOutput {
+	return o
+}
+
+func (o VpnConnectionTunnelOptionTunnelBgpInfoOutput) ToVpnConnectionTunnelOptionTunnelBgpInfoPtrOutput() VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput {
+	return o.ToVpnConnectionTunnelOptionTunnelBgpInfoPtrOutputWithContext(context.Background())
+}
+
+func (o VpnConnectionTunnelOptionTunnelBgpInfoOutput) ToVpnConnectionTunnelOptionTunnelBgpInfoPtrOutputWithContext(ctx context.Context) VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VpnConnectionTunnelOptionTunnelBgpInfo) *VpnConnectionTunnelOptionTunnelBgpInfo {
+		return &v
+	}).(VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput)
+}
+
+// BGP address. Defaults to the first host address of TunnelOptions.N.BGPConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel CIDR block. If EnableTunnelsBgp is set to true, this parameter must be specified.
+func (o VpnConnectionTunnelOptionTunnelBgpInfoOutput) LocalBgpIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOptionTunnelBgpInfo) *string { return v.LocalBgpIp }).(pulumi.StringPtrOutput)
+}
+
+// The CIDR address range for the local and peer IPs of the BGP session. This range must be within the 169.254.0.0/16 subnet with a subnet mask length of 30. If EnableTunnelsBgp is set to true, this parameter must be provided.
+func (o VpnConnectionTunnelOptionTunnelBgpInfoOutput) TunnelCidr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VpnConnectionTunnelOptionTunnelBgpInfo) *string { return v.TunnelCidr }).(pulumi.StringPtrOutput)
+}
+
+type VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput struct{ *pulumi.OutputState }
+
+func (VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VpnConnectionTunnelOptionTunnelBgpInfo)(nil)).Elem()
+}
+
+func (o VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput) ToVpnConnectionTunnelOptionTunnelBgpInfoPtrOutput() VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput {
+	return o
+}
+
+func (o VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput) ToVpnConnectionTunnelOptionTunnelBgpInfoPtrOutputWithContext(ctx context.Context) VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput {
+	return o
+}
+
+func (o VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput) Elem() VpnConnectionTunnelOptionTunnelBgpInfoOutput {
+	return o.ApplyT(func(v *VpnConnectionTunnelOptionTunnelBgpInfo) VpnConnectionTunnelOptionTunnelBgpInfo {
+		if v != nil {
+			return *v
+		}
+		var ret VpnConnectionTunnelOptionTunnelBgpInfo
+		return ret
+	}).(VpnConnectionTunnelOptionTunnelBgpInfoOutput)
+}
+
+// BGP address. Defaults to the first host address of TunnelOptions.N.BGPConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel CIDR block. If EnableTunnelsBgp is set to true, this parameter must be specified.
+func (o VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput) LocalBgpIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionTunnelOptionTunnelBgpInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LocalBgpIp
+	}).(pulumi.StringPtrOutput)
+}
+
+// The CIDR address range for the local and peer IPs of the BGP session. This range must be within the 169.254.0.0/16 subnet with a subnet mask length of 30. If EnableTunnelsBgp is set to true, this parameter must be provided.
+func (o VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput) TunnelCidr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VpnConnectionTunnelOptionTunnelBgpInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TunnelCidr
+	}).(pulumi.StringPtrOutput)
+}
+
+type VpnGatewayTag struct {
+	// VPN gateway tag key (Key). Parameter   - N: Indicates the sequence number of the tag key, value range: 1–20. Multiple tag keys are separated by &. Naming rules: Cannot start with any combination of volc: or sys: (case-insensitive). Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length limit: 1–128 characters. Note: Tag keys for the same resource must not be duplicated.
+	Key *string `pulumi:"key"`
+	// VPN gateway tag value (Value). Parameter   - N: Indicates the sequence number of the tag value, value range: 1–20. Multiple tag values are separated by &. Naming rules: Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length limit: 0–256 characters. Case-sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
 	Value *string `pulumi:"value"`
 }
 
@@ -138,9 +1937,9 @@ type VpnGatewayTagInput interface {
 }
 
 type VpnGatewayTagArgs struct {
-	// VPN网关标签的标签键（Key）。参数   - N：表示标签键的序号，取值范围：1～20。多个标签键之间用&分隔。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。说明同一资源的标签键不允许重复。
+	// VPN gateway tag key (Key). Parameter   - N: Indicates the sequence number of the tag key, value range: 1–20. Multiple tag keys are separated by &. Naming rules: Cannot start with any combination of volc: or sys: (case-insensitive). Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length limit: 1–128 characters. Note: Tag keys for the same resource must not be duplicated.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// VPN网关标签的标签值（Value）。参数   - N：表示标签值的序号，取值范围：1～20。多个标签值之间用&分隔。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。大小写敏感，不能以空格开头或结尾。说明传入Tags.N.Value则必须传入Tags.N.Key。
+	// VPN gateway tag value (Value). Parameter   - N: Indicates the sequence number of the tag value, value range: 1–20. Multiple tag values are separated by &. Naming rules: Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length limit: 0–256 characters. Case-sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -195,12 +1994,12 @@ func (o VpnGatewayTagOutput) ToVpnGatewayTagOutputWithContext(ctx context.Contex
 	return o
 }
 
-// VPN网关标签的标签键（Key）。参数   - N：表示标签键的序号，取值范围：1～20。多个标签键之间用&分隔。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。说明同一资源的标签键不允许重复。
+// VPN gateway tag key (Key). Parameter   - N: Indicates the sequence number of the tag key, value range: 1–20. Multiple tag keys are separated by &. Naming rules: Cannot start with any combination of volc: or sys: (case-insensitive). Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length limit: 1–128 characters. Note: Tag keys for the same resource must not be duplicated.
 func (o VpnGatewayTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VpnGatewayTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// VPN网关标签的标签值（Value）。参数   - N：表示标签值的序号，取值范围：1～20。多个标签值之间用&分隔。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。大小写敏感，不能以空格开头或结尾。说明传入Tags.N.Value则必须传入Tags.N.Key。
+// VPN gateway tag value (Value). Parameter   - N: Indicates the sequence number of the tag value, value range: 1–20. Multiple tag values are separated by &. Naming rules: Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length limit: 0–256 characters. Case-sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
 func (o VpnGatewayTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VpnGatewayTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -226,9 +2025,9 @@ func (o VpnGatewayTagArrayOutput) Index(i pulumi.IntInput) VpnGatewayTagOutput {
 }
 
 type GetCustomerGatewayTag struct {
-	// 用户标签的标签键。
+	// Tag key for user tag
 	Key string `pulumi:"key"`
-	// 用户标签的标签值。
+	// Tag value for user tag
 	Value string `pulumi:"value"`
 }
 
@@ -244,9 +2043,9 @@ type GetCustomerGatewayTagInput interface {
 }
 
 type GetCustomerGatewayTagArgs struct {
-	// 用户标签的标签键。
+	// Tag key for user tag
 	Key pulumi.StringInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// Tag value for user tag
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -301,12 +2100,12 @@ func (o GetCustomerGatewayTagOutput) ToGetCustomerGatewayTagOutputWithContext(ct
 	return o
 }
 
-// 用户标签的标签键。
+// Tag key for user tag
 func (o GetCustomerGatewayTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCustomerGatewayTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。
+// Tag value for user tag
 func (o GetCustomerGatewayTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCustomerGatewayTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -331,10 +2130,1063 @@ func (o GetCustomerGatewayTagArrayOutput) Index(i pulumi.IntInput) GetCustomerGa
 	}).(GetCustomerGatewayTagOutput)
 }
 
-type GetVpnGatewayTag struct {
-	// VPN网关标签的标签键（Key）。参数   - N：表示标签键的序号，取值范围：1～20。多个标签键之间用&分隔。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。说明同一资源的标签键不允许重复。
+type GetVpnConnectionBgpInfo struct {
+	// Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+	EnableBgp bool `pulumi:"enableBgp"`
+	// The ASN of the VPN gateway.
+	LocalAsn int `pulumi:"localAsn"`
+	// The local tunnel IP, which is the BGP address configured on the VPN gateway and defaults to the first host address of BgpConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel subnet. If BgpConfig.EnableBgp is set to true, this parameter must be provided.
+	LocalBgpIp string `pulumi:"localBgpIp"`
+	// ASN of the customer gateway.
+	PeerAsn int `pulumi:"peerAsn"`
+	// BGP peer IP, that is, the BGP address on the customer gateway side.
+	PeerBgpIp string `pulumi:"peerBgpIp"`
+	// Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
+	SessionStatus string `pulumi:"sessionStatus"`
+	// CIDR address range for the local and peer IPs of the BGP session.
+	TunnelCidr string `pulumi:"tunnelCidr"`
+}
+
+// GetVpnConnectionBgpInfoInput is an input type that accepts GetVpnConnectionBgpInfoArgs and GetVpnConnectionBgpInfoOutput values.
+// You can construct a concrete instance of `GetVpnConnectionBgpInfoInput` via:
+//
+//	GetVpnConnectionBgpInfoArgs{...}
+type GetVpnConnectionBgpInfoInput interface {
+	pulumi.Input
+
+	ToGetVpnConnectionBgpInfoOutput() GetVpnConnectionBgpInfoOutput
+	ToGetVpnConnectionBgpInfoOutputWithContext(context.Context) GetVpnConnectionBgpInfoOutput
+}
+
+type GetVpnConnectionBgpInfoArgs struct {
+	// Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+	EnableBgp pulumi.BoolInput `pulumi:"enableBgp"`
+	// The ASN of the VPN gateway.
+	LocalAsn pulumi.IntInput `pulumi:"localAsn"`
+	// The local tunnel IP, which is the BGP address configured on the VPN gateway and defaults to the first host address of BgpConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel subnet. If BgpConfig.EnableBgp is set to true, this parameter must be provided.
+	LocalBgpIp pulumi.StringInput `pulumi:"localBgpIp"`
+	// ASN of the customer gateway.
+	PeerAsn pulumi.IntInput `pulumi:"peerAsn"`
+	// BGP peer IP, that is, the BGP address on the customer gateway side.
+	PeerBgpIp pulumi.StringInput `pulumi:"peerBgpIp"`
+	// Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
+	SessionStatus pulumi.StringInput `pulumi:"sessionStatus"`
+	// CIDR address range for the local and peer IPs of the BGP session.
+	TunnelCidr pulumi.StringInput `pulumi:"tunnelCidr"`
+}
+
+func (GetVpnConnectionBgpInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpnConnectionBgpInfo)(nil)).Elem()
+}
+
+func (i GetVpnConnectionBgpInfoArgs) ToGetVpnConnectionBgpInfoOutput() GetVpnConnectionBgpInfoOutput {
+	return i.ToGetVpnConnectionBgpInfoOutputWithContext(context.Background())
+}
+
+func (i GetVpnConnectionBgpInfoArgs) ToGetVpnConnectionBgpInfoOutputWithContext(ctx context.Context) GetVpnConnectionBgpInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpnConnectionBgpInfoOutput)
+}
+
+type GetVpnConnectionBgpInfoOutput struct{ *pulumi.OutputState }
+
+func (GetVpnConnectionBgpInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpnConnectionBgpInfo)(nil)).Elem()
+}
+
+func (o GetVpnConnectionBgpInfoOutput) ToGetVpnConnectionBgpInfoOutput() GetVpnConnectionBgpInfoOutput {
+	return o
+}
+
+func (o GetVpnConnectionBgpInfoOutput) ToGetVpnConnectionBgpInfoOutputWithContext(ctx context.Context) GetVpnConnectionBgpInfoOutput {
+	return o
+}
+
+// Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+func (o GetVpnConnectionBgpInfoOutput) EnableBgp() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVpnConnectionBgpInfo) bool { return v.EnableBgp }).(pulumi.BoolOutput)
+}
+
+// The ASN of the VPN gateway.
+func (o GetVpnConnectionBgpInfoOutput) LocalAsn() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpnConnectionBgpInfo) int { return v.LocalAsn }).(pulumi.IntOutput)
+}
+
+// The local tunnel IP, which is the BGP address configured on the VPN gateway and defaults to the first host address of BgpConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel subnet. If BgpConfig.EnableBgp is set to true, this parameter must be provided.
+func (o GetVpnConnectionBgpInfoOutput) LocalBgpIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionBgpInfo) string { return v.LocalBgpIp }).(pulumi.StringOutput)
+}
+
+// ASN of the customer gateway.
+func (o GetVpnConnectionBgpInfoOutput) PeerAsn() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpnConnectionBgpInfo) int { return v.PeerAsn }).(pulumi.IntOutput)
+}
+
+// BGP peer IP, that is, the BGP address on the customer gateway side.
+func (o GetVpnConnectionBgpInfoOutput) PeerBgpIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionBgpInfo) string { return v.PeerBgpIp }).(pulumi.StringOutput)
+}
+
+// Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
+func (o GetVpnConnectionBgpInfoOutput) SessionStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionBgpInfo) string { return v.SessionStatus }).(pulumi.StringOutput)
+}
+
+// CIDR address range for the local and peer IPs of the BGP session.
+func (o GetVpnConnectionBgpInfoOutput) TunnelCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionBgpInfo) string { return v.TunnelCidr }).(pulumi.StringOutput)
+}
+
+type GetVpnConnectionHealthChecker struct {
+	// Interval for performing health checks
+	CheckInterval int `pulumi:"checkInterval"`
+	// Health check result. Up: Normal. Down: Abnormal.
+	CheckResult string `pulumi:"checkResult"`
+	// ID of the IPsec connection health check
+	CheckerId string `pulumi:"checkerId"`
+	// Health check unhealthy threshold. If the health check result is 'abnormal' for the specified number of consecutive times, the IPsec connection is considered unhealthy.
+	DownTime int `pulumi:"downTime"`
+	// Health check source IP.
+	LocalIp string `pulumi:"localIp"`
+	// Health check target IP.
+	RemoteIp string `pulumi:"remoteIp"`
+	// Health check response timeout. If the IPsec connection does not respond correctly within the specified response time, it is considered 'abnormal' for health check.
+	Timeout int `pulumi:"timeout"`
+	// Health check threshold. If the specified number of consecutive health checks are all 'healthy', the IPsec connection is considered 'healthy' by health check.
+	UpTime int `pulumi:"upTime"`
+}
+
+// GetVpnConnectionHealthCheckerInput is an input type that accepts GetVpnConnectionHealthCheckerArgs and GetVpnConnectionHealthCheckerOutput values.
+// You can construct a concrete instance of `GetVpnConnectionHealthCheckerInput` via:
+//
+//	GetVpnConnectionHealthCheckerArgs{...}
+type GetVpnConnectionHealthCheckerInput interface {
+	pulumi.Input
+
+	ToGetVpnConnectionHealthCheckerOutput() GetVpnConnectionHealthCheckerOutput
+	ToGetVpnConnectionHealthCheckerOutputWithContext(context.Context) GetVpnConnectionHealthCheckerOutput
+}
+
+type GetVpnConnectionHealthCheckerArgs struct {
+	// Interval for performing health checks
+	CheckInterval pulumi.IntInput `pulumi:"checkInterval"`
+	// Health check result. Up: Normal. Down: Abnormal.
+	CheckResult pulumi.StringInput `pulumi:"checkResult"`
+	// ID of the IPsec connection health check
+	CheckerId pulumi.StringInput `pulumi:"checkerId"`
+	// Health check unhealthy threshold. If the health check result is 'abnormal' for the specified number of consecutive times, the IPsec connection is considered unhealthy.
+	DownTime pulumi.IntInput `pulumi:"downTime"`
+	// Health check source IP.
+	LocalIp pulumi.StringInput `pulumi:"localIp"`
+	// Health check target IP.
+	RemoteIp pulumi.StringInput `pulumi:"remoteIp"`
+	// Health check response timeout. If the IPsec connection does not respond correctly within the specified response time, it is considered 'abnormal' for health check.
+	Timeout pulumi.IntInput `pulumi:"timeout"`
+	// Health check threshold. If the specified number of consecutive health checks are all 'healthy', the IPsec connection is considered 'healthy' by health check.
+	UpTime pulumi.IntInput `pulumi:"upTime"`
+}
+
+func (GetVpnConnectionHealthCheckerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpnConnectionHealthChecker)(nil)).Elem()
+}
+
+func (i GetVpnConnectionHealthCheckerArgs) ToGetVpnConnectionHealthCheckerOutput() GetVpnConnectionHealthCheckerOutput {
+	return i.ToGetVpnConnectionHealthCheckerOutputWithContext(context.Background())
+}
+
+func (i GetVpnConnectionHealthCheckerArgs) ToGetVpnConnectionHealthCheckerOutputWithContext(ctx context.Context) GetVpnConnectionHealthCheckerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpnConnectionHealthCheckerOutput)
+}
+
+// GetVpnConnectionHealthCheckerArrayInput is an input type that accepts GetVpnConnectionHealthCheckerArray and GetVpnConnectionHealthCheckerArrayOutput values.
+// You can construct a concrete instance of `GetVpnConnectionHealthCheckerArrayInput` via:
+//
+//	GetVpnConnectionHealthCheckerArray{ GetVpnConnectionHealthCheckerArgs{...} }
+type GetVpnConnectionHealthCheckerArrayInput interface {
+	pulumi.Input
+
+	ToGetVpnConnectionHealthCheckerArrayOutput() GetVpnConnectionHealthCheckerArrayOutput
+	ToGetVpnConnectionHealthCheckerArrayOutputWithContext(context.Context) GetVpnConnectionHealthCheckerArrayOutput
+}
+
+type GetVpnConnectionHealthCheckerArray []GetVpnConnectionHealthCheckerInput
+
+func (GetVpnConnectionHealthCheckerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpnConnectionHealthChecker)(nil)).Elem()
+}
+
+func (i GetVpnConnectionHealthCheckerArray) ToGetVpnConnectionHealthCheckerArrayOutput() GetVpnConnectionHealthCheckerArrayOutput {
+	return i.ToGetVpnConnectionHealthCheckerArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpnConnectionHealthCheckerArray) ToGetVpnConnectionHealthCheckerArrayOutputWithContext(ctx context.Context) GetVpnConnectionHealthCheckerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpnConnectionHealthCheckerArrayOutput)
+}
+
+type GetVpnConnectionHealthCheckerOutput struct{ *pulumi.OutputState }
+
+func (GetVpnConnectionHealthCheckerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpnConnectionHealthChecker)(nil)).Elem()
+}
+
+func (o GetVpnConnectionHealthCheckerOutput) ToGetVpnConnectionHealthCheckerOutput() GetVpnConnectionHealthCheckerOutput {
+	return o
+}
+
+func (o GetVpnConnectionHealthCheckerOutput) ToGetVpnConnectionHealthCheckerOutputWithContext(ctx context.Context) GetVpnConnectionHealthCheckerOutput {
+	return o
+}
+
+// Interval for performing health checks
+func (o GetVpnConnectionHealthCheckerOutput) CheckInterval() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpnConnectionHealthChecker) int { return v.CheckInterval }).(pulumi.IntOutput)
+}
+
+// Health check result. Up: Normal. Down: Abnormal.
+func (o GetVpnConnectionHealthCheckerOutput) CheckResult() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionHealthChecker) string { return v.CheckResult }).(pulumi.StringOutput)
+}
+
+// ID of the IPsec connection health check
+func (o GetVpnConnectionHealthCheckerOutput) CheckerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionHealthChecker) string { return v.CheckerId }).(pulumi.StringOutput)
+}
+
+// Health check unhealthy threshold. If the health check result is 'abnormal' for the specified number of consecutive times, the IPsec connection is considered unhealthy.
+func (o GetVpnConnectionHealthCheckerOutput) DownTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpnConnectionHealthChecker) int { return v.DownTime }).(pulumi.IntOutput)
+}
+
+// Health check source IP.
+func (o GetVpnConnectionHealthCheckerOutput) LocalIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionHealthChecker) string { return v.LocalIp }).(pulumi.StringOutput)
+}
+
+// Health check target IP.
+func (o GetVpnConnectionHealthCheckerOutput) RemoteIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionHealthChecker) string { return v.RemoteIp }).(pulumi.StringOutput)
+}
+
+// Health check response timeout. If the IPsec connection does not respond correctly within the specified response time, it is considered 'abnormal' for health check.
+func (o GetVpnConnectionHealthCheckerOutput) Timeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpnConnectionHealthChecker) int { return v.Timeout }).(pulumi.IntOutput)
+}
+
+// Health check threshold. If the specified number of consecutive health checks are all 'healthy', the IPsec connection is considered 'healthy' by health check.
+func (o GetVpnConnectionHealthCheckerOutput) UpTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpnConnectionHealthChecker) int { return v.UpTime }).(pulumi.IntOutput)
+}
+
+type GetVpnConnectionHealthCheckerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpnConnectionHealthCheckerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpnConnectionHealthChecker)(nil)).Elem()
+}
+
+func (o GetVpnConnectionHealthCheckerArrayOutput) ToGetVpnConnectionHealthCheckerArrayOutput() GetVpnConnectionHealthCheckerArrayOutput {
+	return o
+}
+
+func (o GetVpnConnectionHealthCheckerArrayOutput) ToGetVpnConnectionHealthCheckerArrayOutputWithContext(ctx context.Context) GetVpnConnectionHealthCheckerArrayOutput {
+	return o
+}
+
+func (o GetVpnConnectionHealthCheckerArrayOutput) Index(i pulumi.IntInput) GetVpnConnectionHealthCheckerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpnConnectionHealthChecker {
+		return vs[0].([]GetVpnConnectionHealthChecker)[vs[1].(int)]
+	}).(GetVpnConnectionHealthCheckerOutput)
+}
+
+type GetVpnConnectionIkeConfig struct {
+	// Authentication algorithm for phase one.
+	AuthAlg string `pulumi:"authAlg"`
+	// DH (Diffie-Hellman) key exchange algorithm used in phase 1 negotiation. Valid values: group1, group2 (default), group5, group14
+	DhGroup string `pulumi:"dhGroup"`
+	// Encryption algorithm for phase 1 negotiation.
+	EncAlg string `pulumi:"encAlg"`
+	// Lifetime of the SA for phase 1 negotiation. After the lifetime is exceeded, negotiation restarts. Value range: 900~86400, unit: seconds. Default: 86400.
+	Lifetime int `pulumi:"lifetime"`
+	// Identifier of the VPN gateway, used for phase 1 negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the current VPN gateway's egress IP address. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ; and digits are allowed.
+	LocalId string `pulumi:"localId"`
+	// Negotiation mode for phase 1. This parameter is required only when IkeConfig.Version is ikev1. Valid values: main (default), aggressive
+	Mode string `pulumi:"mode"`
+	// Pre-shared key used for identity authentication between the VPN gateway and the user gateway in phase 1. Must not exceed 100 characters and can only contain uppercase and lowercase letters, special symbols ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and numbers.
+	Psk string `pulumi:"psk"`
+	// Identifier of the customer gateway, used for phase one negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the public IP address of the currently selected customer gateway. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and digits are allowed.
+	RemoteId string `pulumi:"remoteId"`
+	// Version of the IKE key exchange protocol. Valid values: ikev1, ikev2 (default).
+	Version string `pulumi:"version"`
+}
+
+// GetVpnConnectionIkeConfigInput is an input type that accepts GetVpnConnectionIkeConfigArgs and GetVpnConnectionIkeConfigOutput values.
+// You can construct a concrete instance of `GetVpnConnectionIkeConfigInput` via:
+//
+//	GetVpnConnectionIkeConfigArgs{...}
+type GetVpnConnectionIkeConfigInput interface {
+	pulumi.Input
+
+	ToGetVpnConnectionIkeConfigOutput() GetVpnConnectionIkeConfigOutput
+	ToGetVpnConnectionIkeConfigOutputWithContext(context.Context) GetVpnConnectionIkeConfigOutput
+}
+
+type GetVpnConnectionIkeConfigArgs struct {
+	// Authentication algorithm for phase one.
+	AuthAlg pulumi.StringInput `pulumi:"authAlg"`
+	// DH (Diffie-Hellman) key exchange algorithm used in phase 1 negotiation. Valid values: group1, group2 (default), group5, group14
+	DhGroup pulumi.StringInput `pulumi:"dhGroup"`
+	// Encryption algorithm for phase 1 negotiation.
+	EncAlg pulumi.StringInput `pulumi:"encAlg"`
+	// Lifetime of the SA for phase 1 negotiation. After the lifetime is exceeded, negotiation restarts. Value range: 900~86400, unit: seconds. Default: 86400.
+	Lifetime pulumi.IntInput `pulumi:"lifetime"`
+	// Identifier of the VPN gateway, used for phase 1 negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the current VPN gateway's egress IP address. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ; and digits are allowed.
+	LocalId pulumi.StringInput `pulumi:"localId"`
+	// Negotiation mode for phase 1. This parameter is required only when IkeConfig.Version is ikev1. Valid values: main (default), aggressive
+	Mode pulumi.StringInput `pulumi:"mode"`
+	// Pre-shared key used for identity authentication between the VPN gateway and the user gateway in phase 1. Must not exceed 100 characters and can only contain uppercase and lowercase letters, special symbols ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and numbers.
+	Psk pulumi.StringInput `pulumi:"psk"`
+	// Identifier of the customer gateway, used for phase one negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the public IP address of the currently selected customer gateway. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and digits are allowed.
+	RemoteId pulumi.StringInput `pulumi:"remoteId"`
+	// Version of the IKE key exchange protocol. Valid values: ikev1, ikev2 (default).
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetVpnConnectionIkeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpnConnectionIkeConfig)(nil)).Elem()
+}
+
+func (i GetVpnConnectionIkeConfigArgs) ToGetVpnConnectionIkeConfigOutput() GetVpnConnectionIkeConfigOutput {
+	return i.ToGetVpnConnectionIkeConfigOutputWithContext(context.Background())
+}
+
+func (i GetVpnConnectionIkeConfigArgs) ToGetVpnConnectionIkeConfigOutputWithContext(ctx context.Context) GetVpnConnectionIkeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpnConnectionIkeConfigOutput)
+}
+
+type GetVpnConnectionIkeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetVpnConnectionIkeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpnConnectionIkeConfig)(nil)).Elem()
+}
+
+func (o GetVpnConnectionIkeConfigOutput) ToGetVpnConnectionIkeConfigOutput() GetVpnConnectionIkeConfigOutput {
+	return o
+}
+
+func (o GetVpnConnectionIkeConfigOutput) ToGetVpnConnectionIkeConfigOutputWithContext(ctx context.Context) GetVpnConnectionIkeConfigOutput {
+	return o
+}
+
+// Authentication algorithm for phase one.
+func (o GetVpnConnectionIkeConfigOutput) AuthAlg() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionIkeConfig) string { return v.AuthAlg }).(pulumi.StringOutput)
+}
+
+// DH (Diffie-Hellman) key exchange algorithm used in phase 1 negotiation. Valid values: group1, group2 (default), group5, group14
+func (o GetVpnConnectionIkeConfigOutput) DhGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionIkeConfig) string { return v.DhGroup }).(pulumi.StringOutput)
+}
+
+// Encryption algorithm for phase 1 negotiation.
+func (o GetVpnConnectionIkeConfigOutput) EncAlg() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionIkeConfig) string { return v.EncAlg }).(pulumi.StringOutput)
+}
+
+// Lifetime of the SA for phase 1 negotiation. After the lifetime is exceeded, negotiation restarts. Value range: 900~86400, unit: seconds. Default: 86400.
+func (o GetVpnConnectionIkeConfigOutput) Lifetime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpnConnectionIkeConfig) int { return v.Lifetime }).(pulumi.IntOutput)
+}
+
+// Identifier of the VPN gateway, used for phase 1 negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the current VPN gateway's egress IP address. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ; and digits are allowed.
+func (o GetVpnConnectionIkeConfigOutput) LocalId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionIkeConfig) string { return v.LocalId }).(pulumi.StringOutput)
+}
+
+// Negotiation mode for phase 1. This parameter is required only when IkeConfig.Version is ikev1. Valid values: main (default), aggressive
+func (o GetVpnConnectionIkeConfigOutput) Mode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionIkeConfig) string { return v.Mode }).(pulumi.StringOutput)
+}
+
+// Pre-shared key used for identity authentication between the VPN gateway and the user gateway in phase 1. Must not exceed 100 characters and can only contain uppercase and lowercase letters, special symbols ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and numbers.
+func (o GetVpnConnectionIkeConfigOutput) Psk() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionIkeConfig) string { return v.Psk }).(pulumi.StringOutput)
+}
+
+// Identifier of the customer gateway, used for phase one negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the public IP address of the currently selected customer gateway. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and digits are allowed.
+func (o GetVpnConnectionIkeConfigOutput) RemoteId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionIkeConfig) string { return v.RemoteId }).(pulumi.StringOutput)
+}
+
+// Version of the IKE key exchange protocol. Valid values: ikev1, ikev2 (default).
+func (o GetVpnConnectionIkeConfigOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionIkeConfig) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetVpnConnectionIpsecConfig struct {
+	// Authentication algorithm for phase 2 negotiation
+	AuthAlg string `pulumi:"authAlg"`
+	// DH (Diffie-Hellman) key exchange algorithm used in phase 2
+	DhGroup string `pulumi:"dhGroup"`
+	// Encryption algorithm for phase 2 negotiation
+	EncAlg string `pulumi:"encAlg"`
+	// Lifetime of the SA for phase 2 negotiation. Negotiation will be re-initiated after the lifetime expires.
+	Lifetime int `pulumi:"lifetime"`
+}
+
+// GetVpnConnectionIpsecConfigInput is an input type that accepts GetVpnConnectionIpsecConfigArgs and GetVpnConnectionIpsecConfigOutput values.
+// You can construct a concrete instance of `GetVpnConnectionIpsecConfigInput` via:
+//
+//	GetVpnConnectionIpsecConfigArgs{...}
+type GetVpnConnectionIpsecConfigInput interface {
+	pulumi.Input
+
+	ToGetVpnConnectionIpsecConfigOutput() GetVpnConnectionIpsecConfigOutput
+	ToGetVpnConnectionIpsecConfigOutputWithContext(context.Context) GetVpnConnectionIpsecConfigOutput
+}
+
+type GetVpnConnectionIpsecConfigArgs struct {
+	// Authentication algorithm for phase 2 negotiation
+	AuthAlg pulumi.StringInput `pulumi:"authAlg"`
+	// DH (Diffie-Hellman) key exchange algorithm used in phase 2
+	DhGroup pulumi.StringInput `pulumi:"dhGroup"`
+	// Encryption algorithm for phase 2 negotiation
+	EncAlg pulumi.StringInput `pulumi:"encAlg"`
+	// Lifetime of the SA for phase 2 negotiation. Negotiation will be re-initiated after the lifetime expires.
+	Lifetime pulumi.IntInput `pulumi:"lifetime"`
+}
+
+func (GetVpnConnectionIpsecConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpnConnectionIpsecConfig)(nil)).Elem()
+}
+
+func (i GetVpnConnectionIpsecConfigArgs) ToGetVpnConnectionIpsecConfigOutput() GetVpnConnectionIpsecConfigOutput {
+	return i.ToGetVpnConnectionIpsecConfigOutputWithContext(context.Background())
+}
+
+func (i GetVpnConnectionIpsecConfigArgs) ToGetVpnConnectionIpsecConfigOutputWithContext(ctx context.Context) GetVpnConnectionIpsecConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpnConnectionIpsecConfigOutput)
+}
+
+type GetVpnConnectionIpsecConfigOutput struct{ *pulumi.OutputState }
+
+func (GetVpnConnectionIpsecConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpnConnectionIpsecConfig)(nil)).Elem()
+}
+
+func (o GetVpnConnectionIpsecConfigOutput) ToGetVpnConnectionIpsecConfigOutput() GetVpnConnectionIpsecConfigOutput {
+	return o
+}
+
+func (o GetVpnConnectionIpsecConfigOutput) ToGetVpnConnectionIpsecConfigOutputWithContext(ctx context.Context) GetVpnConnectionIpsecConfigOutput {
+	return o
+}
+
+// Authentication algorithm for phase 2 negotiation
+func (o GetVpnConnectionIpsecConfigOutput) AuthAlg() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionIpsecConfig) string { return v.AuthAlg }).(pulumi.StringOutput)
+}
+
+// DH (Diffie-Hellman) key exchange algorithm used in phase 2
+func (o GetVpnConnectionIpsecConfigOutput) DhGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionIpsecConfig) string { return v.DhGroup }).(pulumi.StringOutput)
+}
+
+// Encryption algorithm for phase 2 negotiation
+func (o GetVpnConnectionIpsecConfigOutput) EncAlg() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionIpsecConfig) string { return v.EncAlg }).(pulumi.StringOutput)
+}
+
+// Lifetime of the SA for phase 2 negotiation. Negotiation will be re-initiated after the lifetime expires.
+func (o GetVpnConnectionIpsecConfigOutput) Lifetime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpnConnectionIpsecConfig) int { return v.Lifetime }).(pulumi.IntOutput)
+}
+
+type GetVpnConnectionTag struct {
+	// Tag key.
 	Key string `pulumi:"key"`
-	// VPN网关标签的标签值（Value）。参数   - N：表示标签值的序号，取值范围：1～20。多个标签值之间用&分隔。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。大小写敏感，不能以空格开头或结尾。说明传入Tags.N.Value则必须传入Tags.N.Key。
+	// Tag value
+	Value string `pulumi:"value"`
+}
+
+// GetVpnConnectionTagInput is an input type that accepts GetVpnConnectionTagArgs and GetVpnConnectionTagOutput values.
+// You can construct a concrete instance of `GetVpnConnectionTagInput` via:
+//
+//	GetVpnConnectionTagArgs{...}
+type GetVpnConnectionTagInput interface {
+	pulumi.Input
+
+	ToGetVpnConnectionTagOutput() GetVpnConnectionTagOutput
+	ToGetVpnConnectionTagOutputWithContext(context.Context) GetVpnConnectionTagOutput
+}
+
+type GetVpnConnectionTagArgs struct {
+	// Tag key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetVpnConnectionTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpnConnectionTag)(nil)).Elem()
+}
+
+func (i GetVpnConnectionTagArgs) ToGetVpnConnectionTagOutput() GetVpnConnectionTagOutput {
+	return i.ToGetVpnConnectionTagOutputWithContext(context.Background())
+}
+
+func (i GetVpnConnectionTagArgs) ToGetVpnConnectionTagOutputWithContext(ctx context.Context) GetVpnConnectionTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpnConnectionTagOutput)
+}
+
+// GetVpnConnectionTagArrayInput is an input type that accepts GetVpnConnectionTagArray and GetVpnConnectionTagArrayOutput values.
+// You can construct a concrete instance of `GetVpnConnectionTagArrayInput` via:
+//
+//	GetVpnConnectionTagArray{ GetVpnConnectionTagArgs{...} }
+type GetVpnConnectionTagArrayInput interface {
+	pulumi.Input
+
+	ToGetVpnConnectionTagArrayOutput() GetVpnConnectionTagArrayOutput
+	ToGetVpnConnectionTagArrayOutputWithContext(context.Context) GetVpnConnectionTagArrayOutput
+}
+
+type GetVpnConnectionTagArray []GetVpnConnectionTagInput
+
+func (GetVpnConnectionTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpnConnectionTag)(nil)).Elem()
+}
+
+func (i GetVpnConnectionTagArray) ToGetVpnConnectionTagArrayOutput() GetVpnConnectionTagArrayOutput {
+	return i.ToGetVpnConnectionTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpnConnectionTagArray) ToGetVpnConnectionTagArrayOutputWithContext(ctx context.Context) GetVpnConnectionTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpnConnectionTagArrayOutput)
+}
+
+type GetVpnConnectionTagOutput struct{ *pulumi.OutputState }
+
+func (GetVpnConnectionTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpnConnectionTag)(nil)).Elem()
+}
+
+func (o GetVpnConnectionTagOutput) ToGetVpnConnectionTagOutput() GetVpnConnectionTagOutput {
+	return o
+}
+
+func (o GetVpnConnectionTagOutput) ToGetVpnConnectionTagOutputWithContext(ctx context.Context) GetVpnConnectionTagOutput {
+	return o
+}
+
+// Tag key.
+func (o GetVpnConnectionTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value
+func (o GetVpnConnectionTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetVpnConnectionTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpnConnectionTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpnConnectionTag)(nil)).Elem()
+}
+
+func (o GetVpnConnectionTagArrayOutput) ToGetVpnConnectionTagArrayOutput() GetVpnConnectionTagArrayOutput {
+	return o
+}
+
+func (o GetVpnConnectionTagArrayOutput) ToGetVpnConnectionTagArrayOutputWithContext(ctx context.Context) GetVpnConnectionTagArrayOutput {
+	return o
+}
+
+func (o GetVpnConnectionTagArrayOutput) Index(i pulumi.IntInput) GetVpnConnectionTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpnConnectionTag {
+		return vs[0].([]GetVpnConnectionTag)[vs[1].(int)]
+	}).(GetVpnConnectionTagOutput)
+}
+
+type GetVpnConnectionTunnelOption struct {
+	// IPsec tunnel status. ike*sa*negotiation*failed: Phase one negotiation failed; nike*sa*negotiation*completed: Phase one negotiation succeeded; nipsec*sa*negotiation*failed: Phase two negotiation failed; nipsec*sa*negotiation*completed: Phase two negotiation succeeded.
+	ConnectStatus string `pulumi:"connectStatus"`
+	// ID of the customer gateway associated with the IPsec connection.
+	CustomerGatewayId string `pulumi:"customerGatewayId"`
+	// Status of the DPD feature.
+	DpdAction string `pulumi:"dpdAction"`
+	// IKE configuration information for the IPsec connection.
+	IkeConfig GetVpnConnectionTunnelOptionIkeConfig `pulumi:"ikeConfig"`
+	// Information about the IPsec configuration in the IPsec connection.
+	IpsecConfig GetVpnConnectionTunnelOptionIpsecConfig `pulumi:"ipsecConfig"`
+	// Whether to enable NAT traversal
+	NatTraversal bool `pulumi:"natTraversal"`
+	// The role of the tunnel.
+	Role string `pulumi:"role"`
+	// BGP session information.
+	TunnelBgpInfo GetVpnConnectionTunnelOptionTunnelBgpInfo `pulumi:"tunnelBgpInfo"`
+	// Tunnel ID of the IPsec connection.
+	TunnelId string `pulumi:"tunnelId"`
+}
+
+// GetVpnConnectionTunnelOptionInput is an input type that accepts GetVpnConnectionTunnelOptionArgs and GetVpnConnectionTunnelOptionOutput values.
+// You can construct a concrete instance of `GetVpnConnectionTunnelOptionInput` via:
+//
+//	GetVpnConnectionTunnelOptionArgs{...}
+type GetVpnConnectionTunnelOptionInput interface {
+	pulumi.Input
+
+	ToGetVpnConnectionTunnelOptionOutput() GetVpnConnectionTunnelOptionOutput
+	ToGetVpnConnectionTunnelOptionOutputWithContext(context.Context) GetVpnConnectionTunnelOptionOutput
+}
+
+type GetVpnConnectionTunnelOptionArgs struct {
+	// IPsec tunnel status. ike*sa*negotiation*failed: Phase one negotiation failed; nike*sa*negotiation*completed: Phase one negotiation succeeded; nipsec*sa*negotiation*failed: Phase two negotiation failed; nipsec*sa*negotiation*completed: Phase two negotiation succeeded.
+	ConnectStatus pulumi.StringInput `pulumi:"connectStatus"`
+	// ID of the customer gateway associated with the IPsec connection.
+	CustomerGatewayId pulumi.StringInput `pulumi:"customerGatewayId"`
+	// Status of the DPD feature.
+	DpdAction pulumi.StringInput `pulumi:"dpdAction"`
+	// IKE configuration information for the IPsec connection.
+	IkeConfig GetVpnConnectionTunnelOptionIkeConfigInput `pulumi:"ikeConfig"`
+	// Information about the IPsec configuration in the IPsec connection.
+	IpsecConfig GetVpnConnectionTunnelOptionIpsecConfigInput `pulumi:"ipsecConfig"`
+	// Whether to enable NAT traversal
+	NatTraversal pulumi.BoolInput `pulumi:"natTraversal"`
+	// The role of the tunnel.
+	Role pulumi.StringInput `pulumi:"role"`
+	// BGP session information.
+	TunnelBgpInfo GetVpnConnectionTunnelOptionTunnelBgpInfoInput `pulumi:"tunnelBgpInfo"`
+	// Tunnel ID of the IPsec connection.
+	TunnelId pulumi.StringInput `pulumi:"tunnelId"`
+}
+
+func (GetVpnConnectionTunnelOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpnConnectionTunnelOption)(nil)).Elem()
+}
+
+func (i GetVpnConnectionTunnelOptionArgs) ToGetVpnConnectionTunnelOptionOutput() GetVpnConnectionTunnelOptionOutput {
+	return i.ToGetVpnConnectionTunnelOptionOutputWithContext(context.Background())
+}
+
+func (i GetVpnConnectionTunnelOptionArgs) ToGetVpnConnectionTunnelOptionOutputWithContext(ctx context.Context) GetVpnConnectionTunnelOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpnConnectionTunnelOptionOutput)
+}
+
+// GetVpnConnectionTunnelOptionArrayInput is an input type that accepts GetVpnConnectionTunnelOptionArray and GetVpnConnectionTunnelOptionArrayOutput values.
+// You can construct a concrete instance of `GetVpnConnectionTunnelOptionArrayInput` via:
+//
+//	GetVpnConnectionTunnelOptionArray{ GetVpnConnectionTunnelOptionArgs{...} }
+type GetVpnConnectionTunnelOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetVpnConnectionTunnelOptionArrayOutput() GetVpnConnectionTunnelOptionArrayOutput
+	ToGetVpnConnectionTunnelOptionArrayOutputWithContext(context.Context) GetVpnConnectionTunnelOptionArrayOutput
+}
+
+type GetVpnConnectionTunnelOptionArray []GetVpnConnectionTunnelOptionInput
+
+func (GetVpnConnectionTunnelOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpnConnectionTunnelOption)(nil)).Elem()
+}
+
+func (i GetVpnConnectionTunnelOptionArray) ToGetVpnConnectionTunnelOptionArrayOutput() GetVpnConnectionTunnelOptionArrayOutput {
+	return i.ToGetVpnConnectionTunnelOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpnConnectionTunnelOptionArray) ToGetVpnConnectionTunnelOptionArrayOutputWithContext(ctx context.Context) GetVpnConnectionTunnelOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpnConnectionTunnelOptionArrayOutput)
+}
+
+type GetVpnConnectionTunnelOptionOutput struct{ *pulumi.OutputState }
+
+func (GetVpnConnectionTunnelOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpnConnectionTunnelOption)(nil)).Elem()
+}
+
+func (o GetVpnConnectionTunnelOptionOutput) ToGetVpnConnectionTunnelOptionOutput() GetVpnConnectionTunnelOptionOutput {
+	return o
+}
+
+func (o GetVpnConnectionTunnelOptionOutput) ToGetVpnConnectionTunnelOptionOutputWithContext(ctx context.Context) GetVpnConnectionTunnelOptionOutput {
+	return o
+}
+
+// IPsec tunnel status. ike*sa*negotiation*failed: Phase one negotiation failed; nike*sa*negotiation*completed: Phase one negotiation succeeded; nipsec*sa*negotiation*failed: Phase two negotiation failed; nipsec*sa*negotiation*completed: Phase two negotiation succeeded.
+func (o GetVpnConnectionTunnelOptionOutput) ConnectStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOption) string { return v.ConnectStatus }).(pulumi.StringOutput)
+}
+
+// ID of the customer gateway associated with the IPsec connection.
+func (o GetVpnConnectionTunnelOptionOutput) CustomerGatewayId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOption) string { return v.CustomerGatewayId }).(pulumi.StringOutput)
+}
+
+// Status of the DPD feature.
+func (o GetVpnConnectionTunnelOptionOutput) DpdAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOption) string { return v.DpdAction }).(pulumi.StringOutput)
+}
+
+// IKE configuration information for the IPsec connection.
+func (o GetVpnConnectionTunnelOptionOutput) IkeConfig() GetVpnConnectionTunnelOptionIkeConfigOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOption) GetVpnConnectionTunnelOptionIkeConfig { return v.IkeConfig }).(GetVpnConnectionTunnelOptionIkeConfigOutput)
+}
+
+// Information about the IPsec configuration in the IPsec connection.
+func (o GetVpnConnectionTunnelOptionOutput) IpsecConfig() GetVpnConnectionTunnelOptionIpsecConfigOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOption) GetVpnConnectionTunnelOptionIpsecConfig { return v.IpsecConfig }).(GetVpnConnectionTunnelOptionIpsecConfigOutput)
+}
+
+// Whether to enable NAT traversal
+func (o GetVpnConnectionTunnelOptionOutput) NatTraversal() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOption) bool { return v.NatTraversal }).(pulumi.BoolOutput)
+}
+
+// The role of the tunnel.
+func (o GetVpnConnectionTunnelOptionOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOption) string { return v.Role }).(pulumi.StringOutput)
+}
+
+// BGP session information.
+func (o GetVpnConnectionTunnelOptionOutput) TunnelBgpInfo() GetVpnConnectionTunnelOptionTunnelBgpInfoOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOption) GetVpnConnectionTunnelOptionTunnelBgpInfo { return v.TunnelBgpInfo }).(GetVpnConnectionTunnelOptionTunnelBgpInfoOutput)
+}
+
+// Tunnel ID of the IPsec connection.
+func (o GetVpnConnectionTunnelOptionOutput) TunnelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOption) string { return v.TunnelId }).(pulumi.StringOutput)
+}
+
+type GetVpnConnectionTunnelOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpnConnectionTunnelOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpnConnectionTunnelOption)(nil)).Elem()
+}
+
+func (o GetVpnConnectionTunnelOptionArrayOutput) ToGetVpnConnectionTunnelOptionArrayOutput() GetVpnConnectionTunnelOptionArrayOutput {
+	return o
+}
+
+func (o GetVpnConnectionTunnelOptionArrayOutput) ToGetVpnConnectionTunnelOptionArrayOutputWithContext(ctx context.Context) GetVpnConnectionTunnelOptionArrayOutput {
+	return o
+}
+
+func (o GetVpnConnectionTunnelOptionArrayOutput) Index(i pulumi.IntInput) GetVpnConnectionTunnelOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpnConnectionTunnelOption {
+		return vs[0].([]GetVpnConnectionTunnelOption)[vs[1].(int)]
+	}).(GetVpnConnectionTunnelOptionOutput)
+}
+
+type GetVpnConnectionTunnelOptionIkeConfig struct {
+	// Authentication algorithm for phase one.
+	AuthAlg string `pulumi:"authAlg"`
+	// DH (Diffie-Hellman) key exchange algorithm used in phase 1 negotiation. Valid values: group1, group2 (default), group5, group14
+	DhGroup string `pulumi:"dhGroup"`
+	// Encryption algorithm for phase 1 negotiation.
+	EncAlg string `pulumi:"encAlg"`
+	// Lifetime of the SA for phase 1 negotiation. After the lifetime is exceeded, negotiation restarts. Value range: 900~86400, unit: seconds. Default: 86400.
+	Lifetime int `pulumi:"lifetime"`
+	// Identifier of the VPN gateway, used for phase 1 negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the current VPN gateway's egress IP address. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ; and digits are allowed.
+	LocalId string `pulumi:"localId"`
+	// Negotiation mode for phase 1. This parameter is required only when IkeConfig.Version is ikev1. Valid values: main (default), aggressive
+	Mode string `pulumi:"mode"`
+	// Pre-shared key used for identity authentication between the VPN gateway and the user gateway in phase 1. Must not exceed 100 characters and can only contain uppercase and lowercase letters, special symbols ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and numbers.
+	Psk string `pulumi:"psk"`
+	// Identifier of the customer gateway, used for phase one negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the public IP address of the currently selected customer gateway. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and digits are allowed.
+	RemoteId string `pulumi:"remoteId"`
+	// Version of the IKE key exchange protocol. Valid values: ikev1, ikev2 (default).
+	Version string `pulumi:"version"`
+}
+
+// GetVpnConnectionTunnelOptionIkeConfigInput is an input type that accepts GetVpnConnectionTunnelOptionIkeConfigArgs and GetVpnConnectionTunnelOptionIkeConfigOutput values.
+// You can construct a concrete instance of `GetVpnConnectionTunnelOptionIkeConfigInput` via:
+//
+//	GetVpnConnectionTunnelOptionIkeConfigArgs{...}
+type GetVpnConnectionTunnelOptionIkeConfigInput interface {
+	pulumi.Input
+
+	ToGetVpnConnectionTunnelOptionIkeConfigOutput() GetVpnConnectionTunnelOptionIkeConfigOutput
+	ToGetVpnConnectionTunnelOptionIkeConfigOutputWithContext(context.Context) GetVpnConnectionTunnelOptionIkeConfigOutput
+}
+
+type GetVpnConnectionTunnelOptionIkeConfigArgs struct {
+	// Authentication algorithm for phase one.
+	AuthAlg pulumi.StringInput `pulumi:"authAlg"`
+	// DH (Diffie-Hellman) key exchange algorithm used in phase 1 negotiation. Valid values: group1, group2 (default), group5, group14
+	DhGroup pulumi.StringInput `pulumi:"dhGroup"`
+	// Encryption algorithm for phase 1 negotiation.
+	EncAlg pulumi.StringInput `pulumi:"encAlg"`
+	// Lifetime of the SA for phase 1 negotiation. After the lifetime is exceeded, negotiation restarts. Value range: 900~86400, unit: seconds. Default: 86400.
+	Lifetime pulumi.IntInput `pulumi:"lifetime"`
+	// Identifier of the VPN gateway, used for phase 1 negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the current VPN gateway's egress IP address. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ; and digits are allowed.
+	LocalId pulumi.StringInput `pulumi:"localId"`
+	// Negotiation mode for phase 1. This parameter is required only when IkeConfig.Version is ikev1. Valid values: main (default), aggressive
+	Mode pulumi.StringInput `pulumi:"mode"`
+	// Pre-shared key used for identity authentication between the VPN gateway and the user gateway in phase 1. Must not exceed 100 characters and can only contain uppercase and lowercase letters, special symbols ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and numbers.
+	Psk pulumi.StringInput `pulumi:"psk"`
+	// Identifier of the customer gateway, used for phase one negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the public IP address of the currently selected customer gateway. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and digits are allowed.
+	RemoteId pulumi.StringInput `pulumi:"remoteId"`
+	// Version of the IKE key exchange protocol. Valid values: ikev1, ikev2 (default).
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetVpnConnectionTunnelOptionIkeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpnConnectionTunnelOptionIkeConfig)(nil)).Elem()
+}
+
+func (i GetVpnConnectionTunnelOptionIkeConfigArgs) ToGetVpnConnectionTunnelOptionIkeConfigOutput() GetVpnConnectionTunnelOptionIkeConfigOutput {
+	return i.ToGetVpnConnectionTunnelOptionIkeConfigOutputWithContext(context.Background())
+}
+
+func (i GetVpnConnectionTunnelOptionIkeConfigArgs) ToGetVpnConnectionTunnelOptionIkeConfigOutputWithContext(ctx context.Context) GetVpnConnectionTunnelOptionIkeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpnConnectionTunnelOptionIkeConfigOutput)
+}
+
+type GetVpnConnectionTunnelOptionIkeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetVpnConnectionTunnelOptionIkeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpnConnectionTunnelOptionIkeConfig)(nil)).Elem()
+}
+
+func (o GetVpnConnectionTunnelOptionIkeConfigOutput) ToGetVpnConnectionTunnelOptionIkeConfigOutput() GetVpnConnectionTunnelOptionIkeConfigOutput {
+	return o
+}
+
+func (o GetVpnConnectionTunnelOptionIkeConfigOutput) ToGetVpnConnectionTunnelOptionIkeConfigOutputWithContext(ctx context.Context) GetVpnConnectionTunnelOptionIkeConfigOutput {
+	return o
+}
+
+// Authentication algorithm for phase one.
+func (o GetVpnConnectionTunnelOptionIkeConfigOutput) AuthAlg() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOptionIkeConfig) string { return v.AuthAlg }).(pulumi.StringOutput)
+}
+
+// DH (Diffie-Hellman) key exchange algorithm used in phase 1 negotiation. Valid values: group1, group2 (default), group5, group14
+func (o GetVpnConnectionTunnelOptionIkeConfigOutput) DhGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOptionIkeConfig) string { return v.DhGroup }).(pulumi.StringOutput)
+}
+
+// Encryption algorithm for phase 1 negotiation.
+func (o GetVpnConnectionTunnelOptionIkeConfigOutput) EncAlg() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOptionIkeConfig) string { return v.EncAlg }).(pulumi.StringOutput)
+}
+
+// Lifetime of the SA for phase 1 negotiation. After the lifetime is exceeded, negotiation restarts. Value range: 900~86400, unit: seconds. Default: 86400.
+func (o GetVpnConnectionTunnelOptionIkeConfigOutput) Lifetime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOptionIkeConfig) int { return v.Lifetime }).(pulumi.IntOutput)
+}
+
+// Identifier of the VPN gateway, used for phase 1 negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the current VPN gateway's egress IP address. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ; and digits are allowed.
+func (o GetVpnConnectionTunnelOptionIkeConfigOutput) LocalId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOptionIkeConfig) string { return v.LocalId }).(pulumi.StringOutput)
+}
+
+// Negotiation mode for phase 1. This parameter is required only when IkeConfig.Version is ikev1. Valid values: main (default), aggressive
+func (o GetVpnConnectionTunnelOptionIkeConfigOutput) Mode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOptionIkeConfig) string { return v.Mode }).(pulumi.StringOutput)
+}
+
+// Pre-shared key used for identity authentication between the VPN gateway and the user gateway in phase 1. Must not exceed 100 characters and can only contain uppercase and lowercase letters, special symbols ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and numbers.
+func (o GetVpnConnectionTunnelOptionIkeConfigOutput) Psk() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOptionIkeConfig) string { return v.Psk }).(pulumi.StringOutput)
+}
+
+// Identifier of the customer gateway, used for phase one negotiation. Supports IP format and FQDN (Fully Qualified Domain Name) format. If not specified, defaults to the public IP address of the currently selected customer gateway. If you manually set it to FQDN format, it is recommended to set the negotiation mode to 'aggressive'. Maximum length is 100 characters. Only uppercase and lowercase letters, special characters ~ ` | ! @ # $ % ^ ( )   - _ + = [ ] { } \ , . / : ;, and digits are allowed.
+func (o GetVpnConnectionTunnelOptionIkeConfigOutput) RemoteId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOptionIkeConfig) string { return v.RemoteId }).(pulumi.StringOutput)
+}
+
+// Version of the IKE key exchange protocol. Valid values: ikev1, ikev2 (default).
+func (o GetVpnConnectionTunnelOptionIkeConfigOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOptionIkeConfig) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetVpnConnectionTunnelOptionIpsecConfig struct {
+	// Authentication algorithm for phase 2 negotiation
+	AuthAlg string `pulumi:"authAlg"`
+	// DH (Diffie-Hellman) key exchange algorithm used in phase 2
+	DhGroup string `pulumi:"dhGroup"`
+	// Encryption algorithm for phase 2 negotiation
+	EncAlg string `pulumi:"encAlg"`
+	// Lifetime of the SA for phase 2 negotiation. Negotiation will be re-initiated after the lifetime expires.
+	Lifetime int `pulumi:"lifetime"`
+}
+
+// GetVpnConnectionTunnelOptionIpsecConfigInput is an input type that accepts GetVpnConnectionTunnelOptionIpsecConfigArgs and GetVpnConnectionTunnelOptionIpsecConfigOutput values.
+// You can construct a concrete instance of `GetVpnConnectionTunnelOptionIpsecConfigInput` via:
+//
+//	GetVpnConnectionTunnelOptionIpsecConfigArgs{...}
+type GetVpnConnectionTunnelOptionIpsecConfigInput interface {
+	pulumi.Input
+
+	ToGetVpnConnectionTunnelOptionIpsecConfigOutput() GetVpnConnectionTunnelOptionIpsecConfigOutput
+	ToGetVpnConnectionTunnelOptionIpsecConfigOutputWithContext(context.Context) GetVpnConnectionTunnelOptionIpsecConfigOutput
+}
+
+type GetVpnConnectionTunnelOptionIpsecConfigArgs struct {
+	// Authentication algorithm for phase 2 negotiation
+	AuthAlg pulumi.StringInput `pulumi:"authAlg"`
+	// DH (Diffie-Hellman) key exchange algorithm used in phase 2
+	DhGroup pulumi.StringInput `pulumi:"dhGroup"`
+	// Encryption algorithm for phase 2 negotiation
+	EncAlg pulumi.StringInput `pulumi:"encAlg"`
+	// Lifetime of the SA for phase 2 negotiation. Negotiation will be re-initiated after the lifetime expires.
+	Lifetime pulumi.IntInput `pulumi:"lifetime"`
+}
+
+func (GetVpnConnectionTunnelOptionIpsecConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpnConnectionTunnelOptionIpsecConfig)(nil)).Elem()
+}
+
+func (i GetVpnConnectionTunnelOptionIpsecConfigArgs) ToGetVpnConnectionTunnelOptionIpsecConfigOutput() GetVpnConnectionTunnelOptionIpsecConfigOutput {
+	return i.ToGetVpnConnectionTunnelOptionIpsecConfigOutputWithContext(context.Background())
+}
+
+func (i GetVpnConnectionTunnelOptionIpsecConfigArgs) ToGetVpnConnectionTunnelOptionIpsecConfigOutputWithContext(ctx context.Context) GetVpnConnectionTunnelOptionIpsecConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpnConnectionTunnelOptionIpsecConfigOutput)
+}
+
+type GetVpnConnectionTunnelOptionIpsecConfigOutput struct{ *pulumi.OutputState }
+
+func (GetVpnConnectionTunnelOptionIpsecConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpnConnectionTunnelOptionIpsecConfig)(nil)).Elem()
+}
+
+func (o GetVpnConnectionTunnelOptionIpsecConfigOutput) ToGetVpnConnectionTunnelOptionIpsecConfigOutput() GetVpnConnectionTunnelOptionIpsecConfigOutput {
+	return o
+}
+
+func (o GetVpnConnectionTunnelOptionIpsecConfigOutput) ToGetVpnConnectionTunnelOptionIpsecConfigOutputWithContext(ctx context.Context) GetVpnConnectionTunnelOptionIpsecConfigOutput {
+	return o
+}
+
+// Authentication algorithm for phase 2 negotiation
+func (o GetVpnConnectionTunnelOptionIpsecConfigOutput) AuthAlg() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOptionIpsecConfig) string { return v.AuthAlg }).(pulumi.StringOutput)
+}
+
+// DH (Diffie-Hellman) key exchange algorithm used in phase 2
+func (o GetVpnConnectionTunnelOptionIpsecConfigOutput) DhGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOptionIpsecConfig) string { return v.DhGroup }).(pulumi.StringOutput)
+}
+
+// Encryption algorithm for phase 2 negotiation
+func (o GetVpnConnectionTunnelOptionIpsecConfigOutput) EncAlg() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOptionIpsecConfig) string { return v.EncAlg }).(pulumi.StringOutput)
+}
+
+// Lifetime of the SA for phase 2 negotiation. Negotiation will be re-initiated after the lifetime expires.
+func (o GetVpnConnectionTunnelOptionIpsecConfigOutput) Lifetime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOptionIpsecConfig) int { return v.Lifetime }).(pulumi.IntOutput)
+}
+
+type GetVpnConnectionTunnelOptionTunnelBgpInfo struct {
+	// Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+	EnableBgp bool `pulumi:"enableBgp"`
+	// The ASN of the VPN gateway.
+	LocalAsn int `pulumi:"localAsn"`
+	// BGP address. Defaults to the first host address of TunnelOptions.N.BGPConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel CIDR block. If EnableTunnelsBgp is set to true, this parameter must be specified.
+	LocalBgpIp string `pulumi:"localBgpIp"`
+	// ASN of the customer gateway.
+	PeerAsn int `pulumi:"peerAsn"`
+	// BGP peer IP, that is, the BGP address on the customer gateway side.
+	PeerBgpIp string `pulumi:"peerBgpIp"`
+	// Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
+	SessionStatus string `pulumi:"sessionStatus"`
+	// The CIDR address range for the local and peer IPs of the BGP session. This range must be within the 169.254.0.0/16 subnet with a subnet mask length of 30. If EnableTunnelsBgp is set to true, this parameter must be provided.
+	TunnelCidr string `pulumi:"tunnelCidr"`
+}
+
+// GetVpnConnectionTunnelOptionTunnelBgpInfoInput is an input type that accepts GetVpnConnectionTunnelOptionTunnelBgpInfoArgs and GetVpnConnectionTunnelOptionTunnelBgpInfoOutput values.
+// You can construct a concrete instance of `GetVpnConnectionTunnelOptionTunnelBgpInfoInput` via:
+//
+//	GetVpnConnectionTunnelOptionTunnelBgpInfoArgs{...}
+type GetVpnConnectionTunnelOptionTunnelBgpInfoInput interface {
+	pulumi.Input
+
+	ToGetVpnConnectionTunnelOptionTunnelBgpInfoOutput() GetVpnConnectionTunnelOptionTunnelBgpInfoOutput
+	ToGetVpnConnectionTunnelOptionTunnelBgpInfoOutputWithContext(context.Context) GetVpnConnectionTunnelOptionTunnelBgpInfoOutput
+}
+
+type GetVpnConnectionTunnelOptionTunnelBgpInfoArgs struct {
+	// Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+	EnableBgp pulumi.BoolInput `pulumi:"enableBgp"`
+	// The ASN of the VPN gateway.
+	LocalAsn pulumi.IntInput `pulumi:"localAsn"`
+	// BGP address. Defaults to the first host address of TunnelOptions.N.BGPConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel CIDR block. If EnableTunnelsBgp is set to true, this parameter must be specified.
+	LocalBgpIp pulumi.StringInput `pulumi:"localBgpIp"`
+	// ASN of the customer gateway.
+	PeerAsn pulumi.IntInput `pulumi:"peerAsn"`
+	// BGP peer IP, that is, the BGP address on the customer gateway side.
+	PeerBgpIp pulumi.StringInput `pulumi:"peerBgpIp"`
+	// Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
+	SessionStatus pulumi.StringInput `pulumi:"sessionStatus"`
+	// The CIDR address range for the local and peer IPs of the BGP session. This range must be within the 169.254.0.0/16 subnet with a subnet mask length of 30. If EnableTunnelsBgp is set to true, this parameter must be provided.
+	TunnelCidr pulumi.StringInput `pulumi:"tunnelCidr"`
+}
+
+func (GetVpnConnectionTunnelOptionTunnelBgpInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpnConnectionTunnelOptionTunnelBgpInfo)(nil)).Elem()
+}
+
+func (i GetVpnConnectionTunnelOptionTunnelBgpInfoArgs) ToGetVpnConnectionTunnelOptionTunnelBgpInfoOutput() GetVpnConnectionTunnelOptionTunnelBgpInfoOutput {
+	return i.ToGetVpnConnectionTunnelOptionTunnelBgpInfoOutputWithContext(context.Background())
+}
+
+func (i GetVpnConnectionTunnelOptionTunnelBgpInfoArgs) ToGetVpnConnectionTunnelOptionTunnelBgpInfoOutputWithContext(ctx context.Context) GetVpnConnectionTunnelOptionTunnelBgpInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpnConnectionTunnelOptionTunnelBgpInfoOutput)
+}
+
+type GetVpnConnectionTunnelOptionTunnelBgpInfoOutput struct{ *pulumi.OutputState }
+
+func (GetVpnConnectionTunnelOptionTunnelBgpInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpnConnectionTunnelOptionTunnelBgpInfo)(nil)).Elem()
+}
+
+func (o GetVpnConnectionTunnelOptionTunnelBgpInfoOutput) ToGetVpnConnectionTunnelOptionTunnelBgpInfoOutput() GetVpnConnectionTunnelOptionTunnelBgpInfoOutput {
+	return o
+}
+
+func (o GetVpnConnectionTunnelOptionTunnelBgpInfoOutput) ToGetVpnConnectionTunnelOptionTunnelBgpInfoOutputWithContext(ctx context.Context) GetVpnConnectionTunnelOptionTunnelBgpInfoOutput {
+	return o
+}
+
+// Enable dynamic route propagation. false (default): No, use static routing mode. true: Yes, use BGP routing mode.
+func (o GetVpnConnectionTunnelOptionTunnelBgpInfoOutput) EnableBgp() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOptionTunnelBgpInfo) bool { return v.EnableBgp }).(pulumi.BoolOutput)
+}
+
+// The ASN of the VPN gateway.
+func (o GetVpnConnectionTunnelOptionTunnelBgpInfoOutput) LocalAsn() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOptionTunnelBgpInfo) int { return v.LocalAsn }).(pulumi.IntOutput)
+}
+
+// BGP address. Defaults to the first host address of TunnelOptions.N.BGPConfig.TunnelCidr. This address must be an IP address within the IPsec tunnel CIDR block. If EnableTunnelsBgp is set to true, this parameter must be specified.
+func (o GetVpnConnectionTunnelOptionTunnelBgpInfoOutput) LocalBgpIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOptionTunnelBgpInfo) string { return v.LocalBgpIp }).(pulumi.StringOutput)
+}
+
+// ASN of the customer gateway.
+func (o GetVpnConnectionTunnelOptionTunnelBgpInfoOutput) PeerAsn() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOptionTunnelBgpInfo) int { return v.PeerAsn }).(pulumi.IntOutput)
+}
+
+// BGP peer IP, that is, the BGP address on the customer gateway side.
+func (o GetVpnConnectionTunnelOptionTunnelBgpInfoOutput) PeerBgpIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOptionTunnelBgpInfo) string { return v.PeerBgpIp }).(pulumi.StringOutput)
+}
+
+// Status of the BGP connection. Up: BGP connection is normal. Down: BGP connection is not working.
+func (o GetVpnConnectionTunnelOptionTunnelBgpInfoOutput) SessionStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOptionTunnelBgpInfo) string { return v.SessionStatus }).(pulumi.StringOutput)
+}
+
+// The CIDR address range for the local and peer IPs of the BGP session. This range must be within the 169.254.0.0/16 subnet with a subnet mask length of 30. If EnableTunnelsBgp is set to true, this parameter must be provided.
+func (o GetVpnConnectionTunnelOptionTunnelBgpInfoOutput) TunnelCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVpnConnectionTunnelOptionTunnelBgpInfo) string { return v.TunnelCidr }).(pulumi.StringOutput)
+}
+
+type GetVpnGatewayTag struct {
+	// VPN gateway tag key (Key). Parameter   - N: Indicates the sequence number of the tag key, value range: 1–20. Multiple tag keys are separated by &. Naming rules: Cannot start with any combination of volc: or sys: (case-insensitive). Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length limit: 1–128 characters. Note: Tag keys for the same resource must not be duplicated.
+	Key string `pulumi:"key"`
+	// VPN gateway tag value (Value). Parameter   - N: Indicates the sequence number of the tag value, value range: 1–20. Multiple tag values are separated by &. Naming rules: Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length limit: 0–256 characters. Case-sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
 	Value string `pulumi:"value"`
 }
 
@@ -350,9 +3202,9 @@ type GetVpnGatewayTagInput interface {
 }
 
 type GetVpnGatewayTagArgs struct {
-	// VPN网关标签的标签键（Key）。参数   - N：表示标签键的序号，取值范围：1～20。多个标签键之间用&分隔。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。说明同一资源的标签键不允许重复。
+	// VPN gateway tag key (Key). Parameter   - N: Indicates the sequence number of the tag key, value range: 1–20. Multiple tag keys are separated by &. Naming rules: Cannot start with any combination of volc: or sys: (case-insensitive). Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length limit: 1–128 characters. Note: Tag keys for the same resource must not be duplicated.
 	Key pulumi.StringInput `pulumi:"key"`
-	// VPN网关标签的标签值（Value）。参数   - N：表示标签值的序号，取值范围：1～20。多个标签值之间用&分隔。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。大小写敏感，不能以空格开头或结尾。说明传入Tags.N.Value则必须传入Tags.N.Key。
+	// VPN gateway tag value (Value). Parameter   - N: Indicates the sequence number of the tag value, value range: 1–20. Multiple tag values are separated by &. Naming rules: Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length limit: 0–256 characters. Case-sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -407,12 +3259,12 @@ func (o GetVpnGatewayTagOutput) ToGetVpnGatewayTagOutputWithContext(ctx context.
 	return o
 }
 
-// VPN网关标签的标签键（Key）。参数   - N：表示标签键的序号，取值范围：1～20。多个标签键之间用&分隔。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。说明同一资源的标签键不允许重复。
+// VPN gateway tag key (Key). Parameter   - N: Indicates the sequence number of the tag key, value range: 1–20. Multiple tag keys are separated by &. Naming rules: Cannot start with any combination of volc: or sys: (case-insensitive). Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length limit: 1–128 characters. Note: Tag keys for the same resource must not be duplicated.
 func (o GetVpnGatewayTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVpnGatewayTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// VPN网关标签的标签值（Value）。参数   - N：表示标签值的序号，取值范围：1～20。多个标签值之间用&分隔。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。大小写敏感，不能以空格开头或结尾。说明传入Tags.N.Value则必须传入Tags.N.Key。
+// VPN gateway tag value (Value). Parameter   - N: Indicates the sequence number of the tag value, value range: 1–20. Multiple tag values are separated by &. Naming rules: Can only contain language characters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length limit: 0–256 characters. Case-sensitive. Cannot start or end with a space. Note: If Tags.N.Value is provided, Tags.N.Key must also be provided.
 func (o GetVpnGatewayTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVpnGatewayTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -440,18 +3292,78 @@ func (o GetVpnGatewayTagArrayOutput) Index(i pulumi.IntInput) GetVpnGatewayTagOu
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CustomerGatewayTagInput)(nil)).Elem(), CustomerGatewayTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CustomerGatewayTagArrayInput)(nil)).Elem(), CustomerGatewayTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpnConnectionBgpInfoInput)(nil)).Elem(), VpnConnectionBgpInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpnConnectionBgpInfoPtrInput)(nil)).Elem(), VpnConnectionBgpInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpnConnectionHealthCheckerInput)(nil)).Elem(), VpnConnectionHealthCheckerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpnConnectionHealthCheckerArrayInput)(nil)).Elem(), VpnConnectionHealthCheckerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpnConnectionIkeConfigInput)(nil)).Elem(), VpnConnectionIkeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpnConnectionIkeConfigPtrInput)(nil)).Elem(), VpnConnectionIkeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpnConnectionIpsecConfigInput)(nil)).Elem(), VpnConnectionIpsecConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpnConnectionIpsecConfigPtrInput)(nil)).Elem(), VpnConnectionIpsecConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpnConnectionTagInput)(nil)).Elem(), VpnConnectionTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpnConnectionTagArrayInput)(nil)).Elem(), VpnConnectionTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpnConnectionTunnelOptionInput)(nil)).Elem(), VpnConnectionTunnelOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpnConnectionTunnelOptionArrayInput)(nil)).Elem(), VpnConnectionTunnelOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpnConnectionTunnelOptionIkeConfigInput)(nil)).Elem(), VpnConnectionTunnelOptionIkeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpnConnectionTunnelOptionIkeConfigPtrInput)(nil)).Elem(), VpnConnectionTunnelOptionIkeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpnConnectionTunnelOptionIpsecConfigInput)(nil)).Elem(), VpnConnectionTunnelOptionIpsecConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpnConnectionTunnelOptionIpsecConfigPtrInput)(nil)).Elem(), VpnConnectionTunnelOptionIpsecConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpnConnectionTunnelOptionTunnelBgpInfoInput)(nil)).Elem(), VpnConnectionTunnelOptionTunnelBgpInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VpnConnectionTunnelOptionTunnelBgpInfoPtrInput)(nil)).Elem(), VpnConnectionTunnelOptionTunnelBgpInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpnGatewayTagInput)(nil)).Elem(), VpnGatewayTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpnGatewayTagArrayInput)(nil)).Elem(), VpnGatewayTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCustomerGatewayTagInput)(nil)).Elem(), GetCustomerGatewayTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCustomerGatewayTagArrayInput)(nil)).Elem(), GetCustomerGatewayTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnConnectionBgpInfoInput)(nil)).Elem(), GetVpnConnectionBgpInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnConnectionHealthCheckerInput)(nil)).Elem(), GetVpnConnectionHealthCheckerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnConnectionHealthCheckerArrayInput)(nil)).Elem(), GetVpnConnectionHealthCheckerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnConnectionIkeConfigInput)(nil)).Elem(), GetVpnConnectionIkeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnConnectionIpsecConfigInput)(nil)).Elem(), GetVpnConnectionIpsecConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnConnectionTagInput)(nil)).Elem(), GetVpnConnectionTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnConnectionTagArrayInput)(nil)).Elem(), GetVpnConnectionTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnConnectionTunnelOptionInput)(nil)).Elem(), GetVpnConnectionTunnelOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnConnectionTunnelOptionArrayInput)(nil)).Elem(), GetVpnConnectionTunnelOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnConnectionTunnelOptionIkeConfigInput)(nil)).Elem(), GetVpnConnectionTunnelOptionIkeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnConnectionTunnelOptionIpsecConfigInput)(nil)).Elem(), GetVpnConnectionTunnelOptionIpsecConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnConnectionTunnelOptionTunnelBgpInfoInput)(nil)).Elem(), GetVpnConnectionTunnelOptionTunnelBgpInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnGatewayTagInput)(nil)).Elem(), GetVpnGatewayTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpnGatewayTagArrayInput)(nil)).Elem(), GetVpnGatewayTagArray{})
 	pulumi.RegisterOutputType(CustomerGatewayTagOutput{})
 	pulumi.RegisterOutputType(CustomerGatewayTagArrayOutput{})
+	pulumi.RegisterOutputType(VpnConnectionBgpInfoOutput{})
+	pulumi.RegisterOutputType(VpnConnectionBgpInfoPtrOutput{})
+	pulumi.RegisterOutputType(VpnConnectionHealthCheckerOutput{})
+	pulumi.RegisterOutputType(VpnConnectionHealthCheckerArrayOutput{})
+	pulumi.RegisterOutputType(VpnConnectionIkeConfigOutput{})
+	pulumi.RegisterOutputType(VpnConnectionIkeConfigPtrOutput{})
+	pulumi.RegisterOutputType(VpnConnectionIpsecConfigOutput{})
+	pulumi.RegisterOutputType(VpnConnectionIpsecConfigPtrOutput{})
+	pulumi.RegisterOutputType(VpnConnectionTagOutput{})
+	pulumi.RegisterOutputType(VpnConnectionTagArrayOutput{})
+	pulumi.RegisterOutputType(VpnConnectionTunnelOptionOutput{})
+	pulumi.RegisterOutputType(VpnConnectionTunnelOptionArrayOutput{})
+	pulumi.RegisterOutputType(VpnConnectionTunnelOptionIkeConfigOutput{})
+	pulumi.RegisterOutputType(VpnConnectionTunnelOptionIkeConfigPtrOutput{})
+	pulumi.RegisterOutputType(VpnConnectionTunnelOptionIpsecConfigOutput{})
+	pulumi.RegisterOutputType(VpnConnectionTunnelOptionIpsecConfigPtrOutput{})
+	pulumi.RegisterOutputType(VpnConnectionTunnelOptionTunnelBgpInfoOutput{})
+	pulumi.RegisterOutputType(VpnConnectionTunnelOptionTunnelBgpInfoPtrOutput{})
 	pulumi.RegisterOutputType(VpnGatewayTagOutput{})
 	pulumi.RegisterOutputType(VpnGatewayTagArrayOutput{})
 	pulumi.RegisterOutputType(GetCustomerGatewayTagOutput{})
 	pulumi.RegisterOutputType(GetCustomerGatewayTagArrayOutput{})
+	pulumi.RegisterOutputType(GetVpnConnectionBgpInfoOutput{})
+	pulumi.RegisterOutputType(GetVpnConnectionHealthCheckerOutput{})
+	pulumi.RegisterOutputType(GetVpnConnectionHealthCheckerArrayOutput{})
+	pulumi.RegisterOutputType(GetVpnConnectionIkeConfigOutput{})
+	pulumi.RegisterOutputType(GetVpnConnectionIpsecConfigOutput{})
+	pulumi.RegisterOutputType(GetVpnConnectionTagOutput{})
+	pulumi.RegisterOutputType(GetVpnConnectionTagArrayOutput{})
+	pulumi.RegisterOutputType(GetVpnConnectionTunnelOptionOutput{})
+	pulumi.RegisterOutputType(GetVpnConnectionTunnelOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetVpnConnectionTunnelOptionIkeConfigOutput{})
+	pulumi.RegisterOutputType(GetVpnConnectionTunnelOptionIpsecConfigOutput{})
+	pulumi.RegisterOutputType(GetVpnConnectionTunnelOptionTunnelBgpInfoOutput{})
 	pulumi.RegisterOutputType(GetVpnGatewayTagOutput{})
 	pulumi.RegisterOutputType(GetVpnGatewayTagArrayOutput{})
 }

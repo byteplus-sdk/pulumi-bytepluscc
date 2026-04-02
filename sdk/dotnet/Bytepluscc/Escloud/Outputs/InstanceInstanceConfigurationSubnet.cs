@@ -19,7 +19,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud.Outputs
         /// </summary>
         public readonly string? SubnetId;
         /// <summary>
-        /// Subnet 名称。
+        /// Subnet name
         /// </summary>
         public readonly string? SubnetName;
 

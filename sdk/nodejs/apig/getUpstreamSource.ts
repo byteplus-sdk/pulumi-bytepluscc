@@ -31,15 +31,15 @@ export interface GetUpstreamSourceArgs {
  */
 export interface GetUpstreamSourceResult {
     /**
-     * 备注，长度限制为0~253个字符。
+     * Remarks, length limit: 0–253 characters
      */
     readonly comments: string;
     /**
-     * 创建时间。
+     * Creation time
      */
     readonly createdTime: string;
     /**
-     * 网关实例ID。
+     * Gateway instance ID
      */
     readonly gatewayId: string;
     /**
@@ -47,35 +47,35 @@ export interface GetUpstreamSourceResult {
      */
     readonly id: string;
     /**
-     * 路由同步。开启后，API网关会自动监听Ingress资源的变化，并将Ingress资源转义为服务，域名，Upstream等资源合并至当前网关。由Ingress转义的资源不支持在控制台操作。仅支持容器集群来源类型。
+     * Route synchronization. When enabled, the API Gateway automatically monitors changes to Ingress resources and converts them into services, domains, Upstream, and other resources, merging them into the current gateway. Resources converted from Ingress cannot be managed in the console. Only supported for container cluster source type
      */
     readonly ingressSettings: outputs.apig.GetUpstreamSourceIngressSettings;
     /**
-     * Upstream来源配置。
+     * Upstream source configuration
      */
     readonly sourceSpec: outputs.apig.GetUpstreamSourceSourceSpec;
     /**
-     * Upstream来源类型，取值：K8S：容器集群。Nacos：注册中心。
+     * Upstream source type. Options: K8S: Container cluster. Nacos: Registry
      */
     readonly sourceType: string;
     /**
-     * 导入状态，取值：Syncing：导入中。SyncedSucceed：导入成功。SyncedFailed：导入失败。
+     * Import status. Options: Syncing: Importing. SyncedSucceed: Import successful. SyncedFailed: Import failed
      */
     readonly status: string;
     /**
-     * 导入状态信息，取值：ConnectionFailed：Nacos集群无法连接。AuthenticationFailed：认证失败。PermissionFailed：Nacos集群无法连接。
+     * Import status information. Options: ConnectionFailed: Unable to connect to Nacos cluster. AuthenticationFailed: Authentication failed. PermissionFailed: Unable to connect to Nacos cluster
      */
     readonly statusMessage: string;
     /**
-     * 更新时间。
+     * Update time
      */
     readonly updatedTime: string;
     /**
-     * Upstream来源ID。
+     * Upstream source ID
      */
     readonly upstreamSourceId: string;
     /**
-     * 指定命名空间。
+     * Specify namespace
      */
     readonly watchNamespaces: string[];
 }

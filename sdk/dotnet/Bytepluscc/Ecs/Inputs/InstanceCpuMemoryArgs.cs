@@ -14,25 +14,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
     public sealed class InstanceCpuMemoryArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 实例的核数。
+        /// Number of instance cores.
         /// </summary>
         [Input("coreCount")]
         public Input<int>? CoreCount { get; set; }
 
         /// <summary>
-        /// 实例的CPU数量。
+        /// Number of vCPUs for the instance.
         /// </summary>
         [Input("cpuNumber")]
         public Input<int>? CpuNumber { get; set; }
 
         /// <summary>
-        /// 实例的内存大小，单位MB。
+        /// Instance memory size (MB).
         /// </summary>
         [Input("memorySize")]
         public Input<int>? MemorySize { get; set; }
 
         /// <summary>
-        /// 实例的每核线程数。
+        /// Threads per core for the instance.
         /// </summary>
         [Input("threadsPerCore")]
         public Input<int>? ThreadsPerCore { get; set; }

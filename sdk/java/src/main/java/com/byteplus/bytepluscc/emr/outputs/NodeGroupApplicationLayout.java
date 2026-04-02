@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NodeGroupApplicationLayout {
     /**
-     * @return 应用名称。
+     * @return Application name.
      * 
      */
     private @Nullable String applicationName;
     /**
-     * @return 组件的自定义配置参数列表。
+     * @return Custom configuration parameter list for the component.
      * 
      */
     private @Nullable List<String> layoutComponentNames;
 
     private NodeGroupApplicationLayout() {}
     /**
-     * @return 应用名称。
+     * @return Application name.
      * 
      */
     public Optional<String> applicationName() {
         return Optional.ofNullable(this.applicationName);
     }
     /**
-     * @return 组件的自定义配置参数列表。
+     * @return Custom configuration parameter list for the component.
      * 
      */
     public List<String> layoutComponentNames() {

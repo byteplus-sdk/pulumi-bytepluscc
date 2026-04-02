@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Kafka.Outputs
     public sealed class GetAllowListAssociatedInstanceResult
     {
         /// <summary>
-        /// 白名单绑定的实例ID。
+        /// ID of the instance bound to the allowlist
         /// </summary>
         public readonly string InstanceId;
         /// <summary>
-        /// 白名单绑定的实例名称。
+        /// Name of the instance bound to the allowlist
         /// </summary>
         public readonly string InstanceName;
 

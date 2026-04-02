@@ -16,14 +16,14 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
     public static final AllowListAssociatedInstanceArgs Empty = new AllowListAssociatedInstanceArgs();
 
     /**
-     * 实例ID。
+     * Instance ID.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 实例ID。
+     * @return Instance ID.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -55,7 +55,7 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param instanceId 实例ID。
+         * @param instanceId Instance ID.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class AllowListAssociatedInstanceArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param instanceId 实例ID。
+         * @param instanceId Instance ID.
          * 
          * @return builder
          * 

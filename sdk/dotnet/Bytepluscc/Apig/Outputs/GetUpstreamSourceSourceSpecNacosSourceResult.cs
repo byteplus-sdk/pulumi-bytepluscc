@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GetUpstreamSourceSourceSpecNacosSourceResult
     {
         /// <summary>
-        /// 认证配置。
+        /// Authentication configuration
         /// </summary>
         public readonly Outputs.GetUpstreamSourceSourceSpecNacosSourceAuthConfigResult AuthConfig;
         /// <summary>
@@ -23,7 +23,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
         /// </summary>
         public readonly string NacosId;
         /// <summary>
-        /// Nacos名称。
+        /// Nacos name
         /// </summary>
         public readonly string NacosName;
 

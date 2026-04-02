@@ -13,26 +13,58 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RegistryStatus {
     /**
-     * @return Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+     * @return Creating, [ Progressing ]: Creating
+     * Running, [ Ok ]: Running
+     * Running, [ Degraded ]: Running
+     * Stopped, [ Balance ]: Suspended due to insufficient balance
+     * Stopped, [ Released ]: Pending reclamation
+     * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+     * Starting, [ Progressing ]: Starting
+     * Deleting, [ Progressing ]: Deleting
+     * Failed, [ Unknown ]: Abnormal
      * 
      */
     private @Nullable List<String> conditions;
     /**
-     * @return Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+     * @return Creating, [ Progressing ]: Creating
+     * Running, [ Ok ]: Running
+     * Running, [ Degraded ]: Running
+     * Stopped, [ Balance ]: Suspended due to insufficient balance
+     * Stopped, [ Released ]: Pending reclamation
+     * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+     * Starting, [ Progressing ]: Starting
+     * Deleting, [ Progressing ]: Deleting
+     * Failed, [ Unknown ]: Abnormal
      * 
      */
     private @Nullable String phase;
 
     private RegistryStatus() {}
     /**
-     * @return Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+     * @return Creating, [ Progressing ]: Creating
+     * Running, [ Ok ]: Running
+     * Running, [ Degraded ]: Running
+     * Stopped, [ Balance ]: Suspended due to insufficient balance
+     * Stopped, [ Released ]: Pending reclamation
+     * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+     * Starting, [ Progressing ]: Starting
+     * Deleting, [ Progressing ]: Deleting
+     * Failed, [ Unknown ]: Abnormal
      * 
      */
     public List<String> conditions() {
         return this.conditions == null ? List.of() : this.conditions;
     }
     /**
-     * @return Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+     * @return Creating, [ Progressing ]: Creating
+     * Running, [ Ok ]: Running
+     * Running, [ Degraded ]: Running
+     * Stopped, [ Balance ]: Suspended due to insufficient balance
+     * Stopped, [ Released ]: Pending reclamation
+     * Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+     * Starting, [ Progressing ]: Starting
+     * Deleting, [ Progressing ]: Deleting
+     * Failed, [ Unknown ]: Abnormal
      * 
      */
     public Optional<String> phase() {

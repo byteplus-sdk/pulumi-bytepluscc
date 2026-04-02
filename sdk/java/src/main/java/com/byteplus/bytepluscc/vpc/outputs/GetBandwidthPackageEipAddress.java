@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetBandwidthPackageEipAddress {
     /**
-     * @return 分配ID
+     * @return Allocation ID
      * 
      */
     private String allocationId;
     /**
-     * @return 弹性IP地址
+     * @return Elastic IP address
      * 
      */
     private String eipAddress;
 
     private GetBandwidthPackageEipAddress() {}
     /**
-     * @return 分配ID
+     * @return Allocation ID
      * 
      */
     public String allocationId() {
         return this.allocationId;
     }
     /**
-     * @return 弹性IP地址
+     * @return Elastic IP address
      * 
      */
     public String eipAddress() {

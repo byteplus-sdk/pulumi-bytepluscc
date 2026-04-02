@@ -30,25 +30,25 @@ type LookupHpcClusterArgs struct {
 
 // A collection of values returned by getHpcCluster.
 type LookupHpcClusterResult struct {
-	// 创建时间，格式满足RFC3339。
+	// Creation time, formatted according to RFC3339
 	CreatedTime string `pulumi:"createdTime"`
-	// 高性能计算集群描述，默认为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0～255之间。
+	// High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
 	Description string `pulumi:"description"`
-	// 高性能计算集群ID。
+	// High performance compute cluster ID
 	HpcClusterId string `pulumi:"hpcClusterId"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 高性能计算集群名称。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1～128之间。
+	// High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
 	Name string `pulumi:"name"`
-	// 项目名称。
+	// Project name
 	ProjectName string `pulumi:"projectName"`
-	// 标签信息。
+	// Tag information
 	Tags []GetHpcClusterTag `pulumi:"tags"`
-	// 更新时间，格式满足RFC3339。
+	// Update time, formatted according to RFC3339
 	UpdatedTime string `pulumi:"updatedTime"`
-	// 私有网络ID。
+	// Private network ID
 	VpcId string `pulumi:"vpcId"`
-	// 高性能计算集群所属可用区ID。
+	// Availability zone ID of the high performance compute cluster
 	ZoneId string `pulumi:"zoneId"`
 }
 
@@ -86,17 +86,17 @@ func (o LookupHpcClusterResultOutput) ToLookupHpcClusterResultOutputWithContext(
 	return o
 }
 
-// 创建时间，格式满足RFC3339。
+// Creation time, formatted according to RFC3339
 func (o LookupHpcClusterResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHpcClusterResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 高性能计算集群描述，默认为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0～255之间。
+// High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
 func (o LookupHpcClusterResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHpcClusterResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 高性能计算集群ID。
+// High performance compute cluster ID
 func (o LookupHpcClusterResultOutput) HpcClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHpcClusterResult) string { return v.HpcClusterId }).(pulumi.StringOutput)
 }
@@ -106,32 +106,32 @@ func (o LookupHpcClusterResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHpcClusterResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 高性能计算集群名称。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1～128之间。
+// High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
 func (o LookupHpcClusterResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHpcClusterResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 项目名称。
+// Project name
 func (o LookupHpcClusterResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHpcClusterResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 标签信息。
+// Tag information
 func (o LookupHpcClusterResultOutput) Tags() GetHpcClusterTagArrayOutput {
 	return o.ApplyT(func(v LookupHpcClusterResult) []GetHpcClusterTag { return v.Tags }).(GetHpcClusterTagArrayOutput)
 }
 
-// 更新时间，格式满足RFC3339。
+// Update time, formatted according to RFC3339
 func (o LookupHpcClusterResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHpcClusterResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// 私有网络ID。
+// Private network ID
 func (o LookupHpcClusterResultOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHpcClusterResult) string { return v.VpcId }).(pulumi.StringOutput)
 }
 
-// 高性能计算集群所属可用区ID。
+// Availability zone ID of the high performance compute cluster
 func (o LookupHpcClusterResultOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHpcClusterResult) string { return v.ZoneId }).(pulumi.StringOutput)
 }

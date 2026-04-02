@@ -11,50 +11,50 @@ import java.util.Objects;
 @CustomType
 public final class GetResolverRuleVpC {
     /**
-     * @return 创建该 VPC 的账号 ID。
+     * @return Account ID that created the VPC
      * 
      */
     private String accountId;
     /**
-     * @return VPC 的地域。
+     * @return Region of the VPC
      * 
      */
     private String region;
     /**
-     * @return VPC 的地域的名称。
+     * @return Name of the VPC region
      * 
      */
     private String regionName;
     /**
-     * @return VPC 的 ID。
+     * @return VPC ID
      * 
      */
     private String vpcId;
 
     private GetResolverRuleVpC() {}
     /**
-     * @return 创建该 VPC 的账号 ID。
+     * @return Account ID that created the VPC
      * 
      */
     public String accountId() {
         return this.accountId;
     }
     /**
-     * @return VPC 的地域。
+     * @return Region of the VPC
      * 
      */
     public String region() {
         return this.region;
     }
     /**
-     * @return VPC 的地域的名称。
+     * @return Name of the VPC region
      * 
      */
     public String regionName() {
         return this.regionName;
     }
     /**
-     * @return VPC 的 ID。
+     * @return VPC ID
      * 
      */
     public String vpcId() {

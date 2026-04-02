@@ -16,7 +16,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * 解析记录是域名与 VPC 内资源信息的映射。
+ * A DNS record maps a domain name to resource information within a VPC.
  * 
  * ## Example Usage
  * 
@@ -71,196 +71,196 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:privatezone/record:Record")
 public class Record extends com.pulumi.resources.CustomResource {
     /**
-     * 解析记录的创建时间。
+     * Creation time of the DNS record.
      * 
      */
     @Export(name="createdAt", refs={String.class}, tree="[0]")
     private Output<String> createdAt;
 
     /**
-     * @return 解析记录的创建时间。
+     * @return Creation time of the DNS record.
      * 
      */
     public Output<String> createdAt() {
         return this.createdAt;
     }
     /**
-     * 解析记录是否被启用。
+     * Indicates whether the DNS record is enabled.
      * 
      */
     @Export(name="enable", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enable;
 
     /**
-     * @return 解析记录是否被启用。
+     * @return Indicates whether the DNS record is enabled.
      * 
      */
     public Output<Boolean> enable() {
         return this.enable;
     }
     /**
-     * 子域名的域名前缀。
+     * Domain prefix for the subdomain.
      * 
      */
     @Export(name="host", refs={String.class}, tree="[0]")
     private Output<String> host;
 
     /**
-     * @return 子域名的域名前缀。
+     * @return Domain prefix for the subdomain.
      * 
      */
     public Output<String> host() {
         return this.host;
     }
     /**
-     * 最近一次更新解析记录的账号 ID。
+     * Account ID of the most recent update to the DNS record.
      * 
      */
     @Export(name="lastOperator", refs={String.class}, tree="[0]")
     private Output<String> lastOperator;
 
     /**
-     * @return 最近一次更新解析记录的账号 ID。
+     * @return Account ID of the most recent update to the DNS record.
      * 
      */
     public Output<String> lastOperator() {
         return this.lastOperator;
     }
     /**
-     * 解析记录的线路，只能是默认线路 default。
+     * DNS record route, only the default route &#39;default&#39; is supported.
      * 
      */
     @Export(name="line", refs={String.class}, tree="[0]")
     private Output<String> line;
 
     /**
-     * @return 解析记录的线路，只能是默认线路 default。
+     * @return DNS record route, only the default route &#39;default&#39; is supported.
      * 
      */
     public Output<String> line() {
         return this.line;
     }
     /**
-     * 解析记录 ID。
+     * DNS record ID.
      * 
      */
     @Export(name="recordId", refs={String.class}, tree="[0]")
     private Output<String> recordId;
 
     /**
-     * @return 解析记录 ID。
+     * @return DNS record ID.
      * 
      */
     public Output<String> recordId() {
         return this.recordId;
     }
     /**
-     * 备注。支持 UTF-8 字符。不能超过 16 个字符。默认值为空字符串。
+     * Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
      * 
      */
     @Export(name="remark", refs={String.class}, tree="[0]")
     private Output<String> remark;
 
     /**
-     * @return 备注。支持 UTF-8 字符。不能超过 16 个字符。默认值为空字符串。
+     * @return Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
      * 
      */
     public Output<String> remark() {
         return this.remark;
     }
     /**
-     * 解析记录的过期时间。单位为秒。默认值为 600。
+     * DNS record TTL (time to live), in seconds. Default is 600.
      * 
      */
     @Export(name="ttl", refs={Integer.class}, tree="[0]")
     private Output<Integer> ttl;
 
     /**
-     * @return 解析记录的过期时间。单位为秒。默认值为 600。
+     * @return DNS record TTL (time to live), in seconds. Default is 600.
      * 
      */
     public Output<Integer> ttl() {
         return this.ttl;
     }
     /**
-     * 解析记录类型。该参数的取值如下：A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。
+     * DNS record type. Valid values are: A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record. A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record.
      * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
-     * @return 解析记录类型。该参数的取值如下：A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。
+     * @return DNS record type. Valid values are: A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record. A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record.
      * 
      */
     public Output<String> type() {
         return this.type;
     }
     /**
-     * 解析记录最近一次的更新时间。
+     * Last update time of the DNS record.
      * 
      */
     @Export(name="updatedAt", refs={String.class}, tree="[0]")
     private Output<String> updatedAt;
 
     /**
-     * @return 解析记录最近一次的更新时间。
+     * @return Last update time of the DNS record.
      * 
      */
     public Output<String> updatedAt() {
         return this.updatedAt;
     }
     /**
-     * 记录值。
+     * Record value.
      * 
      */
     @Export(name="value", refs={String.class}, tree="[0]")
     private Output<String> value;
 
     /**
-     * @return 记录值。
+     * @return Record value.
      * 
      */
     public Output<String> value() {
         return this.value;
     }
     /**
-     * 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
+     * Record weight. The weight takes effect only when load balancing is enabled for the domain name.
      * 
      */
     @Export(name="weight", refs={Integer.class}, tree="[0]")
     private Output<Integer> weight;
 
     /**
-     * @return 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
+     * @return Record weight. The weight takes effect only when load balancing is enabled for the domain name.
      * 
      */
     public Output<Integer> weight() {
         return this.weight;
     }
     /**
-     * 该记录集是否开启了负载均衡。
+     * Indicates whether load balancing is enabled for this record set.
      * 
      */
     @Export(name="weightEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> weightEnabled;
 
     /**
-     * @return 该记录集是否开启了负载均衡。
+     * @return Indicates whether load balancing is enabled for this record set.
      * 
      */
     public Output<Boolean> weightEnabled() {
         return this.weightEnabled;
     }
     /**
-     * 域名 ID。
+     * Domain name ID.
      * 
      */
     @Export(name="zid", refs={Integer.class}, tree="[0]")
     private Output<Integer> zid;
 
     /**
-     * @return 域名 ID。
+     * @return Domain name ID.
      * 
      */
     public Output<Integer> zid() {

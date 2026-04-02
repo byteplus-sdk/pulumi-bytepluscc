@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Privatelink
 {
     /// <summary>
-    /// 终端节点服务是可以与其他VPC通过终端节点建立私网连接的服务。
+    /// The endpoint service enables private network connections between VPCs via endpoints.
     /// 
     /// ## Import
     /// 
@@ -23,73 +23,73 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
     public partial class EndpointService : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 是否自动接受终端节点连接。true：终端节点服务自动接受终端节点连接。false：终端节点服务不会自动接受终端节点连接，需要调用EnableVpcEndpointConnection接口手动接受。
+        /// Whether to automatically accept endpoint connections. true: The endpoint service automatically accepts endpoint connections. false: The endpoint service does not automatically accept endpoint connections; you must manually accept them by calling the EnableVpcEndpointConnection API.
         /// </summary>
         [Output("autoAcceptEnabled")]
         public Output<bool> AutoAcceptEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// 终端节点服务的计费类型。0：不计费。3：按量计费。
+        /// Billing type of the endpoint service. 0: No charge. 3: Pay-as-you-go.
         /// </summary>
         [Output("billingType")]
         public Output<int> BillingType { get; private set; } = null!;
 
         /// <summary>
-        /// 终端节点服务是否被锁定。Normal：正常。FinancialLocked：被锁定。说明该参数返回为空时，表示终端节点服务未锁定。
+        /// Whether the endpoint service is locked. Normal: normal. FinancialLocked: locked. If this parameter is empty, the endpoint service is not locked.
         /// </summary>
         [Output("businessStatus")]
         public Output<string> BusinessStatus { get; private set; } = null!;
 
         /// <summary>
-        /// 终端节点服务的创建时间。
+        /// Creation time of the endpoint service.
         /// </summary>
         [Output("createTime")]
         public Output<string> CreateTime { get; private set; } = null!;
 
         /// <summary>
-        /// 终端节点服务的描述信息。
+        /// Description of the endpoint service.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 终端节点服务的IP协议类型。返回值中仅包含ipv4时，说明该终端节点服务为IPv4类型，仅支持提供IPv4服务。返回值中同时包含ipv4和ipv6时，说明该终端节点服务为双栈类型，支持同时提供IPv4和IPv6服务。
+        /// IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
         /// </summary>
         [Output("ipAddressVersions")]
         public Output<ImmutableArray<string>> IpAddressVersions { get; private set; } = null!;
 
         /// <summary>
-        /// 私网连接的付费账号。Endpoint：终端节点账号。EndpointService：终端节点服务账号。
+        /// Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
         /// </summary>
         [Output("payer")]
         public Output<string> Payer { get; private set; } = null!;
 
         /// <summary>
-        /// 终端节点服务是否启用私有DNS名称。false：未启用。true：已启用。
+        /// Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
         /// </summary>
         [Output("privateDnsEnabled")]
         public Output<bool> PrivateDnsEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// 终端节点服务的私有DNS名称。参数PrivateDNSEnabled返回值为false时，该参数返回空。
+        /// Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
         /// </summary>
         [Output("privateDnsName")]
         public Output<string> PrivateDnsName { get; private set; } = null!;
 
         /// <summary>
-        /// 终端节点服务私有DNS名称的配置信息。说明PrivateDNSType为private时，不返回该参数。
+        /// Configuration information for the private DNS name of the endpoint service. Note: If PrivateDNSType is private, this parameter is not returned.
         /// </summary>
         [Output("privateDnsNameConfiguration")]
         public Output<Outputs.EndpointServicePrivateDnsNameConfiguration> PrivateDnsNameConfiguration { get; private set; } = null!;
 
         /// <summary>
-        /// 私有DNS名称的域名类型。public：公网。说明未开通自定义私网域名功能时，不返回该参数。
+        /// Domain name type of the private DNS name. public: public network. Note: If the custom private domain name feature is not enabled, this parameter is not returned.
         /// </summary>
         [Output("privateDnsType")]
         public Output<string> PrivateDnsType { get; private set; } = null!;
 
         /// <summary>
-        /// 终端节点服务所属的项目名称。
+        /// Project name to which the endpoint service belongs.
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
@@ -98,55 +98,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
         public Output<ImmutableArray<Outputs.EndpointServiceResource>> Resources { get; private set; } = null!;
 
         /// <summary>
-        /// 终端节点服务的服务域名。
+        /// Service domain name of the endpoint service.
         /// </summary>
         [Output("serviceDomain")]
         public Output<string> ServiceDomain { get; private set; } = null!;
 
         /// <summary>
-        /// 终端节点服务的ID。
+        /// Endpoint service ID.
         /// </summary>
         [Output("serviceId")]
         public Output<string> ServiceId { get; private set; } = null!;
 
         /// <summary>
-        /// 终端节点服务的名称。
+        /// Name of the endpoint service.
         /// </summary>
         [Output("serviceName")]
         public Output<string> ServiceName { get; private set; } = null!;
 
         /// <summary>
-        /// 是否为托管终端节点服务。false：非托管终端节点服务。true：托管终端节点服务。说明终端节点服务所属账号未开通托管终端节点服务功能时，不返回该参数。
+        /// Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
         /// </summary>
         [Output("serviceNameManaged")]
         public Output<string> ServiceNameManaged { get; private set; } = null!;
 
         /// <summary>
-        /// 终端节点服务的名称后缀。设置名称后缀后，系统会按照com.volces.privatelink.&lt;地域ID&gt;.&lt;名称后缀&gt;的格式生成终端节点服务的名称。说明该参数正在邀测中，如需使用不同名称后缀区分业务，请联系客户经理。
+        /// Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
         /// </summary>
         [Output("serviceNameSuffix")]
         public Output<string> ServiceNameSuffix { get; private set; } = null!;
 
         /// <summary>
-        /// 当前服务主体。
+        /// Current service principal.
         /// </summary>
         [Output("serviceOwner")]
         public Output<string> ServiceOwner { get; private set; } = null!;
 
         /// <summary>
-        /// 服务资源的类型。CLB：负载均衡CLB。ALB：应用型负载均衡ALB。RDSMySQL：云数据库 MySQL版。
+        /// Type of service resource. CLB: Load Balancer CLB. ALB: Application Load Balancer ALB. RDSMySQL: Cloud Database MySQL Edition.
         /// </summary>
         [Output("serviceResourceType")]
         public Output<string> ServiceResourceType { get; private set; } = null!;
 
         /// <summary>
-        /// 终端节点服务的类型。Interface：接口终端节点服务。
+        /// Type of the endpoint service. Interface: Interface endpoint service.
         /// </summary>
         [Output("serviceType")]
         public Output<string> ServiceType { get; private set; } = null!;
 
         /// <summary>
-        /// 终端节点服务的状态。Creating：创建中。Pending：配置修改中。Available：可用。Deleting：删除中。
+        /// Status of the endpoint service. Creating: being created. Pending: configuration being modified. Available: available. Deleting: being deleted.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -155,19 +155,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
         public Output<ImmutableArray<Outputs.EndpointServiceTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 终端节点服务的最近操作时间。
+        /// Most recent operation time of the endpoint service.
         /// </summary>
         [Output("updateTime")]
         public Output<string> UpdateTime { get; private set; } = null!;
 
         /// <summary>
-        /// 是否启用通配符域名。true：启用。false：未启用。
+        /// Whether to enable wildcard domain name. true: Enabled. false: Not enabled.
         /// </summary>
         [Output("wildcardDomainEnabled")]
         public Output<bool> WildcardDomainEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// 终端节点服务提供服务的可用区。说明参数ServiceResourceType返回值为RDSMySQL时，该参数返回空值。
+        /// Availability zone where the endpoint service provides service. Note: If the ServiceResourceType parameter returns RDSMySQL, this parameter returns an empty value.
         /// </summary>
         [Output("zoneIds")]
         public Output<ImmutableArray<string>> ZoneIds { get; private set; } = null!;
@@ -220,13 +220,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
     public sealed class EndpointServiceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 是否自动接受终端节点连接。true：终端节点服务自动接受终端节点连接。false：终端节点服务不会自动接受终端节点连接，需要调用EnableVpcEndpointConnection接口手动接受。
+        /// Whether to automatically accept endpoint connections. true: The endpoint service automatically accepts endpoint connections. false: The endpoint service does not automatically accept endpoint connections; you must manually accept them by calling the EnableVpcEndpointConnection API.
         /// </summary>
         [Input("autoAcceptEnabled")]
         public Input<bool>? AutoAcceptEnabled { get; set; }
 
         /// <summary>
-        /// 终端节点服务的描述信息。
+        /// Description of the endpoint service.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -235,7 +235,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
         private InputList<string>? _ipAddressVersions;
 
         /// <summary>
-        /// 终端节点服务的IP协议类型。返回值中仅包含ipv4时，说明该终端节点服务为IPv4类型，仅支持提供IPv4服务。返回值中同时包含ipv4和ipv6时，说明该终端节点服务为双栈类型，支持同时提供IPv4和IPv6服务。
+        /// IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
         /// </summary>
         public InputList<string> IpAddressVersions
         {
@@ -244,31 +244,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
         }
 
         /// <summary>
-        /// 私网连接的付费账号。Endpoint：终端节点账号。EndpointService：终端节点服务账号。
+        /// Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
         /// </summary>
         [Input("payer")]
         public Input<string>? Payer { get; set; }
 
         /// <summary>
-        /// 终端节点服务是否启用私有DNS名称。false：未启用。true：已启用。
+        /// Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
         /// </summary>
         [Input("privateDnsEnabled")]
         public Input<bool>? PrivateDnsEnabled { get; set; }
 
         /// <summary>
-        /// 终端节点服务的私有DNS名称。参数PrivateDNSEnabled返回值为false时，该参数返回空。
+        /// Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
         /// </summary>
         [Input("privateDnsName")]
         public Input<string>? PrivateDnsName { get; set; }
 
         /// <summary>
-        /// 私有DNS名称的域名类型。public：公网。说明未开通自定义私网域名功能时，不返回该参数。
+        /// Domain name type of the private DNS name. public: public network. Note: If the custom private domain name feature is not enabled, this parameter is not returned.
         /// </summary>
         [Input("privateDnsType")]
         public Input<string>? PrivateDnsType { get; set; }
 
         /// <summary>
-        /// 终端节点服务所属的项目名称。
+        /// Project name to which the endpoint service belongs.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
@@ -282,31 +282,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
         }
 
         /// <summary>
-        /// 是否为托管终端节点服务。false：非托管终端节点服务。true：托管终端节点服务。说明终端节点服务所属账号未开通托管终端节点服务功能时，不返回该参数。
+        /// Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
         /// </summary>
         [Input("serviceNameManaged")]
         public Input<string>? ServiceNameManaged { get; set; }
 
         /// <summary>
-        /// 终端节点服务的名称后缀。设置名称后缀后，系统会按照com.volces.privatelink.&lt;地域ID&gt;.&lt;名称后缀&gt;的格式生成终端节点服务的名称。说明该参数正在邀测中，如需使用不同名称后缀区分业务，请联系客户经理。
+        /// Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
         /// </summary>
         [Input("serviceNameSuffix")]
         public Input<string>? ServiceNameSuffix { get; set; }
 
         /// <summary>
-        /// 当前服务主体。
+        /// Current service principal.
         /// </summary>
         [Input("serviceOwner")]
         public Input<string>? ServiceOwner { get; set; }
 
         /// <summary>
-        /// 服务资源的类型。CLB：负载均衡CLB。ALB：应用型负载均衡ALB。RDSMySQL：云数据库 MySQL版。
+        /// Type of service resource. CLB: Load Balancer CLB. ALB: Application Load Balancer ALB. RDSMySQL: Cloud Database MySQL Edition.
         /// </summary>
         [Input("serviceResourceType")]
         public Input<string>? ServiceResourceType { get; set; }
 
         /// <summary>
-        /// 终端节点服务的类型。Interface：接口终端节点服务。
+        /// Type of the endpoint service. Interface: Interface endpoint service.
         /// </summary>
         [Input("serviceType")]
         public Input<string>? ServiceType { get; set; }
@@ -320,7 +320,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
         }
 
         /// <summary>
-        /// 是否启用通配符域名。true：启用。false：未启用。
+        /// Whether to enable wildcard domain name. true: Enabled. false: Not enabled.
         /// </summary>
         [Input("wildcardDomainEnabled")]
         public Input<bool>? WildcardDomainEnabled { get; set; }
@@ -334,31 +334,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
     public sealed class EndpointServiceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 是否自动接受终端节点连接。true：终端节点服务自动接受终端节点连接。false：终端节点服务不会自动接受终端节点连接，需要调用EnableVpcEndpointConnection接口手动接受。
+        /// Whether to automatically accept endpoint connections. true: The endpoint service automatically accepts endpoint connections. false: The endpoint service does not automatically accept endpoint connections; you must manually accept them by calling the EnableVpcEndpointConnection API.
         /// </summary>
         [Input("autoAcceptEnabled")]
         public Input<bool>? AutoAcceptEnabled { get; set; }
 
         /// <summary>
-        /// 终端节点服务的计费类型。0：不计费。3：按量计费。
+        /// Billing type of the endpoint service. 0: No charge. 3: Pay-as-you-go.
         /// </summary>
         [Input("billingType")]
         public Input<int>? BillingType { get; set; }
 
         /// <summary>
-        /// 终端节点服务是否被锁定。Normal：正常。FinancialLocked：被锁定。说明该参数返回为空时，表示终端节点服务未锁定。
+        /// Whether the endpoint service is locked. Normal: normal. FinancialLocked: locked. If this parameter is empty, the endpoint service is not locked.
         /// </summary>
         [Input("businessStatus")]
         public Input<string>? BusinessStatus { get; set; }
 
         /// <summary>
-        /// 终端节点服务的创建时间。
+        /// Creation time of the endpoint service.
         /// </summary>
         [Input("createTime")]
         public Input<string>? CreateTime { get; set; }
 
         /// <summary>
-        /// 终端节点服务的描述信息。
+        /// Description of the endpoint service.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -367,7 +367,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
         private InputList<string>? _ipAddressVersions;
 
         /// <summary>
-        /// 终端节点服务的IP协议类型。返回值中仅包含ipv4时，说明该终端节点服务为IPv4类型，仅支持提供IPv4服务。返回值中同时包含ipv4和ipv6时，说明该终端节点服务为双栈类型，支持同时提供IPv4和IPv6服务。
+        /// IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
         /// </summary>
         public InputList<string> IpAddressVersions
         {
@@ -376,37 +376,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
         }
 
         /// <summary>
-        /// 私网连接的付费账号。Endpoint：终端节点账号。EndpointService：终端节点服务账号。
+        /// Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
         /// </summary>
         [Input("payer")]
         public Input<string>? Payer { get; set; }
 
         /// <summary>
-        /// 终端节点服务是否启用私有DNS名称。false：未启用。true：已启用。
+        /// Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
         /// </summary>
         [Input("privateDnsEnabled")]
         public Input<bool>? PrivateDnsEnabled { get; set; }
 
         /// <summary>
-        /// 终端节点服务的私有DNS名称。参数PrivateDNSEnabled返回值为false时，该参数返回空。
+        /// Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
         /// </summary>
         [Input("privateDnsName")]
         public Input<string>? PrivateDnsName { get; set; }
 
         /// <summary>
-        /// 终端节点服务私有DNS名称的配置信息。说明PrivateDNSType为private时，不返回该参数。
+        /// Configuration information for the private DNS name of the endpoint service. Note: If PrivateDNSType is private, this parameter is not returned.
         /// </summary>
         [Input("privateDnsNameConfiguration")]
         public Input<Inputs.EndpointServicePrivateDnsNameConfigurationGetArgs>? PrivateDnsNameConfiguration { get; set; }
 
         /// <summary>
-        /// 私有DNS名称的域名类型。public：公网。说明未开通自定义私网域名功能时，不返回该参数。
+        /// Domain name type of the private DNS name. public: public network. Note: If the custom private domain name feature is not enabled, this parameter is not returned.
         /// </summary>
         [Input("privateDnsType")]
         public Input<string>? PrivateDnsType { get; set; }
 
         /// <summary>
-        /// 终端节点服务所属的项目名称。
+        /// Project name to which the endpoint service belongs.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
@@ -420,55 +420,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
         }
 
         /// <summary>
-        /// 终端节点服务的服务域名。
+        /// Service domain name of the endpoint service.
         /// </summary>
         [Input("serviceDomain")]
         public Input<string>? ServiceDomain { get; set; }
 
         /// <summary>
-        /// 终端节点服务的ID。
+        /// Endpoint service ID.
         /// </summary>
         [Input("serviceId")]
         public Input<string>? ServiceId { get; set; }
 
         /// <summary>
-        /// 终端节点服务的名称。
+        /// Name of the endpoint service.
         /// </summary>
         [Input("serviceName")]
         public Input<string>? ServiceName { get; set; }
 
         /// <summary>
-        /// 是否为托管终端节点服务。false：非托管终端节点服务。true：托管终端节点服务。说明终端节点服务所属账号未开通托管终端节点服务功能时，不返回该参数。
+        /// Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
         /// </summary>
         [Input("serviceNameManaged")]
         public Input<string>? ServiceNameManaged { get; set; }
 
         /// <summary>
-        /// 终端节点服务的名称后缀。设置名称后缀后，系统会按照com.volces.privatelink.&lt;地域ID&gt;.&lt;名称后缀&gt;的格式生成终端节点服务的名称。说明该参数正在邀测中，如需使用不同名称后缀区分业务，请联系客户经理。
+        /// Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
         /// </summary>
         [Input("serviceNameSuffix")]
         public Input<string>? ServiceNameSuffix { get; set; }
 
         /// <summary>
-        /// 当前服务主体。
+        /// Current service principal.
         /// </summary>
         [Input("serviceOwner")]
         public Input<string>? ServiceOwner { get; set; }
 
         /// <summary>
-        /// 服务资源的类型。CLB：负载均衡CLB。ALB：应用型负载均衡ALB。RDSMySQL：云数据库 MySQL版。
+        /// Type of service resource. CLB: Load Balancer CLB. ALB: Application Load Balancer ALB. RDSMySQL: Cloud Database MySQL Edition.
         /// </summary>
         [Input("serviceResourceType")]
         public Input<string>? ServiceResourceType { get; set; }
 
         /// <summary>
-        /// 终端节点服务的类型。Interface：接口终端节点服务。
+        /// Type of the endpoint service. Interface: Interface endpoint service.
         /// </summary>
         [Input("serviceType")]
         public Input<string>? ServiceType { get; set; }
 
         /// <summary>
-        /// 终端节点服务的状态。Creating：创建中。Pending：配置修改中。Available：可用。Deleting：删除中。
+        /// Status of the endpoint service. Creating: being created. Pending: configuration being modified. Available: available. Deleting: being deleted.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -482,13 +482,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
         }
 
         /// <summary>
-        /// 终端节点服务的最近操作时间。
+        /// Most recent operation time of the endpoint service.
         /// </summary>
         [Input("updateTime")]
         public Input<string>? UpdateTime { get; set; }
 
         /// <summary>
-        /// 是否启用通配符域名。true：启用。false：未启用。
+        /// Whether to enable wildcard domain name. true: Enabled. false: Not enabled.
         /// </summary>
         [Input("wildcardDomainEnabled")]
         public Input<bool>? WildcardDomainEnabled { get; set; }
@@ -497,7 +497,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
         private InputList<string>? _zoneIds;
 
         /// <summary>
-        /// 终端节点服务提供服务的可用区。说明参数ServiceResourceType返回值为RDSMySQL时，该参数返回空值。
+        /// Availability zone where the endpoint service provides service. Note: If the ServiceResourceType parameter returns RDSMySQL, this parameter returns an empty value.
         /// </summary>
         public InputList<string> ZoneIds
         {

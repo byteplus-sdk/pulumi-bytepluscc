@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Outputs
     public sealed class GetEndpointCustomRouteStrategyKeywordRouteStrategyResult
     {
         /// <summary>
-        /// SQL 转发规则的转发目标。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。说明如实例为双节点实例，可选择主节点或只读节点。如实例为多节点实例，可选择主节点或备节点。
+        /// SQL forwarding rule target. Options: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node. Note: For dual-node instances, you can select the primary node or read-only node. For multi-node instances, you can select the primary node or secondary node.
         /// </summary>
         public readonly string NodeType;
         /// <summary>
-        /// 转发规则的关键字。SQL 关键字的设置规则如下：单个规则最多可包含 20 个关键字。最大长度为 64 个字符，可包含英文字母、数字、下划线 _、@、#、:= 和中文字符。
+        /// Forwarding rule keywords. SQL keyword rules: Each rule can contain up to 20 keywords, with a maximum length of 64 characters. Allowed characters: English letters, digits, underscore (_), @, #, :=, and Chinese characters.
         /// </summary>
         public readonly string SqlKeyword;
 

@@ -14,19 +14,19 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type EndpointCertificate struct {
-	// X509私有证书过期的时间。使用秒级时间戳表示。
+	// X509 private certificate expiration time, represented as a timestamp in seconds
 	NotAfter *int `pulumi:"notAfter"`
-	// X509私有证书开始生效的时间。使用秒级时间戳表示。
+	// X509 private certificate activation time, represented as a timestamp in seconds
 	NotBefore *int `pulumi:"notBefore"`
-	// 证书方。
+	// Certificate subject
 	PcaHost *string `pulumi:"pcaHost"`
-	// PEM 格式的叶子证书。
+	// PEM format leaf certificate
 	PcaInstanceCertificate *string `pulumi:"pcaInstanceCertificate"`
-	// 证书名称。
+	// Certificate name
 	PcaName *string `pulumi:"pcaName"`
-	// PEM 格式的根证书。
+	// PEM format root certificate
 	PcaRootCaCertificate *string `pulumi:"pcaRootCaCertificate"`
-	// PEM 格式的中间根证书和根证书。
+	// Intermediate certificate and root certificate in PEM format
 	PcaSubCaCertificate *string `pulumi:"pcaSubCaCertificate"`
 }
 
@@ -42,19 +42,19 @@ type EndpointCertificateInput interface {
 }
 
 type EndpointCertificateArgs struct {
-	// X509私有证书过期的时间。使用秒级时间戳表示。
+	// X509 private certificate expiration time, represented as a timestamp in seconds
 	NotAfter pulumi.IntPtrInput `pulumi:"notAfter"`
-	// X509私有证书开始生效的时间。使用秒级时间戳表示。
+	// X509 private certificate activation time, represented as a timestamp in seconds
 	NotBefore pulumi.IntPtrInput `pulumi:"notBefore"`
-	// 证书方。
+	// Certificate subject
 	PcaHost pulumi.StringPtrInput `pulumi:"pcaHost"`
-	// PEM 格式的叶子证书。
+	// PEM format leaf certificate
 	PcaInstanceCertificate pulumi.StringPtrInput `pulumi:"pcaInstanceCertificate"`
-	// 证书名称。
+	// Certificate name
 	PcaName pulumi.StringPtrInput `pulumi:"pcaName"`
-	// PEM 格式的根证书。
+	// PEM format root certificate
 	PcaRootCaCertificate pulumi.StringPtrInput `pulumi:"pcaRootCaCertificate"`
-	// PEM 格式的中间根证书和根证书。
+	// Intermediate certificate and root certificate in PEM format
 	PcaSubCaCertificate pulumi.StringPtrInput `pulumi:"pcaSubCaCertificate"`
 }
 
@@ -135,37 +135,37 @@ func (o EndpointCertificateOutput) ToEndpointCertificatePtrOutputWithContext(ctx
 	}).(EndpointCertificatePtrOutput)
 }
 
-// X509私有证书过期的时间。使用秒级时间戳表示。
+// X509 private certificate expiration time, represented as a timestamp in seconds
 func (o EndpointCertificateOutput) NotAfter() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v EndpointCertificate) *int { return v.NotAfter }).(pulumi.IntPtrOutput)
 }
 
-// X509私有证书开始生效的时间。使用秒级时间戳表示。
+// X509 private certificate activation time, represented as a timestamp in seconds
 func (o EndpointCertificateOutput) NotBefore() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v EndpointCertificate) *int { return v.NotBefore }).(pulumi.IntPtrOutput)
 }
 
-// 证书方。
+// Certificate subject
 func (o EndpointCertificateOutput) PcaHost() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointCertificate) *string { return v.PcaHost }).(pulumi.StringPtrOutput)
 }
 
-// PEM 格式的叶子证书。
+// PEM format leaf certificate
 func (o EndpointCertificateOutput) PcaInstanceCertificate() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointCertificate) *string { return v.PcaInstanceCertificate }).(pulumi.StringPtrOutput)
 }
 
-// 证书名称。
+// Certificate name
 func (o EndpointCertificateOutput) PcaName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointCertificate) *string { return v.PcaName }).(pulumi.StringPtrOutput)
 }
 
-// PEM 格式的根证书。
+// PEM format root certificate
 func (o EndpointCertificateOutput) PcaRootCaCertificate() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointCertificate) *string { return v.PcaRootCaCertificate }).(pulumi.StringPtrOutput)
 }
 
-// PEM 格式的中间根证书和根证书。
+// Intermediate certificate and root certificate in PEM format
 func (o EndpointCertificateOutput) PcaSubCaCertificate() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointCertificate) *string { return v.PcaSubCaCertificate }).(pulumi.StringPtrOutput)
 }
@@ -194,7 +194,7 @@ func (o EndpointCertificatePtrOutput) Elem() EndpointCertificateOutput {
 	}).(EndpointCertificateOutput)
 }
 
-// X509私有证书过期的时间。使用秒级时间戳表示。
+// X509 private certificate expiration time, represented as a timestamp in seconds
 func (o EndpointCertificatePtrOutput) NotAfter() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *EndpointCertificate) *int {
 		if v == nil {
@@ -204,7 +204,7 @@ func (o EndpointCertificatePtrOutput) NotAfter() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// X509私有证书开始生效的时间。使用秒级时间戳表示。
+// X509 private certificate activation time, represented as a timestamp in seconds
 func (o EndpointCertificatePtrOutput) NotBefore() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *EndpointCertificate) *int {
 		if v == nil {
@@ -214,7 +214,7 @@ func (o EndpointCertificatePtrOutput) NotBefore() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 证书方。
+// Certificate subject
 func (o EndpointCertificatePtrOutput) PcaHost() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *EndpointCertificate) *string {
 		if v == nil {
@@ -224,7 +224,7 @@ func (o EndpointCertificatePtrOutput) PcaHost() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// PEM 格式的叶子证书。
+// PEM format leaf certificate
 func (o EndpointCertificatePtrOutput) PcaInstanceCertificate() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *EndpointCertificate) *string {
 		if v == nil {
@@ -234,7 +234,7 @@ func (o EndpointCertificatePtrOutput) PcaInstanceCertificate() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// 证书名称。
+// Certificate name
 func (o EndpointCertificatePtrOutput) PcaName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *EndpointCertificate) *string {
 		if v == nil {
@@ -244,7 +244,7 @@ func (o EndpointCertificatePtrOutput) PcaName() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// PEM 格式的根证书。
+// PEM format root certificate
 func (o EndpointCertificatePtrOutput) PcaRootCaCertificate() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *EndpointCertificate) *string {
 		if v == nil {
@@ -254,7 +254,7 @@ func (o EndpointCertificatePtrOutput) PcaRootCaCertificate() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
-// PEM 格式的中间根证书和根证书。
+// Intermediate certificate and root certificate in PEM format
 func (o EndpointCertificatePtrOutput) PcaSubCaCertificate() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *EndpointCertificate) *string {
 		if v == nil {
@@ -265,9 +265,9 @@ func (o EndpointCertificatePtrOutput) PcaSubCaCertificate() pulumi.StringPtrOutp
 }
 
 type EndpointModelReference struct {
-	// 定制模型的ID。
+	// Custom model ID
 	CustomModelId *string `pulumi:"customModelId"`
-	// 基础模型。
+	// Base model
 	FoundationModel *EndpointModelReferenceFoundationModel `pulumi:"foundationModel"`
 }
 
@@ -283,9 +283,9 @@ type EndpointModelReferenceInput interface {
 }
 
 type EndpointModelReferenceArgs struct {
-	// 定制模型的ID。
+	// Custom model ID
 	CustomModelId pulumi.StringPtrInput `pulumi:"customModelId"`
-	// 基础模型。
+	// Base model
 	FoundationModel EndpointModelReferenceFoundationModelPtrInput `pulumi:"foundationModel"`
 }
 
@@ -366,12 +366,12 @@ func (o EndpointModelReferenceOutput) ToEndpointModelReferencePtrOutputWithConte
 	}).(EndpointModelReferencePtrOutput)
 }
 
-// 定制模型的ID。
+// Custom model ID
 func (o EndpointModelReferenceOutput) CustomModelId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointModelReference) *string { return v.CustomModelId }).(pulumi.StringPtrOutput)
 }
 
-// 基础模型。
+// Base model
 func (o EndpointModelReferenceOutput) FoundationModel() EndpointModelReferenceFoundationModelPtrOutput {
 	return o.ApplyT(func(v EndpointModelReference) *EndpointModelReferenceFoundationModel { return v.FoundationModel }).(EndpointModelReferenceFoundationModelPtrOutput)
 }
@@ -400,7 +400,7 @@ func (o EndpointModelReferencePtrOutput) Elem() EndpointModelReferenceOutput {
 	}).(EndpointModelReferenceOutput)
 }
 
-// 定制模型的ID。
+// Custom model ID
 func (o EndpointModelReferencePtrOutput) CustomModelId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *EndpointModelReference) *string {
 		if v == nil {
@@ -410,7 +410,7 @@ func (o EndpointModelReferencePtrOutput) CustomModelId() pulumi.StringPtrOutput 
 	}).(pulumi.StringPtrOutput)
 }
 
-// 基础模型。
+// Base model
 func (o EndpointModelReferencePtrOutput) FoundationModel() EndpointModelReferenceFoundationModelPtrOutput {
 	return o.ApplyT(func(v *EndpointModelReference) *EndpointModelReferenceFoundationModel {
 		if v == nil {
@@ -421,9 +421,9 @@ func (o EndpointModelReferencePtrOutput) FoundationModel() EndpointModelReferenc
 }
 
 type EndpointModelReferenceFoundationModel struct {
-	// 基础模型版本。
+	// Base model version
 	ModelVersion *string `pulumi:"modelVersion"`
-	// 基础模型名称。请注意模型名称为小写。doubao 1.5 代模型的模型名称格式为"doubao-1-5-**"。
+	// Base model name. Note: Model names are lowercase. The model name format for doubao 1.5 generation models is "doubao-1-5-**".
 	Name *string `pulumi:"name"`
 }
 
@@ -439,9 +439,9 @@ type EndpointModelReferenceFoundationModelInput interface {
 }
 
 type EndpointModelReferenceFoundationModelArgs struct {
-	// 基础模型版本。
+	// Base model version
 	ModelVersion pulumi.StringPtrInput `pulumi:"modelVersion"`
-	// 基础模型名称。请注意模型名称为小写。doubao 1.5 代模型的模型名称格式为"doubao-1-5-**"。
+	// Base model name. Note: Model names are lowercase. The model name format for doubao 1.5 generation models is "doubao-1-5-**".
 	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
@@ -522,12 +522,12 @@ func (o EndpointModelReferenceFoundationModelOutput) ToEndpointModelReferenceFou
 	}).(EndpointModelReferenceFoundationModelPtrOutput)
 }
 
-// 基础模型版本。
+// Base model version
 func (o EndpointModelReferenceFoundationModelOutput) ModelVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointModelReferenceFoundationModel) *string { return v.ModelVersion }).(pulumi.StringPtrOutput)
 }
 
-// 基础模型名称。请注意模型名称为小写。doubao 1.5 代模型的模型名称格式为"doubao-1-5-**"。
+// Base model name. Note: Model names are lowercase. The model name format for doubao 1.5 generation models is "doubao-1-5-**".
 func (o EndpointModelReferenceFoundationModelOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointModelReferenceFoundationModel) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -556,7 +556,7 @@ func (o EndpointModelReferenceFoundationModelPtrOutput) Elem() EndpointModelRefe
 	}).(EndpointModelReferenceFoundationModelOutput)
 }
 
-// 基础模型版本。
+// Base model version
 func (o EndpointModelReferenceFoundationModelPtrOutput) ModelVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *EndpointModelReferenceFoundationModel) *string {
 		if v == nil {
@@ -566,7 +566,7 @@ func (o EndpointModelReferenceFoundationModelPtrOutput) ModelVersion() pulumi.St
 	}).(pulumi.StringPtrOutput)
 }
 
-// 基础模型名称。请注意模型名称为小写。doubao 1.5 代模型的模型名称格式为"doubao-1-5-**"。
+// Base model name. Note: Model names are lowercase. The model name format for doubao 1.5 generation models is "doubao-1-5-**".
 func (o EndpointModelReferenceFoundationModelPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *EndpointModelReferenceFoundationModel) *string {
 		if v == nil {
@@ -577,7 +577,7 @@ func (o EndpointModelReferenceFoundationModelPtrOutput) Name() pulumi.StringPtrO
 }
 
 type EndpointModeration struct {
-	// 内容安全护栏方案。取值:Default: 默认方案。更低延迟，广泛覆盖内容安全通用需求;Basic：基本方案（公测中）。支持在接口响应中提供命中的风险分类，暂时只包含严重违规和激进行为两类风险。注意：如果是流式接口调用，不建议此方案，会导致吐出的每个分片的长度变长，延时变高。
+	// Content safety guardrail scheme. Values: Default: default scheme. Lower latency, broadly covers general content safety requirements; Basic: basic scheme (public beta). Supports providing triggered risk categories in interface responses, currently only includes two risk types: severe violations and aggressive behavior. Note: If using streaming interface calls, this scheme is not recommended, as it will increase the length of each output fragment and raise latency
 	Strategy *string `pulumi:"strategy"`
 }
 
@@ -593,7 +593,7 @@ type EndpointModerationInput interface {
 }
 
 type EndpointModerationArgs struct {
-	// 内容安全护栏方案。取值:Default: 默认方案。更低延迟，广泛覆盖内容安全通用需求;Basic：基本方案（公测中）。支持在接口响应中提供命中的风险分类，暂时只包含严重违规和激进行为两类风险。注意：如果是流式接口调用，不建议此方案，会导致吐出的每个分片的长度变长，延时变高。
+	// Content safety guardrail scheme. Values: Default: default scheme. Lower latency, broadly covers general content safety requirements; Basic: basic scheme (public beta). Supports providing triggered risk categories in interface responses, currently only includes two risk types: severe violations and aggressive behavior. Note: If using streaming interface calls, this scheme is not recommended, as it will increase the length of each output fragment and raise latency
 	Strategy pulumi.StringPtrInput `pulumi:"strategy"`
 }
 
@@ -674,7 +674,7 @@ func (o EndpointModerationOutput) ToEndpointModerationPtrOutputWithContext(ctx c
 	}).(EndpointModerationPtrOutput)
 }
 
-// 内容安全护栏方案。取值:Default: 默认方案。更低延迟，广泛覆盖内容安全通用需求;Basic：基本方案（公测中）。支持在接口响应中提供命中的风险分类，暂时只包含严重违规和激进行为两类风险。注意：如果是流式接口调用，不建议此方案，会导致吐出的每个分片的长度变长，延时变高。
+// Content safety guardrail scheme. Values: Default: default scheme. Lower latency, broadly covers general content safety requirements; Basic: basic scheme (public beta). Supports providing triggered risk categories in interface responses, currently only includes two risk types: severe violations and aggressive behavior. Note: If using streaming interface calls, this scheme is not recommended, as it will increase the length of each output fragment and raise latency
 func (o EndpointModerationOutput) Strategy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointModeration) *string { return v.Strategy }).(pulumi.StringPtrOutput)
 }
@@ -703,7 +703,7 @@ func (o EndpointModerationPtrOutput) Elem() EndpointModerationOutput {
 	}).(EndpointModerationOutput)
 }
 
-// 内容安全护栏方案。取值:Default: 默认方案。更低延迟，广泛覆盖内容安全通用需求;Basic：基本方案（公测中）。支持在接口响应中提供命中的风险分类，暂时只包含严重违规和激进行为两类风险。注意：如果是流式接口调用，不建议此方案，会导致吐出的每个分片的长度变长，延时变高。
+// Content safety guardrail scheme. Values: Default: default scheme. Lower latency, broadly covers general content safety requirements; Basic: basic scheme (public beta). Supports providing triggered risk categories in interface responses, currently only includes two risk types: severe violations and aggressive behavior. Note: If using streaming interface calls, this scheme is not recommended, as it will increase the length of each output fragment and raise latency
 func (o EndpointModerationPtrOutput) Strategy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *EndpointModeration) *string {
 		if v == nil {
@@ -714,9 +714,9 @@ func (o EndpointModerationPtrOutput) Strategy() pulumi.StringPtrOutput {
 }
 
 type EndpointRateLimit struct {
-	// Requests Per Minute，每分钟请求数。
+	// Requests Per Minute, number of requests per minute
 	Rpm *int `pulumi:"rpm"`
-	// Tokens Per Minute，每分钟请求 token 数。
+	// Tokens Per Minute, number of tokens requested per minute
 	Tpm *int `pulumi:"tpm"`
 }
 
@@ -732,9 +732,9 @@ type EndpointRateLimitInput interface {
 }
 
 type EndpointRateLimitArgs struct {
-	// Requests Per Minute，每分钟请求数。
+	// Requests Per Minute, number of requests per minute
 	Rpm pulumi.IntPtrInput `pulumi:"rpm"`
-	// Tokens Per Minute，每分钟请求 token 数。
+	// Tokens Per Minute, number of tokens requested per minute
 	Tpm pulumi.IntPtrInput `pulumi:"tpm"`
 }
 
@@ -815,12 +815,12 @@ func (o EndpointRateLimitOutput) ToEndpointRateLimitPtrOutputWithContext(ctx con
 	}).(EndpointRateLimitPtrOutput)
 }
 
-// Requests Per Minute，每分钟请求数。
+// Requests Per Minute, number of requests per minute
 func (o EndpointRateLimitOutput) Rpm() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v EndpointRateLimit) *int { return v.Rpm }).(pulumi.IntPtrOutput)
 }
 
-// Tokens Per Minute，每分钟请求 token 数。
+// Tokens Per Minute, number of tokens requested per minute
 func (o EndpointRateLimitOutput) Tpm() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v EndpointRateLimit) *int { return v.Tpm }).(pulumi.IntPtrOutput)
 }
@@ -849,7 +849,7 @@ func (o EndpointRateLimitPtrOutput) Elem() EndpointRateLimitOutput {
 	}).(EndpointRateLimitOutput)
 }
 
-// Requests Per Minute，每分钟请求数。
+// Requests Per Minute, number of requests per minute
 func (o EndpointRateLimitPtrOutput) Rpm() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *EndpointRateLimit) *int {
 		if v == nil {
@@ -859,7 +859,7 @@ func (o EndpointRateLimitPtrOutput) Rpm() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// Tokens Per Minute，每分钟请求 token 数。
+// Tokens Per Minute, number of tokens requested per minute
 func (o EndpointRateLimitPtrOutput) Tpm() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *EndpointRateLimit) *int {
 		if v == nil {
@@ -870,9 +870,9 @@ func (o EndpointRateLimitPtrOutput) Tpm() pulumi.IntPtrOutput {
 }
 
 type EndpointTag struct {
-	// 标签键。
+	// Tag key
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value *string `pulumi:"value"`
 }
 
@@ -888,9 +888,9 @@ type EndpointTagInput interface {
 }
 
 type EndpointTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -945,12 +945,12 @@ func (o EndpointTagOutput) ToEndpointTagOutputWithContext(ctx context.Context) E
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o EndpointTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value
 func (o EndpointTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -976,19 +976,19 @@ func (o EndpointTagArrayOutput) Index(i pulumi.IntInput) EndpointTagOutput {
 }
 
 type GetEndpointCertificate struct {
-	// X509私有证书过期的时间。使用秒级时间戳表示。
+	// X509 private certificate expiration time, represented as a timestamp in seconds
 	NotAfter int `pulumi:"notAfter"`
-	// X509私有证书开始生效的时间。使用秒级时间戳表示。
+	// X509 private certificate activation time, represented as a timestamp in seconds
 	NotBefore int `pulumi:"notBefore"`
-	// 证书方。
+	// Certificate subject
 	PcaHost string `pulumi:"pcaHost"`
-	// PEM 格式的叶子证书。
+	// PEM format leaf certificate
 	PcaInstanceCertificate string `pulumi:"pcaInstanceCertificate"`
-	// 证书名称。
+	// Certificate name
 	PcaName string `pulumi:"pcaName"`
-	// PEM 格式的根证书。
+	// PEM format root certificate
 	PcaRootCaCertificate string `pulumi:"pcaRootCaCertificate"`
-	// PEM 格式的中间根证书和根证书。
+	// Intermediate certificate and root certificate in PEM format
 	PcaSubCaCertificate string `pulumi:"pcaSubCaCertificate"`
 }
 
@@ -1004,19 +1004,19 @@ type GetEndpointCertificateInput interface {
 }
 
 type GetEndpointCertificateArgs struct {
-	// X509私有证书过期的时间。使用秒级时间戳表示。
+	// X509 private certificate expiration time, represented as a timestamp in seconds
 	NotAfter pulumi.IntInput `pulumi:"notAfter"`
-	// X509私有证书开始生效的时间。使用秒级时间戳表示。
+	// X509 private certificate activation time, represented as a timestamp in seconds
 	NotBefore pulumi.IntInput `pulumi:"notBefore"`
-	// 证书方。
+	// Certificate subject
 	PcaHost pulumi.StringInput `pulumi:"pcaHost"`
-	// PEM 格式的叶子证书。
+	// PEM format leaf certificate
 	PcaInstanceCertificate pulumi.StringInput `pulumi:"pcaInstanceCertificate"`
-	// 证书名称。
+	// Certificate name
 	PcaName pulumi.StringInput `pulumi:"pcaName"`
-	// PEM 格式的根证书。
+	// PEM format root certificate
 	PcaRootCaCertificate pulumi.StringInput `pulumi:"pcaRootCaCertificate"`
-	// PEM 格式的中间根证书和根证书。
+	// Intermediate certificate and root certificate in PEM format
 	PcaSubCaCertificate pulumi.StringInput `pulumi:"pcaSubCaCertificate"`
 }
 
@@ -1046,45 +1046,45 @@ func (o GetEndpointCertificateOutput) ToGetEndpointCertificateOutputWithContext(
 	return o
 }
 
-// X509私有证书过期的时间。使用秒级时间戳表示。
+// X509 private certificate expiration time, represented as a timestamp in seconds
 func (o GetEndpointCertificateOutput) NotAfter() pulumi.IntOutput {
 	return o.ApplyT(func(v GetEndpointCertificate) int { return v.NotAfter }).(pulumi.IntOutput)
 }
 
-// X509私有证书开始生效的时间。使用秒级时间戳表示。
+// X509 private certificate activation time, represented as a timestamp in seconds
 func (o GetEndpointCertificateOutput) NotBefore() pulumi.IntOutput {
 	return o.ApplyT(func(v GetEndpointCertificate) int { return v.NotBefore }).(pulumi.IntOutput)
 }
 
-// 证书方。
+// Certificate subject
 func (o GetEndpointCertificateOutput) PcaHost() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointCertificate) string { return v.PcaHost }).(pulumi.StringOutput)
 }
 
-// PEM 格式的叶子证书。
+// PEM format leaf certificate
 func (o GetEndpointCertificateOutput) PcaInstanceCertificate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointCertificate) string { return v.PcaInstanceCertificate }).(pulumi.StringOutput)
 }
 
-// 证书名称。
+// Certificate name
 func (o GetEndpointCertificateOutput) PcaName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointCertificate) string { return v.PcaName }).(pulumi.StringOutput)
 }
 
-// PEM 格式的根证书。
+// PEM format root certificate
 func (o GetEndpointCertificateOutput) PcaRootCaCertificate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointCertificate) string { return v.PcaRootCaCertificate }).(pulumi.StringOutput)
 }
 
-// PEM 格式的中间根证书和根证书。
+// Intermediate certificate and root certificate in PEM format
 func (o GetEndpointCertificateOutput) PcaSubCaCertificate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointCertificate) string { return v.PcaSubCaCertificate }).(pulumi.StringOutput)
 }
 
 type GetEndpointModelReference struct {
-	// 定制模型的ID。
+	// Custom model ID
 	CustomModelId string `pulumi:"customModelId"`
-	// 基础模型。
+	// Base model
 	FoundationModel GetEndpointModelReferenceFoundationModel `pulumi:"foundationModel"`
 }
 
@@ -1100,9 +1100,9 @@ type GetEndpointModelReferenceInput interface {
 }
 
 type GetEndpointModelReferenceArgs struct {
-	// 定制模型的ID。
+	// Custom model ID
 	CustomModelId pulumi.StringInput `pulumi:"customModelId"`
-	// 基础模型。
+	// Base model
 	FoundationModel GetEndpointModelReferenceFoundationModelInput `pulumi:"foundationModel"`
 }
 
@@ -1132,20 +1132,20 @@ func (o GetEndpointModelReferenceOutput) ToGetEndpointModelReferenceOutputWithCo
 	return o
 }
 
-// 定制模型的ID。
+// Custom model ID
 func (o GetEndpointModelReferenceOutput) CustomModelId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointModelReference) string { return v.CustomModelId }).(pulumi.StringOutput)
 }
 
-// 基础模型。
+// Base model
 func (o GetEndpointModelReferenceOutput) FoundationModel() GetEndpointModelReferenceFoundationModelOutput {
 	return o.ApplyT(func(v GetEndpointModelReference) GetEndpointModelReferenceFoundationModel { return v.FoundationModel }).(GetEndpointModelReferenceFoundationModelOutput)
 }
 
 type GetEndpointModelReferenceFoundationModel struct {
-	// 基础模型版本。
+	// Base model version
 	ModelVersion string `pulumi:"modelVersion"`
-	// 基础模型名称。请注意模型名称为小写。doubao 1.5 代模型的模型名称格式为"doubao-1-5-**"。
+	// Base model name. Note: Model names are lowercase. The model name format for doubao 1.5 generation models is "doubao-1-5-**".
 	Name string `pulumi:"name"`
 }
 
@@ -1161,9 +1161,9 @@ type GetEndpointModelReferenceFoundationModelInput interface {
 }
 
 type GetEndpointModelReferenceFoundationModelArgs struct {
-	// 基础模型版本。
+	// Base model version
 	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
-	// 基础模型名称。请注意模型名称为小写。doubao 1.5 代模型的模型名称格式为"doubao-1-5-**"。
+	// Base model name. Note: Model names are lowercase. The model name format for doubao 1.5 generation models is "doubao-1-5-**".
 	Name pulumi.StringInput `pulumi:"name"`
 }
 
@@ -1193,18 +1193,18 @@ func (o GetEndpointModelReferenceFoundationModelOutput) ToGetEndpointModelRefere
 	return o
 }
 
-// 基础模型版本。
+// Base model version
 func (o GetEndpointModelReferenceFoundationModelOutput) ModelVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointModelReferenceFoundationModel) string { return v.ModelVersion }).(pulumi.StringOutput)
 }
 
-// 基础模型名称。请注意模型名称为小写。doubao 1.5 代模型的模型名称格式为"doubao-1-5-**"。
+// Base model name. Note: Model names are lowercase. The model name format for doubao 1.5 generation models is "doubao-1-5-**".
 func (o GetEndpointModelReferenceFoundationModelOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointModelReferenceFoundationModel) string { return v.Name }).(pulumi.StringOutput)
 }
 
 type GetEndpointModeration struct {
-	// 内容安全护栏方案。取值:Default: 默认方案。更低延迟，广泛覆盖内容安全通用需求;Basic：基本方案（公测中）。支持在接口响应中提供命中的风险分类，暂时只包含严重违规和激进行为两类风险。注意：如果是流式接口调用，不建议此方案，会导致吐出的每个分片的长度变长，延时变高。
+	// Content safety guardrail scheme. Values: Default: default scheme. Lower latency, broadly covers general content safety requirements; Basic: basic scheme (public beta). Supports providing triggered risk categories in interface responses, currently only includes two risk types: severe violations and aggressive behavior. Note: If using streaming interface calls, this scheme is not recommended, as it will increase the length of each output fragment and raise latency
 	Strategy string `pulumi:"strategy"`
 }
 
@@ -1220,7 +1220,7 @@ type GetEndpointModerationInput interface {
 }
 
 type GetEndpointModerationArgs struct {
-	// 内容安全护栏方案。取值:Default: 默认方案。更低延迟，广泛覆盖内容安全通用需求;Basic：基本方案（公测中）。支持在接口响应中提供命中的风险分类，暂时只包含严重违规和激进行为两类风险。注意：如果是流式接口调用，不建议此方案，会导致吐出的每个分片的长度变长，延时变高。
+	// Content safety guardrail scheme. Values: Default: default scheme. Lower latency, broadly covers general content safety requirements; Basic: basic scheme (public beta). Supports providing triggered risk categories in interface responses, currently only includes two risk types: severe violations and aggressive behavior. Note: If using streaming interface calls, this scheme is not recommended, as it will increase the length of each output fragment and raise latency
 	Strategy pulumi.StringInput `pulumi:"strategy"`
 }
 
@@ -1250,15 +1250,15 @@ func (o GetEndpointModerationOutput) ToGetEndpointModerationOutputWithContext(ct
 	return o
 }
 
-// 内容安全护栏方案。取值:Default: 默认方案。更低延迟，广泛覆盖内容安全通用需求;Basic：基本方案（公测中）。支持在接口响应中提供命中的风险分类，暂时只包含严重违规和激进行为两类风险。注意：如果是流式接口调用，不建议此方案，会导致吐出的每个分片的长度变长，延时变高。
+// Content safety guardrail scheme. Values: Default: default scheme. Lower latency, broadly covers general content safety requirements; Basic: basic scheme (public beta). Supports providing triggered risk categories in interface responses, currently only includes two risk types: severe violations and aggressive behavior. Note: If using streaming interface calls, this scheme is not recommended, as it will increase the length of each output fragment and raise latency
 func (o GetEndpointModerationOutput) Strategy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointModeration) string { return v.Strategy }).(pulumi.StringOutput)
 }
 
 type GetEndpointRateLimit struct {
-	// Requests Per Minute，每分钟请求数。
+	// Requests Per Minute, number of requests per minute
 	Rpm int `pulumi:"rpm"`
-	// Tokens Per Minute，每分钟请求 token 数。
+	// Tokens Per Minute, number of tokens requested per minute
 	Tpm int `pulumi:"tpm"`
 }
 
@@ -1274,9 +1274,9 @@ type GetEndpointRateLimitInput interface {
 }
 
 type GetEndpointRateLimitArgs struct {
-	// Requests Per Minute，每分钟请求数。
+	// Requests Per Minute, number of requests per minute
 	Rpm pulumi.IntInput `pulumi:"rpm"`
-	// Tokens Per Minute，每分钟请求 token 数。
+	// Tokens Per Minute, number of tokens requested per minute
 	Tpm pulumi.IntInput `pulumi:"tpm"`
 }
 
@@ -1306,20 +1306,20 @@ func (o GetEndpointRateLimitOutput) ToGetEndpointRateLimitOutputWithContext(ctx 
 	return o
 }
 
-// Requests Per Minute，每分钟请求数。
+// Requests Per Minute, number of requests per minute
 func (o GetEndpointRateLimitOutput) Rpm() pulumi.IntOutput {
 	return o.ApplyT(func(v GetEndpointRateLimit) int { return v.Rpm }).(pulumi.IntOutput)
 }
 
-// Tokens Per Minute，每分钟请求 token 数。
+// Tokens Per Minute, number of tokens requested per minute
 func (o GetEndpointRateLimitOutput) Tpm() pulumi.IntOutput {
 	return o.ApplyT(func(v GetEndpointRateLimit) int { return v.Tpm }).(pulumi.IntOutput)
 }
 
 type GetEndpointTag struct {
-	// 标签键。
+	// Tag key
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value string `pulumi:"value"`
 }
 
@@ -1335,9 +1335,9 @@ type GetEndpointTagInput interface {
 }
 
 type GetEndpointTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -1392,12 +1392,12 @@ func (o GetEndpointTagOutput) ToGetEndpointTagOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o GetEndpointTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value
 func (o GetEndpointTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointTag) string { return v.Value }).(pulumi.StringOutput)
 }

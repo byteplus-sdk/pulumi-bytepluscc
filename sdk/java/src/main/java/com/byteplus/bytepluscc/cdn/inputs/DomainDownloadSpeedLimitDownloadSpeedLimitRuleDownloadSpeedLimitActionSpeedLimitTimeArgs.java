@@ -16,14 +16,14 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLi
     public static final DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTimeArgs Empty = new DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTimeArgs();
 
     /**
-     * 表示限速发生的开始时间。时间格式是 mm:ss。如果 DayWeek 的参数值是 unlimited, BeginTime 和 EndTime 参数的默认值会分别被设置为 00:00 和 23:59。
+     * Indicates the start time for rate limiting. The time format is mm:ss. If the DayWeek parameter value is unlimited, the default values for BeginTime and EndTime will be set to 00:00 and 23:59, respectively.
      * 
      */
     @Import(name="beginTime")
     private @Nullable Output<String> beginTime;
 
     /**
-     * @return 表示限速发生的开始时间。时间格式是 mm:ss。如果 DayWeek 的参数值是 unlimited, BeginTime 和 EndTime 参数的默认值会分别被设置为 00:00 和 23:59。
+     * @return Indicates the start time for rate limiting. The time format is mm:ss. If the DayWeek parameter value is unlimited, the default values for BeginTime and EndTime will be set to 00:00 and 23:59, respectively.
      * 
      */
     public Optional<Output<String>> beginTime() {
@@ -31,14 +31,14 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLi
     }
 
     /**
-     * 表示限速发生的日期。该参数有以下取值：monday，tuesday，wednesday，thursday，friday，saturday，sunday，unlimited。unlimited 表示每天。您可以指定一个或多个值。多个值之间使用英文分号（;）分隔。
+     * Specifies the date when rate limiting occurs. This parameter has the following values: monday, tuesday, wednesday, thursday, friday, saturday, sunday, unlimited. unlimited means every day. You can specify one or more values. Separate multiple values with a semicolon (;).
      * 
      */
     @Import(name="dayWeek")
     private @Nullable Output<String> dayWeek;
 
     /**
-     * @return 表示限速发生的日期。该参数有以下取值：monday，tuesday，wednesday，thursday，friday，saturday，sunday，unlimited。unlimited 表示每天。您可以指定一个或多个值。多个值之间使用英文分号（;）分隔。
+     * @return Specifies the date when rate limiting occurs. This parameter has the following values: monday, tuesday, wednesday, thursday, friday, saturday, sunday, unlimited. unlimited means every day. You can specify one or more values. Separate multiple values with a semicolon (;).
      * 
      */
     public Optional<Output<String>> dayWeek() {
@@ -46,14 +46,14 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLi
     }
 
     /**
-     * 表示限速发生的结束时间。时间格式是 mm:ss。如果 DayWeek 的参数值是 unlimited, BeginTime 和 EndTime 参数的默认值会分别被设置为 00:00 和 23:59。
+     * Indicates the end time for rate limiting. The time format is mm:ss. If the DayWeek parameter is set to unlimited, the default values for BeginTime and EndTime are 00:00 and 23:59, respectively.
      * 
      */
     @Import(name="endTime")
     private @Nullable Output<String> endTime;
 
     /**
-     * @return 表示限速发生的结束时间。时间格式是 mm:ss。如果 DayWeek 的参数值是 unlimited, BeginTime 和 EndTime 参数的默认值会分别被设置为 00:00 和 23:59。
+     * @return Indicates the end time for rate limiting. The time format is mm:ss. If the DayWeek parameter is set to unlimited, the default values for BeginTime and EndTime are 00:00 and 23:59, respectively.
      * 
      */
     public Optional<Output<String>> endTime() {
@@ -87,7 +87,7 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLi
         }
 
         /**
-         * @param beginTime 表示限速发生的开始时间。时间格式是 mm:ss。如果 DayWeek 的参数值是 unlimited, BeginTime 和 EndTime 参数的默认值会分别被设置为 00:00 和 23:59。
+         * @param beginTime Indicates the start time for rate limiting. The time format is mm:ss. If the DayWeek parameter value is unlimited, the default values for BeginTime and EndTime will be set to 00:00 and 23:59, respectively.
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLi
         }
 
         /**
-         * @param beginTime 表示限速发生的开始时间。时间格式是 mm:ss。如果 DayWeek 的参数值是 unlimited, BeginTime 和 EndTime 参数的默认值会分别被设置为 00:00 和 23:59。
+         * @param beginTime Indicates the start time for rate limiting. The time format is mm:ss. If the DayWeek parameter value is unlimited, the default values for BeginTime and EndTime will be set to 00:00 and 23:59, respectively.
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLi
         }
 
         /**
-         * @param dayWeek 表示限速发生的日期。该参数有以下取值：monday，tuesday，wednesday，thursday，friday，saturday，sunday，unlimited。unlimited 表示每天。您可以指定一个或多个值。多个值之间使用英文分号（;）分隔。
+         * @param dayWeek Specifies the date when rate limiting occurs. This parameter has the following values: monday, tuesday, wednesday, thursday, friday, saturday, sunday, unlimited. unlimited means every day. You can specify one or more values. Separate multiple values with a semicolon (;).
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLi
         }
 
         /**
-         * @param dayWeek 表示限速发生的日期。该参数有以下取值：monday，tuesday，wednesday，thursday，friday，saturday，sunday，unlimited。unlimited 表示每天。您可以指定一个或多个值。多个值之间使用英文分号（;）分隔。
+         * @param dayWeek Specifies the date when rate limiting occurs. This parameter has the following values: monday, tuesday, wednesday, thursday, friday, saturday, sunday, unlimited. unlimited means every day. You can specify one or more values. Separate multiple values with a semicolon (;).
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLi
         }
 
         /**
-         * @param endTime 表示限速发生的结束时间。时间格式是 mm:ss。如果 DayWeek 的参数值是 unlimited, BeginTime 和 EndTime 参数的默认值会分别被设置为 00:00 和 23:59。
+         * @param endTime Indicates the end time for rate limiting. The time format is mm:ss. If the DayWeek parameter is set to unlimited, the default values for BeginTime and EndTime are 00:00 and 23:59, respectively.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLi
         }
 
         /**
-         * @param endTime 表示限速发生的结束时间。时间格式是 mm:ss。如果 DayWeek 的参数值是 unlimited, BeginTime 和 EndTime 参数的默认值会分别被设置为 00:00 和 23:59。
+         * @param endTime Indicates the end time for rate limiting. The time format is mm:ss. If the DayWeek parameter is set to unlimited, the default values for BeginTime and EndTime are 00:00 and 23:59, respectively.
          * 
          * @return builder
          * 

@@ -15,35 +15,42 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
     public sealed class InstanceSystemVolume
     {
         /// <summary>
-        /// 实例是否随实例删除。
+        /// Whether the attached resources are deleted along with the instance.
         /// </summary>
         public readonly bool? DeleteWithInstance;
         /// <summary>
-        /// 实例的额外性能IOPS。
+        /// Additional performance IOPS for the instance
         /// </summary>
         public readonly int? ExtraPerformanceIops;
         /// <summary>
-        /// 实例的额外性能吞吐量，单位MB。
+        /// The additional performance throughput of the instance, in MB.
         /// </summary>
         public readonly int? ExtraPerformanceThroughputMb;
         /// <summary>
-        /// 额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+        /// Type of additional performance. Values:
+        ///   Balance: Balanced additional performance
+        ///   IOPS: IOPS additional performance
+        ///   Throughput: Throughput additional performance
         /// </summary>
         public readonly string? ExtraPerformanceTypeId;
         /// <summary>
-        /// 实例的大小，单位GiB。
+        /// Instance size, in GiB
         /// </summary>
         public readonly int? Size;
         /// <summary>
-        /// 实例的快照ID。
+        /// Instance snapshot ID
         /// </summary>
         public readonly string? SnapshotId;
         /// <summary>
-        /// 实例的卷ID。
+        /// Instance volume ID.
         /// </summary>
         public readonly string? VolumeId;
         /// <summary>
-        /// 云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+        /// Cloud disk type. Values:
+        ///   PTSSD: Performance SSD.
+        ///   ESSD_PL0: Ultra SSD disk, PL0 specification.
+        ///   ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+        ///   TSSD_TL0: Throughput SSD disk.
         /// </summary>
         public readonly string? VolumeType;
 

@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Storageebs.Inputs
     public sealed class VolumeBaselinePerformanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+        /// Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
         /// </summary>
         [Input("iops")]
         public Input<double>? Iops { get; set; }
 
         /// <summary>
-        /// 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+        /// The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
         /// </summary>
         [Input("throughput")]
         public Input<double>? Throughput { get; set; }

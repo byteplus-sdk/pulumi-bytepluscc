@@ -11,86 +11,86 @@ import java.util.Objects;
 @CustomType
 public final class GetRuleCondition {
     /**
-     * @return 比较符号。支持普通阈值告警： &gt;、&gt;=、&lt;、&lt;=、!=、= ，以及以下同环比告警：last*period*increase*pct：环比上周期上涨。last*period*decrease*pct：环比上周起下降。last*period*abs*pct：环比上周期上涨或下降。last*day*increase*pct：同比昨天同一时段上涨。last*day*decrease*pct：同比昨天同一时段下降。last*day*abs*pct：同比昨天同一时段上涨或下降。last*week*increase*pct：同比上周同一时段上涨。last*week*decrease*pct：同比上周同一时段下降。last*week*abs_pct：同比上周同一时段上涨或下降。
+     * @return Comparison operators. Supports standard threshold alerting: &gt;, &gt;=, &lt;, &lt;=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
      * 
      */
     private String comparisonOperator;
     /**
-     * @return 指标显示名称。
+     * @return Metric display name.
      * 
      */
     private String displayName;
     /**
-     * @return 监控指标的名称。详情请参见 云监控指标查询 下各产品的 MetricName。
+     * @return Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
      * 
      */
     private String metricName;
     /**
-     * @return 监控指标的单位。详情请参见 云监控指标查询 下各产品的 MetricUnit。说明同环比告警，MetricUnit 需要填写为 &#34;Percent&#34;。MetricUnit 中是否带有 IEC 表示不同的进位：带有 IEC：进位是 1024不带 IEC：进位是 1000。
+     * @return Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to &#34;Percent.&#34; Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
      * 
      */
     private String metricUnit;
     /**
-     * @return 监控指标的统计周期。详情请参见 云监控指标查询 下各产品的 Period。
+     * @return Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
      * 
      */
     private String period;
     /**
-     * @return 统计方法，取值：avg：平均值。max：最大值。min：最小值。说明统计方法会应用到检测时间段内的数据上。例如，默认每次检测数据的时间跨度是 1 分钟，如果统计方法为 avg，那就是对 1 分钟内的数据取平均值。
+     * @return Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
      * 
      */
     private String statistics;
     /**
-     * @return 指标阈值。支持输入正数或 0。最多支持三位小数。
+     * @return Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
      * 
      */
     private String threshold;
 
     private GetRuleCondition() {}
     /**
-     * @return 比较符号。支持普通阈值告警： &gt;、&gt;=、&lt;、&lt;=、!=、= ，以及以下同环比告警：last*period*increase*pct：环比上周期上涨。last*period*decrease*pct：环比上周起下降。last*period*abs*pct：环比上周期上涨或下降。last*day*increase*pct：同比昨天同一时段上涨。last*day*decrease*pct：同比昨天同一时段下降。last*day*abs*pct：同比昨天同一时段上涨或下降。last*week*increase*pct：同比上周同一时段上涨。last*week*decrease*pct：同比上周同一时段下降。last*week*abs_pct：同比上周同一时段上涨或下降。
+     * @return Comparison operators. Supports standard threshold alerting: &gt;, &gt;=, &lt;, &lt;=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
      * 
      */
     public String comparisonOperator() {
         return this.comparisonOperator;
     }
     /**
-     * @return 指标显示名称。
+     * @return Metric display name.
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return 监控指标的名称。详情请参见 云监控指标查询 下各产品的 MetricName。
+     * @return Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
      * 
      */
     public String metricName() {
         return this.metricName;
     }
     /**
-     * @return 监控指标的单位。详情请参见 云监控指标查询 下各产品的 MetricUnit。说明同环比告警，MetricUnit 需要填写为 &#34;Percent&#34;。MetricUnit 中是否带有 IEC 表示不同的进位：带有 IEC：进位是 1024不带 IEC：进位是 1000。
+     * @return Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to &#34;Percent.&#34; Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
      * 
      */
     public String metricUnit() {
         return this.metricUnit;
     }
     /**
-     * @return 监控指标的统计周期。详情请参见 云监控指标查询 下各产品的 Period。
+     * @return Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
      * 
      */
     public String period() {
         return this.period;
     }
     /**
-     * @return 统计方法，取值：avg：平均值。max：最大值。min：最小值。说明统计方法会应用到检测时间段内的数据上。例如，默认每次检测数据的时间跨度是 1 分钟，如果统计方法为 avg，那就是对 1 分钟内的数据取平均值。
+     * @return Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
      * 
      */
     public String statistics() {
         return this.statistics;
     }
     /**
-     * @return 指标阈值。支持输入正数或 0。最多支持三位小数。
+     * @return Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
      * 
      */
     public String threshold() {

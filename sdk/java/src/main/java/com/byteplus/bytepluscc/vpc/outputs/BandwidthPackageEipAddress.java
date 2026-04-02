@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class BandwidthPackageEipAddress {
     /**
-     * @return 分配ID
+     * @return Allocation ID
      * 
      */
     private @Nullable String allocationId;
 
     private BandwidthPackageEipAddress() {}
     /**
-     * @return 分配ID
+     * @return Allocation ID
      * 
      */
     public Optional<String> allocationId() {

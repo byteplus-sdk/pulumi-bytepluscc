@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone.Inputs
     public sealed class ResolverRuleForwardIPArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// VPC 外部的 DNS 服务器的 IP 地址。
+        /// IP address of the external DNS server for the VPC
         /// </summary>
         [Input("ip")]
         public Input<string>? Ip { get; set; }
 
         /// <summary>
-        /// VPC 外部的 DNS 服务器的端口。
+        /// Port of the external DNS server for the VPC
         /// </summary>
         [Input("port")]
         public Input<int>? Port { get; set; }

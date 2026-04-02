@@ -21,14 +21,14 @@ public final class GatewayServiceArgs extends com.pulumi.resources.ResourceArgs 
     public static final GatewayServiceArgs Empty = new GatewayServiceArgs();
 
     /**
-     * 认证配置。
+     * Authentication configuration.
      * 
      */
     @Import(name="authSpec", required=true)
     private Output<GatewayServiceAuthSpecArgs> authSpec;
 
     /**
-     * @return 认证配置。
+     * @return Authentication configuration.
      * 
      */
     public Output<GatewayServiceAuthSpecArgs> authSpec() {
@@ -36,14 +36,14 @@ public final class GatewayServiceArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 备注，长度限制为0~253个字符。
+     * Remarks. Length must be 0–253 characters.
      * 
      */
     @Import(name="comments")
     private @Nullable Output<String> comments;
 
     /**
-     * @return 备注，长度限制为0~253个字符。
+     * @return Remarks. Length must be 0–253 characters.
      * 
      */
     public Optional<Output<String>> comments() {
@@ -58,14 +58,14 @@ public final class GatewayServiceArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+     * Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
      * 
      */
     @Import(name="domainType")
     private @Nullable Output<String> domainType;
 
     /**
-     * @return 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+     * @return Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
      * 
      */
     public Optional<Output<String>> domainType() {
@@ -73,14 +73,14 @@ public final class GatewayServiceArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 网关ID。
+     * Gateway ID.
      * 
      */
     @Import(name="gatewayId", required=true)
     private Output<String> gatewayId;
 
     /**
-     * @return 网关ID。
+     * @return Gateway ID.
      * 
      */
     public Output<String> gatewayId() {
@@ -88,14 +88,14 @@ public final class GatewayServiceArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
+     * Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
      * 
      */
     @Import(name="protocols", required=true)
     private Output<List<String>> protocols;
 
     /**
-     * @return 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
+     * @return Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
      * 
      */
     public Output<List<String>> protocols() {
@@ -103,14 +103,14 @@ public final class GatewayServiceArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+     * Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
      * 
      */
     @Import(name="serviceName", required=true)
     private Output<String> serviceName;
 
     /**
-     * @return 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+     * @return Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
      * 
      */
     public Output<String> serviceName() {
@@ -118,14 +118,14 @@ public final class GatewayServiceArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 服务默认域名网络配置。。
+     * Default domain network configuration..
      * 
      */
     @Import(name="serviceNetworkSpec")
     private @Nullable Output<GatewayServiceServiceNetworkSpecArgs> serviceNetworkSpec;
 
     /**
-     * @return 服务默认域名网络配置。。
+     * @return Default domain network configuration..
      * 
      */
     public Optional<Output<GatewayServiceServiceNetworkSpecArgs>> serviceNetworkSpec() {
@@ -133,14 +133,14 @@ public final class GatewayServiceArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 服务类型，取值：AIProvider：AI模型代理。
+     * Service type. Options: AIProvider: AI model proxy.
      * 
      */
     @Import(name="serviceType")
     private @Nullable Output<String> serviceType;
 
     /**
-     * @return 服务类型，取值：AIProvider：AI模型代理。
+     * @return Service type. Options: AIProvider: AI model proxy.
      * 
      */
     public Optional<Output<String>> serviceType() {
@@ -180,7 +180,7 @@ public final class GatewayServiceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param authSpec 认证配置。
+         * @param authSpec Authentication configuration.
          * 
          * @return builder
          * 
@@ -191,7 +191,7 @@ public final class GatewayServiceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param authSpec 认证配置。
+         * @param authSpec Authentication configuration.
          * 
          * @return builder
          * 
@@ -201,7 +201,7 @@ public final class GatewayServiceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param comments 备注，长度限制为0~253个字符。
+         * @param comments Remarks. Length must be 0–253 characters.
          * 
          * @return builder
          * 
@@ -212,7 +212,7 @@ public final class GatewayServiceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param comments 备注，长度限制为0~253个字符。
+         * @param comments Remarks. Length must be 0–253 characters.
          * 
          * @return builder
          * 
@@ -235,7 +235,7 @@ public final class GatewayServiceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param domainType 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+         * @param domainType Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
          * 
          * @return builder
          * 
@@ -246,7 +246,7 @@ public final class GatewayServiceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param domainType 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+         * @param domainType Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
          * 
          * @return builder
          * 
@@ -256,7 +256,7 @@ public final class GatewayServiceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param gatewayId 网关ID。
+         * @param gatewayId Gateway ID.
          * 
          * @return builder
          * 
@@ -267,7 +267,7 @@ public final class GatewayServiceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param gatewayId 网关ID。
+         * @param gatewayId Gateway ID.
          * 
          * @return builder
          * 
@@ -277,7 +277,7 @@ public final class GatewayServiceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param protocols 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
+         * @param protocols Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
          * 
          * @return builder
          * 
@@ -288,7 +288,7 @@ public final class GatewayServiceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param protocols 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
+         * @param protocols Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
          * 
          * @return builder
          * 
@@ -298,7 +298,7 @@ public final class GatewayServiceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param protocols 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
+         * @param protocols Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
          * 
          * @return builder
          * 
@@ -308,7 +308,7 @@ public final class GatewayServiceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param serviceName 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+         * @param serviceName Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
          * 
          * @return builder
          * 
@@ -319,7 +319,7 @@ public final class GatewayServiceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param serviceName 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+         * @param serviceName Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
          * 
          * @return builder
          * 
@@ -329,7 +329,7 @@ public final class GatewayServiceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param serviceNetworkSpec 服务默认域名网络配置。。
+         * @param serviceNetworkSpec Default domain network configuration..
          * 
          * @return builder
          * 
@@ -340,7 +340,7 @@ public final class GatewayServiceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param serviceNetworkSpec 服务默认域名网络配置。。
+         * @param serviceNetworkSpec Default domain network configuration..
          * 
          * @return builder
          * 
@@ -350,7 +350,7 @@ public final class GatewayServiceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param serviceType 服务类型，取值：AIProvider：AI模型代理。
+         * @param serviceType Service type. Options: AIProvider: AI model proxy.
          * 
          * @return builder
          * 
@@ -361,7 +361,7 @@ public final class GatewayServiceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param serviceType 服务类型，取值：AIProvider：AI模型代理。
+         * @param serviceType Service type. Options: AIProvider: AI model proxy.
          * 
          * @return builder
          * 

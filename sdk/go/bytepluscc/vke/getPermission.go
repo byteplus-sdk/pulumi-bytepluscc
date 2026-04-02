@@ -30,43 +30,43 @@ type LookupPermissionArgs struct {
 
 // A collection of values returned by getPermission.
 type LookupPermissionResult struct {
-	// RBAC 权限策略资源被授权的时间。
+	// Time when the RBAC policy resource was authorized.
 	AuthorizedAt string `pulumi:"authorizedAt"`
-	// 授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+	// Grantor ID. Can be an IAM user ID or an IAM role ID.
 	AuthorizerId int `pulumi:"authorizerId"`
-	// 授权者名称
+	// Grantor name
 	AuthorizerName string `pulumi:"authorizerName"`
-	// 授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+	// Type of grantor. Possible values: User: IAM user. Role: IAM role. Account: account.
 	AuthorizerType string `pulumi:"authorizerType"`
-	// 需要授权给 IAM 用户或角色的集群 ID。roleDomain为namespace或cluster时必须填写该参数值。
+	// Cluster ID to be authorized for the IAM user or role. This parameter is required when roleDomain is namespace or cluster.
 	ClusterId string `pulumi:"clusterId"`
-	// RBAC 权限策略资源创建的时间。
+	// Time when the RBAC policy resource was created.
 	CreatedTime string `pulumi:"createdTime"`
-	// 被授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+	// Grantee ID. Can be an IAM user ID or an IAM role ID.
 	GranteeId int `pulumi:"granteeId"`
-	// 被授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+	// Type of grantee. Possible values: User: IAM user. Role: IAM role. Account: account.
 	GranteeType string `pulumi:"granteeType"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 给被授权者授予的 RBAC 角色是否为自定义角色，取值如下：true：自定义角色。false：（默认值）系统预置的角色。
+	// Whether the RBAC role granted to the grantee is a custom role. Possible values: true: custom role. false (default): system predefined role.
 	IsCustomRole bool `pulumi:"isCustomRole"`
-	// RBAC 权限策略资源在 Kubernetes 中的对象名称。
+	// The object name of the RBAC policy resource in Kubernetes.
 	KubeRoleBindingName string `pulumi:"kubeRoleBindingName"`
-	// 授权详细消息。
+	// Authorization details message.
 	Message string `pulumi:"message"`
-	// 需要授权给 IAM 用户或角色的名空间名称。roleDomain等于namespace时必须填写该参数值。roleDomain不等于namespace时，填写该参数值不生效。
+	// Namespace name to be authorized for the IAM user or role. This parameter is required when roleDomain equals namespace. If roleDomain does not equal namespace, this parameter is not effective.
 	Namespace string `pulumi:"namespace"`
-	// RBAC 权限策略资源 ID。
+	// RBAC policy resource ID.
 	PermissionId string `pulumi:"permissionId"`
-	// 项目选择器
+	// Project selector
 	ProjectSelector string `pulumi:"projectSelector"`
-	// 撤销授权的时间。
+	// Time when authorization is revoked.
 	RevokedAt string `pulumi:"revokedAt"`
-	// 为 IAM 用户或角色授予的权限类型，取值如下：namespace：授予命名空间级别的权限。cluster：授予集群级别的权限。all_clusters：授予当前账号下全部集群级别的权限。
+	// The permission type granted to an IAM user or role. Possible values: namespace: grants permissions at the namespace level. cluster: grants permissions at the cluster level. all_clusters: grants permissions at the cluster level for all clusters under the current account.
 	RoleDomain string `pulumi:"roleDomain"`
-	// 给被授权者授予的 RBAC 角色名称。目前必须填写该参数。当roleDomain为all_clusters时，不可以自定义角色名称。
+	// Name of the RBAC role granted to the grantee. This parameter must be specified. When roleDomain is all_clusters, custom role names are not allowed.
 	RoleName string `pulumi:"roleName"`
-	// RBAC 权限访问策略资源的状态，取值如下：Success：授权成功。Failed：授权失败。Pending：授权中。PartialSuccess：部分授权成功。
+	// Status of the RBAC access policy resource. Possible values: Success: authorization succeeded. Failed: authorization failed. Pending: authorization in progress. PartialSuccess: partial authorization succeeded.
 	Status string `pulumi:"status"`
 }
 
@@ -104,42 +104,42 @@ func (o LookupPermissionResultOutput) ToLookupPermissionResultOutputWithContext(
 	return o
 }
 
-// RBAC 权限策略资源被授权的时间。
+// Time when the RBAC policy resource was authorized.
 func (o LookupPermissionResultOutput) AuthorizedAt() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionResult) string { return v.AuthorizedAt }).(pulumi.StringOutput)
 }
 
-// 授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+// Grantor ID. Can be an IAM user ID or an IAM role ID.
 func (o LookupPermissionResultOutput) AuthorizerId() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupPermissionResult) int { return v.AuthorizerId }).(pulumi.IntOutput)
 }
 
-// 授权者名称
+// Grantor name
 func (o LookupPermissionResultOutput) AuthorizerName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionResult) string { return v.AuthorizerName }).(pulumi.StringOutput)
 }
 
-// 授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+// Type of grantor. Possible values: User: IAM user. Role: IAM role. Account: account.
 func (o LookupPermissionResultOutput) AuthorizerType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionResult) string { return v.AuthorizerType }).(pulumi.StringOutput)
 }
 
-// 需要授权给 IAM 用户或角色的集群 ID。roleDomain为namespace或cluster时必须填写该参数值。
+// Cluster ID to be authorized for the IAM user or role. This parameter is required when roleDomain is namespace or cluster.
 func (o LookupPermissionResultOutput) ClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionResult) string { return v.ClusterId }).(pulumi.StringOutput)
 }
 
-// RBAC 权限策略资源创建的时间。
+// Time when the RBAC policy resource was created.
 func (o LookupPermissionResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 被授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+// Grantee ID. Can be an IAM user ID or an IAM role ID.
 func (o LookupPermissionResultOutput) GranteeId() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupPermissionResult) int { return v.GranteeId }).(pulumi.IntOutput)
 }
 
-// 被授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+// Type of grantee. Possible values: User: IAM user. Role: IAM role. Account: account.
 func (o LookupPermissionResultOutput) GranteeType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionResult) string { return v.GranteeType }).(pulumi.StringOutput)
 }
@@ -149,52 +149,52 @@ func (o LookupPermissionResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 给被授权者授予的 RBAC 角色是否为自定义角色，取值如下：true：自定义角色。false：（默认值）系统预置的角色。
+// Whether the RBAC role granted to the grantee is a custom role. Possible values: true: custom role. false (default): system predefined role.
 func (o LookupPermissionResultOutput) IsCustomRole() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupPermissionResult) bool { return v.IsCustomRole }).(pulumi.BoolOutput)
 }
 
-// RBAC 权限策略资源在 Kubernetes 中的对象名称。
+// The object name of the RBAC policy resource in Kubernetes.
 func (o LookupPermissionResultOutput) KubeRoleBindingName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionResult) string { return v.KubeRoleBindingName }).(pulumi.StringOutput)
 }
 
-// 授权详细消息。
+// Authorization details message.
 func (o LookupPermissionResultOutput) Message() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionResult) string { return v.Message }).(pulumi.StringOutput)
 }
 
-// 需要授权给 IAM 用户或角色的名空间名称。roleDomain等于namespace时必须填写该参数值。roleDomain不等于namespace时，填写该参数值不生效。
+// Namespace name to be authorized for the IAM user or role. This parameter is required when roleDomain equals namespace. If roleDomain does not equal namespace, this parameter is not effective.
 func (o LookupPermissionResultOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionResult) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// RBAC 权限策略资源 ID。
+// RBAC policy resource ID.
 func (o LookupPermissionResultOutput) PermissionId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionResult) string { return v.PermissionId }).(pulumi.StringOutput)
 }
 
-// 项目选择器
+// Project selector
 func (o LookupPermissionResultOutput) ProjectSelector() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionResult) string { return v.ProjectSelector }).(pulumi.StringOutput)
 }
 
-// 撤销授权的时间。
+// Time when authorization is revoked.
 func (o LookupPermissionResultOutput) RevokedAt() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionResult) string { return v.RevokedAt }).(pulumi.StringOutput)
 }
 
-// 为 IAM 用户或角色授予的权限类型，取值如下：namespace：授予命名空间级别的权限。cluster：授予集群级别的权限。all_clusters：授予当前账号下全部集群级别的权限。
+// The permission type granted to an IAM user or role. Possible values: namespace: grants permissions at the namespace level. cluster: grants permissions at the cluster level. all_clusters: grants permissions at the cluster level for all clusters under the current account.
 func (o LookupPermissionResultOutput) RoleDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionResult) string { return v.RoleDomain }).(pulumi.StringOutput)
 }
 
-// 给被授权者授予的 RBAC 角色名称。目前必须填写该参数。当roleDomain为all_clusters时，不可以自定义角色名称。
+// Name of the RBAC role granted to the grantee. This parameter must be specified. When roleDomain is all_clusters, custom role names are not allowed.
 func (o LookupPermissionResultOutput) RoleName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionResult) string { return v.RoleName }).(pulumi.StringOutput)
 }
 
-// RBAC 权限访问策略资源的状态，取值如下：Success：授权成功。Failed：授权失败。Pending：授权中。PartialSuccess：部分授权成功。
+// Status of the RBAC access policy resource. Possible values: Success: authorization succeeded. Failed: authorization failed. Pending: authorization in progress. PartialSuccess: partial authorization succeeded.
 func (o LookupPermissionResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionResult) string { return v.Status }).(pulumi.StringOutput)
 }

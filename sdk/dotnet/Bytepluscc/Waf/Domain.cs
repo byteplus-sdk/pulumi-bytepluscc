@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Waf
 {
     /// <summary>
-    /// 通过 CNAME 或是负载均衡方式接入防护网站，并配置接入能力和回源能力，将业务流量接入到 WAF 实例，实现防护。
+    /// Connect the protected site via CNAME or load balancing, configure access and origin capabilities, and route business traffic to the WAF instance for protection
     /// 
     /// ## Import
     /// 
@@ -23,43 +23,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
     public partial class Domain : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 接入模式。10：CNAME 接入，11：负载均衡（CLB）7 层接入。
+        /// Access mode. 10: CNAME access, 11: Layer 7 load balancing (CLB) access.
         /// </summary>
         [Output("accessMode")]
         public Output<int> AccessMode { get; private set; } = null!;
 
         /// <summary>
-        /// 高防实例 IP。高防型 WAF 接入展示，否则为空。
+        /// High defense instance IP. Displayed for high-defense WAF access; otherwise blank.
         /// </summary>
         [Output("advancedDefenseIp")]
         public Output<string> AdvancedDefenseIp { get; private set; } = null!;
 
         /// <summary>
-        /// 高防实例 Ipv6。高防型 WAF 接入展示，否则为空。
+        /// High defense instance IPv6. Displayed for high-defense WAF access; otherwise blank.
         /// </summary>
         [Output("advancedDefenseIpv6")]
         public Output<string> AdvancedDefenseIpv6 { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启了 API 防护策略。0：关闭，1：开启。
+        /// API protection policy enabled. 0: Off, 1: On
         /// </summary>
         [Output("apiEnable")]
         public Output<int> ApiEnable { get; private set; } = null!;
 
         /// <summary>
-        /// 攻击状态。0:未发现攻击,1:发现攻击。
+        /// Attack status. 0: No attack detected, 1: Attack detected.
         /// </summary>
         [Output("attackStatus")]
         public Output<int> AttackStatus { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启智能 CC 防护策略。0：关闭，1：开启。
+        /// Whether to enable intelligent CC protection policy. 0: Disabled, 1: Enabled.
         /// </summary>
         [Output("autoCcEnable")]
         public Output<int> AutoCcEnable { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启自动封禁。0：关闭，1：开启。
+        /// Whether to enable automatic blocking. 0: Disabled, 1: Enabled.
         /// </summary>
         [Output("automaticBlackEnable")]
         public Output<int> AutomaticBlackEnable { get; private set; } = null!;
@@ -68,115 +68,115 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
         public Output<ImmutableArray<Outputs.DomainBackendGroup>> BackendGroups { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启了黑名单策略。0：关闭, 1：开启。
+        /// Denylist policy enabled. 0: Off, 1: On
         /// </summary>
         [Output("blackIpEnable")]
         public Output<int> BlackIpEnable { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启了区域封禁策略。0：关闭;1：开启。
+        /// Whether to enable regional blocking policy. 0: Disabled; 1: Enabled.
         /// </summary>
         [Output("blackLctEnable")]
         public Output<int> BlackLctEnable { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启动态Token防护。
+        /// Dynamic token protection enabled
         /// </summary>
         [Output("botDytokenEnable")]
         public Output<int> BotDytokenEnable { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启 bot 频率限制策略。
-        /// 0：关闭
-        /// 1：开启。
+        /// Bot rate limit policy enabled.
+        /// 0: Off
+        /// 1: On
         /// </summary>
         [Output("botFrequencyEnable")]
         public Output<int> BotFrequencyEnable { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启 bot 统计防护策略。
-        /// 0：关闭
-        /// 1：开启。
+        /// Bot statistics protection policy enabled.
+        /// 0: Off
+        /// 1: On
         /// </summary>
         [Output("botRepeatEnable")]
         public Output<int> BotRepeatEnable { get; private set; } = null!;
 
         /// <summary>
-        /// 设置 bot 行为地图策略默认动作，当 BotSequenceEnable = 1 开启状态时生效。默认为 0 （观察）。
-        /// 0：观察
-        /// 2：拦截
-        /// 6：JS 挑战
-        /// 7：人机验证。
+        /// Set the default action for the bot behavior map policy. Effective when BotSequenceEnable = 1 is enabled. Default is 0 (Observe).
+        /// 0: Observe
+        /// 2: Intercept
+        /// 6: JS Challenge
+        /// 7: CAPTCHA.
         /// </summary>
         [Output("botSequenceDefaultAction")]
         public Output<int> BotSequenceDefaultAction { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启 bot 行为地图。
-        /// 0：关闭
-        /// 1：开启。
+        /// Whether to enable bot behavior map.
+        /// 0: Off
+        /// 1: On.
         /// </summary>
         [Output("botSequenceEnable")]
         public Output<int> BotSequenceEnable { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启 CC 防护策略。
-        /// 0：关闭
-        /// 1：开启。
+        /// Whether to enable CC protection policy.
+        /// 0: Disabled
+        /// 1: Enabled.
         /// </summary>
         [Output("ccEnable")]
         public Output<int> CcEnable { get; private set; } = null!;
 
         /// <summary>
-        /// 托管至证书中心的证书ID。
+        /// Certificate ID managed in Certificate Center
         /// </summary>
         [Output("certificateId")]
         public Output<string> CertificateId { get; private set; } = null!;
 
         /// <summary>
-        /// 证书名称，协议类型包含 HTTPS 时显示。
+        /// Certificate name. Displayed when protocol type includes HTTPS.
         /// </summary>
         [Output("certificateName")]
         public Output<string> CertificateName { get; private set; } = null!;
 
         /// <summary>
-        /// 证书托管平台:waf/certificate_service。
+        /// Certificate hosting platform: waf/certificate_service.
         /// </summary>
         [Output("certificatePlatform")]
         public Output<string> CertificatePlatform { get; private set; } = null!;
 
         /// <summary>
-        /// CLB实例ID。
+        /// CLB instance ID.
         /// </summary>
         [Output("clbInstanceIds")]
         public Output<string> ClbInstanceIds { get; private set; } = null!;
 
         /// <summary>
-        /// CLB监听器ID。
+        /// CLB listener ID.
         /// </summary>
         [Output("clbListenerId")]
         public Output<string> ClbListenerId { get; private set; } = null!;
 
         /// <summary>
-        /// CLB后端服务器组ID。
+        /// CLB backend server group ID.
         /// </summary>
         [Output("clbPoolId")]
         public Output<string> ClbPoolId { get; private set; } = null!;
 
         /// <summary>
-        /// CLB后端服务器ID。
+        /// CLB backend server ID
         /// </summary>
         [Output("clbServerId")]
         public Output<string> ClbServerId { get; private set; } = null!;
 
         /// <summary>
-        /// 客户端IP获取方式。0:自定义Header字段,1:通过X-Forwarded-For(XFF)字段中第一个公网IP地址作为客户端真实IP地址。
+        /// Client IP acquisition method. 0: Custom header field, 1: Use the first public IP address in the X-Forwarded-For (XFF) field as the real client IP address.
         /// </summary>
         [Output("clientIpLocation")]
         public Output<int> ClientIpLocation { get; private set; } = null!;
 
         /// <summary>
-        /// 客户端请求body最大值(MB)。
+        /// Maximum client request body size (MB).
         /// </summary>
         [Output("clientMaxBodySize")]
         public Output<int> ClientMaxBodySize { get; private set; } = null!;
@@ -185,230 +185,230 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
         public Output<ImmutableArray<Outputs.DomainCloudAccessConfig>> CloudAccessConfigs { get; private set; } = null!;
 
         /// <summary>
-        /// CNAME记录。
+        /// CNAME record.
         /// </summary>
         [Output("cname")]
         public Output<string> Cname { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启自定义BOT防护。
+        /// Whether to enable custom bot protection.
         /// </summary>
         [Output("customBotEnable")]
         public Output<int> CustomBotEnable { get; private set; } = null!;
 
         /// <summary>
-        /// 自定义Header。
+        /// Custom header.
         /// </summary>
         [Output("customHeaders")]
         public Output<ImmutableArray<string>> CustomHeaders { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启自定义响应。
+        /// Whether to enable custom response.
         /// </summary>
         [Output("customRspEnable")]
         public Output<int> CustomRspEnable { get; private set; } = null!;
 
         /// <summary>
-        /// 自定义SNI。
+        /// Custom SNI.
         /// </summary>
         [Output("customSni")]
         public Output<string> CustomSni { get; private set; } = null!;
 
         /// <summary>
-        /// 为例外 ALB 实例设置防护模式。
-        /// 1：启用防护，已配置的防护策略生效。
-        /// 2：暂停防护，仅执行转发而不检测，已配置的防护策略不生效。
-        /// 3：回源模式，直接将请求解析至源站，不再转发至 WAF 实例。
-        /// 设置例外防护实例后，域名可能还会存在以下防护状态：
-        /// 5：部分启用，默认防护模式为启用防护，但存在例外实例为暂停防护或回源模式状态。
-        /// 6：部分暂停，默认防护模式为暂停防护，但存在例外实例为启用防护或回源模式状态。
-        /// 7：部分回源，默认防护模式为回源模式，但存在例外实例为启用防护或暂停防护状态。
+        /// Set protection mode for exception ALB instances.
+        /// 1: Enable protection. The configured protection policies take effect.
+        /// 2: Pause protection. Only forwarding is performed without inspection; the configured protection policies do not take effect.
+        /// 3: Origin mode. Requests are sent directly to the origin server and are no longer forwarded to the WAF instance.
+        /// After configuring exception protection instances, the domain may also have the following protection statuses:
+        /// 5: Partially enabled. The default protection mode is enabled, but some exception instances are in paused protection or origin mode.
+        /// 6: Partially paused. The default protection mode is paused, but some exception instances are in enabled protection or origin mode.
+        /// 7: Partially origin. The default protection mode is origin mode, but some exception instances are in enabled protection or paused protection.
         /// </summary>
         [Output("defenceMode")]
         public Output<int> DefenceMode { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启数据泄露防护。
+        /// Data leakage protection enabled
         /// </summary>
         [Output("dlpEnable")]
         public Output<int> DlpEnable { get; private set; } = null!;
 
         /// <summary>
-        /// 防护的域名信息，支持泛域名和精确域名。
+        /// Protected domain information. Supports wildcard and exact domains
         /// </summary>
         [Output("domain")]
         public Output<string> DomainValue { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启用户自定义重定向。0:关闭,1:开启。
+        /// User-defined redirection enabled. 0: Off, 1: On
         /// </summary>
         [Output("enableCustomRedirect")]
         public Output<int> EnableCustomRedirect { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启HTTP2.0。0:关闭,1:开启。
+        /// Whether to enable HTTP/2.0. 0: Disabled, 1: Enabled.
         /// </summary>
         [Output("enableHttp2")]
         public Output<int> EnableHttp2 { get; private set; } = null!;
 
         /// <summary>
-        /// 是否支持防护Ipv6请求。0:关闭,1:开启。
+        /// IPv6 request protection supported. 0: Off, 1: On
         /// </summary>
         [Output("enableIpv6")]
         public Output<int> EnableIpv6 { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启SNI配置。0:关闭,1:开启。
+        /// Whether to enable SNI configuration. 0: Off, 1: On.
         /// </summary>
         [Output("enableSni")]
         public Output<int> EnableSni { get; private set; } = null!;
 
         /// <summary>
-        /// 长连接复用个数。
+        /// Persistent connection reuse count
         /// </summary>
         [Output("keepAliveRequest")]
         public Output<int> KeepAliveRequest { get; private set; } = null!;
 
         /// <summary>
-        /// 长连接保持时间(秒)。
+        /// Persistent connection keep-alive time (seconds)
         /// </summary>
         [Output("keepAliveTimeout")]
         public Output<int> KeepAliveTimeout { get; private set; } = null!;
 
         /// <summary>
-        /// 负载均衡算法类型。wrr:加权轮询,wlc:加权最小连接数,sh:源地址哈希。
+        /// Load balancing algorithm type. wrr: Weighted round robin, wlc: Weighted least connections, sh: Source address hash.
         /// </summary>
         [Output("lbAlgorithm")]
         public Output<string> LbAlgorithm { get; private set; } = null!;
 
         /// <summary>
-        /// 端口号。
+        /// Port number
         /// </summary>
         [Output("port")]
         public Output<int> Port { get; private set; } = null!;
 
         /// <summary>
-        /// 项目名称。
+        /// Project name.
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启协议跟随。0:关闭,1:开启。
+        /// Protocol following enabled. 0: Off, 1: On
         /// </summary>
         [Output("protocolFollow")]
         public Output<int> ProtocolFollow { get; private set; } = null!;
 
         /// <summary>
-        /// 接入端口信息。
+        /// Access port information
         /// </summary>
         [Output("protocolPorts")]
         public Output<Outputs.DomainProtocolPorts> ProtocolPorts { get; private set; } = null!;
 
         /// <summary>
-        /// 接入协议类型,支持HTTP/HTTPS。
+        /// Access protocol type: supports HTTP/HTTPS
         /// </summary>
         [Output("protocols")]
         public Output<ImmutableArray<string>> Protocols { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启代理配置。0:关闭,1:开启。
+        /// Proxy configuration enabled. 0: Off, 1: On
         /// </summary>
         [Output("proxyConfig")]
         public Output<int> ProxyConfig { get; private set; } = null!;
 
         /// <summary>
-        /// WAF和后端服务器的建连超时时间(秒)。
+        /// Connection timeout between WAF and backend server (seconds).
         /// </summary>
         [Output("proxyConnectTimeout")]
         public Output<int> ProxyConnectTimeout { get; private set; } = null!;
 
         /// <summary>
-        /// WAF回源长连接可复用个数。
+        /// Number of reusable WAF origin persistent connections.
         /// </summary>
         [Output("proxyKeepAlive")]
         public Output<int> ProxyKeepAlive { get; private set; } = null!;
 
         /// <summary>
-        /// 空闲长连接超时时间(秒)。
+        /// Idle persistent connection timeout (seconds)
         /// </summary>
         [Output("proxyKeepAliveTimeout")]
         public Output<int> ProxyKeepAliveTimeout { get; private set; } = null!;
 
         /// <summary>
-        /// WAF从后端服务器读取响应的超时时间(秒)。
+        /// Timeout for WAF to read response from backend server (seconds).
         /// </summary>
         [Output("proxyReadTimeout")]
         public Output<int> ProxyReadTimeout { get; private set; } = null!;
 
         /// <summary>
-        /// WAF回源重试次数。
+        /// WAF origin retry count.
         /// </summary>
         [Output("proxyRetry")]
         public Output<int> ProxyRetry { get; private set; } = null!;
 
         /// <summary>
-        /// WAF将请求传输到后端服务器的超时时间(秒)。
+        /// Timeout for WAF to transmit request to backend server (seconds).
         /// </summary>
         [Output("proxyWriteTimeout")]
         public Output<int> ProxyWriteTimeout { get; private set; } = null!;
 
         /// <summary>
-        /// CNAME接入回源方式。0:私网回源,1:公网回源。
+        /// CNAME access origin method. 0: Private network origin, 1: Public network origin.
         /// </summary>
         [Output("publicRealServer")]
         public Output<int> PublicRealServer { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启异常响应防护。
+        /// Whether to enable abnormal response protection.
         /// </summary>
         [Output("rspAbnormalEnable")]
         public Output<int> RspAbnormalEnable { get; private set; } = null!;
 
         /// <summary>
-        /// 服务IP。
+        /// Service IP
         /// </summary>
         [Output("serverIps")]
         public Output<string> ServerIps { get; private set; } = null!;
 
         /// <summary>
-        /// WAF回源IP。
+        /// WAF origin IP.
         /// </summary>
         [Output("srcIps")]
         public Output<string> SrcIps { get; private set; } = null!;
 
         /// <summary>
-        /// 源站协议。
+        /// Origin protocol.
         /// </summary>
         [Output("srcProtocol")]
         public Output<string> SrcProtocol { get; private set; } = null!;
 
         /// <summary>
-        /// 加密套件。
+        /// Cipher suite
         /// </summary>
         [Output("sslCiphers")]
         public Output<ImmutableArray<string>> SslCiphers { get; private set; } = null!;
 
         /// <summary>
-        /// TLS协议版本。如:TLSv1,TLSv1.1,TLSv1.2,TLSv1.3。
+        /// TLS protocol version. For example: TLSv1, TLSv1.1, TLSv1.2, TLSv1.3
         /// </summary>
         [Output("sslProtocols")]
         public Output<ImmutableArray<string>> SslProtocols { get; private set; } = null!;
 
         /// <summary>
-        /// 接入状态。0:正常,1:DNS未解析,2:配置中,3:配置失败,4:配置未生效,5:更新中,6:实例已删除。
+        /// Access status. 0: Normal, 1: DNS not resolved, 2: Configuring, 3: Configuration failed, 4: Configuration not effective, 5: Updating, 6: Instance deleted.
         /// </summary>
         [Output("status")]
         public Output<int> Status { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启托管BOT防护。
+        /// Whether to enable managed bot protection.
         /// </summary>
         [Output("systemBotEnable")]
         public Output<int> SystemBotEnable { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启防篡改。
+        /// Whether to enable anti-tampering.
         /// </summary>
         [Output("tamperProofEnable")]
         public Output<int> TamperProofEnable { get; private set; } = null!;
@@ -417,19 +417,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
         public Output<ImmutableArray<Outputs.DomainTcpListenerConfig>> TcpListenerConfigs { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启日志服务。0:关闭,1:开启。
+        /// Log service enabled. 0: Off, 1: On
         /// </summary>
         [Output("tlsEnable")]
         public Output<int> TlsEnable { get; private set; } = null!;
 
         /// <summary>
-        /// 日志字段配置详情。
+        /// Log field configuration details
         /// </summary>
         [Output("tlsFieldsConfig")]
         public Output<Outputs.DomainTlsFieldsConfig> TlsFieldsConfig { get; private set; } = null!;
 
         /// <summary>
-        /// 更新时间。
+        /// Update time
         /// </summary>
         [Output("updateTime")]
         public Output<string> UpdateTime { get; private set; } = null!;
@@ -441,25 +441,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
         public Output<string> VpcId { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启WAF防护。
+        /// WAF protection enabled
         /// </summary>
         [Output("wafEnable")]
         public Output<int> WafEnable { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启白名单请求防护。
+        /// Allowlist request protection enabled
         /// </summary>
         [Output("wafWhiteReqEnable")]
         public Output<int> WafWhiteReqEnable { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启白名单防护。
+        /// Whether to enable allowlist protection.
         /// </summary>
         [Output("whiteEnable")]
         public Output<int> WhiteEnable { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启字段白名单防护。
+        /// Field allowlist protection enabled
         /// </summary>
         [Output("whiteFieldEnable")]
         public Output<int> WhiteFieldEnable { get; private set; } = null!;
@@ -512,19 +512,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
     public sealed class DomainArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 接入模式。10：CNAME 接入，11：负载均衡（CLB）7 层接入。
+        /// Access mode. 10: CNAME access, 11: Layer 7 load balancing (CLB) access.
         /// </summary>
         [Input("accessMode", required: true)]
         public Input<int> AccessMode { get; set; } = null!;
 
         /// <summary>
-        /// 是否开启了 API 防护策略。0：关闭，1：开启。
+        /// API protection policy enabled. 0: Off, 1: On
         /// </summary>
         [Input("apiEnable")]
         public Input<int>? ApiEnable { get; set; }
 
         /// <summary>
-        /// 是否开启智能 CC 防护策略。0：关闭，1：开启。
+        /// Whether to enable intelligent CC protection policy. 0: Disabled, 1: Enabled.
         /// </summary>
         [Input("autoCcEnable")]
         public Input<int>? AutoCcEnable { get; set; }
@@ -538,85 +538,85 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
         }
 
         /// <summary>
-        /// 是否开启了黑名单策略。0：关闭, 1：开启。
+        /// Denylist policy enabled. 0: Off, 1: On
         /// </summary>
         [Input("blackIpEnable")]
         public Input<int>? BlackIpEnable { get; set; }
 
         /// <summary>
-        /// 是否开启了区域封禁策略。0：关闭;1：开启。
+        /// Whether to enable regional blocking policy. 0: Disabled; 1: Enabled.
         /// </summary>
         [Input("blackLctEnable")]
         public Input<int>? BlackLctEnable { get; set; }
 
         /// <summary>
-        /// 是否开启动态Token防护。
+        /// Dynamic token protection enabled
         /// </summary>
         [Input("botDytokenEnable")]
         public Input<int>? BotDytokenEnable { get; set; }
 
         /// <summary>
-        /// 是否开启 bot 频率限制策略。
-        /// 0：关闭
-        /// 1：开启。
+        /// Bot rate limit policy enabled.
+        /// 0: Off
+        /// 1: On
         /// </summary>
         [Input("botFrequencyEnable")]
         public Input<int>? BotFrequencyEnable { get; set; }
 
         /// <summary>
-        /// 是否开启 bot 统计防护策略。
-        /// 0：关闭
-        /// 1：开启。
+        /// Bot statistics protection policy enabled.
+        /// 0: Off
+        /// 1: On
         /// </summary>
         [Input("botRepeatEnable")]
         public Input<int>? BotRepeatEnable { get; set; }
 
         /// <summary>
-        /// 设置 bot 行为地图策略默认动作，当 BotSequenceEnable = 1 开启状态时生效。默认为 0 （观察）。
-        /// 0：观察
-        /// 2：拦截
-        /// 6：JS 挑战
-        /// 7：人机验证。
+        /// Set the default action for the bot behavior map policy. Effective when BotSequenceEnable = 1 is enabled. Default is 0 (Observe).
+        /// 0: Observe
+        /// 2: Intercept
+        /// 6: JS Challenge
+        /// 7: CAPTCHA.
         /// </summary>
         [Input("botSequenceDefaultAction")]
         public Input<int>? BotSequenceDefaultAction { get; set; }
 
         /// <summary>
-        /// 是否开启 bot 行为地图。
-        /// 0：关闭
-        /// 1：开启。
+        /// Whether to enable bot behavior map.
+        /// 0: Off
+        /// 1: On.
         /// </summary>
         [Input("botSequenceEnable")]
         public Input<int>? BotSequenceEnable { get; set; }
 
         /// <summary>
-        /// 是否开启 CC 防护策略。
-        /// 0：关闭
-        /// 1：开启。
+        /// Whether to enable CC protection policy.
+        /// 0: Disabled
+        /// 1: Enabled.
         /// </summary>
         [Input("ccEnable")]
         public Input<int>? CcEnable { get; set; }
 
         /// <summary>
-        /// 托管至证书中心的证书ID。
+        /// Certificate ID managed in Certificate Center
         /// </summary>
         [Input("certificateId")]
         public Input<string>? CertificateId { get; set; }
 
         /// <summary>
-        /// 证书托管平台:waf/certificate_service。
+        /// Certificate hosting platform: waf/certificate_service.
         /// </summary>
         [Input("certificatePlatform")]
         public Input<string>? CertificatePlatform { get; set; }
 
         /// <summary>
-        /// 客户端IP获取方式。0:自定义Header字段,1:通过X-Forwarded-For(XFF)字段中第一个公网IP地址作为客户端真实IP地址。
+        /// Client IP acquisition method. 0: Custom header field, 1: Use the first public IP address in the X-Forwarded-For (XFF) field as the real client IP address.
         /// </summary>
         [Input("clientIpLocation")]
         public Input<int>? ClientIpLocation { get; set; }
 
         /// <summary>
-        /// 客户端请求body最大值(MB)。
+        /// Maximum client request body size (MB).
         /// </summary>
         [Input("clientMaxBodySize")]
         public Input<int>? ClientMaxBodySize { get; set; }
@@ -630,7 +630,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
         }
 
         /// <summary>
-        /// 是否开启自定义BOT防护。
+        /// Whether to enable custom bot protection.
         /// </summary>
         [Input("customBotEnable")]
         public Input<int>? CustomBotEnable { get; set; }
@@ -639,7 +639,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
         private InputList<string>? _customHeaders;
 
         /// <summary>
-        /// 自定义Header。
+        /// Custom header.
         /// </summary>
         public InputList<string> CustomHeaders
         {
@@ -648,98 +648,98 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
         }
 
         /// <summary>
-        /// 是否开启自定义响应。
+        /// Whether to enable custom response.
         /// </summary>
         [Input("customRspEnable")]
         public Input<int>? CustomRspEnable { get; set; }
 
         /// <summary>
-        /// 自定义SNI。
+        /// Custom SNI.
         /// </summary>
         [Input("customSni")]
         public Input<string>? CustomSni { get; set; }
 
         /// <summary>
-        /// 为例外 ALB 实例设置防护模式。
-        /// 1：启用防护，已配置的防护策略生效。
-        /// 2：暂停防护，仅执行转发而不检测，已配置的防护策略不生效。
-        /// 3：回源模式，直接将请求解析至源站，不再转发至 WAF 实例。
-        /// 设置例外防护实例后，域名可能还会存在以下防护状态：
-        /// 5：部分启用，默认防护模式为启用防护，但存在例外实例为暂停防护或回源模式状态。
-        /// 6：部分暂停，默认防护模式为暂停防护，但存在例外实例为启用防护或回源模式状态。
-        /// 7：部分回源，默认防护模式为回源模式，但存在例外实例为启用防护或暂停防护状态。
+        /// Set protection mode for exception ALB instances.
+        /// 1: Enable protection. The configured protection policies take effect.
+        /// 2: Pause protection. Only forwarding is performed without inspection; the configured protection policies do not take effect.
+        /// 3: Origin mode. Requests are sent directly to the origin server and are no longer forwarded to the WAF instance.
+        /// After configuring exception protection instances, the domain may also have the following protection statuses:
+        /// 5: Partially enabled. The default protection mode is enabled, but some exception instances are in paused protection or origin mode.
+        /// 6: Partially paused. The default protection mode is paused, but some exception instances are in enabled protection or origin mode.
+        /// 7: Partially origin. The default protection mode is origin mode, but some exception instances are in enabled protection or paused protection.
         /// </summary>
         [Input("defenceMode")]
         public Input<int>? DefenceMode { get; set; }
 
         /// <summary>
-        /// 是否开启数据泄露防护。
+        /// Data leakage protection enabled
         /// </summary>
         [Input("dlpEnable")]
         public Input<int>? DlpEnable { get; set; }
 
         /// <summary>
-        /// 防护的域名信息，支持泛域名和精确域名。
+        /// Protected domain information. Supports wildcard and exact domains
         /// </summary>
         [Input("domain", required: true)]
         public Input<string> DomainValue { get; set; } = null!;
 
         /// <summary>
-        /// 是否开启用户自定义重定向。0:关闭,1:开启。
+        /// User-defined redirection enabled. 0: Off, 1: On
         /// </summary>
         [Input("enableCustomRedirect")]
         public Input<int>? EnableCustomRedirect { get; set; }
 
         /// <summary>
-        /// 是否开启HTTP2.0。0:关闭,1:开启。
+        /// Whether to enable HTTP/2.0. 0: Disabled, 1: Enabled.
         /// </summary>
         [Input("enableHttp2")]
         public Input<int>? EnableHttp2 { get; set; }
 
         /// <summary>
-        /// 是否支持防护Ipv6请求。0:关闭,1:开启。
+        /// IPv6 request protection supported. 0: Off, 1: On
         /// </summary>
         [Input("enableIpv6")]
         public Input<int>? EnableIpv6 { get; set; }
 
         /// <summary>
-        /// 是否开启SNI配置。0:关闭,1:开启。
+        /// Whether to enable SNI configuration. 0: Off, 1: On.
         /// </summary>
         [Input("enableSni")]
         public Input<int>? EnableSni { get; set; }
 
         /// <summary>
-        /// 长连接复用个数。
+        /// Persistent connection reuse count
         /// </summary>
         [Input("keepAliveRequest")]
         public Input<int>? KeepAliveRequest { get; set; }
 
         /// <summary>
-        /// 长连接保持时间(秒)。
+        /// Persistent connection keep-alive time (seconds)
         /// </summary>
         [Input("keepAliveTimeout")]
         public Input<int>? KeepAliveTimeout { get; set; }
 
         /// <summary>
-        /// 负载均衡算法类型。wrr:加权轮询,wlc:加权最小连接数,sh:源地址哈希。
+        /// Load balancing algorithm type. wrr: Weighted round robin, wlc: Weighted least connections, sh: Source address hash.
         /// </summary>
         [Input("lbAlgorithm")]
         public Input<string>? LbAlgorithm { get; set; }
 
         /// <summary>
-        /// 项目名称。
+        /// Project name.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 是否开启协议跟随。0:关闭,1:开启。
+        /// Protocol following enabled. 0: Off, 1: On
         /// </summary>
         [Input("protocolFollow")]
         public Input<int>? ProtocolFollow { get; set; }
 
         /// <summary>
-        /// 接入端口信息。
+        /// Access port information
         /// </summary>
         [Input("protocolPorts")]
         public Input<Inputs.DomainProtocolPortsArgs>? ProtocolPorts { get; set; }
@@ -748,7 +748,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
         private InputList<string>? _protocols;
 
         /// <summary>
-        /// 接入协议类型,支持HTTP/HTTPS。
+        /// Access protocol type: supports HTTP/HTTPS
         /// </summary>
         public InputList<string> Protocols
         {
@@ -757,49 +757,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
         }
 
         /// <summary>
-        /// 是否开启代理配置。0:关闭,1:开启。
+        /// Proxy configuration enabled. 0: Off, 1: On
         /// </summary>
         [Input("proxyConfig")]
         public Input<int>? ProxyConfig { get; set; }
 
         /// <summary>
-        /// WAF和后端服务器的建连超时时间(秒)。
+        /// Connection timeout between WAF and backend server (seconds).
         /// </summary>
         [Input("proxyConnectTimeout")]
         public Input<int>? ProxyConnectTimeout { get; set; }
 
         /// <summary>
-        /// WAF回源长连接可复用个数。
+        /// Number of reusable WAF origin persistent connections.
         /// </summary>
         [Input("proxyKeepAlive")]
         public Input<int>? ProxyKeepAlive { get; set; }
 
         /// <summary>
-        /// 空闲长连接超时时间(秒)。
+        /// Idle persistent connection timeout (seconds)
         /// </summary>
         [Input("proxyKeepAliveTimeout")]
         public Input<int>? ProxyKeepAliveTimeout { get; set; }
 
         /// <summary>
-        /// WAF从后端服务器读取响应的超时时间(秒)。
+        /// Timeout for WAF to read response from backend server (seconds).
         /// </summary>
         [Input("proxyReadTimeout")]
         public Input<int>? ProxyReadTimeout { get; set; }
 
         /// <summary>
-        /// WAF回源重试次数。
+        /// WAF origin retry count.
         /// </summary>
         [Input("proxyRetry")]
         public Input<int>? ProxyRetry { get; set; }
 
         /// <summary>
-        /// WAF将请求传输到后端服务器的超时时间(秒)。
+        /// Timeout for WAF to transmit request to backend server (seconds).
         /// </summary>
         [Input("proxyWriteTimeout")]
         public Input<int>? ProxyWriteTimeout { get; set; }
 
         /// <summary>
-        /// CNAME接入回源方式。0:私网回源,1:公网回源。
+        /// CNAME access origin method. 0: Private network origin, 1: Public network origin.
         /// </summary>
         [Input("publicRealServer")]
         public Input<int>? PublicRealServer { get; set; }
@@ -808,7 +808,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
         private InputList<string>? _sslCiphers;
 
         /// <summary>
-        /// 加密套件。
+        /// Cipher suite
         /// </summary>
         public InputList<string> SslCiphers
         {
@@ -820,7 +820,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
         private InputList<string>? _sslProtocols;
 
         /// <summary>
-        /// TLS协议版本。如:TLSv1,TLSv1.1,TLSv1.2,TLSv1.3。
+        /// TLS protocol version. For example: TLSv1, TLSv1.1, TLSv1.2, TLSv1.3
         /// </summary>
         public InputList<string> SslProtocols
         {
@@ -829,25 +829,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
         }
 
         /// <summary>
-        /// 是否开启托管BOT防护。
+        /// Whether to enable managed bot protection.
         /// </summary>
         [Input("systemBotEnable")]
         public Input<int>? SystemBotEnable { get; set; }
 
         /// <summary>
-        /// 是否开启防篡改。
+        /// Whether to enable anti-tampering.
         /// </summary>
         [Input("tamperProofEnable")]
         public Input<int>? TamperProofEnable { get; set; }
 
         /// <summary>
-        /// 是否开启日志服务。0:关闭,1:开启。
+        /// Log service enabled. 0: Off, 1: On
         /// </summary>
         [Input("tlsEnable")]
         public Input<int>? TlsEnable { get; set; }
 
         /// <summary>
-        /// 日志字段配置详情。
+        /// Log field configuration details
         /// </summary>
         [Input("tlsFieldsConfig")]
         public Input<Inputs.DomainTlsFieldsConfigArgs>? TlsFieldsConfig { get; set; }
@@ -859,25 +859,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
         public Input<string>? VpcId { get; set; }
 
         /// <summary>
-        /// 是否开启WAF防护。
+        /// WAF protection enabled
         /// </summary>
         [Input("wafEnable")]
         public Input<int>? WafEnable { get; set; }
 
         /// <summary>
-        /// 是否开启白名单请求防护。
+        /// Allowlist request protection enabled
         /// </summary>
         [Input("wafWhiteReqEnable")]
         public Input<int>? WafWhiteReqEnable { get; set; }
 
         /// <summary>
-        /// 是否开启白名单防护。
+        /// Whether to enable allowlist protection.
         /// </summary>
         [Input("whiteEnable")]
         public Input<int>? WhiteEnable { get; set; }
 
         /// <summary>
-        /// 是否开启字段白名单防护。
+        /// Field allowlist protection enabled
         /// </summary>
         [Input("whiteFieldEnable")]
         public Input<int>? WhiteFieldEnable { get; set; }
@@ -891,43 +891,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
     public sealed class DomainState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 接入模式。10：CNAME 接入，11：负载均衡（CLB）7 层接入。
+        /// Access mode. 10: CNAME access, 11: Layer 7 load balancing (CLB) access.
         /// </summary>
         [Input("accessMode")]
         public Input<int>? AccessMode { get; set; }
 
         /// <summary>
-        /// 高防实例 IP。高防型 WAF 接入展示，否则为空。
+        /// High defense instance IP. Displayed for high-defense WAF access; otherwise blank.
         /// </summary>
         [Input("advancedDefenseIp")]
         public Input<string>? AdvancedDefenseIp { get; set; }
 
         /// <summary>
-        /// 高防实例 Ipv6。高防型 WAF 接入展示，否则为空。
+        /// High defense instance IPv6. Displayed for high-defense WAF access; otherwise blank.
         /// </summary>
         [Input("advancedDefenseIpv6")]
         public Input<string>? AdvancedDefenseIpv6 { get; set; }
 
         /// <summary>
-        /// 是否开启了 API 防护策略。0：关闭，1：开启。
+        /// API protection policy enabled. 0: Off, 1: On
         /// </summary>
         [Input("apiEnable")]
         public Input<int>? ApiEnable { get; set; }
 
         /// <summary>
-        /// 攻击状态。0:未发现攻击,1:发现攻击。
+        /// Attack status. 0: No attack detected, 1: Attack detected.
         /// </summary>
         [Input("attackStatus")]
         public Input<int>? AttackStatus { get; set; }
 
         /// <summary>
-        /// 是否开启智能 CC 防护策略。0：关闭，1：开启。
+        /// Whether to enable intelligent CC protection policy. 0: Disabled, 1: Enabled.
         /// </summary>
         [Input("autoCcEnable")]
         public Input<int>? AutoCcEnable { get; set; }
 
         /// <summary>
-        /// 是否开启自动封禁。0：关闭，1：开启。
+        /// Whether to enable automatic blocking. 0: Disabled, 1: Enabled.
         /// </summary>
         [Input("automaticBlackEnable")]
         public Input<int>? AutomaticBlackEnable { get; set; }
@@ -941,115 +941,115 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
         }
 
         /// <summary>
-        /// 是否开启了黑名单策略。0：关闭, 1：开启。
+        /// Denylist policy enabled. 0: Off, 1: On
         /// </summary>
         [Input("blackIpEnable")]
         public Input<int>? BlackIpEnable { get; set; }
 
         /// <summary>
-        /// 是否开启了区域封禁策略。0：关闭;1：开启。
+        /// Whether to enable regional blocking policy. 0: Disabled; 1: Enabled.
         /// </summary>
         [Input("blackLctEnable")]
         public Input<int>? BlackLctEnable { get; set; }
 
         /// <summary>
-        /// 是否开启动态Token防护。
+        /// Dynamic token protection enabled
         /// </summary>
         [Input("botDytokenEnable")]
         public Input<int>? BotDytokenEnable { get; set; }
 
         /// <summary>
-        /// 是否开启 bot 频率限制策略。
-        /// 0：关闭
-        /// 1：开启。
+        /// Bot rate limit policy enabled.
+        /// 0: Off
+        /// 1: On
         /// </summary>
         [Input("botFrequencyEnable")]
         public Input<int>? BotFrequencyEnable { get; set; }
 
         /// <summary>
-        /// 是否开启 bot 统计防护策略。
-        /// 0：关闭
-        /// 1：开启。
+        /// Bot statistics protection policy enabled.
+        /// 0: Off
+        /// 1: On
         /// </summary>
         [Input("botRepeatEnable")]
         public Input<int>? BotRepeatEnable { get; set; }
 
         /// <summary>
-        /// 设置 bot 行为地图策略默认动作，当 BotSequenceEnable = 1 开启状态时生效。默认为 0 （观察）。
-        /// 0：观察
-        /// 2：拦截
-        /// 6：JS 挑战
-        /// 7：人机验证。
+        /// Set the default action for the bot behavior map policy. Effective when BotSequenceEnable = 1 is enabled. Default is 0 (Observe).
+        /// 0: Observe
+        /// 2: Intercept
+        /// 6: JS Challenge
+        /// 7: CAPTCHA.
         /// </summary>
         [Input("botSequenceDefaultAction")]
         public Input<int>? BotSequenceDefaultAction { get; set; }
 
         /// <summary>
-        /// 是否开启 bot 行为地图。
-        /// 0：关闭
-        /// 1：开启。
+        /// Whether to enable bot behavior map.
+        /// 0: Off
+        /// 1: On.
         /// </summary>
         [Input("botSequenceEnable")]
         public Input<int>? BotSequenceEnable { get; set; }
 
         /// <summary>
-        /// 是否开启 CC 防护策略。
-        /// 0：关闭
-        /// 1：开启。
+        /// Whether to enable CC protection policy.
+        /// 0: Disabled
+        /// 1: Enabled.
         /// </summary>
         [Input("ccEnable")]
         public Input<int>? CcEnable { get; set; }
 
         /// <summary>
-        /// 托管至证书中心的证书ID。
+        /// Certificate ID managed in Certificate Center
         /// </summary>
         [Input("certificateId")]
         public Input<string>? CertificateId { get; set; }
 
         /// <summary>
-        /// 证书名称，协议类型包含 HTTPS 时显示。
+        /// Certificate name. Displayed when protocol type includes HTTPS.
         /// </summary>
         [Input("certificateName")]
         public Input<string>? CertificateName { get; set; }
 
         /// <summary>
-        /// 证书托管平台:waf/certificate_service。
+        /// Certificate hosting platform: waf/certificate_service.
         /// </summary>
         [Input("certificatePlatform")]
         public Input<string>? CertificatePlatform { get; set; }
 
         /// <summary>
-        /// CLB实例ID。
+        /// CLB instance ID.
         /// </summary>
         [Input("clbInstanceIds")]
         public Input<string>? ClbInstanceIds { get; set; }
 
         /// <summary>
-        /// CLB监听器ID。
+        /// CLB listener ID.
         /// </summary>
         [Input("clbListenerId")]
         public Input<string>? ClbListenerId { get; set; }
 
         /// <summary>
-        /// CLB后端服务器组ID。
+        /// CLB backend server group ID.
         /// </summary>
         [Input("clbPoolId")]
         public Input<string>? ClbPoolId { get; set; }
 
         /// <summary>
-        /// CLB后端服务器ID。
+        /// CLB backend server ID
         /// </summary>
         [Input("clbServerId")]
         public Input<string>? ClbServerId { get; set; }
 
         /// <summary>
-        /// 客户端IP获取方式。0:自定义Header字段,1:通过X-Forwarded-For(XFF)字段中第一个公网IP地址作为客户端真实IP地址。
+        /// Client IP acquisition method. 0: Custom header field, 1: Use the first public IP address in the X-Forwarded-For (XFF) field as the real client IP address.
         /// </summary>
         [Input("clientIpLocation")]
         public Input<int>? ClientIpLocation { get; set; }
 
         /// <summary>
-        /// 客户端请求body最大值(MB)。
+        /// Maximum client request body size (MB).
         /// </summary>
         [Input("clientMaxBodySize")]
         public Input<int>? ClientMaxBodySize { get; set; }
@@ -1063,13 +1063,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
         }
 
         /// <summary>
-        /// CNAME记录。
+        /// CNAME record.
         /// </summary>
         [Input("cname")]
         public Input<string>? Cname { get; set; }
 
         /// <summary>
-        /// 是否开启自定义BOT防护。
+        /// Whether to enable custom bot protection.
         /// </summary>
         [Input("customBotEnable")]
         public Input<int>? CustomBotEnable { get; set; }
@@ -1078,7 +1078,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
         private InputList<string>? _customHeaders;
 
         /// <summary>
-        /// 自定义Header。
+        /// Custom header.
         /// </summary>
         public InputList<string> CustomHeaders
         {
@@ -1087,104 +1087,104 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
         }
 
         /// <summary>
-        /// 是否开启自定义响应。
+        /// Whether to enable custom response.
         /// </summary>
         [Input("customRspEnable")]
         public Input<int>? CustomRspEnable { get; set; }
 
         /// <summary>
-        /// 自定义SNI。
+        /// Custom SNI.
         /// </summary>
         [Input("customSni")]
         public Input<string>? CustomSni { get; set; }
 
         /// <summary>
-        /// 为例外 ALB 实例设置防护模式。
-        /// 1：启用防护，已配置的防护策略生效。
-        /// 2：暂停防护，仅执行转发而不检测，已配置的防护策略不生效。
-        /// 3：回源模式，直接将请求解析至源站，不再转发至 WAF 实例。
-        /// 设置例外防护实例后，域名可能还会存在以下防护状态：
-        /// 5：部分启用，默认防护模式为启用防护，但存在例外实例为暂停防护或回源模式状态。
-        /// 6：部分暂停，默认防护模式为暂停防护，但存在例外实例为启用防护或回源模式状态。
-        /// 7：部分回源，默认防护模式为回源模式，但存在例外实例为启用防护或暂停防护状态。
+        /// Set protection mode for exception ALB instances.
+        /// 1: Enable protection. The configured protection policies take effect.
+        /// 2: Pause protection. Only forwarding is performed without inspection; the configured protection policies do not take effect.
+        /// 3: Origin mode. Requests are sent directly to the origin server and are no longer forwarded to the WAF instance.
+        /// After configuring exception protection instances, the domain may also have the following protection statuses:
+        /// 5: Partially enabled. The default protection mode is enabled, but some exception instances are in paused protection or origin mode.
+        /// 6: Partially paused. The default protection mode is paused, but some exception instances are in enabled protection or origin mode.
+        /// 7: Partially origin. The default protection mode is origin mode, but some exception instances are in enabled protection or paused protection.
         /// </summary>
         [Input("defenceMode")]
         public Input<int>? DefenceMode { get; set; }
 
         /// <summary>
-        /// 是否开启数据泄露防护。
+        /// Data leakage protection enabled
         /// </summary>
         [Input("dlpEnable")]
         public Input<int>? DlpEnable { get; set; }
 
         /// <summary>
-        /// 防护的域名信息，支持泛域名和精确域名。
+        /// Protected domain information. Supports wildcard and exact domains
         /// </summary>
         [Input("domain")]
         public Input<string>? DomainValue { get; set; }
 
         /// <summary>
-        /// 是否开启用户自定义重定向。0:关闭,1:开启。
+        /// User-defined redirection enabled. 0: Off, 1: On
         /// </summary>
         [Input("enableCustomRedirect")]
         public Input<int>? EnableCustomRedirect { get; set; }
 
         /// <summary>
-        /// 是否开启HTTP2.0。0:关闭,1:开启。
+        /// Whether to enable HTTP/2.0. 0: Disabled, 1: Enabled.
         /// </summary>
         [Input("enableHttp2")]
         public Input<int>? EnableHttp2 { get; set; }
 
         /// <summary>
-        /// 是否支持防护Ipv6请求。0:关闭,1:开启。
+        /// IPv6 request protection supported. 0: Off, 1: On
         /// </summary>
         [Input("enableIpv6")]
         public Input<int>? EnableIpv6 { get; set; }
 
         /// <summary>
-        /// 是否开启SNI配置。0:关闭,1:开启。
+        /// Whether to enable SNI configuration. 0: Off, 1: On.
         /// </summary>
         [Input("enableSni")]
         public Input<int>? EnableSni { get; set; }
 
         /// <summary>
-        /// 长连接复用个数。
+        /// Persistent connection reuse count
         /// </summary>
         [Input("keepAliveRequest")]
         public Input<int>? KeepAliveRequest { get; set; }
 
         /// <summary>
-        /// 长连接保持时间(秒)。
+        /// Persistent connection keep-alive time (seconds)
         /// </summary>
         [Input("keepAliveTimeout")]
         public Input<int>? KeepAliveTimeout { get; set; }
 
         /// <summary>
-        /// 负载均衡算法类型。wrr:加权轮询,wlc:加权最小连接数,sh:源地址哈希。
+        /// Load balancing algorithm type. wrr: Weighted round robin, wlc: Weighted least connections, sh: Source address hash.
         /// </summary>
         [Input("lbAlgorithm")]
         public Input<string>? LbAlgorithm { get; set; }
 
         /// <summary>
-        /// 端口号。
+        /// Port number
         /// </summary>
         [Input("port")]
         public Input<int>? Port { get; set; }
 
         /// <summary>
-        /// 项目名称。
+        /// Project name.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 是否开启协议跟随。0:关闭,1:开启。
+        /// Protocol following enabled. 0: Off, 1: On
         /// </summary>
         [Input("protocolFollow")]
         public Input<int>? ProtocolFollow { get; set; }
 
         /// <summary>
-        /// 接入端口信息。
+        /// Access port information
         /// </summary>
         [Input("protocolPorts")]
         public Input<Inputs.DomainProtocolPortsGetArgs>? ProtocolPorts { get; set; }
@@ -1193,7 +1193,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
         private InputList<string>? _protocols;
 
         /// <summary>
-        /// 接入协议类型,支持HTTP/HTTPS。
+        /// Access protocol type: supports HTTP/HTTPS
         /// </summary>
         public InputList<string> Protocols
         {
@@ -1202,73 +1202,73 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
         }
 
         /// <summary>
-        /// 是否开启代理配置。0:关闭,1:开启。
+        /// Proxy configuration enabled. 0: Off, 1: On
         /// </summary>
         [Input("proxyConfig")]
         public Input<int>? ProxyConfig { get; set; }
 
         /// <summary>
-        /// WAF和后端服务器的建连超时时间(秒)。
+        /// Connection timeout between WAF and backend server (seconds).
         /// </summary>
         [Input("proxyConnectTimeout")]
         public Input<int>? ProxyConnectTimeout { get; set; }
 
         /// <summary>
-        /// WAF回源长连接可复用个数。
+        /// Number of reusable WAF origin persistent connections.
         /// </summary>
         [Input("proxyKeepAlive")]
         public Input<int>? ProxyKeepAlive { get; set; }
 
         /// <summary>
-        /// 空闲长连接超时时间(秒)。
+        /// Idle persistent connection timeout (seconds)
         /// </summary>
         [Input("proxyKeepAliveTimeout")]
         public Input<int>? ProxyKeepAliveTimeout { get; set; }
 
         /// <summary>
-        /// WAF从后端服务器读取响应的超时时间(秒)。
+        /// Timeout for WAF to read response from backend server (seconds).
         /// </summary>
         [Input("proxyReadTimeout")]
         public Input<int>? ProxyReadTimeout { get; set; }
 
         /// <summary>
-        /// WAF回源重试次数。
+        /// WAF origin retry count.
         /// </summary>
         [Input("proxyRetry")]
         public Input<int>? ProxyRetry { get; set; }
 
         /// <summary>
-        /// WAF将请求传输到后端服务器的超时时间(秒)。
+        /// Timeout for WAF to transmit request to backend server (seconds).
         /// </summary>
         [Input("proxyWriteTimeout")]
         public Input<int>? ProxyWriteTimeout { get; set; }
 
         /// <summary>
-        /// CNAME接入回源方式。0:私网回源,1:公网回源。
+        /// CNAME access origin method. 0: Private network origin, 1: Public network origin.
         /// </summary>
         [Input("publicRealServer")]
         public Input<int>? PublicRealServer { get; set; }
 
         /// <summary>
-        /// 是否开启异常响应防护。
+        /// Whether to enable abnormal response protection.
         /// </summary>
         [Input("rspAbnormalEnable")]
         public Input<int>? RspAbnormalEnable { get; set; }
 
         /// <summary>
-        /// 服务IP。
+        /// Service IP
         /// </summary>
         [Input("serverIps")]
         public Input<string>? ServerIps { get; set; }
 
         /// <summary>
-        /// WAF回源IP。
+        /// WAF origin IP.
         /// </summary>
         [Input("srcIps")]
         public Input<string>? SrcIps { get; set; }
 
         /// <summary>
-        /// 源站协议。
+        /// Origin protocol.
         /// </summary>
         [Input("srcProtocol")]
         public Input<string>? SrcProtocol { get; set; }
@@ -1277,7 +1277,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
         private InputList<string>? _sslCiphers;
 
         /// <summary>
-        /// 加密套件。
+        /// Cipher suite
         /// </summary>
         public InputList<string> SslCiphers
         {
@@ -1289,7 +1289,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
         private InputList<string>? _sslProtocols;
 
         /// <summary>
-        /// TLS协议版本。如:TLSv1,TLSv1.1,TLSv1.2,TLSv1.3。
+        /// TLS protocol version. For example: TLSv1, TLSv1.1, TLSv1.2, TLSv1.3
         /// </summary>
         public InputList<string> SslProtocols
         {
@@ -1298,19 +1298,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
         }
 
         /// <summary>
-        /// 接入状态。0:正常,1:DNS未解析,2:配置中,3:配置失败,4:配置未生效,5:更新中,6:实例已删除。
+        /// Access status. 0: Normal, 1: DNS not resolved, 2: Configuring, 3: Configuration failed, 4: Configuration not effective, 5: Updating, 6: Instance deleted.
         /// </summary>
         [Input("status")]
         public Input<int>? Status { get; set; }
 
         /// <summary>
-        /// 是否开启托管BOT防护。
+        /// Whether to enable managed bot protection.
         /// </summary>
         [Input("systemBotEnable")]
         public Input<int>? SystemBotEnable { get; set; }
 
         /// <summary>
-        /// 是否开启防篡改。
+        /// Whether to enable anti-tampering.
         /// </summary>
         [Input("tamperProofEnable")]
         public Input<int>? TamperProofEnable { get; set; }
@@ -1324,19 +1324,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
         }
 
         /// <summary>
-        /// 是否开启日志服务。0:关闭,1:开启。
+        /// Log service enabled. 0: Off, 1: On
         /// </summary>
         [Input("tlsEnable")]
         public Input<int>? TlsEnable { get; set; }
 
         /// <summary>
-        /// 日志字段配置详情。
+        /// Log field configuration details
         /// </summary>
         [Input("tlsFieldsConfig")]
         public Input<Inputs.DomainTlsFieldsConfigGetArgs>? TlsFieldsConfig { get; set; }
 
         /// <summary>
-        /// 更新时间。
+        /// Update time
         /// </summary>
         [Input("updateTime")]
         public Input<string>? UpdateTime { get; set; }
@@ -1348,25 +1348,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
         public Input<string>? VpcId { get; set; }
 
         /// <summary>
-        /// 是否开启WAF防护。
+        /// WAF protection enabled
         /// </summary>
         [Input("wafEnable")]
         public Input<int>? WafEnable { get; set; }
 
         /// <summary>
-        /// 是否开启白名单请求防护。
+        /// Allowlist request protection enabled
         /// </summary>
         [Input("wafWhiteReqEnable")]
         public Input<int>? WafWhiteReqEnable { get; set; }
 
         /// <summary>
-        /// 是否开启白名单防护。
+        /// Whether to enable allowlist protection.
         /// </summary>
         [Input("whiteEnable")]
         public Input<int>? WhiteEnable { get; set; }
 
         /// <summary>
-        /// 是否开启字段白名单防护。
+        /// Field allowlist protection enabled
         /// </summary>
         [Input("whiteFieldEnable")]
         public Input<int>? WhiteFieldEnable { get; set; }

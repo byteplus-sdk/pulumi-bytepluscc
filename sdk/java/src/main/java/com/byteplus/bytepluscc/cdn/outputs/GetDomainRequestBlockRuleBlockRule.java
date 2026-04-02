@@ -13,38 +13,38 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainRequestBlockRuleBlockRule {
     /**
-     * @return 表示列表中一条规则的拦截配置。
+     * @return Indicates the interception configuration for a rule in the list.
      * 
      */
     private GetDomainRequestBlockRuleBlockRuleBlockAction blockAction;
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     private GetDomainRequestBlockRuleBlockRuleCondition condition;
     /**
-     * @return 表示规则的名称，长度不超过 20 个字符，可以包含字母、数字、下划线（_）、中划线（-）、汉字。一个汉字占 3 个字符。
+     * @return Indicates the name of the rule, which must not exceed 20 characters and can include letters, numbers, underscores (_), hyphens (-), and Chinese characters. One Chinese character counts as 3 characters.
      * 
      */
     private String ruleName;
 
     private GetDomainRequestBlockRuleBlockRule() {}
     /**
-     * @return 表示列表中一条规则的拦截配置。
+     * @return Indicates the interception configuration for a rule in the list.
      * 
      */
     public GetDomainRequestBlockRuleBlockRuleBlockAction blockAction() {
         return this.blockAction;
     }
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public GetDomainRequestBlockRuleBlockRuleCondition condition() {
         return this.condition;
     }
     /**
-     * @return 表示规则的名称，长度不超过 20 个字符，可以包含字母、数字、下划线（_）、中划线（-）、汉字。一个汉字占 3 个字符。
+     * @return Indicates the name of the rule, which must not exceed 20 characters and can include letters, numbers, underscores (_), hyphens (-), and Chinese characters. One Chinese character counts as 3 characters.
      * 
      */
     public String ruleName() {

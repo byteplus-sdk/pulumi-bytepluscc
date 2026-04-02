@@ -12,122 +12,122 @@ import java.util.Objects;
 @CustomType
 public final class GetNodeGroupNode {
     /**
-     * @return 节点创建时间。
+     * @return Node creation time.
      * 
      */
     private Integer createdTime;
     /**
-     * @return ecs实例规格。
+     * @return ecs instance specification.
      * 
      */
     private String ecsInstanceType;
     /**
-     * @return 节点FQDN。
+     * @return Node FQDN.
      * 
      */
     private String nodeFqdn;
     /**
-     * @return 节点ID。
+     * @return Node ID.
      * 
      */
     private String nodeId;
     /**
-     * @return 节点名称。
+     * @return Node name.
      * 
      */
     private String nodeName;
     /**
-     * @return 节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+     * @return Node status. UNKNOWN: Unknown. CREATING: Creating. RUNNING: Running. STOPPING: Stopping. STOPPED: Stopped. REBOOTING: Rebooting. DELETED: Deleted.
      * 
      */
     private String nodeState;
     /**
-     * @return 私有IP。
+     * @return Private IP.
      * 
      */
     private String privateIp;
     /**
-     * @return 公网IP。
+     * @return Public IP.
      * 
      */
     private String publicIp;
     /**
-     * @return 准备完毕时间。
+     * @return Ready time.
      * 
      */
     private Integer readyTime;
     /**
-     * @return 集群终止时间。
+     * @return Cluster termination time.
      * 
      */
     private Integer terminateTime;
 
     private GetNodeGroupNode() {}
     /**
-     * @return 节点创建时间。
+     * @return Node creation time.
      * 
      */
     public Integer createdTime() {
         return this.createdTime;
     }
     /**
-     * @return ecs实例规格。
+     * @return ecs instance specification.
      * 
      */
     public String ecsInstanceType() {
         return this.ecsInstanceType;
     }
     /**
-     * @return 节点FQDN。
+     * @return Node FQDN.
      * 
      */
     public String nodeFqdn() {
         return this.nodeFqdn;
     }
     /**
-     * @return 节点ID。
+     * @return Node ID.
      * 
      */
     public String nodeId() {
         return this.nodeId;
     }
     /**
-     * @return 节点名称。
+     * @return Node name.
      * 
      */
     public String nodeName() {
         return this.nodeName;
     }
     /**
-     * @return 节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+     * @return Node status. UNKNOWN: Unknown. CREATING: Creating. RUNNING: Running. STOPPING: Stopping. STOPPED: Stopped. REBOOTING: Rebooting. DELETED: Deleted.
      * 
      */
     public String nodeState() {
         return this.nodeState;
     }
     /**
-     * @return 私有IP。
+     * @return Private IP.
      * 
      */
     public String privateIp() {
         return this.privateIp;
     }
     /**
-     * @return 公网IP。
+     * @return Public IP.
      * 
      */
     public String publicIp() {
         return this.publicIp;
     }
     /**
-     * @return 准备完毕时间。
+     * @return Ready time.
      * 
      */
     public Integer readyTime() {
         return this.readyTime;
     }
     /**
-     * @return 集群终止时间。
+     * @return Cluster termination time.
      * 
      */
     public Integer terminateTime() {

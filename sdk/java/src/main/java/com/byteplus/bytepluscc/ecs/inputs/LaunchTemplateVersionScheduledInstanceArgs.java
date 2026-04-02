@@ -16,14 +16,14 @@ public final class LaunchTemplateVersionScheduledInstanceArgs extends com.pulumi
     public static final LaunchTemplateVersionScheduledInstanceArgs Empty = new LaunchTemplateVersionScheduledInstanceArgs();
 
     /**
-     * 弹性预约单的描述。
+     * Description of the elastic reservation order
      * 
      */
     @Import(name="scheduledInstanceDescription")
     private @Nullable Output<String> scheduledInstanceDescription;
 
     /**
-     * @return 弹性预约单的描述。
+     * @return Description of the elastic reservation order
      * 
      */
     public Optional<Output<String>> scheduledInstanceDescription() {
@@ -31,14 +31,14 @@ public final class LaunchTemplateVersionScheduledInstanceArgs extends com.pulumi
     }
 
     /**
-     * 弹性预约单的名称。
+     * Name of the elastic reservation order
      * 
      */
     @Import(name="scheduledInstanceName")
     private @Nullable Output<String> scheduledInstanceName;
 
     /**
-     * @return 弹性预约单的名称。
+     * @return Name of the elastic reservation order
      * 
      */
     public Optional<Output<String>> scheduledInstanceName() {
@@ -71,7 +71,7 @@ public final class LaunchTemplateVersionScheduledInstanceArgs extends com.pulumi
         }
 
         /**
-         * @param scheduledInstanceDescription 弹性预约单的描述。
+         * @param scheduledInstanceDescription Description of the elastic reservation order
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class LaunchTemplateVersionScheduledInstanceArgs extends com.pulumi
         }
 
         /**
-         * @param scheduledInstanceDescription 弹性预约单的描述。
+         * @param scheduledInstanceDescription Description of the elastic reservation order
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class LaunchTemplateVersionScheduledInstanceArgs extends com.pulumi
         }
 
         /**
-         * @param scheduledInstanceName 弹性预约单的名称。
+         * @param scheduledInstanceName Name of the elastic reservation order
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class LaunchTemplateVersionScheduledInstanceArgs extends com.pulumi
         }
 
         /**
-         * @param scheduledInstanceName 弹性预约单的名称。
+         * @param scheduledInstanceName Name of the elastic reservation order
          * 
          * @return builder
          * 

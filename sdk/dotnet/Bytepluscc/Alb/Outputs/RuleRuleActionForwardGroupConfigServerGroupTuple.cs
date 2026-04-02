@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class RuleRuleActionForwardGroupConfigServerGroupTuple
     {
         /// <summary>
-        /// 转发到的目的服务器组 ID。
+        /// Destination server group ID.
         /// </summary>
         public readonly string? ServerGroupId;
         /// <summary>
-        /// 服务器组权重。
+        /// Server group weight.
         /// </summary>
         public readonly int? Weight;
 

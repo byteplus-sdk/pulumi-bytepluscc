@@ -14,25 +14,25 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type InstanceChargeDetail struct {
-	// 包年包月实例到期后是否自动续费。
+	// Whether to automatically renew the subscription instance after expiration.
 	AutoRenew *bool `pulumi:"autoRenew"`
-	// 实例的结束计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Instance billing end time. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
 	ChargeEndTime *string `pulumi:"chargeEndTime"`
-	// 包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Expiration time of the subscription instance. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
 	ChargeExpireTime *string `pulumi:"chargeExpireTime"`
-	// 实例的开始计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Instance billing start time. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
 	ChargeStartTime *string `pulumi:"chargeStartTime"`
-	// 实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
+	// Instance billing status. Includes: Normal: normal, Overdue: pay-as-you-go overdue, Expired: subscription expired.
 	ChargeStatus *string `pulumi:"chargeStatus"`
-	// 实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
+	// Instance billing type. Supported types include: PostPaid: pay-as-you-go, PrePaid: subscription.
 	ChargeType *string `pulumi:"chargeType"`
-	// 实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Estimated release time after the instance is suspended due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 	OverdueReclaimTime *string `pulumi:"overdueReclaimTime"`
-	// 实例的欠费关停时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Instance suspension time due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 	OverdueTime *string `pulumi:"overdueTime"`
-	// 包年包月类型实例的购买时长。PeriodUnit 指定为 Month 时，取值范围为 1~9。PeriodUnit 指定为 Year 时，取值范围为 1~3。
+	// Subscription instance purchase duration. When PeriodUnit is set to Month, the value range is 1–9. When PeriodUnit is set to Year, the value range is 1–3.
 	Period *int `pulumi:"period"`
-	// 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+	// Unit for purchase duration. Values: MONTHLY: monthly purchase, YEARLY: annual purchase.
 	PeriodUnit *string `pulumi:"periodUnit"`
 }
 
@@ -48,25 +48,25 @@ type InstanceChargeDetailInput interface {
 }
 
 type InstanceChargeDetailArgs struct {
-	// 包年包月实例到期后是否自动续费。
+	// Whether to automatically renew the subscription instance after expiration.
 	AutoRenew pulumi.BoolPtrInput `pulumi:"autoRenew"`
-	// 实例的结束计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Instance billing end time. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
 	ChargeEndTime pulumi.StringPtrInput `pulumi:"chargeEndTime"`
-	// 包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Expiration time of the subscription instance. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
 	ChargeExpireTime pulumi.StringPtrInput `pulumi:"chargeExpireTime"`
-	// 实例的开始计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Instance billing start time. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
 	ChargeStartTime pulumi.StringPtrInput `pulumi:"chargeStartTime"`
-	// 实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
+	// Instance billing status. Includes: Normal: normal, Overdue: pay-as-you-go overdue, Expired: subscription expired.
 	ChargeStatus pulumi.StringPtrInput `pulumi:"chargeStatus"`
-	// 实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
+	// Instance billing type. Supported types include: PostPaid: pay-as-you-go, PrePaid: subscription.
 	ChargeType pulumi.StringPtrInput `pulumi:"chargeType"`
-	// 实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Estimated release time after the instance is suspended due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 	OverdueReclaimTime pulumi.StringPtrInput `pulumi:"overdueReclaimTime"`
-	// 实例的欠费关停时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Instance suspension time due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 	OverdueTime pulumi.StringPtrInput `pulumi:"overdueTime"`
-	// 包年包月类型实例的购买时长。PeriodUnit 指定为 Month 时，取值范围为 1~9。PeriodUnit 指定为 Year 时，取值范围为 1~3。
+	// Subscription instance purchase duration. When PeriodUnit is set to Month, the value range is 1–9. When PeriodUnit is set to Year, the value range is 1–3.
 	Period pulumi.IntPtrInput `pulumi:"period"`
-	// 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+	// Unit for purchase duration. Values: MONTHLY: monthly purchase, YEARLY: annual purchase.
 	PeriodUnit pulumi.StringPtrInput `pulumi:"periodUnit"`
 }
 
@@ -147,52 +147,52 @@ func (o InstanceChargeDetailOutput) ToInstanceChargeDetailPtrOutputWithContext(c
 	}).(InstanceChargeDetailPtrOutput)
 }
 
-// 包年包月实例到期后是否自动续费。
+// Whether to automatically renew the subscription instance after expiration.
 func (o InstanceChargeDetailOutput) AutoRenew() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InstanceChargeDetail) *bool { return v.AutoRenew }).(pulumi.BoolPtrOutput)
 }
 
-// 实例的结束计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Instance billing end time. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o InstanceChargeDetailOutput) ChargeEndTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.ChargeEndTime }).(pulumi.StringPtrOutput)
 }
 
-// 包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Expiration time of the subscription instance. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o InstanceChargeDetailOutput) ChargeExpireTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.ChargeExpireTime }).(pulumi.StringPtrOutput)
 }
 
-// 实例的开始计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Instance billing start time. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o InstanceChargeDetailOutput) ChargeStartTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.ChargeStartTime }).(pulumi.StringPtrOutput)
 }
 
-// 实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
+// Instance billing status. Includes: Normal: normal, Overdue: pay-as-you-go overdue, Expired: subscription expired.
 func (o InstanceChargeDetailOutput) ChargeStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.ChargeStatus }).(pulumi.StringPtrOutput)
 }
 
-// 实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
+// Instance billing type. Supported types include: PostPaid: pay-as-you-go, PrePaid: subscription.
 func (o InstanceChargeDetailOutput) ChargeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.ChargeType }).(pulumi.StringPtrOutput)
 }
 
-// 实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Estimated release time after the instance is suspended due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o InstanceChargeDetailOutput) OverdueReclaimTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.OverdueReclaimTime }).(pulumi.StringPtrOutput)
 }
 
-// 实例的欠费关停时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Instance suspension time due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o InstanceChargeDetailOutput) OverdueTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.OverdueTime }).(pulumi.StringPtrOutput)
 }
 
-// 包年包月类型实例的购买时长。PeriodUnit 指定为 Month 时，取值范围为 1~9。PeriodUnit 指定为 Year 时，取值范围为 1~3。
+// Subscription instance purchase duration. When PeriodUnit is set to Month, the value range is 1–9. When PeriodUnit is set to Year, the value range is 1–3.
 func (o InstanceChargeDetailOutput) Period() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceChargeDetail) *int { return v.Period }).(pulumi.IntPtrOutput)
 }
 
-// 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+// Unit for purchase duration. Values: MONTHLY: monthly purchase, YEARLY: annual purchase.
 func (o InstanceChargeDetailOutput) PeriodUnit() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.PeriodUnit }).(pulumi.StringPtrOutput)
 }
@@ -221,7 +221,7 @@ func (o InstanceChargeDetailPtrOutput) Elem() InstanceChargeDetailOutput {
 	}).(InstanceChargeDetailOutput)
 }
 
-// 包年包月实例到期后是否自动续费。
+// Whether to automatically renew the subscription instance after expiration.
 func (o InstanceChargeDetailPtrOutput) AutoRenew() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeDetail) *bool {
 		if v == nil {
@@ -231,7 +231,7 @@ func (o InstanceChargeDetailPtrOutput) AutoRenew() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 实例的结束计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Instance billing end time. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o InstanceChargeDetailPtrOutput) ChargeEndTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeDetail) *string {
 		if v == nil {
@@ -241,7 +241,7 @@ func (o InstanceChargeDetailPtrOutput) ChargeEndTime() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Expiration time of the subscription instance. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o InstanceChargeDetailPtrOutput) ChargeExpireTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeDetail) *string {
 		if v == nil {
@@ -251,7 +251,7 @@ func (o InstanceChargeDetailPtrOutput) ChargeExpireTime() pulumi.StringPtrOutput
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的开始计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Instance billing start time. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o InstanceChargeDetailPtrOutput) ChargeStartTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeDetail) *string {
 		if v == nil {
@@ -261,7 +261,7 @@ func (o InstanceChargeDetailPtrOutput) ChargeStartTime() pulumi.StringPtrOutput 
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
+// Instance billing status. Includes: Normal: normal, Overdue: pay-as-you-go overdue, Expired: subscription expired.
 func (o InstanceChargeDetailPtrOutput) ChargeStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeDetail) *string {
 		if v == nil {
@@ -271,7 +271,7 @@ func (o InstanceChargeDetailPtrOutput) ChargeStatus() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
+// Instance billing type. Supported types include: PostPaid: pay-as-you-go, PrePaid: subscription.
 func (o InstanceChargeDetailPtrOutput) ChargeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeDetail) *string {
 		if v == nil {
@@ -281,7 +281,7 @@ func (o InstanceChargeDetailPtrOutput) ChargeType() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Estimated release time after the instance is suspended due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o InstanceChargeDetailPtrOutput) OverdueReclaimTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeDetail) *string {
 		if v == nil {
@@ -291,7 +291,7 @@ func (o InstanceChargeDetailPtrOutput) OverdueReclaimTime() pulumi.StringPtrOutp
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的欠费关停时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Instance suspension time due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o InstanceChargeDetailPtrOutput) OverdueTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeDetail) *string {
 		if v == nil {
@@ -301,7 +301,7 @@ func (o InstanceChargeDetailPtrOutput) OverdueTime() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 包年包月类型实例的购买时长。PeriodUnit 指定为 Month 时，取值范围为 1~9。PeriodUnit 指定为 Year 时，取值范围为 1~3。
+// Subscription instance purchase duration. When PeriodUnit is set to Month, the value range is 1–9. When PeriodUnit is set to Year, the value range is 1–3.
 func (o InstanceChargeDetailPtrOutput) Period() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeDetail) *int {
 		if v == nil {
@@ -311,7 +311,7 @@ func (o InstanceChargeDetailPtrOutput) Period() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+// Unit for purchase duration. Values: MONTHLY: monthly purchase, YEARLY: annual purchase.
 func (o InstanceChargeDetailPtrOutput) PeriodUnit() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeDetail) *string {
 		if v == nil {
@@ -322,15 +322,15 @@ func (o InstanceChargeDetailPtrOutput) PeriodUnit() pulumi.StringPtrOutput {
 }
 
 type InstanceEndpoint struct {
-	// 实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
+	// Type of instance endpoint. RabbitMQ instances provide the following endpoint types: WEB: Web UI endpoint, AMQP0*9*1: AMQP endpoint, MQTT: MQTT endpoint, WEB_MQTT: WEB and MQTT endpoints, STOMP: STOMP endpoint.
 	EndpointType *string `pulumi:"endpointType"`
-	// 实例的私网访问域名。
+	// Private network access domain name of the instance.
 	InternalEndpoint *string `pulumi:"internalEndpoint"`
-	// 公共服务区 IP 接入点。
+	// Public service zone IP endpoint.
 	InternalIpEndpoint *string `pulumi:"internalIpEndpoint"`
-	// 接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
+	// Network type of the endpoint. PrivateNetwork indicates a private network (VPC).
 	NetworkType *string `pulumi:"networkType"`
-	// 实例公网访问域名。仅在开启公网访问之后显示。
+	// Instance public access domain name. Displayed only after public access is enabled.
 	PublicEndpoint *string `pulumi:"publicEndpoint"`
 }
 
@@ -346,15 +346,15 @@ type InstanceEndpointInput interface {
 }
 
 type InstanceEndpointArgs struct {
-	// 实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
+	// Type of instance endpoint. RabbitMQ instances provide the following endpoint types: WEB: Web UI endpoint, AMQP0*9*1: AMQP endpoint, MQTT: MQTT endpoint, WEB_MQTT: WEB and MQTT endpoints, STOMP: STOMP endpoint.
 	EndpointType pulumi.StringPtrInput `pulumi:"endpointType"`
-	// 实例的私网访问域名。
+	// Private network access domain name of the instance.
 	InternalEndpoint pulumi.StringPtrInput `pulumi:"internalEndpoint"`
-	// 公共服务区 IP 接入点。
+	// Public service zone IP endpoint.
 	InternalIpEndpoint pulumi.StringPtrInput `pulumi:"internalIpEndpoint"`
-	// 接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
+	// Network type of the endpoint. PrivateNetwork indicates a private network (VPC).
 	NetworkType pulumi.StringPtrInput `pulumi:"networkType"`
-	// 实例公网访问域名。仅在开启公网访问之后显示。
+	// Instance public access domain name. Displayed only after public access is enabled.
 	PublicEndpoint pulumi.StringPtrInput `pulumi:"publicEndpoint"`
 }
 
@@ -409,27 +409,27 @@ func (o InstanceEndpointOutput) ToInstanceEndpointOutputWithContext(ctx context.
 	return o
 }
 
-// 实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
+// Type of instance endpoint. RabbitMQ instances provide the following endpoint types: WEB: Web UI endpoint, AMQP0*9*1: AMQP endpoint, MQTT: MQTT endpoint, WEB_MQTT: WEB and MQTT endpoints, STOMP: STOMP endpoint.
 func (o InstanceEndpointOutput) EndpointType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpoint) *string { return v.EndpointType }).(pulumi.StringPtrOutput)
 }
 
-// 实例的私网访问域名。
+// Private network access domain name of the instance.
 func (o InstanceEndpointOutput) InternalEndpoint() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpoint) *string { return v.InternalEndpoint }).(pulumi.StringPtrOutput)
 }
 
-// 公共服务区 IP 接入点。
+// Public service zone IP endpoint.
 func (o InstanceEndpointOutput) InternalIpEndpoint() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpoint) *string { return v.InternalIpEndpoint }).(pulumi.StringPtrOutput)
 }
 
-// 接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
+// Network type of the endpoint. PrivateNetwork indicates a private network (VPC).
 func (o InstanceEndpointOutput) NetworkType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpoint) *string { return v.NetworkType }).(pulumi.StringPtrOutput)
 }
 
-// 实例公网访问域名。仅在开启公网访问之后显示。
+// Instance public access domain name. Displayed only after public access is enabled.
 func (o InstanceEndpointOutput) PublicEndpoint() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpoint) *string { return v.PublicEndpoint }).(pulumi.StringPtrOutput)
 }
@@ -455,9 +455,9 @@ func (o InstanceEndpointArrayOutput) Index(i pulumi.IntInput) InstanceEndpointOu
 }
 
 type InstanceTag struct {
-	// 标签的键。
+	// Tag key.
 	Key *string `pulumi:"key"`
-	// 标签的值。
+	// Tag value.
 	Value *string `pulumi:"value"`
 }
 
@@ -473,9 +473,9 @@ type InstanceTagInput interface {
 }
 
 type InstanceTagArgs struct {
-	// 标签的键。
+	// Tag key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签的值。
+	// Tag value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -530,12 +530,12 @@ func (o InstanceTagOutput) ToInstanceTagOutputWithContext(ctx context.Context) I
 	return o
 }
 
-// 标签的键。
+// Tag key.
 func (o InstanceTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签的值。
+// Tag value.
 func (o InstanceTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -561,21 +561,21 @@ func (o InstanceTagArrayOutput) Index(i pulumi.IntInput) InstanceTagOutput {
 }
 
 type PublicAddressChargeDetail struct {
-	// 包年包月实例到期后是否自动续费。
+	// Whether subscription instances are automatically renewed after expiration.
 	AutoRenew *bool `pulumi:"autoRenew"`
-	// 实例的结束计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Instance billing end time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 	ChargeEndTime *string `pulumi:"chargeEndTime"`
-	// 包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Expiration time for subscription instances. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 	ChargeExpireTime *string `pulumi:"chargeExpireTime"`
-	// 实例的开始计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Instance billing start time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 	ChargeStartTime *string `pulumi:"chargeStartTime"`
-	// 实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
+	// Instance billing status. Includes: Normal: normal, Overdue: pay-as-you-go overdue, Expired: subscription expired.
 	ChargeStatus *string `pulumi:"chargeStatus"`
-	// 实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
+	// Instance billing type. Supported types: PostPaid: pay-as-you-go, PrePaid: subscription.
 	ChargeType *string `pulumi:"chargeType"`
-	// 实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Estimated release time after instance is stopped due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 	OverdueReclaimTime *string `pulumi:"overdueReclaimTime"`
-	// 实例的欠费关停时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Instance overdue shutdown time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 	OverdueTime *string `pulumi:"overdueTime"`
 }
 
@@ -591,21 +591,21 @@ type PublicAddressChargeDetailInput interface {
 }
 
 type PublicAddressChargeDetailArgs struct {
-	// 包年包月实例到期后是否自动续费。
+	// Whether subscription instances are automatically renewed after expiration.
 	AutoRenew pulumi.BoolPtrInput `pulumi:"autoRenew"`
-	// 实例的结束计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Instance billing end time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 	ChargeEndTime pulumi.StringPtrInput `pulumi:"chargeEndTime"`
-	// 包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Expiration time for subscription instances. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 	ChargeExpireTime pulumi.StringPtrInput `pulumi:"chargeExpireTime"`
-	// 实例的开始计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Instance billing start time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 	ChargeStartTime pulumi.StringPtrInput `pulumi:"chargeStartTime"`
-	// 实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
+	// Instance billing status. Includes: Normal: normal, Overdue: pay-as-you-go overdue, Expired: subscription expired.
 	ChargeStatus pulumi.StringPtrInput `pulumi:"chargeStatus"`
-	// 实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
+	// Instance billing type. Supported types: PostPaid: pay-as-you-go, PrePaid: subscription.
 	ChargeType pulumi.StringPtrInput `pulumi:"chargeType"`
-	// 实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Estimated release time after instance is stopped due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 	OverdueReclaimTime pulumi.StringPtrInput `pulumi:"overdueReclaimTime"`
-	// 实例的欠费关停时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Instance overdue shutdown time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 	OverdueTime pulumi.StringPtrInput `pulumi:"overdueTime"`
 }
 
@@ -686,42 +686,42 @@ func (o PublicAddressChargeDetailOutput) ToPublicAddressChargeDetailPtrOutputWit
 	}).(PublicAddressChargeDetailPtrOutput)
 }
 
-// 包年包月实例到期后是否自动续费。
+// Whether subscription instances are automatically renewed after expiration.
 func (o PublicAddressChargeDetailOutput) AutoRenew() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v PublicAddressChargeDetail) *bool { return v.AutoRenew }).(pulumi.BoolPtrOutput)
 }
 
-// 实例的结束计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Instance billing end time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o PublicAddressChargeDetailOutput) ChargeEndTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PublicAddressChargeDetail) *string { return v.ChargeEndTime }).(pulumi.StringPtrOutput)
 }
 
-// 包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Expiration time for subscription instances. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o PublicAddressChargeDetailOutput) ChargeExpireTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PublicAddressChargeDetail) *string { return v.ChargeExpireTime }).(pulumi.StringPtrOutput)
 }
 
-// 实例的开始计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Instance billing start time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o PublicAddressChargeDetailOutput) ChargeStartTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PublicAddressChargeDetail) *string { return v.ChargeStartTime }).(pulumi.StringPtrOutput)
 }
 
-// 实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
+// Instance billing status. Includes: Normal: normal, Overdue: pay-as-you-go overdue, Expired: subscription expired.
 func (o PublicAddressChargeDetailOutput) ChargeStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PublicAddressChargeDetail) *string { return v.ChargeStatus }).(pulumi.StringPtrOutput)
 }
 
-// 实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
+// Instance billing type. Supported types: PostPaid: pay-as-you-go, PrePaid: subscription.
 func (o PublicAddressChargeDetailOutput) ChargeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PublicAddressChargeDetail) *string { return v.ChargeType }).(pulumi.StringPtrOutput)
 }
 
-// 实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Estimated release time after instance is stopped due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o PublicAddressChargeDetailOutput) OverdueReclaimTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PublicAddressChargeDetail) *string { return v.OverdueReclaimTime }).(pulumi.StringPtrOutput)
 }
 
-// 实例的欠费关停时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Instance overdue shutdown time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o PublicAddressChargeDetailOutput) OverdueTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PublicAddressChargeDetail) *string { return v.OverdueTime }).(pulumi.StringPtrOutput)
 }
@@ -750,7 +750,7 @@ func (o PublicAddressChargeDetailPtrOutput) Elem() PublicAddressChargeDetailOutp
 	}).(PublicAddressChargeDetailOutput)
 }
 
-// 包年包月实例到期后是否自动续费。
+// Whether subscription instances are automatically renewed after expiration.
 func (o PublicAddressChargeDetailPtrOutput) AutoRenew() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *PublicAddressChargeDetail) *bool {
 		if v == nil {
@@ -760,7 +760,7 @@ func (o PublicAddressChargeDetailPtrOutput) AutoRenew() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 实例的结束计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Instance billing end time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o PublicAddressChargeDetailPtrOutput) ChargeEndTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PublicAddressChargeDetail) *string {
 		if v == nil {
@@ -770,7 +770,7 @@ func (o PublicAddressChargeDetailPtrOutput) ChargeEndTime() pulumi.StringPtrOutp
 	}).(pulumi.StringPtrOutput)
 }
 
-// 包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Expiration time for subscription instances. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o PublicAddressChargeDetailPtrOutput) ChargeExpireTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PublicAddressChargeDetail) *string {
 		if v == nil {
@@ -780,7 +780,7 @@ func (o PublicAddressChargeDetailPtrOutput) ChargeExpireTime() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的开始计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Instance billing start time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o PublicAddressChargeDetailPtrOutput) ChargeStartTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PublicAddressChargeDetail) *string {
 		if v == nil {
@@ -790,7 +790,7 @@ func (o PublicAddressChargeDetailPtrOutput) ChargeStartTime() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
+// Instance billing status. Includes: Normal: normal, Overdue: pay-as-you-go overdue, Expired: subscription expired.
 func (o PublicAddressChargeDetailPtrOutput) ChargeStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PublicAddressChargeDetail) *string {
 		if v == nil {
@@ -800,7 +800,7 @@ func (o PublicAddressChargeDetailPtrOutput) ChargeStatus() pulumi.StringPtrOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
+// Instance billing type. Supported types: PostPaid: pay-as-you-go, PrePaid: subscription.
 func (o PublicAddressChargeDetailPtrOutput) ChargeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PublicAddressChargeDetail) *string {
 		if v == nil {
@@ -810,7 +810,7 @@ func (o PublicAddressChargeDetailPtrOutput) ChargeType() pulumi.StringPtrOutput 
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Estimated release time after instance is stopped due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o PublicAddressChargeDetailPtrOutput) OverdueReclaimTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PublicAddressChargeDetail) *string {
 		if v == nil {
@@ -820,7 +820,7 @@ func (o PublicAddressChargeDetailPtrOutput) OverdueReclaimTime() pulumi.StringPt
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的欠费关停时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Instance overdue shutdown time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o PublicAddressChargeDetailPtrOutput) OverdueTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PublicAddressChargeDetail) *string {
 		if v == nil {
@@ -831,15 +831,15 @@ func (o PublicAddressChargeDetailPtrOutput) OverdueTime() pulumi.StringPtrOutput
 }
 
 type PublicAddressEndpoint struct {
-	// 实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
+	// Access point type of the instance. RabbitMQ instance provides the following access point types: WEB: Web UI access point, AMQP0*9*1: AMQP access point, MQTT: MQTT access point, WEB_MQTT: WEB and MQTT access point, STOMP: STOMP access point.
 	EndpointType *string `pulumi:"endpointType"`
-	// 实例的私网访问域名。
+	// Instance private network access domain name.
 	InternalEndpoint *string `pulumi:"internalEndpoint"`
-	// 公共服务区 IP 接入点。
+	// Public service zone IP access point.
 	InternalIpEndpoint *string `pulumi:"internalIpEndpoint"`
-	// 接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
+	// Network type of the access point. PrivateNetwork indicates private VPC network.
 	NetworkType *string `pulumi:"networkType"`
-	// 实例公网访问域名。仅在开启公网访问之后显示。
+	// Instance public access domain name. Displayed only after public access is enabled.
 	PublicEndpoint *string `pulumi:"publicEndpoint"`
 }
 
@@ -855,15 +855,15 @@ type PublicAddressEndpointInput interface {
 }
 
 type PublicAddressEndpointArgs struct {
-	// 实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
+	// Access point type of the instance. RabbitMQ instance provides the following access point types: WEB: Web UI access point, AMQP0*9*1: AMQP access point, MQTT: MQTT access point, WEB_MQTT: WEB and MQTT access point, STOMP: STOMP access point.
 	EndpointType pulumi.StringPtrInput `pulumi:"endpointType"`
-	// 实例的私网访问域名。
+	// Instance private network access domain name.
 	InternalEndpoint pulumi.StringPtrInput `pulumi:"internalEndpoint"`
-	// 公共服务区 IP 接入点。
+	// Public service zone IP access point.
 	InternalIpEndpoint pulumi.StringPtrInput `pulumi:"internalIpEndpoint"`
-	// 接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
+	// Network type of the access point. PrivateNetwork indicates private VPC network.
 	NetworkType pulumi.StringPtrInput `pulumi:"networkType"`
-	// 实例公网访问域名。仅在开启公网访问之后显示。
+	// Instance public access domain name. Displayed only after public access is enabled.
 	PublicEndpoint pulumi.StringPtrInput `pulumi:"publicEndpoint"`
 }
 
@@ -918,27 +918,27 @@ func (o PublicAddressEndpointOutput) ToPublicAddressEndpointOutputWithContext(ct
 	return o
 }
 
-// 实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
+// Access point type of the instance. RabbitMQ instance provides the following access point types: WEB: Web UI access point, AMQP0*9*1: AMQP access point, MQTT: MQTT access point, WEB_MQTT: WEB and MQTT access point, STOMP: STOMP access point.
 func (o PublicAddressEndpointOutput) EndpointType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PublicAddressEndpoint) *string { return v.EndpointType }).(pulumi.StringPtrOutput)
 }
 
-// 实例的私网访问域名。
+// Instance private network access domain name.
 func (o PublicAddressEndpointOutput) InternalEndpoint() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PublicAddressEndpoint) *string { return v.InternalEndpoint }).(pulumi.StringPtrOutput)
 }
 
-// 公共服务区 IP 接入点。
+// Public service zone IP access point.
 func (o PublicAddressEndpointOutput) InternalIpEndpoint() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PublicAddressEndpoint) *string { return v.InternalIpEndpoint }).(pulumi.StringPtrOutput)
 }
 
-// 接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
+// Network type of the access point. PrivateNetwork indicates private VPC network.
 func (o PublicAddressEndpointOutput) NetworkType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PublicAddressEndpoint) *string { return v.NetworkType }).(pulumi.StringPtrOutput)
 }
 
-// 实例公网访问域名。仅在开启公网访问之后显示。
+// Instance public access domain name. Displayed only after public access is enabled.
 func (o PublicAddressEndpointOutput) PublicEndpoint() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PublicAddressEndpoint) *string { return v.PublicEndpoint }).(pulumi.StringPtrOutput)
 }
@@ -964,9 +964,9 @@ func (o PublicAddressEndpointArrayOutput) Index(i pulumi.IntInput) PublicAddress
 }
 
 type PublicAddressTag struct {
-	// 标签的键。
+	// Tag key.
 	Key *string `pulumi:"key"`
-	// 标签的值。
+	// Tag value.
 	Value *string `pulumi:"value"`
 }
 
@@ -982,9 +982,9 @@ type PublicAddressTagInput interface {
 }
 
 type PublicAddressTagArgs struct {
-	// 标签的键。
+	// Tag key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签的值。
+	// Tag value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -1039,12 +1039,12 @@ func (o PublicAddressTagOutput) ToPublicAddressTagOutputWithContext(ctx context.
 	return o
 }
 
-// 标签的键。
+// Tag key.
 func (o PublicAddressTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PublicAddressTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签的值。
+// Tag value.
 func (o PublicAddressTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PublicAddressTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -1070,25 +1070,25 @@ func (o PublicAddressTagArrayOutput) Index(i pulumi.IntInput) PublicAddressTagOu
 }
 
 type GetInstanceChargeDetail struct {
-	// 包年包月实例到期后是否自动续费。
+	// Whether to automatically renew the subscription instance after expiration.
 	AutoRenew bool `pulumi:"autoRenew"`
-	// 实例的结束计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Instance billing end time. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
 	ChargeEndTime string `pulumi:"chargeEndTime"`
-	// 包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Expiration time of the subscription instance. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
 	ChargeExpireTime string `pulumi:"chargeExpireTime"`
-	// 实例的开始计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Instance billing start time. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
 	ChargeStartTime string `pulumi:"chargeStartTime"`
-	// 实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
+	// Instance billing status. Includes: Normal: normal, Overdue: pay-as-you-go overdue, Expired: subscription expired.
 	ChargeStatus string `pulumi:"chargeStatus"`
-	// 实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
+	// Instance billing type. Supported types include: PostPaid: pay-as-you-go, PrePaid: subscription.
 	ChargeType string `pulumi:"chargeType"`
-	// 实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Estimated release time after the instance is suspended due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 	OverdueReclaimTime string `pulumi:"overdueReclaimTime"`
-	// 实例的欠费关停时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Instance suspension time due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 	OverdueTime string `pulumi:"overdueTime"`
-	// 包年包月类型实例的购买时长。PeriodUnit 指定为 Month 时，取值范围为 1~9。PeriodUnit 指定为 Year 时，取值范围为 1~3。
+	// Subscription instance purchase duration. When PeriodUnit is set to Month, the value range is 1–9. When PeriodUnit is set to Year, the value range is 1–3.
 	Period int `pulumi:"period"`
-	// 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+	// Unit for purchase duration. Values: MONTHLY: monthly purchase, YEARLY: annual purchase.
 	PeriodUnit string `pulumi:"periodUnit"`
 }
 
@@ -1104,25 +1104,25 @@ type GetInstanceChargeDetailInput interface {
 }
 
 type GetInstanceChargeDetailArgs struct {
-	// 包年包月实例到期后是否自动续费。
+	// Whether to automatically renew the subscription instance after expiration.
 	AutoRenew pulumi.BoolInput `pulumi:"autoRenew"`
-	// 实例的结束计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Instance billing end time. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
 	ChargeEndTime pulumi.StringInput `pulumi:"chargeEndTime"`
-	// 包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Expiration time of the subscription instance. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
 	ChargeExpireTime pulumi.StringInput `pulumi:"chargeExpireTime"`
-	// 实例的开始计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Instance billing start time. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
 	ChargeStartTime pulumi.StringInput `pulumi:"chargeStartTime"`
-	// 实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
+	// Instance billing status. Includes: Normal: normal, Overdue: pay-as-you-go overdue, Expired: subscription expired.
 	ChargeStatus pulumi.StringInput `pulumi:"chargeStatus"`
-	// 实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
+	// Instance billing type. Supported types include: PostPaid: pay-as-you-go, PrePaid: subscription.
 	ChargeType pulumi.StringInput `pulumi:"chargeType"`
-	// 实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Estimated release time after the instance is suspended due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 	OverdueReclaimTime pulumi.StringInput `pulumi:"overdueReclaimTime"`
-	// 实例的欠费关停时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Instance suspension time due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 	OverdueTime pulumi.StringInput `pulumi:"overdueTime"`
-	// 包年包月类型实例的购买时长。PeriodUnit 指定为 Month 时，取值范围为 1~9。PeriodUnit 指定为 Year 时，取值范围为 1~3。
+	// Subscription instance purchase duration. When PeriodUnit is set to Month, the value range is 1–9. When PeriodUnit is set to Year, the value range is 1–3.
 	Period pulumi.IntInput `pulumi:"period"`
-	// 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+	// Unit for purchase duration. Values: MONTHLY: monthly purchase, YEARLY: annual purchase.
 	PeriodUnit pulumi.StringInput `pulumi:"periodUnit"`
 }
 
@@ -1152,66 +1152,66 @@ func (o GetInstanceChargeDetailOutput) ToGetInstanceChargeDetailOutputWithContex
 	return o
 }
 
-// 包年包月实例到期后是否自动续费。
+// Whether to automatically renew the subscription instance after expiration.
 func (o GetInstanceChargeDetailOutput) AutoRenew() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceChargeDetail) bool { return v.AutoRenew }).(pulumi.BoolOutput)
 }
 
-// 实例的结束计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Instance billing end time. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o GetInstanceChargeDetailOutput) ChargeEndTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.ChargeEndTime }).(pulumi.StringOutput)
 }
 
-// 包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Expiration time of the subscription instance. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o GetInstanceChargeDetailOutput) ChargeExpireTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.ChargeExpireTime }).(pulumi.StringOutput)
 }
 
-// 实例的开始计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Instance billing start time. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o GetInstanceChargeDetailOutput) ChargeStartTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.ChargeStartTime }).(pulumi.StringOutput)
 }
 
-// 实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
+// Instance billing status. Includes: Normal: normal, Overdue: pay-as-you-go overdue, Expired: subscription expired.
 func (o GetInstanceChargeDetailOutput) ChargeStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.ChargeStatus }).(pulumi.StringOutput)
 }
 
-// 实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
+// Instance billing type. Supported types include: PostPaid: pay-as-you-go, PrePaid: subscription.
 func (o GetInstanceChargeDetailOutput) ChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.ChargeType }).(pulumi.StringOutput)
 }
 
-// 实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Estimated release time after the instance is suspended due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o GetInstanceChargeDetailOutput) OverdueReclaimTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.OverdueReclaimTime }).(pulumi.StringOutput)
 }
 
-// 实例的欠费关停时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Instance suspension time due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o GetInstanceChargeDetailOutput) OverdueTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.OverdueTime }).(pulumi.StringOutput)
 }
 
-// 包年包月类型实例的购买时长。PeriodUnit 指定为 Month 时，取值范围为 1~9。PeriodUnit 指定为 Year 时，取值范围为 1~3。
+// Subscription instance purchase duration. When PeriodUnit is set to Month, the value range is 1–9. When PeriodUnit is set to Year, the value range is 1–3.
 func (o GetInstanceChargeDetailOutput) Period() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceChargeDetail) int { return v.Period }).(pulumi.IntOutput)
 }
 
-// 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+// Unit for purchase duration. Values: MONTHLY: monthly purchase, YEARLY: annual purchase.
 func (o GetInstanceChargeDetailOutput) PeriodUnit() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.PeriodUnit }).(pulumi.StringOutput)
 }
 
 type GetInstanceEndpoint struct {
-	// 实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
+	// Type of instance endpoint. RabbitMQ instances provide the following endpoint types: WEB: Web UI endpoint, AMQP0*9*1: AMQP endpoint, MQTT: MQTT endpoint, WEB_MQTT: WEB and MQTT endpoints, STOMP: STOMP endpoint.
 	EndpointType string `pulumi:"endpointType"`
-	// 实例的私网访问域名。
+	// Private network access domain name of the instance.
 	InternalEndpoint string `pulumi:"internalEndpoint"`
-	// 公共服务区 IP 接入点。
+	// Public service zone IP endpoint.
 	InternalIpEndpoint string `pulumi:"internalIpEndpoint"`
-	// 接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
+	// Network type of the endpoint. PrivateNetwork indicates a private network (VPC).
 	NetworkType string `pulumi:"networkType"`
-	// 实例公网访问域名。仅在开启公网访问之后显示。
+	// Instance public access domain name. Displayed only after public access is enabled.
 	PublicEndpoint string `pulumi:"publicEndpoint"`
 }
 
@@ -1227,15 +1227,15 @@ type GetInstanceEndpointInput interface {
 }
 
 type GetInstanceEndpointArgs struct {
-	// 实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
+	// Type of instance endpoint. RabbitMQ instances provide the following endpoint types: WEB: Web UI endpoint, AMQP0*9*1: AMQP endpoint, MQTT: MQTT endpoint, WEB_MQTT: WEB and MQTT endpoints, STOMP: STOMP endpoint.
 	EndpointType pulumi.StringInput `pulumi:"endpointType"`
-	// 实例的私网访问域名。
+	// Private network access domain name of the instance.
 	InternalEndpoint pulumi.StringInput `pulumi:"internalEndpoint"`
-	// 公共服务区 IP 接入点。
+	// Public service zone IP endpoint.
 	InternalIpEndpoint pulumi.StringInput `pulumi:"internalIpEndpoint"`
-	// 接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
+	// Network type of the endpoint. PrivateNetwork indicates a private network (VPC).
 	NetworkType pulumi.StringInput `pulumi:"networkType"`
-	// 实例公网访问域名。仅在开启公网访问之后显示。
+	// Instance public access domain name. Displayed only after public access is enabled.
 	PublicEndpoint pulumi.StringInput `pulumi:"publicEndpoint"`
 }
 
@@ -1290,27 +1290,27 @@ func (o GetInstanceEndpointOutput) ToGetInstanceEndpointOutputWithContext(ctx co
 	return o
 }
 
-// 实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
+// Type of instance endpoint. RabbitMQ instances provide the following endpoint types: WEB: Web UI endpoint, AMQP0*9*1: AMQP endpoint, MQTT: MQTT endpoint, WEB_MQTT: WEB and MQTT endpoints, STOMP: STOMP endpoint.
 func (o GetInstanceEndpointOutput) EndpointType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.EndpointType }).(pulumi.StringOutput)
 }
 
-// 实例的私网访问域名。
+// Private network access domain name of the instance.
 func (o GetInstanceEndpointOutput) InternalEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.InternalEndpoint }).(pulumi.StringOutput)
 }
 
-// 公共服务区 IP 接入点。
+// Public service zone IP endpoint.
 func (o GetInstanceEndpointOutput) InternalIpEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.InternalIpEndpoint }).(pulumi.StringOutput)
 }
 
-// 接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
+// Network type of the endpoint. PrivateNetwork indicates a private network (VPC).
 func (o GetInstanceEndpointOutput) NetworkType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.NetworkType }).(pulumi.StringOutput)
 }
 
-// 实例公网访问域名。仅在开启公网访问之后显示。
+// Instance public access domain name. Displayed only after public access is enabled.
 func (o GetInstanceEndpointOutput) PublicEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.PublicEndpoint }).(pulumi.StringOutput)
 }
@@ -1336,9 +1336,9 @@ func (o GetInstanceEndpointArrayOutput) Index(i pulumi.IntInput) GetInstanceEndp
 }
 
 type GetInstanceTag struct {
-	// 标签的键。
+	// Tag key.
 	Key string `pulumi:"key"`
-	// 标签的值。
+	// Tag value.
 	Value string `pulumi:"value"`
 }
 
@@ -1354,9 +1354,9 @@ type GetInstanceTagInput interface {
 }
 
 type GetInstanceTagArgs struct {
-	// 标签的键。
+	// Tag key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签的值。
+	// Tag value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -1411,12 +1411,12 @@ func (o GetInstanceTagOutput) ToGetInstanceTagOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 标签的键。
+// Tag key.
 func (o GetInstanceTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签的值。
+// Tag value.
 func (o GetInstanceTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -1442,21 +1442,21 @@ func (o GetInstanceTagArrayOutput) Index(i pulumi.IntInput) GetInstanceTagOutput
 }
 
 type GetPublicAddressChargeDetail struct {
-	// 包年包月实例到期后是否自动续费。
+	// Whether subscription instances are automatically renewed after expiration.
 	AutoRenew bool `pulumi:"autoRenew"`
-	// 实例的结束计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Instance billing end time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 	ChargeEndTime string `pulumi:"chargeEndTime"`
-	// 包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Expiration time for subscription instances. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 	ChargeExpireTime string `pulumi:"chargeExpireTime"`
-	// 实例的开始计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Instance billing start time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 	ChargeStartTime string `pulumi:"chargeStartTime"`
-	// 实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
+	// Instance billing status. Includes: Normal: normal, Overdue: pay-as-you-go overdue, Expired: subscription expired.
 	ChargeStatus string `pulumi:"chargeStatus"`
-	// 实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
+	// Instance billing type. Supported types: PostPaid: pay-as-you-go, PrePaid: subscription.
 	ChargeType string `pulumi:"chargeType"`
-	// 实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Estimated release time after instance is stopped due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 	OverdueReclaimTime string `pulumi:"overdueReclaimTime"`
-	// 实例的欠费关停时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Instance overdue shutdown time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 	OverdueTime string `pulumi:"overdueTime"`
 }
 
@@ -1472,21 +1472,21 @@ type GetPublicAddressChargeDetailInput interface {
 }
 
 type GetPublicAddressChargeDetailArgs struct {
-	// 包年包月实例到期后是否自动续费。
+	// Whether subscription instances are automatically renewed after expiration.
 	AutoRenew pulumi.BoolInput `pulumi:"autoRenew"`
-	// 实例的结束计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Instance billing end time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 	ChargeEndTime pulumi.StringInput `pulumi:"chargeEndTime"`
-	// 包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Expiration time for subscription instances. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 	ChargeExpireTime pulumi.StringInput `pulumi:"chargeExpireTime"`
-	// 实例的开始计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Instance billing start time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 	ChargeStartTime pulumi.StringInput `pulumi:"chargeStartTime"`
-	// 实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
+	// Instance billing status. Includes: Normal: normal, Overdue: pay-as-you-go overdue, Expired: subscription expired.
 	ChargeStatus pulumi.StringInput `pulumi:"chargeStatus"`
-	// 实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
+	// Instance billing type. Supported types: PostPaid: pay-as-you-go, PrePaid: subscription.
 	ChargeType pulumi.StringInput `pulumi:"chargeType"`
-	// 实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Estimated release time after instance is stopped due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 	OverdueReclaimTime pulumi.StringInput `pulumi:"overdueReclaimTime"`
-	// 实例的欠费关停时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+	// Instance overdue shutdown time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 	OverdueTime pulumi.StringInput `pulumi:"overdueTime"`
 }
 
@@ -1516,56 +1516,56 @@ func (o GetPublicAddressChargeDetailOutput) ToGetPublicAddressChargeDetailOutput
 	return o
 }
 
-// 包年包月实例到期后是否自动续费。
+// Whether subscription instances are automatically renewed after expiration.
 func (o GetPublicAddressChargeDetailOutput) AutoRenew() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetPublicAddressChargeDetail) bool { return v.AutoRenew }).(pulumi.BoolOutput)
 }
 
-// 实例的结束计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Instance billing end time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o GetPublicAddressChargeDetailOutput) ChargeEndTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPublicAddressChargeDetail) string { return v.ChargeEndTime }).(pulumi.StringOutput)
 }
 
-// 包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Expiration time for subscription instances. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o GetPublicAddressChargeDetailOutput) ChargeExpireTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPublicAddressChargeDetail) string { return v.ChargeExpireTime }).(pulumi.StringOutput)
 }
 
-// 实例的开始计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Instance billing start time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o GetPublicAddressChargeDetailOutput) ChargeStartTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPublicAddressChargeDetail) string { return v.ChargeStartTime }).(pulumi.StringOutput)
 }
 
-// 实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
+// Instance billing status. Includes: Normal: normal, Overdue: pay-as-you-go overdue, Expired: subscription expired.
 func (o GetPublicAddressChargeDetailOutput) ChargeStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPublicAddressChargeDetail) string { return v.ChargeStatus }).(pulumi.StringOutput)
 }
 
-// 实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
+// Instance billing type. Supported types: PostPaid: pay-as-you-go, PrePaid: subscription.
 func (o GetPublicAddressChargeDetailOutput) ChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPublicAddressChargeDetail) string { return v.ChargeType }).(pulumi.StringOutput)
 }
 
-// 实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Estimated release time after instance is stopped due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o GetPublicAddressChargeDetailOutput) OverdueReclaimTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPublicAddressChargeDetail) string { return v.OverdueReclaimTime }).(pulumi.StringOutput)
 }
 
-// 实例的欠费关停时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+// Instance overdue shutdown time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
 func (o GetPublicAddressChargeDetailOutput) OverdueTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPublicAddressChargeDetail) string { return v.OverdueTime }).(pulumi.StringOutput)
 }
 
 type GetPublicAddressEndpoint struct {
-	// 实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
+	// Access point type of the instance. RabbitMQ instance provides the following access point types: WEB: Web UI access point, AMQP0*9*1: AMQP access point, MQTT: MQTT access point, WEB_MQTT: WEB and MQTT access point, STOMP: STOMP access point.
 	EndpointType string `pulumi:"endpointType"`
-	// 实例的私网访问域名。
+	// Instance private network access domain name.
 	InternalEndpoint string `pulumi:"internalEndpoint"`
-	// 公共服务区 IP 接入点。
+	// Public service zone IP access point.
 	InternalIpEndpoint string `pulumi:"internalIpEndpoint"`
-	// 接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
+	// Network type of the access point. PrivateNetwork indicates private VPC network.
 	NetworkType string `pulumi:"networkType"`
-	// 实例公网访问域名。仅在开启公网访问之后显示。
+	// Instance public access domain name. Displayed only after public access is enabled.
 	PublicEndpoint string `pulumi:"publicEndpoint"`
 }
 
@@ -1581,15 +1581,15 @@ type GetPublicAddressEndpointInput interface {
 }
 
 type GetPublicAddressEndpointArgs struct {
-	// 实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
+	// Access point type of the instance. RabbitMQ instance provides the following access point types: WEB: Web UI access point, AMQP0*9*1: AMQP access point, MQTT: MQTT access point, WEB_MQTT: WEB and MQTT access point, STOMP: STOMP access point.
 	EndpointType pulumi.StringInput `pulumi:"endpointType"`
-	// 实例的私网访问域名。
+	// Instance private network access domain name.
 	InternalEndpoint pulumi.StringInput `pulumi:"internalEndpoint"`
-	// 公共服务区 IP 接入点。
+	// Public service zone IP access point.
 	InternalIpEndpoint pulumi.StringInput `pulumi:"internalIpEndpoint"`
-	// 接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
+	// Network type of the access point. PrivateNetwork indicates private VPC network.
 	NetworkType pulumi.StringInput `pulumi:"networkType"`
-	// 实例公网访问域名。仅在开启公网访问之后显示。
+	// Instance public access domain name. Displayed only after public access is enabled.
 	PublicEndpoint pulumi.StringInput `pulumi:"publicEndpoint"`
 }
 
@@ -1644,27 +1644,27 @@ func (o GetPublicAddressEndpointOutput) ToGetPublicAddressEndpointOutputWithCont
 	return o
 }
 
-// 实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
+// Access point type of the instance. RabbitMQ instance provides the following access point types: WEB: Web UI access point, AMQP0*9*1: AMQP access point, MQTT: MQTT access point, WEB_MQTT: WEB and MQTT access point, STOMP: STOMP access point.
 func (o GetPublicAddressEndpointOutput) EndpointType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPublicAddressEndpoint) string { return v.EndpointType }).(pulumi.StringOutput)
 }
 
-// 实例的私网访问域名。
+// Instance private network access domain name.
 func (o GetPublicAddressEndpointOutput) InternalEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPublicAddressEndpoint) string { return v.InternalEndpoint }).(pulumi.StringOutput)
 }
 
-// 公共服务区 IP 接入点。
+// Public service zone IP access point.
 func (o GetPublicAddressEndpointOutput) InternalIpEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPublicAddressEndpoint) string { return v.InternalIpEndpoint }).(pulumi.StringOutput)
 }
 
-// 接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
+// Network type of the access point. PrivateNetwork indicates private VPC network.
 func (o GetPublicAddressEndpointOutput) NetworkType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPublicAddressEndpoint) string { return v.NetworkType }).(pulumi.StringOutput)
 }
 
-// 实例公网访问域名。仅在开启公网访问之后显示。
+// Instance public access domain name. Displayed only after public access is enabled.
 func (o GetPublicAddressEndpointOutput) PublicEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPublicAddressEndpoint) string { return v.PublicEndpoint }).(pulumi.StringOutput)
 }
@@ -1690,9 +1690,9 @@ func (o GetPublicAddressEndpointArrayOutput) Index(i pulumi.IntInput) GetPublicA
 }
 
 type GetPublicAddressTag struct {
-	// 标签的键。
+	// Tag key.
 	Key string `pulumi:"key"`
-	// 标签的值。
+	// Tag value.
 	Value string `pulumi:"value"`
 }
 
@@ -1708,9 +1708,9 @@ type GetPublicAddressTagInput interface {
 }
 
 type GetPublicAddressTagArgs struct {
-	// 标签的键。
+	// Tag key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签的值。
+	// Tag value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -1765,12 +1765,12 @@ func (o GetPublicAddressTagOutput) ToGetPublicAddressTagOutputWithContext(ctx co
 	return o
 }
 
-// 标签的键。
+// Tag key.
 func (o GetPublicAddressTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPublicAddressTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签的值。
+// Tag value.
 func (o GetPublicAddressTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPublicAddressTag) string { return v.Value }).(pulumi.StringOutput)
 }

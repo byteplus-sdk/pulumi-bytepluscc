@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 网络ACL用于控制子网的出入流量，其基于白名单原理设计，出入子网的流量必须被网络ACL规则允许才能放通。
+// The network ACL controls inbound and outbound traffic for subnets. It is designed based on the allowlist principle: traffic entering or leaving a subnet must be permitted by a network ACL rule to pass through.
 //
 // ## Import
 //
@@ -22,27 +22,27 @@ import (
 type NetworkAcl struct {
 	pulumi.CustomResourceState
 
-	// 网络ACL的创建时间。
+	// Creation time of the network ACL.
 	CreatedTime              pulumi.StringOutput                         `pulumi:"createdTime"`
 	DefaultEgressAclEntries  NetworkAclDefaultEgressAclEntryArrayOutput  `pulumi:"defaultEgressAclEntries"`
 	DefaultIngressAclEntries NetworkAclDefaultIngressAclEntryArrayOutput `pulumi:"defaultIngressAclEntries"`
-	// 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+	// Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
 	Description       pulumi.StringOutput                  `pulumi:"description"`
 	EgressAclEntries  NetworkAclEgressAclEntryArrayOutput  `pulumi:"egressAclEntries"`
 	IngressAclEntries NetworkAclIngressAclEntryArrayOutput `pulumi:"ingressAclEntries"`
-	// 网络ACL的ID。
+	// Network ACL ID.
 	NetworkAclId pulumi.StringOutput `pulumi:"networkAclId"`
-	// 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+	// Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
 	NetworkAclName pulumi.StringOutput `pulumi:"networkAclName"`
-	// 网络ACL所属项目的名称。不填默认加入default项目。
+	// Name of the project associated with the network ACL. If not specified, added to the default project.
 	ProjectName pulumi.StringOutput           `pulumi:"projectName"`
 	Resources   NetworkAclResourceArrayOutput `pulumi:"resources"`
-	// 网络ACL的状态。Available：可用，Creating：创建中
+	// Status of the network ACL. Available: Available. Creating: Creating.
 	Status pulumi.StringOutput      `pulumi:"status"`
 	Tags   NetworkAclTagArrayOutput `pulumi:"tags"`
-	// 网络ACL的更新时间。
+	// Last updated time of the network ACL.
 	UpdatedTime pulumi.StringOutput `pulumi:"updatedTime"`
-	// 网络ACL所属VPC的ID。
+	// ID of the VPC associated with the network ACL.
 	VpcId pulumi.StringOutput `pulumi:"vpcId"`
 }
 
@@ -79,52 +79,52 @@ func GetNetworkAcl(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NetworkAcl resources.
 type networkAclState struct {
-	// 网络ACL的创建时间。
+	// Creation time of the network ACL.
 	CreatedTime              *string                            `pulumi:"createdTime"`
 	DefaultEgressAclEntries  []NetworkAclDefaultEgressAclEntry  `pulumi:"defaultEgressAclEntries"`
 	DefaultIngressAclEntries []NetworkAclDefaultIngressAclEntry `pulumi:"defaultIngressAclEntries"`
-	// 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+	// Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
 	Description       *string                     `pulumi:"description"`
 	EgressAclEntries  []NetworkAclEgressAclEntry  `pulumi:"egressAclEntries"`
 	IngressAclEntries []NetworkAclIngressAclEntry `pulumi:"ingressAclEntries"`
-	// 网络ACL的ID。
+	// Network ACL ID.
 	NetworkAclId *string `pulumi:"networkAclId"`
-	// 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+	// Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
 	NetworkAclName *string `pulumi:"networkAclName"`
-	// 网络ACL所属项目的名称。不填默认加入default项目。
+	// Name of the project associated with the network ACL. If not specified, added to the default project.
 	ProjectName *string              `pulumi:"projectName"`
 	Resources   []NetworkAclResource `pulumi:"resources"`
-	// 网络ACL的状态。Available：可用，Creating：创建中
+	// Status of the network ACL. Available: Available. Creating: Creating.
 	Status *string         `pulumi:"status"`
 	Tags   []NetworkAclTag `pulumi:"tags"`
-	// 网络ACL的更新时间。
+	// Last updated time of the network ACL.
 	UpdatedTime *string `pulumi:"updatedTime"`
-	// 网络ACL所属VPC的ID。
+	// ID of the VPC associated with the network ACL.
 	VpcId *string `pulumi:"vpcId"`
 }
 
 type NetworkAclState struct {
-	// 网络ACL的创建时间。
+	// Creation time of the network ACL.
 	CreatedTime              pulumi.StringPtrInput
 	DefaultEgressAclEntries  NetworkAclDefaultEgressAclEntryArrayInput
 	DefaultIngressAclEntries NetworkAclDefaultIngressAclEntryArrayInput
-	// 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+	// Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
 	Description       pulumi.StringPtrInput
 	EgressAclEntries  NetworkAclEgressAclEntryArrayInput
 	IngressAclEntries NetworkAclIngressAclEntryArrayInput
-	// 网络ACL的ID。
+	// Network ACL ID.
 	NetworkAclId pulumi.StringPtrInput
-	// 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+	// Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
 	NetworkAclName pulumi.StringPtrInput
-	// 网络ACL所属项目的名称。不填默认加入default项目。
+	// Name of the project associated with the network ACL. If not specified, added to the default project.
 	ProjectName pulumi.StringPtrInput
 	Resources   NetworkAclResourceArrayInput
-	// 网络ACL的状态。Available：可用，Creating：创建中
+	// Status of the network ACL. Available: Available. Creating: Creating.
 	Status pulumi.StringPtrInput
 	Tags   NetworkAclTagArrayInput
-	// 网络ACL的更新时间。
+	// Last updated time of the network ACL.
 	UpdatedTime pulumi.StringPtrInput
-	// 网络ACL所属VPC的ID。
+	// ID of the VPC associated with the network ACL.
 	VpcId pulumi.StringPtrInput
 }
 
@@ -133,33 +133,33 @@ func (NetworkAclState) ElementType() reflect.Type {
 }
 
 type networkAclArgs struct {
-	// 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+	// Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
 	Description       *string                     `pulumi:"description"`
 	EgressAclEntries  []NetworkAclEgressAclEntry  `pulumi:"egressAclEntries"`
 	IngressAclEntries []NetworkAclIngressAclEntry `pulumi:"ingressAclEntries"`
-	// 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+	// Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
 	NetworkAclName *string `pulumi:"networkAclName"`
-	// 网络ACL所属项目的名称。不填默认加入default项目。
+	// Name of the project associated with the network ACL. If not specified, added to the default project.
 	ProjectName *string              `pulumi:"projectName"`
 	Resources   []NetworkAclResource `pulumi:"resources"`
 	Tags        []NetworkAclTag      `pulumi:"tags"`
-	// 网络ACL所属VPC的ID。
+	// ID of the VPC associated with the network ACL.
 	VpcId string `pulumi:"vpcId"`
 }
 
 // The set of arguments for constructing a NetworkAcl resource.
 type NetworkAclArgs struct {
-	// 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+	// Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
 	Description       pulumi.StringPtrInput
 	EgressAclEntries  NetworkAclEgressAclEntryArrayInput
 	IngressAclEntries NetworkAclIngressAclEntryArrayInput
-	// 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+	// Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
 	NetworkAclName pulumi.StringPtrInput
-	// 网络ACL所属项目的名称。不填默认加入default项目。
+	// Name of the project associated with the network ACL. If not specified, added to the default project.
 	ProjectName pulumi.StringPtrInput
 	Resources   NetworkAclResourceArrayInput
 	Tags        NetworkAclTagArrayInput
-	// 网络ACL所属VPC的ID。
+	// ID of the VPC associated with the network ACL.
 	VpcId pulumi.StringInput
 }
 
@@ -250,7 +250,7 @@ func (o NetworkAclOutput) ToNetworkAclOutputWithContext(ctx context.Context) Net
 	return o
 }
 
-// 网络ACL的创建时间。
+// Creation time of the network ACL.
 func (o NetworkAclOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkAcl) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
@@ -263,7 +263,7 @@ func (o NetworkAclOutput) DefaultIngressAclEntries() NetworkAclDefaultIngressAcl
 	return o.ApplyT(func(v *NetworkAcl) NetworkAclDefaultIngressAclEntryArrayOutput { return v.DefaultIngressAclEntries }).(NetworkAclDefaultIngressAclEntryArrayOutput)
 }
 
-// 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+// Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
 func (o NetworkAclOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkAcl) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
@@ -276,17 +276,17 @@ func (o NetworkAclOutput) IngressAclEntries() NetworkAclIngressAclEntryArrayOutp
 	return o.ApplyT(func(v *NetworkAcl) NetworkAclIngressAclEntryArrayOutput { return v.IngressAclEntries }).(NetworkAclIngressAclEntryArrayOutput)
 }
 
-// 网络ACL的ID。
+// Network ACL ID.
 func (o NetworkAclOutput) NetworkAclId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkAcl) pulumi.StringOutput { return v.NetworkAclId }).(pulumi.StringOutput)
 }
 
-// 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+// Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
 func (o NetworkAclOutput) NetworkAclName() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkAcl) pulumi.StringOutput { return v.NetworkAclName }).(pulumi.StringOutput)
 }
 
-// 网络ACL所属项目的名称。不填默认加入default项目。
+// Name of the project associated with the network ACL. If not specified, added to the default project.
 func (o NetworkAclOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkAcl) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
@@ -295,7 +295,7 @@ func (o NetworkAclOutput) Resources() NetworkAclResourceArrayOutput {
 	return o.ApplyT(func(v *NetworkAcl) NetworkAclResourceArrayOutput { return v.Resources }).(NetworkAclResourceArrayOutput)
 }
 
-// 网络ACL的状态。Available：可用，Creating：创建中
+// Status of the network ACL. Available: Available. Creating: Creating.
 func (o NetworkAclOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkAcl) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
@@ -304,12 +304,12 @@ func (o NetworkAclOutput) Tags() NetworkAclTagArrayOutput {
 	return o.ApplyT(func(v *NetworkAcl) NetworkAclTagArrayOutput { return v.Tags }).(NetworkAclTagArrayOutput)
 }
 
-// 网络ACL的更新时间。
+// Last updated time of the network ACL.
 func (o NetworkAclOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkAcl) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// 网络ACL所属VPC的ID。
+// ID of the VPC associated with the network ACL.
 func (o NetworkAclOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkAcl) pulumi.StringOutput { return v.VpcId }).(pulumi.StringOutput)
 }

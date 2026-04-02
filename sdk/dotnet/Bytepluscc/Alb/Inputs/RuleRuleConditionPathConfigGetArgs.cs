@@ -17,7 +17,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Inputs
         private InputList<string>? _values;
 
         /// <summary>
-        /// 转发规则的URL，仅支持绝对路径。
+        /// Forwarding rule URL. Only absolute paths are supported.
         /// </summary>
         public InputList<string> Values
         {

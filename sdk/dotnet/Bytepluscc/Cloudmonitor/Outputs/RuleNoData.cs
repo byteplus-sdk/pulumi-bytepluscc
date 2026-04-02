@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Outputs
     public sealed class RuleNoData
     {
         /// <summary>
-        /// 是否开启无数据告警。取值：true：开启无数据告警。false：（默认）关闭无数据告警。
+        /// Enable no data alert. Values: true: enable no data alert. false (default): disable no data alert.
         /// </summary>
         public readonly bool? Enable;
         /// <summary>
-        /// 无数据告警触发阈值，如果在配置的阈值周期内检测无数据上报，则会触发无数据告警。当Enable配置为true时，该字段为必填。整数形式，取值范围为 3～20。
+        /// No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
         /// </summary>
         public readonly int? EvaluationCount;
 

@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms.Outputs
     public sealed class GetKeyMultiRegionConfigurationResult
     {
         /// <summary>
-        /// 多区域密钥的类型。
+        /// Multi-region key type.
         /// </summary>
         public readonly string MultiRegionKeyType;
         /// <summary>
-        /// 主多区域键的事务识别号和区域 ID。
+        /// Primary multi-region key transaction identifier and region ID.
         /// </summary>
         public readonly Outputs.GetKeyMultiRegionConfigurationPrimaryKeyResult PrimaryKey;
         /// <summary>
-        /// 副本多区域密钥的事务记录编号和区域 ID。
+        /// Replica multi-region key transaction record number and region ID.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetKeyMultiRegionConfigurationReplicaKeyResult> ReplicaKeys;
 

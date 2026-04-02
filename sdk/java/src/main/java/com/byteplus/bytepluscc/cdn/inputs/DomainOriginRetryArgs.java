@@ -17,14 +17,14 @@ public final class DomainOriginRetryArgs extends com.pulumi.resources.ResourceAr
     public static final DomainOriginRetryArgs Empty = new DomainOriginRetryArgs();
 
     /**
-     * 表示范围在 400-599 之间的一个或者多个状态码。多个状态码之间使用分号（;）分隔。您可以输入 4xx 或者 5xx，表示所有以数字 4 或 数字 5 开头的状态码。
+     * Indicates one or more status codes in the range 400–599. Separate multiple status codes with a semicolon (;). You can enter 4xx or 5xx to represent all status codes starting with the digit 4 or 5.
      * 
      */
     @Import(name="statusCode")
     private @Nullable Output<String> statusCode;
 
     /**
-     * @return 表示范围在 400-599 之间的一个或者多个状态码。多个状态码之间使用分号（;）分隔。您可以输入 4xx 或者 5xx，表示所有以数字 4 或 数字 5 开头的状态码。
+     * @return Indicates one or more status codes in the range 400–599. Separate multiple status codes with a semicolon (;). You can enter 4xx or 5xx to represent all status codes starting with the digit 4 or 5.
      * 
      */
     public Optional<Output<String>> statusCode() {
@@ -32,14 +32,14 @@ public final class DomainOriginRetryArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * Indicates whether this feature is enabled. The parameter values are: true: Enabled. false: Disabled. The default value is false.
      * 
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Indicates whether this feature is enabled. The parameter values are: true: Enabled. false: Disabled. The default value is false.
      * 
      */
     public Optional<Output<Boolean>> switch_() {
@@ -72,7 +72,7 @@ public final class DomainOriginRetryArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param statusCode 表示范围在 400-599 之间的一个或者多个状态码。多个状态码之间使用分号（;）分隔。您可以输入 4xx 或者 5xx，表示所有以数字 4 或 数字 5 开头的状态码。
+         * @param statusCode Indicates one or more status codes in the range 400–599. Separate multiple status codes with a semicolon (;). You can enter 4xx or 5xx to represent all status codes starting with the digit 4 or 5.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class DomainOriginRetryArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param statusCode 表示范围在 400-599 之间的一个或者多个状态码。多个状态码之间使用分号（;）分隔。您可以输入 4xx 或者 5xx，表示所有以数字 4 或 数字 5 开头的状态码。
+         * @param statusCode Indicates one or more status codes in the range 400–599. Separate multiple status codes with a semicolon (;). You can enter 4xx or 5xx to represent all status codes starting with the digit 4 or 5.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class DomainOriginRetryArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param switch_ 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+         * @param switch_ Indicates whether this feature is enabled. The parameter values are: true: Enabled. false: Disabled. The default value is false.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class DomainOriginRetryArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param switch_ 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+         * @param switch_ Indicates whether this feature is enabled. The parameter values are: true: Enabled. false: Disabled. The default value is false.
          * 
          * @return builder
          * 

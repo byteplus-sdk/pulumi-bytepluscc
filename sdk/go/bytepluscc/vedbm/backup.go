@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 云数据库 veDB备份管理
+// Cloud Database veDB Backup Management
 //
 // ## Example Usage
 //
@@ -53,33 +53,33 @@ import (
 type Backup struct {
 	pulumi.CustomResourceState
 
-	// 备份的结束时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+	// Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
 	BackupEndTime pulumi.StringOutput `pulumi:"backupEndTime"`
-	// 备份文件大小，单位为 KiB。
+	// Backup file size, unit: KiB
 	BackupFileSize pulumi.IntOutput `pulumi:"backupFileSize"`
-	// 备份 ID。
+	// Backup ID
 	BackupId pulumi.StringOutput `pulumi:"backupId"`
-	// 备份方式，目前仅支持物理备份。
+	// Backup method, currently only physical backup is supported
 	BackupMethod pulumi.StringOutput `pulumi:"backupMethod"`
-	// 数据备份保留天数。
+	// Data backup retention days
 	BackupRetentionPeriod pulumi.IntOutput `pulumi:"backupRetentionPeriod"`
-	// 备份的开始时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+	// Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
 	BackupStartTime pulumi.StringOutput `pulumi:"backupStartTime"`
-	// 备份状态。
+	// Backup status
 	BackupStatus pulumi.StringOutput `pulumi:"backupStatus"`
-	// 执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+	// Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
 	BackupTime pulumi.StringOutput `pulumi:"backupTime"`
-	// 备份类型，目前仅支持全量备份。
+	// Backup type, currently only full backup is supported
 	BackupType pulumi.StringOutput `pulumi:"backupType"`
-	// 一致性备份的时间点，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+	// Consistency backup timestamp, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
 	ConsistentTime pulumi.StringOutput `pulumi:"consistentTime"`
-	// 是否开启持续备份，取值固定为 true。
+	// Enable continuous backup, value is always true
 	ContinueBackup pulumi.BoolOutput `pulumi:"continueBackup"`
-	// 创建类型。
+	// Creation type
 	CreateType pulumi.StringOutput `pulumi:"createType"`
-	// 全量备份周期，多个取值用英文逗号（,）隔开。
+	// Full backup cycle, use commas (,) to separate multiple values
 	FullBackupPeriod pulumi.StringOutput `pulumi:"fullBackupPeriod"`
-	// 实例ID。
+	// Instance ID
 	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
 }
 
@@ -116,64 +116,64 @@ func GetBackup(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Backup resources.
 type backupState struct {
-	// 备份的结束时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+	// Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
 	BackupEndTime *string `pulumi:"backupEndTime"`
-	// 备份文件大小，单位为 KiB。
+	// Backup file size, unit: KiB
 	BackupFileSize *int `pulumi:"backupFileSize"`
-	// 备份 ID。
+	// Backup ID
 	BackupId *string `pulumi:"backupId"`
-	// 备份方式，目前仅支持物理备份。
+	// Backup method, currently only physical backup is supported
 	BackupMethod *string `pulumi:"backupMethod"`
-	// 数据备份保留天数。
+	// Data backup retention days
 	BackupRetentionPeriod *int `pulumi:"backupRetentionPeriod"`
-	// 备份的开始时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+	// Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
 	BackupStartTime *string `pulumi:"backupStartTime"`
-	// 备份状态。
+	// Backup status
 	BackupStatus *string `pulumi:"backupStatus"`
-	// 执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+	// Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
 	BackupTime *string `pulumi:"backupTime"`
-	// 备份类型，目前仅支持全量备份。
+	// Backup type, currently only full backup is supported
 	BackupType *string `pulumi:"backupType"`
-	// 一致性备份的时间点，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+	// Consistency backup timestamp, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
 	ConsistentTime *string `pulumi:"consistentTime"`
-	// 是否开启持续备份，取值固定为 true。
+	// Enable continuous backup, value is always true
 	ContinueBackup *bool `pulumi:"continueBackup"`
-	// 创建类型。
+	// Creation type
 	CreateType *string `pulumi:"createType"`
-	// 全量备份周期，多个取值用英文逗号（,）隔开。
+	// Full backup cycle, use commas (,) to separate multiple values
 	FullBackupPeriod *string `pulumi:"fullBackupPeriod"`
-	// 实例ID。
+	// Instance ID
 	InstanceId *string `pulumi:"instanceId"`
 }
 
 type BackupState struct {
-	// 备份的结束时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+	// Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
 	BackupEndTime pulumi.StringPtrInput
-	// 备份文件大小，单位为 KiB。
+	// Backup file size, unit: KiB
 	BackupFileSize pulumi.IntPtrInput
-	// 备份 ID。
+	// Backup ID
 	BackupId pulumi.StringPtrInput
-	// 备份方式，目前仅支持物理备份。
+	// Backup method, currently only physical backup is supported
 	BackupMethod pulumi.StringPtrInput
-	// 数据备份保留天数。
+	// Data backup retention days
 	BackupRetentionPeriod pulumi.IntPtrInput
-	// 备份的开始时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+	// Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
 	BackupStartTime pulumi.StringPtrInput
-	// 备份状态。
+	// Backup status
 	BackupStatus pulumi.StringPtrInput
-	// 执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+	// Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
 	BackupTime pulumi.StringPtrInput
-	// 备份类型，目前仅支持全量备份。
+	// Backup type, currently only full backup is supported
 	BackupType pulumi.StringPtrInput
-	// 一致性备份的时间点，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+	// Consistency backup timestamp, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
 	ConsistentTime pulumi.StringPtrInput
-	// 是否开启持续备份，取值固定为 true。
+	// Enable continuous backup, value is always true
 	ContinueBackup pulumi.BoolPtrInput
-	// 创建类型。
+	// Creation type
 	CreateType pulumi.StringPtrInput
-	// 全量备份周期，多个取值用英文逗号（,）隔开。
+	// Full backup cycle, use commas (,) to separate multiple values
 	FullBackupPeriod pulumi.StringPtrInput
-	// 实例ID。
+	// Instance ID
 	InstanceId pulumi.StringPtrInput
 }
 
@@ -182,33 +182,33 @@ func (BackupState) ElementType() reflect.Type {
 }
 
 type backupArgs struct {
-	// 备份方式，目前仅支持物理备份。
+	// Backup method, currently only physical backup is supported
 	BackupMethod *string `pulumi:"backupMethod"`
-	// 数据备份保留天数。
+	// Data backup retention days
 	BackupRetentionPeriod *int `pulumi:"backupRetentionPeriod"`
-	// 执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+	// Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
 	BackupTime *string `pulumi:"backupTime"`
-	// 备份类型，目前仅支持全量备份。
+	// Backup type, currently only full backup is supported
 	BackupType *string `pulumi:"backupType"`
-	// 全量备份周期，多个取值用英文逗号（,）隔开。
+	// Full backup cycle, use commas (,) to separate multiple values
 	FullBackupPeriod *string `pulumi:"fullBackupPeriod"`
-	// 实例ID。
+	// Instance ID
 	InstanceId string `pulumi:"instanceId"`
 }
 
 // The set of arguments for constructing a Backup resource.
 type BackupArgs struct {
-	// 备份方式，目前仅支持物理备份。
+	// Backup method, currently only physical backup is supported
 	BackupMethod pulumi.StringPtrInput
-	// 数据备份保留天数。
+	// Data backup retention days
 	BackupRetentionPeriod pulumi.IntPtrInput
-	// 执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+	// Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
 	BackupTime pulumi.StringPtrInput
-	// 备份类型，目前仅支持全量备份。
+	// Backup type, currently only full backup is supported
 	BackupType pulumi.StringPtrInput
-	// 全量备份周期，多个取值用英文逗号（,）隔开。
+	// Full backup cycle, use commas (,) to separate multiple values
 	FullBackupPeriod pulumi.StringPtrInput
-	// 实例ID。
+	// Instance ID
 	InstanceId pulumi.StringInput
 }
 
@@ -299,72 +299,72 @@ func (o BackupOutput) ToBackupOutputWithContext(ctx context.Context) BackupOutpu
 	return o
 }
 
-// 备份的结束时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+// Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
 func (o BackupOutput) BackupEndTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.BackupEndTime }).(pulumi.StringOutput)
 }
 
-// 备份文件大小，单位为 KiB。
+// Backup file size, unit: KiB
 func (o BackupOutput) BackupFileSize() pulumi.IntOutput {
 	return o.ApplyT(func(v *Backup) pulumi.IntOutput { return v.BackupFileSize }).(pulumi.IntOutput)
 }
 
-// 备份 ID。
+// Backup ID
 func (o BackupOutput) BackupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.BackupId }).(pulumi.StringOutput)
 }
 
-// 备份方式，目前仅支持物理备份。
+// Backup method, currently only physical backup is supported
 func (o BackupOutput) BackupMethod() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.BackupMethod }).(pulumi.StringOutput)
 }
 
-// 数据备份保留天数。
+// Data backup retention days
 func (o BackupOutput) BackupRetentionPeriod() pulumi.IntOutput {
 	return o.ApplyT(func(v *Backup) pulumi.IntOutput { return v.BackupRetentionPeriod }).(pulumi.IntOutput)
 }
 
-// 备份的开始时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+// Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
 func (o BackupOutput) BackupStartTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.BackupStartTime }).(pulumi.StringOutput)
 }
 
-// 备份状态。
+// Backup status
 func (o BackupOutput) BackupStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.BackupStatus }).(pulumi.StringOutput)
 }
 
-// 执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+// Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
 func (o BackupOutput) BackupTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.BackupTime }).(pulumi.StringOutput)
 }
 
-// 备份类型，目前仅支持全量备份。
+// Backup type, currently only full backup is supported
 func (o BackupOutput) BackupType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.BackupType }).(pulumi.StringOutput)
 }
 
-// 一致性备份的时间点，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+// Consistency backup timestamp, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
 func (o BackupOutput) ConsistentTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.ConsistentTime }).(pulumi.StringOutput)
 }
 
-// 是否开启持续备份，取值固定为 true。
+// Enable continuous backup, value is always true
 func (o BackupOutput) ContinueBackup() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Backup) pulumi.BoolOutput { return v.ContinueBackup }).(pulumi.BoolOutput)
 }
 
-// 创建类型。
+// Creation type
 func (o BackupOutput) CreateType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.CreateType }).(pulumi.StringOutput)
 }
 
-// 全量备份周期，多个取值用英文逗号（,）隔开。
+// Full backup cycle, use commas (,) to separate multiple values
 func (o BackupOutput) FullBackupPeriod() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.FullBackupPeriod }).(pulumi.StringOutput)
 }
 
-// 实例ID。
+// Instance ID
 func (o BackupOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.InstanceId }).(pulumi.StringOutput)
 }

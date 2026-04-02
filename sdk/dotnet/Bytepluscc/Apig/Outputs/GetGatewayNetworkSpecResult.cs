@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GetGatewayNetworkSpecResult
     {
         /// <summary>
-        /// 子网配置信息列表。
+        /// Subnet configuration information list
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGatewayNetworkSpecSubnetResult> Subnets;
         /// <summary>
@@ -23,7 +23,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
         /// </summary>
         public readonly string VpcId;
         /// <summary>
-        /// VPC名称。
+        /// VPC name
         /// </summary>
         public readonly string VpcName;
 

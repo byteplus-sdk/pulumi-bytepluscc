@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetRuleRuleActionRewriteConfig {
     /**
-     * @return 重写路径。
+     * @return Rewrite path.
      * 
      */
     private String path;
 
     private GetRuleRuleActionRewriteConfig() {}
     /**
-     * @return 重写路径。
+     * @return Rewrite path.
      * 
      */
     public String path() {

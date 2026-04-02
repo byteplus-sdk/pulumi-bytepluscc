@@ -18,14 +18,14 @@ public final class ScalingConfigurationEipArgs extends com.pulumi.resources.Reso
     public static final ScalingConfigurationEipArgs Empty = new ScalingConfigurationEipArgs();
 
     /**
-     * 公网IP的带宽峰值，默认为1，单位：Mbps。取值：当Eip.BillingType取值为PostPaidByBandwidth时，取值为1 ～ 500。当Eip.BillingType取值为PostPaidByTraffic时，取值为1 ～ 200。
+     * Peak bandwidth for the public IP. Default is 1, unit: Mbps. Value: When Eip.BillingType is set to PostPaidByBandwidth, the value is 1–500. When Eip.BillingType is set to PostPaidByTraffic, the value is 1–200.
      * 
      */
     @Import(name="bandwidth")
     private @Nullable Output<Integer> bandwidth;
 
     /**
-     * @return 公网IP的带宽峰值，默认为1，单位：Mbps。取值：当Eip.BillingType取值为PostPaidByBandwidth时，取值为1 ～ 500。当Eip.BillingType取值为PostPaidByTraffic时，取值为1 ～ 200。
+     * @return Peak bandwidth for the public IP. Default is 1, unit: Mbps. Value: When Eip.BillingType is set to PostPaidByBandwidth, the value is 1–500. When Eip.BillingType is set to PostPaidByTraffic, the value is 1–200.
      * 
      */
     public Optional<Output<Integer>> bandwidth() {
@@ -33,14 +33,14 @@ public final class ScalingConfigurationEipArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 共享带宽包的ID，表示将公网IP加入到共享带宽包。 您可以调用 DescribeBandwidthPackages 接口，查询共享带宽包的ID。 公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的线路类型相同。共享带宽包为IPv4类型。
+     * ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package. You can call the DescribeBandwidthPackages API to query the shared bandwidth package ID. The public IP can be added to the shared bandwidth package only if the following conditions are met: Both have the same security protection type. Both have the same line type. The shared bandwidth package is IPv4 type.
      * 
      */
     @Import(name="bandwidthPackageId")
     private @Nullable Output<String> bandwidthPackageId;
 
     /**
-     * @return 共享带宽包的ID，表示将公网IP加入到共享带宽包。 您可以调用 DescribeBandwidthPackages 接口，查询共享带宽包的ID。 公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的线路类型相同。共享带宽包为IPv4类型。
+     * @return ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package. You can call the DescribeBandwidthPackages API to query the shared bandwidth package ID. The public IP can be added to the shared bandwidth package only if the following conditions are met: Both have the same security protection type. Both have the same line type. The shared bandwidth package is IPv4 type.
      * 
      */
     public Optional<Output<String>> bandwidthPackageId() {
@@ -48,14 +48,14 @@ public final class ScalingConfigurationEipArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 公网IP的计费类型，取值：PostPaidByBandwidth（默认）：按量计费-按带宽上限计费。PostPaidByTraffic：按量计费-按实际流量计费。
+     * Billing type for public IP. Options: PostPaidByBandwidth (default): Pay-as-you-go, billed by bandwidth cap. PostPaidByTraffic: Pay-as-you-go, billed by actual traffic.
      * 
      */
     @Import(name="billingType")
     private @Nullable Output<String> billingType;
 
     /**
-     * @return 公网IP的计费类型，取值：PostPaidByBandwidth（默认）：按量计费-按带宽上限计费。PostPaidByTraffic：按量计费-按实际流量计费。
+     * @return Billing type for public IP. Options: PostPaidByBandwidth (default): Pay-as-you-go, billed by bandwidth cap. PostPaidByTraffic: Pay-as-you-go, billed by actual traffic.
      * 
      */
     public Optional<Output<String>> billingType() {
@@ -63,14 +63,14 @@ public final class ScalingConfigurationEipArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 线路类型，取值：BGP（默认）：BGP线路。若您的账号已申请使用静态单线，ISP还可以传入ChinaMobile（表示中国移动）、ChinaTelecom（表示中国电信）、ChinaUnicom（表示中国联通）。
+     * Line type. Values: BGP (default): BGP line. If your account has applied for static single line, ISP can also be set to ChinaMobile (China Mobile), ChinaTelecom (China Telecom), or ChinaUnicom (China Unicom).
      * 
      */
     @Import(name="isp")
     private @Nullable Output<String> isp;
 
     /**
-     * @return 线路类型，取值：BGP（默认）：BGP线路。若您的账号已申请使用静态单线，ISP还可以传入ChinaMobile（表示中国移动）、ChinaTelecom（表示中国电信）、ChinaUnicom（表示中国联通）。
+     * @return Line type. Values: BGP (default): BGP line. If your account has applied for static single line, ISP can also be set to ChinaMobile (China Mobile), ChinaTelecom (China Telecom), or ChinaUnicom (China Unicom).
      * 
      */
     public Optional<Output<String>> isp() {
@@ -78,14 +78,14 @@ public final class ScalingConfigurationEipArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+     * Whether the public IP is deleted along with the instance. This applies only to pay-as-you-go public IPs and takes effect when deleting the instance in the ECS console. For retention details after deleting an instance in a scaling group, see the detailed instructions in instance management. Values: true: The public IP is deleted with the instance. false: The public IP is not deleted with the instance
      * 
      */
     @Import(name="releaseWithInstance")
     private @Nullable Output<Boolean> releaseWithInstance;
 
     /**
-     * @return 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+     * @return Whether the public IP is deleted along with the instance. This applies only to pay-as-you-go public IPs and takes effect when deleting the instance in the ECS console. For retention details after deleting an instance in a scaling group, see the detailed instructions in instance management. Values: true: The public IP is deleted with the instance. false: The public IP is not deleted with the instance
      * 
      */
     public Optional<Output<Boolean>> releaseWithInstance() {
@@ -121,7 +121,7 @@ public final class ScalingConfigurationEipArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param bandwidth 公网IP的带宽峰值，默认为1，单位：Mbps。取值：当Eip.BillingType取值为PostPaidByBandwidth时，取值为1 ～ 500。当Eip.BillingType取值为PostPaidByTraffic时，取值为1 ～ 200。
+         * @param bandwidth Peak bandwidth for the public IP. Default is 1, unit: Mbps. Value: When Eip.BillingType is set to PostPaidByBandwidth, the value is 1–500. When Eip.BillingType is set to PostPaidByTraffic, the value is 1–200.
          * 
          * @return builder
          * 
@@ -132,7 +132,7 @@ public final class ScalingConfigurationEipArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param bandwidth 公网IP的带宽峰值，默认为1，单位：Mbps。取值：当Eip.BillingType取值为PostPaidByBandwidth时，取值为1 ～ 500。当Eip.BillingType取值为PostPaidByTraffic时，取值为1 ～ 200。
+         * @param bandwidth Peak bandwidth for the public IP. Default is 1, unit: Mbps. Value: When Eip.BillingType is set to PostPaidByBandwidth, the value is 1–500. When Eip.BillingType is set to PostPaidByTraffic, the value is 1–200.
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class ScalingConfigurationEipArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param bandwidthPackageId 共享带宽包的ID，表示将公网IP加入到共享带宽包。 您可以调用 DescribeBandwidthPackages 接口，查询共享带宽包的ID。 公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的线路类型相同。共享带宽包为IPv4类型。
+         * @param bandwidthPackageId ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package. You can call the DescribeBandwidthPackages API to query the shared bandwidth package ID. The public IP can be added to the shared bandwidth package only if the following conditions are met: Both have the same security protection type. Both have the same line type. The shared bandwidth package is IPv4 type.
          * 
          * @return builder
          * 
@@ -153,7 +153,7 @@ public final class ScalingConfigurationEipArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param bandwidthPackageId 共享带宽包的ID，表示将公网IP加入到共享带宽包。 您可以调用 DescribeBandwidthPackages 接口，查询共享带宽包的ID。 公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的线路类型相同。共享带宽包为IPv4类型。
+         * @param bandwidthPackageId ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package. You can call the DescribeBandwidthPackages API to query the shared bandwidth package ID. The public IP can be added to the shared bandwidth package only if the following conditions are met: Both have the same security protection type. Both have the same line type. The shared bandwidth package is IPv4 type.
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class ScalingConfigurationEipArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param billingType 公网IP的计费类型，取值：PostPaidByBandwidth（默认）：按量计费-按带宽上限计费。PostPaidByTraffic：按量计费-按实际流量计费。
+         * @param billingType Billing type for public IP. Options: PostPaidByBandwidth (default): Pay-as-you-go, billed by bandwidth cap. PostPaidByTraffic: Pay-as-you-go, billed by actual traffic.
          * 
          * @return builder
          * 
@@ -174,7 +174,7 @@ public final class ScalingConfigurationEipArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param billingType 公网IP的计费类型，取值：PostPaidByBandwidth（默认）：按量计费-按带宽上限计费。PostPaidByTraffic：按量计费-按实际流量计费。
+         * @param billingType Billing type for public IP. Options: PostPaidByBandwidth (default): Pay-as-you-go, billed by bandwidth cap. PostPaidByTraffic: Pay-as-you-go, billed by actual traffic.
          * 
          * @return builder
          * 
@@ -184,7 +184,7 @@ public final class ScalingConfigurationEipArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param isp 线路类型，取值：BGP（默认）：BGP线路。若您的账号已申请使用静态单线，ISP还可以传入ChinaMobile（表示中国移动）、ChinaTelecom（表示中国电信）、ChinaUnicom（表示中国联通）。
+         * @param isp Line type. Values: BGP (default): BGP line. If your account has applied for static single line, ISP can also be set to ChinaMobile (China Mobile), ChinaTelecom (China Telecom), or ChinaUnicom (China Unicom).
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class ScalingConfigurationEipArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param isp 线路类型，取值：BGP（默认）：BGP线路。若您的账号已申请使用静态单线，ISP还可以传入ChinaMobile（表示中国移动）、ChinaTelecom（表示中国电信）、ChinaUnicom（表示中国联通）。
+         * @param isp Line type. Values: BGP (default): BGP line. If your account has applied for static single line, ISP can also be set to ChinaMobile (China Mobile), ChinaTelecom (China Telecom), or ChinaUnicom (China Unicom).
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class ScalingConfigurationEipArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param releaseWithInstance 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+         * @param releaseWithInstance Whether the public IP is deleted along with the instance. This applies only to pay-as-you-go public IPs and takes effect when deleting the instance in the ECS console. For retention details after deleting an instance in a scaling group, see the detailed instructions in instance management. Values: true: The public IP is deleted with the instance. false: The public IP is not deleted with the instance
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class ScalingConfigurationEipArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param releaseWithInstance 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+         * @param releaseWithInstance Whether the public IP is deleted along with the instance. This applies only to pay-as-you-go public IPs and takes effect when deleting the instance in the ECS console. For retention details after deleting an instance in a scaling group, see the detailed instructions in instance management. Values: true: The public IP is deleted with the instance. false: The public IP is not deleted with the instance
          * 
          * @return builder
          * 

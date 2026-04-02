@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class GetDomainOriginRewriteResult
     {
         /// <summary>
-        /// 表示一个规则列表。当 Switch 是 true 时，该参数为必填。列表中最多可以包含 50 条规则。列表中规则的顺序定义了规则的优先级。列表中第一条规则的优先级最高。规则中的 SourcePath 定义了规则的作用范围。如果您创建了多条规则，作用范围较大的规则应出现在作用范围较小的规则后面。当收到一个用户请求时，CDN 按规则的优先级，从高到低尝试将请求与规则匹配。如果请求匹配了一条规则，CDN 就停止处理其余规则。
+        /// Represents a list of rules. This parameter is required when Switch is true. The list can contain up to 50 rules. The order of rules in the list defines their priority, with the first rule having the highest priority. The SourcePath in each rule specifies the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope. When a user request is received, the CDN matches the request against the rules in order of priority, from highest to lowest. If the request matches a rule, the CDN stops processing the remaining rules.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainOriginRewriteOriginRewriteRuleResult> OriginRewriteRules;
         /// <summary>
-        /// 表示是否启用该模块。该参数有以下取值：true：表示启用该模块。false：表示禁用该模块。该参数的默认值是 false。
+        /// Indicates whether to enable this module. The parameter has the following values: true: enables the module. false: disables the module. The default value is false.
         /// </summary>
         public readonly bool Switch;
 

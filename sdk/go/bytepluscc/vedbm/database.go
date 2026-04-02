@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 云数据库管理
+// Cloud Database Management
 //
 // ## Import
 //
@@ -22,14 +22,14 @@ import (
 type Database struct {
 	pulumi.CustomResourceState
 
-	// 数据库字符集，可选值：utf8mb4（默认）、utf8、latin1、ascii
+	// Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
 	CharacterSetName    pulumi.StringOutput                   `pulumi:"characterSetName"`
 	DatabasesPrivileges DatabaseDatabasesPrivilegeArrayOutput `pulumi:"databasesPrivileges"`
-	// 数据库描述信息，长度0~256字符，可包含数字、中文、英文、下划线(_)、中划线(-)
+	// Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
 	DbDesc pulumi.StringOutput `pulumi:"dbDesc"`
-	// 数据库名称。命名规则：当前实例下唯一；长度2~64字符；以字母开头，字母/数字结尾；由字母、数字、下划线(_)、中划线(-)组成；不能使用预留字
+	// Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
 	DbName pulumi.StringOutput `pulumi:"dbName"`
-	// 实例ID。
+	// Instance ID
 	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
 }
 
@@ -66,26 +66,26 @@ func GetDatabase(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Database resources.
 type databaseState struct {
-	// 数据库字符集，可选值：utf8mb4（默认）、utf8、latin1、ascii
+	// Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
 	CharacterSetName    *string                      `pulumi:"characterSetName"`
 	DatabasesPrivileges []DatabaseDatabasesPrivilege `pulumi:"databasesPrivileges"`
-	// 数据库描述信息，长度0~256字符，可包含数字、中文、英文、下划线(_)、中划线(-)
+	// Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
 	DbDesc *string `pulumi:"dbDesc"`
-	// 数据库名称。命名规则：当前实例下唯一；长度2~64字符；以字母开头，字母/数字结尾；由字母、数字、下划线(_)、中划线(-)组成；不能使用预留字
+	// Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
 	DbName *string `pulumi:"dbName"`
-	// 实例ID。
+	// Instance ID
 	InstanceId *string `pulumi:"instanceId"`
 }
 
 type DatabaseState struct {
-	// 数据库字符集，可选值：utf8mb4（默认）、utf8、latin1、ascii
+	// Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
 	CharacterSetName    pulumi.StringPtrInput
 	DatabasesPrivileges DatabaseDatabasesPrivilegeArrayInput
-	// 数据库描述信息，长度0~256字符，可包含数字、中文、英文、下划线(_)、中划线(-)
+	// Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
 	DbDesc pulumi.StringPtrInput
-	// 数据库名称。命名规则：当前实例下唯一；长度2~64字符；以字母开头，字母/数字结尾；由字母、数字、下划线(_)、中划线(-)组成；不能使用预留字
+	// Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
 	DbName pulumi.StringPtrInput
-	// 实例ID。
+	// Instance ID
 	InstanceId pulumi.StringPtrInput
 }
 
@@ -94,27 +94,27 @@ func (DatabaseState) ElementType() reflect.Type {
 }
 
 type databaseArgs struct {
-	// 数据库字符集，可选值：utf8mb4（默认）、utf8、latin1、ascii
+	// Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
 	CharacterSetName    *string                      `pulumi:"characterSetName"`
 	DatabasesPrivileges []DatabaseDatabasesPrivilege `pulumi:"databasesPrivileges"`
-	// 数据库描述信息，长度0~256字符，可包含数字、中文、英文、下划线(_)、中划线(-)
+	// Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
 	DbDesc *string `pulumi:"dbDesc"`
-	// 数据库名称。命名规则：当前实例下唯一；长度2~64字符；以字母开头，字母/数字结尾；由字母、数字、下划线(_)、中划线(-)组成；不能使用预留字
+	// Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
 	DbName *string `pulumi:"dbName"`
-	// 实例ID。
+	// Instance ID
 	InstanceId string `pulumi:"instanceId"`
 }
 
 // The set of arguments for constructing a Database resource.
 type DatabaseArgs struct {
-	// 数据库字符集，可选值：utf8mb4（默认）、utf8、latin1、ascii
+	// Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
 	CharacterSetName    pulumi.StringPtrInput
 	DatabasesPrivileges DatabaseDatabasesPrivilegeArrayInput
-	// 数据库描述信息，长度0~256字符，可包含数字、中文、英文、下划线(_)、中划线(-)
+	// Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
 	DbDesc pulumi.StringPtrInput
-	// 数据库名称。命名规则：当前实例下唯一；长度2~64字符；以字母开头，字母/数字结尾；由字母、数字、下划线(_)、中划线(-)组成；不能使用预留字
+	// Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
 	DbName pulumi.StringPtrInput
-	// 实例ID。
+	// Instance ID
 	InstanceId pulumi.StringInput
 }
 
@@ -205,7 +205,7 @@ func (o DatabaseOutput) ToDatabaseOutputWithContext(ctx context.Context) Databas
 	return o
 }
 
-// 数据库字符集，可选值：utf8mb4（默认）、utf8、latin1、ascii
+// Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
 func (o DatabaseOutput) CharacterSetName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.CharacterSetName }).(pulumi.StringOutput)
 }
@@ -214,17 +214,17 @@ func (o DatabaseOutput) DatabasesPrivileges() DatabaseDatabasesPrivilegeArrayOut
 	return o.ApplyT(func(v *Database) DatabaseDatabasesPrivilegeArrayOutput { return v.DatabasesPrivileges }).(DatabaseDatabasesPrivilegeArrayOutput)
 }
 
-// 数据库描述信息，长度0~256字符，可包含数字、中文、英文、下划线(_)、中划线(-)
+// Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
 func (o DatabaseOutput) DbDesc() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.DbDesc }).(pulumi.StringOutput)
 }
 
-// 数据库名称。命名规则：当前实例下唯一；长度2~64字符；以字母开头，字母/数字结尾；由字母、数字、下划线(_)、中划线(-)组成；不能使用预留字
+// Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
 func (o DatabaseOutput) DbName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.DbName }).(pulumi.StringOutput)
 }
 
-// 实例ID。
+// Instance ID
 func (o DatabaseOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.InstanceId }).(pulumi.StringOutput)
 }

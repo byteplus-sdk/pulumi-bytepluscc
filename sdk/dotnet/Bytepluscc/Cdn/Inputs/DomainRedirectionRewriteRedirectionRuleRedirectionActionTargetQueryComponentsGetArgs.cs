@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainRedirectionRewriteRedirectionRuleRedirectionActionTargetQueryComponentsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示原请求 URL 中的查询参数的处理方式。该参数有以下取值：include：表示在跳转后的 URL 中包含原请求 URL 中的所有查询参数。exclude：表示在跳转后的 URL 中不包含原请求 URL 中的任何查询参数。includePart：表示在跳转后的 URL 中包含原请求 URL 中特定的查询参数。excludePart：表示在跳转后的 URL 中不包含原请求 URL 中特定的查询参数。
+        /// Indicates how to handle query parameters in the original request URL. This parameter has the following values: include: includes all query parameters from the original request URL in the redirected URL. exclude: excludes all query parameters from the original request URL in the redirected URL. includePart: includes specific query parameters from the original request URL in the redirected URL. excludePart: excludes specific query parameters from the original request URL in the redirected URL.
         /// </summary>
         [Input("action")]
         public Input<string>? Action { get; set; }
 
         /// <summary>
-        /// 表示要保留或删除的查询参数。多个查询参数间使用英文分号（;）分隔。指定的查询参数不能包含连续斜杠（//）、百分号（"）、空格。Value 的默认值是 *，表示所有的查询参数。如果 Action 是 include 或者 exclude, 则 Value 必须为 *。如果 Action 是 includePart 或者 excludePart，您可以指定一个或者多个查询参数。此时，您指定的查询参数不能是 *。
+        /// Indicates the query parameters to retain or remove. Multiple query parameters are separated by a semicolon (;). The specified query parameters cannot contain consecutive slashes (//), percent signs ("), or spaces. The default value of Value is *, which means all query parameters. If Action is include or exclude, Value must be *. If Action is includePart or excludePart, you can specify one or more query parameters. In this case, the specified query parameters cannot be *.
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

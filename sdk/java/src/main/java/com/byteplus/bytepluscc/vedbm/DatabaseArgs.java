@@ -19,14 +19,14 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
     public static final DatabaseArgs Empty = new DatabaseArgs();
 
     /**
-     * 数据库字符集，可选值：utf8mb4（默认）、utf8、latin1、ascii
+     * Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
      * 
      */
     @Import(name="characterSetName")
     private @Nullable Output<String> characterSetName;
 
     /**
-     * @return 数据库字符集，可选值：utf8mb4（默认）、utf8、latin1、ascii
+     * @return Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
      * 
      */
     public Optional<Output<String>> characterSetName() {
@@ -41,14 +41,14 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 数据库描述信息，长度0~256字符，可包含数字、中文、英文、下划线(_)、中划线(-)
+     * Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
      * 
      */
     @Import(name="dbDesc")
     private @Nullable Output<String> dbDesc;
 
     /**
-     * @return 数据库描述信息，长度0~256字符，可包含数字、中文、英文、下划线(_)、中划线(-)
+     * @return Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
      * 
      */
     public Optional<Output<String>> dbDesc() {
@@ -56,14 +56,14 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 数据库名称。命名规则：当前实例下唯一；长度2~64字符；以字母开头，字母/数字结尾；由字母、数字、下划线(_)、中划线(-)组成；不能使用预留字
+     * Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
      * 
      */
     @Import(name="dbName")
     private @Nullable Output<String> dbName;
 
     /**
-     * @return 数据库名称。命名规则：当前实例下唯一；长度2~64字符；以字母开头，字母/数字结尾；由字母、数字、下划线(_)、中划线(-)组成；不能使用预留字
+     * @return Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
      * 
      */
     public Optional<Output<String>> dbName() {
@@ -71,14 +71,14 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例ID。
+     * Instance ID
      * 
      */
     @Import(name="instanceId", required=true)
     private Output<String> instanceId;
 
     /**
-     * @return 实例ID。
+     * @return Instance ID
      * 
      */
     public Output<String> instanceId() {
@@ -114,7 +114,7 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param characterSetName 数据库字符集，可选值：utf8mb4（默认）、utf8、latin1、ascii
+         * @param characterSetName Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param characterSetName 数据库字符集，可选值：utf8mb4（默认）、utf8、latin1、ascii
+         * @param characterSetName Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbDesc 数据库描述信息，长度0~256字符，可包含数字、中文、英文、下划线(_)、中划线(-)
+         * @param dbDesc Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
          * 
          * @return builder
          * 
@@ -159,7 +159,7 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbDesc 数据库描述信息，长度0~256字符，可包含数字、中文、英文、下划线(_)、中划线(-)
+         * @param dbDesc Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbName 数据库名称。命名规则：当前实例下唯一；长度2~64字符；以字母开头，字母/数字结尾；由字母、数字、下划线(_)、中划线(-)组成；不能使用预留字
+         * @param dbName Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
          * 
          * @return builder
          * 
@@ -180,7 +180,7 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbName 数据库名称。命名规则：当前实例下唯一；长度2~64字符；以字母开头，字母/数字结尾；由字母、数字、下划线(_)、中划线(-)组成；不能使用预留字
+         * @param dbName Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
          * 
          * @return builder
          * 
@@ -190,7 +190,7 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例ID。
+         * @param instanceId Instance ID
          * 
          * @return builder
          * 
@@ -201,7 +201,7 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例ID。
+         * @param instanceId Instance ID
          * 
          * @return builder
          * 

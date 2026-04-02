@@ -14,13 +14,13 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type EndpointServicePrivateDnsNameConfiguration struct {
-	// 域验证名称。
+	// Domain verification name.
 	Name *string `pulumi:"name"`
-	// 域验证状态。PendingVerification：待验证Verifying：验证中Verified：验证通过Failed：验证失败
+	// Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
 	Status *string `pulumi:"status"`
-	// 域验证类型。TXT：TXT记录。
+	// Domain verification type. TXT: TXT record.
 	Type *string `pulumi:"type"`
-	// 域验证值。
+	// Domain verification value.
 	Value *string `pulumi:"value"`
 }
 
@@ -36,13 +36,13 @@ type EndpointServicePrivateDnsNameConfigurationInput interface {
 }
 
 type EndpointServicePrivateDnsNameConfigurationArgs struct {
-	// 域验证名称。
+	// Domain verification name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// 域验证状态。PendingVerification：待验证Verifying：验证中Verified：验证通过Failed：验证失败
+	// Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
 	Status pulumi.StringPtrInput `pulumi:"status"`
-	// 域验证类型。TXT：TXT记录。
+	// Domain verification type. TXT: TXT record.
 	Type pulumi.StringPtrInput `pulumi:"type"`
-	// 域验证值。
+	// Domain verification value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -123,22 +123,22 @@ func (o EndpointServicePrivateDnsNameConfigurationOutput) ToEndpointServicePriva
 	}).(EndpointServicePrivateDnsNameConfigurationPtrOutput)
 }
 
-// 域验证名称。
+// Domain verification name.
 func (o EndpointServicePrivateDnsNameConfigurationOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointServicePrivateDnsNameConfiguration) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// 域验证状态。PendingVerification：待验证Verifying：验证中Verified：验证通过Failed：验证失败
+// Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
 func (o EndpointServicePrivateDnsNameConfigurationOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointServicePrivateDnsNameConfiguration) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
-// 域验证类型。TXT：TXT记录。
+// Domain verification type. TXT: TXT record.
 func (o EndpointServicePrivateDnsNameConfigurationOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointServicePrivateDnsNameConfiguration) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
-// 域验证值。
+// Domain verification value.
 func (o EndpointServicePrivateDnsNameConfigurationOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointServicePrivateDnsNameConfiguration) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -167,7 +167,7 @@ func (o EndpointServicePrivateDnsNameConfigurationPtrOutput) Elem() EndpointServ
 	}).(EndpointServicePrivateDnsNameConfigurationOutput)
 }
 
-// 域验证名称。
+// Domain verification name.
 func (o EndpointServicePrivateDnsNameConfigurationPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *EndpointServicePrivateDnsNameConfiguration) *string {
 		if v == nil {
@@ -177,7 +177,7 @@ func (o EndpointServicePrivateDnsNameConfigurationPtrOutput) Name() pulumi.Strin
 	}).(pulumi.StringPtrOutput)
 }
 
-// 域验证状态。PendingVerification：待验证Verifying：验证中Verified：验证通过Failed：验证失败
+// Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
 func (o EndpointServicePrivateDnsNameConfigurationPtrOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *EndpointServicePrivateDnsNameConfiguration) *string {
 		if v == nil {
@@ -187,7 +187,7 @@ func (o EndpointServicePrivateDnsNameConfigurationPtrOutput) Status() pulumi.Str
 	}).(pulumi.StringPtrOutput)
 }
 
-// 域验证类型。TXT：TXT记录。
+// Domain verification type. TXT: TXT record.
 func (o EndpointServicePrivateDnsNameConfigurationPtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *EndpointServicePrivateDnsNameConfiguration) *string {
 		if v == nil {
@@ -197,7 +197,7 @@ func (o EndpointServicePrivateDnsNameConfigurationPtrOutput) Type() pulumi.Strin
 	}).(pulumi.StringPtrOutput)
 }
 
-// 域验证值。
+// Domain verification value.
 func (o EndpointServicePrivateDnsNameConfigurationPtrOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *EndpointServicePrivateDnsNameConfiguration) *string {
 		if v == nil {
@@ -208,11 +208,11 @@ func (o EndpointServicePrivateDnsNameConfigurationPtrOutput) Value() pulumi.Stri
 }
 
 type EndpointServiceResource struct {
-	// 终端节点服务ID。
+	// Endpoint service ID.
 	InstanceId *string `pulumi:"instanceId"`
-	// 待添加到终端节点服务中的服务资源ID。
+	// Service resource ID to be added to the endpoint service.
 	ResourceId *string `pulumi:"resourceId"`
-	// 负载均衡提供服务的可用区。
+	// Availability zone where the load balancer provides service.
 	ZoneIds []string `pulumi:"zoneIds"`
 }
 
@@ -228,11 +228,11 @@ type EndpointServiceResourceInput interface {
 }
 
 type EndpointServiceResourceArgs struct {
-	// 终端节点服务ID。
+	// Endpoint service ID.
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
-	// 待添加到终端节点服务中的服务资源ID。
+	// Service resource ID to be added to the endpoint service.
 	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
-	// 负载均衡提供服务的可用区。
+	// Availability zone where the load balancer provides service.
 	ZoneIds pulumi.StringArrayInput `pulumi:"zoneIds"`
 }
 
@@ -287,17 +287,17 @@ func (o EndpointServiceResourceOutput) ToEndpointServiceResourceOutputWithContex
 	return o
 }
 
-// 终端节点服务ID。
+// Endpoint service ID.
 func (o EndpointServiceResourceOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointServiceResource) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
 
-// 待添加到终端节点服务中的服务资源ID。
+// Service resource ID to be added to the endpoint service.
 func (o EndpointServiceResourceOutput) ResourceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointServiceResource) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
 }
 
-// 负载均衡提供服务的可用区。
+// Availability zone where the load balancer provides service.
 func (o EndpointServiceResourceOutput) ZoneIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v EndpointServiceResource) []string { return v.ZoneIds }).(pulumi.StringArrayOutput)
 }
@@ -323,9 +323,9 @@ func (o EndpointServiceResourceArrayOutput) Index(i pulumi.IntInput) EndpointSer
 }
 
 type EndpointServiceTag struct {
-	// 终端节点服务标签的标签键。
+	// Tag keys for endpoint service tags.
 	Key *string `pulumi:"key"`
-	// 终端节点服务标签的标签值。
+	// Tag value of the endpoint service tag.
 	Value *string `pulumi:"value"`
 }
 
@@ -341,9 +341,9 @@ type EndpointServiceTagInput interface {
 }
 
 type EndpointServiceTagArgs struct {
-	// 终端节点服务标签的标签键。
+	// Tag keys for endpoint service tags.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 终端节点服务标签的标签值。
+	// Tag value of the endpoint service tag.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -398,12 +398,12 @@ func (o EndpointServiceTagOutput) ToEndpointServiceTagOutputWithContext(ctx cont
 	return o
 }
 
-// 终端节点服务标签的标签键。
+// Tag keys for endpoint service tags.
 func (o EndpointServiceTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointServiceTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 终端节点服务标签的标签值。
+// Tag value of the endpoint service tag.
 func (o EndpointServiceTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointServiceTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -429,13 +429,13 @@ func (o EndpointServiceTagArrayOutput) Index(i pulumi.IntInput) EndpointServiceT
 }
 
 type GetEndpointServicePrivateDnsNameConfiguration struct {
-	// 域验证名称。
+	// Domain verification name.
 	Name string `pulumi:"name"`
-	// 域验证状态。PendingVerification：待验证Verifying：验证中Verified：验证通过Failed：验证失败
+	// Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
 	Status string `pulumi:"status"`
-	// 域验证类型。TXT：TXT记录。
+	// Domain verification type. TXT: TXT record.
 	Type string `pulumi:"type"`
-	// 域验证值。
+	// Domain verification value.
 	Value string `pulumi:"value"`
 }
 
@@ -451,13 +451,13 @@ type GetEndpointServicePrivateDnsNameConfigurationInput interface {
 }
 
 type GetEndpointServicePrivateDnsNameConfigurationArgs struct {
-	// 域验证名称。
+	// Domain verification name.
 	Name pulumi.StringInput `pulumi:"name"`
-	// 域验证状态。PendingVerification：待验证Verifying：验证中Verified：验证通过Failed：验证失败
+	// Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
 	Status pulumi.StringInput `pulumi:"status"`
-	// 域验证类型。TXT：TXT记录。
+	// Domain verification type. TXT: TXT record.
 	Type pulumi.StringInput `pulumi:"type"`
-	// 域验证值。
+	// Domain verification value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -487,32 +487,32 @@ func (o GetEndpointServicePrivateDnsNameConfigurationOutput) ToGetEndpointServic
 	return o
 }
 
-// 域验证名称。
+// Domain verification name.
 func (o GetEndpointServicePrivateDnsNameConfigurationOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointServicePrivateDnsNameConfiguration) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 域验证状态。PendingVerification：待验证Verifying：验证中Verified：验证通过Failed：验证失败
+// Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
 func (o GetEndpointServicePrivateDnsNameConfigurationOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointServicePrivateDnsNameConfiguration) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 域验证类型。TXT：TXT记录。
+// Domain verification type. TXT: TXT record.
 func (o GetEndpointServicePrivateDnsNameConfigurationOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointServicePrivateDnsNameConfiguration) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// 域验证值。
+// Domain verification value.
 func (o GetEndpointServicePrivateDnsNameConfigurationOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointServicePrivateDnsNameConfiguration) string { return v.Value }).(pulumi.StringOutput)
 }
 
 type GetEndpointServiceResource struct {
-	// 终端节点服务ID。
+	// Endpoint service ID.
 	InstanceId string `pulumi:"instanceId"`
-	// 待添加到终端节点服务中的服务资源ID。
+	// Service resource ID to be added to the endpoint service.
 	ResourceId string `pulumi:"resourceId"`
-	// 负载均衡提供服务的可用区。
+	// Availability zone where the load balancer provides service.
 	ZoneIds []string `pulumi:"zoneIds"`
 }
 
@@ -528,11 +528,11 @@ type GetEndpointServiceResourceInput interface {
 }
 
 type GetEndpointServiceResourceArgs struct {
-	// 终端节点服务ID。
+	// Endpoint service ID.
 	InstanceId pulumi.StringInput `pulumi:"instanceId"`
-	// 待添加到终端节点服务中的服务资源ID。
+	// Service resource ID to be added to the endpoint service.
 	ResourceId pulumi.StringInput `pulumi:"resourceId"`
-	// 负载均衡提供服务的可用区。
+	// Availability zone where the load balancer provides service.
 	ZoneIds pulumi.StringArrayInput `pulumi:"zoneIds"`
 }
 
@@ -587,17 +587,17 @@ func (o GetEndpointServiceResourceOutput) ToGetEndpointServiceResourceOutputWith
 	return o
 }
 
-// 终端节点服务ID。
+// Endpoint service ID.
 func (o GetEndpointServiceResourceOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointServiceResource) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 待添加到终端节点服务中的服务资源ID。
+// Service resource ID to be added to the endpoint service.
 func (o GetEndpointServiceResourceOutput) ResourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointServiceResource) string { return v.ResourceId }).(pulumi.StringOutput)
 }
 
-// 负载均衡提供服务的可用区。
+// Availability zone where the load balancer provides service.
 func (o GetEndpointServiceResourceOutput) ZoneIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetEndpointServiceResource) []string { return v.ZoneIds }).(pulumi.StringArrayOutput)
 }
@@ -623,9 +623,9 @@ func (o GetEndpointServiceResourceArrayOutput) Index(i pulumi.IntInput) GetEndpo
 }
 
 type GetEndpointServiceTag struct {
-	// 终端节点服务标签的标签键。
+	// Tag keys for endpoint service tags.
 	Key string `pulumi:"key"`
-	// 终端节点服务标签的标签值。
+	// Tag value of the endpoint service tag.
 	Value string `pulumi:"value"`
 }
 
@@ -641,9 +641,9 @@ type GetEndpointServiceTagInput interface {
 }
 
 type GetEndpointServiceTagArgs struct {
-	// 终端节点服务标签的标签键。
+	// Tag keys for endpoint service tags.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 终端节点服务标签的标签值。
+	// Tag value of the endpoint service tag.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -698,12 +698,12 @@ func (o GetEndpointServiceTagOutput) ToGetEndpointServiceTagOutputWithContext(ct
 	return o
 }
 
-// 终端节点服务标签的标签键。
+// Tag keys for endpoint service tags.
 func (o GetEndpointServiceTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointServiceTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 终端节点服务标签的标签值。
+// Tag value of the endpoint service tag.
 func (o GetEndpointServiceTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointServiceTag) string { return v.Value }).(pulumi.StringOutput)
 }

@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class GetClusterClusterConfigApiServerEndpointsPublicIpResult
     {
         /// <summary>
-        /// 公网 IP 的 IPv4 地址。
+        /// IPv4 address of the public IP.
         /// </summary>
         public readonly string Ipv4;
 

@@ -14,11 +14,11 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type IndexFullText struct {
-	// 是否大小写敏感。true：大小写敏感。false：大小写不敏感。
+	// Case sensitivity. true: Case sensitive. false: Not case sensitive.
 	CaseSensitive *bool `pulumi:"caseSensitive"`
-	// 全文索引的分词符。字符串中每个字符代表一个分词符。长度为 1~256 字节。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	// Token separators for the full-text index. Each character in the string represents a token separator. Length: 1–256 bytes. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
 	Delimiter *string `pulumi:"delimiter"`
-	// 检索时，是否对日志的中文内容按照中文语法进行分词，默认为 false。true：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。false：按照分词符参数中指定的分词符对日志进行分词。
+	// When searching, specify whether to segment Chinese content in logs according to Chinese grammar. The default is false. true: For Chinese characters in logs, segment the log according to common Chinese grammar rules. Custom segmentation symbols for Chinese content are not supported. For non-Chinese characters in logs, segment the log using the segmentation symbols specified in the parameter. false: Segment the log using the segmentation symbols specified in the parameter.
 	IncludeChinese *bool `pulumi:"includeChinese"`
 }
 
@@ -34,11 +34,11 @@ type IndexFullTextInput interface {
 }
 
 type IndexFullTextArgs struct {
-	// 是否大小写敏感。true：大小写敏感。false：大小写不敏感。
+	// Case sensitivity. true: Case sensitive. false: Not case sensitive.
 	CaseSensitive pulumi.BoolPtrInput `pulumi:"caseSensitive"`
-	// 全文索引的分词符。字符串中每个字符代表一个分词符。长度为 1~256 字节。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	// Token separators for the full-text index. Each character in the string represents a token separator. Length: 1–256 bytes. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
 	Delimiter pulumi.StringPtrInput `pulumi:"delimiter"`
-	// 检索时，是否对日志的中文内容按照中文语法进行分词，默认为 false。true：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。false：按照分词符参数中指定的分词符对日志进行分词。
+	// When searching, specify whether to segment Chinese content in logs according to Chinese grammar. The default is false. true: For Chinese characters in logs, segment the log according to common Chinese grammar rules. Custom segmentation symbols for Chinese content are not supported. For non-Chinese characters in logs, segment the log using the segmentation symbols specified in the parameter. false: Segment the log using the segmentation symbols specified in the parameter.
 	IncludeChinese pulumi.BoolPtrInput `pulumi:"includeChinese"`
 }
 
@@ -119,17 +119,17 @@ func (o IndexFullTextOutput) ToIndexFullTextPtrOutputWithContext(ctx context.Con
 	}).(IndexFullTextPtrOutput)
 }
 
-// 是否大小写敏感。true：大小写敏感。false：大小写不敏感。
+// Case sensitivity. true: Case sensitive. false: Not case sensitive.
 func (o IndexFullTextOutput) CaseSensitive() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexFullText) *bool { return v.CaseSensitive }).(pulumi.BoolPtrOutput)
 }
 
-// 全文索引的分词符。字符串中每个字符代表一个分词符。长度为 1~256 字节。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+// Token separators for the full-text index. Each character in the string represents a token separator. Length: 1–256 bytes. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
 func (o IndexFullTextOutput) Delimiter() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v IndexFullText) *string { return v.Delimiter }).(pulumi.StringPtrOutput)
 }
 
-// 检索时，是否对日志的中文内容按照中文语法进行分词，默认为 false。true：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。false：按照分词符参数中指定的分词符对日志进行分词。
+// When searching, specify whether to segment Chinese content in logs according to Chinese grammar. The default is false. true: For Chinese characters in logs, segment the log according to common Chinese grammar rules. Custom segmentation symbols for Chinese content are not supported. For non-Chinese characters in logs, segment the log using the segmentation symbols specified in the parameter. false: Segment the log using the segmentation symbols specified in the parameter.
 func (o IndexFullTextOutput) IncludeChinese() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexFullText) *bool { return v.IncludeChinese }).(pulumi.BoolPtrOutput)
 }
@@ -158,7 +158,7 @@ func (o IndexFullTextPtrOutput) Elem() IndexFullTextOutput {
 	}).(IndexFullTextOutput)
 }
 
-// 是否大小写敏感。true：大小写敏感。false：大小写不敏感。
+// Case sensitivity. true: Case sensitive. false: Not case sensitive.
 func (o IndexFullTextPtrOutput) CaseSensitive() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IndexFullText) *bool {
 		if v == nil {
@@ -168,7 +168,7 @@ func (o IndexFullTextPtrOutput) CaseSensitive() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 全文索引的分词符。字符串中每个字符代表一个分词符。长度为 1~256 字节。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+// Token separators for the full-text index. Each character in the string represents a token separator. Length: 1–256 bytes. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
 func (o IndexFullTextPtrOutput) Delimiter() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *IndexFullText) *string {
 		if v == nil {
@@ -178,7 +178,7 @@ func (o IndexFullTextPtrOutput) Delimiter() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 检索时，是否对日志的中文内容按照中文语法进行分词，默认为 false。true：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。false：按照分词符参数中指定的分词符对日志进行分词。
+// When searching, specify whether to segment Chinese content in logs according to Chinese grammar. The default is false. true: For Chinese characters in logs, segment the log according to common Chinese grammar rules. Custom segmentation symbols for Chinese content are not supported. For non-Chinese characters in logs, segment the log using the segmentation symbols specified in the parameter. false: Segment the log using the segmentation symbols specified in the parameter.
 func (o IndexFullTextPtrOutput) IncludeChinese() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IndexFullText) *bool {
 		if v == nil {
@@ -189,9 +189,9 @@ func (o IndexFullTextPtrOutput) IncludeChinese() pulumi.BoolPtrOutput {
 }
 
 type IndexKeyValue struct {
-	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	// Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
 	Key *string `pulumi:"key"`
-	// 需要配置键值索引的字段描述信息。
+	// Field description information required for configuring key-value indexes.
 	Value *IndexKeyValueValue `pulumi:"value"`
 }
 
@@ -207,9 +207,9 @@ type IndexKeyValueInput interface {
 }
 
 type IndexKeyValueArgs struct {
-	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	// Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 需要配置键值索引的字段描述信息。
+	// Field description information required for configuring key-value indexes.
 	Value IndexKeyValueValuePtrInput `pulumi:"value"`
 }
 
@@ -264,12 +264,12 @@ func (o IndexKeyValueOutput) ToIndexKeyValueOutputWithContext(ctx context.Contex
 	return o
 }
 
-// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+// Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
 func (o IndexKeyValueOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v IndexKeyValue) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 需要配置键值索引的字段描述信息。
+// Field description information required for configuring key-value indexes.
 func (o IndexKeyValueOutput) Value() IndexKeyValueValuePtrOutput {
 	return o.ApplyT(func(v IndexKeyValue) *IndexKeyValueValue { return v.Value }).(IndexKeyValueValuePtrOutput)
 }
@@ -295,22 +295,22 @@ func (o IndexKeyValueArrayOutput) Index(i pulumi.IntInput) IndexKeyValueOutput {
 }
 
 type IndexKeyValueValue struct {
-	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 	AutoIndexFlag *bool `pulumi:"autoIndexFlag"`
-	// 是否区分大小写。默认为 false。
+	// Whether to distinguish case. Default is false.
 	CaseSensitive *bool `pulumi:"caseSensitive"`
-	// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
 	Delimiter *string `pulumi:"delimiter"`
-	// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+	// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
 	IncludeChinese *bool `pulumi:"includeChinese"`
-	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	// Create indexes for all fields with text values in the JSON field.
 	IndexAll *bool `pulumi:"indexAll"`
-	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
 	IndexSqlAll *bool                       `pulumi:"indexSqlAll"`
 	JsonKeys    []IndexKeyValueValueJsonKey `pulumi:"jsonKeys"`
-	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	// Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
 	SqlFlag *bool `pulumi:"sqlFlag"`
-	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	// Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
 	ValueType *string `pulumi:"valueType"`
 }
 
@@ -326,22 +326,22 @@ type IndexKeyValueValueInput interface {
 }
 
 type IndexKeyValueValueArgs struct {
-	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 	AutoIndexFlag pulumi.BoolPtrInput `pulumi:"autoIndexFlag"`
-	// 是否区分大小写。默认为 false。
+	// Whether to distinguish case. Default is false.
 	CaseSensitive pulumi.BoolPtrInput `pulumi:"caseSensitive"`
-	// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
 	Delimiter pulumi.StringPtrInput `pulumi:"delimiter"`
-	// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+	// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
 	IncludeChinese pulumi.BoolPtrInput `pulumi:"includeChinese"`
-	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	// Create indexes for all fields with text values in the JSON field.
 	IndexAll pulumi.BoolPtrInput `pulumi:"indexAll"`
-	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
 	IndexSqlAll pulumi.BoolPtrInput                 `pulumi:"indexSqlAll"`
 	JsonKeys    IndexKeyValueValueJsonKeyArrayInput `pulumi:"jsonKeys"`
-	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	// Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
 	SqlFlag pulumi.BoolPtrInput `pulumi:"sqlFlag"`
-	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	// Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
 	ValueType pulumi.StringPtrInput `pulumi:"valueType"`
 }
 
@@ -422,32 +422,32 @@ func (o IndexKeyValueValueOutput) ToIndexKeyValueValuePtrOutputWithContext(ctx c
 	}).(IndexKeyValueValuePtrOutput)
 }
 
-// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 func (o IndexKeyValueValueOutput) AutoIndexFlag() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexKeyValueValue) *bool { return v.AutoIndexFlag }).(pulumi.BoolPtrOutput)
 }
 
-// 是否区分大小写。默认为 false。
+// Whether to distinguish case. Default is false.
 func (o IndexKeyValueValueOutput) CaseSensitive() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexKeyValueValue) *bool { return v.CaseSensitive }).(pulumi.BoolPtrOutput)
 }
 
-// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
 func (o IndexKeyValueValueOutput) Delimiter() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v IndexKeyValueValue) *string { return v.Delimiter }).(pulumi.StringPtrOutput)
 }
 
-// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
 func (o IndexKeyValueValueOutput) IncludeChinese() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexKeyValueValue) *bool { return v.IncludeChinese }).(pulumi.BoolPtrOutput)
 }
 
-// 是否为 JSON 字段中所有值为文本的字段创建索引。
+// Create indexes for all fields with text values in the JSON field.
 func (o IndexKeyValueValueOutput) IndexAll() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexKeyValueValue) *bool { return v.IndexAll }).(pulumi.BoolPtrOutput)
 }
 
-// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
 func (o IndexKeyValueValueOutput) IndexSqlAll() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexKeyValueValue) *bool { return v.IndexSqlAll }).(pulumi.BoolPtrOutput)
 }
@@ -456,12 +456,12 @@ func (o IndexKeyValueValueOutput) JsonKeys() IndexKeyValueValueJsonKeyArrayOutpu
 	return o.ApplyT(func(v IndexKeyValueValue) []IndexKeyValueValueJsonKey { return v.JsonKeys }).(IndexKeyValueValueJsonKeyArrayOutput)
 }
 
-// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+// Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
 func (o IndexKeyValueValueOutput) SqlFlag() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexKeyValueValue) *bool { return v.SqlFlag }).(pulumi.BoolPtrOutput)
 }
 
-// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+// Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
 func (o IndexKeyValueValueOutput) ValueType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v IndexKeyValueValue) *string { return v.ValueType }).(pulumi.StringPtrOutput)
 }
@@ -490,7 +490,7 @@ func (o IndexKeyValueValuePtrOutput) Elem() IndexKeyValueValueOutput {
 	}).(IndexKeyValueValueOutput)
 }
 
-// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 func (o IndexKeyValueValuePtrOutput) AutoIndexFlag() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IndexKeyValueValue) *bool {
 		if v == nil {
@@ -500,7 +500,7 @@ func (o IndexKeyValueValuePtrOutput) AutoIndexFlag() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 是否区分大小写。默认为 false。
+// Whether to distinguish case. Default is false.
 func (o IndexKeyValueValuePtrOutput) CaseSensitive() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IndexKeyValueValue) *bool {
 		if v == nil {
@@ -510,7 +510,7 @@ func (o IndexKeyValueValuePtrOutput) CaseSensitive() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
 func (o IndexKeyValueValuePtrOutput) Delimiter() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *IndexKeyValueValue) *string {
 		if v == nil {
@@ -520,7 +520,7 @@ func (o IndexKeyValueValuePtrOutput) Delimiter() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
 func (o IndexKeyValueValuePtrOutput) IncludeChinese() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IndexKeyValueValue) *bool {
 		if v == nil {
@@ -530,7 +530,7 @@ func (o IndexKeyValueValuePtrOutput) IncludeChinese() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 是否为 JSON 字段中所有值为文本的字段创建索引。
+// Create indexes for all fields with text values in the JSON field.
 func (o IndexKeyValueValuePtrOutput) IndexAll() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IndexKeyValueValue) *bool {
 		if v == nil {
@@ -540,7 +540,7 @@ func (o IndexKeyValueValuePtrOutput) IndexAll() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
 func (o IndexKeyValueValuePtrOutput) IndexSqlAll() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IndexKeyValueValue) *bool {
 		if v == nil {
@@ -559,7 +559,7 @@ func (o IndexKeyValueValuePtrOutput) JsonKeys() IndexKeyValueValueJsonKeyArrayOu
 	}).(IndexKeyValueValueJsonKeyArrayOutput)
 }
 
-// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+// Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
 func (o IndexKeyValueValuePtrOutput) SqlFlag() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IndexKeyValueValue) *bool {
 		if v == nil {
@@ -569,7 +569,7 @@ func (o IndexKeyValueValuePtrOutput) SqlFlag() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+// Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
 func (o IndexKeyValueValuePtrOutput) ValueType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *IndexKeyValueValue) *string {
 		if v == nil {
@@ -580,9 +580,9 @@ func (o IndexKeyValueValuePtrOutput) ValueType() pulumi.StringPtrOutput {
 }
 
 type IndexKeyValueValueJsonKey struct {
-	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	// Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
 	Key *string `pulumi:"key"`
-	// 需要配置键值索引的字段描述信息。
+	// Field description information required for configuring key-value indexes.
 	Value *IndexKeyValueValueJsonKeyValue `pulumi:"value"`
 }
 
@@ -598,9 +598,9 @@ type IndexKeyValueValueJsonKeyInput interface {
 }
 
 type IndexKeyValueValueJsonKeyArgs struct {
-	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	// Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 需要配置键值索引的字段描述信息。
+	// Field description information required for configuring key-value indexes.
 	Value IndexKeyValueValueJsonKeyValuePtrInput `pulumi:"value"`
 }
 
@@ -655,12 +655,12 @@ func (o IndexKeyValueValueJsonKeyOutput) ToIndexKeyValueValueJsonKeyOutputWithCo
 	return o
 }
 
-// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+// Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
 func (o IndexKeyValueValueJsonKeyOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v IndexKeyValueValueJsonKey) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 需要配置键值索引的字段描述信息。
+// Field description information required for configuring key-value indexes.
 func (o IndexKeyValueValueJsonKeyOutput) Value() IndexKeyValueValueJsonKeyValuePtrOutput {
 	return o.ApplyT(func(v IndexKeyValueValueJsonKey) *IndexKeyValueValueJsonKeyValue { return v.Value }).(IndexKeyValueValueJsonKeyValuePtrOutput)
 }
@@ -686,15 +686,15 @@ func (o IndexKeyValueValueJsonKeyArrayOutput) Index(i pulumi.IntInput) IndexKeyV
 }
 
 type IndexKeyValueValueJsonKeyValue struct {
-	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 	AutoIndexFlag *bool `pulumi:"autoIndexFlag"`
-	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	// Create indexes for all fields with text values in the JSON field.
 	IndexAll *bool `pulumi:"indexAll"`
-	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
 	IndexSqlAll *bool `pulumi:"indexSqlAll"`
-	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	// Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
 	SqlFlag *bool `pulumi:"sqlFlag"`
-	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	// Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
 	ValueType *string `pulumi:"valueType"`
 }
 
@@ -710,15 +710,15 @@ type IndexKeyValueValueJsonKeyValueInput interface {
 }
 
 type IndexKeyValueValueJsonKeyValueArgs struct {
-	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 	AutoIndexFlag pulumi.BoolPtrInput `pulumi:"autoIndexFlag"`
-	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	// Create indexes for all fields with text values in the JSON field.
 	IndexAll pulumi.BoolPtrInput `pulumi:"indexAll"`
-	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
 	IndexSqlAll pulumi.BoolPtrInput `pulumi:"indexSqlAll"`
-	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	// Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
 	SqlFlag pulumi.BoolPtrInput `pulumi:"sqlFlag"`
-	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	// Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
 	ValueType pulumi.StringPtrInput `pulumi:"valueType"`
 }
 
@@ -799,27 +799,27 @@ func (o IndexKeyValueValueJsonKeyValueOutput) ToIndexKeyValueValueJsonKeyValuePt
 	}).(IndexKeyValueValueJsonKeyValuePtrOutput)
 }
 
-// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 func (o IndexKeyValueValueJsonKeyValueOutput) AutoIndexFlag() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexKeyValueValueJsonKeyValue) *bool { return v.AutoIndexFlag }).(pulumi.BoolPtrOutput)
 }
 
-// 是否为 JSON 字段中所有值为文本的字段创建索引。
+// Create indexes for all fields with text values in the JSON field.
 func (o IndexKeyValueValueJsonKeyValueOutput) IndexAll() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexKeyValueValueJsonKeyValue) *bool { return v.IndexAll }).(pulumi.BoolPtrOutput)
 }
 
-// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
 func (o IndexKeyValueValueJsonKeyValueOutput) IndexSqlAll() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexKeyValueValueJsonKeyValue) *bool { return v.IndexSqlAll }).(pulumi.BoolPtrOutput)
 }
 
-// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+// Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
 func (o IndexKeyValueValueJsonKeyValueOutput) SqlFlag() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexKeyValueValueJsonKeyValue) *bool { return v.SqlFlag }).(pulumi.BoolPtrOutput)
 }
 
-// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+// Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
 func (o IndexKeyValueValueJsonKeyValueOutput) ValueType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v IndexKeyValueValueJsonKeyValue) *string { return v.ValueType }).(pulumi.StringPtrOutput)
 }
@@ -848,7 +848,7 @@ func (o IndexKeyValueValueJsonKeyValuePtrOutput) Elem() IndexKeyValueValueJsonKe
 	}).(IndexKeyValueValueJsonKeyValueOutput)
 }
 
-// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 func (o IndexKeyValueValueJsonKeyValuePtrOutput) AutoIndexFlag() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IndexKeyValueValueJsonKeyValue) *bool {
 		if v == nil {
@@ -858,7 +858,7 @@ func (o IndexKeyValueValueJsonKeyValuePtrOutput) AutoIndexFlag() pulumi.BoolPtrO
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 是否为 JSON 字段中所有值为文本的字段创建索引。
+// Create indexes for all fields with text values in the JSON field.
 func (o IndexKeyValueValueJsonKeyValuePtrOutput) IndexAll() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IndexKeyValueValueJsonKeyValue) *bool {
 		if v == nil {
@@ -868,7 +868,7 @@ func (o IndexKeyValueValueJsonKeyValuePtrOutput) IndexAll() pulumi.BoolPtrOutput
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
 func (o IndexKeyValueValueJsonKeyValuePtrOutput) IndexSqlAll() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IndexKeyValueValueJsonKeyValue) *bool {
 		if v == nil {
@@ -878,7 +878,7 @@ func (o IndexKeyValueValueJsonKeyValuePtrOutput) IndexSqlAll() pulumi.BoolPtrOut
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+// Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
 func (o IndexKeyValueValueJsonKeyValuePtrOutput) SqlFlag() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IndexKeyValueValueJsonKeyValue) *bool {
 		if v == nil {
@@ -888,7 +888,7 @@ func (o IndexKeyValueValueJsonKeyValuePtrOutput) SqlFlag() pulumi.BoolPtrOutput 
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+// Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
 func (o IndexKeyValueValueJsonKeyValuePtrOutput) ValueType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *IndexKeyValueValueJsonKeyValue) *string {
 		if v == nil {
@@ -899,9 +899,9 @@ func (o IndexKeyValueValueJsonKeyValuePtrOutput) ValueType() pulumi.StringPtrOut
 }
 
 type IndexUserInnerKeyValue struct {
-	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	// Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
 	Key *string `pulumi:"key"`
-	// 需要配置键值索引的字段描述信息。
+	// Field description information required for configuring key-value indexes.
 	Value *IndexUserInnerKeyValueValue `pulumi:"value"`
 }
 
@@ -917,9 +917,9 @@ type IndexUserInnerKeyValueInput interface {
 }
 
 type IndexUserInnerKeyValueArgs struct {
-	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	// Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 需要配置键值索引的字段描述信息。
+	// Field description information required for configuring key-value indexes.
 	Value IndexUserInnerKeyValueValuePtrInput `pulumi:"value"`
 }
 
@@ -974,12 +974,12 @@ func (o IndexUserInnerKeyValueOutput) ToIndexUserInnerKeyValueOutputWithContext(
 	return o
 }
 
-// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+// Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
 func (o IndexUserInnerKeyValueOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v IndexUserInnerKeyValue) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 需要配置键值索引的字段描述信息。
+// Field description information required for configuring key-value indexes.
 func (o IndexUserInnerKeyValueOutput) Value() IndexUserInnerKeyValueValuePtrOutput {
 	return o.ApplyT(func(v IndexUserInnerKeyValue) *IndexUserInnerKeyValueValue { return v.Value }).(IndexUserInnerKeyValueValuePtrOutput)
 }
@@ -1005,22 +1005,22 @@ func (o IndexUserInnerKeyValueArrayOutput) Index(i pulumi.IntInput) IndexUserInn
 }
 
 type IndexUserInnerKeyValueValue struct {
-	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 	AutoIndexFlag *bool `pulumi:"autoIndexFlag"`
-	// 是否区分大小写。默认为 false。
+	// Whether to distinguish case. Default is false.
 	CaseSensitive *bool `pulumi:"caseSensitive"`
-	// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
 	Delimiter *string `pulumi:"delimiter"`
-	// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+	// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
 	IncludeChinese *bool `pulumi:"includeChinese"`
-	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	// Create indexes for all fields with text values in the JSON field.
 	IndexAll *bool `pulumi:"indexAll"`
-	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
 	IndexSqlAll *bool                                `pulumi:"indexSqlAll"`
 	JsonKeys    []IndexUserInnerKeyValueValueJsonKey `pulumi:"jsonKeys"`
-	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	// Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
 	SqlFlag *bool `pulumi:"sqlFlag"`
-	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	// Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
 	ValueType *string `pulumi:"valueType"`
 }
 
@@ -1036,22 +1036,22 @@ type IndexUserInnerKeyValueValueInput interface {
 }
 
 type IndexUserInnerKeyValueValueArgs struct {
-	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 	AutoIndexFlag pulumi.BoolPtrInput `pulumi:"autoIndexFlag"`
-	// 是否区分大小写。默认为 false。
+	// Whether to distinguish case. Default is false.
 	CaseSensitive pulumi.BoolPtrInput `pulumi:"caseSensitive"`
-	// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
 	Delimiter pulumi.StringPtrInput `pulumi:"delimiter"`
-	// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+	// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
 	IncludeChinese pulumi.BoolPtrInput `pulumi:"includeChinese"`
-	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	// Create indexes for all fields with text values in the JSON field.
 	IndexAll pulumi.BoolPtrInput `pulumi:"indexAll"`
-	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
 	IndexSqlAll pulumi.BoolPtrInput                          `pulumi:"indexSqlAll"`
 	JsonKeys    IndexUserInnerKeyValueValueJsonKeyArrayInput `pulumi:"jsonKeys"`
-	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	// Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
 	SqlFlag pulumi.BoolPtrInput `pulumi:"sqlFlag"`
-	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	// Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
 	ValueType pulumi.StringPtrInput `pulumi:"valueType"`
 }
 
@@ -1132,32 +1132,32 @@ func (o IndexUserInnerKeyValueValueOutput) ToIndexUserInnerKeyValueValuePtrOutpu
 	}).(IndexUserInnerKeyValueValuePtrOutput)
 }
 
-// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 func (o IndexUserInnerKeyValueValueOutput) AutoIndexFlag() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexUserInnerKeyValueValue) *bool { return v.AutoIndexFlag }).(pulumi.BoolPtrOutput)
 }
 
-// 是否区分大小写。默认为 false。
+// Whether to distinguish case. Default is false.
 func (o IndexUserInnerKeyValueValueOutput) CaseSensitive() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexUserInnerKeyValueValue) *bool { return v.CaseSensitive }).(pulumi.BoolPtrOutput)
 }
 
-// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
 func (o IndexUserInnerKeyValueValueOutput) Delimiter() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v IndexUserInnerKeyValueValue) *string { return v.Delimiter }).(pulumi.StringPtrOutput)
 }
 
-// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
 func (o IndexUserInnerKeyValueValueOutput) IncludeChinese() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexUserInnerKeyValueValue) *bool { return v.IncludeChinese }).(pulumi.BoolPtrOutput)
 }
 
-// 是否为 JSON 字段中所有值为文本的字段创建索引。
+// Create indexes for all fields with text values in the JSON field.
 func (o IndexUserInnerKeyValueValueOutput) IndexAll() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexUserInnerKeyValueValue) *bool { return v.IndexAll }).(pulumi.BoolPtrOutput)
 }
 
-// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
 func (o IndexUserInnerKeyValueValueOutput) IndexSqlAll() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexUserInnerKeyValueValue) *bool { return v.IndexSqlAll }).(pulumi.BoolPtrOutput)
 }
@@ -1166,12 +1166,12 @@ func (o IndexUserInnerKeyValueValueOutput) JsonKeys() IndexUserInnerKeyValueValu
 	return o.ApplyT(func(v IndexUserInnerKeyValueValue) []IndexUserInnerKeyValueValueJsonKey { return v.JsonKeys }).(IndexUserInnerKeyValueValueJsonKeyArrayOutput)
 }
 
-// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+// Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
 func (o IndexUserInnerKeyValueValueOutput) SqlFlag() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexUserInnerKeyValueValue) *bool { return v.SqlFlag }).(pulumi.BoolPtrOutput)
 }
 
-// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+// Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
 func (o IndexUserInnerKeyValueValueOutput) ValueType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v IndexUserInnerKeyValueValue) *string { return v.ValueType }).(pulumi.StringPtrOutput)
 }
@@ -1200,7 +1200,7 @@ func (o IndexUserInnerKeyValueValuePtrOutput) Elem() IndexUserInnerKeyValueValue
 	}).(IndexUserInnerKeyValueValueOutput)
 }
 
-// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 func (o IndexUserInnerKeyValueValuePtrOutput) AutoIndexFlag() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IndexUserInnerKeyValueValue) *bool {
 		if v == nil {
@@ -1210,7 +1210,7 @@ func (o IndexUserInnerKeyValueValuePtrOutput) AutoIndexFlag() pulumi.BoolPtrOutp
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 是否区分大小写。默认为 false。
+// Whether to distinguish case. Default is false.
 func (o IndexUserInnerKeyValueValuePtrOutput) CaseSensitive() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IndexUserInnerKeyValueValue) *bool {
 		if v == nil {
@@ -1220,7 +1220,7 @@ func (o IndexUserInnerKeyValueValuePtrOutput) CaseSensitive() pulumi.BoolPtrOutp
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
 func (o IndexUserInnerKeyValueValuePtrOutput) Delimiter() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *IndexUserInnerKeyValueValue) *string {
 		if v == nil {
@@ -1230,7 +1230,7 @@ func (o IndexUserInnerKeyValueValuePtrOutput) Delimiter() pulumi.StringPtrOutput
 	}).(pulumi.StringPtrOutput)
 }
 
-// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
 func (o IndexUserInnerKeyValueValuePtrOutput) IncludeChinese() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IndexUserInnerKeyValueValue) *bool {
 		if v == nil {
@@ -1240,7 +1240,7 @@ func (o IndexUserInnerKeyValueValuePtrOutput) IncludeChinese() pulumi.BoolPtrOut
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 是否为 JSON 字段中所有值为文本的字段创建索引。
+// Create indexes for all fields with text values in the JSON field.
 func (o IndexUserInnerKeyValueValuePtrOutput) IndexAll() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IndexUserInnerKeyValueValue) *bool {
 		if v == nil {
@@ -1250,7 +1250,7 @@ func (o IndexUserInnerKeyValueValuePtrOutput) IndexAll() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
 func (o IndexUserInnerKeyValueValuePtrOutput) IndexSqlAll() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IndexUserInnerKeyValueValue) *bool {
 		if v == nil {
@@ -1269,7 +1269,7 @@ func (o IndexUserInnerKeyValueValuePtrOutput) JsonKeys() IndexUserInnerKeyValueV
 	}).(IndexUserInnerKeyValueValueJsonKeyArrayOutput)
 }
 
-// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+// Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
 func (o IndexUserInnerKeyValueValuePtrOutput) SqlFlag() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IndexUserInnerKeyValueValue) *bool {
 		if v == nil {
@@ -1279,7 +1279,7 @@ func (o IndexUserInnerKeyValueValuePtrOutput) SqlFlag() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+// Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
 func (o IndexUserInnerKeyValueValuePtrOutput) ValueType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *IndexUserInnerKeyValueValue) *string {
 		if v == nil {
@@ -1290,9 +1290,9 @@ func (o IndexUserInnerKeyValueValuePtrOutput) ValueType() pulumi.StringPtrOutput
 }
 
 type IndexUserInnerKeyValueValueJsonKey struct {
-	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	// Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
 	Key *string `pulumi:"key"`
-	// 需要配置键值索引的字段描述信息。
+	// Field description information required for configuring key-value indexes.
 	Value *IndexUserInnerKeyValueValueJsonKeyValue `pulumi:"value"`
 }
 
@@ -1308,9 +1308,9 @@ type IndexUserInnerKeyValueValueJsonKeyInput interface {
 }
 
 type IndexUserInnerKeyValueValueJsonKeyArgs struct {
-	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	// Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 需要配置键值索引的字段描述信息。
+	// Field description information required for configuring key-value indexes.
 	Value IndexUserInnerKeyValueValueJsonKeyValuePtrInput `pulumi:"value"`
 }
 
@@ -1365,12 +1365,12 @@ func (o IndexUserInnerKeyValueValueJsonKeyOutput) ToIndexUserInnerKeyValueValueJ
 	return o
 }
 
-// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+// Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
 func (o IndexUserInnerKeyValueValueJsonKeyOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v IndexUserInnerKeyValueValueJsonKey) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 需要配置键值索引的字段描述信息。
+// Field description information required for configuring key-value indexes.
 func (o IndexUserInnerKeyValueValueJsonKeyOutput) Value() IndexUserInnerKeyValueValueJsonKeyValuePtrOutput {
 	return o.ApplyT(func(v IndexUserInnerKeyValueValueJsonKey) *IndexUserInnerKeyValueValueJsonKeyValue { return v.Value }).(IndexUserInnerKeyValueValueJsonKeyValuePtrOutput)
 }
@@ -1396,15 +1396,15 @@ func (o IndexUserInnerKeyValueValueJsonKeyArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type IndexUserInnerKeyValueValueJsonKeyValue struct {
-	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 	AutoIndexFlag *bool `pulumi:"autoIndexFlag"`
-	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	// Create indexes for all fields with text values in the JSON field.
 	IndexAll *bool `pulumi:"indexAll"`
-	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
 	IndexSqlAll *bool `pulumi:"indexSqlAll"`
-	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	// Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
 	SqlFlag *bool `pulumi:"sqlFlag"`
-	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	// Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
 	ValueType *string `pulumi:"valueType"`
 }
 
@@ -1420,15 +1420,15 @@ type IndexUserInnerKeyValueValueJsonKeyValueInput interface {
 }
 
 type IndexUserInnerKeyValueValueJsonKeyValueArgs struct {
-	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 	AutoIndexFlag pulumi.BoolPtrInput `pulumi:"autoIndexFlag"`
-	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	// Create indexes for all fields with text values in the JSON field.
 	IndexAll pulumi.BoolPtrInput `pulumi:"indexAll"`
-	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
 	IndexSqlAll pulumi.BoolPtrInput `pulumi:"indexSqlAll"`
-	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	// Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
 	SqlFlag pulumi.BoolPtrInput `pulumi:"sqlFlag"`
-	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	// Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
 	ValueType pulumi.StringPtrInput `pulumi:"valueType"`
 }
 
@@ -1509,27 +1509,27 @@ func (o IndexUserInnerKeyValueValueJsonKeyValueOutput) ToIndexUserInnerKeyValueV
 	}).(IndexUserInnerKeyValueValueJsonKeyValuePtrOutput)
 }
 
-// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 func (o IndexUserInnerKeyValueValueJsonKeyValueOutput) AutoIndexFlag() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexUserInnerKeyValueValueJsonKeyValue) *bool { return v.AutoIndexFlag }).(pulumi.BoolPtrOutput)
 }
 
-// 是否为 JSON 字段中所有值为文本的字段创建索引。
+// Create indexes for all fields with text values in the JSON field.
 func (o IndexUserInnerKeyValueValueJsonKeyValueOutput) IndexAll() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexUserInnerKeyValueValueJsonKeyValue) *bool { return v.IndexAll }).(pulumi.BoolPtrOutput)
 }
 
-// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
 func (o IndexUserInnerKeyValueValueJsonKeyValueOutput) IndexSqlAll() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexUserInnerKeyValueValueJsonKeyValue) *bool { return v.IndexSqlAll }).(pulumi.BoolPtrOutput)
 }
 
-// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+// Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
 func (o IndexUserInnerKeyValueValueJsonKeyValueOutput) SqlFlag() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IndexUserInnerKeyValueValueJsonKeyValue) *bool { return v.SqlFlag }).(pulumi.BoolPtrOutput)
 }
 
-// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+// Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
 func (o IndexUserInnerKeyValueValueJsonKeyValueOutput) ValueType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v IndexUserInnerKeyValueValueJsonKeyValue) *string { return v.ValueType }).(pulumi.StringPtrOutput)
 }
@@ -1558,7 +1558,7 @@ func (o IndexUserInnerKeyValueValueJsonKeyValuePtrOutput) Elem() IndexUserInnerK
 	}).(IndexUserInnerKeyValueValueJsonKeyValueOutput)
 }
 
-// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 func (o IndexUserInnerKeyValueValueJsonKeyValuePtrOutput) AutoIndexFlag() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IndexUserInnerKeyValueValueJsonKeyValue) *bool {
 		if v == nil {
@@ -1568,7 +1568,7 @@ func (o IndexUserInnerKeyValueValueJsonKeyValuePtrOutput) AutoIndexFlag() pulumi
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 是否为 JSON 字段中所有值为文本的字段创建索引。
+// Create indexes for all fields with text values in the JSON field.
 func (o IndexUserInnerKeyValueValueJsonKeyValuePtrOutput) IndexAll() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IndexUserInnerKeyValueValueJsonKeyValue) *bool {
 		if v == nil {
@@ -1578,7 +1578,7 @@ func (o IndexUserInnerKeyValueValueJsonKeyValuePtrOutput) IndexAll() pulumi.Bool
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
 func (o IndexUserInnerKeyValueValueJsonKeyValuePtrOutput) IndexSqlAll() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IndexUserInnerKeyValueValueJsonKeyValue) *bool {
 		if v == nil {
@@ -1588,7 +1588,7 @@ func (o IndexUserInnerKeyValueValueJsonKeyValuePtrOutput) IndexSqlAll() pulumi.B
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+// Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
 func (o IndexUserInnerKeyValueValueJsonKeyValuePtrOutput) SqlFlag() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IndexUserInnerKeyValueValueJsonKeyValue) *bool {
 		if v == nil {
@@ -1598,7 +1598,7 @@ func (o IndexUserInnerKeyValueValueJsonKeyValuePtrOutput) SqlFlag() pulumi.BoolP
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+// Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
 func (o IndexUserInnerKeyValueValueJsonKeyValuePtrOutput) ValueType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *IndexUserInnerKeyValueValueJsonKeyValue) *string {
 		if v == nil {
@@ -1609,9 +1609,9 @@ func (o IndexUserInnerKeyValueValueJsonKeyValuePtrOutput) ValueType() pulumi.Str
 }
 
 type ProjectTag struct {
-	// 标签键。
+	// Tag key
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value *string `pulumi:"value"`
 }
 
@@ -1627,9 +1627,9 @@ type ProjectTagInput interface {
 }
 
 type ProjectTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -1684,12 +1684,12 @@ func (o ProjectTagOutput) ToProjectTagOutputWithContext(ctx context.Context) Pro
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o ProjectTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value
 func (o ProjectTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -1715,13 +1715,13 @@ func (o ProjectTagArrayOutput) Index(i pulumi.IntInput) ProjectTagOutput {
 }
 
 type ScheduleSqlTaskRequestCycle struct {
-	// Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+	// Cron expression, with a minimum granularity of minutes, using 24-hour format. For example, 0 18 * * * means execution at 18:00 every day.
 	CronTab *string `pulumi:"cronTab"`
-	// 设置 Type 为 Cron 时，还需设置时区。
+	// If Type is set to Cron, you must also set the time zone.
 	CronTimeZone *string `pulumi:"cronTimeZone"`
-	// 调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+	// Scheduling period or the time point for periodic execution (minutes from 00:00). Range: 1–1440 minutes.
 	Time int `pulumi:"time"`
-	// 调度周期类型。可选值：Period、Fixed、Cron。
+	// Scheduling period type. Options: Period, Fixed, Cron.
 	Type string `pulumi:"type"`
 }
 
@@ -1737,13 +1737,13 @@ type ScheduleSqlTaskRequestCycleInput interface {
 }
 
 type ScheduleSqlTaskRequestCycleArgs struct {
-	// Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+	// Cron expression, with a minimum granularity of minutes, using 24-hour format. For example, 0 18 * * * means execution at 18:00 every day.
 	CronTab pulumi.StringPtrInput `pulumi:"cronTab"`
-	// 设置 Type 为 Cron 时，还需设置时区。
+	// If Type is set to Cron, you must also set the time zone.
 	CronTimeZone pulumi.StringPtrInput `pulumi:"cronTimeZone"`
-	// 调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+	// Scheduling period or the time point for periodic execution (minutes from 00:00). Range: 1–1440 minutes.
 	Time pulumi.IntInput `pulumi:"time"`
-	// 调度周期类型。可选值：Period、Fixed、Cron。
+	// Scheduling period type. Options: Period, Fixed, Cron.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -1824,22 +1824,22 @@ func (o ScheduleSqlTaskRequestCycleOutput) ToScheduleSqlTaskRequestCyclePtrOutpu
 	}).(ScheduleSqlTaskRequestCyclePtrOutput)
 }
 
-// Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+// Cron expression, with a minimum granularity of minutes, using 24-hour format. For example, 0 18 * * * means execution at 18:00 every day.
 func (o ScheduleSqlTaskRequestCycleOutput) CronTab() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScheduleSqlTaskRequestCycle) *string { return v.CronTab }).(pulumi.StringPtrOutput)
 }
 
-// 设置 Type 为 Cron 时，还需设置时区。
+// If Type is set to Cron, you must also set the time zone.
 func (o ScheduleSqlTaskRequestCycleOutput) CronTimeZone() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScheduleSqlTaskRequestCycle) *string { return v.CronTimeZone }).(pulumi.StringPtrOutput)
 }
 
-// 调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+// Scheduling period or the time point for periodic execution (minutes from 00:00). Range: 1–1440 minutes.
 func (o ScheduleSqlTaskRequestCycleOutput) Time() pulumi.IntOutput {
 	return o.ApplyT(func(v ScheduleSqlTaskRequestCycle) int { return v.Time }).(pulumi.IntOutput)
 }
 
-// 调度周期类型。可选值：Period、Fixed、Cron。
+// Scheduling period type. Options: Period, Fixed, Cron.
 func (o ScheduleSqlTaskRequestCycleOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v ScheduleSqlTaskRequestCycle) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -1868,7 +1868,7 @@ func (o ScheduleSqlTaskRequestCyclePtrOutput) Elem() ScheduleSqlTaskRequestCycle
 	}).(ScheduleSqlTaskRequestCycleOutput)
 }
 
-// Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+// Cron expression, with a minimum granularity of minutes, using 24-hour format. For example, 0 18 * * * means execution at 18:00 every day.
 func (o ScheduleSqlTaskRequestCyclePtrOutput) CronTab() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScheduleSqlTaskRequestCycle) *string {
 		if v == nil {
@@ -1878,7 +1878,7 @@ func (o ScheduleSqlTaskRequestCyclePtrOutput) CronTab() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 设置 Type 为 Cron 时，还需设置时区。
+// If Type is set to Cron, you must also set the time zone.
 func (o ScheduleSqlTaskRequestCyclePtrOutput) CronTimeZone() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScheduleSqlTaskRequestCycle) *string {
 		if v == nil {
@@ -1888,7 +1888,7 @@ func (o ScheduleSqlTaskRequestCyclePtrOutput) CronTimeZone() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
-// 调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+// Scheduling period or the time point for periodic execution (minutes from 00:00). Range: 1–1440 minutes.
 func (o ScheduleSqlTaskRequestCyclePtrOutput) Time() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ScheduleSqlTaskRequestCycle) *int {
 		if v == nil {
@@ -1898,7 +1898,7 @@ func (o ScheduleSqlTaskRequestCyclePtrOutput) Time() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 调度周期类型。可选值：Period、Fixed、Cron。
+// Scheduling period type. Options: Period, Fixed, Cron.
 func (o ScheduleSqlTaskRequestCyclePtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScheduleSqlTaskRequestCycle) *string {
 		if v == nil {
@@ -1909,9 +1909,9 @@ func (o ScheduleSqlTaskRequestCyclePtrOutput) Type() pulumi.StringPtrOutput {
 }
 
 type TopicTag struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value *string `pulumi:"value"`
 }
 
@@ -1927,9 +1927,9 @@ type TopicTagInput interface {
 }
 
 type TopicTagArgs struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -1984,12 +1984,12 @@ func (o TopicTagOutput) ToTopicTagOutputWithContext(ctx context.Context) TopicTa
 	return o
 }
 
-// 用户标签的标签键。
+// User tag key.
 func (o TopicTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TopicTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。
+// User tag value.
 func (o TopicTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TopicTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -2015,11 +2015,11 @@ func (o TopicTagArrayOutput) Index(i pulumi.IntInput) TopicTagOutput {
 }
 
 type GetIndexFullText struct {
-	// 是否大小写敏感。true：大小写敏感。false：大小写不敏感。
+	// Case sensitivity. true: Case sensitive. false: Not case sensitive.
 	CaseSensitive bool `pulumi:"caseSensitive"`
-	// 全文索引的分词符。字符串中每个字符代表一个分词符。长度为 1~256 字节。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	// Token separators for the full-text index. Each character in the string represents a token separator. Length: 1–256 bytes. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
 	Delimiter string `pulumi:"delimiter"`
-	// 检索时，是否对日志的中文内容按照中文语法进行分词，默认为 false。true：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。false：按照分词符参数中指定的分词符对日志进行分词。
+	// When searching, specify whether to segment Chinese content in logs according to Chinese grammar. The default is false. true: For Chinese characters in logs, segment the log according to common Chinese grammar rules. Custom segmentation symbols for Chinese content are not supported. For non-Chinese characters in logs, segment the log using the segmentation symbols specified in the parameter. false: Segment the log using the segmentation symbols specified in the parameter.
 	IncludeChinese bool `pulumi:"includeChinese"`
 }
 
@@ -2035,11 +2035,11 @@ type GetIndexFullTextInput interface {
 }
 
 type GetIndexFullTextArgs struct {
-	// 是否大小写敏感。true：大小写敏感。false：大小写不敏感。
+	// Case sensitivity. true: Case sensitive. false: Not case sensitive.
 	CaseSensitive pulumi.BoolInput `pulumi:"caseSensitive"`
-	// 全文索引的分词符。字符串中每个字符代表一个分词符。长度为 1~256 字节。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	// Token separators for the full-text index. Each character in the string represents a token separator. Length: 1–256 bytes. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
 	Delimiter pulumi.StringInput `pulumi:"delimiter"`
-	// 检索时，是否对日志的中文内容按照中文语法进行分词，默认为 false。true：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。false：按照分词符参数中指定的分词符对日志进行分词。
+	// When searching, specify whether to segment Chinese content in logs according to Chinese grammar. The default is false. true: For Chinese characters in logs, segment the log according to common Chinese grammar rules. Custom segmentation symbols for Chinese content are not supported. For non-Chinese characters in logs, segment the log using the segmentation symbols specified in the parameter. false: Segment the log using the segmentation symbols specified in the parameter.
 	IncludeChinese pulumi.BoolInput `pulumi:"includeChinese"`
 }
 
@@ -2069,25 +2069,25 @@ func (o GetIndexFullTextOutput) ToGetIndexFullTextOutputWithContext(ctx context.
 	return o
 }
 
-// 是否大小写敏感。true：大小写敏感。false：大小写不敏感。
+// Case sensitivity. true: Case sensitive. false: Not case sensitive.
 func (o GetIndexFullTextOutput) CaseSensitive() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIndexFullText) bool { return v.CaseSensitive }).(pulumi.BoolOutput)
 }
 
-// 全文索引的分词符。字符串中每个字符代表一个分词符。长度为 1~256 字节。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+// Token separators for the full-text index. Each character in the string represents a token separator. Length: 1–256 bytes. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
 func (o GetIndexFullTextOutput) Delimiter() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIndexFullText) string { return v.Delimiter }).(pulumi.StringOutput)
 }
 
-// 检索时，是否对日志的中文内容按照中文语法进行分词，默认为 false。true：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。false：按照分词符参数中指定的分词符对日志进行分词。
+// When searching, specify whether to segment Chinese content in logs according to Chinese grammar. The default is false. true: For Chinese characters in logs, segment the log according to common Chinese grammar rules. Custom segmentation symbols for Chinese content are not supported. For non-Chinese characters in logs, segment the log using the segmentation symbols specified in the parameter. false: Segment the log using the segmentation symbols specified in the parameter.
 func (o GetIndexFullTextOutput) IncludeChinese() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIndexFullText) bool { return v.IncludeChinese }).(pulumi.BoolOutput)
 }
 
 type GetIndexKeyValue struct {
-	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	// Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
 	Key string `pulumi:"key"`
-	// 需要配置键值索引的字段描述信息。
+	// Field description information required for configuring key-value indexes.
 	Value GetIndexKeyValueValue `pulumi:"value"`
 }
 
@@ -2103,9 +2103,9 @@ type GetIndexKeyValueInput interface {
 }
 
 type GetIndexKeyValueArgs struct {
-	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	// Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 需要配置键值索引的字段描述信息。
+	// Field description information required for configuring key-value indexes.
 	Value GetIndexKeyValueValueInput `pulumi:"value"`
 }
 
@@ -2160,12 +2160,12 @@ func (o GetIndexKeyValueOutput) ToGetIndexKeyValueOutputWithContext(ctx context.
 	return o
 }
 
-// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+// Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
 func (o GetIndexKeyValueOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIndexKeyValue) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 需要配置键值索引的字段描述信息。
+// Field description information required for configuring key-value indexes.
 func (o GetIndexKeyValueOutput) Value() GetIndexKeyValueValueOutput {
 	return o.ApplyT(func(v GetIndexKeyValue) GetIndexKeyValueValue { return v.Value }).(GetIndexKeyValueValueOutput)
 }
@@ -2191,23 +2191,23 @@ func (o GetIndexKeyValueArrayOutput) Index(i pulumi.IntInput) GetIndexKeyValueOu
 }
 
 type GetIndexKeyValueValue struct {
-	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 	AutoIndexFlag bool `pulumi:"autoIndexFlag"`
-	// 是否区分大小写。默认为 false。
+	// Whether to distinguish case. Default is false.
 	CaseSensitive bool `pulumi:"caseSensitive"`
-	// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
 	Delimiter string `pulumi:"delimiter"`
-	// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+	// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
 	IncludeChinese bool `pulumi:"includeChinese"`
-	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	// Create indexes for all fields with text values in the JSON field.
 	IndexAll bool `pulumi:"indexAll"`
-	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
 	IndexSqlAll bool `pulumi:"indexSqlAll"`
-	// 当 ValueType 为 json 时，可通过 JsonKeys 字段配置 JSON 子字段键值索引，其值为 KeyValueInfo 数组。JsonKeys 列表中每个元素为 KeyValueInfo，可进一步嵌套定义 text、long、double 类型子字段。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。JsonKeys 中定义的子字段键值索引的 SqlFlag 设置应与其父字段设置保持一致，即需要同时开启或关闭，默认为关闭状态。子字段不支持单独设置 Delimiter、CaseSensitive 和 IncludeChinese，对于 text 类型的字段，CaseSensitive、Delimiter 和 IncludeChinese 固定沿用父字段设置。仅当 ValueType 为 json 时设置。
+	// When ValueType is json, you can configure key-value indexes for JSON subfields using the JsonKeys field, which is an array of KeyValueInfo. Each element in the JsonKeys list is a KeyValueInfo, and you can further nest text, long, and double type subfields. For subfields in JSON key-value indexes, use . to indicate the hierarchy between JSON fields. For example, the JSON field namelist contains a text-type subfield totalcount and a JSON-type info, which itself contains the field name. Each field name should be configured as totalcount and info.name, respectively. The SqlFlag setting for subfield key-value indexes defined in JsonKeys must match their parent field, meaning they must be enabled or disabled together. The default is disabled. Subfields do not support separate settings for Delimiter, CaseSensitive, or IncludeChinese. For text-type fields, CaseSensitive, Delimiter, and IncludeChinese always inherit the parent field settings. This is only set when ValueType is json.
 	JsonKeys []GetIndexKeyValueValueJsonKey `pulumi:"jsonKeys"`
-	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	// Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
 	SqlFlag bool `pulumi:"sqlFlag"`
-	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	// Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
 	ValueType string `pulumi:"valueType"`
 }
 
@@ -2223,23 +2223,23 @@ type GetIndexKeyValueValueInput interface {
 }
 
 type GetIndexKeyValueValueArgs struct {
-	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 	AutoIndexFlag pulumi.BoolInput `pulumi:"autoIndexFlag"`
-	// 是否区分大小写。默认为 false。
+	// Whether to distinguish case. Default is false.
 	CaseSensitive pulumi.BoolInput `pulumi:"caseSensitive"`
-	// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
 	Delimiter pulumi.StringInput `pulumi:"delimiter"`
-	// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+	// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
 	IncludeChinese pulumi.BoolInput `pulumi:"includeChinese"`
-	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	// Create indexes for all fields with text values in the JSON field.
 	IndexAll pulumi.BoolInput `pulumi:"indexAll"`
-	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
 	IndexSqlAll pulumi.BoolInput `pulumi:"indexSqlAll"`
-	// 当 ValueType 为 json 时，可通过 JsonKeys 字段配置 JSON 子字段键值索引，其值为 KeyValueInfo 数组。JsonKeys 列表中每个元素为 KeyValueInfo，可进一步嵌套定义 text、long、double 类型子字段。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。JsonKeys 中定义的子字段键值索引的 SqlFlag 设置应与其父字段设置保持一致，即需要同时开启或关闭，默认为关闭状态。子字段不支持单独设置 Delimiter、CaseSensitive 和 IncludeChinese，对于 text 类型的字段，CaseSensitive、Delimiter 和 IncludeChinese 固定沿用父字段设置。仅当 ValueType 为 json 时设置。
+	// When ValueType is json, you can configure key-value indexes for JSON subfields using the JsonKeys field, which is an array of KeyValueInfo. Each element in the JsonKeys list is a KeyValueInfo, and you can further nest text, long, and double type subfields. For subfields in JSON key-value indexes, use . to indicate the hierarchy between JSON fields. For example, the JSON field namelist contains a text-type subfield totalcount and a JSON-type info, which itself contains the field name. Each field name should be configured as totalcount and info.name, respectively. The SqlFlag setting for subfield key-value indexes defined in JsonKeys must match their parent field, meaning they must be enabled or disabled together. The default is disabled. Subfields do not support separate settings for Delimiter, CaseSensitive, or IncludeChinese. For text-type fields, CaseSensitive, Delimiter, and IncludeChinese always inherit the parent field settings. This is only set when ValueType is json.
 	JsonKeys GetIndexKeyValueValueJsonKeyArrayInput `pulumi:"jsonKeys"`
-	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	// Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
 	SqlFlag pulumi.BoolInput `pulumi:"sqlFlag"`
-	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	// Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
 	ValueType pulumi.StringInput `pulumi:"valueType"`
 }
 
@@ -2269,55 +2269,55 @@ func (o GetIndexKeyValueValueOutput) ToGetIndexKeyValueValueOutputWithContext(ct
 	return o
 }
 
-// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 func (o GetIndexKeyValueValueOutput) AutoIndexFlag() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIndexKeyValueValue) bool { return v.AutoIndexFlag }).(pulumi.BoolOutput)
 }
 
-// 是否区分大小写。默认为 false。
+// Whether to distinguish case. Default is false.
 func (o GetIndexKeyValueValueOutput) CaseSensitive() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIndexKeyValueValue) bool { return v.CaseSensitive }).(pulumi.BoolOutput)
 }
 
-// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
 func (o GetIndexKeyValueValueOutput) Delimiter() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIndexKeyValueValue) string { return v.Delimiter }).(pulumi.StringOutput)
 }
 
-// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
 func (o GetIndexKeyValueValueOutput) IncludeChinese() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIndexKeyValueValue) bool { return v.IncludeChinese }).(pulumi.BoolOutput)
 }
 
-// 是否为 JSON 字段中所有值为文本的字段创建索引。
+// Create indexes for all fields with text values in the JSON field.
 func (o GetIndexKeyValueValueOutput) IndexAll() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIndexKeyValueValue) bool { return v.IndexAll }).(pulumi.BoolOutput)
 }
 
-// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
 func (o GetIndexKeyValueValueOutput) IndexSqlAll() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIndexKeyValueValue) bool { return v.IndexSqlAll }).(pulumi.BoolOutput)
 }
 
-// 当 ValueType 为 json 时，可通过 JsonKeys 字段配置 JSON 子字段键值索引，其值为 KeyValueInfo 数组。JsonKeys 列表中每个元素为 KeyValueInfo，可进一步嵌套定义 text、long、double 类型子字段。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。JsonKeys 中定义的子字段键值索引的 SqlFlag 设置应与其父字段设置保持一致，即需要同时开启或关闭，默认为关闭状态。子字段不支持单独设置 Delimiter、CaseSensitive 和 IncludeChinese，对于 text 类型的字段，CaseSensitive、Delimiter 和 IncludeChinese 固定沿用父字段设置。仅当 ValueType 为 json 时设置。
+// When ValueType is json, you can configure key-value indexes for JSON subfields using the JsonKeys field, which is an array of KeyValueInfo. Each element in the JsonKeys list is a KeyValueInfo, and you can further nest text, long, and double type subfields. For subfields in JSON key-value indexes, use . to indicate the hierarchy between JSON fields. For example, the JSON field namelist contains a text-type subfield totalcount and a JSON-type info, which itself contains the field name. Each field name should be configured as totalcount and info.name, respectively. The SqlFlag setting for subfield key-value indexes defined in JsonKeys must match their parent field, meaning they must be enabled or disabled together. The default is disabled. Subfields do not support separate settings for Delimiter, CaseSensitive, or IncludeChinese. For text-type fields, CaseSensitive, Delimiter, and IncludeChinese always inherit the parent field settings. This is only set when ValueType is json.
 func (o GetIndexKeyValueValueOutput) JsonKeys() GetIndexKeyValueValueJsonKeyArrayOutput {
 	return o.ApplyT(func(v GetIndexKeyValueValue) []GetIndexKeyValueValueJsonKey { return v.JsonKeys }).(GetIndexKeyValueValueJsonKeyArrayOutput)
 }
 
-// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+// Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
 func (o GetIndexKeyValueValueOutput) SqlFlag() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIndexKeyValueValue) bool { return v.SqlFlag }).(pulumi.BoolOutput)
 }
 
-// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+// Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
 func (o GetIndexKeyValueValueOutput) ValueType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIndexKeyValueValue) string { return v.ValueType }).(pulumi.StringOutput)
 }
 
 type GetIndexKeyValueValueJsonKey struct {
-	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	// Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
 	Key string `pulumi:"key"`
-	// 需要配置键值索引的字段描述信息。
+	// Field description information required for configuring key-value indexes.
 	Value GetIndexKeyValueValueJsonKeyValue `pulumi:"value"`
 }
 
@@ -2333,9 +2333,9 @@ type GetIndexKeyValueValueJsonKeyInput interface {
 }
 
 type GetIndexKeyValueValueJsonKeyArgs struct {
-	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	// Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 需要配置键值索引的字段描述信息。
+	// Field description information required for configuring key-value indexes.
 	Value GetIndexKeyValueValueJsonKeyValueInput `pulumi:"value"`
 }
 
@@ -2390,12 +2390,12 @@ func (o GetIndexKeyValueValueJsonKeyOutput) ToGetIndexKeyValueValueJsonKeyOutput
 	return o
 }
 
-// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+// Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
 func (o GetIndexKeyValueValueJsonKeyOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIndexKeyValueValueJsonKey) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 需要配置键值索引的字段描述信息。
+// Field description information required for configuring key-value indexes.
 func (o GetIndexKeyValueValueJsonKeyOutput) Value() GetIndexKeyValueValueJsonKeyValueOutput {
 	return o.ApplyT(func(v GetIndexKeyValueValueJsonKey) GetIndexKeyValueValueJsonKeyValue { return v.Value }).(GetIndexKeyValueValueJsonKeyValueOutput)
 }
@@ -2421,21 +2421,21 @@ func (o GetIndexKeyValueValueJsonKeyArrayOutput) Index(i pulumi.IntInput) GetInd
 }
 
 type GetIndexKeyValueValueJsonKeyValue struct {
-	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 	AutoIndexFlag bool `pulumi:"autoIndexFlag"`
-	// 是否区分大小写。默认为 false。
+	// Whether to distinguish case. Default is false.
 	CaseSensitive bool `pulumi:"caseSensitive"`
-	// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
 	Delimiter string `pulumi:"delimiter"`
-	// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+	// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
 	IncludeChinese bool `pulumi:"includeChinese"`
-	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	// Create indexes for all fields with text values in the JSON field.
 	IndexAll bool `pulumi:"indexAll"`
-	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
 	IndexSqlAll bool `pulumi:"indexSqlAll"`
-	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	// Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
 	SqlFlag bool `pulumi:"sqlFlag"`
-	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	// Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
 	ValueType string `pulumi:"valueType"`
 }
 
@@ -2451,21 +2451,21 @@ type GetIndexKeyValueValueJsonKeyValueInput interface {
 }
 
 type GetIndexKeyValueValueJsonKeyValueArgs struct {
-	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 	AutoIndexFlag pulumi.BoolInput `pulumi:"autoIndexFlag"`
-	// 是否区分大小写。默认为 false。
+	// Whether to distinguish case. Default is false.
 	CaseSensitive pulumi.BoolInput `pulumi:"caseSensitive"`
-	// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
 	Delimiter pulumi.StringInput `pulumi:"delimiter"`
-	// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+	// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
 	IncludeChinese pulumi.BoolInput `pulumi:"includeChinese"`
-	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	// Create indexes for all fields with text values in the JSON field.
 	IndexAll pulumi.BoolInput `pulumi:"indexAll"`
-	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
 	IndexSqlAll pulumi.BoolInput `pulumi:"indexSqlAll"`
-	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	// Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
 	SqlFlag pulumi.BoolInput `pulumi:"sqlFlag"`
-	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	// Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
 	ValueType pulumi.StringInput `pulumi:"valueType"`
 }
 
@@ -2495,50 +2495,50 @@ func (o GetIndexKeyValueValueJsonKeyValueOutput) ToGetIndexKeyValueValueJsonKeyV
 	return o
 }
 
-// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 func (o GetIndexKeyValueValueJsonKeyValueOutput) AutoIndexFlag() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIndexKeyValueValueJsonKeyValue) bool { return v.AutoIndexFlag }).(pulumi.BoolOutput)
 }
 
-// 是否区分大小写。默认为 false。
+// Whether to distinguish case. Default is false.
 func (o GetIndexKeyValueValueJsonKeyValueOutput) CaseSensitive() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIndexKeyValueValueJsonKeyValue) bool { return v.CaseSensitive }).(pulumi.BoolOutput)
 }
 
-// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
 func (o GetIndexKeyValueValueJsonKeyValueOutput) Delimiter() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIndexKeyValueValueJsonKeyValue) string { return v.Delimiter }).(pulumi.StringOutput)
 }
 
-// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
 func (o GetIndexKeyValueValueJsonKeyValueOutput) IncludeChinese() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIndexKeyValueValueJsonKeyValue) bool { return v.IncludeChinese }).(pulumi.BoolOutput)
 }
 
-// 是否为 JSON 字段中所有值为文本的字段创建索引。
+// Create indexes for all fields with text values in the JSON field.
 func (o GetIndexKeyValueValueJsonKeyValueOutput) IndexAll() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIndexKeyValueValueJsonKeyValue) bool { return v.IndexAll }).(pulumi.BoolOutput)
 }
 
-// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
 func (o GetIndexKeyValueValueJsonKeyValueOutput) IndexSqlAll() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIndexKeyValueValueJsonKeyValue) bool { return v.IndexSqlAll }).(pulumi.BoolOutput)
 }
 
-// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+// Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
 func (o GetIndexKeyValueValueJsonKeyValueOutput) SqlFlag() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIndexKeyValueValueJsonKeyValue) bool { return v.SqlFlag }).(pulumi.BoolOutput)
 }
 
-// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+// Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
 func (o GetIndexKeyValueValueJsonKeyValueOutput) ValueType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIndexKeyValueValueJsonKeyValue) string { return v.ValueType }).(pulumi.StringOutput)
 }
 
 type GetIndexUserInnerKeyValue struct {
-	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	// Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
 	Key string `pulumi:"key"`
-	// 需要配置键值索引的字段描述信息。
+	// Field description information required for configuring key-value indexes.
 	Value GetIndexUserInnerKeyValueValue `pulumi:"value"`
 }
 
@@ -2554,9 +2554,9 @@ type GetIndexUserInnerKeyValueInput interface {
 }
 
 type GetIndexUserInnerKeyValueArgs struct {
-	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	// Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 需要配置键值索引的字段描述信息。
+	// Field description information required for configuring key-value indexes.
 	Value GetIndexUserInnerKeyValueValueInput `pulumi:"value"`
 }
 
@@ -2611,12 +2611,12 @@ func (o GetIndexUserInnerKeyValueOutput) ToGetIndexUserInnerKeyValueOutputWithCo
 	return o
 }
 
-// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+// Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
 func (o GetIndexUserInnerKeyValueOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIndexUserInnerKeyValue) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 需要配置键值索引的字段描述信息。
+// Field description information required for configuring key-value indexes.
 func (o GetIndexUserInnerKeyValueOutput) Value() GetIndexUserInnerKeyValueValueOutput {
 	return o.ApplyT(func(v GetIndexUserInnerKeyValue) GetIndexUserInnerKeyValueValue { return v.Value }).(GetIndexUserInnerKeyValueValueOutput)
 }
@@ -2642,23 +2642,23 @@ func (o GetIndexUserInnerKeyValueArrayOutput) Index(i pulumi.IntInput) GetIndexU
 }
 
 type GetIndexUserInnerKeyValueValue struct {
-	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 	AutoIndexFlag bool `pulumi:"autoIndexFlag"`
-	// 是否区分大小写。默认为 false。
+	// Whether to distinguish case. Default is false.
 	CaseSensitive bool `pulumi:"caseSensitive"`
-	// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
 	Delimiter string `pulumi:"delimiter"`
-	// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+	// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
 	IncludeChinese bool `pulumi:"includeChinese"`
-	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	// Create indexes for all fields with text values in the JSON field.
 	IndexAll bool `pulumi:"indexAll"`
-	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
 	IndexSqlAll bool `pulumi:"indexSqlAll"`
-	// 当 ValueType 为 json 时，可通过 JsonKeys 字段配置 JSON 子字段键值索引，其值为 KeyValueInfo 数组。JsonKeys 列表中每个元素为 KeyValueInfo，可进一步嵌套定义 text、long、double 类型子字段。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。JsonKeys 中定义的子字段键值索引的 SqlFlag 设置应与其父字段设置保持一致，即需要同时开启或关闭，默认为关闭状态。子字段不支持单独设置 Delimiter、CaseSensitive 和 IncludeChinese，对于 text 类型的字段，CaseSensitive、Delimiter 和 IncludeChinese 固定沿用父字段设置。仅当 ValueType 为 json 时设置。
+	// When ValueType is json, you can configure key-value indexes for JSON subfields using the JsonKeys field, which is an array of KeyValueInfo. Each element in the JsonKeys list is a KeyValueInfo, and you can further nest text, long, and double type subfields. For subfields in JSON key-value indexes, use . to indicate the hierarchy between JSON fields. For example, the JSON field namelist contains a text-type subfield totalcount and a JSON-type info, which itself contains the field name. Each field name should be configured as totalcount and info.name, respectively. The SqlFlag setting for subfield key-value indexes defined in JsonKeys must match their parent field, meaning they must be enabled or disabled together. The default is disabled. Subfields do not support separate settings for Delimiter, CaseSensitive, or IncludeChinese. For text-type fields, CaseSensitive, Delimiter, and IncludeChinese always inherit the parent field settings. This is only set when ValueType is json.
 	JsonKeys []GetIndexUserInnerKeyValueValueJsonKey `pulumi:"jsonKeys"`
-	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	// Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
 	SqlFlag bool `pulumi:"sqlFlag"`
-	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	// Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
 	ValueType string `pulumi:"valueType"`
 }
 
@@ -2674,23 +2674,23 @@ type GetIndexUserInnerKeyValueValueInput interface {
 }
 
 type GetIndexUserInnerKeyValueValueArgs struct {
-	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 	AutoIndexFlag pulumi.BoolInput `pulumi:"autoIndexFlag"`
-	// 是否区分大小写。默认为 false。
+	// Whether to distinguish case. Default is false.
 	CaseSensitive pulumi.BoolInput `pulumi:"caseSensitive"`
-	// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
 	Delimiter pulumi.StringInput `pulumi:"delimiter"`
-	// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+	// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
 	IncludeChinese pulumi.BoolInput `pulumi:"includeChinese"`
-	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	// Create indexes for all fields with text values in the JSON field.
 	IndexAll pulumi.BoolInput `pulumi:"indexAll"`
-	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
 	IndexSqlAll pulumi.BoolInput `pulumi:"indexSqlAll"`
-	// 当 ValueType 为 json 时，可通过 JsonKeys 字段配置 JSON 子字段键值索引，其值为 KeyValueInfo 数组。JsonKeys 列表中每个元素为 KeyValueInfo，可进一步嵌套定义 text、long、double 类型子字段。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。JsonKeys 中定义的子字段键值索引的 SqlFlag 设置应与其父字段设置保持一致，即需要同时开启或关闭，默认为关闭状态。子字段不支持单独设置 Delimiter、CaseSensitive 和 IncludeChinese，对于 text 类型的字段，CaseSensitive、Delimiter 和 IncludeChinese 固定沿用父字段设置。仅当 ValueType 为 json 时设置。
+	// When ValueType is json, you can configure key-value indexes for JSON subfields using the JsonKeys field, which is an array of KeyValueInfo. Each element in the JsonKeys list is a KeyValueInfo, and you can further nest text, long, and double type subfields. For subfields in JSON key-value indexes, use . to indicate the hierarchy between JSON fields. For example, the JSON field namelist contains a text-type subfield totalcount and a JSON-type info, which itself contains the field name. Each field name should be configured as totalcount and info.name, respectively. The SqlFlag setting for subfield key-value indexes defined in JsonKeys must match their parent field, meaning they must be enabled or disabled together. The default is disabled. Subfields do not support separate settings for Delimiter, CaseSensitive, or IncludeChinese. For text-type fields, CaseSensitive, Delimiter, and IncludeChinese always inherit the parent field settings. This is only set when ValueType is json.
 	JsonKeys GetIndexUserInnerKeyValueValueJsonKeyArrayInput `pulumi:"jsonKeys"`
-	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	// Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
 	SqlFlag pulumi.BoolInput `pulumi:"sqlFlag"`
-	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	// Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
 	ValueType pulumi.StringInput `pulumi:"valueType"`
 }
 
@@ -2720,55 +2720,55 @@ func (o GetIndexUserInnerKeyValueValueOutput) ToGetIndexUserInnerKeyValueValueOu
 	return o
 }
 
-// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 func (o GetIndexUserInnerKeyValueValueOutput) AutoIndexFlag() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIndexUserInnerKeyValueValue) bool { return v.AutoIndexFlag }).(pulumi.BoolOutput)
 }
 
-// 是否区分大小写。默认为 false。
+// Whether to distinguish case. Default is false.
 func (o GetIndexUserInnerKeyValueValueOutput) CaseSensitive() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIndexUserInnerKeyValueValue) bool { return v.CaseSensitive }).(pulumi.BoolOutput)
 }
 
-// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
 func (o GetIndexUserInnerKeyValueValueOutput) Delimiter() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIndexUserInnerKeyValueValue) string { return v.Delimiter }).(pulumi.StringOutput)
 }
 
-// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
 func (o GetIndexUserInnerKeyValueValueOutput) IncludeChinese() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIndexUserInnerKeyValueValue) bool { return v.IncludeChinese }).(pulumi.BoolOutput)
 }
 
-// 是否为 JSON 字段中所有值为文本的字段创建索引。
+// Create indexes for all fields with text values in the JSON field.
 func (o GetIndexUserInnerKeyValueValueOutput) IndexAll() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIndexUserInnerKeyValueValue) bool { return v.IndexAll }).(pulumi.BoolOutput)
 }
 
-// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
 func (o GetIndexUserInnerKeyValueValueOutput) IndexSqlAll() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIndexUserInnerKeyValueValue) bool { return v.IndexSqlAll }).(pulumi.BoolOutput)
 }
 
-// 当 ValueType 为 json 时，可通过 JsonKeys 字段配置 JSON 子字段键值索引，其值为 KeyValueInfo 数组。JsonKeys 列表中每个元素为 KeyValueInfo，可进一步嵌套定义 text、long、double 类型子字段。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。JsonKeys 中定义的子字段键值索引的 SqlFlag 设置应与其父字段设置保持一致，即需要同时开启或关闭，默认为关闭状态。子字段不支持单独设置 Delimiter、CaseSensitive 和 IncludeChinese，对于 text 类型的字段，CaseSensitive、Delimiter 和 IncludeChinese 固定沿用父字段设置。仅当 ValueType 为 json 时设置。
+// When ValueType is json, you can configure key-value indexes for JSON subfields using the JsonKeys field, which is an array of KeyValueInfo. Each element in the JsonKeys list is a KeyValueInfo, and you can further nest text, long, and double type subfields. For subfields in JSON key-value indexes, use . to indicate the hierarchy between JSON fields. For example, the JSON field namelist contains a text-type subfield totalcount and a JSON-type info, which itself contains the field name. Each field name should be configured as totalcount and info.name, respectively. The SqlFlag setting for subfield key-value indexes defined in JsonKeys must match their parent field, meaning they must be enabled or disabled together. The default is disabled. Subfields do not support separate settings for Delimiter, CaseSensitive, or IncludeChinese. For text-type fields, CaseSensitive, Delimiter, and IncludeChinese always inherit the parent field settings. This is only set when ValueType is json.
 func (o GetIndexUserInnerKeyValueValueOutput) JsonKeys() GetIndexUserInnerKeyValueValueJsonKeyArrayOutput {
 	return o.ApplyT(func(v GetIndexUserInnerKeyValueValue) []GetIndexUserInnerKeyValueValueJsonKey { return v.JsonKeys }).(GetIndexUserInnerKeyValueValueJsonKeyArrayOutput)
 }
 
-// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+// Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
 func (o GetIndexUserInnerKeyValueValueOutput) SqlFlag() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIndexUserInnerKeyValueValue) bool { return v.SqlFlag }).(pulumi.BoolOutput)
 }
 
-// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+// Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
 func (o GetIndexUserInnerKeyValueValueOutput) ValueType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIndexUserInnerKeyValueValue) string { return v.ValueType }).(pulumi.StringOutput)
 }
 
 type GetIndexUserInnerKeyValueValueJsonKey struct {
-	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	// Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
 	Key string `pulumi:"key"`
-	// 需要配置键值索引的字段描述信息。
+	// Field description information required for configuring key-value indexes.
 	Value GetIndexUserInnerKeyValueValueJsonKeyValue `pulumi:"value"`
 }
 
@@ -2784,9 +2784,9 @@ type GetIndexUserInnerKeyValueValueJsonKeyInput interface {
 }
 
 type GetIndexUserInnerKeyValueValueJsonKeyArgs struct {
-	// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+	// Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 需要配置键值索引的字段描述信息。
+	// Field description information required for configuring key-value indexes.
 	Value GetIndexUserInnerKeyValueValueJsonKeyValueInput `pulumi:"value"`
 }
 
@@ -2841,12 +2841,12 @@ func (o GetIndexUserInnerKeyValueValueJsonKeyOutput) ToGetIndexUserInnerKeyValue
 	return o
 }
 
-// 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+// Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
 func (o GetIndexUserInnerKeyValueValueJsonKeyOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIndexUserInnerKeyValueValueJsonKey) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 需要配置键值索引的字段描述信息。
+// Field description information required for configuring key-value indexes.
 func (o GetIndexUserInnerKeyValueValueJsonKeyOutput) Value() GetIndexUserInnerKeyValueValueJsonKeyValueOutput {
 	return o.ApplyT(func(v GetIndexUserInnerKeyValueValueJsonKey) GetIndexUserInnerKeyValueValueJsonKeyValue {
 		return v.Value
@@ -2874,21 +2874,21 @@ func (o GetIndexUserInnerKeyValueValueJsonKeyArrayOutput) Index(i pulumi.IntInpu
 }
 
 type GetIndexUserInnerKeyValueValueJsonKeyValue struct {
-	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 	AutoIndexFlag bool `pulumi:"autoIndexFlag"`
-	// 是否区分大小写。默认为 false。
+	// Whether to distinguish case. Default is false.
 	CaseSensitive bool `pulumi:"caseSensitive"`
-	// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
 	Delimiter string `pulumi:"delimiter"`
-	// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+	// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
 	IncludeChinese bool `pulumi:"includeChinese"`
-	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	// Create indexes for all fields with text values in the JSON field.
 	IndexAll bool `pulumi:"indexAll"`
-	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
 	IndexSqlAll bool `pulumi:"indexSqlAll"`
-	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	// Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
 	SqlFlag bool `pulumi:"sqlFlag"`
-	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	// Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
 	ValueType string `pulumi:"valueType"`
 }
 
@@ -2904,21 +2904,21 @@ type GetIndexUserInnerKeyValueValueJsonKeyValueInput interface {
 }
 
 type GetIndexUserInnerKeyValueValueJsonKeyValueArgs struct {
-	// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+	// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 	AutoIndexFlag pulumi.BoolInput `pulumi:"autoIndexFlag"`
-	// 是否区分大小写。默认为 false。
+	// Whether to distinguish case. Default is false.
 	CaseSensitive pulumi.BoolInput `pulumi:"caseSensitive"`
-	// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+	// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
 	Delimiter pulumi.StringInput `pulumi:"delimiter"`
-	// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+	// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
 	IncludeChinese pulumi.BoolInput `pulumi:"includeChinese"`
-	// 是否为 JSON 字段中所有值为文本的字段创建索引。
+	// Create indexes for all fields with text values in the JSON field.
 	IndexAll pulumi.BoolInput `pulumi:"indexAll"`
-	// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+	// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
 	IndexSqlAll pulumi.BoolInput `pulumi:"indexSqlAll"`
-	// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+	// Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
 	SqlFlag pulumi.BoolInput `pulumi:"sqlFlag"`
-	// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+	// Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
 	ValueType pulumi.StringInput `pulumi:"valueType"`
 }
 
@@ -2948,50 +2948,50 @@ func (o GetIndexUserInnerKeyValueValueJsonKeyValueOutput) ToGetIndexUserInnerKey
 	return o
 }
 
-// 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+// Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
 func (o GetIndexUserInnerKeyValueValueJsonKeyValueOutput) AutoIndexFlag() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIndexUserInnerKeyValueValueJsonKeyValue) bool { return v.AutoIndexFlag }).(pulumi.BoolOutput)
 }
 
-// 是否区分大小写。默认为 false。
+// Whether to distinguish case. Default is false.
 func (o GetIndexUserInnerKeyValueValueJsonKeyValueOutput) CaseSensitive() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIndexUserInnerKeyValueValueJsonKeyValue) bool { return v.CaseSensitive }).(pulumi.BoolOutput)
 }
 
-// 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+// Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\"', <>/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
 func (o GetIndexUserInnerKeyValueValueJsonKeyValueOutput) Delimiter() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIndexUserInnerKeyValueValueJsonKeyValue) string { return v.Delimiter }).(pulumi.StringOutput)
 }
 
-// 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+// When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
 func (o GetIndexUserInnerKeyValueValueJsonKeyValueOutput) IncludeChinese() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIndexUserInnerKeyValueValueJsonKeyValue) bool { return v.IncludeChinese }).(pulumi.BoolOutput)
 }
 
-// 是否为 JSON 字段中所有值为文本的字段创建索引。
+// Create indexes for all fields with text values in the JSON field.
 func (o GetIndexUserInnerKeyValueValueJsonKeyValueOutput) IndexAll() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIndexUserInnerKeyValueValueJsonKeyValue) bool { return v.IndexAll }).(pulumi.BoolOutput)
 }
 
-// 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+// Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
 func (o GetIndexUserInnerKeyValueValueJsonKeyValueOutput) IndexSqlAll() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIndexUserInnerKeyValueValueJsonKeyValue) bool { return v.IndexSqlAll }).(pulumi.BoolOutput)
 }
 
-// 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+// Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
 func (o GetIndexUserInnerKeyValueValueJsonKeyValueOutput) SqlFlag() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIndexUserInnerKeyValueValueJsonKeyValue) bool { return v.SqlFlag }).(pulumi.BoolOutput)
 }
 
-// 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+// Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
 func (o GetIndexUserInnerKeyValueValueJsonKeyValueOutput) ValueType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIndexUserInnerKeyValueValueJsonKeyValue) string { return v.ValueType }).(pulumi.StringOutput)
 }
 
 type GetProjectTag struct {
-	// 标签键。
+	// Tag key
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value string `pulumi:"value"`
 }
 
@@ -3007,9 +3007,9 @@ type GetProjectTagInput interface {
 }
 
 type GetProjectTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -3064,12 +3064,12 @@ func (o GetProjectTagOutput) ToGetProjectTagOutputWithContext(ctx context.Contex
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o GetProjectTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProjectTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value
 func (o GetProjectTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProjectTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -3095,13 +3095,13 @@ func (o GetProjectTagArrayOutput) Index(i pulumi.IntInput) GetProjectTagOutput {
 }
 
 type GetScheduleSqlTaskRequestCycle struct {
-	// Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+	// Cron expression, with a minimum granularity of minutes, using 24-hour format. For example, 0 18 * * * means execution at 18:00 every day.
 	CronTab string `pulumi:"cronTab"`
-	// 设置 Type 为 Cron 时，还需设置时区。
+	// If Type is set to Cron, you must also set the time zone.
 	CronTimeZone string `pulumi:"cronTimeZone"`
-	// 调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+	// Scheduling period or the time point for periodic execution (minutes from 00:00). Range: 1–1440 minutes.
 	Time int `pulumi:"time"`
-	// 调度周期类型。可选值：Period、Fixed、Cron。
+	// Scheduling period type. Options: Period, Fixed, Cron.
 	Type string `pulumi:"type"`
 }
 
@@ -3117,13 +3117,13 @@ type GetScheduleSqlTaskRequestCycleInput interface {
 }
 
 type GetScheduleSqlTaskRequestCycleArgs struct {
-	// Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+	// Cron expression, with a minimum granularity of minutes, using 24-hour format. For example, 0 18 * * * means execution at 18:00 every day.
 	CronTab pulumi.StringInput `pulumi:"cronTab"`
-	// 设置 Type 为 Cron 时，还需设置时区。
+	// If Type is set to Cron, you must also set the time zone.
 	CronTimeZone pulumi.StringInput `pulumi:"cronTimeZone"`
-	// 调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+	// Scheduling period or the time point for periodic execution (minutes from 00:00). Range: 1–1440 minutes.
 	Time pulumi.IntInput `pulumi:"time"`
-	// 调度周期类型。可选值：Period、Fixed、Cron。
+	// Scheduling period type. Options: Period, Fixed, Cron.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -3153,30 +3153,30 @@ func (o GetScheduleSqlTaskRequestCycleOutput) ToGetScheduleSqlTaskRequestCycleOu
 	return o
 }
 
-// Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+// Cron expression, with a minimum granularity of minutes, using 24-hour format. For example, 0 18 * * * means execution at 18:00 every day.
 func (o GetScheduleSqlTaskRequestCycleOutput) CronTab() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduleSqlTaskRequestCycle) string { return v.CronTab }).(pulumi.StringOutput)
 }
 
-// 设置 Type 为 Cron 时，还需设置时区。
+// If Type is set to Cron, you must also set the time zone.
 func (o GetScheduleSqlTaskRequestCycleOutput) CronTimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduleSqlTaskRequestCycle) string { return v.CronTimeZone }).(pulumi.StringOutput)
 }
 
-// 调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+// Scheduling period or the time point for periodic execution (minutes from 00:00). Range: 1–1440 minutes.
 func (o GetScheduleSqlTaskRequestCycleOutput) Time() pulumi.IntOutput {
 	return o.ApplyT(func(v GetScheduleSqlTaskRequestCycle) int { return v.Time }).(pulumi.IntOutput)
 }
 
-// 调度周期类型。可选值：Period、Fixed、Cron。
+// Scheduling period type. Options: Period, Fixed, Cron.
 func (o GetScheduleSqlTaskRequestCycleOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduleSqlTaskRequestCycle) string { return v.Type }).(pulumi.StringOutput)
 }
 
 type GetTopicTag struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key string `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value string `pulumi:"value"`
 }
 
@@ -3192,9 +3192,9 @@ type GetTopicTagInput interface {
 }
 
 type GetTopicTagArgs struct {
-	// 用户标签的标签键。
+	// User tag key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -3249,12 +3249,12 @@ func (o GetTopicTagOutput) ToGetTopicTagOutputWithContext(ctx context.Context) G
 	return o
 }
 
-// 用户标签的标签键。
+// User tag key.
 func (o GetTopicTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTopicTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。
+// User tag value.
 func (o GetTopicTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTopicTag) string { return v.Value }).(pulumi.StringOutput)
 }

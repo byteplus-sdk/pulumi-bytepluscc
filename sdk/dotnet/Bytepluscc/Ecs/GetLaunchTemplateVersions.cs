@@ -13,19 +13,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     public static class GetLaunchTemplateVersions
     {
         /// <summary>
-        /// Plural Data Source schema for Byteplus::ECS::LaunchtemplateVersion
+        /// Plural Data Source schema for Byteplus::ECS::LaunchTemplateVersion
         /// </summary>
         public static Task<GetLaunchTemplateVersionsResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetLaunchTemplateVersionsResult>("bytepluscc:ecs/getLaunchTemplateVersions:getLaunchTemplateVersions", InvokeArgs.Empty, options.WithDefaults());
 
         /// <summary>
-        /// Plural Data Source schema for Byteplus::ECS::LaunchtemplateVersion
+        /// Plural Data Source schema for Byteplus::ECS::LaunchTemplateVersion
         /// </summary>
         public static Output<GetLaunchTemplateVersionsResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLaunchTemplateVersionsResult>("bytepluscc:ecs/getLaunchTemplateVersions:getLaunchTemplateVersions", InvokeArgs.Empty, options.WithDefaults());
 
         /// <summary>
-        /// Plural Data Source schema for Byteplus::ECS::LaunchtemplateVersion
+        /// Plural Data Source schema for Byteplus::ECS::LaunchTemplateVersion
         /// </summary>
         public static Output<GetLaunchTemplateVersionsResult> Invoke(InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetLaunchTemplateVersionsResult>("bytepluscc:ecs/getLaunchTemplateVersions:getLaunchTemplateVersions", InvokeArgs.Empty, options.WithDefaults());

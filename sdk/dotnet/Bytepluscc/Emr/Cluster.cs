@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Emr
 {
     /// <summary>
-    /// E-MapReduce（EMR）是开源 Hadoop 生态的企业级大数据分析系统，完全兼容开源，为您提供 Hadoop、Spark、Hive、Hudi、Iceberg 等生态组件集成和管理。
+    /// E-MapReduce (EMR) is an enterprise-grade big data analytics system based on the open-source Hadoop ecosystem. It is fully compatible with open source and provides integration and management for ecosystem components such as Hadoop, Spark, Hive, Hudi, and Iceberg.
     /// 
     /// ## Import
     /// 
@@ -23,7 +23,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
     public partial class Cluster : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 账号ID。
+        /// Account ID.
         /// </summary>
         [Output("accountId")]
         public Output<int> AccountId { get; private set; } = null!;
@@ -32,7 +32,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         public Output<ImmutableArray<Outputs.ClusterApplicationExtra>> ApplicationExtras { get; private set; } = null!;
 
         /// <summary>
-        /// 集群安装的服务名称列表。创建字段。
+        /// List of service names installed in the cluster. Creation-related field.
         /// </summary>
         [Output("applicationNames")]
         public Output<ImmutableArray<string>> ApplicationNames { get; private set; } = null!;
@@ -44,91 +44,91 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         public Output<ImmutableArray<Outputs.ClusterBootstrapScript>> BootstrapScripts { get; private set; } = null!;
 
         /// <summary>
-        /// 包月的配置参数，当chargeType=PRE时，必选。
+        /// Monthly subscription configuration parameters. Required when chargeType=PRE.
         /// </summary>
         [Output("chargePreConfig")]
         public Output<Outputs.ClusterChargePreConfig> ChargePreConfig { get; private set; } = null!;
 
         /// <summary>
-        /// 付费类型，PRE表示包月，POST表示按量计费。
+        /// Payment type. PRE means monthly subscription, POST means pay-as-you-go.
         /// </summary>
         [Output("chargeType")]
         public Output<string> ChargeType { get; private set; } = null!;
 
         /// <summary>
-        /// 集群dns域名后缀列表。
+        /// Cluster DNS domain suffix list.
         /// </summary>
         [Output("clusterDomainNames")]
         public Output<ImmutableArray<string>> ClusterDomainNames { get; private set; } = null!;
 
         /// <summary>
-        /// 集群ID。
+        /// Cluster ID.
         /// </summary>
         [Output("clusterId")]
         public Output<string> ClusterId { get; private set; } = null!;
 
         /// <summary>
-        /// 集群名称。
+        /// Cluster name.
         /// </summary>
         [Output("clusterName")]
         public Output<string> ClusterName { get; private set; } = null!;
 
         /// <summary>
-        /// 集群状态。
+        /// Cluster status.
         /// </summary>
         [Output("clusterState")]
         public Output<string> ClusterStateValue { get; private set; } = null!;
 
         /// <summary>
-        /// 集群类型。
+        /// Cluster type.
         /// </summary>
         [Output("clusterType")]
         public Output<string> ClusterType { get; private set; } = null!;
 
         /// <summary>
-        /// 集群创建时间。
+        /// Cluster creation time.
         /// </summary>
         [Output("createdTime")]
         public Output<int> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 创建者ID。
+        /// Creator ID.
         /// </summary>
         [Output("creatorId")]
         public Output<int> CreatorId { get; private set; } = null!;
 
         /// <summary>
-        /// 创建者名称。
+        /// Creator name.
         /// </summary>
         [Output("creatorName")]
         public Output<string> CreatorName { get; private set; } = null!;
 
         /// <summary>
-        /// 部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
+        /// Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
         /// </summary>
         [Output("deployMode")]
         public Output<string> DeployMode { get; private set; } = null!;
 
         /// <summary>
-        /// ECS镜像ID。
+        /// ECS image ID.
         /// </summary>
         [Output("ecsImageId")]
         public Output<string> EcsImageId { get; private set; } = null!;
 
         /// <summary>
-        /// 集群过期时间。
+        /// Cluster expiration time.
         /// </summary>
         [Output("expireTime")]
         public Output<int> ExpireTime { get; private set; } = null!;
 
         /// <summary>
-        /// HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
+        /// HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
         /// </summary>
         [Output("historyServerMode")]
         public Output<string> HistoryServerMode { get; private set; } = null!;
 
         /// <summary>
-        /// 集群全局的节点信息。
+        /// Cluster global node information.
         /// </summary>
         [Output("nodeAttribute")]
         public Output<Outputs.ClusterNodeAttribute> NodeAttribute { get; private set; } = null!;
@@ -137,37 +137,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         public Output<ImmutableArray<Outputs.ClusterNodeGroupAttribute>> NodeGroupAttributes { get; private set; } = null!;
 
         /// <summary>
-        /// 资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+        /// Project to which the resource belongs. Default is 'default'. Each resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length is 64 characters.
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 集群创建完成时间。
+        /// Cluster creation completion time.
         /// </summary>
         [Output("readyTime")]
         public Output<int> ReadyTime { get; private set; } = null!;
 
         /// <summary>
-        /// 集群版本。
+        /// Cluster version.
         /// </summary>
         [Output("releaseVersion")]
         public Output<string> ReleaseVersion { get; private set; } = null!;
 
         /// <summary>
-        /// 集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+        /// Cluster global security group ID. All ECS in node groups will join this security group.
         /// </summary>
         [Output("securityGroupId")]
         public Output<string> SecurityGroupId { get; private set; } = null!;
 
         /// <summary>
-        /// 安全模式。
+        /// Security mode.
         /// </summary>
         [Output("securityMode")]
         public Output<string> SecurityMode { get; private set; } = null!;
 
         /// <summary>
-        /// 状态变更原因。
+        /// Status change reason.
         /// </summary>
         [Output("stateChangeReason")]
         public Output<Outputs.ClusterStateChangeReason> StateChangeReason { get; private set; } = null!;
@@ -176,7 +176,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         public Output<ImmutableArray<Outputs.ClusterTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 集群终止时间。
+        /// Cluster termination time.
         /// </summary>
         [Output("terminateTime")]
         public Output<int> TerminateTime { get; private set; } = null!;
@@ -246,7 +246,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         private InputList<string>? _applicationNames;
 
         /// <summary>
-        /// 集群安装的服务名称列表。创建字段。
+        /// List of service names installed in the cluster. Creation-related field.
         /// </summary>
         public InputList<string> ApplicationNames
         {
@@ -263,43 +263,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         }
 
         /// <summary>
-        /// 包月的配置参数，当chargeType=PRE时，必选。
+        /// Monthly subscription configuration parameters. Required when chargeType=PRE.
         /// </summary>
         [Input("chargePreConfig")]
         public Input<Inputs.ClusterChargePreConfigArgs>? ChargePreConfig { get; set; }
 
         /// <summary>
-        /// 付费类型，PRE表示包月，POST表示按量计费。
+        /// Payment type. PRE means monthly subscription, POST means pay-as-you-go.
         /// </summary>
         [Input("chargeType", required: true)]
         public Input<string> ChargeType { get; set; } = null!;
 
         /// <summary>
-        /// 集群名称。
+        /// Cluster name.
         /// </summary>
         [Input("clusterName", required: true)]
         public Input<string> ClusterName { get; set; } = null!;
 
         /// <summary>
-        /// 集群类型。
+        /// Cluster type.
         /// </summary>
         [Input("clusterType", required: true)]
         public Input<string> ClusterType { get; set; } = null!;
 
         /// <summary>
-        /// 部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
+        /// Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
         /// </summary>
         [Input("deployMode")]
         public Input<string>? DeployMode { get; set; }
 
         /// <summary>
-        /// HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
+        /// HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
         /// </summary>
         [Input("historyServerMode")]
         public Input<string>? HistoryServerMode { get; set; }
 
         /// <summary>
-        /// 集群全局的节点信息。
+        /// Cluster global node information.
         /// </summary>
         [Input("nodeAttribute", required: true)]
         public Input<Inputs.ClusterNodeAttributeArgs> NodeAttribute { get; set; } = null!;
@@ -313,25 +313,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         }
 
         /// <summary>
-        /// 资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+        /// Project to which the resource belongs. Default is 'default'. Each resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length is 64 characters.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 集群版本。
+        /// Cluster version.
         /// </summary>
         [Input("releaseVersion", required: true)]
         public Input<string> ReleaseVersion { get; set; } = null!;
 
         /// <summary>
-        /// 集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+        /// Cluster global security group ID. All ECS in node groups will join this security group.
         /// </summary>
         [Input("securityGroupId", required: true)]
         public Input<string> SecurityGroupId { get; set; } = null!;
 
         /// <summary>
-        /// 安全模式。
+        /// Security mode.
         /// </summary>
         [Input("securityMode")]
         public Input<string>? SecurityMode { get; set; }
@@ -359,7 +359,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
     public sealed class ClusterState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 账号ID。
+        /// Account ID.
         /// </summary>
         [Input("accountId")]
         public Input<int>? AccountId { get; set; }
@@ -376,7 +376,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         private InputList<string>? _applicationNames;
 
         /// <summary>
-        /// 集群安装的服务名称列表。创建字段。
+        /// List of service names installed in the cluster. Creation-related field.
         /// </summary>
         public InputList<string> ApplicationNames
         {
@@ -401,13 +401,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         }
 
         /// <summary>
-        /// 包月的配置参数，当chargeType=PRE时，必选。
+        /// Monthly subscription configuration parameters. Required when chargeType=PRE.
         /// </summary>
         [Input("chargePreConfig")]
         public Input<Inputs.ClusterChargePreConfigGetArgs>? ChargePreConfig { get; set; }
 
         /// <summary>
-        /// 付费类型，PRE表示包月，POST表示按量计费。
+        /// Payment type. PRE means monthly subscription, POST means pay-as-you-go.
         /// </summary>
         [Input("chargeType")]
         public Input<string>? ChargeType { get; set; }
@@ -416,7 +416,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         private InputList<string>? _clusterDomainNames;
 
         /// <summary>
-        /// 集群dns域名后缀列表。
+        /// Cluster DNS domain suffix list.
         /// </summary>
         public InputList<string> ClusterDomainNames
         {
@@ -425,73 +425,73 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         }
 
         /// <summary>
-        /// 集群ID。
+        /// Cluster ID.
         /// </summary>
         [Input("clusterId")]
         public Input<string>? ClusterId { get; set; }
 
         /// <summary>
-        /// 集群名称。
+        /// Cluster name.
         /// </summary>
         [Input("clusterName")]
         public Input<string>? ClusterName { get; set; }
 
         /// <summary>
-        /// 集群状态。
+        /// Cluster status.
         /// </summary>
         [Input("clusterState")]
         public Input<string>? ClusterStateValue { get; set; }
 
         /// <summary>
-        /// 集群类型。
+        /// Cluster type.
         /// </summary>
         [Input("clusterType")]
         public Input<string>? ClusterType { get; set; }
 
         /// <summary>
-        /// 集群创建时间。
+        /// Cluster creation time.
         /// </summary>
         [Input("createdTime")]
         public Input<int>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 创建者ID。
+        /// Creator ID.
         /// </summary>
         [Input("creatorId")]
         public Input<int>? CreatorId { get; set; }
 
         /// <summary>
-        /// 创建者名称。
+        /// Creator name.
         /// </summary>
         [Input("creatorName")]
         public Input<string>? CreatorName { get; set; }
 
         /// <summary>
-        /// 部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
+        /// Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
         /// </summary>
         [Input("deployMode")]
         public Input<string>? DeployMode { get; set; }
 
         /// <summary>
-        /// ECS镜像ID。
+        /// ECS image ID.
         /// </summary>
         [Input("ecsImageId")]
         public Input<string>? EcsImageId { get; set; }
 
         /// <summary>
-        /// 集群过期时间。
+        /// Cluster expiration time.
         /// </summary>
         [Input("expireTime")]
         public Input<int>? ExpireTime { get; set; }
 
         /// <summary>
-        /// HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
+        /// HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
         /// </summary>
         [Input("historyServerMode")]
         public Input<string>? HistoryServerMode { get; set; }
 
         /// <summary>
-        /// 集群全局的节点信息。
+        /// Cluster global node information.
         /// </summary>
         [Input("nodeAttribute")]
         public Input<Inputs.ClusterNodeAttributeGetArgs>? NodeAttribute { get; set; }
@@ -505,37 +505,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         }
 
         /// <summary>
-        /// 资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+        /// Project to which the resource belongs. Default is 'default'. Each resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length is 64 characters.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 集群创建完成时间。
+        /// Cluster creation completion time.
         /// </summary>
         [Input("readyTime")]
         public Input<int>? ReadyTime { get; set; }
 
         /// <summary>
-        /// 集群版本。
+        /// Cluster version.
         /// </summary>
         [Input("releaseVersion")]
         public Input<string>? ReleaseVersion { get; set; }
 
         /// <summary>
-        /// 集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+        /// Cluster global security group ID. All ECS in node groups will join this security group.
         /// </summary>
         [Input("securityGroupId")]
         public Input<string>? SecurityGroupId { get; set; }
 
         /// <summary>
-        /// 安全模式。
+        /// Security mode.
         /// </summary>
         [Input("securityMode")]
         public Input<string>? SecurityMode { get; set; }
 
         /// <summary>
-        /// 状态变更原因。
+        /// Status change reason.
         /// </summary>
         [Input("stateChangeReason")]
         public Input<Inputs.ClusterStateChangeReasonGetArgs>? StateChangeReason { get; set; }
@@ -549,7 +549,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         }
 
         /// <summary>
-        /// 集群终止时间。
+        /// Cluster termination time.
         /// </summary>
         [Input("terminateTime")]
         public Input<int>? TerminateTime { get; set; }

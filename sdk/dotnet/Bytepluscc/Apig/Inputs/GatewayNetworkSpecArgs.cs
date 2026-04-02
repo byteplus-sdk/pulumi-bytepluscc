@@ -28,7 +28,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
         public Input<string>? VpcId { get; set; }
 
         /// <summary>
-        /// VPC名称。
+        /// VPC name
         /// </summary>
         [Input("vpcName")]
         public Input<string>? VpcName { get; set; }

@@ -20,42 +20,42 @@ import java.util.Objects;
 @CustomType
 public final class GetUserResult {
     /**
-     * @return 子用户的访问密钥。
+     * @return Sub-user&#39;s access key.
      * 
      */
     private List<GetUserAccessKey> accessKeys;
     /**
-     * @return 子用户归属的主账号。
+     * @return Main account to which the sub-user belongs.
      * 
      */
     private Double accountId;
     /**
-     * @return 子用户对应的创建时间。
+     * @return Sub-user&#39;s creation time.
      * 
      */
     private String createDate;
     /**
-     * @return 子用户对应的描述信息，长度不超过255。
+     * @return Description for the sub-user, up to 255 characters.
      * 
      */
     private String description;
     /**
-     * @return 子用户对应的展示名称，用户显示名。长度1~128，仅支持中文、英文、数字、空格和.-_{@literal @}符号。
+     * @return Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_{@literal @} characters only.
      * 
      */
     private String displayName;
     /**
-     * @return 子用户对应的电子邮件地址。
+     * @return Sub-user&#39;s email address.
      * 
      */
     private String email;
     /**
-     * @return 子用户电子邮件地址是否已验证。true代表已验证，false代表未验证。
+     * @return Whether the sub-user&#39;s email address is verified. &#39;true&#39; means verified, &#39;false&#39; means not verified.
      * 
      */
     private Boolean emailIsVerify;
     /**
-     * @return 子用户归属的用户组。
+     * @return User group to which the sub-user belongs.
      * 
      */
     private List<String> groups;
@@ -65,108 +65,108 @@ public final class GetUserResult {
      */
     private String id;
     /**
-     * @return 子用户的登录配置。
+     * @return Login configuration for the sub-user.
      * 
      */
     private GetUserLoginProfile loginProfile;
     /**
-     * @return 子用户对应的手机号。
+     * @return Sub-user&#39;s mobile number.
      * 
      */
     private String mobilePhone;
     /**
-     * @return 子用户手机号是否已验证。true代表已验证，false代表未验证。
+     * @return Whether the sub-user&#39;s phone number is verified. &#39;true&#39; means verified, &#39;false&#39; means not verified.
      * 
      */
     private Boolean mobilePhoneIsVerify;
     /**
-     * @return 子用户对应的权限策略。
+     * @return Sub-user&#39;s permission policy.
      * 
      */
     private List<GetUserPolicy> policies;
     /**
-     * @return 子用户的操作保护配置。
+     * @return Operation protection configuration for the sub-user.
      * 
      */
     private GetUserSecurityConfig securityConfig;
     /**
-     * @return 子用户对应的资源标签。
+     * @return Sub-user&#39;s resource tags.
      * 
      */
     private List<GetUserTag> tags;
     /**
-     * @return 子用户对应的Trn表达式。
+     * @return TRN expression for the sub-user.
      * 
      */
     private String trn;
     /**
-     * @return 子用户对应的更新时间。
+     * @return Update time for the sub-user.
      * 
      */
     private String updateDate;
     /**
-     * @return 子用户的ID。
+     * @return Sub-user&#39;s ID.
      * 
      */
     private Integer userId;
     /**
-     * @return 子用户名称，用户名。长度1~64，支持英文、数字、下划线、和.-{@literal @}符号。
+     * @return Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-{@literal @} characters.
      * 
      */
     private String userName;
 
     private GetUserResult() {}
     /**
-     * @return 子用户的访问密钥。
+     * @return Sub-user&#39;s access key.
      * 
      */
     public List<GetUserAccessKey> accessKeys() {
         return this.accessKeys;
     }
     /**
-     * @return 子用户归属的主账号。
+     * @return Main account to which the sub-user belongs.
      * 
      */
     public Double accountId() {
         return this.accountId;
     }
     /**
-     * @return 子用户对应的创建时间。
+     * @return Sub-user&#39;s creation time.
      * 
      */
     public String createDate() {
         return this.createDate;
     }
     /**
-     * @return 子用户对应的描述信息，长度不超过255。
+     * @return Description for the sub-user, up to 255 characters.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 子用户对应的展示名称，用户显示名。长度1~128，仅支持中文、英文、数字、空格和.-_{@literal @}符号。
+     * @return Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_{@literal @} characters only.
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return 子用户对应的电子邮件地址。
+     * @return Sub-user&#39;s email address.
      * 
      */
     public String email() {
         return this.email;
     }
     /**
-     * @return 子用户电子邮件地址是否已验证。true代表已验证，false代表未验证。
+     * @return Whether the sub-user&#39;s email address is verified. &#39;true&#39; means verified, &#39;false&#39; means not verified.
      * 
      */
     public Boolean emailIsVerify() {
         return this.emailIsVerify;
     }
     /**
-     * @return 子用户归属的用户组。
+     * @return User group to which the sub-user belongs.
      * 
      */
     public List<String> groups() {
@@ -180,70 +180,70 @@ public final class GetUserResult {
         return this.id;
     }
     /**
-     * @return 子用户的登录配置。
+     * @return Login configuration for the sub-user.
      * 
      */
     public GetUserLoginProfile loginProfile() {
         return this.loginProfile;
     }
     /**
-     * @return 子用户对应的手机号。
+     * @return Sub-user&#39;s mobile number.
      * 
      */
     public String mobilePhone() {
         return this.mobilePhone;
     }
     /**
-     * @return 子用户手机号是否已验证。true代表已验证，false代表未验证。
+     * @return Whether the sub-user&#39;s phone number is verified. &#39;true&#39; means verified, &#39;false&#39; means not verified.
      * 
      */
     public Boolean mobilePhoneIsVerify() {
         return this.mobilePhoneIsVerify;
     }
     /**
-     * @return 子用户对应的权限策略。
+     * @return Sub-user&#39;s permission policy.
      * 
      */
     public List<GetUserPolicy> policies() {
         return this.policies;
     }
     /**
-     * @return 子用户的操作保护配置。
+     * @return Operation protection configuration for the sub-user.
      * 
      */
     public GetUserSecurityConfig securityConfig() {
         return this.securityConfig;
     }
     /**
-     * @return 子用户对应的资源标签。
+     * @return Sub-user&#39;s resource tags.
      * 
      */
     public List<GetUserTag> tags() {
         return this.tags;
     }
     /**
-     * @return 子用户对应的Trn表达式。
+     * @return TRN expression for the sub-user.
      * 
      */
     public String trn() {
         return this.trn;
     }
     /**
-     * @return 子用户对应的更新时间。
+     * @return Update time for the sub-user.
      * 
      */
     public String updateDate() {
         return this.updateDate;
     }
     /**
-     * @return 子用户的ID。
+     * @return Sub-user&#39;s ID.
      * 
      */
     public Integer userId() {
         return this.userId;
     }
     /**
-     * @return 子用户名称，用户名。长度1~64，支持英文、数字、下划线、和.-{@literal @}符号。
+     * @return Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-{@literal @} characters.
      * 
      */
     public String userName() {

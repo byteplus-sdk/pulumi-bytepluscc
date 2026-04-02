@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 针对HTTPS协议，提供统一的证书管理服务，证书无需上传到后端服务器，支持在CLB实例上解密处理，降低了后端服务器的CPU开销。
+// Provides unified certificate management service for HTTPS protocol. Certificates do not need to be uploaded to backend servers. Supports decryption processing on CLB instances, reducing CPU overhead on backend servers.
 //
 // ## Example Usage
 //
@@ -58,29 +58,29 @@ import (
 type Certificate struct {
 	pulumi.CustomResourceState
 
-	// 证书的ID。
+	// Certificate ID.
 	CertificateId pulumi.StringOutput `pulumi:"certificateId"`
-	// 证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
+	// Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
 	CertificateName pulumi.StringOutput `pulumi:"certificateName"`
-	// 证书的创建时间。
+	// Certificate creation time.
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// 证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+	// Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// 证书的主域名。
+	// Certificate primary domain name.
 	DomainName pulumi.StringOutput `pulumi:"domainName"`
-	// 证书的过期时间。
+	// Certificate expiration time.
 	ExpiredAt pulumi.StringOutput `pulumi:"expiredAt"`
-	// 证书关联的监听器的ID。
+	// ID of the listener associated with the certificate.
 	Listeners pulumi.StringArrayOutput `pulumi:"listeners"`
-	// 证书的私钥。
+	// Certificate private key.
 	PrivateKey pulumi.StringOutput `pulumi:"privateKey"`
-	// 证书所属项目的名称。不填默认为default。
+	// Name of the project the certificate belongs to. If not specified, defaults to 'default'.
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
-	// 证书的公钥。
+	// Certificate public key.
 	PublicKey pulumi.StringOutput `pulumi:"publicKey"`
-	// 是否为托管资源。true：托管资源。false：非托管资源。
+	// Managed resource status. true: managed resource. false: unmanaged resource.
 	ServiceManaged pulumi.BoolOutput `pulumi:"serviceManaged"`
-	// 证书的备用域名列表。
+	// List of alternate domain names for the certificate.
 	SubjectAlternativeNames pulumi.StringArrayOutput  `pulumi:"subjectAlternativeNames"`
 	Tags                    CertificateTagArrayOutput `pulumi:"tags"`
 }
@@ -121,57 +121,57 @@ func GetCertificate(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Certificate resources.
 type certificateState struct {
-	// 证书的ID。
+	// Certificate ID.
 	CertificateId *string `pulumi:"certificateId"`
-	// 证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
+	// Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
 	CertificateName *string `pulumi:"certificateName"`
-	// 证书的创建时间。
+	// Certificate creation time.
 	CreatedTime *string `pulumi:"createdTime"`
-	// 证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+	// Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
 	Description *string `pulumi:"description"`
-	// 证书的主域名。
+	// Certificate primary domain name.
 	DomainName *string `pulumi:"domainName"`
-	// 证书的过期时间。
+	// Certificate expiration time.
 	ExpiredAt *string `pulumi:"expiredAt"`
-	// 证书关联的监听器的ID。
+	// ID of the listener associated with the certificate.
 	Listeners []string `pulumi:"listeners"`
-	// 证书的私钥。
+	// Certificate private key.
 	PrivateKey *string `pulumi:"privateKey"`
-	// 证书所属项目的名称。不填默认为default。
+	// Name of the project the certificate belongs to. If not specified, defaults to 'default'.
 	ProjectName *string `pulumi:"projectName"`
-	// 证书的公钥。
+	// Certificate public key.
 	PublicKey *string `pulumi:"publicKey"`
-	// 是否为托管资源。true：托管资源。false：非托管资源。
+	// Managed resource status. true: managed resource. false: unmanaged resource.
 	ServiceManaged *bool `pulumi:"serviceManaged"`
-	// 证书的备用域名列表。
+	// List of alternate domain names for the certificate.
 	SubjectAlternativeNames []string         `pulumi:"subjectAlternativeNames"`
 	Tags                    []CertificateTag `pulumi:"tags"`
 }
 
 type CertificateState struct {
-	// 证书的ID。
+	// Certificate ID.
 	CertificateId pulumi.StringPtrInput
-	// 证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
+	// Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
 	CertificateName pulumi.StringPtrInput
-	// 证书的创建时间。
+	// Certificate creation time.
 	CreatedTime pulumi.StringPtrInput
-	// 证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+	// Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
 	Description pulumi.StringPtrInput
-	// 证书的主域名。
+	// Certificate primary domain name.
 	DomainName pulumi.StringPtrInput
-	// 证书的过期时间。
+	// Certificate expiration time.
 	ExpiredAt pulumi.StringPtrInput
-	// 证书关联的监听器的ID。
+	// ID of the listener associated with the certificate.
 	Listeners pulumi.StringArrayInput
-	// 证书的私钥。
+	// Certificate private key.
 	PrivateKey pulumi.StringPtrInput
-	// 证书所属项目的名称。不填默认为default。
+	// Name of the project the certificate belongs to. If not specified, defaults to 'default'.
 	ProjectName pulumi.StringPtrInput
-	// 证书的公钥。
+	// Certificate public key.
 	PublicKey pulumi.StringPtrInput
-	// 是否为托管资源。true：托管资源。false：非托管资源。
+	// Managed resource status. true: managed resource. false: unmanaged resource.
 	ServiceManaged pulumi.BoolPtrInput
-	// 证书的备用域名列表。
+	// List of alternate domain names for the certificate.
 	SubjectAlternativeNames pulumi.StringArrayInput
 	Tags                    CertificateTagArrayInput
 }
@@ -181,30 +181,30 @@ func (CertificateState) ElementType() reflect.Type {
 }
 
 type certificateArgs struct {
-	// 证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
+	// Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
 	CertificateName *string `pulumi:"certificateName"`
-	// 证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+	// Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
 	Description *string `pulumi:"description"`
-	// 证书的私钥。
+	// Certificate private key.
 	PrivateKey string `pulumi:"privateKey"`
-	// 证书所属项目的名称。不填默认为default。
+	// Name of the project the certificate belongs to. If not specified, defaults to 'default'.
 	ProjectName *string `pulumi:"projectName"`
-	// 证书的公钥。
+	// Certificate public key.
 	PublicKey string           `pulumi:"publicKey"`
 	Tags      []CertificateTag `pulumi:"tags"`
 }
 
 // The set of arguments for constructing a Certificate resource.
 type CertificateArgs struct {
-	// 证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
+	// Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
 	CertificateName pulumi.StringPtrInput
-	// 证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+	// Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
 	Description pulumi.StringPtrInput
-	// 证书的私钥。
+	// Certificate private key.
 	PrivateKey pulumi.StringInput
-	// 证书所属项目的名称。不填默认为default。
+	// Name of the project the certificate belongs to. If not specified, defaults to 'default'.
 	ProjectName pulumi.StringPtrInput
-	// 证书的公钥。
+	// Certificate public key.
 	PublicKey pulumi.StringInput
 	Tags      CertificateTagArrayInput
 }
@@ -296,62 +296,62 @@ func (o CertificateOutput) ToCertificateOutputWithContext(ctx context.Context) C
 	return o
 }
 
-// 证书的ID。
+// Certificate ID.
 func (o CertificateOutput) CertificateId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.CertificateId }).(pulumi.StringOutput)
 }
 
-// 证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
+// Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
 func (o CertificateOutput) CertificateName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.CertificateName }).(pulumi.StringOutput)
 }
 
-// 证书的创建时间。
+// Certificate creation time.
 func (o CertificateOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+// Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
 func (o CertificateOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// 证书的主域名。
+// Certificate primary domain name.
 func (o CertificateOutput) DomainName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.DomainName }).(pulumi.StringOutput)
 }
 
-// 证书的过期时间。
+// Certificate expiration time.
 func (o CertificateOutput) ExpiredAt() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.ExpiredAt }).(pulumi.StringOutput)
 }
 
-// 证书关联的监听器的ID。
+// ID of the listener associated with the certificate.
 func (o CertificateOutput) Listeners() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringArrayOutput { return v.Listeners }).(pulumi.StringArrayOutput)
 }
 
-// 证书的私钥。
+// Certificate private key.
 func (o CertificateOutput) PrivateKey() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.PrivateKey }).(pulumi.StringOutput)
 }
 
-// 证书所属项目的名称。不填默认为default。
+// Name of the project the certificate belongs to. If not specified, defaults to 'default'.
 func (o CertificateOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 证书的公钥。
+// Certificate public key.
 func (o CertificateOutput) PublicKey() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.PublicKey }).(pulumi.StringOutput)
 }
 
-// 是否为托管资源。true：托管资源。false：非托管资源。
+// Managed resource status. true: managed resource. false: unmanaged resource.
 func (o CertificateOutput) ServiceManaged() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.BoolOutput { return v.ServiceManaged }).(pulumi.BoolOutput)
 }
 
-// 证书的备用域名列表。
+// List of alternate domain names for the certificate.
 func (o CertificateOutput) SubjectAlternativeNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringArrayOutput { return v.SubjectAlternativeNames }).(pulumi.StringArrayOutput)
 }

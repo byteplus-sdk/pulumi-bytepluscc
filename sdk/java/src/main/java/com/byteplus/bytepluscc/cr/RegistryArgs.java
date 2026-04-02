@@ -20,14 +20,14 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
     public static final RegistryArgs Empty = new RegistryArgs();
 
     /**
-     * 标准版实例名称，同一个地域下，名称必须唯一。支持小写英文字母、数字、短划线（-）且数字不能在首位，短划线（-）不能在首位或末位，长度限制为 3～30 个字符。
+     * Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return 标准版实例名称，同一个地域下，名称必须唯一。支持小写英文字母、数字、短划线（-）且数字不能在首位，短划线（-）不能在首位或末位，长度限制为 3～30 个字符。
+     * @return Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
      * 
      */
     public Output<String> name() {
@@ -35,14 +35,14 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 填写实例需要关联的项目。一个实例仅支持关联一个项目
+     * Enter the project to associate with the instance. Each instance can only be associated with one project
      * 
      */
     @Import(name="project")
     private @Nullable Output<String> project;
 
     /**
-     * @return 填写实例需要关联的项目。一个实例仅支持关联一个项目
+     * @return Enter the project to associate with the instance. Each instance can only be associated with one project
      * 
      */
     public Optional<Output<String>> project() {
@@ -50,14 +50,14 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
+     * Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
      * 
      */
     @Import(name="status")
     private @Nullable Output<RegistryStatusArgs> status;
 
     /**
-     * @return 镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
+     * @return Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
      * 
      */
     public Optional<Output<RegistryStatusArgs>> status() {
@@ -72,14 +72,14 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
+     * If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
+     * @return If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
      * 
      */
     public Optional<Output<String>> type() {
@@ -115,7 +115,7 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 标准版实例名称，同一个地域下，名称必须唯一。支持小写英文字母、数字、短划线（-）且数字不能在首位，短划线（-）不能在首位或末位，长度限制为 3～30 个字符。
+         * @param name Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
          * 
          * @return builder
          * 
@@ -126,7 +126,7 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 标准版实例名称，同一个地域下，名称必须唯一。支持小写英文字母、数字、短划线（-）且数字不能在首位，短划线（-）不能在首位或末位，长度限制为 3～30 个字符。
+         * @param name Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param project 填写实例需要关联的项目。一个实例仅支持关联一个项目
+         * @param project Enter the project to associate with the instance. Each instance can only be associated with one project
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param project 填写实例需要关联的项目。一个实例仅支持关联一个项目
+         * @param project Enter the project to associate with the instance. Each instance can only be associated with one project
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
+         * @param status Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
+         * @param status Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
          * 
          * @return builder
          * 
@@ -191,7 +191,7 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type 不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
+         * @param type If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
          * 
          * @return builder
          * 
@@ -202,7 +202,7 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type 不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
+         * @param type If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
          * 
          * @return builder
          * 

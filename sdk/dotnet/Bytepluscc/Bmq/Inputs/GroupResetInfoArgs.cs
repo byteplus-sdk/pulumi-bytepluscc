@@ -14,25 +14,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Inputs
     public sealed class GroupResetInfoArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 重置方式为 OFFSET 时，该参数必传，指定重新消费的基准消费位置，取值如下：EARLIEST：基准消费位置为最早消费位点。CURRENT：基准消费位置为当前消费位点。LATEST：基准消费位置为最近消费位点。
+        /// This parameter is required when the reset mode is OFFSET. Specifies the reference consumption position for re-consuming. Options are: EARLIEST: The reference position is the earliest consumption point. CURRENT: The reference position is the current consumption point. LATEST: The reference position is the latest consumption point.
         /// </summary>
         [Input("offsetType")]
         public Input<string>? OffsetType { get; set; }
 
         /// <summary>
-        /// 分区序号。
+        /// Partition number.
         /// </summary>
         [Input("partitionId")]
         public Input<int>? PartitionId { get; set; }
 
         /// <summary>
-        /// 重置方式，取值如下：TIMESTAMP：根据时间点重置消费位点，指定过去或将来的时间点，直接跳转到该时间点的位点开始消费。OFFSET：根据指定的 offset 重置消费位点，即从指定的位点开始消费，可以通过 offsetType 参数指定 offset。
+        /// Reset mode. Options are: TIMESTAMP: Reset the consumption position based on a specific time point. Specify a past or future time, and jump directly to the position at that time to start consuming. OFFSET: Reset the consumption position based on a specified offset. Start consuming from the specified position, and you can use the offsetType parameter to specify the offset.
         /// </summary>
         [Input("resetBy")]
         public Input<string>? ResetBy { get; set; }
 
         /// <summary>
-        /// 重置值。选择重置方式为 TIMESTAMP 时，该值为重新消费的时间点。例如 1722224612000。选择重置方式为 OFFSET 时，该值为相对于 OffsetType 中基准位点的 相对偏移量。例如 100。
+        /// Reset value. If the reset mode is TIMESTAMP, this value is the time point for re-consuming messages, for example, 1722224612000. If the reset mode is OFFSET, this value is the relative offset from the reference position specified in OffsetType, for example, 100.
         /// </summary>
         [Input("resetValue")]
         public Input<int>? ResetValue { get; set; }

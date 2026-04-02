@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas.Outputs
     public sealed class SandboxEnv
     {
         /// <summary>
-        /// 环境变量键。
+        /// Environment variable key
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// 环境变量值。
+        /// Environment variable value
         /// </summary>
         public readonly string? Value;
 

@@ -16,72 +16,72 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceResult {
     /**
-     * @return 账户ID。
+     * @return Account ID.
      * 
      */
     private String accountId;
     /**
-     * @return vePFS 文件系统吞吐上限。
+     * @return VePFS file system throughput limit.
      * 
      */
     private Integer bandwidth;
     /**
-     * @return 文件系统容量，单位为 TiB。
+     * @return File system capacity, unit: TiB.
      * 
      */
     private Integer capacity;
     /**
-     * @return 容量信息。
+     * @return Capacity information.
      * 
      */
     private GetInstanceCapacityInfo capacityInfo;
     /**
-     * @return 计费状态，默认为 Normal，表示正常计费。
+     * @return Billing status. Default is Normal, indicating standard billing.
      * 
      */
     private String chargeStatus;
     /**
-     * @return 计费类型。取值说明如下：PayAsYouGo：按量计费。
+     * @return Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
      * 
      */
     private String chargeType;
     /**
-     * @return 创建时间。
+     * @return Creation time.
      * 
      */
     private String createdTime;
     /**
-     * @return 文件系统描述信息。
+     * @return File system description.
      * 
      */
     private String description;
     /**
-     * @return 扩容后是否开启数据均衡，取值说明如下：true：扩容后立即开启数据均衡。false：扩容后不开启数据均衡。注意：仅 100MB/s/TiB 规格的文件系统支持数据均衡功能。由于数据均衡过程会消耗存储节点的网络和磁盘带宽，导致文件系统的性能下降，建议您评估业务需求，谨慎开启。数据均衡的时间主要受存量数据量的影响，如果您的存量数据较多，均衡的时间可能会较长，根据扩容容量大小和文件系统状态，此过程可能需要花费数小时至 2 天的时间，建议您在业务低峰期开启并耐心等待。
+     * @return Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
      * 
      */
     private Boolean enableRestripe;
     /**
-     * @return 过期时间。
+     * @return Expiration time.
      * 
      */
     private String expireTime;
     /**
-     * @return 文件系统 ID。
+     * @return File system ID.
      * 
      */
     private String fileSystemId;
     /**
-     * @return 文件系统名称。命名规范如下：只能以中文或英文开头。只能包含中文、字母、数字、半角句号（.）、下划线（_）或中划线（-）。长度需要在 1~128 个字符内。
+     * @return File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
      * 
      */
     private String fileSystemName;
     /**
-     * @return 文件系统类型，默认为 VePFS。
+     * @return File system type. Default is VePFS.
      * 
      */
     private String fileSystemType;
     /**
-     * @return 文件系统释放时间。
+     * @return File system release time.
      * 
      */
     private String freeTime;
@@ -91,185 +91,185 @@ public final class GetInstanceResult {
      */
     private String id;
     /**
-     * @return 文件系统所属项目，默认为 default。
+     * @return Project to which the file system belongs. Default is default.
      * 
      */
     private String projectName;
     /**
-     * @return 协议类型，默认为 VePFS。
+     * @return Protocol type. Default is VePFS.
      * 
      */
     private String protocolType;
     /**
-     * @return 读带宽值, 单位MB/s。
+     * @return Read bandwidth value, unit: MB/s.
      * 
      */
     private Integer readBandwidth;
     /**
-     * @return 生成的辅助网卡所在的安全组ID。
+     * @return Security group ID for the generated auxiliary NIC.
      * 
      */
     private String securityGroupId;
     /**
-     * @return 文件系统状态。取值说明如下：Running：实例运行中。Creating：实例创建中。CreateError：实例创建失败。Updating：实例更新中。UpdateError：实例更新失败。Expanding：实例扩容中。ExpandError：实例扩容失败。Deleting：实例删除中。DeleteError：实例删除失败。Stopped：实例已关停。Error：实例处于错误状态。
+     * @return File system status. Value descriptions are as follows: Running: Instance is running. Creating: Instance is being created. CreateError: Instance creation failed. Updating: Instance is being updated. UpdateError: Instance update failed. Expanding: Instance is being expanded. ExpandError: Instance expansion failed. Deleting: Instance is being deleted. DeleteError: Instance deletion failed. Stopped: Instance is stopped. Error: Instance is in an error state.
      * 
      */
     private String status;
     /**
-     * @return 文件系统关停时间。
+     * @return File system shutdown time.
      * 
      */
     private String stopServiceTime;
     /**
-     * @return 文件系统规格，取值说明如下：Advance*100：100MB/s/TiB。Performance：性能版。Intelligent*Computing：智算版。
+     * @return File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
      * 
      */
     private String storeType;
     /**
-     * @return 文件系统规格中文名称，支持如下：100MB/s/TiB。性能版。智算版。
+     * @return File system specification name in Chinese. Supported options: 100MB/s/TiB. Performance. Intelligent Computing.
      * 
      */
     private String storeTypeCn;
     /**
-     * @return 存储类型英文名。
+     * @return Storage type English name.
      * 
      */
     private String storeTypeEn;
     /**
-     * @return 子网 ID。子网必须属于所选的可用区。
+     * @return Subnet ID. The subnet must belong to the selected availability zone.
      * 
      */
     private String subnetId;
     /**
-     * @return 标签列表。
+     * @return Tag list.
      * 
      */
     private List<GetInstanceTag> tags;
     /**
-     * @return 文件系统更新时间。
+     * @return File system update time.
      * 
      */
     private String updatedTime;
     /**
-     * @return 文件系统版本号。
+     * @return File system version number.
      * 
      */
     private String versionNumber;
     /**
-     * @return 私有网络 ID。
+     * @return Private network ID.
      * 
      */
     private String vpcId;
     /**
-     * @return 写带宽值, 单位MB/s。
+     * @return Write bandwidth value, measured in MB/s.
      * 
      */
     private Integer writeBandwidth;
     /**
-     * @return 可用区 ID。
+     * @return Availability zone ID.
      * 
      */
     private String zoneId;
     /**
-     * @return 可用区名称。
+     * @return Availability zone name.
      * 
      */
     private String zoneName;
 
     private GetInstanceResult() {}
     /**
-     * @return 账户ID。
+     * @return Account ID.
      * 
      */
     public String accountId() {
         return this.accountId;
     }
     /**
-     * @return vePFS 文件系统吞吐上限。
+     * @return VePFS file system throughput limit.
      * 
      */
     public Integer bandwidth() {
         return this.bandwidth;
     }
     /**
-     * @return 文件系统容量，单位为 TiB。
+     * @return File system capacity, unit: TiB.
      * 
      */
     public Integer capacity() {
         return this.capacity;
     }
     /**
-     * @return 容量信息。
+     * @return Capacity information.
      * 
      */
     public GetInstanceCapacityInfo capacityInfo() {
         return this.capacityInfo;
     }
     /**
-     * @return 计费状态，默认为 Normal，表示正常计费。
+     * @return Billing status. Default is Normal, indicating standard billing.
      * 
      */
     public String chargeStatus() {
         return this.chargeStatus;
     }
     /**
-     * @return 计费类型。取值说明如下：PayAsYouGo：按量计费。
+     * @return Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
      * 
      */
     public String chargeType() {
         return this.chargeType;
     }
     /**
-     * @return 创建时间。
+     * @return Creation time.
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 文件系统描述信息。
+     * @return File system description.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 扩容后是否开启数据均衡，取值说明如下：true：扩容后立即开启数据均衡。false：扩容后不开启数据均衡。注意：仅 100MB/s/TiB 规格的文件系统支持数据均衡功能。由于数据均衡过程会消耗存储节点的网络和磁盘带宽，导致文件系统的性能下降，建议您评估业务需求，谨慎开启。数据均衡的时间主要受存量数据量的影响，如果您的存量数据较多，均衡的时间可能会较长，根据扩容容量大小和文件系统状态，此过程可能需要花费数小时至 2 天的时间，建议您在业务低峰期开启并耐心等待。
+     * @return Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
      * 
      */
     public Boolean enableRestripe() {
         return this.enableRestripe;
     }
     /**
-     * @return 过期时间。
+     * @return Expiration time.
      * 
      */
     public String expireTime() {
         return this.expireTime;
     }
     /**
-     * @return 文件系统 ID。
+     * @return File system ID.
      * 
      */
     public String fileSystemId() {
         return this.fileSystemId;
     }
     /**
-     * @return 文件系统名称。命名规范如下：只能以中文或英文开头。只能包含中文、字母、数字、半角句号（.）、下划线（_）或中划线（-）。长度需要在 1~128 个字符内。
+     * @return File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
      * 
      */
     public String fileSystemName() {
         return this.fileSystemName;
     }
     /**
-     * @return 文件系统类型，默认为 VePFS。
+     * @return File system type. Default is VePFS.
      * 
      */
     public String fileSystemType() {
         return this.fileSystemType;
     }
     /**
-     * @return 文件系统释放时间。
+     * @return File system release time.
      * 
      */
     public String freeTime() {
@@ -283,119 +283,119 @@ public final class GetInstanceResult {
         return this.id;
     }
     /**
-     * @return 文件系统所属项目，默认为 default。
+     * @return Project to which the file system belongs. Default is default.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 协议类型，默认为 VePFS。
+     * @return Protocol type. Default is VePFS.
      * 
      */
     public String protocolType() {
         return this.protocolType;
     }
     /**
-     * @return 读带宽值, 单位MB/s。
+     * @return Read bandwidth value, unit: MB/s.
      * 
      */
     public Integer readBandwidth() {
         return this.readBandwidth;
     }
     /**
-     * @return 生成的辅助网卡所在的安全组ID。
+     * @return Security group ID for the generated auxiliary NIC.
      * 
      */
     public String securityGroupId() {
         return this.securityGroupId;
     }
     /**
-     * @return 文件系统状态。取值说明如下：Running：实例运行中。Creating：实例创建中。CreateError：实例创建失败。Updating：实例更新中。UpdateError：实例更新失败。Expanding：实例扩容中。ExpandError：实例扩容失败。Deleting：实例删除中。DeleteError：实例删除失败。Stopped：实例已关停。Error：实例处于错误状态。
+     * @return File system status. Value descriptions are as follows: Running: Instance is running. Creating: Instance is being created. CreateError: Instance creation failed. Updating: Instance is being updated. UpdateError: Instance update failed. Expanding: Instance is being expanded. ExpandError: Instance expansion failed. Deleting: Instance is being deleted. DeleteError: Instance deletion failed. Stopped: Instance is stopped. Error: Instance is in an error state.
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 文件系统关停时间。
+     * @return File system shutdown time.
      * 
      */
     public String stopServiceTime() {
         return this.stopServiceTime;
     }
     /**
-     * @return 文件系统规格，取值说明如下：Advance*100：100MB/s/TiB。Performance：性能版。Intelligent*Computing：智算版。
+     * @return File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
      * 
      */
     public String storeType() {
         return this.storeType;
     }
     /**
-     * @return 文件系统规格中文名称，支持如下：100MB/s/TiB。性能版。智算版。
+     * @return File system specification name in Chinese. Supported options: 100MB/s/TiB. Performance. Intelligent Computing.
      * 
      */
     public String storeTypeCn() {
         return this.storeTypeCn;
     }
     /**
-     * @return 存储类型英文名。
+     * @return Storage type English name.
      * 
      */
     public String storeTypeEn() {
         return this.storeTypeEn;
     }
     /**
-     * @return 子网 ID。子网必须属于所选的可用区。
+     * @return Subnet ID. The subnet must belong to the selected availability zone.
      * 
      */
     public String subnetId() {
         return this.subnetId;
     }
     /**
-     * @return 标签列表。
+     * @return Tag list.
      * 
      */
     public List<GetInstanceTag> tags() {
         return this.tags;
     }
     /**
-     * @return 文件系统更新时间。
+     * @return File system update time.
      * 
      */
     public String updatedTime() {
         return this.updatedTime;
     }
     /**
-     * @return 文件系统版本号。
+     * @return File system version number.
      * 
      */
     public String versionNumber() {
         return this.versionNumber;
     }
     /**
-     * @return 私有网络 ID。
+     * @return Private network ID.
      * 
      */
     public String vpcId() {
         return this.vpcId;
     }
     /**
-     * @return 写带宽值, 单位MB/s。
+     * @return Write bandwidth value, measured in MB/s.
      * 
      */
     public Integer writeBandwidth() {
         return this.writeBandwidth;
     }
     /**
-     * @return 可用区 ID。
+     * @return Availability zone ID.
      * 
      */
     public String zoneId() {
         return this.zoneId;
     }
     /**
-     * @return 可用区名称。
+     * @return Availability zone name.
      * 
      */
     public String zoneName() {

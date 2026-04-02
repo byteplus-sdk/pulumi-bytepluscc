@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc.Outputs
     public sealed class GetBandwidthPackageEipAddressResult
     {
         /// <summary>
-        /// 分配ID
+        /// Allocation ID
         /// </summary>
         public readonly string AllocationId;
         /// <summary>
-        /// 弹性IP地址
+        /// Elastic IP address
         /// </summary>
         public readonly string EipAddress;
 

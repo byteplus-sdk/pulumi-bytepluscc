@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Outputs
     public sealed class DatabaseDatabasePrivilege
     {
         /// <summary>
-        /// 数据库账号名称。
+        /// Database account name.
         /// </summary>
         public readonly string? AccountName;
         /// <summary>
-        /// 授予的账号权限类型，取值：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。
+        /// Granted account privilege type. Values: ReadWrite (read and write privileges), ReadOnly (read-only privileges), DDLOnly (DDL privileges only), DMLOnly (DML privileges only), Custom (custom privileges).
         /// </summary>
         public readonly string? AccountPrivilege;
         /// <summary>
-        /// 指定的数据库账号可以访问数据库的 IP 地址。默认值为 %。若指定 Host 为 %，允许该账号从任意 IP 地址访问数据库。若指定 Host 为 192.10.10.%，则表示该账号可从 192.10.10.0~192.10.10.255 之间的 IP 地址访问数据库。指定的 Host 需要添加在实例所绑定的白名单中，
+        /// The specified database account can access the database from the IP address. Default value: %. If Host is set to %, the account can access the database from any IP address. If Host is set to 192.10.10.%, the account can access the database from IP addresses between 192.10.10.0 and 192.10.10.255. The specified Host must be added to the instance's allowlist.
         /// </summary>
         public readonly string? Host;
 

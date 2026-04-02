@@ -13,38 +13,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GatewayLogSpec {
     /**
-     * @return 是否开启日志服务。
+     * @return Whether to enable log service
      * 
      */
     private @Nullable Boolean enable;
     /**
-     * @return 日志项目ID。
+     * @return Log project ID
      * 
      */
     private @Nullable String projectId;
     /**
-     * @return 日志主题ID。ProjectId 指定项目里面的日志主题。
+     * @return Log topic ID. ProjectId specifies the log topic within the project
      * 
      */
     private @Nullable String topicId;
 
     private GatewayLogSpec() {}
     /**
-     * @return 是否开启日志服务。
+     * @return Whether to enable log service
      * 
      */
     public Optional<Boolean> enable() {
         return Optional.ofNullable(this.enable);
     }
     /**
-     * @return 日志项目ID。
+     * @return Log project ID
      * 
      */
     public Optional<String> projectId() {
         return Optional.ofNullable(this.projectId);
     }
     /**
-     * @return 日志主题ID。ProjectId 指定项目里面的日志主题。
+     * @return Log topic ID. ProjectId specifies the log topic within the project
      * 
      */
     public Optional<String> topicId() {

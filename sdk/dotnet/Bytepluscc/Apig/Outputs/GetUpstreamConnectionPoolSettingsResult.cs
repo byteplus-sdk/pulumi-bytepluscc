@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GetUpstreamConnectionPoolSettingsResult
     {
         /// <summary>
-        /// 开启。
+        /// Enable
         /// </summary>
         public readonly bool Enable;
         /// <summary>
-        /// HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+        /// Maximum HTTP/1 pending requests. Value range: 0~2^31-1. 0 means unlimited
         /// </summary>
         public readonly int Http1MaxPendingRequests;
         /// <summary>
-        /// 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+        /// Idle timeout, in seconds. Value range: 0–2^31-1. 0 means no limit
         /// </summary>
         public readonly int IdleTimeout;
         /// <summary>
-        /// TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+        /// Maximum TCP connections. Value range: 0~2^31-1. 0 means unlimited
         /// </summary>
         public readonly int MaxConnections;
 

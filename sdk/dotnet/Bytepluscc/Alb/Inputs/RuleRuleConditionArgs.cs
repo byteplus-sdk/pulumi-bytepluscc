@@ -44,7 +44,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Inputs
         public Input<Inputs.RuleRuleConditionQueryStringConfigArgs>? QueryStringConfig { get; set; }
 
         /// <summary>
-        /// 标准版转发规则条件类型。Host： 域名。Path： 路径。Header：HTTP头字段。Method: 请求方法。QueryString: 查询参数。
+        /// Standard forwarding rule condition types. Host: domain name. Path: path. Header: HTTP header field. Method: request method. QueryString: query parameter.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
     public sealed class GetImageDetectionResultsItemResult
     {
         /// <summary>
-        /// 检测项名称。
+        /// Check item name
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// 该检测项对应结果。
+        /// Result for this check item.
         /// </summary>
         public readonly string Result;
         /// <summary>
-        /// 风险描述码。
+        /// Risk description code
         /// </summary>
         public readonly string RiskCode;
         /// <summary>
-        /// 风险等级。若该参数返回值为空，表示无风险。
+        /// Risk level. If this parameter is empty, it means no risk
         /// </summary>
         public readonly string RiskLevel;
 

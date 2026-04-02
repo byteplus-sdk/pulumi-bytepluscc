@@ -31,23 +31,27 @@ export interface GetImageArgs {
  */
 export interface GetImageResult {
     /**
-     * 镜像的架构类型。可以选择amd64（x86计算）、arm64（ARM计算）类型。
+     * Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
      */
     readonly architecture: string;
     /**
-     * 镜像的启动模式。可以选择BIOS、UEFI类型。
+     * Image boot mode. You can select BIOS or UEFI
      */
     readonly bootMode: string;
     /**
-     * 镜像创建时间
+     * Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+     */
+    readonly createWholeImage: boolean;
+    /**
+     * Image creation time
      */
     readonly createdAt: string;
     /**
-     * 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
+     * Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores "_", hyphens "-", equals signs "=", English commas ",", English periods ".", Chinese commas "，", Chinese periods "。", and spaces. Length: 0–255 characters. If left blank, defaults to empty.
      */
     readonly description: string;
     /**
-     * 镜像的检测结果。
+     * Image check result.
      */
     readonly detectionResults: outputs.ecs.GetImageDetectionResults;
     /**
@@ -55,103 +59,115 @@ export interface GetImageResult {
      */
     readonly id: string;
     /**
-     * 镜像ID。
+     * Image ID
      */
     readonly imageId: string;
     /**
-     * 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
+     * Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores "_", hyphens "-", and periods ".". Length: 1–128 characters
      */
     readonly imageName: string;
     /**
-     * 镜像所属的账号ID。
+     * Account ID to which the image belongs.
      */
     readonly imageOwnerId: string;
     /**
-     * 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
+     * Imported image information
+     */
+    readonly importImage: outputs.ecs.GetImageImportImage;
+    /**
+     * Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
      */
     readonly instanceId: string;
     /**
-     * 镜像中是否安装了云助手Agent。
+     * Whether Cloud Assistant Agent is installed in the image
      */
     readonly isInstallRunCommandAgent: boolean;
     /**
-     * 公共镜像是否长期维护。
+     * Whether the public image is maintained long-term.
      */
     readonly isLts: boolean;
     /**
-     * 镜像是否支持Cloud-init。
+     * Whether the image supports Cloud-init.
      */
     readonly isSupportCloudInit: boolean;
     /**
-     * 镜像的内核版本。
+     * Image kernel version.
      */
     readonly kernel: string;
     /**
-     * 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
+     * Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
      */
     readonly licenseType: string;
     /**
-     * 镜像操作系统的名称。
+     * Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+     */
+    readonly needDetection: boolean;
+    /**
+     * Name of the image operating system.
      */
     readonly osName: string;
     /**
-     * 操作系统类型。
+     * Operating system type
      */
     readonly osType: string;
     /**
-     * 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
+     * Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
      */
     readonly platform: string;
     /**
-     * 镜像的发行版本。
+     * Image release version.
      */
     readonly platformVersion: string;
     /**
-     * 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
+     * Product code for marketplace image
+     */
+    readonly productCode: string;
+    /**
+     * Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
      */
     readonly projectName: string;
     /**
-     * 镜像共享的账户
+     * Accounts with which the image is shared
      */
     readonly sharePermissions: string[];
     /**
-     * 镜像共享状态。HasShared：自定义镜像已被共享给其他用户。当自定义镜像未被共享或使用公共镜像时，ShareStatus返回为空。
+     * Image sharing status. HasShared: The custom image has been shared with other users. If the custom image is not shared or a public image is used, ShareStatus returns empty.
      */
     readonly shareStatus: string;
     /**
-     * 镜像大小，单位为GiB。
+     * Image size, in GiB.
      */
     readonly size: number;
     /**
-     * 快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
+     * Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
      */
     readonly snapshotGroupId: string;
     /**
-     * 系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
+     * System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
      */
     readonly snapshotId: string;
     /**
-     * 镜像关联快照的信息。
+     * Information about snapshots associated with the image.
      */
     readonly snapshots: outputs.ecs.GetImageSnapshot[];
     /**
-     * 镜像的状态。
+     * Image status.
      */
     readonly status: string;
     /**
-     * 镜像绑定的标签列表。
+     * List of tags bound to the image.
      */
     readonly tags: outputs.ecs.GetImageTag[];
     /**
-     * 镜像更新时间
+     * Image update time
      */
     readonly updatedAt: string;
     /**
-     * 镜像大小，单位为Byte。
+     * Image size, in Bytes.
      */
     readonly virtualSize: number;
     /**
-     * 镜像的可见性。public：公共镜像。private：私有镜像。shared：共享镜像。
+     * Image visibility. public: Public image. private: Private image. shared: Shared image.
      */
     readonly visibility: string;
 }

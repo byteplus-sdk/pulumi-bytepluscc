@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class RuleRuleActionTrafficLimitConfig
     {
         /// <summary>
-        /// 每秒请求数。
+        /// Requests per second.
         /// </summary>
         public readonly int? Qps;
 

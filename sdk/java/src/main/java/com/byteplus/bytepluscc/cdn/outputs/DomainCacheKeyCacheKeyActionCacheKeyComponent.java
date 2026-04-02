@@ -13,50 +13,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainCacheKeyCacheKeyActionCacheKeyComponent {
     /**
-     * @return 执行动作，修改时需要指定。该参数有以下取值：exclude：缓存键不包括任何查询参数，也就是去参数缓存。include：缓存键包括所有的查询参数，也就是保留参数缓存。includePart：缓存键包括 Subobject 中的查询参数，也就是保留部分参数缓存。excludePart：缓存键不包括 Subobject 中的查询参数，也就是删除部分参数缓存。
+     * @return Specifies the action to perform; required when modifying. This parameter has the following values: exclude: The cache key does not include any query parameters, which means parameters are removed from the cache. include: The cache key includes all query parameters, which means parameters are retained in the cache. includePart: The cache key includes query parameters in Subobject, which means some parameters are retained in the cache. excludePart: The cache key does not include query parameters in Subobject, which means some parameters are removed from the cache.
      * 
      */
     private @Nullable String action;
     /**
-     * @return 表示内容分发网络在匹配 Value 时，是否忽略大小写。该参数有以下取值：true：表示忽略大小写。false：表示不忽略大小写。该参数的默认值是 false。
+     * @return Indicates whether the content delivery network ignores case when matching Value. The parameter values are: true: ignore case. false: do not ignore case. The default value is false.
      * 
      */
     private @Nullable Boolean ignoreCase;
     /**
-     * @return 表示需要设置的对象。当前您仅可指定 queryString。queryString 表示请求 URL 中的查询参数。
+     * @return Indicates the object to be set. Currently, you can only specify queryString. queryString refers to the query parameters in the request URL.
      * 
      */
     private @Nullable String object;
     /**
-     * @return 指定一个或者多个 Object 类型的对象。该参数的说明如下：如果Action 是 include 或者 exclude，Subobject的值必须是 *。* 表示全部查询参数。如果 Action 是 includePart 或者 excludePart，您可以指定一个或者多个查询参数。您指定的查询参数不能是 *，也不能包含连续斜杠（//）、百分号（%）、空格。多个查询参数名称使用英文分号（;）分隔。Subobject 的默认值是 *。
+     * @return Specify one or more objects of the Object type. Parameter details: If Action is include or exclude, Subobject must be *. * means all query parameters. If Action is includePart or excludePart, you can specify one or more query parameters. The query parameters you specify cannot be *, and cannot contain consecutive slashes (//), percent signs (%), or spaces. Use a semicolon (;) to separate multiple query parameter names. The default value for Subobject is *.
      * 
      */
     private @Nullable String subobject;
 
     private DomainCacheKeyCacheKeyActionCacheKeyComponent() {}
     /**
-     * @return 执行动作，修改时需要指定。该参数有以下取值：exclude：缓存键不包括任何查询参数，也就是去参数缓存。include：缓存键包括所有的查询参数，也就是保留参数缓存。includePart：缓存键包括 Subobject 中的查询参数，也就是保留部分参数缓存。excludePart：缓存键不包括 Subobject 中的查询参数，也就是删除部分参数缓存。
+     * @return Specifies the action to perform; required when modifying. This parameter has the following values: exclude: The cache key does not include any query parameters, which means parameters are removed from the cache. include: The cache key includes all query parameters, which means parameters are retained in the cache. includePart: The cache key includes query parameters in Subobject, which means some parameters are retained in the cache. excludePart: The cache key does not include query parameters in Subobject, which means some parameters are removed from the cache.
      * 
      */
     public Optional<String> action() {
         return Optional.ofNullable(this.action);
     }
     /**
-     * @return 表示内容分发网络在匹配 Value 时，是否忽略大小写。该参数有以下取值：true：表示忽略大小写。false：表示不忽略大小写。该参数的默认值是 false。
+     * @return Indicates whether the content delivery network ignores case when matching Value. The parameter values are: true: ignore case. false: do not ignore case. The default value is false.
      * 
      */
     public Optional<Boolean> ignoreCase() {
         return Optional.ofNullable(this.ignoreCase);
     }
     /**
-     * @return 表示需要设置的对象。当前您仅可指定 queryString。queryString 表示请求 URL 中的查询参数。
+     * @return Indicates the object to be set. Currently, you can only specify queryString. queryString refers to the query parameters in the request URL.
      * 
      */
     public Optional<String> object() {
         return Optional.ofNullable(this.object);
     }
     /**
-     * @return 指定一个或者多个 Object 类型的对象。该参数的说明如下：如果Action 是 include 或者 exclude，Subobject的值必须是 *。* 表示全部查询参数。如果 Action 是 includePart 或者 excludePart，您可以指定一个或者多个查询参数。您指定的查询参数不能是 *，也不能包含连续斜杠（//）、百分号（%）、空格。多个查询参数名称使用英文分号（;）分隔。Subobject 的默认值是 *。
+     * @return Specify one or more objects of the Object type. Parameter details: If Action is include or exclude, Subobject must be *. * means all query parameters. If Action is includePart or excludePart, you can specify one or more query parameters. The query parameters you specify cannot be *, and cannot contain consecutive slashes (//), percent signs (%), or spaces. Use a semicolon (;) to separate multiple query parameter names. The default value for Subobject is *.
      * 
      */
     public Optional<String> subobject() {

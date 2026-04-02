@@ -31,91 +31,91 @@ export interface GetInstanceArgs {
  */
 export interface GetInstanceResult {
     /**
-     * 是否开启 cerebro。true：开启 cerebrofalse：不开启 cerebro
+     * Whether to enable cerebro. true: enable cerebro; false: do not enable cerebro.
      */
     readonly cerebroEnabled: boolean;
     /**
-     * cerebro 私网访问地址。说明Cerebro 和 Kibana 共享域名。如果是历史实例，访问地址有可能是http(s)://kibana-***开头
+     * Cerebro private network access address. Note: Cerebro and Kibana share the domain name. For legacy instances, the access address may start with http(s)://kibana-***
      */
     readonly cerebroPrivateDomain: string;
     /**
-     * erebro 公网访问地址。说明Cerebro 和 Kibana 共享域名。如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+     * Cerebro public access address. Note: Cerebro and Kibana share the same domain name. For legacy instances, the access address may start with http(s)://kibana-***
      */
     readonly cerebroPublicDomain: string;
     /**
-     * 实例是否开启了计费。取值说明如下：true：已开启计费false：未开启计费
+     * Whether billing is enabled for the instance. Value description: true: Billing enabled false: Billing not enabled
      */
     readonly chargeEnabled: boolean;
     /**
-     * 实例所属集群的 ID。
+     * ID of the cluster to which the instance belongs.
      */
     readonly clusterId: string;
     /**
-     * 实例的创建时间。
+     * Instance creation time.
      */
     readonly createTime: string;
     /**
-     * 实例是否开启私网地址公网解析。true：已开启私网地址公网解析false：未开启私网地址公网解析
+     * Whether the instance has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
      */
     readonly enableEsPrivateDomainPublic: boolean;
     /**
-     * 实例是否开启了私网访问。true：默认值，开启私网访问false：未开启私网访问
+     * Whether private network access is enabled for the instance. true: Default, private network access enabled; false: private network access not enabled.
      */
     readonly enableEsPrivateNetwork: boolean;
     /**
-     * 实例是否开启了公网访问。true：已开启公网访问false：未开启公网访问
+     * Whether the instance has enabled public access. true: Public access enabled. false: Public access not enabled
      */
     readonly enableEsPublicNetwork: boolean;
     /**
-     * Kibana 是否开启私网地址公网解析。true：已开启私网地址公网解析false：未开启私网地址公网解析
+     * Whether Kibana has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
      */
     readonly enableKibanaPrivateDomainPublic: boolean;
     /**
-     * Kibana 是否开启私网访问。true：默认值，已开启私网访问 false：未开启Kibana私网访问
+     * Whether Kibana private network access is enabled. true: Default value, private network access enabled false: Kibana private network access not enabled
      */
     readonly enableKibanaPrivateNetwork: boolean;
     /**
-     * Kibana 是否开启了公网访问。true：已开启公网访问 false：未开启公网访问
+     * Whether Kibana has enabled public access. true: Public access enabled false: Public access not enabled
      */
     readonly enableKibanaPublicNetwork: boolean;
     /**
-     * 实例所绑定的 EIP。
+     * EIP bound to the instance.
      */
     readonly esEip: string;
     /**
-     * 实例所绑定的 EIP 的 ID。
+     * ID of the EIP bound to the instance
      */
     readonly esEipId: string;
     /**
-     * 实例私网访问地址。
+     * Instance private network access address.
      */
     readonly esPrivateEndpoint: string;
     /**
-     * 实例私网地址访问白名单。同 ESPrivateIpWhitelist
+     * Instance private network address access allowlist. Same as ESPrivateIpWhitelist
      */
     readonly esPrivateIpAllowList: string;
     /**
-     * 实例私网地址访问白名单。
+     * Instance private network address access allowlist
      */
     readonly esPrivateIpWhitelist: string;
     /**
-     * ES公网带宽，单位:Mbps。
+     * ES public network bandwidth, unit: Mbps.
      */
     readonly esPubBandwidth: number;
     /**
-     * 实例公网访问地址。
+     * Instance public access address
      */
     readonly esPublicEndpoint: string;
     /**
-     * 实例公网地址访问白名单。同 ESPublicIpWhitelist
+     * Instance public IP address access allowlist. Same as ESPublicIpWhitelist
      */
     readonly esPublicIpAllowList: string;
     /**
-     * 实例公网地址访问白名单。
+     * Allowlist for instance public network address access.
      */
     readonly esPublicIpWhitelist: string;
     /**
-     * 包年包月实例的付费过期时间。
+     * Expiration time for subscription instance payment
      */
     readonly expireDate: string;
     /**
@@ -123,91 +123,91 @@ export interface GetInstanceResult {
      */
     readonly id: string;
     /**
-     * 实例配置详情信息。
+     * Instance configuration details
      */
     readonly instanceConfiguration: outputs.escloud.GetInstanceInstanceConfiguration;
     /**
-     * 实例 ID。
+     * Instance ID
      */
     readonly instanceId: string;
     /**
-     * Kibana 参数配置。
+     * Kibana parameter configuration
      */
     readonly kibanaConfig: outputs.escloud.GetInstanceKibanaConfig;
     /**
-     * Kibana 所绑定的 EIP。
+     * EIP bound to Kibana
      */
     readonly kibanaEip: string;
     /**
-     * Kibana 所绑定的 EIP 的 ID。
+     * ID of the EIP bound to Kibana.
      */
     readonly kibanaEipId: string;
     /**
-     * Kibana 私网访问地址。说明如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+     * Kibana private network access address. Note: For historical instances, the access address may start with http(s)://kibana-***.
      */
     readonly kibanaPrivateDomain: string;
     /**
-     * Kibana 私网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。同 KibanaPrivateIpWhitelist
+     * Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPrivateIpWhitelist.
      */
     readonly kibanaPrivateIpAllowList: string;
     /**
-     * Kibana 私网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。说明Cerebro 和 Kibana 共用一套白名单。
+     * Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist.
      */
     readonly kibanaPrivateIpWhitelist: string;
     /**
-     * Kibana公网带宽，单位: Mbps
+     * Kibana public network bandwidth, unit: Mbps
      */
     readonly kibanaPubBandwidth: number;
     /**
-     * Kibana 公网访问地址。说明如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+     * Kibana public access address. Note: For legacy instances, the access address may start with http(s)://kibana-***
      */
     readonly kibanaPublicDomain: string;
     /**
-     * Kibana 公网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。同 KibanaPublicIpWhitelist
+     * Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPublicIpWhitelist
      */
     readonly kibanaPublicIpAllowList: string;
     /**
-     * Kibana 公网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。说明Cerebro 和 Kibana 共用一套白名单
+     * Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist
      */
     readonly kibanaPublicIpWhitelist: string;
     /**
-     * 主可用区
+     * Primary availability zone
      */
     readonly mainZoneId: string;
     /**
-     * 实例的可维护日期。
+     * Instance maintenance date.
      */
     readonly maintenanceDays: string[];
     /**
-     * 实例的可维护时间段。
+     * Instance maintenance window.
      */
     readonly maintenanceTime: string;
     /**
-     * 实例当前状态。
+     * Current instance status
      */
     readonly status: string;
     /**
-     * 子实例开启情况。
+     * Sub-instance activation status
      */
     readonly subInstanceEnable: string;
     /**
-     * 企业级 SQL 分析实例配置信息。
+     * Enterprise SQL analytics instance configuration information
      */
     readonly subInstances: outputs.escloud.GetInstanceSubInstance[];
     /**
-     * 是否支持冷节点。
+     * Whether cold nodes are supported
      */
     readonly supportColdNode: boolean;
     /**
-     * 实例的总节点数。
+     * Total number of nodes in the instance
      */
     readonly totalNodes: number;
     /**
-     * 数据迁移任务信息。
+     * Data migration task information
      */
     readonly transferInfo: outputs.escloud.GetInstanceTransferInfo;
     /**
-     * 实例所有者的用户 ID。
+     * Instance owner's user ID
      */
     readonly userId: string;
 }

@@ -32,14 +32,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子用户归属的主账号。
+     * Main account to which the sub-user belongs.
      * 
      */
     @Import(name="accountId")
     private @Nullable Output<Double> accountId;
 
     /**
-     * @return 子用户归属的主账号。
+     * @return Main account to which the sub-user belongs.
      * 
      */
     public Optional<Output<Double>> accountId() {
@@ -47,14 +47,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子用户对应的创建时间。
+     * Sub-user&#39;s creation time.
      * 
      */
     @Import(name="createDate")
     private @Nullable Output<String> createDate;
 
     /**
-     * @return 子用户对应的创建时间。
+     * @return Sub-user&#39;s creation time.
      * 
      */
     public Optional<Output<String>> createDate() {
@@ -62,14 +62,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子用户对应的描述信息，长度不超过255。
+     * Description for the sub-user, up to 255 characters.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 子用户对应的描述信息，长度不超过255。
+     * @return Description for the sub-user, up to 255 characters.
      * 
      */
     public Optional<Output<String>> description() {
@@ -77,14 +77,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子用户对应的展示名称，用户显示名。长度1~128，仅支持中文、英文、数字、空格和.-_{@literal @}符号。
+     * Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_{@literal @} characters only.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return 子用户对应的展示名称，用户显示名。长度1~128，仅支持中文、英文、数字、空格和.-_{@literal @}符号。
+     * @return Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_{@literal @} characters only.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -92,14 +92,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子用户对应的电子邮件地址。
+     * Sub-user&#39;s email address.
      * 
      */
     @Import(name="email")
     private @Nullable Output<String> email;
 
     /**
-     * @return 子用户对应的电子邮件地址。
+     * @return Sub-user&#39;s email address.
      * 
      */
     public Optional<Output<String>> email() {
@@ -107,14 +107,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子用户电子邮件地址是否已验证。true代表已验证，false代表未验证。
+     * Whether the sub-user&#39;s email address is verified. &#39;true&#39; means verified, &#39;false&#39; means not verified.
      * 
      */
     @Import(name="emailIsVerify")
     private @Nullable Output<Boolean> emailIsVerify;
 
     /**
-     * @return 子用户电子邮件地址是否已验证。true代表已验证，false代表未验证。
+     * @return Whether the sub-user&#39;s email address is verified. &#39;true&#39; means verified, &#39;false&#39; means not verified.
      * 
      */
     public Optional<Output<Boolean>> emailIsVerify() {
@@ -122,14 +122,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子用户归属的用户组。
+     * User group to which the sub-user belongs.
      * 
      */
     @Import(name="groups")
     private @Nullable Output<List<String>> groups;
 
     /**
-     * @return 子用户归属的用户组。
+     * @return User group to which the sub-user belongs.
      * 
      */
     public Optional<Output<List<String>>> groups() {
@@ -137,14 +137,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子用户的登录配置。
+     * Login configuration for the sub-user.
      * 
      */
     @Import(name="loginProfile")
     private @Nullable Output<UserLoginProfileArgs> loginProfile;
 
     /**
-     * @return 子用户的登录配置。
+     * @return Login configuration for the sub-user.
      * 
      */
     public Optional<Output<UserLoginProfileArgs>> loginProfile() {
@@ -152,14 +152,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子用户对应的手机号。
+     * Sub-user&#39;s mobile number.
      * 
      */
     @Import(name="mobilePhone")
     private @Nullable Output<String> mobilePhone;
 
     /**
-     * @return 子用户对应的手机号。
+     * @return Sub-user&#39;s mobile number.
      * 
      */
     public Optional<Output<String>> mobilePhone() {
@@ -167,14 +167,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子用户手机号是否已验证。true代表已验证，false代表未验证。
+     * Whether the sub-user&#39;s phone number is verified. &#39;true&#39; means verified, &#39;false&#39; means not verified.
      * 
      */
     @Import(name="mobilePhoneIsVerify")
     private @Nullable Output<Boolean> mobilePhoneIsVerify;
 
     /**
-     * @return 子用户手机号是否已验证。true代表已验证，false代表未验证。
+     * @return Whether the sub-user&#39;s phone number is verified. &#39;true&#39; means verified, &#39;false&#39; means not verified.
      * 
      */
     public Optional<Output<Boolean>> mobilePhoneIsVerify() {
@@ -189,14 +189,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子用户的操作保护配置。
+     * Operation protection configuration for the sub-user.
      * 
      */
     @Import(name="securityConfig")
     private @Nullable Output<UserSecurityConfigArgs> securityConfig;
 
     /**
-     * @return 子用户的操作保护配置。
+     * @return Operation protection configuration for the sub-user.
      * 
      */
     public Optional<Output<UserSecurityConfigArgs>> securityConfig() {
@@ -211,14 +211,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子用户对应的Trn表达式。
+     * TRN expression for the sub-user.
      * 
      */
     @Import(name="trn")
     private @Nullable Output<String> trn;
 
     /**
-     * @return 子用户对应的Trn表达式。
+     * @return TRN expression for the sub-user.
      * 
      */
     public Optional<Output<String>> trn() {
@@ -226,14 +226,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子用户对应的更新时间。
+     * Update time for the sub-user.
      * 
      */
     @Import(name="updateDate")
     private @Nullable Output<String> updateDate;
 
     /**
-     * @return 子用户对应的更新时间。
+     * @return Update time for the sub-user.
      * 
      */
     public Optional<Output<String>> updateDate() {
@@ -241,14 +241,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子用户的ID。
+     * Sub-user&#39;s ID.
      * 
      */
     @Import(name="userId")
     private @Nullable Output<Integer> userId;
 
     /**
-     * @return 子用户的ID。
+     * @return Sub-user&#39;s ID.
      * 
      */
     public Optional<Output<Integer>> userId() {
@@ -256,14 +256,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子用户名称，用户名。长度1~64，支持英文、数字、下划线、和.-{@literal @}符号。
+     * Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-{@literal @} characters.
      * 
      */
     @Import(name="userName")
     private @Nullable Output<String> userName;
 
     /**
-     * @return 子用户名称，用户名。长度1~64，支持英文、数字、下划线、和.-{@literal @}符号。
+     * @return Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-{@literal @} characters.
      * 
      */
     public Optional<Output<String>> userName() {
@@ -325,7 +325,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountId 子用户归属的主账号。
+         * @param accountId Main account to which the sub-user belongs.
          * 
          * @return builder
          * 
@@ -336,7 +336,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountId 子用户归属的主账号。
+         * @param accountId Main account to which the sub-user belongs.
          * 
          * @return builder
          * 
@@ -346,7 +346,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createDate 子用户对应的创建时间。
+         * @param createDate Sub-user&#39;s creation time.
          * 
          * @return builder
          * 
@@ -357,7 +357,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createDate 子用户对应的创建时间。
+         * @param createDate Sub-user&#39;s creation time.
          * 
          * @return builder
          * 
@@ -367,7 +367,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 子用户对应的描述信息，长度不超过255。
+         * @param description Description for the sub-user, up to 255 characters.
          * 
          * @return builder
          * 
@@ -378,7 +378,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 子用户对应的描述信息，长度不超过255。
+         * @param description Description for the sub-user, up to 255 characters.
          * 
          * @return builder
          * 
@@ -388,7 +388,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName 子用户对应的展示名称，用户显示名。长度1~128，仅支持中文、英文、数字、空格和.-_{@literal @}符号。
+         * @param displayName Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_{@literal @} characters only.
          * 
          * @return builder
          * 
@@ -399,7 +399,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName 子用户对应的展示名称，用户显示名。长度1~128，仅支持中文、英文、数字、空格和.-_{@literal @}符号。
+         * @param displayName Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_{@literal @} characters only.
          * 
          * @return builder
          * 
@@ -409,7 +409,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param email 子用户对应的电子邮件地址。
+         * @param email Sub-user&#39;s email address.
          * 
          * @return builder
          * 
@@ -420,7 +420,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param email 子用户对应的电子邮件地址。
+         * @param email Sub-user&#39;s email address.
          * 
          * @return builder
          * 
@@ -430,7 +430,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param emailIsVerify 子用户电子邮件地址是否已验证。true代表已验证，false代表未验证。
+         * @param emailIsVerify Whether the sub-user&#39;s email address is verified. &#39;true&#39; means verified, &#39;false&#39; means not verified.
          * 
          * @return builder
          * 
@@ -441,7 +441,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param emailIsVerify 子用户电子邮件地址是否已验证。true代表已验证，false代表未验证。
+         * @param emailIsVerify Whether the sub-user&#39;s email address is verified. &#39;true&#39; means verified, &#39;false&#39; means not verified.
          * 
          * @return builder
          * 
@@ -451,7 +451,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groups 子用户归属的用户组。
+         * @param groups User group to which the sub-user belongs.
          * 
          * @return builder
          * 
@@ -462,7 +462,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groups 子用户归属的用户组。
+         * @param groups User group to which the sub-user belongs.
          * 
          * @return builder
          * 
@@ -472,7 +472,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groups 子用户归属的用户组。
+         * @param groups User group to which the sub-user belongs.
          * 
          * @return builder
          * 
@@ -482,7 +482,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loginProfile 子用户的登录配置。
+         * @param loginProfile Login configuration for the sub-user.
          * 
          * @return builder
          * 
@@ -493,7 +493,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loginProfile 子用户的登录配置。
+         * @param loginProfile Login configuration for the sub-user.
          * 
          * @return builder
          * 
@@ -503,7 +503,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mobilePhone 子用户对应的手机号。
+         * @param mobilePhone Sub-user&#39;s mobile number.
          * 
          * @return builder
          * 
@@ -514,7 +514,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mobilePhone 子用户对应的手机号。
+         * @param mobilePhone Sub-user&#39;s mobile number.
          * 
          * @return builder
          * 
@@ -524,7 +524,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mobilePhoneIsVerify 子用户手机号是否已验证。true代表已验证，false代表未验证。
+         * @param mobilePhoneIsVerify Whether the sub-user&#39;s phone number is verified. &#39;true&#39; means verified, &#39;false&#39; means not verified.
          * 
          * @return builder
          * 
@@ -535,7 +535,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mobilePhoneIsVerify 子用户手机号是否已验证。true代表已验证，false代表未验证。
+         * @param mobilePhoneIsVerify Whether the sub-user&#39;s phone number is verified. &#39;true&#39; means verified, &#39;false&#39; means not verified.
          * 
          * @return builder
          * 
@@ -558,7 +558,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityConfig 子用户的操作保护配置。
+         * @param securityConfig Operation protection configuration for the sub-user.
          * 
          * @return builder
          * 
@@ -569,7 +569,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityConfig 子用户的操作保护配置。
+         * @param securityConfig Operation protection configuration for the sub-user.
          * 
          * @return builder
          * 
@@ -592,7 +592,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param trn 子用户对应的Trn表达式。
+         * @param trn TRN expression for the sub-user.
          * 
          * @return builder
          * 
@@ -603,7 +603,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param trn 子用户对应的Trn表达式。
+         * @param trn TRN expression for the sub-user.
          * 
          * @return builder
          * 
@@ -613,7 +613,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updateDate 子用户对应的更新时间。
+         * @param updateDate Update time for the sub-user.
          * 
          * @return builder
          * 
@@ -624,7 +624,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updateDate 子用户对应的更新时间。
+         * @param updateDate Update time for the sub-user.
          * 
          * @return builder
          * 
@@ -634,7 +634,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userId 子用户的ID。
+         * @param userId Sub-user&#39;s ID.
          * 
          * @return builder
          * 
@@ -645,7 +645,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userId 子用户的ID。
+         * @param userId Sub-user&#39;s ID.
          * 
          * @return builder
          * 
@@ -655,7 +655,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userName 子用户名称，用户名。长度1~64，支持英文、数字、下划线、和.-{@literal @}符号。
+         * @param userName Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-{@literal @} characters.
          * 
          * @return builder
          * 
@@ -666,7 +666,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userName 子用户名称，用户名。长度1~64，支持英文、数字、下划线、和.-{@literal @}符号。
+         * @param userName Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-{@literal @} characters.
          * 
          * @return builder
          * 

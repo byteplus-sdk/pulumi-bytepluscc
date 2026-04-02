@@ -29,19 +29,19 @@ export interface GetInstancePluginArgs {
  */
 export interface GetInstancePluginResult {
     /**
-     * 插件描述。
+     * Plugin description
      */
     readonly description: string;
     /**
-     * 关闭此插件的注意事项说明。
+     * Notes for disabling this plugin
      */
     readonly disablePrompt: string;
     /**
-     * 开启此插件的注意事项说明。
+     * Notes for enabling this plugin
      */
     readonly enablePrompt: string;
     /**
-     * 是否已开启插件。true：插件已开启。false：插件已关闭。
+     * Whether the plugin is enabled. true: The plugin is enabled. false: The plugin is disabled
      */
     readonly enabled: boolean;
     /**
@@ -49,23 +49,23 @@ export interface GetInstancePluginResult {
      */
     readonly id: string;
     /**
-     * 实例 ID。
+     * Instance ID
      */
     readonly instanceId: string;
     /**
-     * 开启或关闭插件是否会引发 RabbitMQ 实例重启。true：会重启实例。false：不会重启实例。
+     * Whether enabling or disabling the plugin will cause a RabbitMQ instance restart. true: The instance will restart. false: The instance will not restart
      */
     readonly needRebootOnChange: boolean;
     /**
-     * 插件名称。
+     * Plugin name
      */
     readonly pluginName: string;
     /**
-     * 插件监听的端口。
+     * Plugin listening port
      */
     readonly port: number;
     /**
-     * 插件版本。
+     * Plugin version
      */
     readonly version: string;
 }

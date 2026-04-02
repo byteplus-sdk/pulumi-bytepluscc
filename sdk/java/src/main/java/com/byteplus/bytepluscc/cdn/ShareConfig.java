@@ -20,7 +20,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * 全局配置扩展了域名的配置能力，具有以下优点：提升了黑白名单的容量。例如，IP 黑名单可以包含高达 30,000 个条目。提升了域名配置的效率。一个全局配置可与多个域名关联。提供了通用列表类型，可以在额外的域名配置中被使用。一个全局配置的修改可立刻应用于其关联的所有域名。
+ * Global configuration extends domain configuration capabilities with the following advantages: increases the capacity of denylist and allowlist. For example, an IP denylist can contain up to 30,000 entries. Improves domain configuration efficiency. A single global configuration can be associated with multiple domains. Provides a common list type that can be used in additional domain configurations. Modifications to a global configuration are immediately applied to all associated domains.
  * 
  * ## Example Usage
  * 
@@ -37,154 +37,154 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:cdn/shareConfig:ShareConfig")
 public class ShareConfig extends com.pulumi.resources.CustomResource {
     /**
-     * 表示一个 IP 白名单的配置，对应 ConfigType 是 allow*ip*access*rule。
+     * Specifies the configuration for an IP allowlist, where ConfigType is allow*ip*access*rule.
      * 
      */
     @Export(name="allowIpAccessRule", refs={ShareConfigAllowIpAccessRule.class}, tree="[0]")
     private Output<ShareConfigAllowIpAccessRule> allowIpAccessRule;
 
     /**
-     * @return 表示一个 IP 白名单的配置，对应 ConfigType 是 allow*ip*access*rule。
+     * @return Specifies the configuration for an IP allowlist, where ConfigType is allow*ip*access*rule.
      * 
      */
     public Output<ShareConfigAllowIpAccessRule> allowIpAccessRule() {
         return this.allowIpAccessRule;
     }
     /**
-     * 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
+     * Indicates a configuration for a Referer allowlist. The corresponding ConfigType is allow*referer*access*rule.
      * 
      */
     @Export(name="allowRefererAccessRule", refs={ShareConfigAllowRefererAccessRule.class}, tree="[0]")
     private Output<ShareConfigAllowRefererAccessRule> allowRefererAccessRule;
 
     /**
-     * @return 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
+     * @return Indicates a configuration for a Referer allowlist. The corresponding ConfigType is allow*referer*access*rule.
      * 
      */
     public Output<ShareConfigAllowRefererAccessRule> allowRefererAccessRule() {
         return this.allowRefererAccessRule;
     }
     /**
-     * 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
+     * Specifies the configuration for a common list, where ConfigType is common*match*list.
      * 
      */
     @Export(name="commonMatchList", refs={ShareConfigCommonMatchList.class}, tree="[0]")
     private Output<ShareConfigCommonMatchList> commonMatchList;
 
     /**
-     * @return 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
+     * @return Specifies the configuration for a common list, where ConfigType is common*match*list.
      * 
      */
     public Output<ShareConfigCommonMatchList> commonMatchList() {
         return this.commonMatchList;
     }
     /**
-     * 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
+     * Specifies the name of the global configuration. Naming requirements: Names can include Chinese characters, letters, numbers, and underscores (_), and must be 3–45 characters long. One Chinese character counts as 3 characters. The name cannot be the same as any existing global configuration name under the primary account.
      * 
      */
     @Export(name="configName", refs={String.class}, tree="[0]")
     private Output<String> configName;
 
     /**
-     * @return 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
+     * @return Specifies the name of the global configuration. Naming requirements: Names can include Chinese characters, letters, numbers, and underscores (_), and must be 3–45 characters long. One Chinese character counts as 3 characters. The name cannot be the same as any existing global configuration name under the primary account.
      * 
      */
     public Output<String> configName() {
         return this.configName;
     }
     /**
-     * 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
+     * This parameter specifies the type of global configuration. Available values are: deny*ip*access*rule: indicates an IP denylist. allow*ip*access*rule: indicates an IP allowlist. deny*referer*access*rule: indicates a Referer denylist. allow*referer*access*rule: indicates a Referer allowlist. common*match*list: indicates a common list.
      * 
      */
     @Export(name="configType", refs={String.class}, tree="[0]")
     private Output<String> configType;
 
     /**
-     * @return 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
+     * @return This parameter specifies the type of global configuration. Available values are: deny*ip*access*rule: indicates an IP denylist. allow*ip*access*rule: indicates an IP allowlist. deny*referer*access*rule: indicates a Referer denylist. allow*referer*access*rule: indicates a Referer allowlist. common*match*list: indicates a common list.
      * 
      */
     public Output<String> configType() {
         return this.configType;
     }
     /**
-     * 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access*rule。
+     * Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access*rule.
      * 
      */
     @Export(name="denyIpAccessRule", refs={ShareConfigDenyIpAccessRule.class}, tree="[0]")
     private Output<ShareConfigDenyIpAccessRule> denyIpAccessRule;
 
     /**
-     * @return 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access*rule。
+     * @return Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access*rule.
      * 
      */
     public Output<ShareConfigDenyIpAccessRule> denyIpAccessRule() {
         return this.denyIpAccessRule;
     }
     /**
-     * 表示一个 Referer 黑名单的配置，对应 ConfigType 是 deny*referer*access*rule。
+     * Indicates a configuration for a Referer denylist. The corresponding ConfigType is deny*referer*access*rule.
      * 
      */
     @Export(name="denyRefererAccessRule", refs={ShareConfigDenyRefererAccessRule.class}, tree="[0]")
     private Output<ShareConfigDenyRefererAccessRule> denyRefererAccessRule;
 
     /**
-     * @return 表示一个 Referer 黑名单的配置，对应 ConfigType 是 deny*referer*access*rule。
+     * @return Indicates a configuration for a Referer denylist. The corresponding ConfigType is deny*referer*access*rule.
      * 
      */
     public Output<ShareConfigDenyRefererAccessRule> denyRefererAccessRule() {
         return this.denyRefererAccessRule;
     }
     /**
-     * 表示与该全局配置关联的加速域名的数量。
+     * Indicates the number of accelerated domains associated with this global configuration.
      * 
      */
     @Export(name="domainCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> domainCount;
 
     /**
-     * @return 表示与该全局配置关联的加速域名的数量。
+     * @return Indicates the number of accelerated domains associated with this global configuration.
      * 
      */
     public Output<Integer> domainCount() {
         return this.domainCount;
     }
     /**
-     * 表示该全局配置所归属的项目名称。
+     * Specifies the project name to which the global configuration belongs.
      * 
      */
     @Export(name="project", refs={String.class}, tree="[0]")
     private Output<String> project;
 
     /**
-     * @return 表示该全局配置所归属的项目名称。
+     * @return Specifies the project name to which the global configuration belongs.
      * 
      */
     public Output<String> project() {
         return this.project;
     }
     /**
-     * 表示该自定义错误页面的 HTML 代码。
+     * Specifies the HTML code for the custom error page.
      * 
      */
     @Export(name="ruleContent", refs={String.class}, tree="[0]")
     private Output<String> ruleContent;
 
     /**
-     * @return 表示该自定义错误页面的 HTML 代码。
+     * @return Specifies the HTML code for the custom error page.
      * 
      */
     public Output<String> ruleContent() {
         return this.ruleContent;
     }
     /**
-     * 表示该全局配置的最近修改时间，单位是 Unix 时间戳。
+     * Indicates the last modification time of this global configuration, in Unix timestamp.
      * 
      */
     @Export(name="updatedTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> updatedTime;
 
     /**
-     * @return 表示该全局配置的最近修改时间，单位是 Unix 时间戳。
+     * @return Indicates the last modification time of this global configuration, in Unix timestamp.
      * 
      */
     public Output<Integer> updatedTime() {

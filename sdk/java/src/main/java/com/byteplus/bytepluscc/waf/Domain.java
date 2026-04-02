@@ -21,7 +21,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 通过 CNAME 或是负载均衡方式接入防护网站，并配置接入能力和回源能力，将业务流量接入到 WAF 实例，实现防护。
+ * Connect the protected site via CNAME or load balancing, configure access and origin capabilities, and route business traffic to the WAF instance for protection
  * 
  * ## Example Usage
  * 
@@ -38,98 +38,98 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:waf/domain:Domain")
 public class Domain extends com.pulumi.resources.CustomResource {
     /**
-     * 接入模式。10：CNAME 接入，11：负载均衡（CLB）7 层接入。
+     * Access mode. 10: CNAME access, 11: Layer 7 load balancing (CLB) access.
      * 
      */
     @Export(name="accessMode", refs={Integer.class}, tree="[0]")
     private Output<Integer> accessMode;
 
     /**
-     * @return 接入模式。10：CNAME 接入，11：负载均衡（CLB）7 层接入。
+     * @return Access mode. 10: CNAME access, 11: Layer 7 load balancing (CLB) access.
      * 
      */
     public Output<Integer> accessMode() {
         return this.accessMode;
     }
     /**
-     * 高防实例 IP。高防型 WAF 接入展示，否则为空。
+     * High defense instance IP. Displayed for high-defense WAF access; otherwise blank.
      * 
      */
     @Export(name="advancedDefenseIp", refs={String.class}, tree="[0]")
     private Output<String> advancedDefenseIp;
 
     /**
-     * @return 高防实例 IP。高防型 WAF 接入展示，否则为空。
+     * @return High defense instance IP. Displayed for high-defense WAF access; otherwise blank.
      * 
      */
     public Output<String> advancedDefenseIp() {
         return this.advancedDefenseIp;
     }
     /**
-     * 高防实例 Ipv6。高防型 WAF 接入展示，否则为空。
+     * High defense instance IPv6. Displayed for high-defense WAF access; otherwise blank.
      * 
      */
     @Export(name="advancedDefenseIpv6", refs={String.class}, tree="[0]")
     private Output<String> advancedDefenseIpv6;
 
     /**
-     * @return 高防实例 Ipv6。高防型 WAF 接入展示，否则为空。
+     * @return High defense instance IPv6. Displayed for high-defense WAF access; otherwise blank.
      * 
      */
     public Output<String> advancedDefenseIpv6() {
         return this.advancedDefenseIpv6;
     }
     /**
-     * 是否开启了 API 防护策略。0：关闭，1：开启。
+     * API protection policy enabled. 0: Off, 1: On
      * 
      */
     @Export(name="apiEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> apiEnable;
 
     /**
-     * @return 是否开启了 API 防护策略。0：关闭，1：开启。
+     * @return API protection policy enabled. 0: Off, 1: On
      * 
      */
     public Output<Integer> apiEnable() {
         return this.apiEnable;
     }
     /**
-     * 攻击状态。0:未发现攻击,1:发现攻击。
+     * Attack status. 0: No attack detected, 1: Attack detected.
      * 
      */
     @Export(name="attackStatus", refs={Integer.class}, tree="[0]")
     private Output<Integer> attackStatus;
 
     /**
-     * @return 攻击状态。0:未发现攻击,1:发现攻击。
+     * @return Attack status. 0: No attack detected, 1: Attack detected.
      * 
      */
     public Output<Integer> attackStatus() {
         return this.attackStatus;
     }
     /**
-     * 是否开启智能 CC 防护策略。0：关闭，1：开启。
+     * Whether to enable intelligent CC protection policy. 0: Disabled, 1: Enabled.
      * 
      */
     @Export(name="autoCcEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> autoCcEnable;
 
     /**
-     * @return 是否开启智能 CC 防护策略。0：关闭，1：开启。
+     * @return Whether to enable intelligent CC protection policy. 0: Disabled, 1: Enabled.
      * 
      */
     public Output<Integer> autoCcEnable() {
         return this.autoCcEnable;
     }
     /**
-     * 是否开启自动封禁。0：关闭，1：开启。
+     * Whether to enable automatic blocking. 0: Disabled, 1: Enabled.
      * 
      */
     @Export(name="automaticBlackEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> automaticBlackEnable;
 
     /**
-     * @return 是否开启自动封禁。0：关闭，1：开启。
+     * @return Whether to enable automatic blocking. 0: Disabled, 1: Enabled.
      * 
      */
     public Output<Integer> automaticBlackEnable() {
@@ -142,262 +142,262 @@ public class Domain extends com.pulumi.resources.CustomResource {
         return this.backendGroups;
     }
     /**
-     * 是否开启了黑名单策略。0：关闭, 1：开启。
+     * Denylist policy enabled. 0: Off, 1: On
      * 
      */
     @Export(name="blackIpEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> blackIpEnable;
 
     /**
-     * @return 是否开启了黑名单策略。0：关闭, 1：开启。
+     * @return Denylist policy enabled. 0: Off, 1: On
      * 
      */
     public Output<Integer> blackIpEnable() {
         return this.blackIpEnable;
     }
     /**
-     * 是否开启了区域封禁策略。0：关闭;1：开启。
+     * Whether to enable regional blocking policy. 0: Disabled; 1: Enabled.
      * 
      */
     @Export(name="blackLctEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> blackLctEnable;
 
     /**
-     * @return 是否开启了区域封禁策略。0：关闭;1：开启。
+     * @return Whether to enable regional blocking policy. 0: Disabled; 1: Enabled.
      * 
      */
     public Output<Integer> blackLctEnable() {
         return this.blackLctEnable;
     }
     /**
-     * 是否开启动态Token防护。
+     * Dynamic token protection enabled
      * 
      */
     @Export(name="botDytokenEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> botDytokenEnable;
 
     /**
-     * @return 是否开启动态Token防护。
+     * @return Dynamic token protection enabled
      * 
      */
     public Output<Integer> botDytokenEnable() {
         return this.botDytokenEnable;
     }
     /**
-     * 是否开启 bot 频率限制策略。
-     * 0：关闭
-     * 1：开启。
+     * Bot rate limit policy enabled.
+     * 0: Off
+     * 1: On
      * 
      */
     @Export(name="botFrequencyEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> botFrequencyEnable;
 
     /**
-     * @return 是否开启 bot 频率限制策略。
-     * 0：关闭
-     * 1：开启。
+     * @return Bot rate limit policy enabled.
+     * 0: Off
+     * 1: On
      * 
      */
     public Output<Integer> botFrequencyEnable() {
         return this.botFrequencyEnable;
     }
     /**
-     * 是否开启 bot 统计防护策略。
-     * 0：关闭
-     * 1：开启。
+     * Bot statistics protection policy enabled.
+     * 0: Off
+     * 1: On
      * 
      */
     @Export(name="botRepeatEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> botRepeatEnable;
 
     /**
-     * @return 是否开启 bot 统计防护策略。
-     * 0：关闭
-     * 1：开启。
+     * @return Bot statistics protection policy enabled.
+     * 0: Off
+     * 1: On
      * 
      */
     public Output<Integer> botRepeatEnable() {
         return this.botRepeatEnable;
     }
     /**
-     * 设置 bot 行为地图策略默认动作，当 BotSequenceEnable = 1 开启状态时生效。默认为 0 （观察）。
-     * 0：观察
-     * 2：拦截
-     * 6：JS 挑战
-     * 7：人机验证。
+     * Set the default action for the bot behavior map policy. Effective when BotSequenceEnable = 1 is enabled. Default is 0 (Observe).
+     * 0: Observe
+     * 2: Intercept
+     * 6: JS Challenge
+     * 7: CAPTCHA.
      * 
      */
     @Export(name="botSequenceDefaultAction", refs={Integer.class}, tree="[0]")
     private Output<Integer> botSequenceDefaultAction;
 
     /**
-     * @return 设置 bot 行为地图策略默认动作，当 BotSequenceEnable = 1 开启状态时生效。默认为 0 （观察）。
-     * 0：观察
-     * 2：拦截
-     * 6：JS 挑战
-     * 7：人机验证。
+     * @return Set the default action for the bot behavior map policy. Effective when BotSequenceEnable = 1 is enabled. Default is 0 (Observe).
+     * 0: Observe
+     * 2: Intercept
+     * 6: JS Challenge
+     * 7: CAPTCHA.
      * 
      */
     public Output<Integer> botSequenceDefaultAction() {
         return this.botSequenceDefaultAction;
     }
     /**
-     * 是否开启 bot 行为地图。
-     * 0：关闭
-     * 1：开启。
+     * Whether to enable bot behavior map.
+     * 0: Off
+     * 1: On.
      * 
      */
     @Export(name="botSequenceEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> botSequenceEnable;
 
     /**
-     * @return 是否开启 bot 行为地图。
-     * 0：关闭
-     * 1：开启。
+     * @return Whether to enable bot behavior map.
+     * 0: Off
+     * 1: On.
      * 
      */
     public Output<Integer> botSequenceEnable() {
         return this.botSequenceEnable;
     }
     /**
-     * 是否开启 CC 防护策略。
-     * 0：关闭
-     * 1：开启。
+     * Whether to enable CC protection policy.
+     * 0: Disabled
+     * 1: Enabled.
      * 
      */
     @Export(name="ccEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> ccEnable;
 
     /**
-     * @return 是否开启 CC 防护策略。
-     * 0：关闭
-     * 1：开启。
+     * @return Whether to enable CC protection policy.
+     * 0: Disabled
+     * 1: Enabled.
      * 
      */
     public Output<Integer> ccEnable() {
         return this.ccEnable;
     }
     /**
-     * 托管至证书中心的证书ID。
+     * Certificate ID managed in Certificate Center
      * 
      */
     @Export(name="certificateId", refs={String.class}, tree="[0]")
     private Output<String> certificateId;
 
     /**
-     * @return 托管至证书中心的证书ID。
+     * @return Certificate ID managed in Certificate Center
      * 
      */
     public Output<String> certificateId() {
         return this.certificateId;
     }
     /**
-     * 证书名称，协议类型包含 HTTPS 时显示。
+     * Certificate name. Displayed when protocol type includes HTTPS.
      * 
      */
     @Export(name="certificateName", refs={String.class}, tree="[0]")
     private Output<String> certificateName;
 
     /**
-     * @return 证书名称，协议类型包含 HTTPS 时显示。
+     * @return Certificate name. Displayed when protocol type includes HTTPS.
      * 
      */
     public Output<String> certificateName() {
         return this.certificateName;
     }
     /**
-     * 证书托管平台:waf/certificate_service。
+     * Certificate hosting platform: waf/certificate_service.
      * 
      */
     @Export(name="certificatePlatform", refs={String.class}, tree="[0]")
     private Output<String> certificatePlatform;
 
     /**
-     * @return 证书托管平台:waf/certificate_service。
+     * @return Certificate hosting platform: waf/certificate_service.
      * 
      */
     public Output<String> certificatePlatform() {
         return this.certificatePlatform;
     }
     /**
-     * CLB实例ID。
+     * CLB instance ID.
      * 
      */
     @Export(name="clbInstanceIds", refs={String.class}, tree="[0]")
     private Output<String> clbInstanceIds;
 
     /**
-     * @return CLB实例ID。
+     * @return CLB instance ID.
      * 
      */
     public Output<String> clbInstanceIds() {
         return this.clbInstanceIds;
     }
     /**
-     * CLB监听器ID。
+     * CLB listener ID.
      * 
      */
     @Export(name="clbListenerId", refs={String.class}, tree="[0]")
     private Output<String> clbListenerId;
 
     /**
-     * @return CLB监听器ID。
+     * @return CLB listener ID.
      * 
      */
     public Output<String> clbListenerId() {
         return this.clbListenerId;
     }
     /**
-     * CLB后端服务器组ID。
+     * CLB backend server group ID.
      * 
      */
     @Export(name="clbPoolId", refs={String.class}, tree="[0]")
     private Output<String> clbPoolId;
 
     /**
-     * @return CLB后端服务器组ID。
+     * @return CLB backend server group ID.
      * 
      */
     public Output<String> clbPoolId() {
         return this.clbPoolId;
     }
     /**
-     * CLB后端服务器ID。
+     * CLB backend server ID
      * 
      */
     @Export(name="clbServerId", refs={String.class}, tree="[0]")
     private Output<String> clbServerId;
 
     /**
-     * @return CLB后端服务器ID。
+     * @return CLB backend server ID
      * 
      */
     public Output<String> clbServerId() {
         return this.clbServerId;
     }
     /**
-     * 客户端IP获取方式。0:自定义Header字段,1:通过X-Forwarded-For(XFF)字段中第一个公网IP地址作为客户端真实IP地址。
+     * Client IP acquisition method. 0: Custom header field, 1: Use the first public IP address in the X-Forwarded-For (XFF) field as the real client IP address.
      * 
      */
     @Export(name="clientIpLocation", refs={Integer.class}, tree="[0]")
     private Output<Integer> clientIpLocation;
 
     /**
-     * @return 客户端IP获取方式。0:自定义Header字段,1:通过X-Forwarded-For(XFF)字段中第一个公网IP地址作为客户端真实IP地址。
+     * @return Client IP acquisition method. 0: Custom header field, 1: Use the first public IP address in the X-Forwarded-For (XFF) field as the real client IP address.
      * 
      */
     public Output<Integer> clientIpLocation() {
         return this.clientIpLocation;
     }
     /**
-     * 客户端请求body最大值(MB)。
+     * Maximum client request body size (MB).
      * 
      */
     @Export(name="clientMaxBodySize", refs={Integer.class}, tree="[0]")
     private Output<Integer> clientMaxBodySize;
 
     /**
-     * @return 客户端请求body最大值(MB)。
+     * @return Maximum client request body size (MB).
      * 
      */
     public Output<Integer> clientMaxBodySize() {
@@ -410,532 +410,532 @@ public class Domain extends com.pulumi.resources.CustomResource {
         return this.cloudAccessConfigs;
     }
     /**
-     * CNAME记录。
+     * CNAME record.
      * 
      */
     @Export(name="cname", refs={String.class}, tree="[0]")
     private Output<String> cname;
 
     /**
-     * @return CNAME记录。
+     * @return CNAME record.
      * 
      */
     public Output<String> cname() {
         return this.cname;
     }
     /**
-     * 是否开启自定义BOT防护。
+     * Whether to enable custom bot protection.
      * 
      */
     @Export(name="customBotEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> customBotEnable;
 
     /**
-     * @return 是否开启自定义BOT防护。
+     * @return Whether to enable custom bot protection.
      * 
      */
     public Output<Integer> customBotEnable() {
         return this.customBotEnable;
     }
     /**
-     * 自定义Header。
+     * Custom header.
      * 
      */
     @Export(name="customHeaders", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> customHeaders;
 
     /**
-     * @return 自定义Header。
+     * @return Custom header.
      * 
      */
     public Output<List<String>> customHeaders() {
         return this.customHeaders;
     }
     /**
-     * 是否开启自定义响应。
+     * Whether to enable custom response.
      * 
      */
     @Export(name="customRspEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> customRspEnable;
 
     /**
-     * @return 是否开启自定义响应。
+     * @return Whether to enable custom response.
      * 
      */
     public Output<Integer> customRspEnable() {
         return this.customRspEnable;
     }
     /**
-     * 自定义SNI。
+     * Custom SNI.
      * 
      */
     @Export(name="customSni", refs={String.class}, tree="[0]")
     private Output<String> customSni;
 
     /**
-     * @return 自定义SNI。
+     * @return Custom SNI.
      * 
      */
     public Output<String> customSni() {
         return this.customSni;
     }
     /**
-     * 为例外 ALB 实例设置防护模式。
-     * 1：启用防护，已配置的防护策略生效。
-     * 2：暂停防护，仅执行转发而不检测，已配置的防护策略不生效。
-     * 3：回源模式，直接将请求解析至源站，不再转发至 WAF 实例。
-     * 设置例外防护实例后，域名可能还会存在以下防护状态：
-     * 5：部分启用，默认防护模式为启用防护，但存在例外实例为暂停防护或回源模式状态。
-     * 6：部分暂停，默认防护模式为暂停防护，但存在例外实例为启用防护或回源模式状态。
-     * 7：部分回源，默认防护模式为回源模式，但存在例外实例为启用防护或暂停防护状态。
+     * Set protection mode for exception ALB instances.
+     * 1: Enable protection. The configured protection policies take effect.
+     * 2: Pause protection. Only forwarding is performed without inspection; the configured protection policies do not take effect.
+     * 3: Origin mode. Requests are sent directly to the origin server and are no longer forwarded to the WAF instance.
+     * After configuring exception protection instances, the domain may also have the following protection statuses:
+     * 5: Partially enabled. The default protection mode is enabled, but some exception instances are in paused protection or origin mode.
+     * 6: Partially paused. The default protection mode is paused, but some exception instances are in enabled protection or origin mode.
+     * 7: Partially origin. The default protection mode is origin mode, but some exception instances are in enabled protection or paused protection.
      * 
      */
     @Export(name="defenceMode", refs={Integer.class}, tree="[0]")
     private Output<Integer> defenceMode;
 
     /**
-     * @return 为例外 ALB 实例设置防护模式。
-     * 1：启用防护，已配置的防护策略生效。
-     * 2：暂停防护，仅执行转发而不检测，已配置的防护策略不生效。
-     * 3：回源模式，直接将请求解析至源站，不再转发至 WAF 实例。
-     * 设置例外防护实例后，域名可能还会存在以下防护状态：
-     * 5：部分启用，默认防护模式为启用防护，但存在例外实例为暂停防护或回源模式状态。
-     * 6：部分暂停，默认防护模式为暂停防护，但存在例外实例为启用防护或回源模式状态。
-     * 7：部分回源，默认防护模式为回源模式，但存在例外实例为启用防护或暂停防护状态。
+     * @return Set protection mode for exception ALB instances.
+     * 1: Enable protection. The configured protection policies take effect.
+     * 2: Pause protection. Only forwarding is performed without inspection; the configured protection policies do not take effect.
+     * 3: Origin mode. Requests are sent directly to the origin server and are no longer forwarded to the WAF instance.
+     * After configuring exception protection instances, the domain may also have the following protection statuses:
+     * 5: Partially enabled. The default protection mode is enabled, but some exception instances are in paused protection or origin mode.
+     * 6: Partially paused. The default protection mode is paused, but some exception instances are in enabled protection or origin mode.
+     * 7: Partially origin. The default protection mode is origin mode, but some exception instances are in enabled protection or paused protection.
      * 
      */
     public Output<Integer> defenceMode() {
         return this.defenceMode;
     }
     /**
-     * 是否开启数据泄露防护。
+     * Data leakage protection enabled
      * 
      */
     @Export(name="dlpEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> dlpEnable;
 
     /**
-     * @return 是否开启数据泄露防护。
+     * @return Data leakage protection enabled
      * 
      */
     public Output<Integer> dlpEnable() {
         return this.dlpEnable;
     }
     /**
-     * 防护的域名信息，支持泛域名和精确域名。
+     * Protected domain information. Supports wildcard and exact domains
      * 
      */
     @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     /**
-     * @return 防护的域名信息，支持泛域名和精确域名。
+     * @return Protected domain information. Supports wildcard and exact domains
      * 
      */
     public Output<String> domain() {
         return this.domain;
     }
     /**
-     * 是否开启用户自定义重定向。0:关闭,1:开启。
+     * User-defined redirection enabled. 0: Off, 1: On
      * 
      */
     @Export(name="enableCustomRedirect", refs={Integer.class}, tree="[0]")
     private Output<Integer> enableCustomRedirect;
 
     /**
-     * @return 是否开启用户自定义重定向。0:关闭,1:开启。
+     * @return User-defined redirection enabled. 0: Off, 1: On
      * 
      */
     public Output<Integer> enableCustomRedirect() {
         return this.enableCustomRedirect;
     }
     /**
-     * 是否开启HTTP2.0。0:关闭,1:开启。
+     * Whether to enable HTTP/2.0. 0: Disabled, 1: Enabled.
      * 
      */
     @Export(name="enableHttp2", refs={Integer.class}, tree="[0]")
     private Output<Integer> enableHttp2;
 
     /**
-     * @return 是否开启HTTP2.0。0:关闭,1:开启。
+     * @return Whether to enable HTTP/2.0. 0: Disabled, 1: Enabled.
      * 
      */
     public Output<Integer> enableHttp2() {
         return this.enableHttp2;
     }
     /**
-     * 是否支持防护Ipv6请求。0:关闭,1:开启。
+     * IPv6 request protection supported. 0: Off, 1: On
      * 
      */
     @Export(name="enableIpv6", refs={Integer.class}, tree="[0]")
     private Output<Integer> enableIpv6;
 
     /**
-     * @return 是否支持防护Ipv6请求。0:关闭,1:开启。
+     * @return IPv6 request protection supported. 0: Off, 1: On
      * 
      */
     public Output<Integer> enableIpv6() {
         return this.enableIpv6;
     }
     /**
-     * 是否开启SNI配置。0:关闭,1:开启。
+     * Whether to enable SNI configuration. 0: Off, 1: On.
      * 
      */
     @Export(name="enableSni", refs={Integer.class}, tree="[0]")
     private Output<Integer> enableSni;
 
     /**
-     * @return 是否开启SNI配置。0:关闭,1:开启。
+     * @return Whether to enable SNI configuration. 0: Off, 1: On.
      * 
      */
     public Output<Integer> enableSni() {
         return this.enableSni;
     }
     /**
-     * 长连接复用个数。
+     * Persistent connection reuse count
      * 
      */
     @Export(name="keepAliveRequest", refs={Integer.class}, tree="[0]")
     private Output<Integer> keepAliveRequest;
 
     /**
-     * @return 长连接复用个数。
+     * @return Persistent connection reuse count
      * 
      */
     public Output<Integer> keepAliveRequest() {
         return this.keepAliveRequest;
     }
     /**
-     * 长连接保持时间(秒)。
+     * Persistent connection keep-alive time (seconds)
      * 
      */
     @Export(name="keepAliveTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> keepAliveTimeout;
 
     /**
-     * @return 长连接保持时间(秒)。
+     * @return Persistent connection keep-alive time (seconds)
      * 
      */
     public Output<Integer> keepAliveTimeout() {
         return this.keepAliveTimeout;
     }
     /**
-     * 负载均衡算法类型。wrr:加权轮询,wlc:加权最小连接数,sh:源地址哈希。
+     * Load balancing algorithm type. wrr: Weighted round robin, wlc: Weighted least connections, sh: Source address hash.
      * 
      */
     @Export(name="lbAlgorithm", refs={String.class}, tree="[0]")
     private Output<String> lbAlgorithm;
 
     /**
-     * @return 负载均衡算法类型。wrr:加权轮询,wlc:加权最小连接数,sh:源地址哈希。
+     * @return Load balancing algorithm type. wrr: Weighted round robin, wlc: Weighted least connections, sh: Source address hash.
      * 
      */
     public Output<String> lbAlgorithm() {
         return this.lbAlgorithm;
     }
     /**
-     * 端口号。
+     * Port number
      * 
      */
     @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output<Integer> port;
 
     /**
-     * @return 端口号。
+     * @return Port number
      * 
      */
     public Output<Integer> port() {
         return this.port;
     }
     /**
-     * 项目名称。
+     * Project name.
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 项目名称。
+     * @return Project name.
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 是否开启协议跟随。0:关闭,1:开启。
+     * Protocol following enabled. 0: Off, 1: On
      * 
      */
     @Export(name="protocolFollow", refs={Integer.class}, tree="[0]")
     private Output<Integer> protocolFollow;
 
     /**
-     * @return 是否开启协议跟随。0:关闭,1:开启。
+     * @return Protocol following enabled. 0: Off, 1: On
      * 
      */
     public Output<Integer> protocolFollow() {
         return this.protocolFollow;
     }
     /**
-     * 接入端口信息。
+     * Access port information
      * 
      */
     @Export(name="protocolPorts", refs={DomainProtocolPorts.class}, tree="[0]")
     private Output<DomainProtocolPorts> protocolPorts;
 
     /**
-     * @return 接入端口信息。
+     * @return Access port information
      * 
      */
     public Output<DomainProtocolPorts> protocolPorts() {
         return this.protocolPorts;
     }
     /**
-     * 接入协议类型,支持HTTP/HTTPS。
+     * Access protocol type: supports HTTP/HTTPS
      * 
      */
     @Export(name="protocols", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> protocols;
 
     /**
-     * @return 接入协议类型,支持HTTP/HTTPS。
+     * @return Access protocol type: supports HTTP/HTTPS
      * 
      */
     public Output<List<String>> protocols() {
         return this.protocols;
     }
     /**
-     * 是否开启代理配置。0:关闭,1:开启。
+     * Proxy configuration enabled. 0: Off, 1: On
      * 
      */
     @Export(name="proxyConfig", refs={Integer.class}, tree="[0]")
     private Output<Integer> proxyConfig;
 
     /**
-     * @return 是否开启代理配置。0:关闭,1:开启。
+     * @return Proxy configuration enabled. 0: Off, 1: On
      * 
      */
     public Output<Integer> proxyConfig() {
         return this.proxyConfig;
     }
     /**
-     * WAF和后端服务器的建连超时时间(秒)。
+     * Connection timeout between WAF and backend server (seconds).
      * 
      */
     @Export(name="proxyConnectTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> proxyConnectTimeout;
 
     /**
-     * @return WAF和后端服务器的建连超时时间(秒)。
+     * @return Connection timeout between WAF and backend server (seconds).
      * 
      */
     public Output<Integer> proxyConnectTimeout() {
         return this.proxyConnectTimeout;
     }
     /**
-     * WAF回源长连接可复用个数。
+     * Number of reusable WAF origin persistent connections.
      * 
      */
     @Export(name="proxyKeepAlive", refs={Integer.class}, tree="[0]")
     private Output<Integer> proxyKeepAlive;
 
     /**
-     * @return WAF回源长连接可复用个数。
+     * @return Number of reusable WAF origin persistent connections.
      * 
      */
     public Output<Integer> proxyKeepAlive() {
         return this.proxyKeepAlive;
     }
     /**
-     * 空闲长连接超时时间(秒)。
+     * Idle persistent connection timeout (seconds)
      * 
      */
     @Export(name="proxyKeepAliveTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> proxyKeepAliveTimeout;
 
     /**
-     * @return 空闲长连接超时时间(秒)。
+     * @return Idle persistent connection timeout (seconds)
      * 
      */
     public Output<Integer> proxyKeepAliveTimeout() {
         return this.proxyKeepAliveTimeout;
     }
     /**
-     * WAF从后端服务器读取响应的超时时间(秒)。
+     * Timeout for WAF to read response from backend server (seconds).
      * 
      */
     @Export(name="proxyReadTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> proxyReadTimeout;
 
     /**
-     * @return WAF从后端服务器读取响应的超时时间(秒)。
+     * @return Timeout for WAF to read response from backend server (seconds).
      * 
      */
     public Output<Integer> proxyReadTimeout() {
         return this.proxyReadTimeout;
     }
     /**
-     * WAF回源重试次数。
+     * WAF origin retry count.
      * 
      */
     @Export(name="proxyRetry", refs={Integer.class}, tree="[0]")
     private Output<Integer> proxyRetry;
 
     /**
-     * @return WAF回源重试次数。
+     * @return WAF origin retry count.
      * 
      */
     public Output<Integer> proxyRetry() {
         return this.proxyRetry;
     }
     /**
-     * WAF将请求传输到后端服务器的超时时间(秒)。
+     * Timeout for WAF to transmit request to backend server (seconds).
      * 
      */
     @Export(name="proxyWriteTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> proxyWriteTimeout;
 
     /**
-     * @return WAF将请求传输到后端服务器的超时时间(秒)。
+     * @return Timeout for WAF to transmit request to backend server (seconds).
      * 
      */
     public Output<Integer> proxyWriteTimeout() {
         return this.proxyWriteTimeout;
     }
     /**
-     * CNAME接入回源方式。0:私网回源,1:公网回源。
+     * CNAME access origin method. 0: Private network origin, 1: Public network origin.
      * 
      */
     @Export(name="publicRealServer", refs={Integer.class}, tree="[0]")
     private Output<Integer> publicRealServer;
 
     /**
-     * @return CNAME接入回源方式。0:私网回源,1:公网回源。
+     * @return CNAME access origin method. 0: Private network origin, 1: Public network origin.
      * 
      */
     public Output<Integer> publicRealServer() {
         return this.publicRealServer;
     }
     /**
-     * 是否开启异常响应防护。
+     * Whether to enable abnormal response protection.
      * 
      */
     @Export(name="rspAbnormalEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> rspAbnormalEnable;
 
     /**
-     * @return 是否开启异常响应防护。
+     * @return Whether to enable abnormal response protection.
      * 
      */
     public Output<Integer> rspAbnormalEnable() {
         return this.rspAbnormalEnable;
     }
     /**
-     * 服务IP。
+     * Service IP
      * 
      */
     @Export(name="serverIps", refs={String.class}, tree="[0]")
     private Output<String> serverIps;
 
     /**
-     * @return 服务IP。
+     * @return Service IP
      * 
      */
     public Output<String> serverIps() {
         return this.serverIps;
     }
     /**
-     * WAF回源IP。
+     * WAF origin IP.
      * 
      */
     @Export(name="srcIps", refs={String.class}, tree="[0]")
     private Output<String> srcIps;
 
     /**
-     * @return WAF回源IP。
+     * @return WAF origin IP.
      * 
      */
     public Output<String> srcIps() {
         return this.srcIps;
     }
     /**
-     * 源站协议。
+     * Origin protocol.
      * 
      */
     @Export(name="srcProtocol", refs={String.class}, tree="[0]")
     private Output<String> srcProtocol;
 
     /**
-     * @return 源站协议。
+     * @return Origin protocol.
      * 
      */
     public Output<String> srcProtocol() {
         return this.srcProtocol;
     }
     /**
-     * 加密套件。
+     * Cipher suite
      * 
      */
     @Export(name="sslCiphers", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> sslCiphers;
 
     /**
-     * @return 加密套件。
+     * @return Cipher suite
      * 
      */
     public Output<List<String>> sslCiphers() {
         return this.sslCiphers;
     }
     /**
-     * TLS协议版本。如:TLSv1,TLSv1.1,TLSv1.2,TLSv1.3。
+     * TLS protocol version. For example: TLSv1, TLSv1.1, TLSv1.2, TLSv1.3
      * 
      */
     @Export(name="sslProtocols", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> sslProtocols;
 
     /**
-     * @return TLS协议版本。如:TLSv1,TLSv1.1,TLSv1.2,TLSv1.3。
+     * @return TLS protocol version. For example: TLSv1, TLSv1.1, TLSv1.2, TLSv1.3
      * 
      */
     public Output<List<String>> sslProtocols() {
         return this.sslProtocols;
     }
     /**
-     * 接入状态。0:正常,1:DNS未解析,2:配置中,3:配置失败,4:配置未生效,5:更新中,6:实例已删除。
+     * Access status. 0: Normal, 1: DNS not resolved, 2: Configuring, 3: Configuration failed, 4: Configuration not effective, 5: Updating, 6: Instance deleted.
      * 
      */
     @Export(name="status", refs={Integer.class}, tree="[0]")
     private Output<Integer> status;
 
     /**
-     * @return 接入状态。0:正常,1:DNS未解析,2:配置中,3:配置失败,4:配置未生效,5:更新中,6:实例已删除。
+     * @return Access status. 0: Normal, 1: DNS not resolved, 2: Configuring, 3: Configuration failed, 4: Configuration not effective, 5: Updating, 6: Instance deleted.
      * 
      */
     public Output<Integer> status() {
         return this.status;
     }
     /**
-     * 是否开启托管BOT防护。
+     * Whether to enable managed bot protection.
      * 
      */
     @Export(name="systemBotEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> systemBotEnable;
 
     /**
-     * @return 是否开启托管BOT防护。
+     * @return Whether to enable managed bot protection.
      * 
      */
     public Output<Integer> systemBotEnable() {
         return this.systemBotEnable;
     }
     /**
-     * 是否开启防篡改。
+     * Whether to enable anti-tampering.
      * 
      */
     @Export(name="tamperProofEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> tamperProofEnable;
 
     /**
-     * @return 是否开启防篡改。
+     * @return Whether to enable anti-tampering.
      * 
      */
     public Output<Integer> tamperProofEnable() {
@@ -948,42 +948,42 @@ public class Domain extends com.pulumi.resources.CustomResource {
         return this.tcpListenerConfigs;
     }
     /**
-     * 是否开启日志服务。0:关闭,1:开启。
+     * Log service enabled. 0: Off, 1: On
      * 
      */
     @Export(name="tlsEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> tlsEnable;
 
     /**
-     * @return 是否开启日志服务。0:关闭,1:开启。
+     * @return Log service enabled. 0: Off, 1: On
      * 
      */
     public Output<Integer> tlsEnable() {
         return this.tlsEnable;
     }
     /**
-     * 日志字段配置详情。
+     * Log field configuration details
      * 
      */
     @Export(name="tlsFieldsConfig", refs={DomainTlsFieldsConfig.class}, tree="[0]")
     private Output<DomainTlsFieldsConfig> tlsFieldsConfig;
 
     /**
-     * @return 日志字段配置详情。
+     * @return Log field configuration details
      * 
      */
     public Output<DomainTlsFieldsConfig> tlsFieldsConfig() {
         return this.tlsFieldsConfig;
     }
     /**
-     * 更新时间。
+     * Update time
      * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
-     * @return 更新时间。
+     * @return Update time
      * 
      */
     public Output<String> updateTime() {
@@ -1004,56 +1004,56 @@ public class Domain extends com.pulumi.resources.CustomResource {
         return this.vpcId;
     }
     /**
-     * 是否开启WAF防护。
+     * WAF protection enabled
      * 
      */
     @Export(name="wafEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> wafEnable;
 
     /**
-     * @return 是否开启WAF防护。
+     * @return WAF protection enabled
      * 
      */
     public Output<Integer> wafEnable() {
         return this.wafEnable;
     }
     /**
-     * 是否开启白名单请求防护。
+     * Allowlist request protection enabled
      * 
      */
     @Export(name="wafWhiteReqEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> wafWhiteReqEnable;
 
     /**
-     * @return 是否开启白名单请求防护。
+     * @return Allowlist request protection enabled
      * 
      */
     public Output<Integer> wafWhiteReqEnable() {
         return this.wafWhiteReqEnable;
     }
     /**
-     * 是否开启白名单防护。
+     * Whether to enable allowlist protection.
      * 
      */
     @Export(name="whiteEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> whiteEnable;
 
     /**
-     * @return 是否开启白名单防护。
+     * @return Whether to enable allowlist protection.
      * 
      */
     public Output<Integer> whiteEnable() {
         return this.whiteEnable;
     }
     /**
-     * 是否开启字段白名单防护。
+     * Field allowlist protection enabled
      * 
      */
     @Export(name="whiteFieldEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> whiteFieldEnable;
 
     /**
-     * @return 是否开启字段白名单防护。
+     * @return Field allowlist protection enabled
      * 
      */
     public Output<Integer> whiteFieldEnable() {

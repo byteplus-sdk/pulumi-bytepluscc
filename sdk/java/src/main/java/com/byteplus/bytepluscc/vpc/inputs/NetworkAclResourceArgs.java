@@ -16,14 +16,14 @@ public final class NetworkAclResourceArgs extends com.pulumi.resources.ResourceA
     public static final NetworkAclResourceArgs Empty = new NetworkAclResourceArgs();
 
     /**
-     * 关联资源的ID。
+     * Associated resource ID.
      * 
      */
     @Import(name="resourceId")
     private @Nullable Output<String> resourceId;
 
     /**
-     * @return 关联资源的ID。
+     * @return Associated resource ID.
      * 
      */
     public Optional<Output<String>> resourceId() {
@@ -55,7 +55,7 @@ public final class NetworkAclResourceArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param resourceId 关联资源的ID。
+         * @param resourceId Associated resource ID.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class NetworkAclResourceArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param resourceId 关联资源的ID。
+         * @param resourceId Associated resource ID.
          * 
          * @return builder
          * 

@@ -19,7 +19,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 监听器负责根据指定的协议和端口，监听NLB实例接收到的用户访问请求。NLB将按照该监听器关联的服务器组配置的调度算法，将访问请求转发至该服务器组内健康的后端服务器。
+ * The listener monitors user access requests received by the NLB instance based on the specified protocol and port. NLB forwards requests to healthy backend servers in the associated server group according to the scheduling algorithm configured for that group.
  * 
  * ## Example Usage
  * 
@@ -78,84 +78,84 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:clb/nlbListener:NlbListener")
 public class NlbListener extends com.pulumi.resources.CustomResource {
     /**
-     * TLS监听器服务器证书的ID，仅支持传入证书中心 SSL 证书。。
+     * TLS listener server certificate ID. Only SSL certificates from the certificate center are supported.
      * 
      */
     @Export(name="certificateId", refs={String.class}, tree="[0]")
     private Output<String> certificateId;
 
     /**
-     * @return TLS监听器服务器证书的ID，仅支持传入证书中心 SSL 证书。。
+     * @return TLS listener server certificate ID. Only SSL certificates from the certificate center are supported.
      * 
      */
     public Output<String> certificateId() {
         return this.certificateId;
     }
     /**
-     * 监听器的连接超时时间（秒）。
+     * Listener connection timeout (seconds)
      * 
      */
     @Export(name="connectionTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> connectionTimeout;
 
     /**
-     * @return 监听器的连接超时时间（秒）。
+     * @return Listener connection timeout (seconds)
      * 
      */
     public Output<Integer> connectionTimeout() {
         return this.connectionTimeout;
     }
     /**
-     * 监听器的创建时间。
+     * Listener creation time
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 监听器的创建时间。
+     * @return Listener creation time
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 监听器描述信息。
+     * Listener description
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 监听器描述信息。
+     * @return Listener description
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 是否启用监听器。true：开启；false：关闭。
+     * Listener enabled: true (enabled); false (disabled)
      * 
      */
     @Export(name="enabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enabled;
 
     /**
-     * @return 是否启用监听器。true：开启；false：关闭。
+     * @return Listener enabled: true (enabled); false (disabled)
      * 
      */
     public Output<Boolean> enabled() {
         return this.enabled;
     }
     /**
-     * 全端口监听的结束端口，仅当Port为0时有效。
+     * End port for all-port listening. Valid only when Port is 0.
      * 
      */
     @Export(name="endPort", refs={Integer.class}, tree="[0]")
     private Output<Integer> endPort;
 
     /**
-     * @return 全端口监听的结束端口，仅当Port为0时有效。
+     * @return End port for all-port listening. Valid only when Port is 0.
      * 
      */
     public Output<Integer> endPort() {
@@ -168,126 +168,126 @@ public class NlbListener extends com.pulumi.resources.CustomResource {
         return this.healths;
     }
     /**
-     * 监听器唯一标识。
+     * Listener unique identifier
      * 
      */
     @Export(name="listenerId", refs={String.class}, tree="[0]")
     private Output<String> listenerId;
 
     /**
-     * @return 监听器唯一标识。
+     * @return Listener unique identifier
      * 
      */
     public Output<String> listenerId() {
         return this.listenerId;
     }
     /**
-     * 监听器名称。
+     * Listener name
      * 
      */
     @Export(name="listenerName", refs={String.class}, tree="[0]")
     private Output<String> listenerName;
 
     /**
-     * @return 监听器名称。
+     * @return Listener name
      * 
      */
     public Output<String> listenerName() {
         return this.listenerName;
     }
     /**
-     * 负载均衡实例ID。
+     * Load balancer instance ID
      * 
      */
     @Export(name="loadBalancerId", refs={String.class}, tree="[0]")
     private Output<String> loadBalancerId;
 
     /**
-     * @return 负载均衡实例ID。
+     * @return Load balancer instance ID
      * 
      */
     public Output<String> loadBalancerId() {
         return this.loadBalancerId;
     }
     /**
-     * 监听器接收请求的端口，0表示启用全端口监听。
+     * Port on which the listener receives requests. 0 indicates all-port listening is enabled.
      * 
      */
     @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output<Integer> port;
 
     /**
-     * @return 监听器接收请求的端口，0表示启用全端口监听。
+     * @return Port on which the listener receives requests. 0 indicates all-port listening is enabled.
      * 
      */
     public Output<Integer> port() {
         return this.port;
     }
     /**
-     * 监听协议类型。TCP,UDP,TLS
+     * Listener protocol type: TCP, UDP, TLS
      * 
      */
     @Export(name="protocol", refs={String.class}, tree="[0]")
     private Output<String> protocol;
 
     /**
-     * @return 监听协议类型。TCP,UDP,TLS
+     * @return Listener protocol type: TCP, UDP, TLS
      * 
      */
     public Output<String> protocol() {
         return this.protocol;
     }
     /**
-     * TLS 安全策略ID，支持系统安全策略和自定义安全策略。系统安全策略取值：.tls*cipher*policy*1*0.tls*cipher*policy*1*1.tls*cipher*policy*1*2.tls*cipher*policy*1*2*strict.tls*cipher*policy*1*2*strict*with*1_3.自定义安全策略：输入自定义安全策略 ID。当Protocol为TLS 时，该参数为必填。。
+     * TLS security policy ID. Supports both system security policies and custom security policies. System security policy values: .tls*cipher*policy*1*0 .tls*cipher*policy*1*1 .tls*cipher*policy*1*2 .tls*cipher*policy*1*2*strict .tls*cipher*policy*1*2*strict*with*1_3. For custom security policies, enter the custom security policy ID. This parameter is required when Protocol is TLS.
      * 
      */
     @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyId;
 
     /**
-     * @return TLS 安全策略ID，支持系统安全策略和自定义安全策略。系统安全策略取值：.tls*cipher*policy*1*0.tls*cipher*policy*1*1.tls*cipher*policy*1*2.tls*cipher*policy*1*2*strict.tls*cipher*policy*1*2*strict*with*1_3.自定义安全策略：输入自定义安全策略 ID。当Protocol为TLS 时，该参数为必填。。
+     * @return TLS security policy ID. Supports both system security policies and custom security policies. System security policy values: .tls*cipher*policy*1*0 .tls*cipher*policy*1*1 .tls*cipher*policy*1*2 .tls*cipher*policy*1*2*strict .tls*cipher*policy*1*2*strict*with*1_3. For custom security policies, enter the custom security policy ID. This parameter is required when Protocol is TLS.
      * 
      */
     public Output<String> securityPolicyId() {
         return this.securityPolicyId;
     }
     /**
-     * 监听器关联的服务器组ID。
+     * Server group ID associated with the listener
      * 
      */
     @Export(name="serverGroupId", refs={String.class}, tree="[0]")
     private Output<String> serverGroupId;
 
     /**
-     * @return 监听器关联的服务器组ID。
+     * @return Server group ID associated with the listener
      * 
      */
     public Output<String> serverGroupId() {
         return this.serverGroupId;
     }
     /**
-     * 全端口监听的起始端口，仅当Port为0时有效。
+     * Start port for all-port listening. Valid only when Port is 0.
      * 
      */
     @Export(name="startPort", refs={Integer.class}, tree="[0]")
     private Output<Integer> startPort;
 
     /**
-     * @return 全端口监听的起始端口，仅当Port为0时有效。
+     * @return Start port for all-port listening. Valid only when Port is 0.
      * 
      */
     public Output<Integer> startPort() {
         return this.startPort;
     }
     /**
-     * 监听器的状态。
+     * Listener status
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 监听器的状态。
+     * @return Listener status
      * 
      */
     public Output<String> status() {
@@ -300,14 +300,14 @@ public class NlbListener extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 监听器最近操作时间。
+     * Listener&#39;s most recent operation time
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 监听器最近操作时间。
+     * @return Listener&#39;s most recent operation time
      * 
      */
     public Output<String> updatedTime() {

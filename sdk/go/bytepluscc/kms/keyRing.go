@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 用户管理密钥的集合，用户将相同类型或用途的密钥放在同一密钥环中以便于管理。
+// A collection for managing user keys; users place keys of the same type or purpose in the same keyring for easier management
 //
 // ## Example Usage
 //
@@ -51,23 +51,23 @@ import (
 type KeyRing struct {
 	pulumi.CustomResourceState
 
-	// 密钥环创建日期。
+	// Keyring creation date
 	CreateDate pulumi.IntOutput `pulumi:"createDate"`
-	// 密钥环描述，长度为 0   - 8192 个字符。
+	// Keyring description, length: 0–8192 characters
 	Description pulumi.StringOutput `pulumi:"description"`
-	// 密钥环密钥次数。
+	// Number of keys in keyring
 	KeyCount pulumi.IntOutput `pulumi:"keyCount"`
-	// 密钥环唯一标识符，UUID形式。
+	// Keyring unique identifier, in UUID format
 	KeyRingId pulumi.StringOutput `pulumi:"keyRingId"`
-	// 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+	// Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
 	KeyringName pulumi.StringOutput `pulumi:"keyringName"`
-	// 密钥环类型，取值：CustomKeyring。
+	// Keyring type, value: CustomKeyring
 	KeyringType pulumi.StringOutput `pulumi:"keyringType"`
-	// 项目名称，默认值：default。
+	// Project name, default value: default
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
-	// 密钥环租户ID。
+	// Keyring tenant ID
 	Uid pulumi.StringOutput `pulumi:"uid"`
-	// 密钥环更新日期。
+	// Keyring update date
 	UpdateDate pulumi.IntOutput `pulumi:"updateDate"`
 }
 
@@ -104,44 +104,44 @@ func GetKeyRing(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering KeyRing resources.
 type keyRingState struct {
-	// 密钥环创建日期。
+	// Keyring creation date
 	CreateDate *int `pulumi:"createDate"`
-	// 密钥环描述，长度为 0   - 8192 个字符。
+	// Keyring description, length: 0–8192 characters
 	Description *string `pulumi:"description"`
-	// 密钥环密钥次数。
+	// Number of keys in keyring
 	KeyCount *int `pulumi:"keyCount"`
-	// 密钥环唯一标识符，UUID形式。
+	// Keyring unique identifier, in UUID format
 	KeyRingId *string `pulumi:"keyRingId"`
-	// 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+	// Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
 	KeyringName *string `pulumi:"keyringName"`
-	// 密钥环类型，取值：CustomKeyring。
+	// Keyring type, value: CustomKeyring
 	KeyringType *string `pulumi:"keyringType"`
-	// 项目名称，默认值：default。
+	// Project name, default value: default
 	ProjectName *string `pulumi:"projectName"`
-	// 密钥环租户ID。
+	// Keyring tenant ID
 	Uid *string `pulumi:"uid"`
-	// 密钥环更新日期。
+	// Keyring update date
 	UpdateDate *int `pulumi:"updateDate"`
 }
 
 type KeyRingState struct {
-	// 密钥环创建日期。
+	// Keyring creation date
 	CreateDate pulumi.IntPtrInput
-	// 密钥环描述，长度为 0   - 8192 个字符。
+	// Keyring description, length: 0–8192 characters
 	Description pulumi.StringPtrInput
-	// 密钥环密钥次数。
+	// Number of keys in keyring
 	KeyCount pulumi.IntPtrInput
-	// 密钥环唯一标识符，UUID形式。
+	// Keyring unique identifier, in UUID format
 	KeyRingId pulumi.StringPtrInput
-	// 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+	// Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
 	KeyringName pulumi.StringPtrInput
-	// 密钥环类型，取值：CustomKeyring。
+	// Keyring type, value: CustomKeyring
 	KeyringType pulumi.StringPtrInput
-	// 项目名称，默认值：default。
+	// Project name, default value: default
 	ProjectName pulumi.StringPtrInput
-	// 密钥环租户ID。
+	// Keyring tenant ID
 	Uid pulumi.StringPtrInput
-	// 密钥环更新日期。
+	// Keyring update date
 	UpdateDate pulumi.IntPtrInput
 }
 
@@ -150,25 +150,25 @@ func (KeyRingState) ElementType() reflect.Type {
 }
 
 type keyRingArgs struct {
-	// 密钥环描述，长度为 0   - 8192 个字符。
+	// Keyring description, length: 0–8192 characters
 	Description *string `pulumi:"description"`
-	// 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+	// Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
 	KeyringName string `pulumi:"keyringName"`
-	// 密钥环类型，取值：CustomKeyring。
+	// Keyring type, value: CustomKeyring
 	KeyringType *string `pulumi:"keyringType"`
-	// 项目名称，默认值：default。
+	// Project name, default value: default
 	ProjectName *string `pulumi:"projectName"`
 }
 
 // The set of arguments for constructing a KeyRing resource.
 type KeyRingArgs struct {
-	// 密钥环描述，长度为 0   - 8192 个字符。
+	// Keyring description, length: 0–8192 characters
 	Description pulumi.StringPtrInput
-	// 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+	// Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
 	KeyringName pulumi.StringInput
-	// 密钥环类型，取值：CustomKeyring。
+	// Keyring type, value: CustomKeyring
 	KeyringType pulumi.StringPtrInput
-	// 项目名称，默认值：default。
+	// Project name, default value: default
 	ProjectName pulumi.StringPtrInput
 }
 
@@ -259,47 +259,47 @@ func (o KeyRingOutput) ToKeyRingOutputWithContext(ctx context.Context) KeyRingOu
 	return o
 }
 
-// 密钥环创建日期。
+// Keyring creation date
 func (o KeyRingOutput) CreateDate() pulumi.IntOutput {
 	return o.ApplyT(func(v *KeyRing) pulumi.IntOutput { return v.CreateDate }).(pulumi.IntOutput)
 }
 
-// 密钥环描述，长度为 0   - 8192 个字符。
+// Keyring description, length: 0–8192 characters
 func (o KeyRingOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *KeyRing) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// 密钥环密钥次数。
+// Number of keys in keyring
 func (o KeyRingOutput) KeyCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *KeyRing) pulumi.IntOutput { return v.KeyCount }).(pulumi.IntOutput)
 }
 
-// 密钥环唯一标识符，UUID形式。
+// Keyring unique identifier, in UUID format
 func (o KeyRingOutput) KeyRingId() pulumi.StringOutput {
 	return o.ApplyT(func(v *KeyRing) pulumi.StringOutput { return v.KeyRingId }).(pulumi.StringOutput)
 }
 
-// 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+// Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
 func (o KeyRingOutput) KeyringName() pulumi.StringOutput {
 	return o.ApplyT(func(v *KeyRing) pulumi.StringOutput { return v.KeyringName }).(pulumi.StringOutput)
 }
 
-// 密钥环类型，取值：CustomKeyring。
+// Keyring type, value: CustomKeyring
 func (o KeyRingOutput) KeyringType() pulumi.StringOutput {
 	return o.ApplyT(func(v *KeyRing) pulumi.StringOutput { return v.KeyringType }).(pulumi.StringOutput)
 }
 
-// 项目名称，默认值：default。
+// Project name, default value: default
 func (o KeyRingOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *KeyRing) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 密钥环租户ID。
+// Keyring tenant ID
 func (o KeyRingOutput) Uid() pulumi.StringOutput {
 	return o.ApplyT(func(v *KeyRing) pulumi.StringOutput { return v.Uid }).(pulumi.StringOutput)
 }
 
-// 密钥环更新日期。
+// Keyring update date
 func (o KeyRingOutput) UpdateDate() pulumi.IntOutput {
 	return o.ApplyT(func(v *KeyRing) pulumi.IntOutput { return v.UpdateDate }).(pulumi.IntOutput)
 }

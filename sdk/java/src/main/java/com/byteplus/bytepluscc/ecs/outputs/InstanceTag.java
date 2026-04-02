@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceTag {
     /**
-     * @return 实例的键。
+     * @return Instance key.
      * 
      */
     private @Nullable String key;
     /**
-     * @return 实例的值。
+     * @return Instance value.
      * 
      */
     private @Nullable String value;
 
     private InstanceTag() {}
     /**
-     * @return 实例的键。
+     * @return Instance key.
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return 实例的值。
+     * @return Instance value.
      * 
      */
     public Optional<String> value() {

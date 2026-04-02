@@ -30,43 +30,43 @@ type LookupGatewayArgs struct {
 
 // A collection of values returned by getGateway.
 type LookupGatewayResult struct {
-	// 后端服务配置信息。
+	// Backend service configuration information
 	BackendSpec GetGatewayBackendSpec `pulumi:"backendSpec"`
-	// 网关备注信息。长度限制为0~253个字符。
+	// Gateway remarks. Length limit: 0–253 characters.
 	Comments string `pulumi:"comments"`
-	// 网关创建时间。
+	// Gateway creation time
 	CreatedTime string `pulumi:"createdTime"`
-	// 自定义日志配置。
+	// Custom log configuration
 	CustomLog GetGatewayCustomLog `pulumi:"customLog"`
-	// 事件。
+	// Event
 	Events []GetGatewayEvent `pulumi:"events"`
-	// 网关实例ID。
+	// Gateway instance ID
 	GatewayId string `pulumi:"gatewayId"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 日志配置。
+	// Log configuration
 	LogSpec GetGatewayLogSpec `pulumi:"logSpec"`
-	// 网关创建失败、删除失败或异常时的错误信息。
+	// Error message for gateway creation failure, deletion failure, or abnormal status
 	Message string `pulumi:"message"`
-	// 监控配置信息。
+	// Monitoring configuration information
 	MonitorSpec GetGatewayMonitorSpec `pulumi:"monitorSpec"`
-	// 网关名称。
+	// Gateway name
 	Name string `pulumi:"name"`
-	// 网络配置信息。
+	// Network configuration information
 	NetworkSpec GetGatewayNetworkSpec `pulumi:"networkSpec"`
-	// 项目名称。
+	// Project name
 	ProjectName string `pulumi:"projectName"`
-	// 资源规格配置信息。
+	// Resource specification configuration information
 	ResourceSpec GetGatewayResourceSpec `pulumi:"resourceSpec"`
-	// 网关状态，取值：Creating：创建中。CreatedFailed：创建失败。Updating：更新中。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+	// Gateway status. Options: Creating: Creating; CreatedFailed: Creation failed; Updating: Updating; Running: Running; Deleting: Deleting; DeletedFailed: Deletion failed; Abnormal: Abnormal
 	Status string `pulumi:"status"`
-	// 子网ID列表。长度限制为1~2个。
+	// Subnet ID list. Length limit: 1–2
 	SubnetIds []string `pulumi:"subnetIds"`
-	// 链路追踪配置信息。
+	// Link tracing configuration information.
 	TraceSpec GetGatewayTraceSpec `pulumi:"traceSpec"`
-	// 网关类型，取值：standard：标准网关。serverless：Serverless网关（暂不支持）。
+	// Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
 	Type string `pulumi:"type"`
-	// 网关版本。
+	// Gateway version.
 	Version string `pulumi:"version"`
 	// VPC ID。
 	VpcId string `pulumi:"vpcId"`
@@ -106,32 +106,32 @@ func (o LookupGatewayResultOutput) ToLookupGatewayResultOutputWithContext(ctx co
 	return o
 }
 
-// 后端服务配置信息。
+// Backend service configuration information
 func (o LookupGatewayResultOutput) BackendSpec() GetGatewayBackendSpecOutput {
 	return o.ApplyT(func(v LookupGatewayResult) GetGatewayBackendSpec { return v.BackendSpec }).(GetGatewayBackendSpecOutput)
 }
 
-// 网关备注信息。长度限制为0~253个字符。
+// Gateway remarks. Length limit: 0–253 characters.
 func (o LookupGatewayResultOutput) Comments() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGatewayResult) string { return v.Comments }).(pulumi.StringOutput)
 }
 
-// 网关创建时间。
+// Gateway creation time
 func (o LookupGatewayResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGatewayResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 自定义日志配置。
+// Custom log configuration
 func (o LookupGatewayResultOutput) CustomLog() GetGatewayCustomLogOutput {
 	return o.ApplyT(func(v LookupGatewayResult) GetGatewayCustomLog { return v.CustomLog }).(GetGatewayCustomLogOutput)
 }
 
-// 事件。
+// Event
 func (o LookupGatewayResultOutput) Events() GetGatewayEventArrayOutput {
 	return o.ApplyT(func(v LookupGatewayResult) []GetGatewayEvent { return v.Events }).(GetGatewayEventArrayOutput)
 }
 
-// 网关实例ID。
+// Gateway instance ID
 func (o LookupGatewayResultOutput) GatewayId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGatewayResult) string { return v.GatewayId }).(pulumi.StringOutput)
 }
@@ -141,62 +141,62 @@ func (o LookupGatewayResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGatewayResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 日志配置。
+// Log configuration
 func (o LookupGatewayResultOutput) LogSpec() GetGatewayLogSpecOutput {
 	return o.ApplyT(func(v LookupGatewayResult) GetGatewayLogSpec { return v.LogSpec }).(GetGatewayLogSpecOutput)
 }
 
-// 网关创建失败、删除失败或异常时的错误信息。
+// Error message for gateway creation failure, deletion failure, or abnormal status
 func (o LookupGatewayResultOutput) Message() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGatewayResult) string { return v.Message }).(pulumi.StringOutput)
 }
 
-// 监控配置信息。
+// Monitoring configuration information
 func (o LookupGatewayResultOutput) MonitorSpec() GetGatewayMonitorSpecOutput {
 	return o.ApplyT(func(v LookupGatewayResult) GetGatewayMonitorSpec { return v.MonitorSpec }).(GetGatewayMonitorSpecOutput)
 }
 
-// 网关名称。
+// Gateway name
 func (o LookupGatewayResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGatewayResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 网络配置信息。
+// Network configuration information
 func (o LookupGatewayResultOutput) NetworkSpec() GetGatewayNetworkSpecOutput {
 	return o.ApplyT(func(v LookupGatewayResult) GetGatewayNetworkSpec { return v.NetworkSpec }).(GetGatewayNetworkSpecOutput)
 }
 
-// 项目名称。
+// Project name
 func (o LookupGatewayResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGatewayResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 资源规格配置信息。
+// Resource specification configuration information
 func (o LookupGatewayResultOutput) ResourceSpec() GetGatewayResourceSpecOutput {
 	return o.ApplyT(func(v LookupGatewayResult) GetGatewayResourceSpec { return v.ResourceSpec }).(GetGatewayResourceSpecOutput)
 }
 
-// 网关状态，取值：Creating：创建中。CreatedFailed：创建失败。Updating：更新中。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+// Gateway status. Options: Creating: Creating; CreatedFailed: Creation failed; Updating: Updating; Running: Running; Deleting: Deleting; DeletedFailed: Deletion failed; Abnormal: Abnormal
 func (o LookupGatewayResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGatewayResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 子网ID列表。长度限制为1~2个。
+// Subnet ID list. Length limit: 1–2
 func (o LookupGatewayResultOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupGatewayResult) []string { return v.SubnetIds }).(pulumi.StringArrayOutput)
 }
 
-// 链路追踪配置信息。
+// Link tracing configuration information.
 func (o LookupGatewayResultOutput) TraceSpec() GetGatewayTraceSpecOutput {
 	return o.ApplyT(func(v LookupGatewayResult) GetGatewayTraceSpec { return v.TraceSpec }).(GetGatewayTraceSpecOutput)
 }
 
-// 网关类型，取值：standard：标准网关。serverless：Serverless网关（暂不支持）。
+// Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
 func (o LookupGatewayResultOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGatewayResult) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// 网关版本。
+// Gateway version.
 func (o LookupGatewayResultOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGatewayResult) string { return v.Version }).(pulumi.StringOutput)
 }

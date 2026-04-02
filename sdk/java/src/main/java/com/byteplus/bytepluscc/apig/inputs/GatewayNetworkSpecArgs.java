@@ -40,14 +40,14 @@ public final class GatewayNetworkSpecArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * VPC名称。
+     * VPC name
      * 
      */
     @Import(name="vpcName")
     private @Nullable Output<String> vpcName;
 
     /**
-     * @return VPC名称。
+     * @return VPC name
      * 
      */
     public Optional<Output<String>> vpcName() {
@@ -115,7 +115,7 @@ public final class GatewayNetworkSpecArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param vpcName VPC名称。
+         * @param vpcName VPC name
          * 
          * @return builder
          * 
@@ -126,7 +126,7 @@ public final class GatewayNetworkSpecArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param vpcName VPC名称。
+         * @param vpcName VPC name
          * 
          * @return builder
          * 

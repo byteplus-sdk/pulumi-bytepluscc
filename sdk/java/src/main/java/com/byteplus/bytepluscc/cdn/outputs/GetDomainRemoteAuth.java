@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainRemoteAuth {
     /**
-     * @return 表示远程鉴权的配置规则列表。当 Switch 是 true 时，该参数为必填。您只能添加一个配置规则。
+     * @return Specifies the list of remote authentication configuration rules. When Switch is true, this parameter is required. You can add only one configuration rule.
      * 
      */
     private List<GetDomainRemoteAuthRemoteAuthRule> remoteAuthRules;
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+     * @return Indicates whether this feature is enabled. The parameter values are as follows: true: enables the feature. false: disables the feature.
      * 
      */
     private Boolean switch_;
 
     private GetDomainRemoteAuth() {}
     /**
-     * @return 表示远程鉴权的配置规则列表。当 Switch 是 true 时，该参数为必填。您只能添加一个配置规则。
+     * @return Specifies the list of remote authentication configuration rules. When Switch is true, this parameter is required. You can add only one configuration rule.
      * 
      */
     public List<GetDomainRemoteAuthRemoteAuthRule> remoteAuthRules() {
         return this.remoteAuthRules;
     }
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+     * @return Indicates whether this feature is enabled. The parameter values are as follows: true: enables the feature. false: disables the feature.
      * 
      */
     public Boolean switch_() {

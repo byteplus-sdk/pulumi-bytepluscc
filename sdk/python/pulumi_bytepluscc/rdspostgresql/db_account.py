@@ -28,12 +28,12 @@ class DbAccountArgs:
                  not_allow_privileges: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
         The set of arguments for constructing a DbAccount resource.
-        :param pulumi.Input[builtins.str] account_name: 数据库账号名称。账号名称的设置规则如下：长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能以 pg* 开头。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。
-        :param pulumi.Input[builtins.str] account_password: 数据库账号的密码。数据库账号密码的设置规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的任意三种组成。特殊字符为 !@#$%^*()&_+-=。
-        :param pulumi.Input[builtins.str] account_type: 数据库账号类型，取值范围如下：Super：高权限账号。Normal：普通账号。InstanceReadOnly：实例只读账号。
-        :param pulumi.Input[builtins.str] account_privileges: 账号权限信息。多个权限中间以英文逗号（,）分隔。取值：Login：登录权限。Inherit：继承权限。CreateRole：创建角色权限。CreateDB：创建数据库权限。说明当账号类型为高权限账号时，无需传入该参数，默认支持全部权限。当账号类型为普通账号时，支持传入该参数，默认值为 Login 和 Inherit。账号类型为实例只读账号时，即 AccountType 取值为 InstanceReadOnly 时，不支持传入该参数
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] not_allow_privileges: 为账号禁用的权限。当前仅支持取值为 DDL。说明仅支持为高权限账号或普通账号传入此字段，即 AccountType 取值为 Super 或 Normal 时。
+        :param pulumi.Input[builtins.str] account_name: Database account name. The account name rules are as follows: Length must be 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Cannot start with pg*. Reserved keywords cannot be used. For all disabled keywords, see Disabled Keywords.
+        :param pulumi.Input[builtins.str] account_password: Database account password. The password rules are as follows: Length must be 8–32 characters. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters. Supported special characters: !@#$%^*()&_+-=.
+        :param pulumi.Input[builtins.str] account_type: Database account type. Valid values: Super: High privilege account. Normal: Normal account. InstanceReadOnly: Instance read-only account.
+        :param pulumi.Input[builtins.str] account_privileges: Account permission information. Separate multiple permissions with commas (,). Valid values: Login: Login permission. Inherit: Inherit permission. CreateRole: Create role permission. CreateDB: Create database permission. Note: If the account type is high privilege, you do not need to provide this parameter; all permissions are supported by default. If the account type is normal, you can provide this parameter; the default values are Login and Inherit. If the account type is instance read-only, that is, AccountType is set to InstanceReadOnly, this parameter is not supported.
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] not_allow_privileges: Permissions disabled for the account. Currently, only DDL is supported. Note: This field can only be provided for high privilege or normal accounts, that is, when AccountType is set to Super or Normal.
         """
         pulumi.set(__self__, "account_name", account_name)
         pulumi.set(__self__, "account_password", account_password)
@@ -49,7 +49,7 @@ class DbAccountArgs:
     @pulumi.getter(name="accountName")
     def account_name(self) -> pulumi.Input[builtins.str]:
         """
-        数据库账号名称。账号名称的设置规则如下：长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能以 pg* 开头。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。
+        Database account name. The account name rules are as follows: Length must be 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Cannot start with pg*. Reserved keywords cannot be used. For all disabled keywords, see Disabled Keywords.
         """
         return pulumi.get(self, "account_name")
 
@@ -61,7 +61,7 @@ class DbAccountArgs:
     @pulumi.getter(name="accountPassword")
     def account_password(self) -> pulumi.Input[builtins.str]:
         """
-        数据库账号的密码。数据库账号密码的设置规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的任意三种组成。特殊字符为 !@#$%^*()&_+-=。
+        Database account password. The password rules are as follows: Length must be 8–32 characters. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters. Supported special characters: !@#$%^*()&_+-=.
         """
         return pulumi.get(self, "account_password")
 
@@ -73,7 +73,7 @@ class DbAccountArgs:
     @pulumi.getter(name="accountType")
     def account_type(self) -> pulumi.Input[builtins.str]:
         """
-        数据库账号类型，取值范围如下：Super：高权限账号。Normal：普通账号。InstanceReadOnly：实例只读账号。
+        Database account type. Valid values: Super: High privilege account. Normal: Normal account. InstanceReadOnly: Instance read-only account.
         """
         return pulumi.get(self, "account_type")
 
@@ -85,7 +85,7 @@ class DbAccountArgs:
     @pulumi.getter(name="accountPrivileges")
     def account_privileges(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        账号权限信息。多个权限中间以英文逗号（,）分隔。取值：Login：登录权限。Inherit：继承权限。CreateRole：创建角色权限。CreateDB：创建数据库权限。说明当账号类型为高权限账号时，无需传入该参数，默认支持全部权限。当账号类型为普通账号时，支持传入该参数，默认值为 Login 和 Inherit。账号类型为实例只读账号时，即 AccountType 取值为 InstanceReadOnly 时，不支持传入该参数
+        Account permission information. Separate multiple permissions with commas (,). Valid values: Login: Login permission. Inherit: Inherit permission. CreateRole: Create role permission. CreateDB: Create database permission. Note: If the account type is high privilege, you do not need to provide this parameter; all permissions are supported by default. If the account type is normal, you can provide this parameter; the default values are Login and Inherit. If the account type is instance read-only, that is, AccountType is set to InstanceReadOnly, this parameter is not supported.
         """
         return pulumi.get(self, "account_privileges")
 
@@ -97,7 +97,7 @@ class DbAccountArgs:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例 ID
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -109,7 +109,7 @@ class DbAccountArgs:
     @pulumi.getter(name="notAllowPrivileges")
     def not_allow_privileges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        为账号禁用的权限。当前仅支持取值为 DDL。说明仅支持为高权限账号或普通账号传入此字段，即 AccountType 取值为 Super 或 Normal 时。
+        Permissions disabled for the account. Currently, only DDL is supported. Note: This field can only be provided for high privilege or normal accounts, that is, when AccountType is set to Super or Normal.
         """
         return pulumi.get(self, "not_allow_privileges")
 
@@ -129,12 +129,12 @@ class _DbAccountState:
                  not_allow_privileges: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering DbAccount resources.
-        :param pulumi.Input[builtins.str] account_name: 数据库账号名称。账号名称的设置规则如下：长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能以 pg* 开头。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。
-        :param pulumi.Input[builtins.str] account_password: 数据库账号的密码。数据库账号密码的设置规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的任意三种组成。特殊字符为 !@#$%^*()&_+-=。
-        :param pulumi.Input[builtins.str] account_privileges: 账号权限信息。多个权限中间以英文逗号（,）分隔。取值：Login：登录权限。Inherit：继承权限。CreateRole：创建角色权限。CreateDB：创建数据库权限。说明当账号类型为高权限账号时，无需传入该参数，默认支持全部权限。当账号类型为普通账号时，支持传入该参数，默认值为 Login 和 Inherit。账号类型为实例只读账号时，即 AccountType 取值为 InstanceReadOnly 时，不支持传入该参数
-        :param pulumi.Input[builtins.str] account_type: 数据库账号类型，取值范围如下：Super：高权限账号。Normal：普通账号。InstanceReadOnly：实例只读账号。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] not_allow_privileges: 为账号禁用的权限。当前仅支持取值为 DDL。说明仅支持为高权限账号或普通账号传入此字段，即 AccountType 取值为 Super 或 Normal 时。
+        :param pulumi.Input[builtins.str] account_name: Database account name. The account name rules are as follows: Length must be 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Cannot start with pg*. Reserved keywords cannot be used. For all disabled keywords, see Disabled Keywords.
+        :param pulumi.Input[builtins.str] account_password: Database account password. The password rules are as follows: Length must be 8–32 characters. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters. Supported special characters: !@#$%^*()&_+-=.
+        :param pulumi.Input[builtins.str] account_privileges: Account permission information. Separate multiple permissions with commas (,). Valid values: Login: Login permission. Inherit: Inherit permission. CreateRole: Create role permission. CreateDB: Create database permission. Note: If the account type is high privilege, you do not need to provide this parameter; all permissions are supported by default. If the account type is normal, you can provide this parameter; the default values are Login and Inherit. If the account type is instance read-only, that is, AccountType is set to InstanceReadOnly, this parameter is not supported.
+        :param pulumi.Input[builtins.str] account_type: Database account type. Valid values: Super: High privilege account. Normal: Normal account. InstanceReadOnly: Instance read-only account.
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] not_allow_privileges: Permissions disabled for the account. Currently, only DDL is supported. Note: This field can only be provided for high privilege or normal accounts, that is, when AccountType is set to Super or Normal.
         """
         if account_name is not None:
             pulumi.set(__self__, "account_name", account_name)
@@ -153,7 +153,7 @@ class _DbAccountState:
     @pulumi.getter(name="accountName")
     def account_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        数据库账号名称。账号名称的设置规则如下：长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能以 pg* 开头。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。
+        Database account name. The account name rules are as follows: Length must be 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Cannot start with pg*. Reserved keywords cannot be used. For all disabled keywords, see Disabled Keywords.
         """
         return pulumi.get(self, "account_name")
 
@@ -165,7 +165,7 @@ class _DbAccountState:
     @pulumi.getter(name="accountPassword")
     def account_password(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        数据库账号的密码。数据库账号密码的设置规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的任意三种组成。特殊字符为 !@#$%^*()&_+-=。
+        Database account password. The password rules are as follows: Length must be 8–32 characters. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters. Supported special characters: !@#$%^*()&_+-=.
         """
         return pulumi.get(self, "account_password")
 
@@ -177,7 +177,7 @@ class _DbAccountState:
     @pulumi.getter(name="accountPrivileges")
     def account_privileges(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        账号权限信息。多个权限中间以英文逗号（,）分隔。取值：Login：登录权限。Inherit：继承权限。CreateRole：创建角色权限。CreateDB：创建数据库权限。说明当账号类型为高权限账号时，无需传入该参数，默认支持全部权限。当账号类型为普通账号时，支持传入该参数，默认值为 Login 和 Inherit。账号类型为实例只读账号时，即 AccountType 取值为 InstanceReadOnly 时，不支持传入该参数
+        Account permission information. Separate multiple permissions with commas (,). Valid values: Login: Login permission. Inherit: Inherit permission. CreateRole: Create role permission. CreateDB: Create database permission. Note: If the account type is high privilege, you do not need to provide this parameter; all permissions are supported by default. If the account type is normal, you can provide this parameter; the default values are Login and Inherit. If the account type is instance read-only, that is, AccountType is set to InstanceReadOnly, this parameter is not supported.
         """
         return pulumi.get(self, "account_privileges")
 
@@ -189,7 +189,7 @@ class _DbAccountState:
     @pulumi.getter(name="accountType")
     def account_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        数据库账号类型，取值范围如下：Super：高权限账号。Normal：普通账号。InstanceReadOnly：实例只读账号。
+        Database account type. Valid values: Super: High privilege account. Normal: Normal account. InstanceReadOnly: Instance read-only account.
         """
         return pulumi.get(self, "account_type")
 
@@ -201,7 +201,7 @@ class _DbAccountState:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例 ID
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -213,7 +213,7 @@ class _DbAccountState:
     @pulumi.getter(name="notAllowPrivileges")
     def not_allow_privileges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        为账号禁用的权限。当前仅支持取值为 DDL。说明仅支持为高权限账号或普通账号传入此字段，即 AccountType 取值为 Super 或 Normal 时。
+        Permissions disabled for the account. Currently, only DDL is supported. Note: This field can only be provided for high privilege or normal accounts, that is, when AccountType is set to Super or Normal.
         """
         return pulumi.get(self, "not_allow_privileges")
 
@@ -236,7 +236,7 @@ class DbAccount(pulumi.CustomResource):
                  not_allow_privileges: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  __props__=None):
         """
-        RDS PostgreSQL 数据库账号
+        RDS PostgreSQL Database Account
 
         ## Example Usage
 
@@ -261,12 +261,12 @@ class DbAccount(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] account_name: 数据库账号名称。账号名称的设置规则如下：长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能以 pg* 开头。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。
-        :param pulumi.Input[builtins.str] account_password: 数据库账号的密码。数据库账号密码的设置规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的任意三种组成。特殊字符为 !@#$%^*()&_+-=。
-        :param pulumi.Input[builtins.str] account_privileges: 账号权限信息。多个权限中间以英文逗号（,）分隔。取值：Login：登录权限。Inherit：继承权限。CreateRole：创建角色权限。CreateDB：创建数据库权限。说明当账号类型为高权限账号时，无需传入该参数，默认支持全部权限。当账号类型为普通账号时，支持传入该参数，默认值为 Login 和 Inherit。账号类型为实例只读账号时，即 AccountType 取值为 InstanceReadOnly 时，不支持传入该参数
-        :param pulumi.Input[builtins.str] account_type: 数据库账号类型，取值范围如下：Super：高权限账号。Normal：普通账号。InstanceReadOnly：实例只读账号。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] not_allow_privileges: 为账号禁用的权限。当前仅支持取值为 DDL。说明仅支持为高权限账号或普通账号传入此字段，即 AccountType 取值为 Super 或 Normal 时。
+        :param pulumi.Input[builtins.str] account_name: Database account name. The account name rules are as follows: Length must be 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Cannot start with pg*. Reserved keywords cannot be used. For all disabled keywords, see Disabled Keywords.
+        :param pulumi.Input[builtins.str] account_password: Database account password. The password rules are as follows: Length must be 8–32 characters. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters. Supported special characters: !@#$%^*()&_+-=.
+        :param pulumi.Input[builtins.str] account_privileges: Account permission information. Separate multiple permissions with commas (,). Valid values: Login: Login permission. Inherit: Inherit permission. CreateRole: Create role permission. CreateDB: Create database permission. Note: If the account type is high privilege, you do not need to provide this parameter; all permissions are supported by default. If the account type is normal, you can provide this parameter; the default values are Login and Inherit. If the account type is instance read-only, that is, AccountType is set to InstanceReadOnly, this parameter is not supported.
+        :param pulumi.Input[builtins.str] account_type: Database account type. Valid values: Super: High privilege account. Normal: Normal account. InstanceReadOnly: Instance read-only account.
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] not_allow_privileges: Permissions disabled for the account. Currently, only DDL is supported. Note: This field can only be provided for high privilege or normal accounts, that is, when AccountType is set to Super or Normal.
         """
         ...
     @overload
@@ -275,7 +275,7 @@ class DbAccount(pulumi.CustomResource):
                  args: DbAccountArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        RDS PostgreSQL 数据库账号
+        RDS PostgreSQL Database Account
 
         ## Example Usage
 
@@ -363,12 +363,12 @@ class DbAccount(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] account_name: 数据库账号名称。账号名称的设置规则如下：长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能以 pg* 开头。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。
-        :param pulumi.Input[builtins.str] account_password: 数据库账号的密码。数据库账号密码的设置规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的任意三种组成。特殊字符为 !@#$%^*()&_+-=。
-        :param pulumi.Input[builtins.str] account_privileges: 账号权限信息。多个权限中间以英文逗号（,）分隔。取值：Login：登录权限。Inherit：继承权限。CreateRole：创建角色权限。CreateDB：创建数据库权限。说明当账号类型为高权限账号时，无需传入该参数，默认支持全部权限。当账号类型为普通账号时，支持传入该参数，默认值为 Login 和 Inherit。账号类型为实例只读账号时，即 AccountType 取值为 InstanceReadOnly 时，不支持传入该参数
-        :param pulumi.Input[builtins.str] account_type: 数据库账号类型，取值范围如下：Super：高权限账号。Normal：普通账号。InstanceReadOnly：实例只读账号。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] not_allow_privileges: 为账号禁用的权限。当前仅支持取值为 DDL。说明仅支持为高权限账号或普通账号传入此字段，即 AccountType 取值为 Super 或 Normal 时。
+        :param pulumi.Input[builtins.str] account_name: Database account name. The account name rules are as follows: Length must be 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Cannot start with pg*. Reserved keywords cannot be used. For all disabled keywords, see Disabled Keywords.
+        :param pulumi.Input[builtins.str] account_password: Database account password. The password rules are as follows: Length must be 8–32 characters. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters. Supported special characters: !@#$%^*()&_+-=.
+        :param pulumi.Input[builtins.str] account_privileges: Account permission information. Separate multiple permissions with commas (,). Valid values: Login: Login permission. Inherit: Inherit permission. CreateRole: Create role permission. CreateDB: Create database permission. Note: If the account type is high privilege, you do not need to provide this parameter; all permissions are supported by default. If the account type is normal, you can provide this parameter; the default values are Login and Inherit. If the account type is instance read-only, that is, AccountType is set to InstanceReadOnly, this parameter is not supported.
+        :param pulumi.Input[builtins.str] account_type: Database account type. Valid values: Super: High privilege account. Normal: Normal account. InstanceReadOnly: Instance read-only account.
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] not_allow_privileges: Permissions disabled for the account. Currently, only DDL is supported. Note: This field can only be provided for high privilege or normal accounts, that is, when AccountType is set to Super or Normal.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -386,7 +386,7 @@ class DbAccount(pulumi.CustomResource):
     @pulumi.getter(name="accountName")
     def account_name(self) -> pulumi.Output[builtins.str]:
         """
-        数据库账号名称。账号名称的设置规则如下：长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能以 pg* 开头。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。
+        Database account name. The account name rules are as follows: Length must be 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Cannot start with pg*. Reserved keywords cannot be used. For all disabled keywords, see Disabled Keywords.
         """
         return pulumi.get(self, "account_name")
 
@@ -394,7 +394,7 @@ class DbAccount(pulumi.CustomResource):
     @pulumi.getter(name="accountPassword")
     def account_password(self) -> pulumi.Output[builtins.str]:
         """
-        数据库账号的密码。数据库账号密码的设置规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的任意三种组成。特殊字符为 !@#$%^*()&_+-=。
+        Database account password. The password rules are as follows: Length must be 8–32 characters. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters. Supported special characters: !@#$%^*()&_+-=.
         """
         return pulumi.get(self, "account_password")
 
@@ -402,7 +402,7 @@ class DbAccount(pulumi.CustomResource):
     @pulumi.getter(name="accountPrivileges")
     def account_privileges(self) -> pulumi.Output[builtins.str]:
         """
-        账号权限信息。多个权限中间以英文逗号（,）分隔。取值：Login：登录权限。Inherit：继承权限。CreateRole：创建角色权限。CreateDB：创建数据库权限。说明当账号类型为高权限账号时，无需传入该参数，默认支持全部权限。当账号类型为普通账号时，支持传入该参数，默认值为 Login 和 Inherit。账号类型为实例只读账号时，即 AccountType 取值为 InstanceReadOnly 时，不支持传入该参数
+        Account permission information. Separate multiple permissions with commas (,). Valid values: Login: Login permission. Inherit: Inherit permission. CreateRole: Create role permission. CreateDB: Create database permission. Note: If the account type is high privilege, you do not need to provide this parameter; all permissions are supported by default. If the account type is normal, you can provide this parameter; the default values are Login and Inherit. If the account type is instance read-only, that is, AccountType is set to InstanceReadOnly, this parameter is not supported.
         """
         return pulumi.get(self, "account_privileges")
 
@@ -410,7 +410,7 @@ class DbAccount(pulumi.CustomResource):
     @pulumi.getter(name="accountType")
     def account_type(self) -> pulumi.Output[builtins.str]:
         """
-        数据库账号类型，取值范围如下：Super：高权限账号。Normal：普通账号。InstanceReadOnly：实例只读账号。
+        Database account type. Valid values: Super: High privilege account. Normal: Normal account. InstanceReadOnly: Instance read-only account.
         """
         return pulumi.get(self, "account_type")
 
@@ -418,7 +418,7 @@ class DbAccount(pulumi.CustomResource):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例 ID
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -426,7 +426,7 @@ class DbAccount(pulumi.CustomResource):
     @pulumi.getter(name="notAllowPrivileges")
     def not_allow_privileges(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        为账号禁用的权限。当前仅支持取值为 DDL。说明仅支持为高权限账号或普通账号传入此字段，即 AccountType 取值为 Super 或 Normal 时。
+        Permissions disabled for the account. Currently, only DDL is supported. Note: This field can only be provided for high privilege or normal accounts, that is, when AccountType is set to Super or Normal.
         """
         return pulumi.get(self, "not_allow_privileges")
 

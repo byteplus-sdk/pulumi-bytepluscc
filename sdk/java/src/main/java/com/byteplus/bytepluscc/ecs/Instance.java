@@ -31,7 +31,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 表示一个弹性计算服务（ECS）的实例资源。
+ * Represents an Elastic Compute Service (ECS) instance resource.
  * 
  * ## Example Usage
  * 
@@ -48,434 +48,456 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:ecs/instance:Instance")
 public class Instance extends com.pulumi.resources.CustomResource {
     /**
-     * 亲和组ID。
+     * Affinity group ID.
      * 
      */
     @Export(name="affinityGroupId", refs={String.class}, tree="[0]")
     private Output<String> affinityGroupId;
 
     /**
-     * @return 亲和组ID。
+     * @return Affinity group ID.
      * 
      */
     public Output<String> affinityGroupId() {
         return this.affinityGroupId;
     }
     /**
-     * 亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
-     * - 该功能正在邀测中，如需试用，请联系客户经理申请。
+     * Affinity group specification. Value: 2. **Note:** - Currently, only high performance computing NPU-type hpcpci3
+     * instances (by invitation) support affinity groups. - This feature is in invitation testing. To try it, please contact
+     * your account manager.
      * 
      */
     @Export(name="affinityGroupSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> affinityGroupSize;
 
     /**
-     * @return 亲和组规格，取值：2。 **提示:** - 当前仅高性能计算NPU型hpcpci3实例（邀测）支持亲和组。
-     * - 该功能正在邀测中，如需试用，请联系客户经理申请。
+     * @return Affinity group specification. Value: 2. **Note:** - Currently, only high performance computing NPU-type hpcpci3
+     * instances (by invitation) support affinity groups. - This feature is in invitation testing. To try it, please contact
+     * your account manager.
      * 
      */
     public Output<Integer> affinityGroupSize() {
         return this.affinityGroupSize;
     }
     /**
-     * 是否自动支付，取值：true：自动支付。您需要确保账户余额充足，如果账户余额不足会生成异常订单，计费方式转换失败。false（默认）：仅生成订单但不扣费，您可以在生成订单后，登录订单管理页面完成支付。
+     * Auto payment option. Valid values: true: Auto payment. Ensure your account balance is sufficient; if the balance is
+     * insufficient, an exception order will be generated and the billing mode conversion will fail. false (default): Only
+     * generates the order without charging. You can log in to the order management page to complete payment after the order is
+     * generated.
      * 
      */
     @Export(name="autoPay", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> autoPay;
 
     /**
-     * @return 是否自动支付，取值：true：自动支付。您需要确保账户余额充足，如果账户余额不足会生成异常订单，计费方式转换失败。false（默认）：仅生成订单但不扣费，您可以在生成订单后，登录订单管理页面完成支付。
+     * @return Auto payment option. Valid values: true: Auto payment. Ensure your account balance is sufficient; if the balance is
+     * insufficient, an exception order will be generated and the billing mode conversion will fail. false (default): Only
+     * generates the order without charging. You can log in to the order management page to complete payment after the order is
+     * generated.
      * 
      */
     public Output<Boolean> autoPay() {
         return this.autoPay;
     }
     /**
-     * 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
-     * **提示:** 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。
+     * Whether the instance will be automatically renewed upon expiration. Values: - true: Auto renewal - false (default): No
+     * auto renewal **Note:** This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
      * 
      */
     @Export(name="autoRenew", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> autoRenew;
 
     /**
-     * @return 实例到期后是否自动续费，取值： - true：自动续费。 - false（默认）：不自动续费。
-     * **提示:** 仅当参数`InstanceChargeType`取值为`PrePaid`时生效。
+     * @return Whether the instance will be automatically renewed upon expiration. Values: - true: Auto renewal - false (default): No
+     * auto renewal **Note:** This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
      * 
      */
     public Output<Boolean> autoRenew() {
         return this.autoRenew;
     }
     /**
-     * 每次自动续费的时长。 - 仅当参数`AutoRenew`取值为`True`时，该参数生效，默认值为1。 -
-     * `PeriodUnit`取值为`Month`时，该参数取值为1、2、3、6、12。
+     * Duration for each automatic renewal. - This parameter takes effect only when `AutoRenew` is set to `True`. Default value
+     * is 1. - When `PeriodUnit` is `Month`, valid values are 1, 2, 3, 6, 12.
      * 
      */
     @Export(name="autoRenewPeriod", refs={Integer.class}, tree="[0]")
     private Output<Integer> autoRenewPeriod;
 
     /**
-     * @return 每次自动续费的时长。 - 仅当参数`AutoRenew`取值为`True`时，该参数生效，默认值为1。 -
-     * `PeriodUnit`取值为`Month`时，该参数取值为1、2、3、6、12。
+     * @return Duration for each automatic renewal. - This parameter takes effect only when `AutoRenew` is set to `True`. Default value
+     * is 1. - When `PeriodUnit` is `Month`, valid values are 1, 2, 3, 6, 12.
      * 
      */
     public Output<Integer> autoRenewPeriod() {
         return this.autoRenewPeriod;
     }
     /**
-     * 指定CPU最大频率，单位：GHz，取值范围：CPU的主频到睿频之间。 **提示:** -
-     * 当前仅g3al、c3al、r3al、g4i、c4i、r4i、g4ie、c4ie、r4ie实例支持设置该参数。规格的主频/睿频及更多信息，请参见[实例规格介绍](https://www.volcengine.com/docs/6396/70840)。
-     * - 该功能正在邀测中，如需使用，请联系客户经理申请。
+     * Specify the maximum CPU frequency, in GHz. Value range: between the CPU&#39;s base frequency and turbo frequency. **Note:**
+     * - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo
+     *   frequencies and more information, see [Instance Specifications
+     *   Introduction](https://www.volcengine.com/docs/6396/70840). - This feature is in invitation-only testing. To use it,
+     *   please contact your account manager.
      * 
      */
     @Export(name="cpuMaxFrequency", refs={Double.class}, tree="[0]")
     private Output<Double> cpuMaxFrequency;
 
     /**
-     * @return 指定CPU最大频率，单位：GHz，取值范围：CPU的主频到睿频之间。 **提示:** -
-     * 当前仅g3al、c3al、r3al、g4i、c4i、r4i、g4ie、c4ie、r4ie实例支持设置该参数。规格的主频/睿频及更多信息，请参见[实例规格介绍](https://www.volcengine.com/docs/6396/70840)。
-     * - 该功能正在邀测中，如需使用，请联系客户经理申请。
+     * @return Specify the maximum CPU frequency, in GHz. Value range: between the CPU&#39;s base frequency and turbo frequency. **Note:**
+     * - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo
+     *   frequencies and more information, see [Instance Specifications
+     *   Introduction](https://www.volcengine.com/docs/6396/70840). - This feature is in invitation-only testing. To use it,
+     *   please contact your account manager.
      * 
      */
     public Output<Double> cpuMaxFrequency() {
         return this.cpuMaxFrequency;
     }
     /**
-     * 实例的CPU选项。
+     * The CPU options for the instance.
      * 
      */
     @Export(name="cpuMemory", refs={InstanceCpuMemory.class}, tree="[0]")
     private Output<InstanceCpuMemory> cpuMemory;
 
     /**
-     * @return 实例的CPU选项。
+     * @return The CPU options for the instance.
      * 
      */
     public Output<InstanceCpuMemory> cpuMemory() {
         return this.cpuMemory;
     }
     /**
-     * 实例的创建时间。
+     * Instance creation time.
      * 
      */
     @Export(name="createdAt", refs={String.class}, tree="[0]")
     private Output<String> createdAt;
 
     /**
-     * @return 实例的创建时间。
+     * @return Instance creation time.
      * 
      */
     public Output<String> createdAt() {
         return this.createdAt;
     }
     /**
-     * 突发性能实例的运行模式，取值： - Standard：标准模式。 -
-     * Unlimited：无性能约束模式（暂不支持）。 **提示:** -
-     * 仅当`InstanceTypeId`取值为ecs.t2系列，即突发性能实例时该参数生效。 -
-     * 不传或传入空值时，突发性能实例默认为`Standard`标准模式。
+     * Burstable instance operating mode. Values: - Standard: Standard mode. - Unlimited: Unlimited performance mode (not
+     * supported yet). **Note:** - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e.,
+     * burstable instances. - If not specified or left empty, burstable instances default to `Standard` mode.
      * 
      */
     @Export(name="creditSpecification", refs={String.class}, tree="[0]")
     private Output<String> creditSpecification;
 
     /**
-     * @return 突发性能实例的运行模式，取值： - Standard：标准模式。 -
-     * Unlimited：无性能约束模式（暂不支持）。 **提示:** -
-     * 仅当`InstanceTypeId`取值为ecs.t2系列，即突发性能实例时该参数生效。 -
-     * 不传或传入空值时，突发性能实例默认为`Standard`标准模式。
+     * @return Burstable instance operating mode. Values: - Standard: Standard mode. - Unlimited: Unlimited performance mode (not
+     * supported yet). **Note:** - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e.,
+     * burstable instances. - If not specified or left empty, burstable instances default to `Standard` mode.
      * 
      */
     public Output<String> creditSpecification() {
         return this.creditSpecification;
     }
     /**
-     * 实例删除保护属性，指定是否支持通过控制台或API删除实例。取值： -
-     * true：开启实例删除保护。 - false（默认）：关闭实例删除保护。
-     * 开启实例删除保护后，在控制台或调用API删除实例时，会收到删除失败的错误码。如需删除，请先关闭实例删除保护。
+     * Instance deletion protection attribute, specifies whether the instance can be deleted via the console or API. Values: -
+     * true: Enable instance deletion protection - false (default): Disable instance deletion protection When deletion
+     * protection is enabled, attempts to delete the instance via the console or API will return a deletion failure error code.
+     * To delete the instance, disable deletion protection first
      * 
      */
     @Export(name="deletionProtection", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> deletionProtection;
 
     /**
-     * @return 实例删除保护属性，指定是否支持通过控制台或API删除实例。取值： -
-     * true：开启实例删除保护。 - false（默认）：关闭实例删除保护。
-     * 开启实例删除保护后，在控制台或调用API删除实例时，会收到删除失败的错误码。如需删除，请先关闭实例删除保护。
+     * @return Instance deletion protection attribute, specifies whether the instance can be deleted via the console or API. Values: -
+     * true: Enable instance deletion protection - false (default): Disable instance deletion protection When deletion
+     * protection is enabled, attempts to delete the instance via the console or API will return a deletion failure error code.
+     * To delete the instance, disable deletion protection first
      * 
      */
     public Output<Boolean> deletionProtection() {
         return this.deletionProtection;
     }
     /**
-     * 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号，取值范围：1～7。
+     * When the deployment set policy for an ECS instance is set to Availability Group, you can use this parameter to specify
+     * the group number of the instance within the deployment set. Value range: 1–7.
      * 
      */
     @Export(name="deploymentSetGroupNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> deploymentSetGroupNumber;
 
     /**
-     * @return 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号，取值范围：1～7。
+     * @return When the deployment set policy for an ECS instance is set to Availability Group, you can use this parameter to specify
+     * the group number of the instance within the deployment set. Value range: 1–7.
      * 
      */
     public Output<Integer> deploymentSetGroupNumber() {
         return this.deploymentSetGroupNumber;
     }
     /**
-     * 实例需要加入的部署集ID。 -
-     * 您可以调用[DescribeDeploymentSets](https://www.volcengine.com/docs/6396/70873)接口，查询已创建的部署集。
-     * - 关于部署集的更多信息，请参见[部署集](https://www.volcengine.com/docs/6396/70871)。
+     * The deployment set ID the instance needs to join. - You can call the
+     * [DescribeDeploymentSets](https://www.volcengine.com/docs/6396/70873) API to query existing deployment sets. - For more
+     * information about deployment sets, see [Deployment Set](https://www.volcengine.com/docs/6396/70871).
      * 
      */
     @Export(name="deploymentSetId", refs={String.class}, tree="[0]")
     private Output<String> deploymentSetId;
 
     /**
-     * @return 实例需要加入的部署集ID。 -
-     * 您可以调用[DescribeDeploymentSets](https://www.volcengine.com/docs/6396/70873)接口，查询已创建的部署集。
-     * - 关于部署集的更多信息，请参见[部署集](https://www.volcengine.com/docs/6396/70871)。
+     * @return The deployment set ID the instance needs to join. - You can call the
+     * [DescribeDeploymentSets](https://www.volcengine.com/docs/6396/70873) API to query existing deployment sets. - For more
+     * information about deployment sets, see [Deployment Set](https://www.volcengine.com/docs/6396/70871).
      * 
      */
     public Output<String> deploymentSetId() {
         return this.deploymentSetId;
     }
     /**
-     * 实例的描述，默认为空字符串。 - 必须以字母或中文开头。 -
-     * 只能包含中文、字母、数字、点号“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”
-     * - 长度限制在255个字符以内。
+     * The description of the instance. Default is an empty string. - Must start with a letter or Chinese character - Can only
+     * contain Chinese characters, letters, numbers, period &#39;.&#39;, space, underscore &#39;_&#39;, hyphen &#39;-&#39;, equals &#39;=&#39;, English comma
+     * &#39;,&#39;, Chinese comma &#39;，&#39;, and Chinese period &#39;。&#39; - Maximum length is 255 characters
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 实例的描述，默认为空字符串。 - 必须以字母或中文开头。 -
-     * 只能包含中文、字母、数字、点号“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”
-     * - 长度限制在255个字符以内。
+     * @return The description of the instance. Default is an empty string. - Must start with a letter or Chinese character - Can only
+     * contain Chinese characters, letters, numbers, period &#39;.&#39;, space, underscore &#39;_&#39;, hyphen &#39;-&#39;, equals &#39;=&#39;, English comma
+     * &#39;,&#39;, Chinese comma &#39;，&#39;, and Chinese period &#39;。&#39; - Maximum length is 255 characters
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 实例的EIP地址。
+     * The EIP address of the instance.
      * 
      */
     @Export(name="eipAddress", refs={InstanceEipAddress.class}, tree="[0]")
     private Output<InstanceEipAddress> eipAddress;
 
     /**
-     * @return 实例的EIP地址。
+     * @return The EIP address of the instance.
      * 
      */
     public Output<InstanceEipAddress> eipAddress() {
         return this.eipAddress;
     }
     /**
-     * 弹性预约实例类型，取值：NoEsi：非弹性预约实例。Esi：弹性预约实例。Segmented：弹性预约实例-时段型。
+     * Elastic reservation instance type. Values: NoEsi: Non-elastic reservation instance. Esi: Elastic reservation instance.
+     * Segmented: Elastic reservation instance - time segment type.
      * 
      */
     @Export(name="elasticScheduledInstanceType", refs={String.class}, tree="[0]")
     private Output<String> elasticScheduledInstanceType;
 
     /**
-     * @return 弹性预约实例类型，取值：NoEsi：非弹性预约实例。Esi：弹性预约实例。Segmented：弹性预约实例-时段型。
+     * @return Elastic reservation instance type. Values: NoEsi: Non-elastic reservation instance. Esi: Elastic reservation instance.
+     * Segmented: Elastic reservation instance - time segment type.
      * 
      */
     public Output<String> elasticScheduledInstanceType() {
         return this.elasticScheduledInstanceType;
     }
     /**
-     * 实例是否开启巨型帧。取值：false：不开启巨型帧，该实例的所有网卡MTU值为1500。true：开启巨型帧，该实例的所有网卡MTU值为8500。
+     * Whether jumbo frames are enabled for the instance. Values: - false: Jumbo frames are disabled. All network interfaces
+     * have an MTU of 1500. - true: Jumbo frames are enabled. All network interfaces have an MTU of 8500
      * 
      */
     @Export(name="enableJumboFrame", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableJumboFrame;
 
     /**
-     * @return 实例是否开启巨型帧。取值：false：不开启巨型帧，该实例的所有网卡MTU值为1500。true：开启巨型帧，该实例的所有网卡MTU值为8500。
+     * @return Whether jumbo frames are enabled for the instance. Values: - false: Jumbo frames are disabled. All network interfaces
+     * have an MTU of 1500. - true: Jumbo frames are enabled. All network interfaces have an MTU of 8500
      * 
      */
     public Output<Boolean> enableJumboFrame() {
         return this.enableJumboFrame;
     }
     /**
-     * 实例的过期时间。
+     * The expiration time of the instance.
      * 
      */
     @Export(name="expiredAt", refs={String.class}, tree="[0]")
     private Output<String> expiredAt;
 
     /**
-     * @return 实例的过期时间。
+     * @return The expiration time of the instance.
      * 
      */
     public Output<String> expiredAt() {
         return this.expiredAt;
     }
     /**
-     * 实例主机名，即实例操作系统内部的计算机名。 - Linux实例： -
-     * 允许使用字母、数字、点号“.”或中划线“-”。 -
-     * 不能以中划线、点号开头或结尾，且不能连续使用中划线和点号。 -
-     * Linux系统长度限制在2～63个字符之间。 - Windows实例： -
-     * 允许使用字母、数字或中划线“-”，不能完全是数字。 -
-     * 不能以中划线开头或结尾，且不能连续使用中划线。 -
-     * Windows系统长度限制在2～15个字符之间。
+     * Instance hostname, which is the computer name inside the instance operating system. - Linux instances: - Letters,
+     * numbers, periods (&#39;.&#39;), and hyphens (&#39;-&#39;) are allowed. - Cannot start or end with a hyphen or period, and cannot use
+     * consecutive hyphens and periods. - Linux system hostname length must be between 2 and 63 characters. - Windows
+     * instances: - Letters, numbers, and hyphens (&#39;-&#39;) are allowed, but the hostname cannot be all numbers. - Cannot start or
+     * end with a hyphen, and cannot use consecutive hyphens. - Windows system hostname length must be between 2 and 15
+     * characters.
      * 
      */
     @Export(name="hostname", refs={String.class}, tree="[0]")
     private Output<String> hostname;
 
     /**
-     * @return 实例主机名，即实例操作系统内部的计算机名。 - Linux实例： -
-     * 允许使用字母、数字、点号“.”或中划线“-”。 -
-     * 不能以中划线、点号开头或结尾，且不能连续使用中划线和点号。 -
-     * Linux系统长度限制在2～63个字符之间。 - Windows实例： -
-     * 允许使用字母、数字或中划线“-”，不能完全是数字。 -
-     * 不能以中划线开头或结尾，且不能连续使用中划线。 -
-     * Windows系统长度限制在2～15个字符之间。
+     * @return Instance hostname, which is the computer name inside the instance operating system. - Linux instances: - Letters,
+     * numbers, periods (&#39;.&#39;), and hyphens (&#39;-&#39;) are allowed. - Cannot start or end with a hyphen or period, and cannot use
+     * consecutive hyphens and periods. - Linux system hostname length must be between 2 and 63 characters. - Windows
+     * instances: - Letters, numbers, and hyphens (&#39;-&#39;) are allowed, but the hostname cannot be all numbers. - Cannot start or
+     * end with a hyphen, and cannot use consecutive hyphens. - Windows system hostname length must be between 2 and 15
+     * characters.
      * 
      */
     public Output<String> hostname() {
         return this.hostname;
     }
     /**
-     * 实例所属的高性能计算集群ID。 **提示:**
-     * 仅当创建高性能计算GPU型实例时，该参数生效且为必填项。
+     * ID of the high performance computing cluster to which the instance belongs. **Note:** This parameter is only effective
+     * and required when creating high performance computing GPU instances.
      * 
      */
     @Export(name="hpcClusterId", refs={String.class}, tree="[0]")
     private Output<String> hpcClusterId;
 
     /**
-     * @return 实例所属的高性能计算集群ID。 **提示:**
-     * 仅当创建高性能计算GPU型实例时，该参数生效且为必填项。
+     * @return ID of the high performance computing cluster to which the instance belongs. **Note:** This parameter is only effective
+     * and required when creating high performance computing GPU instances.
      * 
      */
     public Output<String> hpcClusterId() {
         return this.hpcClusterId;
     }
     /**
-     * 实例的镜像。
+     * The image of the instance.
      * 
      */
     @Export(name="image", refs={InstanceImage.class}, tree="[0]")
     private Output<InstanceImage> image;
 
     /**
-     * @return 实例的镜像。
+     * @return The image of the instance.
      * 
      */
     public Output<InstanceImage> image() {
         return this.image;
     }
     /**
-     * 是否将实例上挂载的所有按量计费数据盘转换为包年包月数据盘。true：转换。false
-     * （默认）：不转换。
+     * Whether to convert all pay-as-you-go data disks attached to the instance to subscription data disks. true: Convert.
+     * false (default): Do not convert.
      * 
      */
     @Export(name="includeDataVolumes", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> includeDataVolumes;
 
     /**
-     * @return 是否将实例上挂载的所有按量计费数据盘转换为包年包月数据盘。true：转换。false
-     * （默认）：不转换。
+     * @return Whether to convert all pay-as-you-go data disks attached to the instance to subscription data disks. true: Convert.
+     * false (default): Do not convert.
      * 
      */
     public Output<Boolean> includeDataVolumes() {
         return this.includeDataVolumes;
     }
     /**
-     * 创建实例时是否安装云助手Agent，取值：true：创建时安装。false（默认）：创建时不安装。
+     * Whether to install Cloud Assistant Agent when creating the instance. Values: true: Install during creation. false
+     * (default): Do not install during creation.
      * 
      */
     @Export(name="installRunCommandAgent", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> installRunCommandAgent;
 
     /**
-     * @return 创建实例时是否安装云助手Agent，取值：true：创建时安装。false（默认）：创建时不安装。
+     * @return Whether to install Cloud Assistant Agent when creating the instance. Values: true: Install during creation. false
+     * (default): Do not install during creation.
      * 
      */
     public Output<Boolean> installRunCommandAgent() {
         return this.installRunCommandAgent;
     }
     /**
-     * 实例和云盘的计费类型，取值： - PostPaid：按量计费。 -
-     * PrePaid：包年包月。请确认您的账号支持余额支付或者信控支付，否则将返回InvalidInstanceChargeType的错误提示。
+     * The billing type for the instance and cloud disk. Values: - PostPaid: Pay-as-you-go - PrePaid: Subscription. Please
+     * ensure your account supports balance payment or credit payment, otherwise an InvalidInstanceChargeType error will be
+     * returned.
      * 
      */
     @Export(name="instanceChargeType", refs={String.class}, tree="[0]")
     private Output<String> instanceChargeType;
 
     /**
-     * @return 实例和云盘的计费类型，取值： - PostPaid：按量计费。 -
-     * PrePaid：包年包月。请确认您的账号支持余额支付或者信控支付，否则将返回InvalidInstanceChargeType的错误提示。
+     * @return The billing type for the instance and cloud disk. Values: - PostPaid: Pay-as-you-go - PrePaid: Subscription. Please
+     * ensure your account supports balance payment or credit payment, otherwise an InvalidInstanceChargeType error will be
+     * returned.
      * 
      */
     public Output<String> instanceChargeType() {
         return this.instanceChargeType;
     }
     /**
-     * ECS实例的ID。
+     * The ECS instance ID.
      * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
-     * @return ECS实例的ID。
+     * @return The ECS instance ID.
      * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
-     * 实例的名称。 - 以字母或中文开头。 -
-     * 只能包含中文、字母、数字、下划线“_”、中划线“-”和点号“.”。 -
-     * 长度限制为1～128个字符。
+     * Instance name - Must start with a letter or Chinese character - Can only contain Chinese characters, letters, numbers,
+     * underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34; - Length limit: 1–128 characters
      * 
      */
     @Export(name="instanceName", refs={String.class}, tree="[0]")
     private Output<String> instanceName;
 
     /**
-     * @return 实例的名称。 - 以字母或中文开头。 -
-     * 只能包含中文、字母、数字、下划线“_”、中划线“-”和点号“.”。 -
-     * 长度限制为1～128个字符。
+     * @return Instance name - Must start with a letter or Chinese character - Can only contain Chinese characters, letters, numbers,
+     * underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34; - Length limit: 1–128 characters
      * 
      */
     public Output<String> instanceName() {
         return this.instanceName;
     }
     /**
-     * 实例规格。 -
-     * 产品选型：您可以参考[实例规格介绍](https://www.volcengine.com/docs/6396/70840)或者调用[DescribeInstanceTypes](https://www.volcengine.com/docs/6396/92769)查看实例规格的性能数据，也可以参考[实例选型最佳实践](https://www.volcengine.com/docs/6396/74174)了解如何选择实例规格。
-     * ---
-     * 查询库存：您可以调用[DescribeAvailableResource](https://www.volcengine.com/docs/6396/76279)查询可用区中计算资源的库存信息。
+     * Instance specification. - Product selection: You can refer to [Instance Specifications
+     * Introduction](https://www.volcengine.com/docs/6396/70840) or call
+     * [DescribeInstanceTypes](https://www.volcengine.com/docs/6396/92769) to view performance data, and refer to [Instance
+     * Selection Best Practices](https://www.volcengine.com/docs/6396/74174) to learn how to choose specifications. - Inventory
+     * query: You can call [DescribeAvailableResource](https://www.volcengine.com/docs/6396/76279) to check available compute
+     * resources in the zone.
      * 
      */
     @Export(name="instanceType", refs={String.class}, tree="[0]")
     private Output<String> instanceType;
 
     /**
-     * @return 实例规格。 -
-     * 产品选型：您可以参考[实例规格介绍](https://www.volcengine.com/docs/6396/70840)或者调用[DescribeInstanceTypes](https://www.volcengine.com/docs/6396/92769)查看实例规格的性能数据，也可以参考[实例选型最佳实践](https://www.volcengine.com/docs/6396/74174)了解如何选择实例规格。
-     * ---
-     * 查询库存：您可以调用[DescribeAvailableResource](https://www.volcengine.com/docs/6396/76279)查询可用区中计算资源的库存信息。
+     * @return Instance specification. - Product selection: You can refer to [Instance Specifications
+     * Introduction](https://www.volcengine.com/docs/6396/70840) or call
+     * [DescribeInstanceTypes](https://www.volcengine.com/docs/6396/92769) to view performance data, and refer to [Instance
+     * Selection Best Practices](https://www.volcengine.com/docs/6396/74174) to learn how to choose specifications. - Inventory
+     * query: You can call [DescribeAvailableResource](https://www.volcengine.com/docs/6396/76279) to check available compute
+     * resources in the zone.
      * 
      */
     public Output<String> instanceType() {
         return this.instanceType;
     }
     /**
-     * 实例的密钥对名称。
+     * Instance key pair name
      * 
      */
     @Export(name="keyPair", refs={InstanceKeyPair.class}, tree="[0]")
     private Output<InstanceKeyPair> keyPair;
 
     /**
-     * @return 实例的密钥对名称。
+     * @return Instance key pair name
      * 
      */
     public Output<InstanceKeyPair> keyPair() {
@@ -488,120 +510,120 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.localVolumes;
     }
     /**
-     * 实例的操作系统类型。
+     * The operating system type of the instance.
      * 
      */
     @Export(name="operationSystem", refs={InstanceOperationSystem.class}, tree="[0]")
     private Output<InstanceOperationSystem> operationSystem;
 
     /**
-     * @return 实例的操作系统类型。
+     * @return The operating system type of the instance.
      * 
      */
     public Output<InstanceOperationSystem> operationSystem() {
         return this.operationSystem;
     }
     /**
-     * 实例的密码。
+     * The password of the instance.
      * 
      */
     @Export(name="password", refs={String.class}, tree="[0]")
     private Output<String> password;
 
     /**
-     * @return 实例的密码。
+     * @return The password of the instance.
      * 
      */
     public Output<String> password() {
         return this.password;
     }
     /**
-     * 购买资源的时长（N）。 -
-     * `PeriodUnit`为`Month`（默认）时，取值：1、2、3、4、5、6、7、8、9、12、24、36、48、60。 -
-     * `PeriodUnit`为`Year`时，取值：1、2、3、4、5。 **提示:**
-     * 仅当`InstanceChargeType`取值为`PrePaid`时生效，且为必填。
+     * Resource purchase duration (N). - When `PeriodUnit` is `Month` (default), valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9,
+     * 12, 24, 36, 48, 60. - When `PeriodUnit` is `Year`, valid values are 1, 2, 3, 4, 5. **Note:** This parameter is valid and
+     * required only when `InstanceChargeType` is set to `PrePaid`.
      * 
      */
     @Export(name="period", refs={Integer.class}, tree="[0]")
     private Output<Integer> period;
 
     /**
-     * @return 购买资源的时长（N）。 -
-     * `PeriodUnit`为`Month`（默认）时，取值：1、2、3、4、5、6、7、8、9、12、24、36、48、60。 -
-     * `PeriodUnit`为`Year`时，取值：1、2、3、4、5。 **提示:**
-     * 仅当`InstanceChargeType`取值为`PrePaid`时生效，且为必填。
+     * @return Resource purchase duration (N). - When `PeriodUnit` is `Month` (default), valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9,
+     * 12, 24, 36, 48, 60. - When `PeriodUnit` is `Year`, valid values are 1, 2, 3, 4, 5. **Note:** This parameter is valid and
+     * required only when `InstanceChargeType` is set to `PrePaid`.
      * 
      */
     public Output<Integer> period() {
         return this.period;
     }
     /**
-     * 购买资源的时长单位。取值： - Month（默认）：月。 - Year：年。 **提示:**
-     * 仅当`InstanceChargeType`取值为`PrePaid`时生效。
+     * The unit for the duration of resource purchase. Values: - Month (default): Month - Year: Year **Note:** This parameter
+     * is effective only when `InstanceChargeType` is set to `PrePaid`.
      * 
      */
     @Export(name="periodUnit", refs={String.class}, tree="[0]")
     private Output<String> periodUnit;
 
     /**
-     * @return 购买资源的时长单位。取值： - Month（默认）：月。 - Year：年。 **提示:**
-     * 仅当`InstanceChargeType`取值为`PrePaid`时生效。
+     * @return The unit for the duration of resource purchase. Values: - Month (default): Month - Year: Year **Note:** This parameter
+     * is effective only when `InstanceChargeType` is set to `PrePaid`.
      * 
      */
     public Output<String> periodUnit() {
         return this.periodUnit;
     }
     /**
-     * 实例的部署信息。
+     * The deployment information of the instance.
      * 
      */
     @Export(name="placement", refs={InstancePlacement.class}, tree="[0]")
     private Output<InstancePlacement> placement;
 
     /**
-     * @return 实例的部署信息。
+     * @return The deployment information of the instance.
      * 
      */
     public Output<InstancePlacement> placement() {
         return this.placement;
     }
     /**
-     * 实例的主网卡。
+     * Primary network interface card of the instance.
      * 
      */
     @Export(name="primaryNetworkInterface", refs={InstancePrimaryNetworkInterface.class}, tree="[0]")
     private Output<InstancePrimaryNetworkInterface> primaryNetworkInterface;
 
     /**
-     * @return 实例的主网卡。
+     * @return Primary network interface card of the instance.
      * 
      */
     public Output<InstancePrimaryNetworkInterface> primaryNetworkInterface() {
         return this.primaryNetworkInterface;
     }
     /**
-     * 实例所属的项目名称。
+     * Project name to which the instance belongs.
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 实例所属的项目名称。
+     * @return Project name to which the instance belongs.
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 当查询高性能计算GPU型实例时，列表形式返回各网卡的RDMA IP地址。
+     * When querying high performance computing GPU instances, returns the RDMA IP addresses of each network interface card in
+     * a list.
      * 
      */
     @Export(name="rdmaIpAddresses", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> rdmaIpAddresses;
 
     /**
-     * @return 当查询高性能计算GPU型实例时，列表形式返回各网卡的RDMA IP地址。
+     * @return When querying high performance computing GPU instances, returns the RDMA IP addresses of each network interface card in
+     * a list.
      * 
      */
     public Output<List<String>> rdmaIpAddresses() {
@@ -614,28 +636,28 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.rdmaNetworkInterfaceDetails;
     }
     /**
-     * 续费信息。
+     * Renewal information.
      * 
      */
     @Export(name="renewInfo", refs={InstanceRenewInfo.class}, tree="[0]")
     private Output<InstanceRenewInfo> renewInfo;
 
     /**
-     * @return 续费信息。
+     * @return Renewal information.
      * 
      */
     public Output<InstanceRenewInfo> renewInfo() {
         return this.renewInfo;
     }
     /**
-     * 实例绑定的IAM角色名称。
+     * IAM role name bound to the instance
      * 
      */
     @Export(name="roleNames", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> roleNames;
 
     /**
-     * @return 实例绑定的IAM角色名称。
+     * @return IAM role name bound to the instance
      * 
      */
     public Output<List<String>> roleNames() {
@@ -648,90 +670,96 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.secondaryNetworkInterfaces;
     }
     /**
-     * 竞价实例的每小时最高价格。 - 支持小数点后3位的精度。 -
-     * 仅当`SpotStrategy`取值为`SpotWithPriceLimit`时生效。 -
-     * 当`SpotStrategy`取值为`SpotWithPriceLimit`时，您可以自定义设置竞价实例的价格上限，当市场价格高于您的出价时，实例会被释放；当`SpotStrategy`取值为`SpotAsPriceGo`时，则代表您接受系统自动出价，跟随当前市场实际价格，此时无需填写该参数。
+     * Maximum hourly price for spot instances. - Supports up to three decimal places. - Only effective when `SpotStrategy` is
+     * set to `SpotWithPriceLimit`. - When `SpotStrategy` is set to `SpotWithPriceLimit`, you can set a custom price limit for
+     * the spot instance. If the market price exceeds your bid, the instance will be released. When `SpotStrategy` is set to
+     * `SpotAsPriceGo`, you accept the system&#39;s automatic bidding, following the current market price, and this parameter does
+     * not need to be filled in.
      * 
      */
     @Export(name="spotPriceLimit", refs={Double.class}, tree="[0]")
     private Output<Double> spotPriceLimit;
 
     /**
-     * @return 竞价实例的每小时最高价格。 - 支持小数点后3位的精度。 -
-     * 仅当`SpotStrategy`取值为`SpotWithPriceLimit`时生效。 -
-     * 当`SpotStrategy`取值为`SpotWithPriceLimit`时，您可以自定义设置竞价实例的价格上限，当市场价格高于您的出价时，实例会被释放；当`SpotStrategy`取值为`SpotAsPriceGo`时，则代表您接受系统自动出价，跟随当前市场实际价格，此时无需填写该参数。
+     * @return Maximum hourly price for spot instances. - Supports up to three decimal places. - Only effective when `SpotStrategy` is
+     * set to `SpotWithPriceLimit`. - When `SpotStrategy` is set to `SpotWithPriceLimit`, you can set a custom price limit for
+     * the spot instance. If the market price exceeds your bid, the instance will be released. When `SpotStrategy` is set to
+     * `SpotAsPriceGo`, you accept the system&#39;s automatic bidding, following the current market price, and this parameter does
+     * not need to be filled in.
      * 
      */
     public Output<Double> spotPriceLimit() {
         return this.spotPriceLimit;
     }
     /**
-     * 竞价策略。取值： - NoSpot（默认）：非竞价实例。 -
-     * SpotWithPriceLimit：设置价格上限的竞ga价实例。 -
-     * SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的竞价实例。
+     * Spot strategy. Values: - NoSpot (default): Non-spot instance. - SpotWithPriceLimit: Spot instance with price limit. -
+     * SpotAsPriceGo: System bids automatically, following the current market price for spot instances.
      * 
      */
     @Export(name="spotStrategy", refs={String.class}, tree="[0]")
     private Output<String> spotStrategy;
 
     /**
-     * @return 竞价策略。取值： - NoSpot（默认）：非竞价实例。 -
-     * SpotWithPriceLimit：设置价格上限的竞ga价实例。 -
-     * SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的竞价实例。
+     * @return Spot strategy. Values: - NoSpot (default): Non-spot instance. - SpotWithPriceLimit: Spot instance with price limit. -
+     * SpotAsPriceGo: System bids automatically, following the current market price for spot instances.
      * 
      */
     public Output<String> spotStrategy() {
         return this.spotStrategy;
     }
     /**
-     * 实例的状态。实例的状态，取值： CREATING：创建中 RUNNING：运行中 STOPPING：停止中
-     * STOPPED：已停止 REBOOTING: 重启中 STARTING：启动中 REBUILDING：重装中 RESIZING：更配中 ERROR：错误
-     * DELETING：删除中。
+     * Instance status. Values: CREATING: Creating RUNNING: Running STOPPING: Stopping STOPPED: Stopped REBOOTING: Rebooting
+     * STARTING: Starting REBUILDING: Rebuilding RESIZING: Resizing ERROR: Error DELETING: Deleting
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 实例的状态。实例的状态，取值： CREATING：创建中 RUNNING：运行中 STOPPING：停止中
-     * STOPPED：已停止 REBOOTING: 重启中 STARTING：启动中 REBUILDING：重装中 RESIZING：更配中 ERROR：错误
-     * DELETING：删除中。
+     * @return Instance status. Values: CREATING: Creating RUNNING: Running STOPPING: Stopping STOPPED: Stopped REBOOTING: Rebooting
+     * STARTING: Starting REBUILDING: Rebuilding RESIZING: Resizing ERROR: Error DELETING: Deleting
      * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
-     * StoppedMode string 可选 示例值：KeepCharging 停机模式，取值：
-     * KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
-     * StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
-     * 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
-     * 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。NotApplicable：表示本实例不支持节省停机功能。
+     * StoppedMode string Optional Example value: KeepCharging Stopped mode. Valid values: KeepCharging: Standard stopped mode.
+     * After stopping, the instance and its associated resources are retained and continue to be billed. Charges remain the
+     * same as before stopping. StopCharging: Cost-saving stopped mode. After stopping, the instance&#39;s computing resources
+     * (vCPU, GPU, and memory) are reclaimed and billing stops. Attached cloud disks, images, and public IPs are retained and
+     * continue to be billed. For conditions to enable cost-saving stopped mode, see the description of cost-saving stopped
+     * mode for pay-as-you-go billing. Default value: If you have enabled the default cost-saving stopped mode in the cloud
+     * server console and meet the conditions, the default value is StopCharging. Otherwise, the default value is KeepCharging.
+     * NotApplicable: Indicates that this instance does not support cost-saving stopped mode.
      * 
      */
     @Export(name="stoppedMode", refs={String.class}, tree="[0]")
     private Output<String> stoppedMode;
 
     /**
-     * @return StoppedMode string 可选 示例值：KeepCharging 停机模式，取值：
-     * KeepCharging：普通停机模式。停机后实例及其相关资源仍被保留且持续计费，费用和停机前一致。
-     * StopCharging：节省停机模式。停机后实例的计算资源（vCPU、GPU和内存）将被回收且停止计费，所挂载的云盘、镜像、公网IP仍被保留且持续计费。
-     * 有关节省停机的启用条件，请参见按量计费节省停机模式说明。
-     * 默认值：若您在云服务器控制台开启了默认节省停机模式，并且符合启用条件，则默认值为StopCharging。否则，默认值为KeepCharging。NotApplicable：表示本实例不支持节省停机功能。
+     * @return StoppedMode string Optional Example value: KeepCharging Stopped mode. Valid values: KeepCharging: Standard stopped mode.
+     * After stopping, the instance and its associated resources are retained and continue to be billed. Charges remain the
+     * same as before stopping. StopCharging: Cost-saving stopped mode. After stopping, the instance&#39;s computing resources
+     * (vCPU, GPU, and memory) are reclaimed and billing stops. Attached cloud disks, images, and public IPs are retained and
+     * continue to be billed. For conditions to enable cost-saving stopped mode, see the description of cost-saving stopped
+     * mode for pay-as-you-go billing. Default value: If you have enabled the default cost-saving stopped mode in the cloud
+     * server console and meet the conditions, the default value is StopCharging. Otherwise, the default value is KeepCharging.
+     * NotApplicable: Indicates that this instance does not support cost-saving stopped mode.
      * 
      */
     public Output<String> stoppedMode() {
         return this.stoppedMode;
     }
     /**
-     * 实例的系统卷。
+     * The system volume of the instance.
      * 
      */
     @Export(name="systemVolume", refs={InstanceSystemVolume.class}, tree="[0]")
     private Output<InstanceSystemVolume> systemVolume;
 
     /**
-     * @return 实例的系统卷。
+     * @return The system volume of the instance.
      * 
      */
     public Output<InstanceSystemVolume> systemVolume() {
@@ -744,60 +772,62 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 实例的更新时间。
+     * The update time of the instance.
      * 
      */
     @Export(name="updatedAt", refs={String.class}, tree="[0]")
     private Output<String> updatedAt;
 
     /**
-     * @return 实例的更新时间。
+     * @return The update time of the instance.
      * 
      */
     public Output<String> updatedAt() {
         return this.updatedAt;
     }
     /**
-     * 实例的自定义数据，默认为空。最终传入的UserData会被Base64转码。 -
-     * Linux实例：脚本内容不能超过16KB，且必须经过Base64编码。 -
-     * Windows实例：脚本内容不能超过8KB，且无需Base64编码。
+     * Custom data for the instance. Default is empty. The final UserData passed will be Base64 encoded. - Linux instances:
+     * Script content must not exceed 16 KB and must be Base64 encoded. - Windows instances: Script content must not exceed 8
+     * KB and does not require Base64 encoding
      * 
      */
     @Export(name="userData", refs={String.class}, tree="[0]")
     private Output<String> userData;
 
     /**
-     * @return 实例的自定义数据，默认为空。最终传入的UserData会被Base64转码。 -
-     * Linux实例：脚本内容不能超过16KB，且必须经过Base64编码。 -
-     * Windows实例：脚本内容不能超过8KB，且无需Base64编码。
+     * @return Custom data for the instance. Default is empty. The final UserData passed will be Base64 encoded. - Linux instances:
+     * Script content must not exceed 16 KB and must be Base64 encoded. - Windows instances: Script content must not exceed 8
+     * KB and does not require Base64 encoding
      * 
      */
     public Output<String> userData() {
         return this.userData;
     }
     /**
-     * 实例所属的私有网络ID。您可以调用[DescribeVpcs](https://www.volcengine.com/docs/6563/66127)接口获取目标地域下的VPC信息。
+     * The private network ID to which the instance belongs. You can call the
+     * [DescribeVpcs](https://www.volcengine.com/docs/6563/66127) API to obtain VPC information for the target region.
      * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
-     * @return 实例所属的私有网络ID。您可以调用[DescribeVpcs](https://www.volcengine.com/docs/6563/66127)接口获取目标地域下的VPC信息。
+     * @return The private network ID to which the instance belongs. You can call the
+     * [DescribeVpcs](https://www.volcengine.com/docs/6563/66127) API to obtain VPC information for the target region.
      * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
-     * 实例所在的可用区ID。
+     * The availability zone ID where the instance is located.
      * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
-     * @return 实例所在的可用区ID。
+     * @return The availability zone ID where the instance is located.
      * 
      */
     public Output<String> zoneId() {

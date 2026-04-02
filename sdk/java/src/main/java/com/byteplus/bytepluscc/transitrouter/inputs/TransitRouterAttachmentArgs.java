@@ -19,14 +19,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
     public static final TransitRouterAttachmentArgs Empty = new TransitRouterAttachmentArgs();
 
     /**
-     * 是否自动同步TR路由到网络实例路由表中。true：是。false：否。
+     * Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
      * 
      */
     @Import(name="autoPublishRouteEnabled")
     private @Nullable Output<Boolean> autoPublishRouteEnabled;
 
     /**
-     * @return 是否自动同步TR路由到网络实例路由表中。true：是。false：否。
+     * @return Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
      * 
      */
     public Optional<Output<Boolean>> autoPublishRouteEnabled() {
@@ -34,14 +34,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
+     * Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
      * 
      */
     @Import(name="businessStatus")
     private @Nullable Output<String> businessStatus;
 
     /**
-     * @return 网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
+     * @return Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
      * 
      */
     public Optional<Output<String>> businessStatus() {
@@ -49,14 +49,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 网络实例连接的创建时间。
+     * Creation time of the network instance connection.
      * 
      */
     @Import(name="creationTime")
     private @Nullable Output<String> creationTime;
 
     /**
-     * @return 网络实例连接的创建时间。
+     * @return Creation time of the network instance connection.
      * 
      */
     public Optional<Output<String>> creationTime() {
@@ -64,14 +64,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 网络实例连接的删除时间。
+     * Deletion time of the network instance connection.
      * 
      */
     @Import(name="deletedTime")
     private @Nullable Output<String> deletedTime;
 
     /**
-     * @return 网络实例连接的删除时间。
+     * @return Deletion time of the network instance connection.
      * 
      */
     public Optional<Output<String>> deletedTime() {
@@ -79,14 +79,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 网络实例连接的描述信息。
+     * Description of the network instance connection.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 网络实例连接的描述信息。
+     * @return Description of the network instance connection.
      * 
      */
     public Optional<Output<String>> description() {
@@ -94,14 +94,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 是否开启IPv6功能。true：是。false：否。
+     * Whether IPv6 is enabled. true: yes. false: no
      * 
      */
     @Import(name="ipv6Enabled")
     private @Nullable Output<Boolean> ipv6Enabled;
 
     /**
-     * @return 是否开启IPv6功能。true：是。false：否。
+     * @return Whether IPv6 is enabled. true: yes. false: no
      * 
      */
     public Optional<Output<Boolean>> ipv6Enabled() {
@@ -109,14 +109,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 网络实例连接的欠费关停时间。
+     * Shutdown time due to overdue payment for the network instance connection
      * 
      */
     @Import(name="overdueTime")
     private @Nullable Output<String> overdueTime;
 
     /**
-     * @return 网络实例连接的欠费关停时间。
+     * @return Shutdown time due to overdue payment for the network instance connection
      * 
      */
     public Optional<Output<String>> overdueTime() {
@@ -124,14 +124,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 网络实例的ID。
+     * ID of the network instance
      * 
      */
     @Import(name="resourceId")
     private @Nullable Output<String> resourceId;
 
     /**
-     * @return 网络实例的ID。
+     * @return ID of the network instance
      * 
      */
     public Optional<Output<String>> resourceId() {
@@ -139,14 +139,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 网络实例连接关联的网络实例类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+     * Type of network instance associated with the network instance connection. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
      * 
      */
     @Import(name="resourceType")
     private @Nullable Output<String> resourceType;
 
     /**
-     * @return 网络实例连接关联的网络实例类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+     * @return Type of network instance associated with the network instance connection. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
      * 
      */
     public Optional<Output<String>> resourceType() {
@@ -154,14 +154,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+     * Status of the network instance connection. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+     * @return Status of the network instance connection. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
      * 
      */
     public Optional<Output<String>> status() {
@@ -176,14 +176,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 网络实例连接的ID。
+     * Network instance connection ID.
      * 
      */
     @Import(name="transitRouterAttachmentId")
     private @Nullable Output<String> transitRouterAttachmentId;
 
     /**
-     * @return 网络实例连接的ID。
+     * @return Network instance connection ID.
      * 
      */
     public Optional<Output<String>> transitRouterAttachmentId() {
@@ -191,14 +191,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 网络实例连接的名称。
+     * Name of the network instance connection
      * 
      */
     @Import(name="transitRouterAttachmentName")
     private @Nullable Output<String> transitRouterAttachmentName;
 
     /**
-     * @return 网络实例连接的名称。
+     * @return Name of the network instance connection
      * 
      */
     public Optional<Output<String>> transitRouterAttachmentName() {
@@ -206,14 +206,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 跨地域连接关联的转发策略的ID。
+     * ID of the forwarding policy associated with the cross-region connection
      * 
      */
     @Import(name="transitRouterForwardPolicyTableId")
     private @Nullable Output<String> transitRouterForwardPolicyTableId;
 
     /**
-     * @return 跨地域连接关联的转发策略的ID。
+     * @return ID of the forwarding policy associated with the cross-region connection
      * 
      */
     public Optional<Output<String>> transitRouterForwardPolicyTableId() {
@@ -221,14 +221,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 中转路由器实例的ID。
+     * Transit router instance ID.
      * 
      */
     @Import(name="transitRouterId")
     private @Nullable Output<String> transitRouterId;
 
     /**
-     * @return 中转路由器实例的ID。
+     * @return Transit router instance ID.
      * 
      */
     public Optional<Output<String>> transitRouterId() {
@@ -236,14 +236,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 网络实例连接关联转发的路由表ID。
+     * Route table ID associated with the forwarding of the network instance connection.
      * 
      */
     @Import(name="transitRouterRouteTableId")
     private @Nullable Output<String> transitRouterRouteTableId;
 
     /**
-     * @return 网络实例连接关联转发的路由表ID。
+     * @return Route table ID associated with the forwarding of the network instance connection.
      * 
      */
     public Optional<Output<String>> transitRouterRouteTableId() {
@@ -251,14 +251,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 跨地域连接关联的流标记策略的ID。
+     * ID of the flow marking policy associated with the cross-region connection
      * 
      */
     @Import(name="transitRouterTrafficQosMarkingPolicyId")
     private @Nullable Output<String> transitRouterTrafficQosMarkingPolicyId;
 
     /**
-     * @return 跨地域连接关联的流标记策略的ID。
+     * @return ID of the flow marking policy associated with the cross-region connection
      * 
      */
     public Optional<Output<String>> transitRouterTrafficQosMarkingPolicyId() {
@@ -266,14 +266,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 跨地域连接关联的流队列策略的ID。
+     * ID of the flow queue policy associated with the cross-region connection
      * 
      */
     @Import(name="transitRouterTrafficQosQueuePolicyId")
     private @Nullable Output<String> transitRouterTrafficQosQueuePolicyId;
 
     /**
-     * @return 跨地域连接关联的流队列策略的ID。
+     * @return ID of the flow queue policy associated with the cross-region connection
      * 
      */
     public Optional<Output<String>> transitRouterTrafficQosQueuePolicyId() {
@@ -281,14 +281,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 网络实例连接的最近操作时间。
+     * Last operation time of the network instance connection
      * 
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
-     * @return 网络实例连接的最近操作时间。
+     * @return Last operation time of the network instance connection
      * 
      */
     public Optional<Output<String>> updateTime() {
@@ -338,7 +338,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param autoPublishRouteEnabled 是否自动同步TR路由到网络实例路由表中。true：是。false：否。
+         * @param autoPublishRouteEnabled Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
          * 
          * @return builder
          * 
@@ -349,7 +349,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param autoPublishRouteEnabled 是否自动同步TR路由到网络实例路由表中。true：是。false：否。
+         * @param autoPublishRouteEnabled Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
          * 
          * @return builder
          * 
@@ -359,7 +359,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param businessStatus 网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
+         * @param businessStatus Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
          * 
          * @return builder
          * 
@@ -370,7 +370,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param businessStatus 网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
+         * @param businessStatus Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
          * 
          * @return builder
          * 
@@ -380,7 +380,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param creationTime 网络实例连接的创建时间。
+         * @param creationTime Creation time of the network instance connection.
          * 
          * @return builder
          * 
@@ -391,7 +391,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param creationTime 网络实例连接的创建时间。
+         * @param creationTime Creation time of the network instance connection.
          * 
          * @return builder
          * 
@@ -401,7 +401,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param deletedTime 网络实例连接的删除时间。
+         * @param deletedTime Deletion time of the network instance connection.
          * 
          * @return builder
          * 
@@ -412,7 +412,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param deletedTime 网络实例连接的删除时间。
+         * @param deletedTime Deletion time of the network instance connection.
          * 
          * @return builder
          * 
@@ -422,7 +422,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param description 网络实例连接的描述信息。
+         * @param description Description of the network instance connection.
          * 
          * @return builder
          * 
@@ -433,7 +433,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param description 网络实例连接的描述信息。
+         * @param description Description of the network instance connection.
          * 
          * @return builder
          * 
@@ -443,7 +443,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param ipv6Enabled 是否开启IPv6功能。true：是。false：否。
+         * @param ipv6Enabled Whether IPv6 is enabled. true: yes. false: no
          * 
          * @return builder
          * 
@@ -454,7 +454,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param ipv6Enabled 是否开启IPv6功能。true：是。false：否。
+         * @param ipv6Enabled Whether IPv6 is enabled. true: yes. false: no
          * 
          * @return builder
          * 
@@ -464,7 +464,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param overdueTime 网络实例连接的欠费关停时间。
+         * @param overdueTime Shutdown time due to overdue payment for the network instance connection
          * 
          * @return builder
          * 
@@ -475,7 +475,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param overdueTime 网络实例连接的欠费关停时间。
+         * @param overdueTime Shutdown time due to overdue payment for the network instance connection
          * 
          * @return builder
          * 
@@ -485,7 +485,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param resourceId 网络实例的ID。
+         * @param resourceId ID of the network instance
          * 
          * @return builder
          * 
@@ -496,7 +496,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param resourceId 网络实例的ID。
+         * @param resourceId ID of the network instance
          * 
          * @return builder
          * 
@@ -506,7 +506,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param resourceType 网络实例连接关联的网络实例类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+         * @param resourceType Type of network instance associated with the network instance connection. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
          * 
          * @return builder
          * 
@@ -517,7 +517,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param resourceType 网络实例连接关联的网络实例类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+         * @param resourceType Type of network instance associated with the network instance connection. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
          * 
          * @return builder
          * 
@@ -527,7 +527,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param status 网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+         * @param status Status of the network instance connection. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
          * 
          * @return builder
          * 
@@ -538,7 +538,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param status 网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+         * @param status Status of the network instance connection. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
          * 
          * @return builder
          * 
@@ -561,7 +561,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param transitRouterAttachmentId 网络实例连接的ID。
+         * @param transitRouterAttachmentId Network instance connection ID.
          * 
          * @return builder
          * 
@@ -572,7 +572,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param transitRouterAttachmentId 网络实例连接的ID。
+         * @param transitRouterAttachmentId Network instance connection ID.
          * 
          * @return builder
          * 
@@ -582,7 +582,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param transitRouterAttachmentName 网络实例连接的名称。
+         * @param transitRouterAttachmentName Name of the network instance connection
          * 
          * @return builder
          * 
@@ -593,7 +593,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param transitRouterAttachmentName 网络实例连接的名称。
+         * @param transitRouterAttachmentName Name of the network instance connection
          * 
          * @return builder
          * 
@@ -603,7 +603,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param transitRouterForwardPolicyTableId 跨地域连接关联的转发策略的ID。
+         * @param transitRouterForwardPolicyTableId ID of the forwarding policy associated with the cross-region connection
          * 
          * @return builder
          * 
@@ -614,7 +614,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param transitRouterForwardPolicyTableId 跨地域连接关联的转发策略的ID。
+         * @param transitRouterForwardPolicyTableId ID of the forwarding policy associated with the cross-region connection
          * 
          * @return builder
          * 
@@ -624,7 +624,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param transitRouterId 中转路由器实例的ID。
+         * @param transitRouterId Transit router instance ID.
          * 
          * @return builder
          * 
@@ -635,7 +635,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param transitRouterId 中转路由器实例的ID。
+         * @param transitRouterId Transit router instance ID.
          * 
          * @return builder
          * 
@@ -645,7 +645,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param transitRouterRouteTableId 网络实例连接关联转发的路由表ID。
+         * @param transitRouterRouteTableId Route table ID associated with the forwarding of the network instance connection.
          * 
          * @return builder
          * 
@@ -656,7 +656,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param transitRouterRouteTableId 网络实例连接关联转发的路由表ID。
+         * @param transitRouterRouteTableId Route table ID associated with the forwarding of the network instance connection.
          * 
          * @return builder
          * 
@@ -666,7 +666,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param transitRouterTrafficQosMarkingPolicyId 跨地域连接关联的流标记策略的ID。
+         * @param transitRouterTrafficQosMarkingPolicyId ID of the flow marking policy associated with the cross-region connection
          * 
          * @return builder
          * 
@@ -677,7 +677,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param transitRouterTrafficQosMarkingPolicyId 跨地域连接关联的流标记策略的ID。
+         * @param transitRouterTrafficQosMarkingPolicyId ID of the flow marking policy associated with the cross-region connection
          * 
          * @return builder
          * 
@@ -687,7 +687,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param transitRouterTrafficQosQueuePolicyId 跨地域连接关联的流队列策略的ID。
+         * @param transitRouterTrafficQosQueuePolicyId ID of the flow queue policy associated with the cross-region connection
          * 
          * @return builder
          * 
@@ -698,7 +698,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param transitRouterTrafficQosQueuePolicyId 跨地域连接关联的流队列策略的ID。
+         * @param transitRouterTrafficQosQueuePolicyId ID of the flow queue policy associated with the cross-region connection
          * 
          * @return builder
          * 
@@ -708,7 +708,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param updateTime 网络实例连接的最近操作时间。
+         * @param updateTime Last operation time of the network instance connection
          * 
          * @return builder
          * 
@@ -719,7 +719,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param updateTime 网络实例连接的最近操作时间。
+         * @param updateTime Last operation time of the network instance connection
          * 
          * @return builder
          * 

@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetSubnetTag {
     /**
-     * @return 用户标签的标签键。
+     * @return User tag key
      * 
      */
     private String key;
     /**
-     * @return 用户标签的标签值。
+     * @return User tag value
      * 
      */
     private String value;
 
     private GetSubnetTag() {}
     /**
-     * @return 用户标签的标签键。
+     * @return User tag key
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return 用户标签的标签值。
+     * @return User tag value
      * 
      */
     public String value() {

@@ -31,13 +31,13 @@ class DeploymentSetArgs:
                  strategy: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a DeploymentSet resource.
-        :param pulumi.Input[builtins.str] deployment_set_name: 部署集名称。不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1～128个字符。
-        :param pulumi.Input[builtins.int] deployment_set_group_number: 部署集组的序号，取值范围：1～7。
-        :param pulumi.Input[builtins.str] description: 部署集的描述信息。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”。长度限制在255个字符以内。
-        :param pulumi.Input[builtins.str] granularity: 部署粒度，取值：host：物理机。rack：机架。switch：交换机。
-        :param pulumi.Input[builtins.int] group_count: 部署集组数量。为部署集组高可用策略设置分组数量。取值范围：1～7。默认值：7。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] instance_ids: 部署集内的ECS实例ID列表。
-        :param pulumi.Input[builtins.str] strategy: 部署策略，取值：Availability（默认）：高可用策略。AvailabilityGroup：部署集组高可用策略。
+        :param pulumi.Input[builtins.str] deployment_set_name: Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
+        :param pulumi.Input[builtins.int] deployment_set_group_number: Deployment set group index. Value range: 1–7.
+        :param pulumi.Input[builtins.str] description: Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period '.', space, underscore '_', hyphen '-', equals '=', English comma ',', Chinese comma '，', and Chinese period '。'. Length limit: within 255 characters.
+        :param pulumi.Input[builtins.str] granularity: Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
+        :param pulumi.Input[builtins.int] group_count: Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] instance_ids: List of ECS instance IDs in the deployment set.
+        :param pulumi.Input[builtins.str] strategy: Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
         """
         pulumi.set(__self__, "deployment_set_name", deployment_set_name)
         if deployment_set_group_number is not None:
@@ -57,7 +57,7 @@ class DeploymentSetArgs:
     @pulumi.getter(name="deploymentSetName")
     def deployment_set_name(self) -> pulumi.Input[builtins.str]:
         """
-        部署集名称。不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1～128个字符。
+        Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
         """
         return pulumi.get(self, "deployment_set_name")
 
@@ -69,7 +69,7 @@ class DeploymentSetArgs:
     @pulumi.getter(name="deploymentSetGroupNumber")
     def deployment_set_group_number(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        部署集组的序号，取值范围：1～7。
+        Deployment set group index. Value range: 1–7.
         """
         return pulumi.get(self, "deployment_set_group_number")
 
@@ -81,7 +81,7 @@ class DeploymentSetArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        部署集的描述信息。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”。长度限制在255个字符以内。
+        Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period '.', space, underscore '_', hyphen '-', equals '=', English comma ',', Chinese comma '，', and Chinese period '。'. Length limit: within 255 characters.
         """
         return pulumi.get(self, "description")
 
@@ -93,7 +93,7 @@ class DeploymentSetArgs:
     @pulumi.getter
     def granularity(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        部署粒度，取值：host：物理机。rack：机架。switch：交换机。
+        Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
         """
         return pulumi.get(self, "granularity")
 
@@ -105,7 +105,7 @@ class DeploymentSetArgs:
     @pulumi.getter(name="groupCount")
     def group_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        部署集组数量。为部署集组高可用策略设置分组数量。取值范围：1～7。默认值：7。
+        Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
         """
         return pulumi.get(self, "group_count")
 
@@ -117,7 +117,7 @@ class DeploymentSetArgs:
     @pulumi.getter(name="instanceIds")
     def instance_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        部署集内的ECS实例ID列表。
+        List of ECS instance IDs in the deployment set.
         """
         return pulumi.get(self, "instance_ids")
 
@@ -129,7 +129,7 @@ class DeploymentSetArgs:
     @pulumi.getter
     def strategy(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        部署策略，取值：Availability（默认）：高可用策略。AvailabilityGroup：部署集组高可用策略。
+        Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
         """
         return pulumi.get(self, "strategy")
 
@@ -154,16 +154,16 @@ class _DeploymentSetState:
                  strategy: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering DeploymentSet resources.
-        :param pulumi.Input[builtins.str] created_at: 部署集的创建时间。
-        :param pulumi.Input[builtins.int] deployment_set_group_number: 部署集组的序号，取值范围：1～7。
-        :param pulumi.Input[builtins.str] deployment_set_id: 部署集ID。
-        :param pulumi.Input[builtins.str] deployment_set_name: 部署集名称。不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1～128个字符。
-        :param pulumi.Input[builtins.str] description: 部署集的描述信息。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”。长度限制在255个字符以内。
-        :param pulumi.Input[builtins.str] granularity: 部署粒度，取值：host：物理机。rack：机架。switch：交换机。
-        :param pulumi.Input[builtins.int] group_count: 部署集组数量。为部署集组高可用策略设置分组数量。取值范围：1～7。默认值：7。
-        :param pulumi.Input[builtins.int] instance_amount: 部署集内的ECS实例数量。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] instance_ids: 部署集内的ECS实例ID列表。
-        :param pulumi.Input[builtins.str] strategy: 部署策略，取值：Availability（默认）：高可用策略。AvailabilityGroup：部署集组高可用策略。
+        :param pulumi.Input[builtins.str] created_at: Deployment set creation time.
+        :param pulumi.Input[builtins.int] deployment_set_group_number: Deployment set group index. Value range: 1–7.
+        :param pulumi.Input[builtins.str] deployment_set_id: Deployment set ID.
+        :param pulumi.Input[builtins.str] deployment_set_name: Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
+        :param pulumi.Input[builtins.str] description: Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period '.', space, underscore '_', hyphen '-', equals '=', English comma ',', Chinese comma '，', and Chinese period '。'. Length limit: within 255 characters.
+        :param pulumi.Input[builtins.str] granularity: Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
+        :param pulumi.Input[builtins.int] group_count: Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
+        :param pulumi.Input[builtins.int] instance_amount: Number of ECS instances in the deployment set.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] instance_ids: List of ECS instance IDs in the deployment set.
+        :param pulumi.Input[builtins.str] strategy: Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
         """
         if capacities is not None:
             pulumi.set(__self__, "capacities", capacities)
@@ -201,7 +201,7 @@ class _DeploymentSetState:
     @pulumi.getter(name="createdAt")
     def created_at(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        部署集的创建时间。
+        Deployment set creation time.
         """
         return pulumi.get(self, "created_at")
 
@@ -213,7 +213,7 @@ class _DeploymentSetState:
     @pulumi.getter(name="deploymentSetGroupNumber")
     def deployment_set_group_number(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        部署集组的序号，取值范围：1～7。
+        Deployment set group index. Value range: 1–7.
         """
         return pulumi.get(self, "deployment_set_group_number")
 
@@ -225,7 +225,7 @@ class _DeploymentSetState:
     @pulumi.getter(name="deploymentSetId")
     def deployment_set_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        部署集ID。
+        Deployment set ID.
         """
         return pulumi.get(self, "deployment_set_id")
 
@@ -237,7 +237,7 @@ class _DeploymentSetState:
     @pulumi.getter(name="deploymentSetName")
     def deployment_set_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        部署集名称。不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1～128个字符。
+        Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
         """
         return pulumi.get(self, "deployment_set_name")
 
@@ -249,7 +249,7 @@ class _DeploymentSetState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        部署集的描述信息。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”。长度限制在255个字符以内。
+        Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period '.', space, underscore '_', hyphen '-', equals '=', English comma ',', Chinese comma '，', and Chinese period '。'. Length limit: within 255 characters.
         """
         return pulumi.get(self, "description")
 
@@ -261,7 +261,7 @@ class _DeploymentSetState:
     @pulumi.getter
     def granularity(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        部署粒度，取值：host：物理机。rack：机架。switch：交换机。
+        Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
         """
         return pulumi.get(self, "granularity")
 
@@ -273,7 +273,7 @@ class _DeploymentSetState:
     @pulumi.getter(name="groupCount")
     def group_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        部署集组数量。为部署集组高可用策略设置分组数量。取值范围：1～7。默认值：7。
+        Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
         """
         return pulumi.get(self, "group_count")
 
@@ -285,7 +285,7 @@ class _DeploymentSetState:
     @pulumi.getter(name="instanceAmount")
     def instance_amount(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        部署集内的ECS实例数量。
+        Number of ECS instances in the deployment set.
         """
         return pulumi.get(self, "instance_amount")
 
@@ -297,7 +297,7 @@ class _DeploymentSetState:
     @pulumi.getter(name="instanceIds")
     def instance_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        部署集内的ECS实例ID列表。
+        List of ECS instance IDs in the deployment set.
         """
         return pulumi.get(self, "instance_ids")
 
@@ -309,7 +309,7 @@ class _DeploymentSetState:
     @pulumi.getter
     def strategy(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        部署策略，取值：Availability（默认）：高可用策略。AvailabilityGroup：部署集组高可用策略。
+        Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
         """
         return pulumi.get(self, "strategy")
 
@@ -333,7 +333,7 @@ class DeploymentSet(pulumi.CustomResource):
                  strategy: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        部署集是在底层硬件维度上控制实例分散部署的策略，可以实现物理层级的安全隔离。您可以通过创建部署集，使实例分散部署在不同的底层硬件上，用于保障业务的底层容灾能力及高可用性。
+        A deployment set is a strategy that controls the distribution of instances at the underlying hardware level, enabling physical-level security isolation. By creating deployment sets, you can distribute instances across different underlying hardware to ensure disaster recovery and high availability for your business.
 
         ## Example Usage
 
@@ -358,13 +358,13 @@ class DeploymentSet(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] deployment_set_group_number: 部署集组的序号，取值范围：1～7。
-        :param pulumi.Input[builtins.str] deployment_set_name: 部署集名称。不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1～128个字符。
-        :param pulumi.Input[builtins.str] description: 部署集的描述信息。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”。长度限制在255个字符以内。
-        :param pulumi.Input[builtins.str] granularity: 部署粒度，取值：host：物理机。rack：机架。switch：交换机。
-        :param pulumi.Input[builtins.int] group_count: 部署集组数量。为部署集组高可用策略设置分组数量。取值范围：1～7。默认值：7。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] instance_ids: 部署集内的ECS实例ID列表。
-        :param pulumi.Input[builtins.str] strategy: 部署策略，取值：Availability（默认）：高可用策略。AvailabilityGroup：部署集组高可用策略。
+        :param pulumi.Input[builtins.int] deployment_set_group_number: Deployment set group index. Value range: 1–7.
+        :param pulumi.Input[builtins.str] deployment_set_name: Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
+        :param pulumi.Input[builtins.str] description: Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period '.', space, underscore '_', hyphen '-', equals '=', English comma ',', Chinese comma '，', and Chinese period '。'. Length limit: within 255 characters.
+        :param pulumi.Input[builtins.str] granularity: Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
+        :param pulumi.Input[builtins.int] group_count: Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] instance_ids: List of ECS instance IDs in the deployment set.
+        :param pulumi.Input[builtins.str] strategy: Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
         """
         ...
     @overload
@@ -373,7 +373,7 @@ class DeploymentSet(pulumi.CustomResource):
                  args: DeploymentSetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        部署集是在底层硬件维度上控制实例分散部署的策略，可以实现物理层级的安全隔离。您可以通过创建部署集，使实例分散部署在不同的底层硬件上，用于保障业务的底层容灾能力及高可用性。
+        A deployment set is a strategy that controls the distribution of instances at the underlying hardware level, enabling physical-level security isolation. By creating deployment sets, you can distribute instances across different underlying hardware to ensure disaster recovery and high availability for your business.
 
         ## Example Usage
 
@@ -468,16 +468,16 @@ class DeploymentSet(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] created_at: 部署集的创建时间。
-        :param pulumi.Input[builtins.int] deployment_set_group_number: 部署集组的序号，取值范围：1～7。
-        :param pulumi.Input[builtins.str] deployment_set_id: 部署集ID。
-        :param pulumi.Input[builtins.str] deployment_set_name: 部署集名称。不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1～128个字符。
-        :param pulumi.Input[builtins.str] description: 部署集的描述信息。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”。长度限制在255个字符以内。
-        :param pulumi.Input[builtins.str] granularity: 部署粒度，取值：host：物理机。rack：机架。switch：交换机。
-        :param pulumi.Input[builtins.int] group_count: 部署集组数量。为部署集组高可用策略设置分组数量。取值范围：1～7。默认值：7。
-        :param pulumi.Input[builtins.int] instance_amount: 部署集内的ECS实例数量。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] instance_ids: 部署集内的ECS实例ID列表。
-        :param pulumi.Input[builtins.str] strategy: 部署策略，取值：Availability（默认）：高可用策略。AvailabilityGroup：部署集组高可用策略。
+        :param pulumi.Input[builtins.str] created_at: Deployment set creation time.
+        :param pulumi.Input[builtins.int] deployment_set_group_number: Deployment set group index. Value range: 1–7.
+        :param pulumi.Input[builtins.str] deployment_set_id: Deployment set ID.
+        :param pulumi.Input[builtins.str] deployment_set_name: Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
+        :param pulumi.Input[builtins.str] description: Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period '.', space, underscore '_', hyphen '-', equals '=', English comma ',', Chinese comma '，', and Chinese period '。'. Length limit: within 255 characters.
+        :param pulumi.Input[builtins.str] granularity: Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
+        :param pulumi.Input[builtins.int] group_count: Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
+        :param pulumi.Input[builtins.int] instance_amount: Number of ECS instances in the deployment set.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] instance_ids: List of ECS instance IDs in the deployment set.
+        :param pulumi.Input[builtins.str] strategy: Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -505,7 +505,7 @@ class DeploymentSet(pulumi.CustomResource):
     @pulumi.getter(name="createdAt")
     def created_at(self) -> pulumi.Output[builtins.str]:
         """
-        部署集的创建时间。
+        Deployment set creation time.
         """
         return pulumi.get(self, "created_at")
 
@@ -513,7 +513,7 @@ class DeploymentSet(pulumi.CustomResource):
     @pulumi.getter(name="deploymentSetGroupNumber")
     def deployment_set_group_number(self) -> pulumi.Output[builtins.int]:
         """
-        部署集组的序号，取值范围：1～7。
+        Deployment set group index. Value range: 1–7.
         """
         return pulumi.get(self, "deployment_set_group_number")
 
@@ -521,7 +521,7 @@ class DeploymentSet(pulumi.CustomResource):
     @pulumi.getter(name="deploymentSetId")
     def deployment_set_id(self) -> pulumi.Output[builtins.str]:
         """
-        部署集ID。
+        Deployment set ID.
         """
         return pulumi.get(self, "deployment_set_id")
 
@@ -529,7 +529,7 @@ class DeploymentSet(pulumi.CustomResource):
     @pulumi.getter(name="deploymentSetName")
     def deployment_set_name(self) -> pulumi.Output[builtins.str]:
         """
-        部署集名称。不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1～128个字符。
+        Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
         """
         return pulumi.get(self, "deployment_set_name")
 
@@ -537,7 +537,7 @@ class DeploymentSet(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        部署集的描述信息。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”。长度限制在255个字符以内。
+        Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period '.', space, underscore '_', hyphen '-', equals '=', English comma ',', Chinese comma '，', and Chinese period '。'. Length limit: within 255 characters.
         """
         return pulumi.get(self, "description")
 
@@ -545,7 +545,7 @@ class DeploymentSet(pulumi.CustomResource):
     @pulumi.getter
     def granularity(self) -> pulumi.Output[builtins.str]:
         """
-        部署粒度，取值：host：物理机。rack：机架。switch：交换机。
+        Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
         """
         return pulumi.get(self, "granularity")
 
@@ -553,7 +553,7 @@ class DeploymentSet(pulumi.CustomResource):
     @pulumi.getter(name="groupCount")
     def group_count(self) -> pulumi.Output[builtins.int]:
         """
-        部署集组数量。为部署集组高可用策略设置分组数量。取值范围：1～7。默认值：7。
+        Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
         """
         return pulumi.get(self, "group_count")
 
@@ -561,7 +561,7 @@ class DeploymentSet(pulumi.CustomResource):
     @pulumi.getter(name="instanceAmount")
     def instance_amount(self) -> pulumi.Output[builtins.int]:
         """
-        部署集内的ECS实例数量。
+        Number of ECS instances in the deployment set.
         """
         return pulumi.get(self, "instance_amount")
 
@@ -569,7 +569,7 @@ class DeploymentSet(pulumi.CustomResource):
     @pulumi.getter(name="instanceIds")
     def instance_ids(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        部署集内的ECS实例ID列表。
+        List of ECS instance IDs in the deployment set.
         """
         return pulumi.get(self, "instance_ids")
 
@@ -577,7 +577,7 @@ class DeploymentSet(pulumi.CustomResource):
     @pulumi.getter
     def strategy(self) -> pulumi.Output[builtins.str]:
         """
-        部署策略，取值：Availability（默认）：高可用策略。AvailabilityGroup：部署集组高可用策略。
+        Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
         """
         return pulumi.get(self, "strategy")
 

@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam.Outputs
     public sealed class GetGroupAttachedPolicyPolicyScopeResult
     {
         /// <summary>
-        /// 项目授权时间。
+        /// Project authorization time.
         /// </summary>
         public readonly string AttachTime;
         /// <summary>
-        /// 授权类型。Global代表全局授权（不限制项目），Project代表按项目授权。
+        /// Authorization type. Global indicates global authorization (not limited by project); Project indicates project-based authorization.
         /// </summary>
         public readonly string PolicyScopeType;
         /// <summary>
-        /// 按项目授权时的项目显示名。
+        /// Project display name for project-based authorization.
         /// </summary>
         public readonly string ProjectDisplayName;
         /// <summary>
-        /// 按项目授权时的项目名。
+        /// Project name for project-based authorization.
         /// </summary>
         public readonly string ProjectName;
 

@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb.Outputs
     public sealed class GetAllowListAssociatedInstanceResult
     {
         /// <summary>
-        /// 已绑定当前白名单的实例 ID。
+        /// Instance ID bound to the current allowlist.
         /// </summary>
         public readonly string InstanceId;
         /// <summary>
-        /// 已绑定当前白名单的实例名称。
+        /// Instance name bound to the current allowlist.
         /// </summary>
         public readonly string InstanceName;
         /// <summary>
-        /// 实例所属的项目名称。
+        /// Project name of the instance.
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// 实例所属的私有网络 ID。
+        /// Private network ID of the instance.
         /// </summary>
         public readonly string Vpc;
 

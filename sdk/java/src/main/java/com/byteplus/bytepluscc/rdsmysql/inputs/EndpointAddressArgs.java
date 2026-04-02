@@ -17,14 +17,14 @@ public final class EndpointAddressArgs extends com.pulumi.resources.ResourceArgs
     public static final EndpointAddressArgs Empty = new EndpointAddressArgs();
 
     /**
-     * false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+     * false: Volcano Engine private network resolution (default). true: Volcano Engine private network and public network resolution.
      * 
      */
     @Import(name="dnsVisibility")
     private @Nullable Output<Boolean> dnsVisibility;
 
     /**
-     * @return false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+     * @return false: Volcano Engine private network resolution (default). true: Volcano Engine private network and public network resolution.
      * 
      */
     public Optional<Output<Boolean>> dnsVisibility() {
@@ -32,14 +32,14 @@ public final class EndpointAddressArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+     * Connection address prefix. The prefix must meet the following rules: start with a lowercase letter and end with a lowercase letter or digit; contain at least two of the following: lowercase letters, digits, or hyphens (-); be at least 8 characters long; and the total connection address length (prefix + suffix) must not exceed 63 characters.
      * 
      */
     @Import(name="domainPrefix")
     private @Nullable Output<String> domainPrefix;
 
     /**
-     * @return 连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+     * @return Connection address prefix. The prefix must meet the following rules: start with a lowercase letter and end with a lowercase letter or digit; contain at least two of the following: lowercase letters, digits, or hyphens (-); be at least 8 characters long; and the total connection address length (prefix + suffix) must not exceed 63 characters.
      * 
      */
     public Optional<Output<String>> domainPrefix() {
@@ -47,14 +47,14 @@ public final class EndpointAddressArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 端口。
+     * Port.
      * 
      */
     @Import(name="port")
     private @Nullable Output<String> port;
 
     /**
-     * @return 端口。
+     * @return Port.
      * 
      */
     public Optional<Output<String>> port() {
@@ -88,7 +88,7 @@ public final class EndpointAddressArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param dnsVisibility false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+         * @param dnsVisibility false: Volcano Engine private network resolution (default). true: Volcano Engine private network and public network resolution.
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class EndpointAddressArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param dnsVisibility false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+         * @param dnsVisibility false: Volcano Engine private network resolution (default). true: Volcano Engine private network and public network resolution.
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class EndpointAddressArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param domainPrefix 连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+         * @param domainPrefix Connection address prefix. The prefix must meet the following rules: start with a lowercase letter and end with a lowercase letter or digit; contain at least two of the following: lowercase letters, digits, or hyphens (-); be at least 8 characters long; and the total connection address length (prefix + suffix) must not exceed 63 characters.
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class EndpointAddressArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param domainPrefix 连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+         * @param domainPrefix Connection address prefix. The prefix must meet the following rules: start with a lowercase letter and end with a lowercase letter or digit; contain at least two of the following: lowercase letters, digits, or hyphens (-); be at least 8 characters long; and the total connection address length (prefix + suffix) must not exceed 63 characters.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class EndpointAddressArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param port 端口。
+         * @param port Port.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class EndpointAddressArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param port 端口。
+         * @param port Port.
          * 
          * @return builder
          * 

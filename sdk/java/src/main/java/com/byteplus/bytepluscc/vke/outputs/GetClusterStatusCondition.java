@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetClusterStatusCondition {
     /**
-     * @return 条件类型
+     * @return Condition type
      * 
      */
     private String type;
 
     private GetClusterStatusCondition() {}
     /**
-     * @return 条件类型
+     * @return Condition type
      * 
      */
     public String type() {

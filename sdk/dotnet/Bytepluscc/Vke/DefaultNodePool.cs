@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Vke
 {
     /// <summary>
-    /// 除标准的自定义节点池外，容器服务支持 默认节点池（固定名称vke-default-nodepool）能力，用来纳管已有云服务器（ECS）实例。默认节点池的安全配置、高级配置、更多配置等配置能力与标准节点池一致，但不具备扩缩容、编辑数量等能力。
+    /// In addition to standard custom node pools, container service supports the default node pool (fixed name vke-default-nodepool) for managing existing cloud server (ECS) instances. The default node pool has the same security, advanced, and additional configuration capabilities as standard node pools, but does not support scaling or editing the number of nodes.
     /// 
     /// ## Import
     /// 
@@ -23,61 +23,61 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     public partial class DefaultNodePool : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 节点池伸缩策略配置。
+        /// Node pool scaling policy configuration
         /// </summary>
         [Output("autoScaling")]
         public Output<Outputs.DefaultNodePoolAutoScaling> AutoScaling { get; private set; } = null!;
 
         /// <summary>
-        /// 节点池所在集群的 ID。
+        /// Cluster ID where the node pool is located
         /// </summary>
         [Output("clusterId")]
         public Output<string> ClusterId { get; private set; } = null!;
 
         /// <summary>
-        /// 创建节点池的时间。
+        /// Node pool creation time
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 节点池 Kubernetes 相关配置。
+        /// Kubernetes-related configuration for the node pool
         /// </summary>
         [Output("kubernetesConfig")]
         public Output<Outputs.DefaultNodePoolKubernetesConfig> KubernetesConfig { get; private set; } = null!;
 
         /// <summary>
-        /// 托管节点池配置。
+        /// Managed node pool configuration
         /// </summary>
         [Output("management")]
         public Output<Outputs.DefaultNodePoolManagement> Management { get; private set; } = null!;
 
         /// <summary>
-        /// 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+        /// Node pool name. Must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length: 2–64 characters
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// 节点池中云服务器（ECS）实例配置。
+        /// Cloud server (ECS) instance configuration in the node pool
         /// </summary>
         [Output("nodeConfig")]
         public Output<Outputs.DefaultNodePoolNodeConfig> NodeConfig { get; private set; } = null!;
 
         /// <summary>
-        /// 节点池 ID 。
+        /// Node pool ID
         /// </summary>
         [Output("nodePoolId")]
         public Output<string> NodePoolId { get; private set; } = null!;
 
         /// <summary>
-        /// 节点池中的节点统计。
+        /// Node statistics in the node pool.
         /// </summary>
         [Output("nodeStatistics")]
         public Output<Outputs.DefaultNodePoolNodeStatistics> NodeStatistics { get; private set; } = null!;
 
         /// <summary>
-        /// 节点池状态。
+        /// Node pool status
         /// </summary>
         [Output("status")]
         public Output<Outputs.DefaultNodePoolStatus> Status { get; private set; } = null!;
@@ -86,7 +86,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
         public Output<ImmutableArray<Outputs.DefaultNodePoolTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 更新节点池的时间。
+        /// Time when the node pool was updated
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
@@ -139,19 +139,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     public sealed class DefaultNodePoolArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 节点池所在集群的 ID。
+        /// Cluster ID where the node pool is located
         /// </summary>
         [Input("clusterId", required: true)]
         public Input<string> ClusterId { get; set; } = null!;
 
         /// <summary>
-        /// 节点池 Kubernetes 相关配置。
+        /// Kubernetes-related configuration for the node pool
         /// </summary>
         [Input("kubernetesConfig")]
         public Input<Inputs.DefaultNodePoolKubernetesConfigArgs>? KubernetesConfig { get; set; }
 
         /// <summary>
-        /// 节点池中云服务器（ECS）实例配置。
+        /// Cloud server (ECS) instance configuration in the node pool
         /// </summary>
         [Input("nodeConfig", required: true)]
         public Input<Inputs.DefaultNodePoolNodeConfigArgs> NodeConfig { get; set; } = null!;
@@ -173,61 +173,61 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     public sealed class DefaultNodePoolState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 节点池伸缩策略配置。
+        /// Node pool scaling policy configuration
         /// </summary>
         [Input("autoScaling")]
         public Input<Inputs.DefaultNodePoolAutoScalingGetArgs>? AutoScaling { get; set; }
 
         /// <summary>
-        /// 节点池所在集群的 ID。
+        /// Cluster ID where the node pool is located
         /// </summary>
         [Input("clusterId")]
         public Input<string>? ClusterId { get; set; }
 
         /// <summary>
-        /// 创建节点池的时间。
+        /// Node pool creation time
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 节点池 Kubernetes 相关配置。
+        /// Kubernetes-related configuration for the node pool
         /// </summary>
         [Input("kubernetesConfig")]
         public Input<Inputs.DefaultNodePoolKubernetesConfigGetArgs>? KubernetesConfig { get; set; }
 
         /// <summary>
-        /// 托管节点池配置。
+        /// Managed node pool configuration
         /// </summary>
         [Input("management")]
         public Input<Inputs.DefaultNodePoolManagementGetArgs>? Management { get; set; }
 
         /// <summary>
-        /// 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+        /// Node pool name. Must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length: 2–64 characters
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 节点池中云服务器（ECS）实例配置。
+        /// Cloud server (ECS) instance configuration in the node pool
         /// </summary>
         [Input("nodeConfig")]
         public Input<Inputs.DefaultNodePoolNodeConfigGetArgs>? NodeConfig { get; set; }
 
         /// <summary>
-        /// 节点池 ID 。
+        /// Node pool ID
         /// </summary>
         [Input("nodePoolId")]
         public Input<string>? NodePoolId { get; set; }
 
         /// <summary>
-        /// 节点池中的节点统计。
+        /// Node statistics in the node pool.
         /// </summary>
         [Input("nodeStatistics")]
         public Input<Inputs.DefaultNodePoolNodeStatisticsGetArgs>? NodeStatistics { get; set; }
 
         /// <summary>
-        /// 节点池状态。
+        /// Node pool status
         /// </summary>
         [Input("status")]
         public Input<Inputs.DefaultNodePoolStatusGetArgs>? Status { get; set; }
@@ -241,7 +241,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
         }
 
         /// <summary>
-        /// 更新节点池的时间。
+        /// Time when the node pool was updated
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }

@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class UpstreamVersionDetailLabelArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 键。
+        /// Key
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// 值。
+        /// Value
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

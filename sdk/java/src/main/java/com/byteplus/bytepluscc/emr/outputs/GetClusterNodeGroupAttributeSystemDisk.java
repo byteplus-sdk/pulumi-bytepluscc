@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetClusterNodeGroupAttributeSystemDisk {
     /**
-     * @return 磁盘大小。
+     * @return Disk size.
      * 
      */
     private Integer size;
     /**
-     * @return 磁盘类型。
+     * @return Disk type.
      * 
      */
     private String volumeType;
 
     private GetClusterNodeGroupAttributeSystemDisk() {}
     /**
-     * @return 磁盘大小。
+     * @return Disk size.
      * 
      */
     public Integer size() {
         return this.size;
     }
     /**
-     * @return 磁盘类型。
+     * @return Disk type.
      * 
      */
     public String volumeType() {

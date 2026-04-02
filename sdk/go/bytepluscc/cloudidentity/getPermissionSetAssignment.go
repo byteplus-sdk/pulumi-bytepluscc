@@ -30,23 +30,23 @@ type LookupPermissionSetAssignmentArgs struct {
 
 // A collection of values returned by getPermissionSetAssignment.
 type LookupPermissionSetAssignmentResult struct {
-	// 授权创建时间。
+	// Authorization creation time
 	CreatedTime string `pulumi:"createdTime"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 权限集 ID。
+	// Permission set ID
 	PermissionSetId string `pulumi:"permissionSetId"`
-	// 权限集名称。
+	// Permission set name
 	PermissionSetName string `pulumi:"permissionSetName"`
-	// 云身份中心对象 ID
+	// Cloud Identity Center object ID
 	PrincipalId string `pulumi:"principalId"`
-	// 云身份中心对象名。
+	// Cloud Identity Center object name
 	PrincipalName string `pulumi:"principalName"`
-	// 云身份中心对象类型，User 或者 Group。
+	// Cloud Identity Center object type: User or Group
 	PrincipalType string `pulumi:"principalType"`
-	// 授权账号 ID。
+	// Authorized account ID
 	TargetId string `pulumi:"targetId"`
-	// 授权账号名。
+	// Authorized account name
 	TargetName string `pulumi:"targetName"`
 }
 
@@ -84,7 +84,7 @@ func (o LookupPermissionSetAssignmentResultOutput) ToLookupPermissionSetAssignme
 	return o
 }
 
-// 授权创建时间。
+// Authorization creation time
 func (o LookupPermissionSetAssignmentResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionSetAssignmentResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
@@ -94,37 +94,37 @@ func (o LookupPermissionSetAssignmentResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionSetAssignmentResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 权限集 ID。
+// Permission set ID
 func (o LookupPermissionSetAssignmentResultOutput) PermissionSetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionSetAssignmentResult) string { return v.PermissionSetId }).(pulumi.StringOutput)
 }
 
-// 权限集名称。
+// Permission set name
 func (o LookupPermissionSetAssignmentResultOutput) PermissionSetName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionSetAssignmentResult) string { return v.PermissionSetName }).(pulumi.StringOutput)
 }
 
-// 云身份中心对象 ID
+// Cloud Identity Center object ID
 func (o LookupPermissionSetAssignmentResultOutput) PrincipalId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionSetAssignmentResult) string { return v.PrincipalId }).(pulumi.StringOutput)
 }
 
-// 云身份中心对象名。
+// Cloud Identity Center object name
 func (o LookupPermissionSetAssignmentResultOutput) PrincipalName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionSetAssignmentResult) string { return v.PrincipalName }).(pulumi.StringOutput)
 }
 
-// 云身份中心对象类型，User 或者 Group。
+// Cloud Identity Center object type: User or Group
 func (o LookupPermissionSetAssignmentResultOutput) PrincipalType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionSetAssignmentResult) string { return v.PrincipalType }).(pulumi.StringOutput)
 }
 
-// 授权账号 ID。
+// Authorized account ID
 func (o LookupPermissionSetAssignmentResultOutput) TargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionSetAssignmentResult) string { return v.TargetId }).(pulumi.StringOutput)
 }
 
-// 授权账号名。
+// Authorized account name
 func (o LookupPermissionSetAssignmentResultOutput) TargetName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPermissionSetAssignmentResult) string { return v.TargetName }).(pulumi.StringOutput)
 }

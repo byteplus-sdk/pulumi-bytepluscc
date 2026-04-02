@@ -16,14 +16,14 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
     public static final UserProvisioningState Empty = new UserProvisioningState();
 
     /**
-     * 创建时间。
+     * Creation Time
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 创建时间。
+     * @return Creation Time
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -31,14 +31,14 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 删除策略。
+     * Deletion Policy
      * 
      */
     @Import(name="deletionStrategy")
     private @Nullable Output<String> deletionStrategy;
 
     /**
-     * @return 删除策略。
+     * @return Deletion Policy
      * 
      */
     public Optional<Output<String>> deletionStrategy() {
@@ -46,14 +46,14 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 任务描述。
+     * Task Description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 任务描述。
+     * @return Task Description
      * 
      */
     public Optional<Output<String>> description() {
@@ -61,14 +61,14 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 用户名冲突策略。
+     * Username Conflict Policy
      * 
      */
     @Import(name="duplicationStrategy")
     private @Nullable Output<String> duplicationStrategy;
 
     /**
-     * @return 用户名冲突策略。
+     * @return Username Conflict Policy
      * 
      */
     public Optional<Output<String>> duplicationStrategy() {
@@ -76,14 +76,14 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 本次同步IAM用户名称后缀。
+     * Suffix for IAM user name in this synchronization
      * 
      */
     @Import(name="duplicationSuffix")
     private @Nullable Output<String> duplicationSuffix;
 
     /**
-     * @return 本次同步IAM用户名称后缀。
+     * @return Suffix for IAM user name in this synchronization
      * 
      */
     public Optional<Output<String>> duplicationSuffix() {
@@ -91,14 +91,14 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 身份源冲突策略。
+     * Identity Source Conflict Policy
      * 
      */
     @Import(name="identitySourceStrategy")
     private @Nullable Output<String> identitySourceStrategy;
 
     /**
-     * @return 身份源冲突策略。
+     * @return Identity Source Conflict Policy
      * 
      */
     public Optional<Output<String>> identitySourceStrategy() {
@@ -106,14 +106,14 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 身份id。
+     * Identity ID
      * 
      */
     @Import(name="principalId")
     private @Nullable Output<String> principalId;
 
     /**
-     * @return 身份id。
+     * @return Identity ID
      * 
      */
     public Optional<Output<String>> principalId() {
@@ -121,14 +121,14 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 目标名称。
+     * Target Name
      * 
      */
     @Import(name="principalName")
     private @Nullable Output<String> principalName;
 
     /**
-     * @return 目标名称。
+     * @return Target Name
      * 
      */
     public Optional<Output<String>> principalName() {
@@ -136,14 +136,14 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 身份类型。
+     * Identity Type
      * 
      */
     @Import(name="principalType")
     private @Nullable Output<String> principalType;
 
     /**
-     * @return 身份类型。
+     * @return Identity Type
      * 
      */
     public Optional<Output<String>> principalType() {
@@ -151,14 +151,14 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 授权任务状态。Provisioned 授权成功，Provisioning 正在授权，DeleteProvisioning 授权解除中，DeleteProvisioned 授权解除成功
+     * Authorization Task Status. Provisioned: authorization successful, Provisioning: authorizing, DeleteProvisioning: revoking authorization, DeleteProvisioned: authorization revoked successfully.
      * 
      */
     @Import(name="provisionStatus")
     private @Nullable Output<String> provisionStatus;
 
     /**
-     * @return 授权任务状态。Provisioned 授权成功，Provisioning 正在授权，DeleteProvisioning 授权解除中，DeleteProvisioned 授权解除成功
+     * @return Authorization Task Status. Provisioned: authorization successful, Provisioning: authorizing, DeleteProvisioning: revoking authorization, DeleteProvisioned: authorization revoked successfully.
      * 
      */
     public Optional<Output<String>> provisionStatus() {
@@ -166,14 +166,14 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 目标id。
+     * Target ID
      * 
      */
     @Import(name="targetId")
     private @Nullable Output<String> targetId;
 
     /**
-     * @return 目标id。
+     * @return Target ID
      * 
      */
     public Optional<Output<String>> targetId() {
@@ -181,14 +181,14 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 更新时间。
+     * Update Time
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 更新时间。
+     * @return Update Time
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -196,14 +196,14 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * IAM 用户同步任务ID。
+     * IAM User Synchronization Task ID
      * 
      */
     @Import(name="userProvisioningId")
     private @Nullable Output<String> userProvisioningId;
 
     /**
-     * @return IAM 用户同步任务ID。
+     * @return IAM User Synchronization Task ID
      * 
      */
     public Optional<Output<String>> userProvisioningId() {
@@ -247,7 +247,7 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param createdTime 创建时间。
+         * @param createdTime Creation Time
          * 
          * @return builder
          * 
@@ -258,7 +258,7 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param createdTime 创建时间。
+         * @param createdTime Creation Time
          * 
          * @return builder
          * 
@@ -268,7 +268,7 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param deletionStrategy 删除策略。
+         * @param deletionStrategy Deletion Policy
          * 
          * @return builder
          * 
@@ -279,7 +279,7 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param deletionStrategy 删除策略。
+         * @param deletionStrategy Deletion Policy
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param description 任务描述。
+         * @param description Task Description
          * 
          * @return builder
          * 
@@ -300,7 +300,7 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param description 任务描述。
+         * @param description Task Description
          * 
          * @return builder
          * 
@@ -310,7 +310,7 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param duplicationStrategy 用户名冲突策略。
+         * @param duplicationStrategy Username Conflict Policy
          * 
          * @return builder
          * 
@@ -321,7 +321,7 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param duplicationStrategy 用户名冲突策略。
+         * @param duplicationStrategy Username Conflict Policy
          * 
          * @return builder
          * 
@@ -331,7 +331,7 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param duplicationSuffix 本次同步IAM用户名称后缀。
+         * @param duplicationSuffix Suffix for IAM user name in this synchronization
          * 
          * @return builder
          * 
@@ -342,7 +342,7 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param duplicationSuffix 本次同步IAM用户名称后缀。
+         * @param duplicationSuffix Suffix for IAM user name in this synchronization
          * 
          * @return builder
          * 
@@ -352,7 +352,7 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param identitySourceStrategy 身份源冲突策略。
+         * @param identitySourceStrategy Identity Source Conflict Policy
          * 
          * @return builder
          * 
@@ -363,7 +363,7 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param identitySourceStrategy 身份源冲突策略。
+         * @param identitySourceStrategy Identity Source Conflict Policy
          * 
          * @return builder
          * 
@@ -373,7 +373,7 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param principalId 身份id。
+         * @param principalId Identity ID
          * 
          * @return builder
          * 
@@ -384,7 +384,7 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param principalId 身份id。
+         * @param principalId Identity ID
          * 
          * @return builder
          * 
@@ -394,7 +394,7 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param principalName 目标名称。
+         * @param principalName Target Name
          * 
          * @return builder
          * 
@@ -405,7 +405,7 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param principalName 目标名称。
+         * @param principalName Target Name
          * 
          * @return builder
          * 
@@ -415,7 +415,7 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param principalType 身份类型。
+         * @param principalType Identity Type
          * 
          * @return builder
          * 
@@ -426,7 +426,7 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param principalType 身份类型。
+         * @param principalType Identity Type
          * 
          * @return builder
          * 
@@ -436,7 +436,7 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param provisionStatus 授权任务状态。Provisioned 授权成功，Provisioning 正在授权，DeleteProvisioning 授权解除中，DeleteProvisioned 授权解除成功
+         * @param provisionStatus Authorization Task Status. Provisioned: authorization successful, Provisioning: authorizing, DeleteProvisioning: revoking authorization, DeleteProvisioned: authorization revoked successfully.
          * 
          * @return builder
          * 
@@ -447,7 +447,7 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param provisionStatus 授权任务状态。Provisioned 授权成功，Provisioning 正在授权，DeleteProvisioning 授权解除中，DeleteProvisioned 授权解除成功
+         * @param provisionStatus Authorization Task Status. Provisioned: authorization successful, Provisioning: authorizing, DeleteProvisioning: revoking authorization, DeleteProvisioned: authorization revoked successfully.
          * 
          * @return builder
          * 
@@ -457,7 +457,7 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param targetId 目标id。
+         * @param targetId Target ID
          * 
          * @return builder
          * 
@@ -468,7 +468,7 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param targetId 目标id。
+         * @param targetId Target ID
          * 
          * @return builder
          * 
@@ -478,7 +478,7 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param updatedTime 更新时间。
+         * @param updatedTime Update Time
          * 
          * @return builder
          * 
@@ -489,7 +489,7 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param updatedTime 更新时间。
+         * @param updatedTime Update Time
          * 
          * @return builder
          * 
@@ -499,7 +499,7 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param userProvisioningId IAM 用户同步任务ID。
+         * @param userProvisioningId IAM User Synchronization Task ID
          * 
          * @return builder
          * 
@@ -510,7 +510,7 @@ public final class UserProvisioningState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param userProvisioningId IAM 用户同步任务ID。
+         * @param userProvisioningId IAM User Synchronization Task ID
          * 
          * @return builder
          * 

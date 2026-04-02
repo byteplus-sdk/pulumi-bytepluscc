@@ -14,7 +14,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * RDS PostgreSQL Schema 资源类型
+ * RDS PostgreSQL Schema resource type
  * 
  * ## Example Usage
  * 
@@ -64,56 +64,56 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:rdspostgresql/schema:Schema")
 public class Schema extends com.pulumi.resources.CustomResource {
     /**
-     * 数据库名称
+     * Database name
      * 
      */
     @Export(name="dbName", refs={String.class}, tree="[0]")
     private Output<String> dbName;
 
     /**
-     * @return 数据库名称
+     * @return Database name
      * 
      */
     public Output<String> dbName() {
         return this.dbName;
     }
     /**
-     * 实例 ID
+     * Instance ID
      * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
-     * @return 实例 ID
+     * @return Instance ID
      * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
-     * Schema 的 owner。说明实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为 Schema 的 owner。
+     * Schema owner. Note that instance read-only accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the Schema owner.
      * 
      */
     @Export(name="owner", refs={String.class}, tree="[0]")
     private Output<String> owner;
 
     /**
-     * @return Schema 的 owner。说明实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为 Schema 的 owner。
+     * @return Schema owner. Note that instance read-only accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the Schema owner.
      * 
      */
     public Output<String> owner() {
         return this.owner;
     }
     /**
-     * Schema 名称。长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。不能以 pg* 开头
+     * Schema name. Length: 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Reserved keywords are not allowed; for all disabled keywords, see Disabled Keywords. Cannot start with pg*
      * 
      */
     @Export(name="schemaName", refs={String.class}, tree="[0]")
     private Output<String> schemaName;
 
     /**
-     * @return Schema 名称。长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。不能以 pg* 开头
+     * @return Schema name. Length: 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Reserved keywords are not allowed; for all disabled keywords, see Disabled Keywords. Cannot start with pg*
      * 
      */
     public Output<String> schemaName() {

@@ -28,12 +28,12 @@ class ClusterUserArgs:
                  user_group_names: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
         The set of arguments for constructing a ClusterUser resource.
-        :param pulumi.Input[builtins.str] cluster_id: 集群ID。
-        :param pulumi.Input[builtins.str] password: 新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
-        :param pulumi.Input[builtins.str] user_name: 集群用户名。仅支持小写字母。
-        :param pulumi.Input[builtins.str] description: 用户组描述。
-        :param pulumi.Input[builtins.str] old_password: 旧的用户的登录密码。修改密码时必填。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] user_group_names: 所属用户组名称。
+        :param pulumi.Input[builtins.str] cluster_id: Cluster ID.
+        :param pulumi.Input[builtins.str] password: New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
+        :param pulumi.Input[builtins.str] user_name: Cluster username. Only lowercase letters are supported.
+        :param pulumi.Input[builtins.str] description: User group description.
+        :param pulumi.Input[builtins.str] old_password: Old user login password. Required when changing password.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] user_group_names: User group name.
         """
         pulumi.set(__self__, "cluster_id", cluster_id)
         pulumi.set(__self__, "password", password)
@@ -49,7 +49,7 @@ class ClusterUserArgs:
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> pulumi.Input[builtins.str]:
         """
-        集群ID。
+        Cluster ID.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -61,7 +61,7 @@ class ClusterUserArgs:
     @pulumi.getter
     def password(self) -> pulumi.Input[builtins.str]:
         """
-        新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
+        New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
         """
         return pulumi.get(self, "password")
 
@@ -73,7 +73,7 @@ class ClusterUserArgs:
     @pulumi.getter(name="userName")
     def user_name(self) -> pulumi.Input[builtins.str]:
         """
-        集群用户名。仅支持小写字母。
+        Cluster username. Only lowercase letters are supported.
         """
         return pulumi.get(self, "user_name")
 
@@ -85,7 +85,7 @@ class ClusterUserArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户组描述。
+        User group description.
         """
         return pulumi.get(self, "description")
 
@@ -97,7 +97,7 @@ class ClusterUserArgs:
     @pulumi.getter(name="oldPassword")
     def old_password(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        旧的用户的登录密码。修改密码时必填。
+        Old user login password. Required when changing password.
         """
         return pulumi.get(self, "old_password")
 
@@ -109,7 +109,7 @@ class ClusterUserArgs:
     @pulumi.getter(name="userGroupNames")
     def user_group_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        所属用户组名称。
+        User group name.
         """
         return pulumi.get(self, "user_group_names")
 
@@ -132,15 +132,15 @@ class _ClusterUserState:
                  user_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering ClusterUser resources.
-        :param pulumi.Input[builtins.str] cluster_id: 集群ID。
-        :param pulumi.Input[builtins.int] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] creator_name: 创建者用户名。
-        :param pulumi.Input[builtins.str] description: 用户组描述。
-        :param pulumi.Input[builtins.str] old_password: 旧的用户的登录密码。修改密码时必填。
-        :param pulumi.Input[builtins.str] password: 新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
-        :param pulumi.Input[builtins.int] updated_time: 更新时间。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] user_group_names: 所属用户组名称。
-        :param pulumi.Input[builtins.str] user_name: 集群用户名。仅支持小写字母。
+        :param pulumi.Input[builtins.str] cluster_id: Cluster ID.
+        :param pulumi.Input[builtins.int] created_time: Creation time.
+        :param pulumi.Input[builtins.str] creator_name: Creator username.
+        :param pulumi.Input[builtins.str] description: User group description.
+        :param pulumi.Input[builtins.str] old_password: Old user login password. Required when changing password.
+        :param pulumi.Input[builtins.str] password: New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
+        :param pulumi.Input[builtins.int] updated_time: Last updated time.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] user_group_names: User group name.
+        :param pulumi.Input[builtins.str] user_name: Cluster username. Only lowercase letters are supported.
         """
         if cluster_id is not None:
             pulumi.set(__self__, "cluster_id", cluster_id)
@@ -165,7 +165,7 @@ class _ClusterUserState:
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        集群ID。
+        Cluster ID.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -177,7 +177,7 @@ class _ClusterUserState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        创建时间。
+        Creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -189,7 +189,7 @@ class _ClusterUserState:
     @pulumi.getter(name="creatorName")
     def creator_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建者用户名。
+        Creator username.
         """
         return pulumi.get(self, "creator_name")
 
@@ -201,7 +201,7 @@ class _ClusterUserState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户组描述。
+        User group description.
         """
         return pulumi.get(self, "description")
 
@@ -213,7 +213,7 @@ class _ClusterUserState:
     @pulumi.getter(name="oldPassword")
     def old_password(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        旧的用户的登录密码。修改密码时必填。
+        Old user login password. Required when changing password.
         """
         return pulumi.get(self, "old_password")
 
@@ -225,7 +225,7 @@ class _ClusterUserState:
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
+        New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
         """
         return pulumi.get(self, "password")
 
@@ -237,7 +237,7 @@ class _ClusterUserState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        更新时间。
+        Last updated time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -249,7 +249,7 @@ class _ClusterUserState:
     @pulumi.getter(name="userGroupNames")
     def user_group_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        所属用户组名称。
+        User group name.
         """
         return pulumi.get(self, "user_group_names")
 
@@ -261,7 +261,7 @@ class _ClusterUserState:
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        集群用户名。仅支持小写字母。
+        Cluster username. Only lowercase letters are supported.
         """
         return pulumi.get(self, "user_name")
 
@@ -284,7 +284,7 @@ class ClusterUser(pulumi.CustomResource):
                  user_name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        E-MapReduce（EMR）集群中的用户分为普通用户和系统用户两类。其中:普通用户是您在用户管理模块手动通过导入、创建操作向集群中添加的用户；系统用户则是集群在初始化过程中为每个组件内置的管理用户，不支持编辑和删除操作。
+        Users in an E-MapReduce (EMR) cluster are divided into regular users and system users. Regular users are added to the cluster manually through import or creation in the user management module. System users are built-in management users for each component created during cluster initialization and cannot be edited or deleted.
 
         ## Example Usage
 
@@ -311,12 +311,12 @@ class ClusterUser(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] cluster_id: 集群ID。
-        :param pulumi.Input[builtins.str] description: 用户组描述。
-        :param pulumi.Input[builtins.str] old_password: 旧的用户的登录密码。修改密码时必填。
-        :param pulumi.Input[builtins.str] password: 新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] user_group_names: 所属用户组名称。
-        :param pulumi.Input[builtins.str] user_name: 集群用户名。仅支持小写字母。
+        :param pulumi.Input[builtins.str] cluster_id: Cluster ID.
+        :param pulumi.Input[builtins.str] description: User group description.
+        :param pulumi.Input[builtins.str] old_password: Old user login password. Required when changing password.
+        :param pulumi.Input[builtins.str] password: New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] user_group_names: User group name.
+        :param pulumi.Input[builtins.str] user_name: Cluster username. Only lowercase letters are supported.
         """
         ...
     @overload
@@ -325,7 +325,7 @@ class ClusterUser(pulumi.CustomResource):
                  args: ClusterUserArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        E-MapReduce（EMR）集群中的用户分为普通用户和系统用户两类。其中:普通用户是您在用户管理模块手动通过导入、创建操作向集群中添加的用户；系统用户则是集群在初始化过程中为每个组件内置的管理用户，不支持编辑和删除操作。
+        Users in an E-MapReduce (EMR) cluster are divided into regular users and system users. Regular users are added to the cluster manually through import or creation in the user management module. System users are built-in management users for each component created during cluster initialization and cannot be edited or deleted.
 
         ## Example Usage
 
@@ -421,15 +421,15 @@ class ClusterUser(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] cluster_id: 集群ID。
-        :param pulumi.Input[builtins.int] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] creator_name: 创建者用户名。
-        :param pulumi.Input[builtins.str] description: 用户组描述。
-        :param pulumi.Input[builtins.str] old_password: 旧的用户的登录密码。修改密码时必填。
-        :param pulumi.Input[builtins.str] password: 新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
-        :param pulumi.Input[builtins.int] updated_time: 更新时间。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] user_group_names: 所属用户组名称。
-        :param pulumi.Input[builtins.str] user_name: 集群用户名。仅支持小写字母。
+        :param pulumi.Input[builtins.str] cluster_id: Cluster ID.
+        :param pulumi.Input[builtins.int] created_time: Creation time.
+        :param pulumi.Input[builtins.str] creator_name: Creator username.
+        :param pulumi.Input[builtins.str] description: User group description.
+        :param pulumi.Input[builtins.str] old_password: Old user login password. Required when changing password.
+        :param pulumi.Input[builtins.str] password: New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
+        :param pulumi.Input[builtins.int] updated_time: Last updated time.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] user_group_names: User group name.
+        :param pulumi.Input[builtins.str] user_name: Cluster username. Only lowercase letters are supported.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -450,7 +450,7 @@ class ClusterUser(pulumi.CustomResource):
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> pulumi.Output[builtins.str]:
         """
-        集群ID。
+        Cluster ID.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -458,7 +458,7 @@ class ClusterUser(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.int]:
         """
-        创建时间。
+        Creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -466,7 +466,7 @@ class ClusterUser(pulumi.CustomResource):
     @pulumi.getter(name="creatorName")
     def creator_name(self) -> pulumi.Output[builtins.str]:
         """
-        创建者用户名。
+        Creator username.
         """
         return pulumi.get(self, "creator_name")
 
@@ -474,7 +474,7 @@ class ClusterUser(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        用户组描述。
+        User group description.
         """
         return pulumi.get(self, "description")
 
@@ -482,7 +482,7 @@ class ClusterUser(pulumi.CustomResource):
     @pulumi.getter(name="oldPassword")
     def old_password(self) -> pulumi.Output[builtins.str]:
         """
-        旧的用户的登录密码。修改密码时必填。
+        Old user login password. Required when changing password.
         """
         return pulumi.get(self, "old_password")
 
@@ -490,7 +490,7 @@ class ClusterUser(pulumi.CustomResource):
     @pulumi.getter
     def password(self) -> pulumi.Output[builtins.str]:
         """
-        新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
+        New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
         """
         return pulumi.get(self, "password")
 
@@ -498,7 +498,7 @@ class ClusterUser(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.int]:
         """
-        更新时间。
+        Last updated time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -506,7 +506,7 @@ class ClusterUser(pulumi.CustomResource):
     @pulumi.getter(name="userGroupNames")
     def user_group_names(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        所属用户组名称。
+        User group name.
         """
         return pulumi.get(self, "user_group_names")
 
@@ -514,7 +514,7 @@ class ClusterUser(pulumi.CustomResource):
     @pulumi.getter(name="userName")
     def user_name(self) -> pulumi.Output[builtins.str]:
         """
-        集群用户名。仅支持小写字母。
+        Cluster username. Only lowercase letters are supported.
         """
         return pulumi.get(self, "user_name")
 

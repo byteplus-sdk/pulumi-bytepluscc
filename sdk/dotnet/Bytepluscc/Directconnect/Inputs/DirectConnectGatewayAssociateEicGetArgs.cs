@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Directconnect.Inputs
     public sealed class DirectConnectGatewayAssociateEicGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// EIC的ID。
+        /// ID of EIC.
         /// </summary>
         [Input("eicId")]
         public Input<string>? EicId { get; set; }
 
         /// <summary>
-        /// EIC的用户ID。
+        /// User ID of EIC.
         /// </summary>
         [Input("eicOwnerId")]
         public Input<string>? EicOwnerId { get; set; }
 
         /// <summary>
-        /// 实例在EIC中的状态。
+        /// Status of the instance in EIC.
         /// </summary>
         [Input("eicStatus")]
         public Input<string>? EicStatus { get; set; }

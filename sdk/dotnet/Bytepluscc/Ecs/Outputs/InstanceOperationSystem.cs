@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
     public sealed class InstanceOperationSystem
     {
         /// <summary>
-        /// 实例的操作系统名称。
+        /// Instance operating system name.
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+        /// Operating system type of the instance. Linux: Linux system. Windows: Windows system.
         /// </summary>
         public readonly string? Type;
 

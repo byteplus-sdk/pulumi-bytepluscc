@@ -31,39 +31,39 @@ export interface GetAllowListArgs {
  */
 export interface GetAllowListResult {
     /**
-     * 白名单类型。取值范围如下：Ordinary：普通白名单；Default：默认白名单。
+     * Allowlist type. Valid values: Ordinary: ordinary allowlist; Default: default allowlist.
      */
     readonly allowListCategory: string;
     /**
-     * 白名单的备注信息，长度不可超过 200 个字符。
+     * Allowlist remarks. Maximum length: 200 characters.
      */
     readonly allowListDesc: string;
     /**
-     * 白名单 ID。
+     * Allowlist ID.
      */
     readonly allowListId: string;
     /**
-     * 白名单内的 IP 地址（或地址段）总数。
+     * Total number of IP addresses (or address ranges) in the allowlist.
      */
     readonly allowListIpNum: number;
     /**
-     * 白名单名称，名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 1~128 个字符。
+     * Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters.
      */
     readonly allowListName: string;
     /**
-     * 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+     * IP address type in the allowlist. Only IPv4 addresses are currently supported.
      */
     readonly allowListType: string;
     /**
-     * 输入 IP 地址或 CIDR 格式的 IP 地址段。
+     * Enter an IP address or a CIDR-format IP address range.
      */
     readonly allowLists: string[];
     /**
-     * 已绑定当前白名单的实例总数。
+     * Total number of instances bound to the current allowlist.
      */
     readonly associatedInstanceNum: number;
     /**
-     * 已绑定当前白名单的实例信息。
+     * Instance information bound to the current allowlist.
      */
     readonly associatedInstances: outputs.mongodb.GetAllowListAssociatedInstance[];
     /**
@@ -71,7 +71,7 @@ export interface GetAllowListResult {
      */
     readonly id: string;
     /**
-     * 当前白名单所属的项目。
+     * Project to which the current allowlist belongs.
      */
     readonly projectName: string;
 }

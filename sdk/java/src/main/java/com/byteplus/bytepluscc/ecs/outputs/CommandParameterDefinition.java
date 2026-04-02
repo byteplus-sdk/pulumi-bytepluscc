@@ -14,110 +14,110 @@ import javax.annotation.Nullable;
 @CustomType
 public final class CommandParameterDefinition {
     /**
-     * @return 自定义参数值（数字）允许的小数点后位数。
+     * @return Allowed decimal places for custom parameter (number).
      * 
      */
     private @Nullable Integer decimalPrecision;
     /**
-     * @return 自定义参数默认值。
+     * @return Default value for custom parameter.
      * 
      */
     private @Nullable String defaultValue;
     /**
-     * @return 自定义参数值（字符串）的最大长度。
+     * @return Maximum length for custom parameter (string).
      * 
      */
     private @Nullable Integer maxLength;
     /**
-     * @return 自定义参数值（数字）的最大值。
+     * @return Maximum value for custom parameter (number).
      * 
      */
     private @Nullable String maxValue;
     /**
-     * @return 自定义参数值（字符串）的最小长度。
+     * @return Minimum length for custom parameter (string).
      * 
      */
     private @Nullable Integer minLength;
     /**
-     * @return 自定义参数值（数字）的最小值。
+     * @return Minimum value for custom parameter (number).
      * 
      */
     private @Nullable String minValue;
     /**
-     * @return 自定义参数名称，需要在脚本中通过{{Param}}定义 。单个参数名不能超过64字节。遵循Shell变量命名规则，a-zA-Z0-9-_的组合。首个字符不能以数字开头。中间不能有空格，可以使用下划线。
+     * @return Custom parameter name. Define it in the script using {{Param}}. Each parameter name must not exceed 64 bytes. Follow Shell variable naming rules: combinations of a-z, A-Z, 0-9, -, and _. The first character cannot be a digit. No spaces allowed; underscores can be used instead.
      * 
      */
     private @Nullable String name;
     /**
-     * @return 是否必填。
+     * @return Whether it is required.
      * 
      */
     private @Nullable Boolean required;
     /**
-     * @return 自定义参数类型。取值：String：表示自定义参数类型为String（字符串）类型。Digit：表示自定义参数类型为Digit（数值）类型。
+     * @return Custom parameter type. Values: String: Indicates the custom parameter type is String (string type). Digit: Indicates the custom parameter type is Digit (numeric type).
      * 
      */
     private @Nullable String type;
 
     private CommandParameterDefinition() {}
     /**
-     * @return 自定义参数值（数字）允许的小数点后位数。
+     * @return Allowed decimal places for custom parameter (number).
      * 
      */
     public Optional<Integer> decimalPrecision() {
         return Optional.ofNullable(this.decimalPrecision);
     }
     /**
-     * @return 自定义参数默认值。
+     * @return Default value for custom parameter.
      * 
      */
     public Optional<String> defaultValue() {
         return Optional.ofNullable(this.defaultValue);
     }
     /**
-     * @return 自定义参数值（字符串）的最大长度。
+     * @return Maximum length for custom parameter (string).
      * 
      */
     public Optional<Integer> maxLength() {
         return Optional.ofNullable(this.maxLength);
     }
     /**
-     * @return 自定义参数值（数字）的最大值。
+     * @return Maximum value for custom parameter (number).
      * 
      */
     public Optional<String> maxValue() {
         return Optional.ofNullable(this.maxValue);
     }
     /**
-     * @return 自定义参数值（字符串）的最小长度。
+     * @return Minimum length for custom parameter (string).
      * 
      */
     public Optional<Integer> minLength() {
         return Optional.ofNullable(this.minLength);
     }
     /**
-     * @return 自定义参数值（数字）的最小值。
+     * @return Minimum value for custom parameter (number).
      * 
      */
     public Optional<String> minValue() {
         return Optional.ofNullable(this.minValue);
     }
     /**
-     * @return 自定义参数名称，需要在脚本中通过{{Param}}定义 。单个参数名不能超过64字节。遵循Shell变量命名规则，a-zA-Z0-9-_的组合。首个字符不能以数字开头。中间不能有空格，可以使用下划线。
+     * @return Custom parameter name. Define it in the script using {{Param}}. Each parameter name must not exceed 64 bytes. Follow Shell variable naming rules: combinations of a-z, A-Z, 0-9, -, and _. The first character cannot be a digit. No spaces allowed; underscores can be used instead.
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return 是否必填。
+     * @return Whether it is required.
      * 
      */
     public Optional<Boolean> required() {
         return Optional.ofNullable(this.required);
     }
     /**
-     * @return 自定义参数类型。取值：String：表示自定义参数类型为String（字符串）类型。Digit：表示自定义参数类型为Digit（数值）类型。
+     * @return Custom parameter type. Values: String: Indicates the custom parameter type is String (string type). Digit: Indicates the custom parameter type is Digit (numeric type).
      * 
      */
     public Optional<String> type() {

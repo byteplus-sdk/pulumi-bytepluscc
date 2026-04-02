@@ -15,51 +15,51 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb.Outputs
     public sealed class InstanceShardNode
     {
         /// <summary>
-        /// 节点延迟时间。单位：秒。
+        /// Node latency. Unit: seconds.
         /// </summary>
         public readonly int? NodeDelayTime;
         /// <summary>
-        /// 节点 ID。
+        /// Node ID.
         /// </summary>
         public readonly string? NodeId;
         /// <summary>
-        /// 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+        /// Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node. ReadOnly: read-only node.
         /// </summary>
         public readonly string? NodeRole;
         /// <summary>
-        /// 节点规格。
+        /// Node specification.
         /// </summary>
         public readonly string? NodeSpec;
         /// <summary>
-        /// 节点状态。
+        /// Node status.
         /// </summary>
         public readonly string? NodeStatus;
         /// <summary>
-        /// 总内存。单位：GiB。
+        /// Total memory. Unit: GiB.
         /// </summary>
         public readonly double? TotalMemoryGb;
         /// <summary>
-        /// 该节点的总存储空间。单位：GiB。
+        /// Total storage space for this node. Unit: GiB.
         /// </summary>
         public readonly double? TotalStorageGb;
         /// <summary>
-        /// 总核数。
+        /// Total cores.
         /// </summary>
         public readonly double? TotalvCpu;
         /// <summary>
-        /// 已用内存。单位：GiB。
+        /// Used memory. Unit: GiB.
         /// </summary>
         public readonly double? UsedMemoryGb;
         /// <summary>
-        /// 该节点已用的存储空间。单位：GiB。
+        /// Storage space used by this node. Unit: GiB.
         /// </summary>
         public readonly double? UsedStorageGb;
         /// <summary>
-        /// 已用核数。
+        /// Used cores.
         /// </summary>
         public readonly double? UsedvCpu;
         /// <summary>
-        /// 当前节点所属的可用区 ID。
+        /// Availability zone ID of the current node.
         /// </summary>
         public readonly string? ZoneId;
 

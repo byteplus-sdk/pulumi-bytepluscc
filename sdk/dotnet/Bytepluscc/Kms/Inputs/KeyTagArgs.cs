@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms.Inputs
     public sealed class KeyTagArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// KMS密钥的标签键
+        /// KMS key label key.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// KMS密钥的标签值
+        /// KMS key label value.
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

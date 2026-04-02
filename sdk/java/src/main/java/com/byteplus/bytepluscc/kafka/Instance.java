@@ -20,7 +20,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 消息队列 Kafka版是一款基于 Apache Kafka 构建的分布式消息中间件服务，具备高吞吐、高可扩展性等特性，提供流式数据的发布/订阅和多副本存储机制，广泛应用于日志压缩收集、流式数据处理、消息解耦、流量削峰去谷等应用场景。
+ * Kafka Message Queue is a distributed messaging middleware service built on Apache Kafka. It features high throughput and scalability, provides stream data publishing/subscription and multi-replica storage mechanisms, and is widely used in log compression and collection, stream data processing, message decoupling, and traffic peak shaving scenarios.
  * 
  * ## Example Usage
  * 
@@ -37,42 +37,42 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:kafka/instance:Instance")
 public class Instance extends com.pulumi.resources.CustomResource {
     /**
-     * 创建实例的主账号 ID。
+     * Main account ID for creating the instance.
      * 
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
-     * @return 创建实例的主账号 ID。
+     * @return Main account ID for creating the instance.
      * 
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
-     * Kafka 实例的计费类型等计费信息。
+     * Billing type and related billing information for the Kafka instance.
      * 
      */
     @Export(name="chargeInfo", refs={InstanceChargeInfo.class}, tree="[0]")
     private Output<InstanceChargeInfo> chargeInfo;
 
     /**
-     * @return Kafka 实例的计费类型等计费信息。
+     * @return Billing type and related billing information for the Kafka instance.
      * 
      */
     public Output<InstanceChargeInfo> chargeInfo() {
         return this.chargeInfo;
     }
     /**
-     * 实例的计算规格。
+     * Instance compute specification.
      * 
      */
     @Export(name="computeSpec", refs={String.class}, tree="[0]")
     private Output<String> computeSpec;
 
     /**
-     * @return 实例的计算规格。
+     * @return Instance compute specification.
      * 
      */
     public Output<String> computeSpec() {
@@ -85,210 +85,210 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.connectionInfos;
     }
     /**
-     * 实例的创建时间，时间显示格式为 YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;。
+     * Instance creation time. Time format: YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;.
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 实例的创建时间，时间显示格式为 YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;。
+     * @return Instance creation time. Time format: YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;.
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * EIP 的 ID。
+     * EIP ID.
      * 
      */
     @Export(name="eipId", refs={String.class}, tree="[0]")
     private Output<String> eipId;
 
     /**
-     * @return EIP 的 ID。
+     * @return EIP ID.
      * 
      */
     public Output<String> eipId() {
         return this.eipId;
     }
     /**
-     * Kafka 实例的简单描述。长度范围为 1~128 个字符。
+     * Brief description of the Kafka instance. Length must be between 1 and 128 characters.
      * 
      */
     @Export(name="instanceDescription", refs={String.class}, tree="[0]")
     private Output<String> instanceDescription;
 
     /**
-     * @return Kafka 实例的简单描述。长度范围为 1~128 个字符。
+     * @return Brief description of the Kafka instance. Length must be between 1 and 128 characters.
      * 
      */
     public Output<String> instanceDescription() {
         return this.instanceDescription;
     }
     /**
-     * Kafka 实例的 ID。
+     * Kafka instance ID.
      * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
-     * @return Kafka 实例的 ID。
+     * @return Kafka instance ID.
      * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
-     * Kafka 实例的名称。只能包含中文、字母、数字、下划线（_）和连字符（-）。不能以数字和连字符（-）开头。长度范围为 1~128 个字符。
+     * Name of the Kafka instance. Only Chinese characters, letters, numbers, underscores (_), and hyphens (-) are allowed. Cannot start with a number or hyphen (-). Length must be between 1 and 128 characters.
      * 
      */
     @Export(name="instanceName", refs={String.class}, tree="[0]")
     private Output<String> instanceName;
 
     /**
-     * @return Kafka 实例的名称。只能包含中文、字母、数字、下划线（_）和连字符（-）。不能以数字和连字符（-）开头。长度范围为 1~128 个字符。
+     * @return Name of the Kafka instance. Only Chinese characters, letters, numbers, underscores (_), and hyphens (-) are allowed. Cannot start with a number or hyphen (-). Length must be between 1 and 128 characters.
      * 
      */
     public Output<String> instanceName() {
         return this.instanceName;
     }
     /**
-     * Kafka 实例的状态。Error：错误, Deleting：删除中, Creating：部署中, Upgrading：升级中, Updating：变更中, Running：运行中, Scaling：更配中, Rebuilding：重建中, Destroying：销毁中, Restarting：重启中, Migrating：迁移中, Restoring：恢复中, Importing：导入中, NetCreating：申请公网中, NetReleasing：释放公网中, Rollingback：回滚中, CreateFailed：创建失败, UpgradeFailed：升级失败, ScaleFailed：更配失败, RestartFailed：重启失败
+     * Status of the Kafka instance. Error: error, Deleting: deleting, Creating: deploying, Upgrading: upgrading, Updating: updating, Running: running, Scaling: scaling, Rebuilding: rebuilding, Destroying: destroying, Restarting: restarting, Migrating: migrating, Restoring: restoring, Importing: importing, NetCreating: applying for public network, NetReleasing: releasing public network, Rollingback: rolling back, CreateFailed: creation failed, UpgradeFailed: upgrade failed, ScaleFailed: scaling failed, RestartFailed: restart failed
      * 
      */
     @Export(name="instanceStatus", refs={String.class}, tree="[0]")
     private Output<String> instanceStatus;
 
     /**
-     * @return Kafka 实例的状态。Error：错误, Deleting：删除中, Creating：部署中, Upgrading：升级中, Updating：变更中, Running：运行中, Scaling：更配中, Rebuilding：重建中, Destroying：销毁中, Restarting：重启中, Migrating：迁移中, Restoring：恢复中, Importing：导入中, NetCreating：申请公网中, NetReleasing：释放公网中, Rollingback：回滚中, CreateFailed：创建失败, UpgradeFailed：升级失败, ScaleFailed：更配失败, RestartFailed：重启失败
+     * @return Status of the Kafka instance. Error: error, Deleting: deleting, Creating: deploying, Upgrading: upgrading, Updating: updating, Running: running, Scaling: scaling, Rebuilding: rebuilding, Destroying: destroying, Restarting: restarting, Migrating: migrating, Restoring: restoring, Importing: importing, NetCreating: applying for public network, NetReleasing: releasing public network, Rollingback: rolling back, CreateFailed: creation failed, UpgradeFailed: upgrade failed, ScaleFailed: scaling failed, RestartFailed: restart failed
      * 
      */
     public Output<String> instanceStatus() {
         return this.instanceStatus;
     }
     /**
-     * 实例绑定的白名单 ID 列表。绑定白名单后，仅配置在白名单中的 IP 地址与地址段才能访问此实例。若未设置此参数，新 Kafka 实例将绑定白名单 default，对应 IP 地址为 0.0.0.0，表示允许所有地址访问该 Kafka 实例。
+     * List of allowlist IDs bound to the instance. After binding an allowlist, only IP addresses and ranges configured in the allowlist can access this instance. If this parameter is not set, the new Kafka instance will bind the allowlist &#39;default&#39;, with IP address 0.0.0.0, allowing all addresses to access the Kafka instance.
      * 
      */
     @Export(name="ipWhiteLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> ipWhiteLists;
 
     /**
-     * @return 实例绑定的白名单 ID 列表。绑定白名单后，仅配置在白名单中的 IP 地址与地址段才能访问此实例。若未设置此参数，新 Kafka 实例将绑定白名单 default，对应 IP 地址为 0.0.0.0，表示允许所有地址访问该 Kafka 实例。
+     * @return List of allowlist IDs bound to the instance. After binding an allowlist, only IP addresses and ranges configured in the allowlist can access this instance. If this parameter is not set, the new Kafka instance will bind the allowlist &#39;default&#39;, with IP address 0.0.0.0, allowing all addresses to access the Kafka instance.
      * 
      */
     public Output<List<String>> ipWhiteLists() {
         return this.ipWhiteLists;
     }
     /**
-     * 是否开启再均衡。
+     * Whether to enable rebalancing.
      * 
      */
     @Export(name="needRebalance", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> needRebalance;
 
     /**
-     * @return 是否开启再均衡。
+     * @return Whether to enable rebalancing.
      * 
      */
     public Output<Boolean> needRebalance() {
         return this.needRebalance;
     }
     /**
-     * Kafka 实例的初始参数配置,格式为json,参数列表: 最大消息大小(MessageMaxByte)1-12MB 默认10, 消息保留时间(LogRetentionHours)0-2160Hour 默认72, 消费位点保留时长(OffsetRetentionMinutes)1-10080Min 默认4320 消息时间类型(MessageTimestampType)LogAppendTime/CreateTime 消息写入到服务端时间、producer创建消息时间。
+     * Initial parameter configuration for Kafka instances, formatted as JSON. Parameter list: Maximum message size (MessageMaxByte) 1–12 MB, default 10; message retention time (LogRetentionHours) 0–2160 hours, default 72; offset retention duration (OffsetRetentionMinutes) 1–10080 minutes, default 4320; message timestamp type (MessageTimestampType) LogAppendTime/CreateTime—time when the message is written to the server or when the producer creates the message.
      * 
      */
     @Export(name="parameters", refs={String.class}, tree="[0]")
     private Output<String> parameters;
 
     /**
-     * @return Kafka 实例的初始参数配置,格式为json,参数列表: 最大消息大小(MessageMaxByte)1-12MB 默认10, 消息保留时间(LogRetentionHours)0-2160Hour 默认72, 消费位点保留时长(OffsetRetentionMinutes)1-10080Min 默认4320 消息时间类型(MessageTimestampType)LogAppendTime/CreateTime 消息写入到服务端时间、producer创建消息时间。
+     * @return Initial parameter configuration for Kafka instances, formatted as JSON. Parameter list: Maximum message size (MessageMaxByte) 1–12 MB, default 10; message retention time (LogRetentionHours) 0–2160 hours, default 72; offset retention duration (OffsetRetentionMinutes) 1–10080 minutes, default 4320; message timestamp type (MessageTimestampType) LogAppendTime/CreateTime—time when the message is written to the server or when the producer creates the message.
      * 
      */
     public Output<String> parameters() {
         return this.parameters;
     }
     /**
-     * 分区数量。
+     * Number of partitions.
      * 
      */
     @Export(name="partitionNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> partitionNumber;
 
     /**
-     * @return 分区数量。
+     * @return Number of partitions.
      * 
      */
     public Output<Integer> partitionNumber() {
         return this.partitionNumber;
     }
     /**
-     * 是否开启公网解析。
+     * Whether to enable public network domain resolution.
      * 
      */
     @Export(name="privateDomainOnPublic", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> privateDomainOnPublic;
 
     /**
-     * @return 是否开启公网解析。
+     * @return Whether to enable public network domain resolution.
      * 
      */
     public Output<Boolean> privateDomainOnPublic() {
         return this.privateDomainOnPublic;
     }
     /**
-     * 当前创建的 Kafka 实例所属的 IAM 项目。
+     * IAM project to which the currently created Kafka instance belongs.
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 当前创建的 Kafka 实例所属的 IAM 项目。
+     * @return IAM project to which the currently created Kafka instance belongs.
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 实例的存储空间，单位为 GiB, 必须指定为 100 的倍数。
+     * Instance storage space, measured in GiB, must be specified as a multiple of 100.
      * 
      */
     @Export(name="storageSpace", refs={Integer.class}, tree="[0]")
     private Output<Integer> storageSpace;
 
     /**
-     * @return 实例的存储空间，单位为 GiB, 必须指定为 100 的倍数。
+     * @return Instance storage space, measured in GiB, must be specified as a multiple of 100.
      * 
      */
     public Output<Integer> storageSpace() {
         return this.storageSpace;
     }
     /**
-     * Kafka 实例数据存储的云盘类型。可设置为 ESSD*FlexPL 或 ESSD*PL0，默认为 ESSD_FlexPL。
+     * Cloud disk type for Kafka instance data storage. Can be set to ESSD*FlexPL or ESSD*PL0; default is ESSD_FlexPL.
      * 
      */
     @Export(name="storageType", refs={String.class}, tree="[0]")
     private Output<String> storageType;
 
     /**
-     * @return Kafka 实例数据存储的云盘类型。可设置为 ESSD*FlexPL 或 ESSD*PL0，默认为 ESSD_FlexPL。
+     * @return Cloud disk type for Kafka instance data storage. Can be set to ESSD*FlexPL or ESSD*PL0; default is ESSD_FlexPL.
      * 
      */
     public Output<String> storageType() {
         return this.storageType;
     }
     /**
-     * 实例所在的 VPC 子网 ID。
+     * VPC subnet ID where the instance is located.
      * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
-     * @return 实例所在的 VPC 子网 ID。
+     * @return VPC subnet ID where the instance is located.
      * 
      */
     public Output<String> subnetId() {
@@ -301,168 +301,168 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 一个 Kafka 实例下的 Topic 列表
+     * List of topics under a Kafka instance
      * 
      */
     @Export(name="topics", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> topics;
 
     /**
-     * @return 一个 Kafka 实例下的 Topic 列表
+     * @return List of topics under a Kafka instance
      * 
      */
     public Output<List<String>> topics() {
         return this.topics;
     }
     /**
-     * 当前实例剩余可用消费组个数。
+     * The remaining number of available consumer groups for the current instance.
      * 
      */
     @Export(name="usableGroupNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> usableGroupNumber;
 
     /**
-     * @return 当前实例剩余可用消费组个数。
+     * @return The remaining number of available consumer groups for the current instance.
      * 
      */
     public Output<Integer> usableGroupNumber() {
         return this.usableGroupNumber;
     }
     /**
-     * 当前实例剩余可用分区数。
+     * Number of available partitions remaining for the current instance.
      * 
      */
     @Export(name="usablePartitionNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> usablePartitionNumber;
 
     /**
-     * @return 当前实例剩余可用分区数。
+     * @return Number of available partitions remaining for the current instance.
      * 
      */
     public Output<Integer> usablePartitionNumber() {
         return this.usablePartitionNumber;
     }
     /**
-     * 当前实例已经创建的消费组(Group)个数。
+     * Number of consumer groups (Group) currently created in the instance.
      * 
      */
     @Export(name="usedGroupNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> usedGroupNumber;
 
     /**
-     * @return 当前实例已经创建的消费组(Group)个数。
+     * @return Number of consumer groups (Group) currently created in the instance.
      * 
      */
     public Output<Integer> usedGroupNumber() {
         return this.usedGroupNumber;
     }
     /**
-     * 当前实例已经使用的分区个数。
+     * Number of partitions currently used by the instance.
      * 
      */
     @Export(name="usedPartitionNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> usedPartitionNumber;
 
     /**
-     * @return 当前实例已经使用的分区个数。
+     * @return Number of partitions currently used by the instance.
      * 
      */
     public Output<Integer> usedPartitionNumber() {
         return this.usedPartitionNumber;
     }
     /**
-     * 实例已用储空间，单位为 GiB。
+     * Used storage space of the instance, measured in GiB.
      * 
      */
     @Export(name="usedStorageSpace", refs={Integer.class}, tree="[0]")
     private Output<Integer> usedStorageSpace;
 
     /**
-     * @return 实例已用储空间，单位为 GiB。
+     * @return Used storage space of the instance, measured in GiB.
      * 
      */
     public Output<Integer> usedStorageSpace() {
         return this.usedStorageSpace;
     }
     /**
-     * 当前实例已创建的 Topic 个数。
+     * Number of topics created in the current instance.
      * 
      */
     @Export(name="usedTopicNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> usedTopicNumber;
 
     /**
-     * @return 当前实例已创建的 Topic 个数。
+     * @return Number of topics created in the current instance.
      * 
      */
     public Output<Integer> usedTopicNumber() {
         return this.usedTopicNumber;
     }
     /**
-     * SASL/PLAIN 用户名称，需要满足以下要求: 1.由小写字母、数字、连字符（-）或下划线组成。2.长度为 3~64 个字符。3.用户名不支持设置为 admin 或 monitor,且实例内用户名称唯一。
+     * SASL/PLAIN username. Requirements: 1. Consists of lowercase letters, numbers, hyphens (-), or underscores. 2. Length: 3–64 characters. 3. Username cannot be set to admin or monitor, and must be unique within the instance.
      * 
      */
     @Export(name="userName", refs={String.class}, tree="[0]")
     private Output<String> userName;
 
     /**
-     * @return SASL/PLAIN 用户名称，需要满足以下要求: 1.由小写字母、数字、连字符（-）或下划线组成。2.长度为 3~64 个字符。3.用户名不支持设置为 admin 或 monitor,且实例内用户名称唯一。
+     * @return SASL/PLAIN username. Requirements: 1. Consists of lowercase letters, numbers, hyphens (-), or underscores. 2. Length: 3–64 characters. 3. Username cannot be set to admin or monitor, and must be unique within the instance.
      * 
      */
     public Output<String> userName() {
         return this.userName;
     }
     /**
-     * SASL/PLAIN 用户的密码，需要满足以下要求: 1.长度在8到32个字符 2.由大写字母、小写字母、数字、特殊字符中的任意三种组成 3.支持的特殊字符包括 !{@literal @}#$%^&amp;*()_+-=。
+     * Password for SASL/PLAIN users. Must meet the following requirements: 1. Length between 8 and 32 characters 2. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters 3. Supported special characters: !{@literal @}#$%^&amp;*()_+-=
      * 
      */
     @Export(name="userPassword", refs={String.class}, tree="[0]")
     private Output<String> userPassword;
 
     /**
-     * @return SASL/PLAIN 用户的密码，需要满足以下要求: 1.长度在8到32个字符 2.由大写字母、小写字母、数字、特殊字符中的任意三种组成 3.支持的特殊字符包括 !{@literal @}#$%^&amp;*()_+-=。
+     * @return Password for SASL/PLAIN users. Must meet the following requirements: 1. Length between 8 and 32 characters 2. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters 3. Supported special characters: !{@literal @}#$%^&amp;*()_+-=
      * 
      */
     public Output<String> userPassword() {
         return this.userPassword;
     }
     /**
-     * 支持的 Kafka 版本，当前支持的版本包括 2.2.2, 2.8.2。
+     * Supported Kafka versions. Currently supported versions include 2.2.2 and 2.8.2.
      * 
      */
     @Export(name="version", refs={String.class}, tree="[0]")
     private Output<String> version;
 
     /**
-     * @return 支持的 Kafka 版本，当前支持的版本包括 2.2.2, 2.8.2。
+     * @return Supported Kafka versions. Currently supported versions include 2.2.2 and 2.8.2.
      * 
      */
     public Output<String> version() {
         return this.version;
     }
     /**
-     * 实例所在的私有网络 (VPC) ID。
+     * Private network (VPC) ID where the instance is located.
      * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
-     * @return 实例所在的私有网络 (VPC) ID。
+     * @return Private network (VPC) ID where the instance is located.
      * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
-     * 实例所在的可用区 ID。消息队列 Kafka版实例支持跨 AZ 部署, 多个可用区ID之间以逗号间隔。
+     * Availability zone ID where the instance is located. Message Queue for Kafka instances support cross-AZ deployment; separate multiple availability zone IDs with commas.
      * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
-     * @return 实例所在的可用区 ID。消息队列 Kafka版实例支持跨 AZ 部署, 多个可用区ID之间以逗号间隔。
+     * @return Availability zone ID where the instance is located. Message Queue for Kafka instances support cross-AZ deployment; separate multiple availability zone IDs with commas.
      * 
      */
     public Output<String> zoneId() {

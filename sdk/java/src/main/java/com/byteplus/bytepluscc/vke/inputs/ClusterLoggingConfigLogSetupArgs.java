@@ -18,14 +18,14 @@ public final class ClusterLoggingConfigLogSetupArgs extends com.pulumi.resources
     public static final ClusterLoggingConfigLogSetupArgs Empty = new ClusterLoggingConfigLogSetupArgs();
 
     /**
-     * 是否开启该日志选项，参数值说明：true：已开启。false：未开启。
+     * Whether to enable this log option. Parameter values: true: enabled; false: not enabled.
      * 
      */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
     /**
-     * @return 是否开启该日志选项，参数值说明：true：已开启。false：未开启。
+     * @return Whether to enable this log option. Parameter values: true: enabled; false: not enabled.
      * 
      */
     public Optional<Output<Boolean>> enabled() {
@@ -33,14 +33,14 @@ public final class ClusterLoggingConfigLogSetupArgs extends com.pulumi.resources
     }
 
     /**
-     * 日志在日志服务中的保存时间，单位为天。 3650 天表示永久存储。
+     * Retention period of logs in log service, in days. 3650 days means permanent storage.
      * 
      */
     @Import(name="logTtl")
     private @Nullable Output<Integer> logTtl;
 
     /**
-     * @return 日志在日志服务中的保存时间，单位为天。 3650 天表示永久存储。
+     * @return Retention period of logs in log service, in days. 3650 days means permanent storage.
      * 
      */
     public Optional<Output<Integer>> logTtl() {
@@ -48,14 +48,14 @@ public final class ClusterLoggingConfigLogSetupArgs extends com.pulumi.resources
     }
 
     /**
-     * 当前开启的日志类型，参数值说明：Audit：集群审计日志。KubeApiServer：kube-apiserver 组件日志。KubeScheduler：kube-scheduler 组件日志。KubeControllerManager：kube-controller-manager 组件日志。
+     * Currently enabled log types. Parameter values: Audit: cluster audit log; KubeApiServer: kube-apiserver component log; KubeScheduler: kube-scheduler component log; KubeControllerManager: kube-controller-manager component log.
      * 
      */
     @Import(name="logType")
     private @Nullable Output<String> logType;
 
     /**
-     * @return 当前开启的日志类型，参数值说明：Audit：集群审计日志。KubeApiServer：kube-apiserver 组件日志。KubeScheduler：kube-scheduler 组件日志。KubeControllerManager：kube-controller-manager 组件日志。
+     * @return Currently enabled log types. Parameter values: Audit: cluster audit log; KubeApiServer: kube-apiserver component log; KubeScheduler: kube-scheduler component log; KubeControllerManager: kube-controller-manager component log.
      * 
      */
     public Optional<Output<String>> logType() {
@@ -89,7 +89,7 @@ public final class ClusterLoggingConfigLogSetupArgs extends com.pulumi.resources
         }
 
         /**
-         * @param enabled 是否开启该日志选项，参数值说明：true：已开启。false：未开启。
+         * @param enabled Whether to enable this log option. Parameter values: true: enabled; false: not enabled.
          * 
          * @return builder
          * 
@@ -100,7 +100,7 @@ public final class ClusterLoggingConfigLogSetupArgs extends com.pulumi.resources
         }
 
         /**
-         * @param enabled 是否开启该日志选项，参数值说明：true：已开启。false：未开启。
+         * @param enabled Whether to enable this log option. Parameter values: true: enabled; false: not enabled.
          * 
          * @return builder
          * 
@@ -110,7 +110,7 @@ public final class ClusterLoggingConfigLogSetupArgs extends com.pulumi.resources
         }
 
         /**
-         * @param logTtl 日志在日志服务中的保存时间，单位为天。 3650 天表示永久存储。
+         * @param logTtl Retention period of logs in log service, in days. 3650 days means permanent storage.
          * 
          * @return builder
          * 
@@ -121,7 +121,7 @@ public final class ClusterLoggingConfigLogSetupArgs extends com.pulumi.resources
         }
 
         /**
-         * @param logTtl 日志在日志服务中的保存时间，单位为天。 3650 天表示永久存储。
+         * @param logTtl Retention period of logs in log service, in days. 3650 days means permanent storage.
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class ClusterLoggingConfigLogSetupArgs extends com.pulumi.resources
         }
 
         /**
-         * @param logType 当前开启的日志类型，参数值说明：Audit：集群审计日志。KubeApiServer：kube-apiserver 组件日志。KubeScheduler：kube-scheduler 组件日志。KubeControllerManager：kube-controller-manager 组件日志。
+         * @param logType Currently enabled log types. Parameter values: Audit: cluster audit log; KubeApiServer: kube-apiserver component log; KubeScheduler: kube-scheduler component log; KubeControllerManager: kube-controller-manager component log.
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class ClusterLoggingConfigLogSetupArgs extends com.pulumi.resources
         }
 
         /**
-         * @param logType 当前开启的日志类型，参数值说明：Audit：集群审计日志。KubeApiServer：kube-apiserver 组件日志。KubeScheduler：kube-scheduler 组件日志。KubeControllerManager：kube-controller-manager 组件日志。
+         * @param logType Currently enabled log types. Parameter values: Audit: cluster audit log; KubeApiServer: kube-apiserver component log; KubeScheduler: kube-scheduler component log; KubeControllerManager: kube-controller-manager component log.
          * 
          * @return builder
          * 

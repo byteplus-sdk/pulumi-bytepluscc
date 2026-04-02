@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 数据库是 PostgreSQL 实例中的一个独立数据库，用于存储和管理数据。
+// The database is an independent database within a PostgreSQL instance, used to store and manage data.
 //
 // ## Example Usage
 //
@@ -53,19 +53,19 @@ import (
 type Database struct {
 	pulumi.CustomResourceState
 
-	// 字符分类。取值范围： C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX。
+	// Character classification. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
 	CType pulumi.StringOutput `pulumi:"cType"`
-	// 数据库字符集。目前支持的字符集包含：utf8（默认）、latin1、ascii
+	// Database character set. Supported character sets: utf8 (default), latin1, ascii
 	CharacterSetName pulumi.StringOutput `pulumi:"characterSetName"`
-	// 排序规则。取值范围：C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX
+	// Collation. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
 	Collate pulumi.StringOutput `pulumi:"collate"`
-	// 数据库名称。命名规则如下：长度 2~63 个字符。由字母、数字、下划线或中划线组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。
+	// Database name. Naming rules: Length must be 2–63 characters. Can contain letters, numbers, underscores, or hyphens. Must start with a letter and end with a letter or number. Reserved keywords are not allowed. For a list of all disabled keywords, see Disabled Keywords.
 	DbName pulumi.StringOutput `pulumi:"dbName"`
-	// 数据库状态：Unavailable：不可用。Available：可用。
+	// Database status: Unavailable: Not available. Available: Available.
 	DbStatus pulumi.StringOutput `pulumi:"dbStatus"`
-	// 实例 ID
+	// Instance ID
 	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
-	// 数据库的 owner。说明：实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为数据库的 owner。不传值或传空值时，会为该字段取值为 rds superuser
+	// Database owner. Note: Read-only instance accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the database owner. If no value is provided or the value is empty, this field defaults to rds superuser
 	Owner pulumi.StringOutput `pulumi:"owner"`
 }
 
@@ -105,36 +105,36 @@ func GetDatabase(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Database resources.
 type databaseState struct {
-	// 字符分类。取值范围： C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX。
+	// Character classification. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
 	CType *string `pulumi:"cType"`
-	// 数据库字符集。目前支持的字符集包含：utf8（默认）、latin1、ascii
+	// Database character set. Supported character sets: utf8 (default), latin1, ascii
 	CharacterSetName *string `pulumi:"characterSetName"`
-	// 排序规则。取值范围：C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX
+	// Collation. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
 	Collate *string `pulumi:"collate"`
-	// 数据库名称。命名规则如下：长度 2~63 个字符。由字母、数字、下划线或中划线组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。
+	// Database name. Naming rules: Length must be 2–63 characters. Can contain letters, numbers, underscores, or hyphens. Must start with a letter and end with a letter or number. Reserved keywords are not allowed. For a list of all disabled keywords, see Disabled Keywords.
 	DbName *string `pulumi:"dbName"`
-	// 数据库状态：Unavailable：不可用。Available：可用。
+	// Database status: Unavailable: Not available. Available: Available.
 	DbStatus *string `pulumi:"dbStatus"`
-	// 实例 ID
+	// Instance ID
 	InstanceId *string `pulumi:"instanceId"`
-	// 数据库的 owner。说明：实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为数据库的 owner。不传值或传空值时，会为该字段取值为 rds superuser
+	// Database owner. Note: Read-only instance accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the database owner. If no value is provided or the value is empty, this field defaults to rds superuser
 	Owner *string `pulumi:"owner"`
 }
 
 type DatabaseState struct {
-	// 字符分类。取值范围： C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX。
+	// Character classification. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
 	CType pulumi.StringPtrInput
-	// 数据库字符集。目前支持的字符集包含：utf8（默认）、latin1、ascii
+	// Database character set. Supported character sets: utf8 (default), latin1, ascii
 	CharacterSetName pulumi.StringPtrInput
-	// 排序规则。取值范围：C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX
+	// Collation. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
 	Collate pulumi.StringPtrInput
-	// 数据库名称。命名规则如下：长度 2~63 个字符。由字母、数字、下划线或中划线组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。
+	// Database name. Naming rules: Length must be 2–63 characters. Can contain letters, numbers, underscores, or hyphens. Must start with a letter and end with a letter or number. Reserved keywords are not allowed. For a list of all disabled keywords, see Disabled Keywords.
 	DbName pulumi.StringPtrInput
-	// 数据库状态：Unavailable：不可用。Available：可用。
+	// Database status: Unavailable: Not available. Available: Available.
 	DbStatus pulumi.StringPtrInput
-	// 实例 ID
+	// Instance ID
 	InstanceId pulumi.StringPtrInput
-	// 数据库的 owner。说明：实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为数据库的 owner。不传值或传空值时，会为该字段取值为 rds superuser
+	// Database owner. Note: Read-only instance accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the database owner. If no value is provided or the value is empty, this field defaults to rds superuser
 	Owner pulumi.StringPtrInput
 }
 
@@ -143,33 +143,33 @@ func (DatabaseState) ElementType() reflect.Type {
 }
 
 type databaseArgs struct {
-	// 字符分类。取值范围： C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX。
+	// Character classification. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
 	CType *string `pulumi:"cType"`
-	// 数据库字符集。目前支持的字符集包含：utf8（默认）、latin1、ascii
+	// Database character set. Supported character sets: utf8 (default), latin1, ascii
 	CharacterSetName *string `pulumi:"characterSetName"`
-	// 排序规则。取值范围：C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX
+	// Collation. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
 	Collate *string `pulumi:"collate"`
-	// 数据库名称。命名规则如下：长度 2~63 个字符。由字母、数字、下划线或中划线组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。
+	// Database name. Naming rules: Length must be 2–63 characters. Can contain letters, numbers, underscores, or hyphens. Must start with a letter and end with a letter or number. Reserved keywords are not allowed. For a list of all disabled keywords, see Disabled Keywords.
 	DbName string `pulumi:"dbName"`
-	// 实例 ID
+	// Instance ID
 	InstanceId string `pulumi:"instanceId"`
-	// 数据库的 owner。说明：实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为数据库的 owner。不传值或传空值时，会为该字段取值为 rds superuser
+	// Database owner. Note: Read-only instance accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the database owner. If no value is provided or the value is empty, this field defaults to rds superuser
 	Owner *string `pulumi:"owner"`
 }
 
 // The set of arguments for constructing a Database resource.
 type DatabaseArgs struct {
-	// 字符分类。取值范围： C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX。
+	// Character classification. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
 	CType pulumi.StringPtrInput
-	// 数据库字符集。目前支持的字符集包含：utf8（默认）、latin1、ascii
+	// Database character set. Supported character sets: utf8 (default), latin1, ascii
 	CharacterSetName pulumi.StringPtrInput
-	// 排序规则。取值范围：C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX
+	// Collation. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
 	Collate pulumi.StringPtrInput
-	// 数据库名称。命名规则如下：长度 2~63 个字符。由字母、数字、下划线或中划线组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。
+	// Database name. Naming rules: Length must be 2–63 characters. Can contain letters, numbers, underscores, or hyphens. Must start with a letter and end with a letter or number. Reserved keywords are not allowed. For a list of all disabled keywords, see Disabled Keywords.
 	DbName pulumi.StringInput
-	// 实例 ID
+	// Instance ID
 	InstanceId pulumi.StringInput
-	// 数据库的 owner。说明：实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为数据库的 owner。不传值或传空值时，会为该字段取值为 rds superuser
+	// Database owner. Note: Read-only instance accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the database owner. If no value is provided or the value is empty, this field defaults to rds superuser
 	Owner pulumi.StringPtrInput
 }
 
@@ -260,37 +260,37 @@ func (o DatabaseOutput) ToDatabaseOutputWithContext(ctx context.Context) Databas
 	return o
 }
 
-// 字符分类。取值范围： C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX。
+// Character classification. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
 func (o DatabaseOutput) CType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.CType }).(pulumi.StringOutput)
 }
 
-// 数据库字符集。目前支持的字符集包含：utf8（默认）、latin1、ascii
+// Database character set. Supported character sets: utf8 (default), latin1, ascii
 func (o DatabaseOutput) CharacterSetName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.CharacterSetName }).(pulumi.StringOutput)
 }
 
-// 排序规则。取值范围：C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX
+// Collation. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
 func (o DatabaseOutput) Collate() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.Collate }).(pulumi.StringOutput)
 }
 
-// 数据库名称。命名规则如下：长度 2~63 个字符。由字母、数字、下划线或中划线组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。
+// Database name. Naming rules: Length must be 2–63 characters. Can contain letters, numbers, underscores, or hyphens. Must start with a letter and end with a letter or number. Reserved keywords are not allowed. For a list of all disabled keywords, see Disabled Keywords.
 func (o DatabaseOutput) DbName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.DbName }).(pulumi.StringOutput)
 }
 
-// 数据库状态：Unavailable：不可用。Available：可用。
+// Database status: Unavailable: Not available. Available: Available.
 func (o DatabaseOutput) DbStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.DbStatus }).(pulumi.StringOutput)
 }
 
-// 实例 ID
+// Instance ID
 func (o DatabaseOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 数据库的 owner。说明：实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为数据库的 owner。不传值或传空值时，会为该字段取值为 rds superuser
+// Database owner. Note: Read-only instance accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the database owner. If no value is provided or the value is empty, this field defaults to rds superuser
 func (o DatabaseOutput) Owner() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.Owner }).(pulumi.StringOutput)
 }

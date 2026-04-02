@@ -22,7 +22,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Inputs
         }
 
         /// <summary>
-        /// 标签类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+        /// Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

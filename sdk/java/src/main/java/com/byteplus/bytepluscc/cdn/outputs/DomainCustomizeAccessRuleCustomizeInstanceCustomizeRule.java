@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRule {
     /**
-     * @return 表示该规则中的黑名单或者白名单的配置。
+     * @return Indicates the configuration of the denylist or allowlist in this rule.
      * 
      */
     private @Nullable DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessAction accessAction;
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     private @Nullable DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleCondition condition;
 
     private DomainCustomizeAccessRuleCustomizeInstanceCustomizeRule() {}
     /**
-     * @return 表示该规则中的黑名单或者白名单的配置。
+     * @return Indicates the configuration of the denylist or allowlist in this rule.
      * 
      */
     public Optional<DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessAction> accessAction() {
         return Optional.ofNullable(this.accessAction);
     }
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public Optional<DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleCondition> condition() {

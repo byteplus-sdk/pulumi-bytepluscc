@@ -38,18 +38,18 @@ class NodeGroupArgs:
                  zone_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a NodeGroup resource.
-        :param pulumi.Input[builtins.str] charge_type: 付费类型。PRE表示包月，POST表示按量计费。
-        :param pulumi.Input[builtins.str] cluster_id: 集群ID。
-        :param pulumi.Input[builtins.int] node_count: 节点数量。取值范围：1~1000。
-        :param pulumi.Input[builtins.str] node_group_name: 节点组名称。
-        :param pulumi.Input[builtins.str] node_group_type: 节点组类型。
-        :param pulumi.Input['NodeGroupChargePreConfigArgs'] charge_pre_config: 包周期付费配置。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ecs_instance_types: ECS实例规格列表。当前修改仅支持单个实例规格。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_ids: 子网ID列表。
-        :param pulumi.Input['NodeGroupSystemDiskArgs'] system_disk: 系统盘。
-        :param pulumi.Input[builtins.int] target_disk_size: 待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
-        :param pulumi.Input[builtins.bool] with_public_ip: ECS是否附带公网IP。
-        :param pulumi.Input[builtins.str] zone_id: zoneId，为空时默认复用集群的zoneId。
+        :param pulumi.Input[builtins.str] charge_type: Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
+        :param pulumi.Input[builtins.str] cluster_id: Cluster ID.
+        :param pulumi.Input[builtins.int] node_count: Node count. Value range: 1~1000.
+        :param pulumi.Input[builtins.str] node_group_name: Node group name.
+        :param pulumi.Input[builtins.str] node_group_type: Node group type.
+        :param pulumi.Input['NodeGroupChargePreConfigArgs'] charge_pre_config: Subscription payment configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ecs_instance_types: ECS instance specification list. Currently, only a single instance specification can be modified.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_ids: Subnet ID list.
+        :param pulumi.Input['NodeGroupSystemDiskArgs'] system_disk: System disk.
+        :param pulumi.Input[builtins.int] target_disk_size: Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
+        :param pulumi.Input[builtins.bool] with_public_ip: Whether the ECS instance includes a public IP.
+        :param pulumi.Input[builtins.str] zone_id: zoneId. If empty, the cluster's zoneId is reused by default.
         """
         pulumi.set(__self__, "charge_type", charge_type)
         pulumi.set(__self__, "cluster_id", cluster_id)
@@ -79,7 +79,7 @@ class NodeGroupArgs:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> pulumi.Input[builtins.str]:
         """
-        付费类型。PRE表示包月，POST表示按量计费。
+        Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
         """
         return pulumi.get(self, "charge_type")
 
@@ -91,7 +91,7 @@ class NodeGroupArgs:
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> pulumi.Input[builtins.str]:
         """
-        集群ID。
+        Cluster ID.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -103,7 +103,7 @@ class NodeGroupArgs:
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> pulumi.Input[builtins.int]:
         """
-        节点数量。取值范围：1~1000。
+        Node count. Value range: 1~1000.
         """
         return pulumi.get(self, "node_count")
 
@@ -115,7 +115,7 @@ class NodeGroupArgs:
     @pulumi.getter(name="nodeGroupName")
     def node_group_name(self) -> pulumi.Input[builtins.str]:
         """
-        节点组名称。
+        Node group name.
         """
         return pulumi.get(self, "node_group_name")
 
@@ -127,7 +127,7 @@ class NodeGroupArgs:
     @pulumi.getter(name="nodeGroupType")
     def node_group_type(self) -> pulumi.Input[builtins.str]:
         """
-        节点组类型。
+        Node group type.
         """
         return pulumi.get(self, "node_group_type")
 
@@ -148,7 +148,7 @@ class NodeGroupArgs:
     @pulumi.getter(name="chargePreConfig")
     def charge_pre_config(self) -> Optional[pulumi.Input['NodeGroupChargePreConfigArgs']]:
         """
-        包周期付费配置。
+        Subscription payment configuration.
         """
         return pulumi.get(self, "charge_pre_config")
 
@@ -169,7 +169,7 @@ class NodeGroupArgs:
     @pulumi.getter(name="ecsInstanceTypes")
     def ecs_instance_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        ECS实例规格列表。当前修改仅支持单个实例规格。
+        ECS instance specification list. Currently, only a single instance specification can be modified.
         """
         return pulumi.get(self, "ecs_instance_types")
 
@@ -181,7 +181,7 @@ class NodeGroupArgs:
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        子网ID列表。
+        Subnet ID list.
         """
         return pulumi.get(self, "subnet_ids")
 
@@ -193,7 +193,7 @@ class NodeGroupArgs:
     @pulumi.getter(name="systemDisk")
     def system_disk(self) -> Optional[pulumi.Input['NodeGroupSystemDiskArgs']]:
         """
-        系统盘。
+        System disk.
         """
         return pulumi.get(self, "system_disk")
 
@@ -205,7 +205,7 @@ class NodeGroupArgs:
     @pulumi.getter(name="targetDiskSize")
     def target_disk_size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
+        Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
         """
         return pulumi.get(self, "target_disk_size")
 
@@ -217,7 +217,7 @@ class NodeGroupArgs:
     @pulumi.getter(name="withPublicIp")
     def with_public_ip(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        ECS是否附带公网IP。
+        Whether the ECS instance includes a public IP.
         """
         return pulumi.get(self, "with_public_ip")
 
@@ -229,7 +229,7 @@ class NodeGroupArgs:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        zoneId，为空时默认复用集群的zoneId。
+        zoneId. If empty, the cluster's zoneId is reused by default.
         """
         return pulumi.get(self, "zone_id")
 
@@ -263,23 +263,23 @@ class _NodeGroupState:
                  zone_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering NodeGroup resources.
-        :param pulumi.Input['NodeGroupChargePreConfigArgs'] charge_pre_config: 包周期付费配置。
-        :param pulumi.Input[builtins.str] charge_type: 付费类型。PRE表示包月，POST表示按量计费。
-        :param pulumi.Input[builtins.str] cluster_id: 集群ID。
-        :param pulumi.Input[builtins.int] created_time: 创建时间。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ecs_instance_types: ECS实例规格列表。当前修改仅支持单个实例规格。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] layout_component_names: 返回的节点组组件的自定义配置参数列表。
-        :param pulumi.Input[builtins.int] node_count: 节点数量。取值范围：1~1000。
-        :param pulumi.Input[builtins.str] node_group_id: 节点组ID。
-        :param pulumi.Input[builtins.str] node_group_name: 节点组名称。
-        :param pulumi.Input[builtins.str] node_group_state: 节点组状态。RUNNING：运行中。EXTENDING：扩容中。REDUCING：缩容中。DISK_EXTENDING：磁盘扩容中。MODIFYING：变配中。
-        :param pulumi.Input[builtins.str] node_group_type: 节点组类型。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_ids: 子网ID列表。
-        :param pulumi.Input['NodeGroupSystemDiskArgs'] system_disk: 系统盘。
-        :param pulumi.Input[builtins.int] target_disk_size: 待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
-        :param pulumi.Input[builtins.str] terminate_time: 集群终止时间。
-        :param pulumi.Input[builtins.bool] with_public_ip: ECS是否附带公网IP。
-        :param pulumi.Input[builtins.str] zone_id: zoneId，为空时默认复用集群的zoneId。
+        :param pulumi.Input['NodeGroupChargePreConfigArgs'] charge_pre_config: Subscription payment configuration.
+        :param pulumi.Input[builtins.str] charge_type: Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
+        :param pulumi.Input[builtins.str] cluster_id: Cluster ID.
+        :param pulumi.Input[builtins.int] created_time: Creation time.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ecs_instance_types: ECS instance specification list. Currently, only a single instance specification can be modified.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] layout_component_names: Custom configuration parameter list for the returned node group components.
+        :param pulumi.Input[builtins.int] node_count: Node count. Value range: 1~1000.
+        :param pulumi.Input[builtins.str] node_group_id: Node group ID.
+        :param pulumi.Input[builtins.str] node_group_name: Node group name.
+        :param pulumi.Input[builtins.str] node_group_state: Node group status. RUNNING: Running. EXTENDING: Expanding. REDUCING: Shrinking. DISK_EXTENDING: Disk expansion. MODIFYING: Configuration modification in progress.
+        :param pulumi.Input[builtins.str] node_group_type: Node group type.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_ids: Subnet ID list.
+        :param pulumi.Input['NodeGroupSystemDiskArgs'] system_disk: System disk.
+        :param pulumi.Input[builtins.int] target_disk_size: Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
+        :param pulumi.Input[builtins.str] terminate_time: Cluster termination time.
+        :param pulumi.Input[builtins.bool] with_public_ip: Whether the ECS instance includes a public IP.
+        :param pulumi.Input[builtins.str] zone_id: zoneId. If empty, the cluster's zoneId is reused by default.
         """
         if application_layouts is not None:
             pulumi.set(__self__, "application_layouts", application_layouts)
@@ -335,7 +335,7 @@ class _NodeGroupState:
     @pulumi.getter(name="chargePreConfig")
     def charge_pre_config(self) -> Optional[pulumi.Input['NodeGroupChargePreConfigArgs']]:
         """
-        包周期付费配置。
+        Subscription payment configuration.
         """
         return pulumi.get(self, "charge_pre_config")
 
@@ -347,7 +347,7 @@ class _NodeGroupState:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        付费类型。PRE表示包月，POST表示按量计费。
+        Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
         """
         return pulumi.get(self, "charge_type")
 
@@ -359,7 +359,7 @@ class _NodeGroupState:
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        集群ID。
+        Cluster ID.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -371,7 +371,7 @@ class _NodeGroupState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        创建时间。
+        Creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -392,7 +392,7 @@ class _NodeGroupState:
     @pulumi.getter(name="ecsInstanceTypes")
     def ecs_instance_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        ECS实例规格列表。当前修改仅支持单个实例规格。
+        ECS instance specification list. Currently, only a single instance specification can be modified.
         """
         return pulumi.get(self, "ecs_instance_types")
 
@@ -404,7 +404,7 @@ class _NodeGroupState:
     @pulumi.getter(name="layoutComponentNames")
     def layout_component_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        返回的节点组组件的自定义配置参数列表。
+        Custom configuration parameter list for the returned node group components.
         """
         return pulumi.get(self, "layout_component_names")
 
@@ -416,7 +416,7 @@ class _NodeGroupState:
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        节点数量。取值范围：1~1000。
+        Node count. Value range: 1~1000.
         """
         return pulumi.get(self, "node_count")
 
@@ -428,7 +428,7 @@ class _NodeGroupState:
     @pulumi.getter(name="nodeGroupId")
     def node_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点组ID。
+        Node group ID.
         """
         return pulumi.get(self, "node_group_id")
 
@@ -440,7 +440,7 @@ class _NodeGroupState:
     @pulumi.getter(name="nodeGroupName")
     def node_group_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点组名称。
+        Node group name.
         """
         return pulumi.get(self, "node_group_name")
 
@@ -452,7 +452,7 @@ class _NodeGroupState:
     @pulumi.getter(name="nodeGroupState")
     def node_group_state(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点组状态。RUNNING：运行中。EXTENDING：扩容中。REDUCING：缩容中。DISK_EXTENDING：磁盘扩容中。MODIFYING：变配中。
+        Node group status. RUNNING: Running. EXTENDING: Expanding. REDUCING: Shrinking. DISK_EXTENDING: Disk expansion. MODIFYING: Configuration modification in progress.
         """
         return pulumi.get(self, "node_group_state")
 
@@ -464,7 +464,7 @@ class _NodeGroupState:
     @pulumi.getter(name="nodeGroupType")
     def node_group_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点组类型。
+        Node group type.
         """
         return pulumi.get(self, "node_group_type")
 
@@ -485,7 +485,7 @@ class _NodeGroupState:
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        子网ID列表。
+        Subnet ID list.
         """
         return pulumi.get(self, "subnet_ids")
 
@@ -497,7 +497,7 @@ class _NodeGroupState:
     @pulumi.getter(name="systemDisk")
     def system_disk(self) -> Optional[pulumi.Input['NodeGroupSystemDiskArgs']]:
         """
-        系统盘。
+        System disk.
         """
         return pulumi.get(self, "system_disk")
 
@@ -509,7 +509,7 @@ class _NodeGroupState:
     @pulumi.getter(name="targetDiskSize")
     def target_disk_size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
+        Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
         """
         return pulumi.get(self, "target_disk_size")
 
@@ -521,7 +521,7 @@ class _NodeGroupState:
     @pulumi.getter(name="terminateTime")
     def terminate_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        集群终止时间。
+        Cluster termination time.
         """
         return pulumi.get(self, "terminate_time")
 
@@ -533,7 +533,7 @@ class _NodeGroupState:
     @pulumi.getter(name="withPublicIp")
     def with_public_ip(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        ECS是否附带公网IP。
+        Whether the ECS instance includes a public IP.
         """
         return pulumi.get(self, "with_public_ip")
 
@@ -545,7 +545,7 @@ class _NodeGroupState:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        zoneId，为空时默认复用集群的zoneId。
+        zoneId. If empty, the cluster's zoneId is reused by default.
         """
         return pulumi.get(self, "zone_id")
 
@@ -576,7 +576,7 @@ class NodeGroup(pulumi.CustomResource):
                  zone_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        E-MapReduce集群由多个不同类型的实例节点组成，包括主实例节点（Master）、核心实例节点（Core）和计算实例节点（Task）。不同实例节点上部署的服务进程不同，负责完成的任务也不同。
+        An E-MapReduce cluster consists of multiple types of instance nodes, including master instance nodes (Master), core instance nodes (Core), and task instance nodes (Task). Different service processes are deployed on each node type, and each is responsible for different tasks.
 
         ## Import
 
@@ -586,18 +586,18 @@ class NodeGroup(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['NodeGroupChargePreConfigArgs', 'NodeGroupChargePreConfigArgsDict']] charge_pre_config: 包周期付费配置。
-        :param pulumi.Input[builtins.str] charge_type: 付费类型。PRE表示包月，POST表示按量计费。
-        :param pulumi.Input[builtins.str] cluster_id: 集群ID。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ecs_instance_types: ECS实例规格列表。当前修改仅支持单个实例规格。
-        :param pulumi.Input[builtins.int] node_count: 节点数量。取值范围：1~1000。
-        :param pulumi.Input[builtins.str] node_group_name: 节点组名称。
-        :param pulumi.Input[builtins.str] node_group_type: 节点组类型。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_ids: 子网ID列表。
-        :param pulumi.Input[Union['NodeGroupSystemDiskArgs', 'NodeGroupSystemDiskArgsDict']] system_disk: 系统盘。
-        :param pulumi.Input[builtins.int] target_disk_size: 待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
-        :param pulumi.Input[builtins.bool] with_public_ip: ECS是否附带公网IP。
-        :param pulumi.Input[builtins.str] zone_id: zoneId，为空时默认复用集群的zoneId。
+        :param pulumi.Input[Union['NodeGroupChargePreConfigArgs', 'NodeGroupChargePreConfigArgsDict']] charge_pre_config: Subscription payment configuration.
+        :param pulumi.Input[builtins.str] charge_type: Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
+        :param pulumi.Input[builtins.str] cluster_id: Cluster ID.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ecs_instance_types: ECS instance specification list. Currently, only a single instance specification can be modified.
+        :param pulumi.Input[builtins.int] node_count: Node count. Value range: 1~1000.
+        :param pulumi.Input[builtins.str] node_group_name: Node group name.
+        :param pulumi.Input[builtins.str] node_group_type: Node group type.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_ids: Subnet ID list.
+        :param pulumi.Input[Union['NodeGroupSystemDiskArgs', 'NodeGroupSystemDiskArgsDict']] system_disk: System disk.
+        :param pulumi.Input[builtins.int] target_disk_size: Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
+        :param pulumi.Input[builtins.bool] with_public_ip: Whether the ECS instance includes a public IP.
+        :param pulumi.Input[builtins.str] zone_id: zoneId. If empty, the cluster's zoneId is reused by default.
         """
         ...
     @overload
@@ -606,7 +606,7 @@ class NodeGroup(pulumi.CustomResource):
                  args: NodeGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        E-MapReduce集群由多个不同类型的实例节点组成，包括主实例节点（Master）、核心实例节点（Core）和计算实例节点（Task）。不同实例节点上部署的服务进程不同，负责完成的任务也不同。
+        An E-MapReduce cluster consists of multiple types of instance nodes, including master instance nodes (Master), core instance nodes (Core), and task instance nodes (Task). Different service processes are deployed on each node type, and each is responsible for different tasks.
 
         ## Import
 
@@ -719,23 +719,23 @@ class NodeGroup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['NodeGroupChargePreConfigArgs', 'NodeGroupChargePreConfigArgsDict']] charge_pre_config: 包周期付费配置。
-        :param pulumi.Input[builtins.str] charge_type: 付费类型。PRE表示包月，POST表示按量计费。
-        :param pulumi.Input[builtins.str] cluster_id: 集群ID。
-        :param pulumi.Input[builtins.int] created_time: 创建时间。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ecs_instance_types: ECS实例规格列表。当前修改仅支持单个实例规格。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] layout_component_names: 返回的节点组组件的自定义配置参数列表。
-        :param pulumi.Input[builtins.int] node_count: 节点数量。取值范围：1~1000。
-        :param pulumi.Input[builtins.str] node_group_id: 节点组ID。
-        :param pulumi.Input[builtins.str] node_group_name: 节点组名称。
-        :param pulumi.Input[builtins.str] node_group_state: 节点组状态。RUNNING：运行中。EXTENDING：扩容中。REDUCING：缩容中。DISK_EXTENDING：磁盘扩容中。MODIFYING：变配中。
-        :param pulumi.Input[builtins.str] node_group_type: 节点组类型。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_ids: 子网ID列表。
-        :param pulumi.Input[Union['NodeGroupSystemDiskArgs', 'NodeGroupSystemDiskArgsDict']] system_disk: 系统盘。
-        :param pulumi.Input[builtins.int] target_disk_size: 待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
-        :param pulumi.Input[builtins.str] terminate_time: 集群终止时间。
-        :param pulumi.Input[builtins.bool] with_public_ip: ECS是否附带公网IP。
-        :param pulumi.Input[builtins.str] zone_id: zoneId，为空时默认复用集群的zoneId。
+        :param pulumi.Input[Union['NodeGroupChargePreConfigArgs', 'NodeGroupChargePreConfigArgsDict']] charge_pre_config: Subscription payment configuration.
+        :param pulumi.Input[builtins.str] charge_type: Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
+        :param pulumi.Input[builtins.str] cluster_id: Cluster ID.
+        :param pulumi.Input[builtins.int] created_time: Creation time.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ecs_instance_types: ECS instance specification list. Currently, only a single instance specification can be modified.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] layout_component_names: Custom configuration parameter list for the returned node group components.
+        :param pulumi.Input[builtins.int] node_count: Node count. Value range: 1~1000.
+        :param pulumi.Input[builtins.str] node_group_id: Node group ID.
+        :param pulumi.Input[builtins.str] node_group_name: Node group name.
+        :param pulumi.Input[builtins.str] node_group_state: Node group status. RUNNING: Running. EXTENDING: Expanding. REDUCING: Shrinking. DISK_EXTENDING: Disk expansion. MODIFYING: Configuration modification in progress.
+        :param pulumi.Input[builtins.str] node_group_type: Node group type.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_ids: Subnet ID list.
+        :param pulumi.Input[Union['NodeGroupSystemDiskArgs', 'NodeGroupSystemDiskArgsDict']] system_disk: System disk.
+        :param pulumi.Input[builtins.int] target_disk_size: Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
+        :param pulumi.Input[builtins.str] terminate_time: Cluster termination time.
+        :param pulumi.Input[builtins.bool] with_public_ip: Whether the ECS instance includes a public IP.
+        :param pulumi.Input[builtins.str] zone_id: zoneId. If empty, the cluster's zoneId is reused by default.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -772,7 +772,7 @@ class NodeGroup(pulumi.CustomResource):
     @pulumi.getter(name="chargePreConfig")
     def charge_pre_config(self) -> pulumi.Output['outputs.NodeGroupChargePreConfig']:
         """
-        包周期付费配置。
+        Subscription payment configuration.
         """
         return pulumi.get(self, "charge_pre_config")
 
@@ -780,7 +780,7 @@ class NodeGroup(pulumi.CustomResource):
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> pulumi.Output[builtins.str]:
         """
-        付费类型。PRE表示包月，POST表示按量计费。
+        Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
         """
         return pulumi.get(self, "charge_type")
 
@@ -788,7 +788,7 @@ class NodeGroup(pulumi.CustomResource):
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> pulumi.Output[builtins.str]:
         """
-        集群ID。
+        Cluster ID.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -796,7 +796,7 @@ class NodeGroup(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.int]:
         """
-        创建时间。
+        Creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -809,7 +809,7 @@ class NodeGroup(pulumi.CustomResource):
     @pulumi.getter(name="ecsInstanceTypes")
     def ecs_instance_types(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        ECS实例规格列表。当前修改仅支持单个实例规格。
+        ECS instance specification list. Currently, only a single instance specification can be modified.
         """
         return pulumi.get(self, "ecs_instance_types")
 
@@ -817,7 +817,7 @@ class NodeGroup(pulumi.CustomResource):
     @pulumi.getter(name="layoutComponentNames")
     def layout_component_names(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        返回的节点组组件的自定义配置参数列表。
+        Custom configuration parameter list for the returned node group components.
         """
         return pulumi.get(self, "layout_component_names")
 
@@ -825,7 +825,7 @@ class NodeGroup(pulumi.CustomResource):
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> pulumi.Output[builtins.int]:
         """
-        节点数量。取值范围：1~1000。
+        Node count. Value range: 1~1000.
         """
         return pulumi.get(self, "node_count")
 
@@ -833,7 +833,7 @@ class NodeGroup(pulumi.CustomResource):
     @pulumi.getter(name="nodeGroupId")
     def node_group_id(self) -> pulumi.Output[builtins.str]:
         """
-        节点组ID。
+        Node group ID.
         """
         return pulumi.get(self, "node_group_id")
 
@@ -841,7 +841,7 @@ class NodeGroup(pulumi.CustomResource):
     @pulumi.getter(name="nodeGroupName")
     def node_group_name(self) -> pulumi.Output[builtins.str]:
         """
-        节点组名称。
+        Node group name.
         """
         return pulumi.get(self, "node_group_name")
 
@@ -849,7 +849,7 @@ class NodeGroup(pulumi.CustomResource):
     @pulumi.getter(name="nodeGroupState")
     def node_group_state(self) -> pulumi.Output[builtins.str]:
         """
-        节点组状态。RUNNING：运行中。EXTENDING：扩容中。REDUCING：缩容中。DISK_EXTENDING：磁盘扩容中。MODIFYING：变配中。
+        Node group status. RUNNING: Running. EXTENDING: Expanding. REDUCING: Shrinking. DISK_EXTENDING: Disk expansion. MODIFYING: Configuration modification in progress.
         """
         return pulumi.get(self, "node_group_state")
 
@@ -857,7 +857,7 @@ class NodeGroup(pulumi.CustomResource):
     @pulumi.getter(name="nodeGroupType")
     def node_group_type(self) -> pulumi.Output[builtins.str]:
         """
-        节点组类型。
+        Node group type.
         """
         return pulumi.get(self, "node_group_type")
 
@@ -870,7 +870,7 @@ class NodeGroup(pulumi.CustomResource):
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        子网ID列表。
+        Subnet ID list.
         """
         return pulumi.get(self, "subnet_ids")
 
@@ -878,7 +878,7 @@ class NodeGroup(pulumi.CustomResource):
     @pulumi.getter(name="systemDisk")
     def system_disk(self) -> pulumi.Output['outputs.NodeGroupSystemDisk']:
         """
-        系统盘。
+        System disk.
         """
         return pulumi.get(self, "system_disk")
 
@@ -886,7 +886,7 @@ class NodeGroup(pulumi.CustomResource):
     @pulumi.getter(name="targetDiskSize")
     def target_disk_size(self) -> pulumi.Output[builtins.int]:
         """
-        待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
+        Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
         """
         return pulumi.get(self, "target_disk_size")
 
@@ -894,7 +894,7 @@ class NodeGroup(pulumi.CustomResource):
     @pulumi.getter(name="terminateTime")
     def terminate_time(self) -> pulumi.Output[builtins.str]:
         """
-        集群终止时间。
+        Cluster termination time.
         """
         return pulumi.get(self, "terminate_time")
 
@@ -902,7 +902,7 @@ class NodeGroup(pulumi.CustomResource):
     @pulumi.getter(name="withPublicIp")
     def with_public_ip(self) -> pulumi.Output[builtins.bool]:
         """
-        ECS是否附带公网IP。
+        Whether the ECS instance includes a public IP.
         """
         return pulumi.get(self, "with_public_ip")
 
@@ -910,7 +910,7 @@ class NodeGroup(pulumi.CustomResource):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Output[builtins.str]:
         """
-        zoneId，为空时默认复用集群的zoneId。
+        zoneId. If empty, the cluster's zoneId is reused by default.
         """
         return pulumi.get(self, "zone_id")
 

@@ -65,27 +65,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
     public sealed class GetUpstreamResult
     {
         /// <summary>
-        /// 后端节点，Upstream来源类型为VeFaas时无效。
+        /// Backend node. Not valid when the upstream source type is VeFaas
         /// </summary>
         public readonly ImmutableArray<Outputs.GetUpstreamBackendTargetResult> BackendTargets;
         /// <summary>
-        /// 服务熔断配置。
+        /// Service circuit breaking configuration
         /// </summary>
         public readonly Outputs.GetUpstreamCircuitBreakingSettingsResult CircuitBreakingSettings;
         /// <summary>
-        /// 备注。
+        /// Remarks
         /// </summary>
         public readonly string Comments;
         /// <summary>
-        /// 连接池配置。
+        /// Connection Pool Configuration
         /// </summary>
         public readonly Outputs.GetUpstreamConnectionPoolSettingsResult ConnectionPoolSettings;
         /// <summary>
-        /// Upstream创建时间。
+        /// Upstream creation time
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 网关实例ID。
+        /// Gateway Instance ID
         /// </summary>
         public readonly string GatewayId;
         /// <summary>
@@ -93,27 +93,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 负载均衡配置。
+        /// Load Balancing Configuration
         /// </summary>
         public readonly Outputs.GetUpstreamLoadBalancerSettingsResult LoadBalancerSettings;
         /// <summary>
-        /// Upstream名称。
+        /// Upstream name
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
+        /// Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
         /// </summary>
         public readonly string Protocol;
         /// <summary>
-        /// Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
+        /// Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
         /// </summary>
         public readonly string SourceType;
         /// <summary>
-        /// TLS配置。
+        /// TLS Configuration
         /// </summary>
         public readonly Outputs.GetUpstreamTlsSettingsResult TlsSettings;
         /// <summary>
-        /// Upstream更新时间。
+        /// Upstream update time
         /// </summary>
         public readonly string UpdatedTime;
         /// <summary>
@@ -121,11 +121,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         /// </summary>
         public readonly string UpstreamId;
         /// <summary>
-        /// Upstream配置。
+        /// Upstream Configuration
         /// </summary>
         public readonly Outputs.GetUpstreamUpstreamSpecResult UpstreamSpec;
         /// <summary>
-        /// Upstream版本，仅在Upstream来源类型为K8S时有效。
+        /// Upstream version, only valid when the upstream source type is K8S
         /// </summary>
         public readonly ImmutableArray<Outputs.GetUpstreamVersionDetailResult> VersionDetails;
 

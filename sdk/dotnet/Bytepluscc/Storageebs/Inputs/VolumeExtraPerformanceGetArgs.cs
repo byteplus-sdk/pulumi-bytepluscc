@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Storageebs.Inputs
     public sealed class VolumeExtraPerformanceGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 额外性能的类型，取值如下：Balance：均衡型额外性能；IOPS：IOPS型额外性能；Throughput：吞吐量型额外性能。
+        /// Type of extra performance. Value description: Balance: Balanced extra performance; IOPS: IOPS extra performance; Throughput: Throughput extra performance.
         /// </summary>
         [Input("extraPerformanceTypeId")]
         public Input<string>? ExtraPerformanceTypeId { get; set; }
 
         /// <summary>
-        /// 云盘的额外IOPS。
+        /// Extra IOPS of the disk.
         /// </summary>
         [Input("iops")]
         public Input<double>? Iops { get; set; }
 
         /// <summary>
-        /// 云盘的额外吞吐量。
+        /// Extra throughput of the disk.
         /// </summary>
         [Input("throughput")]
         public Input<double>? Throughput { get; set; }

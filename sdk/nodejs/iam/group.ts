@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 用户组是用户的集合。当用户组被关联上策略后，同一用户组里的所有用户会拥有对应的策略权限，同一个用户可存在于多个用户组中，可同时拥有多个用户组的权限。
+ * A user group is a collection of users. When a user group is associated with a policy, all users in the group gain the corresponding policy permissions. A user can belong to multiple user groups and have permissions from each group.
  *
  * ## Import
  *
@@ -44,32 +44,32 @@ export class Group extends pulumi.CustomResource {
     }
 
     /**
-     * 用户组所属主账号的ID。
+     * ID of the primary account to which the user group belongs.
      */
     public /*out*/ readonly accountId!: pulumi.Output<number>;
     public readonly attachedPolicies!: pulumi.Output<outputs.iam.GroupAttachedPolicy[]>;
     /**
-     * 用户组的创建时间。
+     * User group creation time.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 用户组描述信息。长度不超过128。
+     * User group description. Maximum length: 128 characters.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 用户组显示名称。长度不超过64。
+     * User group display name. Maximum length: 64 characters.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * 用户组的更新时间。
+     * User group update time.
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
     /**
-     * 用户组ID。
+     * User group ID.
      */
     public /*out*/ readonly userGroupId!: pulumi.Output<number>;
     /**
-     * 用户组名称。长度1~64，支持英文、数字和.-_符号。
+     * User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
      */
     public readonly userGroupName!: pulumi.Output<string>;
     public readonly users!: pulumi.Output<outputs.iam.GroupUser[]>;
@@ -121,32 +121,32 @@ export class Group extends pulumi.CustomResource {
  */
 export interface GroupState {
     /**
-     * 用户组所属主账号的ID。
+     * ID of the primary account to which the user group belongs.
      */
     accountId?: pulumi.Input<number>;
     attachedPolicies?: pulumi.Input<pulumi.Input<inputs.iam.GroupAttachedPolicy>[]>;
     /**
-     * 用户组的创建时间。
+     * User group creation time.
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 用户组描述信息。长度不超过128。
+     * User group description. Maximum length: 128 characters.
      */
     description?: pulumi.Input<string>;
     /**
-     * 用户组显示名称。长度不超过64。
+     * User group display name. Maximum length: 64 characters.
      */
     displayName?: pulumi.Input<string>;
     /**
-     * 用户组的更新时间。
+     * User group update time.
      */
     updatedTime?: pulumi.Input<string>;
     /**
-     * 用户组ID。
+     * User group ID.
      */
     userGroupId?: pulumi.Input<number>;
     /**
-     * 用户组名称。长度1~64，支持英文、数字和.-_符号。
+     * User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
      */
     userGroupName?: pulumi.Input<string>;
     users?: pulumi.Input<pulumi.Input<inputs.iam.GroupUser>[]>;
@@ -158,15 +158,15 @@ export interface GroupState {
 export interface GroupArgs {
     attachedPolicies?: pulumi.Input<pulumi.Input<inputs.iam.GroupAttachedPolicy>[]>;
     /**
-     * 用户组描述信息。长度不超过128。
+     * User group description. Maximum length: 128 characters.
      */
     description?: pulumi.Input<string>;
     /**
-     * 用户组显示名称。长度不超过64。
+     * User group display name. Maximum length: 64 characters.
      */
     displayName?: pulumi.Input<string>;
     /**
-     * 用户组名称。长度1~64，支持英文、数字和.-_符号。
+     * User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
      */
     userGroupName: pulumi.Input<string>;
     users?: pulumi.Input<pulumi.Input<inputs.iam.GroupUser>[]>;

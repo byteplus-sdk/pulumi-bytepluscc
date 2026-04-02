@@ -25,7 +25,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 容器服务通过深度融合新一代云原生技术，提供以容器为核心的高性能 Kubernetes 容器集群管理服务。在云端一键构建高可用 Kubernetes 集群，并实现容器化应用的可视化全生命周期管理，助力用户快速构建容器化应用。
+ * Container Service deeply integrates next-generation cloud-native technologies to provide high-performance Kubernetes cluster management centered on containers. Build highly available Kubernetes clusters in the cloud with one click and achieve visualized full lifecycle management of containerized applications, helping users quickly build containerized applications.
  * 
  * ## Example Usage
  * 
@@ -42,252 +42,252 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:vke/cluster:Cluster")
 public class Cluster extends com.pulumi.resources.CustomResource {
     /**
-     * 集群控制面及部分节点的网络配置。
+     * Network configuration for the cluster control plane and some nodes.
      * 
      */
     @Export(name="clusterConfig", refs={ClusterClusterConfig.class}, tree="[0]")
     private Output<ClusterClusterConfig> clusterConfig;
 
     /**
-     * @return 集群控制面及部分节点的网络配置。
+     * @return Network configuration for the cluster control plane and some nodes.
      * 
      */
     public Output<ClusterClusterConfig> clusterConfig() {
         return this.clusterConfig;
     }
     /**
-     * 集群 ID。
+     * Cluster ID.
      * 
      */
     @Export(name="clusterId", refs={String.class}, tree="[0]")
     private Output<String> clusterId;
 
     /**
-     * @return 集群 ID。
+     * @return Cluster ID.
      * 
      */
     public Output<String> clusterId() {
         return this.clusterId;
     }
     /**
-     * 集群创建时间。标准 RFC3339 格式的 UTC+0 时间。
+     * Cluster creation time. Standard RFC3339 format, UTC+0.
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 集群创建时间。标准 RFC3339 格式的 UTC+0 时间。
+     * @return Cluster creation time. Standard RFC3339 format, UTC+0.
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
+     * Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
      * 
      */
     @Export(name="deleteProtectionEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> deleteProtectionEnabled;
 
     /**
-     * @return 集群删除保护，取值：false：（默认值）关闭删除保护。true：开启删除保护，不允许直接删除集群。
+     * @return Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
      * 
      */
     public Output<Boolean> deleteProtectionEnabled() {
         return this.deleteProtectionEnabled;
     }
     /**
-     * 集群描述。长度限制为 300 个字符以内。
+     * Cluster description. Maximum length is 300 characters.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 集群描述。长度限制为 300 个字符以内。
+     * @return Cluster description. Maximum length is 300 characters.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * IRSA（IAM Role for Service Account）能力相关参数配置。
+     * IRSA (IAM Role for Service Account) capability parameter configuration
      * 
      */
     @Export(name="irsaConfig", refs={ClusterIrsaConfig.class}, tree="[0]")
     private Output<ClusterIrsaConfig> irsaConfig;
 
     /**
-     * @return IRSA（IAM Role for Service Account）能力相关参数配置。
+     * @return IRSA (IAM Role for Service Account) capability parameter configuration
      * 
      */
     public Output<ClusterIrsaConfig> irsaConfig() {
         return this.irsaConfig;
     }
     /**
-     * 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
+     * Cluster Kubernetes version in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version (for query use)
      * 
      */
     @Export(name="kubernetesVersion", refs={String.class}, tree="[0]")
     private Output<String> kubernetesVersion;
 
     /**
-     * @return 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。（查询使用）
+     * @return Cluster Kubernetes version in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version (for query use)
      * 
      */
     public Output<String> kubernetesVersion() {
         return this.kubernetesVersion;
     }
     /**
-     * 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
+     * Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
      * 
      */
     @Export(name="kubernetesVersionCreate", refs={String.class}, tree="[0]")
     private Output<String> kubernetesVersionCreate;
 
     /**
-     * @return 集群的 Kubernetes 版本，格式为x.xx。创建集群时，系统自动匹配该 Kubernetes 版本对应的最新 VKE 版本。(创建使用)
+     * @return Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
      * 
      */
     public Output<String> kubernetesVersionCreate() {
         return this.kubernetesVersionCreate;
     }
     /**
-     * 集群的日志配置信息。
+     * Cluster log configuration information.
      * 
      */
     @Export(name="loggingConfig", refs={ClusterLoggingConfig.class}, tree="[0]")
     private Output<ClusterLoggingConfig> loggingConfig;
 
     /**
-     * @return 集群的日志配置信息。
+     * @return Cluster log configuration information.
      * 
      */
     public Output<ClusterLoggingConfig> loggingConfig() {
         return this.loggingConfig;
     }
     /**
-     * 集群状态描述。
+     * Cluster status description.
      * 
      */
     @Export(name="message", refs={String.class}, tree="[0]")
     private Output<String> message;
 
     /**
-     * @return 集群状态描述。
+     * @return Cluster status description.
      * 
      */
     public Output<String> message() {
         return this.message;
     }
     /**
-     * 监控配置信息。
+     * Monitoring configuration information.
      * 
      */
     @Export(name="monitoringConfig", refs={ClusterMonitoringConfig.class}, tree="[0]")
     private Output<ClusterMonitoringConfig> monitoringConfig;
 
     /**
-     * @return 监控配置信息。
+     * @return Monitoring configuration information.
      * 
      */
     public Output<ClusterMonitoringConfig> monitoringConfig() {
         return this.monitoringConfig;
     }
     /**
-     * 集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+     * Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return 集群名称。同一个地域下，名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+     * @return Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * 集群中各主状态下对应的节点数量统计。
+     * Statistics of node counts for each main status in the cluster.
      * 
      */
     @Export(name="nodeStatistics", refs={ClusterNodeStatistics.class}, tree="[0]")
     private Output<ClusterNodeStatistics> nodeStatistics;
 
     /**
-     * @return 集群中各主状态下对应的节点数量统计。
+     * @return Statistics of node counts for each main status in the cluster.
      * 
      */
     public Output<ClusterNodeStatistics> nodeStatistics() {
         return this.nodeStatistics;
     }
     /**
-     * Pod 的网络配置。
+     * Pod network configuration.
      * 
      */
     @Export(name="podsConfig", refs={ClusterPodsConfig.class}, tree="[0]")
     private Output<ClusterPodsConfig> podsConfig;
 
     /**
-     * @return Pod 的网络配置。
+     * @return Pod network configuration.
      * 
      */
     public Output<ClusterPodsConfig> podsConfig() {
         return this.podsConfig;
     }
     /**
-     * 集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
+     * Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 集群所属项目名称，一个集群只能归属于一个项目。只能包含英文字母、数字、下划线（_）、英文句点（.）和中划线（-）。长度限制在 64 个字符以内。默认值：default。
+     * @return Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 服务的网络配置。
+     * Network configuration for the service.
      * 
      */
     @Export(name="servicesConfig", refs={ClusterServicesConfig.class}, tree="[0]")
     private Output<ClusterServicesConfig> servicesConfig;
 
     /**
-     * @return 服务的网络配置。
+     * @return Network configuration for the service.
      * 
      */
     public Output<ClusterServicesConfig> servicesConfig() {
         return this.servicesConfig;
     }
     /**
-     * 集群源地域。
+     * Cluster source region
      * 
      */
     @Export(name="sourceRegion", refs={String.class}, tree="[0]")
     private Output<String> sourceRegion;
 
     /**
-     * @return 集群源地域。
+     * @return Cluster source region
      * 
      */
     public Output<String> sourceRegion() {
         return this.sourceRegion;
     }
     /**
-     * 集群状态。
+     * Cluster status.
      * 
      */
     @Export(name="status", refs={ClusterStatus.class}, tree="[0]")
     private Output<ClusterStatus> status;
 
     /**
-     * @return 集群状态。
+     * @return Cluster status.
      * 
      */
     public Output<ClusterStatus> status() {
@@ -300,28 +300,28 @@ public class Cluster extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 集群类型。
+     * Cluster type.
      * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
-     * @return 集群类型。
+     * @return Cluster type.
      * 
      */
     public Output<String> type() {
         return this.type;
     }
     /**
-     * 集群最近一次更新的时间。标准 RFC3339 格式的 UTC+0 时间。
+     * Last update time of the cluster. Standard RFC3339 format, UTC+0.
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 集群最近一次更新的时间。标准 RFC3339 格式的 UTC+0 时间。
+     * @return Last update time of the cluster. Standard RFC3339 format, UTC+0.
      * 
      */
     public Output<String> updatedTime() {

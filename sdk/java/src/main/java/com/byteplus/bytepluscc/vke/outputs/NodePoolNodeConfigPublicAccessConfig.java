@@ -13,38 +13,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NodePoolNodeConfigPublicAccessConfig {
     /**
-     * @return 公网 IP 的带宽峰值，单位：Mbps。
+     * @return Peak bandwidth for public IP, unit: Mbps
      * 
      */
     private @Nullable Integer bandwidth;
     /**
-     * @return 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+     * @return Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
      * 
      */
     private @Nullable Integer billingType;
     /**
-     * @return 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+     * @return Public IP line type. Parameter description: BGP: BGP (multi-line)
      * 
      */
     private @Nullable String isp;
 
     private NodePoolNodeConfigPublicAccessConfig() {}
     /**
-     * @return 公网 IP 的带宽峰值，单位：Mbps。
+     * @return Peak bandwidth for public IP, unit: Mbps
      * 
      */
     public Optional<Integer> bandwidth() {
         return Optional.ofNullable(this.bandwidth);
     }
     /**
-     * @return 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+     * @return Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
      * 
      */
     public Optional<Integer> billingType() {
         return Optional.ofNullable(this.billingType);
     }
     /**
-     * @return 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+     * @return Public IP line type. Parameter description: BGP: BGP (multi-line)
      * 
      */
     public Optional<String> isp() {

@@ -15,47 +15,47 @@ import java.util.Objects;
 @CustomType
 public final class GetAccountResult {
     /**
-     * @return 火山账号ID。
+     * @return Volcano account ID
      * 
      */
     private String accountId;
     /**
-     * @return 账户名称。5-20个字符。
+     * @return Account name. 5–20 characters
      * 
      */
     private String accountName;
     /**
-     * @return 允许控制台访问，1: 允许，2: 不允许。
+     * @return Allow console access: 1. Allowed, 2. Not allowed
      * 
      */
     private Integer allowConsole;
     /**
-     * @return 允许退出，1: 允许，2: 不允许。
+     * @return Allow exit: 1. Allowed, 2. Not allowed
      * 
      */
     private Integer allowExit;
     /**
-     * @return 创建时间。
+     * @return Creation time
      * 
      */
     private String createdTime;
     /**
-     * @return 删除标记。
+     * @return Deletion flag
      * 
      */
     private String deleteUk;
     /**
-     * @return 删除时间。
+     * @return Deletion time
      * 
      */
     private String deletedTime;
     /**
-     * @return 描述。
+     * @return Description
      * 
      */
     private String description;
     /**
-     * @return IAM角色名称。
+     * @return IAM role name
      * 
      */
     private String iamRole;
@@ -65,145 +65,145 @@ public final class GetAccountResult {
      */
     private String id;
     /**
-     * @return 是否是管理员，0.非管理员，1.管理员。
+     * @return Administrator status: 0. Non-administrator, 1. Administrator
      * 
      */
     private Integer isOwner;
     /**
-     * @return 加入类型，1: 创建，2: 邀请。
+     * @return Join type: 1. Create, 2. Invite
      * 
      */
     private Integer joinType;
     /**
-     * @return 主体名称。
+     * @return Subject name
      * 
      */
     private String mainName;
     /**
-     * @return 组织成员账号ID。
+     * @return Organization member account ID
      * 
      */
     private String memberAccountId;
     /**
-     * @return 组织ID。
+     * @return Organization ID
      * 
      */
     private String orgId;
     /**
-     * @return 组织类型，1.企业组织。
+     * @return Organization type: 1. Enterprise organization
      * 
      */
     private Integer orgType;
     /**
-     * @return 组织单元ID。传入 0 加入到 root 单元。
+     * @return Organizational unit ID. Enter 0 to join the root unit
      * 
      */
     private String orgUnitId;
     /**
-     * @return 组织单元名称。
+     * @return Organizational unit name
      * 
      */
     private String orgUnitName;
     /**
-     * @return 认证主体ID。
+     * @return Authentication subject ID
      * 
      */
     private String orgVerificationId;
     /**
-     * @return 管理员ID。
+     * @return Administrator ID
      * 
      */
     private String owner;
     /**
-     * @return 账户密码。
+     * @return Account password
      * 
      */
     private String password;
     /**
-     * @return 安全联系信息。
+     * @return Security contact information
      * 
      */
     private GetAccountSecureContactInfo secureContactInfo;
     /**
-     * @return 显示名称。
+     * @return Display name
      * 
      */
     private String showName;
     /**
-     * @return 标签列表。
+     * @return Tag list
      * 
      */
     private List<GetAccountTag> tags;
     /**
-     * @return 更新时间。
+     * @return Update time
      * 
      */
     private String updatedTime;
     /**
-     * @return 被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+     * @return Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
      * 
      */
     private String verificationRelationId;
 
     private GetAccountResult() {}
     /**
-     * @return 火山账号ID。
+     * @return Volcano account ID
      * 
      */
     public String accountId() {
         return this.accountId;
     }
     /**
-     * @return 账户名称。5-20个字符。
+     * @return Account name. 5–20 characters
      * 
      */
     public String accountName() {
         return this.accountName;
     }
     /**
-     * @return 允许控制台访问，1: 允许，2: 不允许。
+     * @return Allow console access: 1. Allowed, 2. Not allowed
      * 
      */
     public Integer allowConsole() {
         return this.allowConsole;
     }
     /**
-     * @return 允许退出，1: 允许，2: 不允许。
+     * @return Allow exit: 1. Allowed, 2. Not allowed
      * 
      */
     public Integer allowExit() {
         return this.allowExit;
     }
     /**
-     * @return 创建时间。
+     * @return Creation time
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 删除标记。
+     * @return Deletion flag
      * 
      */
     public String deleteUk() {
         return this.deleteUk;
     }
     /**
-     * @return 删除时间。
+     * @return Deletion time
      * 
      */
     public String deletedTime() {
         return this.deletedTime;
     }
     /**
-     * @return 描述。
+     * @return Description
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return IAM角色名称。
+     * @return IAM role name
      * 
      */
     public String iamRole() {
@@ -217,112 +217,112 @@ public final class GetAccountResult {
         return this.id;
     }
     /**
-     * @return 是否是管理员，0.非管理员，1.管理员。
+     * @return Administrator status: 0. Non-administrator, 1. Administrator
      * 
      */
     public Integer isOwner() {
         return this.isOwner;
     }
     /**
-     * @return 加入类型，1: 创建，2: 邀请。
+     * @return Join type: 1. Create, 2. Invite
      * 
      */
     public Integer joinType() {
         return this.joinType;
     }
     /**
-     * @return 主体名称。
+     * @return Subject name
      * 
      */
     public String mainName() {
         return this.mainName;
     }
     /**
-     * @return 组织成员账号ID。
+     * @return Organization member account ID
      * 
      */
     public String memberAccountId() {
         return this.memberAccountId;
     }
     /**
-     * @return 组织ID。
+     * @return Organization ID
      * 
      */
     public String orgId() {
         return this.orgId;
     }
     /**
-     * @return 组织类型，1.企业组织。
+     * @return Organization type: 1. Enterprise organization
      * 
      */
     public Integer orgType() {
         return this.orgType;
     }
     /**
-     * @return 组织单元ID。传入 0 加入到 root 单元。
+     * @return Organizational unit ID. Enter 0 to join the root unit
      * 
      */
     public String orgUnitId() {
         return this.orgUnitId;
     }
     /**
-     * @return 组织单元名称。
+     * @return Organizational unit name
      * 
      */
     public String orgUnitName() {
         return this.orgUnitName;
     }
     /**
-     * @return 认证主体ID。
+     * @return Authentication subject ID
      * 
      */
     public String orgVerificationId() {
         return this.orgVerificationId;
     }
     /**
-     * @return 管理员ID。
+     * @return Administrator ID
      * 
      */
     public String owner() {
         return this.owner;
     }
     /**
-     * @return 账户密码。
+     * @return Account password
      * 
      */
     public String password() {
         return this.password;
     }
     /**
-     * @return 安全联系信息。
+     * @return Security contact information
      * 
      */
     public GetAccountSecureContactInfo secureContactInfo() {
         return this.secureContactInfo;
     }
     /**
-     * @return 显示名称。
+     * @return Display name
      * 
      */
     public String showName() {
         return this.showName;
     }
     /**
-     * @return 标签列表。
+     * @return Tag list
      * 
      */
     public List<GetAccountTag> tags() {
         return this.tags;
     }
     /**
-     * @return 更新时间。
+     * @return Update time
      * 
      */
     public String updatedTime() {
         return this.updatedTime;
     }
     /**
-     * @return 被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+     * @return Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
      * 
      */
     public String verificationRelationId() {

@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * NLB 实例用于接收用户的访问请求，并根据监听器和服务器组的配置设定，将访问请求转发至后端服务器。
+ * The NLB instance receives user access requests and forwards them to backend servers based on the configuration of listeners and server groups.
  *
  * ## Import
  *
@@ -44,104 +44,104 @@ export class Nlb extends pulumi.CustomResource {
     }
 
     /**
-     * NLB实例的访问日志信息。
+     * Access log information of the NLB instance.
      */
     public /*out*/ readonly accessLog!: pulumi.Output<outputs.clb.NlbAccessLog>;
     /**
-     * NLB实例所属的账号ID。
+     * Account ID to which the NLB instance belongs.
      */
     public readonly accountId!: pulumi.Output<string>;
     /**
-     * NLB实例的计费状态。Normal: 正常，FinancialLocked: 被锁定。
+     * Billing status of the NLB instance. Normal: normal, FinancialLocked: locked.
      */
     public /*out*/ readonly billingStatus!: pulumi.Output<string>;
     /**
-     * NLB实例的计费类型。3：按使用量计费
+     * Billing type of the NLB instance. 3: pay-as-you-go
      */
     public /*out*/ readonly billingType!: pulumi.Output<number>;
     /**
-     * NLB实例的创建时间。
+     * Creation time of the NLB instance.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * NLB实例是否开启跨可用区转发能力。true（默认值）：开启。false：关闭。
+     * Whether the NLB instance has cross-availability zone forwarding enabled. true (default): enabled. false: disabled.
      */
     public readonly crossZoneEnabled!: pulumi.Output<boolean>;
     /**
-     * NLB实例的描述。必须以字母、数字或中文开头，可包含以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。该参数不传入，则默认为空字符串。
+     * Description of the NLB instance. Must start with a letter, number, or Chinese character and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * NLB实例的DNS地址。
+     * DNS address of the NLB instance.
      */
     public /*out*/ readonly dnsName!: pulumi.Output<string>;
     /**
-     * NLB实例欠费关停时间。
+     * Time when the NLB instance is suspended due to overdue payment.
      */
     public /*out*/ readonly expectedOverdueTime!: pulumi.Output<string>;
     /**
-     * NLB实例的IP地址类型。ipv4：IPv4版本。dualstack：双栈，即同时支持IPv4版本和IPv6版本。
+     * IP address type of the NLB instance. ipv4: IPv4 version. dualstack: dual stack, supports both IPv4 and IPv6 versions.
      */
     public readonly ipAddressVersion!: pulumi.Output<string>;
     /**
-     * IPv4类型的共享带宽包ID。
+     * Shared bandwidth package ID for IPv4 type.
      */
     public readonly ipv4BandwidthPackageId!: pulumi.Output<string>;
     /**
-     * NLB实例的IPv4网络类型。internet：公网类型。intranet：私网类型。
+     * IPv4 network type of the NLB instance. internet: public network type. intranet: private network type.
      */
     public readonly ipv4NetworkType!: pulumi.Output<string>;
     /**
-     * IPv6类型的共享带宽包ID。
+     * Shared bandwidth package ID for IPv6 type.
      */
     public readonly ipv6BandwidthPackageId!: pulumi.Output<string>;
     /**
-     * NLB实例的IPv6网络类型。internet：公网类型。intranet：私网类型。
+     * IPv6 network type of the NLB instance. internet: public network type. intranet: private network type.
      */
     public readonly ipv6NetworkType!: pulumi.Output<string>;
     /**
-     * NLB实例ID。
+     * NLB instance ID.
      */
     public /*out*/ readonly loadBalancerId!: pulumi.Output<string>;
     /**
-     * NLB实例的名称。
+     * Name of the NLB instance.
      */
     public readonly loadBalancerName!: pulumi.Output<string>;
     /**
-     * 系统为NLB实例自动关联的托管安全组ID。
+     * Managed security group ID automatically associated with the NLB instance by the system.
      */
     public /*out*/ readonly managedSecurityGroupId!: pulumi.Output<string>;
     /**
-     * NLB实例是否开启控制台上修改保护。NonProtection或空：关闭，允许通过控制台修改实例或删除实例。ConsoleProtection：开启，禁止通过控制台修改实例或删除实例。
+     * Whether modification protection is enabled for the NLB instance in the console. NonProtection or empty: disabled, allows modification or deletion of the instance via the console. ConsoleProtection: enabled, prevents modification or deletion of the instance via the console.
      */
     public readonly modificationProtectionStatus!: pulumi.Output<string>;
     /**
-     * NLB实例被锁定的时间。参数BillingStatus为Normal时，本参数返回为空字符串。
+     * Time when the NLB instance is locked. If the BillingStatus parameter is Normal, this parameter returns an empty string.
      */
     public /*out*/ readonly overdueTime!: pulumi.Output<string>;
     /**
-     * NLB实例所属项目的名称。
+     * Name of the project to which the NLB instance belongs.
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * NLB实例的预期回收时间。参数BillingStatus为Normal时，本参数返回为空字符串。
+     * Expected reclamation time of the NLB instance. If the BillingStatus parameter is Normal, this parameter returns an empty string.
      */
     public /*out*/ readonly reclaimedTime!: pulumi.Output<string>;
     /**
-     * NLB实例关联的安全组ID列表。
+     * List of security group IDs associated with the NLB instance.
      */
     public readonly securityGroupIds!: pulumi.Output<string[]>;
     /**
-     * NLB 实例的状态。Inactive：已停止。Active：运行中。Creating：创建中。Provisioning：创建中。仅调用API创建NLB实例时存在该状态。Configuring：配置中。Deleting：删除中。CreateFailed：创建失败。
+     * Status of the NLB instance. Inactive: stopped. Active: running. Creating: creating. Provisioning: creating (this status only appears when creating an NLB instance via API). Configuring: configuring. Deleting: deleting. CreateFailed: creation failed.
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.clb.NlbTag[]>;
     /**
-     * NLB实例的更新时间。
+     * Update time of the NLB instance.
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
     /**
-     * NLB实例所属的VPC ID。
+     * VPC ID to which the NLB instance belongs.
      */
     public readonly vpcId!: pulumi.Output<string>;
     public readonly zoneMappings!: pulumi.Output<outputs.clb.NlbZoneMapping[]>;
@@ -238,104 +238,104 @@ export class Nlb extends pulumi.CustomResource {
  */
 export interface NlbState {
     /**
-     * NLB实例的访问日志信息。
+     * Access log information of the NLB instance.
      */
     accessLog?: pulumi.Input<inputs.clb.NlbAccessLog>;
     /**
-     * NLB实例所属的账号ID。
+     * Account ID to which the NLB instance belongs.
      */
     accountId?: pulumi.Input<string>;
     /**
-     * NLB实例的计费状态。Normal: 正常，FinancialLocked: 被锁定。
+     * Billing status of the NLB instance. Normal: normal, FinancialLocked: locked.
      */
     billingStatus?: pulumi.Input<string>;
     /**
-     * NLB实例的计费类型。3：按使用量计费
+     * Billing type of the NLB instance. 3: pay-as-you-go
      */
     billingType?: pulumi.Input<number>;
     /**
-     * NLB实例的创建时间。
+     * Creation time of the NLB instance.
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * NLB实例是否开启跨可用区转发能力。true（默认值）：开启。false：关闭。
+     * Whether the NLB instance has cross-availability zone forwarding enabled. true (default): enabled. false: disabled.
      */
     crossZoneEnabled?: pulumi.Input<boolean>;
     /**
-     * NLB实例的描述。必须以字母、数字或中文开头，可包含以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。该参数不传入，则默认为空字符串。
+     * Description of the NLB instance. Must start with a letter, number, or Chinese character and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
      */
     description?: pulumi.Input<string>;
     /**
-     * NLB实例的DNS地址。
+     * DNS address of the NLB instance.
      */
     dnsName?: pulumi.Input<string>;
     /**
-     * NLB实例欠费关停时间。
+     * Time when the NLB instance is suspended due to overdue payment.
      */
     expectedOverdueTime?: pulumi.Input<string>;
     /**
-     * NLB实例的IP地址类型。ipv4：IPv4版本。dualstack：双栈，即同时支持IPv4版本和IPv6版本。
+     * IP address type of the NLB instance. ipv4: IPv4 version. dualstack: dual stack, supports both IPv4 and IPv6 versions.
      */
     ipAddressVersion?: pulumi.Input<string>;
     /**
-     * IPv4类型的共享带宽包ID。
+     * Shared bandwidth package ID for IPv4 type.
      */
     ipv4BandwidthPackageId?: pulumi.Input<string>;
     /**
-     * NLB实例的IPv4网络类型。internet：公网类型。intranet：私网类型。
+     * IPv4 network type of the NLB instance. internet: public network type. intranet: private network type.
      */
     ipv4NetworkType?: pulumi.Input<string>;
     /**
-     * IPv6类型的共享带宽包ID。
+     * Shared bandwidth package ID for IPv6 type.
      */
     ipv6BandwidthPackageId?: pulumi.Input<string>;
     /**
-     * NLB实例的IPv6网络类型。internet：公网类型。intranet：私网类型。
+     * IPv6 network type of the NLB instance. internet: public network type. intranet: private network type.
      */
     ipv6NetworkType?: pulumi.Input<string>;
     /**
-     * NLB实例ID。
+     * NLB instance ID.
      */
     loadBalancerId?: pulumi.Input<string>;
     /**
-     * NLB实例的名称。
+     * Name of the NLB instance.
      */
     loadBalancerName?: pulumi.Input<string>;
     /**
-     * 系统为NLB实例自动关联的托管安全组ID。
+     * Managed security group ID automatically associated with the NLB instance by the system.
      */
     managedSecurityGroupId?: pulumi.Input<string>;
     /**
-     * NLB实例是否开启控制台上修改保护。NonProtection或空：关闭，允许通过控制台修改实例或删除实例。ConsoleProtection：开启，禁止通过控制台修改实例或删除实例。
+     * Whether modification protection is enabled for the NLB instance in the console. NonProtection or empty: disabled, allows modification or deletion of the instance via the console. ConsoleProtection: enabled, prevents modification or deletion of the instance via the console.
      */
     modificationProtectionStatus?: pulumi.Input<string>;
     /**
-     * NLB实例被锁定的时间。参数BillingStatus为Normal时，本参数返回为空字符串。
+     * Time when the NLB instance is locked. If the BillingStatus parameter is Normal, this parameter returns an empty string.
      */
     overdueTime?: pulumi.Input<string>;
     /**
-     * NLB实例所属项目的名称。
+     * Name of the project to which the NLB instance belongs.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * NLB实例的预期回收时间。参数BillingStatus为Normal时，本参数返回为空字符串。
+     * Expected reclamation time of the NLB instance. If the BillingStatus parameter is Normal, this parameter returns an empty string.
      */
     reclaimedTime?: pulumi.Input<string>;
     /**
-     * NLB实例关联的安全组ID列表。
+     * List of security group IDs associated with the NLB instance.
      */
     securityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * NLB 实例的状态。Inactive：已停止。Active：运行中。Creating：创建中。Provisioning：创建中。仅调用API创建NLB实例时存在该状态。Configuring：配置中。Deleting：删除中。CreateFailed：创建失败。
+     * Status of the NLB instance. Inactive: stopped. Active: running. Creating: creating. Provisioning: creating (this status only appears when creating an NLB instance via API). Configuring: configuring. Deleting: deleting. CreateFailed: creation failed.
      */
     status?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.clb.NlbTag>[]>;
     /**
-     * NLB实例的更新时间。
+     * Update time of the NLB instance.
      */
     updatedTime?: pulumi.Input<string>;
     /**
-     * NLB实例所属的VPC ID。
+     * VPC ID to which the NLB instance belongs.
      */
     vpcId?: pulumi.Input<string>;
     zoneMappings?: pulumi.Input<pulumi.Input<inputs.clb.NlbZoneMapping>[]>;
@@ -346,56 +346,56 @@ export interface NlbState {
  */
 export interface NlbArgs {
     /**
-     * NLB实例所属的账号ID。
+     * Account ID to which the NLB instance belongs.
      */
     accountId?: pulumi.Input<string>;
     /**
-     * NLB实例是否开启跨可用区转发能力。true（默认值）：开启。false：关闭。
+     * Whether the NLB instance has cross-availability zone forwarding enabled. true (default): enabled. false: disabled.
      */
     crossZoneEnabled?: pulumi.Input<boolean>;
     /**
-     * NLB实例的描述。必须以字母、数字或中文开头，可包含以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。该参数不传入，则默认为空字符串。
+     * Description of the NLB instance. Must start with a letter, number, or Chinese character and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
      */
     description?: pulumi.Input<string>;
     /**
-     * NLB实例的IP地址类型。ipv4：IPv4版本。dualstack：双栈，即同时支持IPv4版本和IPv6版本。
+     * IP address type of the NLB instance. ipv4: IPv4 version. dualstack: dual stack, supports both IPv4 and IPv6 versions.
      */
     ipAddressVersion?: pulumi.Input<string>;
     /**
-     * IPv4类型的共享带宽包ID。
+     * Shared bandwidth package ID for IPv4 type.
      */
     ipv4BandwidthPackageId?: pulumi.Input<string>;
     /**
-     * NLB实例的IPv4网络类型。internet：公网类型。intranet：私网类型。
+     * IPv4 network type of the NLB instance. internet: public network type. intranet: private network type.
      */
     ipv4NetworkType: pulumi.Input<string>;
     /**
-     * IPv6类型的共享带宽包ID。
+     * Shared bandwidth package ID for IPv6 type.
      */
     ipv6BandwidthPackageId?: pulumi.Input<string>;
     /**
-     * NLB实例的IPv6网络类型。internet：公网类型。intranet：私网类型。
+     * IPv6 network type of the NLB instance. internet: public network type. intranet: private network type.
      */
     ipv6NetworkType?: pulumi.Input<string>;
     /**
-     * NLB实例的名称。
+     * Name of the NLB instance.
      */
     loadBalancerName?: pulumi.Input<string>;
     /**
-     * NLB实例是否开启控制台上修改保护。NonProtection或空：关闭，允许通过控制台修改实例或删除实例。ConsoleProtection：开启，禁止通过控制台修改实例或删除实例。
+     * Whether modification protection is enabled for the NLB instance in the console. NonProtection or empty: disabled, allows modification or deletion of the instance via the console. ConsoleProtection: enabled, prevents modification or deletion of the instance via the console.
      */
     modificationProtectionStatus?: pulumi.Input<string>;
     /**
-     * NLB实例所属项目的名称。
+     * Name of the project to which the NLB instance belongs.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * NLB实例关联的安全组ID列表。
+     * List of security group IDs associated with the NLB instance.
      */
     securityGroupIds: pulumi.Input<pulumi.Input<string>[]>;
     tags?: pulumi.Input<pulumi.Input<inputs.clb.NlbTag>[]>;
     /**
-     * NLB实例所属的VPC ID。
+     * VPC ID to which the NLB instance belongs.
      */
     vpcId: pulumi.Input<string>;
     zoneMappings: pulumi.Input<pulumi.Input<inputs.clb.NlbZoneMapping>[]>;

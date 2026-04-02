@@ -20,14 +20,14 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
     public static final ResolverEndpointArgs Empty = new ResolverEndpointArgs();
 
     /**
-     * 终端节点的 DNS 请求转发方向。OUTBOUND：（默认）出站终端节点，把来自 VPC 内的 DNS 查询请求转发到外部的 DNS 服务器。INBOUND：入站终端节点，把来自外部的 DNS 查询请求转发到解析器。
+     * DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
      * 
      */
     @Import(name="direction")
     private @Nullable Output<String> direction;
 
     /**
-     * @return 终端节点的 DNS 请求转发方向。OUTBOUND：（默认）出站终端节点，把来自 VPC 内的 DNS 查询请求转发到外部的 DNS 服务器。INBOUND：入站终端节点，把来自外部的 DNS 查询请求转发到解析器。
+     * @return DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
      * 
      */
     public Optional<Output<String>> direction() {
@@ -35,14 +35,14 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 终端节点类型。IPv4：IPv4 节点。DualStack：双栈节点。
+     * Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
      * 
      */
     @Import(name="endpointType")
     private @Nullable Output<String> endpointType;
 
     /**
-     * @return 终端节点类型。IPv4：IPv4 节点。DualStack：双栈节点。
+     * @return Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
      * 
      */
     public Optional<Output<String>> endpointType() {
@@ -57,14 +57,14 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 终端节点的名称。支持 UTF-8 格式。
+     * Endpoint name. Supports UTF-8 format
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return 终端节点的名称。支持 UTF-8 格式。
+     * @return Endpoint name. Supports UTF-8 format
      * 
      */
     public Output<String> name() {
@@ -72,14 +72,14 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 终端节点所属的项目名称。默认为 default。
+     * Project name to which the endpoint belongs. Default is default
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 终端节点所属的项目名称。默认为 default。
+     * @return Project name to which the endpoint belongs. Default is default
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -94,14 +94,14 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 终端节点所在的 VPC 的 ID。
+     * VPC ID where the endpoint is located
      * 
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
-     * @return 终端节点所在的 VPC 的 ID。
+     * @return VPC ID where the endpoint is located
      * 
      */
     public Output<String> vpcId() {
@@ -109,14 +109,14 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 终端节点所在的 VPC 的地域。
+     * Region of the VPC where the endpoint is located
      * 
      */
     @Import(name="vpcRegion", required=true)
     private Output<String> vpcRegion;
 
     /**
-     * @return 终端节点所在的 VPC 的地域。
+     * @return Region of the VPC where the endpoint is located
      * 
      */
     public Output<String> vpcRegion() {
@@ -155,7 +155,7 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param direction 终端节点的 DNS 请求转发方向。OUTBOUND：（默认）出站终端节点，把来自 VPC 内的 DNS 查询请求转发到外部的 DNS 服务器。INBOUND：入站终端节点，把来自外部的 DNS 查询请求转发到解析器。
+         * @param direction DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
          * 
          * @return builder
          * 
@@ -166,7 +166,7 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param direction 终端节点的 DNS 请求转发方向。OUTBOUND：（默认）出站终端节点，把来自 VPC 内的 DNS 查询请求转发到外部的 DNS 服务器。INBOUND：入站终端节点，把来自外部的 DNS 查询请求转发到解析器。
+         * @param direction DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
          * 
          * @return builder
          * 
@@ -176,7 +176,7 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param endpointType 终端节点类型。IPv4：IPv4 节点。DualStack：双栈节点。
+         * @param endpointType Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
          * 
          * @return builder
          * 
@@ -187,7 +187,7 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param endpointType 终端节点类型。IPv4：IPv4 节点。DualStack：双栈节点。
+         * @param endpointType Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param name 终端节点的名称。支持 UTF-8 格式。
+         * @param name Endpoint name. Supports UTF-8 format
          * 
          * @return builder
          * 
@@ -221,7 +221,7 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param name 终端节点的名称。支持 UTF-8 格式。
+         * @param name Endpoint name. Supports UTF-8 format
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param projectName 终端节点所属的项目名称。默认为 default。
+         * @param projectName Project name to which the endpoint belongs. Default is default
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param projectName 终端节点所属的项目名称。默认为 default。
+         * @param projectName Project name to which the endpoint belongs. Default is default
          * 
          * @return builder
          * 
@@ -265,7 +265,7 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param vpcId 终端节点所在的 VPC 的 ID。
+         * @param vpcId VPC ID where the endpoint is located
          * 
          * @return builder
          * 
@@ -276,7 +276,7 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param vpcId 终端节点所在的 VPC 的 ID。
+         * @param vpcId VPC ID where the endpoint is located
          * 
          * @return builder
          * 
@@ -286,7 +286,7 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param vpcRegion 终端节点所在的 VPC 的地域。
+         * @param vpcRegion Region of the VPC where the endpoint is located
          * 
          * @return builder
          * 
@@ -297,7 +297,7 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param vpcRegion 终端节点所在的 VPC 的地域。
+         * @param vpcRegion Region of the VPC where the endpoint is located
          * 
          * @return builder
          * 

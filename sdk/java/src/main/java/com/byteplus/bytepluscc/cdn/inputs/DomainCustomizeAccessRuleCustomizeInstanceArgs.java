@@ -16,14 +16,14 @@ public final class DomainCustomizeAccessRuleCustomizeInstanceArgs extends com.pu
     public static final DomainCustomizeAccessRuleCustomizeInstanceArgs Empty = new DomainCustomizeAccessRuleCustomizeInstanceArgs();
 
     /**
-     * 表示列表中一条规则的配置。
+     * Describes the configuration for a rule in the list.
      * 
      */
     @Import(name="customizeRule")
     private @Nullable Output<DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleArgs> customizeRule;
 
     /**
-     * @return 表示列表中一条规则的配置。
+     * @return Describes the configuration for a rule in the list.
      * 
      */
     public Optional<Output<DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleArgs>> customizeRule() {
@@ -55,7 +55,7 @@ public final class DomainCustomizeAccessRuleCustomizeInstanceArgs extends com.pu
         }
 
         /**
-         * @param customizeRule 表示列表中一条规则的配置。
+         * @param customizeRule Describes the configuration for a rule in the list.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class DomainCustomizeAccessRuleCustomizeInstanceArgs extends com.pu
         }
 
         /**
-         * @param customizeRule 表示列表中一条规则的配置。
+         * @param customizeRule Describes the configuration for a rule in the list.
          * 
          * @return builder
          * 

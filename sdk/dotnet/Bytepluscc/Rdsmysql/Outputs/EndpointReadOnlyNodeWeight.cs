@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Outputs
     public sealed class EndpointReadOnlyNodeWeight
     {
         /// <summary>
-        /// 只读节点需要传入 NodeId，主节点无需传入。
+        /// NodeId is required for read-only nodes; not required for primary nodes.
         /// </summary>
         public readonly string? NodeId;
         /// <summary>
-        /// 节点类型。Primary：主节点。ReadOnly：只读节点。
+        /// Node type. Primary: primary node. ReadOnly: read-only node.
         /// </summary>
         public readonly string? NodeType;
         /// <summary>
-        /// 节点的读权重，以 100 递增，最大值为 10000。说明权重不可全部设置为 0。
+        /// Node read weight increases in increments of 100, up to a maximum of 10,000. Note: Not all weights can be set to 0.
         /// </summary>
         public readonly int? Weight;
 

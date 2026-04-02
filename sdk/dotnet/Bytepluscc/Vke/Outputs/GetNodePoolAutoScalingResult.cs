@@ -15,31 +15,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class GetNodePoolAutoScalingResult
     {
         /// <summary>
-        /// 配置节点池的期望节点数。
+        /// Configure the expected number of nodes in the node pool
         /// </summary>
         public readonly int DesiredReplicas;
         /// <summary>
-        /// 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+        /// Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
         /// </summary>
         public readonly bool Enabled;
         /// <summary>
-        /// 配置节点池的最大节点数。
+        /// Configure the maximum number of nodes in the node pool
         /// </summary>
         public readonly int MaxReplicas;
         /// <summary>
-        /// 配置节点池的最小节点数。
+        /// Minimum number of nodes configured for the node pool
         /// </summary>
         public readonly int MinReplicas;
         /// <summary>
-        /// 优先级。
+        /// Priority
         /// </summary>
         public readonly int Priority;
         /// <summary>
-        /// 伸缩组ID。
+        /// Scaling group ID
         /// </summary>
         public readonly string ScalingGroupId;
         /// <summary>
-        /// 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+        /// Multi-subnet scheduling strategy for the node pool. Parameter values: ZoneBalance: availability zone balancing strategy. Priority: subnet priority strategy.
         /// </summary>
         public readonly string SubnetPolicy;
 

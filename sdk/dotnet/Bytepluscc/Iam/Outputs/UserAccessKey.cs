@@ -15,35 +15,35 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam.Outputs
     public sealed class UserAccessKey
     {
         /// <summary>
-        /// 访问密钥ID。
+        /// Access key ID.
         /// </summary>
         public readonly string? AccessKeyId;
         /// <summary>
-        /// 访问密钥创建时间。
+        /// Access key creation time.
         /// </summary>
         public readonly string? CreateDate;
         /// <summary>
-        /// 最近一次使用的服务区域。
+        /// Most recently used service region.
         /// </summary>
         public readonly string? Region;
         /// <summary>
-        /// 访问密钥最近一次使用时间。
+        /// Last used time of the access key.
         /// </summary>
         public readonly string? RequestTime;
         /// <summary>
-        /// 最近一次使用的服务名称。
+        /// Name of the most recently used service.
         /// </summary>
         public readonly string? Service;
         /// <summary>
-        /// 访问密钥状态。Active代表启用，Inactive代表禁用。
+        /// Access key status. 'Active' means enabled, 'Inactive' means disabled.
         /// </summary>
         public readonly string? Status;
         /// <summary>
-        /// 访问密钥更新时间。
+        /// Access key update time.
         /// </summary>
         public readonly string? UpdateDate;
         /// <summary>
-        /// 访问密钥Secret。
+        /// Access key Secret.
         /// </summary>
         public readonly string? UserName;
 

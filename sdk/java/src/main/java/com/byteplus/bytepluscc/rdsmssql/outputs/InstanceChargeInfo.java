@@ -14,110 +14,110 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceChargeInfo {
     /**
-     * @return 预付费场景下是否自动续费。true：自动续费（默认）。false：不自动续费。
+     * @return Auto-renewal for prepaid scenarios. true: auto-renew (default). false: do not auto-renew.
      * 
      */
     private @Nullable Boolean autoRenew;
     /**
-     * @return 计费到期时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * @return Billing expiration time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
      * 
      */
     private @Nullable String chargeEndTime;
     /**
-     * @return 计费开始时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * @return Billing start time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
      * 
      */
     private @Nullable String chargeStartTime;
     /**
-     * @return 付费状态。取值：Normal：表示实例正常。Overdue：表示实例欠费。Unpaid：表示实例等待支付。
+     * @return Payment status. Possible values: Normal: instance is normal. Overdue: instance is overdue. Unpaid: instance is awaiting payment.
      * 
      */
     private @Nullable String chargeStatus;
     /**
-     * @return 付费类型。取值：PostPaid：表示按量付费。PrePaid：表示包年包月。
+     * @return Billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription.
      * 
      */
     private @Nullable String chargeType;
     /**
-     * @return 欠费关停时预计释放时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * @return Estimated release time when service is suspended due to overdue payment. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time).
      * 
      */
     private @Nullable String overdueReclaimTime;
     /**
-     * @return 欠费关停时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * @return Shutdown time due to overdue payment, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
      * 
      */
     private @Nullable String overdueTime;
     /**
-     * @return 预付费场景下的购买时长。默认值：1。
+     * @return Purchase duration for prepaid scenarios. Default: 1 month.
      * 
      */
     private @Nullable Integer period;
     /**
-     * @return 预付费场景下的购买周期。Month：表示包月(默认值)。Year：表示包年。
+     * @return Purchase cycle for prepaid scenarios. Month: monthly subscription (default). Year: annual subscription.
      * 
      */
     private @Nullable String periodUnit;
 
     private InstanceChargeInfo() {}
     /**
-     * @return 预付费场景下是否自动续费。true：自动续费（默认）。false：不自动续费。
+     * @return Auto-renewal for prepaid scenarios. true: auto-renew (default). false: do not auto-renew.
      * 
      */
     public Optional<Boolean> autoRenew() {
         return Optional.ofNullable(this.autoRenew);
     }
     /**
-     * @return 计费到期时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * @return Billing expiration time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
      * 
      */
     public Optional<String> chargeEndTime() {
         return Optional.ofNullable(this.chargeEndTime);
     }
     /**
-     * @return 计费开始时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * @return Billing start time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
      * 
      */
     public Optional<String> chargeStartTime() {
         return Optional.ofNullable(this.chargeStartTime);
     }
     /**
-     * @return 付费状态。取值：Normal：表示实例正常。Overdue：表示实例欠费。Unpaid：表示实例等待支付。
+     * @return Payment status. Possible values: Normal: instance is normal. Overdue: instance is overdue. Unpaid: instance is awaiting payment.
      * 
      */
     public Optional<String> chargeStatus() {
         return Optional.ofNullable(this.chargeStatus);
     }
     /**
-     * @return 付费类型。取值：PostPaid：表示按量付费。PrePaid：表示包年包月。
+     * @return Billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription.
      * 
      */
     public Optional<String> chargeType() {
         return Optional.ofNullable(this.chargeType);
     }
     /**
-     * @return 欠费关停时预计释放时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * @return Estimated release time when service is suspended due to overdue payment. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time).
      * 
      */
     public Optional<String> overdueReclaimTime() {
         return Optional.ofNullable(this.overdueReclaimTime);
     }
     /**
-     * @return 欠费关停时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * @return Shutdown time due to overdue payment, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
      * 
      */
     public Optional<String> overdueTime() {
         return Optional.ofNullable(this.overdueTime);
     }
     /**
-     * @return 预付费场景下的购买时长。默认值：1。
+     * @return Purchase duration for prepaid scenarios. Default: 1 month.
      * 
      */
     public Optional<Integer> period() {
         return Optional.ofNullable(this.period);
     }
     /**
-     * @return 预付费场景下的购买周期。Month：表示包月(默认值)。Year：表示包年。
+     * @return Purchase cycle for prepaid scenarios. Month: monthly subscription (default). Year: annual subscription.
      * 
      */
     public Optional<String> periodUnit() {

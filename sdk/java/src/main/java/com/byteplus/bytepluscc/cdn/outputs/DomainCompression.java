@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 public final class DomainCompression {
     private @Nullable List<DomainCompressionCompressionRule> compressionRules;
     /**
-     * @return 智能压缩配置开关。该参数有以下取值：true：表示启用智能压缩。false：表示禁用智能压缩。
+     * @return Smart compression configuration switch. This parameter has the following values: true: enables smart compression. false: disables smart compression.
      * 
      */
     private @Nullable Boolean switch_;
@@ -25,7 +25,7 @@ public final class DomainCompression {
         return this.compressionRules == null ? List.of() : this.compressionRules;
     }
     /**
-     * @return 智能压缩配置开关。该参数有以下取值：true：表示启用智能压缩。false：表示禁用智能压缩。
+     * @return Smart compression configuration switch. This parameter has the following values: true: enables smart compression. false: disables smart compression.
      * 
      */
     public Optional<Boolean> switch_() {

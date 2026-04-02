@@ -12,122 +12,122 @@ import java.util.Objects;
 @CustomType
 public final class GetDbEndpointAddress {
     /**
-     * @return 可跨地域访问的私网地址。说明无此地址时则不返回该字段。
+     * @return Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
      * 
      */
     private String crossRegionDomain;
     /**
-     * @return 是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+     * @return Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
      * 
      */
     private Boolean dnsVisibility;
     /**
-     * @return 连接域名。
+     * @return Connection domain name
      * 
      */
     private String domain;
     /**
-     * @return 新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+     * @return New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
      * 
      */
     private String domainPrefix;
     /**
-     * @return 私网地址类型。取值：LocalDomain：本地域域名。CrossRegionDomain：可跨地域访问域名。
+     * @return Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
      * 
      */
     private String domainVisibilitySetting;
     /**
-     * @return EIP 的 ID，仅对 Public 地址有效。
+     * @return EIP ID, valid only for Public addresses.
      * 
      */
     private String eipId;
     /**
-     * @return IP 地址。
+     * @return IP address
      * 
      */
     private String ipAddress;
     /**
-     * @return 网络地址类型，取值为：Private：私网连接地址。Public：公网连接地址。Inner：公共服务区地址。
+     * @return Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
      * 
      */
     private String networkType;
     /**
-     * @return 端口号。
+     * @return Port number.
      * 
      */
     private String port;
     /**
-     * @return 子网 ID。
+     * @return Subnet ID
      * 
      */
     private String subnetId;
 
     private GetDbEndpointAddress() {}
     /**
-     * @return 可跨地域访问的私网地址。说明无此地址时则不返回该字段。
+     * @return Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
      * 
      */
     public String crossRegionDomain() {
         return this.crossRegionDomain;
     }
     /**
-     * @return 是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+     * @return Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
      * 
      */
     public Boolean dnsVisibility() {
         return this.dnsVisibility;
     }
     /**
-     * @return 连接域名。
+     * @return Connection domain name
      * 
      */
     public String domain() {
         return this.domain;
     }
     /**
-     * @return 新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+     * @return New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
      * 
      */
     public String domainPrefix() {
         return this.domainPrefix;
     }
     /**
-     * @return 私网地址类型。取值：LocalDomain：本地域域名。CrossRegionDomain：可跨地域访问域名。
+     * @return Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
      * 
      */
     public String domainVisibilitySetting() {
         return this.domainVisibilitySetting;
     }
     /**
-     * @return EIP 的 ID，仅对 Public 地址有效。
+     * @return EIP ID, valid only for Public addresses.
      * 
      */
     public String eipId() {
         return this.eipId;
     }
     /**
-     * @return IP 地址。
+     * @return IP address
      * 
      */
     public String ipAddress() {
         return this.ipAddress;
     }
     /**
-     * @return 网络地址类型，取值为：Private：私网连接地址。Public：公网连接地址。Inner：公共服务区地址。
+     * @return Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
      * 
      */
     public String networkType() {
         return this.networkType;
     }
     /**
-     * @return 端口号。
+     * @return Port number.
      * 
      */
     public String port() {
         return this.port;
     }
     /**
-     * @return 子网 ID。
+     * @return Subnet ID
      * 
      */
     public String subnetId() {

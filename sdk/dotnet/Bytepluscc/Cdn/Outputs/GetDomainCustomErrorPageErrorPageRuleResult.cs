@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class GetDomainCustomErrorPageErrorPageRuleResult
     {
         /// <summary>
-        /// 表示规则的相关配置。
+        /// Indicates the relevant configuration for the rule.
         /// </summary>
         public readonly Outputs.GetDomainCustomErrorPageErrorPageRuleErrorPageActionResult ErrorPageAction;
 

@@ -12,62 +12,62 @@ import java.util.Objects;
 @CustomType
 public final class GetClbAccessLog {
     /**
-     * @return 存储七层访问日志的对象存储桶的名称。
+     * @return Name of the object storage bucket for storing Layer 7 access logs
      * 
      */
     private String bucketName;
     /**
-     * @return 日志投递类型。取值如下：tos（默认值）: 将日志投递至对象存储服务TOS。tls：将日志投递至日志服务TLS。
+     * @return Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
      * 
      */
     private String deliveryType;
     /**
-     * @return 是否开启访问日志（七层）投递至对象存储TOS的功能。
+     * @return Enable access log (Layer 7) delivery to object storage TOS
      * 
      */
     private Boolean enabled;
     /**
-     * @return 日志项目。
+     * @return Log project
      * 
      */
     private String tlsProjectId;
     /**
-     * @return 日志主题。
+     * @return Log topic
      * 
      */
     private String tlsTopicId;
 
     private GetClbAccessLog() {}
     /**
-     * @return 存储七层访问日志的对象存储桶的名称。
+     * @return Name of the object storage bucket for storing Layer 7 access logs
      * 
      */
     public String bucketName() {
         return this.bucketName;
     }
     /**
-     * @return 日志投递类型。取值如下：tos（默认值）: 将日志投递至对象存储服务TOS。tls：将日志投递至日志服务TLS。
+     * @return Log delivery type. Available values: tos (default): Deliver logs to object storage service TOS. tls: Deliver logs to log service TLS
      * 
      */
     public String deliveryType() {
         return this.deliveryType;
     }
     /**
-     * @return 是否开启访问日志（七层）投递至对象存储TOS的功能。
+     * @return Enable access log (Layer 7) delivery to object storage TOS
      * 
      */
     public Boolean enabled() {
         return this.enabled;
     }
     /**
-     * @return 日志项目。
+     * @return Log project
      * 
      */
     public String tlsProjectId() {
         return this.tlsProjectId;
     }
     /**
-     * @return 日志主题。
+     * @return Log topic
      * 
      */
     public String tlsTopicId() {

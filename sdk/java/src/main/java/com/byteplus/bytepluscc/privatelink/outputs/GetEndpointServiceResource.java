@@ -12,38 +12,38 @@ import java.util.Objects;
 @CustomType
 public final class GetEndpointServiceResource {
     /**
-     * @return 终端节点服务ID。
+     * @return Endpoint service ID.
      * 
      */
     private String instanceId;
     /**
-     * @return 待添加到终端节点服务中的服务资源ID。
+     * @return Service resource ID to be added to the endpoint service.
      * 
      */
     private String resourceId;
     /**
-     * @return 负载均衡提供服务的可用区。
+     * @return Availability zone where the load balancer provides service.
      * 
      */
     private List<String> zoneIds;
 
     private GetEndpointServiceResource() {}
     /**
-     * @return 终端节点服务ID。
+     * @return Endpoint service ID.
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return 待添加到终端节点服务中的服务资源ID。
+     * @return Service resource ID to be added to the endpoint service.
      * 
      */
     public String resourceId() {
         return this.resourceId;
     }
     /**
-     * @return 负载均衡提供服务的可用区。
+     * @return Availability zone where the load balancer provides service.
      * 
      */
     public List<String> zoneIds() {

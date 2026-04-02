@@ -17,14 +17,14 @@ public final class LaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs exten
     public static final LaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs Empty = new LaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs();
 
     /**
-     * 网卡关联的安全组ID。
+     * Security group ID associated with the network interface.
      * 
      */
     @Import(name="securityGroupIds")
     private @Nullable Output<List<String>> securityGroupIds;
 
     /**
-     * @return 网卡关联的安全组ID。
+     * @return Security group ID associated with the network interface.
      * 
      */
     public Optional<Output<List<String>>> securityGroupIds() {
@@ -32,14 +32,14 @@ public final class LaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs exten
     }
 
     /**
-     * 实例的私有网络子网ID。
+     * Instance VPC subnet ID
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return 实例的私有网络子网ID。
+     * @return Instance VPC subnet ID
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -72,7 +72,7 @@ public final class LaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs exten
         }
 
         /**
-         * @param securityGroupIds 网卡关联的安全组ID。
+         * @param securityGroupIds Security group ID associated with the network interface.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class LaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs exten
         }
 
         /**
-         * @param securityGroupIds 网卡关联的安全组ID。
+         * @param securityGroupIds Security group ID associated with the network interface.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class LaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs exten
         }
 
         /**
-         * @param securityGroupIds 网卡关联的安全组ID。
+         * @param securityGroupIds Security group ID associated with the network interface.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class LaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs exten
         }
 
         /**
-         * @param subnetId 实例的私有网络子网ID。
+         * @param subnetId Instance VPC subnet ID
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class LaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs exten
         }
 
         /**
-         * @param subnetId 实例的私有网络子网ID。
+         * @param subnetId Instance VPC subnet ID
          * 
          * @return builder
          * 

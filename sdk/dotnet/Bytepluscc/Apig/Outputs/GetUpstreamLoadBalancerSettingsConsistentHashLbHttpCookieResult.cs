@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookieResult
     {
         /// <summary>
-        /// 名称。支持ASCII可打印字符，长度限制为0~256个字符。
+        /// Name. Supports printable ASCII characters. Length: 0~256 characters
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// 路径。支持ASCII可打印字符，长度限制为1~256个字符。
+        /// Path. Supports printable ASCII characters. Length: 1~256 characters
         /// </summary>
         public readonly string Path;
         /// <summary>
-        /// 有效期。单位为秒。
+        /// Validity period, in seconds
         /// </summary>
         public readonly int Ttl;
 

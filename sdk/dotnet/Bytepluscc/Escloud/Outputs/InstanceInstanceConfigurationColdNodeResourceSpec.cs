@@ -15,23 +15,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud.Outputs
     public sealed class InstanceInstanceConfigurationColdNodeResourceSpec
     {
         /// <summary>
-        /// 节点规格的 CPU 资源，单位为核（Core）
+        /// CPU resources for node specification, measured in cores.
         /// </summary>
         public readonly int? Cpu;
         /// <summary>
-        /// 节点规格的描述信息
+        /// Description of node specifications
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// 节点规格的显示名称
+        /// Display name of node specification.
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
-        /// 节点规格的内存容量，单位 GiB
+        /// Memory capacity for node specification, measured in GiB
         /// </summary>
         public readonly int? Memory;
         /// <summary>
-        /// 节点规格。如需了解节点规格类型和详情
+        /// Node specification. For details on node specification types and details.
         /// </summary>
         public readonly string? Name;
 

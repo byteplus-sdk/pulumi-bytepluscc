@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 部署集是在底层硬件维度上控制实例分散部署的策略，可以实现物理层级的安全隔离。您可以通过创建部署集，使实例分散部署在不同的底层硬件上，用于保障业务的底层容灾能力及高可用性。
+// A deployment set is a strategy that controls the distribution of instances at the underlying hardware level, enabling physical-level security isolation. By creating deployment sets, you can distribute instances across different underlying hardware to ensure disaster recovery and high availability for your business.
 //
 // ## Example Usage
 //
@@ -56,25 +56,25 @@ type DeploymentSet struct {
 	pulumi.CustomResourceState
 
 	Capacities DeploymentSetCapacityArrayOutput `pulumi:"capacities"`
-	// 部署集的创建时间。
+	// Deployment set creation time.
 	CreatedAt pulumi.StringOutput `pulumi:"createdAt"`
-	// 部署集组的序号，取值范围：1～7。
+	// Deployment set group index. Value range: 1–7.
 	DeploymentSetGroupNumber pulumi.IntOutput `pulumi:"deploymentSetGroupNumber"`
-	// 部署集ID。
+	// Deployment set ID.
 	DeploymentSetId pulumi.StringOutput `pulumi:"deploymentSetId"`
-	// 部署集名称。不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1～128个字符。
+	// Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
 	DeploymentSetName pulumi.StringOutput `pulumi:"deploymentSetName"`
-	// 部署集的描述信息。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”。长度限制在255个字符以内。
+	// Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period '.', space, underscore '_', hyphen '-', equals '=', English comma ',', Chinese comma '，', and Chinese period '。'. Length limit: within 255 characters.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// 部署粒度，取值：host：物理机。rack：机架。switch：交换机。
+	// Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
 	Granularity pulumi.StringOutput `pulumi:"granularity"`
-	// 部署集组数量。为部署集组高可用策略设置分组数量。取值范围：1～7。默认值：7。
+	// Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
 	GroupCount pulumi.IntOutput `pulumi:"groupCount"`
-	// 部署集内的ECS实例数量。
+	// Number of ECS instances in the deployment set.
 	InstanceAmount pulumi.IntOutput `pulumi:"instanceAmount"`
-	// 部署集内的ECS实例ID列表。
+	// List of ECS instance IDs in the deployment set.
 	InstanceIds pulumi.StringArrayOutput `pulumi:"instanceIds"`
-	// 部署策略，取值：Availability（默认）：高可用策略。AvailabilityGroup：部署集组高可用策略。
+	// Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
 	Strategy pulumi.StringOutput `pulumi:"strategy"`
 }
 
@@ -112,49 +112,49 @@ func GetDeploymentSet(ctx *pulumi.Context,
 // Input properties used for looking up and filtering DeploymentSet resources.
 type deploymentSetState struct {
 	Capacities []DeploymentSetCapacity `pulumi:"capacities"`
-	// 部署集的创建时间。
+	// Deployment set creation time.
 	CreatedAt *string `pulumi:"createdAt"`
-	// 部署集组的序号，取值范围：1～7。
+	// Deployment set group index. Value range: 1–7.
 	DeploymentSetGroupNumber *int `pulumi:"deploymentSetGroupNumber"`
-	// 部署集ID。
+	// Deployment set ID.
 	DeploymentSetId *string `pulumi:"deploymentSetId"`
-	// 部署集名称。不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1～128个字符。
+	// Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
 	DeploymentSetName *string `pulumi:"deploymentSetName"`
-	// 部署集的描述信息。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”。长度限制在255个字符以内。
+	// Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period '.', space, underscore '_', hyphen '-', equals '=', English comma ',', Chinese comma '，', and Chinese period '。'. Length limit: within 255 characters.
 	Description *string `pulumi:"description"`
-	// 部署粒度，取值：host：物理机。rack：机架。switch：交换机。
+	// Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
 	Granularity *string `pulumi:"granularity"`
-	// 部署集组数量。为部署集组高可用策略设置分组数量。取值范围：1～7。默认值：7。
+	// Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
 	GroupCount *int `pulumi:"groupCount"`
-	// 部署集内的ECS实例数量。
+	// Number of ECS instances in the deployment set.
 	InstanceAmount *int `pulumi:"instanceAmount"`
-	// 部署集内的ECS实例ID列表。
+	// List of ECS instance IDs in the deployment set.
 	InstanceIds []string `pulumi:"instanceIds"`
-	// 部署策略，取值：Availability（默认）：高可用策略。AvailabilityGroup：部署集组高可用策略。
+	// Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
 	Strategy *string `pulumi:"strategy"`
 }
 
 type DeploymentSetState struct {
 	Capacities DeploymentSetCapacityArrayInput
-	// 部署集的创建时间。
+	// Deployment set creation time.
 	CreatedAt pulumi.StringPtrInput
-	// 部署集组的序号，取值范围：1～7。
+	// Deployment set group index. Value range: 1–7.
 	DeploymentSetGroupNumber pulumi.IntPtrInput
-	// 部署集ID。
+	// Deployment set ID.
 	DeploymentSetId pulumi.StringPtrInput
-	// 部署集名称。不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1～128个字符。
+	// Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
 	DeploymentSetName pulumi.StringPtrInput
-	// 部署集的描述信息。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”。长度限制在255个字符以内。
+	// Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period '.', space, underscore '_', hyphen '-', equals '=', English comma ',', Chinese comma '，', and Chinese period '。'. Length limit: within 255 characters.
 	Description pulumi.StringPtrInput
-	// 部署粒度，取值：host：物理机。rack：机架。switch：交换机。
+	// Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
 	Granularity pulumi.StringPtrInput
-	// 部署集组数量。为部署集组高可用策略设置分组数量。取值范围：1～7。默认值：7。
+	// Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
 	GroupCount pulumi.IntPtrInput
-	// 部署集内的ECS实例数量。
+	// Number of ECS instances in the deployment set.
 	InstanceAmount pulumi.IntPtrInput
-	// 部署集内的ECS实例ID列表。
+	// List of ECS instance IDs in the deployment set.
 	InstanceIds pulumi.StringArrayInput
-	// 部署策略，取值：Availability（默认）：高可用策略。AvailabilityGroup：部署集组高可用策略。
+	// Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
 	Strategy pulumi.StringPtrInput
 }
 
@@ -163,37 +163,37 @@ func (DeploymentSetState) ElementType() reflect.Type {
 }
 
 type deploymentSetArgs struct {
-	// 部署集组的序号，取值范围：1～7。
+	// Deployment set group index. Value range: 1–7.
 	DeploymentSetGroupNumber *int `pulumi:"deploymentSetGroupNumber"`
-	// 部署集名称。不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1～128个字符。
+	// Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
 	DeploymentSetName string `pulumi:"deploymentSetName"`
-	// 部署集的描述信息。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”。长度限制在255个字符以内。
+	// Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period '.', space, underscore '_', hyphen '-', equals '=', English comma ',', Chinese comma '，', and Chinese period '。'. Length limit: within 255 characters.
 	Description *string `pulumi:"description"`
-	// 部署粒度，取值：host：物理机。rack：机架。switch：交换机。
+	// Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
 	Granularity *string `pulumi:"granularity"`
-	// 部署集组数量。为部署集组高可用策略设置分组数量。取值范围：1～7。默认值：7。
+	// Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
 	GroupCount *int `pulumi:"groupCount"`
-	// 部署集内的ECS实例ID列表。
+	// List of ECS instance IDs in the deployment set.
 	InstanceIds []string `pulumi:"instanceIds"`
-	// 部署策略，取值：Availability（默认）：高可用策略。AvailabilityGroup：部署集组高可用策略。
+	// Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
 	Strategy *string `pulumi:"strategy"`
 }
 
 // The set of arguments for constructing a DeploymentSet resource.
 type DeploymentSetArgs struct {
-	// 部署集组的序号，取值范围：1～7。
+	// Deployment set group index. Value range: 1–7.
 	DeploymentSetGroupNumber pulumi.IntPtrInput
-	// 部署集名称。不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1～128个字符。
+	// Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
 	DeploymentSetName pulumi.StringInput
-	// 部署集的描述信息。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”。长度限制在255个字符以内。
+	// Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period '.', space, underscore '_', hyphen '-', equals '=', English comma ',', Chinese comma '，', and Chinese period '。'. Length limit: within 255 characters.
 	Description pulumi.StringPtrInput
-	// 部署粒度，取值：host：物理机。rack：机架。switch：交换机。
+	// Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
 	Granularity pulumi.StringPtrInput
-	// 部署集组数量。为部署集组高可用策略设置分组数量。取值范围：1～7。默认值：7。
+	// Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
 	GroupCount pulumi.IntPtrInput
-	// 部署集内的ECS实例ID列表。
+	// List of ECS instance IDs in the deployment set.
 	InstanceIds pulumi.StringArrayInput
-	// 部署策略，取值：Availability（默认）：高可用策略。AvailabilityGroup：部署集组高可用策略。
+	// Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
 	Strategy pulumi.StringPtrInput
 }
 
@@ -288,52 +288,52 @@ func (o DeploymentSetOutput) Capacities() DeploymentSetCapacityArrayOutput {
 	return o.ApplyT(func(v *DeploymentSet) DeploymentSetCapacityArrayOutput { return v.Capacities }).(DeploymentSetCapacityArrayOutput)
 }
 
-// 部署集的创建时间。
+// Deployment set creation time.
 func (o DeploymentSetOutput) CreatedAt() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeploymentSet) pulumi.StringOutput { return v.CreatedAt }).(pulumi.StringOutput)
 }
 
-// 部署集组的序号，取值范围：1～7。
+// Deployment set group index. Value range: 1–7.
 func (o DeploymentSetOutput) DeploymentSetGroupNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v *DeploymentSet) pulumi.IntOutput { return v.DeploymentSetGroupNumber }).(pulumi.IntOutput)
 }
 
-// 部署集ID。
+// Deployment set ID.
 func (o DeploymentSetOutput) DeploymentSetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeploymentSet) pulumi.StringOutput { return v.DeploymentSetId }).(pulumi.StringOutput)
 }
 
-// 部署集名称。不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1～128个字符。
+// Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
 func (o DeploymentSetOutput) DeploymentSetName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeploymentSet) pulumi.StringOutput { return v.DeploymentSetName }).(pulumi.StringOutput)
 }
 
-// 部署集的描述信息。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”。长度限制在255个字符以内。
+// Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period '.', space, underscore '_', hyphen '-', equals '=', English comma ',', Chinese comma '，', and Chinese period '。'. Length limit: within 255 characters.
 func (o DeploymentSetOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeploymentSet) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// 部署粒度，取值：host：物理机。rack：机架。switch：交换机。
+// Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
 func (o DeploymentSetOutput) Granularity() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeploymentSet) pulumi.StringOutput { return v.Granularity }).(pulumi.StringOutput)
 }
 
-// 部署集组数量。为部署集组高可用策略设置分组数量。取值范围：1～7。默认值：7。
+// Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
 func (o DeploymentSetOutput) GroupCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *DeploymentSet) pulumi.IntOutput { return v.GroupCount }).(pulumi.IntOutput)
 }
 
-// 部署集内的ECS实例数量。
+// Number of ECS instances in the deployment set.
 func (o DeploymentSetOutput) InstanceAmount() pulumi.IntOutput {
 	return o.ApplyT(func(v *DeploymentSet) pulumi.IntOutput { return v.InstanceAmount }).(pulumi.IntOutput)
 }
 
-// 部署集内的ECS实例ID列表。
+// List of ECS instance IDs in the deployment set.
 func (o DeploymentSetOutput) InstanceIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DeploymentSet) pulumi.StringArrayOutput { return v.InstanceIds }).(pulumi.StringArrayOutput)
 }
 
-// 部署策略，取值：Availability（默认）：高可用策略。AvailabilityGroup：部署集组高可用策略。
+// Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
 func (o DeploymentSetOutput) Strategy() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeploymentSet) pulumi.StringOutput { return v.Strategy }).(pulumi.StringOutput)
 }

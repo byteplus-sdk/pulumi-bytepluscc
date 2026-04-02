@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetRuleRuleActionForwardGroupConfigServerGroupTuple {
     /**
-     * @return 转发到的目的服务器组 ID。
+     * @return Destination server group ID.
      * 
      */
     private String serverGroupId;
     /**
-     * @return 服务器组权重。
+     * @return Server group weight.
      * 
      */
     private Integer weight;
 
     private GetRuleRuleActionForwardGroupConfigServerGroupTuple() {}
     /**
-     * @return 转发到的目的服务器组 ID。
+     * @return Destination server group ID.
      * 
      */
     public String serverGroupId() {
         return this.serverGroupId;
     }
     /**
-     * @return 服务器组权重。
+     * @return Server group weight.
      * 
      */
     public Integer weight() {

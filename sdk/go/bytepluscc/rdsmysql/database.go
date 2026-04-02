@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 数据库
+// Database
 //
 // ## Import
 //
@@ -22,16 +22,16 @@ import (
 type Database struct {
 	pulumi.CustomResourceState
 
-	// 数据库字符集。目前支持的字符集包含：utf8、utf8mb4（默认）、latin1、ascii。
+	// Database character set. Supported character sets: utf8, utf8mb4 (default), latin1, ascii.
 	CharacterSetName   pulumi.StringOutput                  `pulumi:"characterSetName"`
 	DatabasePrivileges DatabaseDatabasePrivilegeArrayOutput `pulumi:"databasePrivileges"`
-	// 数据库的描述信息，长度不超过 256 个字符。该字段可选，若不设置该字段，或设置了该字段但描述信息长度为 0 ，则描述信息为空。
+	// Database description, up to 256 characters. This field is optional. If not set, or if set with a description length of 0, the description will be empty.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// 数据库实例 ID。
+	// Database instance ID.
 	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
-	// 数据库名称。命名规则如下：名称唯一。长度为 2~64 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）或中划线（-）组成。不能使用某些预留字，包括 root、admin 等。
+	// Database name. Naming rules: must be unique; length must be 2–64 characters; must start with a letter and end with a letter or number; can contain letters, numbers, underscores (_), or hyphens (-); certain reserved words, such as root and admin, cannot be used.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// 数据库状态。取值为：Unavailable：不可用。Available：可用。
+	// Database status. Values: Unavailable (not available), Available (available).
 	Status pulumi.StringOutput `pulumi:"status"`
 }
 
@@ -71,30 +71,30 @@ func GetDatabase(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Database resources.
 type databaseState struct {
-	// 数据库字符集。目前支持的字符集包含：utf8、utf8mb4（默认）、latin1、ascii。
+	// Database character set. Supported character sets: utf8, utf8mb4 (default), latin1, ascii.
 	CharacterSetName   *string                     `pulumi:"characterSetName"`
 	DatabasePrivileges []DatabaseDatabasePrivilege `pulumi:"databasePrivileges"`
-	// 数据库的描述信息，长度不超过 256 个字符。该字段可选，若不设置该字段，或设置了该字段但描述信息长度为 0 ，则描述信息为空。
+	// Database description, up to 256 characters. This field is optional. If not set, or if set with a description length of 0, the description will be empty.
 	Description *string `pulumi:"description"`
-	// 数据库实例 ID。
+	// Database instance ID.
 	InstanceId *string `pulumi:"instanceId"`
-	// 数据库名称。命名规则如下：名称唯一。长度为 2~64 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）或中划线（-）组成。不能使用某些预留字，包括 root、admin 等。
+	// Database name. Naming rules: must be unique; length must be 2–64 characters; must start with a letter and end with a letter or number; can contain letters, numbers, underscores (_), or hyphens (-); certain reserved words, such as root and admin, cannot be used.
 	Name *string `pulumi:"name"`
-	// 数据库状态。取值为：Unavailable：不可用。Available：可用。
+	// Database status. Values: Unavailable (not available), Available (available).
 	Status *string `pulumi:"status"`
 }
 
 type DatabaseState struct {
-	// 数据库字符集。目前支持的字符集包含：utf8、utf8mb4（默认）、latin1、ascii。
+	// Database character set. Supported character sets: utf8, utf8mb4 (default), latin1, ascii.
 	CharacterSetName   pulumi.StringPtrInput
 	DatabasePrivileges DatabaseDatabasePrivilegeArrayInput
-	// 数据库的描述信息，长度不超过 256 个字符。该字段可选，若不设置该字段，或设置了该字段但描述信息长度为 0 ，则描述信息为空。
+	// Database description, up to 256 characters. This field is optional. If not set, or if set with a description length of 0, the description will be empty.
 	Description pulumi.StringPtrInput
-	// 数据库实例 ID。
+	// Database instance ID.
 	InstanceId pulumi.StringPtrInput
-	// 数据库名称。命名规则如下：名称唯一。长度为 2~64 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）或中划线（-）组成。不能使用某些预留字，包括 root、admin 等。
+	// Database name. Naming rules: must be unique; length must be 2–64 characters; must start with a letter and end with a letter or number; can contain letters, numbers, underscores (_), or hyphens (-); certain reserved words, such as root and admin, cannot be used.
 	Name pulumi.StringPtrInput
-	// 数据库状态。取值为：Unavailable：不可用。Available：可用。
+	// Database status. Values: Unavailable (not available), Available (available).
 	Status pulumi.StringPtrInput
 }
 
@@ -103,27 +103,27 @@ func (DatabaseState) ElementType() reflect.Type {
 }
 
 type databaseArgs struct {
-	// 数据库字符集。目前支持的字符集包含：utf8、utf8mb4（默认）、latin1、ascii。
+	// Database character set. Supported character sets: utf8, utf8mb4 (default), latin1, ascii.
 	CharacterSetName   *string                     `pulumi:"characterSetName"`
 	DatabasePrivileges []DatabaseDatabasePrivilege `pulumi:"databasePrivileges"`
-	// 数据库的描述信息，长度不超过 256 个字符。该字段可选，若不设置该字段，或设置了该字段但描述信息长度为 0 ，则描述信息为空。
+	// Database description, up to 256 characters. This field is optional. If not set, or if set with a description length of 0, the description will be empty.
 	Description *string `pulumi:"description"`
-	// 数据库实例 ID。
+	// Database instance ID.
 	InstanceId string `pulumi:"instanceId"`
-	// 数据库名称。命名规则如下：名称唯一。长度为 2~64 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）或中划线（-）组成。不能使用某些预留字，包括 root、admin 等。
+	// Database name. Naming rules: must be unique; length must be 2–64 characters; must start with a letter and end with a letter or number; can contain letters, numbers, underscores (_), or hyphens (-); certain reserved words, such as root and admin, cannot be used.
 	Name string `pulumi:"name"`
 }
 
 // The set of arguments for constructing a Database resource.
 type DatabaseArgs struct {
-	// 数据库字符集。目前支持的字符集包含：utf8、utf8mb4（默认）、latin1、ascii。
+	// Database character set. Supported character sets: utf8, utf8mb4 (default), latin1, ascii.
 	CharacterSetName   pulumi.StringPtrInput
 	DatabasePrivileges DatabaseDatabasePrivilegeArrayInput
-	// 数据库的描述信息，长度不超过 256 个字符。该字段可选，若不设置该字段，或设置了该字段但描述信息长度为 0 ，则描述信息为空。
+	// Database description, up to 256 characters. This field is optional. If not set, or if set with a description length of 0, the description will be empty.
 	Description pulumi.StringPtrInput
-	// 数据库实例 ID。
+	// Database instance ID.
 	InstanceId pulumi.StringInput
-	// 数据库名称。命名规则如下：名称唯一。长度为 2~64 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）或中划线（-）组成。不能使用某些预留字，包括 root、admin 等。
+	// Database name. Naming rules: must be unique; length must be 2–64 characters; must start with a letter and end with a letter or number; can contain letters, numbers, underscores (_), or hyphens (-); certain reserved words, such as root and admin, cannot be used.
 	Name pulumi.StringInput
 }
 
@@ -214,7 +214,7 @@ func (o DatabaseOutput) ToDatabaseOutputWithContext(ctx context.Context) Databas
 	return o
 }
 
-// 数据库字符集。目前支持的字符集包含：utf8、utf8mb4（默认）、latin1、ascii。
+// Database character set. Supported character sets: utf8, utf8mb4 (default), latin1, ascii.
 func (o DatabaseOutput) CharacterSetName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.CharacterSetName }).(pulumi.StringOutput)
 }
@@ -223,22 +223,22 @@ func (o DatabaseOutput) DatabasePrivileges() DatabaseDatabasePrivilegeArrayOutpu
 	return o.ApplyT(func(v *Database) DatabaseDatabasePrivilegeArrayOutput { return v.DatabasePrivileges }).(DatabaseDatabasePrivilegeArrayOutput)
 }
 
-// 数据库的描述信息，长度不超过 256 个字符。该字段可选，若不设置该字段，或设置了该字段但描述信息长度为 0 ，则描述信息为空。
+// Database description, up to 256 characters. This field is optional. If not set, or if set with a description length of 0, the description will be empty.
 func (o DatabaseOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// 数据库实例 ID。
+// Database instance ID.
 func (o DatabaseOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 数据库名称。命名规则如下：名称唯一。长度为 2~64 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）或中划线（-）组成。不能使用某些预留字，包括 root、admin 等。
+// Database name. Naming rules: must be unique; length must be 2–64 characters; must start with a letter and end with a letter or number; can contain letters, numbers, underscores (_), or hyphens (-); certain reserved words, such as root and admin, cannot be used.
 func (o DatabaseOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// 数据库状态。取值为：Unavailable：不可用。Available：可用。
+// Database status. Values: Unavailable (not available), Available (available).
 func (o DatabaseOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }

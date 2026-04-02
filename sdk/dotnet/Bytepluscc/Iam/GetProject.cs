@@ -65,23 +65,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
     public sealed class GetProjectResult
     {
         /// <summary>
-        /// 账号ID
+        /// Account ID
         /// </summary>
         public readonly int AccountId;
         /// <summary>
-        /// 创建时间
+        /// Creation Time
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 描述
+        /// Description
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 展示名
+        /// Display Name
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// 是否可见
+        /// Visible
         /// </summary>
         public readonly bool HasPermission;
         /// <summary>
@@ -89,23 +89,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 父项目名称
+        /// Parent Project Name
         /// </summary>
         public readonly string ParentProjectName;
         /// <summary>
-        /// 项目路径
+        /// Project Path
         /// </summary>
         public readonly string Path;
         /// <summary>
-        /// 项目名称
+        /// Project Name
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// 启用状态
+        /// Enabled Status
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// 更新时间
+        /// Update Time
         /// </summary>
         public readonly string UpdatedTime;
 

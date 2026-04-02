@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainNegativeCach {
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     private GetDomainNegativeCachCondition condition;
     /**
-     * @return 表示一个列表。该列表的每个元素是一个状态码缓存规则。
+     * @return Represents a list. Each element in the list is a status code cache rule.
      * 
      */
     private GetDomainNegativeCachNegativeCacheRule negativeCacheRule;
 
     private GetDomainNegativeCach() {}
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public GetDomainNegativeCachCondition condition() {
         return this.condition;
     }
     /**
-     * @return 表示一个列表。该列表的每个元素是一个状态码缓存规则。
+     * @return Represents a list. Each element in the list is a status code cache rule.
      * 
      */
     public GetDomainNegativeCachNegativeCacheRule negativeCacheRule() {

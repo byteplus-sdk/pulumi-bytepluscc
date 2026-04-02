@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 文档数据库 MongoDB 版支持多种架构，能够满足业务灵活部署的需求。除副本集实例架构外，文档数据库 MongoDB 版还提供了分片集群架构，以满足海量数据业务场景，同时提供了灾备、备份及恢复、监控等全套解决方案；在互联网（游戏、电商、直播、资讯、社交）、新零售、在线教育、金融、物联网、政企等行业都有广泛的应用。
+ * MongoDB document database supports multiple architectures for flexible business deployment. In addition to replica set instances, MongoDB document database also provides sharded cluster architecture for large-scale data scenarios, along with disaster recovery, backup and restore, monitoring, and a complete solution set. It is widely used in industries such as internet (gaming, e-commerce, live streaming, news, social), new retail, online education, finance, IoT, and government/enterprise.
  *
  * ## Example Usage
  *
@@ -82,161 +82,161 @@ export class Instance extends pulumi.CustomResource {
     }
 
     /**
-     * 白名单 ID 列表。新建实例会被绑定到指定白名单。
+     * Allowlist ID list. New instances are bound to the specified allowlist.
      */
     public readonly allowListIds!: pulumi.Output<string[]>;
     /**
-     * 是否开启自动续费，取值范围如下：false（默认）：不开启自动续费。true：开启自动续费。
+     * Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
      */
     public readonly autoRenew!: pulumi.Output<boolean>;
     /**
-     * 实例计费状态，取值范围如下：Normal：正常。WaitingPaid：等待支付。ChangingPayType：计费变更中。Renewing：续费中。Overdue：已到期。Owing：欠费中。Unsubscribing：退订中。
+     * Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
      */
     public /*out*/ readonly chargeStatus!: pulumi.Output<string>;
     /**
-     * 实例计费类型，取值范围如下：PostPaid（默认）：按量计费（也称后付费）。Prepaid：包年包月（也称预付费）。
+     * Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
      */
     public readonly chargeType!: pulumi.Output<string>;
     /**
-     * 计划关停时间（UTC）。
+     * Scheduled shutdown time (UTC).
      */
     public /*out*/ readonly closedTime!: pulumi.Output<string>;
     /**
-     * 分片集群中 ConfigServer 节点的规格码。默认值为 mongo.config.1c2g。
+     * ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
      */
     public readonly configServerNodeSpec!: pulumi.Output<string>;
     /**
-     * 分片集群中 ConfigServer 的存储空间，单位：GiB。步长为 10，默认值：20。
+     * ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
      */
     public readonly configServerStorageSpaceGb!: pulumi.Output<number>;
     public /*out*/ readonly configServers!: pulumi.Output<outputs.mongodb.InstanceConfigServer[]>;
     /**
-     * ConfigServer 的 ID。
+     * ConfigServer ID
      */
     public /*out*/ readonly configServersId!: pulumi.Output<string>;
     /**
-     * 实例创建时间（UTC）。
+     * Instance creation time (UTC).
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 数据库引擎。取值固定为 MongoDB
+     * Database engine. The value is fixed as MongoDB
      */
     public readonly dbEngine!: pulumi.Output<string>;
     /**
-     * 数据库引擎版本，取值范围如下：MongoDB*4*0（默认）：MongoDB 4.0 版本。MongoDB*4*2：MongoDB 4.2 版本。MongoDB*4*4：MongoDB 4.4 版本。MongoDB*5*0：MongoDB 5.0 版本。MongoDB*6*0：MongoDB 6.0 版本。MongoDB*7*0：MongoDB 7.0 版本。
+     * Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
      */
     public readonly dbEngineVersion!: pulumi.Output<string>;
     /**
-     * 数据库引擎版本的字符串。
+     * Database engine version string
      */
     public /*out*/ readonly dbEngineVersionStr!: pulumi.Output<string>;
     /**
-     * 实例到期时间（UTC）。
+     * Instance expiration time (UTC).
      */
     public /*out*/ readonly expiredTime!: pulumi.Output<string>;
     /**
-     * 需要创建的实例数量。取值为大于等于 1 的正整数，默认值为1。
+     * Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
      */
     public readonly instanceCount!: pulumi.Output<number>;
     /**
-     * 实例 ID。
+     * Instance ID.
      */
     public /*out*/ readonly instanceId!: pulumi.Output<string>;
     /**
-     * 实例名称。名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 2~64 个字符。
+     * Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
      */
     public readonly instanceName!: pulumi.Output<string>;
     /**
-     * 实例状态。创建中：Creating。运行中：Running。白名单维护中：AllowListMaintaining。变更配置中：Scaling。重启中：Restarting。网络维护中：NetworkMaintaining。恢复中：Restoring。升级版本中：Upgrading。不可用：Unavailable。关停中：Closing。删除中：Deleting。已关停：Closed。SSL SSL变更中：SSLUpdating。主节点切换中：SwitchMastering。角色切换中：RoleChanging。迁移中：Migrating。
+     * Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
      */
     public /*out*/ readonly instanceStatus!: pulumi.Output<string>;
     /**
-     * MongoDB 的实例类型，取值范围如下：ReplicaSet（默认）：副本集。ShardedCluster：分片集群 。
+     * MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
      */
     public readonly instanceType!: pulumi.Output<string>;
     public /*out*/ readonly mongos!: pulumi.Output<outputs.mongodb.InstanceMongo[]>;
     /**
-     * Mongos 的 ID。
+     * Mongos ID.
      */
     public /*out*/ readonly mongosId!: pulumi.Output<string>;
     /**
-     * 分片集群中 Mongos 节点的数量。取值范围：2~32。
+     * Number of Mongos nodes in the sharded cluster. Range: 2~32.
      */
     public readonly mongosNodeNumber!: pulumi.Output<number>;
     /**
-     * 分片集群中 Mongos 节点的规格码。
+     * Specification code for Mongos nodes in a sharded cluster.
      */
     public readonly mongosNodeSpec!: pulumi.Output<string>;
     public readonly nodeAvailabilityZones!: pulumi.Output<outputs.mongodb.InstanceNodeAvailabilityZone[]>;
     /**
-     * 节点数量，其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点数量。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示每个 Shard 分片中的节点数量。
+     * Node count. When the instance type is ReplicaSet, this parameter indicates the number of compute nodes in the replica set instance. When the instance type is ShardedCluster, it indicates the number of nodes in each shard.
      */
     public readonly nodeNumber!: pulumi.Output<number>;
     /**
-     * 实例的规格码。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点规格。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示 Shard 节点的规格。
+     * Instance specification code. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this parameter specifies the compute node specification for the replica set instance. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this parameter specifies the specification for Shard nodes.
      */
     public readonly nodeSpec!: pulumi.Output<string>;
     public /*out*/ readonly nodes!: pulumi.Output<outputs.mongodb.InstanceNode[]>;
     /**
-     * 包年包月实例的购买时长，其中：当 PeriodUnit 为 Year 时，Period 取值为 1~3。当 PeriodUnit 为 Month 时，Period 取值为 1~9。
+     * Subscription instance purchase duration. When PeriodUnit is Year, Period can be 1–3. When PeriodUnit is Month, Period can be 1–9.
      */
     public readonly period!: pulumi.Output<number>;
     /**
-     * 指定包年包月实例为包年或者包月类型。取值如下：Year：包年。Month：包月。
+     * Specify whether the subscription instance is yearly or monthly. Options: Year: yearly. Month: monthly.
      */
     public readonly periodUnit!: pulumi.Output<string>;
     /**
-     * 实例私网连接地址的字符串信息。
+     * String information for the instance's private network connection address.
      */
     public /*out*/ readonly privateEndpoint!: pulumi.Output<string>;
     /**
-     * 选择实例所属的项目。若该参数留空，新建实例会默认加入 default 项目。
+     * Select the project for the instance. If left blank, the new instance will be added to the default project.
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 实例的只读节点数量。
+     * Number of read-only nodes in the instance
      */
     public /*out*/ readonly readOnlyNodeNumber!: pulumi.Output<number>;
     /**
-     * 实例的计划回收时间（UTC）。
+     * Scheduled recycle time for the instance (UTC)
      */
     public /*out*/ readonly reclaimTime!: pulumi.Output<string>;
     /**
-     * 分片集群中 Shard 分片的数量。取值范围：2~32。
+     * Number of shards in the sharded cluster. Range: 2–32.
      */
     public readonly shardNumber!: pulumi.Output<number>;
     public /*out*/ readonly shards!: pulumi.Output<outputs.mongodb.InstanceShard[]>;
     /**
-     * 副本集实例的总存储空间，或分片集群中单个 Shard 分片的存储空间，单位：GiB，步长为 10。
+     * Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
      */
     public readonly storageSpaceGb!: pulumi.Output<number>;
     /**
-     * 实例的存储类型。当前仅支持本地 SSD 盘（即 LocalSSD）存储。
+     * Instance storage type. Currently, only local SSD disks (LocalSSD) are supported.
      */
     public /*out*/ readonly storageType!: pulumi.Output<string>;
     /**
-     * 子网 ID。
+     * Subnet ID.
      */
     public readonly subnetId!: pulumi.Output<string>;
     /**
-     * 数据库账号名称。当前仅支持在创建实例时设置超级管理员账号，账号名称固定为 root。
+     * Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
      */
     public readonly superAccountName!: pulumi.Output<string>;
     /**
-     * root 账号的密码。密码需同时满足如下条件：只能为大小写字母、数字及以下特殊字符 _#!@$%^&*()+=-。长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意三种。不允许使用极易被破解的弱密码（如 Admin@123）。
+     * Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!@$%^&*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin@123) are not allowed.
      */
     public readonly superAccountPassword!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.mongodb.InstanceTag[]>;
     /**
-     * 实例的更新时间（UTC）。
+     * Instance update time (UTC).
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
     /**
-     * 私有网络 ID。
+     * Private network ID.
      */
     public readonly vpcId!: pulumi.Output<string>;
     /**
-     * 实例所在可用区的 ID。
+     * Availability zone ID where the instance is located.
      */
     public readonly zoneId!: pulumi.Output<string>;
 
@@ -369,161 +369,161 @@ export class Instance extends pulumi.CustomResource {
  */
 export interface InstanceState {
     /**
-     * 白名单 ID 列表。新建实例会被绑定到指定白名单。
+     * Allowlist ID list. New instances are bound to the specified allowlist.
      */
     allowListIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 是否开启自动续费，取值范围如下：false（默认）：不开启自动续费。true：开启自动续费。
+     * Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
      */
     autoRenew?: pulumi.Input<boolean>;
     /**
-     * 实例计费状态，取值范围如下：Normal：正常。WaitingPaid：等待支付。ChangingPayType：计费变更中。Renewing：续费中。Overdue：已到期。Owing：欠费中。Unsubscribing：退订中。
+     * Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
      */
     chargeStatus?: pulumi.Input<string>;
     /**
-     * 实例计费类型，取值范围如下：PostPaid（默认）：按量计费（也称后付费）。Prepaid：包年包月（也称预付费）。
+     * Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
      */
     chargeType?: pulumi.Input<string>;
     /**
-     * 计划关停时间（UTC）。
+     * Scheduled shutdown time (UTC).
      */
     closedTime?: pulumi.Input<string>;
     /**
-     * 分片集群中 ConfigServer 节点的规格码。默认值为 mongo.config.1c2g。
+     * ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
      */
     configServerNodeSpec?: pulumi.Input<string>;
     /**
-     * 分片集群中 ConfigServer 的存储空间，单位：GiB。步长为 10，默认值：20。
+     * ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
      */
     configServerStorageSpaceGb?: pulumi.Input<number>;
     configServers?: pulumi.Input<pulumi.Input<inputs.mongodb.InstanceConfigServer>[]>;
     /**
-     * ConfigServer 的 ID。
+     * ConfigServer ID
      */
     configServersId?: pulumi.Input<string>;
     /**
-     * 实例创建时间（UTC）。
+     * Instance creation time (UTC).
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 数据库引擎。取值固定为 MongoDB
+     * Database engine. The value is fixed as MongoDB
      */
     dbEngine?: pulumi.Input<string>;
     /**
-     * 数据库引擎版本，取值范围如下：MongoDB*4*0（默认）：MongoDB 4.0 版本。MongoDB*4*2：MongoDB 4.2 版本。MongoDB*4*4：MongoDB 4.4 版本。MongoDB*5*0：MongoDB 5.0 版本。MongoDB*6*0：MongoDB 6.0 版本。MongoDB*7*0：MongoDB 7.0 版本。
+     * Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
      */
     dbEngineVersion?: pulumi.Input<string>;
     /**
-     * 数据库引擎版本的字符串。
+     * Database engine version string
      */
     dbEngineVersionStr?: pulumi.Input<string>;
     /**
-     * 实例到期时间（UTC）。
+     * Instance expiration time (UTC).
      */
     expiredTime?: pulumi.Input<string>;
     /**
-     * 需要创建的实例数量。取值为大于等于 1 的正整数，默认值为1。
+     * Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
      */
     instanceCount?: pulumi.Input<number>;
     /**
-     * 实例 ID。
+     * Instance ID.
      */
     instanceId?: pulumi.Input<string>;
     /**
-     * 实例名称。名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 2~64 个字符。
+     * Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
      */
     instanceName?: pulumi.Input<string>;
     /**
-     * 实例状态。创建中：Creating。运行中：Running。白名单维护中：AllowListMaintaining。变更配置中：Scaling。重启中：Restarting。网络维护中：NetworkMaintaining。恢复中：Restoring。升级版本中：Upgrading。不可用：Unavailable。关停中：Closing。删除中：Deleting。已关停：Closed。SSL SSL变更中：SSLUpdating。主节点切换中：SwitchMastering。角色切换中：RoleChanging。迁移中：Migrating。
+     * Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
      */
     instanceStatus?: pulumi.Input<string>;
     /**
-     * MongoDB 的实例类型，取值范围如下：ReplicaSet（默认）：副本集。ShardedCluster：分片集群 。
+     * MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
      */
     instanceType?: pulumi.Input<string>;
     mongos?: pulumi.Input<pulumi.Input<inputs.mongodb.InstanceMongo>[]>;
     /**
-     * Mongos 的 ID。
+     * Mongos ID.
      */
     mongosId?: pulumi.Input<string>;
     /**
-     * 分片集群中 Mongos 节点的数量。取值范围：2~32。
+     * Number of Mongos nodes in the sharded cluster. Range: 2~32.
      */
     mongosNodeNumber?: pulumi.Input<number>;
     /**
-     * 分片集群中 Mongos 节点的规格码。
+     * Specification code for Mongos nodes in a sharded cluster.
      */
     mongosNodeSpec?: pulumi.Input<string>;
     nodeAvailabilityZones?: pulumi.Input<pulumi.Input<inputs.mongodb.InstanceNodeAvailabilityZone>[]>;
     /**
-     * 节点数量，其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点数量。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示每个 Shard 分片中的节点数量。
+     * Node count. When the instance type is ReplicaSet, this parameter indicates the number of compute nodes in the replica set instance. When the instance type is ShardedCluster, it indicates the number of nodes in each shard.
      */
     nodeNumber?: pulumi.Input<number>;
     /**
-     * 实例的规格码。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点规格。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示 Shard 节点的规格。
+     * Instance specification code. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this parameter specifies the compute node specification for the replica set instance. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this parameter specifies the specification for Shard nodes.
      */
     nodeSpec?: pulumi.Input<string>;
     nodes?: pulumi.Input<pulumi.Input<inputs.mongodb.InstanceNode>[]>;
     /**
-     * 包年包月实例的购买时长，其中：当 PeriodUnit 为 Year 时，Period 取值为 1~3。当 PeriodUnit 为 Month 时，Period 取值为 1~9。
+     * Subscription instance purchase duration. When PeriodUnit is Year, Period can be 1–3. When PeriodUnit is Month, Period can be 1–9.
      */
     period?: pulumi.Input<number>;
     /**
-     * 指定包年包月实例为包年或者包月类型。取值如下：Year：包年。Month：包月。
+     * Specify whether the subscription instance is yearly or monthly. Options: Year: yearly. Month: monthly.
      */
     periodUnit?: pulumi.Input<string>;
     /**
-     * 实例私网连接地址的字符串信息。
+     * String information for the instance's private network connection address.
      */
     privateEndpoint?: pulumi.Input<string>;
     /**
-     * 选择实例所属的项目。若该参数留空，新建实例会默认加入 default 项目。
+     * Select the project for the instance. If left blank, the new instance will be added to the default project.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 实例的只读节点数量。
+     * Number of read-only nodes in the instance
      */
     readOnlyNodeNumber?: pulumi.Input<number>;
     /**
-     * 实例的计划回收时间（UTC）。
+     * Scheduled recycle time for the instance (UTC)
      */
     reclaimTime?: pulumi.Input<string>;
     /**
-     * 分片集群中 Shard 分片的数量。取值范围：2~32。
+     * Number of shards in the sharded cluster. Range: 2–32.
      */
     shardNumber?: pulumi.Input<number>;
     shards?: pulumi.Input<pulumi.Input<inputs.mongodb.InstanceShard>[]>;
     /**
-     * 副本集实例的总存储空间，或分片集群中单个 Shard 分片的存储空间，单位：GiB，步长为 10。
+     * Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
      */
     storageSpaceGb?: pulumi.Input<number>;
     /**
-     * 实例的存储类型。当前仅支持本地 SSD 盘（即 LocalSSD）存储。
+     * Instance storage type. Currently, only local SSD disks (LocalSSD) are supported.
      */
     storageType?: pulumi.Input<string>;
     /**
-     * 子网 ID。
+     * Subnet ID.
      */
     subnetId?: pulumi.Input<string>;
     /**
-     * 数据库账号名称。当前仅支持在创建实例时设置超级管理员账号，账号名称固定为 root。
+     * Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
      */
     superAccountName?: pulumi.Input<string>;
     /**
-     * root 账号的密码。密码需同时满足如下条件：只能为大小写字母、数字及以下特殊字符 _#!@$%^&*()+=-。长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意三种。不允许使用极易被破解的弱密码（如 Admin@123）。
+     * Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!@$%^&*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin@123) are not allowed.
      */
     superAccountPassword?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.mongodb.InstanceTag>[]>;
     /**
-     * 实例的更新时间（UTC）。
+     * Instance update time (UTC).
      */
     updatedTime?: pulumi.Input<string>;
     /**
-     * 私有网络 ID。
+     * Private network ID.
      */
     vpcId?: pulumi.Input<string>;
     /**
-     * 实例所在可用区的 ID。
+     * Availability zone ID where the instance is located.
      */
     zoneId?: pulumi.Input<string>;
 }
@@ -533,101 +533,101 @@ export interface InstanceState {
  */
 export interface InstanceArgs {
     /**
-     * 白名单 ID 列表。新建实例会被绑定到指定白名单。
+     * Allowlist ID list. New instances are bound to the specified allowlist.
      */
     allowListIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 是否开启自动续费，取值范围如下：false（默认）：不开启自动续费。true：开启自动续费。
+     * Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
      */
     autoRenew?: pulumi.Input<boolean>;
     /**
-     * 实例计费类型，取值范围如下：PostPaid（默认）：按量计费（也称后付费）。Prepaid：包年包月（也称预付费）。
+     * Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
      */
     chargeType?: pulumi.Input<string>;
     /**
-     * 分片集群中 ConfigServer 节点的规格码。默认值为 mongo.config.1c2g。
+     * ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
      */
     configServerNodeSpec?: pulumi.Input<string>;
     /**
-     * 分片集群中 ConfigServer 的存储空间，单位：GiB。步长为 10，默认值：20。
+     * ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
      */
     configServerStorageSpaceGb?: pulumi.Input<number>;
     /**
-     * 数据库引擎。取值固定为 MongoDB
+     * Database engine. The value is fixed as MongoDB
      */
     dbEngine?: pulumi.Input<string>;
     /**
-     * 数据库引擎版本，取值范围如下：MongoDB*4*0（默认）：MongoDB 4.0 版本。MongoDB*4*2：MongoDB 4.2 版本。MongoDB*4*4：MongoDB 4.4 版本。MongoDB*5*0：MongoDB 5.0 版本。MongoDB*6*0：MongoDB 6.0 版本。MongoDB*7*0：MongoDB 7.0 版本。
+     * Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
      */
     dbEngineVersion?: pulumi.Input<string>;
     /**
-     * 需要创建的实例数量。取值为大于等于 1 的正整数，默认值为1。
+     * Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
      */
     instanceCount?: pulumi.Input<number>;
     /**
-     * 实例名称。名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 2~64 个字符。
+     * Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
      */
     instanceName?: pulumi.Input<string>;
     /**
-     * MongoDB 的实例类型，取值范围如下：ReplicaSet（默认）：副本集。ShardedCluster：分片集群 。
+     * MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
      */
     instanceType?: pulumi.Input<string>;
     /**
-     * 分片集群中 Mongos 节点的数量。取值范围：2~32。
+     * Number of Mongos nodes in the sharded cluster. Range: 2~32.
      */
     mongosNodeNumber?: pulumi.Input<number>;
     /**
-     * 分片集群中 Mongos 节点的规格码。
+     * Specification code for Mongos nodes in a sharded cluster.
      */
     mongosNodeSpec?: pulumi.Input<string>;
     nodeAvailabilityZones?: pulumi.Input<pulumi.Input<inputs.mongodb.InstanceNodeAvailabilityZone>[]>;
     /**
-     * 节点数量，其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点数量。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示每个 Shard 分片中的节点数量。
+     * Node count. When the instance type is ReplicaSet, this parameter indicates the number of compute nodes in the replica set instance. When the instance type is ShardedCluster, it indicates the number of nodes in each shard.
      */
     nodeNumber?: pulumi.Input<number>;
     /**
-     * 实例的规格码。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点规格。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示 Shard 节点的规格。
+     * Instance specification code. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this parameter specifies the compute node specification for the replica set instance. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this parameter specifies the specification for Shard nodes.
      */
     nodeSpec: pulumi.Input<string>;
     /**
-     * 包年包月实例的购买时长，其中：当 PeriodUnit 为 Year 时，Period 取值为 1~3。当 PeriodUnit 为 Month 时，Period 取值为 1~9。
+     * Subscription instance purchase duration. When PeriodUnit is Year, Period can be 1–3. When PeriodUnit is Month, Period can be 1–9.
      */
     period?: pulumi.Input<number>;
     /**
-     * 指定包年包月实例为包年或者包月类型。取值如下：Year：包年。Month：包月。
+     * Specify whether the subscription instance is yearly or monthly. Options: Year: yearly. Month: monthly.
      */
     periodUnit?: pulumi.Input<string>;
     /**
-     * 选择实例所属的项目。若该参数留空，新建实例会默认加入 default 项目。
+     * Select the project for the instance. If left blank, the new instance will be added to the default project.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 分片集群中 Shard 分片的数量。取值范围：2~32。
+     * Number of shards in the sharded cluster. Range: 2–32.
      */
     shardNumber?: pulumi.Input<number>;
     /**
-     * 副本集实例的总存储空间，或分片集群中单个 Shard 分片的存储空间，单位：GiB，步长为 10。
+     * Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
      */
     storageSpaceGb: pulumi.Input<number>;
     /**
-     * 子网 ID。
+     * Subnet ID.
      */
     subnetId: pulumi.Input<string>;
     /**
-     * 数据库账号名称。当前仅支持在创建实例时设置超级管理员账号，账号名称固定为 root。
+     * Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
      */
     superAccountName?: pulumi.Input<string>;
     /**
-     * root 账号的密码。密码需同时满足如下条件：只能为大小写字母、数字及以下特殊字符 _#!@$%^&*()+=-。长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意三种。不允许使用极易被破解的弱密码（如 Admin@123）。
+     * Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!@$%^&*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin@123) are not allowed.
      */
     superAccountPassword?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.mongodb.InstanceTag>[]>;
     /**
-     * 私有网络 ID。
+     * Private network ID.
      */
     vpcId: pulumi.Input<string>;
     /**
-     * 实例所在可用区的 ID。
+     * Availability zone ID where the instance is located.
      */
     zoneId: pulumi.Input<string>;
 }

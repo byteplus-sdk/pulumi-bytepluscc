@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainOfflineCacheGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示该特性的触发条件，该参数有以下取值：request*error：表示回源请求异常。当回源请求出现异常时，CDN 无法从源站获取文件，并且 CDN 没有获得任何来自源站的响应状态码。error*code：表示 CDN 无法从源站获取文件，并且源站的响应状态码是 5xx。request*error,error*code：表示以上两个条件都包含。
+        /// Indicates the trigger conditions for this feature. The parameter has the following values: request*error: indicates an origin request exception. When an origin request exception occurs, the CDN cannot retrieve files from the origin and does not receive any response status code from the origin. error*code: indicates the CDN cannot retrieve files from the origin, and the origin's response status code is 5xx. request*error,error*code: indicates both conditions are included.
         /// </summary>
         [Input("object")]
         public Input<string>? Object { get; set; }
 
         /// <summary>
-        /// 表示具体的 5xx 响应状态码，范围是 500-599。多个状态码之间使用分号（;）分隔。您也可以输入 5xx，表示任意以数字 5 开头的状态码。当 Object 是 error*code 或者 request*error,error_code 时，该参数才有效。
+        /// Specifies the specific 5xx response status codes, ranging from 500 to 599. Separate multiple status codes with a semicolon (;). You can also enter 5xx to indicate any status code starting with the digit 5. This parameter is valid only when Object is error*code or request*error,error_code.
         /// </summary>
         [Input("statusCode")]
         public Input<string>? StatusCode { get; set; }
 
         /// <summary>
-        /// 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+        /// Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
         /// </summary>
         [Input("switch")]
         public Input<bool>? Switch { get; set; }

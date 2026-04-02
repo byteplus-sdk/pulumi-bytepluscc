@@ -12,38 +12,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DefaultNodePoolNodeConfigSecurityLogin {
     /**
-     * @return Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! {@literal @} # $ % ^ &amp; * _   - + = | { } [ ] : ; &#39; &lt; &gt; , . ? /
+     * @return Root user login password in Base64 encoding. Follow the cloud server password requirements: 8–30 characters, cannot start with / or $6$, must include at least three of the following: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! {@literal @} # $ % ^ &amp; * _   - + = | { } [ ] : ; &#39; &lt; &gt; , . ? /
      * 
      */
     private @Nullable String password;
     /**
-     * @return SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+     * @return SSH key pair name. Please ensure the key pair is already created or hosted in the cloud server
      * 
      */
     private @Nullable String sshKeyPairName;
     /**
-     * @return 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+     * @return Node access login method. Parameter value description: Password: password login. SshKeyPair: SSH key pair login.
      * 
      */
     private @Nullable String type;
 
     private DefaultNodePoolNodeConfigSecurityLogin() {}
     /**
-     * @return Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! {@literal @} # $ % ^ &amp; * _   - + = | { } [ ] : ; &#39; &lt; &gt; , . ? /
+     * @return Root user login password in Base64 encoding. Follow the cloud server password requirements: 8–30 characters, cannot start with / or $6$, must include at least three of the following: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! {@literal @} # $ % ^ &amp; * _   - + = | { } [ ] : ; &#39; &lt; &gt; , . ? /
      * 
      */
     public Optional<String> password() {
         return Optional.ofNullable(this.password);
     }
     /**
-     * @return SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+     * @return SSH key pair name. Please ensure the key pair is already created or hosted in the cloud server
      * 
      */
     public Optional<String> sshKeyPairName() {
         return Optional.ofNullable(this.sshKeyPairName);
     }
     /**
-     * @return 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+     * @return Node access login method. Parameter value description: Password: password login. SshKeyPair: SSH key pair login.
      * 
      */
     public Optional<String> type() {

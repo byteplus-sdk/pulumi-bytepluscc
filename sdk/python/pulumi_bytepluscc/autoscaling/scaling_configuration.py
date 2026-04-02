@@ -45,26 +45,26 @@ class ScalingConfigurationArgs:
                  zone_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a ScalingConfiguration resource.
-        :param pulumi.Input['ScalingConfigurationEipArgs'] eip: 公网IP。
-        :param pulumi.Input[builtins.str] host_name: 实例的主机名。取值：Linux实例允许使用点号分隔字符成多段，每段中允许使用字母、数字或中划线“-”。不能以点号“.”或中划线“-”开头或结尾，且不能连续使用点号“.”或中划线“-”。Linux系统的主机名长度限制为2～63个字符。Windows实例允许使用字母、数字或中划线“-”，不能完全是数字。不能以中划线“-”开头或结尾，且不能连续使用中划线“-”。Windows系统的主机名长度限制在2～15个字符。如不填，则遵循以下规则自动生成：结构：iv  - + 初始主机名，例如iv-3tigy72q3u3vj0******。已创建实例保持原主机名生成逻辑，不随实例重启发生变化。初始主机名生成逻辑：Linux：提取实例IDi-之后的全部字符。Windows：提取实例IDi-之后的后12位字符。
-        :param pulumi.Input[builtins.str] hpc_cluster_id: 实例所属的高性能计算集群的ID。仅当InstanceTypes.N指定为“高性能计算GPU型”时有效。
-        :param pulumi.Input[builtins.str] image_id: 镜像ID，伸缩组自动创建实例时使用的镜像资源。
-        :param pulumi.Input[builtins.str] instance_description: 实例的描述，取值：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0 ~ 255之间。不填默认为空字符串。
-        :param pulumi.Input[builtins.str] instance_name: 实例的名称，取值：以字母或中文开头。只能包含中文、字母、数字、下划线“_”、中划线“-”和点号“.”。长度限制为1～128个字符。
-        :param pulumi.Input[builtins.int] ipv6_address_count: 是否为实例网卡分配IPv6地址。取值：0：不分配IPv6地址。1：分配IPv6地址，系统自动为您分配IPv6网段。
-        :param pulumi.Input[builtins.str] key_pair_name: 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
-        :param pulumi.Input[builtins.str] lifecycle_state: 生命周期状态。取值：Active（活跃）/InActive（非活跃）
-        :param pulumi.Input[builtins.str] password: 使用“密码”方式登录实例时，请设置root登录密码：长度限制在8～30之间，密码只能由大写字母、小写字母、数字和特殊字符组成，且必须包含至少三项，特殊字符可以使用：`~!#$%^&*()_-+= |，不能以“/”和“$6$”开头
-        :param pulumi.Input[builtins.str] project_name: 伸缩配置创建的实例所属项目，默认为空。一个资源只能归属于一个项目。
-               只能包含字母、数字、下划线“_”、点“.”和中划线“-”。
-               长度限制在64个字符以内。
-        :param pulumi.Input[builtins.str] scaling_configuration_name: 伸缩配置的名称，在同一地域下同一伸缩组内伸缩配置名称唯一。取值:只能以中文、字母开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1 ~ 128个字符。暂不支持特殊字符。
-        :param pulumi.Input[builtins.str] scaling_group_id: 伸缩配置所属的伸缩组ID。
-        :param pulumi.Input[builtins.str] security_enhancement_strategy: 是否开启安全加固，取值：Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_ids: 实例主网卡关联的安全组ID。
-        :param pulumi.Input[builtins.str] spot_strategy: 实例的抢占策略。取值：NoSpot（默认）：表示创建正常按量付费实例。SpotAsPriceGo：表示系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：表示需要设置出价上限的抢占式实例。
-        :param pulumi.Input[builtins.str] user_data: 实例自定义数据。设置的自定义数据必须经过Base64编码，且Base64编码前的自定义数据大小不能超过16KB。不填则默认为空。
-        :param pulumi.Input[builtins.str] zone_id: 伸缩配置可用区ID。
+        :param pulumi.Input['ScalingConfigurationEipArgs'] eip: Public IP.
+        :param pulumi.Input[builtins.str] host_name: Instance hostname. Value: Linux instances allow periods to separate segments; each segment can contain letters, digits, or hyphens '-'. Cannot start or end with a period '.' or hyphen '-', and periods or hyphens cannot be used consecutively. Linux hostnames must be 2–63 characters long. Windows instances allow letters, digits, or hyphens '-', but cannot be entirely numeric. Cannot start or end with a hyphen '-', and hyphens cannot be used consecutively. Windows hostnames must be 2–15 characters long. If not specified, the hostname is automatically generated as follows: Structure: iv  - + initial hostname, for example iv-3tigy72q3u3vj0******. Created instances retain the original hostname generation logic and do not change upon instance restart. Initial hostname generation logic: Linux: extracts all characters after instance ID 'i-'. Windows: extracts the last 12 characters after instance ID 'i-'
+        :param pulumi.Input[builtins.str] hpc_cluster_id: ID of the high-performance computing cluster to which the instance belongs. Only valid when InstanceTypes.N is specified as 'High-Performance Computing GPU'.
+        :param pulumi.Input[builtins.str] image_id: Image ID. The image resource used when the scaling group automatically creates an instance
+        :param pulumi.Input[builtins.str] instance_description: Instance description. Value: Cannot start with a digit or hyphen. Only Chinese characters, letters, digits, underscores, and hyphens are allowed. Length must be between 0 and 255 characters. If not specified, defaults to an empty string
+        :param pulumi.Input[builtins.str] instance_name: Instance name. Rules: Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscore "_", hyphen "-", and period ".". Length: 1–128 characters.
+        :param pulumi.Input[builtins.int] ipv6_address_count: Assign an IPv6 address to the instance NIC. Values: 0: Do not assign an IPv6 address. 1: Assign an IPv6 address; the system automatically allocates an IPv6 subnet for you.
+        :param pulumi.Input[builtins.str] key_pair_name: Name of the key pair. If both KeyPairName and Password are set, only KeyPairName takes effect
+        :param pulumi.Input[builtins.str] lifecycle_state: Lifecycle status. Values: Active (active) / InActive (inactive)
+        :param pulumi.Input[builtins.str] password: When logging in to the instance using the 'Password' method, set the root login password: The password must be 8–30 characters long and consist of uppercase letters, lowercase letters, numbers, and special characters. At least three types must be included. Allowed special characters: `~!#$%^&*()_-+= |. The password cannot start with '/' or '$6$'
+        :param pulumi.Input[builtins.str] project_name: The project to which the instance created by the scaling configuration belongs. Default is empty. Each resource can belong to only one project.
+               Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed.
+               Maximum length: 64 characters
+        :param pulumi.Input[builtins.str] scaling_configuration_name: Name of the scaling configuration. The name must be unique within the same scaling group in the same region. Rules: Must start with a Chinese character or letter. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length: 1–128 characters. Special characters are not supported.
+        :param pulumi.Input[builtins.str] scaling_group_id: Scaling group ID to which the scaling configuration belongs
+        :param pulumi.Input[builtins.str] security_enhancement_strategy: Enable security hardening. Options: Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_ids: Security group ID associated with the instance's primary network interface
+        :param pulumi.Input[builtins.str] spot_strategy: Instance preemption policy. Values: NoSpot (default): creates a standard pay-as-you-go instance. SpotAsPriceGo: system automatically bids, creating a preemptible instance that follows the current market price. SpotWithPriceLimit: creates a preemptible instance with a specified bid limit
+        :param pulumi.Input[builtins.str] user_data: Instance custom data. Custom data must be Base64 encoded, and the size before encoding must not exceed 16 KB. If not specified, defaults to empty
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID for the scaling configuration
         """
         if eip is not None:
             pulumi.set(__self__, "eip", eip)
@@ -113,7 +113,7 @@ class ScalingConfigurationArgs:
     @pulumi.getter
     def eip(self) -> Optional[pulumi.Input['ScalingConfigurationEipArgs']]:
         """
-        公网IP。
+        Public IP.
         """
         return pulumi.get(self, "eip")
 
@@ -125,7 +125,7 @@ class ScalingConfigurationArgs:
     @pulumi.getter(name="hostName")
     def host_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的主机名。取值：Linux实例允许使用点号分隔字符成多段，每段中允许使用字母、数字或中划线“-”。不能以点号“.”或中划线“-”开头或结尾，且不能连续使用点号“.”或中划线“-”。Linux系统的主机名长度限制为2～63个字符。Windows实例允许使用字母、数字或中划线“-”，不能完全是数字。不能以中划线“-”开头或结尾，且不能连续使用中划线“-”。Windows系统的主机名长度限制在2～15个字符。如不填，则遵循以下规则自动生成：结构：iv  - + 初始主机名，例如iv-3tigy72q3u3vj0******。已创建实例保持原主机名生成逻辑，不随实例重启发生变化。初始主机名生成逻辑：Linux：提取实例IDi-之后的全部字符。Windows：提取实例IDi-之后的后12位字符。
+        Instance hostname. Value: Linux instances allow periods to separate segments; each segment can contain letters, digits, or hyphens '-'. Cannot start or end with a period '.' or hyphen '-', and periods or hyphens cannot be used consecutively. Linux hostnames must be 2–63 characters long. Windows instances allow letters, digits, or hyphens '-', but cannot be entirely numeric. Cannot start or end with a hyphen '-', and hyphens cannot be used consecutively. Windows hostnames must be 2–15 characters long. If not specified, the hostname is automatically generated as follows: Structure: iv  - + initial hostname, for example iv-3tigy72q3u3vj0******. Created instances retain the original hostname generation logic and do not change upon instance restart. Initial hostname generation logic: Linux: extracts all characters after instance ID 'i-'. Windows: extracts the last 12 characters after instance ID 'i-'
         """
         return pulumi.get(self, "host_name")
 
@@ -137,7 +137,7 @@ class ScalingConfigurationArgs:
     @pulumi.getter(name="hpcClusterId")
     def hpc_cluster_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所属的高性能计算集群的ID。仅当InstanceTypes.N指定为“高性能计算GPU型”时有效。
+        ID of the high-performance computing cluster to which the instance belongs. Only valid when InstanceTypes.N is specified as 'High-Performance Computing GPU'.
         """
         return pulumi.get(self, "hpc_cluster_id")
 
@@ -149,7 +149,7 @@ class ScalingConfigurationArgs:
     @pulumi.getter(name="imageId")
     def image_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像ID，伸缩组自动创建实例时使用的镜像资源。
+        Image ID. The image resource used when the scaling group automatically creates an instance
         """
         return pulumi.get(self, "image_id")
 
@@ -161,7 +161,7 @@ class ScalingConfigurationArgs:
     @pulumi.getter(name="instanceDescription")
     def instance_description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的描述，取值：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0 ~ 255之间。不填默认为空字符串。
+        Instance description. Value: Cannot start with a digit or hyphen. Only Chinese characters, letters, digits, underscores, and hyphens are allowed. Length must be between 0 and 255 characters. If not specified, defaults to an empty string
         """
         return pulumi.get(self, "instance_description")
 
@@ -173,7 +173,7 @@ class ScalingConfigurationArgs:
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的名称，取值：以字母或中文开头。只能包含中文、字母、数字、下划线“_”、中划线“-”和点号“.”。长度限制为1～128个字符。
+        Instance name. Rules: Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscore "_", hyphen "-", and period ".". Length: 1–128 characters.
         """
         return pulumi.get(self, "instance_name")
 
@@ -194,7 +194,7 @@ class ScalingConfigurationArgs:
     @pulumi.getter(name="ipv6AddressCount")
     def ipv6_address_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        是否为实例网卡分配IPv6地址。取值：0：不分配IPv6地址。1：分配IPv6地址，系统自动为您分配IPv6网段。
+        Assign an IPv6 address to the instance NIC. Values: 0: Do not assign an IPv6 address. 1: Assign an IPv6 address; the system automatically allocates an IPv6 subnet for you.
         """
         return pulumi.get(self, "ipv6_address_count")
 
@@ -206,7 +206,7 @@ class ScalingConfigurationArgs:
     @pulumi.getter(name="keyPairName")
     def key_pair_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+        Name of the key pair. If both KeyPairName and Password are set, only KeyPairName takes effect
         """
         return pulumi.get(self, "key_pair_name")
 
@@ -218,7 +218,7 @@ class ScalingConfigurationArgs:
     @pulumi.getter(name="lifecycleState")
     def lifecycle_state(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        生命周期状态。取值：Active（活跃）/InActive（非活跃）
+        Lifecycle status. Values: Active (active) / InActive (inactive)
         """
         return pulumi.get(self, "lifecycle_state")
 
@@ -230,7 +230,7 @@ class ScalingConfigurationArgs:
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        使用“密码”方式登录实例时，请设置root登录密码：长度限制在8～30之间，密码只能由大写字母、小写字母、数字和特殊字符组成，且必须包含至少三项，特殊字符可以使用：`~!#$%^&*()_-+= |，不能以“/”和“$6$”开头
+        When logging in to the instance using the 'Password' method, set the root login password: The password must be 8–30 characters long and consist of uppercase letters, lowercase letters, numbers, and special characters. At least three types must be included. Allowed special characters: `~!#$%^&*()_-+= |. The password cannot start with '/' or '$6$'
         """
         return pulumi.get(self, "password")
 
@@ -242,9 +242,9 @@ class ScalingConfigurationArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        伸缩配置创建的实例所属项目，默认为空。一个资源只能归属于一个项目。
-        只能包含字母、数字、下划线“_”、点“.”和中划线“-”。
-        长度限制在64个字符以内。
+        The project to which the instance created by the scaling configuration belongs. Default is empty. Each resource can belong to only one project.
+        Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed.
+        Maximum length: 64 characters
         """
         return pulumi.get(self, "project_name")
 
@@ -256,7 +256,7 @@ class ScalingConfigurationArgs:
     @pulumi.getter(name="scalingConfigurationName")
     def scaling_configuration_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        伸缩配置的名称，在同一地域下同一伸缩组内伸缩配置名称唯一。取值:只能以中文、字母开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+        Name of the scaling configuration. The name must be unique within the same scaling group in the same region. Rules: Must start with a Chinese character or letter. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length: 1–128 characters. Special characters are not supported.
         """
         return pulumi.get(self, "scaling_configuration_name")
 
@@ -268,7 +268,7 @@ class ScalingConfigurationArgs:
     @pulumi.getter(name="scalingGroupId")
     def scaling_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        伸缩配置所属的伸缩组ID。
+        Scaling group ID to which the scaling configuration belongs
         """
         return pulumi.get(self, "scaling_group_id")
 
@@ -280,7 +280,7 @@ class ScalingConfigurationArgs:
     @pulumi.getter(name="securityEnhancementStrategy")
     def security_enhancement_strategy(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        是否开启安全加固，取值：Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+        Enable security hardening. Options: Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
         """
         return pulumi.get(self, "security_enhancement_strategy")
 
@@ -292,7 +292,7 @@ class ScalingConfigurationArgs:
     @pulumi.getter(name="securityGroupIds")
     def security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        实例主网卡关联的安全组ID。
+        Security group ID associated with the instance's primary network interface
         """
         return pulumi.get(self, "security_group_ids")
 
@@ -304,7 +304,7 @@ class ScalingConfigurationArgs:
     @pulumi.getter(name="spotStrategy")
     def spot_strategy(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的抢占策略。取值：NoSpot（默认）：表示创建正常按量付费实例。SpotAsPriceGo：表示系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：表示需要设置出价上限的抢占式实例。
+        Instance preemption policy. Values: NoSpot (default): creates a standard pay-as-you-go instance. SpotAsPriceGo: system automatically bids, creating a preemptible instance that follows the current market price. SpotWithPriceLimit: creates a preemptible instance with a specified bid limit
         """
         return pulumi.get(self, "spot_strategy")
 
@@ -325,7 +325,7 @@ class ScalingConfigurationArgs:
     @pulumi.getter(name="userData")
     def user_data(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例自定义数据。设置的自定义数据必须经过Base64编码，且Base64编码前的自定义数据大小不能超过16KB。不填则默认为空。
+        Instance custom data. Custom data must be Base64 encoded, and the size before encoding must not exceed 16 KB. If not specified, defaults to empty
         """
         return pulumi.get(self, "user_data")
 
@@ -346,7 +346,7 @@ class ScalingConfigurationArgs:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        伸缩配置可用区ID。
+        Availability zone ID for the scaling configuration
         """
         return pulumi.get(self, "zone_id")
 
@@ -386,31 +386,31 @@ class _ScalingConfigurationState:
                  zone_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering ScalingConfiguration resources.
-        :param pulumi.Input[builtins.str] created_at: 资源创建时间(UTC时间)
-        :param pulumi.Input['ScalingConfigurationEipArgs'] eip: 公网IP。
-        :param pulumi.Input[builtins.str] host_name: 实例的主机名。取值：Linux实例允许使用点号分隔字符成多段，每段中允许使用字母、数字或中划线“-”。不能以点号“.”或中划线“-”开头或结尾，且不能连续使用点号“.”或中划线“-”。Linux系统的主机名长度限制为2～63个字符。Windows实例允许使用字母、数字或中划线“-”，不能完全是数字。不能以中划线“-”开头或结尾，且不能连续使用中划线“-”。Windows系统的主机名长度限制在2～15个字符。如不填，则遵循以下规则自动生成：结构：iv  - + 初始主机名，例如iv-3tigy72q3u3vj0******。已创建实例保持原主机名生成逻辑，不随实例重启发生变化。初始主机名生成逻辑：Linux：提取实例IDi-之后的全部字符。Windows：提取实例IDi-之后的后12位字符。
-        :param pulumi.Input[builtins.str] hpc_cluster_id: 实例所属的高性能计算集群的ID。仅当InstanceTypes.N指定为“高性能计算GPU型”时有效。
-        :param pulumi.Input[builtins.str] image_id: 镜像ID，伸缩组自动创建实例时使用的镜像资源。
-        :param pulumi.Input[builtins.str] instance_charge_type: 实例计费类型。取值：PrePaid（包年包月）/PostPaid（按量付费）
-        :param pulumi.Input[builtins.str] instance_description: 实例的描述，取值：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0 ~ 255之间。不填默认为空字符串。
-        :param pulumi.Input[builtins.str] instance_name: 实例的名称，取值：以字母或中文开头。只能包含中文、字母、数字、下划线“_”、中划线“-”和点号“.”。长度限制为1～128个字符。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] instance_types: 实例的计算规格列表。
-        :param pulumi.Input[builtins.int] ipv6_address_count: 是否为实例网卡分配IPv6地址。取值：0：不分配IPv6地址。1：分配IPv6地址，系统自动为您分配IPv6网段。
-        :param pulumi.Input[builtins.str] key_pair_name: 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
-        :param pulumi.Input[builtins.str] lifecycle_state: 生命周期状态。取值：Active（活跃）/InActive（非活跃）
-        :param pulumi.Input[builtins.str] password: 使用“密码”方式登录实例时，请设置root登录密码：长度限制在8～30之间，密码只能由大写字母、小写字母、数字和特殊字符组成，且必须包含至少三项，特殊字符可以使用：`~!#$%^&*()_-+= |，不能以“/”和“$6$”开头
-        :param pulumi.Input[builtins.str] project_name: 伸缩配置创建的实例所属项目，默认为空。一个资源只能归属于一个项目。
-               只能包含字母、数字、下划线“_”、点“.”和中划线“-”。
-               长度限制在64个字符以内。
-        :param pulumi.Input[builtins.str] scaling_configuration_id: 伸缩配置ID。
-        :param pulumi.Input[builtins.str] scaling_configuration_name: 伸缩配置的名称，在同一地域下同一伸缩组内伸缩配置名称唯一。取值:只能以中文、字母开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1 ~ 128个字符。暂不支持特殊字符。
-        :param pulumi.Input[builtins.str] scaling_group_id: 伸缩配置所属的伸缩组ID。
-        :param pulumi.Input[builtins.str] security_enhancement_strategy: 是否开启安全加固，取值：Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_ids: 实例主网卡关联的安全组ID。
-        :param pulumi.Input[builtins.str] spot_strategy: 实例的抢占策略。取值：NoSpot（默认）：表示创建正常按量付费实例。SpotAsPriceGo：表示系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：表示需要设置出价上限的抢占式实例。
-        :param pulumi.Input[builtins.str] updated_at: 资源更新时间(UTC时间)
-        :param pulumi.Input[builtins.str] user_data: 实例自定义数据。设置的自定义数据必须经过Base64编码，且Base64编码前的自定义数据大小不能超过16KB。不填则默认为空。
-        :param pulumi.Input[builtins.str] zone_id: 伸缩配置可用区ID。
+        :param pulumi.Input[builtins.str] created_at: Resource creation time (UTC)
+        :param pulumi.Input['ScalingConfigurationEipArgs'] eip: Public IP.
+        :param pulumi.Input[builtins.str] host_name: Instance hostname. Value: Linux instances allow periods to separate segments; each segment can contain letters, digits, or hyphens '-'. Cannot start or end with a period '.' or hyphen '-', and periods or hyphens cannot be used consecutively. Linux hostnames must be 2–63 characters long. Windows instances allow letters, digits, or hyphens '-', but cannot be entirely numeric. Cannot start or end with a hyphen '-', and hyphens cannot be used consecutively. Windows hostnames must be 2–15 characters long. If not specified, the hostname is automatically generated as follows: Structure: iv  - + initial hostname, for example iv-3tigy72q3u3vj0******. Created instances retain the original hostname generation logic and do not change upon instance restart. Initial hostname generation logic: Linux: extracts all characters after instance ID 'i-'. Windows: extracts the last 12 characters after instance ID 'i-'
+        :param pulumi.Input[builtins.str] hpc_cluster_id: ID of the high-performance computing cluster to which the instance belongs. Only valid when InstanceTypes.N is specified as 'High-Performance Computing GPU'.
+        :param pulumi.Input[builtins.str] image_id: Image ID. The image resource used when the scaling group automatically creates an instance
+        :param pulumi.Input[builtins.str] instance_charge_type: Instance billing type. Values: PrePaid (subscription) / PostPaid (pay-as-you-go)
+        :param pulumi.Input[builtins.str] instance_description: Instance description. Value: Cannot start with a digit or hyphen. Only Chinese characters, letters, digits, underscores, and hyphens are allowed. Length must be between 0 and 255 characters. If not specified, defaults to an empty string
+        :param pulumi.Input[builtins.str] instance_name: Instance name. Rules: Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscore "_", hyphen "-", and period ".". Length: 1–128 characters.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] instance_types: List of compute specifications for the instance
+        :param pulumi.Input[builtins.int] ipv6_address_count: Assign an IPv6 address to the instance NIC. Values: 0: Do not assign an IPv6 address. 1: Assign an IPv6 address; the system automatically allocates an IPv6 subnet for you.
+        :param pulumi.Input[builtins.str] key_pair_name: Name of the key pair. If both KeyPairName and Password are set, only KeyPairName takes effect
+        :param pulumi.Input[builtins.str] lifecycle_state: Lifecycle status. Values: Active (active) / InActive (inactive)
+        :param pulumi.Input[builtins.str] password: When logging in to the instance using the 'Password' method, set the root login password: The password must be 8–30 characters long and consist of uppercase letters, lowercase letters, numbers, and special characters. At least three types must be included. Allowed special characters: `~!#$%^&*()_-+= |. The password cannot start with '/' or '$6$'
+        :param pulumi.Input[builtins.str] project_name: The project to which the instance created by the scaling configuration belongs. Default is empty. Each resource can belong to only one project.
+               Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed.
+               Maximum length: 64 characters
+        :param pulumi.Input[builtins.str] scaling_configuration_id: Scaling configuration ID
+        :param pulumi.Input[builtins.str] scaling_configuration_name: Name of the scaling configuration. The name must be unique within the same scaling group in the same region. Rules: Must start with a Chinese character or letter. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length: 1–128 characters. Special characters are not supported.
+        :param pulumi.Input[builtins.str] scaling_group_id: Scaling group ID to which the scaling configuration belongs
+        :param pulumi.Input[builtins.str] security_enhancement_strategy: Enable security hardening. Options: Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_ids: Security group ID associated with the instance's primary network interface
+        :param pulumi.Input[builtins.str] spot_strategy: Instance preemption policy. Values: NoSpot (default): creates a standard pay-as-you-go instance. SpotAsPriceGo: system automatically bids, creating a preemptible instance that follows the current market price. SpotWithPriceLimit: creates a preemptible instance with a specified bid limit
+        :param pulumi.Input[builtins.str] updated_at: Resource update time (UTC)
+        :param pulumi.Input[builtins.str] user_data: Instance custom data. Custom data must be Base64 encoded, and the size before encoding must not exceed 16 KB. If not specified, defaults to empty
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID for the scaling configuration
         """
         if created_at is not None:
             pulumi.set(__self__, "created_at", created_at)
@@ -469,7 +469,7 @@ class _ScalingConfigurationState:
     @pulumi.getter(name="createdAt")
     def created_at(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        资源创建时间(UTC时间)
+        Resource creation time (UTC)
         """
         return pulumi.get(self, "created_at")
 
@@ -481,7 +481,7 @@ class _ScalingConfigurationState:
     @pulumi.getter
     def eip(self) -> Optional[pulumi.Input['ScalingConfigurationEipArgs']]:
         """
-        公网IP。
+        Public IP.
         """
         return pulumi.get(self, "eip")
 
@@ -493,7 +493,7 @@ class _ScalingConfigurationState:
     @pulumi.getter(name="hostName")
     def host_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的主机名。取值：Linux实例允许使用点号分隔字符成多段，每段中允许使用字母、数字或中划线“-”。不能以点号“.”或中划线“-”开头或结尾，且不能连续使用点号“.”或中划线“-”。Linux系统的主机名长度限制为2～63个字符。Windows实例允许使用字母、数字或中划线“-”，不能完全是数字。不能以中划线“-”开头或结尾，且不能连续使用中划线“-”。Windows系统的主机名长度限制在2～15个字符。如不填，则遵循以下规则自动生成：结构：iv  - + 初始主机名，例如iv-3tigy72q3u3vj0******。已创建实例保持原主机名生成逻辑，不随实例重启发生变化。初始主机名生成逻辑：Linux：提取实例IDi-之后的全部字符。Windows：提取实例IDi-之后的后12位字符。
+        Instance hostname. Value: Linux instances allow periods to separate segments; each segment can contain letters, digits, or hyphens '-'. Cannot start or end with a period '.' or hyphen '-', and periods or hyphens cannot be used consecutively. Linux hostnames must be 2–63 characters long. Windows instances allow letters, digits, or hyphens '-', but cannot be entirely numeric. Cannot start or end with a hyphen '-', and hyphens cannot be used consecutively. Windows hostnames must be 2–15 characters long. If not specified, the hostname is automatically generated as follows: Structure: iv  - + initial hostname, for example iv-3tigy72q3u3vj0******. Created instances retain the original hostname generation logic and do not change upon instance restart. Initial hostname generation logic: Linux: extracts all characters after instance ID 'i-'. Windows: extracts the last 12 characters after instance ID 'i-'
         """
         return pulumi.get(self, "host_name")
 
@@ -505,7 +505,7 @@ class _ScalingConfigurationState:
     @pulumi.getter(name="hpcClusterId")
     def hpc_cluster_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所属的高性能计算集群的ID。仅当InstanceTypes.N指定为“高性能计算GPU型”时有效。
+        ID of the high-performance computing cluster to which the instance belongs. Only valid when InstanceTypes.N is specified as 'High-Performance Computing GPU'.
         """
         return pulumi.get(self, "hpc_cluster_id")
 
@@ -517,7 +517,7 @@ class _ScalingConfigurationState:
     @pulumi.getter(name="imageId")
     def image_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像ID，伸缩组自动创建实例时使用的镜像资源。
+        Image ID. The image resource used when the scaling group automatically creates an instance
         """
         return pulumi.get(self, "image_id")
 
@@ -529,7 +529,7 @@ class _ScalingConfigurationState:
     @pulumi.getter(name="instanceChargeType")
     def instance_charge_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例计费类型。取值：PrePaid（包年包月）/PostPaid（按量付费）
+        Instance billing type. Values: PrePaid (subscription) / PostPaid (pay-as-you-go)
         """
         return pulumi.get(self, "instance_charge_type")
 
@@ -541,7 +541,7 @@ class _ScalingConfigurationState:
     @pulumi.getter(name="instanceDescription")
     def instance_description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的描述，取值：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0 ~ 255之间。不填默认为空字符串。
+        Instance description. Value: Cannot start with a digit or hyphen. Only Chinese characters, letters, digits, underscores, and hyphens are allowed. Length must be between 0 and 255 characters. If not specified, defaults to an empty string
         """
         return pulumi.get(self, "instance_description")
 
@@ -553,7 +553,7 @@ class _ScalingConfigurationState:
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的名称，取值：以字母或中文开头。只能包含中文、字母、数字、下划线“_”、中划线“-”和点号“.”。长度限制为1～128个字符。
+        Instance name. Rules: Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscore "_", hyphen "-", and period ".". Length: 1–128 characters.
         """
         return pulumi.get(self, "instance_name")
 
@@ -574,7 +574,7 @@ class _ScalingConfigurationState:
     @pulumi.getter(name="instanceTypes")
     def instance_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        实例的计算规格列表。
+        List of compute specifications for the instance
         """
         return pulumi.get(self, "instance_types")
 
@@ -586,7 +586,7 @@ class _ScalingConfigurationState:
     @pulumi.getter(name="ipv6AddressCount")
     def ipv6_address_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        是否为实例网卡分配IPv6地址。取值：0：不分配IPv6地址。1：分配IPv6地址，系统自动为您分配IPv6网段。
+        Assign an IPv6 address to the instance NIC. Values: 0: Do not assign an IPv6 address. 1: Assign an IPv6 address; the system automatically allocates an IPv6 subnet for you.
         """
         return pulumi.get(self, "ipv6_address_count")
 
@@ -598,7 +598,7 @@ class _ScalingConfigurationState:
     @pulumi.getter(name="keyPairName")
     def key_pair_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+        Name of the key pair. If both KeyPairName and Password are set, only KeyPairName takes effect
         """
         return pulumi.get(self, "key_pair_name")
 
@@ -610,7 +610,7 @@ class _ScalingConfigurationState:
     @pulumi.getter(name="lifecycleState")
     def lifecycle_state(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        生命周期状态。取值：Active（活跃）/InActive（非活跃）
+        Lifecycle status. Values: Active (active) / InActive (inactive)
         """
         return pulumi.get(self, "lifecycle_state")
 
@@ -622,7 +622,7 @@ class _ScalingConfigurationState:
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        使用“密码”方式登录实例时，请设置root登录密码：长度限制在8～30之间，密码只能由大写字母、小写字母、数字和特殊字符组成，且必须包含至少三项，特殊字符可以使用：`~!#$%^&*()_-+= |，不能以“/”和“$6$”开头
+        When logging in to the instance using the 'Password' method, set the root login password: The password must be 8–30 characters long and consist of uppercase letters, lowercase letters, numbers, and special characters. At least three types must be included. Allowed special characters: `~!#$%^&*()_-+= |. The password cannot start with '/' or '$6$'
         """
         return pulumi.get(self, "password")
 
@@ -634,9 +634,9 @@ class _ScalingConfigurationState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        伸缩配置创建的实例所属项目，默认为空。一个资源只能归属于一个项目。
-        只能包含字母、数字、下划线“_”、点“.”和中划线“-”。
-        长度限制在64个字符以内。
+        The project to which the instance created by the scaling configuration belongs. Default is empty. Each resource can belong to only one project.
+        Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed.
+        Maximum length: 64 characters
         """
         return pulumi.get(self, "project_name")
 
@@ -648,7 +648,7 @@ class _ScalingConfigurationState:
     @pulumi.getter(name="scalingConfigurationId")
     def scaling_configuration_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        伸缩配置ID。
+        Scaling configuration ID
         """
         return pulumi.get(self, "scaling_configuration_id")
 
@@ -660,7 +660,7 @@ class _ScalingConfigurationState:
     @pulumi.getter(name="scalingConfigurationName")
     def scaling_configuration_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        伸缩配置的名称，在同一地域下同一伸缩组内伸缩配置名称唯一。取值:只能以中文、字母开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+        Name of the scaling configuration. The name must be unique within the same scaling group in the same region. Rules: Must start with a Chinese character or letter. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length: 1–128 characters. Special characters are not supported.
         """
         return pulumi.get(self, "scaling_configuration_name")
 
@@ -672,7 +672,7 @@ class _ScalingConfigurationState:
     @pulumi.getter(name="scalingGroupId")
     def scaling_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        伸缩配置所属的伸缩组ID。
+        Scaling group ID to which the scaling configuration belongs
         """
         return pulumi.get(self, "scaling_group_id")
 
@@ -684,7 +684,7 @@ class _ScalingConfigurationState:
     @pulumi.getter(name="securityEnhancementStrategy")
     def security_enhancement_strategy(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        是否开启安全加固，取值：Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+        Enable security hardening. Options: Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
         """
         return pulumi.get(self, "security_enhancement_strategy")
 
@@ -696,7 +696,7 @@ class _ScalingConfigurationState:
     @pulumi.getter(name="securityGroupIds")
     def security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        实例主网卡关联的安全组ID。
+        Security group ID associated with the instance's primary network interface
         """
         return pulumi.get(self, "security_group_ids")
 
@@ -708,7 +708,7 @@ class _ScalingConfigurationState:
     @pulumi.getter(name="spotStrategy")
     def spot_strategy(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的抢占策略。取值：NoSpot（默认）：表示创建正常按量付费实例。SpotAsPriceGo：表示系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：表示需要设置出价上限的抢占式实例。
+        Instance preemption policy. Values: NoSpot (default): creates a standard pay-as-you-go instance. SpotAsPriceGo: system automatically bids, creating a preemptible instance that follows the current market price. SpotWithPriceLimit: creates a preemptible instance with a specified bid limit
         """
         return pulumi.get(self, "spot_strategy")
 
@@ -729,7 +729,7 @@ class _ScalingConfigurationState:
     @pulumi.getter(name="updatedAt")
     def updated_at(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        资源更新时间(UTC时间)
+        Resource update time (UTC)
         """
         return pulumi.get(self, "updated_at")
 
@@ -741,7 +741,7 @@ class _ScalingConfigurationState:
     @pulumi.getter(name="userData")
     def user_data(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例自定义数据。设置的自定义数据必须经过Base64编码，且Base64编码前的自定义数据大小不能超过16KB。不填则默认为空。
+        Instance custom data. Custom data must be Base64 encoded, and the size before encoding must not exceed 16 KB. If not specified, defaults to empty
         """
         return pulumi.get(self, "user_data")
 
@@ -762,7 +762,7 @@ class _ScalingConfigurationState:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        伸缩配置可用区ID。
+        Availability zone ID for the scaling configuration
         """
         return pulumi.get(self, "zone_id")
 
@@ -800,7 +800,7 @@ class ScalingConfiguration(pulumi.CustomResource):
                  zone_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        用于定义伸缩组中的实例配置，包括计算、内存、网络、存储、安全等，伸缩组扩容时，会按照此处的配置来源创建新实例。
+        Defines the instance configuration in the scaling group, including compute, memory, network, storage, and security. When the scaling group expands, new instances are created based on this configuration source.
 
         ## Import
 
@@ -810,26 +810,26 @@ class ScalingConfiguration(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['ScalingConfigurationEipArgs', 'ScalingConfigurationEipArgsDict']] eip: 公网IP。
-        :param pulumi.Input[builtins.str] host_name: 实例的主机名。取值：Linux实例允许使用点号分隔字符成多段，每段中允许使用字母、数字或中划线“-”。不能以点号“.”或中划线“-”开头或结尾，且不能连续使用点号“.”或中划线“-”。Linux系统的主机名长度限制为2～63个字符。Windows实例允许使用字母、数字或中划线“-”，不能完全是数字。不能以中划线“-”开头或结尾，且不能连续使用中划线“-”。Windows系统的主机名长度限制在2～15个字符。如不填，则遵循以下规则自动生成：结构：iv  - + 初始主机名，例如iv-3tigy72q3u3vj0******。已创建实例保持原主机名生成逻辑，不随实例重启发生变化。初始主机名生成逻辑：Linux：提取实例IDi-之后的全部字符。Windows：提取实例IDi-之后的后12位字符。
-        :param pulumi.Input[builtins.str] hpc_cluster_id: 实例所属的高性能计算集群的ID。仅当InstanceTypes.N指定为“高性能计算GPU型”时有效。
-        :param pulumi.Input[builtins.str] image_id: 镜像ID，伸缩组自动创建实例时使用的镜像资源。
-        :param pulumi.Input[builtins.str] instance_description: 实例的描述，取值：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0 ~ 255之间。不填默认为空字符串。
-        :param pulumi.Input[builtins.str] instance_name: 实例的名称，取值：以字母或中文开头。只能包含中文、字母、数字、下划线“_”、中划线“-”和点号“.”。长度限制为1～128个字符。
-        :param pulumi.Input[builtins.int] ipv6_address_count: 是否为实例网卡分配IPv6地址。取值：0：不分配IPv6地址。1：分配IPv6地址，系统自动为您分配IPv6网段。
-        :param pulumi.Input[builtins.str] key_pair_name: 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
-        :param pulumi.Input[builtins.str] lifecycle_state: 生命周期状态。取值：Active（活跃）/InActive（非活跃）
-        :param pulumi.Input[builtins.str] password: 使用“密码”方式登录实例时，请设置root登录密码：长度限制在8～30之间，密码只能由大写字母、小写字母、数字和特殊字符组成，且必须包含至少三项，特殊字符可以使用：`~!#$%^&*()_-+= |，不能以“/”和“$6$”开头
-        :param pulumi.Input[builtins.str] project_name: 伸缩配置创建的实例所属项目，默认为空。一个资源只能归属于一个项目。
-               只能包含字母、数字、下划线“_”、点“.”和中划线“-”。
-               长度限制在64个字符以内。
-        :param pulumi.Input[builtins.str] scaling_configuration_name: 伸缩配置的名称，在同一地域下同一伸缩组内伸缩配置名称唯一。取值:只能以中文、字母开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1 ~ 128个字符。暂不支持特殊字符。
-        :param pulumi.Input[builtins.str] scaling_group_id: 伸缩配置所属的伸缩组ID。
-        :param pulumi.Input[builtins.str] security_enhancement_strategy: 是否开启安全加固，取值：Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_ids: 实例主网卡关联的安全组ID。
-        :param pulumi.Input[builtins.str] spot_strategy: 实例的抢占策略。取值：NoSpot（默认）：表示创建正常按量付费实例。SpotAsPriceGo：表示系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：表示需要设置出价上限的抢占式实例。
-        :param pulumi.Input[builtins.str] user_data: 实例自定义数据。设置的自定义数据必须经过Base64编码，且Base64编码前的自定义数据大小不能超过16KB。不填则默认为空。
-        :param pulumi.Input[builtins.str] zone_id: 伸缩配置可用区ID。
+        :param pulumi.Input[Union['ScalingConfigurationEipArgs', 'ScalingConfigurationEipArgsDict']] eip: Public IP.
+        :param pulumi.Input[builtins.str] host_name: Instance hostname. Value: Linux instances allow periods to separate segments; each segment can contain letters, digits, or hyphens '-'. Cannot start or end with a period '.' or hyphen '-', and periods or hyphens cannot be used consecutively. Linux hostnames must be 2–63 characters long. Windows instances allow letters, digits, or hyphens '-', but cannot be entirely numeric. Cannot start or end with a hyphen '-', and hyphens cannot be used consecutively. Windows hostnames must be 2–15 characters long. If not specified, the hostname is automatically generated as follows: Structure: iv  - + initial hostname, for example iv-3tigy72q3u3vj0******. Created instances retain the original hostname generation logic and do not change upon instance restart. Initial hostname generation logic: Linux: extracts all characters after instance ID 'i-'. Windows: extracts the last 12 characters after instance ID 'i-'
+        :param pulumi.Input[builtins.str] hpc_cluster_id: ID of the high-performance computing cluster to which the instance belongs. Only valid when InstanceTypes.N is specified as 'High-Performance Computing GPU'.
+        :param pulumi.Input[builtins.str] image_id: Image ID. The image resource used when the scaling group automatically creates an instance
+        :param pulumi.Input[builtins.str] instance_description: Instance description. Value: Cannot start with a digit or hyphen. Only Chinese characters, letters, digits, underscores, and hyphens are allowed. Length must be between 0 and 255 characters. If not specified, defaults to an empty string
+        :param pulumi.Input[builtins.str] instance_name: Instance name. Rules: Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscore "_", hyphen "-", and period ".". Length: 1–128 characters.
+        :param pulumi.Input[builtins.int] ipv6_address_count: Assign an IPv6 address to the instance NIC. Values: 0: Do not assign an IPv6 address. 1: Assign an IPv6 address; the system automatically allocates an IPv6 subnet for you.
+        :param pulumi.Input[builtins.str] key_pair_name: Name of the key pair. If both KeyPairName and Password are set, only KeyPairName takes effect
+        :param pulumi.Input[builtins.str] lifecycle_state: Lifecycle status. Values: Active (active) / InActive (inactive)
+        :param pulumi.Input[builtins.str] password: When logging in to the instance using the 'Password' method, set the root login password: The password must be 8–30 characters long and consist of uppercase letters, lowercase letters, numbers, and special characters. At least three types must be included. Allowed special characters: `~!#$%^&*()_-+= |. The password cannot start with '/' or '$6$'
+        :param pulumi.Input[builtins.str] project_name: The project to which the instance created by the scaling configuration belongs. Default is empty. Each resource can belong to only one project.
+               Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed.
+               Maximum length: 64 characters
+        :param pulumi.Input[builtins.str] scaling_configuration_name: Name of the scaling configuration. The name must be unique within the same scaling group in the same region. Rules: Must start with a Chinese character or letter. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length: 1–128 characters. Special characters are not supported.
+        :param pulumi.Input[builtins.str] scaling_group_id: Scaling group ID to which the scaling configuration belongs
+        :param pulumi.Input[builtins.str] security_enhancement_strategy: Enable security hardening. Options: Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_ids: Security group ID associated with the instance's primary network interface
+        :param pulumi.Input[builtins.str] spot_strategy: Instance preemption policy. Values: NoSpot (default): creates a standard pay-as-you-go instance. SpotAsPriceGo: system automatically bids, creating a preemptible instance that follows the current market price. SpotWithPriceLimit: creates a preemptible instance with a specified bid limit
+        :param pulumi.Input[builtins.str] user_data: Instance custom data. Custom data must be Base64 encoded, and the size before encoding must not exceed 16 KB. If not specified, defaults to empty
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID for the scaling configuration
         """
         ...
     @overload
@@ -838,7 +838,7 @@ class ScalingConfiguration(pulumi.CustomResource):
                  args: Optional[ScalingConfigurationArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        用于定义伸缩组中的实例配置，包括计算、内存、网络、存储、安全等，伸缩组扩容时，会按照此处的配置来源创建新实例。
+        Defines the instance configuration in the scaling group, including compute, memory, network, storage, and security. When the scaling group expands, new instances are created based on this configuration source.
 
         ## Import
 
@@ -960,31 +960,31 @@ class ScalingConfiguration(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] created_at: 资源创建时间(UTC时间)
-        :param pulumi.Input[Union['ScalingConfigurationEipArgs', 'ScalingConfigurationEipArgsDict']] eip: 公网IP。
-        :param pulumi.Input[builtins.str] host_name: 实例的主机名。取值：Linux实例允许使用点号分隔字符成多段，每段中允许使用字母、数字或中划线“-”。不能以点号“.”或中划线“-”开头或结尾，且不能连续使用点号“.”或中划线“-”。Linux系统的主机名长度限制为2～63个字符。Windows实例允许使用字母、数字或中划线“-”，不能完全是数字。不能以中划线“-”开头或结尾，且不能连续使用中划线“-”。Windows系统的主机名长度限制在2～15个字符。如不填，则遵循以下规则自动生成：结构：iv  - + 初始主机名，例如iv-3tigy72q3u3vj0******。已创建实例保持原主机名生成逻辑，不随实例重启发生变化。初始主机名生成逻辑：Linux：提取实例IDi-之后的全部字符。Windows：提取实例IDi-之后的后12位字符。
-        :param pulumi.Input[builtins.str] hpc_cluster_id: 实例所属的高性能计算集群的ID。仅当InstanceTypes.N指定为“高性能计算GPU型”时有效。
-        :param pulumi.Input[builtins.str] image_id: 镜像ID，伸缩组自动创建实例时使用的镜像资源。
-        :param pulumi.Input[builtins.str] instance_charge_type: 实例计费类型。取值：PrePaid（包年包月）/PostPaid（按量付费）
-        :param pulumi.Input[builtins.str] instance_description: 实例的描述，取值：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0 ~ 255之间。不填默认为空字符串。
-        :param pulumi.Input[builtins.str] instance_name: 实例的名称，取值：以字母或中文开头。只能包含中文、字母、数字、下划线“_”、中划线“-”和点号“.”。长度限制为1～128个字符。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] instance_types: 实例的计算规格列表。
-        :param pulumi.Input[builtins.int] ipv6_address_count: 是否为实例网卡分配IPv6地址。取值：0：不分配IPv6地址。1：分配IPv6地址，系统自动为您分配IPv6网段。
-        :param pulumi.Input[builtins.str] key_pair_name: 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
-        :param pulumi.Input[builtins.str] lifecycle_state: 生命周期状态。取值：Active（活跃）/InActive（非活跃）
-        :param pulumi.Input[builtins.str] password: 使用“密码”方式登录实例时，请设置root登录密码：长度限制在8～30之间，密码只能由大写字母、小写字母、数字和特殊字符组成，且必须包含至少三项，特殊字符可以使用：`~!#$%^&*()_-+= |，不能以“/”和“$6$”开头
-        :param pulumi.Input[builtins.str] project_name: 伸缩配置创建的实例所属项目，默认为空。一个资源只能归属于一个项目。
-               只能包含字母、数字、下划线“_”、点“.”和中划线“-”。
-               长度限制在64个字符以内。
-        :param pulumi.Input[builtins.str] scaling_configuration_id: 伸缩配置ID。
-        :param pulumi.Input[builtins.str] scaling_configuration_name: 伸缩配置的名称，在同一地域下同一伸缩组内伸缩配置名称唯一。取值:只能以中文、字母开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1 ~ 128个字符。暂不支持特殊字符。
-        :param pulumi.Input[builtins.str] scaling_group_id: 伸缩配置所属的伸缩组ID。
-        :param pulumi.Input[builtins.str] security_enhancement_strategy: 是否开启安全加固，取值：Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_ids: 实例主网卡关联的安全组ID。
-        :param pulumi.Input[builtins.str] spot_strategy: 实例的抢占策略。取值：NoSpot（默认）：表示创建正常按量付费实例。SpotAsPriceGo：表示系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：表示需要设置出价上限的抢占式实例。
-        :param pulumi.Input[builtins.str] updated_at: 资源更新时间(UTC时间)
-        :param pulumi.Input[builtins.str] user_data: 实例自定义数据。设置的自定义数据必须经过Base64编码，且Base64编码前的自定义数据大小不能超过16KB。不填则默认为空。
-        :param pulumi.Input[builtins.str] zone_id: 伸缩配置可用区ID。
+        :param pulumi.Input[builtins.str] created_at: Resource creation time (UTC)
+        :param pulumi.Input[Union['ScalingConfigurationEipArgs', 'ScalingConfigurationEipArgsDict']] eip: Public IP.
+        :param pulumi.Input[builtins.str] host_name: Instance hostname. Value: Linux instances allow periods to separate segments; each segment can contain letters, digits, or hyphens '-'. Cannot start or end with a period '.' or hyphen '-', and periods or hyphens cannot be used consecutively. Linux hostnames must be 2–63 characters long. Windows instances allow letters, digits, or hyphens '-', but cannot be entirely numeric. Cannot start or end with a hyphen '-', and hyphens cannot be used consecutively. Windows hostnames must be 2–15 characters long. If not specified, the hostname is automatically generated as follows: Structure: iv  - + initial hostname, for example iv-3tigy72q3u3vj0******. Created instances retain the original hostname generation logic and do not change upon instance restart. Initial hostname generation logic: Linux: extracts all characters after instance ID 'i-'. Windows: extracts the last 12 characters after instance ID 'i-'
+        :param pulumi.Input[builtins.str] hpc_cluster_id: ID of the high-performance computing cluster to which the instance belongs. Only valid when InstanceTypes.N is specified as 'High-Performance Computing GPU'.
+        :param pulumi.Input[builtins.str] image_id: Image ID. The image resource used when the scaling group automatically creates an instance
+        :param pulumi.Input[builtins.str] instance_charge_type: Instance billing type. Values: PrePaid (subscription) / PostPaid (pay-as-you-go)
+        :param pulumi.Input[builtins.str] instance_description: Instance description. Value: Cannot start with a digit or hyphen. Only Chinese characters, letters, digits, underscores, and hyphens are allowed. Length must be between 0 and 255 characters. If not specified, defaults to an empty string
+        :param pulumi.Input[builtins.str] instance_name: Instance name. Rules: Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscore "_", hyphen "-", and period ".". Length: 1–128 characters.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] instance_types: List of compute specifications for the instance
+        :param pulumi.Input[builtins.int] ipv6_address_count: Assign an IPv6 address to the instance NIC. Values: 0: Do not assign an IPv6 address. 1: Assign an IPv6 address; the system automatically allocates an IPv6 subnet for you.
+        :param pulumi.Input[builtins.str] key_pair_name: Name of the key pair. If both KeyPairName and Password are set, only KeyPairName takes effect
+        :param pulumi.Input[builtins.str] lifecycle_state: Lifecycle status. Values: Active (active) / InActive (inactive)
+        :param pulumi.Input[builtins.str] password: When logging in to the instance using the 'Password' method, set the root login password: The password must be 8–30 characters long and consist of uppercase letters, lowercase letters, numbers, and special characters. At least three types must be included. Allowed special characters: `~!#$%^&*()_-+= |. The password cannot start with '/' or '$6$'
+        :param pulumi.Input[builtins.str] project_name: The project to which the instance created by the scaling configuration belongs. Default is empty. Each resource can belong to only one project.
+               Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed.
+               Maximum length: 64 characters
+        :param pulumi.Input[builtins.str] scaling_configuration_id: Scaling configuration ID
+        :param pulumi.Input[builtins.str] scaling_configuration_name: Name of the scaling configuration. The name must be unique within the same scaling group in the same region. Rules: Must start with a Chinese character or letter. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length: 1–128 characters. Special characters are not supported.
+        :param pulumi.Input[builtins.str] scaling_group_id: Scaling group ID to which the scaling configuration belongs
+        :param pulumi.Input[builtins.str] security_enhancement_strategy: Enable security hardening. Options: Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_ids: Security group ID associated with the instance's primary network interface
+        :param pulumi.Input[builtins.str] spot_strategy: Instance preemption policy. Values: NoSpot (default): creates a standard pay-as-you-go instance. SpotAsPriceGo: system automatically bids, creating a preemptible instance that follows the current market price. SpotWithPriceLimit: creates a preemptible instance with a specified bid limit
+        :param pulumi.Input[builtins.str] updated_at: Resource update time (UTC)
+        :param pulumi.Input[builtins.str] user_data: Instance custom data. Custom data must be Base64 encoded, and the size before encoding must not exceed 16 KB. If not specified, defaults to empty
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID for the scaling configuration
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1022,7 +1022,7 @@ class ScalingConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="createdAt")
     def created_at(self) -> pulumi.Output[builtins.str]:
         """
-        资源创建时间(UTC时间)
+        Resource creation time (UTC)
         """
         return pulumi.get(self, "created_at")
 
@@ -1030,7 +1030,7 @@ class ScalingConfiguration(pulumi.CustomResource):
     @pulumi.getter
     def eip(self) -> pulumi.Output['outputs.ScalingConfigurationEip']:
         """
-        公网IP。
+        Public IP.
         """
         return pulumi.get(self, "eip")
 
@@ -1038,7 +1038,7 @@ class ScalingConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="hostName")
     def host_name(self) -> pulumi.Output[builtins.str]:
         """
-        实例的主机名。取值：Linux实例允许使用点号分隔字符成多段，每段中允许使用字母、数字或中划线“-”。不能以点号“.”或中划线“-”开头或结尾，且不能连续使用点号“.”或中划线“-”。Linux系统的主机名长度限制为2～63个字符。Windows实例允许使用字母、数字或中划线“-”，不能完全是数字。不能以中划线“-”开头或结尾，且不能连续使用中划线“-”。Windows系统的主机名长度限制在2～15个字符。如不填，则遵循以下规则自动生成：结构：iv  - + 初始主机名，例如iv-3tigy72q3u3vj0******。已创建实例保持原主机名生成逻辑，不随实例重启发生变化。初始主机名生成逻辑：Linux：提取实例IDi-之后的全部字符。Windows：提取实例IDi-之后的后12位字符。
+        Instance hostname. Value: Linux instances allow periods to separate segments; each segment can contain letters, digits, or hyphens '-'. Cannot start or end with a period '.' or hyphen '-', and periods or hyphens cannot be used consecutively. Linux hostnames must be 2–63 characters long. Windows instances allow letters, digits, or hyphens '-', but cannot be entirely numeric. Cannot start or end with a hyphen '-', and hyphens cannot be used consecutively. Windows hostnames must be 2–15 characters long. If not specified, the hostname is automatically generated as follows: Structure: iv  - + initial hostname, for example iv-3tigy72q3u3vj0******. Created instances retain the original hostname generation logic and do not change upon instance restart. Initial hostname generation logic: Linux: extracts all characters after instance ID 'i-'. Windows: extracts the last 12 characters after instance ID 'i-'
         """
         return pulumi.get(self, "host_name")
 
@@ -1046,7 +1046,7 @@ class ScalingConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="hpcClusterId")
     def hpc_cluster_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例所属的高性能计算集群的ID。仅当InstanceTypes.N指定为“高性能计算GPU型”时有效。
+        ID of the high-performance computing cluster to which the instance belongs. Only valid when InstanceTypes.N is specified as 'High-Performance Computing GPU'.
         """
         return pulumi.get(self, "hpc_cluster_id")
 
@@ -1054,7 +1054,7 @@ class ScalingConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="imageId")
     def image_id(self) -> pulumi.Output[builtins.str]:
         """
-        镜像ID，伸缩组自动创建实例时使用的镜像资源。
+        Image ID. The image resource used when the scaling group automatically creates an instance
         """
         return pulumi.get(self, "image_id")
 
@@ -1062,7 +1062,7 @@ class ScalingConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="instanceChargeType")
     def instance_charge_type(self) -> pulumi.Output[builtins.str]:
         """
-        实例计费类型。取值：PrePaid（包年包月）/PostPaid（按量付费）
+        Instance billing type. Values: PrePaid (subscription) / PostPaid (pay-as-you-go)
         """
         return pulumi.get(self, "instance_charge_type")
 
@@ -1070,7 +1070,7 @@ class ScalingConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="instanceDescription")
     def instance_description(self) -> pulumi.Output[builtins.str]:
         """
-        实例的描述，取值：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0 ~ 255之间。不填默认为空字符串。
+        Instance description. Value: Cannot start with a digit or hyphen. Only Chinese characters, letters, digits, underscores, and hyphens are allowed. Length must be between 0 and 255 characters. If not specified, defaults to an empty string
         """
         return pulumi.get(self, "instance_description")
 
@@ -1078,7 +1078,7 @@ class ScalingConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> pulumi.Output[builtins.str]:
         """
-        实例的名称，取值：以字母或中文开头。只能包含中文、字母、数字、下划线“_”、中划线“-”和点号“.”。长度限制为1～128个字符。
+        Instance name. Rules: Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscore "_", hyphen "-", and period ".". Length: 1–128 characters.
         """
         return pulumi.get(self, "instance_name")
 
@@ -1091,7 +1091,7 @@ class ScalingConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="instanceTypes")
     def instance_types(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        实例的计算规格列表。
+        List of compute specifications for the instance
         """
         return pulumi.get(self, "instance_types")
 
@@ -1099,7 +1099,7 @@ class ScalingConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="ipv6AddressCount")
     def ipv6_address_count(self) -> pulumi.Output[builtins.int]:
         """
-        是否为实例网卡分配IPv6地址。取值：0：不分配IPv6地址。1：分配IPv6地址，系统自动为您分配IPv6网段。
+        Assign an IPv6 address to the instance NIC. Values: 0: Do not assign an IPv6 address. 1: Assign an IPv6 address; the system automatically allocates an IPv6 subnet for you.
         """
         return pulumi.get(self, "ipv6_address_count")
 
@@ -1107,7 +1107,7 @@ class ScalingConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="keyPairName")
     def key_pair_name(self) -> pulumi.Output[builtins.str]:
         """
-        密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+        Name of the key pair. If both KeyPairName and Password are set, only KeyPairName takes effect
         """
         return pulumi.get(self, "key_pair_name")
 
@@ -1115,7 +1115,7 @@ class ScalingConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="lifecycleState")
     def lifecycle_state(self) -> pulumi.Output[builtins.str]:
         """
-        生命周期状态。取值：Active（活跃）/InActive（非活跃）
+        Lifecycle status. Values: Active (active) / InActive (inactive)
         """
         return pulumi.get(self, "lifecycle_state")
 
@@ -1123,7 +1123,7 @@ class ScalingConfiguration(pulumi.CustomResource):
     @pulumi.getter
     def password(self) -> pulumi.Output[builtins.str]:
         """
-        使用“密码”方式登录实例时，请设置root登录密码：长度限制在8～30之间，密码只能由大写字母、小写字母、数字和特殊字符组成，且必须包含至少三项，特殊字符可以使用：`~!#$%^&*()_-+= |，不能以“/”和“$6$”开头
+        When logging in to the instance using the 'Password' method, set the root login password: The password must be 8–30 characters long and consist of uppercase letters, lowercase letters, numbers, and special characters. At least three types must be included. Allowed special characters: `~!#$%^&*()_-+= |. The password cannot start with '/' or '$6$'
         """
         return pulumi.get(self, "password")
 
@@ -1131,9 +1131,9 @@ class ScalingConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        伸缩配置创建的实例所属项目，默认为空。一个资源只能归属于一个项目。
-        只能包含字母、数字、下划线“_”、点“.”和中划线“-”。
-        长度限制在64个字符以内。
+        The project to which the instance created by the scaling configuration belongs. Default is empty. Each resource can belong to only one project.
+        Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed.
+        Maximum length: 64 characters
         """
         return pulumi.get(self, "project_name")
 
@@ -1141,7 +1141,7 @@ class ScalingConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="scalingConfigurationId")
     def scaling_configuration_id(self) -> pulumi.Output[builtins.str]:
         """
-        伸缩配置ID。
+        Scaling configuration ID
         """
         return pulumi.get(self, "scaling_configuration_id")
 
@@ -1149,7 +1149,7 @@ class ScalingConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="scalingConfigurationName")
     def scaling_configuration_name(self) -> pulumi.Output[builtins.str]:
         """
-        伸缩配置的名称，在同一地域下同一伸缩组内伸缩配置名称唯一。取值:只能以中文、字母开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+        Name of the scaling configuration. The name must be unique within the same scaling group in the same region. Rules: Must start with a Chinese character or letter. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length: 1–128 characters. Special characters are not supported.
         """
         return pulumi.get(self, "scaling_configuration_name")
 
@@ -1157,7 +1157,7 @@ class ScalingConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="scalingGroupId")
     def scaling_group_id(self) -> pulumi.Output[builtins.str]:
         """
-        伸缩配置所属的伸缩组ID。
+        Scaling group ID to which the scaling configuration belongs
         """
         return pulumi.get(self, "scaling_group_id")
 
@@ -1165,7 +1165,7 @@ class ScalingConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="securityEnhancementStrategy")
     def security_enhancement_strategy(self) -> pulumi.Output[builtins.str]:
         """
-        是否开启安全加固，取值：Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+        Enable security hardening. Options: Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
         """
         return pulumi.get(self, "security_enhancement_strategy")
 
@@ -1173,7 +1173,7 @@ class ScalingConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="securityGroupIds")
     def security_group_ids(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        实例主网卡关联的安全组ID。
+        Security group ID associated with the instance's primary network interface
         """
         return pulumi.get(self, "security_group_ids")
 
@@ -1181,7 +1181,7 @@ class ScalingConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="spotStrategy")
     def spot_strategy(self) -> pulumi.Output[builtins.str]:
         """
-        实例的抢占策略。取值：NoSpot（默认）：表示创建正常按量付费实例。SpotAsPriceGo：表示系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：表示需要设置出价上限的抢占式实例。
+        Instance preemption policy. Values: NoSpot (default): creates a standard pay-as-you-go instance. SpotAsPriceGo: system automatically bids, creating a preemptible instance that follows the current market price. SpotWithPriceLimit: creates a preemptible instance with a specified bid limit
         """
         return pulumi.get(self, "spot_strategy")
 
@@ -1194,7 +1194,7 @@ class ScalingConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="updatedAt")
     def updated_at(self) -> pulumi.Output[builtins.str]:
         """
-        资源更新时间(UTC时间)
+        Resource update time (UTC)
         """
         return pulumi.get(self, "updated_at")
 
@@ -1202,7 +1202,7 @@ class ScalingConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="userData")
     def user_data(self) -> pulumi.Output[builtins.str]:
         """
-        实例自定义数据。设置的自定义数据必须经过Base64编码，且Base64编码前的自定义数据大小不能超过16KB。不填则默认为空。
+        Instance custom data. Custom data must be Base64 encoded, and the size before encoding must not exceed 16 KB. If not specified, defaults to empty
         """
         return pulumi.get(self, "user_data")
 
@@ -1215,7 +1215,7 @@ class ScalingConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Output[builtins.str]:
         """
-        伸缩配置可用区ID。
+        Availability zone ID for the scaling configuration
         """
         return pulumi.get(self, "zone_id")
 

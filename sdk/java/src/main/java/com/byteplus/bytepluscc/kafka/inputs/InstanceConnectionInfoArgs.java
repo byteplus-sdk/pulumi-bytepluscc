@@ -16,14 +16,14 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
     public static final InstanceConnectionInfoArgs Empty = new InstanceConnectionInfoArgs();
 
     /**
-     * 实例的接入点类型。PLAINTEXT：默认接入点。SASL*PLAINTEXT：SASL接入点（私网）。SASL*SSL：SASL接入点（公网）。未开启公网访问时，不提供此接入点。
+     * Instance endpoint type. PLAINTEXT: default endpoint. SASL*PLAINTEXT: SASL endpoint (private network). SASL*SSL: SASL endpoint (public network). If public access is not enabled, this endpoint is not provided.
      * 
      */
     @Import(name="endpointType")
     private @Nullable Output<String> endpointType;
 
     /**
-     * @return 实例的接入点类型。PLAINTEXT：默认接入点。SASL*PLAINTEXT：SASL接入点（私网）。SASL*SSL：SASL接入点（公网）。未开启公网访问时，不提供此接入点。
+     * @return Instance endpoint type. PLAINTEXT: default endpoint. SASL*PLAINTEXT: SASL endpoint (private network). SASL*SSL: SASL endpoint (public network). If public access is not enabled, this endpoint is not provided.
      * 
      */
     public Optional<Output<String>> endpointType() {
@@ -31,14 +31,14 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 实例私网访问域名。
+     * Instance private network access domain name.
      * 
      */
     @Import(name="internalEndpoint")
     private @Nullable Output<String> internalEndpoint;
 
     /**
-     * @return 实例私网访问域名。
+     * @return Instance private network access domain name.
      * 
      */
     public Optional<Output<String>> internalEndpoint() {
@@ -46,14 +46,14 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 接入点的网络类型。统一为 PrivateNetwork。
+     * Network type for the access point. Unified as PrivateNetwork.
      * 
      */
     @Import(name="networkType")
     private @Nullable Output<String> networkType;
 
     /**
-     * @return 接入点的网络类型。统一为 PrivateNetwork。
+     * @return Network type for the access point. Unified as PrivateNetwork.
      * 
      */
     public Optional<Output<String>> networkType() {
@@ -61,14 +61,14 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 实例公网访问域名。
+     * Public access domain name for the instance.
      * 
      */
     @Import(name="publicEndpoint")
     private @Nullable Output<String> publicEndpoint;
 
     /**
-     * @return 实例公网访问域名。
+     * @return Public access domain name for the instance.
      * 
      */
     public Optional<Output<String>> publicEndpoint() {
@@ -103,7 +103,7 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param endpointType 实例的接入点类型。PLAINTEXT：默认接入点。SASL*PLAINTEXT：SASL接入点（私网）。SASL*SSL：SASL接入点（公网）。未开启公网访问时，不提供此接入点。
+         * @param endpointType Instance endpoint type. PLAINTEXT: default endpoint. SASL*PLAINTEXT: SASL endpoint (private network). SASL*SSL: SASL endpoint (public network). If public access is not enabled, this endpoint is not provided.
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param endpointType 实例的接入点类型。PLAINTEXT：默认接入点。SASL*PLAINTEXT：SASL接入点（私网）。SASL*SSL：SASL接入点（公网）。未开启公网访问时，不提供此接入点。
+         * @param endpointType Instance endpoint type. PLAINTEXT: default endpoint. SASL*PLAINTEXT: SASL endpoint (private network). SASL*SSL: SASL endpoint (public network). If public access is not enabled, this endpoint is not provided.
          * 
          * @return builder
          * 
@@ -124,7 +124,7 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param internalEndpoint 实例私网访问域名。
+         * @param internalEndpoint Instance private network access domain name.
          * 
          * @return builder
          * 
@@ -135,7 +135,7 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param internalEndpoint 实例私网访问域名。
+         * @param internalEndpoint Instance private network access domain name.
          * 
          * @return builder
          * 
@@ -145,7 +145,7 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param networkType 接入点的网络类型。统一为 PrivateNetwork。
+         * @param networkType Network type for the access point. Unified as PrivateNetwork.
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param networkType 接入点的网络类型。统一为 PrivateNetwork。
+         * @param networkType Network type for the access point. Unified as PrivateNetwork.
          * 
          * @return builder
          * 
@@ -166,7 +166,7 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param publicEndpoint 实例公网访问域名。
+         * @param publicEndpoint Public access domain name for the instance.
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param publicEndpoint 实例公网访问域名。
+         * @param publicEndpoint Public access domain name for the instance.
          * 
          * @return builder
          * 

@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Kms
 {
     /// <summary>
-    /// 密钥管理服务（Key Management Service）是火山引擎上一站式的密钥管理和数据加密服务平台。提供简单易用的加密接口，KMS 帮助用户轻松管理密钥、保护云上核心数据的安全。同时极大降低用户自行部署密码基础设施的采购、研发成本。帮助业务轻松满足监管和合规需求。
+    /// Key Management Service (KMS) is a one-stop key management and data encryption platform on Volcano Engine. It provides easy-to-use encryption interfaces. KMS helps users easily manage keys and protect the security of core cloud data. It also greatly reduces the procurement and development costs for users to deploy their own cryptographic infrastructure. KMS helps businesses easily meet regulatory and compliance requirements.
     /// 
     /// ## Import
     /// 
@@ -23,127 +23,127 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
     public partial class Key : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 密钥创建时间。
+        /// Key creation time.
         /// </summary>
         [Output("createdTime")]
         public Output<int> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 密钥描述:长度为 0   - 8192 个字符。
+        /// Key description: Length 0–8192 characters.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+        /// User master key archive operation (enter 1 to archive, 2 to unarchive).
         /// </summary>
         [Output("keyArchiveOperation")]
         public Output<int> KeyArchiveOperation { get; private set; } = null!;
 
         /// <summary>
-        /// 用户主密钥启用操作（用户输入1=启用，2=禁用）
+        /// User master key enable operation (enter 1 to enable, 2 to disable).
         /// </summary>
         [Output("keyEnableOperation")]
         public Output<int> KeyEnableOperation { get; private set; } = null!;
 
         /// <summary>
-        /// 密钥唯一标识符，UUID形式。
+        /// Key unique identifier in UUID format.
         /// </summary>
         [Output("keyId")]
         public Output<string> KeyId { get; private set; } = null!;
 
         /// <summary>
-        /// 密钥材料过期时间，当值为空时表示不会过期。
+        /// Key material expiration time. If empty, the key does not expire.
         /// </summary>
         [Output("keyMaterialExpireTime")]
         public Output<string> KeyMaterialExpireTime { get; private set; } = null!;
 
         /// <summary>
-        /// 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+        /// Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
         /// </summary>
         [Output("keyName")]
         public Output<string> KeyName { get; private set; } = null!;
 
         /// <summary>
-        /// 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+        /// User master key rotation operation (enter 1 to enable, 2 to disable).
         /// </summary>
         [Output("keyRotationOperation")]
         public Output<int> KeyRotationOperation { get; private set; } = null!;
 
         /// <summary>
-        /// 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
+        /// Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
         /// </summary>
         [Output("keySpec")]
         public Output<string> KeySpec { get; private set; } = null!;
 
         /// <summary>
-        /// 密钥状态：Enable，Disable，PendingDelete，Archived，PendingImport。
+        /// Key status: Enable, Disable, PendingDelete, Archived, PendingImport.
         /// </summary>
         [Output("keyState")]
         public Output<string> KeyStateValue { get; private set; } = null!;
 
         /// <summary>
-        /// 密钥用途，取值：ENCRYPT*DECRYPT，SIGN*VERIFY，GENERATE*VERIFY*MAC。
+        /// Key usage. Options: ENCRYPT*DECRYPT, SIGN*VERIFY, GENERATE*VERIFY*MAC.
         /// </summary>
         [Output("keyUsage")]
         public Output<string> KeyUsage { get; private set; } = null!;
 
         /// <summary>
-        /// 密钥环名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+        /// Key ring name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
         /// </summary>
         [Output("keyringName")]
         public Output<string> KeyringName { get; private set; } = null!;
 
         /// <summary>
-        /// 密钥最后轮转时间。
+        /// Key last rotation time.
         /// </summary>
         [Output("lastRotationTime")]
         public Output<string> LastRotationTime { get; private set; } = null!;
 
         /// <summary>
-        /// 是否为 Multi-region 类型的主密钥。
+        /// Is this a multi-region type master key.
         /// </summary>
         [Output("multiRegion")]
         public Output<bool> MultiRegion { get; private set; } = null!;
 
         /// <summary>
-        /// Multi-region key 配置信息。
+        /// Multi-region key configuration information.
         /// </summary>
         [Output("multiRegionConfiguration")]
         public Output<Outputs.KeyMultiRegionConfiguration> MultiRegionConfiguration { get; private set; } = null!;
 
         /// <summary>
-        /// 密钥来源，取值：CloudKMS，External，ExternalKeyStore。
+        /// Key source. Options: CloudKMS, External, ExternalKeyStore.
         /// </summary>
         [Output("origin")]
         public Output<string> Origin { get; private set; } = null!;
 
         /// <summary>
-        /// 密钥保护级别，取值：SOFTWARE，HSM。
+        /// Key protection level. Options: SOFTWARE, HSM.
         /// </summary>
         [Output("protectionLevel")]
         public Output<string> ProtectionLevel { get; private set; } = null!;
 
         /// <summary>
-        /// 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+        /// Key rotation period (days). Range: [90, 2560].
         /// </summary>
         [Output("rotateInterval")]
         public Output<int> RotateInterval { get; private set; } = null!;
 
         /// <summary>
-        /// 密钥轮转状态，取值：Enable，Disable。
+        /// Key rotation status. Options: Enable, Disable.
         /// </summary>
         [Output("rotateState")]
         public Output<string> RotateState { get; private set; } = null!;
 
         /// <summary>
-        /// 密钥删除时间。
+        /// Key deletion time.
         /// </summary>
         [Output("scheduleDeleteTime")]
         public Output<string> ScheduleDeleteTime { get; private set; } = null!;
 
         /// <summary>
-        /// 密钥轮转时间。
+        /// Key rotation time.
         /// </summary>
         [Output("scheduleRotationTime")]
         public Output<string> ScheduleRotationTime { get; private set; } = null!;
@@ -152,13 +152,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         public Output<ImmutableArray<Outputs.KeyTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 资源名称，格式应为 trn:${Service}:${Region}:${AccountID}:${ResourcePath}。
+        /// Resource name. Format should be trn:${Service}:${Region}:${AccountID}:${ResourcePath}.
         /// </summary>
         [Output("trn")]
         public Output<string> Trn { get; private set; } = null!;
 
         /// <summary>
-        /// 密钥更新时间。
+        /// Key update time.
         /// </summary>
         [Output("updatedTime")]
         public Output<int> UpdatedTime { get; private set; } = null!;
@@ -211,73 +211,73 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
     public sealed class KeyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 密钥描述:长度为 0   - 8192 个字符。
+        /// Key description: Length 0–8192 characters.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+        /// User master key archive operation (enter 1 to archive, 2 to unarchive).
         /// </summary>
         [Input("keyArchiveOperation")]
         public Input<int>? KeyArchiveOperation { get; set; }
 
         /// <summary>
-        /// 用户主密钥启用操作（用户输入1=启用，2=禁用）
+        /// User master key enable operation (enter 1 to enable, 2 to disable).
         /// </summary>
         [Input("keyEnableOperation")]
         public Input<int>? KeyEnableOperation { get; set; }
 
         /// <summary>
-        /// 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+        /// Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
         /// </summary>
         [Input("keyName", required: true)]
         public Input<string> KeyName { get; set; } = null!;
 
         /// <summary>
-        /// 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+        /// User master key rotation operation (enter 1 to enable, 2 to disable).
         /// </summary>
         [Input("keyRotationOperation")]
         public Input<int>? KeyRotationOperation { get; set; }
 
         /// <summary>
-        /// 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
+        /// Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
         /// </summary>
         [Input("keySpec")]
         public Input<string>? KeySpec { get; set; }
 
         /// <summary>
-        /// 密钥用途，取值：ENCRYPT*DECRYPT，SIGN*VERIFY，GENERATE*VERIFY*MAC。
+        /// Key usage. Options: ENCRYPT*DECRYPT, SIGN*VERIFY, GENERATE*VERIFY*MAC.
         /// </summary>
         [Input("keyUsage")]
         public Input<string>? KeyUsage { get; set; }
 
         /// <summary>
-        /// 密钥环名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+        /// Key ring name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
         /// </summary>
         [Input("keyringName", required: true)]
         public Input<string> KeyringName { get; set; } = null!;
 
         /// <summary>
-        /// 是否为 Multi-region 类型的主密钥。
+        /// Is this a multi-region type master key.
         /// </summary>
         [Input("multiRegion")]
         public Input<bool>? MultiRegion { get; set; }
 
         /// <summary>
-        /// 密钥来源，取值：CloudKMS，External，ExternalKeyStore。
+        /// Key source. Options: CloudKMS, External, ExternalKeyStore.
         /// </summary>
         [Input("origin")]
         public Input<string>? Origin { get; set; }
 
         /// <summary>
-        /// 密钥保护级别，取值：SOFTWARE，HSM。
+        /// Key protection level. Options: SOFTWARE, HSM.
         /// </summary>
         [Input("protectionLevel")]
         public Input<string>? ProtectionLevel { get; set; }
 
         /// <summary>
-        /// 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+        /// Key rotation period (days). Range: [90, 2560].
         /// </summary>
         [Input("rotateInterval")]
         public Input<int>? RotateInterval { get; set; }
@@ -299,127 +299,127 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
     public sealed class KeyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 密钥创建时间。
+        /// Key creation time.
         /// </summary>
         [Input("createdTime")]
         public Input<int>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 密钥描述:长度为 0   - 8192 个字符。
+        /// Key description: Length 0–8192 characters.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+        /// User master key archive operation (enter 1 to archive, 2 to unarchive).
         /// </summary>
         [Input("keyArchiveOperation")]
         public Input<int>? KeyArchiveOperation { get; set; }
 
         /// <summary>
-        /// 用户主密钥启用操作（用户输入1=启用，2=禁用）
+        /// User master key enable operation (enter 1 to enable, 2 to disable).
         /// </summary>
         [Input("keyEnableOperation")]
         public Input<int>? KeyEnableOperation { get; set; }
 
         /// <summary>
-        /// 密钥唯一标识符，UUID形式。
+        /// Key unique identifier in UUID format.
         /// </summary>
         [Input("keyId")]
         public Input<string>? KeyId { get; set; }
 
         /// <summary>
-        /// 密钥材料过期时间，当值为空时表示不会过期。
+        /// Key material expiration time. If empty, the key does not expire.
         /// </summary>
         [Input("keyMaterialExpireTime")]
         public Input<string>? KeyMaterialExpireTime { get; set; }
 
         /// <summary>
-        /// 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+        /// Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
         /// </summary>
         [Input("keyName")]
         public Input<string>? KeyName { get; set; }
 
         /// <summary>
-        /// 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+        /// User master key rotation operation (enter 1 to enable, 2 to disable).
         /// </summary>
         [Input("keyRotationOperation")]
         public Input<int>? KeyRotationOperation { get; set; }
 
         /// <summary>
-        /// 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
+        /// Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
         /// </summary>
         [Input("keySpec")]
         public Input<string>? KeySpec { get; set; }
 
         /// <summary>
-        /// 密钥状态：Enable，Disable，PendingDelete，Archived，PendingImport。
+        /// Key status: Enable, Disable, PendingDelete, Archived, PendingImport.
         /// </summary>
         [Input("keyState")]
         public Input<string>? KeyStateValue { get; set; }
 
         /// <summary>
-        /// 密钥用途，取值：ENCRYPT*DECRYPT，SIGN*VERIFY，GENERATE*VERIFY*MAC。
+        /// Key usage. Options: ENCRYPT*DECRYPT, SIGN*VERIFY, GENERATE*VERIFY*MAC.
         /// </summary>
         [Input("keyUsage")]
         public Input<string>? KeyUsage { get; set; }
 
         /// <summary>
-        /// 密钥环名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+        /// Key ring name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
         /// </summary>
         [Input("keyringName")]
         public Input<string>? KeyringName { get; set; }
 
         /// <summary>
-        /// 密钥最后轮转时间。
+        /// Key last rotation time.
         /// </summary>
         [Input("lastRotationTime")]
         public Input<string>? LastRotationTime { get; set; }
 
         /// <summary>
-        /// 是否为 Multi-region 类型的主密钥。
+        /// Is this a multi-region type master key.
         /// </summary>
         [Input("multiRegion")]
         public Input<bool>? MultiRegion { get; set; }
 
         /// <summary>
-        /// Multi-region key 配置信息。
+        /// Multi-region key configuration information.
         /// </summary>
         [Input("multiRegionConfiguration")]
         public Input<Inputs.KeyMultiRegionConfigurationGetArgs>? MultiRegionConfiguration { get; set; }
 
         /// <summary>
-        /// 密钥来源，取值：CloudKMS，External，ExternalKeyStore。
+        /// Key source. Options: CloudKMS, External, ExternalKeyStore.
         /// </summary>
         [Input("origin")]
         public Input<string>? Origin { get; set; }
 
         /// <summary>
-        /// 密钥保护级别，取值：SOFTWARE，HSM。
+        /// Key protection level. Options: SOFTWARE, HSM.
         /// </summary>
         [Input("protectionLevel")]
         public Input<string>? ProtectionLevel { get; set; }
 
         /// <summary>
-        /// 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+        /// Key rotation period (days). Range: [90, 2560].
         /// </summary>
         [Input("rotateInterval")]
         public Input<int>? RotateInterval { get; set; }
 
         /// <summary>
-        /// 密钥轮转状态，取值：Enable，Disable。
+        /// Key rotation status. Options: Enable, Disable.
         /// </summary>
         [Input("rotateState")]
         public Input<string>? RotateState { get; set; }
 
         /// <summary>
-        /// 密钥删除时间。
+        /// Key deletion time.
         /// </summary>
         [Input("scheduleDeleteTime")]
         public Input<string>? ScheduleDeleteTime { get; set; }
 
         /// <summary>
-        /// 密钥轮转时间。
+        /// Key rotation time.
         /// </summary>
         [Input("scheduleRotationTime")]
         public Input<string>? ScheduleRotationTime { get; set; }
@@ -433,13 +433,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         }
 
         /// <summary>
-        /// 资源名称，格式应为 trn:${Service}:${Region}:${AccountID}:${ResourcePath}。
+        /// Resource name. Format should be trn:${Service}:${Region}:${AccountID}:${ResourcePath}.
         /// </summary>
         [Input("trn")]
         public Input<string>? Trn { get; set; }
 
         /// <summary>
-        /// 密钥更新时间。
+        /// Key update time.
         /// </summary>
         [Input("updatedTime")]
         public Input<int>? UpdatedTime { get; set; }

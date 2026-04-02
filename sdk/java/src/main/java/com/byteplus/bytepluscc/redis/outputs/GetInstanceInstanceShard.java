@@ -14,38 +14,38 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceInstanceShard {
     /**
-     * @return 分片中的节点数量
+     * @return Number of nodes in each shard
      * 
      */
     private Integer nodeNumber;
     /**
-     * @return 分片中所有 Server 节点的详情列表。
+     * @return Detailed list of all Server nodes in the shard.
      * 
      */
     private List<GetInstanceInstanceShardServerNode> serverNodes;
     /**
-     * @return 分片 ID。
+     * @return Shard ID.
      * 
      */
     private String shardId;
 
     private GetInstanceInstanceShard() {}
     /**
-     * @return 分片中的节点数量
+     * @return Number of nodes in each shard
      * 
      */
     public Integer nodeNumber() {
         return this.nodeNumber;
     }
     /**
-     * @return 分片中所有 Server 节点的详情列表。
+     * @return Detailed list of all Server nodes in the shard.
      * 
      */
     public List<GetInstanceInstanceShardServerNode> serverNodes() {
         return this.serverNodes;
     }
     /**
-     * @return 分片 ID。
+     * @return Shard ID.
      * 
      */
     public String shardId() {

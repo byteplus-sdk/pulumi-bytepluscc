@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GetGatewayServiceDomainSpecResult
     {
         /// <summary>
-        /// 开启私网域名公网解析。
+        /// Enable public resolution for private network domains.
         /// </summary>
         public readonly bool EnablePublicResolution;
 

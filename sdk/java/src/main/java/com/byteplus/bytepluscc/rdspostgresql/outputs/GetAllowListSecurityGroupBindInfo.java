@@ -12,50 +12,50 @@ import java.util.Objects;
 @CustomType
 public final class GetAllowListSecurityGroupBindInfo {
     /**
-     * @return 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。
+     * @return Mode for associating security groups. Values: IngressDirectionIp: inbound IP. AssociateEcsIp: associate ECS IP.
      * 
      */
     private String bindMode;
     /**
-     * @return 安全组中的 IP 列表。
+     * @return IP address list in the security group.
      * 
      */
     private List<String> ipLists;
     /**
-     * @return 安全组 ID。
+     * @return Security group ID.
      * 
      */
     private String securityGroupId;
     /**
-     * @return 安全组名称。
+     * @return Security group name.
      * 
      */
     private String securityGroupName;
 
     private GetAllowListSecurityGroupBindInfo() {}
     /**
-     * @return 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。
+     * @return Mode for associating security groups. Values: IngressDirectionIp: inbound IP. AssociateEcsIp: associate ECS IP.
      * 
      */
     public String bindMode() {
         return this.bindMode;
     }
     /**
-     * @return 安全组中的 IP 列表。
+     * @return IP address list in the security group.
      * 
      */
     public List<String> ipLists() {
         return this.ipLists;
     }
     /**
-     * @return 安全组 ID。
+     * @return Security group ID.
      * 
      */
     public String securityGroupId() {
         return this.securityGroupId;
     }
     /**
-     * @return 安全组名称。
+     * @return Security group name.
      * 
      */
     public String securityGroupName() {

@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 备份是数据库的重要运行时文件，基于备份文件，数据库能够实现容灾、恢复等功能。云数据库 MySQL 版提供了数据备份和日志备份两种备份能力：通过数据备份可将数据库恢复至某个备份集，通过日志备份可将数据库恢复至指定时间点。
+// Backups are important runtime files for the database. Based on backup files, the database can achieve disaster recovery and restoration. MySQL Cloud Database provides two backup capabilities: data backup and log backup. Data backup allows you to restore the database to a specific backup set, while log backup enables restoration to a specified point in time
 //
 // ## Example Usage
 //
@@ -55,47 +55,47 @@ import (
 type Backup struct {
 	pulumi.CustomResourceState
 
-	// 备份创建结束时间（UTC）。
+	// Backup creation end time (UTC)
 	BackupEndTime pulumi.StringOutput `pulumi:"backupEndTime"`
-	// 备份文件名。
+	// Backup file name
 	BackupFileName pulumi.StringOutput `pulumi:"backupFileName"`
-	// 备份文件大小，单位为字节。
+	// Backup file size (bytes)
 	BackupFileSize pulumi.IntOutput `pulumi:"backupFileSize"`
-	// 备份 ID。
+	// Backup ID
 	BackupId    pulumi.StringOutput         `pulumi:"backupId"`
 	BackupMetas BackupBackupMetaArrayOutput `pulumi:"backupMetas"`
-	// 备份类型，取值：Physical（物理备份）、Logical（逻辑备份）、Snapshot（快照备份）。
+	// Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
 	BackupMethod pulumi.StringOutput `pulumi:"backupMethod"`
-	// 备份的名称。
+	// Backup name
 	BackupName pulumi.StringOutput `pulumi:"backupName"`
-	// 备份所在区域。
+	// Backup region
 	BackupRegion pulumi.StringOutput `pulumi:"backupRegion"`
-	// 备份创建开始时间（UTC）。
+	// Backup creation start time (UTC)
 	BackupStartTime pulumi.StringOutput `pulumi:"backupStartTime"`
-	// 备份状态，取值：Success（成功）、Failed（失败）、Running（执行中）。
+	// Backup status. Values: Success, Failed, Running
 	BackupStatus pulumi.StringOutput `pulumi:"backupStatus"`
-	// 备份方式，取值：Full（全量/库表备）、Increment（增量备份）、DumpAll（全库备份）。
+	// Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
 	BackupType pulumi.StringOutput `pulumi:"backupType"`
-	// 一致性时间点。
+	// Consistency time point
 	ConsistentTime pulumi.StringOutput `pulumi:"consistentTime"`
-	// 备份创建者，取值：System（系统）、User（用户）。
+	// Backup creator. Values: System (system), User (user)
 	CreateType pulumi.StringOutput `pulumi:"createType"`
-	// 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+	// Compatible version. Values: MySQL*5*7: MySQL 5.7 version; MySQL*8*0: MySQL 8.0 version
 	DbEngineVersion pulumi.StringOutput          `pulumi:"dbEngineVersion"`
 	DbTableInfos    BackupDbTableInfoArrayOutput `pulumi:"dbTableInfos"`
-	// 下载状态。
+	// Download status
 	DownloadStatus pulumi.StringOutput `pulumi:"downloadStatus"`
-	// 数据库引擎类型。取值：InnoDB：InnoDB 引擎。RocksDB：RocksDB 引擎。
+	// Database engine type. Values: InnoDB: InnoDB engine; RocksDB: RocksDB engine
 	EngineType pulumi.StringOutput `pulumi:"engineType"`
-	// 备份失败的错误信息。
+	// Error message for backup failure
 	ErrorMessage pulumi.StringOutput `pulumi:"errorMessage"`
-	// 备份过期时间（UTC）。
+	// Backup expiration time (UTC)
 	ExpiredTime pulumi.StringOutput `pulumi:"expiredTime"`
-	// 实例 ID。
+	// Instance ID
 	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
-	// 是否加密。
+	// Whether encrypted
 	IsEncrypted pulumi.BoolOutput `pulumi:"isEncrypted"`
-	// 是否已过期。
+	// Whether expired
 	IsExpired pulumi.BoolOutput `pulumi:"isExpired"`
 }
 
@@ -132,92 +132,92 @@ func GetBackup(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Backup resources.
 type backupState struct {
-	// 备份创建结束时间（UTC）。
+	// Backup creation end time (UTC)
 	BackupEndTime *string `pulumi:"backupEndTime"`
-	// 备份文件名。
+	// Backup file name
 	BackupFileName *string `pulumi:"backupFileName"`
-	// 备份文件大小，单位为字节。
+	// Backup file size (bytes)
 	BackupFileSize *int `pulumi:"backupFileSize"`
-	// 备份 ID。
+	// Backup ID
 	BackupId    *string            `pulumi:"backupId"`
 	BackupMetas []BackupBackupMeta `pulumi:"backupMetas"`
-	// 备份类型，取值：Physical（物理备份）、Logical（逻辑备份）、Snapshot（快照备份）。
+	// Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
 	BackupMethod *string `pulumi:"backupMethod"`
-	// 备份的名称。
+	// Backup name
 	BackupName *string `pulumi:"backupName"`
-	// 备份所在区域。
+	// Backup region
 	BackupRegion *string `pulumi:"backupRegion"`
-	// 备份创建开始时间（UTC）。
+	// Backup creation start time (UTC)
 	BackupStartTime *string `pulumi:"backupStartTime"`
-	// 备份状态，取值：Success（成功）、Failed（失败）、Running（执行中）。
+	// Backup status. Values: Success, Failed, Running
 	BackupStatus *string `pulumi:"backupStatus"`
-	// 备份方式，取值：Full（全量/库表备）、Increment（增量备份）、DumpAll（全库备份）。
+	// Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
 	BackupType *string `pulumi:"backupType"`
-	// 一致性时间点。
+	// Consistency time point
 	ConsistentTime *string `pulumi:"consistentTime"`
-	// 备份创建者，取值：System（系统）、User（用户）。
+	// Backup creator. Values: System (system), User (user)
 	CreateType *string `pulumi:"createType"`
-	// 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+	// Compatible version. Values: MySQL*5*7: MySQL 5.7 version; MySQL*8*0: MySQL 8.0 version
 	DbEngineVersion *string             `pulumi:"dbEngineVersion"`
 	DbTableInfos    []BackupDbTableInfo `pulumi:"dbTableInfos"`
-	// 下载状态。
+	// Download status
 	DownloadStatus *string `pulumi:"downloadStatus"`
-	// 数据库引擎类型。取值：InnoDB：InnoDB 引擎。RocksDB：RocksDB 引擎。
+	// Database engine type. Values: InnoDB: InnoDB engine; RocksDB: RocksDB engine
 	EngineType *string `pulumi:"engineType"`
-	// 备份失败的错误信息。
+	// Error message for backup failure
 	ErrorMessage *string `pulumi:"errorMessage"`
-	// 备份过期时间（UTC）。
+	// Backup expiration time (UTC)
 	ExpiredTime *string `pulumi:"expiredTime"`
-	// 实例 ID。
+	// Instance ID
 	InstanceId *string `pulumi:"instanceId"`
-	// 是否加密。
+	// Whether encrypted
 	IsEncrypted *bool `pulumi:"isEncrypted"`
-	// 是否已过期。
+	// Whether expired
 	IsExpired *bool `pulumi:"isExpired"`
 }
 
 type BackupState struct {
-	// 备份创建结束时间（UTC）。
+	// Backup creation end time (UTC)
 	BackupEndTime pulumi.StringPtrInput
-	// 备份文件名。
+	// Backup file name
 	BackupFileName pulumi.StringPtrInput
-	// 备份文件大小，单位为字节。
+	// Backup file size (bytes)
 	BackupFileSize pulumi.IntPtrInput
-	// 备份 ID。
+	// Backup ID
 	BackupId    pulumi.StringPtrInput
 	BackupMetas BackupBackupMetaArrayInput
-	// 备份类型，取值：Physical（物理备份）、Logical（逻辑备份）、Snapshot（快照备份）。
+	// Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
 	BackupMethod pulumi.StringPtrInput
-	// 备份的名称。
+	// Backup name
 	BackupName pulumi.StringPtrInput
-	// 备份所在区域。
+	// Backup region
 	BackupRegion pulumi.StringPtrInput
-	// 备份创建开始时间（UTC）。
+	// Backup creation start time (UTC)
 	BackupStartTime pulumi.StringPtrInput
-	// 备份状态，取值：Success（成功）、Failed（失败）、Running（执行中）。
+	// Backup status. Values: Success, Failed, Running
 	BackupStatus pulumi.StringPtrInput
-	// 备份方式，取值：Full（全量/库表备）、Increment（增量备份）、DumpAll（全库备份）。
+	// Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
 	BackupType pulumi.StringPtrInput
-	// 一致性时间点。
+	// Consistency time point
 	ConsistentTime pulumi.StringPtrInput
-	// 备份创建者，取值：System（系统）、User（用户）。
+	// Backup creator. Values: System (system), User (user)
 	CreateType pulumi.StringPtrInput
-	// 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+	// Compatible version. Values: MySQL*5*7: MySQL 5.7 version; MySQL*8*0: MySQL 8.0 version
 	DbEngineVersion pulumi.StringPtrInput
 	DbTableInfos    BackupDbTableInfoArrayInput
-	// 下载状态。
+	// Download status
 	DownloadStatus pulumi.StringPtrInput
-	// 数据库引擎类型。取值：InnoDB：InnoDB 引擎。RocksDB：RocksDB 引擎。
+	// Database engine type. Values: InnoDB: InnoDB engine; RocksDB: RocksDB engine
 	EngineType pulumi.StringPtrInput
-	// 备份失败的错误信息。
+	// Error message for backup failure
 	ErrorMessage pulumi.StringPtrInput
-	// 备份过期时间（UTC）。
+	// Backup expiration time (UTC)
 	ExpiredTime pulumi.StringPtrInput
-	// 实例 ID。
+	// Instance ID
 	InstanceId pulumi.StringPtrInput
-	// 是否加密。
+	// Whether encrypted
 	IsEncrypted pulumi.BoolPtrInput
-	// 是否已过期。
+	// Whether expired
 	IsExpired pulumi.BoolPtrInput
 }
 
@@ -227,22 +227,22 @@ func (BackupState) ElementType() reflect.Type {
 
 type backupArgs struct {
 	BackupMetas []BackupBackupMeta `pulumi:"backupMetas"`
-	// 备份类型，取值：Physical（物理备份）、Logical（逻辑备份）、Snapshot（快照备份）。
+	// Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
 	BackupMethod *string `pulumi:"backupMethod"`
-	// 备份方式，取值：Full（全量/库表备）、Increment（增量备份）、DumpAll（全库备份）。
+	// Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
 	BackupType *string `pulumi:"backupType"`
-	// 实例 ID。
+	// Instance ID
 	InstanceId string `pulumi:"instanceId"`
 }
 
 // The set of arguments for constructing a Backup resource.
 type BackupArgs struct {
 	BackupMetas BackupBackupMetaArrayInput
-	// 备份类型，取值：Physical（物理备份）、Logical（逻辑备份）、Snapshot（快照备份）。
+	// Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
 	BackupMethod pulumi.StringPtrInput
-	// 备份方式，取值：Full（全量/库表备）、Increment（增量备份）、DumpAll（全库备份）。
+	// Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
 	BackupType pulumi.StringPtrInput
-	// 实例 ID。
+	// Instance ID
 	InstanceId pulumi.StringInput
 }
 
@@ -333,22 +333,22 @@ func (o BackupOutput) ToBackupOutputWithContext(ctx context.Context) BackupOutpu
 	return o
 }
 
-// 备份创建结束时间（UTC）。
+// Backup creation end time (UTC)
 func (o BackupOutput) BackupEndTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.BackupEndTime }).(pulumi.StringOutput)
 }
 
-// 备份文件名。
+// Backup file name
 func (o BackupOutput) BackupFileName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.BackupFileName }).(pulumi.StringOutput)
 }
 
-// 备份文件大小，单位为字节。
+// Backup file size (bytes)
 func (o BackupOutput) BackupFileSize() pulumi.IntOutput {
 	return o.ApplyT(func(v *Backup) pulumi.IntOutput { return v.BackupFileSize }).(pulumi.IntOutput)
 }
 
-// 备份 ID。
+// Backup ID
 func (o BackupOutput) BackupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.BackupId }).(pulumi.StringOutput)
 }
@@ -357,47 +357,47 @@ func (o BackupOutput) BackupMetas() BackupBackupMetaArrayOutput {
 	return o.ApplyT(func(v *Backup) BackupBackupMetaArrayOutput { return v.BackupMetas }).(BackupBackupMetaArrayOutput)
 }
 
-// 备份类型，取值：Physical（物理备份）、Logical（逻辑备份）、Snapshot（快照备份）。
+// Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
 func (o BackupOutput) BackupMethod() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.BackupMethod }).(pulumi.StringOutput)
 }
 
-// 备份的名称。
+// Backup name
 func (o BackupOutput) BackupName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.BackupName }).(pulumi.StringOutput)
 }
 
-// 备份所在区域。
+// Backup region
 func (o BackupOutput) BackupRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.BackupRegion }).(pulumi.StringOutput)
 }
 
-// 备份创建开始时间（UTC）。
+// Backup creation start time (UTC)
 func (o BackupOutput) BackupStartTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.BackupStartTime }).(pulumi.StringOutput)
 }
 
-// 备份状态，取值：Success（成功）、Failed（失败）、Running（执行中）。
+// Backup status. Values: Success, Failed, Running
 func (o BackupOutput) BackupStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.BackupStatus }).(pulumi.StringOutput)
 }
 
-// 备份方式，取值：Full（全量/库表备）、Increment（增量备份）、DumpAll（全库备份）。
+// Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
 func (o BackupOutput) BackupType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.BackupType }).(pulumi.StringOutput)
 }
 
-// 一致性时间点。
+// Consistency time point
 func (o BackupOutput) ConsistentTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.ConsistentTime }).(pulumi.StringOutput)
 }
 
-// 备份创建者，取值：System（系统）、User（用户）。
+// Backup creator. Values: System (system), User (user)
 func (o BackupOutput) CreateType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.CreateType }).(pulumi.StringOutput)
 }
 
-// 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+// Compatible version. Values: MySQL*5*7: MySQL 5.7 version; MySQL*8*0: MySQL 8.0 version
 func (o BackupOutput) DbEngineVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.DbEngineVersion }).(pulumi.StringOutput)
 }
@@ -406,37 +406,37 @@ func (o BackupOutput) DbTableInfos() BackupDbTableInfoArrayOutput {
 	return o.ApplyT(func(v *Backup) BackupDbTableInfoArrayOutput { return v.DbTableInfos }).(BackupDbTableInfoArrayOutput)
 }
 
-// 下载状态。
+// Download status
 func (o BackupOutput) DownloadStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.DownloadStatus }).(pulumi.StringOutput)
 }
 
-// 数据库引擎类型。取值：InnoDB：InnoDB 引擎。RocksDB：RocksDB 引擎。
+// Database engine type. Values: InnoDB: InnoDB engine; RocksDB: RocksDB engine
 func (o BackupOutput) EngineType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.EngineType }).(pulumi.StringOutput)
 }
 
-// 备份失败的错误信息。
+// Error message for backup failure
 func (o BackupOutput) ErrorMessage() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.ErrorMessage }).(pulumi.StringOutput)
 }
 
-// 备份过期时间（UTC）。
+// Backup expiration time (UTC)
 func (o BackupOutput) ExpiredTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.ExpiredTime }).(pulumi.StringOutput)
 }
 
-// 实例 ID。
+// Instance ID
 func (o BackupOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backup) pulumi.StringOutput { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 是否加密。
+// Whether encrypted
 func (o BackupOutput) IsEncrypted() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Backup) pulumi.BoolOutput { return v.IsEncrypted }).(pulumi.BoolOutput)
 }
 
-// 是否已过期。
+// Whether expired
 func (o BackupOutput) IsExpired() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Backup) pulumi.BoolOutput { return v.IsExpired }).(pulumi.BoolOutput)
 }

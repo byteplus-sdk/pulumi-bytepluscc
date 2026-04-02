@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class GetDomainDownloadSpeedLimitResult
     {
         /// <summary>
-        /// 表示下载限速的规则。当 Switch 是 true 时，该参数为必填。
+        /// Indicates the rule for download rate limiting. This parameter is required when Switch is true.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleResult> DownloadSpeedLimitRules;
         /// <summary>
-        /// 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        /// Indicates whether this feature is enabled. The parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
         /// </summary>
         public readonly bool Switch;
 

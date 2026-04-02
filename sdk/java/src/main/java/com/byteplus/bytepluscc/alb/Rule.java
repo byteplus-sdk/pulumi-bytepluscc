@@ -21,7 +21,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * ALB 按照您设置的转发规则，对不同特征的访问流量进行分发。您可以为一个监听器配置多条转发规则。基础版 ALB 实例支持基于域名和路径的转发规则。标准版 ALB 实例支持基于域名、路径和 HTTP 标头的转发规则，并支持复合转发条件。
+ * ALB distributes incoming traffic based on the forwarding rules you set. You can configure multiple forwarding rules for a single listener. Basic edition ALB instances support forwarding rules based on domain and path. Standard edition ALB instances support forwarding rules based on domain, path, and HTTP headers, and support composite forwarding conditions.
  * 
  * ## Example Usage
  * 
@@ -38,126 +38,126 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:alb/rule:Rule")
 public class Rule extends com.pulumi.resources.CustomResource {
     /**
-     * 转发规则的描述。
+     * Forwarding rule description.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 转发规则的描述。
+     * @return Forwarding rule description.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 转发规则的域名。
+     * Domain name of the forwarding rule.
      * 
      */
     @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     /**
-     * @return 转发规则的域名。
+     * @return Domain name of the forwarding rule.
      * 
      */
     public Output<String> domain() {
         return this.domain;
     }
     /**
-     * 转发规则服务器组配置
+     * Forwarding rule server group configuration.
      * 
      */
     @Export(name="forwardGroupConfig", refs={RuleForwardGroupConfig.class}, tree="[0]")
     private Output<RuleForwardGroupConfig> forwardGroupConfig;
 
     /**
-     * @return 转发规则服务器组配置
+     * @return Forwarding rule server group configuration.
      * 
      */
     public Output<RuleForwardGroupConfig> forwardGroupConfig() {
         return this.forwardGroupConfig;
     }
     /**
-     * 监听器ID。
+     * Listener ID.
      * 
      */
     @Export(name="listenerId", refs={String.class}, tree="[0]")
     private Output<String> listenerId;
 
     /**
-     * @return 监听器ID。
+     * @return Listener ID.
      * 
      */
     public Output<String> listenerId() {
         return this.listenerId;
     }
     /**
-     * 标准版转发规则优先级。
+     * Standard edition forwarding rule priority.
      * 
      */
     @Export(name="priority", refs={Integer.class}, tree="[0]")
     private Output<Integer> priority;
 
     /**
-     * @return 标准版转发规则优先级。
+     * @return Standard edition forwarding rule priority.
      * 
      */
     public Output<Integer> priority() {
         return this.priority;
     }
     /**
-     * 重定向相关配置信息。
+     * Redirect-related configuration information.
      * 
      */
     @Export(name="redirectConfig", refs={RuleRedirectConfig.class}, tree="[0]")
     private Output<RuleRedirectConfig> redirectConfig;
 
     /**
-     * @return 重定向相关配置信息。
+     * @return Redirect-related configuration information.
      * 
      */
     public Output<RuleRedirectConfig> redirectConfig() {
         return this.redirectConfig;
     }
     /**
-     * 重定向相关配置信息。
+     * Redirect-related configuration information.
      * 
      */
     @Export(name="rewriteConfig", refs={RuleRewriteConfig.class}, tree="[0]")
     private Output<RuleRewriteConfig> rewriteConfig;
 
     /**
-     * @return 重定向相关配置信息。
+     * @return Redirect-related configuration information.
      * 
      */
     public Output<RuleRewriteConfig> rewriteConfig() {
         return this.rewriteConfig;
     }
     /**
-     * 转发规则重写配置开关。on：开启。off：关闭。
+     * Forwarding rule rewrite configuration switch. on: enabled. off: disabled.
      * 
      */
     @Export(name="rewriteEnabled", refs={String.class}, tree="[0]")
     private Output<String> rewriteEnabled;
 
     /**
-     * @return 转发规则重写配置开关。on：开启。off：关闭。
+     * @return Forwarding rule rewrite configuration switch. on: enabled. off: disabled.
      * 
      */
     public Output<String> rewriteEnabled() {
         return this.rewriteEnabled;
     }
     /**
-     * 转发规则动作。空：默认转发至服务器组。Redirect：重定向。
+     * Forwarding rule action. Empty: default forward to server group. Redirect: redirect.
      * 
      */
     @Export(name="ruleAction", refs={String.class}, tree="[0]")
     private Output<String> ruleAction;
 
     /**
-     * @return 转发规则动作。空：默认转发至服务器组。Redirect：重定向。
+     * @return Forwarding rule action. Empty: default forward to server group. Redirect: redirect.
      * 
      */
     public Output<String> ruleAction() {
@@ -176,70 +176,70 @@ public class Rule extends com.pulumi.resources.CustomResource {
         return this.ruleConditions;
     }
     /**
-     * 转发规则ID。
+     * Forwarding rule ID.
      * 
      */
     @Export(name="ruleId", refs={String.class}, tree="[0]")
     private Output<String> ruleId;
 
     /**
-     * @return 转发规则ID。
+     * @return Forwarding rule ID.
      * 
      */
     public Output<String> ruleId() {
         return this.ruleId;
     }
     /**
-     * 转发规则关联的后端服务器组ID。
+     * Backend server group ID associated with the forwarding rule.
      * 
      */
     @Export(name="serverGroupId", refs={String.class}, tree="[0]")
     private Output<String> serverGroupId;
 
     /**
-     * @return 转发规则关联的后端服务器组ID。
+     * @return Backend server group ID associated with the forwarding rule.
      * 
      */
     public Output<String> serverGroupId() {
         return this.serverGroupId;
     }
     /**
-     * 转发规则 QPS 限速开关。on：开启。off：关闭。
+     * Forwarding rule QPS throttling switch. on: enabled. off: disabled.
      * 
      */
     @Export(name="trafficLimitEnabled", refs={String.class}, tree="[0]")
     private Output<String> trafficLimitEnabled;
 
     /**
-     * @return 转发规则 QPS 限速开关。on：开启。off：关闭。
+     * @return Forwarding rule QPS throttling switch. on: enabled. off: disabled.
      * 
      */
     public Output<String> trafficLimitEnabled() {
         return this.trafficLimitEnabled;
     }
     /**
-     * 每秒请求数。取值范围：100～100000。
+     * Requests per second. Range: 100–100000.
      * 
      */
     @Export(name="trafficLimitQps", refs={Integer.class}, tree="[0]")
     private Output<Integer> trafficLimitQps;
 
     /**
-     * @return 每秒请求数。取值范围：100～100000。
+     * @return Requests per second. Range: 100–100000.
      * 
      */
     public Output<Integer> trafficLimitQps() {
         return this.trafficLimitQps;
     }
     /**
-     * 转发规则的URL。
+     * Forwarding rule URL.
      * 
      */
     @Export(name="url", refs={String.class}, tree="[0]")
     private Output<String> url;
 
     /**
-     * @return 转发规则的URL。
+     * @return Forwarding rule URL.
      * 
      */
     public Output<String> url() {

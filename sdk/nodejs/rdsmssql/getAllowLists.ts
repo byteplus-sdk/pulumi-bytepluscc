@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * Plural Data Source schema for Byteplus::RDSMsSQL::Allowlist
+ * Plural Data Source schema for Byteplus::RDSMsSQL::AllowList
  */
 export function getAllowLists(opts?: pulumi.InvokeOptions): Promise<GetAllowListsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -27,7 +27,7 @@ export interface GetAllowListsResult {
     readonly ids: string[];
 }
 /**
- * Plural Data Source schema for Byteplus::RDSMsSQL::Allowlist
+ * Plural Data Source schema for Byteplus::RDSMsSQL::AllowList
  */
 export function getAllowListsOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAllowListsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

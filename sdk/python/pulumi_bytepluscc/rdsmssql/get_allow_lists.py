@@ -64,7 +64,7 @@ class AwaitableGetAllowListsResult(GetAllowListsResult):
 
 def get_allow_lists(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAllowListsResult:
     """
-    Plural Data Source schema for Byteplus::RDSMsSQL::Allowlist
+    Plural Data Source schema for Byteplus::RDSMsSQL::AllowList
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -75,7 +75,7 @@ def get_allow_lists(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGet
         ids=pulumi.get(__ret__, 'ids'))
 def get_allow_lists_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAllowListsResult]:
     """
-    Plural Data Source schema for Byteplus::RDSMsSQL::Allowlist
+    Plural Data Source schema for Byteplus::RDSMsSQL::AllowList
     """
     __args__ = dict()
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

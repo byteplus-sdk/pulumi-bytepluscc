@@ -15,12 +15,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RuleDimensionConditionsMetaCondition {
     /**
-     * @return 是否为全量资源。true：全部资源。false：部分资源。
+     * @return Whether all resources are included. true: All resources. false: Partial resources.
      * 
      */
     private @Nullable Boolean allDimensions;
     /**
-     * @return 判断条件。and：全部满足。or：任意满足。
+     * @return Condition. and: All conditions met. or: Any condition met.
      * 
      */
     private @Nullable String condition;
@@ -28,14 +28,14 @@ public final class RuleDimensionConditionsMetaCondition {
 
     private RuleDimensionConditionsMetaCondition() {}
     /**
-     * @return 是否为全量资源。true：全部资源。false：部分资源。
+     * @return Whether all resources are included. true: All resources. false: Partial resources.
      * 
      */
     public Optional<Boolean> allDimensions() {
         return Optional.ofNullable(this.allDimensions);
     }
     /**
-     * @return 判断条件。and：全部满足。or：任意满足。
+     * @return Condition. and: All conditions met. or: Any condition met.
      * 
      */
     public Optional<String> condition() {

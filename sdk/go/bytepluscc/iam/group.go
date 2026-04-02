@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 用户组是用户的集合。当用户组被关联上策略后，同一用户组里的所有用户会拥有对应的策略权限，同一个用户可存在于多个用户组中，可同时拥有多个用户组的权限。
+// A user group is a collection of users. When a user group is associated with a policy, all users in the group gain the corresponding policy permissions. A user can belong to multiple user groups and have permissions from each group.
 //
 // ## Import
 //
@@ -22,20 +22,20 @@ import (
 type Group struct {
 	pulumi.CustomResourceState
 
-	// 用户组所属主账号的ID。
+	// ID of the primary account to which the user group belongs.
 	AccountId        pulumi.IntOutput               `pulumi:"accountId"`
 	AttachedPolicies GroupAttachedPolicyArrayOutput `pulumi:"attachedPolicies"`
-	// 用户组的创建时间。
+	// User group creation time.
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// 用户组描述信息。长度不超过128。
+	// User group description. Maximum length: 128 characters.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// 用户组显示名称。长度不超过64。
+	// User group display name. Maximum length: 64 characters.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// 用户组的更新时间。
+	// User group update time.
 	UpdatedTime pulumi.StringOutput `pulumi:"updatedTime"`
-	// 用户组ID。
+	// User group ID.
 	UserGroupId pulumi.IntOutput `pulumi:"userGroupId"`
-	// 用户组名称。长度1~64，支持英文、数字和.-_符号。
+	// User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
 	UserGroupName pulumi.StringOutput  `pulumi:"userGroupName"`
 	Users         GroupUserArrayOutput `pulumi:"users"`
 }
@@ -73,39 +73,39 @@ func GetGroup(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Group resources.
 type groupState struct {
-	// 用户组所属主账号的ID。
+	// ID of the primary account to which the user group belongs.
 	AccountId        *int                  `pulumi:"accountId"`
 	AttachedPolicies []GroupAttachedPolicy `pulumi:"attachedPolicies"`
-	// 用户组的创建时间。
+	// User group creation time.
 	CreatedTime *string `pulumi:"createdTime"`
-	// 用户组描述信息。长度不超过128。
+	// User group description. Maximum length: 128 characters.
 	Description *string `pulumi:"description"`
-	// 用户组显示名称。长度不超过64。
+	// User group display name. Maximum length: 64 characters.
 	DisplayName *string `pulumi:"displayName"`
-	// 用户组的更新时间。
+	// User group update time.
 	UpdatedTime *string `pulumi:"updatedTime"`
-	// 用户组ID。
+	// User group ID.
 	UserGroupId *int `pulumi:"userGroupId"`
-	// 用户组名称。长度1~64，支持英文、数字和.-_符号。
+	// User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
 	UserGroupName *string     `pulumi:"userGroupName"`
 	Users         []GroupUser `pulumi:"users"`
 }
 
 type GroupState struct {
-	// 用户组所属主账号的ID。
+	// ID of the primary account to which the user group belongs.
 	AccountId        pulumi.IntPtrInput
 	AttachedPolicies GroupAttachedPolicyArrayInput
-	// 用户组的创建时间。
+	// User group creation time.
 	CreatedTime pulumi.StringPtrInput
-	// 用户组描述信息。长度不超过128。
+	// User group description. Maximum length: 128 characters.
 	Description pulumi.StringPtrInput
-	// 用户组显示名称。长度不超过64。
+	// User group display name. Maximum length: 64 characters.
 	DisplayName pulumi.StringPtrInput
-	// 用户组的更新时间。
+	// User group update time.
 	UpdatedTime pulumi.StringPtrInput
-	// 用户组ID。
+	// User group ID.
 	UserGroupId pulumi.IntPtrInput
-	// 用户组名称。长度1~64，支持英文、数字和.-_符号。
+	// User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
 	UserGroupName pulumi.StringPtrInput
 	Users         GroupUserArrayInput
 }
@@ -116,11 +116,11 @@ func (GroupState) ElementType() reflect.Type {
 
 type groupArgs struct {
 	AttachedPolicies []GroupAttachedPolicy `pulumi:"attachedPolicies"`
-	// 用户组描述信息。长度不超过128。
+	// User group description. Maximum length: 128 characters.
 	Description *string `pulumi:"description"`
-	// 用户组显示名称。长度不超过64。
+	// User group display name. Maximum length: 64 characters.
 	DisplayName *string `pulumi:"displayName"`
-	// 用户组名称。长度1~64，支持英文、数字和.-_符号。
+	// User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
 	UserGroupName string      `pulumi:"userGroupName"`
 	Users         []GroupUser `pulumi:"users"`
 }
@@ -128,11 +128,11 @@ type groupArgs struct {
 // The set of arguments for constructing a Group resource.
 type GroupArgs struct {
 	AttachedPolicies GroupAttachedPolicyArrayInput
-	// 用户组描述信息。长度不超过128。
+	// User group description. Maximum length: 128 characters.
 	Description pulumi.StringPtrInput
-	// 用户组显示名称。长度不超过64。
+	// User group display name. Maximum length: 64 characters.
 	DisplayName pulumi.StringPtrInput
-	// 用户组名称。长度1~64，支持英文、数字和.-_符号。
+	// User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
 	UserGroupName pulumi.StringInput
 	Users         GroupUserArrayInput
 }
@@ -224,7 +224,7 @@ func (o GroupOutput) ToGroupOutputWithContext(ctx context.Context) GroupOutput {
 	return o
 }
 
-// 用户组所属主账号的ID。
+// ID of the primary account to which the user group belongs.
 func (o GroupOutput) AccountId() pulumi.IntOutput {
 	return o.ApplyT(func(v *Group) pulumi.IntOutput { return v.AccountId }).(pulumi.IntOutput)
 }
@@ -233,32 +233,32 @@ func (o GroupOutput) AttachedPolicies() GroupAttachedPolicyArrayOutput {
 	return o.ApplyT(func(v *Group) GroupAttachedPolicyArrayOutput { return v.AttachedPolicies }).(GroupAttachedPolicyArrayOutput)
 }
 
-// 用户组的创建时间。
+// User group creation time.
 func (o GroupOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Group) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 用户组描述信息。长度不超过128。
+// User group description. Maximum length: 128 characters.
 func (o GroupOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Group) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// 用户组显示名称。长度不超过64。
+// User group display name. Maximum length: 64 characters.
 func (o GroupOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Group) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// 用户组的更新时间。
+// User group update time.
 func (o GroupOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Group) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// 用户组ID。
+// User group ID.
 func (o GroupOutput) UserGroupId() pulumi.IntOutput {
 	return o.ApplyT(func(v *Group) pulumi.IntOutput { return v.UserGroupId }).(pulumi.IntOutput)
 }
 
-// 用户组名称。长度1~64，支持英文、数字和.-_符号。
+// User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
 func (o GroupOutput) UserGroupName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Group) pulumi.StringOutput { return v.UserGroupName }).(pulumi.StringOutput)
 }

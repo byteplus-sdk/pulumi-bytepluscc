@@ -14,62 +14,62 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceSecondaryNetworkInterface {
     /**
-     * @return 实例的IPv6地址数量。
+     * @return The number of IPv6 addresses for the instance.
      * 
      */
     private @Nullable Integer ipv6AddressCount;
     /**
-     * @return 实例的主IP地址。
+     * @return Instance primary IP address
      * 
      */
     private @Nullable String primaryIpAddress;
     /**
-     * @return 实例的私有IP地址。
+     * @return Instance private IP address.
      * 
      */
     private @Nullable List<String> privateIpAddresses;
     /**
-     * @return 实例的安全组ID。
+     * @return Instance security group ID
      * 
      */
     private @Nullable List<String> securityGroupIds;
     /**
-     * @return 实例的子网ID。
+     * @return Instance subnet ID.
      * 
      */
     private @Nullable String subnetId;
 
     private InstanceSecondaryNetworkInterface() {}
     /**
-     * @return 实例的IPv6地址数量。
+     * @return The number of IPv6 addresses for the instance.
      * 
      */
     public Optional<Integer> ipv6AddressCount() {
         return Optional.ofNullable(this.ipv6AddressCount);
     }
     /**
-     * @return 实例的主IP地址。
+     * @return Instance primary IP address
      * 
      */
     public Optional<String> primaryIpAddress() {
         return Optional.ofNullable(this.primaryIpAddress);
     }
     /**
-     * @return 实例的私有IP地址。
+     * @return Instance private IP address.
      * 
      */
     public List<String> privateIpAddresses() {
         return this.privateIpAddresses == null ? List.of() : this.privateIpAddresses;
     }
     /**
-     * @return 实例的安全组ID。
+     * @return Instance security group ID
      * 
      */
     public List<String> securityGroupIds() {
         return this.securityGroupIds == null ? List.of() : this.securityGroupIds;
     }
     /**
-     * @return 实例的子网ID。
+     * @return Instance subnet ID.
      * 
      */
     public Optional<String> subnetId() {

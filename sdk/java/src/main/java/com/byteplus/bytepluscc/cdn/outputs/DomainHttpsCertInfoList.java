@@ -14,86 +14,86 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainHttpsCertInfoList {
     /**
-     * @return 表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 cert_hosting  - 开头的。
+     * @return Indicates the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
      * 
      */
     private @Nullable String certId;
     /**
-     * @return 表示该 CA 证书的 Common Name (CN) 字段中的内容。
+     * @return Represents the content of the Common Name (CN) field in the CA certificate.
      * 
      */
     private @Nullable String certName;
     /**
-     * @return 表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
+     * @return Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the content delivery network.
      * 
      */
     private @Nullable DomainHttpsCertInfoListCertificate certificate;
     /**
-     * @return 表示该证书的签发时间，单位是 Unix 时间戳。
+     * @return Indicates the issuance time of the certificate, in Unix timestamp.
      * 
      */
     private @Nullable Integer effectiveTime;
     /**
-     * @return 表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
+     * @return Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
      * 
      */
     private @Nullable String encryType;
     /**
-     * @return 表示该证书的到期时间，单位是 Unix 时间戳。
+     * @return Indicates the expiration time of the certificate, as a Unix timestamp.
      * 
      */
     private @Nullable Integer expireTime;
     /**
-     * @return 表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+     * @return Specifies the certificate hosting location. The parameter values are: volc*cert*center: certificate center; cdn*cert*hosting: content delivery network.
      * 
      */
     private @Nullable String source;
 
     private DomainHttpsCertInfoList() {}
     /**
-     * @return 表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 cert_hosting  - 开头的。
+     * @return Indicates the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
      * 
      */
     public Optional<String> certId() {
         return Optional.ofNullable(this.certId);
     }
     /**
-     * @return 表示该 CA 证书的 Common Name (CN) 字段中的内容。
+     * @return Represents the content of the Common Name (CN) field in the CA certificate.
      * 
      */
     public Optional<String> certName() {
         return Optional.ofNullable(this.certName);
     }
     /**
-     * @return 表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
+     * @return Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the content delivery network.
      * 
      */
     public Optional<DomainHttpsCertInfoListCertificate> certificate() {
         return Optional.ofNullable(this.certificate);
     }
     /**
-     * @return 表示该证书的签发时间，单位是 Unix 时间戳。
+     * @return Indicates the issuance time of the certificate, in Unix timestamp.
      * 
      */
     public Optional<Integer> effectiveTime() {
         return Optional.ofNullable(this.effectiveTime);
     }
     /**
-     * @return 表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
+     * @return Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
      * 
      */
     public Optional<String> encryType() {
         return Optional.ofNullable(this.encryType);
     }
     /**
-     * @return 表示该证书的到期时间，单位是 Unix 时间戳。
+     * @return Indicates the expiration time of the certificate, as a Unix timestamp.
      * 
      */
     public Optional<Integer> expireTime() {
         return Optional.ofNullable(this.expireTime);
     }
     /**
-     * @return 表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+     * @return Specifies the certificate hosting location. The parameter values are: volc*cert*center: certificate center; cdn*cert*hosting: content delivery network.
      * 
      */
     public Optional<String> source() {

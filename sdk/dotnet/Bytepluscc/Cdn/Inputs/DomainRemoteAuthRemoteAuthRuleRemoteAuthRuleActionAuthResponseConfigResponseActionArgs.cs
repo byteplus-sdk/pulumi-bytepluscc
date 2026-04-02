@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseActionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示鉴权失败时，内容分发网络响应用户的状态码。您可以指定范围在 400-499 中的任意一个状态码。该参数的默认值是 403。
+        /// Indicates the status code returned by the content delivery network to the user when authentication fails. You can specify any status code in the range 400–499. The default value is 403.
         /// </summary>
         [Input("statusCode")]
         public Input<string>? StatusCode { get; set; }

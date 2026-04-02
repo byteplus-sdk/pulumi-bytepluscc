@@ -17,14 +17,14 @@ public final class RuleRuleConditionHeaderConfigArgs extends com.pulumi.resource
     public static final RuleRuleConditionHeaderConfigArgs Empty = new RuleRuleConditionHeaderConfigArgs();
 
     /**
-     * 头字段键。
+     * Header field key.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 头字段键。
+     * @return Header field key.
      * 
      */
     public Optional<Output<String>> key() {
@@ -32,14 +32,14 @@ public final class RuleRuleConditionHeaderConfigArgs extends com.pulumi.resource
     }
 
     /**
-     * 头字段值。
+     * Header field value.
      * 
      */
     @Import(name="values")
     private @Nullable Output<List<String>> values;
 
     /**
-     * @return 头字段值。
+     * @return Header field value.
      * 
      */
     public Optional<Output<List<String>>> values() {
@@ -72,7 +72,7 @@ public final class RuleRuleConditionHeaderConfigArgs extends com.pulumi.resource
         }
 
         /**
-         * @param key 头字段键。
+         * @param key Header field key.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class RuleRuleConditionHeaderConfigArgs extends com.pulumi.resource
         }
 
         /**
-         * @param key 头字段键。
+         * @param key Header field key.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class RuleRuleConditionHeaderConfigArgs extends com.pulumi.resource
         }
 
         /**
-         * @param values 头字段值。
+         * @param values Header field value.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class RuleRuleConditionHeaderConfigArgs extends com.pulumi.resource
         }
 
         /**
-         * @param values 头字段值。
+         * @param values Header field value.
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class RuleRuleConditionHeaderConfigArgs extends com.pulumi.resource
         }
 
         /**
-         * @param values 头字段值。
+         * @param values Header field value.
          * 
          * @return builder
          * 

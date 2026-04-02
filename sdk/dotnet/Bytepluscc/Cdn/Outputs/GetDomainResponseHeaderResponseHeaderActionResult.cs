@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class GetDomainResponseHeaderResponseHeaderActionResult
     {
         /// <summary>
-        /// 表示一个响应头的配置规则列表。每个规则都包含一个头部的相关操作设置。您最多可以添加 50 条规则。
+        /// Specifies a list of configuration rules for response headers Each rule includes settings for header-related operations You can add up to 50 rules
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainResponseHeaderResponseHeaderActionResponseHeaderInstanceResult> ResponseHeaderInstances;
 

@@ -16,7 +16,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * 企业组织管理
+ * Enterprise Organization Management
  * 
  * ## Example Usage
  * 
@@ -60,42 +60,42 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:organization/organization:Organization")
 public class Organization extends com.pulumi.resources.CustomResource {
     /**
-     * 组织详情
+     * Organization Details
      * 
      */
     @Export(name="organization", refs={OrganizationOrganization.class}, tree="[0]")
     private Output<OrganizationOrganization> organization;
 
     /**
-     * @return 组织详情
+     * @return Organization Details
      * 
      */
     public Output<OrganizationOrganization> organization() {
         return this.organization;
     }
     /**
-     * 组织ID
+     * Organization ID
      * 
      */
     @Export(name="organizationId", refs={String.class}, tree="[0]")
     private Output<String> organizationId;
 
     /**
-     * @return 组织ID
+     * @return Organization ID
      * 
      */
     public Output<String> organizationId() {
         return this.organizationId;
     }
     /**
-     * 管理员详情
+     * Administrator Details
      * 
      */
     @Export(name="owner", refs={OrganizationOwner.class}, tree="[0]")
     private Output<OrganizationOwner> owner;
 
     /**
-     * @return 管理员详情
+     * @return Administrator Details
      * 
      */
     public Output<OrganizationOwner> owner() {

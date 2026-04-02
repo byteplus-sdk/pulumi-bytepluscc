@@ -14,9 +14,9 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type ZoneTag struct {
-	// 标签的键。
+	// Tag key
 	Key *string `pulumi:"key"`
-	// 标签的值。
+	// Tag value.
 	Value *string `pulumi:"value"`
 }
 
@@ -32,9 +32,9 @@ type ZoneTagInput interface {
 }
 
 type ZoneTagArgs struct {
-	// 标签的键。
+	// Tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签的值。
+	// Tag value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -89,12 +89,12 @@ func (o ZoneTagOutput) ToZoneTagOutputWithContext(ctx context.Context) ZoneTagOu
 	return o
 }
 
-// 标签的键。
+// Tag key
 func (o ZoneTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ZoneTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签的值。
+// Tag value.
 func (o ZoneTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ZoneTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -120,9 +120,9 @@ func (o ZoneTagArrayOutput) Index(i pulumi.IntInput) ZoneTagOutput {
 }
 
 type GetZoneTag struct {
-	// 标签的键。
+	// Tag key
 	Key string `pulumi:"key"`
-	// 标签的值。
+	// Tag value.
 	Value string `pulumi:"value"`
 }
 
@@ -138,9 +138,9 @@ type GetZoneTagInput interface {
 }
 
 type GetZoneTagArgs struct {
-	// 标签的键。
+	// Tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签的值。
+	// Tag value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -195,12 +195,12 @@ func (o GetZoneTagOutput) ToGetZoneTagOutputWithContext(ctx context.Context) Get
 	return o
 }
 
-// 标签的键。
+// Tag key
 func (o GetZoneTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZoneTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签的值。
+// Tag value.
 func (o GetZoneTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZoneTag) string { return v.Value }).(pulumi.StringOutput)
 }

@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GetUpstreamUpstreamSpecAiProviderCustomModelServiceResult
     {
         /// <summary>
-        /// 模型服务名称。
+        /// Model Service Name
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// 命名空间。
+        /// Namespace
         /// </summary>
         public readonly string Namespace;
         /// <summary>
-        /// 端口。
+        /// Port
         /// </summary>
         public readonly int Port;
 

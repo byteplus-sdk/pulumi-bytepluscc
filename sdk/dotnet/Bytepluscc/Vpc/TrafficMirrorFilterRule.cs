@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Vpc
 {
     /// <summary>
-    /// 筛选条件由筛选规则组成，分为入向筛选规则和出向筛选规则。
+    /// Filtering conditions are composed of filtering rules, divided into inbound filtering rules and outbound filtering rules.
     /// 
     /// ## Example Usage
     /// 
@@ -50,73 +50,73 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public partial class TrafficMirrorFilterRule : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 筛选规则的描述。
+        /// Description of the filtering rule.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 目的网段。
+        /// Destination network segment.
         /// </summary>
         [Output("destinationCidrBlock")]
         public Output<string> DestinationCidrBlock { get; private set; } = null!;
 
         /// <summary>
-        /// 流量目的端口范围。当Protocol传入all或icmp时，无需传入本参数，默认取值-1/-1，表示不限制端口。当Protocol传入tcp或udp时，本参数为必选，取值范围1～65535，使用正斜线（/）隔开起始端口和终止端口，如1/50、80/80。
+        /// Destination port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
         /// </summary>
         [Output("destinationPortRange")]
         public Output<string> DestinationPortRange { get; private set; } = null!;
 
         /// <summary>
-        /// 流量采集策略。accept：允许。即当镜像源的流量匹配该规则时，复制该流量至镜像目标进行监控分析。reject：拒绝。即当镜像源的流量匹配该规则时，不复制该流量，拒绝对该流量进行监控分析。
+        /// Traffic capture policy. accept: allow. When traffic from the mirror source matches this rule, the traffic is copied to the mirror target for monitoring and analysis. reject: reject. When traffic from the mirror source matches this rule, the traffic is not copied and monitoring and analysis are not performed.
         /// </summary>
         [Output("policy")]
         public Output<string> Policy { get; private set; } = null!;
 
         /// <summary>
-        /// 筛选规则的优先级，范围为1-1000。数值越小，优先级越高。默认为1，1为最高优先级。同一筛选条件同一方向的优先级唯一。
+        /// Priority of the filtering rule, ranging from 1 to 1000. The smaller the value, the higher the priority. Default is 1, which is the highest priority. For the same filtering condition and direction, the priority must be unique.
         /// </summary>
         [Output("priority")]
         public Output<int> Priority { get; private set; } = null!;
 
         /// <summary>
-        /// 流量的协议。取值如下：all：含TCP、UDP、ICMP协议。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。
+        /// Traffic protocol. Valid values: all: includes TCP, UDP, and ICMP protocols. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol.
         /// </summary>
         [Output("protocol")]
         public Output<string> Protocol { get; private set; } = null!;
 
         /// <summary>
-        /// 流量源网段。
+        /// Source network segment.
         /// </summary>
         [Output("sourceCidrBlock")]
         public Output<string> SourceCidrBlock { get; private set; } = null!;
 
         /// <summary>
-        /// 流量源端口范围。当Protocol传入all或icmp时，无需传入本参数，默认取值-1/-1，表示不限制端口。当Protocol传入tcp或udp时，本参数为必选，取值范围1～65535，使用正斜线（/）隔开起始端口和终止端口，如1/50、80/80。
+        /// Source port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
         /// </summary>
         [Output("sourcePortRange")]
         public Output<string> SourcePortRange { get; private set; } = null!;
 
         /// <summary>
-        /// 筛选规则的状态。Available：可用。Deleting：删除中。Creating：创建中。Pending：修改中。
+        /// Status of the filtering rule. Available: available. Deleting: deleting. Creating: creating. Pending: modifying.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// 流量的方向。取值如下：ingress：入向规则。egress：出向规则。
+        /// Traffic direction. Valid values: ingress: inbound rule. egress: outbound rule.
         /// </summary>
         [Output("trafficDirection")]
         public Output<string> TrafficDirection { get; private set; } = null!;
 
         /// <summary>
-        /// 筛选条件的ID。
+        /// Filtering condition ID.
         /// </summary>
         [Output("trafficMirrorFilterId")]
         public Output<string> TrafficMirrorFilterId { get; private set; } = null!;
 
         /// <summary>
-        /// 筛选规则的ID。
+        /// Filtering rule ID.
         /// </summary>
         [Output("trafficMirrorFilterRuleId")]
         public Output<string> TrafficMirrorFilterRuleId { get; private set; } = null!;
@@ -169,61 +169,61 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class TrafficMirrorFilterRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 筛选规则的描述。
+        /// Description of the filtering rule.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 目的网段。
+        /// Destination network segment.
         /// </summary>
         [Input("destinationCidrBlock", required: true)]
         public Input<string> DestinationCidrBlock { get; set; } = null!;
 
         /// <summary>
-        /// 流量目的端口范围。当Protocol传入all或icmp时，无需传入本参数，默认取值-1/-1，表示不限制端口。当Protocol传入tcp或udp时，本参数为必选，取值范围1～65535，使用正斜线（/）隔开起始端口和终止端口，如1/50、80/80。
+        /// Destination port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
         /// </summary>
         [Input("destinationPortRange")]
         public Input<string>? DestinationPortRange { get; set; }
 
         /// <summary>
-        /// 流量采集策略。accept：允许。即当镜像源的流量匹配该规则时，复制该流量至镜像目标进行监控分析。reject：拒绝。即当镜像源的流量匹配该规则时，不复制该流量，拒绝对该流量进行监控分析。
+        /// Traffic capture policy. accept: allow. When traffic from the mirror source matches this rule, the traffic is copied to the mirror target for monitoring and analysis. reject: reject. When traffic from the mirror source matches this rule, the traffic is not copied and monitoring and analysis are not performed.
         /// </summary>
         [Input("policy", required: true)]
         public Input<string> Policy { get; set; } = null!;
 
         /// <summary>
-        /// 筛选规则的优先级，范围为1-1000。数值越小，优先级越高。默认为1，1为最高优先级。同一筛选条件同一方向的优先级唯一。
+        /// Priority of the filtering rule, ranging from 1 to 1000. The smaller the value, the higher the priority. Default is 1, which is the highest priority. For the same filtering condition and direction, the priority must be unique.
         /// </summary>
         [Input("priority")]
         public Input<int>? Priority { get; set; }
 
         /// <summary>
-        /// 流量的协议。取值如下：all：含TCP、UDP、ICMP协议。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。
+        /// Traffic protocol. Valid values: all: includes TCP, UDP, and ICMP protocols. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol.
         /// </summary>
         [Input("protocol", required: true)]
         public Input<string> Protocol { get; set; } = null!;
 
         /// <summary>
-        /// 流量源网段。
+        /// Source network segment.
         /// </summary>
         [Input("sourceCidrBlock", required: true)]
         public Input<string> SourceCidrBlock { get; set; } = null!;
 
         /// <summary>
-        /// 流量源端口范围。当Protocol传入all或icmp时，无需传入本参数，默认取值-1/-1，表示不限制端口。当Protocol传入tcp或udp时，本参数为必选，取值范围1～65535，使用正斜线（/）隔开起始端口和终止端口，如1/50、80/80。
+        /// Source port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
         /// </summary>
         [Input("sourcePortRange")]
         public Input<string>? SourcePortRange { get; set; }
 
         /// <summary>
-        /// 流量的方向。取值如下：ingress：入向规则。egress：出向规则。
+        /// Traffic direction. Valid values: ingress: inbound rule. egress: outbound rule.
         /// </summary>
         [Input("trafficDirection", required: true)]
         public Input<string> TrafficDirection { get; set; } = null!;
 
         /// <summary>
-        /// 筛选条件的ID。
+        /// Filtering condition ID.
         /// </summary>
         [Input("trafficMirrorFilterId", required: true)]
         public Input<string> TrafficMirrorFilterId { get; set; } = null!;
@@ -237,73 +237,73 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class TrafficMirrorFilterRuleState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 筛选规则的描述。
+        /// Description of the filtering rule.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 目的网段。
+        /// Destination network segment.
         /// </summary>
         [Input("destinationCidrBlock")]
         public Input<string>? DestinationCidrBlock { get; set; }
 
         /// <summary>
-        /// 流量目的端口范围。当Protocol传入all或icmp时，无需传入本参数，默认取值-1/-1，表示不限制端口。当Protocol传入tcp或udp时，本参数为必选，取值范围1～65535，使用正斜线（/）隔开起始端口和终止端口，如1/50、80/80。
+        /// Destination port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
         /// </summary>
         [Input("destinationPortRange")]
         public Input<string>? DestinationPortRange { get; set; }
 
         /// <summary>
-        /// 流量采集策略。accept：允许。即当镜像源的流量匹配该规则时，复制该流量至镜像目标进行监控分析。reject：拒绝。即当镜像源的流量匹配该规则时，不复制该流量，拒绝对该流量进行监控分析。
+        /// Traffic capture policy. accept: allow. When traffic from the mirror source matches this rule, the traffic is copied to the mirror target for monitoring and analysis. reject: reject. When traffic from the mirror source matches this rule, the traffic is not copied and monitoring and analysis are not performed.
         /// </summary>
         [Input("policy")]
         public Input<string>? Policy { get; set; }
 
         /// <summary>
-        /// 筛选规则的优先级，范围为1-1000。数值越小，优先级越高。默认为1，1为最高优先级。同一筛选条件同一方向的优先级唯一。
+        /// Priority of the filtering rule, ranging from 1 to 1000. The smaller the value, the higher the priority. Default is 1, which is the highest priority. For the same filtering condition and direction, the priority must be unique.
         /// </summary>
         [Input("priority")]
         public Input<int>? Priority { get; set; }
 
         /// <summary>
-        /// 流量的协议。取值如下：all：含TCP、UDP、ICMP协议。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。
+        /// Traffic protocol. Valid values: all: includes TCP, UDP, and ICMP protocols. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol.
         /// </summary>
         [Input("protocol")]
         public Input<string>? Protocol { get; set; }
 
         /// <summary>
-        /// 流量源网段。
+        /// Source network segment.
         /// </summary>
         [Input("sourceCidrBlock")]
         public Input<string>? SourceCidrBlock { get; set; }
 
         /// <summary>
-        /// 流量源端口范围。当Protocol传入all或icmp时，无需传入本参数，默认取值-1/-1，表示不限制端口。当Protocol传入tcp或udp时，本参数为必选，取值范围1～65535，使用正斜线（/）隔开起始端口和终止端口，如1/50、80/80。
+        /// Source port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
         /// </summary>
         [Input("sourcePortRange")]
         public Input<string>? SourcePortRange { get; set; }
 
         /// <summary>
-        /// 筛选规则的状态。Available：可用。Deleting：删除中。Creating：创建中。Pending：修改中。
+        /// Status of the filtering rule. Available: available. Deleting: deleting. Creating: creating. Pending: modifying.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// 流量的方向。取值如下：ingress：入向规则。egress：出向规则。
+        /// Traffic direction. Valid values: ingress: inbound rule. egress: outbound rule.
         /// </summary>
         [Input("trafficDirection")]
         public Input<string>? TrafficDirection { get; set; }
 
         /// <summary>
-        /// 筛选条件的ID。
+        /// Filtering condition ID.
         /// </summary>
         [Input("trafficMirrorFilterId")]
         public Input<string>? TrafficMirrorFilterId { get; set; }
 
         /// <summary>
-        /// 筛选规则的ID。
+        /// Filtering rule ID.
         /// </summary>
         [Input("trafficMirrorFilterRuleId")]
         public Input<string>? TrafficMirrorFilterRuleId { get; set; }

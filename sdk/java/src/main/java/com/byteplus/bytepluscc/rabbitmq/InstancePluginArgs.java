@@ -17,14 +17,14 @@ public final class InstancePluginArgs extends com.pulumi.resources.ResourceArgs 
     public static final InstancePluginArgs Empty = new InstancePluginArgs();
 
     /**
-     * 实例 ID。
+     * Instance ID
      * 
      */
     @Import(name="instanceId", required=true)
     private Output<String> instanceId;
 
     /**
-     * @return 实例 ID。
+     * @return Instance ID
      * 
      */
     public Output<String> instanceId() {
@@ -32,14 +32,14 @@ public final class InstancePluginArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 插件名称。
+     * Plugin name
      * 
      */
     @Import(name="pluginName")
     private @Nullable Output<String> pluginName;
 
     /**
-     * @return 插件名称。
+     * @return Plugin name
      * 
      */
     public Optional<Output<String>> pluginName() {
@@ -72,7 +72,7 @@ public final class InstancePluginArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class InstancePluginArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class InstancePluginArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param pluginName 插件名称。
+         * @param pluginName Plugin name
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class InstancePluginArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param pluginName 插件名称。
+         * @param pluginName Plugin name
          * 
          * @return builder
          * 

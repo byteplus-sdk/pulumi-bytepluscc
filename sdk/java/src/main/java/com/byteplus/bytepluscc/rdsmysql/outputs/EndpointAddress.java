@@ -13,38 +13,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class EndpointAddress {
     /**
-     * @return false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+     * @return false: Volcano Engine private network resolution (default). true: Volcano Engine private network and public network resolution.
      * 
      */
     private @Nullable Boolean dnsVisibility;
     /**
-     * @return 连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+     * @return Connection address prefix. The prefix must meet the following rules: start with a lowercase letter and end with a lowercase letter or digit; contain at least two of the following: lowercase letters, digits, or hyphens (-); be at least 8 characters long; and the total connection address length (prefix + suffix) must not exceed 63 characters.
      * 
      */
     private @Nullable String domainPrefix;
     /**
-     * @return 端口。
+     * @return Port.
      * 
      */
     private @Nullable String port;
 
     private EndpointAddress() {}
     /**
-     * @return false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+     * @return false: Volcano Engine private network resolution (default). true: Volcano Engine private network and public network resolution.
      * 
      */
     public Optional<Boolean> dnsVisibility() {
         return Optional.ofNullable(this.dnsVisibility);
     }
     /**
-     * @return 连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+     * @return Connection address prefix. The prefix must meet the following rules: start with a lowercase letter and end with a lowercase letter or digit; contain at least two of the following: lowercase letters, digits, or hyphens (-); be at least 8 characters long; and the total connection address length (prefix + suffix) must not exceed 63 characters.
      * 
      */
     public Optional<String> domainPrefix() {
         return Optional.ofNullable(this.domainPrefix);
     }
     /**
-     * @return 端口。
+     * @return Port.
      * 
      */
     public Optional<String> port() {

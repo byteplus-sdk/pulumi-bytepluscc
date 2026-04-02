@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 云数据库 MySQL 版是火山引擎基于开源数据库 MySQL 打造的弹性、可靠的在线关系型数据库服务。 MySQL 实例使用云原生方式部署，结合本地 SSD 存储类型，提供高性能读写能力；完全兼容 MySQL 引擎，并提供实例管理、备份恢复、日志管理、监控告警、数据迁移等全套解决方案，帮助企业简化繁杂的数据库管理和运维任务，使企业有更多的时间与资源聚焦于自己的核心业务。
+// Volcano Engine Cloud Database MySQL Edition is an elastic and reliable online relational database service built on the open-source MySQL database. MySQL instances are deployed using cloud-native methods and local SSD storage, delivering high-performance read and write capabilities. The service is fully compatible with the MySQL engine and offers a complete suite of solutions, including instance management, backup and recovery, log management, monitoring and alerts, and data migration. This helps enterprises simplify complex database management and operations, allowing them to focus more time and resources on their core business.
 //
 // ## Import
 //
@@ -23,139 +23,139 @@ type Instance struct {
 	pulumi.CustomResourceState
 
 	AddressObjects InstanceAddressObjectArrayOutput `pulumi:"addressObjects"`
-	// 白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
+	// Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
 	AllowListIds pulumi.StringArrayOutput `pulumi:"allowListIds"`
-	// 白名单版本。
+	// Allowlist version
 	AllowListVersion pulumi.StringOutput `pulumi:"allowListVersion"`
-	// 自动扩容配置。
+	// Auto scaling configuration
 	AutoStorageScalingConfig InstanceAutoStorageScalingConfigOutput `pulumi:"autoStorageScalingConfig"`
-	// 实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。
+	// Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
 	AutoUpgradeMinorVersion pulumi.StringOutput `pulumi:"autoUpgradeMinorVersion"`
-	// 备份中审计日志使用的空间。
+	// Space used by audit logs in backup.
 	BackupAuditLogSize pulumi.IntOutput `pulumi:"backupAuditLogSize"`
-	// 备份中 Binlog 日志使用的空间。
+	// Space used by binlog logs in backup.
 	BackupBinLogSize pulumi.IntOutput `pulumi:"backupBinLogSize"`
-	// 备份中数据使用的空间。
+	// Space used by data in backup.
 	BackupDataSize pulumi.IntOutput `pulumi:"backupDataSize"`
-	// 备份中错误日志使用的空间。
+	// Space used by error logs in backups.
 	BackupErrorLogSize pulumi.IntOutput `pulumi:"backupErrorLogSize"`
-	// 免费的备份存储空间，单位为 GB。
+	// Free backup storage space, in GB
 	BackupFreeQuotaSize pulumi.IntOutput `pulumi:"backupFreeQuotaSize"`
-	// 备份中日志使用的空间。
+	// Space used by logs in backups.
 	BackupLogSize pulumi.IntOutput `pulumi:"backupLogSize"`
-	// 备份中慢日志使用的空间。
+	// Space used by slow logs in backups.
 	BackupSlowLogSize pulumi.IntOutput `pulumi:"backupSlowLogSize"`
-	// 实例的备份已使用的空间，单位为 GB。
+	// Backup space used by the instance, in GB
 	BackupUse pulumi.Float64Output `pulumi:"backupUse"`
-	// 基础备份中 Binlog 日志使用的空间。
+	// Space used by Binlog logs in basic backups.
 	BasicBackupBinlogSize pulumi.IntOutput `pulumi:"basicBackupBinlogSize"`
-	// 基础备份中数据使用的空间。
+	// Space used by data in the base backup
 	BasicBackupDataSize pulumi.IntOutput `pulumi:"basicBackupDataSize"`
-	// 付费方式。
+	// Billing method
 	ChargeDetail InstanceChargeDetailOutput `pulumi:"chargeDetail"`
-	// 实例数据库代理服务的 CPU 核数。
+	// Number of CPU cores for the database proxy service of the instance
 	CpuNum pulumi.IntOutput `pulumi:"cpuNum"`
-	// 实例创建本地时间。
+	// Instance creation local time.
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// 实例的内核小版本。
+	// Instance kernel minor version.
 	CurrentKernelVersion pulumi.StringOutput `pulumi:"currentKernelVersion"`
-	// 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+	// Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
 	DbEngineVersion pulumi.StringOutput `pulumi:"dbEngineVersion"`
-	// 参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。
+	// Parameter template ID. Default value is the default parameter template for the database engine version
 	DbParamGroupId pulumi.StringOutput `pulumi:"dbParamGroupId"`
-	// 时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。
+	// Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
 	DbTimeZone pulumi.StringOutput `pulumi:"dbTimeZone"`
-	// 是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。
+	// Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
 	DeletionProtection        pulumi.StringOutput                         `pulumi:"deletionProtection"`
 	DisasterRecoveryInstances InstanceDisasterRecoveryInstanceArrayOutput `pulumi:"disasterRecoveryInstances"`
-	// 主实例与灾备实例之间的数据同步链路在 DTS 数据同步任务的 ID。
+	// ID of the data synchronization link between the primary and disaster recovery instances in the DTS data synchronization task.
 	DrDtsTaskId pulumi.StringOutput `pulumi:"drDtsTaskId"`
-	// 主实例与灾备实例之间同步任务的名称。
+	// Name of synchronization tasks between primary and disaster recovery instances.
 	DrDtsTaskName pulumi.StringOutput `pulumi:"drDtsTaskName"`
-	// 主实例与灾备实例之间同步任务的状态。
+	// Status of synchronization tasks between primary and disaster recovery instances.
 	DrDtsTaskStatus pulumi.StringOutput `pulumi:"drDtsTaskStatus"`
-	// 灾备实例与主实例之间的时延。
+	// Latency between the disaster recovery instance and the primary instance.
 	DrSecondsBehindMaster pulumi.IntOutput            `pulumi:"drSecondsBehindMaster"`
 	Endpoints             InstanceEndpointArrayOutput `pulumi:"endpoints"`
-	// 是否开启全局只读。取值：true：是。false：否。默认值为 false。
+	// Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
 	GlobalReadOnly pulumi.BoolOutput `pulumi:"globalReadOnly"`
-	// 实例是否有灾备实例。取值：true：是。false：否。
+	// Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
 	HasDisasterRecoveryInstances pulumi.BoolOutput `pulumi:"hasDisasterRecoveryInstances"`
-	// 实例是否处于蓝绿部署中。取值：true：是。false：否。
+	// Is the instance in blue-green deployment? Values: true: yes. false: no.
 	HasGreenInstance pulumi.BoolOutput `pulumi:"hasGreenInstance"`
-	// 实例 ID。
+	// Instance ID.
 	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
-	// 实例名称。
+	// Instance name.
 	InstanceName pulumi.StringOutput `pulumi:"instanceName"`
-	// 实例状态。
+	// Instance status.
 	InstanceStatus pulumi.StringOutput `pulumi:"instanceStatus"`
-	// 实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。
+	// Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
 	InstanceType pulumi.StringOutput `pulumi:"instanceType"`
-	// 表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。
+	// Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
 	LowerCaseTableNames pulumi.StringOutput `pulumi:"lowerCaseTableNames"`
-	// 在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。
+	// Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
 	MaintenanceWindow InstanceMaintenanceWindowOutput `pulumi:"maintenanceWindow"`
-	// 主实例的 ID。
+	// Primary instance ID
 	MasterInstanceId pulumi.StringOutput `pulumi:"masterInstanceId"`
-	// 主实例的名称。
+	// Primary instance name.
 	MasterInstanceName pulumi.StringOutput `pulumi:"masterInstanceName"`
-	// 内存大小。单位：GB。
+	// Memory size. Unit: GB.
 	Memory pulumi.IntOutput `pulumi:"memory"`
-	// 实例主节点 CPU 使用率近一分钟的平均值。
+	// Average CPU usage of the primary node in the instance over the past minute.
 	NodeCpuUsedPercentage pulumi.Float64Output `pulumi:"nodeCpuUsedPercentage"`
-	// 实例主节点内存使用率近一分钟的平均值。
+	// Average memory usage of the primary node over the past minute
 	NodeMemoryUsedPercentage pulumi.Float64Output `pulumi:"nodeMemoryUsedPercentage"`
-	// 节点数量。
+	// Number of nodes.
 	NodeNumber pulumi.StringOutput `pulumi:"nodeNumber"`
-	// 实例主节点磁盘使用率近一分钟的平均值。
+	// Average disk usage of the primary node over the past minute
 	NodeSpaceUsedPercentage pulumi.Float64Output `pulumi:"nodeSpaceUsedPercentage"`
-	// 节点规格。
+	// Node specifications.
 	NodeSpec pulumi.StringOutput     `pulumi:"nodeSpec"`
 	Nodes    InstanceNodeArrayOutput `pulumi:"nodes"`
-	// 默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。
+	// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
 	Port pulumi.IntOutput `pulumi:"port"`
-	// 所属项目。
+	// Project.
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
-	// proxy信息
+	// proxy information
 	ProxyDetail InstanceProxyDetailOutput `pulumi:"proxyDetail"`
-	// 实例存储空间中审计日志使用的空间。
+	// Space used by audit logs in instance storage
 	StorageAuditLogSize pulumi.IntOutput `pulumi:"storageAuditLogSize"`
-	// 实例存储空间中 Binlog 使用的空间。
+	// Binlog space usage in the instance storage
 	StorageBinLogSize pulumi.IntOutput `pulumi:"storageBinLogSize"`
-	// 实例存储空间中数据使用的空间。
+	// Space used by data in instance storage.
 	StorageDataSize pulumi.IntOutput `pulumi:"storageDataSize"`
-	// 实例存储空间中错误日志使用的空间。
+	// Space used by error logs in instance storage.
 	StorageErrorLogSize pulumi.IntOutput `pulumi:"storageErrorLogSize"`
-	// 实例存储空间中日志使用的空间。
+	// Space used by logs in the instance storage
 	StorageLogSize pulumi.IntOutput `pulumi:"storageLogSize"`
-	// 实例存储空间中慢日志使用的空间。
+	// Space used by slow logs in instance storage
 	StorageSlowLogSize pulumi.IntOutput `pulumi:"storageSlowLogSize"`
-	// 实例总存储空间。单位为 GB。
+	// Total storage space of the instance, in GB
 	StorageSpace pulumi.IntOutput `pulumi:"storageSpace"`
-	// 实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。
+	// Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
 	StorageType pulumi.StringOutput `pulumi:"storageType"`
-	// 实例已使用用存储空间，单位为 GB。
+	// Storage space used by the instance, in GB
 	StorageUse pulumi.Float64Output `pulumi:"storageUse"`
-	// 子网 ID。
+	// Subnet ID.
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
-	// 高权限账号名称。不传此参数默认不创建高权限账号。
+	// High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
 	SuperAccountName pulumi.StringOutput `pulumi:"superAccountName"`
-	// 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=,.&?|/。
+	// Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !@#$%^&*()_+-=,.&?|/.
 	SuperAccountPassword pulumi.StringOutput `pulumi:"superAccountPassword"`
-	// 数据同步方式：SemiSync：半同步。Async：异步。
+	// Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
 	SyncMode pulumi.StringOutput    `pulumi:"syncMode"`
 	Tags     InstanceTagArrayOutput `pulumi:"tags"`
-	// 时区。
+	// Time zone
 	TimeZone pulumi.StringOutput `pulumi:"timeZone"`
-	// 实例更新本地时间。
+	// Instance updates local time.
 	UpdatedTime pulumi.StringOutput `pulumi:"updatedTime"`
-	// CPU 大小。例如：1 表示 1U。
+	// CPU size. For example: 1 means 1U.
 	Vcpu pulumi.IntOutput `pulumi:"vcpu"`
-	// 专有网络（VPC） ID。
+	// VPC (Virtual Private Cloud) ID.
 	VpcId pulumi.StringOutput `pulumi:"vpcId"`
-	// 实例主节点所在可用区。
+	// Availability zone of the instance's primary node.
 	ZoneId pulumi.StringOutput `pulumi:"zoneId"`
-	// 实例各节点所在的可用区列表。
+	// List of availability zones for each node in the instance.
 	ZoneIds pulumi.StringArrayOutput `pulumi:"zoneIds"`
 }
 
@@ -211,277 +211,277 @@ func GetInstance(ctx *pulumi.Context,
 // Input properties used for looking up and filtering Instance resources.
 type instanceState struct {
 	AddressObjects []InstanceAddressObject `pulumi:"addressObjects"`
-	// 白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
+	// Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
 	AllowListIds []string `pulumi:"allowListIds"`
-	// 白名单版本。
+	// Allowlist version
 	AllowListVersion *string `pulumi:"allowListVersion"`
-	// 自动扩容配置。
+	// Auto scaling configuration
 	AutoStorageScalingConfig *InstanceAutoStorageScalingConfig `pulumi:"autoStorageScalingConfig"`
-	// 实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。
+	// Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
 	AutoUpgradeMinorVersion *string `pulumi:"autoUpgradeMinorVersion"`
-	// 备份中审计日志使用的空间。
+	// Space used by audit logs in backup.
 	BackupAuditLogSize *int `pulumi:"backupAuditLogSize"`
-	// 备份中 Binlog 日志使用的空间。
+	// Space used by binlog logs in backup.
 	BackupBinLogSize *int `pulumi:"backupBinLogSize"`
-	// 备份中数据使用的空间。
+	// Space used by data in backup.
 	BackupDataSize *int `pulumi:"backupDataSize"`
-	// 备份中错误日志使用的空间。
+	// Space used by error logs in backups.
 	BackupErrorLogSize *int `pulumi:"backupErrorLogSize"`
-	// 免费的备份存储空间，单位为 GB。
+	// Free backup storage space, in GB
 	BackupFreeQuotaSize *int `pulumi:"backupFreeQuotaSize"`
-	// 备份中日志使用的空间。
+	// Space used by logs in backups.
 	BackupLogSize *int `pulumi:"backupLogSize"`
-	// 备份中慢日志使用的空间。
+	// Space used by slow logs in backups.
 	BackupSlowLogSize *int `pulumi:"backupSlowLogSize"`
-	// 实例的备份已使用的空间，单位为 GB。
+	// Backup space used by the instance, in GB
 	BackupUse *float64 `pulumi:"backupUse"`
-	// 基础备份中 Binlog 日志使用的空间。
+	// Space used by Binlog logs in basic backups.
 	BasicBackupBinlogSize *int `pulumi:"basicBackupBinlogSize"`
-	// 基础备份中数据使用的空间。
+	// Space used by data in the base backup
 	BasicBackupDataSize *int `pulumi:"basicBackupDataSize"`
-	// 付费方式。
+	// Billing method
 	ChargeDetail *InstanceChargeDetail `pulumi:"chargeDetail"`
-	// 实例数据库代理服务的 CPU 核数。
+	// Number of CPU cores for the database proxy service of the instance
 	CpuNum *int `pulumi:"cpuNum"`
-	// 实例创建本地时间。
+	// Instance creation local time.
 	CreatedTime *string `pulumi:"createdTime"`
-	// 实例的内核小版本。
+	// Instance kernel minor version.
 	CurrentKernelVersion *string `pulumi:"currentKernelVersion"`
-	// 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+	// Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
 	DbEngineVersion *string `pulumi:"dbEngineVersion"`
-	// 参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。
+	// Parameter template ID. Default value is the default parameter template for the database engine version
 	DbParamGroupId *string `pulumi:"dbParamGroupId"`
-	// 时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。
+	// Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
 	DbTimeZone *string `pulumi:"dbTimeZone"`
-	// 是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。
+	// Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
 	DeletionProtection        *string                            `pulumi:"deletionProtection"`
 	DisasterRecoveryInstances []InstanceDisasterRecoveryInstance `pulumi:"disasterRecoveryInstances"`
-	// 主实例与灾备实例之间的数据同步链路在 DTS 数据同步任务的 ID。
+	// ID of the data synchronization link between the primary and disaster recovery instances in the DTS data synchronization task.
 	DrDtsTaskId *string `pulumi:"drDtsTaskId"`
-	// 主实例与灾备实例之间同步任务的名称。
+	// Name of synchronization tasks between primary and disaster recovery instances.
 	DrDtsTaskName *string `pulumi:"drDtsTaskName"`
-	// 主实例与灾备实例之间同步任务的状态。
+	// Status of synchronization tasks between primary and disaster recovery instances.
 	DrDtsTaskStatus *string `pulumi:"drDtsTaskStatus"`
-	// 灾备实例与主实例之间的时延。
+	// Latency between the disaster recovery instance and the primary instance.
 	DrSecondsBehindMaster *int               `pulumi:"drSecondsBehindMaster"`
 	Endpoints             []InstanceEndpoint `pulumi:"endpoints"`
-	// 是否开启全局只读。取值：true：是。false：否。默认值为 false。
+	// Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
 	GlobalReadOnly *bool `pulumi:"globalReadOnly"`
-	// 实例是否有灾备实例。取值：true：是。false：否。
+	// Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
 	HasDisasterRecoveryInstances *bool `pulumi:"hasDisasterRecoveryInstances"`
-	// 实例是否处于蓝绿部署中。取值：true：是。false：否。
+	// Is the instance in blue-green deployment? Values: true: yes. false: no.
 	HasGreenInstance *bool `pulumi:"hasGreenInstance"`
-	// 实例 ID。
+	// Instance ID.
 	InstanceId *string `pulumi:"instanceId"`
-	// 实例名称。
+	// Instance name.
 	InstanceName *string `pulumi:"instanceName"`
-	// 实例状态。
+	// Instance status.
 	InstanceStatus *string `pulumi:"instanceStatus"`
-	// 实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。
+	// Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
 	InstanceType *string `pulumi:"instanceType"`
-	// 表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。
+	// Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
 	LowerCaseTableNames *string `pulumi:"lowerCaseTableNames"`
-	// 在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。
+	// Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
 	MaintenanceWindow *InstanceMaintenanceWindow `pulumi:"maintenanceWindow"`
-	// 主实例的 ID。
+	// Primary instance ID
 	MasterInstanceId *string `pulumi:"masterInstanceId"`
-	// 主实例的名称。
+	// Primary instance name.
 	MasterInstanceName *string `pulumi:"masterInstanceName"`
-	// 内存大小。单位：GB。
+	// Memory size. Unit: GB.
 	Memory *int `pulumi:"memory"`
-	// 实例主节点 CPU 使用率近一分钟的平均值。
+	// Average CPU usage of the primary node in the instance over the past minute.
 	NodeCpuUsedPercentage *float64 `pulumi:"nodeCpuUsedPercentage"`
-	// 实例主节点内存使用率近一分钟的平均值。
+	// Average memory usage of the primary node over the past minute
 	NodeMemoryUsedPercentage *float64 `pulumi:"nodeMemoryUsedPercentage"`
-	// 节点数量。
+	// Number of nodes.
 	NodeNumber *string `pulumi:"nodeNumber"`
-	// 实例主节点磁盘使用率近一分钟的平均值。
+	// Average disk usage of the primary node over the past minute
 	NodeSpaceUsedPercentage *float64 `pulumi:"nodeSpaceUsedPercentage"`
-	// 节点规格。
+	// Node specifications.
 	NodeSpec *string        `pulumi:"nodeSpec"`
 	Nodes    []InstanceNode `pulumi:"nodes"`
-	// 默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。
+	// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
 	Port *int `pulumi:"port"`
-	// 所属项目。
+	// Project.
 	ProjectName *string `pulumi:"projectName"`
-	// proxy信息
+	// proxy information
 	ProxyDetail *InstanceProxyDetail `pulumi:"proxyDetail"`
-	// 实例存储空间中审计日志使用的空间。
+	// Space used by audit logs in instance storage
 	StorageAuditLogSize *int `pulumi:"storageAuditLogSize"`
-	// 实例存储空间中 Binlog 使用的空间。
+	// Binlog space usage in the instance storage
 	StorageBinLogSize *int `pulumi:"storageBinLogSize"`
-	// 实例存储空间中数据使用的空间。
+	// Space used by data in instance storage.
 	StorageDataSize *int `pulumi:"storageDataSize"`
-	// 实例存储空间中错误日志使用的空间。
+	// Space used by error logs in instance storage.
 	StorageErrorLogSize *int `pulumi:"storageErrorLogSize"`
-	// 实例存储空间中日志使用的空间。
+	// Space used by logs in the instance storage
 	StorageLogSize *int `pulumi:"storageLogSize"`
-	// 实例存储空间中慢日志使用的空间。
+	// Space used by slow logs in instance storage
 	StorageSlowLogSize *int `pulumi:"storageSlowLogSize"`
-	// 实例总存储空间。单位为 GB。
+	// Total storage space of the instance, in GB
 	StorageSpace *int `pulumi:"storageSpace"`
-	// 实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。
+	// Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
 	StorageType *string `pulumi:"storageType"`
-	// 实例已使用用存储空间，单位为 GB。
+	// Storage space used by the instance, in GB
 	StorageUse *float64 `pulumi:"storageUse"`
-	// 子网 ID。
+	// Subnet ID.
 	SubnetId *string `pulumi:"subnetId"`
-	// 高权限账号名称。不传此参数默认不创建高权限账号。
+	// High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
 	SuperAccountName *string `pulumi:"superAccountName"`
-	// 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=,.&?|/。
+	// Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !@#$%^&*()_+-=,.&?|/.
 	SuperAccountPassword *string `pulumi:"superAccountPassword"`
-	// 数据同步方式：SemiSync：半同步。Async：异步。
+	// Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
 	SyncMode *string       `pulumi:"syncMode"`
 	Tags     []InstanceTag `pulumi:"tags"`
-	// 时区。
+	// Time zone
 	TimeZone *string `pulumi:"timeZone"`
-	// 实例更新本地时间。
+	// Instance updates local time.
 	UpdatedTime *string `pulumi:"updatedTime"`
-	// CPU 大小。例如：1 表示 1U。
+	// CPU size. For example: 1 means 1U.
 	Vcpu *int `pulumi:"vcpu"`
-	// 专有网络（VPC） ID。
+	// VPC (Virtual Private Cloud) ID.
 	VpcId *string `pulumi:"vpcId"`
-	// 实例主节点所在可用区。
+	// Availability zone of the instance's primary node.
 	ZoneId *string `pulumi:"zoneId"`
-	// 实例各节点所在的可用区列表。
+	// List of availability zones for each node in the instance.
 	ZoneIds []string `pulumi:"zoneIds"`
 }
 
 type InstanceState struct {
 	AddressObjects InstanceAddressObjectArrayInput
-	// 白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
+	// Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
 	AllowListIds pulumi.StringArrayInput
-	// 白名单版本。
+	// Allowlist version
 	AllowListVersion pulumi.StringPtrInput
-	// 自动扩容配置。
+	// Auto scaling configuration
 	AutoStorageScalingConfig InstanceAutoStorageScalingConfigPtrInput
-	// 实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。
+	// Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
 	AutoUpgradeMinorVersion pulumi.StringPtrInput
-	// 备份中审计日志使用的空间。
+	// Space used by audit logs in backup.
 	BackupAuditLogSize pulumi.IntPtrInput
-	// 备份中 Binlog 日志使用的空间。
+	// Space used by binlog logs in backup.
 	BackupBinLogSize pulumi.IntPtrInput
-	// 备份中数据使用的空间。
+	// Space used by data in backup.
 	BackupDataSize pulumi.IntPtrInput
-	// 备份中错误日志使用的空间。
+	// Space used by error logs in backups.
 	BackupErrorLogSize pulumi.IntPtrInput
-	// 免费的备份存储空间，单位为 GB。
+	// Free backup storage space, in GB
 	BackupFreeQuotaSize pulumi.IntPtrInput
-	// 备份中日志使用的空间。
+	// Space used by logs in backups.
 	BackupLogSize pulumi.IntPtrInput
-	// 备份中慢日志使用的空间。
+	// Space used by slow logs in backups.
 	BackupSlowLogSize pulumi.IntPtrInput
-	// 实例的备份已使用的空间，单位为 GB。
+	// Backup space used by the instance, in GB
 	BackupUse pulumi.Float64PtrInput
-	// 基础备份中 Binlog 日志使用的空间。
+	// Space used by Binlog logs in basic backups.
 	BasicBackupBinlogSize pulumi.IntPtrInput
-	// 基础备份中数据使用的空间。
+	// Space used by data in the base backup
 	BasicBackupDataSize pulumi.IntPtrInput
-	// 付费方式。
+	// Billing method
 	ChargeDetail InstanceChargeDetailPtrInput
-	// 实例数据库代理服务的 CPU 核数。
+	// Number of CPU cores for the database proxy service of the instance
 	CpuNum pulumi.IntPtrInput
-	// 实例创建本地时间。
+	// Instance creation local time.
 	CreatedTime pulumi.StringPtrInput
-	// 实例的内核小版本。
+	// Instance kernel minor version.
 	CurrentKernelVersion pulumi.StringPtrInput
-	// 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+	// Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
 	DbEngineVersion pulumi.StringPtrInput
-	// 参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。
+	// Parameter template ID. Default value is the default parameter template for the database engine version
 	DbParamGroupId pulumi.StringPtrInput
-	// 时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。
+	// Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
 	DbTimeZone pulumi.StringPtrInput
-	// 是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。
+	// Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
 	DeletionProtection        pulumi.StringPtrInput
 	DisasterRecoveryInstances InstanceDisasterRecoveryInstanceArrayInput
-	// 主实例与灾备实例之间的数据同步链路在 DTS 数据同步任务的 ID。
+	// ID of the data synchronization link between the primary and disaster recovery instances in the DTS data synchronization task.
 	DrDtsTaskId pulumi.StringPtrInput
-	// 主实例与灾备实例之间同步任务的名称。
+	// Name of synchronization tasks between primary and disaster recovery instances.
 	DrDtsTaskName pulumi.StringPtrInput
-	// 主实例与灾备实例之间同步任务的状态。
+	// Status of synchronization tasks between primary and disaster recovery instances.
 	DrDtsTaskStatus pulumi.StringPtrInput
-	// 灾备实例与主实例之间的时延。
+	// Latency between the disaster recovery instance and the primary instance.
 	DrSecondsBehindMaster pulumi.IntPtrInput
 	Endpoints             InstanceEndpointArrayInput
-	// 是否开启全局只读。取值：true：是。false：否。默认值为 false。
+	// Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
 	GlobalReadOnly pulumi.BoolPtrInput
-	// 实例是否有灾备实例。取值：true：是。false：否。
+	// Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
 	HasDisasterRecoveryInstances pulumi.BoolPtrInput
-	// 实例是否处于蓝绿部署中。取值：true：是。false：否。
+	// Is the instance in blue-green deployment? Values: true: yes. false: no.
 	HasGreenInstance pulumi.BoolPtrInput
-	// 实例 ID。
+	// Instance ID.
 	InstanceId pulumi.StringPtrInput
-	// 实例名称。
+	// Instance name.
 	InstanceName pulumi.StringPtrInput
-	// 实例状态。
+	// Instance status.
 	InstanceStatus pulumi.StringPtrInput
-	// 实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。
+	// Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
 	InstanceType pulumi.StringPtrInput
-	// 表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。
+	// Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
 	LowerCaseTableNames pulumi.StringPtrInput
-	// 在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。
+	// Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
 	MaintenanceWindow InstanceMaintenanceWindowPtrInput
-	// 主实例的 ID。
+	// Primary instance ID
 	MasterInstanceId pulumi.StringPtrInput
-	// 主实例的名称。
+	// Primary instance name.
 	MasterInstanceName pulumi.StringPtrInput
-	// 内存大小。单位：GB。
+	// Memory size. Unit: GB.
 	Memory pulumi.IntPtrInput
-	// 实例主节点 CPU 使用率近一分钟的平均值。
+	// Average CPU usage of the primary node in the instance over the past minute.
 	NodeCpuUsedPercentage pulumi.Float64PtrInput
-	// 实例主节点内存使用率近一分钟的平均值。
+	// Average memory usage of the primary node over the past minute
 	NodeMemoryUsedPercentage pulumi.Float64PtrInput
-	// 节点数量。
+	// Number of nodes.
 	NodeNumber pulumi.StringPtrInput
-	// 实例主节点磁盘使用率近一分钟的平均值。
+	// Average disk usage of the primary node over the past minute
 	NodeSpaceUsedPercentage pulumi.Float64PtrInput
-	// 节点规格。
+	// Node specifications.
 	NodeSpec pulumi.StringPtrInput
 	Nodes    InstanceNodeArrayInput
-	// 默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。
+	// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
 	Port pulumi.IntPtrInput
-	// 所属项目。
+	// Project.
 	ProjectName pulumi.StringPtrInput
-	// proxy信息
+	// proxy information
 	ProxyDetail InstanceProxyDetailPtrInput
-	// 实例存储空间中审计日志使用的空间。
+	// Space used by audit logs in instance storage
 	StorageAuditLogSize pulumi.IntPtrInput
-	// 实例存储空间中 Binlog 使用的空间。
+	// Binlog space usage in the instance storage
 	StorageBinLogSize pulumi.IntPtrInput
-	// 实例存储空间中数据使用的空间。
+	// Space used by data in instance storage.
 	StorageDataSize pulumi.IntPtrInput
-	// 实例存储空间中错误日志使用的空间。
+	// Space used by error logs in instance storage.
 	StorageErrorLogSize pulumi.IntPtrInput
-	// 实例存储空间中日志使用的空间。
+	// Space used by logs in the instance storage
 	StorageLogSize pulumi.IntPtrInput
-	// 实例存储空间中慢日志使用的空间。
+	// Space used by slow logs in instance storage
 	StorageSlowLogSize pulumi.IntPtrInput
-	// 实例总存储空间。单位为 GB。
+	// Total storage space of the instance, in GB
 	StorageSpace pulumi.IntPtrInput
-	// 实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。
+	// Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
 	StorageType pulumi.StringPtrInput
-	// 实例已使用用存储空间，单位为 GB。
+	// Storage space used by the instance, in GB
 	StorageUse pulumi.Float64PtrInput
-	// 子网 ID。
+	// Subnet ID.
 	SubnetId pulumi.StringPtrInput
-	// 高权限账号名称。不传此参数默认不创建高权限账号。
+	// High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
 	SuperAccountName pulumi.StringPtrInput
-	// 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=,.&?|/。
+	// Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !@#$%^&*()_+-=,.&?|/.
 	SuperAccountPassword pulumi.StringPtrInput
-	// 数据同步方式：SemiSync：半同步。Async：异步。
+	// Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
 	SyncMode pulumi.StringPtrInput
 	Tags     InstanceTagArrayInput
-	// 时区。
+	// Time zone
 	TimeZone pulumi.StringPtrInput
-	// 实例更新本地时间。
+	// Instance updates local time.
 	UpdatedTime pulumi.StringPtrInput
-	// CPU 大小。例如：1 表示 1U。
+	// CPU size. For example: 1 means 1U.
 	Vcpu pulumi.IntPtrInput
-	// 专有网络（VPC） ID。
+	// VPC (Virtual Private Cloud) ID.
 	VpcId pulumi.StringPtrInput
-	// 实例主节点所在可用区。
+	// Availability zone of the instance's primary node.
 	ZoneId pulumi.StringPtrInput
-	// 实例各节点所在的可用区列表。
+	// List of availability zones for each node in the instance.
 	ZoneIds pulumi.StringArrayInput
 }
 
@@ -490,109 +490,109 @@ func (InstanceState) ElementType() reflect.Type {
 }
 
 type instanceArgs struct {
-	// 白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
+	// Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
 	AllowListIds []string `pulumi:"allowListIds"`
-	// 自动扩容配置。
+	// Auto scaling configuration
 	AutoStorageScalingConfig *InstanceAutoStorageScalingConfig `pulumi:"autoStorageScalingConfig"`
-	// 实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。
+	// Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
 	AutoUpgradeMinorVersion *string `pulumi:"autoUpgradeMinorVersion"`
-	// 付费方式。
+	// Billing method
 	ChargeDetail InstanceChargeDetail `pulumi:"chargeDetail"`
-	// 实例数据库代理服务的 CPU 核数。
+	// Number of CPU cores for the database proxy service of the instance
 	CpuNum *int `pulumi:"cpuNum"`
-	// 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+	// Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
 	DbEngineVersion string `pulumi:"dbEngineVersion"`
-	// 参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。
+	// Parameter template ID. Default value is the default parameter template for the database engine version
 	DbParamGroupId *string `pulumi:"dbParamGroupId"`
-	// 时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。
+	// Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
 	DbTimeZone *string `pulumi:"dbTimeZone"`
-	// 是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。
+	// Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
 	DeletionProtection *string `pulumi:"deletionProtection"`
-	// 是否开启全局只读。取值：true：是。false：否。默认值为 false。
+	// Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
 	GlobalReadOnly *bool `pulumi:"globalReadOnly"`
-	// 实例名称。
+	// Instance name.
 	InstanceName *string `pulumi:"instanceName"`
-	// 实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。
+	// Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
 	InstanceType *string `pulumi:"instanceType"`
-	// 表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。
+	// Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
 	LowerCaseTableNames *string `pulumi:"lowerCaseTableNames"`
-	// 在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。
+	// Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
 	MaintenanceWindow *InstanceMaintenanceWindow `pulumi:"maintenanceWindow"`
-	// 节点规格。
+	// Node specifications.
 	NodeSpec *string        `pulumi:"nodeSpec"`
 	Nodes    []InstanceNode `pulumi:"nodes"`
-	// 默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。
+	// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
 	Port *int `pulumi:"port"`
-	// 所属项目。
+	// Project.
 	ProjectName *string `pulumi:"projectName"`
-	// 实例总存储空间。单位为 GB。
+	// Total storage space of the instance, in GB
 	StorageSpace int `pulumi:"storageSpace"`
-	// 实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。
+	// Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
 	StorageType string `pulumi:"storageType"`
-	// 子网 ID。
+	// Subnet ID.
 	SubnetId string `pulumi:"subnetId"`
-	// 高权限账号名称。不传此参数默认不创建高权限账号。
+	// High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
 	SuperAccountName *string `pulumi:"superAccountName"`
-	// 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=,.&?|/。
+	// Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !@#$%^&*()_+-=,.&?|/.
 	SuperAccountPassword *string `pulumi:"superAccountPassword"`
-	// 数据同步方式：SemiSync：半同步。Async：异步。
+	// Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
 	SyncMode *string       `pulumi:"syncMode"`
 	Tags     []InstanceTag `pulumi:"tags"`
-	// 专有网络（VPC） ID。
+	// VPC (Virtual Private Cloud) ID.
 	VpcId string `pulumi:"vpcId"`
 }
 
 // The set of arguments for constructing a Instance resource.
 type InstanceArgs struct {
-	// 白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
+	// Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
 	AllowListIds pulumi.StringArrayInput
-	// 自动扩容配置。
+	// Auto scaling configuration
 	AutoStorageScalingConfig InstanceAutoStorageScalingConfigPtrInput
-	// 实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。
+	// Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
 	AutoUpgradeMinorVersion pulumi.StringPtrInput
-	// 付费方式。
+	// Billing method
 	ChargeDetail InstanceChargeDetailInput
-	// 实例数据库代理服务的 CPU 核数。
+	// Number of CPU cores for the database proxy service of the instance
 	CpuNum pulumi.IntPtrInput
-	// 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+	// Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
 	DbEngineVersion pulumi.StringInput
-	// 参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。
+	// Parameter template ID. Default value is the default parameter template for the database engine version
 	DbParamGroupId pulumi.StringPtrInput
-	// 时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。
+	// Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
 	DbTimeZone pulumi.StringPtrInput
-	// 是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。
+	// Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
 	DeletionProtection pulumi.StringPtrInput
-	// 是否开启全局只读。取值：true：是。false：否。默认值为 false。
+	// Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
 	GlobalReadOnly pulumi.BoolPtrInput
-	// 实例名称。
+	// Instance name.
 	InstanceName pulumi.StringPtrInput
-	// 实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。
+	// Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
 	InstanceType pulumi.StringPtrInput
-	// 表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。
+	// Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
 	LowerCaseTableNames pulumi.StringPtrInput
-	// 在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。
+	// Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
 	MaintenanceWindow InstanceMaintenanceWindowPtrInput
-	// 节点规格。
+	// Node specifications.
 	NodeSpec pulumi.StringPtrInput
 	Nodes    InstanceNodeArrayInput
-	// 默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。
+	// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
 	Port pulumi.IntPtrInput
-	// 所属项目。
+	// Project.
 	ProjectName pulumi.StringPtrInput
-	// 实例总存储空间。单位为 GB。
+	// Total storage space of the instance, in GB
 	StorageSpace pulumi.IntInput
-	// 实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。
+	// Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
 	StorageType pulumi.StringInput
-	// 子网 ID。
+	// Subnet ID.
 	SubnetId pulumi.StringInput
-	// 高权限账号名称。不传此参数默认不创建高权限账号。
+	// High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
 	SuperAccountName pulumi.StringPtrInput
-	// 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=,.&?|/。
+	// Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !@#$%^&*()_+-=,.&?|/.
 	SuperAccountPassword pulumi.StringPtrInput
-	// 数据同步方式：SemiSync：半同步。Async：异步。
+	// Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
 	SyncMode pulumi.StringPtrInput
 	Tags     InstanceTagArrayInput
-	// 专有网络（VPC） ID。
+	// VPC (Virtual Private Cloud) ID.
 	VpcId pulumi.StringInput
 }
 
@@ -687,112 +687,112 @@ func (o InstanceOutput) AddressObjects() InstanceAddressObjectArrayOutput {
 	return o.ApplyT(func(v *Instance) InstanceAddressObjectArrayOutput { return v.AddressObjects }).(InstanceAddressObjectArrayOutput)
 }
 
-// 白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
+// Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
 func (o InstanceOutput) AllowListIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringArrayOutput { return v.AllowListIds }).(pulumi.StringArrayOutput)
 }
 
-// 白名单版本。
+// Allowlist version
 func (o InstanceOutput) AllowListVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.AllowListVersion }).(pulumi.StringOutput)
 }
 
-// 自动扩容配置。
+// Auto scaling configuration
 func (o InstanceOutput) AutoStorageScalingConfig() InstanceAutoStorageScalingConfigOutput {
 	return o.ApplyT(func(v *Instance) InstanceAutoStorageScalingConfigOutput { return v.AutoStorageScalingConfig }).(InstanceAutoStorageScalingConfigOutput)
 }
 
-// 实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。
+// Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
 func (o InstanceOutput) AutoUpgradeMinorVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.AutoUpgradeMinorVersion }).(pulumi.StringOutput)
 }
 
-// 备份中审计日志使用的空间。
+// Space used by audit logs in backup.
 func (o InstanceOutput) BackupAuditLogSize() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.BackupAuditLogSize }).(pulumi.IntOutput)
 }
 
-// 备份中 Binlog 日志使用的空间。
+// Space used by binlog logs in backup.
 func (o InstanceOutput) BackupBinLogSize() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.BackupBinLogSize }).(pulumi.IntOutput)
 }
 
-// 备份中数据使用的空间。
+// Space used by data in backup.
 func (o InstanceOutput) BackupDataSize() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.BackupDataSize }).(pulumi.IntOutput)
 }
 
-// 备份中错误日志使用的空间。
+// Space used by error logs in backups.
 func (o InstanceOutput) BackupErrorLogSize() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.BackupErrorLogSize }).(pulumi.IntOutput)
 }
 
-// 免费的备份存储空间，单位为 GB。
+// Free backup storage space, in GB
 func (o InstanceOutput) BackupFreeQuotaSize() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.BackupFreeQuotaSize }).(pulumi.IntOutput)
 }
 
-// 备份中日志使用的空间。
+// Space used by logs in backups.
 func (o InstanceOutput) BackupLogSize() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.BackupLogSize }).(pulumi.IntOutput)
 }
 
-// 备份中慢日志使用的空间。
+// Space used by slow logs in backups.
 func (o InstanceOutput) BackupSlowLogSize() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.BackupSlowLogSize }).(pulumi.IntOutput)
 }
 
-// 实例的备份已使用的空间，单位为 GB。
+// Backup space used by the instance, in GB
 func (o InstanceOutput) BackupUse() pulumi.Float64Output {
 	return o.ApplyT(func(v *Instance) pulumi.Float64Output { return v.BackupUse }).(pulumi.Float64Output)
 }
 
-// 基础备份中 Binlog 日志使用的空间。
+// Space used by Binlog logs in basic backups.
 func (o InstanceOutput) BasicBackupBinlogSize() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.BasicBackupBinlogSize }).(pulumi.IntOutput)
 }
 
-// 基础备份中数据使用的空间。
+// Space used by data in the base backup
 func (o InstanceOutput) BasicBackupDataSize() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.BasicBackupDataSize }).(pulumi.IntOutput)
 }
 
-// 付费方式。
+// Billing method
 func (o InstanceOutput) ChargeDetail() InstanceChargeDetailOutput {
 	return o.ApplyT(func(v *Instance) InstanceChargeDetailOutput { return v.ChargeDetail }).(InstanceChargeDetailOutput)
 }
 
-// 实例数据库代理服务的 CPU 核数。
+// Number of CPU cores for the database proxy service of the instance
 func (o InstanceOutput) CpuNum() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.CpuNum }).(pulumi.IntOutput)
 }
 
-// 实例创建本地时间。
+// Instance creation local time.
 func (o InstanceOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 实例的内核小版本。
+// Instance kernel minor version.
 func (o InstanceOutput) CurrentKernelVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.CurrentKernelVersion }).(pulumi.StringOutput)
 }
 
-// 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+// Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
 func (o InstanceOutput) DbEngineVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.DbEngineVersion }).(pulumi.StringOutput)
 }
 
-// 参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。
+// Parameter template ID. Default value is the default parameter template for the database engine version
 func (o InstanceOutput) DbParamGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.DbParamGroupId }).(pulumi.StringOutput)
 }
 
-// 时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。
+// Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
 func (o InstanceOutput) DbTimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.DbTimeZone }).(pulumi.StringOutput)
 }
 
-// 是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。
+// Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
 func (o InstanceOutput) DeletionProtection() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.DeletionProtection }).(pulumi.StringOutput)
 }
@@ -801,22 +801,22 @@ func (o InstanceOutput) DisasterRecoveryInstances() InstanceDisasterRecoveryInst
 	return o.ApplyT(func(v *Instance) InstanceDisasterRecoveryInstanceArrayOutput { return v.DisasterRecoveryInstances }).(InstanceDisasterRecoveryInstanceArrayOutput)
 }
 
-// 主实例与灾备实例之间的数据同步链路在 DTS 数据同步任务的 ID。
+// ID of the data synchronization link between the primary and disaster recovery instances in the DTS data synchronization task.
 func (o InstanceOutput) DrDtsTaskId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.DrDtsTaskId }).(pulumi.StringOutput)
 }
 
-// 主实例与灾备实例之间同步任务的名称。
+// Name of synchronization tasks between primary and disaster recovery instances.
 func (o InstanceOutput) DrDtsTaskName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.DrDtsTaskName }).(pulumi.StringOutput)
 }
 
-// 主实例与灾备实例之间同步任务的状态。
+// Status of synchronization tasks between primary and disaster recovery instances.
 func (o InstanceOutput) DrDtsTaskStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.DrDtsTaskStatus }).(pulumi.StringOutput)
 }
 
-// 灾备实例与主实例之间的时延。
+// Latency between the disaster recovery instance and the primary instance.
 func (o InstanceOutput) DrSecondsBehindMaster() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.DrSecondsBehindMaster }).(pulumi.IntOutput)
 }
@@ -825,87 +825,87 @@ func (o InstanceOutput) Endpoints() InstanceEndpointArrayOutput {
 	return o.ApplyT(func(v *Instance) InstanceEndpointArrayOutput { return v.Endpoints }).(InstanceEndpointArrayOutput)
 }
 
-// 是否开启全局只读。取值：true：是。false：否。默认值为 false。
+// Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
 func (o InstanceOutput) GlobalReadOnly() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Instance) pulumi.BoolOutput { return v.GlobalReadOnly }).(pulumi.BoolOutput)
 }
 
-// 实例是否有灾备实例。取值：true：是。false：否。
+// Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
 func (o InstanceOutput) HasDisasterRecoveryInstances() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Instance) pulumi.BoolOutput { return v.HasDisasterRecoveryInstances }).(pulumi.BoolOutput)
 }
 
-// 实例是否处于蓝绿部署中。取值：true：是。false：否。
+// Is the instance in blue-green deployment? Values: true: yes. false: no.
 func (o InstanceOutput) HasGreenInstance() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Instance) pulumi.BoolOutput { return v.HasGreenInstance }).(pulumi.BoolOutput)
 }
 
-// 实例 ID。
+// Instance ID.
 func (o InstanceOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 实例名称。
+// Instance name.
 func (o InstanceOutput) InstanceName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.InstanceName }).(pulumi.StringOutput)
 }
 
-// 实例状态。
+// Instance status.
 func (o InstanceOutput) InstanceStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.InstanceStatus }).(pulumi.StringOutput)
 }
 
-// 实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。
+// Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
 func (o InstanceOutput) InstanceType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.InstanceType }).(pulumi.StringOutput)
 }
 
-// 表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。
+// Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
 func (o InstanceOutput) LowerCaseTableNames() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.LowerCaseTableNames }).(pulumi.StringOutput)
 }
 
-// 在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。
+// Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
 func (o InstanceOutput) MaintenanceWindow() InstanceMaintenanceWindowOutput {
 	return o.ApplyT(func(v *Instance) InstanceMaintenanceWindowOutput { return v.MaintenanceWindow }).(InstanceMaintenanceWindowOutput)
 }
 
-// 主实例的 ID。
+// Primary instance ID
 func (o InstanceOutput) MasterInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.MasterInstanceId }).(pulumi.StringOutput)
 }
 
-// 主实例的名称。
+// Primary instance name.
 func (o InstanceOutput) MasterInstanceName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.MasterInstanceName }).(pulumi.StringOutput)
 }
 
-// 内存大小。单位：GB。
+// Memory size. Unit: GB.
 func (o InstanceOutput) Memory() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.Memory }).(pulumi.IntOutput)
 }
 
-// 实例主节点 CPU 使用率近一分钟的平均值。
+// Average CPU usage of the primary node in the instance over the past minute.
 func (o InstanceOutput) NodeCpuUsedPercentage() pulumi.Float64Output {
 	return o.ApplyT(func(v *Instance) pulumi.Float64Output { return v.NodeCpuUsedPercentage }).(pulumi.Float64Output)
 }
 
-// 实例主节点内存使用率近一分钟的平均值。
+// Average memory usage of the primary node over the past minute
 func (o InstanceOutput) NodeMemoryUsedPercentage() pulumi.Float64Output {
 	return o.ApplyT(func(v *Instance) pulumi.Float64Output { return v.NodeMemoryUsedPercentage }).(pulumi.Float64Output)
 }
 
-// 节点数量。
+// Number of nodes.
 func (o InstanceOutput) NodeNumber() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.NodeNumber }).(pulumi.StringOutput)
 }
 
-// 实例主节点磁盘使用率近一分钟的平均值。
+// Average disk usage of the primary node over the past minute
 func (o InstanceOutput) NodeSpaceUsedPercentage() pulumi.Float64Output {
 	return o.ApplyT(func(v *Instance) pulumi.Float64Output { return v.NodeSpaceUsedPercentage }).(pulumi.Float64Output)
 }
 
-// 节点规格。
+// Node specifications.
 func (o InstanceOutput) NodeSpec() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.NodeSpec }).(pulumi.StringOutput)
 }
@@ -914,82 +914,82 @@ func (o InstanceOutput) Nodes() InstanceNodeArrayOutput {
 	return o.ApplyT(func(v *Instance) InstanceNodeArrayOutput { return v.Nodes }).(InstanceNodeArrayOutput)
 }
 
-// 默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。
+// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
 func (o InstanceOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.Port }).(pulumi.IntOutput)
 }
 
-// 所属项目。
+// Project.
 func (o InstanceOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// proxy信息
+// proxy information
 func (o InstanceOutput) ProxyDetail() InstanceProxyDetailOutput {
 	return o.ApplyT(func(v *Instance) InstanceProxyDetailOutput { return v.ProxyDetail }).(InstanceProxyDetailOutput)
 }
 
-// 实例存储空间中审计日志使用的空间。
+// Space used by audit logs in instance storage
 func (o InstanceOutput) StorageAuditLogSize() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.StorageAuditLogSize }).(pulumi.IntOutput)
 }
 
-// 实例存储空间中 Binlog 使用的空间。
+// Binlog space usage in the instance storage
 func (o InstanceOutput) StorageBinLogSize() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.StorageBinLogSize }).(pulumi.IntOutput)
 }
 
-// 实例存储空间中数据使用的空间。
+// Space used by data in instance storage.
 func (o InstanceOutput) StorageDataSize() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.StorageDataSize }).(pulumi.IntOutput)
 }
 
-// 实例存储空间中错误日志使用的空间。
+// Space used by error logs in instance storage.
 func (o InstanceOutput) StorageErrorLogSize() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.StorageErrorLogSize }).(pulumi.IntOutput)
 }
 
-// 实例存储空间中日志使用的空间。
+// Space used by logs in the instance storage
 func (o InstanceOutput) StorageLogSize() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.StorageLogSize }).(pulumi.IntOutput)
 }
 
-// 实例存储空间中慢日志使用的空间。
+// Space used by slow logs in instance storage
 func (o InstanceOutput) StorageSlowLogSize() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.StorageSlowLogSize }).(pulumi.IntOutput)
 }
 
-// 实例总存储空间。单位为 GB。
+// Total storage space of the instance, in GB
 func (o InstanceOutput) StorageSpace() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.StorageSpace }).(pulumi.IntOutput)
 }
 
-// 实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。
+// Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
 func (o InstanceOutput) StorageType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.StorageType }).(pulumi.StringOutput)
 }
 
-// 实例已使用用存储空间，单位为 GB。
+// Storage space used by the instance, in GB
 func (o InstanceOutput) StorageUse() pulumi.Float64Output {
 	return o.ApplyT(func(v *Instance) pulumi.Float64Output { return v.StorageUse }).(pulumi.Float64Output)
 }
 
-// 子网 ID。
+// Subnet ID.
 func (o InstanceOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// 高权限账号名称。不传此参数默认不创建高权限账号。
+// High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
 func (o InstanceOutput) SuperAccountName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.SuperAccountName }).(pulumi.StringOutput)
 }
 
-// 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=,.&?|/。
+// Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !@#$%^&*()_+-=,.&?|/.
 func (o InstanceOutput) SuperAccountPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.SuperAccountPassword }).(pulumi.StringOutput)
 }
 
-// 数据同步方式：SemiSync：半同步。Async：异步。
+// Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
 func (o InstanceOutput) SyncMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.SyncMode }).(pulumi.StringOutput)
 }
@@ -998,32 +998,32 @@ func (o InstanceOutput) Tags() InstanceTagArrayOutput {
 	return o.ApplyT(func(v *Instance) InstanceTagArrayOutput { return v.Tags }).(InstanceTagArrayOutput)
 }
 
-// 时区。
+// Time zone
 func (o InstanceOutput) TimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.TimeZone }).(pulumi.StringOutput)
 }
 
-// 实例更新本地时间。
+// Instance updates local time.
 func (o InstanceOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// CPU 大小。例如：1 表示 1U。
+// CPU size. For example: 1 means 1U.
 func (o InstanceOutput) Vcpu() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.Vcpu }).(pulumi.IntOutput)
 }
 
-// 专有网络（VPC） ID。
+// VPC (Virtual Private Cloud) ID.
 func (o InstanceOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.VpcId }).(pulumi.StringOutput)
 }
 
-// 实例主节点所在可用区。
+// Availability zone of the instance's primary node.
 func (o InstanceOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.ZoneId }).(pulumi.StringOutput)
 }
 
-// 实例各节点所在的可用区列表。
+// List of availability zones for each node in the instance.
 func (o InstanceOutput) ZoneIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringArrayOutput { return v.ZoneIds }).(pulumi.StringArrayOutput)
 }

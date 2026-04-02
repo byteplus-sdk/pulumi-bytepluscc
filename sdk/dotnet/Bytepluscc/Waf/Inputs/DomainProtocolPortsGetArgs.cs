@@ -17,7 +17,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf.Inputs
         private InputList<int>? _http;
 
         /// <summary>
-        /// HTTP 协议的端口号。
+        /// HTTP protocol port number
         /// </summary>
         public InputList<int> Http
         {
@@ -29,7 +29,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf.Inputs
         private InputList<int>? _https;
 
         /// <summary>
-        /// HTTPS 协议的端口号。
+        /// HTTPS protocol port number
         /// </summary>
         public InputList<int> Https
         {

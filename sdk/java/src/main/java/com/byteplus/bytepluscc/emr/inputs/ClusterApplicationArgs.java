@@ -17,14 +17,14 @@ public final class ClusterApplicationArgs extends com.pulumi.resources.ResourceA
     public static final ClusterApplicationArgs Empty = new ClusterApplicationArgs();
 
     /**
-     * 应用配置路径。
+     * Application configuration path.
      * 
      */
     @Import(name="applicationConfigHome")
     private @Nullable Output<String> applicationConfigHome;
 
     /**
-     * @return 应用配置路径。
+     * @return Application configuration path.
      * 
      */
     public Optional<Output<String>> applicationConfigHome() {
@@ -32,14 +32,14 @@ public final class ClusterApplicationArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * 应用安装路径。
+     * Application installation path.
      * 
      */
     @Import(name="applicationHome")
     private @Nullable Output<String> applicationHome;
 
     /**
-     * @return 应用安装路径。
+     * @return Application installation path.
      * 
      */
     public Optional<Output<String>> applicationHome() {
@@ -47,14 +47,14 @@ public final class ClusterApplicationArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * 应用名称。
+     * Application name.
      * 
      */
     @Import(name="applicationName")
     private @Nullable Output<String> applicationName;
 
     /**
-     * @return 应用名称。
+     * @return Application name.
      * 
      */
     public Optional<Output<String>> applicationName() {
@@ -62,14 +62,14 @@ public final class ClusterApplicationArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * 服务状态。NORMAL：正常；WARNING：告警；STOPPED：已停止；INIT：初始化中；INSTALLING：安装中；INSTALLED：已安装；STARTING：启动中；STARTED：已启动；STOPPING：停止中；UNINSTALLING：卸载中；UNINSTALLED：已卸载；EXCEPTION：异常。
+     * Service status. NORMAL: normal; WARNING: alert; STOPPED: stopped; INIT: initializing; INSTALLING: installing; INSTALLED: installed; STARTING: starting; STARTED: started; STOPPING: stopping; UNINSTALLING: uninstalling; UNINSTALLED: uninstalled; EXCEPTION: exception.
      * 
      */
     @Import(name="applicationState")
     private @Nullable Output<String> applicationState;
 
     /**
-     * @return 服务状态。NORMAL：正常；WARNING：告警；STOPPED：已停止；INIT：初始化中；INSTALLING：安装中；INSTALLED：已安装；STARTING：启动中；STARTED：已启动；STOPPING：停止中；UNINSTALLING：卸载中；UNINSTALLED：已卸载；EXCEPTION：异常。
+     * @return Service status. NORMAL: normal; WARNING: alert; STOPPED: stopped; INIT: initializing; INSTALLING: installing; INSTALLED: installed; STARTING: starting; STARTED: started; STOPPING: stopping; UNINSTALLING: uninstalling; UNINSTALLED: uninstalled; EXCEPTION: exception.
      * 
      */
     public Optional<Output<String>> applicationState() {
@@ -77,14 +77,14 @@ public final class ClusterApplicationArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * 应用版本。
+     * Application version.
      * 
      */
     @Import(name="applicationVersion")
     private @Nullable Output<String> applicationVersion;
 
     /**
-     * @return 应用版本。
+     * @return Application version.
      * 
      */
     public Optional<Output<String>> applicationVersion() {
@@ -92,14 +92,14 @@ public final class ClusterApplicationArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * 应用用户组。
+     * Application user group.
      * 
      */
     @Import(name="group")
     private @Nullable Output<String> group;
 
     /**
-     * @return 应用用户组。
+     * @return Application user group.
      * 
      */
     public Optional<Output<String>> group() {
@@ -107,14 +107,14 @@ public final class ClusterApplicationArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * 是否支持客户端。
+     * Whether client is supported.
      * 
      */
     @Import(name="supportClient")
     private @Nullable Output<Boolean> supportClient;
 
     /**
-     * @return 是否支持客户端。
+     * @return Whether client is supported.
      * 
      */
     public Optional<Output<Boolean>> supportClient() {
@@ -122,14 +122,14 @@ public final class ClusterApplicationArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * 应用用户。
+     * Application user.
      * 
      */
     @Import(name="user")
     private @Nullable Output<String> user;
 
     /**
-     * @return 应用用户。
+     * @return Application user.
      * 
      */
     public Optional<Output<String>> user() {
@@ -168,7 +168,7 @@ public final class ClusterApplicationArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param applicationConfigHome 应用配置路径。
+         * @param applicationConfigHome Application configuration path.
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class ClusterApplicationArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param applicationConfigHome 应用配置路径。
+         * @param applicationConfigHome Application configuration path.
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class ClusterApplicationArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param applicationHome 应用安装路径。
+         * @param applicationHome Application installation path.
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class ClusterApplicationArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param applicationHome 应用安装路径。
+         * @param applicationHome Application installation path.
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class ClusterApplicationArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param applicationName 应用名称。
+         * @param applicationName Application name.
          * 
          * @return builder
          * 
@@ -221,7 +221,7 @@ public final class ClusterApplicationArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param applicationName 应用名称。
+         * @param applicationName Application name.
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class ClusterApplicationArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param applicationState 服务状态。NORMAL：正常；WARNING：告警；STOPPED：已停止；INIT：初始化中；INSTALLING：安装中；INSTALLED：已安装；STARTING：启动中；STARTED：已启动；STOPPING：停止中；UNINSTALLING：卸载中；UNINSTALLED：已卸载；EXCEPTION：异常。
+         * @param applicationState Service status. NORMAL: normal; WARNING: alert; STOPPED: stopped; INIT: initializing; INSTALLING: installing; INSTALLED: installed; STARTING: starting; STARTED: started; STOPPING: stopping; UNINSTALLING: uninstalling; UNINSTALLED: uninstalled; EXCEPTION: exception.
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class ClusterApplicationArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param applicationState 服务状态。NORMAL：正常；WARNING：告警；STOPPED：已停止；INIT：初始化中；INSTALLING：安装中；INSTALLED：已安装；STARTING：启动中；STARTED：已启动；STOPPING：停止中；UNINSTALLING：卸载中；UNINSTALLED：已卸载；EXCEPTION：异常。
+         * @param applicationState Service status. NORMAL: normal; WARNING: alert; STOPPED: stopped; INIT: initializing; INSTALLING: installing; INSTALLED: installed; STARTING: starting; STARTED: started; STOPPING: stopping; UNINSTALLING: uninstalling; UNINSTALLED: uninstalled; EXCEPTION: exception.
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class ClusterApplicationArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param applicationVersion 应用版本。
+         * @param applicationVersion Application version.
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class ClusterApplicationArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param applicationVersion 应用版本。
+         * @param applicationVersion Application version.
          * 
          * @return builder
          * 
@@ -273,7 +273,7 @@ public final class ClusterApplicationArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param group 应用用户组。
+         * @param group Application user group.
          * 
          * @return builder
          * 
@@ -284,7 +284,7 @@ public final class ClusterApplicationArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param group 应用用户组。
+         * @param group Application user group.
          * 
          * @return builder
          * 
@@ -294,7 +294,7 @@ public final class ClusterApplicationArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param supportClient 是否支持客户端。
+         * @param supportClient Whether client is supported.
          * 
          * @return builder
          * 
@@ -305,7 +305,7 @@ public final class ClusterApplicationArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param supportClient 是否支持客户端。
+         * @param supportClient Whether client is supported.
          * 
          * @return builder
          * 
@@ -315,7 +315,7 @@ public final class ClusterApplicationArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param user 应用用户。
+         * @param user Application user.
          * 
          * @return builder
          * 
@@ -326,7 +326,7 @@ public final class ClusterApplicationArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param user 应用用户。
+         * @param user Application user.
          * 
          * @return builder
          * 

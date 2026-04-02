@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetPrefixListPrefixListEntry {
     /**
-     * @return 前缀列表条目的CIDR。
+     * @return CIDR of the prefix list entry.
      * 
      */
     private String cidr;
     /**
-     * @return 前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * @return Description of the prefix list entry. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
      * 
      */
     private String description;
 
     private GetPrefixListPrefixListEntry() {}
     /**
-     * @return 前缀列表条目的CIDR。
+     * @return CIDR of the prefix list entry.
      * 
      */
     public String cidr() {
         return this.cidr;
     }
     /**
-     * @return 前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * @return Description of the prefix list entry. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
      * 
      */
     public String description() {

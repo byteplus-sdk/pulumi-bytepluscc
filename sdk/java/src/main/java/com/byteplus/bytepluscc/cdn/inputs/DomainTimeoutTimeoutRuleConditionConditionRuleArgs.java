@@ -16,14 +16,14 @@ public final class DomainTimeoutTimeoutRuleConditionConditionRuleArgs extends co
     public static final DomainTimeoutTimeoutRuleConditionConditionRuleArgs Empty = new DomainTimeoutTimeoutRuleConditionConditionRuleArgs();
 
     /**
-     * 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+     * When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+     * @return When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
      * 
      */
     public Optional<Output<String>> name() {
@@ -31,14 +31,14 @@ public final class DomainTimeoutTimeoutRuleConditionConditionRuleArgs extends co
     }
 
     /**
-     * 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+     * Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
      * 
      */
     @Import(name="object")
     private @Nullable Output<String> object;
 
     /**
-     * @return 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+     * @return Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
      * 
      */
     public Optional<Output<String>> object() {
@@ -46,14 +46,14 @@ public final class DomainTimeoutTimeoutRuleConditionConditionRuleArgs extends co
     }
 
     /**
-     * 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+     * Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
      * 
      */
     @Import(name="operator")
     private @Nullable Output<String> operator;
 
     /**
-     * @return 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+     * @return Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
      * 
      */
     public Optional<Output<String>> operator() {
@@ -61,14 +61,14 @@ public final class DomainTimeoutTimeoutRuleConditionConditionRuleArgs extends co
     }
 
     /**
-     * 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+     * Specifies the target type. The value of this parameter is url, indicating the target is a URL.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+     * @return Specifies the target type. The value of this parameter is url, indicating the target is a URL.
      * 
      */
     public Optional<Output<String>> type() {
@@ -76,14 +76,14 @@ public final class DomainTimeoutTimeoutRuleConditionConditionRuleArgs extends co
     }
 
     /**
-     * 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+     * Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+     * @return Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
      * 
      */
     public Optional<Output<String>> value() {
@@ -119,7 +119,7 @@ public final class DomainTimeoutTimeoutRuleConditionConditionRuleArgs extends co
         }
 
         /**
-         * @param name 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+         * @param name When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class DomainTimeoutTimeoutRuleConditionConditionRuleArgs extends co
         }
 
         /**
-         * @param name 当 Object 是 query*name 或者 customize 时，该参数有效。如果 Object 是 query*name，该参数表示一个查询参数的名称。如果 Object 是 customize，该参数表示一个自定义头部的名称。Name 的长度不能超过 256 个字符，可以包含数字、字母、百分号（%）、下划线（_）、中划线（-）。
+         * @param name When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class DomainTimeoutTimeoutRuleConditionConditionRuleArgs extends co
         }
 
         /**
-         * @param object 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+         * @param object Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class DomainTimeoutTimeoutRuleConditionConditionRuleArgs extends co
         }
 
         /**
-         * @param object 表示匹配对象的类型。内容分发网络对目标中指定类型的对象匹配规则。该参数有以下取值：path：表示对目标中的路径进行匹配。directory：表示对目标中的目录进行匹配。filetype：表示对目标中的文件后缀进行匹配。
+         * @param object Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
          * 
          * @return builder
          * 
@@ -161,7 +161,7 @@ public final class DomainTimeoutTimeoutRuleConditionConditionRuleArgs extends co
         }
 
         /**
-         * @param operator 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+         * @param operator Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class DomainTimeoutTimeoutRuleConditionConditionRuleArgs extends co
         }
 
         /**
-         * @param operator 表示匹配方式。该参数有以下取值：match：表示如果 Value 中某个值存在，就算匹配。
+         * @param operator Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
          * 
          * @return builder
          * 
@@ -182,7 +182,7 @@ public final class DomainTimeoutTimeoutRuleConditionConditionRuleArgs extends co
         }
 
         /**
-         * @param type 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+         * @param type Specifies the target type. The value of this parameter is url, indicating the target is a URL.
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class DomainTimeoutTimeoutRuleConditionConditionRuleArgs extends co
         }
 
         /**
-         * @param type 表示目标类型。该参数取值是 url，表示目标是一个 URL。
+         * @param type Specifies the target type. The value of this parameter is url, indicating the target is a URL.
          * 
          * @return builder
          * 
@@ -203,7 +203,7 @@ public final class DomainTimeoutTimeoutRuleConditionConditionRuleArgs extends co
         }
 
         /**
-         * @param value 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+         * @param value Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
          * 
          * @return builder
          * 
@@ -214,7 +214,7 @@ public final class DomainTimeoutTimeoutRuleConditionConditionRuleArgs extends co
         }
 
         /**
-         * @param value 表示一个值的集合，多个值之间用分号（;）分隔，总长度不能超过 1,024 个字符，可以包含可打印 ASCII 字符，以下字符除外：连续斜杠（//）、空格、美元符号（$）、问号（?）、Delete（ASCII code 127）。如果集合中的任意一个值匹配了请求，就认为是匹配。当 Object 是 path 时，该参数表示一个或者多个路径。路径必须以斜杠（/）开头。您可以在路径中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 directory 时，该参数表示一个或者多个目录。目录必须以斜杠（/）开头和结尾。您可以在目录中使用一个或者多个星号（*），每个星号表示一个或者多个字符。当 Object 是 filetype 时，该参数表示一个或者多个文件后缀。后缀无需以句点（.）开头，
+         * @param value Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
          * 
          * @return builder
          * 

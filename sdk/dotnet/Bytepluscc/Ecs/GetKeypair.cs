@@ -65,15 +65,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     public sealed class GetKeypairResult
     {
         /// <summary>
-        /// 密钥对创建时间。
+        /// Creation time of the key pair.
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 密钥对的描述，默认值为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”长度限制在255个字符以内。
+        /// Description of the key pair. The default value is an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, period ('.'), space, underscore ('_'), hyphen ('-'), equals sign ('='), English comma (','), Chinese comma ('，'), and Chinese period ('。'). Length must not exceed 255 characters.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 密钥对的指纹。根据RFC4716定义的公钥指纹格式，采用MD5信息摘要算法。
+        /// Fingerprint of the key pair. The public key fingerprint format is defined by RFC4716 and uses the MD5 hash algorithm.
         /// </summary>
         public readonly string FingerPrint;
         /// <summary>
@@ -81,31 +81,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 操作的实例ID。
+        /// Instance ID for the operation.
         /// </summary>
         public readonly ImmutableArray<string> InstanceIds;
         /// <summary>
-        /// 密钥对唯一ID。
+        /// Unique ID of the key pair.
         /// </summary>
         public readonly string KeyPairId;
         /// <summary>
-        /// 密钥对名称。不可与已有名称重复。长度限制在 2～64 个字符之间。允许使用点号“.”分隔字符成多段，每段允许使用大小写字母、数字或连字符“-”。不能以“-”和“.”开头或结尾，不能连续使用“-”或者“.”。
+        /// Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods ('.') can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens ('-'). The name cannot start or end with '-' or '.', and cannot contain consecutive '-' or '.'.
         /// </summary>
         public readonly string KeyPairName;
         /// <summary>
-        /// 资源所属项目，一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+        /// Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore ('_'), period ('.'), and hyphen ('-'). Length must not exceed 64 characters.
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// 密钥对的公钥信息。
+        /// Public key information of the key pair.
         /// </summary>
         public readonly string PublicKey;
         /// <summary>
-        /// 密钥对的标签。
+        /// Tags of the key pair.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetKeypairTagResult> Tags;
         /// <summary>
-        /// 密钥对更新时间。
+        /// Update time of the key pair.
         /// </summary>
         public readonly string UpdatedTime;
 

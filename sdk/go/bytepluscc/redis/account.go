@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 缓存数据库 Redis 版支持创建多个账号，您可以在创建账号时选择不同的角色，不同的角色支持的权限不同，帮助您实现数据库的精细化管理，提升数据安全性。
+// Redis Cache Database supports creating multiple accounts. You can select different roles when creating an account. Each role grants different permissions, helping you manage the database with greater precision and enhance data security.
 //
 // ## Example Usage
 //
@@ -52,17 +52,17 @@ import (
 type Account struct {
 	pulumi.CustomResourceState
 
-	// 账号名称。名称需同时满足如下要求：以小写字母开头，由小写字母或者数字结尾。长度为 2~16 个字符。由小写字母、数字、下划线（_）组成。
+	// Account name. The name must meet the following requirements: It must start with a lowercase letter. It must end with a lowercase letter or number. The length must be 2–16 characters. It can only contain lowercase letters, numbers, and underscores (_).
 	AccountName pulumi.StringOutput `pulumi:"accountName"`
-	// 账号状态。取值范围如下：Available：可用。Unavailable：不可用。
+	// Account status. The value range is as follows: Available: Available. Unavailable: Unavailable.
 	AccountStatus pulumi.StringOutput `pulumi:"accountStatus"`
-	// 账号描述，长度不超过 256 个字符。说明若该参数为空，表示不设置账号描述。
+	// Account description, up to 256 characters. Note: If this parameter is empty, no account description is set.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// 实例 ID。
+	// Instance ID.
 	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
-	// 账号密码。密码需同时满足如下要求：长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意 2 种。支持如下特殊字符：()`~!@#$%^&*-+=_|{}[];<>,.?
+	// Account password. The password must meet the following requirements: Length of 8–32 characters. Must include at least two of the following: uppercase letters, lowercase letters, numbers, or special characters. Supported special characters: ()`~!@#$%^&*-+=_|{}[];<>,.?
 	Password pulumi.StringOutput `pulumi:"password"`
-	// 账号所属角色。支持如下默认角色：Administrator：允许对所有 Key 使用所有 Redis 实例已支持的命令。ReadWrite：允许对所有 Key 使用除 admin 类之外的所有命令。ReadOnly：允许对所有 Key 使用 read 类中的所有命令。NotDangerous：允许对所有 Key 使用除 dangerous 类之外的所有命令。说明关于各角色对应 ACL 规则支持的具体命令详情，请参见 ACL 语法。
+	// Account role. The following default roles are supported: Administrator: Allows all Redis instance-supported commands on all Keys. ReadWrite: Allows all commands except admin class commands on all Keys. ReadOnly: Allows all read class commands on all Keys. NotDangerous: Allows all commands except dangerous class commands on all Keys. Note: For details on the specific commands supported by each role's ACL rules, see ACL syntax.
 	RoleName pulumi.StringOutput `pulumi:"roleName"`
 }
 
@@ -108,32 +108,32 @@ func GetAccount(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Account resources.
 type accountState struct {
-	// 账号名称。名称需同时满足如下要求：以小写字母开头，由小写字母或者数字结尾。长度为 2~16 个字符。由小写字母、数字、下划线（_）组成。
+	// Account name. The name must meet the following requirements: It must start with a lowercase letter. It must end with a lowercase letter or number. The length must be 2–16 characters. It can only contain lowercase letters, numbers, and underscores (_).
 	AccountName *string `pulumi:"accountName"`
-	// 账号状态。取值范围如下：Available：可用。Unavailable：不可用。
+	// Account status. The value range is as follows: Available: Available. Unavailable: Unavailable.
 	AccountStatus *string `pulumi:"accountStatus"`
-	// 账号描述，长度不超过 256 个字符。说明若该参数为空，表示不设置账号描述。
+	// Account description, up to 256 characters. Note: If this parameter is empty, no account description is set.
 	Description *string `pulumi:"description"`
-	// 实例 ID。
+	// Instance ID.
 	InstanceId *string `pulumi:"instanceId"`
-	// 账号密码。密码需同时满足如下要求：长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意 2 种。支持如下特殊字符：()`~!@#$%^&*-+=_|{}[];<>,.?
+	// Account password. The password must meet the following requirements: Length of 8–32 characters. Must include at least two of the following: uppercase letters, lowercase letters, numbers, or special characters. Supported special characters: ()`~!@#$%^&*-+=_|{}[];<>,.?
 	Password *string `pulumi:"password"`
-	// 账号所属角色。支持如下默认角色：Administrator：允许对所有 Key 使用所有 Redis 实例已支持的命令。ReadWrite：允许对所有 Key 使用除 admin 类之外的所有命令。ReadOnly：允许对所有 Key 使用 read 类中的所有命令。NotDangerous：允许对所有 Key 使用除 dangerous 类之外的所有命令。说明关于各角色对应 ACL 规则支持的具体命令详情，请参见 ACL 语法。
+	// Account role. The following default roles are supported: Administrator: Allows all Redis instance-supported commands on all Keys. ReadWrite: Allows all commands except admin class commands on all Keys. ReadOnly: Allows all read class commands on all Keys. NotDangerous: Allows all commands except dangerous class commands on all Keys. Note: For details on the specific commands supported by each role's ACL rules, see ACL syntax.
 	RoleName *string `pulumi:"roleName"`
 }
 
 type AccountState struct {
-	// 账号名称。名称需同时满足如下要求：以小写字母开头，由小写字母或者数字结尾。长度为 2~16 个字符。由小写字母、数字、下划线（_）组成。
+	// Account name. The name must meet the following requirements: It must start with a lowercase letter. It must end with a lowercase letter or number. The length must be 2–16 characters. It can only contain lowercase letters, numbers, and underscores (_).
 	AccountName pulumi.StringPtrInput
-	// 账号状态。取值范围如下：Available：可用。Unavailable：不可用。
+	// Account status. The value range is as follows: Available: Available. Unavailable: Unavailable.
 	AccountStatus pulumi.StringPtrInput
-	// 账号描述，长度不超过 256 个字符。说明若该参数为空，表示不设置账号描述。
+	// Account description, up to 256 characters. Note: If this parameter is empty, no account description is set.
 	Description pulumi.StringPtrInput
-	// 实例 ID。
+	// Instance ID.
 	InstanceId pulumi.StringPtrInput
-	// 账号密码。密码需同时满足如下要求：长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意 2 种。支持如下特殊字符：()`~!@#$%^&*-+=_|{}[];<>,.?
+	// Account password. The password must meet the following requirements: Length of 8–32 characters. Must include at least two of the following: uppercase letters, lowercase letters, numbers, or special characters. Supported special characters: ()`~!@#$%^&*-+=_|{}[];<>,.?
 	Password pulumi.StringPtrInput
-	// 账号所属角色。支持如下默认角色：Administrator：允许对所有 Key 使用所有 Redis 实例已支持的命令。ReadWrite：允许对所有 Key 使用除 admin 类之外的所有命令。ReadOnly：允许对所有 Key 使用 read 类中的所有命令。NotDangerous：允许对所有 Key 使用除 dangerous 类之外的所有命令。说明关于各角色对应 ACL 规则支持的具体命令详情，请参见 ACL 语法。
+	// Account role. The following default roles are supported: Administrator: Allows all Redis instance-supported commands on all Keys. ReadWrite: Allows all commands except admin class commands on all Keys. ReadOnly: Allows all read class commands on all Keys. NotDangerous: Allows all commands except dangerous class commands on all Keys. Note: For details on the specific commands supported by each role's ACL rules, see ACL syntax.
 	RoleName pulumi.StringPtrInput
 }
 
@@ -142,29 +142,29 @@ func (AccountState) ElementType() reflect.Type {
 }
 
 type accountArgs struct {
-	// 账号名称。名称需同时满足如下要求：以小写字母开头，由小写字母或者数字结尾。长度为 2~16 个字符。由小写字母、数字、下划线（_）组成。
+	// Account name. The name must meet the following requirements: It must start with a lowercase letter. It must end with a lowercase letter or number. The length must be 2–16 characters. It can only contain lowercase letters, numbers, and underscores (_).
 	AccountName string `pulumi:"accountName"`
-	// 账号描述，长度不超过 256 个字符。说明若该参数为空，表示不设置账号描述。
+	// Account description, up to 256 characters. Note: If this parameter is empty, no account description is set.
 	Description *string `pulumi:"description"`
-	// 实例 ID。
+	// Instance ID.
 	InstanceId string `pulumi:"instanceId"`
-	// 账号密码。密码需同时满足如下要求：长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意 2 种。支持如下特殊字符：()`~!@#$%^&*-+=_|{}[];<>,.?
+	// Account password. The password must meet the following requirements: Length of 8–32 characters. Must include at least two of the following: uppercase letters, lowercase letters, numbers, or special characters. Supported special characters: ()`~!@#$%^&*-+=_|{}[];<>,.?
 	Password string `pulumi:"password"`
-	// 账号所属角色。支持如下默认角色：Administrator：允许对所有 Key 使用所有 Redis 实例已支持的命令。ReadWrite：允许对所有 Key 使用除 admin 类之外的所有命令。ReadOnly：允许对所有 Key 使用 read 类中的所有命令。NotDangerous：允许对所有 Key 使用除 dangerous 类之外的所有命令。说明关于各角色对应 ACL 规则支持的具体命令详情，请参见 ACL 语法。
+	// Account role. The following default roles are supported: Administrator: Allows all Redis instance-supported commands on all Keys. ReadWrite: Allows all commands except admin class commands on all Keys. ReadOnly: Allows all read class commands on all Keys. NotDangerous: Allows all commands except dangerous class commands on all Keys. Note: For details on the specific commands supported by each role's ACL rules, see ACL syntax.
 	RoleName string `pulumi:"roleName"`
 }
 
 // The set of arguments for constructing a Account resource.
 type AccountArgs struct {
-	// 账号名称。名称需同时满足如下要求：以小写字母开头，由小写字母或者数字结尾。长度为 2~16 个字符。由小写字母、数字、下划线（_）组成。
+	// Account name. The name must meet the following requirements: It must start with a lowercase letter. It must end with a lowercase letter or number. The length must be 2–16 characters. It can only contain lowercase letters, numbers, and underscores (_).
 	AccountName pulumi.StringInput
-	// 账号描述，长度不超过 256 个字符。说明若该参数为空，表示不设置账号描述。
+	// Account description, up to 256 characters. Note: If this parameter is empty, no account description is set.
 	Description pulumi.StringPtrInput
-	// 实例 ID。
+	// Instance ID.
 	InstanceId pulumi.StringInput
-	// 账号密码。密码需同时满足如下要求：长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意 2 种。支持如下特殊字符：()`~!@#$%^&*-+=_|{}[];<>,.?
+	// Account password. The password must meet the following requirements: Length of 8–32 characters. Must include at least two of the following: uppercase letters, lowercase letters, numbers, or special characters. Supported special characters: ()`~!@#$%^&*-+=_|{}[];<>,.?
 	Password pulumi.StringInput
-	// 账号所属角色。支持如下默认角色：Administrator：允许对所有 Key 使用所有 Redis 实例已支持的命令。ReadWrite：允许对所有 Key 使用除 admin 类之外的所有命令。ReadOnly：允许对所有 Key 使用 read 类中的所有命令。NotDangerous：允许对所有 Key 使用除 dangerous 类之外的所有命令。说明关于各角色对应 ACL 规则支持的具体命令详情，请参见 ACL 语法。
+	// Account role. The following default roles are supported: Administrator: Allows all Redis instance-supported commands on all Keys. ReadWrite: Allows all commands except admin class commands on all Keys. ReadOnly: Allows all read class commands on all Keys. NotDangerous: Allows all commands except dangerous class commands on all Keys. Note: For details on the specific commands supported by each role's ACL rules, see ACL syntax.
 	RoleName pulumi.StringInput
 }
 
@@ -255,32 +255,32 @@ func (o AccountOutput) ToAccountOutputWithContext(ctx context.Context) AccountOu
 	return o
 }
 
-// 账号名称。名称需同时满足如下要求：以小写字母开头，由小写字母或者数字结尾。长度为 2~16 个字符。由小写字母、数字、下划线（_）组成。
+// Account name. The name must meet the following requirements: It must start with a lowercase letter. It must end with a lowercase letter or number. The length must be 2–16 characters. It can only contain lowercase letters, numbers, and underscores (_).
 func (o AccountOutput) AccountName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Account) pulumi.StringOutput { return v.AccountName }).(pulumi.StringOutput)
 }
 
-// 账号状态。取值范围如下：Available：可用。Unavailable：不可用。
+// Account status. The value range is as follows: Available: Available. Unavailable: Unavailable.
 func (o AccountOutput) AccountStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *Account) pulumi.StringOutput { return v.AccountStatus }).(pulumi.StringOutput)
 }
 
-// 账号描述，长度不超过 256 个字符。说明若该参数为空，表示不设置账号描述。
+// Account description, up to 256 characters. Note: If this parameter is empty, no account description is set.
 func (o AccountOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Account) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// 实例 ID。
+// Instance ID.
 func (o AccountOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Account) pulumi.StringOutput { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 账号密码。密码需同时满足如下要求：长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意 2 种。支持如下特殊字符：()`~!@#$%^&*-+=_|{}[];<>,.?
+// Account password. The password must meet the following requirements: Length of 8–32 characters. Must include at least two of the following: uppercase letters, lowercase letters, numbers, or special characters. Supported special characters: ()`~!@#$%^&*-+=_|{}[];<>,.?
 func (o AccountOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v *Account) pulumi.StringOutput { return v.Password }).(pulumi.StringOutput)
 }
 
-// 账号所属角色。支持如下默认角色：Administrator：允许对所有 Key 使用所有 Redis 实例已支持的命令。ReadWrite：允许对所有 Key 使用除 admin 类之外的所有命令。ReadOnly：允许对所有 Key 使用 read 类中的所有命令。NotDangerous：允许对所有 Key 使用除 dangerous 类之外的所有命令。说明关于各角色对应 ACL 规则支持的具体命令详情，请参见 ACL 语法。
+// Account role. The following default roles are supported: Administrator: Allows all Redis instance-supported commands on all Keys. ReadWrite: Allows all commands except admin class commands on all Keys. ReadOnly: Allows all read class commands on all Keys. NotDangerous: Allows all commands except dangerous class commands on all Keys. Note: For details on the specific commands supported by each role's ACL rules, see ACL syntax.
 func (o AccountOutput) RoleName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Account) pulumi.StringOutput { return v.RoleName }).(pulumi.StringOutput)
 }

@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRules
     {
         /// <summary>
-        /// 表示鉴权请求参数的设置策略。
+        /// Indicates the strategy for setting authentication request parameters.
         /// </summary>
         public readonly Outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponents? QueryStringComponents;
         public readonly ImmutableArray<Outputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstance> QueryStringInstances;

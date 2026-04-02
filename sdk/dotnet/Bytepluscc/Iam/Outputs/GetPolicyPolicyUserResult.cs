@@ -15,27 +15,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam.Outputs
     public sealed class GetPolicyPolicyUserResult
     {
         /// <summary>
-        /// 策略绑定时间。
+        /// Policy binding time.
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 策略描述。
+        /// Policy description.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 显示名称。
+        /// Display name.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// 唯一标识。
+        /// Unique identifier.
         /// </summary>
         public readonly int EntitiesId;
         /// <summary>
-        /// 对应用户、角色、用户组的名称。
+        /// Name of the corresponding user, role, or user group.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// 策略绑定的项目列表。
+        /// List of projects bound to the policy.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPolicyPolicyUserPolicyScopeResult> PolicyScopes;
 

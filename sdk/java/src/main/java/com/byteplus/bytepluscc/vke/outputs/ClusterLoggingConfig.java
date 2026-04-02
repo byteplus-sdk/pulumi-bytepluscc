@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ClusterLoggingConfig {
     /**
-     * @return 集群的日志项目（Log Project）ID。 如果为空，表示集群的日志项目未被创建。
+     * @return Cluster log project (Log Project) ID. If empty, the cluster log project has not been created.
      * 
      */
     private @Nullable String logProjectId;
@@ -22,7 +22,7 @@ public final class ClusterLoggingConfig {
 
     private ClusterLoggingConfig() {}
     /**
-     * @return 集群的日志项目（Log Project）ID。 如果为空，表示集群的日志项目未被创建。
+     * @return Cluster log project (Log Project) ID. If empty, the cluster log project has not been created.
      * 
      */
     public Optional<String> logProjectId() {

@@ -19,14 +19,14 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
     public static final ResolverEndpointState Empty = new ResolverEndpointState();
 
     /**
-     * 创建时间
+     * Creation time
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 创建时间
+     * @return Creation time
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -34,14 +34,14 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 终端节点的 DNS 请求转发方向。OUTBOUND：（默认）出站终端节点，把来自 VPC 内的 DNS 查询请求转发到外部的 DNS 服务器。INBOUND：入站终端节点，把来自外部的 DNS 查询请求转发到解析器。
+     * DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
      * 
      */
     @Import(name="direction")
     private @Nullable Output<String> direction;
 
     /**
-     * @return 终端节点的 DNS 请求转发方向。OUTBOUND：（默认）出站终端节点，把来自 VPC 内的 DNS 查询请求转发到外部的 DNS 服务器。INBOUND：入站终端节点，把来自外部的 DNS 查询请求转发到解析器。
+     * @return DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
      * 
      */
     public Optional<Output<String>> direction() {
@@ -49,14 +49,14 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 终端节点的 ID。
+     * Endpoint ID
      * 
      */
     @Import(name="endpointId")
     private @Nullable Output<String> endpointId;
 
     /**
-     * @return 终端节点的 ID。
+     * @return Endpoint ID
      * 
      */
     public Optional<Output<String>> endpointId() {
@@ -64,14 +64,14 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 终端节点类型。IPv4：IPv4 节点。DualStack：双栈节点。
+     * Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
      * 
      */
     @Import(name="endpointType")
     private @Nullable Output<String> endpointType;
 
     /**
-     * @return 终端节点类型。IPv4：IPv4 节点。DualStack：双栈节点。
+     * @return Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
      * 
      */
     public Optional<Output<String>> endpointType() {
@@ -86,14 +86,14 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 终端节点的名称。支持 UTF-8 格式。
+     * Endpoint name. Supports UTF-8 format
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 终端节点的名称。支持 UTF-8 格式。
+     * @return Endpoint name. Supports UTF-8 format
      * 
      */
     public Optional<Output<String>> name() {
@@ -101,14 +101,14 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 终端节点所属的项目名称。默认为 default。
+     * Project name to which the endpoint belongs. Default is default
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 终端节点所属的项目名称。默认为 default。
+     * @return Project name to which the endpoint belongs. Default is default
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -116,14 +116,14 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 适用于终端节点 IP 地址的安全组 ID。终端节点默认会使用预设安全组：对于出站终端节点：入方向拒绝流量通行；出方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口。对于入站终端节点：入方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口；出方向拒绝流量通行。
+     * Security group ID for the endpoint IP address. The endpoint uses a default security group: For outbound endpoints, inbound traffic is denied; outbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0. For inbound endpoints, inbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0; outbound traffic is denied
      * 
      */
     @Import(name="securityGroupId")
     private @Nullable Output<String> securityGroupId;
 
     /**
-     * @return 适用于终端节点 IP 地址的安全组 ID。终端节点默认会使用预设安全组：对于出站终端节点：入方向拒绝流量通行；出方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口。对于入站终端节点：入方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口；出方向拒绝流量通行。
+     * @return Security group ID for the endpoint IP address. The endpoint uses a default security group: For outbound endpoints, inbound traffic is denied; outbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0. For inbound endpoints, inbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0; outbound traffic is denied
      * 
      */
     public Optional<Output<String>> securityGroupId() {
@@ -131,14 +131,14 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 终端节点的状态。Creating：创建中。Running：运行中。Updating：更新中。Error：运行异常。
+     * Endpoint status. Creating: creating. Running: running. Updating: updating. Error: abnormal operation
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 终端节点的状态。Creating：创建中。Running：运行中。Updating：更新中。Error：运行异常。
+     * @return Endpoint status. Creating: creating. Running: running. Updating: updating. Error: abnormal operation
      * 
      */
     public Optional<Output<String>> status() {
@@ -153,14 +153,14 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 更新时间
+     * Update time
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 更新时间
+     * @return Update time
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -168,14 +168,14 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 终端节点所在的 VPC 的 ID。
+     * VPC ID where the endpoint is located
      * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
-     * @return 终端节点所在的 VPC 的 ID。
+     * @return VPC ID where the endpoint is located
      * 
      */
     public Optional<Output<String>> vpcId() {
@@ -183,14 +183,14 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 终端节点所在的 VPC 的地域。
+     * Region of the VPC where the endpoint is located
      * 
      */
     @Import(name="vpcRegion")
     private @Nullable Output<String> vpcRegion;
 
     /**
-     * @return 终端节点所在的 VPC 的地域。
+     * @return Region of the VPC where the endpoint is located
      * 
      */
     public Optional<Output<String>> vpcRegion() {
@@ -234,7 +234,7 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param createdTime 创建时间
+         * @param createdTime Creation time
          * 
          * @return builder
          * 
@@ -245,7 +245,7 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param createdTime 创建时间
+         * @param createdTime Creation time
          * 
          * @return builder
          * 
@@ -255,7 +255,7 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param direction 终端节点的 DNS 请求转发方向。OUTBOUND：（默认）出站终端节点，把来自 VPC 内的 DNS 查询请求转发到外部的 DNS 服务器。INBOUND：入站终端节点，把来自外部的 DNS 查询请求转发到解析器。
+         * @param direction DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
          * 
          * @return builder
          * 
@@ -266,7 +266,7 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param direction 终端节点的 DNS 请求转发方向。OUTBOUND：（默认）出站终端节点，把来自 VPC 内的 DNS 查询请求转发到外部的 DNS 服务器。INBOUND：入站终端节点，把来自外部的 DNS 查询请求转发到解析器。
+         * @param direction DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
          * 
          * @return builder
          * 
@@ -276,7 +276,7 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param endpointId 终端节点的 ID。
+         * @param endpointId Endpoint ID
          * 
          * @return builder
          * 
@@ -287,7 +287,7 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param endpointId 终端节点的 ID。
+         * @param endpointId Endpoint ID
          * 
          * @return builder
          * 
@@ -297,7 +297,7 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param endpointType 终端节点类型。IPv4：IPv4 节点。DualStack：双栈节点。
+         * @param endpointType Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
          * 
          * @return builder
          * 
@@ -308,7 +308,7 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param endpointType 终端节点类型。IPv4：IPv4 节点。DualStack：双栈节点。
+         * @param endpointType Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
          * 
          * @return builder
          * 
@@ -331,7 +331,7 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param name 终端节点的名称。支持 UTF-8 格式。
+         * @param name Endpoint name. Supports UTF-8 format
          * 
          * @return builder
          * 
@@ -342,7 +342,7 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param name 终端节点的名称。支持 UTF-8 格式。
+         * @param name Endpoint name. Supports UTF-8 format
          * 
          * @return builder
          * 
@@ -352,7 +352,7 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param projectName 终端节点所属的项目名称。默认为 default。
+         * @param projectName Project name to which the endpoint belongs. Default is default
          * 
          * @return builder
          * 
@@ -363,7 +363,7 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param projectName 终端节点所属的项目名称。默认为 default。
+         * @param projectName Project name to which the endpoint belongs. Default is default
          * 
          * @return builder
          * 
@@ -373,7 +373,7 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param securityGroupId 适用于终端节点 IP 地址的安全组 ID。终端节点默认会使用预设安全组：对于出站终端节点：入方向拒绝流量通行；出方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口。对于入站终端节点：入方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口；出方向拒绝流量通行。
+         * @param securityGroupId Security group ID for the endpoint IP address. The endpoint uses a default security group: For outbound endpoints, inbound traffic is denied; outbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0. For inbound endpoints, inbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0; outbound traffic is denied
          * 
          * @return builder
          * 
@@ -384,7 +384,7 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param securityGroupId 适用于终端节点 IP 地址的安全组 ID。终端节点默认会使用预设安全组：对于出站终端节点：入方向拒绝流量通行；出方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口。对于入站终端节点：入方向放通 0.0.0.0/0 的 TCP 53 端口和 UDP 53 端口；出方向拒绝流量通行。
+         * @param securityGroupId Security group ID for the endpoint IP address. The endpoint uses a default security group: For outbound endpoints, inbound traffic is denied; outbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0. For inbound endpoints, inbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0; outbound traffic is denied
          * 
          * @return builder
          * 
@@ -394,7 +394,7 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param status 终端节点的状态。Creating：创建中。Running：运行中。Updating：更新中。Error：运行异常。
+         * @param status Endpoint status. Creating: creating. Running: running. Updating: updating. Error: abnormal operation
          * 
          * @return builder
          * 
@@ -405,7 +405,7 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param status 终端节点的状态。Creating：创建中。Running：运行中。Updating：更新中。Error：运行异常。
+         * @param status Endpoint status. Creating: creating. Running: running. Updating: updating. Error: abnormal operation
          * 
          * @return builder
          * 
@@ -428,7 +428,7 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param updatedTime 更新时间
+         * @param updatedTime Update time
          * 
          * @return builder
          * 
@@ -439,7 +439,7 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param updatedTime 更新时间
+         * @param updatedTime Update time
          * 
          * @return builder
          * 
@@ -449,7 +449,7 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param vpcId 终端节点所在的 VPC 的 ID。
+         * @param vpcId VPC ID where the endpoint is located
          * 
          * @return builder
          * 
@@ -460,7 +460,7 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param vpcId 终端节点所在的 VPC 的 ID。
+         * @param vpcId VPC ID where the endpoint is located
          * 
          * @return builder
          * 
@@ -470,7 +470,7 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param vpcRegion 终端节点所在的 VPC 的地域。
+         * @param vpcRegion Region of the VPC where the endpoint is located
          * 
          * @return builder
          * 
@@ -481,7 +481,7 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param vpcRegion 终端节点所在的 VPC 的地域。
+         * @param vpcRegion Region of the VPC where the endpoint is located
          * 
          * @return builder
          * 

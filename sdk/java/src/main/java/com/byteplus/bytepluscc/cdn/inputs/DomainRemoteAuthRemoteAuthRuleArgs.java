@@ -17,14 +17,14 @@ public final class DomainRemoteAuthRemoteAuthRuleArgs extends com.pulumi.resourc
     public static final DomainRemoteAuthRemoteAuthRuleArgs Empty = new DomainRemoteAuthRemoteAuthRuleArgs();
 
     /**
-     * 表示该配置模块的生效条件，由一组规则组成。
+     * Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<DomainRemoteAuthRemoteAuthRuleConditionArgs> condition;
 
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public Optional<Output<DomainRemoteAuthRemoteAuthRuleConditionArgs>> condition() {
@@ -32,14 +32,14 @@ public final class DomainRemoteAuthRemoteAuthRuleArgs extends com.pulumi.resourc
     }
 
     /**
-     * 表示具体的鉴权配置。
+     * Indicates the specific authentication configuration.
      * 
      */
     @Import(name="remoteAuthRuleAction")
     private @Nullable Output<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionArgs> remoteAuthRuleAction;
 
     /**
-     * @return 表示具体的鉴权配置。
+     * @return Indicates the specific authentication configuration.
      * 
      */
     public Optional<Output<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionArgs>> remoteAuthRuleAction() {
@@ -72,7 +72,7 @@ public final class DomainRemoteAuthRemoteAuthRuleArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param condition 表示该配置模块的生效条件，由一组规则组成。
+         * @param condition Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class DomainRemoteAuthRemoteAuthRuleArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param condition 表示该配置模块的生效条件，由一组规则组成。
+         * @param condition Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class DomainRemoteAuthRemoteAuthRuleArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param remoteAuthRuleAction 表示具体的鉴权配置。
+         * @param remoteAuthRuleAction Indicates the specific authentication configuration.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class DomainRemoteAuthRemoteAuthRuleArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param remoteAuthRuleAction 表示具体的鉴权配置。
+         * @param remoteAuthRuleAction Indicates the specific authentication configuration.
          * 
          * @return builder
          * 

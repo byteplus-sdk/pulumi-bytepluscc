@@ -20,7 +20,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 云原生消息引擎 100% 兼容 Apache Kafka 协议，基于云原生的全托管、高吞吐、低时延、高可用、高可扩展性、高稳定性的分布式消息引擎服务，支持灵活动态扩缩容和流批一体计算，提供企业级大数据量级的实时流数据处理能力，帮助您构建数据处理的“中枢神经系统”，广泛应用于日志收集、数据聚合、离线数据分析等业务场景。
+ * The cloud-native messaging engine is 100% compatible with the Apache Kafka protocol. It is a fully managed, high-throughput, low-latency, highly available, highly scalable, and highly stable distributed messaging engine service built on cloud-native architecture. It supports flexible, dynamic scaling and integrated stream-batch processing, delivering enterprise-grade, real-time stream data processing at large scale. It helps you build the &#39;central nervous system&#39; for data processing and is widely used in scenarios such as log collection, data aggregation, and offline data analysis.
  * 
  * ## Example Usage
  * 
@@ -32,12 +32,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
- * import com.byteplus.bytepluscc.bmq.Instance;
- * import com.byteplus.bytepluscc.bmq.InstanceArgs;
- * import com.pulumi.bytepluscc.bmq.inputs.InstanceEndpointsArgs;
- * import com.pulumi.bytepluscc.bmq.inputs.InstanceEndpointsPublicArgs;
- * import com.pulumi.bytepluscc.bmq.inputs.InstanceEndpointsOverlayArgs;
- * import com.pulumi.bytepluscc.bmq.inputs.InstanceTagArgs;
+ * import com.pulumi.byteplus.bmqInstance;
+ * import com.pulumi.byteplus.bmqInstanceArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -51,29 +47,25 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var bMQInstanceDemo = new Instance("bMQInstanceDemo", InstanceArgs.builder()
+ *         var bMQInstanceDemo = new BmqInstance("bMQInstanceDemo", BmqInstanceArgs.builder()
  *             .name("BMQInstanceDemo")
  *             .billingType("POST")
  *             .projectName("default")
  *             .specification("bmq.standard")
  *             .vpcId("vpc-miltj87lh2ww5smt1bxxxxx")
  *             .messageRetention(1)
- *             .endpoints(InstanceEndpointsArgs.builder()
- *                 .public_(InstanceEndpointsPublicArgs.builder()
- *                     .eipId("eip-3nriu2y2ufwu8931exxxxx")
- *                     .build())
- *                 .overlay(InstanceEndpointsOverlayArgs.builder()
- *                     .vpcIds("vpc-miltj87lh2ww5smt1bxxxxx")
- *                     .build())
- *                 .build())
- *             .securityGroupIdLists("sg-3nqnz9en1ucxs931eaxxxxx")
- *             .subnetIdLists("subnet-w02wsq25fitc865ykaxxxxx")
- *             .zoneIdLists("cn-beijing-a")
- *             .tags(InstanceTagArgs.builder()
- *                 .key("env")
- *                 .type("CUSTOM")
- *                 .value("test")
- *                 .build())
+ *             .endpoints(Map.ofEntries(
+ *                 Map.entry("public", Map.of("eipId", "eip-3nriu2y2ufwu8931exxxxx")),
+ *                 Map.entry("overlay", Map.of("vpcIds", List.of("vpc-miltj87lh2ww5smt1bxxxxx")))
+ *             ))
+ *             .securityGroupIdList(List.of("sg-3nqnz9en1ucxs931eaxxxxx"))
+ *             .subnetIdList(List.of("subnet-w02wsq25fitc865ykaxxxxx"))
+ *             .zoneIdList(List.of("cn-beijing-a"))
+ *             .tags(List.of(Map.ofEntries(
+ *                 Map.entry("key", "env"),
+ *                 Map.entry("type", "CUSTOM"),
+ *                 Map.entry("value", "test")
+ *             )))
  *             .build());
  * 
  *     }
@@ -92,196 +84,196 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:bmq/instance:Instance")
 public class Instance extends com.pulumi.resources.CustomResource {
     /**
-     * 是否开启自动续费，取值如下：true：开启自动续费。false：关闭自动续费。
+     * Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
      * 
      */
     @Export(name="autoRenew", refs={String.class}, tree="[0]")
     private Output<String> autoRenew;
 
     /**
-     * @return 是否开启自动续费，取值如下：true：开启自动续费。false：关闭自动续费。
+     * @return Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
      * 
      */
     public Output<String> autoRenew() {
         return this.autoRenew;
     }
     /**
-     * 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+     * Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
      * 
      */
     @Export(name="billingPeriod", refs={String.class}, tree="[0]")
     private Output<String> billingPeriod;
 
     /**
-     * @return 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+     * @return Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
      * 
      */
     public Output<String> billingPeriod() {
         return this.billingPeriod;
     }
     /**
-     * 实例的计费方式，取值如下：POST：按量计费。MIX：包年包月。
+     * Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
      * 
      */
     @Export(name="billingType", refs={String.class}, tree="[0]")
     private Output<String> billingType;
 
     /**
-     * @return 实例的计费方式，取值如下：POST：按量计费。MIX：包年包月。
+     * @return Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
      * 
      */
     public Output<String> billingType() {
         return this.billingType;
     }
     /**
-     * 实例的创建时间。
+     * Instance creation time
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 实例的创建时间。
+     * @return Instance creation time
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 实例的描述语句。
+     * Instance description statement
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 实例的描述语句。
+     * @return Instance description statement
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 实例是否开启公网访问。如果需要开启公网访问，请配置相同地域的公网 IP 的 ID。
+     * Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
      * 
      */
     @Export(name="eipId", refs={String.class}, tree="[0]")
     private Output<String> eipId;
 
     /**
-     * @return 实例是否开启公网访问。如果需要开启公网访问，请配置相同地域的公网 IP 的 ID。
+     * @return Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
      * 
      */
     public Output<String> eipId() {
         return this.eipId;
     }
     /**
-     * 实例所有接入点响应数据。
+     * Response data for all instance endpoints
      * 
      */
     @Export(name="endpoints", refs={InstanceEndpoints.class}, tree="[0]")
     private Output<InstanceEndpoints> endpoints;
 
     /**
-     * @return 实例所有接入点响应数据。
+     * @return Response data for all instance endpoints
      * 
      */
     public Output<InstanceEndpoints> endpoints() {
         return this.endpoints;
     }
     /**
-     * 实例过期时间。
+     * Instance expiration time
      * 
      */
     @Export(name="expirationTime", refs={String.class}, tree="[0]")
     private Output<String> expirationTime;
 
     /**
-     * @return 实例过期时间。
+     * @return Instance expiration time
      * 
      */
     public Output<String> expirationTime() {
         return this.expirationTime;
     }
     /**
-     * 实例消费组数量上限。
+     * Maximum number of consumer groups per instance
      * 
      */
     @Export(name="groupLimit", refs={Integer.class}, tree="[0]")
     private Output<Integer> groupLimit;
 
     /**
-     * @return 实例消费组数量上限。
+     * @return Maximum number of consumer groups per instance
      * 
      */
     public Output<Integer> groupLimit() {
         return this.groupLimit;
     }
     /**
-     * 实例ID。
+     * Instance ID
      * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
-     * @return 实例ID。
+     * @return Instance ID
      * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
-     * 实例下所有 Topic 的消息保留时长，单位为小时。
+     * Message retention period for all topics under the instance, in hours
      * 
      */
     @Export(name="messageRetention", refs={Integer.class}, tree="[0]")
     private Output<Integer> messageRetention;
 
     /**
-     * @return 实例下所有 Topic 的消息保留时长，单位为小时。
+     * @return Message retention period for all topics under the instance, in hours
      * 
      */
     public Output<Integer> messageRetention() {
         return this.messageRetention;
     }
     /**
-     * 自定设置 BMQ 实例的名称，约束限制如下：由小写字母、数字和中划线（-）组成。长度为 1~64 字符。
+     * Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return 自定设置 BMQ 实例的名称，约束限制如下：由小写字母、数字和中划线（-）组成。长度为 1~64 字符。
+     * @return Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * 实例分区数量上限。
+     * Maximum number of partitions per instance
      * 
      */
     @Export(name="partitionLimit", refs={Integer.class}, tree="[0]")
     private Output<Integer> partitionLimit;
 
     /**
-     * @return 实例分区数量上限。
+     * @return Maximum number of partitions per instance
      * 
      */
     public Output<Integer> partitionLimit() {
         return this.partitionLimit;
     }
     /**
-     * 实例所属项目名称。
+     * Project name to which the instance belongs
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 实例所属项目名称。
+     * @return Project name to which the instance belongs
      * 
      */
     public Output<String> projectName() {
@@ -294,70 +286,70 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.resourceTags;
     }
     /**
-     * 实例资源统计响应数据。
+     * Instance resource statistics response data
      * 
      */
     @Export(name="resources", refs={InstanceResources.class}, tree="[0]")
     private Output<InstanceResources> resources;
 
     /**
-     * @return 实例资源统计响应数据。
+     * @return Instance resource statistics response data
      * 
      */
     public Output<InstanceResources> resources() {
         return this.resources;
     }
     /**
-     * 实例使用安全组列表。
+     * List of security groups used by the instance
      * 
      */
     @Export(name="securityGroupIdLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> securityGroupIdLists;
 
     /**
-     * @return 实例使用安全组列表。
+     * @return List of security groups used by the instance
      * 
      */
     public Output<List<String>> securityGroupIdLists() {
         return this.securityGroupIdLists;
     }
     /**
-     * 实例规格。
+     * Instance specification
      * 
      */
     @Export(name="specification", refs={String.class}, tree="[0]")
     private Output<String> specification;
 
     /**
-     * @return 实例规格。
+     * @return Instance specification
      * 
      */
     public Output<String> specification() {
         return this.specification;
     }
     /**
-     * 实例的状态。取值如下：INITIALIZING：初始化中，INITIALIZATION*FAILED：初始化失败，RUNNING：运行中，MODIFYING：更新中，MODIFY*FAILED：更新失败，RELEASING：释放中，STOPPING：停止中，STOPPED：停止，RECOVERING：恢复中，EXCEPTION：异常，CAPACITY*EXPAXION*FAILED：扩容失败，EXPANDING*CAPACITY：扩容中，CANCEL*EXPANDING_CAPACITY：扩容取消中，RESTARTING：重启中，UNPAID：未支付
+     * Instance status. Possible values: INITIALIZING: Initializing, INITIALIZATION*FAILED: Initialization failed, RUNNING: Running, MODIFYING: Updating, MODIFY*FAILED: Update failed, RELEASING: Releasing, STOPPING: Stopping, STOPPED: Stopped, RECOVERING: Recovering, EXCEPTION: Exception, CAPACITY*EXPAXION*FAILED: Capacity expansion failed, EXPANDING*CAPACITY: Expanding capacity, CANCEL*EXPANDING_CAPACITY: Canceling capacity expansion, RESTARTING: Restarting, UNPAID: Unpaid
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 实例的状态。取值如下：INITIALIZING：初始化中，INITIALIZATION*FAILED：初始化失败，RUNNING：运行中，MODIFYING：更新中，MODIFY*FAILED：更新失败，RELEASING：释放中，STOPPING：停止中，STOPPED：停止，RECOVERING：恢复中，EXCEPTION：异常，CAPACITY*EXPAXION*FAILED：扩容失败，EXPANDING*CAPACITY：扩容中，CANCEL*EXPANDING_CAPACITY：扩容取消中，RESTARTING：重启中，UNPAID：未支付
+     * @return Instance status. Possible values: INITIALIZING: Initializing, INITIALIZATION*FAILED: Initialization failed, RUNNING: Running, MODIFYING: Updating, MODIFY*FAILED: Update failed, RELEASING: Releasing, STOPPING: Stopping, STOPPED: Stopped, RECOVERING: Recovering, EXCEPTION: Exception, CAPACITY*EXPAXION*FAILED: Capacity expansion failed, EXPANDING*CAPACITY: Expanding capacity, CANCEL*EXPANDING_CAPACITY: Canceling capacity expansion, RESTARTING: Restarting, UNPAID: Unpaid
      * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
-     * 实例使用的子网列表。
+     * List of subnets used by the instance
      * 
      */
     @Export(name="subnetIdLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> subnetIdLists;
 
     /**
-     * @return 实例使用的子网列表。
+     * @return List of subnets used by the instance
      * 
      */
     public Output<List<String>> subnetIdLists() {
@@ -370,56 +362,56 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 包年包月类型实例的购买时长，单位为月。
+     * Purchase duration for subscription instances, in months
      * 
      */
     @Export(name="times", refs={Integer.class}, tree="[0]")
     private Output<Integer> times;
 
     /**
-     * @return 包年包月类型实例的购买时长，单位为月。
+     * @return Purchase duration for subscription instances, in months
      * 
      */
     public Output<Integer> times() {
         return this.times;
     }
     /**
-     * 实例Topic数量上限。
+     * Maximum number of topics per instance
      * 
      */
     @Export(name="topicLimit", refs={Integer.class}, tree="[0]")
     private Output<Integer> topicLimit;
 
     /**
-     * @return 实例Topic数量上限。
+     * @return Maximum number of topics per instance
      * 
      */
     public Output<Integer> topicLimit() {
         return this.topicLimit;
     }
     /**
-     * 实例所在VPC ID。
+     * VPC ID where the instance is located
      * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
-     * @return 实例所在VPC ID。
+     * @return VPC ID where the instance is located
      * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
-     * 实例所在可用区列表。
+     * List of availability zones where the instance is located
      * 
      */
     @Export(name="zoneIdLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> zoneIdLists;
 
     /**
-     * @return 实例所在可用区列表。
+     * @return List of availability zones where the instance is located
      * 
      */
     public Output<List<String>> zoneIdLists() {

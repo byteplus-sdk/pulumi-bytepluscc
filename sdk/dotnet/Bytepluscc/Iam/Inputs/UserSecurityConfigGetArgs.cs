@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam.Inputs
     public sealed class UserSecurityConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 是否开启操作保护。0代表开启，1代表关闭。
+        /// Whether operation protection is enabled. 0 means enabled, 1 means disabled.
         /// </summary>
         [Input("safeAuthClose")]
         public Input<double>? SafeAuthClose { get; set; }
 
         /// <summary>
-        /// 操作保护的豁免时间，完成验证后在豁免时间内将不再进行验证。支持设置5至30，默认值为10。单位为分钟。
+        /// Operation protection exemption time. After verification is completed, no further verification is required within the exemption period. Supports values from 5 to 30; the default value is 10. Unit: minutes.
         /// </summary>
         [Input("safeAuthExemptDuration")]
         public Input<double>? SafeAuthExemptDuration { get; set; }
 
         /// <summary>
-        /// 操作保护类型。phone代表手机验证，email代表邮箱验证，vmfa代表验证MFA设备验证。支持设置多种操作保护类型，以英文逗号分隔。
+        /// Operation protection type. 'phone' indicates phone verification, 'email' indicates email verification, 'vmfa' indicates MFA device verification. Multiple operation protection types can be set, separated by commas.
         /// </summary>
         [Input("safeAuthType")]
         public Input<string>? SafeAuthType { get; set; }

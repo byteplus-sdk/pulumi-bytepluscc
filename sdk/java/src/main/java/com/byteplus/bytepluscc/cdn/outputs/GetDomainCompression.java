@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainCompression {
     /**
-     * @return 表示一组智能压缩的配置规则。当 Switch 是 true 时，该参数为必填。
+     * @return Indicates a set of smart compression configuration rules. This parameter is required when Switch is true.
      * 
      */
     private List<GetDomainCompressionCompressionRule> compressionRules;
     /**
-     * @return 智能压缩配置开关。该参数有以下取值：true：表示启用智能压缩。false：表示禁用智能压缩。
+     * @return Smart compression configuration switch. This parameter has the following values: true: enables smart compression. false: disables smart compression.
      * 
      */
     private Boolean switch_;
 
     private GetDomainCompression() {}
     /**
-     * @return 表示一组智能压缩的配置规则。当 Switch 是 true 时，该参数为必填。
+     * @return Indicates a set of smart compression configuration rules. This parameter is required when Switch is true.
      * 
      */
     public List<GetDomainCompressionCompressionRule> compressionRules() {
         return this.compressionRules;
     }
     /**
-     * @return 智能压缩配置开关。该参数有以下取值：true：表示启用智能压缩。false：表示禁用智能压缩。
+     * @return Smart compression configuration switch. This parameter has the following values: true: enables smart compression. false: disables smart compression.
      * 
      */
     public Boolean switch_() {

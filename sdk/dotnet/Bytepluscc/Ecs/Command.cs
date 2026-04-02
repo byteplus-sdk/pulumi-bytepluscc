@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Ecs
 {
     /// <summary>
-    /// 自定义命令是云助手提供的满足您个性化运维需求的功能，您可以在预置的公共命令不满足需求时创建自定义命令，并通过运维任务在实例中批量执行您编写的自定义命令。
+    /// Custom commands are features provided by Cloud Assistant to meet your personalized O&amp;M needs. If the preset public commands do not meet your requirements, you can create custom commands and batch execute your custom commands on instances using O&amp;M tasks.
     /// 
     /// ## Import
     /// 
@@ -23,49 +23,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     public partial class Command : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 命令内容。请根据ContentEncoding参数传入相应命令内容。命令内容不能超过16KB。
+        /// Command content. Enter the command content according to the ContentEncoding parameter. Command content must not exceed 16 KB.
         /// </summary>
         [Output("commandContent")]
         public Output<string> CommandContent { get; private set; } = null!;
 
         /// <summary>
-        /// 自定义命令ID。
+        /// Custom command ID.
         /// </summary>
         [Output("commandId")]
         public Output<string> CommandId { get; private set; } = null!;
 
         /// <summary>
-        /// 命令内容是否经过Base64编码处理。Base64（默认）：经过Base64编码处理。PlainText： 未进行编码处理。
+        /// Whether the command content is processed with Base64 encoding. Base64 (default): Processed with Base64 encoding. PlainText: Not encoded.
         /// </summary>
         [Output("contentEncoding")]
         public Output<string> ContentEncoding { get; private set; } = null!;
 
         /// <summary>
-        /// 创建时间。
+        /// Creation time.
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 命令描述，默认为空字符串。字符长度0~256。不限制特殊字符。
+        /// Command description. Defaults to an empty string. Character length: 0~256. No restriction on special characters.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 创建的命令是否使用自定义参数。false：默认，表示不使用自定义参数。true：表示使用自定义参数。
+        /// Whether the created command uses custom parameters. false: Default, does not use custom parameters. true: Uses custom parameters.
         /// </summary>
         [Output("enableParameter")]
         public Output<bool> EnableParameter { get; private set; } = null!;
 
         /// <summary>
-        /// 命令被调用次数。
+        /// Number of times the command has been invoked.
         /// </summary>
         [Output("invocationTimes")]
         public Output<int> InvocationTimes { get; private set; } = null!;
 
         /// <summary>
-        /// 命令名称。字符长度1~32。不限制特殊字符。
+        /// Command name. Character length: 1~32. No restriction on special characters.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -74,13 +74,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public Output<ImmutableArray<Outputs.CommandParameterDefinition>> ParameterDefinitions { get; private set; } = null!;
 
         /// <summary>
-        /// 资源所属项目，一个资源只能归属于一个项目。
+        /// Project to which the resource belongs. Each resource can belong to only one project.
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 命令的提供方。
+        /// Command provider.
         /// </summary>
         [Output("providerName")]
         public Output<string> ProviderName { get; private set; } = null!;
@@ -89,31 +89,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public Output<ImmutableArray<Outputs.CommandTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。取值范围：30~86400。默认值：60。
+        /// Maximum timeout for executing the created command on ECS instances, in seconds. Value range: 30~86400. Default: 60.
         /// </summary>
         [Output("timeout")]
         public Output<int> Timeout { get; private set; } = null!;
 
         /// <summary>
-        /// 命令的类型。Shell：表示创建一个在Linux实例中运行的Shell脚本。Python：表示创建一个Python脚本。Bat：表示创建一个Bat脚本。PowerShell：表示创建一个PowerShell脚本。
+        /// Command type. Shell: Creates a Shell script for Linux instances. Python: Creates a Python script. Bat: Creates a Bat script. PowerShell: Creates a PowerShell script.
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
 
         /// <summary>
-        /// 更新时间。
+        /// Update time.
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 执行命令时的用户名。
+        /// Username for executing the command.
         /// </summary>
         [Output("username")]
         public Output<string> Username { get; private set; } = null!;
 
         /// <summary>
-        /// 创建的命令在ECS实例中运行的目录。
+        /// Directory where the created command runs on ECS instances.
         /// </summary>
         [Output("workingDir")]
         public Output<string> WorkingDir { get; private set; } = null!;
@@ -166,31 +166,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     public sealed class CommandArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 命令内容。请根据ContentEncoding参数传入相应命令内容。命令内容不能超过16KB。
+        /// Command content. Enter the command content according to the ContentEncoding parameter. Command content must not exceed 16 KB.
         /// </summary>
         [Input("commandContent", required: true)]
         public Input<string> CommandContent { get; set; } = null!;
 
         /// <summary>
-        /// 命令内容是否经过Base64编码处理。Base64（默认）：经过Base64编码处理。PlainText： 未进行编码处理。
+        /// Whether the command content is processed with Base64 encoding. Base64 (default): Processed with Base64 encoding. PlainText: Not encoded.
         /// </summary>
         [Input("contentEncoding")]
         public Input<string>? ContentEncoding { get; set; }
 
         /// <summary>
-        /// 命令描述，默认为空字符串。字符长度0~256。不限制特殊字符。
+        /// Command description. Defaults to an empty string. Character length: 0~256. No restriction on special characters.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 创建的命令是否使用自定义参数。false：默认，表示不使用自定义参数。true：表示使用自定义参数。
+        /// Whether the created command uses custom parameters. false: Default, does not use custom parameters. true: Uses custom parameters.
         /// </summary>
         [Input("enableParameter")]
         public Input<bool>? EnableParameter { get; set; }
 
         /// <summary>
-        /// 命令名称。字符长度1~32。不限制特殊字符。
+        /// Command name. Character length: 1~32. No restriction on special characters.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -204,7 +204,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         }
 
         /// <summary>
-        /// 资源所属项目，一个资源只能归属于一个项目。
+        /// Project to which the resource belongs. Each resource can belong to only one project.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
@@ -218,25 +218,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         }
 
         /// <summary>
-        /// 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。取值范围：30~86400。默认值：60。
+        /// Maximum timeout for executing the created command on ECS instances, in seconds. Value range: 30~86400. Default: 60.
         /// </summary>
         [Input("timeout")]
         public Input<int>? Timeout { get; set; }
 
         /// <summary>
-        /// 命令的类型。Shell：表示创建一个在Linux实例中运行的Shell脚本。Python：表示创建一个Python脚本。Bat：表示创建一个Bat脚本。PowerShell：表示创建一个PowerShell脚本。
+        /// Command type. Shell: Creates a Shell script for Linux instances. Python: Creates a Python script. Bat: Creates a Bat script. PowerShell: Creates a PowerShell script.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 
         /// <summary>
-        /// 执行命令时的用户名。
+        /// Username for executing the command.
         /// </summary>
         [Input("username")]
         public Input<string>? Username { get; set; }
 
         /// <summary>
-        /// 创建的命令在ECS实例中运行的目录。
+        /// Directory where the created command runs on ECS instances.
         /// </summary>
         [Input("workingDir")]
         public Input<string>? WorkingDir { get; set; }
@@ -250,49 +250,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     public sealed class CommandState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 命令内容。请根据ContentEncoding参数传入相应命令内容。命令内容不能超过16KB。
+        /// Command content. Enter the command content according to the ContentEncoding parameter. Command content must not exceed 16 KB.
         /// </summary>
         [Input("commandContent")]
         public Input<string>? CommandContent { get; set; }
 
         /// <summary>
-        /// 自定义命令ID。
+        /// Custom command ID.
         /// </summary>
         [Input("commandId")]
         public Input<string>? CommandId { get; set; }
 
         /// <summary>
-        /// 命令内容是否经过Base64编码处理。Base64（默认）：经过Base64编码处理。PlainText： 未进行编码处理。
+        /// Whether the command content is processed with Base64 encoding. Base64 (default): Processed with Base64 encoding. PlainText: Not encoded.
         /// </summary>
         [Input("contentEncoding")]
         public Input<string>? ContentEncoding { get; set; }
 
         /// <summary>
-        /// 创建时间。
+        /// Creation time.
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 命令描述，默认为空字符串。字符长度0~256。不限制特殊字符。
+        /// Command description. Defaults to an empty string. Character length: 0~256. No restriction on special characters.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 创建的命令是否使用自定义参数。false：默认，表示不使用自定义参数。true：表示使用自定义参数。
+        /// Whether the created command uses custom parameters. false: Default, does not use custom parameters. true: Uses custom parameters.
         /// </summary>
         [Input("enableParameter")]
         public Input<bool>? EnableParameter { get; set; }
 
         /// <summary>
-        /// 命令被调用次数。
+        /// Number of times the command has been invoked.
         /// </summary>
         [Input("invocationTimes")]
         public Input<int>? InvocationTimes { get; set; }
 
         /// <summary>
-        /// 命令名称。字符长度1~32。不限制特殊字符。
+        /// Command name. Character length: 1~32. No restriction on special characters.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -306,13 +306,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         }
 
         /// <summary>
-        /// 资源所属项目，一个资源只能归属于一个项目。
+        /// Project to which the resource belongs. Each resource can belong to only one project.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 命令的提供方。
+        /// Command provider.
         /// </summary>
         [Input("providerName")]
         public Input<string>? ProviderName { get; set; }
@@ -326,31 +326,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         }
 
         /// <summary>
-        /// 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。取值范围：30~86400。默认值：60。
+        /// Maximum timeout for executing the created command on ECS instances, in seconds. Value range: 30~86400. Default: 60.
         /// </summary>
         [Input("timeout")]
         public Input<int>? Timeout { get; set; }
 
         /// <summary>
-        /// 命令的类型。Shell：表示创建一个在Linux实例中运行的Shell脚本。Python：表示创建一个Python脚本。Bat：表示创建一个Bat脚本。PowerShell：表示创建一个PowerShell脚本。
+        /// Command type. Shell: Creates a Shell script for Linux instances. Python: Creates a Python script. Bat: Creates a Bat script. PowerShell: Creates a PowerShell script.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// 更新时间。
+        /// Update time.
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }
 
         /// <summary>
-        /// 执行命令时的用户名。
+        /// Username for executing the command.
         /// </summary>
         [Input("username")]
         public Input<string>? Username { get; set; }
 
         /// <summary>
-        /// 创建的命令在ECS实例中运行的目录。
+        /// Directory where the created command runs on ECS instances.
         /// </summary>
         [Input("workingDir")]
         public Input<string>? WorkingDir { get; set; }

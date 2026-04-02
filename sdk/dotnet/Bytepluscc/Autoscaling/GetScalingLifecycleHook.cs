@@ -69,31 +69,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 云助手相关命令信息。
+        /// Cloud Assistant command information.
         /// </summary>
         public readonly Outputs.GetScalingLifecycleHookLifecycleCommandResult LifecycleCommand;
         /// <summary>
-        /// 生命周期挂钩ID。
+        /// Lifecycle hook ID.
         /// </summary>
         public readonly string LifecycleHookId;
         /// <summary>
-        /// 生命周期挂钩名称，创建后不可修改。取值：不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1 ~ 128个字符之间。
+        /// Lifecycle hook name, cannot be modified after creation. Values: Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
         /// </summary>
         public readonly string LifecycleHookName;
         /// <summary>
-        /// 实例挂起状态结束后执行的策略。取值：CONTINUE：继续执行。REJECT：中止后续操作。ROLLBACK：针对弹性收缩活动，会拒绝释放ECS实例，进行回滚；针对弹性扩张活动，效果同REJECT一样。
+        /// Policy executed after the instance suspension ends. Values: CONTINUE: Continue execution. REJECT: Abort subsequent actions. ROLLBACK: For elastic scale-in activities, the release of ECS instances is rejected and rollback is performed; for elastic scale-out activities, the effect is the same as REJECT.
         /// </summary>
         public readonly string LifecycleHookPolicy;
         /// <summary>
-        /// ECS实例保持挂起状态的时间，超时后，自动结束挂起状态，根据执行策略继续执行扩缩容行为。 请您评估自定义操作的处理时间后，设置合适的超时时间。取值：30 ～ 21600（6小时），单位 s，且必须为整数。
+        /// Duration for which the ECS instance remains suspended. After timeout, the suspended state ends automatically and scaling actions continue according to the execution policy. Please evaluate the processing time for custom operations and set an appropriate timeout. Values: 30 to 21600 (6 hours), unit: s, must be an integer.
         /// </summary>
         public readonly int LifecycleHookTimeout;
         /// <summary>
-        /// 伸缩活动的类型，发生指定类型的伸缩活动时，生命周期挂钩会被触发并挂起ECS实例。取值：SCALE*IN：弹性收缩活动。SCALE*OUT：弹性扩张活动。
+        /// Type of scaling activity. When a specified type of scaling activity occurs, the lifecycle hook is triggered and the ECS instance is suspended. Values: SCALE*IN: Elastic scale-in activity. SCALE*OUT: Elastic scale-out activity.
         /// </summary>
         public readonly string LifecycleHookType;
         /// <summary>
-        /// 伸缩组ID。
+        /// Scaling group ID.
         /// </summary>
         public readonly string ScalingGroupId;
 

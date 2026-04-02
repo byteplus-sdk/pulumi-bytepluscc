@@ -69,9 +69,9 @@ class IndexFullText(dict):
                  delimiter: Optional[builtins.str] = None,
                  include_chinese: Optional[builtins.bool] = None):
         """
-        :param builtins.bool case_sensitive: 是否大小写敏感。true：大小写敏感。false：大小写不敏感。
-        :param builtins.str delimiter: 全文索引的分词符。字符串中每个字符代表一个分词符。长度为 1~256 字节。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}.。支持同时配置包含中文和分词符。
-        :param builtins.bool include_chinese: 检索时，是否对日志的中文内容按照中文语法进行分词，默认为 false。true：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。false：按照分词符参数中指定的分词符对日志进行分词。
+        :param builtins.bool case_sensitive: Case sensitivity. true: Case sensitive. false: Not case sensitive.
+        :param builtins.str delimiter: Token separators for the full-text index. Each character in the string represents a token separator. Length: 1–256 bytes. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+        :param builtins.bool include_chinese: When searching, specify whether to segment Chinese content in logs according to Chinese grammar. The default is false. true: For Chinese characters in logs, segment the log according to common Chinese grammar rules. Custom segmentation symbols for Chinese content are not supported. For non-Chinese characters in logs, segment the log using the segmentation symbols specified in the parameter. false: Segment the log using the segmentation symbols specified in the parameter.
         """
         if case_sensitive is not None:
             pulumi.set(__self__, "case_sensitive", case_sensitive)
@@ -84,7 +84,7 @@ class IndexFullText(dict):
     @pulumi.getter(name="caseSensitive")
     def case_sensitive(self) -> Optional[builtins.bool]:
         """
-        是否大小写敏感。true：大小写敏感。false：大小写不敏感。
+        Case sensitivity. true: Case sensitive. false: Not case sensitive.
         """
         return pulumi.get(self, "case_sensitive")
 
@@ -92,7 +92,7 @@ class IndexFullText(dict):
     @pulumi.getter
     def delimiter(self) -> Optional[builtins.str]:
         """
-        全文索引的分词符。字符串中每个字符代表一个分词符。长度为 1~256 字节。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}.。支持同时配置包含中文和分词符。
+        Token separators for the full-text index. Each character in the string represents a token separator. Length: 1–256 bytes. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
         """
         return pulumi.get(self, "delimiter")
 
@@ -100,7 +100,7 @@ class IndexFullText(dict):
     @pulumi.getter(name="includeChinese")
     def include_chinese(self) -> Optional[builtins.bool]:
         """
-        检索时，是否对日志的中文内容按照中文语法进行分词，默认为 false。true：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。false：按照分词符参数中指定的分词符对日志进行分词。
+        When searching, specify whether to segment Chinese content in logs according to Chinese grammar. The default is false. true: For Chinese characters in logs, segment the log according to common Chinese grammar rules. Custom segmentation symbols for Chinese content are not supported. For non-Chinese characters in logs, segment the log using the segmentation symbols specified in the parameter. false: Segment the log using the segmentation symbols specified in the parameter.
         """
         return pulumi.get(self, "include_chinese")
 
@@ -111,8 +111,8 @@ class IndexKeyValue(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional['outputs.IndexKeyValueValue'] = None):
         """
-        :param builtins.str key: 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
-        :param 'IndexKeyValueValueArgs' value: 需要配置键值索引的字段描述信息。
+        :param builtins.str key: Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
+        :param 'IndexKeyValueValueArgs' value: Field description information required for configuring key-value indexes.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -123,7 +123,7 @@ class IndexKeyValue(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+        Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
         """
         return pulumi.get(self, "key")
 
@@ -131,7 +131,7 @@ class IndexKeyValue(dict):
     @pulumi.getter
     def value(self) -> Optional['outputs.IndexKeyValueValue']:
         """
-        需要配置键值索引的字段描述信息。
+        Field description information required for configuring key-value indexes.
         """
         return pulumi.get(self, "value")
 
@@ -180,14 +180,14 @@ class IndexKeyValueValue(dict):
                  sql_flag: Optional[builtins.bool] = None,
                  value_type: Optional[builtins.str] = None):
         """
-        :param builtins.bool auto_index_flag: 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
-        :param builtins.bool case_sensitive: 是否区分大小写。默认为 false。
-        :param builtins.str delimiter: 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}.。支持同时配置包含中文和分词符。
-        :param builtins.bool include_chinese: 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
-        :param builtins.bool index_all: 是否为 JSON 字段中所有值为文本的字段创建索引。
-        :param builtins.bool index_sql_all: 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
-        :param builtins.bool sql_flag: 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
-        :param builtins.str value_type: 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+        :param builtins.bool auto_index_flag: Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
+        :param builtins.bool case_sensitive: Whether to distinguish case. Default is false.
+        :param builtins.str delimiter: Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+        :param builtins.bool include_chinese: When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
+        :param builtins.bool index_all: Create indexes for all fields with text values in the JSON field.
+        :param builtins.bool index_sql_all: Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
+        :param builtins.bool sql_flag: Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
+        :param builtins.str value_type: Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
         """
         if auto_index_flag is not None:
             pulumi.set(__self__, "auto_index_flag", auto_index_flag)
@@ -212,7 +212,7 @@ class IndexKeyValueValue(dict):
     @pulumi.getter(name="autoIndexFlag")
     def auto_index_flag(self) -> Optional[builtins.bool]:
         """
-        该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+        Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
         """
         return pulumi.get(self, "auto_index_flag")
 
@@ -220,7 +220,7 @@ class IndexKeyValueValue(dict):
     @pulumi.getter(name="caseSensitive")
     def case_sensitive(self) -> Optional[builtins.bool]:
         """
-        是否区分大小写。默认为 false。
+        Whether to distinguish case. Default is false.
         """
         return pulumi.get(self, "case_sensitive")
 
@@ -228,7 +228,7 @@ class IndexKeyValueValue(dict):
     @pulumi.getter
     def delimiter(self) -> Optional[builtins.str]:
         """
-        字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}.。支持同时配置包含中文和分词符。
+        Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
         """
         return pulumi.get(self, "delimiter")
 
@@ -236,7 +236,7 @@ class IndexKeyValueValue(dict):
     @pulumi.getter(name="includeChinese")
     def include_chinese(self) -> Optional[builtins.bool]:
         """
-        检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+        When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
         """
         return pulumi.get(self, "include_chinese")
 
@@ -244,7 +244,7 @@ class IndexKeyValueValue(dict):
     @pulumi.getter(name="indexAll")
     def index_all(self) -> Optional[builtins.bool]:
         """
-        是否为 JSON 字段中所有值为文本的字段创建索引。
+        Create indexes for all fields with text values in the JSON field.
         """
         return pulumi.get(self, "index_all")
 
@@ -252,7 +252,7 @@ class IndexKeyValueValue(dict):
     @pulumi.getter(name="indexSqlAll")
     def index_sql_all(self) -> Optional[builtins.bool]:
         """
-        是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+        Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
         """
         return pulumi.get(self, "index_sql_all")
 
@@ -265,7 +265,7 @@ class IndexKeyValueValue(dict):
     @pulumi.getter(name="sqlFlag")
     def sql_flag(self) -> Optional[builtins.bool]:
         """
-        字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+        Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
         """
         return pulumi.get(self, "sql_flag")
 
@@ -273,7 +273,7 @@ class IndexKeyValueValue(dict):
     @pulumi.getter(name="valueType")
     def value_type(self) -> Optional[builtins.str]:
         """
-        字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+        Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
         """
         return pulumi.get(self, "value_type")
 
@@ -284,8 +284,8 @@ class IndexKeyValueValueJsonKey(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional['outputs.IndexKeyValueValueJsonKeyValue'] = None):
         """
-        :param builtins.str key: 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
-        :param 'IndexKeyValueValueJsonKeyValueArgs' value: 需要配置键值索引的字段描述信息。
+        :param builtins.str key: Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
+        :param 'IndexKeyValueValueJsonKeyValueArgs' value: Field description information required for configuring key-value indexes.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -296,7 +296,7 @@ class IndexKeyValueValueJsonKey(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+        Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
         """
         return pulumi.get(self, "key")
 
@@ -304,7 +304,7 @@ class IndexKeyValueValueJsonKey(dict):
     @pulumi.getter
     def value(self) -> Optional['outputs.IndexKeyValueValueJsonKeyValue']:
         """
-        需要配置键值索引的字段描述信息。
+        Field description information required for configuring key-value indexes.
         """
         return pulumi.get(self, "value")
 
@@ -343,11 +343,11 @@ class IndexKeyValueValueJsonKeyValue(dict):
                  sql_flag: Optional[builtins.bool] = None,
                  value_type: Optional[builtins.str] = None):
         """
-        :param builtins.bool auto_index_flag: 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
-        :param builtins.bool index_all: 是否为 JSON 字段中所有值为文本的字段创建索引。
-        :param builtins.bool index_sql_all: 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
-        :param builtins.bool sql_flag: 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
-        :param builtins.str value_type: 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+        :param builtins.bool auto_index_flag: Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
+        :param builtins.bool index_all: Create indexes for all fields with text values in the JSON field.
+        :param builtins.bool index_sql_all: Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
+        :param builtins.bool sql_flag: Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
+        :param builtins.str value_type: Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
         """
         if auto_index_flag is not None:
             pulumi.set(__self__, "auto_index_flag", auto_index_flag)
@@ -364,7 +364,7 @@ class IndexKeyValueValueJsonKeyValue(dict):
     @pulumi.getter(name="autoIndexFlag")
     def auto_index_flag(self) -> Optional[builtins.bool]:
         """
-        该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+        Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
         """
         return pulumi.get(self, "auto_index_flag")
 
@@ -372,7 +372,7 @@ class IndexKeyValueValueJsonKeyValue(dict):
     @pulumi.getter(name="indexAll")
     def index_all(self) -> Optional[builtins.bool]:
         """
-        是否为 JSON 字段中所有值为文本的字段创建索引。
+        Create indexes for all fields with text values in the JSON field.
         """
         return pulumi.get(self, "index_all")
 
@@ -380,7 +380,7 @@ class IndexKeyValueValueJsonKeyValue(dict):
     @pulumi.getter(name="indexSqlAll")
     def index_sql_all(self) -> Optional[builtins.bool]:
         """
-        是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+        Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
         """
         return pulumi.get(self, "index_sql_all")
 
@@ -388,7 +388,7 @@ class IndexKeyValueValueJsonKeyValue(dict):
     @pulumi.getter(name="sqlFlag")
     def sql_flag(self) -> Optional[builtins.bool]:
         """
-        字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+        Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
         """
         return pulumi.get(self, "sql_flag")
 
@@ -396,7 +396,7 @@ class IndexKeyValueValueJsonKeyValue(dict):
     @pulumi.getter(name="valueType")
     def value_type(self) -> Optional[builtins.str]:
         """
-        字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+        Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
         """
         return pulumi.get(self, "value_type")
 
@@ -407,8 +407,8 @@ class IndexUserInnerKeyValue(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional['outputs.IndexUserInnerKeyValueValue'] = None):
         """
-        :param builtins.str key: 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
-        :param 'IndexUserInnerKeyValueValueArgs' value: 需要配置键值索引的字段描述信息。
+        :param builtins.str key: Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
+        :param 'IndexUserInnerKeyValueValueArgs' value: Field description information required for configuring key-value indexes.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -419,7 +419,7 @@ class IndexUserInnerKeyValue(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+        Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
         """
         return pulumi.get(self, "key")
 
@@ -427,7 +427,7 @@ class IndexUserInnerKeyValue(dict):
     @pulumi.getter
     def value(self) -> Optional['outputs.IndexUserInnerKeyValueValue']:
         """
-        需要配置键值索引的字段描述信息。
+        Field description information required for configuring key-value indexes.
         """
         return pulumi.get(self, "value")
 
@@ -476,14 +476,14 @@ class IndexUserInnerKeyValueValue(dict):
                  sql_flag: Optional[builtins.bool] = None,
                  value_type: Optional[builtins.str] = None):
         """
-        :param builtins.bool auto_index_flag: 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
-        :param builtins.bool case_sensitive: 是否区分大小写。默认为 false。
-        :param builtins.str delimiter: 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}.。支持同时配置包含中文和分词符。
-        :param builtins.bool include_chinese: 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
-        :param builtins.bool index_all: 是否为 JSON 字段中所有值为文本的字段创建索引。
-        :param builtins.bool index_sql_all: 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
-        :param builtins.bool sql_flag: 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
-        :param builtins.str value_type: 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+        :param builtins.bool auto_index_flag: Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
+        :param builtins.bool case_sensitive: Whether to distinguish case. Default is false.
+        :param builtins.str delimiter: Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+        :param builtins.bool include_chinese: When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
+        :param builtins.bool index_all: Create indexes for all fields with text values in the JSON field.
+        :param builtins.bool index_sql_all: Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
+        :param builtins.bool sql_flag: Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
+        :param builtins.str value_type: Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
         """
         if auto_index_flag is not None:
             pulumi.set(__self__, "auto_index_flag", auto_index_flag)
@@ -508,7 +508,7 @@ class IndexUserInnerKeyValueValue(dict):
     @pulumi.getter(name="autoIndexFlag")
     def auto_index_flag(self) -> Optional[builtins.bool]:
         """
-        该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+        Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
         """
         return pulumi.get(self, "auto_index_flag")
 
@@ -516,7 +516,7 @@ class IndexUserInnerKeyValueValue(dict):
     @pulumi.getter(name="caseSensitive")
     def case_sensitive(self) -> Optional[builtins.bool]:
         """
-        是否区分大小写。默认为 false。
+        Whether to distinguish case. Default is false.
         """
         return pulumi.get(self, "case_sensitive")
 
@@ -524,7 +524,7 @@ class IndexUserInnerKeyValueValue(dict):
     @pulumi.getter
     def delimiter(self) -> Optional[builtins.str]:
         """
-        字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}.。支持同时配置包含中文和分词符。
+        Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
         """
         return pulumi.get(self, "delimiter")
 
@@ -532,7 +532,7 @@ class IndexUserInnerKeyValueValue(dict):
     @pulumi.getter(name="includeChinese")
     def include_chinese(self) -> Optional[builtins.bool]:
         """
-        检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+        When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
         """
         return pulumi.get(self, "include_chinese")
 
@@ -540,7 +540,7 @@ class IndexUserInnerKeyValueValue(dict):
     @pulumi.getter(name="indexAll")
     def index_all(self) -> Optional[builtins.bool]:
         """
-        是否为 JSON 字段中所有值为文本的字段创建索引。
+        Create indexes for all fields with text values in the JSON field.
         """
         return pulumi.get(self, "index_all")
 
@@ -548,7 +548,7 @@ class IndexUserInnerKeyValueValue(dict):
     @pulumi.getter(name="indexSqlAll")
     def index_sql_all(self) -> Optional[builtins.bool]:
         """
-        是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+        Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
         """
         return pulumi.get(self, "index_sql_all")
 
@@ -561,7 +561,7 @@ class IndexUserInnerKeyValueValue(dict):
     @pulumi.getter(name="sqlFlag")
     def sql_flag(self) -> Optional[builtins.bool]:
         """
-        字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+        Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
         """
         return pulumi.get(self, "sql_flag")
 
@@ -569,7 +569,7 @@ class IndexUserInnerKeyValueValue(dict):
     @pulumi.getter(name="valueType")
     def value_type(self) -> Optional[builtins.str]:
         """
-        字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+        Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
         """
         return pulumi.get(self, "value_type")
 
@@ -580,8 +580,8 @@ class IndexUserInnerKeyValueValueJsonKey(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional['outputs.IndexUserInnerKeyValueValueJsonKeyValue'] = None):
         """
-        :param builtins.str key: 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
-        :param 'IndexUserInnerKeyValueValueJsonKeyValueArgs' value: 需要配置键值索引的字段描述信息。
+        :param builtins.str key: Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
+        :param 'IndexUserInnerKeyValueValueJsonKeyValueArgs' value: Field description information required for configuring key-value indexes.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -592,7 +592,7 @@ class IndexUserInnerKeyValueValueJsonKey(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+        Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
         """
         return pulumi.get(self, "key")
 
@@ -600,7 +600,7 @@ class IndexUserInnerKeyValueValueJsonKey(dict):
     @pulumi.getter
     def value(self) -> Optional['outputs.IndexUserInnerKeyValueValueJsonKeyValue']:
         """
-        需要配置键值索引的字段描述信息。
+        Field description information required for configuring key-value indexes.
         """
         return pulumi.get(self, "value")
 
@@ -639,11 +639,11 @@ class IndexUserInnerKeyValueValueJsonKeyValue(dict):
                  sql_flag: Optional[builtins.bool] = None,
                  value_type: Optional[builtins.str] = None):
         """
-        :param builtins.bool auto_index_flag: 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
-        :param builtins.bool index_all: 是否为 JSON 字段中所有值为文本的字段创建索引。
-        :param builtins.bool index_sql_all: 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
-        :param builtins.bool sql_flag: 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
-        :param builtins.str value_type: 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+        :param builtins.bool auto_index_flag: Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
+        :param builtins.bool index_all: Create indexes for all fields with text values in the JSON field.
+        :param builtins.bool index_sql_all: Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
+        :param builtins.bool sql_flag: Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
+        :param builtins.str value_type: Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
         """
         if auto_index_flag is not None:
             pulumi.set(__self__, "auto_index_flag", auto_index_flag)
@@ -660,7 +660,7 @@ class IndexUserInnerKeyValueValueJsonKeyValue(dict):
     @pulumi.getter(name="autoIndexFlag")
     def auto_index_flag(self) -> Optional[builtins.bool]:
         """
-        该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+        Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
         """
         return pulumi.get(self, "auto_index_flag")
 
@@ -668,7 +668,7 @@ class IndexUserInnerKeyValueValueJsonKeyValue(dict):
     @pulumi.getter(name="indexAll")
     def index_all(self) -> Optional[builtins.bool]:
         """
-        是否为 JSON 字段中所有值为文本的字段创建索引。
+        Create indexes for all fields with text values in the JSON field.
         """
         return pulumi.get(self, "index_all")
 
@@ -676,7 +676,7 @@ class IndexUserInnerKeyValueValueJsonKeyValue(dict):
     @pulumi.getter(name="indexSqlAll")
     def index_sql_all(self) -> Optional[builtins.bool]:
         """
-        是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+        Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
         """
         return pulumi.get(self, "index_sql_all")
 
@@ -684,7 +684,7 @@ class IndexUserInnerKeyValueValueJsonKeyValue(dict):
     @pulumi.getter(name="sqlFlag")
     def sql_flag(self) -> Optional[builtins.bool]:
         """
-        字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+        Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
         """
         return pulumi.get(self, "sql_flag")
 
@@ -692,7 +692,7 @@ class IndexUserInnerKeyValueValueJsonKeyValue(dict):
     @pulumi.getter(name="valueType")
     def value_type(self) -> Optional[builtins.str]:
         """
-        字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+        Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
         """
         return pulumi.get(self, "value_type")
 
@@ -703,8 +703,8 @@ class ProjectTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -715,7 +715,7 @@ class ProjectTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -723,7 +723,7 @@ class ProjectTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -755,10 +755,10 @@ class ScheduleSqlTaskRequestCycle(dict):
                  cron_tab: Optional[builtins.str] = None,
                  cron_time_zone: Optional[builtins.str] = None):
         """
-        :param builtins.int time: 调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
-        :param builtins.str type: 调度周期类型。可选值：Period、Fixed、Cron。
-        :param builtins.str cron_tab: Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
-        :param builtins.str cron_time_zone: 设置 Type 为 Cron 时，还需设置时区。
+        :param builtins.int time: Scheduling period or the time point for periodic execution (minutes from 00:00). Range: 1–1440 minutes.
+        :param builtins.str type: Scheduling period type. Options: Period, Fixed, Cron.
+        :param builtins.str cron_tab: Cron expression, with a minimum granularity of minutes, using 24-hour format. For example, 0 18 * * * means execution at 18:00 every day.
+        :param builtins.str cron_time_zone: If Type is set to Cron, you must also set the time zone.
         """
         pulumi.set(__self__, "time", time)
         pulumi.set(__self__, "type", type)
@@ -771,7 +771,7 @@ class ScheduleSqlTaskRequestCycle(dict):
     @pulumi.getter
     def time(self) -> builtins.int:
         """
-        调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+        Scheduling period or the time point for periodic execution (minutes from 00:00). Range: 1–1440 minutes.
         """
         return pulumi.get(self, "time")
 
@@ -779,7 +779,7 @@ class ScheduleSqlTaskRequestCycle(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        调度周期类型。可选值：Period、Fixed、Cron。
+        Scheduling period type. Options: Period, Fixed, Cron.
         """
         return pulumi.get(self, "type")
 
@@ -787,7 +787,7 @@ class ScheduleSqlTaskRequestCycle(dict):
     @pulumi.getter(name="cronTab")
     def cron_tab(self) -> Optional[builtins.str]:
         """
-        Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+        Cron expression, with a minimum granularity of minutes, using 24-hour format. For example, 0 18 * * * means execution at 18:00 every day.
         """
         return pulumi.get(self, "cron_tab")
 
@@ -795,7 +795,7 @@ class ScheduleSqlTaskRequestCycle(dict):
     @pulumi.getter(name="cronTimeZone")
     def cron_time_zone(self) -> Optional[builtins.str]:
         """
-        设置 Type 为 Cron 时，还需设置时区。
+        If Type is set to Cron, you must also set the time zone.
         """
         return pulumi.get(self, "cron_time_zone")
 
@@ -806,8 +806,8 @@ class TopicTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: User tag key.
+        :param builtins.str value: User tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -818,7 +818,7 @@ class TopicTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        用户标签的标签键。
+        User tag key.
         """
         return pulumi.get(self, "key")
 
@@ -826,7 +826,7 @@ class TopicTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        用户标签的标签值。
+        User tag value.
         """
         return pulumi.get(self, "value")
 
@@ -838,9 +838,9 @@ class GetIndexFullTextResult(dict):
                  delimiter: builtins.str,
                  include_chinese: builtins.bool):
         """
-        :param builtins.bool case_sensitive: 是否大小写敏感。true：大小写敏感。false：大小写不敏感。
-        :param builtins.str delimiter: 全文索引的分词符。字符串中每个字符代表一个分词符。长度为 1~256 字节。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}.。支持同时配置包含中文和分词符。
-        :param builtins.bool include_chinese: 检索时，是否对日志的中文内容按照中文语法进行分词，默认为 false。true：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。false：按照分词符参数中指定的分词符对日志进行分词。
+        :param builtins.bool case_sensitive: Case sensitivity. true: Case sensitive. false: Not case sensitive.
+        :param builtins.str delimiter: Token separators for the full-text index. Each character in the string represents a token separator. Length: 1–256 bytes. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+        :param builtins.bool include_chinese: When searching, specify whether to segment Chinese content in logs according to Chinese grammar. The default is false. true: For Chinese characters in logs, segment the log according to common Chinese grammar rules. Custom segmentation symbols for Chinese content are not supported. For non-Chinese characters in logs, segment the log using the segmentation symbols specified in the parameter. false: Segment the log using the segmentation symbols specified in the parameter.
         """
         pulumi.set(__self__, "case_sensitive", case_sensitive)
         pulumi.set(__self__, "delimiter", delimiter)
@@ -850,7 +850,7 @@ class GetIndexFullTextResult(dict):
     @pulumi.getter(name="caseSensitive")
     def case_sensitive(self) -> builtins.bool:
         """
-        是否大小写敏感。true：大小写敏感。false：大小写不敏感。
+        Case sensitivity. true: Case sensitive. false: Not case sensitive.
         """
         return pulumi.get(self, "case_sensitive")
 
@@ -858,7 +858,7 @@ class GetIndexFullTextResult(dict):
     @pulumi.getter
     def delimiter(self) -> builtins.str:
         """
-        全文索引的分词符。字符串中每个字符代表一个分词符。长度为 1~256 字节。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}.。支持同时配置包含中文和分词符。
+        Token separators for the full-text index. Each character in the string represents a token separator. Length: 1–256 bytes. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
         """
         return pulumi.get(self, "delimiter")
 
@@ -866,7 +866,7 @@ class GetIndexFullTextResult(dict):
     @pulumi.getter(name="includeChinese")
     def include_chinese(self) -> builtins.bool:
         """
-        检索时，是否对日志的中文内容按照中文语法进行分词，默认为 false。true：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。false：按照分词符参数中指定的分词符对日志进行分词。
+        When searching, specify whether to segment Chinese content in logs according to Chinese grammar. The default is false. true: For Chinese characters in logs, segment the log according to common Chinese grammar rules. Custom segmentation symbols for Chinese content are not supported. For non-Chinese characters in logs, segment the log using the segmentation symbols specified in the parameter. false: Segment the log using the segmentation symbols specified in the parameter.
         """
         return pulumi.get(self, "include_chinese")
 
@@ -877,8 +877,8 @@ class GetIndexKeyValueResult(dict):
                  key: builtins.str,
                  value: 'outputs.GetIndexKeyValueValueResult'):
         """
-        :param builtins.str key: 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
-        :param 'GetIndexKeyValueValueArgs' value: 需要配置键值索引的字段描述信息。
+        :param builtins.str key: Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
+        :param 'GetIndexKeyValueValueArgs' value: Field description information required for configuring key-value indexes.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -887,7 +887,7 @@ class GetIndexKeyValueResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+        Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
         """
         return pulumi.get(self, "key")
 
@@ -895,7 +895,7 @@ class GetIndexKeyValueResult(dict):
     @pulumi.getter
     def value(self) -> 'outputs.GetIndexKeyValueValueResult':
         """
-        需要配置键值索引的字段描述信息。
+        Field description information required for configuring key-value indexes.
         """
         return pulumi.get(self, "value")
 
@@ -913,15 +913,15 @@ class GetIndexKeyValueValueResult(dict):
                  sql_flag: builtins.bool,
                  value_type: builtins.str):
         """
-        :param builtins.bool auto_index_flag: 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
-        :param builtins.bool case_sensitive: 是否区分大小写。默认为 false。
-        :param builtins.str delimiter: 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}.。支持同时配置包含中文和分词符。
-        :param builtins.bool include_chinese: 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
-        :param builtins.bool index_all: 是否为 JSON 字段中所有值为文本的字段创建索引。
-        :param builtins.bool index_sql_all: 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
-        :param Sequence['GetIndexKeyValueValueJsonKeyArgs'] json_keys: 当 ValueType 为 json 时，可通过 JsonKeys 字段配置 JSON 子字段键值索引，其值为 KeyValueInfo 数组。JsonKeys 列表中每个元素为 KeyValueInfo，可进一步嵌套定义 text、long、double 类型子字段。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。JsonKeys 中定义的子字段键值索引的 SqlFlag 设置应与其父字段设置保持一致，即需要同时开启或关闭，默认为关闭状态。子字段不支持单独设置 Delimiter、CaseSensitive 和 IncludeChinese，对于 text 类型的字段，CaseSensitive、Delimiter 和 IncludeChinese 固定沿用父字段设置。仅当 ValueType 为 json 时设置。
-        :param builtins.bool sql_flag: 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
-        :param builtins.str value_type: 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+        :param builtins.bool auto_index_flag: Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
+        :param builtins.bool case_sensitive: Whether to distinguish case. Default is false.
+        :param builtins.str delimiter: Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+        :param builtins.bool include_chinese: When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
+        :param builtins.bool index_all: Create indexes for all fields with text values in the JSON field.
+        :param builtins.bool index_sql_all: Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
+        :param Sequence['GetIndexKeyValueValueJsonKeyArgs'] json_keys: When ValueType is json, you can configure key-value indexes for JSON subfields using the JsonKeys field, which is an array of KeyValueInfo. Each element in the JsonKeys list is a KeyValueInfo, and you can further nest text, long, and double type subfields. For subfields in JSON key-value indexes, use . to indicate the hierarchy between JSON fields. For example, the JSON field namelist contains a text-type subfield totalcount and a JSON-type info, which itself contains the field name. Each field name should be configured as totalcount and info.name, respectively. The SqlFlag setting for subfield key-value indexes defined in JsonKeys must match their parent field, meaning they must be enabled or disabled together. The default is disabled. Subfields do not support separate settings for Delimiter, CaseSensitive, or IncludeChinese. For text-type fields, CaseSensitive, Delimiter, and IncludeChinese always inherit the parent field settings. This is only set when ValueType is json.
+        :param builtins.bool sql_flag: Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
+        :param builtins.str value_type: Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
         """
         pulumi.set(__self__, "auto_index_flag", auto_index_flag)
         pulumi.set(__self__, "case_sensitive", case_sensitive)
@@ -937,7 +937,7 @@ class GetIndexKeyValueValueResult(dict):
     @pulumi.getter(name="autoIndexFlag")
     def auto_index_flag(self) -> builtins.bool:
         """
-        该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+        Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
         """
         return pulumi.get(self, "auto_index_flag")
 
@@ -945,7 +945,7 @@ class GetIndexKeyValueValueResult(dict):
     @pulumi.getter(name="caseSensitive")
     def case_sensitive(self) -> builtins.bool:
         """
-        是否区分大小写。默认为 false。
+        Whether to distinguish case. Default is false.
         """
         return pulumi.get(self, "case_sensitive")
 
@@ -953,7 +953,7 @@ class GetIndexKeyValueValueResult(dict):
     @pulumi.getter
     def delimiter(self) -> builtins.str:
         """
-        字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}.。支持同时配置包含中文和分词符。
+        Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
         """
         return pulumi.get(self, "delimiter")
 
@@ -961,7 +961,7 @@ class GetIndexKeyValueValueResult(dict):
     @pulumi.getter(name="includeChinese")
     def include_chinese(self) -> builtins.bool:
         """
-        检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+        When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
         """
         return pulumi.get(self, "include_chinese")
 
@@ -969,7 +969,7 @@ class GetIndexKeyValueValueResult(dict):
     @pulumi.getter(name="indexAll")
     def index_all(self) -> builtins.bool:
         """
-        是否为 JSON 字段中所有值为文本的字段创建索引。
+        Create indexes for all fields with text values in the JSON field.
         """
         return pulumi.get(self, "index_all")
 
@@ -977,7 +977,7 @@ class GetIndexKeyValueValueResult(dict):
     @pulumi.getter(name="indexSqlAll")
     def index_sql_all(self) -> builtins.bool:
         """
-        是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+        Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
         """
         return pulumi.get(self, "index_sql_all")
 
@@ -985,7 +985,7 @@ class GetIndexKeyValueValueResult(dict):
     @pulumi.getter(name="jsonKeys")
     def json_keys(self) -> Sequence['outputs.GetIndexKeyValueValueJsonKeyResult']:
         """
-        当 ValueType 为 json 时，可通过 JsonKeys 字段配置 JSON 子字段键值索引，其值为 KeyValueInfo 数组。JsonKeys 列表中每个元素为 KeyValueInfo，可进一步嵌套定义 text、long、double 类型子字段。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。JsonKeys 中定义的子字段键值索引的 SqlFlag 设置应与其父字段设置保持一致，即需要同时开启或关闭，默认为关闭状态。子字段不支持单独设置 Delimiter、CaseSensitive 和 IncludeChinese，对于 text 类型的字段，CaseSensitive、Delimiter 和 IncludeChinese 固定沿用父字段设置。仅当 ValueType 为 json 时设置。
+        When ValueType is json, you can configure key-value indexes for JSON subfields using the JsonKeys field, which is an array of KeyValueInfo. Each element in the JsonKeys list is a KeyValueInfo, and you can further nest text, long, and double type subfields. For subfields in JSON key-value indexes, use . to indicate the hierarchy between JSON fields. For example, the JSON field namelist contains a text-type subfield totalcount and a JSON-type info, which itself contains the field name. Each field name should be configured as totalcount and info.name, respectively. The SqlFlag setting for subfield key-value indexes defined in JsonKeys must match their parent field, meaning they must be enabled or disabled together. The default is disabled. Subfields do not support separate settings for Delimiter, CaseSensitive, or IncludeChinese. For text-type fields, CaseSensitive, Delimiter, and IncludeChinese always inherit the parent field settings. This is only set when ValueType is json.
         """
         return pulumi.get(self, "json_keys")
 
@@ -993,7 +993,7 @@ class GetIndexKeyValueValueResult(dict):
     @pulumi.getter(name="sqlFlag")
     def sql_flag(self) -> builtins.bool:
         """
-        字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+        Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
         """
         return pulumi.get(self, "sql_flag")
 
@@ -1001,7 +1001,7 @@ class GetIndexKeyValueValueResult(dict):
     @pulumi.getter(name="valueType")
     def value_type(self) -> builtins.str:
         """
-        字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+        Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
         """
         return pulumi.get(self, "value_type")
 
@@ -1012,8 +1012,8 @@ class GetIndexKeyValueValueJsonKeyResult(dict):
                  key: builtins.str,
                  value: 'outputs.GetIndexKeyValueValueJsonKeyValueResult'):
         """
-        :param builtins.str key: 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
-        :param 'GetIndexKeyValueValueJsonKeyValueArgs' value: 需要配置键值索引的字段描述信息。
+        :param builtins.str key: Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
+        :param 'GetIndexKeyValueValueJsonKeyValueArgs' value: Field description information required for configuring key-value indexes.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -1022,7 +1022,7 @@ class GetIndexKeyValueValueJsonKeyResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+        Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
         """
         return pulumi.get(self, "key")
 
@@ -1030,7 +1030,7 @@ class GetIndexKeyValueValueJsonKeyResult(dict):
     @pulumi.getter
     def value(self) -> 'outputs.GetIndexKeyValueValueJsonKeyValueResult':
         """
-        需要配置键值索引的字段描述信息。
+        Field description information required for configuring key-value indexes.
         """
         return pulumi.get(self, "value")
 
@@ -1047,14 +1047,14 @@ class GetIndexKeyValueValueJsonKeyValueResult(dict):
                  sql_flag: builtins.bool,
                  value_type: builtins.str):
         """
-        :param builtins.bool auto_index_flag: 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
-        :param builtins.bool case_sensitive: 是否区分大小写。默认为 false。
-        :param builtins.str delimiter: 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}.。支持同时配置包含中文和分词符。
-        :param builtins.bool include_chinese: 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
-        :param builtins.bool index_all: 是否为 JSON 字段中所有值为文本的字段创建索引。
-        :param builtins.bool index_sql_all: 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
-        :param builtins.bool sql_flag: 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
-        :param builtins.str value_type: 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+        :param builtins.bool auto_index_flag: Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
+        :param builtins.bool case_sensitive: Whether to distinguish case. Default is false.
+        :param builtins.str delimiter: Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+        :param builtins.bool include_chinese: When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
+        :param builtins.bool index_all: Create indexes for all fields with text values in the JSON field.
+        :param builtins.bool index_sql_all: Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
+        :param builtins.bool sql_flag: Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
+        :param builtins.str value_type: Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
         """
         pulumi.set(__self__, "auto_index_flag", auto_index_flag)
         pulumi.set(__self__, "case_sensitive", case_sensitive)
@@ -1069,7 +1069,7 @@ class GetIndexKeyValueValueJsonKeyValueResult(dict):
     @pulumi.getter(name="autoIndexFlag")
     def auto_index_flag(self) -> builtins.bool:
         """
-        该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+        Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
         """
         return pulumi.get(self, "auto_index_flag")
 
@@ -1077,7 +1077,7 @@ class GetIndexKeyValueValueJsonKeyValueResult(dict):
     @pulumi.getter(name="caseSensitive")
     def case_sensitive(self) -> builtins.bool:
         """
-        是否区分大小写。默认为 false。
+        Whether to distinguish case. Default is false.
         """
         return pulumi.get(self, "case_sensitive")
 
@@ -1085,7 +1085,7 @@ class GetIndexKeyValueValueJsonKeyValueResult(dict):
     @pulumi.getter
     def delimiter(self) -> builtins.str:
         """
-        字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}.。支持同时配置包含中文和分词符。
+        Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
         """
         return pulumi.get(self, "delimiter")
 
@@ -1093,7 +1093,7 @@ class GetIndexKeyValueValueJsonKeyValueResult(dict):
     @pulumi.getter(name="includeChinese")
     def include_chinese(self) -> builtins.bool:
         """
-        检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+        When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
         """
         return pulumi.get(self, "include_chinese")
 
@@ -1101,7 +1101,7 @@ class GetIndexKeyValueValueJsonKeyValueResult(dict):
     @pulumi.getter(name="indexAll")
     def index_all(self) -> builtins.bool:
         """
-        是否为 JSON 字段中所有值为文本的字段创建索引。
+        Create indexes for all fields with text values in the JSON field.
         """
         return pulumi.get(self, "index_all")
 
@@ -1109,7 +1109,7 @@ class GetIndexKeyValueValueJsonKeyValueResult(dict):
     @pulumi.getter(name="indexSqlAll")
     def index_sql_all(self) -> builtins.bool:
         """
-        是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+        Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
         """
         return pulumi.get(self, "index_sql_all")
 
@@ -1117,7 +1117,7 @@ class GetIndexKeyValueValueJsonKeyValueResult(dict):
     @pulumi.getter(name="sqlFlag")
     def sql_flag(self) -> builtins.bool:
         """
-        字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+        Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
         """
         return pulumi.get(self, "sql_flag")
 
@@ -1125,7 +1125,7 @@ class GetIndexKeyValueValueJsonKeyValueResult(dict):
     @pulumi.getter(name="valueType")
     def value_type(self) -> builtins.str:
         """
-        字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+        Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
         """
         return pulumi.get(self, "value_type")
 
@@ -1136,8 +1136,8 @@ class GetIndexUserInnerKeyValueResult(dict):
                  key: builtins.str,
                  value: 'outputs.GetIndexUserInnerKeyValueValueResult'):
         """
-        :param builtins.str key: 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
-        :param 'GetIndexUserInnerKeyValueValueArgs' value: 需要配置键值索引的字段描述信息。
+        :param builtins.str key: Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
+        :param 'GetIndexUserInnerKeyValueValueArgs' value: Field description information required for configuring key-value indexes.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -1146,7 +1146,7 @@ class GetIndexUserInnerKeyValueResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+        Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
         """
         return pulumi.get(self, "key")
 
@@ -1154,7 +1154,7 @@ class GetIndexUserInnerKeyValueResult(dict):
     @pulumi.getter
     def value(self) -> 'outputs.GetIndexUserInnerKeyValueValueResult':
         """
-        需要配置键值索引的字段描述信息。
+        Field description information required for configuring key-value indexes.
         """
         return pulumi.get(self, "value")
 
@@ -1172,15 +1172,15 @@ class GetIndexUserInnerKeyValueValueResult(dict):
                  sql_flag: builtins.bool,
                  value_type: builtins.str):
         """
-        :param builtins.bool auto_index_flag: 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
-        :param builtins.bool case_sensitive: 是否区分大小写。默认为 false。
-        :param builtins.str delimiter: 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}.。支持同时配置包含中文和分词符。
-        :param builtins.bool include_chinese: 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
-        :param builtins.bool index_all: 是否为 JSON 字段中所有值为文本的字段创建索引。
-        :param builtins.bool index_sql_all: 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
-        :param Sequence['GetIndexUserInnerKeyValueValueJsonKeyArgs'] json_keys: 当 ValueType 为 json 时，可通过 JsonKeys 字段配置 JSON 子字段键值索引，其值为 KeyValueInfo 数组。JsonKeys 列表中每个元素为 KeyValueInfo，可进一步嵌套定义 text、long、double 类型子字段。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。JsonKeys 中定义的子字段键值索引的 SqlFlag 设置应与其父字段设置保持一致，即需要同时开启或关闭，默认为关闭状态。子字段不支持单独设置 Delimiter、CaseSensitive 和 IncludeChinese，对于 text 类型的字段，CaseSensitive、Delimiter 和 IncludeChinese 固定沿用父字段设置。仅当 ValueType 为 json 时设置。
-        :param builtins.bool sql_flag: 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
-        :param builtins.str value_type: 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+        :param builtins.bool auto_index_flag: Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
+        :param builtins.bool case_sensitive: Whether to distinguish case. Default is false.
+        :param builtins.str delimiter: Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+        :param builtins.bool include_chinese: When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
+        :param builtins.bool index_all: Create indexes for all fields with text values in the JSON field.
+        :param builtins.bool index_sql_all: Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
+        :param Sequence['GetIndexUserInnerKeyValueValueJsonKeyArgs'] json_keys: When ValueType is json, you can configure key-value indexes for JSON subfields using the JsonKeys field, which is an array of KeyValueInfo. Each element in the JsonKeys list is a KeyValueInfo, and you can further nest text, long, and double type subfields. For subfields in JSON key-value indexes, use . to indicate the hierarchy between JSON fields. For example, the JSON field namelist contains a text-type subfield totalcount and a JSON-type info, which itself contains the field name. Each field name should be configured as totalcount and info.name, respectively. The SqlFlag setting for subfield key-value indexes defined in JsonKeys must match their parent field, meaning they must be enabled or disabled together. The default is disabled. Subfields do not support separate settings for Delimiter, CaseSensitive, or IncludeChinese. For text-type fields, CaseSensitive, Delimiter, and IncludeChinese always inherit the parent field settings. This is only set when ValueType is json.
+        :param builtins.bool sql_flag: Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
+        :param builtins.str value_type: Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
         """
         pulumi.set(__self__, "auto_index_flag", auto_index_flag)
         pulumi.set(__self__, "case_sensitive", case_sensitive)
@@ -1196,7 +1196,7 @@ class GetIndexUserInnerKeyValueValueResult(dict):
     @pulumi.getter(name="autoIndexFlag")
     def auto_index_flag(self) -> builtins.bool:
         """
-        该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+        Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
         """
         return pulumi.get(self, "auto_index_flag")
 
@@ -1204,7 +1204,7 @@ class GetIndexUserInnerKeyValueValueResult(dict):
     @pulumi.getter(name="caseSensitive")
     def case_sensitive(self) -> builtins.bool:
         """
-        是否区分大小写。默认为 false。
+        Whether to distinguish case. Default is false.
         """
         return pulumi.get(self, "case_sensitive")
 
@@ -1212,7 +1212,7 @@ class GetIndexUserInnerKeyValueValueResult(dict):
     @pulumi.getter
     def delimiter(self) -> builtins.str:
         """
-        字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}.。支持同时配置包含中文和分词符。
+        Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
         """
         return pulumi.get(self, "delimiter")
 
@@ -1220,7 +1220,7 @@ class GetIndexUserInnerKeyValueValueResult(dict):
     @pulumi.getter(name="includeChinese")
     def include_chinese(self) -> builtins.bool:
         """
-        检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+        When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
         """
         return pulumi.get(self, "include_chinese")
 
@@ -1228,7 +1228,7 @@ class GetIndexUserInnerKeyValueValueResult(dict):
     @pulumi.getter(name="indexAll")
     def index_all(self) -> builtins.bool:
         """
-        是否为 JSON 字段中所有值为文本的字段创建索引。
+        Create indexes for all fields with text values in the JSON field.
         """
         return pulumi.get(self, "index_all")
 
@@ -1236,7 +1236,7 @@ class GetIndexUserInnerKeyValueValueResult(dict):
     @pulumi.getter(name="indexSqlAll")
     def index_sql_all(self) -> builtins.bool:
         """
-        是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+        Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
         """
         return pulumi.get(self, "index_sql_all")
 
@@ -1244,7 +1244,7 @@ class GetIndexUserInnerKeyValueValueResult(dict):
     @pulumi.getter(name="jsonKeys")
     def json_keys(self) -> Sequence['outputs.GetIndexUserInnerKeyValueValueJsonKeyResult']:
         """
-        当 ValueType 为 json 时，可通过 JsonKeys 字段配置 JSON 子字段键值索引，其值为 KeyValueInfo 数组。JsonKeys 列表中每个元素为 KeyValueInfo，可进一步嵌套定义 text、long、double 类型子字段。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。JsonKeys 中定义的子字段键值索引的 SqlFlag 设置应与其父字段设置保持一致，即需要同时开启或关闭，默认为关闭状态。子字段不支持单独设置 Delimiter、CaseSensitive 和 IncludeChinese，对于 text 类型的字段，CaseSensitive、Delimiter 和 IncludeChinese 固定沿用父字段设置。仅当 ValueType 为 json 时设置。
+        When ValueType is json, you can configure key-value indexes for JSON subfields using the JsonKeys field, which is an array of KeyValueInfo. Each element in the JsonKeys list is a KeyValueInfo, and you can further nest text, long, and double type subfields. For subfields in JSON key-value indexes, use . to indicate the hierarchy between JSON fields. For example, the JSON field namelist contains a text-type subfield totalcount and a JSON-type info, which itself contains the field name. Each field name should be configured as totalcount and info.name, respectively. The SqlFlag setting for subfield key-value indexes defined in JsonKeys must match their parent field, meaning they must be enabled or disabled together. The default is disabled. Subfields do not support separate settings for Delimiter, CaseSensitive, or IncludeChinese. For text-type fields, CaseSensitive, Delimiter, and IncludeChinese always inherit the parent field settings. This is only set when ValueType is json.
         """
         return pulumi.get(self, "json_keys")
 
@@ -1252,7 +1252,7 @@ class GetIndexUserInnerKeyValueValueResult(dict):
     @pulumi.getter(name="sqlFlag")
     def sql_flag(self) -> builtins.bool:
         """
-        字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+        Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
         """
         return pulumi.get(self, "sql_flag")
 
@@ -1260,7 +1260,7 @@ class GetIndexUserInnerKeyValueValueResult(dict):
     @pulumi.getter(name="valueType")
     def value_type(self) -> builtins.str:
         """
-        字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+        Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
         """
         return pulumi.get(self, "value_type")
 
@@ -1271,8 +1271,8 @@ class GetIndexUserInnerKeyValueValueJsonKeyResult(dict):
                  key: builtins.str,
                  value: 'outputs.GetIndexUserInnerKeyValueValueJsonKeyValueResult'):
         """
-        :param builtins.str key: 需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
-        :param 'GetIndexUserInnerKeyValueValueJsonKeyValueArgs' value: 需要配置键值索引的字段描述信息。
+        :param builtins.str key: Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
+        :param 'GetIndexUserInnerKeyValueValueJsonKeyValueArgs' value: Field description information required for configuring key-value indexes.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -1281,7 +1281,7 @@ class GetIndexUserInnerKeyValueValueJsonKeyResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        需要配置键值索引的字段名称，最多添加 100 个字段。仅支持字母、数字、空格、下划线（_）、连字符（-）和斜线（/），并且不支持以空格开头或结尾。同一个索引中 key 名称唯一。长度为 1~128 字符。对于 JSON 类型键值索引的子字段，需要通过.表示 JSON 字段之间的层级关系，例如 JSON 字段 namelist 中包含 text 类型的子字段 totalcount 和 JSON 类型的 info，info 中又包含字段 name，各个字段名称应分别配置为totalcount 和 info.name。
+        Specify the field names for key-value indexing. Up to 100 fields can be added. Only letters, numbers, spaces, underscores (_), hyphens (-), and slashes (/) are supported, and field names cannot start or end with a space. Each key name must be unique within the same index. Length: 1–128 characters. For subfields in JSON-type key-value indexes, use a dot (.) to indicate the hierarchy between JSON fields. For example, if the JSON field 'namelist' contains a text-type subfield 'totalcount' and a JSON-type subfield 'info', and 'info' contains the field 'name', the field names should be configured as 'totalcount' and 'info.name' respectively.
         """
         return pulumi.get(self, "key")
 
@@ -1289,7 +1289,7 @@ class GetIndexUserInnerKeyValueValueJsonKeyResult(dict):
     @pulumi.getter
     def value(self) -> 'outputs.GetIndexUserInnerKeyValueValueJsonKeyValueResult':
         """
-        需要配置键值索引的字段描述信息。
+        Field description information required for configuring key-value indexes.
         """
         return pulumi.get(self, "value")
 
@@ -1306,14 +1306,14 @@ class GetIndexUserInnerKeyValueValueJsonKeyValueResult(dict):
                  sql_flag: builtins.bool,
                  value_type: builtins.str):
         """
-        :param builtins.bool auto_index_flag: 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
-        :param builtins.bool case_sensitive: 是否区分大小写。默认为 false。
-        :param builtins.str delimiter: 字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}.。支持同时配置包含中文和分词符。
-        :param builtins.bool include_chinese: 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
-        :param builtins.bool index_all: 是否为 JSON 字段中所有值为文本的字段创建索引。
-        :param builtins.bool index_sql_all: 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
-        :param builtins.bool sql_flag: 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
-        :param builtins.str value_type: 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+        :param builtins.bool auto_index_flag: Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
+        :param builtins.bool case_sensitive: Whether to distinguish case. Default is false.
+        :param builtins.str delimiter: Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
+        :param builtins.bool include_chinese: When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
+        :param builtins.bool index_all: Create indexes for all fields with text values in the JSON field.
+        :param builtins.bool index_sql_all: Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
+        :param builtins.bool sql_flag: Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
+        :param builtins.str value_type: Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
         """
         pulumi.set(__self__, "auto_index_flag", auto_index_flag)
         pulumi.set(__self__, "case_sensitive", case_sensitive)
@@ -1328,7 +1328,7 @@ class GetIndexUserInnerKeyValueValueJsonKeyValueResult(dict):
     @pulumi.getter(name="autoIndexFlag")
     def auto_index_flag(self) -> builtins.bool:
         """
-        该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+        Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
         """
         return pulumi.get(self, "auto_index_flag")
 
@@ -1336,7 +1336,7 @@ class GetIndexUserInnerKeyValueValueJsonKeyValueResult(dict):
     @pulumi.getter(name="caseSensitive")
     def case_sensitive(self) -> builtins.bool:
         """
-        是否区分大小写。默认为 false。
+        Whether to distinguish case. Default is false.
         """
         return pulumi.get(self, "case_sensitive")
 
@@ -1344,7 +1344,7 @@ class GetIndexUserInnerKeyValueValueJsonKeyValueResult(dict):
     @pulumi.getter
     def delimiter(self) -> builtins.str:
         """
-        字段的分词符。默认为空（""）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}.。支持同时配置包含中文和分词符。
+        Token separators for the field. Default is empty (""). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !@#%^&*()-_=\\\\"', <>/?|;:\\	\\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
         """
         return pulumi.get(self, "delimiter")
 
@@ -1352,7 +1352,7 @@ class GetIndexUserInnerKeyValueValueJsonKeyValueResult(dict):
     @pulumi.getter(name="includeChinese")
     def include_chinese(self) -> builtins.bool:
         """
-        检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+        When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
         """
         return pulumi.get(self, "include_chinese")
 
@@ -1360,7 +1360,7 @@ class GetIndexUserInnerKeyValueValueJsonKeyValueResult(dict):
     @pulumi.getter(name="indexAll")
     def index_all(self) -> builtins.bool:
         """
-        是否为 JSON 字段中所有值为文本的字段创建索引。
+        Create indexes for all fields with text values in the JSON field.
         """
         return pulumi.get(self, "index_all")
 
@@ -1368,7 +1368,7 @@ class GetIndexUserInnerKeyValueValueJsonKeyValueResult(dict):
     @pulumi.getter(name="indexSqlAll")
     def index_sql_all(self) -> builtins.bool:
         """
-        是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+        Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
         """
         return pulumi.get(self, "index_sql_all")
 
@@ -1376,7 +1376,7 @@ class GetIndexUserInnerKeyValueValueJsonKeyValueResult(dict):
     @pulumi.getter(name="sqlFlag")
     def sql_flag(self) -> builtins.bool:
         """
-        字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+        Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
         """
         return pulumi.get(self, "sql_flag")
 
@@ -1384,7 +1384,7 @@ class GetIndexUserInnerKeyValueValueJsonKeyValueResult(dict):
     @pulumi.getter(name="valueType")
     def value_type(self) -> builtins.str:
         """
-        字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+        Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
         """
         return pulumi.get(self, "value_type")
 
@@ -1395,8 +1395,8 @@ class GetProjectTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签键。
-        :param builtins.str value: 标签值。
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -1405,7 +1405,7 @@ class GetProjectTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -1413,7 +1413,7 @@ class GetProjectTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签值。
+        Tag value
         """
         return pulumi.get(self, "value")
 
@@ -1426,10 +1426,10 @@ class GetScheduleSqlTaskRequestCycleResult(dict):
                  time: builtins.int,
                  type: builtins.str):
         """
-        :param builtins.str cron_tab: Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
-        :param builtins.str cron_time_zone: 设置 Type 为 Cron 时，还需设置时区。
-        :param builtins.int time: 调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
-        :param builtins.str type: 调度周期类型。可选值：Period、Fixed、Cron。
+        :param builtins.str cron_tab: Cron expression, with a minimum granularity of minutes, using 24-hour format. For example, 0 18 * * * means execution at 18:00 every day.
+        :param builtins.str cron_time_zone: If Type is set to Cron, you must also set the time zone.
+        :param builtins.int time: Scheduling period or the time point for periodic execution (minutes from 00:00). Range: 1–1440 minutes.
+        :param builtins.str type: Scheduling period type. Options: Period, Fixed, Cron.
         """
         pulumi.set(__self__, "cron_tab", cron_tab)
         pulumi.set(__self__, "cron_time_zone", cron_time_zone)
@@ -1440,7 +1440,7 @@ class GetScheduleSqlTaskRequestCycleResult(dict):
     @pulumi.getter(name="cronTab")
     def cron_tab(self) -> builtins.str:
         """
-        Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+        Cron expression, with a minimum granularity of minutes, using 24-hour format. For example, 0 18 * * * means execution at 18:00 every day.
         """
         return pulumi.get(self, "cron_tab")
 
@@ -1448,7 +1448,7 @@ class GetScheduleSqlTaskRequestCycleResult(dict):
     @pulumi.getter(name="cronTimeZone")
     def cron_time_zone(self) -> builtins.str:
         """
-        设置 Type 为 Cron 时，还需设置时区。
+        If Type is set to Cron, you must also set the time zone.
         """
         return pulumi.get(self, "cron_time_zone")
 
@@ -1456,7 +1456,7 @@ class GetScheduleSqlTaskRequestCycleResult(dict):
     @pulumi.getter
     def time(self) -> builtins.int:
         """
-        调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+        Scheduling period or the time point for periodic execution (minutes from 00:00). Range: 1–1440 minutes.
         """
         return pulumi.get(self, "time")
 
@@ -1464,7 +1464,7 @@ class GetScheduleSqlTaskRequestCycleResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        调度周期类型。可选值：Period、Fixed、Cron。
+        Scheduling period type. Options: Period, Fixed, Cron.
         """
         return pulumi.get(self, "type")
 
@@ -1475,8 +1475,8 @@ class GetTopicTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: User tag key.
+        :param builtins.str value: User tag value.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -1485,7 +1485,7 @@ class GetTopicTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        用户标签的标签键。
+        User tag key.
         """
         return pulumi.get(self, "key")
 
@@ -1493,7 +1493,7 @@ class GetTopicTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        用户标签的标签值。
+        User tag value.
         """
         return pulumi.get(self, "value")
 

@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas.Outputs
     public sealed class MountPointPermissionGroupMountPoint
     {
         /// <summary>
-        /// 文件系统 ID。
+        /// File system ID.
         /// </summary>
         public readonly string? FileSystemId;
         /// <summary>
-        /// 挂载点 ID。
+        /// Mount point ID.
         /// </summary>
         public readonly string? MountPointId;
         /// <summary>
-        /// 挂载点名称。
+        /// Mount point name.
         /// </summary>
         public readonly string? MountPointName;
 

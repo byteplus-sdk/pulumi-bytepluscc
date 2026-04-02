@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls.Outputs
     public sealed class ScheduleSqlTaskRequestCycle
     {
         /// <summary>
-        /// Cron 表达式，最小粒度为分钟，24 小时制。例如 0 18 * * * 表示每天 18 点整执行一次。
+        /// Cron expression, with a minimum granularity of minutes, using 24-hour format. For example, 0 18 * * * means execution at 18:00 every day.
         /// </summary>
         public readonly string? CronTab;
         /// <summary>
-        /// 设置 Type 为 Cron 时，还需设置时区。
+        /// If Type is set to Cron, you must also set the time zone.
         /// </summary>
         public readonly string? CronTimeZone;
         /// <summary>
-        /// 调度的周期或者定期执行的时间点（距离 00:00 的分钟数），取值范围为 1~1440，单位为分钟。
+        /// Scheduling period or the time point for periodic execution (minutes from 00:00). Range: 1–1440 minutes.
         /// </summary>
         public readonly int Time;
         /// <summary>
-        /// 调度周期类型。可选值：Period、Fixed、Cron。
+        /// Scheduling period type. Options: Period, Fixed, Cron.
         /// </summary>
         public readonly string Type;
 

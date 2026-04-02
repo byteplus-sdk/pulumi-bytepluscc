@@ -19,14 +19,14 @@ public final class RuleDimensionConditionsArgs extends com.pulumi.resources.Reso
     public static final RuleDimensionConditionsArgs Empty = new RuleDimensionConditionsArgs();
 
     /**
-     * 根据资源名称选择告警对象的条件。当Type为meta时必填。
+     * Condition for selecting alert objects based on resource name. Required when Type is meta.
      * 
      */
     @Import(name="metaCondition")
     private @Nullable Output<RuleDimensionConditionsMetaConditionArgs> metaCondition;
 
     /**
-     * @return 根据资源名称选择告警对象的条件。当Type为meta时必填。
+     * @return Condition for selecting alert objects based on resource name. Required when Type is meta.
      * 
      */
     public Optional<Output<RuleDimensionConditionsMetaConditionArgs>> metaCondition() {
@@ -34,14 +34,14 @@ public final class RuleDimensionConditionsArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 根据项目选择告警对象的条件。当Type为project时必填。
+     * Condition for selecting alert targets by project. Required when Type is project.
      * 
      */
     @Import(name="projectCondition")
     private @Nullable Output<RuleDimensionConditionsProjectConditionArgs> projectCondition;
 
     /**
-     * @return 根据项目选择告警对象的条件。当Type为project时必填。
+     * @return Condition for selecting alert targets by project. Required when Type is project.
      * 
      */
     public Optional<Output<RuleDimensionConditionsProjectConditionArgs>> projectCondition() {
@@ -49,14 +49,14 @@ public final class RuleDimensionConditionsArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 根据标签选择告警对象的条件。当Type为tag时必填。
+     * Condition for selecting alert objects by tag. Required when Type is tag.
      * 
      */
     @Import(name="tagCondition")
     private @Nullable Output<RuleDimensionConditionsTagConditionArgs> tagCondition;
 
     /**
-     * @return 根据标签选择告警对象的条件。当Type为tag时必填。
+     * @return Condition for selecting alert objects by tag. Required when Type is tag.
      * 
      */
     public Optional<Output<RuleDimensionConditionsTagConditionArgs>> tagCondition() {
@@ -64,14 +64,14 @@ public final class RuleDimensionConditionsArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * Dimensions 类型。取值：project：根据项目选择告警对象。tag：根据标签选择告警对象。meta：根据资源名称选择告警对象。
+     * Dimensions type. Values: project: Select alert targets by project. tag: Select alert targets by tag. meta: Select alert targets by resource name.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return Dimensions 类型。取值：project：根据项目选择告警对象。tag：根据标签选择告警对象。meta：根据资源名称选择告警对象。
+     * @return Dimensions type. Values: project: Select alert targets by project. tag: Select alert targets by tag. meta: Select alert targets by resource name.
      * 
      */
     public Optional<Output<String>> type() {
@@ -106,7 +106,7 @@ public final class RuleDimensionConditionsArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param metaCondition 根据资源名称选择告警对象的条件。当Type为meta时必填。
+         * @param metaCondition Condition for selecting alert objects based on resource name. Required when Type is meta.
          * 
          * @return builder
          * 
@@ -117,7 +117,7 @@ public final class RuleDimensionConditionsArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param metaCondition 根据资源名称选择告警对象的条件。当Type为meta时必填。
+         * @param metaCondition Condition for selecting alert objects based on resource name. Required when Type is meta.
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class RuleDimensionConditionsArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param projectCondition 根据项目选择告警对象的条件。当Type为project时必填。
+         * @param projectCondition Condition for selecting alert targets by project. Required when Type is project.
          * 
          * @return builder
          * 
@@ -138,7 +138,7 @@ public final class RuleDimensionConditionsArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param projectCondition 根据项目选择告警对象的条件。当Type为project时必填。
+         * @param projectCondition Condition for selecting alert targets by project. Required when Type is project.
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class RuleDimensionConditionsArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param tagCondition 根据标签选择告警对象的条件。当Type为tag时必填。
+         * @param tagCondition Condition for selecting alert objects by tag. Required when Type is tag.
          * 
          * @return builder
          * 
@@ -159,7 +159,7 @@ public final class RuleDimensionConditionsArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param tagCondition 根据标签选择告警对象的条件。当Type为tag时必填。
+         * @param tagCondition Condition for selecting alert objects by tag. Required when Type is tag.
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class RuleDimensionConditionsArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param type Dimensions 类型。取值：project：根据项目选择告警对象。tag：根据标签选择告警对象。meta：根据资源名称选择告警对象。
+         * @param type Dimensions type. Values: project: Select alert targets by project. tag: Select alert targets by tag. meta: Select alert targets by resource name.
          * 
          * @return builder
          * 
@@ -180,7 +180,7 @@ public final class RuleDimensionConditionsArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param type Dimensions 类型。取值：project：根据项目选择告警对象。tag：根据标签选择告警对象。meta：根据资源名称选择告警对象。
+         * @param type Dimensions type. Values: project: Select alert targets by project. tag: Select alert targets by tag. meta: Select alert targets by resource name.
          * 
          * @return builder
          * 

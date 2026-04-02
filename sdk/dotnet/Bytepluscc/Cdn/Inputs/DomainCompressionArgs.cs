@@ -22,7 +22,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
         }
 
         /// <summary>
-        /// 智能压缩配置开关。该参数有以下取值：true：表示启用智能压缩。false：表示禁用智能压缩。
+        /// Smart compression configuration switch. This parameter has the following values: true: enables smart compression. false: disables smart compression.
         /// </summary>
         [Input("switch")]
         public Input<bool>? Switch { get; set; }

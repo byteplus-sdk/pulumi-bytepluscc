@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb.Inputs
     public sealed class NlbAccessLogArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 是否开启访问日志。true：是。flase：否。
+        /// Enable access logs. true: yes. false: no.
         /// </summary>
         [Input("accessLogEnabled")]
         public Input<bool>? AccessLogEnabled { get; set; }
 
         /// <summary>
-        /// 日志项目的ID。
+        /// Log project ID.
         /// </summary>
         [Input("projectId")]
         public Input<string>? ProjectId { get; set; }
 
         /// <summary>
-        /// 日志主题的ID。
+        /// Log topic ID.
         /// </summary>
         [Input("topicId")]
         public Input<string>? TopicId { get; set; }

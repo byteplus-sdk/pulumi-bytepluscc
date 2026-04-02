@@ -16,14 +16,14 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryString
     public static final DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstanceArgs Empty = new DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstanceArgs();
 
     /**
-     * 表示如何设置鉴权请求参数。当前您只能设置 Action 为 set。set 表示设置参数。您需要在 Key 中指定您需要设置的鉴权请求参数。如果您指定的鉴权请求参数不存在，内容分发网络会在鉴权请求中添加该参数。如果您指定的鉴权请求参数已存在，内容分发网络会使用 Value 的值作为该鉴权请求参数的值。
+     * Describes how to set authentication request parameters. Currently, you can only set Action to set. set means to configure parameters. You need to specify the authentication request parameter to set in Key. If the specified authentication request parameter does not exist, the content delivery network adds the parameter to the authentication request. If the specified authentication request parameter already exists, the content delivery network uses the value of Value as the parameter&#39;s value.
      * 
      */
     @Import(name="action")
     private @Nullable Output<String> action;
 
     /**
-     * @return 表示如何设置鉴权请求参数。当前您只能设置 Action 为 set。set 表示设置参数。您需要在 Key 中指定您需要设置的鉴权请求参数。如果您指定的鉴权请求参数不存在，内容分发网络会在鉴权请求中添加该参数。如果您指定的鉴权请求参数已存在，内容分发网络会使用 Value 的值作为该鉴权请求参数的值。
+     * @return Describes how to set authentication request parameters. Currently, you can only set Action to set. set means to configure parameters. You need to specify the authentication request parameter to set in Key. If the specified authentication request parameter does not exist, the content delivery network adds the parameter to the authentication request. If the specified authentication request parameter already exists, the content delivery network uses the value of Value as the parameter&#39;s value.
      * 
      */
     public Optional<Output<String>> action() {
@@ -31,14 +31,14 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryString
     }
 
     /**
-     * 表示您需要设置的鉴权请求参数，长度不能超过 1,024 个字符。鉴权请求参数可以包含除了以下字符的可打印 ASCII 字符：双引号（&#34;）、空格、Delete（ASCII code 127）
+     * Indicates the authentication request parameter you need to set. The length must not exceed 1,024 characters. The authentication request parameter can contain printable ASCII characters except for the following: double quotes (&#34;), space, and Delete (ASCII code 127)
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 表示您需要设置的鉴权请求参数，长度不能超过 1,024 个字符。鉴权请求参数可以包含除了以下字符的可打印 ASCII 字符：双引号（&#34;）、空格、Delete（ASCII code 127）
+     * @return Indicates the authentication request parameter you need to set. The length must not exceed 1,024 characters. The authentication request parameter can contain printable ASCII characters except for the following: double quotes (&#34;), space, and Delete (ASCII code 127)
      * 
      */
     public Optional<Output<String>> key() {
@@ -46,14 +46,14 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryString
     }
 
     /**
-     * 表示鉴权请求参数的值，长度不能超过 1,024 个字符，并且区分大小写。Value有以下取值：当 ValueType 是 constant 时，表示鉴权请求参数的值是一个常量。您需要指定该常量值。常量值不能以美元符号（$）开头，可以包含除了以下字符的可打印 ASCII 字符：双引号（&#34;）、Delete（ASCII code 127）当 ValueType 是 variable 时，表示鉴权请求参数的值来自一个变量。您可以指定该变量列表中的变量。当 ValueType 是 customize 时，表示鉴权请求参数的值是列表中的变量与固定字符串拼接后的字符串。在拼接的字符串中，变量使用 ${变量名} 表示。示例值：bind${request*uri}to${local*ip}done
+     * Indicates the value of the authentication request parameter. The length cannot exceed 1,024 characters and is case-sensitive. Value has the following options: When ValueType is constant, the authentication request parameter value is a constant. You need to specify this constant value. The constant value cannot start with a dollar sign ($) and can include any printable ASCII character except the following: double quotes (&#34;) and Delete (ASCII code 127). When ValueType is variable, the authentication request parameter value comes from a variable. You can specify a variable from the variable list. When ValueType is customize, the authentication request parameter value is a string formed by concatenating variables from the list with fixed strings. In the concatenated string, variables are represented as ${variable*name}. Example value: bind${request*uri}to${local_ip}done
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 表示鉴权请求参数的值，长度不能超过 1,024 个字符，并且区分大小写。Value有以下取值：当 ValueType 是 constant 时，表示鉴权请求参数的值是一个常量。您需要指定该常量值。常量值不能以美元符号（$）开头，可以包含除了以下字符的可打印 ASCII 字符：双引号（&#34;）、Delete（ASCII code 127）当 ValueType 是 variable 时，表示鉴权请求参数的值来自一个变量。您可以指定该变量列表中的变量。当 ValueType 是 customize 时，表示鉴权请求参数的值是列表中的变量与固定字符串拼接后的字符串。在拼接的字符串中，变量使用 ${变量名} 表示。示例值：bind${request*uri}to${local*ip}done
+     * @return Indicates the value of the authentication request parameter. The length cannot exceed 1,024 characters and is case-sensitive. Value has the following options: When ValueType is constant, the authentication request parameter value is a constant. You need to specify this constant value. The constant value cannot start with a dollar sign ($) and can include any printable ASCII character except the following: double quotes (&#34;) and Delete (ASCII code 127). When ValueType is variable, the authentication request parameter value comes from a variable. You can specify a variable from the variable list. When ValueType is customize, the authentication request parameter value is a string formed by concatenating variables from the list with fixed strings. In the concatenated string, variables are represented as ${variable*name}. Example value: bind${request*uri}to${local_ip}done
      * 
      */
     public Optional<Output<String>> value() {
@@ -61,14 +61,14 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryString
     }
 
     /**
-     * 表示您在 Key 中设置的鉴权请求参数的类型。ValueType 有以下取值：constant：表示鉴权请求参数是一个常量。此时，您需要在 Value 中指定该常量的值。variable：表示鉴权请求参数的值来自一个变量。参见 Value 的说明。customize：表示鉴权请求参数的值是一个变量与固定字符串拼接后的字符串。
+     * Indicates the type of authentication request parameter set in Key. ValueType has the following options: constant: The authentication request parameter is a constant. In this case, you need to specify the constant value in Value. variable: The authentication request parameter value comes from a variable. See the description for Value. customize: The authentication request parameter value is a string formed by concatenating a variable and a fixed string.
      * 
      */
     @Import(name="valueType")
     private @Nullable Output<String> valueType;
 
     /**
-     * @return 表示您在 Key 中设置的鉴权请求参数的类型。ValueType 有以下取值：constant：表示鉴权请求参数是一个常量。此时，您需要在 Value 中指定该常量的值。variable：表示鉴权请求参数的值来自一个变量。参见 Value 的说明。customize：表示鉴权请求参数的值是一个变量与固定字符串拼接后的字符串。
+     * @return Indicates the type of authentication request parameter set in Key. ValueType has the following options: constant: The authentication request parameter is a constant. In this case, you need to specify the constant value in Value. variable: The authentication request parameter value comes from a variable. See the description for Value. customize: The authentication request parameter value is a string formed by concatenating a variable and a fixed string.
      * 
      */
     public Optional<Output<String>> valueType() {
@@ -103,7 +103,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryString
         }
 
         /**
-         * @param action 表示如何设置鉴权请求参数。当前您只能设置 Action 为 set。set 表示设置参数。您需要在 Key 中指定您需要设置的鉴权请求参数。如果您指定的鉴权请求参数不存在，内容分发网络会在鉴权请求中添加该参数。如果您指定的鉴权请求参数已存在，内容分发网络会使用 Value 的值作为该鉴权请求参数的值。
+         * @param action Describes how to set authentication request parameters. Currently, you can only set Action to set. set means to configure parameters. You need to specify the authentication request parameter to set in Key. If the specified authentication request parameter does not exist, the content delivery network adds the parameter to the authentication request. If the specified authentication request parameter already exists, the content delivery network uses the value of Value as the parameter&#39;s value.
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryString
         }
 
         /**
-         * @param action 表示如何设置鉴权请求参数。当前您只能设置 Action 为 set。set 表示设置参数。您需要在 Key 中指定您需要设置的鉴权请求参数。如果您指定的鉴权请求参数不存在，内容分发网络会在鉴权请求中添加该参数。如果您指定的鉴权请求参数已存在，内容分发网络会使用 Value 的值作为该鉴权请求参数的值。
+         * @param action Describes how to set authentication request parameters. Currently, you can only set Action to set. set means to configure parameters. You need to specify the authentication request parameter to set in Key. If the specified authentication request parameter does not exist, the content delivery network adds the parameter to the authentication request. If the specified authentication request parameter already exists, the content delivery network uses the value of Value as the parameter&#39;s value.
          * 
          * @return builder
          * 
@@ -124,7 +124,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryString
         }
 
         /**
-         * @param key 表示您需要设置的鉴权请求参数，长度不能超过 1,024 个字符。鉴权请求参数可以包含除了以下字符的可打印 ASCII 字符：双引号（&#34;）、空格、Delete（ASCII code 127）
+         * @param key Indicates the authentication request parameter you need to set. The length must not exceed 1,024 characters. The authentication request parameter can contain printable ASCII characters except for the following: double quotes (&#34;), space, and Delete (ASCII code 127)
          * 
          * @return builder
          * 
@@ -135,7 +135,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryString
         }
 
         /**
-         * @param key 表示您需要设置的鉴权请求参数，长度不能超过 1,024 个字符。鉴权请求参数可以包含除了以下字符的可打印 ASCII 字符：双引号（&#34;）、空格、Delete（ASCII code 127）
+         * @param key Indicates the authentication request parameter you need to set. The length must not exceed 1,024 characters. The authentication request parameter can contain printable ASCII characters except for the following: double quotes (&#34;), space, and Delete (ASCII code 127)
          * 
          * @return builder
          * 
@@ -145,7 +145,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryString
         }
 
         /**
-         * @param value 表示鉴权请求参数的值，长度不能超过 1,024 个字符，并且区分大小写。Value有以下取值：当 ValueType 是 constant 时，表示鉴权请求参数的值是一个常量。您需要指定该常量值。常量值不能以美元符号（$）开头，可以包含除了以下字符的可打印 ASCII 字符：双引号（&#34;）、Delete（ASCII code 127）当 ValueType 是 variable 时，表示鉴权请求参数的值来自一个变量。您可以指定该变量列表中的变量。当 ValueType 是 customize 时，表示鉴权请求参数的值是列表中的变量与固定字符串拼接后的字符串。在拼接的字符串中，变量使用 ${变量名} 表示。示例值：bind${request*uri}to${local*ip}done
+         * @param value Indicates the value of the authentication request parameter. The length cannot exceed 1,024 characters and is case-sensitive. Value has the following options: When ValueType is constant, the authentication request parameter value is a constant. You need to specify this constant value. The constant value cannot start with a dollar sign ($) and can include any printable ASCII character except the following: double quotes (&#34;) and Delete (ASCII code 127). When ValueType is variable, the authentication request parameter value comes from a variable. You can specify a variable from the variable list. When ValueType is customize, the authentication request parameter value is a string formed by concatenating variables from the list with fixed strings. In the concatenated string, variables are represented as ${variable*name}. Example value: bind${request*uri}to${local_ip}done
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryString
         }
 
         /**
-         * @param value 表示鉴权请求参数的值，长度不能超过 1,024 个字符，并且区分大小写。Value有以下取值：当 ValueType 是 constant 时，表示鉴权请求参数的值是一个常量。您需要指定该常量值。常量值不能以美元符号（$）开头，可以包含除了以下字符的可打印 ASCII 字符：双引号（&#34;）、Delete（ASCII code 127）当 ValueType 是 variable 时，表示鉴权请求参数的值来自一个变量。您可以指定该变量列表中的变量。当 ValueType 是 customize 时，表示鉴权请求参数的值是列表中的变量与固定字符串拼接后的字符串。在拼接的字符串中，变量使用 ${变量名} 表示。示例值：bind${request*uri}to${local*ip}done
+         * @param value Indicates the value of the authentication request parameter. The length cannot exceed 1,024 characters and is case-sensitive. Value has the following options: When ValueType is constant, the authentication request parameter value is a constant. You need to specify this constant value. The constant value cannot start with a dollar sign ($) and can include any printable ASCII character except the following: double quotes (&#34;) and Delete (ASCII code 127). When ValueType is variable, the authentication request parameter value comes from a variable. You can specify a variable from the variable list. When ValueType is customize, the authentication request parameter value is a string formed by concatenating variables from the list with fixed strings. In the concatenated string, variables are represented as ${variable*name}. Example value: bind${request*uri}to${local_ip}done
          * 
          * @return builder
          * 
@@ -166,7 +166,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryString
         }
 
         /**
-         * @param valueType 表示您在 Key 中设置的鉴权请求参数的类型。ValueType 有以下取值：constant：表示鉴权请求参数是一个常量。此时，您需要在 Value 中指定该常量的值。variable：表示鉴权请求参数的值来自一个变量。参见 Value 的说明。customize：表示鉴权请求参数的值是一个变量与固定字符串拼接后的字符串。
+         * @param valueType Indicates the type of authentication request parameter set in Key. ValueType has the following options: constant: The authentication request parameter is a constant. In this case, you need to specify the constant value in Value. variable: The authentication request parameter value comes from a variable. See the description for Value. customize: The authentication request parameter value is a string formed by concatenating a variable and a fixed string.
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryString
         }
 
         /**
-         * @param valueType 表示您在 Key 中设置的鉴权请求参数的类型。ValueType 有以下取值：constant：表示鉴权请求参数是一个常量。此时，您需要在 Value 中指定该常量的值。variable：表示鉴权请求参数的值来自一个变量。参见 Value 的说明。customize：表示鉴权请求参数的值是一个变量与固定字符串拼接后的字符串。
+         * @param valueType Indicates the type of authentication request parameter set in Key. ValueType has the following options: constant: The authentication request parameter is a constant. In this case, you need to specify the constant value in Value. variable: The authentication request parameter value comes from a variable. See the description for Value. customize: The authentication request parameter value is a string formed by concatenating a variable and a fixed string.
          * 
          * @return builder
          * 

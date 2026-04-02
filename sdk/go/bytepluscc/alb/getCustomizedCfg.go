@@ -30,27 +30,28 @@ type LookupCustomizedCfgArgs struct {
 
 // A collection of values returned by getCustomizedCfg.
 type LookupCustomizedCfgResult struct {
-	// 个性化配置的创建时间。
+	// Creation time of the personalized configuration.
 	CreatedTime string `pulumi:"createdTime"`
-	// 个性化配置项内容。具体规则如下：长度不超过4096字符。空格和分号需要转义。不同的配置项之间通过";\r\n"分隔，配置项不能重复。当前支持的配置项有ssl*protocols、ssl*ciphers、client*max*body*size、keepalive*timeout、proxy*request*buffering、proxy*connect*timeout、add*header、client*header*timeout、proxy*read*timeout、proxy*send*timeout、client*body*timeout、send*timeout和ssl*verify*depth。详细信息参见官网文档。
+	// Content of the personalized configuration item. Specific rules: Length must not exceed 4096 characters. Spaces and semicolons must be escaped. Different configuration items are separated by ';
+	// '. Configuration items cannot be duplicated. Currently supported configuration items include ssl*protocols, ssl*ciphers, client*max*body*size, keepalive*timeout, proxy*request*buffering, proxy*connect*timeout, add*header, client*header*timeout, proxy*read*timeout, proxy*send*timeout, client*body*timeout, send*timeout, and ssl*verify*depth. For details, see the official documentation.
 	CustomizedCfgContent string `pulumi:"customizedCfgContent"`
-	// 个性化配置的 ID 。
+	// Personalized configuration ID.
 	CustomizedCfgId string `pulumi:"customizedCfgId"`
-	// 个性化配置的名字。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ～ 128个字符。
+	// Name of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
 	CustomizedCfgName string `pulumi:"customizedCfgName"`
-	// 个性化配置的描述。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）长度限制为1 ～ 255个字符。不填默认为空字符串。
+	// Description of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
 	Description string `pulumi:"description"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 个性化配置关联的监听器列表。
+	// List of listeners associated with the personalized configuration.
 	Listeners []GetCustomizedCfgListener `pulumi:"listeners"`
-	// 个性化配置所属项目名称。
+	// Project name to which the personalized configuration belongs.
 	ProjectName string `pulumi:"projectName"`
-	// 个性化配置状态。包括Active、Configuring、Creating或者Deleting。
+	// Status of the personalized configuration. Includes Active, Configuring, Creating, or Deleting.
 	Status string `pulumi:"status"`
-	// 标签列表。
+	// Tag list.
 	Tags []GetCustomizedCfgTag `pulumi:"tags"`
-	// 个性化配置的最近操作时间。
+	// Last operation time of the personalized configuration.
 	UpdatedTime string `pulumi:"updatedTime"`
 }
 
@@ -88,27 +89,28 @@ func (o LookupCustomizedCfgResultOutput) ToLookupCustomizedCfgResultOutputWithCo
 	return o
 }
 
-// 个性化配置的创建时间。
+// Creation time of the personalized configuration.
 func (o LookupCustomizedCfgResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomizedCfgResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 个性化配置项内容。具体规则如下：长度不超过4096字符。空格和分号需要转义。不同的配置项之间通过";\r\n"分隔，配置项不能重复。当前支持的配置项有ssl*protocols、ssl*ciphers、client*max*body*size、keepalive*timeout、proxy*request*buffering、proxy*connect*timeout、add*header、client*header*timeout、proxy*read*timeout、proxy*send*timeout、client*body*timeout、send*timeout和ssl*verify*depth。详细信息参见官网文档。
+// Content of the personalized configuration item. Specific rules: Length must not exceed 4096 characters. Spaces and semicolons must be escaped. Different configuration items are separated by ';
+// '. Configuration items cannot be duplicated. Currently supported configuration items include ssl*protocols, ssl*ciphers, client*max*body*size, keepalive*timeout, proxy*request*buffering, proxy*connect*timeout, add*header, client*header*timeout, proxy*read*timeout, proxy*send*timeout, client*body*timeout, send*timeout, and ssl*verify*depth. For details, see the official documentation.
 func (o LookupCustomizedCfgResultOutput) CustomizedCfgContent() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomizedCfgResult) string { return v.CustomizedCfgContent }).(pulumi.StringOutput)
 }
 
-// 个性化配置的 ID 。
+// Personalized configuration ID.
 func (o LookupCustomizedCfgResultOutput) CustomizedCfgId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomizedCfgResult) string { return v.CustomizedCfgId }).(pulumi.StringOutput)
 }
 
-// 个性化配置的名字。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ～ 128个字符。
+// Name of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
 func (o LookupCustomizedCfgResultOutput) CustomizedCfgName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomizedCfgResult) string { return v.CustomizedCfgName }).(pulumi.StringOutput)
 }
 
-// 个性化配置的描述。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）长度限制为1 ～ 255个字符。不填默认为空字符串。
+// Description of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
 func (o LookupCustomizedCfgResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomizedCfgResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -118,27 +120,27 @@ func (o LookupCustomizedCfgResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomizedCfgResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 个性化配置关联的监听器列表。
+// List of listeners associated with the personalized configuration.
 func (o LookupCustomizedCfgResultOutput) Listeners() GetCustomizedCfgListenerArrayOutput {
 	return o.ApplyT(func(v LookupCustomizedCfgResult) []GetCustomizedCfgListener { return v.Listeners }).(GetCustomizedCfgListenerArrayOutput)
 }
 
-// 个性化配置所属项目名称。
+// Project name to which the personalized configuration belongs.
 func (o LookupCustomizedCfgResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomizedCfgResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 个性化配置状态。包括Active、Configuring、Creating或者Deleting。
+// Status of the personalized configuration. Includes Active, Configuring, Creating, or Deleting.
 func (o LookupCustomizedCfgResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomizedCfgResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 标签列表。
+// Tag list.
 func (o LookupCustomizedCfgResultOutput) Tags() GetCustomizedCfgTagArrayOutput {
 	return o.ApplyT(func(v LookupCustomizedCfgResult) []GetCustomizedCfgTag { return v.Tags }).(GetCustomizedCfgTagArrayOutput)
 }
 
-// 个性化配置的最近操作时间。
+// Last operation time of the personalized configuration.
 func (o LookupCustomizedCfgResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomizedCfgResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }

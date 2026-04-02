@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetClusterClusterConfigApiServerPublicAccessConfig {
     /**
-     * @return 公网访问网络配置。ApiServerPublicAccessEnable=true时才返回的参数。
+     * @return Public access network configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
      * 
      */
     private GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig publicAccessNetworkConfig;
 
     private GetClusterClusterConfigApiServerPublicAccessConfig() {}
     /**
-     * @return 公网访问网络配置。ApiServerPublicAccessEnable=true时才返回的参数。
+     * @return Public access network configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
      * 
      */
     public GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig publicAccessNetworkConfig() {

@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 public final class DomainSignedUrlAuth {
     private @Nullable List<DomainSignedUrlAuthSignedUrlAuthRule> signedUrlAuthRules;
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+     * @return Indicates whether to enable this feature. This parameter has the following values: true: Enables this feature. false: Disables this feature.
      * 
      */
     private @Nullable Boolean switch_;
@@ -25,7 +25,7 @@ public final class DomainSignedUrlAuth {
         return this.signedUrlAuthRules == null ? List.of() : this.signedUrlAuthRules;
     }
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+     * @return Indicates whether to enable this feature. This parameter has the following values: true: Enables this feature. false: Disables this feature.
      * 
      */
     public Optional<Boolean> switch_() {

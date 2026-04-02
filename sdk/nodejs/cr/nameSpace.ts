@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * 命名空间是 OCI 制品仓库的集合，管理多个具有关联属性的 OCI 制品仓库。命名空间的名称通常为企业内部的组织团队名称、产品项目名称或个人自定义名称。
+ * A namespace is a collection of OCI artifact repositories that share related attributes. Namespace names are typically organization team names, product project names, or custom names within an enterprise.
  *
  * ## Example Usage
  *
@@ -55,19 +55,19 @@ export class NameSpace extends pulumi.CustomResource {
     }
 
     /**
-     * 命名空间的创建时间。
+     * Namespace creation time.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 命名空间名称。支持小写英文、数字、英文句号（.）、短划线（-）、下划线（_），标点符号不能出现在首位或末位，也不能连续输入。长度限制为 2～90 个字符。标准版实例：同一个镜像仓库实例下，名称必须唯一。体验版实例：同一地域下，所有账号范围内的命名空间名称需要保持唯一。如果您设置的命名空间名称已被占用，请尝试其他名称或者 购买标准版实例。
+     * Namespace name. Supports lowercase English letters, numbers, periods (.), hyphens (-), and underscores (_). Punctuation cannot appear at the beginning or end, nor be used consecutively. Length must be between 2 and 90 characters. Standard edition instance: The name must be unique within the same image repository instance. Trial edition instance: The namespace name must be unique across all accounts within the same region. If the namespace name you set is already taken, try another name or purchase a standard edition instance.
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * 命名空间所属项目的名称。参数值大小写敏感，不得超过 64 个字符。参数为空时，命名空间关联默认的 default项目。
+     * Name of the project to which the namespace belongs. This parameter is case-sensitive and must not exceed 64 characters. If the parameter is empty, the namespace is associated with the default project.
      */
     public readonly project!: pulumi.Output<string>;
     /**
-     * 指定的镜像仓库实例名称。通过 ListRegistries 或在 镜像仓库控制台 的 实例列表页面获取。
+     * Specify the image repository instance name. Obtain it via ListRegistries or from the instance list page in the image repository console.
      */
     public readonly registry!: pulumi.Output<string>;
 
@@ -111,19 +111,19 @@ export class NameSpace extends pulumi.CustomResource {
  */
 export interface NameSpaceState {
     /**
-     * 命名空间的创建时间。
+     * Namespace creation time.
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 命名空间名称。支持小写英文、数字、英文句号（.）、短划线（-）、下划线（_），标点符号不能出现在首位或末位，也不能连续输入。长度限制为 2～90 个字符。标准版实例：同一个镜像仓库实例下，名称必须唯一。体验版实例：同一地域下，所有账号范围内的命名空间名称需要保持唯一。如果您设置的命名空间名称已被占用，请尝试其他名称或者 购买标准版实例。
+     * Namespace name. Supports lowercase English letters, numbers, periods (.), hyphens (-), and underscores (_). Punctuation cannot appear at the beginning or end, nor be used consecutively. Length must be between 2 and 90 characters. Standard edition instance: The name must be unique within the same image repository instance. Trial edition instance: The namespace name must be unique across all accounts within the same region. If the namespace name you set is already taken, try another name or purchase a standard edition instance.
      */
     name?: pulumi.Input<string>;
     /**
-     * 命名空间所属项目的名称。参数值大小写敏感，不得超过 64 个字符。参数为空时，命名空间关联默认的 default项目。
+     * Name of the project to which the namespace belongs. This parameter is case-sensitive and must not exceed 64 characters. If the parameter is empty, the namespace is associated with the default project.
      */
     project?: pulumi.Input<string>;
     /**
-     * 指定的镜像仓库实例名称。通过 ListRegistries 或在 镜像仓库控制台 的 实例列表页面获取。
+     * Specify the image repository instance name. Obtain it via ListRegistries or from the instance list page in the image repository console.
      */
     registry?: pulumi.Input<string>;
 }
@@ -133,15 +133,15 @@ export interface NameSpaceState {
  */
 export interface NameSpaceArgs {
     /**
-     * 命名空间名称。支持小写英文、数字、英文句号（.）、短划线（-）、下划线（_），标点符号不能出现在首位或末位，也不能连续输入。长度限制为 2～90 个字符。标准版实例：同一个镜像仓库实例下，名称必须唯一。体验版实例：同一地域下，所有账号范围内的命名空间名称需要保持唯一。如果您设置的命名空间名称已被占用，请尝试其他名称或者 购买标准版实例。
+     * Namespace name. Supports lowercase English letters, numbers, periods (.), hyphens (-), and underscores (_). Punctuation cannot appear at the beginning or end, nor be used consecutively. Length must be between 2 and 90 characters. Standard edition instance: The name must be unique within the same image repository instance. Trial edition instance: The namespace name must be unique across all accounts within the same region. If the namespace name you set is already taken, try another name or purchase a standard edition instance.
      */
     name: pulumi.Input<string>;
     /**
-     * 命名空间所属项目的名称。参数值大小写敏感，不得超过 64 个字符。参数为空时，命名空间关联默认的 default项目。
+     * Name of the project to which the namespace belongs. This parameter is case-sensitive and must not exceed 64 characters. If the parameter is empty, the namespace is associated with the default project.
      */
     project?: pulumi.Input<string>;
     /**
-     * 指定的镜像仓库实例名称。通过 ListRegistries 或在 镜像仓库控制台 的 实例列表页面获取。
+     * Specify the image repository instance name. Obtain it via ListRegistries or from the instance list page in the image repository console.
      */
     registry: pulumi.Input<string>;
 }

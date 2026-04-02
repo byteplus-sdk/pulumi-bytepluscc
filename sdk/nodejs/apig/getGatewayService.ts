@@ -31,39 +31,39 @@ export interface GetGatewayServiceArgs {
  */
 export interface GetGatewayServiceResult {
     /**
-     * 认证配置。
+     * Authentication configuration.
      */
     readonly authSpec: outputs.apig.GetGatewayServiceAuthSpec;
     /**
-     * 备注，长度限制为0~253个字符。
+     * Remarks. Length must be 0–253 characters.
      */
     readonly comments: string;
     /**
-     * 创建时间。
+     * Creation time.
      */
     readonly createdTime: string;
     /**
-     * 自定义域名列表。
+     * Custom domain list.
      */
     readonly customDomains: outputs.apig.GetGatewayServiceCustomDomain[];
     /**
-     * 域名详情。
+     * Domain details.
      */
     readonly domainSpec: outputs.apig.GetGatewayServiceDomainSpec;
     /**
-     * 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+     * Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
      */
     readonly domainType: string;
     /**
-     * 默认域名。
+     * Default domain.
      */
     readonly domains: outputs.apig.GetGatewayServiceDomain[];
     /**
-     * 网关ID。
+     * Gateway ID.
      */
     readonly gatewayId: string;
     /**
-     * 网关名称。
+     * Gateway name.
      */
     readonly gatewayName: string;
     /**
@@ -71,31 +71,31 @@ export interface GetGatewayServiceResult {
      */
     readonly id: string;
     /**
-     * 服务创建失败、删除失败或异常时的错误信息。
+     * Error message for service creation failure, deletion failure, or abnormal status.
      */
     readonly message: string;
     /**
-     * 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
+     * Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
      */
     readonly protocols: string[];
     /**
-     * 服务ID。
+     * Service ID.
      */
     readonly serviceId: string;
     /**
-     * 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+     * Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
      */
     readonly serviceName: string;
     /**
-     * 服务默认域名网络配置。。
+     * Default domain network configuration..
      */
     readonly serviceNetworkSpec: outputs.apig.GetGatewayServiceServiceNetworkSpec;
     /**
-     * 服务类型，取值：AIProvider：AI模型代理。
+     * Service type. Options: AIProvider: AI model proxy.
      */
     readonly serviceType: string;
     /**
-     * Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+     * Creating: Creating. CreatedFailed: Creation failed. Running: Running. Deleting: Deleting. DeletedFailed: Deletion failed. Abnormal: Abnormal.
      */
     readonly status: string;
 }

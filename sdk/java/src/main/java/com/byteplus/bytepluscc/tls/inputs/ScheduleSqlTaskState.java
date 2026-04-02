@@ -18,14 +18,14 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
     public static final ScheduleSqlTaskState Empty = new ScheduleSqlTaskState();
 
     /**
-     * 创建时间（秒级 Unix 时间戳）。
+     * Creation time (seconds-level Unix timestamp).
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<Integer> createdTime;
 
     /**
-     * @return 创建时间（秒级 Unix 时间戳）。
+     * @return Creation time (seconds-level Unix timestamp).
      * 
      */
     public Optional<Output<Integer>> createdTime() {
@@ -33,14 +33,14 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 定时 SQL 分析任务的简单描述。不支持&lt;&gt;、&#39;、\、\。长度范围为 0～64 个字符。
+     * Brief description of the scheduled SQL analysis task. Characters &lt;&gt;, &#39;, \, and \ are not supported. Length: 0–64 characters.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 定时 SQL 分析任务的简单描述。不支持&lt;&gt;、&#39;、\、\。长度范围为 0～64 个字符。
+     * @return Brief description of the scheduled SQL analysis task. Characters &lt;&gt;, &#39;, \, and \ are not supported. Length: 0–64 characters.
      * 
      */
     public Optional<Output<String>> description() {
@@ -48,14 +48,14 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 目标日志项目 ID。
+     * Target log project ID.
      * 
      */
     @Import(name="destProjectId")
     private @Nullable Output<String> destProjectId;
 
     /**
-     * @return 目标日志项目 ID。
+     * @return Target log project ID.
      * 
      */
     public Optional<Output<String>> destProjectId() {
@@ -63,14 +63,14 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 目标日志主题所属地域。默认为当前地域。
+     * Region of the target log topic. The default is the current region.
      * 
      */
     @Import(name="destRegion")
     private @Nullable Output<String> destRegion;
 
     /**
-     * @return 目标日志主题所属地域。默认为当前地域。
+     * @return Region of the target log topic. The default is the current region.
      * 
      */
     public Optional<Output<String>> destRegion() {
@@ -78,14 +78,14 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 用于存储定时 SQL 分析结果数据的目标日志主题 ID。
+     * Target log topic ID for storing scheduled SQL analysis result data.
      * 
      */
     @Import(name="destTopicId")
     private @Nullable Output<String> destTopicId;
 
     /**
-     * @return 用于存储定时 SQL 分析结果数据的目标日志主题 ID。
+     * @return Target log topic ID for storing scheduled SQL analysis result data.
      * 
      */
     public Optional<Output<String>> destTopicId() {
@@ -93,14 +93,14 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 目标日志主题名称。
+     * Target log topic name.
      * 
      */
     @Import(name="destTopicName")
     private @Nullable Output<String> destTopicName;
 
     /**
-     * @return 目标日志主题名称。
+     * @return Target log topic name.
      * 
      */
     public Optional<Output<String>> destTopicName() {
@@ -108,14 +108,14 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 调度定时 SQL 分析任务的结束时间，格式为秒级时间戳。如果不配置，表示持续运行定时 SQL 分析任务。到达结束时间后，日志服务不会再创建实例及执行定时 SQL 分析，但任务状态仍为运行中，直至手动暂停任务。
+     * End time for scheduling the scheduled SQL analysis task, in seconds-level timestamp format. If not configured, the scheduled SQL analysis task runs continuously. After the end time is reached, the log service will no longer create instances or execute scheduled SQL analysis, but the task status remains running until manually paused.
      * 
      */
     @Import(name="processEndTime")
     private @Nullable Output<Integer> processEndTime;
 
     /**
-     * @return 调度定时 SQL 分析任务的结束时间，格式为秒级时间戳。如果不配置，表示持续运行定时 SQL 分析任务。到达结束时间后，日志服务不会再创建实例及执行定时 SQL 分析，但任务状态仍为运行中，直至手动暂停任务。
+     * @return End time for scheduling the scheduled SQL analysis task, in seconds-level timestamp format. If not configured, the scheduled SQL analysis task runs continuously. After the end time is reached, the log service will no longer create instances or execute scheduled SQL analysis, but the task status remains running until manually paused.
      * 
      */
     public Optional<Output<Integer>> processEndTime() {
@@ -123,14 +123,14 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 每次调度的延迟时间。取值范围为 0～120，单位为秒。如果不配置，则表示 0，即无延时。
+     * Delay time for each schedule. Range: 0–120 seconds. If not configured, defaults to 0, meaning no delay.
      * 
      */
     @Import(name="processSqlDelay")
     private @Nullable Output<Integer> processSqlDelay;
 
     /**
-     * @return 每次调度的延迟时间。取值范围为 0～120，单位为秒。如果不配置，则表示 0，即无延时。
+     * @return Delay time for each schedule. Range: 0–120 seconds. If not configured, defaults to 0, meaning no delay.
      * 
      */
     public Optional<Output<Integer>> processSqlDelay() {
@@ -138,14 +138,14 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 调度定时 SQL 分析任务的开始时间，即创建第一个实例的时间。格式为秒级时间戳。
+     * Start time for scheduling the scheduled SQL analysis task, which is the time the first instance is created. Format: seconds-level timestamp.
      * 
      */
     @Import(name="processStartTime")
     private @Nullable Output<Integer> processStartTime;
 
     /**
-     * @return 调度定时 SQL 分析任务的开始时间，即创建第一个实例的时间。格式为秒级时间戳。
+     * @return Start time for scheduling the scheduled SQL analysis task, which is the time the first instance is created. Format: seconds-level timestamp.
      * 
      */
     public Optional<Output<Integer>> processStartTime() {
@@ -153,14 +153,14 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * SQL 时间窗口，即定时 SQL 分析任务运行时，日志检索与分析的时间范围，左闭右开格式。最大为 24 小时，最小为 1 分钟。
+     * SQL time window, which is the time range for log retrieval and analysis when scheduled SQL analysis tasks run, in left-closed, right-open format. Maximum is 24 hours, minimum is 1 minute.
      * 
      */
     @Import(name="processTimeWindow")
     private @Nullable Output<String> processTimeWindow;
 
     /**
-     * @return SQL 时间窗口，即定时 SQL 分析任务运行时，日志检索与分析的时间范围，左闭右开格式。最大为 24 小时，最小为 1 分钟。
+     * @return SQL time window, which is the time range for log retrieval and analysis when scheduled SQL analysis tasks run, in left-closed, right-open format. Maximum is 24 hours, minimum is 1 minute.
      * 
      */
     public Optional<Output<String>> processTimeWindow() {
@@ -168,14 +168,14 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 定时 SQL 分析任务定期执行的检索与分析语句，应符合日志服务的检索与分析语法。
+     * The scheduled SQL analysis task periodically executes retrieval and analysis statements, which must comply with the log service&#39;s retrieval and analysis syntax.
      * 
      */
     @Import(name="query")
     private @Nullable Output<String> query;
 
     /**
-     * @return 定时 SQL 分析任务定期执行的检索与分析语句，应符合日志服务的检索与分析语法。
+     * @return The scheduled SQL analysis task periodically executes retrieval and analysis statements, which must comply with the log service&#39;s retrieval and analysis syntax.
      * 
      */
     public Optional<Output<String>> query() {
@@ -183,14 +183,14 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 定时 SQL 分析任务的调度周期。调度周期决定每个实例的调度时间。建议调度周期不小于 SQL 时间窗口。
+     * Scheduling period for the scheduled SQL analysis task. The scheduling period determines the scheduling time for each instance. It is recommended that the scheduling period is not less than the SQL time window.
      * 
      */
     @Import(name="requestCycle")
     private @Nullable Output<ScheduleSqlTaskRequestCycleArgs> requestCycle;
 
     /**
-     * @return 定时 SQL 分析任务的调度周期。调度周期决定每个实例的调度时间。建议调度周期不小于 SQL 时间窗口。
+     * @return Scheduling period for the scheduled SQL analysis task. The scheduling period determines the scheduling time for each instance. It is recommended that the scheduling period is not less than the SQL time window.
      * 
      */
     public Optional<Output<ScheduleSqlTaskRequestCycleArgs>> requestCycle() {
@@ -198,14 +198,14 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 源日志项目 ID。
+     * Source log project ID.
      * 
      */
     @Import(name="sourceProjectId")
     private @Nullable Output<String> sourceProjectId;
 
     /**
-     * @return 源日志项目 ID。
+     * @return Source log project ID.
      * 
      */
     public Optional<Output<String>> sourceProjectId() {
@@ -213,14 +213,14 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 源日志项目名称。
+     * Source log project name.
      * 
      */
     @Import(name="sourceProjectName")
     private @Nullable Output<String> sourceProjectName;
 
     /**
-     * @return 源日志项目名称。
+     * @return Source log project name.
      * 
      */
     public Optional<Output<String>> sourceProjectName() {
@@ -228,14 +228,14 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 待进行定时 SQL 分析的原始日志所在的日志主题 ID。仅支持当前地域的日志主题。
+     * ID of the log topic containing the original logs for scheduled SQL analysis. Only log topics in the current region are supported.
      * 
      */
     @Import(name="sourceTopicId")
     private @Nullable Output<String> sourceTopicId;
 
     /**
-     * @return 待进行定时 SQL 分析的原始日志所在的日志主题 ID。仅支持当前地域的日志主题。
+     * @return ID of the log topic containing the original logs for scheduled SQL analysis. Only log topics in the current region are supported.
      * 
      */
     public Optional<Output<String>> sourceTopicId() {
@@ -243,14 +243,14 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 源日志主题名称。
+     * Source log topic name.
      * 
      */
     @Import(name="sourceTopicName")
     private @Nullable Output<String> sourceTopicName;
 
     /**
-     * @return 源日志主题名称。
+     * @return Source log topic name.
      * 
      */
     public Optional<Output<String>> sourceTopicName() {
@@ -258,14 +258,14 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 完成任务配置后是否立即启动定时 SQL 分析任务。可选值：0 关闭；1 立即启动。
+     * Whether to start the scheduled SQL analysis task immediately after completing task configuration. Options: 0 Off; 1 Start immediately.
      * 
      */
     @Import(name="status")
     private @Nullable Output<Integer> status;
 
     /**
-     * @return 完成任务配置后是否立即启动定时 SQL 分析任务。可选值：0 关闭；1 立即启动。
+     * @return Whether to start the scheduled SQL analysis task immediately after completing task configuration. Options: 0 Off; 1 Start immediately.
      * 
      */
     public Optional<Output<Integer>> status() {
@@ -273,14 +273,14 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 任务 ID。
+     * Task ID.
      * 
      */
     @Import(name="taskId")
     private @Nullable Output<String> taskId;
 
     /**
-     * @return 任务 ID。
+     * @return Task ID.
      * 
      */
     public Optional<Output<String>> taskId() {
@@ -288,14 +288,14 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 定时 SQL 分析任务名称。命名规则请参考资源命名规则。
+     * Name of the scheduled SQL analysis task. Refer to the resource naming rules for naming conventions.
      * 
      */
     @Import(name="taskName")
     private @Nullable Output<String> taskName;
 
     /**
-     * @return 定时 SQL 分析任务名称。命名规则请参考资源命名规则。
+     * @return Name of the scheduled SQL analysis task. Refer to the resource naming rules for naming conventions.
      * 
      */
     public Optional<Output<String>> taskName() {
@@ -303,14 +303,14 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 任务类型：0 表示日志到日志；1 表示日志到指标。
+     * Task type: 0 means log to log; 1 means log to metric.
      * 
      */
     @Import(name="taskType")
     private @Nullable Output<Integer> taskType;
 
     /**
-     * @return 任务类型：0 表示日志到日志；1 表示日志到指标。
+     * @return Task type: 0 means log to log; 1 means log to metric.
      * 
      */
     public Optional<Output<Integer>> taskType() {
@@ -318,14 +318,14 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 修改时间（秒级 Unix 时间戳）。
+     * Modification time (seconds-level Unix timestamp).
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<Integer> updatedTime;
 
     /**
-     * @return 修改时间（秒级 Unix 时间戳）。
+     * @return Modification time (seconds-level Unix timestamp).
      * 
      */
     public Optional<Output<Integer>> updatedTime() {
@@ -377,7 +377,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param createdTime 创建时间（秒级 Unix 时间戳）。
+         * @param createdTime Creation time (seconds-level Unix timestamp).
          * 
          * @return builder
          * 
@@ -388,7 +388,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param createdTime 创建时间（秒级 Unix 时间戳）。
+         * @param createdTime Creation time (seconds-level Unix timestamp).
          * 
          * @return builder
          * 
@@ -398,7 +398,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param description 定时 SQL 分析任务的简单描述。不支持&lt;&gt;、&#39;、\、\。长度范围为 0～64 个字符。
+         * @param description Brief description of the scheduled SQL analysis task. Characters &lt;&gt;, &#39;, \, and \ are not supported. Length: 0–64 characters.
          * 
          * @return builder
          * 
@@ -409,7 +409,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param description 定时 SQL 分析任务的简单描述。不支持&lt;&gt;、&#39;、\、\。长度范围为 0～64 个字符。
+         * @param description Brief description of the scheduled SQL analysis task. Characters &lt;&gt;, &#39;, \, and \ are not supported. Length: 0–64 characters.
          * 
          * @return builder
          * 
@@ -419,7 +419,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param destProjectId 目标日志项目 ID。
+         * @param destProjectId Target log project ID.
          * 
          * @return builder
          * 
@@ -430,7 +430,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param destProjectId 目标日志项目 ID。
+         * @param destProjectId Target log project ID.
          * 
          * @return builder
          * 
@@ -440,7 +440,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param destRegion 目标日志主题所属地域。默认为当前地域。
+         * @param destRegion Region of the target log topic. The default is the current region.
          * 
          * @return builder
          * 
@@ -451,7 +451,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param destRegion 目标日志主题所属地域。默认为当前地域。
+         * @param destRegion Region of the target log topic. The default is the current region.
          * 
          * @return builder
          * 
@@ -461,7 +461,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param destTopicId 用于存储定时 SQL 分析结果数据的目标日志主题 ID。
+         * @param destTopicId Target log topic ID for storing scheduled SQL analysis result data.
          * 
          * @return builder
          * 
@@ -472,7 +472,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param destTopicId 用于存储定时 SQL 分析结果数据的目标日志主题 ID。
+         * @param destTopicId Target log topic ID for storing scheduled SQL analysis result data.
          * 
          * @return builder
          * 
@@ -482,7 +482,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param destTopicName 目标日志主题名称。
+         * @param destTopicName Target log topic name.
          * 
          * @return builder
          * 
@@ -493,7 +493,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param destTopicName 目标日志主题名称。
+         * @param destTopicName Target log topic name.
          * 
          * @return builder
          * 
@@ -503,7 +503,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param processEndTime 调度定时 SQL 分析任务的结束时间，格式为秒级时间戳。如果不配置，表示持续运行定时 SQL 分析任务。到达结束时间后，日志服务不会再创建实例及执行定时 SQL 分析，但任务状态仍为运行中，直至手动暂停任务。
+         * @param processEndTime End time for scheduling the scheduled SQL analysis task, in seconds-level timestamp format. If not configured, the scheduled SQL analysis task runs continuously. After the end time is reached, the log service will no longer create instances or execute scheduled SQL analysis, but the task status remains running until manually paused.
          * 
          * @return builder
          * 
@@ -514,7 +514,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param processEndTime 调度定时 SQL 分析任务的结束时间，格式为秒级时间戳。如果不配置，表示持续运行定时 SQL 分析任务。到达结束时间后，日志服务不会再创建实例及执行定时 SQL 分析，但任务状态仍为运行中，直至手动暂停任务。
+         * @param processEndTime End time for scheduling the scheduled SQL analysis task, in seconds-level timestamp format. If not configured, the scheduled SQL analysis task runs continuously. After the end time is reached, the log service will no longer create instances or execute scheduled SQL analysis, but the task status remains running until manually paused.
          * 
          * @return builder
          * 
@@ -524,7 +524,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param processSqlDelay 每次调度的延迟时间。取值范围为 0～120，单位为秒。如果不配置，则表示 0，即无延时。
+         * @param processSqlDelay Delay time for each schedule. Range: 0–120 seconds. If not configured, defaults to 0, meaning no delay.
          * 
          * @return builder
          * 
@@ -535,7 +535,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param processSqlDelay 每次调度的延迟时间。取值范围为 0～120，单位为秒。如果不配置，则表示 0，即无延时。
+         * @param processSqlDelay Delay time for each schedule. Range: 0–120 seconds. If not configured, defaults to 0, meaning no delay.
          * 
          * @return builder
          * 
@@ -545,7 +545,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param processStartTime 调度定时 SQL 分析任务的开始时间，即创建第一个实例的时间。格式为秒级时间戳。
+         * @param processStartTime Start time for scheduling the scheduled SQL analysis task, which is the time the first instance is created. Format: seconds-level timestamp.
          * 
          * @return builder
          * 
@@ -556,7 +556,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param processStartTime 调度定时 SQL 分析任务的开始时间，即创建第一个实例的时间。格式为秒级时间戳。
+         * @param processStartTime Start time for scheduling the scheduled SQL analysis task, which is the time the first instance is created. Format: seconds-level timestamp.
          * 
          * @return builder
          * 
@@ -566,7 +566,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param processTimeWindow SQL 时间窗口，即定时 SQL 分析任务运行时，日志检索与分析的时间范围，左闭右开格式。最大为 24 小时，最小为 1 分钟。
+         * @param processTimeWindow SQL time window, which is the time range for log retrieval and analysis when scheduled SQL analysis tasks run, in left-closed, right-open format. Maximum is 24 hours, minimum is 1 minute.
          * 
          * @return builder
          * 
@@ -577,7 +577,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param processTimeWindow SQL 时间窗口，即定时 SQL 分析任务运行时，日志检索与分析的时间范围，左闭右开格式。最大为 24 小时，最小为 1 分钟。
+         * @param processTimeWindow SQL time window, which is the time range for log retrieval and analysis when scheduled SQL analysis tasks run, in left-closed, right-open format. Maximum is 24 hours, minimum is 1 minute.
          * 
          * @return builder
          * 
@@ -587,7 +587,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param query 定时 SQL 分析任务定期执行的检索与分析语句，应符合日志服务的检索与分析语法。
+         * @param query The scheduled SQL analysis task periodically executes retrieval and analysis statements, which must comply with the log service&#39;s retrieval and analysis syntax.
          * 
          * @return builder
          * 
@@ -598,7 +598,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param query 定时 SQL 分析任务定期执行的检索与分析语句，应符合日志服务的检索与分析语法。
+         * @param query The scheduled SQL analysis task periodically executes retrieval and analysis statements, which must comply with the log service&#39;s retrieval and analysis syntax.
          * 
          * @return builder
          * 
@@ -608,7 +608,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param requestCycle 定时 SQL 分析任务的调度周期。调度周期决定每个实例的调度时间。建议调度周期不小于 SQL 时间窗口。
+         * @param requestCycle Scheduling period for the scheduled SQL analysis task. The scheduling period determines the scheduling time for each instance. It is recommended that the scheduling period is not less than the SQL time window.
          * 
          * @return builder
          * 
@@ -619,7 +619,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param requestCycle 定时 SQL 分析任务的调度周期。调度周期决定每个实例的调度时间。建议调度周期不小于 SQL 时间窗口。
+         * @param requestCycle Scheduling period for the scheduled SQL analysis task. The scheduling period determines the scheduling time for each instance. It is recommended that the scheduling period is not less than the SQL time window.
          * 
          * @return builder
          * 
@@ -629,7 +629,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param sourceProjectId 源日志项目 ID。
+         * @param sourceProjectId Source log project ID.
          * 
          * @return builder
          * 
@@ -640,7 +640,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param sourceProjectId 源日志项目 ID。
+         * @param sourceProjectId Source log project ID.
          * 
          * @return builder
          * 
@@ -650,7 +650,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param sourceProjectName 源日志项目名称。
+         * @param sourceProjectName Source log project name.
          * 
          * @return builder
          * 
@@ -661,7 +661,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param sourceProjectName 源日志项目名称。
+         * @param sourceProjectName Source log project name.
          * 
          * @return builder
          * 
@@ -671,7 +671,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param sourceTopicId 待进行定时 SQL 分析的原始日志所在的日志主题 ID。仅支持当前地域的日志主题。
+         * @param sourceTopicId ID of the log topic containing the original logs for scheduled SQL analysis. Only log topics in the current region are supported.
          * 
          * @return builder
          * 
@@ -682,7 +682,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param sourceTopicId 待进行定时 SQL 分析的原始日志所在的日志主题 ID。仅支持当前地域的日志主题。
+         * @param sourceTopicId ID of the log topic containing the original logs for scheduled SQL analysis. Only log topics in the current region are supported.
          * 
          * @return builder
          * 
@@ -692,7 +692,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param sourceTopicName 源日志主题名称。
+         * @param sourceTopicName Source log topic name.
          * 
          * @return builder
          * 
@@ -703,7 +703,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param sourceTopicName 源日志主题名称。
+         * @param sourceTopicName Source log topic name.
          * 
          * @return builder
          * 
@@ -713,7 +713,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param status 完成任务配置后是否立即启动定时 SQL 分析任务。可选值：0 关闭；1 立即启动。
+         * @param status Whether to start the scheduled SQL analysis task immediately after completing task configuration. Options: 0 Off; 1 Start immediately.
          * 
          * @return builder
          * 
@@ -724,7 +724,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param status 完成任务配置后是否立即启动定时 SQL 分析任务。可选值：0 关闭；1 立即启动。
+         * @param status Whether to start the scheduled SQL analysis task immediately after completing task configuration. Options: 0 Off; 1 Start immediately.
          * 
          * @return builder
          * 
@@ -734,7 +734,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param taskId 任务 ID。
+         * @param taskId Task ID.
          * 
          * @return builder
          * 
@@ -745,7 +745,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param taskId 任务 ID。
+         * @param taskId Task ID.
          * 
          * @return builder
          * 
@@ -755,7 +755,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param taskName 定时 SQL 分析任务名称。命名规则请参考资源命名规则。
+         * @param taskName Name of the scheduled SQL analysis task. Refer to the resource naming rules for naming conventions.
          * 
          * @return builder
          * 
@@ -766,7 +766,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param taskName 定时 SQL 分析任务名称。命名规则请参考资源命名规则。
+         * @param taskName Name of the scheduled SQL analysis task. Refer to the resource naming rules for naming conventions.
          * 
          * @return builder
          * 
@@ -776,7 +776,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param taskType 任务类型：0 表示日志到日志；1 表示日志到指标。
+         * @param taskType Task type: 0 means log to log; 1 means log to metric.
          * 
          * @return builder
          * 
@@ -787,7 +787,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param taskType 任务类型：0 表示日志到日志；1 表示日志到指标。
+         * @param taskType Task type: 0 means log to log; 1 means log to metric.
          * 
          * @return builder
          * 
@@ -797,7 +797,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param updatedTime 修改时间（秒级 Unix 时间戳）。
+         * @param updatedTime Modification time (seconds-level Unix timestamp).
          * 
          * @return builder
          * 
@@ -808,7 +808,7 @@ public final class ScheduleSqlTaskState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param updatedTime 修改时间（秒级 Unix 时间戳）。
+         * @param updatedTime Modification time (seconds-level Unix timestamp).
          * 
          * @return builder
          * 

@@ -17,7 +17,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 用户网关是您本地网关侧的信息集合和抽象。通过用户网关，您可以把本地网关的信息注册到云上VPC之中。一个用户网关，可以对接多个VPN网关。
+ * The user gateway is a collection and abstraction of information on your local gateway side. With the user gateway, you can register local gateway information to the cloud VPC. One user gateway can connect to multiple VPN gateways
  * 
  * ## Example Usage
  * 
@@ -69,154 +69,154 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:vpn/customerGateway:CustomerGateway")
 public class CustomerGateway extends com.pulumi.resources.CustomResource {
     /**
-     * 用户网关所属账户的ID。
+     * ID of the account to which the user gateway belongs
      * 
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
-     * @return 用户网关所属账户的ID。
+     * @return ID of the account to which the user gateway belongs
      * 
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
-     * 用户网关的ASN（Autonomous System Number）。如需使用BGP功能，则此参数必须填写。ASN有效范围1～4294967295（137718 、150436、65533除外）。
+     * User gateway ASN (Autonomous System Number). This parameter is required if you need to use BGP functionality. Valid ASN range is 1–4294967295 (excluding 137718, 150436, and 65533)
      * 
      */
     @Export(name="asn", refs={Integer.class}, tree="[0]")
     private Output<Integer> asn;
 
     /**
-     * @return 用户网关的ASN（Autonomous System Number）。如需使用BGP功能，则此参数必须填写。ASN有效范围1～4294967295（137718 、150436、65533除外）。
+     * @return User gateway ASN (Autonomous System Number). This parameter is required if you need to use BGP functionality. Valid ASN range is 1–4294967295 (excluding 137718, 150436, and 65533)
      * 
      */
     public Output<Integer> asn() {
         return this.asn;
     }
     /**
-     * 用户网关关联的IPsec连接的数量。
+     * Number of IPsec connections associated with the user gateway
      * 
      */
     @Export(name="connectionCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> connectionCount;
 
     /**
-     * @return 用户网关关联的IPsec连接的数量。
+     * @return Number of IPsec connections associated with the user gateway
      * 
      */
     public Output<Integer> connectionCount() {
         return this.connectionCount;
     }
     /**
-     * 创建用户网关的时间。
+     * Time when the user gateway was created
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 创建用户网关的时间。
+     * @return Time when the user gateway was created
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 网关ID。
+     * Gateway ID
      * 
      */
     @Export(name="customerGatewayId", refs={String.class}, tree="[0]")
     private Output<String> customerGatewayId;
 
     /**
-     * @return 网关ID。
+     * @return Gateway ID
      * 
      */
     public Output<String> customerGatewayId() {
         return this.customerGatewayId;
     }
     /**
-     * 用户网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短划线（-）。长度限制为1 ~ 128个字符。不填默认为用户网关的ID。
+     * User gateway name. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the user gateway ID
      * 
      */
     @Export(name="customerGatewayName", refs={String.class}, tree="[0]")
     private Output<String> customerGatewayName;
 
     /**
-     * @return 用户网关的名称。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、下划线（_）和短划线（-）。长度限制为1 ~ 128个字符。不填默认为用户网关的ID。
+     * @return User gateway name. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the user gateway ID
      * 
      */
     public Output<String> customerGatewayName() {
         return this.customerGatewayName;
     }
     /**
-     * 用户网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不填默认为空字符串。
+     * Description of the user gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, defaults to an empty string
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 用户网关的描述信息。以中文、字母、数字开头，只能包含中文、字母、数字、点号（.）、空格（ ）、下划线（_）、中划线（-）、等号（=）、英文逗号（,）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不填默认为空字符串。
+     * @return Description of the user gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, defaults to an empty string
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 对端本地数据中心网关的静态公网IP地址或其他VPC的VPN网关出口IP地址。若对端为非固定静态公网IP，此处需传入0.0.0.0。
+     * Static public IP address of the peer local data center gateway or the VPN gateway egress IP address of another VPC. If the peer does not have a fixed static public IP, enter 0.0.0.0 here
      * 
      */
     @Export(name="ipAddress", refs={String.class}, tree="[0]")
     private Output<String> ipAddress;
 
     /**
-     * @return 对端本地数据中心网关的静态公网IP地址或其他VPC的VPN网关出口IP地址。若对端为非固定静态公网IP，此处需传入0.0.0.0。
+     * @return Static public IP address of the peer local data center gateway or the VPN gateway egress IP address of another VPC. If the peer does not have a fixed static public IP, enter 0.0.0.0 here
      * 
      */
     public Output<String> ipAddress() {
         return this.ipAddress;
     }
     /**
-     * VPN网关的IP地址协议类型，取值如下：ipv4 （默认值）ipv6
+     * IP address protocol type for the VPN gateway. Options: ipv4 (default), ipv6
      * 
      */
     @Export(name="ipVersion", refs={String.class}, tree="[0]")
     private Output<String> ipVersion;
 
     /**
-     * @return VPN网关的IP地址协议类型，取值如下：ipv4 （默认值）ipv6
+     * @return IP address protocol type for the VPN gateway. Options: ipv4 (default), ipv6
      * 
      */
     public Output<String> ipVersion() {
         return this.ipVersion;
     }
     /**
-     * 用户网关所属的项目。不填默认为default，即创建的资源属于default项目。
+     * Project to which the user gateway belongs. If not specified, defaults to &#39;default&#39;, meaning the created resource belongs to the default project
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 用户网关所属的项目。不填默认为default，即创建的资源属于default项目。
+     * @return Project to which the user gateway belongs. If not specified, defaults to &#39;default&#39;, meaning the created resource belongs to the default project
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 用户网关的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+     * Status of the user gateway. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 用户网关的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+     * @return Status of the user gateway. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
      * 
      */
     public Output<String> status() {
@@ -229,14 +229,14 @@ public class CustomerGateway extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 更新用户网关的时间。
+     * Time when the user gateway was updated
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 更新用户网关的时间。
+     * @return Time when the user gateway was updated
      * 
      */
     public Output<String> updatedTime() {

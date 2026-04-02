@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainVideoDrag {
     /**
-     * @return 智能压缩配置开关。该参数有以下取值：true：表示启用视频拖拽。false：表示禁用视频拖拽。
+     * @return Smart compression configuration switch. The parameter has the following options: true: enable video seeking. false: disable video seeking.
      * 
      */
     private @Nullable Boolean switch_;
 
     private DomainVideoDrag() {}
     /**
-     * @return 智能压缩配置开关。该参数有以下取值：true：表示启用视频拖拽。false：表示禁用视频拖拽。
+     * @return Smart compression configuration switch. The parameter has the following options: true: enable video seeking. false: disable video seeking.
      * 
      */
     public Optional<Boolean> switch_() {

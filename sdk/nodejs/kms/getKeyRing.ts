@@ -29,11 +29,11 @@ export interface GetKeyRingArgs {
  */
 export interface GetKeyRingResult {
     /**
-     * 密钥环创建日期。
+     * Keyring creation date
      */
     readonly createDate: number;
     /**
-     * 密钥环描述，长度为 0   - 8192 个字符。
+     * Keyring description, length: 0–8192 characters
      */
     readonly description: string;
     /**
@@ -41,31 +41,31 @@ export interface GetKeyRingResult {
      */
     readonly id: string;
     /**
-     * 密钥环密钥次数。
+     * Number of keys in keyring
      */
     readonly keyCount: number;
     /**
-     * 密钥环唯一标识符，UUID形式。
+     * Keyring unique identifier, in UUID format
      */
     readonly keyRingId: string;
     /**
-     * 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+     * Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
      */
     readonly keyringName: string;
     /**
-     * 密钥环类型，取值：CustomKeyring。
+     * Keyring type, value: CustomKeyring
      */
     readonly keyringType: string;
     /**
-     * 项目名称，默认值：default。
+     * Project name, default value: default
      */
     readonly projectName: string;
     /**
-     * 密钥环租户ID。
+     * Keyring tenant ID
      */
     readonly uid: string;
     /**
-     * 密钥环更新日期。
+     * Keyring update date
      */
     readonly updateDate: number;
 }

@@ -17,14 +17,14 @@ public final class UpstreamConnectionPoolSettingsArgs extends com.pulumi.resourc
     public static final UpstreamConnectionPoolSettingsArgs Empty = new UpstreamConnectionPoolSettingsArgs();
 
     /**
-     * 开启。
+     * Enable
      * 
      */
     @Import(name="enable")
     private @Nullable Output<Boolean> enable;
 
     /**
-     * @return 开启。
+     * @return Enable
      * 
      */
     public Optional<Output<Boolean>> enable() {
@@ -32,14 +32,14 @@ public final class UpstreamConnectionPoolSettingsArgs extends com.pulumi.resourc
     }
 
     /**
-     * HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+     * Maximum HTTP/1 pending requests. Value range: 0~2^31-1. 0 means unlimited
      * 
      */
     @Import(name="http1MaxPendingRequests")
     private @Nullable Output<Integer> http1MaxPendingRequests;
 
     /**
-     * @return HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+     * @return Maximum HTTP/1 pending requests. Value range: 0~2^31-1. 0 means unlimited
      * 
      */
     public Optional<Output<Integer>> http1MaxPendingRequests() {
@@ -47,14 +47,14 @@ public final class UpstreamConnectionPoolSettingsArgs extends com.pulumi.resourc
     }
 
     /**
-     * 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+     * Idle timeout, in seconds. Value range: 0–2^31-1. 0 means no limit
      * 
      */
     @Import(name="idleTimeout")
     private @Nullable Output<Integer> idleTimeout;
 
     /**
-     * @return 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+     * @return Idle timeout, in seconds. Value range: 0–2^31-1. 0 means no limit
      * 
      */
     public Optional<Output<Integer>> idleTimeout() {
@@ -62,14 +62,14 @@ public final class UpstreamConnectionPoolSettingsArgs extends com.pulumi.resourc
     }
 
     /**
-     * TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+     * Maximum TCP connections. Value range: 0~2^31-1. 0 means unlimited
      * 
      */
     @Import(name="maxConnections")
     private @Nullable Output<Integer> maxConnections;
 
     /**
-     * @return TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+     * @return Maximum TCP connections. Value range: 0~2^31-1. 0 means unlimited
      * 
      */
     public Optional<Output<Integer>> maxConnections() {
@@ -104,7 +104,7 @@ public final class UpstreamConnectionPoolSettingsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param enable 开启。
+         * @param enable Enable
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class UpstreamConnectionPoolSettingsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param enable 开启。
+         * @param enable Enable
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class UpstreamConnectionPoolSettingsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param http1MaxPendingRequests HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+         * @param http1MaxPendingRequests Maximum HTTP/1 pending requests. Value range: 0~2^31-1. 0 means unlimited
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class UpstreamConnectionPoolSettingsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param http1MaxPendingRequests HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+         * @param http1MaxPendingRequests Maximum HTTP/1 pending requests. Value range: 0~2^31-1. 0 means unlimited
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class UpstreamConnectionPoolSettingsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param idleTimeout 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+         * @param idleTimeout Idle timeout, in seconds. Value range: 0–2^31-1. 0 means no limit
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class UpstreamConnectionPoolSettingsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param idleTimeout 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+         * @param idleTimeout Idle timeout, in seconds. Value range: 0–2^31-1. 0 means no limit
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class UpstreamConnectionPoolSettingsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param maxConnections TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+         * @param maxConnections Maximum TCP connections. Value range: 0~2^31-1. 0 means unlimited
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class UpstreamConnectionPoolSettingsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param maxConnections TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+         * @param maxConnections Maximum TCP connections. Value range: 0~2^31-1. 0 means unlimited
          * 
          * @return builder
          * 

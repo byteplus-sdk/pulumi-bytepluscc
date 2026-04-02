@@ -14,43 +14,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainHttpsCertInfoListGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示一个托管在内容分发网络的 CA 证书的 ID。ID 是以 cert_hosting  - 开头的。
+        /// Indicates the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
         /// </summary>
         [Input("certId")]
         public Input<string>? CertId { get; set; }
 
         /// <summary>
-        /// 表示该 CA 证书的 Common Name (CN) 字段中的内容。
+        /// Represents the content of the Common Name (CN) field in the CA certificate.
         /// </summary>
         [Input("certName")]
         public Input<string>? CertName { get; set; }
 
         /// <summary>
-        /// 表示一个待上传的 CA 证书。上传的证书是托管在内容分发网络的。
+        /// Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the content delivery network.
         /// </summary>
         [Input("certificate")]
         public Input<Inputs.DomainHttpsCertInfoListCertificateGetArgs>? Certificate { get; set; }
 
         /// <summary>
-        /// 表示该证书的签发时间，单位是 Unix 时间戳。
+        /// Indicates the issuance time of the certificate, in Unix timestamp.
         /// </summary>
         [Input("effectiveTime")]
         public Input<int>? EffectiveTime { get; set; }
 
         /// <summary>
-        /// 表示该证书使用的加密算法。该参数有以下取值：inter*cert：表示 RSA 或 ECC 加密算法。sm*cert：表示 SM2 加密算法。
+        /// Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
         /// </summary>
         [Input("encryType")]
         public Input<string>? EncryType { get; set; }
 
         /// <summary>
-        /// 表示该证书的到期时间，单位是 Unix 时间戳。
+        /// Indicates the expiration time of the certificate, as a Unix timestamp.
         /// </summary>
         [Input("expireTime")]
         public Input<int>? ExpireTime { get; set; }
 
         /// <summary>
-        /// 表示该证书托管的位置。该参数有以下取值：volc*cert*center：表示证书中心。cdn*cert*hosting：表示内容分发网络。
+        /// Specifies the certificate hosting location. The parameter values are: volc*cert*center: certificate center; cdn*cert*hosting: content delivery network.
         /// </summary>
         [Input("source")]
         public Input<string>? Source { get; set; }

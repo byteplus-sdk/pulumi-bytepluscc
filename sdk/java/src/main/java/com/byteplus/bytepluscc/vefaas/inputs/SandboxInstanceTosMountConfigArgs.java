@@ -18,14 +18,14 @@ public final class SandboxInstanceTosMountConfigArgs extends com.pulumi.resource
     public static final SandboxInstanceTosMountConfigArgs Empty = new SandboxInstanceTosMountConfigArgs();
 
     /**
-     * 沙箱实例是否启用了实例级别的 TOS 挂载，参数值说明：true：是，false：否。
+     * Whether instance-level TOS mount is enabled for the sandbox instance. Parameter description: true: yes, false: no
      * 
      */
     @Import(name="enable")
     private @Nullable Output<Boolean> enable;
 
     /**
-     * @return 沙箱实例是否启用了实例级别的 TOS 挂载，参数值说明：true：是，false：否。
+     * @return Whether instance-level TOS mount is enabled for the sandbox instance. Parameter description: true: yes, false: no
      * 
      */
     public Optional<Output<Boolean>> enable() {
@@ -65,7 +65,7 @@ public final class SandboxInstanceTosMountConfigArgs extends com.pulumi.resource
         }
 
         /**
-         * @param enable 沙箱实例是否启用了实例级别的 TOS 挂载，参数值说明：true：是，false：否。
+         * @param enable Whether instance-level TOS mount is enabled for the sandbox instance. Parameter description: true: yes, false: no
          * 
          * @return builder
          * 
@@ -76,7 +76,7 @@ public final class SandboxInstanceTosMountConfigArgs extends com.pulumi.resource
         }
 
         /**
-         * @param enable 沙箱实例是否启用了实例级别的 TOS 挂载，参数值说明：true：是，false：否。
+         * @param enable Whether instance-level TOS mount is enabled for the sandbox instance. Parameter description: true: yes, false: no
          * 
          * @return builder
          * 

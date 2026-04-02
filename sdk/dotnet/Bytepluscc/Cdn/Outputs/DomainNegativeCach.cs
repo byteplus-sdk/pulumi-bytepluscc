@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class DomainNegativeCach
     {
         /// <summary>
-        /// 表示该配置模块的生效条件，由一组规则组成。
+        /// Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         /// </summary>
         public readonly Outputs.DomainNegativeCachCondition? Condition;
         /// <summary>
-        /// 表示一个列表。该列表的每个元素是一个状态码缓存规则。
+        /// Represents a list. Each element in the list is a status code cache rule.
         /// </summary>
         public readonly Outputs.DomainNegativeCachNegativeCacheRule? NegativeCacheRule;
 

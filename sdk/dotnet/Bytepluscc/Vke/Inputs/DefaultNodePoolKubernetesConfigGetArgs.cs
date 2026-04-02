@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
     public sealed class DefaultNodePoolKubernetesConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 是否禁用自动同步标签污点到存量节点的功能，参数值说明：true：禁用，即关闭自动同步。false：不禁用，即开启自动同步。
+        /// Whether to disable the automatic synchronization of label taints to existing nodes. Parameter value description: true: disabled, automatic synchronization is turned off. false: not disabled, automatic synchronization is turned on.
         /// </summary>
         [Input("autoSyncDisabled")]
         public Input<bool>? AutoSyncDisabled { get; set; }
 
         /// <summary>
-        /// 封锁节点配置，参数值说明：false：不封锁。true：封锁。
+        /// Node blocking configuration. Parameter value description: false: not blocked. true: blocked
         /// </summary>
         [Input("cordon")]
         public Input<bool>? Cordon { get; set; }
 
         /// <summary>
-        /// Kubelet 组件的相关配置
+        /// Kubelet component configuration
         /// </summary>
         [Input("kubeletConfig")]
         public Input<Inputs.DefaultNodePoolKubernetesConfigKubeletConfigGetArgs>? KubeletConfig { get; set; }
@@ -40,19 +40,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         }
 
         /// <summary>
-        /// Kubernetes 中节点对象的元数据名称前缀。
+        /// Prefix of the metadata name for node objects in Kubernetes.
         /// </summary>
         [Input("namePrefix")]
         public Input<string>? NamePrefix { get; set; }
 
         /// <summary>
-        /// Kubernetes 中节点对象的元数据名称后缀。
+        /// Suffix of the metadata name for node objects in Kubernetes.
         /// </summary>
         [Input("nameSuffix")]
         public Input<string>? NameSuffix { get; set; }
 
         /// <summary>
-        /// Kubernetes 中节点对象的元数据名称是否使用 ECS 主机名称，取值：true：使用 ECS 主机名称作为节点名称。false：不使用使用 ECS 主机名称作为节点名称。
+        /// Whether the metadata name of the node object in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name. false: do not use ECS host name as node name
         /// </summary>
         [Input("nameUseHostname")]
         public Input<bool>? NameUseHostname { get; set; }

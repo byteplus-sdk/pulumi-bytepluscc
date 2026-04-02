@@ -23,14 +23,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     public static final VolumeState Empty = new VolumeState();
 
     /**
-     * 自动快照策略ID。
+     * Automatic snapshot policy ID.
      * 
      */
     @Import(name="autoSnapshotPolicyId")
     private @Nullable Output<String> autoSnapshotPolicyId;
 
     /**
-     * @return 自动快照策略ID。
+     * @return Automatic snapshot policy ID.
      * 
      */
     public Optional<Output<String>> autoSnapshotPolicyId() {
@@ -38,14 +38,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 自动快照策略名称。
+     * Automatic snapshot policy name.
      * 
      */
     @Import(name="autoSnapshotPolicyName")
     private @Nullable Output<String> autoSnapshotPolicyName;
 
     /**
-     * @return 自动快照策略名称。
+     * @return Automatic snapshot policy name.
      * 
      */
     public Optional<Output<String>> autoSnapshotPolicyName() {
@@ -53,14 +53,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 基本性能。
+     * Baseline performance.
      * 
      */
     @Import(name="baselinePerformance")
     private @Nullable Output<VolumeBaselinePerformanceArgs> baselinePerformance;
 
     /**
-     * @return 基本性能。
+     * @return Baseline performance.
      * 
      */
     public Optional<Output<VolumeBaselinePerformanceArgs>> baselinePerformance() {
@@ -68,14 +68,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 云盘创建时间。
+     * Disk creation time.
      * 
      */
     @Import(name="createdAt")
     private @Nullable Output<String> createdAt;
 
     /**
-     * @return 云盘创建时间。
+     * @return Disk creation time.
      * 
      */
     public Optional<Output<String>> createdAt() {
@@ -83,14 +83,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
+     * When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
      * 
      */
     @Import(name="deleteWithInstance")
     private @Nullable Output<Boolean> deleteWithInstance;
 
     /**
-     * @return 释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
+     * @return When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
      * 
      */
     public Optional<Output<Boolean>> deleteWithInstance() {
@@ -98,14 +98,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
+     * Disk description. Default is empty. Length must be between 1 and 255 characters.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
+     * @return Disk description. Default is empty. Length must be between 1 and 255 characters.
      * 
      */
     public Optional<Output<String>> description() {
@@ -113,14 +113,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 设备名称
+     * Device name
      * 
      */
     @Import(name="deviceName")
     private @Nullable Output<String> deviceName;
 
     /**
-     * @return 设备名称
+     * @return Device name
      * 
      */
     public Optional<Output<String>> deviceName() {
@@ -128,14 +128,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 具体错误
+     * Specific error
      * 
      */
     @Import(name="errorDetail")
     private @Nullable Output<String> errorDetail;
 
     /**
-     * @return 具体错误
+     * @return Specific error
      * 
      */
     public Optional<Output<String>> errorDetail() {
@@ -143,14 +143,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 包年包月到期时间。
+     * Expiration time for yearly/monthly subscription.
      * 
      */
     @Import(name="expiredTime")
     private @Nullable Output<String> expiredTime;
 
     /**
-     * @return 包年包月到期时间。
+     * @return Expiration time for yearly/monthly subscription.
      * 
      */
     public Optional<Output<String>> expiredTime() {
@@ -158,14 +158,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 额外性能。
+     * Extra performance.
      * 
      */
     @Import(name="extraPerformance")
     private @Nullable Output<VolumeExtraPerformanceArgs> extraPerformance;
 
     /**
-     * @return 额外性能。
+     * @return Extra performance.
      * 
      */
     public Optional<Output<VolumeExtraPerformanceArgs>> extraPerformance() {
@@ -173,14 +173,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 云盘中的镜像ID。
+     * Image ID in the disk.
      * 
      */
     @Import(name="imageId")
     private @Nullable Output<String> imageId;
 
     /**
-     * @return 云盘中的镜像ID。
+     * @return Image ID in the disk.
      * 
      */
     public Optional<Output<String>> imageId() {
@@ -188,14 +188,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建云盘的同时挂载的ECS实例ID。
+     * ECS instance ID mounted when creating the cloud disk.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 创建云盘的同时挂载的ECS实例ID。
+     * @return ECS instance ID mounted when creating the cloud disk.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -203,14 +203,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
+     * Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
      * 
      */
     @Import(name="kind")
     private @Nullable Output<String> kind;
 
     /**
-     * @return 云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
+     * @return Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
      * 
      */
     public Optional<Output<String>> kind() {
@@ -218,14 +218,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 云盘欠费回收时间。
+     * Disk overdue reclamation time.
      * 
      */
     @Import(name="overdueReclaimTime")
     private @Nullable Output<String> overdueReclaimTime;
 
     /**
-     * @return 云盘欠费回收时间。
+     * @return Disk overdue reclamation time.
      * 
      */
     public Optional<Output<String>> overdueReclaimTime() {
@@ -233,14 +233,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 云盘欠费关停时间。
+     * Disk overdue shutdown time.
      * 
      */
     @Import(name="overdueTime")
     private @Nullable Output<String> overdueTime;
 
     /**
-     * @return 云盘欠费关停时间。
+     * @return Disk overdue shutdown time.
      * 
      */
     public Optional<Output<String>> overdueTime() {
@@ -248,14 +248,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
+     * Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
      * 
      */
     @Import(name="payType")
     private @Nullable Output<String> payType;
 
     /**
-     * @return 付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
+     * @return Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
      * 
      */
     public Optional<Output<String>> payType() {
@@ -263,14 +263,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 云盘所要加入的Project（项目）名称。
+     * Project name to which the disk will be added.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 云盘所要加入的Project（项目）名称。
+     * @return Project name to which the disk will be added.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -278,14 +278,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 续费方式 1：手动续费 2 ：自动续费 3 ：到期不续费。
+     * Renewal method 1: Manual renewal 2: Automatic renewal 3: Do not renew upon expiration.
      * 
      */
     @Import(name="renewType")
     private @Nullable Output<Double> renewType;
 
     /**
-     * @return 续费方式 1：手动续费 2 ：自动续费 3 ：到期不续费。
+     * @return Renewal method 1: Manual renewal 2: Automatic renewal 3: Do not renew upon expiration.
      * 
      */
     public Optional<Output<Double>> renewType() {
@@ -293,14 +293,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
+     * Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
      * 
      */
     @Import(name="size")
     private @Nullable Output<Double> size;
 
     /**
-     * @return Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
+     * @return Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
      * 
      */
     public Optional<Output<Double>> size() {
@@ -308,14 +308,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 快照计数
+     * Snapshot count.
      * 
      */
     @Import(name="snapshotCount")
     private @Nullable Output<Double> snapshotCount;
 
     /**
-     * @return 快照计数
+     * @return Snapshot count.
      * 
      */
     public Optional<Output<Double>> snapshotCount() {
@@ -323,14 +323,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 源快照。
+     * Source snapshot.
      * 
      */
     @Import(name="sourceSnapshotId")
     private @Nullable Output<String> sourceSnapshotId;
 
     /**
-     * @return 源快照。
+     * @return Source snapshot.
      * 
      */
     public Optional<Output<String>> sourceSnapshotId() {
@@ -338,14 +338,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
+     * Disk status. Value description: available: Available. mounting: Mounting. mounted: Mounted. unmounting: Unmounting. creating: Creating. deleting: Deleting. error: Error. expanding: Expanding.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
+     * @return Disk status. Value description: available: Available. mounting: Mounting. mounted: Mounted. unmounting: Unmounting. creating: Creating. deleting: Deleting. error: Error. expanding: Expanding.
      * 
      */
     public Optional<Output<String>> status() {
@@ -360,14 +360,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 总性能。
+     * Total performance.
      * 
      */
     @Import(name="totalPerformance")
     private @Nullable Output<VolumeTotalPerformanceArgs> totalPerformance;
 
     /**
-     * @return 总性能。
+     * @return Total performance.
      * 
      */
     public Optional<Output<VolumeTotalPerformanceArgs>> totalPerformance() {
@@ -375,14 +375,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 交易状态 0：创建中 1：运行中 2：创建失败
+     * Transaction status 0: Creating 1: Running 2: Creation failed
      * 
      */
     @Import(name="tradeStatus")
     private @Nullable Output<Double> tradeStatus;
 
     /**
-     * @return 交易状态 0：创建中 1：运行中 2：创建失败
+     * @return Transaction status 0: Creating 1: Running 2: Creation failed
      * 
      */
     public Optional<Output<Double>> tradeStatus() {
@@ -390,14 +390,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 云盘更新时间。
+     * Disk update time.
      * 
      */
     @Import(name="updatedAt")
     private @Nullable Output<String> updatedAt;
 
     /**
-     * @return 云盘更新时间。
+     * @return Disk update time.
      * 
      */
     public Optional<Output<String>> updatedAt() {
@@ -405,14 +405,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 云盘id。
+     * Disk ID.
      * 
      */
     @Import(name="volumeId")
     private @Nullable Output<String> volumeId;
 
     /**
-     * @return 云盘id。
+     * @return Disk ID.
      * 
      */
     public Optional<Output<String>> volumeId() {
@@ -420,14 +420,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
+     * Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
      * 
      */
     @Import(name="volumeName")
     private @Nullable Output<String> volumeName;
 
     /**
-     * @return 云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
+     * @return Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
      * 
      */
     public Optional<Output<String>> volumeName() {
@@ -435,14 +435,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
+     * Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
      * 
      */
     @Import(name="volumeType")
     private @Nullable Output<String> volumeType;
 
     /**
-     * @return 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
+     * @return Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
      * 
      */
     public Optional<Output<String>> volumeType() {
@@ -450,14 +450,14 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 可用区ID。
+     * Availability zone ID.
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return 可用区ID。
+     * @return Availability zone ID.
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -518,7 +518,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoSnapshotPolicyId 自动快照策略ID。
+         * @param autoSnapshotPolicyId Automatic snapshot policy ID.
          * 
          * @return builder
          * 
@@ -529,7 +529,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoSnapshotPolicyId 自动快照策略ID。
+         * @param autoSnapshotPolicyId Automatic snapshot policy ID.
          * 
          * @return builder
          * 
@@ -539,7 +539,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoSnapshotPolicyName 自动快照策略名称。
+         * @param autoSnapshotPolicyName Automatic snapshot policy name.
          * 
          * @return builder
          * 
@@ -550,7 +550,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoSnapshotPolicyName 自动快照策略名称。
+         * @param autoSnapshotPolicyName Automatic snapshot policy name.
          * 
          * @return builder
          * 
@@ -560,7 +560,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param baselinePerformance 基本性能。
+         * @param baselinePerformance Baseline performance.
          * 
          * @return builder
          * 
@@ -571,7 +571,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param baselinePerformance 基本性能。
+         * @param baselinePerformance Baseline performance.
          * 
          * @return builder
          * 
@@ -581,7 +581,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdAt 云盘创建时间。
+         * @param createdAt Disk creation time.
          * 
          * @return builder
          * 
@@ -592,7 +592,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdAt 云盘创建时间。
+         * @param createdAt Disk creation time.
          * 
          * @return builder
          * 
@@ -602,7 +602,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deleteWithInstance 释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
+         * @param deleteWithInstance When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
          * 
          * @return builder
          * 
@@ -613,7 +613,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deleteWithInstance 释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
+         * @param deleteWithInstance When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
          * 
          * @return builder
          * 
@@ -623,7 +623,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
+         * @param description Disk description. Default is empty. Length must be between 1 and 255 characters.
          * 
          * @return builder
          * 
@@ -634,7 +634,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
+         * @param description Disk description. Default is empty. Length must be between 1 and 255 characters.
          * 
          * @return builder
          * 
@@ -644,7 +644,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deviceName 设备名称
+         * @param deviceName Device name
          * 
          * @return builder
          * 
@@ -655,7 +655,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deviceName 设备名称
+         * @param deviceName Device name
          * 
          * @return builder
          * 
@@ -665,7 +665,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param errorDetail 具体错误
+         * @param errorDetail Specific error
          * 
          * @return builder
          * 
@@ -676,7 +676,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param errorDetail 具体错误
+         * @param errorDetail Specific error
          * 
          * @return builder
          * 
@@ -686,7 +686,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expiredTime 包年包月到期时间。
+         * @param expiredTime Expiration time for yearly/monthly subscription.
          * 
          * @return builder
          * 
@@ -697,7 +697,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expiredTime 包年包月到期时间。
+         * @param expiredTime Expiration time for yearly/monthly subscription.
          * 
          * @return builder
          * 
@@ -707,7 +707,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param extraPerformance 额外性能。
+         * @param extraPerformance Extra performance.
          * 
          * @return builder
          * 
@@ -718,7 +718,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param extraPerformance 额外性能。
+         * @param extraPerformance Extra performance.
          * 
          * @return builder
          * 
@@ -728,7 +728,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param imageId 云盘中的镜像ID。
+         * @param imageId Image ID in the disk.
          * 
          * @return builder
          * 
@@ -739,7 +739,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param imageId 云盘中的镜像ID。
+         * @param imageId Image ID in the disk.
          * 
          * @return builder
          * 
@@ -749,7 +749,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 创建云盘的同时挂载的ECS实例ID。
+         * @param instanceId ECS instance ID mounted when creating the cloud disk.
          * 
          * @return builder
          * 
@@ -760,7 +760,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 创建云盘的同时挂载的ECS实例ID。
+         * @param instanceId ECS instance ID mounted when creating the cloud disk.
          * 
          * @return builder
          * 
@@ -770,7 +770,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kind 云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
+         * @param kind Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
          * 
          * @return builder
          * 
@@ -781,7 +781,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kind 云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
+         * @param kind Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
          * 
          * @return builder
          * 
@@ -791,7 +791,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param overdueReclaimTime 云盘欠费回收时间。
+         * @param overdueReclaimTime Disk overdue reclamation time.
          * 
          * @return builder
          * 
@@ -802,7 +802,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param overdueReclaimTime 云盘欠费回收时间。
+         * @param overdueReclaimTime Disk overdue reclamation time.
          * 
          * @return builder
          * 
@@ -812,7 +812,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param overdueTime 云盘欠费关停时间。
+         * @param overdueTime Disk overdue shutdown time.
          * 
          * @return builder
          * 
@@ -823,7 +823,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param overdueTime 云盘欠费关停时间。
+         * @param overdueTime Disk overdue shutdown time.
          * 
          * @return builder
          * 
@@ -833,7 +833,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param payType 付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
+         * @param payType Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
          * 
          * @return builder
          * 
@@ -844,7 +844,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param payType 付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
+         * @param payType Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
          * 
          * @return builder
          * 
@@ -854,7 +854,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 云盘所要加入的Project（项目）名称。
+         * @param projectName Project name to which the disk will be added.
          * 
          * @return builder
          * 
@@ -865,7 +865,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 云盘所要加入的Project（项目）名称。
+         * @param projectName Project name to which the disk will be added.
          * 
          * @return builder
          * 
@@ -875,7 +875,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param renewType 续费方式 1：手动续费 2 ：自动续费 3 ：到期不续费。
+         * @param renewType Renewal method 1: Manual renewal 2: Automatic renewal 3: Do not renew upon expiration.
          * 
          * @return builder
          * 
@@ -886,7 +886,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param renewType 续费方式 1：手动续费 2 ：自动续费 3 ：到期不续费。
+         * @param renewType Renewal method 1: Manual renewal 2: Automatic renewal 3: Do not renew upon expiration.
          * 
          * @return builder
          * 
@@ -896,7 +896,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param size Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
+         * @param size Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
          * 
          * @return builder
          * 
@@ -907,7 +907,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param size Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
+         * @param size Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
          * 
          * @return builder
          * 
@@ -917,7 +917,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snapshotCount 快照计数
+         * @param snapshotCount Snapshot count.
          * 
          * @return builder
          * 
@@ -928,7 +928,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snapshotCount 快照计数
+         * @param snapshotCount Snapshot count.
          * 
          * @return builder
          * 
@@ -938,7 +938,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceSnapshotId 源快照。
+         * @param sourceSnapshotId Source snapshot.
          * 
          * @return builder
          * 
@@ -949,7 +949,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceSnapshotId 源快照。
+         * @param sourceSnapshotId Source snapshot.
          * 
          * @return builder
          * 
@@ -959,7 +959,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
+         * @param status Disk status. Value description: available: Available. mounting: Mounting. mounted: Mounted. unmounting: Unmounting. creating: Creating. deleting: Deleting. error: Error. expanding: Expanding.
          * 
          * @return builder
          * 
@@ -970,7 +970,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 云盘状态，取值说明如下：available：可用。attaching：挂载中。attached：已挂载。detaching：卸载中。creating：创建中。deleting：删除中。error：错误。extending：扩容中。
+         * @param status Disk status. Value description: available: Available. mounting: Mounting. mounted: Mounted. unmounting: Unmounting. creating: Creating. deleting: Deleting. error: Error. expanding: Expanding.
          * 
          * @return builder
          * 
@@ -993,7 +993,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param totalPerformance 总性能。
+         * @param totalPerformance Total performance.
          * 
          * @return builder
          * 
@@ -1004,7 +1004,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param totalPerformance 总性能。
+         * @param totalPerformance Total performance.
          * 
          * @return builder
          * 
@@ -1014,7 +1014,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param tradeStatus 交易状态 0：创建中 1：运行中 2：创建失败
+         * @param tradeStatus Transaction status 0: Creating 1: Running 2: Creation failed
          * 
          * @return builder
          * 
@@ -1025,7 +1025,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param tradeStatus 交易状态 0：创建中 1：运行中 2：创建失败
+         * @param tradeStatus Transaction status 0: Creating 1: Running 2: Creation failed
          * 
          * @return builder
          * 
@@ -1035,7 +1035,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedAt 云盘更新时间。
+         * @param updatedAt Disk update time.
          * 
          * @return builder
          * 
@@ -1046,7 +1046,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedAt 云盘更新时间。
+         * @param updatedAt Disk update time.
          * 
          * @return builder
          * 
@@ -1056,7 +1056,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param volumeId 云盘id。
+         * @param volumeId Disk ID.
          * 
          * @return builder
          * 
@@ -1067,7 +1067,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param volumeId 云盘id。
+         * @param volumeId Disk ID.
          * 
          * @return builder
          * 
@@ -1077,7 +1077,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param volumeName 云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
+         * @param volumeName Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
          * 
          * @return builder
          * 
@@ -1088,7 +1088,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param volumeName 云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
+         * @param volumeName Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
          * 
          * @return builder
          * 
@@ -1098,7 +1098,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param volumeType 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
+         * @param volumeType Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
          * 
          * @return builder
          * 
@@ -1109,7 +1109,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param volumeType 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
+         * @param volumeType Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
          * 
          * @return builder
          * 
@@ -1119,7 +1119,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 可用区ID。
+         * @param zoneId Availability zone ID.
          * 
          * @return builder
          * 
@@ -1130,7 +1130,7 @@ public final class VolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 可用区ID。
+         * @param zoneId Availability zone ID.
          * 
          * @return builder
          * 

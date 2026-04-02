@@ -14,50 +14,50 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfig {
     /**
-     * @return 内容分发网络可以缓存鉴权状态码。该参数表示相关的配置。
+     * @return The content delivery network can cache authentication status codes. This parameter indicates the related configuration.
      * 
      */
     private GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheAction cacheAction;
     /**
-     * @return 表示鉴权失败时，内容分发网络如何响应用户。
+     * @return Indicates how the content delivery network responds to users when authentication fails.
      * 
      */
     private GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseAction responseAction;
     /**
-     * @return 表示内容分发网络对鉴权状态码的处理方式。
+     * @return Specifies how the content delivery network handles authentication status codes.
      * 
      */
     private GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeAction statusCodeAction;
     /**
-     * @return 表示鉴权超时后，内容分发网络如何处理鉴权请求。
+     * @return Specifies how the content delivery network handles authentication requests after authentication timeout.
      * 
      */
     private GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutAction timeOutAction;
 
     private GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfig() {}
     /**
-     * @return 内容分发网络可以缓存鉴权状态码。该参数表示相关的配置。
+     * @return The content delivery network can cache authentication status codes. This parameter indicates the related configuration.
      * 
      */
     public GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheAction cacheAction() {
         return this.cacheAction;
     }
     /**
-     * @return 表示鉴权失败时，内容分发网络如何响应用户。
+     * @return Indicates how the content delivery network responds to users when authentication fails.
      * 
      */
     public GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseAction responseAction() {
         return this.responseAction;
     }
     /**
-     * @return 表示内容分发网络对鉴权状态码的处理方式。
+     * @return Specifies how the content delivery network handles authentication status codes.
      * 
      */
     public GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigStatusCodeAction statusCodeAction() {
         return this.statusCodeAction;
     }
     /**
-     * @return 表示鉴权超时后，内容分发网络如何处理鉴权请求。
+     * @return Specifies how the content delivery network handles authentication requests after authentication timeout.
      * 
      */
     public GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutAction timeOutAction() {

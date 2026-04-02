@@ -15,39 +15,39 @@ namespace Byteplus.Pulumi.Bytepluscc.Kafka.Outputs
     public sealed class GetInstanceChargeInfoResult
     {
         /// <summary>
-        /// 包年包月实例到期后是否自动续费，true-自动续费 false(默认)-不自动续费,到期实例关停。
+        /// Whether to automatically renew the subscription instance after expiration. true   - auto renewal; false (default)   - no auto renewal, instance will be stopped upon expiration.
         /// </summary>
         public readonly bool AutoRenew;
         /// <summary>
-        /// 包年包月实例的到期时间。
+        /// Expiration time for the subscription instance.
         /// </summary>
         public readonly string ChargeExpireTime;
         /// <summary>
-        /// 实例的计费开始时间。
+        /// Instance billing start time.
         /// </summary>
         public readonly string ChargeStartTime;
         /// <summary>
-        /// 实例的计费状态，支持的类型包括:  Normal-正常, Overdue-按量计费欠费, Expired-包年包月到期
+        /// Billing status of the instance. Supported types: Normal   - normal, Overdue   - pay-as-you-go overdue, Expired   - subscription expired
         /// </summary>
         public readonly string ChargeStatus;
         /// <summary>
-        /// 实例的计费类型，支持的类型包括: PostPaid-按量付费, PrePaid-包年包月。
+        /// Billing type for the instance. Supported types: PostPaid   - pay-as-you-go, PrePaid   - subscription.
         /// </summary>
         public readonly string ChargeType;
         /// <summary>
-        /// 实例欠费关停后的预计释放时间。
+        /// Estimated release time after the instance is stopped due to overdue payment.
         /// </summary>
         public readonly string OverdueReclaimTime;
         /// <summary>
-        /// 实例的欠费关停时间。
+        /// Instance suspension time due to overdue payment.
         /// </summary>
         public readonly string OverdueTime;
         /// <summary>
-        /// 包年包月类型实例的购买时长。
+        /// Purchase duration for subscription-based instances.
         /// </summary>
         public readonly int Period;
         /// <summary>
-        /// 包年包月类型实例的生命周期单位，即指定以月（Month/Monthly）或以年（Year/Yearly）为单位购买。
+        /// The lifecycle unit for subscription-based instances, specifying purchase by month (Month/Monthly) or by year (Year/Yearly).
         /// </summary>
         public readonly string PeriodUnit;
 

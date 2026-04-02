@@ -20,314 +20,314 @@ import java.util.Objects;
 @CustomType
 public final class GetDefaultNodePoolNodeConfig {
     /**
-     * @return 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+     * @return Whether the first data disk on the node has been configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted true: configured and formatted
      * 
      */
     private Boolean additionalContainerStorageEnabled;
     /**
-     * @return 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+     * @return Whether the cloud server instance is automatically renewed upon expiration. Parameter values: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
      * 
      */
     private Boolean autoRenew;
     /**
-     * @return 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+     * @return Automatic renewal duration for cloud server instance, in months. This parameter is returned only when AutoRenew=true.
      * 
      */
     private Integer autoRenewPeriod;
     /**
-     * @return 节点的数据盘配置。
+     * @return Data disk configuration for the node
      * 
      */
     private List<GetDefaultNodePoolNodeConfigDataVolume> dataVolumes;
     /**
-     * @return 实例在部署集中的分组号，0表示未设置
+     * @return Group number of the instance in the deployment set. 0 means not set
      * 
      */
     private Integer deploymentSetGroupNumber;
     /**
-     * @return 实例需要加入的部署集ID
+     * @return Deployment set ID to be added to the instance
      * 
      */
     private String deploymentSetId;
     /**
-     * @return 节点对应的主机名称。
+     * @return Host name corresponding to the node
      * 
      */
     private String hostname;
     /**
-     * @return 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+     * @return High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
      * 
      */
     private List<String> hpcClusterIds;
     /**
-     * @return 节点对应云服务器所使用的镜像 ID。
+     * @return Image ID used by the cloud server corresponding to the node
      * 
      */
     private String imageId;
     /**
-     * @return 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+     * @return Custom script executed after creating and initializing the node. Shell script in Base64 encoding
      * 
      */
     private String initializeScript;
     /**
-     * @return 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+     * @return Billing type for cloud server instance. Parameter value description: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
      * 
      */
     private String instanceChargeType;
     /**
-     * @return 节点（实例）名称。
+     * @return Node (instance) name
      * 
      */
     private String instanceName;
     /**
-     * @return 节点对应的云服务器实例规格 ID 列表。
+     * @return List of cloud server instance type IDs corresponding to the node
      * 
      */
     private List<String> instanceTypeIds;
     /**
-     * @return 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+     * @return Configure the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is set to SpotAsPriceGo
      * 
      */
     private GetDefaultNodePoolNodeConfigInstancesDistribution instancesDistribution;
     /**
-     * @return 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+     * @return Node name prefix. An empty string or nil means the node name prefix policy is not enabled
      * 
      */
     private String namePrefix;
     /**
-     * @return 节点间的网络通讯模式。
+     * @return Network communication mode between nodes
      * 
      */
     private String networkTrafficMode;
     /**
-     * @return 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+     * @return Duration for purchasing cloud server instance, in months. This parameter is returned only when InstanceChargeType=PrePaid
      * 
      */
     private Integer period;
     /**
-     * @return 部署节点前执行脚本。
+     * @return Script executed before deploying nodes
      * 
      */
     private String preScript;
     /**
-     * @return ECS所属项目，一个ECS只能归属于一个项目。
+     * @return The project to which the ECS belongs. Each ECS can only belong to one project.
      * 
      */
     private String projectName;
     /**
-     * @return 节点自动开启公网访问的配置信息
+     * @return Configuration for automatic public network access for nodes
      * 
      */
     private GetDefaultNodePoolNodeConfigPublicAccessConfig publicAccessConfig;
     /**
-     * @return 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+     * @return Whether the node automatically enables public network access. Values:   - false: disabled   - true: enabled
      * 
      */
     private Boolean publicAccessEnabled;
     /**
-     * @return 节点安全配置。
+     * @return Node security configuration.
      * 
      */
     private GetDefaultNodePoolNodeConfigSecurity security;
     /**
-     * @return 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+     * @return Preemptive policy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: regular pay-as-you-go instance. SpotAsPriceGo: system auto-bidding, follows current market price.
      * 
      */
     private String spotStrategy;
     /**
-     * @return 节点网络所属的子网 ID 列表。
+     * @return List of subnet IDs to which the node network belongs.
      * 
      */
     private List<String> subnetIds;
     /**
-     * @return 节点的系统盘配置。
+     * @return System disk configuration for the node
      * 
      */
     private GetDefaultNodePoolNodeConfigSystemVolume systemVolume;
     /**
-     * @return 节点池配置的标签信息
+     * @return Label information configured for the node pool
      * 
      */
     private List<GetDefaultNodePoolNodeConfigTag> tags;
 
     private GetDefaultNodePoolNodeConfig() {}
     /**
-     * @return 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+     * @return Whether the first data disk on the node has been configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted true: configured and formatted
      * 
      */
     public Boolean additionalContainerStorageEnabled() {
         return this.additionalContainerStorageEnabled;
     }
     /**
-     * @return 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+     * @return Whether the cloud server instance is automatically renewed upon expiration. Parameter values: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
      * 
      */
     public Boolean autoRenew() {
         return this.autoRenew;
     }
     /**
-     * @return 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+     * @return Automatic renewal duration for cloud server instance, in months. This parameter is returned only when AutoRenew=true.
      * 
      */
     public Integer autoRenewPeriod() {
         return this.autoRenewPeriod;
     }
     /**
-     * @return 节点的数据盘配置。
+     * @return Data disk configuration for the node
      * 
      */
     public List<GetDefaultNodePoolNodeConfigDataVolume> dataVolumes() {
         return this.dataVolumes;
     }
     /**
-     * @return 实例在部署集中的分组号，0表示未设置
+     * @return Group number of the instance in the deployment set. 0 means not set
      * 
      */
     public Integer deploymentSetGroupNumber() {
         return this.deploymentSetGroupNumber;
     }
     /**
-     * @return 实例需要加入的部署集ID
+     * @return Deployment set ID to be added to the instance
      * 
      */
     public String deploymentSetId() {
         return this.deploymentSetId;
     }
     /**
-     * @return 节点对应的主机名称。
+     * @return Host name corresponding to the node
      * 
      */
     public String hostname() {
         return this.hostname;
     }
     /**
-     * @return 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+     * @return High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
      * 
      */
     public List<String> hpcClusterIds() {
         return this.hpcClusterIds;
     }
     /**
-     * @return 节点对应云服务器所使用的镜像 ID。
+     * @return Image ID used by the cloud server corresponding to the node
      * 
      */
     public String imageId() {
         return this.imageId;
     }
     /**
-     * @return 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+     * @return Custom script executed after creating and initializing the node. Shell script in Base64 encoding
      * 
      */
     public String initializeScript() {
         return this.initializeScript;
     }
     /**
-     * @return 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+     * @return Billing type for cloud server instance. Parameter value description: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
      * 
      */
     public String instanceChargeType() {
         return this.instanceChargeType;
     }
     /**
-     * @return 节点（实例）名称。
+     * @return Node (instance) name
      * 
      */
     public String instanceName() {
         return this.instanceName;
     }
     /**
-     * @return 节点对应的云服务器实例规格 ID 列表。
+     * @return List of cloud server instance type IDs corresponding to the node
      * 
      */
     public List<String> instanceTypeIds() {
         return this.instanceTypeIds;
     }
     /**
-     * @return 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+     * @return Configure the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is set to SpotAsPriceGo
      * 
      */
     public GetDefaultNodePoolNodeConfigInstancesDistribution instancesDistribution() {
         return this.instancesDistribution;
     }
     /**
-     * @return 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+     * @return Node name prefix. An empty string or nil means the node name prefix policy is not enabled
      * 
      */
     public String namePrefix() {
         return this.namePrefix;
     }
     /**
-     * @return 节点间的网络通讯模式。
+     * @return Network communication mode between nodes
      * 
      */
     public String networkTrafficMode() {
         return this.networkTrafficMode;
     }
     /**
-     * @return 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+     * @return Duration for purchasing cloud server instance, in months. This parameter is returned only when InstanceChargeType=PrePaid
      * 
      */
     public Integer period() {
         return this.period;
     }
     /**
-     * @return 部署节点前执行脚本。
+     * @return Script executed before deploying nodes
      * 
      */
     public String preScript() {
         return this.preScript;
     }
     /**
-     * @return ECS所属项目，一个ECS只能归属于一个项目。
+     * @return The project to which the ECS belongs. Each ECS can only belong to one project.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 节点自动开启公网访问的配置信息
+     * @return Configuration for automatic public network access for nodes
      * 
      */
     public GetDefaultNodePoolNodeConfigPublicAccessConfig publicAccessConfig() {
         return this.publicAccessConfig;
     }
     /**
-     * @return 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+     * @return Whether the node automatically enables public network access. Values:   - false: disabled   - true: enabled
      * 
      */
     public Boolean publicAccessEnabled() {
         return this.publicAccessEnabled;
     }
     /**
-     * @return 节点安全配置。
+     * @return Node security configuration.
      * 
      */
     public GetDefaultNodePoolNodeConfigSecurity security() {
         return this.security;
     }
     /**
-     * @return 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+     * @return Preemptive policy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: regular pay-as-you-go instance. SpotAsPriceGo: system auto-bidding, follows current market price.
      * 
      */
     public String spotStrategy() {
         return this.spotStrategy;
     }
     /**
-     * @return 节点网络所属的子网 ID 列表。
+     * @return List of subnet IDs to which the node network belongs.
      * 
      */
     public List<String> subnetIds() {
         return this.subnetIds;
     }
     /**
-     * @return 节点的系统盘配置。
+     * @return System disk configuration for the node
      * 
      */
     public GetDefaultNodePoolNodeConfigSystemVolume systemVolume() {
         return this.systemVolume;
     }
     /**
-     * @return 节点池配置的标签信息
+     * @return Label information configured for the node pool
      * 
      */
     public List<GetDefaultNodePoolNodeConfigTag> tags() {

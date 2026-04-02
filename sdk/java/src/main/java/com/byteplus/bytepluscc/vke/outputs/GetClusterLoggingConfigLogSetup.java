@@ -13,50 +13,50 @@ import java.util.Objects;
 @CustomType
 public final class GetClusterLoggingConfigLogSetup {
     /**
-     * @return 是否开启该日志选项，参数值说明：true：已开启。false：未开启。
+     * @return Whether to enable this log option. Parameter values: true: enabled; false: not enabled.
      * 
      */
     private Boolean enabled;
     /**
-     * @return 采集目标的TLS日志主题ID。 如果为空，表示对应日志的主题未被创建。
+     * @return TLS log topic ID for the collection target. If empty, the corresponding log topic has not been created.
      * 
      */
     private String logTopicId;
     /**
-     * @return 日志在日志服务中的保存时间，单位为天。 3650 天表示永久存储。
+     * @return Retention period of logs in log service, in days. 3650 days means permanent storage.
      * 
      */
     private Integer logTtl;
     /**
-     * @return 当前开启的日志类型，参数值说明：Audit：集群审计日志。KubeApiServer：kube-apiserver 组件日志。KubeScheduler：kube-scheduler 组件日志。KubeControllerManager：kube-controller-manager 组件日志。
+     * @return Currently enabled log types. Parameter values: Audit: cluster audit log; KubeApiServer: kube-apiserver component log; KubeScheduler: kube-scheduler component log; KubeControllerManager: kube-controller-manager component log.
      * 
      */
     private String logType;
 
     private GetClusterLoggingConfigLogSetup() {}
     /**
-     * @return 是否开启该日志选项，参数值说明：true：已开启。false：未开启。
+     * @return Whether to enable this log option. Parameter values: true: enabled; false: not enabled.
      * 
      */
     public Boolean enabled() {
         return this.enabled;
     }
     /**
-     * @return 采集目标的TLS日志主题ID。 如果为空，表示对应日志的主题未被创建。
+     * @return TLS log topic ID for the collection target. If empty, the corresponding log topic has not been created.
      * 
      */
     public String logTopicId() {
         return this.logTopicId;
     }
     /**
-     * @return 日志在日志服务中的保存时间，单位为天。 3650 天表示永久存储。
+     * @return Retention period of logs in log service, in days. 3650 days means permanent storage.
      * 
      */
     public Integer logTtl() {
         return this.logTtl;
     }
     /**
-     * @return 当前开启的日志类型，参数值说明：Audit：集群审计日志。KubeApiServer：kube-apiserver 组件日志。KubeScheduler：kube-scheduler 组件日志。KubeControllerManager：kube-controller-manager 组件日志。
+     * @return Currently enabled log types. Parameter values: Audit: cluster audit log; KubeApiServer: kube-apiserver component log; KubeScheduler: kube-scheduler component log; KubeControllerManager: kube-controller-manager component log.
      * 
      */
     public String logType() {

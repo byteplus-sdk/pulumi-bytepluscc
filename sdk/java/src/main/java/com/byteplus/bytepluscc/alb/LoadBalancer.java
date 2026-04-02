@@ -21,7 +21,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 应用型负载均衡（ALB）是对“七层”网络协议的流量进行分发的服务。
+ * Application Load Balancer (ALB) is a service that distributes traffic for Layer 7 network protocols.
  * 
  * ## Example Usage
  * 
@@ -38,322 +38,322 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:alb/loadBalancer:LoadBalancer")
 public class LoadBalancer extends com.pulumi.resources.CustomResource {
     /**
-     * ALB 实例的 IP 类型。IPv4：IPv4 类型；DualStack：IPv4&amp;IPv6 双栈类型。
+     * IP type of the ALB instance. IPv4: IPv4 type; DualStack: IPv4 &amp; IPv6 dual stack type.
      * 
      */
     @Export(name="addressIpVersion", refs={String.class}, tree="[0]")
     private Output<String> addressIpVersion;
 
     /**
-     * @return ALB 实例的 IP 类型。IPv4：IPv4 类型；DualStack：IPv4&amp;IPv6 双栈类型。
+     * @return IP type of the ALB instance. IPv4: IPv4 type; DualStack: IPv4 &amp; IPv6 dual stack type.
      * 
      */
     public Output<String> addressIpVersion() {
         return this.addressIpVersion;
     }
     /**
-     * 绑定的共享带宽包ID，可实现带宽共享。
+     * ID of the bound shared bandwidth package, enabling bandwidth sharing.
      * 
      */
     @Export(name="bandwidthPackageId", refs={String.class}, tree="[0]")
     private Output<String> bandwidthPackageId;
 
     /**
-     * @return 绑定的共享带宽包ID，可实现带宽共享。
+     * @return ID of the bound shared bandwidth package, enabling bandwidth sharing.
      * 
      */
     public Output<String> bandwidthPackageId() {
         return this.bandwidthPackageId;
     }
     /**
-     * ALB 实例的服务状态。Normal：正常；FinancialLocked：因欠费被锁定。
+     * Service status of the ALB instance. Normal: normal; FinancialLocked: locked due to overdue payment.
      * 
      */
     @Export(name="businessStatus", refs={String.class}, tree="[0]")
     private Output<String> businessStatus;
 
     /**
-     * @return ALB 实例的服务状态。Normal：正常；FinancialLocked：因欠费被锁定。
+     * @return Service status of the ALB instance. Normal: normal; FinancialLocked: locked due to overdue payment.
      * 
      */
     public Output<String> businessStatus() {
         return this.businessStatus;
     }
     /**
-     * ALB 实例的创建时间。
+     * Creation time of the ALB instance.
      * 
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
-     * @return ALB 实例的创建时间。
+     * @return Creation time of the ALB instance.
      * 
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
-     * 删除保护开关。on：开启；off：关闭。
+     * Delete protection switch. on: enabled; off: disabled.
      * 
      */
     @Export(name="deleteProtection", refs={String.class}, tree="[0]")
     private Output<String> deleteProtection;
 
     /**
-     * @return 删除保护开关。on：开启；off：关闭。
+     * @return Delete protection switch. on: enabled; off: disabled.
      * 
      */
     public Output<String> deleteProtection() {
         return this.deleteProtection;
     }
     /**
-     * ALB 实例的预期回收时间。该参数只有实例处于 FinancialLocked 状态时有返回值。
+     * Expected reclamation time of the ALB instance. This parameter is only returned when the instance is in the FinancialLocked state.
      * 
      */
     @Export(name="deletedTime", refs={String.class}, tree="[0]")
     private Output<String> deletedTime;
 
     /**
-     * @return ALB 实例的预期回收时间。该参数只有实例处于 FinancialLocked 状态时有返回值。
+     * @return Expected reclamation time of the ALB instance. This parameter is only returned when the instance is in the FinancialLocked state.
      * 
      */
     public Output<String> deletedTime() {
         return this.deletedTime;
     }
     /**
-     * ALB 实例的描述。
+     * Description of the ALB instance.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return ALB 实例的描述。
+     * @return Description of the ALB instance.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * DNS域名。
+     * DNS domain name.
      * 
      */
     @Export(name="dnsName", refs={String.class}, tree="[0]")
     private Output<String> dnsName;
 
     /**
-     * @return DNS域名。
+     * @return DNS domain name.
      * 
      */
     public Output<String> dnsName() {
         return this.dnsName;
     }
     /**
-     * 公网IP的计费配置，仅适用于公网实例。
+     * Billing configuration for public IP, only applicable to public instances.
      * 
      */
     @Export(name="eipBillingConfig", refs={LoadBalancerEipBillingConfig.class}, tree="[0]")
     private Output<LoadBalancerEipBillingConfig> eipBillingConfig;
 
     /**
-     * @return 公网IP的计费配置，仅适用于公网实例。
+     * @return Billing configuration for public IP, only applicable to public instances.
      * 
      */
     public Output<LoadBalancerEipBillingConfig> eipBillingConfig() {
         return this.eipBillingConfig;
     }
     /**
-     * 全球加速器配置，用于提升跨地域访问速度。
+     * Global accelerator configuration, used to improve cross-region access speed.
      * 
      */
     @Export(name="globalAccelerator", refs={LoadBalancerGlobalAccelerator.class}, tree="[0]")
     private Output<LoadBalancerGlobalAccelerator> globalAccelerator;
 
     /**
-     * @return 全球加速器配置，用于提升跨地域访问速度。
+     * @return Global accelerator configuration, used to improve cross-region access speed.
      * 
      */
     public Output<LoadBalancerGlobalAccelerator> globalAccelerator() {
         return this.globalAccelerator;
     }
     /**
-     * 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+     * When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
      * 
      */
     @Export(name="ipv6BandwidthPackageId", refs={String.class}, tree="[0]")
     private Output<String> ipv6BandwidthPackageId;
 
     /**
-     * @return 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+     * @return When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
      * 
      */
     public Output<String> ipv6BandwidthPackageId() {
         return this.ipv6BandwidthPackageId;
     }
     /**
-     * IPv6公网IP的计費配置，仅适用于公网实例。
+     * Billing configuration for IPv6 public IP, only applicable to public instances.
      * 
      */
     @Export(name="ipv6EipBillingConfig", refs={LoadBalancerIpv6EipBillingConfig.class}, tree="[0]")
     private Output<LoadBalancerIpv6EipBillingConfig> ipv6EipBillingConfig;
 
     /**
-     * @return IPv6公网IP的计費配置，仅适用于公网实例。
+     * @return Billing configuration for IPv6 public IP, only applicable to public instances.
      * 
      */
     public Output<LoadBalancerIpv6EipBillingConfig> ipv6EipBillingConfig() {
         return this.ipv6EipBillingConfig;
     }
     /**
-     * ALB实例计费类型，当前仅支持按量计费（取值为1）。
+     * ALB instance billing type. Currently, only pay-as-you-go is supported (value is 1).
      * 
      */
     @Export(name="loadBalancerBillingType", refs={Integer.class}, tree="[0]")
     private Output<Integer> loadBalancerBillingType;
 
     /**
-     * @return ALB实例计费类型，当前仅支持按量计费（取值为1）。
+     * @return ALB instance billing type. Currently, only pay-as-you-go is supported (value is 1).
      * 
      */
     public Output<Integer> loadBalancerBillingType() {
         return this.loadBalancerBillingType;
     }
     /**
-     * 应用型负载均衡的版本。Basic：基础版；Standard：标准版。
+     * Version of the application load balancer. Basic: Basic version; Standard: Standard version.
      * 
      */
     @Export(name="loadBalancerEdition", refs={String.class}, tree="[0]")
     private Output<String> loadBalancerEdition;
 
     /**
-     * @return 应用型负载均衡的版本。Basic：基础版；Standard：标准版。
+     * @return Version of the application load balancer. Basic: Basic version; Standard: Standard version.
      * 
      */
     public Output<String> loadBalancerEdition() {
         return this.loadBalancerEdition;
     }
     /**
-     * ALB 实例 ID。
+     * ALB instance ID.
      * 
      */
     @Export(name="loadBalancerId", refs={String.class}, tree="[0]")
     private Output<String> loadBalancerId;
 
     /**
-     * @return ALB 实例 ID。
+     * @return ALB instance ID.
      * 
      */
     public Output<String> loadBalancerId() {
         return this.loadBalancerId;
     }
     /**
-     * ALB 实例的名称。
+     * Name of the ALB instance.
      * 
      */
     @Export(name="loadBalancerName", refs={String.class}, tree="[0]")
     private Output<String> loadBalancerName;
 
     /**
-     * @return ALB 实例的名称。
+     * @return Name of the ALB instance.
      * 
      */
     public Output<String> loadBalancerName() {
         return this.loadBalancerName;
     }
     /**
-     * ALB 实例被冻结的原因，例如 Financial（欠费）或 Security（安全原因）。仅在实例被锁定时返回。
+     * Reason for ALB instance freeze, such as Financial (arrears) or Security (security reasons). Returned only when the instance is locked.
      * 
      */
     @Export(name="lockReason", refs={String.class}, tree="[0]")
     private Output<String> lockReason;
 
     /**
-     * @return ALB 实例被冻结的原因，例如 Financial（欠费）或 Security（安全原因）。仅在实例被锁定时返回。
+     * @return Reason for ALB instance freeze, such as Financial (arrears) or Security (security reasons). Returned only when the instance is locked.
      * 
      */
     public Output<String> lockReason() {
         return this.lockReason;
     }
     /**
-     * 修改保护原因。仅在 ModificationProtectionStatus 为 ConsoleProtection 时，该参数有效且合法。
+     * Reason for modification protection. This parameter is valid and legitimate only when ModificationProtectionStatus is ConsoleProtection.
      * 
      */
     @Export(name="modificationProtectionReason", refs={String.class}, tree="[0]")
     private Output<String> modificationProtectionReason;
 
     /**
-     * @return 修改保护原因。仅在 ModificationProtectionStatus 为 ConsoleProtection 时，该参数有效且合法。
+     * @return Reason for modification protection. This parameter is valid and legitimate only when ModificationProtectionStatus is ConsoleProtection.
      * 
      */
     public Output<String> modificationProtectionReason() {
         return this.modificationProtectionReason;
     }
     /**
-     * 修改保护状态。NonProtection：不保护；ConsoleProtection：控制台修改保护，通过控制台无法修改实例配置。
+     * Modification protection status. NonProtection: Not protected; ConsoleProtection: Console modification protection, instance configuration cannot be modified through the console.
      * 
      */
     @Export(name="modificationProtectionStatus", refs={String.class}, tree="[0]")
     private Output<String> modificationProtectionStatus;
 
     /**
-     * @return 修改保护状态。NonProtection：不保护；ConsoleProtection：控制台修改保护，通过控制台无法修改实例配置。
+     * @return Modification protection status. NonProtection: Not protected; ConsoleProtection: Console modification protection, instance configuration cannot be modified through the console.
      * 
      */
     public Output<String> modificationProtectionStatus() {
         return this.modificationProtectionStatus;
     }
     /**
-     * ALB 实例的冻结时间。该参数只有实例处于 FinancialLocked 状态时有返回值。
+     * Freeze time of the ALB instance. This parameter is only returned when the instance is in the FinancialLocked state.
      * 
      */
     @Export(name="overdueTime", refs={String.class}, tree="[0]")
     private Output<String> overdueTime;
 
     /**
-     * @return ALB 实例的冻结时间。该参数只有实例处于 FinancialLocked 状态时有返回值。
+     * @return Freeze time of the ALB instance. This parameter is only returned when the instance is in the FinancialLocked state.
      * 
      */
     public Output<String> overdueTime() {
         return this.overdueTime;
     }
     /**
-     * 实例所属项目名称。
+     * Name of the project to which the instance belongs.
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 实例所属项目名称。
+     * @return Name of the project to which the instance belongs.
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+     * ALB supports the Proxy Protocol and records the client&#39;s real IP.
      * 
      */
     @Export(name="proxyProtocolEnabled", refs={String.class}, tree="[0]")
     private Output<String> proxyProtocolEnabled;
 
     /**
-     * @return ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+     * @return ALB supports the Proxy Protocol and records the client&#39;s real IP.
      * 
      */
     public Output<String> proxyProtocolEnabled() {
         return this.proxyProtocolEnabled;
     }
     /**
-     * ALB 实例状态：Active（运行中）、Provisioning（创建中）、Configuring（配置中）、Deleting（删除中）、CreateFailed（创建失败）、Inactive（已停止）。
+     * ALB instance status: Active (running), Provisioning (creating), Configuring (configuring), Deleting (deleting), CreateFailed (creation failed), Inactive (stopped).
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return ALB 实例状态：Active（运行中）、Provisioning（创建中）、Configuring（配置中）、Deleting（删除中）、CreateFailed（创建失败）、Inactive（已停止）。
+     * @return ALB instance status: Active (running), Provisioning (creating), Configuring (configuring), Deleting (deleting), CreateFailed (creation failed), Inactive (stopped).
      * 
      */
     public Output<String> status() {
@@ -366,84 +366,84 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * ALB 实例的类型。取值是 public 或 private 。public：表示创建一个公网负载均衡实例，系统会分配一个公网IP地址和一个私网IP地址，可用于转发公网请求和私网请求。private：表示创建一个私网负载均衡实例，系统会分配一个私网IP地址，仅用于转发私网请求。
+     * Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
      * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
-     * @return ALB 实例的类型。取值是 public 或 private 。public：表示创建一个公网负载均衡实例，系统会分配一个公网IP地址和一个私网IP地址，可用于转发公网请求和私网请求。private：表示创建一个私网负载均衡实例，系统会分配一个私网IP地址，仅用于转发私网请求。
+     * @return Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
      * 
      */
     public Output<String> type() {
         return this.type;
     }
     /**
-     * ALB 实例的最后更新时间。
+     * Last update time of the ALB instance.
      * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
-     * @return ALB 实例的最后更新时间。
+     * @return Last update time of the ALB instance.
      * 
      */
     public Output<String> updateTime() {
         return this.updateTime;
     }
     /**
-     * 负载均衡实例所属的私有网络（VPC）的ID。
+     * ID of the Virtual Private Cloud (VPC) to which the load balancer instance belongs.
      * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
-     * @return 负载均衡实例所属的私有网络（VPC）的ID。
+     * @return ID of the Virtual Private Cloud (VPC) to which the load balancer instance belongs.
      * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
-     * ALB 实例绑定的 WAF 安全防护实例 ID。
+     * ID of the WAF security protection instance bound to the ALB instance.
      * 
      */
     @Export(name="wafInstanceId", refs={String.class}, tree="[0]")
     private Output<String> wafInstanceId;
 
     /**
-     * @return ALB 实例绑定的 WAF 安全防护实例 ID。
+     * @return ID of the WAF security protection instance bound to the ALB instance.
      * 
      */
     public Output<String> wafInstanceId() {
         return this.wafInstanceId;
     }
     /**
-     * WAF防护的域名，用于精确匹配防护规则。
+     * Domain name protected by WAF, used for precise rule matching.
      * 
      */
     @Export(name="wafProtectedDomain", refs={String.class}, tree="[0]")
     private Output<String> wafProtectedDomain;
 
     /**
-     * @return WAF防护的域名，用于精确匹配防护规则。
+     * @return Domain name protected by WAF, used for precise rule matching.
      * 
      */
     public Output<String> wafProtectedDomain() {
         return this.wafProtectedDomain;
     }
     /**
-     * WAF 安全防护开关。on：开启；off：关闭。
+     * WAF security protection switch. on: enabled; off: disabled.
      * 
      */
     @Export(name="wafProtectionEnabled", refs={String.class}, tree="[0]")
     private Output<String> wafProtectionEnabled;
 
     /**
-     * @return WAF 安全防护开关。on：开启；off：关闭。
+     * @return WAF security protection switch. on: enabled; off: disabled.
      * 
      */
     public Output<String> wafProtectionEnabled() {

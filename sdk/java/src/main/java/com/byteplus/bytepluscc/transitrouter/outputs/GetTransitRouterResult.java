@@ -16,42 +16,42 @@ import java.util.Objects;
 @CustomType
 public final class GetTransitRouterResult {
     /**
-     * @return 中转路由器的ASN号。取值范围为64512 ～ 65534 和 4200000000 ～ 4294967294，默认值为64512。
+     * @return ASN of the transit router. Value range: 64512–65534 and 4200000000–4294967294. Default value: 64512
      * 
      */
     private Integer asn;
     /**
-     * @return 网络实例连接的详细信息。
+     * @return Detailed information of the network instance connection
      * 
      */
     private List<GetTransitRouterAttachment> attachments;
     /**
-     * @return 网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
+     * @return Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
      * 
      */
     private String businessStatus;
     /**
-     * @return 网络实例连接的创建时间。
+     * @return Creation time of the network instance connection.
      * 
      */
     private String creationTime;
     /**
-     * @return 网络实例连接的删除时间。
+     * @return Deletion time of the network instance connection.
      * 
      */
     private String deletedTime;
     /**
-     * @return 中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * @return Description of the transit router instance. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is entered, the default is an empty string
      * 
      */
     private String description;
     /**
-     * @return 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+     * @return Sharing method of the transit router instance. rs: Shared via platform resource sharing. tr: Shared via transit router instance sharing
      * 
      */
     private String grantSourceType;
     /**
-     * @return 实例共享的状态。Accepted：已接受。Initial：待接受。
+     * @return Instance sharing status. Accepted: Received. Initial: Pending acceptance.
      * 
      */
     private String grantStatus;
@@ -61,98 +61,98 @@ public final class GetTransitRouterResult {
      */
     private String id;
     /**
-     * @return 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+     * @return Whether multicast is enabled for the transit router. true: enabled. false (default): not enabled
      * 
      */
     private Boolean multicastEnabled;
     /**
-     * @return 中转路由器实例的欠费关停时间。
+     * @return Shutdown time due to overdue payment for the transit router instance
      * 
      */
     private String overdueTime;
     /**
-     * @return 中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
+     * @return Name of the project to which the transit router instance belongs. If this parameter is not provided or no value is entered, the default is &#39;default&#39;
      * 
      */
     private String projectName;
     /**
-     * @return 中转路由器实例的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+     * @return Status of the transit router instance. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
      * 
      */
     private String status;
     /**
-     * @return 标签列表
+     * @return Tag list
      * 
      */
     private List<GetTransitRouterTag> tags;
     /**
-     * @return 中转路由器实例的ID。
+     * @return Transit router instance ID.
      * 
      */
     private String transitRouterId;
     /**
-     * @return 中转路由器实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为中转路由器实例的ID。
+     * @return Name of the transit router instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
      * 
      */
     private String transitRouterName;
     /**
-     * @return 中转路由器实例的最近操作时间。
+     * @return Last operation time of the transit router instance
      * 
      */
     private String updateTime;
 
     private GetTransitRouterResult() {}
     /**
-     * @return 中转路由器的ASN号。取值范围为64512 ～ 65534 和 4200000000 ～ 4294967294，默认值为64512。
+     * @return ASN of the transit router. Value range: 64512–65534 and 4200000000–4294967294. Default value: 64512
      * 
      */
     public Integer asn() {
         return this.asn;
     }
     /**
-     * @return 网络实例连接的详细信息。
+     * @return Detailed information of the network instance connection
      * 
      */
     public List<GetTransitRouterAttachment> attachments() {
         return this.attachments;
     }
     /**
-     * @return 网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
+     * @return Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
      * 
      */
     public String businessStatus() {
         return this.businessStatus;
     }
     /**
-     * @return 网络实例连接的创建时间。
+     * @return Creation time of the network instance connection.
      * 
      */
     public String creationTime() {
         return this.creationTime;
     }
     /**
-     * @return 网络实例连接的删除时间。
+     * @return Deletion time of the network instance connection.
      * 
      */
     public String deletedTime() {
         return this.deletedTime;
     }
     /**
-     * @return 中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * @return Description of the transit router instance. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is entered, the default is an empty string
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 中转路由器实例的共享方式。rs：通过平台资源共享功能共享。tr：通过中转路由器实例共享功能共享。
+     * @return Sharing method of the transit router instance. rs: Shared via platform resource sharing. tr: Shared via transit router instance sharing
      * 
      */
     public String grantSourceType() {
         return this.grantSourceType;
     }
     /**
-     * @return 实例共享的状态。Accepted：已接受。Initial：待接受。
+     * @return Instance sharing status. Accepted: Received. Initial: Pending acceptance.
      * 
      */
     public String grantStatus() {
@@ -166,56 +166,56 @@ public final class GetTransitRouterResult {
         return this.id;
     }
     /**
-     * @return 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+     * @return Whether multicast is enabled for the transit router. true: enabled. false (default): not enabled
      * 
      */
     public Boolean multicastEnabled() {
         return this.multicastEnabled;
     }
     /**
-     * @return 中转路由器实例的欠费关停时间。
+     * @return Shutdown time due to overdue payment for the transit router instance
      * 
      */
     public String overdueTime() {
         return this.overdueTime;
     }
     /**
-     * @return 中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
+     * @return Name of the project to which the transit router instance belongs. If this parameter is not provided or no value is entered, the default is &#39;default&#39;
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 中转路由器实例的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+     * @return Status of the transit router instance. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 标签列表
+     * @return Tag list
      * 
      */
     public List<GetTransitRouterTag> tags() {
         return this.tags;
     }
     /**
-     * @return 中转路由器实例的ID。
+     * @return Transit router instance ID.
      * 
      */
     public String transitRouterId() {
         return this.transitRouterId;
     }
     /**
-     * @return 中转路由器实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为中转路由器实例的ID。
+     * @return Name of the transit router instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
      * 
      */
     public String transitRouterName() {
         return this.transitRouterName;
     }
     /**
-     * @return 中转路由器实例的最近操作时间。
+     * @return Last operation time of the transit router instance
      * 
      */
     public String updateTime() {

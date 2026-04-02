@@ -15,23 +15,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud.Outputs
     public sealed class GetInstanceTransferInfoReduceSpecConfigResult
     {
         /// <summary>
-        /// 冷节点数量。
+        /// Number of cold nodes.
         /// </summary>
         public readonly int ColdNodeNum;
         /// <summary>
-        /// 数据节点数量。
+        /// Number of data nodes
         /// </summary>
         public readonly int DataNodeNum;
         /// <summary>
-        /// Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即用 Hot 来声明。
+        /// Whether the master node is independent. true: Master node is independent. false: Master node overlaps with data node, declared as Hot
         /// </summary>
         public readonly bool EnablePureMaster;
         /// <summary>
-        /// Master 节点数量。
+        /// Number of master nodes.
         /// </summary>
         public readonly int MasterNodeNum;
         /// <summary>
-        /// 温节点数量。
+        /// Number of warm nodes
         /// </summary>
         public readonly int WarmNodeNum;
 

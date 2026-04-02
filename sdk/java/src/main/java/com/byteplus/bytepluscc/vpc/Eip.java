@@ -18,7 +18,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 公网IP（Elastic IP Address，EIP）及其公网出口带宽，是火山引擎为云资源提供的可独立购买和持有的IP连通服务。公网IP支持直接绑定云服务器（包括ECS云服务器、EBM裸金属服务器、GPU云服务器），还支持绑定公网NAT网关、负载均衡、辅助网卡等组件，为云服务器提供公网互通能力。
+ * Public IP (Elastic IP Address, EIP) and its public outbound bandwidth are IP connectivity services provided by Volcano Engine for cloud resources, which can be purchased and held independently. Public IP supports direct binding to cloud servers (including ECS cloud servers, EBM bare metal servers, GPU cloud servers), and also supports binding to public NAT gateways, load balancers, and secondary network interfaces, providing public network connectivity for cloud servers.
  * 
  * ## Example Usage
  * 
@@ -80,434 +80,434 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:vpc/eip:Eip")
 public class Eip extends com.pulumi.resources.CustomResource {
     /**
-     * 公网IP的ID。
+     * Public IP ID.
      * 
      */
     @Export(name="allocationId", refs={String.class}, tree="[0]")
     private Output<String> allocationId;
 
     /**
-     * @return 公网IP的ID。
+     * @return Public IP ID.
      * 
      */
     public Output<String> allocationId() {
         return this.allocationId;
     }
     /**
-     * 公网IP的带宽上限，默认为“1”，单位：Mbps,BillingType传入1：取值范围1 ~ 500。BillingType传入2：取值范围1 ~ 500。BillingType传入3：取值范围1 ~ 200。
+     * Maximum bandwidth of the public IP. Default is &#39;1&#39;, unit: Mbps. If BillingType is 1: range is 1~500. If BillingType is 2: range is 1~500. If BillingType is 3: range is 1~200.
      * 
      */
     @Export(name="bandwidth", refs={Integer.class}, tree="[0]")
     private Output<Integer> bandwidth;
 
     /**
-     * @return 公网IP的带宽上限，默认为“1”，单位：Mbps,BillingType传入1：取值范围1 ~ 500。BillingType传入2：取值范围1 ~ 500。BillingType传入3：取值范围1 ~ 200。
+     * @return Maximum bandwidth of the public IP. Default is &#39;1&#39;, unit: Mbps. If BillingType is 1: range is 1~500. If BillingType is 2: range is 1~500. If BillingType is 3: range is 1~200.
      * 
      */
     public Output<Integer> bandwidth() {
         return this.bandwidth;
     }
     /**
-     * 共享带宽包的ID，表示将公网IP加入到共享带宽包。公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的地域相同。公网IP的计费方式必须是按量计费。共享带宽包为IPv4类型。
+     * Shared bandwidth package ID, indicating the public IP is added to a shared bandwidth package. To add a public IP to a shared bandwidth package, the following conditions must be met: Both have the same security protection type. Both are in the same region. The public IP must use pay-as-you-go billing. The shared bandwidth package must be IPv4 type.
      * 
      */
     @Export(name="bandwidthPackageId", refs={String.class}, tree="[0]")
     private Output<String> bandwidthPackageId;
 
     /**
-     * @return 共享带宽包的ID，表示将公网IP加入到共享带宽包。公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的地域相同。公网IP的计费方式必须是按量计费。共享带宽包为IPv4类型。
+     * @return Shared bandwidth package ID, indicating the public IP is added to a shared bandwidth package. To add a public IP to a shared bandwidth package, the following conditions must be met: Both have the same security protection type. Both are in the same region. The public IP must use pay-as-you-go billing. The shared bandwidth package must be IPv4 type.
      * 
      */
     public Output<String> bandwidthPackageId() {
         return this.bandwidthPackageId;
     }
     /**
-     * 公网IP的计费方式。取值如下：1：包年包月。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+     * Billing method for public IP. Values: 1: annual/monthly. 2: pay-as-you-go   - based on bandwidth cap. 3: pay-as-you-go   - based on actual traffic.
      * 
      */
     @Export(name="billingType", refs={Integer.class}, tree="[0]")
     private Output<Integer> billingType;
 
     /**
-     * @return 公网IP的计费方式。取值如下：1：包年包月。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+     * @return Billing method for public IP. Values: 1: annual/monthly. 2: pay-as-you-go   - based on bandwidth cap. 3: pay-as-you-go   - based on actual traffic.
      * 
      */
     public Output<Integer> billingType() {
         return this.billingType;
     }
     /**
-     * 公网IP是否被锁定。Normal: 正常。FinancialLocked: 被锁定。
+     * Whether the public IP is locked. Normal: normal. FinancialLocked: locked.
      * 
      */
     @Export(name="businessStatus", refs={String.class}, tree="[0]")
     private Output<String> businessStatus;
 
     /**
-     * @return 公网IP是否被锁定。Normal: 正常。FinancialLocked: 被锁定。
+     * @return Whether the public IP is locked. Normal: normal. FinancialLocked: locked.
      * 
      */
     public Output<String> businessStatus() {
         return this.businessStatus;
     }
     /**
-     * 公网IP的创建时间。
+     * Creation time of the public IP.
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 公网IP的创建时间。
+     * @return Creation time of the public IP.
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 预期资源强制回收时间。包年包月公网IP，此参数有返回值。按量计费公网IP，仅欠费冻结时，此参数有返回值。
+     * Expected forced resource recycle time. For subscription public IPs, this parameter returns a value. For pay-as-you-go public IPs, this parameter returns a value only when frozen due to overdue payment.
      * 
      */
     @Export(name="deletedTime", refs={String.class}, tree="[0]")
     private Output<String> deletedTime;
 
     /**
-     * @return 预期资源强制回收时间。包年包月公网IP，此参数有返回值。按量计费公网IP，仅欠费冻结时，此参数有返回值。
+     * @return Expected forced resource recycle time. For subscription public IPs, this parameter returns a value. For pay-as-you-go public IPs, this parameter returns a value only when frozen due to overdue payment.
      * 
      */
     public Output<String> deletedTime() {
         return this.deletedTime;
     }
     /**
-     * 公网IP的描述信息。
+     * Description of the public IP.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 公网IP的描述信息。
+     * @return Description of the public IP.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 绑定公网IP时是否启用直通模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。false（默认）：不使用直通模式。true：使用直通模式。
+     * Whether to enable passthrough mode when binding public IP. Enter the following enum values exactly as shown; do not use other values. false (default): passthrough mode not enabled. true: passthrough mode enabled.
      * 
      */
     @Export(name="directMode", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> directMode;
 
     /**
-     * @return 绑定公网IP时是否启用直通模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。false（默认）：不使用直通模式。true：使用直通模式。
+     * @return Whether to enable passthrough mode when binding public IP. Enter the following enum values exactly as shown; do not use other values. false (default): passthrough mode not enabled. true: passthrough mode enabled.
      * 
      */
     public Output<Boolean> directMode() {
         return this.directMode;
     }
     /**
-     * 公网IP地址。
+     * Public IP address.
      * 
      */
     @Export(name="eipAddress", refs={String.class}, tree="[0]")
     private Output<String> eipAddress;
 
     /**
-     * @return 公网IP地址。
+     * @return Public IP address.
      * 
      */
     public Output<String> eipAddress() {
         return this.eipAddress;
     }
     /**
-     * 公网IP的到期时间。包年包月，返回值为到期时间。按量计费，返回值为空。
+     * Expiration time of the public IP. For subscription billing, the return value is the expiration time. For pay-as-you-go billing, the return value is empty.
      * 
      */
     @Export(name="expiredTime", refs={String.class}, tree="[0]")
     private Output<String> expiredTime;
 
     /**
-     * @return 公网IP的到期时间。包年包月，返回值为到期时间。按量计费，返回值为空。
+     * @return Expiration time of the public IP. For subscription billing, the return value is the expiration time. For pay-as-you-go billing, the return value is empty.
      * 
      */
     public Output<String> expiredTime() {
         return this.expiredTime;
     }
     /**
-     * 当前绑定的实例ID。
+     * Currently bound instance ID.
      * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
-     * @return 当前绑定的实例ID。
+     * @return Currently bound instance ID.
      * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
-     * 当前绑定的实例类型。Nat：公网NAT网关。NetworkInterface: 弹性网卡。ClbInstance: 负载均衡。EcsInstance：云服务器。HaVip：高可用虚拟IP。
+     * Current bound instance type. Nat: public NAT gateway. NetworkInterface: elastic network interface. ClbInstance: load balancer. EcsInstance: cloud server. HaVip: high availability virtual IP.
      * 
      */
     @Export(name="instanceType", refs={String.class}, tree="[0]")
     private Output<String> instanceType;
 
     /**
-     * @return 当前绑定的实例类型。Nat：公网NAT网关。NetworkInterface: 弹性网卡。ClbInstance: 负载均衡。EcsInstance：云服务器。HaVip：高可用虚拟IP。
+     * @return Current bound instance type. Nat: public NAT gateway. NetworkInterface: elastic network interface. ClbInstance: load balancer. EcsInstance: cloud server. HaVip: high availability virtual IP.
      * 
      */
     public Output<String> instanceType() {
         return this.instanceType;
     }
     /**
-     * 申请申请指定的公网IP地址。仅支持填写使用后释放的IP地址，不填则表示自动分配。指定的公网IP地址
+     * Apply for a specified public IP address. Only supports entering IP addresses that have been released after use; if not specified, the IP address is assigned automatically. Specified public IP address
      * 
      */
     @Export(name="ipAddress", refs={String.class}, tree="[0]")
     private Output<String> ipAddress;
 
     /**
-     * @return 申请申请指定的公网IP地址。仅支持填写使用后释放的IP地址，不填则表示自动分配。指定的公网IP地址
+     * @return Apply for a specified public IP address. Only supports entering IP addresses that have been released after use; if not specified, the IP address is assigned automatically. Specified public IP address
      * 
      */
     public Output<String> ipAddress() {
         return this.ipAddress;
     }
     /**
-     * IP地址池的ID。
+     * IP address pool ID.
      * 
      */
     @Export(name="ipAddressPoolId", refs={String.class}, tree="[0]")
     private Output<String> ipAddressPoolId;
 
     /**
-     * @return IP地址池的ID。
+     * @return IP address pool ID.
      * 
      */
     public Output<String> ipAddressPoolId() {
         return this.ipAddressPoolId;
     }
     /**
-     * 是否被封禁。true：是。false：否。
+     * Whether it is blocked. true: yes. false: no.
      * 
      */
     @Export(name="isBlocked", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isBlocked;
 
     /**
-     * @return 是否被封禁。true：是。false：否。
+     * @return Whether it is blocked. true: yes. false: no.
      * 
      */
     public Output<Boolean> isBlocked() {
         return this.isBlocked;
     }
     /**
-     * 线路类型。BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：中国电信静态单线。ChinaUnicom：中国联通静态单线。SingleLine*BGP：BGP单线。Fusion*BGP：融合BGP。ChinaMobile*Value：中国移动惠选型静态单线。ChinaUnicom*Value：中国联通惠选型静态单线。ChinaTelecom_Value：中国电信惠选型静态单线。
+     * Line type. BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line. SingleLine*BGP: BGP single line. Fusion*BGP: Fusion BGP. ChinaMobile*Value: China Mobile Value static single line. ChinaUnicom*Value: China Unicom Value static single line. ChinaTelecom_Value: China Telecom Value static single line.
      * 
      */
     @Export(name="isp", refs={String.class}, tree="[0]")
     private Output<String> isp;
 
     /**
-     * @return 线路类型。BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：中国电信静态单线。ChinaUnicom：中国联通静态单线。SingleLine*BGP：BGP单线。Fusion*BGP：融合BGP。ChinaMobile*Value：中国移动惠选型静态单线。ChinaUnicom*Value：中国联通惠选型静态单线。ChinaTelecom_Value：中国电信惠选型静态单线。
+     * @return Line type. BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line. SingleLine*BGP: BGP single line. Fusion*BGP: Fusion BGP. ChinaMobile*Value: China Mobile Value static single line. ChinaUnicom*Value: China Unicom Value static single line. ChinaTelecom_Value: China Telecom Value static single line.
      * 
      */
     public Output<String> isp() {
         return this.isp;
     }
     /**
-     * 公网IP被锁定的原因。financial: 因欠费被锁定。unlock: 欠费关停后充值恢复过程中。空值 : 没有被锁定。
+     * Reason for public IP lock. financial: locked due to overdue payment. unlock: restoring after recharge following suspension for overdue payment. Empty value: not locked.
      * 
      */
     @Export(name="lockReason", refs={String.class}, tree="[0]")
     private Output<String> lockReason;
 
     /**
-     * @return 公网IP被锁定的原因。financial: 因欠费被锁定。unlock: 欠费关停后充值恢复过程中。空值 : 没有被锁定。
+     * @return Reason for public IP lock. financial: locked due to overdue payment. unlock: restoring after recharge following suspension for overdue payment. Empty value: not locked.
      * 
      */
     public Output<String> lockReason() {
         return this.lockReason;
     }
     /**
-     * 公网IP的名称。
+     * Name of the public IP.
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return 公网IP的名称。
+     * @return Name of the public IP.
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值。
+     * Resource freeze time. This parameter returns a value only when the resource is frozen due to overdue payment.
      * 
      */
     @Export(name="overdueTime", refs={String.class}, tree="[0]")
     private Output<String> overdueTime;
 
     /**
-     * @return 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值。
+     * @return Resource freeze time. This parameter returns a value only when the resource is frozen due to overdue payment.
      * 
      */
     public Output<String> overdueTime() {
         return this.overdueTime;
     }
     /**
-     * 代表购买包年包月公网IP的时长时，默认为“1”。当PeriodUnit传入1，Period取值范围：1~9、12、24、36、48、60。当PeriodUnit传入2，Period取值范围：1～5。代表临时升配的时长时：单位为小时，取值范围：1～720。
+     * When representing the duration for purchasing a subscription public IP, the default is &#39;1&#39;. If PeriodUnit is set to 1, Period can be 1~9, 12, 24, 36, 48, or 60. If PeriodUnit is set to 2, Period can be 1~5. When representing the duration for temporary upgrade, the unit is hours, and the range is 1~720.
      * 
      */
     @Export(name="period", refs={Integer.class}, tree="[0]")
     private Output<Integer> period;
 
     /**
-     * @return 代表购买包年包月公网IP的时长时，默认为“1”。当PeriodUnit传入1，Period取值范围：1~9、12、24、36、48、60。当PeriodUnit传入2，Period取值范围：1～5。代表临时升配的时长时：单位为小时，取值范围：1～720。
+     * @return When representing the duration for purchasing a subscription public IP, the default is &#39;1&#39;. If PeriodUnit is set to 1, Period can be 1~9, 12, 24, 36, 48, or 60. If PeriodUnit is set to 2, Period can be 1~5. When representing the duration for temporary upgrade, the unit is hours, and the range is 1~720.
      * 
      */
     public Output<Integer> period() {
         return this.period;
     }
     /**
-     * 购买包年包月公网IP时长的单位。取值如下：1（默认值）：月。2 ：年。
+     * Unit for the duration when purchasing annual/monthly public IP. Values: 1 (default): month. 2: year.
      * 
      */
     @Export(name="periodUnit", refs={Integer.class}, tree="[0]")
     private Output<Integer> periodUnit;
 
     /**
-     * @return 购买包年包月公网IP时长的单位。取值如下：1（默认值）：月。2 ：年。
+     * @return Unit for the duration when purchasing annual/monthly public IP. Values: 1 (default): month. 2: year.
      * 
      */
     public Output<Integer> periodUnit() {
         return this.periodUnit;
     }
     /**
-     * 要绑定公网IP的实例的私网IP地址。只支持传入云服务ECS主网卡的私网IP地址和辅助网卡IP地址。若不填写：InstanceType传入EcsInstance，则绑定云服务器ECS主网卡的主私网IP地址。InstanceType传入NetworkInterface，则绑定辅助网卡主私网IP地址。
+     * Private IP address of the instance to bind the public IP to. Only ECS primary network interface private IP addresses and secondary network interface IP addresses are supported. If not specified: If InstanceType is EcsInstance, binds to the primary private IP address of the ECS primary network interface. If InstanceType is NetworkInterface, binds to the primary private IP address of the secondary network interface.
      * 
      */
     @Export(name="privateIpAddress", refs={String.class}, tree="[0]")
     private Output<String> privateIpAddress;
 
     /**
-     * @return 要绑定公网IP的实例的私网IP地址。只支持传入云服务ECS主网卡的私网IP地址和辅助网卡IP地址。若不填写：InstanceType传入EcsInstance，则绑定云服务器ECS主网卡的主私网IP地址。InstanceType传入NetworkInterface，则绑定辅助网卡主私网IP地址。
+     * @return Private IP address of the instance to bind the public IP to. Only ECS primary network interface private IP addresses and secondary network interface IP addresses are supported. If not specified: If InstanceType is EcsInstance, binds to the primary private IP address of the ECS primary network interface. If InstanceType is NetworkInterface, binds to the primary private IP address of the secondary network interface.
      * 
      */
     public Output<String> privateIpAddress() {
         return this.privateIpAddress;
     }
     /**
-     * 公网IP所属项目的名称。
+     * Name of the project to which the public IP belongs.
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 公网IP所属项目的名称。
+     * @return Name of the project to which the public IP belongs.
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 是否随云服务器实例删除。仅按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放。true：是。false：否。
+     * Whether to release the public IP when the cloud server instance is deleted. Only valid for pay-as-you-go public IPs. When enabled, the public IP is released together with the instance when the system automatically recycles the instance (24 hours after unsubscription, upon expiration, or due to overdue payment) or when the DeleteInstances API is called. true: yes. false: no.
      * 
      */
     @Export(name="releaseWithInstance", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> releaseWithInstance;
 
     /**
-     * @return 是否随云服务器实例删除。仅按量计费公网IP有效。开启后，当云服务器实例被系统自动回收（退订24小时后、到期回收、欠费回收）或被调用DeleteInstances接口时，公网IP随其一同释放。true：是。false：否。
+     * @return Whether to release the public IP when the cloud server instance is deleted. Only valid for pay-as-you-go public IPs. When enabled, the public IP is released together with the instance when the system automatically recycles the instance (24 hours after unsubscription, upon expiration, or due to overdue payment) or when the DeleteInstances API is called. true: yes. false: no.
      * 
      */
     public Output<Boolean> releaseWithInstance() {
         return this.releaseWithInstance;
     }
     /**
-     * 自动续费的时长，取值范围1、2、3、6、12，单位：月。若RenewType传入2，则必须传入RenewPeriodTimes
+     * Duration for automatic renewal. Valid values: 1, 2, 3, 6, 12. Unit: month. If RenewType is 2, RenewPeriodTimes must be specified.
      * 
      */
     @Export(name="renewPeriodTimes", refs={Integer.class}, tree="[0]")
     private Output<Integer> renewPeriodTimes;
 
     /**
-     * @return 自动续费的时长，取值范围1、2、3、6、12，单位：月。若RenewType传入2，则必须传入RenewPeriodTimes
+     * @return Duration for automatic renewal. Valid values: 1, 2, 3, 6, 12. Unit: month. If RenewType is 2, RenewPeriodTimes must be specified.
      * 
      */
     public Output<Integer> renewPeriodTimes() {
         return this.renewPeriodTimes;
     }
     /**
-     * 包年包月公网IP续费的方式。取值如下：1（默认值）：手动续费。2：自动续费。3：到期不续费。
+     * Renewal method for annual/monthly public IP. Values: 1 (default): manual renewal. 2: automatic renewal. 3: do not renew upon expiration.
      * 
      */
     @Export(name="renewType", refs={Integer.class}, tree="[0]")
     private Output<Integer> renewType;
 
     /**
-     * @return 包年包月公网IP续费的方式。取值如下：1（默认值）：手动续费。2：自动续费。3：到期不续费。
+     * @return Renewal method for annual/monthly public IP. Values: 1 (default): manual renewal. 2: automatic renewal. 3: do not renew upon expiration.
      * 
      */
     public Output<Integer> renewType() {
         return this.renewType;
     }
     /**
-     * DDoS原生防护（企业版）ID。您可以调用 DescInstanceList 接口，查询DDoS原生防护（企业版）的ID。当SecurityProtectionTypes传入AntiDDoS_Enhanced时，此参数必须传入。
+     * DDoS native protection (Enterprise Edition) ID. You can call the DescInstanceList API to query the ID of DDoS native protection (Enterprise Edition). When SecurityProtectionTypes is set to AntiDDoS_Enhanced, this parameter is required.
      * 
      */
     @Export(name="securityProtectionInstanceId", refs={Integer.class}, tree="[0]")
     private Output<Integer> securityProtectionInstanceId;
 
     /**
-     * @return DDoS原生防护（企业版）ID。您可以调用 DescInstanceList 接口，查询DDoS原生防护（企业版）的ID。当SecurityProtectionTypes传入AntiDDoS_Enhanced时，此参数必须传入。
+     * @return DDoS native protection (Enterprise Edition) ID. You can call the DescInstanceList API to query the ID of DDoS native protection (Enterprise Edition). When SecurityProtectionTypes is set to AntiDDoS_Enhanced, this parameter is required.
      * 
      */
     public Output<Integer> securityProtectionInstanceId() {
         return this.securityProtectionInstanceId;
     }
     /**
-     * 防护类型。AntiDDoS_Enhanced：增强防护类型的公网IP，可以加入到DDoS原生防护（企业版）实例。空值：默认防护类型的公网IP。
+     * Protection type. AntiDDoS_Enhanced: Public IPs with enhanced protection can be added to DDoS Native Protection (Enterprise Edition) instances. Null value: Public IPs with default protection type.
      * 
      */
     @Export(name="securityProtectionTypes", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> securityProtectionTypes;
 
     /**
-     * @return 防护类型。AntiDDoS_Enhanced：增强防护类型的公网IP，可以加入到DDoS原生防护（企业版）实例。空值：默认防护类型的公网IP。
+     * @return Protection type. AntiDDoS_Enhanced: Public IPs with enhanced protection can be added to DDoS Native Protection (Enterprise Edition) instances. Null value: Public IPs with default protection type.
      * 
      */
     public Output<List<String>> securityProtectionTypes() {
         return this.securityProtectionTypes;
     }
     /**
-     * 是否由服务管理
+     * Managed by service
      * 
      */
     @Export(name="serviceManaged", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> serviceManaged;
 
     /**
-     * @return 是否由服务管理
+     * @return Managed by service
      * 
      */
     public Output<Boolean> serviceManaged() {
         return this.serviceManaged;
     }
     /**
-     * 公网IP的状态。Attaching：绑定中。Detaching：解绑中。Attached：已绑定。Available：可用。Deleting：删除中。
+     * Status of the public IP. Attaching: binding in progress. Detaching: unbinding in progress. Attached: bound. Available: available. Deleting: deleting.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 公网IP的状态。Attaching：绑定中。Detaching：解绑中。Attached：已绑定。Available：可用。Deleting：删除中。
+     * @return Status of the public IP. Attaching: binding in progress. Detaching: unbinding in progress. Attached: bound. Available: available. Deleting: deleting.
      * 
      */
     public Output<String> status() {
@@ -520,14 +520,14 @@ public class Eip extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 更新公网IP的时间。
+     * Time when the public IP was updated.
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 更新公网IP的时间。
+     * @return Time when the public IP was updated.
      * 
      */
     public Output<String> updatedTime() {

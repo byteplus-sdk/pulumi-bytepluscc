@@ -17,14 +17,14 @@ public final class DbEndpointAddressArgs extends com.pulumi.resources.ResourceAr
     public static final DbEndpointAddressArgs Empty = new DbEndpointAddressArgs();
 
     /**
-     * 是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+     * Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
      * 
      */
     @Import(name="dnsVisibility")
     private @Nullable Output<Boolean> dnsVisibility;
 
     /**
-     * @return 是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+     * @return Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
      * 
      */
     public Optional<Output<Boolean>> dnsVisibility() {
@@ -32,14 +32,14 @@ public final class DbEndpointAddressArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+     * New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
      * 
      */
     @Import(name="domainPrefix")
     private @Nullable Output<String> domainPrefix;
 
     /**
-     * @return 新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+     * @return New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
      * 
      */
     public Optional<Output<String>> domainPrefix() {
@@ -47,14 +47,14 @@ public final class DbEndpointAddressArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 端口号。
+     * Port number.
      * 
      */
     @Import(name="port")
     private @Nullable Output<String> port;
 
     /**
-     * @return 端口号。
+     * @return Port number.
      * 
      */
     public Optional<Output<String>> port() {
@@ -88,7 +88,7 @@ public final class DbEndpointAddressArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param dnsVisibility 是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+         * @param dnsVisibility Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class DbEndpointAddressArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param dnsVisibility 是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+         * @param dnsVisibility Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class DbEndpointAddressArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param domainPrefix 新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+         * @param domainPrefix New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class DbEndpointAddressArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param domainPrefix 新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+         * @param domainPrefix New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class DbEndpointAddressArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param port 端口号。
+         * @param port Port number.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class DbEndpointAddressArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param port 端口号。
+         * @param port Port number.
          * 
          * @return builder
          * 

@@ -31,23 +31,23 @@ export interface GetAddonArgs {
  */
 export interface GetAddonResult {
     /**
-     * 组件所在集群 ID。
+     * Cluster ID where the component is located.
      */
     readonly clusterId: string;
     /**
-     * 组件配置。
+     * Component configuration.
      */
     readonly config: string;
     /**
-     * 安装组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+     * Component installation time. Standard RFC3339 format, UTC+0 time.
      */
     readonly createdTime: string;
     /**
-     * 组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
+     * Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
      */
     readonly deployMode: string;
     /**
-     * 部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
+     * Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
      */
     readonly deployNodeType: string;
     /**
@@ -55,19 +55,19 @@ export interface GetAddonResult {
      */
     readonly id: string;
     /**
-     * 组件名称。
+     * Component name.
      */
     readonly name: string;
     /**
-     * 组件状态。
+     * Component status.
      */
     readonly status: outputs.vke.GetAddonStatus;
     /**
-     * 更新组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+     * Component update time. Standard RFC3339 format, UTC+0 time.
      */
     readonly updatedTime: string;
     /**
-     * 组件版本。
+     * Component version.
      */
     readonly version: string;
 }

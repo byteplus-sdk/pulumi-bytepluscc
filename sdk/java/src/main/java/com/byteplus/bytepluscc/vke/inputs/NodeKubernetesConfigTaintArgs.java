@@ -16,14 +16,14 @@ public final class NodeKubernetesConfigTaintArgs extends com.pulumi.resources.Re
     public static final NodeKubernetesConfigTaintArgs Empty = new NodeKubernetesConfigTaintArgs();
 
     /**
-     * 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+     * Taint effect. Options: NoSchedule (default): Do not schedule. NoExecute: Evict Pods that do not tolerate the taint. PreferNoSchedule: Avoid scheduling if possible.
      * 
      */
     @Import(name="effect")
     private @Nullable Output<String> effect;
 
     /**
-     * @return 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+     * @return Taint effect. Options: NoSchedule (default): Do not schedule. NoExecute: Evict Pods that do not tolerate the taint. PreferNoSchedule: Avoid scheduling if possible.
      * 
      */
     public Optional<Output<String>> effect() {
@@ -31,14 +31,14 @@ public final class NodeKubernetesConfigTaintArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 污点键，有效的污点键有两个段：&lt;前缀&gt;和&lt;名称&gt;，用斜杠（/）分隔。&lt;名称&gt;是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。&lt;前缀&gt;是可选的。如果指定&lt;前缀&gt;，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。&lt;前缀&gt;和&lt;名称&gt;总长度不超过 82 个字符。
+     * Taint key. A valid taint key has two segments: \n\n and \n\n, separated by a slash (/). \n\n is required and supports English letters (case-sensitive), numbers, hyphen (-), underscore (_), and period (.), must start and end with a letter or number, and be no longer than 63 characters. \n\n is optional. If specified, \n\n must be a DNS subdomain: a series of DNS labels separated by periods (.), no longer than 253 characters. The total length of \n\n and \n\n must not exceed 82 characters.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 污点键，有效的污点键有两个段：&lt;前缀&gt;和&lt;名称&gt;，用斜杠（/）分隔。&lt;名称&gt;是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。&lt;前缀&gt;是可选的。如果指定&lt;前缀&gt;，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。&lt;前缀&gt;和&lt;名称&gt;总长度不超过 82 个字符。
+     * @return Taint key. A valid taint key has two segments: \n\n and \n\n, separated by a slash (/). \n\n is required and supports English letters (case-sensitive), numbers, hyphen (-), underscore (_), and period (.), must start and end with a letter or number, and be no longer than 63 characters. \n\n is optional. If specified, \n\n must be a DNS subdomain: a series of DNS labels separated by periods (.), no longer than 253 characters. The total length of \n\n and \n\n must not exceed 82 characters.
      * 
      */
     public Optional<Output<String>> key() {
@@ -46,14 +46,14 @@ public final class NodeKubernetesConfigTaintArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 污点值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+     * Taint value, up to 63 characters (can be empty). Must start and end with an English letter or number. Supports special characters: hyphen (-), underscore (_), and period (.).
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 污点值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+     * @return Taint value, up to 63 characters (can be empty). Must start and end with an English letter or number. Supports special characters: hyphen (-), underscore (_), and period (.).
      * 
      */
     public Optional<Output<String>> value() {
@@ -87,7 +87,7 @@ public final class NodeKubernetesConfigTaintArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param effect 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+         * @param effect Taint effect. Options: NoSchedule (default): Do not schedule. NoExecute: Evict Pods that do not tolerate the taint. PreferNoSchedule: Avoid scheduling if possible.
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class NodeKubernetesConfigTaintArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param effect 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+         * @param effect Taint effect. Options: NoSchedule (default): Do not schedule. NoExecute: Evict Pods that do not tolerate the taint. PreferNoSchedule: Avoid scheduling if possible.
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class NodeKubernetesConfigTaintArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param key 污点键，有效的污点键有两个段：&lt;前缀&gt;和&lt;名称&gt;，用斜杠（/）分隔。&lt;名称&gt;是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。&lt;前缀&gt;是可选的。如果指定&lt;前缀&gt;，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。&lt;前缀&gt;和&lt;名称&gt;总长度不超过 82 个字符。
+         * @param key Taint key. A valid taint key has two segments: \n\n and \n\n, separated by a slash (/). \n\n is required and supports English letters (case-sensitive), numbers, hyphen (-), underscore (_), and period (.), must start and end with a letter or number, and be no longer than 63 characters. \n\n is optional. If specified, \n\n must be a DNS subdomain: a series of DNS labels separated by periods (.), no longer than 253 characters. The total length of \n\n and \n\n must not exceed 82 characters.
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class NodeKubernetesConfigTaintArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param key 污点键，有效的污点键有两个段：&lt;前缀&gt;和&lt;名称&gt;，用斜杠（/）分隔。&lt;名称&gt;是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。&lt;前缀&gt;是可选的。如果指定&lt;前缀&gt;，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。&lt;前缀&gt;和&lt;名称&gt;总长度不超过 82 个字符。
+         * @param key Taint key. A valid taint key has two segments: \n\n and \n\n, separated by a slash (/). \n\n is required and supports English letters (case-sensitive), numbers, hyphen (-), underscore (_), and period (.), must start and end with a letter or number, and be no longer than 63 characters. \n\n is optional. If specified, \n\n must be a DNS subdomain: a series of DNS labels separated by periods (.), no longer than 253 characters. The total length of \n\n and \n\n must not exceed 82 characters.
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class NodeKubernetesConfigTaintArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param value 污点值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+         * @param value Taint value, up to 63 characters (can be empty). Must start and end with an English letter or number. Supports special characters: hyphen (-), underscore (_), and period (.).
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class NodeKubernetesConfigTaintArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param value 污点值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+         * @param value Taint value, up to 63 characters (can be empty). Must start and end with an English letter or number. Supports special characters: hyphen (-), underscore (_), and period (.).
          * 
          * @return builder
          * 

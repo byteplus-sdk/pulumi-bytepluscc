@@ -17,14 +17,14 @@ public final class InstanceInstanceConfigurationHotNodeResourceSpecArgs extends 
     public static final InstanceInstanceConfigurationHotNodeResourceSpecArgs Empty = new InstanceInstanceConfigurationHotNodeResourceSpecArgs();
 
     /**
-     * 节点规格的 CPU 资源，单位为核（Core）。
+     * CPU resources of node specification, measured in cores
      * 
      */
     @Import(name="cpu")
     private @Nullable Output<Integer> cpu;
 
     /**
-     * @return 节点规格的 CPU 资源，单位为核（Core）。
+     * @return CPU resources of node specification, measured in cores
      * 
      */
     public Optional<Output<Integer>> cpu() {
@@ -32,14 +32,14 @@ public final class InstanceInstanceConfigurationHotNodeResourceSpecArgs extends 
     }
 
     /**
-     * 节点规格的描述信息。
+     * Description of node specification.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 节点规格的描述信息。
+     * @return Description of node specification.
      * 
      */
     public Optional<Output<String>> description() {
@@ -47,14 +47,14 @@ public final class InstanceInstanceConfigurationHotNodeResourceSpecArgs extends 
     }
 
     /**
-     * 节点规格的显示名称。
+     * Display name of node specification.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return 节点规格的显示名称。
+     * @return Display name of node specification.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -62,14 +62,14 @@ public final class InstanceInstanceConfigurationHotNodeResourceSpecArgs extends 
     }
 
     /**
-     * 节点规格的内存容量，单位 GiB。
+     * Memory capacity for node specification, measured in GiB.
      * 
      */
     @Import(name="memory")
     private @Nullable Output<Integer> memory;
 
     /**
-     * @return 节点规格的内存容量，单位 GiB。
+     * @return Memory capacity for node specification, measured in GiB.
      * 
      */
     public Optional<Output<Integer>> memory() {
@@ -77,14 +77,14 @@ public final class InstanceInstanceConfigurationHotNodeResourceSpecArgs extends 
     }
 
     /**
-     * 节点规格。如需了解节点规格类型和详情，请参见产品规格。
+     * Node specification. For details on node specification types and details, see Product Specifications.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 节点规格。如需了解节点规格类型和详情，请参见产品规格。
+     * @return Node specification. For details on node specification types and details, see Product Specifications.
      * 
      */
     public Optional<Output<String>> name() {
@@ -120,7 +120,7 @@ public final class InstanceInstanceConfigurationHotNodeResourceSpecArgs extends 
         }
 
         /**
-         * @param cpu 节点规格的 CPU 资源，单位为核（Core）。
+         * @param cpu CPU resources of node specification, measured in cores
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class InstanceInstanceConfigurationHotNodeResourceSpecArgs extends 
         }
 
         /**
-         * @param cpu 节点规格的 CPU 资源，单位为核（Core）。
+         * @param cpu CPU resources of node specification, measured in cores
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class InstanceInstanceConfigurationHotNodeResourceSpecArgs extends 
         }
 
         /**
-         * @param description 节点规格的描述信息。
+         * @param description Description of node specification.
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class InstanceInstanceConfigurationHotNodeResourceSpecArgs extends 
         }
 
         /**
-         * @param description 节点规格的描述信息。
+         * @param description Description of node specification.
          * 
          * @return builder
          * 
@@ -162,7 +162,7 @@ public final class InstanceInstanceConfigurationHotNodeResourceSpecArgs extends 
         }
 
         /**
-         * @param displayName 节点规格的显示名称。
+         * @param displayName Display name of node specification.
          * 
          * @return builder
          * 
@@ -173,7 +173,7 @@ public final class InstanceInstanceConfigurationHotNodeResourceSpecArgs extends 
         }
 
         /**
-         * @param displayName 节点规格的显示名称。
+         * @param displayName Display name of node specification.
          * 
          * @return builder
          * 
@@ -183,7 +183,7 @@ public final class InstanceInstanceConfigurationHotNodeResourceSpecArgs extends 
         }
 
         /**
-         * @param memory 节点规格的内存容量，单位 GiB。
+         * @param memory Memory capacity for node specification, measured in GiB.
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class InstanceInstanceConfigurationHotNodeResourceSpecArgs extends 
         }
 
         /**
-         * @param memory 节点规格的内存容量，单位 GiB。
+         * @param memory Memory capacity for node specification, measured in GiB.
          * 
          * @return builder
          * 
@@ -204,7 +204,7 @@ public final class InstanceInstanceConfigurationHotNodeResourceSpecArgs extends 
         }
 
         /**
-         * @param name 节点规格。如需了解节点规格类型和详情，请参见产品规格。
+         * @param name Node specification. For details on node specification types and details, see Product Specifications.
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class InstanceInstanceConfigurationHotNodeResourceSpecArgs extends 
         }
 
         /**
-         * @param name 节点规格。如需了解节点规格类型和详情，请参见产品规格。
+         * @param name Node specification. For details on node specification types and details, see Product Specifications.
          * 
          * @return builder
          * 

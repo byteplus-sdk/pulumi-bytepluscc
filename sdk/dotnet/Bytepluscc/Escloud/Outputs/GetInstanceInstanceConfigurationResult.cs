@@ -15,151 +15,151 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud.Outputs
     public sealed class GetInstanceInstanceConfigurationResult
     {
         /// <summary>
-        /// 管理员密码。
+        /// Administrator password.
         /// </summary>
         public readonly string AdminPassword;
         /// <summary>
-        /// 管理员用户名。
+        /// Administrator username.
         /// </summary>
         public readonly string AdminUserName;
         /// <summary>
-        /// 包年包月实例是否配置自动续费。true：自动续费，系统会在每次到期前自动为实例续费。false：未开启自动续费，需要在实例到期前进行手动续费。如需了解更多，请参见实例续费。
+        /// Whether the subscription instance is set to auto-renewal. true: Auto-renewal; the system will automatically renew the instance before each expiration. false: Auto-renewal is not enabled; manual renewal is required before the instance expires. For more information, see Instance renewal.
         /// </summary>
         public readonly bool AutoRenew;
         /// <summary>
-        /// 实例计费类型。PostPaid：按量计费。PrePaid：包年包月。
+        /// Instance billing type. PostPaid: Pay-as-you-go. PrePaid: Subscription
         /// </summary>
         public readonly string ChargeType;
         /// <summary>
-        /// 冷节点数量。
+        /// Number of cold nodes.
         /// </summary>
         public readonly int ColdNodeNumber;
         /// <summary>
-        /// 冷节点的节点规格配置详情。
+        /// Node specification details for cold nodes
         /// </summary>
         public readonly Outputs.GetInstanceInstanceConfigurationColdNodeResourceSpecResult ColdNodeResourceSpec;
         /// <summary>
-        /// 冷节点的存储规格配置详情。
+        /// Details of cold node storage specification configuration
         /// </summary>
         public readonly Outputs.GetInstanceInstanceConfigurationColdNodeStorageSpecResult ColdNodeStorageSpec;
         /// <summary>
-        /// 计费配置码，可以通过调用DescribeNodeAvailableSpecs接口获得。
+        /// Billing configuration code, obtainable via the DescribeNodeAvailableSpecs API.
         /// </summary>
         public readonly string ConfigurationCode;
         /// <summary>
-        /// 协调节点数量。
+        /// Coordinator node count
         /// </summary>
         public readonly int CoordinatorNodeNumber;
         /// <summary>
-        /// 协调节点的节点规格配置详情。
+        /// Node specification configuration details for coordinator node.
         /// </summary>
         public readonly Outputs.GetInstanceInstanceConfigurationCoordinatorNodeResourceSpecResult CoordinatorNodeResourceSpec;
         /// <summary>
-        /// 协调节点的存储规格配置详情。
+        /// Storage specification configuration details for coordinator node.
         /// </summary>
         public readonly Outputs.GetInstanceInstanceConfigurationCoordinatorNodeStorageSpecResult CoordinatorNodeStorageSpec;
         /// <summary>
-        /// 是否开启实例删除保护功能，取值说明如下：true：开启实例删除保护。false：关闭实例删除保护。说明开启实例删除保护后，您将无法通过控制台或者 API 删除实例。
+        /// Enable instance deletion protection. Values: true: Enable instance deletion protection. false: Disable instance deletion protection. Note: After enabling deletion protection, you cannot delete the instance via console or API
         /// </summary>
         public readonly bool DeletionProtection;
         /// <summary>
-        /// 是否启用 HTTPS 访问协议。true：启用 HTTPS 访问。false：不启用 HTTPS，使用 HTTP 访问。说明如果选择使用 HTTP 访问，将无需安全认证即可访问，并使用 HTTP 明文传输数据。您需要确保访问环境的安全性，且不要将访问接口暴露在公网环境上。实例创建完成后，支持根据业务需求修改传输协议。相关文档，请参见切换实例传输协议。
+        /// Enable HTTPS access protocol. true: Enable HTTPS access. false: Disable HTTPS, use HTTP access. Note: If you choose HTTP access, you can access without security authentication and transmit data in plain HTTP. Ensure the security of your access environment and do not expose the API to the public network. After the instance is created, you can modify the transmission protocol as needed. For related documentation, see Switch Instance Transmission Protocol
         /// </summary>
         public readonly bool EnableHttps;
         /// <summary>
-        /// Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即使用 Hot 声明。
+        /// Whether the master node is dedicated. true: Master node is dedicated. false: Master node is combined with data node, that is, uses Hot node.
         /// </summary>
         public readonly bool EnablePureMaster;
         /// <summary>
-        /// 数据节点数量。
+        /// Number of data nodes
         /// </summary>
         public readonly int HotNodeNumber;
         /// <summary>
-        /// 数据节点的节点规格配置详情。
+        /// Node specification configuration details for data node.
         /// </summary>
         public readonly Outputs.GetInstanceInstanceConfigurationHotNodeResourceSpecResult HotNodeResourceSpec;
         /// <summary>
-        /// 数据节点的存储规格配置详情。
+        /// Data node storage specification configuration details
         /// </summary>
         public readonly Outputs.GetInstanceInstanceConfigurationHotNodeStorageSpecResult HotNodeStorageSpec;
         /// <summary>
-        /// 自定义设置实例名称。只能包含中文、字母、数字、短横线（-）和下划线（_），开头和结尾不能是数字和短横线（-）。长度在 1～128 个字符内。
+        /// Set a custom instance name. Only Chinese characters, letters, numbers, hyphens (-), and underscores (_) are allowed. The name cannot start or end with a number or hyphen (-). Length must be between 1 and 128 characters.
         /// </summary>
         public readonly string InstanceName;
         /// <summary>
-        /// kibana 节点数量。
+        /// Number of Kibana nodes
         /// </summary>
         public readonly int KibanaNodeNumber;
         /// <summary>
-        /// Kibana 节点的节点规格配置详情。
+        /// Kibana node specification configuration details
         /// </summary>
         public readonly Outputs.GetInstanceInstanceConfigurationKibanaNodeResourceSpecResult KibanaNodeResourceSpec;
         /// <summary>
-        /// master 节点数量。
+        /// Number of master nodes.
         /// </summary>
         public readonly int MasterNodeNumber;
         /// <summary>
-        /// Master 节点的节点规格配置详情。
+        /// Master node specification configuration details
         /// </summary>
         public readonly Outputs.GetInstanceInstanceConfigurationMasterNodeResourceSpecResult MasterNodeResourceSpec;
         /// <summary>
-        /// Master 节点的存储规格配置详情。
+        /// Storage specification details for master node
         /// </summary>
         public readonly Outputs.GetInstanceInstanceConfigurationMasterNodeStorageSpecResult MasterNodeStorageSpec;
         /// <summary>
-        /// 实例公网规格配置。
+        /// Instance public network specification configuration
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceInstanceConfigurationNetworkSpecResult> NetworkSpecs;
         /// <summary>
-        /// 实例中各种节点的数量和规格配置。
+        /// Configuration of node counts and specifications in the instance
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceInstanceConfigurationNodeSpecsAssignResult> NodeSpecsAssigns;
         /// <summary>
-        /// 包年包月实例的购买时长，单位：月。
+        /// Subscription instance purchase duration, in months.
         /// </summary>
         public readonly int Period;
         /// <summary>
-        /// 按需设置云搜索实例所属的项目，有利于云资源的分组管理。项目是提供的一种资源管理方式，有利于维护资源独立、数据安全；同时可从项目维度查看资源消费账单，便于计算云资源使用成本。如需了解更多信息，请参见项目概述
+        /// Set the project for your cloud search instance as needed to facilitate grouping and management of cloud resources. Projects provide a resource management method that helps maintain resource independence and data security. You can also view resource consumption bills by project, making it easier to calculate cloud resource usage costs. For more information, see Project Overview
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// 实例所在区域。
+        /// Instance region
         /// </summary>
         public readonly string RegionId;
         /// <summary>
-        /// 设置实例的子网信息。说明设置的子网必须是主可用区中的子网。
+        /// Set subnet information for the instance. Note: The subnet must be in the primary zone.
         /// </summary>
         public readonly Outputs.GetInstanceInstanceConfigurationSubnetResult Subnet;
         /// <summary>
-        /// 标签信息。
+        /// Tag information
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceInstanceConfigurationTagResult> Tags;
         /// <summary>
-        /// API的版本，取值：2023-01-01。
+        /// API version. Value: 2023-01-01.
         /// </summary>
         public readonly string Version;
         /// <summary>
-        /// 设置实例的私有网络 VPC 信息。
+        /// Set VPC information for the instance
         /// </summary>
         public readonly Outputs.GetInstanceInstanceConfigurationVpcResult Vpc;
         /// <summary>
-        /// 温节点数量。
+        /// Warm node count.
         /// </summary>
         public readonly int WarmNodeNumber;
         /// <summary>
-        /// 温节点的节点规格配置详情。
+        /// Warm node specification configuration details.
         /// </summary>
         public readonly Outputs.GetInstanceInstanceConfigurationWarmNodeResourceSpecResult WarmNodeResourceSpec;
         /// <summary>
-        /// 温节点的存储规格配置详情。
+        /// Storage specification details for warm nodes
         /// </summary>
         public readonly Outputs.GetInstanceInstanceConfigurationWarmNodeStorageSpecResult WarmNodeStorageSpec;
         /// <summary>
-        /// 实例所在可用区。说明如果是多可用区部署，则填写多个 ZoneId，使用英文逗号分隔，如cn-beijing-a,cn-beijing-c。最左侧的 ZoneId 为主可用区，其余为备可用区。
+        /// Zone where the instance is located. Note: For multi-zone deployment, enter multiple ZoneIds separated by commas, e.g., cn-beijing-a,cn-beijing-c. The leftmost ZoneId is the primary zone, others are backup zones.
         /// </summary>
         public readonly string ZoneId;
         /// <summary>
-        /// 实例的可用区数量。
+        /// Number of instance availability zones.
         /// </summary>
         public readonly int ZoneNumber;
 

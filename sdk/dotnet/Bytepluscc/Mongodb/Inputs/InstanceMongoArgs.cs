@@ -14,49 +14,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb.Inputs
     public sealed class InstanceMongoArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Mongos 的节点 ID。
+        /// Mongos node ID
         /// </summary>
         [Input("mongosNodeId")]
         public Input<string>? MongosNodeId { get; set; }
 
         /// <summary>
-        /// 节点规格。
+        /// Node specification.
         /// </summary>
         [Input("nodeSpec")]
         public Input<string>? NodeSpec { get; set; }
 
         /// <summary>
-        /// 节点状态。
+        /// Node status.
         /// </summary>
         [Input("nodeStatus")]
         public Input<string>? NodeStatus { get; set; }
 
         /// <summary>
-        /// 总内存。单位：GiB。
+        /// Total memory. Unit: GiB.
         /// </summary>
         [Input("totalMemoryGb")]
         public Input<double>? TotalMemoryGb { get; set; }
 
         /// <summary>
-        /// 总核数。
+        /// Total cores.
         /// </summary>
         [Input("totalvCpu")]
         public Input<double>? TotalvCpu { get; set; }
 
         /// <summary>
-        /// 已用内存。单位：GiB。
+        /// Used memory. Unit: GiB.
         /// </summary>
         [Input("usedMemoryGb")]
         public Input<double>? UsedMemoryGb { get; set; }
 
         /// <summary>
-        /// 已用核数。
+        /// Used cores.
         /// </summary>
         [Input("usedvCpu")]
         public Input<double>? UsedvCpu { get; set; }
 
         /// <summary>
-        /// 当前节点所属的可用区 ID。
+        /// Availability zone ID of the current node.
         /// </summary>
         [Input("zoneId")]
         public Input<string>? ZoneId { get; set; }

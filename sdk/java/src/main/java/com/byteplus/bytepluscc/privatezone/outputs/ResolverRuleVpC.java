@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ResolverRuleVpC {
     /**
-     * @return VPC 的地域。
+     * @return Region of the VPC
      * 
      */
     private @Nullable String region;
     /**
-     * @return VPC 的 ID。
+     * @return VPC ID
      * 
      */
     private @Nullable String vpcId;
 
     private ResolverRuleVpC() {}
     /**
-     * @return VPC 的地域。
+     * @return Region of the VPC
      * 
      */
     public Optional<String> region() {
         return Optional.ofNullable(this.region);
     }
     /**
-     * @return VPC 的 ID。
+     * @return VPC ID
      * 
      */
     public Optional<String> vpcId() {

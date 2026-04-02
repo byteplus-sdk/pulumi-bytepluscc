@@ -14,50 +14,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceInstanceConfigurationNetworkSpec {
     /**
-     * @return 公网IP的带宽上限，默认为“1”，单位：Mbps。
+     * @return Public IP bandwidth limit. Default is &#39;1&#39;, unit: Mbps.
      * 
      */
     private @Nullable Integer bandwidth;
     /**
-     * @return 开启/关闭
+     * @return Enable/Disable
      * 
      */
     private @Nullable Boolean isOpen;
     /**
-     * @return 实例公网资源规格名称
+     * @return Instance public resource specification name
      * 
      */
     private @Nullable String specName;
     /**
-     * @return 公网应用类型 Elasticsearch：es实例使用。Kibana：Dashboard使用
+     * @return Public network application types: Elasticsearch—for ES instance usage. Kibana—for Dashboard usage
      * 
      */
     private @Nullable String type;
 
     private InstanceInstanceConfigurationNetworkSpec() {}
     /**
-     * @return 公网IP的带宽上限，默认为“1”，单位：Mbps。
+     * @return Public IP bandwidth limit. Default is &#39;1&#39;, unit: Mbps.
      * 
      */
     public Optional<Integer> bandwidth() {
         return Optional.ofNullable(this.bandwidth);
     }
     /**
-     * @return 开启/关闭
+     * @return Enable/Disable
      * 
      */
     public Optional<Boolean> isOpen() {
         return Optional.ofNullable(this.isOpen);
     }
     /**
-     * @return 实例公网资源规格名称
+     * @return Instance public resource specification name
      * 
      */
     public Optional<String> specName() {
         return Optional.ofNullable(this.specName);
     }
     /**
-     * @return 公网应用类型 Elasticsearch：es实例使用。Kibana：Dashboard使用
+     * @return Public network application types: Elasticsearch—for ES instance usage. Kibana—for Dashboard usage
      * 
      */
     public Optional<String> type() {

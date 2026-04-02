@@ -15,35 +15,35 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class ServerGroupServer
     {
         /// <summary>
-        /// 后端服务器的描述。
+        /// Description of the backend server.
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// 云服务器实例或网卡的ID。
+        /// ID of the cloud server instance or network interface card.
         /// </summary>
         public readonly string? InstanceId;
         /// <summary>
-        /// 后端服务器的私网IP地址。
+        /// Private IP address of the backend server.
         /// </summary>
         public readonly string? Ip;
         /// <summary>
-        /// 后端服务器接收请求的端口号。
+        /// Port number on which the backend server receives requests.
         /// </summary>
         public readonly int? Port;
         /// <summary>
-        /// 是否开启远端IP功能。当后端服务器实例类型为IP地址，即 Type 取值为 ip 时，此字段有效。取值：on：开启。off（默认值）：不开启。
+        /// Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
         /// </summary>
         public readonly string? RemoteEnabled;
         /// <summary>
-        /// 后端服务器ID。
+        /// Backend server ID.
         /// </summary>
         public readonly string? ServerId;
         /// <summary>
-        /// 后端服务器实例类型。ecs：云服务器实例。eni：辅助网卡。ip：IP地址（仅 Ip 类型服务器组有效）。
+        /// Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
         /// </summary>
         public readonly string? Type;
         /// <summary>
-        /// 后端服务器的权重。
+        /// Weight of the backend server.
         /// </summary>
         public readonly int? Weight;
 

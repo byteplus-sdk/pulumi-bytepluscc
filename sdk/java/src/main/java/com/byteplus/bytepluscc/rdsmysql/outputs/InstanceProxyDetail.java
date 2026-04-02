@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceProxyDetail {
     /**
-     * @return 实例的数据库代理功能状态。取值：Creating：代理开启中。Running：代理运行中。Shutdown：代理已关闭。Deleting：代理关闭中
+     * @return Status of the instance database proxy feature. Values: Creating: proxy enabling. Running: proxy running. Shutdown: proxy disabled. Deleting: proxy disabling
      * 
      */
     private @Nullable String dbProxyStatus;
     /**
-     * @return 实例的数据库代理服务的资源信息。
+     * @return Resource information for the instance&#39;s database proxy service
      * 
      */
     private @Nullable InstanceProxyDetailProxyResourceInfo proxyResourceInfo;
 
     private InstanceProxyDetail() {}
     /**
-     * @return 实例的数据库代理功能状态。取值：Creating：代理开启中。Running：代理运行中。Shutdown：代理已关闭。Deleting：代理关闭中
+     * @return Status of the instance database proxy feature. Values: Creating: proxy enabling. Running: proxy running. Shutdown: proxy disabled. Deleting: proxy disabling
      * 
      */
     public Optional<String> dbProxyStatus() {
         return Optional.ofNullable(this.dbProxyStatus);
     }
     /**
-     * @return 实例的数据库代理服务的资源信息。
+     * @return Resource information for the instance&#39;s database proxy service
      * 
      */
     public Optional<InstanceProxyDetailProxyResourceInfo> proxyResourceInfo() {

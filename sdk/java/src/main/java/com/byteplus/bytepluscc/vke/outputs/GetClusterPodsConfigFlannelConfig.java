@@ -13,38 +13,38 @@ import java.util.Objects;
 @CustomType
 public final class GetClusterPodsConfigFlannelConfig {
     /**
-     * @return Flannel 模型容器网络的单节点 Pod 实例数量上限，取值：64（默认值）、16、32、128、256。
+     * @return Maximum number of Pod instances per node for the Flannel container network model. Values: 64 (default), 16, 32, 128, 256.
      * 
      */
     private Integer maxPodsPerNode;
     /**
-     * @return Flannel 容器网络的 Pod CIDR。
+     * @return Pod CIDR for Flannel container network.
      * 
      */
     private List<String> podCidrs;
     /**
-     * @return Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+     * @return List of Pod subnet IDs for the Flannel container network model.
      * 
      */
     private List<String> subnetIds;
 
     private GetClusterPodsConfigFlannelConfig() {}
     /**
-     * @return Flannel 模型容器网络的单节点 Pod 实例数量上限，取值：64（默认值）、16、32、128、256。
+     * @return Maximum number of Pod instances per node for the Flannel container network model. Values: 64 (default), 16, 32, 128, 256.
      * 
      */
     public Integer maxPodsPerNode() {
         return this.maxPodsPerNode;
     }
     /**
-     * @return Flannel 容器网络的 Pod CIDR。
+     * @return Pod CIDR for Flannel container network.
      * 
      */
     public List<String> podCidrs() {
         return this.podCidrs;
     }
     /**
-     * @return Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+     * @return List of Pod subnet IDs for the Flannel container network model.
      * 
      */
     public List<String> subnetIds() {

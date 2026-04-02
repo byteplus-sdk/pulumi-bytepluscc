@@ -124,7 +124,7 @@ class GetNgwResult:
     @pulumi.getter(name="billingType")
     def billing_type(self) -> builtins.int:
         """
-        NAT网关的计费方式。取值如下：1 ：包年包月。2（默认值）：按量计费-按规格计费。3：按量计费-按使用量计费。当NetworkType传入intranet时，本参数仅支持且必须传入3。
+        NAT Gateway billing mode. Possible values: 1: Subscription. 2 (default): Pay-as-you-go by specification. 3: Pay-as-you-go by usage. When NetworkType is set to intranet, only 3 is supported and required for this parameter.
         """
         return pulumi.get(self, "billing_type")
 
@@ -132,7 +132,7 @@ class GetNgwResult:
     @pulumi.getter(name="businessStatus")
     def business_status(self) -> builtins.str:
         """
-        NAT网关是否被锁定。空值：正常未被锁定。Normal：正常未被锁定。FinancialLocked：因欠费被锁定。
+        Indicates whether the NAT gateway is locked. Empty: Normal, not locked. Normal: Normal, not locked. FinancialLocked: Locked due to overdue payment.
         """
         return pulumi.get(self, "business_status")
 
@@ -140,7 +140,7 @@ class GetNgwResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        创建时间
+        Creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -148,7 +148,7 @@ class GetNgwResult:
     @pulumi.getter(name="deletedTime")
     def deleted_time(self) -> builtins.str:
         """
-        删除时间
+        Deletion time
         """
         return pulumi.get(self, "deleted_time")
 
@@ -156,7 +156,7 @@ class GetNgwResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        NAT网关的描述。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为1 ～ 255个字符。不填默认空字符串。
+        Description of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1 to 255 characters. If not specified, defaults to an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -164,7 +164,7 @@ class GetNgwResult:
     @pulumi.getter(name="directMode")
     def direct_mode(self) -> builtins.bool:
         """
-        标识该nat是直通还是非直通。   - true（默认）：EIP直通nat网关。   - false：非EIP直通nat网关。
+        Indicates whether the NAT is direct or non-direct.   - true (default): EIP direct NAT gateway.   - false: Non-EIP direct NAT gateway.
         """
         return pulumi.get(self, "direct_mode")
 
@@ -172,7 +172,7 @@ class GetNgwResult:
     @pulumi.getter(name="dnatEntryIds")
     def dnat_entry_ids(self) -> Sequence[builtins.str]:
         """
-        DNAT规则ID列表。
+        DNAT rule ID list.
         """
         return pulumi.get(self, "dnat_entry_ids")
 
@@ -180,7 +180,7 @@ class GetNgwResult:
     @pulumi.getter(name="eipAddresses")
     def eip_addresses(self) -> Sequence['outputs.GetNgwEipAddressResult']:
         """
-        NAT网关绑定公网IP的信息。
+        Information about the public IP bound to the NAT Gateway
         """
         return pulumi.get(self, "eip_addresses")
 
@@ -188,7 +188,7 @@ class GetNgwResult:
     @pulumi.getter(name="expiredTime")
     def expired_time(self) -> builtins.str:
         """
-        包年包月NAT网关到期时间。仅包年包月计费类型的NAT网关会返回此参数。
+        Expiration time for subscription NAT Gateway. Only NAT Gateways with subscription billing return this parameter.
         """
         return pulumi.get(self, "expired_time")
 
@@ -204,7 +204,7 @@ class GetNgwResult:
     @pulumi.getter(name="lockReason")
     def lock_reason(self) -> builtins.str:
         """
-        NAT被锁定的原因。financial：因欠费被锁定。security：因安全原因被锁定。
+        Reason for NAT lock. financial: Locked due to overdue payment. security: Locked for security reasons.
         """
         return pulumi.get(self, "lock_reason")
 
@@ -212,7 +212,7 @@ class GetNgwResult:
     @pulumi.getter(name="natGatewayId")
     def nat_gateway_id(self) -> builtins.str:
         """
-        NAT网关ID。
+        NAT gateway ID.
         """
         return pulumi.get(self, "nat_gateway_id")
 
@@ -220,7 +220,7 @@ class GetNgwResult:
     @pulumi.getter(name="natGatewayName")
     def nat_gateway_name(self) -> builtins.str:
         """
-        NAT网关的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。长度限制为1 ~ 128个字符。不填默认是NAT网关实例的ID。
+        Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
         """
         return pulumi.get(self, "nat_gateway_name")
 
@@ -228,7 +228,7 @@ class GetNgwResult:
     @pulumi.getter(name="natIpAddresses")
     def nat_ip_addresses(self) -> Sequence['outputs.GetNgwNatIpAddressResult']:
         """
-        私网NAT实例的中转IP列表。
+        Transit IP list for private NAT instance
         """
         return pulumi.get(self, "nat_ip_addresses")
 
@@ -236,7 +236,7 @@ class GetNgwResult:
     @pulumi.getter(name="networkInterfaceId")
     def network_interface_id(self) -> builtins.str:
         """
-        NAT网关占用的网卡ID。
+        Network interface ID occupied by the NAT gateway.
         """
         return pulumi.get(self, "network_interface_id")
 
@@ -244,7 +244,7 @@ class GetNgwResult:
     @pulumi.getter(name="networkType")
     def network_type(self) -> builtins.str:
         """
-        NAT网关类型。internet：公网NAT网关。intranet：私网NAT网关。
+        NAT Gateway type. internet: Public NAT Gateway. intranet: Private NAT Gateway.
         """
         return pulumi.get(self, "network_type")
 
@@ -252,7 +252,7 @@ class GetNgwResult:
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> builtins.str:
         """
-        资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值。
+        Resource freeze time. This parameter is returned only when the resource is frozen due to overdue payment.
         """
         return pulumi.get(self, "overdue_time")
 
@@ -260,7 +260,7 @@ class GetNgwResult:
     @pulumi.getter
     def period(self) -> builtins.int:
         """
-        购买包年包月NAT网关的时长，默认1。当PeriodUnit传入Month，Period取值范围：1 ~ 9、12、24、36。当PeriodUnit传入Year，Period取值范围：1 ~ 3。
+        Duration for purchasing a subscription NAT Gateway, default is 1. If PeriodUnit is Month, Period can be 1 ~ 9, 12, 24, 36. If PeriodUnit is Year, Period can be 1 ~ 3.
         """
         return pulumi.get(self, "period")
 
@@ -268,7 +268,7 @@ class GetNgwResult:
     @pulumi.getter(name="periodUnit")
     def period_unit(self) -> builtins.str:
         """
-        购买包年包月NAT网关时长的单位，默认Month。Month ：月。Year ：年。
+        Unit for subscription NAT Gateway duration, default is Month. Month: month. Year: year.
         """
         return pulumi.get(self, "period_unit")
 
@@ -276,7 +276,7 @@ class GetNgwResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        NAT网关所属项目的名称。不填默认加入default项目。
+        Name of the project the NAT Gateway belongs to. If not specified, defaults to the 'default' project.
         """
         return pulumi.get(self, "project_name")
 
@@ -284,7 +284,7 @@ class GetNgwResult:
     @pulumi.getter(name="smartScheduleEnabled")
     def smart_schedule_enabled(self) -> builtins.bool:
         """
-        是否开启智能调度。
+        Whether to enable intelligent scheduling
         """
         return pulumi.get(self, "smart_schedule_enabled")
 
@@ -292,7 +292,7 @@ class GetNgwResult:
     @pulumi.getter(name="smartScheduleRule")
     def smart_schedule_rule(self) -> builtins.str:
         """
-        智能调度策略规则。ChinaMobile：中国移动。ChinaUnicom：中国联通。ChinaTelecom：中国电信。BGP：BGP多线。
+        Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
         """
         return pulumi.get(self, "smart_schedule_rule")
 
@@ -300,7 +300,7 @@ class GetNgwResult:
     @pulumi.getter(name="snatEntryIds")
     def snat_entry_ids(self) -> Sequence[builtins.str]:
         """
-        SNAT规则ID列表。
+        SNAT rule ID list
         """
         return pulumi.get(self, "snat_entry_ids")
 
@@ -308,7 +308,7 @@ class GetNgwResult:
     @pulumi.getter
     def spec(self) -> builtins.str:
         """
-        NAT网关的规格。Small（默认）：小型。Medium：中型。Large：大型。Extra*Large*1：超大型-1。Extra*Large*2：超大型-2。
+        NAT Gateway specification. Small (default): Small. Medium: Medium. Large: Large. Extra*Large*1: Extra Large 1. Extra*Large*2: Extra Large 2.
         """
         return pulumi.get(self, "spec")
 
@@ -316,7 +316,7 @@ class GetNgwResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        NAT网关的状态。Available：可用。Creating：创建中。Pending：操作中。Deleting：删除中。
+        Status of the NAT Gateway. Available: Available. Creating: Creating. Pending: In progress. Deleting: Deleting.
         """
         return pulumi.get(self, "status")
 
@@ -324,7 +324,7 @@ class GetNgwResult:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> builtins.str:
         """
-        NAT网关所在子网的ID。传入的子网，必须是VpcId传入的私有网络的子网。子网内至少有一个可用的私网IP。系统自动生成的NAT网关网卡将占用该子网一个私网IP。子网所在的可用区需要已部署NAT网关资源。子网所在可用区将作为NAT网关的主可用区，并自动关联备可用区。当主可用区发生故障时，NAT网关自动切换到备可用区。
+        ID of the subnet where the NAT gateway is located. The input subnet must be a subnet of the private network specified by VpcId. There must be at least one available private IP in the subnet. The system automatically generates a NAT gateway network interface that will occupy one private IP in this subnet. The availability zone of the subnet must have deployed NAT gateway resources. The availability zone of the subnet will be used as the primary availability zone for the NAT gateway and will automatically associate with a backup availability zone. When the primary availability zone fails, the NAT gateway automatically switches to the backup availability zone.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -332,7 +332,7 @@ class GetNgwResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetNgwTagResult']:
         """
-        标签列表。
+        Tag list
         """
         return pulumi.get(self, "tags")
 
@@ -340,7 +340,7 @@ class GetNgwResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        NAT网关的最后操作时间。
+        Last operation time of the NAT Gateway
         """
         return pulumi.get(self, "updated_time")
 
@@ -348,7 +348,7 @@ class GetNgwResult:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> builtins.str:
         """
-        NAT网关所在私有网络的ID。
+        ID of the private network where the NAT Gateway is located
         """
         return pulumi.get(self, "vpc_id")
 
@@ -356,7 +356,7 @@ class GetNgwResult:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> builtins.str:
         """
-        NAT网关所属主可用区的ID。
+        ID of the primary availability zone the NAT Gateway belongs to
         """
         return pulumi.get(self, "zone_id")
 

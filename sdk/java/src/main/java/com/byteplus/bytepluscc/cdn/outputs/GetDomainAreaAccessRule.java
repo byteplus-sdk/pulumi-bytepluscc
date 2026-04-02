@@ -13,38 +13,38 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainAreaAccessRule {
     /**
-     * @return 表示一个国家列表，对该列表应用白名单或者黑名单。当 Switch 是 true 时，该参数为必填。国家的名称使用简写来表示。多个国家名称使用英文逗号（,）分隔。
+     * @return Indicates a list of countries to which an allowlist or denylist is applied. When Switch is true, this parameter is required. Country names are represented in abbreviated form. Multiple country names are separated by commas (,).
      * 
      */
     private List<String> areas;
     /**
-     * @return 表示 &#34;地域访问控制&#34; 特性的规则类型。该参数有以下取值：deny：表示白名单。allow：表示黑名单。
+     * @return Indicates the rule type for the &#39;region access control&#39; feature. This parameter has the following values: deny: indicates Denylist. allow: indicates Allowlist.
      * 
      */
     private String ruleType;
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+     * @return Indicates whether to enable this feature. This parameter has the following values: true: Enables this feature. false: Disables this feature.
      * 
      */
     private Boolean switch_;
 
     private GetDomainAreaAccessRule() {}
     /**
-     * @return 表示一个国家列表，对该列表应用白名单或者黑名单。当 Switch 是 true 时，该参数为必填。国家的名称使用简写来表示。多个国家名称使用英文逗号（,）分隔。
+     * @return Indicates a list of countries to which an allowlist or denylist is applied. When Switch is true, this parameter is required. Country names are represented in abbreviated form. Multiple country names are separated by commas (,).
      * 
      */
     public List<String> areas() {
         return this.areas;
     }
     /**
-     * @return 表示 &#34;地域访问控制&#34; 特性的规则类型。该参数有以下取值：deny：表示白名单。allow：表示黑名单。
+     * @return Indicates the rule type for the &#39;region access control&#39; feature. This parameter has the following values: deny: indicates Denylist. allow: indicates Allowlist.
      * 
      */
     public String ruleType() {
         return this.ruleType;
     }
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+     * @return Indicates whether to enable this feature. This parameter has the following values: true: Enables this feature. false: Disables this feature.
      * 
      */
     public Boolean switch_() {

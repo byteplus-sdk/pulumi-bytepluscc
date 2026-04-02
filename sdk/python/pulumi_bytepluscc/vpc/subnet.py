@@ -32,13 +32,13 @@ class SubnetArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetTagArgs']]]] = None):
         """
         The set of arguments for constructing a Subnet resource.
-        :param pulumi.Input[builtins.str] cidr_block: 子网的IPv4网段。
-        :param pulumi.Input[builtins.str] vpc_id: 子网所属VPC的ID。
-        :param pulumi.Input[builtins.str] zone_id: 要创建的子网所属的可用区ID，更多可用区信息请参见地域和可用区。
-        :param pulumi.Input[builtins.str] description: 子网的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不能以http://或https://开头。
-        :param pulumi.Input[builtins.bool] enable_ipv6: 开启/关闭IPv6功能。仅当子网所属的VPC开通IPv6功能时，可配置此参数。1、true：开启。2、false：关闭。仅当子网内没有分配IPv6地址的云资源时，可配置此取值。
-        :param pulumi.Input[builtins.str] ipv6_cidr_block: 子网IPv6网段。1、创建/修改时请输入子网IPv6网段的最后8比特位（子网的掩码固定为/64）。2、仅当EnableIpv6设置为true时，支持配置本参数。3、取值范围：0～255。掩码固定为/64。
-        :param pulumi.Input[builtins.str] subnet_name: 子网的名称，长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不能以http://或https://开头，不填默认是子网的ID。
+        :param pulumi.Input[builtins.str] cidr_block: Subnet IPv4 CIDR block
+        :param pulumi.Input[builtins.str] vpc_id: ID of the VPC to which the subnet belongs
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
+        :param pulumi.Input[builtins.str] description: Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
+        :param pulumi.Input[builtins.bool] enable_ipv6: Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
+        :param pulumi.Input[builtins.str] ipv6_cidr_block: Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
+        :param pulumi.Input[builtins.str] subnet_name: Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
         """
         pulumi.set(__self__, "cidr_block", cidr_block)
         pulumi.set(__self__, "vpc_id", vpc_id)
@@ -58,7 +58,7 @@ class SubnetArgs:
     @pulumi.getter(name="cidrBlock")
     def cidr_block(self) -> pulumi.Input[builtins.str]:
         """
-        子网的IPv4网段。
+        Subnet IPv4 CIDR block
         """
         return pulumi.get(self, "cidr_block")
 
@@ -70,7 +70,7 @@ class SubnetArgs:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Input[builtins.str]:
         """
-        子网所属VPC的ID。
+        ID of the VPC to which the subnet belongs
         """
         return pulumi.get(self, "vpc_id")
 
@@ -82,7 +82,7 @@ class SubnetArgs:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Input[builtins.str]:
         """
-        要创建的子网所属的可用区ID，更多可用区信息请参见地域和可用区。
+        Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
         """
         return pulumi.get(self, "zone_id")
 
@@ -94,7 +94,7 @@ class SubnetArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子网的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不能以http://或https://开头。
+        Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
         """
         return pulumi.get(self, "description")
 
@@ -106,7 +106,7 @@ class SubnetArgs:
     @pulumi.getter(name="enableIpv6")
     def enable_ipv6(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        开启/关闭IPv6功能。仅当子网所属的VPC开通IPv6功能时，可配置此参数。1、true：开启。2、false：关闭。仅当子网内没有分配IPv6地址的云资源时，可配置此取值。
+        Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
         """
         return pulumi.get(self, "enable_ipv6")
 
@@ -118,7 +118,7 @@ class SubnetArgs:
     @pulumi.getter(name="ipv6CidrBlock")
     def ipv6_cidr_block(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子网IPv6网段。1、创建/修改时请输入子网IPv6网段的最后8比特位（子网的掩码固定为/64）。2、仅当EnableIpv6设置为true时，支持配置本参数。3、取值范围：0～255。掩码固定为/64。
+        Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
         """
         return pulumi.get(self, "ipv6_cidr_block")
 
@@ -130,7 +130,7 @@ class SubnetArgs:
     @pulumi.getter(name="subnetName")
     def subnet_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子网的名称，长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不能以http://或https://开头，不填默认是子网的ID。
+        Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
         """
         return pulumi.get(self, "subnet_name")
 
@@ -173,25 +173,25 @@ class _SubnetState:
                  zone_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Subnet resources.
-        :param pulumi.Input[builtins.str] account_id: 子网所属账户的ID。
-        :param pulumi.Input[builtins.int] available_ip_address_count: 子网中可用的IP地址数量。
-        :param pulumi.Input[builtins.str] cidr_block: 子网的IPv4网段。
-        :param pulumi.Input[builtins.str] created_time: 子网的创建时间。
-        :param pulumi.Input[builtins.str] description: 子网的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不能以http://或https://开头。
-        :param pulumi.Input[builtins.bool] enable_ipv6: 开启/关闭IPv6功能。仅当子网所属的VPC开通IPv6功能时，可配置此参数。1、true：开启。2、false：关闭。仅当子网内没有分配IPv6地址的云资源时，可配置此取值。
-        :param pulumi.Input[builtins.str] ipv6_cidr_block: 子网IPv6网段。1、创建/修改时请输入子网IPv6网段的最后8比特位（子网的掩码固定为/64）。2、仅当EnableIpv6设置为true时，支持配置本参数。3、取值范围：0～255。掩码固定为/64。
-        :param pulumi.Input[builtins.bool] is_default: 该子网是否为默认子网。1、true：默认子网，表示该子网是创建ECS实例时系统自动创建的子网。2、false：非默认子网，表示该子网是用户手动创建的。
-        :param pulumi.Input[builtins.str] network_acl_id: 子网关联的网络ACL的ID。
-        :param pulumi.Input[builtins.str] project_name: 子网所在VPC实例所属项目的名称。
-        :param pulumi.Input[builtins.str] read_ipv6_cidr_block: 只读字段，子网IPv6网段。
-        :param pulumi.Input['SubnetRouteTableArgs'] route_table: 路由表信息。
-        :param pulumi.Input[builtins.str] status: 子网的状态。1、Pending：表示配置中。2、Available：表示可用。
-        :param pulumi.Input[builtins.str] subnet_id: 待修改信息的子网的ID。
-        :param pulumi.Input[builtins.str] subnet_name: 子网的名称，长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不能以http://或https://开头，不填默认是子网的ID。
-        :param pulumi.Input[builtins.int] total_ipv4_count: 子网下可用IP总数。
-        :param pulumi.Input[builtins.str] updated_time: 子网的更新时间。
-        :param pulumi.Input[builtins.str] vpc_id: 子网所属VPC的ID。
-        :param pulumi.Input[builtins.str] zone_id: 要创建的子网所属的可用区ID，更多可用区信息请参见地域和可用区。
+        :param pulumi.Input[builtins.str] account_id: ID of the account to which the subnet belongs
+        :param pulumi.Input[builtins.int] available_ip_address_count: Number of available IP addresses in the subnet
+        :param pulumi.Input[builtins.str] cidr_block: Subnet IPv4 CIDR block
+        :param pulumi.Input[builtins.str] created_time: Subnet creation time
+        :param pulumi.Input[builtins.str] description: Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
+        :param pulumi.Input[builtins.bool] enable_ipv6: Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
+        :param pulumi.Input[builtins.str] ipv6_cidr_block: Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
+        :param pulumi.Input[builtins.bool] is_default: Whether the subnet is a default subnet. 1. true: Default subnet, created automatically when an ECS instance is created. 2. false: Non-default subnet, created manually by the user
+        :param pulumi.Input[builtins.str] network_acl_id: ID of the network ACL associated with the subnet
+        :param pulumi.Input[builtins.str] project_name: Name of the project associated with the VPC instance where the subnet resides
+        :param pulumi.Input[builtins.str] read_ipv6_cidr_block: Read-only field, subnet IPv6 CIDR block
+        :param pulumi.Input['SubnetRouteTableArgs'] route_table: Route table information
+        :param pulumi.Input[builtins.str] status: Subnet status. 1. Pending: Configuring. 2. Available: Available
+        :param pulumi.Input[builtins.str] subnet_id: ID of the subnet whose information is to be modified
+        :param pulumi.Input[builtins.str] subnet_name: Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
+        :param pulumi.Input[builtins.int] total_ipv4_count: Total number of available IPs in the subnet
+        :param pulumi.Input[builtins.str] updated_time: Subnet update time
+        :param pulumi.Input[builtins.str] vpc_id: ID of the VPC to which the subnet belongs
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
         """
         if account_id is not None:
             pulumi.set(__self__, "account_id", account_id)
@@ -238,7 +238,7 @@ class _SubnetState:
     @pulumi.getter(name="accountId")
     def account_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子网所属账户的ID。
+        ID of the account to which the subnet belongs
         """
         return pulumi.get(self, "account_id")
 
@@ -250,7 +250,7 @@ class _SubnetState:
     @pulumi.getter(name="availableIpAddressCount")
     def available_ip_address_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        子网中可用的IP地址数量。
+        Number of available IP addresses in the subnet
         """
         return pulumi.get(self, "available_ip_address_count")
 
@@ -262,7 +262,7 @@ class _SubnetState:
     @pulumi.getter(name="cidrBlock")
     def cidr_block(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子网的IPv4网段。
+        Subnet IPv4 CIDR block
         """
         return pulumi.get(self, "cidr_block")
 
@@ -274,7 +274,7 @@ class _SubnetState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子网的创建时间。
+        Subnet creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -286,7 +286,7 @@ class _SubnetState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子网的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不能以http://或https://开头。
+        Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
         """
         return pulumi.get(self, "description")
 
@@ -298,7 +298,7 @@ class _SubnetState:
     @pulumi.getter(name="enableIpv6")
     def enable_ipv6(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        开启/关闭IPv6功能。仅当子网所属的VPC开通IPv6功能时，可配置此参数。1、true：开启。2、false：关闭。仅当子网内没有分配IPv6地址的云资源时，可配置此取值。
+        Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
         """
         return pulumi.get(self, "enable_ipv6")
 
@@ -310,7 +310,7 @@ class _SubnetState:
     @pulumi.getter(name="ipv6CidrBlock")
     def ipv6_cidr_block(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子网IPv6网段。1、创建/修改时请输入子网IPv6网段的最后8比特位（子网的掩码固定为/64）。2、仅当EnableIpv6设置为true时，支持配置本参数。3、取值范围：0～255。掩码固定为/64。
+        Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
         """
         return pulumi.get(self, "ipv6_cidr_block")
 
@@ -322,7 +322,7 @@ class _SubnetState:
     @pulumi.getter(name="isDefault")
     def is_default(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        该子网是否为默认子网。1、true：默认子网，表示该子网是创建ECS实例时系统自动创建的子网。2、false：非默认子网，表示该子网是用户手动创建的。
+        Whether the subnet is a default subnet. 1. true: Default subnet, created automatically when an ECS instance is created. 2. false: Non-default subnet, created manually by the user
         """
         return pulumi.get(self, "is_default")
 
@@ -334,7 +334,7 @@ class _SubnetState:
     @pulumi.getter(name="networkAclId")
     def network_acl_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子网关联的网络ACL的ID。
+        ID of the network ACL associated with the subnet
         """
         return pulumi.get(self, "network_acl_id")
 
@@ -346,7 +346,7 @@ class _SubnetState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子网所在VPC实例所属项目的名称。
+        Name of the project associated with the VPC instance where the subnet resides
         """
         return pulumi.get(self, "project_name")
 
@@ -358,7 +358,7 @@ class _SubnetState:
     @pulumi.getter(name="readIpv6CidrBlock")
     def read_ipv6_cidr_block(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        只读字段，子网IPv6网段。
+        Read-only field, subnet IPv6 CIDR block
         """
         return pulumi.get(self, "read_ipv6_cidr_block")
 
@@ -370,7 +370,7 @@ class _SubnetState:
     @pulumi.getter(name="routeTable")
     def route_table(self) -> Optional[pulumi.Input['SubnetRouteTableArgs']]:
         """
-        路由表信息。
+        Route table information
         """
         return pulumi.get(self, "route_table")
 
@@ -382,7 +382,7 @@ class _SubnetState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子网的状态。1、Pending：表示配置中。2、Available：表示可用。
+        Subnet status. 1. Pending: Configuring. 2. Available: Available
         """
         return pulumi.get(self, "status")
 
@@ -394,7 +394,7 @@ class _SubnetState:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        待修改信息的子网的ID。
+        ID of the subnet whose information is to be modified
         """
         return pulumi.get(self, "subnet_id")
 
@@ -406,7 +406,7 @@ class _SubnetState:
     @pulumi.getter(name="subnetName")
     def subnet_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子网的名称，长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不能以http://或https://开头，不填默认是子网的ID。
+        Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
         """
         return pulumi.get(self, "subnet_name")
 
@@ -427,7 +427,7 @@ class _SubnetState:
     @pulumi.getter(name="totalIpv4Count")
     def total_ipv4_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        子网下可用IP总数。
+        Total number of available IPs in the subnet
         """
         return pulumi.get(self, "total_ipv4_count")
 
@@ -439,7 +439,7 @@ class _SubnetState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子网的更新时间。
+        Subnet update time
         """
         return pulumi.get(self, "updated_time")
 
@@ -451,7 +451,7 @@ class _SubnetState:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子网所属VPC的ID。
+        ID of the VPC to which the subnet belongs
         """
         return pulumi.get(self, "vpc_id")
 
@@ -463,7 +463,7 @@ class _SubnetState:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        要创建的子网所属的可用区ID，更多可用区信息请参见地域和可用区。
+        Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
         """
         return pulumi.get(self, "zone_id")
 
@@ -488,7 +488,7 @@ class Subnet(pulumi.CustomResource):
                  zone_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        子网是在指定可用区内分配的一段VPC网段内的网段，它为云上资源（如云服务器、负载均衡等）提供私网IP地址。
+        The subnet is a segment allocated within a specified availability zone from a VPC CIDR block, providing private IP addresses for cloud resources such as cloud servers and load balancers
 
         ## Example Usage
 
@@ -516,13 +516,13 @@ class Subnet(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] cidr_block: 子网的IPv4网段。
-        :param pulumi.Input[builtins.str] description: 子网的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不能以http://或https://开头。
-        :param pulumi.Input[builtins.bool] enable_ipv6: 开启/关闭IPv6功能。仅当子网所属的VPC开通IPv6功能时，可配置此参数。1、true：开启。2、false：关闭。仅当子网内没有分配IPv6地址的云资源时，可配置此取值。
-        :param pulumi.Input[builtins.str] ipv6_cidr_block: 子网IPv6网段。1、创建/修改时请输入子网IPv6网段的最后8比特位（子网的掩码固定为/64）。2、仅当EnableIpv6设置为true时，支持配置本参数。3、取值范围：0～255。掩码固定为/64。
-        :param pulumi.Input[builtins.str] subnet_name: 子网的名称，长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不能以http://或https://开头，不填默认是子网的ID。
-        :param pulumi.Input[builtins.str] vpc_id: 子网所属VPC的ID。
-        :param pulumi.Input[builtins.str] zone_id: 要创建的子网所属的可用区ID，更多可用区信息请参见地域和可用区。
+        :param pulumi.Input[builtins.str] cidr_block: Subnet IPv4 CIDR block
+        :param pulumi.Input[builtins.str] description: Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
+        :param pulumi.Input[builtins.bool] enable_ipv6: Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
+        :param pulumi.Input[builtins.str] ipv6_cidr_block: Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
+        :param pulumi.Input[builtins.str] subnet_name: Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
+        :param pulumi.Input[builtins.str] vpc_id: ID of the VPC to which the subnet belongs
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
         """
         ...
     @overload
@@ -531,7 +531,7 @@ class Subnet(pulumi.CustomResource):
                  args: SubnetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        子网是在指定可用区内分配的一段VPC网段内的网段，它为云上资源（如云服务器、负载均衡等）提供私网IP地址。
+        The subnet is a segment allocated within a specified availability zone from a VPC CIDR block, providing private IP addresses for cloud resources such as cloud servers and load balancers
 
         ## Example Usage
 
@@ -652,25 +652,25 @@ class Subnet(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] account_id: 子网所属账户的ID。
-        :param pulumi.Input[builtins.int] available_ip_address_count: 子网中可用的IP地址数量。
-        :param pulumi.Input[builtins.str] cidr_block: 子网的IPv4网段。
-        :param pulumi.Input[builtins.str] created_time: 子网的创建时间。
-        :param pulumi.Input[builtins.str] description: 子网的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不能以http://或https://开头。
-        :param pulumi.Input[builtins.bool] enable_ipv6: 开启/关闭IPv6功能。仅当子网所属的VPC开通IPv6功能时，可配置此参数。1、true：开启。2、false：关闭。仅当子网内没有分配IPv6地址的云资源时，可配置此取值。
-        :param pulumi.Input[builtins.str] ipv6_cidr_block: 子网IPv6网段。1、创建/修改时请输入子网IPv6网段的最后8比特位（子网的掩码固定为/64）。2、仅当EnableIpv6设置为true时，支持配置本参数。3、取值范围：0～255。掩码固定为/64。
-        :param pulumi.Input[builtins.bool] is_default: 该子网是否为默认子网。1、true：默认子网，表示该子网是创建ECS实例时系统自动创建的子网。2、false：非默认子网，表示该子网是用户手动创建的。
-        :param pulumi.Input[builtins.str] network_acl_id: 子网关联的网络ACL的ID。
-        :param pulumi.Input[builtins.str] project_name: 子网所在VPC实例所属项目的名称。
-        :param pulumi.Input[builtins.str] read_ipv6_cidr_block: 只读字段，子网IPv6网段。
-        :param pulumi.Input[Union['SubnetRouteTableArgs', 'SubnetRouteTableArgsDict']] route_table: 路由表信息。
-        :param pulumi.Input[builtins.str] status: 子网的状态。1、Pending：表示配置中。2、Available：表示可用。
-        :param pulumi.Input[builtins.str] subnet_id: 待修改信息的子网的ID。
-        :param pulumi.Input[builtins.str] subnet_name: 子网的名称，长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不能以http://或https://开头，不填默认是子网的ID。
-        :param pulumi.Input[builtins.int] total_ipv4_count: 子网下可用IP总数。
-        :param pulumi.Input[builtins.str] updated_time: 子网的更新时间。
-        :param pulumi.Input[builtins.str] vpc_id: 子网所属VPC的ID。
-        :param pulumi.Input[builtins.str] zone_id: 要创建的子网所属的可用区ID，更多可用区信息请参见地域和可用区。
+        :param pulumi.Input[builtins.str] account_id: ID of the account to which the subnet belongs
+        :param pulumi.Input[builtins.int] available_ip_address_count: Number of available IP addresses in the subnet
+        :param pulumi.Input[builtins.str] cidr_block: Subnet IPv4 CIDR block
+        :param pulumi.Input[builtins.str] created_time: Subnet creation time
+        :param pulumi.Input[builtins.str] description: Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
+        :param pulumi.Input[builtins.bool] enable_ipv6: Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
+        :param pulumi.Input[builtins.str] ipv6_cidr_block: Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
+        :param pulumi.Input[builtins.bool] is_default: Whether the subnet is a default subnet. 1. true: Default subnet, created automatically when an ECS instance is created. 2. false: Non-default subnet, created manually by the user
+        :param pulumi.Input[builtins.str] network_acl_id: ID of the network ACL associated with the subnet
+        :param pulumi.Input[builtins.str] project_name: Name of the project associated with the VPC instance where the subnet resides
+        :param pulumi.Input[builtins.str] read_ipv6_cidr_block: Read-only field, subnet IPv6 CIDR block
+        :param pulumi.Input[Union['SubnetRouteTableArgs', 'SubnetRouteTableArgsDict']] route_table: Route table information
+        :param pulumi.Input[builtins.str] status: Subnet status. 1. Pending: Configuring. 2. Available: Available
+        :param pulumi.Input[builtins.str] subnet_id: ID of the subnet whose information is to be modified
+        :param pulumi.Input[builtins.str] subnet_name: Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
+        :param pulumi.Input[builtins.int] total_ipv4_count: Total number of available IPs in the subnet
+        :param pulumi.Input[builtins.str] updated_time: Subnet update time
+        :param pulumi.Input[builtins.str] vpc_id: ID of the VPC to which the subnet belongs
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -702,7 +702,7 @@ class Subnet(pulumi.CustomResource):
     @pulumi.getter(name="accountId")
     def account_id(self) -> pulumi.Output[builtins.str]:
         """
-        子网所属账户的ID。
+        ID of the account to which the subnet belongs
         """
         return pulumi.get(self, "account_id")
 
@@ -710,7 +710,7 @@ class Subnet(pulumi.CustomResource):
     @pulumi.getter(name="availableIpAddressCount")
     def available_ip_address_count(self) -> pulumi.Output[builtins.int]:
         """
-        子网中可用的IP地址数量。
+        Number of available IP addresses in the subnet
         """
         return pulumi.get(self, "available_ip_address_count")
 
@@ -718,7 +718,7 @@ class Subnet(pulumi.CustomResource):
     @pulumi.getter(name="cidrBlock")
     def cidr_block(self) -> pulumi.Output[builtins.str]:
         """
-        子网的IPv4网段。
+        Subnet IPv4 CIDR block
         """
         return pulumi.get(self, "cidr_block")
 
@@ -726,7 +726,7 @@ class Subnet(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        子网的创建时间。
+        Subnet creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -734,7 +734,7 @@ class Subnet(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        子网的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不能以http://或https://开头。
+        Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
         """
         return pulumi.get(self, "description")
 
@@ -742,7 +742,7 @@ class Subnet(pulumi.CustomResource):
     @pulumi.getter(name="enableIpv6")
     def enable_ipv6(self) -> pulumi.Output[builtins.bool]:
         """
-        开启/关闭IPv6功能。仅当子网所属的VPC开通IPv6功能时，可配置此参数。1、true：开启。2、false：关闭。仅当子网内没有分配IPv6地址的云资源时，可配置此取值。
+        Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
         """
         return pulumi.get(self, "enable_ipv6")
 
@@ -750,7 +750,7 @@ class Subnet(pulumi.CustomResource):
     @pulumi.getter(name="ipv6CidrBlock")
     def ipv6_cidr_block(self) -> pulumi.Output[builtins.str]:
         """
-        子网IPv6网段。1、创建/修改时请输入子网IPv6网段的最后8比特位（子网的掩码固定为/64）。2、仅当EnableIpv6设置为true时，支持配置本参数。3、取值范围：0～255。掩码固定为/64。
+        Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
         """
         return pulumi.get(self, "ipv6_cidr_block")
 
@@ -758,7 +758,7 @@ class Subnet(pulumi.CustomResource):
     @pulumi.getter(name="isDefault")
     def is_default(self) -> pulumi.Output[builtins.bool]:
         """
-        该子网是否为默认子网。1、true：默认子网，表示该子网是创建ECS实例时系统自动创建的子网。2、false：非默认子网，表示该子网是用户手动创建的。
+        Whether the subnet is a default subnet. 1. true: Default subnet, created automatically when an ECS instance is created. 2. false: Non-default subnet, created manually by the user
         """
         return pulumi.get(self, "is_default")
 
@@ -766,7 +766,7 @@ class Subnet(pulumi.CustomResource):
     @pulumi.getter(name="networkAclId")
     def network_acl_id(self) -> pulumi.Output[builtins.str]:
         """
-        子网关联的网络ACL的ID。
+        ID of the network ACL associated with the subnet
         """
         return pulumi.get(self, "network_acl_id")
 
@@ -774,7 +774,7 @@ class Subnet(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        子网所在VPC实例所属项目的名称。
+        Name of the project associated with the VPC instance where the subnet resides
         """
         return pulumi.get(self, "project_name")
 
@@ -782,7 +782,7 @@ class Subnet(pulumi.CustomResource):
     @pulumi.getter(name="readIpv6CidrBlock")
     def read_ipv6_cidr_block(self) -> pulumi.Output[builtins.str]:
         """
-        只读字段，子网IPv6网段。
+        Read-only field, subnet IPv6 CIDR block
         """
         return pulumi.get(self, "read_ipv6_cidr_block")
 
@@ -790,7 +790,7 @@ class Subnet(pulumi.CustomResource):
     @pulumi.getter(name="routeTable")
     def route_table(self) -> pulumi.Output['outputs.SubnetRouteTable']:
         """
-        路由表信息。
+        Route table information
         """
         return pulumi.get(self, "route_table")
 
@@ -798,7 +798,7 @@ class Subnet(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        子网的状态。1、Pending：表示配置中。2、Available：表示可用。
+        Subnet status. 1. Pending: Configuring. 2. Available: Available
         """
         return pulumi.get(self, "status")
 
@@ -806,7 +806,7 @@ class Subnet(pulumi.CustomResource):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[builtins.str]:
         """
-        待修改信息的子网的ID。
+        ID of the subnet whose information is to be modified
         """
         return pulumi.get(self, "subnet_id")
 
@@ -814,7 +814,7 @@ class Subnet(pulumi.CustomResource):
     @pulumi.getter(name="subnetName")
     def subnet_name(self) -> pulumi.Output[builtins.str]:
         """
-        子网的名称，长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不能以http://或https://开头，不填默认是子网的ID。
+        Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
         """
         return pulumi.get(self, "subnet_name")
 
@@ -827,7 +827,7 @@ class Subnet(pulumi.CustomResource):
     @pulumi.getter(name="totalIpv4Count")
     def total_ipv4_count(self) -> pulumi.Output[builtins.int]:
         """
-        子网下可用IP总数。
+        Total number of available IPs in the subnet
         """
         return pulumi.get(self, "total_ipv4_count")
 
@@ -835,7 +835,7 @@ class Subnet(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        子网的更新时间。
+        Subnet update time
         """
         return pulumi.get(self, "updated_time")
 
@@ -843,7 +843,7 @@ class Subnet(pulumi.CustomResource):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Output[builtins.str]:
         """
-        子网所属VPC的ID。
+        ID of the VPC to which the subnet belongs
         """
         return pulumi.get(self, "vpc_id")
 
@@ -851,7 +851,7 @@ class Subnet(pulumi.CustomResource):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Output[builtins.str]:
         """
-        要创建的子网所属的可用区ID，更多可用区信息请参见地域和可用区。
+        Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
         """
         return pulumi.get(self, "zone_id")
 

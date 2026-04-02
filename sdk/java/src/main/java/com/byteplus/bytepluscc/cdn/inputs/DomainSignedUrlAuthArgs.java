@@ -25,14 +25,14 @@ public final class DomainSignedUrlAuthArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+     * Indicates whether to enable this feature. This parameter has the following values: true: Enables this feature. false: Disables this feature.
      * 
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+     * @return Indicates whether to enable this feature. This parameter has the following values: true: Enables this feature. false: Disables this feature.
      * 
      */
     public Optional<Output<Boolean>> switch_() {
@@ -78,7 +78,7 @@ public final class DomainSignedUrlAuthArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param switch_ 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+         * @param switch_ Indicates whether to enable this feature. This parameter has the following values: true: Enables this feature. false: Disables this feature.
          * 
          * @return builder
          * 
@@ -89,7 +89,7 @@ public final class DomainSignedUrlAuthArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param switch_ 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+         * @param switch_ Indicates whether to enable this feature. This parameter has the following values: true: Enables this feature. false: Disables this feature.
          * 
          * @return builder
          * 

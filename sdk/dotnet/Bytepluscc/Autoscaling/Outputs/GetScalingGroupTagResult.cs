@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling.Outputs
     public sealed class GetScalingGroupTagResult
     {
         /// <summary>
-        /// 用户标签的标签键。
+        /// User label tag key
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// 用户标签的标签值。
+        /// The value of the user tag.
         /// </summary>
         public readonly string Value;
 

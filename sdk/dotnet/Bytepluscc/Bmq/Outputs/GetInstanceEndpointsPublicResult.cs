@@ -15,43 +15,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Outputs
     public sealed class GetInstanceEndpointsPublicResult
     {
         /// <summary>
-        /// 域名映射地址。
+        /// Domain mapping address
         /// </summary>
         public readonly string Address;
         /// <summary>
-        /// 实例绑定的EIP的ID。
+        /// ID of the EIP bound to the instance
         /// </summary>
         public readonly string EipId;
         /// <summary>
-        /// 私网Plain接入点。
+        /// Private network Plain endpoint
         /// </summary>
         public readonly string Plain;
         /// <summary>
-        /// 普通接入点端口。
+        /// Standard endpoint port
         /// </summary>
         public readonly int PlainPort;
         /// <summary>
-        /// 私网SASL认证接入点。
+        /// Private network SASL authentication endpoint
         /// </summary>
         public readonly string Sasl;
         /// <summary>
-        /// 认证接入点端口。
+        /// Authentication endpoint port
         /// </summary>
         public readonly int SaslPort;
         /// <summary>
-        /// 加密接入点。
+        /// Encrypted endpoint
         /// </summary>
         public readonly string Ssl;
         /// <summary>
-        /// 加密接入点端口。
+        /// Encrypted endpoint port
         /// </summary>
         public readonly int SslPort;
         /// <summary>
-        /// 接入点状态。
+        /// Endpoint status
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// 售卖区网络关联的VPC ID列表。
+        /// List of VPC IDs associated with the sales zone network
         /// </summary>
         public readonly ImmutableArray<string> VpcIds;
 

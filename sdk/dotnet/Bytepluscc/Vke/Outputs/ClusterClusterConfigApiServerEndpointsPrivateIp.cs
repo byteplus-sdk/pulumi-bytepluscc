@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class ClusterClusterConfigApiServerEndpointsPrivateIp
     {
         /// <summary>
-        /// 私网 IP 的 IPv4 地址。
+        /// IPv4 address of the private network IP.
         /// </summary>
         public readonly string? Ipv4;
 

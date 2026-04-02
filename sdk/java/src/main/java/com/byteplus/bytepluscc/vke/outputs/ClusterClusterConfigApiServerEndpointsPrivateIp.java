@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ClusterClusterConfigApiServerEndpointsPrivateIp {
     /**
-     * @return 私网 IP 的 IPv4 地址。
+     * @return IPv4 address of the private network IP.
      * 
      */
     private @Nullable String ipv4;
 
     private ClusterClusterConfigApiServerEndpointsPrivateIp() {}
     /**
-     * @return 私网 IP 的 IPv4 地址。
+     * @return IPv4 address of the private network IP.
      * 
      */
     public Optional<String> ipv4() {

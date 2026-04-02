@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc.Outputs
     public sealed class VpcAssociateCen
     {
         /// <summary>
-        /// CEN的ID。
+        /// ID of the CEN.
         /// </summary>
         public readonly string? CenId;
         /// <summary>
-        /// CEN的用户ID。
+        /// User ID of the CEN.
         /// </summary>
         public readonly string? CenOwnerId;
         /// <summary>
-        /// VPC在CEN中的状态。Attaching：加载中，Attached：已加载
+        /// Status of the VPC in the CEN. Loading: loading, Loaded: loaded
         /// </summary>
         public readonly string? CenStatus;
 

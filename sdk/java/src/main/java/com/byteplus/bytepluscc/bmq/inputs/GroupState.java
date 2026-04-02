@@ -19,14 +19,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     public static final GroupState Empty = new GroupState();
 
     /**
-     * Consumer Group 创建时间。
+     * Consumer Group creation time.
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return Consumer Group 创建时间。
+     * @return Consumer Group creation time.
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -34,14 +34,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Consumer Group 描述。
+     * Consumer Group description.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return Consumer Group 描述。
+     * @return Consumer Group description.
      * 
      */
     public Optional<Output<String>> description() {
@@ -49,14 +49,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Consumer Group 的 ID。
+     * Consumer Group ID.
      * 
      */
     @Import(name="groupId")
     private @Nullable Output<String> groupId;
 
     /**
-     * @return Consumer Group 的 ID。
+     * @return Consumer Group ID.
      * 
      */
     public Optional<Output<String>> groupId() {
@@ -64,14 +64,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 自定义设置Consumer Group 的名称，约束限制如下：只能由小写英文字符、数字、下划线和中划线（-）组成。长度为 3~64 字符。
+     * Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
      * 
      */
     @Import(name="groupName")
     private @Nullable Output<String> groupName;
 
     /**
-     * @return 自定义设置Consumer Group 的名称，约束限制如下：只能由小写英文字符、数字、下划线和中划线（-）组成。长度为 3~64 字符。
+     * @return Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
      * 
      */
     public Optional<Output<String>> groupName() {
@@ -79,14 +79,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 所属 BMQ 实例 ID。
+     * BMQ instance ID.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 所属 BMQ 实例 ID。
+     * @return BMQ instance ID.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -94,14 +94,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Consumer Group 所属用户的 ID。
+     * User ID associated with the Consumer Group.
      * 
      */
     @Import(name="ownerId")
     private @Nullable Output<String> ownerId;
 
     /**
-     * @return Consumer Group 所属用户的 ID。
+     * @return User ID associated with the Consumer Group.
      * 
      */
     public Optional<Output<String>> ownerId() {
@@ -109,14 +109,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Consumer Group 所属用户的名称。
+     * Name of the user associated with the Consumer Group.
      * 
      */
     @Import(name="ownerName")
     private @Nullable Output<String> ownerName;
 
     /**
-     * @return Consumer Group 所属用户的名称。
+     * @return Name of the user associated with the Consumer Group.
      * 
      */
     public Optional<Output<String>> ownerName() {
@@ -124,14 +124,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 重置消费位点信息。
+     * Reset consumption position information.
      * 
      */
     @Import(name="resetInfo")
     private @Nullable Output<GroupResetInfoArgs> resetInfo;
 
     /**
-     * @return 重置消费位点信息。
+     * @return Reset consumption position information.
      * 
      */
     public Optional<Output<GroupResetInfoArgs>> resetInfo() {
@@ -139,14 +139,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Consumer Group 的状态。
+     * Consumer Group status.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return Consumer Group 的状态。
+     * @return Consumer Group status.
      * 
      */
     public Optional<Output<String>> status() {
@@ -194,7 +194,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime Consumer Group 创建时间。
+         * @param createdTime Consumer Group creation time.
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime Consumer Group 创建时间。
+         * @param createdTime Consumer Group creation time.
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Consumer Group 描述。
+         * @param description Consumer Group description.
          * 
          * @return builder
          * 
@@ -226,7 +226,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Consumer Group 描述。
+         * @param description Consumer Group description.
          * 
          * @return builder
          * 
@@ -236,7 +236,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupId Consumer Group 的 ID。
+         * @param groupId Consumer Group ID.
          * 
          * @return builder
          * 
@@ -247,7 +247,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupId Consumer Group 的 ID。
+         * @param groupId Consumer Group ID.
          * 
          * @return builder
          * 
@@ -257,7 +257,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupName 自定义设置Consumer Group 的名称，约束限制如下：只能由小写英文字符、数字、下划线和中划线（-）组成。长度为 3~64 字符。
+         * @param groupName Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
          * 
          * @return builder
          * 
@@ -268,7 +268,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupName 自定义设置Consumer Group 的名称，约束限制如下：只能由小写英文字符、数字、下划线和中划线（-）组成。长度为 3~64 字符。
+         * @param groupName Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
          * 
          * @return builder
          * 
@@ -278,7 +278,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 所属 BMQ 实例 ID。
+         * @param instanceId BMQ instance ID.
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 所属 BMQ 实例 ID。
+         * @param instanceId BMQ instance ID.
          * 
          * @return builder
          * 
@@ -299,7 +299,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ownerId Consumer Group 所属用户的 ID。
+         * @param ownerId User ID associated with the Consumer Group.
          * 
          * @return builder
          * 
@@ -310,7 +310,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ownerId Consumer Group 所属用户的 ID。
+         * @param ownerId User ID associated with the Consumer Group.
          * 
          * @return builder
          * 
@@ -320,7 +320,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ownerName Consumer Group 所属用户的名称。
+         * @param ownerName Name of the user associated with the Consumer Group.
          * 
          * @return builder
          * 
@@ -331,7 +331,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ownerName Consumer Group 所属用户的名称。
+         * @param ownerName Name of the user associated with the Consumer Group.
          * 
          * @return builder
          * 
@@ -341,7 +341,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resetInfo 重置消费位点信息。
+         * @param resetInfo Reset consumption position information.
          * 
          * @return builder
          * 
@@ -352,7 +352,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resetInfo 重置消费位点信息。
+         * @param resetInfo Reset consumption position information.
          * 
          * @return builder
          * 
@@ -362,7 +362,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status Consumer Group 的状态。
+         * @param status Consumer Group status.
          * 
          * @return builder
          * 
@@ -373,7 +373,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status Consumer Group 的状态。
+         * @param status Consumer Group status.
          * 
          * @return builder
          * 

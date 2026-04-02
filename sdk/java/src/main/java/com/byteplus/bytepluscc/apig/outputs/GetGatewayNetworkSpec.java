@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetGatewayNetworkSpec {
     /**
-     * @return 子网配置信息列表。
+     * @return Subnet configuration information list
      * 
      */
     private List<GetGatewayNetworkSpecSubnet> subnets;
@@ -23,14 +23,14 @@ public final class GetGatewayNetworkSpec {
      */
     private String vpcId;
     /**
-     * @return VPC名称。
+     * @return VPC name
      * 
      */
     private String vpcName;
 
     private GetGatewayNetworkSpec() {}
     /**
-     * @return 子网配置信息列表。
+     * @return Subnet configuration information list
      * 
      */
     public List<GetGatewayNetworkSpecSubnet> subnets() {
@@ -44,7 +44,7 @@ public final class GetGatewayNetworkSpec {
         return this.vpcId;
     }
     /**
-     * @return VPC名称。
+     * @return VPC name
      * 
      */
     public String vpcName() {

@@ -18,14 +18,14 @@ public final class EniPrimaryIpAddressArgs extends com.pulumi.resources.Resource
     public static final EniPrimaryIpAddressArgs Empty = new EniPrimaryIpAddressArgs();
 
     /**
-     * 网卡主私网IPv4关联的公网IP的信息。
+     * Information about the public IP associated with the primary private IPv4 address of the network interface.
      * 
      */
     @Import(name="associatedElasticIp")
     private @Nullable Output<EniPrimaryIpAddressAssociatedElasticIpArgs> associatedElasticIp;
 
     /**
-     * @return 网卡主私网IPv4关联的公网IP的信息。
+     * @return Information about the public IP associated with the primary private IPv4 address of the network interface.
      * 
      */
     public Optional<Output<EniPrimaryIpAddressAssociatedElasticIpArgs>> associatedElasticIp() {
@@ -33,14 +33,14 @@ public final class EniPrimaryIpAddressArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 是否为主私网IPv4地址。
+     * Indicates whether this is the primary private IPv4 address.
      * 
      */
     @Import(name="primary")
     private @Nullable Output<Boolean> primary;
 
     /**
-     * @return 是否为主私网IPv4地址。
+     * @return Indicates whether this is the primary private IPv4 address.
      * 
      */
     public Optional<Output<Boolean>> primary() {
@@ -48,14 +48,14 @@ public final class EniPrimaryIpAddressArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 网卡的私网IP地址。
+     * Private IP address of the network interface.
      * 
      */
     @Import(name="privateIpAddress")
     private @Nullable Output<String> privateIpAddress;
 
     /**
-     * @return 网卡的私网IP地址。
+     * @return Private IP address of the network interface.
      * 
      */
     public Optional<Output<String>> privateIpAddress() {
@@ -89,7 +89,7 @@ public final class EniPrimaryIpAddressArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param associatedElasticIp 网卡主私网IPv4关联的公网IP的信息。
+         * @param associatedElasticIp Information about the public IP associated with the primary private IPv4 address of the network interface.
          * 
          * @return builder
          * 
@@ -100,7 +100,7 @@ public final class EniPrimaryIpAddressArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param associatedElasticIp 网卡主私网IPv4关联的公网IP的信息。
+         * @param associatedElasticIp Information about the public IP associated with the primary private IPv4 address of the network interface.
          * 
          * @return builder
          * 
@@ -110,7 +110,7 @@ public final class EniPrimaryIpAddressArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param primary 是否为主私网IPv4地址。
+         * @param primary Indicates whether this is the primary private IPv4 address.
          * 
          * @return builder
          * 
@@ -121,7 +121,7 @@ public final class EniPrimaryIpAddressArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param primary 是否为主私网IPv4地址。
+         * @param primary Indicates whether this is the primary private IPv4 address.
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class EniPrimaryIpAddressArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param privateIpAddress 网卡的私网IP地址。
+         * @param privateIpAddress Private IP address of the network interface.
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class EniPrimaryIpAddressArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param privateIpAddress 网卡的私网IP地址。
+         * @param privateIpAddress Private IP address of the network interface.
          * 
          * @return builder
          * 

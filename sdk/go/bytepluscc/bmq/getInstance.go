@@ -30,57 +30,57 @@ type LookupInstanceArgs struct {
 
 // A collection of values returned by getInstance.
 type LookupInstanceResult struct {
-	// 是否开启自动续费，取值如下：true：开启自动续费。false：关闭自动续费。
+	// Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
 	AutoRenew string `pulumi:"autoRenew"`
-	// 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+	// Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
 	BillingPeriod string `pulumi:"billingPeriod"`
-	// 实例的计费方式，取值如下：POST：按量计费。MIX：包年包月。
+	// Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
 	BillingType string `pulumi:"billingType"`
-	// 实例的创建时间。
+	// Instance creation time
 	CreatedTime string `pulumi:"createdTime"`
-	// 实例的描述语句。
+	// Instance description statement
 	Description string `pulumi:"description"`
-	// 实例是否开启公网访问。如果需要开启公网访问，请配置相同地域的公网 IP 的 ID。
+	// Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
 	EipId string `pulumi:"eipId"`
-	// 实例所有接入点响应数据。
+	// Response data for all instance endpoints
 	Endpoints GetInstanceEndpoints `pulumi:"endpoints"`
-	// 实例过期时间。
+	// Instance expiration time
 	ExpirationTime string `pulumi:"expirationTime"`
-	// 实例消费组数量上限。
+	// Maximum number of consumer groups per instance
 	GroupLimit int `pulumi:"groupLimit"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 实例ID。
+	// Instance ID
 	InstanceId string `pulumi:"instanceId"`
-	// 实例下所有 Topic 的消息保留时长，单位为小时。
+	// Message retention period for all topics under the instance, in hours
 	MessageRetention int `pulumi:"messageRetention"`
-	// 自定设置 BMQ 实例的名称，约束限制如下：由小写字母、数字和中划线（-）组成。长度为 1~64 字符。
+	// Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
 	Name string `pulumi:"name"`
-	// 实例分区数量上限。
+	// Maximum number of partitions per instance
 	PartitionLimit int `pulumi:"partitionLimit"`
-	// 实例所属项目名称。
+	// Project name to which the instance belongs
 	ProjectName string `pulumi:"projectName"`
-	// 实例资源标签列表。
+	// Instance resource tag list
 	ResourceTags []GetInstanceResourceTag `pulumi:"resourceTags"`
-	// 实例资源统计响应数据。
+	// Instance resource statistics response data
 	Resources GetInstanceResources `pulumi:"resources"`
-	// 实例使用安全组列表。
+	// List of security groups used by the instance
 	SecurityGroupIdLists []string `pulumi:"securityGroupIdLists"`
-	// 实例规格。
+	// Instance specification
 	Specification string `pulumi:"specification"`
-	// 实例的状态。取值如下：INITIALIZING：初始化中，INITIALIZATION*FAILED：初始化失败，RUNNING：运行中，MODIFYING：更新中，MODIFY*FAILED：更新失败，RELEASING：释放中，STOPPING：停止中，STOPPED：停止，RECOVERING：恢复中，EXCEPTION：异常，CAPACITY*EXPAXION*FAILED：扩容失败，EXPANDING*CAPACITY：扩容中，CANCEL*EXPANDING_CAPACITY：扩容取消中，RESTARTING：重启中，UNPAID：未支付
+	// Instance status. Possible values: INITIALIZING: Initializing, INITIALIZATION*FAILED: Initialization failed, RUNNING: Running, MODIFYING: Updating, MODIFY*FAILED: Update failed, RELEASING: Releasing, STOPPING: Stopping, STOPPED: Stopped, RECOVERING: Recovering, EXCEPTION: Exception, CAPACITY*EXPAXION*FAILED: Capacity expansion failed, EXPANDING*CAPACITY: Expanding capacity, CANCEL*EXPANDING_CAPACITY: Canceling capacity expansion, RESTARTING: Restarting, UNPAID: Unpaid
 	Status string `pulumi:"status"`
-	// 实例使用的子网列表。
+	// List of subnets used by the instance
 	SubnetIdLists []string `pulumi:"subnetIdLists"`
-	// 实例资源标签列表。
+	// Instance resource tag list
 	Tags []GetInstanceTag `pulumi:"tags"`
-	// 包年包月类型实例的购买时长，单位为月。
+	// Purchase duration for subscription instances, in months
 	Times int `pulumi:"times"`
-	// 实例Topic数量上限。
+	// Maximum number of topics per instance
 	TopicLimit int `pulumi:"topicLimit"`
-	// 实例所在VPC ID。
+	// VPC ID where the instance is located
 	VpcId string `pulumi:"vpcId"`
-	// 实例所在可用区列表。
+	// List of availability zones where the instance is located
 	ZoneIdLists []string `pulumi:"zoneIdLists"`
 }
 
@@ -118,47 +118,47 @@ func (o LookupInstanceResultOutput) ToLookupInstanceResultOutputWithContext(ctx 
 	return o
 }
 
-// 是否开启自动续费，取值如下：true：开启自动续费。false：关闭自动续费。
+// Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
 func (o LookupInstanceResultOutput) AutoRenew() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.AutoRenew }).(pulumi.StringOutput)
 }
 
-// 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+// Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
 func (o LookupInstanceResultOutput) BillingPeriod() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.BillingPeriod }).(pulumi.StringOutput)
 }
 
-// 实例的计费方式，取值如下：POST：按量计费。MIX：包年包月。
+// Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
 func (o LookupInstanceResultOutput) BillingType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.BillingType }).(pulumi.StringOutput)
 }
 
-// 实例的创建时间。
+// Instance creation time
 func (o LookupInstanceResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 实例的描述语句。
+// Instance description statement
 func (o LookupInstanceResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 实例是否开启公网访问。如果需要开启公网访问，请配置相同地域的公网 IP 的 ID。
+// Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
 func (o LookupInstanceResultOutput) EipId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.EipId }).(pulumi.StringOutput)
 }
 
-// 实例所有接入点响应数据。
+// Response data for all instance endpoints
 func (o LookupInstanceResultOutput) Endpoints() GetInstanceEndpointsOutput {
 	return o.ApplyT(func(v LookupInstanceResult) GetInstanceEndpoints { return v.Endpoints }).(GetInstanceEndpointsOutput)
 }
 
-// 实例过期时间。
+// Instance expiration time
 func (o LookupInstanceResultOutput) ExpirationTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ExpirationTime }).(pulumi.StringOutput)
 }
 
-// 实例消费组数量上限。
+// Maximum number of consumer groups per instance
 func (o LookupInstanceResultOutput) GroupLimit() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.GroupLimit }).(pulumi.IntOutput)
 }
@@ -168,82 +168,82 @@ func (o LookupInstanceResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 实例ID。
+// Instance ID
 func (o LookupInstanceResultOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 实例下所有 Topic 的消息保留时长，单位为小时。
+// Message retention period for all topics under the instance, in hours
 func (o LookupInstanceResultOutput) MessageRetention() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.MessageRetention }).(pulumi.IntOutput)
 }
 
-// 自定设置 BMQ 实例的名称，约束限制如下：由小写字母、数字和中划线（-）组成。长度为 1~64 字符。
+// Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
 func (o LookupInstanceResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 实例分区数量上限。
+// Maximum number of partitions per instance
 func (o LookupInstanceResultOutput) PartitionLimit() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.PartitionLimit }).(pulumi.IntOutput)
 }
 
-// 实例所属项目名称。
+// Project name to which the instance belongs
 func (o LookupInstanceResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 实例资源标签列表。
+// Instance resource tag list
 func (o LookupInstanceResultOutput) ResourceTags() GetInstanceResourceTagArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceResourceTag { return v.ResourceTags }).(GetInstanceResourceTagArrayOutput)
 }
 
-// 实例资源统计响应数据。
+// Instance resource statistics response data
 func (o LookupInstanceResultOutput) Resources() GetInstanceResourcesOutput {
 	return o.ApplyT(func(v LookupInstanceResult) GetInstanceResources { return v.Resources }).(GetInstanceResourcesOutput)
 }
 
-// 实例使用安全组列表。
+// List of security groups used by the instance
 func (o LookupInstanceResultOutput) SecurityGroupIdLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []string { return v.SecurityGroupIdLists }).(pulumi.StringArrayOutput)
 }
 
-// 实例规格。
+// Instance specification
 func (o LookupInstanceResultOutput) Specification() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.Specification }).(pulumi.StringOutput)
 }
 
-// 实例的状态。取值如下：INITIALIZING：初始化中，INITIALIZATION*FAILED：初始化失败，RUNNING：运行中，MODIFYING：更新中，MODIFY*FAILED：更新失败，RELEASING：释放中，STOPPING：停止中，STOPPED：停止，RECOVERING：恢复中，EXCEPTION：异常，CAPACITY*EXPAXION*FAILED：扩容失败，EXPANDING*CAPACITY：扩容中，CANCEL*EXPANDING_CAPACITY：扩容取消中，RESTARTING：重启中，UNPAID：未支付
+// Instance status. Possible values: INITIALIZING: Initializing, INITIALIZATION*FAILED: Initialization failed, RUNNING: Running, MODIFYING: Updating, MODIFY*FAILED: Update failed, RELEASING: Releasing, STOPPING: Stopping, STOPPED: Stopped, RECOVERING: Recovering, EXCEPTION: Exception, CAPACITY*EXPAXION*FAILED: Capacity expansion failed, EXPANDING*CAPACITY: Expanding capacity, CANCEL*EXPANDING_CAPACITY: Canceling capacity expansion, RESTARTING: Restarting, UNPAID: Unpaid
 func (o LookupInstanceResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 实例使用的子网列表。
+// List of subnets used by the instance
 func (o LookupInstanceResultOutput) SubnetIdLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []string { return v.SubnetIdLists }).(pulumi.StringArrayOutput)
 }
 
-// 实例资源标签列表。
+// Instance resource tag list
 func (o LookupInstanceResultOutput) Tags() GetInstanceTagArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceTag { return v.Tags }).(GetInstanceTagArrayOutput)
 }
 
-// 包年包月类型实例的购买时长，单位为月。
+// Purchase duration for subscription instances, in months
 func (o LookupInstanceResultOutput) Times() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.Times }).(pulumi.IntOutput)
 }
 
-// 实例Topic数量上限。
+// Maximum number of topics per instance
 func (o LookupInstanceResultOutput) TopicLimit() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.TopicLimit }).(pulumi.IntOutput)
 }
 
-// 实例所在VPC ID。
+// VPC ID where the instance is located
 func (o LookupInstanceResultOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.VpcId }).(pulumi.StringOutput)
 }
 
-// 实例所在可用区列表。
+// List of availability zones where the instance is located
 func (o LookupInstanceResultOutput) ZoneIdLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []string { return v.ZoneIdLists }).(pulumi.StringArrayOutput)
 }

@@ -11,27 +11,27 @@ import java.util.Objects;
 @CustomType
 public final class GetUserProvisioningResult {
     /**
-     * @return 创建时间。
+     * @return Creation Time
      * 
      */
     private String createdTime;
     /**
-     * @return 删除策略。
+     * @return Deletion Policy
      * 
      */
     private String deletionStrategy;
     /**
-     * @return 任务描述。
+     * @return Task Description
      * 
      */
     private String description;
     /**
-     * @return 用户名冲突策略。
+     * @return Username Conflict Policy
      * 
      */
     private String duplicationStrategy;
     /**
-     * @return 本次同步IAM用户名称后缀。
+     * @return Suffix for IAM user name in this synchronization
      * 
      */
     private String duplicationSuffix;
@@ -41,77 +41,77 @@ public final class GetUserProvisioningResult {
      */
     private String id;
     /**
-     * @return 身份源冲突策略。
+     * @return Identity Source Conflict Policy
      * 
      */
     private String identitySourceStrategy;
     /**
-     * @return 身份id。
+     * @return Identity ID
      * 
      */
     private String principalId;
     /**
-     * @return 目标名称。
+     * @return Target Name
      * 
      */
     private String principalName;
     /**
-     * @return 身份类型。
+     * @return Identity Type
      * 
      */
     private String principalType;
     /**
-     * @return 授权任务状态。Provisioned 授权成功，Provisioning 正在授权，DeleteProvisioning 授权解除中，DeleteProvisioned 授权解除成功
+     * @return Authorization Task Status. Provisioned: authorization successful, Provisioning: authorizing, DeleteProvisioning: revoking authorization, DeleteProvisioned: authorization revoked successfully.
      * 
      */
     private String provisionStatus;
     /**
-     * @return 目标id。
+     * @return Target ID
      * 
      */
     private String targetId;
     /**
-     * @return 更新时间。
+     * @return Update Time
      * 
      */
     private String updatedTime;
     /**
-     * @return IAM 用户同步任务ID。
+     * @return IAM User Synchronization Task ID
      * 
      */
     private String userProvisioningId;
 
     private GetUserProvisioningResult() {}
     /**
-     * @return 创建时间。
+     * @return Creation Time
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 删除策略。
+     * @return Deletion Policy
      * 
      */
     public String deletionStrategy() {
         return this.deletionStrategy;
     }
     /**
-     * @return 任务描述。
+     * @return Task Description
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 用户名冲突策略。
+     * @return Username Conflict Policy
      * 
      */
     public String duplicationStrategy() {
         return this.duplicationStrategy;
     }
     /**
-     * @return 本次同步IAM用户名称后缀。
+     * @return Suffix for IAM user name in this synchronization
      * 
      */
     public String duplicationSuffix() {
@@ -125,56 +125,56 @@ public final class GetUserProvisioningResult {
         return this.id;
     }
     /**
-     * @return 身份源冲突策略。
+     * @return Identity Source Conflict Policy
      * 
      */
     public String identitySourceStrategy() {
         return this.identitySourceStrategy;
     }
     /**
-     * @return 身份id。
+     * @return Identity ID
      * 
      */
     public String principalId() {
         return this.principalId;
     }
     /**
-     * @return 目标名称。
+     * @return Target Name
      * 
      */
     public String principalName() {
         return this.principalName;
     }
     /**
-     * @return 身份类型。
+     * @return Identity Type
      * 
      */
     public String principalType() {
         return this.principalType;
     }
     /**
-     * @return 授权任务状态。Provisioned 授权成功，Provisioning 正在授权，DeleteProvisioning 授权解除中，DeleteProvisioned 授权解除成功
+     * @return Authorization Task Status. Provisioned: authorization successful, Provisioning: authorizing, DeleteProvisioning: revoking authorization, DeleteProvisioned: authorization revoked successfully.
      * 
      */
     public String provisionStatus() {
         return this.provisionStatus;
     }
     /**
-     * @return 目标id。
+     * @return Target ID
      * 
      */
     public String targetId() {
         return this.targetId;
     }
     /**
-     * @return 更新时间。
+     * @return Update Time
      * 
      */
     public String updatedTime() {
         return this.updatedTime;
     }
     /**
-     * @return IAM 用户同步任务ID。
+     * @return IAM User Synchronization Task ID
      * 
      */
     public String userProvisioningId() {

@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Kafka.Inputs
     public sealed class TopicAccessPolicyGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// SASL 用户对于当前 Topic 的访问权限。PubSub：拥有发布、订阅权限。Pub：拥有发布权限。Sub：拥有订阅权限。
+        /// SASL user access permissions for the current Topic. PubSub: publish and subscribe permissions. Pub: publish permission. Sub: subscribe permission.
         /// </summary>
         [Input("accessPolicy")]
         public Input<string>? AccessPolicy { get; set; }
 
         /// <summary>
-        /// SASL 用户名称。
+        /// SASL username.
         /// </summary>
         [Input("userName")]
         public Input<string>? UserName { get; set; }

@@ -17,7 +17,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 文档数据库 MongoDB 版实例创建成功后，您可以为实例设置白名单，以允许外部设备访问该实例。本文介绍如何通过控制台设置白名单。
+ * After you create a MongoDB document database instance, you can set an allowlist for the instance to permit external devices to access it. This article describes how to set an allowlist in the console.
  * 
  * ## Example Usage
  * 
@@ -34,112 +34,112 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:mongodb/allowList:AllowList")
 public class AllowList extends com.pulumi.resources.CustomResource {
     /**
-     * 白名单类型。取值范围如下：Ordinary：普通白名单；Default：默认白名单。
+     * Allowlist type. Valid values: Ordinary: ordinary allowlist; Default: default allowlist.
      * 
      */
     @Export(name="allowListCategory", refs={String.class}, tree="[0]")
     private Output<String> allowListCategory;
 
     /**
-     * @return 白名单类型。取值范围如下：Ordinary：普通白名单；Default：默认白名单。
+     * @return Allowlist type. Valid values: Ordinary: ordinary allowlist; Default: default allowlist.
      * 
      */
     public Output<String> allowListCategory() {
         return this.allowListCategory;
     }
     /**
-     * 白名单的备注信息，长度不可超过 200 个字符。
+     * Allowlist remarks. Maximum length: 200 characters.
      * 
      */
     @Export(name="allowListDesc", refs={String.class}, tree="[0]")
     private Output<String> allowListDesc;
 
     /**
-     * @return 白名单的备注信息，长度不可超过 200 个字符。
+     * @return Allowlist remarks. Maximum length: 200 characters.
      * 
      */
     public Output<String> allowListDesc() {
         return this.allowListDesc;
     }
     /**
-     * 白名单 ID。
+     * Allowlist ID.
      * 
      */
     @Export(name="allowListId", refs={String.class}, tree="[0]")
     private Output<String> allowListId;
 
     /**
-     * @return 白名单 ID。
+     * @return Allowlist ID.
      * 
      */
     public Output<String> allowListId() {
         return this.allowListId;
     }
     /**
-     * 白名单内的 IP 地址（或地址段）总数。
+     * Total number of IP addresses (or address ranges) in the allowlist.
      * 
      */
     @Export(name="allowListIpNum", refs={Integer.class}, tree="[0]")
     private Output<Integer> allowListIpNum;
 
     /**
-     * @return 白名单内的 IP 地址（或地址段）总数。
+     * @return Total number of IP addresses (or address ranges) in the allowlist.
      * 
      */
     public Output<Integer> allowListIpNum() {
         return this.allowListIpNum;
     }
     /**
-     * 白名单名称，名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 1~128 个字符。
+     * Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters.
      * 
      */
     @Export(name="allowListName", refs={String.class}, tree="[0]")
     private Output<String> allowListName;
 
     /**
-     * @return 白名单名称，名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 1~128 个字符。
+     * @return Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters.
      * 
      */
     public Output<String> allowListName() {
         return this.allowListName;
     }
     /**
-     * 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+     * IP address type in the allowlist. Only IPv4 addresses are currently supported.
      * 
      */
     @Export(name="allowListType", refs={String.class}, tree="[0]")
     private Output<String> allowListType;
 
     /**
-     * @return 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+     * @return IP address type in the allowlist. Only IPv4 addresses are currently supported.
      * 
      */
     public Output<String> allowListType() {
         return this.allowListType;
     }
     /**
-     * 输入 IP 地址或 CIDR 格式的 IP 地址段。
+     * Enter an IP address or a CIDR-format IP address range.
      * 
      */
     @Export(name="allowLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> allowLists;
 
     /**
-     * @return 输入 IP 地址或 CIDR 格式的 IP 地址段。
+     * @return Enter an IP address or a CIDR-format IP address range.
      * 
      */
     public Output<List<String>> allowLists() {
         return this.allowLists;
     }
     /**
-     * 已绑定当前白名单的实例总数。
+     * Total number of instances bound to the current allowlist.
      * 
      */
     @Export(name="associatedInstanceNum", refs={Integer.class}, tree="[0]")
     private Output<Integer> associatedInstanceNum;
 
     /**
-     * @return 已绑定当前白名单的实例总数。
+     * @return Total number of instances bound to the current allowlist.
      * 
      */
     public Output<Integer> associatedInstanceNum() {
@@ -152,14 +152,14 @@ public class AllowList extends com.pulumi.resources.CustomResource {
         return this.associatedInstances;
     }
     /**
-     * 当前白名单所属的项目。
+     * Project to which the current allowlist belongs.
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 当前白名单所属的项目。
+     * @return Project to which the current allowlist belongs.
      * 
      */
     public Output<String> projectName() {

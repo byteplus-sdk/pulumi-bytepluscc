@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetResolverRuleForwardIP {
     /**
-     * @return VPC 外部的 DNS 服务器的 IP 地址。
+     * @return IP address of the external DNS server for the VPC
      * 
      */
     private String ip;
     /**
-     * @return VPC 外部的 DNS 服务器的端口。
+     * @return Port of the external DNS server for the VPC
      * 
      */
     private Integer port;
 
     private GetResolverRuleForwardIP() {}
     /**
-     * @return VPC 外部的 DNS 服务器的 IP 地址。
+     * @return IP address of the external DNS server for the VPC
      * 
      */
     public String ip() {
         return this.ip;
     }
     /**
-     * @return VPC 外部的 DNS 服务器的端口。
+     * @return Port of the external DNS server for the VPC
      * 
      */
     public Integer port() {

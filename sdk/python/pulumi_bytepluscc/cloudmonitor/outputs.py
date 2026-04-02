@@ -78,12 +78,12 @@ class RuleCondition(dict):
                  statistics: Optional[builtins.str] = None,
                  threshold: Optional[builtins.str] = None):
         """
-        :param builtins.str comparison_operator: 比较符号。支持普通阈值告警： >、>=、<、<=、!=、= ，以及以下同环比告警：last*period*increase*pct：环比上周期上涨。last*period*decrease*pct：环比上周起下降。last*period*abs*pct：环比上周期上涨或下降。last*day*increase*pct：同比昨天同一时段上涨。last*day*decrease*pct：同比昨天同一时段下降。last*day*abs*pct：同比昨天同一时段上涨或下降。last*week*increase*pct：同比上周同一时段上涨。last*week*decrease*pct：同比上周同一时段下降。last*week*abs_pct：同比上周同一时段上涨或下降。
-        :param builtins.str metric_name: 监控指标的名称。详情请参见 云监控指标查询 下各产品的 MetricName。
-        :param builtins.str metric_unit: 监控指标的单位。详情请参见 云监控指标查询 下各产品的 MetricUnit。说明同环比告警，MetricUnit 需要填写为 "Percent"。MetricUnit 中是否带有 IEC 表示不同的进位：带有 IEC：进位是 1024不带 IEC：进位是 1000。
-        :param builtins.str period: 监控指标的统计周期。详情请参见 云监控指标查询 下各产品的 Period。
-        :param builtins.str statistics: 统计方法，取值：avg：平均值。max：最大值。min：最小值。说明统计方法会应用到检测时间段内的数据上。例如，默认每次检测数据的时间跨度是 1 分钟，如果统计方法为 avg，那就是对 1 分钟内的数据取平均值。
-        :param builtins.str threshold: 指标阈值。支持输入正数或 0。最多支持三位小数。
+        :param builtins.str comparison_operator: Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
+        :param builtins.str metric_name: Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
+        :param builtins.str metric_unit: Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
+        :param builtins.str period: Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
+        :param builtins.str statistics: Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
+        :param builtins.str threshold: Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
         """
         if comparison_operator is not None:
             pulumi.set(__self__, "comparison_operator", comparison_operator)
@@ -102,7 +102,7 @@ class RuleCondition(dict):
     @pulumi.getter(name="comparisonOperator")
     def comparison_operator(self) -> Optional[builtins.str]:
         """
-        比较符号。支持普通阈值告警： >、>=、<、<=、!=、= ，以及以下同环比告警：last*period*increase*pct：环比上周期上涨。last*period*decrease*pct：环比上周起下降。last*period*abs*pct：环比上周期上涨或下降。last*day*increase*pct：同比昨天同一时段上涨。last*day*decrease*pct：同比昨天同一时段下降。last*day*abs*pct：同比昨天同一时段上涨或下降。last*week*increase*pct：同比上周同一时段上涨。last*week*decrease*pct：同比上周同一时段下降。last*week*abs_pct：同比上周同一时段上涨或下降。
+        Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
         """
         return pulumi.get(self, "comparison_operator")
 
@@ -110,7 +110,7 @@ class RuleCondition(dict):
     @pulumi.getter(name="metricName")
     def metric_name(self) -> Optional[builtins.str]:
         """
-        监控指标的名称。详情请参见 云监控指标查询 下各产品的 MetricName。
+        Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
         """
         return pulumi.get(self, "metric_name")
 
@@ -118,7 +118,7 @@ class RuleCondition(dict):
     @pulumi.getter(name="metricUnit")
     def metric_unit(self) -> Optional[builtins.str]:
         """
-        监控指标的单位。详情请参见 云监控指标查询 下各产品的 MetricUnit。说明同环比告警，MetricUnit 需要填写为 "Percent"。MetricUnit 中是否带有 IEC 表示不同的进位：带有 IEC：进位是 1024不带 IEC：进位是 1000。
+        Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
         """
         return pulumi.get(self, "metric_unit")
 
@@ -126,7 +126,7 @@ class RuleCondition(dict):
     @pulumi.getter
     def period(self) -> Optional[builtins.str]:
         """
-        监控指标的统计周期。详情请参见 云监控指标查询 下各产品的 Period。
+        Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
         """
         return pulumi.get(self, "period")
 
@@ -134,7 +134,7 @@ class RuleCondition(dict):
     @pulumi.getter
     def statistics(self) -> Optional[builtins.str]:
         """
-        统计方法，取值：avg：平均值。max：最大值。min：最小值。说明统计方法会应用到检测时间段内的数据上。例如，默认每次检测数据的时间跨度是 1 分钟，如果统计方法为 avg，那就是对 1 分钟内的数据取平均值。
+        Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
         """
         return pulumi.get(self, "statistics")
 
@@ -142,7 +142,7 @@ class RuleCondition(dict):
     @pulumi.getter
     def threshold(self) -> Optional[builtins.str]:
         """
-        指标阈值。支持输入正数或 0。最多支持三位小数。
+        Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
         """
         return pulumi.get(self, "threshold")
 
@@ -176,10 +176,10 @@ class RuleDimensionConditions(dict):
                  tag_condition: Optional['outputs.RuleDimensionConditionsTagCondition'] = None,
                  type: Optional[builtins.str] = None):
         """
-        :param 'RuleDimensionConditionsMetaConditionArgs' meta_condition: 根据资源名称选择告警对象的条件。当Type为meta时必填。
-        :param 'RuleDimensionConditionsProjectConditionArgs' project_condition: 根据项目选择告警对象的条件。当Type为project时必填。
-        :param 'RuleDimensionConditionsTagConditionArgs' tag_condition: 根据标签选择告警对象的条件。当Type为tag时必填。
-        :param builtins.str type: Dimensions 类型。取值：project：根据项目选择告警对象。tag：根据标签选择告警对象。meta：根据资源名称选择告警对象。
+        :param 'RuleDimensionConditionsMetaConditionArgs' meta_condition: Condition for selecting alert objects based on resource name. Required when Type is meta.
+        :param 'RuleDimensionConditionsProjectConditionArgs' project_condition: Condition for selecting alert targets by project. Required when Type is project.
+        :param 'RuleDimensionConditionsTagConditionArgs' tag_condition: Condition for selecting alert objects by tag. Required when Type is tag.
+        :param builtins.str type: Dimensions type. Values: project: Select alert targets by project. tag: Select alert targets by tag. meta: Select alert targets by resource name.
         """
         if meta_condition is not None:
             pulumi.set(__self__, "meta_condition", meta_condition)
@@ -194,7 +194,7 @@ class RuleDimensionConditions(dict):
     @pulumi.getter(name="metaCondition")
     def meta_condition(self) -> Optional['outputs.RuleDimensionConditionsMetaCondition']:
         """
-        根据资源名称选择告警对象的条件。当Type为meta时必填。
+        Condition for selecting alert objects based on resource name. Required when Type is meta.
         """
         return pulumi.get(self, "meta_condition")
 
@@ -202,7 +202,7 @@ class RuleDimensionConditions(dict):
     @pulumi.getter(name="projectCondition")
     def project_condition(self) -> Optional['outputs.RuleDimensionConditionsProjectCondition']:
         """
-        根据项目选择告警对象的条件。当Type为project时必填。
+        Condition for selecting alert targets by project. Required when Type is project.
         """
         return pulumi.get(self, "project_condition")
 
@@ -210,7 +210,7 @@ class RuleDimensionConditions(dict):
     @pulumi.getter(name="tagCondition")
     def tag_condition(self) -> Optional['outputs.RuleDimensionConditionsTagCondition']:
         """
-        根据标签选择告警对象的条件。当Type为tag时必填。
+        Condition for selecting alert objects by tag. Required when Type is tag.
         """
         return pulumi.get(self, "tag_condition")
 
@@ -218,7 +218,7 @@ class RuleDimensionConditions(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        Dimensions 类型。取值：project：根据项目选择告警对象。tag：根据标签选择告警对象。meta：根据资源名称选择告警对象。
+        Dimensions type. Values: project: Select alert targets by project. tag: Select alert targets by tag. meta: Select alert targets by resource name.
         """
         return pulumi.get(self, "type")
 
@@ -247,8 +247,8 @@ class RuleDimensionConditionsMetaCondition(dict):
                  condition: Optional[builtins.str] = None,
                  metas: Optional[Sequence['outputs.RuleDimensionConditionsMetaConditionMeta']] = None):
         """
-        :param builtins.bool all_dimensions: 是否为全量资源。true：全部资源。false：部分资源。
-        :param builtins.str condition: 判断条件。and：全部满足。or：任意满足。
+        :param builtins.bool all_dimensions: Whether all resources are included. true: All resources. false: Partial resources.
+        :param builtins.str condition: Condition. and: All conditions met. or: Any condition met.
         """
         if all_dimensions is not None:
             pulumi.set(__self__, "all_dimensions", all_dimensions)
@@ -261,7 +261,7 @@ class RuleDimensionConditionsMetaCondition(dict):
     @pulumi.getter(name="allDimensions")
     def all_dimensions(self) -> Optional[builtins.bool]:
         """
-        是否为全量资源。true：全部资源。false：部分资源。
+        Whether all resources are included. true: All resources. false: Partial resources.
         """
         return pulumi.get(self, "all_dimensions")
 
@@ -269,7 +269,7 @@ class RuleDimensionConditionsMetaCondition(dict):
     @pulumi.getter
     def condition(self) -> Optional[builtins.str]:
         """
-        判断条件。and：全部满足。or：任意满足。
+        Condition. and: All conditions met. or: Any condition met.
         """
         return pulumi.get(self, "condition")
 
@@ -286,9 +286,9 @@ class RuleDimensionConditionsMetaConditionMeta(dict):
                  key: Optional[builtins.str] = None,
                  values: Optional[Sequence[builtins.str]] = None):
         """
-        :param builtins.str comparator: 标签匹配时的比较符。contain：包含not*contain：不包含prefix*match：前缀匹配suffix*match：后缀匹配equal：等于not*equal：不等于exist：存在。
-        :param builtins.str key: 标签键。
-        :param Sequence[builtins.str] values: 标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+        :param builtins.str comparator: Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+        :param builtins.str key: Tag key.
+        :param Sequence[builtins.str] values: Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
         """
         if comparator is not None:
             pulumi.set(__self__, "comparator", comparator)
@@ -301,7 +301,7 @@ class RuleDimensionConditionsMetaConditionMeta(dict):
     @pulumi.getter
     def comparator(self) -> Optional[builtins.str]:
         """
-        标签匹配时的比较符。contain：包含not*contain：不包含prefix*match：前缀匹配suffix*match：后缀匹配equal：等于not*equal：不等于exist：存在。
+        Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
         """
         return pulumi.get(self, "comparator")
 
@@ -309,7 +309,7 @@ class RuleDimensionConditionsMetaConditionMeta(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键。
+        Tag key.
         """
         return pulumi.get(self, "key")
 
@@ -317,7 +317,7 @@ class RuleDimensionConditionsMetaConditionMeta(dict):
     @pulumi.getter
     def values(self) -> Optional[Sequence[builtins.str]]:
         """
-        标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+        Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
         """
         return pulumi.get(self, "values")
 
@@ -327,7 +327,7 @@ class RuleDimensionConditionsProjectCondition(dict):
     def __init__(__self__, *,
                  projects: Optional[Sequence[builtins.str]] = None):
         """
-        :param Sequence[builtins.str] projects: 项目名称列表。数组形式。多个值之间使用英文半角逗号,分割。
+        :param Sequence[builtins.str] projects: Project name list, in array format. Separate multiple values with commas.
         """
         if projects is not None:
             pulumi.set(__self__, "projects", projects)
@@ -336,7 +336,7 @@ class RuleDimensionConditionsProjectCondition(dict):
     @pulumi.getter
     def projects(self) -> Optional[Sequence[builtins.str]]:
         """
-        项目名称列表。数组形式。多个值之间使用英文半角逗号,分割。
+        Project name list, in array format. Separate multiple values with commas.
         """
         return pulumi.get(self, "projects")
 
@@ -347,7 +347,7 @@ class RuleDimensionConditionsTagCondition(dict):
                  condition: Optional[builtins.str] = None,
                  tags: Optional[Sequence['outputs.RuleDimensionConditionsTagConditionTag']] = None):
         """
-        :param builtins.str condition: 判断条件。and：全部满足。or：任意满足。
+        :param builtins.str condition: Condition. and: All conditions met. or: Any condition met.
         """
         if condition is not None:
             pulumi.set(__self__, "condition", condition)
@@ -358,7 +358,7 @@ class RuleDimensionConditionsTagCondition(dict):
     @pulumi.getter
     def condition(self) -> Optional[builtins.str]:
         """
-        判断条件。and：全部满足。or：任意满足。
+        Condition. and: All conditions met. or: Any condition met.
         """
         return pulumi.get(self, "condition")
 
@@ -375,9 +375,9 @@ class RuleDimensionConditionsTagConditionTag(dict):
                  key: Optional[builtins.str] = None,
                  values: Optional[Sequence[builtins.str]] = None):
         """
-        :param builtins.str comparator: 标签匹配时的比较符。contain：包含not*contain：不包含prefix*match：前缀匹配suffix*match：后缀匹配equal：等于not*equal：不等于exist：存在。
-        :param builtins.str key: 标签键。
-        :param Sequence[builtins.str] values: 标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+        :param builtins.str comparator: Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+        :param builtins.str key: Tag key.
+        :param Sequence[builtins.str] values: Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
         """
         if comparator is not None:
             pulumi.set(__self__, "comparator", comparator)
@@ -390,7 +390,7 @@ class RuleDimensionConditionsTagConditionTag(dict):
     @pulumi.getter
     def comparator(self) -> Optional[builtins.str]:
         """
-        标签匹配时的比较符。contain：包含not*contain：不包含prefix*match：前缀匹配suffix*match：后缀匹配equal：等于not*equal：不等于exist：存在。
+        Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
         """
         return pulumi.get(self, "comparator")
 
@@ -398,7 +398,7 @@ class RuleDimensionConditionsTagConditionTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键。
+        Tag key.
         """
         return pulumi.get(self, "key")
 
@@ -406,7 +406,7 @@ class RuleDimensionConditionsTagConditionTag(dict):
     @pulumi.getter
     def values(self) -> Optional[Sequence[builtins.str]]:
         """
-        标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+        Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
         """
         return pulumi.get(self, "values")
 
@@ -417,7 +417,7 @@ class RuleLevelCondition(dict):
                  conditions: Optional[Sequence['outputs.RuleLevelConditionCondition']] = None,
                  level: Optional[builtins.str] = None):
         """
-        :param builtins.str level: 告警通知等级，取值：notice：通知warning：警告critical：严重recovery：恢复。
+        :param builtins.str level: Alert notification level. Options: notice: notification, warning: warning, critical: critical, recovery: recovery.
         """
         if conditions is not None:
             pulumi.set(__self__, "conditions", conditions)
@@ -433,7 +433,7 @@ class RuleLevelCondition(dict):
     @pulumi.getter
     def level(self) -> Optional[builtins.str]:
         """
-        告警通知等级，取值：notice：通知warning：警告critical：严重recovery：恢复。
+        Alert notification level. Options: notice: notification, warning: warning, critical: critical, recovery: recovery.
         """
         return pulumi.get(self, "level")
 
@@ -469,12 +469,12 @@ class RuleLevelConditionCondition(dict):
                  statistics: Optional[builtins.str] = None,
                  threshold: Optional[builtins.str] = None):
         """
-        :param builtins.str comparison_operator: 比较符号。支持普通阈值告警： >、>=、<、<=、!=、= ，以及以下同环比告警：last*period*increase*pct：环比上周期上涨。last*period*decrease*pct：环比上周起下降。last*period*abs*pct：环比上周期上涨或下降。last*day*increase*pct：同比昨天同一时段上涨。last*day*decrease*pct：同比昨天同一时段下降。last*day*abs*pct：同比昨天同一时段上涨或下降。last*week*increase*pct：同比上周同一时段上涨。last*week*decrease*pct：同比上周同一时段下降。last*week*abs_pct：同比上周同一时段上涨或下降。
-        :param builtins.str metric_name: 监控指标的名称。详情请参见 云监控指标查询 下各产品的 MetricName。
-        :param builtins.str metric_unit: 监控指标的单位。详情请参见 云监控指标查询 下各产品的 MetricUnit。说明同环比告警，MetricUnit 需要填写为 "Percent"。MetricUnit 中是否带有 IEC 表示不同的进位：带有 IEC：进位是 1024不带 IEC：进位是 1000。
-        :param builtins.str period: 监控指标的统计周期。详情请参见 云监控指标查询 下各产品的 Period。
-        :param builtins.str statistics: 统计方法，取值：avg：平均值。max：最大值。min：最小值。说明统计方法会应用到检测时间段内的数据上。例如，默认每次检测数据的时间跨度是 1 分钟，如果统计方法为 avg，那就是对 1 分钟内的数据取平均值。
-        :param builtins.str threshold: 指标阈值。支持输入正数或 0。最多支持三位小数。
+        :param builtins.str comparison_operator: Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
+        :param builtins.str metric_name: Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
+        :param builtins.str metric_unit: Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
+        :param builtins.str period: Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
+        :param builtins.str statistics: Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
+        :param builtins.str threshold: Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
         """
         if comparison_operator is not None:
             pulumi.set(__self__, "comparison_operator", comparison_operator)
@@ -493,7 +493,7 @@ class RuleLevelConditionCondition(dict):
     @pulumi.getter(name="comparisonOperator")
     def comparison_operator(self) -> Optional[builtins.str]:
         """
-        比较符号。支持普通阈值告警： >、>=、<、<=、!=、= ，以及以下同环比告警：last*period*increase*pct：环比上周期上涨。last*period*decrease*pct：环比上周起下降。last*period*abs*pct：环比上周期上涨或下降。last*day*increase*pct：同比昨天同一时段上涨。last*day*decrease*pct：同比昨天同一时段下降。last*day*abs*pct：同比昨天同一时段上涨或下降。last*week*increase*pct：同比上周同一时段上涨。last*week*decrease*pct：同比上周同一时段下降。last*week*abs_pct：同比上周同一时段上涨或下降。
+        Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
         """
         return pulumi.get(self, "comparison_operator")
 
@@ -501,7 +501,7 @@ class RuleLevelConditionCondition(dict):
     @pulumi.getter(name="metricName")
     def metric_name(self) -> Optional[builtins.str]:
         """
-        监控指标的名称。详情请参见 云监控指标查询 下各产品的 MetricName。
+        Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
         """
         return pulumi.get(self, "metric_name")
 
@@ -509,7 +509,7 @@ class RuleLevelConditionCondition(dict):
     @pulumi.getter(name="metricUnit")
     def metric_unit(self) -> Optional[builtins.str]:
         """
-        监控指标的单位。详情请参见 云监控指标查询 下各产品的 MetricUnit。说明同环比告警，MetricUnit 需要填写为 "Percent"。MetricUnit 中是否带有 IEC 表示不同的进位：带有 IEC：进位是 1024不带 IEC：进位是 1000。
+        Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
         """
         return pulumi.get(self, "metric_unit")
 
@@ -517,7 +517,7 @@ class RuleLevelConditionCondition(dict):
     @pulumi.getter
     def period(self) -> Optional[builtins.str]:
         """
-        监控指标的统计周期。详情请参见 云监控指标查询 下各产品的 Period。
+        Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
         """
         return pulumi.get(self, "period")
 
@@ -525,7 +525,7 @@ class RuleLevelConditionCondition(dict):
     @pulumi.getter
     def statistics(self) -> Optional[builtins.str]:
         """
-        统计方法，取值：avg：平均值。max：最大值。min：最小值。说明统计方法会应用到检测时间段内的数据上。例如，默认每次检测数据的时间跨度是 1 分钟，如果统计方法为 avg，那就是对 1 分钟内的数据取平均值。
+        Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
         """
         return pulumi.get(self, "statistics")
 
@@ -533,7 +533,7 @@ class RuleLevelConditionCondition(dict):
     @pulumi.getter
     def threshold(self) -> Optional[builtins.str]:
         """
-        指标阈值。支持输入正数或 0。最多支持三位小数。
+        Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
         """
         return pulumi.get(self, "threshold")
 
@@ -561,8 +561,8 @@ class RuleNoData(dict):
                  enable: Optional[builtins.bool] = None,
                  evaluation_count: Optional[builtins.int] = None):
         """
-        :param builtins.bool enable: 是否开启无数据告警。取值：true：开启无数据告警。false：（默认）关闭无数据告警。
-        :param builtins.int evaluation_count: 无数据告警触发阈值，如果在配置的阈值周期内检测无数据上报，则会触发无数据告警。当Enable配置为true时，该字段为必填。整数形式，取值范围为 3～20。
+        :param builtins.bool enable: Enable no data alert. Values: true: enable no data alert. false (default): disable no data alert.
+        :param builtins.int evaluation_count: No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
         """
         if enable is not None:
             pulumi.set(__self__, "enable", enable)
@@ -573,7 +573,7 @@ class RuleNoData(dict):
     @pulumi.getter
     def enable(self) -> Optional[builtins.bool]:
         """
-        是否开启无数据告警。取值：true：开启无数据告警。false：（默认）关闭无数据告警。
+        Enable no data alert. Values: true: enable no data alert. false (default): disable no data alert.
         """
         return pulumi.get(self, "enable")
 
@@ -581,7 +581,7 @@ class RuleNoData(dict):
     @pulumi.getter(name="evaluationCount")
     def evaluation_count(self) -> Optional[builtins.int]:
         """
-        无数据告警触发阈值，如果在配置的阈值周期内检测无数据上报，则会触发无数据告警。当Enable配置为true时，该字段为必填。整数形式，取值范围为 3～20。
+        No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
         """
         return pulumi.get(self, "evaluation_count")
 
@@ -609,8 +609,8 @@ class RuleNotifyTemplate(dict):
                  channel: Optional[builtins.str] = None,
                  notify_template_id: Optional[builtins.str] = None):
         """
-        :param builtins.str channel: 通知渠道，取值：email：邮箱sms：短信phone：电话lark：飞书dingtalk：钉钉wecom：企业微信slack：Slackapi：回调地址。
-        :param builtins.str notify_template_id: 通知模版 ID。注意每种通知渠道仅支持配置 1 个通知模版 ID。
+        :param builtins.str channel: Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
+        :param builtins.str notify_template_id: Notification template ID. Note: Each notification channel supports only one notification template ID.
         """
         if channel is not None:
             pulumi.set(__self__, "channel", channel)
@@ -621,7 +621,7 @@ class RuleNotifyTemplate(dict):
     @pulumi.getter
     def channel(self) -> Optional[builtins.str]:
         """
-        通知渠道，取值：email：邮箱sms：短信phone：电话lark：飞书dingtalk：钉钉wecom：企业微信slack：Slackapi：回调地址。
+        Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
         """
         return pulumi.get(self, "channel")
 
@@ -629,7 +629,7 @@ class RuleNotifyTemplate(dict):
     @pulumi.getter(name="notifyTemplateId")
     def notify_template_id(self) -> Optional[builtins.str]:
         """
-        通知模版 ID。注意每种通知渠道仅支持配置 1 个通知模版 ID。
+        Notification template ID. Note: Each notification channel supports only one notification template ID.
         """
         return pulumi.get(self, "notify_template_id")
 
@@ -640,8 +640,8 @@ class RuleOriginalDimensions(dict):
                  key: Optional[builtins.str] = None,
                  values: Optional[Sequence[builtins.str]] = None):
         """
-        :param builtins.str key: 指标 Dimension 名称，例如ResourceID、NodeName等。不同云产品的 Dimensions 名称不同，详情请参见 云监控指标查询。ResourceID为必填项，且大小写必须与 云监控指标查询 中的一致。支持同时填写多个 Dimension 名称，并基于多个 Dimension 名称进行分组。举例如下：当您仅填写ResourceID时，系统会按照ResourceID进行告警分组。当您同时填写ResourceID和NodeName时，系统会首先按照ResourceID进行告警分组。然后在每个分组内，再按照NodeName进行分组。
-        :param Sequence[builtins.str] values: 指标 Dimension 值，数组形式。多个值之间使用英文半角逗号,分割。允许使用通配符*选择全部实例的值。例如：["*"] 。
+        :param builtins.str key: Metric Dimension name, such as ResourceID, NodeName, etc. Dimension names vary by cloud product. For details, see Cloud Monitoring Metric Query. ResourceID is required, and its capitalization must match Cloud Monitoring Metric Query. Supports multiple Dimension names and grouping by multiple Dimension names. For example: If you only enter ResourceID, the system groups alerts by ResourceID. If you enter both ResourceID and NodeName, the system first groups alerts by ResourceID, then groups within each ResourceID group by NodeName.
+        :param Sequence[builtins.str] values: Metric Dimension values, in array format. Separate multiple values with commas. Wildcard * can be used to select all instance values. For example: ["*"] .
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -652,7 +652,7 @@ class RuleOriginalDimensions(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        指标 Dimension 名称，例如ResourceID、NodeName等。不同云产品的 Dimensions 名称不同，详情请参见 云监控指标查询。ResourceID为必填项，且大小写必须与 云监控指标查询 中的一致。支持同时填写多个 Dimension 名称，并基于多个 Dimension 名称进行分组。举例如下：当您仅填写ResourceID时，系统会按照ResourceID进行告警分组。当您同时填写ResourceID和NodeName时，系统会首先按照ResourceID进行告警分组。然后在每个分组内，再按照NodeName进行分组。
+        Metric Dimension name, such as ResourceID, NodeName, etc. Dimension names vary by cloud product. For details, see Cloud Monitoring Metric Query. ResourceID is required, and its capitalization must match Cloud Monitoring Metric Query. Supports multiple Dimension names and grouping by multiple Dimension names. For example: If you only enter ResourceID, the system groups alerts by ResourceID. If you enter both ResourceID and NodeName, the system first groups alerts by ResourceID, then groups within each ResourceID group by NodeName.
         """
         return pulumi.get(self, "key")
 
@@ -660,7 +660,7 @@ class RuleOriginalDimensions(dict):
     @pulumi.getter
     def values(self) -> Optional[Sequence[builtins.str]]:
         """
-        指标 Dimension 值，数组形式。多个值之间使用英文半角逗号,分割。允许使用通配符*选择全部实例的值。例如：["*"] 。
+        Metric Dimension values, in array format. Separate multiple values with commas. Wildcard * can be used to select all instance values. For example: ["*"] .
         """
         return pulumi.get(self, "values")
 
@@ -670,7 +670,7 @@ class RuleRecoveryNotify(dict):
     def __init__(__self__, *,
                  enable: Optional[builtins.bool] = None):
         """
-        :param builtins.bool enable: 是否开启告警恢复通知。取值：true：（默认）开启告警恢复通知。false：关闭告警恢复通知。
+        :param builtins.bool enable: Enable alert recovery notification. Options: true: (default) enable alert recovery notification, false: disable alert recovery notification.
         """
         if enable is not None:
             pulumi.set(__self__, "enable", enable)
@@ -679,7 +679,7 @@ class RuleRecoveryNotify(dict):
     @pulumi.getter
     def enable(self) -> Optional[builtins.bool]:
         """
-        是否开启告警恢复通知。取值：true：（默认）开启告警恢复通知。false：关闭告警恢复通知。
+        Enable alert recovery notification. Options: true: (default) enable alert recovery notification, false: disable alert recovery notification.
         """
         return pulumi.get(self, "enable")
 
@@ -690,8 +690,8 @@ class RuleTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签键。支持中文、英文大写字母、英文小写字母、数字和空格。支持以下特殊字符_.:/=+-@。不能以空格为开头或结尾。volc:和/sys:为系统预留的标签键，添加标签时，标签键的开头不能设置为任何大小写形式的volc:和/sys:。标签键的长度需为 1～128 个字符。
-        :param builtins.str value: 标签值。支持中文、英文大写字母、英文小写字母、数字和空格。支持以下特殊字符_.:/=+-@。不能以空格为开头或结尾。标签键的长度需为 0～255 个字符。
+        :param builtins.str key: Tag key. Supports Chinese, uppercase and lowercase English letters, numbers, and spaces. The following special characters are supported: _ . : / = +   - @. Cannot start or end with a space. volc: and /sys: are system-reserved tag keys. When adding a tag, the tag key cannot start with any case form of volc: or /sys:. Tag key length must be 1–128 characters.
+        :param builtins.str value: Tag value. Supports Chinese, uppercase and lowercase English letters, numbers, and spaces. The following special characters are supported: _ . : / = +   - @. Cannot start or end with a space. Tag key length must be 0–255 characters.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -702,7 +702,7 @@ class RuleTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签键。支持中文、英文大写字母、英文小写字母、数字和空格。支持以下特殊字符_.:/=+-@。不能以空格为开头或结尾。volc:和/sys:为系统预留的标签键，添加标签时，标签键的开头不能设置为任何大小写形式的volc:和/sys:。标签键的长度需为 1～128 个字符。
+        Tag key. Supports Chinese, uppercase and lowercase English letters, numbers, and spaces. The following special characters are supported: _ . : / = +   - @. Cannot start or end with a space. volc: and /sys: are system-reserved tag keys. When adding a tag, the tag key cannot start with any case form of volc: or /sys:. Tag key length must be 1–128 characters.
         """
         return pulumi.get(self, "key")
 
@@ -710,7 +710,7 @@ class RuleTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签值。支持中文、英文大写字母、英文小写字母、数字和空格。支持以下特殊字符_.:/=+-@。不能以空格为开头或结尾。标签键的长度需为 0～255 个字符。
+        Tag value. Supports Chinese, uppercase and lowercase English letters, numbers, and spaces. The following special characters are supported: _ . : / = +   - @. Cannot start or end with a space. Tag key length must be 0–255 characters.
         """
         return pulumi.get(self, "value")
 
@@ -726,13 +726,13 @@ class GetRuleConditionResult(dict):
                  statistics: builtins.str,
                  threshold: builtins.str):
         """
-        :param builtins.str comparison_operator: 比较符号。支持普通阈值告警： >、>=、<、<=、!=、= ，以及以下同环比告警：last*period*increase*pct：环比上周期上涨。last*period*decrease*pct：环比上周起下降。last*period*abs*pct：环比上周期上涨或下降。last*day*increase*pct：同比昨天同一时段上涨。last*day*decrease*pct：同比昨天同一时段下降。last*day*abs*pct：同比昨天同一时段上涨或下降。last*week*increase*pct：同比上周同一时段上涨。last*week*decrease*pct：同比上周同一时段下降。last*week*abs_pct：同比上周同一时段上涨或下降。
-        :param builtins.str display_name: 指标显示名称。
-        :param builtins.str metric_name: 监控指标的名称。详情请参见 云监控指标查询 下各产品的 MetricName。
-        :param builtins.str metric_unit: 监控指标的单位。详情请参见 云监控指标查询 下各产品的 MetricUnit。说明同环比告警，MetricUnit 需要填写为 "Percent"。MetricUnit 中是否带有 IEC 表示不同的进位：带有 IEC：进位是 1024不带 IEC：进位是 1000。
-        :param builtins.str period: 监控指标的统计周期。详情请参见 云监控指标查询 下各产品的 Period。
-        :param builtins.str statistics: 统计方法，取值：avg：平均值。max：最大值。min：最小值。说明统计方法会应用到检测时间段内的数据上。例如，默认每次检测数据的时间跨度是 1 分钟，如果统计方法为 avg，那就是对 1 分钟内的数据取平均值。
-        :param builtins.str threshold: 指标阈值。支持输入正数或 0。最多支持三位小数。
+        :param builtins.str comparison_operator: Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
+        :param builtins.str display_name: Metric display name.
+        :param builtins.str metric_name: Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
+        :param builtins.str metric_unit: Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
+        :param builtins.str period: Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
+        :param builtins.str statistics: Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
+        :param builtins.str threshold: Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
         """
         pulumi.set(__self__, "comparison_operator", comparison_operator)
         pulumi.set(__self__, "display_name", display_name)
@@ -746,7 +746,7 @@ class GetRuleConditionResult(dict):
     @pulumi.getter(name="comparisonOperator")
     def comparison_operator(self) -> builtins.str:
         """
-        比较符号。支持普通阈值告警： >、>=、<、<=、!=、= ，以及以下同环比告警：last*period*increase*pct：环比上周期上涨。last*period*decrease*pct：环比上周起下降。last*period*abs*pct：环比上周期上涨或下降。last*day*increase*pct：同比昨天同一时段上涨。last*day*decrease*pct：同比昨天同一时段下降。last*day*abs*pct：同比昨天同一时段上涨或下降。last*week*increase*pct：同比上周同一时段上涨。last*week*decrease*pct：同比上周同一时段下降。last*week*abs_pct：同比上周同一时段上涨或下降。
+        Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
         """
         return pulumi.get(self, "comparison_operator")
 
@@ -754,7 +754,7 @@ class GetRuleConditionResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> builtins.str:
         """
-        指标显示名称。
+        Metric display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -762,7 +762,7 @@ class GetRuleConditionResult(dict):
     @pulumi.getter(name="metricName")
     def metric_name(self) -> builtins.str:
         """
-        监控指标的名称。详情请参见 云监控指标查询 下各产品的 MetricName。
+        Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
         """
         return pulumi.get(self, "metric_name")
 
@@ -770,7 +770,7 @@ class GetRuleConditionResult(dict):
     @pulumi.getter(name="metricUnit")
     def metric_unit(self) -> builtins.str:
         """
-        监控指标的单位。详情请参见 云监控指标查询 下各产品的 MetricUnit。说明同环比告警，MetricUnit 需要填写为 "Percent"。MetricUnit 中是否带有 IEC 表示不同的进位：带有 IEC：进位是 1024不带 IEC：进位是 1000。
+        Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
         """
         return pulumi.get(self, "metric_unit")
 
@@ -778,7 +778,7 @@ class GetRuleConditionResult(dict):
     @pulumi.getter
     def period(self) -> builtins.str:
         """
-        监控指标的统计周期。详情请参见 云监控指标查询 下各产品的 Period。
+        Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
         """
         return pulumi.get(self, "period")
 
@@ -786,7 +786,7 @@ class GetRuleConditionResult(dict):
     @pulumi.getter
     def statistics(self) -> builtins.str:
         """
-        统计方法，取值：avg：平均值。max：最大值。min：最小值。说明统计方法会应用到检测时间段内的数据上。例如，默认每次检测数据的时间跨度是 1 分钟，如果统计方法为 avg，那就是对 1 分钟内的数据取平均值。
+        Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
         """
         return pulumi.get(self, "statistics")
 
@@ -794,7 +794,7 @@ class GetRuleConditionResult(dict):
     @pulumi.getter
     def threshold(self) -> builtins.str:
         """
-        指标阈值。支持输入正数或 0。最多支持三位小数。
+        Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
         """
         return pulumi.get(self, "threshold")
 
@@ -807,10 +807,10 @@ class GetRuleDimensionConditionsResult(dict):
                  tag_condition: 'outputs.GetRuleDimensionConditionsTagConditionResult',
                  type: builtins.str):
         """
-        :param 'GetRuleDimensionConditionsMetaConditionArgs' meta_condition: 根据资源名称选择告警对象的条件。当Type为meta时必填。
-        :param 'GetRuleDimensionConditionsProjectConditionArgs' project_condition: 根据项目选择告警对象的条件。当Type为project时必填。
-        :param 'GetRuleDimensionConditionsTagConditionArgs' tag_condition: 根据标签选择告警对象的条件。当Type为tag时必填。
-        :param builtins.str type: Dimensions 类型。取值：project：根据项目选择告警对象。tag：根据标签选择告警对象。meta：根据资源名称选择告警对象。
+        :param 'GetRuleDimensionConditionsMetaConditionArgs' meta_condition: Condition for selecting alert objects based on resource name. Required when Type is meta.
+        :param 'GetRuleDimensionConditionsProjectConditionArgs' project_condition: Condition for selecting alert targets by project. Required when Type is project.
+        :param 'GetRuleDimensionConditionsTagConditionArgs' tag_condition: Condition for selecting alert objects by tag. Required when Type is tag.
+        :param builtins.str type: Dimensions type. Values: project: Select alert targets by project. tag: Select alert targets by tag. meta: Select alert targets by resource name.
         """
         pulumi.set(__self__, "meta_condition", meta_condition)
         pulumi.set(__self__, "project_condition", project_condition)
@@ -821,7 +821,7 @@ class GetRuleDimensionConditionsResult(dict):
     @pulumi.getter(name="metaCondition")
     def meta_condition(self) -> 'outputs.GetRuleDimensionConditionsMetaConditionResult':
         """
-        根据资源名称选择告警对象的条件。当Type为meta时必填。
+        Condition for selecting alert objects based on resource name. Required when Type is meta.
         """
         return pulumi.get(self, "meta_condition")
 
@@ -829,7 +829,7 @@ class GetRuleDimensionConditionsResult(dict):
     @pulumi.getter(name="projectCondition")
     def project_condition(self) -> 'outputs.GetRuleDimensionConditionsProjectConditionResult':
         """
-        根据项目选择告警对象的条件。当Type为project时必填。
+        Condition for selecting alert targets by project. Required when Type is project.
         """
         return pulumi.get(self, "project_condition")
 
@@ -837,7 +837,7 @@ class GetRuleDimensionConditionsResult(dict):
     @pulumi.getter(name="tagCondition")
     def tag_condition(self) -> 'outputs.GetRuleDimensionConditionsTagConditionResult':
         """
-        根据标签选择告警对象的条件。当Type为tag时必填。
+        Condition for selecting alert objects by tag. Required when Type is tag.
         """
         return pulumi.get(self, "tag_condition")
 
@@ -845,7 +845,7 @@ class GetRuleDimensionConditionsResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        Dimensions 类型。取值：project：根据项目选择告警对象。tag：根据标签选择告警对象。meta：根据资源名称选择告警对象。
+        Dimensions type. Values: project: Select alert targets by project. tag: Select alert targets by tag. meta: Select alert targets by resource name.
         """
         return pulumi.get(self, "type")
 
@@ -857,9 +857,9 @@ class GetRuleDimensionConditionsMetaConditionResult(dict):
                  condition: builtins.str,
                  metas: Sequence['outputs.GetRuleDimensionConditionsMetaConditionMetaResult']):
         """
-        :param builtins.bool all_dimensions: 是否为全量资源。true：全部资源。false：部分资源。
-        :param builtins.str condition: 判断条件。and：全部满足。or：任意满足。
-        :param Sequence['GetRuleDimensionConditionsMetaConditionMetaArgs'] metas: 判断条件。and：全部满足。or：任意满足。
+        :param builtins.bool all_dimensions: Whether all resources are included. true: All resources. false: Partial resources.
+        :param builtins.str condition: Condition. and: All conditions met. or: Any condition met.
+        :param Sequence['GetRuleDimensionConditionsMetaConditionMetaArgs'] metas: Condition. and: All conditions met. or: Any condition met.
         """
         pulumi.set(__self__, "all_dimensions", all_dimensions)
         pulumi.set(__self__, "condition", condition)
@@ -869,7 +869,7 @@ class GetRuleDimensionConditionsMetaConditionResult(dict):
     @pulumi.getter(name="allDimensions")
     def all_dimensions(self) -> builtins.bool:
         """
-        是否为全量资源。true：全部资源。false：部分资源。
+        Whether all resources are included. true: All resources. false: Partial resources.
         """
         return pulumi.get(self, "all_dimensions")
 
@@ -877,7 +877,7 @@ class GetRuleDimensionConditionsMetaConditionResult(dict):
     @pulumi.getter
     def condition(self) -> builtins.str:
         """
-        判断条件。and：全部满足。or：任意满足。
+        Condition. and: All conditions met. or: Any condition met.
         """
         return pulumi.get(self, "condition")
 
@@ -885,7 +885,7 @@ class GetRuleDimensionConditionsMetaConditionResult(dict):
     @pulumi.getter
     def metas(self) -> Sequence['outputs.GetRuleDimensionConditionsMetaConditionMetaResult']:
         """
-        判断条件。and：全部满足。or：任意满足。
+        Condition. and: All conditions met. or: Any condition met.
         """
         return pulumi.get(self, "metas")
 
@@ -897,9 +897,9 @@ class GetRuleDimensionConditionsMetaConditionMetaResult(dict):
                  key: builtins.str,
                  values: Sequence[builtins.str]):
         """
-        :param builtins.str comparator: 标签匹配时的比较符。contain：包含not*contain：不包含prefix*match：前缀匹配suffix*match：后缀匹配equal：等于not*equal：不等于exist：存在。
-        :param builtins.str key: 标签键。
-        :param Sequence[builtins.str] values: 标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+        :param builtins.str comparator: Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+        :param builtins.str key: Tag key.
+        :param Sequence[builtins.str] values: Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
         """
         pulumi.set(__self__, "comparator", comparator)
         pulumi.set(__self__, "key", key)
@@ -909,7 +909,7 @@ class GetRuleDimensionConditionsMetaConditionMetaResult(dict):
     @pulumi.getter
     def comparator(self) -> builtins.str:
         """
-        标签匹配时的比较符。contain：包含not*contain：不包含prefix*match：前缀匹配suffix*match：后缀匹配equal：等于not*equal：不等于exist：存在。
+        Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
         """
         return pulumi.get(self, "comparator")
 
@@ -917,7 +917,7 @@ class GetRuleDimensionConditionsMetaConditionMetaResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键。
+        Tag key.
         """
         return pulumi.get(self, "key")
 
@@ -925,7 +925,7 @@ class GetRuleDimensionConditionsMetaConditionMetaResult(dict):
     @pulumi.getter
     def values(self) -> Sequence[builtins.str]:
         """
-        标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+        Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
         """
         return pulumi.get(self, "values")
 
@@ -935,7 +935,7 @@ class GetRuleDimensionConditionsProjectConditionResult(dict):
     def __init__(__self__, *,
                  projects: Sequence[builtins.str]):
         """
-        :param Sequence[builtins.str] projects: 项目名称列表。数组形式。多个值之间使用英文半角逗号,分割。
+        :param Sequence[builtins.str] projects: Project name list, in array format. Separate multiple values with commas.
         """
         pulumi.set(__self__, "projects", projects)
 
@@ -943,7 +943,7 @@ class GetRuleDimensionConditionsProjectConditionResult(dict):
     @pulumi.getter
     def projects(self) -> Sequence[builtins.str]:
         """
-        项目名称列表。数组形式。多个值之间使用英文半角逗号,分割。
+        Project name list, in array format. Separate multiple values with commas.
         """
         return pulumi.get(self, "projects")
 
@@ -954,8 +954,8 @@ class GetRuleDimensionConditionsTagConditionResult(dict):
                  condition: builtins.str,
                  tags: Sequence['outputs.GetRuleDimensionConditionsTagConditionTagResult']):
         """
-        :param builtins.str condition: 判断条件。and：全部满足。or：任意满足。
-        :param Sequence['GetRuleDimensionConditionsTagConditionTagArgs'] tags: 标签列表。最多支持配置 10 个标签列表。标签值不能超过 50 个字符。
+        :param builtins.str condition: Condition. and: All conditions met. or: Any condition met.
+        :param Sequence['GetRuleDimensionConditionsTagConditionTagArgs'] tags: Tag list. Supports up to 10 tag lists. Tag value cannot exceed 50 characters.
         """
         pulumi.set(__self__, "condition", condition)
         pulumi.set(__self__, "tags", tags)
@@ -964,7 +964,7 @@ class GetRuleDimensionConditionsTagConditionResult(dict):
     @pulumi.getter
     def condition(self) -> builtins.str:
         """
-        判断条件。and：全部满足。or：任意满足。
+        Condition. and: All conditions met. or: Any condition met.
         """
         return pulumi.get(self, "condition")
 
@@ -972,7 +972,7 @@ class GetRuleDimensionConditionsTagConditionResult(dict):
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetRuleDimensionConditionsTagConditionTagResult']:
         """
-        标签列表。最多支持配置 10 个标签列表。标签值不能超过 50 个字符。
+        Tag list. Supports up to 10 tag lists. Tag value cannot exceed 50 characters.
         """
         return pulumi.get(self, "tags")
 
@@ -984,9 +984,9 @@ class GetRuleDimensionConditionsTagConditionTagResult(dict):
                  key: builtins.str,
                  values: Sequence[builtins.str]):
         """
-        :param builtins.str comparator: 标签匹配时的比较符。contain：包含not*contain：不包含prefix*match：前缀匹配suffix*match：后缀匹配equal：等于not*equal：不等于exist：存在。
-        :param builtins.str key: 标签键。
-        :param Sequence[builtins.str] values: 标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+        :param builtins.str comparator: Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
+        :param builtins.str key: Tag key.
+        :param Sequence[builtins.str] values: Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
         """
         pulumi.set(__self__, "comparator", comparator)
         pulumi.set(__self__, "key", key)
@@ -996,7 +996,7 @@ class GetRuleDimensionConditionsTagConditionTagResult(dict):
     @pulumi.getter
     def comparator(self) -> builtins.str:
         """
-        标签匹配时的比较符。contain：包含not*contain：不包含prefix*match：前缀匹配suffix*match：后缀匹配equal：等于not*equal：不等于exist：存在。
+        Tag match operator. contain: Contains not*contain: Does not contain prefix*match: Prefix match suffix*match: Suffix match equal: Equals not*equal: Does not equal exist: Exists.
         """
         return pulumi.get(self, "comparator")
 
@@ -1004,7 +1004,7 @@ class GetRuleDimensionConditionsTagConditionTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键。
+        Tag key.
         """
         return pulumi.get(self, "key")
 
@@ -1012,7 +1012,7 @@ class GetRuleDimensionConditionsTagConditionTagResult(dict):
     @pulumi.getter
     def values(self) -> Sequence[builtins.str]:
         """
-        标签的值（Value）。当Comparator为exist时，包含 Key 对应的所有 Value，不支持输入。当Comparator为equal或not*equal时，支持输入多个 Value。当Comparator为contain、not*contain、prefix*match或suffix*match时，仅支持输入 1 个 Value。
+        Tag value (Value). When Comparator is exist, includes all Values corresponding to the Key and does not support input. When Comparator is equal or not*equal, supports multiple Value inputs. When Comparator is contain, not*contain, prefix*match, or suffix*match, only one Value can be entered.
         """
         return pulumi.get(self, "values")
 
@@ -1023,8 +1023,8 @@ class GetRuleLevelConditionResult(dict):
                  conditions: Sequence['outputs.GetRuleLevelConditionConditionResult'],
                  level: builtins.str):
         """
-        :param Sequence['GetRuleLevelConditionConditionArgs'] conditions: 告警分级配置。
-        :param builtins.str level: 告警通知等级，取值：notice：通知warning：警告critical：严重recovery：恢复。
+        :param Sequence['GetRuleLevelConditionConditionArgs'] conditions: Alert severity configuration.
+        :param builtins.str level: Alert notification level. Options: notice: notification, warning: warning, critical: critical, recovery: recovery.
         """
         pulumi.set(__self__, "conditions", conditions)
         pulumi.set(__self__, "level", level)
@@ -1033,7 +1033,7 @@ class GetRuleLevelConditionResult(dict):
     @pulumi.getter
     def conditions(self) -> Sequence['outputs.GetRuleLevelConditionConditionResult']:
         """
-        告警分级配置。
+        Alert severity configuration.
         """
         return pulumi.get(self, "conditions")
 
@@ -1041,7 +1041,7 @@ class GetRuleLevelConditionResult(dict):
     @pulumi.getter
     def level(self) -> builtins.str:
         """
-        告警通知等级，取值：notice：通知warning：警告critical：严重recovery：恢复。
+        Alert notification level. Options: notice: notification, warning: warning, critical: critical, recovery: recovery.
         """
         return pulumi.get(self, "level")
 
@@ -1057,13 +1057,13 @@ class GetRuleLevelConditionConditionResult(dict):
                  statistics: builtins.str,
                  threshold: builtins.str):
         """
-        :param builtins.str comparison_operator: 比较符号。支持普通阈值告警： >、>=、<、<=、!=、= ，以及以下同环比告警：last*period*increase*pct：环比上周期上涨。last*period*decrease*pct：环比上周起下降。last*period*abs*pct：环比上周期上涨或下降。last*day*increase*pct：同比昨天同一时段上涨。last*day*decrease*pct：同比昨天同一时段下降。last*day*abs*pct：同比昨天同一时段上涨或下降。last*week*increase*pct：同比上周同一时段上涨。last*week*decrease*pct：同比上周同一时段下降。last*week*abs_pct：同比上周同一时段上涨或下降。
-        :param builtins.str display_name: 指标显示名称。
-        :param builtins.str metric_name: 监控指标的名称。详情请参见 云监控指标查询 下各产品的 MetricName。
-        :param builtins.str metric_unit: 监控指标的单位。详情请参见 云监控指标查询 下各产品的 MetricUnit。说明同环比告警，MetricUnit 需要填写为 "Percent"。MetricUnit 中是否带有 IEC 表示不同的进位：带有 IEC：进位是 1024不带 IEC：进位是 1000。
-        :param builtins.str period: 监控指标的统计周期。详情请参见 云监控指标查询 下各产品的 Period。
-        :param builtins.str statistics: 统计方法，取值：avg：平均值。max：最大值。min：最小值。说明统计方法会应用到检测时间段内的数据上。例如，默认每次检测数据的时间跨度是 1 分钟，如果统计方法为 avg，那就是对 1 分钟内的数据取平均值。
-        :param builtins.str threshold: 指标阈值。支持输入正数或 0。最多支持三位小数。
+        :param builtins.str comparison_operator: Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
+        :param builtins.str display_name: Metric display name.
+        :param builtins.str metric_name: Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
+        :param builtins.str metric_unit: Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
+        :param builtins.str period: Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
+        :param builtins.str statistics: Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
+        :param builtins.str threshold: Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
         """
         pulumi.set(__self__, "comparison_operator", comparison_operator)
         pulumi.set(__self__, "display_name", display_name)
@@ -1077,7 +1077,7 @@ class GetRuleLevelConditionConditionResult(dict):
     @pulumi.getter(name="comparisonOperator")
     def comparison_operator(self) -> builtins.str:
         """
-        比较符号。支持普通阈值告警： >、>=、<、<=、!=、= ，以及以下同环比告警：last*period*increase*pct：环比上周期上涨。last*period*decrease*pct：环比上周起下降。last*period*abs*pct：环比上周期上涨或下降。last*day*increase*pct：同比昨天同一时段上涨。last*day*decrease*pct：同比昨天同一时段下降。last*day*abs*pct：同比昨天同一时段上涨或下降。last*week*increase*pct：同比上周同一时段上涨。last*week*decrease*pct：同比上周同一时段下降。last*week*abs_pct：同比上周同一时段上涨或下降。
+        Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
         """
         return pulumi.get(self, "comparison_operator")
 
@@ -1085,7 +1085,7 @@ class GetRuleLevelConditionConditionResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> builtins.str:
         """
-        指标显示名称。
+        Metric display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -1093,7 +1093,7 @@ class GetRuleLevelConditionConditionResult(dict):
     @pulumi.getter(name="metricName")
     def metric_name(self) -> builtins.str:
         """
-        监控指标的名称。详情请参见 云监控指标查询 下各产品的 MetricName。
+        Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
         """
         return pulumi.get(self, "metric_name")
 
@@ -1101,7 +1101,7 @@ class GetRuleLevelConditionConditionResult(dict):
     @pulumi.getter(name="metricUnit")
     def metric_unit(self) -> builtins.str:
         """
-        监控指标的单位。详情请参见 云监控指标查询 下各产品的 MetricUnit。说明同环比告警，MetricUnit 需要填写为 "Percent"。MetricUnit 中是否带有 IEC 表示不同的进位：带有 IEC：进位是 1024不带 IEC：进位是 1000。
+        Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
         """
         return pulumi.get(self, "metric_unit")
 
@@ -1109,7 +1109,7 @@ class GetRuleLevelConditionConditionResult(dict):
     @pulumi.getter
     def period(self) -> builtins.str:
         """
-        监控指标的统计周期。详情请参见 云监控指标查询 下各产品的 Period。
+        Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
         """
         return pulumi.get(self, "period")
 
@@ -1117,7 +1117,7 @@ class GetRuleLevelConditionConditionResult(dict):
     @pulumi.getter
     def statistics(self) -> builtins.str:
         """
-        统计方法，取值：avg：平均值。max：最大值。min：最小值。说明统计方法会应用到检测时间段内的数据上。例如，默认每次检测数据的时间跨度是 1 分钟，如果统计方法为 avg，那就是对 1 分钟内的数据取平均值。
+        Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
         """
         return pulumi.get(self, "statistics")
 
@@ -1125,7 +1125,7 @@ class GetRuleLevelConditionConditionResult(dict):
     @pulumi.getter
     def threshold(self) -> builtins.str:
         """
-        指标阈值。支持输入正数或 0。最多支持三位小数。
+        Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
         """
         return pulumi.get(self, "threshold")
 
@@ -1136,8 +1136,8 @@ class GetRuleNoDataResult(dict):
                  enable: builtins.bool,
                  evaluation_count: builtins.int):
         """
-        :param builtins.bool enable: 是否开启无数据告警。取值：true：开启无数据告警。false：（默认）关闭无数据告警。
-        :param builtins.int evaluation_count: 无数据告警触发阈值，如果在配置的阈值周期内检测无数据上报，则会触发无数据告警。当Enable配置为true时，该字段为必填。整数形式，取值范围为 3～20。
+        :param builtins.bool enable: Enable no data alert. Values: true: enable no data alert. false (default): disable no data alert.
+        :param builtins.int evaluation_count: No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
         """
         pulumi.set(__self__, "enable", enable)
         pulumi.set(__self__, "evaluation_count", evaluation_count)
@@ -1146,7 +1146,7 @@ class GetRuleNoDataResult(dict):
     @pulumi.getter
     def enable(self) -> builtins.bool:
         """
-        是否开启无数据告警。取值：true：开启无数据告警。false：（默认）关闭无数据告警。
+        Enable no data alert. Values: true: enable no data alert. false (default): disable no data alert.
         """
         return pulumi.get(self, "enable")
 
@@ -1154,7 +1154,7 @@ class GetRuleNoDataResult(dict):
     @pulumi.getter(name="evaluationCount")
     def evaluation_count(self) -> builtins.int:
         """
-        无数据告警触发阈值，如果在配置的阈值周期内检测无数据上报，则会触发无数据告警。当Enable配置为true时，该字段为必填。整数形式，取值范围为 3～20。
+        No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
         """
         return pulumi.get(self, "evaluation_count")
 
@@ -1165,8 +1165,8 @@ class GetRuleNotifyTemplateResult(dict):
                  channel: builtins.str,
                  notify_template_id: builtins.str):
         """
-        :param builtins.str channel: 通知渠道，取值：email：邮箱sms：短信phone：电话lark：飞书dingtalk：钉钉wecom：企业微信slack：Slackapi：回调地址。
-        :param builtins.str notify_template_id: 通知模版 ID。注意每种通知渠道仅支持配置 1 个通知模版 ID。
+        :param builtins.str channel: Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
+        :param builtins.str notify_template_id: Notification template ID. Note: Each notification channel supports only one notification template ID.
         """
         pulumi.set(__self__, "channel", channel)
         pulumi.set(__self__, "notify_template_id", notify_template_id)
@@ -1175,7 +1175,7 @@ class GetRuleNotifyTemplateResult(dict):
     @pulumi.getter
     def channel(self) -> builtins.str:
         """
-        通知渠道，取值：email：邮箱sms：短信phone：电话lark：飞书dingtalk：钉钉wecom：企业微信slack：Slackapi：回调地址。
+        Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
         """
         return pulumi.get(self, "channel")
 
@@ -1183,7 +1183,7 @@ class GetRuleNotifyTemplateResult(dict):
     @pulumi.getter(name="notifyTemplateId")
     def notify_template_id(self) -> builtins.str:
         """
-        通知模版 ID。注意每种通知渠道仅支持配置 1 个通知模版 ID。
+        Notification template ID. Note: Each notification channel supports only one notification template ID.
         """
         return pulumi.get(self, "notify_template_id")
 
@@ -1194,8 +1194,8 @@ class GetRuleOriginalDimensionsResult(dict):
                  key: builtins.str,
                  values: Sequence[builtins.str]):
         """
-        :param builtins.str key: 指标 Dimension 名称，例如ResourceID、NodeName等。不同云产品的 Dimensions 名称不同，详情请参见 云监控指标查询。ResourceID为必填项，且大小写必须与 云监控指标查询 中的一致。支持同时填写多个 Dimension 名称，并基于多个 Dimension 名称进行分组。举例如下：当您仅填写ResourceID时，系统会按照ResourceID进行告警分组。当您同时填写ResourceID和NodeName时，系统会首先按照ResourceID进行告警分组。然后在每个分组内，再按照NodeName进行分组。
-        :param Sequence[builtins.str] values: 指标 Dimension 值，数组形式。多个值之间使用英文半角逗号,分割。允许使用通配符*选择全部实例的值。例如：["*"] 。
+        :param builtins.str key: Metric Dimension name, such as ResourceID, NodeName, etc. Dimension names vary by cloud product. For details, see Cloud Monitoring Metric Query. ResourceID is required, and its capitalization must match Cloud Monitoring Metric Query. Supports multiple Dimension names and grouping by multiple Dimension names. For example: If you only enter ResourceID, the system groups alerts by ResourceID. If you enter both ResourceID and NodeName, the system first groups alerts by ResourceID, then groups within each ResourceID group by NodeName.
+        :param Sequence[builtins.str] values: Metric Dimension values, in array format. Separate multiple values with commas. Wildcard * can be used to select all instance values. For example: ["*"] .
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "values", values)
@@ -1204,7 +1204,7 @@ class GetRuleOriginalDimensionsResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        指标 Dimension 名称，例如ResourceID、NodeName等。不同云产品的 Dimensions 名称不同，详情请参见 云监控指标查询。ResourceID为必填项，且大小写必须与 云监控指标查询 中的一致。支持同时填写多个 Dimension 名称，并基于多个 Dimension 名称进行分组。举例如下：当您仅填写ResourceID时，系统会按照ResourceID进行告警分组。当您同时填写ResourceID和NodeName时，系统会首先按照ResourceID进行告警分组。然后在每个分组内，再按照NodeName进行分组。
+        Metric Dimension name, such as ResourceID, NodeName, etc. Dimension names vary by cloud product. For details, see Cloud Monitoring Metric Query. ResourceID is required, and its capitalization must match Cloud Monitoring Metric Query. Supports multiple Dimension names and grouping by multiple Dimension names. For example: If you only enter ResourceID, the system groups alerts by ResourceID. If you enter both ResourceID and NodeName, the system first groups alerts by ResourceID, then groups within each ResourceID group by NodeName.
         """
         return pulumi.get(self, "key")
 
@@ -1212,7 +1212,7 @@ class GetRuleOriginalDimensionsResult(dict):
     @pulumi.getter
     def values(self) -> Sequence[builtins.str]:
         """
-        指标 Dimension 值，数组形式。多个值之间使用英文半角逗号,分割。允许使用通配符*选择全部实例的值。例如：["*"] 。
+        Metric Dimension values, in array format. Separate multiple values with commas. Wildcard * can be used to select all instance values. For example: ["*"] .
         """
         return pulumi.get(self, "values")
 
@@ -1222,7 +1222,7 @@ class GetRuleRecoveryNotifyResult(dict):
     def __init__(__self__, *,
                  enable: builtins.bool):
         """
-        :param builtins.bool enable: 是否开启告警恢复通知。取值：true：（默认）开启告警恢复通知。false：关闭告警恢复通知。
+        :param builtins.bool enable: Enable alert recovery notification. Options: true: (default) enable alert recovery notification, false: disable alert recovery notification.
         """
         pulumi.set(__self__, "enable", enable)
 
@@ -1230,7 +1230,7 @@ class GetRuleRecoveryNotifyResult(dict):
     @pulumi.getter
     def enable(self) -> builtins.bool:
         """
-        是否开启告警恢复通知。取值：true：（默认）开启告警恢复通知。false：关闭告警恢复通知。
+        Enable alert recovery notification. Options: true: (default) enable alert recovery notification, false: disable alert recovery notification.
         """
         return pulumi.get(self, "enable")
 
@@ -1241,8 +1241,8 @@ class GetRuleTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签键。支持中文、英文大写字母、英文小写字母、数字和空格。支持以下特殊字符_.:/=+-@。不能以空格为开头或结尾。volc:和/sys:为系统预留的标签键，添加标签时，标签键的开头不能设置为任何大小写形式的volc:和/sys:。标签键的长度需为 1～128 个字符。
-        :param builtins.str value: 标签值。支持中文、英文大写字母、英文小写字母、数字和空格。支持以下特殊字符_.:/=+-@。不能以空格为开头或结尾。标签键的长度需为 0～255 个字符。
+        :param builtins.str key: Tag key. Supports Chinese, uppercase and lowercase English letters, numbers, and spaces. The following special characters are supported: _ . : / = +   - @. Cannot start or end with a space. volc: and /sys: are system-reserved tag keys. When adding a tag, the tag key cannot start with any case form of volc: or /sys:. Tag key length must be 1–128 characters.
+        :param builtins.str value: Tag value. Supports Chinese, uppercase and lowercase English letters, numbers, and spaces. The following special characters are supported: _ . : / = +   - @. Cannot start or end with a space. Tag key length must be 0–255 characters.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -1251,7 +1251,7 @@ class GetRuleTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签键。支持中文、英文大写字母、英文小写字母、数字和空格。支持以下特殊字符_.:/=+-@。不能以空格为开头或结尾。volc:和/sys:为系统预留的标签键，添加标签时，标签键的开头不能设置为任何大小写形式的volc:和/sys:。标签键的长度需为 1～128 个字符。
+        Tag key. Supports Chinese, uppercase and lowercase English letters, numbers, and spaces. The following special characters are supported: _ . : / = +   - @. Cannot start or end with a space. volc: and /sys: are system-reserved tag keys. When adding a tag, the tag key cannot start with any case form of volc: or /sys:. Tag key length must be 1–128 characters.
         """
         return pulumi.get(self, "key")
 
@@ -1259,7 +1259,7 @@ class GetRuleTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签值。支持中文、英文大写字母、英文小写字母、数字和空格。支持以下特殊字符_.:/=+-@。不能以空格为开头或结尾。标签键的长度需为 0～255 个字符。
+        Tag value. Supports Chinese, uppercase and lowercase English letters, numbers, and spaces. The following special characters are supported: _ . : / = +   - @. Cannot start or end with a space. Tag key length must be 0–255 characters.
         """
         return pulumi.get(self, "value")
 

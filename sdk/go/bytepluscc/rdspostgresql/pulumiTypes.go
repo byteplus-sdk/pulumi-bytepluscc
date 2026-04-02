@@ -14,11 +14,11 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type AllowListAssociatedInstance struct {
-	// 实例 ID。
+	// Instance ID.
 	InstanceId *string `pulumi:"instanceId"`
-	// 实例名称。
+	// Instance name.
 	InstanceName *string `pulumi:"instanceName"`
-	// 实例所属的 VPC ID。
+	// VPC ID to which the instance belongs.
 	Vpc *string `pulumi:"vpc"`
 }
 
@@ -34,11 +34,11 @@ type AllowListAssociatedInstanceInput interface {
 }
 
 type AllowListAssociatedInstanceArgs struct {
-	// 实例 ID。
+	// Instance ID.
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
-	// 实例名称。
+	// Instance name.
 	InstanceName pulumi.StringPtrInput `pulumi:"instanceName"`
-	// 实例所属的 VPC ID。
+	// VPC ID to which the instance belongs.
 	Vpc pulumi.StringPtrInput `pulumi:"vpc"`
 }
 
@@ -93,17 +93,17 @@ func (o AllowListAssociatedInstanceOutput) ToAllowListAssociatedInstanceOutputWi
 	return o
 }
 
-// 实例 ID。
+// Instance ID.
 func (o AllowListAssociatedInstanceOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
 
-// 实例名称。
+// Instance name.
 func (o AllowListAssociatedInstanceOutput) InstanceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.InstanceName }).(pulumi.StringPtrOutput)
 }
 
-// 实例所属的 VPC ID。
+// VPC ID to which the instance belongs.
 func (o AllowListAssociatedInstanceOutput) Vpc() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.Vpc }).(pulumi.StringPtrOutput)
 }
@@ -129,13 +129,13 @@ func (o AllowListAssociatedInstanceArrayOutput) Index(i pulumi.IntInput) AllowLi
 }
 
 type AllowListSecurityGroupBindInfo struct {
-	// 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。
+	// Mode for associating security groups. Values: IngressDirectionIp: inbound IP. AssociateEcsIp: associate ECS IP.
 	BindMode *string `pulumi:"bindMode"`
-	// 安全组中的 IP 列表。
+	// IP address list in the security group.
 	IpLists []string `pulumi:"ipLists"`
-	// 安全组 ID。
+	// Security group ID.
 	SecurityGroupId *string `pulumi:"securityGroupId"`
-	// 安全组名称。
+	// Security group name.
 	SecurityGroupName *string `pulumi:"securityGroupName"`
 }
 
@@ -151,13 +151,13 @@ type AllowListSecurityGroupBindInfoInput interface {
 }
 
 type AllowListSecurityGroupBindInfoArgs struct {
-	// 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。
+	// Mode for associating security groups. Values: IngressDirectionIp: inbound IP. AssociateEcsIp: associate ECS IP.
 	BindMode pulumi.StringPtrInput `pulumi:"bindMode"`
-	// 安全组中的 IP 列表。
+	// IP address list in the security group.
 	IpLists pulumi.StringArrayInput `pulumi:"ipLists"`
-	// 安全组 ID。
+	// Security group ID.
 	SecurityGroupId pulumi.StringPtrInput `pulumi:"securityGroupId"`
-	// 安全组名称。
+	// Security group name.
 	SecurityGroupName pulumi.StringPtrInput `pulumi:"securityGroupName"`
 }
 
@@ -212,22 +212,22 @@ func (o AllowListSecurityGroupBindInfoOutput) ToAllowListSecurityGroupBindInfoOu
 	return o
 }
 
-// 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。
+// Mode for associating security groups. Values: IngressDirectionIp: inbound IP. AssociateEcsIp: associate ECS IP.
 func (o AllowListSecurityGroupBindInfoOutput) BindMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AllowListSecurityGroupBindInfo) *string { return v.BindMode }).(pulumi.StringPtrOutput)
 }
 
-// 安全组中的 IP 列表。
+// IP address list in the security group.
 func (o AllowListSecurityGroupBindInfoOutput) IpLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v AllowListSecurityGroupBindInfo) []string { return v.IpLists }).(pulumi.StringArrayOutput)
 }
 
-// 安全组 ID。
+// Security group ID.
 func (o AllowListSecurityGroupBindInfoOutput) SecurityGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AllowListSecurityGroupBindInfo) *string { return v.SecurityGroupId }).(pulumi.StringPtrOutput)
 }
 
-// 安全组名称。
+// Security group name.
 func (o AllowListSecurityGroupBindInfoOutput) SecurityGroupName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AllowListSecurityGroupBindInfo) *string { return v.SecurityGroupName }).(pulumi.StringPtrOutput)
 }
@@ -253,11 +253,11 @@ func (o AllowListSecurityGroupBindInfoArrayOutput) Index(i pulumi.IntInput) Allo
 }
 
 type DbEndpointAddress struct {
-	// 是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+	// Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
 	DnsVisibility *bool `pulumi:"dnsVisibility"`
-	// 新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+	// New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
 	DomainPrefix *string `pulumi:"domainPrefix"`
-	// 端口号。
+	// Port number.
 	Port *string `pulumi:"port"`
 }
 
@@ -273,11 +273,11 @@ type DbEndpointAddressInput interface {
 }
 
 type DbEndpointAddressArgs struct {
-	// 是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+	// Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
 	DnsVisibility pulumi.BoolPtrInput `pulumi:"dnsVisibility"`
-	// 新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+	// New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
 	DomainPrefix pulumi.StringPtrInput `pulumi:"domainPrefix"`
-	// 端口号。
+	// Port number.
 	Port pulumi.StringPtrInput `pulumi:"port"`
 }
 
@@ -332,17 +332,17 @@ func (o DbEndpointAddressOutput) ToDbEndpointAddressOutputWithContext(ctx contex
 	return o
 }
 
-// 是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+// Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
 func (o DbEndpointAddressOutput) DnsVisibility() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DbEndpointAddress) *bool { return v.DnsVisibility }).(pulumi.BoolPtrOutput)
 }
 
-// 新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+// New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
 func (o DbEndpointAddressOutput) DomainPrefix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbEndpointAddress) *string { return v.DomainPrefix }).(pulumi.StringPtrOutput)
 }
 
-// 端口号。
+// Port number.
 func (o DbEndpointAddressOutput) Port() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbEndpointAddress) *string { return v.Port }).(pulumi.StringPtrOutput)
 }
@@ -368,11 +368,11 @@ func (o DbEndpointAddressArrayOutput) Index(i pulumi.IntInput) DbEndpointAddress
 }
 
 type DbEndpointReadOnlyNodeWeight struct {
-	// 只读节点需要传入 NodeId。
+	// Read-only nodes require the NodeId to be provided.
 	NodeId *string `pulumi:"nodeId"`
-	// 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+	// Node type. Values: Primary: primary node. ReadOnly: read-only node.
 	NodeType *string `pulumi:"nodeType"`
-	// 节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+	// Read weight of the node, increases in increments of 100, maximum value is 40000. Note: Weights cannot all be set to 0.
 	Weight *int `pulumi:"weight"`
 }
 
@@ -388,11 +388,11 @@ type DbEndpointReadOnlyNodeWeightInput interface {
 }
 
 type DbEndpointReadOnlyNodeWeightArgs struct {
-	// 只读节点需要传入 NodeId。
+	// Read-only nodes require the NodeId to be provided.
 	NodeId pulumi.StringPtrInput `pulumi:"nodeId"`
-	// 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+	// Node type. Values: Primary: primary node. ReadOnly: read-only node.
 	NodeType pulumi.StringPtrInput `pulumi:"nodeType"`
-	// 节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+	// Read weight of the node, increases in increments of 100, maximum value is 40000. Note: Weights cannot all be set to 0.
 	Weight pulumi.IntPtrInput `pulumi:"weight"`
 }
 
@@ -447,17 +447,17 @@ func (o DbEndpointReadOnlyNodeWeightOutput) ToDbEndpointReadOnlyNodeWeightOutput
 	return o
 }
 
-// 只读节点需要传入 NodeId。
+// Read-only nodes require the NodeId to be provided.
 func (o DbEndpointReadOnlyNodeWeightOutput) NodeId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbEndpointReadOnlyNodeWeight) *string { return v.NodeId }).(pulumi.StringPtrOutput)
 }
 
-// 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+// Node type. Values: Primary: primary node. ReadOnly: read-only node.
 func (o DbEndpointReadOnlyNodeWeightOutput) NodeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbEndpointReadOnlyNodeWeight) *string { return v.NodeType }).(pulumi.StringPtrOutput)
 }
 
-// 节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+// Read weight of the node, increases in increments of 100, maximum value is 40000. Note: Weights cannot all be set to 0.
 func (o DbEndpointReadOnlyNodeWeightOutput) Weight() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DbEndpointReadOnlyNodeWeight) *int { return v.Weight }).(pulumi.IntPtrOutput)
 }
@@ -483,11 +483,11 @@ func (o DbEndpointReadOnlyNodeWeightArrayOutput) Index(i pulumi.IntInput) DbEndp
 }
 
 type GetAllowListAssociatedInstance struct {
-	// 实例 ID。
+	// Instance ID.
 	InstanceId string `pulumi:"instanceId"`
-	// 实例名称。
+	// Instance name.
 	InstanceName string `pulumi:"instanceName"`
-	// 实例所属的 VPC ID。
+	// VPC ID to which the instance belongs.
 	Vpc string `pulumi:"vpc"`
 }
 
@@ -503,11 +503,11 @@ type GetAllowListAssociatedInstanceInput interface {
 }
 
 type GetAllowListAssociatedInstanceArgs struct {
-	// 实例 ID。
+	// Instance ID.
 	InstanceId pulumi.StringInput `pulumi:"instanceId"`
-	// 实例名称。
+	// Instance name.
 	InstanceName pulumi.StringInput `pulumi:"instanceName"`
-	// 实例所属的 VPC ID。
+	// VPC ID to which the instance belongs.
 	Vpc pulumi.StringInput `pulumi:"vpc"`
 }
 
@@ -562,17 +562,17 @@ func (o GetAllowListAssociatedInstanceOutput) ToGetAllowListAssociatedInstanceOu
 	return o
 }
 
-// 实例 ID。
+// Instance ID.
 func (o GetAllowListAssociatedInstanceOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 实例名称。
+// Instance name.
 func (o GetAllowListAssociatedInstanceOutput) InstanceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.InstanceName }).(pulumi.StringOutput)
 }
 
-// 实例所属的 VPC ID。
+// VPC ID to which the instance belongs.
 func (o GetAllowListAssociatedInstanceOutput) Vpc() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.Vpc }).(pulumi.StringOutput)
 }
@@ -598,13 +598,13 @@ func (o GetAllowListAssociatedInstanceArrayOutput) Index(i pulumi.IntInput) GetA
 }
 
 type GetAllowListSecurityGroupBindInfo struct {
-	// 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。
+	// Mode for associating security groups. Values: IngressDirectionIp: inbound IP. AssociateEcsIp: associate ECS IP.
 	BindMode string `pulumi:"bindMode"`
-	// 安全组中的 IP 列表。
+	// IP address list in the security group.
 	IpLists []string `pulumi:"ipLists"`
-	// 安全组 ID。
+	// Security group ID.
 	SecurityGroupId string `pulumi:"securityGroupId"`
-	// 安全组名称。
+	// Security group name.
 	SecurityGroupName string `pulumi:"securityGroupName"`
 }
 
@@ -620,13 +620,13 @@ type GetAllowListSecurityGroupBindInfoInput interface {
 }
 
 type GetAllowListSecurityGroupBindInfoArgs struct {
-	// 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。
+	// Mode for associating security groups. Values: IngressDirectionIp: inbound IP. AssociateEcsIp: associate ECS IP.
 	BindMode pulumi.StringInput `pulumi:"bindMode"`
-	// 安全组中的 IP 列表。
+	// IP address list in the security group.
 	IpLists pulumi.StringArrayInput `pulumi:"ipLists"`
-	// 安全组 ID。
+	// Security group ID.
 	SecurityGroupId pulumi.StringInput `pulumi:"securityGroupId"`
-	// 安全组名称。
+	// Security group name.
 	SecurityGroupName pulumi.StringInput `pulumi:"securityGroupName"`
 }
 
@@ -681,22 +681,22 @@ func (o GetAllowListSecurityGroupBindInfoOutput) ToGetAllowListSecurityGroupBind
 	return o
 }
 
-// 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。
+// Mode for associating security groups. Values: IngressDirectionIp: inbound IP. AssociateEcsIp: associate ECS IP.
 func (o GetAllowListSecurityGroupBindInfoOutput) BindMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAllowListSecurityGroupBindInfo) string { return v.BindMode }).(pulumi.StringOutput)
 }
 
-// 安全组中的 IP 列表。
+// IP address list in the security group.
 func (o GetAllowListSecurityGroupBindInfoOutput) IpLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAllowListSecurityGroupBindInfo) []string { return v.IpLists }).(pulumi.StringArrayOutput)
 }
 
-// 安全组 ID。
+// Security group ID.
 func (o GetAllowListSecurityGroupBindInfoOutput) SecurityGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAllowListSecurityGroupBindInfo) string { return v.SecurityGroupId }).(pulumi.StringOutput)
 }
 
-// 安全组名称。
+// Security group name.
 func (o GetAllowListSecurityGroupBindInfoOutput) SecurityGroupName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAllowListSecurityGroupBindInfo) string { return v.SecurityGroupName }).(pulumi.StringOutput)
 }
@@ -722,25 +722,25 @@ func (o GetAllowListSecurityGroupBindInfoArrayOutput) Index(i pulumi.IntInput) G
 }
 
 type GetDbEndpointAddress struct {
-	// 可跨地域访问的私网地址。说明无此地址时则不返回该字段。
+	// Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
 	CrossRegionDomain string `pulumi:"crossRegionDomain"`
-	// 是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+	// Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
 	DnsVisibility bool `pulumi:"dnsVisibility"`
-	// 连接域名。
+	// Connection domain name
 	Domain string `pulumi:"domain"`
-	// 新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+	// New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
 	DomainPrefix string `pulumi:"domainPrefix"`
-	// 私网地址类型。取值：LocalDomain：本地域域名。CrossRegionDomain：可跨地域访问域名。
+	// Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
 	DomainVisibilitySetting string `pulumi:"domainVisibilitySetting"`
-	// EIP 的 ID，仅对 Public 地址有效。
+	// EIP ID, valid only for Public addresses.
 	EipId string `pulumi:"eipId"`
-	// IP 地址。
+	// IP address
 	IpAddress string `pulumi:"ipAddress"`
-	// 网络地址类型，取值为：Private：私网连接地址。Public：公网连接地址。Inner：公共服务区地址。
+	// Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
 	NetworkType string `pulumi:"networkType"`
-	// 端口号。
+	// Port number.
 	Port string `pulumi:"port"`
-	// 子网 ID。
+	// Subnet ID
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -756,25 +756,25 @@ type GetDbEndpointAddressInput interface {
 }
 
 type GetDbEndpointAddressArgs struct {
-	// 可跨地域访问的私网地址。说明无此地址时则不返回该字段。
+	// Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
 	CrossRegionDomain pulumi.StringInput `pulumi:"crossRegionDomain"`
-	// 是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+	// Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
 	DnsVisibility pulumi.BoolInput `pulumi:"dnsVisibility"`
-	// 连接域名。
+	// Connection domain name
 	Domain pulumi.StringInput `pulumi:"domain"`
-	// 新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+	// New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
 	DomainPrefix pulumi.StringInput `pulumi:"domainPrefix"`
-	// 私网地址类型。取值：LocalDomain：本地域域名。CrossRegionDomain：可跨地域访问域名。
+	// Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
 	DomainVisibilitySetting pulumi.StringInput `pulumi:"domainVisibilitySetting"`
-	// EIP 的 ID，仅对 Public 地址有效。
+	// EIP ID, valid only for Public addresses.
 	EipId pulumi.StringInput `pulumi:"eipId"`
-	// IP 地址。
+	// IP address
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
-	// 网络地址类型，取值为：Private：私网连接地址。Public：公网连接地址。Inner：公共服务区地址。
+	// Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
 	NetworkType pulumi.StringInput `pulumi:"networkType"`
-	// 端口号。
+	// Port number.
 	Port pulumi.StringInput `pulumi:"port"`
-	// 子网 ID。
+	// Subnet ID
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
@@ -829,52 +829,52 @@ func (o GetDbEndpointAddressOutput) ToGetDbEndpointAddressOutputWithContext(ctx 
 	return o
 }
 
-// 可跨地域访问的私网地址。说明无此地址时则不返回该字段。
+// Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
 func (o GetDbEndpointAddressOutput) CrossRegionDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbEndpointAddress) string { return v.CrossRegionDomain }).(pulumi.StringOutput)
 }
 
-// 是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+// Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
 func (o GetDbEndpointAddressOutput) DnsVisibility() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDbEndpointAddress) bool { return v.DnsVisibility }).(pulumi.BoolOutput)
 }
 
-// 连接域名。
+// Connection domain name
 func (o GetDbEndpointAddressOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbEndpointAddress) string { return v.Domain }).(pulumi.StringOutput)
 }
 
-// 新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+// New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
 func (o GetDbEndpointAddressOutput) DomainPrefix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbEndpointAddress) string { return v.DomainPrefix }).(pulumi.StringOutput)
 }
 
-// 私网地址类型。取值：LocalDomain：本地域域名。CrossRegionDomain：可跨地域访问域名。
+// Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
 func (o GetDbEndpointAddressOutput) DomainVisibilitySetting() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbEndpointAddress) string { return v.DomainVisibilitySetting }).(pulumi.StringOutput)
 }
 
-// EIP 的 ID，仅对 Public 地址有效。
+// EIP ID, valid only for Public addresses.
 func (o GetDbEndpointAddressOutput) EipId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbEndpointAddress) string { return v.EipId }).(pulumi.StringOutput)
 }
 
-// IP 地址。
+// IP address
 func (o GetDbEndpointAddressOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbEndpointAddress) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
-// 网络地址类型，取值为：Private：私网连接地址。Public：公网连接地址。Inner：公共服务区地址。
+// Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
 func (o GetDbEndpointAddressOutput) NetworkType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbEndpointAddress) string { return v.NetworkType }).(pulumi.StringOutput)
 }
 
-// 端口号。
+// Port number.
 func (o GetDbEndpointAddressOutput) Port() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbEndpointAddress) string { return v.Port }).(pulumi.StringOutput)
 }
 
-// 子网 ID。
+// Subnet ID
 func (o GetDbEndpointAddressOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbEndpointAddress) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -900,11 +900,11 @@ func (o GetDbEndpointAddressArrayOutput) Index(i pulumi.IntInput) GetDbEndpointA
 }
 
 type GetDbEndpointReadOnlyNodeWeight struct {
-	// 只读节点需要传入 NodeId。
+	// Read-only nodes require the NodeId to be provided.
 	NodeId string `pulumi:"nodeId"`
-	// 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+	// Node type. Values: Primary: primary node. ReadOnly: read-only node.
 	NodeType string `pulumi:"nodeType"`
-	// 节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+	// Read weight of the node, increases in increments of 100, maximum value is 40000. Note: Weights cannot all be set to 0.
 	Weight int `pulumi:"weight"`
 }
 
@@ -920,11 +920,11 @@ type GetDbEndpointReadOnlyNodeWeightInput interface {
 }
 
 type GetDbEndpointReadOnlyNodeWeightArgs struct {
-	// 只读节点需要传入 NodeId。
+	// Read-only nodes require the NodeId to be provided.
 	NodeId pulumi.StringInput `pulumi:"nodeId"`
-	// 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+	// Node type. Values: Primary: primary node. ReadOnly: read-only node.
 	NodeType pulumi.StringInput `pulumi:"nodeType"`
-	// 节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+	// Read weight of the node, increases in increments of 100, maximum value is 40000. Note: Weights cannot all be set to 0.
 	Weight pulumi.IntInput `pulumi:"weight"`
 }
 
@@ -979,17 +979,17 @@ func (o GetDbEndpointReadOnlyNodeWeightOutput) ToGetDbEndpointReadOnlyNodeWeight
 	return o
 }
 
-// 只读节点需要传入 NodeId。
+// Read-only nodes require the NodeId to be provided.
 func (o GetDbEndpointReadOnlyNodeWeightOutput) NodeId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbEndpointReadOnlyNodeWeight) string { return v.NodeId }).(pulumi.StringOutput)
 }
 
-// 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+// Node type. Values: Primary: primary node. ReadOnly: read-only node.
 func (o GetDbEndpointReadOnlyNodeWeightOutput) NodeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbEndpointReadOnlyNodeWeight) string { return v.NodeType }).(pulumi.StringOutput)
 }
 
-// 节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+// Read weight of the node, increases in increments of 100, maximum value is 40000. Note: Weights cannot all be set to 0.
 func (o GetDbEndpointReadOnlyNodeWeightOutput) Weight() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDbEndpointReadOnlyNodeWeight) int { return v.Weight }).(pulumi.IntOutput)
 }

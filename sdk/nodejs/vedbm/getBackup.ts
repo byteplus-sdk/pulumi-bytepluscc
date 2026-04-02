@@ -29,55 +29,55 @@ export interface GetBackupArgs {
  */
 export interface GetBackupResult {
     /**
-     * 备份的结束时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      */
     readonly backupEndTime: string;
     /**
-     * 备份文件大小，单位为 KiB。
+     * Backup file size, unit: KiB
      */
     readonly backupFileSize: number;
     /**
-     * 备份 ID。
+     * Backup ID
      */
     readonly backupId: string;
     /**
-     * 备份方式，目前仅支持物理备份。
+     * Backup method, currently only physical backup is supported
      */
     readonly backupMethod: string;
     /**
-     * 数据备份保留天数。
+     * Data backup retention days
      */
     readonly backupRetentionPeriod: number;
     /**
-     * 备份的开始时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      */
     readonly backupStartTime: string;
     /**
-     * 备份状态。
+     * Backup status
      */
     readonly backupStatus: string;
     /**
-     * 执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+     * Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
      */
     readonly backupTime: string;
     /**
-     * 备份类型，目前仅支持全量备份。
+     * Backup type, currently only full backup is supported
      */
     readonly backupType: string;
     /**
-     * 一致性备份的时间点，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * Consistency backup timestamp, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      */
     readonly consistentTime: string;
     /**
-     * 是否开启持续备份，取值固定为 true。
+     * Enable continuous backup, value is always true
      */
     readonly continueBackup: boolean;
     /**
-     * 创建类型。
+     * Creation type
      */
     readonly createType: string;
     /**
-     * 全量备份周期，多个取值用英文逗号（,）隔开。
+     * Full backup cycle, use commas (,) to separate multiple values
      */
     readonly fullBackupPeriod: string;
     /**
@@ -85,7 +85,7 @@ export interface GetBackupResult {
      */
     readonly id: string;
     /**
-     * 实例ID。
+     * Instance ID
      */
     readonly instanceId: string;
 }

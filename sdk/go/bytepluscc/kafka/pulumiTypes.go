@@ -14,7 +14,7 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type AllowListAssociatedInstance struct {
-	// 白名单绑定的实例ID。
+	// ID of the instance bound to the allowlist
 	InstanceId *string `pulumi:"instanceId"`
 }
 
@@ -30,7 +30,7 @@ type AllowListAssociatedInstanceInput interface {
 }
 
 type AllowListAssociatedInstanceArgs struct {
-	// 白名单绑定的实例ID。
+	// ID of the instance bound to the allowlist
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
 }
 
@@ -85,7 +85,7 @@ func (o AllowListAssociatedInstanceOutput) ToAllowListAssociatedInstanceOutputWi
 	return o
 }
 
-// 白名单绑定的实例ID。
+// ID of the instance bound to the allowlist
 func (o AllowListAssociatedInstanceOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
@@ -111,23 +111,23 @@ func (o AllowListAssociatedInstanceArrayOutput) Index(i pulumi.IntInput) AllowLi
 }
 
 type InstanceChargeInfo struct {
-	// 包年包月实例到期后是否自动续费，true-自动续费 false(默认)-不自动续费,到期实例关停。
+	// Whether to automatically renew the subscription instance after expiration. true   - auto renewal; false (default)   - no auto renewal, instance will be stopped upon expiration.
 	AutoRenew *bool `pulumi:"autoRenew"`
-	// 包年包月实例的到期时间。
+	// Expiration time for the subscription instance.
 	ChargeExpireTime *string `pulumi:"chargeExpireTime"`
-	// 实例的计费开始时间。
+	// Instance billing start time.
 	ChargeStartTime *string `pulumi:"chargeStartTime"`
-	// 实例的计费状态，支持的类型包括:  Normal-正常, Overdue-按量计费欠费, Expired-包年包月到期
+	// Billing status of the instance. Supported types: Normal   - normal, Overdue   - pay-as-you-go overdue, Expired   - subscription expired
 	ChargeStatus *string `pulumi:"chargeStatus"`
-	// 实例的计费类型，支持的类型包括: PostPaid-按量付费, PrePaid-包年包月。
+	// Billing type for the instance. Supported types: PostPaid   - pay-as-you-go, PrePaid   - subscription.
 	ChargeType *string `pulumi:"chargeType"`
-	// 实例欠费关停后的预计释放时间。
+	// Estimated release time after the instance is stopped due to overdue payment.
 	OverdueReclaimTime *string `pulumi:"overdueReclaimTime"`
-	// 实例的欠费关停时间。
+	// Instance suspension time due to overdue payment.
 	OverdueTime *string `pulumi:"overdueTime"`
-	// 包年包月类型实例的购买时长。
+	// Purchase duration for subscription-based instances.
 	Period *int `pulumi:"period"`
-	// 包年包月类型实例的生命周期单位，即指定以月（Month/Monthly）或以年（Year/Yearly）为单位购买。
+	// The lifecycle unit for subscription-based instances, specifying purchase by month (Month/Monthly) or by year (Year/Yearly).
 	PeriodUnit *string `pulumi:"periodUnit"`
 }
 
@@ -143,23 +143,23 @@ type InstanceChargeInfoInput interface {
 }
 
 type InstanceChargeInfoArgs struct {
-	// 包年包月实例到期后是否自动续费，true-自动续费 false(默认)-不自动续费,到期实例关停。
+	// Whether to automatically renew the subscription instance after expiration. true   - auto renewal; false (default)   - no auto renewal, instance will be stopped upon expiration.
 	AutoRenew pulumi.BoolPtrInput `pulumi:"autoRenew"`
-	// 包年包月实例的到期时间。
+	// Expiration time for the subscription instance.
 	ChargeExpireTime pulumi.StringPtrInput `pulumi:"chargeExpireTime"`
-	// 实例的计费开始时间。
+	// Instance billing start time.
 	ChargeStartTime pulumi.StringPtrInput `pulumi:"chargeStartTime"`
-	// 实例的计费状态，支持的类型包括:  Normal-正常, Overdue-按量计费欠费, Expired-包年包月到期
+	// Billing status of the instance. Supported types: Normal   - normal, Overdue   - pay-as-you-go overdue, Expired   - subscription expired
 	ChargeStatus pulumi.StringPtrInput `pulumi:"chargeStatus"`
-	// 实例的计费类型，支持的类型包括: PostPaid-按量付费, PrePaid-包年包月。
+	// Billing type for the instance. Supported types: PostPaid   - pay-as-you-go, PrePaid   - subscription.
 	ChargeType pulumi.StringPtrInput `pulumi:"chargeType"`
-	// 实例欠费关停后的预计释放时间。
+	// Estimated release time after the instance is stopped due to overdue payment.
 	OverdueReclaimTime pulumi.StringPtrInput `pulumi:"overdueReclaimTime"`
-	// 实例的欠费关停时间。
+	// Instance suspension time due to overdue payment.
 	OverdueTime pulumi.StringPtrInput `pulumi:"overdueTime"`
-	// 包年包月类型实例的购买时长。
+	// Purchase duration for subscription-based instances.
 	Period pulumi.IntPtrInput `pulumi:"period"`
-	// 包年包月类型实例的生命周期单位，即指定以月（Month/Monthly）或以年（Year/Yearly）为单位购买。
+	// The lifecycle unit for subscription-based instances, specifying purchase by month (Month/Monthly) or by year (Year/Yearly).
 	PeriodUnit pulumi.StringPtrInput `pulumi:"periodUnit"`
 }
 
@@ -240,47 +240,47 @@ func (o InstanceChargeInfoOutput) ToInstanceChargeInfoPtrOutputWithContext(ctx c
 	}).(InstanceChargeInfoPtrOutput)
 }
 
-// 包年包月实例到期后是否自动续费，true-自动续费 false(默认)-不自动续费,到期实例关停。
+// Whether to automatically renew the subscription instance after expiration. true   - auto renewal; false (default)   - no auto renewal, instance will be stopped upon expiration.
 func (o InstanceChargeInfoOutput) AutoRenew() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InstanceChargeInfo) *bool { return v.AutoRenew }).(pulumi.BoolPtrOutput)
 }
 
-// 包年包月实例的到期时间。
+// Expiration time for the subscription instance.
 func (o InstanceChargeInfoOutput) ChargeExpireTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeInfo) *string { return v.ChargeExpireTime }).(pulumi.StringPtrOutput)
 }
 
-// 实例的计费开始时间。
+// Instance billing start time.
 func (o InstanceChargeInfoOutput) ChargeStartTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeInfo) *string { return v.ChargeStartTime }).(pulumi.StringPtrOutput)
 }
 
-// 实例的计费状态，支持的类型包括:  Normal-正常, Overdue-按量计费欠费, Expired-包年包月到期
+// Billing status of the instance. Supported types: Normal   - normal, Overdue   - pay-as-you-go overdue, Expired   - subscription expired
 func (o InstanceChargeInfoOutput) ChargeStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeInfo) *string { return v.ChargeStatus }).(pulumi.StringPtrOutput)
 }
 
-// 实例的计费类型，支持的类型包括: PostPaid-按量付费, PrePaid-包年包月。
+// Billing type for the instance. Supported types: PostPaid   - pay-as-you-go, PrePaid   - subscription.
 func (o InstanceChargeInfoOutput) ChargeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeInfo) *string { return v.ChargeType }).(pulumi.StringPtrOutput)
 }
 
-// 实例欠费关停后的预计释放时间。
+// Estimated release time after the instance is stopped due to overdue payment.
 func (o InstanceChargeInfoOutput) OverdueReclaimTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeInfo) *string { return v.OverdueReclaimTime }).(pulumi.StringPtrOutput)
 }
 
-// 实例的欠费关停时间。
+// Instance suspension time due to overdue payment.
 func (o InstanceChargeInfoOutput) OverdueTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeInfo) *string { return v.OverdueTime }).(pulumi.StringPtrOutput)
 }
 
-// 包年包月类型实例的购买时长。
+// Purchase duration for subscription-based instances.
 func (o InstanceChargeInfoOutput) Period() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceChargeInfo) *int { return v.Period }).(pulumi.IntPtrOutput)
 }
 
-// 包年包月类型实例的生命周期单位，即指定以月（Month/Monthly）或以年（Year/Yearly）为单位购买。
+// The lifecycle unit for subscription-based instances, specifying purchase by month (Month/Monthly) or by year (Year/Yearly).
 func (o InstanceChargeInfoOutput) PeriodUnit() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeInfo) *string { return v.PeriodUnit }).(pulumi.StringPtrOutput)
 }
@@ -309,7 +309,7 @@ func (o InstanceChargeInfoPtrOutput) Elem() InstanceChargeInfoOutput {
 	}).(InstanceChargeInfoOutput)
 }
 
-// 包年包月实例到期后是否自动续费，true-自动续费 false(默认)-不自动续费,到期实例关停。
+// Whether to automatically renew the subscription instance after expiration. true   - auto renewal; false (default)   - no auto renewal, instance will be stopped upon expiration.
 func (o InstanceChargeInfoPtrOutput) AutoRenew() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeInfo) *bool {
 		if v == nil {
@@ -319,7 +319,7 @@ func (o InstanceChargeInfoPtrOutput) AutoRenew() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 包年包月实例的到期时间。
+// Expiration time for the subscription instance.
 func (o InstanceChargeInfoPtrOutput) ChargeExpireTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeInfo) *string {
 		if v == nil {
@@ -329,7 +329,7 @@ func (o InstanceChargeInfoPtrOutput) ChargeExpireTime() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的计费开始时间。
+// Instance billing start time.
 func (o InstanceChargeInfoPtrOutput) ChargeStartTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeInfo) *string {
 		if v == nil {
@@ -339,7 +339,7 @@ func (o InstanceChargeInfoPtrOutput) ChargeStartTime() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的计费状态，支持的类型包括:  Normal-正常, Overdue-按量计费欠费, Expired-包年包月到期
+// Billing status of the instance. Supported types: Normal   - normal, Overdue   - pay-as-you-go overdue, Expired   - subscription expired
 func (o InstanceChargeInfoPtrOutput) ChargeStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeInfo) *string {
 		if v == nil {
@@ -349,7 +349,7 @@ func (o InstanceChargeInfoPtrOutput) ChargeStatus() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的计费类型，支持的类型包括: PostPaid-按量付费, PrePaid-包年包月。
+// Billing type for the instance. Supported types: PostPaid   - pay-as-you-go, PrePaid   - subscription.
 func (o InstanceChargeInfoPtrOutput) ChargeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeInfo) *string {
 		if v == nil {
@@ -359,7 +359,7 @@ func (o InstanceChargeInfoPtrOutput) ChargeType() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例欠费关停后的预计释放时间。
+// Estimated release time after the instance is stopped due to overdue payment.
 func (o InstanceChargeInfoPtrOutput) OverdueReclaimTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeInfo) *string {
 		if v == nil {
@@ -369,7 +369,7 @@ func (o InstanceChargeInfoPtrOutput) OverdueReclaimTime() pulumi.StringPtrOutput
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的欠费关停时间。
+// Instance suspension time due to overdue payment.
 func (o InstanceChargeInfoPtrOutput) OverdueTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeInfo) *string {
 		if v == nil {
@@ -379,7 +379,7 @@ func (o InstanceChargeInfoPtrOutput) OverdueTime() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 包年包月类型实例的购买时长。
+// Purchase duration for subscription-based instances.
 func (o InstanceChargeInfoPtrOutput) Period() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeInfo) *int {
 		if v == nil {
@@ -389,7 +389,7 @@ func (o InstanceChargeInfoPtrOutput) Period() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 包年包月类型实例的生命周期单位，即指定以月（Month/Monthly）或以年（Year/Yearly）为单位购买。
+// The lifecycle unit for subscription-based instances, specifying purchase by month (Month/Monthly) or by year (Year/Yearly).
 func (o InstanceChargeInfoPtrOutput) PeriodUnit() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeInfo) *string {
 		if v == nil {
@@ -400,13 +400,13 @@ func (o InstanceChargeInfoPtrOutput) PeriodUnit() pulumi.StringPtrOutput {
 }
 
 type InstanceConnectionInfo struct {
-	// 实例的接入点类型。PLAINTEXT：默认接入点。SASL*PLAINTEXT：SASL接入点（私网）。SASL*SSL：SASL接入点（公网）。未开启公网访问时，不提供此接入点。
+	// Instance endpoint type. PLAINTEXT: default endpoint. SASL*PLAINTEXT: SASL endpoint (private network). SASL*SSL: SASL endpoint (public network). If public access is not enabled, this endpoint is not provided.
 	EndpointType *string `pulumi:"endpointType"`
-	// 实例私网访问域名。
+	// Instance private network access domain name.
 	InternalEndpoint *string `pulumi:"internalEndpoint"`
-	// 接入点的网络类型。统一为 PrivateNetwork。
+	// Network type for the access point. Unified as PrivateNetwork.
 	NetworkType *string `pulumi:"networkType"`
-	// 实例公网访问域名。
+	// Public access domain name for the instance.
 	PublicEndpoint *string `pulumi:"publicEndpoint"`
 }
 
@@ -422,13 +422,13 @@ type InstanceConnectionInfoInput interface {
 }
 
 type InstanceConnectionInfoArgs struct {
-	// 实例的接入点类型。PLAINTEXT：默认接入点。SASL*PLAINTEXT：SASL接入点（私网）。SASL*SSL：SASL接入点（公网）。未开启公网访问时，不提供此接入点。
+	// Instance endpoint type. PLAINTEXT: default endpoint. SASL*PLAINTEXT: SASL endpoint (private network). SASL*SSL: SASL endpoint (public network). If public access is not enabled, this endpoint is not provided.
 	EndpointType pulumi.StringPtrInput `pulumi:"endpointType"`
-	// 实例私网访问域名。
+	// Instance private network access domain name.
 	InternalEndpoint pulumi.StringPtrInput `pulumi:"internalEndpoint"`
-	// 接入点的网络类型。统一为 PrivateNetwork。
+	// Network type for the access point. Unified as PrivateNetwork.
 	NetworkType pulumi.StringPtrInput `pulumi:"networkType"`
-	// 实例公网访问域名。
+	// Public access domain name for the instance.
 	PublicEndpoint pulumi.StringPtrInput `pulumi:"publicEndpoint"`
 }
 
@@ -483,22 +483,22 @@ func (o InstanceConnectionInfoOutput) ToInstanceConnectionInfoOutputWithContext(
 	return o
 }
 
-// 实例的接入点类型。PLAINTEXT：默认接入点。SASL*PLAINTEXT：SASL接入点（私网）。SASL*SSL：SASL接入点（公网）。未开启公网访问时，不提供此接入点。
+// Instance endpoint type. PLAINTEXT: default endpoint. SASL*PLAINTEXT: SASL endpoint (private network). SASL*SSL: SASL endpoint (public network). If public access is not enabled, this endpoint is not provided.
 func (o InstanceConnectionInfoOutput) EndpointType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceConnectionInfo) *string { return v.EndpointType }).(pulumi.StringPtrOutput)
 }
 
-// 实例私网访问域名。
+// Instance private network access domain name.
 func (o InstanceConnectionInfoOutput) InternalEndpoint() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceConnectionInfo) *string { return v.InternalEndpoint }).(pulumi.StringPtrOutput)
 }
 
-// 接入点的网络类型。统一为 PrivateNetwork。
+// Network type for the access point. Unified as PrivateNetwork.
 func (o InstanceConnectionInfoOutput) NetworkType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceConnectionInfo) *string { return v.NetworkType }).(pulumi.StringPtrOutput)
 }
 
-// 实例公网访问域名。
+// Public access domain name for the instance.
 func (o InstanceConnectionInfoOutput) PublicEndpoint() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceConnectionInfo) *string { return v.PublicEndpoint }).(pulumi.StringPtrOutput)
 }
@@ -524,9 +524,9 @@ func (o InstanceConnectionInfoArrayOutput) Index(i pulumi.IntInput) InstanceConn
 }
 
 type InstanceTag struct {
-	// 标签的键。
+	// Tag key.
 	Key *string `pulumi:"key"`
-	// 标签的值。
+	// Tag value.
 	Value *string `pulumi:"value"`
 }
 
@@ -542,9 +542,9 @@ type InstanceTagInput interface {
 }
 
 type InstanceTagArgs struct {
-	// 标签的键。
+	// Tag key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签的值。
+	// Tag value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -599,12 +599,12 @@ func (o InstanceTagOutput) ToInstanceTagOutputWithContext(ctx context.Context) I
 	return o
 }
 
-// 标签的键。
+// Tag key.
 func (o InstanceTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签的值。
+// Tag value.
 func (o InstanceTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -630,9 +630,9 @@ func (o InstanceTagArrayOutput) Index(i pulumi.IntInput) InstanceTagOutput {
 }
 
 type TopicAccessPolicy struct {
-	// SASL 用户对于当前 Topic 的访问权限。PubSub：拥有发布、订阅权限。Pub：拥有发布权限。Sub：拥有订阅权限。
+	// SASL user access permissions for the current Topic. PubSub: publish and subscribe permissions. Pub: publish permission. Sub: subscribe permission.
 	AccessPolicy *string `pulumi:"accessPolicy"`
-	// SASL 用户名称。
+	// SASL username.
 	UserName *string `pulumi:"userName"`
 }
 
@@ -648,9 +648,9 @@ type TopicAccessPolicyInput interface {
 }
 
 type TopicAccessPolicyArgs struct {
-	// SASL 用户对于当前 Topic 的访问权限。PubSub：拥有发布、订阅权限。Pub：拥有发布权限。Sub：拥有订阅权限。
+	// SASL user access permissions for the current Topic. PubSub: publish and subscribe permissions. Pub: publish permission. Sub: subscribe permission.
 	AccessPolicy pulumi.StringPtrInput `pulumi:"accessPolicy"`
-	// SASL 用户名称。
+	// SASL username.
 	UserName pulumi.StringPtrInput `pulumi:"userName"`
 }
 
@@ -705,12 +705,12 @@ func (o TopicAccessPolicyOutput) ToTopicAccessPolicyOutputWithContext(ctx contex
 	return o
 }
 
-// SASL 用户对于当前 Topic 的访问权限。PubSub：拥有发布、订阅权限。Pub：拥有发布权限。Sub：拥有订阅权限。
+// SASL user access permissions for the current Topic. PubSub: publish and subscribe permissions. Pub: publish permission. Sub: subscribe permission.
 func (o TopicAccessPolicyOutput) AccessPolicy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TopicAccessPolicy) *string { return v.AccessPolicy }).(pulumi.StringPtrOutput)
 }
 
-// SASL 用户名称。
+// SASL username.
 func (o TopicAccessPolicyOutput) UserName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TopicAccessPolicy) *string { return v.UserName }).(pulumi.StringPtrOutput)
 }
@@ -736,9 +736,9 @@ func (o TopicAccessPolicyArrayOutput) Index(i pulumi.IntInput) TopicAccessPolicy
 }
 
 type TopicTag struct {
-	// 标签键。
+	// Label key.
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value *string `pulumi:"value"`
 }
 
@@ -754,9 +754,9 @@ type TopicTagInput interface {
 }
 
 type TopicTagArgs struct {
-	// 标签键。
+	// Label key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -811,12 +811,12 @@ func (o TopicTagOutput) ToTopicTagOutputWithContext(ctx context.Context) TopicTa
 	return o
 }
 
-// 标签键。
+// Label key.
 func (o TopicTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TopicTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value.
 func (o TopicTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TopicTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -842,9 +842,9 @@ func (o TopicTagArrayOutput) Index(i pulumi.IntInput) TopicTagOutput {
 }
 
 type GetAllowListAssociatedInstance struct {
-	// 白名单绑定的实例ID。
+	// ID of the instance bound to the allowlist
 	InstanceId string `pulumi:"instanceId"`
-	// 白名单绑定的实例名称。
+	// Name of the instance bound to the allowlist
 	InstanceName string `pulumi:"instanceName"`
 }
 
@@ -860,9 +860,9 @@ type GetAllowListAssociatedInstanceInput interface {
 }
 
 type GetAllowListAssociatedInstanceArgs struct {
-	// 白名单绑定的实例ID。
+	// ID of the instance bound to the allowlist
 	InstanceId pulumi.StringInput `pulumi:"instanceId"`
-	// 白名单绑定的实例名称。
+	// Name of the instance bound to the allowlist
 	InstanceName pulumi.StringInput `pulumi:"instanceName"`
 }
 
@@ -917,12 +917,12 @@ func (o GetAllowListAssociatedInstanceOutput) ToGetAllowListAssociatedInstanceOu
 	return o
 }
 
-// 白名单绑定的实例ID。
+// ID of the instance bound to the allowlist
 func (o GetAllowListAssociatedInstanceOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 白名单绑定的实例名称。
+// Name of the instance bound to the allowlist
 func (o GetAllowListAssociatedInstanceOutput) InstanceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.InstanceName }).(pulumi.StringOutput)
 }
@@ -948,23 +948,23 @@ func (o GetAllowListAssociatedInstanceArrayOutput) Index(i pulumi.IntInput) GetA
 }
 
 type GetInstanceChargeInfo struct {
-	// 包年包月实例到期后是否自动续费，true-自动续费 false(默认)-不自动续费,到期实例关停。
+	// Whether to automatically renew the subscription instance after expiration. true   - auto renewal; false (default)   - no auto renewal, instance will be stopped upon expiration.
 	AutoRenew bool `pulumi:"autoRenew"`
-	// 包年包月实例的到期时间。
+	// Expiration time for the subscription instance.
 	ChargeExpireTime string `pulumi:"chargeExpireTime"`
-	// 实例的计费开始时间。
+	// Instance billing start time.
 	ChargeStartTime string `pulumi:"chargeStartTime"`
-	// 实例的计费状态，支持的类型包括:  Normal-正常, Overdue-按量计费欠费, Expired-包年包月到期
+	// Billing status of the instance. Supported types: Normal   - normal, Overdue   - pay-as-you-go overdue, Expired   - subscription expired
 	ChargeStatus string `pulumi:"chargeStatus"`
-	// 实例的计费类型，支持的类型包括: PostPaid-按量付费, PrePaid-包年包月。
+	// Billing type for the instance. Supported types: PostPaid   - pay-as-you-go, PrePaid   - subscription.
 	ChargeType string `pulumi:"chargeType"`
-	// 实例欠费关停后的预计释放时间。
+	// Estimated release time after the instance is stopped due to overdue payment.
 	OverdueReclaimTime string `pulumi:"overdueReclaimTime"`
-	// 实例的欠费关停时间。
+	// Instance suspension time due to overdue payment.
 	OverdueTime string `pulumi:"overdueTime"`
-	// 包年包月类型实例的购买时长。
+	// Purchase duration for subscription-based instances.
 	Period int `pulumi:"period"`
-	// 包年包月类型实例的生命周期单位，即指定以月（Month/Monthly）或以年（Year/Yearly）为单位购买。
+	// The lifecycle unit for subscription-based instances, specifying purchase by month (Month/Monthly) or by year (Year/Yearly).
 	PeriodUnit string `pulumi:"periodUnit"`
 }
 
@@ -980,23 +980,23 @@ type GetInstanceChargeInfoInput interface {
 }
 
 type GetInstanceChargeInfoArgs struct {
-	// 包年包月实例到期后是否自动续费，true-自动续费 false(默认)-不自动续费,到期实例关停。
+	// Whether to automatically renew the subscription instance after expiration. true   - auto renewal; false (default)   - no auto renewal, instance will be stopped upon expiration.
 	AutoRenew pulumi.BoolInput `pulumi:"autoRenew"`
-	// 包年包月实例的到期时间。
+	// Expiration time for the subscription instance.
 	ChargeExpireTime pulumi.StringInput `pulumi:"chargeExpireTime"`
-	// 实例的计费开始时间。
+	// Instance billing start time.
 	ChargeStartTime pulumi.StringInput `pulumi:"chargeStartTime"`
-	// 实例的计费状态，支持的类型包括:  Normal-正常, Overdue-按量计费欠费, Expired-包年包月到期
+	// Billing status of the instance. Supported types: Normal   - normal, Overdue   - pay-as-you-go overdue, Expired   - subscription expired
 	ChargeStatus pulumi.StringInput `pulumi:"chargeStatus"`
-	// 实例的计费类型，支持的类型包括: PostPaid-按量付费, PrePaid-包年包月。
+	// Billing type for the instance. Supported types: PostPaid   - pay-as-you-go, PrePaid   - subscription.
 	ChargeType pulumi.StringInput `pulumi:"chargeType"`
-	// 实例欠费关停后的预计释放时间。
+	// Estimated release time after the instance is stopped due to overdue payment.
 	OverdueReclaimTime pulumi.StringInput `pulumi:"overdueReclaimTime"`
-	// 实例的欠费关停时间。
+	// Instance suspension time due to overdue payment.
 	OverdueTime pulumi.StringInput `pulumi:"overdueTime"`
-	// 包年包月类型实例的购买时长。
+	// Purchase duration for subscription-based instances.
 	Period pulumi.IntInput `pulumi:"period"`
-	// 包年包月类型实例的生命周期单位，即指定以月（Month/Monthly）或以年（Year/Yearly）为单位购买。
+	// The lifecycle unit for subscription-based instances, specifying purchase by month (Month/Monthly) or by year (Year/Yearly).
 	PeriodUnit pulumi.StringInput `pulumi:"periodUnit"`
 }
 
@@ -1026,59 +1026,59 @@ func (o GetInstanceChargeInfoOutput) ToGetInstanceChargeInfoOutputWithContext(ct
 	return o
 }
 
-// 包年包月实例到期后是否自动续费，true-自动续费 false(默认)-不自动续费,到期实例关停。
+// Whether to automatically renew the subscription instance after expiration. true   - auto renewal; false (default)   - no auto renewal, instance will be stopped upon expiration.
 func (o GetInstanceChargeInfoOutput) AutoRenew() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceChargeInfo) bool { return v.AutoRenew }).(pulumi.BoolOutput)
 }
 
-// 包年包月实例的到期时间。
+// Expiration time for the subscription instance.
 func (o GetInstanceChargeInfoOutput) ChargeExpireTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeInfo) string { return v.ChargeExpireTime }).(pulumi.StringOutput)
 }
 
-// 实例的计费开始时间。
+// Instance billing start time.
 func (o GetInstanceChargeInfoOutput) ChargeStartTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeInfo) string { return v.ChargeStartTime }).(pulumi.StringOutput)
 }
 
-// 实例的计费状态，支持的类型包括:  Normal-正常, Overdue-按量计费欠费, Expired-包年包月到期
+// Billing status of the instance. Supported types: Normal   - normal, Overdue   - pay-as-you-go overdue, Expired   - subscription expired
 func (o GetInstanceChargeInfoOutput) ChargeStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeInfo) string { return v.ChargeStatus }).(pulumi.StringOutput)
 }
 
-// 实例的计费类型，支持的类型包括: PostPaid-按量付费, PrePaid-包年包月。
+// Billing type for the instance. Supported types: PostPaid   - pay-as-you-go, PrePaid   - subscription.
 func (o GetInstanceChargeInfoOutput) ChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeInfo) string { return v.ChargeType }).(pulumi.StringOutput)
 }
 
-// 实例欠费关停后的预计释放时间。
+// Estimated release time after the instance is stopped due to overdue payment.
 func (o GetInstanceChargeInfoOutput) OverdueReclaimTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeInfo) string { return v.OverdueReclaimTime }).(pulumi.StringOutput)
 }
 
-// 实例的欠费关停时间。
+// Instance suspension time due to overdue payment.
 func (o GetInstanceChargeInfoOutput) OverdueTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeInfo) string { return v.OverdueTime }).(pulumi.StringOutput)
 }
 
-// 包年包月类型实例的购买时长。
+// Purchase duration for subscription-based instances.
 func (o GetInstanceChargeInfoOutput) Period() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceChargeInfo) int { return v.Period }).(pulumi.IntOutput)
 }
 
-// 包年包月类型实例的生命周期单位，即指定以月（Month/Monthly）或以年（Year/Yearly）为单位购买。
+// The lifecycle unit for subscription-based instances, specifying purchase by month (Month/Monthly) or by year (Year/Yearly).
 func (o GetInstanceChargeInfoOutput) PeriodUnit() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeInfo) string { return v.PeriodUnit }).(pulumi.StringOutput)
 }
 
 type GetInstanceConnectionInfo struct {
-	// 实例的接入点类型。PLAINTEXT：默认接入点。SASL*PLAINTEXT：SASL接入点（私网）。SASL*SSL：SASL接入点（公网）。未开启公网访问时，不提供此接入点。
+	// Instance endpoint type. PLAINTEXT: default endpoint. SASL*PLAINTEXT: SASL endpoint (private network). SASL*SSL: SASL endpoint (public network). If public access is not enabled, this endpoint is not provided.
 	EndpointType string `pulumi:"endpointType"`
-	// 实例私网访问域名。
+	// Instance private network access domain name.
 	InternalEndpoint string `pulumi:"internalEndpoint"`
-	// 接入点的网络类型。统一为 PrivateNetwork。
+	// Network type for the access point. Unified as PrivateNetwork.
 	NetworkType string `pulumi:"networkType"`
-	// 实例公网访问域名。
+	// Public access domain name for the instance.
 	PublicEndpoint string `pulumi:"publicEndpoint"`
 }
 
@@ -1094,13 +1094,13 @@ type GetInstanceConnectionInfoInput interface {
 }
 
 type GetInstanceConnectionInfoArgs struct {
-	// 实例的接入点类型。PLAINTEXT：默认接入点。SASL*PLAINTEXT：SASL接入点（私网）。SASL*SSL：SASL接入点（公网）。未开启公网访问时，不提供此接入点。
+	// Instance endpoint type. PLAINTEXT: default endpoint. SASL*PLAINTEXT: SASL endpoint (private network). SASL*SSL: SASL endpoint (public network). If public access is not enabled, this endpoint is not provided.
 	EndpointType pulumi.StringInput `pulumi:"endpointType"`
-	// 实例私网访问域名。
+	// Instance private network access domain name.
 	InternalEndpoint pulumi.StringInput `pulumi:"internalEndpoint"`
-	// 接入点的网络类型。统一为 PrivateNetwork。
+	// Network type for the access point. Unified as PrivateNetwork.
 	NetworkType pulumi.StringInput `pulumi:"networkType"`
-	// 实例公网访问域名。
+	// Public access domain name for the instance.
 	PublicEndpoint pulumi.StringInput `pulumi:"publicEndpoint"`
 }
 
@@ -1155,22 +1155,22 @@ func (o GetInstanceConnectionInfoOutput) ToGetInstanceConnectionInfoOutputWithCo
 	return o
 }
 
-// 实例的接入点类型。PLAINTEXT：默认接入点。SASL*PLAINTEXT：SASL接入点（私网）。SASL*SSL：SASL接入点（公网）。未开启公网访问时，不提供此接入点。
+// Instance endpoint type. PLAINTEXT: default endpoint. SASL*PLAINTEXT: SASL endpoint (private network). SASL*SSL: SASL endpoint (public network). If public access is not enabled, this endpoint is not provided.
 func (o GetInstanceConnectionInfoOutput) EndpointType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConnectionInfo) string { return v.EndpointType }).(pulumi.StringOutput)
 }
 
-// 实例私网访问域名。
+// Instance private network access domain name.
 func (o GetInstanceConnectionInfoOutput) InternalEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConnectionInfo) string { return v.InternalEndpoint }).(pulumi.StringOutput)
 }
 
-// 接入点的网络类型。统一为 PrivateNetwork。
+// Network type for the access point. Unified as PrivateNetwork.
 func (o GetInstanceConnectionInfoOutput) NetworkType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConnectionInfo) string { return v.NetworkType }).(pulumi.StringOutput)
 }
 
-// 实例公网访问域名。
+// Public access domain name for the instance.
 func (o GetInstanceConnectionInfoOutput) PublicEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConnectionInfo) string { return v.PublicEndpoint }).(pulumi.StringOutput)
 }
@@ -1196,9 +1196,9 @@ func (o GetInstanceConnectionInfoArrayOutput) Index(i pulumi.IntInput) GetInstan
 }
 
 type GetInstanceTag struct {
-	// 标签的键。
+	// Tag key.
 	Key string `pulumi:"key"`
-	// 标签的值。
+	// Tag value.
 	Value string `pulumi:"value"`
 }
 
@@ -1214,9 +1214,9 @@ type GetInstanceTagInput interface {
 }
 
 type GetInstanceTagArgs struct {
-	// 标签的键。
+	// Tag key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签的值。
+	// Tag value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -1271,12 +1271,12 @@ func (o GetInstanceTagOutput) ToGetInstanceTagOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 标签的键。
+// Tag key.
 func (o GetInstanceTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签的值。
+// Tag value.
 func (o GetInstanceTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -1302,9 +1302,9 @@ func (o GetInstanceTagArrayOutput) Index(i pulumi.IntInput) GetInstanceTagOutput
 }
 
 type GetTopicAccessPolicy struct {
-	// SASL 用户对于当前 Topic 的访问权限。PubSub：拥有发布、订阅权限。Pub：拥有发布权限。Sub：拥有订阅权限。
+	// SASL user access permissions for the current Topic. PubSub: publish and subscribe permissions. Pub: publish permission. Sub: subscribe permission.
 	AccessPolicy string `pulumi:"accessPolicy"`
-	// SASL 用户名称。
+	// SASL username.
 	UserName string `pulumi:"userName"`
 }
 
@@ -1320,9 +1320,9 @@ type GetTopicAccessPolicyInput interface {
 }
 
 type GetTopicAccessPolicyArgs struct {
-	// SASL 用户对于当前 Topic 的访问权限。PubSub：拥有发布、订阅权限。Pub：拥有发布权限。Sub：拥有订阅权限。
+	// SASL user access permissions for the current Topic. PubSub: publish and subscribe permissions. Pub: publish permission. Sub: subscribe permission.
 	AccessPolicy pulumi.StringInput `pulumi:"accessPolicy"`
-	// SASL 用户名称。
+	// SASL username.
 	UserName pulumi.StringInput `pulumi:"userName"`
 }
 
@@ -1377,12 +1377,12 @@ func (o GetTopicAccessPolicyOutput) ToGetTopicAccessPolicyOutputWithContext(ctx 
 	return o
 }
 
-// SASL 用户对于当前 Topic 的访问权限。PubSub：拥有发布、订阅权限。Pub：拥有发布权限。Sub：拥有订阅权限。
+// SASL user access permissions for the current Topic. PubSub: publish and subscribe permissions. Pub: publish permission. Sub: subscribe permission.
 func (o GetTopicAccessPolicyOutput) AccessPolicy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTopicAccessPolicy) string { return v.AccessPolicy }).(pulumi.StringOutput)
 }
 
-// SASL 用户名称。
+// SASL username.
 func (o GetTopicAccessPolicyOutput) UserName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTopicAccessPolicy) string { return v.UserName }).(pulumi.StringOutput)
 }
@@ -1408,9 +1408,9 @@ func (o GetTopicAccessPolicyArrayOutput) Index(i pulumi.IntInput) GetTopicAccess
 }
 
 type GetTopicTag struct {
-	// 标签键。
+	// Label key.
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value string `pulumi:"value"`
 }
 
@@ -1426,9 +1426,9 @@ type GetTopicTagInput interface {
 }
 
 type GetTopicTagArgs struct {
-	// 标签键。
+	// Label key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -1483,12 +1483,12 @@ func (o GetTopicTagOutput) ToGetTopicTagOutputWithContext(ctx context.Context) G
 	return o
 }
 
-// 标签键。
+// Label key.
 func (o GetTopicTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTopicTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value.
 func (o GetTopicTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTopicTag) string { return v.Value }).(pulumi.StringOutput)
 }

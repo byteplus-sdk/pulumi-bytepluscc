@@ -65,11 +65,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Natgateway
     public sealed class GetSnatentryResult
     {
         /// <summary>
-        /// SNAT规则关联的公网IP的IP地址。返回单个公网IP的IP地址。 返回多个公网IP的IP地址。
+        /// IP address of the public IP associated with the SNAT rule. Returns the IP address for a single public IP. Returns IP addresses for multiple public IPs.
         /// </summary>
         public readonly string EipAddress;
         /// <summary>
-        /// SNAT规则关联的公网IP的ID。返回单个公网IP的ID。 返回多个公网IP的ID。
+        /// ID of the public IP associated with the SNAT rule. Returns the ID for a single public IP. Returns IDs for multiple public IPs.
         /// </summary>
         public readonly string EipId;
         /// <summary>
@@ -77,31 +77,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Natgateway
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// SNAT规则所属NAT网关的ID。
+        /// ID of the NAT gateway associated with the SNAT rule
         /// </summary>
         public readonly string NatGatewayId;
         /// <summary>
-        /// 私网NAT网关的中转IP的ID。
+        /// ID of the transit IP for the private NAT gateway
         /// </summary>
         public readonly string NatIpId;
         /// <summary>
-        /// SNAT规则的ID。
+        /// ID of the SNAT rule
         /// </summary>
         public readonly string SnatEntryId;
         /// <summary>
-        /// SNAT规则的名称。
+        /// Name of the SNAT rule
         /// </summary>
         public readonly string SnatEntryName;
         /// <summary>
-        /// SNAT规则对应的网段。
+        /// Network segment corresponding to the SNAT rule
         /// </summary>
         public readonly string SourceCidr;
         /// <summary>
-        /// SNAT规则的状态。Creating：创建中。Deleting：删除中。Available：可用。
+        /// Status of the SNAT rule. Creating: being created. Deleting: being deleted. Available: available.
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// SNAT规则关联子网的ID。
+        /// ID of the subnet associated with the SNAT rule
         /// </summary>
         public readonly string SubnetId;
 

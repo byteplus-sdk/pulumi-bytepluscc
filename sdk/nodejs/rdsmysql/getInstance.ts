@@ -31,131 +31,131 @@ export interface GetInstanceArgs {
  */
 export interface GetInstanceResult {
     /**
-     * 默认终端的连接信息。
+     * Connection information for the default endpoint
      */
     readonly addressObjects: outputs.rdsmysql.GetInstanceAddressObject[];
     /**
-     * 白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
+     * Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
      */
     readonly allowListIds: string[];
     /**
-     * 白名单版本。
+     * Allowlist version
      */
     readonly allowListVersion: string;
     /**
-     * 自动扩容配置。
+     * Auto scaling configuration
      */
     readonly autoStorageScalingConfig: outputs.rdsmysql.GetInstanceAutoStorageScalingConfig;
     /**
-     * 实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。
+     * Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
      */
     readonly autoUpgradeMinorVersion: string;
     /**
-     * 备份中审计日志使用的空间。
+     * Space used by audit logs in backup.
      */
     readonly backupAuditLogSize: number;
     /**
-     * 备份中 Binlog 日志使用的空间。
+     * Space used by binlog logs in backup.
      */
     readonly backupBinLogSize: number;
     /**
-     * 备份中数据使用的空间。
+     * Space used by data in backup.
      */
     readonly backupDataSize: number;
     /**
-     * 备份中错误日志使用的空间。
+     * Space used by error logs in backups.
      */
     readonly backupErrorLogSize: number;
     /**
-     * 免费的备份存储空间，单位为 GB。
+     * Free backup storage space, in GB
      */
     readonly backupFreeQuotaSize: number;
     /**
-     * 备份中日志使用的空间。
+     * Space used by logs in backups.
      */
     readonly backupLogSize: number;
     /**
-     * 备份中慢日志使用的空间。
+     * Space used by slow logs in backups.
      */
     readonly backupSlowLogSize: number;
     /**
-     * 实例的备份已使用的空间，单位为 GB。
+     * Backup space used by the instance, in GB
      */
     readonly backupUse: number;
     /**
-     * 基础备份中 Binlog 日志使用的空间。
+     * Space used by Binlog logs in basic backups.
      */
     readonly basicBackupBinlogSize: number;
     /**
-     * 基础备份中数据使用的空间。
+     * Space used by data in the base backup
      */
     readonly basicBackupDataSize: number;
     /**
-     * 付费方式。
+     * Billing method
      */
     readonly chargeDetail: outputs.rdsmysql.GetInstanceChargeDetail;
     /**
-     * 实例数据库代理服务的 CPU 核数。
+     * Number of CPU cores for the database proxy service of the instance
      */
     readonly cpuNum: number;
     /**
-     * 实例创建本地时间。
+     * Instance creation local time.
      */
     readonly createdTime: string;
     /**
-     * 实例的内核小版本。
+     * Instance kernel minor version.
      */
     readonly currentKernelVersion: string;
     /**
-     * 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+     * Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
      */
     readonly dbEngineVersion: string;
     /**
-     * 参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。
+     * Parameter template ID. Default value is the default parameter template for the database engine version
      */
     readonly dbParamGroupId: string;
     /**
-     * 时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。
+     * Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
      */
     readonly dbTimeZone: string;
     /**
-     * 是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。
+     * Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
      */
     readonly deletionProtection: string;
     /**
-     * 实例的灾备实例的信息。
+     * Disaster recovery instance information for the instance.
      */
     readonly disasterRecoveryInstances: outputs.rdsmysql.GetInstanceDisasterRecoveryInstance[];
     /**
-     * 主实例与灾备实例之间的数据同步链路在 DTS 数据同步任务的 ID。
+     * ID of the data synchronization link between the primary and disaster recovery instances in the DTS data synchronization task.
      */
     readonly drDtsTaskId: string;
     /**
-     * 主实例与灾备实例之间同步任务的名称。
+     * Name of synchronization tasks between primary and disaster recovery instances.
      */
     readonly drDtsTaskName: string;
     /**
-     * 主实例与灾备实例之间同步任务的状态。
+     * Status of synchronization tasks between primary and disaster recovery instances.
      */
     readonly drDtsTaskStatus: string;
     /**
-     * 灾备实例与主实例之间的时延。
+     * Latency between the disaster recovery instance and the primary instance.
      */
     readonly drSecondsBehindMaster: number;
     /**
-     * 实例的连接信息。
+     * Instance connection information.
      */
     readonly endpoints: outputs.rdsmysql.GetInstanceEndpoint[];
     /**
-     * 是否开启全局只读。取值：true：是。false：否。默认值为 false。
+     * Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
      */
     readonly globalReadOnly: boolean;
     /**
-     * 实例是否有灾备实例。取值：true：是。false：否。
+     * Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
      */
     readonly hasDisasterRecoveryInstances: boolean;
     /**
-     * 实例是否处于蓝绿部署中。取值：true：是。false：否。
+     * Is the instance in blue-green deployment? Values: true: yes. false: no.
      */
     readonly hasGreenInstance: boolean;
     /**
@@ -163,155 +163,155 @@ export interface GetInstanceResult {
      */
     readonly id: string;
     /**
-     * 实例 ID。
+     * Instance ID.
      */
     readonly instanceId: string;
     /**
-     * 实例名称。
+     * Instance name.
      */
     readonly instanceName: string;
     /**
-     * 实例状态。
+     * Instance status.
      */
     readonly instanceStatus: string;
     /**
-     * 实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。
+     * Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
      */
     readonly instanceType: string;
     /**
-     * 表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。
+     * Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
      */
     readonly lowerCaseTableNames: string;
     /**
-     * 在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。
+     * Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
      */
     readonly maintenanceWindow: outputs.rdsmysql.GetInstanceMaintenanceWindow;
     /**
-     * 主实例的 ID。
+     * Primary instance ID
      */
     readonly masterInstanceId: string;
     /**
-     * 主实例的名称。
+     * Primary instance name.
      */
     readonly masterInstanceName: string;
     /**
-     * 内存大小。单位：GB。
+     * Memory size. Unit: GB.
      */
     readonly memory: number;
     /**
-     * 实例主节点 CPU 使用率近一分钟的平均值。
+     * Average CPU usage of the primary node in the instance over the past minute.
      */
     readonly nodeCpuUsedPercentage: number;
     /**
-     * 实例主节点内存使用率近一分钟的平均值。
+     * Average memory usage of the primary node over the past minute
      */
     readonly nodeMemoryUsedPercentage: number;
     /**
-     * 节点数量。
+     * Number of nodes.
      */
     readonly nodeNumber: string;
     /**
-     * 实例主节点磁盘使用率近一分钟的平均值。
+     * Average disk usage of the primary node over the past minute
      */
     readonly nodeSpaceUsedPercentage: number;
     /**
-     * 节点规格。
+     * Node specifications.
      */
     readonly nodeSpec: string;
     /**
-     * 实例节点信息。
+     * Instance node information.
      */
     readonly nodes: outputs.rdsmysql.GetInstanceNode[];
     /**
-     * 默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。
+     * Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
      */
     readonly port: number;
     /**
-     * 所属项目。
+     * Project.
      */
     readonly projectName: string;
     /**
-     * proxy信息
+     * proxy information
      */
     readonly proxyDetail: outputs.rdsmysql.GetInstanceProxyDetail;
     /**
-     * 实例存储空间中审计日志使用的空间。
+     * Space used by audit logs in instance storage
      */
     readonly storageAuditLogSize: number;
     /**
-     * 实例存储空间中 Binlog 使用的空间。
+     * Binlog space usage in the instance storage
      */
     readonly storageBinLogSize: number;
     /**
-     * 实例存储空间中数据使用的空间。
+     * Space used by data in instance storage.
      */
     readonly storageDataSize: number;
     /**
-     * 实例存储空间中错误日志使用的空间。
+     * Space used by error logs in instance storage.
      */
     readonly storageErrorLogSize: number;
     /**
-     * 实例存储空间中日志使用的空间。
+     * Space used by logs in the instance storage
      */
     readonly storageLogSize: number;
     /**
-     * 实例存储空间中慢日志使用的空间。
+     * Space used by slow logs in instance storage
      */
     readonly storageSlowLogSize: number;
     /**
-     * 实例总存储空间。单位为 GB。
+     * Total storage space of the instance, in GB
      */
     readonly storageSpace: number;
     /**
-     * 实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。
+     * Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
      */
     readonly storageType: string;
     /**
-     * 实例已使用用存储空间，单位为 GB。
+     * Storage space used by the instance, in GB
      */
     readonly storageUse: number;
     /**
-     * 子网 ID。
+     * Subnet ID.
      */
     readonly subnetId: string;
     /**
-     * 高权限账号名称。不传此参数默认不创建高权限账号。
+     * High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
      */
     readonly superAccountName: string;
     /**
-     * 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=,.&?|/。
+     * Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !@#$%^&*()_+-=,.&?|/.
      */
     readonly superAccountPassword: string;
     /**
-     * 数据同步方式：SemiSync：半同步。Async：异步。
+     * Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
      */
     readonly syncMode: string;
     /**
-     * RDS MySQL 实例的标签信息
+     * RDS MySQL instance tag information
      */
     readonly tags: outputs.rdsmysql.GetInstanceTag[];
     /**
-     * 时区。
+     * Time zone
      */
     readonly timeZone: string;
     /**
-     * 实例更新本地时间。
+     * Instance updates local time.
      */
     readonly updatedTime: string;
     /**
-     * CPU 大小。例如：1 表示 1U。
+     * CPU size. For example: 1 means 1U.
      */
     readonly vcpu: number;
     /**
-     * 专有网络（VPC） ID。
+     * VPC (Virtual Private Cloud) ID.
      */
     readonly vpcId: string;
     /**
-     * 实例主节点所在可用区。
+     * Availability zone of the instance's primary node.
      */
     readonly zoneId: string;
     /**
-     * 实例各节点所在的可用区列表。
+     * List of availability zones for each node in the instance.
      */
     readonly zoneIds: string[];
 }

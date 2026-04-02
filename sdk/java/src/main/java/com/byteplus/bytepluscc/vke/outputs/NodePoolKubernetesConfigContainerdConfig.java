@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NodePoolKubernetesConfigContainerdConfig {
     /**
-     * @return 指定跳过证书认证的容器镜像仓库地址。
+     * @return Specify the container image repository address to skip certificate verification.
      * 
      */
     private @Nullable List<String> insecureRegistries;
@@ -21,7 +21,7 @@ public final class NodePoolKubernetesConfigContainerdConfig {
 
     private NodePoolKubernetesConfigContainerdConfig() {}
     /**
-     * @return 指定跳过证书认证的容器镜像仓库地址。
+     * @return Specify the container image repository address to skip certificate verification.
      * 
      */
     public List<String> insecureRegistries() {

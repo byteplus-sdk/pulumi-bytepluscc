@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 镜像目的是收集流量的网卡或传统型负载均衡。您可以通过流量镜像，按自己设定的筛选条件复制网卡的流量，并将复制的流量私网转发到目标服务进行监控分析。
+ * The mirror target is the network interface or classic load balancer used to collect traffic. You can use traffic mirroring to replicate network interface traffic based on your filtering criteria and forward the replicated traffic over the private network to the target service for monitoring and analysis.
  *
  * ## Example Usage
  *
@@ -63,40 +63,40 @@ export class TrafficMirrorTarget extends pulumi.CustomResource {
     }
 
     /**
-     * 镜像会话的创建时间。
+     * Creation time of the mirror session.
      */
     public /*out*/ readonly createdAt!: pulumi.Output<string>;
     /**
-     * 监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
+     * Listener description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, the default value is an empty string.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 镜像目的的资源ID。
+     * Resource ID of the mirror target.
      */
     public readonly instanceId!: pulumi.Output<string>;
     /**
-     * 镜像目的的资源类型。NetworkInterface：弹性网卡。ClbInstance：传统型负载均衡。
+     * Resource type of the mirror target. NetworkInterface: Elastic network interface. ClbInstance: Classic load balancer.
      */
     public readonly instanceType!: pulumi.Output<string>;
     /**
-     * 镜像目的所属项目的名称。不填默认加入default项目。
+     * Name of the project to which the mirror target belongs. If not specified, it will be added to the default project.
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 镜像目的状态。Available：可用。Creating：创建中。
+     * Status of the mirror target. Available: Available. Creating: Creating.
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.vpc.TrafficMirrorTargetTag[]>;
     /**
-     * 镜像目的的ID。
+     * ID of the mirror target.
      */
     public /*out*/ readonly trafficMirrorTargetId!: pulumi.Output<string>;
     /**
-     * 监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
+     * Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, the default is 'protocol-port' as the listener name.
      */
     public readonly trafficMirrorTargetName!: pulumi.Output<string>;
     /**
-     * 镜像会话的更新时间。
+     * Update time of the mirror session.
      */
     public /*out*/ readonly updatedAt!: pulumi.Output<string>;
 
@@ -152,40 +152,40 @@ export class TrafficMirrorTarget extends pulumi.CustomResource {
  */
 export interface TrafficMirrorTargetState {
     /**
-     * 镜像会话的创建时间。
+     * Creation time of the mirror session.
      */
     createdAt?: pulumi.Input<string>;
     /**
-     * 监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
+     * Listener description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, the default value is an empty string.
      */
     description?: pulumi.Input<string>;
     /**
-     * 镜像目的的资源ID。
+     * Resource ID of the mirror target.
      */
     instanceId?: pulumi.Input<string>;
     /**
-     * 镜像目的的资源类型。NetworkInterface：弹性网卡。ClbInstance：传统型负载均衡。
+     * Resource type of the mirror target. NetworkInterface: Elastic network interface. ClbInstance: Classic load balancer.
      */
     instanceType?: pulumi.Input<string>;
     /**
-     * 镜像目的所属项目的名称。不填默认加入default项目。
+     * Name of the project to which the mirror target belongs. If not specified, it will be added to the default project.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 镜像目的状态。Available：可用。Creating：创建中。
+     * Status of the mirror target. Available: Available. Creating: Creating.
      */
     status?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.vpc.TrafficMirrorTargetTag>[]>;
     /**
-     * 镜像目的的ID。
+     * ID of the mirror target.
      */
     trafficMirrorTargetId?: pulumi.Input<string>;
     /**
-     * 监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
+     * Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, the default is 'protocol-port' as the listener name.
      */
     trafficMirrorTargetName?: pulumi.Input<string>;
     /**
-     * 镜像会话的更新时间。
+     * Update time of the mirror session.
      */
     updatedAt?: pulumi.Input<string>;
 }
@@ -195,24 +195,24 @@ export interface TrafficMirrorTargetState {
  */
 export interface TrafficMirrorTargetArgs {
     /**
-     * 监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
+     * Listener description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, the default value is an empty string.
      */
     description?: pulumi.Input<string>;
     /**
-     * 镜像目的的资源ID。
+     * Resource ID of the mirror target.
      */
     instanceId: pulumi.Input<string>;
     /**
-     * 镜像目的的资源类型。NetworkInterface：弹性网卡。ClbInstance：传统型负载均衡。
+     * Resource type of the mirror target. NetworkInterface: Elastic network interface. ClbInstance: Classic load balancer.
      */
     instanceType: pulumi.Input<string>;
     /**
-     * 镜像目的所属项目的名称。不填默认加入default项目。
+     * Name of the project to which the mirror target belongs. If not specified, it will be added to the default project.
      */
     projectName?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.vpc.TrafficMirrorTargetTag>[]>;
     /**
-     * 监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
+     * Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, the default is 'protocol-port' as the listener name.
      */
     trafficMirrorTargetName?: pulumi.Input<string>;
 }

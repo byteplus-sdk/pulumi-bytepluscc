@@ -16,14 +16,14 @@ public final class EndpointServiceTagArgs extends com.pulumi.resources.ResourceA
     public static final EndpointServiceTagArgs Empty = new EndpointServiceTagArgs();
 
     /**
-     * 终端节点服务标签的标签键。
+     * Tag keys for endpoint service tags.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 终端节点服务标签的标签键。
+     * @return Tag keys for endpoint service tags.
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class EndpointServiceTagArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * 终端节点服务标签的标签值。
+     * Tag value of the endpoint service tag.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 终端节点服务标签的标签值。
+     * @return Tag value of the endpoint service tag.
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class EndpointServiceTagArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param key 终端节点服务标签的标签键。
+         * @param key Tag keys for endpoint service tags.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class EndpointServiceTagArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param key 终端节点服务标签的标签键。
+         * @param key Tag keys for endpoint service tags.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class EndpointServiceTagArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param value 终端节点服务标签的标签值。
+         * @param value Tag value of the endpoint service tag.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class EndpointServiceTagArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param value 终端节点服务标签的标签值。
+         * @param value Tag value of the endpoint service tag.
          * 
          * @return builder
          * 

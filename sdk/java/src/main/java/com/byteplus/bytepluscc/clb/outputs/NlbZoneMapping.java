@@ -13,146 +13,146 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NlbZoneMapping {
     /**
-     * @return 网卡ID。
+     * @return Network interface card ID.
      * 
      */
     private @Nullable String eniId;
     /**
-     * @return NLB实例的私网IPv4 VIP地址。该参数不传入，则系统自动从子网中分配一个可用的IPv4地址。
+     * @return Private IPv4 VIP address of the NLB instance. If this parameter is not provided, the system automatically assigns an available IPv4 address from the subnet.
      * 
      */
     private @Nullable String ipv4Address;
     /**
-     * @return NLB实例的公网IPv4 EIP地址。
+     * @return Public IPv4 EIP address of the NLB instance.
      * 
      */
     private @Nullable String ipv4EipAddress;
     /**
-     * @return NLB实例的公网IPv4 EIP ID。
+     * @return Public IPv4 EIP ID of the NLB instance.
      * 
      */
     private @Nullable String ipv4EipId;
     /**
-     * @return NLB实例私网IPv4地址的健康状态。Healthy：健康。Unhealthy：异常。
+     * @return Health status of the NLB instance&#39;s private IPv4 address. Healthy: healthy. Unhealthy: abnormal.
      * 
      */
     private @Nullable String ipv4HcStatus;
     /**
-     * @return NLB实例的私网IPv4 LIP地址。
+     * @return Private IPv4 LIP address of the NLB instance.
      * 
      */
     private @Nullable List<String> ipv4LocalAddresses;
     /**
-     * @return NLB实例的私网IPv6 VIP地址。
+     * @return Private IPv6 VIP address of the NLB instance.
      * 
      */
     private @Nullable String ipv6Address;
     /**
-     * @return NLB实例关联的IPv6公网带宽的ID。
+     * @return ID of the IPv6 public bandwidth associated with the NLB instance.
      * 
      */
     private @Nullable String ipv6EipId;
     /**
-     * @return NLB实例私网IPv6地址的健康状态。Healthy：健康。Unhealthy：异常。
+     * @return Health status of the NLB instance&#39;s private IPv6 address. Healthy: healthy. Unhealthy: abnormal.
      * 
      */
     private @Nullable String ipv6HcStatus;
     /**
-     * @return NLB实例的私网IPv6 LIP地址。
+     * @return Private IPv6 LIP address of the NLB instance.
      * 
      */
     private @Nullable List<String> ipv6LocalAddresses;
     /**
-     * @return NLB实例所属的子网ID。
+     * @return Subnet ID to which the NLB instance belongs.
      * 
      */
     private @Nullable String subnetId;
     /**
-     * @return NLB实例所属的可用区ID。
+     * @return Availability zone ID to which the NLB instance belongs.
      * 
      */
     private @Nullable String zoneId;
 
     private NlbZoneMapping() {}
     /**
-     * @return 网卡ID。
+     * @return Network interface card ID.
      * 
      */
     public Optional<String> eniId() {
         return Optional.ofNullable(this.eniId);
     }
     /**
-     * @return NLB实例的私网IPv4 VIP地址。该参数不传入，则系统自动从子网中分配一个可用的IPv4地址。
+     * @return Private IPv4 VIP address of the NLB instance. If this parameter is not provided, the system automatically assigns an available IPv4 address from the subnet.
      * 
      */
     public Optional<String> ipv4Address() {
         return Optional.ofNullable(this.ipv4Address);
     }
     /**
-     * @return NLB实例的公网IPv4 EIP地址。
+     * @return Public IPv4 EIP address of the NLB instance.
      * 
      */
     public Optional<String> ipv4EipAddress() {
         return Optional.ofNullable(this.ipv4EipAddress);
     }
     /**
-     * @return NLB实例的公网IPv4 EIP ID。
+     * @return Public IPv4 EIP ID of the NLB instance.
      * 
      */
     public Optional<String> ipv4EipId() {
         return Optional.ofNullable(this.ipv4EipId);
     }
     /**
-     * @return NLB实例私网IPv4地址的健康状态。Healthy：健康。Unhealthy：异常。
+     * @return Health status of the NLB instance&#39;s private IPv4 address. Healthy: healthy. Unhealthy: abnormal.
      * 
      */
     public Optional<String> ipv4HcStatus() {
         return Optional.ofNullable(this.ipv4HcStatus);
     }
     /**
-     * @return NLB实例的私网IPv4 LIP地址。
+     * @return Private IPv4 LIP address of the NLB instance.
      * 
      */
     public List<String> ipv4LocalAddresses() {
         return this.ipv4LocalAddresses == null ? List.of() : this.ipv4LocalAddresses;
     }
     /**
-     * @return NLB实例的私网IPv6 VIP地址。
+     * @return Private IPv6 VIP address of the NLB instance.
      * 
      */
     public Optional<String> ipv6Address() {
         return Optional.ofNullable(this.ipv6Address);
     }
     /**
-     * @return NLB实例关联的IPv6公网带宽的ID。
+     * @return ID of the IPv6 public bandwidth associated with the NLB instance.
      * 
      */
     public Optional<String> ipv6EipId() {
         return Optional.ofNullable(this.ipv6EipId);
     }
     /**
-     * @return NLB实例私网IPv6地址的健康状态。Healthy：健康。Unhealthy：异常。
+     * @return Health status of the NLB instance&#39;s private IPv6 address. Healthy: healthy. Unhealthy: abnormal.
      * 
      */
     public Optional<String> ipv6HcStatus() {
         return Optional.ofNullable(this.ipv6HcStatus);
     }
     /**
-     * @return NLB实例的私网IPv6 LIP地址。
+     * @return Private IPv6 LIP address of the NLB instance.
      * 
      */
     public List<String> ipv6LocalAddresses() {
         return this.ipv6LocalAddresses == null ? List.of() : this.ipv6LocalAddresses;
     }
     /**
-     * @return NLB实例所属的子网ID。
+     * @return Subnet ID to which the NLB instance belongs.
      * 
      */
     public Optional<String> subnetId() {
         return Optional.ofNullable(this.subnetId);
     }
     /**
-     * @return NLB实例所属的可用区ID。
+     * @return Availability zone ID to which the NLB instance belongs.
      * 
      */
     public Optional<String> zoneId() {

@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class NodeKubernetesConfig
     {
         /// <summary>
-        /// 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+        /// Node lock configuration. Options: false (default): not locked; true: locked
         /// </summary>
         public readonly bool? Cordon;
         public readonly ImmutableArray<Outputs.NodeKubernetesConfigLabel> Labels;

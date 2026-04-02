@@ -18,14 +18,14 @@ public final class InstanceSystemVolumeArgs extends com.pulumi.resources.Resourc
     public static final InstanceSystemVolumeArgs Empty = new InstanceSystemVolumeArgs();
 
     /**
-     * 实例是否随实例删除。
+     * Whether the attached resources are deleted along with the instance.
      * 
      */
     @Import(name="deleteWithInstance")
     private @Nullable Output<Boolean> deleteWithInstance;
 
     /**
-     * @return 实例是否随实例删除。
+     * @return Whether the attached resources are deleted along with the instance.
      * 
      */
     public Optional<Output<Boolean>> deleteWithInstance() {
@@ -33,14 +33,14 @@ public final class InstanceSystemVolumeArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 实例的额外性能IOPS。
+     * Additional performance IOPS for the instance
      * 
      */
     @Import(name="extraPerformanceIops")
     private @Nullable Output<Integer> extraPerformanceIops;
 
     /**
-     * @return 实例的额外性能IOPS。
+     * @return Additional performance IOPS for the instance
      * 
      */
     public Optional<Output<Integer>> extraPerformanceIops() {
@@ -48,14 +48,14 @@ public final class InstanceSystemVolumeArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 实例的额外性能吞吐量，单位MB。
+     * The additional performance throughput of the instance, in MB.
      * 
      */
     @Import(name="extraPerformanceThroughputMb")
     private @Nullable Output<Integer> extraPerformanceThroughputMb;
 
     /**
-     * @return 实例的额外性能吞吐量，单位MB。
+     * @return The additional performance throughput of the instance, in MB.
      * 
      */
     public Optional<Output<Integer>> extraPerformanceThroughputMb() {
@@ -63,14 +63,20 @@ public final class InstanceSystemVolumeArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+     * Type of additional performance. Values:
+     *   Balance: Balanced additional performance
+     *   IOPS: IOPS additional performance
+     *   Throughput: Throughput additional performance
      * 
      */
     @Import(name="extraPerformanceTypeId")
     private @Nullable Output<String> extraPerformanceTypeId;
 
     /**
-     * @return 额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+     * @return Type of additional performance. Values:
+     *   Balance: Balanced additional performance
+     *   IOPS: IOPS additional performance
+     *   Throughput: Throughput additional performance
      * 
      */
     public Optional<Output<String>> extraPerformanceTypeId() {
@@ -78,14 +84,14 @@ public final class InstanceSystemVolumeArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 实例的大小，单位GiB。
+     * Instance size, in GiB
      * 
      */
     @Import(name="size")
     private @Nullable Output<Integer> size;
 
     /**
-     * @return 实例的大小，单位GiB。
+     * @return Instance size, in GiB
      * 
      */
     public Optional<Output<Integer>> size() {
@@ -93,14 +99,14 @@ public final class InstanceSystemVolumeArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 实例的快照ID。
+     * Instance snapshot ID
      * 
      */
     @Import(name="snapshotId")
     private @Nullable Output<String> snapshotId;
 
     /**
-     * @return 实例的快照ID。
+     * @return Instance snapshot ID
      * 
      */
     public Optional<Output<String>> snapshotId() {
@@ -108,14 +114,14 @@ public final class InstanceSystemVolumeArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 实例的卷ID。
+     * Instance volume ID.
      * 
      */
     @Import(name="volumeId")
     private @Nullable Output<String> volumeId;
 
     /**
-     * @return 实例的卷ID。
+     * @return Instance volume ID.
      * 
      */
     public Optional<Output<String>> volumeId() {
@@ -123,14 +129,22 @@ public final class InstanceSystemVolumeArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+     * Cloud disk type. Values:
+     *   PTSSD: Performance SSD.
+     *   ESSD_PL0: Ultra SSD disk, PL0 specification.
+     *   ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+     *   TSSD_TL0: Throughput SSD disk.
      * 
      */
     @Import(name="volumeType")
     private @Nullable Output<String> volumeType;
 
     /**
-     * @return 云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+     * @return Cloud disk type. Values:
+     *   PTSSD: Performance SSD.
+     *   ESSD_PL0: Ultra SSD disk, PL0 specification.
+     *   ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+     *   TSSD_TL0: Throughput SSD disk.
      * 
      */
     public Optional<Output<String>> volumeType() {
@@ -169,7 +183,7 @@ public final class InstanceSystemVolumeArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param deleteWithInstance 实例是否随实例删除。
+         * @param deleteWithInstance Whether the attached resources are deleted along with the instance.
          * 
          * @return builder
          * 
@@ -180,7 +194,7 @@ public final class InstanceSystemVolumeArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param deleteWithInstance 实例是否随实例删除。
+         * @param deleteWithInstance Whether the attached resources are deleted along with the instance.
          * 
          * @return builder
          * 
@@ -190,7 +204,7 @@ public final class InstanceSystemVolumeArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param extraPerformanceIops 实例的额外性能IOPS。
+         * @param extraPerformanceIops Additional performance IOPS for the instance
          * 
          * @return builder
          * 
@@ -201,7 +215,7 @@ public final class InstanceSystemVolumeArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param extraPerformanceIops 实例的额外性能IOPS。
+         * @param extraPerformanceIops Additional performance IOPS for the instance
          * 
          * @return builder
          * 
@@ -211,7 +225,7 @@ public final class InstanceSystemVolumeArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param extraPerformanceThroughputMb 实例的额外性能吞吐量，单位MB。
+         * @param extraPerformanceThroughputMb The additional performance throughput of the instance, in MB.
          * 
          * @return builder
          * 
@@ -222,7 +236,7 @@ public final class InstanceSystemVolumeArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param extraPerformanceThroughputMb 实例的额外性能吞吐量，单位MB。
+         * @param extraPerformanceThroughputMb The additional performance throughput of the instance, in MB.
          * 
          * @return builder
          * 
@@ -232,7 +246,10 @@ public final class InstanceSystemVolumeArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param extraPerformanceTypeId 额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+         * @param extraPerformanceTypeId Type of additional performance. Values:
+         *   Balance: Balanced additional performance
+         *   IOPS: IOPS additional performance
+         *   Throughput: Throughput additional performance
          * 
          * @return builder
          * 
@@ -243,7 +260,10 @@ public final class InstanceSystemVolumeArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param extraPerformanceTypeId 额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+         * @param extraPerformanceTypeId Type of additional performance. Values:
+         *   Balance: Balanced additional performance
+         *   IOPS: IOPS additional performance
+         *   Throughput: Throughput additional performance
          * 
          * @return builder
          * 
@@ -253,7 +273,7 @@ public final class InstanceSystemVolumeArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param size 实例的大小，单位GiB。
+         * @param size Instance size, in GiB
          * 
          * @return builder
          * 
@@ -264,7 +284,7 @@ public final class InstanceSystemVolumeArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param size 实例的大小，单位GiB。
+         * @param size Instance size, in GiB
          * 
          * @return builder
          * 
@@ -274,7 +294,7 @@ public final class InstanceSystemVolumeArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param snapshotId 实例的快照ID。
+         * @param snapshotId Instance snapshot ID
          * 
          * @return builder
          * 
@@ -285,7 +305,7 @@ public final class InstanceSystemVolumeArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param snapshotId 实例的快照ID。
+         * @param snapshotId Instance snapshot ID
          * 
          * @return builder
          * 
@@ -295,7 +315,7 @@ public final class InstanceSystemVolumeArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param volumeId 实例的卷ID。
+         * @param volumeId Instance volume ID.
          * 
          * @return builder
          * 
@@ -306,7 +326,7 @@ public final class InstanceSystemVolumeArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param volumeId 实例的卷ID。
+         * @param volumeId Instance volume ID.
          * 
          * @return builder
          * 
@@ -316,7 +336,11 @@ public final class InstanceSystemVolumeArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param volumeType 云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+         * @param volumeType Cloud disk type. Values:
+         *   PTSSD: Performance SSD.
+         *   ESSD_PL0: Ultra SSD disk, PL0 specification.
+         *   ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+         *   TSSD_TL0: Throughput SSD disk.
          * 
          * @return builder
          * 
@@ -327,7 +351,11 @@ public final class InstanceSystemVolumeArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param volumeType 云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+         * @param volumeType Cloud disk type. Values:
+         *   PTSSD: Performance SSD.
+         *   ESSD_PL0: Ultra SSD disk, PL0 specification.
+         *   ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+         *   TSSD_TL0: Throughput SSD disk.
          * 
          * @return builder
          * 

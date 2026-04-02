@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainHttpForcedRedirect {
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。启用后，内容分发网络会将收到的 HTTPS 请求重定向到 HTTP 请求。false：表示禁用该特性。内容分发网络不会将 HTTPS 请求重定向到 HTTP 请求。要启用该特性，您的加速域名必须已启用 HTTPS。
+     * @return Indicates whether this feature is enabled. The parameter values are: true: enables the feature. When enabled, the content delivery network redirects incoming HTTPS requests to HTTP requests. false: disables the feature. The content delivery network does not redirect HTTPS requests to HTTP requests. To enable this feature, your acceleration domain must have HTTPS enabled.
      * 
      */
     private Boolean enableForcedRedirect;
     /**
-     * @return 表示当收到 HTTPS 请求时，内容分发网络返回的重定向状态码。该参数有以下取值：301：表示 301 响应状态码。302：表示 302 响应状态码。该参数的默认值是 301。
+     * @return Indicates the redirect status code returned by the content delivery network when it receives an HTTPS request. This parameter has the following values: 301: indicates the 301 response status code. 302: indicates the 302 response status code. The default value for this parameter is 301.
      * 
      */
     private String statusCode;
 
     private GetDomainHttpForcedRedirect() {}
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。启用后，内容分发网络会将收到的 HTTPS 请求重定向到 HTTP 请求。false：表示禁用该特性。内容分发网络不会将 HTTPS 请求重定向到 HTTP 请求。要启用该特性，您的加速域名必须已启用 HTTPS。
+     * @return Indicates whether this feature is enabled. The parameter values are: true: enables the feature. When enabled, the content delivery network redirects incoming HTTPS requests to HTTP requests. false: disables the feature. The content delivery network does not redirect HTTPS requests to HTTP requests. To enable this feature, your acceleration domain must have HTTPS enabled.
      * 
      */
     public Boolean enableForcedRedirect() {
         return this.enableForcedRedirect;
     }
     /**
-     * @return 表示当收到 HTTPS 请求时，内容分发网络返回的重定向状态码。该参数有以下取值：301：表示 301 响应状态码。302：表示 302 响应状态码。该参数的默认值是 301。
+     * @return Indicates the redirect status code returned by the content delivery network when it receives an HTTPS request. This parameter has the following values: 301: indicates the 301 response status code. 302: indicates the 302 response status code. The default value for this parameter is 301.
      * 
      */
     public String statusCode() {

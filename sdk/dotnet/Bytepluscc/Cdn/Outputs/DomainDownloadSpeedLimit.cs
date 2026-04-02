@@ -16,7 +16,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     {
         public readonly ImmutableArray<Outputs.DomainDownloadSpeedLimitDownloadSpeedLimitRule> DownloadSpeedLimitRules;
         /// <summary>
-        /// 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        /// Indicates whether this feature is enabled. The parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
         /// </summary>
         public readonly bool? Switch;
 

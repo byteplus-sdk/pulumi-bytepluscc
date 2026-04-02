@@ -14,22 +14,22 @@ import java.util.Objects;
 @CustomType
 public final class GetGroupResult {
     /**
-     * @return Consumer Group 创建时间。
+     * @return Consumer Group creation time.
      * 
      */
     private String createdTime;
     /**
-     * @return Consumer Group 描述。
+     * @return Consumer Group description.
      * 
      */
     private String description;
     /**
-     * @return Consumer Group 的 ID。
+     * @return Consumer Group ID.
      * 
      */
     private String groupId;
     /**
-     * @return 自定义设置Consumer Group 的名称，约束限制如下：只能由小写英文字符、数字、下划线和中划线（-）组成。长度为 3~64 字符。
+     * @return Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
      * 
      */
     private String groupName;
@@ -39,60 +39,60 @@ public final class GetGroupResult {
      */
     private String id;
     /**
-     * @return 所属 BMQ 实例 ID。
+     * @return BMQ instance ID.
      * 
      */
     private String instanceId;
     /**
-     * @return Consumer Group 所属用户的 ID。
+     * @return User ID associated with the Consumer Group.
      * 
      */
     private String ownerId;
     /**
-     * @return Consumer Group 所属用户的名称。
+     * @return Name of the user associated with the Consumer Group.
      * 
      */
     private String ownerName;
     /**
-     * @return 重置消费位点信息。
+     * @return Reset consumption position information.
      * 
      */
     private GetGroupResetInfo resetInfo;
     /**
-     * @return Consumer Group 的状态。
+     * @return Consumer Group status.
      * 
      */
     private String status;
     /**
-     * @return Topic 列表。
+     * @return Topic list.
      * 
      */
     private List<GetGroupTopicInfo> topicInfos;
 
     private GetGroupResult() {}
     /**
-     * @return Consumer Group 创建时间。
+     * @return Consumer Group creation time.
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return Consumer Group 描述。
+     * @return Consumer Group description.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return Consumer Group 的 ID。
+     * @return Consumer Group ID.
      * 
      */
     public String groupId() {
         return this.groupId;
     }
     /**
-     * @return 自定义设置Consumer Group 的名称，约束限制如下：只能由小写英文字符、数字、下划线和中划线（-）组成。长度为 3~64 字符。
+     * @return Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
      * 
      */
     public String groupName() {
@@ -106,42 +106,42 @@ public final class GetGroupResult {
         return this.id;
     }
     /**
-     * @return 所属 BMQ 实例 ID。
+     * @return BMQ instance ID.
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return Consumer Group 所属用户的 ID。
+     * @return User ID associated with the Consumer Group.
      * 
      */
     public String ownerId() {
         return this.ownerId;
     }
     /**
-     * @return Consumer Group 所属用户的名称。
+     * @return Name of the user associated with the Consumer Group.
      * 
      */
     public String ownerName() {
         return this.ownerName;
     }
     /**
-     * @return 重置消费位点信息。
+     * @return Reset consumption position information.
      * 
      */
     public GetGroupResetInfo resetInfo() {
         return this.resetInfo;
     }
     /**
-     * @return Consumer Group 的状态。
+     * @return Consumer Group status.
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return Topic 列表。
+     * @return Topic list.
      * 
      */
     public List<GetGroupTopicInfo> topicInfos() {

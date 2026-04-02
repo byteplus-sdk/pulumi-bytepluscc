@@ -24,7 +24,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * E-MapReduce（EMR）是开源 Hadoop 生态的企业级大数据分析系统，完全兼容开源，为您提供 Hadoop、Spark、Hive、Hudi、Iceberg 等生态组件集成和管理。
+ * E-MapReduce (EMR) is an enterprise-grade big data analytics system based on the open-source Hadoop ecosystem. It is fully compatible with open source and provides integration and management for ecosystem components such as Hadoop, Spark, Hive, Hudi, and Iceberg.
  * 
  * ## Example Usage
  * 
@@ -41,14 +41,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:emr/cluster:Cluster")
 public class Cluster extends com.pulumi.resources.CustomResource {
     /**
-     * 账号ID。
+     * Account ID.
      * 
      */
     @Export(name="accountId", refs={Integer.class}, tree="[0]")
     private Output<Integer> accountId;
 
     /**
-     * @return 账号ID。
+     * @return Account ID.
      * 
      */
     public Output<Integer> accountId() {
@@ -61,14 +61,14 @@ public class Cluster extends com.pulumi.resources.CustomResource {
         return this.applicationExtras;
     }
     /**
-     * 集群安装的服务名称列表。创建字段。
+     * List of service names installed in the cluster. Creation-related field.
      * 
      */
     @Export(name="applicationNames", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> applicationNames;
 
     /**
-     * @return 集群安装的服务名称列表。创建字段。
+     * @return List of service names installed in the cluster. Creation-related field.
      * 
      */
     public Output<List<String>> applicationNames() {
@@ -87,210 +87,210 @@ public class Cluster extends com.pulumi.resources.CustomResource {
         return this.bootstrapScripts;
     }
     /**
-     * 包月的配置参数，当chargeType=PRE时，必选。
+     * Monthly subscription configuration parameters. Required when chargeType=PRE.
      * 
      */
     @Export(name="chargePreConfig", refs={ClusterChargePreConfig.class}, tree="[0]")
     private Output<ClusterChargePreConfig> chargePreConfig;
 
     /**
-     * @return 包月的配置参数，当chargeType=PRE时，必选。
+     * @return Monthly subscription configuration parameters. Required when chargeType=PRE.
      * 
      */
     public Output<ClusterChargePreConfig> chargePreConfig() {
         return this.chargePreConfig;
     }
     /**
-     * 付费类型，PRE表示包月，POST表示按量计费。
+     * Payment type. PRE means monthly subscription, POST means pay-as-you-go.
      * 
      */
     @Export(name="chargeType", refs={String.class}, tree="[0]")
     private Output<String> chargeType;
 
     /**
-     * @return 付费类型，PRE表示包月，POST表示按量计费。
+     * @return Payment type. PRE means monthly subscription, POST means pay-as-you-go.
      * 
      */
     public Output<String> chargeType() {
         return this.chargeType;
     }
     /**
-     * 集群dns域名后缀列表。
+     * Cluster DNS domain suffix list.
      * 
      */
     @Export(name="clusterDomainNames", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> clusterDomainNames;
 
     /**
-     * @return 集群dns域名后缀列表。
+     * @return Cluster DNS domain suffix list.
      * 
      */
     public Output<List<String>> clusterDomainNames() {
         return this.clusterDomainNames;
     }
     /**
-     * 集群ID。
+     * Cluster ID.
      * 
      */
     @Export(name="clusterId", refs={String.class}, tree="[0]")
     private Output<String> clusterId;
 
     /**
-     * @return 集群ID。
+     * @return Cluster ID.
      * 
      */
     public Output<String> clusterId() {
         return this.clusterId;
     }
     /**
-     * 集群名称。
+     * Cluster name.
      * 
      */
     @Export(name="clusterName", refs={String.class}, tree="[0]")
     private Output<String> clusterName;
 
     /**
-     * @return 集群名称。
+     * @return Cluster name.
      * 
      */
     public Output<String> clusterName() {
         return this.clusterName;
     }
     /**
-     * 集群状态。
+     * Cluster status.
      * 
      */
     @Export(name="clusterState", refs={String.class}, tree="[0]")
     private Output<String> clusterState;
 
     /**
-     * @return 集群状态。
+     * @return Cluster status.
      * 
      */
     public Output<String> clusterState() {
         return this.clusterState;
     }
     /**
-     * 集群类型。
+     * Cluster type.
      * 
      */
     @Export(name="clusterType", refs={String.class}, tree="[0]")
     private Output<String> clusterType;
 
     /**
-     * @return 集群类型。
+     * @return Cluster type.
      * 
      */
     public Output<String> clusterType() {
         return this.clusterType;
     }
     /**
-     * 集群创建时间。
+     * Cluster creation time.
      * 
      */
     @Export(name="createdTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> createdTime;
 
     /**
-     * @return 集群创建时间。
+     * @return Cluster creation time.
      * 
      */
     public Output<Integer> createdTime() {
         return this.createdTime;
     }
     /**
-     * 创建者ID。
+     * Creator ID.
      * 
      */
     @Export(name="creatorId", refs={Integer.class}, tree="[0]")
     private Output<Integer> creatorId;
 
     /**
-     * @return 创建者ID。
+     * @return Creator ID.
      * 
      */
     public Output<Integer> creatorId() {
         return this.creatorId;
     }
     /**
-     * 创建者名称。
+     * Creator name.
      * 
      */
     @Export(name="creatorName", refs={String.class}, tree="[0]")
     private Output<String> creatorName;
 
     /**
-     * @return 创建者名称。
+     * @return Creator name.
      * 
      */
     public Output<String> creatorName() {
         return this.creatorName;
     }
     /**
-     * 部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
+     * Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
      * 
      */
     @Export(name="deployMode", refs={String.class}, tree="[0]")
     private Output<String> deployMode;
 
     /**
-     * @return 部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
+     * @return Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
      * 
      */
     public Output<String> deployMode() {
         return this.deployMode;
     }
     /**
-     * ECS镜像ID。
+     * ECS image ID.
      * 
      */
     @Export(name="ecsImageId", refs={String.class}, tree="[0]")
     private Output<String> ecsImageId;
 
     /**
-     * @return ECS镜像ID。
+     * @return ECS image ID.
      * 
      */
     public Output<String> ecsImageId() {
         return this.ecsImageId;
     }
     /**
-     * 集群过期时间。
+     * Cluster expiration time.
      * 
      */
     @Export(name="expireTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> expireTime;
 
     /**
-     * @return 集群过期时间。
+     * @return Cluster expiration time.
      * 
      */
     public Output<Integer> expireTime() {
         return this.expireTime;
     }
     /**
-     * HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
+     * HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
      * 
      */
     @Export(name="historyServerMode", refs={String.class}, tree="[0]")
     private Output<String> historyServerMode;
 
     /**
-     * @return HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
+     * @return HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
      * 
      */
     public Output<String> historyServerMode() {
         return this.historyServerMode;
     }
     /**
-     * 集群全局的节点信息。
+     * Cluster global node information.
      * 
      */
     @Export(name="nodeAttribute", refs={ClusterNodeAttribute.class}, tree="[0]")
     private Output<ClusterNodeAttribute> nodeAttribute;
 
     /**
-     * @return 集群全局的节点信息。
+     * @return Cluster global node information.
      * 
      */
     public Output<ClusterNodeAttribute> nodeAttribute() {
@@ -303,84 +303,84 @@ public class Cluster extends com.pulumi.resources.CustomResource {
         return this.nodeGroupAttributes;
     }
     /**
-     * 资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+     * Project to which the resource belongs. Default is &#39;default&#39;. Each resource can belong to only one project. Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed. Maximum length is 64 characters.
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+     * @return Project to which the resource belongs. Default is &#39;default&#39;. Each resource can belong to only one project. Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed. Maximum length is 64 characters.
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 集群创建完成时间。
+     * Cluster creation completion time.
      * 
      */
     @Export(name="readyTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> readyTime;
 
     /**
-     * @return 集群创建完成时间。
+     * @return Cluster creation completion time.
      * 
      */
     public Output<Integer> readyTime() {
         return this.readyTime;
     }
     /**
-     * 集群版本。
+     * Cluster version.
      * 
      */
     @Export(name="releaseVersion", refs={String.class}, tree="[0]")
     private Output<String> releaseVersion;
 
     /**
-     * @return 集群版本。
+     * @return Cluster version.
      * 
      */
     public Output<String> releaseVersion() {
         return this.releaseVersion;
     }
     /**
-     * 集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+     * Cluster global security group ID. All ECS in node groups will join this security group.
      * 
      */
     @Export(name="securityGroupId", refs={String.class}, tree="[0]")
     private Output<String> securityGroupId;
 
     /**
-     * @return 集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+     * @return Cluster global security group ID. All ECS in node groups will join this security group.
      * 
      */
     public Output<String> securityGroupId() {
         return this.securityGroupId;
     }
     /**
-     * 安全模式。
+     * Security mode.
      * 
      */
     @Export(name="securityMode", refs={String.class}, tree="[0]")
     private Output<String> securityMode;
 
     /**
-     * @return 安全模式。
+     * @return Security mode.
      * 
      */
     public Output<String> securityMode() {
         return this.securityMode;
     }
     /**
-     * 状态变更原因。
+     * Status change reason.
      * 
      */
     @Export(name="stateChangeReason", refs={ClusterStateChangeReason.class}, tree="[0]")
     private Output<ClusterStateChangeReason> stateChangeReason;
 
     /**
-     * @return 状态变更原因。
+     * @return Status change reason.
      * 
      */
     public Output<ClusterStateChangeReason> stateChangeReason() {
@@ -393,14 +393,14 @@ public class Cluster extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 集群终止时间。
+     * Cluster termination time.
      * 
      */
     @Export(name="terminateTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> terminateTime;
 
     /**
-     * @return 集群终止时间。
+     * @return Cluster termination time.
      * 
      */
     public Output<Integer> terminateTime() {

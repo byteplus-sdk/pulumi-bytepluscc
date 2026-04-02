@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
     public sealed class ClusterClusterConfigApiServerEndpointsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 集群 API Server 私网的 IPv4 地址。
+        /// Cluster API Server private IPv4 address.
         /// </summary>
         [Input("privateIp")]
         public Input<Inputs.ClusterClusterConfigApiServerEndpointsPrivateIpGetArgs>? PrivateIp { get; set; }
 
         /// <summary>
-        /// 集群 API Server 公网的 IPv4 地址。
+        /// Cluster API Server public IPv4 address
         /// </summary>
         [Input("publicIp")]
         public Input<Inputs.ClusterClusterConfigApiServerEndpointsPublicIpGetArgs>? PublicIp { get; set; }

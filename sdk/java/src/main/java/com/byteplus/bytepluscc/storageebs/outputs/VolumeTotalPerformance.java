@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class VolumeTotalPerformance {
     /**
-     * @return 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+     * @return Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
      * 
      */
     private @Nullable Double iops;
     /**
-     * @return 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+     * @return The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
      * 
      */
     private @Nullable Double throughput;
 
     private VolumeTotalPerformance() {}
     /**
-     * @return 云盘的总IOPS，即云盘的基准IOPS和额外IOPS之和。
+     * @return Total IOPS of the disk, which is the sum of the baseline IOPS and extra IOPS.
      * 
      */
     public Optional<Double> iops() {
         return Optional.ofNullable(this.iops);
     }
     /**
-     * @return 云盘的总吞吐量，即云盘的基准吞吐量和额外吞吐量之和。
+     * @return The total throughput of the cloud disk is the sum of its baseline throughput and additional throughput.
      * 
      */
     public Optional<Double> throughput() {

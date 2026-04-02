@@ -13,38 +13,38 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainOriginOriginActionOriginLinePrivateBucketAuth {
     /**
-     * @return 表示对象存储桶所在的第三方云厂商。该参数有以下取值：cos：表示腾讯云。oss：表示阿里云。aws：表示 Amazon AWS。
+     * @return Indicates the third-party cloud provider where the object storage bucket is located. The parameter values are: cos: Tencent Cloud. oss: Alibaba Cloud. aws: Amazon AWS.
      * 
      */
     private String authType;
     /**
-     * @return 表示对象存储桶是否来自第三方云厂商。该参数有以下取值：true：表示对象存储桶来自第三方云厂商。该参数的默认值是 false。
+     * @return Indicates whether the object storage bucket is from a third-party cloud provider. This parameter has the following values: true: the object storage bucket is from a third-party cloud provider. The default value is false
      * 
      */
     private Boolean switch_;
     /**
-     * @return 表示该第三方云厂商的访问密钥。该参数仅当 Switch 是 true 时有效。
+     * @return Specifies the access key for the third-party cloud provider. This parameter is only valid when Switch is true.
      * 
      */
     private GetDomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformation tosAuthInformation;
 
     private GetDomainOriginOriginActionOriginLinePrivateBucketAuth() {}
     /**
-     * @return 表示对象存储桶所在的第三方云厂商。该参数有以下取值：cos：表示腾讯云。oss：表示阿里云。aws：表示 Amazon AWS。
+     * @return Indicates the third-party cloud provider where the object storage bucket is located. The parameter values are: cos: Tencent Cloud. oss: Alibaba Cloud. aws: Amazon AWS.
      * 
      */
     public String authType() {
         return this.authType;
     }
     /**
-     * @return 表示对象存储桶是否来自第三方云厂商。该参数有以下取值：true：表示对象存储桶来自第三方云厂商。该参数的默认值是 false。
+     * @return Indicates whether the object storage bucket is from a third-party cloud provider. This parameter has the following values: true: the object storage bucket is from a third-party cloud provider. The default value is false
      * 
      */
     public Boolean switch_() {
         return this.switch_;
     }
     /**
-     * @return 表示该第三方云厂商的访问密钥。该参数仅当 Switch 是 true 时有效。
+     * @return Specifies the access key for the third-party cloud provider. This parameter is only valid when Switch is true.
      * 
      */
     public GetDomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformation tosAuthInformation() {

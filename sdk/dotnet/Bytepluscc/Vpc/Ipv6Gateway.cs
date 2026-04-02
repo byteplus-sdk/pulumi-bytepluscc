@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Vpc
 {
     /// <summary>
-    /// IPv6网关服务的运行载体，创建IPv6网关实例是进行IPv6公网配置的前提。
+    /// Carrier for the IPv6 gateway service. Creating an IPv6 gateway instance is required for IPv6 public network configuration
     /// 
     /// ## Example Usage
     /// 
@@ -52,43 +52,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public partial class Ipv6Gateway : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// IPv6网关实例的创建时间。
+        /// Creation time of the IPv6 gateway instance
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// IPv6网关实例的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        /// Description of the IPv6 gateway instance. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。)
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// IPv6网关实例的ID。
+        /// IPv6 gateway instance ID
         /// </summary>
         [Output("ipv6GatewayId")]
         public Output<string> Ipv6GatewayId { get; private set; } = null!;
 
         /// <summary>
-        /// IPv6网关实例的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为IPv6网关ID。
+        /// Name of the IPv6 gateway instance. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the IPv6 gateway ID
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// IPv6网关所属项目的名称。
+        /// Name of the project to which the IPv6 gateway belongs
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// IPv6网关实例关联的路由表ID。
+        /// Route table ID associated with the IPv6 gateway instance
         /// </summary>
         [Output("routeTableId")]
         public Output<string> RouteTableId { get; private set; } = null!;
 
         /// <summary>
-        /// IPv6网关实例的运行状态。取值如下：Creating：创建中。Deleting：删除中。Available：可用。
+        /// Operating status of the IPv6 gateway instance. Possible values: Creating: Creating. Deleting: Deleting. Available: Available
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -97,13 +97,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         public Output<ImmutableArray<Outputs.Ipv6GatewayTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// IPv6网关实例的修改时间。
+        /// Modification time of the IPv6 gateway instance
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 需关联IPv6网关实例的VPC ID。每个VPC只能关联一个IPv6网关实例，需确保待关联的VPC未关联其他IPv6网关实例。
+        /// VPC ID to be associated with the IPv6 gateway instance. Each VPC can only be associated with one IPv6 gateway instance. Ensure the VPC to be associated is not linked to another IPv6 gateway instance
         /// </summary>
         [Output("vpcId")]
         public Output<string> VpcId { get; private set; } = null!;
@@ -156,19 +156,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class Ipv6GatewayArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// IPv6网关实例的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        /// Description of the IPv6 gateway instance. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。)
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// IPv6网关实例的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为IPv6网关ID。
+        /// Name of the IPv6 gateway instance. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the IPv6 gateway ID
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// IPv6网关所属项目的名称。
+        /// Name of the project to which the IPv6 gateway belongs
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
@@ -182,7 +182,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 需关联IPv6网关实例的VPC ID。每个VPC只能关联一个IPv6网关实例，需确保待关联的VPC未关联其他IPv6网关实例。
+        /// VPC ID to be associated with the IPv6 gateway instance. Each VPC can only be associated with one IPv6 gateway instance. Ensure the VPC to be associated is not linked to another IPv6 gateway instance
         /// </summary>
         [Input("vpcId", required: true)]
         public Input<string> VpcId { get; set; } = null!;
@@ -196,43 +196,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class Ipv6GatewayState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// IPv6网关实例的创建时间。
+        /// Creation time of the IPv6 gateway instance
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// IPv6网关实例的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        /// Description of the IPv6 gateway instance. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。)
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// IPv6网关实例的ID。
+        /// IPv6 gateway instance ID
         /// </summary>
         [Input("ipv6GatewayId")]
         public Input<string>? Ipv6GatewayId { get; set; }
 
         /// <summary>
-        /// IPv6网关实例的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为IPv6网关ID。
+        /// Name of the IPv6 gateway instance. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the IPv6 gateway ID
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// IPv6网关所属项目的名称。
+        /// Name of the project to which the IPv6 gateway belongs
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// IPv6网关实例关联的路由表ID。
+        /// Route table ID associated with the IPv6 gateway instance
         /// </summary>
         [Input("routeTableId")]
         public Input<string>? RouteTableId { get; set; }
 
         /// <summary>
-        /// IPv6网关实例的运行状态。取值如下：Creating：创建中。Deleting：删除中。Available：可用。
+        /// Operating status of the IPv6 gateway instance. Possible values: Creating: Creating. Deleting: Deleting. Available: Available
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -246,13 +246,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// IPv6网关实例的修改时间。
+        /// Modification time of the IPv6 gateway instance
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }
 
         /// <summary>
-        /// 需关联IPv6网关实例的VPC ID。每个VPC只能关联一个IPv6网关实例，需确保待关联的VPC未关联其他IPv6网关实例。
+        /// VPC ID to be associated with the IPv6 gateway instance. Each VPC can only be associated with one IPv6 gateway instance. Ensure the VPC to be associated is not linked to another IPv6 gateway instance
         /// </summary>
         [Input("vpcId")]
         public Input<string>? VpcId { get; set; }

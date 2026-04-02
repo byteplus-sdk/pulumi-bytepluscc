@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class GetNodePoolNodeConfigSecurityResult
     {
         /// <summary>
-        /// 节点的访问方式配置。
+        /// Node access configuration.
         /// </summary>
         public readonly Outputs.GetNodePoolNodeConfigSecurityLoginResult Login;
         /// <summary>
-        /// 节点网络所在的安全组 ID 列表。
+        /// List of security group IDs for the node network
         /// </summary>
         public readonly ImmutableArray<string> SecurityGroupIds;
         /// <summary>
-        /// 节点的安全策略，参数值说明：Hids：主机安全加固。
+        /// Node security policy. Parameter description: Hids: Host security hardening.
         /// </summary>
         public readonly ImmutableArray<string> SecurityStrategies;
         /// <summary>
-        /// 节点是否启用了安全加固配置，参数值说明：true：已开启。false：未开启。
+        /// Whether the node has enabled security hardening configuration. Parameter values: true: enabled; false: not enabled
         /// </summary>
         public readonly bool SecurityStrategyEnabled;
 

@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class ClusterPodsConfigFlannelConfig
     {
         /// <summary>
-        /// Flannel 模型容器网络的单节点 Pod 实例数量上限，取值：64（默认值）、16、32、128、256。
+        /// Maximum number of Pod instances per node for the Flannel container network model. Values: 64 (default), 16, 32, 128, 256.
         /// </summary>
         public readonly int? MaxPodsPerNode;
         /// <summary>
-        /// Flannel 容器网络的 Pod CIDR。
+        /// Pod CIDR for Flannel container network.
         /// </summary>
         public readonly ImmutableArray<string> PodCidrs;
         /// <summary>
-        /// Flannel 容器网络模型对应的 Pod 子网 ID 列表。
+        /// List of Pod subnet IDs for the Flannel container network model.
         /// </summary>
         public readonly ImmutableArray<string> SubnetIds;
 

@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Fwcenter.Outputs
     public sealed class DnsControlPolicyDomainListV1
     {
         /// <summary>
-        /// 具体地址信息。
+        /// Specific address information.
         /// </summary>
         public readonly string? Address;
         /// <summary>
-        /// 描述信息。
+        /// Description information.
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// 地址类型。支持的取值如下所示。ip：IPv4 地址；ipv6：IPv6 地址；domain：域名；port：端口。
+        /// Address type. Supported values are as follows. ip: IPv4 address; ipv6: IPv6 address; domain: domain name; port: port number.
         /// </summary>
         public readonly string? Type;
 

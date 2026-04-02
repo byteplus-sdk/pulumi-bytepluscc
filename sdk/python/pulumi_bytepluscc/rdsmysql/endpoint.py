@@ -46,26 +46,26 @@ class EndpointArgs:
                  read_write_spliting: Optional[pulumi.Input[builtins.bool]] = None):
         """
         The set of arguments for constructing a Endpoint resource.
-        :param pulumi.Input[builtins.bool] auto_add_new_nodes: 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：true：自动加入。false：不自动加入（默认）。
-        :param pulumi.Input[builtins.bool] connect_all_slave_nodes: 是否关联所有的备节点。取值：true：是。默认值。false：否。说明仅多节点实例的只读终端支持该配置。仅在实例有两个或更多备节点时才能关闭此功能。
-        :param pulumi.Input[builtins.str] connection_mode: 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。说明如实例的数据库代理功能已开启，可以取值为 Proxy 或 Direct。如实例的数据库代理功能未开启，仅可以取值为 Direct。可调用 DescribeDBInstanceDetail 接口查询实例数据库代理功能的开启状态。
-        :param pulumi.Input[builtins.str] connection_pool_type: 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。说明单节点实例不支持该功能。
-        :param pulumi.Input[builtins.str] description: 备注。
-        :param pulumi.Input[builtins.bool] enable_connection_persistent: 是否开启连接终端的连接保持功能。取值：true：是。false：否。说明仅代理终端支持该设置。
-        :param pulumi.Input[builtins.str] endpoint_name: 实例连接终端名称。
-        :param pulumi.Input[builtins.str] endpoint_type: 终端类型。取值为 Custom，自定义终端。
-        :param pulumi.Input[builtins.bool] idle_connection_reclaim: 空闲连接回收功能是否开启。true：开启。false：不开启。说明仅代理终端会返回该字段。
-        :param pulumi.Input[builtins.bool] implicit_trans_split: 是否开启事务分离。取值：true：是。false：否。说明仅代理终端会返回该字段。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
-        :param pulumi.Input[builtins.bool] master_node_routing: 是否开启主节点路由。取值：true：是。false：否。说明仅代理终端会返回该字段。
-        :param pulumi.Input[builtins.int] master_protector_timeout: 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。说明仅代理终端会返回该字段。
-        :param pulumi.Input[builtins.str] multi_statements_mode: 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
-        :param pulumi.Input[builtins.str] nodes: 连接终端配置的节点 ID 列表。当 EndpointType 为 Custom 时必选。说明如需将主节点加入终端，不需填写主节点 ID，只需填写 Primary。多个节点 ID 之间用英文逗号（,）分隔。
-        :param pulumi.Input[builtins.bool] overload_protection: 是否开启过载保护。取值：true：是。false：否。说明仅代理终端会返回该字段。
-        :param pulumi.Input[builtins.str] read_only_node_distribution_type: 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
-        :param pulumi.Input[builtins.int] read_only_node_max_delay_time: 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
-        :param pulumi.Input[builtins.str] read_write_mode: 读写模式：ReadWrite：读写。ReadOnly：只读。
-        :param pulumi.Input[builtins.bool] read_write_spliting: 是否开启读写分离。取值：true：是。默认值。false：否。
+        :param pulumi.Input[builtins.bool] auto_add_new_nodes: When the endpoint type is read/write or read-only, you can set whether new nodes are automatically added. Values: true: automatically added. false: not automatically added (default).
+        :param pulumi.Input[builtins.bool] connect_all_slave_nodes: Associate all replica nodes. Values: true: enabled (default). false: disabled. Note: Only read-only endpoints of multi-node instances support this configuration. This feature can be disabled only if the instance has two or more replica nodes.
+        :param pulumi.Input[builtins.str] connection_mode: Endpoint type. Options: Proxy: proxy endpoint. Direct: direct endpoint. Note: If the database proxy feature is enabled for the instance, you can select Proxy or Direct. If the database proxy feature is not enabled, only Direct is available. You can call the DescribeDBInstanceDetail API to check the status of the database proxy feature for the instance.
+        :param pulumi.Input[builtins.str] connection_pool_type: Connection pool type for proxy endpoints. Options: Transaction: transaction-level connection pool (default). Direct: direct mode. Note: Single-node instances do not support this feature.
+        :param pulumi.Input[builtins.str] description: Remarks.
+        :param pulumi.Input[builtins.bool] enable_connection_persistent: Enable connection keep-alive for the endpoint. Values: true: enabled. false: disabled. Note: Only proxy endpoints support this setting.
+        :param pulumi.Input[builtins.str] endpoint_name: Instance connection endpoint name.
+        :param pulumi.Input[builtins.str] endpoint_type: Endpoint type. Value: Custom (custom endpoint).
+        :param pulumi.Input[builtins.bool] idle_connection_reclaim: Enable idle connection recycling. true: enabled. false: not enabled. Note: This field is returned only for proxy endpoints.
+        :param pulumi.Input[builtins.bool] implicit_trans_split: Enable transaction separation. Options: true: yes. false: no. Note: Only proxy endpoints return this field.
+        :param pulumi.Input[builtins.str] instance_id: Instance ID.
+        :param pulumi.Input[builtins.bool] master_node_routing: Enable primary node routing. Values: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
+        :param pulumi.Input[builtins.int] master_protector_timeout: Overload protection timeout. Value range: integer between 60~7200. Unit: seconds. Note: This field is returned only for proxy endpoints.
+        :param pulumi.Input[builtins.str] multi_statements_mode: Multi-Statements mode for proxy endpoints. Options: Strict: strict mode (default). Loose: loose mode.
+        :param pulumi.Input[builtins.str] nodes: List of node IDs configured for the connection endpoint. Required when EndpointType is Custom. Note: To add the primary node to the endpoint, do not enter the primary node ID; just enter Primary. Separate multiple node IDs with commas (,).
+        :param pulumi.Input[builtins.bool] overload_protection: Enable overload protection. Options: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
+        :param pulumi.Input[builtins.str] read_only_node_distribution_type: Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, the value range is: LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, the value range is: Default: automatic allocation based on specification weight. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling.
+        :param pulumi.Input[builtins.int] read_only_node_max_delay_time: Read-only node latency threshold. Value range: 1~3600. Default: 30. Unit: seconds.
+        :param pulumi.Input[builtins.str] read_write_mode: Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
+        :param pulumi.Input[builtins.bool] read_write_spliting: Enable read/write splitting. Values: true: enabled (default). false: disabled.
         """
         if addresses is not None:
             pulumi.set(__self__, "addresses", addresses)
@@ -125,7 +125,7 @@ class EndpointArgs:
     @pulumi.getter(name="autoAddNewNodes")
     def auto_add_new_nodes(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：true：自动加入。false：不自动加入（默认）。
+        When the endpoint type is read/write or read-only, you can set whether new nodes are automatically added. Values: true: automatically added. false: not automatically added (default).
         """
         return pulumi.get(self, "auto_add_new_nodes")
 
@@ -137,7 +137,7 @@ class EndpointArgs:
     @pulumi.getter(name="connectAllSlaveNodes")
     def connect_all_slave_nodes(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否关联所有的备节点。取值：true：是。默认值。false：否。说明仅多节点实例的只读终端支持该配置。仅在实例有两个或更多备节点时才能关闭此功能。
+        Associate all replica nodes. Values: true: enabled (default). false: disabled. Note: Only read-only endpoints of multi-node instances support this configuration. This feature can be disabled only if the instance has two or more replica nodes.
         """
         return pulumi.get(self, "connect_all_slave_nodes")
 
@@ -149,7 +149,7 @@ class EndpointArgs:
     @pulumi.getter(name="connectionMode")
     def connection_mode(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        连接终端类型。取值：Proxy：代理终端。Direct：直连终端。说明如实例的数据库代理功能已开启，可以取值为 Proxy 或 Direct。如实例的数据库代理功能未开启，仅可以取值为 Direct。可调用 DescribeDBInstanceDetail 接口查询实例数据库代理功能的开启状态。
+        Endpoint type. Options: Proxy: proxy endpoint. Direct: direct endpoint. Note: If the database proxy feature is enabled for the instance, you can select Proxy or Direct. If the database proxy feature is not enabled, only Direct is available. You can call the DescribeDBInstanceDetail API to check the status of the database proxy feature for the instance.
         """
         return pulumi.get(self, "connection_mode")
 
@@ -161,7 +161,7 @@ class EndpointArgs:
     @pulumi.getter(name="connectionPoolType")
     def connection_pool_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。说明单节点实例不支持该功能。
+        Connection pool type for proxy endpoints. Options: Transaction: transaction-level connection pool (default). Direct: direct mode. Note: Single-node instances do not support this feature.
         """
         return pulumi.get(self, "connection_pool_type")
 
@@ -173,7 +173,7 @@ class EndpointArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        备注。
+        Remarks.
         """
         return pulumi.get(self, "description")
 
@@ -185,7 +185,7 @@ class EndpointArgs:
     @pulumi.getter(name="enableConnectionPersistent")
     def enable_connection_persistent(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启连接终端的连接保持功能。取值：true：是。false：否。说明仅代理终端支持该设置。
+        Enable connection keep-alive for the endpoint. Values: true: enabled. false: disabled. Note: Only proxy endpoints support this setting.
         """
         return pulumi.get(self, "enable_connection_persistent")
 
@@ -197,7 +197,7 @@ class EndpointArgs:
     @pulumi.getter(name="endpointName")
     def endpoint_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例连接终端名称。
+        Instance connection endpoint name.
         """
         return pulumi.get(self, "endpoint_name")
 
@@ -209,7 +209,7 @@ class EndpointArgs:
     @pulumi.getter(name="endpointType")
     def endpoint_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        终端类型。取值为 Custom，自定义终端。
+        Endpoint type. Value: Custom (custom endpoint).
         """
         return pulumi.get(self, "endpoint_type")
 
@@ -221,7 +221,7 @@ class EndpointArgs:
     @pulumi.getter(name="idleConnectionReclaim")
     def idle_connection_reclaim(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        空闲连接回收功能是否开启。true：开启。false：不开启。说明仅代理终端会返回该字段。
+        Enable idle connection recycling. true: enabled. false: not enabled. Note: This field is returned only for proxy endpoints.
         """
         return pulumi.get(self, "idle_connection_reclaim")
 
@@ -233,7 +233,7 @@ class EndpointArgs:
     @pulumi.getter(name="implicitTransSplit")
     def implicit_trans_split(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启事务分离。取值：true：是。false：否。说明仅代理终端会返回该字段。
+        Enable transaction separation. Options: true: yes. false: no. Note: Only proxy endpoints return this field.
         """
         return pulumi.get(self, "implicit_trans_split")
 
@@ -245,7 +245,7 @@ class EndpointArgs:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例 ID。
+        Instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -257,7 +257,7 @@ class EndpointArgs:
     @pulumi.getter(name="masterNodeRouting")
     def master_node_routing(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启主节点路由。取值：true：是。false：否。说明仅代理终端会返回该字段。
+        Enable primary node routing. Values: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
         """
         return pulumi.get(self, "master_node_routing")
 
@@ -269,7 +269,7 @@ class EndpointArgs:
     @pulumi.getter(name="masterProtectorTimeout")
     def master_protector_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。说明仅代理终端会返回该字段。
+        Overload protection timeout. Value range: integer between 60~7200. Unit: seconds. Note: This field is returned only for proxy endpoints.
         """
         return pulumi.get(self, "master_protector_timeout")
 
@@ -281,7 +281,7 @@ class EndpointArgs:
     @pulumi.getter(name="multiStatementsMode")
     def multi_statements_mode(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+        Multi-Statements mode for proxy endpoints. Options: Strict: strict mode (default). Loose: loose mode.
         """
         return pulumi.get(self, "multi_statements_mode")
 
@@ -293,7 +293,7 @@ class EndpointArgs:
     @pulumi.getter
     def nodes(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        连接终端配置的节点 ID 列表。当 EndpointType 为 Custom 时必选。说明如需将主节点加入终端，不需填写主节点 ID，只需填写 Primary。多个节点 ID 之间用英文逗号（,）分隔。
+        List of node IDs configured for the connection endpoint. Required when EndpointType is Custom. Note: To add the primary node to the endpoint, do not enter the primary node ID; just enter Primary. Separate multiple node IDs with commas (,).
         """
         return pulumi.get(self, "nodes")
 
@@ -305,7 +305,7 @@ class EndpointArgs:
     @pulumi.getter(name="overloadProtection")
     def overload_protection(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启过载保护。取值：true：是。false：否。说明仅代理终端会返回该字段。
+        Enable overload protection. Options: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
         """
         return pulumi.get(self, "overload_protection")
 
@@ -317,7 +317,7 @@ class EndpointArgs:
     @pulumi.getter(name="readOnlyNodeDistributionType")
     def read_only_node_distribution_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+        Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, the value range is: LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, the value range is: Default: automatic allocation based on specification weight. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling.
         """
         return pulumi.get(self, "read_only_node_distribution_type")
 
@@ -329,7 +329,7 @@ class EndpointArgs:
     @pulumi.getter(name="readOnlyNodeMaxDelayTime")
     def read_only_node_max_delay_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+        Read-only node latency threshold. Value range: 1~3600. Default: 30. Unit: seconds.
         """
         return pulumi.get(self, "read_only_node_max_delay_time")
 
@@ -350,7 +350,7 @@ class EndpointArgs:
     @pulumi.getter(name="readWriteMode")
     def read_write_mode(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        读写模式：ReadWrite：读写。ReadOnly：只读。
+        Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
         """
         return pulumi.get(self, "read_write_mode")
 
@@ -362,7 +362,7 @@ class EndpointArgs:
     @pulumi.getter(name="readWriteSpliting")
     def read_write_spliting(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启读写分离。取值：true：是。默认值。false：否。
+        Enable read/write splitting. Values: true: enabled (default). false: disabled.
         """
         return pulumi.get(self, "read_write_spliting")
 
@@ -402,30 +402,30 @@ class _EndpointState:
                  read_write_spliting: Optional[pulumi.Input[builtins.bool]] = None):
         """
         Input properties used for looking up and filtering Endpoint resources.
-        :param pulumi.Input[builtins.bool] auto_add_new_nodes: 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：true：自动加入。false：不自动加入（默认）。
-        :param pulumi.Input[builtins.bool] connect_all_slave_nodes: 是否关联所有的备节点。取值：true：是。默认值。false：否。说明仅多节点实例的只读终端支持该配置。仅在实例有两个或更多备节点时才能关闭此功能。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] connection_info_tags: 连接终端标签。
-        :param pulumi.Input[builtins.str] connection_mode: 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。说明如实例的数据库代理功能已开启，可以取值为 Proxy 或 Direct。如实例的数据库代理功能未开启，仅可以取值为 Direct。可调用 DescribeDBInstanceDetail 接口查询实例数据库代理功能的开启状态。
-        :param pulumi.Input[builtins.str] connection_pool_type: 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。说明单节点实例不支持该功能。
-        :param pulumi.Input['EndpointCustomRouteStrategyArgs'] custom_route_strategy: 连接终端的 SQL 转发规则。
-        :param pulumi.Input[builtins.str] description: 备注。
-        :param pulumi.Input[builtins.bool] enable_connection_persistent: 是否开启连接终端的连接保持功能。取值：true：是。false：否。说明仅代理终端支持该设置。
-        :param pulumi.Input[builtins.str] enable_read_only: 是否已开启全局只读，取值：Enable：开启。Disable：未开启。
-        :param pulumi.Input[builtins.str] endpoint_id: 实例连接终端 ID。
-        :param pulumi.Input[builtins.str] endpoint_name: 实例连接终端名称。
-        :param pulumi.Input[builtins.str] endpoint_type: 终端类型。取值为 Custom，自定义终端。
-        :param pulumi.Input[builtins.bool] idle_connection_reclaim: 空闲连接回收功能是否开启。true：开启。false：不开启。说明仅代理终端会返回该字段。
-        :param pulumi.Input[builtins.bool] implicit_trans_split: 是否开启事务分离。取值：true：是。false：否。说明仅代理终端会返回该字段。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
-        :param pulumi.Input[builtins.bool] master_node_routing: 是否开启主节点路由。取值：true：是。false：否。说明仅代理终端会返回该字段。
-        :param pulumi.Input[builtins.int] master_protector_timeout: 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。说明仅代理终端会返回该字段。
-        :param pulumi.Input[builtins.str] multi_statements_mode: 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
-        :param pulumi.Input[builtins.str] nodes: 连接终端配置的节点 ID 列表。当 EndpointType 为 Custom 时必选。说明如需将主节点加入终端，不需填写主节点 ID，只需填写 Primary。多个节点 ID 之间用英文逗号（,）分隔。
-        :param pulumi.Input[builtins.bool] overload_protection: 是否开启过载保护。取值：true：是。false：否。说明仅代理终端会返回该字段。
-        :param pulumi.Input[builtins.str] read_only_node_distribution_type: 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
-        :param pulumi.Input[builtins.int] read_only_node_max_delay_time: 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
-        :param pulumi.Input[builtins.str] read_write_mode: 读写模式：ReadWrite：读写。ReadOnly：只读。
-        :param pulumi.Input[builtins.bool] read_write_spliting: 是否开启读写分离。取值：true：是。默认值。false：否。
+        :param pulumi.Input[builtins.bool] auto_add_new_nodes: When the endpoint type is read/write or read-only, you can set whether new nodes are automatically added. Values: true: automatically added. false: not automatically added (default).
+        :param pulumi.Input[builtins.bool] connect_all_slave_nodes: Associate all replica nodes. Values: true: enabled (default). false: disabled. Note: Only read-only endpoints of multi-node instances support this configuration. This feature can be disabled only if the instance has two or more replica nodes.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] connection_info_tags: Connection endpoint tags.
+        :param pulumi.Input[builtins.str] connection_mode: Endpoint type. Options: Proxy: proxy endpoint. Direct: direct endpoint. Note: If the database proxy feature is enabled for the instance, you can select Proxy or Direct. If the database proxy feature is not enabled, only Direct is available. You can call the DescribeDBInstanceDetail API to check the status of the database proxy feature for the instance.
+        :param pulumi.Input[builtins.str] connection_pool_type: Connection pool type for proxy endpoints. Options: Transaction: transaction-level connection pool (default). Direct: direct mode. Note: Single-node instances do not support this feature.
+        :param pulumi.Input['EndpointCustomRouteStrategyArgs'] custom_route_strategy: SQL forwarding rules for the connection endpoint.
+        :param pulumi.Input[builtins.str] description: Remarks.
+        :param pulumi.Input[builtins.bool] enable_connection_persistent: Enable connection keep-alive for the endpoint. Values: true: enabled. false: disabled. Note: Only proxy endpoints support this setting.
+        :param pulumi.Input[builtins.str] enable_read_only: Enable global read-only. Values: Enable: enabled. Disable: not enabled.
+        :param pulumi.Input[builtins.str] endpoint_id: Instance connection endpoint ID.
+        :param pulumi.Input[builtins.str] endpoint_name: Instance connection endpoint name.
+        :param pulumi.Input[builtins.str] endpoint_type: Endpoint type. Value: Custom (custom endpoint).
+        :param pulumi.Input[builtins.bool] idle_connection_reclaim: Enable idle connection recycling. true: enabled. false: not enabled. Note: This field is returned only for proxy endpoints.
+        :param pulumi.Input[builtins.bool] implicit_trans_split: Enable transaction separation. Options: true: yes. false: no. Note: Only proxy endpoints return this field.
+        :param pulumi.Input[builtins.str] instance_id: Instance ID.
+        :param pulumi.Input[builtins.bool] master_node_routing: Enable primary node routing. Values: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
+        :param pulumi.Input[builtins.int] master_protector_timeout: Overload protection timeout. Value range: integer between 60~7200. Unit: seconds. Note: This field is returned only for proxy endpoints.
+        :param pulumi.Input[builtins.str] multi_statements_mode: Multi-Statements mode for proxy endpoints. Options: Strict: strict mode (default). Loose: loose mode.
+        :param pulumi.Input[builtins.str] nodes: List of node IDs configured for the connection endpoint. Required when EndpointType is Custom. Note: To add the primary node to the endpoint, do not enter the primary node ID; just enter Primary. Separate multiple node IDs with commas (,).
+        :param pulumi.Input[builtins.bool] overload_protection: Enable overload protection. Options: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
+        :param pulumi.Input[builtins.str] read_only_node_distribution_type: Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, the value range is: LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, the value range is: Default: automatic allocation based on specification weight. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling.
+        :param pulumi.Input[builtins.int] read_only_node_max_delay_time: Read-only node latency threshold. Value range: 1~3600. Default: 30. Unit: seconds.
+        :param pulumi.Input[builtins.str] read_write_mode: Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
+        :param pulumi.Input[builtins.bool] read_write_spliting: Enable read/write splitting. Values: true: enabled (default). false: disabled.
         """
         if addresses is not None:
             pulumi.set(__self__, "addresses", addresses)
@@ -493,7 +493,7 @@ class _EndpointState:
     @pulumi.getter(name="autoAddNewNodes")
     def auto_add_new_nodes(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：true：自动加入。false：不自动加入（默认）。
+        When the endpoint type is read/write or read-only, you can set whether new nodes are automatically added. Values: true: automatically added. false: not automatically added (default).
         """
         return pulumi.get(self, "auto_add_new_nodes")
 
@@ -505,7 +505,7 @@ class _EndpointState:
     @pulumi.getter(name="connectAllSlaveNodes")
     def connect_all_slave_nodes(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否关联所有的备节点。取值：true：是。默认值。false：否。说明仅多节点实例的只读终端支持该配置。仅在实例有两个或更多备节点时才能关闭此功能。
+        Associate all replica nodes. Values: true: enabled (default). false: disabled. Note: Only read-only endpoints of multi-node instances support this configuration. This feature can be disabled only if the instance has two or more replica nodes.
         """
         return pulumi.get(self, "connect_all_slave_nodes")
 
@@ -517,7 +517,7 @@ class _EndpointState:
     @pulumi.getter(name="connectionInfoTags")
     def connection_info_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        连接终端标签。
+        Connection endpoint tags.
         """
         return pulumi.get(self, "connection_info_tags")
 
@@ -529,7 +529,7 @@ class _EndpointState:
     @pulumi.getter(name="connectionMode")
     def connection_mode(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        连接终端类型。取值：Proxy：代理终端。Direct：直连终端。说明如实例的数据库代理功能已开启，可以取值为 Proxy 或 Direct。如实例的数据库代理功能未开启，仅可以取值为 Direct。可调用 DescribeDBInstanceDetail 接口查询实例数据库代理功能的开启状态。
+        Endpoint type. Options: Proxy: proxy endpoint. Direct: direct endpoint. Note: If the database proxy feature is enabled for the instance, you can select Proxy or Direct. If the database proxy feature is not enabled, only Direct is available. You can call the DescribeDBInstanceDetail API to check the status of the database proxy feature for the instance.
         """
         return pulumi.get(self, "connection_mode")
 
@@ -541,7 +541,7 @@ class _EndpointState:
     @pulumi.getter(name="connectionPoolType")
     def connection_pool_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。说明单节点实例不支持该功能。
+        Connection pool type for proxy endpoints. Options: Transaction: transaction-level connection pool (default). Direct: direct mode. Note: Single-node instances do not support this feature.
         """
         return pulumi.get(self, "connection_pool_type")
 
@@ -553,7 +553,7 @@ class _EndpointState:
     @pulumi.getter(name="customRouteStrategy")
     def custom_route_strategy(self) -> Optional[pulumi.Input['EndpointCustomRouteStrategyArgs']]:
         """
-        连接终端的 SQL 转发规则。
+        SQL forwarding rules for the connection endpoint.
         """
         return pulumi.get(self, "custom_route_strategy")
 
@@ -565,7 +565,7 @@ class _EndpointState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        备注。
+        Remarks.
         """
         return pulumi.get(self, "description")
 
@@ -577,7 +577,7 @@ class _EndpointState:
     @pulumi.getter(name="enableConnectionPersistent")
     def enable_connection_persistent(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启连接终端的连接保持功能。取值：true：是。false：否。说明仅代理终端支持该设置。
+        Enable connection keep-alive for the endpoint. Values: true: enabled. false: disabled. Note: Only proxy endpoints support this setting.
         """
         return pulumi.get(self, "enable_connection_persistent")
 
@@ -589,7 +589,7 @@ class _EndpointState:
     @pulumi.getter(name="enableReadOnly")
     def enable_read_only(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        是否已开启全局只读，取值：Enable：开启。Disable：未开启。
+        Enable global read-only. Values: Enable: enabled. Disable: not enabled.
         """
         return pulumi.get(self, "enable_read_only")
 
@@ -601,7 +601,7 @@ class _EndpointState:
     @pulumi.getter(name="endpointId")
     def endpoint_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例连接终端 ID。
+        Instance connection endpoint ID.
         """
         return pulumi.get(self, "endpoint_id")
 
@@ -613,7 +613,7 @@ class _EndpointState:
     @pulumi.getter(name="endpointName")
     def endpoint_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例连接终端名称。
+        Instance connection endpoint name.
         """
         return pulumi.get(self, "endpoint_name")
 
@@ -625,7 +625,7 @@ class _EndpointState:
     @pulumi.getter(name="endpointType")
     def endpoint_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        终端类型。取值为 Custom，自定义终端。
+        Endpoint type. Value: Custom (custom endpoint).
         """
         return pulumi.get(self, "endpoint_type")
 
@@ -637,7 +637,7 @@ class _EndpointState:
     @pulumi.getter(name="idleConnectionReclaim")
     def idle_connection_reclaim(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        空闲连接回收功能是否开启。true：开启。false：不开启。说明仅代理终端会返回该字段。
+        Enable idle connection recycling. true: enabled. false: not enabled. Note: This field is returned only for proxy endpoints.
         """
         return pulumi.get(self, "idle_connection_reclaim")
 
@@ -649,7 +649,7 @@ class _EndpointState:
     @pulumi.getter(name="implicitTransSplit")
     def implicit_trans_split(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启事务分离。取值：true：是。false：否。说明仅代理终端会返回该字段。
+        Enable transaction separation. Options: true: yes. false: no. Note: Only proxy endpoints return this field.
         """
         return pulumi.get(self, "implicit_trans_split")
 
@@ -661,7 +661,7 @@ class _EndpointState:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例 ID。
+        Instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -673,7 +673,7 @@ class _EndpointState:
     @pulumi.getter(name="masterNodeRouting")
     def master_node_routing(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启主节点路由。取值：true：是。false：否。说明仅代理终端会返回该字段。
+        Enable primary node routing. Values: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
         """
         return pulumi.get(self, "master_node_routing")
 
@@ -685,7 +685,7 @@ class _EndpointState:
     @pulumi.getter(name="masterProtectorTimeout")
     def master_protector_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。说明仅代理终端会返回该字段。
+        Overload protection timeout. Value range: integer between 60~7200. Unit: seconds. Note: This field is returned only for proxy endpoints.
         """
         return pulumi.get(self, "master_protector_timeout")
 
@@ -697,7 +697,7 @@ class _EndpointState:
     @pulumi.getter(name="multiStatementsMode")
     def multi_statements_mode(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+        Multi-Statements mode for proxy endpoints. Options: Strict: strict mode (default). Loose: loose mode.
         """
         return pulumi.get(self, "multi_statements_mode")
 
@@ -709,7 +709,7 @@ class _EndpointState:
     @pulumi.getter
     def nodes(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        连接终端配置的节点 ID 列表。当 EndpointType 为 Custom 时必选。说明如需将主节点加入终端，不需填写主节点 ID，只需填写 Primary。多个节点 ID 之间用英文逗号（,）分隔。
+        List of node IDs configured for the connection endpoint. Required when EndpointType is Custom. Note: To add the primary node to the endpoint, do not enter the primary node ID; just enter Primary. Separate multiple node IDs with commas (,).
         """
         return pulumi.get(self, "nodes")
 
@@ -721,7 +721,7 @@ class _EndpointState:
     @pulumi.getter(name="overloadProtection")
     def overload_protection(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启过载保护。取值：true：是。false：否。说明仅代理终端会返回该字段。
+        Enable overload protection. Options: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
         """
         return pulumi.get(self, "overload_protection")
 
@@ -733,7 +733,7 @@ class _EndpointState:
     @pulumi.getter(name="readOnlyNodeDistributionType")
     def read_only_node_distribution_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+        Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, the value range is: LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, the value range is: Default: automatic allocation based on specification weight. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling.
         """
         return pulumi.get(self, "read_only_node_distribution_type")
 
@@ -745,7 +745,7 @@ class _EndpointState:
     @pulumi.getter(name="readOnlyNodeMaxDelayTime")
     def read_only_node_max_delay_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+        Read-only node latency threshold. Value range: 1~3600. Default: 30. Unit: seconds.
         """
         return pulumi.get(self, "read_only_node_max_delay_time")
 
@@ -766,7 +766,7 @@ class _EndpointState:
     @pulumi.getter(name="readWriteMode")
     def read_write_mode(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        读写模式：ReadWrite：读写。ReadOnly：只读。
+        Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
         """
         return pulumi.get(self, "read_write_mode")
 
@@ -778,7 +778,7 @@ class _EndpointState:
     @pulumi.getter(name="readWriteSpliting")
     def read_write_spliting(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启读写分离。取值：true：是。默认值。false：否。
+        Enable read/write splitting. Values: true: enabled (default). false: disabled.
         """
         return pulumi.get(self, "read_write_spliting")
 
@@ -817,7 +817,7 @@ class Endpoint(pulumi.CustomResource):
                  read_write_spliting: Optional[pulumi.Input[builtins.bool]] = None,
                  __props__=None):
         """
-        连接终端是云数据库 MySQL 版提供的位于数据库和应用程序之间的网络代理服务。根据连接终端的功能差异，连接终端可以分为代理终端和直连终端两种类型。通过代理终端的连接将经过代理，可使用代理相关的特性和功能，如读写分离、负载均衡、空闲连接回收和 Multi-Statements 等；通过直连终端的连接将直连到对应节点，不能使用代理相关特性。
+        The endpoint is a network proxy service provided by Cloud Database MySQL Edition, located between the database and application. Based on endpoint functionality, endpoints are classified as proxy endpoints and direct endpoints. Connections via proxy endpoints pass through the proxy and support features such as read/write splitting, load balancing, idle connection recycling, and Multi-Statements. Connections via direct endpoints connect directly to the corresponding node and do not support proxy-related features.
 
         ## Import
 
@@ -827,26 +827,26 @@ class Endpoint(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.bool] auto_add_new_nodes: 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：true：自动加入。false：不自动加入（默认）。
-        :param pulumi.Input[builtins.bool] connect_all_slave_nodes: 是否关联所有的备节点。取值：true：是。默认值。false：否。说明仅多节点实例的只读终端支持该配置。仅在实例有两个或更多备节点时才能关闭此功能。
-        :param pulumi.Input[builtins.str] connection_mode: 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。说明如实例的数据库代理功能已开启，可以取值为 Proxy 或 Direct。如实例的数据库代理功能未开启，仅可以取值为 Direct。可调用 DescribeDBInstanceDetail 接口查询实例数据库代理功能的开启状态。
-        :param pulumi.Input[builtins.str] connection_pool_type: 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。说明单节点实例不支持该功能。
-        :param pulumi.Input[builtins.str] description: 备注。
-        :param pulumi.Input[builtins.bool] enable_connection_persistent: 是否开启连接终端的连接保持功能。取值：true：是。false：否。说明仅代理终端支持该设置。
-        :param pulumi.Input[builtins.str] endpoint_name: 实例连接终端名称。
-        :param pulumi.Input[builtins.str] endpoint_type: 终端类型。取值为 Custom，自定义终端。
-        :param pulumi.Input[builtins.bool] idle_connection_reclaim: 空闲连接回收功能是否开启。true：开启。false：不开启。说明仅代理终端会返回该字段。
-        :param pulumi.Input[builtins.bool] implicit_trans_split: 是否开启事务分离。取值：true：是。false：否。说明仅代理终端会返回该字段。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
-        :param pulumi.Input[builtins.bool] master_node_routing: 是否开启主节点路由。取值：true：是。false：否。说明仅代理终端会返回该字段。
-        :param pulumi.Input[builtins.int] master_protector_timeout: 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。说明仅代理终端会返回该字段。
-        :param pulumi.Input[builtins.str] multi_statements_mode: 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
-        :param pulumi.Input[builtins.str] nodes: 连接终端配置的节点 ID 列表。当 EndpointType 为 Custom 时必选。说明如需将主节点加入终端，不需填写主节点 ID，只需填写 Primary。多个节点 ID 之间用英文逗号（,）分隔。
-        :param pulumi.Input[builtins.bool] overload_protection: 是否开启过载保护。取值：true：是。false：否。说明仅代理终端会返回该字段。
-        :param pulumi.Input[builtins.str] read_only_node_distribution_type: 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
-        :param pulumi.Input[builtins.int] read_only_node_max_delay_time: 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
-        :param pulumi.Input[builtins.str] read_write_mode: 读写模式：ReadWrite：读写。ReadOnly：只读。
-        :param pulumi.Input[builtins.bool] read_write_spliting: 是否开启读写分离。取值：true：是。默认值。false：否。
+        :param pulumi.Input[builtins.bool] auto_add_new_nodes: When the endpoint type is read/write or read-only, you can set whether new nodes are automatically added. Values: true: automatically added. false: not automatically added (default).
+        :param pulumi.Input[builtins.bool] connect_all_slave_nodes: Associate all replica nodes. Values: true: enabled (default). false: disabled. Note: Only read-only endpoints of multi-node instances support this configuration. This feature can be disabled only if the instance has two or more replica nodes.
+        :param pulumi.Input[builtins.str] connection_mode: Endpoint type. Options: Proxy: proxy endpoint. Direct: direct endpoint. Note: If the database proxy feature is enabled for the instance, you can select Proxy or Direct. If the database proxy feature is not enabled, only Direct is available. You can call the DescribeDBInstanceDetail API to check the status of the database proxy feature for the instance.
+        :param pulumi.Input[builtins.str] connection_pool_type: Connection pool type for proxy endpoints. Options: Transaction: transaction-level connection pool (default). Direct: direct mode. Note: Single-node instances do not support this feature.
+        :param pulumi.Input[builtins.str] description: Remarks.
+        :param pulumi.Input[builtins.bool] enable_connection_persistent: Enable connection keep-alive for the endpoint. Values: true: enabled. false: disabled. Note: Only proxy endpoints support this setting.
+        :param pulumi.Input[builtins.str] endpoint_name: Instance connection endpoint name.
+        :param pulumi.Input[builtins.str] endpoint_type: Endpoint type. Value: Custom (custom endpoint).
+        :param pulumi.Input[builtins.bool] idle_connection_reclaim: Enable idle connection recycling. true: enabled. false: not enabled. Note: This field is returned only for proxy endpoints.
+        :param pulumi.Input[builtins.bool] implicit_trans_split: Enable transaction separation. Options: true: yes. false: no. Note: Only proxy endpoints return this field.
+        :param pulumi.Input[builtins.str] instance_id: Instance ID.
+        :param pulumi.Input[builtins.bool] master_node_routing: Enable primary node routing. Values: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
+        :param pulumi.Input[builtins.int] master_protector_timeout: Overload protection timeout. Value range: integer between 60~7200. Unit: seconds. Note: This field is returned only for proxy endpoints.
+        :param pulumi.Input[builtins.str] multi_statements_mode: Multi-Statements mode for proxy endpoints. Options: Strict: strict mode (default). Loose: loose mode.
+        :param pulumi.Input[builtins.str] nodes: List of node IDs configured for the connection endpoint. Required when EndpointType is Custom. Note: To add the primary node to the endpoint, do not enter the primary node ID; just enter Primary. Separate multiple node IDs with commas (,).
+        :param pulumi.Input[builtins.bool] overload_protection: Enable overload protection. Options: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
+        :param pulumi.Input[builtins.str] read_only_node_distribution_type: Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, the value range is: LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, the value range is: Default: automatic allocation based on specification weight. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling.
+        :param pulumi.Input[builtins.int] read_only_node_max_delay_time: Read-only node latency threshold. Value range: 1~3600. Default: 30. Unit: seconds.
+        :param pulumi.Input[builtins.str] read_write_mode: Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
+        :param pulumi.Input[builtins.bool] read_write_spliting: Enable read/write splitting. Values: true: enabled (default). false: disabled.
         """
         ...
     @overload
@@ -855,7 +855,7 @@ class Endpoint(pulumi.CustomResource):
                  args: Optional[EndpointArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        连接终端是云数据库 MySQL 版提供的位于数据库和应用程序之间的网络代理服务。根据连接终端的功能差异，连接终端可以分为代理终端和直连终端两种类型。通过代理终端的连接将经过代理，可使用代理相关的特性和功能，如读写分离、负载均衡、空闲连接回收和 Multi-Statements 等；通过直连终端的连接将直连到对应节点，不能使用代理相关特性。
+        The endpoint is a network proxy service provided by Cloud Database MySQL Edition, located between the database and application. Based on endpoint functionality, endpoints are classified as proxy endpoints and direct endpoints. Connections via proxy endpoints pass through the proxy and support features such as read/write splitting, load balancing, idle connection recycling, and Multi-Statements. Connections via direct endpoints connect directly to the corresponding node and do not support proxy-related features.
 
         ## Import
 
@@ -978,30 +978,30 @@ class Endpoint(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.bool] auto_add_new_nodes: 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：true：自动加入。false：不自动加入（默认）。
-        :param pulumi.Input[builtins.bool] connect_all_slave_nodes: 是否关联所有的备节点。取值：true：是。默认值。false：否。说明仅多节点实例的只读终端支持该配置。仅在实例有两个或更多备节点时才能关闭此功能。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] connection_info_tags: 连接终端标签。
-        :param pulumi.Input[builtins.str] connection_mode: 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。说明如实例的数据库代理功能已开启，可以取值为 Proxy 或 Direct。如实例的数据库代理功能未开启，仅可以取值为 Direct。可调用 DescribeDBInstanceDetail 接口查询实例数据库代理功能的开启状态。
-        :param pulumi.Input[builtins.str] connection_pool_type: 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。说明单节点实例不支持该功能。
-        :param pulumi.Input[Union['EndpointCustomRouteStrategyArgs', 'EndpointCustomRouteStrategyArgsDict']] custom_route_strategy: 连接终端的 SQL 转发规则。
-        :param pulumi.Input[builtins.str] description: 备注。
-        :param pulumi.Input[builtins.bool] enable_connection_persistent: 是否开启连接终端的连接保持功能。取值：true：是。false：否。说明仅代理终端支持该设置。
-        :param pulumi.Input[builtins.str] enable_read_only: 是否已开启全局只读，取值：Enable：开启。Disable：未开启。
-        :param pulumi.Input[builtins.str] endpoint_id: 实例连接终端 ID。
-        :param pulumi.Input[builtins.str] endpoint_name: 实例连接终端名称。
-        :param pulumi.Input[builtins.str] endpoint_type: 终端类型。取值为 Custom，自定义终端。
-        :param pulumi.Input[builtins.bool] idle_connection_reclaim: 空闲连接回收功能是否开启。true：开启。false：不开启。说明仅代理终端会返回该字段。
-        :param pulumi.Input[builtins.bool] implicit_trans_split: 是否开启事务分离。取值：true：是。false：否。说明仅代理终端会返回该字段。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
-        :param pulumi.Input[builtins.bool] master_node_routing: 是否开启主节点路由。取值：true：是。false：否。说明仅代理终端会返回该字段。
-        :param pulumi.Input[builtins.int] master_protector_timeout: 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。说明仅代理终端会返回该字段。
-        :param pulumi.Input[builtins.str] multi_statements_mode: 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
-        :param pulumi.Input[builtins.str] nodes: 连接终端配置的节点 ID 列表。当 EndpointType 为 Custom 时必选。说明如需将主节点加入终端，不需填写主节点 ID，只需填写 Primary。多个节点 ID 之间用英文逗号（,）分隔。
-        :param pulumi.Input[builtins.bool] overload_protection: 是否开启过载保护。取值：true：是。false：否。说明仅代理终端会返回该字段。
-        :param pulumi.Input[builtins.str] read_only_node_distribution_type: 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
-        :param pulumi.Input[builtins.int] read_only_node_max_delay_time: 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
-        :param pulumi.Input[builtins.str] read_write_mode: 读写模式：ReadWrite：读写。ReadOnly：只读。
-        :param pulumi.Input[builtins.bool] read_write_spliting: 是否开启读写分离。取值：true：是。默认值。false：否。
+        :param pulumi.Input[builtins.bool] auto_add_new_nodes: When the endpoint type is read/write or read-only, you can set whether new nodes are automatically added. Values: true: automatically added. false: not automatically added (default).
+        :param pulumi.Input[builtins.bool] connect_all_slave_nodes: Associate all replica nodes. Values: true: enabled (default). false: disabled. Note: Only read-only endpoints of multi-node instances support this configuration. This feature can be disabled only if the instance has two or more replica nodes.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] connection_info_tags: Connection endpoint tags.
+        :param pulumi.Input[builtins.str] connection_mode: Endpoint type. Options: Proxy: proxy endpoint. Direct: direct endpoint. Note: If the database proxy feature is enabled for the instance, you can select Proxy or Direct. If the database proxy feature is not enabled, only Direct is available. You can call the DescribeDBInstanceDetail API to check the status of the database proxy feature for the instance.
+        :param pulumi.Input[builtins.str] connection_pool_type: Connection pool type for proxy endpoints. Options: Transaction: transaction-level connection pool (default). Direct: direct mode. Note: Single-node instances do not support this feature.
+        :param pulumi.Input[Union['EndpointCustomRouteStrategyArgs', 'EndpointCustomRouteStrategyArgsDict']] custom_route_strategy: SQL forwarding rules for the connection endpoint.
+        :param pulumi.Input[builtins.str] description: Remarks.
+        :param pulumi.Input[builtins.bool] enable_connection_persistent: Enable connection keep-alive for the endpoint. Values: true: enabled. false: disabled. Note: Only proxy endpoints support this setting.
+        :param pulumi.Input[builtins.str] enable_read_only: Enable global read-only. Values: Enable: enabled. Disable: not enabled.
+        :param pulumi.Input[builtins.str] endpoint_id: Instance connection endpoint ID.
+        :param pulumi.Input[builtins.str] endpoint_name: Instance connection endpoint name.
+        :param pulumi.Input[builtins.str] endpoint_type: Endpoint type. Value: Custom (custom endpoint).
+        :param pulumi.Input[builtins.bool] idle_connection_reclaim: Enable idle connection recycling. true: enabled. false: not enabled. Note: This field is returned only for proxy endpoints.
+        :param pulumi.Input[builtins.bool] implicit_trans_split: Enable transaction separation. Options: true: yes. false: no. Note: Only proxy endpoints return this field.
+        :param pulumi.Input[builtins.str] instance_id: Instance ID.
+        :param pulumi.Input[builtins.bool] master_node_routing: Enable primary node routing. Values: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
+        :param pulumi.Input[builtins.int] master_protector_timeout: Overload protection timeout. Value range: integer between 60~7200. Unit: seconds. Note: This field is returned only for proxy endpoints.
+        :param pulumi.Input[builtins.str] multi_statements_mode: Multi-Statements mode for proxy endpoints. Options: Strict: strict mode (default). Loose: loose mode.
+        :param pulumi.Input[builtins.str] nodes: List of node IDs configured for the connection endpoint. Required when EndpointType is Custom. Note: To add the primary node to the endpoint, do not enter the primary node ID; just enter Primary. Separate multiple node IDs with commas (,).
+        :param pulumi.Input[builtins.bool] overload_protection: Enable overload protection. Options: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
+        :param pulumi.Input[builtins.str] read_only_node_distribution_type: Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, the value range is: LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, the value range is: Default: automatic allocation based on specification weight. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling.
+        :param pulumi.Input[builtins.int] read_only_node_max_delay_time: Read-only node latency threshold. Value range: 1~3600. Default: 30. Unit: seconds.
+        :param pulumi.Input[builtins.str] read_write_mode: Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
+        :param pulumi.Input[builtins.bool] read_write_spliting: Enable read/write splitting. Values: true: enabled (default). false: disabled.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1044,7 +1044,7 @@ class Endpoint(pulumi.CustomResource):
     @pulumi.getter(name="autoAddNewNodes")
     def auto_add_new_nodes(self) -> pulumi.Output[builtins.bool]:
         """
-        当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：true：自动加入。false：不自动加入（默认）。
+        When the endpoint type is read/write or read-only, you can set whether new nodes are automatically added. Values: true: automatically added. false: not automatically added (default).
         """
         return pulumi.get(self, "auto_add_new_nodes")
 
@@ -1052,7 +1052,7 @@ class Endpoint(pulumi.CustomResource):
     @pulumi.getter(name="connectAllSlaveNodes")
     def connect_all_slave_nodes(self) -> pulumi.Output[builtins.bool]:
         """
-        是否关联所有的备节点。取值：true：是。默认值。false：否。说明仅多节点实例的只读终端支持该配置。仅在实例有两个或更多备节点时才能关闭此功能。
+        Associate all replica nodes. Values: true: enabled (default). false: disabled. Note: Only read-only endpoints of multi-node instances support this configuration. This feature can be disabled only if the instance has two or more replica nodes.
         """
         return pulumi.get(self, "connect_all_slave_nodes")
 
@@ -1060,7 +1060,7 @@ class Endpoint(pulumi.CustomResource):
     @pulumi.getter(name="connectionInfoTags")
     def connection_info_tags(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        连接终端标签。
+        Connection endpoint tags.
         """
         return pulumi.get(self, "connection_info_tags")
 
@@ -1068,7 +1068,7 @@ class Endpoint(pulumi.CustomResource):
     @pulumi.getter(name="connectionMode")
     def connection_mode(self) -> pulumi.Output[builtins.str]:
         """
-        连接终端类型。取值：Proxy：代理终端。Direct：直连终端。说明如实例的数据库代理功能已开启，可以取值为 Proxy 或 Direct。如实例的数据库代理功能未开启，仅可以取值为 Direct。可调用 DescribeDBInstanceDetail 接口查询实例数据库代理功能的开启状态。
+        Endpoint type. Options: Proxy: proxy endpoint. Direct: direct endpoint. Note: If the database proxy feature is enabled for the instance, you can select Proxy or Direct. If the database proxy feature is not enabled, only Direct is available. You can call the DescribeDBInstanceDetail API to check the status of the database proxy feature for the instance.
         """
         return pulumi.get(self, "connection_mode")
 
@@ -1076,7 +1076,7 @@ class Endpoint(pulumi.CustomResource):
     @pulumi.getter(name="connectionPoolType")
     def connection_pool_type(self) -> pulumi.Output[builtins.str]:
         """
-        代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。说明单节点实例不支持该功能。
+        Connection pool type for proxy endpoints. Options: Transaction: transaction-level connection pool (default). Direct: direct mode. Note: Single-node instances do not support this feature.
         """
         return pulumi.get(self, "connection_pool_type")
 
@@ -1084,7 +1084,7 @@ class Endpoint(pulumi.CustomResource):
     @pulumi.getter(name="customRouteStrategy")
     def custom_route_strategy(self) -> pulumi.Output['outputs.EndpointCustomRouteStrategy']:
         """
-        连接终端的 SQL 转发规则。
+        SQL forwarding rules for the connection endpoint.
         """
         return pulumi.get(self, "custom_route_strategy")
 
@@ -1092,7 +1092,7 @@ class Endpoint(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        备注。
+        Remarks.
         """
         return pulumi.get(self, "description")
 
@@ -1100,7 +1100,7 @@ class Endpoint(pulumi.CustomResource):
     @pulumi.getter(name="enableConnectionPersistent")
     def enable_connection_persistent(self) -> pulumi.Output[builtins.bool]:
         """
-        是否开启连接终端的连接保持功能。取值：true：是。false：否。说明仅代理终端支持该设置。
+        Enable connection keep-alive for the endpoint. Values: true: enabled. false: disabled. Note: Only proxy endpoints support this setting.
         """
         return pulumi.get(self, "enable_connection_persistent")
 
@@ -1108,7 +1108,7 @@ class Endpoint(pulumi.CustomResource):
     @pulumi.getter(name="enableReadOnly")
     def enable_read_only(self) -> pulumi.Output[builtins.str]:
         """
-        是否已开启全局只读，取值：Enable：开启。Disable：未开启。
+        Enable global read-only. Values: Enable: enabled. Disable: not enabled.
         """
         return pulumi.get(self, "enable_read_only")
 
@@ -1116,7 +1116,7 @@ class Endpoint(pulumi.CustomResource):
     @pulumi.getter(name="endpointId")
     def endpoint_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例连接终端 ID。
+        Instance connection endpoint ID.
         """
         return pulumi.get(self, "endpoint_id")
 
@@ -1124,7 +1124,7 @@ class Endpoint(pulumi.CustomResource):
     @pulumi.getter(name="endpointName")
     def endpoint_name(self) -> pulumi.Output[builtins.str]:
         """
-        实例连接终端名称。
+        Instance connection endpoint name.
         """
         return pulumi.get(self, "endpoint_name")
 
@@ -1132,7 +1132,7 @@ class Endpoint(pulumi.CustomResource):
     @pulumi.getter(name="endpointType")
     def endpoint_type(self) -> pulumi.Output[builtins.str]:
         """
-        终端类型。取值为 Custom，自定义终端。
+        Endpoint type. Value: Custom (custom endpoint).
         """
         return pulumi.get(self, "endpoint_type")
 
@@ -1140,7 +1140,7 @@ class Endpoint(pulumi.CustomResource):
     @pulumi.getter(name="idleConnectionReclaim")
     def idle_connection_reclaim(self) -> pulumi.Output[builtins.bool]:
         """
-        空闲连接回收功能是否开启。true：开启。false：不开启。说明仅代理终端会返回该字段。
+        Enable idle connection recycling. true: enabled. false: not enabled. Note: This field is returned only for proxy endpoints.
         """
         return pulumi.get(self, "idle_connection_reclaim")
 
@@ -1148,7 +1148,7 @@ class Endpoint(pulumi.CustomResource):
     @pulumi.getter(name="implicitTransSplit")
     def implicit_trans_split(self) -> pulumi.Output[builtins.bool]:
         """
-        是否开启事务分离。取值：true：是。false：否。说明仅代理终端会返回该字段。
+        Enable transaction separation. Options: true: yes. false: no. Note: Only proxy endpoints return this field.
         """
         return pulumi.get(self, "implicit_trans_split")
 
@@ -1156,7 +1156,7 @@ class Endpoint(pulumi.CustomResource):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例 ID。
+        Instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -1164,7 +1164,7 @@ class Endpoint(pulumi.CustomResource):
     @pulumi.getter(name="masterNodeRouting")
     def master_node_routing(self) -> pulumi.Output[builtins.bool]:
         """
-        是否开启主节点路由。取值：true：是。false：否。说明仅代理终端会返回该字段。
+        Enable primary node routing. Values: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
         """
         return pulumi.get(self, "master_node_routing")
 
@@ -1172,7 +1172,7 @@ class Endpoint(pulumi.CustomResource):
     @pulumi.getter(name="masterProtectorTimeout")
     def master_protector_timeout(self) -> pulumi.Output[builtins.int]:
         """
-        过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。说明仅代理终端会返回该字段。
+        Overload protection timeout. Value range: integer between 60~7200. Unit: seconds. Note: This field is returned only for proxy endpoints.
         """
         return pulumi.get(self, "master_protector_timeout")
 
@@ -1180,7 +1180,7 @@ class Endpoint(pulumi.CustomResource):
     @pulumi.getter(name="multiStatementsMode")
     def multi_statements_mode(self) -> pulumi.Output[builtins.str]:
         """
-        代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+        Multi-Statements mode for proxy endpoints. Options: Strict: strict mode (default). Loose: loose mode.
         """
         return pulumi.get(self, "multi_statements_mode")
 
@@ -1188,7 +1188,7 @@ class Endpoint(pulumi.CustomResource):
     @pulumi.getter
     def nodes(self) -> pulumi.Output[builtins.str]:
         """
-        连接终端配置的节点 ID 列表。当 EndpointType 为 Custom 时必选。说明如需将主节点加入终端，不需填写主节点 ID，只需填写 Primary。多个节点 ID 之间用英文逗号（,）分隔。
+        List of node IDs configured for the connection endpoint. Required when EndpointType is Custom. Note: To add the primary node to the endpoint, do not enter the primary node ID; just enter Primary. Separate multiple node IDs with commas (,).
         """
         return pulumi.get(self, "nodes")
 
@@ -1196,7 +1196,7 @@ class Endpoint(pulumi.CustomResource):
     @pulumi.getter(name="overloadProtection")
     def overload_protection(self) -> pulumi.Output[builtins.bool]:
         """
-        是否开启过载保护。取值：true：是。false：否。说明仅代理终端会返回该字段。
+        Enable overload protection. Options: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
         """
         return pulumi.get(self, "overload_protection")
 
@@ -1204,7 +1204,7 @@ class Endpoint(pulumi.CustomResource):
     @pulumi.getter(name="readOnlyNodeDistributionType")
     def read_only_node_distribution_type(self) -> pulumi.Output[builtins.str]:
         """
-        读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+        Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, the value range is: LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, the value range is: Default: automatic allocation based on specification weight. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling.
         """
         return pulumi.get(self, "read_only_node_distribution_type")
 
@@ -1212,7 +1212,7 @@ class Endpoint(pulumi.CustomResource):
     @pulumi.getter(name="readOnlyNodeMaxDelayTime")
     def read_only_node_max_delay_time(self) -> pulumi.Output[builtins.int]:
         """
-        只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+        Read-only node latency threshold. Value range: 1~3600. Default: 30. Unit: seconds.
         """
         return pulumi.get(self, "read_only_node_max_delay_time")
 
@@ -1225,7 +1225,7 @@ class Endpoint(pulumi.CustomResource):
     @pulumi.getter(name="readWriteMode")
     def read_write_mode(self) -> pulumi.Output[builtins.str]:
         """
-        读写模式：ReadWrite：读写。ReadOnly：只读。
+        Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
         """
         return pulumi.get(self, "read_write_mode")
 
@@ -1233,7 +1233,7 @@ class Endpoint(pulumi.CustomResource):
     @pulumi.getter(name="readWriteSpliting")
     def read_write_spliting(self) -> pulumi.Output[builtins.bool]:
         """
-        是否开启读写分离。取值：true：是。默认值。false：否。
+        Enable read/write splitting. Values: true: enabled (default). false: disabled.
         """
         return pulumi.get(self, "read_write_spliting")
 

@@ -19,14 +19,14 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
     public static final ZoneArgs Empty = new ZoneArgs();
 
     /**
-     * 域名的项目。
+     * Domain project.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 域名的项目。
+     * @return Domain project.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -34,14 +34,14 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 域名的备注。
+     * Domain notes
      * 
      */
     @Import(name="remark")
     private @Nullable Output<String> remark;
 
     /**
-     * @return 域名的备注。
+     * @return Domain notes
      * 
      */
     public Optional<Output<String>> remark() {
@@ -56,14 +56,14 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 域名。
+     * Domain name.
      * 
      */
     @Import(name="zoneName", required=true)
     private Output<String> zoneName;
 
     /**
-     * @return 域名。
+     * @return Domain name.
      * 
      */
     public Output<String> zoneName() {
@@ -98,7 +98,7 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 域名的项目。
+         * @param projectName Domain project.
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 域名的项目。
+         * @param projectName Domain project.
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param remark 域名的备注。
+         * @param remark Domain notes
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param remark 域名的备注。
+         * @param remark Domain notes
          * 
          * @return builder
          * 
@@ -153,7 +153,7 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneName 域名。
+         * @param zoneName Domain name.
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneName 域名。
+         * @param zoneName Domain name.
          * 
          * @return builder
          * 

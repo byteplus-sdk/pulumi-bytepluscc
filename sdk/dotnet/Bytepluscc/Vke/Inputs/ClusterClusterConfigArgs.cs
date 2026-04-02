@@ -14,31 +14,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
     public sealed class ClusterClusterConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 集群 API Server 访问的 IPv4 地址信息。
+        /// Cluster API Server access IPv4 address information
         /// </summary>
         [Input("apiServerEndpoints")]
         public Input<Inputs.ClusterClusterConfigApiServerEndpointsArgs>? ApiServerEndpoints { get; set; }
 
         /// <summary>
-        /// 集群 API Server 公网访问配置信息。ApiServerPublicAccessEnable=true时才返回的参数。
+        /// Cluster API Server public access configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
         /// </summary>
         [Input("apiServerPublicAccessConfig")]
         public Input<Inputs.ClusterClusterConfigApiServerPublicAccessConfigArgs>? ApiServerPublicAccessConfig { get; set; }
 
         /// <summary>
-        /// 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+        /// Node public access configuration. Parameter value description: false: Disabled. true: Enabled
         /// </summary>
         [Input("apiServerPublicAccessEnabled")]
         public Input<bool>? ApiServerPublicAccessEnabled { get; set; }
 
         /// <summary>
-        /// 集群网络协议栈，参数值说明：Ipv4：Ipv4 单栈。Ipv6：【邀测·申请试用】Ipv6 单栈。DualStack：【邀测·申请试用】Ipv4 和 Ipv6 双栈。
+        /// Cluster network protocol stack. Parameter value description: Ipv4: Ipv4 single stack. Ipv6: [Invitation test · Trial application] Ipv6 single stack. DualStack: [Invitation test · Trial application] Ipv4 and Ipv6 dual stack
         /// </summary>
         [Input("ipFamily")]
         public Input<string>? IpFamily { get; set; }
 
         /// <summary>
-        /// 节点公网访问配置，参数值说明：false：未开启。true：已开启。
+        /// Node public access configuration. Parameter value description: false: Disabled. true: Enabled
         /// </summary>
         [Input("resourcePublicAccessDefaultEnabled")]
         public Input<bool>? ResourcePublicAccessDefaultEnabled { get; set; }
@@ -47,7 +47,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         private InputList<string>? _securityGroupIds;
 
         /// <summary>
-        /// 集群控制面及节点使用的的安全组。
+        /// Security group used by the cluster control plane and nodes.
         /// </summary>
         public InputList<string> SecurityGroupIds
         {
@@ -59,7 +59,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         private InputList<string>? _subnetIds;
 
         /// <summary>
-        /// 集群控制面在私有网络内通信的子网 ID。
+        /// Subnet ID for cluster control plane communication within the private network.
         /// </summary>
         public InputList<string> SubnetIds
         {
@@ -68,7 +68,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         }
 
         /// <summary>
-        /// 集群控制面及部分节点的网络所在的私有网络（VPC）ID。
+        /// Private network (VPC) ID where the cluster control plane and some nodes are located.
         /// </summary>
         [Input("vpcId")]
         public Input<string>? VpcId { get; set; }

@@ -17,14 +17,14 @@ public final class DnatentryArgs extends com.pulumi.resources.ResourceArgs {
     public static final DnatentryArgs Empty = new DnatentryArgs();
 
     /**
-     * DNAT规则的名称。
+     * Name of the DNAT rule.
      * 
      */
     @Import(name="dnatEntryName")
     private @Nullable Output<String> dnatEntryName;
 
     /**
-     * @return DNAT规则的名称。
+     * @return Name of the DNAT rule.
      * 
      */
     public Optional<Output<String>> dnatEntryName() {
@@ -32,14 +32,14 @@ public final class DnatentryArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NAT网关用于网络地址转换的IP地址。当NAT网关为公网NAT网关时，传入其绑定的公网IP地址。当NAT网关为私网NAT网关时，传入其中转IP地址。
+     * IP address used by the NAT gateway for network address translation. If the NAT gateway is a public NAT gateway, enter its bound public IP address. If the NAT gateway is a private NAT gateway, enter its transit IP address.
      * 
      */
     @Import(name="externalIp", required=true)
     private Output<String> externalIp;
 
     /**
-     * @return NAT网关用于网络地址转换的IP地址。当NAT网关为公网NAT网关时，传入其绑定的公网IP地址。当NAT网关为私网NAT网关时，传入其中转IP地址。
+     * @return IP address used by the NAT gateway for network address translation. If the NAT gateway is a public NAT gateway, enter its bound public IP address. If the NAT gateway is a private NAT gateway, enter its transit IP address.
      * 
      */
     public Output<String> externalIp() {
@@ -47,14 +47,14 @@ public final class DnatentryArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 接收来自公网外部请求的端口或端口段。
+     * Port or port range that receives requests from the public network.
      * 
      */
     @Import(name="externalPort", required=true)
     private Output<String> externalPort;
 
     /**
-     * @return 接收来自公网外部请求的端口或端口段。
+     * @return Port or port range that receives requests from the public network.
      * 
      */
     public Output<String> externalPort() {
@@ -62,14 +62,14 @@ public final class DnatentryArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 云服务器实例的私网IP。
+     * Private IP address of the cloud server instance.
      * 
      */
     @Import(name="internalIp", required=true)
     private Output<String> internalIp;
 
     /**
-     * @return 云服务器实例的私网IP。
+     * @return Private IP address of the cloud server instance.
      * 
      */
     public Output<String> internalIp() {
@@ -77,14 +77,14 @@ public final class DnatentryArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 云服务器实例私网IP的端口或端口段。
+     * Port or port range of the private IP address of the cloud server instance.
      * 
      */
     @Import(name="internalPort", required=true)
     private Output<String> internalPort;
 
     /**
-     * @return 云服务器实例私网IP的端口或端口段。
+     * @return Port or port range of the private IP address of the cloud server instance.
      * 
      */
     public Output<String> internalPort() {
@@ -92,14 +92,14 @@ public final class DnatentryArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * DNAT规则所属NAT网关的ID。
+     * ID of the NAT gateway to which the DNAT rule belongs.
      * 
      */
     @Import(name="natGatewayId", required=true)
     private Output<String> natGatewayId;
 
     /**
-     * @return DNAT规则所属NAT网关的ID。
+     * @return ID of the NAT gateway to which the DNAT rule belongs.
      * 
      */
     public Output<String> natGatewayId() {
@@ -107,14 +107,14 @@ public final class DnatentryArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * DNAT规则的端口类型。specified：指定端口。any：任意端口。即IP映射。
+     * Port type of the DNAT rule. specified: Specified port. any: Any port, i.e., IP mapping.
      * 
      */
     @Import(name="portType")
     private @Nullable Output<String> portType;
 
     /**
-     * @return DNAT规则的端口类型。specified：指定端口。any：任意端口。即IP映射。
+     * @return Port type of the DNAT rule. specified: Specified port. any: Any port, i.e., IP mapping.
      * 
      */
     public Optional<Output<String>> portType() {
@@ -122,14 +122,14 @@ public final class DnatentryArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 协议类型。tcp：转发TCP协议的报文。udp：转发UDP协议的报文。
+     * Protocol type. tcp: Forwards TCP protocol packets. udp: Forwards UDP protocol packets.
      * 
      */
     @Import(name="protocol", required=true)
     private Output<String> protocol;
 
     /**
-     * @return 协议类型。tcp：转发TCP协议的报文。udp：转发UDP协议的报文。
+     * @return Protocol type. tcp: Forwards TCP protocol packets. udp: Forwards UDP protocol packets.
      * 
      */
     public Output<String> protocol() {
@@ -168,7 +168,7 @@ public final class DnatentryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dnatEntryName DNAT规则的名称。
+         * @param dnatEntryName Name of the DNAT rule.
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class DnatentryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dnatEntryName DNAT规则的名称。
+         * @param dnatEntryName Name of the DNAT rule.
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class DnatentryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param externalIp NAT网关用于网络地址转换的IP地址。当NAT网关为公网NAT网关时，传入其绑定的公网IP地址。当NAT网关为私网NAT网关时，传入其中转IP地址。
+         * @param externalIp IP address used by the NAT gateway for network address translation. If the NAT gateway is a public NAT gateway, enter its bound public IP address. If the NAT gateway is a private NAT gateway, enter its transit IP address.
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class DnatentryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param externalIp NAT网关用于网络地址转换的IP地址。当NAT网关为公网NAT网关时，传入其绑定的公网IP地址。当NAT网关为私网NAT网关时，传入其中转IP地址。
+         * @param externalIp IP address used by the NAT gateway for network address translation. If the NAT gateway is a public NAT gateway, enter its bound public IP address. If the NAT gateway is a private NAT gateway, enter its transit IP address.
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class DnatentryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param externalPort 接收来自公网外部请求的端口或端口段。
+         * @param externalPort Port or port range that receives requests from the public network.
          * 
          * @return builder
          * 
@@ -221,7 +221,7 @@ public final class DnatentryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param externalPort 接收来自公网外部请求的端口或端口段。
+         * @param externalPort Port or port range that receives requests from the public network.
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class DnatentryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param internalIp 云服务器实例的私网IP。
+         * @param internalIp Private IP address of the cloud server instance.
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class DnatentryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param internalIp 云服务器实例的私网IP。
+         * @param internalIp Private IP address of the cloud server instance.
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class DnatentryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param internalPort 云服务器实例私网IP的端口或端口段。
+         * @param internalPort Port or port range of the private IP address of the cloud server instance.
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class DnatentryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param internalPort 云服务器实例私网IP的端口或端口段。
+         * @param internalPort Port or port range of the private IP address of the cloud server instance.
          * 
          * @return builder
          * 
@@ -273,7 +273,7 @@ public final class DnatentryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param natGatewayId DNAT规则所属NAT网关的ID。
+         * @param natGatewayId ID of the NAT gateway to which the DNAT rule belongs.
          * 
          * @return builder
          * 
@@ -284,7 +284,7 @@ public final class DnatentryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param natGatewayId DNAT规则所属NAT网关的ID。
+         * @param natGatewayId ID of the NAT gateway to which the DNAT rule belongs.
          * 
          * @return builder
          * 
@@ -294,7 +294,7 @@ public final class DnatentryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param portType DNAT规则的端口类型。specified：指定端口。any：任意端口。即IP映射。
+         * @param portType Port type of the DNAT rule. specified: Specified port. any: Any port, i.e., IP mapping.
          * 
          * @return builder
          * 
@@ -305,7 +305,7 @@ public final class DnatentryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param portType DNAT规则的端口类型。specified：指定端口。any：任意端口。即IP映射。
+         * @param portType Port type of the DNAT rule. specified: Specified port. any: Any port, i.e., IP mapping.
          * 
          * @return builder
          * 
@@ -315,7 +315,7 @@ public final class DnatentryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocol 协议类型。tcp：转发TCP协议的报文。udp：转发UDP协议的报文。
+         * @param protocol Protocol type. tcp: Forwards TCP protocol packets. udp: Forwards UDP protocol packets.
          * 
          * @return builder
          * 
@@ -326,7 +326,7 @@ public final class DnatentryArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocol 协议类型。tcp：转发TCP协议的报文。udp：转发UDP协议的报文。
+         * @param protocol Protocol type. tcp: Forwards TCP protocol packets. udp: Forwards UDP protocol packets.
          * 
          * @return builder
          * 

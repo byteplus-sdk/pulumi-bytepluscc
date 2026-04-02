@@ -38,18 +38,18 @@ class EniArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['EniTagArgs']]]] = None):
         """
         The set of arguments for constructing a Eni resource.
-        :param pulumi.Input[builtins.bool] delete_on_termination: 是否开启随云服务器实例删除，true为开启，false为不开启。
-        :param pulumi.Input[builtins.str] description: 辅助网卡的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头；可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不填默认空字符串。
-        :param pulumi.Input[builtins.str] instance_id: 网卡绑定实例的ID，如果网卡未挂载或参数ServiceManaged为true，则InstanceId返回值均为空。
-        :param pulumi.Input[builtins.int] ipv6_address_count: 为网卡分配私网IPv6地址的数量，传入该参数，系统会自动从网卡所属子网中，分配相应数量的空闲私网IPv6地址，创建时与IPv6Sets不能同时传入。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ipv6_sets: 网卡的IPv6地址列表，例如[2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf]。
-        :param pulumi.Input[builtins.str] network_interface_name: 网卡名称，长度限制为1 ~ 128个字符，需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不填默认是辅助网卡的ID。
-        :param pulumi.Input[builtins.bool] port_security_enabled: 是否为网卡开启源/目的地址检查，开启后，系统会自动阻止源地址或目的地址不是当前网卡的流量，true为开启，false为不开启（默认值）。
-        :param pulumi.Input['EniPrimaryIpAddressArgs'] primary_ip_address: 网卡的主私有IPv4地址，不支持修改地址，可以修改公网IP。如果指定，必须是对应子网中的一个空闲的私网IPv4地址，如果不指定，从对应子网中自动分配一个空闲的私网IPv4地址。例如：192.XX.XX.10。
-        :param pulumi.Input[builtins.str] project_name: 网卡所属项目的名称。
-        :param pulumi.Input[builtins.int] secondary_private_ip_address_count: 为辅助网卡自动分配辅助私网IPv4地址数量，取值1~49。创建时不能与PrivateIpSets同时传入。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_ids: 辅助网卡加入一个或多个安全组的ID。
-        :param pulumi.Input[builtins.str] subnet_id: 辅助网卡所在子网的ID。
+        :param pulumi.Input[builtins.bool] delete_on_termination: Enable release with cloud server instance deletion. true to enable, false to disable
+        :param pulumi.Input[builtins.str] description: Description for the auxiliary network interface. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Allowed characters include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string.
+        :param pulumi.Input[builtins.str] instance_id: ID of the instance bound to the NIC. If the NIC is not attached or the ServiceManaged parameter is true, InstanceId returns empty
+        :param pulumi.Input[builtins.int] ipv6_address_count: Number of private IPv6 addresses assigned to the network interface. When this parameter is specified, the system automatically assigns the corresponding number of available private IPv6 addresses from the subnet to which the network interface belongs. Cannot be used together with IPv6Sets during creation.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ipv6_sets: IPv6 address list of the network interface, for example [2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf].
+        :param pulumi.Input[builtins.str] network_interface_name: NIC name. Length must be between 1 and 128 characters, starting with a letter, Chinese character, or number. Can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the ID of the secondary NIC
+        :param pulumi.Input[builtins.bool] port_security_enabled: Enable source/destination address check for the NIC. When enabled, the system automatically blocks traffic whose source or destination address does not match the current NIC. true to enable, false to disable (default)
+        :param pulumi.Input['EniPrimaryIpAddressArgs'] primary_ip_address: Primary private IPv4 address of the network interface. Address modification is not supported, but you can modify the public IP. If specified, it must be an available private IPv4 address in the corresponding subnet. If not specified, an available private IPv4 address will be automatically assigned from the corresponding subnet. For example: 192.XX.XX.10.
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the NIC belongs
+        :param pulumi.Input[builtins.int] secondary_private_ip_address_count: Number of auxiliary private IPv4 addresses automatically assigned to the auxiliary network interface. Value range: 1–49. Cannot be used together with PrivateIpSets during creation.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_ids: ID of one or more security groups joined by the auxiliary network interface.
+        :param pulumi.Input[builtins.str] subnet_id: ID of the subnet where the auxiliary network interface resides.
         """
         if delete_on_termination is not None:
             pulumi.set(__self__, "delete_on_termination", delete_on_termination)
@@ -84,7 +84,7 @@ class EniArgs:
     @pulumi.getter(name="deleteOnTermination")
     def delete_on_termination(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启随云服务器实例删除，true为开启，false为不开启。
+        Enable release with cloud server instance deletion. true to enable, false to disable
         """
         return pulumi.get(self, "delete_on_termination")
 
@@ -96,7 +96,7 @@ class EniArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        辅助网卡的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头；可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不填默认空字符串。
+        Description for the auxiliary network interface. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Allowed characters include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -108,7 +108,7 @@ class EniArgs:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网卡绑定实例的ID，如果网卡未挂载或参数ServiceManaged为true，则InstanceId返回值均为空。
+        ID of the instance bound to the NIC. If the NIC is not attached or the ServiceManaged parameter is true, InstanceId returns empty
         """
         return pulumi.get(self, "instance_id")
 
@@ -120,7 +120,7 @@ class EniArgs:
     @pulumi.getter(name="ipv6AddressCount")
     def ipv6_address_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        为网卡分配私网IPv6地址的数量，传入该参数，系统会自动从网卡所属子网中，分配相应数量的空闲私网IPv6地址，创建时与IPv6Sets不能同时传入。
+        Number of private IPv6 addresses assigned to the network interface. When this parameter is specified, the system automatically assigns the corresponding number of available private IPv6 addresses from the subnet to which the network interface belongs. Cannot be used together with IPv6Sets during creation.
         """
         return pulumi.get(self, "ipv6_address_count")
 
@@ -132,7 +132,7 @@ class EniArgs:
     @pulumi.getter(name="ipv6Sets")
     def ipv6_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        网卡的IPv6地址列表，例如[2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf]。
+        IPv6 address list of the network interface, for example [2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf].
         """
         return pulumi.get(self, "ipv6_sets")
 
@@ -144,7 +144,7 @@ class EniArgs:
     @pulumi.getter(name="networkInterfaceName")
     def network_interface_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网卡名称，长度限制为1 ~ 128个字符，需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不填默认是辅助网卡的ID。
+        NIC name. Length must be between 1 and 128 characters, starting with a letter, Chinese character, or number. Can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the ID of the secondary NIC
         """
         return pulumi.get(self, "network_interface_name")
 
@@ -156,7 +156,7 @@ class EniArgs:
     @pulumi.getter(name="portSecurityEnabled")
     def port_security_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否为网卡开启源/目的地址检查，开启后，系统会自动阻止源地址或目的地址不是当前网卡的流量，true为开启，false为不开启（默认值）。
+        Enable source/destination address check for the NIC. When enabled, the system automatically blocks traffic whose source or destination address does not match the current NIC. true to enable, false to disable (default)
         """
         return pulumi.get(self, "port_security_enabled")
 
@@ -168,7 +168,7 @@ class EniArgs:
     @pulumi.getter(name="primaryIpAddress")
     def primary_ip_address(self) -> Optional[pulumi.Input['EniPrimaryIpAddressArgs']]:
         """
-        网卡的主私有IPv4地址，不支持修改地址，可以修改公网IP。如果指定，必须是对应子网中的一个空闲的私网IPv4地址，如果不指定，从对应子网中自动分配一个空闲的私网IPv4地址。例如：192.XX.XX.10。
+        Primary private IPv4 address of the network interface. Address modification is not supported, but you can modify the public IP. If specified, it must be an available private IPv4 address in the corresponding subnet. If not specified, an available private IPv4 address will be automatically assigned from the corresponding subnet. For example: 192.XX.XX.10.
         """
         return pulumi.get(self, "primary_ip_address")
 
@@ -189,7 +189,7 @@ class EniArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网卡所属项目的名称。
+        Name of the project to which the NIC belongs
         """
         return pulumi.get(self, "project_name")
 
@@ -201,7 +201,7 @@ class EniArgs:
     @pulumi.getter(name="secondaryPrivateIpAddressCount")
     def secondary_private_ip_address_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        为辅助网卡自动分配辅助私网IPv4地址数量，取值1~49。创建时不能与PrivateIpSets同时传入。
+        Number of auxiliary private IPv4 addresses automatically assigned to the auxiliary network interface. Value range: 1–49. Cannot be used together with PrivateIpSets during creation.
         """
         return pulumi.get(self, "secondary_private_ip_address_count")
 
@@ -213,7 +213,7 @@ class EniArgs:
     @pulumi.getter(name="securityGroupIds")
     def security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        辅助网卡加入一个或多个安全组的ID。
+        ID of one or more security groups joined by the auxiliary network interface.
         """
         return pulumi.get(self, "security_group_ids")
 
@@ -225,7 +225,7 @@ class EniArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        辅助网卡所在子网的ID。
+        ID of the subnet where the auxiliary network interface resides.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -273,29 +273,29 @@ class _EniState:
                  zone_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Eni resources.
-        :param pulumi.Input[builtins.str] account_id: 网卡所有者ID。
-        :param pulumi.Input[builtins.str] created_time: 网卡创建时间。
-        :param pulumi.Input[builtins.bool] delete_on_termination: 是否开启随云服务器实例删除，true为开启，false为不开启。
-        :param pulumi.Input[builtins.str] description: 辅助网卡的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头；可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不填默认空字符串。
-        :param pulumi.Input[builtins.str] instance_id: 网卡绑定实例的ID，如果网卡未挂载或参数ServiceManaged为true，则InstanceId返回值均为空。
-        :param pulumi.Input[builtins.int] ipv6_address_count: 为网卡分配私网IPv6地址的数量，传入该参数，系统会自动从网卡所属子网中，分配相应数量的空闲私网IPv6地址，创建时与IPv6Sets不能同时传入。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ipv6_sets: 网卡的IPv6地址列表，例如[2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf]。
-        :param pulumi.Input[builtins.str] mac_address: 网卡的MAC地址。
-        :param pulumi.Input[builtins.str] network_interface_id: 网卡ID。
-        :param pulumi.Input[builtins.str] network_interface_name: 网卡名称，长度限制为1 ~ 128个字符，需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不填默认是辅助网卡的ID。
-        :param pulumi.Input[builtins.bool] port_security_enabled: 是否为网卡开启源/目的地址检查，开启后，系统会自动阻止源地址或目的地址不是当前网卡的流量，true为开启，false为不开启（默认值）。
-        :param pulumi.Input['EniPrimaryIpAddressArgs'] primary_ip_address: 网卡的主私有IPv4地址，不支持修改地址，可以修改公网IP。如果指定，必须是对应子网中的一个空闲的私网IPv4地址，如果不指定，从对应子网中自动分配一个空闲的私网IPv4地址。例如：192.XX.XX.10。
-        :param pulumi.Input[builtins.str] project_name: 网卡所属项目的名称。
-        :param pulumi.Input[builtins.int] secondary_private_ip_address_count: 为辅助网卡自动分配辅助私网IPv4地址数量，取值1~49。创建时不能与PrivateIpSets同时传入。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_ids: 辅助网卡加入一个或多个安全组的ID。
-        :param pulumi.Input[builtins.bool] service_managed: 是否为官方服务网卡，true为是，false为否。
-        :param pulumi.Input[builtins.str] status: 网卡的绑定状态。Creating：创建中。Available：未挂载。Attaching：挂载中。InUse：已挂载。Detaching：卸载中。Deleting：删除中。
-        :param pulumi.Input[builtins.str] subnet_id: 辅助网卡所在子网的ID。
-        :param pulumi.Input[builtins.str] type: 网卡类型。primary：主网卡，secondary：辅助网卡
-        :param pulumi.Input[builtins.str] updated_time: 更新网卡的时间。
-        :param pulumi.Input[builtins.str] vpc_id: 网卡所属的VPC的ID。
-        :param pulumi.Input[builtins.str] vpc_name: 网卡所属VPC的名称。
-        :param pulumi.Input[builtins.str] zone_id: 网卡所属可用区的ID。
+        :param pulumi.Input[builtins.str] account_id: NIC owner ID
+        :param pulumi.Input[builtins.str] created_time: NIC creation time
+        :param pulumi.Input[builtins.bool] delete_on_termination: Enable release with cloud server instance deletion. true to enable, false to disable
+        :param pulumi.Input[builtins.str] description: Description for the auxiliary network interface. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Allowed characters include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string.
+        :param pulumi.Input[builtins.str] instance_id: ID of the instance bound to the NIC. If the NIC is not attached or the ServiceManaged parameter is true, InstanceId returns empty
+        :param pulumi.Input[builtins.int] ipv6_address_count: Number of private IPv6 addresses assigned to the network interface. When this parameter is specified, the system automatically assigns the corresponding number of available private IPv6 addresses from the subnet to which the network interface belongs. Cannot be used together with IPv6Sets during creation.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ipv6_sets: IPv6 address list of the network interface, for example [2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf].
+        :param pulumi.Input[builtins.str] mac_address: MAC address of the network interface.
+        :param pulumi.Input[builtins.str] network_interface_id: Network interface ID.
+        :param pulumi.Input[builtins.str] network_interface_name: NIC name. Length must be between 1 and 128 characters, starting with a letter, Chinese character, or number. Can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the ID of the secondary NIC
+        :param pulumi.Input[builtins.bool] port_security_enabled: Enable source/destination address check for the NIC. When enabled, the system automatically blocks traffic whose source or destination address does not match the current NIC. true to enable, false to disable (default)
+        :param pulumi.Input['EniPrimaryIpAddressArgs'] primary_ip_address: Primary private IPv4 address of the network interface. Address modification is not supported, but you can modify the public IP. If specified, it must be an available private IPv4 address in the corresponding subnet. If not specified, an available private IPv4 address will be automatically assigned from the corresponding subnet. For example: 192.XX.XX.10.
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the NIC belongs
+        :param pulumi.Input[builtins.int] secondary_private_ip_address_count: Number of auxiliary private IPv4 addresses automatically assigned to the auxiliary network interface. Value range: 1–49. Cannot be used together with PrivateIpSets during creation.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_ids: ID of one or more security groups joined by the auxiliary network interface.
+        :param pulumi.Input[builtins.bool] service_managed: Indicates whether this is an official service network interface. true for yes, false for no.
+        :param pulumi.Input[builtins.str] status: Binding status of the network interface. Creating: In progress. Available: Not attached. Attaching: In progress. InUse: Attached. Detaching: In progress. Deleting: In progress.
+        :param pulumi.Input[builtins.str] subnet_id: ID of the subnet where the auxiliary network interface resides.
+        :param pulumi.Input[builtins.str] type: NIC type. primary: primary NIC, secondary: secondary NIC
+        :param pulumi.Input[builtins.str] updated_time: NIC update time
+        :param pulumi.Input[builtins.str] vpc_id: ID of the VPC to which the network interface belongs.
+        :param pulumi.Input[builtins.str] vpc_name: Name of the VPC to which the NIC belongs
+        :param pulumi.Input[builtins.str] zone_id: ID of the availability zone to which the network interface belongs.
         """
         if account_id is not None:
             pulumi.set(__self__, "account_id", account_id)
@@ -352,7 +352,7 @@ class _EniState:
     @pulumi.getter(name="accountId")
     def account_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网卡所有者ID。
+        NIC owner ID
         """
         return pulumi.get(self, "account_id")
 
@@ -364,7 +364,7 @@ class _EniState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网卡创建时间。
+        NIC creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -376,7 +376,7 @@ class _EniState:
     @pulumi.getter(name="deleteOnTermination")
     def delete_on_termination(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启随云服务器实例删除，true为开启，false为不开启。
+        Enable release with cloud server instance deletion. true to enable, false to disable
         """
         return pulumi.get(self, "delete_on_termination")
 
@@ -388,7 +388,7 @@ class _EniState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        辅助网卡的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头；可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不填默认空字符串。
+        Description for the auxiliary network interface. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Allowed characters include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -400,7 +400,7 @@ class _EniState:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网卡绑定实例的ID，如果网卡未挂载或参数ServiceManaged为true，则InstanceId返回值均为空。
+        ID of the instance bound to the NIC. If the NIC is not attached or the ServiceManaged parameter is true, InstanceId returns empty
         """
         return pulumi.get(self, "instance_id")
 
@@ -412,7 +412,7 @@ class _EniState:
     @pulumi.getter(name="ipv6AddressCount")
     def ipv6_address_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        为网卡分配私网IPv6地址的数量，传入该参数，系统会自动从网卡所属子网中，分配相应数量的空闲私网IPv6地址，创建时与IPv6Sets不能同时传入。
+        Number of private IPv6 addresses assigned to the network interface. When this parameter is specified, the system automatically assigns the corresponding number of available private IPv6 addresses from the subnet to which the network interface belongs. Cannot be used together with IPv6Sets during creation.
         """
         return pulumi.get(self, "ipv6_address_count")
 
@@ -424,7 +424,7 @@ class _EniState:
     @pulumi.getter(name="ipv6Sets")
     def ipv6_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        网卡的IPv6地址列表，例如[2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf]。
+        IPv6 address list of the network interface, for example [2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf].
         """
         return pulumi.get(self, "ipv6_sets")
 
@@ -436,7 +436,7 @@ class _EniState:
     @pulumi.getter(name="macAddress")
     def mac_address(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网卡的MAC地址。
+        MAC address of the network interface.
         """
         return pulumi.get(self, "mac_address")
 
@@ -448,7 +448,7 @@ class _EniState:
     @pulumi.getter(name="networkInterfaceId")
     def network_interface_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网卡ID。
+        Network interface ID.
         """
         return pulumi.get(self, "network_interface_id")
 
@@ -460,7 +460,7 @@ class _EniState:
     @pulumi.getter(name="networkInterfaceName")
     def network_interface_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网卡名称，长度限制为1 ~ 128个字符，需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不填默认是辅助网卡的ID。
+        NIC name. Length must be between 1 and 128 characters, starting with a letter, Chinese character, or number. Can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the ID of the secondary NIC
         """
         return pulumi.get(self, "network_interface_name")
 
@@ -472,7 +472,7 @@ class _EniState:
     @pulumi.getter(name="portSecurityEnabled")
     def port_security_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否为网卡开启源/目的地址检查，开启后，系统会自动阻止源地址或目的地址不是当前网卡的流量，true为开启，false为不开启（默认值）。
+        Enable source/destination address check for the NIC. When enabled, the system automatically blocks traffic whose source or destination address does not match the current NIC. true to enable, false to disable (default)
         """
         return pulumi.get(self, "port_security_enabled")
 
@@ -484,7 +484,7 @@ class _EniState:
     @pulumi.getter(name="primaryIpAddress")
     def primary_ip_address(self) -> Optional[pulumi.Input['EniPrimaryIpAddressArgs']]:
         """
-        网卡的主私有IPv4地址，不支持修改地址，可以修改公网IP。如果指定，必须是对应子网中的一个空闲的私网IPv4地址，如果不指定，从对应子网中自动分配一个空闲的私网IPv4地址。例如：192.XX.XX.10。
+        Primary private IPv4 address of the network interface. Address modification is not supported, but you can modify the public IP. If specified, it must be an available private IPv4 address in the corresponding subnet. If not specified, an available private IPv4 address will be automatically assigned from the corresponding subnet. For example: 192.XX.XX.10.
         """
         return pulumi.get(self, "primary_ip_address")
 
@@ -505,7 +505,7 @@ class _EniState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网卡所属项目的名称。
+        Name of the project to which the NIC belongs
         """
         return pulumi.get(self, "project_name")
 
@@ -517,7 +517,7 @@ class _EniState:
     @pulumi.getter(name="secondaryPrivateIpAddressCount")
     def secondary_private_ip_address_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        为辅助网卡自动分配辅助私网IPv4地址数量，取值1~49。创建时不能与PrivateIpSets同时传入。
+        Number of auxiliary private IPv4 addresses automatically assigned to the auxiliary network interface. Value range: 1–49. Cannot be used together with PrivateIpSets during creation.
         """
         return pulumi.get(self, "secondary_private_ip_address_count")
 
@@ -529,7 +529,7 @@ class _EniState:
     @pulumi.getter(name="securityGroupIds")
     def security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        辅助网卡加入一个或多个安全组的ID。
+        ID of one or more security groups joined by the auxiliary network interface.
         """
         return pulumi.get(self, "security_group_ids")
 
@@ -541,7 +541,7 @@ class _EniState:
     @pulumi.getter(name="serviceManaged")
     def service_managed(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否为官方服务网卡，true为是，false为否。
+        Indicates whether this is an official service network interface. true for yes, false for no.
         """
         return pulumi.get(self, "service_managed")
 
@@ -553,7 +553,7 @@ class _EniState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网卡的绑定状态。Creating：创建中。Available：未挂载。Attaching：挂载中。InUse：已挂载。Detaching：卸载中。Deleting：删除中。
+        Binding status of the network interface. Creating: In progress. Available: Not attached. Attaching: In progress. InUse: Attached. Detaching: In progress. Deleting: In progress.
         """
         return pulumi.get(self, "status")
 
@@ -565,7 +565,7 @@ class _EniState:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        辅助网卡所在子网的ID。
+        ID of the subnet where the auxiliary network interface resides.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -586,7 +586,7 @@ class _EniState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网卡类型。primary：主网卡，secondary：辅助网卡
+        NIC type. primary: primary NIC, secondary: secondary NIC
         """
         return pulumi.get(self, "type")
 
@@ -598,7 +598,7 @@ class _EniState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        更新网卡的时间。
+        NIC update time
         """
         return pulumi.get(self, "updated_time")
 
@@ -610,7 +610,7 @@ class _EniState:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网卡所属的VPC的ID。
+        ID of the VPC to which the network interface belongs.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -622,7 +622,7 @@ class _EniState:
     @pulumi.getter(name="vpcName")
     def vpc_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网卡所属VPC的名称。
+        Name of the VPC to which the NIC belongs
         """
         return pulumi.get(self, "vpc_name")
 
@@ -634,7 +634,7 @@ class _EniState:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网卡所属可用区的ID。
+        ID of the availability zone to which the network interface belongs.
         """
         return pulumi.get(self, "zone_id")
 
@@ -665,7 +665,7 @@ class Eni(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['EniTagArgs', 'EniTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        网卡即虚拟网卡。在私有网络里，网卡是挂载在云服务器、负载均衡等云资源上的一种网络接口。每张网卡均有一个主私网IP地址。若有需要，可手动为其分配多个辅助私网IP地址。
+        A network interface is a virtual network interface. In a private network, it serves as a network interface attached to cloud servers, load balancers, and other cloud resources. Each network interface has a primary private IP address. You can manually assign multiple auxiliary private IP addresses if needed.
 
         ## Import
 
@@ -675,18 +675,18 @@ class Eni(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.bool] delete_on_termination: 是否开启随云服务器实例删除，true为开启，false为不开启。
-        :param pulumi.Input[builtins.str] description: 辅助网卡的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头；可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不填默认空字符串。
-        :param pulumi.Input[builtins.str] instance_id: 网卡绑定实例的ID，如果网卡未挂载或参数ServiceManaged为true，则InstanceId返回值均为空。
-        :param pulumi.Input[builtins.int] ipv6_address_count: 为网卡分配私网IPv6地址的数量，传入该参数，系统会自动从网卡所属子网中，分配相应数量的空闲私网IPv6地址，创建时与IPv6Sets不能同时传入。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ipv6_sets: 网卡的IPv6地址列表，例如[2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf]。
-        :param pulumi.Input[builtins.str] network_interface_name: 网卡名称，长度限制为1 ~ 128个字符，需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不填默认是辅助网卡的ID。
-        :param pulumi.Input[builtins.bool] port_security_enabled: 是否为网卡开启源/目的地址检查，开启后，系统会自动阻止源地址或目的地址不是当前网卡的流量，true为开启，false为不开启（默认值）。
-        :param pulumi.Input[Union['EniPrimaryIpAddressArgs', 'EniPrimaryIpAddressArgsDict']] primary_ip_address: 网卡的主私有IPv4地址，不支持修改地址，可以修改公网IP。如果指定，必须是对应子网中的一个空闲的私网IPv4地址，如果不指定，从对应子网中自动分配一个空闲的私网IPv4地址。例如：192.XX.XX.10。
-        :param pulumi.Input[builtins.str] project_name: 网卡所属项目的名称。
-        :param pulumi.Input[builtins.int] secondary_private_ip_address_count: 为辅助网卡自动分配辅助私网IPv4地址数量，取值1~49。创建时不能与PrivateIpSets同时传入。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_ids: 辅助网卡加入一个或多个安全组的ID。
-        :param pulumi.Input[builtins.str] subnet_id: 辅助网卡所在子网的ID。
+        :param pulumi.Input[builtins.bool] delete_on_termination: Enable release with cloud server instance deletion. true to enable, false to disable
+        :param pulumi.Input[builtins.str] description: Description for the auxiliary network interface. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Allowed characters include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string.
+        :param pulumi.Input[builtins.str] instance_id: ID of the instance bound to the NIC. If the NIC is not attached or the ServiceManaged parameter is true, InstanceId returns empty
+        :param pulumi.Input[builtins.int] ipv6_address_count: Number of private IPv6 addresses assigned to the network interface. When this parameter is specified, the system automatically assigns the corresponding number of available private IPv6 addresses from the subnet to which the network interface belongs. Cannot be used together with IPv6Sets during creation.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ipv6_sets: IPv6 address list of the network interface, for example [2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf].
+        :param pulumi.Input[builtins.str] network_interface_name: NIC name. Length must be between 1 and 128 characters, starting with a letter, Chinese character, or number. Can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the ID of the secondary NIC
+        :param pulumi.Input[builtins.bool] port_security_enabled: Enable source/destination address check for the NIC. When enabled, the system automatically blocks traffic whose source or destination address does not match the current NIC. true to enable, false to disable (default)
+        :param pulumi.Input[Union['EniPrimaryIpAddressArgs', 'EniPrimaryIpAddressArgsDict']] primary_ip_address: Primary private IPv4 address of the network interface. Address modification is not supported, but you can modify the public IP. If specified, it must be an available private IPv4 address in the corresponding subnet. If not specified, an available private IPv4 address will be automatically assigned from the corresponding subnet. For example: 192.XX.XX.10.
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the NIC belongs
+        :param pulumi.Input[builtins.int] secondary_private_ip_address_count: Number of auxiliary private IPv4 addresses automatically assigned to the auxiliary network interface. Value range: 1–49. Cannot be used together with PrivateIpSets during creation.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_ids: ID of one or more security groups joined by the auxiliary network interface.
+        :param pulumi.Input[builtins.str] subnet_id: ID of the subnet where the auxiliary network interface resides.
         """
         ...
     @overload
@@ -695,7 +695,7 @@ class Eni(pulumi.CustomResource):
                  args: Optional[EniArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        网卡即虚拟网卡。在私有网络里，网卡是挂载在云服务器、负载均衡等云资源上的一种网络接口。每张网卡均有一个主私网IP地址。若有需要，可手动为其分配多个辅助私网IP地址。
+        A network interface is a virtual network interface. In a private network, it serves as a network interface attached to cloud servers, load balancers, and other cloud resources. Each network interface has a primary private IP address. You can manually assign multiple auxiliary private IP addresses if needed.
 
         ## Import
 
@@ -808,29 +808,29 @@ class Eni(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] account_id: 网卡所有者ID。
-        :param pulumi.Input[builtins.str] created_time: 网卡创建时间。
-        :param pulumi.Input[builtins.bool] delete_on_termination: 是否开启随云服务器实例删除，true为开启，false为不开启。
-        :param pulumi.Input[builtins.str] description: 辅助网卡的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头；可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不填默认空字符串。
-        :param pulumi.Input[builtins.str] instance_id: 网卡绑定实例的ID，如果网卡未挂载或参数ServiceManaged为true，则InstanceId返回值均为空。
-        :param pulumi.Input[builtins.int] ipv6_address_count: 为网卡分配私网IPv6地址的数量，传入该参数，系统会自动从网卡所属子网中，分配相应数量的空闲私网IPv6地址，创建时与IPv6Sets不能同时传入。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ipv6_sets: 网卡的IPv6地址列表，例如[2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf]。
-        :param pulumi.Input[builtins.str] mac_address: 网卡的MAC地址。
-        :param pulumi.Input[builtins.str] network_interface_id: 网卡ID。
-        :param pulumi.Input[builtins.str] network_interface_name: 网卡名称，长度限制为1 ~ 128个字符，需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不填默认是辅助网卡的ID。
-        :param pulumi.Input[builtins.bool] port_security_enabled: 是否为网卡开启源/目的地址检查，开启后，系统会自动阻止源地址或目的地址不是当前网卡的流量，true为开启，false为不开启（默认值）。
-        :param pulumi.Input[Union['EniPrimaryIpAddressArgs', 'EniPrimaryIpAddressArgsDict']] primary_ip_address: 网卡的主私有IPv4地址，不支持修改地址，可以修改公网IP。如果指定，必须是对应子网中的一个空闲的私网IPv4地址，如果不指定，从对应子网中自动分配一个空闲的私网IPv4地址。例如：192.XX.XX.10。
-        :param pulumi.Input[builtins.str] project_name: 网卡所属项目的名称。
-        :param pulumi.Input[builtins.int] secondary_private_ip_address_count: 为辅助网卡自动分配辅助私网IPv4地址数量，取值1~49。创建时不能与PrivateIpSets同时传入。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_ids: 辅助网卡加入一个或多个安全组的ID。
-        :param pulumi.Input[builtins.bool] service_managed: 是否为官方服务网卡，true为是，false为否。
-        :param pulumi.Input[builtins.str] status: 网卡的绑定状态。Creating：创建中。Available：未挂载。Attaching：挂载中。InUse：已挂载。Detaching：卸载中。Deleting：删除中。
-        :param pulumi.Input[builtins.str] subnet_id: 辅助网卡所在子网的ID。
-        :param pulumi.Input[builtins.str] type: 网卡类型。primary：主网卡，secondary：辅助网卡
-        :param pulumi.Input[builtins.str] updated_time: 更新网卡的时间。
-        :param pulumi.Input[builtins.str] vpc_id: 网卡所属的VPC的ID。
-        :param pulumi.Input[builtins.str] vpc_name: 网卡所属VPC的名称。
-        :param pulumi.Input[builtins.str] zone_id: 网卡所属可用区的ID。
+        :param pulumi.Input[builtins.str] account_id: NIC owner ID
+        :param pulumi.Input[builtins.str] created_time: NIC creation time
+        :param pulumi.Input[builtins.bool] delete_on_termination: Enable release with cloud server instance deletion. true to enable, false to disable
+        :param pulumi.Input[builtins.str] description: Description for the auxiliary network interface. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Allowed characters include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string.
+        :param pulumi.Input[builtins.str] instance_id: ID of the instance bound to the NIC. If the NIC is not attached or the ServiceManaged parameter is true, InstanceId returns empty
+        :param pulumi.Input[builtins.int] ipv6_address_count: Number of private IPv6 addresses assigned to the network interface. When this parameter is specified, the system automatically assigns the corresponding number of available private IPv6 addresses from the subnet to which the network interface belongs. Cannot be used together with IPv6Sets during creation.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ipv6_sets: IPv6 address list of the network interface, for example [2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf].
+        :param pulumi.Input[builtins.str] mac_address: MAC address of the network interface.
+        :param pulumi.Input[builtins.str] network_interface_id: Network interface ID.
+        :param pulumi.Input[builtins.str] network_interface_name: NIC name. Length must be between 1 and 128 characters, starting with a letter, Chinese character, or number. Can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the ID of the secondary NIC
+        :param pulumi.Input[builtins.bool] port_security_enabled: Enable source/destination address check for the NIC. When enabled, the system automatically blocks traffic whose source or destination address does not match the current NIC. true to enable, false to disable (default)
+        :param pulumi.Input[Union['EniPrimaryIpAddressArgs', 'EniPrimaryIpAddressArgsDict']] primary_ip_address: Primary private IPv4 address of the network interface. Address modification is not supported, but you can modify the public IP. If specified, it must be an available private IPv4 address in the corresponding subnet. If not specified, an available private IPv4 address will be automatically assigned from the corresponding subnet. For example: 192.XX.XX.10.
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the NIC belongs
+        :param pulumi.Input[builtins.int] secondary_private_ip_address_count: Number of auxiliary private IPv4 addresses automatically assigned to the auxiliary network interface. Value range: 1–49. Cannot be used together with PrivateIpSets during creation.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] security_group_ids: ID of one or more security groups joined by the auxiliary network interface.
+        :param pulumi.Input[builtins.bool] service_managed: Indicates whether this is an official service network interface. true for yes, false for no.
+        :param pulumi.Input[builtins.str] status: Binding status of the network interface. Creating: In progress. Available: Not attached. Attaching: In progress. InUse: Attached. Detaching: In progress. Deleting: In progress.
+        :param pulumi.Input[builtins.str] subnet_id: ID of the subnet where the auxiliary network interface resides.
+        :param pulumi.Input[builtins.str] type: NIC type. primary: primary NIC, secondary: secondary NIC
+        :param pulumi.Input[builtins.str] updated_time: NIC update time
+        :param pulumi.Input[builtins.str] vpc_id: ID of the VPC to which the network interface belongs.
+        :param pulumi.Input[builtins.str] vpc_name: Name of the VPC to which the NIC belongs
+        :param pulumi.Input[builtins.str] zone_id: ID of the availability zone to which the network interface belongs.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -867,7 +867,7 @@ class Eni(pulumi.CustomResource):
     @pulumi.getter(name="accountId")
     def account_id(self) -> pulumi.Output[builtins.str]:
         """
-        网卡所有者ID。
+        NIC owner ID
         """
         return pulumi.get(self, "account_id")
 
@@ -875,7 +875,7 @@ class Eni(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        网卡创建时间。
+        NIC creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -883,7 +883,7 @@ class Eni(pulumi.CustomResource):
     @pulumi.getter(name="deleteOnTermination")
     def delete_on_termination(self) -> pulumi.Output[builtins.bool]:
         """
-        是否开启随云服务器实例删除，true为开启，false为不开启。
+        Enable release with cloud server instance deletion. true to enable, false to disable
         """
         return pulumi.get(self, "delete_on_termination")
 
@@ -891,7 +891,7 @@ class Eni(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        辅助网卡的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头；可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不填默认空字符串。
+        Description for the auxiliary network interface. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Allowed characters include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -899,7 +899,7 @@ class Eni(pulumi.CustomResource):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Output[builtins.str]:
         """
-        网卡绑定实例的ID，如果网卡未挂载或参数ServiceManaged为true，则InstanceId返回值均为空。
+        ID of the instance bound to the NIC. If the NIC is not attached or the ServiceManaged parameter is true, InstanceId returns empty
         """
         return pulumi.get(self, "instance_id")
 
@@ -907,7 +907,7 @@ class Eni(pulumi.CustomResource):
     @pulumi.getter(name="ipv6AddressCount")
     def ipv6_address_count(self) -> pulumi.Output[builtins.int]:
         """
-        为网卡分配私网IPv6地址的数量，传入该参数，系统会自动从网卡所属子网中，分配相应数量的空闲私网IPv6地址，创建时与IPv6Sets不能同时传入。
+        Number of private IPv6 addresses assigned to the network interface. When this parameter is specified, the system automatically assigns the corresponding number of available private IPv6 addresses from the subnet to which the network interface belongs. Cannot be used together with IPv6Sets during creation.
         """
         return pulumi.get(self, "ipv6_address_count")
 
@@ -915,7 +915,7 @@ class Eni(pulumi.CustomResource):
     @pulumi.getter(name="ipv6Sets")
     def ipv6_sets(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        网卡的IPv6地址列表，例如[2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf]。
+        IPv6 address list of the network interface, for example [2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf].
         """
         return pulumi.get(self, "ipv6_sets")
 
@@ -923,7 +923,7 @@ class Eni(pulumi.CustomResource):
     @pulumi.getter(name="macAddress")
     def mac_address(self) -> pulumi.Output[builtins.str]:
         """
-        网卡的MAC地址。
+        MAC address of the network interface.
         """
         return pulumi.get(self, "mac_address")
 
@@ -931,7 +931,7 @@ class Eni(pulumi.CustomResource):
     @pulumi.getter(name="networkInterfaceId")
     def network_interface_id(self) -> pulumi.Output[builtins.str]:
         """
-        网卡ID。
+        Network interface ID.
         """
         return pulumi.get(self, "network_interface_id")
 
@@ -939,7 +939,7 @@ class Eni(pulumi.CustomResource):
     @pulumi.getter(name="networkInterfaceName")
     def network_interface_name(self) -> pulumi.Output[builtins.str]:
         """
-        网卡名称，长度限制为1 ~ 128个字符，需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不填默认是辅助网卡的ID。
+        NIC name. Length must be between 1 and 128 characters, starting with a letter, Chinese character, or number. Can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the ID of the secondary NIC
         """
         return pulumi.get(self, "network_interface_name")
 
@@ -947,7 +947,7 @@ class Eni(pulumi.CustomResource):
     @pulumi.getter(name="portSecurityEnabled")
     def port_security_enabled(self) -> pulumi.Output[builtins.bool]:
         """
-        是否为网卡开启源/目的地址检查，开启后，系统会自动阻止源地址或目的地址不是当前网卡的流量，true为开启，false为不开启（默认值）。
+        Enable source/destination address check for the NIC. When enabled, the system automatically blocks traffic whose source or destination address does not match the current NIC. true to enable, false to disable (default)
         """
         return pulumi.get(self, "port_security_enabled")
 
@@ -955,7 +955,7 @@ class Eni(pulumi.CustomResource):
     @pulumi.getter(name="primaryIpAddress")
     def primary_ip_address(self) -> pulumi.Output['outputs.EniPrimaryIpAddress']:
         """
-        网卡的主私有IPv4地址，不支持修改地址，可以修改公网IP。如果指定，必须是对应子网中的一个空闲的私网IPv4地址，如果不指定，从对应子网中自动分配一个空闲的私网IPv4地址。例如：192.XX.XX.10。
+        Primary private IPv4 address of the network interface. Address modification is not supported, but you can modify the public IP. If specified, it must be an available private IPv4 address in the corresponding subnet. If not specified, an available private IPv4 address will be automatically assigned from the corresponding subnet. For example: 192.XX.XX.10.
         """
         return pulumi.get(self, "primary_ip_address")
 
@@ -968,7 +968,7 @@ class Eni(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        网卡所属项目的名称。
+        Name of the project to which the NIC belongs
         """
         return pulumi.get(self, "project_name")
 
@@ -976,7 +976,7 @@ class Eni(pulumi.CustomResource):
     @pulumi.getter(name="secondaryPrivateIpAddressCount")
     def secondary_private_ip_address_count(self) -> pulumi.Output[builtins.int]:
         """
-        为辅助网卡自动分配辅助私网IPv4地址数量，取值1~49。创建时不能与PrivateIpSets同时传入。
+        Number of auxiliary private IPv4 addresses automatically assigned to the auxiliary network interface. Value range: 1–49. Cannot be used together with PrivateIpSets during creation.
         """
         return pulumi.get(self, "secondary_private_ip_address_count")
 
@@ -984,7 +984,7 @@ class Eni(pulumi.CustomResource):
     @pulumi.getter(name="securityGroupIds")
     def security_group_ids(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        辅助网卡加入一个或多个安全组的ID。
+        ID of one or more security groups joined by the auxiliary network interface.
         """
         return pulumi.get(self, "security_group_ids")
 
@@ -992,7 +992,7 @@ class Eni(pulumi.CustomResource):
     @pulumi.getter(name="serviceManaged")
     def service_managed(self) -> pulumi.Output[builtins.bool]:
         """
-        是否为官方服务网卡，true为是，false为否。
+        Indicates whether this is an official service network interface. true for yes, false for no.
         """
         return pulumi.get(self, "service_managed")
 
@@ -1000,7 +1000,7 @@ class Eni(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        网卡的绑定状态。Creating：创建中。Available：未挂载。Attaching：挂载中。InUse：已挂载。Detaching：卸载中。Deleting：删除中。
+        Binding status of the network interface. Creating: In progress. Available: Not attached. Attaching: In progress. InUse: Attached. Detaching: In progress. Deleting: In progress.
         """
         return pulumi.get(self, "status")
 
@@ -1008,7 +1008,7 @@ class Eni(pulumi.CustomResource):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[builtins.str]:
         """
-        辅助网卡所在子网的ID。
+        ID of the subnet where the auxiliary network interface resides.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -1021,7 +1021,7 @@ class Eni(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[builtins.str]:
         """
-        网卡类型。primary：主网卡，secondary：辅助网卡
+        NIC type. primary: primary NIC, secondary: secondary NIC
         """
         return pulumi.get(self, "type")
 
@@ -1029,7 +1029,7 @@ class Eni(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        更新网卡的时间。
+        NIC update time
         """
         return pulumi.get(self, "updated_time")
 
@@ -1037,7 +1037,7 @@ class Eni(pulumi.CustomResource):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Output[builtins.str]:
         """
-        网卡所属的VPC的ID。
+        ID of the VPC to which the network interface belongs.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -1045,7 +1045,7 @@ class Eni(pulumi.CustomResource):
     @pulumi.getter(name="vpcName")
     def vpc_name(self) -> pulumi.Output[builtins.str]:
         """
-        网卡所属VPC的名称。
+        Name of the VPC to which the NIC belongs
         """
         return pulumi.get(self, "vpc_name")
 
@@ -1053,7 +1053,7 @@ class Eni(pulumi.CustomResource):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Output[builtins.str]:
         """
-        网卡所属可用区的ID。
+        ID of the availability zone to which the network interface belongs.
         """
         return pulumi.get(self, "zone_id")
 

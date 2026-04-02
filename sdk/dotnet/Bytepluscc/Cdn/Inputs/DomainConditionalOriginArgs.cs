@@ -17,7 +17,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
         private InputList<Inputs.DomainConditionalOriginOriginRuleArgs>? _originRules;
 
         /// <summary>
-        /// 表示一个规则列表。列表中的每条规则中定义了一个过滤器以及内容分发网络对满足过滤条件的请求所执行的操作。
+        /// Indicates a list of rules. Each rule in the list defines a filter and the action the content delivery network performs on requests that meet the filter criteria.
         /// </summary>
         public InputList<Inputs.DomainConditionalOriginOriginRuleArgs> OriginRules
         {
@@ -26,7 +26,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
         }
 
         /// <summary>
-        /// 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+        /// Indicates whether this feature is enabled. The parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
         /// </summary>
         [Input("switch")]
         public Input<bool>? Switch { get; set; }

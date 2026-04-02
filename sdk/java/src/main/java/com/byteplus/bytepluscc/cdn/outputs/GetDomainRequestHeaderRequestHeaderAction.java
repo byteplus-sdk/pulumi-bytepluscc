@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainRequestHeaderRequestHeaderAction {
     /**
-     * @return 表示一个请求头的配置规则列表。每个规则都包含一个头部的相关操作设置。您最多可以添加 50 条规则。
+     * @return Indicates a list of configuration rules for request headers. Each rule includes settings for header-related operations. You can add up to 50 rules.
      * 
      */
     private List<GetDomainRequestHeaderRequestHeaderActionRequestHeaderInstance> requestHeaderInstances;
 
     private GetDomainRequestHeaderRequestHeaderAction() {}
     /**
-     * @return 表示一个请求头的配置规则列表。每个规则都包含一个头部的相关操作设置。您最多可以添加 50 条规则。
+     * @return Indicates a list of configuration rules for request headers. Each rule includes settings for header-related operations. You can add up to 50 rules.
      * 
      */
     public List<GetDomainRequestHeaderRequestHeaderActionRequestHeaderInstance> requestHeaderInstances() {

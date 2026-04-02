@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetEndpointRateLimit {
     /**
-     * @return Requests Per Minute，每分钟请求数。
+     * @return Requests Per Minute, number of requests per minute
      * 
      */
     private Integer rpm;
     /**
-     * @return Tokens Per Minute，每分钟请求 token 数。
+     * @return Tokens Per Minute, number of tokens requested per minute
      * 
      */
     private Integer tpm;
 
     private GetEndpointRateLimit() {}
     /**
-     * @return Requests Per Minute，每分钟请求数。
+     * @return Requests Per Minute, number of requests per minute
      * 
      */
     public Integer rpm() {
         return this.rpm;
     }
     /**
-     * @return Tokens Per Minute，每分钟请求 token 数。
+     * @return Tokens Per Minute, number of tokens requested per minute
      * 
      */
     public Integer tpm() {

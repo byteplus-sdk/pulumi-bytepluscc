@@ -17,14 +17,14 @@ public final class NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigAr
     public static final NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs Empty = new NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs();
 
     /**
-     * 代理地址。
+     * Proxy address.
      * 
      */
     @Import(name="proxyEndpoints")
     private @Nullable Output<List<String>> proxyEndpoints;
 
     /**
-     * @return 代理地址。
+     * @return Proxy address.
      * 
      */
     public Optional<Output<List<String>>> proxyEndpoints() {
@@ -32,14 +32,14 @@ public final class NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigAr
     }
 
     /**
-     * 容器镜像仓库地址。
+     * Container image repository address.
      * 
      */
     @Import(name="registry")
     private @Nullable Output<String> registry;
 
     /**
-     * @return 容器镜像仓库地址。
+     * @return Container image repository address.
      * 
      */
     public Optional<Output<String>> registry() {
@@ -72,7 +72,7 @@ public final class NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigAr
         }
 
         /**
-         * @param proxyEndpoints 代理地址。
+         * @param proxyEndpoints Proxy address.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigAr
         }
 
         /**
-         * @param proxyEndpoints 代理地址。
+         * @param proxyEndpoints Proxy address.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigAr
         }
 
         /**
-         * @param proxyEndpoints 代理地址。
+         * @param proxyEndpoints Proxy address.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigAr
         }
 
         /**
-         * @param registry 容器镜像仓库地址。
+         * @param registry Container image repository address.
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigAr
         }
 
         /**
-         * @param registry 容器镜像仓库地址。
+         * @param registry Container image repository address.
          * 
          * @return builder
          * 

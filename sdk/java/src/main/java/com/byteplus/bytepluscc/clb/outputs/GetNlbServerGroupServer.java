@@ -12,98 +12,98 @@ import java.util.Objects;
 @CustomType
 public final class GetNlbServerGroupServer {
     /**
-     * @return 后端服务器的描述，默认值为空字符串。
+     * @return Description of the backend server, default is an empty string.
      * 
      */
     private String description;
     /**
-     * @return 服务器实例的ID或IP地址。服务器类型为“ecs”时，传入云服务器实例的ID。您可以调用DescribeInstances接口云服务器实例ID。服务器类型为“eni”时，传入已绑定云服务器实例的网卡ID。您可以调用DescribeNetworkInterfaces接口获取网卡ID。服务器类型为“ip”时，传入后端服务器的IP地址。
+     * @return Server instance ID or IP address. If the server type is &#39;ecs&#39;, enter the cloud server instance ID. You can call the DescribeInstances API to obtain the cloud server instance ID. If the server type is &#39;eni&#39;, enter the network interface card ID bound to the cloud server instance. You can call the DescribeNetworkInterfaces API to obtain the network interface card ID. If the server type is &#39;ip&#39;, enter the backend server&#39;s IP address.
      * 
      */
     private String instanceId;
     /**
-     * @return 后端服务器的私网IP地址。您可以调用DescribeInstances接口获取“ecs”类型后端服务器的私网IP地址。您可以调用DescribeNetworkInterfaces接口获取“eni”类型后端服务器的私网IP地址。
+     * @return Private IP address of the backend server. You can call the DescribeInstances API to obtain the private IP address of an &#39;ecs&#39; type backend server. You can call the DescribeNetworkInterfaces API to obtain the private IP address of an &#39;eni&#39; type backend server.
      * 
      */
     private String ip;
     /**
-     * @return 后端服务器接收请求的端口号，取值范围为 1～65535。参数AnyPortEnabled为“false”，即服务器组未开启全端口转发时，该参数为必填。参数AnyPortEnabled为“true”，即服务器组开启全端口转发时，该参数默认为0。
+     * @return Port number on which the backend server receives requests, range: 1–65535. If AnyPortEnabled is &#39;false&#39; (all-port forwarding is disabled), this parameter is required. If AnyPortEnabled is &#39;true&#39; (all-port forwarding is enabled), the default value is 0.
      * 
      */
     private Integer port;
     /**
-     * @return 后端服务器 ID。
+     * @return Backend server ID
      * 
      */
     private String serverId;
     /**
-     * @return 后端服务器的类型。取值如下：ecs：云服务器实例（即主网卡）。eni：辅助网卡。ip：IP地址。
+     * @return Backend server type. Available values: ecs: cloud server instance (primary network interface). eni: auxiliary network interface. ip: IP address.
      * 
      */
     private String type;
     /**
-     * @return 后端服务器的权重，取值范围为0 ～ 100。权重为0，表示不会将请求转发给该服务器。该参数不传入，则默认为0。
+     * @return Backend server weight, range: 0–100. Weight of 0 means requests will not be forwarded to this server. If not specified, the default is 0.
      * 
      */
     private Integer weight;
     /**
-     * @return 指定后端服务器关联的NLB实例可用区。当参数Servers.N.Type为ip时，此参数必填。NLB实例开启跨可用区转发功能时，该后端服务器可以接收来自NLB实例所有可用区的流量。NLB实例关闭跨可用区转发功能时，则该后端服务器仅接收来自指定可用区的流量。
+     * @return Specify the availability zone of the NLB instance associated with the backend server. This parameter is required when Servers.N.Type is ip. If the NLB instance enables cross-zone forwarding, the backend server can receive traffic from all availability zones of the NLB instance. If cross-zone forwarding is disabled, the backend server only receives traffic from the specified availability zone
      * 
      */
     private String zoneId;
 
     private GetNlbServerGroupServer() {}
     /**
-     * @return 后端服务器的描述，默认值为空字符串。
+     * @return Description of the backend server, default is an empty string.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 服务器实例的ID或IP地址。服务器类型为“ecs”时，传入云服务器实例的ID。您可以调用DescribeInstances接口云服务器实例ID。服务器类型为“eni”时，传入已绑定云服务器实例的网卡ID。您可以调用DescribeNetworkInterfaces接口获取网卡ID。服务器类型为“ip”时，传入后端服务器的IP地址。
+     * @return Server instance ID or IP address. If the server type is &#39;ecs&#39;, enter the cloud server instance ID. You can call the DescribeInstances API to obtain the cloud server instance ID. If the server type is &#39;eni&#39;, enter the network interface card ID bound to the cloud server instance. You can call the DescribeNetworkInterfaces API to obtain the network interface card ID. If the server type is &#39;ip&#39;, enter the backend server&#39;s IP address.
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return 后端服务器的私网IP地址。您可以调用DescribeInstances接口获取“ecs”类型后端服务器的私网IP地址。您可以调用DescribeNetworkInterfaces接口获取“eni”类型后端服务器的私网IP地址。
+     * @return Private IP address of the backend server. You can call the DescribeInstances API to obtain the private IP address of an &#39;ecs&#39; type backend server. You can call the DescribeNetworkInterfaces API to obtain the private IP address of an &#39;eni&#39; type backend server.
      * 
      */
     public String ip() {
         return this.ip;
     }
     /**
-     * @return 后端服务器接收请求的端口号，取值范围为 1～65535。参数AnyPortEnabled为“false”，即服务器组未开启全端口转发时，该参数为必填。参数AnyPortEnabled为“true”，即服务器组开启全端口转发时，该参数默认为0。
+     * @return Port number on which the backend server receives requests, range: 1–65535. If AnyPortEnabled is &#39;false&#39; (all-port forwarding is disabled), this parameter is required. If AnyPortEnabled is &#39;true&#39; (all-port forwarding is enabled), the default value is 0.
      * 
      */
     public Integer port() {
         return this.port;
     }
     /**
-     * @return 后端服务器 ID。
+     * @return Backend server ID
      * 
      */
     public String serverId() {
         return this.serverId;
     }
     /**
-     * @return 后端服务器的类型。取值如下：ecs：云服务器实例（即主网卡）。eni：辅助网卡。ip：IP地址。
+     * @return Backend server type. Available values: ecs: cloud server instance (primary network interface). eni: auxiliary network interface. ip: IP address.
      * 
      */
     public String type() {
         return this.type;
     }
     /**
-     * @return 后端服务器的权重，取值范围为0 ～ 100。权重为0，表示不会将请求转发给该服务器。该参数不传入，则默认为0。
+     * @return Backend server weight, range: 0–100. Weight of 0 means requests will not be forwarded to this server. If not specified, the default is 0.
      * 
      */
     public Integer weight() {
         return this.weight;
     }
     /**
-     * @return 指定后端服务器关联的NLB实例可用区。当参数Servers.N.Type为ip时，此参数必填。NLB实例开启跨可用区转发功能时，该后端服务器可以接收来自NLB实例所有可用区的流量。NLB实例关闭跨可用区转发功能时，则该后端服务器仅接收来自指定可用区的流量。
+     * @return Specify the availability zone of the NLB instance associated with the backend server. This parameter is required when Servers.N.Type is ip. If the NLB instance enables cross-zone forwarding, the backend server can receive traffic from all availability zones of the NLB instance. If cross-zone forwarding is disabled, the backend server only receives traffic from the specified availability zone
      * 
      */
     public String zoneId() {

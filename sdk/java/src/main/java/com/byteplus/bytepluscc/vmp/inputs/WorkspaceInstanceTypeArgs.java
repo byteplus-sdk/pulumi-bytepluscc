@@ -3,6 +3,7 @@
 
 package com.byteplus.bytepluscc.vmp.inputs;
 
+import com.byteplus.bytepluscc.vmp.inputs.WorkspaceInstanceTypeCalculatePriceParamArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Integer;
@@ -18,14 +19,14 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
     public static final WorkspaceInstanceTypeArgs Empty = new WorkspaceInstanceTypeArgs();
 
     /**
-     * 最大活跃时序数。
+     * Maximum active time series count
      * 
      */
     @Import(name="activeSeries")
     private @Nullable Output<Integer> activeSeries;
 
     /**
-     * @return 最大活跃时序数。
+     * @return Maximum active time series count
      * 
      */
     public Optional<Output<Integer>> activeSeries() {
@@ -33,29 +34,36 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 可用区（az）数。
+     * Number of availability zones (az)
      * 
      */
     @Import(name="availabilityZoneReplicas")
     private @Nullable Output<Integer> availabilityZoneReplicas;
 
     /**
-     * @return 可用区（az）数。
+     * @return Number of availability zones (az)
      * 
      */
     public Optional<Output<Integer>> availabilityZoneReplicas() {
         return Optional.ofNullable(this.availabilityZoneReplicas);
     }
 
+    @Import(name="calculatePriceParams")
+    private @Nullable Output<List<WorkspaceInstanceTypeCalculatePriceParamArgs>> calculatePriceParams;
+
+    public Optional<Output<List<WorkspaceInstanceTypeCalculatePriceParamArgs>>> calculatePriceParams() {
+        return Optional.ofNullable(this.calculatePriceParams);
+    }
+
     /**
-     * 降采样策略。
+     * Downsampling policy
      * 
      */
     @Import(name="downsamplingPeriods")
     private @Nullable Output<List<String>> downsamplingPeriods;
 
     /**
-     * @return 降采样策略。
+     * @return Downsampling policy
      * 
      */
     public Optional<Output<List<String>>> downsamplingPeriods() {
@@ -63,14 +71,14 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 最大每秒写入样本数。
+     * Maximum samples written per second
      * 
      */
     @Import(name="ingestSamplesPerSecond")
     private @Nullable Output<Integer> ingestSamplesPerSecond;
 
     /**
-     * @return 最大每秒写入样本数。
+     * @return Maximum samples written per second
      * 
      */
     public Optional<Output<Integer>> ingestSamplesPerSecond() {
@@ -78,14 +86,14 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 最大查询并发数。
+     * Maximum query concurrency
      * 
      */
     @Import(name="queryConcurrency")
     private @Nullable Output<Integer> queryConcurrency;
 
     /**
-     * @return 最大查询并发数。
+     * @return Maximum query concurrency
      * 
      */
     public Optional<Output<Integer>> queryConcurrency() {
@@ -93,14 +101,14 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 最大查询 QPS。
+     * Maximum query QPS
      * 
      */
     @Import(name="queryPerSecond")
     private @Nullable Output<Integer> queryPerSecond;
 
     /**
-     * @return 最大查询 QPS。
+     * @return Maximum query QPS
      * 
      */
     public Optional<Output<Integer>> queryPerSecond() {
@@ -108,14 +116,14 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 每个可用区（az）的数据副本数。
+     * Number of data replicas per availability zone (az)
      * 
      */
     @Import(name="replicasPerZone")
     private @Nullable Output<Integer> replicasPerZone;
 
     /**
-     * @return 每个可用区（az）的数据副本数。
+     * @return Number of data replicas per availability zone (az)
      * 
      */
     public Optional<Output<Integer>> replicasPerZone() {
@@ -123,14 +131,14 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 最长数据保留时间。
+     * Maximum data retention period
      * 
      */
     @Import(name="retentionPeriod")
     private @Nullable Output<String> retentionPeriod;
 
     /**
-     * @return 最长数据保留时间。
+     * @return Maximum data retention period
      * 
      */
     public Optional<Output<String>> retentionPeriod() {
@@ -138,14 +146,14 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 最大每秒扫描样本数。
+     * Maximum samples scanned per second
      * 
      */
     @Import(name="scanSamplesPerSecond")
     private @Nullable Output<Integer> scanSamplesPerSecond;
 
     /**
-     * @return 最大每秒扫描样本数。
+     * @return Maximum samples scanned per second
      * 
      */
     public Optional<Output<Integer>> scanSamplesPerSecond() {
@@ -153,14 +161,14 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 最大每秒扫描时序数。
+     * Maximum time series scanned per second
      * 
      */
     @Import(name="scanSeriesPerSecond")
     private @Nullable Output<Integer> scanSeriesPerSecond;
 
     /**
-     * @return 最大每秒扫描时序数。
+     * @return Maximum time series scanned per second
      * 
      */
     public Optional<Output<Integer>> scanSeriesPerSecond() {
@@ -172,6 +180,7 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
     private WorkspaceInstanceTypeArgs(WorkspaceInstanceTypeArgs $) {
         this.activeSeries = $.activeSeries;
         this.availabilityZoneReplicas = $.availabilityZoneReplicas;
+        this.calculatePriceParams = $.calculatePriceParams;
         this.downsamplingPeriods = $.downsamplingPeriods;
         this.ingestSamplesPerSecond = $.ingestSamplesPerSecond;
         this.queryConcurrency = $.queryConcurrency;
@@ -201,7 +210,7 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param activeSeries 最大活跃时序数。
+         * @param activeSeries Maximum active time series count
          * 
          * @return builder
          * 
@@ -212,7 +221,7 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param activeSeries 最大活跃时序数。
+         * @param activeSeries Maximum active time series count
          * 
          * @return builder
          * 
@@ -222,7 +231,7 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param availabilityZoneReplicas 可用区（az）数。
+         * @param availabilityZoneReplicas Number of availability zones (az)
          * 
          * @return builder
          * 
@@ -233,7 +242,7 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param availabilityZoneReplicas 可用区（az）数。
+         * @param availabilityZoneReplicas Number of availability zones (az)
          * 
          * @return builder
          * 
@@ -242,8 +251,21 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
             return availabilityZoneReplicas(Output.of(availabilityZoneReplicas));
         }
 
+        public Builder calculatePriceParams(@Nullable Output<List<WorkspaceInstanceTypeCalculatePriceParamArgs>> calculatePriceParams) {
+            $.calculatePriceParams = calculatePriceParams;
+            return this;
+        }
+
+        public Builder calculatePriceParams(List<WorkspaceInstanceTypeCalculatePriceParamArgs> calculatePriceParams) {
+            return calculatePriceParams(Output.of(calculatePriceParams));
+        }
+
+        public Builder calculatePriceParams(WorkspaceInstanceTypeCalculatePriceParamArgs... calculatePriceParams) {
+            return calculatePriceParams(List.of(calculatePriceParams));
+        }
+
         /**
-         * @param downsamplingPeriods 降采样策略。
+         * @param downsamplingPeriods Downsampling policy
          * 
          * @return builder
          * 
@@ -254,7 +276,7 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param downsamplingPeriods 降采样策略。
+         * @param downsamplingPeriods Downsampling policy
          * 
          * @return builder
          * 
@@ -264,7 +286,7 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param downsamplingPeriods 降采样策略。
+         * @param downsamplingPeriods Downsampling policy
          * 
          * @return builder
          * 
@@ -274,7 +296,7 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param ingestSamplesPerSecond 最大每秒写入样本数。
+         * @param ingestSamplesPerSecond Maximum samples written per second
          * 
          * @return builder
          * 
@@ -285,7 +307,7 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param ingestSamplesPerSecond 最大每秒写入样本数。
+         * @param ingestSamplesPerSecond Maximum samples written per second
          * 
          * @return builder
          * 
@@ -295,7 +317,7 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param queryConcurrency 最大查询并发数。
+         * @param queryConcurrency Maximum query concurrency
          * 
          * @return builder
          * 
@@ -306,7 +328,7 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param queryConcurrency 最大查询并发数。
+         * @param queryConcurrency Maximum query concurrency
          * 
          * @return builder
          * 
@@ -316,7 +338,7 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param queryPerSecond 最大查询 QPS。
+         * @param queryPerSecond Maximum query QPS
          * 
          * @return builder
          * 
@@ -327,7 +349,7 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param queryPerSecond 最大查询 QPS。
+         * @param queryPerSecond Maximum query QPS
          * 
          * @return builder
          * 
@@ -337,7 +359,7 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param replicasPerZone 每个可用区（az）的数据副本数。
+         * @param replicasPerZone Number of data replicas per availability zone (az)
          * 
          * @return builder
          * 
@@ -348,7 +370,7 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param replicasPerZone 每个可用区（az）的数据副本数。
+         * @param replicasPerZone Number of data replicas per availability zone (az)
          * 
          * @return builder
          * 
@@ -358,7 +380,7 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param retentionPeriod 最长数据保留时间。
+         * @param retentionPeriod Maximum data retention period
          * 
          * @return builder
          * 
@@ -369,7 +391,7 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param retentionPeriod 最长数据保留时间。
+         * @param retentionPeriod Maximum data retention period
          * 
          * @return builder
          * 
@@ -379,7 +401,7 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param scanSamplesPerSecond 最大每秒扫描样本数。
+         * @param scanSamplesPerSecond Maximum samples scanned per second
          * 
          * @return builder
          * 
@@ -390,7 +412,7 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param scanSamplesPerSecond 最大每秒扫描样本数。
+         * @param scanSamplesPerSecond Maximum samples scanned per second
          * 
          * @return builder
          * 
@@ -400,7 +422,7 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param scanSeriesPerSecond 最大每秒扫描时序数。
+         * @param scanSeriesPerSecond Maximum time series scanned per second
          * 
          * @return builder
          * 
@@ -411,7 +433,7 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param scanSeriesPerSecond 最大每秒扫描时序数。
+         * @param scanSeriesPerSecond Maximum time series scanned per second
          * 
          * @return builder
          * 

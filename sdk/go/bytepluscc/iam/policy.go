@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 策略是对权限的一种描述，IAM用户、用户组或角色均需通过关联策略来赋予权限。当系统预设策略不能满足要求时，您可以创建自定义策略，对权限进行细粒度的定义。
+// A policy describes permissions. IAM users, user groups, or roles must be granted permissions by associating policies. If system preset policies do not meet your requirements, you can create custom policies for fine-grained permission definition.
 //
 // ## Import
 //
@@ -22,28 +22,28 @@ import (
 type Policy struct {
 	pulumi.CustomResourceState
 
-	// 策略绑定的身份数量。
+	// Number of identities bound to the policy.
 	AttachmentCount pulumi.IntOutput `pulumi:"attachmentCount"`
-	// 系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
+	// Category of the system preset policy, usually the service code. This field is not returned for custom policies.
 	Category pulumi.StringOutput `pulumi:"category"`
-	// 策略创建时间。
+	// Policy creation time.
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// 策略描述，长度不超过128。
+	// Policy description, no more than 128 characters.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// 是否是服务关联角色的策略，0代表否，1代表是。
+	// Indicates whether the policy is for a service-linked role. 0 means no; 1 means yes.
 	IsServiceRolePolicy pulumi.IntOutput `pulumi:"isServiceRolePolicy"`
-	// 策略语法内容，例如：{"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
+	// Policy syntax content, for example: {"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
 	PolicyDocument pulumi.StringOutput `pulumi:"policyDocument"`
-	// 策略名，长度1~64，支持英文、数字和+=,.@-_符号。
+	// Policy name, 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
 	PolicyName  pulumi.StringOutput         `pulumi:"policyName"`
 	PolicyRoles PolicyPolicyRoleArrayOutput `pulumi:"policyRoles"`
-	// 策略的TRN。
+	// Policy TRN.
 	PolicyTrn pulumi.StringOutput `pulumi:"policyTrn"`
-	// 策略类型。System代表系统预设策略，Custom代表自定义策略。
+	// Policy type. System indicates a system preset policy; Custom indicates a custom policy.
 	PolicyType       pulumi.StringOutput              `pulumi:"policyType"`
 	PolicyUserGroups PolicyPolicyUserGroupArrayOutput `pulumi:"policyUserGroups"`
 	PolicyUsers      PolicyPolicyUserArrayOutput      `pulumi:"policyUsers"`
-	// 策略更新时间。
+	// Policy update time.
 	UpdatedTime pulumi.StringOutput `pulumi:"updatedTime"`
 }
 
@@ -86,54 +86,54 @@ func GetPolicy(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Policy resources.
 type policyState struct {
-	// 策略绑定的身份数量。
+	// Number of identities bound to the policy.
 	AttachmentCount *int `pulumi:"attachmentCount"`
-	// 系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
+	// Category of the system preset policy, usually the service code. This field is not returned for custom policies.
 	Category *string `pulumi:"category"`
-	// 策略创建时间。
+	// Policy creation time.
 	CreatedTime *string `pulumi:"createdTime"`
-	// 策略描述，长度不超过128。
+	// Policy description, no more than 128 characters.
 	Description *string `pulumi:"description"`
-	// 是否是服务关联角色的策略，0代表否，1代表是。
+	// Indicates whether the policy is for a service-linked role. 0 means no; 1 means yes.
 	IsServiceRolePolicy *int `pulumi:"isServiceRolePolicy"`
-	// 策略语法内容，例如：{"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
+	// Policy syntax content, for example: {"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
 	PolicyDocument *string `pulumi:"policyDocument"`
-	// 策略名，长度1~64，支持英文、数字和+=,.@-_符号。
+	// Policy name, 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
 	PolicyName  *string            `pulumi:"policyName"`
 	PolicyRoles []PolicyPolicyRole `pulumi:"policyRoles"`
-	// 策略的TRN。
+	// Policy TRN.
 	PolicyTrn *string `pulumi:"policyTrn"`
-	// 策略类型。System代表系统预设策略，Custom代表自定义策略。
+	// Policy type. System indicates a system preset policy; Custom indicates a custom policy.
 	PolicyType       *string                 `pulumi:"policyType"`
 	PolicyUserGroups []PolicyPolicyUserGroup `pulumi:"policyUserGroups"`
 	PolicyUsers      []PolicyPolicyUser      `pulumi:"policyUsers"`
-	// 策略更新时间。
+	// Policy update time.
 	UpdatedTime *string `pulumi:"updatedTime"`
 }
 
 type PolicyState struct {
-	// 策略绑定的身份数量。
+	// Number of identities bound to the policy.
 	AttachmentCount pulumi.IntPtrInput
-	// 系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
+	// Category of the system preset policy, usually the service code. This field is not returned for custom policies.
 	Category pulumi.StringPtrInput
-	// 策略创建时间。
+	// Policy creation time.
 	CreatedTime pulumi.StringPtrInput
-	// 策略描述，长度不超过128。
+	// Policy description, no more than 128 characters.
 	Description pulumi.StringPtrInput
-	// 是否是服务关联角色的策略，0代表否，1代表是。
+	// Indicates whether the policy is for a service-linked role. 0 means no; 1 means yes.
 	IsServiceRolePolicy pulumi.IntPtrInput
-	// 策略语法内容，例如：{"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
+	// Policy syntax content, for example: {"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
 	PolicyDocument pulumi.StringPtrInput
-	// 策略名，长度1~64，支持英文、数字和+=,.@-_符号。
+	// Policy name, 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
 	PolicyName  pulumi.StringPtrInput
 	PolicyRoles PolicyPolicyRoleArrayInput
-	// 策略的TRN。
+	// Policy TRN.
 	PolicyTrn pulumi.StringPtrInput
-	// 策略类型。System代表系统预设策略，Custom代表自定义策略。
+	// Policy type. System indicates a system preset policy; Custom indicates a custom policy.
 	PolicyType       pulumi.StringPtrInput
 	PolicyUserGroups PolicyPolicyUserGroupArrayInput
 	PolicyUsers      PolicyPolicyUserArrayInput
-	// 策略更新时间。
+	// Policy update time.
 	UpdatedTime pulumi.StringPtrInput
 }
 
@@ -142,14 +142,14 @@ func (PolicyState) ElementType() reflect.Type {
 }
 
 type policyArgs struct {
-	// 策略描述，长度不超过128。
+	// Policy description, no more than 128 characters.
 	Description *string `pulumi:"description"`
-	// 策略语法内容，例如：{"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
+	// Policy syntax content, for example: {"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
 	PolicyDocument string `pulumi:"policyDocument"`
-	// 策略名，长度1~64，支持英文、数字和+=,.@-_符号。
+	// Policy name, 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
 	PolicyName  string             `pulumi:"policyName"`
 	PolicyRoles []PolicyPolicyRole `pulumi:"policyRoles"`
-	// 策略类型。System代表系统预设策略，Custom代表自定义策略。
+	// Policy type. System indicates a system preset policy; Custom indicates a custom policy.
 	PolicyType       string                  `pulumi:"policyType"`
 	PolicyUserGroups []PolicyPolicyUserGroup `pulumi:"policyUserGroups"`
 	PolicyUsers      []PolicyPolicyUser      `pulumi:"policyUsers"`
@@ -157,14 +157,14 @@ type policyArgs struct {
 
 // The set of arguments for constructing a Policy resource.
 type PolicyArgs struct {
-	// 策略描述，长度不超过128。
+	// Policy description, no more than 128 characters.
 	Description pulumi.StringPtrInput
-	// 策略语法内容，例如：{"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
+	// Policy syntax content, for example: {"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
 	PolicyDocument pulumi.StringInput
-	// 策略名，长度1~64，支持英文、数字和+=,.@-_符号。
+	// Policy name, 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
 	PolicyName  pulumi.StringInput
 	PolicyRoles PolicyPolicyRoleArrayInput
-	// 策略类型。System代表系统预设策略，Custom代表自定义策略。
+	// Policy type. System indicates a system preset policy; Custom indicates a custom policy.
 	PolicyType       pulumi.StringInput
 	PolicyUserGroups PolicyPolicyUserGroupArrayInput
 	PolicyUsers      PolicyPolicyUserArrayInput
@@ -257,37 +257,37 @@ func (o PolicyOutput) ToPolicyOutputWithContext(ctx context.Context) PolicyOutpu
 	return o
 }
 
-// 策略绑定的身份数量。
+// Number of identities bound to the policy.
 func (o PolicyOutput) AttachmentCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *Policy) pulumi.IntOutput { return v.AttachmentCount }).(pulumi.IntOutput)
 }
 
-// 系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
+// Category of the system preset policy, usually the service code. This field is not returned for custom policies.
 func (o PolicyOutput) Category() pulumi.StringOutput {
 	return o.ApplyT(func(v *Policy) pulumi.StringOutput { return v.Category }).(pulumi.StringOutput)
 }
 
-// 策略创建时间。
+// Policy creation time.
 func (o PolicyOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Policy) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 策略描述，长度不超过128。
+// Policy description, no more than 128 characters.
 func (o PolicyOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Policy) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// 是否是服务关联角色的策略，0代表否，1代表是。
+// Indicates whether the policy is for a service-linked role. 0 means no; 1 means yes.
 func (o PolicyOutput) IsServiceRolePolicy() pulumi.IntOutput {
 	return o.ApplyT(func(v *Policy) pulumi.IntOutput { return v.IsServiceRolePolicy }).(pulumi.IntOutput)
 }
 
-// 策略语法内容，例如：{"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
+// Policy syntax content, for example: {"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
 func (o PolicyOutput) PolicyDocument() pulumi.StringOutput {
 	return o.ApplyT(func(v *Policy) pulumi.StringOutput { return v.PolicyDocument }).(pulumi.StringOutput)
 }
 
-// 策略名，长度1~64，支持英文、数字和+=,.@-_符号。
+// Policy name, 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
 func (o PolicyOutput) PolicyName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Policy) pulumi.StringOutput { return v.PolicyName }).(pulumi.StringOutput)
 }
@@ -296,12 +296,12 @@ func (o PolicyOutput) PolicyRoles() PolicyPolicyRoleArrayOutput {
 	return o.ApplyT(func(v *Policy) PolicyPolicyRoleArrayOutput { return v.PolicyRoles }).(PolicyPolicyRoleArrayOutput)
 }
 
-// 策略的TRN。
+// Policy TRN.
 func (o PolicyOutput) PolicyTrn() pulumi.StringOutput {
 	return o.ApplyT(func(v *Policy) pulumi.StringOutput { return v.PolicyTrn }).(pulumi.StringOutput)
 }
 
-// 策略类型。System代表系统预设策略，Custom代表自定义策略。
+// Policy type. System indicates a system preset policy; Custom indicates a custom policy.
 func (o PolicyOutput) PolicyType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Policy) pulumi.StringOutput { return v.PolicyType }).(pulumi.StringOutput)
 }
@@ -314,7 +314,7 @@ func (o PolicyOutput) PolicyUsers() PolicyPolicyUserArrayOutput {
 	return o.ApplyT(func(v *Policy) PolicyPolicyUserArrayOutput { return v.PolicyUsers }).(PolicyPolicyUserArrayOutput)
 }
 
-// 策略更新时间。
+// Policy update time.
 func (o PolicyOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Policy) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }

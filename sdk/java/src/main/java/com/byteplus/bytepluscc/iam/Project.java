@@ -16,7 +16,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * 资源项目（Project）是提供的一种资源分组管理的机制，帮助您达成逻辑层面的资源隔离，您能够通过资源项目进行项目制授权和分账等操作。
+ * Resource project (Project) provides a mechanism for resource group management, helping you achieve logical resource isolation. You can use resource projects for project-based authorization, billing, and other operations.
  * 
  * ## Example Usage
  * 
@@ -66,140 +66,140 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:iam/project:Project")
 public class Project extends com.pulumi.resources.CustomResource {
     /**
-     * 账号ID
+     * Account ID
      * 
      */
     @Export(name="accountId", refs={Integer.class}, tree="[0]")
     private Output<Integer> accountId;
 
     /**
-     * @return 账号ID
+     * @return Account ID
      * 
      */
     public Output<Integer> accountId() {
         return this.accountId;
     }
     /**
-     * 创建时间
+     * Creation Time
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 创建时间
+     * @return Creation Time
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 描述
+     * Description
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 描述
+     * @return Description
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 展示名
+     * Display Name
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return 展示名
+     * @return Display Name
      * 
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
-     * 是否可见
+     * Visible
      * 
      */
     @Export(name="hasPermission", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> hasPermission;
 
     /**
-     * @return 是否可见
+     * @return Visible
      * 
      */
     public Output<Boolean> hasPermission() {
         return this.hasPermission;
     }
     /**
-     * 父项目名称
+     * Parent Project Name
      * 
      */
     @Export(name="parentProjectName", refs={String.class}, tree="[0]")
     private Output<String> parentProjectName;
 
     /**
-     * @return 父项目名称
+     * @return Parent Project Name
      * 
      */
     public Output<String> parentProjectName() {
         return this.parentProjectName;
     }
     /**
-     * 项目路径
+     * Project Path
      * 
      */
     @Export(name="path", refs={String.class}, tree="[0]")
     private Output<String> path;
 
     /**
-     * @return 项目路径
+     * @return Project Path
      * 
      */
     public Output<String> path() {
         return this.path;
     }
     /**
-     * 项目名称
+     * Project Name
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 项目名称
+     * @return Project Name
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 启用状态
+     * Enabled Status
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 启用状态
+     * @return Enabled Status
      * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
-     * 更新时间
+     * Update Time
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 更新时间
+     * @return Update Time
      * 
      */
     public Output<String> updatedTime() {

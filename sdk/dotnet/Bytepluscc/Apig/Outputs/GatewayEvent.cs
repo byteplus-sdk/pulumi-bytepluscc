@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GatewayEvent
     {
         /// <summary>
-        /// 事件代码。
+        /// Event code
         /// </summary>
         public readonly string? Code;
         /// <summary>
-        /// 事件创建时间。
+        /// Event creation time
         /// </summary>
         public readonly string? CreatedTime;
         /// <summary>
-        /// 附带信息。
+        /// Additional information
         /// </summary>
         public readonly string? Data;
         /// <summary>
-        /// 事件描述。
+        /// Event description
         /// </summary>
         public readonly string? Description;
 

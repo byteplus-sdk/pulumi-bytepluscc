@@ -15,27 +15,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GetUpstreamUpstreamSpecResult
     {
         /// <summary>
-        /// AI模型代理。
+        /// AI model proxy
         /// </summary>
         public readonly Outputs.GetUpstreamUpstreamSpecAiProviderResult AiProvider;
         /// <summary>
-        /// 固定域名。
+        /// Fixed domain name
         /// </summary>
         public readonly Outputs.GetUpstreamUpstreamSpecDomainResult Domain;
         /// <summary>
-        /// 云服务器。
+        /// Cloud server
         /// </summary>
         public readonly ImmutableArray<Outputs.GetUpstreamUpstreamSpecEcsInstanceResult> EcsInstances;
         /// <summary>
-        /// 容器服务。
+        /// Container Service
         /// </summary>
         public readonly Outputs.GetUpstreamUpstreamSpecK8SServiceResult K8SService;
         /// <summary>
-        /// 注册中心。
+        /// Registry Center
         /// </summary>
         public readonly Outputs.GetUpstreamUpstreamSpecNacosServiceResult NacosService;
         /// <summary>
-        /// 函数服务。
+        /// Function service
         /// </summary>
         public readonly Outputs.GetUpstreamUpstreamSpecVeFaasResult VeFaas;
 

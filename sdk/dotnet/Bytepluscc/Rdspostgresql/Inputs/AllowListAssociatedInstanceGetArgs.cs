@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql.Inputs
     public sealed class AllowListAssociatedInstanceGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID.
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 实例名称。
+        /// Instance name.
         /// </summary>
         [Input("instanceName")]
         public Input<string>? InstanceName { get; set; }
 
         /// <summary>
-        /// 实例所属的 VPC ID。
+        /// VPC ID to which the instance belongs.
         /// </summary>
         [Input("vpc")]
         public Input<string>? Vpc { get; set; }

@@ -18,7 +18,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 当您需要通过VPN连接实现私有网络与本地数据中心或其他私有网络之间的通信，您需要先创建一个VPN网关。
+ * To enable communication between your private network and a local data center or another private network via a VPN connection, you must first create a VPN gateway.
  * 
  * ## Example Usage
  * 
@@ -77,378 +77,378 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:vpn/vpnGateway:VpnGateway")
 public class VpnGateway extends com.pulumi.resources.CustomResource {
     /**
-     * VPN网关的ASN。
+     * ASN of the VPN gateway.
      * 
      */
     @Export(name="asn", refs={Integer.class}, tree="[0]")
     private Output<Integer> asn;
 
     /**
-     * @return VPN网关的ASN。
+     * @return ASN of the VPN gateway.
      * 
      */
     public Output<Integer> asn() {
         return this.asn;
     }
     /**
-     * VPN网关的带宽规格。
+     * VPN gateway bandwidth specification.
      * 
      */
     @Export(name="bandwidth", refs={Integer.class}, tree="[0]")
     private Output<Integer> bandwidth;
 
     /**
-     * @return VPN网关的带宽规格。
+     * @return VPN gateway bandwidth specification.
      * 
      */
     public Output<Integer> bandwidth() {
         return this.bandwidth;
     }
     /**
-     * VPN网关的计费类型。1：包年包月。2：按量计费（按固定规格）
+     * VPN gateway billing type. 1: Subscription. 2: Pay-as-you-go (fixed specification)
      * 
      */
     @Export(name="billingType", refs={Integer.class}, tree="[0]")
     private Output<Integer> billingType;
 
     /**
-     * @return VPN网关的计费类型。1：包年包月。2：按量计费（按固定规格）
+     * @return VPN gateway billing type. 1: Subscription. 2: Pay-as-you-go (fixed specification)
      * 
      */
     public Output<Integer> billingType() {
         return this.billingType;
     }
     /**
-     * VPN网关的计费状态。Normal: 正常。FinancialLocked: 被锁定。
+     * VPN gateway billing status. Normal: Normal. FinancialLocked: Locked.
      * 
      */
     @Export(name="businessStatus", refs={String.class}, tree="[0]")
     private Output<String> businessStatus;
 
     /**
-     * @return VPN网关的计费状态。Normal: 正常。FinancialLocked: 被锁定。
+     * @return VPN gateway billing status. Normal: Normal. FinancialLocked: Locked.
      * 
      */
     public Output<String> businessStatus() {
         return this.businessStatus;
     }
     /**
-     * VPN网关关联IPsec连接的数量。
+     * Number of IPsec connections associated with the VPN gateway.
      * 
      */
     @Export(name="connectionCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> connectionCount;
 
     /**
-     * @return VPN网关关联IPsec连接的数量。
+     * @return Number of IPsec connections associated with the VPN gateway.
      * 
      */
     public Output<Integer> connectionCount() {
         return this.connectionCount;
     }
     /**
-     * 创建VPN网关的时间。
+     * Time when the VPN gateway was created.
      * 
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
-     * @return 创建VPN网关的时间。
+     * @return Time when the VPN gateway was created.
      * 
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
-     * 预期资源强制回收时间。
+     * Expected resource forced reclaim time.
      * 
      */
     @Export(name="deletedTime", refs={String.class}, tree="[0]")
     private Output<String> deletedTime;
 
     /**
-     * @return 预期资源强制回收时间。
+     * @return Expected resource forced reclaim time.
      * 
      */
     public Output<String> deletedTime() {
         return this.deletedTime;
     }
     /**
-     * VPN网关的描述。
+     * Description of the VPN gateway.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return VPN网关的描述。
+     * @return Description of the VPN gateway.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * VPN网关是否开启双隧道模式。true：开启false：关闭
+     * Whether dual tunnel mode is enabled for the VPN gateway. true: Enabled false: Disabled
      * 
      */
     @Export(name="dualTunnelEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> dualTunnelEnabled;
 
     /**
-     * @return VPN网关是否开启双隧道模式。true：开启false：关闭
+     * @return Whether dual tunnel mode is enabled for the VPN gateway. true: Enabled false: Disabled
      * 
      */
     public Output<Boolean> dualTunnelEnabled() {
         return this.dualTunnelEnabled;
     }
     /**
-     * VPN网关的到期时间。
+     * VPN gateway expiration time.
      * 
      */
     @Export(name="expiredTime", refs={String.class}, tree="[0]")
     private Output<String> expiredTime;
 
     /**
-     * @return VPN网关的到期时间。
+     * @return VPN gateway expiration time.
      * 
      */
     public Output<String> expiredTime() {
         return this.expiredTime;
     }
     /**
-     * VPN网关的公网IP地址。
+     * VPN gateway public IP address.
      * 
      */
     @Export(name="ipAddress", refs={String.class}, tree="[0]")
     private Output<String> ipAddress;
 
     /**
-     * @return VPN网关的公网IP地址。
+     * @return VPN gateway public IP address.
      * 
      */
     public Output<String> ipAddress() {
         return this.ipAddress;
     }
     /**
-     * VPN 网关的协议类型。ipv4*only：IPv4协议类型。ipv6*only：IPv6协议类型。ipv4_ipv6：双栈协议类型。
+     * VPN gateway protocol type. ipv4*only: IPv4 protocol type. ipv6*only: IPv6 protocol type. ipv4_ipv6: Dual-stack protocol type.
      * 
      */
     @Export(name="ipStackType", refs={String.class}, tree="[0]")
     private Output<String> ipStackType;
 
     /**
-     * @return VPN 网关的协议类型。ipv4*only：IPv4协议类型。ipv6*only：IPv6协议类型。ipv4_ipv6：双栈协议类型。
+     * @return VPN gateway protocol type. ipv4*only: IPv4 protocol type. ipv6*only: IPv6 protocol type. ipv4_ipv6: Dual-stack protocol type.
      * 
      */
     public Output<String> ipStackType() {
         return this.ipStackType;
     }
     /**
-     * VPN网关的IP地址类型。ipv4：IPv4地址类型。ipv6：IPv6地址类型。
+     * IP address type of the VPN gateway. ipv4: IPv4 address type. ipv6: IPv6 address type.
      * 
      */
     @Export(name="ipVersion", refs={String.class}, tree="[0]")
     private Output<String> ipVersion;
 
     /**
-     * @return VPN网关的IP地址类型。ipv4：IPv4地址类型。ipv6：IPv6地址类型。
+     * @return IP address type of the VPN gateway. ipv4: IPv4 address type. ipv6: IPv6 address type.
      * 
      */
     public Output<String> ipVersion() {
         return this.ipVersion;
     }
     /**
-     * 是否开启IPSec功能。true：开启false：关闭。
+     * Enable IPSec feature. true: enabled false: disabled
      * 
      */
     @Export(name="ipsecEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> ipsecEnabled;
 
     /**
-     * @return 是否开启IPSec功能。true：开启false：关闭。
+     * @return Enable IPSec feature. true: enabled false: disabled
      * 
      */
     public Output<Boolean> ipsecEnabled() {
         return this.ipsecEnabled;
     }
     /**
-     * 当前资源的状态是否被封禁。true：封禁false：未封禁。
+     * Whether the current resource is banned. true: Banned false: Not banned.
      * 
      */
     @Export(name="isBlocked", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isBlocked;
 
     /**
-     * @return 当前资源的状态是否被封禁。true：封禁false：未封禁。
+     * @return Whether the current resource is banned. true: Banned false: Not banned.
      * 
      */
     public Output<Boolean> isBlocked() {
         return this.isBlocked;
     }
     /**
-     * VPN网关的锁定原因。financial：因欠费被锁定。security：因安全被锁定。unlock：未锁定。
+     * VPN gateway lock reasons. financial: Locked due to overdue payment. security: Locked for security reasons. unlock: Not locked.
      * 
      */
     @Export(name="lockReason", refs={String.class}, tree="[0]")
     private Output<String> lockReason;
 
     /**
-     * @return VPN网关的锁定原因。financial：因欠费被锁定。security：因安全被锁定。unlock：未锁定。
+     * @return VPN gateway lock reasons. financial: Locked due to overdue payment. security: Locked for security reasons. unlock: Not locked.
      * 
      */
     public Output<String> lockReason() {
         return this.lockReason;
     }
     /**
-     * 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+     * Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns an empty value.
      * 
      */
     @Export(name="overdueTime", refs={String.class}, tree="[0]")
     private Output<String> overdueTime;
 
     /**
-     * @return 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+     * @return Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns an empty value.
      * 
      */
     public Output<String> overdueTime() {
         return this.overdueTime;
     }
     /**
-     * 包年包月类型VPN网关购买的时长，默认“1”。当PeriodUnit传入值为Month，Period取值范围：1~9、12、24、36。当PeriodUnit传入值为Year，Period取值范围：1～3。
+     * Subscription VPN gateway purchase duration, default is &#39;1&#39;. If PeriodUnit is Month, Period value range: 1–9, 12, 24, 36. If PeriodUnit is Year, Period value range: 1–3.
      * 
      */
     @Export(name="period", refs={Integer.class}, tree="[0]")
     private Output<Integer> period;
 
     /**
-     * @return 包年包月类型VPN网关购买的时长，默认“1”。当PeriodUnit传入值为Month，Period取值范围：1~9、12、24、36。当PeriodUnit传入值为Year，Period取值范围：1～3。
+     * @return Subscription VPN gateway purchase duration, default is &#39;1&#39;. If PeriodUnit is Month, Period value range: 1–9, 12, 24, 36. If PeriodUnit is Year, Period value range: 1–3.
      * 
      */
     public Output<Integer> period() {
         return this.period;
     }
     /**
-     * 包年包月类型VPN网关购买时长的单位，默认“Month”。Month：月Year：年
+     * Unit for the purchase duration of subscription-based VPN gateways. Default is &#39;Month&#39;. Month: month Year: year
      * 
      */
     @Export(name="periodUnit", refs={String.class}, tree="[0]")
     private Output<String> periodUnit;
 
     /**
-     * @return 包年包月类型VPN网关购买时长的单位，默认“Month”。Month：月Year：年
+     * @return Unit for the purchase duration of subscription-based VPN gateways. Default is &#39;Month&#39;. Month: month Year: year
      * 
      */
     public Output<String> periodUnit() {
         return this.periodUnit;
     }
     /**
-     * VPN网关所属的项目。不填默认为default，即创建的资源属于default项目。您可调用ListProjects查询当前账号下项目的信息。
+     * Project to which the VPN gateway belongs. If not specified, defaults to &#39;default&#39;, meaning the created resource belongs to the default project. You can call ListProjects to query project information under the current account.
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return VPN网关所属的项目。不填默认为default，即创建的资源属于default项目。您可调用ListProjects查询当前账号下项目的信息。
+     * @return Project to which the VPN gateway belongs. If not specified, defaults to &#39;default&#39;, meaning the created resource belongs to the default project. You can call ListProjects to query project information under the current account.
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * VPN网关的路由条目数量。
+     * Number of route entries for the VPN gateway.
      * 
      */
     @Export(name="routeCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> routeCount;
 
     /**
-     * @return VPN网关的路由条目数量。
+     * @return Number of route entries for the VPN gateway.
      * 
      */
     public Output<Integer> routeCount() {
         return this.routeCount;
     }
     /**
-     * VPN网关的第二个公网IP地址。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+     * Second public IP address of the VPN gateway. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
      * 
      */
     @Export(name="secondaryIpAddress", refs={String.class}, tree="[0]")
     private Output<String> secondaryIpAddress;
 
     /**
-     * @return VPN网关的第二个公网IP地址。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+     * @return Second public IP address of the VPN gateway. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
      * 
      */
     public Output<String> secondaryIpAddress() {
         return this.secondaryIpAddress;
     }
     /**
-     * VPN网关实例关联的第二个子网的ID。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+     * ID of the second subnet associated with the VPN gateway instance. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
      * 
      */
     @Export(name="secondarySubnetId", refs={String.class}, tree="[0]")
     private Output<String> secondarySubnetId;
 
     /**
-     * @return VPN网关实例关联的第二个子网的ID。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+     * @return ID of the second subnet associated with the VPN gateway instance. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
      * 
      */
     public Output<String> secondarySubnetId() {
         return this.secondarySubnetId;
     }
     /**
-     * 是否开启SSL VPN功能。true：开启false：关闭
+     * Enable SSL VPN feature. true: enabled false: disabled
      * 
      */
     @Export(name="sslEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> sslEnabled;
 
     /**
-     * @return 是否开启SSL VPN功能。true：开启false：关闭
+     * @return Enable SSL VPN feature. true: enabled false: disabled
      * 
      */
     public Output<Boolean> sslEnabled() {
         return this.sslEnabled;
     }
     /**
-     * VPN网关的最大SSL连接数。
+     * Maximum SSL connections for the VPN gateway.
      * 
      */
     @Export(name="sslMaxConnections", refs={Integer.class}, tree="[0]")
     private Output<Integer> sslMaxConnections;
 
     /**
-     * @return VPN网关的最大SSL连接数。
+     * @return Maximum SSL connections for the VPN gateway.
      * 
      */
     public Output<Integer> sslMaxConnections() {
         return this.sslMaxConnections;
     }
     /**
-     * VPN网关的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+     * Status of the VPN gateway. Creating: creating Deleting: deleting Pending: configuring Available: available
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return VPN网关的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+     * @return Status of the VPN gateway. Creating: creating Deleting: deleting Pending: configuring Available: available
      * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
-     * VPN网关使用的端口所属子网的ID。
+     * ID of the subnet to which the port used by the VPN gateway belongs.
      * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
-     * @return VPN网关使用的端口所属子网的ID。
+     * @return ID of the subnet to which the port used by the VPN gateway belongs.
      * 
      */
     public Output<String> subnetId() {
@@ -461,56 +461,56 @@ public class VpnGateway extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 更新VPN网关的时间。
+     * VPN gateway update time.
      * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
-     * @return 更新VPN网关的时间。
+     * @return VPN gateway update time.
      * 
      */
     public Output<String> updateTime() {
         return this.updateTime;
     }
     /**
-     * VPN网关所在VPC的ID。
+     * VPC ID where the VPN gateway is located.
      * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
-     * @return VPN网关所在VPC的ID。
+     * @return VPC ID where the VPN gateway is located.
      * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
-     * VPN网关的ID。
+     * ID of the VPN gateway.
      * 
      */
     @Export(name="vpnGatewayId", refs={String.class}, tree="[0]")
     private Output<String> vpnGatewayId;
 
     /**
-     * @return VPN网关的ID。
+     * @return ID of the VPN gateway.
      * 
      */
     public Output<String> vpnGatewayId() {
         return this.vpnGatewayId;
     }
     /**
-     * VPN网关的名称。
+     * Name of the VPN gateway.
      * 
      */
     @Export(name="vpnGatewayName", refs={String.class}, tree="[0]")
     private Output<String> vpnGatewayName;
 
     /**
-     * @return VPN网关的名称。
+     * @return Name of the VPN gateway.
      * 
      */
     public Output<String> vpnGatewayName() {

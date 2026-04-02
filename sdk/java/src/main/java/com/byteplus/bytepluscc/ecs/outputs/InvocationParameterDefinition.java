@@ -14,110 +14,110 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InvocationParameterDefinition {
     /**
-     * @return 自定义参数值（数字）允许的小数点后位数。
+     * @return Allowed number of decimal places for custom parameter values (numeric).
      * 
      */
     private @Nullable Integer decimalPrecision;
     /**
-     * @return 自定义参数默认值。
+     * @return Default value for custom parameter.
      * 
      */
     private @Nullable String defaultValue;
     /**
-     * @return 自定义参数值（字符串）的最大长度。
+     * @return Maximum length for custom parameter value (string).
      * 
      */
     private @Nullable Integer maxLength;
     /**
-     * @return 自定义参数值（数字）的最大值。
+     * @return Maximum value for custom parameter (numeric).
      * 
      */
     private @Nullable String maxValue;
     /**
-     * @return 自定义参数值（字符串）的最小长度。
+     * @return Minimum length for custom parameter values (string).
      * 
      */
     private @Nullable Integer minLength;
     /**
-     * @return 自定义参数值（数字）的最小值。
+     * @return Minimum value for custom parameter (numeric).
      * 
      */
     private @Nullable String minValue;
     /**
-     * @return 自定义参数名称，需要在脚本中通过{{Param}}定义 。
+     * @return Custom parameter name. Must be defined in the script using {{Param}}.
      * 
      */
     private @Nullable String name;
     /**
-     * @return 是否必填。true：必填。false：非必填。
+     * @return Required. true: Required. false: Optional.
      * 
      */
     private @Nullable Boolean required;
     /**
-     * @return 自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+     * @return Custom parameter type. String: Indicates custom parameter type is string. Digit: Indicates custom parameter type is numeric.
      * 
      */
     private @Nullable String type;
 
     private InvocationParameterDefinition() {}
     /**
-     * @return 自定义参数值（数字）允许的小数点后位数。
+     * @return Allowed number of decimal places for custom parameter values (numeric).
      * 
      */
     public Optional<Integer> decimalPrecision() {
         return Optional.ofNullable(this.decimalPrecision);
     }
     /**
-     * @return 自定义参数默认值。
+     * @return Default value for custom parameter.
      * 
      */
     public Optional<String> defaultValue() {
         return Optional.ofNullable(this.defaultValue);
     }
     /**
-     * @return 自定义参数值（字符串）的最大长度。
+     * @return Maximum length for custom parameter value (string).
      * 
      */
     public Optional<Integer> maxLength() {
         return Optional.ofNullable(this.maxLength);
     }
     /**
-     * @return 自定义参数值（数字）的最大值。
+     * @return Maximum value for custom parameter (numeric).
      * 
      */
     public Optional<String> maxValue() {
         return Optional.ofNullable(this.maxValue);
     }
     /**
-     * @return 自定义参数值（字符串）的最小长度。
+     * @return Minimum length for custom parameter values (string).
      * 
      */
     public Optional<Integer> minLength() {
         return Optional.ofNullable(this.minLength);
     }
     /**
-     * @return 自定义参数值（数字）的最小值。
+     * @return Minimum value for custom parameter (numeric).
      * 
      */
     public Optional<String> minValue() {
         return Optional.ofNullable(this.minValue);
     }
     /**
-     * @return 自定义参数名称，需要在脚本中通过{{Param}}定义 。
+     * @return Custom parameter name. Must be defined in the script using {{Param}}.
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return 是否必填。true：必填。false：非必填。
+     * @return Required. true: Required. false: Optional.
      * 
      */
     public Optional<Boolean> required() {
         return Optional.ofNullable(this.required);
     }
     /**
-     * @return 自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+     * @return Custom parameter type. String: Indicates custom parameter type is string. Digit: Indicates custom parameter type is numeric.
      * 
      */
     public Optional<String> type() {

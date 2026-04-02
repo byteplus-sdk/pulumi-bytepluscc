@@ -19,14 +19,14 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
     public static final ScalingPolicyAlarmPolicyArgs Empty = new ScalingPolicyAlarmPolicyArgs();
 
     /**
-     * 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
+     * Detailed monitoring metric information for single-metric monitoring. Valid only when ScalingPolicyType is set to Alarm.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<ScalingPolicyAlarmPolicyConditionArgs> condition;
 
     /**
-     * @return 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
+     * @return Detailed monitoring metric information for single-metric monitoring. Valid only when ScalingPolicyType is set to Alarm.
      * 
      */
     public Optional<Output<ScalingPolicyAlarmPolicyConditionArgs>> condition() {
@@ -34,14 +34,14 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 多指标告警时的判定条件。&amp;&amp;：多个指标同时成立才判定为触发告警。||（默认）：任意指标满足条件就判定为触发告警。
+     * Determination conditions for multi-metric alarms. &amp;&amp;: Alarm is triggered only when all metrics meet the conditions. || (default): Alarm is triggered when any metric meets the condition.
      * 
      */
     @Import(name="conditionOperator")
     private @Nullable Output<String> conditionOperator;
 
     /**
-     * @return 多指标告警时的判定条件。&amp;&amp;：多个指标同时成立才判定为触发告警。||（默认）：任意指标满足条件就判定为触发告警。
+     * @return Determination conditions for multi-metric alarms. &amp;&amp;: Alarm is triggered only when all metrics meet the conditions. || (default): Alarm is triggered when any metric meets the condition.
      * 
      */
     public Optional<Output<String>> conditionOperator() {
@@ -56,14 +56,14 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 报警任务的生效时间段。
+     * The effective period for the alarm task.
      * 
      */
     @Import(name="effective")
     private @Nullable Output<String> effective;
 
     /**
-     * @return 报警任务的生效时间段。
+     * @return The effective period for the alarm task.
      * 
      */
     public Optional<Output<String>> effective() {
@@ -71,14 +71,14 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 当监控指标数据连续几次达到阈值时，即触发伸缩行为。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+     * Scaling actions are triggered when monitoring metric data reaches the threshold for several consecutive times. Valid only when ScalingPolicyType is set to Alarm and required.
      * 
      */
     @Import(name="evaluationCount")
     private @Nullable Output<Integer> evaluationCount;
 
     /**
-     * @return 当监控指标数据连续几次达到阈值时，即触发伸缩行为。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+     * @return Scaling actions are triggered when monitoring metric data reaches the threshold for several consecutive times. Valid only when ScalingPolicyType is set to Alarm and required.
      * 
      */
     public Optional<Output<Integer>> evaluationCount() {
@@ -86,14 +86,14 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 报警任务的类型，取值：Static：表示由agent采集的静态监控。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+     * Type of alarm task. Options: Static: static monitoring collected by agent. Valid only when ScalingPolicyType is set to Alarm and required.
      * 
      */
     @Import(name="ruleType")
     private @Nullable Output<String> ruleType;
 
     /**
-     * @return 报警任务的类型，取值：Static：表示由agent采集的静态监控。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+     * @return Type of alarm task. Options: Static: static monitoring collected by agent. Valid only when ScalingPolicyType is set to Alarm and required.
      * 
      */
     public Optional<Output<String>> ruleType() {
@@ -130,7 +130,7 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param condition 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
+         * @param condition Detailed monitoring metric information for single-metric monitoring. Valid only when ScalingPolicyType is set to Alarm.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param condition 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
+         * @param condition Detailed monitoring metric information for single-metric monitoring. Valid only when ScalingPolicyType is set to Alarm.
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param conditionOperator 多指标告警时的判定条件。&amp;&amp;：多个指标同时成立才判定为触发告警。||（默认）：任意指标满足条件就判定为触发告警。
+         * @param conditionOperator Determination conditions for multi-metric alarms. &amp;&amp;: Alarm is triggered only when all metrics meet the conditions. || (default): Alarm is triggered when any metric meets the condition.
          * 
          * @return builder
          * 
@@ -162,7 +162,7 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param conditionOperator 多指标告警时的判定条件。&amp;&amp;：多个指标同时成立才判定为触发告警。||（默认）：任意指标满足条件就判定为触发告警。
+         * @param conditionOperator Determination conditions for multi-metric alarms. &amp;&amp;: Alarm is triggered only when all metrics meet the conditions. || (default): Alarm is triggered when any metric meets the condition.
          * 
          * @return builder
          * 
@@ -185,7 +185,7 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param effective 报警任务的生效时间段。
+         * @param effective The effective period for the alarm task.
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param effective 报警任务的生效时间段。
+         * @param effective The effective period for the alarm task.
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param evaluationCount 当监控指标数据连续几次达到阈值时，即触发伸缩行为。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+         * @param evaluationCount Scaling actions are triggered when monitoring metric data reaches the threshold for several consecutive times. Valid only when ScalingPolicyType is set to Alarm and required.
          * 
          * @return builder
          * 
@@ -217,7 +217,7 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param evaluationCount 当监控指标数据连续几次达到阈值时，即触发伸缩行为。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+         * @param evaluationCount Scaling actions are triggered when monitoring metric data reaches the threshold for several consecutive times. Valid only when ScalingPolicyType is set to Alarm and required.
          * 
          * @return builder
          * 
@@ -227,7 +227,7 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param ruleType 报警任务的类型，取值：Static：表示由agent采集的静态监控。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+         * @param ruleType Type of alarm task. Options: Static: static monitoring collected by agent. Valid only when ScalingPolicyType is set to Alarm and required.
          * 
          * @return builder
          * 
@@ -238,7 +238,7 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param ruleType 报警任务的类型，取值：Static：表示由agent采集的静态监控。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+         * @param ruleType Type of alarm task. Options: Static: static monitoring collected by agent. Valid only when ScalingPolicyType is set to Alarm and required.
          * 
          * @return builder
          * 

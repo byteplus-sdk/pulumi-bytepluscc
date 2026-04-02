@@ -18,7 +18,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 实例启动模板是一系列实例配置信息的集合，用于快速购买实例。在模板中，您可以存储除密码外的全部配置信息，包括密钥对、计算规格、云盘、网络等，如果配置信息均有效，便可以一键成功购买实例，无需进行重复配置。
+ * An instance launch template is a collection of instance configuration information for quickly purchasing instances. You can store all configuration information except passwords in the template, including key pairs, compute specifications, cloud disks, networks, etc. If all configuration information is valid, you can purchase instances with one click without repeated configuration.
  * 
  * ## Example Usage
  * 
@@ -35,84 +35,84 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:ecs/launchTemplate:LaunchTemplate")
 public class LaunchTemplate extends com.pulumi.resources.CustomResource {
     /**
-     * 实例启动模板的创建时间。
+     * Instance launch template creation time
      * 
      */
     @Export(name="createdAt", refs={String.class}, tree="[0]")
     private Output<String> createdAt;
 
     /**
-     * @return 实例启动模板的创建时间。
+     * @return Instance launch template creation time
      * 
      */
     public Output<String> createdAt() {
         return this.createdAt;
     }
     /**
-     * 实例启动模板的默认版本号。
+     * Instance launch template default version number
      * 
      */
     @Export(name="defaultVersionNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> defaultVersionNumber;
 
     /**
-     * @return 实例启动模板的默认版本号。
+     * @return Instance launch template default version number
      * 
      */
     public Output<Integer> defaultVersionNumber() {
         return this.defaultVersionNumber;
     }
     /**
-     * 实例启动模的最新版本号。
+     * Latest version number of the instance launch template.
      * 
      */
     @Export(name="latestVersionNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> latestVersionNumber;
 
     /**
-     * @return 实例启动模的最新版本号。
+     * @return Latest version number of the instance launch template.
      * 
      */
     public Output<Integer> latestVersionNumber() {
         return this.latestVersionNumber;
     }
     /**
-     * 实例启动模板 ID。
+     * Instance launch template ID
      * 
      */
     @Export(name="launchTemplateId", refs={String.class}, tree="[0]")
     private Output<String> launchTemplateId;
 
     /**
-     * @return 实例启动模板 ID。
+     * @return Instance launch template ID
      * 
      */
     public Output<String> launchTemplateId() {
         return this.launchTemplateId;
     }
     /**
-     * 实例启动模板名称。
+     * Instance launch template name.
      * 
      */
     @Export(name="launchTemplateName", refs={String.class}, tree="[0]")
     private Output<String> launchTemplateName;
 
     /**
-     * @return 实例启动模板名称。
+     * @return Instance launch template name.
      * 
      */
     public Output<String> launchTemplateName() {
         return this.launchTemplateName;
     }
     /**
-     * 实例启动模版所属项目。
+     * Project associated with the instance launch template.
      * 
      */
     @Export(name="launchTemplateProjectName", refs={String.class}, tree="[0]")
     private Output<String> launchTemplateProjectName;
 
     /**
-     * @return 实例启动模版所属项目。
+     * @return Project associated with the instance launch template.
      * 
      */
     public Output<String> launchTemplateProjectName() {
@@ -125,28 +125,28 @@ public class LaunchTemplate extends com.pulumi.resources.CustomResource {
         return this.launchTemplateTags;
     }
     /**
-     * 实例启动模板版本信息。
+     * Instance launch template version information
      * 
      */
     @Export(name="launchTemplateVersion", refs={LaunchTemplateLaunchTemplateVersion.class}, tree="[0]")
     private Output<LaunchTemplateLaunchTemplateVersion> launchTemplateVersion;
 
     /**
-     * @return 实例启动模板版本信息。
+     * @return Instance launch template version information
      * 
      */
     public Output<LaunchTemplateLaunchTemplateVersion> launchTemplateVersion() {
         return this.launchTemplateVersion;
     }
     /**
-     * 实例启动模板的更新时间。
+     * Instance launch template update time
      * 
      */
     @Export(name="updatedAt", refs={String.class}, tree="[0]")
     private Output<String> updatedAt;
 
     /**
-     * @return 实例启动模板的更新时间。
+     * @return Instance launch template update time
      * 
      */
     public Output<String> updatedAt() {

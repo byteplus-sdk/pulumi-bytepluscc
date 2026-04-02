@@ -14,230 +14,230 @@ import java.util.Objects;
 @CustomType
 public final class GetTransitRouterAttachment {
     /**
-     * @return 是否自动同步TR路由到网络实例路由表中。true：是。false：否。
+     * @return Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
      * 
      */
     private Boolean autoPublishRouteEnabled;
     /**
-     * @return 网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
+     * @return Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
      * 
      */
     private String businessStatus;
     /**
-     * @return 网络实例连接的创建时间。
+     * @return Creation time of the network instance connection.
      * 
      */
     private String creationTime;
     /**
-     * @return 网络实例连接的删除时间。
+     * @return Deletion time of the network instance connection.
      * 
      */
     private String deletedTime;
     /**
-     * @return 网络实例连接的描述信息。
+     * @return Description of the network instance connection.
      * 
      */
     private String description;
     /**
-     * @return 是否开启IPv6功能。true：是。false：否。
+     * @return Whether IPv6 is enabled. true: yes. false: no
      * 
      */
     private Boolean ipv6Enabled;
     /**
-     * @return 网络实例连接的欠费关停时间。
+     * @return Shutdown time due to overdue payment for the network instance connection
      * 
      */
     private String overdueTime;
     /**
-     * @return 网络实例的ID。
+     * @return ID of the network instance
      * 
      */
     private String resourceId;
     /**
-     * @return 网络实例连接关联的网络实例类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+     * @return Type of network instance associated with the network instance connection. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
      * 
      */
     private String resourceType;
     /**
-     * @return 网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+     * @return Status of the network instance connection. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
      * 
      */
     private String status;
     /**
-     * @return 网络实例连接的标签信息
+     * @return Tag information of the network instance connection
      * 
      */
     private List<GetTransitRouterAttachmentTag> tags;
     /**
-     * @return 网络实例连接的ID。
+     * @return Network instance connection ID.
      * 
      */
     private String transitRouterAttachmentId;
     /**
-     * @return 网络实例连接的名称。
+     * @return Name of the network instance connection
      * 
      */
     private String transitRouterAttachmentName;
     /**
-     * @return 跨地域连接关联的转发策略的ID。
+     * @return ID of the forwarding policy associated with the cross-region connection
      * 
      */
     private String transitRouterForwardPolicyTableId;
     /**
-     * @return 中转路由器实例的ID。
+     * @return Transit router instance ID.
      * 
      */
     private String transitRouterId;
     /**
-     * @return 网络实例连接关联转发的路由表ID。
+     * @return Route table ID associated with the forwarding of the network instance connection.
      * 
      */
     private String transitRouterRouteTableId;
     /**
-     * @return 跨地域连接关联的流标记策略的ID。
+     * @return ID of the flow marking policy associated with the cross-region connection
      * 
      */
     private String transitRouterTrafficQosMarkingPolicyId;
     /**
-     * @return 跨地域连接关联的流队列策略的ID。
+     * @return ID of the flow queue policy associated with the cross-region connection
      * 
      */
     private String transitRouterTrafficQosQueuePolicyId;
     /**
-     * @return 网络实例连接的最近操作时间。
+     * @return Last operation time of the network instance connection
      * 
      */
     private String updateTime;
 
     private GetTransitRouterAttachment() {}
     /**
-     * @return 是否自动同步TR路由到网络实例路由表中。true：是。false：否。
+     * @return Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
      * 
      */
     public Boolean autoPublishRouteEnabled() {
         return this.autoPublishRouteEnabled;
     }
     /**
-     * @return 网络实例连接的业务状态。取值如下：Normal：正常。FinancialLocked：已冻结。
+     * @return Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
      * 
      */
     public String businessStatus() {
         return this.businessStatus;
     }
     /**
-     * @return 网络实例连接的创建时间。
+     * @return Creation time of the network instance connection.
      * 
      */
     public String creationTime() {
         return this.creationTime;
     }
     /**
-     * @return 网络实例连接的删除时间。
+     * @return Deletion time of the network instance connection.
      * 
      */
     public String deletedTime() {
         return this.deletedTime;
     }
     /**
-     * @return 网络实例连接的描述信息。
+     * @return Description of the network instance connection.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 是否开启IPv6功能。true：是。false：否。
+     * @return Whether IPv6 is enabled. true: yes. false: no
      * 
      */
     public Boolean ipv6Enabled() {
         return this.ipv6Enabled;
     }
     /**
-     * @return 网络实例连接的欠费关停时间。
+     * @return Shutdown time due to overdue payment for the network instance connection
      * 
      */
     public String overdueTime() {
         return this.overdueTime;
     }
     /**
-     * @return 网络实例的ID。
+     * @return ID of the network instance
      * 
      */
     public String resourceId() {
         return this.resourceId;
     }
     /**
-     * @return 网络实例连接关联的网络实例类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+     * @return Type of network instance associated with the network instance connection. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
      * 
      */
     public String resourceType() {
         return this.resourceType;
     }
     /**
-     * @return 网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+     * @return Status of the network instance connection. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 网络实例连接的标签信息
+     * @return Tag information of the network instance connection
      * 
      */
     public List<GetTransitRouterAttachmentTag> tags() {
         return this.tags;
     }
     /**
-     * @return 网络实例连接的ID。
+     * @return Network instance connection ID.
      * 
      */
     public String transitRouterAttachmentId() {
         return this.transitRouterAttachmentId;
     }
     /**
-     * @return 网络实例连接的名称。
+     * @return Name of the network instance connection
      * 
      */
     public String transitRouterAttachmentName() {
         return this.transitRouterAttachmentName;
     }
     /**
-     * @return 跨地域连接关联的转发策略的ID。
+     * @return ID of the forwarding policy associated with the cross-region connection
      * 
      */
     public String transitRouterForwardPolicyTableId() {
         return this.transitRouterForwardPolicyTableId;
     }
     /**
-     * @return 中转路由器实例的ID。
+     * @return Transit router instance ID.
      * 
      */
     public String transitRouterId() {
         return this.transitRouterId;
     }
     /**
-     * @return 网络实例连接关联转发的路由表ID。
+     * @return Route table ID associated with the forwarding of the network instance connection.
      * 
      */
     public String transitRouterRouteTableId() {
         return this.transitRouterRouteTableId;
     }
     /**
-     * @return 跨地域连接关联的流标记策略的ID。
+     * @return ID of the flow marking policy associated with the cross-region connection
      * 
      */
     public String transitRouterTrafficQosMarkingPolicyId() {
         return this.transitRouterTrafficQosMarkingPolicyId;
     }
     /**
-     * @return 跨地域连接关联的流队列策略的ID。
+     * @return ID of the flow queue policy associated with the cross-region connection
      * 
      */
     public String transitRouterTrafficQosQueuePolicyId() {
         return this.transitRouterTrafficQosQueuePolicyId;
     }
     /**
-     * @return 网络实例连接的最近操作时间。
+     * @return Last operation time of the network instance connection
      * 
      */
     public String updateTime() {

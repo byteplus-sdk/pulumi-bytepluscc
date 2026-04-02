@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AllowListAssociatedInstance {
     /**
-     * @return 白名单绑定的实例ID。
+     * @return ID of the instance bound to the allowlist
      * 
      */
     private @Nullable String instanceId;
 
     private AllowListAssociatedInstance() {}
     /**
-     * @return 白名单绑定的实例ID。
+     * @return ID of the instance bound to the allowlist
      * 
      */
     public Optional<String> instanceId() {

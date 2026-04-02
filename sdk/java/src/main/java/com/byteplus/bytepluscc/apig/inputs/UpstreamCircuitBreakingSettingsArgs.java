@@ -17,14 +17,14 @@ public final class UpstreamCircuitBreakingSettingsArgs extends com.pulumi.resour
     public static final UpstreamCircuitBreakingSettingsArgs Empty = new UpstreamCircuitBreakingSettingsArgs();
 
     /**
-     * 最小弹出时间。单位为毫秒。取值限制为1~86400000。默认值为30秒。
+     * Minimum pop time, in milliseconds. Value range: 1–86400000. Default: 30 seconds
      * 
      */
     @Import(name="baseEjectionTime")
     private @Nullable Output<Integer> baseEjectionTime;
 
     /**
-     * @return 最小弹出时间。单位为毫秒。取值限制为1~86400000。默认值为30秒。
+     * @return Minimum pop time, in milliseconds. Value range: 1–86400000. Default: 30 seconds
      * 
      */
     public Optional<Output<Integer>> baseEjectionTime() {
@@ -32,14 +32,14 @@ public final class UpstreamCircuitBreakingSettingsArgs extends com.pulumi.resour
     }
 
     /**
-     * 连续失败次数。取值限制为1~100。默认值为5。
+     * Consecutive failure count. Value range: 1~100. Default: 5
      * 
      */
     @Import(name="consecutiveErrors")
     private @Nullable Output<Integer> consecutiveErrors;
 
     /**
-     * @return 连续失败次数。取值限制为1~100。默认值为5。
+     * @return Consecutive failure count. Value range: 1~100. Default: 5
      * 
      */
     public Optional<Output<Integer>> consecutiveErrors() {
@@ -47,14 +47,14 @@ public final class UpstreamCircuitBreakingSettingsArgs extends com.pulumi.resour
     }
 
     /**
-     * 开启。
+     * Enable
      * 
      */
     @Import(name="enable")
     private @Nullable Output<Boolean> enable;
 
     /**
-     * @return 开启。
+     * @return Enable
      * 
      */
     public Optional<Output<Boolean>> enable() {
@@ -62,14 +62,14 @@ public final class UpstreamCircuitBreakingSettingsArgs extends com.pulumi.resour
     }
 
     /**
-     * 计算周期。单位为毫秒。取值限制为1~86400000。默认值为10秒。
+     * Calculation cycle, in milliseconds. Value range: 1–86400000. Default: 10 seconds
      * 
      */
     @Import(name="interval")
     private @Nullable Output<Integer> interval;
 
     /**
-     * @return 计算周期。单位为毫秒。取值限制为1~86400000。默认值为10秒。
+     * @return Calculation cycle, in milliseconds. Value range: 1–86400000. Default: 10 seconds
      * 
      */
     public Optional<Output<Integer>> interval() {
@@ -77,14 +77,14 @@ public final class UpstreamCircuitBreakingSettingsArgs extends com.pulumi.resour
     }
 
     /**
-     * 最大熔断比例。取值限制为1~100。默认值为20%。
+     * Maximum circuit breaking ratio. Value range: 1~100. Default: 20%
      * 
      */
     @Import(name="maxEjectionPercent")
     private @Nullable Output<Integer> maxEjectionPercent;
 
     /**
-     * @return 最大熔断比例。取值限制为1~100。默认值为20%。
+     * @return Maximum circuit breaking ratio. Value range: 1~100. Default: 20%
      * 
      */
     public Optional<Output<Integer>> maxEjectionPercent() {
@@ -92,14 +92,14 @@ public final class UpstreamCircuitBreakingSettingsArgs extends com.pulumi.resour
     }
 
     /**
-     * 最小健康比例。取值限制为0~100。默认值为60%。
+     * Minimum health ratio. Value range: 0~100. Default: 60%
      * 
      */
     @Import(name="minHealthPercent")
     private @Nullable Output<Integer> minHealthPercent;
 
     /**
-     * @return 最小健康比例。取值限制为0~100。默认值为60%。
+     * @return Minimum health ratio. Value range: 0~100. Default: 60%
      * 
      */
     public Optional<Output<Integer>> minHealthPercent() {
@@ -136,7 +136,7 @@ public final class UpstreamCircuitBreakingSettingsArgs extends com.pulumi.resour
         }
 
         /**
-         * @param baseEjectionTime 最小弹出时间。单位为毫秒。取值限制为1~86400000。默认值为30秒。
+         * @param baseEjectionTime Minimum pop time, in milliseconds. Value range: 1–86400000. Default: 30 seconds
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class UpstreamCircuitBreakingSettingsArgs extends com.pulumi.resour
         }
 
         /**
-         * @param baseEjectionTime 最小弹出时间。单位为毫秒。取值限制为1~86400000。默认值为30秒。
+         * @param baseEjectionTime Minimum pop time, in milliseconds. Value range: 1–86400000. Default: 30 seconds
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class UpstreamCircuitBreakingSettingsArgs extends com.pulumi.resour
         }
 
         /**
-         * @param consecutiveErrors 连续失败次数。取值限制为1~100。默认值为5。
+         * @param consecutiveErrors Consecutive failure count. Value range: 1~100. Default: 5
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class UpstreamCircuitBreakingSettingsArgs extends com.pulumi.resour
         }
 
         /**
-         * @param consecutiveErrors 连续失败次数。取值限制为1~100。默认值为5。
+         * @param consecutiveErrors Consecutive failure count. Value range: 1~100. Default: 5
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class UpstreamCircuitBreakingSettingsArgs extends com.pulumi.resour
         }
 
         /**
-         * @param enable 开启。
+         * @param enable Enable
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class UpstreamCircuitBreakingSettingsArgs extends com.pulumi.resour
         }
 
         /**
-         * @param enable 开启。
+         * @param enable Enable
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class UpstreamCircuitBreakingSettingsArgs extends com.pulumi.resour
         }
 
         /**
-         * @param interval 计算周期。单位为毫秒。取值限制为1~86400000。默认值为10秒。
+         * @param interval Calculation cycle, in milliseconds. Value range: 1–86400000. Default: 10 seconds
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class UpstreamCircuitBreakingSettingsArgs extends com.pulumi.resour
         }
 
         /**
-         * @param interval 计算周期。单位为毫秒。取值限制为1~86400000。默认值为10秒。
+         * @param interval Calculation cycle, in milliseconds. Value range: 1–86400000. Default: 10 seconds
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class UpstreamCircuitBreakingSettingsArgs extends com.pulumi.resour
         }
 
         /**
-         * @param maxEjectionPercent 最大熔断比例。取值限制为1~100。默认值为20%。
+         * @param maxEjectionPercent Maximum circuit breaking ratio. Value range: 1~100. Default: 20%
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class UpstreamCircuitBreakingSettingsArgs extends com.pulumi.resour
         }
 
         /**
-         * @param maxEjectionPercent 最大熔断比例。取值限制为1~100。默认值为20%。
+         * @param maxEjectionPercent Maximum circuit breaking ratio. Value range: 1~100. Default: 20%
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class UpstreamCircuitBreakingSettingsArgs extends com.pulumi.resour
         }
 
         /**
-         * @param minHealthPercent 最小健康比例。取值限制为0~100。默认值为60%。
+         * @param minHealthPercent Minimum health ratio. Value range: 0~100. Default: 60%
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class UpstreamCircuitBreakingSettingsArgs extends com.pulumi.resour
         }
 
         /**
-         * @param minHealthPercent 最小健康比例。取值限制为0~100。默认值为60%。
+         * @param minHealthPercent Minimum health ratio. Value range: 0~100. Default: 60%
          * 
          * @return builder
          * 

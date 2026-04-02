@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc.Inputs
     public sealed class Ipv6AddressBandwidthTagGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 标签键。
+        /// Tag key
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// 标签值。
+        /// Tag value
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Inputs
     public sealed class ListenerTagArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 用户标签的标签键。具体规则如下：长度限制为1～128个字符。大小写敏感。不能以volc:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+        /// Tag key for user tags. Rules are as follows: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// 用户标签的标签值。具体规则如下：长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+        /// The value of the user tag. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

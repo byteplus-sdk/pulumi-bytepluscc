@@ -12,38 +12,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DnsControlPolicyDomainListV1 {
     /**
-     * @return 具体地址信息。
+     * @return Specific address information.
      * 
      */
     private @Nullable String address;
     /**
-     * @return 描述信息。
+     * @return Description information.
      * 
      */
     private @Nullable String description;
     /**
-     * @return 地址类型。支持的取值如下所示。ip：IPv4 地址；ipv6：IPv6 地址；domain：域名；port：端口。
+     * @return Address type. Supported values are as follows. ip: IPv4 address; ipv6: IPv6 address; domain: domain name; port: port number.
      * 
      */
     private @Nullable String type;
 
     private DnsControlPolicyDomainListV1() {}
     /**
-     * @return 具体地址信息。
+     * @return Specific address information.
      * 
      */
     public Optional<String> address() {
         return Optional.ofNullable(this.address);
     }
     /**
-     * @return 描述信息。
+     * @return Description information.
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return 地址类型。支持的取值如下所示。ip：IPv4 地址；ipv6：IPv6 地址；domain：域名；port：端口。
+     * @return Address type. Supported values are as follows. ip: IPv4 address; ipv6: IPv6 address; domain: domain name; port: port number.
      * 
      */
     public Optional<String> type() {

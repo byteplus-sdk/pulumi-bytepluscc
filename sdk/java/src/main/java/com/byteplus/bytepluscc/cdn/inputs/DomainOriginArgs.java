@@ -18,14 +18,14 @@ public final class DomainOriginArgs extends com.pulumi.resources.ResourceArgs {
     public static final DomainOriginArgs Empty = new DomainOriginArgs();
 
     /**
-     * 表示该配置模块的生效条件，由一组规则组成。
+     * Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<DomainOriginConditionArgs> condition;
 
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public Optional<Output<DomainOriginConditionArgs>> condition() {
@@ -33,14 +33,14 @@ public final class DomainOriginArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示源站配置。
+     * Indicates origin configuration.
      * 
      */
     @Import(name="originAction", required=true)
     private Output<DomainOriginOriginActionArgs> originAction;
 
     /**
-     * @return 表示源站配置。
+     * @return Indicates origin configuration.
      * 
      */
     public Output<DomainOriginOriginActionArgs> originAction() {
@@ -73,7 +73,7 @@ public final class DomainOriginArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param condition 表示该配置模块的生效条件，由一组规则组成。
+         * @param condition Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          * 
          * @return builder
          * 
@@ -84,7 +84,7 @@ public final class DomainOriginArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param condition 表示该配置模块的生效条件，由一组规则组成。
+         * @param condition Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          * 
          * @return builder
          * 
@@ -94,7 +94,7 @@ public final class DomainOriginArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param originAction 表示源站配置。
+         * @param originAction Indicates origin configuration.
          * 
          * @return builder
          * 
@@ -105,7 +105,7 @@ public final class DomainOriginArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param originAction 表示源站配置。
+         * @param originAction Indicates origin configuration.
          * 
          * @return builder
          * 

@@ -65,39 +65,39 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
     public sealed class GetNlbResult
     {
         /// <summary>
-        /// NLB实例的访问日志信息。
+        /// Access log information of the NLB instance.
         /// </summary>
         public readonly Outputs.GetNlbAccessLogResult AccessLog;
         /// <summary>
-        /// NLB实例所属的账号ID。
+        /// Account ID to which the NLB instance belongs.
         /// </summary>
         public readonly string AccountId;
         /// <summary>
-        /// NLB实例的计费状态。Normal: 正常，FinancialLocked: 被锁定。
+        /// Billing status of the NLB instance. Normal: normal, FinancialLocked: locked.
         /// </summary>
         public readonly string BillingStatus;
         /// <summary>
-        /// NLB实例的计费类型。3：按使用量计费
+        /// Billing type of the NLB instance. 3: pay-as-you-go
         /// </summary>
         public readonly int BillingType;
         /// <summary>
-        /// NLB实例的创建时间。
+        /// Creation time of the NLB instance.
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// NLB实例是否开启跨可用区转发能力。true（默认值）：开启。false：关闭。
+        /// Whether the NLB instance has cross-availability zone forwarding enabled. true (default): enabled. false: disabled.
         /// </summary>
         public readonly bool CrossZoneEnabled;
         /// <summary>
-        /// NLB实例的描述。必须以字母、数字或中文开头，可包含以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。该参数不传入，则默认为空字符串。
+        /// Description of the NLB instance. Must start with a letter, number, or Chinese character and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// NLB实例的DNS地址。
+        /// DNS address of the NLB instance.
         /// </summary>
         public readonly string DnsName;
         /// <summary>
-        /// NLB实例欠费关停时间。
+        /// Time when the NLB instance is suspended due to overdue payment.
         /// </summary>
         public readonly string ExpectedOverdueTime;
         /// <summary>
@@ -105,75 +105,75 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// NLB实例的IP地址类型。ipv4：IPv4版本。dualstack：双栈，即同时支持IPv4版本和IPv6版本。
+        /// IP address type of the NLB instance. ipv4: IPv4 version. dualstack: dual stack, supports both IPv4 and IPv6 versions.
         /// </summary>
         public readonly string IpAddressVersion;
         /// <summary>
-        /// IPv4类型的共享带宽包ID。
+        /// Shared bandwidth package ID for IPv4 type.
         /// </summary>
         public readonly string Ipv4BandwidthPackageId;
         /// <summary>
-        /// NLB实例的IPv4网络类型。internet：公网类型。intranet：私网类型。
+        /// IPv4 network type of the NLB instance. internet: public network type. intranet: private network type.
         /// </summary>
         public readonly string Ipv4NetworkType;
         /// <summary>
-        /// IPv6类型的共享带宽包ID。
+        /// Shared bandwidth package ID for IPv6 type.
         /// </summary>
         public readonly string Ipv6BandwidthPackageId;
         /// <summary>
-        /// NLB实例的IPv6网络类型。internet：公网类型。intranet：私网类型。
+        /// IPv6 network type of the NLB instance. internet: public network type. intranet: private network type.
         /// </summary>
         public readonly string Ipv6NetworkType;
         /// <summary>
-        /// NLB实例ID。
+        /// NLB instance ID.
         /// </summary>
         public readonly string LoadBalancerId;
         /// <summary>
-        /// NLB实例的名称。
+        /// Name of the NLB instance.
         /// </summary>
         public readonly string LoadBalancerName;
         /// <summary>
-        /// 系统为NLB实例自动关联的托管安全组ID。
+        /// Managed security group ID automatically associated with the NLB instance by the system.
         /// </summary>
         public readonly string ManagedSecurityGroupId;
         /// <summary>
-        /// NLB实例是否开启控制台上修改保护。NonProtection或空：关闭，允许通过控制台修改实例或删除实例。ConsoleProtection：开启，禁止通过控制台修改实例或删除实例。
+        /// Whether modification protection is enabled for the NLB instance in the console. NonProtection or empty: disabled, allows modification or deletion of the instance via the console. ConsoleProtection: enabled, prevents modification or deletion of the instance via the console.
         /// </summary>
         public readonly string ModificationProtectionStatus;
         /// <summary>
-        /// NLB实例被锁定的时间。参数BillingStatus为Normal时，本参数返回为空字符串。
+        /// Time when the NLB instance is locked. If the BillingStatus parameter is Normal, this parameter returns an empty string.
         /// </summary>
         public readonly string OverdueTime;
         /// <summary>
-        /// NLB实例所属项目的名称。
+        /// Name of the project to which the NLB instance belongs.
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// NLB实例的预期回收时间。参数BillingStatus为Normal时，本参数返回为空字符串。
+        /// Expected reclamation time of the NLB instance. If the BillingStatus parameter is Normal, this parameter returns an empty string.
         /// </summary>
         public readonly string ReclaimedTime;
         /// <summary>
-        /// NLB实例关联的安全组ID列表。
+        /// List of security group IDs associated with the NLB instance.
         /// </summary>
         public readonly ImmutableArray<string> SecurityGroupIds;
         /// <summary>
-        /// NLB 实例的状态。Inactive：已停止。Active：运行中。Creating：创建中。Provisioning：创建中。仅调用API创建NLB实例时存在该状态。Configuring：配置中。Deleting：删除中。CreateFailed：创建失败。
+        /// Status of the NLB instance. Inactive: stopped. Active: running. Creating: creating. Provisioning: creating (this status only appears when creating an NLB instance via API). Configuring: configuring. Deleting: deleting. CreateFailed: creation failed.
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// NLB实例的标签信息。
+        /// Tag information of the NLB instance.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNlbTagResult> Tags;
         /// <summary>
-        /// NLB实例的更新时间。
+        /// Update time of the NLB instance.
         /// </summary>
         public readonly string UpdatedTime;
         /// <summary>
-        /// NLB实例所属的VPC ID。
+        /// VPC ID to which the NLB instance belongs.
         /// </summary>
         public readonly string VpcId;
         /// <summary>
-        /// NLB实例的可用区信息。
+        /// Availability zone information for the NLB instance.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNlbZoneMappingResult> ZoneMappings;
 

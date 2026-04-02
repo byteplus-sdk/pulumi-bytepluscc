@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceEndpoints {
     /**
-     * @return 实例私网访问接入点响应数据。
+     * @return Instance private network access endpoint response data
      * 
      */
     private GetInstanceEndpointsOverlay overlay;
     /**
-     * @return 实例公网访问接入点响应数据。
+     * @return Instance public access endpoint response data
      * 
      */
     private GetInstanceEndpointsPublic public_;
 
     private GetInstanceEndpoints() {}
     /**
-     * @return 实例私网访问接入点响应数据。
+     * @return Instance private network access endpoint response data
      * 
      */
     public GetInstanceEndpointsOverlay overlay() {
         return this.overlay;
     }
     /**
-     * @return 实例公网访问接入点响应数据。
+     * @return Instance public access endpoint response data
      * 
      */
     public GetInstanceEndpointsPublic public_() {

@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class LoadBalancerZoneMapping {
     /**
-     * @return 可用区内提供服务的子网ID。
+     * @return Subnet ID providing services within the availability zone.
      * 
      */
     private @Nullable String subnetId;
     /**
-     * @return 可用区的唯一标识符。
+     * @return Unique identifier of the availability zone.
      * 
      */
     private @Nullable String zoneId;
 
     private LoadBalancerZoneMapping() {}
     /**
-     * @return 可用区内提供服务的子网ID。
+     * @return Subnet ID providing services within the availability zone.
      * 
      */
     public Optional<String> subnetId() {
         return Optional.ofNullable(this.subnetId);
     }
     /**
-     * @return 可用区的唯一标识符。
+     * @return Unique identifier of the availability zone.
      * 
      */
     public Optional<String> zoneId() {

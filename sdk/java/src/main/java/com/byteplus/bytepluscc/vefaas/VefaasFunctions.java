@@ -4,10 +4,14 @@
 package com.byteplus.bytepluscc.vefaas;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.vefaas.inputs.GetFunctionArgs;
+import com.byteplus.bytepluscc.vefaas.inputs.GetFunctionPlainArgs;
 import com.byteplus.bytepluscc.vefaas.inputs.GetKafkaTriggerArgs;
 import com.byteplus.bytepluscc.vefaas.inputs.GetKafkaTriggerPlainArgs;
 import com.byteplus.bytepluscc.vefaas.inputs.GetSandboxArgs;
 import com.byteplus.bytepluscc.vefaas.inputs.GetSandboxPlainArgs;
+import com.byteplus.bytepluscc.vefaas.outputs.GetFunctionResult;
+import com.byteplus.bytepluscc.vefaas.outputs.GetFunctionsResult;
 import com.byteplus.bytepluscc.vefaas.outputs.GetKafkaTriggerResult;
 import com.byteplus.bytepluscc.vefaas.outputs.GetKafkaTriggersResult;
 import com.byteplus.bytepluscc.vefaas.outputs.GetSandboxResult;
@@ -21,6 +25,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class VefaasFunctions {
+    /**
+     * Data Source schema for Byteplus::VEFAAS::Function
+     * 
+     */
+    public static Output<GetFunctionResult> getFunction(GetFunctionArgs args) {
+        return getFunction(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VEFAAS::Function
+     * 
+     */
+    public static CompletableFuture<GetFunctionResult> getFunctionPlain(GetFunctionPlainArgs args) {
+        return getFunctionPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VEFAAS::Function
+     * 
+     */
+    public static Output<GetFunctionResult> getFunction(GetFunctionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vefaas/getFunction:getFunction", TypeShape.of(GetFunctionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VEFAAS::Function
+     * 
+     */
+    public static Output<GetFunctionResult> getFunction(GetFunctionArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vefaas/getFunction:getFunction", TypeShape.of(GetFunctionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VEFAAS::Function
+     * 
+     */
+    public static CompletableFuture<GetFunctionResult> getFunctionPlain(GetFunctionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vefaas/getFunction:getFunction", TypeShape.of(GetFunctionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEFAAS::Function
+     * 
+     */
+    public static Output<GetFunctionsResult> getFunctions() {
+        return getFunctions(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEFAAS::Function
+     * 
+     */
+    public static CompletableFuture<GetFunctionsResult> getFunctionsPlain() {
+        return getFunctionsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEFAAS::Function
+     * 
+     */
+    public static Output<GetFunctionsResult> getFunctions(InvokeArgs args) {
+        return getFunctions(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEFAAS::Function
+     * 
+     */
+    public static CompletableFuture<GetFunctionsResult> getFunctionsPlain(InvokeArgs args) {
+        return getFunctionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEFAAS::Function
+     * 
+     */
+    public static Output<GetFunctionsResult> getFunctions(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vefaas/getFunctions:getFunctions", TypeShape.of(GetFunctionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEFAAS::Function
+     * 
+     */
+    public static Output<GetFunctionsResult> getFunctions(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vefaas/getFunctions:getFunctions", TypeShape.of(GetFunctionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEFAAS::Function
+     * 
+     */
+    public static CompletableFuture<GetFunctionsResult> getFunctionsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vefaas/getFunctions:getFunctions", TypeShape.of(GetFunctionsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::VEFAAS::KafkaTrigger
      * 

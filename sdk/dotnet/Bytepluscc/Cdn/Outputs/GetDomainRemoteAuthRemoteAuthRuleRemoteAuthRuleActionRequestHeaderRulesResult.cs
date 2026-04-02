@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesResult
     {
         /// <summary>
-        /// 表示鉴权请求头的设置策略。
+        /// Indicates the configuration policy for authentication request headers.
         /// </summary>
         public readonly Outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponentsResult RequestHeaderComponents;
         /// <summary>
-        /// 表示一组鉴权请求头的设置。需要留意的是，在内容分发网络发起鉴权请求时，请求中可能已经包含了以下头部：X-Forwarded-Protocol，X-Forwarded-Proto，X-Client-Scheme：这三个头部都表示用户请求所使用协议，没有区别。X-Real-IP：表示用户真实的 IP 地址。该头部的值不会受代理服务器的影响。X-Forwarded-For：表示用户的 IP 地址。如果用户的请求经过了代理服务器，该头部的值会变成代理服务器的 IP 地址。不建议您在该参数中对这些头部进行设置。如果您设置了这些头部，这些头部的原始值会被覆盖。
+        /// Specifies a set of authentication request header settings Note that when the content delivery network initiates an authentication request, the following headers may already be included in the request: X-Forwarded-Protocol, X-Forwarded-Proto, X-Client-Scheme: all three headers indicate the protocol used by the user request and are equivalent X-Real-IP: indicates the user's real IP address This header value is not affected by proxy servers X-Forwarded-For: indicates the user's IP address If the user's request passes through a proxy server, this header value becomes the proxy server's IP address It is not recommended to configure these headers in this parameter If you set these headers, their original values will be overwritten
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderInstanceResult> RequestHeaderInstances;
         /// <summary>
-        /// 表示鉴权请求中 HOST 头部的值。该参数的默认值是 default，表示 HOST 头部的值与您的加速域名相同。
+        /// Indicates the value of the HOST header in authentication requests. The default value for this parameter is default, meaning the HOST header matches your acceleration domain name.
         /// </summary>
         public readonly string RequestHost;
 

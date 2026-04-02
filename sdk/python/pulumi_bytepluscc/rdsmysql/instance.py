@@ -50,30 +50,30 @@ class InstanceArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceTagArgs']]]] = None):
         """
         The set of arguments for constructing a Instance resource.
-        :param pulumi.Input['InstanceChargeDetailArgs'] charge_detail: 付费方式。
-        :param pulumi.Input[builtins.str] db_engine_version: 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
-        :param pulumi.Input[builtins.int] storage_space: 实例总存储空间。单位为 GB。
-        :param pulumi.Input[builtins.str] storage_type: 实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。
-        :param pulumi.Input[builtins.str] subnet_id: 子网 ID。
-        :param pulumi.Input[builtins.str] vpc_id: 专有网络（VPC） ID。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: 白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
-        :param pulumi.Input['InstanceAutoStorageScalingConfigArgs'] auto_storage_scaling_config: 自动扩容配置。
-        :param pulumi.Input[builtins.str] auto_upgrade_minor_version: 实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。
-        :param pulumi.Input[builtins.int] cpu_num: 实例数据库代理服务的 CPU 核数。
-        :param pulumi.Input[builtins.str] db_param_group_id: 参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。
-        :param pulumi.Input[builtins.str] db_time_zone: 时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。
-        :param pulumi.Input[builtins.str] deletion_protection: 是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。
-        :param pulumi.Input[builtins.bool] global_read_only: 是否开启全局只读。取值：true：是。false：否。默认值为 false。
-        :param pulumi.Input[builtins.str] instance_name: 实例名称。
-        :param pulumi.Input[builtins.str] instance_type: 实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。
-        :param pulumi.Input[builtins.str] lower_case_table_names: 表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。
-        :param pulumi.Input['InstanceMaintenanceWindowArgs'] maintenance_window: 在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。
-        :param pulumi.Input[builtins.str] node_spec: 节点规格。
-        :param pulumi.Input[builtins.int] port: 默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。
-        :param pulumi.Input[builtins.str] project_name: 所属项目。
-        :param pulumi.Input[builtins.str] super_account_name: 高权限账号名称。不传此参数默认不创建高权限账号。
-        :param pulumi.Input[builtins.str] super_account_password: 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=,.&?|/。
-        :param pulumi.Input[builtins.str] sync_mode: 数据同步方式：SemiSync：半同步。Async：异步。
+        :param pulumi.Input['InstanceChargeDetailArgs'] charge_detail: Billing method
+        :param pulumi.Input[builtins.str] db_engine_version: Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
+        :param pulumi.Input[builtins.int] storage_space: Total storage space of the instance, in GB
+        :param pulumi.Input[builtins.str] storage_type: Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID.
+        :param pulumi.Input[builtins.str] vpc_id: VPC (Virtual Private Cloud) ID.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
+        :param pulumi.Input['InstanceAutoStorageScalingConfigArgs'] auto_storage_scaling_config: Auto scaling configuration
+        :param pulumi.Input[builtins.str] auto_upgrade_minor_version: Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+        :param pulumi.Input[builtins.int] cpu_num: Number of CPU cores for the database proxy service of the instance
+        :param pulumi.Input[builtins.str] db_param_group_id: Parameter template ID. Default value is the default parameter template for the database engine version
+        :param pulumi.Input[builtins.str] db_time_zone: Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
+        :param pulumi.Input[builtins.str] deletion_protection: Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
+        :param pulumi.Input[builtins.bool] global_read_only: Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
+        :param pulumi.Input[builtins.str] instance_name: Instance name.
+        :param pulumi.Input[builtins.str] instance_type: Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+        :param pulumi.Input[builtins.str] lower_case_table_names: Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
+        :param pulumi.Input['InstanceMaintenanceWindowArgs'] maintenance_window: Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
+        :param pulumi.Input[builtins.str] node_spec: Node specifications.
+        :param pulumi.Input[builtins.int] port: Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
+        :param pulumi.Input[builtins.str] project_name: Project.
+        :param pulumi.Input[builtins.str] super_account_name: High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
+        :param pulumi.Input[builtins.str] super_account_password: Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !@#$%^&*()_+-=,.&?|/.
+        :param pulumi.Input[builtins.str] sync_mode: Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
         """
         pulumi.set(__self__, "charge_detail", charge_detail)
         pulumi.set(__self__, "db_engine_version", db_engine_version)
@@ -125,7 +125,7 @@ class InstanceArgs:
     @pulumi.getter(name="chargeDetail")
     def charge_detail(self) -> pulumi.Input['InstanceChargeDetailArgs']:
         """
-        付费方式。
+        Billing method
         """
         return pulumi.get(self, "charge_detail")
 
@@ -137,7 +137,7 @@ class InstanceArgs:
     @pulumi.getter(name="dbEngineVersion")
     def db_engine_version(self) -> pulumi.Input[builtins.str]:
         """
-        兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+        Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
         """
         return pulumi.get(self, "db_engine_version")
 
@@ -158,7 +158,7 @@ class InstanceArgs:
     @pulumi.getter(name="storageSpace")
     def storage_space(self) -> pulumi.Input[builtins.int]:
         """
-        实例总存储空间。单位为 GB。
+        Total storage space of the instance, in GB
         """
         return pulumi.get(self, "storage_space")
 
@@ -170,7 +170,7 @@ class InstanceArgs:
     @pulumi.getter(name="storageType")
     def storage_type(self) -> pulumi.Input[builtins.str]:
         """
-        实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。
+        Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
         """
         return pulumi.get(self, "storage_type")
 
@@ -182,7 +182,7 @@ class InstanceArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[builtins.str]:
         """
-        子网 ID。
+        Subnet ID.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -194,7 +194,7 @@ class InstanceArgs:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Input[builtins.str]:
         """
-        专有网络（VPC） ID。
+        VPC (Virtual Private Cloud) ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -206,7 +206,7 @@ class InstanceArgs:
     @pulumi.getter(name="allowListIds")
     def allow_list_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
+        Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
         """
         return pulumi.get(self, "allow_list_ids")
 
@@ -218,7 +218,7 @@ class InstanceArgs:
     @pulumi.getter(name="autoStorageScalingConfig")
     def auto_storage_scaling_config(self) -> Optional[pulumi.Input['InstanceAutoStorageScalingConfigArgs']]:
         """
-        自动扩容配置。
+        Auto scaling configuration
         """
         return pulumi.get(self, "auto_storage_scaling_config")
 
@@ -230,7 +230,7 @@ class InstanceArgs:
     @pulumi.getter(name="autoUpgradeMinorVersion")
     def auto_upgrade_minor_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。
+        Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
         """
         return pulumi.get(self, "auto_upgrade_minor_version")
 
@@ -242,7 +242,7 @@ class InstanceArgs:
     @pulumi.getter(name="cpuNum")
     def cpu_num(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例数据库代理服务的 CPU 核数。
+        Number of CPU cores for the database proxy service of the instance
         """
         return pulumi.get(self, "cpu_num")
 
@@ -254,7 +254,7 @@ class InstanceArgs:
     @pulumi.getter(name="dbParamGroupId")
     def db_param_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。
+        Parameter template ID. Default value is the default parameter template for the database engine version
         """
         return pulumi.get(self, "db_param_group_id")
 
@@ -266,7 +266,7 @@ class InstanceArgs:
     @pulumi.getter(name="dbTimeZone")
     def db_time_zone(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。
+        Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
         """
         return pulumi.get(self, "db_time_zone")
 
@@ -278,7 +278,7 @@ class InstanceArgs:
     @pulumi.getter(name="deletionProtection")
     def deletion_protection(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。
+        Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
         """
         return pulumi.get(self, "deletion_protection")
 
@@ -290,7 +290,7 @@ class InstanceArgs:
     @pulumi.getter(name="globalReadOnly")
     def global_read_only(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启全局只读。取值：true：是。false：否。默认值为 false。
+        Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
         """
         return pulumi.get(self, "global_read_only")
 
@@ -302,7 +302,7 @@ class InstanceArgs:
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例名称。
+        Instance name.
         """
         return pulumi.get(self, "instance_name")
 
@@ -314,7 +314,7 @@ class InstanceArgs:
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。
+        Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
         """
         return pulumi.get(self, "instance_type")
 
@@ -326,7 +326,7 @@ class InstanceArgs:
     @pulumi.getter(name="lowerCaseTableNames")
     def lower_case_table_names(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。
+        Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
         """
         return pulumi.get(self, "lower_case_table_names")
 
@@ -338,7 +338,7 @@ class InstanceArgs:
     @pulumi.getter(name="maintenanceWindow")
     def maintenance_window(self) -> Optional[pulumi.Input['InstanceMaintenanceWindowArgs']]:
         """
-        在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。
+        Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
         """
         return pulumi.get(self, "maintenance_window")
 
@@ -350,7 +350,7 @@ class InstanceArgs:
     @pulumi.getter(name="nodeSpec")
     def node_spec(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点规格。
+        Node specifications.
         """
         return pulumi.get(self, "node_spec")
 
@@ -362,7 +362,7 @@ class InstanceArgs:
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。
+        Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
         """
         return pulumi.get(self, "port")
 
@@ -374,7 +374,7 @@ class InstanceArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        所属项目。
+        Project.
         """
         return pulumi.get(self, "project_name")
 
@@ -386,7 +386,7 @@ class InstanceArgs:
     @pulumi.getter(name="superAccountName")
     def super_account_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        高权限账号名称。不传此参数默认不创建高权限账号。
+        High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
         """
         return pulumi.get(self, "super_account_name")
 
@@ -398,7 +398,7 @@ class InstanceArgs:
     @pulumi.getter(name="superAccountPassword")
     def super_account_password(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=,.&?|/。
+        Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !@#$%^&*()_+-=,.&?|/.
         """
         return pulumi.get(self, "super_account_password")
 
@@ -410,7 +410,7 @@ class InstanceArgs:
     @pulumi.getter(name="syncMode")
     def sync_mode(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        数据同步方式：SemiSync：半同步。Async：异步。
+        Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
         """
         return pulumi.get(self, "sync_mode")
 
@@ -503,71 +503,71 @@ class _InstanceState:
                  zone_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering Instance resources.
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: 白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
-        :param pulumi.Input[builtins.str] allow_list_version: 白名单版本。
-        :param pulumi.Input['InstanceAutoStorageScalingConfigArgs'] auto_storage_scaling_config: 自动扩容配置。
-        :param pulumi.Input[builtins.str] auto_upgrade_minor_version: 实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。
-        :param pulumi.Input[builtins.int] backup_audit_log_size: 备份中审计日志使用的空间。
-        :param pulumi.Input[builtins.int] backup_bin_log_size: 备份中 Binlog 日志使用的空间。
-        :param pulumi.Input[builtins.int] backup_data_size: 备份中数据使用的空间。
-        :param pulumi.Input[builtins.int] backup_error_log_size: 备份中错误日志使用的空间。
-        :param pulumi.Input[builtins.int] backup_free_quota_size: 免费的备份存储空间，单位为 GB。
-        :param pulumi.Input[builtins.int] backup_log_size: 备份中日志使用的空间。
-        :param pulumi.Input[builtins.int] backup_slow_log_size: 备份中慢日志使用的空间。
-        :param pulumi.Input[builtins.float] backup_use: 实例的备份已使用的空间，单位为 GB。
-        :param pulumi.Input[builtins.int] basic_backup_binlog_size: 基础备份中 Binlog 日志使用的空间。
-        :param pulumi.Input[builtins.int] basic_backup_data_size: 基础备份中数据使用的空间。
-        :param pulumi.Input['InstanceChargeDetailArgs'] charge_detail: 付费方式。
-        :param pulumi.Input[builtins.int] cpu_num: 实例数据库代理服务的 CPU 核数。
-        :param pulumi.Input[builtins.str] created_time: 实例创建本地时间。
-        :param pulumi.Input[builtins.str] current_kernel_version: 实例的内核小版本。
-        :param pulumi.Input[builtins.str] db_engine_version: 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
-        :param pulumi.Input[builtins.str] db_param_group_id: 参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。
-        :param pulumi.Input[builtins.str] db_time_zone: 时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。
-        :param pulumi.Input[builtins.str] deletion_protection: 是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。
-        :param pulumi.Input[builtins.str] dr_dts_task_id: 主实例与灾备实例之间的数据同步链路在 DTS 数据同步任务的 ID。
-        :param pulumi.Input[builtins.str] dr_dts_task_name: 主实例与灾备实例之间同步任务的名称。
-        :param pulumi.Input[builtins.str] dr_dts_task_status: 主实例与灾备实例之间同步任务的状态。
-        :param pulumi.Input[builtins.int] dr_seconds_behind_master: 灾备实例与主实例之间的时延。
-        :param pulumi.Input[builtins.bool] global_read_only: 是否开启全局只读。取值：true：是。false：否。默认值为 false。
-        :param pulumi.Input[builtins.bool] has_disaster_recovery_instances: 实例是否有灾备实例。取值：true：是。false：否。
-        :param pulumi.Input[builtins.bool] has_green_instance: 实例是否处于蓝绿部署中。取值：true：是。false：否。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
-        :param pulumi.Input[builtins.str] instance_name: 实例名称。
-        :param pulumi.Input[builtins.str] instance_status: 实例状态。
-        :param pulumi.Input[builtins.str] instance_type: 实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。
-        :param pulumi.Input[builtins.str] lower_case_table_names: 表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。
-        :param pulumi.Input['InstanceMaintenanceWindowArgs'] maintenance_window: 在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。
-        :param pulumi.Input[builtins.str] master_instance_id: 主实例的 ID。
-        :param pulumi.Input[builtins.str] master_instance_name: 主实例的名称。
-        :param pulumi.Input[builtins.int] memory: 内存大小。单位：GB。
-        :param pulumi.Input[builtins.float] node_cpu_used_percentage: 实例主节点 CPU 使用率近一分钟的平均值。
-        :param pulumi.Input[builtins.float] node_memory_used_percentage: 实例主节点内存使用率近一分钟的平均值。
-        :param pulumi.Input[builtins.str] node_number: 节点数量。
-        :param pulumi.Input[builtins.float] node_space_used_percentage: 实例主节点磁盘使用率近一分钟的平均值。
-        :param pulumi.Input[builtins.str] node_spec: 节点规格。
-        :param pulumi.Input[builtins.int] port: 默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。
-        :param pulumi.Input[builtins.str] project_name: 所属项目。
-        :param pulumi.Input['InstanceProxyDetailArgs'] proxy_detail: proxy信息
-        :param pulumi.Input[builtins.int] storage_audit_log_size: 实例存储空间中审计日志使用的空间。
-        :param pulumi.Input[builtins.int] storage_bin_log_size: 实例存储空间中 Binlog 使用的空间。
-        :param pulumi.Input[builtins.int] storage_data_size: 实例存储空间中数据使用的空间。
-        :param pulumi.Input[builtins.int] storage_error_log_size: 实例存储空间中错误日志使用的空间。
-        :param pulumi.Input[builtins.int] storage_log_size: 实例存储空间中日志使用的空间。
-        :param pulumi.Input[builtins.int] storage_slow_log_size: 实例存储空间中慢日志使用的空间。
-        :param pulumi.Input[builtins.int] storage_space: 实例总存储空间。单位为 GB。
-        :param pulumi.Input[builtins.str] storage_type: 实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。
-        :param pulumi.Input[builtins.float] storage_use: 实例已使用用存储空间，单位为 GB。
-        :param pulumi.Input[builtins.str] subnet_id: 子网 ID。
-        :param pulumi.Input[builtins.str] super_account_name: 高权限账号名称。不传此参数默认不创建高权限账号。
-        :param pulumi.Input[builtins.str] super_account_password: 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=,.&?|/。
-        :param pulumi.Input[builtins.str] sync_mode: 数据同步方式：SemiSync：半同步。Async：异步。
-        :param pulumi.Input[builtins.str] time_zone: 时区。
-        :param pulumi.Input[builtins.str] updated_time: 实例更新本地时间。
-        :param pulumi.Input[builtins.int] vcpu: CPU 大小。例如：1 表示 1U。
-        :param pulumi.Input[builtins.str] vpc_id: 专有网络（VPC） ID。
-        :param pulumi.Input[builtins.str] zone_id: 实例主节点所在可用区。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] zone_ids: 实例各节点所在的可用区列表。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
+        :param pulumi.Input[builtins.str] allow_list_version: Allowlist version
+        :param pulumi.Input['InstanceAutoStorageScalingConfigArgs'] auto_storage_scaling_config: Auto scaling configuration
+        :param pulumi.Input[builtins.str] auto_upgrade_minor_version: Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+        :param pulumi.Input[builtins.int] backup_audit_log_size: Space used by audit logs in backup.
+        :param pulumi.Input[builtins.int] backup_bin_log_size: Space used by binlog logs in backup.
+        :param pulumi.Input[builtins.int] backup_data_size: Space used by data in backup.
+        :param pulumi.Input[builtins.int] backup_error_log_size: Space used by error logs in backups.
+        :param pulumi.Input[builtins.int] backup_free_quota_size: Free backup storage space, in GB
+        :param pulumi.Input[builtins.int] backup_log_size: Space used by logs in backups.
+        :param pulumi.Input[builtins.int] backup_slow_log_size: Space used by slow logs in backups.
+        :param pulumi.Input[builtins.float] backup_use: Backup space used by the instance, in GB
+        :param pulumi.Input[builtins.int] basic_backup_binlog_size: Space used by Binlog logs in basic backups.
+        :param pulumi.Input[builtins.int] basic_backup_data_size: Space used by data in the base backup
+        :param pulumi.Input['InstanceChargeDetailArgs'] charge_detail: Billing method
+        :param pulumi.Input[builtins.int] cpu_num: Number of CPU cores for the database proxy service of the instance
+        :param pulumi.Input[builtins.str] created_time: Instance creation local time.
+        :param pulumi.Input[builtins.str] current_kernel_version: Instance kernel minor version.
+        :param pulumi.Input[builtins.str] db_engine_version: Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
+        :param pulumi.Input[builtins.str] db_param_group_id: Parameter template ID. Default value is the default parameter template for the database engine version
+        :param pulumi.Input[builtins.str] db_time_zone: Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
+        :param pulumi.Input[builtins.str] deletion_protection: Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
+        :param pulumi.Input[builtins.str] dr_dts_task_id: ID of the data synchronization link between the primary and disaster recovery instances in the DTS data synchronization task.
+        :param pulumi.Input[builtins.str] dr_dts_task_name: Name of synchronization tasks between primary and disaster recovery instances.
+        :param pulumi.Input[builtins.str] dr_dts_task_status: Status of synchronization tasks between primary and disaster recovery instances.
+        :param pulumi.Input[builtins.int] dr_seconds_behind_master: Latency between the disaster recovery instance and the primary instance.
+        :param pulumi.Input[builtins.bool] global_read_only: Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
+        :param pulumi.Input[builtins.bool] has_disaster_recovery_instances: Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
+        :param pulumi.Input[builtins.bool] has_green_instance: Is the instance in blue-green deployment? Values: true: yes. false: no.
+        :param pulumi.Input[builtins.str] instance_id: Instance ID.
+        :param pulumi.Input[builtins.str] instance_name: Instance name.
+        :param pulumi.Input[builtins.str] instance_status: Instance status.
+        :param pulumi.Input[builtins.str] instance_type: Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+        :param pulumi.Input[builtins.str] lower_case_table_names: Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
+        :param pulumi.Input['InstanceMaintenanceWindowArgs'] maintenance_window: Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
+        :param pulumi.Input[builtins.str] master_instance_id: Primary instance ID
+        :param pulumi.Input[builtins.str] master_instance_name: Primary instance name.
+        :param pulumi.Input[builtins.int] memory: Memory size. Unit: GB.
+        :param pulumi.Input[builtins.float] node_cpu_used_percentage: Average CPU usage of the primary node in the instance over the past minute.
+        :param pulumi.Input[builtins.float] node_memory_used_percentage: Average memory usage of the primary node over the past minute
+        :param pulumi.Input[builtins.str] node_number: Number of nodes.
+        :param pulumi.Input[builtins.float] node_space_used_percentage: Average disk usage of the primary node over the past minute
+        :param pulumi.Input[builtins.str] node_spec: Node specifications.
+        :param pulumi.Input[builtins.int] port: Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
+        :param pulumi.Input[builtins.str] project_name: Project.
+        :param pulumi.Input['InstanceProxyDetailArgs'] proxy_detail: proxy information
+        :param pulumi.Input[builtins.int] storage_audit_log_size: Space used by audit logs in instance storage
+        :param pulumi.Input[builtins.int] storage_bin_log_size: Binlog space usage in the instance storage
+        :param pulumi.Input[builtins.int] storage_data_size: Space used by data in instance storage.
+        :param pulumi.Input[builtins.int] storage_error_log_size: Space used by error logs in instance storage.
+        :param pulumi.Input[builtins.int] storage_log_size: Space used by logs in the instance storage
+        :param pulumi.Input[builtins.int] storage_slow_log_size: Space used by slow logs in instance storage
+        :param pulumi.Input[builtins.int] storage_space: Total storage space of the instance, in GB
+        :param pulumi.Input[builtins.str] storage_type: Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
+        :param pulumi.Input[builtins.float] storage_use: Storage space used by the instance, in GB
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID.
+        :param pulumi.Input[builtins.str] super_account_name: High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
+        :param pulumi.Input[builtins.str] super_account_password: Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !@#$%^&*()_+-=,.&?|/.
+        :param pulumi.Input[builtins.str] sync_mode: Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
+        :param pulumi.Input[builtins.str] time_zone: Time zone
+        :param pulumi.Input[builtins.str] updated_time: Instance updates local time.
+        :param pulumi.Input[builtins.int] vcpu: CPU size. For example: 1 means 1U.
+        :param pulumi.Input[builtins.str] vpc_id: VPC (Virtual Private Cloud) ID.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone of the instance's primary node.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] zone_ids: List of availability zones for each node in the instance.
         """
         if address_objects is not None:
             pulumi.set(__self__, "address_objects", address_objects)
@@ -723,7 +723,7 @@ class _InstanceState:
     @pulumi.getter(name="allowListIds")
     def allow_list_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
+        Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
         """
         return pulumi.get(self, "allow_list_ids")
 
@@ -735,7 +735,7 @@ class _InstanceState:
     @pulumi.getter(name="allowListVersion")
     def allow_list_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        白名单版本。
+        Allowlist version
         """
         return pulumi.get(self, "allow_list_version")
 
@@ -747,7 +747,7 @@ class _InstanceState:
     @pulumi.getter(name="autoStorageScalingConfig")
     def auto_storage_scaling_config(self) -> Optional[pulumi.Input['InstanceAutoStorageScalingConfigArgs']]:
         """
-        自动扩容配置。
+        Auto scaling configuration
         """
         return pulumi.get(self, "auto_storage_scaling_config")
 
@@ -759,7 +759,7 @@ class _InstanceState:
     @pulumi.getter(name="autoUpgradeMinorVersion")
     def auto_upgrade_minor_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。
+        Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
         """
         return pulumi.get(self, "auto_upgrade_minor_version")
 
@@ -771,7 +771,7 @@ class _InstanceState:
     @pulumi.getter(name="backupAuditLogSize")
     def backup_audit_log_size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        备份中审计日志使用的空间。
+        Space used by audit logs in backup.
         """
         return pulumi.get(self, "backup_audit_log_size")
 
@@ -783,7 +783,7 @@ class _InstanceState:
     @pulumi.getter(name="backupBinLogSize")
     def backup_bin_log_size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        备份中 Binlog 日志使用的空间。
+        Space used by binlog logs in backup.
         """
         return pulumi.get(self, "backup_bin_log_size")
 
@@ -795,7 +795,7 @@ class _InstanceState:
     @pulumi.getter(name="backupDataSize")
     def backup_data_size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        备份中数据使用的空间。
+        Space used by data in backup.
         """
         return pulumi.get(self, "backup_data_size")
 
@@ -807,7 +807,7 @@ class _InstanceState:
     @pulumi.getter(name="backupErrorLogSize")
     def backup_error_log_size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        备份中错误日志使用的空间。
+        Space used by error logs in backups.
         """
         return pulumi.get(self, "backup_error_log_size")
 
@@ -819,7 +819,7 @@ class _InstanceState:
     @pulumi.getter(name="backupFreeQuotaSize")
     def backup_free_quota_size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        免费的备份存储空间，单位为 GB。
+        Free backup storage space, in GB
         """
         return pulumi.get(self, "backup_free_quota_size")
 
@@ -831,7 +831,7 @@ class _InstanceState:
     @pulumi.getter(name="backupLogSize")
     def backup_log_size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        备份中日志使用的空间。
+        Space used by logs in backups.
         """
         return pulumi.get(self, "backup_log_size")
 
@@ -843,7 +843,7 @@ class _InstanceState:
     @pulumi.getter(name="backupSlowLogSize")
     def backup_slow_log_size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        备份中慢日志使用的空间。
+        Space used by slow logs in backups.
         """
         return pulumi.get(self, "backup_slow_log_size")
 
@@ -855,7 +855,7 @@ class _InstanceState:
     @pulumi.getter(name="backupUse")
     def backup_use(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        实例的备份已使用的空间，单位为 GB。
+        Backup space used by the instance, in GB
         """
         return pulumi.get(self, "backup_use")
 
@@ -867,7 +867,7 @@ class _InstanceState:
     @pulumi.getter(name="basicBackupBinlogSize")
     def basic_backup_binlog_size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        基础备份中 Binlog 日志使用的空间。
+        Space used by Binlog logs in basic backups.
         """
         return pulumi.get(self, "basic_backup_binlog_size")
 
@@ -879,7 +879,7 @@ class _InstanceState:
     @pulumi.getter(name="basicBackupDataSize")
     def basic_backup_data_size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        基础备份中数据使用的空间。
+        Space used by data in the base backup
         """
         return pulumi.get(self, "basic_backup_data_size")
 
@@ -891,7 +891,7 @@ class _InstanceState:
     @pulumi.getter(name="chargeDetail")
     def charge_detail(self) -> Optional[pulumi.Input['InstanceChargeDetailArgs']]:
         """
-        付费方式。
+        Billing method
         """
         return pulumi.get(self, "charge_detail")
 
@@ -903,7 +903,7 @@ class _InstanceState:
     @pulumi.getter(name="cpuNum")
     def cpu_num(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例数据库代理服务的 CPU 核数。
+        Number of CPU cores for the database proxy service of the instance
         """
         return pulumi.get(self, "cpu_num")
 
@@ -915,7 +915,7 @@ class _InstanceState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例创建本地时间。
+        Instance creation local time.
         """
         return pulumi.get(self, "created_time")
 
@@ -927,7 +927,7 @@ class _InstanceState:
     @pulumi.getter(name="currentKernelVersion")
     def current_kernel_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的内核小版本。
+        Instance kernel minor version.
         """
         return pulumi.get(self, "current_kernel_version")
 
@@ -939,7 +939,7 @@ class _InstanceState:
     @pulumi.getter(name="dbEngineVersion")
     def db_engine_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+        Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
         """
         return pulumi.get(self, "db_engine_version")
 
@@ -951,7 +951,7 @@ class _InstanceState:
     @pulumi.getter(name="dbParamGroupId")
     def db_param_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。
+        Parameter template ID. Default value is the default parameter template for the database engine version
         """
         return pulumi.get(self, "db_param_group_id")
 
@@ -963,7 +963,7 @@ class _InstanceState:
     @pulumi.getter(name="dbTimeZone")
     def db_time_zone(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。
+        Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
         """
         return pulumi.get(self, "db_time_zone")
 
@@ -975,7 +975,7 @@ class _InstanceState:
     @pulumi.getter(name="deletionProtection")
     def deletion_protection(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。
+        Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
         """
         return pulumi.get(self, "deletion_protection")
 
@@ -996,7 +996,7 @@ class _InstanceState:
     @pulumi.getter(name="drDtsTaskId")
     def dr_dts_task_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        主实例与灾备实例之间的数据同步链路在 DTS 数据同步任务的 ID。
+        ID of the data synchronization link between the primary and disaster recovery instances in the DTS data synchronization task.
         """
         return pulumi.get(self, "dr_dts_task_id")
 
@@ -1008,7 +1008,7 @@ class _InstanceState:
     @pulumi.getter(name="drDtsTaskName")
     def dr_dts_task_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        主实例与灾备实例之间同步任务的名称。
+        Name of synchronization tasks between primary and disaster recovery instances.
         """
         return pulumi.get(self, "dr_dts_task_name")
 
@@ -1020,7 +1020,7 @@ class _InstanceState:
     @pulumi.getter(name="drDtsTaskStatus")
     def dr_dts_task_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        主实例与灾备实例之间同步任务的状态。
+        Status of synchronization tasks between primary and disaster recovery instances.
         """
         return pulumi.get(self, "dr_dts_task_status")
 
@@ -1032,7 +1032,7 @@ class _InstanceState:
     @pulumi.getter(name="drSecondsBehindMaster")
     def dr_seconds_behind_master(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        灾备实例与主实例之间的时延。
+        Latency between the disaster recovery instance and the primary instance.
         """
         return pulumi.get(self, "dr_seconds_behind_master")
 
@@ -1053,7 +1053,7 @@ class _InstanceState:
     @pulumi.getter(name="globalReadOnly")
     def global_read_only(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启全局只读。取值：true：是。false：否。默认值为 false。
+        Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
         """
         return pulumi.get(self, "global_read_only")
 
@@ -1065,7 +1065,7 @@ class _InstanceState:
     @pulumi.getter(name="hasDisasterRecoveryInstances")
     def has_disaster_recovery_instances(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        实例是否有灾备实例。取值：true：是。false：否。
+        Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
         """
         return pulumi.get(self, "has_disaster_recovery_instances")
 
@@ -1077,7 +1077,7 @@ class _InstanceState:
     @pulumi.getter(name="hasGreenInstance")
     def has_green_instance(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        实例是否处于蓝绿部署中。取值：true：是。false：否。
+        Is the instance in blue-green deployment? Values: true: yes. false: no.
         """
         return pulumi.get(self, "has_green_instance")
 
@@ -1089,7 +1089,7 @@ class _InstanceState:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例 ID。
+        Instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -1101,7 +1101,7 @@ class _InstanceState:
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例名称。
+        Instance name.
         """
         return pulumi.get(self, "instance_name")
 
@@ -1113,7 +1113,7 @@ class _InstanceState:
     @pulumi.getter(name="instanceStatus")
     def instance_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例状态。
+        Instance status.
         """
         return pulumi.get(self, "instance_status")
 
@@ -1125,7 +1125,7 @@ class _InstanceState:
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。
+        Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
         """
         return pulumi.get(self, "instance_type")
 
@@ -1137,7 +1137,7 @@ class _InstanceState:
     @pulumi.getter(name="lowerCaseTableNames")
     def lower_case_table_names(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。
+        Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
         """
         return pulumi.get(self, "lower_case_table_names")
 
@@ -1149,7 +1149,7 @@ class _InstanceState:
     @pulumi.getter(name="maintenanceWindow")
     def maintenance_window(self) -> Optional[pulumi.Input['InstanceMaintenanceWindowArgs']]:
         """
-        在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。
+        Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
         """
         return pulumi.get(self, "maintenance_window")
 
@@ -1161,7 +1161,7 @@ class _InstanceState:
     @pulumi.getter(name="masterInstanceId")
     def master_instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        主实例的 ID。
+        Primary instance ID
         """
         return pulumi.get(self, "master_instance_id")
 
@@ -1173,7 +1173,7 @@ class _InstanceState:
     @pulumi.getter(name="masterInstanceName")
     def master_instance_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        主实例的名称。
+        Primary instance name.
         """
         return pulumi.get(self, "master_instance_name")
 
@@ -1185,7 +1185,7 @@ class _InstanceState:
     @pulumi.getter
     def memory(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        内存大小。单位：GB。
+        Memory size. Unit: GB.
         """
         return pulumi.get(self, "memory")
 
@@ -1197,7 +1197,7 @@ class _InstanceState:
     @pulumi.getter(name="nodeCpuUsedPercentage")
     def node_cpu_used_percentage(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        实例主节点 CPU 使用率近一分钟的平均值。
+        Average CPU usage of the primary node in the instance over the past minute.
         """
         return pulumi.get(self, "node_cpu_used_percentage")
 
@@ -1209,7 +1209,7 @@ class _InstanceState:
     @pulumi.getter(name="nodeMemoryUsedPercentage")
     def node_memory_used_percentage(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        实例主节点内存使用率近一分钟的平均值。
+        Average memory usage of the primary node over the past minute
         """
         return pulumi.get(self, "node_memory_used_percentage")
 
@@ -1221,7 +1221,7 @@ class _InstanceState:
     @pulumi.getter(name="nodeNumber")
     def node_number(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点数量。
+        Number of nodes.
         """
         return pulumi.get(self, "node_number")
 
@@ -1233,7 +1233,7 @@ class _InstanceState:
     @pulumi.getter(name="nodeSpaceUsedPercentage")
     def node_space_used_percentage(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        实例主节点磁盘使用率近一分钟的平均值。
+        Average disk usage of the primary node over the past minute
         """
         return pulumi.get(self, "node_space_used_percentage")
 
@@ -1245,7 +1245,7 @@ class _InstanceState:
     @pulumi.getter(name="nodeSpec")
     def node_spec(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点规格。
+        Node specifications.
         """
         return pulumi.get(self, "node_spec")
 
@@ -1266,7 +1266,7 @@ class _InstanceState:
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。
+        Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
         """
         return pulumi.get(self, "port")
 
@@ -1278,7 +1278,7 @@ class _InstanceState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        所属项目。
+        Project.
         """
         return pulumi.get(self, "project_name")
 
@@ -1290,7 +1290,7 @@ class _InstanceState:
     @pulumi.getter(name="proxyDetail")
     def proxy_detail(self) -> Optional[pulumi.Input['InstanceProxyDetailArgs']]:
         """
-        proxy信息
+        proxy information
         """
         return pulumi.get(self, "proxy_detail")
 
@@ -1302,7 +1302,7 @@ class _InstanceState:
     @pulumi.getter(name="storageAuditLogSize")
     def storage_audit_log_size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例存储空间中审计日志使用的空间。
+        Space used by audit logs in instance storage
         """
         return pulumi.get(self, "storage_audit_log_size")
 
@@ -1314,7 +1314,7 @@ class _InstanceState:
     @pulumi.getter(name="storageBinLogSize")
     def storage_bin_log_size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例存储空间中 Binlog 使用的空间。
+        Binlog space usage in the instance storage
         """
         return pulumi.get(self, "storage_bin_log_size")
 
@@ -1326,7 +1326,7 @@ class _InstanceState:
     @pulumi.getter(name="storageDataSize")
     def storage_data_size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例存储空间中数据使用的空间。
+        Space used by data in instance storage.
         """
         return pulumi.get(self, "storage_data_size")
 
@@ -1338,7 +1338,7 @@ class _InstanceState:
     @pulumi.getter(name="storageErrorLogSize")
     def storage_error_log_size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例存储空间中错误日志使用的空间。
+        Space used by error logs in instance storage.
         """
         return pulumi.get(self, "storage_error_log_size")
 
@@ -1350,7 +1350,7 @@ class _InstanceState:
     @pulumi.getter(name="storageLogSize")
     def storage_log_size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例存储空间中日志使用的空间。
+        Space used by logs in the instance storage
         """
         return pulumi.get(self, "storage_log_size")
 
@@ -1362,7 +1362,7 @@ class _InstanceState:
     @pulumi.getter(name="storageSlowLogSize")
     def storage_slow_log_size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例存储空间中慢日志使用的空间。
+        Space used by slow logs in instance storage
         """
         return pulumi.get(self, "storage_slow_log_size")
 
@@ -1374,7 +1374,7 @@ class _InstanceState:
     @pulumi.getter(name="storageSpace")
     def storage_space(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例总存储空间。单位为 GB。
+        Total storage space of the instance, in GB
         """
         return pulumi.get(self, "storage_space")
 
@@ -1386,7 +1386,7 @@ class _InstanceState:
     @pulumi.getter(name="storageType")
     def storage_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。
+        Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
         """
         return pulumi.get(self, "storage_type")
 
@@ -1398,7 +1398,7 @@ class _InstanceState:
     @pulumi.getter(name="storageUse")
     def storage_use(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        实例已使用用存储空间，单位为 GB。
+        Storage space used by the instance, in GB
         """
         return pulumi.get(self, "storage_use")
 
@@ -1410,7 +1410,7 @@ class _InstanceState:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子网 ID。
+        Subnet ID.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -1422,7 +1422,7 @@ class _InstanceState:
     @pulumi.getter(name="superAccountName")
     def super_account_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        高权限账号名称。不传此参数默认不创建高权限账号。
+        High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
         """
         return pulumi.get(self, "super_account_name")
 
@@ -1434,7 +1434,7 @@ class _InstanceState:
     @pulumi.getter(name="superAccountPassword")
     def super_account_password(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=,.&?|/。
+        Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !@#$%^&*()_+-=,.&?|/.
         """
         return pulumi.get(self, "super_account_password")
 
@@ -1446,7 +1446,7 @@ class _InstanceState:
     @pulumi.getter(name="syncMode")
     def sync_mode(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        数据同步方式：SemiSync：半同步。Async：异步。
+        Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
         """
         return pulumi.get(self, "sync_mode")
 
@@ -1467,7 +1467,7 @@ class _InstanceState:
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        时区。
+        Time zone
         """
         return pulumi.get(self, "time_zone")
 
@@ -1479,7 +1479,7 @@ class _InstanceState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例更新本地时间。
+        Instance updates local time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -1491,7 +1491,7 @@ class _InstanceState:
     @pulumi.getter
     def vcpu(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        CPU 大小。例如：1 表示 1U。
+        CPU size. For example: 1 means 1U.
         """
         return pulumi.get(self, "vcpu")
 
@@ -1503,7 +1503,7 @@ class _InstanceState:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        专有网络（VPC） ID。
+        VPC (Virtual Private Cloud) ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -1515,7 +1515,7 @@ class _InstanceState:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例主节点所在可用区。
+        Availability zone of the instance's primary node.
         """
         return pulumi.get(self, "zone_id")
 
@@ -1527,7 +1527,7 @@ class _InstanceState:
     @pulumi.getter(name="zoneIds")
     def zone_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        实例各节点所在的可用区列表。
+        List of availability zones for each node in the instance.
         """
         return pulumi.get(self, "zone_ids")
 
@@ -1570,7 +1570,7 @@ class Instance(pulumi.CustomResource):
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        云数据库 MySQL 版是火山引擎基于开源数据库 MySQL 打造的弹性、可靠的在线关系型数据库服务。 MySQL 实例使用云原生方式部署，结合本地 SSD 存储类型，提供高性能读写能力；完全兼容 MySQL 引擎，并提供实例管理、备份恢复、日志管理、监控告警、数据迁移等全套解决方案，帮助企业简化繁杂的数据库管理和运维任务，使企业有更多的时间与资源聚焦于自己的核心业务。
+        Volcano Engine Cloud Database MySQL Edition is an elastic and reliable online relational database service built on the open-source MySQL database. MySQL instances are deployed using cloud-native methods and local SSD storage, delivering high-performance read and write capabilities. The service is fully compatible with the MySQL engine and offers a complete suite of solutions, including instance management, backup and recovery, log management, monitoring and alerts, and data migration. This helps enterprises simplify complex database management and operations, allowing them to focus more time and resources on their core business.
 
         ## Import
 
@@ -1580,30 +1580,30 @@ class Instance(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: 白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
-        :param pulumi.Input[Union['InstanceAutoStorageScalingConfigArgs', 'InstanceAutoStorageScalingConfigArgsDict']] auto_storage_scaling_config: 自动扩容配置。
-        :param pulumi.Input[builtins.str] auto_upgrade_minor_version: 实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。
-        :param pulumi.Input[Union['InstanceChargeDetailArgs', 'InstanceChargeDetailArgsDict']] charge_detail: 付费方式。
-        :param pulumi.Input[builtins.int] cpu_num: 实例数据库代理服务的 CPU 核数。
-        :param pulumi.Input[builtins.str] db_engine_version: 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
-        :param pulumi.Input[builtins.str] db_param_group_id: 参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。
-        :param pulumi.Input[builtins.str] db_time_zone: 时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。
-        :param pulumi.Input[builtins.str] deletion_protection: 是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。
-        :param pulumi.Input[builtins.bool] global_read_only: 是否开启全局只读。取值：true：是。false：否。默认值为 false。
-        :param pulumi.Input[builtins.str] instance_name: 实例名称。
-        :param pulumi.Input[builtins.str] instance_type: 实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。
-        :param pulumi.Input[builtins.str] lower_case_table_names: 表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。
-        :param pulumi.Input[Union['InstanceMaintenanceWindowArgs', 'InstanceMaintenanceWindowArgsDict']] maintenance_window: 在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。
-        :param pulumi.Input[builtins.str] node_spec: 节点规格。
-        :param pulumi.Input[builtins.int] port: 默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。
-        :param pulumi.Input[builtins.str] project_name: 所属项目。
-        :param pulumi.Input[builtins.int] storage_space: 实例总存储空间。单位为 GB。
-        :param pulumi.Input[builtins.str] storage_type: 实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。
-        :param pulumi.Input[builtins.str] subnet_id: 子网 ID。
-        :param pulumi.Input[builtins.str] super_account_name: 高权限账号名称。不传此参数默认不创建高权限账号。
-        :param pulumi.Input[builtins.str] super_account_password: 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=,.&?|/。
-        :param pulumi.Input[builtins.str] sync_mode: 数据同步方式：SemiSync：半同步。Async：异步。
-        :param pulumi.Input[builtins.str] vpc_id: 专有网络（VPC） ID。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
+        :param pulumi.Input[Union['InstanceAutoStorageScalingConfigArgs', 'InstanceAutoStorageScalingConfigArgsDict']] auto_storage_scaling_config: Auto scaling configuration
+        :param pulumi.Input[builtins.str] auto_upgrade_minor_version: Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+        :param pulumi.Input[Union['InstanceChargeDetailArgs', 'InstanceChargeDetailArgsDict']] charge_detail: Billing method
+        :param pulumi.Input[builtins.int] cpu_num: Number of CPU cores for the database proxy service of the instance
+        :param pulumi.Input[builtins.str] db_engine_version: Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
+        :param pulumi.Input[builtins.str] db_param_group_id: Parameter template ID. Default value is the default parameter template for the database engine version
+        :param pulumi.Input[builtins.str] db_time_zone: Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
+        :param pulumi.Input[builtins.str] deletion_protection: Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
+        :param pulumi.Input[builtins.bool] global_read_only: Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
+        :param pulumi.Input[builtins.str] instance_name: Instance name.
+        :param pulumi.Input[builtins.str] instance_type: Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+        :param pulumi.Input[builtins.str] lower_case_table_names: Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
+        :param pulumi.Input[Union['InstanceMaintenanceWindowArgs', 'InstanceMaintenanceWindowArgsDict']] maintenance_window: Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
+        :param pulumi.Input[builtins.str] node_spec: Node specifications.
+        :param pulumi.Input[builtins.int] port: Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
+        :param pulumi.Input[builtins.str] project_name: Project.
+        :param pulumi.Input[builtins.int] storage_space: Total storage space of the instance, in GB
+        :param pulumi.Input[builtins.str] storage_type: Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID.
+        :param pulumi.Input[builtins.str] super_account_name: High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
+        :param pulumi.Input[builtins.str] super_account_password: Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !@#$%^&*()_+-=,.&?|/.
+        :param pulumi.Input[builtins.str] sync_mode: Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
+        :param pulumi.Input[builtins.str] vpc_id: VPC (Virtual Private Cloud) ID.
         """
         ...
     @overload
@@ -1612,7 +1612,7 @@ class Instance(pulumi.CustomResource):
                  args: InstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        云数据库 MySQL 版是火山引擎基于开源数据库 MySQL 打造的弹性、可靠的在线关系型数据库服务。 MySQL 实例使用云原生方式部署，结合本地 SSD 存储类型，提供高性能读写能力；完全兼容 MySQL 引擎，并提供实例管理、备份恢复、日志管理、监控告警、数据迁移等全套解决方案，帮助企业简化繁杂的数据库管理和运维任务，使企业有更多的时间与资源聚焦于自己的核心业务。
+        Volcano Engine Cloud Database MySQL Edition is an elastic and reliable online relational database service built on the open-source MySQL database. MySQL instances are deployed using cloud-native methods and local SSD storage, delivering high-performance read and write capabilities. The service is fully compatible with the MySQL engine and offers a complete suite of solutions, including instance management, backup and recovery, log management, monitoring and alerts, and data migration. This helps enterprises simplify complex database management and operations, allowing them to focus more time and resources on their core business.
 
         ## Import
 
@@ -1841,71 +1841,71 @@ class Instance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: 白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
-        :param pulumi.Input[builtins.str] allow_list_version: 白名单版本。
-        :param pulumi.Input[Union['InstanceAutoStorageScalingConfigArgs', 'InstanceAutoStorageScalingConfigArgsDict']] auto_storage_scaling_config: 自动扩容配置。
-        :param pulumi.Input[builtins.str] auto_upgrade_minor_version: 实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。
-        :param pulumi.Input[builtins.int] backup_audit_log_size: 备份中审计日志使用的空间。
-        :param pulumi.Input[builtins.int] backup_bin_log_size: 备份中 Binlog 日志使用的空间。
-        :param pulumi.Input[builtins.int] backup_data_size: 备份中数据使用的空间。
-        :param pulumi.Input[builtins.int] backup_error_log_size: 备份中错误日志使用的空间。
-        :param pulumi.Input[builtins.int] backup_free_quota_size: 免费的备份存储空间，单位为 GB。
-        :param pulumi.Input[builtins.int] backup_log_size: 备份中日志使用的空间。
-        :param pulumi.Input[builtins.int] backup_slow_log_size: 备份中慢日志使用的空间。
-        :param pulumi.Input[builtins.float] backup_use: 实例的备份已使用的空间，单位为 GB。
-        :param pulumi.Input[builtins.int] basic_backup_binlog_size: 基础备份中 Binlog 日志使用的空间。
-        :param pulumi.Input[builtins.int] basic_backup_data_size: 基础备份中数据使用的空间。
-        :param pulumi.Input[Union['InstanceChargeDetailArgs', 'InstanceChargeDetailArgsDict']] charge_detail: 付费方式。
-        :param pulumi.Input[builtins.int] cpu_num: 实例数据库代理服务的 CPU 核数。
-        :param pulumi.Input[builtins.str] created_time: 实例创建本地时间。
-        :param pulumi.Input[builtins.str] current_kernel_version: 实例的内核小版本。
-        :param pulumi.Input[builtins.str] db_engine_version: 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
-        :param pulumi.Input[builtins.str] db_param_group_id: 参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。
-        :param pulumi.Input[builtins.str] db_time_zone: 时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。
-        :param pulumi.Input[builtins.str] deletion_protection: 是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。
-        :param pulumi.Input[builtins.str] dr_dts_task_id: 主实例与灾备实例之间的数据同步链路在 DTS 数据同步任务的 ID。
-        :param pulumi.Input[builtins.str] dr_dts_task_name: 主实例与灾备实例之间同步任务的名称。
-        :param pulumi.Input[builtins.str] dr_dts_task_status: 主实例与灾备实例之间同步任务的状态。
-        :param pulumi.Input[builtins.int] dr_seconds_behind_master: 灾备实例与主实例之间的时延。
-        :param pulumi.Input[builtins.bool] global_read_only: 是否开启全局只读。取值：true：是。false：否。默认值为 false。
-        :param pulumi.Input[builtins.bool] has_disaster_recovery_instances: 实例是否有灾备实例。取值：true：是。false：否。
-        :param pulumi.Input[builtins.bool] has_green_instance: 实例是否处于蓝绿部署中。取值：true：是。false：否。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
-        :param pulumi.Input[builtins.str] instance_name: 实例名称。
-        :param pulumi.Input[builtins.str] instance_status: 实例状态。
-        :param pulumi.Input[builtins.str] instance_type: 实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。
-        :param pulumi.Input[builtins.str] lower_case_table_names: 表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。
-        :param pulumi.Input[Union['InstanceMaintenanceWindowArgs', 'InstanceMaintenanceWindowArgsDict']] maintenance_window: 在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。
-        :param pulumi.Input[builtins.str] master_instance_id: 主实例的 ID。
-        :param pulumi.Input[builtins.str] master_instance_name: 主实例的名称。
-        :param pulumi.Input[builtins.int] memory: 内存大小。单位：GB。
-        :param pulumi.Input[builtins.float] node_cpu_used_percentage: 实例主节点 CPU 使用率近一分钟的平均值。
-        :param pulumi.Input[builtins.float] node_memory_used_percentage: 实例主节点内存使用率近一分钟的平均值。
-        :param pulumi.Input[builtins.str] node_number: 节点数量。
-        :param pulumi.Input[builtins.float] node_space_used_percentage: 实例主节点磁盘使用率近一分钟的平均值。
-        :param pulumi.Input[builtins.str] node_spec: 节点规格。
-        :param pulumi.Input[builtins.int] port: 默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。
-        :param pulumi.Input[builtins.str] project_name: 所属项目。
-        :param pulumi.Input[Union['InstanceProxyDetailArgs', 'InstanceProxyDetailArgsDict']] proxy_detail: proxy信息
-        :param pulumi.Input[builtins.int] storage_audit_log_size: 实例存储空间中审计日志使用的空间。
-        :param pulumi.Input[builtins.int] storage_bin_log_size: 实例存储空间中 Binlog 使用的空间。
-        :param pulumi.Input[builtins.int] storage_data_size: 实例存储空间中数据使用的空间。
-        :param pulumi.Input[builtins.int] storage_error_log_size: 实例存储空间中错误日志使用的空间。
-        :param pulumi.Input[builtins.int] storage_log_size: 实例存储空间中日志使用的空间。
-        :param pulumi.Input[builtins.int] storage_slow_log_size: 实例存储空间中慢日志使用的空间。
-        :param pulumi.Input[builtins.int] storage_space: 实例总存储空间。单位为 GB。
-        :param pulumi.Input[builtins.str] storage_type: 实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。
-        :param pulumi.Input[builtins.float] storage_use: 实例已使用用存储空间，单位为 GB。
-        :param pulumi.Input[builtins.str] subnet_id: 子网 ID。
-        :param pulumi.Input[builtins.str] super_account_name: 高权限账号名称。不传此参数默认不创建高权限账号。
-        :param pulumi.Input[builtins.str] super_account_password: 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=,.&?|/。
-        :param pulumi.Input[builtins.str] sync_mode: 数据同步方式：SemiSync：半同步。Async：异步。
-        :param pulumi.Input[builtins.str] time_zone: 时区。
-        :param pulumi.Input[builtins.str] updated_time: 实例更新本地时间。
-        :param pulumi.Input[builtins.int] vcpu: CPU 大小。例如：1 表示 1U。
-        :param pulumi.Input[builtins.str] vpc_id: 专有网络（VPC） ID。
-        :param pulumi.Input[builtins.str] zone_id: 实例主节点所在可用区。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] zone_ids: 实例各节点所在的可用区列表。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
+        :param pulumi.Input[builtins.str] allow_list_version: Allowlist version
+        :param pulumi.Input[Union['InstanceAutoStorageScalingConfigArgs', 'InstanceAutoStorageScalingConfigArgsDict']] auto_storage_scaling_config: Auto scaling configuration
+        :param pulumi.Input[builtins.str] auto_upgrade_minor_version: Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+        :param pulumi.Input[builtins.int] backup_audit_log_size: Space used by audit logs in backup.
+        :param pulumi.Input[builtins.int] backup_bin_log_size: Space used by binlog logs in backup.
+        :param pulumi.Input[builtins.int] backup_data_size: Space used by data in backup.
+        :param pulumi.Input[builtins.int] backup_error_log_size: Space used by error logs in backups.
+        :param pulumi.Input[builtins.int] backup_free_quota_size: Free backup storage space, in GB
+        :param pulumi.Input[builtins.int] backup_log_size: Space used by logs in backups.
+        :param pulumi.Input[builtins.int] backup_slow_log_size: Space used by slow logs in backups.
+        :param pulumi.Input[builtins.float] backup_use: Backup space used by the instance, in GB
+        :param pulumi.Input[builtins.int] basic_backup_binlog_size: Space used by Binlog logs in basic backups.
+        :param pulumi.Input[builtins.int] basic_backup_data_size: Space used by data in the base backup
+        :param pulumi.Input[Union['InstanceChargeDetailArgs', 'InstanceChargeDetailArgsDict']] charge_detail: Billing method
+        :param pulumi.Input[builtins.int] cpu_num: Number of CPU cores for the database proxy service of the instance
+        :param pulumi.Input[builtins.str] created_time: Instance creation local time.
+        :param pulumi.Input[builtins.str] current_kernel_version: Instance kernel minor version.
+        :param pulumi.Input[builtins.str] db_engine_version: Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
+        :param pulumi.Input[builtins.str] db_param_group_id: Parameter template ID. Default value is the default parameter template for the database engine version
+        :param pulumi.Input[builtins.str] db_time_zone: Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
+        :param pulumi.Input[builtins.str] deletion_protection: Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
+        :param pulumi.Input[builtins.str] dr_dts_task_id: ID of the data synchronization link between the primary and disaster recovery instances in the DTS data synchronization task.
+        :param pulumi.Input[builtins.str] dr_dts_task_name: Name of synchronization tasks between primary and disaster recovery instances.
+        :param pulumi.Input[builtins.str] dr_dts_task_status: Status of synchronization tasks between primary and disaster recovery instances.
+        :param pulumi.Input[builtins.int] dr_seconds_behind_master: Latency between the disaster recovery instance and the primary instance.
+        :param pulumi.Input[builtins.bool] global_read_only: Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
+        :param pulumi.Input[builtins.bool] has_disaster_recovery_instances: Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
+        :param pulumi.Input[builtins.bool] has_green_instance: Is the instance in blue-green deployment? Values: true: yes. false: no.
+        :param pulumi.Input[builtins.str] instance_id: Instance ID.
+        :param pulumi.Input[builtins.str] instance_name: Instance name.
+        :param pulumi.Input[builtins.str] instance_status: Instance status.
+        :param pulumi.Input[builtins.str] instance_type: Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+        :param pulumi.Input[builtins.str] lower_case_table_names: Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
+        :param pulumi.Input[Union['InstanceMaintenanceWindowArgs', 'InstanceMaintenanceWindowArgsDict']] maintenance_window: Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
+        :param pulumi.Input[builtins.str] master_instance_id: Primary instance ID
+        :param pulumi.Input[builtins.str] master_instance_name: Primary instance name.
+        :param pulumi.Input[builtins.int] memory: Memory size. Unit: GB.
+        :param pulumi.Input[builtins.float] node_cpu_used_percentage: Average CPU usage of the primary node in the instance over the past minute.
+        :param pulumi.Input[builtins.float] node_memory_used_percentage: Average memory usage of the primary node over the past minute
+        :param pulumi.Input[builtins.str] node_number: Number of nodes.
+        :param pulumi.Input[builtins.float] node_space_used_percentage: Average disk usage of the primary node over the past minute
+        :param pulumi.Input[builtins.str] node_spec: Node specifications.
+        :param pulumi.Input[builtins.int] port: Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
+        :param pulumi.Input[builtins.str] project_name: Project.
+        :param pulumi.Input[Union['InstanceProxyDetailArgs', 'InstanceProxyDetailArgsDict']] proxy_detail: proxy information
+        :param pulumi.Input[builtins.int] storage_audit_log_size: Space used by audit logs in instance storage
+        :param pulumi.Input[builtins.int] storage_bin_log_size: Binlog space usage in the instance storage
+        :param pulumi.Input[builtins.int] storage_data_size: Space used by data in instance storage.
+        :param pulumi.Input[builtins.int] storage_error_log_size: Space used by error logs in instance storage.
+        :param pulumi.Input[builtins.int] storage_log_size: Space used by logs in the instance storage
+        :param pulumi.Input[builtins.int] storage_slow_log_size: Space used by slow logs in instance storage
+        :param pulumi.Input[builtins.int] storage_space: Total storage space of the instance, in GB
+        :param pulumi.Input[builtins.str] storage_type: Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
+        :param pulumi.Input[builtins.float] storage_use: Storage space used by the instance, in GB
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID.
+        :param pulumi.Input[builtins.str] super_account_name: High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
+        :param pulumi.Input[builtins.str] super_account_password: Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !@#$%^&*()_+-=,.&?|/.
+        :param pulumi.Input[builtins.str] sync_mode: Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
+        :param pulumi.Input[builtins.str] time_zone: Time zone
+        :param pulumi.Input[builtins.str] updated_time: Instance updates local time.
+        :param pulumi.Input[builtins.int] vcpu: CPU size. For example: 1 means 1U.
+        :param pulumi.Input[builtins.str] vpc_id: VPC (Virtual Private Cloud) ID.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone of the instance's primary node.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] zone_ids: List of availability zones for each node in the instance.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1992,7 +1992,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="allowListIds")
     def allow_list_ids(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        白名单 ID。如需绑定多个白名单，白名单 ID 用英文逗号（,）分隔。一个实例最多可绑定 100 个白名单。
+        Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
         """
         return pulumi.get(self, "allow_list_ids")
 
@@ -2000,7 +2000,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="allowListVersion")
     def allow_list_version(self) -> pulumi.Output[builtins.str]:
         """
-        白名单版本。
+        Allowlist version
         """
         return pulumi.get(self, "allow_list_version")
 
@@ -2008,7 +2008,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="autoStorageScalingConfig")
     def auto_storage_scaling_config(self) -> pulumi.Output['outputs.InstanceAutoStorageScalingConfig']:
         """
-        自动扩容配置。
+        Auto scaling configuration
         """
         return pulumi.get(self, "auto_storage_scaling_config")
 
@@ -2016,7 +2016,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="autoUpgradeMinorVersion")
     def auto_upgrade_minor_version(self) -> pulumi.Output[builtins.str]:
         """
-        实例内核小版本的升级策略。取值：Auto：自动升级。Manual：手动升级。
+        Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
         """
         return pulumi.get(self, "auto_upgrade_minor_version")
 
@@ -2024,7 +2024,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="backupAuditLogSize")
     def backup_audit_log_size(self) -> pulumi.Output[builtins.int]:
         """
-        备份中审计日志使用的空间。
+        Space used by audit logs in backup.
         """
         return pulumi.get(self, "backup_audit_log_size")
 
@@ -2032,7 +2032,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="backupBinLogSize")
     def backup_bin_log_size(self) -> pulumi.Output[builtins.int]:
         """
-        备份中 Binlog 日志使用的空间。
+        Space used by binlog logs in backup.
         """
         return pulumi.get(self, "backup_bin_log_size")
 
@@ -2040,7 +2040,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="backupDataSize")
     def backup_data_size(self) -> pulumi.Output[builtins.int]:
         """
-        备份中数据使用的空间。
+        Space used by data in backup.
         """
         return pulumi.get(self, "backup_data_size")
 
@@ -2048,7 +2048,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="backupErrorLogSize")
     def backup_error_log_size(self) -> pulumi.Output[builtins.int]:
         """
-        备份中错误日志使用的空间。
+        Space used by error logs in backups.
         """
         return pulumi.get(self, "backup_error_log_size")
 
@@ -2056,7 +2056,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="backupFreeQuotaSize")
     def backup_free_quota_size(self) -> pulumi.Output[builtins.int]:
         """
-        免费的备份存储空间，单位为 GB。
+        Free backup storage space, in GB
         """
         return pulumi.get(self, "backup_free_quota_size")
 
@@ -2064,7 +2064,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="backupLogSize")
     def backup_log_size(self) -> pulumi.Output[builtins.int]:
         """
-        备份中日志使用的空间。
+        Space used by logs in backups.
         """
         return pulumi.get(self, "backup_log_size")
 
@@ -2072,7 +2072,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="backupSlowLogSize")
     def backup_slow_log_size(self) -> pulumi.Output[builtins.int]:
         """
-        备份中慢日志使用的空间。
+        Space used by slow logs in backups.
         """
         return pulumi.get(self, "backup_slow_log_size")
 
@@ -2080,7 +2080,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="backupUse")
     def backup_use(self) -> pulumi.Output[builtins.float]:
         """
-        实例的备份已使用的空间，单位为 GB。
+        Backup space used by the instance, in GB
         """
         return pulumi.get(self, "backup_use")
 
@@ -2088,7 +2088,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="basicBackupBinlogSize")
     def basic_backup_binlog_size(self) -> pulumi.Output[builtins.int]:
         """
-        基础备份中 Binlog 日志使用的空间。
+        Space used by Binlog logs in basic backups.
         """
         return pulumi.get(self, "basic_backup_binlog_size")
 
@@ -2096,7 +2096,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="basicBackupDataSize")
     def basic_backup_data_size(self) -> pulumi.Output[builtins.int]:
         """
-        基础备份中数据使用的空间。
+        Space used by data in the base backup
         """
         return pulumi.get(self, "basic_backup_data_size")
 
@@ -2104,7 +2104,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="chargeDetail")
     def charge_detail(self) -> pulumi.Output['outputs.InstanceChargeDetail']:
         """
-        付费方式。
+        Billing method
         """
         return pulumi.get(self, "charge_detail")
 
@@ -2112,7 +2112,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="cpuNum")
     def cpu_num(self) -> pulumi.Output[builtins.int]:
         """
-        实例数据库代理服务的 CPU 核数。
+        Number of CPU cores for the database proxy service of the instance
         """
         return pulumi.get(self, "cpu_num")
 
@@ -2120,7 +2120,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        实例创建本地时间。
+        Instance creation local time.
         """
         return pulumi.get(self, "created_time")
 
@@ -2128,7 +2128,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="currentKernelVersion")
     def current_kernel_version(self) -> pulumi.Output[builtins.str]:
         """
-        实例的内核小版本。
+        Instance kernel minor version.
         """
         return pulumi.get(self, "current_kernel_version")
 
@@ -2136,7 +2136,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="dbEngineVersion")
     def db_engine_version(self) -> pulumi.Output[builtins.str]:
         """
-        兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+        Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
         """
         return pulumi.get(self, "db_engine_version")
 
@@ -2144,7 +2144,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="dbParamGroupId")
     def db_param_group_id(self) -> pulumi.Output[builtins.str]:
         """
-        参数模板 ID。默认值为数据库引擎版本对应的默认参数模板。
+        Parameter template ID. Default value is the default parameter template for the database engine version
         """
         return pulumi.get(self, "db_param_group_id")
 
@@ -2152,7 +2152,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="dbTimeZone")
     def db_time_zone(self) -> pulumi.Output[builtins.str]:
         """
-        时区。支持 UTC -12:00 ~ +13:00。默认值为 Region 所在的 TimeZone。
+        Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
         """
         return pulumi.get(self, "db_time_zone")
 
@@ -2160,7 +2160,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="deletionProtection")
     def deletion_protection(self) -> pulumi.Output[builtins.str]:
         """
-        是否启用实例的删除保护功能。取值：Enabled：是。Disabled：否。默认值。
+        Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
         """
         return pulumi.get(self, "deletion_protection")
 
@@ -2173,7 +2173,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="drDtsTaskId")
     def dr_dts_task_id(self) -> pulumi.Output[builtins.str]:
         """
-        主实例与灾备实例之间的数据同步链路在 DTS 数据同步任务的 ID。
+        ID of the data synchronization link between the primary and disaster recovery instances in the DTS data synchronization task.
         """
         return pulumi.get(self, "dr_dts_task_id")
 
@@ -2181,7 +2181,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="drDtsTaskName")
     def dr_dts_task_name(self) -> pulumi.Output[builtins.str]:
         """
-        主实例与灾备实例之间同步任务的名称。
+        Name of synchronization tasks between primary and disaster recovery instances.
         """
         return pulumi.get(self, "dr_dts_task_name")
 
@@ -2189,7 +2189,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="drDtsTaskStatus")
     def dr_dts_task_status(self) -> pulumi.Output[builtins.str]:
         """
-        主实例与灾备实例之间同步任务的状态。
+        Status of synchronization tasks between primary and disaster recovery instances.
         """
         return pulumi.get(self, "dr_dts_task_status")
 
@@ -2197,7 +2197,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="drSecondsBehindMaster")
     def dr_seconds_behind_master(self) -> pulumi.Output[builtins.int]:
         """
-        灾备实例与主实例之间的时延。
+        Latency between the disaster recovery instance and the primary instance.
         """
         return pulumi.get(self, "dr_seconds_behind_master")
 
@@ -2210,7 +2210,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="globalReadOnly")
     def global_read_only(self) -> pulumi.Output[builtins.bool]:
         """
-        是否开启全局只读。取值：true：是。false：否。默认值为 false。
+        Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
         """
         return pulumi.get(self, "global_read_only")
 
@@ -2218,7 +2218,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="hasDisasterRecoveryInstances")
     def has_disaster_recovery_instances(self) -> pulumi.Output[builtins.bool]:
         """
-        实例是否有灾备实例。取值：true：是。false：否。
+        Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
         """
         return pulumi.get(self, "has_disaster_recovery_instances")
 
@@ -2226,7 +2226,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="hasGreenInstance")
     def has_green_instance(self) -> pulumi.Output[builtins.bool]:
         """
-        实例是否处于蓝绿部署中。取值：true：是。false：否。
+        Is the instance in blue-green deployment? Values: true: yes. false: no.
         """
         return pulumi.get(self, "has_green_instance")
 
@@ -2234,7 +2234,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例 ID。
+        Instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -2242,7 +2242,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> pulumi.Output[builtins.str]:
         """
-        实例名称。
+        Instance name.
         """
         return pulumi.get(self, "instance_name")
 
@@ -2250,7 +2250,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="instanceStatus")
     def instance_status(self) -> pulumi.Output[builtins.str]:
         """
-        实例状态。
+        Instance status.
         """
         return pulumi.get(self, "instance_status")
 
@@ -2258,7 +2258,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> pulumi.Output[builtins.str]:
         """
-        实例类型。取值：DoubleNode，双节点类型。MultiNode，多节点类型。
+        Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
         """
         return pulumi.get(self, "instance_type")
 
@@ -2266,7 +2266,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="lowerCaseTableNames")
     def lower_case_table_names(self) -> pulumi.Output[builtins.str]:
         """
-        表名是否区分大小写，默认取值为 true。取值：false：表名被存储成固定且表名称大小写敏感。true：表名将被存储成小写且表名称大小写不敏感。
+        Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
         """
         return pulumi.get(self, "lower_case_table_names")
 
@@ -2274,7 +2274,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="maintenanceWindow")
     def maintenance_window(self) -> pulumi.Output['outputs.InstanceMaintenanceWindow']:
         """
-        在创建实例时指定实例的可维护时间段。该字段为可选，不设置时默认为一周内每一天的 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。
+        Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
         """
         return pulumi.get(self, "maintenance_window")
 
@@ -2282,7 +2282,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="masterInstanceId")
     def master_instance_id(self) -> pulumi.Output[builtins.str]:
         """
-        主实例的 ID。
+        Primary instance ID
         """
         return pulumi.get(self, "master_instance_id")
 
@@ -2290,7 +2290,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="masterInstanceName")
     def master_instance_name(self) -> pulumi.Output[builtins.str]:
         """
-        主实例的名称。
+        Primary instance name.
         """
         return pulumi.get(self, "master_instance_name")
 
@@ -2298,7 +2298,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def memory(self) -> pulumi.Output[builtins.int]:
         """
-        内存大小。单位：GB。
+        Memory size. Unit: GB.
         """
         return pulumi.get(self, "memory")
 
@@ -2306,7 +2306,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="nodeCpuUsedPercentage")
     def node_cpu_used_percentage(self) -> pulumi.Output[builtins.float]:
         """
-        实例主节点 CPU 使用率近一分钟的平均值。
+        Average CPU usage of the primary node in the instance over the past minute.
         """
         return pulumi.get(self, "node_cpu_used_percentage")
 
@@ -2314,7 +2314,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="nodeMemoryUsedPercentage")
     def node_memory_used_percentage(self) -> pulumi.Output[builtins.float]:
         """
-        实例主节点内存使用率近一分钟的平均值。
+        Average memory usage of the primary node over the past minute
         """
         return pulumi.get(self, "node_memory_used_percentage")
 
@@ -2322,7 +2322,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="nodeNumber")
     def node_number(self) -> pulumi.Output[builtins.str]:
         """
-        节点数量。
+        Number of nodes.
         """
         return pulumi.get(self, "node_number")
 
@@ -2330,7 +2330,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="nodeSpaceUsedPercentage")
     def node_space_used_percentage(self) -> pulumi.Output[builtins.float]:
         """
-        实例主节点磁盘使用率近一分钟的平均值。
+        Average disk usage of the primary node over the past minute
         """
         return pulumi.get(self, "node_space_used_percentage")
 
@@ -2338,7 +2338,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="nodeSpec")
     def node_spec(self) -> pulumi.Output[builtins.str]:
         """
-        节点规格。
+        Node specifications.
         """
         return pulumi.get(self, "node_spec")
 
@@ -2351,7 +2351,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def port(self) -> pulumi.Output[builtins.int]:
         """
-        默认终端的私网端口。端口号的取值范围为 1000~65534，默认值为 3306。创建新的连接终端或开启新地址时，将使用默认终端的私网端口实时配置为默认端口。
+        Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
         """
         return pulumi.get(self, "port")
 
@@ -2359,7 +2359,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        所属项目。
+        Project.
         """
         return pulumi.get(self, "project_name")
 
@@ -2367,7 +2367,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="proxyDetail")
     def proxy_detail(self) -> pulumi.Output['outputs.InstanceProxyDetail']:
         """
-        proxy信息
+        proxy information
         """
         return pulumi.get(self, "proxy_detail")
 
@@ -2375,7 +2375,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="storageAuditLogSize")
     def storage_audit_log_size(self) -> pulumi.Output[builtins.int]:
         """
-        实例存储空间中审计日志使用的空间。
+        Space used by audit logs in instance storage
         """
         return pulumi.get(self, "storage_audit_log_size")
 
@@ -2383,7 +2383,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="storageBinLogSize")
     def storage_bin_log_size(self) -> pulumi.Output[builtins.int]:
         """
-        实例存储空间中 Binlog 使用的空间。
+        Binlog space usage in the instance storage
         """
         return pulumi.get(self, "storage_bin_log_size")
 
@@ -2391,7 +2391,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="storageDataSize")
     def storage_data_size(self) -> pulumi.Output[builtins.int]:
         """
-        实例存储空间中数据使用的空间。
+        Space used by data in instance storage.
         """
         return pulumi.get(self, "storage_data_size")
 
@@ -2399,7 +2399,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="storageErrorLogSize")
     def storage_error_log_size(self) -> pulumi.Output[builtins.int]:
         """
-        实例存储空间中错误日志使用的空间。
+        Space used by error logs in instance storage.
         """
         return pulumi.get(self, "storage_error_log_size")
 
@@ -2407,7 +2407,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="storageLogSize")
     def storage_log_size(self) -> pulumi.Output[builtins.int]:
         """
-        实例存储空间中日志使用的空间。
+        Space used by logs in the instance storage
         """
         return pulumi.get(self, "storage_log_size")
 
@@ -2415,7 +2415,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="storageSlowLogSize")
     def storage_slow_log_size(self) -> pulumi.Output[builtins.int]:
         """
-        实例存储空间中慢日志使用的空间。
+        Space used by slow logs in instance storage
         """
         return pulumi.get(self, "storage_slow_log_size")
 
@@ -2423,7 +2423,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="storageSpace")
     def storage_space(self) -> pulumi.Output[builtins.int]:
         """
-        实例总存储空间。单位为 GB。
+        Total storage space of the instance, in GB
         """
         return pulumi.get(self, "storage_space")
 
@@ -2431,7 +2431,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="storageType")
     def storage_type(self) -> pulumi.Output[builtins.str]:
         """
-        实例的存储类型。取值范围：LocalSSD：本地盘。CloudESSD*FlexPL：FlexPL 云盘。CloudESSD*PL0：PL0 云盘。
+        Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
         """
         return pulumi.get(self, "storage_type")
 
@@ -2439,7 +2439,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="storageUse")
     def storage_use(self) -> pulumi.Output[builtins.float]:
         """
-        实例已使用用存储空间，单位为 GB。
+        Storage space used by the instance, in GB
         """
         return pulumi.get(self, "storage_use")
 
@@ -2447,7 +2447,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[builtins.str]:
         """
-        子网 ID。
+        Subnet ID.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -2455,7 +2455,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="superAccountName")
     def super_account_name(self) -> pulumi.Output[builtins.str]:
         """
-        高权限账号名称。不传此参数默认不创建高权限账号。
+        High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
         """
         return pulumi.get(self, "super_account_name")
 
@@ -2463,7 +2463,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="superAccountPassword")
     def super_account_password(self) -> pulumi.Output[builtins.str]:
         """
-        高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=,.&?|/。
+        Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !@#$%^&*()_+-=,.&?|/.
         """
         return pulumi.get(self, "super_account_password")
 
@@ -2471,7 +2471,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="syncMode")
     def sync_mode(self) -> pulumi.Output[builtins.str]:
         """
-        数据同步方式：SemiSync：半同步。Async：异步。
+        Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
         """
         return pulumi.get(self, "sync_mode")
 
@@ -2484,7 +2484,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> pulumi.Output[builtins.str]:
         """
-        时区。
+        Time zone
         """
         return pulumi.get(self, "time_zone")
 
@@ -2492,7 +2492,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        实例更新本地时间。
+        Instance updates local time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -2500,7 +2500,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def vcpu(self) -> pulumi.Output[builtins.int]:
         """
-        CPU 大小。例如：1 表示 1U。
+        CPU size. For example: 1 means 1U.
         """
         return pulumi.get(self, "vcpu")
 
@@ -2508,7 +2508,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Output[builtins.str]:
         """
-        专有网络（VPC） ID。
+        VPC (Virtual Private Cloud) ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -2516,7 +2516,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例主节点所在可用区。
+        Availability zone of the instance's primary node.
         """
         return pulumi.get(self, "zone_id")
 
@@ -2524,7 +2524,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="zoneIds")
     def zone_ids(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        实例各节点所在的可用区列表。
+        List of availability zones for each node in the instance.
         """
         return pulumi.get(self, "zone_ids")
 

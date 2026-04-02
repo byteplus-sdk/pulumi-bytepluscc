@@ -21,14 +21,14 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
     public static final NlbArgs Empty = new NlbArgs();
 
     /**
-     * NLB实例所属的账号ID。
+     * Account ID to which the NLB instance belongs.
      * 
      */
     @Import(name="accountId")
     private @Nullable Output<String> accountId;
 
     /**
-     * @return NLB实例所属的账号ID。
+     * @return Account ID to which the NLB instance belongs.
      * 
      */
     public Optional<Output<String>> accountId() {
@@ -36,14 +36,14 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例是否开启跨可用区转发能力。true（默认值）：开启。false：关闭。
+     * Whether the NLB instance has cross-availability zone forwarding enabled. true (default): enabled. false: disabled.
      * 
      */
     @Import(name="crossZoneEnabled")
     private @Nullable Output<Boolean> crossZoneEnabled;
 
     /**
-     * @return NLB实例是否开启跨可用区转发能力。true（默认值）：开启。false：关闭。
+     * @return Whether the NLB instance has cross-availability zone forwarding enabled. true (default): enabled. false: disabled.
      * 
      */
     public Optional<Output<Boolean>> crossZoneEnabled() {
@@ -51,14 +51,14 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例的描述。必须以字母、数字或中文开头，可包含以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。该参数不传入，则默认为空字符串。
+     * Description of the NLB instance. Must start with a letter, number, or Chinese character and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return NLB实例的描述。必须以字母、数字或中文开头，可包含以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。该参数不传入，则默认为空字符串。
+     * @return Description of the NLB instance. Must start with a letter, number, or Chinese character and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
      * 
      */
     public Optional<Output<String>> description() {
@@ -66,14 +66,14 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例的IP地址类型。ipv4：IPv4版本。dualstack：双栈，即同时支持IPv4版本和IPv6版本。
+     * IP address type of the NLB instance. ipv4: IPv4 version. dualstack: dual stack, supports both IPv4 and IPv6 versions.
      * 
      */
     @Import(name="ipAddressVersion")
     private @Nullable Output<String> ipAddressVersion;
 
     /**
-     * @return NLB实例的IP地址类型。ipv4：IPv4版本。dualstack：双栈，即同时支持IPv4版本和IPv6版本。
+     * @return IP address type of the NLB instance. ipv4: IPv4 version. dualstack: dual stack, supports both IPv4 and IPv6 versions.
      * 
      */
     public Optional<Output<String>> ipAddressVersion() {
@@ -81,14 +81,14 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * IPv4类型的共享带宽包ID。
+     * Shared bandwidth package ID for IPv4 type.
      * 
      */
     @Import(name="ipv4BandwidthPackageId")
     private @Nullable Output<String> ipv4BandwidthPackageId;
 
     /**
-     * @return IPv4类型的共享带宽包ID。
+     * @return Shared bandwidth package ID for IPv4 type.
      * 
      */
     public Optional<Output<String>> ipv4BandwidthPackageId() {
@@ -96,14 +96,14 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例的IPv4网络类型。internet：公网类型。intranet：私网类型。
+     * IPv4 network type of the NLB instance. internet: public network type. intranet: private network type.
      * 
      */
     @Import(name="ipv4NetworkType", required=true)
     private Output<String> ipv4NetworkType;
 
     /**
-     * @return NLB实例的IPv4网络类型。internet：公网类型。intranet：私网类型。
+     * @return IPv4 network type of the NLB instance. internet: public network type. intranet: private network type.
      * 
      */
     public Output<String> ipv4NetworkType() {
@@ -111,14 +111,14 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * IPv6类型的共享带宽包ID。
+     * Shared bandwidth package ID for IPv6 type.
      * 
      */
     @Import(name="ipv6BandwidthPackageId")
     private @Nullable Output<String> ipv6BandwidthPackageId;
 
     /**
-     * @return IPv6类型的共享带宽包ID。
+     * @return Shared bandwidth package ID for IPv6 type.
      * 
      */
     public Optional<Output<String>> ipv6BandwidthPackageId() {
@@ -126,14 +126,14 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例的IPv6网络类型。internet：公网类型。intranet：私网类型。
+     * IPv6 network type of the NLB instance. internet: public network type. intranet: private network type.
      * 
      */
     @Import(name="ipv6NetworkType")
     private @Nullable Output<String> ipv6NetworkType;
 
     /**
-     * @return NLB实例的IPv6网络类型。internet：公网类型。intranet：私网类型。
+     * @return IPv6 network type of the NLB instance. internet: public network type. intranet: private network type.
      * 
      */
     public Optional<Output<String>> ipv6NetworkType() {
@@ -141,14 +141,14 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例的名称。
+     * Name of the NLB instance.
      * 
      */
     @Import(name="loadBalancerName")
     private @Nullable Output<String> loadBalancerName;
 
     /**
-     * @return NLB实例的名称。
+     * @return Name of the NLB instance.
      * 
      */
     public Optional<Output<String>> loadBalancerName() {
@@ -156,14 +156,14 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例是否开启控制台上修改保护。NonProtection或空：关闭，允许通过控制台修改实例或删除实例。ConsoleProtection：开启，禁止通过控制台修改实例或删除实例。
+     * Whether modification protection is enabled for the NLB instance in the console. NonProtection or empty: disabled, allows modification or deletion of the instance via the console. ConsoleProtection: enabled, prevents modification or deletion of the instance via the console.
      * 
      */
     @Import(name="modificationProtectionStatus")
     private @Nullable Output<String> modificationProtectionStatus;
 
     /**
-     * @return NLB实例是否开启控制台上修改保护。NonProtection或空：关闭，允许通过控制台修改实例或删除实例。ConsoleProtection：开启，禁止通过控制台修改实例或删除实例。
+     * @return Whether modification protection is enabled for the NLB instance in the console. NonProtection or empty: disabled, allows modification or deletion of the instance via the console. ConsoleProtection: enabled, prevents modification or deletion of the instance via the console.
      * 
      */
     public Optional<Output<String>> modificationProtectionStatus() {
@@ -171,14 +171,14 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例所属项目的名称。
+     * Name of the project to which the NLB instance belongs.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return NLB实例所属项目的名称。
+     * @return Name of the project to which the NLB instance belongs.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -186,14 +186,14 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例关联的安全组ID列表。
+     * List of security group IDs associated with the NLB instance.
      * 
      */
     @Import(name="securityGroupIds", required=true)
     private Output<List<String>> securityGroupIds;
 
     /**
-     * @return NLB实例关联的安全组ID列表。
+     * @return List of security group IDs associated with the NLB instance.
      * 
      */
     public Output<List<String>> securityGroupIds() {
@@ -208,14 +208,14 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * NLB实例所属的VPC ID。
+     * VPC ID to which the NLB instance belongs.
      * 
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
-     * @return NLB实例所属的VPC ID。
+     * @return VPC ID to which the NLB instance belongs.
      * 
      */
     public Output<String> vpcId() {
@@ -268,7 +268,7 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountId NLB实例所属的账号ID。
+         * @param accountId Account ID to which the NLB instance belongs.
          * 
          * @return builder
          * 
@@ -279,7 +279,7 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountId NLB实例所属的账号ID。
+         * @param accountId Account ID to which the NLB instance belongs.
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param crossZoneEnabled NLB实例是否开启跨可用区转发能力。true（默认值）：开启。false：关闭。
+         * @param crossZoneEnabled Whether the NLB instance has cross-availability zone forwarding enabled. true (default): enabled. false: disabled.
          * 
          * @return builder
          * 
@@ -300,7 +300,7 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param crossZoneEnabled NLB实例是否开启跨可用区转发能力。true（默认值）：开启。false：关闭。
+         * @param crossZoneEnabled Whether the NLB instance has cross-availability zone forwarding enabled. true (default): enabled. false: disabled.
          * 
          * @return builder
          * 
@@ -310,7 +310,7 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description NLB实例的描述。必须以字母、数字或中文开头，可包含以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。该参数不传入，则默认为空字符串。
+         * @param description Description of the NLB instance. Must start with a letter, number, or Chinese character and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
          * 
          * @return builder
          * 
@@ -321,7 +321,7 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description NLB实例的描述。必须以字母、数字或中文开头，可包含以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。该参数不传入，则默认为空字符串。
+         * @param description Description of the NLB instance. Must start with a letter, number, or Chinese character and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
          * 
          * @return builder
          * 
@@ -331,7 +331,7 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipAddressVersion NLB实例的IP地址类型。ipv4：IPv4版本。dualstack：双栈，即同时支持IPv4版本和IPv6版本。
+         * @param ipAddressVersion IP address type of the NLB instance. ipv4: IPv4 version. dualstack: dual stack, supports both IPv4 and IPv6 versions.
          * 
          * @return builder
          * 
@@ -342,7 +342,7 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipAddressVersion NLB实例的IP地址类型。ipv4：IPv4版本。dualstack：双栈，即同时支持IPv4版本和IPv6版本。
+         * @param ipAddressVersion IP address type of the NLB instance. ipv4: IPv4 version. dualstack: dual stack, supports both IPv4 and IPv6 versions.
          * 
          * @return builder
          * 
@@ -352,7 +352,7 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv4BandwidthPackageId IPv4类型的共享带宽包ID。
+         * @param ipv4BandwidthPackageId Shared bandwidth package ID for IPv4 type.
          * 
          * @return builder
          * 
@@ -363,7 +363,7 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv4BandwidthPackageId IPv4类型的共享带宽包ID。
+         * @param ipv4BandwidthPackageId Shared bandwidth package ID for IPv4 type.
          * 
          * @return builder
          * 
@@ -373,7 +373,7 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv4NetworkType NLB实例的IPv4网络类型。internet：公网类型。intranet：私网类型。
+         * @param ipv4NetworkType IPv4 network type of the NLB instance. internet: public network type. intranet: private network type.
          * 
          * @return builder
          * 
@@ -384,7 +384,7 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv4NetworkType NLB实例的IPv4网络类型。internet：公网类型。intranet：私网类型。
+         * @param ipv4NetworkType IPv4 network type of the NLB instance. internet: public network type. intranet: private network type.
          * 
          * @return builder
          * 
@@ -394,7 +394,7 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6BandwidthPackageId IPv6类型的共享带宽包ID。
+         * @param ipv6BandwidthPackageId Shared bandwidth package ID for IPv6 type.
          * 
          * @return builder
          * 
@@ -405,7 +405,7 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6BandwidthPackageId IPv6类型的共享带宽包ID。
+         * @param ipv6BandwidthPackageId Shared bandwidth package ID for IPv6 type.
          * 
          * @return builder
          * 
@@ -415,7 +415,7 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6NetworkType NLB实例的IPv6网络类型。internet：公网类型。intranet：私网类型。
+         * @param ipv6NetworkType IPv6 network type of the NLB instance. internet: public network type. intranet: private network type.
          * 
          * @return builder
          * 
@@ -426,7 +426,7 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6NetworkType NLB实例的IPv6网络类型。internet：公网类型。intranet：私网类型。
+         * @param ipv6NetworkType IPv6 network type of the NLB instance. internet: public network type. intranet: private network type.
          * 
          * @return builder
          * 
@@ -436,7 +436,7 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerName NLB实例的名称。
+         * @param loadBalancerName Name of the NLB instance.
          * 
          * @return builder
          * 
@@ -447,7 +447,7 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerName NLB实例的名称。
+         * @param loadBalancerName Name of the NLB instance.
          * 
          * @return builder
          * 
@@ -457,7 +457,7 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modificationProtectionStatus NLB实例是否开启控制台上修改保护。NonProtection或空：关闭，允许通过控制台修改实例或删除实例。ConsoleProtection：开启，禁止通过控制台修改实例或删除实例。
+         * @param modificationProtectionStatus Whether modification protection is enabled for the NLB instance in the console. NonProtection or empty: disabled, allows modification or deletion of the instance via the console. ConsoleProtection: enabled, prevents modification or deletion of the instance via the console.
          * 
          * @return builder
          * 
@@ -468,7 +468,7 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modificationProtectionStatus NLB实例是否开启控制台上修改保护。NonProtection或空：关闭，允许通过控制台修改实例或删除实例。ConsoleProtection：开启，禁止通过控制台修改实例或删除实例。
+         * @param modificationProtectionStatus Whether modification protection is enabled for the NLB instance in the console. NonProtection or empty: disabled, allows modification or deletion of the instance via the console. ConsoleProtection: enabled, prevents modification or deletion of the instance via the console.
          * 
          * @return builder
          * 
@@ -478,7 +478,7 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName NLB实例所属项目的名称。
+         * @param projectName Name of the project to which the NLB instance belongs.
          * 
          * @return builder
          * 
@@ -489,7 +489,7 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName NLB实例所属项目的名称。
+         * @param projectName Name of the project to which the NLB instance belongs.
          * 
          * @return builder
          * 
@@ -499,7 +499,7 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityGroupIds NLB实例关联的安全组ID列表。
+         * @param securityGroupIds List of security group IDs associated with the NLB instance.
          * 
          * @return builder
          * 
@@ -510,7 +510,7 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityGroupIds NLB实例关联的安全组ID列表。
+         * @param securityGroupIds List of security group IDs associated with the NLB instance.
          * 
          * @return builder
          * 
@@ -520,7 +520,7 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityGroupIds NLB实例关联的安全组ID列表。
+         * @param securityGroupIds List of security group IDs associated with the NLB instance.
          * 
          * @return builder
          * 
@@ -543,7 +543,7 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId NLB实例所属的VPC ID。
+         * @param vpcId VPC ID to which the NLB instance belongs.
          * 
          * @return builder
          * 
@@ -554,7 +554,7 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId NLB实例所属的VPC ID。
+         * @param vpcId VPC ID to which the NLB instance belongs.
          * 
          * @return builder
          * 

@@ -28,14 +28,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：true：自动加入。false：不自动加入（默认）。
+     * When the endpoint type is read/write or read-only, you can set whether new nodes are automatically added. Values: true: automatically added. false: not automatically added (default).
      * 
      */
     @Import(name="autoAddNewNodes")
     private @Nullable Output<Boolean> autoAddNewNodes;
 
     /**
-     * @return 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：true：自动加入。false：不自动加入（默认）。
+     * @return When the endpoint type is read/write or read-only, you can set whether new nodes are automatically added. Values: true: automatically added. false: not automatically added (default).
      * 
      */
     public Optional<Output<Boolean>> autoAddNewNodes() {
@@ -43,14 +43,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否关联所有的备节点。取值：true：是。默认值。false：否。说明仅多节点实例的只读终端支持该配置。仅在实例有两个或更多备节点时才能关闭此功能。
+     * Associate all replica nodes. Values: true: enabled (default). false: disabled. Note: Only read-only endpoints of multi-node instances support this configuration. This feature can be disabled only if the instance has two or more replica nodes.
      * 
      */
     @Import(name="connectAllSlaveNodes")
     private @Nullable Output<Boolean> connectAllSlaveNodes;
 
     /**
-     * @return 是否关联所有的备节点。取值：true：是。默认值。false：否。说明仅多节点实例的只读终端支持该配置。仅在实例有两个或更多备节点时才能关闭此功能。
+     * @return Associate all replica nodes. Values: true: enabled (default). false: disabled. Note: Only read-only endpoints of multi-node instances support this configuration. This feature can be disabled only if the instance has two or more replica nodes.
      * 
      */
     public Optional<Output<Boolean>> connectAllSlaveNodes() {
@@ -58,14 +58,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。说明如实例的数据库代理功能已开启，可以取值为 Proxy 或 Direct。如实例的数据库代理功能未开启，仅可以取值为 Direct。可调用 DescribeDBInstanceDetail 接口查询实例数据库代理功能的开启状态。
+     * Endpoint type. Options: Proxy: proxy endpoint. Direct: direct endpoint. Note: If the database proxy feature is enabled for the instance, you can select Proxy or Direct. If the database proxy feature is not enabled, only Direct is available. You can call the DescribeDBInstanceDetail API to check the status of the database proxy feature for the instance.
      * 
      */
     @Import(name="connectionMode")
     private @Nullable Output<String> connectionMode;
 
     /**
-     * @return 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。说明如实例的数据库代理功能已开启，可以取值为 Proxy 或 Direct。如实例的数据库代理功能未开启，仅可以取值为 Direct。可调用 DescribeDBInstanceDetail 接口查询实例数据库代理功能的开启状态。
+     * @return Endpoint type. Options: Proxy: proxy endpoint. Direct: direct endpoint. Note: If the database proxy feature is enabled for the instance, you can select Proxy or Direct. If the database proxy feature is not enabled, only Direct is available. You can call the DescribeDBInstanceDetail API to check the status of the database proxy feature for the instance.
      * 
      */
     public Optional<Output<String>> connectionMode() {
@@ -73,14 +73,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。说明单节点实例不支持该功能。
+     * Connection pool type for proxy endpoints. Options: Transaction: transaction-level connection pool (default). Direct: direct mode. Note: Single-node instances do not support this feature.
      * 
      */
     @Import(name="connectionPoolType")
     private @Nullable Output<String> connectionPoolType;
 
     /**
-     * @return 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。说明单节点实例不支持该功能。
+     * @return Connection pool type for proxy endpoints. Options: Transaction: transaction-level connection pool (default). Direct: direct mode. Note: Single-node instances do not support this feature.
      * 
      */
     public Optional<Output<String>> connectionPoolType() {
@@ -88,14 +88,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备注。
+     * Remarks.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 备注。
+     * @return Remarks.
      * 
      */
     public Optional<Output<String>> description() {
@@ -103,14 +103,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启连接终端的连接保持功能。取值：true：是。false：否。说明仅代理终端支持该设置。
+     * Enable connection keep-alive for the endpoint. Values: true: enabled. false: disabled. Note: Only proxy endpoints support this setting.
      * 
      */
     @Import(name="enableConnectionPersistent")
     private @Nullable Output<Boolean> enableConnectionPersistent;
 
     /**
-     * @return 是否开启连接终端的连接保持功能。取值：true：是。false：否。说明仅代理终端支持该设置。
+     * @return Enable connection keep-alive for the endpoint. Values: true: enabled. false: disabled. Note: Only proxy endpoints support this setting.
      * 
      */
     public Optional<Output<Boolean>> enableConnectionPersistent() {
@@ -118,14 +118,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例连接终端名称。
+     * Instance connection endpoint name.
      * 
      */
     @Import(name="endpointName")
     private @Nullable Output<String> endpointName;
 
     /**
-     * @return 实例连接终端名称。
+     * @return Instance connection endpoint name.
      * 
      */
     public Optional<Output<String>> endpointName() {
@@ -133,14 +133,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 终端类型。取值为 Custom，自定义终端。
+     * Endpoint type. Value: Custom (custom endpoint).
      * 
      */
     @Import(name="endpointType")
     private @Nullable Output<String> endpointType;
 
     /**
-     * @return 终端类型。取值为 Custom，自定义终端。
+     * @return Endpoint type. Value: Custom (custom endpoint).
      * 
      */
     public Optional<Output<String>> endpointType() {
@@ -148,14 +148,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 空闲连接回收功能是否开启。true：开启。false：不开启。说明仅代理终端会返回该字段。
+     * Enable idle connection recycling. true: enabled. false: not enabled. Note: This field is returned only for proxy endpoints.
      * 
      */
     @Import(name="idleConnectionReclaim")
     private @Nullable Output<Boolean> idleConnectionReclaim;
 
     /**
-     * @return 空闲连接回收功能是否开启。true：开启。false：不开启。说明仅代理终端会返回该字段。
+     * @return Enable idle connection recycling. true: enabled. false: not enabled. Note: This field is returned only for proxy endpoints.
      * 
      */
     public Optional<Output<Boolean>> idleConnectionReclaim() {
@@ -163,14 +163,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启事务分离。取值：true：是。false：否。说明仅代理终端会返回该字段。
+     * Enable transaction separation. Options: true: yes. false: no. Note: Only proxy endpoints return this field.
      * 
      */
     @Import(name="implicitTransSplit")
     private @Nullable Output<Boolean> implicitTransSplit;
 
     /**
-     * @return 是否开启事务分离。取值：true：是。false：否。说明仅代理终端会返回该字段。
+     * @return Enable transaction separation. Options: true: yes. false: no. Note: Only proxy endpoints return this field.
      * 
      */
     public Optional<Output<Boolean>> implicitTransSplit() {
@@ -178,14 +178,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例 ID。
+     * Instance ID.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -193,14 +193,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启主节点路由。取值：true：是。false：否。说明仅代理终端会返回该字段。
+     * Enable primary node routing. Values: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
      * 
      */
     @Import(name="masterNodeRouting")
     private @Nullable Output<Boolean> masterNodeRouting;
 
     /**
-     * @return 是否开启主节点路由。取值：true：是。false：否。说明仅代理终端会返回该字段。
+     * @return Enable primary node routing. Values: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
      * 
      */
     public Optional<Output<Boolean>> masterNodeRouting() {
@@ -208,14 +208,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。说明仅代理终端会返回该字段。
+     * Overload protection timeout. Value range: integer between 60~7200. Unit: seconds. Note: This field is returned only for proxy endpoints.
      * 
      */
     @Import(name="masterProtectorTimeout")
     private @Nullable Output<Integer> masterProtectorTimeout;
 
     /**
-     * @return 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。说明仅代理终端会返回该字段。
+     * @return Overload protection timeout. Value range: integer between 60~7200. Unit: seconds. Note: This field is returned only for proxy endpoints.
      * 
      */
     public Optional<Output<Integer>> masterProtectorTimeout() {
@@ -223,14 +223,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+     * Multi-Statements mode for proxy endpoints. Options: Strict: strict mode (default). Loose: loose mode.
      * 
      */
     @Import(name="multiStatementsMode")
     private @Nullable Output<String> multiStatementsMode;
 
     /**
-     * @return 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+     * @return Multi-Statements mode for proxy endpoints. Options: Strict: strict mode (default). Loose: loose mode.
      * 
      */
     public Optional<Output<String>> multiStatementsMode() {
@@ -238,14 +238,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 连接终端配置的节点 ID 列表。当 EndpointType 为 Custom 时必选。说明如需将主节点加入终端，不需填写主节点 ID，只需填写 Primary。多个节点 ID 之间用英文逗号（,）分隔。
+     * List of node IDs configured for the connection endpoint. Required when EndpointType is Custom. Note: To add the primary node to the endpoint, do not enter the primary node ID; just enter Primary. Separate multiple node IDs with commas (,).
      * 
      */
     @Import(name="nodes")
     private @Nullable Output<String> nodes;
 
     /**
-     * @return 连接终端配置的节点 ID 列表。当 EndpointType 为 Custom 时必选。说明如需将主节点加入终端，不需填写主节点 ID，只需填写 Primary。多个节点 ID 之间用英文逗号（,）分隔。
+     * @return List of node IDs configured for the connection endpoint. Required when EndpointType is Custom. Note: To add the primary node to the endpoint, do not enter the primary node ID; just enter Primary. Separate multiple node IDs with commas (,).
      * 
      */
     public Optional<Output<String>> nodes() {
@@ -253,14 +253,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启过载保护。取值：true：是。false：否。说明仅代理终端会返回该字段。
+     * Enable overload protection. Options: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
      * 
      */
     @Import(name="overloadProtection")
     private @Nullable Output<Boolean> overloadProtection;
 
     /**
-     * @return 是否开启过载保护。取值：true：是。false：否。说明仅代理终端会返回该字段。
+     * @return Enable overload protection. Options: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
      * 
      */
     public Optional<Output<Boolean>> overloadProtection() {
@@ -268,14 +268,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+     * Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, the value range is: LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, the value range is: Default: automatic allocation based on specification weight. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling.
      * 
      */
     @Import(name="readOnlyNodeDistributionType")
     private @Nullable Output<String> readOnlyNodeDistributionType;
 
     /**
-     * @return 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+     * @return Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, the value range is: LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, the value range is: Default: automatic allocation based on specification weight. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling.
      * 
      */
     public Optional<Output<String>> readOnlyNodeDistributionType() {
@@ -283,14 +283,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+     * Read-only node latency threshold. Value range: 1~3600. Default: 30. Unit: seconds.
      * 
      */
     @Import(name="readOnlyNodeMaxDelayTime")
     private @Nullable Output<Integer> readOnlyNodeMaxDelayTime;
 
     /**
-     * @return 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+     * @return Read-only node latency threshold. Value range: 1~3600. Default: 30. Unit: seconds.
      * 
      */
     public Optional<Output<Integer>> readOnlyNodeMaxDelayTime() {
@@ -305,14 +305,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 读写模式：ReadWrite：读写。ReadOnly：只读。
+     * Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
      * 
      */
     @Import(name="readWriteMode")
     private @Nullable Output<String> readWriteMode;
 
     /**
-     * @return 读写模式：ReadWrite：读写。ReadOnly：只读。
+     * @return Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
      * 
      */
     public Optional<Output<String>> readWriteMode() {
@@ -320,14 +320,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启读写分离。取值：true：是。默认值。false：否。
+     * Enable read/write splitting. Values: true: enabled (default). false: disabled.
      * 
      */
     @Import(name="readWriteSpliting")
     private @Nullable Output<Boolean> readWriteSpliting;
 
     /**
-     * @return 是否开启读写分离。取值：true：是。默认值。false：否。
+     * @return Enable read/write splitting. Values: true: enabled (default). false: disabled.
      * 
      */
     public Optional<Output<Boolean>> readWriteSpliting() {
@@ -393,7 +393,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoAddNewNodes 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：true：自动加入。false：不自动加入（默认）。
+         * @param autoAddNewNodes When the endpoint type is read/write or read-only, you can set whether new nodes are automatically added. Values: true: automatically added. false: not automatically added (default).
          * 
          * @return builder
          * 
@@ -404,7 +404,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoAddNewNodes 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：true：自动加入。false：不自动加入（默认）。
+         * @param autoAddNewNodes When the endpoint type is read/write or read-only, you can set whether new nodes are automatically added. Values: true: automatically added. false: not automatically added (default).
          * 
          * @return builder
          * 
@@ -414,7 +414,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param connectAllSlaveNodes 是否关联所有的备节点。取值：true：是。默认值。false：否。说明仅多节点实例的只读终端支持该配置。仅在实例有两个或更多备节点时才能关闭此功能。
+         * @param connectAllSlaveNodes Associate all replica nodes. Values: true: enabled (default). false: disabled. Note: Only read-only endpoints of multi-node instances support this configuration. This feature can be disabled only if the instance has two or more replica nodes.
          * 
          * @return builder
          * 
@@ -425,7 +425,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param connectAllSlaveNodes 是否关联所有的备节点。取值：true：是。默认值。false：否。说明仅多节点实例的只读终端支持该配置。仅在实例有两个或更多备节点时才能关闭此功能。
+         * @param connectAllSlaveNodes Associate all replica nodes. Values: true: enabled (default). false: disabled. Note: Only read-only endpoints of multi-node instances support this configuration. This feature can be disabled only if the instance has two or more replica nodes.
          * 
          * @return builder
          * 
@@ -435,7 +435,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param connectionMode 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。说明如实例的数据库代理功能已开启，可以取值为 Proxy 或 Direct。如实例的数据库代理功能未开启，仅可以取值为 Direct。可调用 DescribeDBInstanceDetail 接口查询实例数据库代理功能的开启状态。
+         * @param connectionMode Endpoint type. Options: Proxy: proxy endpoint. Direct: direct endpoint. Note: If the database proxy feature is enabled for the instance, you can select Proxy or Direct. If the database proxy feature is not enabled, only Direct is available. You can call the DescribeDBInstanceDetail API to check the status of the database proxy feature for the instance.
          * 
          * @return builder
          * 
@@ -446,7 +446,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param connectionMode 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。说明如实例的数据库代理功能已开启，可以取值为 Proxy 或 Direct。如实例的数据库代理功能未开启，仅可以取值为 Direct。可调用 DescribeDBInstanceDetail 接口查询实例数据库代理功能的开启状态。
+         * @param connectionMode Endpoint type. Options: Proxy: proxy endpoint. Direct: direct endpoint. Note: If the database proxy feature is enabled for the instance, you can select Proxy or Direct. If the database proxy feature is not enabled, only Direct is available. You can call the DescribeDBInstanceDetail API to check the status of the database proxy feature for the instance.
          * 
          * @return builder
          * 
@@ -456,7 +456,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param connectionPoolType 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。说明单节点实例不支持该功能。
+         * @param connectionPoolType Connection pool type for proxy endpoints. Options: Transaction: transaction-level connection pool (default). Direct: direct mode. Note: Single-node instances do not support this feature.
          * 
          * @return builder
          * 
@@ -467,7 +467,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param connectionPoolType 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。说明单节点实例不支持该功能。
+         * @param connectionPoolType Connection pool type for proxy endpoints. Options: Transaction: transaction-level connection pool (default). Direct: direct mode. Note: Single-node instances do not support this feature.
          * 
          * @return builder
          * 
@@ -477,7 +477,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 备注。
+         * @param description Remarks.
          * 
          * @return builder
          * 
@@ -488,7 +488,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 备注。
+         * @param description Remarks.
          * 
          * @return builder
          * 
@@ -498,7 +498,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableConnectionPersistent 是否开启连接终端的连接保持功能。取值：true：是。false：否。说明仅代理终端支持该设置。
+         * @param enableConnectionPersistent Enable connection keep-alive for the endpoint. Values: true: enabled. false: disabled. Note: Only proxy endpoints support this setting.
          * 
          * @return builder
          * 
@@ -509,7 +509,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableConnectionPersistent 是否开启连接终端的连接保持功能。取值：true：是。false：否。说明仅代理终端支持该设置。
+         * @param enableConnectionPersistent Enable connection keep-alive for the endpoint. Values: true: enabled. false: disabled. Note: Only proxy endpoints support this setting.
          * 
          * @return builder
          * 
@@ -519,7 +519,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpointName 实例连接终端名称。
+         * @param endpointName Instance connection endpoint name.
          * 
          * @return builder
          * 
@@ -530,7 +530,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpointName 实例连接终端名称。
+         * @param endpointName Instance connection endpoint name.
          * 
          * @return builder
          * 
@@ -540,7 +540,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpointType 终端类型。取值为 Custom，自定义终端。
+         * @param endpointType Endpoint type. Value: Custom (custom endpoint).
          * 
          * @return builder
          * 
@@ -551,7 +551,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpointType 终端类型。取值为 Custom，自定义终端。
+         * @param endpointType Endpoint type. Value: Custom (custom endpoint).
          * 
          * @return builder
          * 
@@ -561,7 +561,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param idleConnectionReclaim 空闲连接回收功能是否开启。true：开启。false：不开启。说明仅代理终端会返回该字段。
+         * @param idleConnectionReclaim Enable idle connection recycling. true: enabled. false: not enabled. Note: This field is returned only for proxy endpoints.
          * 
          * @return builder
          * 
@@ -572,7 +572,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param idleConnectionReclaim 空闲连接回收功能是否开启。true：开启。false：不开启。说明仅代理终端会返回该字段。
+         * @param idleConnectionReclaim Enable idle connection recycling. true: enabled. false: not enabled. Note: This field is returned only for proxy endpoints.
          * 
          * @return builder
          * 
@@ -582,7 +582,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param implicitTransSplit 是否开启事务分离。取值：true：是。false：否。说明仅代理终端会返回该字段。
+         * @param implicitTransSplit Enable transaction separation. Options: true: yes. false: no. Note: Only proxy endpoints return this field.
          * 
          * @return builder
          * 
@@ -593,7 +593,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param implicitTransSplit 是否开启事务分离。取值：true：是。false：否。说明仅代理终端会返回该字段。
+         * @param implicitTransSplit Enable transaction separation. Options: true: yes. false: no. Note: Only proxy endpoints return this field.
          * 
          * @return builder
          * 
@@ -603,7 +603,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID.
          * 
          * @return builder
          * 
@@ -614,7 +614,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID.
          * 
          * @return builder
          * 
@@ -624,7 +624,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param masterNodeRouting 是否开启主节点路由。取值：true：是。false：否。说明仅代理终端会返回该字段。
+         * @param masterNodeRouting Enable primary node routing. Values: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
          * 
          * @return builder
          * 
@@ -635,7 +635,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param masterNodeRouting 是否开启主节点路由。取值：true：是。false：否。说明仅代理终端会返回该字段。
+         * @param masterNodeRouting Enable primary node routing. Values: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
          * 
          * @return builder
          * 
@@ -645,7 +645,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param masterProtectorTimeout 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。说明仅代理终端会返回该字段。
+         * @param masterProtectorTimeout Overload protection timeout. Value range: integer between 60~7200. Unit: seconds. Note: This field is returned only for proxy endpoints.
          * 
          * @return builder
          * 
@@ -656,7 +656,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param masterProtectorTimeout 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。说明仅代理终端会返回该字段。
+         * @param masterProtectorTimeout Overload protection timeout. Value range: integer between 60~7200. Unit: seconds. Note: This field is returned only for proxy endpoints.
          * 
          * @return builder
          * 
@@ -666,7 +666,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param multiStatementsMode 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+         * @param multiStatementsMode Multi-Statements mode for proxy endpoints. Options: Strict: strict mode (default). Loose: loose mode.
          * 
          * @return builder
          * 
@@ -677,7 +677,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param multiStatementsMode 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+         * @param multiStatementsMode Multi-Statements mode for proxy endpoints. Options: Strict: strict mode (default). Loose: loose mode.
          * 
          * @return builder
          * 
@@ -687,7 +687,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodes 连接终端配置的节点 ID 列表。当 EndpointType 为 Custom 时必选。说明如需将主节点加入终端，不需填写主节点 ID，只需填写 Primary。多个节点 ID 之间用英文逗号（,）分隔。
+         * @param nodes List of node IDs configured for the connection endpoint. Required when EndpointType is Custom. Note: To add the primary node to the endpoint, do not enter the primary node ID; just enter Primary. Separate multiple node IDs with commas (,).
          * 
          * @return builder
          * 
@@ -698,7 +698,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodes 连接终端配置的节点 ID 列表。当 EndpointType 为 Custom 时必选。说明如需将主节点加入终端，不需填写主节点 ID，只需填写 Primary。多个节点 ID 之间用英文逗号（,）分隔。
+         * @param nodes List of node IDs configured for the connection endpoint. Required when EndpointType is Custom. Note: To add the primary node to the endpoint, do not enter the primary node ID; just enter Primary. Separate multiple node IDs with commas (,).
          * 
          * @return builder
          * 
@@ -708,7 +708,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param overloadProtection 是否开启过载保护。取值：true：是。false：否。说明仅代理终端会返回该字段。
+         * @param overloadProtection Enable overload protection. Options: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
          * 
          * @return builder
          * 
@@ -719,7 +719,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param overloadProtection 是否开启过载保护。取值：true：是。false：否。说明仅代理终端会返回该字段。
+         * @param overloadProtection Enable overload protection. Options: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
          * 
          * @return builder
          * 
@@ -729,7 +729,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param readOnlyNodeDistributionType 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+         * @param readOnlyNodeDistributionType Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, the value range is: LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, the value range is: Default: automatic allocation based on specification weight. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling.
          * 
          * @return builder
          * 
@@ -740,7 +740,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param readOnlyNodeDistributionType 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+         * @param readOnlyNodeDistributionType Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, the value range is: LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, the value range is: Default: automatic allocation based on specification weight. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling.
          * 
          * @return builder
          * 
@@ -750,7 +750,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param readOnlyNodeMaxDelayTime 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+         * @param readOnlyNodeMaxDelayTime Read-only node latency threshold. Value range: 1~3600. Default: 30. Unit: seconds.
          * 
          * @return builder
          * 
@@ -761,7 +761,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param readOnlyNodeMaxDelayTime 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+         * @param readOnlyNodeMaxDelayTime Read-only node latency threshold. Value range: 1~3600. Default: 30. Unit: seconds.
          * 
          * @return builder
          * 
@@ -784,7 +784,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param readWriteMode 读写模式：ReadWrite：读写。ReadOnly：只读。
+         * @param readWriteMode Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
          * 
          * @return builder
          * 
@@ -795,7 +795,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param readWriteMode 读写模式：ReadWrite：读写。ReadOnly：只读。
+         * @param readWriteMode Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
          * 
          * @return builder
          * 
@@ -805,7 +805,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param readWriteSpliting 是否开启读写分离。取值：true：是。默认值。false：否。
+         * @param readWriteSpliting Enable read/write splitting. Values: true: enabled (default). false: disabled.
          * 
          * @return builder
          * 
@@ -816,7 +816,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param readWriteSpliting 是否开启读写分离。取值：true：是。默认值。false：否。
+         * @param readWriteSpliting Enable read/write splitting. Values: true: enabled (default). false: disabled.
          * 
          * @return builder
          * 

@@ -15,7 +15,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * 用户管理密钥的集合，用户将相同类型或用途的密钥放在同一密钥环中以便于管理。
+ * A collection for managing user keys; users place keys of the same type or purpose in the same keyring for easier management
  * 
  * ## Example Usage
  * 
@@ -65,126 +65,126 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:kms/keyRing:KeyRing")
 public class KeyRing extends com.pulumi.resources.CustomResource {
     /**
-     * 密钥环创建日期。
+     * Keyring creation date
      * 
      */
     @Export(name="createDate", refs={Integer.class}, tree="[0]")
     private Output<Integer> createDate;
 
     /**
-     * @return 密钥环创建日期。
+     * @return Keyring creation date
      * 
      */
     public Output<Integer> createDate() {
         return this.createDate;
     }
     /**
-     * 密钥环描述，长度为 0   - 8192 个字符。
+     * Keyring description, length: 0–8192 characters
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 密钥环描述，长度为 0   - 8192 个字符。
+     * @return Keyring description, length: 0–8192 characters
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 密钥环密钥次数。
+     * Number of keys in keyring
      * 
      */
     @Export(name="keyCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> keyCount;
 
     /**
-     * @return 密钥环密钥次数。
+     * @return Number of keys in keyring
      * 
      */
     public Output<Integer> keyCount() {
         return this.keyCount;
     }
     /**
-     * 密钥环唯一标识符，UUID形式。
+     * Keyring unique identifier, in UUID format
      * 
      */
     @Export(name="keyRingId", refs={String.class}, tree="[0]")
     private Output<String> keyRingId;
 
     /**
-     * @return 密钥环唯一标识符，UUID形式。
+     * @return Keyring unique identifier, in UUID format
      * 
      */
     public Output<String> keyRingId() {
         return this.keyRingId;
     }
     /**
-     * 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+     * Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
      * 
      */
     @Export(name="keyringName", refs={String.class}, tree="[0]")
     private Output<String> keyringName;
 
     /**
-     * @return 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+     * @return Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
      * 
      */
     public Output<String> keyringName() {
         return this.keyringName;
     }
     /**
-     * 密钥环类型，取值：CustomKeyring。
+     * Keyring type, value: CustomKeyring
      * 
      */
     @Export(name="keyringType", refs={String.class}, tree="[0]")
     private Output<String> keyringType;
 
     /**
-     * @return 密钥环类型，取值：CustomKeyring。
+     * @return Keyring type, value: CustomKeyring
      * 
      */
     public Output<String> keyringType() {
         return this.keyringType;
     }
     /**
-     * 项目名称，默认值：default。
+     * Project name, default value: default
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 项目名称，默认值：default。
+     * @return Project name, default value: default
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 密钥环租户ID。
+     * Keyring tenant ID
      * 
      */
     @Export(name="uid", refs={String.class}, tree="[0]")
     private Output<String> uid;
 
     /**
-     * @return 密钥环租户ID。
+     * @return Keyring tenant ID
      * 
      */
     public Output<String> uid() {
         return this.uid;
     }
     /**
-     * 密钥环更新日期。
+     * Keyring update date
      * 
      */
     @Export(name="updateDate", refs={Integer.class}, tree="[0]")
     private Output<Integer> updateDate;
 
     /**
-     * @return 密钥环更新日期。
+     * @return Keyring update date
      * 
      */
     public Output<Integer> updateDate() {

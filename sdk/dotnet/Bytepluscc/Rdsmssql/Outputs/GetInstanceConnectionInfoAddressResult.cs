@@ -15,31 +15,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql.Outputs
     public sealed class GetInstanceConnectionInfoAddressResult
     {
         /// <summary>
-        /// 表示是否开启私网到公网解析，取值如下：true：表示开启私网到公网解析。false：表示不开启私网到公网解析。
+        /// Indicates whether private network to public network resolution is enabled. Available values: true: enabled. false: disabled.
         /// </summary>
         public readonly bool DnsVisibility;
         /// <summary>
-        /// 域名。
+        /// Domain name.
         /// </summary>
         public readonly string Domain;
         /// <summary>
-        /// EIP的ID，仅对公网地址有效。
+        /// EIP ID, valid only for public addresses.
         /// </summary>
         public readonly string EipId;
         /// <summary>
-        /// IP地址。
+        /// IP address.
         /// </summary>
         public readonly string IpAddress;
         /// <summary>
-        /// 网络地址类型。取值：Private：私网类型。Public：公网类型。
+        /// Network address type. Possible values: Private: private network type. Public: public network type.
         /// </summary>
         public readonly string NetworkType;
         /// <summary>
-        /// 端口。
+        /// Port.
         /// </summary>
         public readonly string Port;
         /// <summary>
-        /// 子网 ID，仅对私网地址有效。
+        /// Subnet ID, valid only for private network addresses.
         /// </summary>
         public readonly string SubnetId;
 

@@ -14,26 +14,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ClusterPodsConfigVpcCniConfig {
     /**
-     * @return VPC-CNI 容器网络模型对应的 Pod 子网 ID 列表。
+     * @return List of Pod subnet IDs for the VPC-CNI container network model.
      * 
      */
     private @Nullable List<String> subnetIds;
     /**
-     * @return 是否开启 VPC-CNI 容器网络模型的 Trunk 模式。
+     * @return Whether to enable Trunk mode for the VPC-CNI container network model
      * 
      */
     private @Nullable Boolean trunkEniEnabled;
 
     private ClusterPodsConfigVpcCniConfig() {}
     /**
-     * @return VPC-CNI 容器网络模型对应的 Pod 子网 ID 列表。
+     * @return List of Pod subnet IDs for the VPC-CNI container network model.
      * 
      */
     public List<String> subnetIds() {
         return this.subnetIds == null ? List.of() : this.subnetIds;
     }
     /**
-     * @return 是否开启 VPC-CNI 容器网络模型的 Trunk 模式。
+     * @return Whether to enable Trunk mode for the VPC-CNI container network model
      * 
      */
     public Optional<Boolean> trunkEniEnabled() {

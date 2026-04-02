@@ -19,32 +19,32 @@ import java.util.Objects;
 @CustomType
 public final class GetUpstreamResult {
     /**
-     * @return 后端节点，Upstream来源类型为VeFaas时无效。
+     * @return Backend node. Not valid when the upstream source type is VeFaas
      * 
      */
     private List<GetUpstreamBackendTarget> backendTargets;
     /**
-     * @return 服务熔断配置。
+     * @return Service circuit breaking configuration
      * 
      */
     private GetUpstreamCircuitBreakingSettings circuitBreakingSettings;
     /**
-     * @return 备注。
+     * @return Remarks
      * 
      */
     private String comments;
     /**
-     * @return 连接池配置。
+     * @return Connection Pool Configuration
      * 
      */
     private GetUpstreamConnectionPoolSettings connectionPoolSettings;
     /**
-     * @return Upstream创建时间。
+     * @return Upstream creation time
      * 
      */
     private String createdTime;
     /**
-     * @return 网关实例ID。
+     * @return Gateway Instance ID
      * 
      */
     private String gatewayId;
@@ -54,32 +54,32 @@ public final class GetUpstreamResult {
      */
     private String id;
     /**
-     * @return 负载均衡配置。
+     * @return Load Balancing Configuration
      * 
      */
     private GetUpstreamLoadBalancerSettings loadBalancerSettings;
     /**
-     * @return Upstream名称。
+     * @return Upstream name
      * 
      */
     private String name;
     /**
-     * @return 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
+     * @return Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
      * 
      */
     private String protocol;
     /**
-     * @return Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
+     * @return Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
      * 
      */
     private String sourceType;
     /**
-     * @return TLS配置。
+     * @return TLS Configuration
      * 
      */
     private GetUpstreamTlsSettings tlsSettings;
     /**
-     * @return Upstream更新时间。
+     * @return Upstream update time
      * 
      */
     private String updatedTime;
@@ -89,54 +89,54 @@ public final class GetUpstreamResult {
      */
     private String upstreamId;
     /**
-     * @return Upstream配置。
+     * @return Upstream Configuration
      * 
      */
     private GetUpstreamUpstreamSpec upstreamSpec;
     /**
-     * @return Upstream版本，仅在Upstream来源类型为K8S时有效。
+     * @return Upstream version, only valid when the upstream source type is K8S
      * 
      */
     private List<GetUpstreamVersionDetail> versionDetails;
 
     private GetUpstreamResult() {}
     /**
-     * @return 后端节点，Upstream来源类型为VeFaas时无效。
+     * @return Backend node. Not valid when the upstream source type is VeFaas
      * 
      */
     public List<GetUpstreamBackendTarget> backendTargets() {
         return this.backendTargets;
     }
     /**
-     * @return 服务熔断配置。
+     * @return Service circuit breaking configuration
      * 
      */
     public GetUpstreamCircuitBreakingSettings circuitBreakingSettings() {
         return this.circuitBreakingSettings;
     }
     /**
-     * @return 备注。
+     * @return Remarks
      * 
      */
     public String comments() {
         return this.comments;
     }
     /**
-     * @return 连接池配置。
+     * @return Connection Pool Configuration
      * 
      */
     public GetUpstreamConnectionPoolSettings connectionPoolSettings() {
         return this.connectionPoolSettings;
     }
     /**
-     * @return Upstream创建时间。
+     * @return Upstream creation time
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 网关实例ID。
+     * @return Gateway Instance ID
      * 
      */
     public String gatewayId() {
@@ -150,42 +150,42 @@ public final class GetUpstreamResult {
         return this.id;
     }
     /**
-     * @return 负载均衡配置。
+     * @return Load Balancing Configuration
      * 
      */
     public GetUpstreamLoadBalancerSettings loadBalancerSettings() {
         return this.loadBalancerSettings;
     }
     /**
-     * @return Upstream名称。
+     * @return Upstream name
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
+     * @return Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
      * 
      */
     public String protocol() {
         return this.protocol;
     }
     /**
-     * @return Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
+     * @return Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
      * 
      */
     public String sourceType() {
         return this.sourceType;
     }
     /**
-     * @return TLS配置。
+     * @return TLS Configuration
      * 
      */
     public GetUpstreamTlsSettings tlsSettings() {
         return this.tlsSettings;
     }
     /**
-     * @return Upstream更新时间。
+     * @return Upstream update time
      * 
      */
     public String updatedTime() {
@@ -199,14 +199,14 @@ public final class GetUpstreamResult {
         return this.upstreamId;
     }
     /**
-     * @return Upstream配置。
+     * @return Upstream Configuration
      * 
      */
     public GetUpstreamUpstreamSpec upstreamSpec() {
         return this.upstreamSpec;
     }
     /**
-     * @return Upstream版本，仅在Upstream来源类型为K8S时有效。
+     * @return Upstream version, only valid when the upstream source type is K8S
      * 
      */
     public List<GetUpstreamVersionDetail> versionDetails() {

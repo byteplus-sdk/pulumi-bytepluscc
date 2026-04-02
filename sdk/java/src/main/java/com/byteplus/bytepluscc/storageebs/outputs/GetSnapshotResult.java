@@ -15,12 +15,12 @@ import java.util.Objects;
 @CustomType
 public final class GetSnapshotResult {
     /**
-     * @return 快照创建时间。
+     * @return Snapshot creation time.
      * 
      */
     private String creationTime;
     /**
-     * @return 快照描述信息，默认为空，长度限制为0~255个字符。
+     * @return Snapshot description. Default is empty. Length must be between 0 and 255 characters.
      * 
      */
     private String description;
@@ -30,111 +30,111 @@ public final class GetSnapshotResult {
      */
     private String id;
     /**
-     * @return 镜像ID
+     * @return Image ID
      * 
      */
     private String imageId;
     /**
-     * @return 快照是否开启极速可用能力，取值说明如下：true：已开启极速可用能力。false：未开启极速可用能力。
+     * @return Whether the snapshot has enabled ultra-fast availability. Value options: true: ultra-fast availability enabled. false: ultra-fast availability not enabled.
      * 
      */
     private Boolean instantAccess;
     /**
-     * @return 快照转储进度。
+     * @return Snapshot dump progress.
      * 
      */
     private Integer progress;
     /**
-     * @return 快照所要加入的Project（项目）名称。注意快照不会继承云盘的项目，即快照与云盘可以所属不同的项目。如果您在创建快照时未设置ProjectName，快照会默认加入default项目。
+     * @return Name of the Project to which the snapshot will be added. Note: snapshots do not inherit the project of the cloud disk, so snapshots and cloud disks can belong to different projects. If you do not set ProjectName when creating the snapshot, it will be added to the default project.
      * 
      */
     private String projectName;
     /**
-     * @return 快照保留时间，单位为天，取值说明如下：空：永久保留快照 。1~65536：指定保存天数。默认为空，即默认永久保留快照。说明快照保留时间从快照创建时刻开始计算。
+     * @return Snapshot retention period, in days. Value options: empty: retain snapshot permanently. 1~65536: specify retention days. Default is empty, which means retain snapshot permanently. Snapshot retention period is calculated from the snapshot creation time.
      * 
      */
     private Integer retentionDays;
     /**
-     * @return 快照是否共享。
+     * @return Whether the snapshot is shared.
      * 
      */
     private Boolean shared;
     /**
-     * @return 快照一致性组ID。
+     * @return Snapshot consistency group ID.
      * 
      */
     private String snapshotGroupId;
     /**
-     * @return 快照ID。
+     * @return Snapshot ID.
      * 
      */
     private String snapshotId;
     /**
-     * @return 创建的快照名称。命名规范如下：长度限制为1~128个字符。只能包含中文、字母、数字、下划线（_）、中划线（-）和英文句号（.）。为防止和自动快照的名称冲突，不能以“auto”开头。
+     * @return Name of the created snapshot. Naming rules: length must be between 1 and 128 characters. Only Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) are allowed. To avoid conflicts with automatic snapshot names, the name cannot start with &#39;auto&#39;.
      * 
      */
     private String snapshotName;
     /**
-     * @return 快照类型，取值说明如下：user：查询手动快照。auto：查询自动快照。share：查询共享快照。默认查询所有快照。
+     * @return Snapshot type. The available values are: user: query manual snapshots. auto: query automatic snapshots. share: query shared snapshots. By default, all snapshots are queried.
      * 
      */
     private String snapshotType;
     /**
-     * @return 快照状态，取值说明如下：available：可用。creating：创建中。rollbacking：回滚中。deleted：已删除。failed：错误。
+     * @return Snapshot status. Value options: available: available. creating: creating. rollbacking: rolling back. deleted: deleted. failed: error.
      * 
      */
     private String status;
     /**
-     * @return 快照的标签信息。
+     * @return Snapshot tag information.
      * 
      */
     private List<GetSnapshotTag> tags;
     /**
-     * @return 快照相关的云盘ID。
+     * @return Cloud disk ID associated with the snapshot.
      * 
      */
     private String volumeId;
     /**
-     * @return 云盘种类，取值说明如下：system：系统盘。data：数据盘。
+     * @return Cloud disk category. Value options: system: system disk. data: data disk.
      * 
      */
     private String volumeKind;
     /**
-     * @return 云盘名称。
+     * @return Cloud disk name.
      * 
      */
     private String volumeName;
     /**
-     * @return 云盘大小，单位为GiB。
+     * @return Cloud disk size, in GiB.
      * 
      */
     private Integer volumeSize;
     /**
-     * @return 云盘状态，取值说明如下：available：可用, attaching：挂载中, attached：已挂载, detaching：卸载中, creating：创建中, deleting：删除中, error：错误, extending：扩容中, &#34;&#34;：云盘被删除。
+     * @return Cloud disk status. Value options: available: available, attaching: attaching, attached: attached, detaching: detaching, creating: creating, deleting: deleting, error: error, extending: expanding, &#34;&#34;: cloud disk deleted.
      * 
      */
     private String volumeStatus;
     /**
-     * @return 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL：极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘
+     * @return Cloud disk type. Value options: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. TSSD_TL0: Throughput SSD cloud disk
      * 
      */
     private String volumeType;
     /**
-     * @return 快照所在的可用区ID。
+     * @return Availability zone ID where the snapshot is located.
      * 
      */
     private String zoneId;
 
     private GetSnapshotResult() {}
     /**
-     * @return 快照创建时间。
+     * @return Snapshot creation time.
      * 
      */
     public String creationTime() {
         return this.creationTime;
     }
     /**
-     * @return 快照描述信息，默认为空，长度限制为0~255个字符。
+     * @return Snapshot description. Default is empty. Length must be between 0 and 255 characters.
      * 
      */
     public String description() {
@@ -148,133 +148,133 @@ public final class GetSnapshotResult {
         return this.id;
     }
     /**
-     * @return 镜像ID
+     * @return Image ID
      * 
      */
     public String imageId() {
         return this.imageId;
     }
     /**
-     * @return 快照是否开启极速可用能力，取值说明如下：true：已开启极速可用能力。false：未开启极速可用能力。
+     * @return Whether the snapshot has enabled ultra-fast availability. Value options: true: ultra-fast availability enabled. false: ultra-fast availability not enabled.
      * 
      */
     public Boolean instantAccess() {
         return this.instantAccess;
     }
     /**
-     * @return 快照转储进度。
+     * @return Snapshot dump progress.
      * 
      */
     public Integer progress() {
         return this.progress;
     }
     /**
-     * @return 快照所要加入的Project（项目）名称。注意快照不会继承云盘的项目，即快照与云盘可以所属不同的项目。如果您在创建快照时未设置ProjectName，快照会默认加入default项目。
+     * @return Name of the Project to which the snapshot will be added. Note: snapshots do not inherit the project of the cloud disk, so snapshots and cloud disks can belong to different projects. If you do not set ProjectName when creating the snapshot, it will be added to the default project.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 快照保留时间，单位为天，取值说明如下：空：永久保留快照 。1~65536：指定保存天数。默认为空，即默认永久保留快照。说明快照保留时间从快照创建时刻开始计算。
+     * @return Snapshot retention period, in days. Value options: empty: retain snapshot permanently. 1~65536: specify retention days. Default is empty, which means retain snapshot permanently. Snapshot retention period is calculated from the snapshot creation time.
      * 
      */
     public Integer retentionDays() {
         return this.retentionDays;
     }
     /**
-     * @return 快照是否共享。
+     * @return Whether the snapshot is shared.
      * 
      */
     public Boolean shared() {
         return this.shared;
     }
     /**
-     * @return 快照一致性组ID。
+     * @return Snapshot consistency group ID.
      * 
      */
     public String snapshotGroupId() {
         return this.snapshotGroupId;
     }
     /**
-     * @return 快照ID。
+     * @return Snapshot ID.
      * 
      */
     public String snapshotId() {
         return this.snapshotId;
     }
     /**
-     * @return 创建的快照名称。命名规范如下：长度限制为1~128个字符。只能包含中文、字母、数字、下划线（_）、中划线（-）和英文句号（.）。为防止和自动快照的名称冲突，不能以“auto”开头。
+     * @return Name of the created snapshot. Naming rules: length must be between 1 and 128 characters. Only Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) are allowed. To avoid conflicts with automatic snapshot names, the name cannot start with &#39;auto&#39;.
      * 
      */
     public String snapshotName() {
         return this.snapshotName;
     }
     /**
-     * @return 快照类型，取值说明如下：user：查询手动快照。auto：查询自动快照。share：查询共享快照。默认查询所有快照。
+     * @return Snapshot type. The available values are: user: query manual snapshots. auto: query automatic snapshots. share: query shared snapshots. By default, all snapshots are queried.
      * 
      */
     public String snapshotType() {
         return this.snapshotType;
     }
     /**
-     * @return 快照状态，取值说明如下：available：可用。creating：创建中。rollbacking：回滚中。deleted：已删除。failed：错误。
+     * @return Snapshot status. Value options: available: available. creating: creating. rollbacking: rolling back. deleted: deleted. failed: error.
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 快照的标签信息。
+     * @return Snapshot tag information.
      * 
      */
     public List<GetSnapshotTag> tags() {
         return this.tags;
     }
     /**
-     * @return 快照相关的云盘ID。
+     * @return Cloud disk ID associated with the snapshot.
      * 
      */
     public String volumeId() {
         return this.volumeId;
     }
     /**
-     * @return 云盘种类，取值说明如下：system：系统盘。data：数据盘。
+     * @return Cloud disk category. Value options: system: system disk. data: data disk.
      * 
      */
     public String volumeKind() {
         return this.volumeKind;
     }
     /**
-     * @return 云盘名称。
+     * @return Cloud disk name.
      * 
      */
     public String volumeName() {
         return this.volumeName;
     }
     /**
-     * @return 云盘大小，单位为GiB。
+     * @return Cloud disk size, in GiB.
      * 
      */
     public Integer volumeSize() {
         return this.volumeSize;
     }
     /**
-     * @return 云盘状态，取值说明如下：available：可用, attaching：挂载中, attached：已挂载, detaching：卸载中, creating：创建中, deleting：删除中, error：错误, extending：扩容中, &#34;&#34;：云盘被删除。
+     * @return Cloud disk status. Value options: available: available, attaching: attaching, attached: attached, detaching: detaching, creating: creating, deleting: deleting, error: error, extending: expanding, &#34;&#34;: cloud disk deleted.
      * 
      */
     public String volumeStatus() {
         return this.volumeStatus;
     }
     /**
-     * @return 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL：极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘
+     * @return Cloud disk type. Value options: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. TSSD_TL0: Throughput SSD cloud disk
      * 
      */
     public String volumeType() {
         return this.volumeType;
     }
     /**
-     * @return 快照所在的可用区ID。
+     * @return Availability zone ID where the snapshot is located.
      * 
      */
     public String zoneId() {

@@ -30,39 +30,39 @@ type LookupHaVipArgs struct {
 
 // A collection of values returned by getHaVip.
 type LookupHaVipResult struct {
-	// HAVIP绑定的公网IP的IP地址。
+	// IP address of the public IP bound to the HAVIP
 	AssociatedEipAddress string `pulumi:"associatedEipAddress"`
-	// HAVIP绑定的公网IP的ID。
+	// ID of the public IP bound to the HAVIP
 	AssociatedEipId string `pulumi:"associatedEipId"`
-	// 绑定HAVIP的实例ID列表。
+	// List of instance IDs bound to the HAVIP
 	AssociatedInstanceIds []string `pulumi:"associatedInstanceIds"`
-	// 绑定HAVIP的实例类型。EcsInstance：云服务器实例。NetworkInterface：弹性网卡。
+	// Instance type bound to the HAVIP. EcsInstance: cloud server instance. NetworkInterface: elastic network interface
 	AssociatedInstanceType string `pulumi:"associatedInstanceType"`
-	// HAVIP的创建时间。
+	// Creation time of the HAVIP
 	CreatedAt string `pulumi:"createdAt"`
-	// HAVIP的描述。长度限制为0～255个字符。
+	// Description of the HAVIP. Length limit: 0–255 characters
 	Description string `pulumi:"description"`
-	// HAVIP的ID。
+	// ID of the HAVIP
 	HaVipId string `pulumi:"haVipId"`
-	// HAVIP的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制在0～128字符之间。
+	// Name of the HAVIP. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 0–128 characters
 	HaVipName string `pulumi:"haVipName"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// HAVIP的IP地址。
+	// IP address of the HAVIP
 	IpAddress string `pulumi:"ipAddress"`
-	// 与HAVIP绑定的主实例的ID。
+	// ID of the primary instance bound to the HAVIP
 	MasterInstanceId string `pulumi:"masterInstanceId"`
-	// HAVIP的项目名称。
+	// Project name of the HAVIP
 	ProjectName string `pulumi:"projectName"`
-	// HAVIP的状态。Available：可用。Creating：创建中。InUse：使用中。Deleting：删除中。
+	// Status of the HAVIP. Available: available. Creating: creating. InUse: in use. Deleting: deleting
 	Status string `pulumi:"status"`
-	// HAVIP所属的子网 ID。
+	// Subnet ID to which the HAVIP belongs
 	SubnetId string `pulumi:"subnetId"`
-	// HAVIP所属标签。
+	// Tags associated with the HAVIP
 	Tags []GetHaVipTag `pulumi:"tags"`
-	// HAVIP最近一次的修改时间。
+	// Last modification time of the HAVIP
 	UpdatedAt string `pulumi:"updatedAt"`
-	// HAVIP所属的VPC ID。
+	// VPC ID to which the HAVIP belongs
 	VpcId string `pulumi:"vpcId"`
 }
 
@@ -100,42 +100,42 @@ func (o LookupHaVipResultOutput) ToLookupHaVipResultOutputWithContext(ctx contex
 	return o
 }
 
-// HAVIP绑定的公网IP的IP地址。
+// IP address of the public IP bound to the HAVIP
 func (o LookupHaVipResultOutput) AssociatedEipAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHaVipResult) string { return v.AssociatedEipAddress }).(pulumi.StringOutput)
 }
 
-// HAVIP绑定的公网IP的ID。
+// ID of the public IP bound to the HAVIP
 func (o LookupHaVipResultOutput) AssociatedEipId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHaVipResult) string { return v.AssociatedEipId }).(pulumi.StringOutput)
 }
 
-// 绑定HAVIP的实例ID列表。
+// List of instance IDs bound to the HAVIP
 func (o LookupHaVipResultOutput) AssociatedInstanceIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupHaVipResult) []string { return v.AssociatedInstanceIds }).(pulumi.StringArrayOutput)
 }
 
-// 绑定HAVIP的实例类型。EcsInstance：云服务器实例。NetworkInterface：弹性网卡。
+// Instance type bound to the HAVIP. EcsInstance: cloud server instance. NetworkInterface: elastic network interface
 func (o LookupHaVipResultOutput) AssociatedInstanceType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHaVipResult) string { return v.AssociatedInstanceType }).(pulumi.StringOutput)
 }
 
-// HAVIP的创建时间。
+// Creation time of the HAVIP
 func (o LookupHaVipResultOutput) CreatedAt() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHaVipResult) string { return v.CreatedAt }).(pulumi.StringOutput)
 }
 
-// HAVIP的描述。长度限制为0～255个字符。
+// Description of the HAVIP. Length limit: 0–255 characters
 func (o LookupHaVipResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHaVipResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// HAVIP的ID。
+// ID of the HAVIP
 func (o LookupHaVipResultOutput) HaVipId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHaVipResult) string { return v.HaVipId }).(pulumi.StringOutput)
 }
 
-// HAVIP的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制在0～128字符之间。
+// Name of the HAVIP. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 0–128 characters
 func (o LookupHaVipResultOutput) HaVipName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHaVipResult) string { return v.HaVipName }).(pulumi.StringOutput)
 }
@@ -145,42 +145,42 @@ func (o LookupHaVipResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHaVipResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// HAVIP的IP地址。
+// IP address of the HAVIP
 func (o LookupHaVipResultOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHaVipResult) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
-// 与HAVIP绑定的主实例的ID。
+// ID of the primary instance bound to the HAVIP
 func (o LookupHaVipResultOutput) MasterInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHaVipResult) string { return v.MasterInstanceId }).(pulumi.StringOutput)
 }
 
-// HAVIP的项目名称。
+// Project name of the HAVIP
 func (o LookupHaVipResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHaVipResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// HAVIP的状态。Available：可用。Creating：创建中。InUse：使用中。Deleting：删除中。
+// Status of the HAVIP. Available: available. Creating: creating. InUse: in use. Deleting: deleting
 func (o LookupHaVipResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHaVipResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// HAVIP所属的子网 ID。
+// Subnet ID to which the HAVIP belongs
 func (o LookupHaVipResultOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHaVipResult) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// HAVIP所属标签。
+// Tags associated with the HAVIP
 func (o LookupHaVipResultOutput) Tags() GetHaVipTagArrayOutput {
 	return o.ApplyT(func(v LookupHaVipResult) []GetHaVipTag { return v.Tags }).(GetHaVipTagArrayOutput)
 }
 
-// HAVIP最近一次的修改时间。
+// Last modification time of the HAVIP
 func (o LookupHaVipResultOutput) UpdatedAt() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHaVipResult) string { return v.UpdatedAt }).(pulumi.StringOutput)
 }
 
-// HAVIP所属的VPC ID。
+// VPC ID to which the HAVIP belongs
 func (o LookupHaVipResultOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHaVipResult) string { return v.VpcId }).(pulumi.StringOutput)
 }

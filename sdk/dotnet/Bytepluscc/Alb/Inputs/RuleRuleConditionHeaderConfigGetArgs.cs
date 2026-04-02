@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Inputs
     public sealed class RuleRuleConditionHeaderConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 头字段键。
+        /// Header field key.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
@@ -23,7 +23,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Inputs
         private InputList<string>? _values;
 
         /// <summary>
-        /// 头字段值。
+        /// Header field value.
         /// </summary>
         public InputList<string> Values
         {

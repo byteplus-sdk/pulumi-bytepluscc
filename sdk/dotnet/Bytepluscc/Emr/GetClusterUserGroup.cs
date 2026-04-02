@@ -65,11 +65,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
     public sealed class GetClusterUserGroupResult
     {
         /// <summary>
-        /// 集群ID。
+        /// Cluster ID.
         /// </summary>
         public readonly string ClusterId;
         /// <summary>
-        /// 用户组描述。
+        /// User group description.
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -77,11 +77,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 用户组成员。不支持操作特殊用户，如admin等。
+        /// Operations on special users, such as admin, are not supported.
         /// </summary>
         public readonly ImmutableArray<string> Members;
         /// <summary>
-        /// 用户组名称。
+        /// User group name.
         /// </summary>
         public readonly string UserGroupName;
 

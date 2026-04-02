@@ -97,7 +97,7 @@ class GetEndpointResult:
     @pulumi.getter(name="batchOnly")
     def batch_only(self) -> builtins.bool:
         """
-        是否只支持 BatchChat。如果为true，只能访问 Batch 推理接口，否则只能访问在线推理接口。
+        Whether only BatchChat is supported. If true, only batch inference interfaces can be accessed; otherwise, only online inference interfaces can be accessed
         """
         return pulumi.get(self, "batch_only")
 
@@ -105,7 +105,7 @@ class GetEndpointResult:
     @pulumi.getter
     def certificate(self) -> 'outputs.GetEndpointCertificateResult':
         """
-        证书信息。
+        Certificate information
         """
         return pulumi.get(self, "certificate")
 
@@ -113,7 +113,7 @@ class GetEndpointResult:
     @pulumi.getter(name="createTime")
     def create_time(self) -> builtins.str:
         """
-        接入点创建时间，RFC3339格式。
+        Endpoint creation time, RFC3339 format
         """
         return pulumi.get(self, "create_time")
 
@@ -121,7 +121,7 @@ class GetEndpointResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        接入点描述。
+        Endpoint description
         """
         return pulumi.get(self, "description")
 
@@ -129,7 +129,7 @@ class GetEndpointResult:
     @pulumi.getter(name="endpointId")
     def endpoint_id(self) -> builtins.str:
         """
-        推理接入点的ID。
+        Inference access point ID.
         """
         return pulumi.get(self, "endpoint_id")
 
@@ -137,7 +137,7 @@ class GetEndpointResult:
     @pulumi.getter(name="endpointModelType")
     def endpoint_model_type(self) -> builtins.str:
         """
-        接入点模型类型。取值:FoundationModel为基础模型;CustomModel为定制模型。
+        Access point model type. Options: FoundationModel for base model; CustomModel for custom model.
         """
         return pulumi.get(self, "endpoint_model_type")
 
@@ -153,7 +153,7 @@ class GetEndpointResult:
     @pulumi.getter(name="modelReference")
     def model_reference(self) -> 'outputs.GetEndpointModelReferenceResult':
         """
-        接入点接入模型。
+        Endpoint access model
         """
         return pulumi.get(self, "model_reference")
 
@@ -161,7 +161,7 @@ class GetEndpointResult:
     @pulumi.getter(name="modelUnitId")
     def model_unit_id(self) -> builtins.str:
         """
-        模型单元，为空表示后付费；否则预付费。
+        Model unit. If empty, indicates postpaid; otherwise, prepaid.
         """
         return pulumi.get(self, "model_unit_id")
 
@@ -169,7 +169,7 @@ class GetEndpointResult:
     @pulumi.getter
     def moderation(self) -> 'outputs.GetEndpointModerationResult':
         """
-        内容护栏方案。
+        Content guardrail scheme
         """
         return pulumi.get(self, "moderation")
 
@@ -177,7 +177,7 @@ class GetEndpointResult:
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        接入点名称。
+        Endpoint name
         """
         return pulumi.get(self, "name")
 
@@ -185,7 +185,7 @@ class GetEndpointResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        资源所属的项目名称，默认值为default。
+        Project name the resource belongs to; default value is "default"
         """
         return pulumi.get(self, "project_name")
 
@@ -193,7 +193,7 @@ class GetEndpointResult:
     @pulumi.getter(name="rateLimit")
     def rate_limit(self) -> 'outputs.GetEndpointRateLimitResult':
         """
-        接入点限流。
+        Endpoint rate limiting
         """
         return pulumi.get(self, "rate_limit")
 
@@ -201,7 +201,7 @@ class GetEndpointResult:
     @pulumi.getter(name="rollingId")
     def rolling_id(self) -> builtins.str:
         """
-        接入点切换的Id。
+        Endpoint switch ID
         """
         return pulumi.get(self, "rolling_id")
 
@@ -209,7 +209,7 @@ class GetEndpointResult:
     @pulumi.getter(name="scaleTierId")
     def scale_tier_id(self) -> builtins.str:
         """
-        如果存在 TPM 保障包，则为 TPM 保障包 ID。
+        If a TPM protection package exists, this is the TPM protection package ID.
         """
         return pulumi.get(self, "scale_tier_id")
 
@@ -217,7 +217,7 @@ class GetEndpointResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        接入点状态。
+        Endpoint status
         """
         return pulumi.get(self, "status")
 
@@ -225,7 +225,7 @@ class GetEndpointResult:
     @pulumi.getter(name="statusReason")
     def status_reason(self) -> builtins.str:
         """
-        状态附加说明信息。
+        Additional status information
         """
         return pulumi.get(self, "status_reason")
 
@@ -233,7 +233,7 @@ class GetEndpointResult:
     @pulumi.getter(name="supportRolling")
     def support_rolling(self) -> builtins.bool:
         """
-        是否支持接入点切换模型版本。
+        Whether endpoint supports switching model versions
         """
         return pulumi.get(self, "support_rolling")
 
@@ -241,7 +241,7 @@ class GetEndpointResult:
     @pulumi.getter(name="supportScaleTier")
     def support_scale_tier(self) -> builtins.bool:
         """
-        是否支持TPM保障包。
+        Whether TPM protection package is supported
         """
         return pulumi.get(self, "support_scale_tier")
 
@@ -249,7 +249,7 @@ class GetEndpointResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetEndpointTagResult']:
         """
-        接入点绑定的标签。
+        Tags bound to the endpoint
         """
         return pulumi.get(self, "tags")
 
@@ -257,7 +257,7 @@ class GetEndpointResult:
     @pulumi.getter(name="updateTime")
     def update_time(self) -> builtins.str:
         """
-        接入点更新时间，RFC3339格式。
+        Endpoint update time, RFC3339 format
         """
         return pulumi.get(self, "update_time")
 

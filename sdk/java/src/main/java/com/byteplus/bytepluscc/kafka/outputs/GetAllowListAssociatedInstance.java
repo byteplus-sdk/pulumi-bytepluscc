@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetAllowListAssociatedInstance {
     /**
-     * @return 白名单绑定的实例ID。
+     * @return ID of the instance bound to the allowlist
      * 
      */
     private String instanceId;
     /**
-     * @return 白名单绑定的实例名称。
+     * @return Name of the instance bound to the allowlist
      * 
      */
     private String instanceName;
 
     private GetAllowListAssociatedInstance() {}
     /**
-     * @return 白名单绑定的实例ID。
+     * @return ID of the instance bound to the allowlist
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return 白名单绑定的实例名称。
+     * @return Name of the instance bound to the allowlist
      * 
      */
     public String instanceName() {

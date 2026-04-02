@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainCustomizeAccessRuleCustomizeInstanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示列表中一条规则的配置。
+        /// Describes the configuration for a rule in the list.
         /// </summary>
         [Input("customizeRule")]
         public Input<Inputs.DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleArgs>? CustomizeRule { get; set; }

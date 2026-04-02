@@ -15,23 +15,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GetUpstreamUpstreamSpecNacosServiceResult
     {
         /// <summary>
-        /// 分组。
+        /// Group
         /// </summary>
         public readonly string Group;
         /// <summary>
-        /// 命名空间。
+        /// Namespace
         /// </summary>
         public readonly string Namespace;
         /// <summary>
-        /// 命名空间ID。
+        /// Namespace ID
         /// </summary>
         public readonly string NamespaceId;
         /// <summary>
-        /// 服务。
+        /// Service
         /// </summary>
         public readonly string Service;
         /// <summary>
-        /// Upstream来源ID。
+        /// Upstream source ID
         /// </summary>
         public readonly string UpstreamSourceId;
 

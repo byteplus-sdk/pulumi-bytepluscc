@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam.Inputs
     public sealed class GroupUserArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 用户名。
+        /// Username.
         /// </summary>
         [Input("userName")]
         public Input<string>? UserName { get; set; }

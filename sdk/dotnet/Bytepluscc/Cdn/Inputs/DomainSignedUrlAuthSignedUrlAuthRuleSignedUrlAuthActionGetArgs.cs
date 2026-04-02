@@ -14,55 +14,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示签名计算使用的算法。该配置有以下取值：md5：表示 MD5 算法。sha256：表示 SHA-256 算法。该参数的默认值是 md5。
+        /// Indicates the algorithm used for signature calculation. This configuration has the following values: md5: MD5 algorithm. sha256: SHA-256 algorithm. The default value for this parameter is md5.
         /// </summary>
         [Input("authAlgorithm")]
         public Input<string>? AuthAlgorithm { get; set; }
 
         /// <summary>
-        /// 表示备密钥。备密钥的长度为 6-40个字符可以包含除了 Delete（ASCII code 127）的可打印 ASCII 字符。
+        /// Indicates the backup secret key. The backup secret key must be 6–40 characters long and can contain any printable ASCII character except Delete (ASCII code 127).
         /// </summary>
         [Input("backupSecretKey")]
         public Input<string>? BackupSecretKey { get; set; }
 
         /// <summary>
-        /// 表示自定义签算变量。
+        /// Indicates custom signature calculation variables.
         /// </summary>
         [Input("customVariableRules")]
         public Input<Inputs.DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesGetArgs>? CustomVariableRules { get; set; }
 
         /// <summary>
-        /// 签名的有效时间，单位是秒。该参数与请求中包含时间戳搭配使用，用来计算签名的过期时间。该参数的取值范围是 0-315,360,000。签名的过期时间 = 时间戳 + Duration。在内容分发网络收到某个请求时，如果签名的过期时间小于当前时间，内容分发网络判定签名已过期。
+        /// The validity period of the signature, in seconds. This parameter is used with the timestamp included in the request to calculate the expiration time of the signature. The value range for this parameter is 0–315,360,000. Signature expiration time = timestamp + Duration. When the content delivery network receives a request, if the signature expiration time is less than the current time, the content delivery network determines that the signature has expired.
         /// </summary>
         [Input("duration")]
         public Input<int>? Duration { get; set; }
 
         /// <summary>
-        /// 该参数暂不对外开放，请勿使用该参数。
+        /// This parameter is not currently available to external users. Do not use this parameter.
         /// </summary>
         [Input("keepOriginArg")]
         public Input<bool>? KeepOriginArg { get; set; }
 
         /// <summary>
-        /// 表示主密钥，长度为 6-40个字符，可以包含除了 Delete（ASCII code 127）的可打印 ASCII 字符。
+        /// Indicates the primary key, with a length of 6–40 characters. It can include printable ASCII characters except Delete (ASCII code 127)
         /// </summary>
         [Input("masterSecretKey")]
         public Input<string>? MasterSecretKey { get; set; }
 
         /// <summary>
-        /// 表示在响应一个 .m3u8 文件的请求时，内容分发网络是否对 .m3u8 文件中每个分片文件的 URL 添加签名参数。每个分片 URL 的签名是基于改写后分片 URL，使用签名规则计算的。该参数有以下取值：true：表示启用。false：表示禁用。
+        /// Indicates whether the content delivery network adds signature parameters to the URL of each segment file in a .m3u8 file when responding to a .m3u8 file request. The signature for each segment URL is calculated based on the rewritten segment URL using the signature rules. The parameter values are as follows: true: enabled. false: disabled.
         /// </summary>
         [Input("rewriteM3U8")]
         public Input<bool>? RewriteM3U8 { get; set; }
 
         /// <summary>
-        /// 表示 "M3U8 改写" 功能的配置。该配置仅当以下条件都满足时才有效：RewriteM3u8 是 true。URLAuthType 不是 typee。
+        /// Specifies the configuration for the 'M3U8 Rewrite' feature. This configuration is valid only when both of the following conditions are met: RewriteM3u8 is true; URLAuthType is not typee.
         /// </summary>
         [Input("rewriteM3U8Rule")]
         public Input<Inputs.DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionRewriteM3U8RuleGetArgs>? RewriteM3U8Rule { get; set; }
 
         /// <summary>
-        /// 表示签名参数的名称，长度不能超过 100 个字符。参数名称区分大小写，可以包含字母、数字、下划线（_）、中划线（-）、逗号（,）、句号（.）、感叹号（!）。
+        /// Indicates the name of the signature parameter. The length cannot exceed 100 characters. Parameter names are case-sensitive and can include letters, numbers, underscores (_), hyphens (-), commas (,), periods (.), and exclamation marks (!).
         /// </summary>
         [Input("signName")]
         public Input<string>? SignName { get; set; }
@@ -71,7 +71,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
         private InputList<string>? _signatureRules;
 
         /// <summary>
-        /// 当 URLAuthType 为 typee 时，该参数为必填，表示需要纳入签名计算的字段。必须纳入签名计算的字段如下：key：秘钥，即MasterSecretKey或BackupSecretKey的传参内容。uri：表示用户请求资源的 URI。如果 URI 包含中文字符，您需要对 URI 编码。TimeName：表示时间戳参数的传参内容。可选择纳入签名计算的字段如下：domain：表示加速域名。referer：表示用户请求携带的 referer 值。ua：表示用户请求携带的 User-Agent 值。ip：表示用户请求的客户端 IP。origin：表示用户请求携带的 Origin 值。自定义变量：表示您在 CustomVariableInstances 中定义的变量名称。列表中填充的顺序即为签名计算时MD5()中各值顺序。
+        /// When URLAuthType is set to typee, this parameter is required and specifies the fields to be included in the signature calculation. The following fields must be included in the signature calculation: key: the secret key, which is the parameter value for MasterSecretKey or BackupSecretKey. uri: the URI of the resource requested by the user. If the URI contains Chinese characters, you need to encode the URI. TimeName: the parameter value for the timestamp. The following fields can optionally be included in the signature calculation: domain: the acceleration domain name. referer: the referer value carried in the user's request. ua: the User-Agent value carried in the user's request. ip: the client IP of the user's request. origin: the Origin value carried in the user's request. Custom variables: the variable names you define in CustomVariableInstances. The order in which the fields are listed determines the order of values in MD5() during signature calculation.
         /// </summary>
         public InputList<string> SignatureRules
         {
@@ -80,19 +80,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
         }
 
         /// <summary>
-        /// 进制配置。该参数有以下取值：decimal：十进制。heximal：十六进制。当 URLAuthType 为 typed、typee 时，该参数为必填。当 URLAuthType 为 typec 时，无论您是否设置该参数，该参数的值会被强制设置为 heximal。对于 URLAuthType 的其他值，该参数不生效。
+        /// Numeral system configuration. This parameter has the following values: decimal: decimal system; hexadecimal: hexadecimal system. When URLAuthType is typed or typee, this parameter is required. When URLAuthType is typec, regardless of your setting, this parameter is forcibly set to hexadecimal. For other URLAuthType values, this parameter is not effective.
         /// </summary>
         [Input("timeFormat")]
         public Input<string>? TimeFormat { get; set; }
 
         /// <summary>
-        /// 表示时间戳参数的名称。TimeName 的值可以包括英文字母、数字、下划线（_）、中划线（-）、句号（.）、逗号（,）、感叹号（!），长度为 1-100 个字符。TimenName 不能与 SignName 相同。当 URLAuthType 为 typed、typee 时，该参数为必填。对于其他类型，该参数不生效。
+        /// Indicates the name of the timestamp parameter. The value of TimeName can include English letters, numbers, underscores (_), hyphens (-), periods (.), commas (,), and exclamation marks (!), with a length of 1–100 characters. TimeName cannot be the same as SignName. When URLAuthType is typed or typee, this parameter is required. For other types, this parameter does not apply.
         /// </summary>
         [Input("timeName")]
         public Input<string>? TimeName { get; set; }
 
         /// <summary>
-        /// 签名类型。
+        /// Signature type
         /// </summary>
         [Input("urlAuthType")]
         public Input<string>? UrlAuthType { get; set; }

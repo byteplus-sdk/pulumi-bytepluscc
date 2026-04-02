@@ -65,19 +65,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
     public sealed class GetGroupResult
     {
         /// <summary>
-        /// Consumer Group 创建时间。
+        /// Consumer Group creation time.
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// Consumer Group 描述。
+        /// Consumer Group description.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Consumer Group 的 ID。
+        /// Consumer Group ID.
         /// </summary>
         public readonly string GroupId;
         /// <summary>
-        /// 自定义设置Consumer Group 的名称，约束限制如下：只能由小写英文字符、数字、下划线和中划线（-）组成。长度为 3~64 字符。
+        /// Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
         /// </summary>
         public readonly string GroupName;
         /// <summary>
@@ -85,27 +85,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 所属 BMQ 实例 ID。
+        /// BMQ instance ID.
         /// </summary>
         public readonly string InstanceId;
         /// <summary>
-        /// Consumer Group 所属用户的 ID。
+        /// User ID associated with the Consumer Group.
         /// </summary>
         public readonly string OwnerId;
         /// <summary>
-        /// Consumer Group 所属用户的名称。
+        /// Name of the user associated with the Consumer Group.
         /// </summary>
         public readonly string OwnerName;
         /// <summary>
-        /// 重置消费位点信息。
+        /// Reset consumption position information.
         /// </summary>
         public readonly Outputs.GetGroupResetInfoResult ResetInfo;
         /// <summary>
-        /// Consumer Group 的状态。
+        /// Consumer Group status.
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// Topic 列表。
+        /// Topic list.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGroupTopicInfoResult> TopicInfos;
 

@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class GatewayServiceDomainGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 域名。
+        /// Domain.
         /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }
 
         /// <summary>
-        /// 域名类型。取值：public：公网。private：私网。
+        /// Domain type. Options: public: Public network. private: Private network.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

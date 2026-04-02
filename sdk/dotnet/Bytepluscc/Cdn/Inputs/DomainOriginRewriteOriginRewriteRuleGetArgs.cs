@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainOriginRewriteOriginRewriteRuleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示该配置模块的生效条件，由一组规则组成。
+        /// Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         /// </summary>
         [Input("condition")]
         public Input<Inputs.DomainOriginRewriteOriginRewriteRuleConditionGetArgs>? Condition { get; set; }
 
         /// <summary>
-        /// 表示一个回源路径改写的规则配置。
+        /// Indicates a rule configuration for origin path rewrite.
         /// </summary>
         [Input("originRewriteAction")]
         public Input<Inputs.DomainOriginRewriteOriginRewriteRuleOriginRewriteActionGetArgs>? OriginRewriteAction { get; set; }

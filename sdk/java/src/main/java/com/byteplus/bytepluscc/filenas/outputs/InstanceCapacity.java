@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceCapacity {
     /**
-     * @return 文件系统可用总容量，单位为 GiB。
+     * @return Total available file system capacity, in GiB
      * 
      */
     private @Nullable Double total;
     /**
-     * @return 文件系统已使用容量，单位为 MiB。
+     * @return Used file system capacity, in MiB
      * 
      */
     private @Nullable Double used;
 
     private InstanceCapacity() {}
     /**
-     * @return 文件系统可用总容量，单位为 GiB。
+     * @return Total available file system capacity, in GiB
      * 
      */
     public Optional<Double> total() {
         return Optional.ofNullable(this.total);
     }
     /**
-     * @return 文件系统已使用容量，单位为 MiB。
+     * @return Used file system capacity, in MiB
      * 
      */
     public Optional<Double> used() {

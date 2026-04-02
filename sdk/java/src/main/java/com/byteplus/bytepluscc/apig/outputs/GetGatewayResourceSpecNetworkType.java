@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetGatewayResourceSpecNetworkType {
     /**
-     * @return 是否启用私网。
+     * @return Whether to enable private network
      * 
      */
     private Boolean enablePrivateNetwork;
     /**
-     * @return 是否启用公网。
+     * @return Whether to enable public network
      * 
      */
     private Boolean enablePublicNetwork;
 
     private GetGatewayResourceSpecNetworkType() {}
     /**
-     * @return 是否启用私网。
+     * @return Whether to enable private network
      * 
      */
     public Boolean enablePrivateNetwork() {
         return this.enablePrivateNetwork;
     }
     /**
-     * @return 是否启用公网。
+     * @return Whether to enable public network
      * 
      */
     public Boolean enablePublicNetwork() {

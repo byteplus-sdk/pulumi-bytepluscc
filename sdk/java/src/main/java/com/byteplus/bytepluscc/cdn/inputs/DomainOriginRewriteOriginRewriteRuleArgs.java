@@ -17,14 +17,14 @@ public final class DomainOriginRewriteOriginRewriteRuleArgs extends com.pulumi.r
     public static final DomainOriginRewriteOriginRewriteRuleArgs Empty = new DomainOriginRewriteOriginRewriteRuleArgs();
 
     /**
-     * 表示该配置模块的生效条件，由一组规则组成。
+     * Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<DomainOriginRewriteOriginRewriteRuleConditionArgs> condition;
 
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public Optional<Output<DomainOriginRewriteOriginRewriteRuleConditionArgs>> condition() {
@@ -32,14 +32,14 @@ public final class DomainOriginRewriteOriginRewriteRuleArgs extends com.pulumi.r
     }
 
     /**
-     * 表示一个回源路径改写的规则配置。
+     * Indicates a rule configuration for origin path rewrite.
      * 
      */
     @Import(name="originRewriteAction")
     private @Nullable Output<DomainOriginRewriteOriginRewriteRuleOriginRewriteActionArgs> originRewriteAction;
 
     /**
-     * @return 表示一个回源路径改写的规则配置。
+     * @return Indicates a rule configuration for origin path rewrite.
      * 
      */
     public Optional<Output<DomainOriginRewriteOriginRewriteRuleOriginRewriteActionArgs>> originRewriteAction() {
@@ -72,7 +72,7 @@ public final class DomainOriginRewriteOriginRewriteRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param condition 表示该配置模块的生效条件，由一组规则组成。
+         * @param condition Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class DomainOriginRewriteOriginRewriteRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param condition 表示该配置模块的生效条件，由一组规则组成。
+         * @param condition Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class DomainOriginRewriteOriginRewriteRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param originRewriteAction 表示一个回源路径改写的规则配置。
+         * @param originRewriteAction Indicates a rule configuration for origin path rewrite.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class DomainOriginRewriteOriginRewriteRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param originRewriteAction 表示一个回源路径改写的规则配置。
+         * @param originRewriteAction Indicates a rule configuration for origin path rewrite.
          * 
          * @return builder
          * 

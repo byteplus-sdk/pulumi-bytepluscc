@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql.Outputs
     public sealed class AllowListAssociatedInstance
     {
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID.
         /// </summary>
         public readonly string? InstanceId;
         /// <summary>
-        /// 实例名称。
+        /// Instance name.
         /// </summary>
         public readonly string? InstanceName;
         /// <summary>
-        /// 实例所属的 VPC ID。
+        /// VPC ID to which the instance belongs.
         /// </summary>
         public readonly string? Vpc;
 

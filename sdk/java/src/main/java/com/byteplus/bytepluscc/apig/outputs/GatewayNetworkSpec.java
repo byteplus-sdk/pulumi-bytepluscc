@@ -20,7 +20,7 @@ public final class GatewayNetworkSpec {
      */
     private @Nullable String vpcId;
     /**
-     * @return VPC名称。
+     * @return VPC name
      * 
      */
     private @Nullable String vpcName;
@@ -37,7 +37,7 @@ public final class GatewayNetworkSpec {
         return Optional.ofNullable(this.vpcId);
     }
     /**
-     * @return VPC名称。
+     * @return VPC name
      * 
      */
     public Optional<String> vpcName() {

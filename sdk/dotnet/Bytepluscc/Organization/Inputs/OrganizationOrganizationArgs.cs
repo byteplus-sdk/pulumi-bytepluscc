@@ -14,43 +14,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Organization.Inputs
     public sealed class OrganizationOrganizationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 创建时间
+        /// Creation Time
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 描述
+        /// Description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 组织名称
+        /// Organization Name
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 管理员ID
+        /// Administrator ID
         /// </summary>
         [Input("owner")]
         public Input<string>? Owner { get; set; }
 
         /// <summary>
-        /// 状态
+        /// Status
         /// </summary>
         [Input("status")]
         public Input<int>? Status { get; set; }
 
         /// <summary>
-        /// 组织类型，企业组织固定是 1
+        /// Organization type, enterprise organization is always 1
         /// </summary>
         [Input("type")]
         public Input<int>? Type { get; set; }
 
         /// <summary>
-        /// 更新时间
+        /// Last Updated
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }

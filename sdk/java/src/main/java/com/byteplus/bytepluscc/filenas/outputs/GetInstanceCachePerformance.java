@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceCachePerformance {
     /**
-     * @return 预配置带宽，用于增加文件系统带宽。
+     * @return Provisioned bandwidth, used to increase file system bandwidth
      * 
      */
     private Integer cacheBandwidth;
 
     private GetInstanceCachePerformance() {}
     /**
-     * @return 预配置带宽，用于增加文件系统带宽。
+     * @return Provisioned bandwidth, used to increase file system bandwidth
      * 
      */
     public Integer cacheBandwidth() {

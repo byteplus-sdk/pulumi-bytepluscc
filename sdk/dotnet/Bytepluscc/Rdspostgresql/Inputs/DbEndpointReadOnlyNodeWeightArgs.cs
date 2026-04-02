@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql.Inputs
     public sealed class DbEndpointReadOnlyNodeWeightArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 只读节点需要传入 NodeId。
+        /// Read-only nodes require the NodeId to be provided.
         /// </summary>
         [Input("nodeId")]
         public Input<string>? NodeId { get; set; }
 
         /// <summary>
-        /// 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+        /// Node type. Values: Primary: primary node. ReadOnly: read-only node.
         /// </summary>
         [Input("nodeType")]
         public Input<string>? NodeType { get; set; }
 
         /// <summary>
-        /// 节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+        /// Read weight of the node, increases in increments of 100, maximum value is 40000. Note: Weights cannot all be set to 0.
         /// </summary>
         [Input("weight")]
         public Input<int>? Weight { get; set; }

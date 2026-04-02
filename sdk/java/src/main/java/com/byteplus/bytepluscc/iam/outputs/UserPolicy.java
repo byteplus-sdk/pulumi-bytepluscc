@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UserPolicy {
     /**
-     * @return 权限策略名称，长度1~64，支持英文、数字和+=,.{@literal @}-_符号。
+     * @return Permission policy name. Length: 1–64 characters. Supports English letters, numbers, and +=,.{@literal @}-_ symbols.
      * 
      */
     private @Nullable String policyName;
     /**
-     * @return 权限策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+     * @return Permission policy type. &#39;System&#39; indicates system preset policy, &#39;Custom&#39; indicates custom policy.
      * 
      */
     private @Nullable String policyType;
 
     private UserPolicy() {}
     /**
-     * @return 权限策略名称，长度1~64，支持英文、数字和+=,.{@literal @}-_符号。
+     * @return Permission policy name. Length: 1–64 characters. Supports English letters, numbers, and +=,.{@literal @}-_ symbols.
      * 
      */
     public Optional<String> policyName() {
         return Optional.ofNullable(this.policyName);
     }
     /**
-     * @return 权限策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+     * @return Permission policy type. &#39;System&#39; indicates system preset policy, &#39;Custom&#39; indicates custom policy.
      * 
      */
     public Optional<String> policyType() {

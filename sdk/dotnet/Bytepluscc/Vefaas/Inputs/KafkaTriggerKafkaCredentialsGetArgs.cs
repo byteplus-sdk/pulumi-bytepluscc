@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas.Inputs
     public sealed class KafkaTriggerKafkaCredentialsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
+        /// Kafka authentication mechanism. Options: PLAIN, SCRAM-SHA-256.
         /// </summary>
         [Input("mechanism", required: true)]
         public Input<string> Mechanism { get; set; } = null!;
 
         /// <summary>
-        /// 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
+        /// SASL/PLAIN password set when creating the Kafka instance.
         /// </summary>
         [Input("password", required: true)]
         public Input<string> Password { get; set; } = null!;
 
         /// <summary>
-        /// 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
+        /// SASL/PLAIN username set when creating the Kafka instance.
         /// </summary>
         [Input("username", required: true)]
         public Input<string> Username { get; set; } = null!;

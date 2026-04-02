@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainRemoteAuthRemoteAuthRule {
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     private GetDomainRemoteAuthRemoteAuthRuleCondition condition;
     /**
-     * @return 表示具体的鉴权配置。
+     * @return Indicates the specific authentication configuration.
      * 
      */
     private GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleAction remoteAuthRuleAction;
 
     private GetDomainRemoteAuthRemoteAuthRule() {}
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public GetDomainRemoteAuthRemoteAuthRuleCondition condition() {
         return this.condition;
     }
     /**
-     * @return 表示具体的鉴权配置。
+     * @return Indicates the specific authentication configuration.
      * 
      */
     public GetDomainRemoteAuthRemoteAuthRuleRemoteAuthRuleAction remoteAuthRuleAction() {

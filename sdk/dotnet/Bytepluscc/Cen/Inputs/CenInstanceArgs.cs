@@ -14,25 +14,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Cen.Inputs
     public sealed class CenInstanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 网络实例的ID。
+        /// Network instance ID
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 网络实例所属账号的ID。
+        /// Account ID for the network instance
         /// </summary>
         [Input("instanceOwnerId")]
         public Input<string>? InstanceOwnerId { get; set; }
 
         /// <summary>
-        /// 网络实例所在的地域。
+        /// Region where the network instance is located
         /// </summary>
         [Input("instanceRegionId")]
         public Input<string>? InstanceRegionId { get; set; }
 
         /// <summary>
-        /// 网络实例的类型。
+        /// Type of the network instance
         /// </summary>
         [Input("instanceType")]
         public Input<string>? InstanceType { get; set; }

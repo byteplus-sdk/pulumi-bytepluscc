@@ -15,35 +15,35 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Outputs
     public sealed class GetInstanceAddressObjectResult
     {
         /// <summary>
-        /// false：私网解析（默认）。true：私网以及公网解析。
+        /// false: private network resolution (default). true: private and public network resolution.
         /// </summary>
         public readonly bool DnsVisibility;
         /// <summary>
-        /// 连接域名。
+        /// Connection domain name
         /// </summary>
         public readonly string Domain;
         /// <summary>
-        /// EIP 的 ID，仅对 Public 地址有效。
+        /// EIP ID, valid only for Public addresses.
         /// </summary>
         public readonly string EipId;
         /// <summary>
-        /// IP 协议版本。取值为 IPv4。
+        /// IP protocol version. Value: IPv4.
         /// </summary>
         public readonly string InternetProtocol;
         /// <summary>
-        /// IP 地址。
+        /// IP address.
         /// </summary>
         public readonly string IpAddress;
         /// <summary>
-        /// 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+        /// Network address type. Values: Private: private address. Public: public address
         /// </summary>
         public readonly string NetworkType;
         /// <summary>
-        /// 端口。
+        /// Port
         /// </summary>
         public readonly string Port;
         /// <summary>
-        /// 子网 ID，仅对 Private 地址有效。
+        /// Subnet ID, valid only for Private addresses
         /// </summary>
         public readonly string SubnetId;
 

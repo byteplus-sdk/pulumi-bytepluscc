@@ -103,7 +103,7 @@ class GetBackupResult:
     @pulumi.getter(name="backupEndTime")
     def backup_end_time(self) -> builtins.str:
         """
-        备份创建结束时间（UTC）。
+        Backup creation end time (UTC)
         """
         return pulumi.get(self, "backup_end_time")
 
@@ -111,7 +111,7 @@ class GetBackupResult:
     @pulumi.getter(name="backupFileName")
     def backup_file_name(self) -> builtins.str:
         """
-        备份文件名。
+        Backup file name
         """
         return pulumi.get(self, "backup_file_name")
 
@@ -119,7 +119,7 @@ class GetBackupResult:
     @pulumi.getter(name="backupFileSize")
     def backup_file_size(self) -> builtins.int:
         """
-        备份文件大小，单位为字节。
+        Backup file size (bytes)
         """
         return pulumi.get(self, "backup_file_size")
 
@@ -127,7 +127,7 @@ class GetBackupResult:
     @pulumi.getter(name="backupId")
     def backup_id(self) -> builtins.str:
         """
-        备份 ID。
+        Backup ID
         """
         return pulumi.get(self, "backup_id")
 
@@ -135,7 +135,7 @@ class GetBackupResult:
     @pulumi.getter(name="backupMetas")
     def backup_metas(self) -> Sequence['outputs.GetBackupBackupMetaResult']:
         """
-        创建逻辑备份类型的库表备份时，用于指定要备份的库表信息。
+        When creating a logical backup of database tables, this is used to specify the database and table information to be backed up
         """
         return pulumi.get(self, "backup_metas")
 
@@ -143,7 +143,7 @@ class GetBackupResult:
     @pulumi.getter(name="backupMethod")
     def backup_method(self) -> builtins.str:
         """
-        备份类型，取值：Physical（物理备份）、Logical（逻辑备份）、Snapshot（快照备份）。
+        Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
         """
         return pulumi.get(self, "backup_method")
 
@@ -151,7 +151,7 @@ class GetBackupResult:
     @pulumi.getter(name="backupName")
     def backup_name(self) -> builtins.str:
         """
-        备份的名称。
+        Backup name
         """
         return pulumi.get(self, "backup_name")
 
@@ -159,7 +159,7 @@ class GetBackupResult:
     @pulumi.getter(name="backupRegion")
     def backup_region(self) -> builtins.str:
         """
-        备份所在区域。
+        Backup region
         """
         return pulumi.get(self, "backup_region")
 
@@ -167,7 +167,7 @@ class GetBackupResult:
     @pulumi.getter(name="backupStartTime")
     def backup_start_time(self) -> builtins.str:
         """
-        备份创建开始时间（UTC）。
+        Backup creation start time (UTC)
         """
         return pulumi.get(self, "backup_start_time")
 
@@ -175,7 +175,7 @@ class GetBackupResult:
     @pulumi.getter(name="backupStatus")
     def backup_status(self) -> builtins.str:
         """
-        备份状态，取值：Success（成功）、Failed（失败）、Running（执行中）。
+        Backup status. Values: Success, Failed, Running
         """
         return pulumi.get(self, "backup_status")
 
@@ -183,7 +183,7 @@ class GetBackupResult:
     @pulumi.getter(name="backupType")
     def backup_type(self) -> builtins.str:
         """
-        备份方式，取值：Full（全量/库表备）、Increment（增量备份）、DumpAll（全库备份）。
+        Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
         """
         return pulumi.get(self, "backup_type")
 
@@ -191,7 +191,7 @@ class GetBackupResult:
     @pulumi.getter(name="consistentTime")
     def consistent_time(self) -> builtins.str:
         """
-        一致性时间点。
+        Consistency time point
         """
         return pulumi.get(self, "consistent_time")
 
@@ -199,7 +199,7 @@ class GetBackupResult:
     @pulumi.getter(name="createType")
     def create_type(self) -> builtins.str:
         """
-        备份创建者，取值：System（系统）、User（用户）。
+        Backup creator. Values: System (system), User (user)
         """
         return pulumi.get(self, "create_type")
 
@@ -207,7 +207,7 @@ class GetBackupResult:
     @pulumi.getter(name="dbEngineVersion")
     def db_engine_version(self) -> builtins.str:
         """
-        兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+        Compatible version. Values: MySQL*5*7: MySQL 5.7 version; MySQL*8*0: MySQL 8.0 version
         """
         return pulumi.get(self, "db_engine_version")
 
@@ -215,7 +215,7 @@ class GetBackupResult:
     @pulumi.getter(name="dbTableInfos")
     def db_table_infos(self) -> Sequence['outputs.GetBackupDbTableInfoResult']:
         """
-        库表信息列表。
+        Database and table information list
         """
         return pulumi.get(self, "db_table_infos")
 
@@ -223,7 +223,7 @@ class GetBackupResult:
     @pulumi.getter(name="downloadStatus")
     def download_status(self) -> builtins.str:
         """
-        下载状态。
+        Download status
         """
         return pulumi.get(self, "download_status")
 
@@ -231,7 +231,7 @@ class GetBackupResult:
     @pulumi.getter(name="engineType")
     def engine_type(self) -> builtins.str:
         """
-        数据库引擎类型。取值：InnoDB：InnoDB 引擎。RocksDB：RocksDB 引擎。
+        Database engine type. Values: InnoDB: InnoDB engine; RocksDB: RocksDB engine
         """
         return pulumi.get(self, "engine_type")
 
@@ -239,7 +239,7 @@ class GetBackupResult:
     @pulumi.getter(name="errorMessage")
     def error_message(self) -> builtins.str:
         """
-        备份失败的错误信息。
+        Error message for backup failure
         """
         return pulumi.get(self, "error_message")
 
@@ -247,7 +247,7 @@ class GetBackupResult:
     @pulumi.getter(name="expiredTime")
     def expired_time(self) -> builtins.str:
         """
-        备份过期时间（UTC）。
+        Backup expiration time (UTC)
         """
         return pulumi.get(self, "expired_time")
 
@@ -263,7 +263,7 @@ class GetBackupResult:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> builtins.str:
         """
-        实例 ID。
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -271,7 +271,7 @@ class GetBackupResult:
     @pulumi.getter(name="isEncrypted")
     def is_encrypted(self) -> builtins.bool:
         """
-        是否加密。
+        Whether encrypted
         """
         return pulumi.get(self, "is_encrypted")
 
@@ -279,7 +279,7 @@ class GetBackupResult:
     @pulumi.getter(name="isExpired")
     def is_expired(self) -> builtins.bool:
         """
-        是否已过期。
+        Whether expired
         """
         return pulumi.get(self, "is_expired")
 

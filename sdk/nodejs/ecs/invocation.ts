@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 云助手是火山引擎打造的原生自动化运维工具。您可以创建立即执行、周期执行、定时执行的作业任务，创建完成后完，云助手客户端将按照执行模式自动开始执行。
+ * Cloud Assistant is a native automated operations tool developed by Volcano Engine. You can create jobs for immediate, periodic, or scheduled execution. After creation, the Cloud Assistant client automatically starts execution according to the execution mode.
  *
  * ## Example Usage
  *
@@ -72,106 +72,106 @@ export class Invocation extends pulumi.CustomResource {
     }
 
     /**
-     * 命令内容。
+     * Command content.
      */
     public /*out*/ readonly commandContent!: pulumi.Output<string>;
     /**
-     * 被调用命令的描述。
+     * Description of the invoked command.
      */
     public /*out*/ readonly commandDescription!: pulumi.Output<string>;
     /**
-     * 命令ID。
+     * Command ID.
      */
     public readonly commandId!: pulumi.Output<string>;
     /**
-     * 任务触发时的命令名称。
+     * Command name when the task is triggered.
      */
     public /*out*/ readonly commandName!: pulumi.Output<string>;
     /**
-     * 被调用命令的提供方。
+     * Provider of the invoked command.
      */
     public /*out*/ readonly commandProvider!: pulumi.Output<string>;
     /**
-     * 作业触发的命令类型。
+     * Command type triggered by the job.
      */
     public /*out*/ readonly commandType!: pulumi.Output<string>;
     /**
-     * 被调用命令是否使用自定义参数。true：已启用。false：未启用。
+     * Whether the invoked command uses custom parameters. true: enabled. false: not enabled.
      */
     public /*out*/ readonly enableParameter!: pulumi.Output<boolean>;
     /**
-     * 任务结束时间。
+     * Task end time.
      */
     public /*out*/ readonly endTime!: pulumi.Output<string>;
     /**
-     * 执行频率。RepeatMode=Rate 时本参数必填。格式：<执行间隔数值><执行间隔单位>，执行间隔单位：支持分钟（5m-60m）、小时（1h-24h）和天（1d-7d）。执行间隔基于固定频率，与作业实际执行需要的时间无关。创建作业后基于LaunchTime执行一次，根据间隔设置确定下一次执行时间。
+     * Execution frequency. This parameter is required when RepeatMode=Rate. Format: \n\n\n\n. Interval units supported: minutes (5m–60m), hours (1h–24h), and days (1d–7d). The interval is based on a fixed frequency and is independent of the actual job execution time. After job creation, it executes once based on LaunchTime, and the next execution time is determined by the interval setting.
      */
     public readonly frequency!: pulumi.Output<string>;
     /**
-     * 实例ID列表，最多支持200个ID。
+     * Instance ID list, supports up to 200 IDs.
      */
     public readonly instanceIds!: pulumi.Output<string[]>;
     /**
-     * 执行实例数量。
+     * Number of instances executed.
      */
     public /*out*/ readonly instanceNumber!: pulumi.Output<number>;
     /**
-     * 作业描述，默认为空字符串，不超过256个字符。
+     * Job description. Defaults to an empty string and must not exceed 256 characters.
      */
     public readonly invocationDescription!: pulumi.Output<string>;
     /**
-     * 任务执行 ID。
+     * Task execution ID.
      */
     public /*out*/ readonly invocationId!: pulumi.Output<string>;
     /**
-     * 作业名称。不超过64个字符。暂不限制特殊字符。同地域下作业名称可重复。
+     * Job name. Maximum 64 characters. No restriction on special characters. Job names can be duplicated within the same region.
      */
     public readonly invocationName!: pulumi.Output<string>;
     public /*out*/ readonly invocationResults!: pulumi.Output<outputs.ecs.InvocationInvocationResult[]>;
     /**
-     * 命令执行的总执行状态。
+     * Overall execution status of the command.
      */
     public /*out*/ readonly invocationStatus!: pulumi.Output<string>;
     /**
-     * 执行时间。
+     * Execution time.
      */
     public readonly launchTime!: pulumi.Output<string>;
     public /*out*/ readonly parameterDefinitions!: pulumi.Output<outputs.ecs.InvocationParameterDefinition[]>;
     /**
-     * 命令中包含自定义参数时，需通过本参数传入自定义参数的键值对。自定义参数个数范围为0~60。Key不允许为空字符串，最多支持64个字符。Value允许为空字符串。自定义参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的自定义参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+     * When the command includes custom parameters, use this parameter to pass custom parameter key-value pairs. The number of custom parameters ranges from 0 to 60. Key cannot be an empty string and supports up to 64 characters. Value can be an empty string. The combined length of custom parameters and original command content after Base64 encoding must not exceed 16 KB. The set of custom parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
      */
     public readonly parameters!: pulumi.Output<string>;
     /**
-     * 资源所属项目，一个资源只能归属于一个项目。
+     * Project to which the resource belongs; each resource can belong to only one project.
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 周期结束时间，仅适用于周期任务（Rate）。
+     * Cycle end time, applicable only to periodic tasks (Rate).
      */
     public readonly recurrenceEndTime!: pulumi.Output<string>;
     /**
-     * 设置命令执行的方式。Once：默认，表示立即执行命令。Rate：周期执行命令，需要通过Frequency参数传入Rate表达式指定执行周期。Fixed：定时执行命令，需要通过LaunchTime参数指定的执行时间。
+     * Set the command execution mode. Once: Default, executes the command immediately. Rate: Executes the command periodically; specify the execution cycle using the Frequency parameter and Rate expression. Fixed: Executes the command at a scheduled time; specify the execution time using the LaunchTime parameter.
      */
     public readonly repeatMode!: pulumi.Output<string>;
     /**
-     * 任务开始时间。
+     * Task start time.
      */
     public /*out*/ readonly startTime!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.ecs.InvocationTag[]>;
     /**
-     * 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。默认值：60。可选范围为：30~86400。
+     * Maximum timeout for command execution in ECS instances, in seconds. Default: 60. Optional range: 30–86400.
      */
     public readonly timeout!: pulumi.Output<number>;
     /**
-     * 在ECS实例中执行命令的用户名称。
+     * User name for executing the command in the ECS instance.
      */
     public readonly username!: pulumi.Output<string>;
     /**
-     * 自定义windows用户的密码。
+     * Password for custom Windows user.
      */
     public readonly windowsPassword!: pulumi.Output<string>;
     /**
-     * 创建的命令在ECS实例中运行的目录。
+     * Directory where the created command runs in the ECS instance.
      */
     public readonly workingDir!: pulumi.Output<string>;
 
@@ -266,106 +266,106 @@ export class Invocation extends pulumi.CustomResource {
  */
 export interface InvocationState {
     /**
-     * 命令内容。
+     * Command content.
      */
     commandContent?: pulumi.Input<string>;
     /**
-     * 被调用命令的描述。
+     * Description of the invoked command.
      */
     commandDescription?: pulumi.Input<string>;
     /**
-     * 命令ID。
+     * Command ID.
      */
     commandId?: pulumi.Input<string>;
     /**
-     * 任务触发时的命令名称。
+     * Command name when the task is triggered.
      */
     commandName?: pulumi.Input<string>;
     /**
-     * 被调用命令的提供方。
+     * Provider of the invoked command.
      */
     commandProvider?: pulumi.Input<string>;
     /**
-     * 作业触发的命令类型。
+     * Command type triggered by the job.
      */
     commandType?: pulumi.Input<string>;
     /**
-     * 被调用命令是否使用自定义参数。true：已启用。false：未启用。
+     * Whether the invoked command uses custom parameters. true: enabled. false: not enabled.
      */
     enableParameter?: pulumi.Input<boolean>;
     /**
-     * 任务结束时间。
+     * Task end time.
      */
     endTime?: pulumi.Input<string>;
     /**
-     * 执行频率。RepeatMode=Rate 时本参数必填。格式：<执行间隔数值><执行间隔单位>，执行间隔单位：支持分钟（5m-60m）、小时（1h-24h）和天（1d-7d）。执行间隔基于固定频率，与作业实际执行需要的时间无关。创建作业后基于LaunchTime执行一次，根据间隔设置确定下一次执行时间。
+     * Execution frequency. This parameter is required when RepeatMode=Rate. Format: \n\n\n\n. Interval units supported: minutes (5m–60m), hours (1h–24h), and days (1d–7d). The interval is based on a fixed frequency and is independent of the actual job execution time. After job creation, it executes once based on LaunchTime, and the next execution time is determined by the interval setting.
      */
     frequency?: pulumi.Input<string>;
     /**
-     * 实例ID列表，最多支持200个ID。
+     * Instance ID list, supports up to 200 IDs.
      */
     instanceIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 执行实例数量。
+     * Number of instances executed.
      */
     instanceNumber?: pulumi.Input<number>;
     /**
-     * 作业描述，默认为空字符串，不超过256个字符。
+     * Job description. Defaults to an empty string and must not exceed 256 characters.
      */
     invocationDescription?: pulumi.Input<string>;
     /**
-     * 任务执行 ID。
+     * Task execution ID.
      */
     invocationId?: pulumi.Input<string>;
     /**
-     * 作业名称。不超过64个字符。暂不限制特殊字符。同地域下作业名称可重复。
+     * Job name. Maximum 64 characters. No restriction on special characters. Job names can be duplicated within the same region.
      */
     invocationName?: pulumi.Input<string>;
     invocationResults?: pulumi.Input<pulumi.Input<inputs.ecs.InvocationInvocationResult>[]>;
     /**
-     * 命令执行的总执行状态。
+     * Overall execution status of the command.
      */
     invocationStatus?: pulumi.Input<string>;
     /**
-     * 执行时间。
+     * Execution time.
      */
     launchTime?: pulumi.Input<string>;
     parameterDefinitions?: pulumi.Input<pulumi.Input<inputs.ecs.InvocationParameterDefinition>[]>;
     /**
-     * 命令中包含自定义参数时，需通过本参数传入自定义参数的键值对。自定义参数个数范围为0~60。Key不允许为空字符串，最多支持64个字符。Value允许为空字符串。自定义参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的自定义参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+     * When the command includes custom parameters, use this parameter to pass custom parameter key-value pairs. The number of custom parameters ranges from 0 to 60. Key cannot be an empty string and supports up to 64 characters. Value can be an empty string. The combined length of custom parameters and original command content after Base64 encoding must not exceed 16 KB. The set of custom parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
      */
     parameters?: pulumi.Input<string>;
     /**
-     * 资源所属项目，一个资源只能归属于一个项目。
+     * Project to which the resource belongs; each resource can belong to only one project.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 周期结束时间，仅适用于周期任务（Rate）。
+     * Cycle end time, applicable only to periodic tasks (Rate).
      */
     recurrenceEndTime?: pulumi.Input<string>;
     /**
-     * 设置命令执行的方式。Once：默认，表示立即执行命令。Rate：周期执行命令，需要通过Frequency参数传入Rate表达式指定执行周期。Fixed：定时执行命令，需要通过LaunchTime参数指定的执行时间。
+     * Set the command execution mode. Once: Default, executes the command immediately. Rate: Executes the command periodically; specify the execution cycle using the Frequency parameter and Rate expression. Fixed: Executes the command at a scheduled time; specify the execution time using the LaunchTime parameter.
      */
     repeatMode?: pulumi.Input<string>;
     /**
-     * 任务开始时间。
+     * Task start time.
      */
     startTime?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.ecs.InvocationTag>[]>;
     /**
-     * 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。默认值：60。可选范围为：30~86400。
+     * Maximum timeout for command execution in ECS instances, in seconds. Default: 60. Optional range: 30–86400.
      */
     timeout?: pulumi.Input<number>;
     /**
-     * 在ECS实例中执行命令的用户名称。
+     * User name for executing the command in the ECS instance.
      */
     username?: pulumi.Input<string>;
     /**
-     * 自定义windows用户的密码。
+     * Password for custom Windows user.
      */
     windowsPassword?: pulumi.Input<string>;
     /**
-     * 创建的命令在ECS实例中运行的目录。
+     * Directory where the created command runs in the ECS instance.
      */
     workingDir?: pulumi.Input<string>;
 }
@@ -375,60 +375,60 @@ export interface InvocationState {
  */
 export interface InvocationArgs {
     /**
-     * 命令ID。
+     * Command ID.
      */
     commandId: pulumi.Input<string>;
     /**
-     * 执行频率。RepeatMode=Rate 时本参数必填。格式：<执行间隔数值><执行间隔单位>，执行间隔单位：支持分钟（5m-60m）、小时（1h-24h）和天（1d-7d）。执行间隔基于固定频率，与作业实际执行需要的时间无关。创建作业后基于LaunchTime执行一次，根据间隔设置确定下一次执行时间。
+     * Execution frequency. This parameter is required when RepeatMode=Rate. Format: \n\n\n\n. Interval units supported: minutes (5m–60m), hours (1h–24h), and days (1d–7d). The interval is based on a fixed frequency and is independent of the actual job execution time. After job creation, it executes once based on LaunchTime, and the next execution time is determined by the interval setting.
      */
     frequency?: pulumi.Input<string>;
     /**
-     * 实例ID列表，最多支持200个ID。
+     * Instance ID list, supports up to 200 IDs.
      */
     instanceIds: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 作业描述，默认为空字符串，不超过256个字符。
+     * Job description. Defaults to an empty string and must not exceed 256 characters.
      */
     invocationDescription?: pulumi.Input<string>;
     /**
-     * 作业名称。不超过64个字符。暂不限制特殊字符。同地域下作业名称可重复。
+     * Job name. Maximum 64 characters. No restriction on special characters. Job names can be duplicated within the same region.
      */
     invocationName: pulumi.Input<string>;
     /**
-     * 执行时间。
+     * Execution time.
      */
     launchTime?: pulumi.Input<string>;
     /**
-     * 命令中包含自定义参数时，需通过本参数传入自定义参数的键值对。自定义参数个数范围为0~60。Key不允许为空字符串，最多支持64个字符。Value允许为空字符串。自定义参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的自定义参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+     * When the command includes custom parameters, use this parameter to pass custom parameter key-value pairs. The number of custom parameters ranges from 0 to 60. Key cannot be an empty string and supports up to 64 characters. Value can be an empty string. The combined length of custom parameters and original command content after Base64 encoding must not exceed 16 KB. The set of custom parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
      */
     parameters?: pulumi.Input<string>;
     /**
-     * 资源所属项目，一个资源只能归属于一个项目。
+     * Project to which the resource belongs; each resource can belong to only one project.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 周期结束时间，仅适用于周期任务（Rate）。
+     * Cycle end time, applicable only to periodic tasks (Rate).
      */
     recurrenceEndTime?: pulumi.Input<string>;
     /**
-     * 设置命令执行的方式。Once：默认，表示立即执行命令。Rate：周期执行命令，需要通过Frequency参数传入Rate表达式指定执行周期。Fixed：定时执行命令，需要通过LaunchTime参数指定的执行时间。
+     * Set the command execution mode. Once: Default, executes the command immediately. Rate: Executes the command periodically; specify the execution cycle using the Frequency parameter and Rate expression. Fixed: Executes the command at a scheduled time; specify the execution time using the LaunchTime parameter.
      */
     repeatMode?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.ecs.InvocationTag>[]>;
     /**
-     * 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。默认值：60。可选范围为：30~86400。
+     * Maximum timeout for command execution in ECS instances, in seconds. Default: 60. Optional range: 30–86400.
      */
     timeout?: pulumi.Input<number>;
     /**
-     * 在ECS实例中执行命令的用户名称。
+     * User name for executing the command in the ECS instance.
      */
     username?: pulumi.Input<string>;
     /**
-     * 自定义windows用户的密码。
+     * Password for custom Windows user.
      */
     windowsPassword?: pulumi.Input<string>;
     /**
-     * 创建的命令在ECS实例中运行的目录。
+     * Directory where the created command runs in the ECS instance.
      */
     workingDir?: pulumi.Input<string>;
 }

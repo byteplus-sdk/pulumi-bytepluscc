@@ -21,97 +21,97 @@ import java.util.Objects;
 @CustomType
 public final class GetClusterResult {
     /**
-     * @return 账号ID。
+     * @return Account ID.
      * 
      */
     private Integer accountId;
     /**
-     * @return 集群服务的扩展信息列表，包括服务的自定义配置项、服务组件的自定义部署拓扑设置，以及服务的元数据连接配置信息。
+     * @return Cluster service extension information list, including custom configuration items for services, custom deployment topology settings for service components, and metadata connection configuration information for services.
      * 
      */
     private List<GetClusterApplicationExtra> applicationExtras;
     /**
-     * @return 集群安装的服务名称列表。创建字段。
+     * @return List of service names installed in the cluster. Creation-related field.
      * 
      */
     private List<String> applicationNames;
     /**
-     * @return 集群安装的服务列表。只读字段。
+     * @return Installed service list for cluster. Read-only field.
      * 
      */
     private List<GetClusterApplication> applications;
     /**
-     * @return 集群的引导脚本列表。
+     * @return Cluster bootstrap script list.
      * 
      */
     private List<GetClusterBootstrapScript> bootstrapScripts;
     /**
-     * @return 包月的配置参数，当chargeType=PRE时，必选。
+     * @return Monthly subscription configuration parameters. Required when chargeType=PRE.
      * 
      */
     private GetClusterChargePreConfig chargePreConfig;
     /**
-     * @return 付费类型，PRE表示包月，POST表示按量计费。
+     * @return Payment type. PRE means monthly subscription, POST means pay-as-you-go.
      * 
      */
     private String chargeType;
     /**
-     * @return 集群dns域名后缀列表。
+     * @return Cluster DNS domain suffix list.
      * 
      */
     private List<String> clusterDomainNames;
     /**
-     * @return 集群ID。
+     * @return Cluster ID.
      * 
      */
     private String clusterId;
     /**
-     * @return 集群名称。
+     * @return Cluster name.
      * 
      */
     private String clusterName;
     /**
-     * @return 集群状态。
+     * @return Cluster status.
      * 
      */
     private String clusterState;
     /**
-     * @return 集群类型。
+     * @return Cluster type.
      * 
      */
     private String clusterType;
     /**
-     * @return 集群创建时间。
+     * @return Cluster creation time.
      * 
      */
     private Integer createdTime;
     /**
-     * @return 创建者ID。
+     * @return Creator ID.
      * 
      */
     private Integer creatorId;
     /**
-     * @return 创建者名称。
+     * @return Creator name.
      * 
      */
     private String creatorName;
     /**
-     * @return 部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
+     * @return Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
      * 
      */
     private String deployMode;
     /**
-     * @return ECS镜像ID。
+     * @return ECS image ID.
      * 
      */
     private String ecsImageId;
     /**
-     * @return 集群过期时间。
+     * @return Cluster expiration time.
      * 
      */
     private Integer expireTime;
     /**
-     * @return HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
+     * @return HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
      * 
      */
     private String historyServerMode;
@@ -121,52 +121,52 @@ public final class GetClusterResult {
      */
     private String id;
     /**
-     * @return 集群全局的节点信息。
+     * @return Cluster global node information.
      * 
      */
     private GetClusterNodeAttribute nodeAttribute;
     /**
-     * @return 节点组属性列表。
+     * @return Node group property list.
      * 
      */
     private List<GetClusterNodeGroupAttribute> nodeGroupAttributes;
     /**
-     * @return 资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+     * @return Project to which the resource belongs. Default is &#39;default&#39;. Each resource can belong to only one project. Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed. Maximum length is 64 characters.
      * 
      */
     private String projectName;
     /**
-     * @return 集群创建完成时间。
+     * @return Cluster creation completion time.
      * 
      */
     private Integer readyTime;
     /**
-     * @return 集群版本。
+     * @return Cluster version.
      * 
      */
     private String releaseVersion;
     /**
-     * @return 集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+     * @return Cluster global security group ID. All ECS in node groups will join this security group.
      * 
      */
     private String securityGroupId;
     /**
-     * @return 安全模式。
+     * @return Security mode.
      * 
      */
     private String securityMode;
     /**
-     * @return 状态变更原因。
+     * @return Status change reason.
      * 
      */
     private GetClusterStateChangeReason stateChangeReason;
     /**
-     * @return 标签列表。
+     * @return Tag list.
      * 
      */
     private List<GetClusterTag> tags;
     /**
-     * @return 集群终止时间。
+     * @return Cluster termination time.
      * 
      */
     private Integer terminateTime;
@@ -178,133 +178,133 @@ public final class GetClusterResult {
 
     private GetClusterResult() {}
     /**
-     * @return 账号ID。
+     * @return Account ID.
      * 
      */
     public Integer accountId() {
         return this.accountId;
     }
     /**
-     * @return 集群服务的扩展信息列表，包括服务的自定义配置项、服务组件的自定义部署拓扑设置，以及服务的元数据连接配置信息。
+     * @return Cluster service extension information list, including custom configuration items for services, custom deployment topology settings for service components, and metadata connection configuration information for services.
      * 
      */
     public List<GetClusterApplicationExtra> applicationExtras() {
         return this.applicationExtras;
     }
     /**
-     * @return 集群安装的服务名称列表。创建字段。
+     * @return List of service names installed in the cluster. Creation-related field.
      * 
      */
     public List<String> applicationNames() {
         return this.applicationNames;
     }
     /**
-     * @return 集群安装的服务列表。只读字段。
+     * @return Installed service list for cluster. Read-only field.
      * 
      */
     public List<GetClusterApplication> applications() {
         return this.applications;
     }
     /**
-     * @return 集群的引导脚本列表。
+     * @return Cluster bootstrap script list.
      * 
      */
     public List<GetClusterBootstrapScript> bootstrapScripts() {
         return this.bootstrapScripts;
     }
     /**
-     * @return 包月的配置参数，当chargeType=PRE时，必选。
+     * @return Monthly subscription configuration parameters. Required when chargeType=PRE.
      * 
      */
     public GetClusterChargePreConfig chargePreConfig() {
         return this.chargePreConfig;
     }
     /**
-     * @return 付费类型，PRE表示包月，POST表示按量计费。
+     * @return Payment type. PRE means monthly subscription, POST means pay-as-you-go.
      * 
      */
     public String chargeType() {
         return this.chargeType;
     }
     /**
-     * @return 集群dns域名后缀列表。
+     * @return Cluster DNS domain suffix list.
      * 
      */
     public List<String> clusterDomainNames() {
         return this.clusterDomainNames;
     }
     /**
-     * @return 集群ID。
+     * @return Cluster ID.
      * 
      */
     public String clusterId() {
         return this.clusterId;
     }
     /**
-     * @return 集群名称。
+     * @return Cluster name.
      * 
      */
     public String clusterName() {
         return this.clusterName;
     }
     /**
-     * @return 集群状态。
+     * @return Cluster status.
      * 
      */
     public String clusterState() {
         return this.clusterState;
     }
     /**
-     * @return 集群类型。
+     * @return Cluster type.
      * 
      */
     public String clusterType() {
         return this.clusterType;
     }
     /**
-     * @return 集群创建时间。
+     * @return Cluster creation time.
      * 
      */
     public Integer createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 创建者ID。
+     * @return Creator ID.
      * 
      */
     public Integer creatorId() {
         return this.creatorId;
     }
     /**
-     * @return 创建者名称。
+     * @return Creator name.
      * 
      */
     public String creatorName() {
         return this.creatorName;
     }
     /**
-     * @return 部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
+     * @return Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
      * 
      */
     public String deployMode() {
         return this.deployMode;
     }
     /**
-     * @return ECS镜像ID。
+     * @return ECS image ID.
      * 
      */
     public String ecsImageId() {
         return this.ecsImageId;
     }
     /**
-     * @return 集群过期时间。
+     * @return Cluster expiration time.
      * 
      */
     public Integer expireTime() {
         return this.expireTime;
     }
     /**
-     * @return HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
+     * @return HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
      * 
      */
     public String historyServerMode() {
@@ -318,70 +318,70 @@ public final class GetClusterResult {
         return this.id;
     }
     /**
-     * @return 集群全局的节点信息。
+     * @return Cluster global node information.
      * 
      */
     public GetClusterNodeAttribute nodeAttribute() {
         return this.nodeAttribute;
     }
     /**
-     * @return 节点组属性列表。
+     * @return Node group property list.
      * 
      */
     public List<GetClusterNodeGroupAttribute> nodeGroupAttributes() {
         return this.nodeGroupAttributes;
     }
     /**
-     * @return 资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+     * @return Project to which the resource belongs. Default is &#39;default&#39;. Each resource can belong to only one project. Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed. Maximum length is 64 characters.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 集群创建完成时间。
+     * @return Cluster creation completion time.
      * 
      */
     public Integer readyTime() {
         return this.readyTime;
     }
     /**
-     * @return 集群版本。
+     * @return Cluster version.
      * 
      */
     public String releaseVersion() {
         return this.releaseVersion;
     }
     /**
-     * @return 集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+     * @return Cluster global security group ID. All ECS in node groups will join this security group.
      * 
      */
     public String securityGroupId() {
         return this.securityGroupId;
     }
     /**
-     * @return 安全模式。
+     * @return Security mode.
      * 
      */
     public String securityMode() {
         return this.securityMode;
     }
     /**
-     * @return 状态变更原因。
+     * @return Status change reason.
      * 
      */
     public GetClusterStateChangeReason stateChangeReason() {
         return this.stateChangeReason;
     }
     /**
-     * @return 标签列表。
+     * @return Tag list.
      * 
      */
     public List<GetClusterTag> tags() {
         return this.tags;
     }
     /**
-     * @return 集群终止时间。
+     * @return Cluster termination time.
      * 
      */
     public Integer terminateTime() {

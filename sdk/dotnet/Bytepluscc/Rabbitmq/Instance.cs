@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq
 {
     /// <summary>
-    /// 消息队列 RabbitMQ版是一款支持 AMQP（Advanced Message Queuing Protocol） 协议的分布式高可用消息队列产品，完全兼容 RabbitMQ 开源生态及多语言客户端，提供丰富的消息特性和灵活的消息路由，同时具备分布式、高吞吐、低延迟、灵活扩展的云消息服务优势，无需用户部署运维，能够轻松实现快速上云。
+    /// RabbitMQ Message Queue is a distributed, high-availability message queue product that supports the AMQP (Advanced Message Queuing Protocol) protocol. It is fully compatible with the RabbitMQ open-source ecosystem and multi-language clients, provides rich messaging features and flexible message routing, and offers the advantages of distributed architecture, high throughput, low latency, and flexible scalability as a cloud messaging service. No user deployment or maintenance is required, enabling easy and rapid cloud adoption.
     /// 
     /// ## Import
     /// 
@@ -23,43 +23,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq
     public partial class Instance : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 创建实例的主账号ID。
+        /// Main account ID used to create the instance.
         /// </summary>
         [Output("accountId")]
         public Output<string> AccountId { get; private set; } = null!;
 
         /// <summary>
-        /// 是否已开启公网解析功能。true：已开启, false：已关闭
+        /// Whether public DNS resolution is enabled. true: enabled, false: disabled.
         /// </summary>
         [Output("applyPrivateDnsToPublic")]
         public Output<bool> ApplyPrivateDnsToPublic { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的类型，即集群版或单机版。
+        /// Instance type, either cluster or standalone.
         /// </summary>
         [Output("archType")]
         public Output<string> ArchType { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的计费方式等计费信息。
+        /// Instance billing method and related billing information.
         /// </summary>
         [Output("chargeDetail")]
         public Output<Outputs.InstanceChargeDetail> ChargeDetail { get; private set; } = null!;
 
         /// <summary>
-        /// RabbitMQ实例的计算规格。
+        /// Compute specification of the RabbitMQ instance.
         /// </summary>
         [Output("computeSpec")]
         public Output<string> ComputeSpec { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的创建时间。
+        /// Instance creation time.
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// EIP的ID。
+        /// EIP ID.
         /// </summary>
         [Output("eipId")]
         public Output<string> EipId { get; private set; } = null!;
@@ -68,49 +68,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq
         public Output<ImmutableArray<Outputs.InstanceEndpoint>> Endpoints { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的简单描述。
+        /// Brief description of the instance.
         /// </summary>
         [Output("instanceDescription")]
         public Output<string> InstanceDescription { get; private set; } = null!;
 
         /// <summary>
-        /// RabbitMQ 实例 ID。
+        /// RabbitMQ instance ID.
         /// </summary>
         [Output("instanceId")]
         public Output<string> InstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// RabbitMQ 实例名称。
+        /// RabbitMQ instance name.
         /// </summary>
         [Output("instanceName")]
         public Output<string> InstanceName { get; private set; } = null!;
 
         /// <summary>
-        /// 实例状态。
+        /// Instance status.
         /// </summary>
         [Output("instanceStatus")]
         public Output<string> InstanceStatus { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启了云盘加密。
+        /// Whether cloud disk encryption is enabled.
         /// </summary>
         [Output("isEncrypted")]
         public Output<bool> IsEncrypted { get; private set; } = null!;
 
         /// <summary>
-        /// 实例所属的IAM项目。
+        /// IAM project to which the instance belongs.
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 实例总存储空间。单位为 GiB。
+        /// Total storage space of the instance, measured in GiB.
         /// </summary>
         [Output("storageSpace")]
         public Output<int> StorageSpace { get; private set; } = null!;
 
         /// <summary>
-        /// VPC的子网ID。
+        /// VPC subnet ID.
         /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
@@ -119,43 +119,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq
         public Output<ImmutableArray<Outputs.InstanceTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 实例已用存储空间。单位为 GiB。
+        /// Used storage space of the instance, measured in GiB.
         /// </summary>
         [Output("usedStorageSpace")]
         public Output<int> UsedStorageSpace { get; private set; } = null!;
 
         /// <summary>
-        /// RabbitMQ WebUI管理员账号名。
+        /// RabbitMQ WebUI administrator account name.
         /// </summary>
         [Output("userName")]
         public Output<string> UserName { get; private set; } = null!;
 
         /// <summary>
-        /// RabbitMQ WebUI管理员密码。
+        /// RabbitMQ WebUI administrator password.
         /// </summary>
         [Output("userPassword")]
         public Output<string> UserPassword { get; private set; } = null!;
 
         /// <summary>
-        /// 支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
+        /// Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
         /// </summary>
         [Output("version")]
         public Output<string> Version { get; private set; } = null!;
 
         /// <summary>
-        /// 私有网络（VPC）ID。
+        /// Private network (VPC) ID.
         /// </summary>
         [Output("vpcId")]
         public Output<string> VpcId { get; private set; } = null!;
 
         /// <summary>
-        /// 可用区的描述信息。
+        /// Description of the availability zone.
         /// </summary>
         [Output("zoneDescription")]
         public Output<string> ZoneDescription { get; private set; } = null!;
 
         /// <summary>
-        /// 实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
+        /// Availability zone ID where the instance is located. For high-availability instances across AZs, multiple availability zone IDs are returned.
         /// </summary>
         [Output("zoneId")]
         public Output<string> ZoneId { get; private set; } = null!;
@@ -208,49 +208,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq
     public sealed class InstanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 实例的计费方式等计费信息。
+        /// Instance billing method and related billing information.
         /// </summary>
         [Input("chargeDetail")]
         public Input<Inputs.InstanceChargeDetailArgs>? ChargeDetail { get; set; }
 
         /// <summary>
-        /// RabbitMQ实例的计算规格。
+        /// Compute specification of the RabbitMQ instance.
         /// </summary>
         [Input("computeSpec", required: true)]
         public Input<string> ComputeSpec { get; set; } = null!;
 
         /// <summary>
-        /// EIP的ID。
+        /// EIP ID.
         /// </summary>
         [Input("eipId")]
         public Input<string>? EipId { get; set; }
 
         /// <summary>
-        /// 实例的简单描述。
+        /// Brief description of the instance.
         /// </summary>
         [Input("instanceDescription")]
         public Input<string>? InstanceDescription { get; set; }
 
         /// <summary>
-        /// RabbitMQ 实例名称。
+        /// RabbitMQ instance name.
         /// </summary>
         [Input("instanceName")]
         public Input<string>? InstanceName { get; set; }
 
         /// <summary>
-        /// 实例所属的IAM项目。
+        /// IAM project to which the instance belongs.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 实例总存储空间。单位为 GiB。
+        /// Total storage space of the instance, measured in GiB.
         /// </summary>
         [Input("storageSpace", required: true)]
         public Input<int> StorageSpace { get; set; } = null!;
 
         /// <summary>
-        /// VPC的子网ID。
+        /// VPC subnet ID.
         /// </summary>
         [Input("subnetId", required: true)]
         public Input<string> SubnetId { get; set; } = null!;
@@ -264,31 +264,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq
         }
 
         /// <summary>
-        /// RabbitMQ WebUI管理员账号名。
+        /// RabbitMQ WebUI administrator account name.
         /// </summary>
         [Input("userName", required: true)]
         public Input<string> UserName { get; set; } = null!;
 
         /// <summary>
-        /// RabbitMQ WebUI管理员密码。
+        /// RabbitMQ WebUI administrator password.
         /// </summary>
         [Input("userPassword", required: true)]
         public Input<string> UserPassword { get; set; } = null!;
 
         /// <summary>
-        /// 支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
+        /// Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
         /// </summary>
         [Input("version", required: true)]
         public Input<string> Version { get; set; } = null!;
 
         /// <summary>
-        /// 私有网络（VPC）ID。
+        /// Private network (VPC) ID.
         /// </summary>
         [Input("vpcId", required: true)]
         public Input<string> VpcId { get; set; } = null!;
 
         /// <summary>
-        /// 实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
+        /// Availability zone ID where the instance is located. For high-availability instances across AZs, multiple availability zone IDs are returned.
         /// </summary>
         [Input("zoneId", required: true)]
         public Input<string> ZoneId { get; set; } = null!;
@@ -302,43 +302,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq
     public sealed class InstanceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 创建实例的主账号ID。
+        /// Main account ID used to create the instance.
         /// </summary>
         [Input("accountId")]
         public Input<string>? AccountId { get; set; }
 
         /// <summary>
-        /// 是否已开启公网解析功能。true：已开启, false：已关闭
+        /// Whether public DNS resolution is enabled. true: enabled, false: disabled.
         /// </summary>
         [Input("applyPrivateDnsToPublic")]
         public Input<bool>? ApplyPrivateDnsToPublic { get; set; }
 
         /// <summary>
-        /// 实例的类型，即集群版或单机版。
+        /// Instance type, either cluster or standalone.
         /// </summary>
         [Input("archType")]
         public Input<string>? ArchType { get; set; }
 
         /// <summary>
-        /// 实例的计费方式等计费信息。
+        /// Instance billing method and related billing information.
         /// </summary>
         [Input("chargeDetail")]
         public Input<Inputs.InstanceChargeDetailGetArgs>? ChargeDetail { get; set; }
 
         /// <summary>
-        /// RabbitMQ实例的计算规格。
+        /// Compute specification of the RabbitMQ instance.
         /// </summary>
         [Input("computeSpec")]
         public Input<string>? ComputeSpec { get; set; }
 
         /// <summary>
-        /// 实例的创建时间。
+        /// Instance creation time.
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// EIP的ID。
+        /// EIP ID.
         /// </summary>
         [Input("eipId")]
         public Input<string>? EipId { get; set; }
@@ -352,49 +352,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq
         }
 
         /// <summary>
-        /// 实例的简单描述。
+        /// Brief description of the instance.
         /// </summary>
         [Input("instanceDescription")]
         public Input<string>? InstanceDescription { get; set; }
 
         /// <summary>
-        /// RabbitMQ 实例 ID。
+        /// RabbitMQ instance ID.
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// RabbitMQ 实例名称。
+        /// RabbitMQ instance name.
         /// </summary>
         [Input("instanceName")]
         public Input<string>? InstanceName { get; set; }
 
         /// <summary>
-        /// 实例状态。
+        /// Instance status.
         /// </summary>
         [Input("instanceStatus")]
         public Input<string>? InstanceStatus { get; set; }
 
         /// <summary>
-        /// 是否开启了云盘加密。
+        /// Whether cloud disk encryption is enabled.
         /// </summary>
         [Input("isEncrypted")]
         public Input<bool>? IsEncrypted { get; set; }
 
         /// <summary>
-        /// 实例所属的IAM项目。
+        /// IAM project to which the instance belongs.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 实例总存储空间。单位为 GiB。
+        /// Total storage space of the instance, measured in GiB.
         /// </summary>
         [Input("storageSpace")]
         public Input<int>? StorageSpace { get; set; }
 
         /// <summary>
-        /// VPC的子网ID。
+        /// VPC subnet ID.
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
@@ -408,43 +408,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq
         }
 
         /// <summary>
-        /// 实例已用存储空间。单位为 GiB。
+        /// Used storage space of the instance, measured in GiB.
         /// </summary>
         [Input("usedStorageSpace")]
         public Input<int>? UsedStorageSpace { get; set; }
 
         /// <summary>
-        /// RabbitMQ WebUI管理员账号名。
+        /// RabbitMQ WebUI administrator account name.
         /// </summary>
         [Input("userName")]
         public Input<string>? UserName { get; set; }
 
         /// <summary>
-        /// RabbitMQ WebUI管理员密码。
+        /// RabbitMQ WebUI administrator password.
         /// </summary>
         [Input("userPassword")]
         public Input<string>? UserPassword { get; set; }
 
         /// <summary>
-        /// 支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
+        /// Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
         /// </summary>
         [Input("version")]
         public Input<string>? Version { get; set; }
 
         /// <summary>
-        /// 私有网络（VPC）ID。
+        /// Private network (VPC) ID.
         /// </summary>
         [Input("vpcId")]
         public Input<string>? VpcId { get; set; }
 
         /// <summary>
-        /// 可用区的描述信息。
+        /// Description of the availability zone.
         /// </summary>
         [Input("zoneDescription")]
         public Input<string>? ZoneDescription { get; set; }
 
         /// <summary>
-        /// 实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
+        /// Availability zone ID where the instance is located. For high-availability instances across AZs, multiple availability zone IDs are returned.
         /// </summary>
         [Input("zoneId")]
         public Input<string>? ZoneId { get; set; }

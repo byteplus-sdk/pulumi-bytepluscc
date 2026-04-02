@@ -17,7 +17,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Inputs
         private InputList<string>? _values;
 
         /// <summary>
-        /// 转发规则的域名，支持泛域名和精确域名。
+        /// Domain name of the forwarding rule. Supports wildcard and exact domains.
         /// </summary>
         public InputList<string> Values
         {

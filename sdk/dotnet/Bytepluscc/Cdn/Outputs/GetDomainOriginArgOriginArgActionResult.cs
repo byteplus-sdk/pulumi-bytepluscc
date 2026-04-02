@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class GetDomainOriginArgOriginArgActionResult
     {
         /// <summary>
-        /// 表示一个操作列表。这些操作定义了 CDN 如何设置回源请求中的查询参数。当前，列表中只能包含一个操作。
+        /// Indicates a list of operations. These operations define how the CDN sets query parameters in origin requests. Currently, only one operation can be included in the list.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainOriginArgOriginArgActionOriginArgComponentResult> OriginArgComponents;
 

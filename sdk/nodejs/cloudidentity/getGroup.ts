@@ -31,23 +31,23 @@ export interface GetGroupArgs {
  */
 export interface GetGroupResult {
     /**
-     * 创建时间。
+     * Creation Time
      */
     readonly createdTime: string;
     /**
-     * 描述。
+     * Description
      */
     readonly description: string;
     /**
-     * 显示名。
+     * Display Name
      */
     readonly displayName: string;
     /**
-     * 用户组id。
+     * User Group ID
      */
     readonly groupId: string;
     /**
-     * 用户组名称。
+     * User Group Name
      */
     readonly groupName: string;
     /**
@@ -55,19 +55,19 @@ export interface GetGroupResult {
      */
     readonly id: string;
     /**
-     * 用户组类型。
+     * User Group Type
      */
     readonly joinType: string;
     /**
-     * 用户组成员列表
+     * User Group Member List
      */
     readonly members: outputs.cloudidentity.GetGroupMember[];
     /**
-     * 用户组来源。
+     * User Group Source
      */
     readonly source: string;
     /**
-     * 更新时间。
+     * Update Time
      */
     readonly updatedTime: string;
 }

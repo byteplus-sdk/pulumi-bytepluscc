@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
 {
     /// <summary>
-    /// 伸缩规则用于定义触发扩缩容行为的条件和方式，包括规则类型、触发时间、伸缩行为、冷却时间等。在同一个伸缩组中，您可以启用多条伸缩规则，满足任意类型时均会执行伸缩动作。但当同一时间满足多个类型时，将优先执行手动触发的伸缩行为。
+    /// Scaling rules define the conditions and methods for triggering scaling actions, including rule type, trigger time, scaling action, cooldown time. You can enable multiple scaling rules within the same scaling group. Scaling actions are executed when any rule type is met. If multiple rule types are met at the same time, manual scaling actions take priority.
     /// 
     /// ## Import
     /// 
@@ -23,67 +23,67 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
     public partial class ScalingPolicy : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 伸缩规则的伸缩行为，适用于简单规则和步进规则，QuantityChangeInCapacity：增加或减少指定数量的实例。PercentChangeInCapacity：增加或减少指定比例的实例。TotalCapacity： 将当前伸缩组的实例数量调整到指定数量。
+        /// Scaling actions for the scaling rule, applicable to simple and step rules. QuantityChangeInCapacity: increase or decrease a specified number of instances. PercentChangeInCapacity: increase or decrease a specified percentage of instances. TotalCapacity: adjust the number of instances in the current scaling group to the specified value.
         /// </summary>
         [Output("adjustmentType")]
         public Output<string> AdjustmentType { get; private set; } = null!;
 
         /// <summary>
-        /// 伸缩行为的调整数值，适用于简单规则和步进规则，当AdjustmentType参数取值为QuantityChangeInCapacity时：-100   - 100，不允许为0，单位：个。当AdjustmentType参数取值为PercentChangeInCapacity时：-100   - 10000，不允许为0，单位：%。当AdjustmentType参数取值为TotalCapacity时：默认为0   - 100，单位：个。
+        /// Adjustment value for scaling actions, applicable to simple and step rules. When AdjustmentType is set to QuantityChangeInCapacity: -100 to 100, cannot be 0, unit: instances. When AdjustmentType is set to PercentChangeInCapacity: -100 to 10000, cannot be 0, unit: %. When AdjustmentType is set to TotalCapacity: defaults to 0 to 100, unit: instances.
         /// </summary>
         [Output("adjustmentValue")]
         public Output<int> AdjustmentValue { get; private set; } = null!;
 
         /// <summary>
-        /// 报警任务的详细信息。
+        /// Detailed information about the alarm task.
         /// </summary>
         [Output("alarmPolicy")]
         public Output<Outputs.ScalingPolicyAlarmPolicy> AlarmPolicy { get; private set; } = null!;
 
         /// <summary>
-        /// 伸缩规则的冷却时间。 取值：0-86400，单位：秒，不填则默认使用伸缩组的冷却时间。
+        /// Cooldown time for scaling rules. Value: 0–86400, unit: seconds. If not specified, the scaling group's cooldown time is used by default.
         /// </summary>
         [Output("cooldown")]
         public Output<int> Cooldown { get; private set; } = null!;
 
         /// <summary>
-        /// 伸缩规则的状态。取值：true：启用。false：停用。需保证伸缩组的状态为Active。
+        /// Status of the scaling rule. Options: true: enabled. false: disabled. The scaling group must be in Active status.
         /// </summary>
         [Output("isEnabledPolicy")]
         public Output<bool> IsEnabledPolicy { get; private set; } = null!;
 
         /// <summary>
-        /// 伸缩组ID。
+        /// Scaling group ID.
         /// </summary>
         [Output("scalingGroupId")]
         public Output<string> ScalingGroupId { get; private set; } = null!;
 
         /// <summary>
-        /// 伸缩规则ID。
+        /// Scaling rule ID.
         /// </summary>
         [Output("scalingPolicyId")]
         public Output<string> ScalingPolicyId { get; private set; } = null!;
 
         /// <summary>
-        /// 伸缩规则名称。
+        /// Name of the scaling rule.
         /// </summary>
         [Output("scalingPolicyName")]
         public Output<string> ScalingPolicyName { get; private set; } = null!;
 
         /// <summary>
-        /// 伸缩规则的类型，取值：Scheduled：定时任务。Recurrence：周期任务。Alarm：报警任务。
+        /// Type of scaling rule. Options: Scheduled: scheduled task. Recurrence: recurring task. Alarm: alarm task.
         /// </summary>
         [Output("scalingPolicyType")]
         public Output<string> ScalingPolicyType { get; private set; } = null!;
 
         /// <summary>
-        /// 定时任务/周期任务的详细信息。
+        /// Detailed information for scheduled/recurring tasks.
         /// </summary>
         [Output("scheduledPolicy")]
         public Output<Outputs.ScalingPolicyScheduledPolicy> ScheduledPolicy { get; private set; } = null!;
 
         /// <summary>
-        /// 伸缩规则的状态。取值：Active：已启用。InActive：已停用。需保证伸缩组的状态为Active。
+        /// Status of the scaling rule. Options: Active: enabled. Inactive: disabled. The scaling group must be in Active status.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -136,55 +136,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
     public sealed class ScalingPolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 伸缩规则的伸缩行为，适用于简单规则和步进规则，QuantityChangeInCapacity：增加或减少指定数量的实例。PercentChangeInCapacity：增加或减少指定比例的实例。TotalCapacity： 将当前伸缩组的实例数量调整到指定数量。
+        /// Scaling actions for the scaling rule, applicable to simple and step rules. QuantityChangeInCapacity: increase or decrease a specified number of instances. PercentChangeInCapacity: increase or decrease a specified percentage of instances. TotalCapacity: adjust the number of instances in the current scaling group to the specified value.
         /// </summary>
         [Input("adjustmentType")]
         public Input<string>? AdjustmentType { get; set; }
 
         /// <summary>
-        /// 伸缩行为的调整数值，适用于简单规则和步进规则，当AdjustmentType参数取值为QuantityChangeInCapacity时：-100   - 100，不允许为0，单位：个。当AdjustmentType参数取值为PercentChangeInCapacity时：-100   - 10000，不允许为0，单位：%。当AdjustmentType参数取值为TotalCapacity时：默认为0   - 100，单位：个。
+        /// Adjustment value for scaling actions, applicable to simple and step rules. When AdjustmentType is set to QuantityChangeInCapacity: -100 to 100, cannot be 0, unit: instances. When AdjustmentType is set to PercentChangeInCapacity: -100 to 10000, cannot be 0, unit: %. When AdjustmentType is set to TotalCapacity: defaults to 0 to 100, unit: instances.
         /// </summary>
         [Input("adjustmentValue")]
         public Input<int>? AdjustmentValue { get; set; }
 
         /// <summary>
-        /// 报警任务的详细信息。
+        /// Detailed information about the alarm task.
         /// </summary>
         [Input("alarmPolicy")]
         public Input<Inputs.ScalingPolicyAlarmPolicyArgs>? AlarmPolicy { get; set; }
 
         /// <summary>
-        /// 伸缩规则的冷却时间。 取值：0-86400，单位：秒，不填则默认使用伸缩组的冷却时间。
+        /// Cooldown time for scaling rules. Value: 0–86400, unit: seconds. If not specified, the scaling group's cooldown time is used by default.
         /// </summary>
         [Input("cooldown")]
         public Input<int>? Cooldown { get; set; }
 
         /// <summary>
-        /// 伸缩规则的状态。取值：true：启用。false：停用。需保证伸缩组的状态为Active。
+        /// Status of the scaling rule. Options: true: enabled. false: disabled. The scaling group must be in Active status.
         /// </summary>
         [Input("isEnabledPolicy")]
         public Input<bool>? IsEnabledPolicy { get; set; }
 
         /// <summary>
-        /// 伸缩组ID。
+        /// Scaling group ID.
         /// </summary>
         [Input("scalingGroupId", required: true)]
         public Input<string> ScalingGroupId { get; set; } = null!;
 
         /// <summary>
-        /// 伸缩规则名称。
+        /// Name of the scaling rule.
         /// </summary>
         [Input("scalingPolicyName", required: true)]
         public Input<string> ScalingPolicyName { get; set; } = null!;
 
         /// <summary>
-        /// 伸缩规则的类型，取值：Scheduled：定时任务。Recurrence：周期任务。Alarm：报警任务。
+        /// Type of scaling rule. Options: Scheduled: scheduled task. Recurrence: recurring task. Alarm: alarm task.
         /// </summary>
         [Input("scalingPolicyType", required: true)]
         public Input<string> ScalingPolicyType { get; set; } = null!;
 
         /// <summary>
-        /// 定时任务/周期任务的详细信息。
+        /// Detailed information for scheduled/recurring tasks.
         /// </summary>
         [Input("scheduledPolicy")]
         public Input<Inputs.ScalingPolicyScheduledPolicyArgs>? ScheduledPolicy { get; set; }
@@ -198,67 +198,67 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
     public sealed class ScalingPolicyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 伸缩规则的伸缩行为，适用于简单规则和步进规则，QuantityChangeInCapacity：增加或减少指定数量的实例。PercentChangeInCapacity：增加或减少指定比例的实例。TotalCapacity： 将当前伸缩组的实例数量调整到指定数量。
+        /// Scaling actions for the scaling rule, applicable to simple and step rules. QuantityChangeInCapacity: increase or decrease a specified number of instances. PercentChangeInCapacity: increase or decrease a specified percentage of instances. TotalCapacity: adjust the number of instances in the current scaling group to the specified value.
         /// </summary>
         [Input("adjustmentType")]
         public Input<string>? AdjustmentType { get; set; }
 
         /// <summary>
-        /// 伸缩行为的调整数值，适用于简单规则和步进规则，当AdjustmentType参数取值为QuantityChangeInCapacity时：-100   - 100，不允许为0，单位：个。当AdjustmentType参数取值为PercentChangeInCapacity时：-100   - 10000，不允许为0，单位：%。当AdjustmentType参数取值为TotalCapacity时：默认为0   - 100，单位：个。
+        /// Adjustment value for scaling actions, applicable to simple and step rules. When AdjustmentType is set to QuantityChangeInCapacity: -100 to 100, cannot be 0, unit: instances. When AdjustmentType is set to PercentChangeInCapacity: -100 to 10000, cannot be 0, unit: %. When AdjustmentType is set to TotalCapacity: defaults to 0 to 100, unit: instances.
         /// </summary>
         [Input("adjustmentValue")]
         public Input<int>? AdjustmentValue { get; set; }
 
         /// <summary>
-        /// 报警任务的详细信息。
+        /// Detailed information about the alarm task.
         /// </summary>
         [Input("alarmPolicy")]
         public Input<Inputs.ScalingPolicyAlarmPolicyGetArgs>? AlarmPolicy { get; set; }
 
         /// <summary>
-        /// 伸缩规则的冷却时间。 取值：0-86400，单位：秒，不填则默认使用伸缩组的冷却时间。
+        /// Cooldown time for scaling rules. Value: 0–86400, unit: seconds. If not specified, the scaling group's cooldown time is used by default.
         /// </summary>
         [Input("cooldown")]
         public Input<int>? Cooldown { get; set; }
 
         /// <summary>
-        /// 伸缩规则的状态。取值：true：启用。false：停用。需保证伸缩组的状态为Active。
+        /// Status of the scaling rule. Options: true: enabled. false: disabled. The scaling group must be in Active status.
         /// </summary>
         [Input("isEnabledPolicy")]
         public Input<bool>? IsEnabledPolicy { get; set; }
 
         /// <summary>
-        /// 伸缩组ID。
+        /// Scaling group ID.
         /// </summary>
         [Input("scalingGroupId")]
         public Input<string>? ScalingGroupId { get; set; }
 
         /// <summary>
-        /// 伸缩规则ID。
+        /// Scaling rule ID.
         /// </summary>
         [Input("scalingPolicyId")]
         public Input<string>? ScalingPolicyId { get; set; }
 
         /// <summary>
-        /// 伸缩规则名称。
+        /// Name of the scaling rule.
         /// </summary>
         [Input("scalingPolicyName")]
         public Input<string>? ScalingPolicyName { get; set; }
 
         /// <summary>
-        /// 伸缩规则的类型，取值：Scheduled：定时任务。Recurrence：周期任务。Alarm：报警任务。
+        /// Type of scaling rule. Options: Scheduled: scheduled task. Recurrence: recurring task. Alarm: alarm task.
         /// </summary>
         [Input("scalingPolicyType")]
         public Input<string>? ScalingPolicyType { get; set; }
 
         /// <summary>
-        /// 定时任务/周期任务的详细信息。
+        /// Detailed information for scheduled/recurring tasks.
         /// </summary>
         [Input("scheduledPolicy")]
         public Input<Inputs.ScalingPolicyScheduledPolicyGetArgs>? ScheduledPolicy { get; set; }
 
         /// <summary>
-        /// 伸缩规则的状态。取值：Active：已启用。InActive：已停用。需保证伸缩组的状态为Active。
+        /// Status of the scaling rule. Options: Active: enabled. Inactive: disabled. The scaling group must be in Active status.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }

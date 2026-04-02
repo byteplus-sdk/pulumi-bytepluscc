@@ -16,14 +16,14 @@ public final class SnatentryState extends com.pulumi.resources.ResourceArgs {
     public static final SnatentryState Empty = new SnatentryState();
 
     /**
-     * SNAT规则关联的公网IP的IP地址。返回单个公网IP的IP地址。 返回多个公网IP的IP地址。
+     * IP address of the public IP associated with the SNAT rule. Returns the IP address for a single public IP. Returns IP addresses for multiple public IPs.
      * 
      */
     @Import(name="eipAddress")
     private @Nullable Output<String> eipAddress;
 
     /**
-     * @return SNAT规则关联的公网IP的IP地址。返回单个公网IP的IP地址。 返回多个公网IP的IP地址。
+     * @return IP address of the public IP associated with the SNAT rule. Returns the IP address for a single public IP. Returns IP addresses for multiple public IPs.
      * 
      */
     public Optional<Output<String>> eipAddress() {
@@ -31,14 +31,14 @@ public final class SnatentryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * SNAT规则关联的公网IP的ID。返回单个公网IP的ID。 返回多个公网IP的ID。
+     * ID of the public IP associated with the SNAT rule. Returns the ID for a single public IP. Returns IDs for multiple public IPs.
      * 
      */
     @Import(name="eipId")
     private @Nullable Output<String> eipId;
 
     /**
-     * @return SNAT规则关联的公网IP的ID。返回单个公网IP的ID。 返回多个公网IP的ID。
+     * @return ID of the public IP associated with the SNAT rule. Returns the ID for a single public IP. Returns IDs for multiple public IPs.
      * 
      */
     public Optional<Output<String>> eipId() {
@@ -46,14 +46,14 @@ public final class SnatentryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * SNAT规则所属NAT网关的ID。
+     * ID of the NAT gateway associated with the SNAT rule
      * 
      */
     @Import(name="natGatewayId")
     private @Nullable Output<String> natGatewayId;
 
     /**
-     * @return SNAT规则所属NAT网关的ID。
+     * @return ID of the NAT gateway associated with the SNAT rule
      * 
      */
     public Optional<Output<String>> natGatewayId() {
@@ -61,14 +61,14 @@ public final class SnatentryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 私网NAT网关的中转IP的ID。
+     * ID of the transit IP for the private NAT gateway
      * 
      */
     @Import(name="natIpId")
     private @Nullable Output<String> natIpId;
 
     /**
-     * @return 私网NAT网关的中转IP的ID。
+     * @return ID of the transit IP for the private NAT gateway
      * 
      */
     public Optional<Output<String>> natIpId() {
@@ -76,14 +76,14 @@ public final class SnatentryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * SNAT规则的ID。
+     * ID of the SNAT rule
      * 
      */
     @Import(name="snatEntryId")
     private @Nullable Output<String> snatEntryId;
 
     /**
-     * @return SNAT规则的ID。
+     * @return ID of the SNAT rule
      * 
      */
     public Optional<Output<String>> snatEntryId() {
@@ -91,14 +91,14 @@ public final class SnatentryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * SNAT规则的名称。
+     * Name of the SNAT rule
      * 
      */
     @Import(name="snatEntryName")
     private @Nullable Output<String> snatEntryName;
 
     /**
-     * @return SNAT规则的名称。
+     * @return Name of the SNAT rule
      * 
      */
     public Optional<Output<String>> snatEntryName() {
@@ -106,14 +106,14 @@ public final class SnatentryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * SNAT规则对应的网段。
+     * Network segment corresponding to the SNAT rule
      * 
      */
     @Import(name="sourceCidr")
     private @Nullable Output<String> sourceCidr;
 
     /**
-     * @return SNAT规则对应的网段。
+     * @return Network segment corresponding to the SNAT rule
      * 
      */
     public Optional<Output<String>> sourceCidr() {
@@ -121,14 +121,14 @@ public final class SnatentryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * SNAT规则的状态。Creating：创建中。Deleting：删除中。Available：可用。
+     * Status of the SNAT rule. Creating: being created. Deleting: being deleted. Available: available.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return SNAT规则的状态。Creating：创建中。Deleting：删除中。Available：可用。
+     * @return Status of the SNAT rule. Creating: being created. Deleting: being deleted. Available: available.
      * 
      */
     public Optional<Output<String>> status() {
@@ -136,14 +136,14 @@ public final class SnatentryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * SNAT规则关联子网的ID。
+     * ID of the subnet associated with the SNAT rule
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return SNAT规则关联子网的ID。
+     * @return ID of the subnet associated with the SNAT rule
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -183,7 +183,7 @@ public final class SnatentryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eipAddress SNAT规则关联的公网IP的IP地址。返回单个公网IP的IP地址。 返回多个公网IP的IP地址。
+         * @param eipAddress IP address of the public IP associated with the SNAT rule. Returns the IP address for a single public IP. Returns IP addresses for multiple public IPs.
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class SnatentryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eipAddress SNAT规则关联的公网IP的IP地址。返回单个公网IP的IP地址。 返回多个公网IP的IP地址。
+         * @param eipAddress IP address of the public IP associated with the SNAT rule. Returns the IP address for a single public IP. Returns IP addresses for multiple public IPs.
          * 
          * @return builder
          * 
@@ -204,7 +204,7 @@ public final class SnatentryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eipId SNAT规则关联的公网IP的ID。返回单个公网IP的ID。 返回多个公网IP的ID。
+         * @param eipId ID of the public IP associated with the SNAT rule. Returns the ID for a single public IP. Returns IDs for multiple public IPs.
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class SnatentryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eipId SNAT规则关联的公网IP的ID。返回单个公网IP的ID。 返回多个公网IP的ID。
+         * @param eipId ID of the public IP associated with the SNAT rule. Returns the ID for a single public IP. Returns IDs for multiple public IPs.
          * 
          * @return builder
          * 
@@ -225,7 +225,7 @@ public final class SnatentryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param natGatewayId SNAT规则所属NAT网关的ID。
+         * @param natGatewayId ID of the NAT gateway associated with the SNAT rule
          * 
          * @return builder
          * 
@@ -236,7 +236,7 @@ public final class SnatentryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param natGatewayId SNAT规则所属NAT网关的ID。
+         * @param natGatewayId ID of the NAT gateway associated with the SNAT rule
          * 
          * @return builder
          * 
@@ -246,7 +246,7 @@ public final class SnatentryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param natIpId 私网NAT网关的中转IP的ID。
+         * @param natIpId ID of the transit IP for the private NAT gateway
          * 
          * @return builder
          * 
@@ -257,7 +257,7 @@ public final class SnatentryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param natIpId 私网NAT网关的中转IP的ID。
+         * @param natIpId ID of the transit IP for the private NAT gateway
          * 
          * @return builder
          * 
@@ -267,7 +267,7 @@ public final class SnatentryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snatEntryId SNAT规则的ID。
+         * @param snatEntryId ID of the SNAT rule
          * 
          * @return builder
          * 
@@ -278,7 +278,7 @@ public final class SnatentryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snatEntryId SNAT规则的ID。
+         * @param snatEntryId ID of the SNAT rule
          * 
          * @return builder
          * 
@@ -288,7 +288,7 @@ public final class SnatentryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snatEntryName SNAT规则的名称。
+         * @param snatEntryName Name of the SNAT rule
          * 
          * @return builder
          * 
@@ -299,7 +299,7 @@ public final class SnatentryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param snatEntryName SNAT规则的名称。
+         * @param snatEntryName Name of the SNAT rule
          * 
          * @return builder
          * 
@@ -309,7 +309,7 @@ public final class SnatentryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceCidr SNAT规则对应的网段。
+         * @param sourceCidr Network segment corresponding to the SNAT rule
          * 
          * @return builder
          * 
@@ -320,7 +320,7 @@ public final class SnatentryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceCidr SNAT规则对应的网段。
+         * @param sourceCidr Network segment corresponding to the SNAT rule
          * 
          * @return builder
          * 
@@ -330,7 +330,7 @@ public final class SnatentryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status SNAT规则的状态。Creating：创建中。Deleting：删除中。Available：可用。
+         * @param status Status of the SNAT rule. Creating: being created. Deleting: being deleted. Available: available.
          * 
          * @return builder
          * 
@@ -341,7 +341,7 @@ public final class SnatentryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status SNAT规则的状态。Creating：创建中。Deleting：删除中。Available：可用。
+         * @param status Status of the SNAT rule. Creating: being created. Deleting: being deleted. Available: available.
          * 
          * @return builder
          * 
@@ -351,7 +351,7 @@ public final class SnatentryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId SNAT规则关联子网的ID。
+         * @param subnetId ID of the subnet associated with the SNAT rule
          * 
          * @return builder
          * 
@@ -362,7 +362,7 @@ public final class SnatentryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId SNAT规则关联子网的ID。
+         * @param subnetId ID of the subnet associated with the SNAT rule
          * 
          * @return builder
          * 

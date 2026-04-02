@@ -17,14 +17,14 @@ public final class RuleRuleConditionPathConfigArgs extends com.pulumi.resources.
     public static final RuleRuleConditionPathConfigArgs Empty = new RuleRuleConditionPathConfigArgs();
 
     /**
-     * 转发规则的URL，仅支持绝对路径。
+     * Forwarding rule URL. Only absolute paths are supported.
      * 
      */
     @Import(name="values")
     private @Nullable Output<List<String>> values;
 
     /**
-     * @return 转发规则的URL，仅支持绝对路径。
+     * @return Forwarding rule URL. Only absolute paths are supported.
      * 
      */
     public Optional<Output<List<String>>> values() {
@@ -56,7 +56,7 @@ public final class RuleRuleConditionPathConfigArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param values 转发规则的URL，仅支持绝对路径。
+         * @param values Forwarding rule URL. Only absolute paths are supported.
          * 
          * @return builder
          * 
@@ -67,7 +67,7 @@ public final class RuleRuleConditionPathConfigArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param values 转发规则的URL，仅支持绝对路径。
+         * @param values Forwarding rule URL. Only absolute paths are supported.
          * 
          * @return builder
          * 
@@ -77,7 +77,7 @@ public final class RuleRuleConditionPathConfigArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param values 转发规则的URL，仅支持绝对路径。
+         * @param values Forwarding rule URL. Only absolute paths are supported.
          * 
          * @return builder
          * 

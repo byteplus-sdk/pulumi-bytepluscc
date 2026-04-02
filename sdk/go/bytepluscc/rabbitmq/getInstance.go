@@ -30,55 +30,55 @@ type LookupInstanceArgs struct {
 
 // A collection of values returned by getInstance.
 type LookupInstanceResult struct {
-	// 创建实例的主账号ID。
+	// Main account ID used to create the instance.
 	AccountId string `pulumi:"accountId"`
-	// 是否已开启公网解析功能。true：已开启, false：已关闭
+	// Whether public DNS resolution is enabled. true: enabled, false: disabled.
 	ApplyPrivateDnsToPublic bool `pulumi:"applyPrivateDnsToPublic"`
-	// 实例的类型，即集群版或单机版。
+	// Instance type, either cluster or standalone.
 	ArchType string `pulumi:"archType"`
-	// 实例的计费方式等计费信息。
+	// Instance billing method and related billing information.
 	ChargeDetail GetInstanceChargeDetail `pulumi:"chargeDetail"`
-	// RabbitMQ实例的计算规格。
+	// Compute specification of the RabbitMQ instance.
 	ComputeSpec string `pulumi:"computeSpec"`
-	// 实例的创建时间。
+	// Instance creation time.
 	CreatedTime string `pulumi:"createdTime"`
-	// EIP的ID。
+	// EIP ID.
 	EipId string `pulumi:"eipId"`
-	// 实例的连接信息。
+	// Instance connection information.
 	Endpoints []GetInstanceEndpoint `pulumi:"endpoints"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 实例的简单描述。
+	// Brief description of the instance.
 	InstanceDescription string `pulumi:"instanceDescription"`
-	// RabbitMQ 实例 ID。
+	// RabbitMQ instance ID.
 	InstanceId string `pulumi:"instanceId"`
-	// RabbitMQ 实例名称。
+	// RabbitMQ instance name.
 	InstanceName string `pulumi:"instanceName"`
-	// 实例状态。
+	// Instance status.
 	InstanceStatus string `pulumi:"instanceStatus"`
-	// 是否开启了云盘加密。
+	// Whether cloud disk encryption is enabled.
 	IsEncrypted bool `pulumi:"isEncrypted"`
-	// 实例所属的IAM项目。
+	// IAM project to which the instance belongs.
 	ProjectName string `pulumi:"projectName"`
-	// 实例总存储空间。单位为 GiB。
+	// Total storage space of the instance, measured in GiB.
 	StorageSpace int `pulumi:"storageSpace"`
-	// VPC的子网ID。
+	// VPC subnet ID.
 	SubnetId string `pulumi:"subnetId"`
-	// 实例绑定的标签。
+	// Tags bound to the instance.
 	Tags []GetInstanceTag `pulumi:"tags"`
-	// 实例已用存储空间。单位为 GiB。
+	// Used storage space of the instance, measured in GiB.
 	UsedStorageSpace int `pulumi:"usedStorageSpace"`
-	// RabbitMQ WebUI管理员账号名。
+	// RabbitMQ WebUI administrator account name.
 	UserName string `pulumi:"userName"`
-	// RabbitMQ WebUI管理员密码。
+	// RabbitMQ WebUI administrator password.
 	UserPassword string `pulumi:"userPassword"`
-	// 支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
+	// Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
 	Version string `pulumi:"version"`
-	// 私有网络（VPC）ID。
+	// Private network (VPC) ID.
 	VpcId string `pulumi:"vpcId"`
-	// 可用区的描述信息。
+	// Description of the availability zone.
 	ZoneDescription string `pulumi:"zoneDescription"`
-	// 实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
+	// Availability zone ID where the instance is located. For high-availability instances across AZs, multiple availability zone IDs are returned.
 	ZoneId string `pulumi:"zoneId"`
 }
 
@@ -116,42 +116,42 @@ func (o LookupInstanceResultOutput) ToLookupInstanceResultOutputWithContext(ctx 
 	return o
 }
 
-// 创建实例的主账号ID。
+// Main account ID used to create the instance.
 func (o LookupInstanceResultOutput) AccountId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.AccountId }).(pulumi.StringOutput)
 }
 
-// 是否已开启公网解析功能。true：已开启, false：已关闭
+// Whether public DNS resolution is enabled. true: enabled, false: disabled.
 func (o LookupInstanceResultOutput) ApplyPrivateDnsToPublic() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupInstanceResult) bool { return v.ApplyPrivateDnsToPublic }).(pulumi.BoolOutput)
 }
 
-// 实例的类型，即集群版或单机版。
+// Instance type, either cluster or standalone.
 func (o LookupInstanceResultOutput) ArchType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ArchType }).(pulumi.StringOutput)
 }
 
-// 实例的计费方式等计费信息。
+// Instance billing method and related billing information.
 func (o LookupInstanceResultOutput) ChargeDetail() GetInstanceChargeDetailOutput {
 	return o.ApplyT(func(v LookupInstanceResult) GetInstanceChargeDetail { return v.ChargeDetail }).(GetInstanceChargeDetailOutput)
 }
 
-// RabbitMQ实例的计算规格。
+// Compute specification of the RabbitMQ instance.
 func (o LookupInstanceResultOutput) ComputeSpec() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ComputeSpec }).(pulumi.StringOutput)
 }
 
-// 实例的创建时间。
+// Instance creation time.
 func (o LookupInstanceResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// EIP的ID。
+// EIP ID.
 func (o LookupInstanceResultOutput) EipId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.EipId }).(pulumi.StringOutput)
 }
 
-// 实例的连接信息。
+// Instance connection information.
 func (o LookupInstanceResultOutput) Endpoints() GetInstanceEndpointArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceEndpoint { return v.Endpoints }).(GetInstanceEndpointArrayOutput)
 }
@@ -161,82 +161,82 @@ func (o LookupInstanceResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 实例的简单描述。
+// Brief description of the instance.
 func (o LookupInstanceResultOutput) InstanceDescription() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.InstanceDescription }).(pulumi.StringOutput)
 }
 
-// RabbitMQ 实例 ID。
+// RabbitMQ instance ID.
 func (o LookupInstanceResultOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// RabbitMQ 实例名称。
+// RabbitMQ instance name.
 func (o LookupInstanceResultOutput) InstanceName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.InstanceName }).(pulumi.StringOutput)
 }
 
-// 实例状态。
+// Instance status.
 func (o LookupInstanceResultOutput) InstanceStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.InstanceStatus }).(pulumi.StringOutput)
 }
 
-// 是否开启了云盘加密。
+// Whether cloud disk encryption is enabled.
 func (o LookupInstanceResultOutput) IsEncrypted() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupInstanceResult) bool { return v.IsEncrypted }).(pulumi.BoolOutput)
 }
 
-// 实例所属的IAM项目。
+// IAM project to which the instance belongs.
 func (o LookupInstanceResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 实例总存储空间。单位为 GiB。
+// Total storage space of the instance, measured in GiB.
 func (o LookupInstanceResultOutput) StorageSpace() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.StorageSpace }).(pulumi.IntOutput)
 }
 
-// VPC的子网ID。
+// VPC subnet ID.
 func (o LookupInstanceResultOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// 实例绑定的标签。
+// Tags bound to the instance.
 func (o LookupInstanceResultOutput) Tags() GetInstanceTagArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceTag { return v.Tags }).(GetInstanceTagArrayOutput)
 }
 
-// 实例已用存储空间。单位为 GiB。
+// Used storage space of the instance, measured in GiB.
 func (o LookupInstanceResultOutput) UsedStorageSpace() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.UsedStorageSpace }).(pulumi.IntOutput)
 }
 
-// RabbitMQ WebUI管理员账号名。
+// RabbitMQ WebUI administrator account name.
 func (o LookupInstanceResultOutput) UserName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.UserName }).(pulumi.StringOutput)
 }
 
-// RabbitMQ WebUI管理员密码。
+// RabbitMQ WebUI administrator password.
 func (o LookupInstanceResultOutput) UserPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.UserPassword }).(pulumi.StringOutput)
 }
 
-// 支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
+// Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
 func (o LookupInstanceResultOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.Version }).(pulumi.StringOutput)
 }
 
-// 私有网络（VPC）ID。
+// Private network (VPC) ID.
 func (o LookupInstanceResultOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.VpcId }).(pulumi.StringOutput)
 }
 
-// 可用区的描述信息。
+// Description of the availability zone.
 func (o LookupInstanceResultOutput) ZoneDescription() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ZoneDescription }).(pulumi.StringOutput)
 }
 
-// 实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
+// Availability zone ID where the instance is located. For high-availability instances across AZs, multiple availability zone IDs are returned.
 func (o LookupInstanceResultOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ZoneId }).(pulumi.StringOutput)
 }

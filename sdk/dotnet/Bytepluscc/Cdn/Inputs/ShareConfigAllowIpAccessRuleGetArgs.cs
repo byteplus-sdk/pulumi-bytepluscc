@@ -17,7 +17,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
         private InputList<string>? _rules;
 
         /// <summary>
-        /// 表示一个条目列表。列表中的每个条目是一个 IP 地址或 CIDR 网段。IP 地址和网段可以是 IPv4 和 IPv6 格式。列表的额度如下：对于 AddSharedConfig，列表中条目的数量不能超过 30,000 个。
+        /// Specifies a list of entries. Each entry in the list is an IP address or CIDR block. IP addresses and blocks can be in IPv4 or IPv6 format. List limits: For AddSharedConfig, the number of entries in the list cannot exceed 30,000.
         /// </summary>
         public InputList<string> Rules
         {

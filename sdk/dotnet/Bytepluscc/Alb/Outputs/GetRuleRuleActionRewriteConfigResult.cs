@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class GetRuleRuleActionRewriteConfigResult
     {
         /// <summary>
-        /// 重写路径。
+        /// Rewrite path.
         /// </summary>
         public readonly string Path;
 

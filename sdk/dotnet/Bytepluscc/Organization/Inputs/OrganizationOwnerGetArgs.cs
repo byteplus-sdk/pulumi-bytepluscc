@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Organization.Inputs
     public sealed class OrganizationOwnerGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 账号ID
+        /// Account ID
         /// </summary>
         [Input("accountId")]
         public Input<int>? AccountId { get; set; }
 
         /// <summary>
-        /// 账号名称
+        /// Account Name
         /// </summary>
         [Input("accountName")]
         public Input<string>? AccountName { get; set; }
 
         /// <summary>
-        /// 主体名称
+        /// Entity Name
         /// </summary>
         [Input("mainName")]
         public Input<string>? MainName { get; set; }

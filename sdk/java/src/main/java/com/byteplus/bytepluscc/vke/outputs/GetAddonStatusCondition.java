@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetAddonStatusCondition {
     /**
-     * @return 组件当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing, ClusterVersionUpgrading, Unknown, Degraded, NameConflict, ClusterNotRunning, CrashLoopBackOff, SchedulingFailed, ResourceCleanupFailed
+     * @return Status conditions under the component&#39;s current primary state, indicating the reasons for entering this state. Multiple reasons are possible. Parameter values include: Progressing, ClusterVersionUpgrading, Unknown, Degraded, NameConflict, ClusterNotRunning, CrashLoopBackOff, SchedulingFailed, ResourceCleanupFailed
      * 
      */
     private String type;
 
     private GetAddonStatusCondition() {}
     /**
-     * @return 组件当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing, ClusterVersionUpgrading, Unknown, Degraded, NameConflict, ClusterNotRunning, CrashLoopBackOff, SchedulingFailed, ResourceCleanupFailed
+     * @return Status conditions under the component&#39;s current primary state, indicating the reasons for entering this state. Multiple reasons are possible. Parameter values include: Progressing, ClusterVersionUpgrading, Unknown, Degraded, NameConflict, ClusterNotRunning, CrashLoopBackOff, SchedulingFailed, ResourceCleanupFailed
      * 
      */
     public String type() {

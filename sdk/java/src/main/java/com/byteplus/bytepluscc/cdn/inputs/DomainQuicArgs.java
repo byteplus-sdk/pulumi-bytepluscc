@@ -16,14 +16,14 @@ public final class DomainQuicArgs extends com.pulumi.resources.ResourceArgs {
     public static final DomainQuicArgs Empty = new DomainQuicArgs();
 
     /**
-     * QUIC 配置开关。该参数有以下取值：true：表示启用 QUIC。false：表示禁用 QUIC。要启用 QUIC，您必须先启用 HTTPS。
+     * QUIC configuration switch. The parameter values are as follows: true: enables QUIC. false: disables QUIC. To enable QUIC, you must first enable HTTPS.
      * 
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
-     * @return QUIC 配置开关。该参数有以下取值：true：表示启用 QUIC。false：表示禁用 QUIC。要启用 QUIC，您必须先启用 HTTPS。
+     * @return QUIC configuration switch. The parameter values are as follows: true: enables QUIC. false: disables QUIC. To enable QUIC, you must first enable HTTPS.
      * 
      */
     public Optional<Output<Boolean>> switch_() {
@@ -55,7 +55,7 @@ public final class DomainQuicArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param switch_ QUIC 配置开关。该参数有以下取值：true：表示启用 QUIC。false：表示禁用 QUIC。要启用 QUIC，您必须先启用 HTTPS。
+         * @param switch_ QUIC configuration switch. The parameter values are as follows: true: enables QUIC. false: disables QUIC. To enable QUIC, you must first enable HTTPS.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class DomainQuicArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param switch_ QUIC 配置开关。该参数有以下取值：true：表示启用 QUIC。false：表示禁用 QUIC。要启用 QUIC，您必须先启用 HTTPS。
+         * @param switch_ QUIC configuration switch. The parameter values are as follows: true: enables QUIC. false: disables QUIC. To enable QUIC, you must first enable HTTPS.
          * 
          * @return builder
          * 

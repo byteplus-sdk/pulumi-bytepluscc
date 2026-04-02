@@ -12,62 +12,62 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceInstanceConfigurationMasterNodeResourceSpec {
     /**
-     * @return 节点规格的 CPU 资源，单位为核（Core）
+     * @return CPU resources of node specification, unit: cores.
      * 
      */
     private Integer cpu;
     /**
-     * @return 节点规格的描述信息
+     * @return Description of node specifications
      * 
      */
     private String description;
     /**
-     * @return 节点规格的显示名称
+     * @return Display name of node specification
      * 
      */
     private String displayName;
     /**
-     * @return 节点规格的内存容量，单位 GiB
+     * @return Memory capacity of node specification, unit: GiB.
      * 
      */
     private Integer memory;
     /**
-     * @return 节点规格。如需了解节点规格类型和详情
+     * @return Node specification. For information about node specification types and details, please refer to the documentation.
      * 
      */
     private String name;
 
     private GetInstanceInstanceConfigurationMasterNodeResourceSpec() {}
     /**
-     * @return 节点规格的 CPU 资源，单位为核（Core）
+     * @return CPU resources of node specification, unit: cores.
      * 
      */
     public Integer cpu() {
         return this.cpu;
     }
     /**
-     * @return 节点规格的描述信息
+     * @return Description of node specifications
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 节点规格的显示名称
+     * @return Display name of node specification
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return 节点规格的内存容量，单位 GiB
+     * @return Memory capacity of node specification, unit: GiB.
      * 
      */
     public Integer memory() {
         return this.memory;
     }
     /**
-     * @return 节点规格。如需了解节点规格类型和详情
+     * @return Node specification. For information about node specification types and details, please refer to the documentation.
      * 
      */
     public String name() {

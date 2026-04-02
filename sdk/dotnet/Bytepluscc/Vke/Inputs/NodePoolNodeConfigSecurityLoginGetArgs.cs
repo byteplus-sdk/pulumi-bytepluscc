@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
     public sealed class NodePoolNodeConfigSecurityLoginGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! @ # $ % ^ &amp; * _   - + = | { } [ ] : ; ' &lt; &gt; , . ? /
+        /// Root user login password in Base64 encoding. Follow the cloud server's requirements for instance passwords: 8–30 characters in length, must not start with / or $6$, supports the following character types and must include at least three types: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! @ # $ % ^ &amp; * _   - + = | { } [ ] : ; ' &lt; &gt; , . ? /
         /// </summary>
         [Input("password")]
         public Input<string>? Password { get; set; }
 
         /// <summary>
-        /// SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+        /// SSH key pair name. Ensure the key pair is already created or hosted in the cloud server
         /// </summary>
         [Input("sshKeyPairName")]
         public Input<string>? SshKeyPairName { get; set; }
 
         /// <summary>
-        /// 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+        /// Node access login method. Parameter values: Password: password login; SshKeyPair: SSH key pair login
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

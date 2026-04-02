@@ -30,37 +30,37 @@ type LookupUpstreamArgs struct {
 
 // A collection of values returned by getUpstream.
 type LookupUpstreamResult struct {
-	// 后端节点，Upstream来源类型为VeFaas时无效。
+	// Backend node. Not valid when the upstream source type is VeFaas
 	BackendTargets []GetUpstreamBackendTarget `pulumi:"backendTargets"`
-	// 服务熔断配置。
+	// Service circuit breaking configuration
 	CircuitBreakingSettings GetUpstreamCircuitBreakingSettings `pulumi:"circuitBreakingSettings"`
-	// 备注。
+	// Remarks
 	Comments string `pulumi:"comments"`
-	// 连接池配置。
+	// Connection Pool Configuration
 	ConnectionPoolSettings GetUpstreamConnectionPoolSettings `pulumi:"connectionPoolSettings"`
-	// Upstream创建时间。
+	// Upstream creation time
 	CreatedTime string `pulumi:"createdTime"`
-	// 网关实例ID。
+	// Gateway Instance ID
 	GatewayId string `pulumi:"gatewayId"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 负载均衡配置。
+	// Load Balancing Configuration
 	LoadBalancerSettings GetUpstreamLoadBalancerSettings `pulumi:"loadBalancerSettings"`
-	// Upstream名称。
+	// Upstream name
 	Name string `pulumi:"name"`
-	// 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
+	// Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
 	Protocol string `pulumi:"protocol"`
-	// Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
+	// Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
 	SourceType string `pulumi:"sourceType"`
-	// TLS配置。
+	// TLS Configuration
 	TlsSettings GetUpstreamTlsSettings `pulumi:"tlsSettings"`
-	// Upstream更新时间。
+	// Upstream update time
 	UpdatedTime string `pulumi:"updatedTime"`
 	// Upstream ID。
 	UpstreamId string `pulumi:"upstreamId"`
-	// Upstream配置。
+	// Upstream Configuration
 	UpstreamSpec GetUpstreamUpstreamSpec `pulumi:"upstreamSpec"`
-	// Upstream版本，仅在Upstream来源类型为K8S时有效。
+	// Upstream version, only valid when the upstream source type is K8S
 	VersionDetails []GetUpstreamVersionDetail `pulumi:"versionDetails"`
 }
 
@@ -98,32 +98,32 @@ func (o LookupUpstreamResultOutput) ToLookupUpstreamResultOutputWithContext(ctx 
 	return o
 }
 
-// 后端节点，Upstream来源类型为VeFaas时无效。
+// Backend node. Not valid when the upstream source type is VeFaas
 func (o LookupUpstreamResultOutput) BackendTargets() GetUpstreamBackendTargetArrayOutput {
 	return o.ApplyT(func(v LookupUpstreamResult) []GetUpstreamBackendTarget { return v.BackendTargets }).(GetUpstreamBackendTargetArrayOutput)
 }
 
-// 服务熔断配置。
+// Service circuit breaking configuration
 func (o LookupUpstreamResultOutput) CircuitBreakingSettings() GetUpstreamCircuitBreakingSettingsOutput {
 	return o.ApplyT(func(v LookupUpstreamResult) GetUpstreamCircuitBreakingSettings { return v.CircuitBreakingSettings }).(GetUpstreamCircuitBreakingSettingsOutput)
 }
 
-// 备注。
+// Remarks
 func (o LookupUpstreamResultOutput) Comments() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUpstreamResult) string { return v.Comments }).(pulumi.StringOutput)
 }
 
-// 连接池配置。
+// Connection Pool Configuration
 func (o LookupUpstreamResultOutput) ConnectionPoolSettings() GetUpstreamConnectionPoolSettingsOutput {
 	return o.ApplyT(func(v LookupUpstreamResult) GetUpstreamConnectionPoolSettings { return v.ConnectionPoolSettings }).(GetUpstreamConnectionPoolSettingsOutput)
 }
 
-// Upstream创建时间。
+// Upstream creation time
 func (o LookupUpstreamResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUpstreamResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 网关实例ID。
+// Gateway Instance ID
 func (o LookupUpstreamResultOutput) GatewayId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUpstreamResult) string { return v.GatewayId }).(pulumi.StringOutput)
 }
@@ -133,32 +133,32 @@ func (o LookupUpstreamResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUpstreamResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 负载均衡配置。
+// Load Balancing Configuration
 func (o LookupUpstreamResultOutput) LoadBalancerSettings() GetUpstreamLoadBalancerSettingsOutput {
 	return o.ApplyT(func(v LookupUpstreamResult) GetUpstreamLoadBalancerSettings { return v.LoadBalancerSettings }).(GetUpstreamLoadBalancerSettingsOutput)
 }
 
-// Upstream名称。
+// Upstream name
 func (o LookupUpstreamResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUpstreamResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
+// Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
 func (o LookupUpstreamResultOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUpstreamResult) string { return v.Protocol }).(pulumi.StringOutput)
 }
 
-// Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
+// Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
 func (o LookupUpstreamResultOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUpstreamResult) string { return v.SourceType }).(pulumi.StringOutput)
 }
 
-// TLS配置。
+// TLS Configuration
 func (o LookupUpstreamResultOutput) TlsSettings() GetUpstreamTlsSettingsOutput {
 	return o.ApplyT(func(v LookupUpstreamResult) GetUpstreamTlsSettings { return v.TlsSettings }).(GetUpstreamTlsSettingsOutput)
 }
 
-// Upstream更新时间。
+// Upstream update time
 func (o LookupUpstreamResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUpstreamResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }
@@ -168,12 +168,12 @@ func (o LookupUpstreamResultOutput) UpstreamId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUpstreamResult) string { return v.UpstreamId }).(pulumi.StringOutput)
 }
 
-// Upstream配置。
+// Upstream Configuration
 func (o LookupUpstreamResultOutput) UpstreamSpec() GetUpstreamUpstreamSpecOutput {
 	return o.ApplyT(func(v LookupUpstreamResult) GetUpstreamUpstreamSpec { return v.UpstreamSpec }).(GetUpstreamUpstreamSpecOutput)
 }
 
-// Upstream版本，仅在Upstream来源类型为K8S时有效。
+// Upstream version, only valid when the upstream source type is K8S
 func (o LookupUpstreamResultOutput) VersionDetails() GetUpstreamVersionDetailArrayOutput {
 	return o.ApplyT(func(v LookupUpstreamResult) []GetUpstreamVersionDetail { return v.VersionDetails }).(GetUpstreamVersionDetailArrayOutput)
 }

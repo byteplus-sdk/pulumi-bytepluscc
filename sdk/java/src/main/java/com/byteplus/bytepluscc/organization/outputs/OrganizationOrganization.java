@@ -13,86 +13,86 @@ import javax.annotation.Nullable;
 @CustomType
 public final class OrganizationOrganization {
     /**
-     * @return 创建时间
+     * @return Creation Time
      * 
      */
     private @Nullable String createdTime;
     /**
-     * @return 描述
+     * @return Description
      * 
      */
     private @Nullable String description;
     /**
-     * @return 组织名称
+     * @return Organization Name
      * 
      */
     private @Nullable String name;
     /**
-     * @return 管理员ID
+     * @return Administrator ID
      * 
      */
     private @Nullable String owner;
     /**
-     * @return 状态
+     * @return Status
      * 
      */
     private @Nullable Integer status;
     /**
-     * @return 组织类型，企业组织固定是 1
+     * @return Organization type, enterprise organization is always 1
      * 
      */
     private @Nullable Integer type;
     /**
-     * @return 更新时间
+     * @return Last Updated
      * 
      */
     private @Nullable String updatedTime;
 
     private OrganizationOrganization() {}
     /**
-     * @return 创建时间
+     * @return Creation Time
      * 
      */
     public Optional<String> createdTime() {
         return Optional.ofNullable(this.createdTime);
     }
     /**
-     * @return 描述
+     * @return Description
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return 组织名称
+     * @return Organization Name
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return 管理员ID
+     * @return Administrator ID
      * 
      */
     public Optional<String> owner() {
         return Optional.ofNullable(this.owner);
     }
     /**
-     * @return 状态
+     * @return Status
      * 
      */
     public Optional<Integer> status() {
         return Optional.ofNullable(this.status);
     }
     /**
-     * @return 组织类型，企业组织固定是 1
+     * @return Organization type, enterprise organization is always 1
      * 
      */
     public Optional<Integer> type() {
         return Optional.ofNullable(this.type);
     }
     /**
-     * @return 更新时间
+     * @return Last Updated
      * 
      */
     public Optional<String> updatedTime() {

@@ -19,19 +19,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud.Outputs
         /// </summary>
         public readonly bool? ForbidStop;
         /// <summary>
-        /// 资源信息。
+        /// Resource information
         /// </summary>
         public readonly Outputs.InstanceTransferInfoReduceSpecConfig? ReduceSpecConfig;
         /// <summary>
-        /// 数据迁移任务进度，百分制。
+        /// Data migration task progress, percentage
         /// </summary>
         public readonly double? TransferProgress;
         /// <summary>
-        /// 数据迁移任务状态。
+        /// Data migration task status
         /// </summary>
         public readonly string? TransferStatus;
         /// <summary>
-        /// 数据迁移任务 ID。
+        /// Data migration task ID
         /// </summary>
         public readonly string? TransferTaskId;
 

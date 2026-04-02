@@ -17,42 +17,42 @@ import java.util.Objects;
 @CustomType
 public final class GetPublicAddressResult {
     /**
-     * @return 创建实例的主账号ID。
+     * @return Main account ID that created the instance.
      * 
      */
     private String accountId;
     /**
-     * @return 是否已开启公网解析功能。true：已开启, false：已关闭。
+     * @return Whether public DNS resolution is enabled. true: enabled, false: disabled.
      * 
      */
     private Boolean applyPrivateDnsToPublic;
     /**
-     * @return 实例的类型，即集群版或单机版。
+     * @return Instance type: cluster or standalone.
      * 
      */
     private String archType;
     /**
-     * @return 实例的计费方式等计费信息。
+     * @return Instance billing method and related billing information.
      * 
      */
     private GetPublicAddressChargeDetail chargeDetail;
     /**
-     * @return RabbitMQ实例的计算规格。
+     * @return RabbitMQ instance compute specification.
      * 
      */
     private String computeSpec;
     /**
-     * @return 实例的创建时间。
+     * @return Instance creation time.
      * 
      */
     private String createdTime;
     /**
-     * @return EIP的ID。
+     * @return EIP ID.
      * 
      */
     private String eipId;
     /**
-     * @return 实例的连接信息。
+     * @return Instance connection information.
      * 
      */
     private List<GetPublicAddressEndpoint> endpoints;
@@ -62,133 +62,133 @@ public final class GetPublicAddressResult {
      */
     private String id;
     /**
-     * @return 实例的简单描述。
+     * @return Brief description of the instance.
      * 
      */
     private String instanceDescription;
     /**
-     * @return RabbitMQ 实例 ID。
+     * @return RabbitMQ instance ID.
      * 
      */
     private String instanceId;
     /**
-     * @return RabbitMQ 实例名称。
+     * @return RabbitMQ instance name.
      * 
      */
     private String instanceName;
     /**
-     * @return 实例状态。
+     * @return Instance status.
      * 
      */
     private String instanceStatus;
     /**
-     * @return 是否开启了云盘加密。
+     * @return Whether cloud disk encryption is enabled.
      * 
      */
     private Boolean isEncrypted;
     /**
-     * @return 实例所属的IAM项目。
+     * @return IAM project the instance belongs to.
      * 
      */
     private String projectName;
     /**
-     * @return 实例总存储空间。单位为 GiB。
+     * @return Total storage space of the instance, in GiB.
      * 
      */
     private Integer storageSpace;
     /**
-     * @return VPC的子网ID。
+     * @return VPC subnet ID.
      * 
      */
     private String subnetId;
     /**
-     * @return 实例绑定的标签。
+     * @return Tags bound to the instance.
      * 
      */
     private List<GetPublicAddressTag> tags;
     /**
-     * @return 实例已用存储空间。单位为 GiB。
+     * @return Used storage space of the instance, in GiB.
      * 
      */
     private Integer usedStorageSpace;
     /**
-     * @return RabbitMQ WebUI管理员账号名。
+     * @return RabbitMQ WebUI administrator account name.
      * 
      */
     private String userName;
     /**
-     * @return 支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
+     * @return Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
      * 
      */
     private String version;
     /**
-     * @return 私有网络（VPC）ID。
+     * @return Private network (VPC) ID.
      * 
      */
     private String vpcId;
     /**
-     * @return 可用区的描述信息。
+     * @return Description of the availability zone.
      * 
      */
     private String zoneDescription;
     /**
-     * @return 实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
+     * @return Availability zone ID where the instance is located. For high availability instances across AZs, multiple availability zone IDs are returned.
      * 
      */
     private String zoneId;
 
     private GetPublicAddressResult() {}
     /**
-     * @return 创建实例的主账号ID。
+     * @return Main account ID that created the instance.
      * 
      */
     public String accountId() {
         return this.accountId;
     }
     /**
-     * @return 是否已开启公网解析功能。true：已开启, false：已关闭。
+     * @return Whether public DNS resolution is enabled. true: enabled, false: disabled.
      * 
      */
     public Boolean applyPrivateDnsToPublic() {
         return this.applyPrivateDnsToPublic;
     }
     /**
-     * @return 实例的类型，即集群版或单机版。
+     * @return Instance type: cluster or standalone.
      * 
      */
     public String archType() {
         return this.archType;
     }
     /**
-     * @return 实例的计费方式等计费信息。
+     * @return Instance billing method and related billing information.
      * 
      */
     public GetPublicAddressChargeDetail chargeDetail() {
         return this.chargeDetail;
     }
     /**
-     * @return RabbitMQ实例的计算规格。
+     * @return RabbitMQ instance compute specification.
      * 
      */
     public String computeSpec() {
         return this.computeSpec;
     }
     /**
-     * @return 实例的创建时间。
+     * @return Instance creation time.
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return EIP的ID。
+     * @return EIP ID.
      * 
      */
     public String eipId() {
         return this.eipId;
     }
     /**
-     * @return 实例的连接信息。
+     * @return Instance connection information.
      * 
      */
     public List<GetPublicAddressEndpoint> endpoints() {
@@ -202,105 +202,105 @@ public final class GetPublicAddressResult {
         return this.id;
     }
     /**
-     * @return 实例的简单描述。
+     * @return Brief description of the instance.
      * 
      */
     public String instanceDescription() {
         return this.instanceDescription;
     }
     /**
-     * @return RabbitMQ 实例 ID。
+     * @return RabbitMQ instance ID.
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return RabbitMQ 实例名称。
+     * @return RabbitMQ instance name.
      * 
      */
     public String instanceName() {
         return this.instanceName;
     }
     /**
-     * @return 实例状态。
+     * @return Instance status.
      * 
      */
     public String instanceStatus() {
         return this.instanceStatus;
     }
     /**
-     * @return 是否开启了云盘加密。
+     * @return Whether cloud disk encryption is enabled.
      * 
      */
     public Boolean isEncrypted() {
         return this.isEncrypted;
     }
     /**
-     * @return 实例所属的IAM项目。
+     * @return IAM project the instance belongs to.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 实例总存储空间。单位为 GiB。
+     * @return Total storage space of the instance, in GiB.
      * 
      */
     public Integer storageSpace() {
         return this.storageSpace;
     }
     /**
-     * @return VPC的子网ID。
+     * @return VPC subnet ID.
      * 
      */
     public String subnetId() {
         return this.subnetId;
     }
     /**
-     * @return 实例绑定的标签。
+     * @return Tags bound to the instance.
      * 
      */
     public List<GetPublicAddressTag> tags() {
         return this.tags;
     }
     /**
-     * @return 实例已用存储空间。单位为 GiB。
+     * @return Used storage space of the instance, in GiB.
      * 
      */
     public Integer usedStorageSpace() {
         return this.usedStorageSpace;
     }
     /**
-     * @return RabbitMQ WebUI管理员账号名。
+     * @return RabbitMQ WebUI administrator account name.
      * 
      */
     public String userName() {
         return this.userName;
     }
     /**
-     * @return 支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
+     * @return Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
      * 
      */
     public String version() {
         return this.version;
     }
     /**
-     * @return 私有网络（VPC）ID。
+     * @return Private network (VPC) ID.
      * 
      */
     public String vpcId() {
         return this.vpcId;
     }
     /**
-     * @return 可用区的描述信息。
+     * @return Description of the availability zone.
      * 
      */
     public String zoneDescription() {
         return this.zoneDescription;
     }
     /**
-     * @return 实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
+     * @return Availability zone ID where the instance is located. For high availability instances across AZs, multiple availability zone IDs are returned.
      * 
      */
     public String zoneId() {

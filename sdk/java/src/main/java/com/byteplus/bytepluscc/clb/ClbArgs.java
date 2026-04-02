@@ -25,14 +25,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     public static final ClbArgs Empty = new ClbArgs();
 
     /**
-     * 负载均衡实例中访问日志的信息。
+     * Access log information in the load balancer instance
      * 
      */
     @Import(name="accessLog")
     private @Nullable Output<ClbAccessLogArgs> accessLog;
 
     /**
-     * @return 负载均衡实例中访问日志的信息。
+     * @return Access log information in the load balancer instance
      * 
      */
     public Optional<Output<ClbAccessLogArgs>> accessLog() {
@@ -40,14 +40,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * CLB实例的IP地址类型。取值如下：ipv4（默认值）：表示该CLB为IPv4类型，仅支持转发IPv4请求。DualStack：表示该CLB为双栈类型，支持转发IPv4和IPv6请求。仅参数Type取private时，才可传入DualStack。
+     * IP address type of the CLB instance. Values: ipv4 (default): Indicates the CLB is IPv4 type and only supports forwarding IPv4 requests. DualStack: Indicates the CLB is dual-stack type and supports forwarding both IPv4 and IPv6 requests. DualStack can only be specified when Type is set to private
      * 
      */
     @Import(name="addressIpVersion")
     private @Nullable Output<String> addressIpVersion;
 
     /**
-     * @return CLB实例的IP地址类型。取值如下：ipv4（默认值）：表示该CLB为IPv4类型，仅支持转发IPv4请求。DualStack：表示该CLB为双栈类型，支持转发IPv4和IPv6请求。仅参数Type取private时，才可传入DualStack。
+     * @return IP address type of the CLB instance. Values: ipv4 (default): Indicates the CLB is IPv4 type and only supports forwarding IPv4 requests. DualStack: Indicates the CLB is dual-stack type and supports forwarding both IPv4 and IPv6 requests. DualStack can only be specified when Type is set to private
      * 
      */
     public Optional<Output<String>> addressIpVersion() {
@@ -55,14 +55,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 允许的多个端口范围。
+     * Allowed port ranges
      * 
      */
     @Import(name="allowedPorts")
     private @Nullable Output<List<String>> allowedPorts;
 
     /**
-     * @return 允许的多个端口范围。
+     * @return Allowed port ranges
      * 
      */
     public Optional<Output<List<String>>> allowedPorts() {
@@ -70,14 +70,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开通自动续费。true：是，默认自动续费为1个月。false（默认值）：否
+     * Whether to enable auto-renewal. true: Yes, default auto-renewal is 1 month. false (default): No
      * 
      */
     @Import(name="autoRenewal")
     private @Nullable Output<Boolean> autoRenewal;
 
     /**
-     * @return 是否开通自动续费。true：是，默认自动续费为1个月。false（默认值）：否
+     * @return Whether to enable auto-renewal. true: Yes, default auto-renewal is 1 month. false (default): No
      * 
      */
     public Optional<Output<Boolean>> autoRenewal() {
@@ -85,14 +85,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启bypass安全组功能。
+     * Whether to enable bypass security group feature
      * 
      */
     @Import(name="bypassSecurityGroupEnabled")
     private @Nullable Output<String> bypassSecurityGroupEnabled;
 
     /**
-     * @return 是否开启bypass安全组功能。
+     * @return Whether to enable bypass security group feature
      * 
      */
     public Optional<Output<String>> bypassSecurityGroupEnabled() {
@@ -100,14 +100,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 负载均衡实例的描述。
+     * Description of the load balancer instance
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 负载均衡实例的描述。
+     * @return Description of the load balancer instance
      * 
      */
     public Optional<Output<String>> description() {
@@ -115,14 +115,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 负载均衡实例的公网IP的信息。
+     * Public IP information of the load balancer instance
      * 
      */
     @Import(name="eip")
     private @Nullable Output<ClbEipArgs> eip;
 
     /**
-     * @return 负载均衡实例的公网IP的信息。
+     * @return Public IP information of the load balancer instance
      * 
      */
     public Optional<Output<ClbEipArgs>> eip() {
@@ -130,14 +130,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 公网IP地址。
+     * Public IP address
      * 
      */
     @Import(name="eipAddress")
     private @Nullable Output<String> eipAddress;
 
     /**
-     * @return 公网IP地址。
+     * @return Public IP address
      * 
      */
     public Optional<Output<String>> eipAddress() {
@@ -145,14 +145,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 公网IP ID。
+     * Public IP ID
      * 
      */
     @Import(name="eipId")
     private @Nullable Output<String> eipId;
 
     /**
-     * @return 公网IP ID。
+     * @return Public IP ID
      * 
      */
     public Optional<Output<String>> eipId() {
@@ -160,14 +160,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 负载均衡实例的私网IPv4地址数量。该参数和参数EniAddress不能同时传入，如果传入该参数，则无需传入EniAddress。
+     * Number of private IPv4 addresses for the load balancer instance. This parameter cannot be used together with EniAddress. If this parameter is provided, EniAddress is not required
      * 
      */
     @Import(name="eniAddressNum")
     private @Nullable Output<Double> eniAddressNum;
 
     /**
-     * @return 负载均衡实例的私网IPv4地址数量。该参数和参数EniAddress不能同时传入，如果传入该参数，则无需传入EniAddress。
+     * @return Number of private IPv4 addresses for the load balancer instance. This parameter cannot be used together with EniAddress. If this parameter is provided, EniAddress is not required
      * 
      */
     public Optional<Output<Double>> eniAddressNum() {
@@ -175,14 +175,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 负载均衡实例的私网IPv4地址信息列表，创建时通过EniAddressNum指定数量。
+     * List of private IPv4 addresses for the load balancer instance, specified by EniAddressNum during creation
      * 
      */
     @Import(name="enis")
     private @Nullable Output<ClbEnisArgs> enis;
 
     /**
-     * @return 负载均衡实例的私网IPv4地址信息列表，创建时通过EniAddressNum指定数量。
+     * @return List of private IPv4 addresses for the load balancer instance, specified by EniAddressNum during creation
      * 
      */
     public Optional<Output<ClbEnisArgs>> enis() {
@@ -190,14 +190,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 独占集群Id。
+     * Dedicated cluster ID
      * 
      */
     @Import(name="exclusiveClusterId")
     private @Nullable Output<String> exclusiveClusterId;
 
     /**
-     * @return 独占集群Id。
+     * @return Dedicated cluster ID
      * 
      */
     public Optional<Output<String>> exclusiveClusterId() {
@@ -212,14 +212,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * CLB实例计费方式。取值如下：1：包年包月。2（默认值）：按量计费-按规格计费。3：按量计费-按使用量计费。
+     * CLB instance billing method. Available values: 1: Annual/monthly subscription. 2 (default): Pay-as-you-go (by specification). 3: Pay-as-you-go (by usage)
      * 
      */
     @Import(name="loadBalancerBillingType")
     private @Nullable Output<Double> loadBalancerBillingType;
 
     /**
-     * @return CLB实例计费方式。取值如下：1：包年包月。2（默认值）：按量计费-按规格计费。3：按量计费-按使用量计费。
+     * @return CLB instance billing method. Available values: 1: Annual/monthly subscription. 2 (default): Pay-as-you-go (by specification). 3: Pay-as-you-go (by usage)
      * 
      */
     public Optional<Output<Double>> loadBalancerBillingType() {
@@ -227,14 +227,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 负载均衡实例的名称。
+     * Name of the load balancer instance
      * 
      */
     @Import(name="loadBalancerName")
     private @Nullable Output<String> loadBalancerName;
 
     /**
-     * @return 负载均衡实例的名称。
+     * @return Name of the load balancer instance
      * 
      */
     public Optional<Output<String>> loadBalancerName() {
@@ -242,14 +242,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * CLB实例的规格，不同规格提供的转发能力不同。small*1：小型I。small*2：小型II。medium*1：中型I。medium*2：中型II。large*1：大型I。large*2：大型II。
+     * CLB instance specification. Different specifications provide different forwarding capabilities. small*1: Small I. small*2: Small II. medium*1: Medium I. medium*2: Medium II. large*1: Large I. large*2: Large II
      * 
      */
     @Import(name="loadBalancerSpec")
     private @Nullable Output<String> loadBalancerSpec;
 
     /**
-     * @return CLB实例的规格，不同规格提供的转发能力不同。small*1：小型I。small*2：小型II。medium*1：中型I。medium*2：中型II。large*1：大型I。large*2：大型II。
+     * @return CLB instance specification. Different specifications provide different forwarding capabilities. small*1: Small I. small*2: Small II. medium*1: Medium I. medium*2: Medium II. large*1: Large I. large*2: Large II
      * 
      */
     public Optional<Output<String>> loadBalancerSpec() {
@@ -257,14 +257,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 负载均衡实例的主可用区ID。
+     * Main availability zone ID of the load balancer instance
      * 
      */
     @Import(name="masterZoneId")
     private @Nullable Output<String> masterZoneId;
 
     /**
-     * @return 负载均衡实例的主可用区ID。
+     * @return Main availability zone ID of the load balancer instance
      * 
      */
     public Optional<Output<String>> masterZoneId() {
@@ -272,14 +272,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 设置修改保护状态的原因。仅参数ModificationProtectionStatus取ConsoleProtection时，本参数有效。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：半角句号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 80个字符。
+     * Reason for setting modification protection status. This parameter is valid only when ModificationProtectionStatus is set to ConsoleProtection. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: half-width period (.), underscore (_), and hyphen (-). Length must be 1–80 characters
      * 
      */
     @Import(name="modificationProtectionReason")
     private @Nullable Output<String> modificationProtectionReason;
 
     /**
-     * @return 设置修改保护状态的原因。仅参数ModificationProtectionStatus取ConsoleProtection时，本参数有效。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：半角句号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 80个字符。
+     * @return Reason for setting modification protection status. This parameter is valid only when ModificationProtectionStatus is set to ConsoleProtection. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: half-width period (.), underscore (_), and hyphen (-). Length must be 1–80 characters
      * 
      */
     public Optional<Output<String>> modificationProtectionReason() {
@@ -287,14 +287,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * CLB实例是否开启控制台上修改保护。开启后，禁止通过控制台修改实例或删除实例。取值如下：NonProtection：不开启。ConsoleProtection：开启。
+     * Whether CLB instance enables modification protection in the console. When enabled, modification or deletion via the console is prohibited. Available values: NonProtection: Disabled. ConsoleProtection: Enabled
      * 
      */
     @Import(name="modificationProtectionStatus")
     private @Nullable Output<String> modificationProtectionStatus;
 
     /**
-     * @return CLB实例是否开启控制台上修改保护。开启后，禁止通过控制台修改实例或删除实例。取值如下：NonProtection：不开启。ConsoleProtection：开启。
+     * @return Whether CLB instance enables modification protection in the console. When enabled, modification or deletion via the console is prohibited. Available values: NonProtection: Disabled. ConsoleProtection: Enabled
      * 
      */
     public Optional<Output<String>> modificationProtectionStatus() {
@@ -302,14 +302,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否为新架构。
+     * Whether it is a new architecture
      * 
      */
     @Import(name="newArch")
     private @Nullable Output<Boolean> newArch;
 
     /**
-     * @return 是否为新架构。
+     * @return Whether it is a new architecture
      * 
      */
     public Optional<Output<Boolean>> newArch() {
@@ -317,14 +317,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 订单ID。仅在创建动作的参数LoadBalancerBillingType配置为1时，该参数有值。
+     * Order ID. This parameter is only available when LoadBalancerBillingType is set to 1 during creation
      * 
      */
     @Import(name="orderId")
     private @Nullable Output<String> orderId;
 
     /**
-     * @return 订单ID。仅在创建动作的参数LoadBalancerBillingType配置为1时，该参数有值。
+     * @return Order ID. This parameter is only available when LoadBalancerBillingType is set to 1 during creation
      * 
      */
     public Optional<Output<String>> orderId() {
@@ -332,14 +332,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 购买包年包月CLB实例的时长。默认为“1”。当PeriodUnit配置为Month时，取值范围为1～9，12，24和36。当PeriodUnit配置为Year时，取值范围为1～3。
+     * Duration for purchasing a CLB instance by year or by month. Default is &#39;1&#39;. When PeriodUnit is set to Month, valid values are 1–9, 12, 24, and 36. When PeriodUnit is set to Year, valid values are 1–3
      * 
      */
     @Import(name="period")
     private @Nullable Output<Double> period;
 
     /**
-     * @return 购买包年包月CLB实例的时长。默认为“1”。当PeriodUnit配置为Month时，取值范围为1～9，12，24和36。当PeriodUnit配置为Year时，取值范围为1～3。
+     * @return Duration for purchasing a CLB instance by year or by month. Default is &#39;1&#39;. When PeriodUnit is set to Month, valid values are 1–9, 12, 24, and 36. When PeriodUnit is set to Year, valid values are 1–3
      * 
      */
     public Optional<Output<Double>> period() {
@@ -347,14 +347,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 购买包年包月CLB实例的时长单位。仅LoadBalancerBillingType取1时，本参数有效。取值如下：Month (默认值)：月。Year：年
+     * Duration unit for purchasing subscription CLB instances. This parameter is valid only when LoadBalancerBillingType is set to 1. Values: Month (default): month. Year: year
      * 
      */
     @Import(name="periodUnit")
     private @Nullable Output<String> periodUnit;
 
     /**
-     * @return 购买包年包月CLB实例的时长单位。仅LoadBalancerBillingType取1时，本参数有效。取值如下：Month (默认值)：月。Year：年
+     * @return Duration unit for purchasing subscription CLB instances. This parameter is valid only when LoadBalancerBillingType is set to 1. Values: Month (default): month. Year: year
      * 
      */
     public Optional<Output<String>> periodUnit() {
@@ -362,14 +362,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * CLB实例所属项目的名称。
+     * Name of the project associated with the CLB instance
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return CLB实例所属项目的名称。
+     * @return Name of the project associated with the CLB instance
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -384,14 +384,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 负载均衡实例的备可用区ID。
+     * Secondary availability zone ID of the load balancer instance
      * 
      */
     @Import(name="slaveZoneId")
     private @Nullable Output<String> slaveZoneId;
 
     /**
-     * @return 负载均衡实例的备可用区ID。
+     * @return Secondary availability zone ID of the load balancer instance
      * 
      */
     public Optional<Output<String>> slaveZoneId() {
@@ -399,14 +399,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 负载均衡实例所属VPC内的子网ID。
+     * Subnet ID within the VPC of the load balancer instance
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return 负载均衡实例所属VPC内的子网ID。
+     * @return Subnet ID within the VPC of the load balancer instance
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -421,14 +421,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * CLB实例的类型。取值如下：public：公网类型。创建一个公网类型CLB实例，系统会分配一个公网IP地址，用于转发公网请求。private：私网类型。创建一个私网类型CLB实例，您需要为其绑定公网IP后，才能转发公网请求。
+     * CLB instance type. Values: public: Public type. When you create a public CLB instance, the system assigns a public IP address for forwarding public requests. private: Private type. When you create a private CLB instance, the system does not assign a public IP address; you must bind a public IP manually before it can forward public requests
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return CLB实例的类型。取值如下：public：公网类型。创建一个公网类型CLB实例，系统会分配一个公网IP地址，用于转发公网请求。private：私网类型。创建一个私网类型CLB实例，您需要为其绑定公网IP后，才能转发公网请求。
+     * @return CLB instance type. Values: public: Public type. When you create a public CLB instance, the system assigns a public IP address for forwarding public requests. private: Private type. When you create a private CLB instance, the system does not assign a public IP address; you must bind a public IP manually before it can forward public requests
      * 
      */
     public Optional<Output<String>> type() {
@@ -436,14 +436,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 负载均衡实例所属的VPC ID。
+     * VPC ID of the load balancer instance
      * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
-     * @return 负载均衡实例所属的VPC ID。
+     * @return VPC ID of the load balancer instance
      * 
      */
     public Optional<Output<String>> vpcId() {
@@ -451,14 +451,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 负载均衡实例的可用区类型。
+     * Availability zone type of the load balancer instance
      * 
      */
     @Import(name="zoneType")
     private @Nullable Output<String> zoneType;
 
     /**
-     * @return 负载均衡实例的可用区类型。
+     * @return Availability zone type of the load balancer instance
      * 
      */
     public Optional<Output<String>> zoneType() {
@@ -520,7 +520,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accessLog 负载均衡实例中访问日志的信息。
+         * @param accessLog Access log information in the load balancer instance
          * 
          * @return builder
          * 
@@ -531,7 +531,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accessLog 负载均衡实例中访问日志的信息。
+         * @param accessLog Access log information in the load balancer instance
          * 
          * @return builder
          * 
@@ -541,7 +541,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param addressIpVersion CLB实例的IP地址类型。取值如下：ipv4（默认值）：表示该CLB为IPv4类型，仅支持转发IPv4请求。DualStack：表示该CLB为双栈类型，支持转发IPv4和IPv6请求。仅参数Type取private时，才可传入DualStack。
+         * @param addressIpVersion IP address type of the CLB instance. Values: ipv4 (default): Indicates the CLB is IPv4 type and only supports forwarding IPv4 requests. DualStack: Indicates the CLB is dual-stack type and supports forwarding both IPv4 and IPv6 requests. DualStack can only be specified when Type is set to private
          * 
          * @return builder
          * 
@@ -552,7 +552,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param addressIpVersion CLB实例的IP地址类型。取值如下：ipv4（默认值）：表示该CLB为IPv4类型，仅支持转发IPv4请求。DualStack：表示该CLB为双栈类型，支持转发IPv4和IPv6请求。仅参数Type取private时，才可传入DualStack。
+         * @param addressIpVersion IP address type of the CLB instance. Values: ipv4 (default): Indicates the CLB is IPv4 type and only supports forwarding IPv4 requests. DualStack: Indicates the CLB is dual-stack type and supports forwarding both IPv4 and IPv6 requests. DualStack can only be specified when Type is set to private
          * 
          * @return builder
          * 
@@ -562,7 +562,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowedPorts 允许的多个端口范围。
+         * @param allowedPorts Allowed port ranges
          * 
          * @return builder
          * 
@@ -573,7 +573,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowedPorts 允许的多个端口范围。
+         * @param allowedPorts Allowed port ranges
          * 
          * @return builder
          * 
@@ -583,7 +583,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allowedPorts 允许的多个端口范围。
+         * @param allowedPorts Allowed port ranges
          * 
          * @return builder
          * 
@@ -593,7 +593,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoRenewal 是否开通自动续费。true：是，默认自动续费为1个月。false（默认值）：否
+         * @param autoRenewal Whether to enable auto-renewal. true: Yes, default auto-renewal is 1 month. false (default): No
          * 
          * @return builder
          * 
@@ -604,7 +604,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoRenewal 是否开通自动续费。true：是，默认自动续费为1个月。false（默认值）：否
+         * @param autoRenewal Whether to enable auto-renewal. true: Yes, default auto-renewal is 1 month. false (default): No
          * 
          * @return builder
          * 
@@ -614,7 +614,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param bypassSecurityGroupEnabled 是否开启bypass安全组功能。
+         * @param bypassSecurityGroupEnabled Whether to enable bypass security group feature
          * 
          * @return builder
          * 
@@ -625,7 +625,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param bypassSecurityGroupEnabled 是否开启bypass安全组功能。
+         * @param bypassSecurityGroupEnabled Whether to enable bypass security group feature
          * 
          * @return builder
          * 
@@ -635,7 +635,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 负载均衡实例的描述。
+         * @param description Description of the load balancer instance
          * 
          * @return builder
          * 
@@ -646,7 +646,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 负载均衡实例的描述。
+         * @param description Description of the load balancer instance
          * 
          * @return builder
          * 
@@ -656,7 +656,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eip 负载均衡实例的公网IP的信息。
+         * @param eip Public IP information of the load balancer instance
          * 
          * @return builder
          * 
@@ -667,7 +667,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eip 负载均衡实例的公网IP的信息。
+         * @param eip Public IP information of the load balancer instance
          * 
          * @return builder
          * 
@@ -677,7 +677,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eipAddress 公网IP地址。
+         * @param eipAddress Public IP address
          * 
          * @return builder
          * 
@@ -688,7 +688,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eipAddress 公网IP地址。
+         * @param eipAddress Public IP address
          * 
          * @return builder
          * 
@@ -698,7 +698,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eipId 公网IP ID。
+         * @param eipId Public IP ID
          * 
          * @return builder
          * 
@@ -709,7 +709,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eipId 公网IP ID。
+         * @param eipId Public IP ID
          * 
          * @return builder
          * 
@@ -719,7 +719,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eniAddressNum 负载均衡实例的私网IPv4地址数量。该参数和参数EniAddress不能同时传入，如果传入该参数，则无需传入EniAddress。
+         * @param eniAddressNum Number of private IPv4 addresses for the load balancer instance. This parameter cannot be used together with EniAddress. If this parameter is provided, EniAddress is not required
          * 
          * @return builder
          * 
@@ -730,7 +730,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eniAddressNum 负载均衡实例的私网IPv4地址数量。该参数和参数EniAddress不能同时传入，如果传入该参数，则无需传入EniAddress。
+         * @param eniAddressNum Number of private IPv4 addresses for the load balancer instance. This parameter cannot be used together with EniAddress. If this parameter is provided, EniAddress is not required
          * 
          * @return builder
          * 
@@ -740,7 +740,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enis 负载均衡实例的私网IPv4地址信息列表，创建时通过EniAddressNum指定数量。
+         * @param enis List of private IPv4 addresses for the load balancer instance, specified by EniAddressNum during creation
          * 
          * @return builder
          * 
@@ -751,7 +751,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enis 负载均衡实例的私网IPv4地址信息列表，创建时通过EniAddressNum指定数量。
+         * @param enis List of private IPv4 addresses for the load balancer instance, specified by EniAddressNum during creation
          * 
          * @return builder
          * 
@@ -761,7 +761,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param exclusiveClusterId 独占集群Id。
+         * @param exclusiveClusterId Dedicated cluster ID
          * 
          * @return builder
          * 
@@ -772,7 +772,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param exclusiveClusterId 独占集群Id。
+         * @param exclusiveClusterId Dedicated cluster ID
          * 
          * @return builder
          * 
@@ -795,7 +795,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerBillingType CLB实例计费方式。取值如下：1：包年包月。2（默认值）：按量计费-按规格计费。3：按量计费-按使用量计费。
+         * @param loadBalancerBillingType CLB instance billing method. Available values: 1: Annual/monthly subscription. 2 (default): Pay-as-you-go (by specification). 3: Pay-as-you-go (by usage)
          * 
          * @return builder
          * 
@@ -806,7 +806,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerBillingType CLB实例计费方式。取值如下：1：包年包月。2（默认值）：按量计费-按规格计费。3：按量计费-按使用量计费。
+         * @param loadBalancerBillingType CLB instance billing method. Available values: 1: Annual/monthly subscription. 2 (default): Pay-as-you-go (by specification). 3: Pay-as-you-go (by usage)
          * 
          * @return builder
          * 
@@ -816,7 +816,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerName 负载均衡实例的名称。
+         * @param loadBalancerName Name of the load balancer instance
          * 
          * @return builder
          * 
@@ -827,7 +827,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerName 负载均衡实例的名称。
+         * @param loadBalancerName Name of the load balancer instance
          * 
          * @return builder
          * 
@@ -837,7 +837,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerSpec CLB实例的规格，不同规格提供的转发能力不同。small*1：小型I。small*2：小型II。medium*1：中型I。medium*2：中型II。large*1：大型I。large*2：大型II。
+         * @param loadBalancerSpec CLB instance specification. Different specifications provide different forwarding capabilities. small*1: Small I. small*2: Small II. medium*1: Medium I. medium*2: Medium II. large*1: Large I. large*2: Large II
          * 
          * @return builder
          * 
@@ -848,7 +848,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerSpec CLB实例的规格，不同规格提供的转发能力不同。small*1：小型I。small*2：小型II。medium*1：中型I。medium*2：中型II。large*1：大型I。large*2：大型II。
+         * @param loadBalancerSpec CLB instance specification. Different specifications provide different forwarding capabilities. small*1: Small I. small*2: Small II. medium*1: Medium I. medium*2: Medium II. large*1: Large I. large*2: Large II
          * 
          * @return builder
          * 
@@ -858,7 +858,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param masterZoneId 负载均衡实例的主可用区ID。
+         * @param masterZoneId Main availability zone ID of the load balancer instance
          * 
          * @return builder
          * 
@@ -869,7 +869,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param masterZoneId 负载均衡实例的主可用区ID。
+         * @param masterZoneId Main availability zone ID of the load balancer instance
          * 
          * @return builder
          * 
@@ -879,7 +879,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modificationProtectionReason 设置修改保护状态的原因。仅参数ModificationProtectionStatus取ConsoleProtection时，本参数有效。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：半角句号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 80个字符。
+         * @param modificationProtectionReason Reason for setting modification protection status. This parameter is valid only when ModificationProtectionStatus is set to ConsoleProtection. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: half-width period (.), underscore (_), and hyphen (-). Length must be 1–80 characters
          * 
          * @return builder
          * 
@@ -890,7 +890,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modificationProtectionReason 设置修改保护状态的原因。仅参数ModificationProtectionStatus取ConsoleProtection时，本参数有效。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：半角句号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 80个字符。
+         * @param modificationProtectionReason Reason for setting modification protection status. This parameter is valid only when ModificationProtectionStatus is set to ConsoleProtection. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: half-width period (.), underscore (_), and hyphen (-). Length must be 1–80 characters
          * 
          * @return builder
          * 
@@ -900,7 +900,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modificationProtectionStatus CLB实例是否开启控制台上修改保护。开启后，禁止通过控制台修改实例或删除实例。取值如下：NonProtection：不开启。ConsoleProtection：开启。
+         * @param modificationProtectionStatus Whether CLB instance enables modification protection in the console. When enabled, modification or deletion via the console is prohibited. Available values: NonProtection: Disabled. ConsoleProtection: Enabled
          * 
          * @return builder
          * 
@@ -911,7 +911,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modificationProtectionStatus CLB实例是否开启控制台上修改保护。开启后，禁止通过控制台修改实例或删除实例。取值如下：NonProtection：不开启。ConsoleProtection：开启。
+         * @param modificationProtectionStatus Whether CLB instance enables modification protection in the console. When enabled, modification or deletion via the console is prohibited. Available values: NonProtection: Disabled. ConsoleProtection: Enabled
          * 
          * @return builder
          * 
@@ -921,7 +921,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param newArch 是否为新架构。
+         * @param newArch Whether it is a new architecture
          * 
          * @return builder
          * 
@@ -932,7 +932,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param newArch 是否为新架构。
+         * @param newArch Whether it is a new architecture
          * 
          * @return builder
          * 
@@ -942,7 +942,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param orderId 订单ID。仅在创建动作的参数LoadBalancerBillingType配置为1时，该参数有值。
+         * @param orderId Order ID. This parameter is only available when LoadBalancerBillingType is set to 1 during creation
          * 
          * @return builder
          * 
@@ -953,7 +953,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param orderId 订单ID。仅在创建动作的参数LoadBalancerBillingType配置为1时，该参数有值。
+         * @param orderId Order ID. This parameter is only available when LoadBalancerBillingType is set to 1 during creation
          * 
          * @return builder
          * 
@@ -963,7 +963,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param period 购买包年包月CLB实例的时长。默认为“1”。当PeriodUnit配置为Month时，取值范围为1～9，12，24和36。当PeriodUnit配置为Year时，取值范围为1～3。
+         * @param period Duration for purchasing a CLB instance by year or by month. Default is &#39;1&#39;. When PeriodUnit is set to Month, valid values are 1–9, 12, 24, and 36. When PeriodUnit is set to Year, valid values are 1–3
          * 
          * @return builder
          * 
@@ -974,7 +974,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param period 购买包年包月CLB实例的时长。默认为“1”。当PeriodUnit配置为Month时，取值范围为1～9，12，24和36。当PeriodUnit配置为Year时，取值范围为1～3。
+         * @param period Duration for purchasing a CLB instance by year or by month. Default is &#39;1&#39;. When PeriodUnit is set to Month, valid values are 1–9, 12, 24, and 36. When PeriodUnit is set to Year, valid values are 1–3
          * 
          * @return builder
          * 
@@ -984,7 +984,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param periodUnit 购买包年包月CLB实例的时长单位。仅LoadBalancerBillingType取1时，本参数有效。取值如下：Month (默认值)：月。Year：年
+         * @param periodUnit Duration unit for purchasing subscription CLB instances. This parameter is valid only when LoadBalancerBillingType is set to 1. Values: Month (default): month. Year: year
          * 
          * @return builder
          * 
@@ -995,7 +995,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param periodUnit 购买包年包月CLB实例的时长单位。仅LoadBalancerBillingType取1时，本参数有效。取值如下：Month (默认值)：月。Year：年
+         * @param periodUnit Duration unit for purchasing subscription CLB instances. This parameter is valid only when LoadBalancerBillingType is set to 1. Values: Month (default): month. Year: year
          * 
          * @return builder
          * 
@@ -1005,7 +1005,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName CLB实例所属项目的名称。
+         * @param projectName Name of the project associated with the CLB instance
          * 
          * @return builder
          * 
@@ -1016,7 +1016,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName CLB实例所属项目的名称。
+         * @param projectName Name of the project associated with the CLB instance
          * 
          * @return builder
          * 
@@ -1039,7 +1039,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param slaveZoneId 负载均衡实例的备可用区ID。
+         * @param slaveZoneId Secondary availability zone ID of the load balancer instance
          * 
          * @return builder
          * 
@@ -1050,7 +1050,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param slaveZoneId 负载均衡实例的备可用区ID。
+         * @param slaveZoneId Secondary availability zone ID of the load balancer instance
          * 
          * @return builder
          * 
@@ -1060,7 +1060,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId 负载均衡实例所属VPC内的子网ID。
+         * @param subnetId Subnet ID within the VPC of the load balancer instance
          * 
          * @return builder
          * 
@@ -1071,7 +1071,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId 负载均衡实例所属VPC内的子网ID。
+         * @param subnetId Subnet ID within the VPC of the load balancer instance
          * 
          * @return builder
          * 
@@ -1094,7 +1094,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type CLB实例的类型。取值如下：public：公网类型。创建一个公网类型CLB实例，系统会分配一个公网IP地址，用于转发公网请求。private：私网类型。创建一个私网类型CLB实例，您需要为其绑定公网IP后，才能转发公网请求。
+         * @param type CLB instance type. Values: public: Public type. When you create a public CLB instance, the system assigns a public IP address for forwarding public requests. private: Private type. When you create a private CLB instance, the system does not assign a public IP address; you must bind a public IP manually before it can forward public requests
          * 
          * @return builder
          * 
@@ -1105,7 +1105,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type CLB实例的类型。取值如下：public：公网类型。创建一个公网类型CLB实例，系统会分配一个公网IP地址，用于转发公网请求。private：私网类型。创建一个私网类型CLB实例，您需要为其绑定公网IP后，才能转发公网请求。
+         * @param type CLB instance type. Values: public: Public type. When you create a public CLB instance, the system assigns a public IP address for forwarding public requests. private: Private type. When you create a private CLB instance, the system does not assign a public IP address; you must bind a public IP manually before it can forward public requests
          * 
          * @return builder
          * 
@@ -1115,7 +1115,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 负载均衡实例所属的VPC ID。
+         * @param vpcId VPC ID of the load balancer instance
          * 
          * @return builder
          * 
@@ -1126,7 +1126,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 负载均衡实例所属的VPC ID。
+         * @param vpcId VPC ID of the load balancer instance
          * 
          * @return builder
          * 
@@ -1136,7 +1136,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneType 负载均衡实例的可用区类型。
+         * @param zoneType Availability zone type of the load balancer instance
          * 
          * @return builder
          * 
@@ -1147,7 +1147,7 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneType 负载均衡实例的可用区类型。
+         * @param zoneType Availability zone type of the load balancer instance
          * 
          * @return builder
          * 

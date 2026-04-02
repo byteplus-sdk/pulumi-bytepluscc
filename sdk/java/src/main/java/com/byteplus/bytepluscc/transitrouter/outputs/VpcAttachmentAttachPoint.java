@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class VpcAttachmentAttachPoint {
     /**
-     * @return 连接点的子网ID。
+     * @return Subnet ID of the connection point.
      * 
      */
     private String subnetId;
     /**
-     * @return 连接点的可用区ID。
+     * @return Availability zone ID of the connection point.
      * 
      */
     private String zoneId;
 
     private VpcAttachmentAttachPoint() {}
     /**
-     * @return 连接点的子网ID。
+     * @return Subnet ID of the connection point.
      * 
      */
     public String subnetId() {
         return this.subnetId;
     }
     /**
-     * @return 连接点的可用区ID。
+     * @return Availability zone ID of the connection point.
      * 
      */
     public String zoneId() {

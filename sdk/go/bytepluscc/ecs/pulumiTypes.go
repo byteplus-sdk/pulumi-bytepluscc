@@ -14,23 +14,23 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type CommandParameterDefinition struct {
-	// 自定义参数值（数字）允许的小数点后位数。
+	// Allowed decimal places for custom parameter (number).
 	DecimalPrecision *int `pulumi:"decimalPrecision"`
-	// 自定义参数默认值。
+	// Default value for custom parameter.
 	DefaultValue *string `pulumi:"defaultValue"`
-	// 自定义参数值（字符串）的最大长度。
+	// Maximum length for custom parameter (string).
 	MaxLength *int `pulumi:"maxLength"`
-	// 自定义参数值（数字）的最大值。
+	// Maximum value for custom parameter (number).
 	MaxValue *string `pulumi:"maxValue"`
-	// 自定义参数值（字符串）的最小长度。
+	// Minimum length for custom parameter (string).
 	MinLength *int `pulumi:"minLength"`
-	// 自定义参数值（数字）的最小值。
+	// Minimum value for custom parameter (number).
 	MinValue *string `pulumi:"minValue"`
-	// 自定义参数名称，需要在脚本中通过{{Param}}定义 。单个参数名不能超过64字节。遵循Shell变量命名规则，a-zA-Z0-9-_的组合。首个字符不能以数字开头。中间不能有空格，可以使用下划线。
+	// Custom parameter name. Define it in the script using {{Param}}. Each parameter name must not exceed 64 bytes. Follow Shell variable naming rules: combinations of a-z, A-Z, 0-9, -, and _. The first character cannot be a digit. No spaces allowed; underscores can be used instead.
 	Name *string `pulumi:"name"`
-	// 是否必填。
+	// Whether it is required.
 	Required *bool `pulumi:"required"`
-	// 自定义参数类型。取值：String：表示自定义参数类型为String（字符串）类型。Digit：表示自定义参数类型为Digit（数值）类型。
+	// Custom parameter type. Values: String: Indicates the custom parameter type is String (string type). Digit: Indicates the custom parameter type is Digit (numeric type).
 	Type *string `pulumi:"type"`
 }
 
@@ -46,23 +46,23 @@ type CommandParameterDefinitionInput interface {
 }
 
 type CommandParameterDefinitionArgs struct {
-	// 自定义参数值（数字）允许的小数点后位数。
+	// Allowed decimal places for custom parameter (number).
 	DecimalPrecision pulumi.IntPtrInput `pulumi:"decimalPrecision"`
-	// 自定义参数默认值。
+	// Default value for custom parameter.
 	DefaultValue pulumi.StringPtrInput `pulumi:"defaultValue"`
-	// 自定义参数值（字符串）的最大长度。
+	// Maximum length for custom parameter (string).
 	MaxLength pulumi.IntPtrInput `pulumi:"maxLength"`
-	// 自定义参数值（数字）的最大值。
+	// Maximum value for custom parameter (number).
 	MaxValue pulumi.StringPtrInput `pulumi:"maxValue"`
-	// 自定义参数值（字符串）的最小长度。
+	// Minimum length for custom parameter (string).
 	MinLength pulumi.IntPtrInput `pulumi:"minLength"`
-	// 自定义参数值（数字）的最小值。
+	// Minimum value for custom parameter (number).
 	MinValue pulumi.StringPtrInput `pulumi:"minValue"`
-	// 自定义参数名称，需要在脚本中通过{{Param}}定义 。单个参数名不能超过64字节。遵循Shell变量命名规则，a-zA-Z0-9-_的组合。首个字符不能以数字开头。中间不能有空格，可以使用下划线。
+	// Custom parameter name. Define it in the script using {{Param}}. Each parameter name must not exceed 64 bytes. Follow Shell variable naming rules: combinations of a-z, A-Z, 0-9, -, and _. The first character cannot be a digit. No spaces allowed; underscores can be used instead.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// 是否必填。
+	// Whether it is required.
 	Required pulumi.BoolPtrInput `pulumi:"required"`
-	// 自定义参数类型。取值：String：表示自定义参数类型为String（字符串）类型。Digit：表示自定义参数类型为Digit（数值）类型。
+	// Custom parameter type. Values: String: Indicates the custom parameter type is String (string type). Digit: Indicates the custom parameter type is Digit (numeric type).
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -117,47 +117,47 @@ func (o CommandParameterDefinitionOutput) ToCommandParameterDefinitionOutputWith
 	return o
 }
 
-// 自定义参数值（数字）允许的小数点后位数。
+// Allowed decimal places for custom parameter (number).
 func (o CommandParameterDefinitionOutput) DecimalPrecision() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v CommandParameterDefinition) *int { return v.DecimalPrecision }).(pulumi.IntPtrOutput)
 }
 
-// 自定义参数默认值。
+// Default value for custom parameter.
 func (o CommandParameterDefinitionOutput) DefaultValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CommandParameterDefinition) *string { return v.DefaultValue }).(pulumi.StringPtrOutput)
 }
 
-// 自定义参数值（字符串）的最大长度。
+// Maximum length for custom parameter (string).
 func (o CommandParameterDefinitionOutput) MaxLength() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v CommandParameterDefinition) *int { return v.MaxLength }).(pulumi.IntPtrOutput)
 }
 
-// 自定义参数值（数字）的最大值。
+// Maximum value for custom parameter (number).
 func (o CommandParameterDefinitionOutput) MaxValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CommandParameterDefinition) *string { return v.MaxValue }).(pulumi.StringPtrOutput)
 }
 
-// 自定义参数值（字符串）的最小长度。
+// Minimum length for custom parameter (string).
 func (o CommandParameterDefinitionOutput) MinLength() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v CommandParameterDefinition) *int { return v.MinLength }).(pulumi.IntPtrOutput)
 }
 
-// 自定义参数值（数字）的最小值。
+// Minimum value for custom parameter (number).
 func (o CommandParameterDefinitionOutput) MinValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CommandParameterDefinition) *string { return v.MinValue }).(pulumi.StringPtrOutput)
 }
 
-// 自定义参数名称，需要在脚本中通过{{Param}}定义 。单个参数名不能超过64字节。遵循Shell变量命名规则，a-zA-Z0-9-_的组合。首个字符不能以数字开头。中间不能有空格，可以使用下划线。
+// Custom parameter name. Define it in the script using {{Param}}. Each parameter name must not exceed 64 bytes. Follow Shell variable naming rules: combinations of a-z, A-Z, 0-9, -, and _. The first character cannot be a digit. No spaces allowed; underscores can be used instead.
 func (o CommandParameterDefinitionOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CommandParameterDefinition) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// 是否必填。
+// Whether it is required.
 func (o CommandParameterDefinitionOutput) Required() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v CommandParameterDefinition) *bool { return v.Required }).(pulumi.BoolPtrOutput)
 }
 
-// 自定义参数类型。取值：String：表示自定义参数类型为String（字符串）类型。Digit：表示自定义参数类型为Digit（数值）类型。
+// Custom parameter type. Values: String: Indicates the custom parameter type is String (string type). Digit: Indicates the custom parameter type is Digit (numeric type).
 func (o CommandParameterDefinitionOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CommandParameterDefinition) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -183,9 +183,9 @@ func (o CommandParameterDefinitionArrayOutput) Index(i pulumi.IntInput) CommandP
 }
 
 type CommandTag struct {
-	// 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+	// User tag key. Naming rules: must not start with any case combination of volc: or sys:. Only language characters, digits, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+	// User tag value. Naming rules: only language characters, digits, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length must be between 0 and 256 characters.
 	Value *string `pulumi:"value"`
 }
 
@@ -201,9 +201,9 @@ type CommandTagInput interface {
 }
 
 type CommandTagArgs struct {
-	// 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+	// User tag key. Naming rules: must not start with any case combination of volc: or sys:. Only language characters, digits, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+	// User tag value. Naming rules: only language characters, digits, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length must be between 0 and 256 characters.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -258,12 +258,12 @@ func (o CommandTagOutput) ToCommandTagOutputWithContext(ctx context.Context) Com
 	return o
 }
 
-// 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+// User tag key. Naming rules: must not start with any case combination of volc: or sys:. Only language characters, digits, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
 func (o CommandTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CommandTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+// User tag value. Naming rules: only language characters, digits, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length must be between 0 and 256 characters.
 func (o CommandTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CommandTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -289,11 +289,11 @@ func (o CommandTagArrayOutput) Index(i pulumi.IntInput) CommandTagOutput {
 }
 
 type DeploymentSetCapacity struct {
-	// 该可用区内，还可以加入当前部署集的ECS实例数量。
+	// You can also include the number of ECS instances in the current deployment set within this availability zone.
 	AvailableCount *int `pulumi:"availableCount"`
-	// 部署集内属于该可用区的ECS实例数量。
+	// Number of ECS instances in the deployment set that belong to this availability zone.
 	UsedCount *int `pulumi:"usedCount"`
-	// 可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
+	// Availability zone ID. Only returns the availability zone ID for ECS instances in the deployment set.
 	ZoneId *string `pulumi:"zoneId"`
 }
 
@@ -309,11 +309,11 @@ type DeploymentSetCapacityInput interface {
 }
 
 type DeploymentSetCapacityArgs struct {
-	// 该可用区内，还可以加入当前部署集的ECS实例数量。
+	// You can also include the number of ECS instances in the current deployment set within this availability zone.
 	AvailableCount pulumi.IntPtrInput `pulumi:"availableCount"`
-	// 部署集内属于该可用区的ECS实例数量。
+	// Number of ECS instances in the deployment set that belong to this availability zone.
 	UsedCount pulumi.IntPtrInput `pulumi:"usedCount"`
-	// 可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
+	// Availability zone ID. Only returns the availability zone ID for ECS instances in the deployment set.
 	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
 }
 
@@ -368,17 +368,17 @@ func (o DeploymentSetCapacityOutput) ToDeploymentSetCapacityOutputWithContext(ct
 	return o
 }
 
-// 该可用区内，还可以加入当前部署集的ECS实例数量。
+// You can also include the number of ECS instances in the current deployment set within this availability zone.
 func (o DeploymentSetCapacityOutput) AvailableCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DeploymentSetCapacity) *int { return v.AvailableCount }).(pulumi.IntPtrOutput)
 }
 
-// 部署集内属于该可用区的ECS实例数量。
+// Number of ECS instances in the deployment set that belong to this availability zone.
 func (o DeploymentSetCapacityOutput) UsedCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DeploymentSetCapacity) *int { return v.UsedCount }).(pulumi.IntPtrOutput)
 }
 
-// 可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
+// Availability zone ID. Only returns the availability zone ID for ECS instances in the deployment set.
 func (o DeploymentSetCapacityOutput) ZoneId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeploymentSetCapacity) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
 }
@@ -404,9 +404,9 @@ func (o DeploymentSetCapacityArrayOutput) Index(i pulumi.IntInput) DeploymentSet
 }
 
 type HpcClusterTag struct {
-	// 标签键。
+	// Tag key
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value *string `pulumi:"value"`
 }
 
@@ -422,9 +422,9 @@ type HpcClusterTagInput interface {
 }
 
 type HpcClusterTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -479,12 +479,12 @@ func (o HpcClusterTagOutput) ToHpcClusterTagOutputWithContext(ctx context.Contex
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o HpcClusterTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v HpcClusterTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value
 func (o HpcClusterTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v HpcClusterTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -510,7 +510,7 @@ func (o HpcClusterTagArrayOutput) Index(i pulumi.IntInput) HpcClusterTagOutput {
 }
 
 type ImageDetectionResults struct {
-	// 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
+	// Check status. Options: Finished (completed), Processing (in progress).
 	DetectionStatus *string                     `pulumi:"detectionStatus"`
 	Items           []ImageDetectionResultsItem `pulumi:"items"`
 }
@@ -527,7 +527,7 @@ type ImageDetectionResultsInput interface {
 }
 
 type ImageDetectionResultsArgs struct {
-	// 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
+	// Check status. Options: Finished (completed), Processing (in progress).
 	DetectionStatus pulumi.StringPtrInput               `pulumi:"detectionStatus"`
 	Items           ImageDetectionResultsItemArrayInput `pulumi:"items"`
 }
@@ -609,7 +609,7 @@ func (o ImageDetectionResultsOutput) ToImageDetectionResultsPtrOutputWithContext
 	}).(ImageDetectionResultsPtrOutput)
 }
 
-// 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
+// Check status. Options: Finished (completed), Processing (in progress).
 func (o ImageDetectionResultsOutput) DetectionStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ImageDetectionResults) *string { return v.DetectionStatus }).(pulumi.StringPtrOutput)
 }
@@ -642,7 +642,7 @@ func (o ImageDetectionResultsPtrOutput) Elem() ImageDetectionResultsOutput {
 	}).(ImageDetectionResultsOutput)
 }
 
-// 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
+// Check status. Options: Finished (completed), Processing (in progress).
 func (o ImageDetectionResultsPtrOutput) DetectionStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ImageDetectionResults) *string {
 		if v == nil {
@@ -662,13 +662,13 @@ func (o ImageDetectionResultsPtrOutput) Items() ImageDetectionResultsItemArrayOu
 }
 
 type ImageDetectionResultsItem struct {
-	// 检测项名称。
+	// Check item name
 	Name *string `pulumi:"name"`
-	// 该检测项对应结果。
+	// Result for this check item.
 	Result *string `pulumi:"result"`
-	// 风险描述码。
+	// Risk description code
 	RiskCode *string `pulumi:"riskCode"`
-	// 风险等级。若该参数返回值为空，表示无风险。
+	// Risk level. If this parameter is empty, it means no risk
 	RiskLevel *string `pulumi:"riskLevel"`
 }
 
@@ -684,13 +684,13 @@ type ImageDetectionResultsItemInput interface {
 }
 
 type ImageDetectionResultsItemArgs struct {
-	// 检测项名称。
+	// Check item name
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// 该检测项对应结果。
+	// Result for this check item.
 	Result pulumi.StringPtrInput `pulumi:"result"`
-	// 风险描述码。
+	// Risk description code
 	RiskCode pulumi.StringPtrInput `pulumi:"riskCode"`
-	// 风险等级。若该参数返回值为空，表示无风险。
+	// Risk level. If this parameter is empty, it means no risk
 	RiskLevel pulumi.StringPtrInput `pulumi:"riskLevel"`
 }
 
@@ -745,22 +745,22 @@ func (o ImageDetectionResultsItemOutput) ToImageDetectionResultsItemOutputWithCo
 	return o
 }
 
-// 检测项名称。
+// Check item name
 func (o ImageDetectionResultsItemOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ImageDetectionResultsItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// 该检测项对应结果。
+// Result for this check item.
 func (o ImageDetectionResultsItemOutput) Result() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ImageDetectionResultsItem) *string { return v.Result }).(pulumi.StringPtrOutput)
 }
 
-// 风险描述码。
+// Risk description code
 func (o ImageDetectionResultsItemOutput) RiskCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ImageDetectionResultsItem) *string { return v.RiskCode }).(pulumi.StringPtrOutput)
 }
 
-// 风险等级。若该参数返回值为空，表示无风险。
+// Risk level. If this parameter is empty, it means no risk
 func (o ImageDetectionResultsItemOutput) RiskLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ImageDetectionResultsItem) *string { return v.RiskLevel }).(pulumi.StringPtrOutput)
 }
@@ -785,12 +785,168 @@ func (o ImageDetectionResultsItemArrayOutput) Index(i pulumi.IntInput) ImageDete
 	}).(ImageDetectionResultsItemOutput)
 }
 
+type ImageImportImage struct {
+	// Data disk files included in the custom image, at the TOS bucket URL.
+	ImportDataVolumes []string `pulumi:"importDataVolumes"`
+	// System disk files included in the custom image, at the TOS bucket URL.
+	Url *string `pulumi:"url"`
+}
+
+// ImageImportImageInput is an input type that accepts ImageImportImageArgs and ImageImportImageOutput values.
+// You can construct a concrete instance of `ImageImportImageInput` via:
+//
+//	ImageImportImageArgs{...}
+type ImageImportImageInput interface {
+	pulumi.Input
+
+	ToImageImportImageOutput() ImageImportImageOutput
+	ToImageImportImageOutputWithContext(context.Context) ImageImportImageOutput
+}
+
+type ImageImportImageArgs struct {
+	// Data disk files included in the custom image, at the TOS bucket URL.
+	ImportDataVolumes pulumi.StringArrayInput `pulumi:"importDataVolumes"`
+	// System disk files included in the custom image, at the TOS bucket URL.
+	Url pulumi.StringPtrInput `pulumi:"url"`
+}
+
+func (ImageImportImageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ImageImportImage)(nil)).Elem()
+}
+
+func (i ImageImportImageArgs) ToImageImportImageOutput() ImageImportImageOutput {
+	return i.ToImageImportImageOutputWithContext(context.Background())
+}
+
+func (i ImageImportImageArgs) ToImageImportImageOutputWithContext(ctx context.Context) ImageImportImageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImageImportImageOutput)
+}
+
+func (i ImageImportImageArgs) ToImageImportImagePtrOutput() ImageImportImagePtrOutput {
+	return i.ToImageImportImagePtrOutputWithContext(context.Background())
+}
+
+func (i ImageImportImageArgs) ToImageImportImagePtrOutputWithContext(ctx context.Context) ImageImportImagePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImageImportImageOutput).ToImageImportImagePtrOutputWithContext(ctx)
+}
+
+// ImageImportImagePtrInput is an input type that accepts ImageImportImageArgs, ImageImportImagePtr and ImageImportImagePtrOutput values.
+// You can construct a concrete instance of `ImageImportImagePtrInput` via:
+//
+//	        ImageImportImageArgs{...}
+//
+//	or:
+//
+//	        nil
+type ImageImportImagePtrInput interface {
+	pulumi.Input
+
+	ToImageImportImagePtrOutput() ImageImportImagePtrOutput
+	ToImageImportImagePtrOutputWithContext(context.Context) ImageImportImagePtrOutput
+}
+
+type imageImportImagePtrType ImageImportImageArgs
+
+func ImageImportImagePtr(v *ImageImportImageArgs) ImageImportImagePtrInput {
+	return (*imageImportImagePtrType)(v)
+}
+
+func (*imageImportImagePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ImageImportImage)(nil)).Elem()
+}
+
+func (i *imageImportImagePtrType) ToImageImportImagePtrOutput() ImageImportImagePtrOutput {
+	return i.ToImageImportImagePtrOutputWithContext(context.Background())
+}
+
+func (i *imageImportImagePtrType) ToImageImportImagePtrOutputWithContext(ctx context.Context) ImageImportImagePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImageImportImagePtrOutput)
+}
+
+type ImageImportImageOutput struct{ *pulumi.OutputState }
+
+func (ImageImportImageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ImageImportImage)(nil)).Elem()
+}
+
+func (o ImageImportImageOutput) ToImageImportImageOutput() ImageImportImageOutput {
+	return o
+}
+
+func (o ImageImportImageOutput) ToImageImportImageOutputWithContext(ctx context.Context) ImageImportImageOutput {
+	return o
+}
+
+func (o ImageImportImageOutput) ToImageImportImagePtrOutput() ImageImportImagePtrOutput {
+	return o.ToImageImportImagePtrOutputWithContext(context.Background())
+}
+
+func (o ImageImportImageOutput) ToImageImportImagePtrOutputWithContext(ctx context.Context) ImageImportImagePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ImageImportImage) *ImageImportImage {
+		return &v
+	}).(ImageImportImagePtrOutput)
+}
+
+// Data disk files included in the custom image, at the TOS bucket URL.
+func (o ImageImportImageOutput) ImportDataVolumes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ImageImportImage) []string { return v.ImportDataVolumes }).(pulumi.StringArrayOutput)
+}
+
+// System disk files included in the custom image, at the TOS bucket URL.
+func (o ImageImportImageOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImageImportImage) *string { return v.Url }).(pulumi.StringPtrOutput)
+}
+
+type ImageImportImagePtrOutput struct{ *pulumi.OutputState }
+
+func (ImageImportImagePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ImageImportImage)(nil)).Elem()
+}
+
+func (o ImageImportImagePtrOutput) ToImageImportImagePtrOutput() ImageImportImagePtrOutput {
+	return o
+}
+
+func (o ImageImportImagePtrOutput) ToImageImportImagePtrOutputWithContext(ctx context.Context) ImageImportImagePtrOutput {
+	return o
+}
+
+func (o ImageImportImagePtrOutput) Elem() ImageImportImageOutput {
+	return o.ApplyT(func(v *ImageImportImage) ImageImportImage {
+		if v != nil {
+			return *v
+		}
+		var ret ImageImportImage
+		return ret
+	}).(ImageImportImageOutput)
+}
+
+// Data disk files included in the custom image, at the TOS bucket URL.
+func (o ImageImportImagePtrOutput) ImportDataVolumes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ImageImportImage) []string {
+		if v == nil {
+			return nil
+		}
+		return v.ImportDataVolumes
+	}).(pulumi.StringArrayOutput)
+}
+
+// System disk files included in the custom image, at the TOS bucket URL.
+func (o ImageImportImagePtrOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ImageImportImage) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Url
+	}).(pulumi.StringPtrOutput)
+}
+
 type ImageSnapshot struct {
-	// 快照大小。单位为GiB。
+	// Snapshot size (GiB)
 	Size *int `pulumi:"size"`
-	// 快照ID。
+	// Snapshot ID
 	SnapshotId *string `pulumi:"snapshotId"`
-	// 云盘种类。system：系统盘。data：数据盘。
+	// Cloud disk type. system: System disk. data: Data disk.
 	VolumeKind *string `pulumi:"volumeKind"`
 }
 
@@ -806,11 +962,11 @@ type ImageSnapshotInput interface {
 }
 
 type ImageSnapshotArgs struct {
-	// 快照大小。单位为GiB。
+	// Snapshot size (GiB)
 	Size pulumi.IntPtrInput `pulumi:"size"`
-	// 快照ID。
+	// Snapshot ID
 	SnapshotId pulumi.StringPtrInput `pulumi:"snapshotId"`
-	// 云盘种类。system：系统盘。data：数据盘。
+	// Cloud disk type. system: System disk. data: Data disk.
 	VolumeKind pulumi.StringPtrInput `pulumi:"volumeKind"`
 }
 
@@ -865,17 +1021,17 @@ func (o ImageSnapshotOutput) ToImageSnapshotOutputWithContext(ctx context.Contex
 	return o
 }
 
-// 快照大小。单位为GiB。
+// Snapshot size (GiB)
 func (o ImageSnapshotOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ImageSnapshot) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
 
-// 快照ID。
+// Snapshot ID
 func (o ImageSnapshotOutput) SnapshotId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ImageSnapshot) *string { return v.SnapshotId }).(pulumi.StringPtrOutput)
 }
 
-// 云盘种类。system：系统盘。data：数据盘。
+// Cloud disk type. system: System disk. data: Data disk.
 func (o ImageSnapshotOutput) VolumeKind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ImageSnapshot) *string { return v.VolumeKind }).(pulumi.StringPtrOutput)
 }
@@ -901,9 +1057,9 @@ func (o ImageSnapshotArrayOutput) Index(i pulumi.IntInput) ImageSnapshotOutput {
 }
 
 type ImageTag struct {
-	// 镜像标签的标签键。
+	// Tag key for the image label.
 	Key *string `pulumi:"key"`
-	// 镜像标签的值。
+	// Image tag value
 	Value *string `pulumi:"value"`
 }
 
@@ -919,9 +1075,9 @@ type ImageTagInput interface {
 }
 
 type ImageTagArgs struct {
-	// 镜像标签的标签键。
+	// Tag key for the image label.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 镜像标签的值。
+	// Image tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -976,12 +1132,12 @@ func (o ImageTagOutput) ToImageTagOutputWithContext(ctx context.Context) ImageTa
 	return o
 }
 
-// 镜像标签的标签键。
+// Tag key for the image label.
 func (o ImageTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ImageTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 镜像标签的值。
+// Image tag value
 func (o ImageTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ImageTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -1007,13 +1163,13 @@ func (o ImageTagArrayOutput) Index(i pulumi.IntInput) ImageTagOutput {
 }
 
 type InstanceCpuMemory struct {
-	// 实例的核数。
+	// Number of instance cores.
 	CoreCount *int `pulumi:"coreCount"`
-	// 实例的CPU数量。
+	// Number of vCPUs for the instance.
 	CpuNumber *int `pulumi:"cpuNumber"`
-	// 实例的内存大小，单位MB。
+	// Instance memory size (MB).
 	MemorySize *int `pulumi:"memorySize"`
-	// 实例的每核线程数。
+	// Threads per core for the instance.
 	ThreadsPerCore *int `pulumi:"threadsPerCore"`
 }
 
@@ -1029,13 +1185,13 @@ type InstanceCpuMemoryInput interface {
 }
 
 type InstanceCpuMemoryArgs struct {
-	// 实例的核数。
+	// Number of instance cores.
 	CoreCount pulumi.IntPtrInput `pulumi:"coreCount"`
-	// 实例的CPU数量。
+	// Number of vCPUs for the instance.
 	CpuNumber pulumi.IntPtrInput `pulumi:"cpuNumber"`
-	// 实例的内存大小，单位MB。
+	// Instance memory size (MB).
 	MemorySize pulumi.IntPtrInput `pulumi:"memorySize"`
-	// 实例的每核线程数。
+	// Threads per core for the instance.
 	ThreadsPerCore pulumi.IntPtrInput `pulumi:"threadsPerCore"`
 }
 
@@ -1116,22 +1272,22 @@ func (o InstanceCpuMemoryOutput) ToInstanceCpuMemoryPtrOutputWithContext(ctx con
 	}).(InstanceCpuMemoryPtrOutput)
 }
 
-// 实例的核数。
+// Number of instance cores.
 func (o InstanceCpuMemoryOutput) CoreCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceCpuMemory) *int { return v.CoreCount }).(pulumi.IntPtrOutput)
 }
 
-// 实例的CPU数量。
+// Number of vCPUs for the instance.
 func (o InstanceCpuMemoryOutput) CpuNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceCpuMemory) *int { return v.CpuNumber }).(pulumi.IntPtrOutput)
 }
 
-// 实例的内存大小，单位MB。
+// Instance memory size (MB).
 func (o InstanceCpuMemoryOutput) MemorySize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceCpuMemory) *int { return v.MemorySize }).(pulumi.IntPtrOutput)
 }
 
-// 实例的每核线程数。
+// Threads per core for the instance.
 func (o InstanceCpuMemoryOutput) ThreadsPerCore() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceCpuMemory) *int { return v.ThreadsPerCore }).(pulumi.IntPtrOutput)
 }
@@ -1160,7 +1316,7 @@ func (o InstanceCpuMemoryPtrOutput) Elem() InstanceCpuMemoryOutput {
 	}).(InstanceCpuMemoryOutput)
 }
 
-// 实例的核数。
+// Number of instance cores.
 func (o InstanceCpuMemoryPtrOutput) CoreCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceCpuMemory) *int {
 		if v == nil {
@@ -1170,7 +1326,7 @@ func (o InstanceCpuMemoryPtrOutput) CoreCount() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 实例的CPU数量。
+// Number of vCPUs for the instance.
 func (o InstanceCpuMemoryPtrOutput) CpuNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceCpuMemory) *int {
 		if v == nil {
@@ -1180,7 +1336,7 @@ func (o InstanceCpuMemoryPtrOutput) CpuNumber() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 实例的内存大小，单位MB。
+// Instance memory size (MB).
 func (o InstanceCpuMemoryPtrOutput) MemorySize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceCpuMemory) *int {
 		if v == nil {
@@ -1190,7 +1346,7 @@ func (o InstanceCpuMemoryPtrOutput) MemorySize() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 实例的每核线程数。
+// Threads per core for the instance.
 func (o InstanceCpuMemoryPtrOutput) ThreadsPerCore() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceCpuMemory) *int {
 		if v == nil {
@@ -1201,44 +1357,44 @@ func (o InstanceCpuMemoryPtrOutput) ThreadsPerCore() pulumi.IntPtrOutput {
 }
 
 type InstanceEipAddress struct {
-	// 实例的分配ID。
+	// Instance allocation ID
 	AllocationId *string `pulumi:"allocationId"`
-	// 公网IP的带宽上限，默认值为1，单位：Mbps。
-	//     - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
-	//     - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+	// Maximum bandwidth for public IP. Default value is 1, unit: Mbps.
+	//     - If `ChargeType` is `PayByBandwidth`: value range is 1–500.
+	//     - If `ChargeType` is `PayByTraffic`: value range is 1–200.
 	BandwidthMbps *int `pulumi:"bandwidthMbps"`
-	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
-	//     - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
-	//     - 公网IP加入到共享带宽包必须同时满足如下条件：
-	//       - 二者的安全防护类型相同。
-	//       - 二者的地域相同。
-	//       - 公网IP的计费方式必须是按量计费。
-	//       - 共享带宽包为IPv4类型。
+	// Shared bandwidth package ID, used to add a public IP to the shared bandwidth package.
+	//     - You can call the [DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685) API to query the shared bandwidth package ID.
+	//     - To add a public IP to a shared bandwidth package, all of the following conditions must be met:
+	//       - Both must have the same security protection type.
+	//       - Both must be in the same region.
+	//       - The public IP must use pay-as-you-go billing.
+	//       - The shared bandwidth package must be IPv4 type.
 	BandwidthPackageId *string `pulumi:"bandwidthPackageId"`
-	// 公网IP的计费方式，取值：
-	//     - PayByBandwidth（默认）：按量计费-按带宽上限计费。
-	//     - PayByTraffic：按量计费-按实际流量计费。
-	//     - PrePaid：包年包月。
+	// Public IP billing method. Values:
+	//     - PayByBandwidth (default): Pay-as-you-go—billed by bandwidth cap.
+	//     - PayByTraffic: Pay-as-you-go—billed by actual traffic.
+	//     - PrePaid: Subscription.
 	//
-	//   **提示:**
-	//   实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
+	//   **Note:**
+	//   When `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
 	ChargeType *string `pulumi:"chargeType"`
-	// 实例的IP地址。
+	// Instance IP address.
 	IpAddress *string `pulumi:"ipAddress"`
-	// 公网IP的线路类型，默认为BGP。取值：
-	//     - BGP：BGP（多线）。
-	//     - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
-	//       - ChinaMobile：中国移动静态单线。
-	//       - ChinaTelecom：中国电信静态单线。
-	//       - ChinaUnicom：中国联通静态单线。
-	//     - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
-	//     - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+	// Line type for the public IP. Default is BGP. Values:
+	//     - BGP: BGP (multi-line)
+	//     - If your account has applied for and enabled static single-line permissions, you can use the following values:
+	//       - ChinaMobile: China Mobile static single-line
+	//       - ChinaTelecom: China Telecom static single-line
+	//       - ChinaUnicom: China Unicom static single-line
+	//     - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.
+	//     - If your account has applied for and enabled static BGP permissions, you can use Static_BGP
 	Isp *string `pulumi:"isp"`
-	// 实例是否随实例释放。
+	// Whether this resource is released when the instance is released.
 	ReleaseWithInstance *bool `pulumi:"releaseWithInstance"`
-	// DDoS原生防护（企业版）ID。
+	// DDoS Native Protection (Enterprise Edition) ID.
 	SecurityProtectionInstanceId *int `pulumi:"securityProtectionInstanceId"`
-	// 公网IP的安全防护类型。
+	// Public IP security protection type.
 	SecurityProtectionTypes []string `pulumi:"securityProtectionTypes"`
 }
 
@@ -1254,44 +1410,44 @@ type InstanceEipAddressInput interface {
 }
 
 type InstanceEipAddressArgs struct {
-	// 实例的分配ID。
+	// Instance allocation ID
 	AllocationId pulumi.StringPtrInput `pulumi:"allocationId"`
-	// 公网IP的带宽上限，默认值为1，单位：Mbps。
-	//     - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
-	//     - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+	// Maximum bandwidth for public IP. Default value is 1, unit: Mbps.
+	//     - If `ChargeType` is `PayByBandwidth`: value range is 1–500.
+	//     - If `ChargeType` is `PayByTraffic`: value range is 1–200.
 	BandwidthMbps pulumi.IntPtrInput `pulumi:"bandwidthMbps"`
-	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
-	//     - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
-	//     - 公网IP加入到共享带宽包必须同时满足如下条件：
-	//       - 二者的安全防护类型相同。
-	//       - 二者的地域相同。
-	//       - 公网IP的计费方式必须是按量计费。
-	//       - 共享带宽包为IPv4类型。
+	// Shared bandwidth package ID, used to add a public IP to the shared bandwidth package.
+	//     - You can call the [DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685) API to query the shared bandwidth package ID.
+	//     - To add a public IP to a shared bandwidth package, all of the following conditions must be met:
+	//       - Both must have the same security protection type.
+	//       - Both must be in the same region.
+	//       - The public IP must use pay-as-you-go billing.
+	//       - The shared bandwidth package must be IPv4 type.
 	BandwidthPackageId pulumi.StringPtrInput `pulumi:"bandwidthPackageId"`
-	// 公网IP的计费方式，取值：
-	//     - PayByBandwidth（默认）：按量计费-按带宽上限计费。
-	//     - PayByTraffic：按量计费-按实际流量计费。
-	//     - PrePaid：包年包月。
+	// Public IP billing method. Values:
+	//     - PayByBandwidth (default): Pay-as-you-go—billed by bandwidth cap.
+	//     - PayByTraffic: Pay-as-you-go—billed by actual traffic.
+	//     - PrePaid: Subscription.
 	//
-	//   **提示:**
-	//   实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
+	//   **Note:**
+	//   When `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
 	ChargeType pulumi.StringPtrInput `pulumi:"chargeType"`
-	// 实例的IP地址。
+	// Instance IP address.
 	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
-	// 公网IP的线路类型，默认为BGP。取值：
-	//     - BGP：BGP（多线）。
-	//     - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
-	//       - ChinaMobile：中国移动静态单线。
-	//       - ChinaTelecom：中国电信静态单线。
-	//       - ChinaUnicom：中国联通静态单线。
-	//     - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
-	//     - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+	// Line type for the public IP. Default is BGP. Values:
+	//     - BGP: BGP (multi-line)
+	//     - If your account has applied for and enabled static single-line permissions, you can use the following values:
+	//       - ChinaMobile: China Mobile static single-line
+	//       - ChinaTelecom: China Telecom static single-line
+	//       - ChinaUnicom: China Unicom static single-line
+	//     - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.
+	//     - If your account has applied for and enabled static BGP permissions, you can use Static_BGP
 	Isp pulumi.StringPtrInput `pulumi:"isp"`
-	// 实例是否随实例释放。
+	// Whether this resource is released when the instance is released.
 	ReleaseWithInstance pulumi.BoolPtrInput `pulumi:"releaseWithInstance"`
-	// DDoS原生防护（企业版）ID。
+	// DDoS Native Protection (Enterprise Edition) ID.
 	SecurityProtectionInstanceId pulumi.IntPtrInput `pulumi:"securityProtectionInstanceId"`
-	// 公网IP的安全防护类型。
+	// Public IP security protection type.
 	SecurityProtectionTypes pulumi.StringArrayInput `pulumi:"securityProtectionTypes"`
 }
 
@@ -1372,71 +1528,71 @@ func (o InstanceEipAddressOutput) ToInstanceEipAddressPtrOutputWithContext(ctx c
 	}).(InstanceEipAddressPtrOutput)
 }
 
-// 实例的分配ID。
+// Instance allocation ID
 func (o InstanceEipAddressOutput) AllocationId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEipAddress) *string { return v.AllocationId }).(pulumi.StringPtrOutput)
 }
 
-// 公网IP的带宽上限，默认值为1，单位：Mbps。
-//   - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
-//   - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+// Maximum bandwidth for public IP. Default value is 1, unit: Mbps.
+//   - If `ChargeType` is `PayByBandwidth`: value range is 1–500.
+//   - If `ChargeType` is `PayByTraffic`: value range is 1–200.
 func (o InstanceEipAddressOutput) BandwidthMbps() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceEipAddress) *int { return v.BandwidthMbps }).(pulumi.IntPtrOutput)
 }
 
-// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
-//   - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
-//   - 公网IP加入到共享带宽包必须同时满足如下条件：
-//   - 二者的安全防护类型相同。
-//   - 二者的地域相同。
-//   - 公网IP的计费方式必须是按量计费。
-//   - 共享带宽包为IPv4类型。
+// Shared bandwidth package ID, used to add a public IP to the shared bandwidth package.
+//   - You can call the [DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685) API to query the shared bandwidth package ID.
+//   - To add a public IP to a shared bandwidth package, all of the following conditions must be met:
+//   - Both must have the same security protection type.
+//   - Both must be in the same region.
+//   - The public IP must use pay-as-you-go billing.
+//   - The shared bandwidth package must be IPv4 type.
 func (o InstanceEipAddressOutput) BandwidthPackageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEipAddress) *string { return v.BandwidthPackageId }).(pulumi.StringPtrOutput)
 }
 
-// 公网IP的计费方式，取值：
+// Public IP billing method. Values:
 //
-//   - PayByBandwidth（默认）：按量计费-按带宽上限计费。
+//   - PayByBandwidth (default): Pay-as-you-go—billed by bandwidth cap.
 //
-//   - PayByTraffic：按量计费-按实际流量计费。
+//   - PayByTraffic: Pay-as-you-go—billed by actual traffic.
 //
-//   - PrePaid：包年包月。
+//   - PrePaid: Subscription.
 //
-//     **提示:**
-//     实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
+//     **Note:**
+//     When `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
 func (o InstanceEipAddressOutput) ChargeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEipAddress) *string { return v.ChargeType }).(pulumi.StringPtrOutput)
 }
 
-// 实例的IP地址。
+// Instance IP address.
 func (o InstanceEipAddressOutput) IpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEipAddress) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
-// 公网IP的线路类型，默认为BGP。取值：
-//   - BGP：BGP（多线）。
-//   - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
-//   - ChinaMobile：中国移动静态单线。
-//   - ChinaTelecom：中国电信静态单线。
-//   - ChinaUnicom：中国联通静态单线。
-//   - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
-//   - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+// Line type for the public IP. Default is BGP. Values:
+//   - BGP: BGP (multi-line)
+//   - If your account has applied for and enabled static single-line permissions, you can use the following values:
+//   - ChinaMobile: China Mobile static single-line
+//   - ChinaTelecom: China Telecom static single-line
+//   - ChinaUnicom: China Unicom static single-line
+//   - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.
+//   - If your account has applied for and enabled static BGP permissions, you can use Static_BGP
 func (o InstanceEipAddressOutput) Isp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEipAddress) *string { return v.Isp }).(pulumi.StringPtrOutput)
 }
 
-// 实例是否随实例释放。
+// Whether this resource is released when the instance is released.
 func (o InstanceEipAddressOutput) ReleaseWithInstance() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InstanceEipAddress) *bool { return v.ReleaseWithInstance }).(pulumi.BoolPtrOutput)
 }
 
-// DDoS原生防护（企业版）ID。
+// DDoS Native Protection (Enterprise Edition) ID.
 func (o InstanceEipAddressOutput) SecurityProtectionInstanceId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceEipAddress) *int { return v.SecurityProtectionInstanceId }).(pulumi.IntPtrOutput)
 }
 
-// 公网IP的安全防护类型。
+// Public IP security protection type.
 func (o InstanceEipAddressOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v InstanceEipAddress) []string { return v.SecurityProtectionTypes }).(pulumi.StringArrayOutput)
 }
@@ -1465,7 +1621,7 @@ func (o InstanceEipAddressPtrOutput) Elem() InstanceEipAddressOutput {
 	}).(InstanceEipAddressOutput)
 }
 
-// 实例的分配ID。
+// Instance allocation ID
 func (o InstanceEipAddressPtrOutput) AllocationId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceEipAddress) *string {
 		if v == nil {
@@ -1475,9 +1631,9 @@ func (o InstanceEipAddressPtrOutput) AllocationId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 公网IP的带宽上限，默认值为1，单位：Mbps。
-//   - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
-//   - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+// Maximum bandwidth for public IP. Default value is 1, unit: Mbps.
+//   - If `ChargeType` is `PayByBandwidth`: value range is 1–500.
+//   - If `ChargeType` is `PayByTraffic`: value range is 1–200.
 func (o InstanceEipAddressPtrOutput) BandwidthMbps() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceEipAddress) *int {
 		if v == nil {
@@ -1487,13 +1643,13 @@ func (o InstanceEipAddressPtrOutput) BandwidthMbps() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
-//   - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
-//   - 公网IP加入到共享带宽包必须同时满足如下条件：
-//   - 二者的安全防护类型相同。
-//   - 二者的地域相同。
-//   - 公网IP的计费方式必须是按量计费。
-//   - 共享带宽包为IPv4类型。
+// Shared bandwidth package ID, used to add a public IP to the shared bandwidth package.
+//   - You can call the [DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685) API to query the shared bandwidth package ID.
+//   - To add a public IP to a shared bandwidth package, all of the following conditions must be met:
+//   - Both must have the same security protection type.
+//   - Both must be in the same region.
+//   - The public IP must use pay-as-you-go billing.
+//   - The shared bandwidth package must be IPv4 type.
 func (o InstanceEipAddressPtrOutput) BandwidthPackageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceEipAddress) *string {
 		if v == nil {
@@ -1503,16 +1659,16 @@ func (o InstanceEipAddressPtrOutput) BandwidthPackageId() pulumi.StringPtrOutput
 	}).(pulumi.StringPtrOutput)
 }
 
-// 公网IP的计费方式，取值：
+// Public IP billing method. Values:
 //
-//   - PayByBandwidth（默认）：按量计费-按带宽上限计费。
+//   - PayByBandwidth (default): Pay-as-you-go—billed by bandwidth cap.
 //
-//   - PayByTraffic：按量计费-按实际流量计费。
+//   - PayByTraffic: Pay-as-you-go—billed by actual traffic.
 //
-//   - PrePaid：包年包月。
+//   - PrePaid: Subscription.
 //
-//     **提示:**
-//     实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
+//     **Note:**
+//     When `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
 func (o InstanceEipAddressPtrOutput) ChargeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceEipAddress) *string {
 		if v == nil {
@@ -1522,7 +1678,7 @@ func (o InstanceEipAddressPtrOutput) ChargeType() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的IP地址。
+// Instance IP address.
 func (o InstanceEipAddressPtrOutput) IpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceEipAddress) *string {
 		if v == nil {
@@ -1532,14 +1688,14 @@ func (o InstanceEipAddressPtrOutput) IpAddress() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 公网IP的线路类型，默认为BGP。取值：
-//   - BGP：BGP（多线）。
-//   - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
-//   - ChinaMobile：中国移动静态单线。
-//   - ChinaTelecom：中国电信静态单线。
-//   - ChinaUnicom：中国联通静态单线。
-//   - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
-//   - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+// Line type for the public IP. Default is BGP. Values:
+//   - BGP: BGP (multi-line)
+//   - If your account has applied for and enabled static single-line permissions, you can use the following values:
+//   - ChinaMobile: China Mobile static single-line
+//   - ChinaTelecom: China Telecom static single-line
+//   - ChinaUnicom: China Unicom static single-line
+//   - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.
+//   - If your account has applied for and enabled static BGP permissions, you can use Static_BGP
 func (o InstanceEipAddressPtrOutput) Isp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceEipAddress) *string {
 		if v == nil {
@@ -1549,7 +1705,7 @@ func (o InstanceEipAddressPtrOutput) Isp() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例是否随实例释放。
+// Whether this resource is released when the instance is released.
 func (o InstanceEipAddressPtrOutput) ReleaseWithInstance() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InstanceEipAddress) *bool {
 		if v == nil {
@@ -1559,7 +1715,7 @@ func (o InstanceEipAddressPtrOutput) ReleaseWithInstance() pulumi.BoolPtrOutput 
 	}).(pulumi.BoolPtrOutput)
 }
 
-// DDoS原生防护（企业版）ID。
+// DDoS Native Protection (Enterprise Edition) ID.
 func (o InstanceEipAddressPtrOutput) SecurityProtectionInstanceId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceEipAddress) *int {
 		if v == nil {
@@ -1569,7 +1725,7 @@ func (o InstanceEipAddressPtrOutput) SecurityProtectionInstanceId() pulumi.IntPt
 	}).(pulumi.IntPtrOutput)
 }
 
-// 公网IP的安全防护类型。
+// Public IP security protection type.
 func (o InstanceEipAddressPtrOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *InstanceEipAddress) []string {
 		if v == nil {
@@ -1580,13 +1736,13 @@ func (o InstanceEipAddressPtrOutput) SecurityProtectionTypes() pulumi.StringArra
 }
 
 type InstanceImage struct {
-	// 实例的镜像ID。
+	// Instance image ID.
 	ImageId string `pulumi:"imageId"`
-	// 实例的镜像发布版本。
+	// The image release version of the instance.
 	ImageReleaseVersion *string `pulumi:"imageReleaseVersion"`
-	// 实例是否保留镜像凭证。
+	// Whether the instance retains image credentials
 	KeepImageCredential *bool `pulumi:"keepImageCredential"`
-	// 实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+	// Instance security enhancement policy. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images
 	SecurityEnhancementStrategy *string `pulumi:"securityEnhancementStrategy"`
 }
 
@@ -1602,13 +1758,13 @@ type InstanceImageInput interface {
 }
 
 type InstanceImageArgs struct {
-	// 实例的镜像ID。
+	// Instance image ID.
 	ImageId pulumi.StringInput `pulumi:"imageId"`
-	// 实例的镜像发布版本。
+	// The image release version of the instance.
 	ImageReleaseVersion pulumi.StringPtrInput `pulumi:"imageReleaseVersion"`
-	// 实例是否保留镜像凭证。
+	// Whether the instance retains image credentials
 	KeepImageCredential pulumi.BoolPtrInput `pulumi:"keepImageCredential"`
-	// 实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+	// Instance security enhancement policy. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images
 	SecurityEnhancementStrategy pulumi.StringPtrInput `pulumi:"securityEnhancementStrategy"`
 }
 
@@ -1689,22 +1845,22 @@ func (o InstanceImageOutput) ToInstanceImagePtrOutputWithContext(ctx context.Con
 	}).(InstanceImagePtrOutput)
 }
 
-// 实例的镜像ID。
+// Instance image ID.
 func (o InstanceImageOutput) ImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v InstanceImage) string { return v.ImageId }).(pulumi.StringOutput)
 }
 
-// 实例的镜像发布版本。
+// The image release version of the instance.
 func (o InstanceImageOutput) ImageReleaseVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceImage) *string { return v.ImageReleaseVersion }).(pulumi.StringPtrOutput)
 }
 
-// 实例是否保留镜像凭证。
+// Whether the instance retains image credentials
 func (o InstanceImageOutput) KeepImageCredential() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InstanceImage) *bool { return v.KeepImageCredential }).(pulumi.BoolPtrOutput)
 }
 
-// 实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+// Instance security enhancement policy. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images
 func (o InstanceImageOutput) SecurityEnhancementStrategy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceImage) *string { return v.SecurityEnhancementStrategy }).(pulumi.StringPtrOutput)
 }
@@ -1733,7 +1889,7 @@ func (o InstanceImagePtrOutput) Elem() InstanceImageOutput {
 	}).(InstanceImageOutput)
 }
 
-// 实例的镜像ID。
+// Instance image ID.
 func (o InstanceImagePtrOutput) ImageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceImage) *string {
 		if v == nil {
@@ -1743,7 +1899,7 @@ func (o InstanceImagePtrOutput) ImageId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的镜像发布版本。
+// The image release version of the instance.
 func (o InstanceImagePtrOutput) ImageReleaseVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceImage) *string {
 		if v == nil {
@@ -1753,7 +1909,7 @@ func (o InstanceImagePtrOutput) ImageReleaseVersion() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例是否保留镜像凭证。
+// Whether the instance retains image credentials
 func (o InstanceImagePtrOutput) KeepImageCredential() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InstanceImage) *bool {
 		if v == nil {
@@ -1763,7 +1919,7 @@ func (o InstanceImagePtrOutput) KeepImageCredential() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+// Instance security enhancement policy. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images
 func (o InstanceImagePtrOutput) SecurityEnhancementStrategy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceImage) *string {
 		if v == nil {
@@ -1774,9 +1930,9 @@ func (o InstanceImagePtrOutput) SecurityEnhancementStrategy() pulumi.StringPtrOu
 }
 
 type InstanceKeyPair struct {
-	// 实例的公钥。
+	// Instance public key
 	KeyPairId *string `pulumi:"keyPairId"`
-	// 实例的密钥对名称。
+	// Instance key pair name
 	KeyPairName *string `pulumi:"keyPairName"`
 }
 
@@ -1792,9 +1948,9 @@ type InstanceKeyPairInput interface {
 }
 
 type InstanceKeyPairArgs struct {
-	// 实例的公钥。
+	// Instance public key
 	KeyPairId pulumi.StringPtrInput `pulumi:"keyPairId"`
-	// 实例的密钥对名称。
+	// Instance key pair name
 	KeyPairName pulumi.StringPtrInput `pulumi:"keyPairName"`
 }
 
@@ -1875,12 +2031,12 @@ func (o InstanceKeyPairOutput) ToInstanceKeyPairPtrOutputWithContext(ctx context
 	}).(InstanceKeyPairPtrOutput)
 }
 
-// 实例的公钥。
+// Instance public key
 func (o InstanceKeyPairOutput) KeyPairId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceKeyPair) *string { return v.KeyPairId }).(pulumi.StringPtrOutput)
 }
 
-// 实例的密钥对名称。
+// Instance key pair name
 func (o InstanceKeyPairOutput) KeyPairName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceKeyPair) *string { return v.KeyPairName }).(pulumi.StringPtrOutput)
 }
@@ -1909,7 +2065,7 @@ func (o InstanceKeyPairPtrOutput) Elem() InstanceKeyPairOutput {
 	}).(InstanceKeyPairOutput)
 }
 
-// 实例的公钥。
+// Instance public key
 func (o InstanceKeyPairPtrOutput) KeyPairId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceKeyPair) *string {
 		if v == nil {
@@ -1919,7 +2075,7 @@ func (o InstanceKeyPairPtrOutput) KeyPairId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的密钥对名称。
+// Instance key pair name
 func (o InstanceKeyPairPtrOutput) KeyPairName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceKeyPair) *string {
 		if v == nil {
@@ -1930,11 +2086,11 @@ func (o InstanceKeyPairPtrOutput) KeyPairName() pulumi.StringPtrOutput {
 }
 
 type InstanceLocalVolume struct {
-	// 实例挂载的本地盘数量。
+	// The number of local disks attached to the instance.
 	Count *int `pulumi:"count"`
-	// 实例挂载的本地盘的单盘容量，单位GiB。
+	// Capacity of each local disk mounted to the instance (GiB).
 	Size *int `pulumi:"size"`
-	// 本地盘类型，取值：LOCAL_SSD：SSD本地盘。LOCAL_HDD：HDD本地盘。
+	// Local disk type. Values: LOCAL_SSD: SSD local disk. LOCAL_HDD: HDD local disk.
 	VolumeType *string `pulumi:"volumeType"`
 }
 
@@ -1950,11 +2106,11 @@ type InstanceLocalVolumeInput interface {
 }
 
 type InstanceLocalVolumeArgs struct {
-	// 实例挂载的本地盘数量。
+	// The number of local disks attached to the instance.
 	Count pulumi.IntPtrInput `pulumi:"count"`
-	// 实例挂载的本地盘的单盘容量，单位GiB。
+	// Capacity of each local disk mounted to the instance (GiB).
 	Size pulumi.IntPtrInput `pulumi:"size"`
-	// 本地盘类型，取值：LOCAL_SSD：SSD本地盘。LOCAL_HDD：HDD本地盘。
+	// Local disk type. Values: LOCAL_SSD: SSD local disk. LOCAL_HDD: HDD local disk.
 	VolumeType pulumi.StringPtrInput `pulumi:"volumeType"`
 }
 
@@ -2009,17 +2165,17 @@ func (o InstanceLocalVolumeOutput) ToInstanceLocalVolumeOutputWithContext(ctx co
 	return o
 }
 
-// 实例挂载的本地盘数量。
+// The number of local disks attached to the instance.
 func (o InstanceLocalVolumeOutput) Count() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceLocalVolume) *int { return v.Count }).(pulumi.IntPtrOutput)
 }
 
-// 实例挂载的本地盘的单盘容量，单位GiB。
+// Capacity of each local disk mounted to the instance (GiB).
 func (o InstanceLocalVolumeOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceLocalVolume) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
 
-// 本地盘类型，取值：LOCAL_SSD：SSD本地盘。LOCAL_HDD：HDD本地盘。
+// Local disk type. Values: LOCAL_SSD: SSD local disk. LOCAL_HDD: HDD local disk.
 func (o InstanceLocalVolumeOutput) VolumeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceLocalVolume) *string { return v.VolumeType }).(pulumi.StringPtrOutput)
 }
@@ -2045,9 +2201,9 @@ func (o InstanceLocalVolumeArrayOutput) Index(i pulumi.IntInput) InstanceLocalVo
 }
 
 type InstanceOperationSystem struct {
-	// 实例的操作系统名称。
+	// Instance operating system name.
 	Name *string `pulumi:"name"`
-	// 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+	// Operating system type of the instance. Linux: Linux system. Windows: Windows system.
 	Type *string `pulumi:"type"`
 }
 
@@ -2063,9 +2219,9 @@ type InstanceOperationSystemInput interface {
 }
 
 type InstanceOperationSystemArgs struct {
-	// 实例的操作系统名称。
+	// Instance operating system name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+	// Operating system type of the instance. Linux: Linux system. Windows: Windows system.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -2146,12 +2302,12 @@ func (o InstanceOperationSystemOutput) ToInstanceOperationSystemPtrOutputWithCon
 	}).(InstanceOperationSystemPtrOutput)
 }
 
-// 实例的操作系统名称。
+// Instance operating system name.
 func (o InstanceOperationSystemOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceOperationSystem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+// Operating system type of the instance. Linux: Linux system. Windows: Windows system.
 func (o InstanceOperationSystemOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceOperationSystem) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -2180,7 +2336,7 @@ func (o InstanceOperationSystemPtrOutput) Elem() InstanceOperationSystemOutput {
 	}).(InstanceOperationSystemOutput)
 }
 
-// 实例的操作系统名称。
+// Instance operating system name.
 func (o InstanceOperationSystemPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceOperationSystem) *string {
 		if v == nil {
@@ -2190,7 +2346,7 @@ func (o InstanceOperationSystemPtrOutput) Name() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+// Operating system type of the instance. Linux: Linux system. Windows: Windows system.
 func (o InstanceOperationSystemPtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceOperationSystem) *string {
 		if v == nil {
@@ -2201,13 +2357,13 @@ func (o InstanceOperationSystemPtrOutput) Type() pulumi.StringPtrOutput {
 }
 
 type InstancePlacement struct {
-	// 针对节省停机模式的ECS实例，停止后会释放部分资源，本参数用于查看ECS实例重新启动时是否仍固定部署在原宿主机上。取值：Host：启用节省停机模式的实例重新启动时，仍会部署在原宿主机上。Default（默认）：启用节省停机模式的实例重新启动时，会优先迁移到支持自动部署的宿主机；若支持自动部署的宿主机资源不足，则在原宿主机上进行启动。
+	// For ECS instances in economy stop mode, some resources are released after stopping. This parameter indicates whether the ECS instance will remain deployed on the original host when restarted. Values: Host: When restarting an instance in economy stop mode, it will remain on the original host. Default: When restarting an instance in economy stop mode, it will preferentially migrate to a host that supports automatic deployment; if resources are insufficient, it will start on the original host.
 	Affinity *string `pulumi:"affinity"`
-	// 实例的专用主机集群ID。
+	// Instance dedicated host cluster ID.
 	DedicatedHostClusterId *string `pulumi:"dedicatedHostClusterId"`
-	// 实例的专用主机ID。
+	// Dedicated host ID for the instance.
 	DedicatedHostId *string `pulumi:"dedicatedHostId"`
-	// 是否在专有宿主机上创建实例，取值：Default（默认）：创建普通云服务器实例。Host：创建专有宿主机实例。若您不指定DedicatedHostId，则由系统自动选择专有宿主机放置实例
+	// Whether to create the instance on a dedicated host. Values: Default: Create a regular cloud server instance. Host: Create a dedicated host instance. If you do not specify DedicatedHostId, the system automatically selects a dedicated host to place the instance.
 	Tenancy *string `pulumi:"tenancy"`
 }
 
@@ -2223,13 +2379,13 @@ type InstancePlacementInput interface {
 }
 
 type InstancePlacementArgs struct {
-	// 针对节省停机模式的ECS实例，停止后会释放部分资源，本参数用于查看ECS实例重新启动时是否仍固定部署在原宿主机上。取值：Host：启用节省停机模式的实例重新启动时，仍会部署在原宿主机上。Default（默认）：启用节省停机模式的实例重新启动时，会优先迁移到支持自动部署的宿主机；若支持自动部署的宿主机资源不足，则在原宿主机上进行启动。
+	// For ECS instances in economy stop mode, some resources are released after stopping. This parameter indicates whether the ECS instance will remain deployed on the original host when restarted. Values: Host: When restarting an instance in economy stop mode, it will remain on the original host. Default: When restarting an instance in economy stop mode, it will preferentially migrate to a host that supports automatic deployment; if resources are insufficient, it will start on the original host.
 	Affinity pulumi.StringPtrInput `pulumi:"affinity"`
-	// 实例的专用主机集群ID。
+	// Instance dedicated host cluster ID.
 	DedicatedHostClusterId pulumi.StringPtrInput `pulumi:"dedicatedHostClusterId"`
-	// 实例的专用主机ID。
+	// Dedicated host ID for the instance.
 	DedicatedHostId pulumi.StringPtrInput `pulumi:"dedicatedHostId"`
-	// 是否在专有宿主机上创建实例，取值：Default（默认）：创建普通云服务器实例。Host：创建专有宿主机实例。若您不指定DedicatedHostId，则由系统自动选择专有宿主机放置实例
+	// Whether to create the instance on a dedicated host. Values: Default: Create a regular cloud server instance. Host: Create a dedicated host instance. If you do not specify DedicatedHostId, the system automatically selects a dedicated host to place the instance.
 	Tenancy pulumi.StringPtrInput `pulumi:"tenancy"`
 }
 
@@ -2310,22 +2466,22 @@ func (o InstancePlacementOutput) ToInstancePlacementPtrOutputWithContext(ctx con
 	}).(InstancePlacementPtrOutput)
 }
 
-// 针对节省停机模式的ECS实例，停止后会释放部分资源，本参数用于查看ECS实例重新启动时是否仍固定部署在原宿主机上。取值：Host：启用节省停机模式的实例重新启动时，仍会部署在原宿主机上。Default（默认）：启用节省停机模式的实例重新启动时，会优先迁移到支持自动部署的宿主机；若支持自动部署的宿主机资源不足，则在原宿主机上进行启动。
+// For ECS instances in economy stop mode, some resources are released after stopping. This parameter indicates whether the ECS instance will remain deployed on the original host when restarted. Values: Host: When restarting an instance in economy stop mode, it will remain on the original host. Default: When restarting an instance in economy stop mode, it will preferentially migrate to a host that supports automatic deployment; if resources are insufficient, it will start on the original host.
 func (o InstancePlacementOutput) Affinity() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstancePlacement) *string { return v.Affinity }).(pulumi.StringPtrOutput)
 }
 
-// 实例的专用主机集群ID。
+// Instance dedicated host cluster ID.
 func (o InstancePlacementOutput) DedicatedHostClusterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstancePlacement) *string { return v.DedicatedHostClusterId }).(pulumi.StringPtrOutput)
 }
 
-// 实例的专用主机ID。
+// Dedicated host ID for the instance.
 func (o InstancePlacementOutput) DedicatedHostId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstancePlacement) *string { return v.DedicatedHostId }).(pulumi.StringPtrOutput)
 }
 
-// 是否在专有宿主机上创建实例，取值：Default（默认）：创建普通云服务器实例。Host：创建专有宿主机实例。若您不指定DedicatedHostId，则由系统自动选择专有宿主机放置实例
+// Whether to create the instance on a dedicated host. Values: Default: Create a regular cloud server instance. Host: Create a dedicated host instance. If you do not specify DedicatedHostId, the system automatically selects a dedicated host to place the instance.
 func (o InstancePlacementOutput) Tenancy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstancePlacement) *string { return v.Tenancy }).(pulumi.StringPtrOutput)
 }
@@ -2354,7 +2510,7 @@ func (o InstancePlacementPtrOutput) Elem() InstancePlacementOutput {
 	}).(InstancePlacementOutput)
 }
 
-// 针对节省停机模式的ECS实例，停止后会释放部分资源，本参数用于查看ECS实例重新启动时是否仍固定部署在原宿主机上。取值：Host：启用节省停机模式的实例重新启动时，仍会部署在原宿主机上。Default（默认）：启用节省停机模式的实例重新启动时，会优先迁移到支持自动部署的宿主机；若支持自动部署的宿主机资源不足，则在原宿主机上进行启动。
+// For ECS instances in economy stop mode, some resources are released after stopping. This parameter indicates whether the ECS instance will remain deployed on the original host when restarted. Values: Host: When restarting an instance in economy stop mode, it will remain on the original host. Default: When restarting an instance in economy stop mode, it will preferentially migrate to a host that supports automatic deployment; if resources are insufficient, it will start on the original host.
 func (o InstancePlacementPtrOutput) Affinity() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstancePlacement) *string {
 		if v == nil {
@@ -2364,7 +2520,7 @@ func (o InstancePlacementPtrOutput) Affinity() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的专用主机集群ID。
+// Instance dedicated host cluster ID.
 func (o InstancePlacementPtrOutput) DedicatedHostClusterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstancePlacement) *string {
 		if v == nil {
@@ -2374,7 +2530,7 @@ func (o InstancePlacementPtrOutput) DedicatedHostClusterId() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的专用主机ID。
+// Dedicated host ID for the instance.
 func (o InstancePlacementPtrOutput) DedicatedHostId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstancePlacement) *string {
 		if v == nil {
@@ -2384,7 +2540,7 @@ func (o InstancePlacementPtrOutput) DedicatedHostId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 是否在专有宿主机上创建实例，取值：Default（默认）：创建普通云服务器实例。Host：创建专有宿主机实例。若您不指定DedicatedHostId，则由系统自动选择专有宿主机放置实例
+// Whether to create the instance on a dedicated host. Values: Default: Create a regular cloud server instance. Host: Create a dedicated host instance. If you do not specify DedicatedHostId, the system automatically selects a dedicated host to place the instance.
 func (o InstancePlacementPtrOutput) Tenancy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstancePlacement) *string {
 		if v == nil {
@@ -2395,23 +2551,23 @@ func (o InstancePlacementPtrOutput) Tenancy() pulumi.StringPtrOutput {
 }
 
 type InstancePrimaryNetworkInterface struct {
-	// 实例的IPv6地址数量。
+	// The number of IPv6 addresses for the instance.
 	Ipv6AddressCount *int `pulumi:"ipv6AddressCount"`
-	// 实例的IPv6地址。
+	// IPv6 address of the instance.
 	Ipv6Addresses []string `pulumi:"ipv6Addresses"`
-	// 实例的MAC地址。
+	// Instance MAC address.
 	MacAddress *string `pulumi:"macAddress"`
-	// 实例的网络接口ID。
+	// The network interface ID of the instance.
 	NetworkInterfaceId *string `pulumi:"networkInterfaceId"`
-	// 实例的主IP地址。
+	// Instance primary IP address
 	PrimaryIpAddress *string `pulumi:"primaryIpAddress"`
-	// 实例的私有IP地址。
+	// Instance private IP address.
 	PrivateIpAddresses []string `pulumi:"privateIpAddresses"`
-	// 实例的安全组ID。
+	// Instance security group ID
 	SecurityGroupIds []string `pulumi:"securityGroupIds"`
-	// 实例的子网ID。
+	// Instance subnet ID.
 	SubnetId *string `pulumi:"subnetId"`
-	// 实例的VPC ID。
+	// VPC ID of the instance.
 	VpcId *string `pulumi:"vpcId"`
 }
 
@@ -2427,23 +2583,23 @@ type InstancePrimaryNetworkInterfaceInput interface {
 }
 
 type InstancePrimaryNetworkInterfaceArgs struct {
-	// 实例的IPv6地址数量。
+	// The number of IPv6 addresses for the instance.
 	Ipv6AddressCount pulumi.IntPtrInput `pulumi:"ipv6AddressCount"`
-	// 实例的IPv6地址。
+	// IPv6 address of the instance.
 	Ipv6Addresses pulumi.StringArrayInput `pulumi:"ipv6Addresses"`
-	// 实例的MAC地址。
+	// Instance MAC address.
 	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
-	// 实例的网络接口ID。
+	// The network interface ID of the instance.
 	NetworkInterfaceId pulumi.StringPtrInput `pulumi:"networkInterfaceId"`
-	// 实例的主IP地址。
+	// Instance primary IP address
 	PrimaryIpAddress pulumi.StringPtrInput `pulumi:"primaryIpAddress"`
-	// 实例的私有IP地址。
+	// Instance private IP address.
 	PrivateIpAddresses pulumi.StringArrayInput `pulumi:"privateIpAddresses"`
-	// 实例的安全组ID。
+	// Instance security group ID
 	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
-	// 实例的子网ID。
+	// Instance subnet ID.
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
-	// 实例的VPC ID。
+	// VPC ID of the instance.
 	VpcId pulumi.StringPtrInput `pulumi:"vpcId"`
 }
 
@@ -2524,47 +2680,47 @@ func (o InstancePrimaryNetworkInterfaceOutput) ToInstancePrimaryNetworkInterface
 	}).(InstancePrimaryNetworkInterfacePtrOutput)
 }
 
-// 实例的IPv6地址数量。
+// The number of IPv6 addresses for the instance.
 func (o InstancePrimaryNetworkInterfaceOutput) Ipv6AddressCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstancePrimaryNetworkInterface) *int { return v.Ipv6AddressCount }).(pulumi.IntPtrOutput)
 }
 
-// 实例的IPv6地址。
+// IPv6 address of the instance.
 func (o InstancePrimaryNetworkInterfaceOutput) Ipv6Addresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v InstancePrimaryNetworkInterface) []string { return v.Ipv6Addresses }).(pulumi.StringArrayOutput)
 }
 
-// 实例的MAC地址。
+// Instance MAC address.
 func (o InstancePrimaryNetworkInterfaceOutput) MacAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstancePrimaryNetworkInterface) *string { return v.MacAddress }).(pulumi.StringPtrOutput)
 }
 
-// 实例的网络接口ID。
+// The network interface ID of the instance.
 func (o InstancePrimaryNetworkInterfaceOutput) NetworkInterfaceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstancePrimaryNetworkInterface) *string { return v.NetworkInterfaceId }).(pulumi.StringPtrOutput)
 }
 
-// 实例的主IP地址。
+// Instance primary IP address
 func (o InstancePrimaryNetworkInterfaceOutput) PrimaryIpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstancePrimaryNetworkInterface) *string { return v.PrimaryIpAddress }).(pulumi.StringPtrOutput)
 }
 
-// 实例的私有IP地址。
+// Instance private IP address.
 func (o InstancePrimaryNetworkInterfaceOutput) PrivateIpAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v InstancePrimaryNetworkInterface) []string { return v.PrivateIpAddresses }).(pulumi.StringArrayOutput)
 }
 
-// 实例的安全组ID。
+// Instance security group ID
 func (o InstancePrimaryNetworkInterfaceOutput) SecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v InstancePrimaryNetworkInterface) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
 }
 
-// 实例的子网ID。
+// Instance subnet ID.
 func (o InstancePrimaryNetworkInterfaceOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstancePrimaryNetworkInterface) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
-// 实例的VPC ID。
+// VPC ID of the instance.
 func (o InstancePrimaryNetworkInterfaceOutput) VpcId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstancePrimaryNetworkInterface) *string { return v.VpcId }).(pulumi.StringPtrOutput)
 }
@@ -2593,7 +2749,7 @@ func (o InstancePrimaryNetworkInterfacePtrOutput) Elem() InstancePrimaryNetworkI
 	}).(InstancePrimaryNetworkInterfaceOutput)
 }
 
-// 实例的IPv6地址数量。
+// The number of IPv6 addresses for the instance.
 func (o InstancePrimaryNetworkInterfacePtrOutput) Ipv6AddressCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstancePrimaryNetworkInterface) *int {
 		if v == nil {
@@ -2603,7 +2759,7 @@ func (o InstancePrimaryNetworkInterfacePtrOutput) Ipv6AddressCount() pulumi.IntP
 	}).(pulumi.IntPtrOutput)
 }
 
-// 实例的IPv6地址。
+// IPv6 address of the instance.
 func (o InstancePrimaryNetworkInterfacePtrOutput) Ipv6Addresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *InstancePrimaryNetworkInterface) []string {
 		if v == nil {
@@ -2613,7 +2769,7 @@ func (o InstancePrimaryNetworkInterfacePtrOutput) Ipv6Addresses() pulumi.StringA
 	}).(pulumi.StringArrayOutput)
 }
 
-// 实例的MAC地址。
+// Instance MAC address.
 func (o InstancePrimaryNetworkInterfacePtrOutput) MacAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstancePrimaryNetworkInterface) *string {
 		if v == nil {
@@ -2623,7 +2779,7 @@ func (o InstancePrimaryNetworkInterfacePtrOutput) MacAddress() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的网络接口ID。
+// The network interface ID of the instance.
 func (o InstancePrimaryNetworkInterfacePtrOutput) NetworkInterfaceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstancePrimaryNetworkInterface) *string {
 		if v == nil {
@@ -2633,7 +2789,7 @@ func (o InstancePrimaryNetworkInterfacePtrOutput) NetworkInterfaceId() pulumi.St
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的主IP地址。
+// Instance primary IP address
 func (o InstancePrimaryNetworkInterfacePtrOutput) PrimaryIpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstancePrimaryNetworkInterface) *string {
 		if v == nil {
@@ -2643,7 +2799,7 @@ func (o InstancePrimaryNetworkInterfacePtrOutput) PrimaryIpAddress() pulumi.Stri
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的私有IP地址。
+// Instance private IP address.
 func (o InstancePrimaryNetworkInterfacePtrOutput) PrivateIpAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *InstancePrimaryNetworkInterface) []string {
 		if v == nil {
@@ -2653,7 +2809,7 @@ func (o InstancePrimaryNetworkInterfacePtrOutput) PrivateIpAddresses() pulumi.St
 	}).(pulumi.StringArrayOutput)
 }
 
-// 实例的安全组ID。
+// Instance security group ID
 func (o InstancePrimaryNetworkInterfacePtrOutput) SecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *InstancePrimaryNetworkInterface) []string {
 		if v == nil {
@@ -2663,7 +2819,7 @@ func (o InstancePrimaryNetworkInterfacePtrOutput) SecurityGroupIds() pulumi.Stri
 	}).(pulumi.StringArrayOutput)
 }
 
-// 实例的子网ID。
+// Instance subnet ID.
 func (o InstancePrimaryNetworkInterfacePtrOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstancePrimaryNetworkInterface) *string {
 		if v == nil {
@@ -2673,7 +2829,7 @@ func (o InstancePrimaryNetworkInterfacePtrOutput) SubnetId() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的VPC ID。
+// VPC ID of the instance.
 func (o InstancePrimaryNetworkInterfacePtrOutput) VpcId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstancePrimaryNetworkInterface) *string {
 		if v == nil {
@@ -2684,15 +2840,15 @@ func (o InstancePrimaryNetworkInterfacePtrOutput) VpcId() pulumi.StringPtrOutput
 }
 
 type InstanceRdmaNetworkInterfaceDetail struct {
-	// 网关地址。
+	// Gateway address.
 	Gateway *string `pulumi:"gateway"`
-	// IP地址。
+	// IP address
 	Ip *string `pulumi:"ip"`
-	// 子网掩码。
+	// Subnet mask.
 	Mask *string `pulumi:"mask"`
-	// 交换机名称。
+	// Switch name.
 	SwitchName *string `pulumi:"switchName"`
-	// 交换机端口。
+	// Switch port.
 	SwitchPort *string `pulumi:"switchPort"`
 }
 
@@ -2708,15 +2864,15 @@ type InstanceRdmaNetworkInterfaceDetailInput interface {
 }
 
 type InstanceRdmaNetworkInterfaceDetailArgs struct {
-	// 网关地址。
+	// Gateway address.
 	Gateway pulumi.StringPtrInput `pulumi:"gateway"`
-	// IP地址。
+	// IP address
 	Ip pulumi.StringPtrInput `pulumi:"ip"`
-	// 子网掩码。
+	// Subnet mask.
 	Mask pulumi.StringPtrInput `pulumi:"mask"`
-	// 交换机名称。
+	// Switch name.
 	SwitchName pulumi.StringPtrInput `pulumi:"switchName"`
-	// 交换机端口。
+	// Switch port.
 	SwitchPort pulumi.StringPtrInput `pulumi:"switchPort"`
 }
 
@@ -2771,27 +2927,27 @@ func (o InstanceRdmaNetworkInterfaceDetailOutput) ToInstanceRdmaNetworkInterface
 	return o
 }
 
-// 网关地址。
+// Gateway address.
 func (o InstanceRdmaNetworkInterfaceDetailOutput) Gateway() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceRdmaNetworkInterfaceDetail) *string { return v.Gateway }).(pulumi.StringPtrOutput)
 }
 
-// IP地址。
+// IP address
 func (o InstanceRdmaNetworkInterfaceDetailOutput) Ip() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceRdmaNetworkInterfaceDetail) *string { return v.Ip }).(pulumi.StringPtrOutput)
 }
 
-// 子网掩码。
+// Subnet mask.
 func (o InstanceRdmaNetworkInterfaceDetailOutput) Mask() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceRdmaNetworkInterfaceDetail) *string { return v.Mask }).(pulumi.StringPtrOutput)
 }
 
-// 交换机名称。
+// Switch name.
 func (o InstanceRdmaNetworkInterfaceDetailOutput) SwitchName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceRdmaNetworkInterfaceDetail) *string { return v.SwitchName }).(pulumi.StringPtrOutput)
 }
 
-// 交换机端口。
+// Switch port.
 func (o InstanceRdmaNetworkInterfaceDetailOutput) SwitchPort() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceRdmaNetworkInterfaceDetail) *string { return v.SwitchPort }).(pulumi.StringPtrOutput)
 }
@@ -2817,9 +2973,9 @@ func (o InstanceRdmaNetworkInterfaceDetailArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type InstanceRenewInfo struct {
-	// 续费的月数，取值：1、2、3、4、5、6、7、8、9、12、24、36。
+	// Number of months for renewal. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36.
 	Period *int `pulumi:"period"`
-	// 续费时长的时间单位，即参数Period的单位。取值：Month（默认）。
+	// Time unit for renewal duration, i.e., the unit for the Period parameter. Value: Month (default)
 	PeriodUnit *string `pulumi:"periodUnit"`
 }
 
@@ -2835,9 +2991,9 @@ type InstanceRenewInfoInput interface {
 }
 
 type InstanceRenewInfoArgs struct {
-	// 续费的月数，取值：1、2、3、4、5、6、7、8、9、12、24、36。
+	// Number of months for renewal. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36.
 	Period pulumi.IntPtrInput `pulumi:"period"`
-	// 续费时长的时间单位，即参数Period的单位。取值：Month（默认）。
+	// Time unit for renewal duration, i.e., the unit for the Period parameter. Value: Month (default)
 	PeriodUnit pulumi.StringPtrInput `pulumi:"periodUnit"`
 }
 
@@ -2918,12 +3074,12 @@ func (o InstanceRenewInfoOutput) ToInstanceRenewInfoPtrOutputWithContext(ctx con
 	}).(InstanceRenewInfoPtrOutput)
 }
 
-// 续费的月数，取值：1、2、3、4、5、6、7、8、9、12、24、36。
+// Number of months for renewal. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36.
 func (o InstanceRenewInfoOutput) Period() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceRenewInfo) *int { return v.Period }).(pulumi.IntPtrOutput)
 }
 
-// 续费时长的时间单位，即参数Period的单位。取值：Month（默认）。
+// Time unit for renewal duration, i.e., the unit for the Period parameter. Value: Month (default)
 func (o InstanceRenewInfoOutput) PeriodUnit() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceRenewInfo) *string { return v.PeriodUnit }).(pulumi.StringPtrOutput)
 }
@@ -2952,7 +3108,7 @@ func (o InstanceRenewInfoPtrOutput) Elem() InstanceRenewInfoOutput {
 	}).(InstanceRenewInfoOutput)
 }
 
-// 续费的月数，取值：1、2、3、4、5、6、7、8、9、12、24、36。
+// Number of months for renewal. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36.
 func (o InstanceRenewInfoPtrOutput) Period() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceRenewInfo) *int {
 		if v == nil {
@@ -2962,7 +3118,7 @@ func (o InstanceRenewInfoPtrOutput) Period() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 续费时长的时间单位，即参数Period的单位。取值：Month（默认）。
+// Time unit for renewal duration, i.e., the unit for the Period parameter. Value: Month (default)
 func (o InstanceRenewInfoPtrOutput) PeriodUnit() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceRenewInfo) *string {
 		if v == nil {
@@ -2973,15 +3129,15 @@ func (o InstanceRenewInfoPtrOutput) PeriodUnit() pulumi.StringPtrOutput {
 }
 
 type InstanceSecondaryNetworkInterface struct {
-	// 实例的IPv6地址数量。
+	// The number of IPv6 addresses for the instance.
 	Ipv6AddressCount *int `pulumi:"ipv6AddressCount"`
-	// 实例的主IP地址。
+	// Instance primary IP address
 	PrimaryIpAddress *string `pulumi:"primaryIpAddress"`
-	// 实例的私有IP地址。
+	// Instance private IP address.
 	PrivateIpAddresses []string `pulumi:"privateIpAddresses"`
-	// 实例的安全组ID。
+	// Instance security group ID
 	SecurityGroupIds []string `pulumi:"securityGroupIds"`
-	// 实例的子网ID。
+	// Instance subnet ID.
 	SubnetId *string `pulumi:"subnetId"`
 }
 
@@ -2997,15 +3153,15 @@ type InstanceSecondaryNetworkInterfaceInput interface {
 }
 
 type InstanceSecondaryNetworkInterfaceArgs struct {
-	// 实例的IPv6地址数量。
+	// The number of IPv6 addresses for the instance.
 	Ipv6AddressCount pulumi.IntPtrInput `pulumi:"ipv6AddressCount"`
-	// 实例的主IP地址。
+	// Instance primary IP address
 	PrimaryIpAddress pulumi.StringPtrInput `pulumi:"primaryIpAddress"`
-	// 实例的私有IP地址。
+	// Instance private IP address.
 	PrivateIpAddresses pulumi.StringArrayInput `pulumi:"privateIpAddresses"`
-	// 实例的安全组ID。
+	// Instance security group ID
 	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
-	// 实例的子网ID。
+	// Instance subnet ID.
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
@@ -3060,27 +3216,27 @@ func (o InstanceSecondaryNetworkInterfaceOutput) ToInstanceSecondaryNetworkInter
 	return o
 }
 
-// 实例的IPv6地址数量。
+// The number of IPv6 addresses for the instance.
 func (o InstanceSecondaryNetworkInterfaceOutput) Ipv6AddressCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceSecondaryNetworkInterface) *int { return v.Ipv6AddressCount }).(pulumi.IntPtrOutput)
 }
 
-// 实例的主IP地址。
+// Instance primary IP address
 func (o InstanceSecondaryNetworkInterfaceOutput) PrimaryIpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceSecondaryNetworkInterface) *string { return v.PrimaryIpAddress }).(pulumi.StringPtrOutput)
 }
 
-// 实例的私有IP地址。
+// Instance private IP address.
 func (o InstanceSecondaryNetworkInterfaceOutput) PrivateIpAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v InstanceSecondaryNetworkInterface) []string { return v.PrivateIpAddresses }).(pulumi.StringArrayOutput)
 }
 
-// 实例的安全组ID。
+// Instance security group ID
 func (o InstanceSecondaryNetworkInterfaceOutput) SecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v InstanceSecondaryNetworkInterface) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
 }
 
-// 实例的子网ID。
+// Instance subnet ID.
 func (o InstanceSecondaryNetworkInterfaceOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceSecondaryNetworkInterface) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
@@ -3106,21 +3262,28 @@ func (o InstanceSecondaryNetworkInterfaceArrayOutput) Index(i pulumi.IntInput) I
 }
 
 type InstanceSystemVolume struct {
-	// 实例是否随实例删除。
+	// Whether the attached resources are deleted along with the instance.
 	DeleteWithInstance *bool `pulumi:"deleteWithInstance"`
-	// 实例的额外性能IOPS。
+	// Additional performance IOPS for the instance
 	ExtraPerformanceIops *int `pulumi:"extraPerformanceIops"`
-	// 实例的额外性能吞吐量，单位MB。
+	// The additional performance throughput of the instance, in MB.
 	ExtraPerformanceThroughputMb *int `pulumi:"extraPerformanceThroughputMb"`
-	// 额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+	// Type of additional performance. Values:
+	//   Balance: Balanced additional performance
+	//   IOPS: IOPS additional performance
+	//   Throughput: Throughput additional performance
 	ExtraPerformanceTypeId *string `pulumi:"extraPerformanceTypeId"`
-	// 实例的大小，单位GiB。
+	// Instance size, in GiB
 	Size *int `pulumi:"size"`
-	// 实例的快照ID。
+	// Instance snapshot ID
 	SnapshotId *string `pulumi:"snapshotId"`
-	// 实例的卷ID。
+	// Instance volume ID.
 	VolumeId *string `pulumi:"volumeId"`
-	// 云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+	// Cloud disk type. Values:
+	//   PTSSD: Performance SSD.
+	//   ESSD_PL0: Ultra SSD disk, PL0 specification.
+	//   ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+	//   TSSD_TL0: Throughput SSD disk.
 	VolumeType *string `pulumi:"volumeType"`
 }
 
@@ -3136,21 +3299,28 @@ type InstanceSystemVolumeInput interface {
 }
 
 type InstanceSystemVolumeArgs struct {
-	// 实例是否随实例删除。
+	// Whether the attached resources are deleted along with the instance.
 	DeleteWithInstance pulumi.BoolPtrInput `pulumi:"deleteWithInstance"`
-	// 实例的额外性能IOPS。
+	// Additional performance IOPS for the instance
 	ExtraPerformanceIops pulumi.IntPtrInput `pulumi:"extraPerformanceIops"`
-	// 实例的额外性能吞吐量，单位MB。
+	// The additional performance throughput of the instance, in MB.
 	ExtraPerformanceThroughputMb pulumi.IntPtrInput `pulumi:"extraPerformanceThroughputMb"`
-	// 额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+	// Type of additional performance. Values:
+	//   Balance: Balanced additional performance
+	//   IOPS: IOPS additional performance
+	//   Throughput: Throughput additional performance
 	ExtraPerformanceTypeId pulumi.StringPtrInput `pulumi:"extraPerformanceTypeId"`
-	// 实例的大小，单位GiB。
+	// Instance size, in GiB
 	Size pulumi.IntPtrInput `pulumi:"size"`
-	// 实例的快照ID。
+	// Instance snapshot ID
 	SnapshotId pulumi.StringPtrInput `pulumi:"snapshotId"`
-	// 实例的卷ID。
+	// Instance volume ID.
 	VolumeId pulumi.StringPtrInput `pulumi:"volumeId"`
-	// 云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+	// Cloud disk type. Values:
+	//   PTSSD: Performance SSD.
+	//   ESSD_PL0: Ultra SSD disk, PL0 specification.
+	//   ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+	//   TSSD_TL0: Throughput SSD disk.
 	VolumeType pulumi.StringPtrInput `pulumi:"volumeType"`
 }
 
@@ -3231,42 +3401,51 @@ func (o InstanceSystemVolumeOutput) ToInstanceSystemVolumePtrOutputWithContext(c
 	}).(InstanceSystemVolumePtrOutput)
 }
 
-// 实例是否随实例删除。
+// Whether the attached resources are deleted along with the instance.
 func (o InstanceSystemVolumeOutput) DeleteWithInstance() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InstanceSystemVolume) *bool { return v.DeleteWithInstance }).(pulumi.BoolPtrOutput)
 }
 
-// 实例的额外性能IOPS。
+// Additional performance IOPS for the instance
 func (o InstanceSystemVolumeOutput) ExtraPerformanceIops() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceSystemVolume) *int { return v.ExtraPerformanceIops }).(pulumi.IntPtrOutput)
 }
 
-// 实例的额外性能吞吐量，单位MB。
+// The additional performance throughput of the instance, in MB.
 func (o InstanceSystemVolumeOutput) ExtraPerformanceThroughputMb() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceSystemVolume) *int { return v.ExtraPerformanceThroughputMb }).(pulumi.IntPtrOutput)
 }
 
-// 额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+// Type of additional performance. Values:
+//
+//	Balance: Balanced additional performance
+//	IOPS: IOPS additional performance
+//	Throughput: Throughput additional performance
 func (o InstanceSystemVolumeOutput) ExtraPerformanceTypeId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceSystemVolume) *string { return v.ExtraPerformanceTypeId }).(pulumi.StringPtrOutput)
 }
 
-// 实例的大小，单位GiB。
+// Instance size, in GiB
 func (o InstanceSystemVolumeOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceSystemVolume) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
 
-// 实例的快照ID。
+// Instance snapshot ID
 func (o InstanceSystemVolumeOutput) SnapshotId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceSystemVolume) *string { return v.SnapshotId }).(pulumi.StringPtrOutput)
 }
 
-// 实例的卷ID。
+// Instance volume ID.
 func (o InstanceSystemVolumeOutput) VolumeId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceSystemVolume) *string { return v.VolumeId }).(pulumi.StringPtrOutput)
 }
 
-// 云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+// Cloud disk type. Values:
+//
+//	PTSSD: Performance SSD.
+//	ESSD_PL0: Ultra SSD disk, PL0 specification.
+//	ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+//	TSSD_TL0: Throughput SSD disk.
 func (o InstanceSystemVolumeOutput) VolumeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceSystemVolume) *string { return v.VolumeType }).(pulumi.StringPtrOutput)
 }
@@ -3295,7 +3474,7 @@ func (o InstanceSystemVolumePtrOutput) Elem() InstanceSystemVolumeOutput {
 	}).(InstanceSystemVolumeOutput)
 }
 
-// 实例是否随实例删除。
+// Whether the attached resources are deleted along with the instance.
 func (o InstanceSystemVolumePtrOutput) DeleteWithInstance() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InstanceSystemVolume) *bool {
 		if v == nil {
@@ -3305,7 +3484,7 @@ func (o InstanceSystemVolumePtrOutput) DeleteWithInstance() pulumi.BoolPtrOutput
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 实例的额外性能IOPS。
+// Additional performance IOPS for the instance
 func (o InstanceSystemVolumePtrOutput) ExtraPerformanceIops() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceSystemVolume) *int {
 		if v == nil {
@@ -3315,7 +3494,7 @@ func (o InstanceSystemVolumePtrOutput) ExtraPerformanceIops() pulumi.IntPtrOutpu
 	}).(pulumi.IntPtrOutput)
 }
 
-// 实例的额外性能吞吐量，单位MB。
+// The additional performance throughput of the instance, in MB.
 func (o InstanceSystemVolumePtrOutput) ExtraPerformanceThroughputMb() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceSystemVolume) *int {
 		if v == nil {
@@ -3325,7 +3504,11 @@ func (o InstanceSystemVolumePtrOutput) ExtraPerformanceThroughputMb() pulumi.Int
 	}).(pulumi.IntPtrOutput)
 }
 
-// 额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+// Type of additional performance. Values:
+//
+//	Balance: Balanced additional performance
+//	IOPS: IOPS additional performance
+//	Throughput: Throughput additional performance
 func (o InstanceSystemVolumePtrOutput) ExtraPerformanceTypeId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceSystemVolume) *string {
 		if v == nil {
@@ -3335,7 +3518,7 @@ func (o InstanceSystemVolumePtrOutput) ExtraPerformanceTypeId() pulumi.StringPtr
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的大小，单位GiB。
+// Instance size, in GiB
 func (o InstanceSystemVolumePtrOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceSystemVolume) *int {
 		if v == nil {
@@ -3345,7 +3528,7 @@ func (o InstanceSystemVolumePtrOutput) Size() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 实例的快照ID。
+// Instance snapshot ID
 func (o InstanceSystemVolumePtrOutput) SnapshotId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceSystemVolume) *string {
 		if v == nil {
@@ -3355,7 +3538,7 @@ func (o InstanceSystemVolumePtrOutput) SnapshotId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的卷ID。
+// Instance volume ID.
 func (o InstanceSystemVolumePtrOutput) VolumeId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceSystemVolume) *string {
 		if v == nil {
@@ -3365,7 +3548,12 @@ func (o InstanceSystemVolumePtrOutput) VolumeId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+// Cloud disk type. Values:
+//
+//	PTSSD: Performance SSD.
+//	ESSD_PL0: Ultra SSD disk, PL0 specification.
+//	ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+//	TSSD_TL0: Throughput SSD disk.
 func (o InstanceSystemVolumePtrOutput) VolumeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceSystemVolume) *string {
 		if v == nil {
@@ -3376,9 +3564,9 @@ func (o InstanceSystemVolumePtrOutput) VolumeType() pulumi.StringPtrOutput {
 }
 
 type InstanceTag struct {
-	// 实例的键。
+	// Instance key.
 	Key *string `pulumi:"key"`
-	// 实例的值。
+	// Instance value.
 	Value *string `pulumi:"value"`
 }
 
@@ -3394,9 +3582,9 @@ type InstanceTagInput interface {
 }
 
 type InstanceTagArgs struct {
-	// 实例的键。
+	// Instance key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 实例的值。
+	// Instance value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -3451,12 +3639,12 @@ func (o InstanceTagOutput) ToInstanceTagOutputWithContext(ctx context.Context) I
 	return o
 }
 
-// 实例的键。
+// Instance key.
 func (o InstanceTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 实例的值。
+// Instance value.
 func (o InstanceTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -3482,29 +3670,29 @@ func (o InstanceTagArrayOutput) Index(i pulumi.IntInput) InstanceTagOutput {
 }
 
 type InvocationInvocationResult struct {
-	// 命令ID。
+	// Command ID.
 	CommandId *string `pulumi:"commandId"`
-	// 命令执行的完成时间。
+	// Command execution completion time.
 	EndTime *string `pulumi:"endTime"`
-	// 命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+	// Error codes for command execution failure. TaskDeliveryTimeout: Indicates command delivery timeout. TaskExecutionTimeout: Indicates command execution timeout. TaskExecutionFailed: Indicates command execution failure.
 	ErrorCode *string `pulumi:"errorCode"`
-	// 命令执行失败的错误信息。
+	// Error message for command execution failure.
 	ErrorMessage *string `pulumi:"errorMessage"`
-	// 脚本执行后的退出状态码。
+	// Exit status code after script execution.
 	ExitCode *int `pulumi:"exitCode"`
-	// 实例ID。
+	// Instance ID.
 	InstanceId *string `pulumi:"instanceId"`
-	// 任务执行ID。
+	// Task execution ID.
 	InvocationId *string `pulumi:"invocationId"`
-	// 任务执行结果ID。
+	// Task execution result ID.
 	InvocationResultId *string `pulumi:"invocationResultId"`
-	// 单台实例的命令进度状态。
+	// Command progress status for a single instance.
 	InvocationResultStatus *string `pulumi:"invocationResultStatus"`
-	// 经过Base64编码的命令执行后输出信息。
+	// Output information after command execution, encoded in Base64.
 	Output *string `pulumi:"output"`
-	// 命令在实例中开始执行的时间。
+	// Time when the command starts executing in the instance.
 	StartTime *string `pulumi:"startTime"`
-	// 在实例中执行命令的用户名称。
+	// User name for executing the command in the instance.
 	Username *string `pulumi:"username"`
 }
 
@@ -3520,29 +3708,29 @@ type InvocationInvocationResultInput interface {
 }
 
 type InvocationInvocationResultArgs struct {
-	// 命令ID。
+	// Command ID.
 	CommandId pulumi.StringPtrInput `pulumi:"commandId"`
-	// 命令执行的完成时间。
+	// Command execution completion time.
 	EndTime pulumi.StringPtrInput `pulumi:"endTime"`
-	// 命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+	// Error codes for command execution failure. TaskDeliveryTimeout: Indicates command delivery timeout. TaskExecutionTimeout: Indicates command execution timeout. TaskExecutionFailed: Indicates command execution failure.
 	ErrorCode pulumi.StringPtrInput `pulumi:"errorCode"`
-	// 命令执行失败的错误信息。
+	// Error message for command execution failure.
 	ErrorMessage pulumi.StringPtrInput `pulumi:"errorMessage"`
-	// 脚本执行后的退出状态码。
+	// Exit status code after script execution.
 	ExitCode pulumi.IntPtrInput `pulumi:"exitCode"`
-	// 实例ID。
+	// Instance ID.
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
-	// 任务执行ID。
+	// Task execution ID.
 	InvocationId pulumi.StringPtrInput `pulumi:"invocationId"`
-	// 任务执行结果ID。
+	// Task execution result ID.
 	InvocationResultId pulumi.StringPtrInput `pulumi:"invocationResultId"`
-	// 单台实例的命令进度状态。
+	// Command progress status for a single instance.
 	InvocationResultStatus pulumi.StringPtrInput `pulumi:"invocationResultStatus"`
-	// 经过Base64编码的命令执行后输出信息。
+	// Output information after command execution, encoded in Base64.
 	Output pulumi.StringPtrInput `pulumi:"output"`
-	// 命令在实例中开始执行的时间。
+	// Time when the command starts executing in the instance.
 	StartTime pulumi.StringPtrInput `pulumi:"startTime"`
-	// 在实例中执行命令的用户名称。
+	// User name for executing the command in the instance.
 	Username pulumi.StringPtrInput `pulumi:"username"`
 }
 
@@ -3597,62 +3785,62 @@ func (o InvocationInvocationResultOutput) ToInvocationInvocationResultOutputWith
 	return o
 }
 
-// 命令ID。
+// Command ID.
 func (o InvocationInvocationResultOutput) CommandId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InvocationInvocationResult) *string { return v.CommandId }).(pulumi.StringPtrOutput)
 }
 
-// 命令执行的完成时间。
+// Command execution completion time.
 func (o InvocationInvocationResultOutput) EndTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InvocationInvocationResult) *string { return v.EndTime }).(pulumi.StringPtrOutput)
 }
 
-// 命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+// Error codes for command execution failure. TaskDeliveryTimeout: Indicates command delivery timeout. TaskExecutionTimeout: Indicates command execution timeout. TaskExecutionFailed: Indicates command execution failure.
 func (o InvocationInvocationResultOutput) ErrorCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InvocationInvocationResult) *string { return v.ErrorCode }).(pulumi.StringPtrOutput)
 }
 
-// 命令执行失败的错误信息。
+// Error message for command execution failure.
 func (o InvocationInvocationResultOutput) ErrorMessage() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InvocationInvocationResult) *string { return v.ErrorMessage }).(pulumi.StringPtrOutput)
 }
 
-// 脚本执行后的退出状态码。
+// Exit status code after script execution.
 func (o InvocationInvocationResultOutput) ExitCode() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InvocationInvocationResult) *int { return v.ExitCode }).(pulumi.IntPtrOutput)
 }
 
-// 实例ID。
+// Instance ID.
 func (o InvocationInvocationResultOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InvocationInvocationResult) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
 
-// 任务执行ID。
+// Task execution ID.
 func (o InvocationInvocationResultOutput) InvocationId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InvocationInvocationResult) *string { return v.InvocationId }).(pulumi.StringPtrOutput)
 }
 
-// 任务执行结果ID。
+// Task execution result ID.
 func (o InvocationInvocationResultOutput) InvocationResultId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InvocationInvocationResult) *string { return v.InvocationResultId }).(pulumi.StringPtrOutput)
 }
 
-// 单台实例的命令进度状态。
+// Command progress status for a single instance.
 func (o InvocationInvocationResultOutput) InvocationResultStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InvocationInvocationResult) *string { return v.InvocationResultStatus }).(pulumi.StringPtrOutput)
 }
 
-// 经过Base64编码的命令执行后输出信息。
+// Output information after command execution, encoded in Base64.
 func (o InvocationInvocationResultOutput) Output() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InvocationInvocationResult) *string { return v.Output }).(pulumi.StringPtrOutput)
 }
 
-// 命令在实例中开始执行的时间。
+// Time when the command starts executing in the instance.
 func (o InvocationInvocationResultOutput) StartTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InvocationInvocationResult) *string { return v.StartTime }).(pulumi.StringPtrOutput)
 }
 
-// 在实例中执行命令的用户名称。
+// User name for executing the command in the instance.
 func (o InvocationInvocationResultOutput) Username() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InvocationInvocationResult) *string { return v.Username }).(pulumi.StringPtrOutput)
 }
@@ -3678,23 +3866,23 @@ func (o InvocationInvocationResultArrayOutput) Index(i pulumi.IntInput) Invocati
 }
 
 type InvocationParameterDefinition struct {
-	// 自定义参数值（数字）允许的小数点后位数。
+	// Allowed number of decimal places for custom parameter values (numeric).
 	DecimalPrecision *int `pulumi:"decimalPrecision"`
-	// 自定义参数默认值。
+	// Default value for custom parameter.
 	DefaultValue *string `pulumi:"defaultValue"`
-	// 自定义参数值（字符串）的最大长度。
+	// Maximum length for custom parameter value (string).
 	MaxLength *int `pulumi:"maxLength"`
-	// 自定义参数值（数字）的最大值。
+	// Maximum value for custom parameter (numeric).
 	MaxValue *string `pulumi:"maxValue"`
-	// 自定义参数值（字符串）的最小长度。
+	// Minimum length for custom parameter values (string).
 	MinLength *int `pulumi:"minLength"`
-	// 自定义参数值（数字）的最小值。
+	// Minimum value for custom parameter (numeric).
 	MinValue *string `pulumi:"minValue"`
-	// 自定义参数名称，需要在脚本中通过{{Param}}定义 。
+	// Custom parameter name. Must be defined in the script using {{Param}}.
 	Name *string `pulumi:"name"`
-	// 是否必填。true：必填。false：非必填。
+	// Required. true: Required. false: Optional.
 	Required *bool `pulumi:"required"`
-	// 自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+	// Custom parameter type. String: Indicates custom parameter type is string. Digit: Indicates custom parameter type is numeric.
 	Type *string `pulumi:"type"`
 }
 
@@ -3710,23 +3898,23 @@ type InvocationParameterDefinitionInput interface {
 }
 
 type InvocationParameterDefinitionArgs struct {
-	// 自定义参数值（数字）允许的小数点后位数。
+	// Allowed number of decimal places for custom parameter values (numeric).
 	DecimalPrecision pulumi.IntPtrInput `pulumi:"decimalPrecision"`
-	// 自定义参数默认值。
+	// Default value for custom parameter.
 	DefaultValue pulumi.StringPtrInput `pulumi:"defaultValue"`
-	// 自定义参数值（字符串）的最大长度。
+	// Maximum length for custom parameter value (string).
 	MaxLength pulumi.IntPtrInput `pulumi:"maxLength"`
-	// 自定义参数值（数字）的最大值。
+	// Maximum value for custom parameter (numeric).
 	MaxValue pulumi.StringPtrInput `pulumi:"maxValue"`
-	// 自定义参数值（字符串）的最小长度。
+	// Minimum length for custom parameter values (string).
 	MinLength pulumi.IntPtrInput `pulumi:"minLength"`
-	// 自定义参数值（数字）的最小值。
+	// Minimum value for custom parameter (numeric).
 	MinValue pulumi.StringPtrInput `pulumi:"minValue"`
-	// 自定义参数名称，需要在脚本中通过{{Param}}定义 。
+	// Custom parameter name. Must be defined in the script using {{Param}}.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// 是否必填。true：必填。false：非必填。
+	// Required. true: Required. false: Optional.
 	Required pulumi.BoolPtrInput `pulumi:"required"`
-	// 自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+	// Custom parameter type. String: Indicates custom parameter type is string. Digit: Indicates custom parameter type is numeric.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -3781,47 +3969,47 @@ func (o InvocationParameterDefinitionOutput) ToInvocationParameterDefinitionOutp
 	return o
 }
 
-// 自定义参数值（数字）允许的小数点后位数。
+// Allowed number of decimal places for custom parameter values (numeric).
 func (o InvocationParameterDefinitionOutput) DecimalPrecision() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InvocationParameterDefinition) *int { return v.DecimalPrecision }).(pulumi.IntPtrOutput)
 }
 
-// 自定义参数默认值。
+// Default value for custom parameter.
 func (o InvocationParameterDefinitionOutput) DefaultValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InvocationParameterDefinition) *string { return v.DefaultValue }).(pulumi.StringPtrOutput)
 }
 
-// 自定义参数值（字符串）的最大长度。
+// Maximum length for custom parameter value (string).
 func (o InvocationParameterDefinitionOutput) MaxLength() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InvocationParameterDefinition) *int { return v.MaxLength }).(pulumi.IntPtrOutput)
 }
 
-// 自定义参数值（数字）的最大值。
+// Maximum value for custom parameter (numeric).
 func (o InvocationParameterDefinitionOutput) MaxValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InvocationParameterDefinition) *string { return v.MaxValue }).(pulumi.StringPtrOutput)
 }
 
-// 自定义参数值（字符串）的最小长度。
+// Minimum length for custom parameter values (string).
 func (o InvocationParameterDefinitionOutput) MinLength() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InvocationParameterDefinition) *int { return v.MinLength }).(pulumi.IntPtrOutput)
 }
 
-// 自定义参数值（数字）的最小值。
+// Minimum value for custom parameter (numeric).
 func (o InvocationParameterDefinitionOutput) MinValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InvocationParameterDefinition) *string { return v.MinValue }).(pulumi.StringPtrOutput)
 }
 
-// 自定义参数名称，需要在脚本中通过{{Param}}定义 。
+// Custom parameter name. Must be defined in the script using {{Param}}.
 func (o InvocationParameterDefinitionOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InvocationParameterDefinition) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// 是否必填。true：必填。false：非必填。
+// Required. true: Required. false: Optional.
 func (o InvocationParameterDefinitionOutput) Required() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InvocationParameterDefinition) *bool { return v.Required }).(pulumi.BoolPtrOutput)
 }
 
-// 自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+// Custom parameter type. String: Indicates custom parameter type is string. Digit: Indicates custom parameter type is numeric.
 func (o InvocationParameterDefinitionOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InvocationParameterDefinition) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -3847,9 +4035,9 @@ func (o InvocationParameterDefinitionArrayOutput) Index(i pulumi.IntInput) Invoc
 }
 
 type InvocationTag struct {
-	// 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+	// Tag key for user tags. Naming rules: Cannot start with any combination of 'volc:' or 'sys:' in any case. Can only contain letters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+	// User tag value. Naming rules: Only letters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty; length must be between 0 and 256 characters.
 	Value *string `pulumi:"value"`
 }
 
@@ -3865,9 +4053,9 @@ type InvocationTagInput interface {
 }
 
 type InvocationTagArgs struct {
-	// 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+	// Tag key for user tags. Naming rules: Cannot start with any combination of 'volc:' or 'sys:' in any case. Can only contain letters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+	// User tag value. Naming rules: Only letters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty; length must be between 0 and 256 characters.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -3922,12 +4110,12 @@ func (o InvocationTagOutput) ToInvocationTagOutputWithContext(ctx context.Contex
 	return o
 }
 
-// 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+// Tag key for user tags. Naming rules: Cannot start with any combination of 'volc:' or 'sys:' in any case. Can only contain letters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
 func (o InvocationTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InvocationTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+// User tag value. Naming rules: Only letters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty; length must be between 0 and 256 characters.
 func (o InvocationTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InvocationTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -3953,9 +4141,9 @@ func (o InvocationTagArrayOutput) Index(i pulumi.IntInput) InvocationTagOutput {
 }
 
 type KeypairTag struct {
-	// 标签键。
+	// Tag key.
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value *string `pulumi:"value"`
 }
 
@@ -3971,9 +4159,9 @@ type KeypairTagInput interface {
 }
 
 type KeypairTagArgs struct {
-	// 标签键。
+	// Tag key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -4028,12 +4216,12 @@ func (o KeypairTagOutput) ToKeypairTagOutputWithContext(ctx context.Context) Key
 	return o
 }
 
-// 标签键。
+// Tag key.
 func (o KeypairTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v KeypairTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value.
 func (o KeypairTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v KeypairTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -4059,9 +4247,9 @@ func (o KeypairTagArrayOutput) Index(i pulumi.IntInput) KeypairTagOutput {
 }
 
 type LaunchTemplateLaunchTemplateTag struct {
-	// 给资源添加的用户标签的标签键。
+	// Tag key for user tags added to the resource.
 	Key *string `pulumi:"key"`
-	// 给资源添加的用户标签的标签值。
+	// User tag value added to the resource
 	Value *string `pulumi:"value"`
 }
 
@@ -4077,9 +4265,9 @@ type LaunchTemplateLaunchTemplateTagInput interface {
 }
 
 type LaunchTemplateLaunchTemplateTagArgs struct {
-	// 给资源添加的用户标签的标签键。
+	// Tag key for user tags added to the resource.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 给资源添加的用户标签的标签值。
+	// User tag value added to the resource
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -4134,12 +4322,12 @@ func (o LaunchTemplateLaunchTemplateTagOutput) ToLaunchTemplateLaunchTemplateTag
 	return o
 }
 
-// 给资源添加的用户标签的标签键。
+// Tag key for user tags added to the resource.
 func (o LaunchTemplateLaunchTemplateTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 给资源添加的用户标签的标签值。
+// User tag value added to the resource
 func (o LaunchTemplateLaunchTemplateTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -4165,56 +4353,56 @@ func (o LaunchTemplateLaunchTemplateTagArrayOutput) Index(i pulumi.IntInput) Lau
 }
 
 type LaunchTemplateLaunchTemplateVersion struct {
-	// 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+	// When the ECS instance needs to join or adjust the deployment set strategy to the deployment set group high availability strategy (AvailabilityGroup), you can use this parameter to specify the group number of the instance in the deployment set.
 	DeploymentSetGroupNumber *int `pulumi:"deploymentSetGroupNumber"`
-	// 实例需要加入的部署集ID。
+	// Deployment set ID the instance needs to join.
 	DeploymentSetId *string `pulumi:"deploymentSetId"`
-	// 实例的描述。
+	// Instance description
 	Description *string `pulumi:"description"`
-	// 实例绑定的公网IP信息。
+	// Public IP information bound to the instance
 	Eip *LaunchTemplateLaunchTemplateVersionEip `pulumi:"eip"`
-	// 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+	// Instance hostname. For Linux, the hostname length must be 2–59 characters. For Windows, the hostname length must be 2–10 characters.
 	HostName *string `pulumi:"hostName"`
-	// 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+	// When creating a high-performance computing GPU instance, please specify the high-performance computing cluster ID.
 	HpcClusterId *string `pulumi:"hpcClusterId"`
-	// 镜像ID。
+	// Image ID.
 	ImageId *string `pulumi:"imageId"`
-	// 镜像名称。
+	// Image name.
 	ImageName *string `pulumi:"imageName"`
-	// 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+	// Billing type for the instance and cloud disk. Options: PostPaid: Pay-as-you-go. PrePaid: Yearly/monthly subscription. Esi: Elastic reservation instance. Segmented: Time-based elastic reservation instance.
 	InstanceChargeType *string `pulumi:"instanceChargeType"`
-	// 实例的名称。
+	// Instance name.
 	InstanceName *string `pulumi:"instanceName"`
-	// 实例的规格。
+	// Instance specification
 	InstanceTypeId *string `pulumi:"instanceTypeId"`
-	// 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+	// Whether to retain image settings. Values: true: Retain image settings. If retained, the instance will use the preset password or key pair from the image for login. false (default): Do not retain image settings.
 	KeepImageCredential *bool `pulumi:"keepImageCredential"`
-	// 实例绑定的密钥对。
+	// Key pair bound to the instance.
 	KeyPairName       *string                                               `pulumi:"keyPairName"`
 	NetworkInterfaces []LaunchTemplateLaunchTemplateVersionNetworkInterface `pulumi:"networkInterfaces"`
-	// 实例所属项目。
+	// Project associated with the instance.
 	ProjectName *string `pulumi:"projectName"`
-	// 弹性预约单信息。
+	// Elastic reservation order information
 	ScheduledInstance *LaunchTemplateLaunchTemplateVersionScheduledInstance `pulumi:"scheduledInstance"`
-	// 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+	// Enable security hardening. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
 	SecurityEnhancementStrategy *string `pulumi:"securityEnhancementStrategy"`
-	// 抢占式实例的每小时最高价格。
+	// Maximum hourly price for preemptible instances
 	SpotPriceLimit *float64 `pulumi:"spotPriceLimit"`
-	// 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+	// Preemptible strategy for pay-as-you-go billing. Options: NoSpot: Create a regular pay-as-you-go instance. SpotAsPriceGo: System automatically bids, follows the current market price for preemptible instances. SpotWithPriceLimit: Preemptible instance with a bid limit.
 	SpotStrategy *string `pulumi:"spotStrategy"`
-	// 有序后缀的起始序号。
+	// Starting number for the sequential suffix
 	SuffixIndex *int                                     `pulumi:"suffixIndex"`
 	Tags        []LaunchTemplateLaunchTemplateVersionTag `pulumi:"tags"`
-	// 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+	// Indicates whether to automatically add sequential suffixes to Hostname and InstanceName when creating multiple instances
 	UniqueSuffix *bool `pulumi:"uniqueSuffix"`
-	// 实例的自定义数据。
+	// Custom data for the instance.
 	UserData *string `pulumi:"userData"`
-	// 模版版本描述。
+	// Template version description.
 	VersionDescription *string                                     `pulumi:"versionDescription"`
 	Volumes            []LaunchTemplateLaunchTemplateVersionVolume `pulumi:"volumes"`
-	// 私有网络ID。
+	// Private network ID.
 	VpcId *string `pulumi:"vpcId"`
-	// 实例所属可用区ID。
+	// Instance availability zone ID
 	ZoneId *string `pulumi:"zoneId"`
 }
 
@@ -4230,56 +4418,56 @@ type LaunchTemplateLaunchTemplateVersionInput interface {
 }
 
 type LaunchTemplateLaunchTemplateVersionArgs struct {
-	// 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+	// When the ECS instance needs to join or adjust the deployment set strategy to the deployment set group high availability strategy (AvailabilityGroup), you can use this parameter to specify the group number of the instance in the deployment set.
 	DeploymentSetGroupNumber pulumi.IntPtrInput `pulumi:"deploymentSetGroupNumber"`
-	// 实例需要加入的部署集ID。
+	// Deployment set ID the instance needs to join.
 	DeploymentSetId pulumi.StringPtrInput `pulumi:"deploymentSetId"`
-	// 实例的描述。
+	// Instance description
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 实例绑定的公网IP信息。
+	// Public IP information bound to the instance
 	Eip LaunchTemplateLaunchTemplateVersionEipPtrInput `pulumi:"eip"`
-	// 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+	// Instance hostname. For Linux, the hostname length must be 2–59 characters. For Windows, the hostname length must be 2–10 characters.
 	HostName pulumi.StringPtrInput `pulumi:"hostName"`
-	// 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+	// When creating a high-performance computing GPU instance, please specify the high-performance computing cluster ID.
 	HpcClusterId pulumi.StringPtrInput `pulumi:"hpcClusterId"`
-	// 镜像ID。
+	// Image ID.
 	ImageId pulumi.StringPtrInput `pulumi:"imageId"`
-	// 镜像名称。
+	// Image name.
 	ImageName pulumi.StringPtrInput `pulumi:"imageName"`
-	// 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+	// Billing type for the instance and cloud disk. Options: PostPaid: Pay-as-you-go. PrePaid: Yearly/monthly subscription. Esi: Elastic reservation instance. Segmented: Time-based elastic reservation instance.
 	InstanceChargeType pulumi.StringPtrInput `pulumi:"instanceChargeType"`
-	// 实例的名称。
+	// Instance name.
 	InstanceName pulumi.StringPtrInput `pulumi:"instanceName"`
-	// 实例的规格。
+	// Instance specification
 	InstanceTypeId pulumi.StringPtrInput `pulumi:"instanceTypeId"`
-	// 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+	// Whether to retain image settings. Values: true: Retain image settings. If retained, the instance will use the preset password or key pair from the image for login. false (default): Do not retain image settings.
 	KeepImageCredential pulumi.BoolPtrInput `pulumi:"keepImageCredential"`
-	// 实例绑定的密钥对。
+	// Key pair bound to the instance.
 	KeyPairName       pulumi.StringPtrInput                                         `pulumi:"keyPairName"`
 	NetworkInterfaces LaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayInput `pulumi:"networkInterfaces"`
-	// 实例所属项目。
+	// Project associated with the instance.
 	ProjectName pulumi.StringPtrInput `pulumi:"projectName"`
-	// 弹性预约单信息。
+	// Elastic reservation order information
 	ScheduledInstance LaunchTemplateLaunchTemplateVersionScheduledInstancePtrInput `pulumi:"scheduledInstance"`
-	// 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+	// Enable security hardening. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
 	SecurityEnhancementStrategy pulumi.StringPtrInput `pulumi:"securityEnhancementStrategy"`
-	// 抢占式实例的每小时最高价格。
+	// Maximum hourly price for preemptible instances
 	SpotPriceLimit pulumi.Float64PtrInput `pulumi:"spotPriceLimit"`
-	// 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+	// Preemptible strategy for pay-as-you-go billing. Options: NoSpot: Create a regular pay-as-you-go instance. SpotAsPriceGo: System automatically bids, follows the current market price for preemptible instances. SpotWithPriceLimit: Preemptible instance with a bid limit.
 	SpotStrategy pulumi.StringPtrInput `pulumi:"spotStrategy"`
-	// 有序后缀的起始序号。
+	// Starting number for the sequential suffix
 	SuffixIndex pulumi.IntPtrInput                               `pulumi:"suffixIndex"`
 	Tags        LaunchTemplateLaunchTemplateVersionTagArrayInput `pulumi:"tags"`
-	// 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+	// Indicates whether to automatically add sequential suffixes to Hostname and InstanceName when creating multiple instances
 	UniqueSuffix pulumi.BoolPtrInput `pulumi:"uniqueSuffix"`
-	// 实例的自定义数据。
+	// Custom data for the instance.
 	UserData pulumi.StringPtrInput `pulumi:"userData"`
-	// 模版版本描述。
+	// Template version description.
 	VersionDescription pulumi.StringPtrInput                               `pulumi:"versionDescription"`
 	Volumes            LaunchTemplateLaunchTemplateVersionVolumeArrayInput `pulumi:"volumes"`
-	// 私有网络ID。
+	// Private network ID.
 	VpcId pulumi.StringPtrInput `pulumi:"vpcId"`
-	// 实例所属可用区ID。
+	// Instance availability zone ID
 	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
 }
 
@@ -4360,67 +4548,67 @@ func (o LaunchTemplateLaunchTemplateVersionOutput) ToLaunchTemplateLaunchTemplat
 	}).(LaunchTemplateLaunchTemplateVersionPtrOutput)
 }
 
-// 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+// When the ECS instance needs to join or adjust the deployment set strategy to the deployment set group high availability strategy (AvailabilityGroup), you can use this parameter to specify the group number of the instance in the deployment set.
 func (o LaunchTemplateLaunchTemplateVersionOutput) DeploymentSetGroupNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *int { return v.DeploymentSetGroupNumber }).(pulumi.IntPtrOutput)
 }
 
-// 实例需要加入的部署集ID。
+// Deployment set ID the instance needs to join.
 func (o LaunchTemplateLaunchTemplateVersionOutput) DeploymentSetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.DeploymentSetId }).(pulumi.StringPtrOutput)
 }
 
-// 实例的描述。
+// Instance description
 func (o LaunchTemplateLaunchTemplateVersionOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 实例绑定的公网IP信息。
+// Public IP information bound to the instance
 func (o LaunchTemplateLaunchTemplateVersionOutput) Eip() LaunchTemplateLaunchTemplateVersionEipPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *LaunchTemplateLaunchTemplateVersionEip { return v.Eip }).(LaunchTemplateLaunchTemplateVersionEipPtrOutput)
 }
 
-// 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+// Instance hostname. For Linux, the hostname length must be 2–59 characters. For Windows, the hostname length must be 2–10 characters.
 func (o LaunchTemplateLaunchTemplateVersionOutput) HostName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.HostName }).(pulumi.StringPtrOutput)
 }
 
-// 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+// When creating a high-performance computing GPU instance, please specify the high-performance computing cluster ID.
 func (o LaunchTemplateLaunchTemplateVersionOutput) HpcClusterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.HpcClusterId }).(pulumi.StringPtrOutput)
 }
 
-// 镜像ID。
+// Image ID.
 func (o LaunchTemplateLaunchTemplateVersionOutput) ImageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.ImageId }).(pulumi.StringPtrOutput)
 }
 
-// 镜像名称。
+// Image name.
 func (o LaunchTemplateLaunchTemplateVersionOutput) ImageName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.ImageName }).(pulumi.StringPtrOutput)
 }
 
-// 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+// Billing type for the instance and cloud disk. Options: PostPaid: Pay-as-you-go. PrePaid: Yearly/monthly subscription. Esi: Elastic reservation instance. Segmented: Time-based elastic reservation instance.
 func (o LaunchTemplateLaunchTemplateVersionOutput) InstanceChargeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.InstanceChargeType }).(pulumi.StringPtrOutput)
 }
 
-// 实例的名称。
+// Instance name.
 func (o LaunchTemplateLaunchTemplateVersionOutput) InstanceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.InstanceName }).(pulumi.StringPtrOutput)
 }
 
-// 实例的规格。
+// Instance specification
 func (o LaunchTemplateLaunchTemplateVersionOutput) InstanceTypeId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.InstanceTypeId }).(pulumi.StringPtrOutput)
 }
 
-// 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+// Whether to retain image settings. Values: true: Retain image settings. If retained, the instance will use the preset password or key pair from the image for login. false (default): Do not retain image settings.
 func (o LaunchTemplateLaunchTemplateVersionOutput) KeepImageCredential() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *bool { return v.KeepImageCredential }).(pulumi.BoolPtrOutput)
 }
 
-// 实例绑定的密钥对。
+// Key pair bound to the instance.
 func (o LaunchTemplateLaunchTemplateVersionOutput) KeyPairName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.KeyPairName }).(pulumi.StringPtrOutput)
 }
@@ -4431,34 +4619,34 @@ func (o LaunchTemplateLaunchTemplateVersionOutput) NetworkInterfaces() LaunchTem
 	}).(LaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput)
 }
 
-// 实例所属项目。
+// Project associated with the instance.
 func (o LaunchTemplateLaunchTemplateVersionOutput) ProjectName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.ProjectName }).(pulumi.StringPtrOutput)
 }
 
-// 弹性预约单信息。
+// Elastic reservation order information
 func (o LaunchTemplateLaunchTemplateVersionOutput) ScheduledInstance() LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *LaunchTemplateLaunchTemplateVersionScheduledInstance {
 		return v.ScheduledInstance
 	}).(LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput)
 }
 
-// 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+// Enable security hardening. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
 func (o LaunchTemplateLaunchTemplateVersionOutput) SecurityEnhancementStrategy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.SecurityEnhancementStrategy }).(pulumi.StringPtrOutput)
 }
 
-// 抢占式实例的每小时最高价格。
+// Maximum hourly price for preemptible instances
 func (o LaunchTemplateLaunchTemplateVersionOutput) SpotPriceLimit() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *float64 { return v.SpotPriceLimit }).(pulumi.Float64PtrOutput)
 }
 
-// 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+// Preemptible strategy for pay-as-you-go billing. Options: NoSpot: Create a regular pay-as-you-go instance. SpotAsPriceGo: System automatically bids, follows the current market price for preemptible instances. SpotWithPriceLimit: Preemptible instance with a bid limit.
 func (o LaunchTemplateLaunchTemplateVersionOutput) SpotStrategy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.SpotStrategy }).(pulumi.StringPtrOutput)
 }
 
-// 有序后缀的起始序号。
+// Starting number for the sequential suffix
 func (o LaunchTemplateLaunchTemplateVersionOutput) SuffixIndex() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *int { return v.SuffixIndex }).(pulumi.IntPtrOutput)
 }
@@ -4467,17 +4655,17 @@ func (o LaunchTemplateLaunchTemplateVersionOutput) Tags() LaunchTemplateLaunchTe
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) []LaunchTemplateLaunchTemplateVersionTag { return v.Tags }).(LaunchTemplateLaunchTemplateVersionTagArrayOutput)
 }
 
-// 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+// Indicates whether to automatically add sequential suffixes to Hostname and InstanceName when creating multiple instances
 func (o LaunchTemplateLaunchTemplateVersionOutput) UniqueSuffix() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *bool { return v.UniqueSuffix }).(pulumi.BoolPtrOutput)
 }
 
-// 实例的自定义数据。
+// Custom data for the instance.
 func (o LaunchTemplateLaunchTemplateVersionOutput) UserData() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.UserData }).(pulumi.StringPtrOutput)
 }
 
-// 模版版本描述。
+// Template version description.
 func (o LaunchTemplateLaunchTemplateVersionOutput) VersionDescription() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.VersionDescription }).(pulumi.StringPtrOutput)
 }
@@ -4488,12 +4676,12 @@ func (o LaunchTemplateLaunchTemplateVersionOutput) Volumes() LaunchTemplateLaunc
 	}).(LaunchTemplateLaunchTemplateVersionVolumeArrayOutput)
 }
 
-// 私有网络ID。
+// Private network ID.
 func (o LaunchTemplateLaunchTemplateVersionOutput) VpcId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.VpcId }).(pulumi.StringPtrOutput)
 }
 
-// 实例所属可用区ID。
+// Instance availability zone ID
 func (o LaunchTemplateLaunchTemplateVersionOutput) ZoneId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersion) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
 }
@@ -4522,7 +4710,7 @@ func (o LaunchTemplateLaunchTemplateVersionPtrOutput) Elem() LaunchTemplateLaunc
 	}).(LaunchTemplateLaunchTemplateVersionOutput)
 }
 
-// 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+// When the ECS instance needs to join or adjust the deployment set strategy to the deployment set group high availability strategy (AvailabilityGroup), you can use this parameter to specify the group number of the instance in the deployment set.
 func (o LaunchTemplateLaunchTemplateVersionPtrOutput) DeploymentSetGroupNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *int {
 		if v == nil {
@@ -4532,7 +4720,7 @@ func (o LaunchTemplateLaunchTemplateVersionPtrOutput) DeploymentSetGroupNumber()
 	}).(pulumi.IntPtrOutput)
 }
 
-// 实例需要加入的部署集ID。
+// Deployment set ID the instance needs to join.
 func (o LaunchTemplateLaunchTemplateVersionPtrOutput) DeploymentSetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
 		if v == nil {
@@ -4542,7 +4730,7 @@ func (o LaunchTemplateLaunchTemplateVersionPtrOutput) DeploymentSetId() pulumi.S
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的描述。
+// Instance description
 func (o LaunchTemplateLaunchTemplateVersionPtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
 		if v == nil {
@@ -4552,7 +4740,7 @@ func (o LaunchTemplateLaunchTemplateVersionPtrOutput) Description() pulumi.Strin
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例绑定的公网IP信息。
+// Public IP information bound to the instance
 func (o LaunchTemplateLaunchTemplateVersionPtrOutput) Eip() LaunchTemplateLaunchTemplateVersionEipPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *LaunchTemplateLaunchTemplateVersionEip {
 		if v == nil {
@@ -4562,7 +4750,7 @@ func (o LaunchTemplateLaunchTemplateVersionPtrOutput) Eip() LaunchTemplateLaunch
 	}).(LaunchTemplateLaunchTemplateVersionEipPtrOutput)
 }
 
-// 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+// Instance hostname. For Linux, the hostname length must be 2–59 characters. For Windows, the hostname length must be 2–10 characters.
 func (o LaunchTemplateLaunchTemplateVersionPtrOutput) HostName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
 		if v == nil {
@@ -4572,7 +4760,7 @@ func (o LaunchTemplateLaunchTemplateVersionPtrOutput) HostName() pulumi.StringPt
 	}).(pulumi.StringPtrOutput)
 }
 
-// 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+// When creating a high-performance computing GPU instance, please specify the high-performance computing cluster ID.
 func (o LaunchTemplateLaunchTemplateVersionPtrOutput) HpcClusterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
 		if v == nil {
@@ -4582,7 +4770,7 @@ func (o LaunchTemplateLaunchTemplateVersionPtrOutput) HpcClusterId() pulumi.Stri
 	}).(pulumi.StringPtrOutput)
 }
 
-// 镜像ID。
+// Image ID.
 func (o LaunchTemplateLaunchTemplateVersionPtrOutput) ImageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
 		if v == nil {
@@ -4592,7 +4780,7 @@ func (o LaunchTemplateLaunchTemplateVersionPtrOutput) ImageId() pulumi.StringPtr
 	}).(pulumi.StringPtrOutput)
 }
 
-// 镜像名称。
+// Image name.
 func (o LaunchTemplateLaunchTemplateVersionPtrOutput) ImageName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
 		if v == nil {
@@ -4602,7 +4790,7 @@ func (o LaunchTemplateLaunchTemplateVersionPtrOutput) ImageName() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+// Billing type for the instance and cloud disk. Options: PostPaid: Pay-as-you-go. PrePaid: Yearly/monthly subscription. Esi: Elastic reservation instance. Segmented: Time-based elastic reservation instance.
 func (o LaunchTemplateLaunchTemplateVersionPtrOutput) InstanceChargeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
 		if v == nil {
@@ -4612,7 +4800,7 @@ func (o LaunchTemplateLaunchTemplateVersionPtrOutput) InstanceChargeType() pulum
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的名称。
+// Instance name.
 func (o LaunchTemplateLaunchTemplateVersionPtrOutput) InstanceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
 		if v == nil {
@@ -4622,7 +4810,7 @@ func (o LaunchTemplateLaunchTemplateVersionPtrOutput) InstanceName() pulumi.Stri
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的规格。
+// Instance specification
 func (o LaunchTemplateLaunchTemplateVersionPtrOutput) InstanceTypeId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
 		if v == nil {
@@ -4632,7 +4820,7 @@ func (o LaunchTemplateLaunchTemplateVersionPtrOutput) InstanceTypeId() pulumi.St
 	}).(pulumi.StringPtrOutput)
 }
 
-// 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+// Whether to retain image settings. Values: true: Retain image settings. If retained, the instance will use the preset password or key pair from the image for login. false (default): Do not retain image settings.
 func (o LaunchTemplateLaunchTemplateVersionPtrOutput) KeepImageCredential() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *bool {
 		if v == nil {
@@ -4642,7 +4830,7 @@ func (o LaunchTemplateLaunchTemplateVersionPtrOutput) KeepImageCredential() pulu
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 实例绑定的密钥对。
+// Key pair bound to the instance.
 func (o LaunchTemplateLaunchTemplateVersionPtrOutput) KeyPairName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
 		if v == nil {
@@ -4661,7 +4849,7 @@ func (o LaunchTemplateLaunchTemplateVersionPtrOutput) NetworkInterfaces() Launch
 	}).(LaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput)
 }
 
-// 实例所属项目。
+// Project associated with the instance.
 func (o LaunchTemplateLaunchTemplateVersionPtrOutput) ProjectName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
 		if v == nil {
@@ -4671,7 +4859,7 @@ func (o LaunchTemplateLaunchTemplateVersionPtrOutput) ProjectName() pulumi.Strin
 	}).(pulumi.StringPtrOutput)
 }
 
-// 弹性预约单信息。
+// Elastic reservation order information
 func (o LaunchTemplateLaunchTemplateVersionPtrOutput) ScheduledInstance() LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *LaunchTemplateLaunchTemplateVersionScheduledInstance {
 		if v == nil {
@@ -4681,7 +4869,7 @@ func (o LaunchTemplateLaunchTemplateVersionPtrOutput) ScheduledInstance() Launch
 	}).(LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput)
 }
 
-// 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+// Enable security hardening. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
 func (o LaunchTemplateLaunchTemplateVersionPtrOutput) SecurityEnhancementStrategy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
 		if v == nil {
@@ -4691,7 +4879,7 @@ func (o LaunchTemplateLaunchTemplateVersionPtrOutput) SecurityEnhancementStrateg
 	}).(pulumi.StringPtrOutput)
 }
 
-// 抢占式实例的每小时最高价格。
+// Maximum hourly price for preemptible instances
 func (o LaunchTemplateLaunchTemplateVersionPtrOutput) SpotPriceLimit() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *float64 {
 		if v == nil {
@@ -4701,7 +4889,7 @@ func (o LaunchTemplateLaunchTemplateVersionPtrOutput) SpotPriceLimit() pulumi.Fl
 	}).(pulumi.Float64PtrOutput)
 }
 
-// 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+// Preemptible strategy for pay-as-you-go billing. Options: NoSpot: Create a regular pay-as-you-go instance. SpotAsPriceGo: System automatically bids, follows the current market price for preemptible instances. SpotWithPriceLimit: Preemptible instance with a bid limit.
 func (o LaunchTemplateLaunchTemplateVersionPtrOutput) SpotStrategy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
 		if v == nil {
@@ -4711,7 +4899,7 @@ func (o LaunchTemplateLaunchTemplateVersionPtrOutput) SpotStrategy() pulumi.Stri
 	}).(pulumi.StringPtrOutput)
 }
 
-// 有序后缀的起始序号。
+// Starting number for the sequential suffix
 func (o LaunchTemplateLaunchTemplateVersionPtrOutput) SuffixIndex() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *int {
 		if v == nil {
@@ -4730,7 +4918,7 @@ func (o LaunchTemplateLaunchTemplateVersionPtrOutput) Tags() LaunchTemplateLaunc
 	}).(LaunchTemplateLaunchTemplateVersionTagArrayOutput)
 }
 
-// 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+// Indicates whether to automatically add sequential suffixes to Hostname and InstanceName when creating multiple instances
 func (o LaunchTemplateLaunchTemplateVersionPtrOutput) UniqueSuffix() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *bool {
 		if v == nil {
@@ -4740,7 +4928,7 @@ func (o LaunchTemplateLaunchTemplateVersionPtrOutput) UniqueSuffix() pulumi.Bool
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 实例的自定义数据。
+// Custom data for the instance.
 func (o LaunchTemplateLaunchTemplateVersionPtrOutput) UserData() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
 		if v == nil {
@@ -4750,7 +4938,7 @@ func (o LaunchTemplateLaunchTemplateVersionPtrOutput) UserData() pulumi.StringPt
 	}).(pulumi.StringPtrOutput)
 }
 
-// 模版版本描述。
+// Template version description.
 func (o LaunchTemplateLaunchTemplateVersionPtrOutput) VersionDescription() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
 		if v == nil {
@@ -4769,7 +4957,7 @@ func (o LaunchTemplateLaunchTemplateVersionPtrOutput) Volumes() LaunchTemplateLa
 	}).(LaunchTemplateLaunchTemplateVersionVolumeArrayOutput)
 }
 
-// 私有网络ID。
+// Private network ID.
 func (o LaunchTemplateLaunchTemplateVersionPtrOutput) VpcId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
 		if v == nil {
@@ -4779,7 +4967,7 @@ func (o LaunchTemplateLaunchTemplateVersionPtrOutput) VpcId() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例所属可用区ID。
+// Instance availability zone ID
 func (o LaunchTemplateLaunchTemplateVersionPtrOutput) ZoneId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersion) *string {
 		if v == nil {
@@ -4790,19 +4978,19 @@ func (o LaunchTemplateLaunchTemplateVersionPtrOutput) ZoneId() pulumi.StringPtrO
 }
 
 type LaunchTemplateLaunchTemplateVersionEip struct {
-	// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+	// Public IP bandwidth cap, unit: Mbps. Value range: 1–200. Default: 1.
 	Bandwidth *int `pulumi:"bandwidth"`
-	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+	// Shared bandwidth package ID, indicates adding the public IP to the shared bandwidth package.
 	BandwidthPackageId *string `pulumi:"bandwidthPackageId"`
-	// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+	// Billing method for public IP. Values: 2: Pay-as-you-go—by bandwidth cap. 3: Pay-as-you-go—by actual traffic.
 	BillingType *int `pulumi:"billingType"`
-	// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+	// Line type for the public IP. Options: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line.
 	Isp *string `pulumi:"isp"`
-	// 公网IP是否随实例删除，仅按量计费公网IP生效。
+	// Whether the public IP is released with the instance; only applies to pay-as-you-go public IPs
 	ReleaseWithInstance *bool `pulumi:"releaseWithInstance"`
-	// 安全防护包ID。
+	// Security protection package ID
 	SecurityProtectionInstanceId *int `pulumi:"securityProtectionInstanceId"`
-	// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+	// Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS Native Protection (Enterprise Edition) instance.
 	SecurityProtectionTypes []string `pulumi:"securityProtectionTypes"`
 }
 
@@ -4818,19 +5006,19 @@ type LaunchTemplateLaunchTemplateVersionEipInput interface {
 }
 
 type LaunchTemplateLaunchTemplateVersionEipArgs struct {
-	// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+	// Public IP bandwidth cap, unit: Mbps. Value range: 1–200. Default: 1.
 	Bandwidth pulumi.IntPtrInput `pulumi:"bandwidth"`
-	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+	// Shared bandwidth package ID, indicates adding the public IP to the shared bandwidth package.
 	BandwidthPackageId pulumi.StringPtrInput `pulumi:"bandwidthPackageId"`
-	// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+	// Billing method for public IP. Values: 2: Pay-as-you-go—by bandwidth cap. 3: Pay-as-you-go—by actual traffic.
 	BillingType pulumi.IntPtrInput `pulumi:"billingType"`
-	// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+	// Line type for the public IP. Options: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line.
 	Isp pulumi.StringPtrInput `pulumi:"isp"`
-	// 公网IP是否随实例删除，仅按量计费公网IP生效。
+	// Whether the public IP is released with the instance; only applies to pay-as-you-go public IPs
 	ReleaseWithInstance pulumi.BoolPtrInput `pulumi:"releaseWithInstance"`
-	// 安全防护包ID。
+	// Security protection package ID
 	SecurityProtectionInstanceId pulumi.IntPtrInput `pulumi:"securityProtectionInstanceId"`
-	// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+	// Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS Native Protection (Enterprise Edition) instance.
 	SecurityProtectionTypes pulumi.StringArrayInput `pulumi:"securityProtectionTypes"`
 }
 
@@ -4911,37 +5099,37 @@ func (o LaunchTemplateLaunchTemplateVersionEipOutput) ToLaunchTemplateLaunchTemp
 	}).(LaunchTemplateLaunchTemplateVersionEipPtrOutput)
 }
 
-// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+// Public IP bandwidth cap, unit: Mbps. Value range: 1–200. Default: 1.
 func (o LaunchTemplateLaunchTemplateVersionEipOutput) Bandwidth() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionEip) *int { return v.Bandwidth }).(pulumi.IntPtrOutput)
 }
 
-// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+// Shared bandwidth package ID, indicates adding the public IP to the shared bandwidth package.
 func (o LaunchTemplateLaunchTemplateVersionEipOutput) BandwidthPackageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionEip) *string { return v.BandwidthPackageId }).(pulumi.StringPtrOutput)
 }
 
-// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+// Billing method for public IP. Values: 2: Pay-as-you-go—by bandwidth cap. 3: Pay-as-you-go—by actual traffic.
 func (o LaunchTemplateLaunchTemplateVersionEipOutput) BillingType() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionEip) *int { return v.BillingType }).(pulumi.IntPtrOutput)
 }
 
-// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+// Line type for the public IP. Options: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line.
 func (o LaunchTemplateLaunchTemplateVersionEipOutput) Isp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionEip) *string { return v.Isp }).(pulumi.StringPtrOutput)
 }
 
-// 公网IP是否随实例删除，仅按量计费公网IP生效。
+// Whether the public IP is released with the instance; only applies to pay-as-you-go public IPs
 func (o LaunchTemplateLaunchTemplateVersionEipOutput) ReleaseWithInstance() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionEip) *bool { return v.ReleaseWithInstance }).(pulumi.BoolPtrOutput)
 }
 
-// 安全防护包ID。
+// Security protection package ID
 func (o LaunchTemplateLaunchTemplateVersionEipOutput) SecurityProtectionInstanceId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionEip) *int { return v.SecurityProtectionInstanceId }).(pulumi.IntPtrOutput)
 }
 
-// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+// Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS Native Protection (Enterprise Edition) instance.
 func (o LaunchTemplateLaunchTemplateVersionEipOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionEip) []string { return v.SecurityProtectionTypes }).(pulumi.StringArrayOutput)
 }
@@ -4970,7 +5158,7 @@ func (o LaunchTemplateLaunchTemplateVersionEipPtrOutput) Elem() LaunchTemplateLa
 	}).(LaunchTemplateLaunchTemplateVersionEipOutput)
 }
 
-// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+// Public IP bandwidth cap, unit: Mbps. Value range: 1–200. Default: 1.
 func (o LaunchTemplateLaunchTemplateVersionEipPtrOutput) Bandwidth() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersionEip) *int {
 		if v == nil {
@@ -4980,7 +5168,7 @@ func (o LaunchTemplateLaunchTemplateVersionEipPtrOutput) Bandwidth() pulumi.IntP
 	}).(pulumi.IntPtrOutput)
 }
 
-// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+// Shared bandwidth package ID, indicates adding the public IP to the shared bandwidth package.
 func (o LaunchTemplateLaunchTemplateVersionEipPtrOutput) BandwidthPackageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersionEip) *string {
 		if v == nil {
@@ -4990,7 +5178,7 @@ func (o LaunchTemplateLaunchTemplateVersionEipPtrOutput) BandwidthPackageId() pu
 	}).(pulumi.StringPtrOutput)
 }
 
-// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+// Billing method for public IP. Values: 2: Pay-as-you-go—by bandwidth cap. 3: Pay-as-you-go—by actual traffic.
 func (o LaunchTemplateLaunchTemplateVersionEipPtrOutput) BillingType() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersionEip) *int {
 		if v == nil {
@@ -5000,7 +5188,7 @@ func (o LaunchTemplateLaunchTemplateVersionEipPtrOutput) BillingType() pulumi.In
 	}).(pulumi.IntPtrOutput)
 }
 
-// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+// Line type for the public IP. Options: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line.
 func (o LaunchTemplateLaunchTemplateVersionEipPtrOutput) Isp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersionEip) *string {
 		if v == nil {
@@ -5010,7 +5198,7 @@ func (o LaunchTemplateLaunchTemplateVersionEipPtrOutput) Isp() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// 公网IP是否随实例删除，仅按量计费公网IP生效。
+// Whether the public IP is released with the instance; only applies to pay-as-you-go public IPs
 func (o LaunchTemplateLaunchTemplateVersionEipPtrOutput) ReleaseWithInstance() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersionEip) *bool {
 		if v == nil {
@@ -5020,7 +5208,7 @@ func (o LaunchTemplateLaunchTemplateVersionEipPtrOutput) ReleaseWithInstance() p
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 安全防护包ID。
+// Security protection package ID
 func (o LaunchTemplateLaunchTemplateVersionEipPtrOutput) SecurityProtectionInstanceId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersionEip) *int {
 		if v == nil {
@@ -5030,7 +5218,7 @@ func (o LaunchTemplateLaunchTemplateVersionEipPtrOutput) SecurityProtectionInsta
 	}).(pulumi.IntPtrOutput)
 }
 
-// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+// Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS Native Protection (Enterprise Edition) instance.
 func (o LaunchTemplateLaunchTemplateVersionEipPtrOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersionEip) []string {
 		if v == nil {
@@ -5041,9 +5229,9 @@ func (o LaunchTemplateLaunchTemplateVersionEipPtrOutput) SecurityProtectionTypes
 }
 
 type LaunchTemplateLaunchTemplateVersionNetworkInterface struct {
-	// 网卡关联的安全组ID。
+	// Security group ID associated with the network interface.
 	SecurityGroupIds []string `pulumi:"securityGroupIds"`
-	// 实例的私有网络子网ID。
+	// Instance VPC subnet ID
 	SubnetId *string `pulumi:"subnetId"`
 }
 
@@ -5059,9 +5247,9 @@ type LaunchTemplateLaunchTemplateVersionNetworkInterfaceInput interface {
 }
 
 type LaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs struct {
-	// 网卡关联的安全组ID。
+	// Security group ID associated with the network interface.
 	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
-	// 实例的私有网络子网ID。
+	// Instance VPC subnet ID
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
@@ -5116,12 +5304,12 @@ func (o LaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput) ToLaunchTempl
 	return o
 }
 
-// 网卡关联的安全组ID。
+// Security group ID associated with the network interface.
 func (o LaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput) SecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionNetworkInterface) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
 }
 
-// 实例的私有网络子网ID。
+// Instance VPC subnet ID
 func (o LaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionNetworkInterface) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
@@ -5147,9 +5335,9 @@ func (o LaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput) Index(i 
 }
 
 type LaunchTemplateLaunchTemplateVersionScheduledInstance struct {
-	// 弹性预约单的描述。
+	// Description of the elastic reservation order
 	ScheduledInstanceDescription *string `pulumi:"scheduledInstanceDescription"`
-	// 弹性预约单的名称。
+	// Name of the elastic reservation order
 	ScheduledInstanceName *string `pulumi:"scheduledInstanceName"`
 }
 
@@ -5165,9 +5353,9 @@ type LaunchTemplateLaunchTemplateVersionScheduledInstanceInput interface {
 }
 
 type LaunchTemplateLaunchTemplateVersionScheduledInstanceArgs struct {
-	// 弹性预约单的描述。
+	// Description of the elastic reservation order
 	ScheduledInstanceDescription pulumi.StringPtrInput `pulumi:"scheduledInstanceDescription"`
-	// 弹性预约单的名称。
+	// Name of the elastic reservation order
 	ScheduledInstanceName pulumi.StringPtrInput `pulumi:"scheduledInstanceName"`
 }
 
@@ -5248,14 +5436,14 @@ func (o LaunchTemplateLaunchTemplateVersionScheduledInstanceOutput) ToLaunchTemp
 	}).(LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput)
 }
 
-// 弹性预约单的描述。
+// Description of the elastic reservation order
 func (o LaunchTemplateLaunchTemplateVersionScheduledInstanceOutput) ScheduledInstanceDescription() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionScheduledInstance) *string {
 		return v.ScheduledInstanceDescription
 	}).(pulumi.StringPtrOutput)
 }
 
-// 弹性预约单的名称。
+// Name of the elastic reservation order
 func (o LaunchTemplateLaunchTemplateVersionScheduledInstanceOutput) ScheduledInstanceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionScheduledInstance) *string { return v.ScheduledInstanceName }).(pulumi.StringPtrOutput)
 }
@@ -5284,7 +5472,7 @@ func (o LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput) Elem() La
 	}).(LaunchTemplateLaunchTemplateVersionScheduledInstanceOutput)
 }
 
-// 弹性预约单的描述。
+// Description of the elastic reservation order
 func (o LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput) ScheduledInstanceDescription() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersionScheduledInstance) *string {
 		if v == nil {
@@ -5294,7 +5482,7 @@ func (o LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput) Scheduled
 	}).(pulumi.StringPtrOutput)
 }
 
-// 弹性预约单的名称。
+// Name of the elastic reservation order
 func (o LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput) ScheduledInstanceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateLaunchTemplateVersionScheduledInstance) *string {
 		if v == nil {
@@ -5305,9 +5493,9 @@ func (o LaunchTemplateLaunchTemplateVersionScheduledInstancePtrOutput) Scheduled
 }
 
 type LaunchTemplateLaunchTemplateVersionTag struct {
-	// 给资源添加的用户标签的标签键。
+	// Tag key for user tags added to the resource.
 	Key *string `pulumi:"key"`
-	// 给资源添加的用户标签的标签值。
+	// User tag value added to the resource
 	Value *string `pulumi:"value"`
 }
 
@@ -5323,9 +5511,9 @@ type LaunchTemplateLaunchTemplateVersionTagInput interface {
 }
 
 type LaunchTemplateLaunchTemplateVersionTagArgs struct {
-	// 给资源添加的用户标签的标签键。
+	// Tag key for user tags added to the resource.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 给资源添加的用户标签的标签值。
+	// User tag value added to the resource
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -5380,12 +5568,12 @@ func (o LaunchTemplateLaunchTemplateVersionTagOutput) ToLaunchTemplateLaunchTemp
 	return o
 }
 
-// 给资源添加的用户标签的标签键。
+// Tag key for user tags added to the resource.
 func (o LaunchTemplateLaunchTemplateVersionTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 给资源添加的用户标签的标签值。
+// User tag value added to the resource
 func (o LaunchTemplateLaunchTemplateVersionTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -5411,19 +5599,19 @@ func (o LaunchTemplateLaunchTemplateVersionTagArrayOutput) Index(i pulumi.IntInp
 }
 
 type LaunchTemplateLaunchTemplateVersionVolume struct {
-	// 云盘是否随实例释放。
+	// Whether the cloud disk is released with the instance
 	DeleteWithInstance *bool `pulumi:"deleteWithInstance"`
-	// 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+	// Cloud disk extra IOPS performance size, supported only by ESSD FlexPL data disks, unit: operations/second. This parameter must be set when ExtraPerformanceTypeId is Balance or IOPS. The value ranges for each extra performance type are as follows: IOPS type: 1–50000. Balance type: 1–50000.
 	ExtraPerformanceIops *int `pulumi:"extraPerformanceIops"`
-	// 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+	// Extra throughput performance size for the cloud disk, in MB/s. Only supported by ESSD FlexPL data disks. This parameter must be set when ExtraPerformanceTypeId is Throughput. Value range: 1–650.
 	ExtraPerformanceThroughputMb *int `pulumi:"extraPerformanceThroughputMb"`
-	// 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+	// Type of cloud disk extra performance, supported only by ESSD FlexPL data disks. For more information about extra performance, see Cloud Disk Extra Performance. Values: Balance: Balanced extra performance. IOPS: IOPS extra performance. Throughput: Throughput extra performance.
 	ExtraPerformanceTypeId *string `pulumi:"extraPerformanceTypeId"`
-	// 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+	// Cloud disk size, unit: GB. System disk: ESSD*PL0: 20–2048, PTSSD: 10–500. Data disk: ESSD*PL0: 10–32768, PTSSD: 20–8192
 	Size *int `pulumi:"size"`
-	// 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+	// Create a cloud disk using a snapshot, only supports creating data disks. You can call the DescribeSnapshots API to query the snapshot ID.
 	SnapshotId *string `pulumi:"snapshotId"`
-	// 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+	// Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
 	VolumeType *string `pulumi:"volumeType"`
 }
 
@@ -5439,19 +5627,19 @@ type LaunchTemplateLaunchTemplateVersionVolumeInput interface {
 }
 
 type LaunchTemplateLaunchTemplateVersionVolumeArgs struct {
-	// 云盘是否随实例释放。
+	// Whether the cloud disk is released with the instance
 	DeleteWithInstance pulumi.BoolPtrInput `pulumi:"deleteWithInstance"`
-	// 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+	// Cloud disk extra IOPS performance size, supported only by ESSD FlexPL data disks, unit: operations/second. This parameter must be set when ExtraPerformanceTypeId is Balance or IOPS. The value ranges for each extra performance type are as follows: IOPS type: 1–50000. Balance type: 1–50000.
 	ExtraPerformanceIops pulumi.IntPtrInput `pulumi:"extraPerformanceIops"`
-	// 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+	// Extra throughput performance size for the cloud disk, in MB/s. Only supported by ESSD FlexPL data disks. This parameter must be set when ExtraPerformanceTypeId is Throughput. Value range: 1–650.
 	ExtraPerformanceThroughputMb pulumi.IntPtrInput `pulumi:"extraPerformanceThroughputMb"`
-	// 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+	// Type of cloud disk extra performance, supported only by ESSD FlexPL data disks. For more information about extra performance, see Cloud Disk Extra Performance. Values: Balance: Balanced extra performance. IOPS: IOPS extra performance. Throughput: Throughput extra performance.
 	ExtraPerformanceTypeId pulumi.StringPtrInput `pulumi:"extraPerformanceTypeId"`
-	// 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+	// Cloud disk size, unit: GB. System disk: ESSD*PL0: 20–2048, PTSSD: 10–500. Data disk: ESSD*PL0: 10–32768, PTSSD: 20–8192
 	Size pulumi.IntPtrInput `pulumi:"size"`
-	// 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+	// Create a cloud disk using a snapshot, only supports creating data disks. You can call the DescribeSnapshots API to query the snapshot ID.
 	SnapshotId pulumi.StringPtrInput `pulumi:"snapshotId"`
-	// 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+	// Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
 	VolumeType pulumi.StringPtrInput `pulumi:"volumeType"`
 }
 
@@ -5506,37 +5694,37 @@ func (o LaunchTemplateLaunchTemplateVersionVolumeOutput) ToLaunchTemplateLaunchT
 	return o
 }
 
-// 云盘是否随实例释放。
+// Whether the cloud disk is released with the instance
 func (o LaunchTemplateLaunchTemplateVersionVolumeOutput) DeleteWithInstance() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionVolume) *bool { return v.DeleteWithInstance }).(pulumi.BoolPtrOutput)
 }
 
-// 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+// Cloud disk extra IOPS performance size, supported only by ESSD FlexPL data disks, unit: operations/second. This parameter must be set when ExtraPerformanceTypeId is Balance or IOPS. The value ranges for each extra performance type are as follows: IOPS type: 1–50000. Balance type: 1–50000.
 func (o LaunchTemplateLaunchTemplateVersionVolumeOutput) ExtraPerformanceIops() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionVolume) *int { return v.ExtraPerformanceIops }).(pulumi.IntPtrOutput)
 }
 
-// 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+// Extra throughput performance size for the cloud disk, in MB/s. Only supported by ESSD FlexPL data disks. This parameter must be set when ExtraPerformanceTypeId is Throughput. Value range: 1–650.
 func (o LaunchTemplateLaunchTemplateVersionVolumeOutput) ExtraPerformanceThroughputMb() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionVolume) *int { return v.ExtraPerformanceThroughputMb }).(pulumi.IntPtrOutput)
 }
 
-// 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+// Type of cloud disk extra performance, supported only by ESSD FlexPL data disks. For more information about extra performance, see Cloud Disk Extra Performance. Values: Balance: Balanced extra performance. IOPS: IOPS extra performance. Throughput: Throughput extra performance.
 func (o LaunchTemplateLaunchTemplateVersionVolumeOutput) ExtraPerformanceTypeId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionVolume) *string { return v.ExtraPerformanceTypeId }).(pulumi.StringPtrOutput)
 }
 
-// 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+// Cloud disk size, unit: GB. System disk: ESSD*PL0: 20–2048, PTSSD: 10–500. Data disk: ESSD*PL0: 10–32768, PTSSD: 20–8192
 func (o LaunchTemplateLaunchTemplateVersionVolumeOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionVolume) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
 
-// 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+// Create a cloud disk using a snapshot, only supports creating data disks. You can call the DescribeSnapshots API to query the snapshot ID.
 func (o LaunchTemplateLaunchTemplateVersionVolumeOutput) SnapshotId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionVolume) *string { return v.SnapshotId }).(pulumi.StringPtrOutput)
 }
 
-// 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+// Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
 func (o LaunchTemplateLaunchTemplateVersionVolumeOutput) VolumeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateLaunchTemplateVersionVolume) *string { return v.VolumeType }).(pulumi.StringPtrOutput)
 }
@@ -5562,19 +5750,19 @@ func (o LaunchTemplateLaunchTemplateVersionVolumeArrayOutput) Index(i pulumi.Int
 }
 
 type LaunchTemplateVersionEip struct {
-	// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+	// Maximum bandwidth for the public IP, measured in Mbps. Value range: 1–200. Default: 1
 	Bandwidth *int `pulumi:"bandwidth"`
-	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+	// Shared bandwidth package ID, indicating that the public IP is added to the shared bandwidth package
 	BandwidthPackageId *string `pulumi:"bandwidthPackageId"`
-	// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+	// Billing method for the public IP. Values: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic
 	BillingType *int `pulumi:"billingType"`
-	// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+	// Line type of the public IP. Values: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line
 	Isp *string `pulumi:"isp"`
-	// 公网IP是否随实例删除，仅按量计费公网IP生效。
+	// Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs.
 	ReleaseWithInstance *bool `pulumi:"releaseWithInstance"`
-	// 安全防护包ID。
+	// Security protection package ID.
 	SecurityProtectionInstanceId *int `pulumi:"securityProtectionInstanceId"`
-	// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+	// Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
 	SecurityProtectionTypes []string `pulumi:"securityProtectionTypes"`
 }
 
@@ -5590,19 +5778,19 @@ type LaunchTemplateVersionEipInput interface {
 }
 
 type LaunchTemplateVersionEipArgs struct {
-	// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+	// Maximum bandwidth for the public IP, measured in Mbps. Value range: 1–200. Default: 1
 	Bandwidth pulumi.IntPtrInput `pulumi:"bandwidth"`
-	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+	// Shared bandwidth package ID, indicating that the public IP is added to the shared bandwidth package
 	BandwidthPackageId pulumi.StringPtrInput `pulumi:"bandwidthPackageId"`
-	// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+	// Billing method for the public IP. Values: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic
 	BillingType pulumi.IntPtrInput `pulumi:"billingType"`
-	// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+	// Line type of the public IP. Values: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line
 	Isp pulumi.StringPtrInput `pulumi:"isp"`
-	// 公网IP是否随实例删除，仅按量计费公网IP生效。
+	// Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs.
 	ReleaseWithInstance pulumi.BoolPtrInput `pulumi:"releaseWithInstance"`
-	// 安全防护包ID。
+	// Security protection package ID.
 	SecurityProtectionInstanceId pulumi.IntPtrInput `pulumi:"securityProtectionInstanceId"`
-	// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+	// Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
 	SecurityProtectionTypes pulumi.StringArrayInput `pulumi:"securityProtectionTypes"`
 }
 
@@ -5683,37 +5871,37 @@ func (o LaunchTemplateVersionEipOutput) ToLaunchTemplateVersionEipPtrOutputWithC
 	}).(LaunchTemplateVersionEipPtrOutput)
 }
 
-// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+// Maximum bandwidth for the public IP, measured in Mbps. Value range: 1–200. Default: 1
 func (o LaunchTemplateVersionEipOutput) Bandwidth() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateVersionEip) *int { return v.Bandwidth }).(pulumi.IntPtrOutput)
 }
 
-// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+// Shared bandwidth package ID, indicating that the public IP is added to the shared bandwidth package
 func (o LaunchTemplateVersionEipOutput) BandwidthPackageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateVersionEip) *string { return v.BandwidthPackageId }).(pulumi.StringPtrOutput)
 }
 
-// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+// Billing method for the public IP. Values: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic
 func (o LaunchTemplateVersionEipOutput) BillingType() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateVersionEip) *int { return v.BillingType }).(pulumi.IntPtrOutput)
 }
 
-// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+// Line type of the public IP. Values: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line
 func (o LaunchTemplateVersionEipOutput) Isp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateVersionEip) *string { return v.Isp }).(pulumi.StringPtrOutput)
 }
 
-// 公网IP是否随实例删除，仅按量计费公网IP生效。
+// Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs.
 func (o LaunchTemplateVersionEipOutput) ReleaseWithInstance() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateVersionEip) *bool { return v.ReleaseWithInstance }).(pulumi.BoolPtrOutput)
 }
 
-// 安全防护包ID。
+// Security protection package ID.
 func (o LaunchTemplateVersionEipOutput) SecurityProtectionInstanceId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateVersionEip) *int { return v.SecurityProtectionInstanceId }).(pulumi.IntPtrOutput)
 }
 
-// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+// Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
 func (o LaunchTemplateVersionEipOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LaunchTemplateVersionEip) []string { return v.SecurityProtectionTypes }).(pulumi.StringArrayOutput)
 }
@@ -5742,7 +5930,7 @@ func (o LaunchTemplateVersionEipPtrOutput) Elem() LaunchTemplateVersionEipOutput
 	}).(LaunchTemplateVersionEipOutput)
 }
 
-// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+// Maximum bandwidth for the public IP, measured in Mbps. Value range: 1–200. Default: 1
 func (o LaunchTemplateVersionEipPtrOutput) Bandwidth() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateVersionEip) *int {
 		if v == nil {
@@ -5752,7 +5940,7 @@ func (o LaunchTemplateVersionEipPtrOutput) Bandwidth() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+// Shared bandwidth package ID, indicating that the public IP is added to the shared bandwidth package
 func (o LaunchTemplateVersionEipPtrOutput) BandwidthPackageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateVersionEip) *string {
 		if v == nil {
@@ -5762,7 +5950,7 @@ func (o LaunchTemplateVersionEipPtrOutput) BandwidthPackageId() pulumi.StringPtr
 	}).(pulumi.StringPtrOutput)
 }
 
-// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+// Billing method for the public IP. Values: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic
 func (o LaunchTemplateVersionEipPtrOutput) BillingType() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateVersionEip) *int {
 		if v == nil {
@@ -5772,7 +5960,7 @@ func (o LaunchTemplateVersionEipPtrOutput) BillingType() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+// Line type of the public IP. Values: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line
 func (o LaunchTemplateVersionEipPtrOutput) Isp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateVersionEip) *string {
 		if v == nil {
@@ -5782,7 +5970,7 @@ func (o LaunchTemplateVersionEipPtrOutput) Isp() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 公网IP是否随实例删除，仅按量计费公网IP生效。
+// Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs.
 func (o LaunchTemplateVersionEipPtrOutput) ReleaseWithInstance() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateVersionEip) *bool {
 		if v == nil {
@@ -5792,7 +5980,7 @@ func (o LaunchTemplateVersionEipPtrOutput) ReleaseWithInstance() pulumi.BoolPtrO
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 安全防护包ID。
+// Security protection package ID.
 func (o LaunchTemplateVersionEipPtrOutput) SecurityProtectionInstanceId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateVersionEip) *int {
 		if v == nil {
@@ -5802,7 +5990,7 @@ func (o LaunchTemplateVersionEipPtrOutput) SecurityProtectionInstanceId() pulumi
 	}).(pulumi.IntPtrOutput)
 }
 
-// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+// Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
 func (o LaunchTemplateVersionEipPtrOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *LaunchTemplateVersionEip) []string {
 		if v == nil {
@@ -5813,9 +6001,9 @@ func (o LaunchTemplateVersionEipPtrOutput) SecurityProtectionTypes() pulumi.Stri
 }
 
 type LaunchTemplateVersionNetworkInterface struct {
-	// 网卡关联的安全组ID。
+	// Security group ID associated with the network interface.
 	SecurityGroupIds []string `pulumi:"securityGroupIds"`
-	// 实例的私有网络子网ID。
+	// Private network subnet ID of the instance.
 	SubnetId *string `pulumi:"subnetId"`
 }
 
@@ -5831,9 +6019,9 @@ type LaunchTemplateVersionNetworkInterfaceInput interface {
 }
 
 type LaunchTemplateVersionNetworkInterfaceArgs struct {
-	// 网卡关联的安全组ID。
+	// Security group ID associated with the network interface.
 	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
-	// 实例的私有网络子网ID。
+	// Private network subnet ID of the instance.
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
@@ -5888,12 +6076,12 @@ func (o LaunchTemplateVersionNetworkInterfaceOutput) ToLaunchTemplateVersionNetw
 	return o
 }
 
-// 网卡关联的安全组ID。
+// Security group ID associated with the network interface.
 func (o LaunchTemplateVersionNetworkInterfaceOutput) SecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LaunchTemplateVersionNetworkInterface) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
 }
 
-// 实例的私有网络子网ID。
+// Private network subnet ID of the instance.
 func (o LaunchTemplateVersionNetworkInterfaceOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateVersionNetworkInterface) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
@@ -5919,9 +6107,9 @@ func (o LaunchTemplateVersionNetworkInterfaceArrayOutput) Index(i pulumi.IntInpu
 }
 
 type LaunchTemplateVersionScheduledInstance struct {
-	// 弹性预约单的描述。
+	// Description of the elastic reservation order
 	ScheduledInstanceDescription *string `pulumi:"scheduledInstanceDescription"`
-	// 弹性预约单的名称。
+	// Name of the elastic reservation order
 	ScheduledInstanceName *string `pulumi:"scheduledInstanceName"`
 }
 
@@ -5937,9 +6125,9 @@ type LaunchTemplateVersionScheduledInstanceInput interface {
 }
 
 type LaunchTemplateVersionScheduledInstanceArgs struct {
-	// 弹性预约单的描述。
+	// Description of the elastic reservation order
 	ScheduledInstanceDescription pulumi.StringPtrInput `pulumi:"scheduledInstanceDescription"`
-	// 弹性预约单的名称。
+	// Name of the elastic reservation order
 	ScheduledInstanceName pulumi.StringPtrInput `pulumi:"scheduledInstanceName"`
 }
 
@@ -6020,12 +6208,12 @@ func (o LaunchTemplateVersionScheduledInstanceOutput) ToLaunchTemplateVersionSch
 	}).(LaunchTemplateVersionScheduledInstancePtrOutput)
 }
 
-// 弹性预约单的描述。
+// Description of the elastic reservation order
 func (o LaunchTemplateVersionScheduledInstanceOutput) ScheduledInstanceDescription() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateVersionScheduledInstance) *string { return v.ScheduledInstanceDescription }).(pulumi.StringPtrOutput)
 }
 
-// 弹性预约单的名称。
+// Name of the elastic reservation order
 func (o LaunchTemplateVersionScheduledInstanceOutput) ScheduledInstanceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateVersionScheduledInstance) *string { return v.ScheduledInstanceName }).(pulumi.StringPtrOutput)
 }
@@ -6054,7 +6242,7 @@ func (o LaunchTemplateVersionScheduledInstancePtrOutput) Elem() LaunchTemplateVe
 	}).(LaunchTemplateVersionScheduledInstanceOutput)
 }
 
-// 弹性预约单的描述。
+// Description of the elastic reservation order
 func (o LaunchTemplateVersionScheduledInstancePtrOutput) ScheduledInstanceDescription() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateVersionScheduledInstance) *string {
 		if v == nil {
@@ -6064,7 +6252,7 @@ func (o LaunchTemplateVersionScheduledInstancePtrOutput) ScheduledInstanceDescri
 	}).(pulumi.StringPtrOutput)
 }
 
-// 弹性预约单的名称。
+// Name of the elastic reservation order
 func (o LaunchTemplateVersionScheduledInstancePtrOutput) ScheduledInstanceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LaunchTemplateVersionScheduledInstance) *string {
 		if v == nil {
@@ -6075,9 +6263,9 @@ func (o LaunchTemplateVersionScheduledInstancePtrOutput) ScheduledInstanceName()
 }
 
 type LaunchTemplateVersionTag struct {
-	// 给资源添加的用户标签的标签键。
+	// Tag key for user tags added to the resource.
 	Key *string `pulumi:"key"`
-	// 给资源添加的用户标签的标签值。
+	// Tag value for user tags added to the resource
 	Value *string `pulumi:"value"`
 }
 
@@ -6093,9 +6281,9 @@ type LaunchTemplateVersionTagInput interface {
 }
 
 type LaunchTemplateVersionTagArgs struct {
-	// 给资源添加的用户标签的标签键。
+	// Tag key for user tags added to the resource.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 给资源添加的用户标签的标签值。
+	// Tag value for user tags added to the resource
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -6150,12 +6338,12 @@ func (o LaunchTemplateVersionTagOutput) ToLaunchTemplateVersionTagOutputWithCont
 	return o
 }
 
-// 给资源添加的用户标签的标签键。
+// Tag key for user tags added to the resource.
 func (o LaunchTemplateVersionTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateVersionTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 给资源添加的用户标签的标签值。
+// Tag value for user tags added to the resource
 func (o LaunchTemplateVersionTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateVersionTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -6181,19 +6369,19 @@ func (o LaunchTemplateVersionTagArrayOutput) Index(i pulumi.IntInput) LaunchTemp
 }
 
 type LaunchTemplateVersionVolume struct {
-	// 云盘是否随实例释放。
+	// Whether the disk is released with the instance
 	DeleteWithInstance *bool `pulumi:"deleteWithInstance"`
-	// 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+	// Extra IOPS performance size for the disk, supported only by ESSD FlexPL data disks, measured in operations per second. This parameter must be set when ExtraPerformanceTypeId is Balance or IOPS. Value ranges for each type: IOPS: 1–50000. Balance: 1–50000
 	ExtraPerformanceIops *int `pulumi:"extraPerformanceIops"`
-	// 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+	// Additional disk throughput performance in MB/s. Supported only by ESSD FlexPL data disks. Set this parameter when ExtraPerformanceTypeId is Throughput. Value range: 1–650.
 	ExtraPerformanceThroughputMb *int `pulumi:"extraPerformanceThroughputMb"`
-	// 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+	// Type of extra disk performance, supported only by ESSD FlexPL data disks. For more information about extra performance, see Extra Disk Performance. Values: Balance: Balanced extra performance. IOPS: IOPS extra performance. Throughput: Throughput extra performance
 	ExtraPerformanceTypeId *string `pulumi:"extraPerformanceTypeId"`
-	// 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+	// Disk size, measured in GB. System disk: ESSD*PL0: 20–2048, PTSSD: 10–500. Data disk: ESSD*PL0: 10–32768, PTSSD: 20–8192
 	Size *int `pulumi:"size"`
-	// 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+	// Create a cloud disk from a snapshot. Only data disks are supported. You can call the DescribeSnapshots API to query the snapshot ID.
 	SnapshotId *string `pulumi:"snapshotId"`
-	// 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+	// Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
 	VolumeType *string `pulumi:"volumeType"`
 }
 
@@ -6209,19 +6397,19 @@ type LaunchTemplateVersionVolumeInput interface {
 }
 
 type LaunchTemplateVersionVolumeArgs struct {
-	// 云盘是否随实例释放。
+	// Whether the disk is released with the instance
 	DeleteWithInstance pulumi.BoolPtrInput `pulumi:"deleteWithInstance"`
-	// 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+	// Extra IOPS performance size for the disk, supported only by ESSD FlexPL data disks, measured in operations per second. This parameter must be set when ExtraPerformanceTypeId is Balance or IOPS. Value ranges for each type: IOPS: 1–50000. Balance: 1–50000
 	ExtraPerformanceIops pulumi.IntPtrInput `pulumi:"extraPerformanceIops"`
-	// 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+	// Additional disk throughput performance in MB/s. Supported only by ESSD FlexPL data disks. Set this parameter when ExtraPerformanceTypeId is Throughput. Value range: 1–650.
 	ExtraPerformanceThroughputMb pulumi.IntPtrInput `pulumi:"extraPerformanceThroughputMb"`
-	// 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+	// Type of extra disk performance, supported only by ESSD FlexPL data disks. For more information about extra performance, see Extra Disk Performance. Values: Balance: Balanced extra performance. IOPS: IOPS extra performance. Throughput: Throughput extra performance
 	ExtraPerformanceTypeId pulumi.StringPtrInput `pulumi:"extraPerformanceTypeId"`
-	// 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+	// Disk size, measured in GB. System disk: ESSD*PL0: 20–2048, PTSSD: 10–500. Data disk: ESSD*PL0: 10–32768, PTSSD: 20–8192
 	Size pulumi.IntPtrInput `pulumi:"size"`
-	// 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+	// Create a cloud disk from a snapshot. Only data disks are supported. You can call the DescribeSnapshots API to query the snapshot ID.
 	SnapshotId pulumi.StringPtrInput `pulumi:"snapshotId"`
-	// 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+	// Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
 	VolumeType pulumi.StringPtrInput `pulumi:"volumeType"`
 }
 
@@ -6276,37 +6464,37 @@ func (o LaunchTemplateVersionVolumeOutput) ToLaunchTemplateVersionVolumeOutputWi
 	return o
 }
 
-// 云盘是否随实例释放。
+// Whether the disk is released with the instance
 func (o LaunchTemplateVersionVolumeOutput) DeleteWithInstance() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateVersionVolume) *bool { return v.DeleteWithInstance }).(pulumi.BoolPtrOutput)
 }
 
-// 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+// Extra IOPS performance size for the disk, supported only by ESSD FlexPL data disks, measured in operations per second. This parameter must be set when ExtraPerformanceTypeId is Balance or IOPS. Value ranges for each type: IOPS: 1–50000. Balance: 1–50000
 func (o LaunchTemplateVersionVolumeOutput) ExtraPerformanceIops() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateVersionVolume) *int { return v.ExtraPerformanceIops }).(pulumi.IntPtrOutput)
 }
 
-// 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+// Additional disk throughput performance in MB/s. Supported only by ESSD FlexPL data disks. Set this parameter when ExtraPerformanceTypeId is Throughput. Value range: 1–650.
 func (o LaunchTemplateVersionVolumeOutput) ExtraPerformanceThroughputMb() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateVersionVolume) *int { return v.ExtraPerformanceThroughputMb }).(pulumi.IntPtrOutput)
 }
 
-// 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+// Type of extra disk performance, supported only by ESSD FlexPL data disks. For more information about extra performance, see Extra Disk Performance. Values: Balance: Balanced extra performance. IOPS: IOPS extra performance. Throughput: Throughput extra performance
 func (o LaunchTemplateVersionVolumeOutput) ExtraPerformanceTypeId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateVersionVolume) *string { return v.ExtraPerformanceTypeId }).(pulumi.StringPtrOutput)
 }
 
-// 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+// Disk size, measured in GB. System disk: ESSD*PL0: 20–2048, PTSSD: 10–500. Data disk: ESSD*PL0: 10–32768, PTSSD: 20–8192
 func (o LaunchTemplateVersionVolumeOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateVersionVolume) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
 
-// 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+// Create a cloud disk from a snapshot. Only data disks are supported. You can call the DescribeSnapshots API to query the snapshot ID.
 func (o LaunchTemplateVersionVolumeOutput) SnapshotId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateVersionVolume) *string { return v.SnapshotId }).(pulumi.StringPtrOutput)
 }
 
-// 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+// Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
 func (o LaunchTemplateVersionVolumeOutput) VolumeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LaunchTemplateVersionVolume) *string { return v.VolumeType }).(pulumi.StringPtrOutput)
 }
@@ -6332,23 +6520,23 @@ func (o LaunchTemplateVersionVolumeArrayOutput) Index(i pulumi.IntInput) LaunchT
 }
 
 type GetCommandParameterDefinition struct {
-	// 自定义参数值（数字）允许的小数点后位数。
+	// Allowed decimal places for custom parameter (number).
 	DecimalPrecision int `pulumi:"decimalPrecision"`
-	// 自定义参数默认值。
+	// Default value for custom parameter.
 	DefaultValue string `pulumi:"defaultValue"`
-	// 自定义参数值（字符串）的最大长度。
+	// Maximum length for custom parameter (string).
 	MaxLength int `pulumi:"maxLength"`
-	// 自定义参数值（数字）的最大值。
+	// Maximum value for custom parameter (number).
 	MaxValue string `pulumi:"maxValue"`
-	// 自定义参数值（字符串）的最小长度。
+	// Minimum length for custom parameter (string).
 	MinLength int `pulumi:"minLength"`
-	// 自定义参数值（数字）的最小值。
+	// Minimum value for custom parameter (number).
 	MinValue string `pulumi:"minValue"`
-	// 自定义参数名称，需要在脚本中通过{{Param}}定义 。单个参数名不能超过64字节。遵循Shell变量命名规则，a-zA-Z0-9-_的组合。首个字符不能以数字开头。中间不能有空格，可以使用下划线。
+	// Custom parameter name. Define it in the script using {{Param}}. Each parameter name must not exceed 64 bytes. Follow Shell variable naming rules: combinations of a-z, A-Z, 0-9, -, and _. The first character cannot be a digit. No spaces allowed; underscores can be used instead.
 	Name string `pulumi:"name"`
-	// 是否必填。
+	// Whether it is required.
 	Required bool `pulumi:"required"`
-	// 自定义参数类型。取值：String：表示自定义参数类型为String（字符串）类型。Digit：表示自定义参数类型为Digit（数值）类型。
+	// Custom parameter type. Values: String: Indicates the custom parameter type is String (string type). Digit: Indicates the custom parameter type is Digit (numeric type).
 	Type string `pulumi:"type"`
 }
 
@@ -6364,23 +6552,23 @@ type GetCommandParameterDefinitionInput interface {
 }
 
 type GetCommandParameterDefinitionArgs struct {
-	// 自定义参数值（数字）允许的小数点后位数。
+	// Allowed decimal places for custom parameter (number).
 	DecimalPrecision pulumi.IntInput `pulumi:"decimalPrecision"`
-	// 自定义参数默认值。
+	// Default value for custom parameter.
 	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
-	// 自定义参数值（字符串）的最大长度。
+	// Maximum length for custom parameter (string).
 	MaxLength pulumi.IntInput `pulumi:"maxLength"`
-	// 自定义参数值（数字）的最大值。
+	// Maximum value for custom parameter (number).
 	MaxValue pulumi.StringInput `pulumi:"maxValue"`
-	// 自定义参数值（字符串）的最小长度。
+	// Minimum length for custom parameter (string).
 	MinLength pulumi.IntInput `pulumi:"minLength"`
-	// 自定义参数值（数字）的最小值。
+	// Minimum value for custom parameter (number).
 	MinValue pulumi.StringInput `pulumi:"minValue"`
-	// 自定义参数名称，需要在脚本中通过{{Param}}定义 。单个参数名不能超过64字节。遵循Shell变量命名规则，a-zA-Z0-9-_的组合。首个字符不能以数字开头。中间不能有空格，可以使用下划线。
+	// Custom parameter name. Define it in the script using {{Param}}. Each parameter name must not exceed 64 bytes. Follow Shell variable naming rules: combinations of a-z, A-Z, 0-9, -, and _. The first character cannot be a digit. No spaces allowed; underscores can be used instead.
 	Name pulumi.StringInput `pulumi:"name"`
-	// 是否必填。
+	// Whether it is required.
 	Required pulumi.BoolInput `pulumi:"required"`
-	// 自定义参数类型。取值：String：表示自定义参数类型为String（字符串）类型。Digit：表示自定义参数类型为Digit（数值）类型。
+	// Custom parameter type. Values: String: Indicates the custom parameter type is String (string type). Digit: Indicates the custom parameter type is Digit (numeric type).
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -6435,47 +6623,47 @@ func (o GetCommandParameterDefinitionOutput) ToGetCommandParameterDefinitionOutp
 	return o
 }
 
-// 自定义参数值（数字）允许的小数点后位数。
+// Allowed decimal places for custom parameter (number).
 func (o GetCommandParameterDefinitionOutput) DecimalPrecision() pulumi.IntOutput {
 	return o.ApplyT(func(v GetCommandParameterDefinition) int { return v.DecimalPrecision }).(pulumi.IntOutput)
 }
 
-// 自定义参数默认值。
+// Default value for custom parameter.
 func (o GetCommandParameterDefinitionOutput) DefaultValue() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCommandParameterDefinition) string { return v.DefaultValue }).(pulumi.StringOutput)
 }
 
-// 自定义参数值（字符串）的最大长度。
+// Maximum length for custom parameter (string).
 func (o GetCommandParameterDefinitionOutput) MaxLength() pulumi.IntOutput {
 	return o.ApplyT(func(v GetCommandParameterDefinition) int { return v.MaxLength }).(pulumi.IntOutput)
 }
 
-// 自定义参数值（数字）的最大值。
+// Maximum value for custom parameter (number).
 func (o GetCommandParameterDefinitionOutput) MaxValue() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCommandParameterDefinition) string { return v.MaxValue }).(pulumi.StringOutput)
 }
 
-// 自定义参数值（字符串）的最小长度。
+// Minimum length for custom parameter (string).
 func (o GetCommandParameterDefinitionOutput) MinLength() pulumi.IntOutput {
 	return o.ApplyT(func(v GetCommandParameterDefinition) int { return v.MinLength }).(pulumi.IntOutput)
 }
 
-// 自定义参数值（数字）的最小值。
+// Minimum value for custom parameter (number).
 func (o GetCommandParameterDefinitionOutput) MinValue() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCommandParameterDefinition) string { return v.MinValue }).(pulumi.StringOutput)
 }
 
-// 自定义参数名称，需要在脚本中通过{{Param}}定义 。单个参数名不能超过64字节。遵循Shell变量命名规则，a-zA-Z0-9-_的组合。首个字符不能以数字开头。中间不能有空格，可以使用下划线。
+// Custom parameter name. Define it in the script using {{Param}}. Each parameter name must not exceed 64 bytes. Follow Shell variable naming rules: combinations of a-z, A-Z, 0-9, -, and _. The first character cannot be a digit. No spaces allowed; underscores can be used instead.
 func (o GetCommandParameterDefinitionOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCommandParameterDefinition) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 是否必填。
+// Whether it is required.
 func (o GetCommandParameterDefinitionOutput) Required() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetCommandParameterDefinition) bool { return v.Required }).(pulumi.BoolOutput)
 }
 
-// 自定义参数类型。取值：String：表示自定义参数类型为String（字符串）类型。Digit：表示自定义参数类型为Digit（数值）类型。
+// Custom parameter type. Values: String: Indicates the custom parameter type is String (string type). Digit: Indicates the custom parameter type is Digit (numeric type).
 func (o GetCommandParameterDefinitionOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCommandParameterDefinition) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -6501,9 +6689,9 @@ func (o GetCommandParameterDefinitionArrayOutput) Index(i pulumi.IntInput) GetCo
 }
 
 type GetCommandTag struct {
-	// 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+	// User tag key. Naming rules: must not start with any case combination of volc: or sys:. Only language characters, digits, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
 	Key string `pulumi:"key"`
-	// 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+	// User tag value. Naming rules: only language characters, digits, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length must be between 0 and 256 characters.
 	Value string `pulumi:"value"`
 }
 
@@ -6519,9 +6707,9 @@ type GetCommandTagInput interface {
 }
 
 type GetCommandTagArgs struct {
-	// 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+	// User tag key. Naming rules: must not start with any case combination of volc: or sys:. Only language characters, digits, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+	// User tag value. Naming rules: only language characters, digits, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length must be between 0 and 256 characters.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -6576,12 +6764,12 @@ func (o GetCommandTagOutput) ToGetCommandTagOutputWithContext(ctx context.Contex
 	return o
 }
 
-// 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+// User tag key. Naming rules: must not start with any case combination of volc: or sys:. Only language characters, digits, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
 func (o GetCommandTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCommandTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+// User tag value. Naming rules: only language characters, digits, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length must be between 0 and 256 characters.
 func (o GetCommandTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCommandTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -6607,11 +6795,11 @@ func (o GetCommandTagArrayOutput) Index(i pulumi.IntInput) GetCommandTagOutput {
 }
 
 type GetDeploymentSetCapacity struct {
-	// 该可用区内，还可以加入当前部署集的ECS实例数量。
+	// You can also include the number of ECS instances in the current deployment set within this availability zone.
 	AvailableCount int `pulumi:"availableCount"`
-	// 部署集内属于该可用区的ECS实例数量。
+	// Number of ECS instances in the deployment set that belong to this availability zone.
 	UsedCount int `pulumi:"usedCount"`
-	// 可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
+	// Availability zone ID. Only returns the availability zone ID for ECS instances in the deployment set.
 	ZoneId string `pulumi:"zoneId"`
 }
 
@@ -6627,11 +6815,11 @@ type GetDeploymentSetCapacityInput interface {
 }
 
 type GetDeploymentSetCapacityArgs struct {
-	// 该可用区内，还可以加入当前部署集的ECS实例数量。
+	// You can also include the number of ECS instances in the current deployment set within this availability zone.
 	AvailableCount pulumi.IntInput `pulumi:"availableCount"`
-	// 部署集内属于该可用区的ECS实例数量。
+	// Number of ECS instances in the deployment set that belong to this availability zone.
 	UsedCount pulumi.IntInput `pulumi:"usedCount"`
-	// 可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
+	// Availability zone ID. Only returns the availability zone ID for ECS instances in the deployment set.
 	ZoneId pulumi.StringInput `pulumi:"zoneId"`
 }
 
@@ -6686,17 +6874,17 @@ func (o GetDeploymentSetCapacityOutput) ToGetDeploymentSetCapacityOutputWithCont
 	return o
 }
 
-// 该可用区内，还可以加入当前部署集的ECS实例数量。
+// You can also include the number of ECS instances in the current deployment set within this availability zone.
 func (o GetDeploymentSetCapacityOutput) AvailableCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDeploymentSetCapacity) int { return v.AvailableCount }).(pulumi.IntOutput)
 }
 
-// 部署集内属于该可用区的ECS实例数量。
+// Number of ECS instances in the deployment set that belong to this availability zone.
 func (o GetDeploymentSetCapacityOutput) UsedCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDeploymentSetCapacity) int { return v.UsedCount }).(pulumi.IntOutput)
 }
 
-// 可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
+// Availability zone ID. Only returns the availability zone ID for ECS instances in the deployment set.
 func (o GetDeploymentSetCapacityOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentSetCapacity) string { return v.ZoneId }).(pulumi.StringOutput)
 }
@@ -6722,9 +6910,9 @@ func (o GetDeploymentSetCapacityArrayOutput) Index(i pulumi.IntInput) GetDeploym
 }
 
 type GetHpcClusterTag struct {
-	// 标签键。
+	// Tag key
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value string `pulumi:"value"`
 }
 
@@ -6740,9 +6928,9 @@ type GetHpcClusterTagInput interface {
 }
 
 type GetHpcClusterTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -6797,12 +6985,12 @@ func (o GetHpcClusterTagOutput) ToGetHpcClusterTagOutputWithContext(ctx context.
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o GetHpcClusterTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHpcClusterTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value
 func (o GetHpcClusterTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHpcClusterTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -6828,9 +7016,9 @@ func (o GetHpcClusterTagArrayOutput) Index(i pulumi.IntInput) GetHpcClusterTagOu
 }
 
 type GetImageDetectionResults struct {
-	// 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
+	// Check status. Options: Finished (completed), Processing (in progress).
 	DetectionStatus string `pulumi:"detectionStatus"`
-	// 镜像检测项详情。
+	// Details of image check items.
 	Items []GetImageDetectionResultsItem `pulumi:"items"`
 }
 
@@ -6846,9 +7034,9 @@ type GetImageDetectionResultsInput interface {
 }
 
 type GetImageDetectionResultsArgs struct {
-	// 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
+	// Check status. Options: Finished (completed), Processing (in progress).
 	DetectionStatus pulumi.StringInput `pulumi:"detectionStatus"`
-	// 镜像检测项详情。
+	// Details of image check items.
 	Items GetImageDetectionResultsItemArrayInput `pulumi:"items"`
 }
 
@@ -6878,24 +7066,24 @@ func (o GetImageDetectionResultsOutput) ToGetImageDetectionResultsOutputWithCont
 	return o
 }
 
-// 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
+// Check status. Options: Finished (completed), Processing (in progress).
 func (o GetImageDetectionResultsOutput) DetectionStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetImageDetectionResults) string { return v.DetectionStatus }).(pulumi.StringOutput)
 }
 
-// 镜像检测项详情。
+// Details of image check items.
 func (o GetImageDetectionResultsOutput) Items() GetImageDetectionResultsItemArrayOutput {
 	return o.ApplyT(func(v GetImageDetectionResults) []GetImageDetectionResultsItem { return v.Items }).(GetImageDetectionResultsItemArrayOutput)
 }
 
 type GetImageDetectionResultsItem struct {
-	// 检测项名称。
+	// Check item name
 	Name string `pulumi:"name"`
-	// 该检测项对应结果。
+	// Result for this check item.
 	Result string `pulumi:"result"`
-	// 风险描述码。
+	// Risk description code
 	RiskCode string `pulumi:"riskCode"`
-	// 风险等级。若该参数返回值为空，表示无风险。
+	// Risk level. If this parameter is empty, it means no risk
 	RiskLevel string `pulumi:"riskLevel"`
 }
 
@@ -6911,13 +7099,13 @@ type GetImageDetectionResultsItemInput interface {
 }
 
 type GetImageDetectionResultsItemArgs struct {
-	// 检测项名称。
+	// Check item name
 	Name pulumi.StringInput `pulumi:"name"`
-	// 该检测项对应结果。
+	// Result for this check item.
 	Result pulumi.StringInput `pulumi:"result"`
-	// 风险描述码。
+	// Risk description code
 	RiskCode pulumi.StringInput `pulumi:"riskCode"`
-	// 风险等级。若该参数返回值为空，表示无风险。
+	// Risk level. If this parameter is empty, it means no risk
 	RiskLevel pulumi.StringInput `pulumi:"riskLevel"`
 }
 
@@ -6972,22 +7160,22 @@ func (o GetImageDetectionResultsItemOutput) ToGetImageDetectionResultsItemOutput
 	return o
 }
 
-// 检测项名称。
+// Check item name
 func (o GetImageDetectionResultsItemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetImageDetectionResultsItem) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 该检测项对应结果。
+// Result for this check item.
 func (o GetImageDetectionResultsItemOutput) Result() pulumi.StringOutput {
 	return o.ApplyT(func(v GetImageDetectionResultsItem) string { return v.Result }).(pulumi.StringOutput)
 }
 
-// 风险描述码。
+// Risk description code
 func (o GetImageDetectionResultsItemOutput) RiskCode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetImageDetectionResultsItem) string { return v.RiskCode }).(pulumi.StringOutput)
 }
 
-// 风险等级。若该参数返回值为空，表示无风险。
+// Risk level. If this parameter is empty, it means no risk
 func (o GetImageDetectionResultsItemOutput) RiskLevel() pulumi.StringOutput {
 	return o.ApplyT(func(v GetImageDetectionResultsItem) string { return v.RiskLevel }).(pulumi.StringOutput)
 }
@@ -7012,12 +7200,73 @@ func (o GetImageDetectionResultsItemArrayOutput) Index(i pulumi.IntInput) GetIma
 	}).(GetImageDetectionResultsItemOutput)
 }
 
+type GetImageImportImage struct {
+	// Data disk files included in the custom image, at the TOS bucket URL.
+	ImportDataVolumes []string `pulumi:"importDataVolumes"`
+	// System disk files included in the custom image, at the TOS bucket URL.
+	Url string `pulumi:"url"`
+}
+
+// GetImageImportImageInput is an input type that accepts GetImageImportImageArgs and GetImageImportImageOutput values.
+// You can construct a concrete instance of `GetImageImportImageInput` via:
+//
+//	GetImageImportImageArgs{...}
+type GetImageImportImageInput interface {
+	pulumi.Input
+
+	ToGetImageImportImageOutput() GetImageImportImageOutput
+	ToGetImageImportImageOutputWithContext(context.Context) GetImageImportImageOutput
+}
+
+type GetImageImportImageArgs struct {
+	// Data disk files included in the custom image, at the TOS bucket URL.
+	ImportDataVolumes pulumi.StringArrayInput `pulumi:"importDataVolumes"`
+	// System disk files included in the custom image, at the TOS bucket URL.
+	Url pulumi.StringInput `pulumi:"url"`
+}
+
+func (GetImageImportImageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImageImportImage)(nil)).Elem()
+}
+
+func (i GetImageImportImageArgs) ToGetImageImportImageOutput() GetImageImportImageOutput {
+	return i.ToGetImageImportImageOutputWithContext(context.Background())
+}
+
+func (i GetImageImportImageArgs) ToGetImageImportImageOutputWithContext(ctx context.Context) GetImageImportImageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetImageImportImageOutput)
+}
+
+type GetImageImportImageOutput struct{ *pulumi.OutputState }
+
+func (GetImageImportImageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImageImportImage)(nil)).Elem()
+}
+
+func (o GetImageImportImageOutput) ToGetImageImportImageOutput() GetImageImportImageOutput {
+	return o
+}
+
+func (o GetImageImportImageOutput) ToGetImageImportImageOutputWithContext(ctx context.Context) GetImageImportImageOutput {
+	return o
+}
+
+// Data disk files included in the custom image, at the TOS bucket URL.
+func (o GetImageImportImageOutput) ImportDataVolumes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetImageImportImage) []string { return v.ImportDataVolumes }).(pulumi.StringArrayOutput)
+}
+
+// System disk files included in the custom image, at the TOS bucket URL.
+func (o GetImageImportImageOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImageImportImage) string { return v.Url }).(pulumi.StringOutput)
+}
+
 type GetImageSnapshot struct {
-	// 快照大小。单位为GiB。
+	// Snapshot size (GiB)
 	Size int `pulumi:"size"`
-	// 快照ID。
+	// Snapshot ID
 	SnapshotId string `pulumi:"snapshotId"`
-	// 云盘种类。system：系统盘。data：数据盘。
+	// Cloud disk type. system: System disk. data: Data disk.
 	VolumeKind string `pulumi:"volumeKind"`
 }
 
@@ -7033,11 +7282,11 @@ type GetImageSnapshotInput interface {
 }
 
 type GetImageSnapshotArgs struct {
-	// 快照大小。单位为GiB。
+	// Snapshot size (GiB)
 	Size pulumi.IntInput `pulumi:"size"`
-	// 快照ID。
+	// Snapshot ID
 	SnapshotId pulumi.StringInput `pulumi:"snapshotId"`
-	// 云盘种类。system：系统盘。data：数据盘。
+	// Cloud disk type. system: System disk. data: Data disk.
 	VolumeKind pulumi.StringInput `pulumi:"volumeKind"`
 }
 
@@ -7092,17 +7341,17 @@ func (o GetImageSnapshotOutput) ToGetImageSnapshotOutputWithContext(ctx context.
 	return o
 }
 
-// 快照大小。单位为GiB。
+// Snapshot size (GiB)
 func (o GetImageSnapshotOutput) Size() pulumi.IntOutput {
 	return o.ApplyT(func(v GetImageSnapshot) int { return v.Size }).(pulumi.IntOutput)
 }
 
-// 快照ID。
+// Snapshot ID
 func (o GetImageSnapshotOutput) SnapshotId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetImageSnapshot) string { return v.SnapshotId }).(pulumi.StringOutput)
 }
 
-// 云盘种类。system：系统盘。data：数据盘。
+// Cloud disk type. system: System disk. data: Data disk.
 func (o GetImageSnapshotOutput) VolumeKind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetImageSnapshot) string { return v.VolumeKind }).(pulumi.StringOutput)
 }
@@ -7128,9 +7377,9 @@ func (o GetImageSnapshotArrayOutput) Index(i pulumi.IntInput) GetImageSnapshotOu
 }
 
 type GetImageTag struct {
-	// 镜像标签的标签键。
+	// Tag key for the image label.
 	Key string `pulumi:"key"`
-	// 镜像标签的值。
+	// Image tag value
 	Value string `pulumi:"value"`
 }
 
@@ -7146,9 +7395,9 @@ type GetImageTagInput interface {
 }
 
 type GetImageTagArgs struct {
-	// 镜像标签的标签键。
+	// Tag key for the image label.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 镜像标签的值。
+	// Image tag value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -7203,12 +7452,12 @@ func (o GetImageTagOutput) ToGetImageTagOutputWithContext(ctx context.Context) G
 	return o
 }
 
-// 镜像标签的标签键。
+// Tag key for the image label.
 func (o GetImageTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetImageTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 镜像标签的值。
+// Image tag value
 func (o GetImageTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetImageTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -7234,13 +7483,13 @@ func (o GetImageTagArrayOutput) Index(i pulumi.IntInput) GetImageTagOutput {
 }
 
 type GetInstanceCpuMemory struct {
-	// 实例的核数。
+	// Number of instance cores.
 	CoreCount int `pulumi:"coreCount"`
-	// 实例的CPU数量。
+	// Number of vCPUs for the instance.
 	CpuNumber int `pulumi:"cpuNumber"`
-	// 实例的内存大小，单位MB。
+	// Instance memory size (MB).
 	MemorySize int `pulumi:"memorySize"`
-	// 实例的每核线程数。
+	// Threads per core for the instance.
 	ThreadsPerCore int `pulumi:"threadsPerCore"`
 }
 
@@ -7256,13 +7505,13 @@ type GetInstanceCpuMemoryInput interface {
 }
 
 type GetInstanceCpuMemoryArgs struct {
-	// 实例的核数。
+	// Number of instance cores.
 	CoreCount pulumi.IntInput `pulumi:"coreCount"`
-	// 实例的CPU数量。
+	// Number of vCPUs for the instance.
 	CpuNumber pulumi.IntInput `pulumi:"cpuNumber"`
-	// 实例的内存大小，单位MB。
+	// Instance memory size (MB).
 	MemorySize pulumi.IntInput `pulumi:"memorySize"`
-	// 实例的每核线程数。
+	// Threads per core for the instance.
 	ThreadsPerCore pulumi.IntInput `pulumi:"threadsPerCore"`
 }
 
@@ -7292,65 +7541,65 @@ func (o GetInstanceCpuMemoryOutput) ToGetInstanceCpuMemoryOutputWithContext(ctx 
 	return o
 }
 
-// 实例的核数。
+// Number of instance cores.
 func (o GetInstanceCpuMemoryOutput) CoreCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceCpuMemory) int { return v.CoreCount }).(pulumi.IntOutput)
 }
 
-// 实例的CPU数量。
+// Number of vCPUs for the instance.
 func (o GetInstanceCpuMemoryOutput) CpuNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceCpuMemory) int { return v.CpuNumber }).(pulumi.IntOutput)
 }
 
-// 实例的内存大小，单位MB。
+// Instance memory size (MB).
 func (o GetInstanceCpuMemoryOutput) MemorySize() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceCpuMemory) int { return v.MemorySize }).(pulumi.IntOutput)
 }
 
-// 实例的每核线程数。
+// Threads per core for the instance.
 func (o GetInstanceCpuMemoryOutput) ThreadsPerCore() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceCpuMemory) int { return v.ThreadsPerCore }).(pulumi.IntOutput)
 }
 
 type GetInstanceEipAddress struct {
-	// 实例的分配ID。
+	// Instance allocation ID
 	AllocationId string `pulumi:"allocationId"`
-	// 公网IP的带宽上限，默认值为1，单位：Mbps。
-	//     - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
-	//     - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+	// Maximum bandwidth for public IP. Default value is 1, unit: Mbps.
+	//     - If `ChargeType` is `PayByBandwidth`: value range is 1–500.
+	//     - If `ChargeType` is `PayByTraffic`: value range is 1–200.
 	BandwidthMbps int `pulumi:"bandwidthMbps"`
-	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
-	//     - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
-	//     - 公网IP加入到共享带宽包必须同时满足如下条件：
-	//       - 二者的安全防护类型相同。
-	//       - 二者的地域相同。
-	//       - 公网IP的计费方式必须是按量计费。
-	//       - 共享带宽包为IPv4类型。
+	// Shared bandwidth package ID, used to add a public IP to the shared bandwidth package.
+	//     - You can call the [DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685) API to query the shared bandwidth package ID.
+	//     - To add a public IP to a shared bandwidth package, all of the following conditions must be met:
+	//       - Both must have the same security protection type.
+	//       - Both must be in the same region.
+	//       - The public IP must use pay-as-you-go billing.
+	//       - The shared bandwidth package must be IPv4 type.
 	BandwidthPackageId string `pulumi:"bandwidthPackageId"`
-	// 公网IP的计费方式，取值：
-	//     - PayByBandwidth（默认）：按量计费-按带宽上限计费。
-	//     - PayByTraffic：按量计费-按实际流量计费。
-	//     - PrePaid：包年包月。
+	// Public IP billing method. Values:
+	//     - PayByBandwidth (default): Pay-as-you-go—billed by bandwidth cap.
+	//     - PayByTraffic: Pay-as-you-go—billed by actual traffic.
+	//     - PrePaid: Subscription.
 	//
-	//   **提示:**
-	//   实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
+	//   **Note:**
+	//   When `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
 	ChargeType string `pulumi:"chargeType"`
-	// 实例的IP地址。
+	// Instance IP address.
 	IpAddress string `pulumi:"ipAddress"`
-	// 公网IP的线路类型，默认为BGP。取值：
-	//     - BGP：BGP（多线）。
-	//     - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
-	//       - ChinaMobile：中国移动静态单线。
-	//       - ChinaTelecom：中国电信静态单线。
-	//       - ChinaUnicom：中国联通静态单线。
-	//     - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
-	//     - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+	// Line type for the public IP. Default is BGP. Values:
+	//     - BGP: BGP (multi-line)
+	//     - If your account has applied for and enabled static single-line permissions, you can use the following values:
+	//       - ChinaMobile: China Mobile static single-line
+	//       - ChinaTelecom: China Telecom static single-line
+	//       - ChinaUnicom: China Unicom static single-line
+	//     - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.
+	//     - If your account has applied for and enabled static BGP permissions, you can use Static_BGP
 	Isp string `pulumi:"isp"`
-	// 实例是否随实例释放。
+	// Whether this resource is released when the instance is released.
 	ReleaseWithInstance bool `pulumi:"releaseWithInstance"`
-	// DDoS原生防护（企业版）ID。
+	// DDoS Native Protection (Enterprise Edition) ID.
 	SecurityProtectionInstanceId int `pulumi:"securityProtectionInstanceId"`
-	// 公网IP的安全防护类型。
+	// Public IP security protection type.
 	SecurityProtectionTypes []string `pulumi:"securityProtectionTypes"`
 }
 
@@ -7366,44 +7615,44 @@ type GetInstanceEipAddressInput interface {
 }
 
 type GetInstanceEipAddressArgs struct {
-	// 实例的分配ID。
+	// Instance allocation ID
 	AllocationId pulumi.StringInput `pulumi:"allocationId"`
-	// 公网IP的带宽上限，默认值为1，单位：Mbps。
-	//     - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
-	//     - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+	// Maximum bandwidth for public IP. Default value is 1, unit: Mbps.
+	//     - If `ChargeType` is `PayByBandwidth`: value range is 1–500.
+	//     - If `ChargeType` is `PayByTraffic`: value range is 1–200.
 	BandwidthMbps pulumi.IntInput `pulumi:"bandwidthMbps"`
-	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
-	//     - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
-	//     - 公网IP加入到共享带宽包必须同时满足如下条件：
-	//       - 二者的安全防护类型相同。
-	//       - 二者的地域相同。
-	//       - 公网IP的计费方式必须是按量计费。
-	//       - 共享带宽包为IPv4类型。
+	// Shared bandwidth package ID, used to add a public IP to the shared bandwidth package.
+	//     - You can call the [DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685) API to query the shared bandwidth package ID.
+	//     - To add a public IP to a shared bandwidth package, all of the following conditions must be met:
+	//       - Both must have the same security protection type.
+	//       - Both must be in the same region.
+	//       - The public IP must use pay-as-you-go billing.
+	//       - The shared bandwidth package must be IPv4 type.
 	BandwidthPackageId pulumi.StringInput `pulumi:"bandwidthPackageId"`
-	// 公网IP的计费方式，取值：
-	//     - PayByBandwidth（默认）：按量计费-按带宽上限计费。
-	//     - PayByTraffic：按量计费-按实际流量计费。
-	//     - PrePaid：包年包月。
+	// Public IP billing method. Values:
+	//     - PayByBandwidth (default): Pay-as-you-go—billed by bandwidth cap.
+	//     - PayByTraffic: Pay-as-you-go—billed by actual traffic.
+	//     - PrePaid: Subscription.
 	//
-	//   **提示:**
-	//   实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
+	//   **Note:**
+	//   When `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
 	ChargeType pulumi.StringInput `pulumi:"chargeType"`
-	// 实例的IP地址。
+	// Instance IP address.
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
-	// 公网IP的线路类型，默认为BGP。取值：
-	//     - BGP：BGP（多线）。
-	//     - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
-	//       - ChinaMobile：中国移动静态单线。
-	//       - ChinaTelecom：中国电信静态单线。
-	//       - ChinaUnicom：中国联通静态单线。
-	//     - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
-	//     - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+	// Line type for the public IP. Default is BGP. Values:
+	//     - BGP: BGP (multi-line)
+	//     - If your account has applied for and enabled static single-line permissions, you can use the following values:
+	//       - ChinaMobile: China Mobile static single-line
+	//       - ChinaTelecom: China Telecom static single-line
+	//       - ChinaUnicom: China Unicom static single-line
+	//     - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.
+	//     - If your account has applied for and enabled static BGP permissions, you can use Static_BGP
 	Isp pulumi.StringInput `pulumi:"isp"`
-	// 实例是否随实例释放。
+	// Whether this resource is released when the instance is released.
 	ReleaseWithInstance pulumi.BoolInput `pulumi:"releaseWithInstance"`
-	// DDoS原生防护（企业版）ID。
+	// DDoS Native Protection (Enterprise Edition) ID.
 	SecurityProtectionInstanceId pulumi.IntInput `pulumi:"securityProtectionInstanceId"`
-	// 公网IP的安全防护类型。
+	// Public IP security protection type.
 	SecurityProtectionTypes pulumi.StringArrayInput `pulumi:"securityProtectionTypes"`
 }
 
@@ -7433,83 +7682,83 @@ func (o GetInstanceEipAddressOutput) ToGetInstanceEipAddressOutputWithContext(ct
 	return o
 }
 
-// 实例的分配ID。
+// Instance allocation ID
 func (o GetInstanceEipAddressOutput) AllocationId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEipAddress) string { return v.AllocationId }).(pulumi.StringOutput)
 }
 
-// 公网IP的带宽上限，默认值为1，单位：Mbps。
-//   - `ChargeType`传入`PayByBandwidth`：取值范围1～500。
-//   - `ChargeType`传入`PayByTraffic`：取值范围1～200。
+// Maximum bandwidth for public IP. Default value is 1, unit: Mbps.
+//   - If `ChargeType` is `PayByBandwidth`: value range is 1–500.
+//   - If `ChargeType` is `PayByTraffic`: value range is 1–200.
 func (o GetInstanceEipAddressOutput) BandwidthMbps() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceEipAddress) int { return v.BandwidthMbps }).(pulumi.IntOutput)
 }
 
-// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
-//   - 您可以调用[DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685)接口，查询共享带宽包的ID。
-//   - 公网IP加入到共享带宽包必须同时满足如下条件：
-//   - 二者的安全防护类型相同。
-//   - 二者的地域相同。
-//   - 公网IP的计费方式必须是按量计费。
-//   - 共享带宽包为IPv4类型。
+// Shared bandwidth package ID, used to add a public IP to the shared bandwidth package.
+//   - You can call the [DescribeBandwidthPackages](https://www.volcengine.com/docs/6623/100685) API to query the shared bandwidth package ID.
+//   - To add a public IP to a shared bandwidth package, all of the following conditions must be met:
+//   - Both must have the same security protection type.
+//   - Both must be in the same region.
+//   - The public IP must use pay-as-you-go billing.
+//   - The shared bandwidth package must be IPv4 type.
 func (o GetInstanceEipAddressOutput) BandwidthPackageId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEipAddress) string { return v.BandwidthPackageId }).(pulumi.StringOutput)
 }
 
-// 公网IP的计费方式，取值：
+// Public IP billing method. Values:
 //
-//   - PayByBandwidth（默认）：按量计费-按带宽上限计费。
+//   - PayByBandwidth (default): Pay-as-you-go—billed by bandwidth cap.
 //
-//   - PayByTraffic：按量计费-按实际流量计费。
+//   - PayByTraffic: Pay-as-you-go—billed by actual traffic.
 //
-//   - PrePaid：包年包月。
+//   - PrePaid: Subscription.
 //
-//     **提示:**
-//     实例的计费类型`InstanceChargeType`取值为`PostPaid`时，该参数取值不能为`PrePaid`。
+//     **Note:**
+//     When `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
 func (o GetInstanceEipAddressOutput) ChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEipAddress) string { return v.ChargeType }).(pulumi.StringOutput)
 }
 
-// 实例的IP地址。
+// Instance IP address.
 func (o GetInstanceEipAddressOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEipAddress) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
-// 公网IP的线路类型，默认为BGP。取值：
-//   - BGP：BGP（多线）。
-//   - 若您的账号已申请并开通了静态单线权限，则可传入如下取值：
-//   - ChinaMobile：中国移动静态单线。
-//   - ChinaTelecom：中国电信静态单线。
-//   - ChinaUnicom：中国联通静态单线。
-//   - 若您的账号已申请并开通了BGP单线权限，则可传入SingleLine_BGP。
-//   - 若您的账号已申请并开通了静态BGP权限，则可传入Static_BGP。
+// Line type for the public IP. Default is BGP. Values:
+//   - BGP: BGP (multi-line)
+//   - If your account has applied for and enabled static single-line permissions, you can use the following values:
+//   - ChinaMobile: China Mobile static single-line
+//   - ChinaTelecom: China Telecom static single-line
+//   - ChinaUnicom: China Unicom static single-line
+//   - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.
+//   - If your account has applied for and enabled static BGP permissions, you can use Static_BGP
 func (o GetInstanceEipAddressOutput) Isp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEipAddress) string { return v.Isp }).(pulumi.StringOutput)
 }
 
-// 实例是否随实例释放。
+// Whether this resource is released when the instance is released.
 func (o GetInstanceEipAddressOutput) ReleaseWithInstance() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceEipAddress) bool { return v.ReleaseWithInstance }).(pulumi.BoolOutput)
 }
 
-// DDoS原生防护（企业版）ID。
+// DDoS Native Protection (Enterprise Edition) ID.
 func (o GetInstanceEipAddressOutput) SecurityProtectionInstanceId() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceEipAddress) int { return v.SecurityProtectionInstanceId }).(pulumi.IntOutput)
 }
 
-// 公网IP的安全防护类型。
+// Public IP security protection type.
 func (o GetInstanceEipAddressOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetInstanceEipAddress) []string { return v.SecurityProtectionTypes }).(pulumi.StringArrayOutput)
 }
 
 type GetInstanceImage struct {
-	// 实例的镜像ID。
+	// Instance image ID.
 	ImageId string `pulumi:"imageId"`
-	// 实例的镜像发布版本。
+	// The image release version of the instance.
 	ImageReleaseVersion string `pulumi:"imageReleaseVersion"`
-	// 实例是否保留镜像凭证。
+	// Whether the instance retains image credentials
 	KeepImageCredential bool `pulumi:"keepImageCredential"`
-	// 实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+	// Instance security enhancement policy. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images
 	SecurityEnhancementStrategy string `pulumi:"securityEnhancementStrategy"`
 }
 
@@ -7525,13 +7774,13 @@ type GetInstanceImageInput interface {
 }
 
 type GetInstanceImageArgs struct {
-	// 实例的镜像ID。
+	// Instance image ID.
 	ImageId pulumi.StringInput `pulumi:"imageId"`
-	// 实例的镜像发布版本。
+	// The image release version of the instance.
 	ImageReleaseVersion pulumi.StringInput `pulumi:"imageReleaseVersion"`
-	// 实例是否保留镜像凭证。
+	// Whether the instance retains image credentials
 	KeepImageCredential pulumi.BoolInput `pulumi:"keepImageCredential"`
-	// 实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+	// Instance security enhancement policy. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images
 	SecurityEnhancementStrategy pulumi.StringInput `pulumi:"securityEnhancementStrategy"`
 }
 
@@ -7561,30 +7810,30 @@ func (o GetInstanceImageOutput) ToGetInstanceImageOutputWithContext(ctx context.
 	return o
 }
 
-// 实例的镜像ID。
+// Instance image ID.
 func (o GetInstanceImageOutput) ImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceImage) string { return v.ImageId }).(pulumi.StringOutput)
 }
 
-// 实例的镜像发布版本。
+// The image release version of the instance.
 func (o GetInstanceImageOutput) ImageReleaseVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceImage) string { return v.ImageReleaseVersion }).(pulumi.StringOutput)
 }
 
-// 实例是否保留镜像凭证。
+// Whether the instance retains image credentials
 func (o GetInstanceImageOutput) KeepImageCredential() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceImage) bool { return v.KeepImageCredential }).(pulumi.BoolOutput)
 }
 
-// 实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+// Instance security enhancement policy. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images
 func (o GetInstanceImageOutput) SecurityEnhancementStrategy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceImage) string { return v.SecurityEnhancementStrategy }).(pulumi.StringOutput)
 }
 
 type GetInstanceKeyPair struct {
-	// 实例的公钥。
+	// Instance public key
 	KeyPairId string `pulumi:"keyPairId"`
-	// 实例的密钥对名称。
+	// Instance key pair name
 	KeyPairName string `pulumi:"keyPairName"`
 }
 
@@ -7600,9 +7849,9 @@ type GetInstanceKeyPairInput interface {
 }
 
 type GetInstanceKeyPairArgs struct {
-	// 实例的公钥。
+	// Instance public key
 	KeyPairId pulumi.StringInput `pulumi:"keyPairId"`
-	// 实例的密钥对名称。
+	// Instance key pair name
 	KeyPairName pulumi.StringInput `pulumi:"keyPairName"`
 }
 
@@ -7632,22 +7881,22 @@ func (o GetInstanceKeyPairOutput) ToGetInstanceKeyPairOutputWithContext(ctx cont
 	return o
 }
 
-// 实例的公钥。
+// Instance public key
 func (o GetInstanceKeyPairOutput) KeyPairId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceKeyPair) string { return v.KeyPairId }).(pulumi.StringOutput)
 }
 
-// 实例的密钥对名称。
+// Instance key pair name
 func (o GetInstanceKeyPairOutput) KeyPairName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceKeyPair) string { return v.KeyPairName }).(pulumi.StringOutput)
 }
 
 type GetInstanceLocalVolume struct {
-	// 实例挂载的本地盘数量。
+	// The number of local disks attached to the instance.
 	Count int `pulumi:"count"`
-	// 实例挂载的本地盘的单盘容量，单位GiB。
+	// Capacity of each local disk mounted to the instance (GiB).
 	Size int `pulumi:"size"`
-	// 本地盘类型，取值：LOCAL_SSD：SSD本地盘。LOCAL_HDD：HDD本地盘。
+	// Local disk type. Values: LOCAL_SSD: SSD local disk. LOCAL_HDD: HDD local disk.
 	VolumeType string `pulumi:"volumeType"`
 }
 
@@ -7663,11 +7912,11 @@ type GetInstanceLocalVolumeInput interface {
 }
 
 type GetInstanceLocalVolumeArgs struct {
-	// 实例挂载的本地盘数量。
+	// The number of local disks attached to the instance.
 	Count pulumi.IntInput `pulumi:"count"`
-	// 实例挂载的本地盘的单盘容量，单位GiB。
+	// Capacity of each local disk mounted to the instance (GiB).
 	Size pulumi.IntInput `pulumi:"size"`
-	// 本地盘类型，取值：LOCAL_SSD：SSD本地盘。LOCAL_HDD：HDD本地盘。
+	// Local disk type. Values: LOCAL_SSD: SSD local disk. LOCAL_HDD: HDD local disk.
 	VolumeType pulumi.StringInput `pulumi:"volumeType"`
 }
 
@@ -7722,17 +7971,17 @@ func (o GetInstanceLocalVolumeOutput) ToGetInstanceLocalVolumeOutputWithContext(
 	return o
 }
 
-// 实例挂载的本地盘数量。
+// The number of local disks attached to the instance.
 func (o GetInstanceLocalVolumeOutput) Count() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceLocalVolume) int { return v.Count }).(pulumi.IntOutput)
 }
 
-// 实例挂载的本地盘的单盘容量，单位GiB。
+// Capacity of each local disk mounted to the instance (GiB).
 func (o GetInstanceLocalVolumeOutput) Size() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceLocalVolume) int { return v.Size }).(pulumi.IntOutput)
 }
 
-// 本地盘类型，取值：LOCAL_SSD：SSD本地盘。LOCAL_HDD：HDD本地盘。
+// Local disk type. Values: LOCAL_SSD: SSD local disk. LOCAL_HDD: HDD local disk.
 func (o GetInstanceLocalVolumeOutput) VolumeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceLocalVolume) string { return v.VolumeType }).(pulumi.StringOutput)
 }
@@ -7758,9 +8007,9 @@ func (o GetInstanceLocalVolumeArrayOutput) Index(i pulumi.IntInput) GetInstanceL
 }
 
 type GetInstanceOperationSystem struct {
-	// 实例的操作系统名称。
+	// Instance operating system name.
 	Name string `pulumi:"name"`
-	// 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+	// Operating system type of the instance. Linux: Linux system. Windows: Windows system.
 	Type string `pulumi:"type"`
 }
 
@@ -7776,9 +8025,9 @@ type GetInstanceOperationSystemInput interface {
 }
 
 type GetInstanceOperationSystemArgs struct {
-	// 实例的操作系统名称。
+	// Instance operating system name.
 	Name pulumi.StringInput `pulumi:"name"`
-	// 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+	// Operating system type of the instance. Linux: Linux system. Windows: Windows system.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -7808,24 +8057,24 @@ func (o GetInstanceOperationSystemOutput) ToGetInstanceOperationSystemOutputWith
 	return o
 }
 
-// 实例的操作系统名称。
+// Instance operating system name.
 func (o GetInstanceOperationSystemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceOperationSystem) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+// Operating system type of the instance. Linux: Linux system. Windows: Windows system.
 func (o GetInstanceOperationSystemOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceOperationSystem) string { return v.Type }).(pulumi.StringOutput)
 }
 
 type GetInstancePlacement struct {
-	// 针对节省停机模式的ECS实例，停止后会释放部分资源，本参数用于查看ECS实例重新启动时是否仍固定部署在原宿主机上。取值：Host：启用节省停机模式的实例重新启动时，仍会部署在原宿主机上。Default（默认）：启用节省停机模式的实例重新启动时，会优先迁移到支持自动部署的宿主机；若支持自动部署的宿主机资源不足，则在原宿主机上进行启动。
+	// For ECS instances in economy stop mode, some resources are released after stopping. This parameter indicates whether the ECS instance will remain deployed on the original host when restarted. Values: Host: When restarting an instance in economy stop mode, it will remain on the original host. Default: When restarting an instance in economy stop mode, it will preferentially migrate to a host that supports automatic deployment; if resources are insufficient, it will start on the original host.
 	Affinity string `pulumi:"affinity"`
-	// 实例的专用主机集群ID。
+	// Instance dedicated host cluster ID.
 	DedicatedHostClusterId string `pulumi:"dedicatedHostClusterId"`
-	// 实例的专用主机ID。
+	// Dedicated host ID for the instance.
 	DedicatedHostId string `pulumi:"dedicatedHostId"`
-	// 是否在专有宿主机上创建实例，取值：Default（默认）：创建普通云服务器实例。Host：创建专有宿主机实例。若您不指定DedicatedHostId，则由系统自动选择专有宿主机放置实例
+	// Whether to create the instance on a dedicated host. Values: Default: Create a regular cloud server instance. Host: Create a dedicated host instance. If you do not specify DedicatedHostId, the system automatically selects a dedicated host to place the instance.
 	Tenancy string `pulumi:"tenancy"`
 }
 
@@ -7841,13 +8090,13 @@ type GetInstancePlacementInput interface {
 }
 
 type GetInstancePlacementArgs struct {
-	// 针对节省停机模式的ECS实例，停止后会释放部分资源，本参数用于查看ECS实例重新启动时是否仍固定部署在原宿主机上。取值：Host：启用节省停机模式的实例重新启动时，仍会部署在原宿主机上。Default（默认）：启用节省停机模式的实例重新启动时，会优先迁移到支持自动部署的宿主机；若支持自动部署的宿主机资源不足，则在原宿主机上进行启动。
+	// For ECS instances in economy stop mode, some resources are released after stopping. This parameter indicates whether the ECS instance will remain deployed on the original host when restarted. Values: Host: When restarting an instance in economy stop mode, it will remain on the original host. Default: When restarting an instance in economy stop mode, it will preferentially migrate to a host that supports automatic deployment; if resources are insufficient, it will start on the original host.
 	Affinity pulumi.StringInput `pulumi:"affinity"`
-	// 实例的专用主机集群ID。
+	// Instance dedicated host cluster ID.
 	DedicatedHostClusterId pulumi.StringInput `pulumi:"dedicatedHostClusterId"`
-	// 实例的专用主机ID。
+	// Dedicated host ID for the instance.
 	DedicatedHostId pulumi.StringInput `pulumi:"dedicatedHostId"`
-	// 是否在专有宿主机上创建实例，取值：Default（默认）：创建普通云服务器实例。Host：创建专有宿主机实例。若您不指定DedicatedHostId，则由系统自动选择专有宿主机放置实例
+	// Whether to create the instance on a dedicated host. Values: Default: Create a regular cloud server instance. Host: Create a dedicated host instance. If you do not specify DedicatedHostId, the system automatically selects a dedicated host to place the instance.
 	Tenancy pulumi.StringInput `pulumi:"tenancy"`
 }
 
@@ -7877,44 +8126,44 @@ func (o GetInstancePlacementOutput) ToGetInstancePlacementOutputWithContext(ctx 
 	return o
 }
 
-// 针对节省停机模式的ECS实例，停止后会释放部分资源，本参数用于查看ECS实例重新启动时是否仍固定部署在原宿主机上。取值：Host：启用节省停机模式的实例重新启动时，仍会部署在原宿主机上。Default（默认）：启用节省停机模式的实例重新启动时，会优先迁移到支持自动部署的宿主机；若支持自动部署的宿主机资源不足，则在原宿主机上进行启动。
+// For ECS instances in economy stop mode, some resources are released after stopping. This parameter indicates whether the ECS instance will remain deployed on the original host when restarted. Values: Host: When restarting an instance in economy stop mode, it will remain on the original host. Default: When restarting an instance in economy stop mode, it will preferentially migrate to a host that supports automatic deployment; if resources are insufficient, it will start on the original host.
 func (o GetInstancePlacementOutput) Affinity() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancePlacement) string { return v.Affinity }).(pulumi.StringOutput)
 }
 
-// 实例的专用主机集群ID。
+// Instance dedicated host cluster ID.
 func (o GetInstancePlacementOutput) DedicatedHostClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancePlacement) string { return v.DedicatedHostClusterId }).(pulumi.StringOutput)
 }
 
-// 实例的专用主机ID。
+// Dedicated host ID for the instance.
 func (o GetInstancePlacementOutput) DedicatedHostId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancePlacement) string { return v.DedicatedHostId }).(pulumi.StringOutput)
 }
 
-// 是否在专有宿主机上创建实例，取值：Default（默认）：创建普通云服务器实例。Host：创建专有宿主机实例。若您不指定DedicatedHostId，则由系统自动选择专有宿主机放置实例
+// Whether to create the instance on a dedicated host. Values: Default: Create a regular cloud server instance. Host: Create a dedicated host instance. If you do not specify DedicatedHostId, the system automatically selects a dedicated host to place the instance.
 func (o GetInstancePlacementOutput) Tenancy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancePlacement) string { return v.Tenancy }).(pulumi.StringOutput)
 }
 
 type GetInstancePrimaryNetworkInterface struct {
-	// 实例的IPv6地址数量。
+	// The number of IPv6 addresses for the instance.
 	Ipv6AddressCount int `pulumi:"ipv6AddressCount"`
-	// 实例的IPv6地址。
+	// IPv6 address of the instance.
 	Ipv6Addresses []string `pulumi:"ipv6Addresses"`
-	// 实例的MAC地址。
+	// Instance MAC address.
 	MacAddress string `pulumi:"macAddress"`
-	// 实例的网络接口ID。
+	// The network interface ID of the instance.
 	NetworkInterfaceId string `pulumi:"networkInterfaceId"`
-	// 实例的主IP地址。
+	// Instance primary IP address
 	PrimaryIpAddress string `pulumi:"primaryIpAddress"`
-	// 实例的私有IP地址。
+	// Instance private IP address.
 	PrivateIpAddresses []string `pulumi:"privateIpAddresses"`
-	// 实例的安全组ID。
+	// Instance security group ID
 	SecurityGroupIds []string `pulumi:"securityGroupIds"`
-	// 实例的子网ID。
+	// Instance subnet ID.
 	SubnetId string `pulumi:"subnetId"`
-	// 实例的VPC ID。
+	// VPC ID of the instance.
 	VpcId string `pulumi:"vpcId"`
 }
 
@@ -7930,23 +8179,23 @@ type GetInstancePrimaryNetworkInterfaceInput interface {
 }
 
 type GetInstancePrimaryNetworkInterfaceArgs struct {
-	// 实例的IPv6地址数量。
+	// The number of IPv6 addresses for the instance.
 	Ipv6AddressCount pulumi.IntInput `pulumi:"ipv6AddressCount"`
-	// 实例的IPv6地址。
+	// IPv6 address of the instance.
 	Ipv6Addresses pulumi.StringArrayInput `pulumi:"ipv6Addresses"`
-	// 实例的MAC地址。
+	// Instance MAC address.
 	MacAddress pulumi.StringInput `pulumi:"macAddress"`
-	// 实例的网络接口ID。
+	// The network interface ID of the instance.
 	NetworkInterfaceId pulumi.StringInput `pulumi:"networkInterfaceId"`
-	// 实例的主IP地址。
+	// Instance primary IP address
 	PrimaryIpAddress pulumi.StringInput `pulumi:"primaryIpAddress"`
-	// 实例的私有IP地址。
+	// Instance private IP address.
 	PrivateIpAddresses pulumi.StringArrayInput `pulumi:"privateIpAddresses"`
-	// 实例的安全组ID。
+	// Instance security group ID
 	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
-	// 实例的子网ID。
+	// Instance subnet ID.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-	// 实例的VPC ID。
+	// VPC ID of the instance.
 	VpcId pulumi.StringInput `pulumi:"vpcId"`
 }
 
@@ -7976,61 +8225,61 @@ func (o GetInstancePrimaryNetworkInterfaceOutput) ToGetInstancePrimaryNetworkInt
 	return o
 }
 
-// 实例的IPv6地址数量。
+// The number of IPv6 addresses for the instance.
 func (o GetInstancePrimaryNetworkInterfaceOutput) Ipv6AddressCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstancePrimaryNetworkInterface) int { return v.Ipv6AddressCount }).(pulumi.IntOutput)
 }
 
-// 实例的IPv6地址。
+// IPv6 address of the instance.
 func (o GetInstancePrimaryNetworkInterfaceOutput) Ipv6Addresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetInstancePrimaryNetworkInterface) []string { return v.Ipv6Addresses }).(pulumi.StringArrayOutput)
 }
 
-// 实例的MAC地址。
+// Instance MAC address.
 func (o GetInstancePrimaryNetworkInterfaceOutput) MacAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancePrimaryNetworkInterface) string { return v.MacAddress }).(pulumi.StringOutput)
 }
 
-// 实例的网络接口ID。
+// The network interface ID of the instance.
 func (o GetInstancePrimaryNetworkInterfaceOutput) NetworkInterfaceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancePrimaryNetworkInterface) string { return v.NetworkInterfaceId }).(pulumi.StringOutput)
 }
 
-// 实例的主IP地址。
+// Instance primary IP address
 func (o GetInstancePrimaryNetworkInterfaceOutput) PrimaryIpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancePrimaryNetworkInterface) string { return v.PrimaryIpAddress }).(pulumi.StringOutput)
 }
 
-// 实例的私有IP地址。
+// Instance private IP address.
 func (o GetInstancePrimaryNetworkInterfaceOutput) PrivateIpAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetInstancePrimaryNetworkInterface) []string { return v.PrivateIpAddresses }).(pulumi.StringArrayOutput)
 }
 
-// 实例的安全组ID。
+// Instance security group ID
 func (o GetInstancePrimaryNetworkInterfaceOutput) SecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetInstancePrimaryNetworkInterface) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
 }
 
-// 实例的子网ID。
+// Instance subnet ID.
 func (o GetInstancePrimaryNetworkInterfaceOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancePrimaryNetworkInterface) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// 实例的VPC ID。
+// VPC ID of the instance.
 func (o GetInstancePrimaryNetworkInterfaceOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancePrimaryNetworkInterface) string { return v.VpcId }).(pulumi.StringOutput)
 }
 
 type GetInstanceRdmaNetworkInterfaceDetail struct {
-	// 网关地址。
+	// Gateway address.
 	Gateway string `pulumi:"gateway"`
-	// IP地址。
+	// IP address
 	Ip string `pulumi:"ip"`
-	// 子网掩码。
+	// Subnet mask.
 	Mask string `pulumi:"mask"`
-	// 交换机名称。
+	// Switch name.
 	SwitchName string `pulumi:"switchName"`
-	// 交换机端口。
+	// Switch port.
 	SwitchPort string `pulumi:"switchPort"`
 }
 
@@ -8046,15 +8295,15 @@ type GetInstanceRdmaNetworkInterfaceDetailInput interface {
 }
 
 type GetInstanceRdmaNetworkInterfaceDetailArgs struct {
-	// 网关地址。
+	// Gateway address.
 	Gateway pulumi.StringInput `pulumi:"gateway"`
-	// IP地址。
+	// IP address
 	Ip pulumi.StringInput `pulumi:"ip"`
-	// 子网掩码。
+	// Subnet mask.
 	Mask pulumi.StringInput `pulumi:"mask"`
-	// 交换机名称。
+	// Switch name.
 	SwitchName pulumi.StringInput `pulumi:"switchName"`
-	// 交换机端口。
+	// Switch port.
 	SwitchPort pulumi.StringInput `pulumi:"switchPort"`
 }
 
@@ -8109,27 +8358,27 @@ func (o GetInstanceRdmaNetworkInterfaceDetailOutput) ToGetInstanceRdmaNetworkInt
 	return o
 }
 
-// 网关地址。
+// Gateway address.
 func (o GetInstanceRdmaNetworkInterfaceDetailOutput) Gateway() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceRdmaNetworkInterfaceDetail) string { return v.Gateway }).(pulumi.StringOutput)
 }
 
-// IP地址。
+// IP address
 func (o GetInstanceRdmaNetworkInterfaceDetailOutput) Ip() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceRdmaNetworkInterfaceDetail) string { return v.Ip }).(pulumi.StringOutput)
 }
 
-// 子网掩码。
+// Subnet mask.
 func (o GetInstanceRdmaNetworkInterfaceDetailOutput) Mask() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceRdmaNetworkInterfaceDetail) string { return v.Mask }).(pulumi.StringOutput)
 }
 
-// 交换机名称。
+// Switch name.
 func (o GetInstanceRdmaNetworkInterfaceDetailOutput) SwitchName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceRdmaNetworkInterfaceDetail) string { return v.SwitchName }).(pulumi.StringOutput)
 }
 
-// 交换机端口。
+// Switch port.
 func (o GetInstanceRdmaNetworkInterfaceDetailOutput) SwitchPort() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceRdmaNetworkInterfaceDetail) string { return v.SwitchPort }).(pulumi.StringOutput)
 }
@@ -8155,9 +8404,9 @@ func (o GetInstanceRdmaNetworkInterfaceDetailArrayOutput) Index(i pulumi.IntInpu
 }
 
 type GetInstanceRenewInfo struct {
-	// 续费的月数，取值：1、2、3、4、5、6、7、8、9、12、24、36。
+	// Number of months for renewal. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36.
 	Period int `pulumi:"period"`
-	// 续费时长的时间单位，即参数Period的单位。取值：Month（默认）。
+	// Time unit for renewal duration, i.e., the unit for the Period parameter. Value: Month (default)
 	PeriodUnit string `pulumi:"periodUnit"`
 }
 
@@ -8173,9 +8422,9 @@ type GetInstanceRenewInfoInput interface {
 }
 
 type GetInstanceRenewInfoArgs struct {
-	// 续费的月数，取值：1、2、3、4、5、6、7、8、9、12、24、36。
+	// Number of months for renewal. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36.
 	Period pulumi.IntInput `pulumi:"period"`
-	// 续费时长的时间单位，即参数Period的单位。取值：Month（默认）。
+	// Time unit for renewal duration, i.e., the unit for the Period parameter. Value: Month (default)
 	PeriodUnit pulumi.StringInput `pulumi:"periodUnit"`
 }
 
@@ -8205,34 +8454,34 @@ func (o GetInstanceRenewInfoOutput) ToGetInstanceRenewInfoOutputWithContext(ctx 
 	return o
 }
 
-// 续费的月数，取值：1、2、3、4、5、6、7、8、9、12、24、36。
+// Number of months for renewal. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36.
 func (o GetInstanceRenewInfoOutput) Period() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceRenewInfo) int { return v.Period }).(pulumi.IntOutput)
 }
 
-// 续费时长的时间单位，即参数Period的单位。取值：Month（默认）。
+// Time unit for renewal duration, i.e., the unit for the Period parameter. Value: Month (default)
 func (o GetInstanceRenewInfoOutput) PeriodUnit() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceRenewInfo) string { return v.PeriodUnit }).(pulumi.StringOutput)
 }
 
 type GetInstanceSecondaryNetworkInterface struct {
-	// 实例的IPv6地址数量。
+	// The number of IPv6 addresses for the instance.
 	Ipv6AddressCount int `pulumi:"ipv6AddressCount"`
-	// 实例的IPv6地址。
+	// IPv6 address of the instance.
 	Ipv6Addresses []string `pulumi:"ipv6Addresses"`
-	// 实例的MAC地址。
+	// Instance MAC address.
 	MacAddress string `pulumi:"macAddress"`
-	// 实例的网络接口ID。
+	// The network interface ID of the instance.
 	NetworkInterfaceId string `pulumi:"networkInterfaceId"`
-	// 实例的主IP地址。
+	// Instance primary IP address
 	PrimaryIpAddress string `pulumi:"primaryIpAddress"`
-	// 实例的私有IP地址。
+	// Instance private IP address.
 	PrivateIpAddresses []string `pulumi:"privateIpAddresses"`
-	// 实例的安全组ID。
+	// Instance security group ID
 	SecurityGroupIds []string `pulumi:"securityGroupIds"`
-	// 实例的子网ID。
+	// Instance subnet ID.
 	SubnetId string `pulumi:"subnetId"`
-	// 实例的VPC ID。
+	// VPC ID of the instance.
 	VpcId string `pulumi:"vpcId"`
 }
 
@@ -8248,23 +8497,23 @@ type GetInstanceSecondaryNetworkInterfaceInput interface {
 }
 
 type GetInstanceSecondaryNetworkInterfaceArgs struct {
-	// 实例的IPv6地址数量。
+	// The number of IPv6 addresses for the instance.
 	Ipv6AddressCount pulumi.IntInput `pulumi:"ipv6AddressCount"`
-	// 实例的IPv6地址。
+	// IPv6 address of the instance.
 	Ipv6Addresses pulumi.StringArrayInput `pulumi:"ipv6Addresses"`
-	// 实例的MAC地址。
+	// Instance MAC address.
 	MacAddress pulumi.StringInput `pulumi:"macAddress"`
-	// 实例的网络接口ID。
+	// The network interface ID of the instance.
 	NetworkInterfaceId pulumi.StringInput `pulumi:"networkInterfaceId"`
-	// 实例的主IP地址。
+	// Instance primary IP address
 	PrimaryIpAddress pulumi.StringInput `pulumi:"primaryIpAddress"`
-	// 实例的私有IP地址。
+	// Instance private IP address.
 	PrivateIpAddresses pulumi.StringArrayInput `pulumi:"privateIpAddresses"`
-	// 实例的安全组ID。
+	// Instance security group ID
 	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
-	// 实例的子网ID。
+	// Instance subnet ID.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-	// 实例的VPC ID。
+	// VPC ID of the instance.
 	VpcId pulumi.StringInput `pulumi:"vpcId"`
 }
 
@@ -8319,47 +8568,47 @@ func (o GetInstanceSecondaryNetworkInterfaceOutput) ToGetInstanceSecondaryNetwor
 	return o
 }
 
-// 实例的IPv6地址数量。
+// The number of IPv6 addresses for the instance.
 func (o GetInstanceSecondaryNetworkInterfaceOutput) Ipv6AddressCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceSecondaryNetworkInterface) int { return v.Ipv6AddressCount }).(pulumi.IntOutput)
 }
 
-// 实例的IPv6地址。
+// IPv6 address of the instance.
 func (o GetInstanceSecondaryNetworkInterfaceOutput) Ipv6Addresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetInstanceSecondaryNetworkInterface) []string { return v.Ipv6Addresses }).(pulumi.StringArrayOutput)
 }
 
-// 实例的MAC地址。
+// Instance MAC address.
 func (o GetInstanceSecondaryNetworkInterfaceOutput) MacAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceSecondaryNetworkInterface) string { return v.MacAddress }).(pulumi.StringOutput)
 }
 
-// 实例的网络接口ID。
+// The network interface ID of the instance.
 func (o GetInstanceSecondaryNetworkInterfaceOutput) NetworkInterfaceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceSecondaryNetworkInterface) string { return v.NetworkInterfaceId }).(pulumi.StringOutput)
 }
 
-// 实例的主IP地址。
+// Instance primary IP address
 func (o GetInstanceSecondaryNetworkInterfaceOutput) PrimaryIpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceSecondaryNetworkInterface) string { return v.PrimaryIpAddress }).(pulumi.StringOutput)
 }
 
-// 实例的私有IP地址。
+// Instance private IP address.
 func (o GetInstanceSecondaryNetworkInterfaceOutput) PrivateIpAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetInstanceSecondaryNetworkInterface) []string { return v.PrivateIpAddresses }).(pulumi.StringArrayOutput)
 }
 
-// 实例的安全组ID。
+// Instance security group ID
 func (o GetInstanceSecondaryNetworkInterfaceOutput) SecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetInstanceSecondaryNetworkInterface) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
 }
 
-// 实例的子网ID。
+// Instance subnet ID.
 func (o GetInstanceSecondaryNetworkInterfaceOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceSecondaryNetworkInterface) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// 实例的VPC ID。
+// VPC ID of the instance.
 func (o GetInstanceSecondaryNetworkInterfaceOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceSecondaryNetworkInterface) string { return v.VpcId }).(pulumi.StringOutput)
 }
@@ -8385,21 +8634,28 @@ func (o GetInstanceSecondaryNetworkInterfaceArrayOutput) Index(i pulumi.IntInput
 }
 
 type GetInstanceSystemVolume struct {
-	// 实例是否随实例删除。
+	// Whether the attached resources are deleted along with the instance.
 	DeleteWithInstance bool `pulumi:"deleteWithInstance"`
-	// 实例的额外性能IOPS。
+	// Additional performance IOPS for the instance
 	ExtraPerformanceIops int `pulumi:"extraPerformanceIops"`
-	// 实例的额外性能吞吐量，单位MB。
+	// The additional performance throughput of the instance, in MB.
 	ExtraPerformanceThroughputMb int `pulumi:"extraPerformanceThroughputMb"`
-	// 额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+	// Type of additional performance. Values:
+	//   Balance: Balanced additional performance
+	//   IOPS: IOPS additional performance
+	//   Throughput: Throughput additional performance
 	ExtraPerformanceTypeId string `pulumi:"extraPerformanceTypeId"`
-	// 实例的大小，单位GiB。
+	// Instance size, in GiB
 	Size int `pulumi:"size"`
-	// 实例的快照ID。
+	// Instance snapshot ID
 	SnapshotId string `pulumi:"snapshotId"`
-	// 实例的卷ID。
+	// Instance volume ID.
 	VolumeId string `pulumi:"volumeId"`
-	// 云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+	// Cloud disk type. Values:
+	//   PTSSD: Performance SSD.
+	//   ESSD_PL0: Ultra SSD disk, PL0 specification.
+	//   ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+	//   TSSD_TL0: Throughput SSD disk.
 	VolumeType string `pulumi:"volumeType"`
 }
 
@@ -8415,21 +8671,28 @@ type GetInstanceSystemVolumeInput interface {
 }
 
 type GetInstanceSystemVolumeArgs struct {
-	// 实例是否随实例删除。
+	// Whether the attached resources are deleted along with the instance.
 	DeleteWithInstance pulumi.BoolInput `pulumi:"deleteWithInstance"`
-	// 实例的额外性能IOPS。
+	// Additional performance IOPS for the instance
 	ExtraPerformanceIops pulumi.IntInput `pulumi:"extraPerformanceIops"`
-	// 实例的额外性能吞吐量，单位MB。
+	// The additional performance throughput of the instance, in MB.
 	ExtraPerformanceThroughputMb pulumi.IntInput `pulumi:"extraPerformanceThroughputMb"`
-	// 额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+	// Type of additional performance. Values:
+	//   Balance: Balanced additional performance
+	//   IOPS: IOPS additional performance
+	//   Throughput: Throughput additional performance
 	ExtraPerformanceTypeId pulumi.StringInput `pulumi:"extraPerformanceTypeId"`
-	// 实例的大小，单位GiB。
+	// Instance size, in GiB
 	Size pulumi.IntInput `pulumi:"size"`
-	// 实例的快照ID。
+	// Instance snapshot ID
 	SnapshotId pulumi.StringInput `pulumi:"snapshotId"`
-	// 实例的卷ID。
+	// Instance volume ID.
 	VolumeId pulumi.StringInput `pulumi:"volumeId"`
-	// 云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+	// Cloud disk type. Values:
+	//   PTSSD: Performance SSD.
+	//   ESSD_PL0: Ultra SSD disk, PL0 specification.
+	//   ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+	//   TSSD_TL0: Throughput SSD disk.
 	VolumeType pulumi.StringInput `pulumi:"volumeType"`
 }
 
@@ -8459,50 +8722,59 @@ func (o GetInstanceSystemVolumeOutput) ToGetInstanceSystemVolumeOutputWithContex
 	return o
 }
 
-// 实例是否随实例删除。
+// Whether the attached resources are deleted along with the instance.
 func (o GetInstanceSystemVolumeOutput) DeleteWithInstance() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceSystemVolume) bool { return v.DeleteWithInstance }).(pulumi.BoolOutput)
 }
 
-// 实例的额外性能IOPS。
+// Additional performance IOPS for the instance
 func (o GetInstanceSystemVolumeOutput) ExtraPerformanceIops() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceSystemVolume) int { return v.ExtraPerformanceIops }).(pulumi.IntOutput)
 }
 
-// 实例的额外性能吞吐量，单位MB。
+// The additional performance throughput of the instance, in MB.
 func (o GetInstanceSystemVolumeOutput) ExtraPerformanceThroughputMb() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceSystemVolume) int { return v.ExtraPerformanceThroughputMb }).(pulumi.IntOutput)
 }
 
-// 额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+// Type of additional performance. Values:
+//
+//	Balance: Balanced additional performance
+//	IOPS: IOPS additional performance
+//	Throughput: Throughput additional performance
 func (o GetInstanceSystemVolumeOutput) ExtraPerformanceTypeId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceSystemVolume) string { return v.ExtraPerformanceTypeId }).(pulumi.StringOutput)
 }
 
-// 实例的大小，单位GiB。
+// Instance size, in GiB
 func (o GetInstanceSystemVolumeOutput) Size() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceSystemVolume) int { return v.Size }).(pulumi.IntOutput)
 }
 
-// 实例的快照ID。
+// Instance snapshot ID
 func (o GetInstanceSystemVolumeOutput) SnapshotId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceSystemVolume) string { return v.SnapshotId }).(pulumi.StringOutput)
 }
 
-// 实例的卷ID。
+// Instance volume ID.
 func (o GetInstanceSystemVolumeOutput) VolumeId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceSystemVolume) string { return v.VolumeId }).(pulumi.StringOutput)
 }
 
-// 云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+// Cloud disk type. Values:
+//
+//	PTSSD: Performance SSD.
+//	ESSD_PL0: Ultra SSD disk, PL0 specification.
+//	ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+//	TSSD_TL0: Throughput SSD disk.
 func (o GetInstanceSystemVolumeOutput) VolumeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceSystemVolume) string { return v.VolumeType }).(pulumi.StringOutput)
 }
 
 type GetInstanceTag struct {
-	// 实例的键。
+	// Instance key.
 	Key string `pulumi:"key"`
-	// 实例的值。
+	// Instance value.
 	Value string `pulumi:"value"`
 }
 
@@ -8518,9 +8790,9 @@ type GetInstanceTagInput interface {
 }
 
 type GetInstanceTagArgs struct {
-	// 实例的键。
+	// Instance key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 实例的值。
+	// Instance value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -8575,12 +8847,12 @@ func (o GetInstanceTagOutput) ToGetInstanceTagOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 实例的键。
+// Instance key.
 func (o GetInstanceTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 实例的值。
+// Instance value.
 func (o GetInstanceTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -8606,29 +8878,29 @@ func (o GetInstanceTagArrayOutput) Index(i pulumi.IntInput) GetInstanceTagOutput
 }
 
 type GetInvocationInvocationResult struct {
-	// 命令ID。
+	// Command ID.
 	CommandId string `pulumi:"commandId"`
-	// 命令执行的完成时间。
+	// Command execution completion time.
 	EndTime string `pulumi:"endTime"`
-	// 命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+	// Error codes for command execution failure. TaskDeliveryTimeout: Indicates command delivery timeout. TaskExecutionTimeout: Indicates command execution timeout. TaskExecutionFailed: Indicates command execution failure.
 	ErrorCode string `pulumi:"errorCode"`
-	// 命令执行失败的错误信息。
+	// Error message for command execution failure.
 	ErrorMessage string `pulumi:"errorMessage"`
-	// 脚本执行后的退出状态码。
+	// Exit status code after script execution.
 	ExitCode int `pulumi:"exitCode"`
-	// 实例ID。
+	// Instance ID.
 	InstanceId string `pulumi:"instanceId"`
-	// 任务执行ID。
+	// Task execution ID.
 	InvocationId string `pulumi:"invocationId"`
-	// 任务执行结果ID。
+	// Task execution result ID.
 	InvocationResultId string `pulumi:"invocationResultId"`
-	// 单台实例的命令进度状态。
+	// Command progress status for a single instance.
 	InvocationResultStatus string `pulumi:"invocationResultStatus"`
-	// 经过Base64编码的命令执行后输出信息。
+	// Output information after command execution, encoded in Base64.
 	Output string `pulumi:"output"`
-	// 命令在实例中开始执行的时间。
+	// Time when the command starts executing in the instance.
 	StartTime string `pulumi:"startTime"`
-	// 在实例中执行命令的用户名称。
+	// User name for executing the command in the instance.
 	Username string `pulumi:"username"`
 }
 
@@ -8644,29 +8916,29 @@ type GetInvocationInvocationResultInput interface {
 }
 
 type GetInvocationInvocationResultArgs struct {
-	// 命令ID。
+	// Command ID.
 	CommandId pulumi.StringInput `pulumi:"commandId"`
-	// 命令执行的完成时间。
+	// Command execution completion time.
 	EndTime pulumi.StringInput `pulumi:"endTime"`
-	// 命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+	// Error codes for command execution failure. TaskDeliveryTimeout: Indicates command delivery timeout. TaskExecutionTimeout: Indicates command execution timeout. TaskExecutionFailed: Indicates command execution failure.
 	ErrorCode pulumi.StringInput `pulumi:"errorCode"`
-	// 命令执行失败的错误信息。
+	// Error message for command execution failure.
 	ErrorMessage pulumi.StringInput `pulumi:"errorMessage"`
-	// 脚本执行后的退出状态码。
+	// Exit status code after script execution.
 	ExitCode pulumi.IntInput `pulumi:"exitCode"`
-	// 实例ID。
+	// Instance ID.
 	InstanceId pulumi.StringInput `pulumi:"instanceId"`
-	// 任务执行ID。
+	// Task execution ID.
 	InvocationId pulumi.StringInput `pulumi:"invocationId"`
-	// 任务执行结果ID。
+	// Task execution result ID.
 	InvocationResultId pulumi.StringInput `pulumi:"invocationResultId"`
-	// 单台实例的命令进度状态。
+	// Command progress status for a single instance.
 	InvocationResultStatus pulumi.StringInput `pulumi:"invocationResultStatus"`
-	// 经过Base64编码的命令执行后输出信息。
+	// Output information after command execution, encoded in Base64.
 	Output pulumi.StringInput `pulumi:"output"`
-	// 命令在实例中开始执行的时间。
+	// Time when the command starts executing in the instance.
 	StartTime pulumi.StringInput `pulumi:"startTime"`
-	// 在实例中执行命令的用户名称。
+	// User name for executing the command in the instance.
 	Username pulumi.StringInput `pulumi:"username"`
 }
 
@@ -8721,62 +8993,62 @@ func (o GetInvocationInvocationResultOutput) ToGetInvocationInvocationResultOutp
 	return o
 }
 
-// 命令ID。
+// Command ID.
 func (o GetInvocationInvocationResultOutput) CommandId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvocationInvocationResult) string { return v.CommandId }).(pulumi.StringOutput)
 }
 
-// 命令执行的完成时间。
+// Command execution completion time.
 func (o GetInvocationInvocationResultOutput) EndTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvocationInvocationResult) string { return v.EndTime }).(pulumi.StringOutput)
 }
 
-// 命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+// Error codes for command execution failure. TaskDeliveryTimeout: Indicates command delivery timeout. TaskExecutionTimeout: Indicates command execution timeout. TaskExecutionFailed: Indicates command execution failure.
 func (o GetInvocationInvocationResultOutput) ErrorCode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvocationInvocationResult) string { return v.ErrorCode }).(pulumi.StringOutput)
 }
 
-// 命令执行失败的错误信息。
+// Error message for command execution failure.
 func (o GetInvocationInvocationResultOutput) ErrorMessage() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvocationInvocationResult) string { return v.ErrorMessage }).(pulumi.StringOutput)
 }
 
-// 脚本执行后的退出状态码。
+// Exit status code after script execution.
 func (o GetInvocationInvocationResultOutput) ExitCode() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInvocationInvocationResult) int { return v.ExitCode }).(pulumi.IntOutput)
 }
 
-// 实例ID。
+// Instance ID.
 func (o GetInvocationInvocationResultOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvocationInvocationResult) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 任务执行ID。
+// Task execution ID.
 func (o GetInvocationInvocationResultOutput) InvocationId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvocationInvocationResult) string { return v.InvocationId }).(pulumi.StringOutput)
 }
 
-// 任务执行结果ID。
+// Task execution result ID.
 func (o GetInvocationInvocationResultOutput) InvocationResultId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvocationInvocationResult) string { return v.InvocationResultId }).(pulumi.StringOutput)
 }
 
-// 单台实例的命令进度状态。
+// Command progress status for a single instance.
 func (o GetInvocationInvocationResultOutput) InvocationResultStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvocationInvocationResult) string { return v.InvocationResultStatus }).(pulumi.StringOutput)
 }
 
-// 经过Base64编码的命令执行后输出信息。
+// Output information after command execution, encoded in Base64.
 func (o GetInvocationInvocationResultOutput) Output() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvocationInvocationResult) string { return v.Output }).(pulumi.StringOutput)
 }
 
-// 命令在实例中开始执行的时间。
+// Time when the command starts executing in the instance.
 func (o GetInvocationInvocationResultOutput) StartTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvocationInvocationResult) string { return v.StartTime }).(pulumi.StringOutput)
 }
 
-// 在实例中执行命令的用户名称。
+// User name for executing the command in the instance.
 func (o GetInvocationInvocationResultOutput) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvocationInvocationResult) string { return v.Username }).(pulumi.StringOutput)
 }
@@ -8802,23 +9074,23 @@ func (o GetInvocationInvocationResultArrayOutput) Index(i pulumi.IntInput) GetIn
 }
 
 type GetInvocationParameterDefinition struct {
-	// 自定义参数值（数字）允许的小数点后位数。
+	// Allowed number of decimal places for custom parameter values (numeric).
 	DecimalPrecision int `pulumi:"decimalPrecision"`
-	// 自定义参数默认值。
+	// Default value for custom parameter.
 	DefaultValue string `pulumi:"defaultValue"`
-	// 自定义参数值（字符串）的最大长度。
+	// Maximum length for custom parameter value (string).
 	MaxLength int `pulumi:"maxLength"`
-	// 自定义参数值（数字）的最大值。
+	// Maximum value for custom parameter (numeric).
 	MaxValue string `pulumi:"maxValue"`
-	// 自定义参数值（字符串）的最小长度。
+	// Minimum length for custom parameter values (string).
 	MinLength int `pulumi:"minLength"`
-	// 自定义参数值（数字）的最小值。
+	// Minimum value for custom parameter (numeric).
 	MinValue string `pulumi:"minValue"`
-	// 自定义参数名称，需要在脚本中通过{{Param}}定义 。
+	// Custom parameter name. Must be defined in the script using {{Param}}.
 	Name string `pulumi:"name"`
-	// 是否必填。true：必填。false：非必填。
+	// Required. true: Required. false: Optional.
 	Required bool `pulumi:"required"`
-	// 自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+	// Custom parameter type. String: Indicates custom parameter type is string. Digit: Indicates custom parameter type is numeric.
 	Type string `pulumi:"type"`
 }
 
@@ -8834,23 +9106,23 @@ type GetInvocationParameterDefinitionInput interface {
 }
 
 type GetInvocationParameterDefinitionArgs struct {
-	// 自定义参数值（数字）允许的小数点后位数。
+	// Allowed number of decimal places for custom parameter values (numeric).
 	DecimalPrecision pulumi.IntInput `pulumi:"decimalPrecision"`
-	// 自定义参数默认值。
+	// Default value for custom parameter.
 	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
-	// 自定义参数值（字符串）的最大长度。
+	// Maximum length for custom parameter value (string).
 	MaxLength pulumi.IntInput `pulumi:"maxLength"`
-	// 自定义参数值（数字）的最大值。
+	// Maximum value for custom parameter (numeric).
 	MaxValue pulumi.StringInput `pulumi:"maxValue"`
-	// 自定义参数值（字符串）的最小长度。
+	// Minimum length for custom parameter values (string).
 	MinLength pulumi.IntInput `pulumi:"minLength"`
-	// 自定义参数值（数字）的最小值。
+	// Minimum value for custom parameter (numeric).
 	MinValue pulumi.StringInput `pulumi:"minValue"`
-	// 自定义参数名称，需要在脚本中通过{{Param}}定义 。
+	// Custom parameter name. Must be defined in the script using {{Param}}.
 	Name pulumi.StringInput `pulumi:"name"`
-	// 是否必填。true：必填。false：非必填。
+	// Required. true: Required. false: Optional.
 	Required pulumi.BoolInput `pulumi:"required"`
-	// 自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+	// Custom parameter type. String: Indicates custom parameter type is string. Digit: Indicates custom parameter type is numeric.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -8905,47 +9177,47 @@ func (o GetInvocationParameterDefinitionOutput) ToGetInvocationParameterDefiniti
 	return o
 }
 
-// 自定义参数值（数字）允许的小数点后位数。
+// Allowed number of decimal places for custom parameter values (numeric).
 func (o GetInvocationParameterDefinitionOutput) DecimalPrecision() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInvocationParameterDefinition) int { return v.DecimalPrecision }).(pulumi.IntOutput)
 }
 
-// 自定义参数默认值。
+// Default value for custom parameter.
 func (o GetInvocationParameterDefinitionOutput) DefaultValue() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvocationParameterDefinition) string { return v.DefaultValue }).(pulumi.StringOutput)
 }
 
-// 自定义参数值（字符串）的最大长度。
+// Maximum length for custom parameter value (string).
 func (o GetInvocationParameterDefinitionOutput) MaxLength() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInvocationParameterDefinition) int { return v.MaxLength }).(pulumi.IntOutput)
 }
 
-// 自定义参数值（数字）的最大值。
+// Maximum value for custom parameter (numeric).
 func (o GetInvocationParameterDefinitionOutput) MaxValue() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvocationParameterDefinition) string { return v.MaxValue }).(pulumi.StringOutput)
 }
 
-// 自定义参数值（字符串）的最小长度。
+// Minimum length for custom parameter values (string).
 func (o GetInvocationParameterDefinitionOutput) MinLength() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInvocationParameterDefinition) int { return v.MinLength }).(pulumi.IntOutput)
 }
 
-// 自定义参数值（数字）的最小值。
+// Minimum value for custom parameter (numeric).
 func (o GetInvocationParameterDefinitionOutput) MinValue() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvocationParameterDefinition) string { return v.MinValue }).(pulumi.StringOutput)
 }
 
-// 自定义参数名称，需要在脚本中通过{{Param}}定义 。
+// Custom parameter name. Must be defined in the script using {{Param}}.
 func (o GetInvocationParameterDefinitionOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvocationParameterDefinition) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 是否必填。true：必填。false：非必填。
+// Required. true: Required. false: Optional.
 func (o GetInvocationParameterDefinitionOutput) Required() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInvocationParameterDefinition) bool { return v.Required }).(pulumi.BoolOutput)
 }
 
-// 自定义参数类型。String：表示自定义参数类型字符串类型。Digit：表示自定义参数类型为数值类型。
+// Custom parameter type. String: Indicates custom parameter type is string. Digit: Indicates custom parameter type is numeric.
 func (o GetInvocationParameterDefinitionOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvocationParameterDefinition) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -8971,9 +9243,9 @@ func (o GetInvocationParameterDefinitionArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetInvocationTag struct {
-	// 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+	// Tag key for user tags. Naming rules: Cannot start with any combination of 'volc:' or 'sys:' in any case. Can only contain letters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
 	Key string `pulumi:"key"`
-	// 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+	// User tag value. Naming rules: Only letters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty; length must be between 0 and 256 characters.
 	Value string `pulumi:"value"`
 }
 
@@ -8989,9 +9261,9 @@ type GetInvocationTagInput interface {
 }
 
 type GetInvocationTagArgs struct {
-	// 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+	// Tag key for user tags. Naming rules: Cannot start with any combination of 'volc:' or 'sys:' in any case. Can only contain letters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+	// User tag value. Naming rules: Only letters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty; length must be between 0 and 256 characters.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -9046,12 +9318,12 @@ func (o GetInvocationTagOutput) ToGetInvocationTagOutputWithContext(ctx context.
 	return o
 }
 
-// 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+// Tag key for user tags. Naming rules: Cannot start with any combination of 'volc:' or 'sys:' in any case. Can only contain letters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
 func (o GetInvocationTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvocationTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+// User tag value. Naming rules: Only letters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty; length must be between 0 and 256 characters.
 func (o GetInvocationTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvocationTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -9077,9 +9349,9 @@ func (o GetInvocationTagArrayOutput) Index(i pulumi.IntInput) GetInvocationTagOu
 }
 
 type GetKeypairTag struct {
-	// 标签键。
+	// Tag key.
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value string `pulumi:"value"`
 }
 
@@ -9095,9 +9367,9 @@ type GetKeypairTagInput interface {
 }
 
 type GetKeypairTagArgs struct {
-	// 标签键。
+	// Tag key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -9152,12 +9424,12 @@ func (o GetKeypairTagOutput) ToGetKeypairTagOutputWithContext(ctx context.Contex
 	return o
 }
 
-// 标签键。
+// Tag key.
 func (o GetKeypairTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeypairTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value.
 func (o GetKeypairTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeypairTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -9183,9 +9455,9 @@ func (o GetKeypairTagArrayOutput) Index(i pulumi.IntInput) GetKeypairTagOutput {
 }
 
 type GetLaunchTemplateLaunchTemplateTag struct {
-	// 给资源添加的用户标签的标签键。
+	// Tag key for user tags added to the resource.
 	Key string `pulumi:"key"`
-	// 给资源添加的用户标签的标签值。
+	// User tag value added to the resource
 	Value string `pulumi:"value"`
 }
 
@@ -9201,9 +9473,9 @@ type GetLaunchTemplateLaunchTemplateTagInput interface {
 }
 
 type GetLaunchTemplateLaunchTemplateTagArgs struct {
-	// 给资源添加的用户标签的标签键。
+	// Tag key for user tags added to the resource.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 给资源添加的用户标签的标签值。
+	// User tag value added to the resource
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -9258,12 +9530,12 @@ func (o GetLaunchTemplateLaunchTemplateTagOutput) ToGetLaunchTemplateLaunchTempl
 	return o
 }
 
-// 给资源添加的用户标签的标签键。
+// Tag key for user tags added to the resource.
 func (o GetLaunchTemplateLaunchTemplateTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 给资源添加的用户标签的标签值。
+// User tag value added to the resource
 func (o GetLaunchTemplateLaunchTemplateTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -9289,59 +9561,59 @@ func (o GetLaunchTemplateLaunchTemplateTagArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetLaunchTemplateLaunchTemplateVersion struct {
-	// 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+	// When the ECS instance needs to join or adjust the deployment set strategy to the deployment set group high availability strategy (AvailabilityGroup), you can use this parameter to specify the group number of the instance in the deployment set.
 	DeploymentSetGroupNumber int `pulumi:"deploymentSetGroupNumber"`
-	// 实例需要加入的部署集ID。
+	// Deployment set ID the instance needs to join.
 	DeploymentSetId string `pulumi:"deploymentSetId"`
-	// 实例的描述。
+	// Instance description
 	Description string `pulumi:"description"`
-	// 实例绑定的公网IP信息。
+	// Public IP information bound to the instance
 	Eip GetLaunchTemplateLaunchTemplateVersionEip `pulumi:"eip"`
-	// 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+	// Instance hostname. For Linux, the hostname length must be 2–59 characters. For Windows, the hostname length must be 2–10 characters.
 	HostName string `pulumi:"hostName"`
-	// 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+	// When creating a high-performance computing GPU instance, please specify the high-performance computing cluster ID.
 	HpcClusterId string `pulumi:"hpcClusterId"`
-	// 镜像ID。
+	// Image ID.
 	ImageId string `pulumi:"imageId"`
-	// 镜像名称。
+	// Image name.
 	ImageName string `pulumi:"imageName"`
-	// 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+	// Billing type for the instance and cloud disk. Options: PostPaid: Pay-as-you-go. PrePaid: Yearly/monthly subscription. Esi: Elastic reservation instance. Segmented: Time-based elastic reservation instance.
 	InstanceChargeType string `pulumi:"instanceChargeType"`
-	// 实例的名称。
+	// Instance name.
 	InstanceName string `pulumi:"instanceName"`
-	// 实例的规格。
+	// Instance specification
 	InstanceTypeId string `pulumi:"instanceTypeId"`
-	// 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+	// Whether to retain image settings. Values: true: Retain image settings. If retained, the instance will use the preset password or key pair from the image for login. false (default): Do not retain image settings.
 	KeepImageCredential bool `pulumi:"keepImageCredential"`
-	// 实例绑定的密钥对。
+	// Key pair bound to the instance.
 	KeyPairName string `pulumi:"keyPairName"`
-	// 实例挂载的网卡信息。
+	// Network interface information mounted to the instance.
 	NetworkInterfaces []GetLaunchTemplateLaunchTemplateVersionNetworkInterface `pulumi:"networkInterfaces"`
-	// 实例所属项目。
+	// Project associated with the instance.
 	ProjectName string `pulumi:"projectName"`
-	// 弹性预约单信息。
+	// Elastic reservation order information
 	ScheduledInstance GetLaunchTemplateLaunchTemplateVersionScheduledInstance `pulumi:"scheduledInstance"`
-	// 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+	// Enable security hardening. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
 	SecurityEnhancementStrategy string `pulumi:"securityEnhancementStrategy"`
-	// 抢占式实例的每小时最高价格。
+	// Maximum hourly price for preemptible instances
 	SpotPriceLimit float64 `pulumi:"spotPriceLimit"`
-	// 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+	// Preemptible strategy for pay-as-you-go billing. Options: NoSpot: Create a regular pay-as-you-go instance. SpotAsPriceGo: System automatically bids, follows the current market price for preemptible instances. SpotWithPriceLimit: Preemptible instance with a bid limit.
 	SpotStrategy string `pulumi:"spotStrategy"`
-	// 有序后缀的起始序号。
+	// Starting number for the sequential suffix
 	SuffixIndex int `pulumi:"suffixIndex"`
-	// 实例的标签信息。
+	// Tag information for the instance.
 	Tags []GetLaunchTemplateLaunchTemplateVersionTag `pulumi:"tags"`
-	// 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+	// Indicates whether to automatically add sequential suffixes to Hostname and InstanceName when creating multiple instances
 	UniqueSuffix bool `pulumi:"uniqueSuffix"`
-	// 实例的自定义数据。
+	// Custom data for the instance.
 	UserData string `pulumi:"userData"`
-	// 模版版本描述。
+	// Template version description.
 	VersionDescription string `pulumi:"versionDescription"`
-	// 实例绑定的云盘信息。
+	// Cloud disk information bound to the instance
 	Volumes []GetLaunchTemplateLaunchTemplateVersionVolume `pulumi:"volumes"`
-	// 私有网络ID。
+	// Private network ID.
 	VpcId string `pulumi:"vpcId"`
-	// 实例所属可用区ID。
+	// Instance availability zone ID
 	ZoneId string `pulumi:"zoneId"`
 }
 
@@ -9357,59 +9629,59 @@ type GetLaunchTemplateLaunchTemplateVersionInput interface {
 }
 
 type GetLaunchTemplateLaunchTemplateVersionArgs struct {
-	// 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+	// When the ECS instance needs to join or adjust the deployment set strategy to the deployment set group high availability strategy (AvailabilityGroup), you can use this parameter to specify the group number of the instance in the deployment set.
 	DeploymentSetGroupNumber pulumi.IntInput `pulumi:"deploymentSetGroupNumber"`
-	// 实例需要加入的部署集ID。
+	// Deployment set ID the instance needs to join.
 	DeploymentSetId pulumi.StringInput `pulumi:"deploymentSetId"`
-	// 实例的描述。
+	// Instance description
 	Description pulumi.StringInput `pulumi:"description"`
-	// 实例绑定的公网IP信息。
+	// Public IP information bound to the instance
 	Eip GetLaunchTemplateLaunchTemplateVersionEipInput `pulumi:"eip"`
-	// 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+	// Instance hostname. For Linux, the hostname length must be 2–59 characters. For Windows, the hostname length must be 2–10 characters.
 	HostName pulumi.StringInput `pulumi:"hostName"`
-	// 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+	// When creating a high-performance computing GPU instance, please specify the high-performance computing cluster ID.
 	HpcClusterId pulumi.StringInput `pulumi:"hpcClusterId"`
-	// 镜像ID。
+	// Image ID.
 	ImageId pulumi.StringInput `pulumi:"imageId"`
-	// 镜像名称。
+	// Image name.
 	ImageName pulumi.StringInput `pulumi:"imageName"`
-	// 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+	// Billing type for the instance and cloud disk. Options: PostPaid: Pay-as-you-go. PrePaid: Yearly/monthly subscription. Esi: Elastic reservation instance. Segmented: Time-based elastic reservation instance.
 	InstanceChargeType pulumi.StringInput `pulumi:"instanceChargeType"`
-	// 实例的名称。
+	// Instance name.
 	InstanceName pulumi.StringInput `pulumi:"instanceName"`
-	// 实例的规格。
+	// Instance specification
 	InstanceTypeId pulumi.StringInput `pulumi:"instanceTypeId"`
-	// 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+	// Whether to retain image settings. Values: true: Retain image settings. If retained, the instance will use the preset password or key pair from the image for login. false (default): Do not retain image settings.
 	KeepImageCredential pulumi.BoolInput `pulumi:"keepImageCredential"`
-	// 实例绑定的密钥对。
+	// Key pair bound to the instance.
 	KeyPairName pulumi.StringInput `pulumi:"keyPairName"`
-	// 实例挂载的网卡信息。
+	// Network interface information mounted to the instance.
 	NetworkInterfaces GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayInput `pulumi:"networkInterfaces"`
-	// 实例所属项目。
+	// Project associated with the instance.
 	ProjectName pulumi.StringInput `pulumi:"projectName"`
-	// 弹性预约单信息。
+	// Elastic reservation order information
 	ScheduledInstance GetLaunchTemplateLaunchTemplateVersionScheduledInstanceInput `pulumi:"scheduledInstance"`
-	// 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+	// Enable security hardening. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
 	SecurityEnhancementStrategy pulumi.StringInput `pulumi:"securityEnhancementStrategy"`
-	// 抢占式实例的每小时最高价格。
+	// Maximum hourly price for preemptible instances
 	SpotPriceLimit pulumi.Float64Input `pulumi:"spotPriceLimit"`
-	// 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+	// Preemptible strategy for pay-as-you-go billing. Options: NoSpot: Create a regular pay-as-you-go instance. SpotAsPriceGo: System automatically bids, follows the current market price for preemptible instances. SpotWithPriceLimit: Preemptible instance with a bid limit.
 	SpotStrategy pulumi.StringInput `pulumi:"spotStrategy"`
-	// 有序后缀的起始序号。
+	// Starting number for the sequential suffix
 	SuffixIndex pulumi.IntInput `pulumi:"suffixIndex"`
-	// 实例的标签信息。
+	// Tag information for the instance.
 	Tags GetLaunchTemplateLaunchTemplateVersionTagArrayInput `pulumi:"tags"`
-	// 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+	// Indicates whether to automatically add sequential suffixes to Hostname and InstanceName when creating multiple instances
 	UniqueSuffix pulumi.BoolInput `pulumi:"uniqueSuffix"`
-	// 实例的自定义数据。
+	// Custom data for the instance.
 	UserData pulumi.StringInput `pulumi:"userData"`
-	// 模版版本描述。
+	// Template version description.
 	VersionDescription pulumi.StringInput `pulumi:"versionDescription"`
-	// 实例绑定的云盘信息。
+	// Cloud disk information bound to the instance
 	Volumes GetLaunchTemplateLaunchTemplateVersionVolumeArrayInput `pulumi:"volumes"`
-	// 私有网络ID。
+	// Private network ID.
 	VpcId pulumi.StringInput `pulumi:"vpcId"`
-	// 实例所属可用区ID。
+	// Instance availability zone ID
 	ZoneId pulumi.StringInput `pulumi:"zoneId"`
 }
 
@@ -9439,163 +9711,163 @@ func (o GetLaunchTemplateLaunchTemplateVersionOutput) ToGetLaunchTemplateLaunchT
 	return o
 }
 
-// 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+// When the ECS instance needs to join or adjust the deployment set strategy to the deployment set group high availability strategy (AvailabilityGroup), you can use this parameter to specify the group number of the instance in the deployment set.
 func (o GetLaunchTemplateLaunchTemplateVersionOutput) DeploymentSetGroupNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) int { return v.DeploymentSetGroupNumber }).(pulumi.IntOutput)
 }
 
-// 实例需要加入的部署集ID。
+// Deployment set ID the instance needs to join.
 func (o GetLaunchTemplateLaunchTemplateVersionOutput) DeploymentSetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.DeploymentSetId }).(pulumi.StringOutput)
 }
 
-// 实例的描述。
+// Instance description
 func (o GetLaunchTemplateLaunchTemplateVersionOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 实例绑定的公网IP信息。
+// Public IP information bound to the instance
 func (o GetLaunchTemplateLaunchTemplateVersionOutput) Eip() GetLaunchTemplateLaunchTemplateVersionEipOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) GetLaunchTemplateLaunchTemplateVersionEip { return v.Eip }).(GetLaunchTemplateLaunchTemplateVersionEipOutput)
 }
 
-// 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+// Instance hostname. For Linux, the hostname length must be 2–59 characters. For Windows, the hostname length must be 2–10 characters.
 func (o GetLaunchTemplateLaunchTemplateVersionOutput) HostName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.HostName }).(pulumi.StringOutput)
 }
 
-// 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+// When creating a high-performance computing GPU instance, please specify the high-performance computing cluster ID.
 func (o GetLaunchTemplateLaunchTemplateVersionOutput) HpcClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.HpcClusterId }).(pulumi.StringOutput)
 }
 
-// 镜像ID。
+// Image ID.
 func (o GetLaunchTemplateLaunchTemplateVersionOutput) ImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.ImageId }).(pulumi.StringOutput)
 }
 
-// 镜像名称。
+// Image name.
 func (o GetLaunchTemplateLaunchTemplateVersionOutput) ImageName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.ImageName }).(pulumi.StringOutput)
 }
 
-// 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+// Billing type for the instance and cloud disk. Options: PostPaid: Pay-as-you-go. PrePaid: Yearly/monthly subscription. Esi: Elastic reservation instance. Segmented: Time-based elastic reservation instance.
 func (o GetLaunchTemplateLaunchTemplateVersionOutput) InstanceChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.InstanceChargeType }).(pulumi.StringOutput)
 }
 
-// 实例的名称。
+// Instance name.
 func (o GetLaunchTemplateLaunchTemplateVersionOutput) InstanceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.InstanceName }).(pulumi.StringOutput)
 }
 
-// 实例的规格。
+// Instance specification
 func (o GetLaunchTemplateLaunchTemplateVersionOutput) InstanceTypeId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.InstanceTypeId }).(pulumi.StringOutput)
 }
 
-// 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+// Whether to retain image settings. Values: true: Retain image settings. If retained, the instance will use the preset password or key pair from the image for login. false (default): Do not retain image settings.
 func (o GetLaunchTemplateLaunchTemplateVersionOutput) KeepImageCredential() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) bool { return v.KeepImageCredential }).(pulumi.BoolOutput)
 }
 
-// 实例绑定的密钥对。
+// Key pair bound to the instance.
 func (o GetLaunchTemplateLaunchTemplateVersionOutput) KeyPairName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.KeyPairName }).(pulumi.StringOutput)
 }
 
-// 实例挂载的网卡信息。
+// Network interface information mounted to the instance.
 func (o GetLaunchTemplateLaunchTemplateVersionOutput) NetworkInterfaces() GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) []GetLaunchTemplateLaunchTemplateVersionNetworkInterface {
 		return v.NetworkInterfaces
 	}).(GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput)
 }
 
-// 实例所属项目。
+// Project associated with the instance.
 func (o GetLaunchTemplateLaunchTemplateVersionOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 弹性预约单信息。
+// Elastic reservation order information
 func (o GetLaunchTemplateLaunchTemplateVersionOutput) ScheduledInstance() GetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) GetLaunchTemplateLaunchTemplateVersionScheduledInstance {
 		return v.ScheduledInstance
 	}).(GetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutput)
 }
 
-// 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+// Enable security hardening. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
 func (o GetLaunchTemplateLaunchTemplateVersionOutput) SecurityEnhancementStrategy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.SecurityEnhancementStrategy }).(pulumi.StringOutput)
 }
 
-// 抢占式实例的每小时最高价格。
+// Maximum hourly price for preemptible instances
 func (o GetLaunchTemplateLaunchTemplateVersionOutput) SpotPriceLimit() pulumi.Float64Output {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) float64 { return v.SpotPriceLimit }).(pulumi.Float64Output)
 }
 
-// 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+// Preemptible strategy for pay-as-you-go billing. Options: NoSpot: Create a regular pay-as-you-go instance. SpotAsPriceGo: System automatically bids, follows the current market price for preemptible instances. SpotWithPriceLimit: Preemptible instance with a bid limit.
 func (o GetLaunchTemplateLaunchTemplateVersionOutput) SpotStrategy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.SpotStrategy }).(pulumi.StringOutput)
 }
 
-// 有序后缀的起始序号。
+// Starting number for the sequential suffix
 func (o GetLaunchTemplateLaunchTemplateVersionOutput) SuffixIndex() pulumi.IntOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) int { return v.SuffixIndex }).(pulumi.IntOutput)
 }
 
-// 实例的标签信息。
+// Tag information for the instance.
 func (o GetLaunchTemplateLaunchTemplateVersionOutput) Tags() GetLaunchTemplateLaunchTemplateVersionTagArrayOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) []GetLaunchTemplateLaunchTemplateVersionTag {
 		return v.Tags
 	}).(GetLaunchTemplateLaunchTemplateVersionTagArrayOutput)
 }
 
-// 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+// Indicates whether to automatically add sequential suffixes to Hostname and InstanceName when creating multiple instances
 func (o GetLaunchTemplateLaunchTemplateVersionOutput) UniqueSuffix() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) bool { return v.UniqueSuffix }).(pulumi.BoolOutput)
 }
 
-// 实例的自定义数据。
+// Custom data for the instance.
 func (o GetLaunchTemplateLaunchTemplateVersionOutput) UserData() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.UserData }).(pulumi.StringOutput)
 }
 
-// 模版版本描述。
+// Template version description.
 func (o GetLaunchTemplateLaunchTemplateVersionOutput) VersionDescription() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.VersionDescription }).(pulumi.StringOutput)
 }
 
-// 实例绑定的云盘信息。
+// Cloud disk information bound to the instance
 func (o GetLaunchTemplateLaunchTemplateVersionOutput) Volumes() GetLaunchTemplateLaunchTemplateVersionVolumeArrayOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) []GetLaunchTemplateLaunchTemplateVersionVolume {
 		return v.Volumes
 	}).(GetLaunchTemplateLaunchTemplateVersionVolumeArrayOutput)
 }
 
-// 私有网络ID。
+// Private network ID.
 func (o GetLaunchTemplateLaunchTemplateVersionOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.VpcId }).(pulumi.StringOutput)
 }
 
-// 实例所属可用区ID。
+// Instance availability zone ID
 func (o GetLaunchTemplateLaunchTemplateVersionOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersion) string { return v.ZoneId }).(pulumi.StringOutput)
 }
 
 type GetLaunchTemplateLaunchTemplateVersionEip struct {
-	// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+	// Public IP bandwidth cap, unit: Mbps. Value range: 1–200. Default: 1.
 	Bandwidth int `pulumi:"bandwidth"`
-	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+	// Shared bandwidth package ID, indicates adding the public IP to the shared bandwidth package.
 	BandwidthPackageId string `pulumi:"bandwidthPackageId"`
-	// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+	// Billing method for public IP. Values: 2: Pay-as-you-go—by bandwidth cap. 3: Pay-as-you-go—by actual traffic.
 	BillingType int `pulumi:"billingType"`
-	// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+	// Line type for the public IP. Options: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line.
 	Isp string `pulumi:"isp"`
-	// 公网IP是否随实例删除，仅按量计费公网IP生效。
+	// Whether the public IP is released with the instance; only applies to pay-as-you-go public IPs
 	ReleaseWithInstance bool `pulumi:"releaseWithInstance"`
-	// 安全防护包ID。
+	// Security protection package ID
 	SecurityProtectionInstanceId int `pulumi:"securityProtectionInstanceId"`
-	// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+	// Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS Native Protection (Enterprise Edition) instance.
 	SecurityProtectionTypes []string `pulumi:"securityProtectionTypes"`
 }
 
@@ -9611,19 +9883,19 @@ type GetLaunchTemplateLaunchTemplateVersionEipInput interface {
 }
 
 type GetLaunchTemplateLaunchTemplateVersionEipArgs struct {
-	// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+	// Public IP bandwidth cap, unit: Mbps. Value range: 1–200. Default: 1.
 	Bandwidth pulumi.IntInput `pulumi:"bandwidth"`
-	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+	// Shared bandwidth package ID, indicates adding the public IP to the shared bandwidth package.
 	BandwidthPackageId pulumi.StringInput `pulumi:"bandwidthPackageId"`
-	// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+	// Billing method for public IP. Values: 2: Pay-as-you-go—by bandwidth cap. 3: Pay-as-you-go—by actual traffic.
 	BillingType pulumi.IntInput `pulumi:"billingType"`
-	// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+	// Line type for the public IP. Options: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line.
 	Isp pulumi.StringInput `pulumi:"isp"`
-	// 公网IP是否随实例删除，仅按量计费公网IP生效。
+	// Whether the public IP is released with the instance; only applies to pay-as-you-go public IPs
 	ReleaseWithInstance pulumi.BoolInput `pulumi:"releaseWithInstance"`
-	// 安全防护包ID。
+	// Security protection package ID
 	SecurityProtectionInstanceId pulumi.IntInput `pulumi:"securityProtectionInstanceId"`
-	// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+	// Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS Native Protection (Enterprise Edition) instance.
 	SecurityProtectionTypes pulumi.StringArrayInput `pulumi:"securityProtectionTypes"`
 }
 
@@ -9653,45 +9925,45 @@ func (o GetLaunchTemplateLaunchTemplateVersionEipOutput) ToGetLaunchTemplateLaun
 	return o
 }
 
-// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+// Public IP bandwidth cap, unit: Mbps. Value range: 1–200. Default: 1.
 func (o GetLaunchTemplateLaunchTemplateVersionEipOutput) Bandwidth() pulumi.IntOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionEip) int { return v.Bandwidth }).(pulumi.IntOutput)
 }
 
-// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+// Shared bandwidth package ID, indicates adding the public IP to the shared bandwidth package.
 func (o GetLaunchTemplateLaunchTemplateVersionEipOutput) BandwidthPackageId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionEip) string { return v.BandwidthPackageId }).(pulumi.StringOutput)
 }
 
-// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+// Billing method for public IP. Values: 2: Pay-as-you-go—by bandwidth cap. 3: Pay-as-you-go—by actual traffic.
 func (o GetLaunchTemplateLaunchTemplateVersionEipOutput) BillingType() pulumi.IntOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionEip) int { return v.BillingType }).(pulumi.IntOutput)
 }
 
-// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+// Line type for the public IP. Options: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line.
 func (o GetLaunchTemplateLaunchTemplateVersionEipOutput) Isp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionEip) string { return v.Isp }).(pulumi.StringOutput)
 }
 
-// 公网IP是否随实例删除，仅按量计费公网IP生效。
+// Whether the public IP is released with the instance; only applies to pay-as-you-go public IPs
 func (o GetLaunchTemplateLaunchTemplateVersionEipOutput) ReleaseWithInstance() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionEip) bool { return v.ReleaseWithInstance }).(pulumi.BoolOutput)
 }
 
-// 安全防护包ID。
+// Security protection package ID
 func (o GetLaunchTemplateLaunchTemplateVersionEipOutput) SecurityProtectionInstanceId() pulumi.IntOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionEip) int { return v.SecurityProtectionInstanceId }).(pulumi.IntOutput)
 }
 
-// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+// Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS Native Protection (Enterprise Edition) instance.
 func (o GetLaunchTemplateLaunchTemplateVersionEipOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionEip) []string { return v.SecurityProtectionTypes }).(pulumi.StringArrayOutput)
 }
 
 type GetLaunchTemplateLaunchTemplateVersionNetworkInterface struct {
-	// 网卡关联的安全组ID。
+	// Security group ID associated with the network interface.
 	SecurityGroupIds []string `pulumi:"securityGroupIds"`
-	// 实例的私有网络子网ID。
+	// Instance VPC subnet ID
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -9707,9 +9979,9 @@ type GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceInput interface {
 }
 
 type GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs struct {
-	// 网卡关联的安全组ID。
+	// Security group ID associated with the network interface.
 	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
-	// 实例的私有网络子网ID。
+	// Instance VPC subnet ID
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
@@ -9764,12 +10036,12 @@ func (o GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput) ToGetLaunc
 	return o
 }
 
-// 网卡关联的安全组ID。
+// Security group ID associated with the network interface.
 func (o GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput) SecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionNetworkInterface) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
 }
 
-// 实例的私有网络子网ID。
+// Instance VPC subnet ID
 func (o GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionNetworkInterface) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -9795,9 +10067,9 @@ func (o GetLaunchTemplateLaunchTemplateVersionNetworkInterfaceArrayOutput) Index
 }
 
 type GetLaunchTemplateLaunchTemplateVersionScheduledInstance struct {
-	// 弹性预约单的描述。
+	// Description of the elastic reservation order
 	ScheduledInstanceDescription string `pulumi:"scheduledInstanceDescription"`
-	// 弹性预约单的名称。
+	// Name of the elastic reservation order
 	ScheduledInstanceName string `pulumi:"scheduledInstanceName"`
 }
 
@@ -9813,9 +10085,9 @@ type GetLaunchTemplateLaunchTemplateVersionScheduledInstanceInput interface {
 }
 
 type GetLaunchTemplateLaunchTemplateVersionScheduledInstanceArgs struct {
-	// 弹性预约单的描述。
+	// Description of the elastic reservation order
 	ScheduledInstanceDescription pulumi.StringInput `pulumi:"scheduledInstanceDescription"`
-	// 弹性预约单的名称。
+	// Name of the elastic reservation order
 	ScheduledInstanceName pulumi.StringInput `pulumi:"scheduledInstanceName"`
 }
 
@@ -9845,22 +10117,22 @@ func (o GetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutput) ToGetLaun
 	return o
 }
 
-// 弹性预约单的描述。
+// Description of the elastic reservation order
 func (o GetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutput) ScheduledInstanceDescription() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionScheduledInstance) string {
 		return v.ScheduledInstanceDescription
 	}).(pulumi.StringOutput)
 }
 
-// 弹性预约单的名称。
+// Name of the elastic reservation order
 func (o GetLaunchTemplateLaunchTemplateVersionScheduledInstanceOutput) ScheduledInstanceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionScheduledInstance) string { return v.ScheduledInstanceName }).(pulumi.StringOutput)
 }
 
 type GetLaunchTemplateLaunchTemplateVersionTag struct {
-	// 给资源添加的用户标签的标签键。
+	// Tag key for user tags added to the resource.
 	Key string `pulumi:"key"`
-	// 给资源添加的用户标签的标签值。
+	// User tag value added to the resource
 	Value string `pulumi:"value"`
 }
 
@@ -9876,9 +10148,9 @@ type GetLaunchTemplateLaunchTemplateVersionTagInput interface {
 }
 
 type GetLaunchTemplateLaunchTemplateVersionTagArgs struct {
-	// 给资源添加的用户标签的标签键。
+	// Tag key for user tags added to the resource.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 给资源添加的用户标签的标签值。
+	// User tag value added to the resource
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -9933,12 +10205,12 @@ func (o GetLaunchTemplateLaunchTemplateVersionTagOutput) ToGetLaunchTemplateLaun
 	return o
 }
 
-// 给资源添加的用户标签的标签键。
+// Tag key for user tags added to the resource.
 func (o GetLaunchTemplateLaunchTemplateVersionTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 给资源添加的用户标签的标签值。
+// User tag value added to the resource
 func (o GetLaunchTemplateLaunchTemplateVersionTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -9964,19 +10236,19 @@ func (o GetLaunchTemplateLaunchTemplateVersionTagArrayOutput) Index(i pulumi.Int
 }
 
 type GetLaunchTemplateLaunchTemplateVersionVolume struct {
-	// 云盘是否随实例释放。
+	// Whether the cloud disk is released with the instance
 	DeleteWithInstance bool `pulumi:"deleteWithInstance"`
-	// 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+	// Cloud disk extra IOPS performance size, supported only by ESSD FlexPL data disks, unit: operations/second. This parameter must be set when ExtraPerformanceTypeId is Balance or IOPS. The value ranges for each extra performance type are as follows: IOPS type: 1–50000. Balance type: 1–50000.
 	ExtraPerformanceIops int `pulumi:"extraPerformanceIops"`
-	// 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+	// Extra throughput performance size for the cloud disk, in MB/s. Only supported by ESSD FlexPL data disks. This parameter must be set when ExtraPerformanceTypeId is Throughput. Value range: 1–650.
 	ExtraPerformanceThroughputMb int `pulumi:"extraPerformanceThroughputMb"`
-	// 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+	// Type of cloud disk extra performance, supported only by ESSD FlexPL data disks. For more information about extra performance, see Cloud Disk Extra Performance. Values: Balance: Balanced extra performance. IOPS: IOPS extra performance. Throughput: Throughput extra performance.
 	ExtraPerformanceTypeId string `pulumi:"extraPerformanceTypeId"`
-	// 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+	// Cloud disk size, unit: GB. System disk: ESSD*PL0: 20–2048, PTSSD: 10–500. Data disk: ESSD*PL0: 10–32768, PTSSD: 20–8192
 	Size int `pulumi:"size"`
-	// 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+	// Create a cloud disk using a snapshot, only supports creating data disks. You can call the DescribeSnapshots API to query the snapshot ID.
 	SnapshotId string `pulumi:"snapshotId"`
-	// 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+	// Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
 	VolumeType string `pulumi:"volumeType"`
 }
 
@@ -9992,19 +10264,19 @@ type GetLaunchTemplateLaunchTemplateVersionVolumeInput interface {
 }
 
 type GetLaunchTemplateLaunchTemplateVersionVolumeArgs struct {
-	// 云盘是否随实例释放。
+	// Whether the cloud disk is released with the instance
 	DeleteWithInstance pulumi.BoolInput `pulumi:"deleteWithInstance"`
-	// 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+	// Cloud disk extra IOPS performance size, supported only by ESSD FlexPL data disks, unit: operations/second. This parameter must be set when ExtraPerformanceTypeId is Balance or IOPS. The value ranges for each extra performance type are as follows: IOPS type: 1–50000. Balance type: 1–50000.
 	ExtraPerformanceIops pulumi.IntInput `pulumi:"extraPerformanceIops"`
-	// 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+	// Extra throughput performance size for the cloud disk, in MB/s. Only supported by ESSD FlexPL data disks. This parameter must be set when ExtraPerformanceTypeId is Throughput. Value range: 1–650.
 	ExtraPerformanceThroughputMb pulumi.IntInput `pulumi:"extraPerformanceThroughputMb"`
-	// 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+	// Type of cloud disk extra performance, supported only by ESSD FlexPL data disks. For more information about extra performance, see Cloud Disk Extra Performance. Values: Balance: Balanced extra performance. IOPS: IOPS extra performance. Throughput: Throughput extra performance.
 	ExtraPerformanceTypeId pulumi.StringInput `pulumi:"extraPerformanceTypeId"`
-	// 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+	// Cloud disk size, unit: GB. System disk: ESSD*PL0: 20–2048, PTSSD: 10–500. Data disk: ESSD*PL0: 10–32768, PTSSD: 20–8192
 	Size pulumi.IntInput `pulumi:"size"`
-	// 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+	// Create a cloud disk using a snapshot, only supports creating data disks. You can call the DescribeSnapshots API to query the snapshot ID.
 	SnapshotId pulumi.StringInput `pulumi:"snapshotId"`
-	// 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+	// Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
 	VolumeType pulumi.StringInput `pulumi:"volumeType"`
 }
 
@@ -10059,37 +10331,37 @@ func (o GetLaunchTemplateLaunchTemplateVersionVolumeOutput) ToGetLaunchTemplateL
 	return o
 }
 
-// 云盘是否随实例释放。
+// Whether the cloud disk is released with the instance
 func (o GetLaunchTemplateLaunchTemplateVersionVolumeOutput) DeleteWithInstance() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionVolume) bool { return v.DeleteWithInstance }).(pulumi.BoolOutput)
 }
 
-// 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+// Cloud disk extra IOPS performance size, supported only by ESSD FlexPL data disks, unit: operations/second. This parameter must be set when ExtraPerformanceTypeId is Balance or IOPS. The value ranges for each extra performance type are as follows: IOPS type: 1–50000. Balance type: 1–50000.
 func (o GetLaunchTemplateLaunchTemplateVersionVolumeOutput) ExtraPerformanceIops() pulumi.IntOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionVolume) int { return v.ExtraPerformanceIops }).(pulumi.IntOutput)
 }
 
-// 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+// Extra throughput performance size for the cloud disk, in MB/s. Only supported by ESSD FlexPL data disks. This parameter must be set when ExtraPerformanceTypeId is Throughput. Value range: 1–650.
 func (o GetLaunchTemplateLaunchTemplateVersionVolumeOutput) ExtraPerformanceThroughputMb() pulumi.IntOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionVolume) int { return v.ExtraPerformanceThroughputMb }).(pulumi.IntOutput)
 }
 
-// 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+// Type of cloud disk extra performance, supported only by ESSD FlexPL data disks. For more information about extra performance, see Cloud Disk Extra Performance. Values: Balance: Balanced extra performance. IOPS: IOPS extra performance. Throughput: Throughput extra performance.
 func (o GetLaunchTemplateLaunchTemplateVersionVolumeOutput) ExtraPerformanceTypeId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionVolume) string { return v.ExtraPerformanceTypeId }).(pulumi.StringOutput)
 }
 
-// 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+// Cloud disk size, unit: GB. System disk: ESSD*PL0: 20–2048, PTSSD: 10–500. Data disk: ESSD*PL0: 10–32768, PTSSD: 20–8192
 func (o GetLaunchTemplateLaunchTemplateVersionVolumeOutput) Size() pulumi.IntOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionVolume) int { return v.Size }).(pulumi.IntOutput)
 }
 
-// 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+// Create a cloud disk using a snapshot, only supports creating data disks. You can call the DescribeSnapshots API to query the snapshot ID.
 func (o GetLaunchTemplateLaunchTemplateVersionVolumeOutput) SnapshotId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionVolume) string { return v.SnapshotId }).(pulumi.StringOutput)
 }
 
-// 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+// Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
 func (o GetLaunchTemplateLaunchTemplateVersionVolumeOutput) VolumeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateLaunchTemplateVersionVolume) string { return v.VolumeType }).(pulumi.StringOutput)
 }
@@ -10115,19 +10387,19 @@ func (o GetLaunchTemplateLaunchTemplateVersionVolumeArrayOutput) Index(i pulumi.
 }
 
 type GetLaunchTemplateVersionEip struct {
-	// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+	// Maximum bandwidth for the public IP, measured in Mbps. Value range: 1–200. Default: 1
 	Bandwidth int `pulumi:"bandwidth"`
-	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+	// Shared bandwidth package ID, indicating that the public IP is added to the shared bandwidth package
 	BandwidthPackageId string `pulumi:"bandwidthPackageId"`
-	// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+	// Billing method for the public IP. Values: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic
 	BillingType int `pulumi:"billingType"`
-	// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+	// Line type of the public IP. Values: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line
 	Isp string `pulumi:"isp"`
-	// 公网IP是否随实例删除，仅按量计费公网IP生效。
+	// Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs.
 	ReleaseWithInstance bool `pulumi:"releaseWithInstance"`
-	// 安全防护包ID。
+	// Security protection package ID.
 	SecurityProtectionInstanceId int `pulumi:"securityProtectionInstanceId"`
-	// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+	// Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
 	SecurityProtectionTypes []string `pulumi:"securityProtectionTypes"`
 }
 
@@ -10143,19 +10415,19 @@ type GetLaunchTemplateVersionEipInput interface {
 }
 
 type GetLaunchTemplateVersionEipArgs struct {
-	// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+	// Maximum bandwidth for the public IP, measured in Mbps. Value range: 1–200. Default: 1
 	Bandwidth pulumi.IntInput `pulumi:"bandwidth"`
-	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+	// Shared bandwidth package ID, indicating that the public IP is added to the shared bandwidth package
 	BandwidthPackageId pulumi.StringInput `pulumi:"bandwidthPackageId"`
-	// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+	// Billing method for the public IP. Values: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic
 	BillingType pulumi.IntInput `pulumi:"billingType"`
-	// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+	// Line type of the public IP. Values: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line
 	Isp pulumi.StringInput `pulumi:"isp"`
-	// 公网IP是否随实例删除，仅按量计费公网IP生效。
+	// Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs.
 	ReleaseWithInstance pulumi.BoolInput `pulumi:"releaseWithInstance"`
-	// 安全防护包ID。
+	// Security protection package ID.
 	SecurityProtectionInstanceId pulumi.IntInput `pulumi:"securityProtectionInstanceId"`
-	// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+	// Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
 	SecurityProtectionTypes pulumi.StringArrayInput `pulumi:"securityProtectionTypes"`
 }
 
@@ -10185,45 +10457,45 @@ func (o GetLaunchTemplateVersionEipOutput) ToGetLaunchTemplateVersionEipOutputWi
 	return o
 }
 
-// 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+// Maximum bandwidth for the public IP, measured in Mbps. Value range: 1–200. Default: 1
 func (o GetLaunchTemplateVersionEipOutput) Bandwidth() pulumi.IntOutput {
 	return o.ApplyT(func(v GetLaunchTemplateVersionEip) int { return v.Bandwidth }).(pulumi.IntOutput)
 }
 
-// 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+// Shared bandwidth package ID, indicating that the public IP is added to the shared bandwidth package
 func (o GetLaunchTemplateVersionEipOutput) BandwidthPackageId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateVersionEip) string { return v.BandwidthPackageId }).(pulumi.StringOutput)
 }
 
-// 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+// Billing method for the public IP. Values: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic
 func (o GetLaunchTemplateVersionEipOutput) BillingType() pulumi.IntOutput {
 	return o.ApplyT(func(v GetLaunchTemplateVersionEip) int { return v.BillingType }).(pulumi.IntOutput)
 }
 
-// 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+// Line type of the public IP. Values: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line
 func (o GetLaunchTemplateVersionEipOutput) Isp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateVersionEip) string { return v.Isp }).(pulumi.StringOutput)
 }
 
-// 公网IP是否随实例删除，仅按量计费公网IP生效。
+// Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs.
 func (o GetLaunchTemplateVersionEipOutput) ReleaseWithInstance() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetLaunchTemplateVersionEip) bool { return v.ReleaseWithInstance }).(pulumi.BoolOutput)
 }
 
-// 安全防护包ID。
+// Security protection package ID.
 func (o GetLaunchTemplateVersionEipOutput) SecurityProtectionInstanceId() pulumi.IntOutput {
 	return o.ApplyT(func(v GetLaunchTemplateVersionEip) int { return v.SecurityProtectionInstanceId }).(pulumi.IntOutput)
 }
 
-// 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+// Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
 func (o GetLaunchTemplateVersionEipOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetLaunchTemplateVersionEip) []string { return v.SecurityProtectionTypes }).(pulumi.StringArrayOutput)
 }
 
 type GetLaunchTemplateVersionNetworkInterface struct {
-	// 网卡关联的安全组ID。
+	// Security group ID associated with the network interface.
 	SecurityGroupIds []string `pulumi:"securityGroupIds"`
-	// 实例的私有网络子网ID。
+	// Private network subnet ID of the instance.
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -10239,9 +10511,9 @@ type GetLaunchTemplateVersionNetworkInterfaceInput interface {
 }
 
 type GetLaunchTemplateVersionNetworkInterfaceArgs struct {
-	// 网卡关联的安全组ID。
+	// Security group ID associated with the network interface.
 	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
-	// 实例的私有网络子网ID。
+	// Private network subnet ID of the instance.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
@@ -10296,12 +10568,12 @@ func (o GetLaunchTemplateVersionNetworkInterfaceOutput) ToGetLaunchTemplateVersi
 	return o
 }
 
-// 网卡关联的安全组ID。
+// Security group ID associated with the network interface.
 func (o GetLaunchTemplateVersionNetworkInterfaceOutput) SecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetLaunchTemplateVersionNetworkInterface) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
 }
 
-// 实例的私有网络子网ID。
+// Private network subnet ID of the instance.
 func (o GetLaunchTemplateVersionNetworkInterfaceOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateVersionNetworkInterface) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -10327,9 +10599,9 @@ func (o GetLaunchTemplateVersionNetworkInterfaceArrayOutput) Index(i pulumi.IntI
 }
 
 type GetLaunchTemplateVersionScheduledInstance struct {
-	// 弹性预约单的描述。
+	// Description of the elastic reservation order
 	ScheduledInstanceDescription string `pulumi:"scheduledInstanceDescription"`
-	// 弹性预约单的名称。
+	// Name of the elastic reservation order
 	ScheduledInstanceName string `pulumi:"scheduledInstanceName"`
 }
 
@@ -10345,9 +10617,9 @@ type GetLaunchTemplateVersionScheduledInstanceInput interface {
 }
 
 type GetLaunchTemplateVersionScheduledInstanceArgs struct {
-	// 弹性预约单的描述。
+	// Description of the elastic reservation order
 	ScheduledInstanceDescription pulumi.StringInput `pulumi:"scheduledInstanceDescription"`
-	// 弹性预约单的名称。
+	// Name of the elastic reservation order
 	ScheduledInstanceName pulumi.StringInput `pulumi:"scheduledInstanceName"`
 }
 
@@ -10377,20 +10649,20 @@ func (o GetLaunchTemplateVersionScheduledInstanceOutput) ToGetLaunchTemplateVers
 	return o
 }
 
-// 弹性预约单的描述。
+// Description of the elastic reservation order
 func (o GetLaunchTemplateVersionScheduledInstanceOutput) ScheduledInstanceDescription() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateVersionScheduledInstance) string { return v.ScheduledInstanceDescription }).(pulumi.StringOutput)
 }
 
-// 弹性预约单的名称。
+// Name of the elastic reservation order
 func (o GetLaunchTemplateVersionScheduledInstanceOutput) ScheduledInstanceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateVersionScheduledInstance) string { return v.ScheduledInstanceName }).(pulumi.StringOutput)
 }
 
 type GetLaunchTemplateVersionTag struct {
-	// 给资源添加的用户标签的标签键。
+	// Tag key for user tags added to the resource.
 	Key string `pulumi:"key"`
-	// 给资源添加的用户标签的标签值。
+	// Tag value for user tags added to the resource
 	Value string `pulumi:"value"`
 }
 
@@ -10406,9 +10678,9 @@ type GetLaunchTemplateVersionTagInput interface {
 }
 
 type GetLaunchTemplateVersionTagArgs struct {
-	// 给资源添加的用户标签的标签键。
+	// Tag key for user tags added to the resource.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 给资源添加的用户标签的标签值。
+	// Tag value for user tags added to the resource
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -10463,12 +10735,12 @@ func (o GetLaunchTemplateVersionTagOutput) ToGetLaunchTemplateVersionTagOutputWi
 	return o
 }
 
-// 给资源添加的用户标签的标签键。
+// Tag key for user tags added to the resource.
 func (o GetLaunchTemplateVersionTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateVersionTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 给资源添加的用户标签的标签值。
+// Tag value for user tags added to the resource
 func (o GetLaunchTemplateVersionTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateVersionTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -10494,19 +10766,19 @@ func (o GetLaunchTemplateVersionTagArrayOutput) Index(i pulumi.IntInput) GetLaun
 }
 
 type GetLaunchTemplateVersionVolume struct {
-	// 云盘是否随实例释放。
+	// Whether the disk is released with the instance
 	DeleteWithInstance bool `pulumi:"deleteWithInstance"`
-	// 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+	// Extra IOPS performance size for the disk, supported only by ESSD FlexPL data disks, measured in operations per second. This parameter must be set when ExtraPerformanceTypeId is Balance or IOPS. Value ranges for each type: IOPS: 1–50000. Balance: 1–50000
 	ExtraPerformanceIops int `pulumi:"extraPerformanceIops"`
-	// 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+	// Additional disk throughput performance in MB/s. Supported only by ESSD FlexPL data disks. Set this parameter when ExtraPerformanceTypeId is Throughput. Value range: 1–650.
 	ExtraPerformanceThroughputMb int `pulumi:"extraPerformanceThroughputMb"`
-	// 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+	// Type of extra disk performance, supported only by ESSD FlexPL data disks. For more information about extra performance, see Extra Disk Performance. Values: Balance: Balanced extra performance. IOPS: IOPS extra performance. Throughput: Throughput extra performance
 	ExtraPerformanceTypeId string `pulumi:"extraPerformanceTypeId"`
-	// 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+	// Disk size, measured in GB. System disk: ESSD*PL0: 20–2048, PTSSD: 10–500. Data disk: ESSD*PL0: 10–32768, PTSSD: 20–8192
 	Size int `pulumi:"size"`
-	// 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+	// Create a cloud disk from a snapshot. Only data disks are supported. You can call the DescribeSnapshots API to query the snapshot ID.
 	SnapshotId string `pulumi:"snapshotId"`
-	// 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+	// Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
 	VolumeType string `pulumi:"volumeType"`
 }
 
@@ -10522,19 +10794,19 @@ type GetLaunchTemplateVersionVolumeInput interface {
 }
 
 type GetLaunchTemplateVersionVolumeArgs struct {
-	// 云盘是否随实例释放。
+	// Whether the disk is released with the instance
 	DeleteWithInstance pulumi.BoolInput `pulumi:"deleteWithInstance"`
-	// 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+	// Extra IOPS performance size for the disk, supported only by ESSD FlexPL data disks, measured in operations per second. This parameter must be set when ExtraPerformanceTypeId is Balance or IOPS. Value ranges for each type: IOPS: 1–50000. Balance: 1–50000
 	ExtraPerformanceIops pulumi.IntInput `pulumi:"extraPerformanceIops"`
-	// 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+	// Additional disk throughput performance in MB/s. Supported only by ESSD FlexPL data disks. Set this parameter when ExtraPerformanceTypeId is Throughput. Value range: 1–650.
 	ExtraPerformanceThroughputMb pulumi.IntInput `pulumi:"extraPerformanceThroughputMb"`
-	// 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+	// Type of extra disk performance, supported only by ESSD FlexPL data disks. For more information about extra performance, see Extra Disk Performance. Values: Balance: Balanced extra performance. IOPS: IOPS extra performance. Throughput: Throughput extra performance
 	ExtraPerformanceTypeId pulumi.StringInput `pulumi:"extraPerformanceTypeId"`
-	// 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+	// Disk size, measured in GB. System disk: ESSD*PL0: 20–2048, PTSSD: 10–500. Data disk: ESSD*PL0: 10–32768, PTSSD: 20–8192
 	Size pulumi.IntInput `pulumi:"size"`
-	// 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+	// Create a cloud disk from a snapshot. Only data disks are supported. You can call the DescribeSnapshots API to query the snapshot ID.
 	SnapshotId pulumi.StringInput `pulumi:"snapshotId"`
-	// 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+	// Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
 	VolumeType pulumi.StringInput `pulumi:"volumeType"`
 }
 
@@ -10589,37 +10861,37 @@ func (o GetLaunchTemplateVersionVolumeOutput) ToGetLaunchTemplateVersionVolumeOu
 	return o
 }
 
-// 云盘是否随实例释放。
+// Whether the disk is released with the instance
 func (o GetLaunchTemplateVersionVolumeOutput) DeleteWithInstance() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetLaunchTemplateVersionVolume) bool { return v.DeleteWithInstance }).(pulumi.BoolOutput)
 }
 
-// 云盘额外IOPS性能大小，仅ESSD FlexPL数据盘支持，单位为次/秒。 ExtraPerformanceTypeId为Balance或IOPS时需设置该参数。各个类型的额外性能取值范围如下：IOPS型：1～50000。Balance型：1～50000。
+// Extra IOPS performance size for the disk, supported only by ESSD FlexPL data disks, measured in operations per second. This parameter must be set when ExtraPerformanceTypeId is Balance or IOPS. Value ranges for each type: IOPS: 1–50000. Balance: 1–50000
 func (o GetLaunchTemplateVersionVolumeOutput) ExtraPerformanceIops() pulumi.IntOutput {
 	return o.ApplyT(func(v GetLaunchTemplateVersionVolume) int { return v.ExtraPerformanceIops }).(pulumi.IntOutput)
 }
 
-// 云盘额外吞吐性能大小，单位MB/s，仅ESSD FlexPL数据盘支持。 ExtraPerformanceTypeId为Throughput时需设置该参数。 取值范围：1～650。
+// Additional disk throughput performance in MB/s. Supported only by ESSD FlexPL data disks. Set this parameter when ExtraPerformanceTypeId is Throughput. Value range: 1–650.
 func (o GetLaunchTemplateVersionVolumeOutput) ExtraPerformanceThroughputMb() pulumi.IntOutput {
 	return o.ApplyT(func(v GetLaunchTemplateVersionVolume) int { return v.ExtraPerformanceThroughputMb }).(pulumi.IntOutput)
 }
 
-// 云盘额外性能的类型，仅ESSD FlexPL数据盘支持。关于额外性能的更多介绍，请参见云盘额外性能。取值：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+// Type of extra disk performance, supported only by ESSD FlexPL data disks. For more information about extra performance, see Extra Disk Performance. Values: Balance: Balanced extra performance. IOPS: IOPS extra performance. Throughput: Throughput extra performance
 func (o GetLaunchTemplateVersionVolumeOutput) ExtraPerformanceTypeId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateVersionVolume) string { return v.ExtraPerformanceTypeId }).(pulumi.StringOutput)
 }
 
-// 云盘大小，单位为GB。系统盘：ESSD*PL0：20~2048 PTSSD：10~500。数据盘：ESSD*PL0：10~32768 PTSSD：20~8192
+// Disk size, measured in GB. System disk: ESSD*PL0: 20–2048, PTSSD: 10–500. Data disk: ESSD*PL0: 10–32768, PTSSD: 20–8192
 func (o GetLaunchTemplateVersionVolumeOutput) Size() pulumi.IntOutput {
 	return o.ApplyT(func(v GetLaunchTemplateVersionVolume) int { return v.Size }).(pulumi.IntOutput)
 }
 
-// 使用快照创建云盘，仅支持创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。
+// Create a cloud disk from a snapshot. Only data disks are supported. You can call the DescribeSnapshots API to query the snapshot ID.
 func (o GetLaunchTemplateVersionVolumeOutput) SnapshotId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateVersionVolume) string { return v.SnapshotId }).(pulumi.StringOutput)
 }
 
-// 云盘类型。ESSD_PL0：极速型SSD PL0。PTSSD：性能型SSD。
+// Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
 func (o GetLaunchTemplateVersionVolumeOutput) VolumeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLaunchTemplateVersionVolume) string { return v.VolumeType }).(pulumi.StringOutput)
 }
@@ -10657,6 +10929,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ImageDetectionResultsPtrInput)(nil)).Elem(), ImageDetectionResultsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImageDetectionResultsItemInput)(nil)).Elem(), ImageDetectionResultsItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImageDetectionResultsItemArrayInput)(nil)).Elem(), ImageDetectionResultsItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ImageImportImageInput)(nil)).Elem(), ImageImportImageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ImageImportImagePtrInput)(nil)).Elem(), ImageImportImageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImageSnapshotInput)(nil)).Elem(), ImageSnapshotArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImageSnapshotArrayInput)(nil)).Elem(), ImageSnapshotArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImageTagInput)(nil)).Elem(), ImageTagArgs{})
@@ -10730,6 +11004,7 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageDetectionResultsInput)(nil)).Elem(), GetImageDetectionResultsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageDetectionResultsItemInput)(nil)).Elem(), GetImageDetectionResultsItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageDetectionResultsItemArrayInput)(nil)).Elem(), GetImageDetectionResultsItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetImageImportImageInput)(nil)).Elem(), GetImageImportImageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageSnapshotInput)(nil)).Elem(), GetImageSnapshotArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageSnapshotArrayInput)(nil)).Elem(), GetImageSnapshotArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageTagInput)(nil)).Elem(), GetImageTagArgs{})
@@ -10790,6 +11065,8 @@ func init() {
 	pulumi.RegisterOutputType(ImageDetectionResultsPtrOutput{})
 	pulumi.RegisterOutputType(ImageDetectionResultsItemOutput{})
 	pulumi.RegisterOutputType(ImageDetectionResultsItemArrayOutput{})
+	pulumi.RegisterOutputType(ImageImportImageOutput{})
+	pulumi.RegisterOutputType(ImageImportImagePtrOutput{})
 	pulumi.RegisterOutputType(ImageSnapshotOutput{})
 	pulumi.RegisterOutputType(ImageSnapshotArrayOutput{})
 	pulumi.RegisterOutputType(ImageTagOutput{})
@@ -10863,6 +11140,7 @@ func init() {
 	pulumi.RegisterOutputType(GetImageDetectionResultsOutput{})
 	pulumi.RegisterOutputType(GetImageDetectionResultsItemOutput{})
 	pulumi.RegisterOutputType(GetImageDetectionResultsItemArrayOutput{})
+	pulumi.RegisterOutputType(GetImageImportImageOutput{})
 	pulumi.RegisterOutputType(GetImageSnapshotOutput{})
 	pulumi.RegisterOutputType(GetImageSnapshotArrayOutput{})
 	pulumi.RegisterOutputType(GetImageTagOutput{})

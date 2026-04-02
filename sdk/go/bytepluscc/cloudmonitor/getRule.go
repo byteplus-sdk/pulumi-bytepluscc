@@ -30,73 +30,73 @@ type LookupRuleArgs struct {
 
 // A collection of values returned by getRule.
 type LookupRuleResult struct {
-	// 告警通知的方式。Email：邮件 Phone：电话 SMS：短信 Webhook：告警回调。
+	// Alert notification method. Email: email, Phone: phone, SMS: SMS, Webhook: webhook callback.
 	AlertMethods []string `pulumi:"alertMethods"`
-	// 告警状态。 alerting：告警中 normal：正常。
+	// Alert status. alerting: In alert; normal: Normal.
 	AlertState string `pulumi:"alertState"`
-	// 多指标判定条件。&&：多个指标同时成立才判定为触发告警,||：任意指标满足条件触发判定为告警。
+	// Multi-metric determination condition. &&: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
 	ConditionOperator string `pulumi:"conditionOperator"`
-	// 告警条件。数组形式，支持填写多个指标判断语句，最多 10 个。
+	// Alert conditions. Array format; supports multiple metric evaluation statements, up to 10.
 	Conditions []GetRuleCondition `pulumi:"conditions"`
-	// 告警策略绑定的告警通知组 ID。
+	// Alert notification group ID bound to the alert policy.
 	ContactGroupIds []string `pulumi:"contactGroupIds"`
-	// 告警策略创建时间，时间戳格式。
+	// Alert policy creation time, in timestamp format.
 	CreatedAt string `pulumi:"createdAt"`
-	// 告警策略描述信息。
+	// Alert policy description.
 	Description string `pulumi:"description"`
-	// Dimension 配置。
+	// Dimension configuration.
 	DimensionConditions GetRuleDimensionConditions `pulumi:"dimensionConditions"`
-	// 策略生效的截止时间，格式为HH:MM。
+	// Policy expiration time, in HH:MM format.
 	EffectEndAt string `pulumi:"effectEndAt"`
-	// 告警策略生效的开始时间，格式为HH:MM。
+	// Policy start time, in HH:MM format.
 	EffectStartAt string `pulumi:"effectStartAt"`
-	// 告警策略的开启状态。,enable：开启,disable：禁用
+	// Alert policy status. enable: enabled, disable: disabled
 	EnableState string `pulumi:"enableState"`
-	// 触发告警需要持续的周期。单位为分钟。
+	// Duration required to trigger an alert, in minutes.
 	EvaluationCount int `pulumi:"evaluationCount"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 告警级别。critical：严重,warning：警告,notice：通知
+	// Alert level. critical: critical, warning: warning, notice: notification
 	Level string `pulumi:"level"`
-	// 告警分级配置。
+	// Alert severity configuration.
 	LevelConditions []GetRuleLevelCondition `pulumi:"levelConditions"`
-	// 告警策略是否用多指标。true：多指标,false：单指标（默认）。
+	// Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
 	MultipleConditions bool `pulumi:"multipleConditions"`
-	// 监控指标所属的云产品。详情请参见 云产品监控指标 下各产品的 Namespace。
+	// Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
 	Namespace string `pulumi:"namespace"`
-	// 无数据告警。
+	// No data alert.
 	NoData GetRuleNoData `pulumi:"noData"`
-	// 通知策略 ID。
+	// Notification policy ID.
 	NotificationId string `pulumi:"notificationId"`
-	// 通知模版配置。
+	// Notification template configuration.
 	NotifyTemplates []GetRuleNotifyTemplate `pulumi:"notifyTemplates"`
-	// 告警策略检测的资源 ID。
+	// Resource ID detected by the alert policy.
 	OriginalDimensions GetRuleOriginalDimensions `pulumi:"originalDimensions"`
-	// 告警策略所属项目。
+	// Project to which the alert policy belongs.
 	ProjectName string `pulumi:"projectName"`
-	// 告警恢复通知。
+	// Alert recovery notification.
 	RecoveryNotify GetRuleRecoveryNotify `pulumi:"recoveryNotify"`
-	// 云产品所属可用区 ID。
+	// Availability zone ID of the cloud product.
 	Regions []string `pulumi:"regions"`
-	// 告警策略检测的资源类型。
+	// Resource type detected by the alert policy.
 	ResourceType string `pulumi:"resourceType"`
-	// 告警策略 ID。
+	// Alarm policy ID.
 	RuleId string `pulumi:"ruleId"`
-	// 告警策略名称。
+	// Alert policy name.
 	RuleName string `pulumi:"ruleName"`
-	// 告警策略的类型。static：手动选择。dynamic：通过资源名称、项目和标签选择。
+	// Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
 	RuleType string `pulumi:"ruleType"`
-	// 告警发送周期。单位为分钟。支持配置为 5、10、15、30、60、180、360、720、1440。
+	// Alert sending interval, in minutes. Supported values: 5, 10, 15, 30, 60, 180, 360, 720, 1440.
 	SilenceTime int `pulumi:"silenceTime"`
-	// 此策略引用的指标所属的维度。详情请参见 云产品监控指标 下各产品的 SubNamespace。
+	// Dimension of the metric referenced by this policy. For details, see SubNamespace for each product in Cloud Product Monitoring Metrics.
 	SubNamespace string `pulumi:"subNamespace"`
-	// 告警策略绑定 Tag。
+	// Bind alert policy to Tag.
 	Tags []GetRuleTag `pulumi:"tags"`
-	// 告警策略更新时间，时间戳格式。
+	// Alarm policy update time, in timestamp format.
 	UpdatedAt string `pulumi:"updatedAt"`
-	// 告警策略绑定的告警回调 URL 地址。
+	// Alarm callback URL bound to the alarm policy.
 	Webhook string `pulumi:"webhook"`
-	// 告警发生时告警回调 ID 列表。
+	// Alarm callback ID list when an alarm occurs.
 	WebhookIds []string `pulumi:"webhookIds"`
 }
 
@@ -134,62 +134,62 @@ func (o LookupRuleResultOutput) ToLookupRuleResultOutputWithContext(ctx context.
 	return o
 }
 
-// 告警通知的方式。Email：邮件 Phone：电话 SMS：短信 Webhook：告警回调。
+// Alert notification method. Email: email, Phone: phone, SMS: SMS, Webhook: webhook callback.
 func (o LookupRuleResultOutput) AlertMethods() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupRuleResult) []string { return v.AlertMethods }).(pulumi.StringArrayOutput)
 }
 
-// 告警状态。 alerting：告警中 normal：正常。
+// Alert status. alerting: In alert; normal: Normal.
 func (o LookupRuleResultOutput) AlertState() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.AlertState }).(pulumi.StringOutput)
 }
 
-// 多指标判定条件。&&：多个指标同时成立才判定为触发告警,||：任意指标满足条件触发判定为告警。
+// Multi-metric determination condition. &&: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
 func (o LookupRuleResultOutput) ConditionOperator() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.ConditionOperator }).(pulumi.StringOutput)
 }
 
-// 告警条件。数组形式，支持填写多个指标判断语句，最多 10 个。
+// Alert conditions. Array format; supports multiple metric evaluation statements, up to 10.
 func (o LookupRuleResultOutput) Conditions() GetRuleConditionArrayOutput {
 	return o.ApplyT(func(v LookupRuleResult) []GetRuleCondition { return v.Conditions }).(GetRuleConditionArrayOutput)
 }
 
-// 告警策略绑定的告警通知组 ID。
+// Alert notification group ID bound to the alert policy.
 func (o LookupRuleResultOutput) ContactGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupRuleResult) []string { return v.ContactGroupIds }).(pulumi.StringArrayOutput)
 }
 
-// 告警策略创建时间，时间戳格式。
+// Alert policy creation time, in timestamp format.
 func (o LookupRuleResultOutput) CreatedAt() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.CreatedAt }).(pulumi.StringOutput)
 }
 
-// 告警策略描述信息。
+// Alert policy description.
 func (o LookupRuleResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Dimension 配置。
+// Dimension configuration.
 func (o LookupRuleResultOutput) DimensionConditions() GetRuleDimensionConditionsOutput {
 	return o.ApplyT(func(v LookupRuleResult) GetRuleDimensionConditions { return v.DimensionConditions }).(GetRuleDimensionConditionsOutput)
 }
 
-// 策略生效的截止时间，格式为HH:MM。
+// Policy expiration time, in HH:MM format.
 func (o LookupRuleResultOutput) EffectEndAt() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.EffectEndAt }).(pulumi.StringOutput)
 }
 
-// 告警策略生效的开始时间，格式为HH:MM。
+// Policy start time, in HH:MM format.
 func (o LookupRuleResultOutput) EffectStartAt() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.EffectStartAt }).(pulumi.StringOutput)
 }
 
-// 告警策略的开启状态。,enable：开启,disable：禁用
+// Alert policy status. enable: enabled, disable: disabled
 func (o LookupRuleResultOutput) EnableState() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.EnableState }).(pulumi.StringOutput)
 }
 
-// 触发告警需要持续的周期。单位为分钟。
+// Duration required to trigger an alert, in minutes.
 func (o LookupRuleResultOutput) EvaluationCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupRuleResult) int { return v.EvaluationCount }).(pulumi.IntOutput)
 }
@@ -199,107 +199,107 @@ func (o LookupRuleResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 告警级别。critical：严重,warning：警告,notice：通知
+// Alert level. critical: critical, warning: warning, notice: notification
 func (o LookupRuleResultOutput) Level() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.Level }).(pulumi.StringOutput)
 }
 
-// 告警分级配置。
+// Alert severity configuration.
 func (o LookupRuleResultOutput) LevelConditions() GetRuleLevelConditionArrayOutput {
 	return o.ApplyT(func(v LookupRuleResult) []GetRuleLevelCondition { return v.LevelConditions }).(GetRuleLevelConditionArrayOutput)
 }
 
-// 告警策略是否用多指标。true：多指标,false：单指标（默认）。
+// Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
 func (o LookupRuleResultOutput) MultipleConditions() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupRuleResult) bool { return v.MultipleConditions }).(pulumi.BoolOutput)
 }
 
-// 监控指标所属的云产品。详情请参见 云产品监控指标 下各产品的 Namespace。
+// Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
 func (o LookupRuleResultOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// 无数据告警。
+// No data alert.
 func (o LookupRuleResultOutput) NoData() GetRuleNoDataOutput {
 	return o.ApplyT(func(v LookupRuleResult) GetRuleNoData { return v.NoData }).(GetRuleNoDataOutput)
 }
 
-// 通知策略 ID。
+// Notification policy ID.
 func (o LookupRuleResultOutput) NotificationId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.NotificationId }).(pulumi.StringOutput)
 }
 
-// 通知模版配置。
+// Notification template configuration.
 func (o LookupRuleResultOutput) NotifyTemplates() GetRuleNotifyTemplateArrayOutput {
 	return o.ApplyT(func(v LookupRuleResult) []GetRuleNotifyTemplate { return v.NotifyTemplates }).(GetRuleNotifyTemplateArrayOutput)
 }
 
-// 告警策略检测的资源 ID。
+// Resource ID detected by the alert policy.
 func (o LookupRuleResultOutput) OriginalDimensions() GetRuleOriginalDimensionsOutput {
 	return o.ApplyT(func(v LookupRuleResult) GetRuleOriginalDimensions { return v.OriginalDimensions }).(GetRuleOriginalDimensionsOutput)
 }
 
-// 告警策略所属项目。
+// Project to which the alert policy belongs.
 func (o LookupRuleResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 告警恢复通知。
+// Alert recovery notification.
 func (o LookupRuleResultOutput) RecoveryNotify() GetRuleRecoveryNotifyOutput {
 	return o.ApplyT(func(v LookupRuleResult) GetRuleRecoveryNotify { return v.RecoveryNotify }).(GetRuleRecoveryNotifyOutput)
 }
 
-// 云产品所属可用区 ID。
+// Availability zone ID of the cloud product.
 func (o LookupRuleResultOutput) Regions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupRuleResult) []string { return v.Regions }).(pulumi.StringArrayOutput)
 }
 
-// 告警策略检测的资源类型。
+// Resource type detected by the alert policy.
 func (o LookupRuleResultOutput) ResourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.ResourceType }).(pulumi.StringOutput)
 }
 
-// 告警策略 ID。
+// Alarm policy ID.
 func (o LookupRuleResultOutput) RuleId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.RuleId }).(pulumi.StringOutput)
 }
 
-// 告警策略名称。
+// Alert policy name.
 func (o LookupRuleResultOutput) RuleName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.RuleName }).(pulumi.StringOutput)
 }
 
-// 告警策略的类型。static：手动选择。dynamic：通过资源名称、项目和标签选择。
+// Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
 func (o LookupRuleResultOutput) RuleType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.RuleType }).(pulumi.StringOutput)
 }
 
-// 告警发送周期。单位为分钟。支持配置为 5、10、15、30、60、180、360、720、1440。
+// Alert sending interval, in minutes. Supported values: 5, 10, 15, 30, 60, 180, 360, 720, 1440.
 func (o LookupRuleResultOutput) SilenceTime() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupRuleResult) int { return v.SilenceTime }).(pulumi.IntOutput)
 }
 
-// 此策略引用的指标所属的维度。详情请参见 云产品监控指标 下各产品的 SubNamespace。
+// Dimension of the metric referenced by this policy. For details, see SubNamespace for each product in Cloud Product Monitoring Metrics.
 func (o LookupRuleResultOutput) SubNamespace() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.SubNamespace }).(pulumi.StringOutput)
 }
 
-// 告警策略绑定 Tag。
+// Bind alert policy to Tag.
 func (o LookupRuleResultOutput) Tags() GetRuleTagArrayOutput {
 	return o.ApplyT(func(v LookupRuleResult) []GetRuleTag { return v.Tags }).(GetRuleTagArrayOutput)
 }
 
-// 告警策略更新时间，时间戳格式。
+// Alarm policy update time, in timestamp format.
 func (o LookupRuleResultOutput) UpdatedAt() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.UpdatedAt }).(pulumi.StringOutput)
 }
 
-// 告警策略绑定的告警回调 URL 地址。
+// Alarm callback URL bound to the alarm policy.
 func (o LookupRuleResultOutput) Webhook() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.Webhook }).(pulumi.StringOutput)
 }
 
-// 告警发生时告警回调 ID 列表。
+// Alarm callback ID list when an alarm occurs.
 func (o LookupRuleResultOutput) WebhookIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupRuleResult) []string { return v.WebhookIds }).(pulumi.StringArrayOutput)
 }

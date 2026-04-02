@@ -29,10 +29,10 @@ class PermissionSetArgs:
                  session_duration: Optional[pulumi.Input[builtins.int]] = None):
         """
         The set of arguments for constructing a PermissionSet resource.
-        :param pulumi.Input[builtins.str] name: 权限集名称。
-        :param pulumi.Input[builtins.str] description: 权限集描述。
-        :param pulumi.Input[builtins.str] relay_state: 跳转控制台 URL。
-        :param pulumi.Input[builtins.int] session_duration: session 过期时间，单位秒。
+        :param pulumi.Input[builtins.str] name: Permission Set Name
+        :param pulumi.Input[builtins.str] description: Permission Set Description
+        :param pulumi.Input[builtins.str] relay_state: Console Redirect URL
+        :param pulumi.Input[builtins.int] session_duration: Session Expiration Time (seconds)
         """
         pulumi.set(__self__, "name", name)
         if description is not None:
@@ -48,7 +48,7 @@ class PermissionSetArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[builtins.str]:
         """
-        权限集名称。
+        Permission Set Name
         """
         return pulumi.get(self, "name")
 
@@ -60,7 +60,7 @@ class PermissionSetArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        权限集描述。
+        Permission Set Description
         """
         return pulumi.get(self, "description")
 
@@ -81,7 +81,7 @@ class PermissionSetArgs:
     @pulumi.getter(name="relayState")
     def relay_state(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        跳转控制台 URL。
+        Console Redirect URL
         """
         return pulumi.get(self, "relay_state")
 
@@ -93,7 +93,7 @@ class PermissionSetArgs:
     @pulumi.getter(name="sessionDuration")
     def session_duration(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        session 过期时间，单位秒。
+        Session Expiration Time (seconds)
         """
         return pulumi.get(self, "session_duration")
 
@@ -116,14 +116,14 @@ class _PermissionSetState:
                  updated_time: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering PermissionSet resources.
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] description: 权限集描述。
-        :param pulumi.Input[builtins.str] name: 权限集名称。
-        :param pulumi.Input[builtins.str] permission_set_id: 权限集 ID。
-        :param pulumi.Input[builtins.str] relay_state: 跳转控制台 URL。
-        :param pulumi.Input[builtins.int] session_duration: session 过期时间，单位秒。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] status_notifications: 状态通知配置。
-        :param pulumi.Input[builtins.str] updated_time: 更新时间。
+        :param pulumi.Input[builtins.str] created_time: Creation Time
+        :param pulumi.Input[builtins.str] description: Permission Set Description
+        :param pulumi.Input[builtins.str] name: Permission Set Name
+        :param pulumi.Input[builtins.str] permission_set_id: Permission Set ID
+        :param pulumi.Input[builtins.str] relay_state: Console Redirect URL
+        :param pulumi.Input[builtins.int] session_duration: Session Expiration Time (seconds)
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] status_notifications: Status Notification Configuration
+        :param pulumi.Input[builtins.str] updated_time: Update Time
         """
         if created_time is not None:
             pulumi.set(__self__, "created_time", created_time)
@@ -148,7 +148,7 @@ class _PermissionSetState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建时间。
+        Creation Time
         """
         return pulumi.get(self, "created_time")
 
@@ -160,7 +160,7 @@ class _PermissionSetState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        权限集描述。
+        Permission Set Description
         """
         return pulumi.get(self, "description")
 
@@ -172,7 +172,7 @@ class _PermissionSetState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        权限集名称。
+        Permission Set Name
         """
         return pulumi.get(self, "name")
 
@@ -193,7 +193,7 @@ class _PermissionSetState:
     @pulumi.getter(name="permissionSetId")
     def permission_set_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        权限集 ID。
+        Permission Set ID
         """
         return pulumi.get(self, "permission_set_id")
 
@@ -205,7 +205,7 @@ class _PermissionSetState:
     @pulumi.getter(name="relayState")
     def relay_state(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        跳转控制台 URL。
+        Console Redirect URL
         """
         return pulumi.get(self, "relay_state")
 
@@ -217,7 +217,7 @@ class _PermissionSetState:
     @pulumi.getter(name="sessionDuration")
     def session_duration(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        session 过期时间，单位秒。
+        Session Expiration Time (seconds)
         """
         return pulumi.get(self, "session_duration")
 
@@ -229,7 +229,7 @@ class _PermissionSetState:
     @pulumi.getter(name="statusNotifications")
     def status_notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        状态通知配置。
+        Status Notification Configuration
         """
         return pulumi.get(self, "status_notifications")
 
@@ -241,7 +241,7 @@ class _PermissionSetState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        更新时间。
+        Update Time
         """
         return pulumi.get(self, "updated_time")
 
@@ -263,7 +263,7 @@ class PermissionSet(pulumi.CustomResource):
                  session_duration: Optional[pulumi.Input[builtins.int]] = None,
                  __props__=None):
         """
-        当您创建好云身份中心用户后，需要授予用户访问到各账号的登录访问权限。当用户访问火山引擎云资源的权限访问具备可抽象的共性时，如：网络运维权限、安全管理权限等，您可以在云身份中心预置访问权限集作为权限模版，最终基于访问权限集来实现中心化授权。云身份中心将会为您同步分发访问权限集到各个账号，减少企业权限的运维成本。
+        After you create a Cloud Identity Center user, you need to grant the user login access permissions to each account. When access permissions to Volcano Engine cloud resources share common characteristics, such as network operations permissions or security management permissions, you can predefine permission sets in the Cloud Identity Center as templates. You can achieve centralized authorization based on these permission sets. The Cloud Identity Center will synchronize and distribute permission sets to each account, reducing enterprise permission operation and maintenance costs
 
         ## Import
 
@@ -273,10 +273,10 @@ class PermissionSet(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: 权限集描述。
-        :param pulumi.Input[builtins.str] name: 权限集名称。
-        :param pulumi.Input[builtins.str] relay_state: 跳转控制台 URL。
-        :param pulumi.Input[builtins.int] session_duration: session 过期时间，单位秒。
+        :param pulumi.Input[builtins.str] description: Permission Set Description
+        :param pulumi.Input[builtins.str] name: Permission Set Name
+        :param pulumi.Input[builtins.str] relay_state: Console Redirect URL
+        :param pulumi.Input[builtins.int] session_duration: Session Expiration Time (seconds)
         """
         ...
     @overload
@@ -285,7 +285,7 @@ class PermissionSet(pulumi.CustomResource):
                  args: PermissionSetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        当您创建好云身份中心用户后，需要授予用户访问到各账号的登录访问权限。当用户访问火山引擎云资源的权限访问具备可抽象的共性时，如：网络运维权限、安全管理权限等，您可以在云身份中心预置访问权限集作为权限模版，最终基于访问权限集来实现中心化授权。云身份中心将会为您同步分发访问权限集到各个账号，减少企业权限的运维成本。
+        After you create a Cloud Identity Center user, you need to grant the user login access permissions to each account. When access permissions to Volcano Engine cloud resources share common characteristics, such as network operations permissions or security management permissions, you can predefine permission sets in the Cloud Identity Center as templates. You can achieve centralized authorization based on these permission sets. The Cloud Identity Center will synchronize and distribute permission sets to each account, reducing enterprise permission operation and maintenance costs
 
         ## Import
 
@@ -359,14 +359,14 @@ class PermissionSet(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] description: 权限集描述。
-        :param pulumi.Input[builtins.str] name: 权限集名称。
-        :param pulumi.Input[builtins.str] permission_set_id: 权限集 ID。
-        :param pulumi.Input[builtins.str] relay_state: 跳转控制台 URL。
-        :param pulumi.Input[builtins.int] session_duration: session 过期时间，单位秒。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] status_notifications: 状态通知配置。
-        :param pulumi.Input[builtins.str] updated_time: 更新时间。
+        :param pulumi.Input[builtins.str] created_time: Creation Time
+        :param pulumi.Input[builtins.str] description: Permission Set Description
+        :param pulumi.Input[builtins.str] name: Permission Set Name
+        :param pulumi.Input[builtins.str] permission_set_id: Permission Set ID
+        :param pulumi.Input[builtins.str] relay_state: Console Redirect URL
+        :param pulumi.Input[builtins.int] session_duration: Session Expiration Time (seconds)
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] status_notifications: Status Notification Configuration
+        :param pulumi.Input[builtins.str] updated_time: Update Time
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -387,7 +387,7 @@ class PermissionSet(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        创建时间。
+        Creation Time
         """
         return pulumi.get(self, "created_time")
 
@@ -395,7 +395,7 @@ class PermissionSet(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        权限集描述。
+        Permission Set Description
         """
         return pulumi.get(self, "description")
 
@@ -403,7 +403,7 @@ class PermissionSet(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[builtins.str]:
         """
-        权限集名称。
+        Permission Set Name
         """
         return pulumi.get(self, "name")
 
@@ -416,7 +416,7 @@ class PermissionSet(pulumi.CustomResource):
     @pulumi.getter(name="permissionSetId")
     def permission_set_id(self) -> pulumi.Output[builtins.str]:
         """
-        权限集 ID。
+        Permission Set ID
         """
         return pulumi.get(self, "permission_set_id")
 
@@ -424,7 +424,7 @@ class PermissionSet(pulumi.CustomResource):
     @pulumi.getter(name="relayState")
     def relay_state(self) -> pulumi.Output[builtins.str]:
         """
-        跳转控制台 URL。
+        Console Redirect URL
         """
         return pulumi.get(self, "relay_state")
 
@@ -432,7 +432,7 @@ class PermissionSet(pulumi.CustomResource):
     @pulumi.getter(name="sessionDuration")
     def session_duration(self) -> pulumi.Output[builtins.int]:
         """
-        session 过期时间，单位秒。
+        Session Expiration Time (seconds)
         """
         return pulumi.get(self, "session_duration")
 
@@ -440,7 +440,7 @@ class PermissionSet(pulumi.CustomResource):
     @pulumi.getter(name="statusNotifications")
     def status_notifications(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        状态通知配置。
+        Status Notification Configuration
         """
         return pulumi.get(self, "status_notifications")
 
@@ -448,7 +448,7 @@ class PermissionSet(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        更新时间。
+        Update Time
         """
         return pulumi.get(self, "updated_time")
 

@@ -17,14 +17,14 @@ public final class DefaultNodePoolNodeConfigSystemVolumeArgs extends com.pulumi.
     public static final DefaultNodePoolNodeConfigSystemVolumeArgs Empty = new DefaultNodePoolNodeConfigSystemVolumeArgs();
 
     /**
-     * 放置组Id
+     * Placement group ID
      * 
      */
     @Import(name="placementGroupId")
     private @Nullable Output<String> placementGroupId;
 
     /**
-     * @return 放置组Id
+     * @return Placement group ID
      * 
      */
     public Optional<Output<String>> placementGroupId() {
@@ -32,14 +32,14 @@ public final class DefaultNodePoolNodeConfigSystemVolumeArgs extends com.pulumi.
     }
 
     /**
-     * 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+     * Cloud disk capacity, in GiB. Value description: default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
      * 
      */
     @Import(name="size")
     private @Nullable Output<Integer> size;
 
     /**
-     * @return 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+     * @return Cloud disk capacity, in GiB. Value description: default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
      * 
      */
     public Optional<Output<Integer>> size() {
@@ -47,14 +47,14 @@ public final class DefaultNodePoolNodeConfigSystemVolumeArgs extends com.pulumi.
     }
 
     /**
-     * 放置子组
+     * Placement subgroup
      * 
      */
     @Import(name="subgroupNumber")
     private @Nullable Output<Integer> subgroupNumber;
 
     /**
-     * @return 放置子组
+     * @return Placement subgroup
      * 
      */
     public Optional<Output<Integer>> subgroupNumber() {
@@ -62,14 +62,14 @@ public final class DefaultNodePoolNodeConfigSystemVolumeArgs extends com.pulumi.
     }
 
     /**
-     * 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+     * Cloud disk type: ESSD*PL0: (default) Ultra SSD with performance level PL0. ESSD*FlexPL: Ultra SSD with performance level PL1
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+     * @return Cloud disk type: ESSD*PL0: (default) Ultra SSD with performance level PL0. ESSD*FlexPL: Ultra SSD with performance level PL1
      * 
      */
     public Optional<Output<String>> type() {
@@ -104,7 +104,7 @@ public final class DefaultNodePoolNodeConfigSystemVolumeArgs extends com.pulumi.
         }
 
         /**
-         * @param placementGroupId 放置组Id
+         * @param placementGroupId Placement group ID
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class DefaultNodePoolNodeConfigSystemVolumeArgs extends com.pulumi.
         }
 
         /**
-         * @param placementGroupId 放置组Id
+         * @param placementGroupId Placement group ID
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class DefaultNodePoolNodeConfigSystemVolumeArgs extends com.pulumi.
         }
 
         /**
-         * @param size 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+         * @param size Cloud disk capacity, in GiB. Value description: default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class DefaultNodePoolNodeConfigSystemVolumeArgs extends com.pulumi.
         }
 
         /**
-         * @param size 云盘容量，单位 GiB，取值说明：默认值：40GiB。极速型 SSD（ESSD*PL0，ESSD*FlexPL）：40~2048GiB。
+         * @param size Cloud disk capacity, in GiB. Value description: default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class DefaultNodePoolNodeConfigSystemVolumeArgs extends com.pulumi.
         }
 
         /**
-         * @param subgroupNumber 放置子组
+         * @param subgroupNumber Placement subgroup
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class DefaultNodePoolNodeConfigSystemVolumeArgs extends com.pulumi.
         }
 
         /**
-         * @param subgroupNumber 放置子组
+         * @param subgroupNumber Placement subgroup
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class DefaultNodePoolNodeConfigSystemVolumeArgs extends com.pulumi.
         }
 
         /**
-         * @param type 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+         * @param type Cloud disk type: ESSD*PL0: (default) Ultra SSD with performance level PL0. ESSD*FlexPL: Ultra SSD with performance level PL1
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class DefaultNodePoolNodeConfigSystemVolumeArgs extends com.pulumi.
         }
 
         /**
-         * @param type 云盘类型：ESSD*PL0：（默认值）性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+         * @param type Cloud disk type: ESSD*PL0: (default) Ultra SSD with performance level PL0. ESSD*FlexPL: Ultra SSD with performance level PL1
          * 
          * @return builder
          * 

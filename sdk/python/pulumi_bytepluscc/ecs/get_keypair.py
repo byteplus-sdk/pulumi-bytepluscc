@@ -67,7 +67,7 @@ class GetKeypairResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        密钥对创建时间。
+        Creation time of the key pair.
         """
         return pulumi.get(self, "created_time")
 
@@ -75,7 +75,7 @@ class GetKeypairResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        密钥对的描述，默认值为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”长度限制在255个字符以内。
+        Description of the key pair. The default value is an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, period ('.'), space, underscore ('_'), hyphen ('-'), equals sign ('='), English comma (','), Chinese comma ('，'), and Chinese period ('。'). Length must not exceed 255 characters.
         """
         return pulumi.get(self, "description")
 
@@ -83,7 +83,7 @@ class GetKeypairResult:
     @pulumi.getter(name="fingerPrint")
     def finger_print(self) -> builtins.str:
         """
-        密钥对的指纹。根据RFC4716定义的公钥指纹格式，采用MD5信息摘要算法。
+        Fingerprint of the key pair. The public key fingerprint format is defined by RFC4716 and uses the MD5 hash algorithm.
         """
         return pulumi.get(self, "finger_print")
 
@@ -99,7 +99,7 @@ class GetKeypairResult:
     @pulumi.getter(name="instanceIds")
     def instance_ids(self) -> Sequence[builtins.str]:
         """
-        操作的实例ID。
+        Instance ID for the operation.
         """
         return pulumi.get(self, "instance_ids")
 
@@ -107,7 +107,7 @@ class GetKeypairResult:
     @pulumi.getter(name="keyPairId")
     def key_pair_id(self) -> builtins.str:
         """
-        密钥对唯一ID。
+        Unique ID of the key pair.
         """
         return pulumi.get(self, "key_pair_id")
 
@@ -115,7 +115,7 @@ class GetKeypairResult:
     @pulumi.getter(name="keyPairName")
     def key_pair_name(self) -> builtins.str:
         """
-        密钥对名称。不可与已有名称重复。长度限制在 2～64 个字符之间。允许使用点号“.”分隔字符成多段，每段允许使用大小写字母、数字或连字符“-”。不能以“-”和“.”开头或结尾，不能连续使用“-”或者“.”。
+        Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods ('.') can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens ('-'). The name cannot start or end with '-' or '.', and cannot contain consecutive '-' or '.'.
         """
         return pulumi.get(self, "key_pair_name")
 
@@ -123,7 +123,7 @@ class GetKeypairResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        资源所属项目，一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+        Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore ('_'), period ('.'), and hyphen ('-'). Length must not exceed 64 characters.
         """
         return pulumi.get(self, "project_name")
 
@@ -131,7 +131,7 @@ class GetKeypairResult:
     @pulumi.getter(name="publicKey")
     def public_key(self) -> builtins.str:
         """
-        密钥对的公钥信息。
+        Public key information of the key pair.
         """
         return pulumi.get(self, "public_key")
 
@@ -139,7 +139,7 @@ class GetKeypairResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetKeypairTagResult']:
         """
-        密钥对的标签。
+        Tags of the key pair.
         """
         return pulumi.get(self, "tags")
 
@@ -147,7 +147,7 @@ class GetKeypairResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        密钥对更新时间。
+        Update time of the key pair.
         """
         return pulumi.get(self, "updated_time")
 

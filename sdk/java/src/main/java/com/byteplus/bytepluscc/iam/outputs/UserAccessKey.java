@@ -12,98 +12,98 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UserAccessKey {
     /**
-     * @return 访问密钥ID。
+     * @return Access key ID.
      * 
      */
     private @Nullable String accessKeyId;
     /**
-     * @return 访问密钥创建时间。
+     * @return Access key creation time.
      * 
      */
     private @Nullable String createDate;
     /**
-     * @return 最近一次使用的服务区域。
+     * @return Most recently used service region.
      * 
      */
     private @Nullable String region;
     /**
-     * @return 访问密钥最近一次使用时间。
+     * @return Last used time of the access key.
      * 
      */
     private @Nullable String requestTime;
     /**
-     * @return 最近一次使用的服务名称。
+     * @return Name of the most recently used service.
      * 
      */
     private @Nullable String service;
     /**
-     * @return 访问密钥状态。Active代表启用，Inactive代表禁用。
+     * @return Access key status. &#39;Active&#39; means enabled, &#39;Inactive&#39; means disabled.
      * 
      */
     private @Nullable String status;
     /**
-     * @return 访问密钥更新时间。
+     * @return Access key update time.
      * 
      */
     private @Nullable String updateDate;
     /**
-     * @return 访问密钥Secret。
+     * @return Access key Secret.
      * 
      */
     private @Nullable String userName;
 
     private UserAccessKey() {}
     /**
-     * @return 访问密钥ID。
+     * @return Access key ID.
      * 
      */
     public Optional<String> accessKeyId() {
         return Optional.ofNullable(this.accessKeyId);
     }
     /**
-     * @return 访问密钥创建时间。
+     * @return Access key creation time.
      * 
      */
     public Optional<String> createDate() {
         return Optional.ofNullable(this.createDate);
     }
     /**
-     * @return 最近一次使用的服务区域。
+     * @return Most recently used service region.
      * 
      */
     public Optional<String> region() {
         return Optional.ofNullable(this.region);
     }
     /**
-     * @return 访问密钥最近一次使用时间。
+     * @return Last used time of the access key.
      * 
      */
     public Optional<String> requestTime() {
         return Optional.ofNullable(this.requestTime);
     }
     /**
-     * @return 最近一次使用的服务名称。
+     * @return Name of the most recently used service.
      * 
      */
     public Optional<String> service() {
         return Optional.ofNullable(this.service);
     }
     /**
-     * @return 访问密钥状态。Active代表启用，Inactive代表禁用。
+     * @return Access key status. &#39;Active&#39; means enabled, &#39;Inactive&#39; means disabled.
      * 
      */
     public Optional<String> status() {
         return Optional.ofNullable(this.status);
     }
     /**
-     * @return 访问密钥更新时间。
+     * @return Access key update time.
      * 
      */
     public Optional<String> updateDate() {
         return Optional.ofNullable(this.updateDate);
     }
     /**
-     * @return 访问密钥Secret。
+     * @return Access key Secret.
      * 
      */
     public Optional<String> userName() {

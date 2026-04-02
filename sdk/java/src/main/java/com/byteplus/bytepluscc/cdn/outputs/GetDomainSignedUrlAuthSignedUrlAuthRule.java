@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainSignedUrlAuthSignedUrlAuthRule {
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     private GetDomainSignedUrlAuthSignedUrlAuthRuleCondition condition;
     /**
-     * @return 表示签名计算的配置。
+     * @return Indicates the configuration for signature calculation.
      * 
      */
     private GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthAction signedUrlAuthAction;
 
     private GetDomainSignedUrlAuthSignedUrlAuthRule() {}
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public GetDomainSignedUrlAuthSignedUrlAuthRuleCondition condition() {
         return this.condition;
     }
     /**
-     * @return 表示签名计算的配置。
+     * @return Indicates the configuration for signature calculation.
      * 
      */
     public GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthAction signedUrlAuthAction() {

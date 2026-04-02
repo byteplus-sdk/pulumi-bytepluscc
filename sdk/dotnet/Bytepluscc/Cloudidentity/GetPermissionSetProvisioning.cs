@@ -65,7 +65,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     public sealed class GetPermissionSetProvisioningResult
     {
         /// <summary>
-        /// 创建时间。
+        /// Creation time
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
@@ -73,27 +73,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 权限集 ID。
+        /// Permission set ID
         /// </summary>
         public readonly string PermissionSetId;
         /// <summary>
-        /// 权限集名。
+        /// Permission set name
         /// </summary>
         public readonly string PermissionSetName;
         /// <summary>
-        /// 权限集状态 Running：运行中,Reprovision Required：需要重新部署,Provision Failed：部署失败,Provisioned：已部署
+        /// Permission set status Running: In progress, Reprovision Required: Redeployment required, Provision Failed: Deployment failed, Provisioned: Deployed
         /// </summary>
         public readonly string ProvisioningStatus;
         /// <summary>
-        /// 授权的账号 ID。
+        /// Authorized account ID
         /// </summary>
         public readonly string TargetId;
         /// <summary>
-        /// 账号名。
+        /// Account name
         /// </summary>
         public readonly string TargetName;
         /// <summary>
-        /// 更新时间。
+        /// Update time
         /// </summary>
         public readonly string UpdatedTime;
 

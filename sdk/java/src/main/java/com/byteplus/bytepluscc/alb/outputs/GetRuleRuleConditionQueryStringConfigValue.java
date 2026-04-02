@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetRuleRuleConditionQueryStringConfigValue {
     /**
-     * @return 查询字符串键。
+     * @return Query string key.
      * 
      */
     private String key;
     /**
-     * @return 查询字符串值。
+     * @return Query string value.
      * 
      */
     private String value;
 
     private GetRuleRuleConditionQueryStringConfigValue() {}
     /**
-     * @return 查询字符串键。
+     * @return Query string key.
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return 查询字符串值。
+     * @return Query string value.
      * 
      */
     public String value() {

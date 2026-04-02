@@ -19,14 +19,14 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
     public static final EndpointPublicAddressArgs Empty = new EndpointPublicAddressArgs();
 
     /**
-     * 弹性公网 IP 的 ID。
+     * ID of the Elastic Public IP
      * 
      */
     @Import(name="eipId", required=true)
     private Output<String> eipId;
 
     /**
-     * @return 弹性公网 IP 的 ID。
+     * @return ID of the Elastic Public IP
      * 
      */
     public Output<String> eipId() {
@@ -34,14 +34,14 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 实例 ID。
+     * Instance ID
      * 
      */
     @Import(name="instanceId", required=true)
     private Output<String> instanceId;
 
     /**
-     * @return 实例 ID。
+     * @return Instance ID
      * 
      */
     public Output<String> instanceId() {
@@ -49,14 +49,14 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 修改后的连接地址前缀。连接地址前缀需同时满足如下要求：由小写字母、数字或连字符（-）组成。以字母开头，字母或数字结尾。长度为 8~53 个字符。修改后的连接地址需要保证全局唯一，不可以与火山引擎中任何地域下的任何连接地址重名。
+     * Modified connection address prefix. The connection address prefix must meet the following requirements: Consist of lowercase letters, numbers, or hyphens (-). Start with a letter and end with a letter or number. Length must be 8–53 characters. The modified connection address must be globally unique and must not duplicate any connection address in any region of Volcano Engine.
      * 
      */
     @Import(name="newAddressPrefix")
     private @Nullable Output<String> newAddressPrefix;
 
     /**
-     * @return 修改后的连接地址前缀。连接地址前缀需同时满足如下要求：由小写字母、数字或连字符（-）组成。以字母开头，字母或数字结尾。长度为 8~53 个字符。修改后的连接地址需要保证全局唯一，不可以与火山引擎中任何地域下的任何连接地址重名。
+     * @return Modified connection address prefix. The connection address prefix must meet the following requirements: Consist of lowercase letters, numbers, or hyphens (-). Start with a letter and end with a letter or number. Length must be 8–53 characters. The modified connection address must be globally unique and must not duplicate any connection address in any region of Volcano Engine.
      * 
      */
     public Optional<Output<String>> newAddressPrefix() {
@@ -64,14 +64,14 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 端口号。
+     * Port number
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return 端口号。
+     * @return Port number
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -79,14 +79,14 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 是否升级连接地址的域名后缀。取值范围如下：true：升级。false（默认值）：不升级。注意当需要升级域名后缀（即 UpgradeRegionDomain 为 true）时，必须同时传入连接地址前缀信息（即 Address 参数不允许为空。）升级域名后缀后，原有的连接会断开，请及时修改客户端的连接信息，使用新的连接地址来连接实例。连接实例的具体方法，请参见连接实例。连接地址域名后缀升级后不支持再降级回原来的后缀，请谨慎操作。升级后的连接地址域名后缀会自动包含实例所属地域信息，旧的连接地址会保留 12 小时，12 小时保留期到期后会被自动释放。更多详情，请参见升级域名后缀。
+     * Whether to upgrade the domain suffix of the connection address. Valid values: true: Upgrade. false (default): Do not upgrade. Note: When upgrading the domain suffix (i.e., UpgradeRegionDomain is true), you must also provide the connection address prefix (i.e., the Address parameter cannot be empty). After upgrading the domain suffix, existing connections will be disconnected. Please promptly update your client connection information and use the new connection address to connect to the instance. For details on connecting to an instance, see Connect to Instance. Once the domain suffix of the connection address is upgraded, it cannot be downgraded to the original suffix. Please proceed with caution. The upgraded domain suffix will automatically include the region information of the instance. The old connection address will be retained for 12 hours and will be automatically released after the retention period expires. For more details, see Upgrade Domain Suffix.
      * 
      */
     @Import(name="upgradeRegionDomain")
     private @Nullable Output<Boolean> upgradeRegionDomain;
 
     /**
-     * @return 是否升级连接地址的域名后缀。取值范围如下：true：升级。false（默认值）：不升级。注意当需要升级域名后缀（即 UpgradeRegionDomain 为 true）时，必须同时传入连接地址前缀信息（即 Address 参数不允许为空。）升级域名后缀后，原有的连接会断开，请及时修改客户端的连接信息，使用新的连接地址来连接实例。连接实例的具体方法，请参见连接实例。连接地址域名后缀升级后不支持再降级回原来的后缀，请谨慎操作。升级后的连接地址域名后缀会自动包含实例所属地域信息，旧的连接地址会保留 12 小时，12 小时保留期到期后会被自动释放。更多详情，请参见升级域名后缀。
+     * @return Whether to upgrade the domain suffix of the connection address. Valid values: true: Upgrade. false (default): Do not upgrade. Note: When upgrading the domain suffix (i.e., UpgradeRegionDomain is true), you must also provide the connection address prefix (i.e., the Address parameter cannot be empty). After upgrading the domain suffix, existing connections will be disconnected. Please promptly update your client connection information and use the new connection address to connect to the instance. For details on connecting to an instance, see Connect to Instance. Once the domain suffix of the connection address is upgraded, it cannot be downgraded to the original suffix. Please proceed with caution. The upgraded domain suffix will automatically include the region information of the instance. The old connection address will be retained for 12 hours and will be automatically released after the retention period expires. For more details, see Upgrade Domain Suffix.
      * 
      */
     public Optional<Output<Boolean>> upgradeRegionDomain() {
@@ -122,7 +122,7 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param eipId 弹性公网 IP 的 ID。
+         * @param eipId ID of the Elastic Public IP
          * 
          * @return builder
          * 
@@ -133,7 +133,7 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param eipId 弹性公网 IP 的 ID。
+         * @param eipId ID of the Elastic Public IP
          * 
          * @return builder
          * 
@@ -143,7 +143,7 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID
          * 
          * @return builder
          * 
@@ -154,7 +154,7 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param newAddressPrefix 修改后的连接地址前缀。连接地址前缀需同时满足如下要求：由小写字母、数字或连字符（-）组成。以字母开头，字母或数字结尾。长度为 8~53 个字符。修改后的连接地址需要保证全局唯一，不可以与火山引擎中任何地域下的任何连接地址重名。
+         * @param newAddressPrefix Modified connection address prefix. The connection address prefix must meet the following requirements: Consist of lowercase letters, numbers, or hyphens (-). Start with a letter and end with a letter or number. Length must be 8–53 characters. The modified connection address must be globally unique and must not duplicate any connection address in any region of Volcano Engine.
          * 
          * @return builder
          * 
@@ -175,7 +175,7 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param newAddressPrefix 修改后的连接地址前缀。连接地址前缀需同时满足如下要求：由小写字母、数字或连字符（-）组成。以字母开头，字母或数字结尾。长度为 8~53 个字符。修改后的连接地址需要保证全局唯一，不可以与火山引擎中任何地域下的任何连接地址重名。
+         * @param newAddressPrefix Modified connection address prefix. The connection address prefix must meet the following requirements: Consist of lowercase letters, numbers, or hyphens (-). Start with a letter and end with a letter or number. Length must be 8–53 characters. The modified connection address must be globally unique and must not duplicate any connection address in any region of Volcano Engine.
          * 
          * @return builder
          * 
@@ -185,7 +185,7 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param port 端口号。
+         * @param port Port number
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param port 端口号。
+         * @param port Port number
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param upgradeRegionDomain 是否升级连接地址的域名后缀。取值范围如下：true：升级。false（默认值）：不升级。注意当需要升级域名后缀（即 UpgradeRegionDomain 为 true）时，必须同时传入连接地址前缀信息（即 Address 参数不允许为空。）升级域名后缀后，原有的连接会断开，请及时修改客户端的连接信息，使用新的连接地址来连接实例。连接实例的具体方法，请参见连接实例。连接地址域名后缀升级后不支持再降级回原来的后缀，请谨慎操作。升级后的连接地址域名后缀会自动包含实例所属地域信息，旧的连接地址会保留 12 小时，12 小时保留期到期后会被自动释放。更多详情，请参见升级域名后缀。
+         * @param upgradeRegionDomain Whether to upgrade the domain suffix of the connection address. Valid values: true: Upgrade. false (default): Do not upgrade. Note: When upgrading the domain suffix (i.e., UpgradeRegionDomain is true), you must also provide the connection address prefix (i.e., the Address parameter cannot be empty). After upgrading the domain suffix, existing connections will be disconnected. Please promptly update your client connection information and use the new connection address to connect to the instance. For details on connecting to an instance, see Connect to Instance. Once the domain suffix of the connection address is upgraded, it cannot be downgraded to the original suffix. Please proceed with caution. The upgraded domain suffix will automatically include the region information of the instance. The old connection address will be retained for 12 hours and will be automatically released after the retention period expires. For more details, see Upgrade Domain Suffix.
          * 
          * @return builder
          * 
@@ -217,7 +217,7 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param upgradeRegionDomain 是否升级连接地址的域名后缀。取值范围如下：true：升级。false（默认值）：不升级。注意当需要升级域名后缀（即 UpgradeRegionDomain 为 true）时，必须同时传入连接地址前缀信息（即 Address 参数不允许为空。）升级域名后缀后，原有的连接会断开，请及时修改客户端的连接信息，使用新的连接地址来连接实例。连接实例的具体方法，请参见连接实例。连接地址域名后缀升级后不支持再降级回原来的后缀，请谨慎操作。升级后的连接地址域名后缀会自动包含实例所属地域信息，旧的连接地址会保留 12 小时，12 小时保留期到期后会被自动释放。更多详情，请参见升级域名后缀。
+         * @param upgradeRegionDomain Whether to upgrade the domain suffix of the connection address. Valid values: true: Upgrade. false (default): Do not upgrade. Note: When upgrading the domain suffix (i.e., UpgradeRegionDomain is true), you must also provide the connection address prefix (i.e., the Address parameter cannot be empty). After upgrading the domain suffix, existing connections will be disconnected. Please promptly update your client connection information and use the new connection address to connect to the instance. For details on connecting to an instance, see Connect to Instance. Once the domain suffix of the connection address is upgraded, it cannot be downgraded to the original suffix. Please proceed with caution. The upgraded domain suffix will automatically include the region information of the instance. The old connection address will be retained for 12 hours and will be automatically released after the retention period expires. For more details, see Upgrade Domain Suffix.
          * 
          * @return builder
          * 

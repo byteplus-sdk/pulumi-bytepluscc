@@ -16,14 +16,14 @@ public final class VpcAssociateCenArgs extends com.pulumi.resources.ResourceArgs
     public static final VpcAssociateCenArgs Empty = new VpcAssociateCenArgs();
 
     /**
-     * CEN的ID。
+     * ID of the CEN.
      * 
      */
     @Import(name="cenId")
     private @Nullable Output<String> cenId;
 
     /**
-     * @return CEN的ID。
+     * @return ID of the CEN.
      * 
      */
     public Optional<Output<String>> cenId() {
@@ -31,14 +31,14 @@ public final class VpcAssociateCenArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * CEN的用户ID。
+     * User ID of the CEN.
      * 
      */
     @Import(name="cenOwnerId")
     private @Nullable Output<String> cenOwnerId;
 
     /**
-     * @return CEN的用户ID。
+     * @return User ID of the CEN.
      * 
      */
     public Optional<Output<String>> cenOwnerId() {
@@ -46,14 +46,14 @@ public final class VpcAssociateCenArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * VPC在CEN中的状态。Attaching：加载中，Attached：已加载
+     * Status of the VPC in the CEN. Loading: loading, Loaded: loaded
      * 
      */
     @Import(name="cenStatus")
     private @Nullable Output<String> cenStatus;
 
     /**
-     * @return VPC在CEN中的状态。Attaching：加载中，Attached：已加载
+     * @return Status of the VPC in the CEN. Loading: loading, Loaded: loaded
      * 
      */
     public Optional<Output<String>> cenStatus() {
@@ -87,7 +87,7 @@ public final class VpcAssociateCenArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param cenId CEN的ID。
+         * @param cenId ID of the CEN.
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class VpcAssociateCenArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param cenId CEN的ID。
+         * @param cenId ID of the CEN.
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class VpcAssociateCenArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param cenOwnerId CEN的用户ID。
+         * @param cenOwnerId User ID of the CEN.
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class VpcAssociateCenArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param cenOwnerId CEN的用户ID。
+         * @param cenOwnerId User ID of the CEN.
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class VpcAssociateCenArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param cenStatus VPC在CEN中的状态。Attaching：加载中，Attached：已加载
+         * @param cenStatus Status of the VPC in the CEN. Loading: loading, Loaded: loaded
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class VpcAssociateCenArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param cenStatus VPC在CEN中的状态。Attaching：加载中，Attached：已加载
+         * @param cenStatus Status of the VPC in the CEN. Loading: loading, Loaded: loaded
          * 
          * @return builder
          * 

@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainRedirectionRewriteRedirectionRule {
     /**
-     * @return 表示一个 URL 重定向改写的规则。
+     * @return Indicates a URL redirect rewrite rule
      * 
      */
     private GetDomainRedirectionRewriteRedirectionRuleRedirectionAction redirectionAction;
 
     private GetDomainRedirectionRewriteRedirectionRule() {}
     /**
-     * @return 表示一个 URL 重定向改写的规则。
+     * @return Indicates a URL redirect rewrite rule
      * 
      */
     public GetDomainRedirectionRewriteRedirectionRuleRedirectionAction redirectionAction() {

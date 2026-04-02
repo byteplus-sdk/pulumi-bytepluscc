@@ -14,31 +14,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Inputs
     public sealed class LoadBalancerEipBillingConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// EIP的带宽峰值，单位为Mbps。
+        /// Peak bandwidth of EIP, in Mbps.
         /// </summary>
         [Input("bandwidth")]
         public Input<int>? Bandwidth { get; set; }
 
         /// <summary>
-        /// EIP的计费方式，2为按带宽计费，3为按流量计费。
+        /// EIP billing method: 2 for bandwidth-based, 3 for traffic-based.
         /// </summary>
         [Input("billingType")]
         public Input<int>? BillingType { get; set; }
 
         /// <summary>
-        /// 公网IP的线路类型，BGP表示多线。
+        /// Line type of the public IP, BGP indicates multi-line.
         /// </summary>
         [Input("isp")]
         public Input<string>? Isp { get; set; }
 
         /// <summary>
-        /// 创建ALB公网实例时，如果使用了IP防护资源，则需要指定一个DDoS原生防护实例的ID。
+        /// When creating an ALB public instance, if IP protection resources are used, you must specify a DDoS native protection instance ID.
         /// </summary>
         [Input("securityProtectionInstanceId")]
         public Input<int>? SecurityProtectionInstanceId { get; set; }
 
         /// <summary>
-        /// 创建 ALB 公网实例时，ALB 允许购买多个公网IP防护资源。公网 IP 防护资源的具体规则如下：多个防护资源之间用半角逗号（,）分隔。防护资源的取值如下：AntiDDoS_Enhanced：您申请的是增强防护类型的公网 IP，可以将此 IP 加入到 DDoS 原生防护实例。不填：您申请的是基础防护类型的公网 IP 。
+        /// When creating a public ALB instance, ALB allows you to purchase multiple public IP protection resources. The rules for public IP protection resources are as follows: separate multiple protection resources with a comma (,). The values for protection resources are: AntiDDoS_Enhanced: You are requesting an enhanced protection type public IP, which can be added to a native DDoS protection instance. If not specified: You are requesting a basic protection type public IP.
         /// </summary>
         [Input("securityProtectionTypes")]
         public Input<string>? SecurityProtectionTypes { get; set; }

@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetClusterClusterConfigApiServerEndpoints {
     /**
-     * @return 集群 API Server 私网的 IPv4 地址。
+     * @return Cluster API Server private IPv4 address.
      * 
      */
     private GetClusterClusterConfigApiServerEndpointsPrivateIp privateIp;
     /**
-     * @return 集群 API Server 公网的 IPv4 地址。
+     * @return Cluster API Server public IPv4 address
      * 
      */
     private GetClusterClusterConfigApiServerEndpointsPublicIp publicIp;
 
     private GetClusterClusterConfigApiServerEndpoints() {}
     /**
-     * @return 集群 API Server 私网的 IPv4 地址。
+     * @return Cluster API Server private IPv4 address.
      * 
      */
     public GetClusterClusterConfigApiServerEndpointsPrivateIp privateIp() {
         return this.privateIp;
     }
     /**
-     * @return 集群 API Server 公网的 IPv4 地址。
+     * @return Cluster API Server public IPv4 address
      * 
      */
     public GetClusterClusterConfigApiServerEndpointsPublicIp publicIp() {

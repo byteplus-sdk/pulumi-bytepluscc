@@ -14,7 +14,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * 目的地址转换。即当中转IP及端口被访问时，私网NAT网关将访问请求中的目的地址和端口替换成云服务器的私网IP及端口后，进行转发。
+ * Destination address translation. When the transit IP and port are accessed, the private NAT gateway replaces the destination address and port in the request with the private IP and port of the cloud server, then forwards the request.
  * 
  * ## Example Usage
  * 
@@ -68,140 +68,140 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:natgateway/dnatentry:Dnatentry")
 public class Dnatentry extends com.pulumi.resources.CustomResource {
     /**
-     * DNAT规则的ID。
+     * ID of the DNAT rule.
      * 
      */
     @Export(name="dnatEntryId", refs={String.class}, tree="[0]")
     private Output<String> dnatEntryId;
 
     /**
-     * @return DNAT规则的ID。
+     * @return ID of the DNAT rule.
      * 
      */
     public Output<String> dnatEntryId() {
         return this.dnatEntryId;
     }
     /**
-     * DNAT规则的名称。
+     * Name of the DNAT rule.
      * 
      */
     @Export(name="dnatEntryName", refs={String.class}, tree="[0]")
     private Output<String> dnatEntryName;
 
     /**
-     * @return DNAT规则的名称。
+     * @return Name of the DNAT rule.
      * 
      */
     public Output<String> dnatEntryName() {
         return this.dnatEntryName;
     }
     /**
-     * NAT网关用于网络地址转换的IP地址。当NAT网关为公网NAT网关时，传入其绑定的公网IP地址。当NAT网关为私网NAT网关时，传入其中转IP地址。
+     * IP address used by the NAT gateway for network address translation. If the NAT gateway is a public NAT gateway, enter its bound public IP address. If the NAT gateway is a private NAT gateway, enter its transit IP address.
      * 
      */
     @Export(name="externalIp", refs={String.class}, tree="[0]")
     private Output<String> externalIp;
 
     /**
-     * @return NAT网关用于网络地址转换的IP地址。当NAT网关为公网NAT网关时，传入其绑定的公网IP地址。当NAT网关为私网NAT网关时，传入其中转IP地址。
+     * @return IP address used by the NAT gateway for network address translation. If the NAT gateway is a public NAT gateway, enter its bound public IP address. If the NAT gateway is a private NAT gateway, enter its transit IP address.
      * 
      */
     public Output<String> externalIp() {
         return this.externalIp;
     }
     /**
-     * 接收来自公网外部请求的端口或端口段。
+     * Port or port range that receives requests from the public network.
      * 
      */
     @Export(name="externalPort", refs={String.class}, tree="[0]")
     private Output<String> externalPort;
 
     /**
-     * @return 接收来自公网外部请求的端口或端口段。
+     * @return Port or port range that receives requests from the public network.
      * 
      */
     public Output<String> externalPort() {
         return this.externalPort;
     }
     /**
-     * 云服务器实例的私网IP。
+     * Private IP address of the cloud server instance.
      * 
      */
     @Export(name="internalIp", refs={String.class}, tree="[0]")
     private Output<String> internalIp;
 
     /**
-     * @return 云服务器实例的私网IP。
+     * @return Private IP address of the cloud server instance.
      * 
      */
     public Output<String> internalIp() {
         return this.internalIp;
     }
     /**
-     * 云服务器实例私网IP的端口或端口段。
+     * Port or port range of the private IP address of the cloud server instance.
      * 
      */
     @Export(name="internalPort", refs={String.class}, tree="[0]")
     private Output<String> internalPort;
 
     /**
-     * @return 云服务器实例私网IP的端口或端口段。
+     * @return Port or port range of the private IP address of the cloud server instance.
      * 
      */
     public Output<String> internalPort() {
         return this.internalPort;
     }
     /**
-     * DNAT规则所属NAT网关的ID。
+     * ID of the NAT gateway to which the DNAT rule belongs.
      * 
      */
     @Export(name="natGatewayId", refs={String.class}, tree="[0]")
     private Output<String> natGatewayId;
 
     /**
-     * @return DNAT规则所属NAT网关的ID。
+     * @return ID of the NAT gateway to which the DNAT rule belongs.
      * 
      */
     public Output<String> natGatewayId() {
         return this.natGatewayId;
     }
     /**
-     * DNAT规则的端口类型。specified：指定端口。any：任意端口。即IP映射。
+     * Port type of the DNAT rule. specified: Specified port. any: Any port, i.e., IP mapping.
      * 
      */
     @Export(name="portType", refs={String.class}, tree="[0]")
     private Output<String> portType;
 
     /**
-     * @return DNAT规则的端口类型。specified：指定端口。any：任意端口。即IP映射。
+     * @return Port type of the DNAT rule. specified: Specified port. any: Any port, i.e., IP mapping.
      * 
      */
     public Output<String> portType() {
         return this.portType;
     }
     /**
-     * 协议类型。tcp：转发TCP协议的报文。udp：转发UDP协议的报文。
+     * Protocol type. tcp: Forwards TCP protocol packets. udp: Forwards UDP protocol packets.
      * 
      */
     @Export(name="protocol", refs={String.class}, tree="[0]")
     private Output<String> protocol;
 
     /**
-     * @return 协议类型。tcp：转发TCP协议的报文。udp：转发UDP协议的报文。
+     * @return Protocol type. tcp: Forwards TCP protocol packets. udp: Forwards UDP protocol packets.
      * 
      */
     public Output<String> protocol() {
         return this.protocol;
     }
     /**
-     * DNAT规则的状态。Creating：创建中。Deleting：删除中。Available：可用。
+     * Status of the DNAT rule. Creating: Creating. Deleting: Deleting. Available: Available.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return DNAT规则的状态。Creating：创建中。Deleting：删除中。Available：可用。
+     * @return Status of the DNAT rule. Creating: Creating. Deleting: Deleting. Available: Available.
      * 
      */
     public Output<String> status() {

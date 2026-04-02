@@ -31,13 +31,13 @@ class AddonArgs:
                  version: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Addon resource.
-        :param pulumi.Input[builtins.str] cluster_id: 组件所在集群 ID。
-        :param pulumi.Input[builtins.str] config: 组件配置。
-        :param pulumi.Input[builtins.str] deploy_mode: 组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
-        :param pulumi.Input[builtins.str] deploy_node_type: 部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
-        :param pulumi.Input[builtins.str] name: 组件名称。
-        :param pulumi.Input['AddonStatusArgs'] status: 组件状态。
-        :param pulumi.Input[builtins.str] version: 组件版本。
+        :param pulumi.Input[builtins.str] cluster_id: Cluster ID where the component is located.
+        :param pulumi.Input[builtins.str] config: Component configuration.
+        :param pulumi.Input[builtins.str] deploy_mode: Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
+        :param pulumi.Input[builtins.str] deploy_node_type: Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
+        :param pulumi.Input[builtins.str] name: Component name.
+        :param pulumi.Input['AddonStatusArgs'] status: Component status.
+        :param pulumi.Input[builtins.str] version: Component version.
         """
         if cluster_id is not None:
             pulumi.set(__self__, "cluster_id", cluster_id)
@@ -58,7 +58,7 @@ class AddonArgs:
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        组件所在集群 ID。
+        Cluster ID where the component is located.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -70,7 +70,7 @@ class AddonArgs:
     @pulumi.getter
     def config(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        组件配置。
+        Component configuration.
         """
         return pulumi.get(self, "config")
 
@@ -82,7 +82,7 @@ class AddonArgs:
     @pulumi.getter(name="deployMode")
     def deploy_mode(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
+        Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
         """
         return pulumi.get(self, "deploy_mode")
 
@@ -94,7 +94,7 @@ class AddonArgs:
     @pulumi.getter(name="deployNodeType")
     def deploy_node_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
+        Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
         """
         return pulumi.get(self, "deploy_node_type")
 
@@ -106,7 +106,7 @@ class AddonArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        组件名称。
+        Component name.
         """
         return pulumi.get(self, "name")
 
@@ -118,7 +118,7 @@ class AddonArgs:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input['AddonStatusArgs']]:
         """
-        组件状态。
+        Component status.
         """
         return pulumi.get(self, "status")
 
@@ -130,7 +130,7 @@ class AddonArgs:
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        组件版本。
+        Component version.
         """
         return pulumi.get(self, "version")
 
@@ -153,15 +153,15 @@ class _AddonState:
                  version: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Addon resources.
-        :param pulumi.Input[builtins.str] cluster_id: 组件所在集群 ID。
-        :param pulumi.Input[builtins.str] config: 组件配置。
-        :param pulumi.Input[builtins.str] created_time: 安装组件的时间。标准 RFC3339 格式的 UTC+0 时间。
-        :param pulumi.Input[builtins.str] deploy_mode: 组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
-        :param pulumi.Input[builtins.str] deploy_node_type: 部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
-        :param pulumi.Input[builtins.str] name: 组件名称。
-        :param pulumi.Input['AddonStatusArgs'] status: 组件状态。
-        :param pulumi.Input[builtins.str] updated_time: 更新组件的时间。标准 RFC3339 格式的 UTC+0 时间。
-        :param pulumi.Input[builtins.str] version: 组件版本。
+        :param pulumi.Input[builtins.str] cluster_id: Cluster ID where the component is located.
+        :param pulumi.Input[builtins.str] config: Component configuration.
+        :param pulumi.Input[builtins.str] created_time: Component installation time. Standard RFC3339 format, UTC+0 time.
+        :param pulumi.Input[builtins.str] deploy_mode: Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
+        :param pulumi.Input[builtins.str] deploy_node_type: Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
+        :param pulumi.Input[builtins.str] name: Component name.
+        :param pulumi.Input['AddonStatusArgs'] status: Component status.
+        :param pulumi.Input[builtins.str] updated_time: Component update time. Standard RFC3339 format, UTC+0 time.
+        :param pulumi.Input[builtins.str] version: Component version.
         """
         if cluster_id is not None:
             pulumi.set(__self__, "cluster_id", cluster_id)
@@ -186,7 +186,7 @@ class _AddonState:
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        组件所在集群 ID。
+        Cluster ID where the component is located.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -198,7 +198,7 @@ class _AddonState:
     @pulumi.getter
     def config(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        组件配置。
+        Component configuration.
         """
         return pulumi.get(self, "config")
 
@@ -210,7 +210,7 @@ class _AddonState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        安装组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+        Component installation time. Standard RFC3339 format, UTC+0 time.
         """
         return pulumi.get(self, "created_time")
 
@@ -222,7 +222,7 @@ class _AddonState:
     @pulumi.getter(name="deployMode")
     def deploy_mode(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
+        Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
         """
         return pulumi.get(self, "deploy_mode")
 
@@ -234,7 +234,7 @@ class _AddonState:
     @pulumi.getter(name="deployNodeType")
     def deploy_node_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
+        Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
         """
         return pulumi.get(self, "deploy_node_type")
 
@@ -246,7 +246,7 @@ class _AddonState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        组件名称。
+        Component name.
         """
         return pulumi.get(self, "name")
 
@@ -258,7 +258,7 @@ class _AddonState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input['AddonStatusArgs']]:
         """
-        组件状态。
+        Component status.
         """
         return pulumi.get(self, "status")
 
@@ -270,7 +270,7 @@ class _AddonState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        更新组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+        Component update time. Standard RFC3339 format, UTC+0 time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -282,7 +282,7 @@ class _AddonState:
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        组件版本。
+        Component version.
         """
         return pulumi.get(self, "version")
 
@@ -306,7 +306,7 @@ class Addon(pulumi.CustomResource):
                  version: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        集群中支持安装多种类型的组件，包括 网络、存储、监控、DNS、安全、镜像、GPU 等，满足您多种业务场景需求。您可按需部署、升级或卸载组件。
+        The cluster supports installation of various types of components, including network, storage, monitoring, DNS, security, image, GPU, and more, to meet your diverse business needs. You can deploy, upgrade, or uninstall components as needed.
 
         ## Example Usage
 
@@ -331,13 +331,13 @@ class Addon(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] cluster_id: 组件所在集群 ID。
-        :param pulumi.Input[builtins.str] config: 组件配置。
-        :param pulumi.Input[builtins.str] deploy_mode: 组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
-        :param pulumi.Input[builtins.str] deploy_node_type: 部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
-        :param pulumi.Input[builtins.str] name: 组件名称。
-        :param pulumi.Input[Union['AddonStatusArgs', 'AddonStatusArgsDict']] status: 组件状态。
-        :param pulumi.Input[builtins.str] version: 组件版本。
+        :param pulumi.Input[builtins.str] cluster_id: Cluster ID where the component is located.
+        :param pulumi.Input[builtins.str] config: Component configuration.
+        :param pulumi.Input[builtins.str] deploy_mode: Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
+        :param pulumi.Input[builtins.str] deploy_node_type: Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
+        :param pulumi.Input[builtins.str] name: Component name.
+        :param pulumi.Input[Union['AddonStatusArgs', 'AddonStatusArgsDict']] status: Component status.
+        :param pulumi.Input[builtins.str] version: Component version.
         """
         ...
     @overload
@@ -346,7 +346,7 @@ class Addon(pulumi.CustomResource):
                  args: Optional[AddonArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        集群中支持安装多种类型的组件，包括 网络、存储、监控、DNS、安全、镜像、GPU 等，满足您多种业务场景需求。您可按需部署、升级或卸载组件。
+        The cluster supports installation of various types of components, including network, storage, monitoring, DNS, security, image, GPU, and more, to meet your diverse business needs. You can deploy, upgrade, or uninstall components as needed.
 
         ## Example Usage
 
@@ -435,15 +435,15 @@ class Addon(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] cluster_id: 组件所在集群 ID。
-        :param pulumi.Input[builtins.str] config: 组件配置。
-        :param pulumi.Input[builtins.str] created_time: 安装组件的时间。标准 RFC3339 格式的 UTC+0 时间。
-        :param pulumi.Input[builtins.str] deploy_mode: 组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
-        :param pulumi.Input[builtins.str] deploy_node_type: 部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
-        :param pulumi.Input[builtins.str] name: 组件名称。
-        :param pulumi.Input[Union['AddonStatusArgs', 'AddonStatusArgsDict']] status: 组件状态。
-        :param pulumi.Input[builtins.str] updated_time: 更新组件的时间。标准 RFC3339 格式的 UTC+0 时间。
-        :param pulumi.Input[builtins.str] version: 组件版本。
+        :param pulumi.Input[builtins.str] cluster_id: Cluster ID where the component is located.
+        :param pulumi.Input[builtins.str] config: Component configuration.
+        :param pulumi.Input[builtins.str] created_time: Component installation time. Standard RFC3339 format, UTC+0 time.
+        :param pulumi.Input[builtins.str] deploy_mode: Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
+        :param pulumi.Input[builtins.str] deploy_node_type: Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
+        :param pulumi.Input[builtins.str] name: Component name.
+        :param pulumi.Input[Union['AddonStatusArgs', 'AddonStatusArgsDict']] status: Component status.
+        :param pulumi.Input[builtins.str] updated_time: Component update time. Standard RFC3339 format, UTC+0 time.
+        :param pulumi.Input[builtins.str] version: Component version.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -464,7 +464,7 @@ class Addon(pulumi.CustomResource):
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> pulumi.Output[builtins.str]:
         """
-        组件所在集群 ID。
+        Cluster ID where the component is located.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -472,7 +472,7 @@ class Addon(pulumi.CustomResource):
     @pulumi.getter
     def config(self) -> pulumi.Output[builtins.str]:
         """
-        组件配置。
+        Component configuration.
         """
         return pulumi.get(self, "config")
 
@@ -480,7 +480,7 @@ class Addon(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        安装组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+        Component installation time. Standard RFC3339 format, UTC+0 time.
         """
         return pulumi.get(self, "created_time")
 
@@ -488,7 +488,7 @@ class Addon(pulumi.CustomResource):
     @pulumi.getter(name="deployMode")
     def deploy_mode(self) -> pulumi.Output[builtins.str]:
         """
-        组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
+        Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
         """
         return pulumi.get(self, "deploy_mode")
 
@@ -496,7 +496,7 @@ class Addon(pulumi.CustomResource):
     @pulumi.getter(name="deployNodeType")
     def deploy_node_type(self) -> pulumi.Output[builtins.str]:
         """
-        部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
+        Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
         """
         return pulumi.get(self, "deploy_node_type")
 
@@ -504,7 +504,7 @@ class Addon(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[builtins.str]:
         """
-        组件名称。
+        Component name.
         """
         return pulumi.get(self, "name")
 
@@ -512,7 +512,7 @@ class Addon(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output['outputs.AddonStatus']:
         """
-        组件状态。
+        Component status.
         """
         return pulumi.get(self, "status")
 
@@ -520,7 +520,7 @@ class Addon(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        更新组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+        Component update time. Standard RFC3339 format, UTC+0 time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -528,7 +528,7 @@ class Addon(pulumi.CustomResource):
     @pulumi.getter
     def version(self) -> pulumi.Output[builtins.str]:
         """
-        组件版本。
+        Component version.
         """
         return pulumi.get(self, "version")
 

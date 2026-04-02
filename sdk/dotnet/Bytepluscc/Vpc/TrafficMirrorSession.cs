@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Vpc
 {
     /// <summary>
-    /// 镜像会话关联镜像源、镜像目的、筛选条件，使从镜像源复制的流量私网转发到镜像目的，是流量镜像的载体。
+    /// The mirror session links the mirror source, mirror destination, and filter conditions, enabling private network forwarding of traffic copied from the mirror source to the mirror destination. It serves as the carrier for traffic mirroring
     /// 
     /// ## Example Usage
     /// 
@@ -57,55 +57,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public partial class TrafficMirrorSession : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 会话计费状态。Normal：正常计费中。  - FinancialLocked：欠费锁定。
+        /// Session billing status. Normal: Billing in progress.   - FinancialLocked: Locked due to overdue payment
         /// </summary>
         [Output("businessStatus")]
         public Output<string> BusinessStatus { get; private set; } = null!;
 
         /// <summary>
-        /// 创建时间。
+        /// Creation time
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像会话实例描述。
+        /// Mirror session instance description
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 锁定原因。
+        /// Lock reason
         /// </summary>
         [Output("lockReason")]
         public Output<string> LockReason { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像源实例ID，当前只支持ECS的主网卡和辅助网卡。
+        /// Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
         /// </summary>
         [Output("networkInterfaceId")]
         public Output<string> NetworkInterfaceId { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像会话MTU，超过被截断，取值范围：64～9600。
+        /// Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
         /// </summary>
         [Output("packetLength")]
         public Output<int> PacketLength { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像会话优先级，取值范围1 ～ 32766，同一账户下镜像会话优先级不能重复。
+        /// Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
         /// </summary>
         [Output("priority")]
         public Output<int> Priority { get; private set; } = null!;
 
         /// <summary>
-        /// 所属项目的名称
+        /// Name of the associated project
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 会话状态。
+        /// Session status
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -114,37 +114,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         public Output<ImmutableArray<Outputs.TrafficMirrorSessionTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 筛选条件实例ID。
+        /// Filter condition instance ID
         /// </summary>
         [Output("trafficMirrorFilterId")]
         public Output<string> TrafficMirrorFilterId { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像会话实例ID。
+        /// Mirror session instance ID
         /// </summary>
         [Output("trafficMirrorSessionId")]
         public Output<string> TrafficMirrorSessionId { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像会话名称。
+        /// Mirror session name
         /// </summary>
         [Output("trafficMirrorSessionName")]
         public Output<string> TrafficMirrorSessionName { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像源实例列表。
+        /// Mirror source instance list
         /// </summary>
         [Output("trafficMirrorSourceIds")]
         public Output<ImmutableArray<string>> TrafficMirrorSourceIds { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像目的实例ID。
+        /// Mirror destination instance ID
         /// </summary>
         [Output("trafficMirrorTargetId")]
         public Output<string> TrafficMirrorTargetId { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像会话VNI，取值范围1 ～ 16777215。
+        /// Mirror session VNI. Range: 1–16777215
         /// </summary>
         [Output("virtualNetworkId")]
         public Output<int> VirtualNetworkId { get; private set; } = null!;
@@ -197,31 +197,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class TrafficMirrorSessionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 镜像会话实例描述。
+        /// Mirror session instance description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 镜像源实例ID，当前只支持ECS的主网卡和辅助网卡。
+        /// Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
         /// </summary>
         [Input("networkInterfaceId", required: true)]
         public Input<string> NetworkInterfaceId { get; set; } = null!;
 
         /// <summary>
-        /// 镜像会话MTU，超过被截断，取值范围：64～9600。
+        /// Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
         /// </summary>
         [Input("packetLength")]
         public Input<int>? PacketLength { get; set; }
 
         /// <summary>
-        /// 镜像会话优先级，取值范围1 ～ 32766，同一账户下镜像会话优先级不能重复。
+        /// Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
         /// </summary>
         [Input("priority", required: true)]
         public Input<int> Priority { get; set; } = null!;
 
         /// <summary>
-        /// 所属项目的名称
+        /// Name of the associated project
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
@@ -235,25 +235,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 筛选条件实例ID。
+        /// Filter condition instance ID
         /// </summary>
         [Input("trafficMirrorFilterId", required: true)]
         public Input<string> TrafficMirrorFilterId { get; set; } = null!;
 
         /// <summary>
-        /// 镜像会话名称。
+        /// Mirror session name
         /// </summary>
         [Input("trafficMirrorSessionName")]
         public Input<string>? TrafficMirrorSessionName { get; set; }
 
         /// <summary>
-        /// 镜像目的实例ID。
+        /// Mirror destination instance ID
         /// </summary>
         [Input("trafficMirrorTargetId", required: true)]
         public Input<string> TrafficMirrorTargetId { get; set; } = null!;
 
         /// <summary>
-        /// 镜像会话VNI，取值范围1 ～ 16777215。
+        /// Mirror session VNI. Range: 1–16777215
         /// </summary>
         [Input("virtualNetworkId")]
         public Input<int>? VirtualNetworkId { get; set; }
@@ -267,55 +267,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class TrafficMirrorSessionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 会话计费状态。Normal：正常计费中。  - FinancialLocked：欠费锁定。
+        /// Session billing status. Normal: Billing in progress.   - FinancialLocked: Locked due to overdue payment
         /// </summary>
         [Input("businessStatus")]
         public Input<string>? BusinessStatus { get; set; }
 
         /// <summary>
-        /// 创建时间。
+        /// Creation time
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 镜像会话实例描述。
+        /// Mirror session instance description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 锁定原因。
+        /// Lock reason
         /// </summary>
         [Input("lockReason")]
         public Input<string>? LockReason { get; set; }
 
         /// <summary>
-        /// 镜像源实例ID，当前只支持ECS的主网卡和辅助网卡。
+        /// Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
         /// </summary>
         [Input("networkInterfaceId")]
         public Input<string>? NetworkInterfaceId { get; set; }
 
         /// <summary>
-        /// 镜像会话MTU，超过被截断，取值范围：64～9600。
+        /// Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
         /// </summary>
         [Input("packetLength")]
         public Input<int>? PacketLength { get; set; }
 
         /// <summary>
-        /// 镜像会话优先级，取值范围1 ～ 32766，同一账户下镜像会话优先级不能重复。
+        /// Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
         /// </summary>
         [Input("priority")]
         public Input<int>? Priority { get; set; }
 
         /// <summary>
-        /// 所属项目的名称
+        /// Name of the associated project
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 会话状态。
+        /// Session status
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -329,19 +329,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 筛选条件实例ID。
+        /// Filter condition instance ID
         /// </summary>
         [Input("trafficMirrorFilterId")]
         public Input<string>? TrafficMirrorFilterId { get; set; }
 
         /// <summary>
-        /// 镜像会话实例ID。
+        /// Mirror session instance ID
         /// </summary>
         [Input("trafficMirrorSessionId")]
         public Input<string>? TrafficMirrorSessionId { get; set; }
 
         /// <summary>
-        /// 镜像会话名称。
+        /// Mirror session name
         /// </summary>
         [Input("trafficMirrorSessionName")]
         public Input<string>? TrafficMirrorSessionName { get; set; }
@@ -350,7 +350,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         private InputList<string>? _trafficMirrorSourceIds;
 
         /// <summary>
-        /// 镜像源实例列表。
+        /// Mirror source instance list
         /// </summary>
         public InputList<string> TrafficMirrorSourceIds
         {
@@ -359,13 +359,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 镜像目的实例ID。
+        /// Mirror destination instance ID
         /// </summary>
         [Input("trafficMirrorTargetId")]
         public Input<string>? TrafficMirrorTargetId { get; set; }
 
         /// <summary>
-        /// 镜像会话VNI，取值范围1 ～ 16777215。
+        /// Mirror session VNI. Range: 1–16777215
         /// </summary>
         [Input("virtualNetworkId")]
         public Input<int>? VirtualNetworkId { get; set; }

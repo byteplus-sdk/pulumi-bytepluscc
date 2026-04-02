@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Iam
 {
     /// <summary>
-    /// 资源项目（Project）是提供的一种资源分组管理的机制，帮助您达成逻辑层面的资源隔离，您能够通过资源项目进行项目制授权和分账等操作。
+    /// Resource project (Project) provides a mechanism for resource group management, helping you achieve logical resource isolation. You can use resource projects for project-based authorization, billing, and other operations.
     /// 
     /// ## Example Usage
     /// 
@@ -44,61 +44,61 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
     public partial class Project : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 账号ID
+        /// Account ID
         /// </summary>
         [Output("accountId")]
         public Output<int> AccountId { get; private set; } = null!;
 
         /// <summary>
-        /// 创建时间
+        /// Creation Time
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 描述
+        /// Description
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 展示名
+        /// Display Name
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// 是否可见
+        /// Visible
         /// </summary>
         [Output("hasPermission")]
         public Output<bool> HasPermission { get; private set; } = null!;
 
         /// <summary>
-        /// 父项目名称
+        /// Parent Project Name
         /// </summary>
         [Output("parentProjectName")]
         public Output<string> ParentProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 项目路径
+        /// Project Path
         /// </summary>
         [Output("path")]
         public Output<string> Path { get; private set; } = null!;
 
         /// <summary>
-        /// 项目名称
+        /// Project Name
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 启用状态
+        /// Enabled Status
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// 更新时间
+        /// Update Time
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
@@ -151,25 +151,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
     public sealed class ProjectArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 描述
+        /// Description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 展示名
+        /// Display Name
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// 父项目名称
+        /// Parent Project Name
         /// </summary>
         [Input("parentProjectName")]
         public Input<string>? ParentProjectName { get; set; }
 
         /// <summary>
-        /// 项目名称
+        /// Project Name
         /// </summary>
         [Input("projectName", required: true)]
         public Input<string> ProjectName { get; set; } = null!;
@@ -183,61 +183,61 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
     public sealed class ProjectState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 账号ID
+        /// Account ID
         /// </summary>
         [Input("accountId")]
         public Input<int>? AccountId { get; set; }
 
         /// <summary>
-        /// 创建时间
+        /// Creation Time
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 描述
+        /// Description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 展示名
+        /// Display Name
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// 是否可见
+        /// Visible
         /// </summary>
         [Input("hasPermission")]
         public Input<bool>? HasPermission { get; set; }
 
         /// <summary>
-        /// 父项目名称
+        /// Parent Project Name
         /// </summary>
         [Input("parentProjectName")]
         public Input<string>? ParentProjectName { get; set; }
 
         /// <summary>
-        /// 项目路径
+        /// Project Path
         /// </summary>
         [Input("path")]
         public Input<string>? Path { get; set; }
 
         /// <summary>
-        /// 项目名称
+        /// Project Name
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 启用状态
+        /// Enabled Status
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// 更新时间
+        /// Update Time
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }

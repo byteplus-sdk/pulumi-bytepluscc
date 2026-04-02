@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Natgateway.Outputs
     public sealed class GetNgwNatIpAddressResult
     {
         /// <summary>
-        /// 中转Ip地址。
+        /// Transit IP address
         /// </summary>
         public readonly string NatIpAddress;
         /// <summary>
-        /// 中转Ip id。
+        /// Transit IP ID
         /// </summary>
         public readonly string NatIpId;
 

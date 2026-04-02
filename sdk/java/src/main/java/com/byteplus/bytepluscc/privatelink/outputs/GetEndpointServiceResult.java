@@ -17,27 +17,27 @@ import java.util.Objects;
 @CustomType
 public final class GetEndpointServiceResult {
     /**
-     * @return 是否自动接受终端节点连接。true：终端节点服务自动接受终端节点连接。false：终端节点服务不会自动接受终端节点连接，需要调用EnableVpcEndpointConnection接口手动接受。
+     * @return Whether to automatically accept endpoint connections. true: The endpoint service automatically accepts endpoint connections. false: The endpoint service does not automatically accept endpoint connections; you must manually accept them by calling the EnableVpcEndpointConnection API.
      * 
      */
     private Boolean autoAcceptEnabled;
     /**
-     * @return 终端节点服务的计费类型。0：不计费。3：按量计费。
+     * @return Billing type of the endpoint service. 0: No charge. 3: Pay-as-you-go.
      * 
      */
     private Integer billingType;
     /**
-     * @return 终端节点服务是否被锁定。Normal：正常。FinancialLocked：被锁定。说明该参数返回为空时，表示终端节点服务未锁定。
+     * @return Whether the endpoint service is locked. Normal: normal. FinancialLocked: locked. If this parameter is empty, the endpoint service is not locked.
      * 
      */
     private String businessStatus;
     /**
-     * @return 终端节点服务的创建时间。
+     * @return Creation time of the endpoint service.
      * 
      */
     private String createTime;
     /**
-     * @return 终端节点服务的描述信息。
+     * @return Description of the endpoint service.
      * 
      */
     private String description;
@@ -47,142 +47,142 @@ public final class GetEndpointServiceResult {
      */
     private String id;
     /**
-     * @return 终端节点服务的IP协议类型。返回值中仅包含ipv4时，说明该终端节点服务为IPv4类型，仅支持提供IPv4服务。返回值中同时包含ipv4和ipv6时，说明该终端节点服务为双栈类型，支持同时提供IPv4和IPv6服务。
+     * @return IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
      * 
      */
     private List<String> ipAddressVersions;
     /**
-     * @return 私网连接的付费账号。Endpoint：终端节点账号。EndpointService：终端节点服务账号。
+     * @return Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
      * 
      */
     private String payer;
     /**
-     * @return 终端节点服务是否启用私有DNS名称。false：未启用。true：已启用。
+     * @return Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
      * 
      */
     private Boolean privateDnsEnabled;
     /**
-     * @return 终端节点服务的私有DNS名称。参数PrivateDNSEnabled返回值为false时，该参数返回空。
+     * @return Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
      * 
      */
     private String privateDnsName;
     /**
-     * @return 终端节点服务私有DNS名称的配置信息。说明PrivateDNSType为private时，不返回该参数。
+     * @return Configuration information for the private DNS name of the endpoint service. Note: If PrivateDNSType is private, this parameter is not returned.
      * 
      */
     private GetEndpointServicePrivateDnsNameConfiguration privateDnsNameConfiguration;
     /**
-     * @return 私有DNS名称的域名类型。public：公网。说明未开通自定义私网域名功能时，不返回该参数。
+     * @return Domain name type of the private DNS name. public: public network. Note: If the custom private domain name feature is not enabled, this parameter is not returned.
      * 
      */
     private String privateDnsType;
     /**
-     * @return 终端节点服务所属的项目名称。
+     * @return Project name to which the endpoint service belongs.
      * 
      */
     private String projectName;
     /**
-     * @return 终端节点服务提供服务的资源。
+     * @return Resources provided by the endpoint service.
      * 
      */
     private List<GetEndpointServiceResource> resources;
     /**
-     * @return 终端节点服务的服务域名。
+     * @return Service domain name of the endpoint service.
      * 
      */
     private String serviceDomain;
     /**
-     * @return 终端节点服务的ID。
+     * @return Endpoint service ID.
      * 
      */
     private String serviceId;
     /**
-     * @return 终端节点服务的名称。
+     * @return Name of the endpoint service.
      * 
      */
     private String serviceName;
     /**
-     * @return 是否为托管终端节点服务。false：非托管终端节点服务。true：托管终端节点服务。说明终端节点服务所属账号未开通托管终端节点服务功能时，不返回该参数。
+     * @return Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
      * 
      */
     private String serviceNameManaged;
     /**
-     * @return 终端节点服务的名称后缀。设置名称后缀后，系统会按照com.volces.privatelink.&lt;地域ID&gt;.&lt;名称后缀&gt;的格式生成终端节点服务的名称。说明该参数正在邀测中，如需使用不同名称后缀区分业务，请联系客户经理。
+     * @return Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
      * 
      */
     private String serviceNameSuffix;
     /**
-     * @return 当前服务主体。
+     * @return Current service principal.
      * 
      */
     private String serviceOwner;
     /**
-     * @return 服务资源的类型。CLB：负载均衡CLB。ALB：应用型负载均衡ALB。RDSMySQL：云数据库 MySQL版。
+     * @return Type of service resource. CLB: Load Balancer CLB. ALB: Application Load Balancer ALB. RDSMySQL: Cloud Database MySQL Edition.
      * 
      */
     private String serviceResourceType;
     /**
-     * @return 终端节点服务的类型。Interface：接口终端节点服务。
+     * @return Type of the endpoint service. Interface: Interface endpoint service.
      * 
      */
     private String serviceType;
     /**
-     * @return 终端节点服务的状态。Creating：创建中。Pending：配置修改中。Available：可用。Deleting：删除中。
+     * @return Status of the endpoint service. Creating: being created. Pending: configuration being modified. Available: available. Deleting: being deleted.
      * 
      */
     private String status;
     /**
-     * @return 终端节点服务的标签信息。
+     * @return Tag information of the endpoint service.
      * 
      */
     private List<GetEndpointServiceTag> tags;
     /**
-     * @return 终端节点服务的最近操作时间。
+     * @return Most recent operation time of the endpoint service.
      * 
      */
     private String updateTime;
     /**
-     * @return 是否启用通配符域名。true：启用。false：未启用。
+     * @return Whether to enable wildcard domain name. true: Enabled. false: Not enabled.
      * 
      */
     private Boolean wildcardDomainEnabled;
     /**
-     * @return 终端节点服务提供服务的可用区。说明参数ServiceResourceType返回值为RDSMySQL时，该参数返回空值。
+     * @return Availability zone where the endpoint service provides service. Note: If the ServiceResourceType parameter returns RDSMySQL, this parameter returns an empty value.
      * 
      */
     private List<String> zoneIds;
 
     private GetEndpointServiceResult() {}
     /**
-     * @return 是否自动接受终端节点连接。true：终端节点服务自动接受终端节点连接。false：终端节点服务不会自动接受终端节点连接，需要调用EnableVpcEndpointConnection接口手动接受。
+     * @return Whether to automatically accept endpoint connections. true: The endpoint service automatically accepts endpoint connections. false: The endpoint service does not automatically accept endpoint connections; you must manually accept them by calling the EnableVpcEndpointConnection API.
      * 
      */
     public Boolean autoAcceptEnabled() {
         return this.autoAcceptEnabled;
     }
     /**
-     * @return 终端节点服务的计费类型。0：不计费。3：按量计费。
+     * @return Billing type of the endpoint service. 0: No charge. 3: Pay-as-you-go.
      * 
      */
     public Integer billingType() {
         return this.billingType;
     }
     /**
-     * @return 终端节点服务是否被锁定。Normal：正常。FinancialLocked：被锁定。说明该参数返回为空时，表示终端节点服务未锁定。
+     * @return Whether the endpoint service is locked. Normal: normal. FinancialLocked: locked. If this parameter is empty, the endpoint service is not locked.
      * 
      */
     public String businessStatus() {
         return this.businessStatus;
     }
     /**
-     * @return 终端节点服务的创建时间。
+     * @return Creation time of the endpoint service.
      * 
      */
     public String createTime() {
         return this.createTime;
     }
     /**
-     * @return 终端节点服务的描述信息。
+     * @return Description of the endpoint service.
      * 
      */
     public String description() {
@@ -196,147 +196,147 @@ public final class GetEndpointServiceResult {
         return this.id;
     }
     /**
-     * @return 终端节点服务的IP协议类型。返回值中仅包含ipv4时，说明该终端节点服务为IPv4类型，仅支持提供IPv4服务。返回值中同时包含ipv4和ipv6时，说明该终端节点服务为双栈类型，支持同时提供IPv4和IPv6服务。
+     * @return IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
      * 
      */
     public List<String> ipAddressVersions() {
         return this.ipAddressVersions;
     }
     /**
-     * @return 私网连接的付费账号。Endpoint：终端节点账号。EndpointService：终端节点服务账号。
+     * @return Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
      * 
      */
     public String payer() {
         return this.payer;
     }
     /**
-     * @return 终端节点服务是否启用私有DNS名称。false：未启用。true：已启用。
+     * @return Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
      * 
      */
     public Boolean privateDnsEnabled() {
         return this.privateDnsEnabled;
     }
     /**
-     * @return 终端节点服务的私有DNS名称。参数PrivateDNSEnabled返回值为false时，该参数返回空。
+     * @return Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
      * 
      */
     public String privateDnsName() {
         return this.privateDnsName;
     }
     /**
-     * @return 终端节点服务私有DNS名称的配置信息。说明PrivateDNSType为private时，不返回该参数。
+     * @return Configuration information for the private DNS name of the endpoint service. Note: If PrivateDNSType is private, this parameter is not returned.
      * 
      */
     public GetEndpointServicePrivateDnsNameConfiguration privateDnsNameConfiguration() {
         return this.privateDnsNameConfiguration;
     }
     /**
-     * @return 私有DNS名称的域名类型。public：公网。说明未开通自定义私网域名功能时，不返回该参数。
+     * @return Domain name type of the private DNS name. public: public network. Note: If the custom private domain name feature is not enabled, this parameter is not returned.
      * 
      */
     public String privateDnsType() {
         return this.privateDnsType;
     }
     /**
-     * @return 终端节点服务所属的项目名称。
+     * @return Project name to which the endpoint service belongs.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 终端节点服务提供服务的资源。
+     * @return Resources provided by the endpoint service.
      * 
      */
     public List<GetEndpointServiceResource> resources() {
         return this.resources;
     }
     /**
-     * @return 终端节点服务的服务域名。
+     * @return Service domain name of the endpoint service.
      * 
      */
     public String serviceDomain() {
         return this.serviceDomain;
     }
     /**
-     * @return 终端节点服务的ID。
+     * @return Endpoint service ID.
      * 
      */
     public String serviceId() {
         return this.serviceId;
     }
     /**
-     * @return 终端节点服务的名称。
+     * @return Name of the endpoint service.
      * 
      */
     public String serviceName() {
         return this.serviceName;
     }
     /**
-     * @return 是否为托管终端节点服务。false：非托管终端节点服务。true：托管终端节点服务。说明终端节点服务所属账号未开通托管终端节点服务功能时，不返回该参数。
+     * @return Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
      * 
      */
     public String serviceNameManaged() {
         return this.serviceNameManaged;
     }
     /**
-     * @return 终端节点服务的名称后缀。设置名称后缀后，系统会按照com.volces.privatelink.&lt;地域ID&gt;.&lt;名称后缀&gt;的格式生成终端节点服务的名称。说明该参数正在邀测中，如需使用不同名称后缀区分业务，请联系客户经理。
+     * @return Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
      * 
      */
     public String serviceNameSuffix() {
         return this.serviceNameSuffix;
     }
     /**
-     * @return 当前服务主体。
+     * @return Current service principal.
      * 
      */
     public String serviceOwner() {
         return this.serviceOwner;
     }
     /**
-     * @return 服务资源的类型。CLB：负载均衡CLB。ALB：应用型负载均衡ALB。RDSMySQL：云数据库 MySQL版。
+     * @return Type of service resource. CLB: Load Balancer CLB. ALB: Application Load Balancer ALB. RDSMySQL: Cloud Database MySQL Edition.
      * 
      */
     public String serviceResourceType() {
         return this.serviceResourceType;
     }
     /**
-     * @return 终端节点服务的类型。Interface：接口终端节点服务。
+     * @return Type of the endpoint service. Interface: Interface endpoint service.
      * 
      */
     public String serviceType() {
         return this.serviceType;
     }
     /**
-     * @return 终端节点服务的状态。Creating：创建中。Pending：配置修改中。Available：可用。Deleting：删除中。
+     * @return Status of the endpoint service. Creating: being created. Pending: configuration being modified. Available: available. Deleting: being deleted.
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 终端节点服务的标签信息。
+     * @return Tag information of the endpoint service.
      * 
      */
     public List<GetEndpointServiceTag> tags() {
         return this.tags;
     }
     /**
-     * @return 终端节点服务的最近操作时间。
+     * @return Most recent operation time of the endpoint service.
      * 
      */
     public String updateTime() {
         return this.updateTime;
     }
     /**
-     * @return 是否启用通配符域名。true：启用。false：未启用。
+     * @return Whether to enable wildcard domain name. true: Enabled. false: Not enabled.
      * 
      */
     public Boolean wildcardDomainEnabled() {
         return this.wildcardDomainEnabled;
     }
     /**
-     * @return 终端节点服务提供服务的可用区。说明参数ServiceResourceType返回值为RDSMySQL时，该参数返回空值。
+     * @return Availability zone where the endpoint service provides service. Note: If the ServiceResourceType parameter returns RDSMySQL, this parameter returns an empty value.
      * 
      */
     public List<String> zoneIds() {

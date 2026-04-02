@@ -17,14 +17,14 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
     public static final UserArgs Empty = new UserArgs();
 
     /**
-     * 用户描述。
+     * User Description.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 用户描述。
+     * @return User Description.
      * 
      */
     public Optional<Output<String>> description() {
@@ -32,14 +32,14 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 用户显示名。
+     * User Display Name.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return 用户显示名。
+     * @return User Display Name.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -47,14 +47,14 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 邮箱。
+     * Email.
      * 
      */
     @Import(name="email")
     private @Nullable Output<String> email;
 
     /**
-     * @return 邮箱。
+     * @return Email.
      * 
      */
     public Optional<Output<String>> email() {
@@ -62,14 +62,14 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+     * Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
      * 
      */
     @Import(name="password")
     private @Nullable Output<String> password;
 
     /**
-     * @return 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+     * @return Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
      * 
      */
     public Optional<Output<String>> password() {
@@ -77,14 +77,14 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 首次登陆需不需要重置密码。
+     * Is password reset required on first login?
      * 
      */
     @Import(name="passwordResetRequired")
     private @Nullable Output<Boolean> passwordResetRequired;
 
     /**
-     * @return 首次登陆需不需要重置密码。
+     * @return Is password reset required on first login?
      * 
      */
     public Optional<Output<Boolean>> passwordResetRequired() {
@@ -92,14 +92,14 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 手机号。
+     * Mobile Number.
      * 
      */
     @Import(name="phone")
     private @Nullable Output<String> phone;
 
     /**
-     * @return 手机号。
+     * @return Mobile Number.
      * 
      */
     public Optional<Output<String>> phone() {
@@ -107,14 +107,14 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 用户名。
+     * Username.
      * 
      */
     @Import(name="userName")
     private @Nullable Output<String> userName;
 
     /**
-     * @return 用户名。
+     * @return Username.
      * 
      */
     public Optional<Output<String>> userName() {
@@ -152,7 +152,7 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 用户描述。
+         * @param description User Description.
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 用户描述。
+         * @param description User Description.
          * 
          * @return builder
          * 
@@ -173,7 +173,7 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName 用户显示名。
+         * @param displayName User Display Name.
          * 
          * @return builder
          * 
@@ -184,7 +184,7 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName 用户显示名。
+         * @param displayName User Display Name.
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param email 邮箱。
+         * @param email Email.
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param email 邮箱。
+         * @param email Email.
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param password 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+         * @param password Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
          * 
          * @return builder
          * 
@@ -226,7 +226,7 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param password 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+         * @param password Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
          * 
          * @return builder
          * 
@@ -236,7 +236,7 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param passwordResetRequired 首次登陆需不需要重置密码。
+         * @param passwordResetRequired Is password reset required on first login?
          * 
          * @return builder
          * 
@@ -247,7 +247,7 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param passwordResetRequired 首次登陆需不需要重置密码。
+         * @param passwordResetRequired Is password reset required on first login?
          * 
          * @return builder
          * 
@@ -257,7 +257,7 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param phone 手机号。
+         * @param phone Mobile Number.
          * 
          * @return builder
          * 
@@ -268,7 +268,7 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param phone 手机号。
+         * @param phone Mobile Number.
          * 
          * @return builder
          * 
@@ -278,7 +278,7 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userName 用户名。
+         * @param userName Username.
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userName 用户名。
+         * @param userName Username.
          * 
          * @return builder
          * 

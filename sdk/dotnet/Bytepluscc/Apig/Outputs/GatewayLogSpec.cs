@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GatewayLogSpec
     {
         /// <summary>
-        /// 是否开启日志服务。
+        /// Whether to enable log service
         /// </summary>
         public readonly bool? Enable;
         /// <summary>
-        /// 日志项目ID。
+        /// Log project ID
         /// </summary>
         public readonly string? ProjectId;
         /// <summary>
-        /// 日志主题ID。ProjectId 指定项目里面的日志主题。
+        /// Log topic ID. ProjectId specifies the log topic within the project
         /// </summary>
         public readonly string? TopicId;
 

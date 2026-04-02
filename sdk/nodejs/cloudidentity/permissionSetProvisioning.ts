@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * 给指定的账号部署权限集。
+ * Deploy permission set to the specified account
  *
  * ## Example Usage
  *
@@ -54,31 +54,31 @@ export class PermissionSetProvisioning extends pulumi.CustomResource {
     }
 
     /**
-     * 创建时间。
+     * Creation time
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 权限集 ID。
+     * Permission set ID
      */
     public readonly permissionSetId!: pulumi.Output<string>;
     /**
-     * 权限集名。
+     * Permission set name
      */
     public /*out*/ readonly permissionSetName!: pulumi.Output<string>;
     /**
-     * 权限集状态 Running：运行中,Reprovision Required：需要重新部署,Provision Failed：部署失败,Provisioned：已部署
+     * Permission set status Running: In progress, Reprovision Required: Redeployment required, Provision Failed: Deployment failed, Provisioned: Deployed
      */
     public /*out*/ readonly provisioningStatus!: pulumi.Output<string>;
     /**
-     * 授权的账号 ID。
+     * Authorized account ID
      */
     public readonly targetId!: pulumi.Output<string>;
     /**
-     * 账号名。
+     * Account name
      */
     public /*out*/ readonly targetName!: pulumi.Output<string>;
     /**
-     * 更新时间。
+     * Update time
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
 
@@ -128,31 +128,31 @@ export class PermissionSetProvisioning extends pulumi.CustomResource {
  */
 export interface PermissionSetProvisioningState {
     /**
-     * 创建时间。
+     * Creation time
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 权限集 ID。
+     * Permission set ID
      */
     permissionSetId?: pulumi.Input<string>;
     /**
-     * 权限集名。
+     * Permission set name
      */
     permissionSetName?: pulumi.Input<string>;
     /**
-     * 权限集状态 Running：运行中,Reprovision Required：需要重新部署,Provision Failed：部署失败,Provisioned：已部署
+     * Permission set status Running: In progress, Reprovision Required: Redeployment required, Provision Failed: Deployment failed, Provisioned: Deployed
      */
     provisioningStatus?: pulumi.Input<string>;
     /**
-     * 授权的账号 ID。
+     * Authorized account ID
      */
     targetId?: pulumi.Input<string>;
     /**
-     * 账号名。
+     * Account name
      */
     targetName?: pulumi.Input<string>;
     /**
-     * 更新时间。
+     * Update time
      */
     updatedTime?: pulumi.Input<string>;
 }
@@ -162,11 +162,11 @@ export interface PermissionSetProvisioningState {
  */
 export interface PermissionSetProvisioningArgs {
     /**
-     * 权限集 ID。
+     * Permission set ID
      */
     permissionSetId: pulumi.Input<string>;
     /**
-     * 授权的账号 ID。
+     * Authorized account ID
      */
     targetId: pulumi.Input<string>;
 }

@@ -28,9 +28,9 @@ class DefaultNodePoolArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['DefaultNodePoolTagArgs']]]] = None):
         """
         The set of arguments for constructing a DefaultNodePool resource.
-        :param pulumi.Input[builtins.str] cluster_id: 节点池所在集群的 ID。
-        :param pulumi.Input['DefaultNodePoolNodeConfigArgs'] node_config: 节点池中云服务器（ECS）实例配置。
-        :param pulumi.Input['DefaultNodePoolKubernetesConfigArgs'] kubernetes_config: 节点池 Kubernetes 相关配置。
+        :param pulumi.Input[builtins.str] cluster_id: Cluster ID where the node pool is located
+        :param pulumi.Input['DefaultNodePoolNodeConfigArgs'] node_config: Cloud server (ECS) instance configuration in the node pool
+        :param pulumi.Input['DefaultNodePoolKubernetesConfigArgs'] kubernetes_config: Kubernetes-related configuration for the node pool
         """
         pulumi.set(__self__, "cluster_id", cluster_id)
         pulumi.set(__self__, "node_config", node_config)
@@ -43,7 +43,7 @@ class DefaultNodePoolArgs:
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> pulumi.Input[builtins.str]:
         """
-        节点池所在集群的 ID。
+        Cluster ID where the node pool is located
         """
         return pulumi.get(self, "cluster_id")
 
@@ -55,7 +55,7 @@ class DefaultNodePoolArgs:
     @pulumi.getter(name="nodeConfig")
     def node_config(self) -> pulumi.Input['DefaultNodePoolNodeConfigArgs']:
         """
-        节点池中云服务器（ECS）实例配置。
+        Cloud server (ECS) instance configuration in the node pool
         """
         return pulumi.get(self, "node_config")
 
@@ -67,7 +67,7 @@ class DefaultNodePoolArgs:
     @pulumi.getter(name="kubernetesConfig")
     def kubernetes_config(self) -> Optional[pulumi.Input['DefaultNodePoolKubernetesConfigArgs']]:
         """
-        节点池 Kubernetes 相关配置。
+        Kubernetes-related configuration for the node pool
         """
         return pulumi.get(self, "kubernetes_config")
 
@@ -102,17 +102,17 @@ class _DefaultNodePoolState:
                  updated_time: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering DefaultNodePool resources.
-        :param pulumi.Input['DefaultNodePoolAutoScalingArgs'] auto_scaling: 节点池伸缩策略配置。
-        :param pulumi.Input[builtins.str] cluster_id: 节点池所在集群的 ID。
-        :param pulumi.Input[builtins.str] created_time: 创建节点池的时间。
-        :param pulumi.Input['DefaultNodePoolKubernetesConfigArgs'] kubernetes_config: 节点池 Kubernetes 相关配置。
-        :param pulumi.Input['DefaultNodePoolManagementArgs'] management: 托管节点池配置。
-        :param pulumi.Input[builtins.str] name: 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
-        :param pulumi.Input['DefaultNodePoolNodeConfigArgs'] node_config: 节点池中云服务器（ECS）实例配置。
-        :param pulumi.Input[builtins.str] node_pool_id: 节点池 ID 。
-        :param pulumi.Input['DefaultNodePoolNodeStatisticsArgs'] node_statistics: 节点池中的节点统计。
-        :param pulumi.Input['DefaultNodePoolStatusArgs'] status: 节点池状态。
-        :param pulumi.Input[builtins.str] updated_time: 更新节点池的时间。
+        :param pulumi.Input['DefaultNodePoolAutoScalingArgs'] auto_scaling: Node pool scaling policy configuration
+        :param pulumi.Input[builtins.str] cluster_id: Cluster ID where the node pool is located
+        :param pulumi.Input[builtins.str] created_time: Node pool creation time
+        :param pulumi.Input['DefaultNodePoolKubernetesConfigArgs'] kubernetes_config: Kubernetes-related configuration for the node pool
+        :param pulumi.Input['DefaultNodePoolManagementArgs'] management: Managed node pool configuration
+        :param pulumi.Input[builtins.str] name: Node pool name. Must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length: 2–64 characters
+        :param pulumi.Input['DefaultNodePoolNodeConfigArgs'] node_config: Cloud server (ECS) instance configuration in the node pool
+        :param pulumi.Input[builtins.str] node_pool_id: Node pool ID
+        :param pulumi.Input['DefaultNodePoolNodeStatisticsArgs'] node_statistics: Node statistics in the node pool.
+        :param pulumi.Input['DefaultNodePoolStatusArgs'] status: Node pool status
+        :param pulumi.Input[builtins.str] updated_time: Time when the node pool was updated
         """
         if auto_scaling is not None:
             pulumi.set(__self__, "auto_scaling", auto_scaling)
@@ -143,7 +143,7 @@ class _DefaultNodePoolState:
     @pulumi.getter(name="autoScaling")
     def auto_scaling(self) -> Optional[pulumi.Input['DefaultNodePoolAutoScalingArgs']]:
         """
-        节点池伸缩策略配置。
+        Node pool scaling policy configuration
         """
         return pulumi.get(self, "auto_scaling")
 
@@ -155,7 +155,7 @@ class _DefaultNodePoolState:
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点池所在集群的 ID。
+        Cluster ID where the node pool is located
         """
         return pulumi.get(self, "cluster_id")
 
@@ -167,7 +167,7 @@ class _DefaultNodePoolState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建节点池的时间。
+        Node pool creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -179,7 +179,7 @@ class _DefaultNodePoolState:
     @pulumi.getter(name="kubernetesConfig")
     def kubernetes_config(self) -> Optional[pulumi.Input['DefaultNodePoolKubernetesConfigArgs']]:
         """
-        节点池 Kubernetes 相关配置。
+        Kubernetes-related configuration for the node pool
         """
         return pulumi.get(self, "kubernetes_config")
 
@@ -191,7 +191,7 @@ class _DefaultNodePoolState:
     @pulumi.getter
     def management(self) -> Optional[pulumi.Input['DefaultNodePoolManagementArgs']]:
         """
-        托管节点池配置。
+        Managed node pool configuration
         """
         return pulumi.get(self, "management")
 
@@ -203,7 +203,7 @@ class _DefaultNodePoolState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+        Node pool name. Must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length: 2–64 characters
         """
         return pulumi.get(self, "name")
 
@@ -215,7 +215,7 @@ class _DefaultNodePoolState:
     @pulumi.getter(name="nodeConfig")
     def node_config(self) -> Optional[pulumi.Input['DefaultNodePoolNodeConfigArgs']]:
         """
-        节点池中云服务器（ECS）实例配置。
+        Cloud server (ECS) instance configuration in the node pool
         """
         return pulumi.get(self, "node_config")
 
@@ -227,7 +227,7 @@ class _DefaultNodePoolState:
     @pulumi.getter(name="nodePoolId")
     def node_pool_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点池 ID 。
+        Node pool ID
         """
         return pulumi.get(self, "node_pool_id")
 
@@ -239,7 +239,7 @@ class _DefaultNodePoolState:
     @pulumi.getter(name="nodeStatistics")
     def node_statistics(self) -> Optional[pulumi.Input['DefaultNodePoolNodeStatisticsArgs']]:
         """
-        节点池中的节点统计。
+        Node statistics in the node pool.
         """
         return pulumi.get(self, "node_statistics")
 
@@ -251,7 +251,7 @@ class _DefaultNodePoolState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input['DefaultNodePoolStatusArgs']]:
         """
-        节点池状态。
+        Node pool status
         """
         return pulumi.get(self, "status")
 
@@ -272,7 +272,7 @@ class _DefaultNodePoolState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        更新节点池的时间。
+        Time when the node pool was updated
         """
         return pulumi.get(self, "updated_time")
 
@@ -293,7 +293,7 @@ class DefaultNodePool(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DefaultNodePoolTagArgs', 'DefaultNodePoolTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        除标准的自定义节点池外，容器服务支持 默认节点池（固定名称vke-default-nodepool）能力，用来纳管已有云服务器（ECS）实例。默认节点池的安全配置、高级配置、更多配置等配置能力与标准节点池一致，但不具备扩缩容、编辑数量等能力。
+        In addition to standard custom node pools, container service supports the default node pool (fixed name vke-default-nodepool) for managing existing cloud server (ECS) instances. The default node pool has the same security, advanced, and additional configuration capabilities as standard node pools, but does not support scaling or editing the number of nodes.
 
         ## Import
 
@@ -303,9 +303,9 @@ class DefaultNodePool(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] cluster_id: 节点池所在集群的 ID。
-        :param pulumi.Input[Union['DefaultNodePoolKubernetesConfigArgs', 'DefaultNodePoolKubernetesConfigArgsDict']] kubernetes_config: 节点池 Kubernetes 相关配置。
-        :param pulumi.Input[Union['DefaultNodePoolNodeConfigArgs', 'DefaultNodePoolNodeConfigArgsDict']] node_config: 节点池中云服务器（ECS）实例配置。
+        :param pulumi.Input[builtins.str] cluster_id: Cluster ID where the node pool is located
+        :param pulumi.Input[Union['DefaultNodePoolKubernetesConfigArgs', 'DefaultNodePoolKubernetesConfigArgsDict']] kubernetes_config: Kubernetes-related configuration for the node pool
+        :param pulumi.Input[Union['DefaultNodePoolNodeConfigArgs', 'DefaultNodePoolNodeConfigArgsDict']] node_config: Cloud server (ECS) instance configuration in the node pool
         """
         ...
     @overload
@@ -314,7 +314,7 @@ class DefaultNodePool(pulumi.CustomResource):
                  args: DefaultNodePoolArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        除标准的自定义节点池外，容器服务支持 默认节点池（固定名称vke-default-nodepool）能力，用来纳管已有云服务器（ECS）实例。默认节点池的安全配置、高级配置、更多配置等配置能力与标准节点池一致，但不具备扩缩容、编辑数量等能力。
+        In addition to standard custom node pools, container service supports the default node pool (fixed name vke-default-nodepool) for managing existing cloud server (ECS) instances. The default node pool has the same security, advanced, and additional configuration capabilities as standard node pools, but does not support scaling or editing the number of nodes.
 
         ## Import
 
@@ -395,17 +395,17 @@ class DefaultNodePool(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['DefaultNodePoolAutoScalingArgs', 'DefaultNodePoolAutoScalingArgsDict']] auto_scaling: 节点池伸缩策略配置。
-        :param pulumi.Input[builtins.str] cluster_id: 节点池所在集群的 ID。
-        :param pulumi.Input[builtins.str] created_time: 创建节点池的时间。
-        :param pulumi.Input[Union['DefaultNodePoolKubernetesConfigArgs', 'DefaultNodePoolKubernetesConfigArgsDict']] kubernetes_config: 节点池 Kubernetes 相关配置。
-        :param pulumi.Input[Union['DefaultNodePoolManagementArgs', 'DefaultNodePoolManagementArgsDict']] management: 托管节点池配置。
-        :param pulumi.Input[builtins.str] name: 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
-        :param pulumi.Input[Union['DefaultNodePoolNodeConfigArgs', 'DefaultNodePoolNodeConfigArgsDict']] node_config: 节点池中云服务器（ECS）实例配置。
-        :param pulumi.Input[builtins.str] node_pool_id: 节点池 ID 。
-        :param pulumi.Input[Union['DefaultNodePoolNodeStatisticsArgs', 'DefaultNodePoolNodeStatisticsArgsDict']] node_statistics: 节点池中的节点统计。
-        :param pulumi.Input[Union['DefaultNodePoolStatusArgs', 'DefaultNodePoolStatusArgsDict']] status: 节点池状态。
-        :param pulumi.Input[builtins.str] updated_time: 更新节点池的时间。
+        :param pulumi.Input[Union['DefaultNodePoolAutoScalingArgs', 'DefaultNodePoolAutoScalingArgsDict']] auto_scaling: Node pool scaling policy configuration
+        :param pulumi.Input[builtins.str] cluster_id: Cluster ID where the node pool is located
+        :param pulumi.Input[builtins.str] created_time: Node pool creation time
+        :param pulumi.Input[Union['DefaultNodePoolKubernetesConfigArgs', 'DefaultNodePoolKubernetesConfigArgsDict']] kubernetes_config: Kubernetes-related configuration for the node pool
+        :param pulumi.Input[Union['DefaultNodePoolManagementArgs', 'DefaultNodePoolManagementArgsDict']] management: Managed node pool configuration
+        :param pulumi.Input[builtins.str] name: Node pool name. Must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length: 2–64 characters
+        :param pulumi.Input[Union['DefaultNodePoolNodeConfigArgs', 'DefaultNodePoolNodeConfigArgsDict']] node_config: Cloud server (ECS) instance configuration in the node pool
+        :param pulumi.Input[builtins.str] node_pool_id: Node pool ID
+        :param pulumi.Input[Union['DefaultNodePoolNodeStatisticsArgs', 'DefaultNodePoolNodeStatisticsArgsDict']] node_statistics: Node statistics in the node pool.
+        :param pulumi.Input[Union['DefaultNodePoolStatusArgs', 'DefaultNodePoolStatusArgsDict']] status: Node pool status
+        :param pulumi.Input[builtins.str] updated_time: Time when the node pool was updated
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -429,7 +429,7 @@ class DefaultNodePool(pulumi.CustomResource):
     @pulumi.getter(name="autoScaling")
     def auto_scaling(self) -> pulumi.Output['outputs.DefaultNodePoolAutoScaling']:
         """
-        节点池伸缩策略配置。
+        Node pool scaling policy configuration
         """
         return pulumi.get(self, "auto_scaling")
 
@@ -437,7 +437,7 @@ class DefaultNodePool(pulumi.CustomResource):
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> pulumi.Output[builtins.str]:
         """
-        节点池所在集群的 ID。
+        Cluster ID where the node pool is located
         """
         return pulumi.get(self, "cluster_id")
 
@@ -445,7 +445,7 @@ class DefaultNodePool(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        创建节点池的时间。
+        Node pool creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -453,7 +453,7 @@ class DefaultNodePool(pulumi.CustomResource):
     @pulumi.getter(name="kubernetesConfig")
     def kubernetes_config(self) -> pulumi.Output['outputs.DefaultNodePoolKubernetesConfig']:
         """
-        节点池 Kubernetes 相关配置。
+        Kubernetes-related configuration for the node pool
         """
         return pulumi.get(self, "kubernetes_config")
 
@@ -461,7 +461,7 @@ class DefaultNodePool(pulumi.CustomResource):
     @pulumi.getter
     def management(self) -> pulumi.Output['outputs.DefaultNodePoolManagement']:
         """
-        托管节点池配置。
+        Managed node pool configuration
         """
         return pulumi.get(self, "management")
 
@@ -469,7 +469,7 @@ class DefaultNodePool(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[builtins.str]:
         """
-        节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+        Node pool name. Must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length: 2–64 characters
         """
         return pulumi.get(self, "name")
 
@@ -477,7 +477,7 @@ class DefaultNodePool(pulumi.CustomResource):
     @pulumi.getter(name="nodeConfig")
     def node_config(self) -> pulumi.Output['outputs.DefaultNodePoolNodeConfig']:
         """
-        节点池中云服务器（ECS）实例配置。
+        Cloud server (ECS) instance configuration in the node pool
         """
         return pulumi.get(self, "node_config")
 
@@ -485,7 +485,7 @@ class DefaultNodePool(pulumi.CustomResource):
     @pulumi.getter(name="nodePoolId")
     def node_pool_id(self) -> pulumi.Output[builtins.str]:
         """
-        节点池 ID 。
+        Node pool ID
         """
         return pulumi.get(self, "node_pool_id")
 
@@ -493,7 +493,7 @@ class DefaultNodePool(pulumi.CustomResource):
     @pulumi.getter(name="nodeStatistics")
     def node_statistics(self) -> pulumi.Output['outputs.DefaultNodePoolNodeStatistics']:
         """
-        节点池中的节点统计。
+        Node statistics in the node pool.
         """
         return pulumi.get(self, "node_statistics")
 
@@ -501,7 +501,7 @@ class DefaultNodePool(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output['outputs.DefaultNodePoolStatus']:
         """
-        节点池状态。
+        Node pool status
         """
         return pulumi.get(self, "status")
 
@@ -514,7 +514,7 @@ class DefaultNodePool(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        更新节点池的时间。
+        Time when the node pool was updated
         """
         return pulumi.get(self, "updated_time")
 

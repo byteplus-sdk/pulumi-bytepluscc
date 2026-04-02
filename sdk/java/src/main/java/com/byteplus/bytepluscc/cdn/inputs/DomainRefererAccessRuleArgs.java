@@ -20,14 +20,14 @@ public final class DomainRefererAccessRuleArgs extends com.pulumi.resources.Reso
     public static final DomainRefererAccessRuleArgs Empty = new DomainRefererAccessRuleArgs();
 
     /**
-     * 表示用户请求头的 Referer 头部为空（&#34;&#34;）时，内容分发网络是否接受该请求。该参数有以下取值：true：表示接受该请求。false：表示拒绝该请求。该参数的默认值是 false。
+     * Specifies whether the content delivery network accepts a request when the Referer header in the user&#39;s request is empty (&#34;&#34;). This parameter has the following values: true: accepts the request; false: rejects the request. The default value is false.
      * 
      */
     @Import(name="allowEmpty")
     private @Nullable Output<Boolean> allowEmpty;
 
     /**
-     * @return 表示用户请求头的 Referer 头部为空（&#34;&#34;）时，内容分发网络是否接受该请求。该参数有以下取值：true：表示接受该请求。false：表示拒绝该请求。该参数的默认值是 false。
+     * @return Specifies whether the content delivery network accepts a request when the Referer header in the user&#39;s request is empty (&#34;&#34;). This parameter has the following values: true: accepts the request; false: rejects the request. The default value is false.
      * 
      */
     public Optional<Output<Boolean>> allowEmpty() {
@@ -35,14 +35,14 @@ public final class DomainRefererAccessRuleArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 表示一个 Referer 的列表，该参数的输入要求与 ReferersType 下 CommonType 类型的 Referers 的输入要求一致。建议您使用 ReferersType 来指定 Referer 列表。如果您指定了 SharedConfig，就不能指定该参数。
+     * Indicates a list of Referers. The input requirements for this parameter are consistent with those for Referers under the CommonType of ReferersType. We recommend using ReferersType to specify the Referer list. If you specify SharedConfig, you cannot specify this parameter.
      * 
      */
     @Import(name="referers")
     private @Nullable Output<List<String>> referers;
 
     /**
-     * @return 表示一个 Referer 的列表，该参数的输入要求与 ReferersType 下 CommonType 类型的 Referers 的输入要求一致。建议您使用 ReferersType 来指定 Referer 列表。如果您指定了 SharedConfig，就不能指定该参数。
+     * @return Indicates a list of Referers. The input requirements for this parameter are consistent with those for Referers under the CommonType of ReferersType. We recommend using ReferersType to specify the Referer list. If you specify SharedConfig, you cannot specify this parameter.
      * 
      */
     public Optional<Output<List<String>>> referers() {
@@ -50,14 +50,14 @@ public final class DomainRefererAccessRuleArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 表示一个 ReferersType 对象。其包含一个 CommonType 对象和一个 RegularType 对象，分别表示一个常规的 Referer 列表和一个 Referer 正则表达式列表。如果您指定了 SharedConfig，就不能指定该参数。
+     * Indicates a ReferersType object. It contains a CommonType object and a RegularType object, representing a standard Referer list and a Referer regular expression list, respectively. If you specify SharedConfig, you cannot specify this parameter.
      * 
      */
     @Import(name="referersType")
     private @Nullable Output<DomainRefererAccessRuleReferersTypeArgs> referersType;
 
     /**
-     * @return 表示一个 ReferersType 对象。其包含一个 CommonType 对象和一个 RegularType 对象，分别表示一个常规的 Referer 列表和一个 Referer 正则表达式列表。如果您指定了 SharedConfig，就不能指定该参数。
+     * @return Indicates a ReferersType object. It contains a CommonType object and a RegularType object, representing a standard Referer list and a Referer regular expression list, respectively. If you specify SharedConfig, you cannot specify this parameter.
      * 
      */
     public Optional<Output<DomainRefererAccessRuleReferersTypeArgs>> referersType() {
@@ -65,14 +65,14 @@ public final class DomainRefererAccessRuleArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 表示 Referer 名单的类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
+     * Indicates the type of Referer list. This parameter is required when Switch is true. This parameter has the following values: allow: indicates Allowlist. deny: indicates Denylist.
      * 
      */
     @Import(name="ruleType")
     private @Nullable Output<String> ruleType;
 
     /**
-     * @return 表示 Referer 名单的类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
+     * @return Indicates the type of Referer list. This parameter is required when Switch is true. This parameter has the following values: allow: indicates Allowlist. deny: indicates Denylist.
      * 
      */
     public Optional<Output<String>> ruleType() {
@@ -80,14 +80,14 @@ public final class DomainRefererAccessRuleArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 表示一个全局配置。如果您指定了该参数，就不能指定 Referers，也不能指定 ReferersType。
+     * Represents a global configuration. If you specify this parameter, you cannot specify Referers or ReferersType.
      * 
      */
     @Import(name="sharedConfig")
     private @Nullable Output<DomainRefererAccessRuleSharedConfigArgs> sharedConfig;
 
     /**
-     * @return 表示一个全局配置。如果您指定了该参数，就不能指定 Referers，也不能指定 ReferersType。
+     * @return Represents a global configuration. If you specify this parameter, you cannot specify Referers or ReferersType.
      * 
      */
     public Optional<Output<DomainRefererAccessRuleSharedConfigArgs>> sharedConfig() {
@@ -95,14 +95,14 @@ public final class DomainRefererAccessRuleArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+     * Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
      * 
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+     * @return Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
      * 
      */
     public Optional<Output<Boolean>> switch_() {
@@ -139,7 +139,7 @@ public final class DomainRefererAccessRuleArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param allowEmpty 表示用户请求头的 Referer 头部为空（&#34;&#34;）时，内容分发网络是否接受该请求。该参数有以下取值：true：表示接受该请求。false：表示拒绝该请求。该参数的默认值是 false。
+         * @param allowEmpty Specifies whether the content delivery network accepts a request when the Referer header in the user&#39;s request is empty (&#34;&#34;). This parameter has the following values: true: accepts the request; false: rejects the request. The default value is false.
          * 
          * @return builder
          * 
@@ -150,7 +150,7 @@ public final class DomainRefererAccessRuleArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param allowEmpty 表示用户请求头的 Referer 头部为空（&#34;&#34;）时，内容分发网络是否接受该请求。该参数有以下取值：true：表示接受该请求。false：表示拒绝该请求。该参数的默认值是 false。
+         * @param allowEmpty Specifies whether the content delivery network accepts a request when the Referer header in the user&#39;s request is empty (&#34;&#34;). This parameter has the following values: true: accepts the request; false: rejects the request. The default value is false.
          * 
          * @return builder
          * 
@@ -160,7 +160,7 @@ public final class DomainRefererAccessRuleArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param referers 表示一个 Referer 的列表，该参数的输入要求与 ReferersType 下 CommonType 类型的 Referers 的输入要求一致。建议您使用 ReferersType 来指定 Referer 列表。如果您指定了 SharedConfig，就不能指定该参数。
+         * @param referers Indicates a list of Referers. The input requirements for this parameter are consistent with those for Referers under the CommonType of ReferersType. We recommend using ReferersType to specify the Referer list. If you specify SharedConfig, you cannot specify this parameter.
          * 
          * @return builder
          * 
@@ -171,7 +171,7 @@ public final class DomainRefererAccessRuleArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param referers 表示一个 Referer 的列表，该参数的输入要求与 ReferersType 下 CommonType 类型的 Referers 的输入要求一致。建议您使用 ReferersType 来指定 Referer 列表。如果您指定了 SharedConfig，就不能指定该参数。
+         * @param referers Indicates a list of Referers. The input requirements for this parameter are consistent with those for Referers under the CommonType of ReferersType. We recommend using ReferersType to specify the Referer list. If you specify SharedConfig, you cannot specify this parameter.
          * 
          * @return builder
          * 
@@ -181,7 +181,7 @@ public final class DomainRefererAccessRuleArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param referers 表示一个 Referer 的列表，该参数的输入要求与 ReferersType 下 CommonType 类型的 Referers 的输入要求一致。建议您使用 ReferersType 来指定 Referer 列表。如果您指定了 SharedConfig，就不能指定该参数。
+         * @param referers Indicates a list of Referers. The input requirements for this parameter are consistent with those for Referers under the CommonType of ReferersType. We recommend using ReferersType to specify the Referer list. If you specify SharedConfig, you cannot specify this parameter.
          * 
          * @return builder
          * 
@@ -191,7 +191,7 @@ public final class DomainRefererAccessRuleArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param referersType 表示一个 ReferersType 对象。其包含一个 CommonType 对象和一个 RegularType 对象，分别表示一个常规的 Referer 列表和一个 Referer 正则表达式列表。如果您指定了 SharedConfig，就不能指定该参数。
+         * @param referersType Indicates a ReferersType object. It contains a CommonType object and a RegularType object, representing a standard Referer list and a Referer regular expression list, respectively. If you specify SharedConfig, you cannot specify this parameter.
          * 
          * @return builder
          * 
@@ -202,7 +202,7 @@ public final class DomainRefererAccessRuleArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param referersType 表示一个 ReferersType 对象。其包含一个 CommonType 对象和一个 RegularType 对象，分别表示一个常规的 Referer 列表和一个 Referer 正则表达式列表。如果您指定了 SharedConfig，就不能指定该参数。
+         * @param referersType Indicates a ReferersType object. It contains a CommonType object and a RegularType object, representing a standard Referer list and a Referer regular expression list, respectively. If you specify SharedConfig, you cannot specify this parameter.
          * 
          * @return builder
          * 
@@ -212,7 +212,7 @@ public final class DomainRefererAccessRuleArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param ruleType 表示 Referer 名单的类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
+         * @param ruleType Indicates the type of Referer list. This parameter is required when Switch is true. This parameter has the following values: allow: indicates Allowlist. deny: indicates Denylist.
          * 
          * @return builder
          * 
@@ -223,7 +223,7 @@ public final class DomainRefererAccessRuleArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param ruleType 表示 Referer 名单的类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。
+         * @param ruleType Indicates the type of Referer list. This parameter is required when Switch is true. This parameter has the following values: allow: indicates Allowlist. deny: indicates Denylist.
          * 
          * @return builder
          * 
@@ -233,7 +233,7 @@ public final class DomainRefererAccessRuleArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param sharedConfig 表示一个全局配置。如果您指定了该参数，就不能指定 Referers，也不能指定 ReferersType。
+         * @param sharedConfig Represents a global configuration. If you specify this parameter, you cannot specify Referers or ReferersType.
          * 
          * @return builder
          * 
@@ -244,7 +244,7 @@ public final class DomainRefererAccessRuleArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param sharedConfig 表示一个全局配置。如果您指定了该参数，就不能指定 Referers，也不能指定 ReferersType。
+         * @param sharedConfig Represents a global configuration. If you specify this parameter, you cannot specify Referers or ReferersType.
          * 
          * @return builder
          * 
@@ -254,7 +254,7 @@ public final class DomainRefererAccessRuleArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param switch_ 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+         * @param switch_ Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
          * 
          * @return builder
          * 
@@ -265,7 +265,7 @@ public final class DomainRefererAccessRuleArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param switch_ 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+         * @param switch_ Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
          * 
          * @return builder
          * 

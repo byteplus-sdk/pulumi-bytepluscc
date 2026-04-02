@@ -25,7 +25,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 如果您需要监控某一云产品资源的数据状态，则可以创建云监控告警策略。当被监控的云产品资源数据达到告警的触发条件时，系统会通过您指定的方式推送告警通知，便于您及时发现存在异常数据的资源。
+ * If you need to monitor the data status of a cloud product resource, you can create a cloud monitoring alert policy. When the monitored resource data meets the alert trigger conditions, the system will send alert notifications using your specified method, helping you quickly identify resources with abnormal data.
  * 
  * ## Example Usage
  * 
@@ -42,42 +42,42 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:cloudmonitor/rule:Rule")
 public class Rule extends com.pulumi.resources.CustomResource {
     /**
-     * 告警通知的方式。Email：邮件 Phone：电话 SMS：短信 Webhook：告警回调。
+     * Alert notification method. Email: email, Phone: phone, SMS: SMS, Webhook: webhook callback.
      * 
      */
     @Export(name="alertMethods", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> alertMethods;
 
     /**
-     * @return 告警通知的方式。Email：邮件 Phone：电话 SMS：短信 Webhook：告警回调。
+     * @return Alert notification method. Email: email, Phone: phone, SMS: SMS, Webhook: webhook callback.
      * 
      */
     public Output<List<String>> alertMethods() {
         return this.alertMethods;
     }
     /**
-     * 告警状态。 alerting：告警中 normal：正常。
+     * Alert status. alerting: In alert; normal: Normal.
      * 
      */
     @Export(name="alertState", refs={String.class}, tree="[0]")
     private Output<String> alertState;
 
     /**
-     * @return 告警状态。 alerting：告警中 normal：正常。
+     * @return Alert status. alerting: In alert; normal: Normal.
      * 
      */
     public Output<String> alertState() {
         return this.alertState;
     }
     /**
-     * 多指标判定条件。&amp;&amp;：多个指标同时成立才判定为触发告警,||：任意指标满足条件触发判定为告警。
+     * Multi-metric determination condition. &amp;&amp;: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
      * 
      */
     @Export(name="conditionOperator", refs={String.class}, tree="[0]")
     private Output<String> conditionOperator;
 
     /**
-     * @return 多指标判定条件。&amp;&amp;：多个指标同时成立才判定为触发告警,||：任意指标满足条件触发判定为告警。
+     * @return Multi-metric determination condition. &amp;&amp;: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
      * 
      */
     public Output<String> conditionOperator() {
@@ -90,126 +90,126 @@ public class Rule extends com.pulumi.resources.CustomResource {
         return this.conditions;
     }
     /**
-     * 告警策略绑定的告警通知组 ID。
+     * Alert notification group ID bound to the alert policy.
      * 
      */
     @Export(name="contactGroupIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> contactGroupIds;
 
     /**
-     * @return 告警策略绑定的告警通知组 ID。
+     * @return Alert notification group ID bound to the alert policy.
      * 
      */
     public Output<List<String>> contactGroupIds() {
         return this.contactGroupIds;
     }
     /**
-     * 告警策略创建时间，时间戳格式。
+     * Alert policy creation time, in timestamp format.
      * 
      */
     @Export(name="createdAt", refs={String.class}, tree="[0]")
     private Output<String> createdAt;
 
     /**
-     * @return 告警策略创建时间，时间戳格式。
+     * @return Alert policy creation time, in timestamp format.
      * 
      */
     public Output<String> createdAt() {
         return this.createdAt;
     }
     /**
-     * 告警策略描述信息。
+     * Alert policy description.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 告警策略描述信息。
+     * @return Alert policy description.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * Dimension 配置。
+     * Dimension configuration.
      * 
      */
     @Export(name="dimensionConditions", refs={RuleDimensionConditions.class}, tree="[0]")
     private Output<RuleDimensionConditions> dimensionConditions;
 
     /**
-     * @return Dimension 配置。
+     * @return Dimension configuration.
      * 
      */
     public Output<RuleDimensionConditions> dimensionConditions() {
         return this.dimensionConditions;
     }
     /**
-     * 策略生效的截止时间，格式为HH:MM。
+     * Policy expiration time, in HH:MM format.
      * 
      */
     @Export(name="effectEndAt", refs={String.class}, tree="[0]")
     private Output<String> effectEndAt;
 
     /**
-     * @return 策略生效的截止时间，格式为HH:MM。
+     * @return Policy expiration time, in HH:MM format.
      * 
      */
     public Output<String> effectEndAt() {
         return this.effectEndAt;
     }
     /**
-     * 告警策略生效的开始时间，格式为HH:MM。
+     * Policy start time, in HH:MM format.
      * 
      */
     @Export(name="effectStartAt", refs={String.class}, tree="[0]")
     private Output<String> effectStartAt;
 
     /**
-     * @return 告警策略生效的开始时间，格式为HH:MM。
+     * @return Policy start time, in HH:MM format.
      * 
      */
     public Output<String> effectStartAt() {
         return this.effectStartAt;
     }
     /**
-     * 告警策略的开启状态。,enable：开启,disable：禁用
+     * Alert policy status. enable: enabled, disable: disabled
      * 
      */
     @Export(name="enableState", refs={String.class}, tree="[0]")
     private Output<String> enableState;
 
     /**
-     * @return 告警策略的开启状态。,enable：开启,disable：禁用
+     * @return Alert policy status. enable: enabled, disable: disabled
      * 
      */
     public Output<String> enableState() {
         return this.enableState;
     }
     /**
-     * 触发告警需要持续的周期。单位为分钟。
+     * Duration required to trigger an alert, in minutes.
      * 
      */
     @Export(name="evaluationCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> evaluationCount;
 
     /**
-     * @return 触发告警需要持续的周期。单位为分钟。
+     * @return Duration required to trigger an alert, in minutes.
      * 
      */
     public Output<Integer> evaluationCount() {
         return this.evaluationCount;
     }
     /**
-     * 告警级别。critical：严重,warning：警告,notice：通知
+     * Alert level. critical: critical, warning: warning, notice: notification
      * 
      */
     @Export(name="level", refs={String.class}, tree="[0]")
     private Output<String> level;
 
     /**
-     * @return 告警级别。critical：严重,warning：警告,notice：通知
+     * @return Alert level. critical: critical, warning: warning, notice: notification
      * 
      */
     public Output<String> level() {
@@ -222,56 +222,56 @@ public class Rule extends com.pulumi.resources.CustomResource {
         return this.levelConditions;
     }
     /**
-     * 告警策略是否用多指标。true：多指标,false：单指标（默认）。
+     * Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
      * 
      */
     @Export(name="multipleConditions", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> multipleConditions;
 
     /**
-     * @return 告警策略是否用多指标。true：多指标,false：单指标（默认）。
+     * @return Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
      * 
      */
     public Output<Boolean> multipleConditions() {
         return this.multipleConditions;
     }
     /**
-     * 监控指标所属的云产品。详情请参见 云产品监控指标 下各产品的 Namespace。
+     * Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
      * 
      */
     @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
-     * @return 监控指标所属的云产品。详情请参见 云产品监控指标 下各产品的 Namespace。
+     * @return Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
      * 
      */
     public Output<String> namespace() {
         return this.namespace;
     }
     /**
-     * 无数据告警。
+     * No data alert.
      * 
      */
     @Export(name="noData", refs={RuleNoData.class}, tree="[0]")
     private Output<RuleNoData> noData;
 
     /**
-     * @return 无数据告警。
+     * @return No data alert.
      * 
      */
     public Output<RuleNoData> noData() {
         return this.noData;
     }
     /**
-     * 通知策略 ID。
+     * Notification policy ID.
      * 
      */
     @Export(name="notificationId", refs={String.class}, tree="[0]")
     private Output<String> notificationId;
 
     /**
-     * @return 通知策略 ID。
+     * @return Notification policy ID.
      * 
      */
     public Output<String> notificationId() {
@@ -284,140 +284,140 @@ public class Rule extends com.pulumi.resources.CustomResource {
         return this.notifyTemplates;
     }
     /**
-     * 告警策略检测的资源 ID。
+     * Resource ID detected by the alert policy.
      * 
      */
     @Export(name="originalDimensions", refs={RuleOriginalDimensions.class}, tree="[0]")
     private Output<RuleOriginalDimensions> originalDimensions;
 
     /**
-     * @return 告警策略检测的资源 ID。
+     * @return Resource ID detected by the alert policy.
      * 
      */
     public Output<RuleOriginalDimensions> originalDimensions() {
         return this.originalDimensions;
     }
     /**
-     * 告警策略所属项目。
+     * Project to which the alert policy belongs.
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 告警策略所属项目。
+     * @return Project to which the alert policy belongs.
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 告警恢复通知。
+     * Alert recovery notification.
      * 
      */
     @Export(name="recoveryNotify", refs={RuleRecoveryNotify.class}, tree="[0]")
     private Output<RuleRecoveryNotify> recoveryNotify;
 
     /**
-     * @return 告警恢复通知。
+     * @return Alert recovery notification.
      * 
      */
     public Output<RuleRecoveryNotify> recoveryNotify() {
         return this.recoveryNotify;
     }
     /**
-     * 云产品所属可用区 ID。
+     * Availability zone ID of the cloud product.
      * 
      */
     @Export(name="regions", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> regions;
 
     /**
-     * @return 云产品所属可用区 ID。
+     * @return Availability zone ID of the cloud product.
      * 
      */
     public Output<List<String>> regions() {
         return this.regions;
     }
     /**
-     * 告警策略检测的资源类型。
+     * Resource type detected by the alert policy.
      * 
      */
     @Export(name="resourceType", refs={String.class}, tree="[0]")
     private Output<String> resourceType;
 
     /**
-     * @return 告警策略检测的资源类型。
+     * @return Resource type detected by the alert policy.
      * 
      */
     public Output<String> resourceType() {
         return this.resourceType;
     }
     /**
-     * 告警策略 ID。
+     * Alarm policy ID.
      * 
      */
     @Export(name="ruleId", refs={String.class}, tree="[0]")
     private Output<String> ruleId;
 
     /**
-     * @return 告警策略 ID。
+     * @return Alarm policy ID.
      * 
      */
     public Output<String> ruleId() {
         return this.ruleId;
     }
     /**
-     * 告警策略名称。
+     * Alert policy name.
      * 
      */
     @Export(name="ruleName", refs={String.class}, tree="[0]")
     private Output<String> ruleName;
 
     /**
-     * @return 告警策略名称。
+     * @return Alert policy name.
      * 
      */
     public Output<String> ruleName() {
         return this.ruleName;
     }
     /**
-     * 告警策略的类型。static：手动选择。dynamic：通过资源名称、项目和标签选择。
+     * Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
      * 
      */
     @Export(name="ruleType", refs={String.class}, tree="[0]")
     private Output<String> ruleType;
 
     /**
-     * @return 告警策略的类型。static：手动选择。dynamic：通过资源名称、项目和标签选择。
+     * @return Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
      * 
      */
     public Output<String> ruleType() {
         return this.ruleType;
     }
     /**
-     * 告警发送周期。单位为分钟。支持配置为 5、10、15、30、60、180、360、720、1440。
+     * Alert sending interval, in minutes. Supported values: 5, 10, 15, 30, 60, 180, 360, 720, 1440.
      * 
      */
     @Export(name="silenceTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> silenceTime;
 
     /**
-     * @return 告警发送周期。单位为分钟。支持配置为 5、10、15、30、60、180、360、720、1440。
+     * @return Alert sending interval, in minutes. Supported values: 5, 10, 15, 30, 60, 180, 360, 720, 1440.
      * 
      */
     public Output<Integer> silenceTime() {
         return this.silenceTime;
     }
     /**
-     * 此策略引用的指标所属的维度。详情请参见 云产品监控指标 下各产品的 SubNamespace。
+     * Dimension of the metric referenced by this policy. For details, see SubNamespace for each product in Cloud Product Monitoring Metrics.
      * 
      */
     @Export(name="subNamespace", refs={String.class}, tree="[0]")
     private Output<String> subNamespace;
 
     /**
-     * @return 此策略引用的指标所属的维度。详情请参见 云产品监控指标 下各产品的 SubNamespace。
+     * @return Dimension of the metric referenced by this policy. For details, see SubNamespace for each product in Cloud Product Monitoring Metrics.
      * 
      */
     public Output<String> subNamespace() {
@@ -430,42 +430,42 @@ public class Rule extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 告警策略更新时间，时间戳格式。
+     * Alarm policy update time, in timestamp format.
      * 
      */
     @Export(name="updatedAt", refs={String.class}, tree="[0]")
     private Output<String> updatedAt;
 
     /**
-     * @return 告警策略更新时间，时间戳格式。
+     * @return Alarm policy update time, in timestamp format.
      * 
      */
     public Output<String> updatedAt() {
         return this.updatedAt;
     }
     /**
-     * 告警策略绑定的告警回调 URL 地址。
+     * Alarm callback URL bound to the alarm policy.
      * 
      */
     @Export(name="webhook", refs={String.class}, tree="[0]")
     private Output<String> webhook;
 
     /**
-     * @return 告警策略绑定的告警回调 URL 地址。
+     * @return Alarm callback URL bound to the alarm policy.
      * 
      */
     public Output<String> webhook() {
         return this.webhook;
     }
     /**
-     * 告警发生时告警回调 ID 列表。
+     * Alarm callback ID list when an alarm occurs.
      * 
      */
     @Export(name="webhookIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> webhookIds;
 
     /**
-     * @return 告警发生时告警回调 ID 列表。
+     * @return Alarm callback ID list when an alarm occurs.
      * 
      */
     public Output<List<String>> webhookIds() {

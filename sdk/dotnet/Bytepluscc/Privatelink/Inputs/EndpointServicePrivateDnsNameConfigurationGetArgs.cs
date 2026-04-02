@@ -14,25 +14,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink.Inputs
     public sealed class EndpointServicePrivateDnsNameConfigurationGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 域验证名称。
+        /// Domain verification name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 域验证状态。PendingVerification：待验证Verifying：验证中Verified：验证通过Failed：验证失败
+        /// Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// 域验证类型。TXT：TXT记录。
+        /// Domain verification type. TXT: TXT record.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// 域验证值。
+        /// Domain verification value.
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

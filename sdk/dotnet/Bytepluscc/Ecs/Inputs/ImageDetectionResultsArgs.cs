@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
     public sealed class ImageDetectionResultsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
+        /// Check status. Options: Finished (completed), Processing (in progress).
         /// </summary>
         [Input("detectionStatus")]
         public Input<string>? DetectionStatus { get; set; }

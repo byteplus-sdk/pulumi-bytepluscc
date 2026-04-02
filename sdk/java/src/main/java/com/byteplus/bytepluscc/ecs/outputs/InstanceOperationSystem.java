@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceOperationSystem {
     /**
-     * @return 实例的操作系统名称。
+     * @return Instance operating system name.
      * 
      */
     private @Nullable String name;
     /**
-     * @return 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+     * @return Operating system type of the instance. Linux: Linux system. Windows: Windows system.
      * 
      */
     private @Nullable String type;
 
     private InstanceOperationSystem() {}
     /**
-     * @return 实例的操作系统名称。
+     * @return Instance operating system name.
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+     * @return Operating system type of the instance. Linux: Linux system. Windows: Windows system.
      * 
      */
     public Optional<String> type() {

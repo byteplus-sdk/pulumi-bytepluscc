@@ -30,11 +30,11 @@ class CertificateArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateTagArgs']]]] = None):
         """
         The set of arguments for constructing a Certificate resource.
-        :param pulumi.Input[builtins.str] private_key: 证书的私钥。
-        :param pulumi.Input[builtins.str] public_key: 证书的公钥。
-        :param pulumi.Input[builtins.str] certificate_name: 证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
-        :param pulumi.Input[builtins.str] description: 证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
-        :param pulumi.Input[builtins.str] project_name: 证书所属项目的名称。不填默认为default。
+        :param pulumi.Input[builtins.str] private_key: Certificate private key.
+        :param pulumi.Input[builtins.str] public_key: Certificate public key.
+        :param pulumi.Input[builtins.str] certificate_name: Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
+        :param pulumi.Input[builtins.str] description: Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
+        :param pulumi.Input[builtins.str] project_name: Name of the project the certificate belongs to. If not specified, defaults to 'default'.
         """
         pulumi.set(__self__, "private_key", private_key)
         pulumi.set(__self__, "public_key", public_key)
@@ -51,7 +51,7 @@ class CertificateArgs:
     @pulumi.getter(name="privateKey")
     def private_key(self) -> pulumi.Input[builtins.str]:
         """
-        证书的私钥。
+        Certificate private key.
         """
         return pulumi.get(self, "private_key")
 
@@ -63,7 +63,7 @@ class CertificateArgs:
     @pulumi.getter(name="publicKey")
     def public_key(self) -> pulumi.Input[builtins.str]:
         """
-        证书的公钥。
+        Certificate public key.
         """
         return pulumi.get(self, "public_key")
 
@@ -75,7 +75,7 @@ class CertificateArgs:
     @pulumi.getter(name="certificateName")
     def certificate_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
+        Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
         """
         return pulumi.get(self, "certificate_name")
 
@@ -87,7 +87,7 @@ class CertificateArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+        Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
         """
         return pulumi.get(self, "description")
 
@@ -99,7 +99,7 @@ class CertificateArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        证书所属项目的名称。不填默认为default。
+        Name of the project the certificate belongs to. If not specified, defaults to 'default'.
         """
         return pulumi.get(self, "project_name")
 
@@ -135,18 +135,18 @@ class _CertificateState:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateTagArgs']]]] = None):
         """
         Input properties used for looking up and filtering Certificate resources.
-        :param pulumi.Input[builtins.str] certificate_id: 证书的ID。
-        :param pulumi.Input[builtins.str] certificate_name: 证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
-        :param pulumi.Input[builtins.str] created_time: 证书的创建时间。
-        :param pulumi.Input[builtins.str] description: 证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
-        :param pulumi.Input[builtins.str] domain_name: 证书的主域名。
-        :param pulumi.Input[builtins.str] expired_at: 证书的过期时间。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] listeners: 证书关联的监听器的ID。
-        :param pulumi.Input[builtins.str] private_key: 证书的私钥。
-        :param pulumi.Input[builtins.str] project_name: 证书所属项目的名称。不填默认为default。
-        :param pulumi.Input[builtins.str] public_key: 证书的公钥。
-        :param pulumi.Input[builtins.bool] service_managed: 是否为托管资源。true：托管资源。false：非托管资源。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subject_alternative_names: 证书的备用域名列表。
+        :param pulumi.Input[builtins.str] certificate_id: Certificate ID.
+        :param pulumi.Input[builtins.str] certificate_name: Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
+        :param pulumi.Input[builtins.str] created_time: Certificate creation time.
+        :param pulumi.Input[builtins.str] description: Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
+        :param pulumi.Input[builtins.str] domain_name: Certificate primary domain name.
+        :param pulumi.Input[builtins.str] expired_at: Certificate expiration time.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] listeners: ID of the listener associated with the certificate.
+        :param pulumi.Input[builtins.str] private_key: Certificate private key.
+        :param pulumi.Input[builtins.str] project_name: Name of the project the certificate belongs to. If not specified, defaults to 'default'.
+        :param pulumi.Input[builtins.str] public_key: Certificate public key.
+        :param pulumi.Input[builtins.bool] service_managed: Managed resource status. true: managed resource. false: unmanaged resource.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subject_alternative_names: List of alternate domain names for the certificate.
         """
         if certificate_id is not None:
             pulumi.set(__self__, "certificate_id", certificate_id)
@@ -179,7 +179,7 @@ class _CertificateState:
     @pulumi.getter(name="certificateId")
     def certificate_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        证书的ID。
+        Certificate ID.
         """
         return pulumi.get(self, "certificate_id")
 
@@ -191,7 +191,7 @@ class _CertificateState:
     @pulumi.getter(name="certificateName")
     def certificate_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
+        Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
         """
         return pulumi.get(self, "certificate_name")
 
@@ -203,7 +203,7 @@ class _CertificateState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        证书的创建时间。
+        Certificate creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -215,7 +215,7 @@ class _CertificateState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+        Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
         """
         return pulumi.get(self, "description")
 
@@ -227,7 +227,7 @@ class _CertificateState:
     @pulumi.getter(name="domainName")
     def domain_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        证书的主域名。
+        Certificate primary domain name.
         """
         return pulumi.get(self, "domain_name")
 
@@ -239,7 +239,7 @@ class _CertificateState:
     @pulumi.getter(name="expiredAt")
     def expired_at(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        证书的过期时间。
+        Certificate expiration time.
         """
         return pulumi.get(self, "expired_at")
 
@@ -251,7 +251,7 @@ class _CertificateState:
     @pulumi.getter
     def listeners(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        证书关联的监听器的ID。
+        ID of the listener associated with the certificate.
         """
         return pulumi.get(self, "listeners")
 
@@ -263,7 +263,7 @@ class _CertificateState:
     @pulumi.getter(name="privateKey")
     def private_key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        证书的私钥。
+        Certificate private key.
         """
         return pulumi.get(self, "private_key")
 
@@ -275,7 +275,7 @@ class _CertificateState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        证书所属项目的名称。不填默认为default。
+        Name of the project the certificate belongs to. If not specified, defaults to 'default'.
         """
         return pulumi.get(self, "project_name")
 
@@ -287,7 +287,7 @@ class _CertificateState:
     @pulumi.getter(name="publicKey")
     def public_key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        证书的公钥。
+        Certificate public key.
         """
         return pulumi.get(self, "public_key")
 
@@ -299,7 +299,7 @@ class _CertificateState:
     @pulumi.getter(name="serviceManaged")
     def service_managed(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否为托管资源。true：托管资源。false：非托管资源。
+        Managed resource status. true: managed resource. false: unmanaged resource.
         """
         return pulumi.get(self, "service_managed")
 
@@ -311,7 +311,7 @@ class _CertificateState:
     @pulumi.getter(name="subjectAlternativeNames")
     def subject_alternative_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        证书的备用域名列表。
+        List of alternate domain names for the certificate.
         """
         return pulumi.get(self, "subject_alternative_names")
 
@@ -343,7 +343,7 @@ class Certificate(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CertificateTagArgs', 'CertificateTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        针对HTTPS协议，提供统一的证书管理服务，证书无需上传到后端服务器，支持在CLB实例上解密处理，降低了后端服务器的CPU开销。
+        Provides unified certificate management service for HTTPS protocol. Certificates do not need to be uploaded to backend servers. Supports decryption processing on CLB instances, reducing CPU overhead on backend servers.
 
         ## Example Usage
 
@@ -373,11 +373,11 @@ class Certificate(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] certificate_name: 证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
-        :param pulumi.Input[builtins.str] description: 证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
-        :param pulumi.Input[builtins.str] private_key: 证书的私钥。
-        :param pulumi.Input[builtins.str] project_name: 证书所属项目的名称。不填默认为default。
-        :param pulumi.Input[builtins.str] public_key: 证书的公钥。
+        :param pulumi.Input[builtins.str] certificate_name: Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
+        :param pulumi.Input[builtins.str] description: Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
+        :param pulumi.Input[builtins.str] private_key: Certificate private key.
+        :param pulumi.Input[builtins.str] project_name: Name of the project the certificate belongs to. If not specified, defaults to 'default'.
+        :param pulumi.Input[builtins.str] public_key: Certificate public key.
         """
         ...
     @overload
@@ -386,7 +386,7 @@ class Certificate(pulumi.CustomResource):
                  args: CertificateArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        针对HTTPS协议，提供统一的证书管理服务，证书无需上传到后端服务器，支持在CLB实例上解密处理，降低了后端服务器的CPU开销。
+        Provides unified certificate management service for HTTPS protocol. Certificates do not need to be uploaded to backend servers. Supports decryption processing on CLB instances, reducing CPU overhead on backend servers.
 
         ## Example Usage
 
@@ -491,18 +491,18 @@ class Certificate(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] certificate_id: 证书的ID。
-        :param pulumi.Input[builtins.str] certificate_name: 证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
-        :param pulumi.Input[builtins.str] created_time: 证书的创建时间。
-        :param pulumi.Input[builtins.str] description: 证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
-        :param pulumi.Input[builtins.str] domain_name: 证书的主域名。
-        :param pulumi.Input[builtins.str] expired_at: 证书的过期时间。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] listeners: 证书关联的监听器的ID。
-        :param pulumi.Input[builtins.str] private_key: 证书的私钥。
-        :param pulumi.Input[builtins.str] project_name: 证书所属项目的名称。不填默认为default。
-        :param pulumi.Input[builtins.str] public_key: 证书的公钥。
-        :param pulumi.Input[builtins.bool] service_managed: 是否为托管资源。true：托管资源。false：非托管资源。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subject_alternative_names: 证书的备用域名列表。
+        :param pulumi.Input[builtins.str] certificate_id: Certificate ID.
+        :param pulumi.Input[builtins.str] certificate_name: Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
+        :param pulumi.Input[builtins.str] created_time: Certificate creation time.
+        :param pulumi.Input[builtins.str] description: Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
+        :param pulumi.Input[builtins.str] domain_name: Certificate primary domain name.
+        :param pulumi.Input[builtins.str] expired_at: Certificate expiration time.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] listeners: ID of the listener associated with the certificate.
+        :param pulumi.Input[builtins.str] private_key: Certificate private key.
+        :param pulumi.Input[builtins.str] project_name: Name of the project the certificate belongs to. If not specified, defaults to 'default'.
+        :param pulumi.Input[builtins.str] public_key: Certificate public key.
+        :param pulumi.Input[builtins.bool] service_managed: Managed resource status. true: managed resource. false: unmanaged resource.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subject_alternative_names: List of alternate domain names for the certificate.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -527,7 +527,7 @@ class Certificate(pulumi.CustomResource):
     @pulumi.getter(name="certificateId")
     def certificate_id(self) -> pulumi.Output[builtins.str]:
         """
-        证书的ID。
+        Certificate ID.
         """
         return pulumi.get(self, "certificate_id")
 
@@ -535,7 +535,7 @@ class Certificate(pulumi.CustomResource):
     @pulumi.getter(name="certificateName")
     def certificate_name(self) -> pulumi.Output[builtins.str]:
         """
-        证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
+        Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
         """
         return pulumi.get(self, "certificate_name")
 
@@ -543,7 +543,7 @@ class Certificate(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        证书的创建时间。
+        Certificate creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -551,7 +551,7 @@ class Certificate(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+        Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
         """
         return pulumi.get(self, "description")
 
@@ -559,7 +559,7 @@ class Certificate(pulumi.CustomResource):
     @pulumi.getter(name="domainName")
     def domain_name(self) -> pulumi.Output[builtins.str]:
         """
-        证书的主域名。
+        Certificate primary domain name.
         """
         return pulumi.get(self, "domain_name")
 
@@ -567,7 +567,7 @@ class Certificate(pulumi.CustomResource):
     @pulumi.getter(name="expiredAt")
     def expired_at(self) -> pulumi.Output[builtins.str]:
         """
-        证书的过期时间。
+        Certificate expiration time.
         """
         return pulumi.get(self, "expired_at")
 
@@ -575,7 +575,7 @@ class Certificate(pulumi.CustomResource):
     @pulumi.getter
     def listeners(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        证书关联的监听器的ID。
+        ID of the listener associated with the certificate.
         """
         return pulumi.get(self, "listeners")
 
@@ -583,7 +583,7 @@ class Certificate(pulumi.CustomResource):
     @pulumi.getter(name="privateKey")
     def private_key(self) -> pulumi.Output[builtins.str]:
         """
-        证书的私钥。
+        Certificate private key.
         """
         return pulumi.get(self, "private_key")
 
@@ -591,7 +591,7 @@ class Certificate(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        证书所属项目的名称。不填默认为default。
+        Name of the project the certificate belongs to. If not specified, defaults to 'default'.
         """
         return pulumi.get(self, "project_name")
 
@@ -599,7 +599,7 @@ class Certificate(pulumi.CustomResource):
     @pulumi.getter(name="publicKey")
     def public_key(self) -> pulumi.Output[builtins.str]:
         """
-        证书的公钥。
+        Certificate public key.
         """
         return pulumi.get(self, "public_key")
 
@@ -607,7 +607,7 @@ class Certificate(pulumi.CustomResource):
     @pulumi.getter(name="serviceManaged")
     def service_managed(self) -> pulumi.Output[builtins.bool]:
         """
-        是否为托管资源。true：托管资源。false：非托管资源。
+        Managed resource status. true: managed resource. false: unmanaged resource.
         """
         return pulumi.get(self, "service_managed")
 
@@ -615,7 +615,7 @@ class Certificate(pulumi.CustomResource):
     @pulumi.getter(name="subjectAlternativeNames")
     def subject_alternative_names(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        证书的备用域名列表。
+        List of alternate domain names for the certificate.
         """
         return pulumi.get(self, "subject_alternative_names")
 

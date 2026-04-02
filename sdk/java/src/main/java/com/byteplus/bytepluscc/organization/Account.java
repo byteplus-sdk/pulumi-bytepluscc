@@ -18,7 +18,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 查看和管理您组织内的所有账号。每个账号可以直接放在根节点中，也可以移动到您创建的任意组织节点层级结构中，每个账号只能归属于一个节点。您可以分层树状结构管理您的组织结构以及成员账号。
+ * View and manage all accounts in your organization. Each account can be placed directly in the root node or moved to any organizational node hierarchy you create. Each account can belong to only one node. You can manage your organizational structure and member accounts in a layered tree structure
  * 
  * ## Example Usage
  * 
@@ -35,308 +35,308 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:organization/account:Account")
 public class Account extends com.pulumi.resources.CustomResource {
     /**
-     * 火山账号ID。
+     * Volcano account ID
      * 
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
-     * @return 火山账号ID。
+     * @return Volcano account ID
      * 
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
-     * 账户名称。5-20个字符。
+     * Account name. 5–20 characters
      * 
      */
     @Export(name="accountName", refs={String.class}, tree="[0]")
     private Output<String> accountName;
 
     /**
-     * @return 账户名称。5-20个字符。
+     * @return Account name. 5–20 characters
      * 
      */
     public Output<String> accountName() {
         return this.accountName;
     }
     /**
-     * 允许控制台访问，1: 允许，2: 不允许。
+     * Allow console access: 1. Allowed, 2. Not allowed
      * 
      */
     @Export(name="allowConsole", refs={Integer.class}, tree="[0]")
     private Output<Integer> allowConsole;
 
     /**
-     * @return 允许控制台访问，1: 允许，2: 不允许。
+     * @return Allow console access: 1. Allowed, 2. Not allowed
      * 
      */
     public Output<Integer> allowConsole() {
         return this.allowConsole;
     }
     /**
-     * 允许退出，1: 允许，2: 不允许。
+     * Allow exit: 1. Allowed, 2. Not allowed
      * 
      */
     @Export(name="allowExit", refs={Integer.class}, tree="[0]")
     private Output<Integer> allowExit;
 
     /**
-     * @return 允许退出，1: 允许，2: 不允许。
+     * @return Allow exit: 1. Allowed, 2. Not allowed
      * 
      */
     public Output<Integer> allowExit() {
         return this.allowExit;
     }
     /**
-     * 创建时间。
+     * Creation time
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 创建时间。
+     * @return Creation time
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 删除标记。
+     * Deletion flag
      * 
      */
     @Export(name="deleteUk", refs={String.class}, tree="[0]")
     private Output<String> deleteUk;
 
     /**
-     * @return 删除标记。
+     * @return Deletion flag
      * 
      */
     public Output<String> deleteUk() {
         return this.deleteUk;
     }
     /**
-     * 删除时间。
+     * Deletion time
      * 
      */
     @Export(name="deletedTime", refs={String.class}, tree="[0]")
     private Output<String> deletedTime;
 
     /**
-     * @return 删除时间。
+     * @return Deletion time
      * 
      */
     public Output<String> deletedTime() {
         return this.deletedTime;
     }
     /**
-     * 描述。
+     * Description
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 描述。
+     * @return Description
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * IAM角色名称。
+     * IAM role name
      * 
      */
     @Export(name="iamRole", refs={String.class}, tree="[0]")
     private Output<String> iamRole;
 
     /**
-     * @return IAM角色名称。
+     * @return IAM role name
      * 
      */
     public Output<String> iamRole() {
         return this.iamRole;
     }
     /**
-     * 是否是管理员，0.非管理员，1.管理员。
+     * Administrator status: 0. Non-administrator, 1. Administrator
      * 
      */
     @Export(name="isOwner", refs={Integer.class}, tree="[0]")
     private Output<Integer> isOwner;
 
     /**
-     * @return 是否是管理员，0.非管理员，1.管理员。
+     * @return Administrator status: 0. Non-administrator, 1. Administrator
      * 
      */
     public Output<Integer> isOwner() {
         return this.isOwner;
     }
     /**
-     * 加入类型，1: 创建，2: 邀请。
+     * Join type: 1. Create, 2. Invite
      * 
      */
     @Export(name="joinType", refs={Integer.class}, tree="[0]")
     private Output<Integer> joinType;
 
     /**
-     * @return 加入类型，1: 创建，2: 邀请。
+     * @return Join type: 1. Create, 2. Invite
      * 
      */
     public Output<Integer> joinType() {
         return this.joinType;
     }
     /**
-     * 主体名称。
+     * Subject name
      * 
      */
     @Export(name="mainName", refs={String.class}, tree="[0]")
     private Output<String> mainName;
 
     /**
-     * @return 主体名称。
+     * @return Subject name
      * 
      */
     public Output<String> mainName() {
         return this.mainName;
     }
     /**
-     * 组织成员账号ID。
+     * Organization member account ID
      * 
      */
     @Export(name="memberAccountId", refs={String.class}, tree="[0]")
     private Output<String> memberAccountId;
 
     /**
-     * @return 组织成员账号ID。
+     * @return Organization member account ID
      * 
      */
     public Output<String> memberAccountId() {
         return this.memberAccountId;
     }
     /**
-     * 组织ID。
+     * Organization ID
      * 
      */
     @Export(name="orgId", refs={String.class}, tree="[0]")
     private Output<String> orgId;
 
     /**
-     * @return 组织ID。
+     * @return Organization ID
      * 
      */
     public Output<String> orgId() {
         return this.orgId;
     }
     /**
-     * 组织类型，1.企业组织。
+     * Organization type: 1. Enterprise organization
      * 
      */
     @Export(name="orgType", refs={Integer.class}, tree="[0]")
     private Output<Integer> orgType;
 
     /**
-     * @return 组织类型，1.企业组织。
+     * @return Organization type: 1. Enterprise organization
      * 
      */
     public Output<Integer> orgType() {
         return this.orgType;
     }
     /**
-     * 组织单元ID。传入 0 加入到 root 单元。
+     * Organizational unit ID. Enter 0 to join the root unit
      * 
      */
     @Export(name="orgUnitId", refs={String.class}, tree="[0]")
     private Output<String> orgUnitId;
 
     /**
-     * @return 组织单元ID。传入 0 加入到 root 单元。
+     * @return Organizational unit ID. Enter 0 to join the root unit
      * 
      */
     public Output<String> orgUnitId() {
         return this.orgUnitId;
     }
     /**
-     * 组织单元名称。
+     * Organizational unit name
      * 
      */
     @Export(name="orgUnitName", refs={String.class}, tree="[0]")
     private Output<String> orgUnitName;
 
     /**
-     * @return 组织单元名称。
+     * @return Organizational unit name
      * 
      */
     public Output<String> orgUnitName() {
         return this.orgUnitName;
     }
     /**
-     * 认证主体ID。
+     * Authentication subject ID
      * 
      */
     @Export(name="orgVerificationId", refs={String.class}, tree="[0]")
     private Output<String> orgVerificationId;
 
     /**
-     * @return 认证主体ID。
+     * @return Authentication subject ID
      * 
      */
     public Output<String> orgVerificationId() {
         return this.orgVerificationId;
     }
     /**
-     * 管理员ID。
+     * Administrator ID
      * 
      */
     @Export(name="owner", refs={String.class}, tree="[0]")
     private Output<String> owner;
 
     /**
-     * @return 管理员ID。
+     * @return Administrator ID
      * 
      */
     public Output<String> owner() {
         return this.owner;
     }
     /**
-     * 账户密码。
+     * Account password
      * 
      */
     @Export(name="password", refs={String.class}, tree="[0]")
     private Output<String> password;
 
     /**
-     * @return 账户密码。
+     * @return Account password
      * 
      */
     public Output<String> password() {
         return this.password;
     }
     /**
-     * 安全联系信息。
+     * Security contact information
      * 
      */
     @Export(name="secureContactInfo", refs={AccountSecureContactInfo.class}, tree="[0]")
     private Output<AccountSecureContactInfo> secureContactInfo;
 
     /**
-     * @return 安全联系信息。
+     * @return Security contact information
      * 
      */
     public Output<AccountSecureContactInfo> secureContactInfo() {
         return this.secureContactInfo;
     }
     /**
-     * 显示名称。
+     * Display name
      * 
      */
     @Export(name="showName", refs={String.class}, tree="[0]")
     private Output<String> showName;
 
     /**
-     * @return 显示名称。
+     * @return Display name
      * 
      */
     public Output<String> showName() {
@@ -349,28 +349,28 @@ public class Account extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 更新时间。
+     * Update time
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 更新时间。
+     * @return Update time
      * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
-     * 被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+     * Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
      * 
      */
     @Export(name="verificationRelationId", refs={String.class}, tree="[0]")
     private Output<String> verificationRelationId;
 
     /**
-     * @return 被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+     * @return Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
      * 
      */
     public Output<String> verificationRelationId() {

@@ -14,79 +14,79 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql.Inputs
     public sealed class InstanceNodeDetailInfoGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 节点的创建时间。
+        /// Node creation time.
         /// </summary>
         [Input("createTime")]
         public Input<string>? CreateTime { get; set; }
 
         /// <summary>
-        /// 节点主机名。
+        /// Node hostname.
         /// </summary>
         [Input("hostName")]
         public Input<string>? HostName { get; set; }
 
         /// <summary>
-        /// 实例ID。
+        /// Instance ID.
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 内存大小，单位为 GiB。
+        /// Memory size, in GiB.
         /// </summary>
         [Input("memory")]
         public Input<int>? Memory { get; set; }
 
         /// <summary>
-        /// 节点ID。
+        /// Node ID.
         /// </summary>
         [Input("nodeId")]
         public Input<string>? NodeId { get; set; }
 
         /// <summary>
-        /// 节点IP。
+        /// Node IP.
         /// </summary>
         [Input("nodeIp")]
         public Input<string>? NodeIp { get; set; }
 
         /// <summary>
-        /// 节点规格。
+        /// Node specification.
         /// </summary>
         [Input("nodeSpec")]
         public Input<string>? NodeSpec { get; set; }
 
         /// <summary>
-        /// 节点状态，取值为：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主备切换中。Error：错误。
+        /// Node status. Possible values: Running: running. Creating: creating. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: master/standby switching. Error: error.
         /// </summary>
         [Input("nodeStatus")]
         public Input<string>? NodeStatus { get; set; }
 
         /// <summary>
-        /// 节点类型。取值：Primary：表示主节点终端。ReadOnly：表示只读节点终端。Secondary：表示备节点终端。
+        /// Node type. Possible values: Primary: primary node terminal. ReadOnly: read-only node terminal. Secondary: standby node terminal.
         /// </summary>
         [Input("nodeType")]
         public Input<string>? NodeType { get; set; }
 
         /// <summary>
-        /// 区域ID。
+        /// Region ID.
         /// </summary>
         [Input("regionId")]
         public Input<string>? RegionId { get; set; }
 
         /// <summary>
-        /// 更新时间。
+        /// Update time.
         /// </summary>
         [Input("updateTime")]
         public Input<string>? UpdateTime { get; set; }
 
         /// <summary>
-        /// vCPU 数量。
+        /// vCPU count.
         /// </summary>
         [Input("vcpu")]
         public Input<int>? Vcpu { get; set; }
 
         /// <summary>
-        /// 可用区ID。
+        /// Availability zone ID.
         /// </summary>
         [Input("zoneId")]
         public Input<string>? ZoneId { get; set; }

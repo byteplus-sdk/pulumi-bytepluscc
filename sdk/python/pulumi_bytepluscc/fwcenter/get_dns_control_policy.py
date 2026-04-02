@@ -79,7 +79,7 @@ class GetDnsControlPolicyResult:
     @pulumi.getter(name="accountId")
     def account_id(self) -> builtins.str:
         """
-        用户的唯一标识ID。
+        User's unique identifier.
         """
         return pulumi.get(self, "account_id")
 
@@ -87,7 +87,7 @@ class GetDnsControlPolicyResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        策略的描述信息。
+        Policy description information.
         """
         return pulumi.get(self, "description")
 
@@ -95,7 +95,7 @@ class GetDnsControlPolicyResult:
     @pulumi.getter
     def destination(self) -> builtins.str:
         """
-        访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
+        Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
         """
         return pulumi.get(self, "destination")
 
@@ -103,7 +103,7 @@ class GetDnsControlPolicyResult:
     @pulumi.getter(name="destinationGroupLists")
     def destination_group_lists(self) -> Sequence[builtins.str]:
         """
-        域名地址簿名称列表。
+        Domain address book name list.
         """
         return pulumi.get(self, "destination_group_lists")
 
@@ -111,7 +111,7 @@ class GetDnsControlPolicyResult:
     @pulumi.getter(name="destinationType")
     def destination_type(self) -> builtins.str:
         """
-        访问目的的类型。domain：域名；group：域名地址簿。
+        Type of access target. domain: domain; group: domain address book.
         """
         return pulumi.get(self, "destination_type")
 
@@ -119,7 +119,7 @@ class GetDnsControlPolicyResult:
     @pulumi.getter(name="domainListV1s")
     def domain_list_v1s(self) -> Sequence['outputs.GetDnsControlPolicyDomainListV1Result']:
         """
-        域名地址簿的域名列表。
+        Domain list in the domain address book.
         """
         return pulumi.get(self, "domain_list_v1s")
 
@@ -127,7 +127,7 @@ class GetDnsControlPolicyResult:
     @pulumi.getter(name="domainLists")
     def domain_lists(self) -> Sequence[builtins.str]:
         """
-        域名列表。
+        Domain list.
         """
         return pulumi.get(self, "domain_lists")
 
@@ -135,7 +135,7 @@ class GetDnsControlPolicyResult:
     @pulumi.getter(name="hitCnt")
     def hit_cnt(self) -> builtins.int:
         """
-        命中计数，表示该域名黑名单访问控制策略被触发的次数。
+        Hit count, indicating the number of times the domain denylist access control policy was triggered.
         """
         return pulumi.get(self, "hit_cnt")
 
@@ -151,7 +151,7 @@ class GetDnsControlPolicyResult:
     @pulumi.getter(name="internetFirewallId")
     def internet_firewall_id(self) -> builtins.str:
         """
-        互联网边界防火墙实例ID。
+        Internet border firewall instance ID.
         """
         return pulumi.get(self, "internet_firewall_id")
 
@@ -159,7 +159,7 @@ class GetDnsControlPolicyResult:
     @pulumi.getter(name="lastHitTime")
     def last_hit_time(self) -> builtins.int:
         """
-        最近命中时间戳，表示该域名黑名单访问控制策略最后一次被触发的时间。
+        Latest hit timestamp, indicating the last time the domain denylist access control policy was triggered.
         """
         return pulumi.get(self, "last_hit_time")
 
@@ -167,7 +167,7 @@ class GetDnsControlPolicyResult:
     @pulumi.getter(name="ruleId")
     def rule_id(self) -> builtins.str:
         """
-        访问控制策略的唯一标识ID。
+        Unique identifier of the access control policy.
         """
         return pulumi.get(self, "rule_id")
 
@@ -175,7 +175,7 @@ class GetDnsControlPolicyResult:
     @pulumi.getter
     def sources(self) -> Sequence['outputs.GetDnsControlPolicySourceResult']:
         """
-        访问源信息，包含VPC列表。
+        Access source information, including VPC list.
         """
         return pulumi.get(self, "sources")
 
@@ -183,7 +183,7 @@ class GetDnsControlPolicyResult:
     @pulumi.getter
     def status(self) -> builtins.bool:
         """
-        域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
+        Switch status of the domain denylist access control policy. false: Off; true: On.
         """
         return pulumi.get(self, "status")
 
@@ -191,7 +191,7 @@ class GetDnsControlPolicyResult:
     @pulumi.getter(name="useCount")
     def use_count(self) -> builtins.int:
         """
-        该域名黑名单访问控制策略占用的策略数量。
+        Number of policies occupied by this domain denylist access control policy.
         """
         return pulumi.get(self, "use_count")
 

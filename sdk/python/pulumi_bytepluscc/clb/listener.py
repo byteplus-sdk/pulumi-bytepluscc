@@ -63,44 +63,44 @@ class ListenerArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['ListenerTagArgs']]]] = None):
         """
         The set of arguments for constructing a Listener resource.
-        :param pulumi.Input[builtins.str] load_balancer_id: CLB实例的ID。
-        :param pulumi.Input[builtins.int] port: 监听器接收请求使用的端口。取值范围为 0～65535。参数Protocol为“TCP”或“UDP”时，支持传入0，表示用全端口监听。
-        :param pulumi.Input[builtins.str] protocol: 监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
-        :param pulumi.Input[builtins.str] server_group_id: 监听器关联的后端服务器组 ID。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] acl_ids: 监听器绑定的访问控制策略组ID。仅AclStatus参数为on时返回。
-        :param pulumi.Input[builtins.str] acl_status: 是否开启访问控制功能。取值如下：on：开启。off（默认值）：不开启。
-        :param pulumi.Input[builtins.str] acl_type: 访问控制的方式。white：白名单。black：黑名单。仅AclStatus参数为on时，本参数有效。
-        :param pulumi.Input[builtins.int] bandwidth: 监听器的带宽上限，即此监听器独占CLB实例的带宽，单位为Mbps。-1（默认值）：此监听器不独占CLB的带，与其他监听器共享CLB实例未被独占的带宽。取值范围：1～CLB实例未被独占的带宽。
-        :param pulumi.Input[builtins.str] ca_certificate_id: 双向认证的CA证书。
-        :param pulumi.Input[builtins.str] ca_enabled: 是否开启双向认证。on：开启。off（默认值）：不开启。
-        :param pulumi.Input[builtins.str] cert_center_certificate_id: 证书中心的证书的ID。
-        :param pulumi.Input[builtins.str] certificate_id: CLB侧证书管理模块的证书的ID。
-        :param pulumi.Input[builtins.str] certificate_source: 证书的来源。clb (默认)：CLB上传的证书。cert_center：证书中心上传的证书。user：用户上传的证书。
-        :param pulumi.Input[builtins.int] client_body_timeout: 读取客户端请求正文的超时时间。此超时时间仅针对两个连续的读操作之间设置，而非整个请求的传输过程。取值范围为 30-120秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效
-        :param pulumi.Input[builtins.int] client_header_timeout: 读取客户端请求头的超时时间。取值范围为30-120秒。默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
-        :param pulumi.Input[builtins.str] connection_drain_enabled: 监听器是否开启连接优雅中断功能。on：开启。off：不开启。参数Protocol返回为HTTP或HTTPS时，该参数固定返回off。
-        :param pulumi.Input[builtins.int] connection_drain_timeout: 连接优雅中断的超时时间，单位为秒。参数ConnectionDrainEnabled返回为off时，该参数返回0。
-        :param pulumi.Input[builtins.str] cookie: 后端服务器配置的会话保持的Cookie名称。仅参数PersistenceType取server时，本参数有效且必填。只能包含字母、数字、下划线（_）和中划线（-）。长度限制在1～200字符之间。
-        :param pulumi.Input[builtins.int] cps: 每秒新建连接数的上限。-1（默认值）：不限制，即CLB实例的新建连接数上限。取值范围：1～CLB实例的新连接数上限。
-        :param pulumi.Input[builtins.str] description: 监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
-        :param pulumi.Input[builtins.str] enabled: 是否启用监听器。on（默认值）：开启。off：不开启。
-        :param pulumi.Input[builtins.int] end_port: 全端口监听的结束端口，取值范围为1-65535。参数Port为“0”时，该参数必须传入，且该参数取值应大于tartPort。
-        :param pulumi.Input[builtins.int] established_timeout: 监听器的连接超时时间。仅参数Protocol取TCP或UDP时，本参数有效。取值如下：TCP协议：10-900秒，默认为900秒。UDP协议：1-300秒，默认为90秒。
-        :param pulumi.Input['ListenerHealthCheckArgs'] health_check: 健康检查相关信息。
-        :param pulumi.Input[builtins.str] http2_enabled: 监听器是否开启前端HTTP 2.0协议。仅参数`Protocol取HTTPS时，本参数有效。取值如下：|on：开启。off（默认值）：不开启。
-        :param pulumi.Input[builtins.int] keepalive_timeout: 客户端与CLB之间的长连接超时时间。取值范围为 0-900秒，默认为75秒。0表示禁用长连接。仅参数Protocol取HTTP或HTTPS时，本参数有效。
-        :param pulumi.Input[builtins.str] listener_name: 监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
-        :param pulumi.Input[builtins.int] max_connections: 最大并发连接数的上限。-1（默认值）：不限制，CLB实例的最大并发连接数上限。取值范围：1～CLB实例的最大并发连接数上限。
-        :param pulumi.Input[builtins.int] persistence_timeout: 会话保持的超时时间，单位为秒。取值范围根据参数PersistenceType取值有所不同。PersistenceType置为source_ip时，取值范围为1～3600。PersistenceType配置为insert时，取值范围为1～86400。
-        :param pulumi.Input[builtins.str] persistence_type: 会话保持的类型。取值如下：off（默认值）：不启用会话保持。source_ip：源地址IP，仅参数ProtocolTCP或UDP时，本取值有效。insert：植入Cookie，仅参数Protocol取HTTP或HTTPS且Scheduler取wrr时，本取值生效。server：重写Cookie，仅参数Protocol取HTTP或HTTPS且Scheduler取wrr时，本取值生效。。
-        :param pulumi.Input[builtins.int] proxy_connect_timeout: CLB与后端服务器之间的连接建立超时时间。建议大于健康检查超时时间。取值范围为 4-120秒，默认为4。仅参数Protocol取HTTP或HTTPS时，本参数有效。
-        :param pulumi.Input[builtins.str] proxy_protocol_type: 是否启用Proxy-Protocol协议。仅参数Protocol取TCP或UDP时，本参数有效。取值如下：off（默认值）：关闭。standard：开启。
-        :param pulumi.Input[builtins.int] proxy_read_timeout: CLB从后端服务器读取响应的超时时间。此超时时间仅针对两个连续的读操作之间设置，而非整个响应的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
-        :param pulumi.Input[builtins.int] proxy_send_timeout: CLB将请求传输到后端服务器的超时时间。此超时仅针对两个连续的写操作之间设置，而非整个请求的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
-        :param pulumi.Input[builtins.str] scheduler: 监听器使用的调度算法。wrr（默认值）：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
-        :param pulumi.Input[builtins.str] security_policy_id: HTTPS监听器的TLS安全策略。仅参数Protocol取HTTPS时，本参数有效。 取值如下：default*policy（默认值）：支持SSL v3、TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*0：支持TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*1：支持TLS v1.1、TLS v1.2。tls*cipher*policy*1*2：支持TLS v1.2。tls*cipher*policy*1*2*strict：支持TLS v1.2。
-        :param pulumi.Input[builtins.int] send_timeout: CLB向客户端发送响应的超时时间。此超时仅针对两个连续的写操作之间设置，而非整响应的传输过程。取值范围为 1-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
-        :param pulumi.Input[builtins.int] start_port: 全端口监听的起始端口，取值范围为1-65535。参数Port为“0”时，该参数必须传入。
+        :param pulumi.Input[builtins.str] load_balancer_id: ID of the CLB instance.
+        :param pulumi.Input[builtins.int] port: Port used by the listener to receive requests. Value range: 0–65535. When the Protocol parameter is 'TCP' or 'UDP', 0 is supported, which enables listening on all ports.
+        :param pulumi.Input[builtins.str] protocol: Listener protocol. Includes: TCP, UDP, HTTP, HTTPS.
+        :param pulumi.Input[builtins.str] server_group_id: ID of the backend server group associated with the listener.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] acl_ids: ID of the access control policy group bound to the listener. Returned only when the AclStatus parameter is set to on.
+        :param pulumi.Input[builtins.str] acl_status: Enable access control. Values: on: enabled. off (default): disabled.
+        :param pulumi.Input[builtins.str] acl_type: Access control mode. white: Allowlist. black: Denylist. This parameter is valid only when the AclStatus parameter is on.
+        :param pulumi.Input[builtins.int] bandwidth: Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.
+        :param pulumi.Input[builtins.str] ca_certificate_id: CA certificate for mutual authentication.
+        :param pulumi.Input[builtins.str] ca_enabled: Enable mutual authentication. on: enabled. off (default): disabled.
+        :param pulumi.Input[builtins.str] cert_center_certificate_id: Certificate ID from Certificate Center.
+        :param pulumi.Input[builtins.str] certificate_id: Certificate ID from the CLB certificate management module.
+        :param pulumi.Input[builtins.str] certificate_source: Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
+        :param pulumi.Input[builtins.int] client_body_timeout: Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.int] client_header_timeout: Timeout for reading the client request header. Value range: 30–120 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.str] connection_drain_enabled: Whether the listener enables graceful connection termination. on: enabled. off: not enabled. When Protocol returns HTTP or HTTPS, this parameter always returns off.
+        :param pulumi.Input[builtins.int] connection_drain_timeout: Timeout for graceful connection termination, in seconds. If ConnectionDrainEnabled returns off, this parameter returns 0.
+        :param pulumi.Input[builtins.str] cookie: Name of the session persistence cookie configured on the backend server. This parameter is valid and required only when PersistenceType is set to server. Only letters, numbers, underscores (_), and hyphens (-) are allowed. Length must be between 1 and 200 characters.
+        :param pulumi.Input[builtins.int] cps: Maximum number of new connections per second. -1 (default): No limit, which means the maximum number of new connections allowed by the CLB instance. Value range: 1 to the maximum number of new connections allowed by the CLB instance.
+        :param pulumi.Input[builtins.str] description: Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
+        :param pulumi.Input[builtins.str] enabled: Enable listener. on (default): enabled. off: disabled.
+        :param pulumi.Input[builtins.int] end_port: End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.
+        :param pulumi.Input[builtins.int] established_timeout: Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
+        :param pulumi.Input['ListenerHealthCheckArgs'] health_check: Health check information.
+        :param pulumi.Input[builtins.str] http2_enabled: Whether the listener enables frontend HTTP 2.0 protocol. This parameter is valid only when Protocol is set to HTTPS. Values: on: enabled. off (default): disabled.
+        :param pulumi.Input[builtins.int] keepalive_timeout: Keep-alive timeout between the client and CLB. Range: 0–900 seconds, default is 75 seconds. 0 disables keep-alive. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.str] listener_name: Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If left blank, 'Protocol-Port' will be used as the default listener name.
+        :param pulumi.Input[builtins.int] max_connections: Maximum concurrent connections limit. -1 (default): unlimited (up to the maximum concurrent connections supported by the CLB instance). Value range: 1 to the maximum concurrent connections limit of the CLB instance.
+        :param pulumi.Input[builtins.int] persistence_timeout: Session persistence timeout, in seconds. The value range depends on the PersistenceType parameter. When PersistenceType is set to source_ip, the range is 1–3600. When PersistenceType is set to insert, the range is 1–86400.
+        :param pulumi.Input[builtins.str] persistence_type: Session persistence type. Values: off (default): session persistence disabled. source_ip: source IP address, valid only when Protocol is TCP or UDP. insert: insert Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr. server: rewrite Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr.
+        :param pulumi.Input[builtins.int] proxy_connect_timeout: Connection establishment timeout between CLB and backend server. Recommended to be greater than the health check timeout. Range: 4–120 seconds, default is 4. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.str] proxy_protocol_type: Enable Proxy-Protocol. This parameter is valid only when Protocol is TCP or UDP. Values: off (default): disabled. standard: enabled.
+        :param pulumi.Input[builtins.int] proxy_read_timeout: Timeout for CLB to read responses from backend servers. This timeout applies only between two consecutive read operations, not for the entire response transmission. Value range: 30–3600 seconds. Default: 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.int] proxy_send_timeout: Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.str] scheduler: Scheduling algorithm used by the listener. wrr (default): Weighted round robin. wlc: Weighted least connections. sh: Source address hash.
+        :param pulumi.Input[builtins.str] security_policy_id: TLS security policy for HTTPS listeners. This parameter is valid only when Protocol is set to HTTPS. Values: default*policy (default): supports SSL v3, TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*0: supports TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*1: supports TLS v1.1, TLS v1.2. tls*cipher*policy*1*2: supports TLS v1.2. tls*cipher*policy*1*2*strict: supports TLS v1.2.
+        :param pulumi.Input[builtins.int] send_timeout: Timeout for CLB to send responses to the client. This timeout applies only between two consecutive write operations, not the entire response transmission. Range: 1–3600 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.int] start_port: Start port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required.
         """
         pulumi.set(__self__, "load_balancer_id", load_balancer_id)
         pulumi.set(__self__, "port", port)
@@ -181,7 +181,7 @@ class ListenerArgs:
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> pulumi.Input[builtins.str]:
         """
-        CLB实例的ID。
+        ID of the CLB instance.
         """
         return pulumi.get(self, "load_balancer_id")
 
@@ -193,7 +193,7 @@ class ListenerArgs:
     @pulumi.getter
     def port(self) -> pulumi.Input[builtins.int]:
         """
-        监听器接收请求使用的端口。取值范围为 0～65535。参数Protocol为“TCP”或“UDP”时，支持传入0，表示用全端口监听。
+        Port used by the listener to receive requests. Value range: 0–65535. When the Protocol parameter is 'TCP' or 'UDP', 0 is supported, which enables listening on all ports.
         """
         return pulumi.get(self, "port")
 
@@ -205,7 +205,7 @@ class ListenerArgs:
     @pulumi.getter
     def protocol(self) -> pulumi.Input[builtins.str]:
         """
-        监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
+        Listener protocol. Includes: TCP, UDP, HTTP, HTTPS.
         """
         return pulumi.get(self, "protocol")
 
@@ -217,7 +217,7 @@ class ListenerArgs:
     @pulumi.getter(name="serverGroupId")
     def server_group_id(self) -> pulumi.Input[builtins.str]:
         """
-        监听器关联的后端服务器组 ID。
+        ID of the backend server group associated with the listener.
         """
         return pulumi.get(self, "server_group_id")
 
@@ -229,7 +229,7 @@ class ListenerArgs:
     @pulumi.getter(name="aclIds")
     def acl_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        监听器绑定的访问控制策略组ID。仅AclStatus参数为on时返回。
+        ID of the access control policy group bound to the listener. Returned only when the AclStatus parameter is set to on.
         """
         return pulumi.get(self, "acl_ids")
 
@@ -241,7 +241,7 @@ class ListenerArgs:
     @pulumi.getter(name="aclStatus")
     def acl_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        是否开启访问控制功能。取值如下：on：开启。off（默认值）：不开启。
+        Enable access control. Values: on: enabled. off (default): disabled.
         """
         return pulumi.get(self, "acl_status")
 
@@ -253,7 +253,7 @@ class ListenerArgs:
     @pulumi.getter(name="aclType")
     def acl_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        访问控制的方式。white：白名单。black：黑名单。仅AclStatus参数为on时，本参数有效。
+        Access control mode. white: Allowlist. black: Denylist. This parameter is valid only when the AclStatus parameter is on.
         """
         return pulumi.get(self, "acl_type")
 
@@ -265,7 +265,7 @@ class ListenerArgs:
     @pulumi.getter
     def bandwidth(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        监听器的带宽上限，即此监听器独占CLB实例的带宽，单位为Mbps。-1（默认值）：此监听器不独占CLB的带，与其他监听器共享CLB实例未被独占的带宽。取值范围：1～CLB实例未被独占的带宽。
+        Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.
         """
         return pulumi.get(self, "bandwidth")
 
@@ -277,7 +277,7 @@ class ListenerArgs:
     @pulumi.getter(name="caCertificateId")
     def ca_certificate_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        双向认证的CA证书。
+        CA certificate for mutual authentication.
         """
         return pulumi.get(self, "ca_certificate_id")
 
@@ -289,7 +289,7 @@ class ListenerArgs:
     @pulumi.getter(name="caEnabled")
     def ca_enabled(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        是否开启双向认证。on：开启。off（默认值）：不开启。
+        Enable mutual authentication. on: enabled. off (default): disabled.
         """
         return pulumi.get(self, "ca_enabled")
 
@@ -301,7 +301,7 @@ class ListenerArgs:
     @pulumi.getter(name="certCenterCertificateId")
     def cert_center_certificate_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        证书中心的证书的ID。
+        Certificate ID from Certificate Center.
         """
         return pulumi.get(self, "cert_center_certificate_id")
 
@@ -313,7 +313,7 @@ class ListenerArgs:
     @pulumi.getter(name="certificateId")
     def certificate_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        CLB侧证书管理模块的证书的ID。
+        Certificate ID from the CLB certificate management module.
         """
         return pulumi.get(self, "certificate_id")
 
@@ -325,7 +325,7 @@ class ListenerArgs:
     @pulumi.getter(name="certificateSource")
     def certificate_source(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        证书的来源。clb (默认)：CLB上传的证书。cert_center：证书中心上传的证书。user：用户上传的证书。
+        Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
         """
         return pulumi.get(self, "certificate_source")
 
@@ -337,7 +337,7 @@ class ListenerArgs:
     @pulumi.getter(name="clientBodyTimeout")
     def client_body_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        读取客户端请求正文的超时时间。此超时时间仅针对两个连续的读操作之间设置，而非整个请求的传输过程。取值范围为 30-120秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效
+        Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         """
         return pulumi.get(self, "client_body_timeout")
 
@@ -349,7 +349,7 @@ class ListenerArgs:
     @pulumi.getter(name="clientHeaderTimeout")
     def client_header_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        读取客户端请求头的超时时间。取值范围为30-120秒。默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+        Timeout for reading the client request header. Value range: 30–120 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         """
         return pulumi.get(self, "client_header_timeout")
 
@@ -361,7 +361,7 @@ class ListenerArgs:
     @pulumi.getter(name="connectionDrainEnabled")
     def connection_drain_enabled(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        监听器是否开启连接优雅中断功能。on：开启。off：不开启。参数Protocol返回为HTTP或HTTPS时，该参数固定返回off。
+        Whether the listener enables graceful connection termination. on: enabled. off: not enabled. When Protocol returns HTTP or HTTPS, this parameter always returns off.
         """
         return pulumi.get(self, "connection_drain_enabled")
 
@@ -373,7 +373,7 @@ class ListenerArgs:
     @pulumi.getter(name="connectionDrainTimeout")
     def connection_drain_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        连接优雅中断的超时时间，单位为秒。参数ConnectionDrainEnabled返回为off时，该参数返回0。
+        Timeout for graceful connection termination, in seconds. If ConnectionDrainEnabled returns off, this parameter returns 0.
         """
         return pulumi.get(self, "connection_drain_timeout")
 
@@ -385,7 +385,7 @@ class ListenerArgs:
     @pulumi.getter
     def cookie(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        后端服务器配置的会话保持的Cookie名称。仅参数PersistenceType取server时，本参数有效且必填。只能包含字母、数字、下划线（_）和中划线（-）。长度限制在1～200字符之间。
+        Name of the session persistence cookie configured on the backend server. This parameter is valid and required only when PersistenceType is set to server. Only letters, numbers, underscores (_), and hyphens (-) are allowed. Length must be between 1 and 200 characters.
         """
         return pulumi.get(self, "cookie")
 
@@ -397,7 +397,7 @@ class ListenerArgs:
     @pulumi.getter
     def cps(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        每秒新建连接数的上限。-1（默认值）：不限制，即CLB实例的新建连接数上限。取值范围：1～CLB实例的新连接数上限。
+        Maximum number of new connections per second. -1 (default): No limit, which means the maximum number of new connections allowed by the CLB instance. Value range: 1 to the maximum number of new connections allowed by the CLB instance.
         """
         return pulumi.get(self, "cps")
 
@@ -409,7 +409,7 @@ class ListenerArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
+        Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -421,7 +421,7 @@ class ListenerArgs:
     @pulumi.getter
     def enabled(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        是否启用监听器。on（默认值）：开启。off：不开启。
+        Enable listener. on (default): enabled. off: disabled.
         """
         return pulumi.get(self, "enabled")
 
@@ -433,7 +433,7 @@ class ListenerArgs:
     @pulumi.getter(name="endPort")
     def end_port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        全端口监听的结束端口，取值范围为1-65535。参数Port为“0”时，该参数必须传入，且该参数取值应大于tartPort。
+        End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.
         """
         return pulumi.get(self, "end_port")
 
@@ -445,7 +445,7 @@ class ListenerArgs:
     @pulumi.getter(name="establishedTimeout")
     def established_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        监听器的连接超时时间。仅参数Protocol取TCP或UDP时，本参数有效。取值如下：TCP协议：10-900秒，默认为900秒。UDP协议：1-300秒，默认为90秒。
+        Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
         """
         return pulumi.get(self, "established_timeout")
 
@@ -457,7 +457,7 @@ class ListenerArgs:
     @pulumi.getter(name="healthCheck")
     def health_check(self) -> Optional[pulumi.Input['ListenerHealthCheckArgs']]:
         """
-        健康检查相关信息。
+        Health check information.
         """
         return pulumi.get(self, "health_check")
 
@@ -469,7 +469,7 @@ class ListenerArgs:
     @pulumi.getter(name="http2Enabled")
     def http2_enabled(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        监听器是否开启前端HTTP 2.0协议。仅参数`Protocol取HTTPS时，本参数有效。取值如下：|on：开启。off（默认值）：不开启。
+        Whether the listener enables frontend HTTP 2.0 protocol. This parameter is valid only when Protocol is set to HTTPS. Values: on: enabled. off (default): disabled.
         """
         return pulumi.get(self, "http2_enabled")
 
@@ -481,7 +481,7 @@ class ListenerArgs:
     @pulumi.getter(name="keepaliveTimeout")
     def keepalive_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        客户端与CLB之间的长连接超时时间。取值范围为 0-900秒，默认为75秒。0表示禁用长连接。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+        Keep-alive timeout between the client and CLB. Range: 0–900 seconds, default is 75 seconds. 0 disables keep-alive. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         """
         return pulumi.get(self, "keepalive_timeout")
 
@@ -493,7 +493,7 @@ class ListenerArgs:
     @pulumi.getter(name="listenerName")
     def listener_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
+        Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If left blank, 'Protocol-Port' will be used as the default listener name.
         """
         return pulumi.get(self, "listener_name")
 
@@ -505,7 +505,7 @@ class ListenerArgs:
     @pulumi.getter(name="maxConnections")
     def max_connections(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        最大并发连接数的上限。-1（默认值）：不限制，CLB实例的最大并发连接数上限。取值范围：1～CLB实例的最大并发连接数上限。
+        Maximum concurrent connections limit. -1 (default): unlimited (up to the maximum concurrent connections supported by the CLB instance). Value range: 1 to the maximum concurrent connections limit of the CLB instance.
         """
         return pulumi.get(self, "max_connections")
 
@@ -517,7 +517,7 @@ class ListenerArgs:
     @pulumi.getter(name="persistenceTimeout")
     def persistence_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        会话保持的超时时间，单位为秒。取值范围根据参数PersistenceType取值有所不同。PersistenceType置为source_ip时，取值范围为1～3600。PersistenceType配置为insert时，取值范围为1～86400。
+        Session persistence timeout, in seconds. The value range depends on the PersistenceType parameter. When PersistenceType is set to source_ip, the range is 1–3600. When PersistenceType is set to insert, the range is 1–86400.
         """
         return pulumi.get(self, "persistence_timeout")
 
@@ -529,7 +529,7 @@ class ListenerArgs:
     @pulumi.getter(name="persistenceType")
     def persistence_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        会话保持的类型。取值如下：off（默认值）：不启用会话保持。source_ip：源地址IP，仅参数ProtocolTCP或UDP时，本取值有效。insert：植入Cookie，仅参数Protocol取HTTP或HTTPS且Scheduler取wrr时，本取值生效。server：重写Cookie，仅参数Protocol取HTTP或HTTPS且Scheduler取wrr时，本取值生效。。
+        Session persistence type. Values: off (default): session persistence disabled. source_ip: source IP address, valid only when Protocol is TCP or UDP. insert: insert Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr. server: rewrite Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr.
         """
         return pulumi.get(self, "persistence_type")
 
@@ -541,7 +541,7 @@ class ListenerArgs:
     @pulumi.getter(name="proxyConnectTimeout")
     def proxy_connect_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        CLB与后端服务器之间的连接建立超时时间。建议大于健康检查超时时间。取值范围为 4-120秒，默认为4。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+        Connection establishment timeout between CLB and backend server. Recommended to be greater than the health check timeout. Range: 4–120 seconds, default is 4. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         """
         return pulumi.get(self, "proxy_connect_timeout")
 
@@ -553,7 +553,7 @@ class ListenerArgs:
     @pulumi.getter(name="proxyProtocolType")
     def proxy_protocol_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        是否启用Proxy-Protocol协议。仅参数Protocol取TCP或UDP时，本参数有效。取值如下：off（默认值）：关闭。standard：开启。
+        Enable Proxy-Protocol. This parameter is valid only when Protocol is TCP or UDP. Values: off (default): disabled. standard: enabled.
         """
         return pulumi.get(self, "proxy_protocol_type")
 
@@ -565,7 +565,7 @@ class ListenerArgs:
     @pulumi.getter(name="proxyReadTimeout")
     def proxy_read_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        CLB从后端服务器读取响应的超时时间。此超时时间仅针对两个连续的读操作之间设置，而非整个响应的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+        Timeout for CLB to read responses from backend servers. This timeout applies only between two consecutive read operations, not for the entire response transmission. Value range: 30–3600 seconds. Default: 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         """
         return pulumi.get(self, "proxy_read_timeout")
 
@@ -577,7 +577,7 @@ class ListenerArgs:
     @pulumi.getter(name="proxySendTimeout")
     def proxy_send_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        CLB将请求传输到后端服务器的超时时间。此超时仅针对两个连续的写操作之间设置，而非整个请求的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+        Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         """
         return pulumi.get(self, "proxy_send_timeout")
 
@@ -589,7 +589,7 @@ class ListenerArgs:
     @pulumi.getter
     def scheduler(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        监听器使用的调度算法。wrr（默认值）：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
+        Scheduling algorithm used by the listener. wrr (default): Weighted round robin. wlc: Weighted least connections. sh: Source address hash.
         """
         return pulumi.get(self, "scheduler")
 
@@ -601,7 +601,7 @@ class ListenerArgs:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        HTTPS监听器的TLS安全策略。仅参数Protocol取HTTPS时，本参数有效。 取值如下：default*policy（默认值）：支持SSL v3、TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*0：支持TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*1：支持TLS v1.1、TLS v1.2。tls*cipher*policy*1*2：支持TLS v1.2。tls*cipher*policy*1*2*strict：支持TLS v1.2。
+        TLS security policy for HTTPS listeners. This parameter is valid only when Protocol is set to HTTPS. Values: default*policy (default): supports SSL v3, TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*0: supports TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*1: supports TLS v1.1, TLS v1.2. tls*cipher*policy*1*2: supports TLS v1.2. tls*cipher*policy*1*2*strict: supports TLS v1.2.
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -613,7 +613,7 @@ class ListenerArgs:
     @pulumi.getter(name="sendTimeout")
     def send_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        CLB向客户端发送响应的超时时间。此超时仅针对两个连续的写操作之间设置，而非整响应的传输过程。取值范围为 1-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+        Timeout for CLB to send responses to the client. This timeout applies only between two consecutive write operations, not the entire response transmission. Range: 1–3600 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         """
         return pulumi.get(self, "send_timeout")
 
@@ -625,7 +625,7 @@ class ListenerArgs:
     @pulumi.getter(name="startPort")
     def start_port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        全端口监听的起始端口，取值范围为1-65535。参数Port为“0”时，该参数必须传入。
+        Start port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required.
         """
         return pulumi.get(self, "start_port")
 
@@ -693,50 +693,50 @@ class _ListenerState:
                  waf_protection_enabled: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Listener resources.
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] acl_ids: 监听器绑定的访问控制策略组ID。仅AclStatus参数为on时返回。
-        :param pulumi.Input[builtins.str] acl_status: 是否开启访问控制功能。取值如下：on：开启。off（默认值）：不开启。
-        :param pulumi.Input[builtins.str] acl_type: 访问控制的方式。white：白名单。black：黑名单。仅AclStatus参数为on时，本参数有效。
-        :param pulumi.Input[builtins.int] bandwidth: 监听器的带宽上限，即此监听器独占CLB实例的带宽，单位为Mbps。-1（默认值）：此监听器不独占CLB的带，与其他监听器共享CLB实例未被独占的带宽。取值范围：1～CLB实例未被独占的带宽。
-        :param pulumi.Input[builtins.str] ca_certificate_id: 双向认证的CA证书。
-        :param pulumi.Input[builtins.str] ca_enabled: 是否开启双向认证。on：开启。off（默认值）：不开启。
-        :param pulumi.Input[builtins.str] cert_center_certificate_id: 证书中心的证书的ID。
-        :param pulumi.Input[builtins.str] certificate_id: CLB侧证书管理模块的证书的ID。
-        :param pulumi.Input[builtins.str] certificate_source: 证书的来源。clb (默认)：CLB上传的证书。cert_center：证书中心上传的证书。user：用户上传的证书。
-        :param pulumi.Input[builtins.int] client_body_timeout: 读取客户端请求正文的超时时间。此超时时间仅针对两个连续的读操作之间设置，而非整个请求的传输过程。取值范围为 30-120秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效
-        :param pulumi.Input[builtins.int] client_header_timeout: 读取客户端请求头的超时时间。取值范围为30-120秒。默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
-        :param pulumi.Input[builtins.str] connection_drain_enabled: 监听器是否开启连接优雅中断功能。on：开启。off：不开启。参数Protocol返回为HTTP或HTTPS时，该参数固定返回off。
-        :param pulumi.Input[builtins.int] connection_drain_timeout: 连接优雅中断的超时时间，单位为秒。参数ConnectionDrainEnabled返回为off时，该参数返回0。
-        :param pulumi.Input[builtins.str] cookie: 后端服务器配置的会话保持的Cookie名称。仅参数PersistenceType取server时，本参数有效且必填。只能包含字母、数字、下划线（_）和中划线（-）。长度限制在1～200字符之间。
-        :param pulumi.Input[builtins.int] cps: 每秒新建连接数的上限。-1（默认值）：不限制，即CLB实例的新建连接数上限。取值范围：1～CLB实例的新连接数上限。
-        :param pulumi.Input[builtins.str] created_time: 监听器的创建时间。
-        :param pulumi.Input[builtins.str] description: 监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
-        :param pulumi.Input[builtins.str] enabled: 是否启用监听器。on（默认值）：开启。off：不开启。
-        :param pulumi.Input[builtins.int] end_port: 全端口监听的结束端口，取值范围为1-65535。参数Port为“0”时，该参数必须传入，且该参数取值应大于tartPort。
-        :param pulumi.Input[builtins.int] established_timeout: 监听器的连接超时时间。仅参数Protocol取TCP或UDP时，本参数有效。取值如下：TCP协议：10-900秒，默认为900秒。UDP协议：1-300秒，默认为90秒。
-        :param pulumi.Input['ListenerHealthCheckArgs'] health_check: 健康检查相关信息。
-        :param pulumi.Input[builtins.str] http2_enabled: 监听器是否开启前端HTTP 2.0协议。仅参数`Protocol取HTTPS时，本参数有效。取值如下：|on：开启。off（默认值）：不开启。
-        :param pulumi.Input[builtins.int] keepalive_timeout: 客户端与CLB之间的长连接超时时间。取值范围为 0-900秒，默认为75秒。0表示禁用长连接。仅参数Protocol取HTTP或HTTPS时，本参数有效。
-        :param pulumi.Input[builtins.str] listener_id: 监听器的ID。
-        :param pulumi.Input[builtins.str] listener_name: 监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
-        :param pulumi.Input[builtins.str] load_balancer_id: CLB实例的ID。
-        :param pulumi.Input[builtins.int] max_connections: 最大并发连接数的上限。-1（默认值）：不限制，CLB实例的最大并发连接数上限。取值范围：1～CLB实例的最大并发连接数上限。
-        :param pulumi.Input[builtins.int] persistence_timeout: 会话保持的超时时间，单位为秒。取值范围根据参数PersistenceType取值有所不同。PersistenceType置为source_ip时，取值范围为1～3600。PersistenceType配置为insert时，取值范围为1～86400。
-        :param pulumi.Input[builtins.str] persistence_type: 会话保持的类型。取值如下：off（默认值）：不启用会话保持。source_ip：源地址IP，仅参数ProtocolTCP或UDP时，本取值有效。insert：植入Cookie，仅参数Protocol取HTTP或HTTPS且Scheduler取wrr时，本取值生效。server：重写Cookie，仅参数Protocol取HTTP或HTTPS且Scheduler取wrr时，本取值生效。。
-        :param pulumi.Input[builtins.int] port: 监听器接收请求使用的端口。取值范围为 0～65535。参数Protocol为“TCP”或“UDP”时，支持传入0，表示用全端口监听。
-        :param pulumi.Input[builtins.str] protocol: 监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
-        :param pulumi.Input[builtins.int] proxy_connect_timeout: CLB与后端服务器之间的连接建立超时时间。建议大于健康检查超时时间。取值范围为 4-120秒，默认为4。仅参数Protocol取HTTP或HTTPS时，本参数有效。
-        :param pulumi.Input[builtins.str] proxy_protocol_type: 是否启用Proxy-Protocol协议。仅参数Protocol取TCP或UDP时，本参数有效。取值如下：off（默认值）：关闭。standard：开启。
-        :param pulumi.Input[builtins.int] proxy_read_timeout: CLB从后端服务器读取响应的超时时间。此超时时间仅针对两个连续的读操作之间设置，而非整个响应的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
-        :param pulumi.Input[builtins.int] proxy_send_timeout: CLB将请求传输到后端服务器的超时时间。此超时仅针对两个连续的写操作之间设置，而非整个请求的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] rule_ids: 监听器绑定的规则ID列表。
-        :param pulumi.Input[builtins.str] scheduler: 监听器使用的调度算法。wrr（默认值）：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
-        :param pulumi.Input[builtins.str] security_policy_id: HTTPS监听器的TLS安全策略。仅参数Protocol取HTTPS时，本参数有效。 取值如下：default*policy（默认值）：支持SSL v3、TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*0：支持TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*1：支持TLS v1.1、TLS v1.2。tls*cipher*policy*1*2：支持TLS v1.2。tls*cipher*policy*1*2*strict：支持TLS v1.2。
-        :param pulumi.Input[builtins.int] send_timeout: CLB向客户端发送响应的超时时间。此超时仅针对两个连续的写操作之间设置，而非整响应的传输过程。取值范围为 1-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
-        :param pulumi.Input[builtins.str] server_group_id: 监听器关联的后端服务器组 ID。
-        :param pulumi.Input[builtins.int] start_port: 全端口监听的起始端口，取值范围为1-65535。参数Port为“0”时，该参数必须传入。
-        :param pulumi.Input[builtins.str] status: 监听器的状态。Creating：创建中。Active：运行中。Deleting: 删除中。Disabled: 已停用。
-        :param pulumi.Input[builtins.str] updated_time: 监听器最近一次的操作时间。
-        :param pulumi.Input[builtins.str] waf_protection_enabled: 是否将经过七层监听器的流量送至Web应用防火墙进行检测和过滤。on：是。off：否。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] acl_ids: ID of the access control policy group bound to the listener. Returned only when the AclStatus parameter is set to on.
+        :param pulumi.Input[builtins.str] acl_status: Enable access control. Values: on: enabled. off (default): disabled.
+        :param pulumi.Input[builtins.str] acl_type: Access control mode. white: Allowlist. black: Denylist. This parameter is valid only when the AclStatus parameter is on.
+        :param pulumi.Input[builtins.int] bandwidth: Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.
+        :param pulumi.Input[builtins.str] ca_certificate_id: CA certificate for mutual authentication.
+        :param pulumi.Input[builtins.str] ca_enabled: Enable mutual authentication. on: enabled. off (default): disabled.
+        :param pulumi.Input[builtins.str] cert_center_certificate_id: Certificate ID from Certificate Center.
+        :param pulumi.Input[builtins.str] certificate_id: Certificate ID from the CLB certificate management module.
+        :param pulumi.Input[builtins.str] certificate_source: Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
+        :param pulumi.Input[builtins.int] client_body_timeout: Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.int] client_header_timeout: Timeout for reading the client request header. Value range: 30–120 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.str] connection_drain_enabled: Whether the listener enables graceful connection termination. on: enabled. off: not enabled. When Protocol returns HTTP or HTTPS, this parameter always returns off.
+        :param pulumi.Input[builtins.int] connection_drain_timeout: Timeout for graceful connection termination, in seconds. If ConnectionDrainEnabled returns off, this parameter returns 0.
+        :param pulumi.Input[builtins.str] cookie: Name of the session persistence cookie configured on the backend server. This parameter is valid and required only when PersistenceType is set to server. Only letters, numbers, underscores (_), and hyphens (-) are allowed. Length must be between 1 and 200 characters.
+        :param pulumi.Input[builtins.int] cps: Maximum number of new connections per second. -1 (default): No limit, which means the maximum number of new connections allowed by the CLB instance. Value range: 1 to the maximum number of new connections allowed by the CLB instance.
+        :param pulumi.Input[builtins.str] created_time: Creation time of the listener.
+        :param pulumi.Input[builtins.str] description: Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
+        :param pulumi.Input[builtins.str] enabled: Enable listener. on (default): enabled. off: disabled.
+        :param pulumi.Input[builtins.int] end_port: End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.
+        :param pulumi.Input[builtins.int] established_timeout: Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
+        :param pulumi.Input['ListenerHealthCheckArgs'] health_check: Health check information.
+        :param pulumi.Input[builtins.str] http2_enabled: Whether the listener enables frontend HTTP 2.0 protocol. This parameter is valid only when Protocol is set to HTTPS. Values: on: enabled. off (default): disabled.
+        :param pulumi.Input[builtins.int] keepalive_timeout: Keep-alive timeout between the client and CLB. Range: 0–900 seconds, default is 75 seconds. 0 disables keep-alive. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.str] listener_id: Listener ID.
+        :param pulumi.Input[builtins.str] listener_name: Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If left blank, 'Protocol-Port' will be used as the default listener name.
+        :param pulumi.Input[builtins.str] load_balancer_id: ID of the CLB instance.
+        :param pulumi.Input[builtins.int] max_connections: Maximum concurrent connections limit. -1 (default): unlimited (up to the maximum concurrent connections supported by the CLB instance). Value range: 1 to the maximum concurrent connections limit of the CLB instance.
+        :param pulumi.Input[builtins.int] persistence_timeout: Session persistence timeout, in seconds. The value range depends on the PersistenceType parameter. When PersistenceType is set to source_ip, the range is 1–3600. When PersistenceType is set to insert, the range is 1–86400.
+        :param pulumi.Input[builtins.str] persistence_type: Session persistence type. Values: off (default): session persistence disabled. source_ip: source IP address, valid only when Protocol is TCP or UDP. insert: insert Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr. server: rewrite Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr.
+        :param pulumi.Input[builtins.int] port: Port used by the listener to receive requests. Value range: 0–65535. When the Protocol parameter is 'TCP' or 'UDP', 0 is supported, which enables listening on all ports.
+        :param pulumi.Input[builtins.str] protocol: Listener protocol. Includes: TCP, UDP, HTTP, HTTPS.
+        :param pulumi.Input[builtins.int] proxy_connect_timeout: Connection establishment timeout between CLB and backend server. Recommended to be greater than the health check timeout. Range: 4–120 seconds, default is 4. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.str] proxy_protocol_type: Enable Proxy-Protocol. This parameter is valid only when Protocol is TCP or UDP. Values: off (default): disabled. standard: enabled.
+        :param pulumi.Input[builtins.int] proxy_read_timeout: Timeout for CLB to read responses from backend servers. This timeout applies only between two consecutive read operations, not for the entire response transmission. Value range: 30–3600 seconds. Default: 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.int] proxy_send_timeout: Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] rule_ids: List of rule IDs bound to the listener.
+        :param pulumi.Input[builtins.str] scheduler: Scheduling algorithm used by the listener. wrr (default): Weighted round robin. wlc: Weighted least connections. sh: Source address hash.
+        :param pulumi.Input[builtins.str] security_policy_id: TLS security policy for HTTPS listeners. This parameter is valid only when Protocol is set to HTTPS. Values: default*policy (default): supports SSL v3, TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*0: supports TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*1: supports TLS v1.1, TLS v1.2. tls*cipher*policy*1*2: supports TLS v1.2. tls*cipher*policy*1*2*strict: supports TLS v1.2.
+        :param pulumi.Input[builtins.int] send_timeout: Timeout for CLB to send responses to the client. This timeout applies only between two consecutive write operations, not the entire response transmission. Range: 1–3600 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.str] server_group_id: ID of the backend server group associated with the listener.
+        :param pulumi.Input[builtins.int] start_port: Start port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required.
+        :param pulumi.Input[builtins.str] status: Listener status. Creating: being created. Active: running. Deleting: being deleted. Disabled: disabled.
+        :param pulumi.Input[builtins.str] updated_time: Last operation time of the listener.
+        :param pulumi.Input[builtins.str] waf_protection_enabled: Send traffic passing through the Layer 7 listener to the Web Application Firewall for inspection and filtering. on: yes. off: no.
         """
         if acl_ids is not None:
             pulumi.set(__self__, "acl_ids", acl_ids)
@@ -833,7 +833,7 @@ class _ListenerState:
     @pulumi.getter(name="aclIds")
     def acl_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        监听器绑定的访问控制策略组ID。仅AclStatus参数为on时返回。
+        ID of the access control policy group bound to the listener. Returned only when the AclStatus parameter is set to on.
         """
         return pulumi.get(self, "acl_ids")
 
@@ -845,7 +845,7 @@ class _ListenerState:
     @pulumi.getter(name="aclStatus")
     def acl_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        是否开启访问控制功能。取值如下：on：开启。off（默认值）：不开启。
+        Enable access control. Values: on: enabled. off (default): disabled.
         """
         return pulumi.get(self, "acl_status")
 
@@ -857,7 +857,7 @@ class _ListenerState:
     @pulumi.getter(name="aclType")
     def acl_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        访问控制的方式。white：白名单。black：黑名单。仅AclStatus参数为on时，本参数有效。
+        Access control mode. white: Allowlist. black: Denylist. This parameter is valid only when the AclStatus parameter is on.
         """
         return pulumi.get(self, "acl_type")
 
@@ -869,7 +869,7 @@ class _ListenerState:
     @pulumi.getter
     def bandwidth(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        监听器的带宽上限，即此监听器独占CLB实例的带宽，单位为Mbps。-1（默认值）：此监听器不独占CLB的带，与其他监听器共享CLB实例未被独占的带宽。取值范围：1～CLB实例未被独占的带宽。
+        Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.
         """
         return pulumi.get(self, "bandwidth")
 
@@ -881,7 +881,7 @@ class _ListenerState:
     @pulumi.getter(name="caCertificateId")
     def ca_certificate_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        双向认证的CA证书。
+        CA certificate for mutual authentication.
         """
         return pulumi.get(self, "ca_certificate_id")
 
@@ -893,7 +893,7 @@ class _ListenerState:
     @pulumi.getter(name="caEnabled")
     def ca_enabled(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        是否开启双向认证。on：开启。off（默认值）：不开启。
+        Enable mutual authentication. on: enabled. off (default): disabled.
         """
         return pulumi.get(self, "ca_enabled")
 
@@ -905,7 +905,7 @@ class _ListenerState:
     @pulumi.getter(name="certCenterCertificateId")
     def cert_center_certificate_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        证书中心的证书的ID。
+        Certificate ID from Certificate Center.
         """
         return pulumi.get(self, "cert_center_certificate_id")
 
@@ -917,7 +917,7 @@ class _ListenerState:
     @pulumi.getter(name="certificateId")
     def certificate_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        CLB侧证书管理模块的证书的ID。
+        Certificate ID from the CLB certificate management module.
         """
         return pulumi.get(self, "certificate_id")
 
@@ -929,7 +929,7 @@ class _ListenerState:
     @pulumi.getter(name="certificateSource")
     def certificate_source(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        证书的来源。clb (默认)：CLB上传的证书。cert_center：证书中心上传的证书。user：用户上传的证书。
+        Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
         """
         return pulumi.get(self, "certificate_source")
 
@@ -941,7 +941,7 @@ class _ListenerState:
     @pulumi.getter(name="clientBodyTimeout")
     def client_body_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        读取客户端请求正文的超时时间。此超时时间仅针对两个连续的读操作之间设置，而非整个请求的传输过程。取值范围为 30-120秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效
+        Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         """
         return pulumi.get(self, "client_body_timeout")
 
@@ -953,7 +953,7 @@ class _ListenerState:
     @pulumi.getter(name="clientHeaderTimeout")
     def client_header_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        读取客户端请求头的超时时间。取值范围为30-120秒。默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+        Timeout for reading the client request header. Value range: 30–120 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         """
         return pulumi.get(self, "client_header_timeout")
 
@@ -965,7 +965,7 @@ class _ListenerState:
     @pulumi.getter(name="connectionDrainEnabled")
     def connection_drain_enabled(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        监听器是否开启连接优雅中断功能。on：开启。off：不开启。参数Protocol返回为HTTP或HTTPS时，该参数固定返回off。
+        Whether the listener enables graceful connection termination. on: enabled. off: not enabled. When Protocol returns HTTP or HTTPS, this parameter always returns off.
         """
         return pulumi.get(self, "connection_drain_enabled")
 
@@ -977,7 +977,7 @@ class _ListenerState:
     @pulumi.getter(name="connectionDrainTimeout")
     def connection_drain_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        连接优雅中断的超时时间，单位为秒。参数ConnectionDrainEnabled返回为off时，该参数返回0。
+        Timeout for graceful connection termination, in seconds. If ConnectionDrainEnabled returns off, this parameter returns 0.
         """
         return pulumi.get(self, "connection_drain_timeout")
 
@@ -989,7 +989,7 @@ class _ListenerState:
     @pulumi.getter
     def cookie(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        后端服务器配置的会话保持的Cookie名称。仅参数PersistenceType取server时，本参数有效且必填。只能包含字母、数字、下划线（_）和中划线（-）。长度限制在1～200字符之间。
+        Name of the session persistence cookie configured on the backend server. This parameter is valid and required only when PersistenceType is set to server. Only letters, numbers, underscores (_), and hyphens (-) are allowed. Length must be between 1 and 200 characters.
         """
         return pulumi.get(self, "cookie")
 
@@ -1001,7 +1001,7 @@ class _ListenerState:
     @pulumi.getter
     def cps(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        每秒新建连接数的上限。-1（默认值）：不限制，即CLB实例的新建连接数上限。取值范围：1～CLB实例的新连接数上限。
+        Maximum number of new connections per second. -1 (default): No limit, which means the maximum number of new connections allowed by the CLB instance. Value range: 1 to the maximum number of new connections allowed by the CLB instance.
         """
         return pulumi.get(self, "cps")
 
@@ -1013,7 +1013,7 @@ class _ListenerState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        监听器的创建时间。
+        Creation time of the listener.
         """
         return pulumi.get(self, "created_time")
 
@@ -1025,7 +1025,7 @@ class _ListenerState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
+        Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -1037,7 +1037,7 @@ class _ListenerState:
     @pulumi.getter
     def enabled(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        是否启用监听器。on（默认值）：开启。off：不开启。
+        Enable listener. on (default): enabled. off: disabled.
         """
         return pulumi.get(self, "enabled")
 
@@ -1049,7 +1049,7 @@ class _ListenerState:
     @pulumi.getter(name="endPort")
     def end_port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        全端口监听的结束端口，取值范围为1-65535。参数Port为“0”时，该参数必须传入，且该参数取值应大于tartPort。
+        End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.
         """
         return pulumi.get(self, "end_port")
 
@@ -1061,7 +1061,7 @@ class _ListenerState:
     @pulumi.getter(name="establishedTimeout")
     def established_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        监听器的连接超时时间。仅参数Protocol取TCP或UDP时，本参数有效。取值如下：TCP协议：10-900秒，默认为900秒。UDP协议：1-300秒，默认为90秒。
+        Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
         """
         return pulumi.get(self, "established_timeout")
 
@@ -1073,7 +1073,7 @@ class _ListenerState:
     @pulumi.getter(name="healthCheck")
     def health_check(self) -> Optional[pulumi.Input['ListenerHealthCheckArgs']]:
         """
-        健康检查相关信息。
+        Health check information.
         """
         return pulumi.get(self, "health_check")
 
@@ -1085,7 +1085,7 @@ class _ListenerState:
     @pulumi.getter(name="http2Enabled")
     def http2_enabled(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        监听器是否开启前端HTTP 2.0协议。仅参数`Protocol取HTTPS时，本参数有效。取值如下：|on：开启。off（默认值）：不开启。
+        Whether the listener enables frontend HTTP 2.0 protocol. This parameter is valid only when Protocol is set to HTTPS. Values: on: enabled. off (default): disabled.
         """
         return pulumi.get(self, "http2_enabled")
 
@@ -1097,7 +1097,7 @@ class _ListenerState:
     @pulumi.getter(name="keepaliveTimeout")
     def keepalive_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        客户端与CLB之间的长连接超时时间。取值范围为 0-900秒，默认为75秒。0表示禁用长连接。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+        Keep-alive timeout between the client and CLB. Range: 0–900 seconds, default is 75 seconds. 0 disables keep-alive. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         """
         return pulumi.get(self, "keepalive_timeout")
 
@@ -1109,7 +1109,7 @@ class _ListenerState:
     @pulumi.getter(name="listenerId")
     def listener_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        监听器的ID。
+        Listener ID.
         """
         return pulumi.get(self, "listener_id")
 
@@ -1121,7 +1121,7 @@ class _ListenerState:
     @pulumi.getter(name="listenerName")
     def listener_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
+        Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If left blank, 'Protocol-Port' will be used as the default listener name.
         """
         return pulumi.get(self, "listener_name")
 
@@ -1133,7 +1133,7 @@ class _ListenerState:
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        CLB实例的ID。
+        ID of the CLB instance.
         """
         return pulumi.get(self, "load_balancer_id")
 
@@ -1145,7 +1145,7 @@ class _ListenerState:
     @pulumi.getter(name="maxConnections")
     def max_connections(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        最大并发连接数的上限。-1（默认值）：不限制，CLB实例的最大并发连接数上限。取值范围：1～CLB实例的最大并发连接数上限。
+        Maximum concurrent connections limit. -1 (default): unlimited (up to the maximum concurrent connections supported by the CLB instance). Value range: 1 to the maximum concurrent connections limit of the CLB instance.
         """
         return pulumi.get(self, "max_connections")
 
@@ -1157,7 +1157,7 @@ class _ListenerState:
     @pulumi.getter(name="persistenceTimeout")
     def persistence_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        会话保持的超时时间，单位为秒。取值范围根据参数PersistenceType取值有所不同。PersistenceType置为source_ip时，取值范围为1～3600。PersistenceType配置为insert时，取值范围为1～86400。
+        Session persistence timeout, in seconds. The value range depends on the PersistenceType parameter. When PersistenceType is set to source_ip, the range is 1–3600. When PersistenceType is set to insert, the range is 1–86400.
         """
         return pulumi.get(self, "persistence_timeout")
 
@@ -1169,7 +1169,7 @@ class _ListenerState:
     @pulumi.getter(name="persistenceType")
     def persistence_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        会话保持的类型。取值如下：off（默认值）：不启用会话保持。source_ip：源地址IP，仅参数ProtocolTCP或UDP时，本取值有效。insert：植入Cookie，仅参数Protocol取HTTP或HTTPS且Scheduler取wrr时，本取值生效。server：重写Cookie，仅参数Protocol取HTTP或HTTPS且Scheduler取wrr时，本取值生效。。
+        Session persistence type. Values: off (default): session persistence disabled. source_ip: source IP address, valid only when Protocol is TCP or UDP. insert: insert Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr. server: rewrite Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr.
         """
         return pulumi.get(self, "persistence_type")
 
@@ -1181,7 +1181,7 @@ class _ListenerState:
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        监听器接收请求使用的端口。取值范围为 0～65535。参数Protocol为“TCP”或“UDP”时，支持传入0，表示用全端口监听。
+        Port used by the listener to receive requests. Value range: 0–65535. When the Protocol parameter is 'TCP' or 'UDP', 0 is supported, which enables listening on all ports.
         """
         return pulumi.get(self, "port")
 
@@ -1193,7 +1193,7 @@ class _ListenerState:
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
+        Listener protocol. Includes: TCP, UDP, HTTP, HTTPS.
         """
         return pulumi.get(self, "protocol")
 
@@ -1205,7 +1205,7 @@ class _ListenerState:
     @pulumi.getter(name="proxyConnectTimeout")
     def proxy_connect_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        CLB与后端服务器之间的连接建立超时时间。建议大于健康检查超时时间。取值范围为 4-120秒，默认为4。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+        Connection establishment timeout between CLB and backend server. Recommended to be greater than the health check timeout. Range: 4–120 seconds, default is 4. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         """
         return pulumi.get(self, "proxy_connect_timeout")
 
@@ -1217,7 +1217,7 @@ class _ListenerState:
     @pulumi.getter(name="proxyProtocolType")
     def proxy_protocol_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        是否启用Proxy-Protocol协议。仅参数Protocol取TCP或UDP时，本参数有效。取值如下：off（默认值）：关闭。standard：开启。
+        Enable Proxy-Protocol. This parameter is valid only when Protocol is TCP or UDP. Values: off (default): disabled. standard: enabled.
         """
         return pulumi.get(self, "proxy_protocol_type")
 
@@ -1229,7 +1229,7 @@ class _ListenerState:
     @pulumi.getter(name="proxyReadTimeout")
     def proxy_read_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        CLB从后端服务器读取响应的超时时间。此超时时间仅针对两个连续的读操作之间设置，而非整个响应的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+        Timeout for CLB to read responses from backend servers. This timeout applies only between two consecutive read operations, not for the entire response transmission. Value range: 30–3600 seconds. Default: 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         """
         return pulumi.get(self, "proxy_read_timeout")
 
@@ -1241,7 +1241,7 @@ class _ListenerState:
     @pulumi.getter(name="proxySendTimeout")
     def proxy_send_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        CLB将请求传输到后端服务器的超时时间。此超时仅针对两个连续的写操作之间设置，而非整个请求的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+        Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         """
         return pulumi.get(self, "proxy_send_timeout")
 
@@ -1253,7 +1253,7 @@ class _ListenerState:
     @pulumi.getter(name="ruleIds")
     def rule_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        监听器绑定的规则ID列表。
+        List of rule IDs bound to the listener.
         """
         return pulumi.get(self, "rule_ids")
 
@@ -1265,7 +1265,7 @@ class _ListenerState:
     @pulumi.getter
     def scheduler(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        监听器使用的调度算法。wrr（默认值）：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
+        Scheduling algorithm used by the listener. wrr (default): Weighted round robin. wlc: Weighted least connections. sh: Source address hash.
         """
         return pulumi.get(self, "scheduler")
 
@@ -1277,7 +1277,7 @@ class _ListenerState:
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        HTTPS监听器的TLS安全策略。仅参数Protocol取HTTPS时，本参数有效。 取值如下：default*policy（默认值）：支持SSL v3、TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*0：支持TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*1：支持TLS v1.1、TLS v1.2。tls*cipher*policy*1*2：支持TLS v1.2。tls*cipher*policy*1*2*strict：支持TLS v1.2。
+        TLS security policy for HTTPS listeners. This parameter is valid only when Protocol is set to HTTPS. Values: default*policy (default): supports SSL v3, TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*0: supports TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*1: supports TLS v1.1, TLS v1.2. tls*cipher*policy*1*2: supports TLS v1.2. tls*cipher*policy*1*2*strict: supports TLS v1.2.
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -1289,7 +1289,7 @@ class _ListenerState:
     @pulumi.getter(name="sendTimeout")
     def send_timeout(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        CLB向客户端发送响应的超时时间。此超时仅针对两个连续的写操作之间设置，而非整响应的传输过程。取值范围为 1-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+        Timeout for CLB to send responses to the client. This timeout applies only between two consecutive write operations, not the entire response transmission. Range: 1–3600 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         """
         return pulumi.get(self, "send_timeout")
 
@@ -1301,7 +1301,7 @@ class _ListenerState:
     @pulumi.getter(name="serverGroupId")
     def server_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        监听器关联的后端服务器组 ID。
+        ID of the backend server group associated with the listener.
         """
         return pulumi.get(self, "server_group_id")
 
@@ -1313,7 +1313,7 @@ class _ListenerState:
     @pulumi.getter(name="startPort")
     def start_port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        全端口监听的起始端口，取值范围为1-65535。参数Port为“0”时，该参数必须传入。
+        Start port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required.
         """
         return pulumi.get(self, "start_port")
 
@@ -1325,7 +1325,7 @@ class _ListenerState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        监听器的状态。Creating：创建中。Active：运行中。Deleting: 删除中。Disabled: 已停用。
+        Listener status. Creating: being created. Active: running. Deleting: being deleted. Disabled: disabled.
         """
         return pulumi.get(self, "status")
 
@@ -1346,7 +1346,7 @@ class _ListenerState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        监听器最近一次的操作时间。
+        Last operation time of the listener.
         """
         return pulumi.get(self, "updated_time")
 
@@ -1358,7 +1358,7 @@ class _ListenerState:
     @pulumi.getter(name="wafProtectionEnabled")
     def waf_protection_enabled(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        是否将经过七层监听器的流量送至Web应用防火墙进行检测和过滤。on：是。off：否。
+        Send traffic passing through the Layer 7 listener to the Web Application Firewall for inspection and filtering. on: yes. off: no.
         """
         return pulumi.get(self, "waf_protection_enabled")
 
@@ -1414,7 +1414,7 @@ class Listener(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ListenerTagArgs', 'ListenerTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        监听器负责根据指定的协议和端口，监听CLB实例接收到的用户访问请求。CLB将按照该监听器配置的调度算法，将访问请求转发至该后端服务器组内健康的后端服务器。
+        The listener monitors user access requests received by the CLB instance based on the specified protocol and port. CLB forwards access requests to healthy backend servers in the associated backend server group according to the scheduling algorithm configured for the listener.
 
         ## Import
 
@@ -1424,44 +1424,44 @@ class Listener(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] acl_ids: 监听器绑定的访问控制策略组ID。仅AclStatus参数为on时返回。
-        :param pulumi.Input[builtins.str] acl_status: 是否开启访问控制功能。取值如下：on：开启。off（默认值）：不开启。
-        :param pulumi.Input[builtins.str] acl_type: 访问控制的方式。white：白名单。black：黑名单。仅AclStatus参数为on时，本参数有效。
-        :param pulumi.Input[builtins.int] bandwidth: 监听器的带宽上限，即此监听器独占CLB实例的带宽，单位为Mbps。-1（默认值）：此监听器不独占CLB的带，与其他监听器共享CLB实例未被独占的带宽。取值范围：1～CLB实例未被独占的带宽。
-        :param pulumi.Input[builtins.str] ca_certificate_id: 双向认证的CA证书。
-        :param pulumi.Input[builtins.str] ca_enabled: 是否开启双向认证。on：开启。off（默认值）：不开启。
-        :param pulumi.Input[builtins.str] cert_center_certificate_id: 证书中心的证书的ID。
-        :param pulumi.Input[builtins.str] certificate_id: CLB侧证书管理模块的证书的ID。
-        :param pulumi.Input[builtins.str] certificate_source: 证书的来源。clb (默认)：CLB上传的证书。cert_center：证书中心上传的证书。user：用户上传的证书。
-        :param pulumi.Input[builtins.int] client_body_timeout: 读取客户端请求正文的超时时间。此超时时间仅针对两个连续的读操作之间设置，而非整个请求的传输过程。取值范围为 30-120秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效
-        :param pulumi.Input[builtins.int] client_header_timeout: 读取客户端请求头的超时时间。取值范围为30-120秒。默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
-        :param pulumi.Input[builtins.str] connection_drain_enabled: 监听器是否开启连接优雅中断功能。on：开启。off：不开启。参数Protocol返回为HTTP或HTTPS时，该参数固定返回off。
-        :param pulumi.Input[builtins.int] connection_drain_timeout: 连接优雅中断的超时时间，单位为秒。参数ConnectionDrainEnabled返回为off时，该参数返回0。
-        :param pulumi.Input[builtins.str] cookie: 后端服务器配置的会话保持的Cookie名称。仅参数PersistenceType取server时，本参数有效且必填。只能包含字母、数字、下划线（_）和中划线（-）。长度限制在1～200字符之间。
-        :param pulumi.Input[builtins.int] cps: 每秒新建连接数的上限。-1（默认值）：不限制，即CLB实例的新建连接数上限。取值范围：1～CLB实例的新连接数上限。
-        :param pulumi.Input[builtins.str] description: 监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
-        :param pulumi.Input[builtins.str] enabled: 是否启用监听器。on（默认值）：开启。off：不开启。
-        :param pulumi.Input[builtins.int] end_port: 全端口监听的结束端口，取值范围为1-65535。参数Port为“0”时，该参数必须传入，且该参数取值应大于tartPort。
-        :param pulumi.Input[builtins.int] established_timeout: 监听器的连接超时时间。仅参数Protocol取TCP或UDP时，本参数有效。取值如下：TCP协议：10-900秒，默认为900秒。UDP协议：1-300秒，默认为90秒。
-        :param pulumi.Input[Union['ListenerHealthCheckArgs', 'ListenerHealthCheckArgsDict']] health_check: 健康检查相关信息。
-        :param pulumi.Input[builtins.str] http2_enabled: 监听器是否开启前端HTTP 2.0协议。仅参数`Protocol取HTTPS时，本参数有效。取值如下：|on：开启。off（默认值）：不开启。
-        :param pulumi.Input[builtins.int] keepalive_timeout: 客户端与CLB之间的长连接超时时间。取值范围为 0-900秒，默认为75秒。0表示禁用长连接。仅参数Protocol取HTTP或HTTPS时，本参数有效。
-        :param pulumi.Input[builtins.str] listener_name: 监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
-        :param pulumi.Input[builtins.str] load_balancer_id: CLB实例的ID。
-        :param pulumi.Input[builtins.int] max_connections: 最大并发连接数的上限。-1（默认值）：不限制，CLB实例的最大并发连接数上限。取值范围：1～CLB实例的最大并发连接数上限。
-        :param pulumi.Input[builtins.int] persistence_timeout: 会话保持的超时时间，单位为秒。取值范围根据参数PersistenceType取值有所不同。PersistenceType置为source_ip时，取值范围为1～3600。PersistenceType配置为insert时，取值范围为1～86400。
-        :param pulumi.Input[builtins.str] persistence_type: 会话保持的类型。取值如下：off（默认值）：不启用会话保持。source_ip：源地址IP，仅参数ProtocolTCP或UDP时，本取值有效。insert：植入Cookie，仅参数Protocol取HTTP或HTTPS且Scheduler取wrr时，本取值生效。server：重写Cookie，仅参数Protocol取HTTP或HTTPS且Scheduler取wrr时，本取值生效。。
-        :param pulumi.Input[builtins.int] port: 监听器接收请求使用的端口。取值范围为 0～65535。参数Protocol为“TCP”或“UDP”时，支持传入0，表示用全端口监听。
-        :param pulumi.Input[builtins.str] protocol: 监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
-        :param pulumi.Input[builtins.int] proxy_connect_timeout: CLB与后端服务器之间的连接建立超时时间。建议大于健康检查超时时间。取值范围为 4-120秒，默认为4。仅参数Protocol取HTTP或HTTPS时，本参数有效。
-        :param pulumi.Input[builtins.str] proxy_protocol_type: 是否启用Proxy-Protocol协议。仅参数Protocol取TCP或UDP时，本参数有效。取值如下：off（默认值）：关闭。standard：开启。
-        :param pulumi.Input[builtins.int] proxy_read_timeout: CLB从后端服务器读取响应的超时时间。此超时时间仅针对两个连续的读操作之间设置，而非整个响应的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
-        :param pulumi.Input[builtins.int] proxy_send_timeout: CLB将请求传输到后端服务器的超时时间。此超时仅针对两个连续的写操作之间设置，而非整个请求的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
-        :param pulumi.Input[builtins.str] scheduler: 监听器使用的调度算法。wrr（默认值）：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
-        :param pulumi.Input[builtins.str] security_policy_id: HTTPS监听器的TLS安全策略。仅参数Protocol取HTTPS时，本参数有效。 取值如下：default*policy（默认值）：支持SSL v3、TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*0：支持TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*1：支持TLS v1.1、TLS v1.2。tls*cipher*policy*1*2：支持TLS v1.2。tls*cipher*policy*1*2*strict：支持TLS v1.2。
-        :param pulumi.Input[builtins.int] send_timeout: CLB向客户端发送响应的超时时间。此超时仅针对两个连续的写操作之间设置，而非整响应的传输过程。取值范围为 1-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
-        :param pulumi.Input[builtins.str] server_group_id: 监听器关联的后端服务器组 ID。
-        :param pulumi.Input[builtins.int] start_port: 全端口监听的起始端口，取值范围为1-65535。参数Port为“0”时，该参数必须传入。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] acl_ids: ID of the access control policy group bound to the listener. Returned only when the AclStatus parameter is set to on.
+        :param pulumi.Input[builtins.str] acl_status: Enable access control. Values: on: enabled. off (default): disabled.
+        :param pulumi.Input[builtins.str] acl_type: Access control mode. white: Allowlist. black: Denylist. This parameter is valid only when the AclStatus parameter is on.
+        :param pulumi.Input[builtins.int] bandwidth: Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.
+        :param pulumi.Input[builtins.str] ca_certificate_id: CA certificate for mutual authentication.
+        :param pulumi.Input[builtins.str] ca_enabled: Enable mutual authentication. on: enabled. off (default): disabled.
+        :param pulumi.Input[builtins.str] cert_center_certificate_id: Certificate ID from Certificate Center.
+        :param pulumi.Input[builtins.str] certificate_id: Certificate ID from the CLB certificate management module.
+        :param pulumi.Input[builtins.str] certificate_source: Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
+        :param pulumi.Input[builtins.int] client_body_timeout: Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.int] client_header_timeout: Timeout for reading the client request header. Value range: 30–120 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.str] connection_drain_enabled: Whether the listener enables graceful connection termination. on: enabled. off: not enabled. When Protocol returns HTTP or HTTPS, this parameter always returns off.
+        :param pulumi.Input[builtins.int] connection_drain_timeout: Timeout for graceful connection termination, in seconds. If ConnectionDrainEnabled returns off, this parameter returns 0.
+        :param pulumi.Input[builtins.str] cookie: Name of the session persistence cookie configured on the backend server. This parameter is valid and required only when PersistenceType is set to server. Only letters, numbers, underscores (_), and hyphens (-) are allowed. Length must be between 1 and 200 characters.
+        :param pulumi.Input[builtins.int] cps: Maximum number of new connections per second. -1 (default): No limit, which means the maximum number of new connections allowed by the CLB instance. Value range: 1 to the maximum number of new connections allowed by the CLB instance.
+        :param pulumi.Input[builtins.str] description: Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
+        :param pulumi.Input[builtins.str] enabled: Enable listener. on (default): enabled. off: disabled.
+        :param pulumi.Input[builtins.int] end_port: End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.
+        :param pulumi.Input[builtins.int] established_timeout: Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
+        :param pulumi.Input[Union['ListenerHealthCheckArgs', 'ListenerHealthCheckArgsDict']] health_check: Health check information.
+        :param pulumi.Input[builtins.str] http2_enabled: Whether the listener enables frontend HTTP 2.0 protocol. This parameter is valid only when Protocol is set to HTTPS. Values: on: enabled. off (default): disabled.
+        :param pulumi.Input[builtins.int] keepalive_timeout: Keep-alive timeout between the client and CLB. Range: 0–900 seconds, default is 75 seconds. 0 disables keep-alive. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.str] listener_name: Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If left blank, 'Protocol-Port' will be used as the default listener name.
+        :param pulumi.Input[builtins.str] load_balancer_id: ID of the CLB instance.
+        :param pulumi.Input[builtins.int] max_connections: Maximum concurrent connections limit. -1 (default): unlimited (up to the maximum concurrent connections supported by the CLB instance). Value range: 1 to the maximum concurrent connections limit of the CLB instance.
+        :param pulumi.Input[builtins.int] persistence_timeout: Session persistence timeout, in seconds. The value range depends on the PersistenceType parameter. When PersistenceType is set to source_ip, the range is 1–3600. When PersistenceType is set to insert, the range is 1–86400.
+        :param pulumi.Input[builtins.str] persistence_type: Session persistence type. Values: off (default): session persistence disabled. source_ip: source IP address, valid only when Protocol is TCP or UDP. insert: insert Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr. server: rewrite Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr.
+        :param pulumi.Input[builtins.int] port: Port used by the listener to receive requests. Value range: 0–65535. When the Protocol parameter is 'TCP' or 'UDP', 0 is supported, which enables listening on all ports.
+        :param pulumi.Input[builtins.str] protocol: Listener protocol. Includes: TCP, UDP, HTTP, HTTPS.
+        :param pulumi.Input[builtins.int] proxy_connect_timeout: Connection establishment timeout between CLB and backend server. Recommended to be greater than the health check timeout. Range: 4–120 seconds, default is 4. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.str] proxy_protocol_type: Enable Proxy-Protocol. This parameter is valid only when Protocol is TCP or UDP. Values: off (default): disabled. standard: enabled.
+        :param pulumi.Input[builtins.int] proxy_read_timeout: Timeout for CLB to read responses from backend servers. This timeout applies only between two consecutive read operations, not for the entire response transmission. Value range: 30–3600 seconds. Default: 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.int] proxy_send_timeout: Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.str] scheduler: Scheduling algorithm used by the listener. wrr (default): Weighted round robin. wlc: Weighted least connections. sh: Source address hash.
+        :param pulumi.Input[builtins.str] security_policy_id: TLS security policy for HTTPS listeners. This parameter is valid only when Protocol is set to HTTPS. Values: default*policy (default): supports SSL v3, TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*0: supports TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*1: supports TLS v1.1, TLS v1.2. tls*cipher*policy*1*2: supports TLS v1.2. tls*cipher*policy*1*2*strict: supports TLS v1.2.
+        :param pulumi.Input[builtins.int] send_timeout: Timeout for CLB to send responses to the client. This timeout applies only between two consecutive write operations, not the entire response transmission. Range: 1–3600 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.str] server_group_id: ID of the backend server group associated with the listener.
+        :param pulumi.Input[builtins.int] start_port: Start port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required.
         """
         ...
     @overload
@@ -1470,7 +1470,7 @@ class Listener(pulumi.CustomResource):
                  args: ListenerArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        监听器负责根据指定的协议和端口，监听CLB实例接收到的用户访问请求。CLB将按照该监听器配置的调度算法，将访问请求转发至该后端服务器组内健康的后端服务器。
+        The listener monitors user access requests received by the CLB instance based on the specified protocol and port. CLB forwards access requests to healthy backend servers in the associated backend server group according to the scheduling algorithm configured for the listener.
 
         ## Import
 
@@ -1656,50 +1656,50 @@ class Listener(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] acl_ids: 监听器绑定的访问控制策略组ID。仅AclStatus参数为on时返回。
-        :param pulumi.Input[builtins.str] acl_status: 是否开启访问控制功能。取值如下：on：开启。off（默认值）：不开启。
-        :param pulumi.Input[builtins.str] acl_type: 访问控制的方式。white：白名单。black：黑名单。仅AclStatus参数为on时，本参数有效。
-        :param pulumi.Input[builtins.int] bandwidth: 监听器的带宽上限，即此监听器独占CLB实例的带宽，单位为Mbps。-1（默认值）：此监听器不独占CLB的带，与其他监听器共享CLB实例未被独占的带宽。取值范围：1～CLB实例未被独占的带宽。
-        :param pulumi.Input[builtins.str] ca_certificate_id: 双向认证的CA证书。
-        :param pulumi.Input[builtins.str] ca_enabled: 是否开启双向认证。on：开启。off（默认值）：不开启。
-        :param pulumi.Input[builtins.str] cert_center_certificate_id: 证书中心的证书的ID。
-        :param pulumi.Input[builtins.str] certificate_id: CLB侧证书管理模块的证书的ID。
-        :param pulumi.Input[builtins.str] certificate_source: 证书的来源。clb (默认)：CLB上传的证书。cert_center：证书中心上传的证书。user：用户上传的证书。
-        :param pulumi.Input[builtins.int] client_body_timeout: 读取客户端请求正文的超时时间。此超时时间仅针对两个连续的读操作之间设置，而非整个请求的传输过程。取值范围为 30-120秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效
-        :param pulumi.Input[builtins.int] client_header_timeout: 读取客户端请求头的超时时间。取值范围为30-120秒。默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
-        :param pulumi.Input[builtins.str] connection_drain_enabled: 监听器是否开启连接优雅中断功能。on：开启。off：不开启。参数Protocol返回为HTTP或HTTPS时，该参数固定返回off。
-        :param pulumi.Input[builtins.int] connection_drain_timeout: 连接优雅中断的超时时间，单位为秒。参数ConnectionDrainEnabled返回为off时，该参数返回0。
-        :param pulumi.Input[builtins.str] cookie: 后端服务器配置的会话保持的Cookie名称。仅参数PersistenceType取server时，本参数有效且必填。只能包含字母、数字、下划线（_）和中划线（-）。长度限制在1～200字符之间。
-        :param pulumi.Input[builtins.int] cps: 每秒新建连接数的上限。-1（默认值）：不限制，即CLB实例的新建连接数上限。取值范围：1～CLB实例的新连接数上限。
-        :param pulumi.Input[builtins.str] created_time: 监听器的创建时间。
-        :param pulumi.Input[builtins.str] description: 监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
-        :param pulumi.Input[builtins.str] enabled: 是否启用监听器。on（默认值）：开启。off：不开启。
-        :param pulumi.Input[builtins.int] end_port: 全端口监听的结束端口，取值范围为1-65535。参数Port为“0”时，该参数必须传入，且该参数取值应大于tartPort。
-        :param pulumi.Input[builtins.int] established_timeout: 监听器的连接超时时间。仅参数Protocol取TCP或UDP时，本参数有效。取值如下：TCP协议：10-900秒，默认为900秒。UDP协议：1-300秒，默认为90秒。
-        :param pulumi.Input[Union['ListenerHealthCheckArgs', 'ListenerHealthCheckArgsDict']] health_check: 健康检查相关信息。
-        :param pulumi.Input[builtins.str] http2_enabled: 监听器是否开启前端HTTP 2.0协议。仅参数`Protocol取HTTPS时，本参数有效。取值如下：|on：开启。off（默认值）：不开启。
-        :param pulumi.Input[builtins.int] keepalive_timeout: 客户端与CLB之间的长连接超时时间。取值范围为 0-900秒，默认为75秒。0表示禁用长连接。仅参数Protocol取HTTP或HTTPS时，本参数有效。
-        :param pulumi.Input[builtins.str] listener_id: 监听器的ID。
-        :param pulumi.Input[builtins.str] listener_name: 监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
-        :param pulumi.Input[builtins.str] load_balancer_id: CLB实例的ID。
-        :param pulumi.Input[builtins.int] max_connections: 最大并发连接数的上限。-1（默认值）：不限制，CLB实例的最大并发连接数上限。取值范围：1～CLB实例的最大并发连接数上限。
-        :param pulumi.Input[builtins.int] persistence_timeout: 会话保持的超时时间，单位为秒。取值范围根据参数PersistenceType取值有所不同。PersistenceType置为source_ip时，取值范围为1～3600。PersistenceType配置为insert时，取值范围为1～86400。
-        :param pulumi.Input[builtins.str] persistence_type: 会话保持的类型。取值如下：off（默认值）：不启用会话保持。source_ip：源地址IP，仅参数ProtocolTCP或UDP时，本取值有效。insert：植入Cookie，仅参数Protocol取HTTP或HTTPS且Scheduler取wrr时，本取值生效。server：重写Cookie，仅参数Protocol取HTTP或HTTPS且Scheduler取wrr时，本取值生效。。
-        :param pulumi.Input[builtins.int] port: 监听器接收请求使用的端口。取值范围为 0～65535。参数Protocol为“TCP”或“UDP”时，支持传入0，表示用全端口监听。
-        :param pulumi.Input[builtins.str] protocol: 监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
-        :param pulumi.Input[builtins.int] proxy_connect_timeout: CLB与后端服务器之间的连接建立超时时间。建议大于健康检查超时时间。取值范围为 4-120秒，默认为4。仅参数Protocol取HTTP或HTTPS时，本参数有效。
-        :param pulumi.Input[builtins.str] proxy_protocol_type: 是否启用Proxy-Protocol协议。仅参数Protocol取TCP或UDP时，本参数有效。取值如下：off（默认值）：关闭。standard：开启。
-        :param pulumi.Input[builtins.int] proxy_read_timeout: CLB从后端服务器读取响应的超时时间。此超时时间仅针对两个连续的读操作之间设置，而非整个响应的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
-        :param pulumi.Input[builtins.int] proxy_send_timeout: CLB将请求传输到后端服务器的超时时间。此超时仅针对两个连续的写操作之间设置，而非整个请求的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] rule_ids: 监听器绑定的规则ID列表。
-        :param pulumi.Input[builtins.str] scheduler: 监听器使用的调度算法。wrr（默认值）：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
-        :param pulumi.Input[builtins.str] security_policy_id: HTTPS监听器的TLS安全策略。仅参数Protocol取HTTPS时，本参数有效。 取值如下：default*policy（默认值）：支持SSL v3、TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*0：支持TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*1：支持TLS v1.1、TLS v1.2。tls*cipher*policy*1*2：支持TLS v1.2。tls*cipher*policy*1*2*strict：支持TLS v1.2。
-        :param pulumi.Input[builtins.int] send_timeout: CLB向客户端发送响应的超时时间。此超时仅针对两个连续的写操作之间设置，而非整响应的传输过程。取值范围为 1-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
-        :param pulumi.Input[builtins.str] server_group_id: 监听器关联的后端服务器组 ID。
-        :param pulumi.Input[builtins.int] start_port: 全端口监听的起始端口，取值范围为1-65535。参数Port为“0”时，该参数必须传入。
-        :param pulumi.Input[builtins.str] status: 监听器的状态。Creating：创建中。Active：运行中。Deleting: 删除中。Disabled: 已停用。
-        :param pulumi.Input[builtins.str] updated_time: 监听器最近一次的操作时间。
-        :param pulumi.Input[builtins.str] waf_protection_enabled: 是否将经过七层监听器的流量送至Web应用防火墙进行检测和过滤。on：是。off：否。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] acl_ids: ID of the access control policy group bound to the listener. Returned only when the AclStatus parameter is set to on.
+        :param pulumi.Input[builtins.str] acl_status: Enable access control. Values: on: enabled. off (default): disabled.
+        :param pulumi.Input[builtins.str] acl_type: Access control mode. white: Allowlist. black: Denylist. This parameter is valid only when the AclStatus parameter is on.
+        :param pulumi.Input[builtins.int] bandwidth: Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.
+        :param pulumi.Input[builtins.str] ca_certificate_id: CA certificate for mutual authentication.
+        :param pulumi.Input[builtins.str] ca_enabled: Enable mutual authentication. on: enabled. off (default): disabled.
+        :param pulumi.Input[builtins.str] cert_center_certificate_id: Certificate ID from Certificate Center.
+        :param pulumi.Input[builtins.str] certificate_id: Certificate ID from the CLB certificate management module.
+        :param pulumi.Input[builtins.str] certificate_source: Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
+        :param pulumi.Input[builtins.int] client_body_timeout: Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.int] client_header_timeout: Timeout for reading the client request header. Value range: 30–120 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.str] connection_drain_enabled: Whether the listener enables graceful connection termination. on: enabled. off: not enabled. When Protocol returns HTTP or HTTPS, this parameter always returns off.
+        :param pulumi.Input[builtins.int] connection_drain_timeout: Timeout for graceful connection termination, in seconds. If ConnectionDrainEnabled returns off, this parameter returns 0.
+        :param pulumi.Input[builtins.str] cookie: Name of the session persistence cookie configured on the backend server. This parameter is valid and required only when PersistenceType is set to server. Only letters, numbers, underscores (_), and hyphens (-) are allowed. Length must be between 1 and 200 characters.
+        :param pulumi.Input[builtins.int] cps: Maximum number of new connections per second. -1 (default): No limit, which means the maximum number of new connections allowed by the CLB instance. Value range: 1 to the maximum number of new connections allowed by the CLB instance.
+        :param pulumi.Input[builtins.str] created_time: Creation time of the listener.
+        :param pulumi.Input[builtins.str] description: Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
+        :param pulumi.Input[builtins.str] enabled: Enable listener. on (default): enabled. off: disabled.
+        :param pulumi.Input[builtins.int] end_port: End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.
+        :param pulumi.Input[builtins.int] established_timeout: Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
+        :param pulumi.Input[Union['ListenerHealthCheckArgs', 'ListenerHealthCheckArgsDict']] health_check: Health check information.
+        :param pulumi.Input[builtins.str] http2_enabled: Whether the listener enables frontend HTTP 2.0 protocol. This parameter is valid only when Protocol is set to HTTPS. Values: on: enabled. off (default): disabled.
+        :param pulumi.Input[builtins.int] keepalive_timeout: Keep-alive timeout between the client and CLB. Range: 0–900 seconds, default is 75 seconds. 0 disables keep-alive. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.str] listener_id: Listener ID.
+        :param pulumi.Input[builtins.str] listener_name: Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If left blank, 'Protocol-Port' will be used as the default listener name.
+        :param pulumi.Input[builtins.str] load_balancer_id: ID of the CLB instance.
+        :param pulumi.Input[builtins.int] max_connections: Maximum concurrent connections limit. -1 (default): unlimited (up to the maximum concurrent connections supported by the CLB instance). Value range: 1 to the maximum concurrent connections limit of the CLB instance.
+        :param pulumi.Input[builtins.int] persistence_timeout: Session persistence timeout, in seconds. The value range depends on the PersistenceType parameter. When PersistenceType is set to source_ip, the range is 1–3600. When PersistenceType is set to insert, the range is 1–86400.
+        :param pulumi.Input[builtins.str] persistence_type: Session persistence type. Values: off (default): session persistence disabled. source_ip: source IP address, valid only when Protocol is TCP or UDP. insert: insert Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr. server: rewrite Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr.
+        :param pulumi.Input[builtins.int] port: Port used by the listener to receive requests. Value range: 0–65535. When the Protocol parameter is 'TCP' or 'UDP', 0 is supported, which enables listening on all ports.
+        :param pulumi.Input[builtins.str] protocol: Listener protocol. Includes: TCP, UDP, HTTP, HTTPS.
+        :param pulumi.Input[builtins.int] proxy_connect_timeout: Connection establishment timeout between CLB and backend server. Recommended to be greater than the health check timeout. Range: 4–120 seconds, default is 4. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.str] proxy_protocol_type: Enable Proxy-Protocol. This parameter is valid only when Protocol is TCP or UDP. Values: off (default): disabled. standard: enabled.
+        :param pulumi.Input[builtins.int] proxy_read_timeout: Timeout for CLB to read responses from backend servers. This timeout applies only between two consecutive read operations, not for the entire response transmission. Value range: 30–3600 seconds. Default: 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.int] proxy_send_timeout: Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] rule_ids: List of rule IDs bound to the listener.
+        :param pulumi.Input[builtins.str] scheduler: Scheduling algorithm used by the listener. wrr (default): Weighted round robin. wlc: Weighted least connections. sh: Source address hash.
+        :param pulumi.Input[builtins.str] security_policy_id: TLS security policy for HTTPS listeners. This parameter is valid only when Protocol is set to HTTPS. Values: default*policy (default): supports SSL v3, TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*0: supports TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*1: supports TLS v1.1, TLS v1.2. tls*cipher*policy*1*2: supports TLS v1.2. tls*cipher*policy*1*2*strict: supports TLS v1.2.
+        :param pulumi.Input[builtins.int] send_timeout: Timeout for CLB to send responses to the client. This timeout applies only between two consecutive write operations, not the entire response transmission. Range: 1–3600 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[builtins.str] server_group_id: ID of the backend server group associated with the listener.
+        :param pulumi.Input[builtins.int] start_port: Start port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required.
+        :param pulumi.Input[builtins.str] status: Listener status. Creating: being created. Active: running. Deleting: being deleted. Disabled: disabled.
+        :param pulumi.Input[builtins.str] updated_time: Last operation time of the listener.
+        :param pulumi.Input[builtins.str] waf_protection_enabled: Send traffic passing through the Layer 7 listener to the Web Application Firewall for inspection and filtering. on: yes. off: no.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1756,7 +1756,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="aclIds")
     def acl_ids(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        监听器绑定的访问控制策略组ID。仅AclStatus参数为on时返回。
+        ID of the access control policy group bound to the listener. Returned only when the AclStatus parameter is set to on.
         """
         return pulumi.get(self, "acl_ids")
 
@@ -1764,7 +1764,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="aclStatus")
     def acl_status(self) -> pulumi.Output[builtins.str]:
         """
-        是否开启访问控制功能。取值如下：on：开启。off（默认值）：不开启。
+        Enable access control. Values: on: enabled. off (default): disabled.
         """
         return pulumi.get(self, "acl_status")
 
@@ -1772,7 +1772,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="aclType")
     def acl_type(self) -> pulumi.Output[builtins.str]:
         """
-        访问控制的方式。white：白名单。black：黑名单。仅AclStatus参数为on时，本参数有效。
+        Access control mode. white: Allowlist. black: Denylist. This parameter is valid only when the AclStatus parameter is on.
         """
         return pulumi.get(self, "acl_type")
 
@@ -1780,7 +1780,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter
     def bandwidth(self) -> pulumi.Output[builtins.int]:
         """
-        监听器的带宽上限，即此监听器独占CLB实例的带宽，单位为Mbps。-1（默认值）：此监听器不独占CLB的带，与其他监听器共享CLB实例未被独占的带宽。取值范围：1～CLB实例未被独占的带宽。
+        Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.
         """
         return pulumi.get(self, "bandwidth")
 
@@ -1788,7 +1788,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="caCertificateId")
     def ca_certificate_id(self) -> pulumi.Output[builtins.str]:
         """
-        双向认证的CA证书。
+        CA certificate for mutual authentication.
         """
         return pulumi.get(self, "ca_certificate_id")
 
@@ -1796,7 +1796,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="caEnabled")
     def ca_enabled(self) -> pulumi.Output[builtins.str]:
         """
-        是否开启双向认证。on：开启。off（默认值）：不开启。
+        Enable mutual authentication. on: enabled. off (default): disabled.
         """
         return pulumi.get(self, "ca_enabled")
 
@@ -1804,7 +1804,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="certCenterCertificateId")
     def cert_center_certificate_id(self) -> pulumi.Output[builtins.str]:
         """
-        证书中心的证书的ID。
+        Certificate ID from Certificate Center.
         """
         return pulumi.get(self, "cert_center_certificate_id")
 
@@ -1812,7 +1812,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="certificateId")
     def certificate_id(self) -> pulumi.Output[builtins.str]:
         """
-        CLB侧证书管理模块的证书的ID。
+        Certificate ID from the CLB certificate management module.
         """
         return pulumi.get(self, "certificate_id")
 
@@ -1820,7 +1820,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="certificateSource")
     def certificate_source(self) -> pulumi.Output[builtins.str]:
         """
-        证书的来源。clb (默认)：CLB上传的证书。cert_center：证书中心上传的证书。user：用户上传的证书。
+        Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
         """
         return pulumi.get(self, "certificate_source")
 
@@ -1828,7 +1828,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="clientBodyTimeout")
     def client_body_timeout(self) -> pulumi.Output[builtins.int]:
         """
-        读取客户端请求正文的超时时间。此超时时间仅针对两个连续的读操作之间设置，而非整个请求的传输过程。取值范围为 30-120秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效
+        Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         """
         return pulumi.get(self, "client_body_timeout")
 
@@ -1836,7 +1836,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="clientHeaderTimeout")
     def client_header_timeout(self) -> pulumi.Output[builtins.int]:
         """
-        读取客户端请求头的超时时间。取值范围为30-120秒。默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+        Timeout for reading the client request header. Value range: 30–120 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         """
         return pulumi.get(self, "client_header_timeout")
 
@@ -1844,7 +1844,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="connectionDrainEnabled")
     def connection_drain_enabled(self) -> pulumi.Output[builtins.str]:
         """
-        监听器是否开启连接优雅中断功能。on：开启。off：不开启。参数Protocol返回为HTTP或HTTPS时，该参数固定返回off。
+        Whether the listener enables graceful connection termination. on: enabled. off: not enabled. When Protocol returns HTTP or HTTPS, this parameter always returns off.
         """
         return pulumi.get(self, "connection_drain_enabled")
 
@@ -1852,7 +1852,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="connectionDrainTimeout")
     def connection_drain_timeout(self) -> pulumi.Output[builtins.int]:
         """
-        连接优雅中断的超时时间，单位为秒。参数ConnectionDrainEnabled返回为off时，该参数返回0。
+        Timeout for graceful connection termination, in seconds. If ConnectionDrainEnabled returns off, this parameter returns 0.
         """
         return pulumi.get(self, "connection_drain_timeout")
 
@@ -1860,7 +1860,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter
     def cookie(self) -> pulumi.Output[builtins.str]:
         """
-        后端服务器配置的会话保持的Cookie名称。仅参数PersistenceType取server时，本参数有效且必填。只能包含字母、数字、下划线（_）和中划线（-）。长度限制在1～200字符之间。
+        Name of the session persistence cookie configured on the backend server. This parameter is valid and required only when PersistenceType is set to server. Only letters, numbers, underscores (_), and hyphens (-) are allowed. Length must be between 1 and 200 characters.
         """
         return pulumi.get(self, "cookie")
 
@@ -1868,7 +1868,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter
     def cps(self) -> pulumi.Output[builtins.int]:
         """
-        每秒新建连接数的上限。-1（默认值）：不限制，即CLB实例的新建连接数上限。取值范围：1～CLB实例的新连接数上限。
+        Maximum number of new connections per second. -1 (default): No limit, which means the maximum number of new connections allowed by the CLB instance. Value range: 1 to the maximum number of new connections allowed by the CLB instance.
         """
         return pulumi.get(self, "cps")
 
@@ -1876,7 +1876,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        监听器的创建时间。
+        Creation time of the listener.
         """
         return pulumi.get(self, "created_time")
 
@@ -1884,7 +1884,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
+        Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -1892,7 +1892,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter
     def enabled(self) -> pulumi.Output[builtins.str]:
         """
-        是否启用监听器。on（默认值）：开启。off：不开启。
+        Enable listener. on (default): enabled. off: disabled.
         """
         return pulumi.get(self, "enabled")
 
@@ -1900,7 +1900,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="endPort")
     def end_port(self) -> pulumi.Output[builtins.int]:
         """
-        全端口监听的结束端口，取值范围为1-65535。参数Port为“0”时，该参数必须传入，且该参数取值应大于tartPort。
+        End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.
         """
         return pulumi.get(self, "end_port")
 
@@ -1908,7 +1908,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="establishedTimeout")
     def established_timeout(self) -> pulumi.Output[builtins.int]:
         """
-        监听器的连接超时时间。仅参数Protocol取TCP或UDP时，本参数有效。取值如下：TCP协议：10-900秒，默认为900秒。UDP协议：1-300秒，默认为90秒。
+        Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
         """
         return pulumi.get(self, "established_timeout")
 
@@ -1916,7 +1916,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="healthCheck")
     def health_check(self) -> pulumi.Output['outputs.ListenerHealthCheck']:
         """
-        健康检查相关信息。
+        Health check information.
         """
         return pulumi.get(self, "health_check")
 
@@ -1924,7 +1924,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="http2Enabled")
     def http2_enabled(self) -> pulumi.Output[builtins.str]:
         """
-        监听器是否开启前端HTTP 2.0协议。仅参数`Protocol取HTTPS时，本参数有效。取值如下：|on：开启。off（默认值）：不开启。
+        Whether the listener enables frontend HTTP 2.0 protocol. This parameter is valid only when Protocol is set to HTTPS. Values: on: enabled. off (default): disabled.
         """
         return pulumi.get(self, "http2_enabled")
 
@@ -1932,7 +1932,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="keepaliveTimeout")
     def keepalive_timeout(self) -> pulumi.Output[builtins.int]:
         """
-        客户端与CLB之间的长连接超时时间。取值范围为 0-900秒，默认为75秒。0表示禁用长连接。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+        Keep-alive timeout between the client and CLB. Range: 0–900 seconds, default is 75 seconds. 0 disables keep-alive. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         """
         return pulumi.get(self, "keepalive_timeout")
 
@@ -1940,7 +1940,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="listenerId")
     def listener_id(self) -> pulumi.Output[builtins.str]:
         """
-        监听器的ID。
+        Listener ID.
         """
         return pulumi.get(self, "listener_id")
 
@@ -1948,7 +1948,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="listenerName")
     def listener_name(self) -> pulumi.Output[builtins.str]:
         """
-        监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
+        Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If left blank, 'Protocol-Port' will be used as the default listener name.
         """
         return pulumi.get(self, "listener_name")
 
@@ -1956,7 +1956,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> pulumi.Output[builtins.str]:
         """
-        CLB实例的ID。
+        ID of the CLB instance.
         """
         return pulumi.get(self, "load_balancer_id")
 
@@ -1964,7 +1964,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="maxConnections")
     def max_connections(self) -> pulumi.Output[builtins.int]:
         """
-        最大并发连接数的上限。-1（默认值）：不限制，CLB实例的最大并发连接数上限。取值范围：1～CLB实例的最大并发连接数上限。
+        Maximum concurrent connections limit. -1 (default): unlimited (up to the maximum concurrent connections supported by the CLB instance). Value range: 1 to the maximum concurrent connections limit of the CLB instance.
         """
         return pulumi.get(self, "max_connections")
 
@@ -1972,7 +1972,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="persistenceTimeout")
     def persistence_timeout(self) -> pulumi.Output[builtins.int]:
         """
-        会话保持的超时时间，单位为秒。取值范围根据参数PersistenceType取值有所不同。PersistenceType置为source_ip时，取值范围为1～3600。PersistenceType配置为insert时，取值范围为1～86400。
+        Session persistence timeout, in seconds. The value range depends on the PersistenceType parameter. When PersistenceType is set to source_ip, the range is 1–3600. When PersistenceType is set to insert, the range is 1–86400.
         """
         return pulumi.get(self, "persistence_timeout")
 
@@ -1980,7 +1980,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="persistenceType")
     def persistence_type(self) -> pulumi.Output[builtins.str]:
         """
-        会话保持的类型。取值如下：off（默认值）：不启用会话保持。source_ip：源地址IP，仅参数ProtocolTCP或UDP时，本取值有效。insert：植入Cookie，仅参数Protocol取HTTP或HTTPS且Scheduler取wrr时，本取值生效。server：重写Cookie，仅参数Protocol取HTTP或HTTPS且Scheduler取wrr时，本取值生效。。
+        Session persistence type. Values: off (default): session persistence disabled. source_ip: source IP address, valid only when Protocol is TCP or UDP. insert: insert Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr. server: rewrite Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr.
         """
         return pulumi.get(self, "persistence_type")
 
@@ -1988,7 +1988,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter
     def port(self) -> pulumi.Output[builtins.int]:
         """
-        监听器接收请求使用的端口。取值范围为 0～65535。参数Protocol为“TCP”或“UDP”时，支持传入0，表示用全端口监听。
+        Port used by the listener to receive requests. Value range: 0–65535. When the Protocol parameter is 'TCP' or 'UDP', 0 is supported, which enables listening on all ports.
         """
         return pulumi.get(self, "port")
 
@@ -1996,7 +1996,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter
     def protocol(self) -> pulumi.Output[builtins.str]:
         """
-        监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
+        Listener protocol. Includes: TCP, UDP, HTTP, HTTPS.
         """
         return pulumi.get(self, "protocol")
 
@@ -2004,7 +2004,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="proxyConnectTimeout")
     def proxy_connect_timeout(self) -> pulumi.Output[builtins.int]:
         """
-        CLB与后端服务器之间的连接建立超时时间。建议大于健康检查超时时间。取值范围为 4-120秒，默认为4。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+        Connection establishment timeout between CLB and backend server. Recommended to be greater than the health check timeout. Range: 4–120 seconds, default is 4. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         """
         return pulumi.get(self, "proxy_connect_timeout")
 
@@ -2012,7 +2012,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="proxyProtocolType")
     def proxy_protocol_type(self) -> pulumi.Output[builtins.str]:
         """
-        是否启用Proxy-Protocol协议。仅参数Protocol取TCP或UDP时，本参数有效。取值如下：off（默认值）：关闭。standard：开启。
+        Enable Proxy-Protocol. This parameter is valid only when Protocol is TCP or UDP. Values: off (default): disabled. standard: enabled.
         """
         return pulumi.get(self, "proxy_protocol_type")
 
@@ -2020,7 +2020,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="proxyReadTimeout")
     def proxy_read_timeout(self) -> pulumi.Output[builtins.int]:
         """
-        CLB从后端服务器读取响应的超时时间。此超时时间仅针对两个连续的读操作之间设置，而非整个响应的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+        Timeout for CLB to read responses from backend servers. This timeout applies only between two consecutive read operations, not for the entire response transmission. Value range: 30–3600 seconds. Default: 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         """
         return pulumi.get(self, "proxy_read_timeout")
 
@@ -2028,7 +2028,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="proxySendTimeout")
     def proxy_send_timeout(self) -> pulumi.Output[builtins.int]:
         """
-        CLB将请求传输到后端服务器的超时时间。此超时仅针对两个连续的写操作之间设置，而非整个请求的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+        Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         """
         return pulumi.get(self, "proxy_send_timeout")
 
@@ -2036,7 +2036,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="ruleIds")
     def rule_ids(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        监听器绑定的规则ID列表。
+        List of rule IDs bound to the listener.
         """
         return pulumi.get(self, "rule_ids")
 
@@ -2044,7 +2044,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter
     def scheduler(self) -> pulumi.Output[builtins.str]:
         """
-        监听器使用的调度算法。wrr（默认值）：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
+        Scheduling algorithm used by the listener. wrr (default): Weighted round robin. wlc: Weighted least connections. sh: Source address hash.
         """
         return pulumi.get(self, "scheduler")
 
@@ -2052,7 +2052,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="securityPolicyId")
     def security_policy_id(self) -> pulumi.Output[builtins.str]:
         """
-        HTTPS监听器的TLS安全策略。仅参数Protocol取HTTPS时，本参数有效。 取值如下：default*policy（默认值）：支持SSL v3、TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*0：支持TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*1：支持TLS v1.1、TLS v1.2。tls*cipher*policy*1*2：支持TLS v1.2。tls*cipher*policy*1*2*strict：支持TLS v1.2。
+        TLS security policy for HTTPS listeners. This parameter is valid only when Protocol is set to HTTPS. Values: default*policy (default): supports SSL v3, TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*0: supports TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*1: supports TLS v1.1, TLS v1.2. tls*cipher*policy*1*2: supports TLS v1.2. tls*cipher*policy*1*2*strict: supports TLS v1.2.
         """
         return pulumi.get(self, "security_policy_id")
 
@@ -2060,7 +2060,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="sendTimeout")
     def send_timeout(self) -> pulumi.Output[builtins.int]:
         """
-        CLB向客户端发送响应的超时时间。此超时仅针对两个连续的写操作之间设置，而非整响应的传输过程。取值范围为 1-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+        Timeout for CLB to send responses to the client. This timeout applies only between two consecutive write operations, not the entire response transmission. Range: 1–3600 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         """
         return pulumi.get(self, "send_timeout")
 
@@ -2068,7 +2068,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="serverGroupId")
     def server_group_id(self) -> pulumi.Output[builtins.str]:
         """
-        监听器关联的后端服务器组 ID。
+        ID of the backend server group associated with the listener.
         """
         return pulumi.get(self, "server_group_id")
 
@@ -2076,7 +2076,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="startPort")
     def start_port(self) -> pulumi.Output[builtins.int]:
         """
-        全端口监听的起始端口，取值范围为1-65535。参数Port为“0”时，该参数必须传入。
+        Start port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required.
         """
         return pulumi.get(self, "start_port")
 
@@ -2084,7 +2084,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        监听器的状态。Creating：创建中。Active：运行中。Deleting: 删除中。Disabled: 已停用。
+        Listener status. Creating: being created. Active: running. Deleting: being deleted. Disabled: disabled.
         """
         return pulumi.get(self, "status")
 
@@ -2097,7 +2097,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        监听器最近一次的操作时间。
+        Last operation time of the listener.
         """
         return pulumi.get(self, "updated_time")
 
@@ -2105,7 +2105,7 @@ class Listener(pulumi.CustomResource):
     @pulumi.getter(name="wafProtectionEnabled")
     def waf_protection_enabled(self) -> pulumi.Output[builtins.str]:
         """
-        是否将经过七层监听器的流量送至Web应用防火墙进行检测和过滤。on：是。off：否。
+        Send traffic passing through the Layer 7 listener to the Web Application Firewall for inspection and filtering. on: yes. off: no.
         """
         return pulumi.get(self, "waf_protection_enabled")
 

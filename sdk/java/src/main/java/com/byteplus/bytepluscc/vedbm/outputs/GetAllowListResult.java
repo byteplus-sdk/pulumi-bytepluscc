@@ -14,42 +14,42 @@ import java.util.Objects;
 @CustomType
 public final class GetAllowListResult {
     /**
-     * @return IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+     * @return IP allowlist. Separate multiple IP addresses with commas (,). Duplicate entries are not allowed.
      * 
      */
     private String allowList;
     /**
-     * @return 白名单描述。
+     * @return Allowlist description.
      * 
      */
     private String allowListDesc;
     /**
-     * @return 白名单的id。
+     * @return Allowlist ID.
      * 
      */
     private String allowListId;
     /**
-     * @return 白名单内的 IP 地址（或地址段）总数。
+     * @return Total number of IP addresses (or address ranges) in the allowlist.
      * 
      */
     private Integer allowListIpNum;
     /**
-     * @return 白名单名称。
+     * @return Allowlist name.
      * 
      */
     private String allowListName;
     /**
-     * @return 白名单内的IP地址类型，当前仅支持IPv4。
+     * @return IP address type in the allowlist. Only IPv4 is currently supported.
      * 
      */
     private String allowListType;
     /**
-     * @return 白名单下绑定的实例总数
+     * @return Total number of instances bound to the allowlist.
      * 
      */
     private Integer associatedInstanceNum;
     /**
-     * @return 绑定的实例列表。
+     * @return List of bound instances.
      * 
      */
     private List<GetAllowListAssociatedInstance> associatedInstances;
@@ -59,68 +59,68 @@ public final class GetAllowListResult {
      */
     private String id;
     /**
-     * @return 修改白名单的方式，支持设置为：Cover（默认）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
+     * @return How to modify the allowlist. Supported settings: Cover (default): Overwrite the original allowlist with the values in the AllowList parameter. Append: Add IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
      * 
      */
     private String modifyMode;
     /**
-     * @return 白名单所属的项目名称，当该参数留空时，新建的白名单默认加入 default 项目
+     * @return Project name associated with the allowlist. If left blank, the new allowlist will be added to the default project.
      * 
      */
     private String projectName;
 
     private GetAllowListResult() {}
     /**
-     * @return IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+     * @return IP allowlist. Separate multiple IP addresses with commas (,). Duplicate entries are not allowed.
      * 
      */
     public String allowList() {
         return this.allowList;
     }
     /**
-     * @return 白名单描述。
+     * @return Allowlist description.
      * 
      */
     public String allowListDesc() {
         return this.allowListDesc;
     }
     /**
-     * @return 白名单的id。
+     * @return Allowlist ID.
      * 
      */
     public String allowListId() {
         return this.allowListId;
     }
     /**
-     * @return 白名单内的 IP 地址（或地址段）总数。
+     * @return Total number of IP addresses (or address ranges) in the allowlist.
      * 
      */
     public Integer allowListIpNum() {
         return this.allowListIpNum;
     }
     /**
-     * @return 白名单名称。
+     * @return Allowlist name.
      * 
      */
     public String allowListName() {
         return this.allowListName;
     }
     /**
-     * @return 白名单内的IP地址类型，当前仅支持IPv4。
+     * @return IP address type in the allowlist. Only IPv4 is currently supported.
      * 
      */
     public String allowListType() {
         return this.allowListType;
     }
     /**
-     * @return 白名单下绑定的实例总数
+     * @return Total number of instances bound to the allowlist.
      * 
      */
     public Integer associatedInstanceNum() {
         return this.associatedInstanceNum;
     }
     /**
-     * @return 绑定的实例列表。
+     * @return List of bound instances.
      * 
      */
     public List<GetAllowListAssociatedInstance> associatedInstances() {
@@ -134,14 +134,14 @@ public final class GetAllowListResult {
         return this.id;
     }
     /**
-     * @return 修改白名单的方式，支持设置为：Cover（默认）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
+     * @return How to modify the allowlist. Supported settings: Cover (default): Overwrite the original allowlist with the values in the AllowList parameter. Append: Add IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
      * 
      */
     public String modifyMode() {
         return this.modifyMode;
     }
     /**
-     * @return 白名单所属的项目名称，当该参数留空时，新建的白名单默认加入 default 项目
+     * @return Project name associated with the allowlist. If left blank, the new allowlist will be added to the default project.
      * 
      */
     public String projectName() {

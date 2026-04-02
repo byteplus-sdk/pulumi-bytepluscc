@@ -13,42 +13,42 @@ import java.util.Objects;
 @CustomType
 public final class GetHaVipResult {
     /**
-     * @return HAVIP绑定的公网IP的IP地址。
+     * @return IP address of the public IP bound to the HAVIP
      * 
      */
     private String associatedEipAddress;
     /**
-     * @return HAVIP绑定的公网IP的ID。
+     * @return ID of the public IP bound to the HAVIP
      * 
      */
     private String associatedEipId;
     /**
-     * @return 绑定HAVIP的实例ID列表。
+     * @return List of instance IDs bound to the HAVIP
      * 
      */
     private List<String> associatedInstanceIds;
     /**
-     * @return 绑定HAVIP的实例类型。EcsInstance：云服务器实例。NetworkInterface：弹性网卡。
+     * @return Instance type bound to the HAVIP. EcsInstance: cloud server instance. NetworkInterface: elastic network interface
      * 
      */
     private String associatedInstanceType;
     /**
-     * @return HAVIP的创建时间。
+     * @return Creation time of the HAVIP
      * 
      */
     private String createdAt;
     /**
-     * @return HAVIP的描述。长度限制为0～255个字符。
+     * @return Description of the HAVIP. Length limit: 0–255 characters
      * 
      */
     private String description;
     /**
-     * @return HAVIP的ID。
+     * @return ID of the HAVIP
      * 
      */
     private String haVipId;
     /**
-     * @return HAVIP的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制在0～128字符之间。
+     * @return Name of the HAVIP. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 0–128 characters
      * 
      */
     private String haVipName;
@@ -58,98 +58,98 @@ public final class GetHaVipResult {
      */
     private String id;
     /**
-     * @return HAVIP的IP地址。
+     * @return IP address of the HAVIP
      * 
      */
     private String ipAddress;
     /**
-     * @return 与HAVIP绑定的主实例的ID。
+     * @return ID of the primary instance bound to the HAVIP
      * 
      */
     private String masterInstanceId;
     /**
-     * @return HAVIP的项目名称。
+     * @return Project name of the HAVIP
      * 
      */
     private String projectName;
     /**
-     * @return HAVIP的状态。Available：可用。Creating：创建中。InUse：使用中。Deleting：删除中。
+     * @return Status of the HAVIP. Available: available. Creating: creating. InUse: in use. Deleting: deleting
      * 
      */
     private String status;
     /**
-     * @return HAVIP所属的子网 ID。
+     * @return Subnet ID to which the HAVIP belongs
      * 
      */
     private String subnetId;
     /**
-     * @return HAVIP所属标签。
+     * @return Tags associated with the HAVIP
      * 
      */
     private List<GetHaVipTag> tags;
     /**
-     * @return HAVIP最近一次的修改时间。
+     * @return Last modification time of the HAVIP
      * 
      */
     private String updatedAt;
     /**
-     * @return HAVIP所属的VPC ID。
+     * @return VPC ID to which the HAVIP belongs
      * 
      */
     private String vpcId;
 
     private GetHaVipResult() {}
     /**
-     * @return HAVIP绑定的公网IP的IP地址。
+     * @return IP address of the public IP bound to the HAVIP
      * 
      */
     public String associatedEipAddress() {
         return this.associatedEipAddress;
     }
     /**
-     * @return HAVIP绑定的公网IP的ID。
+     * @return ID of the public IP bound to the HAVIP
      * 
      */
     public String associatedEipId() {
         return this.associatedEipId;
     }
     /**
-     * @return 绑定HAVIP的实例ID列表。
+     * @return List of instance IDs bound to the HAVIP
      * 
      */
     public List<String> associatedInstanceIds() {
         return this.associatedInstanceIds;
     }
     /**
-     * @return 绑定HAVIP的实例类型。EcsInstance：云服务器实例。NetworkInterface：弹性网卡。
+     * @return Instance type bound to the HAVIP. EcsInstance: cloud server instance. NetworkInterface: elastic network interface
      * 
      */
     public String associatedInstanceType() {
         return this.associatedInstanceType;
     }
     /**
-     * @return HAVIP的创建时间。
+     * @return Creation time of the HAVIP
      * 
      */
     public String createdAt() {
         return this.createdAt;
     }
     /**
-     * @return HAVIP的描述。长度限制为0～255个字符。
+     * @return Description of the HAVIP. Length limit: 0–255 characters
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return HAVIP的ID。
+     * @return ID of the HAVIP
      * 
      */
     public String haVipId() {
         return this.haVipId;
     }
     /**
-     * @return HAVIP的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制在0～128字符之间。
+     * @return Name of the HAVIP. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 0–128 characters
      * 
      */
     public String haVipName() {
@@ -163,56 +163,56 @@ public final class GetHaVipResult {
         return this.id;
     }
     /**
-     * @return HAVIP的IP地址。
+     * @return IP address of the HAVIP
      * 
      */
     public String ipAddress() {
         return this.ipAddress;
     }
     /**
-     * @return 与HAVIP绑定的主实例的ID。
+     * @return ID of the primary instance bound to the HAVIP
      * 
      */
     public String masterInstanceId() {
         return this.masterInstanceId;
     }
     /**
-     * @return HAVIP的项目名称。
+     * @return Project name of the HAVIP
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return HAVIP的状态。Available：可用。Creating：创建中。InUse：使用中。Deleting：删除中。
+     * @return Status of the HAVIP. Available: available. Creating: creating. InUse: in use. Deleting: deleting
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return HAVIP所属的子网 ID。
+     * @return Subnet ID to which the HAVIP belongs
      * 
      */
     public String subnetId() {
         return this.subnetId;
     }
     /**
-     * @return HAVIP所属标签。
+     * @return Tags associated with the HAVIP
      * 
      */
     public List<GetHaVipTag> tags() {
         return this.tags;
     }
     /**
-     * @return HAVIP最近一次的修改时间。
+     * @return Last modification time of the HAVIP
      * 
      */
     public String updatedAt() {
         return this.updatedAt;
     }
     /**
-     * @return HAVIP所属的VPC ID。
+     * @return VPC ID to which the HAVIP belongs
      * 
      */
     public String vpcId() {

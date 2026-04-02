@@ -19,14 +19,14 @@ public final class GatewayTraceSpecArgs extends com.pulumi.resources.ResourceArg
     public static final GatewayTraceSpecArgs Empty = new GatewayTraceSpecArgs();
 
     /**
-     * 应用性能监控全链路版链路追踪配置。
+     * Application performance monitoring full-link trace configuration
      * 
      */
     @Import(name="apmTraceSpec")
     private @Nullable Output<GatewayTraceSpecApmTraceSpecArgs> apmTraceSpec;
 
     /**
-     * @return 应用性能监控全链路版链路追踪配置。
+     * @return Application performance monitoring full-link trace configuration
      * 
      */
     public Optional<Output<GatewayTraceSpecApmTraceSpecArgs>> apmTraceSpec() {
@@ -34,14 +34,14 @@ public final class GatewayTraceSpecArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 是否启用链路追踪。
+     * Whether to enable trace
      * 
      */
     @Import(name="enable")
     private @Nullable Output<Boolean> enable;
 
     /**
-     * @return 是否启用链路追踪。
+     * @return Whether to enable trace
      * 
      */
     public Optional<Output<Boolean>> enable() {
@@ -49,14 +49,14 @@ public final class GatewayTraceSpecArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 链路追踪配置信息。
+     * Link tracing configuration information.
      * 
      */
     @Import(name="tlsTraceSpec")
     private @Nullable Output<GatewayTraceSpecTlsTraceSpecArgs> tlsTraceSpec;
 
     /**
-     * @return 链路追踪配置信息。
+     * @return Link tracing configuration information.
      * 
      */
     public Optional<Output<GatewayTraceSpecTlsTraceSpecArgs>> tlsTraceSpec() {
@@ -64,14 +64,14 @@ public final class GatewayTraceSpecArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+     * Link tracing type. Possible values: tls: Log Service. apm: Application Performance Monitoring (APM) end-to-end version.
      * 
      */
     @Import(name="traceType")
     private @Nullable Output<String> traceType;
 
     /**
-     * @return 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+     * @return Link tracing type. Possible values: tls: Log Service. apm: Application Performance Monitoring (APM) end-to-end version.
      * 
      */
     public Optional<Output<String>> traceType() {
@@ -106,7 +106,7 @@ public final class GatewayTraceSpecArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param apmTraceSpec 应用性能监控全链路版链路追踪配置。
+         * @param apmTraceSpec Application performance monitoring full-link trace configuration
          * 
          * @return builder
          * 
@@ -117,7 +117,7 @@ public final class GatewayTraceSpecArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param apmTraceSpec 应用性能监控全链路版链路追踪配置。
+         * @param apmTraceSpec Application performance monitoring full-link trace configuration
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class GatewayTraceSpecArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param enable 是否启用链路追踪。
+         * @param enable Whether to enable trace
          * 
          * @return builder
          * 
@@ -138,7 +138,7 @@ public final class GatewayTraceSpecArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param enable 是否启用链路追踪。
+         * @param enable Whether to enable trace
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class GatewayTraceSpecArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param tlsTraceSpec 链路追踪配置信息。
+         * @param tlsTraceSpec Link tracing configuration information.
          * 
          * @return builder
          * 
@@ -159,7 +159,7 @@ public final class GatewayTraceSpecArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param tlsTraceSpec 链路追踪配置信息。
+         * @param tlsTraceSpec Link tracing configuration information.
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class GatewayTraceSpecArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param traceType 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+         * @param traceType Link tracing type. Possible values: tls: Log Service. apm: Application Performance Monitoring (APM) end-to-end version.
          * 
          * @return builder
          * 
@@ -180,7 +180,7 @@ public final class GatewayTraceSpecArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param traceType 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+         * @param traceType Link tracing type. Possible values: tls: Log Service. apm: Application Performance Monitoring (APM) end-to-end version.
          * 
          * @return builder
          * 

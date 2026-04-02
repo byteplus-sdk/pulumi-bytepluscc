@@ -19,14 +19,14 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
     public static final TrafficMirrorSessionState Empty = new TrafficMirrorSessionState();
 
     /**
-     * 会话计费状态。Normal：正常计费中。  - FinancialLocked：欠费锁定。
+     * Session billing status. Normal: Billing in progress.   - FinancialLocked: Locked due to overdue payment
      * 
      */
     @Import(name="businessStatus")
     private @Nullable Output<String> businessStatus;
 
     /**
-     * @return 会话计费状态。Normal：正常计费中。  - FinancialLocked：欠费锁定。
+     * @return Session billing status. Normal: Billing in progress.   - FinancialLocked: Locked due to overdue payment
      * 
      */
     public Optional<Output<String>> businessStatus() {
@@ -34,14 +34,14 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 创建时间。
+     * Creation time
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 创建时间。
+     * @return Creation time
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -49,14 +49,14 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 镜像会话实例描述。
+     * Mirror session instance description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 镜像会话实例描述。
+     * @return Mirror session instance description
      * 
      */
     public Optional<Output<String>> description() {
@@ -64,14 +64,14 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 锁定原因。
+     * Lock reason
      * 
      */
     @Import(name="lockReason")
     private @Nullable Output<String> lockReason;
 
     /**
-     * @return 锁定原因。
+     * @return Lock reason
      * 
      */
     public Optional<Output<String>> lockReason() {
@@ -79,14 +79,14 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 镜像源实例ID，当前只支持ECS的主网卡和辅助网卡。
+     * Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
      * 
      */
     @Import(name="networkInterfaceId")
     private @Nullable Output<String> networkInterfaceId;
 
     /**
-     * @return 镜像源实例ID，当前只支持ECS的主网卡和辅助网卡。
+     * @return Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
      * 
      */
     public Optional<Output<String>> networkInterfaceId() {
@@ -94,14 +94,14 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 镜像会话MTU，超过被截断，取值范围：64～9600。
+     * Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
      * 
      */
     @Import(name="packetLength")
     private @Nullable Output<Integer> packetLength;
 
     /**
-     * @return 镜像会话MTU，超过被截断，取值范围：64～9600。
+     * @return Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
      * 
      */
     public Optional<Output<Integer>> packetLength() {
@@ -109,14 +109,14 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 镜像会话优先级，取值范围1 ～ 32766，同一账户下镜像会话优先级不能重复。
+     * Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
      * 
      */
     @Import(name="priority")
     private @Nullable Output<Integer> priority;
 
     /**
-     * @return 镜像会话优先级，取值范围1 ～ 32766，同一账户下镜像会话优先级不能重复。
+     * @return Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
      * 
      */
     public Optional<Output<Integer>> priority() {
@@ -124,14 +124,14 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 所属项目的名称
+     * Name of the associated project
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 所属项目的名称
+     * @return Name of the associated project
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -139,14 +139,14 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 会话状态。
+     * Session status
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 会话状态。
+     * @return Session status
      * 
      */
     public Optional<Output<String>> status() {
@@ -161,14 +161,14 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 筛选条件实例ID。
+     * Filter condition instance ID
      * 
      */
     @Import(name="trafficMirrorFilterId")
     private @Nullable Output<String> trafficMirrorFilterId;
 
     /**
-     * @return 筛选条件实例ID。
+     * @return Filter condition instance ID
      * 
      */
     public Optional<Output<String>> trafficMirrorFilterId() {
@@ -176,14 +176,14 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 镜像会话实例ID。
+     * Mirror session instance ID
      * 
      */
     @Import(name="trafficMirrorSessionId")
     private @Nullable Output<String> trafficMirrorSessionId;
 
     /**
-     * @return 镜像会话实例ID。
+     * @return Mirror session instance ID
      * 
      */
     public Optional<Output<String>> trafficMirrorSessionId() {
@@ -191,14 +191,14 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 镜像会话名称。
+     * Mirror session name
      * 
      */
     @Import(name="trafficMirrorSessionName")
     private @Nullable Output<String> trafficMirrorSessionName;
 
     /**
-     * @return 镜像会话名称。
+     * @return Mirror session name
      * 
      */
     public Optional<Output<String>> trafficMirrorSessionName() {
@@ -206,14 +206,14 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 镜像源实例列表。
+     * Mirror source instance list
      * 
      */
     @Import(name="trafficMirrorSourceIds")
     private @Nullable Output<List<String>> trafficMirrorSourceIds;
 
     /**
-     * @return 镜像源实例列表。
+     * @return Mirror source instance list
      * 
      */
     public Optional<Output<List<String>>> trafficMirrorSourceIds() {
@@ -221,14 +221,14 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 镜像目的实例ID。
+     * Mirror destination instance ID
      * 
      */
     @Import(name="trafficMirrorTargetId")
     private @Nullable Output<String> trafficMirrorTargetId;
 
     /**
-     * @return 镜像目的实例ID。
+     * @return Mirror destination instance ID
      * 
      */
     public Optional<Output<String>> trafficMirrorTargetId() {
@@ -236,14 +236,14 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
     }
 
     /**
-     * 镜像会话VNI，取值范围1 ～ 16777215。
+     * Mirror session VNI. Range: 1–16777215
      * 
      */
     @Import(name="virtualNetworkId")
     private @Nullable Output<Integer> virtualNetworkId;
 
     /**
-     * @return 镜像会话VNI，取值范围1 ～ 16777215。
+     * @return Mirror session VNI. Range: 1–16777215
      * 
      */
     public Optional<Output<Integer>> virtualNetworkId() {
@@ -290,7 +290,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param businessStatus 会话计费状态。Normal：正常计费中。  - FinancialLocked：欠费锁定。
+         * @param businessStatus Session billing status. Normal: Billing in progress.   - FinancialLocked: Locked due to overdue payment
          * 
          * @return builder
          * 
@@ -301,7 +301,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param businessStatus 会话计费状态。Normal：正常计费中。  - FinancialLocked：欠费锁定。
+         * @param businessStatus Session billing status. Normal: Billing in progress.   - FinancialLocked: Locked due to overdue payment
          * 
          * @return builder
          * 
@@ -311,7 +311,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param createdTime 创建时间。
+         * @param createdTime Creation time
          * 
          * @return builder
          * 
@@ -322,7 +322,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param createdTime 创建时间。
+         * @param createdTime Creation time
          * 
          * @return builder
          * 
@@ -332,7 +332,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param description 镜像会话实例描述。
+         * @param description Mirror session instance description
          * 
          * @return builder
          * 
@@ -343,7 +343,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param description 镜像会话实例描述。
+         * @param description Mirror session instance description
          * 
          * @return builder
          * 
@@ -353,7 +353,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param lockReason 锁定原因。
+         * @param lockReason Lock reason
          * 
          * @return builder
          * 
@@ -364,7 +364,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param lockReason 锁定原因。
+         * @param lockReason Lock reason
          * 
          * @return builder
          * 
@@ -374,7 +374,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param networkInterfaceId 镜像源实例ID，当前只支持ECS的主网卡和辅助网卡。
+         * @param networkInterfaceId Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
          * 
          * @return builder
          * 
@@ -385,7 +385,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param networkInterfaceId 镜像源实例ID，当前只支持ECS的主网卡和辅助网卡。
+         * @param networkInterfaceId Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
          * 
          * @return builder
          * 
@@ -395,7 +395,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param packetLength 镜像会话MTU，超过被截断，取值范围：64～9600。
+         * @param packetLength Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
          * 
          * @return builder
          * 
@@ -406,7 +406,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param packetLength 镜像会话MTU，超过被截断，取值范围：64～9600。
+         * @param packetLength Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
          * 
          * @return builder
          * 
@@ -416,7 +416,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param priority 镜像会话优先级，取值范围1 ～ 32766，同一账户下镜像会话优先级不能重复。
+         * @param priority Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
          * 
          * @return builder
          * 
@@ -427,7 +427,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param priority 镜像会话优先级，取值范围1 ～ 32766，同一账户下镜像会话优先级不能重复。
+         * @param priority Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
          * 
          * @return builder
          * 
@@ -437,7 +437,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param projectName 所属项目的名称
+         * @param projectName Name of the associated project
          * 
          * @return builder
          * 
@@ -448,7 +448,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param projectName 所属项目的名称
+         * @param projectName Name of the associated project
          * 
          * @return builder
          * 
@@ -458,7 +458,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param status 会话状态。
+         * @param status Session status
          * 
          * @return builder
          * 
@@ -469,7 +469,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param status 会话状态。
+         * @param status Session status
          * 
          * @return builder
          * 
@@ -492,7 +492,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param trafficMirrorFilterId 筛选条件实例ID。
+         * @param trafficMirrorFilterId Filter condition instance ID
          * 
          * @return builder
          * 
@@ -503,7 +503,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param trafficMirrorFilterId 筛选条件实例ID。
+         * @param trafficMirrorFilterId Filter condition instance ID
          * 
          * @return builder
          * 
@@ -513,7 +513,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param trafficMirrorSessionId 镜像会话实例ID。
+         * @param trafficMirrorSessionId Mirror session instance ID
          * 
          * @return builder
          * 
@@ -524,7 +524,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param trafficMirrorSessionId 镜像会话实例ID。
+         * @param trafficMirrorSessionId Mirror session instance ID
          * 
          * @return builder
          * 
@@ -534,7 +534,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param trafficMirrorSessionName 镜像会话名称。
+         * @param trafficMirrorSessionName Mirror session name
          * 
          * @return builder
          * 
@@ -545,7 +545,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param trafficMirrorSessionName 镜像会话名称。
+         * @param trafficMirrorSessionName Mirror session name
          * 
          * @return builder
          * 
@@ -555,7 +555,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param trafficMirrorSourceIds 镜像源实例列表。
+         * @param trafficMirrorSourceIds Mirror source instance list
          * 
          * @return builder
          * 
@@ -566,7 +566,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param trafficMirrorSourceIds 镜像源实例列表。
+         * @param trafficMirrorSourceIds Mirror source instance list
          * 
          * @return builder
          * 
@@ -576,7 +576,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param trafficMirrorSourceIds 镜像源实例列表。
+         * @param trafficMirrorSourceIds Mirror source instance list
          * 
          * @return builder
          * 
@@ -586,7 +586,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param trafficMirrorTargetId 镜像目的实例ID。
+         * @param trafficMirrorTargetId Mirror destination instance ID
          * 
          * @return builder
          * 
@@ -597,7 +597,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param trafficMirrorTargetId 镜像目的实例ID。
+         * @param trafficMirrorTargetId Mirror destination instance ID
          * 
          * @return builder
          * 
@@ -607,7 +607,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param virtualNetworkId 镜像会话VNI，取值范围1 ～ 16777215。
+         * @param virtualNetworkId Mirror session VNI. Range: 1–16777215
          * 
          * @return builder
          * 
@@ -618,7 +618,7 @@ public final class TrafficMirrorSessionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param virtualNetworkId 镜像会话VNI，取值范围1 ～ 16777215。
+         * @param virtualNetworkId Mirror session VNI. Range: 1–16777215
          * 
          * @return builder
          * 

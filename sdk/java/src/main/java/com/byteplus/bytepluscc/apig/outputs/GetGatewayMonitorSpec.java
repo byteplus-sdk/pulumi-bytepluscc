@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetGatewayMonitorSpec {
     /**
-     * @return 托管Prometheus（VMP）服务。
+     * @return Managed Prometheus (VMP) service
      * 
      */
     private Boolean enable;
     /**
-     * @return Prometheus工作区ID。
+     * @return Prometheus workspace ID
      * 
      */
     private String workspaceId;
 
     private GetGatewayMonitorSpec() {}
     /**
-     * @return 托管Prometheus（VMP）服务。
+     * @return Managed Prometheus (VMP) service
      * 
      */
     public Boolean enable() {
         return this.enable;
     }
     /**
-     * @return Prometheus工作区ID。
+     * @return Prometheus workspace ID
      * 
      */
     public String workspaceId() {

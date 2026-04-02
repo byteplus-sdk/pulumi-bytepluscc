@@ -15,43 +15,47 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp.Outputs
     public sealed class GetWorkspaceInstanceTypeResult
     {
         /// <summary>
-        /// 最大活跃时序数。
+        /// Maximum active time series count
         /// </summary>
         public readonly int ActiveSeries;
         /// <summary>
-        /// 可用区（az）数。
+        /// Number of availability zones (az)
         /// </summary>
         public readonly int AvailabilityZoneReplicas;
         /// <summary>
-        /// 降采样策略。
+        /// Billing parameter list.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetWorkspaceInstanceTypeCalculatePriceParamResult> CalculatePriceParams;
+        /// <summary>
+        /// Downsampling policy
         /// </summary>
         public readonly ImmutableArray<string> DownsamplingPeriods;
         /// <summary>
-        /// 最大每秒写入样本数。
+        /// Maximum samples written per second
         /// </summary>
         public readonly int IngestSamplesPerSecond;
         /// <summary>
-        /// 最大查询并发数。
+        /// Maximum query concurrency
         /// </summary>
         public readonly int QueryConcurrency;
         /// <summary>
-        /// 最大查询 QPS。
+        /// Maximum query QPS
         /// </summary>
         public readonly int QueryPerSecond;
         /// <summary>
-        /// 每个可用区（az）的数据副本数。
+        /// Number of data replicas per availability zone (az)
         /// </summary>
         public readonly int ReplicasPerZone;
         /// <summary>
-        /// 最长数据保留时间。
+        /// Maximum data retention period
         /// </summary>
         public readonly string RetentionPeriod;
         /// <summary>
-        /// 最大每秒扫描样本数。
+        /// Maximum samples scanned per second
         /// </summary>
         public readonly int ScanSamplesPerSecond;
         /// <summary>
-        /// 最大每秒扫描时序数。
+        /// Maximum time series scanned per second
         /// </summary>
         public readonly int ScanSeriesPerSecond;
 
@@ -60,6 +64,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp.Outputs
             int activeSeries,
 
             int availabilityZoneReplicas,
+
+            ImmutableArray<Outputs.GetWorkspaceInstanceTypeCalculatePriceParamResult> calculatePriceParams,
 
             ImmutableArray<string> downsamplingPeriods,
 
@@ -79,6 +85,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp.Outputs
         {
             ActiveSeries = activeSeries;
             AvailabilityZoneReplicas = availabilityZoneReplicas;
+            CalculatePriceParams = calculatePriceParams;
             DownsamplingPeriods = downsamplingPeriods;
             IngestSamplesPerSecond = ingestSamplesPerSecond;
             QueryConcurrency = queryConcurrency;

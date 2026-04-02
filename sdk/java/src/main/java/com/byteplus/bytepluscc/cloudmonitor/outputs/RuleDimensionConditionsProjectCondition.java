@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RuleDimensionConditionsProjectCondition {
     /**
-     * @return 项目名称列表。数组形式。多个值之间使用英文半角逗号,分割。
+     * @return Project name list, in array format. Separate multiple values with commas.
      * 
      */
     private @Nullable List<String> projects;
 
     private RuleDimensionConditionsProjectCondition() {}
     /**
-     * @return 项目名称列表。数组形式。多个值之间使用英文半角逗号,分割。
+     * @return Project name list, in array format. Separate multiple values with commas.
      * 
      */
     public List<String> projects() {

@@ -12,38 +12,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class PermissionSetPermissionPolicy {
     /**
-     * @return 策略语法内容。语法可参考 策略语法说明。
+     * @return Policy syntax content. Refer to policy syntax documentation
      * 
      */
     private @Nullable String permissionPolicyDocument;
     /**
-     * @return 策略名称。
+     * @return Policy Name
      * 
      */
     private @Nullable String permissionPolicyName;
     /**
-     * @return 策略类型，System or Inline。
+     * @return Policy Type: System or Inline
      * 
      */
     private @Nullable String permissionPolicyType;
 
     private PermissionSetPermissionPolicy() {}
     /**
-     * @return 策略语法内容。语法可参考 策略语法说明。
+     * @return Policy syntax content. Refer to policy syntax documentation
      * 
      */
     public Optional<String> permissionPolicyDocument() {
         return Optional.ofNullable(this.permissionPolicyDocument);
     }
     /**
-     * @return 策略名称。
+     * @return Policy Name
      * 
      */
     public Optional<String> permissionPolicyName() {
         return Optional.ofNullable(this.permissionPolicyName);
     }
     /**
-     * @return 策略类型，System or Inline。
+     * @return Policy Type: System or Inline
      * 
      */
     public Optional<String> permissionPolicyType() {

@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Outputs
     public sealed class DbAccountTableColumnPrivilegeColumnPrivilege
     {
         /// <summary>
-        /// 对账号进行列权限设置的权限信息。取值（可多选）：INSERT REFERENCES SELECT UPDATE说明多个权限之间使用英文逗号（,）分隔。
+        /// Permission information for setting column permissions for the account. Values (multiple selections allowed): INSERT, REFERENCES, SELECT, UPDATE. Note: Use commas (,) to separate multiple permissions.
         /// </summary>
         public readonly ImmutableArray<string> AccountPrivilegeDetails;
         /// <summary>
-        /// 对账号进行列权限设置的列的名称。
+        /// Name of the column for setting column permissions for the account.
         /// </summary>
         public readonly string? ColumnName;
         /// <summary>
-        /// 对账号进行列权限设置的表所属的数据库的名称。
+        /// Name of the database to which the table belongs for setting column permissions for the account.
         /// </summary>
         public readonly string? TableName;
 

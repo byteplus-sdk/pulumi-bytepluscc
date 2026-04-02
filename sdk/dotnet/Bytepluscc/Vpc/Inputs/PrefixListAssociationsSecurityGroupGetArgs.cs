@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc.Inputs
     public sealed class PrefixListAssociationsSecurityGroupGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 关联资源的ID。
+        /// ID of the associated resource.
         /// </summary>
         [Input("resourceId")]
         public Input<string>? ResourceId { get; set; }
 
         /// <summary>
-        /// 关联资源的类型。VpcRouteTable：路由表；VpcSecurityGroup：安全组。
+        /// Type of associated resource. VpcRouteTable: route table; VpcSecurityGroup: security group.
         /// </summary>
         [Input("resourceType")]
         public Input<string>? ResourceType { get; set; }

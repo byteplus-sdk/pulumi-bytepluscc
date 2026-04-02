@@ -30,11 +30,11 @@ class TrafficMirrorTargetArgs:
                  traffic_mirror_target_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a TrafficMirrorTarget resource.
-        :param pulumi.Input[builtins.str] instance_id: 镜像目的的资源ID。
-        :param pulumi.Input[builtins.str] instance_type: 镜像目的的资源类型。NetworkInterface：弹性网卡。ClbInstance：传统型负载均衡。
-        :param pulumi.Input[builtins.str] description: 监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
-        :param pulumi.Input[builtins.str] project_name: 镜像目的所属项目的名称。不填默认加入default项目。
-        :param pulumi.Input[builtins.str] traffic_mirror_target_name: 监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
+        :param pulumi.Input[builtins.str] instance_id: Resource ID of the mirror target.
+        :param pulumi.Input[builtins.str] instance_type: Resource type of the mirror target. NetworkInterface: Elastic network interface. ClbInstance: Classic load balancer.
+        :param pulumi.Input[builtins.str] description: Listener description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, the default value is an empty string.
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the mirror target belongs. If not specified, it will be added to the default project.
+        :param pulumi.Input[builtins.str] traffic_mirror_target_name: Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, the default is 'protocol-port' as the listener name.
         """
         pulumi.set(__self__, "instance_id", instance_id)
         pulumi.set(__self__, "instance_type", instance_type)
@@ -51,7 +51,7 @@ class TrafficMirrorTargetArgs:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Input[builtins.str]:
         """
-        镜像目的的资源ID。
+        Resource ID of the mirror target.
         """
         return pulumi.get(self, "instance_id")
 
@@ -63,7 +63,7 @@ class TrafficMirrorTargetArgs:
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> pulumi.Input[builtins.str]:
         """
-        镜像目的的资源类型。NetworkInterface：弹性网卡。ClbInstance：传统型负载均衡。
+        Resource type of the mirror target. NetworkInterface: Elastic network interface. ClbInstance: Classic load balancer.
         """
         return pulumi.get(self, "instance_type")
 
@@ -75,7 +75,7 @@ class TrafficMirrorTargetArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
+        Listener description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, the default value is an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -87,7 +87,7 @@ class TrafficMirrorTargetArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像目的所属项目的名称。不填默认加入default项目。
+        Name of the project to which the mirror target belongs. If not specified, it will be added to the default project.
         """
         return pulumi.get(self, "project_name")
 
@@ -108,7 +108,7 @@ class TrafficMirrorTargetArgs:
     @pulumi.getter(name="trafficMirrorTargetName")
     def traffic_mirror_target_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
+        Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, the default is 'protocol-port' as the listener name.
         """
         return pulumi.get(self, "traffic_mirror_target_name")
 
@@ -132,15 +132,15 @@ class _TrafficMirrorTargetState:
                  updated_at: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering TrafficMirrorTarget resources.
-        :param pulumi.Input[builtins.str] created_at: 镜像会话的创建时间。
-        :param pulumi.Input[builtins.str] description: 监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
-        :param pulumi.Input[builtins.str] instance_id: 镜像目的的资源ID。
-        :param pulumi.Input[builtins.str] instance_type: 镜像目的的资源类型。NetworkInterface：弹性网卡。ClbInstance：传统型负载均衡。
-        :param pulumi.Input[builtins.str] project_name: 镜像目的所属项目的名称。不填默认加入default项目。
-        :param pulumi.Input[builtins.str] status: 镜像目的状态。Available：可用。Creating：创建中。
-        :param pulumi.Input[builtins.str] traffic_mirror_target_id: 镜像目的的ID。
-        :param pulumi.Input[builtins.str] traffic_mirror_target_name: 监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
-        :param pulumi.Input[builtins.str] updated_at: 镜像会话的更新时间。
+        :param pulumi.Input[builtins.str] created_at: Creation time of the mirror session.
+        :param pulumi.Input[builtins.str] description: Listener description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, the default value is an empty string.
+        :param pulumi.Input[builtins.str] instance_id: Resource ID of the mirror target.
+        :param pulumi.Input[builtins.str] instance_type: Resource type of the mirror target. NetworkInterface: Elastic network interface. ClbInstance: Classic load balancer.
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the mirror target belongs. If not specified, it will be added to the default project.
+        :param pulumi.Input[builtins.str] status: Status of the mirror target. Available: Available. Creating: Creating.
+        :param pulumi.Input[builtins.str] traffic_mirror_target_id: ID of the mirror target.
+        :param pulumi.Input[builtins.str] traffic_mirror_target_name: Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, the default is 'protocol-port' as the listener name.
+        :param pulumi.Input[builtins.str] updated_at: Update time of the mirror session.
         """
         if created_at is not None:
             pulumi.set(__self__, "created_at", created_at)
@@ -167,7 +167,7 @@ class _TrafficMirrorTargetState:
     @pulumi.getter(name="createdAt")
     def created_at(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像会话的创建时间。
+        Creation time of the mirror session.
         """
         return pulumi.get(self, "created_at")
 
@@ -179,7 +179,7 @@ class _TrafficMirrorTargetState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
+        Listener description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, the default value is an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -191,7 +191,7 @@ class _TrafficMirrorTargetState:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像目的的资源ID。
+        Resource ID of the mirror target.
         """
         return pulumi.get(self, "instance_id")
 
@@ -203,7 +203,7 @@ class _TrafficMirrorTargetState:
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像目的的资源类型。NetworkInterface：弹性网卡。ClbInstance：传统型负载均衡。
+        Resource type of the mirror target. NetworkInterface: Elastic network interface. ClbInstance: Classic load balancer.
         """
         return pulumi.get(self, "instance_type")
 
@@ -215,7 +215,7 @@ class _TrafficMirrorTargetState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像目的所属项目的名称。不填默认加入default项目。
+        Name of the project to which the mirror target belongs. If not specified, it will be added to the default project.
         """
         return pulumi.get(self, "project_name")
 
@@ -227,7 +227,7 @@ class _TrafficMirrorTargetState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像目的状态。Available：可用。Creating：创建中。
+        Status of the mirror target. Available: Available. Creating: Creating.
         """
         return pulumi.get(self, "status")
 
@@ -248,7 +248,7 @@ class _TrafficMirrorTargetState:
     @pulumi.getter(name="trafficMirrorTargetId")
     def traffic_mirror_target_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像目的的ID。
+        ID of the mirror target.
         """
         return pulumi.get(self, "traffic_mirror_target_id")
 
@@ -260,7 +260,7 @@ class _TrafficMirrorTargetState:
     @pulumi.getter(name="trafficMirrorTargetName")
     def traffic_mirror_target_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
+        Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, the default is 'protocol-port' as the listener name.
         """
         return pulumi.get(self, "traffic_mirror_target_name")
 
@@ -272,7 +272,7 @@ class _TrafficMirrorTargetState:
     @pulumi.getter(name="updatedAt")
     def updated_at(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像会话的更新时间。
+        Update time of the mirror session.
         """
         return pulumi.get(self, "updated_at")
 
@@ -295,7 +295,7 @@ class TrafficMirrorTarget(pulumi.CustomResource):
                  traffic_mirror_target_name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        镜像目的是收集流量的网卡或传统型负载均衡。您可以通过流量镜像，按自己设定的筛选条件复制网卡的流量，并将复制的流量私网转发到目标服务进行监控分析。
+        The mirror target is the network interface or classic load balancer used to collect traffic. You can use traffic mirroring to replicate network interface traffic based on your filtering criteria and forward the replicated traffic over the private network to the target service for monitoring and analysis.
 
         ## Example Usage
 
@@ -323,11 +323,11 @@ class TrafficMirrorTarget(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: 监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
-        :param pulumi.Input[builtins.str] instance_id: 镜像目的的资源ID。
-        :param pulumi.Input[builtins.str] instance_type: 镜像目的的资源类型。NetworkInterface：弹性网卡。ClbInstance：传统型负载均衡。
-        :param pulumi.Input[builtins.str] project_name: 镜像目的所属项目的名称。不填默认加入default项目。
-        :param pulumi.Input[builtins.str] traffic_mirror_target_name: 监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
+        :param pulumi.Input[builtins.str] description: Listener description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, the default value is an empty string.
+        :param pulumi.Input[builtins.str] instance_id: Resource ID of the mirror target.
+        :param pulumi.Input[builtins.str] instance_type: Resource type of the mirror target. NetworkInterface: Elastic network interface. ClbInstance: Classic load balancer.
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the mirror target belongs. If not specified, it will be added to the default project.
+        :param pulumi.Input[builtins.str] traffic_mirror_target_name: Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, the default is 'protocol-port' as the listener name.
         """
         ...
     @overload
@@ -336,7 +336,7 @@ class TrafficMirrorTarget(pulumi.CustomResource):
                  args: TrafficMirrorTargetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        镜像目的是收集流量的网卡或传统型负载均衡。您可以通过流量镜像，按自己设定的筛选条件复制网卡的流量，并将复制的流量私网转发到目标服务进行监控分析。
+        The mirror target is the network interface or classic load balancer used to collect traffic. You can use traffic mirroring to replicate network interface traffic based on your filtering criteria and forward the replicated traffic over the private network to the target service for monitoring and analysis.
 
         ## Example Usage
 
@@ -433,15 +433,15 @@ class TrafficMirrorTarget(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] created_at: 镜像会话的创建时间。
-        :param pulumi.Input[builtins.str] description: 监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
-        :param pulumi.Input[builtins.str] instance_id: 镜像目的的资源ID。
-        :param pulumi.Input[builtins.str] instance_type: 镜像目的的资源类型。NetworkInterface：弹性网卡。ClbInstance：传统型负载均衡。
-        :param pulumi.Input[builtins.str] project_name: 镜像目的所属项目的名称。不填默认加入default项目。
-        :param pulumi.Input[builtins.str] status: 镜像目的状态。Available：可用。Creating：创建中。
-        :param pulumi.Input[builtins.str] traffic_mirror_target_id: 镜像目的的ID。
-        :param pulumi.Input[builtins.str] traffic_mirror_target_name: 监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
-        :param pulumi.Input[builtins.str] updated_at: 镜像会话的更新时间。
+        :param pulumi.Input[builtins.str] created_at: Creation time of the mirror session.
+        :param pulumi.Input[builtins.str] description: Listener description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, the default value is an empty string.
+        :param pulumi.Input[builtins.str] instance_id: Resource ID of the mirror target.
+        :param pulumi.Input[builtins.str] instance_type: Resource type of the mirror target. NetworkInterface: Elastic network interface. ClbInstance: Classic load balancer.
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the mirror target belongs. If not specified, it will be added to the default project.
+        :param pulumi.Input[builtins.str] status: Status of the mirror target. Available: Available. Creating: Creating.
+        :param pulumi.Input[builtins.str] traffic_mirror_target_id: ID of the mirror target.
+        :param pulumi.Input[builtins.str] traffic_mirror_target_name: Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, the default is 'protocol-port' as the listener name.
+        :param pulumi.Input[builtins.str] updated_at: Update time of the mirror session.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -463,7 +463,7 @@ class TrafficMirrorTarget(pulumi.CustomResource):
     @pulumi.getter(name="createdAt")
     def created_at(self) -> pulumi.Output[builtins.str]:
         """
-        镜像会话的创建时间。
+        Creation time of the mirror session.
         """
         return pulumi.get(self, "created_at")
 
@@ -471,7 +471,7 @@ class TrafficMirrorTarget(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
+        Listener description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, the default value is an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -479,7 +479,7 @@ class TrafficMirrorTarget(pulumi.CustomResource):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Output[builtins.str]:
         """
-        镜像目的的资源ID。
+        Resource ID of the mirror target.
         """
         return pulumi.get(self, "instance_id")
 
@@ -487,7 +487,7 @@ class TrafficMirrorTarget(pulumi.CustomResource):
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> pulumi.Output[builtins.str]:
         """
-        镜像目的的资源类型。NetworkInterface：弹性网卡。ClbInstance：传统型负载均衡。
+        Resource type of the mirror target. NetworkInterface: Elastic network interface. ClbInstance: Classic load balancer.
         """
         return pulumi.get(self, "instance_type")
 
@@ -495,7 +495,7 @@ class TrafficMirrorTarget(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        镜像目的所属项目的名称。不填默认加入default项目。
+        Name of the project to which the mirror target belongs. If not specified, it will be added to the default project.
         """
         return pulumi.get(self, "project_name")
 
@@ -503,7 +503,7 @@ class TrafficMirrorTarget(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        镜像目的状态。Available：可用。Creating：创建中。
+        Status of the mirror target. Available: Available. Creating: Creating.
         """
         return pulumi.get(self, "status")
 
@@ -516,7 +516,7 @@ class TrafficMirrorTarget(pulumi.CustomResource):
     @pulumi.getter(name="trafficMirrorTargetId")
     def traffic_mirror_target_id(self) -> pulumi.Output[builtins.str]:
         """
-        镜像目的的ID。
+        ID of the mirror target.
         """
         return pulumi.get(self, "traffic_mirror_target_id")
 
@@ -524,7 +524,7 @@ class TrafficMirrorTarget(pulumi.CustomResource):
     @pulumi.getter(name="trafficMirrorTargetName")
     def traffic_mirror_target_name(self) -> pulumi.Output[builtins.str]:
         """
-        监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
+        Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, the default is 'protocol-port' as the listener name.
         """
         return pulumi.get(self, "traffic_mirror_target_name")
 
@@ -532,7 +532,7 @@ class TrafficMirrorTarget(pulumi.CustomResource):
     @pulumi.getter(name="updatedAt")
     def updated_at(self) -> pulumi.Output[builtins.str]:
         """
-        镜像会话的更新时间。
+        Update time of the mirror session.
         """
         return pulumi.get(self, "updated_at")
 

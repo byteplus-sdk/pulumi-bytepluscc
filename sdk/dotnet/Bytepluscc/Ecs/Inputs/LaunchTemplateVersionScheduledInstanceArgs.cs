@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
     public sealed class LaunchTemplateVersionScheduledInstanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 弹性预约单的描述。
+        /// Description of the elastic reservation order
         /// </summary>
         [Input("scheduledInstanceDescription")]
         public Input<string>? ScheduledInstanceDescription { get; set; }
 
         /// <summary>
-        /// 弹性预约单的名称。
+        /// Name of the elastic reservation order
         /// </summary>
         [Input("scheduledInstanceName")]
         public Input<string>? ScheduledInstanceName { get; set; }

@@ -13,74 +13,74 @@ import java.util.Objects;
 @CustomType
 public final class GetGatewayResourceSpec {
     /**
-     * @return CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+     * @return CLB specification code. CLB specifications. Options: small*1: Small I; small*2: Small II; medium*1: Medium I; medium*2: Medium II; large*1: Large I; large*2: Large II
      * 
      */
     private String clbSpecCode;
     /**
-     * @return 节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+     * @return Node specifications. Options: 1c2g, 2c4g, 4c8g, 8c16g
      * 
      */
     private String instanceSpecCode;
     /**
-     * @return 网络类型。默认值为开启公网，开启私网。
+     * @return Network type. Default value: enable public network, enable private network
      * 
      */
     private GetGatewayResourceSpecNetworkType networkType;
     /**
-     * @return 公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+     * @return Public network bandwidth limit. This field is only used for the &#39;bandwidth limit billing&#39; public network billing method. Unit: Mbps. Value range: 0–500. Default value: 0
      * 
      */
     private Integer publicNetworkBandwidth;
     /**
-     * @return 公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+     * @return Public network billing method. Options: traffic: billed by actual traffic; bandwidth: billed by bandwidth limit
      * 
      */
     private String publicNetworkBillingType;
     /**
-     * @return 节点数量。取值限制为2~100。
+     * @return Node count. Value range: 2–100
      * 
      */
     private Integer replicas;
 
     private GetGatewayResourceSpec() {}
     /**
-     * @return CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+     * @return CLB specification code. CLB specifications. Options: small*1: Small I; small*2: Small II; medium*1: Medium I; medium*2: Medium II; large*1: Large I; large*2: Large II
      * 
      */
     public String clbSpecCode() {
         return this.clbSpecCode;
     }
     /**
-     * @return 节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+     * @return Node specifications. Options: 1c2g, 2c4g, 4c8g, 8c16g
      * 
      */
     public String instanceSpecCode() {
         return this.instanceSpecCode;
     }
     /**
-     * @return 网络类型。默认值为开启公网，开启私网。
+     * @return Network type. Default value: enable public network, enable private network
      * 
      */
     public GetGatewayResourceSpecNetworkType networkType() {
         return this.networkType;
     }
     /**
-     * @return 公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+     * @return Public network bandwidth limit. This field is only used for the &#39;bandwidth limit billing&#39; public network billing method. Unit: Mbps. Value range: 0–500. Default value: 0
      * 
      */
     public Integer publicNetworkBandwidth() {
         return this.publicNetworkBandwidth;
     }
     /**
-     * @return 公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+     * @return Public network billing method. Options: traffic: billed by actual traffic; bandwidth: billed by bandwidth limit
      * 
      */
     public String publicNetworkBillingType() {
         return this.publicNetworkBillingType;
     }
     /**
-     * @return 节点数量。取值限制为2~100。
+     * @return Node count. Value range: 2–100
      * 
      */
     public Integer replicas() {

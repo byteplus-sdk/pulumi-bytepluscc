@@ -30,7 +30,7 @@ if not MYPY:
     class RegistryProxyCacheArgsDict(TypedDict):
         type: NotRequired[pulumi.Input[builtins.str]]
         """
-        ProxyCache支持的镜像仓库实例类型，参数值说明如下：DockerHub：dockerhub 镜像仓库。
+        Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
         """
 elif False:
     RegistryProxyCacheArgsDict: TypeAlias = Mapping[str, Any]
@@ -40,7 +40,7 @@ class RegistryProxyCacheArgs:
     def __init__(__self__, *,
                  type: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] type: ProxyCache支持的镜像仓库实例类型，参数值说明如下：DockerHub：dockerhub 镜像仓库。
+        :param pulumi.Input[builtins.str] type: Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
         """
         if type is not None:
             pulumi.set(__self__, "type", type)
@@ -49,7 +49,7 @@ class RegistryProxyCacheArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        ProxyCache支持的镜像仓库实例类型，参数值说明如下：DockerHub：dockerhub 镜像仓库。
+        Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
         """
         return pulumi.get(self, "type")
 
@@ -62,11 +62,27 @@ if not MYPY:
     class RegistryStatusArgsDict(TypedDict):
         conditions: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+        Creating, [ Progressing ]: Creating
+        Running, [ Ok ]: Running
+        Running, [ Degraded ]: Running
+        Stopped, [ Balance ]: Suspended due to insufficient balance
+        Stopped, [ Released ]: Pending reclamation
+        Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+        Starting, [ Progressing ]: Starting
+        Deleting, [ Progressing ]: Deleting
+        Failed, [ Unknown ]: Abnormal
         """
         phase: NotRequired[pulumi.Input[builtins.str]]
         """
-        Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+        Creating, [ Progressing ]: Creating
+        Running, [ Ok ]: Running
+        Running, [ Degraded ]: Running
+        Stopped, [ Balance ]: Suspended due to insufficient balance
+        Stopped, [ Released ]: Pending reclamation
+        Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+        Starting, [ Progressing ]: Starting
+        Deleting, [ Progressing ]: Deleting
+        Failed, [ Unknown ]: Abnormal
         """
 elif False:
     RegistryStatusArgsDict: TypeAlias = Mapping[str, Any]
@@ -77,8 +93,24 @@ class RegistryStatusArgs:
                  conditions: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  phase: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] conditions: Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
-        :param pulumi.Input[builtins.str] phase: Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] conditions: Creating, [ Progressing ]: Creating
+               Running, [ Ok ]: Running
+               Running, [ Degraded ]: Running
+               Stopped, [ Balance ]: Suspended due to insufficient balance
+               Stopped, [ Released ]: Pending reclamation
+               Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+               Starting, [ Progressing ]: Starting
+               Deleting, [ Progressing ]: Deleting
+               Failed, [ Unknown ]: Abnormal
+        :param pulumi.Input[builtins.str] phase: Creating, [ Progressing ]: Creating
+               Running, [ Ok ]: Running
+               Running, [ Degraded ]: Running
+               Stopped, [ Balance ]: Suspended due to insufficient balance
+               Stopped, [ Released ]: Pending reclamation
+               Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+               Starting, [ Progressing ]: Starting
+               Deleting, [ Progressing ]: Deleting
+               Failed, [ Unknown ]: Abnormal
         """
         if conditions is not None:
             pulumi.set(__self__, "conditions", conditions)
@@ -89,7 +121,15 @@ class RegistryStatusArgs:
     @pulumi.getter
     def conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+        Creating, [ Progressing ]: Creating
+        Running, [ Ok ]: Running
+        Running, [ Degraded ]: Running
+        Stopped, [ Balance ]: Suspended due to insufficient balance
+        Stopped, [ Released ]: Pending reclamation
+        Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+        Starting, [ Progressing ]: Starting
+        Deleting, [ Progressing ]: Deleting
+        Failed, [ Unknown ]: Abnormal
         """
         return pulumi.get(self, "conditions")
 
@@ -101,7 +141,15 @@ class RegistryStatusArgs:
     @pulumi.getter
     def phase(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Creating, [ Progressing ] ：创建中。Running, [ Ok ] ：运行中。Running, [ Degraded ] ：运行中。Stopped, [ Balance ] ： 欠费关停。Stopped, [ Released ] ：待回收。Stopped, [ Released, Balance ] ：欠费关停。Starting, [ Progressing ] ：启动中。Deleting, [ Progressing ] ：销毁中。Failed, [ Unknown ] ：异常。
+        Creating, [ Progressing ]: Creating
+        Running, [ Ok ]: Running
+        Running, [ Degraded ]: Running
+        Stopped, [ Balance ]: Suspended due to insufficient balance
+        Stopped, [ Released ]: Pending reclamation
+        Stopped, [ Released, Balance ]: Suspended due to insufficient balance
+        Starting, [ Progressing ]: Starting
+        Deleting, [ Progressing ]: Deleting
+        Failed, [ Unknown ]: Abnormal
         """
         return pulumi.get(self, "phase")
 
@@ -114,11 +162,11 @@ if not MYPY:
     class RegistryTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签的 Key 值。
+        Tag key values
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        标签的 Value 值列表。
+        List of tag values
         """
 elif False:
     RegistryTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -129,8 +177,8 @@ class RegistryTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 标签的 Key 值。
-        :param pulumi.Input[builtins.str] value: 标签的 Value 值列表。
+        :param pulumi.Input[builtins.str] key: Tag key values
+        :param pulumi.Input[builtins.str] value: List of tag values
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -141,7 +189,7 @@ class RegistryTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签的 Key 值。
+        Tag key values
         """
         return pulumi.get(self, "key")
 
@@ -153,7 +201,7 @@ class RegistryTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标签的 Value 值列表。
+        List of tag values
         """
         return pulumi.get(self, "value")
 

@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "bytepluscc:cen/cen:Cen":
 		r = &Cen{}
+	case "bytepluscc:cen/grantInstance:GrantInstance":
+		r = &GrantInstance{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -39,6 +41,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"cen/cen",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"cen/grantInstance",
 		&module{version},
 	)
 }

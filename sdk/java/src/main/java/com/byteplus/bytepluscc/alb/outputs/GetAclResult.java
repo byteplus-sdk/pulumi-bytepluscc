@@ -16,32 +16,32 @@ import java.util.Objects;
 @CustomType
 public final class GetAclResult {
     /**
-     * @return 访问控制策略组中IP条目的详细信息。
+     * @return Details of IP entries in the access control policy group
      * 
      */
     private List<GetAclAclEntry> aclEntries;
     /**
-     * @return 访问控制策略组包含的IP条目数量。
+     * @return Number of IP entries in the access control policy group
      * 
      */
     private Integer aclEntryCount;
     /**
-     * @return 访问控制策略组的ID。
+     * @return Access control policy group ID
      * 
      */
     private String aclId;
     /**
-     * @return 访问控制策略组的名字。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ～ 128个字符。不填默认为访问控制策略组ID。
+     * @return Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
      * 
      */
     private String aclName;
     /**
-     * @return 访问控制策略组的创建时间。
+     * @return Creation time of the access control policy group
      * 
      */
     private String createdTime;
     /**
-     * @return 访问控制策略组的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+     * @return Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
      * 
      */
     private String description;
@@ -51,69 +51,69 @@ public final class GetAclResult {
      */
     private String id;
     /**
-     * @return 访问控制策略组关联的监听器详细信息。
+     * @return Details of listeners associated with the access control policy group
      * 
      */
     private List<GetAclListener> listeners;
     /**
-     * @return 访问控制策略组所属项目名称。
+     * @return Project name to which the access control policy group belongs
      * 
      */
     private String projectName;
     /**
-     * @return 访问控制策略组的状态。Creating：创建中。Active：正常可用。Configuring：配置中。Deleting：删除中。
+     * @return Status of the access control policy group. Creating: Creating. Active: Available. Configuring: Configuring. Deleting: Deleting
      * 
      */
     private String status;
     /**
-     * @return 访问控制策略组绑定的标签。
+     * @return Tags bound to the access control policy group
      * 
      */
     private List<GetAclTag> tags;
     /**
-     * @return 访问控制策略组的最近操作时间。
+     * @return Last operation time of the access control policy group
      * 
      */
     private String updatedTime;
 
     private GetAclResult() {}
     /**
-     * @return 访问控制策略组中IP条目的详细信息。
+     * @return Details of IP entries in the access control policy group
      * 
      */
     public List<GetAclAclEntry> aclEntries() {
         return this.aclEntries;
     }
     /**
-     * @return 访问控制策略组包含的IP条目数量。
+     * @return Number of IP entries in the access control policy group
      * 
      */
     public Integer aclEntryCount() {
         return this.aclEntryCount;
     }
     /**
-     * @return 访问控制策略组的ID。
+     * @return Access control policy group ID
      * 
      */
     public String aclId() {
         return this.aclId;
     }
     /**
-     * @return 访问控制策略组的名字。不能以http://或https://开头。必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ～ 128个字符。不填默认为访问控制策略组ID。
+     * @return Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
      * 
      */
     public String aclName() {
         return this.aclName;
     }
     /**
-     * @return 访问控制策略组的创建时间。
+     * @return Creation time of the access control policy group
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 访问控制策略组的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+     * @return Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
      * 
      */
     public String description() {
@@ -127,35 +127,35 @@ public final class GetAclResult {
         return this.id;
     }
     /**
-     * @return 访问控制策略组关联的监听器详细信息。
+     * @return Details of listeners associated with the access control policy group
      * 
      */
     public List<GetAclListener> listeners() {
         return this.listeners;
     }
     /**
-     * @return 访问控制策略组所属项目名称。
+     * @return Project name to which the access control policy group belongs
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 访问控制策略组的状态。Creating：创建中。Active：正常可用。Configuring：配置中。Deleting：删除中。
+     * @return Status of the access control policy group. Creating: Creating. Active: Available. Configuring: Configuring. Deleting: Deleting
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 访问控制策略组绑定的标签。
+     * @return Tags bound to the access control policy group
      * 
      */
     public List<GetAclTag> tags() {
         return this.tags;
     }
     /**
-     * @return 访问控制策略组的最近操作时间。
+     * @return Last operation time of the access control policy group
      * 
      */
     public String updatedTime() {

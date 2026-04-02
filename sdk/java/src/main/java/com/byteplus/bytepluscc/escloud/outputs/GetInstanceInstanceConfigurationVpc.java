@@ -16,7 +16,7 @@ public final class GetInstanceInstanceConfigurationVpc {
      */
     private String vpcId;
     /**
-     * @return VPC 名称。
+     * @return VPC name
      * 
      */
     private String vpcName;
@@ -30,7 +30,7 @@ public final class GetInstanceInstanceConfigurationVpc {
         return this.vpcId;
     }
     /**
-     * @return VPC 名称。
+     * @return VPC name
      * 
      */
     public String vpcName() {

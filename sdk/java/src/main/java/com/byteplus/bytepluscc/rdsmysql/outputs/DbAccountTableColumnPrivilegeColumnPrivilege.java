@@ -13,38 +13,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DbAccountTableColumnPrivilegeColumnPrivilege {
     /**
-     * @return 对账号进行列权限设置的权限信息。取值（可多选）：INSERT REFERENCES SELECT UPDATE说明多个权限之间使用英文逗号（,）分隔。
+     * @return Permission information for setting column permissions for the account. Values (multiple selections allowed): INSERT, REFERENCES, SELECT, UPDATE. Note: Use commas (,) to separate multiple permissions.
      * 
      */
     private @Nullable List<String> accountPrivilegeDetails;
     /**
-     * @return 对账号进行列权限设置的列的名称。
+     * @return Name of the column for setting column permissions for the account.
      * 
      */
     private @Nullable String columnName;
     /**
-     * @return 对账号进行列权限设置的表所属的数据库的名称。
+     * @return Name of the database to which the table belongs for setting column permissions for the account.
      * 
      */
     private @Nullable String tableName;
 
     private DbAccountTableColumnPrivilegeColumnPrivilege() {}
     /**
-     * @return 对账号进行列权限设置的权限信息。取值（可多选）：INSERT REFERENCES SELECT UPDATE说明多个权限之间使用英文逗号（,）分隔。
+     * @return Permission information for setting column permissions for the account. Values (multiple selections allowed): INSERT, REFERENCES, SELECT, UPDATE. Note: Use commas (,) to separate multiple permissions.
      * 
      */
     public List<String> accountPrivilegeDetails() {
         return this.accountPrivilegeDetails == null ? List.of() : this.accountPrivilegeDetails;
     }
     /**
-     * @return 对账号进行列权限设置的列的名称。
+     * @return Name of the column for setting column permissions for the account.
      * 
      */
     public Optional<String> columnName() {
         return Optional.ofNullable(this.columnName);
     }
     /**
-     * @return 对账号进行列权限设置的表所属的数据库的名称。
+     * @return Name of the database to which the table belongs for setting column permissions for the account.
      * 
      */
     public Optional<String> tableName() {

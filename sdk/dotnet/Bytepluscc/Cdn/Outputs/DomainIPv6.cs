@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class DomainIPv6
     {
         /// <summary>
-        /// 指定是否启用 IPv6 配置。该参数有以下取值：true：表示启用 IPv6。false：表示禁用 IPv6。
+        /// Specifies whether to enable IPv6 configuration. This parameter has the following values: true: Enables IPv6. false: Disables IPv6.
         /// </summary>
         public readonly bool? Switch;
 

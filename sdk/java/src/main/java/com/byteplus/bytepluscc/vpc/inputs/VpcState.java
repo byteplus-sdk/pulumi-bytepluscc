@@ -20,14 +20,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
     public static final VpcState Empty = new VpcState();
 
     /**
-     * VPC所属账号的ID。
+     * ID of the account to which the VPC belongs.
      * 
      */
     @Import(name="accountId")
     private @Nullable Output<String> accountId;
 
     /**
-     * @return VPC所属账号的ID。
+     * @return ID of the account to which the VPC belongs.
      * 
      */
     public Optional<Output<String>> accountId() {
@@ -42,14 +42,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPC的IPv4网段。您可以使用以下网段或其子集作为VPC的IPv4网段：192.168.0.0/16 ~ 24、10.0.0.0/8 ~ 24、172.16.0.0/12 ~ 24。
+     * IPv4 CIDR block of the VPC. You can use the following CIDR blocks or their subsets as the VPC&#39;s IPv4 CIDR block: 192.168.0.0/16 ~ 24, 10.0.0.0/8 ~ 24, 172.16.0.0/12 ~ 24.
      * 
      */
     @Import(name="cidrBlock")
     private @Nullable Output<String> cidrBlock;
 
     /**
-     * @return VPC的IPv4网段。您可以使用以下网段或其子集作为VPC的IPv4网段：192.168.0.0/16 ~ 24、10.0.0.0/8 ~ 24、172.16.0.0/12 ~ 24。
+     * @return IPv4 CIDR block of the VPC. You can use the following CIDR blocks or their subsets as the VPC&#39;s IPv4 CIDR block: 192.168.0.0/16 ~ 24, 10.0.0.0/8 ~ 24, 172.16.0.0/12 ~ 24.
      * 
      */
     public Optional<Output<String>> cidrBlock() {
@@ -57,14 +57,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建VPC的时间。
+     * Time when the VPC was created.
      * 
      */
     @Import(name="creationTime")
     private @Nullable Output<String> creationTime;
 
     /**
-     * @return 创建VPC的时间。
+     * @return Time when the VPC was created.
      * 
      */
     public Optional<Output<String>> creationTime() {
@@ -72,14 +72,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPC的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不能以http://或https://开头。
+     * Description of the VPC. Length must be between 0 and 255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Cannot start with http:// or https://.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return VPC的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不能以http://或https://开头。
+     * @return Description of the VPC. Length must be between 0 and 255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Cannot start with http:// or https://.
      * 
      */
     public Optional<Output<String>> description() {
@@ -87,14 +87,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPC的DNS服务器地址。单次调用数量上限为5个，每个DnsServer必须以合法IP形式给出。多个IP之间用&amp;分隔。不填则配置为默认DNS服务器地址。
+     * DNS server addresses of the VPC. Maximum of 5 per request. Each DnsServer must be a valid IP address. Use &amp; to separate multiple IPs. If not specified, defaults to the system DNS server addresses.
      * 
      */
     @Import(name="dnsServers")
     private @Nullable Output<List<String>> dnsServers;
 
     /**
-     * @return VPC的DNS服务器地址。单次调用数量上限为5个，每个DnsServer必须以合法IP形式给出。多个IP之间用&amp;分隔。不填则配置为默认DNS服务器地址。
+     * @return DNS server addresses of the VPC. Maximum of 5 per request. Each DnsServer must be a valid IP address. Use &amp; to separate multiple IPs. If not specified, defaults to the system DNS server addresses.
      * 
      */
     public Optional<Output<List<String>>> dnsServers() {
@@ -102,14 +102,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+     * Whether to enable IPv6 CIDR block. false (default): not enabled. true: enabled.
      * 
      */
     @Import(name="enableIpv6")
     private @Nullable Output<Boolean> enableIpv6;
 
     /**
-     * @return 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+     * @return Whether to enable IPv6 CIDR block. false (default): not enabled. true: enabled.
      * 
      */
     public Optional<Output<Boolean>> enableIpv6() {
@@ -117,14 +117,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPC 绑定的 IPv4 网关的 ID。
+     * ID of the IPv4 gateway bound to the VPC.
      * 
      */
     @Import(name="ipv4GatewayId")
     private @Nullable Output<String> ipv4GatewayId;
 
     /**
-     * @return VPC 绑定的 IPv4 网关的 ID。
+     * @return ID of the IPv4 gateway bound to the VPC.
      * 
      */
     public Optional<Output<String>> ipv4GatewayId() {
@@ -132,14 +132,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPC的IPv6网段。传入此参数后，参数Ipv6MaskLen不生效。参数Ipv6Isp传入非BGP后，参数Ipv6MaskLen和参数Ipv6CidrBlock二者必须传入一个。参数Ipv6Isp未传或传入BGP，此参数未传，则由系统自动分配IPv6网段。
+     * IPv6 CIDR block of the VPC. If this parameter is provided, the Ipv6MaskLen parameter is ignored. If the Ipv6Isp parameter is set to a value other than BGP, either the Ipv6MaskLen or Ipv6CidrBlock parameter must be provided. If the Ipv6Isp parameter is not provided or set to BGP and this parameter is not provided, the system automatically assigns an IPv6 CIDR block.
      * 
      */
     @Import(name="ipv6CidrBlock")
     private @Nullable Output<String> ipv6CidrBlock;
 
     /**
-     * @return VPC的IPv6网段。传入此参数后，参数Ipv6MaskLen不生效。参数Ipv6Isp传入非BGP后，参数Ipv6MaskLen和参数Ipv6CidrBlock二者必须传入一个。参数Ipv6Isp未传或传入BGP，此参数未传，则由系统自动分配IPv6网段。
+     * @return IPv6 CIDR block of the VPC. If this parameter is provided, the Ipv6MaskLen parameter is ignored. If the Ipv6Isp parameter is set to a value other than BGP, either the Ipv6MaskLen or Ipv6CidrBlock parameter must be provided. If the Ipv6Isp parameter is not provided or set to BGP and this parameter is not provided, the system automatically assigns an IPv6 CIDR block.
      * 
      */
     public Optional<Output<String>> ipv6CidrBlock() {
@@ -147,14 +147,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 该VPC是否为默认VPC。true：默认VPC，表示该VPC是创建ECS实例时系统自动创建的VPC。false：非默认VPC，表示该VPC是用户手动创建的。
+     * Whether this VPC is the default VPC. true: default VPC, meaning the VPC was automatically created by the system when creating an ECS instance. false: non-default VPC, meaning the VPC was manually created by the user.
      * 
      */
     @Import(name="isDefault")
     private @Nullable Output<Boolean> isDefault;
 
     /**
-     * @return 该VPC是否为默认VPC。true：默认VPC，表示该VPC是创建ECS实例时系统自动创建的VPC。false：非默认VPC，表示该VPC是用户手动创建的。
+     * @return Whether this VPC is the default VPC. true: default VPC, meaning the VPC was automatically created by the system when creating an ECS instance. false: non-default VPC, meaning the VPC was manually created by the user.
      * 
      */
     public Optional<Output<Boolean>> isDefault() {
@@ -162,14 +162,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPC中创建的NAT网关的ID。
+     * ID of the NAT gateway created in the VPC.
      * 
      */
     @Import(name="natGatewayIds")
     private @Nullable Output<List<String>> natGatewayIds;
 
     /**
-     * @return VPC中创建的NAT网关的ID。
+     * @return ID of the NAT gateway created in the VPC.
      * 
      */
     public Optional<Output<List<String>>> natGatewayIds() {
@@ -177,14 +177,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPC中的网络ACL的数量。
+     * Number of network ACLs in the VPC.
      * 
      */
     @Import(name="networkAclNum")
     private @Nullable Output<String> networkAclNum;
 
     /**
-     * @return VPC中的网络ACL的数量。
+     * @return Number of network ACLs in the VPC.
      * 
      */
     public Optional<Output<String>> networkAclNum() {
@@ -192,14 +192,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPC所属项目的名称。不填默认加入default项目。
+     * Name of the project to which the VPC belongs. If not specified, it is added to the default project.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return VPC所属项目的名称。不填默认加入default项目。
+     * @return Name of the project to which the VPC belongs. If not specified, it is added to the default project.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -207,14 +207,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPC关联的路由表ID。
+     * ID of the route table associated with the VPC.
      * 
      */
     @Import(name="routeTableIds")
     private @Nullable Output<List<String>> routeTableIds;
 
     /**
-     * @return VPC关联的路由表ID。
+     * @return ID of the route table associated with the VPC.
      * 
      */
     public Optional<Output<List<String>>> routeTableIds() {
@@ -222,14 +222,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPC的辅助网段。
+     * Secondary CIDR block of the VPC.
      * 
      */
     @Import(name="secondaryCidrBlocks")
     private @Nullable Output<List<String>> secondaryCidrBlocks;
 
     /**
-     * @return VPC的辅助网段。
+     * @return Secondary CIDR block of the VPC.
      * 
      */
     public Optional<Output<List<String>>> secondaryCidrBlocks() {
@@ -237,14 +237,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPC中安全组的列表。
+     * List of security groups in the VPC.
      * 
      */
     @Import(name="securityGroupIds")
     private @Nullable Output<List<String>> securityGroupIds;
 
     /**
-     * @return VPC中安全组的列表。
+     * @return List of security groups in the VPC.
      * 
      */
     public Optional<Output<List<String>>> securityGroupIds() {
@@ -252,14 +252,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPC的状态。Creating：创建中。Pending：已创建。Available：可用。
+     * Status of the VPC. Creating: being created. Created: created. Available: available.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return VPC的状态。Creating：创建中。Pending：已创建。Available：可用。
+     * @return Status of the VPC. Creating: being created. Created: created. Available: available.
      * 
      */
     public Optional<Output<String>> status() {
@@ -267,14 +267,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPC中子网的列表。
+     * List of subnets in the VPC.
      * 
      */
     @Import(name="subnetIds")
     private @Nullable Output<List<String>> subnetIds;
 
     /**
-     * @return VPC中子网的列表。
+     * @return List of subnets in the VPC.
      * 
      */
     public Optional<Output<List<String>>> subnetIds() {
@@ -282,14 +282,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPC 是否启用 IPv4 网关。false（默认值）：不启用。true：启用。
+     * Whether the VPC enables the IPv4 gateway. false (default): not enabled. true: enabled.
      * 
      */
     @Import(name="supportIpv4Gateway")
     private @Nullable Output<Boolean> supportIpv4Gateway;
 
     /**
-     * @return VPC 是否启用 IPv4 网关。false（默认值）：不启用。true：启用。
+     * @return Whether the VPC enables the IPv4 gateway. false (default): not enabled. true: enabled.
      * 
      */
     public Optional<Output<Boolean>> supportIpv4Gateway() {
@@ -304,14 +304,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 更新VPC的时间。
+     * Time when the VPC was updated.
      * 
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
-     * @return 更新VPC的时间。
+     * @return Time when the VPC was updated.
      * 
      */
     public Optional<Output<String>> updateTime() {
@@ -319,14 +319,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPC的用户网段。
+     * User CIDR block of the VPC.
      * 
      */
     @Import(name="userCidrBlocks")
     private @Nullable Output<List<String>> userCidrBlocks;
 
     /**
-     * @return VPC的用户网段。
+     * @return User CIDR block of the VPC.
      * 
      */
     public Optional<Output<List<String>>> userCidrBlocks() {
@@ -334,14 +334,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPC的ID。
+     * ID of the VPC.
      * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
-     * @return VPC的ID。
+     * @return ID of the VPC.
      * 
      */
     public Optional<Output<String>> vpcId() {
@@ -349,14 +349,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPC的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为VPC实例的ID。不能以http://或https://开头。
+     * Name of the VPC. Length must be between 1 and 128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the VPC instance ID. Cannot start with http:// or https://.
      * 
      */
     @Import(name="vpcName")
     private @Nullable Output<String> vpcName;
 
     /**
-     * @return VPC的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为VPC实例的ID。不能以http://或https://开头。
+     * @return Name of the VPC. Length must be between 1 and 128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the VPC instance ID. Cannot start with http:// or https://.
      * 
      */
     public Optional<Output<String>> vpcName() {
@@ -411,7 +411,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountId VPC所属账号的ID。
+         * @param accountId ID of the account to which the VPC belongs.
          * 
          * @return builder
          * 
@@ -422,7 +422,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountId VPC所属账号的ID。
+         * @param accountId ID of the account to which the VPC belongs.
          * 
          * @return builder
          * 
@@ -445,7 +445,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cidrBlock VPC的IPv4网段。您可以使用以下网段或其子集作为VPC的IPv4网段：192.168.0.0/16 ~ 24、10.0.0.0/8 ~ 24、172.16.0.0/12 ~ 24。
+         * @param cidrBlock IPv4 CIDR block of the VPC. You can use the following CIDR blocks or their subsets as the VPC&#39;s IPv4 CIDR block: 192.168.0.0/16 ~ 24, 10.0.0.0/8 ~ 24, 172.16.0.0/12 ~ 24.
          * 
          * @return builder
          * 
@@ -456,7 +456,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cidrBlock VPC的IPv4网段。您可以使用以下网段或其子集作为VPC的IPv4网段：192.168.0.0/16 ~ 24、10.0.0.0/8 ~ 24、172.16.0.0/12 ~ 24。
+         * @param cidrBlock IPv4 CIDR block of the VPC. You can use the following CIDR blocks or their subsets as the VPC&#39;s IPv4 CIDR block: 192.168.0.0/16 ~ 24, 10.0.0.0/8 ~ 24, 172.16.0.0/12 ~ 24.
          * 
          * @return builder
          * 
@@ -466,7 +466,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param creationTime 创建VPC的时间。
+         * @param creationTime Time when the VPC was created.
          * 
          * @return builder
          * 
@@ -477,7 +477,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param creationTime 创建VPC的时间。
+         * @param creationTime Time when the VPC was created.
          * 
          * @return builder
          * 
@@ -487,7 +487,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description VPC的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不能以http://或https://开头。
+         * @param description Description of the VPC. Length must be between 0 and 255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Cannot start with http:// or https://.
          * 
          * @return builder
          * 
@@ -498,7 +498,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description VPC的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不能以http://或https://开头。
+         * @param description Description of the VPC. Length must be between 0 and 255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Cannot start with http:// or https://.
          * 
          * @return builder
          * 
@@ -508,7 +508,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dnsServers VPC的DNS服务器地址。单次调用数量上限为5个，每个DnsServer必须以合法IP形式给出。多个IP之间用&amp;分隔。不填则配置为默认DNS服务器地址。
+         * @param dnsServers DNS server addresses of the VPC. Maximum of 5 per request. Each DnsServer must be a valid IP address. Use &amp; to separate multiple IPs. If not specified, defaults to the system DNS server addresses.
          * 
          * @return builder
          * 
@@ -519,7 +519,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dnsServers VPC的DNS服务器地址。单次调用数量上限为5个，每个DnsServer必须以合法IP形式给出。多个IP之间用&amp;分隔。不填则配置为默认DNS服务器地址。
+         * @param dnsServers DNS server addresses of the VPC. Maximum of 5 per request. Each DnsServer must be a valid IP address. Use &amp; to separate multiple IPs. If not specified, defaults to the system DNS server addresses.
          * 
          * @return builder
          * 
@@ -529,7 +529,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dnsServers VPC的DNS服务器地址。单次调用数量上限为5个，每个DnsServer必须以合法IP形式给出。多个IP之间用&amp;分隔。不填则配置为默认DNS服务器地址。
+         * @param dnsServers DNS server addresses of the VPC. Maximum of 5 per request. Each DnsServer must be a valid IP address. Use &amp; to separate multiple IPs. If not specified, defaults to the system DNS server addresses.
          * 
          * @return builder
          * 
@@ -539,7 +539,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableIpv6 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+         * @param enableIpv6 Whether to enable IPv6 CIDR block. false (default): not enabled. true: enabled.
          * 
          * @return builder
          * 
@@ -550,7 +550,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableIpv6 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+         * @param enableIpv6 Whether to enable IPv6 CIDR block. false (default): not enabled. true: enabled.
          * 
          * @return builder
          * 
@@ -560,7 +560,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv4GatewayId VPC 绑定的 IPv4 网关的 ID。
+         * @param ipv4GatewayId ID of the IPv4 gateway bound to the VPC.
          * 
          * @return builder
          * 
@@ -571,7 +571,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv4GatewayId VPC 绑定的 IPv4 网关的 ID。
+         * @param ipv4GatewayId ID of the IPv4 gateway bound to the VPC.
          * 
          * @return builder
          * 
@@ -581,7 +581,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6CidrBlock VPC的IPv6网段。传入此参数后，参数Ipv6MaskLen不生效。参数Ipv6Isp传入非BGP后，参数Ipv6MaskLen和参数Ipv6CidrBlock二者必须传入一个。参数Ipv6Isp未传或传入BGP，此参数未传，则由系统自动分配IPv6网段。
+         * @param ipv6CidrBlock IPv6 CIDR block of the VPC. If this parameter is provided, the Ipv6MaskLen parameter is ignored. If the Ipv6Isp parameter is set to a value other than BGP, either the Ipv6MaskLen or Ipv6CidrBlock parameter must be provided. If the Ipv6Isp parameter is not provided or set to BGP and this parameter is not provided, the system automatically assigns an IPv6 CIDR block.
          * 
          * @return builder
          * 
@@ -592,7 +592,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6CidrBlock VPC的IPv6网段。传入此参数后，参数Ipv6MaskLen不生效。参数Ipv6Isp传入非BGP后，参数Ipv6MaskLen和参数Ipv6CidrBlock二者必须传入一个。参数Ipv6Isp未传或传入BGP，此参数未传，则由系统自动分配IPv6网段。
+         * @param ipv6CidrBlock IPv6 CIDR block of the VPC. If this parameter is provided, the Ipv6MaskLen parameter is ignored. If the Ipv6Isp parameter is set to a value other than BGP, either the Ipv6MaskLen or Ipv6CidrBlock parameter must be provided. If the Ipv6Isp parameter is not provided or set to BGP and this parameter is not provided, the system automatically assigns an IPv6 CIDR block.
          * 
          * @return builder
          * 
@@ -602,7 +602,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isDefault 该VPC是否为默认VPC。true：默认VPC，表示该VPC是创建ECS实例时系统自动创建的VPC。false：非默认VPC，表示该VPC是用户手动创建的。
+         * @param isDefault Whether this VPC is the default VPC. true: default VPC, meaning the VPC was automatically created by the system when creating an ECS instance. false: non-default VPC, meaning the VPC was manually created by the user.
          * 
          * @return builder
          * 
@@ -613,7 +613,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isDefault 该VPC是否为默认VPC。true：默认VPC，表示该VPC是创建ECS实例时系统自动创建的VPC。false：非默认VPC，表示该VPC是用户手动创建的。
+         * @param isDefault Whether this VPC is the default VPC. true: default VPC, meaning the VPC was automatically created by the system when creating an ECS instance. false: non-default VPC, meaning the VPC was manually created by the user.
          * 
          * @return builder
          * 
@@ -623,7 +623,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param natGatewayIds VPC中创建的NAT网关的ID。
+         * @param natGatewayIds ID of the NAT gateway created in the VPC.
          * 
          * @return builder
          * 
@@ -634,7 +634,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param natGatewayIds VPC中创建的NAT网关的ID。
+         * @param natGatewayIds ID of the NAT gateway created in the VPC.
          * 
          * @return builder
          * 
@@ -644,7 +644,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param natGatewayIds VPC中创建的NAT网关的ID。
+         * @param natGatewayIds ID of the NAT gateway created in the VPC.
          * 
          * @return builder
          * 
@@ -654,7 +654,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkAclNum VPC中的网络ACL的数量。
+         * @param networkAclNum Number of network ACLs in the VPC.
          * 
          * @return builder
          * 
@@ -665,7 +665,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkAclNum VPC中的网络ACL的数量。
+         * @param networkAclNum Number of network ACLs in the VPC.
          * 
          * @return builder
          * 
@@ -675,7 +675,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName VPC所属项目的名称。不填默认加入default项目。
+         * @param projectName Name of the project to which the VPC belongs. If not specified, it is added to the default project.
          * 
          * @return builder
          * 
@@ -686,7 +686,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName VPC所属项目的名称。不填默认加入default项目。
+         * @param projectName Name of the project to which the VPC belongs. If not specified, it is added to the default project.
          * 
          * @return builder
          * 
@@ -696,7 +696,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param routeTableIds VPC关联的路由表ID。
+         * @param routeTableIds ID of the route table associated with the VPC.
          * 
          * @return builder
          * 
@@ -707,7 +707,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param routeTableIds VPC关联的路由表ID。
+         * @param routeTableIds ID of the route table associated with the VPC.
          * 
          * @return builder
          * 
@@ -717,7 +717,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param routeTableIds VPC关联的路由表ID。
+         * @param routeTableIds ID of the route table associated with the VPC.
          * 
          * @return builder
          * 
@@ -727,7 +727,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param secondaryCidrBlocks VPC的辅助网段。
+         * @param secondaryCidrBlocks Secondary CIDR block of the VPC.
          * 
          * @return builder
          * 
@@ -738,7 +738,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param secondaryCidrBlocks VPC的辅助网段。
+         * @param secondaryCidrBlocks Secondary CIDR block of the VPC.
          * 
          * @return builder
          * 
@@ -748,7 +748,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param secondaryCidrBlocks VPC的辅助网段。
+         * @param secondaryCidrBlocks Secondary CIDR block of the VPC.
          * 
          * @return builder
          * 
@@ -758,7 +758,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityGroupIds VPC中安全组的列表。
+         * @param securityGroupIds List of security groups in the VPC.
          * 
          * @return builder
          * 
@@ -769,7 +769,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityGroupIds VPC中安全组的列表。
+         * @param securityGroupIds List of security groups in the VPC.
          * 
          * @return builder
          * 
@@ -779,7 +779,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityGroupIds VPC中安全组的列表。
+         * @param securityGroupIds List of security groups in the VPC.
          * 
          * @return builder
          * 
@@ -789,7 +789,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status VPC的状态。Creating：创建中。Pending：已创建。Available：可用。
+         * @param status Status of the VPC. Creating: being created. Created: created. Available: available.
          * 
          * @return builder
          * 
@@ -800,7 +800,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status VPC的状态。Creating：创建中。Pending：已创建。Available：可用。
+         * @param status Status of the VPC. Creating: being created. Created: created. Available: available.
          * 
          * @return builder
          * 
@@ -810,7 +810,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetIds VPC中子网的列表。
+         * @param subnetIds List of subnets in the VPC.
          * 
          * @return builder
          * 
@@ -821,7 +821,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetIds VPC中子网的列表。
+         * @param subnetIds List of subnets in the VPC.
          * 
          * @return builder
          * 
@@ -831,7 +831,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetIds VPC中子网的列表。
+         * @param subnetIds List of subnets in the VPC.
          * 
          * @return builder
          * 
@@ -841,7 +841,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param supportIpv4Gateway VPC 是否启用 IPv4 网关。false（默认值）：不启用。true：启用。
+         * @param supportIpv4Gateway Whether the VPC enables the IPv4 gateway. false (default): not enabled. true: enabled.
          * 
          * @return builder
          * 
@@ -852,7 +852,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param supportIpv4Gateway VPC 是否启用 IPv4 网关。false（默认值）：不启用。true：启用。
+         * @param supportIpv4Gateway Whether the VPC enables the IPv4 gateway. false (default): not enabled. true: enabled.
          * 
          * @return builder
          * 
@@ -875,7 +875,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updateTime 更新VPC的时间。
+         * @param updateTime Time when the VPC was updated.
          * 
          * @return builder
          * 
@@ -886,7 +886,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updateTime 更新VPC的时间。
+         * @param updateTime Time when the VPC was updated.
          * 
          * @return builder
          * 
@@ -896,7 +896,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userCidrBlocks VPC的用户网段。
+         * @param userCidrBlocks User CIDR block of the VPC.
          * 
          * @return builder
          * 
@@ -907,7 +907,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userCidrBlocks VPC的用户网段。
+         * @param userCidrBlocks User CIDR block of the VPC.
          * 
          * @return builder
          * 
@@ -917,7 +917,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userCidrBlocks VPC的用户网段。
+         * @param userCidrBlocks User CIDR block of the VPC.
          * 
          * @return builder
          * 
@@ -927,7 +927,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId VPC的ID。
+         * @param vpcId ID of the VPC.
          * 
          * @return builder
          * 
@@ -938,7 +938,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId VPC的ID。
+         * @param vpcId ID of the VPC.
          * 
          * @return builder
          * 
@@ -948,7 +948,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcName VPC的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为VPC实例的ID。不能以http://或https://开头。
+         * @param vpcName Name of the VPC. Length must be between 1 and 128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the VPC instance ID. Cannot start with http:// or https://.
          * 
          * @return builder
          * 
@@ -959,7 +959,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcName VPC的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为VPC实例的ID。不能以http://或https://开头。
+         * @param vpcName Name of the VPC. Length must be between 1 and 128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the VPC instance ID. Cannot start with http:// or https://.
          * 
          * @return builder
          * 

@@ -30,57 +30,57 @@ type LookupAccountArgs struct {
 
 // A collection of values returned by getAccount.
 type LookupAccountResult struct {
-	// 火山账号ID。
+	// Volcano account ID
 	AccountId string `pulumi:"accountId"`
-	// 账户名称。5-20个字符。
+	// Account name. 5–20 characters
 	AccountName string `pulumi:"accountName"`
-	// 允许控制台访问，1: 允许，2: 不允许。
+	// Allow console access: 1. Allowed, 2. Not allowed
 	AllowConsole int `pulumi:"allowConsole"`
-	// 允许退出，1: 允许，2: 不允许。
+	// Allow exit: 1. Allowed, 2. Not allowed
 	AllowExit int `pulumi:"allowExit"`
-	// 创建时间。
+	// Creation time
 	CreatedTime string `pulumi:"createdTime"`
-	// 删除标记。
+	// Deletion flag
 	DeleteUk string `pulumi:"deleteUk"`
-	// 删除时间。
+	// Deletion time
 	DeletedTime string `pulumi:"deletedTime"`
-	// 描述。
+	// Description
 	Description string `pulumi:"description"`
-	// IAM角色名称。
+	// IAM role name
 	IamRole string `pulumi:"iamRole"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 是否是管理员，0.非管理员，1.管理员。
+	// Administrator status: 0. Non-administrator, 1. Administrator
 	IsOwner int `pulumi:"isOwner"`
-	// 加入类型，1: 创建，2: 邀请。
+	// Join type: 1. Create, 2. Invite
 	JoinType int `pulumi:"joinType"`
-	// 主体名称。
+	// Subject name
 	MainName string `pulumi:"mainName"`
-	// 组织成员账号ID。
+	// Organization member account ID
 	MemberAccountId string `pulumi:"memberAccountId"`
-	// 组织ID。
+	// Organization ID
 	OrgId string `pulumi:"orgId"`
-	// 组织类型，1.企业组织。
+	// Organization type: 1. Enterprise organization
 	OrgType int `pulumi:"orgType"`
-	// 组织单元ID。传入 0 加入到 root 单元。
+	// Organizational unit ID. Enter 0 to join the root unit
 	OrgUnitId string `pulumi:"orgUnitId"`
-	// 组织单元名称。
+	// Organizational unit name
 	OrgUnitName string `pulumi:"orgUnitName"`
-	// 认证主体ID。
+	// Authentication subject ID
 	OrgVerificationId string `pulumi:"orgVerificationId"`
-	// 管理员ID。
+	// Administrator ID
 	Owner string `pulumi:"owner"`
-	// 账户密码。
+	// Account password
 	Password string `pulumi:"password"`
-	// 安全联系信息。
+	// Security contact information
 	SecureContactInfo GetAccountSecureContactInfo `pulumi:"secureContactInfo"`
-	// 显示名称。
+	// Display name
 	ShowName string `pulumi:"showName"`
-	// 标签列表。
+	// Tag list
 	Tags []GetAccountTag `pulumi:"tags"`
-	// 更新时间。
+	// Update time
 	UpdatedTime string `pulumi:"updatedTime"`
-	// 被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+	// Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
 	VerificationRelationId string `pulumi:"verificationRelationId"`
 }
 
@@ -118,47 +118,47 @@ func (o LookupAccountResultOutput) ToLookupAccountResultOutputWithContext(ctx co
 	return o
 }
 
-// 火山账号ID。
+// Volcano account ID
 func (o LookupAccountResultOutput) AccountId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccountResult) string { return v.AccountId }).(pulumi.StringOutput)
 }
 
-// 账户名称。5-20个字符。
+// Account name. 5–20 characters
 func (o LookupAccountResultOutput) AccountName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccountResult) string { return v.AccountName }).(pulumi.StringOutput)
 }
 
-// 允许控制台访问，1: 允许，2: 不允许。
+// Allow console access: 1. Allowed, 2. Not allowed
 func (o LookupAccountResultOutput) AllowConsole() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAccountResult) int { return v.AllowConsole }).(pulumi.IntOutput)
 }
 
-// 允许退出，1: 允许，2: 不允许。
+// Allow exit: 1. Allowed, 2. Not allowed
 func (o LookupAccountResultOutput) AllowExit() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAccountResult) int { return v.AllowExit }).(pulumi.IntOutput)
 }
 
-// 创建时间。
+// Creation time
 func (o LookupAccountResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccountResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 删除标记。
+// Deletion flag
 func (o LookupAccountResultOutput) DeleteUk() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccountResult) string { return v.DeleteUk }).(pulumi.StringOutput)
 }
 
-// 删除时间。
+// Deletion time
 func (o LookupAccountResultOutput) DeletedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccountResult) string { return v.DeletedTime }).(pulumi.StringOutput)
 }
 
-// 描述。
+// Description
 func (o LookupAccountResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccountResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// IAM角色名称。
+// IAM role name
 func (o LookupAccountResultOutput) IamRole() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccountResult) string { return v.IamRole }).(pulumi.StringOutput)
 }
@@ -168,82 +168,82 @@ func (o LookupAccountResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccountResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 是否是管理员，0.非管理员，1.管理员。
+// Administrator status: 0. Non-administrator, 1. Administrator
 func (o LookupAccountResultOutput) IsOwner() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAccountResult) int { return v.IsOwner }).(pulumi.IntOutput)
 }
 
-// 加入类型，1: 创建，2: 邀请。
+// Join type: 1. Create, 2. Invite
 func (o LookupAccountResultOutput) JoinType() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAccountResult) int { return v.JoinType }).(pulumi.IntOutput)
 }
 
-// 主体名称。
+// Subject name
 func (o LookupAccountResultOutput) MainName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccountResult) string { return v.MainName }).(pulumi.StringOutput)
 }
 
-// 组织成员账号ID。
+// Organization member account ID
 func (o LookupAccountResultOutput) MemberAccountId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccountResult) string { return v.MemberAccountId }).(pulumi.StringOutput)
 }
 
-// 组织ID。
+// Organization ID
 func (o LookupAccountResultOutput) OrgId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccountResult) string { return v.OrgId }).(pulumi.StringOutput)
 }
 
-// 组织类型，1.企业组织。
+// Organization type: 1. Enterprise organization
 func (o LookupAccountResultOutput) OrgType() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAccountResult) int { return v.OrgType }).(pulumi.IntOutput)
 }
 
-// 组织单元ID。传入 0 加入到 root 单元。
+// Organizational unit ID. Enter 0 to join the root unit
 func (o LookupAccountResultOutput) OrgUnitId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccountResult) string { return v.OrgUnitId }).(pulumi.StringOutput)
 }
 
-// 组织单元名称。
+// Organizational unit name
 func (o LookupAccountResultOutput) OrgUnitName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccountResult) string { return v.OrgUnitName }).(pulumi.StringOutput)
 }
 
-// 认证主体ID。
+// Authentication subject ID
 func (o LookupAccountResultOutput) OrgVerificationId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccountResult) string { return v.OrgVerificationId }).(pulumi.StringOutput)
 }
 
-// 管理员ID。
+// Administrator ID
 func (o LookupAccountResultOutput) Owner() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccountResult) string { return v.Owner }).(pulumi.StringOutput)
 }
 
-// 账户密码。
+// Account password
 func (o LookupAccountResultOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccountResult) string { return v.Password }).(pulumi.StringOutput)
 }
 
-// 安全联系信息。
+// Security contact information
 func (o LookupAccountResultOutput) SecureContactInfo() GetAccountSecureContactInfoOutput {
 	return o.ApplyT(func(v LookupAccountResult) GetAccountSecureContactInfo { return v.SecureContactInfo }).(GetAccountSecureContactInfoOutput)
 }
 
-// 显示名称。
+// Display name
 func (o LookupAccountResultOutput) ShowName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccountResult) string { return v.ShowName }).(pulumi.StringOutput)
 }
 
-// 标签列表。
+// Tag list
 func (o LookupAccountResultOutput) Tags() GetAccountTagArrayOutput {
 	return o.ApplyT(func(v LookupAccountResult) []GetAccountTag { return v.Tags }).(GetAccountTagArrayOutput)
 }
 
-// 更新时间。
+// Update time
 func (o LookupAccountResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccountResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// 被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+// Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
 func (o LookupAccountResultOutput) VerificationRelationId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAccountResult) string { return v.VerificationRelationId }).(pulumi.StringOutput)
 }

@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetKeyMultiRegionConfigurationReplicaKey {
     /**
-     * @return 多区域密钥的区域 ID。
+     * @return Multi-region key region ID.
      * 
      */
     private String region;
     /**
-     * @return 多区域密钥的转换。
+     * @return Multi-region key conversion.
      * 
      */
     private String trn;
 
     private GetKeyMultiRegionConfigurationReplicaKey() {}
     /**
-     * @return 多区域密钥的区域 ID。
+     * @return Multi-region key region ID.
      * 
      */
     public String region() {
         return this.region;
     }
     /**
-     * @return 多区域密钥的转换。
+     * @return Multi-region key conversion.
      * 
      */
     public String trn() {

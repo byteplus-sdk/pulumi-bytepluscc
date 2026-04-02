@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class GetRuleRuleActionForwardGroupConfigServerGroupStickySessionResult
     {
         /// <summary>
-        /// 是否开启组间会话保持。on：开启。off：不开启。
+        /// Whether to enable inter-group session persistence. on: enabled. off: disabled.
         /// </summary>
         public readonly string Enabled;
         /// <summary>
-        /// 组件回话保持的超时时间。单位：秒。
+        /// Component session stickiness timeout. Unit: seconds.
         /// </summary>
         public readonly int Timeout;
 

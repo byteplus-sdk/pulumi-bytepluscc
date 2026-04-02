@@ -18,14 +18,14 @@ public final class DomainRefererAccessRuleReferersTypeCommonTypeArgs extends com
     public static final DomainRefererAccessRuleReferersTypeCommonTypeArgs Empty = new DomainRefererAccessRuleReferersTypeCommonTypeArgs();
 
     /**
-     * 表示 CommonType 下的这个 Referers 列表在匹配时是否是大小写敏感的。该参数有以下取值：true: 表示大小写不敏感。false: 表示大小写敏感。该参数的默认值是 true。
+     * Specifies whether the Referers list under CommonType is case sensitive during matching. The parameter supports the following values: true: not case sensitive. false: case sensitive. The default value is true.
      * 
      */
     @Import(name="ignoreCase")
     private @Nullable Output<Boolean> ignoreCase;
 
     /**
-     * @return 表示 CommonType 下的这个 Referers 列表在匹配时是否是大小写敏感的。该参数有以下取值：true: 表示大小写不敏感。false: 表示大小写敏感。该参数的默认值是 true。
+     * @return Specifies whether the Referers list under CommonType is case sensitive during matching. The parameter supports the following values: true: not case sensitive. false: case sensitive. The default value is true.
      * 
      */
     public Optional<Output<Boolean>> ignoreCase() {
@@ -33,14 +33,14 @@ public final class DomainRefererAccessRuleReferersTypeCommonTypeArgs extends com
     }
 
     /**
-     * 表示匹配 CommonType 下的这个 Referers 列表的 Referer 头部值是否必须以 HTTP 或者 HTTPS 开头。该参数有以下取值：true: 表示不以 HTTP 或者 HTTPS 开头的 Referer 头部值是合法的。在这个情况下，内容分发网络会尝试将其与 Referers 列表匹配。false: 表示不以 HTTP 或者 HTTPS 开头 Referer 头部值是非法的。在这个情况下，内容分发网络判定为不匹配 CommonType 下的这个 Referers 列表。该参数的默认值是 false。
+     * Indicates whether the Referer header value in this Referers list under CommonType must start with HTTP or HTTPS. This parameter has the following values: true: Referer header values that do not start with HTTP or HTTPS are valid. In this case, the content delivery network will attempt to match them with the Referers list. false: Referer header values that do not start with HTTP or HTTPS are invalid. In this case, the content delivery network determines that they do not match the Referers list under CommonType. The default value is false.
      * 
      */
     @Import(name="ignoreScheme")
     private @Nullable Output<Boolean> ignoreScheme;
 
     /**
-     * @return 表示匹配 CommonType 下的这个 Referers 列表的 Referer 头部值是否必须以 HTTP 或者 HTTPS 开头。该参数有以下取值：true: 表示不以 HTTP 或者 HTTPS 开头的 Referer 头部值是合法的。在这个情况下，内容分发网络会尝试将其与 Referers 列表匹配。false: 表示不以 HTTP 或者 HTTPS 开头 Referer 头部值是非法的。在这个情况下，内容分发网络判定为不匹配 CommonType 下的这个 Referers 列表。该参数的默认值是 false。
+     * @return Indicates whether the Referer header value in this Referers list under CommonType must start with HTTP or HTTPS. This parameter has the following values: true: Referer header values that do not start with HTTP or HTTPS are valid. In this case, the content delivery network will attempt to match them with the Referers list. false: Referer header values that do not start with HTTP or HTTPS are invalid. In this case, the content delivery network determines that they do not match the Referers list under CommonType. The default value is false.
      * 
      */
     public Optional<Output<Boolean>> ignoreScheme() {
@@ -48,14 +48,14 @@ public final class DomainRefererAccessRuleReferersTypeCommonTypeArgs extends com
     }
 
     /**
-     * 表示一个常规 Referer 的列表。在该列表中，您可以指定一个或者多个 IP 地址，CIDR 网段，域名和泛域名。域名可以是二级域名。IP 地址可以是 IPv4 和 IPv6 格式的地址。您最多可输入 1,000 个 IP 地址。输入的域名不能包含 http:// 或 https://。在匹配时，内容分发网络会将请求 Referer 头部值中的域名与 Referer 列表进行匹配。该参数值的长度不能超过 30,000 个字符。
+     * Represents a standard Referer list. In this list, you can specify one or more IP addresses, CIDR blocks, domain names, and wildcard domains. Domain names can include second-level domains. IP addresses can be in IPv4 or IPv6 format. You can enter up to 1,000 IP addresses. The domain names entered must not include http:// or https://. During matching, the content delivery network compares the domain name in the Referer header of the request with the Referer list. The value of this parameter must not exceed 30,000 characters.
      * 
      */
     @Import(name="referers")
     private @Nullable Output<List<String>> referers;
 
     /**
-     * @return 表示一个常规 Referer 的列表。在该列表中，您可以指定一个或者多个 IP 地址，CIDR 网段，域名和泛域名。域名可以是二级域名。IP 地址可以是 IPv4 和 IPv6 格式的地址。您最多可输入 1,000 个 IP 地址。输入的域名不能包含 http:// 或 https://。在匹配时，内容分发网络会将请求 Referer 头部值中的域名与 Referer 列表进行匹配。该参数值的长度不能超过 30,000 个字符。
+     * @return Represents a standard Referer list. In this list, you can specify one or more IP addresses, CIDR blocks, domain names, and wildcard domains. Domain names can include second-level domains. IP addresses can be in IPv4 or IPv6 format. You can enter up to 1,000 IP addresses. The domain names entered must not include http:// or https://. During matching, the content delivery network compares the domain name in the Referer header of the request with the Referer list. The value of this parameter must not exceed 30,000 characters.
      * 
      */
     public Optional<Output<List<String>>> referers() {
@@ -89,7 +89,7 @@ public final class DomainRefererAccessRuleReferersTypeCommonTypeArgs extends com
         }
 
         /**
-         * @param ignoreCase 表示 CommonType 下的这个 Referers 列表在匹配时是否是大小写敏感的。该参数有以下取值：true: 表示大小写不敏感。false: 表示大小写敏感。该参数的默认值是 true。
+         * @param ignoreCase Specifies whether the Referers list under CommonType is case sensitive during matching. The parameter supports the following values: true: not case sensitive. false: case sensitive. The default value is true.
          * 
          * @return builder
          * 
@@ -100,7 +100,7 @@ public final class DomainRefererAccessRuleReferersTypeCommonTypeArgs extends com
         }
 
         /**
-         * @param ignoreCase 表示 CommonType 下的这个 Referers 列表在匹配时是否是大小写敏感的。该参数有以下取值：true: 表示大小写不敏感。false: 表示大小写敏感。该参数的默认值是 true。
+         * @param ignoreCase Specifies whether the Referers list under CommonType is case sensitive during matching. The parameter supports the following values: true: not case sensitive. false: case sensitive. The default value is true.
          * 
          * @return builder
          * 
@@ -110,7 +110,7 @@ public final class DomainRefererAccessRuleReferersTypeCommonTypeArgs extends com
         }
 
         /**
-         * @param ignoreScheme 表示匹配 CommonType 下的这个 Referers 列表的 Referer 头部值是否必须以 HTTP 或者 HTTPS 开头。该参数有以下取值：true: 表示不以 HTTP 或者 HTTPS 开头的 Referer 头部值是合法的。在这个情况下，内容分发网络会尝试将其与 Referers 列表匹配。false: 表示不以 HTTP 或者 HTTPS 开头 Referer 头部值是非法的。在这个情况下，内容分发网络判定为不匹配 CommonType 下的这个 Referers 列表。该参数的默认值是 false。
+         * @param ignoreScheme Indicates whether the Referer header value in this Referers list under CommonType must start with HTTP or HTTPS. This parameter has the following values: true: Referer header values that do not start with HTTP or HTTPS are valid. In this case, the content delivery network will attempt to match them with the Referers list. false: Referer header values that do not start with HTTP or HTTPS are invalid. In this case, the content delivery network determines that they do not match the Referers list under CommonType. The default value is false.
          * 
          * @return builder
          * 
@@ -121,7 +121,7 @@ public final class DomainRefererAccessRuleReferersTypeCommonTypeArgs extends com
         }
 
         /**
-         * @param ignoreScheme 表示匹配 CommonType 下的这个 Referers 列表的 Referer 头部值是否必须以 HTTP 或者 HTTPS 开头。该参数有以下取值：true: 表示不以 HTTP 或者 HTTPS 开头的 Referer 头部值是合法的。在这个情况下，内容分发网络会尝试将其与 Referers 列表匹配。false: 表示不以 HTTP 或者 HTTPS 开头 Referer 头部值是非法的。在这个情况下，内容分发网络判定为不匹配 CommonType 下的这个 Referers 列表。该参数的默认值是 false。
+         * @param ignoreScheme Indicates whether the Referer header value in this Referers list under CommonType must start with HTTP or HTTPS. This parameter has the following values: true: Referer header values that do not start with HTTP or HTTPS are valid. In this case, the content delivery network will attempt to match them with the Referers list. false: Referer header values that do not start with HTTP or HTTPS are invalid. In this case, the content delivery network determines that they do not match the Referers list under CommonType. The default value is false.
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class DomainRefererAccessRuleReferersTypeCommonTypeArgs extends com
         }
 
         /**
-         * @param referers 表示一个常规 Referer 的列表。在该列表中，您可以指定一个或者多个 IP 地址，CIDR 网段，域名和泛域名。域名可以是二级域名。IP 地址可以是 IPv4 和 IPv6 格式的地址。您最多可输入 1,000 个 IP 地址。输入的域名不能包含 http:// 或 https://。在匹配时，内容分发网络会将请求 Referer 头部值中的域名与 Referer 列表进行匹配。该参数值的长度不能超过 30,000 个字符。
+         * @param referers Represents a standard Referer list. In this list, you can specify one or more IP addresses, CIDR blocks, domain names, and wildcard domains. Domain names can include second-level domains. IP addresses can be in IPv4 or IPv6 format. You can enter up to 1,000 IP addresses. The domain names entered must not include http:// or https://. During matching, the content delivery network compares the domain name in the Referer header of the request with the Referer list. The value of this parameter must not exceed 30,000 characters.
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class DomainRefererAccessRuleReferersTypeCommonTypeArgs extends com
         }
 
         /**
-         * @param referers 表示一个常规 Referer 的列表。在该列表中，您可以指定一个或者多个 IP 地址，CIDR 网段，域名和泛域名。域名可以是二级域名。IP 地址可以是 IPv4 和 IPv6 格式的地址。您最多可输入 1,000 个 IP 地址。输入的域名不能包含 http:// 或 https://。在匹配时，内容分发网络会将请求 Referer 头部值中的域名与 Referer 列表进行匹配。该参数值的长度不能超过 30,000 个字符。
+         * @param referers Represents a standard Referer list. In this list, you can specify one or more IP addresses, CIDR blocks, domain names, and wildcard domains. Domain names can include second-level domains. IP addresses can be in IPv4 or IPv6 format. You can enter up to 1,000 IP addresses. The domain names entered must not include http:// or https://. During matching, the content delivery network compares the domain name in the Referer header of the request with the Referer list. The value of this parameter must not exceed 30,000 characters.
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class DomainRefererAccessRuleReferersTypeCommonTypeArgs extends com
         }
 
         /**
-         * @param referers 表示一个常规 Referer 的列表。在该列表中，您可以指定一个或者多个 IP 地址，CIDR 网段，域名和泛域名。域名可以是二级域名。IP 地址可以是 IPv4 和 IPv6 格式的地址。您最多可输入 1,000 个 IP 地址。输入的域名不能包含 http:// 或 https://。在匹配时，内容分发网络会将请求 Referer 头部值中的域名与 Referer 列表进行匹配。该参数值的长度不能超过 30,000 个字符。
+         * @param referers Represents a standard Referer list. In this list, you can specify one or more IP addresses, CIDR blocks, domain names, and wildcard domains. Domain names can include second-level domains. IP addresses can be in IPv4 or IPv6 format. You can enter up to 1,000 IP addresses. The domain names entered must not include http:// or https://. During matching, the content delivery network compares the domain name in the Referer header of the request with the Referer list. The value of this parameter must not exceed 30,000 characters.
          * 
          * @return builder
          * 

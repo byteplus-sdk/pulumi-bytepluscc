@@ -52,31 +52,31 @@ class LaunchTemplateVersionArgs:
                  zone_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a LaunchTemplateVersion resource.
-        :param pulumi.Input[builtins.int] deployment_set_group_number: 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
-        :param pulumi.Input[builtins.str] deployment_set_id: 实例需要加入的部署集ID。
-        :param pulumi.Input[builtins.str] description: 实例的描述。
-        :param pulumi.Input['LaunchTemplateVersionEipArgs'] eip: 实例绑定的公网IP信息。
-        :param pulumi.Input[builtins.str] host_name: 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
-        :param pulumi.Input[builtins.str] hpc_cluster_id: 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
-        :param pulumi.Input[builtins.str] image_id: 镜像ID。
-        :param pulumi.Input[builtins.str] image_name: 镜像名称。
-        :param pulumi.Input[builtins.str] instance_charge_type: 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
-        :param pulumi.Input[builtins.str] instance_name: 实例的名称。
-        :param pulumi.Input[builtins.str] instance_type_id: 实例的规格。
-        :param pulumi.Input[builtins.bool] keep_image_credential: 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
-        :param pulumi.Input[builtins.str] key_pair_name: 实例绑定的密钥对。
-        :param pulumi.Input[builtins.str] launch_template_id: 实例启动模板 ID。
-        :param pulumi.Input[builtins.str] project_name: 实例所属项目。
-        :param pulumi.Input['LaunchTemplateVersionScheduledInstanceArgs'] scheduled_instance: 弹性预约单信息。
-        :param pulumi.Input[builtins.str] security_enhancement_strategy: 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
-        :param pulumi.Input[builtins.float] spot_price_limit: 抢占式实例的每小时最高价格。
-        :param pulumi.Input[builtins.str] spot_strategy: 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
-        :param pulumi.Input[builtins.int] suffix_index: 有序后缀的起始序号。
-        :param pulumi.Input[builtins.bool] unique_suffix: 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
-        :param pulumi.Input[builtins.str] user_data: 实例的自定义数据。
-        :param pulumi.Input[builtins.str] version_description: 模版版本描述。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络ID。
-        :param pulumi.Input[builtins.str] zone_id: 实例所属可用区ID。
+        :param pulumi.Input[builtins.int] deployment_set_group_number: When the deployment set policy for an ECS instance is set to AvailabilityGroup, use this parameter to specify the group number within the deployment set.
+        :param pulumi.Input[builtins.str] deployment_set_id: Deployment set ID to join for the instance.
+        :param pulumi.Input[builtins.str] description: Instance description.
+        :param pulumi.Input['LaunchTemplateVersionEipArgs'] eip: Public IP information bound to the instance.
+        :param pulumi.Input[builtins.str] host_name: Instance hostname. Linux hostname length: 2–59 characters. Windows hostname length: 2–10 characters
+        :param pulumi.Input[builtins.str] hpc_cluster_id: Specify the high-performance computing cluster ID when creating a high-performance computing GPU instance.
+        :param pulumi.Input[builtins.str] image_id: Image ID
+        :param pulumi.Input[builtins.str] image_name: Image name.
+        :param pulumi.Input[builtins.str] instance_charge_type: Billing type for the instance and cloud disk. Value: PostPaid: Pay-as-you-go. PrePaid: Subscription. Esi: Elastic reservation instance. Segmented: Time-segmented elastic reservation instance.
+        :param pulumi.Input[builtins.str] instance_name: Instance name.
+        :param pulumi.Input[builtins.str] instance_type_id: Instance specifications
+        :param pulumi.Input[builtins.bool] keep_image_credential: Retain image settings. Value: true: Retain image settings. If retained, the preset password or key pair in the image will be used to log in to the instance. false (default): Do not retain image settings.
+        :param pulumi.Input[builtins.str] key_pair_name: Key pair bound to the instance.
+        :param pulumi.Input[builtins.str] launch_template_id: Instance launch template ID.
+        :param pulumi.Input[builtins.str] project_name: Project to which the instance belongs.
+        :param pulumi.Input['LaunchTemplateVersionScheduledInstanceArgs'] scheduled_instance: Elastic reservation order information
+        :param pulumi.Input[builtins.str] security_enhancement_strategy: Enable security hardening. Active: Enable security hardening, effective only for public images. InActive: Disable security hardening, effective for all images.
+        :param pulumi.Input[builtins.float] spot_price_limit: Maximum hourly price for preemptible instances.
+        :param pulumi.Input[builtins.str] spot_strategy: Preemptive strategy for pay-as-you-go billing. Values: NoSpot: Creates a standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, creating a preemptive instance that follows the current market price. SpotWithPriceLimit: Creates a preemptive instance with a bid limit
+        :param pulumi.Input[builtins.int] suffix_index: Starting sequence number for the ordered suffix.
+        :param pulumi.Input[builtins.bool] unique_suffix: Indicates whether to automatically add an ordered suffix to Hostname and InstanceName when creating multiple instances.
+        :param pulumi.Input[builtins.str] user_data: Custom data for the instance.
+        :param pulumi.Input[builtins.str] version_description: Template version description.
+        :param pulumi.Input[builtins.str] vpc_id: Private network ID
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID of the instance
         """
         if deployment_set_group_number is not None:
             pulumi.set(__self__, "deployment_set_group_number", deployment_set_group_number)
@@ -139,7 +139,7 @@ class LaunchTemplateVersionArgs:
     @pulumi.getter(name="deploymentSetGroupNumber")
     def deployment_set_group_number(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+        When the deployment set policy for an ECS instance is set to AvailabilityGroup, use this parameter to specify the group number within the deployment set.
         """
         return pulumi.get(self, "deployment_set_group_number")
 
@@ -151,7 +151,7 @@ class LaunchTemplateVersionArgs:
     @pulumi.getter(name="deploymentSetId")
     def deployment_set_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例需要加入的部署集ID。
+        Deployment set ID to join for the instance.
         """
         return pulumi.get(self, "deployment_set_id")
 
@@ -163,7 +163,7 @@ class LaunchTemplateVersionArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的描述。
+        Instance description.
         """
         return pulumi.get(self, "description")
 
@@ -175,7 +175,7 @@ class LaunchTemplateVersionArgs:
     @pulumi.getter
     def eip(self) -> Optional[pulumi.Input['LaunchTemplateVersionEipArgs']]:
         """
-        实例绑定的公网IP信息。
+        Public IP information bound to the instance.
         """
         return pulumi.get(self, "eip")
 
@@ -187,7 +187,7 @@ class LaunchTemplateVersionArgs:
     @pulumi.getter(name="hostName")
     def host_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+        Instance hostname. Linux hostname length: 2–59 characters. Windows hostname length: 2–10 characters
         """
         return pulumi.get(self, "host_name")
 
@@ -199,7 +199,7 @@ class LaunchTemplateVersionArgs:
     @pulumi.getter(name="hpcClusterId")
     def hpc_cluster_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+        Specify the high-performance computing cluster ID when creating a high-performance computing GPU instance.
         """
         return pulumi.get(self, "hpc_cluster_id")
 
@@ -211,7 +211,7 @@ class LaunchTemplateVersionArgs:
     @pulumi.getter(name="imageId")
     def image_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像ID。
+        Image ID
         """
         return pulumi.get(self, "image_id")
 
@@ -223,7 +223,7 @@ class LaunchTemplateVersionArgs:
     @pulumi.getter(name="imageName")
     def image_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像名称。
+        Image name.
         """
         return pulumi.get(self, "image_name")
 
@@ -235,7 +235,7 @@ class LaunchTemplateVersionArgs:
     @pulumi.getter(name="instanceChargeType")
     def instance_charge_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+        Billing type for the instance and cloud disk. Value: PostPaid: Pay-as-you-go. PrePaid: Subscription. Esi: Elastic reservation instance. Segmented: Time-segmented elastic reservation instance.
         """
         return pulumi.get(self, "instance_charge_type")
 
@@ -247,7 +247,7 @@ class LaunchTemplateVersionArgs:
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的名称。
+        Instance name.
         """
         return pulumi.get(self, "instance_name")
 
@@ -259,7 +259,7 @@ class LaunchTemplateVersionArgs:
     @pulumi.getter(name="instanceTypeId")
     def instance_type_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的规格。
+        Instance specifications
         """
         return pulumi.get(self, "instance_type_id")
 
@@ -271,7 +271,7 @@ class LaunchTemplateVersionArgs:
     @pulumi.getter(name="keepImageCredential")
     def keep_image_credential(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+        Retain image settings. Value: true: Retain image settings. If retained, the preset password or key pair in the image will be used to log in to the instance. false (default): Do not retain image settings.
         """
         return pulumi.get(self, "keep_image_credential")
 
@@ -283,7 +283,7 @@ class LaunchTemplateVersionArgs:
     @pulumi.getter(name="keyPairName")
     def key_pair_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例绑定的密钥对。
+        Key pair bound to the instance.
         """
         return pulumi.get(self, "key_pair_name")
 
@@ -295,7 +295,7 @@ class LaunchTemplateVersionArgs:
     @pulumi.getter(name="launchTemplateId")
     def launch_template_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例启动模板 ID。
+        Instance launch template ID.
         """
         return pulumi.get(self, "launch_template_id")
 
@@ -316,7 +316,7 @@ class LaunchTemplateVersionArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所属项目。
+        Project to which the instance belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -328,7 +328,7 @@ class LaunchTemplateVersionArgs:
     @pulumi.getter(name="scheduledInstance")
     def scheduled_instance(self) -> Optional[pulumi.Input['LaunchTemplateVersionScheduledInstanceArgs']]:
         """
-        弹性预约单信息。
+        Elastic reservation order information
         """
         return pulumi.get(self, "scheduled_instance")
 
@@ -340,7 +340,7 @@ class LaunchTemplateVersionArgs:
     @pulumi.getter(name="securityEnhancementStrategy")
     def security_enhancement_strategy(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+        Enable security hardening. Active: Enable security hardening, effective only for public images. InActive: Disable security hardening, effective for all images.
         """
         return pulumi.get(self, "security_enhancement_strategy")
 
@@ -352,7 +352,7 @@ class LaunchTemplateVersionArgs:
     @pulumi.getter(name="spotPriceLimit")
     def spot_price_limit(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        抢占式实例的每小时最高价格。
+        Maximum hourly price for preemptible instances.
         """
         return pulumi.get(self, "spot_price_limit")
 
@@ -364,7 +364,7 @@ class LaunchTemplateVersionArgs:
     @pulumi.getter(name="spotStrategy")
     def spot_strategy(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+        Preemptive strategy for pay-as-you-go billing. Values: NoSpot: Creates a standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, creating a preemptive instance that follows the current market price. SpotWithPriceLimit: Creates a preemptive instance with a bid limit
         """
         return pulumi.get(self, "spot_strategy")
 
@@ -376,7 +376,7 @@ class LaunchTemplateVersionArgs:
     @pulumi.getter(name="suffixIndex")
     def suffix_index(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        有序后缀的起始序号。
+        Starting sequence number for the ordered suffix.
         """
         return pulumi.get(self, "suffix_index")
 
@@ -397,7 +397,7 @@ class LaunchTemplateVersionArgs:
     @pulumi.getter(name="uniqueSuffix")
     def unique_suffix(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+        Indicates whether to automatically add an ordered suffix to Hostname and InstanceName when creating multiple instances.
         """
         return pulumi.get(self, "unique_suffix")
 
@@ -409,7 +409,7 @@ class LaunchTemplateVersionArgs:
     @pulumi.getter(name="userData")
     def user_data(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的自定义数据。
+        Custom data for the instance.
         """
         return pulumi.get(self, "user_data")
 
@@ -421,7 +421,7 @@ class LaunchTemplateVersionArgs:
     @pulumi.getter(name="versionDescription")
     def version_description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        模版版本描述。
+        Template version description.
         """
         return pulumi.get(self, "version_description")
 
@@ -442,7 +442,7 @@ class LaunchTemplateVersionArgs:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        私有网络ID。
+        Private network ID
         """
         return pulumi.get(self, "vpc_id")
 
@@ -454,7 +454,7 @@ class LaunchTemplateVersionArgs:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所属可用区ID。
+        Availability zone ID of the instance
         """
         return pulumi.get(self, "zone_id")
 
@@ -497,32 +497,32 @@ class _LaunchTemplateVersionState:
                  zone_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering LaunchTemplateVersion resources.
-        :param pulumi.Input[builtins.int] deployment_set_group_number: 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
-        :param pulumi.Input[builtins.str] deployment_set_id: 实例需要加入的部署集ID。
-        :param pulumi.Input[builtins.str] description: 实例的描述。
-        :param pulumi.Input['LaunchTemplateVersionEipArgs'] eip: 实例绑定的公网IP信息。
-        :param pulumi.Input[builtins.str] host_name: 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
-        :param pulumi.Input[builtins.str] hpc_cluster_id: 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
-        :param pulumi.Input[builtins.str] image_id: 镜像ID。
-        :param pulumi.Input[builtins.str] image_name: 镜像名称。
-        :param pulumi.Input[builtins.str] instance_charge_type: 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
-        :param pulumi.Input[builtins.str] instance_name: 实例的名称。
-        :param pulumi.Input[builtins.str] instance_type_id: 实例的规格。
-        :param pulumi.Input[builtins.bool] keep_image_credential: 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
-        :param pulumi.Input[builtins.str] key_pair_name: 实例绑定的密钥对。
-        :param pulumi.Input[builtins.str] launch_template_id: 实例启动模板 ID。
-        :param pulumi.Input[builtins.str] project_name: 实例所属项目。
-        :param pulumi.Input['LaunchTemplateVersionScheduledInstanceArgs'] scheduled_instance: 弹性预约单信息。
-        :param pulumi.Input[builtins.str] security_enhancement_strategy: 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
-        :param pulumi.Input[builtins.float] spot_price_limit: 抢占式实例的每小时最高价格。
-        :param pulumi.Input[builtins.str] spot_strategy: 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
-        :param pulumi.Input[builtins.int] suffix_index: 有序后缀的起始序号。
-        :param pulumi.Input[builtins.bool] unique_suffix: 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
-        :param pulumi.Input[builtins.str] user_data: 实例的自定义数据。
-        :param pulumi.Input[builtins.str] version_description: 模版版本描述。
-        :param pulumi.Input[builtins.str] version_number: 模板版本号。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络ID。
-        :param pulumi.Input[builtins.str] zone_id: 实例所属可用区ID。
+        :param pulumi.Input[builtins.int] deployment_set_group_number: When the deployment set policy for an ECS instance is set to AvailabilityGroup, use this parameter to specify the group number within the deployment set.
+        :param pulumi.Input[builtins.str] deployment_set_id: Deployment set ID to join for the instance.
+        :param pulumi.Input[builtins.str] description: Instance description.
+        :param pulumi.Input['LaunchTemplateVersionEipArgs'] eip: Public IP information bound to the instance.
+        :param pulumi.Input[builtins.str] host_name: Instance hostname. Linux hostname length: 2–59 characters. Windows hostname length: 2–10 characters
+        :param pulumi.Input[builtins.str] hpc_cluster_id: Specify the high-performance computing cluster ID when creating a high-performance computing GPU instance.
+        :param pulumi.Input[builtins.str] image_id: Image ID
+        :param pulumi.Input[builtins.str] image_name: Image name.
+        :param pulumi.Input[builtins.str] instance_charge_type: Billing type for the instance and cloud disk. Value: PostPaid: Pay-as-you-go. PrePaid: Subscription. Esi: Elastic reservation instance. Segmented: Time-segmented elastic reservation instance.
+        :param pulumi.Input[builtins.str] instance_name: Instance name.
+        :param pulumi.Input[builtins.str] instance_type_id: Instance specifications
+        :param pulumi.Input[builtins.bool] keep_image_credential: Retain image settings. Value: true: Retain image settings. If retained, the preset password or key pair in the image will be used to log in to the instance. false (default): Do not retain image settings.
+        :param pulumi.Input[builtins.str] key_pair_name: Key pair bound to the instance.
+        :param pulumi.Input[builtins.str] launch_template_id: Instance launch template ID.
+        :param pulumi.Input[builtins.str] project_name: Project to which the instance belongs.
+        :param pulumi.Input['LaunchTemplateVersionScheduledInstanceArgs'] scheduled_instance: Elastic reservation order information
+        :param pulumi.Input[builtins.str] security_enhancement_strategy: Enable security hardening. Active: Enable security hardening, effective only for public images. InActive: Disable security hardening, effective for all images.
+        :param pulumi.Input[builtins.float] spot_price_limit: Maximum hourly price for preemptible instances.
+        :param pulumi.Input[builtins.str] spot_strategy: Preemptive strategy for pay-as-you-go billing. Values: NoSpot: Creates a standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, creating a preemptive instance that follows the current market price. SpotWithPriceLimit: Creates a preemptive instance with a bid limit
+        :param pulumi.Input[builtins.int] suffix_index: Starting sequence number for the ordered suffix.
+        :param pulumi.Input[builtins.bool] unique_suffix: Indicates whether to automatically add an ordered suffix to Hostname and InstanceName when creating multiple instances.
+        :param pulumi.Input[builtins.str] user_data: Custom data for the instance.
+        :param pulumi.Input[builtins.str] version_description: Template version description.
+        :param pulumi.Input[builtins.str] version_number: Template version number.
+        :param pulumi.Input[builtins.str] vpc_id: Private network ID
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID of the instance
         """
         if deployment_set_group_number is not None:
             pulumi.set(__self__, "deployment_set_group_number", deployment_set_group_number)
@@ -587,7 +587,7 @@ class _LaunchTemplateVersionState:
     @pulumi.getter(name="deploymentSetGroupNumber")
     def deployment_set_group_number(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+        When the deployment set policy for an ECS instance is set to AvailabilityGroup, use this parameter to specify the group number within the deployment set.
         """
         return pulumi.get(self, "deployment_set_group_number")
 
@@ -599,7 +599,7 @@ class _LaunchTemplateVersionState:
     @pulumi.getter(name="deploymentSetId")
     def deployment_set_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例需要加入的部署集ID。
+        Deployment set ID to join for the instance.
         """
         return pulumi.get(self, "deployment_set_id")
 
@@ -611,7 +611,7 @@ class _LaunchTemplateVersionState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的描述。
+        Instance description.
         """
         return pulumi.get(self, "description")
 
@@ -623,7 +623,7 @@ class _LaunchTemplateVersionState:
     @pulumi.getter
     def eip(self) -> Optional[pulumi.Input['LaunchTemplateVersionEipArgs']]:
         """
-        实例绑定的公网IP信息。
+        Public IP information bound to the instance.
         """
         return pulumi.get(self, "eip")
 
@@ -635,7 +635,7 @@ class _LaunchTemplateVersionState:
     @pulumi.getter(name="hostName")
     def host_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+        Instance hostname. Linux hostname length: 2–59 characters. Windows hostname length: 2–10 characters
         """
         return pulumi.get(self, "host_name")
 
@@ -647,7 +647,7 @@ class _LaunchTemplateVersionState:
     @pulumi.getter(name="hpcClusterId")
     def hpc_cluster_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+        Specify the high-performance computing cluster ID when creating a high-performance computing GPU instance.
         """
         return pulumi.get(self, "hpc_cluster_id")
 
@@ -659,7 +659,7 @@ class _LaunchTemplateVersionState:
     @pulumi.getter(name="imageId")
     def image_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像ID。
+        Image ID
         """
         return pulumi.get(self, "image_id")
 
@@ -671,7 +671,7 @@ class _LaunchTemplateVersionState:
     @pulumi.getter(name="imageName")
     def image_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像名称。
+        Image name.
         """
         return pulumi.get(self, "image_name")
 
@@ -683,7 +683,7 @@ class _LaunchTemplateVersionState:
     @pulumi.getter(name="instanceChargeType")
     def instance_charge_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+        Billing type for the instance and cloud disk. Value: PostPaid: Pay-as-you-go. PrePaid: Subscription. Esi: Elastic reservation instance. Segmented: Time-segmented elastic reservation instance.
         """
         return pulumi.get(self, "instance_charge_type")
 
@@ -695,7 +695,7 @@ class _LaunchTemplateVersionState:
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的名称。
+        Instance name.
         """
         return pulumi.get(self, "instance_name")
 
@@ -707,7 +707,7 @@ class _LaunchTemplateVersionState:
     @pulumi.getter(name="instanceTypeId")
     def instance_type_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的规格。
+        Instance specifications
         """
         return pulumi.get(self, "instance_type_id")
 
@@ -719,7 +719,7 @@ class _LaunchTemplateVersionState:
     @pulumi.getter(name="keepImageCredential")
     def keep_image_credential(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+        Retain image settings. Value: true: Retain image settings. If retained, the preset password or key pair in the image will be used to log in to the instance. false (default): Do not retain image settings.
         """
         return pulumi.get(self, "keep_image_credential")
 
@@ -731,7 +731,7 @@ class _LaunchTemplateVersionState:
     @pulumi.getter(name="keyPairName")
     def key_pair_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例绑定的密钥对。
+        Key pair bound to the instance.
         """
         return pulumi.get(self, "key_pair_name")
 
@@ -743,7 +743,7 @@ class _LaunchTemplateVersionState:
     @pulumi.getter(name="launchTemplateId")
     def launch_template_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例启动模板 ID。
+        Instance launch template ID.
         """
         return pulumi.get(self, "launch_template_id")
 
@@ -764,7 +764,7 @@ class _LaunchTemplateVersionState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所属项目。
+        Project to which the instance belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -776,7 +776,7 @@ class _LaunchTemplateVersionState:
     @pulumi.getter(name="scheduledInstance")
     def scheduled_instance(self) -> Optional[pulumi.Input['LaunchTemplateVersionScheduledInstanceArgs']]:
         """
-        弹性预约单信息。
+        Elastic reservation order information
         """
         return pulumi.get(self, "scheduled_instance")
 
@@ -788,7 +788,7 @@ class _LaunchTemplateVersionState:
     @pulumi.getter(name="securityEnhancementStrategy")
     def security_enhancement_strategy(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+        Enable security hardening. Active: Enable security hardening, effective only for public images. InActive: Disable security hardening, effective for all images.
         """
         return pulumi.get(self, "security_enhancement_strategy")
 
@@ -800,7 +800,7 @@ class _LaunchTemplateVersionState:
     @pulumi.getter(name="spotPriceLimit")
     def spot_price_limit(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        抢占式实例的每小时最高价格。
+        Maximum hourly price for preemptible instances.
         """
         return pulumi.get(self, "spot_price_limit")
 
@@ -812,7 +812,7 @@ class _LaunchTemplateVersionState:
     @pulumi.getter(name="spotStrategy")
     def spot_strategy(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+        Preemptive strategy for pay-as-you-go billing. Values: NoSpot: Creates a standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, creating a preemptive instance that follows the current market price. SpotWithPriceLimit: Creates a preemptive instance with a bid limit
         """
         return pulumi.get(self, "spot_strategy")
 
@@ -824,7 +824,7 @@ class _LaunchTemplateVersionState:
     @pulumi.getter(name="suffixIndex")
     def suffix_index(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        有序后缀的起始序号。
+        Starting sequence number for the ordered suffix.
         """
         return pulumi.get(self, "suffix_index")
 
@@ -845,7 +845,7 @@ class _LaunchTemplateVersionState:
     @pulumi.getter(name="uniqueSuffix")
     def unique_suffix(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+        Indicates whether to automatically add an ordered suffix to Hostname and InstanceName when creating multiple instances.
         """
         return pulumi.get(self, "unique_suffix")
 
@@ -857,7 +857,7 @@ class _LaunchTemplateVersionState:
     @pulumi.getter(name="userData")
     def user_data(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的自定义数据。
+        Custom data for the instance.
         """
         return pulumi.get(self, "user_data")
 
@@ -869,7 +869,7 @@ class _LaunchTemplateVersionState:
     @pulumi.getter(name="versionDescription")
     def version_description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        模版版本描述。
+        Template version description.
         """
         return pulumi.get(self, "version_description")
 
@@ -881,7 +881,7 @@ class _LaunchTemplateVersionState:
     @pulumi.getter(name="versionNumber")
     def version_number(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        模板版本号。
+        Template version number.
         """
         return pulumi.get(self, "version_number")
 
@@ -902,7 +902,7 @@ class _LaunchTemplateVersionState:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        私有网络ID。
+        Private network ID
         """
         return pulumi.get(self, "vpc_id")
 
@@ -914,7 +914,7 @@ class _LaunchTemplateVersionState:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所属可用区ID。
+        Availability zone ID of the instance
         """
         return pulumi.get(self, "zone_id")
 
@@ -959,7 +959,7 @@ class LaunchTemplateVersion(pulumi.CustomResource):
                  zone_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        实例启动模板版本是一系列实例配置信息的集合，用于快速购买实例。在模板中，您可以存储除密码外的全部配置信息，包括密钥对、计算规格、云盘、网络等，如果配置信息均有效，便可以一键成功购买实例，无需进行重复配置。
+        Instance launch template version is a collection of instance configuration information used for quick instance purchase. In the template, you can store all configuration information except passwords, including key pairs, compute specifications, disks, network, etc. If all configuration information is valid, you can purchase an instance with one click without repeated configuration
 
         ## Import
 
@@ -969,31 +969,31 @@ class LaunchTemplateVersion(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] deployment_set_group_number: 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
-        :param pulumi.Input[builtins.str] deployment_set_id: 实例需要加入的部署集ID。
-        :param pulumi.Input[builtins.str] description: 实例的描述。
-        :param pulumi.Input[Union['LaunchTemplateVersionEipArgs', 'LaunchTemplateVersionEipArgsDict']] eip: 实例绑定的公网IP信息。
-        :param pulumi.Input[builtins.str] host_name: 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
-        :param pulumi.Input[builtins.str] hpc_cluster_id: 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
-        :param pulumi.Input[builtins.str] image_id: 镜像ID。
-        :param pulumi.Input[builtins.str] image_name: 镜像名称。
-        :param pulumi.Input[builtins.str] instance_charge_type: 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
-        :param pulumi.Input[builtins.str] instance_name: 实例的名称。
-        :param pulumi.Input[builtins.str] instance_type_id: 实例的规格。
-        :param pulumi.Input[builtins.bool] keep_image_credential: 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
-        :param pulumi.Input[builtins.str] key_pair_name: 实例绑定的密钥对。
-        :param pulumi.Input[builtins.str] launch_template_id: 实例启动模板 ID。
-        :param pulumi.Input[builtins.str] project_name: 实例所属项目。
-        :param pulumi.Input[Union['LaunchTemplateVersionScheduledInstanceArgs', 'LaunchTemplateVersionScheduledInstanceArgsDict']] scheduled_instance: 弹性预约单信息。
-        :param pulumi.Input[builtins.str] security_enhancement_strategy: 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
-        :param pulumi.Input[builtins.float] spot_price_limit: 抢占式实例的每小时最高价格。
-        :param pulumi.Input[builtins.str] spot_strategy: 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
-        :param pulumi.Input[builtins.int] suffix_index: 有序后缀的起始序号。
-        :param pulumi.Input[builtins.bool] unique_suffix: 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
-        :param pulumi.Input[builtins.str] user_data: 实例的自定义数据。
-        :param pulumi.Input[builtins.str] version_description: 模版版本描述。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络ID。
-        :param pulumi.Input[builtins.str] zone_id: 实例所属可用区ID。
+        :param pulumi.Input[builtins.int] deployment_set_group_number: When the deployment set policy for an ECS instance is set to AvailabilityGroup, use this parameter to specify the group number within the deployment set.
+        :param pulumi.Input[builtins.str] deployment_set_id: Deployment set ID to join for the instance.
+        :param pulumi.Input[builtins.str] description: Instance description.
+        :param pulumi.Input[Union['LaunchTemplateVersionEipArgs', 'LaunchTemplateVersionEipArgsDict']] eip: Public IP information bound to the instance.
+        :param pulumi.Input[builtins.str] host_name: Instance hostname. Linux hostname length: 2–59 characters. Windows hostname length: 2–10 characters
+        :param pulumi.Input[builtins.str] hpc_cluster_id: Specify the high-performance computing cluster ID when creating a high-performance computing GPU instance.
+        :param pulumi.Input[builtins.str] image_id: Image ID
+        :param pulumi.Input[builtins.str] image_name: Image name.
+        :param pulumi.Input[builtins.str] instance_charge_type: Billing type for the instance and cloud disk. Value: PostPaid: Pay-as-you-go. PrePaid: Subscription. Esi: Elastic reservation instance. Segmented: Time-segmented elastic reservation instance.
+        :param pulumi.Input[builtins.str] instance_name: Instance name.
+        :param pulumi.Input[builtins.str] instance_type_id: Instance specifications
+        :param pulumi.Input[builtins.bool] keep_image_credential: Retain image settings. Value: true: Retain image settings. If retained, the preset password or key pair in the image will be used to log in to the instance. false (default): Do not retain image settings.
+        :param pulumi.Input[builtins.str] key_pair_name: Key pair bound to the instance.
+        :param pulumi.Input[builtins.str] launch_template_id: Instance launch template ID.
+        :param pulumi.Input[builtins.str] project_name: Project to which the instance belongs.
+        :param pulumi.Input[Union['LaunchTemplateVersionScheduledInstanceArgs', 'LaunchTemplateVersionScheduledInstanceArgsDict']] scheduled_instance: Elastic reservation order information
+        :param pulumi.Input[builtins.str] security_enhancement_strategy: Enable security hardening. Active: Enable security hardening, effective only for public images. InActive: Disable security hardening, effective for all images.
+        :param pulumi.Input[builtins.float] spot_price_limit: Maximum hourly price for preemptible instances.
+        :param pulumi.Input[builtins.str] spot_strategy: Preemptive strategy for pay-as-you-go billing. Values: NoSpot: Creates a standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, creating a preemptive instance that follows the current market price. SpotWithPriceLimit: Creates a preemptive instance with a bid limit
+        :param pulumi.Input[builtins.int] suffix_index: Starting sequence number for the ordered suffix.
+        :param pulumi.Input[builtins.bool] unique_suffix: Indicates whether to automatically add an ordered suffix to Hostname and InstanceName when creating multiple instances.
+        :param pulumi.Input[builtins.str] user_data: Custom data for the instance.
+        :param pulumi.Input[builtins.str] version_description: Template version description.
+        :param pulumi.Input[builtins.str] vpc_id: Private network ID
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID of the instance
         """
         ...
     @overload
@@ -1002,7 +1002,7 @@ class LaunchTemplateVersion(pulumi.CustomResource):
                  args: Optional[LaunchTemplateVersionArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        实例启动模板版本是一系列实例配置信息的集合，用于快速购买实例。在模板中，您可以存储除密码外的全部配置信息，包括密钥对、计算规格、云盘、网络等，如果配置信息均有效，便可以一键成功购买实例，无需进行重复配置。
+        Instance launch template version is a collection of instance configuration information used for quick instance purchase. In the template, you can store all configuration information except passwords, including key pairs, compute specifications, disks, network, etc. If all configuration information is valid, you can purchase an instance with one click without repeated configuration
 
         ## Import
 
@@ -1137,32 +1137,32 @@ class LaunchTemplateVersion(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] deployment_set_group_number: 当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
-        :param pulumi.Input[builtins.str] deployment_set_id: 实例需要加入的部署集ID。
-        :param pulumi.Input[builtins.str] description: 实例的描述。
-        :param pulumi.Input[Union['LaunchTemplateVersionEipArgs', 'LaunchTemplateVersionEipArgsDict']] eip: 实例绑定的公网IP信息。
-        :param pulumi.Input[builtins.str] host_name: 实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
-        :param pulumi.Input[builtins.str] hpc_cluster_id: 当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
-        :param pulumi.Input[builtins.str] image_id: 镜像ID。
-        :param pulumi.Input[builtins.str] image_name: 镜像名称。
-        :param pulumi.Input[builtins.str] instance_charge_type: 实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
-        :param pulumi.Input[builtins.str] instance_name: 实例的名称。
-        :param pulumi.Input[builtins.str] instance_type_id: 实例的规格。
-        :param pulumi.Input[builtins.bool] keep_image_credential: 是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
-        :param pulumi.Input[builtins.str] key_pair_name: 实例绑定的密钥对。
-        :param pulumi.Input[builtins.str] launch_template_id: 实例启动模板 ID。
-        :param pulumi.Input[builtins.str] project_name: 实例所属项目。
-        :param pulumi.Input[Union['LaunchTemplateVersionScheduledInstanceArgs', 'LaunchTemplateVersionScheduledInstanceArgsDict']] scheduled_instance: 弹性预约单信息。
-        :param pulumi.Input[builtins.str] security_enhancement_strategy: 是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
-        :param pulumi.Input[builtins.float] spot_price_limit: 抢占式实例的每小时最高价格。
-        :param pulumi.Input[builtins.str] spot_strategy: 按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
-        :param pulumi.Input[builtins.int] suffix_index: 有序后缀的起始序号。
-        :param pulumi.Input[builtins.bool] unique_suffix: 表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
-        :param pulumi.Input[builtins.str] user_data: 实例的自定义数据。
-        :param pulumi.Input[builtins.str] version_description: 模版版本描述。
-        :param pulumi.Input[builtins.str] version_number: 模板版本号。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络ID。
-        :param pulumi.Input[builtins.str] zone_id: 实例所属可用区ID。
+        :param pulumi.Input[builtins.int] deployment_set_group_number: When the deployment set policy for an ECS instance is set to AvailabilityGroup, use this parameter to specify the group number within the deployment set.
+        :param pulumi.Input[builtins.str] deployment_set_id: Deployment set ID to join for the instance.
+        :param pulumi.Input[builtins.str] description: Instance description.
+        :param pulumi.Input[Union['LaunchTemplateVersionEipArgs', 'LaunchTemplateVersionEipArgsDict']] eip: Public IP information bound to the instance.
+        :param pulumi.Input[builtins.str] host_name: Instance hostname. Linux hostname length: 2–59 characters. Windows hostname length: 2–10 characters
+        :param pulumi.Input[builtins.str] hpc_cluster_id: Specify the high-performance computing cluster ID when creating a high-performance computing GPU instance.
+        :param pulumi.Input[builtins.str] image_id: Image ID
+        :param pulumi.Input[builtins.str] image_name: Image name.
+        :param pulumi.Input[builtins.str] instance_charge_type: Billing type for the instance and cloud disk. Value: PostPaid: Pay-as-you-go. PrePaid: Subscription. Esi: Elastic reservation instance. Segmented: Time-segmented elastic reservation instance.
+        :param pulumi.Input[builtins.str] instance_name: Instance name.
+        :param pulumi.Input[builtins.str] instance_type_id: Instance specifications
+        :param pulumi.Input[builtins.bool] keep_image_credential: Retain image settings. Value: true: Retain image settings. If retained, the preset password or key pair in the image will be used to log in to the instance. false (default): Do not retain image settings.
+        :param pulumi.Input[builtins.str] key_pair_name: Key pair bound to the instance.
+        :param pulumi.Input[builtins.str] launch_template_id: Instance launch template ID.
+        :param pulumi.Input[builtins.str] project_name: Project to which the instance belongs.
+        :param pulumi.Input[Union['LaunchTemplateVersionScheduledInstanceArgs', 'LaunchTemplateVersionScheduledInstanceArgsDict']] scheduled_instance: Elastic reservation order information
+        :param pulumi.Input[builtins.str] security_enhancement_strategy: Enable security hardening. Active: Enable security hardening, effective only for public images. InActive: Disable security hardening, effective for all images.
+        :param pulumi.Input[builtins.float] spot_price_limit: Maximum hourly price for preemptible instances.
+        :param pulumi.Input[builtins.str] spot_strategy: Preemptive strategy for pay-as-you-go billing. Values: NoSpot: Creates a standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, creating a preemptive instance that follows the current market price. SpotWithPriceLimit: Creates a preemptive instance with a bid limit
+        :param pulumi.Input[builtins.int] suffix_index: Starting sequence number for the ordered suffix.
+        :param pulumi.Input[builtins.bool] unique_suffix: Indicates whether to automatically add an ordered suffix to Hostname and InstanceName when creating multiple instances.
+        :param pulumi.Input[builtins.str] user_data: Custom data for the instance.
+        :param pulumi.Input[builtins.str] version_description: Template version description.
+        :param pulumi.Input[builtins.str] version_number: Template version number.
+        :param pulumi.Input[builtins.str] vpc_id: Private network ID
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID of the instance
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1203,7 +1203,7 @@ class LaunchTemplateVersion(pulumi.CustomResource):
     @pulumi.getter(name="deploymentSetGroupNumber")
     def deployment_set_group_number(self) -> pulumi.Output[builtins.int]:
         """
-        当ECS实例要加入或调整的部署集策略为部署集组高可用策略（AvailabilityGroup）时，可以通过该参数指定实例在部署集中的分组号。
+        When the deployment set policy for an ECS instance is set to AvailabilityGroup, use this parameter to specify the group number within the deployment set.
         """
         return pulumi.get(self, "deployment_set_group_number")
 
@@ -1211,7 +1211,7 @@ class LaunchTemplateVersion(pulumi.CustomResource):
     @pulumi.getter(name="deploymentSetId")
     def deployment_set_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例需要加入的部署集ID。
+        Deployment set ID to join for the instance.
         """
         return pulumi.get(self, "deployment_set_id")
 
@@ -1219,7 +1219,7 @@ class LaunchTemplateVersion(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        实例的描述。
+        Instance description.
         """
         return pulumi.get(self, "description")
 
@@ -1227,7 +1227,7 @@ class LaunchTemplateVersion(pulumi.CustomResource):
     @pulumi.getter
     def eip(self) -> pulumi.Output['outputs.LaunchTemplateVersionEip']:
         """
-        实例绑定的公网IP信息。
+        Public IP information bound to the instance.
         """
         return pulumi.get(self, "eip")
 
@@ -1235,7 +1235,7 @@ class LaunchTemplateVersion(pulumi.CustomResource):
     @pulumi.getter(name="hostName")
     def host_name(self) -> pulumi.Output[builtins.str]:
         """
-        实例的主机名。Linux系统的主机名长度限制为2～59个字符。Windows系统的主机名长度限制为2～10个字符。
+        Instance hostname. Linux hostname length: 2–59 characters. Windows hostname length: 2–10 characters
         """
         return pulumi.get(self, "host_name")
 
@@ -1243,7 +1243,7 @@ class LaunchTemplateVersion(pulumi.CustomResource):
     @pulumi.getter(name="hpcClusterId")
     def hpc_cluster_id(self) -> pulumi.Output[builtins.str]:
         """
-        当创建高性能计算GPU型实例时，请指定高性能计算集群ID。
+        Specify the high-performance computing cluster ID when creating a high-performance computing GPU instance.
         """
         return pulumi.get(self, "hpc_cluster_id")
 
@@ -1251,7 +1251,7 @@ class LaunchTemplateVersion(pulumi.CustomResource):
     @pulumi.getter(name="imageId")
     def image_id(self) -> pulumi.Output[builtins.str]:
         """
-        镜像ID。
+        Image ID
         """
         return pulumi.get(self, "image_id")
 
@@ -1259,7 +1259,7 @@ class LaunchTemplateVersion(pulumi.CustomResource):
     @pulumi.getter(name="imageName")
     def image_name(self) -> pulumi.Output[builtins.str]:
         """
-        镜像名称。
+        Image name.
         """
         return pulumi.get(self, "image_name")
 
@@ -1267,7 +1267,7 @@ class LaunchTemplateVersion(pulumi.CustomResource):
     @pulumi.getter(name="instanceChargeType")
     def instance_charge_type(self) -> pulumi.Output[builtins.str]:
         """
-        实例和云盘的计费类型，取值：PostPaid：按量计费。PrePaid：包年包月。Esi：弹性预约实例。Segmented：时段型弹性预约实例。
+        Billing type for the instance and cloud disk. Value: PostPaid: Pay-as-you-go. PrePaid: Subscription. Esi: Elastic reservation instance. Segmented: Time-segmented elastic reservation instance.
         """
         return pulumi.get(self, "instance_charge_type")
 
@@ -1275,7 +1275,7 @@ class LaunchTemplateVersion(pulumi.CustomResource):
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> pulumi.Output[builtins.str]:
         """
-        实例的名称。
+        Instance name.
         """
         return pulumi.get(self, "instance_name")
 
@@ -1283,7 +1283,7 @@ class LaunchTemplateVersion(pulumi.CustomResource):
     @pulumi.getter(name="instanceTypeId")
     def instance_type_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例的规格。
+        Instance specifications
         """
         return pulumi.get(self, "instance_type_id")
 
@@ -1291,7 +1291,7 @@ class LaunchTemplateVersion(pulumi.CustomResource):
     @pulumi.getter(name="keepImageCredential")
     def keep_image_credential(self) -> pulumi.Output[builtins.bool]:
         """
-        是否保留镜像设置，取值：true：保留镜像设置，保留后将使用镜像预设的密码或密钥对登录实例。false（默认）：不保留镜像设置。
+        Retain image settings. Value: true: Retain image settings. If retained, the preset password or key pair in the image will be used to log in to the instance. false (default): Do not retain image settings.
         """
         return pulumi.get(self, "keep_image_credential")
 
@@ -1299,7 +1299,7 @@ class LaunchTemplateVersion(pulumi.CustomResource):
     @pulumi.getter(name="keyPairName")
     def key_pair_name(self) -> pulumi.Output[builtins.str]:
         """
-        实例绑定的密钥对。
+        Key pair bound to the instance.
         """
         return pulumi.get(self, "key_pair_name")
 
@@ -1307,7 +1307,7 @@ class LaunchTemplateVersion(pulumi.CustomResource):
     @pulumi.getter(name="launchTemplateId")
     def launch_template_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例启动模板 ID。
+        Instance launch template ID.
         """
         return pulumi.get(self, "launch_template_id")
 
@@ -1320,7 +1320,7 @@ class LaunchTemplateVersion(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        实例所属项目。
+        Project to which the instance belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -1328,7 +1328,7 @@ class LaunchTemplateVersion(pulumi.CustomResource):
     @pulumi.getter(name="scheduledInstance")
     def scheduled_instance(self) -> pulumi.Output['outputs.LaunchTemplateVersionScheduledInstance']:
         """
-        弹性预约单信息。
+        Elastic reservation order information
         """
         return pulumi.get(self, "scheduled_instance")
 
@@ -1336,7 +1336,7 @@ class LaunchTemplateVersion(pulumi.CustomResource):
     @pulumi.getter(name="securityEnhancementStrategy")
     def security_enhancement_strategy(self) -> pulumi.Output[builtins.str]:
         """
-        是否开启安全加固。Active:开启安全加固，仅对公共镜像生效。InActive:关闭安全加固，对所有镜像生效。
+        Enable security hardening. Active: Enable security hardening, effective only for public images. InActive: Disable security hardening, effective for all images.
         """
         return pulumi.get(self, "security_enhancement_strategy")
 
@@ -1344,7 +1344,7 @@ class LaunchTemplateVersion(pulumi.CustomResource):
     @pulumi.getter(name="spotPriceLimit")
     def spot_price_limit(self) -> pulumi.Output[builtins.float]:
         """
-        抢占式实例的每小时最高价格。
+        Maximum hourly price for preemptible instances.
         """
         return pulumi.get(self, "spot_price_limit")
 
@@ -1352,7 +1352,7 @@ class LaunchTemplateVersion(pulumi.CustomResource):
     @pulumi.getter(name="spotStrategy")
     def spot_strategy(self) -> pulumi.Output[builtins.str]:
         """
-        按量计费的抢占式策略。取值：NoSpot：表示创建正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：设置出价上限的抢占式实例。
+        Preemptive strategy for pay-as-you-go billing. Values: NoSpot: Creates a standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, creating a preemptive instance that follows the current market price. SpotWithPriceLimit: Creates a preemptive instance with a bid limit
         """
         return pulumi.get(self, "spot_strategy")
 
@@ -1360,7 +1360,7 @@ class LaunchTemplateVersion(pulumi.CustomResource):
     @pulumi.getter(name="suffixIndex")
     def suffix_index(self) -> pulumi.Output[builtins.int]:
         """
-        有序后缀的起始序号。
+        Starting sequence number for the ordered suffix.
         """
         return pulumi.get(self, "suffix_index")
 
@@ -1373,7 +1373,7 @@ class LaunchTemplateVersion(pulumi.CustomResource):
     @pulumi.getter(name="uniqueSuffix")
     def unique_suffix(self) -> pulumi.Output[builtins.bool]:
         """
-        表示当创建多台实例时，是否为Hostname和InstanceName自动添加有序后缀。
+        Indicates whether to automatically add an ordered suffix to Hostname and InstanceName when creating multiple instances.
         """
         return pulumi.get(self, "unique_suffix")
 
@@ -1381,7 +1381,7 @@ class LaunchTemplateVersion(pulumi.CustomResource):
     @pulumi.getter(name="userData")
     def user_data(self) -> pulumi.Output[builtins.str]:
         """
-        实例的自定义数据。
+        Custom data for the instance.
         """
         return pulumi.get(self, "user_data")
 
@@ -1389,7 +1389,7 @@ class LaunchTemplateVersion(pulumi.CustomResource):
     @pulumi.getter(name="versionDescription")
     def version_description(self) -> pulumi.Output[builtins.str]:
         """
-        模版版本描述。
+        Template version description.
         """
         return pulumi.get(self, "version_description")
 
@@ -1397,7 +1397,7 @@ class LaunchTemplateVersion(pulumi.CustomResource):
     @pulumi.getter(name="versionNumber")
     def version_number(self) -> pulumi.Output[builtins.str]:
         """
-        模板版本号。
+        Template version number.
         """
         return pulumi.get(self, "version_number")
 
@@ -1410,7 +1410,7 @@ class LaunchTemplateVersion(pulumi.CustomResource):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Output[builtins.str]:
         """
-        私有网络ID。
+        Private network ID
         """
         return pulumi.get(self, "vpc_id")
 
@@ -1418,7 +1418,7 @@ class LaunchTemplateVersion(pulumi.CustomResource):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例所属可用区ID。
+        Availability zone ID of the instance
         """
         return pulumi.get(self, "zone_id")
 

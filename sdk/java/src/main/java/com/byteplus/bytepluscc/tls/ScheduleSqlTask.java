@@ -16,7 +16,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * 定时 SQL 分析任务的资源定义。
+ * Resource definition for the scheduled SQL analysis task.
  * 
  * ## Example Usage
  * 
@@ -33,294 +33,294 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:tls/scheduleSqlTask:ScheduleSqlTask")
 public class ScheduleSqlTask extends com.pulumi.resources.CustomResource {
     /**
-     * 创建时间（秒级 Unix 时间戳）。
+     * Creation time (seconds-level Unix timestamp).
      * 
      */
     @Export(name="createdTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> createdTime;
 
     /**
-     * @return 创建时间（秒级 Unix 时间戳）。
+     * @return Creation time (seconds-level Unix timestamp).
      * 
      */
     public Output<Integer> createdTime() {
         return this.createdTime;
     }
     /**
-     * 定时 SQL 分析任务的简单描述。不支持&lt;&gt;、&#39;、\、\。长度范围为 0～64 个字符。
+     * Brief description of the scheduled SQL analysis task. Characters &lt;&gt;, &#39;, \, and \ are not supported. Length: 0–64 characters.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 定时 SQL 分析任务的简单描述。不支持&lt;&gt;、&#39;、\、\。长度范围为 0～64 个字符。
+     * @return Brief description of the scheduled SQL analysis task. Characters &lt;&gt;, &#39;, \, and \ are not supported. Length: 0–64 characters.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 目标日志项目 ID。
+     * Target log project ID.
      * 
      */
     @Export(name="destProjectId", refs={String.class}, tree="[0]")
     private Output<String> destProjectId;
 
     /**
-     * @return 目标日志项目 ID。
+     * @return Target log project ID.
      * 
      */
     public Output<String> destProjectId() {
         return this.destProjectId;
     }
     /**
-     * 目标日志主题所属地域。默认为当前地域。
+     * Region of the target log topic. The default is the current region.
      * 
      */
     @Export(name="destRegion", refs={String.class}, tree="[0]")
     private Output<String> destRegion;
 
     /**
-     * @return 目标日志主题所属地域。默认为当前地域。
+     * @return Region of the target log topic. The default is the current region.
      * 
      */
     public Output<String> destRegion() {
         return this.destRegion;
     }
     /**
-     * 用于存储定时 SQL 分析结果数据的目标日志主题 ID。
+     * Target log topic ID for storing scheduled SQL analysis result data.
      * 
      */
     @Export(name="destTopicId", refs={String.class}, tree="[0]")
     private Output<String> destTopicId;
 
     /**
-     * @return 用于存储定时 SQL 分析结果数据的目标日志主题 ID。
+     * @return Target log topic ID for storing scheduled SQL analysis result data.
      * 
      */
     public Output<String> destTopicId() {
         return this.destTopicId;
     }
     /**
-     * 目标日志主题名称。
+     * Target log topic name.
      * 
      */
     @Export(name="destTopicName", refs={String.class}, tree="[0]")
     private Output<String> destTopicName;
 
     /**
-     * @return 目标日志主题名称。
+     * @return Target log topic name.
      * 
      */
     public Output<String> destTopicName() {
         return this.destTopicName;
     }
     /**
-     * 调度定时 SQL 分析任务的结束时间，格式为秒级时间戳。如果不配置，表示持续运行定时 SQL 分析任务。到达结束时间后，日志服务不会再创建实例及执行定时 SQL 分析，但任务状态仍为运行中，直至手动暂停任务。
+     * End time for scheduling the scheduled SQL analysis task, in seconds-level timestamp format. If not configured, the scheduled SQL analysis task runs continuously. After the end time is reached, the log service will no longer create instances or execute scheduled SQL analysis, but the task status remains running until manually paused.
      * 
      */
     @Export(name="processEndTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> processEndTime;
 
     /**
-     * @return 调度定时 SQL 分析任务的结束时间，格式为秒级时间戳。如果不配置，表示持续运行定时 SQL 分析任务。到达结束时间后，日志服务不会再创建实例及执行定时 SQL 分析，但任务状态仍为运行中，直至手动暂停任务。
+     * @return End time for scheduling the scheduled SQL analysis task, in seconds-level timestamp format. If not configured, the scheduled SQL analysis task runs continuously. After the end time is reached, the log service will no longer create instances or execute scheduled SQL analysis, but the task status remains running until manually paused.
      * 
      */
     public Output<Integer> processEndTime() {
         return this.processEndTime;
     }
     /**
-     * 每次调度的延迟时间。取值范围为 0～120，单位为秒。如果不配置，则表示 0，即无延时。
+     * Delay time for each schedule. Range: 0–120 seconds. If not configured, defaults to 0, meaning no delay.
      * 
      */
     @Export(name="processSqlDelay", refs={Integer.class}, tree="[0]")
     private Output<Integer> processSqlDelay;
 
     /**
-     * @return 每次调度的延迟时间。取值范围为 0～120，单位为秒。如果不配置，则表示 0，即无延时。
+     * @return Delay time for each schedule. Range: 0–120 seconds. If not configured, defaults to 0, meaning no delay.
      * 
      */
     public Output<Integer> processSqlDelay() {
         return this.processSqlDelay;
     }
     /**
-     * 调度定时 SQL 分析任务的开始时间，即创建第一个实例的时间。格式为秒级时间戳。
+     * Start time for scheduling the scheduled SQL analysis task, which is the time the first instance is created. Format: seconds-level timestamp.
      * 
      */
     @Export(name="processStartTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> processStartTime;
 
     /**
-     * @return 调度定时 SQL 分析任务的开始时间，即创建第一个实例的时间。格式为秒级时间戳。
+     * @return Start time for scheduling the scheduled SQL analysis task, which is the time the first instance is created. Format: seconds-level timestamp.
      * 
      */
     public Output<Integer> processStartTime() {
         return this.processStartTime;
     }
     /**
-     * SQL 时间窗口，即定时 SQL 分析任务运行时，日志检索与分析的时间范围，左闭右开格式。最大为 24 小时，最小为 1 分钟。
+     * SQL time window, which is the time range for log retrieval and analysis when scheduled SQL analysis tasks run, in left-closed, right-open format. Maximum is 24 hours, minimum is 1 minute.
      * 
      */
     @Export(name="processTimeWindow", refs={String.class}, tree="[0]")
     private Output<String> processTimeWindow;
 
     /**
-     * @return SQL 时间窗口，即定时 SQL 分析任务运行时，日志检索与分析的时间范围，左闭右开格式。最大为 24 小时，最小为 1 分钟。
+     * @return SQL time window, which is the time range for log retrieval and analysis when scheduled SQL analysis tasks run, in left-closed, right-open format. Maximum is 24 hours, minimum is 1 minute.
      * 
      */
     public Output<String> processTimeWindow() {
         return this.processTimeWindow;
     }
     /**
-     * 定时 SQL 分析任务定期执行的检索与分析语句，应符合日志服务的检索与分析语法。
+     * The scheduled SQL analysis task periodically executes retrieval and analysis statements, which must comply with the log service&#39;s retrieval and analysis syntax.
      * 
      */
     @Export(name="query", refs={String.class}, tree="[0]")
     private Output<String> query;
 
     /**
-     * @return 定时 SQL 分析任务定期执行的检索与分析语句，应符合日志服务的检索与分析语法。
+     * @return The scheduled SQL analysis task periodically executes retrieval and analysis statements, which must comply with the log service&#39;s retrieval and analysis syntax.
      * 
      */
     public Output<String> query() {
         return this.query;
     }
     /**
-     * 定时 SQL 分析任务的调度周期。调度周期决定每个实例的调度时间。建议调度周期不小于 SQL 时间窗口。
+     * Scheduling period for the scheduled SQL analysis task. The scheduling period determines the scheduling time for each instance. It is recommended that the scheduling period is not less than the SQL time window.
      * 
      */
     @Export(name="requestCycle", refs={ScheduleSqlTaskRequestCycle.class}, tree="[0]")
     private Output<ScheduleSqlTaskRequestCycle> requestCycle;
 
     /**
-     * @return 定时 SQL 分析任务的调度周期。调度周期决定每个实例的调度时间。建议调度周期不小于 SQL 时间窗口。
+     * @return Scheduling period for the scheduled SQL analysis task. The scheduling period determines the scheduling time for each instance. It is recommended that the scheduling period is not less than the SQL time window.
      * 
      */
     public Output<ScheduleSqlTaskRequestCycle> requestCycle() {
         return this.requestCycle;
     }
     /**
-     * 源日志项目 ID。
+     * Source log project ID.
      * 
      */
     @Export(name="sourceProjectId", refs={String.class}, tree="[0]")
     private Output<String> sourceProjectId;
 
     /**
-     * @return 源日志项目 ID。
+     * @return Source log project ID.
      * 
      */
     public Output<String> sourceProjectId() {
         return this.sourceProjectId;
     }
     /**
-     * 源日志项目名称。
+     * Source log project name.
      * 
      */
     @Export(name="sourceProjectName", refs={String.class}, tree="[0]")
     private Output<String> sourceProjectName;
 
     /**
-     * @return 源日志项目名称。
+     * @return Source log project name.
      * 
      */
     public Output<String> sourceProjectName() {
         return this.sourceProjectName;
     }
     /**
-     * 待进行定时 SQL 分析的原始日志所在的日志主题 ID。仅支持当前地域的日志主题。
+     * ID of the log topic containing the original logs for scheduled SQL analysis. Only log topics in the current region are supported.
      * 
      */
     @Export(name="sourceTopicId", refs={String.class}, tree="[0]")
     private Output<String> sourceTopicId;
 
     /**
-     * @return 待进行定时 SQL 分析的原始日志所在的日志主题 ID。仅支持当前地域的日志主题。
+     * @return ID of the log topic containing the original logs for scheduled SQL analysis. Only log topics in the current region are supported.
      * 
      */
     public Output<String> sourceTopicId() {
         return this.sourceTopicId;
     }
     /**
-     * 源日志主题名称。
+     * Source log topic name.
      * 
      */
     @Export(name="sourceTopicName", refs={String.class}, tree="[0]")
     private Output<String> sourceTopicName;
 
     /**
-     * @return 源日志主题名称。
+     * @return Source log topic name.
      * 
      */
     public Output<String> sourceTopicName() {
         return this.sourceTopicName;
     }
     /**
-     * 完成任务配置后是否立即启动定时 SQL 分析任务。可选值：0 关闭；1 立即启动。
+     * Whether to start the scheduled SQL analysis task immediately after completing task configuration. Options: 0 Off; 1 Start immediately.
      * 
      */
     @Export(name="status", refs={Integer.class}, tree="[0]")
     private Output<Integer> status;
 
     /**
-     * @return 完成任务配置后是否立即启动定时 SQL 分析任务。可选值：0 关闭；1 立即启动。
+     * @return Whether to start the scheduled SQL analysis task immediately after completing task configuration. Options: 0 Off; 1 Start immediately.
      * 
      */
     public Output<Integer> status() {
         return this.status;
     }
     /**
-     * 任务 ID。
+     * Task ID.
      * 
      */
     @Export(name="taskId", refs={String.class}, tree="[0]")
     private Output<String> taskId;
 
     /**
-     * @return 任务 ID。
+     * @return Task ID.
      * 
      */
     public Output<String> taskId() {
         return this.taskId;
     }
     /**
-     * 定时 SQL 分析任务名称。命名规则请参考资源命名规则。
+     * Name of the scheduled SQL analysis task. Refer to the resource naming rules for naming conventions.
      * 
      */
     @Export(name="taskName", refs={String.class}, tree="[0]")
     private Output<String> taskName;
 
     /**
-     * @return 定时 SQL 分析任务名称。命名规则请参考资源命名规则。
+     * @return Name of the scheduled SQL analysis task. Refer to the resource naming rules for naming conventions.
      * 
      */
     public Output<String> taskName() {
         return this.taskName;
     }
     /**
-     * 任务类型：0 表示日志到日志；1 表示日志到指标。
+     * Task type: 0 means log to log; 1 means log to metric.
      * 
      */
     @Export(name="taskType", refs={Integer.class}, tree="[0]")
     private Output<Integer> taskType;
 
     /**
-     * @return 任务类型：0 表示日志到日志；1 表示日志到指标。
+     * @return Task type: 0 means log to log; 1 means log to metric.
      * 
      */
     public Output<Integer> taskType() {
         return this.taskType;
     }
     /**
-     * 修改时间（秒级 Unix 时间戳）。
+     * Modification time (seconds-level Unix timestamp).
      * 
      */
     @Export(name="updatedTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> updatedTime;
 
     /**
-     * @return 修改时间（秒级 Unix 时间戳）。
+     * @return Modification time (seconds-level Unix timestamp).
      * 
      */
     public Output<Integer> updatedTime() {

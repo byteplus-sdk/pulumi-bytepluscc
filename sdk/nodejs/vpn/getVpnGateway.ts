@@ -31,43 +31,43 @@ export interface GetVpnGatewayArgs {
  */
 export interface GetVpnGatewayResult {
     /**
-     * VPN网关的ASN。
+     * ASN of the VPN gateway.
      */
     readonly asn: number;
     /**
-     * VPN网关的带宽规格。
+     * VPN gateway bandwidth specification.
      */
     readonly bandwidth: number;
     /**
-     * VPN网关的计费类型。1：包年包月。2：按量计费（按固定规格）
+     * VPN gateway billing type. 1: Subscription. 2: Pay-as-you-go (fixed specification)
      */
     readonly billingType: number;
     /**
-     * VPN网关的计费状态。Normal: 正常。FinancialLocked: 被锁定。
+     * VPN gateway billing status. Normal: Normal. FinancialLocked: Locked.
      */
     readonly businessStatus: string;
     /**
-     * VPN网关关联IPsec连接的数量。
+     * Number of IPsec connections associated with the VPN gateway.
      */
     readonly connectionCount: number;
     /**
-     * 创建VPN网关的时间。
+     * Time when the VPN gateway was created.
      */
     readonly createTime: string;
     /**
-     * 预期资源强制回收时间。
+     * Expected resource forced reclaim time.
      */
     readonly deletedTime: string;
     /**
-     * VPN网关的描述。
+     * Description of the VPN gateway.
      */
     readonly description: string;
     /**
-     * VPN网关是否开启双隧道模式。true：开启false：关闭
+     * Whether dual tunnel mode is enabled for the VPN gateway. true: Enabled false: Disabled
      */
     readonly dualTunnelEnabled: boolean;
     /**
-     * VPN网关的到期时间。
+     * VPN gateway expiration time.
      */
     readonly expiredTime: string;
     /**
@@ -75,91 +75,91 @@ export interface GetVpnGatewayResult {
      */
     readonly id: string;
     /**
-     * VPN网关的公网IP地址。
+     * VPN gateway public IP address.
      */
     readonly ipAddress: string;
     /**
-     * VPN 网关的协议类型。ipv4*only：IPv4协议类型。ipv6*only：IPv6协议类型。ipv4_ipv6：双栈协议类型。
+     * VPN gateway protocol type. ipv4*only: IPv4 protocol type. ipv6*only: IPv6 protocol type. ipv4_ipv6: Dual-stack protocol type.
      */
     readonly ipStackType: string;
     /**
-     * VPN网关的IP地址类型。ipv4：IPv4地址类型。ipv6：IPv6地址类型。
+     * IP address type of the VPN gateway. ipv4: IPv4 address type. ipv6: IPv6 address type.
      */
     readonly ipVersion: string;
     /**
-     * 是否开启IPSec功能。true：开启false：关闭。
+     * Enable IPSec feature. true: enabled false: disabled
      */
     readonly ipsecEnabled: boolean;
     /**
-     * 当前资源的状态是否被封禁。true：封禁false：未封禁。
+     * Whether the current resource is banned. true: Banned false: Not banned.
      */
     readonly isBlocked: boolean;
     /**
-     * VPN网关的锁定原因。financial：因欠费被锁定。security：因安全被锁定。unlock：未锁定。
+     * VPN gateway lock reasons. financial: Locked due to overdue payment. security: Locked for security reasons. unlock: Not locked.
      */
     readonly lockReason: string;
     /**
-     * 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+     * Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns an empty value.
      */
     readonly overdueTime: string;
     /**
-     * 包年包月类型VPN网关购买的时长，默认“1”。当PeriodUnit传入值为Month，Period取值范围：1~9、12、24、36。当PeriodUnit传入值为Year，Period取值范围：1～3。
+     * Subscription VPN gateway purchase duration, default is '1'. If PeriodUnit is Month, Period value range: 1–9, 12, 24, 36. If PeriodUnit is Year, Period value range: 1–3.
      */
     readonly period: number;
     /**
-     * 包年包月类型VPN网关购买时长的单位，默认“Month”。Month：月Year：年
+     * Unit for the purchase duration of subscription-based VPN gateways. Default is 'Month'. Month: month Year: year
      */
     readonly periodUnit: string;
     /**
-     * VPN网关所属的项目。不填默认为default，即创建的资源属于default项目。您可调用ListProjects查询当前账号下项目的信息。
+     * Project to which the VPN gateway belongs. If not specified, defaults to 'default', meaning the created resource belongs to the default project. You can call ListProjects to query project information under the current account.
      */
     readonly projectName: string;
     /**
-     * VPN网关的路由条目数量。
+     * Number of route entries for the VPN gateway.
      */
     readonly routeCount: number;
     /**
-     * VPN网关的第二个公网IP地址。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+     * Second public IP address of the VPN gateway. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
      */
     readonly secondaryIpAddress: string;
     /**
-     * VPN网关实例关联的第二个子网的ID。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+     * ID of the second subnet associated with the VPN gateway instance. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
      */
     readonly secondarySubnetId: string;
     /**
-     * 是否开启SSL VPN功能。true：开启false：关闭
+     * Enable SSL VPN feature. true: enabled false: disabled
      */
     readonly sslEnabled: boolean;
     /**
-     * VPN网关的最大SSL连接数。
+     * Maximum SSL connections for the VPN gateway.
      */
     readonly sslMaxConnections: number;
     /**
-     * VPN网关的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+     * Status of the VPN gateway. Creating: creating Deleting: deleting Pending: configuring Available: available
      */
     readonly status: string;
     /**
-     * VPN网关使用的端口所属子网的ID。
+     * ID of the subnet to which the port used by the VPN gateway belongs.
      */
     readonly subnetId: string;
     /**
-     * VPN网关已添加的全部标签信息。
+     * All tag information added to the VPN gateway.
      */
     readonly tags: outputs.vpn.GetVpnGatewayTag[];
     /**
-     * 更新VPN网关的时间。
+     * VPN gateway update time.
      */
     readonly updateTime: string;
     /**
-     * VPN网关所在VPC的ID。
+     * VPC ID where the VPN gateway is located.
      */
     readonly vpcId: string;
     /**
-     * VPN网关的ID。
+     * ID of the VPN gateway.
      */
     readonly vpnGatewayId: string;
     /**
-     * VPN网关的名称。
+     * Name of the VPN gateway.
      */
     readonly vpnGatewayName: string;
 }

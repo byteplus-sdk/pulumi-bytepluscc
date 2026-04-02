@@ -17,14 +17,14 @@ public final class InstanceNodeArgs extends com.pulumi.resources.ResourceArgs {
     public static final InstanceNodeArgs Empty = new InstanceNodeArgs();
 
     /**
-     * 节点切主的优先级，取值范围为 0~15。数值越大，优先级越高。
+     * Node failover priority. Range: 0~15. Higher values indicate higher priority
      * 
      */
     @Import(name="failoverPriority")
     private @Nullable Output<Integer> failoverPriority;
 
     /**
-     * @return 节点切主的优先级，取值范围为 0~15。数值越大，优先级越高。
+     * @return Node failover priority. Range: 0~15. Higher values indicate higher priority
      * 
      */
     public Optional<Output<Integer>> failoverPriority() {
@@ -32,14 +32,14 @@ public final class InstanceNodeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+     * Node type. Values: Primary: primary node. ReadOnly: read-only node.
      * 
      */
     @Import(name="nodeType")
     private @Nullable Output<String> nodeType;
 
     /**
-     * @return 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+     * @return Node type. Values: Primary: primary node. ReadOnly: read-only node.
      * 
      */
     public Optional<Output<String>> nodeType() {
@@ -72,7 +72,7 @@ public final class InstanceNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param failoverPriority 节点切主的优先级，取值范围为 0~15。数值越大，优先级越高。
+         * @param failoverPriority Node failover priority. Range: 0~15. Higher values indicate higher priority
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class InstanceNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param failoverPriority 节点切主的优先级，取值范围为 0~15。数值越大，优先级越高。
+         * @param failoverPriority Node failover priority. Range: 0~15. Higher values indicate higher priority
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class InstanceNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeType 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+         * @param nodeType Node type. Values: Primary: primary node. ReadOnly: read-only node.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class InstanceNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeType 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+         * @param nodeType Node type. Values: Primary: primary node. ReadOnly: read-only node.
          * 
          * @return builder
          * 

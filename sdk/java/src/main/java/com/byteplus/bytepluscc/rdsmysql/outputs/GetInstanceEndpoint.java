@@ -15,254 +15,254 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceEndpoint {
     /**
-     * @return 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入Disable：不自动加入（默认）。
+     * @return When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
      * 
      */
     private String autoAddNewNodes;
     /**
-     * @return 连接终端标签。
+     * @return Connection endpoint tag.
      * 
      */
     private List<String> connectionInfoTags;
     /**
-     * @return 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。
+     * @return Connection endpoint type. Values: Proxy: proxy endpoint. Direct: direct endpoint
      * 
      */
     private String connectionMode;
     /**
-     * @return 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。
+     * @return Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
      * 
      */
     private String connectionPoolType;
     /**
-     * @return 连接终端的描述信息。
+     * @return Description of the connection endpoint
      * 
      */
     private String description;
     /**
-     * @return 是否启用连接保持。取值：true：是。false：否。
+     * @return Enable connection keep-alive. Options: true: yes. false: no
      * 
      */
     private Boolean enableConnectionPersistent;
     /**
-     * @return 是否已开启全局只读，取值：Enable：开启。Disable：未开启。
+     * @return Is global read-only enabled? Values: Enable: enabled. Disable: not enabled.
      * 
      */
     private String enableReadOnly;
     /**
-     * @return 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+     * @return Whether to enable read/write separation. Values: Enable: Enabled. Disable: Not enabled.
      * 
      */
     private String enableReadWriteSplitting;
     /**
-     * @return 实例连接终端 ID。
+     * @return Instance connection endpoint ID.
      * 
      */
     private String endpointId;
     /**
-     * @return 实例连接终端名称。
+     * @return Instance connection endpoint name.
      * 
      */
     private String endpointName;
     /**
-     * @return 终端类型。取值为 Custom，自定义终端。
+     * @return Endpoint type. Value: Custom, custom endpoint.
      * 
      */
     private String endpointType;
     /**
-     * @return 空闲连接回收功能是否开启。true：开启。false：不开启。
+     * @return Whether the idle connection recycling feature is enabled. true: Enabled. false: Not enabled.
      * 
      */
     private Boolean idleConnectionReclaim;
     /**
-     * @return 是否开启事务分离。取值：true：是。false：否。
+     * @return Whether to enable transaction separation. Values: true: Yes. false: No.
      * 
      */
     private Boolean implicitTransSplit;
     /**
-     * @return 是否开启主节点路由。取值：true：是。false：否。
+     * @return Whether to enable primary node routing. Values: true: Yes. false: No.
      * 
      */
     private Boolean masterNodeRouting;
     /**
-     * @return 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。
+     * @return Overload protection timeout. Value range: integer between 60 and 7200, in seconds.
      * 
      */
     private Integer masterProtectorTimeout;
     /**
-     * @return 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+     * @return Multi-Statements mode for proxy endpoints. Values: Strict: strict mode (default). Loose: loose mode
      * 
      */
     private String multiStatementsMode;
     /**
-     * @return 是否开启过载保护。取值：true：是。false：否。
+     * @return Overload protection enabled. Values: true: yes. false: no
      * 
      */
     private Boolean overloadProtection;
     /**
-     * @return 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+     * @return Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, valid values are: LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, valid values are: Default: automatic allocation based on specification weights. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling.
      * 
      */
     private String readOnlyNodeDistributionType;
     /**
-     * @return 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+     * @return Read-only node latency threshold. Value range: 1~3600, default is 30, unit: seconds.
      * 
      */
     private Integer readOnlyNodeMaxDelayTime;
     /**
-     * @return 连接终端配置的节点列表及对应的只读权重。
+     * @return List of nodes configured for the connection endpoint and their corresponding read-only weights.
      * 
      */
     private List<GetInstanceEndpointReadOnlyNodeWeight> readOnlyNodeWeights;
     /**
-     * @return 读写模式：ReadWrite：读写。ReadOnly：只读。
+     * @return Read/write mode: ReadWrite: read/write. ReadOnly: read-only
      * 
      */
     private String readWriteMode;
 
     private GetInstanceEndpoint() {}
     /**
-     * @return 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入Disable：不自动加入（默认）。
+     * @return When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
      * 
      */
     public String autoAddNewNodes() {
         return this.autoAddNewNodes;
     }
     /**
-     * @return 连接终端标签。
+     * @return Connection endpoint tag.
      * 
      */
     public List<String> connectionInfoTags() {
         return this.connectionInfoTags;
     }
     /**
-     * @return 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。
+     * @return Connection endpoint type. Values: Proxy: proxy endpoint. Direct: direct endpoint
      * 
      */
     public String connectionMode() {
         return this.connectionMode;
     }
     /**
-     * @return 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。
+     * @return Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
      * 
      */
     public String connectionPoolType() {
         return this.connectionPoolType;
     }
     /**
-     * @return 连接终端的描述信息。
+     * @return Description of the connection endpoint
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 是否启用连接保持。取值：true：是。false：否。
+     * @return Enable connection keep-alive. Options: true: yes. false: no
      * 
      */
     public Boolean enableConnectionPersistent() {
         return this.enableConnectionPersistent;
     }
     /**
-     * @return 是否已开启全局只读，取值：Enable：开启。Disable：未开启。
+     * @return Is global read-only enabled? Values: Enable: enabled. Disable: not enabled.
      * 
      */
     public String enableReadOnly() {
         return this.enableReadOnly;
     }
     /**
-     * @return 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+     * @return Whether to enable read/write separation. Values: Enable: Enabled. Disable: Not enabled.
      * 
      */
     public String enableReadWriteSplitting() {
         return this.enableReadWriteSplitting;
     }
     /**
-     * @return 实例连接终端 ID。
+     * @return Instance connection endpoint ID.
      * 
      */
     public String endpointId() {
         return this.endpointId;
     }
     /**
-     * @return 实例连接终端名称。
+     * @return Instance connection endpoint name.
      * 
      */
     public String endpointName() {
         return this.endpointName;
     }
     /**
-     * @return 终端类型。取值为 Custom，自定义终端。
+     * @return Endpoint type. Value: Custom, custom endpoint.
      * 
      */
     public String endpointType() {
         return this.endpointType;
     }
     /**
-     * @return 空闲连接回收功能是否开启。true：开启。false：不开启。
+     * @return Whether the idle connection recycling feature is enabled. true: Enabled. false: Not enabled.
      * 
      */
     public Boolean idleConnectionReclaim() {
         return this.idleConnectionReclaim;
     }
     /**
-     * @return 是否开启事务分离。取值：true：是。false：否。
+     * @return Whether to enable transaction separation. Values: true: Yes. false: No.
      * 
      */
     public Boolean implicitTransSplit() {
         return this.implicitTransSplit;
     }
     /**
-     * @return 是否开启主节点路由。取值：true：是。false：否。
+     * @return Whether to enable primary node routing. Values: true: Yes. false: No.
      * 
      */
     public Boolean masterNodeRouting() {
         return this.masterNodeRouting;
     }
     /**
-     * @return 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。
+     * @return Overload protection timeout. Value range: integer between 60 and 7200, in seconds.
      * 
      */
     public Integer masterProtectorTimeout() {
         return this.masterProtectorTimeout;
     }
     /**
-     * @return 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+     * @return Multi-Statements mode for proxy endpoints. Values: Strict: strict mode (default). Loose: loose mode
      * 
      */
     public String multiStatementsMode() {
         return this.multiStatementsMode;
     }
     /**
-     * @return 是否开启过载保护。取值：true：是。false：否。
+     * @return Overload protection enabled. Values: true: yes. false: no
      * 
      */
     public Boolean overloadProtection() {
         return this.overloadProtection;
     }
     /**
-     * @return 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+     * @return Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, valid values are: LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, valid values are: Default: automatic allocation based on specification weights. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling.
      * 
      */
     public String readOnlyNodeDistributionType() {
         return this.readOnlyNodeDistributionType;
     }
     /**
-     * @return 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+     * @return Read-only node latency threshold. Value range: 1~3600, default is 30, unit: seconds.
      * 
      */
     public Integer readOnlyNodeMaxDelayTime() {
         return this.readOnlyNodeMaxDelayTime;
     }
     /**
-     * @return 连接终端配置的节点列表及对应的只读权重。
+     * @return List of nodes configured for the connection endpoint and their corresponding read-only weights.
      * 
      */
     public List<GetInstanceEndpointReadOnlyNodeWeight> readOnlyNodeWeights() {
         return this.readOnlyNodeWeights;
     }
     /**
-     * @return 读写模式：ReadWrite：读写。ReadOnly：只读。
+     * @return Read/write mode: ReadWrite: read/write. ReadOnly: read-only
      * 
      */
     public String readWriteMode() {

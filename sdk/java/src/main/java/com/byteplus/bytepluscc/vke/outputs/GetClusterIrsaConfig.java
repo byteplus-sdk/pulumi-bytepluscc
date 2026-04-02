@@ -12,74 +12,74 @@ import java.util.Objects;
 @CustomType
 public final class GetClusterIrsaConfig {
     /**
-     * @return 接受令牌的标识符。
+     * @return Identifier for accepting tokens
      * 
      */
     private String audience;
     /**
-     * @return 是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+     * @return Whether to enable IRSA feature. Parameter values: true: enabled; false: not enabled.
      * 
      */
     private Boolean enabled;
     /**
-     * @return OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+     * @return OIDC (OpenID Connect) provider URL, the unique identifier for the OIDC provider.
      * 
      */
     private String issuer;
     /**
-     * @return JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+     * @return JWKS (JSON Web Key Set) URL. The public keys in the file are used to verify any JWT (JSON Web Tokens) returned from the OIDC provider.
      * 
      */
     private String jwksUrl;
     /**
-     * @return OIDC 提供商 TRN。
+     * @return OIDC provider TRN.
      * 
      */
     private String oidcTrn;
     /**
-     * @return OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+     * @return OIDC provider configuration document in JSON format, containing information about the OIDC provider.
      * 
      */
     private String openIdConfigUrl;
 
     private GetClusterIrsaConfig() {}
     /**
-     * @return 接受令牌的标识符。
+     * @return Identifier for accepting tokens
      * 
      */
     public String audience() {
         return this.audience;
     }
     /**
-     * @return 是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+     * @return Whether to enable IRSA feature. Parameter values: true: enabled; false: not enabled.
      * 
      */
     public Boolean enabled() {
         return this.enabled;
     }
     /**
-     * @return OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+     * @return OIDC (OpenID Connect) provider URL, the unique identifier for the OIDC provider.
      * 
      */
     public String issuer() {
         return this.issuer;
     }
     /**
-     * @return JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+     * @return JWKS (JSON Web Key Set) URL. The public keys in the file are used to verify any JWT (JSON Web Tokens) returned from the OIDC provider.
      * 
      */
     public String jwksUrl() {
         return this.jwksUrl;
     }
     /**
-     * @return OIDC 提供商 TRN。
+     * @return OIDC provider TRN.
      * 
      */
     public String oidcTrn() {
         return this.oidcTrn;
     }
     /**
-     * @return OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+     * @return OIDC provider configuration document in JSON format, containing information about the OIDC provider.
      * 
      */
     public String openIdConfigUrl() {

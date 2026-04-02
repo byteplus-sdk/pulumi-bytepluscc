@@ -25,14 +25,14 @@ public final class NodePoolStatusArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+     * Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
      * 
      */
     @Import(name="phase")
     private @Nullable Output<String> phase;
 
     /**
-     * @return 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+     * @return Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
      * 
      */
     public Optional<Output<String>> phase() {
@@ -78,7 +78,7 @@ public final class NodePoolStatusArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param phase 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+         * @param phase Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
          * 
          * @return builder
          * 
@@ -89,7 +89,7 @@ public final class NodePoolStatusArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param phase 节点池的状态，参数值有：Creating、Running、Updating、Deleting、Failed、Scaling。
+         * @param phase Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
          * 
          * @return builder
          * 

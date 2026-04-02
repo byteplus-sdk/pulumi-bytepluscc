@@ -18,14 +18,14 @@ public final class DomainConditionalOriginArgs extends com.pulumi.resources.Reso
     public static final DomainConditionalOriginArgs Empty = new DomainConditionalOriginArgs();
 
     /**
-     * 表示一个规则列表。列表中的每条规则中定义了一个过滤器以及内容分发网络对满足过滤条件的请求所执行的操作。
+     * Indicates a list of rules. Each rule in the list defines a filter and the action the content delivery network performs on requests that meet the filter criteria.
      * 
      */
     @Import(name="originRules")
     private @Nullable Output<List<DomainConditionalOriginOriginRuleArgs>> originRules;
 
     /**
-     * @return 表示一个规则列表。列表中的每条规则中定义了一个过滤器以及内容分发网络对满足过滤条件的请求所执行的操作。
+     * @return Indicates a list of rules. Each rule in the list defines a filter and the action the content delivery network performs on requests that meet the filter criteria.
      * 
      */
     public Optional<Output<List<DomainConditionalOriginOriginRuleArgs>>> originRules() {
@@ -33,14 +33,14 @@ public final class DomainConditionalOriginArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * Indicates whether this feature is enabled. The parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
      * 
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Indicates whether this feature is enabled. The parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
      * 
      */
     public Optional<Output<Boolean>> switch_() {
@@ -73,7 +73,7 @@ public final class DomainConditionalOriginArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param originRules 表示一个规则列表。列表中的每条规则中定义了一个过滤器以及内容分发网络对满足过滤条件的请求所执行的操作。
+         * @param originRules Indicates a list of rules. Each rule in the list defines a filter and the action the content delivery network performs on requests that meet the filter criteria.
          * 
          * @return builder
          * 
@@ -84,7 +84,7 @@ public final class DomainConditionalOriginArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param originRules 表示一个规则列表。列表中的每条规则中定义了一个过滤器以及内容分发网络对满足过滤条件的请求所执行的操作。
+         * @param originRules Indicates a list of rules. Each rule in the list defines a filter and the action the content delivery network performs on requests that meet the filter criteria.
          * 
          * @return builder
          * 
@@ -94,7 +94,7 @@ public final class DomainConditionalOriginArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param originRules 表示一个规则列表。列表中的每条规则中定义了一个过滤器以及内容分发网络对满足过滤条件的请求所执行的操作。
+         * @param originRules Indicates a list of rules. Each rule in the list defines a filter and the action the content delivery network performs on requests that meet the filter criteria.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class DomainConditionalOriginArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param switch_ 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+         * @param switch_ Indicates whether this feature is enabled. The parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class DomainConditionalOriginArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param switch_ 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+         * @param switch_ Indicates whether this feature is enabled. The parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
          * 
          * @return builder
          * 

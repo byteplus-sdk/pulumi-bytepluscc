@@ -28,9 +28,9 @@ class ProjectArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectTagArgs']]]] = None):
         """
         The set of arguments for constructing a Project resource.
-        :param pulumi.Input[builtins.str] project_name: 日志项目名称。
-        :param pulumi.Input[builtins.str] description: 日志项目的简单描述。
-        :param pulumi.Input[builtins.str] iam_project_name: 日志项目所属的 IAM 项目。
+        :param pulumi.Input[builtins.str] project_name: Log project name
+        :param pulumi.Input[builtins.str] description: Brief description of the log project
+        :param pulumi.Input[builtins.str] iam_project_name: The IAM project associated with the log project
         """
         pulumi.set(__self__, "project_name", project_name)
         if description is not None:
@@ -44,7 +44,7 @@ class ProjectArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Input[builtins.str]:
         """
-        日志项目名称。
+        Log project name
         """
         return pulumi.get(self, "project_name")
 
@@ -56,7 +56,7 @@ class ProjectArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        日志项目的简单描述。
+        Brief description of the log project
         """
         return pulumi.get(self, "description")
 
@@ -68,7 +68,7 @@ class ProjectArgs:
     @pulumi.getter(name="iamProjectName")
     def iam_project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        日志项目所属的 IAM 项目。
+        The IAM project associated with the log project
         """
         return pulumi.get(self, "iam_project_name")
 
@@ -99,13 +99,13 @@ class _ProjectState:
                  topic_count: Optional[pulumi.Input[builtins.int]] = None):
         """
         Input properties used for looking up and filtering Project resources.
-        :param pulumi.Input[builtins.str] created_time: 日志项目创建时间。
-        :param pulumi.Input[builtins.str] description: 日志项目的简单描述。
-        :param pulumi.Input[builtins.str] iam_project_name: 日志项目所属的 IAM 项目。
-        :param pulumi.Input[builtins.str] inner_net_domain: 私网连接域名。
-        :param pulumi.Input[builtins.str] project_id: 日志项目的 ID。
-        :param pulumi.Input[builtins.str] project_name: 日志项目名称。
-        :param pulumi.Input[builtins.int] topic_count: 当前日志项目下的日志主题数量。
+        :param pulumi.Input[builtins.str] created_time: Log project creation time
+        :param pulumi.Input[builtins.str] description: Brief description of the log project
+        :param pulumi.Input[builtins.str] iam_project_name: The IAM project associated with the log project
+        :param pulumi.Input[builtins.str] inner_net_domain: Private network connection domain name
+        :param pulumi.Input[builtins.str] project_id: Log project ID
+        :param pulumi.Input[builtins.str] project_name: Log project name
+        :param pulumi.Input[builtins.int] topic_count: Number of log topics in the current log project
         """
         if created_time is not None:
             pulumi.set(__self__, "created_time", created_time)
@@ -128,7 +128,7 @@ class _ProjectState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        日志项目创建时间。
+        Log project creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -140,7 +140,7 @@ class _ProjectState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        日志项目的简单描述。
+        Brief description of the log project
         """
         return pulumi.get(self, "description")
 
@@ -152,7 +152,7 @@ class _ProjectState:
     @pulumi.getter(name="iamProjectName")
     def iam_project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        日志项目所属的 IAM 项目。
+        The IAM project associated with the log project
         """
         return pulumi.get(self, "iam_project_name")
 
@@ -164,7 +164,7 @@ class _ProjectState:
     @pulumi.getter(name="innerNetDomain")
     def inner_net_domain(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        私网连接域名。
+        Private network connection domain name
         """
         return pulumi.get(self, "inner_net_domain")
 
@@ -176,7 +176,7 @@ class _ProjectState:
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        日志项目的 ID。
+        Log project ID
         """
         return pulumi.get(self, "project_id")
 
@@ -188,7 +188,7 @@ class _ProjectState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        日志项目名称。
+        Log project name
         """
         return pulumi.get(self, "project_name")
 
@@ -209,7 +209,7 @@ class _ProjectState:
     @pulumi.getter(name="topicCount")
     def topic_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        当前日志项目下的日志主题数量。
+        Number of log topics in the current log project
         """
         return pulumi.get(self, "topic_count")
 
@@ -230,7 +230,7 @@ class Project(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectTagArgs', 'ProjectTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        日志项目是数据的项目管理单元，用于租户资源隔离和控制，通常一个日志项目对应一个应用、业务或产品。
+        A log project is a data management unit used for tenant resource isolation and control. Typically, each log project corresponds to an application, service, or product
 
         ## Example Usage
 
@@ -256,9 +256,9 @@ class Project(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: 日志项目的简单描述。
-        :param pulumi.Input[builtins.str] iam_project_name: 日志项目所属的 IAM 项目。
-        :param pulumi.Input[builtins.str] project_name: 日志项目名称。
+        :param pulumi.Input[builtins.str] description: Brief description of the log project
+        :param pulumi.Input[builtins.str] iam_project_name: The IAM project associated with the log project
+        :param pulumi.Input[builtins.str] project_name: Log project name
         """
         ...
     @overload
@@ -267,7 +267,7 @@ class Project(pulumi.CustomResource):
                  args: ProjectArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        日志项目是数据的项目管理单元，用于租户资源隔离和控制，通常一个日志项目对应一个应用、业务或产品。
+        A log project is a data management unit used for tenant resource isolation and control. Typically, each log project corresponds to an application, service, or product
 
         ## Example Usage
 
@@ -354,13 +354,13 @@ class Project(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] created_time: 日志项目创建时间。
-        :param pulumi.Input[builtins.str] description: 日志项目的简单描述。
-        :param pulumi.Input[builtins.str] iam_project_name: 日志项目所属的 IAM 项目。
-        :param pulumi.Input[builtins.str] inner_net_domain: 私网连接域名。
-        :param pulumi.Input[builtins.str] project_id: 日志项目的 ID。
-        :param pulumi.Input[builtins.str] project_name: 日志项目名称。
-        :param pulumi.Input[builtins.int] topic_count: 当前日志项目下的日志主题数量。
+        :param pulumi.Input[builtins.str] created_time: Log project creation time
+        :param pulumi.Input[builtins.str] description: Brief description of the log project
+        :param pulumi.Input[builtins.str] iam_project_name: The IAM project associated with the log project
+        :param pulumi.Input[builtins.str] inner_net_domain: Private network connection domain name
+        :param pulumi.Input[builtins.str] project_id: Log project ID
+        :param pulumi.Input[builtins.str] project_name: Log project name
+        :param pulumi.Input[builtins.int] topic_count: Number of log topics in the current log project
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -380,7 +380,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        日志项目创建时间。
+        Log project creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -388,7 +388,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        日志项目的简单描述。
+        Brief description of the log project
         """
         return pulumi.get(self, "description")
 
@@ -396,7 +396,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter(name="iamProjectName")
     def iam_project_name(self) -> pulumi.Output[builtins.str]:
         """
-        日志项目所属的 IAM 项目。
+        The IAM project associated with the log project
         """
         return pulumi.get(self, "iam_project_name")
 
@@ -404,7 +404,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter(name="innerNetDomain")
     def inner_net_domain(self) -> pulumi.Output[builtins.str]:
         """
-        私网连接域名。
+        Private network connection domain name
         """
         return pulumi.get(self, "inner_net_domain")
 
@@ -412,7 +412,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter(name="projectId")
     def project_id(self) -> pulumi.Output[builtins.str]:
         """
-        日志项目的 ID。
+        Log project ID
         """
         return pulumi.get(self, "project_id")
 
@@ -420,7 +420,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        日志项目名称。
+        Log project name
         """
         return pulumi.get(self, "project_name")
 
@@ -433,7 +433,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter(name="topicCount")
     def topic_count(self) -> pulumi.Output[builtins.int]:
         """
-        当前日志项目下的日志主题数量。
+        Number of log topics in the current log project
         """
         return pulumi.get(self, "topic_count")
 

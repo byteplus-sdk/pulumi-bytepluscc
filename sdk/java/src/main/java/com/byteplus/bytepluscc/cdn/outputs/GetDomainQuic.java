@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainQuic {
     /**
-     * @return QUIC 配置开关。该参数有以下取值：true：表示启用 QUIC。false：表示禁用 QUIC。要启用 QUIC，您必须先启用 HTTPS。
+     * @return QUIC configuration switch. The parameter values are as follows: true: enables QUIC. false: disables QUIC. To enable QUIC, you must first enable HTTPS.
      * 
      */
     private Boolean switch_;
 
     private GetDomainQuic() {}
     /**
-     * @return QUIC 配置开关。该参数有以下取值：true：表示启用 QUIC。false：表示禁用 QUIC。要启用 QUIC，您必须先启用 HTTPS。
+     * @return QUIC configuration switch. The parameter values are as follows: true: enables QUIC. false: disables QUIC. To enable QUIC, you must first enable HTTPS.
      * 
      */
     public Boolean switch_() {

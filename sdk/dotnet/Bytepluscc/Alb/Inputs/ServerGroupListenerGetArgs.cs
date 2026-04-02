@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Inputs
     public sealed class ServerGroupListenerGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 监听器的ID。
+        /// Listener ID.
         /// </summary>
         [Input("listenerId")]
         public Input<string>? ListenerId { get; set; }

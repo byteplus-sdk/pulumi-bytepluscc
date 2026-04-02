@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 转发规则用于将指定域名和URL的请求引流至指定的后端服务器组。
+ * The forwarding rule directs requests for specified domain names and URLs to the designated backend server group.
  *
  * ## Example Usage
  *
@@ -64,36 +64,36 @@ export class Rule extends pulumi.CustomResource {
     }
 
     /**
-     * 转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。
+     * Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
      */
     public readonly actionType!: pulumi.Output<string>;
     /**
-     * 转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+     * Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 转发规则的域名。
+     * Domain name of the forwarding rule.
      */
     public readonly domain!: pulumi.Output<string>;
     /**
-     * 监听器ID。
+     * Listener ID.
      */
     public readonly listenerId!: pulumi.Output<string>;
     /**
-     * 重定向相关配置信息。
+     * Redirection-related configuration information.
      */
     public readonly redirectConfig!: pulumi.Output<outputs.clb.RuleRedirectConfig>;
     /**
-     * 转发规则ID。
+     * Forwarding rule ID.
      */
     public /*out*/ readonly ruleId!: pulumi.Output<string>;
     /**
-     * 转发规则关联的后端服务器组的ID。
+     * ID of the backend server group associated with the forwarding rule.
      */
     public readonly serverGroupId!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.clb.RuleTag[]>;
     /**
-     * 转发规则的URL。
+     * URL of the forwarding rule.
      */
     public readonly url!: pulumi.Output<string>;
 
@@ -144,36 +144,36 @@ export class Rule extends pulumi.CustomResource {
  */
 export interface RuleState {
     /**
-     * 转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。
+     * Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
      */
     actionType?: pulumi.Input<string>;
     /**
-     * 转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+     * Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
      */
     description?: pulumi.Input<string>;
     /**
-     * 转发规则的域名。
+     * Domain name of the forwarding rule.
      */
     domain?: pulumi.Input<string>;
     /**
-     * 监听器ID。
+     * Listener ID.
      */
     listenerId?: pulumi.Input<string>;
     /**
-     * 重定向相关配置信息。
+     * Redirection-related configuration information.
      */
     redirectConfig?: pulumi.Input<inputs.clb.RuleRedirectConfig>;
     /**
-     * 转发规则ID。
+     * Forwarding rule ID.
      */
     ruleId?: pulumi.Input<string>;
     /**
-     * 转发规则关联的后端服务器组的ID。
+     * ID of the backend server group associated with the forwarding rule.
      */
     serverGroupId?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.clb.RuleTag>[]>;
     /**
-     * 转发规则的URL。
+     * URL of the forwarding rule.
      */
     url?: pulumi.Input<string>;
 }
@@ -183,32 +183,32 @@ export interface RuleState {
  */
 export interface RuleArgs {
     /**
-     * 转发规则的转发动作。取值如下：Forward：转发至。Redirect：重定向至。
+     * Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
      */
     actionType?: pulumi.Input<string>;
     /**
-     * 转发规则的描述，默认值为空字符串。规范如下：必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+     * Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
      */
     description?: pulumi.Input<string>;
     /**
-     * 转发规则的域名。
+     * Domain name of the forwarding rule.
      */
     domain?: pulumi.Input<string>;
     /**
-     * 监听器ID。
+     * Listener ID.
      */
     listenerId: pulumi.Input<string>;
     /**
-     * 重定向相关配置信息。
+     * Redirection-related configuration information.
      */
     redirectConfig?: pulumi.Input<inputs.clb.RuleRedirectConfig>;
     /**
-     * 转发规则关联的后端服务器组的ID。
+     * ID of the backend server group associated with the forwarding rule.
      */
     serverGroupId?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.clb.RuleTag>[]>;
     /**
-     * 转发规则的URL。
+     * URL of the forwarding rule.
      */
     url?: pulumi.Input<string>;
 }

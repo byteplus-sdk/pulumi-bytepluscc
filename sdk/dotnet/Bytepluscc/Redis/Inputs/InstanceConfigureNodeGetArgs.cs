@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis.Inputs
     public sealed class InstanceConfigureNodeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 每个节点所属的可用区。
+        /// The availability zone each node belongs to.
         /// </summary>
         [Input("az")]
         public Input<string>? Az { get; set; }

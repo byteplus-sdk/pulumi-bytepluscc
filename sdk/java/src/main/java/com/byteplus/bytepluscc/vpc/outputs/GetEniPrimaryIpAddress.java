@@ -13,38 +13,38 @@ import java.util.Objects;
 @CustomType
 public final class GetEniPrimaryIpAddress {
     /**
-     * @return 网卡主私网IPv4关联的公网IP的信息。
+     * @return Information about the public IP associated with the primary private IPv4 address of the network interface.
      * 
      */
     private GetEniPrimaryIpAddressAssociatedElasticIp associatedElasticIp;
     /**
-     * @return 是否为主私网IPv4地址。
+     * @return Indicates whether this is the primary private IPv4 address.
      * 
      */
     private Boolean primary;
     /**
-     * @return 网卡的私网IP地址。
+     * @return Private IP address of the network interface.
      * 
      */
     private String privateIpAddress;
 
     private GetEniPrimaryIpAddress() {}
     /**
-     * @return 网卡主私网IPv4关联的公网IP的信息。
+     * @return Information about the public IP associated with the primary private IPv4 address of the network interface.
      * 
      */
     public GetEniPrimaryIpAddressAssociatedElasticIp associatedElasticIp() {
         return this.associatedElasticIp;
     }
     /**
-     * @return 是否为主私网IPv4地址。
+     * @return Indicates whether this is the primary private IPv4 address.
      * 
      */
     public Boolean primary() {
         return this.primary;
     }
     /**
-     * @return 网卡的私网IP地址。
+     * @return Private IP address of the network interface.
      * 
      */
     public String privateIpAddress() {

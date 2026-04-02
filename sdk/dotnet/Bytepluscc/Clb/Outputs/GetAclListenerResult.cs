@@ -15,23 +15,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb.Outputs
     public sealed class GetAclListenerResult
     {
         /// <summary>
-        /// 监听器对本访问控制策略组的控制方式。white：白名单。监听器监听CLB的流量时，CLB仅转发其白名单关联访问控制策略组中IP地址的请求。black：黑名单。监听器监听CLB的流量时，对于黑名单关联访问控制策略组中IP地址的请求，CLB拒绝转发。
+        /// Listener control mode for this access control policy group. white: allowlist. When the listener monitors CLB traffic, CLB only forwards requests from IP addresses associated with the allowlist access control policy group. black: denylist. When the listener monitors CLB traffic, CLB rejects requests from IP addresses associated with the denylist access control policy group.
         /// </summary>
         public readonly string AclType;
         /// <summary>
-        /// 监听器的ID。
+        /// Listener ID
         /// </summary>
         public readonly string ListenerId;
         /// <summary>
-        /// 监听器的名称。
+        /// Listener name
         /// </summary>
         public readonly string ListenerName;
         /// <summary>
-        /// 监听器的端口。
+        /// Listener port
         /// </summary>
         public readonly int Port;
         /// <summary>
-        /// 监听器的协议。包括 TCP、UDP、HTTP、HTTPS。
+        /// Listener protocol. Includes TCP, UDP, HTTP, HTTPS.
         /// </summary>
         public readonly string Protocol;
 

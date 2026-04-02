@@ -14,31 +14,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp.Inputs
     public sealed class WorkspaceQuotaGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 最大活跃时序数。整数形式，默认取值范围为 1～50000000。
+        /// Maximum active time series count. Integer, default range is 1–50000000
         /// </summary>
         [Input("activeSeries")]
         public Input<int>? ActiveSeries { get; set; }
 
         /// <summary>
-        /// 指标摄入速率，即最大每秒写入样本数。整数形式，默认取值范围为 1～5000000。
+        /// Metric ingestion rate, i.e., maximum samples written per second. Integer, default range is 1–5000000
         /// </summary>
         [Input("ingestSamplesPerSecond")]
         public Input<int>? IngestSamplesPerSecond { get; set; }
 
         /// <summary>
-        /// 最大查询 QPS。整数形式，默认取值范围为 1～500。
+        /// Workspace public Query bandwidth (Mbps).
+        /// </summary>
+        [Input("publicQueryBandwidth")]
+        public Input<int>? PublicQueryBandwidth { get; set; }
+
+        /// <summary>
+        /// Workspace public RemoteWrite bandwidth (Mbps).
+        /// </summary>
+        [Input("publicWriteBandwidth")]
+        public Input<int>? PublicWriteBandwidth { get; set; }
+
+        /// <summary>
+        /// Maximum query QPS. Integer, default range is 1–500
         /// </summary>
         [Input("queryPerSecond")]
         public Input<int>? QueryPerSecond { get; set; }
 
         /// <summary>
-        /// 最大每秒扫描样本数。整数形式，默认取值范围为 1～1000000000。
+        /// Maximum samples scanned per second. Integer, default range is 1–1000000000
         /// </summary>
         [Input("scanSamplesPerSecond")]
         public Input<int>? ScanSamplesPerSecond { get; set; }
 
         /// <summary>
-        /// 最大每秒扫描时序数。整数形式，默认取值范围为 1～200000。
+        /// Maximum time series scanned per second. Integer, default range is 1–200000
         /// </summary>
         [Input("scanSeriesPerSecond")]
         public Input<int>? ScanSeriesPerSecond { get; set; }

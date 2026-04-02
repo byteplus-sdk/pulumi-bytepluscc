@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Inputs
     public sealed class RuleForwardGroupConfigServerGroupTupleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 转发到的目的服务器组 ID。
+        /// Destination server group ID.
         /// </summary>
         [Input("serverGroupId")]
         public Input<string>? ServerGroupId { get; set; }
 
         /// <summary>
-        /// 服务器组权重。
+        /// Server group weight.
         /// </summary>
         [Input("weight")]
         public Input<int>? Weight { get; set; }

@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ClusterClusterConfigApiServerPublicAccessConfig {
     /**
-     * @return 公网访问网络配置。ApiServerPublicAccessEnable=true时才返回的参数。
+     * @return Public access network configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
      * 
      */
     private @Nullable ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig publicAccessNetworkConfig;
 
     private ClusterClusterConfigApiServerPublicAccessConfig() {}
     /**
-     * @return 公网访问网络配置。ApiServerPublicAccessEnable=true时才返回的参数。
+     * @return Public access network configuration. This parameter is returned only when ApiServerPublicAccessEnable=true
      * 
      */
     public Optional<ClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig> publicAccessNetworkConfig() {

@@ -17,14 +17,14 @@ public final class InstanceResourcesStorageArgs extends com.pulumi.resources.Res
     public static final InstanceResourcesStorageArgs Empty = new InstanceResourcesStorageArgs();
 
     /**
-     * 资源大小。
+     * Resource size
      * 
      */
     @Import(name="size")
     private @Nullable Output<Integer> size;
 
     /**
-     * @return 资源大小。
+     * @return Resource size
      * 
      */
     public Optional<Output<Integer>> size() {
@@ -32,14 +32,14 @@ public final class InstanceResourcesStorageArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 资源单位。
+     * Resource unit
      * 
      */
     @Import(name="unit")
     private @Nullable Output<String> unit;
 
     /**
-     * @return 资源单位。
+     * @return Resource unit
      * 
      */
     public Optional<Output<String>> unit() {
@@ -72,7 +72,7 @@ public final class InstanceResourcesStorageArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param size 资源大小。
+         * @param size Resource size
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class InstanceResourcesStorageArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param size 资源大小。
+         * @param size Resource size
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class InstanceResourcesStorageArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param unit 资源单位。
+         * @param unit Resource unit
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class InstanceResourcesStorageArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param unit 资源单位。
+         * @param unit Resource unit
          * 
          * @return builder
          * 

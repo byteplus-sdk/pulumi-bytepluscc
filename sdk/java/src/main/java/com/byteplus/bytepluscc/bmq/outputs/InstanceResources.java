@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceResources {
     /**
-     * @return 资源统计响应数据。
+     * @return Resource statistics response data
      * 
      */
     private @Nullable InstanceResourcesStorage storage;
 
     private InstanceResources() {}
     /**
-     * @return 资源统计响应数据。
+     * @return Resource statistics response data
      * 
      */
     public Optional<InstanceResourcesStorage> storage() {

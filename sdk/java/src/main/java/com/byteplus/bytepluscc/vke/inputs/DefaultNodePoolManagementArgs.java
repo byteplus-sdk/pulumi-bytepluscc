@@ -17,14 +17,14 @@ public final class DefaultNodePoolManagementArgs extends com.pulumi.resources.Re
     public static final DefaultNodePoolManagementArgs Empty = new DefaultNodePoolManagementArgs();
 
     /**
-     * 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+     * Whether managed mode is enabled for the node pool. Values:   - true: enabled   - false: disabled
      * 
      */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
     /**
-     * @return 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+     * @return Whether managed mode is enabled for the node pool. Values:   - true: enabled   - false: disabled
      * 
      */
     public Optional<Output<Boolean>> enabled() {
@@ -32,14 +32,14 @@ public final class DefaultNodePoolManagementArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 检查自愈配置。
+     * Check self-healing configuration.
      * 
      */
     @Import(name="remedyConfig")
     private @Nullable Output<DefaultNodePoolManagementRemedyConfigArgs> remedyConfig;
 
     /**
-     * @return 检查自愈配置。
+     * @return Check self-healing configuration.
      * 
      */
     public Optional<Output<DefaultNodePoolManagementRemedyConfigArgs>> remedyConfig() {
@@ -72,7 +72,7 @@ public final class DefaultNodePoolManagementArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param enabled 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+         * @param enabled Whether managed mode is enabled for the node pool. Values:   - true: enabled   - false: disabled
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class DefaultNodePoolManagementArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param enabled 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+         * @param enabled Whether managed mode is enabled for the node pool. Values:   - true: enabled   - false: disabled
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class DefaultNodePoolManagementArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param remedyConfig 检查自愈配置。
+         * @param remedyConfig Check self-healing configuration.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class DefaultNodePoolManagementArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param remedyConfig 检查自愈配置。
+         * @param remedyConfig Check self-healing configuration.
          * 
          * @return builder
          * 

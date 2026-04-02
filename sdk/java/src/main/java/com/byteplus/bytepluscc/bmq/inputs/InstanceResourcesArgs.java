@@ -16,14 +16,14 @@ public final class InstanceResourcesArgs extends com.pulumi.resources.ResourceAr
     public static final InstanceResourcesArgs Empty = new InstanceResourcesArgs();
 
     /**
-     * 资源统计响应数据。
+     * Resource statistics response data
      * 
      */
     @Import(name="storage")
     private @Nullable Output<InstanceResourcesStorageArgs> storage;
 
     /**
-     * @return 资源统计响应数据。
+     * @return Resource statistics response data
      * 
      */
     public Optional<Output<InstanceResourcesStorageArgs>> storage() {
@@ -55,7 +55,7 @@ public final class InstanceResourcesArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param storage 资源统计响应数据。
+         * @param storage Resource statistics response data
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class InstanceResourcesArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param storage 资源统计响应数据。
+         * @param storage Resource statistics response data
          * 
          * @return builder
          * 

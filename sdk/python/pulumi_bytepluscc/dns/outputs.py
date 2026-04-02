@@ -26,8 +26,8 @@ class ZoneTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签的键。
-        :param builtins.str value: 标签的值。
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -38,7 +38,7 @@ class ZoneTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签的键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -46,7 +46,7 @@ class ZoneTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签的值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 
@@ -57,8 +57,8 @@ class GetZoneTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签的键。
-        :param builtins.str value: 标签的值。
+        :param builtins.str key: Tag key
+        :param builtins.str value: Tag value.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -67,7 +67,7 @@ class GetZoneTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签的键。
+        Tag key
         """
         return pulumi.get(self, "key")
 
@@ -75,7 +75,7 @@ class GetZoneTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签的值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 

@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GatewayServiceAuthSpec {
     /**
-     * @return 是否开启认证。
+     * @return Whether authentication is enabled.
      * 
      */
     private @Nullable Boolean enable;
 
     private GatewayServiceAuthSpec() {}
     /**
-     * @return 是否开启认证。
+     * @return Whether authentication is enabled.
      * 
      */
     public Optional<Boolean> enable() {

@@ -15,50 +15,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GatewayTraceSpec {
     /**
-     * @return 应用性能监控全链路版链路追踪配置。
+     * @return Application performance monitoring full-link trace configuration
      * 
      */
     private @Nullable GatewayTraceSpecApmTraceSpec apmTraceSpec;
     /**
-     * @return 是否启用链路追踪。
+     * @return Whether to enable trace
      * 
      */
     private @Nullable Boolean enable;
     /**
-     * @return 链路追踪配置信息。
+     * @return Link tracing configuration information.
      * 
      */
     private @Nullable GatewayTraceSpecTlsTraceSpec tlsTraceSpec;
     /**
-     * @return 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+     * @return Link tracing type. Possible values: tls: Log Service. apm: Application Performance Monitoring (APM) end-to-end version.
      * 
      */
     private @Nullable String traceType;
 
     private GatewayTraceSpec() {}
     /**
-     * @return 应用性能监控全链路版链路追踪配置。
+     * @return Application performance monitoring full-link trace configuration
      * 
      */
     public Optional<GatewayTraceSpecApmTraceSpec> apmTraceSpec() {
         return Optional.ofNullable(this.apmTraceSpec);
     }
     /**
-     * @return 是否启用链路追踪。
+     * @return Whether to enable trace
      * 
      */
     public Optional<Boolean> enable() {
         return Optional.ofNullable(this.enable);
     }
     /**
-     * @return 链路追踪配置信息。
+     * @return Link tracing configuration information.
      * 
      */
     public Optional<GatewayTraceSpecTlsTraceSpec> tlsTraceSpec() {
         return Optional.ofNullable(this.tlsTraceSpec);
     }
     /**
-     * @return 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+     * @return Link tracing type. Possible values: tls: Log Service. apm: Application Performance Monitoring (APM) end-to-end version.
      * 
      */
     public Optional<String> traceType() {

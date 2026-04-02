@@ -17,14 +17,14 @@ public final class DomainSignedUrlAuthSignedUrlAuthRuleArgs extends com.pulumi.r
     public static final DomainSignedUrlAuthSignedUrlAuthRuleArgs Empty = new DomainSignedUrlAuthSignedUrlAuthRuleArgs();
 
     /**
-     * 表示该配置模块的生效条件，由一组规则组成。
+     * Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<DomainSignedUrlAuthSignedUrlAuthRuleConditionArgs> condition;
 
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public Optional<Output<DomainSignedUrlAuthSignedUrlAuthRuleConditionArgs>> condition() {
@@ -32,14 +32,14 @@ public final class DomainSignedUrlAuthSignedUrlAuthRuleArgs extends com.pulumi.r
     }
 
     /**
-     * 表示签名计算的配置。
+     * Indicates the configuration for signature calculation.
      * 
      */
     @Import(name="signedUrlAuthAction")
     private @Nullable Output<DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionArgs> signedUrlAuthAction;
 
     /**
-     * @return 表示签名计算的配置。
+     * @return Indicates the configuration for signature calculation.
      * 
      */
     public Optional<Output<DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionArgs>> signedUrlAuthAction() {
@@ -72,7 +72,7 @@ public final class DomainSignedUrlAuthSignedUrlAuthRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param condition 表示该配置模块的生效条件，由一组规则组成。
+         * @param condition Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class DomainSignedUrlAuthSignedUrlAuthRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param condition 表示该配置模块的生效条件，由一组规则组成。
+         * @param condition Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class DomainSignedUrlAuthSignedUrlAuthRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param signedUrlAuthAction 表示签名计算的配置。
+         * @param signedUrlAuthAction Indicates the configuration for signature calculation.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class DomainSignedUrlAuthSignedUrlAuthRuleArgs extends com.pulumi.r
         }
 
         /**
-         * @param signedUrlAuthAction 表示签名计算的配置。
+         * @param signedUrlAuthAction Indicates the configuration for signature calculation.
          * 
          * @return builder
          * 

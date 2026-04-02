@@ -14,7 +14,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * 当私有网络内有多台云服务器实例需要访问公网时，为了节省公网IP且避免在公网上直接暴露云服务器IP，您可以使用公网NAT网关的SNAT规则，安全、便捷、高效地访问公网。SNAT规则支持私有网络、子网、云服务器、自定义网段等四种粒度，您可根据业务需求灵活配置。
+ * When multiple cloud server instances in a private network need to access the public network, you can use SNAT rules of the public NAT gateway to save public IPs and avoid exposing cloud server IPs directly to the public network for secure, convenient, and efficient access. SNAT rules support four granularities: private network, subnet, cloud server, and custom network segment. Configure flexibly based on your business needs.
  * 
  * ## Example Usage
  * 
@@ -44,7 +44,7 @@ import javax.annotation.Nullable;
  *         var natGatewaySnatentryDemo = new Snatentry("natGatewaySnatentryDemo", SnatentryArgs.builder()
  *             .natGatewayId("ngw-2pc28yhdpbx8g227qo1xxxxx")
  *             .eipId("eip-iivdtssgbdog74o8cuxxxxx,eip-btbv1pk36g3k5h0b2vxxxxx")
- *             .snatEntryName("私有网络")
+ *             .snatEntryName("test")
  *             .sourceCidr("0.0.0.0/0")
  *             .build());
  * 
@@ -64,126 +64,126 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:natgateway/snatentry:Snatentry")
 public class Snatentry extends com.pulumi.resources.CustomResource {
     /**
-     * SNAT规则关联的公网IP的IP地址。返回单个公网IP的IP地址。 返回多个公网IP的IP地址。
+     * IP address of the public IP associated with the SNAT rule. Returns the IP address for a single public IP. Returns IP addresses for multiple public IPs.
      * 
      */
     @Export(name="eipAddress", refs={String.class}, tree="[0]")
     private Output<String> eipAddress;
 
     /**
-     * @return SNAT规则关联的公网IP的IP地址。返回单个公网IP的IP地址。 返回多个公网IP的IP地址。
+     * @return IP address of the public IP associated with the SNAT rule. Returns the IP address for a single public IP. Returns IP addresses for multiple public IPs.
      * 
      */
     public Output<String> eipAddress() {
         return this.eipAddress;
     }
     /**
-     * SNAT规则关联的公网IP的ID。返回单个公网IP的ID。 返回多个公网IP的ID。
+     * ID of the public IP associated with the SNAT rule. Returns the ID for a single public IP. Returns IDs for multiple public IPs.
      * 
      */
     @Export(name="eipId", refs={String.class}, tree="[0]")
     private Output<String> eipId;
 
     /**
-     * @return SNAT规则关联的公网IP的ID。返回单个公网IP的ID。 返回多个公网IP的ID。
+     * @return ID of the public IP associated with the SNAT rule. Returns the ID for a single public IP. Returns IDs for multiple public IPs.
      * 
      */
     public Output<String> eipId() {
         return this.eipId;
     }
     /**
-     * SNAT规则所属NAT网关的ID。
+     * ID of the NAT gateway associated with the SNAT rule
      * 
      */
     @Export(name="natGatewayId", refs={String.class}, tree="[0]")
     private Output<String> natGatewayId;
 
     /**
-     * @return SNAT规则所属NAT网关的ID。
+     * @return ID of the NAT gateway associated with the SNAT rule
      * 
      */
     public Output<String> natGatewayId() {
         return this.natGatewayId;
     }
     /**
-     * 私网NAT网关的中转IP的ID。
+     * ID of the transit IP for the private NAT gateway
      * 
      */
     @Export(name="natIpId", refs={String.class}, tree="[0]")
     private Output<String> natIpId;
 
     /**
-     * @return 私网NAT网关的中转IP的ID。
+     * @return ID of the transit IP for the private NAT gateway
      * 
      */
     public Output<String> natIpId() {
         return this.natIpId;
     }
     /**
-     * SNAT规则的ID。
+     * ID of the SNAT rule
      * 
      */
     @Export(name="snatEntryId", refs={String.class}, tree="[0]")
     private Output<String> snatEntryId;
 
     /**
-     * @return SNAT规则的ID。
+     * @return ID of the SNAT rule
      * 
      */
     public Output<String> snatEntryId() {
         return this.snatEntryId;
     }
     /**
-     * SNAT规则的名称。
+     * Name of the SNAT rule
      * 
      */
     @Export(name="snatEntryName", refs={String.class}, tree="[0]")
     private Output<String> snatEntryName;
 
     /**
-     * @return SNAT规则的名称。
+     * @return Name of the SNAT rule
      * 
      */
     public Output<String> snatEntryName() {
         return this.snatEntryName;
     }
     /**
-     * SNAT规则对应的网段。
+     * Network segment corresponding to the SNAT rule
      * 
      */
     @Export(name="sourceCidr", refs={String.class}, tree="[0]")
     private Output<String> sourceCidr;
 
     /**
-     * @return SNAT规则对应的网段。
+     * @return Network segment corresponding to the SNAT rule
      * 
      */
     public Output<String> sourceCidr() {
         return this.sourceCidr;
     }
     /**
-     * SNAT规则的状态。Creating：创建中。Deleting：删除中。Available：可用。
+     * Status of the SNAT rule. Creating: being created. Deleting: being deleted. Available: available.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return SNAT规则的状态。Creating：创建中。Deleting：删除中。Available：可用。
+     * @return Status of the SNAT rule. Creating: being created. Deleting: being deleted. Available: available.
      * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
-     * SNAT规则关联子网的ID。
+     * ID of the subnet associated with the SNAT rule
      * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
-     * @return SNAT规则关联子网的ID。
+     * @return ID of the subnet associated with the SNAT rule
      * 
      */
     public Output<String> subnetId() {

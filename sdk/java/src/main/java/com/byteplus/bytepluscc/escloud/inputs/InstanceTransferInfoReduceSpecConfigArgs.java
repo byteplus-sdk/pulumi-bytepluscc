@@ -17,14 +17,14 @@ public final class InstanceTransferInfoReduceSpecConfigArgs extends com.pulumi.r
     public static final InstanceTransferInfoReduceSpecConfigArgs Empty = new InstanceTransferInfoReduceSpecConfigArgs();
 
     /**
-     * 冷节点数量。
+     * Number of cold nodes.
      * 
      */
     @Import(name="coldNodeNum")
     private @Nullable Output<Integer> coldNodeNum;
 
     /**
-     * @return 冷节点数量。
+     * @return Number of cold nodes.
      * 
      */
     public Optional<Output<Integer>> coldNodeNum() {
@@ -32,14 +32,14 @@ public final class InstanceTransferInfoReduceSpecConfigArgs extends com.pulumi.r
     }
 
     /**
-     * 数据节点数量。
+     * Number of data nodes
      * 
      */
     @Import(name="dataNodeNum")
     private @Nullable Output<Integer> dataNodeNum;
 
     /**
-     * @return 数据节点数量。
+     * @return Number of data nodes
      * 
      */
     public Optional<Output<Integer>> dataNodeNum() {
@@ -47,14 +47,14 @@ public final class InstanceTransferInfoReduceSpecConfigArgs extends com.pulumi.r
     }
 
     /**
-     * Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即用 Hot 来声明。
+     * Whether the master node is independent. true: Master node is independent. false: Master node overlaps with data node, declared as Hot
      * 
      */
     @Import(name="enablePureMaster")
     private @Nullable Output<Boolean> enablePureMaster;
 
     /**
-     * @return Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即用 Hot 来声明。
+     * @return Whether the master node is independent. true: Master node is independent. false: Master node overlaps with data node, declared as Hot
      * 
      */
     public Optional<Output<Boolean>> enablePureMaster() {
@@ -62,14 +62,14 @@ public final class InstanceTransferInfoReduceSpecConfigArgs extends com.pulumi.r
     }
 
     /**
-     * Master 节点数量。
+     * Number of master nodes.
      * 
      */
     @Import(name="masterNodeNum")
     private @Nullable Output<Integer> masterNodeNum;
 
     /**
-     * @return Master 节点数量。
+     * @return Number of master nodes.
      * 
      */
     public Optional<Output<Integer>> masterNodeNum() {
@@ -77,14 +77,14 @@ public final class InstanceTransferInfoReduceSpecConfigArgs extends com.pulumi.r
     }
 
     /**
-     * 温节点数量。
+     * Number of warm nodes
      * 
      */
     @Import(name="warmNodeNum")
     private @Nullable Output<Integer> warmNodeNum;
 
     /**
-     * @return 温节点数量。
+     * @return Number of warm nodes
      * 
      */
     public Optional<Output<Integer>> warmNodeNum() {
@@ -120,7 +120,7 @@ public final class InstanceTransferInfoReduceSpecConfigArgs extends com.pulumi.r
         }
 
         /**
-         * @param coldNodeNum 冷节点数量。
+         * @param coldNodeNum Number of cold nodes.
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class InstanceTransferInfoReduceSpecConfigArgs extends com.pulumi.r
         }
 
         /**
-         * @param coldNodeNum 冷节点数量。
+         * @param coldNodeNum Number of cold nodes.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class InstanceTransferInfoReduceSpecConfigArgs extends com.pulumi.r
         }
 
         /**
-         * @param dataNodeNum 数据节点数量。
+         * @param dataNodeNum Number of data nodes
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class InstanceTransferInfoReduceSpecConfigArgs extends com.pulumi.r
         }
 
         /**
-         * @param dataNodeNum 数据节点数量。
+         * @param dataNodeNum Number of data nodes
          * 
          * @return builder
          * 
@@ -162,7 +162,7 @@ public final class InstanceTransferInfoReduceSpecConfigArgs extends com.pulumi.r
         }
 
         /**
-         * @param enablePureMaster Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即用 Hot 来声明。
+         * @param enablePureMaster Whether the master node is independent. true: Master node is independent. false: Master node overlaps with data node, declared as Hot
          * 
          * @return builder
          * 
@@ -173,7 +173,7 @@ public final class InstanceTransferInfoReduceSpecConfigArgs extends com.pulumi.r
         }
 
         /**
-         * @param enablePureMaster Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即用 Hot 来声明。
+         * @param enablePureMaster Whether the master node is independent. true: Master node is independent. false: Master node overlaps with data node, declared as Hot
          * 
          * @return builder
          * 
@@ -183,7 +183,7 @@ public final class InstanceTransferInfoReduceSpecConfigArgs extends com.pulumi.r
         }
 
         /**
-         * @param masterNodeNum Master 节点数量。
+         * @param masterNodeNum Number of master nodes.
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class InstanceTransferInfoReduceSpecConfigArgs extends com.pulumi.r
         }
 
         /**
-         * @param masterNodeNum Master 节点数量。
+         * @param masterNodeNum Number of master nodes.
          * 
          * @return builder
          * 
@@ -204,7 +204,7 @@ public final class InstanceTransferInfoReduceSpecConfigArgs extends com.pulumi.r
         }
 
         /**
-         * @param warmNodeNum 温节点数量。
+         * @param warmNodeNum Number of warm nodes
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class InstanceTransferInfoReduceSpecConfigArgs extends com.pulumi.r
         }
 
         /**
-         * @param warmNodeNum 温节点数量。
+         * @param warmNodeNum Number of warm nodes
          * 
          * @return builder
          * 

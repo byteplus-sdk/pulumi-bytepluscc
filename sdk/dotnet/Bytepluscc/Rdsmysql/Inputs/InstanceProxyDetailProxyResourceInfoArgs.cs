@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Inputs
     public sealed class InstanceProxyDetailProxyResourceInfoArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 实例数据库代理服务当前的核数。
+        /// Current number of cores for the instance database proxy service
         /// </summary>
         [Input("currentProxyCpuNum")]
         public Input<int>? CurrentProxyCpuNum { get; set; }
 
         /// <summary>
-        /// 用户可为数据库代理服务配置的最多核数。
+        /// Maximum number of cores configurable for database proxy service.
         /// </summary>
         [Input("maxProxyCpuNum")]
         public Input<int>? MaxProxyCpuNum { get; set; }
 
         /// <summary>
-        /// 用户可为数据库代理服务配置的最少核数。
+        /// Minimum number of CPU cores configurable for the database proxy service
         /// </summary>
         [Input("minProxyCpuNum")]
         public Input<int>? MinProxyCpuNum { get; set; }

@@ -16,14 +16,14 @@ public final class NodePoolNodeConfigSecurityLoginArgs extends com.pulumi.resour
     public static final NodePoolNodeConfigSecurityLoginArgs Empty = new NodePoolNodeConfigSecurityLoginArgs();
 
     /**
-     * Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! {@literal @} # $ % ^ &amp; * _   - + = | { } [ ] : ; &#39; &lt; &gt; , . ? /
+     * Root user login password in Base64 encoding. Follow the cloud server&#39;s requirements for instance passwords: 8–30 characters in length, must not start with / or $6$, supports the following character types and must include at least three types: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! {@literal @} # $ % ^ &amp; * _   - + = | { } [ ] : ; &#39; &lt; &gt; , . ? /
      * 
      */
     @Import(name="password")
     private @Nullable Output<String> password;
 
     /**
-     * @return Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! {@literal @} # $ % ^ &amp; * _   - + = | { } [ ] : ; &#39; &lt; &gt; , . ? /
+     * @return Root user login password in Base64 encoding. Follow the cloud server&#39;s requirements for instance passwords: 8–30 characters in length, must not start with / or $6$, supports the following character types and must include at least three types: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! {@literal @} # $ % ^ &amp; * _   - + = | { } [ ] : ; &#39; &lt; &gt; , . ? /
      * 
      */
     public Optional<Output<String>> password() {
@@ -31,14 +31,14 @@ public final class NodePoolNodeConfigSecurityLoginArgs extends com.pulumi.resour
     }
 
     /**
-     * SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+     * SSH key pair name. Ensure the key pair is already created or hosted in the cloud server
      * 
      */
     @Import(name="sshKeyPairName")
     private @Nullable Output<String> sshKeyPairName;
 
     /**
-     * @return SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+     * @return SSH key pair name. Ensure the key pair is already created or hosted in the cloud server
      * 
      */
     public Optional<Output<String>> sshKeyPairName() {
@@ -46,14 +46,14 @@ public final class NodePoolNodeConfigSecurityLoginArgs extends com.pulumi.resour
     }
 
     /**
-     * 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+     * Node access login method. Parameter values: Password: password login; SshKeyPair: SSH key pair login
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+     * @return Node access login method. Parameter values: Password: password login; SshKeyPair: SSH key pair login
      * 
      */
     public Optional<Output<String>> type() {
@@ -87,7 +87,7 @@ public final class NodePoolNodeConfigSecurityLoginArgs extends com.pulumi.resour
         }
 
         /**
-         * @param password Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! {@literal @} # $ % ^ &amp; * _   - + = | { } [ ] : ; &#39; &lt; &gt; , . ? /
+         * @param password Root user login password in Base64 encoding. Follow the cloud server&#39;s requirements for instance passwords: 8–30 characters in length, must not start with / or $6$, supports the following character types and must include at least three types: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! {@literal @} # $ % ^ &amp; * _   - + = | { } [ ] : ; &#39; &lt; &gt; , . ? /
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class NodePoolNodeConfigSecurityLoginArgs extends com.pulumi.resour
         }
 
         /**
-         * @param password Root 用户登录密码，使用 Base64 编码格式。请遵循云服务器对于实例密码的要求规范：长度为 8～30 个字符，不能以/和$6$开头，支持以下几项字符，且至少包含三项，小写字母a~z，大写字母A~Z，数字0~9，特殊字符( ) ` ~ ! {@literal @} # $ % ^ &amp; * _   - + = | { } [ ] : ; &#39; &lt; &gt; , . ? /
+         * @param password Root user login password in Base64 encoding. Follow the cloud server&#39;s requirements for instance passwords: 8–30 characters in length, must not start with / or $6$, supports the following character types and must include at least three types: lowercase letters a–z, uppercase letters A–Z, numbers 0–9, special characters ( ) ` ~ ! {@literal @} # $ % ^ &amp; * _   - + = | { } [ ] : ; &#39; &lt; &gt; , . ? /
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class NodePoolNodeConfigSecurityLoginArgs extends com.pulumi.resour
         }
 
         /**
-         * @param sshKeyPairName SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+         * @param sshKeyPairName SSH key pair name. Ensure the key pair is already created or hosted in the cloud server
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class NodePoolNodeConfigSecurityLoginArgs extends com.pulumi.resour
         }
 
         /**
-         * @param sshKeyPairName SSH 密钥对名称。请确保该密钥对已在云服务器中创建或托管。
+         * @param sshKeyPairName SSH key pair name. Ensure the key pair is already created or hosted in the cloud server
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class NodePoolNodeConfigSecurityLoginArgs extends com.pulumi.resour
         }
 
         /**
-         * @param type 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+         * @param type Node access login method. Parameter values: Password: password login; SshKeyPair: SSH key pair login
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class NodePoolNodeConfigSecurityLoginArgs extends com.pulumi.resour
         }
 
         /**
-         * @param type 节点的访问登录方式，参数值说明：Password：密码登录。SshKeyPair：SSH 密钥对登录。
+         * @param type Node access login method. Parameter values: Password: password login; SshKeyPair: SSH key pair login
          * 
          * @return builder
          * 

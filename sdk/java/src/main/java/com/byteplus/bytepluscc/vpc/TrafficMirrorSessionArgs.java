@@ -20,14 +20,14 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
     public static final TrafficMirrorSessionArgs Empty = new TrafficMirrorSessionArgs();
 
     /**
-     * 镜像会话实例描述。
+     * Mirror session instance description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 镜像会话实例描述。
+     * @return Mirror session instance description
      * 
      */
     public Optional<Output<String>> description() {
@@ -35,14 +35,14 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 镜像源实例ID，当前只支持ECS的主网卡和辅助网卡。
+     * Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
      * 
      */
     @Import(name="networkInterfaceId", required=true)
     private Output<String> networkInterfaceId;
 
     /**
-     * @return 镜像源实例ID，当前只支持ECS的主网卡和辅助网卡。
+     * @return Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
      * 
      */
     public Output<String> networkInterfaceId() {
@@ -50,14 +50,14 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 镜像会话MTU，超过被截断，取值范围：64～9600。
+     * Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
      * 
      */
     @Import(name="packetLength")
     private @Nullable Output<Integer> packetLength;
 
     /**
-     * @return 镜像会话MTU，超过被截断，取值范围：64～9600。
+     * @return Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
      * 
      */
     public Optional<Output<Integer>> packetLength() {
@@ -65,14 +65,14 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 镜像会话优先级，取值范围1 ～ 32766，同一账户下镜像会话优先级不能重复。
+     * Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
      * 
      */
     @Import(name="priority", required=true)
     private Output<Integer> priority;
 
     /**
-     * @return 镜像会话优先级，取值范围1 ～ 32766，同一账户下镜像会话优先级不能重复。
+     * @return Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
      * 
      */
     public Output<Integer> priority() {
@@ -80,14 +80,14 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 所属项目的名称
+     * Name of the associated project
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 所属项目的名称
+     * @return Name of the associated project
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -102,14 +102,14 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 筛选条件实例ID。
+     * Filter condition instance ID
      * 
      */
     @Import(name="trafficMirrorFilterId", required=true)
     private Output<String> trafficMirrorFilterId;
 
     /**
-     * @return 筛选条件实例ID。
+     * @return Filter condition instance ID
      * 
      */
     public Output<String> trafficMirrorFilterId() {
@@ -117,14 +117,14 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 镜像会话名称。
+     * Mirror session name
      * 
      */
     @Import(name="trafficMirrorSessionName")
     private @Nullable Output<String> trafficMirrorSessionName;
 
     /**
-     * @return 镜像会话名称。
+     * @return Mirror session name
      * 
      */
     public Optional<Output<String>> trafficMirrorSessionName() {
@@ -132,14 +132,14 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 镜像目的实例ID。
+     * Mirror destination instance ID
      * 
      */
     @Import(name="trafficMirrorTargetId", required=true)
     private Output<String> trafficMirrorTargetId;
 
     /**
-     * @return 镜像目的实例ID。
+     * @return Mirror destination instance ID
      * 
      */
     public Output<String> trafficMirrorTargetId() {
@@ -147,14 +147,14 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 镜像会话VNI，取值范围1 ～ 16777215。
+     * Mirror session VNI. Range: 1–16777215
      * 
      */
     @Import(name="virtualNetworkId")
     private @Nullable Output<Integer> virtualNetworkId;
 
     /**
-     * @return 镜像会话VNI，取值范围1 ～ 16777215。
+     * @return Mirror session VNI. Range: 1–16777215
      * 
      */
     public Optional<Output<Integer>> virtualNetworkId() {
@@ -195,7 +195,7 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param description 镜像会话实例描述。
+         * @param description Mirror session instance description
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param description 镜像会话实例描述。
+         * @param description Mirror session instance description
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param networkInterfaceId 镜像源实例ID，当前只支持ECS的主网卡和辅助网卡。
+         * @param networkInterfaceId Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
          * 
          * @return builder
          * 
@@ -227,7 +227,7 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param networkInterfaceId 镜像源实例ID，当前只支持ECS的主网卡和辅助网卡。
+         * @param networkInterfaceId Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
          * 
          * @return builder
          * 
@@ -237,7 +237,7 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param packetLength 镜像会话MTU，超过被截断，取值范围：64～9600。
+         * @param packetLength Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
          * 
          * @return builder
          * 
@@ -248,7 +248,7 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param packetLength 镜像会话MTU，超过被截断，取值范围：64～9600。
+         * @param packetLength Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
          * 
          * @return builder
          * 
@@ -258,7 +258,7 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param priority 镜像会话优先级，取值范围1 ～ 32766，同一账户下镜像会话优先级不能重复。
+         * @param priority Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
          * 
          * @return builder
          * 
@@ -269,7 +269,7 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param priority 镜像会话优先级，取值范围1 ～ 32766，同一账户下镜像会话优先级不能重复。
+         * @param priority Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
          * 
          * @return builder
          * 
@@ -279,7 +279,7 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param projectName 所属项目的名称
+         * @param projectName Name of the associated project
          * 
          * @return builder
          * 
@@ -290,7 +290,7 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param projectName 所属项目的名称
+         * @param projectName Name of the associated project
          * 
          * @return builder
          * 
@@ -313,7 +313,7 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param trafficMirrorFilterId 筛选条件实例ID。
+         * @param trafficMirrorFilterId Filter condition instance ID
          * 
          * @return builder
          * 
@@ -324,7 +324,7 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param trafficMirrorFilterId 筛选条件实例ID。
+         * @param trafficMirrorFilterId Filter condition instance ID
          * 
          * @return builder
          * 
@@ -334,7 +334,7 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param trafficMirrorSessionName 镜像会话名称。
+         * @param trafficMirrorSessionName Mirror session name
          * 
          * @return builder
          * 
@@ -345,7 +345,7 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param trafficMirrorSessionName 镜像会话名称。
+         * @param trafficMirrorSessionName Mirror session name
          * 
          * @return builder
          * 
@@ -355,7 +355,7 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param trafficMirrorTargetId 镜像目的实例ID。
+         * @param trafficMirrorTargetId Mirror destination instance ID
          * 
          * @return builder
          * 
@@ -366,7 +366,7 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param trafficMirrorTargetId 镜像目的实例ID。
+         * @param trafficMirrorTargetId Mirror destination instance ID
          * 
          * @return builder
          * 
@@ -376,7 +376,7 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param virtualNetworkId 镜像会话VNI，取值范围1 ～ 16777215。
+         * @param virtualNetworkId Mirror session VNI. Range: 1–16777215
          * 
          * @return builder
          * 
@@ -387,7 +387,7 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param virtualNetworkId 镜像会话VNI，取值范围1 ～ 16777215。
+         * @param virtualNetworkId Mirror session VNI. Range: 1–16777215
          * 
          * @return builder
          * 

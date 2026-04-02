@@ -31,59 +31,59 @@ export interface GetInstanceArgs {
  */
 export interface GetInstanceResult {
     /**
-     * 白名单 ID 列表。新建实例会被绑定到指定白名单。
+     * Allowlist ID list. New instances are bound to the specified allowlist.
      */
     readonly allowListIds: string[];
     /**
-     * 是否开启自动续费，取值范围如下：false（默认）：不开启自动续费。true：开启自动续费。
+     * Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
      */
     readonly autoRenew: boolean;
     /**
-     * 实例计费状态，取值范围如下：Normal：正常。WaitingPaid：等待支付。ChangingPayType：计费变更中。Renewing：续费中。Overdue：已到期。Owing：欠费中。Unsubscribing：退订中。
+     * Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
      */
     readonly chargeStatus: string;
     /**
-     * 实例计费类型，取值范围如下：PostPaid（默认）：按量计费（也称后付费）。Prepaid：包年包月（也称预付费）。
+     * Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
      */
     readonly chargeType: string;
     /**
-     * 计划关停时间（UTC）。
+     * Scheduled shutdown time (UTC).
      */
     readonly closedTime: string;
     /**
-     * 分片集群中 ConfigServer 节点的规格码。默认值为 mongo.config.1c2g。
+     * ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
      */
     readonly configServerNodeSpec: string;
     /**
-     * 分片集群中 ConfigServer 的存储空间，单位：GiB。步长为 10，默认值：20。
+     * ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
      */
     readonly configServerStorageSpaceGb: number;
     /**
-     * ConfigServers 的信息列表。
+     * ConfigServer information list.
      */
     readonly configServers: outputs.mongodb.GetInstanceConfigServer[];
     /**
-     * ConfigServer 的 ID。
+     * ConfigServer ID
      */
     readonly configServersId: string;
     /**
-     * 实例创建时间（UTC）。
+     * Instance creation time (UTC).
      */
     readonly createdTime: string;
     /**
-     * 数据库引擎。取值固定为 MongoDB
+     * Database engine. The value is fixed as MongoDB
      */
     readonly dbEngine: string;
     /**
-     * 数据库引擎版本，取值范围如下：MongoDB*4*0（默认）：MongoDB 4.0 版本。MongoDB*4*2：MongoDB 4.2 版本。MongoDB*4*4：MongoDB 4.4 版本。MongoDB*5*0：MongoDB 5.0 版本。MongoDB*6*0：MongoDB 6.0 版本。MongoDB*7*0：MongoDB 7.0 版本。
+     * Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
      */
     readonly dbEngineVersion: string;
     /**
-     * 数据库引擎版本的字符串。
+     * Database engine version string
      */
     readonly dbEngineVersionStr: string;
     /**
-     * 实例到期时间（UTC）。
+     * Instance expiration time (UTC).
      */
     readonly expiredTime: string;
     /**
@@ -91,123 +91,123 @@ export interface GetInstanceResult {
      */
     readonly id: string;
     /**
-     * 需要创建的实例数量。取值为大于等于 1 的正整数，默认值为1。
+     * Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
      */
     readonly instanceCount: number;
     /**
-     * 实例 ID。
+     * Instance ID.
      */
     readonly instanceId: string;
     /**
-     * 实例名称。名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 2~64 个字符。
+     * Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
      */
     readonly instanceName: string;
     /**
-     * 实例状态。创建中：Creating。运行中：Running。白名单维护中：AllowListMaintaining。变更配置中：Scaling。重启中：Restarting。网络维护中：NetworkMaintaining。恢复中：Restoring。升级版本中：Upgrading。不可用：Unavailable。关停中：Closing。删除中：Deleting。已关停：Closed。SSL SSL变更中：SSLUpdating。主节点切换中：SwitchMastering。角色切换中：RoleChanging。迁移中：Migrating。
+     * Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
      */
     readonly instanceStatus: string;
     /**
-     * MongoDB 的实例类型，取值范围如下：ReplicaSet（默认）：副本集。ShardedCluster：分片集群 。
+     * MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
      */
     readonly instanceType: string;
     /**
-     * Mongos 的信息列表。
+     * Mongos information list
      */
     readonly mongos: outputs.mongodb.GetInstanceMongo[];
     /**
-     * Mongos 的 ID。
+     * Mongos ID.
      */
     readonly mongosId: string;
     /**
-     * 分片集群中 Mongos 节点的数量。取值范围：2~32。
+     * Number of Mongos nodes in the sharded cluster. Range: 2~32.
      */
     readonly mongosNodeNumber: number;
     /**
-     * 分片集群中 Mongos 节点的规格码。
+     * Specification code for Mongos nodes in a sharded cluster.
      */
     readonly mongosNodeSpec: string;
     /**
-     * 添加只读节点信息，包括只读节点所在的可用区和数量。
+     * Add read-only node information, including the availability zone and quantity of read-only nodes.
      */
     readonly nodeAvailabilityZones: outputs.mongodb.GetInstanceNodeAvailabilityZone[];
     /**
-     * 节点数量，其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点数量。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示每个 Shard 分片中的节点数量。
+     * Node count. When the instance type is ReplicaSet, this parameter indicates the number of compute nodes in the replica set instance. When the instance type is ShardedCluster, it indicates the number of nodes in each shard.
      */
     readonly nodeNumber: number;
     /**
-     * 实例的规格码。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点规格。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示 Shard 节点的规格。
+     * Instance specification code. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this parameter specifies the compute node specification for the replica set instance. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this parameter specifies the specification for Shard nodes.
      */
     readonly nodeSpec: string;
     /**
-     * 副本集实例中各节点或分片集群 Shard 分片中各节点的信息列表。
+     * Information list for each node in the replica set instance or each node in the sharded cluster shard
      */
     readonly nodes: outputs.mongodb.GetInstanceNode[];
     /**
-     * 包年包月实例的购买时长，其中：当 PeriodUnit 为 Year 时，Period 取值为 1~3。当 PeriodUnit 为 Month 时，Period 取值为 1~9。
+     * Subscription instance purchase duration. When PeriodUnit is Year, Period can be 1–3. When PeriodUnit is Month, Period can be 1–9.
      */
     readonly period: number;
     /**
-     * 指定包年包月实例为包年或者包月类型。取值如下：Year：包年。Month：包月。
+     * Specify whether the subscription instance is yearly or monthly. Options: Year: yearly. Month: monthly.
      */
     readonly periodUnit: string;
     /**
-     * 实例私网连接地址的字符串信息。
+     * String information for the instance's private network connection address.
      */
     readonly privateEndpoint: string;
     /**
-     * 选择实例所属的项目。若该参数留空，新建实例会默认加入 default 项目。
+     * Select the project for the instance. If left blank, the new instance will be added to the default project.
      */
     readonly projectName: string;
     /**
-     * 实例的只读节点数量。
+     * Number of read-only nodes in the instance
      */
     readonly readOnlyNodeNumber: number;
     /**
-     * 实例的计划回收时间（UTC）。
+     * Scheduled recycle time for the instance (UTC)
      */
     readonly reclaimTime: string;
     /**
-     * 分片集群中 Shard 分片的数量。取值范围：2~32。
+     * Number of shards in the sharded cluster. Range: 2–32.
      */
     readonly shardNumber: number;
     /**
-     * Shards 的信息列表。
+     * Shard information list
      */
     readonly shards: outputs.mongodb.GetInstanceShard[];
     /**
-     * 副本集实例的总存储空间，或分片集群中单个 Shard 分片的存储空间，单位：GiB，步长为 10。
+     * Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
      */
     readonly storageSpaceGb: number;
     /**
-     * 实例的存储类型。当前仅支持本地 SSD 盘（即 LocalSSD）存储。
+     * Instance storage type. Currently, only local SSD disks (LocalSSD) are supported.
      */
     readonly storageType: string;
     /**
-     * 子网 ID。
+     * Subnet ID.
      */
     readonly subnetId: string;
     /**
-     * 数据库账号名称。当前仅支持在创建实例时设置超级管理员账号，账号名称固定为 root。
+     * Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
      */
     readonly superAccountName: string;
     /**
-     * root 账号的密码。密码需同时满足如下条件：只能为大小写字母、数字及以下特殊字符 _#!@$%^&*()+=-。长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意三种。不允许使用极易被破解的弱密码（如 Admin@123）。
+     * Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!@$%^&*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin@123) are not allowed.
      */
     readonly superAccountPassword: string;
     /**
-     * MongoDB实例的标签信息
+     * MongoDB instance tag information
      */
     readonly tags: outputs.mongodb.GetInstanceTag[];
     /**
-     * 实例的更新时间（UTC）。
+     * Instance update time (UTC).
      */
     readonly updatedTime: string;
     /**
-     * 私有网络 ID。
+     * Private network ID.
      */
     readonly vpcId: string;
     /**
-     * 实例所在可用区的 ID。
+     * Availability zone ID where the instance is located.
      */
     readonly zoneId: string;
 }

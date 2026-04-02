@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 网卡即虚拟网卡。在私有网络里，网卡是挂载在云服务器、负载均衡等云资源上的一种网络接口。每张网卡均有一个主私网IP地址。若有需要，可手动为其分配多个辅助私网IP地址。
+ * A network interface is a virtual network interface. In a private network, it serves as a network interface attached to cloud servers, load balancers, and other cloud resources. Each network interface has a primary private IP address. You can manually assign multiple auxiliary private IP addresses if needed.
  *
  * ## Import
  *
@@ -44,97 +44,97 @@ export class Eni extends pulumi.CustomResource {
     }
 
     /**
-     * 网卡所有者ID。
+     * NIC owner ID
      */
     public /*out*/ readonly accountId!: pulumi.Output<string>;
     /**
-     * 网卡创建时间。
+     * NIC creation time
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 是否开启随云服务器实例删除，true为开启，false为不开启。
+     * Enable release with cloud server instance deletion. true to enable, false to disable
      */
     public readonly deleteOnTermination!: pulumi.Output<boolean>;
     /**
-     * 辅助网卡的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头；可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不填默认空字符串。
+     * Description for the auxiliary network interface. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Allowed characters include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 网卡绑定实例的ID，如果网卡未挂载或参数ServiceManaged为true，则InstanceId返回值均为空。
+     * ID of the instance bound to the NIC. If the NIC is not attached or the ServiceManaged parameter is true, InstanceId returns empty
      */
     public readonly instanceId!: pulumi.Output<string>;
     /**
-     * 为网卡分配私网IPv6地址的数量，传入该参数，系统会自动从网卡所属子网中，分配相应数量的空闲私网IPv6地址，创建时与IPv6Sets不能同时传入。
+     * Number of private IPv6 addresses assigned to the network interface. When this parameter is specified, the system automatically assigns the corresponding number of available private IPv6 addresses from the subnet to which the network interface belongs. Cannot be used together with IPv6Sets during creation.
      */
     public readonly ipv6AddressCount!: pulumi.Output<number>;
     /**
-     * 网卡的IPv6地址列表，例如[2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf]。
+     * IPv6 address list of the network interface, for example [2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf].
      */
     public readonly ipv6Sets!: pulumi.Output<string[]>;
     /**
-     * 网卡的MAC地址。
+     * MAC address of the network interface.
      */
     public /*out*/ readonly macAddress!: pulumi.Output<string>;
     /**
-     * 网卡ID。
+     * Network interface ID.
      */
     public /*out*/ readonly networkInterfaceId!: pulumi.Output<string>;
     /**
-     * 网卡名称，长度限制为1 ~ 128个字符，需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不填默认是辅助网卡的ID。
+     * NIC name. Length must be between 1 and 128 characters, starting with a letter, Chinese character, or number. Can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the ID of the secondary NIC
      */
     public readonly networkInterfaceName!: pulumi.Output<string>;
     /**
-     * 是否为网卡开启源/目的地址检查，开启后，系统会自动阻止源地址或目的地址不是当前网卡的流量，true为开启，false为不开启（默认值）。
+     * Enable source/destination address check for the NIC. When enabled, the system automatically blocks traffic whose source or destination address does not match the current NIC. true to enable, false to disable (default)
      */
     public readonly portSecurityEnabled!: pulumi.Output<boolean>;
     /**
-     * 网卡的主私有IPv4地址，不支持修改地址，可以修改公网IP。如果指定，必须是对应子网中的一个空闲的私网IPv4地址，如果不指定，从对应子网中自动分配一个空闲的私网IPv4地址。例如：192.XX.XX.10。
+     * Primary private IPv4 address of the network interface. Address modification is not supported, but you can modify the public IP. If specified, it must be an available private IPv4 address in the corresponding subnet. If not specified, an available private IPv4 address will be automatically assigned from the corresponding subnet. For example: 192.XX.XX.10.
      */
     public readonly primaryIpAddress!: pulumi.Output<outputs.vpc.EniPrimaryIpAddress>;
     public readonly privateIpSets!: pulumi.Output<outputs.vpc.EniPrivateIpSet[]>;
     /**
-     * 网卡所属项目的名称。
+     * Name of the project to which the NIC belongs
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 为辅助网卡自动分配辅助私网IPv4地址数量，取值1~49。创建时不能与PrivateIpSets同时传入。
+     * Number of auxiliary private IPv4 addresses automatically assigned to the auxiliary network interface. Value range: 1–49. Cannot be used together with PrivateIpSets during creation.
      */
     public readonly secondaryPrivateIpAddressCount!: pulumi.Output<number>;
     /**
-     * 辅助网卡加入一个或多个安全组的ID。
+     * ID of one or more security groups joined by the auxiliary network interface.
      */
     public readonly securityGroupIds!: pulumi.Output<string[]>;
     /**
-     * 是否为官方服务网卡，true为是，false为否。
+     * Indicates whether this is an official service network interface. true for yes, false for no.
      */
     public /*out*/ readonly serviceManaged!: pulumi.Output<boolean>;
     /**
-     * 网卡的绑定状态。Creating：创建中。Available：未挂载。Attaching：挂载中。InUse：已挂载。Detaching：卸载中。Deleting：删除中。
+     * Binding status of the network interface. Creating: In progress. Available: Not attached. Attaching: In progress. InUse: Attached. Detaching: In progress. Deleting: In progress.
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     /**
-     * 辅助网卡所在子网的ID。
+     * ID of the subnet where the auxiliary network interface resides.
      */
     public readonly subnetId!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.vpc.EniTag[]>;
     /**
-     * 网卡类型。primary：主网卡，secondary：辅助网卡
+     * NIC type. primary: primary NIC, secondary: secondary NIC
      */
     public /*out*/ readonly type!: pulumi.Output<string>;
     /**
-     * 更新网卡的时间。
+     * NIC update time
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
     /**
-     * 网卡所属的VPC的ID。
+     * ID of the VPC to which the network interface belongs.
      */
     public /*out*/ readonly vpcId!: pulumi.Output<string>;
     /**
-     * 网卡所属VPC的名称。
+     * Name of the VPC to which the NIC belongs
      */
     public /*out*/ readonly vpcName!: pulumi.Output<string>;
     /**
-     * 网卡所属可用区的ID。
+     * ID of the availability zone to which the network interface belongs.
      */
     public /*out*/ readonly zoneId!: pulumi.Output<string>;
 
@@ -214,97 +214,97 @@ export class Eni extends pulumi.CustomResource {
  */
 export interface EniState {
     /**
-     * 网卡所有者ID。
+     * NIC owner ID
      */
     accountId?: pulumi.Input<string>;
     /**
-     * 网卡创建时间。
+     * NIC creation time
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 是否开启随云服务器实例删除，true为开启，false为不开启。
+     * Enable release with cloud server instance deletion. true to enable, false to disable
      */
     deleteOnTermination?: pulumi.Input<boolean>;
     /**
-     * 辅助网卡的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头；可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不填默认空字符串。
+     * Description for the auxiliary network interface. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Allowed characters include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string.
      */
     description?: pulumi.Input<string>;
     /**
-     * 网卡绑定实例的ID，如果网卡未挂载或参数ServiceManaged为true，则InstanceId返回值均为空。
+     * ID of the instance bound to the NIC. If the NIC is not attached or the ServiceManaged parameter is true, InstanceId returns empty
      */
     instanceId?: pulumi.Input<string>;
     /**
-     * 为网卡分配私网IPv6地址的数量，传入该参数，系统会自动从网卡所属子网中，分配相应数量的空闲私网IPv6地址，创建时与IPv6Sets不能同时传入。
+     * Number of private IPv6 addresses assigned to the network interface. When this parameter is specified, the system automatically assigns the corresponding number of available private IPv6 addresses from the subnet to which the network interface belongs. Cannot be used together with IPv6Sets during creation.
      */
     ipv6AddressCount?: pulumi.Input<number>;
     /**
-     * 网卡的IPv6地址列表，例如[2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf]。
+     * IPv6 address list of the network interface, for example [2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf].
      */
     ipv6Sets?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 网卡的MAC地址。
+     * MAC address of the network interface.
      */
     macAddress?: pulumi.Input<string>;
     /**
-     * 网卡ID。
+     * Network interface ID.
      */
     networkInterfaceId?: pulumi.Input<string>;
     /**
-     * 网卡名称，长度限制为1 ~ 128个字符，需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不填默认是辅助网卡的ID。
+     * NIC name. Length must be between 1 and 128 characters, starting with a letter, Chinese character, or number. Can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the ID of the secondary NIC
      */
     networkInterfaceName?: pulumi.Input<string>;
     /**
-     * 是否为网卡开启源/目的地址检查，开启后，系统会自动阻止源地址或目的地址不是当前网卡的流量，true为开启，false为不开启（默认值）。
+     * Enable source/destination address check for the NIC. When enabled, the system automatically blocks traffic whose source or destination address does not match the current NIC. true to enable, false to disable (default)
      */
     portSecurityEnabled?: pulumi.Input<boolean>;
     /**
-     * 网卡的主私有IPv4地址，不支持修改地址，可以修改公网IP。如果指定，必须是对应子网中的一个空闲的私网IPv4地址，如果不指定，从对应子网中自动分配一个空闲的私网IPv4地址。例如：192.XX.XX.10。
+     * Primary private IPv4 address of the network interface. Address modification is not supported, but you can modify the public IP. If specified, it must be an available private IPv4 address in the corresponding subnet. If not specified, an available private IPv4 address will be automatically assigned from the corresponding subnet. For example: 192.XX.XX.10.
      */
     primaryIpAddress?: pulumi.Input<inputs.vpc.EniPrimaryIpAddress>;
     privateIpSets?: pulumi.Input<pulumi.Input<inputs.vpc.EniPrivateIpSet>[]>;
     /**
-     * 网卡所属项目的名称。
+     * Name of the project to which the NIC belongs
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 为辅助网卡自动分配辅助私网IPv4地址数量，取值1~49。创建时不能与PrivateIpSets同时传入。
+     * Number of auxiliary private IPv4 addresses automatically assigned to the auxiliary network interface. Value range: 1–49. Cannot be used together with PrivateIpSets during creation.
      */
     secondaryPrivateIpAddressCount?: pulumi.Input<number>;
     /**
-     * 辅助网卡加入一个或多个安全组的ID。
+     * ID of one or more security groups joined by the auxiliary network interface.
      */
     securityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 是否为官方服务网卡，true为是，false为否。
+     * Indicates whether this is an official service network interface. true for yes, false for no.
      */
     serviceManaged?: pulumi.Input<boolean>;
     /**
-     * 网卡的绑定状态。Creating：创建中。Available：未挂载。Attaching：挂载中。InUse：已挂载。Detaching：卸载中。Deleting：删除中。
+     * Binding status of the network interface. Creating: In progress. Available: Not attached. Attaching: In progress. InUse: Attached. Detaching: In progress. Deleting: In progress.
      */
     status?: pulumi.Input<string>;
     /**
-     * 辅助网卡所在子网的ID。
+     * ID of the subnet where the auxiliary network interface resides.
      */
     subnetId?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.vpc.EniTag>[]>;
     /**
-     * 网卡类型。primary：主网卡，secondary：辅助网卡
+     * NIC type. primary: primary NIC, secondary: secondary NIC
      */
     type?: pulumi.Input<string>;
     /**
-     * 更新网卡的时间。
+     * NIC update time
      */
     updatedTime?: pulumi.Input<string>;
     /**
-     * 网卡所属的VPC的ID。
+     * ID of the VPC to which the network interface belongs.
      */
     vpcId?: pulumi.Input<string>;
     /**
-     * 网卡所属VPC的名称。
+     * Name of the VPC to which the NIC belongs
      */
     vpcName?: pulumi.Input<string>;
     /**
-     * 网卡所属可用区的ID。
+     * ID of the availability zone to which the network interface belongs.
      */
     zoneId?: pulumi.Input<string>;
 }
@@ -314,52 +314,52 @@ export interface EniState {
  */
 export interface EniArgs {
     /**
-     * 是否开启随云服务器实例删除，true为开启，false为不开启。
+     * Enable release with cloud server instance deletion. true to enable, false to disable
      */
     deleteOnTermination?: pulumi.Input<boolean>;
     /**
-     * 辅助网卡的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头；可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不填默认空字符串。
+     * Description for the auxiliary network interface. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Allowed characters include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string.
      */
     description?: pulumi.Input<string>;
     /**
-     * 网卡绑定实例的ID，如果网卡未挂载或参数ServiceManaged为true，则InstanceId返回值均为空。
+     * ID of the instance bound to the NIC. If the NIC is not attached or the ServiceManaged parameter is true, InstanceId returns empty
      */
     instanceId?: pulumi.Input<string>;
     /**
-     * 为网卡分配私网IPv6地址的数量，传入该参数，系统会自动从网卡所属子网中，分配相应数量的空闲私网IPv6地址，创建时与IPv6Sets不能同时传入。
+     * Number of private IPv6 addresses assigned to the network interface. When this parameter is specified, the system automatically assigns the corresponding number of available private IPv6 addresses from the subnet to which the network interface belongs. Cannot be used together with IPv6Sets during creation.
      */
     ipv6AddressCount?: pulumi.Input<number>;
     /**
-     * 网卡的IPv6地址列表，例如[2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf]。
+     * IPv6 address list of the network interface, for example [2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf].
      */
     ipv6Sets?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 网卡名称，长度限制为1 ~ 128个字符，需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不填默认是辅助网卡的ID。
+     * NIC name. Length must be between 1 and 128 characters, starting with a letter, Chinese character, or number. Can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the ID of the secondary NIC
      */
     networkInterfaceName?: pulumi.Input<string>;
     /**
-     * 是否为网卡开启源/目的地址检查，开启后，系统会自动阻止源地址或目的地址不是当前网卡的流量，true为开启，false为不开启（默认值）。
+     * Enable source/destination address check for the NIC. When enabled, the system automatically blocks traffic whose source or destination address does not match the current NIC. true to enable, false to disable (default)
      */
     portSecurityEnabled?: pulumi.Input<boolean>;
     /**
-     * 网卡的主私有IPv4地址，不支持修改地址，可以修改公网IP。如果指定，必须是对应子网中的一个空闲的私网IPv4地址，如果不指定，从对应子网中自动分配一个空闲的私网IPv4地址。例如：192.XX.XX.10。
+     * Primary private IPv4 address of the network interface. Address modification is not supported, but you can modify the public IP. If specified, it must be an available private IPv4 address in the corresponding subnet. If not specified, an available private IPv4 address will be automatically assigned from the corresponding subnet. For example: 192.XX.XX.10.
      */
     primaryIpAddress?: pulumi.Input<inputs.vpc.EniPrimaryIpAddress>;
     privateIpSets?: pulumi.Input<pulumi.Input<inputs.vpc.EniPrivateIpSet>[]>;
     /**
-     * 网卡所属项目的名称。
+     * Name of the project to which the NIC belongs
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 为辅助网卡自动分配辅助私网IPv4地址数量，取值1~49。创建时不能与PrivateIpSets同时传入。
+     * Number of auxiliary private IPv4 addresses automatically assigned to the auxiliary network interface. Value range: 1–49. Cannot be used together with PrivateIpSets during creation.
      */
     secondaryPrivateIpAddressCount?: pulumi.Input<number>;
     /**
-     * 辅助网卡加入一个或多个安全组的ID。
+     * ID of one or more security groups joined by the auxiliary network interface.
      */
     securityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 辅助网卡所在子网的ID。
+     * ID of the subnet where the auxiliary network interface resides.
      */
     subnetId?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.vpc.EniTag>[]>;

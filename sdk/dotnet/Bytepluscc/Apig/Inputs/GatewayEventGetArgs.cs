@@ -14,25 +14,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class GatewayEventGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 事件代码。
+        /// Event code
         /// </summary>
         [Input("code")]
         public Input<string>? Code { get; set; }
 
         /// <summary>
-        /// 事件创建时间。
+        /// Event creation time
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 附带信息。
+        /// Additional information
         /// </summary>
         [Input("data")]
         public Input<string>? Data { get; set; }
 
         /// <summary>
-        /// 事件描述。
+        /// Event description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }

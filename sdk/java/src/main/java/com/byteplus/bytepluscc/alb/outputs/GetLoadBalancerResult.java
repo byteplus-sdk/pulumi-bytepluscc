@@ -18,52 +18,52 @@ import java.util.Objects;
 @CustomType
 public final class GetLoadBalancerResult {
     /**
-     * @return ALB 实例的 IP 类型。IPv4：IPv4 类型；DualStack：IPv4&amp;IPv6 双栈类型。
+     * @return IP type of the ALB instance. IPv4: IPv4 type; DualStack: IPv4 &amp; IPv6 dual stack type.
      * 
      */
     private String addressIpVersion;
     /**
-     * @return 绑定的共享带宽包ID，可实现带宽共享。
+     * @return ID of the bound shared bandwidth package, enabling bandwidth sharing.
      * 
      */
     private String bandwidthPackageId;
     /**
-     * @return ALB 实例的服务状态。Normal：正常；FinancialLocked：因欠费被锁定。
+     * @return Service status of the ALB instance. Normal: normal; FinancialLocked: locked due to overdue payment.
      * 
      */
     private String businessStatus;
     /**
-     * @return ALB 实例的创建时间。
+     * @return Creation time of the ALB instance.
      * 
      */
     private String createTime;
     /**
-     * @return 删除保护开关。on：开启；off：关闭。
+     * @return Delete protection switch. on: enabled; off: disabled.
      * 
      */
     private String deleteProtection;
     /**
-     * @return ALB 实例的预期回收时间。该参数只有实例处于 FinancialLocked 状态时有返回值。
+     * @return Expected reclamation time of the ALB instance. This parameter is only returned when the instance is in the FinancialLocked state.
      * 
      */
     private String deletedTime;
     /**
-     * @return ALB 实例的描述。
+     * @return Description of the ALB instance.
      * 
      */
     private String description;
     /**
-     * @return DNS域名。
+     * @return DNS domain name.
      * 
      */
     private String dnsName;
     /**
-     * @return 公网IP的计费配置，仅适用于公网实例。
+     * @return Billing configuration for public IP, only applicable to public instances.
      * 
      */
     private GetLoadBalancerEipBillingConfig eipBillingConfig;
     /**
-     * @return 全球加速器配置，用于提升跨地域访问速度。
+     * @return Global accelerator configuration, used to improve cross-region access speed.
      * 
      */
     private GetLoadBalancerGlobalAccelerator globalAccelerator;
@@ -73,177 +73,177 @@ public final class GetLoadBalancerResult {
      */
     private String id;
     /**
-     * @return 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+     * @return When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
      * 
      */
     private String ipv6BandwidthPackageId;
     /**
-     * @return IPv6公网IP的计費配置，仅适用于公网实例。
+     * @return Billing configuration for IPv6 public IP, only applicable to public instances.
      * 
      */
     private GetLoadBalancerIpv6EipBillingConfig ipv6EipBillingConfig;
     /**
-     * @return ALB实例计费类型，当前仅支持按量计费（取值为1）。
+     * @return ALB instance billing type. Currently, only pay-as-you-go is supported (value is 1).
      * 
      */
     private Integer loadBalancerBillingType;
     /**
-     * @return 应用型负载均衡的版本。Basic：基础版；Standard：标准版。
+     * @return Version of the application load balancer. Basic: Basic version; Standard: Standard version.
      * 
      */
     private String loadBalancerEdition;
     /**
-     * @return ALB 实例 ID。
+     * @return ALB instance ID.
      * 
      */
     private String loadBalancerId;
     /**
-     * @return ALB 实例的名称。
+     * @return Name of the ALB instance.
      * 
      */
     private String loadBalancerName;
     /**
-     * @return ALB 实例被冻结的原因，例如 Financial（欠费）或 Security（安全原因）。仅在实例被锁定时返回。
+     * @return Reason for ALB instance freeze, such as Financial (arrears) or Security (security reasons). Returned only when the instance is locked.
      * 
      */
     private String lockReason;
     /**
-     * @return 修改保护原因。仅在 ModificationProtectionStatus 为 ConsoleProtection 时，该参数有效且合法。
+     * @return Reason for modification protection. This parameter is valid and legitimate only when ModificationProtectionStatus is ConsoleProtection.
      * 
      */
     private String modificationProtectionReason;
     /**
-     * @return 修改保护状态。NonProtection：不保护；ConsoleProtection：控制台修改保护，通过控制台无法修改实例配置。
+     * @return Modification protection status. NonProtection: Not protected; ConsoleProtection: Console modification protection, instance configuration cannot be modified through the console.
      * 
      */
     private String modificationProtectionStatus;
     /**
-     * @return ALB 实例的冻结时间。该参数只有实例处于 FinancialLocked 状态时有返回值。
+     * @return Freeze time of the ALB instance. This parameter is only returned when the instance is in the FinancialLocked state.
      * 
      */
     private String overdueTime;
     /**
-     * @return 实例所属项目名称。
+     * @return Name of the project to which the instance belongs.
      * 
      */
     private String projectName;
     /**
-     * @return ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+     * @return ALB supports the Proxy Protocol and records the client&#39;s real IP.
      * 
      */
     private String proxyProtocolEnabled;
     /**
-     * @return ALB 实例状态：Active（运行中）、Provisioning（创建中）、Configuring（配置中）、Deleting（删除中）、CreateFailed（创建失败）、Inactive（已停止）。
+     * @return ALB instance status: Active (running), Provisioning (creating), Configuring (configuring), Deleting (deleting), CreateFailed (creation failed), Inactive (stopped).
      * 
      */
     private String status;
     /**
-     * @return 为实例绑定的标签列表，用于分类和计费。
+     * @return List of tags bound to the instance, used for categorization and billing.
      * 
      */
     private List<GetLoadBalancerTag> tags;
     /**
-     * @return ALB 实例的类型。取值是 public 或 private 。public：表示创建一个公网负载均衡实例，系统会分配一个公网IP地址和一个私网IP地址，可用于转发公网请求和私网请求。private：表示创建一个私网负载均衡实例，系统会分配一个私网IP地址，仅用于转发私网请求。
+     * @return Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
      * 
      */
     private String type;
     /**
-     * @return ALB 实例的最后更新时间。
+     * @return Last update time of the ALB instance.
      * 
      */
     private String updateTime;
     /**
-     * @return 负载均衡实例所属的私有网络（VPC）的ID。
+     * @return ID of the Virtual Private Cloud (VPC) to which the load balancer instance belongs.
      * 
      */
     private String vpcId;
     /**
-     * @return ALB 实例绑定的 WAF 安全防护实例 ID。
+     * @return ID of the WAF security protection instance bound to the ALB instance.
      * 
      */
     private String wafInstanceId;
     /**
-     * @return WAF防护的域名，用于精确匹配防护规则。
+     * @return Domain name protected by WAF, used for precise rule matching.
      * 
      */
     private String wafProtectedDomain;
     /**
-     * @return WAF 安全防护开关。on：开启；off：关闭。
+     * @return WAF security protection switch. on: enabled; off: disabled.
      * 
      */
     private String wafProtectionEnabled;
     /**
-     * @return 可用区映射列表，定义了实例在哪些可用区提供服务。
+     * @return Availability zone mapping list, defines which availability zones the instance provides services in.
      * 
      */
     private List<GetLoadBalancerZoneMapping> zoneMappings;
 
     private GetLoadBalancerResult() {}
     /**
-     * @return ALB 实例的 IP 类型。IPv4：IPv4 类型；DualStack：IPv4&amp;IPv6 双栈类型。
+     * @return IP type of the ALB instance. IPv4: IPv4 type; DualStack: IPv4 &amp; IPv6 dual stack type.
      * 
      */
     public String addressIpVersion() {
         return this.addressIpVersion;
     }
     /**
-     * @return 绑定的共享带宽包ID，可实现带宽共享。
+     * @return ID of the bound shared bandwidth package, enabling bandwidth sharing.
      * 
      */
     public String bandwidthPackageId() {
         return this.bandwidthPackageId;
     }
     /**
-     * @return ALB 实例的服务状态。Normal：正常；FinancialLocked：因欠费被锁定。
+     * @return Service status of the ALB instance. Normal: normal; FinancialLocked: locked due to overdue payment.
      * 
      */
     public String businessStatus() {
         return this.businessStatus;
     }
     /**
-     * @return ALB 实例的创建时间。
+     * @return Creation time of the ALB instance.
      * 
      */
     public String createTime() {
         return this.createTime;
     }
     /**
-     * @return 删除保护开关。on：开启；off：关闭。
+     * @return Delete protection switch. on: enabled; off: disabled.
      * 
      */
     public String deleteProtection() {
         return this.deleteProtection;
     }
     /**
-     * @return ALB 实例的预期回收时间。该参数只有实例处于 FinancialLocked 状态时有返回值。
+     * @return Expected reclamation time of the ALB instance. This parameter is only returned when the instance is in the FinancialLocked state.
      * 
      */
     public String deletedTime() {
         return this.deletedTime;
     }
     /**
-     * @return ALB 实例的描述。
+     * @return Description of the ALB instance.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return DNS域名。
+     * @return DNS domain name.
      * 
      */
     public String dnsName() {
         return this.dnsName;
     }
     /**
-     * @return 公网IP的计费配置，仅适用于公网实例。
+     * @return Billing configuration for public IP, only applicable to public instances.
      * 
      */
     public GetLoadBalancerEipBillingConfig eipBillingConfig() {
         return this.eipBillingConfig;
     }
     /**
-     * @return 全球加速器配置，用于提升跨地域访问速度。
+     * @return Global accelerator configuration, used to improve cross-region access speed.
      * 
      */
     public GetLoadBalancerGlobalAccelerator globalAccelerator() {
@@ -257,147 +257,147 @@ public final class GetLoadBalancerResult {
         return this.id;
     }
     /**
-     * @return 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+     * @return When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
      * 
      */
     public String ipv6BandwidthPackageId() {
         return this.ipv6BandwidthPackageId;
     }
     /**
-     * @return IPv6公网IP的计費配置，仅适用于公网实例。
+     * @return Billing configuration for IPv6 public IP, only applicable to public instances.
      * 
      */
     public GetLoadBalancerIpv6EipBillingConfig ipv6EipBillingConfig() {
         return this.ipv6EipBillingConfig;
     }
     /**
-     * @return ALB实例计费类型，当前仅支持按量计费（取值为1）。
+     * @return ALB instance billing type. Currently, only pay-as-you-go is supported (value is 1).
      * 
      */
     public Integer loadBalancerBillingType() {
         return this.loadBalancerBillingType;
     }
     /**
-     * @return 应用型负载均衡的版本。Basic：基础版；Standard：标准版。
+     * @return Version of the application load balancer. Basic: Basic version; Standard: Standard version.
      * 
      */
     public String loadBalancerEdition() {
         return this.loadBalancerEdition;
     }
     /**
-     * @return ALB 实例 ID。
+     * @return ALB instance ID.
      * 
      */
     public String loadBalancerId() {
         return this.loadBalancerId;
     }
     /**
-     * @return ALB 实例的名称。
+     * @return Name of the ALB instance.
      * 
      */
     public String loadBalancerName() {
         return this.loadBalancerName;
     }
     /**
-     * @return ALB 实例被冻结的原因，例如 Financial（欠费）或 Security（安全原因）。仅在实例被锁定时返回。
+     * @return Reason for ALB instance freeze, such as Financial (arrears) or Security (security reasons). Returned only when the instance is locked.
      * 
      */
     public String lockReason() {
         return this.lockReason;
     }
     /**
-     * @return 修改保护原因。仅在 ModificationProtectionStatus 为 ConsoleProtection 时，该参数有效且合法。
+     * @return Reason for modification protection. This parameter is valid and legitimate only when ModificationProtectionStatus is ConsoleProtection.
      * 
      */
     public String modificationProtectionReason() {
         return this.modificationProtectionReason;
     }
     /**
-     * @return 修改保护状态。NonProtection：不保护；ConsoleProtection：控制台修改保护，通过控制台无法修改实例配置。
+     * @return Modification protection status. NonProtection: Not protected; ConsoleProtection: Console modification protection, instance configuration cannot be modified through the console.
      * 
      */
     public String modificationProtectionStatus() {
         return this.modificationProtectionStatus;
     }
     /**
-     * @return ALB 实例的冻结时间。该参数只有实例处于 FinancialLocked 状态时有返回值。
+     * @return Freeze time of the ALB instance. This parameter is only returned when the instance is in the FinancialLocked state.
      * 
      */
     public String overdueTime() {
         return this.overdueTime;
     }
     /**
-     * @return 实例所属项目名称。
+     * @return Name of the project to which the instance belongs.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+     * @return ALB supports the Proxy Protocol and records the client&#39;s real IP.
      * 
      */
     public String proxyProtocolEnabled() {
         return this.proxyProtocolEnabled;
     }
     /**
-     * @return ALB 实例状态：Active（运行中）、Provisioning（创建中）、Configuring（配置中）、Deleting（删除中）、CreateFailed（创建失败）、Inactive（已停止）。
+     * @return ALB instance status: Active (running), Provisioning (creating), Configuring (configuring), Deleting (deleting), CreateFailed (creation failed), Inactive (stopped).
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 为实例绑定的标签列表，用于分类和计费。
+     * @return List of tags bound to the instance, used for categorization and billing.
      * 
      */
     public List<GetLoadBalancerTag> tags() {
         return this.tags;
     }
     /**
-     * @return ALB 实例的类型。取值是 public 或 private 。public：表示创建一个公网负载均衡实例，系统会分配一个公网IP地址和一个私网IP地址，可用于转发公网请求和私网请求。private：表示创建一个私网负载均衡实例，系统会分配一个私网IP地址，仅用于转发私网请求。
+     * @return Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
      * 
      */
     public String type() {
         return this.type;
     }
     /**
-     * @return ALB 实例的最后更新时间。
+     * @return Last update time of the ALB instance.
      * 
      */
     public String updateTime() {
         return this.updateTime;
     }
     /**
-     * @return 负载均衡实例所属的私有网络（VPC）的ID。
+     * @return ID of the Virtual Private Cloud (VPC) to which the load balancer instance belongs.
      * 
      */
     public String vpcId() {
         return this.vpcId;
     }
     /**
-     * @return ALB 实例绑定的 WAF 安全防护实例 ID。
+     * @return ID of the WAF security protection instance bound to the ALB instance.
      * 
      */
     public String wafInstanceId() {
         return this.wafInstanceId;
     }
     /**
-     * @return WAF防护的域名，用于精确匹配防护规则。
+     * @return Domain name protected by WAF, used for precise rule matching.
      * 
      */
     public String wafProtectedDomain() {
         return this.wafProtectedDomain;
     }
     /**
-     * @return WAF 安全防护开关。on：开启；off：关闭。
+     * @return WAF security protection switch. on: enabled; off: disabled.
      * 
      */
     public String wafProtectionEnabled() {
         return this.wafProtectionEnabled;
     }
     /**
-     * @return 可用区映射列表，定义了实例在哪些可用区提供服务。
+     * @return Availability zone mapping list, defines which availability zones the instance provides services in.
      * 
      */
     public List<GetLoadBalancerZoneMapping> zoneMappings() {

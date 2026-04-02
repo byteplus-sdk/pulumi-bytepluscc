@@ -30,25 +30,25 @@ type LookupGroupArgs struct {
 
 // A collection of values returned by getGroup.
 type LookupGroupResult struct {
-	// 用户组所属主账号的ID。
+	// ID of the primary account to which the user group belongs.
 	AccountId int `pulumi:"accountId"`
-	// 用户组绑定的策略信息。
+	// Policy information bound to the user group.
 	AttachedPolicies []GetGroupAttachedPolicy `pulumi:"attachedPolicies"`
-	// 用户组的创建时间。
+	// User group creation time.
 	CreatedTime string `pulumi:"createdTime"`
-	// 用户组描述信息。长度不超过128。
+	// User group description. Maximum length: 128 characters.
 	Description string `pulumi:"description"`
-	// 用户组显示名称。长度不超过64。
+	// User group display name. Maximum length: 64 characters.
 	DisplayName string `pulumi:"displayName"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 用户组的更新时间。
+	// User group update time.
 	UpdatedTime string `pulumi:"updatedTime"`
-	// 用户组ID。
+	// User group ID.
 	UserGroupId int `pulumi:"userGroupId"`
-	// 用户组名称。长度1~64，支持英文、数字和.-_符号。
+	// User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
 	UserGroupName string `pulumi:"userGroupName"`
-	// 用户组内绑定的用户信息。
+	// User information associated with the user group.
 	Users []GetGroupUser `pulumi:"users"`
 }
 
@@ -86,27 +86,27 @@ func (o LookupGroupResultOutput) ToLookupGroupResultOutputWithContext(ctx contex
 	return o
 }
 
-// 用户组所属主账号的ID。
+// ID of the primary account to which the user group belongs.
 func (o LookupGroupResultOutput) AccountId() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupGroupResult) int { return v.AccountId }).(pulumi.IntOutput)
 }
 
-// 用户组绑定的策略信息。
+// Policy information bound to the user group.
 func (o LookupGroupResultOutput) AttachedPolicies() GetGroupAttachedPolicyArrayOutput {
 	return o.ApplyT(func(v LookupGroupResult) []GetGroupAttachedPolicy { return v.AttachedPolicies }).(GetGroupAttachedPolicyArrayOutput)
 }
 
-// 用户组的创建时间。
+// User group creation time.
 func (o LookupGroupResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 用户组描述信息。长度不超过128。
+// User group description. Maximum length: 128 characters.
 func (o LookupGroupResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 用户组显示名称。长度不超过64。
+// User group display name. Maximum length: 64 characters.
 func (o LookupGroupResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -116,22 +116,22 @@ func (o LookupGroupResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 用户组的更新时间。
+// User group update time.
 func (o LookupGroupResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// 用户组ID。
+// User group ID.
 func (o LookupGroupResultOutput) UserGroupId() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupGroupResult) int { return v.UserGroupId }).(pulumi.IntOutput)
 }
 
-// 用户组名称。长度1~64，支持英文、数字和.-_符号。
+// User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
 func (o LookupGroupResultOutput) UserGroupName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGroupResult) string { return v.UserGroupName }).(pulumi.StringOutput)
 }
 
-// 用户组内绑定的用户信息。
+// User information associated with the user group.
 func (o LookupGroupResultOutput) Users() GetGroupUserArrayOutput {
 	return o.ApplyT(func(v LookupGroupResult) []GetGroupUser { return v.Users }).(GetGroupUserArrayOutput)
 }

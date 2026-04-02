@@ -16,14 +16,14 @@ public final class EniPrivateIpSetAssociatedElasticIpArgs extends com.pulumi.res
     public static final EniPrivateIpSetAssociatedElasticIpArgs Empty = new EniPrivateIpSetAssociatedElasticIpArgs();
 
     /**
-     * 公网IP的ID。
+     * Public IP ID
      * 
      */
     @Import(name="allocationId")
     private @Nullable Output<String> allocationId;
 
     /**
-     * @return 公网IP的ID。
+     * @return Public IP ID
      * 
      */
     public Optional<Output<String>> allocationId() {
@@ -55,7 +55,7 @@ public final class EniPrivateIpSetAssociatedElasticIpArgs extends com.pulumi.res
         }
 
         /**
-         * @param allocationId 公网IP的ID。
+         * @param allocationId Public IP ID
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class EniPrivateIpSetAssociatedElasticIpArgs extends com.pulumi.res
         }
 
         /**
-         * @param allocationId 公网IP的ID。
+         * @param allocationId Public IP ID
          * 
          * @return builder
          * 

@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 文件存储 vePFS 是推出的一种高吞吐、低延时、可扩展并行的文件系统服务，满足高性能计算场景下高吞吐低延时的数据读写需求，可广泛应用于 HPC 高性能计算、AI 人工智能训练或推理、能源勘探、工业仿真、影视渲染、生命科学、气象分析等场景。同时，vePFS 提供一键化部署及配套监控报警能力，免去部署、维护费用的同时，最大化提升您的业务效率。
+ * File storage vePFS is a newly launched high-throughput, low-latency, scalable parallel file system service designed to meet the high-throughput and low-latency data read/write requirements in high-performance computing scenarios. It can be widely used in HPC (high-performance computing), AI training or inference, energy exploration, industrial simulation, film rendering, life sciences, meteorological analysis, and other scenarios. vePFS also provides one-click deployment and integrated monitoring and alerting capabilities, eliminating deployment and maintenance costs while maximizing your business efficiency.
  *
  * ## Example Usage
  *
@@ -70,124 +70,124 @@ export class Instance extends pulumi.CustomResource {
     }
 
     /**
-     * 账户ID。
+     * Account ID.
      */
     public /*out*/ readonly accountId!: pulumi.Output<string>;
     /**
-     * vePFS 文件系统吞吐上限。
+     * VePFS file system throughput limit.
      */
     public /*out*/ readonly bandwidth!: pulumi.Output<number>;
     /**
-     * 文件系统容量，单位为 TiB。
+     * File system capacity, unit: TiB.
      */
     public readonly capacity!: pulumi.Output<number>;
     /**
-     * 容量信息。
+     * Capacity information.
      */
     public /*out*/ readonly capacityInfo!: pulumi.Output<outputs.vepfs.InstanceCapacityInfo>;
     /**
-     * 计费状态，默认为 Normal，表示正常计费。
+     * Billing status. Default is Normal, indicating standard billing.
      */
     public /*out*/ readonly chargeStatus!: pulumi.Output<string>;
     /**
-     * 计费类型。取值说明如下：PayAsYouGo：按量计费。
+     * Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
      */
     public readonly chargeType!: pulumi.Output<string>;
     /**
-     * 创建时间。
+     * Creation time.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 文件系统描述信息。
+     * File system description.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 扩容后是否开启数据均衡，取值说明如下：true：扩容后立即开启数据均衡。false：扩容后不开启数据均衡。注意：仅 100MB/s/TiB 规格的文件系统支持数据均衡功能。由于数据均衡过程会消耗存储节点的网络和磁盘带宽，导致文件系统的性能下降，建议您评估业务需求，谨慎开启。数据均衡的时间主要受存量数据量的影响，如果您的存量数据较多，均衡的时间可能会较长，根据扩容容量大小和文件系统状态，此过程可能需要花费数小时至 2 天的时间，建议您在业务低峰期开启并耐心等待。
+     * Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
      */
     public readonly enableRestripe!: pulumi.Output<boolean>;
     /**
-     * 过期时间。
+     * Expiration time.
      */
     public /*out*/ readonly expireTime!: pulumi.Output<string>;
     /**
-     * 文件系统 ID。
+     * File system ID.
      */
     public /*out*/ readonly fileSystemId!: pulumi.Output<string>;
     /**
-     * 文件系统名称。命名规范如下：只能以中文或英文开头。只能包含中文、字母、数字、半角句号（.）、下划线（_）或中划线（-）。长度需要在 1~128 个字符内。
+     * File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
      */
     public readonly fileSystemName!: pulumi.Output<string>;
     /**
-     * 文件系统类型，默认为 VePFS。
+     * File system type. Default is VePFS.
      */
     public readonly fileSystemType!: pulumi.Output<string>;
     /**
-     * 文件系统释放时间。
+     * File system release time.
      */
     public /*out*/ readonly freeTime!: pulumi.Output<string>;
     /**
-     * 文件系统所属项目，默认为 default。
+     * Project to which the file system belongs. Default is default.
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 协议类型，默认为 VePFS。
+     * Protocol type. Default is VePFS.
      */
     public readonly protocolType!: pulumi.Output<string>;
     /**
-     * 读带宽值, 单位MB/s。
+     * Read bandwidth value, unit: MB/s.
      */
     public /*out*/ readonly readBandwidth!: pulumi.Output<number>;
     /**
-     * 生成的辅助网卡所在的安全组ID。
+     * Security group ID for the generated auxiliary NIC.
      */
     public /*out*/ readonly securityGroupId!: pulumi.Output<string>;
     /**
-     * 文件系统状态。取值说明如下：Running：实例运行中。Creating：实例创建中。CreateError：实例创建失败。Updating：实例更新中。UpdateError：实例更新失败。Expanding：实例扩容中。ExpandError：实例扩容失败。Deleting：实例删除中。DeleteError：实例删除失败。Stopped：实例已关停。Error：实例处于错误状态。
+     * File system status. Value descriptions are as follows: Running: Instance is running. Creating: Instance is being created. CreateError: Instance creation failed. Updating: Instance is being updated. UpdateError: Instance update failed. Expanding: Instance is being expanded. ExpandError: Instance expansion failed. Deleting: Instance is being deleted. DeleteError: Instance deletion failed. Stopped: Instance is stopped. Error: Instance is in an error state.
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     /**
-     * 文件系统关停时间。
+     * File system shutdown time.
      */
     public /*out*/ readonly stopServiceTime!: pulumi.Output<string>;
     /**
-     * 文件系统规格，取值说明如下：Advance*100：100MB/s/TiB。Performance：性能版。Intelligent*Computing：智算版。
+     * File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
      */
     public readonly storeType!: pulumi.Output<string>;
     /**
-     * 文件系统规格中文名称，支持如下：100MB/s/TiB。性能版。智算版。
+     * File system specification name in Chinese. Supported options: 100MB/s/TiB. Performance. Intelligent Computing.
      */
     public /*out*/ readonly storeTypeCn!: pulumi.Output<string>;
     /**
-     * 存储类型英文名。
+     * Storage type English name.
      */
     public /*out*/ readonly storeTypeEn!: pulumi.Output<string>;
     /**
-     * 子网 ID。子网必须属于所选的可用区。
+     * Subnet ID. The subnet must belong to the selected availability zone.
      */
     public readonly subnetId!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.vepfs.InstanceTag[]>;
     /**
-     * 文件系统更新时间。
+     * File system update time.
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
     /**
-     * 文件系统版本号。
+     * File system version number.
      */
     public readonly versionNumber!: pulumi.Output<string>;
     /**
-     * 私有网络 ID。
+     * Private network ID.
      */
     public readonly vpcId!: pulumi.Output<string>;
     /**
-     * 写带宽值, 单位MB/s。
+     * Write bandwidth value, measured in MB/s.
      */
     public /*out*/ readonly writeBandwidth!: pulumi.Output<number>;
     /**
-     * 可用区 ID。
+     * Availability zone ID.
      */
     public readonly zoneId!: pulumi.Output<string>;
     /**
-     * 可用区名称。
+     * Availability zone name.
      */
     public /*out*/ readonly zoneName!: pulumi.Output<string>;
 
@@ -291,124 +291,124 @@ export class Instance extends pulumi.CustomResource {
  */
 export interface InstanceState {
     /**
-     * 账户ID。
+     * Account ID.
      */
     accountId?: pulumi.Input<string>;
     /**
-     * vePFS 文件系统吞吐上限。
+     * VePFS file system throughput limit.
      */
     bandwidth?: pulumi.Input<number>;
     /**
-     * 文件系统容量，单位为 TiB。
+     * File system capacity, unit: TiB.
      */
     capacity?: pulumi.Input<number>;
     /**
-     * 容量信息。
+     * Capacity information.
      */
     capacityInfo?: pulumi.Input<inputs.vepfs.InstanceCapacityInfo>;
     /**
-     * 计费状态，默认为 Normal，表示正常计费。
+     * Billing status. Default is Normal, indicating standard billing.
      */
     chargeStatus?: pulumi.Input<string>;
     /**
-     * 计费类型。取值说明如下：PayAsYouGo：按量计费。
+     * Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
      */
     chargeType?: pulumi.Input<string>;
     /**
-     * 创建时间。
+     * Creation time.
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 文件系统描述信息。
+     * File system description.
      */
     description?: pulumi.Input<string>;
     /**
-     * 扩容后是否开启数据均衡，取值说明如下：true：扩容后立即开启数据均衡。false：扩容后不开启数据均衡。注意：仅 100MB/s/TiB 规格的文件系统支持数据均衡功能。由于数据均衡过程会消耗存储节点的网络和磁盘带宽，导致文件系统的性能下降，建议您评估业务需求，谨慎开启。数据均衡的时间主要受存量数据量的影响，如果您的存量数据较多，均衡的时间可能会较长，根据扩容容量大小和文件系统状态，此过程可能需要花费数小时至 2 天的时间，建议您在业务低峰期开启并耐心等待。
+     * Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
      */
     enableRestripe?: pulumi.Input<boolean>;
     /**
-     * 过期时间。
+     * Expiration time.
      */
     expireTime?: pulumi.Input<string>;
     /**
-     * 文件系统 ID。
+     * File system ID.
      */
     fileSystemId?: pulumi.Input<string>;
     /**
-     * 文件系统名称。命名规范如下：只能以中文或英文开头。只能包含中文、字母、数字、半角句号（.）、下划线（_）或中划线（-）。长度需要在 1~128 个字符内。
+     * File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
      */
     fileSystemName?: pulumi.Input<string>;
     /**
-     * 文件系统类型，默认为 VePFS。
+     * File system type. Default is VePFS.
      */
     fileSystemType?: pulumi.Input<string>;
     /**
-     * 文件系统释放时间。
+     * File system release time.
      */
     freeTime?: pulumi.Input<string>;
     /**
-     * 文件系统所属项目，默认为 default。
+     * Project to which the file system belongs. Default is default.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 协议类型，默认为 VePFS。
+     * Protocol type. Default is VePFS.
      */
     protocolType?: pulumi.Input<string>;
     /**
-     * 读带宽值, 单位MB/s。
+     * Read bandwidth value, unit: MB/s.
      */
     readBandwidth?: pulumi.Input<number>;
     /**
-     * 生成的辅助网卡所在的安全组ID。
+     * Security group ID for the generated auxiliary NIC.
      */
     securityGroupId?: pulumi.Input<string>;
     /**
-     * 文件系统状态。取值说明如下：Running：实例运行中。Creating：实例创建中。CreateError：实例创建失败。Updating：实例更新中。UpdateError：实例更新失败。Expanding：实例扩容中。ExpandError：实例扩容失败。Deleting：实例删除中。DeleteError：实例删除失败。Stopped：实例已关停。Error：实例处于错误状态。
+     * File system status. Value descriptions are as follows: Running: Instance is running. Creating: Instance is being created. CreateError: Instance creation failed. Updating: Instance is being updated. UpdateError: Instance update failed. Expanding: Instance is being expanded. ExpandError: Instance expansion failed. Deleting: Instance is being deleted. DeleteError: Instance deletion failed. Stopped: Instance is stopped. Error: Instance is in an error state.
      */
     status?: pulumi.Input<string>;
     /**
-     * 文件系统关停时间。
+     * File system shutdown time.
      */
     stopServiceTime?: pulumi.Input<string>;
     /**
-     * 文件系统规格，取值说明如下：Advance*100：100MB/s/TiB。Performance：性能版。Intelligent*Computing：智算版。
+     * File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
      */
     storeType?: pulumi.Input<string>;
     /**
-     * 文件系统规格中文名称，支持如下：100MB/s/TiB。性能版。智算版。
+     * File system specification name in Chinese. Supported options: 100MB/s/TiB. Performance. Intelligent Computing.
      */
     storeTypeCn?: pulumi.Input<string>;
     /**
-     * 存储类型英文名。
+     * Storage type English name.
      */
     storeTypeEn?: pulumi.Input<string>;
     /**
-     * 子网 ID。子网必须属于所选的可用区。
+     * Subnet ID. The subnet must belong to the selected availability zone.
      */
     subnetId?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.vepfs.InstanceTag>[]>;
     /**
-     * 文件系统更新时间。
+     * File system update time.
      */
     updatedTime?: pulumi.Input<string>;
     /**
-     * 文件系统版本号。
+     * File system version number.
      */
     versionNumber?: pulumi.Input<string>;
     /**
-     * 私有网络 ID。
+     * Private network ID.
      */
     vpcId?: pulumi.Input<string>;
     /**
-     * 写带宽值, 单位MB/s。
+     * Write bandwidth value, measured in MB/s.
      */
     writeBandwidth?: pulumi.Input<number>;
     /**
-     * 可用区 ID。
+     * Availability zone ID.
      */
     zoneId?: pulumi.Input<string>;
     /**
-     * 可用区名称。
+     * Availability zone name.
      */
     zoneName?: pulumi.Input<string>;
 }
@@ -418,56 +418,56 @@ export interface InstanceState {
  */
 export interface InstanceArgs {
     /**
-     * 文件系统容量，单位为 TiB。
+     * File system capacity, unit: TiB.
      */
     capacity: pulumi.Input<number>;
     /**
-     * 计费类型。取值说明如下：PayAsYouGo：按量计费。
+     * Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
      */
     chargeType?: pulumi.Input<string>;
     /**
-     * 文件系统描述信息。
+     * File system description.
      */
     description?: pulumi.Input<string>;
     /**
-     * 扩容后是否开启数据均衡，取值说明如下：true：扩容后立即开启数据均衡。false：扩容后不开启数据均衡。注意：仅 100MB/s/TiB 规格的文件系统支持数据均衡功能。由于数据均衡过程会消耗存储节点的网络和磁盘带宽，导致文件系统的性能下降，建议您评估业务需求，谨慎开启。数据均衡的时间主要受存量数据量的影响，如果您的存量数据较多，均衡的时间可能会较长，根据扩容容量大小和文件系统状态，此过程可能需要花费数小时至 2 天的时间，建议您在业务低峰期开启并耐心等待。
+     * Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
      */
     enableRestripe?: pulumi.Input<boolean>;
     /**
-     * 文件系统名称。命名规范如下：只能以中文或英文开头。只能包含中文、字母、数字、半角句号（.）、下划线（_）或中划线（-）。长度需要在 1~128 个字符内。
+     * File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
      */
     fileSystemName: pulumi.Input<string>;
     /**
-     * 文件系统类型，默认为 VePFS。
+     * File system type. Default is VePFS.
      */
     fileSystemType?: pulumi.Input<string>;
     /**
-     * 文件系统所属项目，默认为 default。
+     * Project to which the file system belongs. Default is default.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 协议类型，默认为 VePFS。
+     * Protocol type. Default is VePFS.
      */
     protocolType?: pulumi.Input<string>;
     /**
-     * 文件系统规格，取值说明如下：Advance*100：100MB/s/TiB。Performance：性能版。Intelligent*Computing：智算版。
+     * File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
      */
     storeType: pulumi.Input<string>;
     /**
-     * 子网 ID。子网必须属于所选的可用区。
+     * Subnet ID. The subnet must belong to the selected availability zone.
      */
     subnetId?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.vepfs.InstanceTag>[]>;
     /**
-     * 文件系统版本号。
+     * File system version number.
      */
     versionNumber?: pulumi.Input<string>;
     /**
-     * 私有网络 ID。
+     * Private network ID.
      */
     vpcId?: pulumi.Input<string>;
     /**
-     * 可用区 ID。
+     * Availability zone ID.
      */
     zoneId: pulumi.Input<string>;
 }

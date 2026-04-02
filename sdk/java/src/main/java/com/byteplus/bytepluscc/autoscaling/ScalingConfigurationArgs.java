@@ -22,14 +22,14 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
     public static final ScalingConfigurationArgs Empty = new ScalingConfigurationArgs();
 
     /**
-     * 公网IP。
+     * Public IP.
      * 
      */
     @Import(name="eip")
     private @Nullable Output<ScalingConfigurationEipArgs> eip;
 
     /**
-     * @return 公网IP。
+     * @return Public IP.
      * 
      */
     public Optional<Output<ScalingConfigurationEipArgs>> eip() {
@@ -37,14 +37,14 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 实例的主机名。取值：Linux实例允许使用点号分隔字符成多段，每段中允许使用字母、数字或中划线“-”。不能以点号“.”或中划线“-”开头或结尾，且不能连续使用点号“.”或中划线“-”。Linux系统的主机名长度限制为2～63个字符。Windows实例允许使用字母、数字或中划线“-”，不能完全是数字。不能以中划线“-”开头或结尾，且不能连续使用中划线“-”。Windows系统的主机名长度限制在2～15个字符。如不填，则遵循以下规则自动生成：结构：iv  - + 初始主机名，例如iv-3tigy72q3u3vj0******。已创建实例保持原主机名生成逻辑，不随实例重启发生变化。初始主机名生成逻辑：Linux：提取实例IDi-之后的全部字符。Windows：提取实例IDi-之后的后12位字符。
+     * Instance hostname. Value: Linux instances allow periods to separate segments; each segment can contain letters, digits, or hyphens &#39;-&#39;. Cannot start or end with a period &#39;.&#39; or hyphen &#39;-&#39;, and periods or hyphens cannot be used consecutively. Linux hostnames must be 2–63 characters long. Windows instances allow letters, digits, or hyphens &#39;-&#39;, but cannot be entirely numeric. Cannot start or end with a hyphen &#39;-&#39;, and hyphens cannot be used consecutively. Windows hostnames must be 2–15 characters long. If not specified, the hostname is automatically generated as follows: Structure: iv  - + initial hostname, for example iv-3tigy72q3u3vj0******. Created instances retain the original hostname generation logic and do not change upon instance restart. Initial hostname generation logic: Linux: extracts all characters after instance ID &#39;i-&#39;. Windows: extracts the last 12 characters after instance ID &#39;i-&#39;
      * 
      */
     @Import(name="hostName")
     private @Nullable Output<String> hostName;
 
     /**
-     * @return 实例的主机名。取值：Linux实例允许使用点号分隔字符成多段，每段中允许使用字母、数字或中划线“-”。不能以点号“.”或中划线“-”开头或结尾，且不能连续使用点号“.”或中划线“-”。Linux系统的主机名长度限制为2～63个字符。Windows实例允许使用字母、数字或中划线“-”，不能完全是数字。不能以中划线“-”开头或结尾，且不能连续使用中划线“-”。Windows系统的主机名长度限制在2～15个字符。如不填，则遵循以下规则自动生成：结构：iv  - + 初始主机名，例如iv-3tigy72q3u3vj0******。已创建实例保持原主机名生成逻辑，不随实例重启发生变化。初始主机名生成逻辑：Linux：提取实例IDi-之后的全部字符。Windows：提取实例IDi-之后的后12位字符。
+     * @return Instance hostname. Value: Linux instances allow periods to separate segments; each segment can contain letters, digits, or hyphens &#39;-&#39;. Cannot start or end with a period &#39;.&#39; or hyphen &#39;-&#39;, and periods or hyphens cannot be used consecutively. Linux hostnames must be 2–63 characters long. Windows instances allow letters, digits, or hyphens &#39;-&#39;, but cannot be entirely numeric. Cannot start or end with a hyphen &#39;-&#39;, and hyphens cannot be used consecutively. Windows hostnames must be 2–15 characters long. If not specified, the hostname is automatically generated as follows: Structure: iv  - + initial hostname, for example iv-3tigy72q3u3vj0******. Created instances retain the original hostname generation logic and do not change upon instance restart. Initial hostname generation logic: Linux: extracts all characters after instance ID &#39;i-&#39;. Windows: extracts the last 12 characters after instance ID &#39;i-&#39;
      * 
      */
     public Optional<Output<String>> hostName() {
@@ -52,14 +52,14 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 实例所属的高性能计算集群的ID。仅当InstanceTypes.N指定为“高性能计算GPU型”时有效。
+     * ID of the high-performance computing cluster to which the instance belongs. Only valid when InstanceTypes.N is specified as &#39;High-Performance Computing GPU&#39;.
      * 
      */
     @Import(name="hpcClusterId")
     private @Nullable Output<String> hpcClusterId;
 
     /**
-     * @return 实例所属的高性能计算集群的ID。仅当InstanceTypes.N指定为“高性能计算GPU型”时有效。
+     * @return ID of the high-performance computing cluster to which the instance belongs. Only valid when InstanceTypes.N is specified as &#39;High-Performance Computing GPU&#39;.
      * 
      */
     public Optional<Output<String>> hpcClusterId() {
@@ -67,14 +67,14 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 镜像ID，伸缩组自动创建实例时使用的镜像资源。
+     * Image ID. The image resource used when the scaling group automatically creates an instance
      * 
      */
     @Import(name="imageId")
     private @Nullable Output<String> imageId;
 
     /**
-     * @return 镜像ID，伸缩组自动创建实例时使用的镜像资源。
+     * @return Image ID. The image resource used when the scaling group automatically creates an instance
      * 
      */
     public Optional<Output<String>> imageId() {
@@ -82,14 +82,14 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 实例的描述，取值：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0 ~ 255之间。不填默认为空字符串。
+     * Instance description. Value: Cannot start with a digit or hyphen. Only Chinese characters, letters, digits, underscores, and hyphens are allowed. Length must be between 0 and 255 characters. If not specified, defaults to an empty string
      * 
      */
     @Import(name="instanceDescription")
     private @Nullable Output<String> instanceDescription;
 
     /**
-     * @return 实例的描述，取值：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0 ~ 255之间。不填默认为空字符串。
+     * @return Instance description. Value: Cannot start with a digit or hyphen. Only Chinese characters, letters, digits, underscores, and hyphens are allowed. Length must be between 0 and 255 characters. If not specified, defaults to an empty string
      * 
      */
     public Optional<Output<String>> instanceDescription() {
@@ -97,14 +97,14 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 实例的名称，取值：以字母或中文开头。只能包含中文、字母、数字、下划线“_”、中划线“-”和点号“.”。长度限制为1～128个字符。
+     * Instance name. Rules: Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscore &#34;_&#34;, hyphen &#34;-&#34;, and period &#34;.&#34;. Length: 1–128 characters.
      * 
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
-     * @return 实例的名称，取值：以字母或中文开头。只能包含中文、字母、数字、下划线“_”、中划线“-”和点号“.”。长度限制为1～128个字符。
+     * @return Instance name. Rules: Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscore &#34;_&#34;, hyphen &#34;-&#34;, and period &#34;.&#34;. Length: 1–128 characters.
      * 
      */
     public Optional<Output<String>> instanceName() {
@@ -119,14 +119,14 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 是否为实例网卡分配IPv6地址。取值：0：不分配IPv6地址。1：分配IPv6地址，系统自动为您分配IPv6网段。
+     * Assign an IPv6 address to the instance NIC. Values: 0: Do not assign an IPv6 address. 1: Assign an IPv6 address; the system automatically allocates an IPv6 subnet for you.
      * 
      */
     @Import(name="ipv6AddressCount")
     private @Nullable Output<Integer> ipv6AddressCount;
 
     /**
-     * @return 是否为实例网卡分配IPv6地址。取值：0：不分配IPv6地址。1：分配IPv6地址，系统自动为您分配IPv6网段。
+     * @return Assign an IPv6 address to the instance NIC. Values: 0: Do not assign an IPv6 address. 1: Assign an IPv6 address; the system automatically allocates an IPv6 subnet for you.
      * 
      */
     public Optional<Output<Integer>> ipv6AddressCount() {
@@ -134,14 +134,14 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+     * Name of the key pair. If both KeyPairName and Password are set, only KeyPairName takes effect
      * 
      */
     @Import(name="keyPairName")
     private @Nullable Output<String> keyPairName;
 
     /**
-     * @return 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+     * @return Name of the key pair. If both KeyPairName and Password are set, only KeyPairName takes effect
      * 
      */
     public Optional<Output<String>> keyPairName() {
@@ -149,14 +149,14 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 生命周期状态。取值：Active（活跃）/InActive（非活跃）
+     * Lifecycle status. Values: Active (active) / InActive (inactive)
      * 
      */
     @Import(name="lifecycleState")
     private @Nullable Output<String> lifecycleState;
 
     /**
-     * @return 生命周期状态。取值：Active（活跃）/InActive（非活跃）
+     * @return Lifecycle status. Values: Active (active) / InActive (inactive)
      * 
      */
     public Optional<Output<String>> lifecycleState() {
@@ -164,14 +164,14 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 使用“密码”方式登录实例时，请设置root登录密码：长度限制在8～30之间，密码只能由大写字母、小写字母、数字和特殊字符组成，且必须包含至少三项，特殊字符可以使用：`~!#$%^&amp;*()_-+= |，不能以“/”和“$6$”开头
+     * When logging in to the instance using the &#39;Password&#39; method, set the root login password: The password must be 8–30 characters long and consist of uppercase letters, lowercase letters, numbers, and special characters. At least three types must be included. Allowed special characters: `~!#$%^&amp;*()_-+= |. The password cannot start with &#39;/&#39; or &#39;$6$&#39;
      * 
      */
     @Import(name="password")
     private @Nullable Output<String> password;
 
     /**
-     * @return 使用“密码”方式登录实例时，请设置root登录密码：长度限制在8～30之间，密码只能由大写字母、小写字母、数字和特殊字符组成，且必须包含至少三项，特殊字符可以使用：`~!#$%^&amp;*()_-+= |，不能以“/”和“$6$”开头
+     * @return When logging in to the instance using the &#39;Password&#39; method, set the root login password: The password must be 8–30 characters long and consist of uppercase letters, lowercase letters, numbers, and special characters. At least three types must be included. Allowed special characters: `~!#$%^&amp;*()_-+= |. The password cannot start with &#39;/&#39; or &#39;$6$&#39;
      * 
      */
     public Optional<Output<String>> password() {
@@ -179,18 +179,18 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 伸缩配置创建的实例所属项目，默认为空。一个资源只能归属于一个项目。
-     * 只能包含字母、数字、下划线“_”、点“.”和中划线“-”。
-     * 长度限制在64个字符以内。
+     * The project to which the instance created by the scaling configuration belongs. Default is empty. Each resource can belong to only one project.
+     * Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed.
+     * Maximum length: 64 characters
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 伸缩配置创建的实例所属项目，默认为空。一个资源只能归属于一个项目。
-     * 只能包含字母、数字、下划线“_”、点“.”和中划线“-”。
-     * 长度限制在64个字符以内。
+     * @return The project to which the instance created by the scaling configuration belongs. Default is empty. Each resource can belong to only one project.
+     * Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed.
+     * Maximum length: 64 characters
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -198,14 +198,14 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 伸缩配置的名称，在同一地域下同一伸缩组内伸缩配置名称唯一。取值:只能以中文、字母开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+     * Name of the scaling configuration. The name must be unique within the same scaling group in the same region. Rules: Must start with a Chinese character or letter. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length: 1–128 characters. Special characters are not supported.
      * 
      */
     @Import(name="scalingConfigurationName")
     private @Nullable Output<String> scalingConfigurationName;
 
     /**
-     * @return 伸缩配置的名称，在同一地域下同一伸缩组内伸缩配置名称唯一。取值:只能以中文、字母开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+     * @return Name of the scaling configuration. The name must be unique within the same scaling group in the same region. Rules: Must start with a Chinese character or letter. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length: 1–128 characters. Special characters are not supported.
      * 
      */
     public Optional<Output<String>> scalingConfigurationName() {
@@ -213,14 +213,14 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 伸缩配置所属的伸缩组ID。
+     * Scaling group ID to which the scaling configuration belongs
      * 
      */
     @Import(name="scalingGroupId")
     private @Nullable Output<String> scalingGroupId;
 
     /**
-     * @return 伸缩配置所属的伸缩组ID。
+     * @return Scaling group ID to which the scaling configuration belongs
      * 
      */
     public Optional<Output<String>> scalingGroupId() {
@@ -228,14 +228,14 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 是否开启安全加固，取值：Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+     * Enable security hardening. Options: Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
      * 
      */
     @Import(name="securityEnhancementStrategy")
     private @Nullable Output<String> securityEnhancementStrategy;
 
     /**
-     * @return 是否开启安全加固，取值：Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+     * @return Enable security hardening. Options: Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
      * 
      */
     public Optional<Output<String>> securityEnhancementStrategy() {
@@ -243,14 +243,14 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 实例主网卡关联的安全组ID。
+     * Security group ID associated with the instance&#39;s primary network interface
      * 
      */
     @Import(name="securityGroupIds")
     private @Nullable Output<List<String>> securityGroupIds;
 
     /**
-     * @return 实例主网卡关联的安全组ID。
+     * @return Security group ID associated with the instance&#39;s primary network interface
      * 
      */
     public Optional<Output<List<String>>> securityGroupIds() {
@@ -258,14 +258,14 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 实例的抢占策略。取值：NoSpot（默认）：表示创建正常按量付费实例。SpotAsPriceGo：表示系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：表示需要设置出价上限的抢占式实例。
+     * Instance preemption policy. Values: NoSpot (default): creates a standard pay-as-you-go instance. SpotAsPriceGo: system automatically bids, creating a preemptible instance that follows the current market price. SpotWithPriceLimit: creates a preemptible instance with a specified bid limit
      * 
      */
     @Import(name="spotStrategy")
     private @Nullable Output<String> spotStrategy;
 
     /**
-     * @return 实例的抢占策略。取值：NoSpot（默认）：表示创建正常按量付费实例。SpotAsPriceGo：表示系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：表示需要设置出价上限的抢占式实例。
+     * @return Instance preemption policy. Values: NoSpot (default): creates a standard pay-as-you-go instance. SpotAsPriceGo: system automatically bids, creating a preemptible instance that follows the current market price. SpotWithPriceLimit: creates a preemptible instance with a specified bid limit
      * 
      */
     public Optional<Output<String>> spotStrategy() {
@@ -280,14 +280,14 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 实例自定义数据。设置的自定义数据必须经过Base64编码，且Base64编码前的自定义数据大小不能超过16KB。不填则默认为空。
+     * Instance custom data. Custom data must be Base64 encoded, and the size before encoding must not exceed 16 KB. If not specified, defaults to empty
      * 
      */
     @Import(name="userData")
     private @Nullable Output<String> userData;
 
     /**
-     * @return 实例自定义数据。设置的自定义数据必须经过Base64编码，且Base64编码前的自定义数据大小不能超过16KB。不填则默认为空。
+     * @return Instance custom data. Custom data must be Base64 encoded, and the size before encoding must not exceed 16 KB. If not specified, defaults to empty
      * 
      */
     public Optional<Output<String>> userData() {
@@ -302,14 +302,14 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 伸缩配置可用区ID。
+     * Availability zone ID for the scaling configuration
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return 伸缩配置可用区ID。
+     * @return Availability zone ID for the scaling configuration
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -361,7 +361,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param eip 公网IP。
+         * @param eip Public IP.
          * 
          * @return builder
          * 
@@ -372,7 +372,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param eip 公网IP。
+         * @param eip Public IP.
          * 
          * @return builder
          * 
@@ -382,7 +382,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param hostName 实例的主机名。取值：Linux实例允许使用点号分隔字符成多段，每段中允许使用字母、数字或中划线“-”。不能以点号“.”或中划线“-”开头或结尾，且不能连续使用点号“.”或中划线“-”。Linux系统的主机名长度限制为2～63个字符。Windows实例允许使用字母、数字或中划线“-”，不能完全是数字。不能以中划线“-”开头或结尾，且不能连续使用中划线“-”。Windows系统的主机名长度限制在2～15个字符。如不填，则遵循以下规则自动生成：结构：iv  - + 初始主机名，例如iv-3tigy72q3u3vj0******。已创建实例保持原主机名生成逻辑，不随实例重启发生变化。初始主机名生成逻辑：Linux：提取实例IDi-之后的全部字符。Windows：提取实例IDi-之后的后12位字符。
+         * @param hostName Instance hostname. Value: Linux instances allow periods to separate segments; each segment can contain letters, digits, or hyphens &#39;-&#39;. Cannot start or end with a period &#39;.&#39; or hyphen &#39;-&#39;, and periods or hyphens cannot be used consecutively. Linux hostnames must be 2–63 characters long. Windows instances allow letters, digits, or hyphens &#39;-&#39;, but cannot be entirely numeric. Cannot start or end with a hyphen &#39;-&#39;, and hyphens cannot be used consecutively. Windows hostnames must be 2–15 characters long. If not specified, the hostname is automatically generated as follows: Structure: iv  - + initial hostname, for example iv-3tigy72q3u3vj0******. Created instances retain the original hostname generation logic and do not change upon instance restart. Initial hostname generation logic: Linux: extracts all characters after instance ID &#39;i-&#39;. Windows: extracts the last 12 characters after instance ID &#39;i-&#39;
          * 
          * @return builder
          * 
@@ -393,7 +393,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param hostName 实例的主机名。取值：Linux实例允许使用点号分隔字符成多段，每段中允许使用字母、数字或中划线“-”。不能以点号“.”或中划线“-”开头或结尾，且不能连续使用点号“.”或中划线“-”。Linux系统的主机名长度限制为2～63个字符。Windows实例允许使用字母、数字或中划线“-”，不能完全是数字。不能以中划线“-”开头或结尾，且不能连续使用中划线“-”。Windows系统的主机名长度限制在2～15个字符。如不填，则遵循以下规则自动生成：结构：iv  - + 初始主机名，例如iv-3tigy72q3u3vj0******。已创建实例保持原主机名生成逻辑，不随实例重启发生变化。初始主机名生成逻辑：Linux：提取实例IDi-之后的全部字符。Windows：提取实例IDi-之后的后12位字符。
+         * @param hostName Instance hostname. Value: Linux instances allow periods to separate segments; each segment can contain letters, digits, or hyphens &#39;-&#39;. Cannot start or end with a period &#39;.&#39; or hyphen &#39;-&#39;, and periods or hyphens cannot be used consecutively. Linux hostnames must be 2–63 characters long. Windows instances allow letters, digits, or hyphens &#39;-&#39;, but cannot be entirely numeric. Cannot start or end with a hyphen &#39;-&#39;, and hyphens cannot be used consecutively. Windows hostnames must be 2–15 characters long. If not specified, the hostname is automatically generated as follows: Structure: iv  - + initial hostname, for example iv-3tigy72q3u3vj0******. Created instances retain the original hostname generation logic and do not change upon instance restart. Initial hostname generation logic: Linux: extracts all characters after instance ID &#39;i-&#39;. Windows: extracts the last 12 characters after instance ID &#39;i-&#39;
          * 
          * @return builder
          * 
@@ -403,7 +403,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param hpcClusterId 实例所属的高性能计算集群的ID。仅当InstanceTypes.N指定为“高性能计算GPU型”时有效。
+         * @param hpcClusterId ID of the high-performance computing cluster to which the instance belongs. Only valid when InstanceTypes.N is specified as &#39;High-Performance Computing GPU&#39;.
          * 
          * @return builder
          * 
@@ -414,7 +414,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param hpcClusterId 实例所属的高性能计算集群的ID。仅当InstanceTypes.N指定为“高性能计算GPU型”时有效。
+         * @param hpcClusterId ID of the high-performance computing cluster to which the instance belongs. Only valid when InstanceTypes.N is specified as &#39;High-Performance Computing GPU&#39;.
          * 
          * @return builder
          * 
@@ -424,7 +424,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param imageId 镜像ID，伸缩组自动创建实例时使用的镜像资源。
+         * @param imageId Image ID. The image resource used when the scaling group automatically creates an instance
          * 
          * @return builder
          * 
@@ -435,7 +435,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param imageId 镜像ID，伸缩组自动创建实例时使用的镜像资源。
+         * @param imageId Image ID. The image resource used when the scaling group automatically creates an instance
          * 
          * @return builder
          * 
@@ -445,7 +445,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param instanceDescription 实例的描述，取值：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0 ~ 255之间。不填默认为空字符串。
+         * @param instanceDescription Instance description. Value: Cannot start with a digit or hyphen. Only Chinese characters, letters, digits, underscores, and hyphens are allowed. Length must be between 0 and 255 characters. If not specified, defaults to an empty string
          * 
          * @return builder
          * 
@@ -456,7 +456,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param instanceDescription 实例的描述，取值：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0 ~ 255之间。不填默认为空字符串。
+         * @param instanceDescription Instance description. Value: Cannot start with a digit or hyphen. Only Chinese characters, letters, digits, underscores, and hyphens are allowed. Length must be between 0 and 255 characters. If not specified, defaults to an empty string
          * 
          * @return builder
          * 
@@ -466,7 +466,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param instanceName 实例的名称，取值：以字母或中文开头。只能包含中文、字母、数字、下划线“_”、中划线“-”和点号“.”。长度限制为1～128个字符。
+         * @param instanceName Instance name. Rules: Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscore &#34;_&#34;, hyphen &#34;-&#34;, and period &#34;.&#34;. Length: 1–128 characters.
          * 
          * @return builder
          * 
@@ -477,7 +477,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param instanceName 实例的名称，取值：以字母或中文开头。只能包含中文、字母、数字、下划线“_”、中划线“-”和点号“.”。长度限制为1～128个字符。
+         * @param instanceName Instance name. Rules: Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscore &#34;_&#34;, hyphen &#34;-&#34;, and period &#34;.&#34;. Length: 1–128 characters.
          * 
          * @return builder
          * 
@@ -500,7 +500,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param ipv6AddressCount 是否为实例网卡分配IPv6地址。取值：0：不分配IPv6地址。1：分配IPv6地址，系统自动为您分配IPv6网段。
+         * @param ipv6AddressCount Assign an IPv6 address to the instance NIC. Values: 0: Do not assign an IPv6 address. 1: Assign an IPv6 address; the system automatically allocates an IPv6 subnet for you.
          * 
          * @return builder
          * 
@@ -511,7 +511,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param ipv6AddressCount 是否为实例网卡分配IPv6地址。取值：0：不分配IPv6地址。1：分配IPv6地址，系统自动为您分配IPv6网段。
+         * @param ipv6AddressCount Assign an IPv6 address to the instance NIC. Values: 0: Do not assign an IPv6 address. 1: Assign an IPv6 address; the system automatically allocates an IPv6 subnet for you.
          * 
          * @return builder
          * 
@@ -521,7 +521,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param keyPairName 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+         * @param keyPairName Name of the key pair. If both KeyPairName and Password are set, only KeyPairName takes effect
          * 
          * @return builder
          * 
@@ -532,7 +532,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param keyPairName 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+         * @param keyPairName Name of the key pair. If both KeyPairName and Password are set, only KeyPairName takes effect
          * 
          * @return builder
          * 
@@ -542,7 +542,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param lifecycleState 生命周期状态。取值：Active（活跃）/InActive（非活跃）
+         * @param lifecycleState Lifecycle status. Values: Active (active) / InActive (inactive)
          * 
          * @return builder
          * 
@@ -553,7 +553,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param lifecycleState 生命周期状态。取值：Active（活跃）/InActive（非活跃）
+         * @param lifecycleState Lifecycle status. Values: Active (active) / InActive (inactive)
          * 
          * @return builder
          * 
@@ -563,7 +563,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param password 使用“密码”方式登录实例时，请设置root登录密码：长度限制在8～30之间，密码只能由大写字母、小写字母、数字和特殊字符组成，且必须包含至少三项，特殊字符可以使用：`~!#$%^&amp;*()_-+= |，不能以“/”和“$6$”开头
+         * @param password When logging in to the instance using the &#39;Password&#39; method, set the root login password: The password must be 8–30 characters long and consist of uppercase letters, lowercase letters, numbers, and special characters. At least three types must be included. Allowed special characters: `~!#$%^&amp;*()_-+= |. The password cannot start with &#39;/&#39; or &#39;$6$&#39;
          * 
          * @return builder
          * 
@@ -574,7 +574,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param password 使用“密码”方式登录实例时，请设置root登录密码：长度限制在8～30之间，密码只能由大写字母、小写字母、数字和特殊字符组成，且必须包含至少三项，特殊字符可以使用：`~!#$%^&amp;*()_-+= |，不能以“/”和“$6$”开头
+         * @param password When logging in to the instance using the &#39;Password&#39; method, set the root login password: The password must be 8–30 characters long and consist of uppercase letters, lowercase letters, numbers, and special characters. At least three types must be included. Allowed special characters: `~!#$%^&amp;*()_-+= |. The password cannot start with &#39;/&#39; or &#39;$6$&#39;
          * 
          * @return builder
          * 
@@ -584,9 +584,9 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param projectName 伸缩配置创建的实例所属项目，默认为空。一个资源只能归属于一个项目。
-         * 只能包含字母、数字、下划线“_”、点“.”和中划线“-”。
-         * 长度限制在64个字符以内。
+         * @param projectName The project to which the instance created by the scaling configuration belongs. Default is empty. Each resource can belong to only one project.
+         * Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed.
+         * Maximum length: 64 characters
          * 
          * @return builder
          * 
@@ -597,9 +597,9 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param projectName 伸缩配置创建的实例所属项目，默认为空。一个资源只能归属于一个项目。
-         * 只能包含字母、数字、下划线“_”、点“.”和中划线“-”。
-         * 长度限制在64个字符以内。
+         * @param projectName The project to which the instance created by the scaling configuration belongs. Default is empty. Each resource can belong to only one project.
+         * Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed.
+         * Maximum length: 64 characters
          * 
          * @return builder
          * 
@@ -609,7 +609,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param scalingConfigurationName 伸缩配置的名称，在同一地域下同一伸缩组内伸缩配置名称唯一。取值:只能以中文、字母开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+         * @param scalingConfigurationName Name of the scaling configuration. The name must be unique within the same scaling group in the same region. Rules: Must start with a Chinese character or letter. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length: 1–128 characters. Special characters are not supported.
          * 
          * @return builder
          * 
@@ -620,7 +620,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param scalingConfigurationName 伸缩配置的名称，在同一地域下同一伸缩组内伸缩配置名称唯一。取值:只能以中文、字母开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+         * @param scalingConfigurationName Name of the scaling configuration. The name must be unique within the same scaling group in the same region. Rules: Must start with a Chinese character or letter. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length: 1–128 characters. Special characters are not supported.
          * 
          * @return builder
          * 
@@ -630,7 +630,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param scalingGroupId 伸缩配置所属的伸缩组ID。
+         * @param scalingGroupId Scaling group ID to which the scaling configuration belongs
          * 
          * @return builder
          * 
@@ -641,7 +641,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param scalingGroupId 伸缩配置所属的伸缩组ID。
+         * @param scalingGroupId Scaling group ID to which the scaling configuration belongs
          * 
          * @return builder
          * 
@@ -651,7 +651,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param securityEnhancementStrategy 是否开启安全加固，取值：Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+         * @param securityEnhancementStrategy Enable security hardening. Options: Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
          * 
          * @return builder
          * 
@@ -662,7 +662,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param securityEnhancementStrategy 是否开启安全加固，取值：Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+         * @param securityEnhancementStrategy Enable security hardening. Options: Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
          * 
          * @return builder
          * 
@@ -672,7 +672,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param securityGroupIds 实例主网卡关联的安全组ID。
+         * @param securityGroupIds Security group ID associated with the instance&#39;s primary network interface
          * 
          * @return builder
          * 
@@ -683,7 +683,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param securityGroupIds 实例主网卡关联的安全组ID。
+         * @param securityGroupIds Security group ID associated with the instance&#39;s primary network interface
          * 
          * @return builder
          * 
@@ -693,7 +693,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param securityGroupIds 实例主网卡关联的安全组ID。
+         * @param securityGroupIds Security group ID associated with the instance&#39;s primary network interface
          * 
          * @return builder
          * 
@@ -703,7 +703,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param spotStrategy 实例的抢占策略。取值：NoSpot（默认）：表示创建正常按量付费实例。SpotAsPriceGo：表示系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：表示需要设置出价上限的抢占式实例。
+         * @param spotStrategy Instance preemption policy. Values: NoSpot (default): creates a standard pay-as-you-go instance. SpotAsPriceGo: system automatically bids, creating a preemptible instance that follows the current market price. SpotWithPriceLimit: creates a preemptible instance with a specified bid limit
          * 
          * @return builder
          * 
@@ -714,7 +714,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param spotStrategy 实例的抢占策略。取值：NoSpot（默认）：表示创建正常按量付费实例。SpotAsPriceGo：表示系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：表示需要设置出价上限的抢占式实例。
+         * @param spotStrategy Instance preemption policy. Values: NoSpot (default): creates a standard pay-as-you-go instance. SpotAsPriceGo: system automatically bids, creating a preemptible instance that follows the current market price. SpotWithPriceLimit: creates a preemptible instance with a specified bid limit
          * 
          * @return builder
          * 
@@ -737,7 +737,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param userData 实例自定义数据。设置的自定义数据必须经过Base64编码，且Base64编码前的自定义数据大小不能超过16KB。不填则默认为空。
+         * @param userData Instance custom data. Custom data must be Base64 encoded, and the size before encoding must not exceed 16 KB. If not specified, defaults to empty
          * 
          * @return builder
          * 
@@ -748,7 +748,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param userData 实例自定义数据。设置的自定义数据必须经过Base64编码，且Base64编码前的自定义数据大小不能超过16KB。不填则默认为空。
+         * @param userData Instance custom data. Custom data must be Base64 encoded, and the size before encoding must not exceed 16 KB. If not specified, defaults to empty
          * 
          * @return builder
          * 
@@ -771,7 +771,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param zoneId 伸缩配置可用区ID。
+         * @param zoneId Availability zone ID for the scaling configuration
          * 
          * @return builder
          * 
@@ -782,7 +782,7 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param zoneId 伸缩配置可用区ID。
+         * @param zoneId Availability zone ID for the scaling configuration
          * 
          * @return builder
          * 

@@ -4,6 +4,8 @@
 package com.byteplus.bytepluscc.vedbm;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.vedbm.inputs.GetAccountArgs;
+import com.byteplus.bytepluscc.vedbm.inputs.GetAccountPlainArgs;
 import com.byteplus.bytepluscc.vedbm.inputs.GetAllowListArgs;
 import com.byteplus.bytepluscc.vedbm.inputs.GetAllowListPlainArgs;
 import com.byteplus.bytepluscc.vedbm.inputs.GetBackupArgs;
@@ -12,6 +14,8 @@ import com.byteplus.bytepluscc.vedbm.inputs.GetDatabaseArgs;
 import com.byteplus.bytepluscc.vedbm.inputs.GetDatabasePlainArgs;
 import com.byteplus.bytepluscc.vedbm.inputs.GetInstanceArgs;
 import com.byteplus.bytepluscc.vedbm.inputs.GetInstancePlainArgs;
+import com.byteplus.bytepluscc.vedbm.outputs.GetAccountResult;
+import com.byteplus.bytepluscc.vedbm.outputs.GetAccountsResult;
 import com.byteplus.bytepluscc.vedbm.outputs.GetAllowListResult;
 import com.byteplus.bytepluscc.vedbm.outputs.GetAllowListsResult;
 import com.byteplus.bytepluscc.vedbm.outputs.GetBackupResult;
@@ -29,6 +33,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class VedbmFunctions {
+    /**
+     * Data Source schema for Byteplus::VEDBM::Account
+     * 
+     */
+    public static Output<GetAccountResult> getAccount(GetAccountArgs args) {
+        return getAccount(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VEDBM::Account
+     * 
+     */
+    public static CompletableFuture<GetAccountResult> getAccountPlain(GetAccountPlainArgs args) {
+        return getAccountPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VEDBM::Account
+     * 
+     */
+    public static Output<GetAccountResult> getAccount(GetAccountArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vedbm/getAccount:getAccount", TypeShape.of(GetAccountResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VEDBM::Account
+     * 
+     */
+    public static Output<GetAccountResult> getAccount(GetAccountArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vedbm/getAccount:getAccount", TypeShape.of(GetAccountResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VEDBM::Account
+     * 
+     */
+    public static CompletableFuture<GetAccountResult> getAccountPlain(GetAccountPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vedbm/getAccount:getAccount", TypeShape.of(GetAccountResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEDBM::Account
+     * 
+     */
+    public static Output<GetAccountsResult> getAccounts() {
+        return getAccounts(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEDBM::Account
+     * 
+     */
+    public static CompletableFuture<GetAccountsResult> getAccountsPlain() {
+        return getAccountsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEDBM::Account
+     * 
+     */
+    public static Output<GetAccountsResult> getAccounts(InvokeArgs args) {
+        return getAccounts(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEDBM::Account
+     * 
+     */
+    public static CompletableFuture<GetAccountsResult> getAccountsPlain(InvokeArgs args) {
+        return getAccountsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEDBM::Account
+     * 
+     */
+    public static Output<GetAccountsResult> getAccounts(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vedbm/getAccounts:getAccounts", TypeShape.of(GetAccountsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEDBM::Account
+     * 
+     */
+    public static Output<GetAccountsResult> getAccounts(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vedbm/getAccounts:getAccounts", TypeShape.of(GetAccountsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEDBM::Account
+     * 
+     */
+    public static CompletableFuture<GetAccountsResult> getAccountsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vedbm/getAccounts:getAccounts", TypeShape.of(GetAccountsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::VEDBM::AllowList
      * 

@@ -11,38 +11,38 @@ import java.util.Objects;
 @CustomType
 public final class KafkaTriggerKafkaCredentials {
     /**
-     * @return Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
+     * @return Kafka authentication mechanism. Options: PLAIN, SCRAM-SHA-256.
      * 
      */
     private String mechanism;
     /**
-     * @return 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
+     * @return SASL/PLAIN password set when creating the Kafka instance.
      * 
      */
     private String password;
     /**
-     * @return 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
+     * @return SASL/PLAIN username set when creating the Kafka instance.
      * 
      */
     private String username;
 
     private KafkaTriggerKafkaCredentials() {}
     /**
-     * @return Kafka 认证机制。取值：PLAIN，SCRAM-SHA-256。
+     * @return Kafka authentication mechanism. Options: PLAIN, SCRAM-SHA-256.
      * 
      */
     public String mechanism() {
         return this.mechanism;
     }
     /**
-     * @return 创建 Kafka 实例时设置的 SASL/PLAIN 用户密码。
+     * @return SASL/PLAIN password set when creating the Kafka instance.
      * 
      */
     public String password() {
         return this.password;
     }
     /**
-     * @return 创建 Kafka 实例时设置的 SASL/PLAIN 用户名称。
+     * @return SASL/PLAIN username set when creating the Kafka instance.
      * 
      */
     public String username() {

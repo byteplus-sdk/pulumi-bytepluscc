@@ -65,23 +65,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Organization
     public sealed class GetUnitResult
     {
         /// <summary>
-        /// 创建时间。
+        /// Creation time.
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 删除标识。
+        /// Deletion flag.
         /// </summary>
         public readonly string DeleteUk;
         /// <summary>
-        /// 删除时间。
+        /// Deletion time.
         /// </summary>
         public readonly string DeletedTime;
         /// <summary>
-        /// 深度。
+        /// Depth.
         /// </summary>
         public readonly int Depth;
         /// <summary>
-        /// 描述。
+        /// Description.
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -89,31 +89,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Organization
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 组织单元名称。
+        /// Organizational unit name.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// 组织ID。
+        /// Organization ID.
         /// </summary>
         public readonly string OrgId;
         /// <summary>
-        /// 组织类型。企业组织： 1
+        /// Organization type. Enterprise organization: 1
         /// </summary>
         public readonly int OrgType;
         /// <summary>
-        /// 组织单元ID。
+        /// Organizational unit ID.
         /// </summary>
         public readonly string OrgUnitId;
         /// <summary>
-        /// 管理员ID。
+        /// Administrator ID.
         /// </summary>
         public readonly string Owner;
         /// <summary>
-        /// 父单元Id。
+        /// Parent unit ID.
         /// </summary>
         public readonly string ParentId;
         /// <summary>
-        /// 更新时间。
+        /// Update time.
         /// </summary>
         public readonly string UpdatedTime;
 

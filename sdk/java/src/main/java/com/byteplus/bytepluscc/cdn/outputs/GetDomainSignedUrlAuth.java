@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainSignedUrlAuth {
     /**
-     * @return 表示 &#34;URL 鉴权&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Represents the configuration module for the &#39;URL authentication&#39; feature. This feature is disabled by default.
      * 
      */
     private List<GetDomainSignedUrlAuthSignedUrlAuthRule> signedUrlAuthRules;
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+     * @return Indicates whether to enable this feature. This parameter has the following values: true: Enables this feature. false: Disables this feature.
      * 
      */
     private Boolean switch_;
 
     private GetDomainSignedUrlAuth() {}
     /**
-     * @return 表示 &#34;URL 鉴权&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Represents the configuration module for the &#39;URL authentication&#39; feature. This feature is disabled by default.
      * 
      */
     public List<GetDomainSignedUrlAuthSignedUrlAuthRule> signedUrlAuthRules() {
         return this.signedUrlAuthRules;
     }
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+     * @return Indicates whether to enable this feature. This parameter has the following values: true: Enables this feature. false: Disables this feature.
      * 
      */
     public Boolean switch_() {

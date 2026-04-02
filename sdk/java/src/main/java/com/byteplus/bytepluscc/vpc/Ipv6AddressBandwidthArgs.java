@@ -20,14 +20,14 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
     public static final Ipv6AddressBandwidthArgs Empty = new Ipv6AddressBandwidthArgs();
 
     /**
-     * IPv6公网带宽的带宽上限。
+     * IPv6 public bandwidth cap
      * 
      */
     @Import(name="bandwidth")
     private @Nullable Output<Integer> bandwidth;
 
     /**
-     * @return IPv6公网带宽的带宽上限。
+     * @return IPv6 public bandwidth cap
      * 
      */
     public Optional<Output<Integer>> bandwidth() {
@@ -35,14 +35,14 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * IPv6共享带宽包的ID。
+     * IPv6 shared bandwidth package ID
      * 
      */
     @Import(name="bandwidthPackageId")
     private @Nullable Output<String> bandwidthPackageId;
 
     /**
-     * @return IPv6共享带宽包的ID。
+     * @return IPv6 shared bandwidth package ID
      * 
      */
     public Optional<Output<String>> bandwidthPackageId() {
@@ -50,14 +50,14 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * IPv6公网带宽的计费类型。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+     * IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
      * 
      */
     @Import(name="billingType", required=true)
     private Output<Integer> billingType;
 
     /**
-     * @return IPv6公网带宽的计费类型。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+     * @return IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
      * 
      */
     public Output<Integer> billingType() {
@@ -65,14 +65,14 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * IPv6地址。
+     * IPv6 address
      * 
      */
     @Import(name="ipv6Address", required=true)
     private Output<String> ipv6Address;
 
     /**
-     * @return IPv6地址。
+     * @return IPv6 address
      * 
      */
     public Output<String> ipv6Address() {
@@ -80,14 +80,14 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * IPv6公网带宽的项目。
+     * IPv6 public bandwidth project
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return IPv6公网带宽的项目。
+     * @return IPv6 public bandwidth project
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -131,7 +131,7 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param bandwidth IPv6公网带宽的带宽上限。
+         * @param bandwidth IPv6 public bandwidth cap
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param bandwidth IPv6公网带宽的带宽上限。
+         * @param bandwidth IPv6 public bandwidth cap
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param bandwidthPackageId IPv6共享带宽包的ID。
+         * @param bandwidthPackageId IPv6 shared bandwidth package ID
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param bandwidthPackageId IPv6共享带宽包的ID。
+         * @param bandwidthPackageId IPv6 shared bandwidth package ID
          * 
          * @return builder
          * 
@@ -173,7 +173,7 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param billingType IPv6公网带宽的计费类型。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+         * @param billingType IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
          * 
          * @return builder
          * 
@@ -184,7 +184,7 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param billingType IPv6公网带宽的计费类型。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+         * @param billingType IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param ipv6Address IPv6地址。
+         * @param ipv6Address IPv6 address
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param ipv6Address IPv6地址。
+         * @param ipv6Address IPv6 address
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param projectName IPv6公网带宽的项目。
+         * @param projectName IPv6 public bandwidth project
          * 
          * @return builder
          * 
@@ -226,7 +226,7 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param projectName IPv6公网带宽的项目。
+         * @param projectName IPv6 public bandwidth project
          * 
          * @return builder
          * 

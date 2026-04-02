@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
     public sealed class ImageSnapshot
     {
         /// <summary>
-        /// 快照大小。单位为GiB。
+        /// Snapshot size (GiB)
         /// </summary>
         public readonly int? Size;
         /// <summary>
-        /// 快照ID。
+        /// Snapshot ID
         /// </summary>
         public readonly string? SnapshotId;
         /// <summary>
-        /// 云盘种类。system：系统盘。data：数据盘。
+        /// Cloud disk type. system: System disk. data: Data disk.
         /// </summary>
         public readonly string? VolumeKind;
 

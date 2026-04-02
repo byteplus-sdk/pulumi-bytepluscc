@@ -17,67 +17,67 @@ import java.util.Objects;
 @CustomType
 public final class GetEndpointResult {
     /**
-     * @return 终端节点地址列表。
+     * @return Endpoint address list.
      * 
      */
     private List<GetEndpointAddress> addresses;
     /**
-     * @return 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：true：自动加入。false：不自动加入（默认）。
+     * @return When the endpoint type is read/write or read-only, you can set whether new nodes are automatically added. Values: true: automatically added. false: not automatically added (default).
      * 
      */
     private Boolean autoAddNewNodes;
     /**
-     * @return 是否关联所有的备节点。取值：true：是。默认值。false：否。说明仅多节点实例的只读终端支持该配置。仅在实例有两个或更多备节点时才能关闭此功能。
+     * @return Associate all replica nodes. Values: true: enabled (default). false: disabled. Note: Only read-only endpoints of multi-node instances support this configuration. This feature can be disabled only if the instance has two or more replica nodes.
      * 
      */
     private Boolean connectAllSlaveNodes;
     /**
-     * @return 连接终端标签。
+     * @return Connection endpoint tags.
      * 
      */
     private List<String> connectionInfoTags;
     /**
-     * @return 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。说明如实例的数据库代理功能已开启，可以取值为 Proxy 或 Direct。如实例的数据库代理功能未开启，仅可以取值为 Direct。可调用 DescribeDBInstanceDetail 接口查询实例数据库代理功能的开启状态。
+     * @return Endpoint type. Options: Proxy: proxy endpoint. Direct: direct endpoint. Note: If the database proxy feature is enabled for the instance, you can select Proxy or Direct. If the database proxy feature is not enabled, only Direct is available. You can call the DescribeDBInstanceDetail API to check the status of the database proxy feature for the instance.
      * 
      */
     private String connectionMode;
     /**
-     * @return 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。说明单节点实例不支持该功能。
+     * @return Connection pool type for proxy endpoints. Options: Transaction: transaction-level connection pool (default). Direct: direct mode. Note: Single-node instances do not support this feature.
      * 
      */
     private String connectionPoolType;
     /**
-     * @return 连接终端的 SQL 转发规则。
+     * @return SQL forwarding rules for the connection endpoint.
      * 
      */
     private GetEndpointCustomRouteStrategy customRouteStrategy;
     /**
-     * @return 备注。
+     * @return Remarks.
      * 
      */
     private String description;
     /**
-     * @return 是否开启连接终端的连接保持功能。取值：true：是。false：否。说明仅代理终端支持该设置。
+     * @return Enable connection keep-alive for the endpoint. Values: true: enabled. false: disabled. Note: Only proxy endpoints support this setting.
      * 
      */
     private Boolean enableConnectionPersistent;
     /**
-     * @return 是否已开启全局只读，取值：Enable：开启。Disable：未开启。
+     * @return Enable global read-only. Values: Enable: enabled. Disable: not enabled.
      * 
      */
     private String enableReadOnly;
     /**
-     * @return 实例连接终端 ID。
+     * @return Instance connection endpoint ID.
      * 
      */
     private String endpointId;
     /**
-     * @return 实例连接终端名称。
+     * @return Instance connection endpoint name.
      * 
      */
     private String endpointName;
     /**
-     * @return 终端类型。取值为 Custom，自定义终端。
+     * @return Endpoint type. Value: Custom (custom endpoint).
      * 
      */
     private String endpointType;
@@ -87,158 +87,158 @@ public final class GetEndpointResult {
      */
     private String id;
     /**
-     * @return 空闲连接回收功能是否开启。true：开启。false：不开启。说明仅代理终端会返回该字段。
+     * @return Enable idle connection recycling. true: enabled. false: not enabled. Note: This field is returned only for proxy endpoints.
      * 
      */
     private Boolean idleConnectionReclaim;
     /**
-     * @return 是否开启事务分离。取值：true：是。false：否。说明仅代理终端会返回该字段。
+     * @return Enable transaction separation. Options: true: yes. false: no. Note: Only proxy endpoints return this field.
      * 
      */
     private Boolean implicitTransSplit;
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     private String instanceId;
     /**
-     * @return 是否开启主节点路由。取值：true：是。false：否。说明仅代理终端会返回该字段。
+     * @return Enable primary node routing. Values: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
      * 
      */
     private Boolean masterNodeRouting;
     /**
-     * @return 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。说明仅代理终端会返回该字段。
+     * @return Overload protection timeout. Value range: integer between 60~7200. Unit: seconds. Note: This field is returned only for proxy endpoints.
      * 
      */
     private Integer masterProtectorTimeout;
     /**
-     * @return 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+     * @return Multi-Statements mode for proxy endpoints. Options: Strict: strict mode (default). Loose: loose mode.
      * 
      */
     private String multiStatementsMode;
     /**
-     * @return 连接终端配置的节点 ID 列表。当 EndpointType 为 Custom 时必选。说明如需将主节点加入终端，不需填写主节点 ID，只需填写 Primary。多个节点 ID 之间用英文逗号（,）分隔。
+     * @return List of node IDs configured for the connection endpoint. Required when EndpointType is Custom. Note: To add the primary node to the endpoint, do not enter the primary node ID; just enter Primary. Separate multiple node IDs with commas (,).
      * 
      */
     private String nodes;
     /**
-     * @return 是否开启过载保护。取值：true：是。false：否。说明仅代理终端会返回该字段。
+     * @return Enable overload protection. Options: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
      * 
      */
     private Boolean overloadProtection;
     /**
-     * @return 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+     * @return Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, the value range is: LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, the value range is: Default: automatic allocation based on specification weight. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling.
      * 
      */
     private String readOnlyNodeDistributionType;
     /**
-     * @return 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+     * @return Read-only node latency threshold. Value range: 1~3600. Default: 30. Unit: seconds.
      * 
      */
     private Integer readOnlyNodeMaxDelayTime;
     /**
-     * @return 连接终端配置的节点列表及对应的只读权重。
+     * @return List of nodes configured for the connection endpoint and their corresponding read-only weights.
      * 
      */
     private List<GetEndpointReadOnlyNodeWeight> readOnlyNodeWeights;
     /**
-     * @return 读写模式：ReadWrite：读写。ReadOnly：只读。
+     * @return Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
      * 
      */
     private String readWriteMode;
     /**
-     * @return 是否开启读写分离。取值：true：是。默认值。false：否。
+     * @return Enable read/write splitting. Values: true: enabled (default). false: disabled.
      * 
      */
     private Boolean readWriteSpliting;
 
     private GetEndpointResult() {}
     /**
-     * @return 终端节点地址列表。
+     * @return Endpoint address list.
      * 
      */
     public List<GetEndpointAddress> addresses() {
         return this.addresses;
     }
     /**
-     * @return 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：true：自动加入。false：不自动加入（默认）。
+     * @return When the endpoint type is read/write or read-only, you can set whether new nodes are automatically added. Values: true: automatically added. false: not automatically added (default).
      * 
      */
     public Boolean autoAddNewNodes() {
         return this.autoAddNewNodes;
     }
     /**
-     * @return 是否关联所有的备节点。取值：true：是。默认值。false：否。说明仅多节点实例的只读终端支持该配置。仅在实例有两个或更多备节点时才能关闭此功能。
+     * @return Associate all replica nodes. Values: true: enabled (default). false: disabled. Note: Only read-only endpoints of multi-node instances support this configuration. This feature can be disabled only if the instance has two or more replica nodes.
      * 
      */
     public Boolean connectAllSlaveNodes() {
         return this.connectAllSlaveNodes;
     }
     /**
-     * @return 连接终端标签。
+     * @return Connection endpoint tags.
      * 
      */
     public List<String> connectionInfoTags() {
         return this.connectionInfoTags;
     }
     /**
-     * @return 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。说明如实例的数据库代理功能已开启，可以取值为 Proxy 或 Direct。如实例的数据库代理功能未开启，仅可以取值为 Direct。可调用 DescribeDBInstanceDetail 接口查询实例数据库代理功能的开启状态。
+     * @return Endpoint type. Options: Proxy: proxy endpoint. Direct: direct endpoint. Note: If the database proxy feature is enabled for the instance, you can select Proxy or Direct. If the database proxy feature is not enabled, only Direct is available. You can call the DescribeDBInstanceDetail API to check the status of the database proxy feature for the instance.
      * 
      */
     public String connectionMode() {
         return this.connectionMode;
     }
     /**
-     * @return 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。说明单节点实例不支持该功能。
+     * @return Connection pool type for proxy endpoints. Options: Transaction: transaction-level connection pool (default). Direct: direct mode. Note: Single-node instances do not support this feature.
      * 
      */
     public String connectionPoolType() {
         return this.connectionPoolType;
     }
     /**
-     * @return 连接终端的 SQL 转发规则。
+     * @return SQL forwarding rules for the connection endpoint.
      * 
      */
     public GetEndpointCustomRouteStrategy customRouteStrategy() {
         return this.customRouteStrategy;
     }
     /**
-     * @return 备注。
+     * @return Remarks.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 是否开启连接终端的连接保持功能。取值：true：是。false：否。说明仅代理终端支持该设置。
+     * @return Enable connection keep-alive for the endpoint. Values: true: enabled. false: disabled. Note: Only proxy endpoints support this setting.
      * 
      */
     public Boolean enableConnectionPersistent() {
         return this.enableConnectionPersistent;
     }
     /**
-     * @return 是否已开启全局只读，取值：Enable：开启。Disable：未开启。
+     * @return Enable global read-only. Values: Enable: enabled. Disable: not enabled.
      * 
      */
     public String enableReadOnly() {
         return this.enableReadOnly;
     }
     /**
-     * @return 实例连接终端 ID。
+     * @return Instance connection endpoint ID.
      * 
      */
     public String endpointId() {
         return this.endpointId;
     }
     /**
-     * @return 实例连接终端名称。
+     * @return Instance connection endpoint name.
      * 
      */
     public String endpointName() {
         return this.endpointName;
     }
     /**
-     * @return 终端类型。取值为 Custom，自定义终端。
+     * @return Endpoint type. Value: Custom (custom endpoint).
      * 
      */
     public String endpointType() {
@@ -252,91 +252,91 @@ public final class GetEndpointResult {
         return this.id;
     }
     /**
-     * @return 空闲连接回收功能是否开启。true：开启。false：不开启。说明仅代理终端会返回该字段。
+     * @return Enable idle connection recycling. true: enabled. false: not enabled. Note: This field is returned only for proxy endpoints.
      * 
      */
     public Boolean idleConnectionReclaim() {
         return this.idleConnectionReclaim;
     }
     /**
-     * @return 是否开启事务分离。取值：true：是。false：否。说明仅代理终端会返回该字段。
+     * @return Enable transaction separation. Options: true: yes. false: no. Note: Only proxy endpoints return this field.
      * 
      */
     public Boolean implicitTransSplit() {
         return this.implicitTransSplit;
     }
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return 是否开启主节点路由。取值：true：是。false：否。说明仅代理终端会返回该字段。
+     * @return Enable primary node routing. Values: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
      * 
      */
     public Boolean masterNodeRouting() {
         return this.masterNodeRouting;
     }
     /**
-     * @return 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。说明仅代理终端会返回该字段。
+     * @return Overload protection timeout. Value range: integer between 60~7200. Unit: seconds. Note: This field is returned only for proxy endpoints.
      * 
      */
     public Integer masterProtectorTimeout() {
         return this.masterProtectorTimeout;
     }
     /**
-     * @return 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+     * @return Multi-Statements mode for proxy endpoints. Options: Strict: strict mode (default). Loose: loose mode.
      * 
      */
     public String multiStatementsMode() {
         return this.multiStatementsMode;
     }
     /**
-     * @return 连接终端配置的节点 ID 列表。当 EndpointType 为 Custom 时必选。说明如需将主节点加入终端，不需填写主节点 ID，只需填写 Primary。多个节点 ID 之间用英文逗号（,）分隔。
+     * @return List of node IDs configured for the connection endpoint. Required when EndpointType is Custom. Note: To add the primary node to the endpoint, do not enter the primary node ID; just enter Primary. Separate multiple node IDs with commas (,).
      * 
      */
     public String nodes() {
         return this.nodes;
     }
     /**
-     * @return 是否开启过载保护。取值：true：是。false：否。说明仅代理终端会返回该字段。
+     * @return Enable overload protection. Options: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
      * 
      */
     public Boolean overloadProtection() {
         return this.overloadProtection;
     }
     /**
-     * @return 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+     * @return Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, the value range is: LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, the value range is: Default: automatic allocation based on specification weight. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling.
      * 
      */
     public String readOnlyNodeDistributionType() {
         return this.readOnlyNodeDistributionType;
     }
     /**
-     * @return 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+     * @return Read-only node latency threshold. Value range: 1~3600. Default: 30. Unit: seconds.
      * 
      */
     public Integer readOnlyNodeMaxDelayTime() {
         return this.readOnlyNodeMaxDelayTime;
     }
     /**
-     * @return 连接终端配置的节点列表及对应的只读权重。
+     * @return List of nodes configured for the connection endpoint and their corresponding read-only weights.
      * 
      */
     public List<GetEndpointReadOnlyNodeWeight> readOnlyNodeWeights() {
         return this.readOnlyNodeWeights;
     }
     /**
-     * @return 读写模式：ReadWrite：读写。ReadOnly：只读。
+     * @return Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
      * 
      */
     public String readWriteMode() {
         return this.readWriteMode;
     }
     /**
-     * @return 是否开启读写分离。取值：true：是。默认值。false：否。
+     * @return Enable read/write splitting. Values: true: enabled (default). false: disabled.
      * 
      */
     public Boolean readWriteSpliting() {

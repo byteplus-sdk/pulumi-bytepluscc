@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
     public sealed class InstanceOperationSystemGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 实例的操作系统名称。
+        /// Instance operating system name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 实例的操作系统类型。Linux：Linux系统。Windows：Windows系统。
+        /// Operating system type of the instance. Linux: Linux system. Windows: Windows system.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

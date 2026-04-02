@@ -30,61 +30,61 @@ type LookupScalingConfigurationArgs struct {
 
 // A collection of values returned by getScalingConfiguration.
 type LookupScalingConfigurationResult struct {
-	// 资源创建时间(UTC时间)
+	// Resource creation time (UTC)
 	CreatedAt string `pulumi:"createdAt"`
-	// 公网IP。
+	// Public IP.
 	Eip GetScalingConfigurationEip `pulumi:"eip"`
-	// 实例的主机名。取值：Linux实例允许使用点号分隔字符成多段，每段中允许使用字母、数字或中划线“-”。不能以点号“.”或中划线“-”开头或结尾，且不能连续使用点号“.”或中划线“-”。Linux系统的主机名长度限制为2～63个字符。Windows实例允许使用字母、数字或中划线“-”，不能完全是数字。不能以中划线“-”开头或结尾，且不能连续使用中划线“-”。Windows系统的主机名长度限制在2～15个字符。如不填，则遵循以下规则自动生成：结构：iv  - + 初始主机名，例如iv-3tigy72q3u3vj0******。已创建实例保持原主机名生成逻辑，不随实例重启发生变化。初始主机名生成逻辑：Linux：提取实例IDi-之后的全部字符。Windows：提取实例IDi-之后的后12位字符。
+	// Instance hostname. Value: Linux instances allow periods to separate segments; each segment can contain letters, digits, or hyphens '-'. Cannot start or end with a period '.' or hyphen '-', and periods or hyphens cannot be used consecutively. Linux hostnames must be 2–63 characters long. Windows instances allow letters, digits, or hyphens '-', but cannot be entirely numeric. Cannot start or end with a hyphen '-', and hyphens cannot be used consecutively. Windows hostnames must be 2–15 characters long. If not specified, the hostname is automatically generated as follows: Structure: iv  - + initial hostname, for example iv-3tigy72q3u3vj0******. Created instances retain the original hostname generation logic and do not change upon instance restart. Initial hostname generation logic: Linux: extracts all characters after instance ID 'i-'. Windows: extracts the last 12 characters after instance ID 'i-'
 	HostName string `pulumi:"hostName"`
-	// 实例所属的高性能计算集群的ID。仅当InstanceTypes.N指定为“高性能计算GPU型”时有效。
+	// ID of the high-performance computing cluster to which the instance belongs. Only valid when InstanceTypes.N is specified as 'High-Performance Computing GPU'.
 	HpcClusterId string `pulumi:"hpcClusterId"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 镜像ID，伸缩组自动创建实例时使用的镜像资源。
+	// Image ID. The image resource used when the scaling group automatically creates an instance
 	ImageId string `pulumi:"imageId"`
-	// 实例计费类型。取值：PrePaid（包年包月）/PostPaid（按量付费）
+	// Instance billing type. Values: PrePaid (subscription) / PostPaid (pay-as-you-go)
 	InstanceChargeType string `pulumi:"instanceChargeType"`
-	// 实例的描述，取值：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0 ~ 255之间。不填默认为空字符串。
+	// Instance description. Value: Cannot start with a digit or hyphen. Only Chinese characters, letters, digits, underscores, and hyphens are allowed. Length must be between 0 and 255 characters. If not specified, defaults to an empty string
 	InstanceDescription string `pulumi:"instanceDescription"`
-	// 实例的名称，取值：以字母或中文开头。只能包含中文、字母、数字、下划线“_”、中划线“-”和点号“.”。长度限制为1～128个字符。
+	// Instance name. Rules: Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscore "_", hyphen "-", and period ".". Length: 1–128 characters.
 	InstanceName string `pulumi:"instanceName"`
-	// 抢占式实例的规格信息。
+	// Specification information for preemptible instances
 	InstanceTypeOverrides []GetScalingConfigurationInstanceTypeOverride `pulumi:"instanceTypeOverrides"`
-	// 实例的计算规格列表。
+	// List of compute specifications for the instance
 	InstanceTypes []string `pulumi:"instanceTypes"`
-	// 是否为实例网卡分配IPv6地址。取值：0：不分配IPv6地址。1：分配IPv6地址，系统自动为您分配IPv6网段。
+	// Assign an IPv6 address to the instance NIC. Values: 0: Do not assign an IPv6 address. 1: Assign an IPv6 address; the system automatically allocates an IPv6 subnet for you.
 	Ipv6AddressCount int `pulumi:"ipv6AddressCount"`
-	// 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+	// Name of the key pair. If both KeyPairName and Password are set, only KeyPairName takes effect
 	KeyPairName string `pulumi:"keyPairName"`
-	// 生命周期状态。取值：Active（活跃）/InActive（非活跃）
+	// Lifecycle status. Values: Active (active) / InActive (inactive)
 	LifecycleState string `pulumi:"lifecycleState"`
-	// 使用“密码”方式登录实例时，请设置root登录密码：长度限制在8～30之间，密码只能由大写字母、小写字母、数字和特殊字符组成，且必须包含至少三项，特殊字符可以使用：`~!#$%^&*()_-+= |，不能以“/”和“$6$”开头
+	// When logging in to the instance using the 'Password' method, set the root login password: The password must be 8–30 characters long and consist of uppercase letters, lowercase letters, numbers, and special characters. At least three types must be included. Allowed special characters: `~!#$%^&*()_-+= |. The password cannot start with '/' or '$6$'
 	Password string `pulumi:"password"`
-	// 伸缩配置创建的实例所属项目，默认为空。一个资源只能归属于一个项目。
-	// 只能包含字母、数字、下划线“_”、点“.”和中划线“-”。
-	// 长度限制在64个字符以内。
+	// The project to which the instance created by the scaling configuration belongs. Default is empty. Each resource can belong to only one project.
+	// Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed.
+	// Maximum length: 64 characters
 	ProjectName string `pulumi:"projectName"`
-	// 伸缩配置ID。
+	// Scaling configuration ID
 	ScalingConfigurationId string `pulumi:"scalingConfigurationId"`
-	// 伸缩配置的名称，在同一地域下同一伸缩组内伸缩配置名称唯一。取值:只能以中文、字母开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+	// Name of the scaling configuration. The name must be unique within the same scaling group in the same region. Rules: Must start with a Chinese character or letter. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length: 1–128 characters. Special characters are not supported.
 	ScalingConfigurationName string `pulumi:"scalingConfigurationName"`
-	// 伸缩配置所属的伸缩组ID。
+	// Scaling group ID to which the scaling configuration belongs
 	ScalingGroupId string `pulumi:"scalingGroupId"`
-	// 是否开启安全加固，取值：Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+	// Enable security hardening. Options: Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
 	SecurityEnhancementStrategy string `pulumi:"securityEnhancementStrategy"`
-	// 实例主网卡关联的安全组ID。
+	// Security group ID associated with the instance's primary network interface
 	SecurityGroupIds []string `pulumi:"securityGroupIds"`
-	// 实例的抢占策略。取值：NoSpot（默认）：表示创建正常按量付费实例。SpotAsPriceGo：表示系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：表示需要设置出价上限的抢占式实例。
+	// Instance preemption policy. Values: NoSpot (default): creates a standard pay-as-you-go instance. SpotAsPriceGo: system automatically bids, creating a preemptible instance that follows the current market price. SpotWithPriceLimit: creates a preemptible instance with a specified bid limit
 	SpotStrategy string `pulumi:"spotStrategy"`
-	// 标签键值对。
+	// Tag key-value pairs
 	Tags []GetScalingConfigurationTag `pulumi:"tags"`
-	// 资源更新时间(UTC时间)
+	// Resource update time (UTC)
 	UpdatedAt string `pulumi:"updatedAt"`
-	// 实例自定义数据。设置的自定义数据必须经过Base64编码，且Base64编码前的自定义数据大小不能超过16KB。不填则默认为空。
+	// Instance custom data. Custom data must be Base64 encoded, and the size before encoding must not exceed 16 KB. If not specified, defaults to empty
 	UserData string `pulumi:"userData"`
-	// 云盘。
+	// Cloud disk
 	Volumes []GetScalingConfigurationVolume `pulumi:"volumes"`
-	// 伸缩配置可用区ID。
+	// Availability zone ID for the scaling configuration
 	ZoneId string `pulumi:"zoneId"`
 }
 
@@ -122,22 +122,22 @@ func (o LookupScalingConfigurationResultOutput) ToLookupScalingConfigurationResu
 	return o
 }
 
-// 资源创建时间(UTC时间)
+// Resource creation time (UTC)
 func (o LookupScalingConfigurationResultOutput) CreatedAt() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) string { return v.CreatedAt }).(pulumi.StringOutput)
 }
 
-// 公网IP。
+// Public IP.
 func (o LookupScalingConfigurationResultOutput) Eip() GetScalingConfigurationEipOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) GetScalingConfigurationEip { return v.Eip }).(GetScalingConfigurationEipOutput)
 }
 
-// 实例的主机名。取值：Linux实例允许使用点号分隔字符成多段，每段中允许使用字母、数字或中划线“-”。不能以点号“.”或中划线“-”开头或结尾，且不能连续使用点号“.”或中划线“-”。Linux系统的主机名长度限制为2～63个字符。Windows实例允许使用字母、数字或中划线“-”，不能完全是数字。不能以中划线“-”开头或结尾，且不能连续使用中划线“-”。Windows系统的主机名长度限制在2～15个字符。如不填，则遵循以下规则自动生成：结构：iv  - + 初始主机名，例如iv-3tigy72q3u3vj0******。已创建实例保持原主机名生成逻辑，不随实例重启发生变化。初始主机名生成逻辑：Linux：提取实例IDi-之后的全部字符。Windows：提取实例IDi-之后的后12位字符。
+// Instance hostname. Value: Linux instances allow periods to separate segments; each segment can contain letters, digits, or hyphens '-'. Cannot start or end with a period '.' or hyphen '-', and periods or hyphens cannot be used consecutively. Linux hostnames must be 2–63 characters long. Windows instances allow letters, digits, or hyphens '-', but cannot be entirely numeric. Cannot start or end with a hyphen '-', and hyphens cannot be used consecutively. Windows hostnames must be 2–15 characters long. If not specified, the hostname is automatically generated as follows: Structure: iv  - + initial hostname, for example iv-3tigy72q3u3vj0******. Created instances retain the original hostname generation logic and do not change upon instance restart. Initial hostname generation logic: Linux: extracts all characters after instance ID 'i-'. Windows: extracts the last 12 characters after instance ID 'i-'
 func (o LookupScalingConfigurationResultOutput) HostName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) string { return v.HostName }).(pulumi.StringOutput)
 }
 
-// 实例所属的高性能计算集群的ID。仅当InstanceTypes.N指定为“高性能计算GPU型”时有效。
+// ID of the high-performance computing cluster to which the instance belongs. Only valid when InstanceTypes.N is specified as 'High-Performance Computing GPU'.
 func (o LookupScalingConfigurationResultOutput) HpcClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) string { return v.HpcClusterId }).(pulumi.StringOutput)
 }
@@ -147,116 +147,116 @@ func (o LookupScalingConfigurationResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 镜像ID，伸缩组自动创建实例时使用的镜像资源。
+// Image ID. The image resource used when the scaling group automatically creates an instance
 func (o LookupScalingConfigurationResultOutput) ImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) string { return v.ImageId }).(pulumi.StringOutput)
 }
 
-// 实例计费类型。取值：PrePaid（包年包月）/PostPaid（按量付费）
+// Instance billing type. Values: PrePaid (subscription) / PostPaid (pay-as-you-go)
 func (o LookupScalingConfigurationResultOutput) InstanceChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) string { return v.InstanceChargeType }).(pulumi.StringOutput)
 }
 
-// 实例的描述，取值：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0 ~ 255之间。不填默认为空字符串。
+// Instance description. Value: Cannot start with a digit or hyphen. Only Chinese characters, letters, digits, underscores, and hyphens are allowed. Length must be between 0 and 255 characters. If not specified, defaults to an empty string
 func (o LookupScalingConfigurationResultOutput) InstanceDescription() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) string { return v.InstanceDescription }).(pulumi.StringOutput)
 }
 
-// 实例的名称，取值：以字母或中文开头。只能包含中文、字母、数字、下划线“_”、中划线“-”和点号“.”。长度限制为1～128个字符。
+// Instance name. Rules: Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscore "_", hyphen "-", and period ".". Length: 1–128 characters.
 func (o LookupScalingConfigurationResultOutput) InstanceName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) string { return v.InstanceName }).(pulumi.StringOutput)
 }
 
-// 抢占式实例的规格信息。
+// Specification information for preemptible instances
 func (o LookupScalingConfigurationResultOutput) InstanceTypeOverrides() GetScalingConfigurationInstanceTypeOverrideArrayOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) []GetScalingConfigurationInstanceTypeOverride {
 		return v.InstanceTypeOverrides
 	}).(GetScalingConfigurationInstanceTypeOverrideArrayOutput)
 }
 
-// 实例的计算规格列表。
+// List of compute specifications for the instance
 func (o LookupScalingConfigurationResultOutput) InstanceTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) []string { return v.InstanceTypes }).(pulumi.StringArrayOutput)
 }
 
-// 是否为实例网卡分配IPv6地址。取值：0：不分配IPv6地址。1：分配IPv6地址，系统自动为您分配IPv6网段。
+// Assign an IPv6 address to the instance NIC. Values: 0: Do not assign an IPv6 address. 1: Assign an IPv6 address; the system automatically allocates an IPv6 subnet for you.
 func (o LookupScalingConfigurationResultOutput) Ipv6AddressCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) int { return v.Ipv6AddressCount }).(pulumi.IntOutput)
 }
 
-// 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+// Name of the key pair. If both KeyPairName and Password are set, only KeyPairName takes effect
 func (o LookupScalingConfigurationResultOutput) KeyPairName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) string { return v.KeyPairName }).(pulumi.StringOutput)
 }
 
-// 生命周期状态。取值：Active（活跃）/InActive（非活跃）
+// Lifecycle status. Values: Active (active) / InActive (inactive)
 func (o LookupScalingConfigurationResultOutput) LifecycleState() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) string { return v.LifecycleState }).(pulumi.StringOutput)
 }
 
-// 使用“密码”方式登录实例时，请设置root登录密码：长度限制在8～30之间，密码只能由大写字母、小写字母、数字和特殊字符组成，且必须包含至少三项，特殊字符可以使用：`~!#$%^&*()_-+= |，不能以“/”和“$6$”开头
+// When logging in to the instance using the 'Password' method, set the root login password: The password must be 8–30 characters long and consist of uppercase letters, lowercase letters, numbers, and special characters. At least three types must be included. Allowed special characters: `~!#$%^&*()_-+= |. The password cannot start with '/' or '$6$'
 func (o LookupScalingConfigurationResultOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) string { return v.Password }).(pulumi.StringOutput)
 }
 
-// 伸缩配置创建的实例所属项目，默认为空。一个资源只能归属于一个项目。
-// 只能包含字母、数字、下划线“_”、点“.”和中划线“-”。
-// 长度限制在64个字符以内。
+// The project to which the instance created by the scaling configuration belongs. Default is empty. Each resource can belong to only one project.
+// Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed.
+// Maximum length: 64 characters
 func (o LookupScalingConfigurationResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 伸缩配置ID。
+// Scaling configuration ID
 func (o LookupScalingConfigurationResultOutput) ScalingConfigurationId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) string { return v.ScalingConfigurationId }).(pulumi.StringOutput)
 }
 
-// 伸缩配置的名称，在同一地域下同一伸缩组内伸缩配置名称唯一。取值:只能以中文、字母开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+// Name of the scaling configuration. The name must be unique within the same scaling group in the same region. Rules: Must start with a Chinese character or letter. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length: 1–128 characters. Special characters are not supported.
 func (o LookupScalingConfigurationResultOutput) ScalingConfigurationName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) string { return v.ScalingConfigurationName }).(pulumi.StringOutput)
 }
 
-// 伸缩配置所属的伸缩组ID。
+// Scaling group ID to which the scaling configuration belongs
 func (o LookupScalingConfigurationResultOutput) ScalingGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) string { return v.ScalingGroupId }).(pulumi.StringOutput)
 }
 
-// 是否开启安全加固，取值：Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+// Enable security hardening. Options: Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
 func (o LookupScalingConfigurationResultOutput) SecurityEnhancementStrategy() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) string { return v.SecurityEnhancementStrategy }).(pulumi.StringOutput)
 }
 
-// 实例主网卡关联的安全组ID。
+// Security group ID associated with the instance's primary network interface
 func (o LookupScalingConfigurationResultOutput) SecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
 }
 
-// 实例的抢占策略。取值：NoSpot（默认）：表示创建正常按量付费实例。SpotAsPriceGo：表示系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：表示需要设置出价上限的抢占式实例。
+// Instance preemption policy. Values: NoSpot (default): creates a standard pay-as-you-go instance. SpotAsPriceGo: system automatically bids, creating a preemptible instance that follows the current market price. SpotWithPriceLimit: creates a preemptible instance with a specified bid limit
 func (o LookupScalingConfigurationResultOutput) SpotStrategy() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) string { return v.SpotStrategy }).(pulumi.StringOutput)
 }
 
-// 标签键值对。
+// Tag key-value pairs
 func (o LookupScalingConfigurationResultOutput) Tags() GetScalingConfigurationTagArrayOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) []GetScalingConfigurationTag { return v.Tags }).(GetScalingConfigurationTagArrayOutput)
 }
 
-// 资源更新时间(UTC时间)
+// Resource update time (UTC)
 func (o LookupScalingConfigurationResultOutput) UpdatedAt() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) string { return v.UpdatedAt }).(pulumi.StringOutput)
 }
 
-// 实例自定义数据。设置的自定义数据必须经过Base64编码，且Base64编码前的自定义数据大小不能超过16KB。不填则默认为空。
+// Instance custom data. Custom data must be Base64 encoded, and the size before encoding must not exceed 16 KB. If not specified, defaults to empty
 func (o LookupScalingConfigurationResultOutput) UserData() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) string { return v.UserData }).(pulumi.StringOutput)
 }
 
-// 云盘。
+// Cloud disk
 func (o LookupScalingConfigurationResultOutput) Volumes() GetScalingConfigurationVolumeArrayOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) []GetScalingConfigurationVolume { return v.Volumes }).(GetScalingConfigurationVolumeArrayOutput)
 }
 
-// 伸缩配置可用区ID。
+// Availability zone ID for the scaling configuration
 func (o LookupScalingConfigurationResultOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScalingConfigurationResult) string { return v.ZoneId }).(pulumi.StringOutput)
 }

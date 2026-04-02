@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Outputs
     public sealed class GetEndpointCustomRouteStrategyResult
     {
         /// <summary>
-        /// 自定义路由策略列表。
+        /// Custom routing policy list.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetEndpointCustomRouteStrategyKeywordRouteStrategyResult> KeywordRouteStrategies;
 

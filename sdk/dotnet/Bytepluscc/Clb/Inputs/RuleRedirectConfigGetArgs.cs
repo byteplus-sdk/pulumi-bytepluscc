@@ -14,31 +14,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb.Inputs
     public sealed class RuleRedirectConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 转发规则重定向的域名，当前仅支持精确域名。规范如下：需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含字母、数字、‘.’、‘-‘。长度限制为1 ～ 128个字符。符合域名规范的精确域名，例如：www.test.com。
+        /// The domain name for forwarding rule redirection currently supports only exact domain names. Specifications: Must contain at least one '.', and cannot start or end with '.'. Only letters, numbers, '.', and '-' are allowed. Length must be between 1 and 128 characters. Example of a valid exact domain name: www.test.com.
         /// </summary>
         [Input("host")]
         public Input<string>? Host { get; set; }
 
         /// <summary>
-        /// 转发规则重定向的路径。规范如下：必须以正斜线“/”开头，字符‘/’不能连续出现。仅允许包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&amp;’、‘＝’等字符。长度限制为1 ～ 128个字符。
+        /// Path for forwarding rule redirection. Specifications: Must start with a forward slash '/'. Consecutive '/' characters are not allowed. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&amp;', '=', and other specified characters are allowed. Length must be between 1 and 128 characters.
         /// </summary>
         [Input("path")]
         public Input<string>? Path { get; set; }
 
         /// <summary>
-        /// 转发规则重定向的端口，取值范围为 1~65535。
+        /// Port for forwarding rule redirection. Value range: 1~65535.
         /// </summary>
         [Input("port")]
         public Input<string>? Port { get; set; }
 
         /// <summary>
-        /// 转发规则重定向的协议。取值如下：HTTP。HTTPS（默认值）。
+        /// Protocol for forwarding rule redirection. Options: HTTP. HTTPS (default).
         /// </summary>
         [Input("protocol")]
         public Input<string>? Protocol { get; set; }
 
         /// <summary>
-        /// 转发规则重定向的状态码。取值如下：301（默认）：表示请求的资源已被永久移动到新的 URL，客户端应该使用新的 URL 进行后续请求。302：表示请求的资源被临时移动到新的 URL，但未来可能会再次更改，客户端应该使用新的 URL 进行后续请求。307：与 302 类似，但在重定向时要求客户端保持请求方法不变。例如，原来是 GET 请求，则重定向后仍然是 GET 请求。308：与 301 类似，但在重定向时要求客户端保持请求方法不变。
+        /// Status code for forwarding rule redirection. Options: 301 (default): Indicates the requested resource has been permanently moved to a new URL. The client should use the new URL for subsequent requests. 302: Indicates the requested resource has been temporarily moved to a new URL and may change again in the future. The client should use the new URL for subsequent requests. 307: Similar to 302, but requires the client to keep the request method unchanged during redirection. For example, if the original request is GET, the redirected request remains GET. 308: Similar to 301, but requires the client to keep the request method unchanged during redirection.
         /// </summary>
         [Input("statusCode")]
         public Input<string>? StatusCode { get; set; }

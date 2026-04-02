@@ -18,14 +18,14 @@ public final class InstancePluginState extends com.pulumi.resources.ResourceArgs
     public static final InstancePluginState Empty = new InstancePluginState();
 
     /**
-     * 插件描述。
+     * Plugin description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 插件描述。
+     * @return Plugin description
      * 
      */
     public Optional<Output<String>> description() {
@@ -33,14 +33,14 @@ public final class InstancePluginState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 关闭此插件的注意事项说明。
+     * Notes for disabling this plugin
      * 
      */
     @Import(name="disablePrompt")
     private @Nullable Output<String> disablePrompt;
 
     /**
-     * @return 关闭此插件的注意事项说明。
+     * @return Notes for disabling this plugin
      * 
      */
     public Optional<Output<String>> disablePrompt() {
@@ -48,14 +48,14 @@ public final class InstancePluginState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 开启此插件的注意事项说明。
+     * Notes for enabling this plugin
      * 
      */
     @Import(name="enablePrompt")
     private @Nullable Output<String> enablePrompt;
 
     /**
-     * @return 开启此插件的注意事项说明。
+     * @return Notes for enabling this plugin
      * 
      */
     public Optional<Output<String>> enablePrompt() {
@@ -63,14 +63,14 @@ public final class InstancePluginState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 是否已开启插件。true：插件已开启。false：插件已关闭。
+     * Whether the plugin is enabled. true: The plugin is enabled. false: The plugin is disabled
      * 
      */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
     /**
-     * @return 是否已开启插件。true：插件已开启。false：插件已关闭。
+     * @return Whether the plugin is enabled. true: The plugin is enabled. false: The plugin is disabled
      * 
      */
     public Optional<Output<Boolean>> enabled() {
@@ -78,14 +78,14 @@ public final class InstancePluginState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 实例 ID。
+     * Instance ID
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 实例 ID。
+     * @return Instance ID
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -93,14 +93,14 @@ public final class InstancePluginState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 开启或关闭插件是否会引发 RabbitMQ 实例重启。true：会重启实例。false：不会重启实例。
+     * Whether enabling or disabling the plugin will cause a RabbitMQ instance restart. true: The instance will restart. false: The instance will not restart
      * 
      */
     @Import(name="needRebootOnChange")
     private @Nullable Output<Boolean> needRebootOnChange;
 
     /**
-     * @return 开启或关闭插件是否会引发 RabbitMQ 实例重启。true：会重启实例。false：不会重启实例。
+     * @return Whether enabling or disabling the plugin will cause a RabbitMQ instance restart. true: The instance will restart. false: The instance will not restart
      * 
      */
     public Optional<Output<Boolean>> needRebootOnChange() {
@@ -108,14 +108,14 @@ public final class InstancePluginState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 插件名称。
+     * Plugin name
      * 
      */
     @Import(name="pluginName")
     private @Nullable Output<String> pluginName;
 
     /**
-     * @return 插件名称。
+     * @return Plugin name
      * 
      */
     public Optional<Output<String>> pluginName() {
@@ -123,14 +123,14 @@ public final class InstancePluginState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 插件监听的端口。
+     * Plugin listening port
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return 插件监听的端口。
+     * @return Plugin listening port
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -138,14 +138,14 @@ public final class InstancePluginState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 插件版本。
+     * Plugin version
      * 
      */
     @Import(name="version")
     private @Nullable Output<String> version;
 
     /**
-     * @return 插件版本。
+     * @return Plugin version
      * 
      */
     public Optional<Output<String>> version() {
@@ -185,7 +185,7 @@ public final class InstancePluginState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param description 插件描述。
+         * @param description Plugin description
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class InstancePluginState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param description 插件描述。
+         * @param description Plugin description
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class InstancePluginState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param disablePrompt 关闭此插件的注意事项说明。
+         * @param disablePrompt Notes for disabling this plugin
          * 
          * @return builder
          * 
@@ -217,7 +217,7 @@ public final class InstancePluginState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param disablePrompt 关闭此插件的注意事项说明。
+         * @param disablePrompt Notes for disabling this plugin
          * 
          * @return builder
          * 
@@ -227,7 +227,7 @@ public final class InstancePluginState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param enablePrompt 开启此插件的注意事项说明。
+         * @param enablePrompt Notes for enabling this plugin
          * 
          * @return builder
          * 
@@ -238,7 +238,7 @@ public final class InstancePluginState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param enablePrompt 开启此插件的注意事项说明。
+         * @param enablePrompt Notes for enabling this plugin
          * 
          * @return builder
          * 
@@ -248,7 +248,7 @@ public final class InstancePluginState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param enabled 是否已开启插件。true：插件已开启。false：插件已关闭。
+         * @param enabled Whether the plugin is enabled. true: The plugin is enabled. false: The plugin is disabled
          * 
          * @return builder
          * 
@@ -259,7 +259,7 @@ public final class InstancePluginState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param enabled 是否已开启插件。true：插件已开启。false：插件已关闭。
+         * @param enabled Whether the plugin is enabled. true: The plugin is enabled. false: The plugin is disabled
          * 
          * @return builder
          * 
@@ -269,7 +269,7 @@ public final class InstancePluginState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID
          * 
          * @return builder
          * 
@@ -280,7 +280,7 @@ public final class InstancePluginState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID
          * 
          * @return builder
          * 
@@ -290,7 +290,7 @@ public final class InstancePluginState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param needRebootOnChange 开启或关闭插件是否会引发 RabbitMQ 实例重启。true：会重启实例。false：不会重启实例。
+         * @param needRebootOnChange Whether enabling or disabling the plugin will cause a RabbitMQ instance restart. true: The instance will restart. false: The instance will not restart
          * 
          * @return builder
          * 
@@ -301,7 +301,7 @@ public final class InstancePluginState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param needRebootOnChange 开启或关闭插件是否会引发 RabbitMQ 实例重启。true：会重启实例。false：不会重启实例。
+         * @param needRebootOnChange Whether enabling or disabling the plugin will cause a RabbitMQ instance restart. true: The instance will restart. false: The instance will not restart
          * 
          * @return builder
          * 
@@ -311,7 +311,7 @@ public final class InstancePluginState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param pluginName 插件名称。
+         * @param pluginName Plugin name
          * 
          * @return builder
          * 
@@ -322,7 +322,7 @@ public final class InstancePluginState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param pluginName 插件名称。
+         * @param pluginName Plugin name
          * 
          * @return builder
          * 
@@ -332,7 +332,7 @@ public final class InstancePluginState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param port 插件监听的端口。
+         * @param port Plugin listening port
          * 
          * @return builder
          * 
@@ -343,7 +343,7 @@ public final class InstancePluginState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param port 插件监听的端口。
+         * @param port Plugin listening port
          * 
          * @return builder
          * 
@@ -353,7 +353,7 @@ public final class InstancePluginState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param version 插件版本。
+         * @param version Plugin version
          * 
          * @return builder
          * 
@@ -364,7 +364,7 @@ public final class InstancePluginState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param version 插件版本。
+         * @param version Plugin version
          * 
          * @return builder
          * 

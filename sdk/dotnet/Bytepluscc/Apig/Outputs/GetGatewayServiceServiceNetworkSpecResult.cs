@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GetGatewayServiceServiceNetworkSpecResult
     {
         /// <summary>
-        /// 开启私网。
+        /// Enable private network.
         /// </summary>
         public readonly bool EnablePrivateNetwork;
         /// <summary>
-        /// 开启公网。
+        /// Enable public network.
         /// </summary>
         public readonly bool EnablePublicNetwork;
         /// <summary>
-        /// 私网域名解析的目标IP。
+        /// Target IP for private network domain resolution.
         /// </summary>
         public readonly ImmutableArray<string> PrivateNetworkIps;
 

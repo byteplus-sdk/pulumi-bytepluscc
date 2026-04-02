@@ -11,38 +11,38 @@ import java.util.Objects;
 @CustomType
 public final class GetNgwEipAddress {
     /**
-     * @return 公网IP的ID。
+     * @return Public IP ID
      * 
      */
     private String allocationId;
     /**
-     * @return 公网IP的地址。
+     * @return Public IP address
      * 
      */
     private String eipAddress;
     /**
-     * @return 公网IP的使用状态。Idle：未使用。UsedBySnat：被SNAT规则使用。UsedByDnat：被DNAT规则使用。UsedByNat：被SNAT/DNAT规则同时使用。
+     * @return Usage status of the public IP. Idle: Not used. UsedBySnat: Used by SNAT rule. UsedByDnat: Used by DNAT rule. UsedByNat: Used by both SNAT and DNAT rules.
      * 
      */
     private String usingStatus;
 
     private GetNgwEipAddress() {}
     /**
-     * @return 公网IP的ID。
+     * @return Public IP ID
      * 
      */
     public String allocationId() {
         return this.allocationId;
     }
     /**
-     * @return 公网IP的地址。
+     * @return Public IP address
      * 
      */
     public String eipAddress() {
         return this.eipAddress;
     }
     /**
-     * @return 公网IP的使用状态。Idle：未使用。UsedBySnat：被SNAT规则使用。UsedByDnat：被DNAT规则使用。UsedByNat：被SNAT/DNAT规则同时使用。
+     * @return Usage status of the public IP. Idle: Not used. UsedBySnat: Used by SNAT rule. UsedByDnat: Used by DNAT rule. UsedByNat: Used by both SNAT and DNAT rules.
      * 
      */
     public String usingStatus() {

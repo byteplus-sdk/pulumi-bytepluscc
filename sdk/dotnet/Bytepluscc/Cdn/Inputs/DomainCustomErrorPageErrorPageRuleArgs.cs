@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainCustomErrorPageErrorPageRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示规则的相关配置。
+        /// Indicates the relevant configuration for the rule.
         /// </summary>
         [Input("errorPageAction")]
         public Input<Inputs.DomainCustomErrorPageErrorPageRuleErrorPageActionArgs>? ErrorPageAction { get; set; }

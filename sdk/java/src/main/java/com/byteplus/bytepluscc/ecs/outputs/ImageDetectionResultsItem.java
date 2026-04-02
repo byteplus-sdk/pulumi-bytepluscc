@@ -12,50 +12,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ImageDetectionResultsItem {
     /**
-     * @return 检测项名称。
+     * @return Check item name
      * 
      */
     private @Nullable String name;
     /**
-     * @return 该检测项对应结果。
+     * @return Result for this check item.
      * 
      */
     private @Nullable String result;
     /**
-     * @return 风险描述码。
+     * @return Risk description code
      * 
      */
     private @Nullable String riskCode;
     /**
-     * @return 风险等级。若该参数返回值为空，表示无风险。
+     * @return Risk level. If this parameter is empty, it means no risk
      * 
      */
     private @Nullable String riskLevel;
 
     private ImageDetectionResultsItem() {}
     /**
-     * @return 检测项名称。
+     * @return Check item name
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return 该检测项对应结果。
+     * @return Result for this check item.
      * 
      */
     public Optional<String> result() {
         return Optional.ofNullable(this.result);
     }
     /**
-     * @return 风险描述码。
+     * @return Risk description code
      * 
      */
     public Optional<String> riskCode() {
         return Optional.ofNullable(this.riskCode);
     }
     /**
-     * @return 风险等级。若该参数返回值为空，表示无风险。
+     * @return Risk level. If this parameter is empty, it means no risk
      * 
      */
     public Optional<String> riskLevel() {

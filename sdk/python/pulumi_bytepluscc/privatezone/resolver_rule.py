@@ -33,12 +33,12 @@ class ResolverRuleArgs:
                  zone_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a ResolverRule resource.
-        :param pulumi.Input[builtins.str] name: 转发规则的名称。支持 UTF-8 格式。
-        :param pulumi.Input[builtins.str] type: 转发规则类型。OUTBOUND：转发到外部的 DNS 服务器。LINE：自定义公网递归 DNS 服务器的出口 IP 地址的运营商。
-        :param pulumi.Input[builtins.int] endpoint_id: 终端节点的 ID。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
-        :param pulumi.Input[builtins.str] line: 递归 DNS 服务器的出口 IP 地址的运营商。该参数仅在 Type 参数是 LINE 时有效。支持的取值：移动：中国移动，电信：中国电信，联通：中国联通
-        :param pulumi.Input[builtins.str] project_name: 转发规则所属的项目名称。默认为 default。
-        :param pulumi.Input[builtins.str] zone_name: 转发规则转发规则所关联的域名。您可以输入一个或多个域名。多个域名之间使用英文逗号, 分隔。最多支持输入 500 个域名。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。如果您把该参数设置为 *，则转发规则适用于 VPC 关联的所有域名。
+        :param pulumi.Input[builtins.str] name: Name of the forwarding rule. Supports UTF-8 format
+        :param pulumi.Input[builtins.str] type: Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
+        :param pulumi.Input[builtins.int] endpoint_id: Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
+        :param pulumi.Input[builtins.str] line: Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
+        :param pulumi.Input[builtins.str] project_name: Project name associated with the forwarding rule. Default is default
+        :param pulumi.Input[builtins.str] zone_name: Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "type", type)
@@ -61,7 +61,7 @@ class ResolverRuleArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[builtins.str]:
         """
-        转发规则的名称。支持 UTF-8 格式。
+        Name of the forwarding rule. Supports UTF-8 format
         """
         return pulumi.get(self, "name")
 
@@ -73,7 +73,7 @@ class ResolverRuleArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[builtins.str]:
         """
-        转发规则类型。OUTBOUND：转发到外部的 DNS 服务器。LINE：自定义公网递归 DNS 服务器的出口 IP 地址的运营商。
+        Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
         """
         return pulumi.get(self, "type")
 
@@ -85,7 +85,7 @@ class ResolverRuleArgs:
     @pulumi.getter(name="endpointId")
     def endpoint_id(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        终端节点的 ID。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
+        Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
         """
         return pulumi.get(self, "endpoint_id")
 
@@ -106,7 +106,7 @@ class ResolverRuleArgs:
     @pulumi.getter
     def line(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        递归 DNS 服务器的出口 IP 地址的运营商。该参数仅在 Type 参数是 LINE 时有效。支持的取值：移动：中国移动，电信：中国电信，联通：中国联通
+        Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
         """
         return pulumi.get(self, "line")
 
@@ -118,7 +118,7 @@ class ResolverRuleArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        转发规则所属的项目名称。默认为 default。
+        Project name associated with the forwarding rule. Default is default
         """
         return pulumi.get(self, "project_name")
 
@@ -148,7 +148,7 @@ class ResolverRuleArgs:
     @pulumi.getter(name="zoneName")
     def zone_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        转发规则转发规则所关联的域名。您可以输入一个或多个域名。多个域名之间使用英文逗号, 分隔。最多支持输入 500 个域名。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。如果您把该参数设置为 *，则转发规则适用于 VPC 关联的所有域名。
+        Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
         """
         return pulumi.get(self, "zone_name")
 
@@ -176,17 +176,17 @@ class _ResolverRuleState:
                  zone_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering ResolverRule resources.
-        :param pulumi.Input[builtins.str] created_time: 转发规则的创建时间
-        :param pulumi.Input[builtins.bool] enable: 转发规则是否被启用。true：启用。false：禁用。
-        :param pulumi.Input[builtins.int] endpoint_id: 终端节点的 ID。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
-        :param pulumi.Input[builtins.str] last_operator: 最近一次更新转发规则的账号的 ID
-        :param pulumi.Input[builtins.str] line: 递归 DNS 服务器的出口 IP 地址的运营商。该参数仅在 Type 参数是 LINE 时有效。支持的取值：移动：中国移动，电信：中国电信，联通：中国联通
-        :param pulumi.Input[builtins.str] name: 转发规则的名称。支持 UTF-8 格式。
-        :param pulumi.Input[builtins.str] project_name: 转发规则所属的项目名称。默认为 default。
-        :param pulumi.Input[builtins.str] rule_id: 转发规则的 ID。
-        :param pulumi.Input[builtins.str] type: 转发规则类型。OUTBOUND：转发到外部的 DNS 服务器。LINE：自定义公网递归 DNS 服务器的出口 IP 地址的运营商。
-        :param pulumi.Input[builtins.str] updated_time: 转发规则的更新时间
-        :param pulumi.Input[builtins.str] zone_name: 转发规则转发规则所关联的域名。您可以输入一个或多个域名。多个域名之间使用英文逗号, 分隔。最多支持输入 500 个域名。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。如果您把该参数设置为 *，则转发规则适用于 VPC 关联的所有域名。
+        :param pulumi.Input[builtins.str] created_time: Creation time of the forwarding rule
+        :param pulumi.Input[builtins.bool] enable: Whether the forwarding rule is enabled. true: enabled. false: disabled
+        :param pulumi.Input[builtins.int] endpoint_id: Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
+        :param pulumi.Input[builtins.str] last_operator: Account ID of the last update to the forwarding rule
+        :param pulumi.Input[builtins.str] line: Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
+        :param pulumi.Input[builtins.str] name: Name of the forwarding rule. Supports UTF-8 format
+        :param pulumi.Input[builtins.str] project_name: Project name associated with the forwarding rule. Default is default
+        :param pulumi.Input[builtins.str] rule_id: Forwarding rule ID
+        :param pulumi.Input[builtins.str] type: Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
+        :param pulumi.Input[builtins.str] updated_time: Update time of the forwarding rule
+        :param pulumi.Input[builtins.str] zone_name: Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
         """
         if created_time is not None:
             pulumi.set(__self__, "created_time", created_time)
@@ -221,7 +221,7 @@ class _ResolverRuleState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        转发规则的创建时间
+        Creation time of the forwarding rule
         """
         return pulumi.get(self, "created_time")
 
@@ -233,7 +233,7 @@ class _ResolverRuleState:
     @pulumi.getter
     def enable(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        转发规则是否被启用。true：启用。false：禁用。
+        Whether the forwarding rule is enabled. true: enabled. false: disabled
         """
         return pulumi.get(self, "enable")
 
@@ -245,7 +245,7 @@ class _ResolverRuleState:
     @pulumi.getter(name="endpointId")
     def endpoint_id(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        终端节点的 ID。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
+        Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
         """
         return pulumi.get(self, "endpoint_id")
 
@@ -266,7 +266,7 @@ class _ResolverRuleState:
     @pulumi.getter(name="lastOperator")
     def last_operator(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        最近一次更新转发规则的账号的 ID
+        Account ID of the last update to the forwarding rule
         """
         return pulumi.get(self, "last_operator")
 
@@ -278,7 +278,7 @@ class _ResolverRuleState:
     @pulumi.getter
     def line(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        递归 DNS 服务器的出口 IP 地址的运营商。该参数仅在 Type 参数是 LINE 时有效。支持的取值：移动：中国移动，电信：中国电信，联通：中国联通
+        Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
         """
         return pulumi.get(self, "line")
 
@@ -290,7 +290,7 @@ class _ResolverRuleState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        转发规则的名称。支持 UTF-8 格式。
+        Name of the forwarding rule. Supports UTF-8 format
         """
         return pulumi.get(self, "name")
 
@@ -302,7 +302,7 @@ class _ResolverRuleState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        转发规则所属的项目名称。默认为 default。
+        Project name associated with the forwarding rule. Default is default
         """
         return pulumi.get(self, "project_name")
 
@@ -314,7 +314,7 @@ class _ResolverRuleState:
     @pulumi.getter(name="ruleId")
     def rule_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        转发规则的 ID。
+        Forwarding rule ID
         """
         return pulumi.get(self, "rule_id")
 
@@ -335,7 +335,7 @@ class _ResolverRuleState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        转发规则类型。OUTBOUND：转发到外部的 DNS 服务器。LINE：自定义公网递归 DNS 服务器的出口 IP 地址的运营商。
+        Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
         """
         return pulumi.get(self, "type")
 
@@ -347,7 +347,7 @@ class _ResolverRuleState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        转发规则的更新时间
+        Update time of the forwarding rule
         """
         return pulumi.get(self, "updated_time")
 
@@ -368,7 +368,7 @@ class _ResolverRuleState:
     @pulumi.getter(name="zoneName")
     def zone_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        转发规则转发规则所关联的域名。您可以输入一个或多个域名。多个域名之间使用英文逗号, 分隔。最多支持输入 500 个域名。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。如果您把该参数设置为 *，则转发规则适用于 VPC 关联的所有域名。
+        Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
         """
         return pulumi.get(self, "zone_name")
 
@@ -394,7 +394,7 @@ class ResolverRule(pulumi.CustomResource):
                  zone_name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        转发规则详细信息
+        Forwarding rule details
 
         ## Import
 
@@ -404,12 +404,12 @@ class ResolverRule(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] endpoint_id: 终端节点的 ID。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
-        :param pulumi.Input[builtins.str] line: 递归 DNS 服务器的出口 IP 地址的运营商。该参数仅在 Type 参数是 LINE 时有效。支持的取值：移动：中国移动，电信：中国电信，联通：中国联通
-        :param pulumi.Input[builtins.str] name: 转发规则的名称。支持 UTF-8 格式。
-        :param pulumi.Input[builtins.str] project_name: 转发规则所属的项目名称。默认为 default。
-        :param pulumi.Input[builtins.str] type: 转发规则类型。OUTBOUND：转发到外部的 DNS 服务器。LINE：自定义公网递归 DNS 服务器的出口 IP 地址的运营商。
-        :param pulumi.Input[builtins.str] zone_name: 转发规则转发规则所关联的域名。您可以输入一个或多个域名。多个域名之间使用英文逗号, 分隔。最多支持输入 500 个域名。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。如果您把该参数设置为 *，则转发规则适用于 VPC 关联的所有域名。
+        :param pulumi.Input[builtins.int] endpoint_id: Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
+        :param pulumi.Input[builtins.str] line: Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
+        :param pulumi.Input[builtins.str] name: Name of the forwarding rule. Supports UTF-8 format
+        :param pulumi.Input[builtins.str] project_name: Project name associated with the forwarding rule. Default is default
+        :param pulumi.Input[builtins.str] type: Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
+        :param pulumi.Input[builtins.str] zone_name: Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
         """
         ...
     @overload
@@ -418,7 +418,7 @@ class ResolverRule(pulumi.CustomResource):
                  args: ResolverRuleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        转发规则详细信息
+        Forwarding rule details
 
         ## Import
 
@@ -508,17 +508,17 @@ class ResolverRule(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] created_time: 转发规则的创建时间
-        :param pulumi.Input[builtins.bool] enable: 转发规则是否被启用。true：启用。false：禁用。
-        :param pulumi.Input[builtins.int] endpoint_id: 终端节点的 ID。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
-        :param pulumi.Input[builtins.str] last_operator: 最近一次更新转发规则的账号的 ID
-        :param pulumi.Input[builtins.str] line: 递归 DNS 服务器的出口 IP 地址的运营商。该参数仅在 Type 参数是 LINE 时有效。支持的取值：移动：中国移动，电信：中国电信，联通：中国联通
-        :param pulumi.Input[builtins.str] name: 转发规则的名称。支持 UTF-8 格式。
-        :param pulumi.Input[builtins.str] project_name: 转发规则所属的项目名称。默认为 default。
-        :param pulumi.Input[builtins.str] rule_id: 转发规则的 ID。
-        :param pulumi.Input[builtins.str] type: 转发规则类型。OUTBOUND：转发到外部的 DNS 服务器。LINE：自定义公网递归 DNS 服务器的出口 IP 地址的运营商。
-        :param pulumi.Input[builtins.str] updated_time: 转发规则的更新时间
-        :param pulumi.Input[builtins.str] zone_name: 转发规则转发规则所关联的域名。您可以输入一个或多个域名。多个域名之间使用英文逗号, 分隔。最多支持输入 500 个域名。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。如果您把该参数设置为 *，则转发规则适用于 VPC 关联的所有域名。
+        :param pulumi.Input[builtins.str] created_time: Creation time of the forwarding rule
+        :param pulumi.Input[builtins.bool] enable: Whether the forwarding rule is enabled. true: enabled. false: disabled
+        :param pulumi.Input[builtins.int] endpoint_id: Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
+        :param pulumi.Input[builtins.str] last_operator: Account ID of the last update to the forwarding rule
+        :param pulumi.Input[builtins.str] line: Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
+        :param pulumi.Input[builtins.str] name: Name of the forwarding rule. Supports UTF-8 format
+        :param pulumi.Input[builtins.str] project_name: Project name associated with the forwarding rule. Default is default
+        :param pulumi.Input[builtins.str] rule_id: Forwarding rule ID
+        :param pulumi.Input[builtins.str] type: Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
+        :param pulumi.Input[builtins.str] updated_time: Update time of the forwarding rule
+        :param pulumi.Input[builtins.str] zone_name: Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -544,7 +544,7 @@ class ResolverRule(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        转发规则的创建时间
+        Creation time of the forwarding rule
         """
         return pulumi.get(self, "created_time")
 
@@ -552,7 +552,7 @@ class ResolverRule(pulumi.CustomResource):
     @pulumi.getter
     def enable(self) -> pulumi.Output[builtins.bool]:
         """
-        转发规则是否被启用。true：启用。false：禁用。
+        Whether the forwarding rule is enabled. true: enabled. false: disabled
         """
         return pulumi.get(self, "enable")
 
@@ -560,7 +560,7 @@ class ResolverRule(pulumi.CustomResource):
     @pulumi.getter(name="endpointId")
     def endpoint_id(self) -> pulumi.Output[builtins.int]:
         """
-        终端节点的 ID。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
+        Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
         """
         return pulumi.get(self, "endpoint_id")
 
@@ -573,7 +573,7 @@ class ResolverRule(pulumi.CustomResource):
     @pulumi.getter(name="lastOperator")
     def last_operator(self) -> pulumi.Output[builtins.str]:
         """
-        最近一次更新转发规则的账号的 ID
+        Account ID of the last update to the forwarding rule
         """
         return pulumi.get(self, "last_operator")
 
@@ -581,7 +581,7 @@ class ResolverRule(pulumi.CustomResource):
     @pulumi.getter
     def line(self) -> pulumi.Output[builtins.str]:
         """
-        递归 DNS 服务器的出口 IP 地址的运营商。该参数仅在 Type 参数是 LINE 时有效。支持的取值：移动：中国移动，电信：中国电信，联通：中国联通
+        Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
         """
         return pulumi.get(self, "line")
 
@@ -589,7 +589,7 @@ class ResolverRule(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[builtins.str]:
         """
-        转发规则的名称。支持 UTF-8 格式。
+        Name of the forwarding rule. Supports UTF-8 format
         """
         return pulumi.get(self, "name")
 
@@ -597,7 +597,7 @@ class ResolverRule(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        转发规则所属的项目名称。默认为 default。
+        Project name associated with the forwarding rule. Default is default
         """
         return pulumi.get(self, "project_name")
 
@@ -605,7 +605,7 @@ class ResolverRule(pulumi.CustomResource):
     @pulumi.getter(name="ruleId")
     def rule_id(self) -> pulumi.Output[builtins.str]:
         """
-        转发规则的 ID。
+        Forwarding rule ID
         """
         return pulumi.get(self, "rule_id")
 
@@ -618,7 +618,7 @@ class ResolverRule(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[builtins.str]:
         """
-        转发规则类型。OUTBOUND：转发到外部的 DNS 服务器。LINE：自定义公网递归 DNS 服务器的出口 IP 地址的运营商。
+        Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
         """
         return pulumi.get(self, "type")
 
@@ -626,7 +626,7 @@ class ResolverRule(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        转发规则的更新时间
+        Update time of the forwarding rule
         """
         return pulumi.get(self, "updated_time")
 
@@ -639,7 +639,7 @@ class ResolverRule(pulumi.CustomResource):
     @pulumi.getter(name="zoneName")
     def zone_name(self) -> pulumi.Output[builtins.str]:
         """
-        转发规则转发规则所关联的域名。您可以输入一个或多个域名。多个域名之间使用英文逗号, 分隔。最多支持输入 500 个域名。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。如果您把该参数设置为 *，则转发规则适用于 VPC 关联的所有域名。
+        Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
         """
         return pulumi.get(self, "zone_name")
 

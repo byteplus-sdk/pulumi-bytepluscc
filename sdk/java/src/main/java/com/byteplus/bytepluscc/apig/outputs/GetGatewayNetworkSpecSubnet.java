@@ -11,38 +11,38 @@ import java.util.Objects;
 @CustomType
 public final class GetGatewayNetworkSpecSubnet {
     /**
-     * @return 可用区。
+     * @return Availability zone
      * 
      */
     private String az;
     /**
-     * @return 子网ID。
+     * @return Subnet ID
      * 
      */
     private String subnetId;
     /**
-     * @return 子网名称。
+     * @return Subnet name
      * 
      */
     private String subnetName;
 
     private GetGatewayNetworkSpecSubnet() {}
     /**
-     * @return 可用区。
+     * @return Availability zone
      * 
      */
     public String az() {
         return this.az;
     }
     /**
-     * @return 子网ID。
+     * @return Subnet ID
      * 
      */
     public String subnetId() {
         return this.subnetId;
     }
     /**
-     * @return 子网名称。
+     * @return Subnet name
      * 
      */
     public String subnetName() {

@@ -13,74 +13,74 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UpstreamCircuitBreakingSettings {
     /**
-     * @return 最小弹出时间。单位为毫秒。取值限制为1~86400000。默认值为30秒。
+     * @return Minimum pop time, in milliseconds. Value range: 1–86400000. Default: 30 seconds
      * 
      */
     private @Nullable Integer baseEjectionTime;
     /**
-     * @return 连续失败次数。取值限制为1~100。默认值为5。
+     * @return Consecutive failure count. Value range: 1~100. Default: 5
      * 
      */
     private @Nullable Integer consecutiveErrors;
     /**
-     * @return 开启。
+     * @return Enable
      * 
      */
     private @Nullable Boolean enable;
     /**
-     * @return 计算周期。单位为毫秒。取值限制为1~86400000。默认值为10秒。
+     * @return Calculation cycle, in milliseconds. Value range: 1–86400000. Default: 10 seconds
      * 
      */
     private @Nullable Integer interval;
     /**
-     * @return 最大熔断比例。取值限制为1~100。默认值为20%。
+     * @return Maximum circuit breaking ratio. Value range: 1~100. Default: 20%
      * 
      */
     private @Nullable Integer maxEjectionPercent;
     /**
-     * @return 最小健康比例。取值限制为0~100。默认值为60%。
+     * @return Minimum health ratio. Value range: 0~100. Default: 60%
      * 
      */
     private @Nullable Integer minHealthPercent;
 
     private UpstreamCircuitBreakingSettings() {}
     /**
-     * @return 最小弹出时间。单位为毫秒。取值限制为1~86400000。默认值为30秒。
+     * @return Minimum pop time, in milliseconds. Value range: 1–86400000. Default: 30 seconds
      * 
      */
     public Optional<Integer> baseEjectionTime() {
         return Optional.ofNullable(this.baseEjectionTime);
     }
     /**
-     * @return 连续失败次数。取值限制为1~100。默认值为5。
+     * @return Consecutive failure count. Value range: 1~100. Default: 5
      * 
      */
     public Optional<Integer> consecutiveErrors() {
         return Optional.ofNullable(this.consecutiveErrors);
     }
     /**
-     * @return 开启。
+     * @return Enable
      * 
      */
     public Optional<Boolean> enable() {
         return Optional.ofNullable(this.enable);
     }
     /**
-     * @return 计算周期。单位为毫秒。取值限制为1~86400000。默认值为10秒。
+     * @return Calculation cycle, in milliseconds. Value range: 1–86400000. Default: 10 seconds
      * 
      */
     public Optional<Integer> interval() {
         return Optional.ofNullable(this.interval);
     }
     /**
-     * @return 最大熔断比例。取值限制为1~100。默认值为20%。
+     * @return Maximum circuit breaking ratio. Value range: 1~100. Default: 20%
      * 
      */
     public Optional<Integer> maxEjectionPercent() {
         return Optional.ofNullable(this.maxEjectionPercent);
     }
     /**
-     * @return 最小健康比例。取值限制为0~100。默认值为60%。
+     * @return Minimum health ratio. Value range: 0~100. Default: 60%
      * 
      */
     public Optional<Integer> minHealthPercent() {

@@ -31,11 +31,11 @@ export interface GetKeyArgs {
  */
 export interface GetKeyResult {
     /**
-     * 密钥创建时间。
+     * Key creation time.
      */
     readonly createdTime: number;
     /**
-     * 密钥描述:长度为 0   - 8192 个字符。
+     * Key description: Length 0–8192 characters.
      */
     readonly description: string;
     /**
@@ -43,91 +43,91 @@ export interface GetKeyResult {
      */
     readonly id: string;
     /**
-     * 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+     * User master key archive operation (enter 1 to archive, 2 to unarchive).
      */
     readonly keyArchiveOperation: number;
     /**
-     * 用户主密钥启用操作（用户输入1=启用，2=禁用）
+     * User master key enable operation (enter 1 to enable, 2 to disable).
      */
     readonly keyEnableOperation: number;
     /**
-     * 密钥唯一标识符，UUID形式。
+     * Key unique identifier in UUID format.
      */
     readonly keyId: string;
     /**
-     * 密钥材料过期时间，当值为空时表示不会过期。
+     * Key material expiration time. If empty, the key does not expire.
      */
     readonly keyMaterialExpireTime: string;
     /**
-     * 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+     * Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
      */
     readonly keyName: string;
     /**
-     * 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+     * User master key rotation operation (enter 1 to enable, 2 to disable).
      */
     readonly keyRotationOperation: number;
     /**
-     * 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
+     * Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
      */
     readonly keySpec: string;
     /**
-     * 密钥状态：Enable，Disable，PendingDelete，Archived，PendingImport。
+     * Key status: Enable, Disable, PendingDelete, Archived, PendingImport.
      */
     readonly keyState: string;
     /**
-     * 密钥用途，取值：ENCRYPT*DECRYPT，SIGN*VERIFY，GENERATE*VERIFY*MAC。
+     * Key usage. Options: ENCRYPT*DECRYPT, SIGN*VERIFY, GENERATE*VERIFY*MAC.
      */
     readonly keyUsage: string;
     /**
-     * 密钥环名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+     * Key ring name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
      */
     readonly keyringName: string;
     /**
-     * 密钥最后轮转时间。
+     * Key last rotation time.
      */
     readonly lastRotationTime: string;
     /**
-     * 是否为 Multi-region 类型的主密钥。
+     * Is this a multi-region type master key.
      */
     readonly multiRegion: boolean;
     /**
-     * Multi-region key 配置信息。
+     * Multi-region key configuration information.
      */
     readonly multiRegionConfiguration: outputs.kms.GetKeyMultiRegionConfiguration;
     /**
-     * 密钥来源，取值：CloudKMS，External，ExternalKeyStore。
+     * Key source. Options: CloudKMS, External, ExternalKeyStore.
      */
     readonly origin: string;
     /**
-     * 密钥保护级别，取值：SOFTWARE，HSM。
+     * Key protection level. Options: SOFTWARE, HSM.
      */
     readonly protectionLevel: string;
     /**
-     * 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+     * Key rotation period (days). Range: [90, 2560].
      */
     readonly rotateInterval: number;
     /**
-     * 密钥轮转状态，取值：Enable，Disable。
+     * Key rotation status. Options: Enable, Disable.
      */
     readonly rotateState: string;
     /**
-     * 密钥删除时间。
+     * Key deletion time.
      */
     readonly scheduleDeleteTime: string;
     /**
-     * 密钥轮转时间。
+     * Key rotation time.
      */
     readonly scheduleRotationTime: string;
     /**
-     * KMS密钥的标签信息
+     * KMS key label information.
      */
     readonly tags: outputs.kms.GetKeyTag[];
     /**
-     * 资源名称，格式应为 trn:${Service}:${Region}:${AccountID}:${ResourcePath}。
+     * Resource name. Format should be trn:${Service}:${Region}:${AccountID}:${ResourcePath}.
      */
     readonly trn: string;
     /**
-     * 密钥更新时间。
+     * Key update time.
      */
     readonly updatedTime: number;
 }

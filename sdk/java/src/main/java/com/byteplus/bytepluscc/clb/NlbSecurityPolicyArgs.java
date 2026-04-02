@@ -19,14 +19,14 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
     public static final NlbSecurityPolicyArgs Empty = new NlbSecurityPolicyArgs();
 
     /**
-     * TLS自定义安全策略的加密套件，不同的TLS协议版本支持的加密套件如下：TLSv1.0 &amp; TLSv1.1：ECDHE-ECDSA-AES128-SHA，ECDHE-ECDSA-AES256-SHA，ECDHE-RSA-AES128-SHA，ECDHE-RSA-AES256-SHA，AES128-SHA，AES256-SHA，DES-CBC3-SHA。TLSv1.2：ECDHE-ECDSA-AES128-GCM-SHA256，ECDHE-ECDSA-AES256-GCM-SHA384，ECDHE-ECDSA-AES128-SHA256，ECDHE-ECDSA-AES256-SHA384，ECDHE-RSA-AES128-GCM-SHA256，ECDHE-RSA-AES256-GCM-SHA384，ECDHE-RSA-AES128-SHA256，ECDHE-RSA-AES256-SHA384，AES128-GCM-SHA256，AES256-GCM-SHA384，AES128-SHA256，AES256-SHA256。TLSv1.3：TLS*CHACHA20*POLY1305*SHA256，TLS*AES*256*GCM*SHA384，TLS*AES*128*GCM*SHA256，TLS*AES*128*CCM*8*SHA256，TLS*AES*128*CCM*SHA256，TLS*SM4*GCM*SM3，TLS*SM4*CCM*SM3。当传入此参数时，需要传入待支持的全部加密套件，不支持通过此接口仅新增/删除加密套件。仅传入Ciphers.N，未传入TlsVersions.N，则依据当前监听器支持的TLS 协议版本和请求中传入的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS 协议版本和加密套件做校验。TLS*SM4*GCM*SM3和TLS*SM4*CCM*SM3两个加密套件正在邀测中，如需试用，请联系客户经理。
+     * Cipher suites for the TLS custom security policy. Supported cipher suites for different TLS protocol versions are as follows: TLSv1.0 &amp; TLSv1.1: ECDHE-ECDSA-AES128-SHA, ECDHE-ECDSA-AES256-SHA, ECDHE-RSA-AES128-SHA, ECDHE-RSA-AES256-SHA, AES128-SHA, AES256-SHA, DES-CBC3-SHA. TLSv1.2: ECDHE-ECDSA-AES128-GCM-SHA256, ECDHE-ECDSA-AES256-GCM-SHA384, ECDHE-ECDSA-AES128-SHA256, ECDHE-ECDSA-AES256-SHA384, ECDHE-RSA-AES128-GCM-SHA256, ECDHE-RSA-AES256-GCM-SHA384, ECDHE-RSA-AES128-SHA256, ECDHE-RSA-AES256-SHA384, AES128-GCM-SHA256, AES256-GCM-SHA384, AES128-SHA256, AES256-SHA256. TLSv1.3: TLS*CHACHA20*POLY1305*SHA256, TLS*AES*256*GCM*SHA384, TLS*AES*128*GCM*SHA256, TLS*AES*128*CCM*8*SHA256, TLS*AES*128*CCM*SHA256, TLS*SM4*GCM*SM3, TLS*SM4*CCM*SM3. When specifying this parameter, you must provide all supported cipher suites. Adding or removing cipher suites individually is not supported via this interface. If only Ciphers.N is provided and TlsVersions.N is not, validation is based on the TLS protocol versions supported by the current listener and the cipher suites specified in the request. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request. TLS*SM4*GCM*SM3 and TLS*SM4*CCM*SM3 are currently in pilot testing. To request access, please contact your account manager
      * 
      */
     @Import(name="ciphers", required=true)
     private Output<List<String>> ciphers;
 
     /**
-     * @return TLS自定义安全策略的加密套件，不同的TLS协议版本支持的加密套件如下：TLSv1.0 &amp; TLSv1.1：ECDHE-ECDSA-AES128-SHA，ECDHE-ECDSA-AES256-SHA，ECDHE-RSA-AES128-SHA，ECDHE-RSA-AES256-SHA，AES128-SHA，AES256-SHA，DES-CBC3-SHA。TLSv1.2：ECDHE-ECDSA-AES128-GCM-SHA256，ECDHE-ECDSA-AES256-GCM-SHA384，ECDHE-ECDSA-AES128-SHA256，ECDHE-ECDSA-AES256-SHA384，ECDHE-RSA-AES128-GCM-SHA256，ECDHE-RSA-AES256-GCM-SHA384，ECDHE-RSA-AES128-SHA256，ECDHE-RSA-AES256-SHA384，AES128-GCM-SHA256，AES256-GCM-SHA384，AES128-SHA256，AES256-SHA256。TLSv1.3：TLS*CHACHA20*POLY1305*SHA256，TLS*AES*256*GCM*SHA384，TLS*AES*128*GCM*SHA256，TLS*AES*128*CCM*8*SHA256，TLS*AES*128*CCM*SHA256，TLS*SM4*GCM*SM3，TLS*SM4*CCM*SM3。当传入此参数时，需要传入待支持的全部加密套件，不支持通过此接口仅新增/删除加密套件。仅传入Ciphers.N，未传入TlsVersions.N，则依据当前监听器支持的TLS 协议版本和请求中传入的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS 协议版本和加密套件做校验。TLS*SM4*GCM*SM3和TLS*SM4*CCM*SM3两个加密套件正在邀测中，如需试用，请联系客户经理。
+     * @return Cipher suites for the TLS custom security policy. Supported cipher suites for different TLS protocol versions are as follows: TLSv1.0 &amp; TLSv1.1: ECDHE-ECDSA-AES128-SHA, ECDHE-ECDSA-AES256-SHA, ECDHE-RSA-AES128-SHA, ECDHE-RSA-AES256-SHA, AES128-SHA, AES256-SHA, DES-CBC3-SHA. TLSv1.2: ECDHE-ECDSA-AES128-GCM-SHA256, ECDHE-ECDSA-AES256-GCM-SHA384, ECDHE-ECDSA-AES128-SHA256, ECDHE-ECDSA-AES256-SHA384, ECDHE-RSA-AES128-GCM-SHA256, ECDHE-RSA-AES256-GCM-SHA384, ECDHE-RSA-AES128-SHA256, ECDHE-RSA-AES256-SHA384, AES128-GCM-SHA256, AES256-GCM-SHA384, AES128-SHA256, AES256-SHA256. TLSv1.3: TLS*CHACHA20*POLY1305*SHA256, TLS*AES*256*GCM*SHA384, TLS*AES*128*GCM*SHA256, TLS*AES*128*CCM*8*SHA256, TLS*AES*128*CCM*SHA256, TLS*SM4*GCM*SM3, TLS*SM4*CCM*SM3. When specifying this parameter, you must provide all supported cipher suites. Adding or removing cipher suites individually is not supported via this interface. If only Ciphers.N is provided and TlsVersions.N is not, validation is based on the TLS protocol versions supported by the current listener and the cipher suites specified in the request. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request. TLS*SM4*GCM*SM3 and TLS*SM4*CCM*SM3 are currently in pilot testing. To request access, please contact your account manager
      * 
      */
     public Output<List<String>> ciphers() {
@@ -34,14 +34,14 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * TLS自定义安全策略所属项目的名称。不传则默认为defaul。
+     * Name of the project to which the TLS custom security policy belongs. If not specified, defaults to default
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return TLS自定义安全策略所属项目的名称。不传则默认为defaul。
+     * @return Name of the project to which the TLS custom security policy belongs. If not specified, defaults to default
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -49,14 +49,14 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 安全策略名称。必须以字母、数字或中文开头，可包含以下特殊字符：点（.）、下划线（_）和中划线（-）；长度限制为1 ～ 128个字符；该参数不传入，则默认为策略ID。
+     * Security policy name. Must start with a letter, number, or Chinese character, and can include the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not specified, defaults to the policy ID
      * 
      */
     @Import(name="securityPolicyName")
     private @Nullable Output<String> securityPolicyName;
 
     /**
-     * @return 安全策略名称。必须以字母、数字或中文开头，可包含以下特殊字符：点（.）、下划线（_）和中划线（-）；长度限制为1 ～ 128个字符；该参数不传入，则默认为策略ID。
+     * @return Security policy name. Must start with a letter, number, or Chinese character, and can include the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not specified, defaults to the policy ID
      * 
      */
     public Optional<Output<String>> securityPolicyName() {
@@ -71,14 +71,14 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 更新TLS自定义安全策略的TLS 协议版本。取值：TLSv1.0，TLSv1.1，TLSv1.2，TLSv1.3。当传入此参数时，需要传入待支持的全部TLS版本，不支持通过此接口仅新增/删除TLS协议版本。仅传入TlsVersions.N，未传入Ciphers.N，则依据请求中传入的TLS协议版本和当前监听器支持的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS协议版本和加密套件做校验。
+     * Update the TLS protocol versions for the TLS custom security policy. Valid values: TLSv1.0, TLSv1.1, TLSv1.2, TLSv1.3. When specifying this parameter, you must provide all supported TLS versions. Adding or removing TLS protocol versions individually is not supported via this interface. If only TlsVersions.N is provided and Ciphers.N is not, validation is based on the TLS protocol versions in the request and the cipher suites supported by the current listener. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request
      * 
      */
     @Import(name="tlsVersions", required=true)
     private Output<List<String>> tlsVersions;
 
     /**
-     * @return 更新TLS自定义安全策略的TLS 协议版本。取值：TLSv1.0，TLSv1.1，TLSv1.2，TLSv1.3。当传入此参数时，需要传入待支持的全部TLS版本，不支持通过此接口仅新增/删除TLS协议版本。仅传入TlsVersions.N，未传入Ciphers.N，则依据请求中传入的TLS协议版本和当前监听器支持的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS协议版本和加密套件做校验。
+     * @return Update the TLS protocol versions for the TLS custom security policy. Valid values: TLSv1.0, TLSv1.1, TLSv1.2, TLSv1.3. When specifying this parameter, you must provide all supported TLS versions. Adding or removing TLS protocol versions individually is not supported via this interface. If only TlsVersions.N is provided and Ciphers.N is not, validation is based on the TLS protocol versions in the request and the cipher suites supported by the current listener. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request
      * 
      */
     public Output<List<String>> tlsVersions() {
@@ -114,7 +114,7 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param ciphers TLS自定义安全策略的加密套件，不同的TLS协议版本支持的加密套件如下：TLSv1.0 &amp; TLSv1.1：ECDHE-ECDSA-AES128-SHA，ECDHE-ECDSA-AES256-SHA，ECDHE-RSA-AES128-SHA，ECDHE-RSA-AES256-SHA，AES128-SHA，AES256-SHA，DES-CBC3-SHA。TLSv1.2：ECDHE-ECDSA-AES128-GCM-SHA256，ECDHE-ECDSA-AES256-GCM-SHA384，ECDHE-ECDSA-AES128-SHA256，ECDHE-ECDSA-AES256-SHA384，ECDHE-RSA-AES128-GCM-SHA256，ECDHE-RSA-AES256-GCM-SHA384，ECDHE-RSA-AES128-SHA256，ECDHE-RSA-AES256-SHA384，AES128-GCM-SHA256，AES256-GCM-SHA384，AES128-SHA256，AES256-SHA256。TLSv1.3：TLS*CHACHA20*POLY1305*SHA256，TLS*AES*256*GCM*SHA384，TLS*AES*128*GCM*SHA256，TLS*AES*128*CCM*8*SHA256，TLS*AES*128*CCM*SHA256，TLS*SM4*GCM*SM3，TLS*SM4*CCM*SM3。当传入此参数时，需要传入待支持的全部加密套件，不支持通过此接口仅新增/删除加密套件。仅传入Ciphers.N，未传入TlsVersions.N，则依据当前监听器支持的TLS 协议版本和请求中传入的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS 协议版本和加密套件做校验。TLS*SM4*GCM*SM3和TLS*SM4*CCM*SM3两个加密套件正在邀测中，如需试用，请联系客户经理。
+         * @param ciphers Cipher suites for the TLS custom security policy. Supported cipher suites for different TLS protocol versions are as follows: TLSv1.0 &amp; TLSv1.1: ECDHE-ECDSA-AES128-SHA, ECDHE-ECDSA-AES256-SHA, ECDHE-RSA-AES128-SHA, ECDHE-RSA-AES256-SHA, AES128-SHA, AES256-SHA, DES-CBC3-SHA. TLSv1.2: ECDHE-ECDSA-AES128-GCM-SHA256, ECDHE-ECDSA-AES256-GCM-SHA384, ECDHE-ECDSA-AES128-SHA256, ECDHE-ECDSA-AES256-SHA384, ECDHE-RSA-AES128-GCM-SHA256, ECDHE-RSA-AES256-GCM-SHA384, ECDHE-RSA-AES128-SHA256, ECDHE-RSA-AES256-SHA384, AES128-GCM-SHA256, AES256-GCM-SHA384, AES128-SHA256, AES256-SHA256. TLSv1.3: TLS*CHACHA20*POLY1305*SHA256, TLS*AES*256*GCM*SHA384, TLS*AES*128*GCM*SHA256, TLS*AES*128*CCM*8*SHA256, TLS*AES*128*CCM*SHA256, TLS*SM4*GCM*SM3, TLS*SM4*CCM*SM3. When specifying this parameter, you must provide all supported cipher suites. Adding or removing cipher suites individually is not supported via this interface. If only Ciphers.N is provided and TlsVersions.N is not, validation is based on the TLS protocol versions supported by the current listener and the cipher suites specified in the request. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request. TLS*SM4*GCM*SM3 and TLS*SM4*CCM*SM3 are currently in pilot testing. To request access, please contact your account manager
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param ciphers TLS自定义安全策略的加密套件，不同的TLS协议版本支持的加密套件如下：TLSv1.0 &amp; TLSv1.1：ECDHE-ECDSA-AES128-SHA，ECDHE-ECDSA-AES256-SHA，ECDHE-RSA-AES128-SHA，ECDHE-RSA-AES256-SHA，AES128-SHA，AES256-SHA，DES-CBC3-SHA。TLSv1.2：ECDHE-ECDSA-AES128-GCM-SHA256，ECDHE-ECDSA-AES256-GCM-SHA384，ECDHE-ECDSA-AES128-SHA256，ECDHE-ECDSA-AES256-SHA384，ECDHE-RSA-AES128-GCM-SHA256，ECDHE-RSA-AES256-GCM-SHA384，ECDHE-RSA-AES128-SHA256，ECDHE-RSA-AES256-SHA384，AES128-GCM-SHA256，AES256-GCM-SHA384，AES128-SHA256，AES256-SHA256。TLSv1.3：TLS*CHACHA20*POLY1305*SHA256，TLS*AES*256*GCM*SHA384，TLS*AES*128*GCM*SHA256，TLS*AES*128*CCM*8*SHA256，TLS*AES*128*CCM*SHA256，TLS*SM4*GCM*SM3，TLS*SM4*CCM*SM3。当传入此参数时，需要传入待支持的全部加密套件，不支持通过此接口仅新增/删除加密套件。仅传入Ciphers.N，未传入TlsVersions.N，则依据当前监听器支持的TLS 协议版本和请求中传入的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS 协议版本和加密套件做校验。TLS*SM4*GCM*SM3和TLS*SM4*CCM*SM3两个加密套件正在邀测中，如需试用，请联系客户经理。
+         * @param ciphers Cipher suites for the TLS custom security policy. Supported cipher suites for different TLS protocol versions are as follows: TLSv1.0 &amp; TLSv1.1: ECDHE-ECDSA-AES128-SHA, ECDHE-ECDSA-AES256-SHA, ECDHE-RSA-AES128-SHA, ECDHE-RSA-AES256-SHA, AES128-SHA, AES256-SHA, DES-CBC3-SHA. TLSv1.2: ECDHE-ECDSA-AES128-GCM-SHA256, ECDHE-ECDSA-AES256-GCM-SHA384, ECDHE-ECDSA-AES128-SHA256, ECDHE-ECDSA-AES256-SHA384, ECDHE-RSA-AES128-GCM-SHA256, ECDHE-RSA-AES256-GCM-SHA384, ECDHE-RSA-AES128-SHA256, ECDHE-RSA-AES256-SHA384, AES128-GCM-SHA256, AES256-GCM-SHA384, AES128-SHA256, AES256-SHA256. TLSv1.3: TLS*CHACHA20*POLY1305*SHA256, TLS*AES*256*GCM*SHA384, TLS*AES*128*GCM*SHA256, TLS*AES*128*CCM*8*SHA256, TLS*AES*128*CCM*SHA256, TLS*SM4*GCM*SM3, TLS*SM4*CCM*SM3. When specifying this parameter, you must provide all supported cipher suites. Adding or removing cipher suites individually is not supported via this interface. If only Ciphers.N is provided and TlsVersions.N is not, validation is based on the TLS protocol versions supported by the current listener and the cipher suites specified in the request. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request. TLS*SM4*GCM*SM3 and TLS*SM4*CCM*SM3 are currently in pilot testing. To request access, please contact your account manager
          * 
          * @return builder
          * 
@@ -135,7 +135,7 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param ciphers TLS自定义安全策略的加密套件，不同的TLS协议版本支持的加密套件如下：TLSv1.0 &amp; TLSv1.1：ECDHE-ECDSA-AES128-SHA，ECDHE-ECDSA-AES256-SHA，ECDHE-RSA-AES128-SHA，ECDHE-RSA-AES256-SHA，AES128-SHA，AES256-SHA，DES-CBC3-SHA。TLSv1.2：ECDHE-ECDSA-AES128-GCM-SHA256，ECDHE-ECDSA-AES256-GCM-SHA384，ECDHE-ECDSA-AES128-SHA256，ECDHE-ECDSA-AES256-SHA384，ECDHE-RSA-AES128-GCM-SHA256，ECDHE-RSA-AES256-GCM-SHA384，ECDHE-RSA-AES128-SHA256，ECDHE-RSA-AES256-SHA384，AES128-GCM-SHA256，AES256-GCM-SHA384，AES128-SHA256，AES256-SHA256。TLSv1.3：TLS*CHACHA20*POLY1305*SHA256，TLS*AES*256*GCM*SHA384，TLS*AES*128*GCM*SHA256，TLS*AES*128*CCM*8*SHA256，TLS*AES*128*CCM*SHA256，TLS*SM4*GCM*SM3，TLS*SM4*CCM*SM3。当传入此参数时，需要传入待支持的全部加密套件，不支持通过此接口仅新增/删除加密套件。仅传入Ciphers.N，未传入TlsVersions.N，则依据当前监听器支持的TLS 协议版本和请求中传入的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS 协议版本和加密套件做校验。TLS*SM4*GCM*SM3和TLS*SM4*CCM*SM3两个加密套件正在邀测中，如需试用，请联系客户经理。
+         * @param ciphers Cipher suites for the TLS custom security policy. Supported cipher suites for different TLS protocol versions are as follows: TLSv1.0 &amp; TLSv1.1: ECDHE-ECDSA-AES128-SHA, ECDHE-ECDSA-AES256-SHA, ECDHE-RSA-AES128-SHA, ECDHE-RSA-AES256-SHA, AES128-SHA, AES256-SHA, DES-CBC3-SHA. TLSv1.2: ECDHE-ECDSA-AES128-GCM-SHA256, ECDHE-ECDSA-AES256-GCM-SHA384, ECDHE-ECDSA-AES128-SHA256, ECDHE-ECDSA-AES256-SHA384, ECDHE-RSA-AES128-GCM-SHA256, ECDHE-RSA-AES256-GCM-SHA384, ECDHE-RSA-AES128-SHA256, ECDHE-RSA-AES256-SHA384, AES128-GCM-SHA256, AES256-GCM-SHA384, AES128-SHA256, AES256-SHA256. TLSv1.3: TLS*CHACHA20*POLY1305*SHA256, TLS*AES*256*GCM*SHA384, TLS*AES*128*GCM*SHA256, TLS*AES*128*CCM*8*SHA256, TLS*AES*128*CCM*SHA256, TLS*SM4*GCM*SM3, TLS*SM4*CCM*SM3. When specifying this parameter, you must provide all supported cipher suites. Adding or removing cipher suites individually is not supported via this interface. If only Ciphers.N is provided and TlsVersions.N is not, validation is based on the TLS protocol versions supported by the current listener and the cipher suites specified in the request. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request. TLS*SM4*GCM*SM3 and TLS*SM4*CCM*SM3 are currently in pilot testing. To request access, please contact your account manager
          * 
          * @return builder
          * 
@@ -145,7 +145,7 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param projectName TLS自定义安全策略所属项目的名称。不传则默认为defaul。
+         * @param projectName Name of the project to which the TLS custom security policy belongs. If not specified, defaults to default
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param projectName TLS自定义安全策略所属项目的名称。不传则默认为defaul。
+         * @param projectName Name of the project to which the TLS custom security policy belongs. If not specified, defaults to default
          * 
          * @return builder
          * 
@@ -166,7 +166,7 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param securityPolicyName 安全策略名称。必须以字母、数字或中文开头，可包含以下特殊字符：点（.）、下划线（_）和中划线（-）；长度限制为1 ～ 128个字符；该参数不传入，则默认为策略ID。
+         * @param securityPolicyName Security policy name. Must start with a letter, number, or Chinese character, and can include the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not specified, defaults to the policy ID
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param securityPolicyName 安全策略名称。必须以字母、数字或中文开头，可包含以下特殊字符：点（.）、下划线（_）和中划线（-）；长度限制为1 ～ 128个字符；该参数不传入，则默认为策略ID。
+         * @param securityPolicyName Security policy name. Must start with a letter, number, or Chinese character, and can include the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not specified, defaults to the policy ID
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param tlsVersions 更新TLS自定义安全策略的TLS 协议版本。取值：TLSv1.0，TLSv1.1，TLSv1.2，TLSv1.3。当传入此参数时，需要传入待支持的全部TLS版本，不支持通过此接口仅新增/删除TLS协议版本。仅传入TlsVersions.N，未传入Ciphers.N，则依据请求中传入的TLS协议版本和当前监听器支持的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS协议版本和加密套件做校验。
+         * @param tlsVersions Update the TLS protocol versions for the TLS custom security policy. Valid values: TLSv1.0, TLSv1.1, TLSv1.2, TLSv1.3. When specifying this parameter, you must provide all supported TLS versions. Adding or removing TLS protocol versions individually is not supported via this interface. If only TlsVersions.N is provided and Ciphers.N is not, validation is based on the TLS protocol versions in the request and the cipher suites supported by the current listener. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request
          * 
          * @return builder
          * 
@@ -211,7 +211,7 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param tlsVersions 更新TLS自定义安全策略的TLS 协议版本。取值：TLSv1.0，TLSv1.1，TLSv1.2，TLSv1.3。当传入此参数时，需要传入待支持的全部TLS版本，不支持通过此接口仅新增/删除TLS协议版本。仅传入TlsVersions.N，未传入Ciphers.N，则依据请求中传入的TLS协议版本和当前监听器支持的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS协议版本和加密套件做校验。
+         * @param tlsVersions Update the TLS protocol versions for the TLS custom security policy. Valid values: TLSv1.0, TLSv1.1, TLSv1.2, TLSv1.3. When specifying this parameter, you must provide all supported TLS versions. Adding or removing TLS protocol versions individually is not supported via this interface. If only TlsVersions.N is provided and Ciphers.N is not, validation is based on the TLS protocol versions in the request and the cipher suites supported by the current listener. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request
          * 
          * @return builder
          * 
@@ -221,7 +221,7 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param tlsVersions 更新TLS自定义安全策略的TLS 协议版本。取值：TLSv1.0，TLSv1.1，TLSv1.2，TLSv1.3。当传入此参数时，需要传入待支持的全部TLS版本，不支持通过此接口仅新增/删除TLS协议版本。仅传入TlsVersions.N，未传入Ciphers.N，则依据请求中传入的TLS协议版本和当前监听器支持的加密套件做校验。传入TlsVersions.N和Ciphers.N，则依据请求中传入的TLS协议版本和加密套件做校验。
+         * @param tlsVersions Update the TLS protocol versions for the TLS custom security policy. Valid values: TLSv1.0, TLSv1.1, TLSv1.2, TLSv1.3. When specifying this parameter, you must provide all supported TLS versions. Adding or removing TLS protocol versions individually is not supported via this interface. If only TlsVersions.N is provided and Ciphers.N is not, validation is based on the TLS protocol versions in the request and the cipher suites supported by the current listener. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request
          * 
          * @return builder
          * 

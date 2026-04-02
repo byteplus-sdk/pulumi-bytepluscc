@@ -30,33 +30,33 @@ type LookupUserProvisioningArgs struct {
 
 // A collection of values returned by getUserProvisioning.
 type LookupUserProvisioningResult struct {
-	// 创建时间。
+	// Creation Time
 	CreatedTime string `pulumi:"createdTime"`
-	// 删除策略。
+	// Deletion Policy
 	DeletionStrategy string `pulumi:"deletionStrategy"`
-	// 任务描述。
+	// Task Description
 	Description string `pulumi:"description"`
-	// 用户名冲突策略。
+	// Username Conflict Policy
 	DuplicationStrategy string `pulumi:"duplicationStrategy"`
-	// 本次同步IAM用户名称后缀。
+	// Suffix for IAM user name in this synchronization
 	DuplicationSuffix string `pulumi:"duplicationSuffix"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 身份源冲突策略。
+	// Identity Source Conflict Policy
 	IdentitySourceStrategy string `pulumi:"identitySourceStrategy"`
-	// 身份id。
+	// Identity ID
 	PrincipalId string `pulumi:"principalId"`
-	// 目标名称。
+	// Target Name
 	PrincipalName string `pulumi:"principalName"`
-	// 身份类型。
+	// Identity Type
 	PrincipalType string `pulumi:"principalType"`
-	// 授权任务状态。Provisioned 授权成功，Provisioning 正在授权，DeleteProvisioning 授权解除中，DeleteProvisioned 授权解除成功
+	// Authorization Task Status. Provisioned: authorization successful, Provisioning: authorizing, DeleteProvisioning: revoking authorization, DeleteProvisioned: authorization revoked successfully.
 	ProvisionStatus string `pulumi:"provisionStatus"`
-	// 目标id。
+	// Target ID
 	TargetId string `pulumi:"targetId"`
-	// 更新时间。
+	// Update Time
 	UpdatedTime string `pulumi:"updatedTime"`
-	// IAM 用户同步任务ID。
+	// IAM User Synchronization Task ID
 	UserProvisioningId string `pulumi:"userProvisioningId"`
 }
 
@@ -94,27 +94,27 @@ func (o LookupUserProvisioningResultOutput) ToLookupUserProvisioningResultOutput
 	return o
 }
 
-// 创建时间。
+// Creation Time
 func (o LookupUserProvisioningResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserProvisioningResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 删除策略。
+// Deletion Policy
 func (o LookupUserProvisioningResultOutput) DeletionStrategy() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserProvisioningResult) string { return v.DeletionStrategy }).(pulumi.StringOutput)
 }
 
-// 任务描述。
+// Task Description
 func (o LookupUserProvisioningResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserProvisioningResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 用户名冲突策略。
+// Username Conflict Policy
 func (o LookupUserProvisioningResultOutput) DuplicationStrategy() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserProvisioningResult) string { return v.DuplicationStrategy }).(pulumi.StringOutput)
 }
 
-// 本次同步IAM用户名称后缀。
+// Suffix for IAM user name in this synchronization
 func (o LookupUserProvisioningResultOutput) DuplicationSuffix() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserProvisioningResult) string { return v.DuplicationSuffix }).(pulumi.StringOutput)
 }
@@ -124,42 +124,42 @@ func (o LookupUserProvisioningResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserProvisioningResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 身份源冲突策略。
+// Identity Source Conflict Policy
 func (o LookupUserProvisioningResultOutput) IdentitySourceStrategy() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserProvisioningResult) string { return v.IdentitySourceStrategy }).(pulumi.StringOutput)
 }
 
-// 身份id。
+// Identity ID
 func (o LookupUserProvisioningResultOutput) PrincipalId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserProvisioningResult) string { return v.PrincipalId }).(pulumi.StringOutput)
 }
 
-// 目标名称。
+// Target Name
 func (o LookupUserProvisioningResultOutput) PrincipalName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserProvisioningResult) string { return v.PrincipalName }).(pulumi.StringOutput)
 }
 
-// 身份类型。
+// Identity Type
 func (o LookupUserProvisioningResultOutput) PrincipalType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserProvisioningResult) string { return v.PrincipalType }).(pulumi.StringOutput)
 }
 
-// 授权任务状态。Provisioned 授权成功，Provisioning 正在授权，DeleteProvisioning 授权解除中，DeleteProvisioned 授权解除成功
+// Authorization Task Status. Provisioned: authorization successful, Provisioning: authorizing, DeleteProvisioning: revoking authorization, DeleteProvisioned: authorization revoked successfully.
 func (o LookupUserProvisioningResultOutput) ProvisionStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserProvisioningResult) string { return v.ProvisionStatus }).(pulumi.StringOutput)
 }
 
-// 目标id。
+// Target ID
 func (o LookupUserProvisioningResultOutput) TargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserProvisioningResult) string { return v.TargetId }).(pulumi.StringOutput)
 }
 
-// 更新时间。
+// Update Time
 func (o LookupUserProvisioningResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserProvisioningResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// IAM 用户同步任务ID。
+// IAM User Synchronization Task ID
 func (o LookupUserProvisioningResultOutput) UserProvisioningId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserProvisioningResult) string { return v.UserProvisioningId }).(pulumi.StringOutput)
 }

@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 伸缩组触发伸缩规则、健康检查、实例数量检查后，生命周期挂钩可以将“加入中”、“移出中”、“停用中”实例的状态挂起，进入 加入/移出挂起中 状态，此时实例处于等待状态，您可以在这段时间内进行自定义操作，直至生命周期挂钩超时或您手动结束挂起。
+// After the scaling group triggers scaling rules, health checks, and instance count checks, the lifecycle hook can suspend instances that are in the 'joining', 'removing', or 'disabling' state, putting them into the joining/removing suspended state. The instances are now in a waiting state, and you can perform custom operations during this period until the lifecycle hook times out or you manually end the suspension.
 //
 // ## Import
 //
@@ -22,19 +22,19 @@ import (
 type ScalingLifecycleHook struct {
 	pulumi.CustomResourceState
 
-	// 云助手相关命令信息。
+	// Cloud Assistant command information.
 	LifecycleCommand ScalingLifecycleHookLifecycleCommandOutput `pulumi:"lifecycleCommand"`
-	// 生命周期挂钩ID。
+	// Lifecycle hook ID.
 	LifecycleHookId pulumi.StringOutput `pulumi:"lifecycleHookId"`
-	// 生命周期挂钩名称，创建后不可修改。取值：不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1 ~ 128个字符之间。
+	// Lifecycle hook name, cannot be modified after creation. Values: Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
 	LifecycleHookName pulumi.StringOutput `pulumi:"lifecycleHookName"`
-	// 实例挂起状态结束后执行的策略。取值：CONTINUE：继续执行。REJECT：中止后续操作。ROLLBACK：针对弹性收缩活动，会拒绝释放ECS实例，进行回滚；针对弹性扩张活动，效果同REJECT一样。
+	// Policy executed after the instance suspension ends. Values: CONTINUE: Continue execution. REJECT: Abort subsequent actions. ROLLBACK: For elastic scale-in activities, the release of ECS instances is rejected and rollback is performed; for elastic scale-out activities, the effect is the same as REJECT.
 	LifecycleHookPolicy pulumi.StringOutput `pulumi:"lifecycleHookPolicy"`
-	// ECS实例保持挂起状态的时间，超时后，自动结束挂起状态，根据执行策略继续执行扩缩容行为。 请您评估自定义操作的处理时间后，设置合适的超时时间。取值：30 ～ 21600（6小时），单位 s，且必须为整数。
+	// Duration for which the ECS instance remains suspended. After timeout, the suspended state ends automatically and scaling actions continue according to the execution policy. Please evaluate the processing time for custom operations and set an appropriate timeout. Values: 30 to 21600 (6 hours), unit: s, must be an integer.
 	LifecycleHookTimeout pulumi.IntOutput `pulumi:"lifecycleHookTimeout"`
-	// 伸缩活动的类型，发生指定类型的伸缩活动时，生命周期挂钩会被触发并挂起ECS实例。取值：SCALE*IN：弹性收缩活动。SCALE*OUT：弹性扩张活动。
+	// Type of scaling activity. When a specified type of scaling activity occurs, the lifecycle hook is triggered and the ECS instance is suspended. Values: SCALE*IN: Elastic scale-in activity. SCALE*OUT: Elastic scale-out activity.
 	LifecycleHookType pulumi.StringOutput `pulumi:"lifecycleHookType"`
-	// 伸缩组ID。
+	// Scaling group ID.
 	ScalingGroupId pulumi.StringOutput `pulumi:"scalingGroupId"`
 }
 
@@ -83,36 +83,36 @@ func GetScalingLifecycleHook(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ScalingLifecycleHook resources.
 type scalingLifecycleHookState struct {
-	// 云助手相关命令信息。
+	// Cloud Assistant command information.
 	LifecycleCommand *ScalingLifecycleHookLifecycleCommand `pulumi:"lifecycleCommand"`
-	// 生命周期挂钩ID。
+	// Lifecycle hook ID.
 	LifecycleHookId *string `pulumi:"lifecycleHookId"`
-	// 生命周期挂钩名称，创建后不可修改。取值：不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1 ~ 128个字符之间。
+	// Lifecycle hook name, cannot be modified after creation. Values: Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
 	LifecycleHookName *string `pulumi:"lifecycleHookName"`
-	// 实例挂起状态结束后执行的策略。取值：CONTINUE：继续执行。REJECT：中止后续操作。ROLLBACK：针对弹性收缩活动，会拒绝释放ECS实例，进行回滚；针对弹性扩张活动，效果同REJECT一样。
+	// Policy executed after the instance suspension ends. Values: CONTINUE: Continue execution. REJECT: Abort subsequent actions. ROLLBACK: For elastic scale-in activities, the release of ECS instances is rejected and rollback is performed; for elastic scale-out activities, the effect is the same as REJECT.
 	LifecycleHookPolicy *string `pulumi:"lifecycleHookPolicy"`
-	// ECS实例保持挂起状态的时间，超时后，自动结束挂起状态，根据执行策略继续执行扩缩容行为。 请您评估自定义操作的处理时间后，设置合适的超时时间。取值：30 ～ 21600（6小时），单位 s，且必须为整数。
+	// Duration for which the ECS instance remains suspended. After timeout, the suspended state ends automatically and scaling actions continue according to the execution policy. Please evaluate the processing time for custom operations and set an appropriate timeout. Values: 30 to 21600 (6 hours), unit: s, must be an integer.
 	LifecycleHookTimeout *int `pulumi:"lifecycleHookTimeout"`
-	// 伸缩活动的类型，发生指定类型的伸缩活动时，生命周期挂钩会被触发并挂起ECS实例。取值：SCALE*IN：弹性收缩活动。SCALE*OUT：弹性扩张活动。
+	// Type of scaling activity. When a specified type of scaling activity occurs, the lifecycle hook is triggered and the ECS instance is suspended. Values: SCALE*IN: Elastic scale-in activity. SCALE*OUT: Elastic scale-out activity.
 	LifecycleHookType *string `pulumi:"lifecycleHookType"`
-	// 伸缩组ID。
+	// Scaling group ID.
 	ScalingGroupId *string `pulumi:"scalingGroupId"`
 }
 
 type ScalingLifecycleHookState struct {
-	// 云助手相关命令信息。
+	// Cloud Assistant command information.
 	LifecycleCommand ScalingLifecycleHookLifecycleCommandPtrInput
-	// 生命周期挂钩ID。
+	// Lifecycle hook ID.
 	LifecycleHookId pulumi.StringPtrInput
-	// 生命周期挂钩名称，创建后不可修改。取值：不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1 ~ 128个字符之间。
+	// Lifecycle hook name, cannot be modified after creation. Values: Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
 	LifecycleHookName pulumi.StringPtrInput
-	// 实例挂起状态结束后执行的策略。取值：CONTINUE：继续执行。REJECT：中止后续操作。ROLLBACK：针对弹性收缩活动，会拒绝释放ECS实例，进行回滚；针对弹性扩张活动，效果同REJECT一样。
+	// Policy executed after the instance suspension ends. Values: CONTINUE: Continue execution. REJECT: Abort subsequent actions. ROLLBACK: For elastic scale-in activities, the release of ECS instances is rejected and rollback is performed; for elastic scale-out activities, the effect is the same as REJECT.
 	LifecycleHookPolicy pulumi.StringPtrInput
-	// ECS实例保持挂起状态的时间，超时后，自动结束挂起状态，根据执行策略继续执行扩缩容行为。 请您评估自定义操作的处理时间后，设置合适的超时时间。取值：30 ～ 21600（6小时），单位 s，且必须为整数。
+	// Duration for which the ECS instance remains suspended. After timeout, the suspended state ends automatically and scaling actions continue according to the execution policy. Please evaluate the processing time for custom operations and set an appropriate timeout. Values: 30 to 21600 (6 hours), unit: s, must be an integer.
 	LifecycleHookTimeout pulumi.IntPtrInput
-	// 伸缩活动的类型，发生指定类型的伸缩活动时，生命周期挂钩会被触发并挂起ECS实例。取值：SCALE*IN：弹性收缩活动。SCALE*OUT：弹性扩张活动。
+	// Type of scaling activity. When a specified type of scaling activity occurs, the lifecycle hook is triggered and the ECS instance is suspended. Values: SCALE*IN: Elastic scale-in activity. SCALE*OUT: Elastic scale-out activity.
 	LifecycleHookType pulumi.StringPtrInput
-	// 伸缩组ID。
+	// Scaling group ID.
 	ScalingGroupId pulumi.StringPtrInput
 }
 
@@ -121,33 +121,33 @@ func (ScalingLifecycleHookState) ElementType() reflect.Type {
 }
 
 type scalingLifecycleHookArgs struct {
-	// 云助手相关命令信息。
+	// Cloud Assistant command information.
 	LifecycleCommand *ScalingLifecycleHookLifecycleCommand `pulumi:"lifecycleCommand"`
-	// 生命周期挂钩名称，创建后不可修改。取值：不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1 ~ 128个字符之间。
+	// Lifecycle hook name, cannot be modified after creation. Values: Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
 	LifecycleHookName string `pulumi:"lifecycleHookName"`
-	// 实例挂起状态结束后执行的策略。取值：CONTINUE：继续执行。REJECT：中止后续操作。ROLLBACK：针对弹性收缩活动，会拒绝释放ECS实例，进行回滚；针对弹性扩张活动，效果同REJECT一样。
+	// Policy executed after the instance suspension ends. Values: CONTINUE: Continue execution. REJECT: Abort subsequent actions. ROLLBACK: For elastic scale-in activities, the release of ECS instances is rejected and rollback is performed; for elastic scale-out activities, the effect is the same as REJECT.
 	LifecycleHookPolicy string `pulumi:"lifecycleHookPolicy"`
-	// ECS实例保持挂起状态的时间，超时后，自动结束挂起状态，根据执行策略继续执行扩缩容行为。 请您评估自定义操作的处理时间后，设置合适的超时时间。取值：30 ～ 21600（6小时），单位 s，且必须为整数。
+	// Duration for which the ECS instance remains suspended. After timeout, the suspended state ends automatically and scaling actions continue according to the execution policy. Please evaluate the processing time for custom operations and set an appropriate timeout. Values: 30 to 21600 (6 hours), unit: s, must be an integer.
 	LifecycleHookTimeout int `pulumi:"lifecycleHookTimeout"`
-	// 伸缩活动的类型，发生指定类型的伸缩活动时，生命周期挂钩会被触发并挂起ECS实例。取值：SCALE*IN：弹性收缩活动。SCALE*OUT：弹性扩张活动。
+	// Type of scaling activity. When a specified type of scaling activity occurs, the lifecycle hook is triggered and the ECS instance is suspended. Values: SCALE*IN: Elastic scale-in activity. SCALE*OUT: Elastic scale-out activity.
 	LifecycleHookType string `pulumi:"lifecycleHookType"`
-	// 伸缩组ID。
+	// Scaling group ID.
 	ScalingGroupId string `pulumi:"scalingGroupId"`
 }
 
 // The set of arguments for constructing a ScalingLifecycleHook resource.
 type ScalingLifecycleHookArgs struct {
-	// 云助手相关命令信息。
+	// Cloud Assistant command information.
 	LifecycleCommand ScalingLifecycleHookLifecycleCommandPtrInput
-	// 生命周期挂钩名称，创建后不可修改。取值：不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1 ~ 128个字符之间。
+	// Lifecycle hook name, cannot be modified after creation. Values: Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
 	LifecycleHookName pulumi.StringInput
-	// 实例挂起状态结束后执行的策略。取值：CONTINUE：继续执行。REJECT：中止后续操作。ROLLBACK：针对弹性收缩活动，会拒绝释放ECS实例，进行回滚；针对弹性扩张活动，效果同REJECT一样。
+	// Policy executed after the instance suspension ends. Values: CONTINUE: Continue execution. REJECT: Abort subsequent actions. ROLLBACK: For elastic scale-in activities, the release of ECS instances is rejected and rollback is performed; for elastic scale-out activities, the effect is the same as REJECT.
 	LifecycleHookPolicy pulumi.StringInput
-	// ECS实例保持挂起状态的时间，超时后，自动结束挂起状态，根据执行策略继续执行扩缩容行为。 请您评估自定义操作的处理时间后，设置合适的超时时间。取值：30 ～ 21600（6小时），单位 s，且必须为整数。
+	// Duration for which the ECS instance remains suspended. After timeout, the suspended state ends automatically and scaling actions continue according to the execution policy. Please evaluate the processing time for custom operations and set an appropriate timeout. Values: 30 to 21600 (6 hours), unit: s, must be an integer.
 	LifecycleHookTimeout pulumi.IntInput
-	// 伸缩活动的类型，发生指定类型的伸缩活动时，生命周期挂钩会被触发并挂起ECS实例。取值：SCALE*IN：弹性收缩活动。SCALE*OUT：弹性扩张活动。
+	// Type of scaling activity. When a specified type of scaling activity occurs, the lifecycle hook is triggered and the ECS instance is suspended. Values: SCALE*IN: Elastic scale-in activity. SCALE*OUT: Elastic scale-out activity.
 	LifecycleHookType pulumi.StringInput
-	// 伸缩组ID。
+	// Scaling group ID.
 	ScalingGroupId pulumi.StringInput
 }
 
@@ -238,37 +238,37 @@ func (o ScalingLifecycleHookOutput) ToScalingLifecycleHookOutputWithContext(ctx 
 	return o
 }
 
-// 云助手相关命令信息。
+// Cloud Assistant command information.
 func (o ScalingLifecycleHookOutput) LifecycleCommand() ScalingLifecycleHookLifecycleCommandOutput {
 	return o.ApplyT(func(v *ScalingLifecycleHook) ScalingLifecycleHookLifecycleCommandOutput { return v.LifecycleCommand }).(ScalingLifecycleHookLifecycleCommandOutput)
 }
 
-// 生命周期挂钩ID。
+// Lifecycle hook ID.
 func (o ScalingLifecycleHookOutput) LifecycleHookId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ScalingLifecycleHook) pulumi.StringOutput { return v.LifecycleHookId }).(pulumi.StringOutput)
 }
 
-// 生命周期挂钩名称，创建后不可修改。取值：不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1 ~ 128个字符之间。
+// Lifecycle hook name, cannot be modified after creation. Values: Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
 func (o ScalingLifecycleHookOutput) LifecycleHookName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ScalingLifecycleHook) pulumi.StringOutput { return v.LifecycleHookName }).(pulumi.StringOutput)
 }
 
-// 实例挂起状态结束后执行的策略。取值：CONTINUE：继续执行。REJECT：中止后续操作。ROLLBACK：针对弹性收缩活动，会拒绝释放ECS实例，进行回滚；针对弹性扩张活动，效果同REJECT一样。
+// Policy executed after the instance suspension ends. Values: CONTINUE: Continue execution. REJECT: Abort subsequent actions. ROLLBACK: For elastic scale-in activities, the release of ECS instances is rejected and rollback is performed; for elastic scale-out activities, the effect is the same as REJECT.
 func (o ScalingLifecycleHookOutput) LifecycleHookPolicy() pulumi.StringOutput {
 	return o.ApplyT(func(v *ScalingLifecycleHook) pulumi.StringOutput { return v.LifecycleHookPolicy }).(pulumi.StringOutput)
 }
 
-// ECS实例保持挂起状态的时间，超时后，自动结束挂起状态，根据执行策略继续执行扩缩容行为。 请您评估自定义操作的处理时间后，设置合适的超时时间。取值：30 ～ 21600（6小时），单位 s，且必须为整数。
+// Duration for which the ECS instance remains suspended. After timeout, the suspended state ends automatically and scaling actions continue according to the execution policy. Please evaluate the processing time for custom operations and set an appropriate timeout. Values: 30 to 21600 (6 hours), unit: s, must be an integer.
 func (o ScalingLifecycleHookOutput) LifecycleHookTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v *ScalingLifecycleHook) pulumi.IntOutput { return v.LifecycleHookTimeout }).(pulumi.IntOutput)
 }
 
-// 伸缩活动的类型，发生指定类型的伸缩活动时，生命周期挂钩会被触发并挂起ECS实例。取值：SCALE*IN：弹性收缩活动。SCALE*OUT：弹性扩张活动。
+// Type of scaling activity. When a specified type of scaling activity occurs, the lifecycle hook is triggered and the ECS instance is suspended. Values: SCALE*IN: Elastic scale-in activity. SCALE*OUT: Elastic scale-out activity.
 func (o ScalingLifecycleHookOutput) LifecycleHookType() pulumi.StringOutput {
 	return o.ApplyT(func(v *ScalingLifecycleHook) pulumi.StringOutput { return v.LifecycleHookType }).(pulumi.StringOutput)
 }
 
-// 伸缩组ID。
+// Scaling group ID.
 func (o ScalingLifecycleHookOutput) ScalingGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ScalingLifecycleHook) pulumi.StringOutput { return v.ScalingGroupId }).(pulumi.StringOutput)
 }

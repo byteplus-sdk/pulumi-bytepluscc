@@ -16,14 +16,14 @@ public final class InstanceKeyPairArgs extends com.pulumi.resources.ResourceArgs
     public static final InstanceKeyPairArgs Empty = new InstanceKeyPairArgs();
 
     /**
-     * 实例的公钥。
+     * Instance public key
      * 
      */
     @Import(name="keyPairId")
     private @Nullable Output<String> keyPairId;
 
     /**
-     * @return 实例的公钥。
+     * @return Instance public key
      * 
      */
     public Optional<Output<String>> keyPairId() {
@@ -31,14 +31,14 @@ public final class InstanceKeyPairArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 实例的密钥对名称。
+     * Instance key pair name
      * 
      */
     @Import(name="keyPairName")
     private @Nullable Output<String> keyPairName;
 
     /**
-     * @return 实例的密钥对名称。
+     * @return Instance key pair name
      * 
      */
     public Optional<Output<String>> keyPairName() {
@@ -71,7 +71,7 @@ public final class InstanceKeyPairArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param keyPairId 实例的公钥。
+         * @param keyPairId Instance public key
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class InstanceKeyPairArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param keyPairId 实例的公钥。
+         * @param keyPairId Instance public key
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class InstanceKeyPairArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param keyPairName 实例的密钥对名称。
+         * @param keyPairName Instance key pair name
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class InstanceKeyPairArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param keyPairName 实例的密钥对名称。
+         * @param keyPairName Instance key pair name
          * 
          * @return builder
          * 

@@ -15,61 +15,61 @@ import javax.annotation.Nullable;
 @CustomType
 public final class MountPointPermissionGroup {
     /**
-     * @return 权限组创建时间。
+     * @return Permission group creation time.
      * 
      */
     private @Nullable String createTime;
     /**
-     * @return 权限组描述信息。
+     * @return Permission group description information.
      * 
      */
     private @Nullable String description;
     /**
-     * @return 关联该权限组的文件系统数量。
+     * @return Number of file systems associated with this permission group.
      * 
      */
     private @Nullable Integer fileSystemCount;
     /**
-     * @return 文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+     * @return File system type. Value explanation: Extreme: NAS extreme type. Capacity: NAS capacity type. Cache: NAS cache type.
      * 
      */
     private @Nullable String fileSystemType;
     private @Nullable List<MountPointPermissionGroupMountPoint> mountPoints;
     /**
-     * @return 权限组名称。
+     * @return Permission group name.
      * 
      */
     private @Nullable String permissionGroupName;
     /**
-     * @return 权限规则数量。
+     * @return Number of permission rules.
      * 
      */
     private @Nullable Integer permissionRuleCount;
 
     private MountPointPermissionGroup() {}
     /**
-     * @return 权限组创建时间。
+     * @return Permission group creation time.
      * 
      */
     public Optional<String> createTime() {
         return Optional.ofNullable(this.createTime);
     }
     /**
-     * @return 权限组描述信息。
+     * @return Permission group description information.
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return 关联该权限组的文件系统数量。
+     * @return Number of file systems associated with this permission group.
      * 
      */
     public Optional<Integer> fileSystemCount() {
         return Optional.ofNullable(this.fileSystemCount);
     }
     /**
-     * @return 文件系统类型。取值说明如下：Extreme：NAS 极速型。Capacity：NAS 容量型。Cache：NAS 缓存型。
+     * @return File system type. Value explanation: Extreme: NAS extreme type. Capacity: NAS capacity type. Cache: NAS cache type.
      * 
      */
     public Optional<String> fileSystemType() {
@@ -79,14 +79,14 @@ public final class MountPointPermissionGroup {
         return this.mountPoints == null ? List.of() : this.mountPoints;
     }
     /**
-     * @return 权限组名称。
+     * @return Permission group name.
      * 
      */
     public Optional<String> permissionGroupName() {
         return Optional.ofNullable(this.permissionGroupName);
     }
     /**
-     * @return 权限规则数量。
+     * @return Number of permission rules.
      * 
      */
     public Optional<Integer> permissionRuleCount() {

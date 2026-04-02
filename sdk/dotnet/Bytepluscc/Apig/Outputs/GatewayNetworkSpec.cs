@@ -20,7 +20,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
         /// </summary>
         public readonly string? VpcId;
         /// <summary>
-        /// VPC名称。
+        /// VPC name
         /// </summary>
         public readonly string? VpcName;
 

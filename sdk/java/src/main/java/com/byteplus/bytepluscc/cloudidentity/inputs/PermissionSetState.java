@@ -19,14 +19,14 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
     public static final PermissionSetState Empty = new PermissionSetState();
 
     /**
-     * 创建时间。
+     * Creation Time
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 创建时间。
+     * @return Creation Time
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -34,14 +34,14 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 权限集描述。
+     * Permission Set Description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 权限集描述。
+     * @return Permission Set Description
      * 
      */
     public Optional<Output<String>> description() {
@@ -49,14 +49,14 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 权限集名称。
+     * Permission Set Name
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 权限集名称。
+     * @return Permission Set Name
      * 
      */
     public Optional<Output<String>> name() {
@@ -71,14 +71,14 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 权限集 ID。
+     * Permission Set ID
      * 
      */
     @Import(name="permissionSetId")
     private @Nullable Output<String> permissionSetId;
 
     /**
-     * @return 权限集 ID。
+     * @return Permission Set ID
      * 
      */
     public Optional<Output<String>> permissionSetId() {
@@ -86,14 +86,14 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 跳转控制台 URL。
+     * Console Redirect URL
      * 
      */
     @Import(name="relayState")
     private @Nullable Output<String> relayState;
 
     /**
-     * @return 跳转控制台 URL。
+     * @return Console Redirect URL
      * 
      */
     public Optional<Output<String>> relayState() {
@@ -101,14 +101,14 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * session 过期时间，单位秒。
+     * Session Expiration Time (seconds)
      * 
      */
     @Import(name="sessionDuration")
     private @Nullable Output<Integer> sessionDuration;
 
     /**
-     * @return session 过期时间，单位秒。
+     * @return Session Expiration Time (seconds)
      * 
      */
     public Optional<Output<Integer>> sessionDuration() {
@@ -116,14 +116,14 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 状态通知配置。
+     * Status Notification Configuration
      * 
      */
     @Import(name="statusNotifications")
     private @Nullable Output<List<String>> statusNotifications;
 
     /**
-     * @return 状态通知配置。
+     * @return Status Notification Configuration
      * 
      */
     public Optional<Output<List<String>>> statusNotifications() {
@@ -131,14 +131,14 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 更新时间。
+     * Update Time
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 更新时间。
+     * @return Update Time
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -178,7 +178,7 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param createdTime 创建时间。
+         * @param createdTime Creation Time
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param createdTime 创建时间。
+         * @param createdTime Creation Time
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param description 权限集描述。
+         * @param description Permission Set Description
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param description 权限集描述。
+         * @param description Permission Set Description
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param name 权限集名称。
+         * @param name Permission Set Name
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param name 权限集名称。
+         * @param name Permission Set Name
          * 
          * @return builder
          * 
@@ -254,7 +254,7 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param permissionSetId 权限集 ID。
+         * @param permissionSetId Permission Set ID
          * 
          * @return builder
          * 
@@ -265,7 +265,7 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param permissionSetId 权限集 ID。
+         * @param permissionSetId Permission Set ID
          * 
          * @return builder
          * 
@@ -275,7 +275,7 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param relayState 跳转控制台 URL。
+         * @param relayState Console Redirect URL
          * 
          * @return builder
          * 
@@ -286,7 +286,7 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param relayState 跳转控制台 URL。
+         * @param relayState Console Redirect URL
          * 
          * @return builder
          * 
@@ -296,7 +296,7 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param sessionDuration session 过期时间，单位秒。
+         * @param sessionDuration Session Expiration Time (seconds)
          * 
          * @return builder
          * 
@@ -307,7 +307,7 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param sessionDuration session 过期时间，单位秒。
+         * @param sessionDuration Session Expiration Time (seconds)
          * 
          * @return builder
          * 
@@ -317,7 +317,7 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param statusNotifications 状态通知配置。
+         * @param statusNotifications Status Notification Configuration
          * 
          * @return builder
          * 
@@ -328,7 +328,7 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param statusNotifications 状态通知配置。
+         * @param statusNotifications Status Notification Configuration
          * 
          * @return builder
          * 
@@ -338,7 +338,7 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param statusNotifications 状态通知配置。
+         * @param statusNotifications Status Notification Configuration
          * 
          * @return builder
          * 
@@ -348,7 +348,7 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param updatedTime 更新时间。
+         * @param updatedTime Update Time
          * 
          * @return builder
          * 
@@ -359,7 +359,7 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param updatedTime 更新时间。
+         * @param updatedTime Update Time
          * 
          * @return builder
          * 

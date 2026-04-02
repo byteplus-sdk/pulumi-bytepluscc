@@ -16,7 +16,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 高性能计算集群（High Performance Compute Cluster，HPC集群）是一种用于处理大规模计算任务的集群计算环境，通常由大量的计算节点组成，这些节点通过RDMA（Remote Direct Memory Access）高速网络互联，并协同工作以处理复杂的计算任务。高性能计算集群可以提供强大的计算能力、大内存、高速存储和高速网络，以满足对计算密集型、数据密集型或两者结合的工作负载的需求。
+ * A high performance compute cluster (HPC cluster) is a cluster computing environment designed for large-scale computational tasks. It typically consists of numerous compute nodes interconnected via RDMA (Remote Direct Memory Access) high-speed networks, working together to handle complex computational workloads. High performance compute clusters provide powerful computing capabilities, large memory, high-speed storage, and high-speed networking to meet the demands of compute-intensive, data-intensive, or combined workloads
  * 
  * ## Example Usage
  * 
@@ -71,70 +71,70 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:ecs/hpcCluster:HpcCluster")
 public class HpcCluster extends com.pulumi.resources.CustomResource {
     /**
-     * 创建时间，格式满足RFC3339。
+     * Creation time, formatted according to RFC3339
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 创建时间，格式满足RFC3339。
+     * @return Creation time, formatted according to RFC3339
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 高性能计算集群描述，默认为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0～255之间。
+     * High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 高性能计算集群描述，默认为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0～255之间。
+     * @return High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 高性能计算集群ID。
+     * High performance compute cluster ID
      * 
      */
     @Export(name="hpcClusterId", refs={String.class}, tree="[0]")
     private Output<String> hpcClusterId;
 
     /**
-     * @return 高性能计算集群ID。
+     * @return High performance compute cluster ID
      * 
      */
     public Output<String> hpcClusterId() {
         return this.hpcClusterId;
     }
     /**
-     * 高性能计算集群名称。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1～128之间。
+     * High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return 高性能计算集群名称。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1～128之间。
+     * @return High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * 项目名称。
+     * Project name
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 项目名称。
+     * @return Project name
      * 
      */
     public Output<String> projectName() {
@@ -147,42 +147,42 @@ public class HpcCluster extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 更新时间，格式满足RFC3339。
+     * Update time, formatted according to RFC3339
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 更新时间，格式满足RFC3339。
+     * @return Update time, formatted according to RFC3339
      * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
-     * 私有网络ID。
+     * Private network ID
      * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
-     * @return 私有网络ID。
+     * @return Private network ID
      * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
-     * 高性能计算集群所属可用区ID。
+     * Availability zone ID of the high performance compute cluster
      * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
-     * @return 高性能计算集群所属可用区ID。
+     * @return Availability zone ID of the high performance compute cluster
      * 
      */
     public Output<String> zoneId() {

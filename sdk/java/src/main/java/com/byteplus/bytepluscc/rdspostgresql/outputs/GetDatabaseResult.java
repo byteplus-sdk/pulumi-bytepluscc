@@ -11,27 +11,27 @@ import java.util.Objects;
 @CustomType
 public final class GetDatabaseResult {
     /**
-     * @return 字符分类。取值范围： C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX。
+     * @return Character classification. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
      * 
      */
     private String cType;
     /**
-     * @return 数据库字符集。目前支持的字符集包含：utf8（默认）、latin1、ascii
+     * @return Database character set. Supported character sets: utf8 (default), latin1, ascii
      * 
      */
     private String characterSetName;
     /**
-     * @return 排序规则。取值范围：C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX
+     * @return Collation. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
      * 
      */
     private String collate;
     /**
-     * @return 数据库名称。命名规则如下：长度 2~63 个字符。由字母、数字、下划线或中划线组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。
+     * @return Database name. Naming rules: Length must be 2–63 characters. Can contain letters, numbers, underscores, or hyphens. Must start with a letter and end with a letter or number. Reserved keywords are not allowed. For a list of all disabled keywords, see Disabled Keywords.
      * 
      */
     private String dbName;
     /**
-     * @return 数据库状态：Unavailable：不可用。Available：可用。
+     * @return Database status: Unavailable: Not available. Available: Available.
      * 
      */
     private String dbStatus;
@@ -41,47 +41,47 @@ public final class GetDatabaseResult {
      */
     private String id;
     /**
-     * @return 实例 ID
+     * @return Instance ID
      * 
      */
     private String instanceId;
     /**
-     * @return 数据库的 owner。说明：实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为数据库的 owner。不传值或传空值时，会为该字段取值为 rds superuser
+     * @return Database owner. Note: Read-only instance accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the database owner. If no value is provided or the value is empty, this field defaults to rds superuser
      * 
      */
     private String owner;
 
     private GetDatabaseResult() {}
     /**
-     * @return 字符分类。取值范围： C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX。
+     * @return Character classification. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
      * 
      */
     public String cType() {
         return this.cType;
     }
     /**
-     * @return 数据库字符集。目前支持的字符集包含：utf8（默认）、latin1、ascii
+     * @return Database character set. Supported character sets: utf8 (default), latin1, ascii
      * 
      */
     public String characterSetName() {
         return this.characterSetName;
     }
     /**
-     * @return 排序规则。取值范围：C（默认）、C.UTF-8、en*US.utf8、zh*CN.utf8 和 POSIX
+     * @return Collation. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
      * 
      */
     public String collate() {
         return this.collate;
     }
     /**
-     * @return 数据库名称。命名规则如下：长度 2~63 个字符。由字母、数字、下划线或中划线组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。
+     * @return Database name. Naming rules: Length must be 2–63 characters. Can contain letters, numbers, underscores, or hyphens. Must start with a letter and end with a letter or number. Reserved keywords are not allowed. For a list of all disabled keywords, see Disabled Keywords.
      * 
      */
     public String dbName() {
         return this.dbName;
     }
     /**
-     * @return 数据库状态：Unavailable：不可用。Available：可用。
+     * @return Database status: Unavailable: Not available. Available: Available.
      * 
      */
     public String dbStatus() {
@@ -95,14 +95,14 @@ public final class GetDatabaseResult {
         return this.id;
     }
     /**
-     * @return 实例 ID
+     * @return Instance ID
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return 数据库的 owner。说明：实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为数据库的 owner。不传值或传空值时，会为该字段取值为 rds superuser
+     * @return Database owner. Note: Read-only instance accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the database owner. If no value is provided or the value is empty, this field defaults to rds superuser
      * 
      */
     public String owner() {

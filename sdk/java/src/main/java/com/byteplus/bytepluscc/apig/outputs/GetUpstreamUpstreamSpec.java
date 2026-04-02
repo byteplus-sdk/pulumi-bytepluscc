@@ -17,74 +17,74 @@ import java.util.Objects;
 @CustomType
 public final class GetUpstreamUpstreamSpec {
     /**
-     * @return AI模型代理。
+     * @return AI model proxy
      * 
      */
     private GetUpstreamUpstreamSpecAiProvider aiProvider;
     /**
-     * @return 固定域名。
+     * @return Fixed domain name
      * 
      */
     private GetUpstreamUpstreamSpecDomain domain;
     /**
-     * @return 云服务器。
+     * @return Cloud server
      * 
      */
     private List<GetUpstreamUpstreamSpecEcsInstance> ecsInstances;
     /**
-     * @return 容器服务。
+     * @return Container Service
      * 
      */
     private GetUpstreamUpstreamSpecK8SService k8SService;
     /**
-     * @return 注册中心。
+     * @return Registry Center
      * 
      */
     private GetUpstreamUpstreamSpecNacosService nacosService;
     /**
-     * @return 函数服务。
+     * @return Function service
      * 
      */
     private GetUpstreamUpstreamSpecVeFaas veFaas;
 
     private GetUpstreamUpstreamSpec() {}
     /**
-     * @return AI模型代理。
+     * @return AI model proxy
      * 
      */
     public GetUpstreamUpstreamSpecAiProvider aiProvider() {
         return this.aiProvider;
     }
     /**
-     * @return 固定域名。
+     * @return Fixed domain name
      * 
      */
     public GetUpstreamUpstreamSpecDomain domain() {
         return this.domain;
     }
     /**
-     * @return 云服务器。
+     * @return Cloud server
      * 
      */
     public List<GetUpstreamUpstreamSpecEcsInstance> ecsInstances() {
         return this.ecsInstances;
     }
     /**
-     * @return 容器服务。
+     * @return Container Service
      * 
      */
     public GetUpstreamUpstreamSpecK8SService k8SService() {
         return this.k8SService;
     }
     /**
-     * @return 注册中心。
+     * @return Registry Center
      * 
      */
     public GetUpstreamUpstreamSpecNacosService nacosService() {
         return this.nacosService;
     }
     /**
-     * @return 函数服务。
+     * @return Function service
      * 
      */
     public GetUpstreamUpstreamSpecVeFaas veFaas() {

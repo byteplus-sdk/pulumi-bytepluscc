@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RuleRuleConditionHeaderConfig {
     /**
-     * @return 头字段键。
+     * @return Header field key.
      * 
      */
     private @Nullable String key;
     /**
-     * @return 头字段值。
+     * @return Header field value.
      * 
      */
     private @Nullable List<String> values;
 
     private RuleRuleConditionHeaderConfig() {}
     /**
-     * @return 头字段键。
+     * @return Header field key.
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return 头字段值。
+     * @return Header field value.
      * 
      */
     public List<String> values() {

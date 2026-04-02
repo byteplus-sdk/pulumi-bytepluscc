@@ -29,9 +29,9 @@ class GroupArgs:
                  users: Optional[pulumi.Input[Sequence[pulumi.Input['GroupUserArgs']]]] = None):
         """
         The set of arguments for constructing a Group resource.
-        :param pulumi.Input[builtins.str] user_group_name: 用户组名称。长度1~64，支持英文、数字和.-_符号。
-        :param pulumi.Input[builtins.str] description: 用户组描述信息。长度不超过128。
-        :param pulumi.Input[builtins.str] display_name: 用户组显示名称。长度不超过64。
+        :param pulumi.Input[builtins.str] user_group_name: User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
+        :param pulumi.Input[builtins.str] description: User group description. Maximum length: 128 characters.
+        :param pulumi.Input[builtins.str] display_name: User group display name. Maximum length: 64 characters.
         """
         pulumi.set(__self__, "user_group_name", user_group_name)
         if attached_policies is not None:
@@ -47,7 +47,7 @@ class GroupArgs:
     @pulumi.getter(name="userGroupName")
     def user_group_name(self) -> pulumi.Input[builtins.str]:
         """
-        用户组名称。长度1~64，支持英文、数字和.-_符号。
+        User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
         """
         return pulumi.get(self, "user_group_name")
 
@@ -68,7 +68,7 @@ class GroupArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户组描述信息。长度不超过128。
+        User group description. Maximum length: 128 characters.
         """
         return pulumi.get(self, "description")
 
@@ -80,7 +80,7 @@ class GroupArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户组显示名称。长度不超过64。
+        User group display name. Maximum length: 64 characters.
         """
         return pulumi.get(self, "display_name")
 
@@ -112,13 +112,13 @@ class _GroupState:
                  users: Optional[pulumi.Input[Sequence[pulumi.Input['GroupUserArgs']]]] = None):
         """
         Input properties used for looking up and filtering Group resources.
-        :param pulumi.Input[builtins.int] account_id: 用户组所属主账号的ID。
-        :param pulumi.Input[builtins.str] created_time: 用户组的创建时间。
-        :param pulumi.Input[builtins.str] description: 用户组描述信息。长度不超过128。
-        :param pulumi.Input[builtins.str] display_name: 用户组显示名称。长度不超过64。
-        :param pulumi.Input[builtins.str] updated_time: 用户组的更新时间。
-        :param pulumi.Input[builtins.int] user_group_id: 用户组ID。
-        :param pulumi.Input[builtins.str] user_group_name: 用户组名称。长度1~64，支持英文、数字和.-_符号。
+        :param pulumi.Input[builtins.int] account_id: ID of the primary account to which the user group belongs.
+        :param pulumi.Input[builtins.str] created_time: User group creation time.
+        :param pulumi.Input[builtins.str] description: User group description. Maximum length: 128 characters.
+        :param pulumi.Input[builtins.str] display_name: User group display name. Maximum length: 64 characters.
+        :param pulumi.Input[builtins.str] updated_time: User group update time.
+        :param pulumi.Input[builtins.int] user_group_id: User group ID.
+        :param pulumi.Input[builtins.str] user_group_name: User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
         """
         if account_id is not None:
             pulumi.set(__self__, "account_id", account_id)
@@ -143,7 +143,7 @@ class _GroupState:
     @pulumi.getter(name="accountId")
     def account_id(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        用户组所属主账号的ID。
+        ID of the primary account to which the user group belongs.
         """
         return pulumi.get(self, "account_id")
 
@@ -164,7 +164,7 @@ class _GroupState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户组的创建时间。
+        User group creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -176,7 +176,7 @@ class _GroupState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户组描述信息。长度不超过128。
+        User group description. Maximum length: 128 characters.
         """
         return pulumi.get(self, "description")
 
@@ -188,7 +188,7 @@ class _GroupState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户组显示名称。长度不超过64。
+        User group display name. Maximum length: 64 characters.
         """
         return pulumi.get(self, "display_name")
 
@@ -200,7 +200,7 @@ class _GroupState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户组的更新时间。
+        User group update time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -212,7 +212,7 @@ class _GroupState:
     @pulumi.getter(name="userGroupId")
     def user_group_id(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        用户组ID。
+        User group ID.
         """
         return pulumi.get(self, "user_group_id")
 
@@ -224,7 +224,7 @@ class _GroupState:
     @pulumi.getter(name="userGroupName")
     def user_group_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户组名称。长度1~64，支持英文、数字和.-_符号。
+        User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
         """
         return pulumi.get(self, "user_group_name")
 
@@ -255,7 +255,7 @@ class Group(pulumi.CustomResource):
                  users: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GroupUserArgs', 'GroupUserArgsDict']]]]] = None,
                  __props__=None):
         """
-        用户组是用户的集合。当用户组被关联上策略后，同一用户组里的所有用户会拥有对应的策略权限，同一个用户可存在于多个用户组中，可同时拥有多个用户组的权限。
+        A user group is a collection of users. When a user group is associated with a policy, all users in the group gain the corresponding policy permissions. A user can belong to multiple user groups and have permissions from each group.
 
         ## Import
 
@@ -265,9 +265,9 @@ class Group(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: 用户组描述信息。长度不超过128。
-        :param pulumi.Input[builtins.str] display_name: 用户组显示名称。长度不超过64。
-        :param pulumi.Input[builtins.str] user_group_name: 用户组名称。长度1~64，支持英文、数字和.-_符号。
+        :param pulumi.Input[builtins.str] description: User group description. Maximum length: 128 characters.
+        :param pulumi.Input[builtins.str] display_name: User group display name. Maximum length: 64 characters.
+        :param pulumi.Input[builtins.str] user_group_name: User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
         """
         ...
     @overload
@@ -276,7 +276,7 @@ class Group(pulumi.CustomResource):
                  args: GroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        用户组是用户的集合。当用户组被关联上策略后，同一用户组里的所有用户会拥有对应的策略权限，同一个用户可存在于多个用户组中，可同时拥有多个用户组的权限。
+        A user group is a collection of users. When a user group is associated with a policy, all users in the group gain the corresponding policy permissions. A user can belong to multiple user groups and have permissions from each group.
 
         ## Import
 
@@ -350,13 +350,13 @@ class Group(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] account_id: 用户组所属主账号的ID。
-        :param pulumi.Input[builtins.str] created_time: 用户组的创建时间。
-        :param pulumi.Input[builtins.str] description: 用户组描述信息。长度不超过128。
-        :param pulumi.Input[builtins.str] display_name: 用户组显示名称。长度不超过64。
-        :param pulumi.Input[builtins.str] updated_time: 用户组的更新时间。
-        :param pulumi.Input[builtins.int] user_group_id: 用户组ID。
-        :param pulumi.Input[builtins.str] user_group_name: 用户组名称。长度1~64，支持英文、数字和.-_符号。
+        :param pulumi.Input[builtins.int] account_id: ID of the primary account to which the user group belongs.
+        :param pulumi.Input[builtins.str] created_time: User group creation time.
+        :param pulumi.Input[builtins.str] description: User group description. Maximum length: 128 characters.
+        :param pulumi.Input[builtins.str] display_name: User group display name. Maximum length: 64 characters.
+        :param pulumi.Input[builtins.str] updated_time: User group update time.
+        :param pulumi.Input[builtins.int] user_group_id: User group ID.
+        :param pulumi.Input[builtins.str] user_group_name: User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -377,7 +377,7 @@ class Group(pulumi.CustomResource):
     @pulumi.getter(name="accountId")
     def account_id(self) -> pulumi.Output[builtins.int]:
         """
-        用户组所属主账号的ID。
+        ID of the primary account to which the user group belongs.
         """
         return pulumi.get(self, "account_id")
 
@@ -390,7 +390,7 @@ class Group(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        用户组的创建时间。
+        User group creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -398,7 +398,7 @@ class Group(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        用户组描述信息。长度不超过128。
+        User group description. Maximum length: 128 characters.
         """
         return pulumi.get(self, "description")
 
@@ -406,7 +406,7 @@ class Group(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[builtins.str]:
         """
-        用户组显示名称。长度不超过64。
+        User group display name. Maximum length: 64 characters.
         """
         return pulumi.get(self, "display_name")
 
@@ -414,7 +414,7 @@ class Group(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        用户组的更新时间。
+        User group update time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -422,7 +422,7 @@ class Group(pulumi.CustomResource):
     @pulumi.getter(name="userGroupId")
     def user_group_id(self) -> pulumi.Output[builtins.int]:
         """
-        用户组ID。
+        User group ID.
         """
         return pulumi.get(self, "user_group_id")
 
@@ -430,7 +430,7 @@ class Group(pulumi.CustomResource):
     @pulumi.getter(name="userGroupName")
     def user_group_name(self) -> pulumi.Output[builtins.str]:
         """
-        用户组名称。长度1~64，支持英文、数字和.-_符号。
+        User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
         """
         return pulumi.get(self, "user_group_name")
 

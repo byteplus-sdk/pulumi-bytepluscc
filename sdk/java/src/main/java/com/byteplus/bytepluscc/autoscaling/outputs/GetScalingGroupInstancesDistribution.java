@@ -12,50 +12,50 @@ import java.util.Objects;
 @CustomType
 public final class GetScalingGroupInstancesDistribution {
     /**
-     * @return 当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+     * @return Whether pay-as-you-go instances are allowed to supplement spot capacity if spot instances cannot be created due to price or inventory constraints. true: allowed. false (default): not allowed.
      * 
      */
     private Boolean compensateWithOnDemand;
     /**
-     * @return 伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+     * @return Minimum number of pay-as-you-go instances in the scaling group. Value range: 0~2000. If the number of pay-as-you-go instances in the group is less than this value, pay-as-you-go instances will be prioritized for creation.
      * 
      */
     private Integer onDemandBaseCapacity;
     /**
-     * @return 伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+     * @return After the scaling group meets the minimum number of pay-as-you-go instances, the proportion of pay-as-you-go instances among the excess instances. Value range: 0–100.
      * 
      */
     private Integer onDemandPercentageAboveBaseCapacity;
     /**
-     * @return 是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+     * @return Whether to allow preemptible instance replacement upon expiration. If enabled, the scaling group will proactively create a new preemptible instance to replace the current one about 5 minutes before the preemptible instance is reclaimed. true: allowed. false (default): not allowed.
      * 
      */
     private Boolean spotInstanceRemedy;
 
     private GetScalingGroupInstancesDistribution() {}
     /**
-     * @return 当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+     * @return Whether pay-as-you-go instances are allowed to supplement spot capacity if spot instances cannot be created due to price or inventory constraints. true: allowed. false (default): not allowed.
      * 
      */
     public Boolean compensateWithOnDemand() {
         return this.compensateWithOnDemand;
     }
     /**
-     * @return 伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+     * @return Minimum number of pay-as-you-go instances in the scaling group. Value range: 0~2000. If the number of pay-as-you-go instances in the group is less than this value, pay-as-you-go instances will be prioritized for creation.
      * 
      */
     public Integer onDemandBaseCapacity() {
         return this.onDemandBaseCapacity;
     }
     /**
-     * @return 伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+     * @return After the scaling group meets the minimum number of pay-as-you-go instances, the proportion of pay-as-you-go instances among the excess instances. Value range: 0–100.
      * 
      */
     public Integer onDemandPercentageAboveBaseCapacity() {
         return this.onDemandPercentageAboveBaseCapacity;
     }
     /**
-     * @return 是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+     * @return Whether to allow preemptible instance replacement upon expiration. If enabled, the scaling group will proactively create a new preemptible instance to replace the current one about 5 minutes before the preemptible instance is reclaimed. true: allowed. false (default): not allowed.
      * 
      */
     public Boolean spotInstanceRemedy() {

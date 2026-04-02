@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class NodePoolKubernetesConfigKubeletConfigEvictionHard
     {
         /// <summary>
-        /// 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+        /// Hard threshold name. Options: memory.available, nodefs.available, nodefs.inodesFree, imagefs.available
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// 硬性门限值。
+        /// Hard threshold value.
         /// </summary>
         public readonly string? Value;
 

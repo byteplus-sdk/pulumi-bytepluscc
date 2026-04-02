@@ -14,15 +14,15 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type AllowListAssociatedInstance struct {
-	// 已绑定当前白名单的实例 ID。
+	// Instance ID bound to the current allowlist.
 	InstanceId *string `pulumi:"instanceId"`
-	// 已绑定当前白名单的实例名称。
+	// Instance name bound to the current allowlist.
 	InstanceName *string `pulumi:"instanceName"`
-	// 实例状态。
+	// Instance status.
 	InstanceStatus *string `pulumi:"instanceStatus"`
-	// 是否已同步最新的白名单。取值：true：是。false：否。说明在修改白名单时，如实例状态未处于运行中，白名单的修改不会立即同步到实例。
+	// Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
 	IsLatest *bool `pulumi:"isLatest"`
-	// 实例所属的私有网络 ID。
+	// Private network ID of the instance.
 	Vpc *string `pulumi:"vpc"`
 }
 
@@ -38,15 +38,15 @@ type AllowListAssociatedInstanceInput interface {
 }
 
 type AllowListAssociatedInstanceArgs struct {
-	// 已绑定当前白名单的实例 ID。
+	// Instance ID bound to the current allowlist.
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
-	// 已绑定当前白名单的实例名称。
+	// Instance name bound to the current allowlist.
 	InstanceName pulumi.StringPtrInput `pulumi:"instanceName"`
-	// 实例状态。
+	// Instance status.
 	InstanceStatus pulumi.StringPtrInput `pulumi:"instanceStatus"`
-	// 是否已同步最新的白名单。取值：true：是。false：否。说明在修改白名单时，如实例状态未处于运行中，白名单的修改不会立即同步到实例。
+	// Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
 	IsLatest pulumi.BoolPtrInput `pulumi:"isLatest"`
-	// 实例所属的私有网络 ID。
+	// Private network ID of the instance.
 	Vpc pulumi.StringPtrInput `pulumi:"vpc"`
 }
 
@@ -101,27 +101,27 @@ func (o AllowListAssociatedInstanceOutput) ToAllowListAssociatedInstanceOutputWi
 	return o
 }
 
-// 已绑定当前白名单的实例 ID。
+// Instance ID bound to the current allowlist.
 func (o AllowListAssociatedInstanceOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
 
-// 已绑定当前白名单的实例名称。
+// Instance name bound to the current allowlist.
 func (o AllowListAssociatedInstanceOutput) InstanceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.InstanceName }).(pulumi.StringPtrOutput)
 }
 
-// 实例状态。
+// Instance status.
 func (o AllowListAssociatedInstanceOutput) InstanceStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.InstanceStatus }).(pulumi.StringPtrOutput)
 }
 
-// 是否已同步最新的白名单。取值：true：是。false：否。说明在修改白名单时，如实例状态未处于运行中，白名单的修改不会立即同步到实例。
+// Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
 func (o AllowListAssociatedInstanceOutput) IsLatest() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v AllowListAssociatedInstance) *bool { return v.IsLatest }).(pulumi.BoolPtrOutput)
 }
 
-// 实例所属的私有网络 ID。
+// Private network ID of the instance.
 func (o AllowListAssociatedInstanceOutput) Vpc() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.Vpc }).(pulumi.StringPtrOutput)
 }
@@ -147,13 +147,13 @@ func (o AllowListAssociatedInstanceArrayOutput) Index(i pulumi.IntInput) AllowLi
 }
 
 type AllowListSecurityGroupBindInfo struct {
-	// 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。说明在 CreateAllowList 接口中，SecurityGroupBindInfoObject 的 BindMode 和 SecurityGroupId 字段为必填项。
+	// Mode for associating security groups. Values: IngressDirectionIp: Inbound IP. AssociateEcsIp: Associate ECS IP. Note: In the CreateAllowList API, the BindMode and SecurityGroupId fields of SecurityGroupBindInfoObject are required.
 	BindMode *string `pulumi:"bindMode"`
-	// 安全组的 IP 地址列表。
+	// Security group IP address list.
 	IpLists []string `pulumi:"ipLists"`
-	// 安全组 ID。
+	// Security group ID.
 	SecurityGroupId *string `pulumi:"securityGroupId"`
-	// 安全组名称。
+	// Security group name.
 	SecurityGroupName *string `pulumi:"securityGroupName"`
 }
 
@@ -169,13 +169,13 @@ type AllowListSecurityGroupBindInfoInput interface {
 }
 
 type AllowListSecurityGroupBindInfoArgs struct {
-	// 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。说明在 CreateAllowList 接口中，SecurityGroupBindInfoObject 的 BindMode 和 SecurityGroupId 字段为必填项。
+	// Mode for associating security groups. Values: IngressDirectionIp: Inbound IP. AssociateEcsIp: Associate ECS IP. Note: In the CreateAllowList API, the BindMode and SecurityGroupId fields of SecurityGroupBindInfoObject are required.
 	BindMode pulumi.StringPtrInput `pulumi:"bindMode"`
-	// 安全组的 IP 地址列表。
+	// Security group IP address list.
 	IpLists pulumi.StringArrayInput `pulumi:"ipLists"`
-	// 安全组 ID。
+	// Security group ID.
 	SecurityGroupId pulumi.StringPtrInput `pulumi:"securityGroupId"`
-	// 安全组名称。
+	// Security group name.
 	SecurityGroupName pulumi.StringPtrInput `pulumi:"securityGroupName"`
 }
 
@@ -230,22 +230,22 @@ func (o AllowListSecurityGroupBindInfoOutput) ToAllowListSecurityGroupBindInfoOu
 	return o
 }
 
-// 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。说明在 CreateAllowList 接口中，SecurityGroupBindInfoObject 的 BindMode 和 SecurityGroupId 字段为必填项。
+// Mode for associating security groups. Values: IngressDirectionIp: Inbound IP. AssociateEcsIp: Associate ECS IP. Note: In the CreateAllowList API, the BindMode and SecurityGroupId fields of SecurityGroupBindInfoObject are required.
 func (o AllowListSecurityGroupBindInfoOutput) BindMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AllowListSecurityGroupBindInfo) *string { return v.BindMode }).(pulumi.StringPtrOutput)
 }
 
-// 安全组的 IP 地址列表。
+// Security group IP address list.
 func (o AllowListSecurityGroupBindInfoOutput) IpLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v AllowListSecurityGroupBindInfo) []string { return v.IpLists }).(pulumi.StringArrayOutput)
 }
 
-// 安全组 ID。
+// Security group ID.
 func (o AllowListSecurityGroupBindInfoOutput) SecurityGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AllowListSecurityGroupBindInfo) *string { return v.SecurityGroupId }).(pulumi.StringPtrOutput)
 }
 
-// 安全组名称。
+// Security group name.
 func (o AllowListSecurityGroupBindInfoOutput) SecurityGroupName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AllowListSecurityGroupBindInfo) *string { return v.SecurityGroupName }).(pulumi.StringPtrOutput)
 }
@@ -271,9 +271,9 @@ func (o AllowListSecurityGroupBindInfoArrayOutput) Index(i pulumi.IntInput) Allo
 }
 
 type BackupBackupMeta struct {
-	// 数据库名。
+	// Database name
 	Database *string `pulumi:"database"`
-	// 表名列表。
+	// Table name list
 	Tables []string `pulumi:"tables"`
 }
 
@@ -289,9 +289,9 @@ type BackupBackupMetaInput interface {
 }
 
 type BackupBackupMetaArgs struct {
-	// 数据库名。
+	// Database name
 	Database pulumi.StringPtrInput `pulumi:"database"`
-	// 表名列表。
+	// Table name list
 	Tables pulumi.StringArrayInput `pulumi:"tables"`
 }
 
@@ -346,12 +346,12 @@ func (o BackupBackupMetaOutput) ToBackupBackupMetaOutputWithContext(ctx context.
 	return o
 }
 
-// 数据库名。
+// Database name
 func (o BackupBackupMetaOutput) Database() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BackupBackupMeta) *string { return v.Database }).(pulumi.StringPtrOutput)
 }
 
-// 表名列表。
+// Table name list
 func (o BackupBackupMetaOutput) Tables() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v BackupBackupMeta) []string { return v.Tables }).(pulumi.StringArrayOutput)
 }
@@ -377,9 +377,9 @@ func (o BackupBackupMetaArrayOutput) Index(i pulumi.IntInput) BackupBackupMetaOu
 }
 
 type BackupDbTableInfo struct {
-	// 数据库名。
+	// Database name
 	Database *string `pulumi:"database"`
-	// 表名列表。
+	// Table name list
 	Tables []string `pulumi:"tables"`
 }
 
@@ -395,9 +395,9 @@ type BackupDbTableInfoInput interface {
 }
 
 type BackupDbTableInfoArgs struct {
-	// 数据库名。
+	// Database name
 	Database pulumi.StringPtrInput `pulumi:"database"`
-	// 表名列表。
+	// Table name list
 	Tables pulumi.StringArrayInput `pulumi:"tables"`
 }
 
@@ -452,12 +452,12 @@ func (o BackupDbTableInfoOutput) ToBackupDbTableInfoOutputWithContext(ctx contex
 	return o
 }
 
-// 数据库名。
+// Database name
 func (o BackupDbTableInfoOutput) Database() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BackupDbTableInfo) *string { return v.Database }).(pulumi.StringPtrOutput)
 }
 
-// 表名列表。
+// Table name list
 func (o BackupDbTableInfoOutput) Tables() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v BackupDbTableInfo) []string { return v.Tables }).(pulumi.StringArrayOutput)
 }
@@ -483,11 +483,11 @@ func (o BackupDbTableInfoArrayOutput) Index(i pulumi.IntInput) BackupDbTableInfo
 }
 
 type DatabaseDatabasePrivilege struct {
-	// 数据库账号名称。
+	// Database account name.
 	AccountName *string `pulumi:"accountName"`
-	// 授予的账号权限类型，取值：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。
+	// Granted account privilege type. Values: ReadWrite (read and write privileges), ReadOnly (read-only privileges), DDLOnly (DDL privileges only), DMLOnly (DML privileges only), Custom (custom privileges).
 	AccountPrivilege *string `pulumi:"accountPrivilege"`
-	// 指定的数据库账号可以访问数据库的 IP 地址。默认值为 %。若指定 Host 为 %，允许该账号从任意 IP 地址访问数据库。若指定 Host 为 192.10.10.%，则表示该账号可从 192.10.10.0~192.10.10.255 之间的 IP 地址访问数据库。指定的 Host 需要添加在实例所绑定的白名单中，
+	// The specified database account can access the database from the IP address. Default value: %. If Host is set to %, the account can access the database from any IP address. If Host is set to 192.10.10.%, the account can access the database from IP addresses between 192.10.10.0 and 192.10.10.255. The specified Host must be added to the instance's allowlist.
 	Host *string `pulumi:"host"`
 }
 
@@ -503,11 +503,11 @@ type DatabaseDatabasePrivilegeInput interface {
 }
 
 type DatabaseDatabasePrivilegeArgs struct {
-	// 数据库账号名称。
+	// Database account name.
 	AccountName pulumi.StringPtrInput `pulumi:"accountName"`
-	// 授予的账号权限类型，取值：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。
+	// Granted account privilege type. Values: ReadWrite (read and write privileges), ReadOnly (read-only privileges), DDLOnly (DDL privileges only), DMLOnly (DML privileges only), Custom (custom privileges).
 	AccountPrivilege pulumi.StringPtrInput `pulumi:"accountPrivilege"`
-	// 指定的数据库账号可以访问数据库的 IP 地址。默认值为 %。若指定 Host 为 %，允许该账号从任意 IP 地址访问数据库。若指定 Host 为 192.10.10.%，则表示该账号可从 192.10.10.0~192.10.10.255 之间的 IP 地址访问数据库。指定的 Host 需要添加在实例所绑定的白名单中，
+	// The specified database account can access the database from the IP address. Default value: %. If Host is set to %, the account can access the database from any IP address. If Host is set to 192.10.10.%, the account can access the database from IP addresses between 192.10.10.0 and 192.10.10.255. The specified Host must be added to the instance's allowlist.
 	Host pulumi.StringPtrInput `pulumi:"host"`
 }
 
@@ -562,17 +562,17 @@ func (o DatabaseDatabasePrivilegeOutput) ToDatabaseDatabasePrivilegeOutputWithCo
 	return o
 }
 
-// 数据库账号名称。
+// Database account name.
 func (o DatabaseDatabasePrivilegeOutput) AccountName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatabaseDatabasePrivilege) *string { return v.AccountName }).(pulumi.StringPtrOutput)
 }
 
-// 授予的账号权限类型，取值：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。
+// Granted account privilege type. Values: ReadWrite (read and write privileges), ReadOnly (read-only privileges), DDLOnly (DDL privileges only), DMLOnly (DML privileges only), Custom (custom privileges).
 func (o DatabaseDatabasePrivilegeOutput) AccountPrivilege() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatabaseDatabasePrivilege) *string { return v.AccountPrivilege }).(pulumi.StringPtrOutput)
 }
 
-// 指定的数据库账号可以访问数据库的 IP 地址。默认值为 %。若指定 Host 为 %，允许该账号从任意 IP 地址访问数据库。若指定 Host 为 192.10.10.%，则表示该账号可从 192.10.10.0~192.10.10.255 之间的 IP 地址访问数据库。指定的 Host 需要添加在实例所绑定的白名单中，
+// The specified database account can access the database from the IP address. Default value: %. If Host is set to %, the account can access the database from any IP address. If Host is set to 192.10.10.%, the account can access the database from IP addresses between 192.10.10.0 and 192.10.10.255. The specified Host must be added to the instance's allowlist.
 func (o DatabaseDatabasePrivilegeOutput) Host() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatabaseDatabasePrivilege) *string { return v.Host }).(pulumi.StringPtrOutput)
 }
@@ -598,11 +598,11 @@ func (o DatabaseDatabasePrivilegeArrayOutput) Index(i pulumi.IntInput) DatabaseD
 }
 
 type DbAccountAccountPrivilege struct {
-	// 数据库权限的类型。取值范围：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。Global：全局权限。None：清除账号权限。说明该参数作为请求参数时，有以下注意事项：仅支持在作为请求参数时允许取值为 Global 和 None。权限类型为单选，传多个时会报错。仅 GrantDBAccountPrivilege 接口支持为 AccountPrivilege 取值 None。当 AccountPrivilege 取值 None 时，如果 DBName 的取值为空字符串，则清除账号的所有全局权限。如果 DBName 的取值为指定数据库，则清除账号在该数据库的所有权限。
+	// Type of database permission. Value options: ReadWrite: read and write permission. ReadOnly: read-only permission. DDLOnly: DDL permission only. DMLOnly: DML permission only. Custom: custom permission. Global: global permission. None: clear account permission. Note: When used as a request parameter, pay attention to the following: Only Global and None are allowed as values when used as request parameters. Permission type is single-select; passing multiple values will result in an error. Only the GrantDBAccountPrivilege API supports None as a value for AccountPrivilege. When AccountPrivilege is set to None and DBName is an empty string, all global permissions for the account are cleared. If DBName is set to a specific database, all permissions for the account in that database are cleared.
 	AccountPrivilege *string `pulumi:"accountPrivilege"`
-	// 账号的权限信息。当 AccountPrivilege 取值为 Custom 时，该字段的取值范围如下：SELECT INSERT UPDATE DELETE CREATE DROP REFERENCES INDEX ALTER CREATE TEMPORARY TABLES LOCK TABLES EXECUTE CREATE VIEW SHOW VIEW EVENT TRIGGER CREATE ROUTINE ALTER ROUTINE 当 AccountPrivilege 取值为 Global 时，该字段的取值范围如下：PROCESS REPLICATION SLAVE REPLICATION CLIENT SELECT INSERT UPDATE DELETE CREATE DROP RELOAD REFERENCES INDEX ALTER LOCK TABLES EXECUTE CREATE VIEW SHOW VIEW CREATE ROUTINE ALTER ROUTINE CREATE USER EVENT TRIGGER SHOW DATABASES CREATE TEMPORARY TABLES 说明  作为请求参数时，在 AccountPrivilege 取值为 Custom 时必填。 在 CreateDBAccount 接口中，会自动为账号赋予 REPLICATION SLAVE、PROCESS 和 REPLICATION CLIENT 全局权限。 可取多个值。使用英文逗号（,）分隔多个权限。写入方式为覆盖方式。
+	// Account privilege information. When AccountPrivilege is set to Custom, the valid values for this field are: SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, REFERENCES, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, EVENT, TRIGGER, CREATE ROUTINE, ALTER ROUTINE. When AccountPrivilege is set to Global, the valid values for this field are: PROCESS, REPLICATION SLAVE, REPLICATION CLIENT, SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, REFERENCES, INDEX, ALTER, LOCK TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, SHOW DATABASES, CREATE TEMPORARY TABLES. Note: When used as a request parameter, this field is required if AccountPrivilege is set to Custom. In the CreateDBAccount API, REPLICATION SLAVE, PROCESS, and REPLICATION CLIENT global privileges are automatically granted to the account. Multiple values can be specified, separated by commas (,). The write mode is overwrite.
 	AccountPrivilegeDetails []string `pulumi:"accountPrivilegeDetails"`
-	// 需修改账号授权的或账号已有权限的数据库名称。说明在 CreateDBAccount 和 GrantDBAccountPrivilege 接口中作为请求参数时，需确认 DBName 对应的数据库已存在。进行全局授权的修改时，应为 DBName 传空字符。
+	// The name of the database for which account authorization needs to be modified or for which the account already has privileges. Note: When used as a request parameter in the CreateDBAccount and GrantDBAccountPrivilege APIs, ensure that the database corresponding to DBName already exists. For global privilege modifications, set DBName to an empty string.
 	DbName *string `pulumi:"dbName"`
 }
 
@@ -618,11 +618,11 @@ type DbAccountAccountPrivilegeInput interface {
 }
 
 type DbAccountAccountPrivilegeArgs struct {
-	// 数据库权限的类型。取值范围：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。Global：全局权限。None：清除账号权限。说明该参数作为请求参数时，有以下注意事项：仅支持在作为请求参数时允许取值为 Global 和 None。权限类型为单选，传多个时会报错。仅 GrantDBAccountPrivilege 接口支持为 AccountPrivilege 取值 None。当 AccountPrivilege 取值 None 时，如果 DBName 的取值为空字符串，则清除账号的所有全局权限。如果 DBName 的取值为指定数据库，则清除账号在该数据库的所有权限。
+	// Type of database permission. Value options: ReadWrite: read and write permission. ReadOnly: read-only permission. DDLOnly: DDL permission only. DMLOnly: DML permission only. Custom: custom permission. Global: global permission. None: clear account permission. Note: When used as a request parameter, pay attention to the following: Only Global and None are allowed as values when used as request parameters. Permission type is single-select; passing multiple values will result in an error. Only the GrantDBAccountPrivilege API supports None as a value for AccountPrivilege. When AccountPrivilege is set to None and DBName is an empty string, all global permissions for the account are cleared. If DBName is set to a specific database, all permissions for the account in that database are cleared.
 	AccountPrivilege pulumi.StringPtrInput `pulumi:"accountPrivilege"`
-	// 账号的权限信息。当 AccountPrivilege 取值为 Custom 时，该字段的取值范围如下：SELECT INSERT UPDATE DELETE CREATE DROP REFERENCES INDEX ALTER CREATE TEMPORARY TABLES LOCK TABLES EXECUTE CREATE VIEW SHOW VIEW EVENT TRIGGER CREATE ROUTINE ALTER ROUTINE 当 AccountPrivilege 取值为 Global 时，该字段的取值范围如下：PROCESS REPLICATION SLAVE REPLICATION CLIENT SELECT INSERT UPDATE DELETE CREATE DROP RELOAD REFERENCES INDEX ALTER LOCK TABLES EXECUTE CREATE VIEW SHOW VIEW CREATE ROUTINE ALTER ROUTINE CREATE USER EVENT TRIGGER SHOW DATABASES CREATE TEMPORARY TABLES 说明  作为请求参数时，在 AccountPrivilege 取值为 Custom 时必填。 在 CreateDBAccount 接口中，会自动为账号赋予 REPLICATION SLAVE、PROCESS 和 REPLICATION CLIENT 全局权限。 可取多个值。使用英文逗号（,）分隔多个权限。写入方式为覆盖方式。
+	// Account privilege information. When AccountPrivilege is set to Custom, the valid values for this field are: SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, REFERENCES, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, EVENT, TRIGGER, CREATE ROUTINE, ALTER ROUTINE. When AccountPrivilege is set to Global, the valid values for this field are: PROCESS, REPLICATION SLAVE, REPLICATION CLIENT, SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, REFERENCES, INDEX, ALTER, LOCK TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, SHOW DATABASES, CREATE TEMPORARY TABLES. Note: When used as a request parameter, this field is required if AccountPrivilege is set to Custom. In the CreateDBAccount API, REPLICATION SLAVE, PROCESS, and REPLICATION CLIENT global privileges are automatically granted to the account. Multiple values can be specified, separated by commas (,). The write mode is overwrite.
 	AccountPrivilegeDetails pulumi.StringArrayInput `pulumi:"accountPrivilegeDetails"`
-	// 需修改账号授权的或账号已有权限的数据库名称。说明在 CreateDBAccount 和 GrantDBAccountPrivilege 接口中作为请求参数时，需确认 DBName 对应的数据库已存在。进行全局授权的修改时，应为 DBName 传空字符。
+	// The name of the database for which account authorization needs to be modified or for which the account already has privileges. Note: When used as a request parameter in the CreateDBAccount and GrantDBAccountPrivilege APIs, ensure that the database corresponding to DBName already exists. For global privilege modifications, set DBName to an empty string.
 	DbName pulumi.StringPtrInput `pulumi:"dbName"`
 }
 
@@ -677,17 +677,17 @@ func (o DbAccountAccountPrivilegeOutput) ToDbAccountAccountPrivilegeOutputWithCo
 	return o
 }
 
-// 数据库权限的类型。取值范围：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。Global：全局权限。None：清除账号权限。说明该参数作为请求参数时，有以下注意事项：仅支持在作为请求参数时允许取值为 Global 和 None。权限类型为单选，传多个时会报错。仅 GrantDBAccountPrivilege 接口支持为 AccountPrivilege 取值 None。当 AccountPrivilege 取值 None 时，如果 DBName 的取值为空字符串，则清除账号的所有全局权限。如果 DBName 的取值为指定数据库，则清除账号在该数据库的所有权限。
+// Type of database permission. Value options: ReadWrite: read and write permission. ReadOnly: read-only permission. DDLOnly: DDL permission only. DMLOnly: DML permission only. Custom: custom permission. Global: global permission. None: clear account permission. Note: When used as a request parameter, pay attention to the following: Only Global and None are allowed as values when used as request parameters. Permission type is single-select; passing multiple values will result in an error. Only the GrantDBAccountPrivilege API supports None as a value for AccountPrivilege. When AccountPrivilege is set to None and DBName is an empty string, all global permissions for the account are cleared. If DBName is set to a specific database, all permissions for the account in that database are cleared.
 func (o DbAccountAccountPrivilegeOutput) AccountPrivilege() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbAccountAccountPrivilege) *string { return v.AccountPrivilege }).(pulumi.StringPtrOutput)
 }
 
-// 账号的权限信息。当 AccountPrivilege 取值为 Custom 时，该字段的取值范围如下：SELECT INSERT UPDATE DELETE CREATE DROP REFERENCES INDEX ALTER CREATE TEMPORARY TABLES LOCK TABLES EXECUTE CREATE VIEW SHOW VIEW EVENT TRIGGER CREATE ROUTINE ALTER ROUTINE 当 AccountPrivilege 取值为 Global 时，该字段的取值范围如下：PROCESS REPLICATION SLAVE REPLICATION CLIENT SELECT INSERT UPDATE DELETE CREATE DROP RELOAD REFERENCES INDEX ALTER LOCK TABLES EXECUTE CREATE VIEW SHOW VIEW CREATE ROUTINE ALTER ROUTINE CREATE USER EVENT TRIGGER SHOW DATABASES CREATE TEMPORARY TABLES 说明  作为请求参数时，在 AccountPrivilege 取值为 Custom 时必填。 在 CreateDBAccount 接口中，会自动为账号赋予 REPLICATION SLAVE、PROCESS 和 REPLICATION CLIENT 全局权限。 可取多个值。使用英文逗号（,）分隔多个权限。写入方式为覆盖方式。
+// Account privilege information. When AccountPrivilege is set to Custom, the valid values for this field are: SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, REFERENCES, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, EVENT, TRIGGER, CREATE ROUTINE, ALTER ROUTINE. When AccountPrivilege is set to Global, the valid values for this field are: PROCESS, REPLICATION SLAVE, REPLICATION CLIENT, SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, REFERENCES, INDEX, ALTER, LOCK TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, SHOW DATABASES, CREATE TEMPORARY TABLES. Note: When used as a request parameter, this field is required if AccountPrivilege is set to Custom. In the CreateDBAccount API, REPLICATION SLAVE, PROCESS, and REPLICATION CLIENT global privileges are automatically granted to the account. Multiple values can be specified, separated by commas (,). The write mode is overwrite.
 func (o DbAccountAccountPrivilegeOutput) AccountPrivilegeDetails() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DbAccountAccountPrivilege) []string { return v.AccountPrivilegeDetails }).(pulumi.StringArrayOutput)
 }
 
-// 需修改账号授权的或账号已有权限的数据库名称。说明在 CreateDBAccount 和 GrantDBAccountPrivilege 接口中作为请求参数时，需确认 DBName 对应的数据库已存在。进行全局授权的修改时，应为 DBName 传空字符。
+// The name of the database for which account authorization needs to be modified or for which the account already has privileges. Note: When used as a request parameter in the CreateDBAccount and GrantDBAccountPrivilege APIs, ensure that the database corresponding to DBName already exists. For global privilege modifications, set DBName to an empty string.
 func (o DbAccountAccountPrivilegeOutput) DbName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbAccountAccountPrivilege) *string { return v.DbName }).(pulumi.StringPtrOutput)
 }
@@ -714,7 +714,7 @@ func (o DbAccountAccountPrivilegeArrayOutput) Index(i pulumi.IntInput) DbAccount
 
 type DbAccountTableColumnPrivilege struct {
 	ColumnPrivileges []DbAccountTableColumnPrivilegeColumnPrivilege `pulumi:"columnPrivileges"`
-	// 对账号进行权限设置的表所属的数据库的名称。
+	// Name of the database to which the table belongs for setting permissions for the account.
 	DbName          *string                                       `pulumi:"dbName"`
 	TablePrivileges []DbAccountTableColumnPrivilegeTablePrivilege `pulumi:"tablePrivileges"`
 }
@@ -732,7 +732,7 @@ type DbAccountTableColumnPrivilegeInput interface {
 
 type DbAccountTableColumnPrivilegeArgs struct {
 	ColumnPrivileges DbAccountTableColumnPrivilegeColumnPrivilegeArrayInput `pulumi:"columnPrivileges"`
-	// 对账号进行权限设置的表所属的数据库的名称。
+	// Name of the database to which the table belongs for setting permissions for the account.
 	DbName          pulumi.StringPtrInput                                 `pulumi:"dbName"`
 	TablePrivileges DbAccountTableColumnPrivilegeTablePrivilegeArrayInput `pulumi:"tablePrivileges"`
 }
@@ -794,7 +794,7 @@ func (o DbAccountTableColumnPrivilegeOutput) ColumnPrivileges() DbAccountTableCo
 	}).(DbAccountTableColumnPrivilegeColumnPrivilegeArrayOutput)
 }
 
-// 对账号进行权限设置的表所属的数据库的名称。
+// Name of the database to which the table belongs for setting permissions for the account.
 func (o DbAccountTableColumnPrivilegeOutput) DbName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbAccountTableColumnPrivilege) *string { return v.DbName }).(pulumi.StringPtrOutput)
 }
@@ -826,11 +826,11 @@ func (o DbAccountTableColumnPrivilegeArrayOutput) Index(i pulumi.IntInput) DbAcc
 }
 
 type DbAccountTableColumnPrivilegeColumnPrivilege struct {
-	// 对账号进行列权限设置的权限信息。取值（可多选）：INSERT REFERENCES SELECT UPDATE说明多个权限之间使用英文逗号（,）分隔。
+	// Permission information for setting column permissions for the account. Values (multiple selections allowed): INSERT, REFERENCES, SELECT, UPDATE. Note: Use commas (,) to separate multiple permissions.
 	AccountPrivilegeDetails []string `pulumi:"accountPrivilegeDetails"`
-	// 对账号进行列权限设置的列的名称。
+	// Name of the column for setting column permissions for the account.
 	ColumnName *string `pulumi:"columnName"`
-	// 对账号进行列权限设置的表所属的数据库的名称。
+	// Name of the database to which the table belongs for setting column permissions for the account.
 	TableName *string `pulumi:"tableName"`
 }
 
@@ -846,11 +846,11 @@ type DbAccountTableColumnPrivilegeColumnPrivilegeInput interface {
 }
 
 type DbAccountTableColumnPrivilegeColumnPrivilegeArgs struct {
-	// 对账号进行列权限设置的权限信息。取值（可多选）：INSERT REFERENCES SELECT UPDATE说明多个权限之间使用英文逗号（,）分隔。
+	// Permission information for setting column permissions for the account. Values (multiple selections allowed): INSERT, REFERENCES, SELECT, UPDATE. Note: Use commas (,) to separate multiple permissions.
 	AccountPrivilegeDetails pulumi.StringArrayInput `pulumi:"accountPrivilegeDetails"`
-	// 对账号进行列权限设置的列的名称。
+	// Name of the column for setting column permissions for the account.
 	ColumnName pulumi.StringPtrInput `pulumi:"columnName"`
-	// 对账号进行列权限设置的表所属的数据库的名称。
+	// Name of the database to which the table belongs for setting column permissions for the account.
 	TableName pulumi.StringPtrInput `pulumi:"tableName"`
 }
 
@@ -905,17 +905,17 @@ func (o DbAccountTableColumnPrivilegeColumnPrivilegeOutput) ToDbAccountTableColu
 	return o
 }
 
-// 对账号进行列权限设置的权限信息。取值（可多选）：INSERT REFERENCES SELECT UPDATE说明多个权限之间使用英文逗号（,）分隔。
+// Permission information for setting column permissions for the account. Values (multiple selections allowed): INSERT, REFERENCES, SELECT, UPDATE. Note: Use commas (,) to separate multiple permissions.
 func (o DbAccountTableColumnPrivilegeColumnPrivilegeOutput) AccountPrivilegeDetails() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DbAccountTableColumnPrivilegeColumnPrivilege) []string { return v.AccountPrivilegeDetails }).(pulumi.StringArrayOutput)
 }
 
-// 对账号进行列权限设置的列的名称。
+// Name of the column for setting column permissions for the account.
 func (o DbAccountTableColumnPrivilegeColumnPrivilegeOutput) ColumnName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbAccountTableColumnPrivilegeColumnPrivilege) *string { return v.ColumnName }).(pulumi.StringPtrOutput)
 }
 
-// 对账号进行列权限设置的表所属的数据库的名称。
+// Name of the database to which the table belongs for setting column permissions for the account.
 func (o DbAccountTableColumnPrivilegeColumnPrivilegeOutput) TableName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbAccountTableColumnPrivilegeColumnPrivilege) *string { return v.TableName }).(pulumi.StringPtrOutput)
 }
@@ -941,9 +941,9 @@ func (o DbAccountTableColumnPrivilegeColumnPrivilegeArrayOutput) Index(i pulumi.
 }
 
 type DbAccountTableColumnPrivilegeTablePrivilege struct {
-	// 账号的表权限。取值范围（可多选）：ALTER CREATE DELETE DROP INDEX INSERT SELECT SHOW VIEW TRIGGER UPDATE CREATE VIEW REFERENCES 说明多个权限之间使用英文逗号（,）分隔。
+	// Account table permissions. Value options (multiple selections allowed): ALTER, CREATE, DELETE, DROP, INDEX, INSERT, SELECT, SHOW, VIEW, TRIGGER, UPDATE, CREATE VIEW, REFERENCES. Note: Use commas (,) to separate multiple permissions.
 	AccountPrivilegeDetails []string `pulumi:"accountPrivilegeDetails"`
-	// 对账号进行权限设置的表的名称。
+	// Name of the table for setting permissions for the account.
 	TableName *string `pulumi:"tableName"`
 }
 
@@ -959,9 +959,9 @@ type DbAccountTableColumnPrivilegeTablePrivilegeInput interface {
 }
 
 type DbAccountTableColumnPrivilegeTablePrivilegeArgs struct {
-	// 账号的表权限。取值范围（可多选）：ALTER CREATE DELETE DROP INDEX INSERT SELECT SHOW VIEW TRIGGER UPDATE CREATE VIEW REFERENCES 说明多个权限之间使用英文逗号（,）分隔。
+	// Account table permissions. Value options (multiple selections allowed): ALTER, CREATE, DELETE, DROP, INDEX, INSERT, SELECT, SHOW, VIEW, TRIGGER, UPDATE, CREATE VIEW, REFERENCES. Note: Use commas (,) to separate multiple permissions.
 	AccountPrivilegeDetails pulumi.StringArrayInput `pulumi:"accountPrivilegeDetails"`
-	// 对账号进行权限设置的表的名称。
+	// Name of the table for setting permissions for the account.
 	TableName pulumi.StringPtrInput `pulumi:"tableName"`
 }
 
@@ -1016,12 +1016,12 @@ func (o DbAccountTableColumnPrivilegeTablePrivilegeOutput) ToDbAccountTableColum
 	return o
 }
 
-// 账号的表权限。取值范围（可多选）：ALTER CREATE DELETE DROP INDEX INSERT SELECT SHOW VIEW TRIGGER UPDATE CREATE VIEW REFERENCES 说明多个权限之间使用英文逗号（,）分隔。
+// Account table permissions. Value options (multiple selections allowed): ALTER, CREATE, DELETE, DROP, INDEX, INSERT, SELECT, SHOW, VIEW, TRIGGER, UPDATE, CREATE VIEW, REFERENCES. Note: Use commas (,) to separate multiple permissions.
 func (o DbAccountTableColumnPrivilegeTablePrivilegeOutput) AccountPrivilegeDetails() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DbAccountTableColumnPrivilegeTablePrivilege) []string { return v.AccountPrivilegeDetails }).(pulumi.StringArrayOutput)
 }
 
-// 对账号进行权限设置的表的名称。
+// Name of the table for setting permissions for the account.
 func (o DbAccountTableColumnPrivilegeTablePrivilegeOutput) TableName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbAccountTableColumnPrivilegeTablePrivilege) *string { return v.TableName }).(pulumi.StringPtrOutput)
 }
@@ -1047,11 +1047,11 @@ func (o DbAccountTableColumnPrivilegeTablePrivilegeArrayOutput) Index(i pulumi.I
 }
 
 type EndpointAddress struct {
-	// false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+	// false: Volcano Engine private network resolution (default). true: Volcano Engine private network and public network resolution.
 	DnsVisibility *bool `pulumi:"dnsVisibility"`
-	// 连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+	// Connection address prefix. The prefix must meet the following rules: start with a lowercase letter and end with a lowercase letter or digit; contain at least two of the following: lowercase letters, digits, or hyphens (-); be at least 8 characters long; and the total connection address length (prefix + suffix) must not exceed 63 characters.
 	DomainPrefix *string `pulumi:"domainPrefix"`
-	// 端口。
+	// Port.
 	Port *string `pulumi:"port"`
 }
 
@@ -1067,11 +1067,11 @@ type EndpointAddressInput interface {
 }
 
 type EndpointAddressArgs struct {
-	// false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+	// false: Volcano Engine private network resolution (default). true: Volcano Engine private network and public network resolution.
 	DnsVisibility pulumi.BoolPtrInput `pulumi:"dnsVisibility"`
-	// 连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+	// Connection address prefix. The prefix must meet the following rules: start with a lowercase letter and end with a lowercase letter or digit; contain at least two of the following: lowercase letters, digits, or hyphens (-); be at least 8 characters long; and the total connection address length (prefix + suffix) must not exceed 63 characters.
 	DomainPrefix pulumi.StringPtrInput `pulumi:"domainPrefix"`
-	// 端口。
+	// Port.
 	Port pulumi.StringPtrInput `pulumi:"port"`
 }
 
@@ -1126,17 +1126,17 @@ func (o EndpointAddressOutput) ToEndpointAddressOutputWithContext(ctx context.Co
 	return o
 }
 
-// false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+// false: Volcano Engine private network resolution (default). true: Volcano Engine private network and public network resolution.
 func (o EndpointAddressOutput) DnsVisibility() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v EndpointAddress) *bool { return v.DnsVisibility }).(pulumi.BoolPtrOutput)
 }
 
-// 连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+// Connection address prefix. The prefix must meet the following rules: start with a lowercase letter and end with a lowercase letter or digit; contain at least two of the following: lowercase letters, digits, or hyphens (-); be at least 8 characters long; and the total connection address length (prefix + suffix) must not exceed 63 characters.
 func (o EndpointAddressOutput) DomainPrefix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointAddress) *string { return v.DomainPrefix }).(pulumi.StringPtrOutput)
 }
 
-// 端口。
+// Port.
 func (o EndpointAddressOutput) Port() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointAddress) *string { return v.Port }).(pulumi.StringPtrOutput)
 }
@@ -1297,9 +1297,9 @@ func (o EndpointCustomRouteStrategyPtrOutput) KeywordRouteStrategies() EndpointC
 }
 
 type EndpointCustomRouteStrategyKeywordRouteStrategy struct {
-	// SQL 转发规则的转发目标。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。说明如实例为双节点实例，可选择主节点或只读节点。如实例为多节点实例，可选择主节点或备节点。
+	// SQL forwarding rule target. Options: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node. Note: For dual-node instances, you can select the primary node or read-only node. For multi-node instances, you can select the primary node or secondary node.
 	NodeType *string `pulumi:"nodeType"`
-	// 转发规则的关键字。SQL 关键字的设置规则如下：单个规则最多可包含 20 个关键字。最大长度为 64 个字符，可包含英文字母、数字、下划线 _、@、#、:= 和中文字符。
+	// Forwarding rule keywords. SQL keyword rules: Each rule can contain up to 20 keywords, with a maximum length of 64 characters. Allowed characters: English letters, digits, underscore (_), @, #, :=, and Chinese characters.
 	SqlKeyword *string `pulumi:"sqlKeyword"`
 }
 
@@ -1315,9 +1315,9 @@ type EndpointCustomRouteStrategyKeywordRouteStrategyInput interface {
 }
 
 type EndpointCustomRouteStrategyKeywordRouteStrategyArgs struct {
-	// SQL 转发规则的转发目标。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。说明如实例为双节点实例，可选择主节点或只读节点。如实例为多节点实例，可选择主节点或备节点。
+	// SQL forwarding rule target. Options: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node. Note: For dual-node instances, you can select the primary node or read-only node. For multi-node instances, you can select the primary node or secondary node.
 	NodeType pulumi.StringPtrInput `pulumi:"nodeType"`
-	// 转发规则的关键字。SQL 关键字的设置规则如下：单个规则最多可包含 20 个关键字。最大长度为 64 个字符，可包含英文字母、数字、下划线 _、@、#、:= 和中文字符。
+	// Forwarding rule keywords. SQL keyword rules: Each rule can contain up to 20 keywords, with a maximum length of 64 characters. Allowed characters: English letters, digits, underscore (_), @, #, :=, and Chinese characters.
 	SqlKeyword pulumi.StringPtrInput `pulumi:"sqlKeyword"`
 }
 
@@ -1372,12 +1372,12 @@ func (o EndpointCustomRouteStrategyKeywordRouteStrategyOutput) ToEndpointCustomR
 	return o
 }
 
-// SQL 转发规则的转发目标。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。说明如实例为双节点实例，可选择主节点或只读节点。如实例为多节点实例，可选择主节点或备节点。
+// SQL forwarding rule target. Options: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node. Note: For dual-node instances, you can select the primary node or read-only node. For multi-node instances, you can select the primary node or secondary node.
 func (o EndpointCustomRouteStrategyKeywordRouteStrategyOutput) NodeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointCustomRouteStrategyKeywordRouteStrategy) *string { return v.NodeType }).(pulumi.StringPtrOutput)
 }
 
-// 转发规则的关键字。SQL 关键字的设置规则如下：单个规则最多可包含 20 个关键字。最大长度为 64 个字符，可包含英文字母、数字、下划线 _、@、#、:= 和中文字符。
+// Forwarding rule keywords. SQL keyword rules: Each rule can contain up to 20 keywords, with a maximum length of 64 characters. Allowed characters: English letters, digits, underscore (_), @, #, :=, and Chinese characters.
 func (o EndpointCustomRouteStrategyKeywordRouteStrategyOutput) SqlKeyword() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointCustomRouteStrategyKeywordRouteStrategy) *string { return v.SqlKeyword }).(pulumi.StringPtrOutput)
 }
@@ -1403,11 +1403,11 @@ func (o EndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput) Index(i pulu
 }
 
 type EndpointReadOnlyNodeWeight struct {
-	// 只读节点需要传入 NodeId，主节点无需传入。
+	// NodeId is required for read-only nodes; not required for primary nodes.
 	NodeId *string `pulumi:"nodeId"`
-	// 节点类型。Primary：主节点。ReadOnly：只读节点。
+	// Node type. Primary: primary node. ReadOnly: read-only node.
 	NodeType *string `pulumi:"nodeType"`
-	// 节点的读权重，以 100 递增，最大值为 10000。说明权重不可全部设置为 0。
+	// Node read weight increases in increments of 100, up to a maximum of 10,000. Note: Not all weights can be set to 0.
 	Weight *int `pulumi:"weight"`
 }
 
@@ -1423,11 +1423,11 @@ type EndpointReadOnlyNodeWeightInput interface {
 }
 
 type EndpointReadOnlyNodeWeightArgs struct {
-	// 只读节点需要传入 NodeId，主节点无需传入。
+	// NodeId is required for read-only nodes; not required for primary nodes.
 	NodeId pulumi.StringPtrInput `pulumi:"nodeId"`
-	// 节点类型。Primary：主节点。ReadOnly：只读节点。
+	// Node type. Primary: primary node. ReadOnly: read-only node.
 	NodeType pulumi.StringPtrInput `pulumi:"nodeType"`
-	// 节点的读权重，以 100 递增，最大值为 10000。说明权重不可全部设置为 0。
+	// Node read weight increases in increments of 100, up to a maximum of 10,000. Note: Not all weights can be set to 0.
 	Weight pulumi.IntPtrInput `pulumi:"weight"`
 }
 
@@ -1482,17 +1482,17 @@ func (o EndpointReadOnlyNodeWeightOutput) ToEndpointReadOnlyNodeWeightOutputWith
 	return o
 }
 
-// 只读节点需要传入 NodeId，主节点无需传入。
+// NodeId is required for read-only nodes; not required for primary nodes.
 func (o EndpointReadOnlyNodeWeightOutput) NodeId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointReadOnlyNodeWeight) *string { return v.NodeId }).(pulumi.StringPtrOutput)
 }
 
-// 节点类型。Primary：主节点。ReadOnly：只读节点。
+// Node type. Primary: primary node. ReadOnly: read-only node.
 func (o EndpointReadOnlyNodeWeightOutput) NodeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EndpointReadOnlyNodeWeight) *string { return v.NodeType }).(pulumi.StringPtrOutput)
 }
 
-// 节点的读权重，以 100 递增，最大值为 10000。说明权重不可全部设置为 0。
+// Node read weight increases in increments of 100, up to a maximum of 10,000. Note: Not all weights can be set to 0.
 func (o EndpointReadOnlyNodeWeightOutput) Weight() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v EndpointReadOnlyNodeWeight) *int { return v.Weight }).(pulumi.IntPtrOutput)
 }
@@ -1518,21 +1518,21 @@ func (o EndpointReadOnlyNodeWeightArrayOutput) Index(i pulumi.IntInput) Endpoint
 }
 
 type InstanceAddressObject struct {
-	// false：私网解析（默认）。true：私网以及公网解析。
+	// false: private network resolution (default). true: private and public network resolution.
 	DnsVisibility *bool `pulumi:"dnsVisibility"`
-	// 连接域名。
+	// Connection domain name
 	Domain *string `pulumi:"domain"`
-	// EIP 的 ID，仅对 Public 地址有效。
+	// EIP ID, valid only for Public addresses.
 	EipId *string `pulumi:"eipId"`
-	// IP 协议版本。取值为 IPv4。
+	// IP protocol version. Value: IPv4.
 	InternetProtocol *string `pulumi:"internetProtocol"`
-	// IP 地址。
+	// IP address.
 	IpAddress *string `pulumi:"ipAddress"`
-	// 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+	// Network address type. Values: Private: private address. Public: public address
 	NetworkType *string `pulumi:"networkType"`
-	// 端口。
+	// Port
 	Port *string `pulumi:"port"`
-	// 子网 ID，仅对 Private 地址有效。
+	// Subnet ID, valid only for Private addresses
 	SubnetId *string `pulumi:"subnetId"`
 }
 
@@ -1548,21 +1548,21 @@ type InstanceAddressObjectInput interface {
 }
 
 type InstanceAddressObjectArgs struct {
-	// false：私网解析（默认）。true：私网以及公网解析。
+	// false: private network resolution (default). true: private and public network resolution.
 	DnsVisibility pulumi.BoolPtrInput `pulumi:"dnsVisibility"`
-	// 连接域名。
+	// Connection domain name
 	Domain pulumi.StringPtrInput `pulumi:"domain"`
-	// EIP 的 ID，仅对 Public 地址有效。
+	// EIP ID, valid only for Public addresses.
 	EipId pulumi.StringPtrInput `pulumi:"eipId"`
-	// IP 协议版本。取值为 IPv4。
+	// IP protocol version. Value: IPv4.
 	InternetProtocol pulumi.StringPtrInput `pulumi:"internetProtocol"`
-	// IP 地址。
+	// IP address.
 	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
-	// 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+	// Network address type. Values: Private: private address. Public: public address
 	NetworkType pulumi.StringPtrInput `pulumi:"networkType"`
-	// 端口。
+	// Port
 	Port pulumi.StringPtrInput `pulumi:"port"`
-	// 子网 ID，仅对 Private 地址有效。
+	// Subnet ID, valid only for Private addresses
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
@@ -1617,42 +1617,42 @@ func (o InstanceAddressObjectOutput) ToInstanceAddressObjectOutputWithContext(ct
 	return o
 }
 
-// false：私网解析（默认）。true：私网以及公网解析。
+// false: private network resolution (default). true: private and public network resolution.
 func (o InstanceAddressObjectOutput) DnsVisibility() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InstanceAddressObject) *bool { return v.DnsVisibility }).(pulumi.BoolPtrOutput)
 }
 
-// 连接域名。
+// Connection domain name
 func (o InstanceAddressObjectOutput) Domain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceAddressObject) *string { return v.Domain }).(pulumi.StringPtrOutput)
 }
 
-// EIP 的 ID，仅对 Public 地址有效。
+// EIP ID, valid only for Public addresses.
 func (o InstanceAddressObjectOutput) EipId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceAddressObject) *string { return v.EipId }).(pulumi.StringPtrOutput)
 }
 
-// IP 协议版本。取值为 IPv4。
+// IP protocol version. Value: IPv4.
 func (o InstanceAddressObjectOutput) InternetProtocol() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceAddressObject) *string { return v.InternetProtocol }).(pulumi.StringPtrOutput)
 }
 
-// IP 地址。
+// IP address.
 func (o InstanceAddressObjectOutput) IpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceAddressObject) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
-// 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+// Network address type. Values: Private: private address. Public: public address
 func (o InstanceAddressObjectOutput) NetworkType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceAddressObject) *string { return v.NetworkType }).(pulumi.StringPtrOutput)
 }
 
-// 端口。
+// Port
 func (o InstanceAddressObjectOutput) Port() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceAddressObject) *string { return v.Port }).(pulumi.StringPtrOutput)
 }
 
-// 子网 ID，仅对 Private 地址有效。
+// Subnet ID, valid only for Private addresses
 func (o InstanceAddressObjectOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceAddressObject) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
@@ -1678,11 +1678,11 @@ func (o InstanceAddressObjectArrayOutput) Index(i pulumi.IntInput) InstanceAddre
 }
 
 type InstanceAutoStorageScalingConfig struct {
-	// 是否开启实例的自动扩容功能。取值：true：是。false：否。
+	// Whether to enable automatic scaling for the instance. Values: true: Yes. false: No.
 	EnableStorageAutoScale *bool `pulumi:"enableStorageAutoScale"`
-	// 触发自动扩容的可用存储空间占比。取值范围为 10~50，默认值为 10，单位为 %。
+	// Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
 	StorageThreshold *int `pulumi:"storageThreshold"`
-	// 可自动扩容的存储空间上限。该字段的取值下限为实例存储空间+20GB；取值上限为实例主节点规格对应的存储空间取值范围的上限，单位为 GB。关于不同规格可选择存储空间取值范围的详细信息。
+	// Maximum storage space for automatic expansion. The minimum value is instance storage space + 20 GB; the maximum value is the upper limit of the storage space range for the primary node specification, in GB. See details about selectable storage space ranges for different specifications.
 	StorageUpperBound *int `pulumi:"storageUpperBound"`
 }
 
@@ -1698,11 +1698,11 @@ type InstanceAutoStorageScalingConfigInput interface {
 }
 
 type InstanceAutoStorageScalingConfigArgs struct {
-	// 是否开启实例的自动扩容功能。取值：true：是。false：否。
+	// Whether to enable automatic scaling for the instance. Values: true: Yes. false: No.
 	EnableStorageAutoScale pulumi.BoolPtrInput `pulumi:"enableStorageAutoScale"`
-	// 触发自动扩容的可用存储空间占比。取值范围为 10~50，默认值为 10，单位为 %。
+	// Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
 	StorageThreshold pulumi.IntPtrInput `pulumi:"storageThreshold"`
-	// 可自动扩容的存储空间上限。该字段的取值下限为实例存储空间+20GB；取值上限为实例主节点规格对应的存储空间取值范围的上限，单位为 GB。关于不同规格可选择存储空间取值范围的详细信息。
+	// Maximum storage space for automatic expansion. The minimum value is instance storage space + 20 GB; the maximum value is the upper limit of the storage space range for the primary node specification, in GB. See details about selectable storage space ranges for different specifications.
 	StorageUpperBound pulumi.IntPtrInput `pulumi:"storageUpperBound"`
 }
 
@@ -1783,17 +1783,17 @@ func (o InstanceAutoStorageScalingConfigOutput) ToInstanceAutoStorageScalingConf
 	}).(InstanceAutoStorageScalingConfigPtrOutput)
 }
 
-// 是否开启实例的自动扩容功能。取值：true：是。false：否。
+// Whether to enable automatic scaling for the instance. Values: true: Yes. false: No.
 func (o InstanceAutoStorageScalingConfigOutput) EnableStorageAutoScale() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InstanceAutoStorageScalingConfig) *bool { return v.EnableStorageAutoScale }).(pulumi.BoolPtrOutput)
 }
 
-// 触发自动扩容的可用存储空间占比。取值范围为 10~50，默认值为 10，单位为 %。
+// Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
 func (o InstanceAutoStorageScalingConfigOutput) StorageThreshold() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceAutoStorageScalingConfig) *int { return v.StorageThreshold }).(pulumi.IntPtrOutput)
 }
 
-// 可自动扩容的存储空间上限。该字段的取值下限为实例存储空间+20GB；取值上限为实例主节点规格对应的存储空间取值范围的上限，单位为 GB。关于不同规格可选择存储空间取值范围的详细信息。
+// Maximum storage space for automatic expansion. The minimum value is instance storage space + 20 GB; the maximum value is the upper limit of the storage space range for the primary node specification, in GB. See details about selectable storage space ranges for different specifications.
 func (o InstanceAutoStorageScalingConfigOutput) StorageUpperBound() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceAutoStorageScalingConfig) *int { return v.StorageUpperBound }).(pulumi.IntPtrOutput)
 }
@@ -1822,7 +1822,7 @@ func (o InstanceAutoStorageScalingConfigPtrOutput) Elem() InstanceAutoStorageSca
 	}).(InstanceAutoStorageScalingConfigOutput)
 }
 
-// 是否开启实例的自动扩容功能。取值：true：是。false：否。
+// Whether to enable automatic scaling for the instance. Values: true: Yes. false: No.
 func (o InstanceAutoStorageScalingConfigPtrOutput) EnableStorageAutoScale() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InstanceAutoStorageScalingConfig) *bool {
 		if v == nil {
@@ -1832,7 +1832,7 @@ func (o InstanceAutoStorageScalingConfigPtrOutput) EnableStorageAutoScale() pulu
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 触发自动扩容的可用存储空间占比。取值范围为 10~50，默认值为 10，单位为 %。
+// Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
 func (o InstanceAutoStorageScalingConfigPtrOutput) StorageThreshold() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceAutoStorageScalingConfig) *int {
 		if v == nil {
@@ -1842,7 +1842,7 @@ func (o InstanceAutoStorageScalingConfigPtrOutput) StorageThreshold() pulumi.Int
 	}).(pulumi.IntPtrOutput)
 }
 
-// 可自动扩容的存储空间上限。该字段的取值下限为实例存储空间+20GB；取值上限为实例主节点规格对应的存储空间取值范围的上限，单位为 GB。关于不同规格可选择存储空间取值范围的详细信息。
+// Maximum storage space for automatic expansion. The minimum value is instance storage space + 20 GB; the maximum value is the upper limit of the storage space range for the primary node specification, in GB. See details about selectable storage space ranges for different specifications.
 func (o InstanceAutoStorageScalingConfigPtrOutput) StorageUpperBound() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceAutoStorageScalingConfig) *int {
 		if v == nil {
@@ -1853,29 +1853,29 @@ func (o InstanceAutoStorageScalingConfigPtrOutput) StorageUpperBound() pulumi.In
 }
 
 type InstanceChargeDetail struct {
-	// 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+	// Enable auto-renewal for prepaid scenarios. Values: true: auto-renewal. false: do not auto-renew
 	AutoRenew *bool `pulumi:"autoRenew"`
-	// 包年包月实例的计费结束时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	// Billing end time for subscription instance (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
 	ChargeEndTime *string `pulumi:"chargeEndTime"`
-	// 实例的计费开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	// Billing start time for the instance (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ
 	ChargeStartTime *string `pulumi:"chargeStartTime"`
-	// 实例的计费状态。取值：Normal：正常。Overdue：欠费。Unpaid：等待支付。
+	// Instance billing status. Values: Normal: normal. Overdue: overdue. Unpaid: pending payment.
 	ChargeStatus *string `pulumi:"chargeStatus"`
-	// 付费类型。取值为：PrePaid：包年包月。PostPaid：按量计费。
+	// Billing type. Options: PrePaid: subscription. PostPaid: pay-as-you-go
 	ChargeType string `pulumi:"chargeType"`
-	// 实例购买数量。取值范围为 1~50。默认值为 1。
+	// Number of instances to purchase. Value range: 1–50. Default: 1
 	Number *int `pulumi:"number"`
-	// 实例欠费关停（按量付费）或到期关停（包年包月）后，预计被释放的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	// Estimated release time after the instance is stopped due to overdue payment (pay-as-you-go) or expiration (subscription), in UTC. Format: yyyy-MM-ddTHH:mm:ss.sssZ
 	OverdueReclaimTime *string `pulumi:"overdueReclaimTime"`
-	// 实例欠费关停（按量付费）或到期关停（包年包月）的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	// Time when the instance is stopped due to overdue payment (pay-as-you-go) or expiration (subscription) (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
 	OverdueTime *string `pulumi:"overdueTime"`
-	// 预付费场景下的购买时长。
+	// Purchase duration in prepaid scenarios.
 	Period *int `pulumi:"period"`
-	// 预付费场景下的购买周期。Month：购买周期为月。默认。Year：购买周期为年。
+	// Purchase cycle in prepaid scenarios. Month: monthly purchase cycle (default). Year: yearly purchase cycle.
 	PeriodUnit *string `pulumi:"periodUnit"`
-	// 临时升配的还原时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	// Restore time for temporary scaling (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
 	TempModifyEndTime *string `pulumi:"tempModifyEndTime"`
-	// 临时升配的开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	// Start time for temporary scaling (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ
 	TempModifyStartTime *string `pulumi:"tempModifyStartTime"`
 }
 
@@ -1891,29 +1891,29 @@ type InstanceChargeDetailInput interface {
 }
 
 type InstanceChargeDetailArgs struct {
-	// 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+	// Enable auto-renewal for prepaid scenarios. Values: true: auto-renewal. false: do not auto-renew
 	AutoRenew pulumi.BoolPtrInput `pulumi:"autoRenew"`
-	// 包年包月实例的计费结束时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	// Billing end time for subscription instance (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
 	ChargeEndTime pulumi.StringPtrInput `pulumi:"chargeEndTime"`
-	// 实例的计费开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	// Billing start time for the instance (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ
 	ChargeStartTime pulumi.StringPtrInput `pulumi:"chargeStartTime"`
-	// 实例的计费状态。取值：Normal：正常。Overdue：欠费。Unpaid：等待支付。
+	// Instance billing status. Values: Normal: normal. Overdue: overdue. Unpaid: pending payment.
 	ChargeStatus pulumi.StringPtrInput `pulumi:"chargeStatus"`
-	// 付费类型。取值为：PrePaid：包年包月。PostPaid：按量计费。
+	// Billing type. Options: PrePaid: subscription. PostPaid: pay-as-you-go
 	ChargeType pulumi.StringInput `pulumi:"chargeType"`
-	// 实例购买数量。取值范围为 1~50。默认值为 1。
+	// Number of instances to purchase. Value range: 1–50. Default: 1
 	Number pulumi.IntPtrInput `pulumi:"number"`
-	// 实例欠费关停（按量付费）或到期关停（包年包月）后，预计被释放的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	// Estimated release time after the instance is stopped due to overdue payment (pay-as-you-go) or expiration (subscription), in UTC. Format: yyyy-MM-ddTHH:mm:ss.sssZ
 	OverdueReclaimTime pulumi.StringPtrInput `pulumi:"overdueReclaimTime"`
-	// 实例欠费关停（按量付费）或到期关停（包年包月）的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	// Time when the instance is stopped due to overdue payment (pay-as-you-go) or expiration (subscription) (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
 	OverdueTime pulumi.StringPtrInput `pulumi:"overdueTime"`
-	// 预付费场景下的购买时长。
+	// Purchase duration in prepaid scenarios.
 	Period pulumi.IntPtrInput `pulumi:"period"`
-	// 预付费场景下的购买周期。Month：购买周期为月。默认。Year：购买周期为年。
+	// Purchase cycle in prepaid scenarios. Month: monthly purchase cycle (default). Year: yearly purchase cycle.
 	PeriodUnit pulumi.StringPtrInput `pulumi:"periodUnit"`
-	// 临时升配的还原时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	// Restore time for temporary scaling (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
 	TempModifyEndTime pulumi.StringPtrInput `pulumi:"tempModifyEndTime"`
-	// 临时升配的开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	// Start time for temporary scaling (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ
 	TempModifyStartTime pulumi.StringPtrInput `pulumi:"tempModifyStartTime"`
 }
 
@@ -1994,62 +1994,62 @@ func (o InstanceChargeDetailOutput) ToInstanceChargeDetailPtrOutputWithContext(c
 	}).(InstanceChargeDetailPtrOutput)
 }
 
-// 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+// Enable auto-renewal for prepaid scenarios. Values: true: auto-renewal. false: do not auto-renew
 func (o InstanceChargeDetailOutput) AutoRenew() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InstanceChargeDetail) *bool { return v.AutoRenew }).(pulumi.BoolPtrOutput)
 }
 
-// 包年包月实例的计费结束时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+// Billing end time for subscription instance (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
 func (o InstanceChargeDetailOutput) ChargeEndTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.ChargeEndTime }).(pulumi.StringPtrOutput)
 }
 
-// 实例的计费开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+// Billing start time for the instance (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ
 func (o InstanceChargeDetailOutput) ChargeStartTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.ChargeStartTime }).(pulumi.StringPtrOutput)
 }
 
-// 实例的计费状态。取值：Normal：正常。Overdue：欠费。Unpaid：等待支付。
+// Instance billing status. Values: Normal: normal. Overdue: overdue. Unpaid: pending payment.
 func (o InstanceChargeDetailOutput) ChargeStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.ChargeStatus }).(pulumi.StringPtrOutput)
 }
 
-// 付费类型。取值为：PrePaid：包年包月。PostPaid：按量计费。
+// Billing type. Options: PrePaid: subscription. PostPaid: pay-as-you-go
 func (o InstanceChargeDetailOutput) ChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v InstanceChargeDetail) string { return v.ChargeType }).(pulumi.StringOutput)
 }
 
-// 实例购买数量。取值范围为 1~50。默认值为 1。
+// Number of instances to purchase. Value range: 1–50. Default: 1
 func (o InstanceChargeDetailOutput) Number() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceChargeDetail) *int { return v.Number }).(pulumi.IntPtrOutput)
 }
 
-// 实例欠费关停（按量付费）或到期关停（包年包月）后，预计被释放的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+// Estimated release time after the instance is stopped due to overdue payment (pay-as-you-go) or expiration (subscription), in UTC. Format: yyyy-MM-ddTHH:mm:ss.sssZ
 func (o InstanceChargeDetailOutput) OverdueReclaimTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.OverdueReclaimTime }).(pulumi.StringPtrOutput)
 }
 
-// 实例欠费关停（按量付费）或到期关停（包年包月）的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+// Time when the instance is stopped due to overdue payment (pay-as-you-go) or expiration (subscription) (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
 func (o InstanceChargeDetailOutput) OverdueTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.OverdueTime }).(pulumi.StringPtrOutput)
 }
 
-// 预付费场景下的购买时长。
+// Purchase duration in prepaid scenarios.
 func (o InstanceChargeDetailOutput) Period() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceChargeDetail) *int { return v.Period }).(pulumi.IntPtrOutput)
 }
 
-// 预付费场景下的购买周期。Month：购买周期为月。默认。Year：购买周期为年。
+// Purchase cycle in prepaid scenarios. Month: monthly purchase cycle (default). Year: yearly purchase cycle.
 func (o InstanceChargeDetailOutput) PeriodUnit() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.PeriodUnit }).(pulumi.StringPtrOutput)
 }
 
-// 临时升配的还原时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+// Restore time for temporary scaling (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
 func (o InstanceChargeDetailOutput) TempModifyEndTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.TempModifyEndTime }).(pulumi.StringPtrOutput)
 }
 
-// 临时升配的开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+// Start time for temporary scaling (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ
 func (o InstanceChargeDetailOutput) TempModifyStartTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceChargeDetail) *string { return v.TempModifyStartTime }).(pulumi.StringPtrOutput)
 }
@@ -2078,7 +2078,7 @@ func (o InstanceChargeDetailPtrOutput) Elem() InstanceChargeDetailOutput {
 	}).(InstanceChargeDetailOutput)
 }
 
-// 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+// Enable auto-renewal for prepaid scenarios. Values: true: auto-renewal. false: do not auto-renew
 func (o InstanceChargeDetailPtrOutput) AutoRenew() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeDetail) *bool {
 		if v == nil {
@@ -2088,7 +2088,7 @@ func (o InstanceChargeDetailPtrOutput) AutoRenew() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 包年包月实例的计费结束时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+// Billing end time for subscription instance (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
 func (o InstanceChargeDetailPtrOutput) ChargeEndTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeDetail) *string {
 		if v == nil {
@@ -2098,7 +2098,7 @@ func (o InstanceChargeDetailPtrOutput) ChargeEndTime() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的计费开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+// Billing start time for the instance (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ
 func (o InstanceChargeDetailPtrOutput) ChargeStartTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeDetail) *string {
 		if v == nil {
@@ -2108,7 +2108,7 @@ func (o InstanceChargeDetailPtrOutput) ChargeStartTime() pulumi.StringPtrOutput 
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的计费状态。取值：Normal：正常。Overdue：欠费。Unpaid：等待支付。
+// Instance billing status. Values: Normal: normal. Overdue: overdue. Unpaid: pending payment.
 func (o InstanceChargeDetailPtrOutput) ChargeStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeDetail) *string {
 		if v == nil {
@@ -2118,7 +2118,7 @@ func (o InstanceChargeDetailPtrOutput) ChargeStatus() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 付费类型。取值为：PrePaid：包年包月。PostPaid：按量计费。
+// Billing type. Options: PrePaid: subscription. PostPaid: pay-as-you-go
 func (o InstanceChargeDetailPtrOutput) ChargeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeDetail) *string {
 		if v == nil {
@@ -2128,7 +2128,7 @@ func (o InstanceChargeDetailPtrOutput) ChargeType() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例购买数量。取值范围为 1~50。默认值为 1。
+// Number of instances to purchase. Value range: 1–50. Default: 1
 func (o InstanceChargeDetailPtrOutput) Number() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeDetail) *int {
 		if v == nil {
@@ -2138,7 +2138,7 @@ func (o InstanceChargeDetailPtrOutput) Number() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 实例欠费关停（按量付费）或到期关停（包年包月）后，预计被释放的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+// Estimated release time after the instance is stopped due to overdue payment (pay-as-you-go) or expiration (subscription), in UTC. Format: yyyy-MM-ddTHH:mm:ss.sssZ
 func (o InstanceChargeDetailPtrOutput) OverdueReclaimTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeDetail) *string {
 		if v == nil {
@@ -2148,7 +2148,7 @@ func (o InstanceChargeDetailPtrOutput) OverdueReclaimTime() pulumi.StringPtrOutp
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例欠费关停（按量付费）或到期关停（包年包月）的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+// Time when the instance is stopped due to overdue payment (pay-as-you-go) or expiration (subscription) (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
 func (o InstanceChargeDetailPtrOutput) OverdueTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeDetail) *string {
 		if v == nil {
@@ -2158,7 +2158,7 @@ func (o InstanceChargeDetailPtrOutput) OverdueTime() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 预付费场景下的购买时长。
+// Purchase duration in prepaid scenarios.
 func (o InstanceChargeDetailPtrOutput) Period() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeDetail) *int {
 		if v == nil {
@@ -2168,7 +2168,7 @@ func (o InstanceChargeDetailPtrOutput) Period() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 预付费场景下的购买周期。Month：购买周期为月。默认。Year：购买周期为年。
+// Purchase cycle in prepaid scenarios. Month: monthly purchase cycle (default). Year: yearly purchase cycle.
 func (o InstanceChargeDetailPtrOutput) PeriodUnit() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeDetail) *string {
 		if v == nil {
@@ -2178,7 +2178,7 @@ func (o InstanceChargeDetailPtrOutput) PeriodUnit() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 临时升配的还原时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+// Restore time for temporary scaling (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
 func (o InstanceChargeDetailPtrOutput) TempModifyEndTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeDetail) *string {
 		if v == nil {
@@ -2188,7 +2188,7 @@ func (o InstanceChargeDetailPtrOutput) TempModifyEndTime() pulumi.StringPtrOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
-// 临时升配的开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+// Start time for temporary scaling (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ
 func (o InstanceChargeDetailPtrOutput) TempModifyStartTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceChargeDetail) *string {
 		if v == nil {
@@ -2199,17 +2199,17 @@ func (o InstanceChargeDetailPtrOutput) TempModifyStartTime() pulumi.StringPtrOut
 }
 
 type InstanceDisasterRecoveryInstance struct {
-	// 主实例与灾备实例之间同步任务的 ID。
+	// ID of synchronization tasks between primary and disaster recovery instances.
 	DtsTaskId *string `pulumi:"dtsTaskId"`
-	// 主实例与灾备实例之间同步任务的名称。
+	// Name of the synchronization task between the primary instance and the disaster recovery instance
 	DtsTaskName *string `pulumi:"dtsTaskName"`
-	// 主实例与灾备实例之间同步任务的状态。
+	// Status of synchronization tasks between the primary instance and the disaster recovery instance
 	DtsTaskStatus *string `pulumi:"dtsTaskStatus"`
-	// 灾备实例的 ID。
+	// Disaster recovery instance ID.
 	InstanceId *string `pulumi:"instanceId"`
-	// 灾备实例的名称。
+	// Name of disaster recovery instance.
 	InstanceName *string `pulumi:"instanceName"`
-	// 灾备实例与主实例之间的时延。
+	// Latency between the disaster recovery instance and the primary instance.
 	SecondsBehindMaster *int `pulumi:"secondsBehindMaster"`
 }
 
@@ -2225,17 +2225,17 @@ type InstanceDisasterRecoveryInstanceInput interface {
 }
 
 type InstanceDisasterRecoveryInstanceArgs struct {
-	// 主实例与灾备实例之间同步任务的 ID。
+	// ID of synchronization tasks between primary and disaster recovery instances.
 	DtsTaskId pulumi.StringPtrInput `pulumi:"dtsTaskId"`
-	// 主实例与灾备实例之间同步任务的名称。
+	// Name of the synchronization task between the primary instance and the disaster recovery instance
 	DtsTaskName pulumi.StringPtrInput `pulumi:"dtsTaskName"`
-	// 主实例与灾备实例之间同步任务的状态。
+	// Status of synchronization tasks between the primary instance and the disaster recovery instance
 	DtsTaskStatus pulumi.StringPtrInput `pulumi:"dtsTaskStatus"`
-	// 灾备实例的 ID。
+	// Disaster recovery instance ID.
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
-	// 灾备实例的名称。
+	// Name of disaster recovery instance.
 	InstanceName pulumi.StringPtrInput `pulumi:"instanceName"`
-	// 灾备实例与主实例之间的时延。
+	// Latency between the disaster recovery instance and the primary instance.
 	SecondsBehindMaster pulumi.IntPtrInput `pulumi:"secondsBehindMaster"`
 }
 
@@ -2290,32 +2290,32 @@ func (o InstanceDisasterRecoveryInstanceOutput) ToInstanceDisasterRecoveryInstan
 	return o
 }
 
-// 主实例与灾备实例之间同步任务的 ID。
+// ID of synchronization tasks between primary and disaster recovery instances.
 func (o InstanceDisasterRecoveryInstanceOutput) DtsTaskId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceDisasterRecoveryInstance) *string { return v.DtsTaskId }).(pulumi.StringPtrOutput)
 }
 
-// 主实例与灾备实例之间同步任务的名称。
+// Name of the synchronization task between the primary instance and the disaster recovery instance
 func (o InstanceDisasterRecoveryInstanceOutput) DtsTaskName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceDisasterRecoveryInstance) *string { return v.DtsTaskName }).(pulumi.StringPtrOutput)
 }
 
-// 主实例与灾备实例之间同步任务的状态。
+// Status of synchronization tasks between the primary instance and the disaster recovery instance
 func (o InstanceDisasterRecoveryInstanceOutput) DtsTaskStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceDisasterRecoveryInstance) *string { return v.DtsTaskStatus }).(pulumi.StringPtrOutput)
 }
 
-// 灾备实例的 ID。
+// Disaster recovery instance ID.
 func (o InstanceDisasterRecoveryInstanceOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceDisasterRecoveryInstance) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
 
-// 灾备实例的名称。
+// Name of disaster recovery instance.
 func (o InstanceDisasterRecoveryInstanceOutput) InstanceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceDisasterRecoveryInstance) *string { return v.InstanceName }).(pulumi.StringPtrOutput)
 }
 
-// 灾备实例与主实例之间的时延。
+// Latency between the disaster recovery instance and the primary instance.
 func (o InstanceDisasterRecoveryInstanceOutput) SecondsBehindMaster() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceDisasterRecoveryInstance) *int { return v.SecondsBehindMaster }).(pulumi.IntPtrOutput)
 }
@@ -2341,46 +2341,46 @@ func (o InstanceDisasterRecoveryInstanceArrayOutput) Index(i pulumi.IntInput) In
 }
 
 type InstanceEndpoint struct {
-	// 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入Disable：不自动加入（默认）。
+	// When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
 	AutoAddNewNodes *string `pulumi:"autoAddNewNodes"`
-	// 连接终端标签。
+	// Connection endpoint tag.
 	ConnectionInfoTags []string `pulumi:"connectionInfoTags"`
-	// 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。
+	// Connection endpoint type. Values: Proxy: proxy endpoint. Direct: direct endpoint
 	ConnectionMode *string `pulumi:"connectionMode"`
-	// 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。
+	// Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
 	ConnectionPoolType *string `pulumi:"connectionPoolType"`
-	// 连接终端的描述信息。
+	// Description of the connection endpoint
 	Description *string `pulumi:"description"`
-	// 是否启用连接保持。取值：true：是。false：否。
+	// Enable connection keep-alive. Options: true: yes. false: no
 	EnableConnectionPersistent *bool `pulumi:"enableConnectionPersistent"`
-	// 是否已开启全局只读，取值：Enable：开启。Disable：未开启。
+	// Is global read-only enabled? Values: Enable: enabled. Disable: not enabled.
 	EnableReadOnly *string `pulumi:"enableReadOnly"`
-	// 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+	// Whether to enable read/write separation. Values: Enable: Enabled. Disable: Not enabled.
 	EnableReadWriteSplitting *string `pulumi:"enableReadWriteSplitting"`
-	// 实例连接终端 ID。
+	// Instance connection endpoint ID.
 	EndpointId *string `pulumi:"endpointId"`
-	// 实例连接终端名称。
+	// Instance connection endpoint name.
 	EndpointName *string `pulumi:"endpointName"`
-	// 终端类型。取值为 Custom，自定义终端。
+	// Endpoint type. Value: Custom, custom endpoint.
 	EndpointType *string `pulumi:"endpointType"`
-	// 空闲连接回收功能是否开启。true：开启。false：不开启。
+	// Whether the idle connection recycling feature is enabled. true: Enabled. false: Not enabled.
 	IdleConnectionReclaim *bool `pulumi:"idleConnectionReclaim"`
-	// 是否开启事务分离。取值：true：是。false：否。
+	// Whether to enable transaction separation. Values: true: Yes. false: No.
 	ImplicitTransSplit *bool `pulumi:"implicitTransSplit"`
-	// 是否开启主节点路由。取值：true：是。false：否。
+	// Whether to enable primary node routing. Values: true: Yes. false: No.
 	MasterNodeRouting *bool `pulumi:"masterNodeRouting"`
-	// 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。
+	// Overload protection timeout. Value range: integer between 60 and 7200, in seconds.
 	MasterProtectorTimeout *int `pulumi:"masterProtectorTimeout"`
-	// 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+	// Multi-Statements mode for proxy endpoints. Values: Strict: strict mode (default). Loose: loose mode
 	MultiStatementsMode *string `pulumi:"multiStatementsMode"`
-	// 是否开启过载保护。取值：true：是。false：否。
+	// Overload protection enabled. Values: true: yes. false: no
 	OverloadProtection *bool `pulumi:"overloadProtection"`
-	// 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+	// Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, valid values are: LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, valid values are: Default: automatic allocation based on specification weights. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling.
 	ReadOnlyNodeDistributionType *string `pulumi:"readOnlyNodeDistributionType"`
-	// 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+	// Read-only node latency threshold. Value range: 1~3600, default is 30, unit: seconds.
 	ReadOnlyNodeMaxDelayTime *int                                 `pulumi:"readOnlyNodeMaxDelayTime"`
 	ReadOnlyNodeWeights      []InstanceEndpointReadOnlyNodeWeight `pulumi:"readOnlyNodeWeights"`
-	// 读写模式：ReadWrite：读写。ReadOnly：只读。
+	// Read/write mode: ReadWrite: read/write. ReadOnly: read-only
 	ReadWriteMode *string `pulumi:"readWriteMode"`
 }
 
@@ -2396,46 +2396,46 @@ type InstanceEndpointInput interface {
 }
 
 type InstanceEndpointArgs struct {
-	// 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入Disable：不自动加入（默认）。
+	// When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
 	AutoAddNewNodes pulumi.StringPtrInput `pulumi:"autoAddNewNodes"`
-	// 连接终端标签。
+	// Connection endpoint tag.
 	ConnectionInfoTags pulumi.StringArrayInput `pulumi:"connectionInfoTags"`
-	// 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。
+	// Connection endpoint type. Values: Proxy: proxy endpoint. Direct: direct endpoint
 	ConnectionMode pulumi.StringPtrInput `pulumi:"connectionMode"`
-	// 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。
+	// Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
 	ConnectionPoolType pulumi.StringPtrInput `pulumi:"connectionPoolType"`
-	// 连接终端的描述信息。
+	// Description of the connection endpoint
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// 是否启用连接保持。取值：true：是。false：否。
+	// Enable connection keep-alive. Options: true: yes. false: no
 	EnableConnectionPersistent pulumi.BoolPtrInput `pulumi:"enableConnectionPersistent"`
-	// 是否已开启全局只读，取值：Enable：开启。Disable：未开启。
+	// Is global read-only enabled? Values: Enable: enabled. Disable: not enabled.
 	EnableReadOnly pulumi.StringPtrInput `pulumi:"enableReadOnly"`
-	// 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+	// Whether to enable read/write separation. Values: Enable: Enabled. Disable: Not enabled.
 	EnableReadWriteSplitting pulumi.StringPtrInput `pulumi:"enableReadWriteSplitting"`
-	// 实例连接终端 ID。
+	// Instance connection endpoint ID.
 	EndpointId pulumi.StringPtrInput `pulumi:"endpointId"`
-	// 实例连接终端名称。
+	// Instance connection endpoint name.
 	EndpointName pulumi.StringPtrInput `pulumi:"endpointName"`
-	// 终端类型。取值为 Custom，自定义终端。
+	// Endpoint type. Value: Custom, custom endpoint.
 	EndpointType pulumi.StringPtrInput `pulumi:"endpointType"`
-	// 空闲连接回收功能是否开启。true：开启。false：不开启。
+	// Whether the idle connection recycling feature is enabled. true: Enabled. false: Not enabled.
 	IdleConnectionReclaim pulumi.BoolPtrInput `pulumi:"idleConnectionReclaim"`
-	// 是否开启事务分离。取值：true：是。false：否。
+	// Whether to enable transaction separation. Values: true: Yes. false: No.
 	ImplicitTransSplit pulumi.BoolPtrInput `pulumi:"implicitTransSplit"`
-	// 是否开启主节点路由。取值：true：是。false：否。
+	// Whether to enable primary node routing. Values: true: Yes. false: No.
 	MasterNodeRouting pulumi.BoolPtrInput `pulumi:"masterNodeRouting"`
-	// 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。
+	// Overload protection timeout. Value range: integer between 60 and 7200, in seconds.
 	MasterProtectorTimeout pulumi.IntPtrInput `pulumi:"masterProtectorTimeout"`
-	// 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+	// Multi-Statements mode for proxy endpoints. Values: Strict: strict mode (default). Loose: loose mode
 	MultiStatementsMode pulumi.StringPtrInput `pulumi:"multiStatementsMode"`
-	// 是否开启过载保护。取值：true：是。false：否。
+	// Overload protection enabled. Values: true: yes. false: no
 	OverloadProtection pulumi.BoolPtrInput `pulumi:"overloadProtection"`
-	// 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+	// Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, valid values are: LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, valid values are: Default: automatic allocation based on specification weights. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling.
 	ReadOnlyNodeDistributionType pulumi.StringPtrInput `pulumi:"readOnlyNodeDistributionType"`
-	// 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+	// Read-only node latency threshold. Value range: 1~3600, default is 30, unit: seconds.
 	ReadOnlyNodeMaxDelayTime pulumi.IntPtrInput                           `pulumi:"readOnlyNodeMaxDelayTime"`
 	ReadOnlyNodeWeights      InstanceEndpointReadOnlyNodeWeightArrayInput `pulumi:"readOnlyNodeWeights"`
-	// 读写模式：ReadWrite：读写。ReadOnly：只读。
+	// Read/write mode: ReadWrite: read/write. ReadOnly: read-only
 	ReadWriteMode pulumi.StringPtrInput `pulumi:"readWriteMode"`
 }
 
@@ -2490,97 +2490,97 @@ func (o InstanceEndpointOutput) ToInstanceEndpointOutputWithContext(ctx context.
 	return o
 }
 
-// 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入Disable：不自动加入（默认）。
+// When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
 func (o InstanceEndpointOutput) AutoAddNewNodes() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpoint) *string { return v.AutoAddNewNodes }).(pulumi.StringPtrOutput)
 }
 
-// 连接终端标签。
+// Connection endpoint tag.
 func (o InstanceEndpointOutput) ConnectionInfoTags() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v InstanceEndpoint) []string { return v.ConnectionInfoTags }).(pulumi.StringArrayOutput)
 }
 
-// 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。
+// Connection endpoint type. Values: Proxy: proxy endpoint. Direct: direct endpoint
 func (o InstanceEndpointOutput) ConnectionMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpoint) *string { return v.ConnectionMode }).(pulumi.StringPtrOutput)
 }
 
-// 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。
+// Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
 func (o InstanceEndpointOutput) ConnectionPoolType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpoint) *string { return v.ConnectionPoolType }).(pulumi.StringPtrOutput)
 }
 
-// 连接终端的描述信息。
+// Description of the connection endpoint
 func (o InstanceEndpointOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpoint) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// 是否启用连接保持。取值：true：是。false：否。
+// Enable connection keep-alive. Options: true: yes. false: no
 func (o InstanceEndpointOutput) EnableConnectionPersistent() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InstanceEndpoint) *bool { return v.EnableConnectionPersistent }).(pulumi.BoolPtrOutput)
 }
 
-// 是否已开启全局只读，取值：Enable：开启。Disable：未开启。
+// Is global read-only enabled? Values: Enable: enabled. Disable: not enabled.
 func (o InstanceEndpointOutput) EnableReadOnly() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpoint) *string { return v.EnableReadOnly }).(pulumi.StringPtrOutput)
 }
 
-// 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+// Whether to enable read/write separation. Values: Enable: Enabled. Disable: Not enabled.
 func (o InstanceEndpointOutput) EnableReadWriteSplitting() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpoint) *string { return v.EnableReadWriteSplitting }).(pulumi.StringPtrOutput)
 }
 
-// 实例连接终端 ID。
+// Instance connection endpoint ID.
 func (o InstanceEndpointOutput) EndpointId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpoint) *string { return v.EndpointId }).(pulumi.StringPtrOutput)
 }
 
-// 实例连接终端名称。
+// Instance connection endpoint name.
 func (o InstanceEndpointOutput) EndpointName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpoint) *string { return v.EndpointName }).(pulumi.StringPtrOutput)
 }
 
-// 终端类型。取值为 Custom，自定义终端。
+// Endpoint type. Value: Custom, custom endpoint.
 func (o InstanceEndpointOutput) EndpointType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpoint) *string { return v.EndpointType }).(pulumi.StringPtrOutput)
 }
 
-// 空闲连接回收功能是否开启。true：开启。false：不开启。
+// Whether the idle connection recycling feature is enabled. true: Enabled. false: Not enabled.
 func (o InstanceEndpointOutput) IdleConnectionReclaim() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InstanceEndpoint) *bool { return v.IdleConnectionReclaim }).(pulumi.BoolPtrOutput)
 }
 
-// 是否开启事务分离。取值：true：是。false：否。
+// Whether to enable transaction separation. Values: true: Yes. false: No.
 func (o InstanceEndpointOutput) ImplicitTransSplit() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InstanceEndpoint) *bool { return v.ImplicitTransSplit }).(pulumi.BoolPtrOutput)
 }
 
-// 是否开启主节点路由。取值：true：是。false：否。
+// Whether to enable primary node routing. Values: true: Yes. false: No.
 func (o InstanceEndpointOutput) MasterNodeRouting() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InstanceEndpoint) *bool { return v.MasterNodeRouting }).(pulumi.BoolPtrOutput)
 }
 
-// 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。
+// Overload protection timeout. Value range: integer between 60 and 7200, in seconds.
 func (o InstanceEndpointOutput) MasterProtectorTimeout() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceEndpoint) *int { return v.MasterProtectorTimeout }).(pulumi.IntPtrOutput)
 }
 
-// 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+// Multi-Statements mode for proxy endpoints. Values: Strict: strict mode (default). Loose: loose mode
 func (o InstanceEndpointOutput) MultiStatementsMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpoint) *string { return v.MultiStatementsMode }).(pulumi.StringPtrOutput)
 }
 
-// 是否开启过载保护。取值：true：是。false：否。
+// Overload protection enabled. Values: true: yes. false: no
 func (o InstanceEndpointOutput) OverloadProtection() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v InstanceEndpoint) *bool { return v.OverloadProtection }).(pulumi.BoolPtrOutput)
 }
 
-// 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+// Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, valid values are: LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, valid values are: Default: automatic allocation based on specification weights. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling.
 func (o InstanceEndpointOutput) ReadOnlyNodeDistributionType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpoint) *string { return v.ReadOnlyNodeDistributionType }).(pulumi.StringPtrOutput)
 }
 
-// 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+// Read-only node latency threshold. Value range: 1~3600, default is 30, unit: seconds.
 func (o InstanceEndpointOutput) ReadOnlyNodeMaxDelayTime() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceEndpoint) *int { return v.ReadOnlyNodeMaxDelayTime }).(pulumi.IntPtrOutput)
 }
@@ -2589,7 +2589,7 @@ func (o InstanceEndpointOutput) ReadOnlyNodeWeights() InstanceEndpointReadOnlyNo
 	return o.ApplyT(func(v InstanceEndpoint) []InstanceEndpointReadOnlyNodeWeight { return v.ReadOnlyNodeWeights }).(InstanceEndpointReadOnlyNodeWeightArrayOutput)
 }
 
-// 读写模式：ReadWrite：读写。ReadOnly：只读。
+// Read/write mode: ReadWrite: read/write. ReadOnly: read-only
 func (o InstanceEndpointOutput) ReadWriteMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpoint) *string { return v.ReadWriteMode }).(pulumi.StringPtrOutput)
 }
@@ -2615,11 +2615,11 @@ func (o InstanceEndpointArrayOutput) Index(i pulumi.IntInput) InstanceEndpointOu
 }
 
 type InstanceEndpointReadOnlyNodeWeight struct {
-	// 只读节点需要传入 NodeId，主节点无需传入。
+	// Read-only nodes require NodeId. Primary nodes do not require it
 	NodeId *string `pulumi:"nodeId"`
-	// 节点类型。Primary：主节点。ReadOnly：只读节点。
+	// Node type. Primary: primary node. ReadOnly: read-only node
 	NodeType *string `pulumi:"nodeType"`
-	// 节点的读权重，以 100 递增，最大值为 10000。
+	// Node read weight, increments of 100, maximum value is 10000.
 	Weight *int `pulumi:"weight"`
 }
 
@@ -2635,11 +2635,11 @@ type InstanceEndpointReadOnlyNodeWeightInput interface {
 }
 
 type InstanceEndpointReadOnlyNodeWeightArgs struct {
-	// 只读节点需要传入 NodeId，主节点无需传入。
+	// Read-only nodes require NodeId. Primary nodes do not require it
 	NodeId pulumi.StringPtrInput `pulumi:"nodeId"`
-	// 节点类型。Primary：主节点。ReadOnly：只读节点。
+	// Node type. Primary: primary node. ReadOnly: read-only node
 	NodeType pulumi.StringPtrInput `pulumi:"nodeType"`
-	// 节点的读权重，以 100 递增，最大值为 10000。
+	// Node read weight, increments of 100, maximum value is 10000.
 	Weight pulumi.IntPtrInput `pulumi:"weight"`
 }
 
@@ -2694,17 +2694,17 @@ func (o InstanceEndpointReadOnlyNodeWeightOutput) ToInstanceEndpointReadOnlyNode
 	return o
 }
 
-// 只读节点需要传入 NodeId，主节点无需传入。
+// Read-only nodes require NodeId. Primary nodes do not require it
 func (o InstanceEndpointReadOnlyNodeWeightOutput) NodeId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointReadOnlyNodeWeight) *string { return v.NodeId }).(pulumi.StringPtrOutput)
 }
 
-// 节点类型。Primary：主节点。ReadOnly：只读节点。
+// Node type. Primary: primary node. ReadOnly: read-only node
 func (o InstanceEndpointReadOnlyNodeWeightOutput) NodeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointReadOnlyNodeWeight) *string { return v.NodeType }).(pulumi.StringPtrOutput)
 }
 
-// 节点的读权重，以 100 递增，最大值为 10000。
+// Node read weight, increments of 100, maximum value is 10000.
 func (o InstanceEndpointReadOnlyNodeWeightOutput) Weight() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceEndpointReadOnlyNodeWeight) *int { return v.Weight }).(pulumi.IntPtrOutput)
 }
@@ -2730,11 +2730,11 @@ func (o InstanceEndpointReadOnlyNodeWeightArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type InstanceMaintenanceWindow struct {
-	// 可维护周期粒度，取值为 Week，周。
+	// Maintenance cycle granularity. Value: Week.
 	DayKind *string `pulumi:"dayKind"`
-	// 指定可维护时间段在每周生效的日期。可多选。Monday：周一。Tuesday：周二。Wednesday：周三。Thursday：周四。Friday：周五。Saturday：周六。Sunday：周日。
+	// Specify the days of the week when the maintenance window is active. Multiple selections allowed. Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday.
 	DayOfWeeks []string `pulumi:"dayOfWeeks"`
-	// 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。说明
+	// Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC). Note: Specifies the time period during which maintenance can be performed.
 	MaintenanceTime *string `pulumi:"maintenanceTime"`
 }
 
@@ -2750,11 +2750,11 @@ type InstanceMaintenanceWindowInput interface {
 }
 
 type InstanceMaintenanceWindowArgs struct {
-	// 可维护周期粒度，取值为 Week，周。
+	// Maintenance cycle granularity. Value: Week.
 	DayKind pulumi.StringPtrInput `pulumi:"dayKind"`
-	// 指定可维护时间段在每周生效的日期。可多选。Monday：周一。Tuesday：周二。Wednesday：周三。Thursday：周四。Friday：周五。Saturday：周六。Sunday：周日。
+	// Specify the days of the week when the maintenance window is active. Multiple selections allowed. Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday.
 	DayOfWeeks pulumi.StringArrayInput `pulumi:"dayOfWeeks"`
-	// 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。说明
+	// Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC). Note: Specifies the time period during which maintenance can be performed.
 	MaintenanceTime pulumi.StringPtrInput `pulumi:"maintenanceTime"`
 }
 
@@ -2835,17 +2835,17 @@ func (o InstanceMaintenanceWindowOutput) ToInstanceMaintenanceWindowPtrOutputWit
 	}).(InstanceMaintenanceWindowPtrOutput)
 }
 
-// 可维护周期粒度，取值为 Week，周。
+// Maintenance cycle granularity. Value: Week.
 func (o InstanceMaintenanceWindowOutput) DayKind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceMaintenanceWindow) *string { return v.DayKind }).(pulumi.StringPtrOutput)
 }
 
-// 指定可维护时间段在每周生效的日期。可多选。Monday：周一。Tuesday：周二。Wednesday：周三。Thursday：周四。Friday：周五。Saturday：周六。Sunday：周日。
+// Specify the days of the week when the maintenance window is active. Multiple selections allowed. Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday.
 func (o InstanceMaintenanceWindowOutput) DayOfWeeks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v InstanceMaintenanceWindow) []string { return v.DayOfWeeks }).(pulumi.StringArrayOutput)
 }
 
-// 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。说明
+// Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC). Note: Specifies the time period during which maintenance can be performed.
 func (o InstanceMaintenanceWindowOutput) MaintenanceTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceMaintenanceWindow) *string { return v.MaintenanceTime }).(pulumi.StringPtrOutput)
 }
@@ -2874,7 +2874,7 @@ func (o InstanceMaintenanceWindowPtrOutput) Elem() InstanceMaintenanceWindowOutp
 	}).(InstanceMaintenanceWindowOutput)
 }
 
-// 可维护周期粒度，取值为 Week，周。
+// Maintenance cycle granularity. Value: Week.
 func (o InstanceMaintenanceWindowPtrOutput) DayKind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceMaintenanceWindow) *string {
 		if v == nil {
@@ -2884,7 +2884,7 @@ func (o InstanceMaintenanceWindowPtrOutput) DayKind() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 指定可维护时间段在每周生效的日期。可多选。Monday：周一。Tuesday：周二。Wednesday：周三。Thursday：周四。Friday：周五。Saturday：周六。Sunday：周日。
+// Specify the days of the week when the maintenance window is active. Multiple selections allowed. Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday.
 func (o InstanceMaintenanceWindowPtrOutput) DayOfWeeks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *InstanceMaintenanceWindow) []string {
 		if v == nil {
@@ -2894,7 +2894,7 @@ func (o InstanceMaintenanceWindowPtrOutput) DayOfWeeks() pulumi.StringArrayOutpu
 	}).(pulumi.StringArrayOutput)
 }
 
-// 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。说明
+// Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC). Note: Specifies the time period during which maintenance can be performed.
 func (o InstanceMaintenanceWindowPtrOutput) MaintenanceTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceMaintenanceWindow) *string {
 		if v == nil {
@@ -2905,11 +2905,11 @@ func (o InstanceMaintenanceWindowPtrOutput) MaintenanceTime() pulumi.StringPtrOu
 }
 
 type InstanceNode struct {
-	// 节点规格。
+	// Node specification.
 	NodeSpec string `pulumi:"nodeSpec"`
-	// 节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。
+	// Node type. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node.
 	NodeType string `pulumi:"nodeType"`
-	// 可用区 ID。
+	// Availability zone ID
 	ZoneId string `pulumi:"zoneId"`
 }
 
@@ -2925,11 +2925,11 @@ type InstanceNodeInput interface {
 }
 
 type InstanceNodeArgs struct {
-	// 节点规格。
+	// Node specification.
 	NodeSpec pulumi.StringInput `pulumi:"nodeSpec"`
-	// 节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。
+	// Node type. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node.
 	NodeType pulumi.StringInput `pulumi:"nodeType"`
-	// 可用区 ID。
+	// Availability zone ID
 	ZoneId pulumi.StringInput `pulumi:"zoneId"`
 }
 
@@ -2984,17 +2984,17 @@ func (o InstanceNodeOutput) ToInstanceNodeOutputWithContext(ctx context.Context)
 	return o
 }
 
-// 节点规格。
+// Node specification.
 func (o InstanceNodeOutput) NodeSpec() pulumi.StringOutput {
 	return o.ApplyT(func(v InstanceNode) string { return v.NodeSpec }).(pulumi.StringOutput)
 }
 
-// 节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。
+// Node type. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node.
 func (o InstanceNodeOutput) NodeType() pulumi.StringOutput {
 	return o.ApplyT(func(v InstanceNode) string { return v.NodeType }).(pulumi.StringOutput)
 }
 
-// 可用区 ID。
+// Availability zone ID
 func (o InstanceNodeOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v InstanceNode) string { return v.ZoneId }).(pulumi.StringOutput)
 }
@@ -3020,9 +3020,9 @@ func (o InstanceNodeArrayOutput) Index(i pulumi.IntInput) InstanceNodeOutput {
 }
 
 type InstanceProxyDetail struct {
-	// 实例的数据库代理功能状态。取值：Creating：代理开启中。Running：代理运行中。Shutdown：代理已关闭。Deleting：代理关闭中
+	// Status of the instance database proxy feature. Values: Creating: proxy enabling. Running: proxy running. Shutdown: proxy disabled. Deleting: proxy disabling
 	DbProxyStatus *string `pulumi:"dbProxyStatus"`
-	// 实例的数据库代理服务的资源信息。
+	// Resource information for the instance's database proxy service
 	ProxyResourceInfo *InstanceProxyDetailProxyResourceInfo `pulumi:"proxyResourceInfo"`
 }
 
@@ -3038,9 +3038,9 @@ type InstanceProxyDetailInput interface {
 }
 
 type InstanceProxyDetailArgs struct {
-	// 实例的数据库代理功能状态。取值：Creating：代理开启中。Running：代理运行中。Shutdown：代理已关闭。Deleting：代理关闭中
+	// Status of the instance database proxy feature. Values: Creating: proxy enabling. Running: proxy running. Shutdown: proxy disabled. Deleting: proxy disabling
 	DbProxyStatus pulumi.StringPtrInput `pulumi:"dbProxyStatus"`
-	// 实例的数据库代理服务的资源信息。
+	// Resource information for the instance's database proxy service
 	ProxyResourceInfo InstanceProxyDetailProxyResourceInfoPtrInput `pulumi:"proxyResourceInfo"`
 }
 
@@ -3121,12 +3121,12 @@ func (o InstanceProxyDetailOutput) ToInstanceProxyDetailPtrOutputWithContext(ctx
 	}).(InstanceProxyDetailPtrOutput)
 }
 
-// 实例的数据库代理功能状态。取值：Creating：代理开启中。Running：代理运行中。Shutdown：代理已关闭。Deleting：代理关闭中
+// Status of the instance database proxy feature. Values: Creating: proxy enabling. Running: proxy running. Shutdown: proxy disabled. Deleting: proxy disabling
 func (o InstanceProxyDetailOutput) DbProxyStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceProxyDetail) *string { return v.DbProxyStatus }).(pulumi.StringPtrOutput)
 }
 
-// 实例的数据库代理服务的资源信息。
+// Resource information for the instance's database proxy service
 func (o InstanceProxyDetailOutput) ProxyResourceInfo() InstanceProxyDetailProxyResourceInfoPtrOutput {
 	return o.ApplyT(func(v InstanceProxyDetail) *InstanceProxyDetailProxyResourceInfo { return v.ProxyResourceInfo }).(InstanceProxyDetailProxyResourceInfoPtrOutput)
 }
@@ -3155,7 +3155,7 @@ func (o InstanceProxyDetailPtrOutput) Elem() InstanceProxyDetailOutput {
 	}).(InstanceProxyDetailOutput)
 }
 
-// 实例的数据库代理功能状态。取值：Creating：代理开启中。Running：代理运行中。Shutdown：代理已关闭。Deleting：代理关闭中
+// Status of the instance database proxy feature. Values: Creating: proxy enabling. Running: proxy running. Shutdown: proxy disabled. Deleting: proxy disabling
 func (o InstanceProxyDetailPtrOutput) DbProxyStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *InstanceProxyDetail) *string {
 		if v == nil {
@@ -3165,7 +3165,7 @@ func (o InstanceProxyDetailPtrOutput) DbProxyStatus() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 实例的数据库代理服务的资源信息。
+// Resource information for the instance's database proxy service
 func (o InstanceProxyDetailPtrOutput) ProxyResourceInfo() InstanceProxyDetailProxyResourceInfoPtrOutput {
 	return o.ApplyT(func(v *InstanceProxyDetail) *InstanceProxyDetailProxyResourceInfo {
 		if v == nil {
@@ -3176,11 +3176,11 @@ func (o InstanceProxyDetailPtrOutput) ProxyResourceInfo() InstanceProxyDetailPro
 }
 
 type InstanceProxyDetailProxyResourceInfo struct {
-	// 实例数据库代理服务当前的核数。
+	// Current number of cores for the instance database proxy service
 	CurrentProxyCpuNum *int `pulumi:"currentProxyCpuNum"`
-	// 用户可为数据库代理服务配置的最多核数。
+	// Maximum number of cores configurable for database proxy service.
 	MaxProxyCpuNum *int `pulumi:"maxProxyCpuNum"`
-	// 用户可为数据库代理服务配置的最少核数。
+	// Minimum number of CPU cores configurable for the database proxy service
 	MinProxyCpuNum *int `pulumi:"minProxyCpuNum"`
 }
 
@@ -3196,11 +3196,11 @@ type InstanceProxyDetailProxyResourceInfoInput interface {
 }
 
 type InstanceProxyDetailProxyResourceInfoArgs struct {
-	// 实例数据库代理服务当前的核数。
+	// Current number of cores for the instance database proxy service
 	CurrentProxyCpuNum pulumi.IntPtrInput `pulumi:"currentProxyCpuNum"`
-	// 用户可为数据库代理服务配置的最多核数。
+	// Maximum number of cores configurable for database proxy service.
 	MaxProxyCpuNum pulumi.IntPtrInput `pulumi:"maxProxyCpuNum"`
-	// 用户可为数据库代理服务配置的最少核数。
+	// Minimum number of CPU cores configurable for the database proxy service
 	MinProxyCpuNum pulumi.IntPtrInput `pulumi:"minProxyCpuNum"`
 }
 
@@ -3281,17 +3281,17 @@ func (o InstanceProxyDetailProxyResourceInfoOutput) ToInstanceProxyDetailProxyRe
 	}).(InstanceProxyDetailProxyResourceInfoPtrOutput)
 }
 
-// 实例数据库代理服务当前的核数。
+// Current number of cores for the instance database proxy service
 func (o InstanceProxyDetailProxyResourceInfoOutput) CurrentProxyCpuNum() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceProxyDetailProxyResourceInfo) *int { return v.CurrentProxyCpuNum }).(pulumi.IntPtrOutput)
 }
 
-// 用户可为数据库代理服务配置的最多核数。
+// Maximum number of cores configurable for database proxy service.
 func (o InstanceProxyDetailProxyResourceInfoOutput) MaxProxyCpuNum() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceProxyDetailProxyResourceInfo) *int { return v.MaxProxyCpuNum }).(pulumi.IntPtrOutput)
 }
 
-// 用户可为数据库代理服务配置的最少核数。
+// Minimum number of CPU cores configurable for the database proxy service
 func (o InstanceProxyDetailProxyResourceInfoOutput) MinProxyCpuNum() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceProxyDetailProxyResourceInfo) *int { return v.MinProxyCpuNum }).(pulumi.IntPtrOutput)
 }
@@ -3320,7 +3320,7 @@ func (o InstanceProxyDetailProxyResourceInfoPtrOutput) Elem() InstanceProxyDetai
 	}).(InstanceProxyDetailProxyResourceInfoOutput)
 }
 
-// 实例数据库代理服务当前的核数。
+// Current number of cores for the instance database proxy service
 func (o InstanceProxyDetailProxyResourceInfoPtrOutput) CurrentProxyCpuNum() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceProxyDetailProxyResourceInfo) *int {
 		if v == nil {
@@ -3330,7 +3330,7 @@ func (o InstanceProxyDetailProxyResourceInfoPtrOutput) CurrentProxyCpuNum() pulu
 	}).(pulumi.IntPtrOutput)
 }
 
-// 用户可为数据库代理服务配置的最多核数。
+// Maximum number of cores configurable for database proxy service.
 func (o InstanceProxyDetailProxyResourceInfoPtrOutput) MaxProxyCpuNum() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceProxyDetailProxyResourceInfo) *int {
 		if v == nil {
@@ -3340,7 +3340,7 @@ func (o InstanceProxyDetailProxyResourceInfoPtrOutput) MaxProxyCpuNum() pulumi.I
 	}).(pulumi.IntPtrOutput)
 }
 
-// 用户可为数据库代理服务配置的最少核数。
+// Minimum number of CPU cores configurable for the database proxy service
 func (o InstanceProxyDetailProxyResourceInfoPtrOutput) MinProxyCpuNum() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceProxyDetailProxyResourceInfo) *int {
 		if v == nil {
@@ -3351,9 +3351,9 @@ func (o InstanceProxyDetailProxyResourceInfoPtrOutput) MinProxyCpuNum() pulumi.I
 }
 
 type InstanceTag struct {
-	// 标签键。
+	// Tag key
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value *string `pulumi:"value"`
 }
 
@@ -3369,9 +3369,9 @@ type InstanceTagInput interface {
 }
 
 type InstanceTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -3426,12 +3426,12 @@ func (o InstanceTagOutput) ToInstanceTagOutputWithContext(ctx context.Context) I
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o InstanceTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value.
 func (o InstanceTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -3457,15 +3457,15 @@ func (o InstanceTagArrayOutput) Index(i pulumi.IntInput) InstanceTagOutput {
 }
 
 type GetAllowListAssociatedInstance struct {
-	// 已绑定当前白名单的实例 ID。
+	// Instance ID bound to the current allowlist.
 	InstanceId string `pulumi:"instanceId"`
-	// 已绑定当前白名单的实例名称。
+	// Instance name bound to the current allowlist.
 	InstanceName string `pulumi:"instanceName"`
-	// 实例状态。
+	// Instance status.
 	InstanceStatus string `pulumi:"instanceStatus"`
-	// 是否已同步最新的白名单。取值：true：是。false：否。说明在修改白名单时，如实例状态未处于运行中，白名单的修改不会立即同步到实例。
+	// Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
 	IsLatest bool `pulumi:"isLatest"`
-	// 实例所属的私有网络 ID。
+	// Private network ID of the instance.
 	Vpc string `pulumi:"vpc"`
 }
 
@@ -3481,15 +3481,15 @@ type GetAllowListAssociatedInstanceInput interface {
 }
 
 type GetAllowListAssociatedInstanceArgs struct {
-	// 已绑定当前白名单的实例 ID。
+	// Instance ID bound to the current allowlist.
 	InstanceId pulumi.StringInput `pulumi:"instanceId"`
-	// 已绑定当前白名单的实例名称。
+	// Instance name bound to the current allowlist.
 	InstanceName pulumi.StringInput `pulumi:"instanceName"`
-	// 实例状态。
+	// Instance status.
 	InstanceStatus pulumi.StringInput `pulumi:"instanceStatus"`
-	// 是否已同步最新的白名单。取值：true：是。false：否。说明在修改白名单时，如实例状态未处于运行中，白名单的修改不会立即同步到实例。
+	// Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
 	IsLatest pulumi.BoolInput `pulumi:"isLatest"`
-	// 实例所属的私有网络 ID。
+	// Private network ID of the instance.
 	Vpc pulumi.StringInput `pulumi:"vpc"`
 }
 
@@ -3544,27 +3544,27 @@ func (o GetAllowListAssociatedInstanceOutput) ToGetAllowListAssociatedInstanceOu
 	return o
 }
 
-// 已绑定当前白名单的实例 ID。
+// Instance ID bound to the current allowlist.
 func (o GetAllowListAssociatedInstanceOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 已绑定当前白名单的实例名称。
+// Instance name bound to the current allowlist.
 func (o GetAllowListAssociatedInstanceOutput) InstanceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.InstanceName }).(pulumi.StringOutput)
 }
 
-// 实例状态。
+// Instance status.
 func (o GetAllowListAssociatedInstanceOutput) InstanceStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.InstanceStatus }).(pulumi.StringOutput)
 }
 
-// 是否已同步最新的白名单。取值：true：是。false：否。说明在修改白名单时，如实例状态未处于运行中，白名单的修改不会立即同步到实例。
+// Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
 func (o GetAllowListAssociatedInstanceOutput) IsLatest() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetAllowListAssociatedInstance) bool { return v.IsLatest }).(pulumi.BoolOutput)
 }
 
-// 实例所属的私有网络 ID。
+// Private network ID of the instance.
 func (o GetAllowListAssociatedInstanceOutput) Vpc() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.Vpc }).(pulumi.StringOutput)
 }
@@ -3590,13 +3590,13 @@ func (o GetAllowListAssociatedInstanceArrayOutput) Index(i pulumi.IntInput) GetA
 }
 
 type GetAllowListSecurityGroupBindInfo struct {
-	// 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。说明在 CreateAllowList 接口中，SecurityGroupBindInfoObject 的 BindMode 和 SecurityGroupId 字段为必填项。
+	// Mode for associating security groups. Values: IngressDirectionIp: Inbound IP. AssociateEcsIp: Associate ECS IP. Note: In the CreateAllowList API, the BindMode and SecurityGroupId fields of SecurityGroupBindInfoObject are required.
 	BindMode string `pulumi:"bindMode"`
-	// 安全组的 IP 地址列表。
+	// Security group IP address list.
 	IpLists []string `pulumi:"ipLists"`
-	// 安全组 ID。
+	// Security group ID.
 	SecurityGroupId string `pulumi:"securityGroupId"`
-	// 安全组名称。
+	// Security group name.
 	SecurityGroupName string `pulumi:"securityGroupName"`
 }
 
@@ -3612,13 +3612,13 @@ type GetAllowListSecurityGroupBindInfoInput interface {
 }
 
 type GetAllowListSecurityGroupBindInfoArgs struct {
-	// 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。说明在 CreateAllowList 接口中，SecurityGroupBindInfoObject 的 BindMode 和 SecurityGroupId 字段为必填项。
+	// Mode for associating security groups. Values: IngressDirectionIp: Inbound IP. AssociateEcsIp: Associate ECS IP. Note: In the CreateAllowList API, the BindMode and SecurityGroupId fields of SecurityGroupBindInfoObject are required.
 	BindMode pulumi.StringInput `pulumi:"bindMode"`
-	// 安全组的 IP 地址列表。
+	// Security group IP address list.
 	IpLists pulumi.StringArrayInput `pulumi:"ipLists"`
-	// 安全组 ID。
+	// Security group ID.
 	SecurityGroupId pulumi.StringInput `pulumi:"securityGroupId"`
-	// 安全组名称。
+	// Security group name.
 	SecurityGroupName pulumi.StringInput `pulumi:"securityGroupName"`
 }
 
@@ -3673,22 +3673,22 @@ func (o GetAllowListSecurityGroupBindInfoOutput) ToGetAllowListSecurityGroupBind
 	return o
 }
 
-// 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。说明在 CreateAllowList 接口中，SecurityGroupBindInfoObject 的 BindMode 和 SecurityGroupId 字段为必填项。
+// Mode for associating security groups. Values: IngressDirectionIp: Inbound IP. AssociateEcsIp: Associate ECS IP. Note: In the CreateAllowList API, the BindMode and SecurityGroupId fields of SecurityGroupBindInfoObject are required.
 func (o GetAllowListSecurityGroupBindInfoOutput) BindMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAllowListSecurityGroupBindInfo) string { return v.BindMode }).(pulumi.StringOutput)
 }
 
-// 安全组的 IP 地址列表。
+// Security group IP address list.
 func (o GetAllowListSecurityGroupBindInfoOutput) IpLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAllowListSecurityGroupBindInfo) []string { return v.IpLists }).(pulumi.StringArrayOutput)
 }
 
-// 安全组 ID。
+// Security group ID.
 func (o GetAllowListSecurityGroupBindInfoOutput) SecurityGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAllowListSecurityGroupBindInfo) string { return v.SecurityGroupId }).(pulumi.StringOutput)
 }
 
-// 安全组名称。
+// Security group name.
 func (o GetAllowListSecurityGroupBindInfoOutput) SecurityGroupName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAllowListSecurityGroupBindInfo) string { return v.SecurityGroupName }).(pulumi.StringOutput)
 }
@@ -3714,9 +3714,9 @@ func (o GetAllowListSecurityGroupBindInfoArrayOutput) Index(i pulumi.IntInput) G
 }
 
 type GetBackupBackupMeta struct {
-	// 数据库名。
+	// Database name
 	Database string `pulumi:"database"`
-	// 表名列表。
+	// Table name list
 	Tables []string `pulumi:"tables"`
 }
 
@@ -3732,9 +3732,9 @@ type GetBackupBackupMetaInput interface {
 }
 
 type GetBackupBackupMetaArgs struct {
-	// 数据库名。
+	// Database name
 	Database pulumi.StringInput `pulumi:"database"`
-	// 表名列表。
+	// Table name list
 	Tables pulumi.StringArrayInput `pulumi:"tables"`
 }
 
@@ -3789,12 +3789,12 @@ func (o GetBackupBackupMetaOutput) ToGetBackupBackupMetaOutputWithContext(ctx co
 	return o
 }
 
-// 数据库名。
+// Database name
 func (o GetBackupBackupMetaOutput) Database() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackupBackupMeta) string { return v.Database }).(pulumi.StringOutput)
 }
 
-// 表名列表。
+// Table name list
 func (o GetBackupBackupMetaOutput) Tables() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetBackupBackupMeta) []string { return v.Tables }).(pulumi.StringArrayOutput)
 }
@@ -3820,9 +3820,9 @@ func (o GetBackupBackupMetaArrayOutput) Index(i pulumi.IntInput) GetBackupBackup
 }
 
 type GetBackupDbTableInfo struct {
-	// 数据库名。
+	// Database name
 	Database string `pulumi:"database"`
-	// 表名列表。
+	// Table name list
 	Tables []string `pulumi:"tables"`
 }
 
@@ -3838,9 +3838,9 @@ type GetBackupDbTableInfoInput interface {
 }
 
 type GetBackupDbTableInfoArgs struct {
-	// 数据库名。
+	// Database name
 	Database pulumi.StringInput `pulumi:"database"`
-	// 表名列表。
+	// Table name list
 	Tables pulumi.StringArrayInput `pulumi:"tables"`
 }
 
@@ -3895,12 +3895,12 @@ func (o GetBackupDbTableInfoOutput) ToGetBackupDbTableInfoOutputWithContext(ctx 
 	return o
 }
 
-// 数据库名。
+// Database name
 func (o GetBackupDbTableInfoOutput) Database() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackupDbTableInfo) string { return v.Database }).(pulumi.StringOutput)
 }
 
-// 表名列表。
+// Table name list
 func (o GetBackupDbTableInfoOutput) Tables() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetBackupDbTableInfo) []string { return v.Tables }).(pulumi.StringArrayOutput)
 }
@@ -3926,13 +3926,13 @@ func (o GetBackupDbTableInfoArrayOutput) Index(i pulumi.IntInput) GetBackupDbTab
 }
 
 type GetDatabaseDatabasePrivilege struct {
-	// 数据库账号名称。
+	// Database account name.
 	AccountName string `pulumi:"accountName"`
-	// 授予的账号权限类型，取值：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。
+	// Granted account privilege type. Values: ReadWrite (read and write privileges), ReadOnly (read-only privileges), DDLOnly (DDL privileges only), DMLOnly (DML privileges only), Custom (custom privileges).
 	AccountPrivilege string `pulumi:"accountPrivilege"`
-	// 数据库权限字符串。作为请求参数时，当 AccountPrivilege 取值为 Custom 时必填，取值：SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,REFERENCES,INDEX,ALTER,CREATE TEMPORARY TABLES,LOCK TABLES,EXECUTE,CREATE VIEW,SHOW VIEW,CREATE ROUTINE,ALTER ROUTINE,EVENT,TRIGGER,作为返回结果时，不管 AccountPrivilege 的值是否为 Custom，都会展示 AccountPrivilege 的详细权限。
+	// Database privilege string. When used as a request parameter, this field is required if AccountPrivilege is set to Custom. Values: SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, REFERENCES, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, EVENT, TRIGGER. When returned, the detailed privileges for AccountPrivilege are displayed regardless of whether AccountPrivilege is set to Custom.
 	AccountPrivilegeDetail string `pulumi:"accountPrivilegeDetail"`
-	// 指定的数据库账号可以访问数据库的 IP 地址。默认值为 %。若指定 Host 为 %，允许该账号从任意 IP 地址访问数据库。若指定 Host 为 192.10.10.%，则表示该账号可从 192.10.10.0~192.10.10.255 之间的 IP 地址访问数据库。指定的 Host 需要添加在实例所绑定的白名单中，
+	// The specified database account can access the database from the IP address. Default value: %. If Host is set to %, the account can access the database from any IP address. If Host is set to 192.10.10.%, the account can access the database from IP addresses between 192.10.10.0 and 192.10.10.255. The specified Host must be added to the instance's allowlist.
 	Host string `pulumi:"host"`
 }
 
@@ -3948,13 +3948,13 @@ type GetDatabaseDatabasePrivilegeInput interface {
 }
 
 type GetDatabaseDatabasePrivilegeArgs struct {
-	// 数据库账号名称。
+	// Database account name.
 	AccountName pulumi.StringInput `pulumi:"accountName"`
-	// 授予的账号权限类型，取值：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。
+	// Granted account privilege type. Values: ReadWrite (read and write privileges), ReadOnly (read-only privileges), DDLOnly (DDL privileges only), DMLOnly (DML privileges only), Custom (custom privileges).
 	AccountPrivilege pulumi.StringInput `pulumi:"accountPrivilege"`
-	// 数据库权限字符串。作为请求参数时，当 AccountPrivilege 取值为 Custom 时必填，取值：SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,REFERENCES,INDEX,ALTER,CREATE TEMPORARY TABLES,LOCK TABLES,EXECUTE,CREATE VIEW,SHOW VIEW,CREATE ROUTINE,ALTER ROUTINE,EVENT,TRIGGER,作为返回结果时，不管 AccountPrivilege 的值是否为 Custom，都会展示 AccountPrivilege 的详细权限。
+	// Database privilege string. When used as a request parameter, this field is required if AccountPrivilege is set to Custom. Values: SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, REFERENCES, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, EVENT, TRIGGER. When returned, the detailed privileges for AccountPrivilege are displayed regardless of whether AccountPrivilege is set to Custom.
 	AccountPrivilegeDetail pulumi.StringInput `pulumi:"accountPrivilegeDetail"`
-	// 指定的数据库账号可以访问数据库的 IP 地址。默认值为 %。若指定 Host 为 %，允许该账号从任意 IP 地址访问数据库。若指定 Host 为 192.10.10.%，则表示该账号可从 192.10.10.0~192.10.10.255 之间的 IP 地址访问数据库。指定的 Host 需要添加在实例所绑定的白名单中，
+	// The specified database account can access the database from the IP address. Default value: %. If Host is set to %, the account can access the database from any IP address. If Host is set to 192.10.10.%, the account can access the database from IP addresses between 192.10.10.0 and 192.10.10.255. The specified Host must be added to the instance's allowlist.
 	Host pulumi.StringInput `pulumi:"host"`
 }
 
@@ -4009,22 +4009,22 @@ func (o GetDatabaseDatabasePrivilegeOutput) ToGetDatabaseDatabasePrivilegeOutput
 	return o
 }
 
-// 数据库账号名称。
+// Database account name.
 func (o GetDatabaseDatabasePrivilegeOutput) AccountName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseDatabasePrivilege) string { return v.AccountName }).(pulumi.StringOutput)
 }
 
-// 授予的账号权限类型，取值：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。
+// Granted account privilege type. Values: ReadWrite (read and write privileges), ReadOnly (read-only privileges), DDLOnly (DDL privileges only), DMLOnly (DML privileges only), Custom (custom privileges).
 func (o GetDatabaseDatabasePrivilegeOutput) AccountPrivilege() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseDatabasePrivilege) string { return v.AccountPrivilege }).(pulumi.StringOutput)
 }
 
-// 数据库权限字符串。作为请求参数时，当 AccountPrivilege 取值为 Custom 时必填，取值：SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,REFERENCES,INDEX,ALTER,CREATE TEMPORARY TABLES,LOCK TABLES,EXECUTE,CREATE VIEW,SHOW VIEW,CREATE ROUTINE,ALTER ROUTINE,EVENT,TRIGGER,作为返回结果时，不管 AccountPrivilege 的值是否为 Custom，都会展示 AccountPrivilege 的详细权限。
+// Database privilege string. When used as a request parameter, this field is required if AccountPrivilege is set to Custom. Values: SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, REFERENCES, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, EVENT, TRIGGER. When returned, the detailed privileges for AccountPrivilege are displayed regardless of whether AccountPrivilege is set to Custom.
 func (o GetDatabaseDatabasePrivilegeOutput) AccountPrivilegeDetail() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseDatabasePrivilege) string { return v.AccountPrivilegeDetail }).(pulumi.StringOutput)
 }
 
-// 指定的数据库账号可以访问数据库的 IP 地址。默认值为 %。若指定 Host 为 %，允许该账号从任意 IP 地址访问数据库。若指定 Host 为 192.10.10.%，则表示该账号可从 192.10.10.0~192.10.10.255 之间的 IP 地址访问数据库。指定的 Host 需要添加在实例所绑定的白名单中，
+// The specified database account can access the database from the IP address. Default value: %. If Host is set to %, the account can access the database from any IP address. If Host is set to 192.10.10.%, the account can access the database from IP addresses between 192.10.10.0 and 192.10.10.255. The specified Host must be added to the instance's allowlist.
 func (o GetDatabaseDatabasePrivilegeOutput) Host() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseDatabasePrivilege) string { return v.Host }).(pulumi.StringOutput)
 }
@@ -4050,11 +4050,11 @@ func (o GetDatabaseDatabasePrivilegeArrayOutput) Index(i pulumi.IntInput) GetDat
 }
 
 type GetDbAccountAccountPrivilege struct {
-	// 数据库权限的类型。取值范围：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。Global：全局权限。None：清除账号权限。说明该参数作为请求参数时，有以下注意事项：仅支持在作为请求参数时允许取值为 Global 和 None。权限类型为单选，传多个时会报错。仅 GrantDBAccountPrivilege 接口支持为 AccountPrivilege 取值 None。当 AccountPrivilege 取值 None 时，如果 DBName 的取值为空字符串，则清除账号的所有全局权限。如果 DBName 的取值为指定数据库，则清除账号在该数据库的所有权限。
+	// Type of database permission. Value options: ReadWrite: read and write permission. ReadOnly: read-only permission. DDLOnly: DDL permission only. DMLOnly: DML permission only. Custom: custom permission. Global: global permission. None: clear account permission. Note: When used as a request parameter, pay attention to the following: Only Global and None are allowed as values when used as request parameters. Permission type is single-select; passing multiple values will result in an error. Only the GrantDBAccountPrivilege API supports None as a value for AccountPrivilege. When AccountPrivilege is set to None and DBName is an empty string, all global permissions for the account are cleared. If DBName is set to a specific database, all permissions for the account in that database are cleared.
 	AccountPrivilege string `pulumi:"accountPrivilege"`
-	// 账号的权限信息。当 AccountPrivilege 取值为 Custom 时，该字段的取值范围如下：SELECT INSERT UPDATE DELETE CREATE DROP REFERENCES INDEX ALTER CREATE TEMPORARY TABLES LOCK TABLES EXECUTE CREATE VIEW SHOW VIEW EVENT TRIGGER CREATE ROUTINE ALTER ROUTINE 当 AccountPrivilege 取值为 Global 时，该字段的取值范围如下：PROCESS REPLICATION SLAVE REPLICATION CLIENT SELECT INSERT UPDATE DELETE CREATE DROP RELOAD REFERENCES INDEX ALTER LOCK TABLES EXECUTE CREATE VIEW SHOW VIEW CREATE ROUTINE ALTER ROUTINE CREATE USER EVENT TRIGGER SHOW DATABASES CREATE TEMPORARY TABLES 说明  作为请求参数时，在 AccountPrivilege 取值为 Custom 时必填。 在 CreateDBAccount 接口中，会自动为账号赋予 REPLICATION SLAVE、PROCESS 和 REPLICATION CLIENT 全局权限。 可取多个值。使用英文逗号（,）分隔多个权限。写入方式为覆盖方式。
+	// Account privilege information. When AccountPrivilege is set to Custom, the valid values for this field are: SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, REFERENCES, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, EVENT, TRIGGER, CREATE ROUTINE, ALTER ROUTINE. When AccountPrivilege is set to Global, the valid values for this field are: PROCESS, REPLICATION SLAVE, REPLICATION CLIENT, SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, REFERENCES, INDEX, ALTER, LOCK TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, SHOW DATABASES, CREATE TEMPORARY TABLES. Note: When used as a request parameter, this field is required if AccountPrivilege is set to Custom. In the CreateDBAccount API, REPLICATION SLAVE, PROCESS, and REPLICATION CLIENT global privileges are automatically granted to the account. Multiple values can be specified, separated by commas (,). The write mode is overwrite.
 	AccountPrivilegeDetails []string `pulumi:"accountPrivilegeDetails"`
-	// 需修改账号授权的或账号已有权限的数据库名称。说明在 CreateDBAccount 和 GrantDBAccountPrivilege 接口中作为请求参数时，需确认 DBName 对应的数据库已存在。进行全局授权的修改时，应为 DBName 传空字符。
+	// The name of the database for which account authorization needs to be modified or for which the account already has privileges. Note: When used as a request parameter in the CreateDBAccount and GrantDBAccountPrivilege APIs, ensure that the database corresponding to DBName already exists. For global privilege modifications, set DBName to an empty string.
 	DbName string `pulumi:"dbName"`
 }
 
@@ -4070,11 +4070,11 @@ type GetDbAccountAccountPrivilegeInput interface {
 }
 
 type GetDbAccountAccountPrivilegeArgs struct {
-	// 数据库权限的类型。取值范围：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。Global：全局权限。None：清除账号权限。说明该参数作为请求参数时，有以下注意事项：仅支持在作为请求参数时允许取值为 Global 和 None。权限类型为单选，传多个时会报错。仅 GrantDBAccountPrivilege 接口支持为 AccountPrivilege 取值 None。当 AccountPrivilege 取值 None 时，如果 DBName 的取值为空字符串，则清除账号的所有全局权限。如果 DBName 的取值为指定数据库，则清除账号在该数据库的所有权限。
+	// Type of database permission. Value options: ReadWrite: read and write permission. ReadOnly: read-only permission. DDLOnly: DDL permission only. DMLOnly: DML permission only. Custom: custom permission. Global: global permission. None: clear account permission. Note: When used as a request parameter, pay attention to the following: Only Global and None are allowed as values when used as request parameters. Permission type is single-select; passing multiple values will result in an error. Only the GrantDBAccountPrivilege API supports None as a value for AccountPrivilege. When AccountPrivilege is set to None and DBName is an empty string, all global permissions for the account are cleared. If DBName is set to a specific database, all permissions for the account in that database are cleared.
 	AccountPrivilege pulumi.StringInput `pulumi:"accountPrivilege"`
-	// 账号的权限信息。当 AccountPrivilege 取值为 Custom 时，该字段的取值范围如下：SELECT INSERT UPDATE DELETE CREATE DROP REFERENCES INDEX ALTER CREATE TEMPORARY TABLES LOCK TABLES EXECUTE CREATE VIEW SHOW VIEW EVENT TRIGGER CREATE ROUTINE ALTER ROUTINE 当 AccountPrivilege 取值为 Global 时，该字段的取值范围如下：PROCESS REPLICATION SLAVE REPLICATION CLIENT SELECT INSERT UPDATE DELETE CREATE DROP RELOAD REFERENCES INDEX ALTER LOCK TABLES EXECUTE CREATE VIEW SHOW VIEW CREATE ROUTINE ALTER ROUTINE CREATE USER EVENT TRIGGER SHOW DATABASES CREATE TEMPORARY TABLES 说明  作为请求参数时，在 AccountPrivilege 取值为 Custom 时必填。 在 CreateDBAccount 接口中，会自动为账号赋予 REPLICATION SLAVE、PROCESS 和 REPLICATION CLIENT 全局权限。 可取多个值。使用英文逗号（,）分隔多个权限。写入方式为覆盖方式。
+	// Account privilege information. When AccountPrivilege is set to Custom, the valid values for this field are: SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, REFERENCES, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, EVENT, TRIGGER, CREATE ROUTINE, ALTER ROUTINE. When AccountPrivilege is set to Global, the valid values for this field are: PROCESS, REPLICATION SLAVE, REPLICATION CLIENT, SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, REFERENCES, INDEX, ALTER, LOCK TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, SHOW DATABASES, CREATE TEMPORARY TABLES. Note: When used as a request parameter, this field is required if AccountPrivilege is set to Custom. In the CreateDBAccount API, REPLICATION SLAVE, PROCESS, and REPLICATION CLIENT global privileges are automatically granted to the account. Multiple values can be specified, separated by commas (,). The write mode is overwrite.
 	AccountPrivilegeDetails pulumi.StringArrayInput `pulumi:"accountPrivilegeDetails"`
-	// 需修改账号授权的或账号已有权限的数据库名称。说明在 CreateDBAccount 和 GrantDBAccountPrivilege 接口中作为请求参数时，需确认 DBName 对应的数据库已存在。进行全局授权的修改时，应为 DBName 传空字符。
+	// The name of the database for which account authorization needs to be modified or for which the account already has privileges. Note: When used as a request parameter in the CreateDBAccount and GrantDBAccountPrivilege APIs, ensure that the database corresponding to DBName already exists. For global privilege modifications, set DBName to an empty string.
 	DbName pulumi.StringInput `pulumi:"dbName"`
 }
 
@@ -4129,17 +4129,17 @@ func (o GetDbAccountAccountPrivilegeOutput) ToGetDbAccountAccountPrivilegeOutput
 	return o
 }
 
-// 数据库权限的类型。取值范围：ReadWrite：读写权限。ReadOnly：只读权限。DDLOnly：仅 DDL 权限。DMLOnly：仅 DML 权限。Custom：自定义权限。Global：全局权限。None：清除账号权限。说明该参数作为请求参数时，有以下注意事项：仅支持在作为请求参数时允许取值为 Global 和 None。权限类型为单选，传多个时会报错。仅 GrantDBAccountPrivilege 接口支持为 AccountPrivilege 取值 None。当 AccountPrivilege 取值 None 时，如果 DBName 的取值为空字符串，则清除账号的所有全局权限。如果 DBName 的取值为指定数据库，则清除账号在该数据库的所有权限。
+// Type of database permission. Value options: ReadWrite: read and write permission. ReadOnly: read-only permission. DDLOnly: DDL permission only. DMLOnly: DML permission only. Custom: custom permission. Global: global permission. None: clear account permission. Note: When used as a request parameter, pay attention to the following: Only Global and None are allowed as values when used as request parameters. Permission type is single-select; passing multiple values will result in an error. Only the GrantDBAccountPrivilege API supports None as a value for AccountPrivilege. When AccountPrivilege is set to None and DBName is an empty string, all global permissions for the account are cleared. If DBName is set to a specific database, all permissions for the account in that database are cleared.
 func (o GetDbAccountAccountPrivilegeOutput) AccountPrivilege() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbAccountAccountPrivilege) string { return v.AccountPrivilege }).(pulumi.StringOutput)
 }
 
-// 账号的权限信息。当 AccountPrivilege 取值为 Custom 时，该字段的取值范围如下：SELECT INSERT UPDATE DELETE CREATE DROP REFERENCES INDEX ALTER CREATE TEMPORARY TABLES LOCK TABLES EXECUTE CREATE VIEW SHOW VIEW EVENT TRIGGER CREATE ROUTINE ALTER ROUTINE 当 AccountPrivilege 取值为 Global 时，该字段的取值范围如下：PROCESS REPLICATION SLAVE REPLICATION CLIENT SELECT INSERT UPDATE DELETE CREATE DROP RELOAD REFERENCES INDEX ALTER LOCK TABLES EXECUTE CREATE VIEW SHOW VIEW CREATE ROUTINE ALTER ROUTINE CREATE USER EVENT TRIGGER SHOW DATABASES CREATE TEMPORARY TABLES 说明  作为请求参数时，在 AccountPrivilege 取值为 Custom 时必填。 在 CreateDBAccount 接口中，会自动为账号赋予 REPLICATION SLAVE、PROCESS 和 REPLICATION CLIENT 全局权限。 可取多个值。使用英文逗号（,）分隔多个权限。写入方式为覆盖方式。
+// Account privilege information. When AccountPrivilege is set to Custom, the valid values for this field are: SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, REFERENCES, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, EVENT, TRIGGER, CREATE ROUTINE, ALTER ROUTINE. When AccountPrivilege is set to Global, the valid values for this field are: PROCESS, REPLICATION SLAVE, REPLICATION CLIENT, SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, REFERENCES, INDEX, ALTER, LOCK TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, SHOW DATABASES, CREATE TEMPORARY TABLES. Note: When used as a request parameter, this field is required if AccountPrivilege is set to Custom. In the CreateDBAccount API, REPLICATION SLAVE, PROCESS, and REPLICATION CLIENT global privileges are automatically granted to the account. Multiple values can be specified, separated by commas (,). The write mode is overwrite.
 func (o GetDbAccountAccountPrivilegeOutput) AccountPrivilegeDetails() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDbAccountAccountPrivilege) []string { return v.AccountPrivilegeDetails }).(pulumi.StringArrayOutput)
 }
 
-// 需修改账号授权的或账号已有权限的数据库名称。说明在 CreateDBAccount 和 GrantDBAccountPrivilege 接口中作为请求参数时，需确认 DBName 对应的数据库已存在。进行全局授权的修改时，应为 DBName 传空字符。
+// The name of the database for which account authorization needs to be modified or for which the account already has privileges. Note: When used as a request parameter in the CreateDBAccount and GrantDBAccountPrivilege APIs, ensure that the database corresponding to DBName already exists. For global privilege modifications, set DBName to an empty string.
 func (o GetDbAccountAccountPrivilegeOutput) DbName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbAccountAccountPrivilege) string { return v.DbName }).(pulumi.StringOutput)
 }
@@ -4165,11 +4165,11 @@ func (o GetDbAccountAccountPrivilegeArrayOutput) Index(i pulumi.IntInput) GetDbA
 }
 
 type GetDbAccountTableColumnPrivilege struct {
-	// 账号的列权限信息。
+	// Account column permission information.
 	ColumnPrivileges []GetDbAccountTableColumnPrivilegeColumnPrivilege `pulumi:"columnPrivileges"`
-	// 对账号进行权限设置的表所属的数据库的名称。
+	// Name of the database to which the table belongs for setting permissions for the account.
 	DbName string `pulumi:"dbName"`
-	// 账号的表权限信息。
+	// Account table permission information.
 	TablePrivileges []GetDbAccountTableColumnPrivilegeTablePrivilege `pulumi:"tablePrivileges"`
 }
 
@@ -4185,11 +4185,11 @@ type GetDbAccountTableColumnPrivilegeInput interface {
 }
 
 type GetDbAccountTableColumnPrivilegeArgs struct {
-	// 账号的列权限信息。
+	// Account column permission information.
 	ColumnPrivileges GetDbAccountTableColumnPrivilegeColumnPrivilegeArrayInput `pulumi:"columnPrivileges"`
-	// 对账号进行权限设置的表所属的数据库的名称。
+	// Name of the database to which the table belongs for setting permissions for the account.
 	DbName pulumi.StringInput `pulumi:"dbName"`
-	// 账号的表权限信息。
+	// Account table permission information.
 	TablePrivileges GetDbAccountTableColumnPrivilegeTablePrivilegeArrayInput `pulumi:"tablePrivileges"`
 }
 
@@ -4244,19 +4244,19 @@ func (o GetDbAccountTableColumnPrivilegeOutput) ToGetDbAccountTableColumnPrivile
 	return o
 }
 
-// 账号的列权限信息。
+// Account column permission information.
 func (o GetDbAccountTableColumnPrivilegeOutput) ColumnPrivileges() GetDbAccountTableColumnPrivilegeColumnPrivilegeArrayOutput {
 	return o.ApplyT(func(v GetDbAccountTableColumnPrivilege) []GetDbAccountTableColumnPrivilegeColumnPrivilege {
 		return v.ColumnPrivileges
 	}).(GetDbAccountTableColumnPrivilegeColumnPrivilegeArrayOutput)
 }
 
-// 对账号进行权限设置的表所属的数据库的名称。
+// Name of the database to which the table belongs for setting permissions for the account.
 func (o GetDbAccountTableColumnPrivilegeOutput) DbName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbAccountTableColumnPrivilege) string { return v.DbName }).(pulumi.StringOutput)
 }
 
-// 账号的表权限信息。
+// Account table permission information.
 func (o GetDbAccountTableColumnPrivilegeOutput) TablePrivileges() GetDbAccountTableColumnPrivilegeTablePrivilegeArrayOutput {
 	return o.ApplyT(func(v GetDbAccountTableColumnPrivilege) []GetDbAccountTableColumnPrivilegeTablePrivilege {
 		return v.TablePrivileges
@@ -4284,11 +4284,11 @@ func (o GetDbAccountTableColumnPrivilegeArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetDbAccountTableColumnPrivilegeColumnPrivilege struct {
-	// 对账号进行列权限设置的权限信息。取值（可多选）：INSERT REFERENCES SELECT UPDATE说明多个权限之间使用英文逗号（,）分隔。
+	// Permission information for setting column permissions for the account. Values (multiple selections allowed): INSERT, REFERENCES, SELECT, UPDATE. Note: Use commas (,) to separate multiple permissions.
 	AccountPrivilegeDetails []string `pulumi:"accountPrivilegeDetails"`
-	// 对账号进行列权限设置的列的名称。
+	// Name of the column for setting column permissions for the account.
 	ColumnName string `pulumi:"columnName"`
-	// 对账号进行列权限设置的表所属的数据库的名称。
+	// Name of the database to which the table belongs for setting column permissions for the account.
 	TableName string `pulumi:"tableName"`
 }
 
@@ -4304,11 +4304,11 @@ type GetDbAccountTableColumnPrivilegeColumnPrivilegeInput interface {
 }
 
 type GetDbAccountTableColumnPrivilegeColumnPrivilegeArgs struct {
-	// 对账号进行列权限设置的权限信息。取值（可多选）：INSERT REFERENCES SELECT UPDATE说明多个权限之间使用英文逗号（,）分隔。
+	// Permission information for setting column permissions for the account. Values (multiple selections allowed): INSERT, REFERENCES, SELECT, UPDATE. Note: Use commas (,) to separate multiple permissions.
 	AccountPrivilegeDetails pulumi.StringArrayInput `pulumi:"accountPrivilegeDetails"`
-	// 对账号进行列权限设置的列的名称。
+	// Name of the column for setting column permissions for the account.
 	ColumnName pulumi.StringInput `pulumi:"columnName"`
-	// 对账号进行列权限设置的表所属的数据库的名称。
+	// Name of the database to which the table belongs for setting column permissions for the account.
 	TableName pulumi.StringInput `pulumi:"tableName"`
 }
 
@@ -4363,17 +4363,17 @@ func (o GetDbAccountTableColumnPrivilegeColumnPrivilegeOutput) ToGetDbAccountTab
 	return o
 }
 
-// 对账号进行列权限设置的权限信息。取值（可多选）：INSERT REFERENCES SELECT UPDATE说明多个权限之间使用英文逗号（,）分隔。
+// Permission information for setting column permissions for the account. Values (multiple selections allowed): INSERT, REFERENCES, SELECT, UPDATE. Note: Use commas (,) to separate multiple permissions.
 func (o GetDbAccountTableColumnPrivilegeColumnPrivilegeOutput) AccountPrivilegeDetails() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDbAccountTableColumnPrivilegeColumnPrivilege) []string { return v.AccountPrivilegeDetails }).(pulumi.StringArrayOutput)
 }
 
-// 对账号进行列权限设置的列的名称。
+// Name of the column for setting column permissions for the account.
 func (o GetDbAccountTableColumnPrivilegeColumnPrivilegeOutput) ColumnName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbAccountTableColumnPrivilegeColumnPrivilege) string { return v.ColumnName }).(pulumi.StringOutput)
 }
 
-// 对账号进行列权限设置的表所属的数据库的名称。
+// Name of the database to which the table belongs for setting column permissions for the account.
 func (o GetDbAccountTableColumnPrivilegeColumnPrivilegeOutput) TableName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbAccountTableColumnPrivilegeColumnPrivilege) string { return v.TableName }).(pulumi.StringOutput)
 }
@@ -4399,9 +4399,9 @@ func (o GetDbAccountTableColumnPrivilegeColumnPrivilegeArrayOutput) Index(i pulu
 }
 
 type GetDbAccountTableColumnPrivilegeTablePrivilege struct {
-	// 账号的表权限。取值范围（可多选）：ALTER CREATE DELETE DROP INDEX INSERT SELECT SHOW VIEW TRIGGER UPDATE CREATE VIEW REFERENCES 说明多个权限之间使用英文逗号（,）分隔。
+	// Account table permissions. Value options (multiple selections allowed): ALTER, CREATE, DELETE, DROP, INDEX, INSERT, SELECT, SHOW, VIEW, TRIGGER, UPDATE, CREATE VIEW, REFERENCES. Note: Use commas (,) to separate multiple permissions.
 	AccountPrivilegeDetails []string `pulumi:"accountPrivilegeDetails"`
-	// 对账号进行权限设置的表的名称。
+	// Name of the table for setting permissions for the account.
 	TableName string `pulumi:"tableName"`
 }
 
@@ -4417,9 +4417,9 @@ type GetDbAccountTableColumnPrivilegeTablePrivilegeInput interface {
 }
 
 type GetDbAccountTableColumnPrivilegeTablePrivilegeArgs struct {
-	// 账号的表权限。取值范围（可多选）：ALTER CREATE DELETE DROP INDEX INSERT SELECT SHOW VIEW TRIGGER UPDATE CREATE VIEW REFERENCES 说明多个权限之间使用英文逗号（,）分隔。
+	// Account table permissions. Value options (multiple selections allowed): ALTER, CREATE, DELETE, DROP, INDEX, INSERT, SELECT, SHOW, VIEW, TRIGGER, UPDATE, CREATE VIEW, REFERENCES. Note: Use commas (,) to separate multiple permissions.
 	AccountPrivilegeDetails pulumi.StringArrayInput `pulumi:"accountPrivilegeDetails"`
-	// 对账号进行权限设置的表的名称。
+	// Name of the table for setting permissions for the account.
 	TableName pulumi.StringInput `pulumi:"tableName"`
 }
 
@@ -4474,12 +4474,12 @@ func (o GetDbAccountTableColumnPrivilegeTablePrivilegeOutput) ToGetDbAccountTabl
 	return o
 }
 
-// 账号的表权限。取值范围（可多选）：ALTER CREATE DELETE DROP INDEX INSERT SELECT SHOW VIEW TRIGGER UPDATE CREATE VIEW REFERENCES 说明多个权限之间使用英文逗号（,）分隔。
+// Account table permissions. Value options (multiple selections allowed): ALTER, CREATE, DELETE, DROP, INDEX, INSERT, SELECT, SHOW, VIEW, TRIGGER, UPDATE, CREATE VIEW, REFERENCES. Note: Use commas (,) to separate multiple permissions.
 func (o GetDbAccountTableColumnPrivilegeTablePrivilegeOutput) AccountPrivilegeDetails() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDbAccountTableColumnPrivilegeTablePrivilege) []string { return v.AccountPrivilegeDetails }).(pulumi.StringArrayOutput)
 }
 
-// 对账号进行权限设置的表的名称。
+// Name of the table for setting permissions for the account.
 func (o GetDbAccountTableColumnPrivilegeTablePrivilegeOutput) TableName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbAccountTableColumnPrivilegeTablePrivilege) string { return v.TableName }).(pulumi.StringOutput)
 }
@@ -4505,25 +4505,25 @@ func (o GetDbAccountTableColumnPrivilegeTablePrivilegeArrayOutput) Index(i pulum
 }
 
 type GetEndpointAddress struct {
-	// false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+	// false: Volcano Engine private network resolution (default). true: Volcano Engine private network and public network resolution.
 	DnsVisibility bool `pulumi:"dnsVisibility"`
-	// 连接域名。
+	// Connection domain name.
 	Domain string `pulumi:"domain"`
-	// 连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+	// Connection address prefix. The prefix must meet the following rules: start with a lowercase letter and end with a lowercase letter or digit; contain at least two of the following: lowercase letters, digits, or hyphens (-); be at least 8 characters long; and the total connection address length (prefix + suffix) must not exceed 63 characters.
 	DomainPrefix string `pulumi:"domainPrefix"`
-	// EIP 的 ID，仅对 Public 地址有效。
+	// EIP ID, valid only for Public addresses.
 	EipId string `pulumi:"eipId"`
-	// 连接终端使用的 EIP 是否因欠费关停。取值：true：是。false：否。
+	// Whether the EIP used by the connection endpoint is suspended due to overdue payment. Options: true: yes. false: no.
 	EipLocked bool `pulumi:"eipLocked"`
-	// IP 协议版本。取值为 IPv4。
+	// IP protocol version. Value: IPv4.
 	InternetProtocol string `pulumi:"internetProtocol"`
-	// IP 地址。
+	// IP address.
 	IpAddress string `pulumi:"ipAddress"`
-	// 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+	// Network address type. Options: Private: private network address. Public: public network address.
 	NetworkType string `pulumi:"networkType"`
-	// 端口。
+	// Port.
 	Port string `pulumi:"port"`
-	// 子网 ID，仅对 Private 地址有效。
+	// Subnet ID, valid only for Private addresses.
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -4539,25 +4539,25 @@ type GetEndpointAddressInput interface {
 }
 
 type GetEndpointAddressArgs struct {
-	// false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+	// false: Volcano Engine private network resolution (default). true: Volcano Engine private network and public network resolution.
 	DnsVisibility pulumi.BoolInput `pulumi:"dnsVisibility"`
-	// 连接域名。
+	// Connection domain name.
 	Domain pulumi.StringInput `pulumi:"domain"`
-	// 连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+	// Connection address prefix. The prefix must meet the following rules: start with a lowercase letter and end with a lowercase letter or digit; contain at least two of the following: lowercase letters, digits, or hyphens (-); be at least 8 characters long; and the total connection address length (prefix + suffix) must not exceed 63 characters.
 	DomainPrefix pulumi.StringInput `pulumi:"domainPrefix"`
-	// EIP 的 ID，仅对 Public 地址有效。
+	// EIP ID, valid only for Public addresses.
 	EipId pulumi.StringInput `pulumi:"eipId"`
-	// 连接终端使用的 EIP 是否因欠费关停。取值：true：是。false：否。
+	// Whether the EIP used by the connection endpoint is suspended due to overdue payment. Options: true: yes. false: no.
 	EipLocked pulumi.BoolInput `pulumi:"eipLocked"`
-	// IP 协议版本。取值为 IPv4。
+	// IP protocol version. Value: IPv4.
 	InternetProtocol pulumi.StringInput `pulumi:"internetProtocol"`
-	// IP 地址。
+	// IP address.
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
-	// 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+	// Network address type. Options: Private: private network address. Public: public network address.
 	NetworkType pulumi.StringInput `pulumi:"networkType"`
-	// 端口。
+	// Port.
 	Port pulumi.StringInput `pulumi:"port"`
-	// 子网 ID，仅对 Private 地址有效。
+	// Subnet ID, valid only for Private addresses.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
@@ -4612,52 +4612,52 @@ func (o GetEndpointAddressOutput) ToGetEndpointAddressOutputWithContext(ctx cont
 	return o
 }
 
-// false：火山引擎私网解析（默认）。true：火山引擎私网以及公网解析。
+// false: Volcano Engine private network resolution (default). true: Volcano Engine private network and public network resolution.
 func (o GetEndpointAddressOutput) DnsVisibility() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetEndpointAddress) bool { return v.DnsVisibility }).(pulumi.BoolOutput)
 }
 
-// 连接域名。
+// Connection domain name.
 func (o GetEndpointAddressOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointAddress) string { return v.Domain }).(pulumi.StringOutput)
 }
 
-// 连接地址前缀。连接地址的前缀需满足以下规则：以小写字母开头，以小写字母或数字结尾。由小写字母、数字和中划线（-）中的至少两种组成。连接地址前缀应至少包含 8 个字符，连接地址总长度（前缀+后缀）不得超过 63个字符。
+// Connection address prefix. The prefix must meet the following rules: start with a lowercase letter and end with a lowercase letter or digit; contain at least two of the following: lowercase letters, digits, or hyphens (-); be at least 8 characters long; and the total connection address length (prefix + suffix) must not exceed 63 characters.
 func (o GetEndpointAddressOutput) DomainPrefix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointAddress) string { return v.DomainPrefix }).(pulumi.StringOutput)
 }
 
-// EIP 的 ID，仅对 Public 地址有效。
+// EIP ID, valid only for Public addresses.
 func (o GetEndpointAddressOutput) EipId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointAddress) string { return v.EipId }).(pulumi.StringOutput)
 }
 
-// 连接终端使用的 EIP 是否因欠费关停。取值：true：是。false：否。
+// Whether the EIP used by the connection endpoint is suspended due to overdue payment. Options: true: yes. false: no.
 func (o GetEndpointAddressOutput) EipLocked() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetEndpointAddress) bool { return v.EipLocked }).(pulumi.BoolOutput)
 }
 
-// IP 协议版本。取值为 IPv4。
+// IP protocol version. Value: IPv4.
 func (o GetEndpointAddressOutput) InternetProtocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointAddress) string { return v.InternetProtocol }).(pulumi.StringOutput)
 }
 
-// IP 地址。
+// IP address.
 func (o GetEndpointAddressOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointAddress) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
-// 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+// Network address type. Options: Private: private network address. Public: public network address.
 func (o GetEndpointAddressOutput) NetworkType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointAddress) string { return v.NetworkType }).(pulumi.StringOutput)
 }
 
-// 端口。
+// Port.
 func (o GetEndpointAddressOutput) Port() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointAddress) string { return v.Port }).(pulumi.StringOutput)
 }
 
-// 子网 ID，仅对 Private 地址有效。
+// Subnet ID, valid only for Private addresses.
 func (o GetEndpointAddressOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointAddress) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -4683,7 +4683,7 @@ func (o GetEndpointAddressArrayOutput) Index(i pulumi.IntInput) GetEndpointAddre
 }
 
 type GetEndpointCustomRouteStrategy struct {
-	// 自定义路由策略列表。
+	// Custom routing policy list.
 	KeywordRouteStrategies []GetEndpointCustomRouteStrategyKeywordRouteStrategy `pulumi:"keywordRouteStrategies"`
 }
 
@@ -4699,7 +4699,7 @@ type GetEndpointCustomRouteStrategyInput interface {
 }
 
 type GetEndpointCustomRouteStrategyArgs struct {
-	// 自定义路由策略列表。
+	// Custom routing policy list.
 	KeywordRouteStrategies GetEndpointCustomRouteStrategyKeywordRouteStrategyArrayInput `pulumi:"keywordRouteStrategies"`
 }
 
@@ -4729,7 +4729,7 @@ func (o GetEndpointCustomRouteStrategyOutput) ToGetEndpointCustomRouteStrategyOu
 	return o
 }
 
-// 自定义路由策略列表。
+// Custom routing policy list.
 func (o GetEndpointCustomRouteStrategyOutput) KeywordRouteStrategies() GetEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput {
 	return o.ApplyT(func(v GetEndpointCustomRouteStrategy) []GetEndpointCustomRouteStrategyKeywordRouteStrategy {
 		return v.KeywordRouteStrategies
@@ -4737,9 +4737,9 @@ func (o GetEndpointCustomRouteStrategyOutput) KeywordRouteStrategies() GetEndpoi
 }
 
 type GetEndpointCustomRouteStrategyKeywordRouteStrategy struct {
-	// SQL 转发规则的转发目标。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。说明如实例为双节点实例，可选择主节点或只读节点。如实例为多节点实例，可选择主节点或备节点。
+	// SQL forwarding rule target. Options: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node. Note: For dual-node instances, you can select the primary node or read-only node. For multi-node instances, you can select the primary node or secondary node.
 	NodeType string `pulumi:"nodeType"`
-	// 转发规则的关键字。SQL 关键字的设置规则如下：单个规则最多可包含 20 个关键字。最大长度为 64 个字符，可包含英文字母、数字、下划线 _、@、#、:= 和中文字符。
+	// Forwarding rule keywords. SQL keyword rules: Each rule can contain up to 20 keywords, with a maximum length of 64 characters. Allowed characters: English letters, digits, underscore (_), @, #, :=, and Chinese characters.
 	SqlKeyword string `pulumi:"sqlKeyword"`
 }
 
@@ -4755,9 +4755,9 @@ type GetEndpointCustomRouteStrategyKeywordRouteStrategyInput interface {
 }
 
 type GetEndpointCustomRouteStrategyKeywordRouteStrategyArgs struct {
-	// SQL 转发规则的转发目标。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。说明如实例为双节点实例，可选择主节点或只读节点。如实例为多节点实例，可选择主节点或备节点。
+	// SQL forwarding rule target. Options: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node. Note: For dual-node instances, you can select the primary node or read-only node. For multi-node instances, you can select the primary node or secondary node.
 	NodeType pulumi.StringInput `pulumi:"nodeType"`
-	// 转发规则的关键字。SQL 关键字的设置规则如下：单个规则最多可包含 20 个关键字。最大长度为 64 个字符，可包含英文字母、数字、下划线 _、@、#、:= 和中文字符。
+	// Forwarding rule keywords. SQL keyword rules: Each rule can contain up to 20 keywords, with a maximum length of 64 characters. Allowed characters: English letters, digits, underscore (_), @, #, :=, and Chinese characters.
 	SqlKeyword pulumi.StringInput `pulumi:"sqlKeyword"`
 }
 
@@ -4812,12 +4812,12 @@ func (o GetEndpointCustomRouteStrategyKeywordRouteStrategyOutput) ToGetEndpointC
 	return o
 }
 
-// SQL 转发规则的转发目标。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。说明如实例为双节点实例，可选择主节点或只读节点。如实例为多节点实例，可选择主节点或备节点。
+// SQL forwarding rule target. Options: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node. Note: For dual-node instances, you can select the primary node or read-only node. For multi-node instances, you can select the primary node or secondary node.
 func (o GetEndpointCustomRouteStrategyKeywordRouteStrategyOutput) NodeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointCustomRouteStrategyKeywordRouteStrategy) string { return v.NodeType }).(pulumi.StringOutput)
 }
 
-// 转发规则的关键字。SQL 关键字的设置规则如下：单个规则最多可包含 20 个关键字。最大长度为 64 个字符，可包含英文字母、数字、下划线 _、@、#、:= 和中文字符。
+// Forwarding rule keywords. SQL keyword rules: Each rule can contain up to 20 keywords, with a maximum length of 64 characters. Allowed characters: English letters, digits, underscore (_), @, #, :=, and Chinese characters.
 func (o GetEndpointCustomRouteStrategyKeywordRouteStrategyOutput) SqlKeyword() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointCustomRouteStrategyKeywordRouteStrategy) string { return v.SqlKeyword }).(pulumi.StringOutput)
 }
@@ -4843,11 +4843,11 @@ func (o GetEndpointCustomRouteStrategyKeywordRouteStrategyArrayOutput) Index(i p
 }
 
 type GetEndpointReadOnlyNodeWeight struct {
-	// 只读节点需要传入 NodeId，主节点无需传入。
+	// NodeId is required for read-only nodes; not required for primary nodes.
 	NodeId string `pulumi:"nodeId"`
-	// 节点类型。Primary：主节点。ReadOnly：只读节点。
+	// Node type. Primary: primary node. ReadOnly: read-only node.
 	NodeType string `pulumi:"nodeType"`
-	// 节点的读权重，以 100 递增，最大值为 10000。说明权重不可全部设置为 0。
+	// Node read weight increases in increments of 100, up to a maximum of 10,000. Note: Not all weights can be set to 0.
 	Weight int `pulumi:"weight"`
 }
 
@@ -4863,11 +4863,11 @@ type GetEndpointReadOnlyNodeWeightInput interface {
 }
 
 type GetEndpointReadOnlyNodeWeightArgs struct {
-	// 只读节点需要传入 NodeId，主节点无需传入。
+	// NodeId is required for read-only nodes; not required for primary nodes.
 	NodeId pulumi.StringInput `pulumi:"nodeId"`
-	// 节点类型。Primary：主节点。ReadOnly：只读节点。
+	// Node type. Primary: primary node. ReadOnly: read-only node.
 	NodeType pulumi.StringInput `pulumi:"nodeType"`
-	// 节点的读权重，以 100 递增，最大值为 10000。说明权重不可全部设置为 0。
+	// Node read weight increases in increments of 100, up to a maximum of 10,000. Note: Not all weights can be set to 0.
 	Weight pulumi.IntInput `pulumi:"weight"`
 }
 
@@ -4922,17 +4922,17 @@ func (o GetEndpointReadOnlyNodeWeightOutput) ToGetEndpointReadOnlyNodeWeightOutp
 	return o
 }
 
-// 只读节点需要传入 NodeId，主节点无需传入。
+// NodeId is required for read-only nodes; not required for primary nodes.
 func (o GetEndpointReadOnlyNodeWeightOutput) NodeId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointReadOnlyNodeWeight) string { return v.NodeId }).(pulumi.StringOutput)
 }
 
-// 节点类型。Primary：主节点。ReadOnly：只读节点。
+// Node type. Primary: primary node. ReadOnly: read-only node.
 func (o GetEndpointReadOnlyNodeWeightOutput) NodeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointReadOnlyNodeWeight) string { return v.NodeType }).(pulumi.StringOutput)
 }
 
-// 节点的读权重，以 100 递增，最大值为 10000。说明权重不可全部设置为 0。
+// Node read weight increases in increments of 100, up to a maximum of 10,000. Note: Not all weights can be set to 0.
 func (o GetEndpointReadOnlyNodeWeightOutput) Weight() pulumi.IntOutput {
 	return o.ApplyT(func(v GetEndpointReadOnlyNodeWeight) int { return v.Weight }).(pulumi.IntOutput)
 }
@@ -4958,21 +4958,21 @@ func (o GetEndpointReadOnlyNodeWeightArrayOutput) Index(i pulumi.IntInput) GetEn
 }
 
 type GetInstanceAddressObject struct {
-	// false：私网解析（默认）。true：私网以及公网解析。
+	// false: private network resolution (default). true: private and public network resolution.
 	DnsVisibility bool `pulumi:"dnsVisibility"`
-	// 连接域名。
+	// Connection domain name
 	Domain string `pulumi:"domain"`
-	// EIP 的 ID，仅对 Public 地址有效。
+	// EIP ID, valid only for Public addresses.
 	EipId string `pulumi:"eipId"`
-	// IP 协议版本。取值为 IPv4。
+	// IP protocol version. Value: IPv4.
 	InternetProtocol string `pulumi:"internetProtocol"`
-	// IP 地址。
+	// IP address.
 	IpAddress string `pulumi:"ipAddress"`
-	// 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+	// Network address type. Values: Private: private address. Public: public address
 	NetworkType string `pulumi:"networkType"`
-	// 端口。
+	// Port
 	Port string `pulumi:"port"`
-	// 子网 ID，仅对 Private 地址有效。
+	// Subnet ID, valid only for Private addresses
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -4988,21 +4988,21 @@ type GetInstanceAddressObjectInput interface {
 }
 
 type GetInstanceAddressObjectArgs struct {
-	// false：私网解析（默认）。true：私网以及公网解析。
+	// false: private network resolution (default). true: private and public network resolution.
 	DnsVisibility pulumi.BoolInput `pulumi:"dnsVisibility"`
-	// 连接域名。
+	// Connection domain name
 	Domain pulumi.StringInput `pulumi:"domain"`
-	// EIP 的 ID，仅对 Public 地址有效。
+	// EIP ID, valid only for Public addresses.
 	EipId pulumi.StringInput `pulumi:"eipId"`
-	// IP 协议版本。取值为 IPv4。
+	// IP protocol version. Value: IPv4.
 	InternetProtocol pulumi.StringInput `pulumi:"internetProtocol"`
-	// IP 地址。
+	// IP address.
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
-	// 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+	// Network address type. Values: Private: private address. Public: public address
 	NetworkType pulumi.StringInput `pulumi:"networkType"`
-	// 端口。
+	// Port
 	Port pulumi.StringInput `pulumi:"port"`
-	// 子网 ID，仅对 Private 地址有效。
+	// Subnet ID, valid only for Private addresses
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
@@ -5057,42 +5057,42 @@ func (o GetInstanceAddressObjectOutput) ToGetInstanceAddressObjectOutputWithCont
 	return o
 }
 
-// false：私网解析（默认）。true：私网以及公网解析。
+// false: private network resolution (default). true: private and public network resolution.
 func (o GetInstanceAddressObjectOutput) DnsVisibility() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceAddressObject) bool { return v.DnsVisibility }).(pulumi.BoolOutput)
 }
 
-// 连接域名。
+// Connection domain name
 func (o GetInstanceAddressObjectOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceAddressObject) string { return v.Domain }).(pulumi.StringOutput)
 }
 
-// EIP 的 ID，仅对 Public 地址有效。
+// EIP ID, valid only for Public addresses.
 func (o GetInstanceAddressObjectOutput) EipId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceAddressObject) string { return v.EipId }).(pulumi.StringOutput)
 }
 
-// IP 协议版本。取值为 IPv4。
+// IP protocol version. Value: IPv4.
 func (o GetInstanceAddressObjectOutput) InternetProtocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceAddressObject) string { return v.InternetProtocol }).(pulumi.StringOutput)
 }
 
-// IP 地址。
+// IP address.
 func (o GetInstanceAddressObjectOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceAddressObject) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
-// 网络地址类型，取值为：Private：私网地址。Public：公网地址。
+// Network address type. Values: Private: private address. Public: public address
 func (o GetInstanceAddressObjectOutput) NetworkType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceAddressObject) string { return v.NetworkType }).(pulumi.StringOutput)
 }
 
-// 端口。
+// Port
 func (o GetInstanceAddressObjectOutput) Port() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceAddressObject) string { return v.Port }).(pulumi.StringOutput)
 }
 
-// 子网 ID，仅对 Private 地址有效。
+// Subnet ID, valid only for Private addresses
 func (o GetInstanceAddressObjectOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceAddressObject) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -5118,11 +5118,11 @@ func (o GetInstanceAddressObjectArrayOutput) Index(i pulumi.IntInput) GetInstanc
 }
 
 type GetInstanceAutoStorageScalingConfig struct {
-	// 是否开启实例的自动扩容功能。取值：true：是。false：否。
+	// Whether to enable automatic scaling for the instance. Values: true: Yes. false: No.
 	EnableStorageAutoScale bool `pulumi:"enableStorageAutoScale"`
-	// 触发自动扩容的可用存储空间占比。取值范围为 10~50，默认值为 10，单位为 %。
+	// Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
 	StorageThreshold int `pulumi:"storageThreshold"`
-	// 可自动扩容的存储空间上限。该字段的取值下限为实例存储空间+20GB；取值上限为实例主节点规格对应的存储空间取值范围的上限，单位为 GB。关于不同规格可选择存储空间取值范围的详细信息。
+	// Maximum storage space for automatic expansion. The minimum value is instance storage space + 20 GB; the maximum value is the upper limit of the storage space range for the primary node specification, in GB. See details about selectable storage space ranges for different specifications.
 	StorageUpperBound int `pulumi:"storageUpperBound"`
 }
 
@@ -5138,11 +5138,11 @@ type GetInstanceAutoStorageScalingConfigInput interface {
 }
 
 type GetInstanceAutoStorageScalingConfigArgs struct {
-	// 是否开启实例的自动扩容功能。取值：true：是。false：否。
+	// Whether to enable automatic scaling for the instance. Values: true: Yes. false: No.
 	EnableStorageAutoScale pulumi.BoolInput `pulumi:"enableStorageAutoScale"`
-	// 触发自动扩容的可用存储空间占比。取值范围为 10~50，默认值为 10，单位为 %。
+	// Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
 	StorageThreshold pulumi.IntInput `pulumi:"storageThreshold"`
-	// 可自动扩容的存储空间上限。该字段的取值下限为实例存储空间+20GB；取值上限为实例主节点规格对应的存储空间取值范围的上限，单位为 GB。关于不同规格可选择存储空间取值范围的详细信息。
+	// Maximum storage space for automatic expansion. The minimum value is instance storage space + 20 GB; the maximum value is the upper limit of the storage space range for the primary node specification, in GB. See details about selectable storage space ranges for different specifications.
 	StorageUpperBound pulumi.IntInput `pulumi:"storageUpperBound"`
 }
 
@@ -5172,45 +5172,45 @@ func (o GetInstanceAutoStorageScalingConfigOutput) ToGetInstanceAutoStorageScali
 	return o
 }
 
-// 是否开启实例的自动扩容功能。取值：true：是。false：否。
+// Whether to enable automatic scaling for the instance. Values: true: Yes. false: No.
 func (o GetInstanceAutoStorageScalingConfigOutput) EnableStorageAutoScale() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceAutoStorageScalingConfig) bool { return v.EnableStorageAutoScale }).(pulumi.BoolOutput)
 }
 
-// 触发自动扩容的可用存储空间占比。取值范围为 10~50，默认值为 10，单位为 %。
+// Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
 func (o GetInstanceAutoStorageScalingConfigOutput) StorageThreshold() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceAutoStorageScalingConfig) int { return v.StorageThreshold }).(pulumi.IntOutput)
 }
 
-// 可自动扩容的存储空间上限。该字段的取值下限为实例存储空间+20GB；取值上限为实例主节点规格对应的存储空间取值范围的上限，单位为 GB。关于不同规格可选择存储空间取值范围的详细信息。
+// Maximum storage space for automatic expansion. The minimum value is instance storage space + 20 GB; the maximum value is the upper limit of the storage space range for the primary node specification, in GB. See details about selectable storage space ranges for different specifications.
 func (o GetInstanceAutoStorageScalingConfigOutput) StorageUpperBound() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceAutoStorageScalingConfig) int { return v.StorageUpperBound }).(pulumi.IntOutput)
 }
 
 type GetInstanceChargeDetail struct {
-	// 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+	// Enable auto-renewal for prepaid scenarios. Values: true: auto-renewal. false: do not auto-renew
 	AutoRenew bool `pulumi:"autoRenew"`
-	// 包年包月实例的计费结束时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	// Billing end time for subscription instance (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
 	ChargeEndTime string `pulumi:"chargeEndTime"`
-	// 实例的计费开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	// Billing start time for the instance (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ
 	ChargeStartTime string `pulumi:"chargeStartTime"`
-	// 实例的计费状态。取值：Normal：正常。Overdue：欠费。Unpaid：等待支付。
+	// Instance billing status. Values: Normal: normal. Overdue: overdue. Unpaid: pending payment.
 	ChargeStatus string `pulumi:"chargeStatus"`
-	// 付费类型。取值为：PrePaid：包年包月。PostPaid：按量计费。
+	// Billing type. Options: PrePaid: subscription. PostPaid: pay-as-you-go
 	ChargeType string `pulumi:"chargeType"`
-	// 实例购买数量。取值范围为 1~50。默认值为 1。
+	// Number of instances to purchase. Value range: 1–50. Default: 1
 	Number int `pulumi:"number"`
-	// 实例欠费关停（按量付费）或到期关停（包年包月）后，预计被释放的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	// Estimated release time after the instance is stopped due to overdue payment (pay-as-you-go) or expiration (subscription), in UTC. Format: yyyy-MM-ddTHH:mm:ss.sssZ
 	OverdueReclaimTime string `pulumi:"overdueReclaimTime"`
-	// 实例欠费关停（按量付费）或到期关停（包年包月）的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	// Time when the instance is stopped due to overdue payment (pay-as-you-go) or expiration (subscription) (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
 	OverdueTime string `pulumi:"overdueTime"`
-	// 预付费场景下的购买时长。
+	// Purchase duration in prepaid scenarios.
 	Period int `pulumi:"period"`
-	// 预付费场景下的购买周期。Month：购买周期为月。默认。Year：购买周期为年。
+	// Purchase cycle in prepaid scenarios. Month: monthly purchase cycle (default). Year: yearly purchase cycle.
 	PeriodUnit string `pulumi:"periodUnit"`
-	// 临时升配的还原时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	// Restore time for temporary scaling (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
 	TempModifyEndTime string `pulumi:"tempModifyEndTime"`
-	// 临时升配的开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	// Start time for temporary scaling (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ
 	TempModifyStartTime string `pulumi:"tempModifyStartTime"`
 }
 
@@ -5226,29 +5226,29 @@ type GetInstanceChargeDetailInput interface {
 }
 
 type GetInstanceChargeDetailArgs struct {
-	// 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+	// Enable auto-renewal for prepaid scenarios. Values: true: auto-renewal. false: do not auto-renew
 	AutoRenew pulumi.BoolInput `pulumi:"autoRenew"`
-	// 包年包月实例的计费结束时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	// Billing end time for subscription instance (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
 	ChargeEndTime pulumi.StringInput `pulumi:"chargeEndTime"`
-	// 实例的计费开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	// Billing start time for the instance (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ
 	ChargeStartTime pulumi.StringInput `pulumi:"chargeStartTime"`
-	// 实例的计费状态。取值：Normal：正常。Overdue：欠费。Unpaid：等待支付。
+	// Instance billing status. Values: Normal: normal. Overdue: overdue. Unpaid: pending payment.
 	ChargeStatus pulumi.StringInput `pulumi:"chargeStatus"`
-	// 付费类型。取值为：PrePaid：包年包月。PostPaid：按量计费。
+	// Billing type. Options: PrePaid: subscription. PostPaid: pay-as-you-go
 	ChargeType pulumi.StringInput `pulumi:"chargeType"`
-	// 实例购买数量。取值范围为 1~50。默认值为 1。
+	// Number of instances to purchase. Value range: 1–50. Default: 1
 	Number pulumi.IntInput `pulumi:"number"`
-	// 实例欠费关停（按量付费）或到期关停（包年包月）后，预计被释放的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	// Estimated release time after the instance is stopped due to overdue payment (pay-as-you-go) or expiration (subscription), in UTC. Format: yyyy-MM-ddTHH:mm:ss.sssZ
 	OverdueReclaimTime pulumi.StringInput `pulumi:"overdueReclaimTime"`
-	// 实例欠费关停（按量付费）或到期关停（包年包月）的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	// Time when the instance is stopped due to overdue payment (pay-as-you-go) or expiration (subscription) (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
 	OverdueTime pulumi.StringInput `pulumi:"overdueTime"`
-	// 预付费场景下的购买时长。
+	// Purchase duration in prepaid scenarios.
 	Period pulumi.IntInput `pulumi:"period"`
-	// 预付费场景下的购买周期。Month：购买周期为月。默认。Year：购买周期为年。
+	// Purchase cycle in prepaid scenarios. Month: monthly purchase cycle (default). Year: yearly purchase cycle.
 	PeriodUnit pulumi.StringInput `pulumi:"periodUnit"`
-	// 临时升配的还原时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	// Restore time for temporary scaling (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
 	TempModifyEndTime pulumi.StringInput `pulumi:"tempModifyEndTime"`
-	// 临时升配的开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	// Start time for temporary scaling (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ
 	TempModifyStartTime pulumi.StringInput `pulumi:"tempModifyStartTime"`
 }
 
@@ -5278,78 +5278,78 @@ func (o GetInstanceChargeDetailOutput) ToGetInstanceChargeDetailOutputWithContex
 	return o
 }
 
-// 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+// Enable auto-renewal for prepaid scenarios. Values: true: auto-renewal. false: do not auto-renew
 func (o GetInstanceChargeDetailOutput) AutoRenew() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceChargeDetail) bool { return v.AutoRenew }).(pulumi.BoolOutput)
 }
 
-// 包年包月实例的计费结束时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+// Billing end time for subscription instance (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
 func (o GetInstanceChargeDetailOutput) ChargeEndTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.ChargeEndTime }).(pulumi.StringOutput)
 }
 
-// 实例的计费开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+// Billing start time for the instance (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ
 func (o GetInstanceChargeDetailOutput) ChargeStartTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.ChargeStartTime }).(pulumi.StringOutput)
 }
 
-// 实例的计费状态。取值：Normal：正常。Overdue：欠费。Unpaid：等待支付。
+// Instance billing status. Values: Normal: normal. Overdue: overdue. Unpaid: pending payment.
 func (o GetInstanceChargeDetailOutput) ChargeStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.ChargeStatus }).(pulumi.StringOutput)
 }
 
-// 付费类型。取值为：PrePaid：包年包月。PostPaid：按量计费。
+// Billing type. Options: PrePaid: subscription. PostPaid: pay-as-you-go
 func (o GetInstanceChargeDetailOutput) ChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.ChargeType }).(pulumi.StringOutput)
 }
 
-// 实例购买数量。取值范围为 1~50。默认值为 1。
+// Number of instances to purchase. Value range: 1–50. Default: 1
 func (o GetInstanceChargeDetailOutput) Number() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceChargeDetail) int { return v.Number }).(pulumi.IntOutput)
 }
 
-// 实例欠费关停（按量付费）或到期关停（包年包月）后，预计被释放的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+// Estimated release time after the instance is stopped due to overdue payment (pay-as-you-go) or expiration (subscription), in UTC. Format: yyyy-MM-ddTHH:mm:ss.sssZ
 func (o GetInstanceChargeDetailOutput) OverdueReclaimTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.OverdueReclaimTime }).(pulumi.StringOutput)
 }
 
-// 实例欠费关停（按量付费）或到期关停（包年包月）的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+// Time when the instance is stopped due to overdue payment (pay-as-you-go) or expiration (subscription) (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
 func (o GetInstanceChargeDetailOutput) OverdueTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.OverdueTime }).(pulumi.StringOutput)
 }
 
-// 预付费场景下的购买时长。
+// Purchase duration in prepaid scenarios.
 func (o GetInstanceChargeDetailOutput) Period() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceChargeDetail) int { return v.Period }).(pulumi.IntOutput)
 }
 
-// 预付费场景下的购买周期。Month：购买周期为月。默认。Year：购买周期为年。
+// Purchase cycle in prepaid scenarios. Month: monthly purchase cycle (default). Year: yearly purchase cycle.
 func (o GetInstanceChargeDetailOutput) PeriodUnit() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.PeriodUnit }).(pulumi.StringOutput)
 }
 
-// 临时升配的还原时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+// Restore time for temporary scaling (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
 func (o GetInstanceChargeDetailOutput) TempModifyEndTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.TempModifyEndTime }).(pulumi.StringOutput)
 }
 
-// 临时升配的开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+// Start time for temporary scaling (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ
 func (o GetInstanceChargeDetailOutput) TempModifyStartTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceChargeDetail) string { return v.TempModifyStartTime }).(pulumi.StringOutput)
 }
 
 type GetInstanceDisasterRecoveryInstance struct {
-	// 主实例与灾备实例之间同步任务的 ID。
+	// ID of synchronization tasks between primary and disaster recovery instances.
 	DtsTaskId string `pulumi:"dtsTaskId"`
-	// 主实例与灾备实例之间同步任务的名称。
+	// Name of the synchronization task between the primary instance and the disaster recovery instance
 	DtsTaskName string `pulumi:"dtsTaskName"`
-	// 主实例与灾备实例之间同步任务的状态。
+	// Status of synchronization tasks between the primary instance and the disaster recovery instance
 	DtsTaskStatus string `pulumi:"dtsTaskStatus"`
-	// 灾备实例的 ID。
+	// Disaster recovery instance ID.
 	InstanceId string `pulumi:"instanceId"`
-	// 灾备实例的名称。
+	// Name of disaster recovery instance.
 	InstanceName string `pulumi:"instanceName"`
-	// 灾备实例与主实例之间的时延。
+	// Latency between the disaster recovery instance and the primary instance.
 	SecondsBehindMaster int `pulumi:"secondsBehindMaster"`
 }
 
@@ -5365,17 +5365,17 @@ type GetInstanceDisasterRecoveryInstanceInput interface {
 }
 
 type GetInstanceDisasterRecoveryInstanceArgs struct {
-	// 主实例与灾备实例之间同步任务的 ID。
+	// ID of synchronization tasks between primary and disaster recovery instances.
 	DtsTaskId pulumi.StringInput `pulumi:"dtsTaskId"`
-	// 主实例与灾备实例之间同步任务的名称。
+	// Name of the synchronization task between the primary instance and the disaster recovery instance
 	DtsTaskName pulumi.StringInput `pulumi:"dtsTaskName"`
-	// 主实例与灾备实例之间同步任务的状态。
+	// Status of synchronization tasks between the primary instance and the disaster recovery instance
 	DtsTaskStatus pulumi.StringInput `pulumi:"dtsTaskStatus"`
-	// 灾备实例的 ID。
+	// Disaster recovery instance ID.
 	InstanceId pulumi.StringInput `pulumi:"instanceId"`
-	// 灾备实例的名称。
+	// Name of disaster recovery instance.
 	InstanceName pulumi.StringInput `pulumi:"instanceName"`
-	// 灾备实例与主实例之间的时延。
+	// Latency between the disaster recovery instance and the primary instance.
 	SecondsBehindMaster pulumi.IntInput `pulumi:"secondsBehindMaster"`
 }
 
@@ -5430,32 +5430,32 @@ func (o GetInstanceDisasterRecoveryInstanceOutput) ToGetInstanceDisasterRecovery
 	return o
 }
 
-// 主实例与灾备实例之间同步任务的 ID。
+// ID of synchronization tasks between primary and disaster recovery instances.
 func (o GetInstanceDisasterRecoveryInstanceOutput) DtsTaskId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceDisasterRecoveryInstance) string { return v.DtsTaskId }).(pulumi.StringOutput)
 }
 
-// 主实例与灾备实例之间同步任务的名称。
+// Name of the synchronization task between the primary instance and the disaster recovery instance
 func (o GetInstanceDisasterRecoveryInstanceOutput) DtsTaskName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceDisasterRecoveryInstance) string { return v.DtsTaskName }).(pulumi.StringOutput)
 }
 
-// 主实例与灾备实例之间同步任务的状态。
+// Status of synchronization tasks between the primary instance and the disaster recovery instance
 func (o GetInstanceDisasterRecoveryInstanceOutput) DtsTaskStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceDisasterRecoveryInstance) string { return v.DtsTaskStatus }).(pulumi.StringOutput)
 }
 
-// 灾备实例的 ID。
+// Disaster recovery instance ID.
 func (o GetInstanceDisasterRecoveryInstanceOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceDisasterRecoveryInstance) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 灾备实例的名称。
+// Name of disaster recovery instance.
 func (o GetInstanceDisasterRecoveryInstanceOutput) InstanceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceDisasterRecoveryInstance) string { return v.InstanceName }).(pulumi.StringOutput)
 }
 
-// 灾备实例与主实例之间的时延。
+// Latency between the disaster recovery instance and the primary instance.
 func (o GetInstanceDisasterRecoveryInstanceOutput) SecondsBehindMaster() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceDisasterRecoveryInstance) int { return v.SecondsBehindMaster }).(pulumi.IntOutput)
 }
@@ -5481,47 +5481,47 @@ func (o GetInstanceDisasterRecoveryInstanceArrayOutput) Index(i pulumi.IntInput)
 }
 
 type GetInstanceEndpoint struct {
-	// 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入Disable：不自动加入（默认）。
+	// When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
 	AutoAddNewNodes string `pulumi:"autoAddNewNodes"`
-	// 连接终端标签。
+	// Connection endpoint tag.
 	ConnectionInfoTags []string `pulumi:"connectionInfoTags"`
-	// 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。
+	// Connection endpoint type. Values: Proxy: proxy endpoint. Direct: direct endpoint
 	ConnectionMode string `pulumi:"connectionMode"`
-	// 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。
+	// Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
 	ConnectionPoolType string `pulumi:"connectionPoolType"`
-	// 连接终端的描述信息。
+	// Description of the connection endpoint
 	Description string `pulumi:"description"`
-	// 是否启用连接保持。取值：true：是。false：否。
+	// Enable connection keep-alive. Options: true: yes. false: no
 	EnableConnectionPersistent bool `pulumi:"enableConnectionPersistent"`
-	// 是否已开启全局只读，取值：Enable：开启。Disable：未开启。
+	// Is global read-only enabled? Values: Enable: enabled. Disable: not enabled.
 	EnableReadOnly string `pulumi:"enableReadOnly"`
-	// 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+	// Whether to enable read/write separation. Values: Enable: Enabled. Disable: Not enabled.
 	EnableReadWriteSplitting string `pulumi:"enableReadWriteSplitting"`
-	// 实例连接终端 ID。
+	// Instance connection endpoint ID.
 	EndpointId string `pulumi:"endpointId"`
-	// 实例连接终端名称。
+	// Instance connection endpoint name.
 	EndpointName string `pulumi:"endpointName"`
-	// 终端类型。取值为 Custom，自定义终端。
+	// Endpoint type. Value: Custom, custom endpoint.
 	EndpointType string `pulumi:"endpointType"`
-	// 空闲连接回收功能是否开启。true：开启。false：不开启。
+	// Whether the idle connection recycling feature is enabled. true: Enabled. false: Not enabled.
 	IdleConnectionReclaim bool `pulumi:"idleConnectionReclaim"`
-	// 是否开启事务分离。取值：true：是。false：否。
+	// Whether to enable transaction separation. Values: true: Yes. false: No.
 	ImplicitTransSplit bool `pulumi:"implicitTransSplit"`
-	// 是否开启主节点路由。取值：true：是。false：否。
+	// Whether to enable primary node routing. Values: true: Yes. false: No.
 	MasterNodeRouting bool `pulumi:"masterNodeRouting"`
-	// 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。
+	// Overload protection timeout. Value range: integer between 60 and 7200, in seconds.
 	MasterProtectorTimeout int `pulumi:"masterProtectorTimeout"`
-	// 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+	// Multi-Statements mode for proxy endpoints. Values: Strict: strict mode (default). Loose: loose mode
 	MultiStatementsMode string `pulumi:"multiStatementsMode"`
-	// 是否开启过载保护。取值：true：是。false：否。
+	// Overload protection enabled. Values: true: yes. false: no
 	OverloadProtection bool `pulumi:"overloadProtection"`
-	// 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+	// Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, valid values are: LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, valid values are: Default: automatic allocation based on specification weights. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling.
 	ReadOnlyNodeDistributionType string `pulumi:"readOnlyNodeDistributionType"`
-	// 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+	// Read-only node latency threshold. Value range: 1~3600, default is 30, unit: seconds.
 	ReadOnlyNodeMaxDelayTime int `pulumi:"readOnlyNodeMaxDelayTime"`
-	// 连接终端配置的节点列表及对应的只读权重。
+	// List of nodes configured for the connection endpoint and their corresponding read-only weights.
 	ReadOnlyNodeWeights []GetInstanceEndpointReadOnlyNodeWeight `pulumi:"readOnlyNodeWeights"`
-	// 读写模式：ReadWrite：读写。ReadOnly：只读。
+	// Read/write mode: ReadWrite: read/write. ReadOnly: read-only
 	ReadWriteMode string `pulumi:"readWriteMode"`
 }
 
@@ -5537,47 +5537,47 @@ type GetInstanceEndpointInput interface {
 }
 
 type GetInstanceEndpointArgs struct {
-	// 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入Disable：不自动加入（默认）。
+	// When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
 	AutoAddNewNodes pulumi.StringInput `pulumi:"autoAddNewNodes"`
-	// 连接终端标签。
+	// Connection endpoint tag.
 	ConnectionInfoTags pulumi.StringArrayInput `pulumi:"connectionInfoTags"`
-	// 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。
+	// Connection endpoint type. Values: Proxy: proxy endpoint. Direct: direct endpoint
 	ConnectionMode pulumi.StringInput `pulumi:"connectionMode"`
-	// 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。
+	// Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
 	ConnectionPoolType pulumi.StringInput `pulumi:"connectionPoolType"`
-	// 连接终端的描述信息。
+	// Description of the connection endpoint
 	Description pulumi.StringInput `pulumi:"description"`
-	// 是否启用连接保持。取值：true：是。false：否。
+	// Enable connection keep-alive. Options: true: yes. false: no
 	EnableConnectionPersistent pulumi.BoolInput `pulumi:"enableConnectionPersistent"`
-	// 是否已开启全局只读，取值：Enable：开启。Disable：未开启。
+	// Is global read-only enabled? Values: Enable: enabled. Disable: not enabled.
 	EnableReadOnly pulumi.StringInput `pulumi:"enableReadOnly"`
-	// 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+	// Whether to enable read/write separation. Values: Enable: Enabled. Disable: Not enabled.
 	EnableReadWriteSplitting pulumi.StringInput `pulumi:"enableReadWriteSplitting"`
-	// 实例连接终端 ID。
+	// Instance connection endpoint ID.
 	EndpointId pulumi.StringInput `pulumi:"endpointId"`
-	// 实例连接终端名称。
+	// Instance connection endpoint name.
 	EndpointName pulumi.StringInput `pulumi:"endpointName"`
-	// 终端类型。取值为 Custom，自定义终端。
+	// Endpoint type. Value: Custom, custom endpoint.
 	EndpointType pulumi.StringInput `pulumi:"endpointType"`
-	// 空闲连接回收功能是否开启。true：开启。false：不开启。
+	// Whether the idle connection recycling feature is enabled. true: Enabled. false: Not enabled.
 	IdleConnectionReclaim pulumi.BoolInput `pulumi:"idleConnectionReclaim"`
-	// 是否开启事务分离。取值：true：是。false：否。
+	// Whether to enable transaction separation. Values: true: Yes. false: No.
 	ImplicitTransSplit pulumi.BoolInput `pulumi:"implicitTransSplit"`
-	// 是否开启主节点路由。取值：true：是。false：否。
+	// Whether to enable primary node routing. Values: true: Yes. false: No.
 	MasterNodeRouting pulumi.BoolInput `pulumi:"masterNodeRouting"`
-	// 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。
+	// Overload protection timeout. Value range: integer between 60 and 7200, in seconds.
 	MasterProtectorTimeout pulumi.IntInput `pulumi:"masterProtectorTimeout"`
-	// 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+	// Multi-Statements mode for proxy endpoints. Values: Strict: strict mode (default). Loose: loose mode
 	MultiStatementsMode pulumi.StringInput `pulumi:"multiStatementsMode"`
-	// 是否开启过载保护。取值：true：是。false：否。
+	// Overload protection enabled. Values: true: yes. false: no
 	OverloadProtection pulumi.BoolInput `pulumi:"overloadProtection"`
-	// 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+	// Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, valid values are: LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, valid values are: Default: automatic allocation based on specification weights. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling.
 	ReadOnlyNodeDistributionType pulumi.StringInput `pulumi:"readOnlyNodeDistributionType"`
-	// 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+	// Read-only node latency threshold. Value range: 1~3600, default is 30, unit: seconds.
 	ReadOnlyNodeMaxDelayTime pulumi.IntInput `pulumi:"readOnlyNodeMaxDelayTime"`
-	// 连接终端配置的节点列表及对应的只读权重。
+	// List of nodes configured for the connection endpoint and their corresponding read-only weights.
 	ReadOnlyNodeWeights GetInstanceEndpointReadOnlyNodeWeightArrayInput `pulumi:"readOnlyNodeWeights"`
-	// 读写模式：ReadWrite：读写。ReadOnly：只读。
+	// Read/write mode: ReadWrite: read/write. ReadOnly: read-only
 	ReadWriteMode pulumi.StringInput `pulumi:"readWriteMode"`
 }
 
@@ -5632,107 +5632,107 @@ func (o GetInstanceEndpointOutput) ToGetInstanceEndpointOutputWithContext(ctx co
 	return o
 }
 
-// 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入Disable：不自动加入（默认）。
+// When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
 func (o GetInstanceEndpointOutput) AutoAddNewNodes() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.AutoAddNewNodes }).(pulumi.StringOutput)
 }
 
-// 连接终端标签。
+// Connection endpoint tag.
 func (o GetInstanceEndpointOutput) ConnectionInfoTags() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetInstanceEndpoint) []string { return v.ConnectionInfoTags }).(pulumi.StringArrayOutput)
 }
 
-// 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。
+// Connection endpoint type. Values: Proxy: proxy endpoint. Direct: direct endpoint
 func (o GetInstanceEndpointOutput) ConnectionMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.ConnectionMode }).(pulumi.StringOutput)
 }
 
-// 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。
+// Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
 func (o GetInstanceEndpointOutput) ConnectionPoolType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.ConnectionPoolType }).(pulumi.StringOutput)
 }
 
-// 连接终端的描述信息。
+// Description of the connection endpoint
 func (o GetInstanceEndpointOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 是否启用连接保持。取值：true：是。false：否。
+// Enable connection keep-alive. Options: true: yes. false: no
 func (o GetInstanceEndpointOutput) EnableConnectionPersistent() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceEndpoint) bool { return v.EnableConnectionPersistent }).(pulumi.BoolOutput)
 }
 
-// 是否已开启全局只读，取值：Enable：开启。Disable：未开启。
+// Is global read-only enabled? Values: Enable: enabled. Disable: not enabled.
 func (o GetInstanceEndpointOutput) EnableReadOnly() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.EnableReadOnly }).(pulumi.StringOutput)
 }
 
-// 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+// Whether to enable read/write separation. Values: Enable: Enabled. Disable: Not enabled.
 func (o GetInstanceEndpointOutput) EnableReadWriteSplitting() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.EnableReadWriteSplitting }).(pulumi.StringOutput)
 }
 
-// 实例连接终端 ID。
+// Instance connection endpoint ID.
 func (o GetInstanceEndpointOutput) EndpointId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.EndpointId }).(pulumi.StringOutput)
 }
 
-// 实例连接终端名称。
+// Instance connection endpoint name.
 func (o GetInstanceEndpointOutput) EndpointName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.EndpointName }).(pulumi.StringOutput)
 }
 
-// 终端类型。取值为 Custom，自定义终端。
+// Endpoint type. Value: Custom, custom endpoint.
 func (o GetInstanceEndpointOutput) EndpointType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.EndpointType }).(pulumi.StringOutput)
 }
 
-// 空闲连接回收功能是否开启。true：开启。false：不开启。
+// Whether the idle connection recycling feature is enabled. true: Enabled. false: Not enabled.
 func (o GetInstanceEndpointOutput) IdleConnectionReclaim() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceEndpoint) bool { return v.IdleConnectionReclaim }).(pulumi.BoolOutput)
 }
 
-// 是否开启事务分离。取值：true：是。false：否。
+// Whether to enable transaction separation. Values: true: Yes. false: No.
 func (o GetInstanceEndpointOutput) ImplicitTransSplit() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceEndpoint) bool { return v.ImplicitTransSplit }).(pulumi.BoolOutput)
 }
 
-// 是否开启主节点路由。取值：true：是。false：否。
+// Whether to enable primary node routing. Values: true: Yes. false: No.
 func (o GetInstanceEndpointOutput) MasterNodeRouting() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceEndpoint) bool { return v.MasterNodeRouting }).(pulumi.BoolOutput)
 }
 
-// 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。
+// Overload protection timeout. Value range: integer between 60 and 7200, in seconds.
 func (o GetInstanceEndpointOutput) MasterProtectorTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceEndpoint) int { return v.MasterProtectorTimeout }).(pulumi.IntOutput)
 }
 
-// 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+// Multi-Statements mode for proxy endpoints. Values: Strict: strict mode (default). Loose: loose mode
 func (o GetInstanceEndpointOutput) MultiStatementsMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.MultiStatementsMode }).(pulumi.StringOutput)
 }
 
-// 是否开启过载保护。取值：true：是。false：否。
+// Overload protection enabled. Values: true: yes. false: no
 func (o GetInstanceEndpointOutput) OverloadProtection() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceEndpoint) bool { return v.OverloadProtection }).(pulumi.BoolOutput)
 }
 
-// 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+// Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, valid values are: LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, valid values are: Default: automatic allocation based on specification weights. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling.
 func (o GetInstanceEndpointOutput) ReadOnlyNodeDistributionType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.ReadOnlyNodeDistributionType }).(pulumi.StringOutput)
 }
 
-// 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+// Read-only node latency threshold. Value range: 1~3600, default is 30, unit: seconds.
 func (o GetInstanceEndpointOutput) ReadOnlyNodeMaxDelayTime() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceEndpoint) int { return v.ReadOnlyNodeMaxDelayTime }).(pulumi.IntOutput)
 }
 
-// 连接终端配置的节点列表及对应的只读权重。
+// List of nodes configured for the connection endpoint and their corresponding read-only weights.
 func (o GetInstanceEndpointOutput) ReadOnlyNodeWeights() GetInstanceEndpointReadOnlyNodeWeightArrayOutput {
 	return o.ApplyT(func(v GetInstanceEndpoint) []GetInstanceEndpointReadOnlyNodeWeight { return v.ReadOnlyNodeWeights }).(GetInstanceEndpointReadOnlyNodeWeightArrayOutput)
 }
 
-// 读写模式：ReadWrite：读写。ReadOnly：只读。
+// Read/write mode: ReadWrite: read/write. ReadOnly: read-only
 func (o GetInstanceEndpointOutput) ReadWriteMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpoint) string { return v.ReadWriteMode }).(pulumi.StringOutput)
 }
@@ -5758,11 +5758,11 @@ func (o GetInstanceEndpointArrayOutput) Index(i pulumi.IntInput) GetInstanceEndp
 }
 
 type GetInstanceEndpointReadOnlyNodeWeight struct {
-	// 只读节点需要传入 NodeId，主节点无需传入。
+	// Read-only nodes require NodeId. Primary nodes do not require it
 	NodeId string `pulumi:"nodeId"`
-	// 节点类型。Primary：主节点。ReadOnly：只读节点。
+	// Node type. Primary: primary node. ReadOnly: read-only node
 	NodeType string `pulumi:"nodeType"`
-	// 节点的读权重，以 100 递增，最大值为 10000。
+	// Node read weight, increments of 100, maximum value is 10000.
 	Weight int `pulumi:"weight"`
 }
 
@@ -5778,11 +5778,11 @@ type GetInstanceEndpointReadOnlyNodeWeightInput interface {
 }
 
 type GetInstanceEndpointReadOnlyNodeWeightArgs struct {
-	// 只读节点需要传入 NodeId，主节点无需传入。
+	// Read-only nodes require NodeId. Primary nodes do not require it
 	NodeId pulumi.StringInput `pulumi:"nodeId"`
-	// 节点类型。Primary：主节点。ReadOnly：只读节点。
+	// Node type. Primary: primary node. ReadOnly: read-only node
 	NodeType pulumi.StringInput `pulumi:"nodeType"`
-	// 节点的读权重，以 100 递增，最大值为 10000。
+	// Node read weight, increments of 100, maximum value is 10000.
 	Weight pulumi.IntInput `pulumi:"weight"`
 }
 
@@ -5837,17 +5837,17 @@ func (o GetInstanceEndpointReadOnlyNodeWeightOutput) ToGetInstanceEndpointReadOn
 	return o
 }
 
-// 只读节点需要传入 NodeId，主节点无需传入。
+// Read-only nodes require NodeId. Primary nodes do not require it
 func (o GetInstanceEndpointReadOnlyNodeWeightOutput) NodeId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpointReadOnlyNodeWeight) string { return v.NodeId }).(pulumi.StringOutput)
 }
 
-// 节点类型。Primary：主节点。ReadOnly：只读节点。
+// Node type. Primary: primary node. ReadOnly: read-only node
 func (o GetInstanceEndpointReadOnlyNodeWeightOutput) NodeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceEndpointReadOnlyNodeWeight) string { return v.NodeType }).(pulumi.StringOutput)
 }
 
-// 节点的读权重，以 100 递增，最大值为 10000。
+// Node read weight, increments of 100, maximum value is 10000.
 func (o GetInstanceEndpointReadOnlyNodeWeightOutput) Weight() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceEndpointReadOnlyNodeWeight) int { return v.Weight }).(pulumi.IntOutput)
 }
@@ -5873,11 +5873,11 @@ func (o GetInstanceEndpointReadOnlyNodeWeightArrayOutput) Index(i pulumi.IntInpu
 }
 
 type GetInstanceMaintenanceWindow struct {
-	// 可维护周期粒度，取值为 Week，周。
+	// Maintenance cycle granularity. Value: Week.
 	DayKind string `pulumi:"dayKind"`
-	// 指定可维护时间段在每周生效的日期。可多选。Monday：周一。Tuesday：周二。Wednesday：周三。Thursday：周四。Friday：周五。Saturday：周六。Sunday：周日。
+	// Specify the days of the week when the maintenance window is active. Multiple selections allowed. Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday.
 	DayOfWeeks []string `pulumi:"dayOfWeeks"`
-	// 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。说明
+	// Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC). Note: Specifies the time period during which maintenance can be performed.
 	MaintenanceTime string `pulumi:"maintenanceTime"`
 }
 
@@ -5893,11 +5893,11 @@ type GetInstanceMaintenanceWindowInput interface {
 }
 
 type GetInstanceMaintenanceWindowArgs struct {
-	// 可维护周期粒度，取值为 Week，周。
+	// Maintenance cycle granularity. Value: Week.
 	DayKind pulumi.StringInput `pulumi:"dayKind"`
-	// 指定可维护时间段在每周生效的日期。可多选。Monday：周一。Tuesday：周二。Wednesday：周三。Thursday：周四。Friday：周五。Saturday：周六。Sunday：周日。
+	// Specify the days of the week when the maintenance window is active. Multiple selections allowed. Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday.
 	DayOfWeeks pulumi.StringArrayInput `pulumi:"dayOfWeeks"`
-	// 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。说明
+	// Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC). Note: Specifies the time period during which maintenance can be performed.
 	MaintenanceTime pulumi.StringInput `pulumi:"maintenanceTime"`
 }
 
@@ -5927,43 +5927,43 @@ func (o GetInstanceMaintenanceWindowOutput) ToGetInstanceMaintenanceWindowOutput
 	return o
 }
 
-// 可维护周期粒度，取值为 Week，周。
+// Maintenance cycle granularity. Value: Week.
 func (o GetInstanceMaintenanceWindowOutput) DayKind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceMaintenanceWindow) string { return v.DayKind }).(pulumi.StringOutput)
 }
 
-// 指定可维护时间段在每周生效的日期。可多选。Monday：周一。Tuesday：周二。Wednesday：周三。Thursday：周四。Friday：周五。Saturday：周六。Sunday：周日。
+// Specify the days of the week when the maintenance window is active. Multiple selections allowed. Monday: Monday. Tuesday: Tuesday. Wednesday: Wednesday. Thursday: Thursday. Friday: Friday. Saturday: Saturday. Sunday: Sunday.
 func (o GetInstanceMaintenanceWindowOutput) DayOfWeeks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetInstanceMaintenanceWindow) []string { return v.DayOfWeeks }).(pulumi.StringArrayOutput)
 }
 
-// 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC 时间）。说明
+// Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC). Note: Specifies the time period during which maintenance can be performed.
 func (o GetInstanceMaintenanceWindowOutput) MaintenanceTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceMaintenanceWindow) string { return v.MaintenanceTime }).(pulumi.StringOutput)
 }
 
 type GetInstanceNode struct {
-	// 节点的创建时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	// Node creation time (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
 	CreateTime string `pulumi:"createTime"`
-	// 只读节点的延迟复制时间，取值为 0~604800，单位为秒。
+	// Replication delay time for read-only nodes. Value range: 0–604800, unit: seconds
 	DelayReplicationTime int `pulumi:"delayReplicationTime"`
-	// 内存大小，单位为 GB。
+	// Memory size, in GB.
 	Memory int `pulumi:"memory"`
-	// 节点 ID。
+	// Node ID.
 	NodeId string `pulumi:"nodeId"`
-	// 节点规格。
+	// Node specification.
 	NodeSpec string `pulumi:"nodeSpec"`
-	// 节点状态，取值：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Restoring：恢复中。Updating：变更中。Upgrading：升级中。Error：错误。
+	// Node status. Values: Running: running. Creating: creating. Deleting: deleting. Restarting: restarting. Restoring: restoring. Updating: updating. Upgrading: upgrading. Error: error
 	NodeStatus string `pulumi:"nodeStatus"`
-	// 节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。
+	// Node type. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node.
 	NodeType string `pulumi:"nodeType"`
-	// 节点与主节点之间的延迟时间。单位为毫秒（ms）。
+	// Latency between node and primary node, in milliseconds (ms).
 	SyncDelay int `pulumi:"syncDelay"`
-	// 节点更新本地时间。
+	// Node updates local time.
 	UpdateTime string `pulumi:"updateTime"`
-	// 节点的 CPU 核数。
+	// Number of CPU cores for the node
 	Vcpu int `pulumi:"vcpu"`
-	// 可用区 ID。
+	// Availability zone ID
 	ZoneId string `pulumi:"zoneId"`
 }
 
@@ -5979,27 +5979,27 @@ type GetInstanceNodeInput interface {
 }
 
 type GetInstanceNodeArgs struct {
-	// 节点的创建时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+	// Node creation time (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
 	CreateTime pulumi.StringInput `pulumi:"createTime"`
-	// 只读节点的延迟复制时间，取值为 0~604800，单位为秒。
+	// Replication delay time for read-only nodes. Value range: 0–604800, unit: seconds
 	DelayReplicationTime pulumi.IntInput `pulumi:"delayReplicationTime"`
-	// 内存大小，单位为 GB。
+	// Memory size, in GB.
 	Memory pulumi.IntInput `pulumi:"memory"`
-	// 节点 ID。
+	// Node ID.
 	NodeId pulumi.StringInput `pulumi:"nodeId"`
-	// 节点规格。
+	// Node specification.
 	NodeSpec pulumi.StringInput `pulumi:"nodeSpec"`
-	// 节点状态，取值：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Restoring：恢复中。Updating：变更中。Upgrading：升级中。Error：错误。
+	// Node status. Values: Running: running. Creating: creating. Deleting: deleting. Restarting: restarting. Restoring: restoring. Updating: updating. Upgrading: upgrading. Error: error
 	NodeStatus pulumi.StringInput `pulumi:"nodeStatus"`
-	// 节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。
+	// Node type. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node.
 	NodeType pulumi.StringInput `pulumi:"nodeType"`
-	// 节点与主节点之间的延迟时间。单位为毫秒（ms）。
+	// Latency between node and primary node, in milliseconds (ms).
 	SyncDelay pulumi.IntInput `pulumi:"syncDelay"`
-	// 节点更新本地时间。
+	// Node updates local time.
 	UpdateTime pulumi.StringInput `pulumi:"updateTime"`
-	// 节点的 CPU 核数。
+	// Number of CPU cores for the node
 	Vcpu pulumi.IntInput `pulumi:"vcpu"`
-	// 可用区 ID。
+	// Availability zone ID
 	ZoneId pulumi.StringInput `pulumi:"zoneId"`
 }
 
@@ -6054,57 +6054,57 @@ func (o GetInstanceNodeOutput) ToGetInstanceNodeOutputWithContext(ctx context.Co
 	return o
 }
 
-// 节点的创建时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+// Node creation time (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
 func (o GetInstanceNodeOutput) CreateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceNode) string { return v.CreateTime }).(pulumi.StringOutput)
 }
 
-// 只读节点的延迟复制时间，取值为 0~604800，单位为秒。
+// Replication delay time for read-only nodes. Value range: 0–604800, unit: seconds
 func (o GetInstanceNodeOutput) DelayReplicationTime() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceNode) int { return v.DelayReplicationTime }).(pulumi.IntOutput)
 }
 
-// 内存大小，单位为 GB。
+// Memory size, in GB.
 func (o GetInstanceNodeOutput) Memory() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceNode) int { return v.Memory }).(pulumi.IntOutput)
 }
 
-// 节点 ID。
+// Node ID.
 func (o GetInstanceNodeOutput) NodeId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceNode) string { return v.NodeId }).(pulumi.StringOutput)
 }
 
-// 节点规格。
+// Node specification.
 func (o GetInstanceNodeOutput) NodeSpec() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceNode) string { return v.NodeSpec }).(pulumi.StringOutput)
 }
 
-// 节点状态，取值：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Restoring：恢复中。Updating：变更中。Upgrading：升级中。Error：错误。
+// Node status. Values: Running: running. Creating: creating. Deleting: deleting. Restarting: restarting. Restoring: restoring. Updating: updating. Upgrading: upgrading. Error: error
 func (o GetInstanceNodeOutput) NodeStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceNode) string { return v.NodeStatus }).(pulumi.StringOutput)
 }
 
-// 节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。
+// Node type. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node.
 func (o GetInstanceNodeOutput) NodeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceNode) string { return v.NodeType }).(pulumi.StringOutput)
 }
 
-// 节点与主节点之间的延迟时间。单位为毫秒（ms）。
+// Latency between node and primary node, in milliseconds (ms).
 func (o GetInstanceNodeOutput) SyncDelay() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceNode) int { return v.SyncDelay }).(pulumi.IntOutput)
 }
 
-// 节点更新本地时间。
+// Node updates local time.
 func (o GetInstanceNodeOutput) UpdateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceNode) string { return v.UpdateTime }).(pulumi.StringOutput)
 }
 
-// 节点的 CPU 核数。
+// Number of CPU cores for the node
 func (o GetInstanceNodeOutput) Vcpu() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceNode) int { return v.Vcpu }).(pulumi.IntOutput)
 }
 
-// 可用区 ID。
+// Availability zone ID
 func (o GetInstanceNodeOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceNode) string { return v.ZoneId }).(pulumi.StringOutput)
 }
@@ -6130,9 +6130,9 @@ func (o GetInstanceNodeArrayOutput) Index(i pulumi.IntInput) GetInstanceNodeOutp
 }
 
 type GetInstanceProxyDetail struct {
-	// 实例的数据库代理功能状态。取值：Creating：代理开启中。Running：代理运行中。Shutdown：代理已关闭。Deleting：代理关闭中
+	// Status of the instance database proxy feature. Values: Creating: proxy enabling. Running: proxy running. Shutdown: proxy disabled. Deleting: proxy disabling
 	DbProxyStatus string `pulumi:"dbProxyStatus"`
-	// 实例的数据库代理服务的资源信息。
+	// Resource information for the instance's database proxy service
 	ProxyResourceInfo GetInstanceProxyDetailProxyResourceInfo `pulumi:"proxyResourceInfo"`
 }
 
@@ -6148,9 +6148,9 @@ type GetInstanceProxyDetailInput interface {
 }
 
 type GetInstanceProxyDetailArgs struct {
-	// 实例的数据库代理功能状态。取值：Creating：代理开启中。Running：代理运行中。Shutdown：代理已关闭。Deleting：代理关闭中
+	// Status of the instance database proxy feature. Values: Creating: proxy enabling. Running: proxy running. Shutdown: proxy disabled. Deleting: proxy disabling
 	DbProxyStatus pulumi.StringInput `pulumi:"dbProxyStatus"`
-	// 实例的数据库代理服务的资源信息。
+	// Resource information for the instance's database proxy service
 	ProxyResourceInfo GetInstanceProxyDetailProxyResourceInfoInput `pulumi:"proxyResourceInfo"`
 }
 
@@ -6180,22 +6180,22 @@ func (o GetInstanceProxyDetailOutput) ToGetInstanceProxyDetailOutputWithContext(
 	return o
 }
 
-// 实例的数据库代理功能状态。取值：Creating：代理开启中。Running：代理运行中。Shutdown：代理已关闭。Deleting：代理关闭中
+// Status of the instance database proxy feature. Values: Creating: proxy enabling. Running: proxy running. Shutdown: proxy disabled. Deleting: proxy disabling
 func (o GetInstanceProxyDetailOutput) DbProxyStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceProxyDetail) string { return v.DbProxyStatus }).(pulumi.StringOutput)
 }
 
-// 实例的数据库代理服务的资源信息。
+// Resource information for the instance's database proxy service
 func (o GetInstanceProxyDetailOutput) ProxyResourceInfo() GetInstanceProxyDetailProxyResourceInfoOutput {
 	return o.ApplyT(func(v GetInstanceProxyDetail) GetInstanceProxyDetailProxyResourceInfo { return v.ProxyResourceInfo }).(GetInstanceProxyDetailProxyResourceInfoOutput)
 }
 
 type GetInstanceProxyDetailProxyResourceInfo struct {
-	// 实例数据库代理服务当前的核数。
+	// Current number of cores for the instance database proxy service
 	CurrentProxyCpuNum int `pulumi:"currentProxyCpuNum"`
-	// 用户可为数据库代理服务配置的最多核数。
+	// Maximum number of cores configurable for database proxy service.
 	MaxProxyCpuNum int `pulumi:"maxProxyCpuNum"`
-	// 用户可为数据库代理服务配置的最少核数。
+	// Minimum number of CPU cores configurable for the database proxy service
 	MinProxyCpuNum int `pulumi:"minProxyCpuNum"`
 }
 
@@ -6211,11 +6211,11 @@ type GetInstanceProxyDetailProxyResourceInfoInput interface {
 }
 
 type GetInstanceProxyDetailProxyResourceInfoArgs struct {
-	// 实例数据库代理服务当前的核数。
+	// Current number of cores for the instance database proxy service
 	CurrentProxyCpuNum pulumi.IntInput `pulumi:"currentProxyCpuNum"`
-	// 用户可为数据库代理服务配置的最多核数。
+	// Maximum number of cores configurable for database proxy service.
 	MaxProxyCpuNum pulumi.IntInput `pulumi:"maxProxyCpuNum"`
-	// 用户可为数据库代理服务配置的最少核数。
+	// Minimum number of CPU cores configurable for the database proxy service
 	MinProxyCpuNum pulumi.IntInput `pulumi:"minProxyCpuNum"`
 }
 
@@ -6245,25 +6245,25 @@ func (o GetInstanceProxyDetailProxyResourceInfoOutput) ToGetInstanceProxyDetailP
 	return o
 }
 
-// 实例数据库代理服务当前的核数。
+// Current number of cores for the instance database proxy service
 func (o GetInstanceProxyDetailProxyResourceInfoOutput) CurrentProxyCpuNum() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceProxyDetailProxyResourceInfo) int { return v.CurrentProxyCpuNum }).(pulumi.IntOutput)
 }
 
-// 用户可为数据库代理服务配置的最多核数。
+// Maximum number of cores configurable for database proxy service.
 func (o GetInstanceProxyDetailProxyResourceInfoOutput) MaxProxyCpuNum() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceProxyDetailProxyResourceInfo) int { return v.MaxProxyCpuNum }).(pulumi.IntOutput)
 }
 
-// 用户可为数据库代理服务配置的最少核数。
+// Minimum number of CPU cores configurable for the database proxy service
 func (o GetInstanceProxyDetailProxyResourceInfoOutput) MinProxyCpuNum() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceProxyDetailProxyResourceInfo) int { return v.MinProxyCpuNum }).(pulumi.IntOutput)
 }
 
 type GetInstanceTag struct {
-	// 标签键。
+	// Tag key
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value string `pulumi:"value"`
 }
 
@@ -6279,9 +6279,9 @@ type GetInstanceTagInput interface {
 }
 
 type GetInstanceTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -6336,12 +6336,12 @@ func (o GetInstanceTagOutput) ToGetInstanceTagOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o GetInstanceTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value.
 func (o GetInstanceTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceTag) string { return v.Value }).(pulumi.StringOutput)
 }

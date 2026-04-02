@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetPermissionSetProvisioningResult {
     /**
-     * @return 创建时间。
+     * @return Creation time
      * 
      */
     private String createdTime;
@@ -21,39 +21,39 @@ public final class GetPermissionSetProvisioningResult {
      */
     private String id;
     /**
-     * @return 权限集 ID。
+     * @return Permission set ID
      * 
      */
     private String permissionSetId;
     /**
-     * @return 权限集名。
+     * @return Permission set name
      * 
      */
     private String permissionSetName;
     /**
-     * @return 权限集状态 Running：运行中,Reprovision Required：需要重新部署,Provision Failed：部署失败,Provisioned：已部署
+     * @return Permission set status Running: In progress, Reprovision Required: Redeployment required, Provision Failed: Deployment failed, Provisioned: Deployed
      * 
      */
     private String provisioningStatus;
     /**
-     * @return 授权的账号 ID。
+     * @return Authorized account ID
      * 
      */
     private String targetId;
     /**
-     * @return 账号名。
+     * @return Account name
      * 
      */
     private String targetName;
     /**
-     * @return 更新时间。
+     * @return Update time
      * 
      */
     private String updatedTime;
 
     private GetPermissionSetProvisioningResult() {}
     /**
-     * @return 创建时间。
+     * @return Creation time
      * 
      */
     public String createdTime() {
@@ -67,42 +67,42 @@ public final class GetPermissionSetProvisioningResult {
         return this.id;
     }
     /**
-     * @return 权限集 ID。
+     * @return Permission set ID
      * 
      */
     public String permissionSetId() {
         return this.permissionSetId;
     }
     /**
-     * @return 权限集名。
+     * @return Permission set name
      * 
      */
     public String permissionSetName() {
         return this.permissionSetName;
     }
     /**
-     * @return 权限集状态 Running：运行中,Reprovision Required：需要重新部署,Provision Failed：部署失败,Provisioned：已部署
+     * @return Permission set status Running: In progress, Reprovision Required: Redeployment required, Provision Failed: Deployment failed, Provisioned: Deployed
      * 
      */
     public String provisioningStatus() {
         return this.provisioningStatus;
     }
     /**
-     * @return 授权的账号 ID。
+     * @return Authorized account ID
      * 
      */
     public String targetId() {
         return this.targetId;
     }
     /**
-     * @return 账号名。
+     * @return Account name
      * 
      */
     public String targetName() {
         return this.targetName;
     }
     /**
-     * @return 更新时间。
+     * @return Update time
      * 
      */
     public String updatedTime() {

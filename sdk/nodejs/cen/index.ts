@@ -20,6 +20,21 @@ export const getCens: typeof import("./getCens").getCens = null as any;
 export const getCensOutput: typeof import("./getCens").getCensOutput = null as any;
 utilities.lazyLoad(exports, ["getCens","getCensOutput"], () => require("./getCens"));
 
+export { GetGrantInstanceArgs, GetGrantInstanceResult, GetGrantInstanceOutputArgs } from "./getGrantInstance";
+export const getGrantInstance: typeof import("./getGrantInstance").getGrantInstance = null as any;
+export const getGrantInstanceOutput: typeof import("./getGrantInstance").getGrantInstanceOutput = null as any;
+utilities.lazyLoad(exports, ["getGrantInstance","getGrantInstanceOutput"], () => require("./getGrantInstance"));
+
+export { GetGrantInstancesResult } from "./getGrantInstances";
+export const getGrantInstances: typeof import("./getGrantInstances").getGrantInstances = null as any;
+export const getGrantInstancesOutput: typeof import("./getGrantInstances").getGrantInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getGrantInstances","getGrantInstancesOutput"], () => require("./getGrantInstances"));
+
+export { GrantInstanceArgs, GrantInstanceState } from "./grantInstance";
+export type GrantInstance = import("./grantInstance").GrantInstance;
+export const GrantInstance: typeof import("./grantInstance").GrantInstance = null as any;
+utilities.lazyLoad(exports, ["GrantInstance"], () => require("./grantInstance"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -27,9 +42,12 @@ const _module = {
         switch (type) {
             case "bytepluscc:cen/cen:Cen":
                 return new Cen(name, <any>undefined, { urn })
+            case "bytepluscc:cen/grantInstance:GrantInstance":
+                return new GrantInstance(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "cen/cen", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "cen/grantInstance", _module)

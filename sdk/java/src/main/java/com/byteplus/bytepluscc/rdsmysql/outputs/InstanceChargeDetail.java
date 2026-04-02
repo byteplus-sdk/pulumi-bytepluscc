@@ -15,146 +15,146 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceChargeDetail {
     /**
-     * @return 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+     * @return Enable auto-renewal for prepaid scenarios. Values: true: auto-renewal. false: do not auto-renew
      * 
      */
     private @Nullable Boolean autoRenew;
     /**
-     * @return 包年包月实例的计费结束时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+     * @return Billing end time for subscription instance (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
      * 
      */
     private @Nullable String chargeEndTime;
     /**
-     * @return 实例的计费开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+     * @return Billing start time for the instance (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ
      * 
      */
     private @Nullable String chargeStartTime;
     /**
-     * @return 实例的计费状态。取值：Normal：正常。Overdue：欠费。Unpaid：等待支付。
+     * @return Instance billing status. Values: Normal: normal. Overdue: overdue. Unpaid: pending payment.
      * 
      */
     private @Nullable String chargeStatus;
     /**
-     * @return 付费类型。取值为：PrePaid：包年包月。PostPaid：按量计费。
+     * @return Billing type. Options: PrePaid: subscription. PostPaid: pay-as-you-go
      * 
      */
     private String chargeType;
     /**
-     * @return 实例购买数量。取值范围为 1~50。默认值为 1。
+     * @return Number of instances to purchase. Value range: 1–50. Default: 1
      * 
      */
     private @Nullable Integer number;
     /**
-     * @return 实例欠费关停（按量付费）或到期关停（包年包月）后，预计被释放的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+     * @return Estimated release time after the instance is stopped due to overdue payment (pay-as-you-go) or expiration (subscription), in UTC. Format: yyyy-MM-ddTHH:mm:ss.sssZ
      * 
      */
     private @Nullable String overdueReclaimTime;
     /**
-     * @return 实例欠费关停（按量付费）或到期关停（包年包月）的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+     * @return Time when the instance is stopped due to overdue payment (pay-as-you-go) or expiration (subscription) (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
      * 
      */
     private @Nullable String overdueTime;
     /**
-     * @return 预付费场景下的购买时长。
+     * @return Purchase duration in prepaid scenarios.
      * 
      */
     private @Nullable Integer period;
     /**
-     * @return 预付费场景下的购买周期。Month：购买周期为月。默认。Year：购买周期为年。
+     * @return Purchase cycle in prepaid scenarios. Month: monthly purchase cycle (default). Year: yearly purchase cycle.
      * 
      */
     private @Nullable String periodUnit;
     /**
-     * @return 临时升配的还原时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+     * @return Restore time for temporary scaling (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
      * 
      */
     private @Nullable String tempModifyEndTime;
     /**
-     * @return 临时升配的开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+     * @return Start time for temporary scaling (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ
      * 
      */
     private @Nullable String tempModifyStartTime;
 
     private InstanceChargeDetail() {}
     /**
-     * @return 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+     * @return Enable auto-renewal for prepaid scenarios. Values: true: auto-renewal. false: do not auto-renew
      * 
      */
     public Optional<Boolean> autoRenew() {
         return Optional.ofNullable(this.autoRenew);
     }
     /**
-     * @return 包年包月实例的计费结束时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+     * @return Billing end time for subscription instance (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
      * 
      */
     public Optional<String> chargeEndTime() {
         return Optional.ofNullable(this.chargeEndTime);
     }
     /**
-     * @return 实例的计费开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+     * @return Billing start time for the instance (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ
      * 
      */
     public Optional<String> chargeStartTime() {
         return Optional.ofNullable(this.chargeStartTime);
     }
     /**
-     * @return 实例的计费状态。取值：Normal：正常。Overdue：欠费。Unpaid：等待支付。
+     * @return Instance billing status. Values: Normal: normal. Overdue: overdue. Unpaid: pending payment.
      * 
      */
     public Optional<String> chargeStatus() {
         return Optional.ofNullable(this.chargeStatus);
     }
     /**
-     * @return 付费类型。取值为：PrePaid：包年包月。PostPaid：按量计费。
+     * @return Billing type. Options: PrePaid: subscription. PostPaid: pay-as-you-go
      * 
      */
     public String chargeType() {
         return this.chargeType;
     }
     /**
-     * @return 实例购买数量。取值范围为 1~50。默认值为 1。
+     * @return Number of instances to purchase. Value range: 1–50. Default: 1
      * 
      */
     public Optional<Integer> number() {
         return Optional.ofNullable(this.number);
     }
     /**
-     * @return 实例欠费关停（按量付费）或到期关停（包年包月）后，预计被释放的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+     * @return Estimated release time after the instance is stopped due to overdue payment (pay-as-you-go) or expiration (subscription), in UTC. Format: yyyy-MM-ddTHH:mm:ss.sssZ
      * 
      */
     public Optional<String> overdueReclaimTime() {
         return Optional.ofNullable(this.overdueReclaimTime);
     }
     /**
-     * @return 实例欠费关停（按量付费）或到期关停（包年包月）的时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+     * @return Time when the instance is stopped due to overdue payment (pay-as-you-go) or expiration (subscription) (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
      * 
      */
     public Optional<String> overdueTime() {
         return Optional.ofNullable(this.overdueTime);
     }
     /**
-     * @return 预付费场景下的购买时长。
+     * @return Purchase duration in prepaid scenarios.
      * 
      */
     public Optional<Integer> period() {
         return Optional.ofNullable(this.period);
     }
     /**
-     * @return 预付费场景下的购买周期。Month：购买周期为月。默认。Year：购买周期为年。
+     * @return Purchase cycle in prepaid scenarios. Month: monthly purchase cycle (default). Year: yearly purchase cycle.
      * 
      */
     public Optional<String> periodUnit() {
         return Optional.ofNullable(this.periodUnit);
     }
     /**
-     * @return 临时升配的还原时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+     * @return Restore time for temporary scaling (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ.
      * 
      */
     public Optional<String> tempModifyEndTime() {
         return Optional.ofNullable(this.tempModifyEndTime);
     }
     /**
-     * @return 临时升配的开始时间（UTC 时间）。格式为 yyyy-MM-ddTHH:mm:ss.sssZ。
+     * @return Start time for temporary scaling (UTC). Format: yyyy-MM-ddTHH:mm:ss.sssZ
      * 
      */
     public Optional<String> tempModifyStartTime() {

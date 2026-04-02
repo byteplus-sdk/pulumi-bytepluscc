@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigTimeOutActionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示鉴权超时后，内容分发网络处理鉴权请求的策略。该参数有以下取值：reject：表示内容分发网络认为鉴权失败。pass：表示内容分发网络认为鉴权成功。
+        /// Indicates the strategy for handling authentication requests after a timeout in the content delivery network. This parameter supports the following values: reject: The content delivery network considers authentication failed. pass: The content delivery network considers authentication successful.
         /// </summary>
         [Input("action")]
         public Input<string>? Action { get; set; }
 
         /// <summary>
-        /// 表示鉴权超时的时间，单位是毫秒。该参数的默认值为 200，取值范围是 200   - 3600。
+        /// Specifies the authentication timeout in milliseconds. The default value is 200. The valid range is 200–3600.
         /// </summary>
         [Input("time")]
         public Input<int>? Time { get; set; }

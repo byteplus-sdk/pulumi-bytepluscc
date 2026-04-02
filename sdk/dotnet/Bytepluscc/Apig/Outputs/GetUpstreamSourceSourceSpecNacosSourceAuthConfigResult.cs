@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GetUpstreamSourceSourceSpecNacosSourceAuthConfigResult
     {
         /// <summary>
-        /// Basic认证。
+        /// Basic authentication
         /// </summary>
         public readonly Outputs.GetUpstreamSourceSourceSpecNacosSourceAuthConfigBasicResult Basic;
 

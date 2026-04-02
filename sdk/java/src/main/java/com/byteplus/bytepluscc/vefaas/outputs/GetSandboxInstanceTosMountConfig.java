@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetSandboxInstanceTosMountConfig {
     /**
-     * @return 沙箱实例是否启用了实例级别的 TOS 挂载，参数值说明：true：是，false：否。
+     * @return Whether instance-level TOS mount is enabled for the sandbox instance. Parameter description: true: yes, false: no
      * 
      */
     private Boolean enable;
     /**
-     * @return 启用了实例级别 TOS 挂载的沙箱实例具体 TOS 挂载目录信息。
+     * @return Detailed TOS mount directory information for sandbox instances with instance-level TOS mount enabled
      * 
      */
     private List<GetSandboxInstanceTosMountConfigTosMountPoint> tosMountPoints;
 
     private GetSandboxInstanceTosMountConfig() {}
     /**
-     * @return 沙箱实例是否启用了实例级别的 TOS 挂载，参数值说明：true：是，false：否。
+     * @return Whether instance-level TOS mount is enabled for the sandbox instance. Parameter description: true: yes, false: no
      * 
      */
     public Boolean enable() {
         return this.enable;
     }
     /**
-     * @return 启用了实例级别 TOS 挂载的沙箱实例具体 TOS 挂载目录信息。
+     * @return Detailed TOS mount directory information for sandbox instances with instance-level TOS mount enabled
      * 
      */
     public List<GetSandboxInstanceTosMountConfigTosMountPoint> tosMountPoints() {

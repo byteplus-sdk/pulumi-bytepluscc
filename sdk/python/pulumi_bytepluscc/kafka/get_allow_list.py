@@ -61,7 +61,7 @@ class GetAllowListResult:
     @pulumi.getter(name="allowList")
     def allow_list(self) -> builtins.str:
         """
-        白名单规则列表。支持指定为 IP 地址或者 IP 网段。多个 IP 地址或网段之间使用英文逗号（,）分隔。每个白名单最多可配置 300 个 IP 地址或网段。
+        Allowlist rule list. Supports specifying IP addresses or IP ranges. Separate multiple IP addresses or ranges with commas (,). Each allowlist can contain up to 300 IP addresses or ranges
         """
         return pulumi.get(self, "allow_list")
 
@@ -69,7 +69,7 @@ class GetAllowListResult:
     @pulumi.getter(name="allowListDesc")
     def allow_list_desc(self) -> builtins.str:
         """
-        白名单描述。长度不超过200个字符。
+        Allowlist description. Maximum length: 200 characters
         """
         return pulumi.get(self, "allow_list_desc")
 
@@ -77,7 +77,7 @@ class GetAllowListResult:
     @pulumi.getter(name="allowListId")
     def allow_list_id(self) -> builtins.str:
         """
-        白名单 ID。
+        Allowlist ID
         """
         return pulumi.get(self, "allow_list_id")
 
@@ -85,7 +85,7 @@ class GetAllowListResult:
     @pulumi.getter(name="allowListIpNum")
     def allow_list_ip_num(self) -> builtins.int:
         """
-        白名单指定的规则个数。
+        Number of rules specified in the allowlist
         """
         return pulumi.get(self, "allow_list_ip_num")
 
@@ -93,7 +93,7 @@ class GetAllowListResult:
     @pulumi.getter(name="allowListName")
     def allow_list_name(self) -> builtins.str:
         """
-        白名单规则名称。长度为 1～128 个字符。只能包含中文、字母、数字、下划线和连字符（-）。不能以数字或连字符（-）开头。白名单名称在当前地域下唯一。
+        Allowlist rule name. Length: 1–128 characters. Can only contain Chinese characters, letters, numbers, underscores, and hyphens (-). Cannot start with a number or hyphen (-). The allowlist name must be unique within the current region
         """
         return pulumi.get(self, "allow_list_name")
 
@@ -101,7 +101,7 @@ class GetAllowListResult:
     @pulumi.getter(name="applyInstanceNum")
     def apply_instance_num(self) -> builtins.int:
         """
-        此白名单已绑定的实例数量。若指定 AllowList 参数，则此字段必填，用于指定规则修改后预期将会影响到的实例个数。若预期影响个数与实际影响个数不符，则请求失败。
+        Number of instances already bound to this allowlist. If the AllowList parameter is specified, this field is required to indicate the expected number of instances affected after rule modification. If the expected number does not match the actual number, the request fails
         """
         return pulumi.get(self, "apply_instance_num")
 
@@ -109,7 +109,7 @@ class GetAllowListResult:
     @pulumi.getter(name="associatedInstanceNum")
     def associated_instance_num(self) -> builtins.int:
         """
-        白名单绑定的实例个数。
+        Number of instances bound to the allowlist
         """
         return pulumi.get(self, "associated_instance_num")
 
@@ -117,7 +117,7 @@ class GetAllowListResult:
     @pulumi.getter(name="associatedInstances")
     def associated_instances(self) -> Sequence['outputs.GetAllowListAssociatedInstanceResult']:
         """
-        白名单绑定的实例信息。
+        Information about the instance bound to the allowlist
         """
         return pulumi.get(self, "associated_instances")
 

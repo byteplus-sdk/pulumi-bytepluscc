@@ -50,30 +50,30 @@ class InstanceArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceTagArgs']]]] = None):
         """
         The set of arguments for constructing a Instance resource.
-        :param pulumi.Input[builtins.str] node_spec: 实例的规格码。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点规格。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示 Shard 节点的规格。
-        :param pulumi.Input[builtins.int] storage_space_gb: 副本集实例的总存储空间，或分片集群中单个 Shard 分片的存储空间，单位：GiB，步长为 10。
-        :param pulumi.Input[builtins.str] subnet_id: 子网 ID。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络 ID。
-        :param pulumi.Input[builtins.str] zone_id: 实例所在可用区的 ID。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: 白名单 ID 列表。新建实例会被绑定到指定白名单。
-        :param pulumi.Input[builtins.bool] auto_renew: 是否开启自动续费，取值范围如下：false（默认）：不开启自动续费。true：开启自动续费。
-        :param pulumi.Input[builtins.str] charge_type: 实例计费类型，取值范围如下：PostPaid（默认）：按量计费（也称后付费）。Prepaid：包年包月（也称预付费）。
-        :param pulumi.Input[builtins.str] config_server_node_spec: 分片集群中 ConfigServer 节点的规格码。默认值为 mongo.config.1c2g。
-        :param pulumi.Input[builtins.int] config_server_storage_space_gb: 分片集群中 ConfigServer 的存储空间，单位：GiB。步长为 10，默认值：20。
-        :param pulumi.Input[builtins.str] db_engine: 数据库引擎。取值固定为 MongoDB
-        :param pulumi.Input[builtins.str] db_engine_version: 数据库引擎版本，取值范围如下：MongoDB*4*0（默认）：MongoDB 4.0 版本。MongoDB*4*2：MongoDB 4.2 版本。MongoDB*4*4：MongoDB 4.4 版本。MongoDB*5*0：MongoDB 5.0 版本。MongoDB*6*0：MongoDB 6.0 版本。MongoDB*7*0：MongoDB 7.0 版本。
-        :param pulumi.Input[builtins.int] instance_count: 需要创建的实例数量。取值为大于等于 1 的正整数，默认值为1。
-        :param pulumi.Input[builtins.str] instance_name: 实例名称。名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 2~64 个字符。
-        :param pulumi.Input[builtins.str] instance_type: MongoDB 的实例类型，取值范围如下：ReplicaSet（默认）：副本集。ShardedCluster：分片集群 。
-        :param pulumi.Input[builtins.int] mongos_node_number: 分片集群中 Mongos 节点的数量。取值范围：2~32。
-        :param pulumi.Input[builtins.str] mongos_node_spec: 分片集群中 Mongos 节点的规格码。
-        :param pulumi.Input[builtins.int] node_number: 节点数量，其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点数量。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示每个 Shard 分片中的节点数量。
-        :param pulumi.Input[builtins.int] period: 包年包月实例的购买时长，其中：当 PeriodUnit 为 Year 时，Period 取值为 1~3。当 PeriodUnit 为 Month 时，Period 取值为 1~9。
-        :param pulumi.Input[builtins.str] period_unit: 指定包年包月实例为包年或者包月类型。取值如下：Year：包年。Month：包月。
-        :param pulumi.Input[builtins.str] project_name: 选择实例所属的项目。若该参数留空，新建实例会默认加入 default 项目。
-        :param pulumi.Input[builtins.int] shard_number: 分片集群中 Shard 分片的数量。取值范围：2~32。
-        :param pulumi.Input[builtins.str] super_account_name: 数据库账号名称。当前仅支持在创建实例时设置超级管理员账号，账号名称固定为 root。
-        :param pulumi.Input[builtins.str] super_account_password: root 账号的密码。密码需同时满足如下条件：只能为大小写字母、数字及以下特殊字符 _#!@$%^&*()+=-。长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意三种。不允许使用极易被破解的弱密码（如 Admin@123）。
+        :param pulumi.Input[builtins.str] node_spec: Instance specification code. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this parameter specifies the compute node specification for the replica set instance. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this parameter specifies the specification for Shard nodes.
+        :param pulumi.Input[builtins.int] storage_space_gb: Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID.
+        :param pulumi.Input[builtins.str] vpc_id: Private network ID.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID where the instance is located.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: Allowlist ID list. New instances are bound to the specified allowlist.
+        :param pulumi.Input[builtins.bool] auto_renew: Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
+        :param pulumi.Input[builtins.str] charge_type: Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
+        :param pulumi.Input[builtins.str] config_server_node_spec: ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
+        :param pulumi.Input[builtins.int] config_server_storage_space_gb: ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
+        :param pulumi.Input[builtins.str] db_engine: Database engine. The value is fixed as MongoDB
+        :param pulumi.Input[builtins.str] db_engine_version: Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
+        :param pulumi.Input[builtins.int] instance_count: Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
+        :param pulumi.Input[builtins.str] instance_name: Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
+        :param pulumi.Input[builtins.str] instance_type: MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
+        :param pulumi.Input[builtins.int] mongos_node_number: Number of Mongos nodes in the sharded cluster. Range: 2~32.
+        :param pulumi.Input[builtins.str] mongos_node_spec: Specification code for Mongos nodes in a sharded cluster.
+        :param pulumi.Input[builtins.int] node_number: Node count. When the instance type is ReplicaSet, this parameter indicates the number of compute nodes in the replica set instance. When the instance type is ShardedCluster, it indicates the number of nodes in each shard.
+        :param pulumi.Input[builtins.int] period: Subscription instance purchase duration. When PeriodUnit is Year, Period can be 1–3. When PeriodUnit is Month, Period can be 1–9.
+        :param pulumi.Input[builtins.str] period_unit: Specify whether the subscription instance is yearly or monthly. Options: Year: yearly. Month: monthly.
+        :param pulumi.Input[builtins.str] project_name: Select the project for the instance. If left blank, the new instance will be added to the default project.
+        :param pulumi.Input[builtins.int] shard_number: Number of shards in the sharded cluster. Range: 2–32.
+        :param pulumi.Input[builtins.str] super_account_name: Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
+        :param pulumi.Input[builtins.str] super_account_password: Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!@$%^&*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin@123) are not allowed.
         """
         pulumi.set(__self__, "node_spec", node_spec)
         pulumi.set(__self__, "storage_space_gb", storage_space_gb)
@@ -127,7 +127,7 @@ class InstanceArgs:
     @pulumi.getter(name="nodeSpec")
     def node_spec(self) -> pulumi.Input[builtins.str]:
         """
-        实例的规格码。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点规格。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示 Shard 节点的规格。
+        Instance specification code. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this parameter specifies the compute node specification for the replica set instance. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this parameter specifies the specification for Shard nodes.
         """
         return pulumi.get(self, "node_spec")
 
@@ -139,7 +139,7 @@ class InstanceArgs:
     @pulumi.getter(name="storageSpaceGb")
     def storage_space_gb(self) -> pulumi.Input[builtins.int]:
         """
-        副本集实例的总存储空间，或分片集群中单个 Shard 分片的存储空间，单位：GiB，步长为 10。
+        Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
         """
         return pulumi.get(self, "storage_space_gb")
 
@@ -151,7 +151,7 @@ class InstanceArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[builtins.str]:
         """
-        子网 ID。
+        Subnet ID.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -163,7 +163,7 @@ class InstanceArgs:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Input[builtins.str]:
         """
-        私有网络 ID。
+        Private network ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -175,7 +175,7 @@ class InstanceArgs:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Input[builtins.str]:
         """
-        实例所在可用区的 ID。
+        Availability zone ID where the instance is located.
         """
         return pulumi.get(self, "zone_id")
 
@@ -187,7 +187,7 @@ class InstanceArgs:
     @pulumi.getter(name="allowListIds")
     def allow_list_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        白名单 ID 列表。新建实例会被绑定到指定白名单。
+        Allowlist ID list. New instances are bound to the specified allowlist.
         """
         return pulumi.get(self, "allow_list_ids")
 
@@ -199,7 +199,7 @@ class InstanceArgs:
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启自动续费，取值范围如下：false（默认）：不开启自动续费。true：开启自动续费。
+        Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -211,7 +211,7 @@ class InstanceArgs:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例计费类型，取值范围如下：PostPaid（默认）：按量计费（也称后付费）。Prepaid：包年包月（也称预付费）。
+        Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
         """
         return pulumi.get(self, "charge_type")
 
@@ -223,7 +223,7 @@ class InstanceArgs:
     @pulumi.getter(name="configServerNodeSpec")
     def config_server_node_spec(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        分片集群中 ConfigServer 节点的规格码。默认值为 mongo.config.1c2g。
+        ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
         """
         return pulumi.get(self, "config_server_node_spec")
 
@@ -235,7 +235,7 @@ class InstanceArgs:
     @pulumi.getter(name="configServerStorageSpaceGb")
     def config_server_storage_space_gb(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        分片集群中 ConfigServer 的存储空间，单位：GiB。步长为 10，默认值：20。
+        ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
         """
         return pulumi.get(self, "config_server_storage_space_gb")
 
@@ -247,7 +247,7 @@ class InstanceArgs:
     @pulumi.getter(name="dbEngine")
     def db_engine(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        数据库引擎。取值固定为 MongoDB
+        Database engine. The value is fixed as MongoDB
         """
         return pulumi.get(self, "db_engine")
 
@@ -259,7 +259,7 @@ class InstanceArgs:
     @pulumi.getter(name="dbEngineVersion")
     def db_engine_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        数据库引擎版本，取值范围如下：MongoDB*4*0（默认）：MongoDB 4.0 版本。MongoDB*4*2：MongoDB 4.2 版本。MongoDB*4*4：MongoDB 4.4 版本。MongoDB*5*0：MongoDB 5.0 版本。MongoDB*6*0：MongoDB 6.0 版本。MongoDB*7*0：MongoDB 7.0 版本。
+        Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
         """
         return pulumi.get(self, "db_engine_version")
 
@@ -271,7 +271,7 @@ class InstanceArgs:
     @pulumi.getter(name="instanceCount")
     def instance_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        需要创建的实例数量。取值为大于等于 1 的正整数，默认值为1。
+        Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
         """
         return pulumi.get(self, "instance_count")
 
@@ -283,7 +283,7 @@ class InstanceArgs:
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例名称。名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 2~64 个字符。
+        Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
         """
         return pulumi.get(self, "instance_name")
 
@@ -295,7 +295,7 @@ class InstanceArgs:
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        MongoDB 的实例类型，取值范围如下：ReplicaSet（默认）：副本集。ShardedCluster：分片集群 。
+        MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
         """
         return pulumi.get(self, "instance_type")
 
@@ -307,7 +307,7 @@ class InstanceArgs:
     @pulumi.getter(name="mongosNodeNumber")
     def mongos_node_number(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        分片集群中 Mongos 节点的数量。取值范围：2~32。
+        Number of Mongos nodes in the sharded cluster. Range: 2~32.
         """
         return pulumi.get(self, "mongos_node_number")
 
@@ -319,7 +319,7 @@ class InstanceArgs:
     @pulumi.getter(name="mongosNodeSpec")
     def mongos_node_spec(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        分片集群中 Mongos 节点的规格码。
+        Specification code for Mongos nodes in a sharded cluster.
         """
         return pulumi.get(self, "mongos_node_spec")
 
@@ -340,7 +340,7 @@ class InstanceArgs:
     @pulumi.getter(name="nodeNumber")
     def node_number(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        节点数量，其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点数量。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示每个 Shard 分片中的节点数量。
+        Node count. When the instance type is ReplicaSet, this parameter indicates the number of compute nodes in the replica set instance. When the instance type is ShardedCluster, it indicates the number of nodes in each shard.
         """
         return pulumi.get(self, "node_number")
 
@@ -352,7 +352,7 @@ class InstanceArgs:
     @pulumi.getter
     def period(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        包年包月实例的购买时长，其中：当 PeriodUnit 为 Year 时，Period 取值为 1~3。当 PeriodUnit 为 Month 时，Period 取值为 1~9。
+        Subscription instance purchase duration. When PeriodUnit is Year, Period can be 1–3. When PeriodUnit is Month, Period can be 1–9.
         """
         return pulumi.get(self, "period")
 
@@ -364,7 +364,7 @@ class InstanceArgs:
     @pulumi.getter(name="periodUnit")
     def period_unit(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        指定包年包月实例为包年或者包月类型。取值如下：Year：包年。Month：包月。
+        Specify whether the subscription instance is yearly or monthly. Options: Year: yearly. Month: monthly.
         """
         return pulumi.get(self, "period_unit")
 
@@ -376,7 +376,7 @@ class InstanceArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        选择实例所属的项目。若该参数留空，新建实例会默认加入 default 项目。
+        Select the project for the instance. If left blank, the new instance will be added to the default project.
         """
         return pulumi.get(self, "project_name")
 
@@ -388,7 +388,7 @@ class InstanceArgs:
     @pulumi.getter(name="shardNumber")
     def shard_number(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        分片集群中 Shard 分片的数量。取值范围：2~32。
+        Number of shards in the sharded cluster. Range: 2–32.
         """
         return pulumi.get(self, "shard_number")
 
@@ -400,7 +400,7 @@ class InstanceArgs:
     @pulumi.getter(name="superAccountName")
     def super_account_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        数据库账号名称。当前仅支持在创建实例时设置超级管理员账号，账号名称固定为 root。
+        Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
         """
         return pulumi.get(self, "super_account_name")
 
@@ -412,7 +412,7 @@ class InstanceArgs:
     @pulumi.getter(name="superAccountPassword")
     def super_account_password(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        root 账号的密码。密码需同时满足如下条件：只能为大小写字母、数字及以下特殊字符 _#!@$%^&*()+=-。长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意三种。不允许使用极易被破解的弱密码（如 Admin@123）。
+        Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!@$%^&*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin@123) are not allowed.
         """
         return pulumi.get(self, "super_account_password")
 
@@ -479,44 +479,44 @@ class _InstanceState:
                  zone_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Instance resources.
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: 白名单 ID 列表。新建实例会被绑定到指定白名单。
-        :param pulumi.Input[builtins.bool] auto_renew: 是否开启自动续费，取值范围如下：false（默认）：不开启自动续费。true：开启自动续费。
-        :param pulumi.Input[builtins.str] charge_status: 实例计费状态，取值范围如下：Normal：正常。WaitingPaid：等待支付。ChangingPayType：计费变更中。Renewing：续费中。Overdue：已到期。Owing：欠费中。Unsubscribing：退订中。
-        :param pulumi.Input[builtins.str] charge_type: 实例计费类型，取值范围如下：PostPaid（默认）：按量计费（也称后付费）。Prepaid：包年包月（也称预付费）。
-        :param pulumi.Input[builtins.str] closed_time: 计划关停时间（UTC）。
-        :param pulumi.Input[builtins.str] config_server_node_spec: 分片集群中 ConfigServer 节点的规格码。默认值为 mongo.config.1c2g。
-        :param pulumi.Input[builtins.int] config_server_storage_space_gb: 分片集群中 ConfigServer 的存储空间，单位：GiB。步长为 10，默认值：20。
-        :param pulumi.Input[builtins.str] config_servers_id: ConfigServer 的 ID。
-        :param pulumi.Input[builtins.str] created_time: 实例创建时间（UTC）。
-        :param pulumi.Input[builtins.str] db_engine: 数据库引擎。取值固定为 MongoDB
-        :param pulumi.Input[builtins.str] db_engine_version: 数据库引擎版本，取值范围如下：MongoDB*4*0（默认）：MongoDB 4.0 版本。MongoDB*4*2：MongoDB 4.2 版本。MongoDB*4*4：MongoDB 4.4 版本。MongoDB*5*0：MongoDB 5.0 版本。MongoDB*6*0：MongoDB 6.0 版本。MongoDB*7*0：MongoDB 7.0 版本。
-        :param pulumi.Input[builtins.str] db_engine_version_str: 数据库引擎版本的字符串。
-        :param pulumi.Input[builtins.str] expired_time: 实例到期时间（UTC）。
-        :param pulumi.Input[builtins.int] instance_count: 需要创建的实例数量。取值为大于等于 1 的正整数，默认值为1。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
-        :param pulumi.Input[builtins.str] instance_name: 实例名称。名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 2~64 个字符。
-        :param pulumi.Input[builtins.str] instance_status: 实例状态。创建中：Creating。运行中：Running。白名单维护中：AllowListMaintaining。变更配置中：Scaling。重启中：Restarting。网络维护中：NetworkMaintaining。恢复中：Restoring。升级版本中：Upgrading。不可用：Unavailable。关停中：Closing。删除中：Deleting。已关停：Closed。SSL SSL变更中：SSLUpdating。主节点切换中：SwitchMastering。角色切换中：RoleChanging。迁移中：Migrating。
-        :param pulumi.Input[builtins.str] instance_type: MongoDB 的实例类型，取值范围如下：ReplicaSet（默认）：副本集。ShardedCluster：分片集群 。
-        :param pulumi.Input[builtins.str] mongos_id: Mongos 的 ID。
-        :param pulumi.Input[builtins.int] mongos_node_number: 分片集群中 Mongos 节点的数量。取值范围：2~32。
-        :param pulumi.Input[builtins.str] mongos_node_spec: 分片集群中 Mongos 节点的规格码。
-        :param pulumi.Input[builtins.int] node_number: 节点数量，其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点数量。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示每个 Shard 分片中的节点数量。
-        :param pulumi.Input[builtins.str] node_spec: 实例的规格码。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点规格。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示 Shard 节点的规格。
-        :param pulumi.Input[builtins.int] period: 包年包月实例的购买时长，其中：当 PeriodUnit 为 Year 时，Period 取值为 1~3。当 PeriodUnit 为 Month 时，Period 取值为 1~9。
-        :param pulumi.Input[builtins.str] period_unit: 指定包年包月实例为包年或者包月类型。取值如下：Year：包年。Month：包月。
-        :param pulumi.Input[builtins.str] private_endpoint: 实例私网连接地址的字符串信息。
-        :param pulumi.Input[builtins.str] project_name: 选择实例所属的项目。若该参数留空，新建实例会默认加入 default 项目。
-        :param pulumi.Input[builtins.int] read_only_node_number: 实例的只读节点数量。
-        :param pulumi.Input[builtins.str] reclaim_time: 实例的计划回收时间（UTC）。
-        :param pulumi.Input[builtins.int] shard_number: 分片集群中 Shard 分片的数量。取值范围：2~32。
-        :param pulumi.Input[builtins.int] storage_space_gb: 副本集实例的总存储空间，或分片集群中单个 Shard 分片的存储空间，单位：GiB，步长为 10。
-        :param pulumi.Input[builtins.str] storage_type: 实例的存储类型。当前仅支持本地 SSD 盘（即 LocalSSD）存储。
-        :param pulumi.Input[builtins.str] subnet_id: 子网 ID。
-        :param pulumi.Input[builtins.str] super_account_name: 数据库账号名称。当前仅支持在创建实例时设置超级管理员账号，账号名称固定为 root。
-        :param pulumi.Input[builtins.str] super_account_password: root 账号的密码。密码需同时满足如下条件：只能为大小写字母、数字及以下特殊字符 _#!@$%^&*()+=-。长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意三种。不允许使用极易被破解的弱密码（如 Admin@123）。
-        :param pulumi.Input[builtins.str] updated_time: 实例的更新时间（UTC）。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络 ID。
-        :param pulumi.Input[builtins.str] zone_id: 实例所在可用区的 ID。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: Allowlist ID list. New instances are bound to the specified allowlist.
+        :param pulumi.Input[builtins.bool] auto_renew: Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
+        :param pulumi.Input[builtins.str] charge_status: Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
+        :param pulumi.Input[builtins.str] charge_type: Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
+        :param pulumi.Input[builtins.str] closed_time: Scheduled shutdown time (UTC).
+        :param pulumi.Input[builtins.str] config_server_node_spec: ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
+        :param pulumi.Input[builtins.int] config_server_storage_space_gb: ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
+        :param pulumi.Input[builtins.str] config_servers_id: ConfigServer ID
+        :param pulumi.Input[builtins.str] created_time: Instance creation time (UTC).
+        :param pulumi.Input[builtins.str] db_engine: Database engine. The value is fixed as MongoDB
+        :param pulumi.Input[builtins.str] db_engine_version: Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
+        :param pulumi.Input[builtins.str] db_engine_version_str: Database engine version string
+        :param pulumi.Input[builtins.str] expired_time: Instance expiration time (UTC).
+        :param pulumi.Input[builtins.int] instance_count: Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
+        :param pulumi.Input[builtins.str] instance_id: Instance ID.
+        :param pulumi.Input[builtins.str] instance_name: Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
+        :param pulumi.Input[builtins.str] instance_status: Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
+        :param pulumi.Input[builtins.str] instance_type: MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
+        :param pulumi.Input[builtins.str] mongos_id: Mongos ID.
+        :param pulumi.Input[builtins.int] mongos_node_number: Number of Mongos nodes in the sharded cluster. Range: 2~32.
+        :param pulumi.Input[builtins.str] mongos_node_spec: Specification code for Mongos nodes in a sharded cluster.
+        :param pulumi.Input[builtins.int] node_number: Node count. When the instance type is ReplicaSet, this parameter indicates the number of compute nodes in the replica set instance. When the instance type is ShardedCluster, it indicates the number of nodes in each shard.
+        :param pulumi.Input[builtins.str] node_spec: Instance specification code. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this parameter specifies the compute node specification for the replica set instance. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this parameter specifies the specification for Shard nodes.
+        :param pulumi.Input[builtins.int] period: Subscription instance purchase duration. When PeriodUnit is Year, Period can be 1–3. When PeriodUnit is Month, Period can be 1–9.
+        :param pulumi.Input[builtins.str] period_unit: Specify whether the subscription instance is yearly or monthly. Options: Year: yearly. Month: monthly.
+        :param pulumi.Input[builtins.str] private_endpoint: String information for the instance's private network connection address.
+        :param pulumi.Input[builtins.str] project_name: Select the project for the instance. If left blank, the new instance will be added to the default project.
+        :param pulumi.Input[builtins.int] read_only_node_number: Number of read-only nodes in the instance
+        :param pulumi.Input[builtins.str] reclaim_time: Scheduled recycle time for the instance (UTC)
+        :param pulumi.Input[builtins.int] shard_number: Number of shards in the sharded cluster. Range: 2–32.
+        :param pulumi.Input[builtins.int] storage_space_gb: Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
+        :param pulumi.Input[builtins.str] storage_type: Instance storage type. Currently, only local SSD disks (LocalSSD) are supported.
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID.
+        :param pulumi.Input[builtins.str] super_account_name: Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
+        :param pulumi.Input[builtins.str] super_account_password: Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!@$%^&*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin@123) are not allowed.
+        :param pulumi.Input[builtins.str] updated_time: Instance update time (UTC).
+        :param pulumi.Input[builtins.str] vpc_id: Private network ID.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID where the instance is located.
         """
         if allow_list_ids is not None:
             pulumi.set(__self__, "allow_list_ids", allow_list_ids)
@@ -611,7 +611,7 @@ class _InstanceState:
     @pulumi.getter(name="allowListIds")
     def allow_list_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        白名单 ID 列表。新建实例会被绑定到指定白名单。
+        Allowlist ID list. New instances are bound to the specified allowlist.
         """
         return pulumi.get(self, "allow_list_ids")
 
@@ -623,7 +623,7 @@ class _InstanceState:
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启自动续费，取值范围如下：false（默认）：不开启自动续费。true：开启自动续费。
+        Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -635,7 +635,7 @@ class _InstanceState:
     @pulumi.getter(name="chargeStatus")
     def charge_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例计费状态，取值范围如下：Normal：正常。WaitingPaid：等待支付。ChangingPayType：计费变更中。Renewing：续费中。Overdue：已到期。Owing：欠费中。Unsubscribing：退订中。
+        Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
         """
         return pulumi.get(self, "charge_status")
 
@@ -647,7 +647,7 @@ class _InstanceState:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例计费类型，取值范围如下：PostPaid（默认）：按量计费（也称后付费）。Prepaid：包年包月（也称预付费）。
+        Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
         """
         return pulumi.get(self, "charge_type")
 
@@ -659,7 +659,7 @@ class _InstanceState:
     @pulumi.getter(name="closedTime")
     def closed_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        计划关停时间（UTC）。
+        Scheduled shutdown time (UTC).
         """
         return pulumi.get(self, "closed_time")
 
@@ -671,7 +671,7 @@ class _InstanceState:
     @pulumi.getter(name="configServerNodeSpec")
     def config_server_node_spec(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        分片集群中 ConfigServer 节点的规格码。默认值为 mongo.config.1c2g。
+        ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
         """
         return pulumi.get(self, "config_server_node_spec")
 
@@ -683,7 +683,7 @@ class _InstanceState:
     @pulumi.getter(name="configServerStorageSpaceGb")
     def config_server_storage_space_gb(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        分片集群中 ConfigServer 的存储空间，单位：GiB。步长为 10，默认值：20。
+        ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
         """
         return pulumi.get(self, "config_server_storage_space_gb")
 
@@ -704,7 +704,7 @@ class _InstanceState:
     @pulumi.getter(name="configServersId")
     def config_servers_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        ConfigServer 的 ID。
+        ConfigServer ID
         """
         return pulumi.get(self, "config_servers_id")
 
@@ -716,7 +716,7 @@ class _InstanceState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例创建时间（UTC）。
+        Instance creation time (UTC).
         """
         return pulumi.get(self, "created_time")
 
@@ -728,7 +728,7 @@ class _InstanceState:
     @pulumi.getter(name="dbEngine")
     def db_engine(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        数据库引擎。取值固定为 MongoDB
+        Database engine. The value is fixed as MongoDB
         """
         return pulumi.get(self, "db_engine")
 
@@ -740,7 +740,7 @@ class _InstanceState:
     @pulumi.getter(name="dbEngineVersion")
     def db_engine_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        数据库引擎版本，取值范围如下：MongoDB*4*0（默认）：MongoDB 4.0 版本。MongoDB*4*2：MongoDB 4.2 版本。MongoDB*4*4：MongoDB 4.4 版本。MongoDB*5*0：MongoDB 5.0 版本。MongoDB*6*0：MongoDB 6.0 版本。MongoDB*7*0：MongoDB 7.0 版本。
+        Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
         """
         return pulumi.get(self, "db_engine_version")
 
@@ -752,7 +752,7 @@ class _InstanceState:
     @pulumi.getter(name="dbEngineVersionStr")
     def db_engine_version_str(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        数据库引擎版本的字符串。
+        Database engine version string
         """
         return pulumi.get(self, "db_engine_version_str")
 
@@ -764,7 +764,7 @@ class _InstanceState:
     @pulumi.getter(name="expiredTime")
     def expired_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例到期时间（UTC）。
+        Instance expiration time (UTC).
         """
         return pulumi.get(self, "expired_time")
 
@@ -776,7 +776,7 @@ class _InstanceState:
     @pulumi.getter(name="instanceCount")
     def instance_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        需要创建的实例数量。取值为大于等于 1 的正整数，默认值为1。
+        Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
         """
         return pulumi.get(self, "instance_count")
 
@@ -788,7 +788,7 @@ class _InstanceState:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例 ID。
+        Instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -800,7 +800,7 @@ class _InstanceState:
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例名称。名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 2~64 个字符。
+        Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
         """
         return pulumi.get(self, "instance_name")
 
@@ -812,7 +812,7 @@ class _InstanceState:
     @pulumi.getter(name="instanceStatus")
     def instance_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例状态。创建中：Creating。运行中：Running。白名单维护中：AllowListMaintaining。变更配置中：Scaling。重启中：Restarting。网络维护中：NetworkMaintaining。恢复中：Restoring。升级版本中：Upgrading。不可用：Unavailable。关停中：Closing。删除中：Deleting。已关停：Closed。SSL SSL变更中：SSLUpdating。主节点切换中：SwitchMastering。角色切换中：RoleChanging。迁移中：Migrating。
+        Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
         """
         return pulumi.get(self, "instance_status")
 
@@ -824,7 +824,7 @@ class _InstanceState:
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        MongoDB 的实例类型，取值范围如下：ReplicaSet（默认）：副本集。ShardedCluster：分片集群 。
+        MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
         """
         return pulumi.get(self, "instance_type")
 
@@ -845,7 +845,7 @@ class _InstanceState:
     @pulumi.getter(name="mongosId")
     def mongos_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Mongos 的 ID。
+        Mongos ID.
         """
         return pulumi.get(self, "mongos_id")
 
@@ -857,7 +857,7 @@ class _InstanceState:
     @pulumi.getter(name="mongosNodeNumber")
     def mongos_node_number(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        分片集群中 Mongos 节点的数量。取值范围：2~32。
+        Number of Mongos nodes in the sharded cluster. Range: 2~32.
         """
         return pulumi.get(self, "mongos_node_number")
 
@@ -869,7 +869,7 @@ class _InstanceState:
     @pulumi.getter(name="mongosNodeSpec")
     def mongos_node_spec(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        分片集群中 Mongos 节点的规格码。
+        Specification code for Mongos nodes in a sharded cluster.
         """
         return pulumi.get(self, "mongos_node_spec")
 
@@ -890,7 +890,7 @@ class _InstanceState:
     @pulumi.getter(name="nodeNumber")
     def node_number(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        节点数量，其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点数量。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示每个 Shard 分片中的节点数量。
+        Node count. When the instance type is ReplicaSet, this parameter indicates the number of compute nodes in the replica set instance. When the instance type is ShardedCluster, it indicates the number of nodes in each shard.
         """
         return pulumi.get(self, "node_number")
 
@@ -902,7 +902,7 @@ class _InstanceState:
     @pulumi.getter(name="nodeSpec")
     def node_spec(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的规格码。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点规格。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示 Shard 节点的规格。
+        Instance specification code. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this parameter specifies the compute node specification for the replica set instance. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this parameter specifies the specification for Shard nodes.
         """
         return pulumi.get(self, "node_spec")
 
@@ -923,7 +923,7 @@ class _InstanceState:
     @pulumi.getter
     def period(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        包年包月实例的购买时长，其中：当 PeriodUnit 为 Year 时，Period 取值为 1~3。当 PeriodUnit 为 Month 时，Period 取值为 1~9。
+        Subscription instance purchase duration. When PeriodUnit is Year, Period can be 1–3. When PeriodUnit is Month, Period can be 1–9.
         """
         return pulumi.get(self, "period")
 
@@ -935,7 +935,7 @@ class _InstanceState:
     @pulumi.getter(name="periodUnit")
     def period_unit(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        指定包年包月实例为包年或者包月类型。取值如下：Year：包年。Month：包月。
+        Specify whether the subscription instance is yearly or monthly. Options: Year: yearly. Month: monthly.
         """
         return pulumi.get(self, "period_unit")
 
@@ -947,7 +947,7 @@ class _InstanceState:
     @pulumi.getter(name="privateEndpoint")
     def private_endpoint(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例私网连接地址的字符串信息。
+        String information for the instance's private network connection address.
         """
         return pulumi.get(self, "private_endpoint")
 
@@ -959,7 +959,7 @@ class _InstanceState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        选择实例所属的项目。若该参数留空，新建实例会默认加入 default 项目。
+        Select the project for the instance. If left blank, the new instance will be added to the default project.
         """
         return pulumi.get(self, "project_name")
 
@@ -971,7 +971,7 @@ class _InstanceState:
     @pulumi.getter(name="readOnlyNodeNumber")
     def read_only_node_number(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例的只读节点数量。
+        Number of read-only nodes in the instance
         """
         return pulumi.get(self, "read_only_node_number")
 
@@ -983,7 +983,7 @@ class _InstanceState:
     @pulumi.getter(name="reclaimTime")
     def reclaim_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的计划回收时间（UTC）。
+        Scheduled recycle time for the instance (UTC)
         """
         return pulumi.get(self, "reclaim_time")
 
@@ -995,7 +995,7 @@ class _InstanceState:
     @pulumi.getter(name="shardNumber")
     def shard_number(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        分片集群中 Shard 分片的数量。取值范围：2~32。
+        Number of shards in the sharded cluster. Range: 2–32.
         """
         return pulumi.get(self, "shard_number")
 
@@ -1016,7 +1016,7 @@ class _InstanceState:
     @pulumi.getter(name="storageSpaceGb")
     def storage_space_gb(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        副本集实例的总存储空间，或分片集群中单个 Shard 分片的存储空间，单位：GiB，步长为 10。
+        Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
         """
         return pulumi.get(self, "storage_space_gb")
 
@@ -1028,7 +1028,7 @@ class _InstanceState:
     @pulumi.getter(name="storageType")
     def storage_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的存储类型。当前仅支持本地 SSD 盘（即 LocalSSD）存储。
+        Instance storage type. Currently, only local SSD disks (LocalSSD) are supported.
         """
         return pulumi.get(self, "storage_type")
 
@@ -1040,7 +1040,7 @@ class _InstanceState:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子网 ID。
+        Subnet ID.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -1052,7 +1052,7 @@ class _InstanceState:
     @pulumi.getter(name="superAccountName")
     def super_account_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        数据库账号名称。当前仅支持在创建实例时设置超级管理员账号，账号名称固定为 root。
+        Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
         """
         return pulumi.get(self, "super_account_name")
 
@@ -1064,7 +1064,7 @@ class _InstanceState:
     @pulumi.getter(name="superAccountPassword")
     def super_account_password(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        root 账号的密码。密码需同时满足如下条件：只能为大小写字母、数字及以下特殊字符 _#!@$%^&*()+=-。长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意三种。不允许使用极易被破解的弱密码（如 Admin@123）。
+        Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!@$%^&*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin@123) are not allowed.
         """
         return pulumi.get(self, "super_account_password")
 
@@ -1085,7 +1085,7 @@ class _InstanceState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的更新时间（UTC）。
+        Instance update time (UTC).
         """
         return pulumi.get(self, "updated_time")
 
@@ -1097,7 +1097,7 @@ class _InstanceState:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        私有网络 ID。
+        Private network ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -1109,7 +1109,7 @@ class _InstanceState:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所在可用区的 ID。
+        Availability zone ID where the instance is located.
         """
         return pulumi.get(self, "zone_id")
 
@@ -1152,7 +1152,7 @@ class Instance(pulumi.CustomResource):
                  zone_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        文档数据库 MongoDB 版支持多种架构，能够满足业务灵活部署的需求。除副本集实例架构外，文档数据库 MongoDB 版还提供了分片集群架构，以满足海量数据业务场景，同时提供了灾备、备份及恢复、监控等全套解决方案；在互联网（游戏、电商、直播、资讯、社交）、新零售、在线教育、金融、物联网、政企等行业都有广泛的应用。
+        MongoDB document database supports multiple architectures for flexible business deployment. In addition to replica set instances, MongoDB document database also provides sharded cluster architecture for large-scale data scenarios, along with disaster recovery, backup and restore, monitoring, and a complete solution set. It is widely used in industries such as internet (gaming, e-commerce, live streaming, news, social), new retail, online education, finance, IoT, and government/enterprise.
 
         ## Example Usage
 
@@ -1199,30 +1199,30 @@ class Instance(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: 白名单 ID 列表。新建实例会被绑定到指定白名单。
-        :param pulumi.Input[builtins.bool] auto_renew: 是否开启自动续费，取值范围如下：false（默认）：不开启自动续费。true：开启自动续费。
-        :param pulumi.Input[builtins.str] charge_type: 实例计费类型，取值范围如下：PostPaid（默认）：按量计费（也称后付费）。Prepaid：包年包月（也称预付费）。
-        :param pulumi.Input[builtins.str] config_server_node_spec: 分片集群中 ConfigServer 节点的规格码。默认值为 mongo.config.1c2g。
-        :param pulumi.Input[builtins.int] config_server_storage_space_gb: 分片集群中 ConfigServer 的存储空间，单位：GiB。步长为 10，默认值：20。
-        :param pulumi.Input[builtins.str] db_engine: 数据库引擎。取值固定为 MongoDB
-        :param pulumi.Input[builtins.str] db_engine_version: 数据库引擎版本，取值范围如下：MongoDB*4*0（默认）：MongoDB 4.0 版本。MongoDB*4*2：MongoDB 4.2 版本。MongoDB*4*4：MongoDB 4.4 版本。MongoDB*5*0：MongoDB 5.0 版本。MongoDB*6*0：MongoDB 6.0 版本。MongoDB*7*0：MongoDB 7.0 版本。
-        :param pulumi.Input[builtins.int] instance_count: 需要创建的实例数量。取值为大于等于 1 的正整数，默认值为1。
-        :param pulumi.Input[builtins.str] instance_name: 实例名称。名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 2~64 个字符。
-        :param pulumi.Input[builtins.str] instance_type: MongoDB 的实例类型，取值范围如下：ReplicaSet（默认）：副本集。ShardedCluster：分片集群 。
-        :param pulumi.Input[builtins.int] mongos_node_number: 分片集群中 Mongos 节点的数量。取值范围：2~32。
-        :param pulumi.Input[builtins.str] mongos_node_spec: 分片集群中 Mongos 节点的规格码。
-        :param pulumi.Input[builtins.int] node_number: 节点数量，其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点数量。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示每个 Shard 分片中的节点数量。
-        :param pulumi.Input[builtins.str] node_spec: 实例的规格码。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点规格。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示 Shard 节点的规格。
-        :param pulumi.Input[builtins.int] period: 包年包月实例的购买时长，其中：当 PeriodUnit 为 Year 时，Period 取值为 1~3。当 PeriodUnit 为 Month 时，Period 取值为 1~9。
-        :param pulumi.Input[builtins.str] period_unit: 指定包年包月实例为包年或者包月类型。取值如下：Year：包年。Month：包月。
-        :param pulumi.Input[builtins.str] project_name: 选择实例所属的项目。若该参数留空，新建实例会默认加入 default 项目。
-        :param pulumi.Input[builtins.int] shard_number: 分片集群中 Shard 分片的数量。取值范围：2~32。
-        :param pulumi.Input[builtins.int] storage_space_gb: 副本集实例的总存储空间，或分片集群中单个 Shard 分片的存储空间，单位：GiB，步长为 10。
-        :param pulumi.Input[builtins.str] subnet_id: 子网 ID。
-        :param pulumi.Input[builtins.str] super_account_name: 数据库账号名称。当前仅支持在创建实例时设置超级管理员账号，账号名称固定为 root。
-        :param pulumi.Input[builtins.str] super_account_password: root 账号的密码。密码需同时满足如下条件：只能为大小写字母、数字及以下特殊字符 _#!@$%^&*()+=-。长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意三种。不允许使用极易被破解的弱密码（如 Admin@123）。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络 ID。
-        :param pulumi.Input[builtins.str] zone_id: 实例所在可用区的 ID。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: Allowlist ID list. New instances are bound to the specified allowlist.
+        :param pulumi.Input[builtins.bool] auto_renew: Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
+        :param pulumi.Input[builtins.str] charge_type: Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
+        :param pulumi.Input[builtins.str] config_server_node_spec: ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
+        :param pulumi.Input[builtins.int] config_server_storage_space_gb: ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
+        :param pulumi.Input[builtins.str] db_engine: Database engine. The value is fixed as MongoDB
+        :param pulumi.Input[builtins.str] db_engine_version: Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
+        :param pulumi.Input[builtins.int] instance_count: Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
+        :param pulumi.Input[builtins.str] instance_name: Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
+        :param pulumi.Input[builtins.str] instance_type: MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
+        :param pulumi.Input[builtins.int] mongos_node_number: Number of Mongos nodes in the sharded cluster. Range: 2~32.
+        :param pulumi.Input[builtins.str] mongos_node_spec: Specification code for Mongos nodes in a sharded cluster.
+        :param pulumi.Input[builtins.int] node_number: Node count. When the instance type is ReplicaSet, this parameter indicates the number of compute nodes in the replica set instance. When the instance type is ShardedCluster, it indicates the number of nodes in each shard.
+        :param pulumi.Input[builtins.str] node_spec: Instance specification code. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this parameter specifies the compute node specification for the replica set instance. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this parameter specifies the specification for Shard nodes.
+        :param pulumi.Input[builtins.int] period: Subscription instance purchase duration. When PeriodUnit is Year, Period can be 1–3. When PeriodUnit is Month, Period can be 1–9.
+        :param pulumi.Input[builtins.str] period_unit: Specify whether the subscription instance is yearly or monthly. Options: Year: yearly. Month: monthly.
+        :param pulumi.Input[builtins.str] project_name: Select the project for the instance. If left blank, the new instance will be added to the default project.
+        :param pulumi.Input[builtins.int] shard_number: Number of shards in the sharded cluster. Range: 2–32.
+        :param pulumi.Input[builtins.int] storage_space_gb: Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID.
+        :param pulumi.Input[builtins.str] super_account_name: Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
+        :param pulumi.Input[builtins.str] super_account_password: Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!@$%^&*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin@123) are not allowed.
+        :param pulumi.Input[builtins.str] vpc_id: Private network ID.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID where the instance is located.
         """
         ...
     @overload
@@ -1231,7 +1231,7 @@ class Instance(pulumi.CustomResource):
                  args: InstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        文档数据库 MongoDB 版支持多种架构，能够满足业务灵活部署的需求。除副本集实例架构外，文档数据库 MongoDB 版还提供了分片集群架构，以满足海量数据业务场景，同时提供了灾备、备份及恢复、监控等全套解决方案；在互联网（游戏、电商、直播、资讯、社交）、新零售、在线教育、金融、物联网、政企等行业都有广泛的应用。
+        MongoDB document database supports multiple architectures for flexible business deployment. In addition to replica set instances, MongoDB document database also provides sharded cluster architecture for large-scale data scenarios, along with disaster recovery, backup and restore, monitoring, and a complete solution set. It is widely used in industries such as internet (gaming, e-commerce, live streaming, news, social), new retail, online education, finance, IoT, and government/enterprise.
 
         ## Example Usage
 
@@ -1441,44 +1441,44 @@ class Instance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: 白名单 ID 列表。新建实例会被绑定到指定白名单。
-        :param pulumi.Input[builtins.bool] auto_renew: 是否开启自动续费，取值范围如下：false（默认）：不开启自动续费。true：开启自动续费。
-        :param pulumi.Input[builtins.str] charge_status: 实例计费状态，取值范围如下：Normal：正常。WaitingPaid：等待支付。ChangingPayType：计费变更中。Renewing：续费中。Overdue：已到期。Owing：欠费中。Unsubscribing：退订中。
-        :param pulumi.Input[builtins.str] charge_type: 实例计费类型，取值范围如下：PostPaid（默认）：按量计费（也称后付费）。Prepaid：包年包月（也称预付费）。
-        :param pulumi.Input[builtins.str] closed_time: 计划关停时间（UTC）。
-        :param pulumi.Input[builtins.str] config_server_node_spec: 分片集群中 ConfigServer 节点的规格码。默认值为 mongo.config.1c2g。
-        :param pulumi.Input[builtins.int] config_server_storage_space_gb: 分片集群中 ConfigServer 的存储空间，单位：GiB。步长为 10，默认值：20。
-        :param pulumi.Input[builtins.str] config_servers_id: ConfigServer 的 ID。
-        :param pulumi.Input[builtins.str] created_time: 实例创建时间（UTC）。
-        :param pulumi.Input[builtins.str] db_engine: 数据库引擎。取值固定为 MongoDB
-        :param pulumi.Input[builtins.str] db_engine_version: 数据库引擎版本，取值范围如下：MongoDB*4*0（默认）：MongoDB 4.0 版本。MongoDB*4*2：MongoDB 4.2 版本。MongoDB*4*4：MongoDB 4.4 版本。MongoDB*5*0：MongoDB 5.0 版本。MongoDB*6*0：MongoDB 6.0 版本。MongoDB*7*0：MongoDB 7.0 版本。
-        :param pulumi.Input[builtins.str] db_engine_version_str: 数据库引擎版本的字符串。
-        :param pulumi.Input[builtins.str] expired_time: 实例到期时间（UTC）。
-        :param pulumi.Input[builtins.int] instance_count: 需要创建的实例数量。取值为大于等于 1 的正整数，默认值为1。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
-        :param pulumi.Input[builtins.str] instance_name: 实例名称。名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 2~64 个字符。
-        :param pulumi.Input[builtins.str] instance_status: 实例状态。创建中：Creating。运行中：Running。白名单维护中：AllowListMaintaining。变更配置中：Scaling。重启中：Restarting。网络维护中：NetworkMaintaining。恢复中：Restoring。升级版本中：Upgrading。不可用：Unavailable。关停中：Closing。删除中：Deleting。已关停：Closed。SSL SSL变更中：SSLUpdating。主节点切换中：SwitchMastering。角色切换中：RoleChanging。迁移中：Migrating。
-        :param pulumi.Input[builtins.str] instance_type: MongoDB 的实例类型，取值范围如下：ReplicaSet（默认）：副本集。ShardedCluster：分片集群 。
-        :param pulumi.Input[builtins.str] mongos_id: Mongos 的 ID。
-        :param pulumi.Input[builtins.int] mongos_node_number: 分片集群中 Mongos 节点的数量。取值范围：2~32。
-        :param pulumi.Input[builtins.str] mongos_node_spec: 分片集群中 Mongos 节点的规格码。
-        :param pulumi.Input[builtins.int] node_number: 节点数量，其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点数量。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示每个 Shard 分片中的节点数量。
-        :param pulumi.Input[builtins.str] node_spec: 实例的规格码。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点规格。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示 Shard 节点的规格。
-        :param pulumi.Input[builtins.int] period: 包年包月实例的购买时长，其中：当 PeriodUnit 为 Year 时，Period 取值为 1~3。当 PeriodUnit 为 Month 时，Period 取值为 1~9。
-        :param pulumi.Input[builtins.str] period_unit: 指定包年包月实例为包年或者包月类型。取值如下：Year：包年。Month：包月。
-        :param pulumi.Input[builtins.str] private_endpoint: 实例私网连接地址的字符串信息。
-        :param pulumi.Input[builtins.str] project_name: 选择实例所属的项目。若该参数留空，新建实例会默认加入 default 项目。
-        :param pulumi.Input[builtins.int] read_only_node_number: 实例的只读节点数量。
-        :param pulumi.Input[builtins.str] reclaim_time: 实例的计划回收时间（UTC）。
-        :param pulumi.Input[builtins.int] shard_number: 分片集群中 Shard 分片的数量。取值范围：2~32。
-        :param pulumi.Input[builtins.int] storage_space_gb: 副本集实例的总存储空间，或分片集群中单个 Shard 分片的存储空间，单位：GiB，步长为 10。
-        :param pulumi.Input[builtins.str] storage_type: 实例的存储类型。当前仅支持本地 SSD 盘（即 LocalSSD）存储。
-        :param pulumi.Input[builtins.str] subnet_id: 子网 ID。
-        :param pulumi.Input[builtins.str] super_account_name: 数据库账号名称。当前仅支持在创建实例时设置超级管理员账号，账号名称固定为 root。
-        :param pulumi.Input[builtins.str] super_account_password: root 账号的密码。密码需同时满足如下条件：只能为大小写字母、数字及以下特殊字符 _#!@$%^&*()+=-。长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意三种。不允许使用极易被破解的弱密码（如 Admin@123）。
-        :param pulumi.Input[builtins.str] updated_time: 实例的更新时间（UTC）。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络 ID。
-        :param pulumi.Input[builtins.str] zone_id: 实例所在可用区的 ID。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allow_list_ids: Allowlist ID list. New instances are bound to the specified allowlist.
+        :param pulumi.Input[builtins.bool] auto_renew: Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
+        :param pulumi.Input[builtins.str] charge_status: Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
+        :param pulumi.Input[builtins.str] charge_type: Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
+        :param pulumi.Input[builtins.str] closed_time: Scheduled shutdown time (UTC).
+        :param pulumi.Input[builtins.str] config_server_node_spec: ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
+        :param pulumi.Input[builtins.int] config_server_storage_space_gb: ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
+        :param pulumi.Input[builtins.str] config_servers_id: ConfigServer ID
+        :param pulumi.Input[builtins.str] created_time: Instance creation time (UTC).
+        :param pulumi.Input[builtins.str] db_engine: Database engine. The value is fixed as MongoDB
+        :param pulumi.Input[builtins.str] db_engine_version: Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
+        :param pulumi.Input[builtins.str] db_engine_version_str: Database engine version string
+        :param pulumi.Input[builtins.str] expired_time: Instance expiration time (UTC).
+        :param pulumi.Input[builtins.int] instance_count: Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
+        :param pulumi.Input[builtins.str] instance_id: Instance ID.
+        :param pulumi.Input[builtins.str] instance_name: Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
+        :param pulumi.Input[builtins.str] instance_status: Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
+        :param pulumi.Input[builtins.str] instance_type: MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
+        :param pulumi.Input[builtins.str] mongos_id: Mongos ID.
+        :param pulumi.Input[builtins.int] mongos_node_number: Number of Mongos nodes in the sharded cluster. Range: 2~32.
+        :param pulumi.Input[builtins.str] mongos_node_spec: Specification code for Mongos nodes in a sharded cluster.
+        :param pulumi.Input[builtins.int] node_number: Node count. When the instance type is ReplicaSet, this parameter indicates the number of compute nodes in the replica set instance. When the instance type is ShardedCluster, it indicates the number of nodes in each shard.
+        :param pulumi.Input[builtins.str] node_spec: Instance specification code. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this parameter specifies the compute node specification for the replica set instance. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this parameter specifies the specification for Shard nodes.
+        :param pulumi.Input[builtins.int] period: Subscription instance purchase duration. When PeriodUnit is Year, Period can be 1–3. When PeriodUnit is Month, Period can be 1–9.
+        :param pulumi.Input[builtins.str] period_unit: Specify whether the subscription instance is yearly or monthly. Options: Year: yearly. Month: monthly.
+        :param pulumi.Input[builtins.str] private_endpoint: String information for the instance's private network connection address.
+        :param pulumi.Input[builtins.str] project_name: Select the project for the instance. If left blank, the new instance will be added to the default project.
+        :param pulumi.Input[builtins.int] read_only_node_number: Number of read-only nodes in the instance
+        :param pulumi.Input[builtins.str] reclaim_time: Scheduled recycle time for the instance (UTC)
+        :param pulumi.Input[builtins.int] shard_number: Number of shards in the sharded cluster. Range: 2–32.
+        :param pulumi.Input[builtins.int] storage_space_gb: Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
+        :param pulumi.Input[builtins.str] storage_type: Instance storage type. Currently, only local SSD disks (LocalSSD) are supported.
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID.
+        :param pulumi.Input[builtins.str] super_account_name: Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
+        :param pulumi.Input[builtins.str] super_account_password: Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!@$%^&*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin@123) are not allowed.
+        :param pulumi.Input[builtins.str] updated_time: Instance update time (UTC).
+        :param pulumi.Input[builtins.str] vpc_id: Private network ID.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID where the instance is located.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1534,7 +1534,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="allowListIds")
     def allow_list_ids(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        白名单 ID 列表。新建实例会被绑定到指定白名单。
+        Allowlist ID list. New instances are bound to the specified allowlist.
         """
         return pulumi.get(self, "allow_list_ids")
 
@@ -1542,7 +1542,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> pulumi.Output[builtins.bool]:
         """
-        是否开启自动续费，取值范围如下：false（默认）：不开启自动续费。true：开启自动续费。
+        Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -1550,7 +1550,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="chargeStatus")
     def charge_status(self) -> pulumi.Output[builtins.str]:
         """
-        实例计费状态，取值范围如下：Normal：正常。WaitingPaid：等待支付。ChangingPayType：计费变更中。Renewing：续费中。Overdue：已到期。Owing：欠费中。Unsubscribing：退订中。
+        Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
         """
         return pulumi.get(self, "charge_status")
 
@@ -1558,7 +1558,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> pulumi.Output[builtins.str]:
         """
-        实例计费类型，取值范围如下：PostPaid（默认）：按量计费（也称后付费）。Prepaid：包年包月（也称预付费）。
+        Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
         """
         return pulumi.get(self, "charge_type")
 
@@ -1566,7 +1566,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="closedTime")
     def closed_time(self) -> pulumi.Output[builtins.str]:
         """
-        计划关停时间（UTC）。
+        Scheduled shutdown time (UTC).
         """
         return pulumi.get(self, "closed_time")
 
@@ -1574,7 +1574,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="configServerNodeSpec")
     def config_server_node_spec(self) -> pulumi.Output[builtins.str]:
         """
-        分片集群中 ConfigServer 节点的规格码。默认值为 mongo.config.1c2g。
+        ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
         """
         return pulumi.get(self, "config_server_node_spec")
 
@@ -1582,7 +1582,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="configServerStorageSpaceGb")
     def config_server_storage_space_gb(self) -> pulumi.Output[builtins.int]:
         """
-        分片集群中 ConfigServer 的存储空间，单位：GiB。步长为 10，默认值：20。
+        ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
         """
         return pulumi.get(self, "config_server_storage_space_gb")
 
@@ -1595,7 +1595,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="configServersId")
     def config_servers_id(self) -> pulumi.Output[builtins.str]:
         """
-        ConfigServer 的 ID。
+        ConfigServer ID
         """
         return pulumi.get(self, "config_servers_id")
 
@@ -1603,7 +1603,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        实例创建时间（UTC）。
+        Instance creation time (UTC).
         """
         return pulumi.get(self, "created_time")
 
@@ -1611,7 +1611,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="dbEngine")
     def db_engine(self) -> pulumi.Output[builtins.str]:
         """
-        数据库引擎。取值固定为 MongoDB
+        Database engine. The value is fixed as MongoDB
         """
         return pulumi.get(self, "db_engine")
 
@@ -1619,7 +1619,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="dbEngineVersion")
     def db_engine_version(self) -> pulumi.Output[builtins.str]:
         """
-        数据库引擎版本，取值范围如下：MongoDB*4*0（默认）：MongoDB 4.0 版本。MongoDB*4*2：MongoDB 4.2 版本。MongoDB*4*4：MongoDB 4.4 版本。MongoDB*5*0：MongoDB 5.0 版本。MongoDB*6*0：MongoDB 6.0 版本。MongoDB*7*0：MongoDB 7.0 版本。
+        Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
         """
         return pulumi.get(self, "db_engine_version")
 
@@ -1627,7 +1627,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="dbEngineVersionStr")
     def db_engine_version_str(self) -> pulumi.Output[builtins.str]:
         """
-        数据库引擎版本的字符串。
+        Database engine version string
         """
         return pulumi.get(self, "db_engine_version_str")
 
@@ -1635,7 +1635,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="expiredTime")
     def expired_time(self) -> pulumi.Output[builtins.str]:
         """
-        实例到期时间（UTC）。
+        Instance expiration time (UTC).
         """
         return pulumi.get(self, "expired_time")
 
@@ -1643,7 +1643,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="instanceCount")
     def instance_count(self) -> pulumi.Output[builtins.int]:
         """
-        需要创建的实例数量。取值为大于等于 1 的正整数，默认值为1。
+        Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
         """
         return pulumi.get(self, "instance_count")
 
@@ -1651,7 +1651,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例 ID。
+        Instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -1659,7 +1659,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> pulumi.Output[builtins.str]:
         """
-        实例名称。名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 2~64 个字符。
+        Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
         """
         return pulumi.get(self, "instance_name")
 
@@ -1667,7 +1667,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="instanceStatus")
     def instance_status(self) -> pulumi.Output[builtins.str]:
         """
-        实例状态。创建中：Creating。运行中：Running。白名单维护中：AllowListMaintaining。变更配置中：Scaling。重启中：Restarting。网络维护中：NetworkMaintaining。恢复中：Restoring。升级版本中：Upgrading。不可用：Unavailable。关停中：Closing。删除中：Deleting。已关停：Closed。SSL SSL变更中：SSLUpdating。主节点切换中：SwitchMastering。角色切换中：RoleChanging。迁移中：Migrating。
+        Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
         """
         return pulumi.get(self, "instance_status")
 
@@ -1675,7 +1675,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> pulumi.Output[builtins.str]:
         """
-        MongoDB 的实例类型，取值范围如下：ReplicaSet（默认）：副本集。ShardedCluster：分片集群 。
+        MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
         """
         return pulumi.get(self, "instance_type")
 
@@ -1688,7 +1688,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="mongosId")
     def mongos_id(self) -> pulumi.Output[builtins.str]:
         """
-        Mongos 的 ID。
+        Mongos ID.
         """
         return pulumi.get(self, "mongos_id")
 
@@ -1696,7 +1696,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="mongosNodeNumber")
     def mongos_node_number(self) -> pulumi.Output[builtins.int]:
         """
-        分片集群中 Mongos 节点的数量。取值范围：2~32。
+        Number of Mongos nodes in the sharded cluster. Range: 2~32.
         """
         return pulumi.get(self, "mongos_node_number")
 
@@ -1704,7 +1704,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="mongosNodeSpec")
     def mongos_node_spec(self) -> pulumi.Output[builtins.str]:
         """
-        分片集群中 Mongos 节点的规格码。
+        Specification code for Mongos nodes in a sharded cluster.
         """
         return pulumi.get(self, "mongos_node_spec")
 
@@ -1717,7 +1717,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="nodeNumber")
     def node_number(self) -> pulumi.Output[builtins.int]:
         """
-        节点数量，其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点数量。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示每个 Shard 分片中的节点数量。
+        Node count. When the instance type is ReplicaSet, this parameter indicates the number of compute nodes in the replica set instance. When the instance type is ShardedCluster, it indicates the number of nodes in each shard.
         """
         return pulumi.get(self, "node_number")
 
@@ -1725,7 +1725,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="nodeSpec")
     def node_spec(self) -> pulumi.Output[builtins.str]:
         """
-        实例的规格码。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该参数表示副本集实例的计算节点规格。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该参数表示 Shard 节点的规格。
+        Instance specification code. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this parameter specifies the compute node specification for the replica set instance. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this parameter specifies the specification for Shard nodes.
         """
         return pulumi.get(self, "node_spec")
 
@@ -1738,7 +1738,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def period(self) -> pulumi.Output[builtins.int]:
         """
-        包年包月实例的购买时长，其中：当 PeriodUnit 为 Year 时，Period 取值为 1~3。当 PeriodUnit 为 Month 时，Period 取值为 1~9。
+        Subscription instance purchase duration. When PeriodUnit is Year, Period can be 1–3. When PeriodUnit is Month, Period can be 1–9.
         """
         return pulumi.get(self, "period")
 
@@ -1746,7 +1746,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="periodUnit")
     def period_unit(self) -> pulumi.Output[builtins.str]:
         """
-        指定包年包月实例为包年或者包月类型。取值如下：Year：包年。Month：包月。
+        Specify whether the subscription instance is yearly or monthly. Options: Year: yearly. Month: monthly.
         """
         return pulumi.get(self, "period_unit")
 
@@ -1754,7 +1754,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="privateEndpoint")
     def private_endpoint(self) -> pulumi.Output[builtins.str]:
         """
-        实例私网连接地址的字符串信息。
+        String information for the instance's private network connection address.
         """
         return pulumi.get(self, "private_endpoint")
 
@@ -1762,7 +1762,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        选择实例所属的项目。若该参数留空，新建实例会默认加入 default 项目。
+        Select the project for the instance. If left blank, the new instance will be added to the default project.
         """
         return pulumi.get(self, "project_name")
 
@@ -1770,7 +1770,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="readOnlyNodeNumber")
     def read_only_node_number(self) -> pulumi.Output[builtins.int]:
         """
-        实例的只读节点数量。
+        Number of read-only nodes in the instance
         """
         return pulumi.get(self, "read_only_node_number")
 
@@ -1778,7 +1778,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="reclaimTime")
     def reclaim_time(self) -> pulumi.Output[builtins.str]:
         """
-        实例的计划回收时间（UTC）。
+        Scheduled recycle time for the instance (UTC)
         """
         return pulumi.get(self, "reclaim_time")
 
@@ -1786,7 +1786,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="shardNumber")
     def shard_number(self) -> pulumi.Output[builtins.int]:
         """
-        分片集群中 Shard 分片的数量。取值范围：2~32。
+        Number of shards in the sharded cluster. Range: 2–32.
         """
         return pulumi.get(self, "shard_number")
 
@@ -1799,7 +1799,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="storageSpaceGb")
     def storage_space_gb(self) -> pulumi.Output[builtins.int]:
         """
-        副本集实例的总存储空间，或分片集群中单个 Shard 分片的存储空间，单位：GiB，步长为 10。
+        Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
         """
         return pulumi.get(self, "storage_space_gb")
 
@@ -1807,7 +1807,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="storageType")
     def storage_type(self) -> pulumi.Output[builtins.str]:
         """
-        实例的存储类型。当前仅支持本地 SSD 盘（即 LocalSSD）存储。
+        Instance storage type. Currently, only local SSD disks (LocalSSD) are supported.
         """
         return pulumi.get(self, "storage_type")
 
@@ -1815,7 +1815,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[builtins.str]:
         """
-        子网 ID。
+        Subnet ID.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -1823,7 +1823,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="superAccountName")
     def super_account_name(self) -> pulumi.Output[builtins.str]:
         """
-        数据库账号名称。当前仅支持在创建实例时设置超级管理员账号，账号名称固定为 root。
+        Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
         """
         return pulumi.get(self, "super_account_name")
 
@@ -1831,7 +1831,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="superAccountPassword")
     def super_account_password(self) -> pulumi.Output[builtins.str]:
         """
-        root 账号的密码。密码需同时满足如下条件：只能为大小写字母、数字及以下特殊字符 _#!@$%^&*()+=-。长度为 8~32 个字符。至少包含大写字母、小写字母、数字或特殊字符中的任意三种。不允许使用极易被破解的弱密码（如 Admin@123）。
+        Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!@$%^&*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin@123) are not allowed.
         """
         return pulumi.get(self, "super_account_password")
 
@@ -1844,7 +1844,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        实例的更新时间（UTC）。
+        Instance update time (UTC).
         """
         return pulumi.get(self, "updated_time")
 
@@ -1852,7 +1852,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Output[builtins.str]:
         """
-        私有网络 ID。
+        Private network ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -1860,7 +1860,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例所在可用区的 ID。
+        Availability zone ID where the instance is located.
         """
         return pulumi.get(self, "zone_id")
 

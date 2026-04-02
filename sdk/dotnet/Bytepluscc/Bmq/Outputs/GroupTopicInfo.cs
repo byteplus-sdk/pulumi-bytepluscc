@@ -15,28 +15,28 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Outputs
     public sealed class GroupTopicInfo
     {
         /// <summary>
-        /// Topic 的创建时间。
+        /// Topic creation time.
         /// </summary>
         public readonly string? CreateTime;
         /// <summary>
-        /// Topic 的描述语句。
+        /// Topic description.
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// Topic 中未被消费的消息条数。
+        /// Number of unconsumed messages in the Topic.
         /// </summary>
         public readonly int? Lag;
         public readonly ImmutableArray<Outputs.GroupTopicInfoPartitionInfo> PartitionInfos;
         /// <summary>
-        /// Topic 分区数。
+        /// Number of Topic partitions.
         /// </summary>
         public readonly int? Partitions;
         /// <summary>
-        /// 数据在 Topic 中的保留时长，单位为小时。
+        /// Retention period of data in the Topic, in hours.
         /// </summary>
         public readonly int? Retention;
         /// <summary>
-        /// Topic 的状态。
+        /// Topic status.
         /// </summary>
         public readonly string? Status;
         /// <summary>
@@ -44,7 +44,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Outputs
         /// </summary>
         public readonly string? TopicId;
         /// <summary>
-        /// Topic 的名称。
+        /// Topic name.
         /// </summary>
         public readonly string? TopicName;
 

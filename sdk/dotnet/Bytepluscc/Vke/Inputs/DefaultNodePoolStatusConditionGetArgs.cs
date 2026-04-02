@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
     public sealed class DefaultNodePoolStatusConditionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 节点池当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：ProgressingOk、ResourceCleanupFailed、Unknown、ClusterNotRunning。
+        /// Status conditions under the current primary state of the node pool, indicating the reasons for entering this state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

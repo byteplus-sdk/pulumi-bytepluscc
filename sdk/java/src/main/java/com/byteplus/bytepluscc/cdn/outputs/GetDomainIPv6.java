@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainIPv6 {
     /**
-     * @return 指定是否启用 IPv6 配置。该参数有以下取值：true：表示启用 IPv6。false：表示禁用 IPv6。
+     * @return Specifies whether to enable IPv6 configuration. This parameter has the following values: true: Enables IPv6. false: Disables IPv6.
      * 
      */
     private Boolean switch_;
 
     private GetDomainIPv6() {}
     /**
-     * @return 指定是否启用 IPv6 配置。该参数有以下取值：true：表示启用 IPv6。false：表示禁用 IPv6。
+     * @return Specifies whether to enable IPv6 configuration. This parameter has the following values: true: Enables IPv6. false: Disables IPv6.
      * 
      */
     public Boolean switch_() {

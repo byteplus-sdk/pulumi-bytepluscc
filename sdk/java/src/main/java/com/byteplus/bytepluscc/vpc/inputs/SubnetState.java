@@ -21,14 +21,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
     public static final SubnetState Empty = new SubnetState();
 
     /**
-     * 子网所属账户的ID。
+     * ID of the account to which the subnet belongs
      * 
      */
     @Import(name="accountId")
     private @Nullable Output<String> accountId;
 
     /**
-     * @return 子网所属账户的ID。
+     * @return ID of the account to which the subnet belongs
      * 
      */
     public Optional<Output<String>> accountId() {
@@ -36,14 +36,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子网中可用的IP地址数量。
+     * Number of available IP addresses in the subnet
      * 
      */
     @Import(name="availableIpAddressCount")
     private @Nullable Output<Integer> availableIpAddressCount;
 
     /**
-     * @return 子网中可用的IP地址数量。
+     * @return Number of available IP addresses in the subnet
      * 
      */
     public Optional<Output<Integer>> availableIpAddressCount() {
@@ -51,14 +51,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子网的IPv4网段。
+     * Subnet IPv4 CIDR block
      * 
      */
     @Import(name="cidrBlock")
     private @Nullable Output<String> cidrBlock;
 
     /**
-     * @return 子网的IPv4网段。
+     * @return Subnet IPv4 CIDR block
      * 
      */
     public Optional<Output<String>> cidrBlock() {
@@ -66,14 +66,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子网的创建时间。
+     * Subnet creation time
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 子网的创建时间。
+     * @return Subnet creation time
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -81,14 +81,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子网的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不能以http://或https://开头。
+     * Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 子网的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不能以http://或https://开头。
+     * @return Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
      * 
      */
     public Optional<Output<String>> description() {
@@ -96,14 +96,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 开启/关闭IPv6功能。仅当子网所属的VPC开通IPv6功能时，可配置此参数。1、true：开启。2、false：关闭。仅当子网内没有分配IPv6地址的云资源时，可配置此取值。
+     * Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
      * 
      */
     @Import(name="enableIpv6")
     private @Nullable Output<Boolean> enableIpv6;
 
     /**
-     * @return 开启/关闭IPv6功能。仅当子网所属的VPC开通IPv6功能时，可配置此参数。1、true：开启。2、false：关闭。仅当子网内没有分配IPv6地址的云资源时，可配置此取值。
+     * @return Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
      * 
      */
     public Optional<Output<Boolean>> enableIpv6() {
@@ -111,14 +111,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子网IPv6网段。1、创建/修改时请输入子网IPv6网段的最后8比特位（子网的掩码固定为/64）。2、仅当EnableIpv6设置为true时，支持配置本参数。3、取值范围：0～255。掩码固定为/64。
+     * Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
      * 
      */
     @Import(name="ipv6CidrBlock")
     private @Nullable Output<String> ipv6CidrBlock;
 
     /**
-     * @return 子网IPv6网段。1、创建/修改时请输入子网IPv6网段的最后8比特位（子网的掩码固定为/64）。2、仅当EnableIpv6设置为true时，支持配置本参数。3、取值范围：0～255。掩码固定为/64。
+     * @return Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
      * 
      */
     public Optional<Output<String>> ipv6CidrBlock() {
@@ -126,14 +126,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 该子网是否为默认子网。1、true：默认子网，表示该子网是创建ECS实例时系统自动创建的子网。2、false：非默认子网，表示该子网是用户手动创建的。
+     * Whether the subnet is a default subnet. 1. true: Default subnet, created automatically when an ECS instance is created. 2. false: Non-default subnet, created manually by the user
      * 
      */
     @Import(name="isDefault")
     private @Nullable Output<Boolean> isDefault;
 
     /**
-     * @return 该子网是否为默认子网。1、true：默认子网，表示该子网是创建ECS实例时系统自动创建的子网。2、false：非默认子网，表示该子网是用户手动创建的。
+     * @return Whether the subnet is a default subnet. 1. true: Default subnet, created automatically when an ECS instance is created. 2. false: Non-default subnet, created manually by the user
      * 
      */
     public Optional<Output<Boolean>> isDefault() {
@@ -141,14 +141,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子网关联的网络ACL的ID。
+     * ID of the network ACL associated with the subnet
      * 
      */
     @Import(name="networkAclId")
     private @Nullable Output<String> networkAclId;
 
     /**
-     * @return 子网关联的网络ACL的ID。
+     * @return ID of the network ACL associated with the subnet
      * 
      */
     public Optional<Output<String>> networkAclId() {
@@ -156,14 +156,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子网所在VPC实例所属项目的名称。
+     * Name of the project associated with the VPC instance where the subnet resides
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 子网所在VPC实例所属项目的名称。
+     * @return Name of the project associated with the VPC instance where the subnet resides
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -171,14 +171,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 只读字段，子网IPv6网段。
+     * Read-only field, subnet IPv6 CIDR block
      * 
      */
     @Import(name="readIpv6CidrBlock")
     private @Nullable Output<String> readIpv6CidrBlock;
 
     /**
-     * @return 只读字段，子网IPv6网段。
+     * @return Read-only field, subnet IPv6 CIDR block
      * 
      */
     public Optional<Output<String>> readIpv6CidrBlock() {
@@ -186,14 +186,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 路由表信息。
+     * Route table information
      * 
      */
     @Import(name="routeTable")
     private @Nullable Output<SubnetRouteTableArgs> routeTable;
 
     /**
-     * @return 路由表信息。
+     * @return Route table information
      * 
      */
     public Optional<Output<SubnetRouteTableArgs>> routeTable() {
@@ -201,14 +201,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子网的状态。1、Pending：表示配置中。2、Available：表示可用。
+     * Subnet status. 1. Pending: Configuring. 2. Available: Available
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 子网的状态。1、Pending：表示配置中。2、Available：表示可用。
+     * @return Subnet status. 1. Pending: Configuring. 2. Available: Available
      * 
      */
     public Optional<Output<String>> status() {
@@ -216,14 +216,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 待修改信息的子网的ID。
+     * ID of the subnet whose information is to be modified
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return 待修改信息的子网的ID。
+     * @return ID of the subnet whose information is to be modified
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -231,14 +231,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子网的名称，长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不能以http://或https://开头，不填默认是子网的ID。
+     * Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
      * 
      */
     @Import(name="subnetName")
     private @Nullable Output<String> subnetName;
 
     /**
-     * @return 子网的名称，长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不能以http://或https://开头，不填默认是子网的ID。
+     * @return Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
      * 
      */
     public Optional<Output<String>> subnetName() {
@@ -253,14 +253,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子网下可用IP总数。
+     * Total number of available IPs in the subnet
      * 
      */
     @Import(name="totalIpv4Count")
     private @Nullable Output<Integer> totalIpv4Count;
 
     /**
-     * @return 子网下可用IP总数。
+     * @return Total number of available IPs in the subnet
      * 
      */
     public Optional<Output<Integer>> totalIpv4Count() {
@@ -268,14 +268,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子网的更新时间。
+     * Subnet update time
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 子网的更新时间。
+     * @return Subnet update time
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -283,14 +283,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子网所属VPC的ID。
+     * ID of the VPC to which the subnet belongs
      * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
-     * @return 子网所属VPC的ID。
+     * @return ID of the VPC to which the subnet belongs
      * 
      */
     public Optional<Output<String>> vpcId() {
@@ -298,14 +298,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 要创建的子网所属的可用区ID，更多可用区信息请参见地域和可用区。
+     * Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return 要创建的子网所属的可用区ID，更多可用区信息请参见地域和可用区。
+     * @return Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -356,7 +356,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountId 子网所属账户的ID。
+         * @param accountId ID of the account to which the subnet belongs
          * 
          * @return builder
          * 
@@ -367,7 +367,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountId 子网所属账户的ID。
+         * @param accountId ID of the account to which the subnet belongs
          * 
          * @return builder
          * 
@@ -377,7 +377,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param availableIpAddressCount 子网中可用的IP地址数量。
+         * @param availableIpAddressCount Number of available IP addresses in the subnet
          * 
          * @return builder
          * 
@@ -388,7 +388,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param availableIpAddressCount 子网中可用的IP地址数量。
+         * @param availableIpAddressCount Number of available IP addresses in the subnet
          * 
          * @return builder
          * 
@@ -398,7 +398,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cidrBlock 子网的IPv4网段。
+         * @param cidrBlock Subnet IPv4 CIDR block
          * 
          * @return builder
          * 
@@ -409,7 +409,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cidrBlock 子网的IPv4网段。
+         * @param cidrBlock Subnet IPv4 CIDR block
          * 
          * @return builder
          * 
@@ -419,7 +419,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 子网的创建时间。
+         * @param createdTime Subnet creation time
          * 
          * @return builder
          * 
@@ -430,7 +430,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 子网的创建时间。
+         * @param createdTime Subnet creation time
          * 
          * @return builder
          * 
@@ -440,7 +440,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 子网的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不能以http://或https://开头。
+         * @param description Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
          * 
          * @return builder
          * 
@@ -451,7 +451,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 子网的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不能以http://或https://开头。
+         * @param description Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
          * 
          * @return builder
          * 
@@ -461,7 +461,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableIpv6 开启/关闭IPv6功能。仅当子网所属的VPC开通IPv6功能时，可配置此参数。1、true：开启。2、false：关闭。仅当子网内没有分配IPv6地址的云资源时，可配置此取值。
+         * @param enableIpv6 Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
          * 
          * @return builder
          * 
@@ -472,7 +472,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableIpv6 开启/关闭IPv6功能。仅当子网所属的VPC开通IPv6功能时，可配置此参数。1、true：开启。2、false：关闭。仅当子网内没有分配IPv6地址的云资源时，可配置此取值。
+         * @param enableIpv6 Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
          * 
          * @return builder
          * 
@@ -482,7 +482,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6CidrBlock 子网IPv6网段。1、创建/修改时请输入子网IPv6网段的最后8比特位（子网的掩码固定为/64）。2、仅当EnableIpv6设置为true时，支持配置本参数。3、取值范围：0～255。掩码固定为/64。
+         * @param ipv6CidrBlock Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
          * 
          * @return builder
          * 
@@ -493,7 +493,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6CidrBlock 子网IPv6网段。1、创建/修改时请输入子网IPv6网段的最后8比特位（子网的掩码固定为/64）。2、仅当EnableIpv6设置为true时，支持配置本参数。3、取值范围：0～255。掩码固定为/64。
+         * @param ipv6CidrBlock Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
          * 
          * @return builder
          * 
@@ -503,7 +503,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isDefault 该子网是否为默认子网。1、true：默认子网，表示该子网是创建ECS实例时系统自动创建的子网。2、false：非默认子网，表示该子网是用户手动创建的。
+         * @param isDefault Whether the subnet is a default subnet. 1. true: Default subnet, created automatically when an ECS instance is created. 2. false: Non-default subnet, created manually by the user
          * 
          * @return builder
          * 
@@ -514,7 +514,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isDefault 该子网是否为默认子网。1、true：默认子网，表示该子网是创建ECS实例时系统自动创建的子网。2、false：非默认子网，表示该子网是用户手动创建的。
+         * @param isDefault Whether the subnet is a default subnet. 1. true: Default subnet, created automatically when an ECS instance is created. 2. false: Non-default subnet, created manually by the user
          * 
          * @return builder
          * 
@@ -524,7 +524,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkAclId 子网关联的网络ACL的ID。
+         * @param networkAclId ID of the network ACL associated with the subnet
          * 
          * @return builder
          * 
@@ -535,7 +535,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkAclId 子网关联的网络ACL的ID。
+         * @param networkAclId ID of the network ACL associated with the subnet
          * 
          * @return builder
          * 
@@ -545,7 +545,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 子网所在VPC实例所属项目的名称。
+         * @param projectName Name of the project associated with the VPC instance where the subnet resides
          * 
          * @return builder
          * 
@@ -556,7 +556,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 子网所在VPC实例所属项目的名称。
+         * @param projectName Name of the project associated with the VPC instance where the subnet resides
          * 
          * @return builder
          * 
@@ -566,7 +566,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param readIpv6CidrBlock 只读字段，子网IPv6网段。
+         * @param readIpv6CidrBlock Read-only field, subnet IPv6 CIDR block
          * 
          * @return builder
          * 
@@ -577,7 +577,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param readIpv6CidrBlock 只读字段，子网IPv6网段。
+         * @param readIpv6CidrBlock Read-only field, subnet IPv6 CIDR block
          * 
          * @return builder
          * 
@@ -587,7 +587,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param routeTable 路由表信息。
+         * @param routeTable Route table information
          * 
          * @return builder
          * 
@@ -598,7 +598,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param routeTable 路由表信息。
+         * @param routeTable Route table information
          * 
          * @return builder
          * 
@@ -608,7 +608,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 子网的状态。1、Pending：表示配置中。2、Available：表示可用。
+         * @param status Subnet status. 1. Pending: Configuring. 2. Available: Available
          * 
          * @return builder
          * 
@@ -619,7 +619,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 子网的状态。1、Pending：表示配置中。2、Available：表示可用。
+         * @param status Subnet status. 1. Pending: Configuring. 2. Available: Available
          * 
          * @return builder
          * 
@@ -629,7 +629,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId 待修改信息的子网的ID。
+         * @param subnetId ID of the subnet whose information is to be modified
          * 
          * @return builder
          * 
@@ -640,7 +640,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId 待修改信息的子网的ID。
+         * @param subnetId ID of the subnet whose information is to be modified
          * 
          * @return builder
          * 
@@ -650,7 +650,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetName 子网的名称，长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不能以http://或https://开头，不填默认是子网的ID。
+         * @param subnetName Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
          * 
          * @return builder
          * 
@@ -661,7 +661,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetName 子网的名称，长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不能以http://或https://开头，不填默认是子网的ID。
+         * @param subnetName Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
          * 
          * @return builder
          * 
@@ -684,7 +684,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param totalIpv4Count 子网下可用IP总数。
+         * @param totalIpv4Count Total number of available IPs in the subnet
          * 
          * @return builder
          * 
@@ -695,7 +695,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param totalIpv4Count 子网下可用IP总数。
+         * @param totalIpv4Count Total number of available IPs in the subnet
          * 
          * @return builder
          * 
@@ -705,7 +705,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 子网的更新时间。
+         * @param updatedTime Subnet update time
          * 
          * @return builder
          * 
@@ -716,7 +716,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 子网的更新时间。
+         * @param updatedTime Subnet update time
          * 
          * @return builder
          * 
@@ -726,7 +726,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 子网所属VPC的ID。
+         * @param vpcId ID of the VPC to which the subnet belongs
          * 
          * @return builder
          * 
@@ -737,7 +737,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 子网所属VPC的ID。
+         * @param vpcId ID of the VPC to which the subnet belongs
          * 
          * @return builder
          * 
@@ -747,7 +747,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 要创建的子网所属的可用区ID，更多可用区信息请参见地域和可用区。
+         * @param zoneId Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
          * 
          * @return builder
          * 
@@ -758,7 +758,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 要创建的子网所属的可用区ID，更多可用区信息请参见地域和可用区。
+         * @param zoneId Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
          * 
          * @return builder
          * 

@@ -16,14 +16,14 @@ public final class TrafficMirrorFilterTagArgs extends com.pulumi.resources.Resou
     public static final TrafficMirrorFilterTagArgs Empty = new TrafficMirrorFilterTagArgs();
 
     /**
-     * 标签键。
+     * Tag key
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 标签键。
+     * @return Tag key
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class TrafficMirrorFilterTagArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 标签值。
+     * Tag value
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 标签值。
+     * @return Tag value
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class TrafficMirrorFilterTagArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param key 标签键。
+         * @param key Tag key
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class TrafficMirrorFilterTagArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param key 标签键。
+         * @param key Tag key
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class TrafficMirrorFilterTagArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param value 标签值。
+         * @param value Tag value
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class TrafficMirrorFilterTagArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param value 标签值。
+         * @param value Tag value
          * 
          * @return builder
          * 

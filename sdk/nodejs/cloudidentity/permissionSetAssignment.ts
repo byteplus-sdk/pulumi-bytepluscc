@@ -5,8 +5,8 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * 当您创建好云身份中心用户后，需要授予用户访问到各账号的登录访问权限。
- * 当用户访问火山引擎云资源的权限访问具备可抽象的共性时，如：网络运维权限、安全管理权限等，您可以在云身份中心预置访问权限集作为权限模版，最终基于访问权限集来实现中心化授权。云身份中心将会为您同步分发访问权限集到各个账号，减少企业权限的运维成本。
+ * After you create a Cloud Identity Center user, you need to grant the user login access to each account.
+ * When users require access to Volcano Engine cloud resources with permissions that share abstractable characteristics, such as network operations permissions or security management permissions, you can predefine permission sets in the Cloud Identity Center as templates. You can achieve centralized authorization based on these permission sets. The Cloud Identity Center will synchronize and distribute permission sets to each account, reducing enterprise permission management costs.
  *
  * ## Example Usage
  *
@@ -57,35 +57,35 @@ export class PermissionSetAssignment extends pulumi.CustomResource {
     }
 
     /**
-     * 授权创建时间。
+     * Authorization creation time
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 权限集 ID。
+     * Permission set ID
      */
     public readonly permissionSetId!: pulumi.Output<string>;
     /**
-     * 权限集名称。
+     * Permission set name
      */
     public /*out*/ readonly permissionSetName!: pulumi.Output<string>;
     /**
-     * 云身份中心对象 ID
+     * Cloud Identity Center object ID
      */
     public readonly principalId!: pulumi.Output<string>;
     /**
-     * 云身份中心对象名。
+     * Cloud Identity Center object name
      */
     public /*out*/ readonly principalName!: pulumi.Output<string>;
     /**
-     * 云身份中心对象类型，User 或者 Group。
+     * Cloud Identity Center object type: User or Group
      */
     public readonly principalType!: pulumi.Output<string>;
     /**
-     * 授权账号 ID。
+     * Authorized account ID
      */
     public readonly targetId!: pulumi.Output<string>;
     /**
-     * 授权账号名。
+     * Authorized account name
      */
     public /*out*/ readonly targetName!: pulumi.Output<string>;
 
@@ -143,35 +143,35 @@ export class PermissionSetAssignment extends pulumi.CustomResource {
  */
 export interface PermissionSetAssignmentState {
     /**
-     * 授权创建时间。
+     * Authorization creation time
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 权限集 ID。
+     * Permission set ID
      */
     permissionSetId?: pulumi.Input<string>;
     /**
-     * 权限集名称。
+     * Permission set name
      */
     permissionSetName?: pulumi.Input<string>;
     /**
-     * 云身份中心对象 ID
+     * Cloud Identity Center object ID
      */
     principalId?: pulumi.Input<string>;
     /**
-     * 云身份中心对象名。
+     * Cloud Identity Center object name
      */
     principalName?: pulumi.Input<string>;
     /**
-     * 云身份中心对象类型，User 或者 Group。
+     * Cloud Identity Center object type: User or Group
      */
     principalType?: pulumi.Input<string>;
     /**
-     * 授权账号 ID。
+     * Authorized account ID
      */
     targetId?: pulumi.Input<string>;
     /**
-     * 授权账号名。
+     * Authorized account name
      */
     targetName?: pulumi.Input<string>;
 }
@@ -181,19 +181,19 @@ export interface PermissionSetAssignmentState {
  */
 export interface PermissionSetAssignmentArgs {
     /**
-     * 权限集 ID。
+     * Permission set ID
      */
     permissionSetId: pulumi.Input<string>;
     /**
-     * 云身份中心对象 ID
+     * Cloud Identity Center object ID
      */
     principalId: pulumi.Input<string>;
     /**
-     * 云身份中心对象类型，User 或者 Group。
+     * Cloud Identity Center object type: User or Group
      */
     principalType: pulumi.Input<string>;
     /**
-     * 授权账号 ID。
+     * Authorized account ID
      */
     targetId: pulumi.Input<string>;
 }

@@ -69,15 +69,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Organization
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 组织详情
+        /// Organization Details
         /// </summary>
         public readonly Outputs.GetOrganizationOrganizationResult Organization;
         /// <summary>
-        /// 组织ID
+        /// Organization ID
         /// </summary>
         public readonly string OrganizationId;
         /// <summary>
-        /// 管理员详情
+        /// Administrator Details
         /// </summary>
         public readonly Outputs.GetOrganizationOwnerResult Owner;
 

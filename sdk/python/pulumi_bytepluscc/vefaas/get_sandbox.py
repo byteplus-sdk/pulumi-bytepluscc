@@ -97,7 +97,7 @@ class GetSandboxResult:
     @pulumi.getter(name="availabilityZone")
     def availability_zone(self) -> builtins.str:
         """
-        沙箱实例所在可用区 ID。
+        Availability zone ID of the sandbox instance
         """
         return pulumi.get(self, "availability_zone")
 
@@ -105,7 +105,7 @@ class GetSandboxResult:
     @pulumi.getter(name="cpuMilli")
     def cpu_milli(self) -> builtins.int:
         """
-        沙箱实例 CPU 规格：单位：milli cpu取值范围：250~16000,默认值：1000。
+        Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
         """
         return pulumi.get(self, "cpu_milli")
 
@@ -113,7 +113,7 @@ class GetSandboxResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        沙箱实例创建时间。
+        Sandbox instance creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -121,7 +121,7 @@ class GetSandboxResult:
     @pulumi.getter
     def envs(self) -> Sequence['outputs.GetSandboxEnvResult']:
         """
-        沙箱实例环境变量。
+        Sandbox instance environment variables
         """
         return pulumi.get(self, "envs")
 
@@ -129,7 +129,7 @@ class GetSandboxResult:
     @pulumi.getter(name="errorCode")
     def error_code(self) -> builtins.str:
         """
-        沙箱实例启动失败错误码。参数值说明：internal*load*request*error：系统内部错误，function*initialize*failed：业务进程初始化错误，function*health*check*failed：健康检查错误，route_terminating：路由删除中，正常启动沙箱实例时，该字段为空。
+        Sandbox instance startup failure error code. Parameter description: internal*load*request*error: internal system error, function*initialize*failed: business process initialization error, function*health*check*failed: health check error, route_terminating: route deletion in progress. This field is empty when the sandbox instance starts normally
         """
         return pulumi.get(self, "error_code")
 
@@ -137,7 +137,7 @@ class GetSandboxResult:
     @pulumi.getter(name="errorMessage")
     def error_message(self) -> builtins.str:
         """
-        沙箱实例启动失败的错误码详情。正常启动沙箱实例时，该字段为空。
+        Details of the error code when the sandbox instance fails to start. This field is empty when the sandbox instance starts normally.
         """
         return pulumi.get(self, "error_message")
 
@@ -145,7 +145,7 @@ class GetSandboxResult:
     @pulumi.getter(name="expireAt")
     def expire_at(self) -> builtins.str:
         """
-        沙箱实例存活时长。
+        Sandbox instance uptime.
         """
         return pulumi.get(self, "expire_at")
 
@@ -153,7 +153,7 @@ class GetSandboxResult:
     @pulumi.getter(name="functionId")
     def function_id(self) -> builtins.str:
         """
-        沙箱实例所属的沙箱应用 ID。
+        Sandbox application ID to which the sandbox instance belongs
         """
         return pulumi.get(self, "function_id")
 
@@ -169,7 +169,7 @@ class GetSandboxResult:
     @pulumi.getter(name="instanceImageInfo")
     def instance_image_info(self) -> 'outputs.GetSandboxInstanceImageInfoResult':
         """
-        沙箱实例镜像信息，包括镜像地址、启动命令、监听端口。
+        Sandbox instance image information, including image address, startup command, and listening port.
         """
         return pulumi.get(self, "instance_image_info")
 
@@ -177,7 +177,7 @@ class GetSandboxResult:
     @pulumi.getter(name="instanceTosMountConfig")
     def instance_tos_mount_config(self) -> 'outputs.GetSandboxInstanceTosMountConfigResult':
         """
-        沙箱实例级别对象存储（TOS）存储挂载配置。
+        Instance-level object storage (TOS) mount configuration for the sandbox instance
         """
         return pulumi.get(self, "instance_tos_mount_config")
 
@@ -185,7 +185,7 @@ class GetSandboxResult:
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> builtins.str:
         """
-        沙箱实例类型 。参数值说明：elastic：弹性实例，frozen：冻结实例，activated：激活实例，reserved：预留实例。
+        Sandbox instance type. Parameter description: elastic: elastic instance, frozen: frozen instance, activated: activated instance, reserved: reserved instance
         """
         return pulumi.get(self, "instance_type")
 
@@ -193,7 +193,7 @@ class GetSandboxResult:
     @pulumi.getter(name="maxConcurrency")
     def max_concurrency(self) -> builtins.int:
         """
-        单实例请求最大并发数：取值范围：10~1000,默认值：100。
+        Maximum concurrent requests per instance: range: 10~1000, default: 100
         """
         return pulumi.get(self, "max_concurrency")
 
@@ -201,7 +201,7 @@ class GetSandboxResult:
     @pulumi.getter(name="memoryMb")
     def memory_mb(self) -> builtins.int:
         """
-        沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
+        Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
         """
         return pulumi.get(self, "memory_mb")
 
@@ -209,7 +209,7 @@ class GetSandboxResult:
     @pulumi.getter
     def metadatas(self) -> Sequence['outputs.GetSandboxMetadataResult']:
         """
-        沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为<"key":"value">。
+        Sandbox instance label metadata used to tag and filter instances. Format: <"key":"value">
         """
         return pulumi.get(self, "metadatas")
 
@@ -217,7 +217,7 @@ class GetSandboxResult:
     @pulumi.getter
     def pending(self) -> builtins.bool:
         """
-        沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
+        Whether the sandbox instance is in Pending status. Parameter description: true: yes, false: no
         """
         return pulumi.get(self, "pending")
 
@@ -225,7 +225,7 @@ class GetSandboxResult:
     @pulumi.getter(name="requestTimeout")
     def request_timeout(self) -> builtins.int:
         """
-        请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
+        Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
         """
         return pulumi.get(self, "request_timeout")
 
@@ -233,7 +233,7 @@ class GetSandboxResult:
     @pulumi.getter(name="revisionNumber")
     def revision_number(self) -> builtins.int:
         """
-        函数实例版本编号。
+        Function instance version number
         """
         return pulumi.get(self, "revision_number")
 
@@ -241,7 +241,7 @@ class GetSandboxResult:
     @pulumi.getter(name="sandboxId")
     def sandbox_id(self) -> builtins.str:
         """
-        沙箱实例 ID。
+        Sandbox instance ID
         """
         return pulumi.get(self, "sandbox_id")
 
@@ -249,7 +249,7 @@ class GetSandboxResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        沙箱实例状态。 参数值说明：Starting：开始启动，Ready：启动完成，Failed：启动失败，Terminating：终止中。
+        Sandbox instance status. Parameter description: Starting: starting, Ready: startup completed, Failed: startup failed, Terminating: terminating
         """
         return pulumi.get(self, "status")
 
@@ -257,7 +257,7 @@ class GetSandboxResult:
     @pulumi.getter
     def timeout(self) -> builtins.int:
         """
-        沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
+        Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
         """
         return pulumi.get(self, "timeout")
 

@@ -14,13 +14,13 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type AllowListAssociatedInstance struct {
-	// 已绑定当前白名单的实例 ID。
+	// Instance ID bound to the current allowlist.
 	InstanceId *string `pulumi:"instanceId"`
-	// 已绑定当前白名单的实例名称。
+	// Instance name bound to the current allowlist.
 	InstanceName *string `pulumi:"instanceName"`
-	// 实例所属的项目名称。
+	// Project name of the instance.
 	ProjectName *string `pulumi:"projectName"`
-	// 实例所属的私有网络 ID。
+	// Private network ID of the instance.
 	Vpc *string `pulumi:"vpc"`
 }
 
@@ -36,13 +36,13 @@ type AllowListAssociatedInstanceInput interface {
 }
 
 type AllowListAssociatedInstanceArgs struct {
-	// 已绑定当前白名单的实例 ID。
+	// Instance ID bound to the current allowlist.
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
-	// 已绑定当前白名单的实例名称。
+	// Instance name bound to the current allowlist.
 	InstanceName pulumi.StringPtrInput `pulumi:"instanceName"`
-	// 实例所属的项目名称。
+	// Project name of the instance.
 	ProjectName pulumi.StringPtrInput `pulumi:"projectName"`
-	// 实例所属的私有网络 ID。
+	// Private network ID of the instance.
 	Vpc pulumi.StringPtrInput `pulumi:"vpc"`
 }
 
@@ -97,22 +97,22 @@ func (o AllowListAssociatedInstanceOutput) ToAllowListAssociatedInstanceOutputWi
 	return o
 }
 
-// 已绑定当前白名单的实例 ID。
+// Instance ID bound to the current allowlist.
 func (o AllowListAssociatedInstanceOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
 
-// 已绑定当前白名单的实例名称。
+// Instance name bound to the current allowlist.
 func (o AllowListAssociatedInstanceOutput) InstanceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.InstanceName }).(pulumi.StringPtrOutput)
 }
 
-// 实例所属的项目名称。
+// Project name of the instance.
 func (o AllowListAssociatedInstanceOutput) ProjectName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.ProjectName }).(pulumi.StringPtrOutput)
 }
 
-// 实例所属的私有网络 ID。
+// Private network ID of the instance.
 func (o AllowListAssociatedInstanceOutput) Vpc() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AllowListAssociatedInstance) *string { return v.Vpc }).(pulumi.StringPtrOutput)
 }
@@ -138,21 +138,21 @@ func (o AllowListAssociatedInstanceArrayOutput) Index(i pulumi.IntInput) AllowLi
 }
 
 type InstanceConfigServer struct {
-	// ConfigServer 的节点 ID。
+	// ConfigServer node ID
 	ConfigServerNodeId *string `pulumi:"configServerNodeId"`
-	// 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。
+	// Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node.
 	NodeRole *string `pulumi:"nodeRole"`
-	// 节点状态。
+	// Node status.
 	NodeStatus *string `pulumi:"nodeStatus"`
-	// 总内存。单位：GiB。
+	// Total memory. Unit: GiB.
 	TotalMemoryGb *float64 `pulumi:"totalMemoryGb"`
-	// 总核数。
+	// Total cores.
 	TotalvCpu *float64 `pulumi:"totalvCpu"`
-	// 已用内存。单位：GiB。
+	// Used memory. Unit: GiB.
 	UsedMemoryGb *float64 `pulumi:"usedMemoryGb"`
-	// 已用核数。
+	// Used cores.
 	UsedvCpu *float64 `pulumi:"usedvCpu"`
-	// 当前节点所属的可用区 ID。
+	// Availability zone ID of the current node.
 	ZoneId *string `pulumi:"zoneId"`
 }
 
@@ -168,21 +168,21 @@ type InstanceConfigServerInput interface {
 }
 
 type InstanceConfigServerArgs struct {
-	// ConfigServer 的节点 ID。
+	// ConfigServer node ID
 	ConfigServerNodeId pulumi.StringPtrInput `pulumi:"configServerNodeId"`
-	// 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。
+	// Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node.
 	NodeRole pulumi.StringPtrInput `pulumi:"nodeRole"`
-	// 节点状态。
+	// Node status.
 	NodeStatus pulumi.StringPtrInput `pulumi:"nodeStatus"`
-	// 总内存。单位：GiB。
+	// Total memory. Unit: GiB.
 	TotalMemoryGb pulumi.Float64PtrInput `pulumi:"totalMemoryGb"`
-	// 总核数。
+	// Total cores.
 	TotalvCpu pulumi.Float64PtrInput `pulumi:"totalvCpu"`
-	// 已用内存。单位：GiB。
+	// Used memory. Unit: GiB.
 	UsedMemoryGb pulumi.Float64PtrInput `pulumi:"usedMemoryGb"`
-	// 已用核数。
+	// Used cores.
 	UsedvCpu pulumi.Float64PtrInput `pulumi:"usedvCpu"`
-	// 当前节点所属的可用区 ID。
+	// Availability zone ID of the current node.
 	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
 }
 
@@ -237,42 +237,42 @@ func (o InstanceConfigServerOutput) ToInstanceConfigServerOutputWithContext(ctx 
 	return o
 }
 
-// ConfigServer 的节点 ID。
+// ConfigServer node ID
 func (o InstanceConfigServerOutput) ConfigServerNodeId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceConfigServer) *string { return v.ConfigServerNodeId }).(pulumi.StringPtrOutput)
 }
 
-// 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。
+// Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node.
 func (o InstanceConfigServerOutput) NodeRole() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceConfigServer) *string { return v.NodeRole }).(pulumi.StringPtrOutput)
 }
 
-// 节点状态。
+// Node status.
 func (o InstanceConfigServerOutput) NodeStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceConfigServer) *string { return v.NodeStatus }).(pulumi.StringPtrOutput)
 }
 
-// 总内存。单位：GiB。
+// Total memory. Unit: GiB.
 func (o InstanceConfigServerOutput) TotalMemoryGb() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v InstanceConfigServer) *float64 { return v.TotalMemoryGb }).(pulumi.Float64PtrOutput)
 }
 
-// 总核数。
+// Total cores.
 func (o InstanceConfigServerOutput) TotalvCpu() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v InstanceConfigServer) *float64 { return v.TotalvCpu }).(pulumi.Float64PtrOutput)
 }
 
-// 已用内存。单位：GiB。
+// Used memory. Unit: GiB.
 func (o InstanceConfigServerOutput) UsedMemoryGb() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v InstanceConfigServer) *float64 { return v.UsedMemoryGb }).(pulumi.Float64PtrOutput)
 }
 
-// 已用核数。
+// Used cores.
 func (o InstanceConfigServerOutput) UsedvCpu() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v InstanceConfigServer) *float64 { return v.UsedvCpu }).(pulumi.Float64PtrOutput)
 }
 
-// 当前节点所属的可用区 ID。
+// Availability zone ID of the current node.
 func (o InstanceConfigServerOutput) ZoneId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceConfigServer) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
 }
@@ -298,21 +298,21 @@ func (o InstanceConfigServerArrayOutput) Index(i pulumi.IntInput) InstanceConfig
 }
 
 type InstanceMongo struct {
-	// Mongos 的节点 ID。
+	// Mongos node ID
 	MongosNodeId *string `pulumi:"mongosNodeId"`
-	// 节点规格。
+	// Node specification.
 	NodeSpec *string `pulumi:"nodeSpec"`
-	// 节点状态。
+	// Node status.
 	NodeStatus *string `pulumi:"nodeStatus"`
-	// 总内存。单位：GiB。
+	// Total memory. Unit: GiB.
 	TotalMemoryGb *float64 `pulumi:"totalMemoryGb"`
-	// 总核数。
+	// Total cores.
 	TotalvCpu *float64 `pulumi:"totalvCpu"`
-	// 已用内存。单位：GiB。
+	// Used memory. Unit: GiB.
 	UsedMemoryGb *float64 `pulumi:"usedMemoryGb"`
-	// 已用核数。
+	// Used cores.
 	UsedvCpu *float64 `pulumi:"usedvCpu"`
-	// 当前节点所属的可用区 ID。
+	// Availability zone ID of the current node.
 	ZoneId *string `pulumi:"zoneId"`
 }
 
@@ -328,21 +328,21 @@ type InstanceMongoInput interface {
 }
 
 type InstanceMongoArgs struct {
-	// Mongos 的节点 ID。
+	// Mongos node ID
 	MongosNodeId pulumi.StringPtrInput `pulumi:"mongosNodeId"`
-	// 节点规格。
+	// Node specification.
 	NodeSpec pulumi.StringPtrInput `pulumi:"nodeSpec"`
-	// 节点状态。
+	// Node status.
 	NodeStatus pulumi.StringPtrInput `pulumi:"nodeStatus"`
-	// 总内存。单位：GiB。
+	// Total memory. Unit: GiB.
 	TotalMemoryGb pulumi.Float64PtrInput `pulumi:"totalMemoryGb"`
-	// 总核数。
+	// Total cores.
 	TotalvCpu pulumi.Float64PtrInput `pulumi:"totalvCpu"`
-	// 已用内存。单位：GiB。
+	// Used memory. Unit: GiB.
 	UsedMemoryGb pulumi.Float64PtrInput `pulumi:"usedMemoryGb"`
-	// 已用核数。
+	// Used cores.
 	UsedvCpu pulumi.Float64PtrInput `pulumi:"usedvCpu"`
-	// 当前节点所属的可用区 ID。
+	// Availability zone ID of the current node.
 	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
 }
 
@@ -397,42 +397,42 @@ func (o InstanceMongoOutput) ToInstanceMongoOutputWithContext(ctx context.Contex
 	return o
 }
 
-// Mongos 的节点 ID。
+// Mongos node ID
 func (o InstanceMongoOutput) MongosNodeId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceMongo) *string { return v.MongosNodeId }).(pulumi.StringPtrOutput)
 }
 
-// 节点规格。
+// Node specification.
 func (o InstanceMongoOutput) NodeSpec() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceMongo) *string { return v.NodeSpec }).(pulumi.StringPtrOutput)
 }
 
-// 节点状态。
+// Node status.
 func (o InstanceMongoOutput) NodeStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceMongo) *string { return v.NodeStatus }).(pulumi.StringPtrOutput)
 }
 
-// 总内存。单位：GiB。
+// Total memory. Unit: GiB.
 func (o InstanceMongoOutput) TotalMemoryGb() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v InstanceMongo) *float64 { return v.TotalMemoryGb }).(pulumi.Float64PtrOutput)
 }
 
-// 总核数。
+// Total cores.
 func (o InstanceMongoOutput) TotalvCpu() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v InstanceMongo) *float64 { return v.TotalvCpu }).(pulumi.Float64PtrOutput)
 }
 
-// 已用内存。单位：GiB。
+// Used memory. Unit: GiB.
 func (o InstanceMongoOutput) UsedMemoryGb() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v InstanceMongo) *float64 { return v.UsedMemoryGb }).(pulumi.Float64PtrOutput)
 }
 
-// 已用核数。
+// Used cores.
 func (o InstanceMongoOutput) UsedvCpu() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v InstanceMongo) *float64 { return v.UsedvCpu }).(pulumi.Float64PtrOutput)
 }
 
-// 当前节点所属的可用区 ID。
+// Availability zone ID of the current node.
 func (o InstanceMongoOutput) ZoneId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceMongo) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
 }
@@ -458,29 +458,29 @@ func (o InstanceMongoArrayOutput) Index(i pulumi.IntInput) InstanceMongoOutput {
 }
 
 type InstanceNode struct {
-	// 节点延迟时间。单位：秒。
+	// Node latency. Unit: seconds.
 	NodeDelayTime *int `pulumi:"nodeDelayTime"`
-	// 节点 ID。
+	// Node ID.
 	NodeId *string `pulumi:"nodeId"`
-	// 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+	// Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node. ReadOnly: read-only node.
 	NodeRole *string `pulumi:"nodeRole"`
-	// 节点规格。
+	// Node specification.
 	NodeSpec *string `pulumi:"nodeSpec"`
-	// 节点状态。
+	// Node status.
 	NodeStatus *string `pulumi:"nodeStatus"`
-	// 总内存。单位：GiB。
+	// Total memory. Unit: GiB.
 	TotalMemoryGb *float64 `pulumi:"totalMemoryGb"`
-	// 该节点的总存储空间。单位：GiB。
+	// Total storage space for this node. Unit: GiB.
 	TotalStorageGb *float64 `pulumi:"totalStorageGb"`
-	// 总核数。
+	// Total cores.
 	TotalvCpu *float64 `pulumi:"totalvCpu"`
-	// 已用内存。单位：GiB。
+	// Used memory. Unit: GiB.
 	UsedMemoryGb *float64 `pulumi:"usedMemoryGb"`
-	// 该节点已用的存储空间。单位：GiB。
+	// Storage space used by this node. Unit: GiB.
 	UsedStorageGb *float64 `pulumi:"usedStorageGb"`
-	// 已用核数。
+	// Used cores.
 	UsedvCpu *float64 `pulumi:"usedvCpu"`
-	// 当前节点所属的可用区 ID。
+	// Availability zone ID of the current node.
 	ZoneId *string `pulumi:"zoneId"`
 }
 
@@ -496,29 +496,29 @@ type InstanceNodeInput interface {
 }
 
 type InstanceNodeArgs struct {
-	// 节点延迟时间。单位：秒。
+	// Node latency. Unit: seconds.
 	NodeDelayTime pulumi.IntPtrInput `pulumi:"nodeDelayTime"`
-	// 节点 ID。
+	// Node ID.
 	NodeId pulumi.StringPtrInput `pulumi:"nodeId"`
-	// 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+	// Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node. ReadOnly: read-only node.
 	NodeRole pulumi.StringPtrInput `pulumi:"nodeRole"`
-	// 节点规格。
+	// Node specification.
 	NodeSpec pulumi.StringPtrInput `pulumi:"nodeSpec"`
-	// 节点状态。
+	// Node status.
 	NodeStatus pulumi.StringPtrInput `pulumi:"nodeStatus"`
-	// 总内存。单位：GiB。
+	// Total memory. Unit: GiB.
 	TotalMemoryGb pulumi.Float64PtrInput `pulumi:"totalMemoryGb"`
-	// 该节点的总存储空间。单位：GiB。
+	// Total storage space for this node. Unit: GiB.
 	TotalStorageGb pulumi.Float64PtrInput `pulumi:"totalStorageGb"`
-	// 总核数。
+	// Total cores.
 	TotalvCpu pulumi.Float64PtrInput `pulumi:"totalvCpu"`
-	// 已用内存。单位：GiB。
+	// Used memory. Unit: GiB.
 	UsedMemoryGb pulumi.Float64PtrInput `pulumi:"usedMemoryGb"`
-	// 该节点已用的存储空间。单位：GiB。
+	// Storage space used by this node. Unit: GiB.
 	UsedStorageGb pulumi.Float64PtrInput `pulumi:"usedStorageGb"`
-	// 已用核数。
+	// Used cores.
 	UsedvCpu pulumi.Float64PtrInput `pulumi:"usedvCpu"`
-	// 当前节点所属的可用区 ID。
+	// Availability zone ID of the current node.
 	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
 }
 
@@ -573,62 +573,62 @@ func (o InstanceNodeOutput) ToInstanceNodeOutputWithContext(ctx context.Context)
 	return o
 }
 
-// 节点延迟时间。单位：秒。
+// Node latency. Unit: seconds.
 func (o InstanceNodeOutput) NodeDelayTime() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceNode) *int { return v.NodeDelayTime }).(pulumi.IntPtrOutput)
 }
 
-// 节点 ID。
+// Node ID.
 func (o InstanceNodeOutput) NodeId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceNode) *string { return v.NodeId }).(pulumi.StringPtrOutput)
 }
 
-// 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+// Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node. ReadOnly: read-only node.
 func (o InstanceNodeOutput) NodeRole() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceNode) *string { return v.NodeRole }).(pulumi.StringPtrOutput)
 }
 
-// 节点规格。
+// Node specification.
 func (o InstanceNodeOutput) NodeSpec() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceNode) *string { return v.NodeSpec }).(pulumi.StringPtrOutput)
 }
 
-// 节点状态。
+// Node status.
 func (o InstanceNodeOutput) NodeStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceNode) *string { return v.NodeStatus }).(pulumi.StringPtrOutput)
 }
 
-// 总内存。单位：GiB。
+// Total memory. Unit: GiB.
 func (o InstanceNodeOutput) TotalMemoryGb() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v InstanceNode) *float64 { return v.TotalMemoryGb }).(pulumi.Float64PtrOutput)
 }
 
-// 该节点的总存储空间。单位：GiB。
+// Total storage space for this node. Unit: GiB.
 func (o InstanceNodeOutput) TotalStorageGb() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v InstanceNode) *float64 { return v.TotalStorageGb }).(pulumi.Float64PtrOutput)
 }
 
-// 总核数。
+// Total cores.
 func (o InstanceNodeOutput) TotalvCpu() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v InstanceNode) *float64 { return v.TotalvCpu }).(pulumi.Float64PtrOutput)
 }
 
-// 已用内存。单位：GiB。
+// Used memory. Unit: GiB.
 func (o InstanceNodeOutput) UsedMemoryGb() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v InstanceNode) *float64 { return v.UsedMemoryGb }).(pulumi.Float64PtrOutput)
 }
 
-// 该节点已用的存储空间。单位：GiB。
+// Storage space used by this node. Unit: GiB.
 func (o InstanceNodeOutput) UsedStorageGb() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v InstanceNode) *float64 { return v.UsedStorageGb }).(pulumi.Float64PtrOutput)
 }
 
-// 已用核数。
+// Used cores.
 func (o InstanceNodeOutput) UsedvCpu() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v InstanceNode) *float64 { return v.UsedvCpu }).(pulumi.Float64PtrOutput)
 }
 
-// 当前节点所属的可用区 ID。
+// Availability zone ID of the current node.
 func (o InstanceNodeOutput) ZoneId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceNode) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
 }
@@ -654,9 +654,9 @@ func (o InstanceNodeArrayOutput) Index(i pulumi.IntInput) InstanceNodeOutput {
 }
 
 type InstanceNodeAvailabilityZone struct {
-	// 当前可用区中需要添加的只读节点数量。当前仅副本集实例和分片集群实例中 Shard 分片支持添加只读节点。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该值表示单个副本集实例中的只读节点总数量。每个副本集实例最多支持添加 5 个只读节点。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该值表示每个 Shard 分片中的只读节点数量。每个 Shard 分片最多添加 5 个只读节点。
+	// Number of read-only nodes to add in the current availability zone. Currently, only replica set instances and Shard nodes in sharded cluster instances support adding read-only nodes. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this value indicates the total number of read-only nodes in a single replica set instance. Each replica set instance supports up to 5 read-only nodes. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this value indicates the number of read-only nodes per Shard node. Each Shard node supports up to 5 read-only nodes.
 	NodeNumber *int `pulumi:"nodeNumber"`
-	// 只读节点所在的可用区。
+	// Availability zone of the read-only node.
 	ZoneId *string `pulumi:"zoneId"`
 }
 
@@ -672,9 +672,9 @@ type InstanceNodeAvailabilityZoneInput interface {
 }
 
 type InstanceNodeAvailabilityZoneArgs struct {
-	// 当前可用区中需要添加的只读节点数量。当前仅副本集实例和分片集群实例中 Shard 分片支持添加只读节点。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该值表示单个副本集实例中的只读节点总数量。每个副本集实例最多支持添加 5 个只读节点。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该值表示每个 Shard 分片中的只读节点数量。每个 Shard 分片最多添加 5 个只读节点。
+	// Number of read-only nodes to add in the current availability zone. Currently, only replica set instances and Shard nodes in sharded cluster instances support adding read-only nodes. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this value indicates the total number of read-only nodes in a single replica set instance. Each replica set instance supports up to 5 read-only nodes. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this value indicates the number of read-only nodes per Shard node. Each Shard node supports up to 5 read-only nodes.
 	NodeNumber pulumi.IntPtrInput `pulumi:"nodeNumber"`
-	// 只读节点所在的可用区。
+	// Availability zone of the read-only node.
 	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
 }
 
@@ -729,12 +729,12 @@ func (o InstanceNodeAvailabilityZoneOutput) ToInstanceNodeAvailabilityZoneOutput
 	return o
 }
 
-// 当前可用区中需要添加的只读节点数量。当前仅副本集实例和分片集群实例中 Shard 分片支持添加只读节点。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该值表示单个副本集实例中的只读节点总数量。每个副本集实例最多支持添加 5 个只读节点。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该值表示每个 Shard 分片中的只读节点数量。每个 Shard 分片最多添加 5 个只读节点。
+// Number of read-only nodes to add in the current availability zone. Currently, only replica set instances and Shard nodes in sharded cluster instances support adding read-only nodes. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this value indicates the total number of read-only nodes in a single replica set instance. Each replica set instance supports up to 5 read-only nodes. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this value indicates the number of read-only nodes per Shard node. Each Shard node supports up to 5 read-only nodes.
 func (o InstanceNodeAvailabilityZoneOutput) NodeNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceNodeAvailabilityZone) *int { return v.NodeNumber }).(pulumi.IntPtrOutput)
 }
 
-// 只读节点所在的可用区。
+// Availability zone of the read-only node.
 func (o InstanceNodeAvailabilityZoneOutput) ZoneId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceNodeAvailabilityZone) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
 }
@@ -761,7 +761,7 @@ func (o InstanceNodeAvailabilityZoneArrayOutput) Index(i pulumi.IntInput) Instan
 
 type InstanceShard struct {
 	Nodes []InstanceShardNode `pulumi:"nodes"`
-	// Shard 节点的 ID。
+	// Shard node ID.
 	ShardId *string `pulumi:"shardId"`
 }
 
@@ -778,7 +778,7 @@ type InstanceShardInput interface {
 
 type InstanceShardArgs struct {
 	Nodes InstanceShardNodeArrayInput `pulumi:"nodes"`
-	// Shard 节点的 ID。
+	// Shard node ID.
 	ShardId pulumi.StringPtrInput `pulumi:"shardId"`
 }
 
@@ -837,7 +837,7 @@ func (o InstanceShardOutput) Nodes() InstanceShardNodeArrayOutput {
 	return o.ApplyT(func(v InstanceShard) []InstanceShardNode { return v.Nodes }).(InstanceShardNodeArrayOutput)
 }
 
-// Shard 节点的 ID。
+// Shard node ID.
 func (o InstanceShardOutput) ShardId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceShard) *string { return v.ShardId }).(pulumi.StringPtrOutput)
 }
@@ -863,29 +863,29 @@ func (o InstanceShardArrayOutput) Index(i pulumi.IntInput) InstanceShardOutput {
 }
 
 type InstanceShardNode struct {
-	// 节点延迟时间。单位：秒。
+	// Node latency. Unit: seconds.
 	NodeDelayTime *int `pulumi:"nodeDelayTime"`
-	// 节点 ID。
+	// Node ID.
 	NodeId *string `pulumi:"nodeId"`
-	// 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+	// Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node. ReadOnly: read-only node.
 	NodeRole *string `pulumi:"nodeRole"`
-	// 节点规格。
+	// Node specification.
 	NodeSpec *string `pulumi:"nodeSpec"`
-	// 节点状态。
+	// Node status.
 	NodeStatus *string `pulumi:"nodeStatus"`
-	// 总内存。单位：GiB。
+	// Total memory. Unit: GiB.
 	TotalMemoryGb *float64 `pulumi:"totalMemoryGb"`
-	// 该节点的总存储空间。单位：GiB。
+	// Total storage space for this node. Unit: GiB.
 	TotalStorageGb *float64 `pulumi:"totalStorageGb"`
-	// 总核数。
+	// Total cores.
 	TotalvCpu *float64 `pulumi:"totalvCpu"`
-	// 已用内存。单位：GiB。
+	// Used memory. Unit: GiB.
 	UsedMemoryGb *float64 `pulumi:"usedMemoryGb"`
-	// 该节点已用的存储空间。单位：GiB。
+	// Storage space used by this node. Unit: GiB.
 	UsedStorageGb *float64 `pulumi:"usedStorageGb"`
-	// 已用核数。
+	// Used cores.
 	UsedvCpu *float64 `pulumi:"usedvCpu"`
-	// 当前节点所属的可用区 ID。
+	// Availability zone ID of the current node.
 	ZoneId *string `pulumi:"zoneId"`
 }
 
@@ -901,29 +901,29 @@ type InstanceShardNodeInput interface {
 }
 
 type InstanceShardNodeArgs struct {
-	// 节点延迟时间。单位：秒。
+	// Node latency. Unit: seconds.
 	NodeDelayTime pulumi.IntPtrInput `pulumi:"nodeDelayTime"`
-	// 节点 ID。
+	// Node ID.
 	NodeId pulumi.StringPtrInput `pulumi:"nodeId"`
-	// 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+	// Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node. ReadOnly: read-only node.
 	NodeRole pulumi.StringPtrInput `pulumi:"nodeRole"`
-	// 节点规格。
+	// Node specification.
 	NodeSpec pulumi.StringPtrInput `pulumi:"nodeSpec"`
-	// 节点状态。
+	// Node status.
 	NodeStatus pulumi.StringPtrInput `pulumi:"nodeStatus"`
-	// 总内存。单位：GiB。
+	// Total memory. Unit: GiB.
 	TotalMemoryGb pulumi.Float64PtrInput `pulumi:"totalMemoryGb"`
-	// 该节点的总存储空间。单位：GiB。
+	// Total storage space for this node. Unit: GiB.
 	TotalStorageGb pulumi.Float64PtrInput `pulumi:"totalStorageGb"`
-	// 总核数。
+	// Total cores.
 	TotalvCpu pulumi.Float64PtrInput `pulumi:"totalvCpu"`
-	// 已用内存。单位：GiB。
+	// Used memory. Unit: GiB.
 	UsedMemoryGb pulumi.Float64PtrInput `pulumi:"usedMemoryGb"`
-	// 该节点已用的存储空间。单位：GiB。
+	// Storage space used by this node. Unit: GiB.
 	UsedStorageGb pulumi.Float64PtrInput `pulumi:"usedStorageGb"`
-	// 已用核数。
+	// Used cores.
 	UsedvCpu pulumi.Float64PtrInput `pulumi:"usedvCpu"`
-	// 当前节点所属的可用区 ID。
+	// Availability zone ID of the current node.
 	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
 }
 
@@ -978,62 +978,62 @@ func (o InstanceShardNodeOutput) ToInstanceShardNodeOutputWithContext(ctx contex
 	return o
 }
 
-// 节点延迟时间。单位：秒。
+// Node latency. Unit: seconds.
 func (o InstanceShardNodeOutput) NodeDelayTime() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceShardNode) *int { return v.NodeDelayTime }).(pulumi.IntPtrOutput)
 }
 
-// 节点 ID。
+// Node ID.
 func (o InstanceShardNodeOutput) NodeId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceShardNode) *string { return v.NodeId }).(pulumi.StringPtrOutput)
 }
 
-// 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+// Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node. ReadOnly: read-only node.
 func (o InstanceShardNodeOutput) NodeRole() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceShardNode) *string { return v.NodeRole }).(pulumi.StringPtrOutput)
 }
 
-// 节点规格。
+// Node specification.
 func (o InstanceShardNodeOutput) NodeSpec() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceShardNode) *string { return v.NodeSpec }).(pulumi.StringPtrOutput)
 }
 
-// 节点状态。
+// Node status.
 func (o InstanceShardNodeOutput) NodeStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceShardNode) *string { return v.NodeStatus }).(pulumi.StringPtrOutput)
 }
 
-// 总内存。单位：GiB。
+// Total memory. Unit: GiB.
 func (o InstanceShardNodeOutput) TotalMemoryGb() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v InstanceShardNode) *float64 { return v.TotalMemoryGb }).(pulumi.Float64PtrOutput)
 }
 
-// 该节点的总存储空间。单位：GiB。
+// Total storage space for this node. Unit: GiB.
 func (o InstanceShardNodeOutput) TotalStorageGb() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v InstanceShardNode) *float64 { return v.TotalStorageGb }).(pulumi.Float64PtrOutput)
 }
 
-// 总核数。
+// Total cores.
 func (o InstanceShardNodeOutput) TotalvCpu() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v InstanceShardNode) *float64 { return v.TotalvCpu }).(pulumi.Float64PtrOutput)
 }
 
-// 已用内存。单位：GiB。
+// Used memory. Unit: GiB.
 func (o InstanceShardNodeOutput) UsedMemoryGb() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v InstanceShardNode) *float64 { return v.UsedMemoryGb }).(pulumi.Float64PtrOutput)
 }
 
-// 该节点已用的存储空间。单位：GiB。
+// Storage space used by this node. Unit: GiB.
 func (o InstanceShardNodeOutput) UsedStorageGb() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v InstanceShardNode) *float64 { return v.UsedStorageGb }).(pulumi.Float64PtrOutput)
 }
 
-// 已用核数。
+// Used cores.
 func (o InstanceShardNodeOutput) UsedvCpu() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v InstanceShardNode) *float64 { return v.UsedvCpu }).(pulumi.Float64PtrOutput)
 }
 
-// 当前节点所属的可用区 ID。
+// Availability zone ID of the current node.
 func (o InstanceShardNodeOutput) ZoneId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceShardNode) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
 }
@@ -1059,9 +1059,9 @@ func (o InstanceShardNodeArrayOutput) Index(i pulumi.IntInput) InstanceShardNode
 }
 
 type InstanceTag struct {
-	// 标签键。
+	// Tag key
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value *string `pulumi:"value"`
 }
 
@@ -1077,9 +1077,9 @@ type InstanceTagInput interface {
 }
 
 type InstanceTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -1134,12 +1134,12 @@ func (o InstanceTagOutput) ToInstanceTagOutputWithContext(ctx context.Context) I
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o InstanceTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value.
 func (o InstanceTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -1165,13 +1165,13 @@ func (o InstanceTagArrayOutput) Index(i pulumi.IntInput) InstanceTagOutput {
 }
 
 type GetAllowListAssociatedInstance struct {
-	// 已绑定当前白名单的实例 ID。
+	// Instance ID bound to the current allowlist.
 	InstanceId string `pulumi:"instanceId"`
-	// 已绑定当前白名单的实例名称。
+	// Instance name bound to the current allowlist.
 	InstanceName string `pulumi:"instanceName"`
-	// 实例所属的项目名称。
+	// Project name of the instance.
 	ProjectName string `pulumi:"projectName"`
-	// 实例所属的私有网络 ID。
+	// Private network ID of the instance.
 	Vpc string `pulumi:"vpc"`
 }
 
@@ -1187,13 +1187,13 @@ type GetAllowListAssociatedInstanceInput interface {
 }
 
 type GetAllowListAssociatedInstanceArgs struct {
-	// 已绑定当前白名单的实例 ID。
+	// Instance ID bound to the current allowlist.
 	InstanceId pulumi.StringInput `pulumi:"instanceId"`
-	// 已绑定当前白名单的实例名称。
+	// Instance name bound to the current allowlist.
 	InstanceName pulumi.StringInput `pulumi:"instanceName"`
-	// 实例所属的项目名称。
+	// Project name of the instance.
 	ProjectName pulumi.StringInput `pulumi:"projectName"`
-	// 实例所属的私有网络 ID。
+	// Private network ID of the instance.
 	Vpc pulumi.StringInput `pulumi:"vpc"`
 }
 
@@ -1248,22 +1248,22 @@ func (o GetAllowListAssociatedInstanceOutput) ToGetAllowListAssociatedInstanceOu
 	return o
 }
 
-// 已绑定当前白名单的实例 ID。
+// Instance ID bound to the current allowlist.
 func (o GetAllowListAssociatedInstanceOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 已绑定当前白名单的实例名称。
+// Instance name bound to the current allowlist.
 func (o GetAllowListAssociatedInstanceOutput) InstanceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.InstanceName }).(pulumi.StringOutput)
 }
 
-// 实例所属的项目名称。
+// Project name of the instance.
 func (o GetAllowListAssociatedInstanceOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 实例所属的私有网络 ID。
+// Private network ID of the instance.
 func (o GetAllowListAssociatedInstanceOutput) Vpc() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAllowListAssociatedInstance) string { return v.Vpc }).(pulumi.StringOutput)
 }
@@ -1289,21 +1289,21 @@ func (o GetAllowListAssociatedInstanceArrayOutput) Index(i pulumi.IntInput) GetA
 }
 
 type GetInstanceConfigServer struct {
-	// ConfigServer 的节点 ID。
+	// ConfigServer node ID
 	ConfigServerNodeId string `pulumi:"configServerNodeId"`
-	// 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。
+	// Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node.
 	NodeRole string `pulumi:"nodeRole"`
-	// 节点状态。
+	// Node status.
 	NodeStatus string `pulumi:"nodeStatus"`
-	// 总内存。单位：GiB。
+	// Total memory. Unit: GiB.
 	TotalMemoryGb float64 `pulumi:"totalMemoryGb"`
-	// 总核数。
+	// Total cores.
 	TotalvCpu float64 `pulumi:"totalvCpu"`
-	// 已用内存。单位：GiB。
+	// Used memory. Unit: GiB.
 	UsedMemoryGb float64 `pulumi:"usedMemoryGb"`
-	// 已用核数。
+	// Used cores.
 	UsedvCpu float64 `pulumi:"usedvCpu"`
-	// 当前节点所属的可用区 ID。
+	// Availability zone ID of the current node.
 	ZoneId string `pulumi:"zoneId"`
 }
 
@@ -1319,21 +1319,21 @@ type GetInstanceConfigServerInput interface {
 }
 
 type GetInstanceConfigServerArgs struct {
-	// ConfigServer 的节点 ID。
+	// ConfigServer node ID
 	ConfigServerNodeId pulumi.StringInput `pulumi:"configServerNodeId"`
-	// 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。
+	// Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node.
 	NodeRole pulumi.StringInput `pulumi:"nodeRole"`
-	// 节点状态。
+	// Node status.
 	NodeStatus pulumi.StringInput `pulumi:"nodeStatus"`
-	// 总内存。单位：GiB。
+	// Total memory. Unit: GiB.
 	TotalMemoryGb pulumi.Float64Input `pulumi:"totalMemoryGb"`
-	// 总核数。
+	// Total cores.
 	TotalvCpu pulumi.Float64Input `pulumi:"totalvCpu"`
-	// 已用内存。单位：GiB。
+	// Used memory. Unit: GiB.
 	UsedMemoryGb pulumi.Float64Input `pulumi:"usedMemoryGb"`
-	// 已用核数。
+	// Used cores.
 	UsedvCpu pulumi.Float64Input `pulumi:"usedvCpu"`
-	// 当前节点所属的可用区 ID。
+	// Availability zone ID of the current node.
 	ZoneId pulumi.StringInput `pulumi:"zoneId"`
 }
 
@@ -1388,42 +1388,42 @@ func (o GetInstanceConfigServerOutput) ToGetInstanceConfigServerOutputWithContex
 	return o
 }
 
-// ConfigServer 的节点 ID。
+// ConfigServer node ID
 func (o GetInstanceConfigServerOutput) ConfigServerNodeId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConfigServer) string { return v.ConfigServerNodeId }).(pulumi.StringOutput)
 }
 
-// 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。
+// Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node.
 func (o GetInstanceConfigServerOutput) NodeRole() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConfigServer) string { return v.NodeRole }).(pulumi.StringOutput)
 }
 
-// 节点状态。
+// Node status.
 func (o GetInstanceConfigServerOutput) NodeStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConfigServer) string { return v.NodeStatus }).(pulumi.StringOutput)
 }
 
-// 总内存。单位：GiB。
+// Total memory. Unit: GiB.
 func (o GetInstanceConfigServerOutput) TotalMemoryGb() pulumi.Float64Output {
 	return o.ApplyT(func(v GetInstanceConfigServer) float64 { return v.TotalMemoryGb }).(pulumi.Float64Output)
 }
 
-// 总核数。
+// Total cores.
 func (o GetInstanceConfigServerOutput) TotalvCpu() pulumi.Float64Output {
 	return o.ApplyT(func(v GetInstanceConfigServer) float64 { return v.TotalvCpu }).(pulumi.Float64Output)
 }
 
-// 已用内存。单位：GiB。
+// Used memory. Unit: GiB.
 func (o GetInstanceConfigServerOutput) UsedMemoryGb() pulumi.Float64Output {
 	return o.ApplyT(func(v GetInstanceConfigServer) float64 { return v.UsedMemoryGb }).(pulumi.Float64Output)
 }
 
-// 已用核数。
+// Used cores.
 func (o GetInstanceConfigServerOutput) UsedvCpu() pulumi.Float64Output {
 	return o.ApplyT(func(v GetInstanceConfigServer) float64 { return v.UsedvCpu }).(pulumi.Float64Output)
 }
 
-// 当前节点所属的可用区 ID。
+// Availability zone ID of the current node.
 func (o GetInstanceConfigServerOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConfigServer) string { return v.ZoneId }).(pulumi.StringOutput)
 }
@@ -1449,21 +1449,21 @@ func (o GetInstanceConfigServerArrayOutput) Index(i pulumi.IntInput) GetInstance
 }
 
 type GetInstanceMongo struct {
-	// Mongos 的节点 ID。
+	// Mongos node ID
 	MongosNodeId string `pulumi:"mongosNodeId"`
-	// 节点规格。
+	// Node specification.
 	NodeSpec string `pulumi:"nodeSpec"`
-	// 节点状态。
+	// Node status.
 	NodeStatus string `pulumi:"nodeStatus"`
-	// 总内存。单位：GiB。
+	// Total memory. Unit: GiB.
 	TotalMemoryGb float64 `pulumi:"totalMemoryGb"`
-	// 总核数。
+	// Total cores.
 	TotalvCpu float64 `pulumi:"totalvCpu"`
-	// 已用内存。单位：GiB。
+	// Used memory. Unit: GiB.
 	UsedMemoryGb float64 `pulumi:"usedMemoryGb"`
-	// 已用核数。
+	// Used cores.
 	UsedvCpu float64 `pulumi:"usedvCpu"`
-	// 当前节点所属的可用区 ID。
+	// Availability zone ID of the current node.
 	ZoneId string `pulumi:"zoneId"`
 }
 
@@ -1479,21 +1479,21 @@ type GetInstanceMongoInput interface {
 }
 
 type GetInstanceMongoArgs struct {
-	// Mongos 的节点 ID。
+	// Mongos node ID
 	MongosNodeId pulumi.StringInput `pulumi:"mongosNodeId"`
-	// 节点规格。
+	// Node specification.
 	NodeSpec pulumi.StringInput `pulumi:"nodeSpec"`
-	// 节点状态。
+	// Node status.
 	NodeStatus pulumi.StringInput `pulumi:"nodeStatus"`
-	// 总内存。单位：GiB。
+	// Total memory. Unit: GiB.
 	TotalMemoryGb pulumi.Float64Input `pulumi:"totalMemoryGb"`
-	// 总核数。
+	// Total cores.
 	TotalvCpu pulumi.Float64Input `pulumi:"totalvCpu"`
-	// 已用内存。单位：GiB。
+	// Used memory. Unit: GiB.
 	UsedMemoryGb pulumi.Float64Input `pulumi:"usedMemoryGb"`
-	// 已用核数。
+	// Used cores.
 	UsedvCpu pulumi.Float64Input `pulumi:"usedvCpu"`
-	// 当前节点所属的可用区 ID。
+	// Availability zone ID of the current node.
 	ZoneId pulumi.StringInput `pulumi:"zoneId"`
 }
 
@@ -1548,42 +1548,42 @@ func (o GetInstanceMongoOutput) ToGetInstanceMongoOutputWithContext(ctx context.
 	return o
 }
 
-// Mongos 的节点 ID。
+// Mongos node ID
 func (o GetInstanceMongoOutput) MongosNodeId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceMongo) string { return v.MongosNodeId }).(pulumi.StringOutput)
 }
 
-// 节点规格。
+// Node specification.
 func (o GetInstanceMongoOutput) NodeSpec() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceMongo) string { return v.NodeSpec }).(pulumi.StringOutput)
 }
 
-// 节点状态。
+// Node status.
 func (o GetInstanceMongoOutput) NodeStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceMongo) string { return v.NodeStatus }).(pulumi.StringOutput)
 }
 
-// 总内存。单位：GiB。
+// Total memory. Unit: GiB.
 func (o GetInstanceMongoOutput) TotalMemoryGb() pulumi.Float64Output {
 	return o.ApplyT(func(v GetInstanceMongo) float64 { return v.TotalMemoryGb }).(pulumi.Float64Output)
 }
 
-// 总核数。
+// Total cores.
 func (o GetInstanceMongoOutput) TotalvCpu() pulumi.Float64Output {
 	return o.ApplyT(func(v GetInstanceMongo) float64 { return v.TotalvCpu }).(pulumi.Float64Output)
 }
 
-// 已用内存。单位：GiB。
+// Used memory. Unit: GiB.
 func (o GetInstanceMongoOutput) UsedMemoryGb() pulumi.Float64Output {
 	return o.ApplyT(func(v GetInstanceMongo) float64 { return v.UsedMemoryGb }).(pulumi.Float64Output)
 }
 
-// 已用核数。
+// Used cores.
 func (o GetInstanceMongoOutput) UsedvCpu() pulumi.Float64Output {
 	return o.ApplyT(func(v GetInstanceMongo) float64 { return v.UsedvCpu }).(pulumi.Float64Output)
 }
 
-// 当前节点所属的可用区 ID。
+// Availability zone ID of the current node.
 func (o GetInstanceMongoOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceMongo) string { return v.ZoneId }).(pulumi.StringOutput)
 }
@@ -1609,29 +1609,29 @@ func (o GetInstanceMongoArrayOutput) Index(i pulumi.IntInput) GetInstanceMongoOu
 }
 
 type GetInstanceNode struct {
-	// 节点延迟时间。单位：秒。
+	// Node latency. Unit: seconds.
 	NodeDelayTime int `pulumi:"nodeDelayTime"`
-	// 节点 ID。
+	// Node ID.
 	NodeId string `pulumi:"nodeId"`
-	// 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+	// Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node. ReadOnly: read-only node.
 	NodeRole string `pulumi:"nodeRole"`
-	// 节点规格。
+	// Node specification.
 	NodeSpec string `pulumi:"nodeSpec"`
-	// 节点状态。
+	// Node status.
 	NodeStatus string `pulumi:"nodeStatus"`
-	// 总内存。单位：GiB。
+	// Total memory. Unit: GiB.
 	TotalMemoryGb float64 `pulumi:"totalMemoryGb"`
-	// 该节点的总存储空间。单位：GiB。
+	// Total storage space for this node. Unit: GiB.
 	TotalStorageGb float64 `pulumi:"totalStorageGb"`
-	// 总核数。
+	// Total cores.
 	TotalvCpu float64 `pulumi:"totalvCpu"`
-	// 已用内存。单位：GiB。
+	// Used memory. Unit: GiB.
 	UsedMemoryGb float64 `pulumi:"usedMemoryGb"`
-	// 该节点已用的存储空间。单位：GiB。
+	// Storage space used by this node. Unit: GiB.
 	UsedStorageGb float64 `pulumi:"usedStorageGb"`
-	// 已用核数。
+	// Used cores.
 	UsedvCpu float64 `pulumi:"usedvCpu"`
-	// 当前节点所属的可用区 ID。
+	// Availability zone ID of the current node.
 	ZoneId string `pulumi:"zoneId"`
 }
 
@@ -1647,29 +1647,29 @@ type GetInstanceNodeInput interface {
 }
 
 type GetInstanceNodeArgs struct {
-	// 节点延迟时间。单位：秒。
+	// Node latency. Unit: seconds.
 	NodeDelayTime pulumi.IntInput `pulumi:"nodeDelayTime"`
-	// 节点 ID。
+	// Node ID.
 	NodeId pulumi.StringInput `pulumi:"nodeId"`
-	// 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+	// Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node. ReadOnly: read-only node.
 	NodeRole pulumi.StringInput `pulumi:"nodeRole"`
-	// 节点规格。
+	// Node specification.
 	NodeSpec pulumi.StringInput `pulumi:"nodeSpec"`
-	// 节点状态。
+	// Node status.
 	NodeStatus pulumi.StringInput `pulumi:"nodeStatus"`
-	// 总内存。单位：GiB。
+	// Total memory. Unit: GiB.
 	TotalMemoryGb pulumi.Float64Input `pulumi:"totalMemoryGb"`
-	// 该节点的总存储空间。单位：GiB。
+	// Total storage space for this node. Unit: GiB.
 	TotalStorageGb pulumi.Float64Input `pulumi:"totalStorageGb"`
-	// 总核数。
+	// Total cores.
 	TotalvCpu pulumi.Float64Input `pulumi:"totalvCpu"`
-	// 已用内存。单位：GiB。
+	// Used memory. Unit: GiB.
 	UsedMemoryGb pulumi.Float64Input `pulumi:"usedMemoryGb"`
-	// 该节点已用的存储空间。单位：GiB。
+	// Storage space used by this node. Unit: GiB.
 	UsedStorageGb pulumi.Float64Input `pulumi:"usedStorageGb"`
-	// 已用核数。
+	// Used cores.
 	UsedvCpu pulumi.Float64Input `pulumi:"usedvCpu"`
-	// 当前节点所属的可用区 ID。
+	// Availability zone ID of the current node.
 	ZoneId pulumi.StringInput `pulumi:"zoneId"`
 }
 
@@ -1724,62 +1724,62 @@ func (o GetInstanceNodeOutput) ToGetInstanceNodeOutputWithContext(ctx context.Co
 	return o
 }
 
-// 节点延迟时间。单位：秒。
+// Node latency. Unit: seconds.
 func (o GetInstanceNodeOutput) NodeDelayTime() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceNode) int { return v.NodeDelayTime }).(pulumi.IntOutput)
 }
 
-// 节点 ID。
+// Node ID.
 func (o GetInstanceNodeOutput) NodeId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceNode) string { return v.NodeId }).(pulumi.StringOutput)
 }
 
-// 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+// Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node. ReadOnly: read-only node.
 func (o GetInstanceNodeOutput) NodeRole() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceNode) string { return v.NodeRole }).(pulumi.StringOutput)
 }
 
-// 节点规格。
+// Node specification.
 func (o GetInstanceNodeOutput) NodeSpec() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceNode) string { return v.NodeSpec }).(pulumi.StringOutput)
 }
 
-// 节点状态。
+// Node status.
 func (o GetInstanceNodeOutput) NodeStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceNode) string { return v.NodeStatus }).(pulumi.StringOutput)
 }
 
-// 总内存。单位：GiB。
+// Total memory. Unit: GiB.
 func (o GetInstanceNodeOutput) TotalMemoryGb() pulumi.Float64Output {
 	return o.ApplyT(func(v GetInstanceNode) float64 { return v.TotalMemoryGb }).(pulumi.Float64Output)
 }
 
-// 该节点的总存储空间。单位：GiB。
+// Total storage space for this node. Unit: GiB.
 func (o GetInstanceNodeOutput) TotalStorageGb() pulumi.Float64Output {
 	return o.ApplyT(func(v GetInstanceNode) float64 { return v.TotalStorageGb }).(pulumi.Float64Output)
 }
 
-// 总核数。
+// Total cores.
 func (o GetInstanceNodeOutput) TotalvCpu() pulumi.Float64Output {
 	return o.ApplyT(func(v GetInstanceNode) float64 { return v.TotalvCpu }).(pulumi.Float64Output)
 }
 
-// 已用内存。单位：GiB。
+// Used memory. Unit: GiB.
 func (o GetInstanceNodeOutput) UsedMemoryGb() pulumi.Float64Output {
 	return o.ApplyT(func(v GetInstanceNode) float64 { return v.UsedMemoryGb }).(pulumi.Float64Output)
 }
 
-// 该节点已用的存储空间。单位：GiB。
+// Storage space used by this node. Unit: GiB.
 func (o GetInstanceNodeOutput) UsedStorageGb() pulumi.Float64Output {
 	return o.ApplyT(func(v GetInstanceNode) float64 { return v.UsedStorageGb }).(pulumi.Float64Output)
 }
 
-// 已用核数。
+// Used cores.
 func (o GetInstanceNodeOutput) UsedvCpu() pulumi.Float64Output {
 	return o.ApplyT(func(v GetInstanceNode) float64 { return v.UsedvCpu }).(pulumi.Float64Output)
 }
 
-// 当前节点所属的可用区 ID。
+// Availability zone ID of the current node.
 func (o GetInstanceNodeOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceNode) string { return v.ZoneId }).(pulumi.StringOutput)
 }
@@ -1805,9 +1805,9 @@ func (o GetInstanceNodeArrayOutput) Index(i pulumi.IntInput) GetInstanceNodeOutp
 }
 
 type GetInstanceNodeAvailabilityZone struct {
-	// 当前可用区中需要添加的只读节点数量。当前仅副本集实例和分片集群实例中 Shard 分片支持添加只读节点。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该值表示单个副本集实例中的只读节点总数量。每个副本集实例最多支持添加 5 个只读节点。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该值表示每个 Shard 分片中的只读节点数量。每个 Shard 分片最多添加 5 个只读节点。
+	// Number of read-only nodes to add in the current availability zone. Currently, only replica set instances and Shard nodes in sharded cluster instances support adding read-only nodes. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this value indicates the total number of read-only nodes in a single replica set instance. Each replica set instance supports up to 5 read-only nodes. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this value indicates the number of read-only nodes per Shard node. Each Shard node supports up to 5 read-only nodes.
 	NodeNumber int `pulumi:"nodeNumber"`
-	// 只读节点所在的可用区。
+	// Availability zone of the read-only node.
 	ZoneId string `pulumi:"zoneId"`
 }
 
@@ -1823,9 +1823,9 @@ type GetInstanceNodeAvailabilityZoneInput interface {
 }
 
 type GetInstanceNodeAvailabilityZoneArgs struct {
-	// 当前可用区中需要添加的只读节点数量。当前仅副本集实例和分片集群实例中 Shard 分片支持添加只读节点。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该值表示单个副本集实例中的只读节点总数量。每个副本集实例最多支持添加 5 个只读节点。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该值表示每个 Shard 分片中的只读节点数量。每个 Shard 分片最多添加 5 个只读节点。
+	// Number of read-only nodes to add in the current availability zone. Currently, only replica set instances and Shard nodes in sharded cluster instances support adding read-only nodes. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this value indicates the total number of read-only nodes in a single replica set instance. Each replica set instance supports up to 5 read-only nodes. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this value indicates the number of read-only nodes per Shard node. Each Shard node supports up to 5 read-only nodes.
 	NodeNumber pulumi.IntInput `pulumi:"nodeNumber"`
-	// 只读节点所在的可用区。
+	// Availability zone of the read-only node.
 	ZoneId pulumi.StringInput `pulumi:"zoneId"`
 }
 
@@ -1880,12 +1880,12 @@ func (o GetInstanceNodeAvailabilityZoneOutput) ToGetInstanceNodeAvailabilityZone
 	return o
 }
 
-// 当前可用区中需要添加的只读节点数量。当前仅副本集实例和分片集群实例中 Shard 分片支持添加只读节点。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该值表示单个副本集实例中的只读节点总数量。每个副本集实例最多支持添加 5 个只读节点。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该值表示每个 Shard 分片中的只读节点数量。每个 Shard 分片最多添加 5 个只读节点。
+// Number of read-only nodes to add in the current availability zone. Currently, only replica set instances and Shard nodes in sharded cluster instances support adding read-only nodes. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this value indicates the total number of read-only nodes in a single replica set instance. Each replica set instance supports up to 5 read-only nodes. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this value indicates the number of read-only nodes per Shard node. Each Shard node supports up to 5 read-only nodes.
 func (o GetInstanceNodeAvailabilityZoneOutput) NodeNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceNodeAvailabilityZone) int { return v.NodeNumber }).(pulumi.IntOutput)
 }
 
-// 只读节点所在的可用区。
+// Availability zone of the read-only node.
 func (o GetInstanceNodeAvailabilityZoneOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceNodeAvailabilityZone) string { return v.ZoneId }).(pulumi.StringOutput)
 }
@@ -1911,9 +1911,9 @@ func (o GetInstanceNodeAvailabilityZoneArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetInstanceShard struct {
-	// Shard 分片中各节点的信息列表。
+	// List of node information in each Shard.
 	Nodes []GetInstanceShardNode `pulumi:"nodes"`
-	// Shard 节点的 ID。
+	// Shard node ID.
 	ShardId string `pulumi:"shardId"`
 }
 
@@ -1929,9 +1929,9 @@ type GetInstanceShardInput interface {
 }
 
 type GetInstanceShardArgs struct {
-	// Shard 分片中各节点的信息列表。
+	// List of node information in each Shard.
 	Nodes GetInstanceShardNodeArrayInput `pulumi:"nodes"`
-	// Shard 节点的 ID。
+	// Shard node ID.
 	ShardId pulumi.StringInput `pulumi:"shardId"`
 }
 
@@ -1986,12 +1986,12 @@ func (o GetInstanceShardOutput) ToGetInstanceShardOutputWithContext(ctx context.
 	return o
 }
 
-// Shard 分片中各节点的信息列表。
+// List of node information in each Shard.
 func (o GetInstanceShardOutput) Nodes() GetInstanceShardNodeArrayOutput {
 	return o.ApplyT(func(v GetInstanceShard) []GetInstanceShardNode { return v.Nodes }).(GetInstanceShardNodeArrayOutput)
 }
 
-// Shard 节点的 ID。
+// Shard node ID.
 func (o GetInstanceShardOutput) ShardId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceShard) string { return v.ShardId }).(pulumi.StringOutput)
 }
@@ -2017,29 +2017,29 @@ func (o GetInstanceShardArrayOutput) Index(i pulumi.IntInput) GetInstanceShardOu
 }
 
 type GetInstanceShardNode struct {
-	// 节点延迟时间。单位：秒。
+	// Node latency. Unit: seconds.
 	NodeDelayTime int `pulumi:"nodeDelayTime"`
-	// 节点 ID。
+	// Node ID.
 	NodeId string `pulumi:"nodeId"`
-	// 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+	// Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node. ReadOnly: read-only node.
 	NodeRole string `pulumi:"nodeRole"`
-	// 节点规格。
+	// Node specification.
 	NodeSpec string `pulumi:"nodeSpec"`
-	// 节点状态。
+	// Node status.
 	NodeStatus string `pulumi:"nodeStatus"`
-	// 总内存。单位：GiB。
+	// Total memory. Unit: GiB.
 	TotalMemoryGb float64 `pulumi:"totalMemoryGb"`
-	// 该节点的总存储空间。单位：GiB。
+	// Total storage space for this node. Unit: GiB.
 	TotalStorageGb float64 `pulumi:"totalStorageGb"`
-	// 总核数。
+	// Total cores.
 	TotalvCpu float64 `pulumi:"totalvCpu"`
-	// 已用内存。单位：GiB。
+	// Used memory. Unit: GiB.
 	UsedMemoryGb float64 `pulumi:"usedMemoryGb"`
-	// 该节点已用的存储空间。单位：GiB。
+	// Storage space used by this node. Unit: GiB.
 	UsedStorageGb float64 `pulumi:"usedStorageGb"`
-	// 已用核数。
+	// Used cores.
 	UsedvCpu float64 `pulumi:"usedvCpu"`
-	// 当前节点所属的可用区 ID。
+	// Availability zone ID of the current node.
 	ZoneId string `pulumi:"zoneId"`
 }
 
@@ -2055,29 +2055,29 @@ type GetInstanceShardNodeInput interface {
 }
 
 type GetInstanceShardNodeArgs struct {
-	// 节点延迟时间。单位：秒。
+	// Node latency. Unit: seconds.
 	NodeDelayTime pulumi.IntInput `pulumi:"nodeDelayTime"`
-	// 节点 ID。
+	// Node ID.
 	NodeId pulumi.StringInput `pulumi:"nodeId"`
-	// 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+	// Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node. ReadOnly: read-only node.
 	NodeRole pulumi.StringInput `pulumi:"nodeRole"`
-	// 节点规格。
+	// Node specification.
 	NodeSpec pulumi.StringInput `pulumi:"nodeSpec"`
-	// 节点状态。
+	// Node status.
 	NodeStatus pulumi.StringInput `pulumi:"nodeStatus"`
-	// 总内存。单位：GiB。
+	// Total memory. Unit: GiB.
 	TotalMemoryGb pulumi.Float64Input `pulumi:"totalMemoryGb"`
-	// 该节点的总存储空间。单位：GiB。
+	// Total storage space for this node. Unit: GiB.
 	TotalStorageGb pulumi.Float64Input `pulumi:"totalStorageGb"`
-	// 总核数。
+	// Total cores.
 	TotalvCpu pulumi.Float64Input `pulumi:"totalvCpu"`
-	// 已用内存。单位：GiB。
+	// Used memory. Unit: GiB.
 	UsedMemoryGb pulumi.Float64Input `pulumi:"usedMemoryGb"`
-	// 该节点已用的存储空间。单位：GiB。
+	// Storage space used by this node. Unit: GiB.
 	UsedStorageGb pulumi.Float64Input `pulumi:"usedStorageGb"`
-	// 已用核数。
+	// Used cores.
 	UsedvCpu pulumi.Float64Input `pulumi:"usedvCpu"`
-	// 当前节点所属的可用区 ID。
+	// Availability zone ID of the current node.
 	ZoneId pulumi.StringInput `pulumi:"zoneId"`
 }
 
@@ -2132,62 +2132,62 @@ func (o GetInstanceShardNodeOutput) ToGetInstanceShardNodeOutputWithContext(ctx 
 	return o
 }
 
-// 节点延迟时间。单位：秒。
+// Node latency. Unit: seconds.
 func (o GetInstanceShardNodeOutput) NodeDelayTime() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceShardNode) int { return v.NodeDelayTime }).(pulumi.IntOutput)
 }
 
-// 节点 ID。
+// Node ID.
 func (o GetInstanceShardNodeOutput) NodeId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceShardNode) string { return v.NodeId }).(pulumi.StringOutput)
 }
 
-// 节点角色，取值范围如下：Primary：主节点。Secondary：从节点。Hidden：隐藏节点。ReadOnly：只读节点。
+// Node role. Options: Primary: primary node. Secondary: secondary node. Hidden: hidden node. ReadOnly: read-only node.
 func (o GetInstanceShardNodeOutput) NodeRole() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceShardNode) string { return v.NodeRole }).(pulumi.StringOutput)
 }
 
-// 节点规格。
+// Node specification.
 func (o GetInstanceShardNodeOutput) NodeSpec() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceShardNode) string { return v.NodeSpec }).(pulumi.StringOutput)
 }
 
-// 节点状态。
+// Node status.
 func (o GetInstanceShardNodeOutput) NodeStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceShardNode) string { return v.NodeStatus }).(pulumi.StringOutput)
 }
 
-// 总内存。单位：GiB。
+// Total memory. Unit: GiB.
 func (o GetInstanceShardNodeOutput) TotalMemoryGb() pulumi.Float64Output {
 	return o.ApplyT(func(v GetInstanceShardNode) float64 { return v.TotalMemoryGb }).(pulumi.Float64Output)
 }
 
-// 该节点的总存储空间。单位：GiB。
+// Total storage space for this node. Unit: GiB.
 func (o GetInstanceShardNodeOutput) TotalStorageGb() pulumi.Float64Output {
 	return o.ApplyT(func(v GetInstanceShardNode) float64 { return v.TotalStorageGb }).(pulumi.Float64Output)
 }
 
-// 总核数。
+// Total cores.
 func (o GetInstanceShardNodeOutput) TotalvCpu() pulumi.Float64Output {
 	return o.ApplyT(func(v GetInstanceShardNode) float64 { return v.TotalvCpu }).(pulumi.Float64Output)
 }
 
-// 已用内存。单位：GiB。
+// Used memory. Unit: GiB.
 func (o GetInstanceShardNodeOutput) UsedMemoryGb() pulumi.Float64Output {
 	return o.ApplyT(func(v GetInstanceShardNode) float64 { return v.UsedMemoryGb }).(pulumi.Float64Output)
 }
 
-// 该节点已用的存储空间。单位：GiB。
+// Storage space used by this node. Unit: GiB.
 func (o GetInstanceShardNodeOutput) UsedStorageGb() pulumi.Float64Output {
 	return o.ApplyT(func(v GetInstanceShardNode) float64 { return v.UsedStorageGb }).(pulumi.Float64Output)
 }
 
-// 已用核数。
+// Used cores.
 func (o GetInstanceShardNodeOutput) UsedvCpu() pulumi.Float64Output {
 	return o.ApplyT(func(v GetInstanceShardNode) float64 { return v.UsedvCpu }).(pulumi.Float64Output)
 }
 
-// 当前节点所属的可用区 ID。
+// Availability zone ID of the current node.
 func (o GetInstanceShardNodeOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceShardNode) string { return v.ZoneId }).(pulumi.StringOutput)
 }
@@ -2213,9 +2213,9 @@ func (o GetInstanceShardNodeArrayOutput) Index(i pulumi.IntInput) GetInstanceSha
 }
 
 type GetInstanceTag struct {
-	// 标签键。
+	// Tag key
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value string `pulumi:"value"`
 }
 
@@ -2231,9 +2231,9 @@ type GetInstanceTagInput interface {
 }
 
 type GetInstanceTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -2288,12 +2288,12 @@ func (o GetInstanceTagOutput) ToGetInstanceTagOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o GetInstanceTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value.
 func (o GetInstanceTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceTag) string { return v.Value }).(pulumi.StringOutput)
 }

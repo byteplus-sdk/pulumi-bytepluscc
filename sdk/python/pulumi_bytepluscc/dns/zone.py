@@ -28,9 +28,9 @@ class ZoneArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneTagArgs']]]] = None):
         """
         The set of arguments for constructing a Zone resource.
-        :param pulumi.Input[builtins.str] zone_name: 域名。
-        :param pulumi.Input[builtins.str] project_name: 域名的项目。
-        :param pulumi.Input[builtins.str] remark: 域名的备注。
+        :param pulumi.Input[builtins.str] zone_name: Domain name.
+        :param pulumi.Input[builtins.str] project_name: Domain project.
+        :param pulumi.Input[builtins.str] remark: Domain notes
         """
         pulumi.set(__self__, "zone_name", zone_name)
         if project_name is not None:
@@ -44,7 +44,7 @@ class ZoneArgs:
     @pulumi.getter(name="zoneName")
     def zone_name(self) -> pulumi.Input[builtins.str]:
         """
-        域名。
+        Domain name.
         """
         return pulumi.get(self, "zone_name")
 
@@ -56,7 +56,7 @@ class ZoneArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        域名的项目。
+        Domain project.
         """
         return pulumi.get(self, "project_name")
 
@@ -68,7 +68,7 @@ class ZoneArgs:
     @pulumi.getter
     def remark(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        域名的备注。
+        Domain notes
         """
         return pulumi.get(self, "remark")
 
@@ -113,27 +113,27 @@ class _ZoneState:
                  zone_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Zone resources.
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allocate_dns_server_lists: 云解析 DNS 分配给域名的 DNS 服务器列表。
-        :param pulumi.Input[builtins.bool] auto_renew: 是否开启域名自动续费。true：开启域名自动续费。false：关闭域名自动续费。
-        :param pulumi.Input[builtins.int] cache_stage: 域名所有权的状态。该参数有以下取值：0：表示您是域名的所有者。您添加此域名后，就可以管理该域名的 DNS 解析。1：表示您不是域名的所有者。您添加此域名后，该域名的状态是 域名待找回。如果您要管理该域名的 DNS 解析，您需要在控制台根据提示验证您的域名所有权。
-        :param pulumi.Input[builtins.str] created_time: 域名的创建时间。
-        :param pulumi.Input[builtins.str] dns_security: DNS DDoS 防护服务的版本。dns*security*standard_inner：安全防护标准版。""：无安全防护版。
-        :param pulumi.Input[builtins.int] expired_time: 实例的过期时间。格式是 Unix 时间戳。对于云解析 DNS 免费版，该字段的值为 null。
-        :param pulumi.Input[builtins.str] instance_id: 实例的 ID。对于云解析 DNS 免费版，该字段的值为 null。
-        :param pulumi.Input[builtins.str] instance_no: 实例的 ID。对于云解析 DNS 免费版，该字段的值为 null。
-        :param pulumi.Input[builtins.bool] is_ns_correct: DNS 服务器的配置是否正确。如果配置正确，该域名在云解析 DNS 中的状态是 正常。该参数有以下取值：true： RealDNSServerList的 DNS 服务器列表包含所有 AllocateDNSServerList中的 DNS 服务器。此时，DNS 服务器的配置是正确的。false： RealDNSServerList的 DNS 服务器列表包含部分或者未包含 AllocateDNSServerList中的 DNS 服务器。此时，DNS 服务器的配置是不正确的。
-        :param pulumi.Input[builtins.bool] is_sub_domain: 是否是子域名。true：子域名。false：主域名。
-        :param pulumi.Input[builtins.str] last_operator: 创建该域名的用户的账号的 ID。
-        :param pulumi.Input[builtins.str] project_name: 域名的项目。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] real_dns_server_lists: 域名实际使用的 DNS 服务器列表。
-        :param pulumi.Input[builtins.int] record_count: 域名所包含的解析记录的总数。
-        :param pulumi.Input[builtins.str] remark: 域名的备注。
-        :param pulumi.Input[builtins.int] stage: 域名的状态。该参数有以下取值：0：正常。在该状态下，该域名的解析记录处于生效状态。1：域名待找回。在该状态下，该域名的解析记录不生效。该状态表示您不是该域名的所有者。如果您需要管理域名解析，您需要验证您的域名所有权。2：未使用TrafficRoute解析。在该状态下，该域名的解析记录不生效。该状态表示分配给该域名的 DNS 服务器不是云解析 DNS 的 DNS 服务器。3：异常。在该状态下，该域名的解析记录不生效。引起该状态的常见原因如下：域名未实名认证导致域名被注册局或注册商停用。域名未配置 DNS 服务器。域名未注册。API 在查询域名时超时。超时原因可能是网络问题。5：请变更DNS服务器。该状态表示由于云解析 DNS 的服务升级或变更，您需要把域名的 DNS 服务器更新为云解析 DNS 新分配的 DNS 服务器。
-        :param pulumi.Input[builtins.str] sub_domain_host: 子域名的域名前缀。如果该域名不是子域名，那么该参数为 null。
-        :param pulumi.Input[builtins.str] trade_code: 域名的功能版本。该参数有以下取值：free*inner：免费版。professional*inner：专业版。enterprise*inner：企业版。ultimate*inner：旗舰版。ultimate*exclusive*inner：尊享版。
-        :param pulumi.Input[builtins.str] updated_time: 域名最近一次的更新时间。更新操作包括：更新域名备注在域名下创建解析记录。
-        :param pulumi.Input[builtins.str] zid: 域名的 ID。
-        :param pulumi.Input[builtins.str] zone_name: 域名。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allocate_dns_server_lists: List of DNS servers assigned to the domain by Cloud DNS
+        :param pulumi.Input[builtins.bool] auto_renew: Whether domain auto-renewal is enabled. true: Auto-renewal enabled. false: Auto-renewal disabled.
+        :param pulumi.Input[builtins.int] cache_stage: Domain ownership status. This parameter has the following values: 0: You are the domain owner. After adding this domain, you can manage its DNS resolution. 1: You are not the domain owner. After adding this domain, its status is 'domain reclaim pending.' To manage DNS resolution, you must verify domain ownership in the console as prompted.
+        :param pulumi.Input[builtins.str] created_time: Domain creation time.
+        :param pulumi.Input[builtins.str] dns_security: Version of DNS DDoS protection service. dns*security*standard_inner: Standard protection edition. "": No protection edition.
+        :param pulumi.Input[builtins.int] expired_time: Instance expiration time. Format is Unix timestamp. For Cloud DNS Free Edition, this field is null.
+        :param pulumi.Input[builtins.str] instance_id: Instance ID. For Cloud DNS Free Edition, this field is null.
+        :param pulumi.Input[builtins.str] instance_no: Instance ID. For Cloud DNS Free Edition, this field is null.
+        :param pulumi.Input[builtins.bool] is_ns_correct: Whether the DNS server configuration is correct. If configured correctly, the domain status in Cloud DNS is Normal. This parameter has the following values: true: The DNS server list in RealDNSServerList includes all DNS servers in AllocateDNSServerList. In this case, the DNS server configuration is correct. false: The DNS server list in RealDNSServerList includes only some or none of the DNS servers in AllocateDNSServerList. In this case, the DNS server configuration is incorrect.
+        :param pulumi.Input[builtins.bool] is_sub_domain: Whether it is a subdomain. true: Subdomain. false: Primary domain.
+        :param pulumi.Input[builtins.str] last_operator: ID of the account that created the domain.
+        :param pulumi.Input[builtins.str] project_name: Domain project.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] real_dns_server_lists: List of DNS servers actually used by the domain.
+        :param pulumi.Input[builtins.int] record_count: Total number of DNS records contained in the domain.
+        :param pulumi.Input[builtins.str] remark: Domain notes
+        :param pulumi.Input[builtins.int] stage: Domain status. This parameter has the following values: 0: Normal. In this state, the domain's DNS resolution records are active. 1: Domain reclaim pending. In this state, the domain's DNS resolution records are inactive. This status indicates you are not the owner of the domain. If you need to manage DNS resolution, you must verify domain ownership. 2: TrafficRoute not used for resolution. In this state, the domain's DNS resolution records are inactive. This status means the DNS server assigned to the domain is not a Cloud DNS server. 3: Abnormal. In this state, the domain's DNS resolution records are inactive. Common causes for this status include: the domain is disabled by the registry or registrar due to lack of real-name verification; DNS server not configured; domain not registered; API timeout when querying the domain, possibly due to network issues. 5: Please change DNS server. This status means you need to update the domain's DNS server to the newly assigned Cloud DNS server due to service upgrade or change.
+        :param pulumi.Input[builtins.str] sub_domain_host: Prefix of the subdomain. If the domain is not a subdomain, this parameter is null.
+        :param pulumi.Input[builtins.str] trade_code: Domain feature version. This parameter has the following values: free*inner: Free Edition; professional*inner: Professional Edition; enterprise*inner: Enterprise Edition; ultimate*inner: Flagship Edition; ultimate*exclusive*inner: Premium Edition.
+        :param pulumi.Input[builtins.str] updated_time: Last update time for the domain. Update operations include: updating domain remarks, creating DNS records under the domain.
+        :param pulumi.Input[builtins.str] zid: Domain ID.
+        :param pulumi.Input[builtins.str] zone_name: Domain name.
         """
         if allocate_dns_server_lists is not None:
             pulumi.set(__self__, "allocate_dns_server_lists", allocate_dns_server_lists)
@@ -184,7 +184,7 @@ class _ZoneState:
     @pulumi.getter(name="allocateDnsServerLists")
     def allocate_dns_server_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        云解析 DNS 分配给域名的 DNS 服务器列表。
+        List of DNS servers assigned to the domain by Cloud DNS
         """
         return pulumi.get(self, "allocate_dns_server_lists")
 
@@ -196,7 +196,7 @@ class _ZoneState:
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启域名自动续费。true：开启域名自动续费。false：关闭域名自动续费。
+        Whether domain auto-renewal is enabled. true: Auto-renewal enabled. false: Auto-renewal disabled.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -208,7 +208,7 @@ class _ZoneState:
     @pulumi.getter(name="cacheStage")
     def cache_stage(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        域名所有权的状态。该参数有以下取值：0：表示您是域名的所有者。您添加此域名后，就可以管理该域名的 DNS 解析。1：表示您不是域名的所有者。您添加此域名后，该域名的状态是 域名待找回。如果您要管理该域名的 DNS 解析，您需要在控制台根据提示验证您的域名所有权。
+        Domain ownership status. This parameter has the following values: 0: You are the domain owner. After adding this domain, you can manage its DNS resolution. 1: You are not the domain owner. After adding this domain, its status is 'domain reclaim pending.' To manage DNS resolution, you must verify domain ownership in the console as prompted.
         """
         return pulumi.get(self, "cache_stage")
 
@@ -220,7 +220,7 @@ class _ZoneState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        域名的创建时间。
+        Domain creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -232,7 +232,7 @@ class _ZoneState:
     @pulumi.getter(name="dnsSecurity")
     def dns_security(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        DNS DDoS 防护服务的版本。dns*security*standard_inner：安全防护标准版。""：无安全防护版。
+        Version of DNS DDoS protection service. dns*security*standard_inner: Standard protection edition. "": No protection edition.
         """
         return pulumi.get(self, "dns_security")
 
@@ -244,7 +244,7 @@ class _ZoneState:
     @pulumi.getter(name="expiredTime")
     def expired_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例的过期时间。格式是 Unix 时间戳。对于云解析 DNS 免费版，该字段的值为 null。
+        Instance expiration time. Format is Unix timestamp. For Cloud DNS Free Edition, this field is null.
         """
         return pulumi.get(self, "expired_time")
 
@@ -256,7 +256,7 @@ class _ZoneState:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的 ID。对于云解析 DNS 免费版，该字段的值为 null。
+        Instance ID. For Cloud DNS Free Edition, this field is null.
         """
         return pulumi.get(self, "instance_id")
 
@@ -268,7 +268,7 @@ class _ZoneState:
     @pulumi.getter(name="instanceNo")
     def instance_no(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的 ID。对于云解析 DNS 免费版，该字段的值为 null。
+        Instance ID. For Cloud DNS Free Edition, this field is null.
         """
         return pulumi.get(self, "instance_no")
 
@@ -280,7 +280,7 @@ class _ZoneState:
     @pulumi.getter(name="isNsCorrect")
     def is_ns_correct(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        DNS 服务器的配置是否正确。如果配置正确，该域名在云解析 DNS 中的状态是 正常。该参数有以下取值：true： RealDNSServerList的 DNS 服务器列表包含所有 AllocateDNSServerList中的 DNS 服务器。此时，DNS 服务器的配置是正确的。false： RealDNSServerList的 DNS 服务器列表包含部分或者未包含 AllocateDNSServerList中的 DNS 服务器。此时，DNS 服务器的配置是不正确的。
+        Whether the DNS server configuration is correct. If configured correctly, the domain status in Cloud DNS is Normal. This parameter has the following values: true: The DNS server list in RealDNSServerList includes all DNS servers in AllocateDNSServerList. In this case, the DNS server configuration is correct. false: The DNS server list in RealDNSServerList includes only some or none of the DNS servers in AllocateDNSServerList. In this case, the DNS server configuration is incorrect.
         """
         return pulumi.get(self, "is_ns_correct")
 
@@ -292,7 +292,7 @@ class _ZoneState:
     @pulumi.getter(name="isSubDomain")
     def is_sub_domain(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否是子域名。true：子域名。false：主域名。
+        Whether it is a subdomain. true: Subdomain. false: Primary domain.
         """
         return pulumi.get(self, "is_sub_domain")
 
@@ -304,7 +304,7 @@ class _ZoneState:
     @pulumi.getter(name="lastOperator")
     def last_operator(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建该域名的用户的账号的 ID。
+        ID of the account that created the domain.
         """
         return pulumi.get(self, "last_operator")
 
@@ -316,7 +316,7 @@ class _ZoneState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        域名的项目。
+        Domain project.
         """
         return pulumi.get(self, "project_name")
 
@@ -328,7 +328,7 @@ class _ZoneState:
     @pulumi.getter(name="realDnsServerLists")
     def real_dns_server_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        域名实际使用的 DNS 服务器列表。
+        List of DNS servers actually used by the domain.
         """
         return pulumi.get(self, "real_dns_server_lists")
 
@@ -340,7 +340,7 @@ class _ZoneState:
     @pulumi.getter(name="recordCount")
     def record_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        域名所包含的解析记录的总数。
+        Total number of DNS records contained in the domain.
         """
         return pulumi.get(self, "record_count")
 
@@ -352,7 +352,7 @@ class _ZoneState:
     @pulumi.getter
     def remark(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        域名的备注。
+        Domain notes
         """
         return pulumi.get(self, "remark")
 
@@ -364,7 +364,7 @@ class _ZoneState:
     @pulumi.getter
     def stage(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        域名的状态。该参数有以下取值：0：正常。在该状态下，该域名的解析记录处于生效状态。1：域名待找回。在该状态下，该域名的解析记录不生效。该状态表示您不是该域名的所有者。如果您需要管理域名解析，您需要验证您的域名所有权。2：未使用TrafficRoute解析。在该状态下，该域名的解析记录不生效。该状态表示分配给该域名的 DNS 服务器不是云解析 DNS 的 DNS 服务器。3：异常。在该状态下，该域名的解析记录不生效。引起该状态的常见原因如下：域名未实名认证导致域名被注册局或注册商停用。域名未配置 DNS 服务器。域名未注册。API 在查询域名时超时。超时原因可能是网络问题。5：请变更DNS服务器。该状态表示由于云解析 DNS 的服务升级或变更，您需要把域名的 DNS 服务器更新为云解析 DNS 新分配的 DNS 服务器。
+        Domain status. This parameter has the following values: 0: Normal. In this state, the domain's DNS resolution records are active. 1: Domain reclaim pending. In this state, the domain's DNS resolution records are inactive. This status indicates you are not the owner of the domain. If you need to manage DNS resolution, you must verify domain ownership. 2: TrafficRoute not used for resolution. In this state, the domain's DNS resolution records are inactive. This status means the DNS server assigned to the domain is not a Cloud DNS server. 3: Abnormal. In this state, the domain's DNS resolution records are inactive. Common causes for this status include: the domain is disabled by the registry or registrar due to lack of real-name verification; DNS server not configured; domain not registered; API timeout when querying the domain, possibly due to network issues. 5: Please change DNS server. This status means you need to update the domain's DNS server to the newly assigned Cloud DNS server due to service upgrade or change.
         """
         return pulumi.get(self, "stage")
 
@@ -376,7 +376,7 @@ class _ZoneState:
     @pulumi.getter(name="subDomainHost")
     def sub_domain_host(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子域名的域名前缀。如果该域名不是子域名，那么该参数为 null。
+        Prefix of the subdomain. If the domain is not a subdomain, this parameter is null.
         """
         return pulumi.get(self, "sub_domain_host")
 
@@ -397,7 +397,7 @@ class _ZoneState:
     @pulumi.getter(name="tradeCode")
     def trade_code(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        域名的功能版本。该参数有以下取值：free*inner：免费版。professional*inner：专业版。enterprise*inner：企业版。ultimate*inner：旗舰版。ultimate*exclusive*inner：尊享版。
+        Domain feature version. This parameter has the following values: free*inner: Free Edition; professional*inner: Professional Edition; enterprise*inner: Enterprise Edition; ultimate*inner: Flagship Edition; ultimate*exclusive*inner: Premium Edition.
         """
         return pulumi.get(self, "trade_code")
 
@@ -409,7 +409,7 @@ class _ZoneState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        域名最近一次的更新时间。更新操作包括：更新域名备注在域名下创建解析记录。
+        Last update time for the domain. Update operations include: updating domain remarks, creating DNS records under the domain.
         """
         return pulumi.get(self, "updated_time")
 
@@ -421,7 +421,7 @@ class _ZoneState:
     @pulumi.getter
     def zid(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        域名的 ID。
+        Domain ID.
         """
         return pulumi.get(self, "zid")
 
@@ -433,7 +433,7 @@ class _ZoneState:
     @pulumi.getter(name="zoneName")
     def zone_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        域名。
+        Domain name.
         """
         return pulumi.get(self, "zone_name")
 
@@ -454,7 +454,7 @@ class Zone(pulumi.CustomResource):
                  zone_name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        资源里的zone就是域名，可以是主域名 例如 example.com，也可以是子域名 例如 abc.example.com
+        The zone in the resource is the domain name, which can be a primary domain such as example.com or a subdomain such as abc.example.com
 
         ## Example Usage
 
@@ -480,9 +480,9 @@ class Zone(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] project_name: 域名的项目。
-        :param pulumi.Input[builtins.str] remark: 域名的备注。
-        :param pulumi.Input[builtins.str] zone_name: 域名。
+        :param pulumi.Input[builtins.str] project_name: Domain project.
+        :param pulumi.Input[builtins.str] remark: Domain notes
+        :param pulumi.Input[builtins.str] zone_name: Domain name.
         """
         ...
     @overload
@@ -491,7 +491,7 @@ class Zone(pulumi.CustomResource):
                  args: ZoneArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        资源里的zone就是域名，可以是主域名 例如 example.com，也可以是子域名 例如 abc.example.com
+        The zone in the resource is the domain name, which can be a primary domain such as example.com or a subdomain such as abc.example.com
 
         ## Example Usage
 
@@ -606,27 +606,27 @@ class Zone(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allocate_dns_server_lists: 云解析 DNS 分配给域名的 DNS 服务器列表。
-        :param pulumi.Input[builtins.bool] auto_renew: 是否开启域名自动续费。true：开启域名自动续费。false：关闭域名自动续费。
-        :param pulumi.Input[builtins.int] cache_stage: 域名所有权的状态。该参数有以下取值：0：表示您是域名的所有者。您添加此域名后，就可以管理该域名的 DNS 解析。1：表示您不是域名的所有者。您添加此域名后，该域名的状态是 域名待找回。如果您要管理该域名的 DNS 解析，您需要在控制台根据提示验证您的域名所有权。
-        :param pulumi.Input[builtins.str] created_time: 域名的创建时间。
-        :param pulumi.Input[builtins.str] dns_security: DNS DDoS 防护服务的版本。dns*security*standard_inner：安全防护标准版。""：无安全防护版。
-        :param pulumi.Input[builtins.int] expired_time: 实例的过期时间。格式是 Unix 时间戳。对于云解析 DNS 免费版，该字段的值为 null。
-        :param pulumi.Input[builtins.str] instance_id: 实例的 ID。对于云解析 DNS 免费版，该字段的值为 null。
-        :param pulumi.Input[builtins.str] instance_no: 实例的 ID。对于云解析 DNS 免费版，该字段的值为 null。
-        :param pulumi.Input[builtins.bool] is_ns_correct: DNS 服务器的配置是否正确。如果配置正确，该域名在云解析 DNS 中的状态是 正常。该参数有以下取值：true： RealDNSServerList的 DNS 服务器列表包含所有 AllocateDNSServerList中的 DNS 服务器。此时，DNS 服务器的配置是正确的。false： RealDNSServerList的 DNS 服务器列表包含部分或者未包含 AllocateDNSServerList中的 DNS 服务器。此时，DNS 服务器的配置是不正确的。
-        :param pulumi.Input[builtins.bool] is_sub_domain: 是否是子域名。true：子域名。false：主域名。
-        :param pulumi.Input[builtins.str] last_operator: 创建该域名的用户的账号的 ID。
-        :param pulumi.Input[builtins.str] project_name: 域名的项目。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] real_dns_server_lists: 域名实际使用的 DNS 服务器列表。
-        :param pulumi.Input[builtins.int] record_count: 域名所包含的解析记录的总数。
-        :param pulumi.Input[builtins.str] remark: 域名的备注。
-        :param pulumi.Input[builtins.int] stage: 域名的状态。该参数有以下取值：0：正常。在该状态下，该域名的解析记录处于生效状态。1：域名待找回。在该状态下，该域名的解析记录不生效。该状态表示您不是该域名的所有者。如果您需要管理域名解析，您需要验证您的域名所有权。2：未使用TrafficRoute解析。在该状态下，该域名的解析记录不生效。该状态表示分配给该域名的 DNS 服务器不是云解析 DNS 的 DNS 服务器。3：异常。在该状态下，该域名的解析记录不生效。引起该状态的常见原因如下：域名未实名认证导致域名被注册局或注册商停用。域名未配置 DNS 服务器。域名未注册。API 在查询域名时超时。超时原因可能是网络问题。5：请变更DNS服务器。该状态表示由于云解析 DNS 的服务升级或变更，您需要把域名的 DNS 服务器更新为云解析 DNS 新分配的 DNS 服务器。
-        :param pulumi.Input[builtins.str] sub_domain_host: 子域名的域名前缀。如果该域名不是子域名，那么该参数为 null。
-        :param pulumi.Input[builtins.str] trade_code: 域名的功能版本。该参数有以下取值：free*inner：免费版。professional*inner：专业版。enterprise*inner：企业版。ultimate*inner：旗舰版。ultimate*exclusive*inner：尊享版。
-        :param pulumi.Input[builtins.str] updated_time: 域名最近一次的更新时间。更新操作包括：更新域名备注在域名下创建解析记录。
-        :param pulumi.Input[builtins.str] zid: 域名的 ID。
-        :param pulumi.Input[builtins.str] zone_name: 域名。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] allocate_dns_server_lists: List of DNS servers assigned to the domain by Cloud DNS
+        :param pulumi.Input[builtins.bool] auto_renew: Whether domain auto-renewal is enabled. true: Auto-renewal enabled. false: Auto-renewal disabled.
+        :param pulumi.Input[builtins.int] cache_stage: Domain ownership status. This parameter has the following values: 0: You are the domain owner. After adding this domain, you can manage its DNS resolution. 1: You are not the domain owner. After adding this domain, its status is 'domain reclaim pending.' To manage DNS resolution, you must verify domain ownership in the console as prompted.
+        :param pulumi.Input[builtins.str] created_time: Domain creation time.
+        :param pulumi.Input[builtins.str] dns_security: Version of DNS DDoS protection service. dns*security*standard_inner: Standard protection edition. "": No protection edition.
+        :param pulumi.Input[builtins.int] expired_time: Instance expiration time. Format is Unix timestamp. For Cloud DNS Free Edition, this field is null.
+        :param pulumi.Input[builtins.str] instance_id: Instance ID. For Cloud DNS Free Edition, this field is null.
+        :param pulumi.Input[builtins.str] instance_no: Instance ID. For Cloud DNS Free Edition, this field is null.
+        :param pulumi.Input[builtins.bool] is_ns_correct: Whether the DNS server configuration is correct. If configured correctly, the domain status in Cloud DNS is Normal. This parameter has the following values: true: The DNS server list in RealDNSServerList includes all DNS servers in AllocateDNSServerList. In this case, the DNS server configuration is correct. false: The DNS server list in RealDNSServerList includes only some or none of the DNS servers in AllocateDNSServerList. In this case, the DNS server configuration is incorrect.
+        :param pulumi.Input[builtins.bool] is_sub_domain: Whether it is a subdomain. true: Subdomain. false: Primary domain.
+        :param pulumi.Input[builtins.str] last_operator: ID of the account that created the domain.
+        :param pulumi.Input[builtins.str] project_name: Domain project.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] real_dns_server_lists: List of DNS servers actually used by the domain.
+        :param pulumi.Input[builtins.int] record_count: Total number of DNS records contained in the domain.
+        :param pulumi.Input[builtins.str] remark: Domain notes
+        :param pulumi.Input[builtins.int] stage: Domain status. This parameter has the following values: 0: Normal. In this state, the domain's DNS resolution records are active. 1: Domain reclaim pending. In this state, the domain's DNS resolution records are inactive. This status indicates you are not the owner of the domain. If you need to manage DNS resolution, you must verify domain ownership. 2: TrafficRoute not used for resolution. In this state, the domain's DNS resolution records are inactive. This status means the DNS server assigned to the domain is not a Cloud DNS server. 3: Abnormal. In this state, the domain's DNS resolution records are inactive. Common causes for this status include: the domain is disabled by the registry or registrar due to lack of real-name verification; DNS server not configured; domain not registered; API timeout when querying the domain, possibly due to network issues. 5: Please change DNS server. This status means you need to update the domain's DNS server to the newly assigned Cloud DNS server due to service upgrade or change.
+        :param pulumi.Input[builtins.str] sub_domain_host: Prefix of the subdomain. If the domain is not a subdomain, this parameter is null.
+        :param pulumi.Input[builtins.str] trade_code: Domain feature version. This parameter has the following values: free*inner: Free Edition; professional*inner: Professional Edition; enterprise*inner: Enterprise Edition; ultimate*inner: Flagship Edition; ultimate*exclusive*inner: Premium Edition.
+        :param pulumi.Input[builtins.str] updated_time: Last update time for the domain. Update operations include: updating domain remarks, creating DNS records under the domain.
+        :param pulumi.Input[builtins.str] zid: Domain ID.
+        :param pulumi.Input[builtins.str] zone_name: Domain name.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -660,7 +660,7 @@ class Zone(pulumi.CustomResource):
     @pulumi.getter(name="allocateDnsServerLists")
     def allocate_dns_server_lists(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        云解析 DNS 分配给域名的 DNS 服务器列表。
+        List of DNS servers assigned to the domain by Cloud DNS
         """
         return pulumi.get(self, "allocate_dns_server_lists")
 
@@ -668,7 +668,7 @@ class Zone(pulumi.CustomResource):
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> pulumi.Output[builtins.bool]:
         """
-        是否开启域名自动续费。true：开启域名自动续费。false：关闭域名自动续费。
+        Whether domain auto-renewal is enabled. true: Auto-renewal enabled. false: Auto-renewal disabled.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -676,7 +676,7 @@ class Zone(pulumi.CustomResource):
     @pulumi.getter(name="cacheStage")
     def cache_stage(self) -> pulumi.Output[builtins.int]:
         """
-        域名所有权的状态。该参数有以下取值：0：表示您是域名的所有者。您添加此域名后，就可以管理该域名的 DNS 解析。1：表示您不是域名的所有者。您添加此域名后，该域名的状态是 域名待找回。如果您要管理该域名的 DNS 解析，您需要在控制台根据提示验证您的域名所有权。
+        Domain ownership status. This parameter has the following values: 0: You are the domain owner. After adding this domain, you can manage its DNS resolution. 1: You are not the domain owner. After adding this domain, its status is 'domain reclaim pending.' To manage DNS resolution, you must verify domain ownership in the console as prompted.
         """
         return pulumi.get(self, "cache_stage")
 
@@ -684,7 +684,7 @@ class Zone(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        域名的创建时间。
+        Domain creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -692,7 +692,7 @@ class Zone(pulumi.CustomResource):
     @pulumi.getter(name="dnsSecurity")
     def dns_security(self) -> pulumi.Output[builtins.str]:
         """
-        DNS DDoS 防护服务的版本。dns*security*standard_inner：安全防护标准版。""：无安全防护版。
+        Version of DNS DDoS protection service. dns*security*standard_inner: Standard protection edition. "": No protection edition.
         """
         return pulumi.get(self, "dns_security")
 
@@ -700,7 +700,7 @@ class Zone(pulumi.CustomResource):
     @pulumi.getter(name="expiredTime")
     def expired_time(self) -> pulumi.Output[builtins.int]:
         """
-        实例的过期时间。格式是 Unix 时间戳。对于云解析 DNS 免费版，该字段的值为 null。
+        Instance expiration time. Format is Unix timestamp. For Cloud DNS Free Edition, this field is null.
         """
         return pulumi.get(self, "expired_time")
 
@@ -708,7 +708,7 @@ class Zone(pulumi.CustomResource):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例的 ID。对于云解析 DNS 免费版，该字段的值为 null。
+        Instance ID. For Cloud DNS Free Edition, this field is null.
         """
         return pulumi.get(self, "instance_id")
 
@@ -716,7 +716,7 @@ class Zone(pulumi.CustomResource):
     @pulumi.getter(name="instanceNo")
     def instance_no(self) -> pulumi.Output[builtins.str]:
         """
-        实例的 ID。对于云解析 DNS 免费版，该字段的值为 null。
+        Instance ID. For Cloud DNS Free Edition, this field is null.
         """
         return pulumi.get(self, "instance_no")
 
@@ -724,7 +724,7 @@ class Zone(pulumi.CustomResource):
     @pulumi.getter(name="isNsCorrect")
     def is_ns_correct(self) -> pulumi.Output[builtins.bool]:
         """
-        DNS 服务器的配置是否正确。如果配置正确，该域名在云解析 DNS 中的状态是 正常。该参数有以下取值：true： RealDNSServerList的 DNS 服务器列表包含所有 AllocateDNSServerList中的 DNS 服务器。此时，DNS 服务器的配置是正确的。false： RealDNSServerList的 DNS 服务器列表包含部分或者未包含 AllocateDNSServerList中的 DNS 服务器。此时，DNS 服务器的配置是不正确的。
+        Whether the DNS server configuration is correct. If configured correctly, the domain status in Cloud DNS is Normal. This parameter has the following values: true: The DNS server list in RealDNSServerList includes all DNS servers in AllocateDNSServerList. In this case, the DNS server configuration is correct. false: The DNS server list in RealDNSServerList includes only some or none of the DNS servers in AllocateDNSServerList. In this case, the DNS server configuration is incorrect.
         """
         return pulumi.get(self, "is_ns_correct")
 
@@ -732,7 +732,7 @@ class Zone(pulumi.CustomResource):
     @pulumi.getter(name="isSubDomain")
     def is_sub_domain(self) -> pulumi.Output[builtins.bool]:
         """
-        是否是子域名。true：子域名。false：主域名。
+        Whether it is a subdomain. true: Subdomain. false: Primary domain.
         """
         return pulumi.get(self, "is_sub_domain")
 
@@ -740,7 +740,7 @@ class Zone(pulumi.CustomResource):
     @pulumi.getter(name="lastOperator")
     def last_operator(self) -> pulumi.Output[builtins.str]:
         """
-        创建该域名的用户的账号的 ID。
+        ID of the account that created the domain.
         """
         return pulumi.get(self, "last_operator")
 
@@ -748,7 +748,7 @@ class Zone(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        域名的项目。
+        Domain project.
         """
         return pulumi.get(self, "project_name")
 
@@ -756,7 +756,7 @@ class Zone(pulumi.CustomResource):
     @pulumi.getter(name="realDnsServerLists")
     def real_dns_server_lists(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        域名实际使用的 DNS 服务器列表。
+        List of DNS servers actually used by the domain.
         """
         return pulumi.get(self, "real_dns_server_lists")
 
@@ -764,7 +764,7 @@ class Zone(pulumi.CustomResource):
     @pulumi.getter(name="recordCount")
     def record_count(self) -> pulumi.Output[builtins.int]:
         """
-        域名所包含的解析记录的总数。
+        Total number of DNS records contained in the domain.
         """
         return pulumi.get(self, "record_count")
 
@@ -772,7 +772,7 @@ class Zone(pulumi.CustomResource):
     @pulumi.getter
     def remark(self) -> pulumi.Output[builtins.str]:
         """
-        域名的备注。
+        Domain notes
         """
         return pulumi.get(self, "remark")
 
@@ -780,7 +780,7 @@ class Zone(pulumi.CustomResource):
     @pulumi.getter
     def stage(self) -> pulumi.Output[builtins.int]:
         """
-        域名的状态。该参数有以下取值：0：正常。在该状态下，该域名的解析记录处于生效状态。1：域名待找回。在该状态下，该域名的解析记录不生效。该状态表示您不是该域名的所有者。如果您需要管理域名解析，您需要验证您的域名所有权。2：未使用TrafficRoute解析。在该状态下，该域名的解析记录不生效。该状态表示分配给该域名的 DNS 服务器不是云解析 DNS 的 DNS 服务器。3：异常。在该状态下，该域名的解析记录不生效。引起该状态的常见原因如下：域名未实名认证导致域名被注册局或注册商停用。域名未配置 DNS 服务器。域名未注册。API 在查询域名时超时。超时原因可能是网络问题。5：请变更DNS服务器。该状态表示由于云解析 DNS 的服务升级或变更，您需要把域名的 DNS 服务器更新为云解析 DNS 新分配的 DNS 服务器。
+        Domain status. This parameter has the following values: 0: Normal. In this state, the domain's DNS resolution records are active. 1: Domain reclaim pending. In this state, the domain's DNS resolution records are inactive. This status indicates you are not the owner of the domain. If you need to manage DNS resolution, you must verify domain ownership. 2: TrafficRoute not used for resolution. In this state, the domain's DNS resolution records are inactive. This status means the DNS server assigned to the domain is not a Cloud DNS server. 3: Abnormal. In this state, the domain's DNS resolution records are inactive. Common causes for this status include: the domain is disabled by the registry or registrar due to lack of real-name verification; DNS server not configured; domain not registered; API timeout when querying the domain, possibly due to network issues. 5: Please change DNS server. This status means you need to update the domain's DNS server to the newly assigned Cloud DNS server due to service upgrade or change.
         """
         return pulumi.get(self, "stage")
 
@@ -788,7 +788,7 @@ class Zone(pulumi.CustomResource):
     @pulumi.getter(name="subDomainHost")
     def sub_domain_host(self) -> pulumi.Output[builtins.str]:
         """
-        子域名的域名前缀。如果该域名不是子域名，那么该参数为 null。
+        Prefix of the subdomain. If the domain is not a subdomain, this parameter is null.
         """
         return pulumi.get(self, "sub_domain_host")
 
@@ -801,7 +801,7 @@ class Zone(pulumi.CustomResource):
     @pulumi.getter(name="tradeCode")
     def trade_code(self) -> pulumi.Output[builtins.str]:
         """
-        域名的功能版本。该参数有以下取值：free*inner：免费版。professional*inner：专业版。enterprise*inner：企业版。ultimate*inner：旗舰版。ultimate*exclusive*inner：尊享版。
+        Domain feature version. This parameter has the following values: free*inner: Free Edition; professional*inner: Professional Edition; enterprise*inner: Enterprise Edition; ultimate*inner: Flagship Edition; ultimate*exclusive*inner: Premium Edition.
         """
         return pulumi.get(self, "trade_code")
 
@@ -809,7 +809,7 @@ class Zone(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        域名最近一次的更新时间。更新操作包括：更新域名备注在域名下创建解析记录。
+        Last update time for the domain. Update operations include: updating domain remarks, creating DNS records under the domain.
         """
         return pulumi.get(self, "updated_time")
 
@@ -817,7 +817,7 @@ class Zone(pulumi.CustomResource):
     @pulumi.getter
     def zid(self) -> pulumi.Output[builtins.str]:
         """
-        域名的 ID。
+        Domain ID.
         """
         return pulumi.get(self, "zid")
 
@@ -825,7 +825,7 @@ class Zone(pulumi.CustomResource):
     @pulumi.getter(name="zoneName")
     def zone_name(self) -> pulumi.Output[builtins.str]:
         """
-        域名。
+        Domain name.
         """
         return pulumi.get(self, "zone_name")
 

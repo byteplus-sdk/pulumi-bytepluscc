@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetLaunchTemplateLaunchTemplateVersionNetworkInterface {
     /**
-     * @return 网卡关联的安全组ID。
+     * @return Security group ID associated with the network interface.
      * 
      */
     private List<String> securityGroupIds;
     /**
-     * @return 实例的私有网络子网ID。
+     * @return Instance VPC subnet ID
      * 
      */
     private String subnetId;
 
     private GetLaunchTemplateLaunchTemplateVersionNetworkInterface() {}
     /**
-     * @return 网卡关联的安全组ID。
+     * @return Security group ID associated with the network interface.
      * 
      */
     public List<String> securityGroupIds() {
         return this.securityGroupIds;
     }
     /**
-     * @return 实例的私有网络子网ID。
+     * @return Instance VPC subnet ID
      * 
      */
     public String subnetId() {

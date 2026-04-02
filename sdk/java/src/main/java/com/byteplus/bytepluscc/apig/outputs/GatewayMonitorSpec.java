@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GatewayMonitorSpec {
     /**
-     * @return 托管Prometheus（VMP）服务。
+     * @return Managed Prometheus (VMP) service
      * 
      */
     private @Nullable Boolean enable;
     /**
-     * @return Prometheus工作区ID。
+     * @return Prometheus workspace ID
      * 
      */
     private @Nullable String workspaceId;
 
     private GatewayMonitorSpec() {}
     /**
-     * @return 托管Prometheus（VMP）服务。
+     * @return Managed Prometheus (VMP) service
      * 
      */
     public Optional<Boolean> enable() {
         return Optional.ofNullable(this.enable);
     }
     /**
-     * @return Prometheus工作区ID。
+     * @return Prometheus workspace ID
      * 
      */
     public Optional<String> workspaceId() {

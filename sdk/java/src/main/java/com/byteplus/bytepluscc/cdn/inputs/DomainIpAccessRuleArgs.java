@@ -19,14 +19,14 @@ public final class DomainIpAccessRuleArgs extends com.pulumi.resources.ResourceA
     public static final DomainIpAccessRuleArgs Empty = new DomainIpAccessRuleArgs();
 
     /**
-     * 表示黑名单或白名单中的 IP 地址。当 Switch 是 true 时，该参数为必填。您可以指定一个或者多个 IP 地址和 IP 地址网段。IP 地址和网段可以是 IPv4 或 IPv6 格式。您最多可输入 1,000 个地址。如果您指定了 SharedConfig，就不能指定该参数。
+     * Specifies IP addresses in the denylist or allowlist. This parameter is required when Switch is true. You can specify one or more IP addresses and IP address ranges. IP addresses and ranges can be in IPv4 or IPv6 format. You can enter up to 1,000 addresses. If you specify SharedConfig, you cannot specify this parameter.
      * 
      */
     @Import(name="ips")
     private @Nullable Output<List<String>> ips;
 
     /**
-     * @return 表示黑名单或白名单中的 IP 地址。当 Switch 是 true 时，该参数为必填。您可以指定一个或者多个 IP 地址和 IP 地址网段。IP 地址和网段可以是 IPv4 或 IPv6 格式。您最多可输入 1,000 个地址。如果您指定了 SharedConfig，就不能指定该参数。
+     * @return Specifies IP addresses in the denylist or allowlist. This parameter is required when Switch is true. You can specify one or more IP addresses and IP address ranges. IP addresses and ranges can be in IPv4 or IPv6 format. You can enter up to 1,000 addresses. If you specify SharedConfig, you cannot specify this parameter.
      * 
      */
     public Optional<Output<List<String>>> ips() {
@@ -34,14 +34,14 @@ public final class DomainIpAccessRuleArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * 表示 IP 名单的类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。如果您指定了 SharedConfig，就不能指定该参数。
+     * Indicates the type of IP list. This parameter is required when Switch is true. Valid values are: allow: indicates Allowlist. deny: indicates Denylist. If you specify SharedConfig, you cannot specify this parameter.
      * 
      */
     @Import(name="ruleType")
     private @Nullable Output<String> ruleType;
 
     /**
-     * @return 表示 IP 名单的类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。如果您指定了 SharedConfig，就不能指定该参数。
+     * @return Indicates the type of IP list. This parameter is required when Switch is true. Valid values are: allow: indicates Allowlist. deny: indicates Denylist. If you specify SharedConfig, you cannot specify this parameter.
      * 
      */
     public Optional<Output<String>> ruleType() {
@@ -49,14 +49,14 @@ public final class DomainIpAccessRuleArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * 表示一个全局配置。如果您指定了该参数，就不能指定 RuleType 和 Ip。
+     * Represents a global configuration. If you specify this parameter, you cannot specify RuleType and Ip.
      * 
      */
     @Import(name="sharedConfig")
     private @Nullable Output<DomainIpAccessRuleSharedConfigArgs> sharedConfig;
 
     /**
-     * @return 表示一个全局配置。如果您指定了该参数，就不能指定 RuleType 和 Ip。
+     * @return Represents a global configuration. If you specify this parameter, you cannot specify RuleType and Ip.
      * 
      */
     public Optional<Output<DomainIpAccessRuleSharedConfigArgs>> sharedConfig() {
@@ -64,14 +64,14 @@ public final class DomainIpAccessRuleArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+     * Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
      * 
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+     * @return Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
      * 
      */
     public Optional<Output<Boolean>> switch_() {
@@ -106,7 +106,7 @@ public final class DomainIpAccessRuleArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param ips 表示黑名单或白名单中的 IP 地址。当 Switch 是 true 时，该参数为必填。您可以指定一个或者多个 IP 地址和 IP 地址网段。IP 地址和网段可以是 IPv4 或 IPv6 格式。您最多可输入 1,000 个地址。如果您指定了 SharedConfig，就不能指定该参数。
+         * @param ips Specifies IP addresses in the denylist or allowlist. This parameter is required when Switch is true. You can specify one or more IP addresses and IP address ranges. IP addresses and ranges can be in IPv4 or IPv6 format. You can enter up to 1,000 addresses. If you specify SharedConfig, you cannot specify this parameter.
          * 
          * @return builder
          * 
@@ -117,7 +117,7 @@ public final class DomainIpAccessRuleArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param ips 表示黑名单或白名单中的 IP 地址。当 Switch 是 true 时，该参数为必填。您可以指定一个或者多个 IP 地址和 IP 地址网段。IP 地址和网段可以是 IPv4 或 IPv6 格式。您最多可输入 1,000 个地址。如果您指定了 SharedConfig，就不能指定该参数。
+         * @param ips Specifies IP addresses in the denylist or allowlist. This parameter is required when Switch is true. You can specify one or more IP addresses and IP address ranges. IP addresses and ranges can be in IPv4 or IPv6 format. You can enter up to 1,000 addresses. If you specify SharedConfig, you cannot specify this parameter.
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class DomainIpAccessRuleArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param ips 表示黑名单或白名单中的 IP 地址。当 Switch 是 true 时，该参数为必填。您可以指定一个或者多个 IP 地址和 IP 地址网段。IP 地址和网段可以是 IPv4 或 IPv6 格式。您最多可输入 1,000 个地址。如果您指定了 SharedConfig，就不能指定该参数。
+         * @param ips Specifies IP addresses in the denylist or allowlist. This parameter is required when Switch is true. You can specify one or more IP addresses and IP address ranges. IP addresses and ranges can be in IPv4 or IPv6 format. You can enter up to 1,000 addresses. If you specify SharedConfig, you cannot specify this parameter.
          * 
          * @return builder
          * 
@@ -137,7 +137,7 @@ public final class DomainIpAccessRuleArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param ruleType 表示 IP 名单的类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。如果您指定了 SharedConfig，就不能指定该参数。
+         * @param ruleType Indicates the type of IP list. This parameter is required when Switch is true. Valid values are: allow: indicates Allowlist. deny: indicates Denylist. If you specify SharedConfig, you cannot specify this parameter.
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class DomainIpAccessRuleArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param ruleType 表示 IP 名单的类型。当 Switch 是 true 时，该参数为必填。该参数有以下取值：allow：表示白名单。deny：表示黑名单。如果您指定了 SharedConfig，就不能指定该参数。
+         * @param ruleType Indicates the type of IP list. This parameter is required when Switch is true. Valid values are: allow: indicates Allowlist. deny: indicates Denylist. If you specify SharedConfig, you cannot specify this parameter.
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class DomainIpAccessRuleArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param sharedConfig 表示一个全局配置。如果您指定了该参数，就不能指定 RuleType 和 Ip。
+         * @param sharedConfig Represents a global configuration. If you specify this parameter, you cannot specify RuleType and Ip.
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class DomainIpAccessRuleArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param sharedConfig 表示一个全局配置。如果您指定了该参数，就不能指定 RuleType 和 Ip。
+         * @param sharedConfig Represents a global configuration. If you specify this parameter, you cannot specify RuleType and Ip.
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class DomainIpAccessRuleArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param switch_ 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+         * @param switch_ Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
          * 
          * @return builder
          * 
@@ -190,7 +190,7 @@ public final class DomainIpAccessRuleArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param switch_ 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。
+         * @param switch_ Indicates whether this feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature.
          * 
          * @return builder
          * 

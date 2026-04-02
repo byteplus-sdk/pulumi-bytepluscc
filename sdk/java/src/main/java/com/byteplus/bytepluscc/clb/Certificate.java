@@ -17,7 +17,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 针对HTTPS协议，提供统一的证书管理服务，证书无需上传到后端服务器，支持在CLB实例上解密处理，降低了后端服务器的CPU开销。
+ * Provides unified certificate management service for HTTPS protocol. Certificates do not need to be uploaded to backend servers. Supports decryption processing on CLB instances, reducing CPU overhead on backend servers.
  * 
  * ## Example Usage
  * 
@@ -76,168 +76,168 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:clb/certificate:Certificate")
 public class Certificate extends com.pulumi.resources.CustomResource {
     /**
-     * 证书的ID。
+     * Certificate ID.
      * 
      */
     @Export(name="certificateId", refs={String.class}, tree="[0]")
     private Output<String> certificateId;
 
     /**
-     * @return 证书的ID。
+     * @return Certificate ID.
      * 
      */
     public Output<String> certificateId() {
         return this.certificateId;
     }
     /**
-     * 证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
+     * Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
      * 
      */
     @Export(name="certificateName", refs={String.class}, tree="[0]")
     private Output<String> certificateName;
 
     /**
-     * @return 证书的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 128个字符。
+     * @return Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
      * 
      */
     public Output<String> certificateName() {
         return this.certificateName;
     }
     /**
-     * 证书的创建时间。
+     * Certificate creation time.
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 证书的创建时间。
+     * @return Certificate creation time.
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+     * Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 证书的描述，默认值为空字符串。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。
+     * @return Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 证书的主域名。
+     * Certificate primary domain name.
      * 
      */
     @Export(name="domainName", refs={String.class}, tree="[0]")
     private Output<String> domainName;
 
     /**
-     * @return 证书的主域名。
+     * @return Certificate primary domain name.
      * 
      */
     public Output<String> domainName() {
         return this.domainName;
     }
     /**
-     * 证书的过期时间。
+     * Certificate expiration time.
      * 
      */
     @Export(name="expiredAt", refs={String.class}, tree="[0]")
     private Output<String> expiredAt;
 
     /**
-     * @return 证书的过期时间。
+     * @return Certificate expiration time.
      * 
      */
     public Output<String> expiredAt() {
         return this.expiredAt;
     }
     /**
-     * 证书关联的监听器的ID。
+     * ID of the listener associated with the certificate.
      * 
      */
     @Export(name="listeners", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> listeners;
 
     /**
-     * @return 证书关联的监听器的ID。
+     * @return ID of the listener associated with the certificate.
      * 
      */
     public Output<List<String>> listeners() {
         return this.listeners;
     }
     /**
-     * 证书的私钥。
+     * Certificate private key.
      * 
      */
     @Export(name="privateKey", refs={String.class}, tree="[0]")
     private Output<String> privateKey;
 
     /**
-     * @return 证书的私钥。
+     * @return Certificate private key.
      * 
      */
     public Output<String> privateKey() {
         return this.privateKey;
     }
     /**
-     * 证书所属项目的名称。不填默认为default。
+     * Name of the project the certificate belongs to. If not specified, defaults to &#39;default&#39;.
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 证书所属项目的名称。不填默认为default。
+     * @return Name of the project the certificate belongs to. If not specified, defaults to &#39;default&#39;.
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 证书的公钥。
+     * Certificate public key.
      * 
      */
     @Export(name="publicKey", refs={String.class}, tree="[0]")
     private Output<String> publicKey;
 
     /**
-     * @return 证书的公钥。
+     * @return Certificate public key.
      * 
      */
     public Output<String> publicKey() {
         return this.publicKey;
     }
     /**
-     * 是否为托管资源。true：托管资源。false：非托管资源。
+     * Managed resource status. true: managed resource. false: unmanaged resource.
      * 
      */
     @Export(name="serviceManaged", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> serviceManaged;
 
     /**
-     * @return 是否为托管资源。true：托管资源。false：非托管资源。
+     * @return Managed resource status. true: managed resource. false: unmanaged resource.
      * 
      */
     public Output<Boolean> serviceManaged() {
         return this.serviceManaged;
     }
     /**
-     * 证书的备用域名列表。
+     * List of alternate domain names for the certificate.
      * 
      */
     @Export(name="subjectAlternativeNames", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> subjectAlternativeNames;
 
     /**
-     * @return 证书的备用域名列表。
+     * @return List of alternate domain names for the certificate.
      * 
      */
     public Output<List<String>> subjectAlternativeNames() {

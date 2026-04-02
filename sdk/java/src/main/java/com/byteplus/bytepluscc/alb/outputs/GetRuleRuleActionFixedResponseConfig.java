@@ -11,38 +11,38 @@ import java.util.Objects;
 @CustomType
 public final class GetRuleRuleActionFixedResponseConfig {
     /**
-     * @return 返回的固定内容。
+     * @return Fixed response content.
      * 
      */
     private String content;
     /**
-     * @return 返回的固定内容的格式。text/plain、text/css、text/html、application/javascript、application/json
+     * @return Format of fixed response content. text/plain, text/css, text/html, application/javascript, application/json
      * 
      */
     private String contentType;
     /**
-     * @return 返回的 HTTP 状态码。
+     * @return Returned HTTP status code.
      * 
      */
     private String httpCode;
 
     private GetRuleRuleActionFixedResponseConfig() {}
     /**
-     * @return 返回的固定内容。
+     * @return Fixed response content.
      * 
      */
     public String content() {
         return this.content;
     }
     /**
-     * @return 返回的固定内容的格式。text/plain、text/css、text/html、application/javascript、application/json
+     * @return Format of fixed response content. text/plain, text/css, text/html, application/javascript, application/json
      * 
      */
     public String contentType() {
         return this.contentType;
     }
     /**
-     * @return 返回的 HTTP 状态码。
+     * @return Returned HTTP status code.
      * 
      */
     public String httpCode() {

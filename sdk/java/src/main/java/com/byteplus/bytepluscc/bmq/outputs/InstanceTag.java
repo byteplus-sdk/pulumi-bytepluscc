@@ -12,38 +12,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceTag {
     /**
-     * @return 标签键。
+     * @return Tag key
      * 
      */
     private @Nullable String key;
     /**
-     * @return 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+     * @return Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
      * 
      */
     private @Nullable String type;
     /**
-     * @return 标签值。
+     * @return Tag value
      * 
      */
     private @Nullable String value;
 
     private InstanceTag() {}
     /**
-     * @return 标签键。
+     * @return Tag key
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return 实例标签的类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+     * @return Type of instance tag. Possible values: CUSTOM: Custom tag. SYSTEM: System tag
      * 
      */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }
     /**
-     * @return 标签值。
+     * @return Tag value
      * 
      */
     public Optional<String> value() {

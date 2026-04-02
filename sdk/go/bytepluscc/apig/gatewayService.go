@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 服务是一组路由对外暴露的入口，用于区分流量的来源和协议，实现业务、环境、逻辑租户隔离。服务可以绑定独立的访问域名，以域名维度访问业务。
+// A service is a set of routes exposed as entry points to distinguish traffic sources and protocols, enabling business, environment, and logical tenant isolation. Services can bind independent access domains, allowing access by domain.
 //
 // ## Import
 //
@@ -22,35 +22,35 @@ import (
 type GatewayService struct {
 	pulumi.CustomResourceState
 
-	// 认证配置。
+	// Authentication configuration.
 	AuthSpec GatewayServiceAuthSpecOutput `pulumi:"authSpec"`
-	// 备注，长度限制为0~253个字符。
+	// Remarks. Length must be 0–253 characters.
 	Comments pulumi.StringOutput `pulumi:"comments"`
-	// 创建时间。
+	// Creation time.
 	CreatedTime   pulumi.StringOutput                   `pulumi:"createdTime"`
 	CustomDomains GatewayServiceCustomDomainArrayOutput `pulumi:"customDomains"`
-	// 域名详情。
+	// Domain details.
 	DomainSpec GatewayServiceDomainSpecOutput `pulumi:"domainSpec"`
-	// 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+	// Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
 	DomainType pulumi.StringOutput             `pulumi:"domainType"`
 	Domains    GatewayServiceDomainArrayOutput `pulumi:"domains"`
-	// 网关ID。
+	// Gateway ID.
 	GatewayId pulumi.StringOutput `pulumi:"gatewayId"`
-	// 网关名称。
+	// Gateway name.
 	GatewayName pulumi.StringOutput `pulumi:"gatewayName"`
-	// 服务创建失败、删除失败或异常时的错误信息。
+	// Error message for service creation failure, deletion failure, or abnormal status.
 	Message pulumi.StringOutput `pulumi:"message"`
-	// 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
+	// Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
 	Protocols pulumi.StringArrayOutput `pulumi:"protocols"`
-	// 服务ID。
+	// Service ID.
 	ServiceId pulumi.StringOutput `pulumi:"serviceId"`
-	// 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+	// Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
 	ServiceName pulumi.StringOutput `pulumi:"serviceName"`
-	// 服务默认域名网络配置。。
+	// Default domain network configuration..
 	ServiceNetworkSpec GatewayServiceServiceNetworkSpecOutput `pulumi:"serviceNetworkSpec"`
-	// 服务类型，取值：AIProvider：AI模型代理。
+	// Service type. Options: AIProvider: AI model proxy.
 	ServiceType pulumi.StringOutput `pulumi:"serviceType"`
-	// Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+	// Creating: Creating. CreatedFailed: Creation failed. Running: Running. Deleting: Deleting. DeletedFailed: Deletion failed. Abnormal: Abnormal.
 	Status pulumi.StringOutput `pulumi:"status"`
 }
 
@@ -96,68 +96,68 @@ func GetGatewayService(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering GatewayService resources.
 type gatewayServiceState struct {
-	// 认证配置。
+	// Authentication configuration.
 	AuthSpec *GatewayServiceAuthSpec `pulumi:"authSpec"`
-	// 备注，长度限制为0~253个字符。
+	// Remarks. Length must be 0–253 characters.
 	Comments *string `pulumi:"comments"`
-	// 创建时间。
+	// Creation time.
 	CreatedTime   *string                      `pulumi:"createdTime"`
 	CustomDomains []GatewayServiceCustomDomain `pulumi:"customDomains"`
-	// 域名详情。
+	// Domain details.
 	DomainSpec *GatewayServiceDomainSpec `pulumi:"domainSpec"`
-	// 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+	// Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
 	DomainType *string                `pulumi:"domainType"`
 	Domains    []GatewayServiceDomain `pulumi:"domains"`
-	// 网关ID。
+	// Gateway ID.
 	GatewayId *string `pulumi:"gatewayId"`
-	// 网关名称。
+	// Gateway name.
 	GatewayName *string `pulumi:"gatewayName"`
-	// 服务创建失败、删除失败或异常时的错误信息。
+	// Error message for service creation failure, deletion failure, or abnormal status.
 	Message *string `pulumi:"message"`
-	// 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
+	// Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
 	Protocols []string `pulumi:"protocols"`
-	// 服务ID。
+	// Service ID.
 	ServiceId *string `pulumi:"serviceId"`
-	// 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+	// Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
 	ServiceName *string `pulumi:"serviceName"`
-	// 服务默认域名网络配置。。
+	// Default domain network configuration..
 	ServiceNetworkSpec *GatewayServiceServiceNetworkSpec `pulumi:"serviceNetworkSpec"`
-	// 服务类型，取值：AIProvider：AI模型代理。
+	// Service type. Options: AIProvider: AI model proxy.
 	ServiceType *string `pulumi:"serviceType"`
-	// Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+	// Creating: Creating. CreatedFailed: Creation failed. Running: Running. Deleting: Deleting. DeletedFailed: Deletion failed. Abnormal: Abnormal.
 	Status *string `pulumi:"status"`
 }
 
 type GatewayServiceState struct {
-	// 认证配置。
+	// Authentication configuration.
 	AuthSpec GatewayServiceAuthSpecPtrInput
-	// 备注，长度限制为0~253个字符。
+	// Remarks. Length must be 0–253 characters.
 	Comments pulumi.StringPtrInput
-	// 创建时间。
+	// Creation time.
 	CreatedTime   pulumi.StringPtrInput
 	CustomDomains GatewayServiceCustomDomainArrayInput
-	// 域名详情。
+	// Domain details.
 	DomainSpec GatewayServiceDomainSpecPtrInput
-	// 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+	// Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
 	DomainType pulumi.StringPtrInput
 	Domains    GatewayServiceDomainArrayInput
-	// 网关ID。
+	// Gateway ID.
 	GatewayId pulumi.StringPtrInput
-	// 网关名称。
+	// Gateway name.
 	GatewayName pulumi.StringPtrInput
-	// 服务创建失败、删除失败或异常时的错误信息。
+	// Error message for service creation failure, deletion failure, or abnormal status.
 	Message pulumi.StringPtrInput
-	// 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
+	// Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
 	Protocols pulumi.StringArrayInput
-	// 服务ID。
+	// Service ID.
 	ServiceId pulumi.StringPtrInput
-	// 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+	// Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
 	ServiceName pulumi.StringPtrInput
-	// 服务默认域名网络配置。。
+	// Default domain network configuration..
 	ServiceNetworkSpec GatewayServiceServiceNetworkSpecPtrInput
-	// 服务类型，取值：AIProvider：AI模型代理。
+	// Service type. Options: AIProvider: AI model proxy.
 	ServiceType pulumi.StringPtrInput
-	// Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+	// Creating: Creating. CreatedFailed: Creation failed. Running: Running. Deleting: Deleting. DeletedFailed: Deletion failed. Abnormal: Abnormal.
 	Status pulumi.StringPtrInput
 }
 
@@ -166,43 +166,43 @@ func (GatewayServiceState) ElementType() reflect.Type {
 }
 
 type gatewayServiceArgs struct {
-	// 认证配置。
+	// Authentication configuration.
 	AuthSpec GatewayServiceAuthSpec `pulumi:"authSpec"`
-	// 备注，长度限制为0~253个字符。
+	// Remarks. Length must be 0–253 characters.
 	Comments      *string                      `pulumi:"comments"`
 	CustomDomains []GatewayServiceCustomDomain `pulumi:"customDomains"`
-	// 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+	// Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
 	DomainType *string `pulumi:"domainType"`
-	// 网关ID。
+	// Gateway ID.
 	GatewayId string `pulumi:"gatewayId"`
-	// 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
+	// Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
 	Protocols []string `pulumi:"protocols"`
-	// 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+	// Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
 	ServiceName string `pulumi:"serviceName"`
-	// 服务默认域名网络配置。。
+	// Default domain network configuration..
 	ServiceNetworkSpec *GatewayServiceServiceNetworkSpec `pulumi:"serviceNetworkSpec"`
-	// 服务类型，取值：AIProvider：AI模型代理。
+	// Service type. Options: AIProvider: AI model proxy.
 	ServiceType *string `pulumi:"serviceType"`
 }
 
 // The set of arguments for constructing a GatewayService resource.
 type GatewayServiceArgs struct {
-	// 认证配置。
+	// Authentication configuration.
 	AuthSpec GatewayServiceAuthSpecInput
-	// 备注，长度限制为0~253个字符。
+	// Remarks. Length must be 0–253 characters.
 	Comments      pulumi.StringPtrInput
 	CustomDomains GatewayServiceCustomDomainArrayInput
-	// 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+	// Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
 	DomainType pulumi.StringPtrInput
-	// 网关ID。
+	// Gateway ID.
 	GatewayId pulumi.StringInput
-	// 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
+	// Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
 	Protocols pulumi.StringArrayInput
-	// 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+	// Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
 	ServiceName pulumi.StringInput
-	// 服务默认域名网络配置。。
+	// Default domain network configuration..
 	ServiceNetworkSpec GatewayServiceServiceNetworkSpecPtrInput
-	// 服务类型，取值：AIProvider：AI模型代理。
+	// Service type. Options: AIProvider: AI model proxy.
 	ServiceType pulumi.StringPtrInput
 }
 
@@ -293,17 +293,17 @@ func (o GatewayServiceOutput) ToGatewayServiceOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 认证配置。
+// Authentication configuration.
 func (o GatewayServiceOutput) AuthSpec() GatewayServiceAuthSpecOutput {
 	return o.ApplyT(func(v *GatewayService) GatewayServiceAuthSpecOutput { return v.AuthSpec }).(GatewayServiceAuthSpecOutput)
 }
 
-// 备注，长度限制为0~253个字符。
+// Remarks. Length must be 0–253 characters.
 func (o GatewayServiceOutput) Comments() pulumi.StringOutput {
 	return o.ApplyT(func(v *GatewayService) pulumi.StringOutput { return v.Comments }).(pulumi.StringOutput)
 }
 
-// 创建时间。
+// Creation time.
 func (o GatewayServiceOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *GatewayService) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
@@ -312,12 +312,12 @@ func (o GatewayServiceOutput) CustomDomains() GatewayServiceCustomDomainArrayOut
 	return o.ApplyT(func(v *GatewayService) GatewayServiceCustomDomainArrayOutput { return v.CustomDomains }).(GatewayServiceCustomDomainArrayOutput)
 }
 
-// 域名详情。
+// Domain details.
 func (o GatewayServiceOutput) DomainSpec() GatewayServiceDomainSpecOutput {
 	return o.ApplyT(func(v *GatewayService) GatewayServiceDomainSpecOutput { return v.DomainSpec }).(GatewayServiceDomainSpecOutput)
 }
 
-// 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+// Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
 func (o GatewayServiceOutput) DomainType() pulumi.StringOutput {
 	return o.ApplyT(func(v *GatewayService) pulumi.StringOutput { return v.DomainType }).(pulumi.StringOutput)
 }
@@ -326,47 +326,47 @@ func (o GatewayServiceOutput) Domains() GatewayServiceDomainArrayOutput {
 	return o.ApplyT(func(v *GatewayService) GatewayServiceDomainArrayOutput { return v.Domains }).(GatewayServiceDomainArrayOutput)
 }
 
-// 网关ID。
+// Gateway ID.
 func (o GatewayServiceOutput) GatewayId() pulumi.StringOutput {
 	return o.ApplyT(func(v *GatewayService) pulumi.StringOutput { return v.GatewayId }).(pulumi.StringOutput)
 }
 
-// 网关名称。
+// Gateway name.
 func (o GatewayServiceOutput) GatewayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *GatewayService) pulumi.StringOutput { return v.GatewayName }).(pulumi.StringOutput)
 }
 
-// 服务创建失败、删除失败或异常时的错误信息。
+// Error message for service creation failure, deletion failure, or abnormal status.
 func (o GatewayServiceOutput) Message() pulumi.StringOutput {
 	return o.ApplyT(func(v *GatewayService) pulumi.StringOutput { return v.Message }).(pulumi.StringOutput)
 }
 
-// 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
+// Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
 func (o GatewayServiceOutput) Protocols() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *GatewayService) pulumi.StringArrayOutput { return v.Protocols }).(pulumi.StringArrayOutput)
 }
 
-// 服务ID。
+// Service ID.
 func (o GatewayServiceOutput) ServiceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *GatewayService) pulumi.StringOutput { return v.ServiceId }).(pulumi.StringOutput)
 }
 
-// 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+// Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
 func (o GatewayServiceOutput) ServiceName() pulumi.StringOutput {
 	return o.ApplyT(func(v *GatewayService) pulumi.StringOutput { return v.ServiceName }).(pulumi.StringOutput)
 }
 
-// 服务默认域名网络配置。。
+// Default domain network configuration..
 func (o GatewayServiceOutput) ServiceNetworkSpec() GatewayServiceServiceNetworkSpecOutput {
 	return o.ApplyT(func(v *GatewayService) GatewayServiceServiceNetworkSpecOutput { return v.ServiceNetworkSpec }).(GatewayServiceServiceNetworkSpecOutput)
 }
 
-// 服务类型，取值：AIProvider：AI模型代理。
+// Service type. Options: AIProvider: AI model proxy.
 func (o GatewayServiceOutput) ServiceType() pulumi.StringOutput {
 	return o.ApplyT(func(v *GatewayService) pulumi.StringOutput { return v.ServiceType }).(pulumi.StringOutput)
 }
 
-// Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+// Creating: Creating. CreatedFailed: Creation failed. Running: Running. Deleting: Deleting. DeletedFailed: Deletion failed. Abnormal: Abnormal.
 func (o GatewayServiceOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *GatewayService) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }

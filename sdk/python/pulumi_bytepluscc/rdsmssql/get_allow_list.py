@@ -73,7 +73,7 @@ class GetAllowListResult:
     @pulumi.getter(name="allowList")
     def allow_list(self) -> builtins.str:
         """
-        IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+        IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
         """
         return pulumi.get(self, "allow_list")
 
@@ -81,7 +81,7 @@ class GetAllowListResult:
     @pulumi.getter(name="allowListCategory")
     def allow_list_category(self) -> builtins.str:
         """
-        白名单分类。
+        Allowlist category
         """
         return pulumi.get(self, "allow_list_category")
 
@@ -89,7 +89,7 @@ class GetAllowListResult:
     @pulumi.getter(name="allowListDesc")
     def allow_list_desc(self) -> builtins.str:
         """
-        白名单描述。
+        Allowlist description
         """
         return pulumi.get(self, "allow_list_desc")
 
@@ -97,7 +97,7 @@ class GetAllowListResult:
     @pulumi.getter(name="allowListId")
     def allow_list_id(self) -> builtins.str:
         """
-        白名单的id。
+        Allowlist ID
         """
         return pulumi.get(self, "allow_list_id")
 
@@ -105,7 +105,7 @@ class GetAllowListResult:
     @pulumi.getter(name="allowListIpNum")
     def allow_list_ip_num(self) -> builtins.int:
         """
-        AllowListIP数量。
+        Allowlist IP count
         """
         return pulumi.get(self, "allow_list_ip_num")
 
@@ -113,7 +113,7 @@ class GetAllowListResult:
     @pulumi.getter(name="allowListName")
     def allow_list_name(self) -> builtins.str:
         """
-        白名单名称。
+        Allowlist name
         """
         return pulumi.get(self, "allow_list_name")
 
@@ -121,7 +121,7 @@ class GetAllowListResult:
     @pulumi.getter(name="allowListType")
     def allow_list_type(self) -> builtins.str:
         """
-        白名单内的IP地址类型，当前仅支持IPv4。
+        IP address type in the allowlist. Only IPv4 is supported
         """
         return pulumi.get(self, "allow_list_type")
 
@@ -129,7 +129,7 @@ class GetAllowListResult:
     @pulumi.getter(name="associatedInstanceNum")
     def associated_instance_num(self) -> builtins.int:
         """
-        绑定的实例数量。解绑实例的白名单时必传。
+        Number of bound instances. Required when unbinding an instance from the allowlist
         """
         return pulumi.get(self, "associated_instance_num")
 
@@ -137,7 +137,7 @@ class GetAllowListResult:
     @pulumi.getter(name="associatedInstances")
     def associated_instances(self) -> Sequence['outputs.GetAllowListAssociatedInstanceResult']:
         """
-        绑定的实例列表。
+        Bound instance list
         """
         return pulumi.get(self, "associated_instances")
 
@@ -153,7 +153,7 @@ class GetAllowListResult:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> builtins.str:
         """
-        实例ID。
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -161,7 +161,7 @@ class GetAllowListResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        项目名称。
+        Project name
         """
         return pulumi.get(self, "project_name")
 
@@ -169,7 +169,7 @@ class GetAllowListResult:
     @pulumi.getter(name="userAllowList")
     def user_allow_list(self) -> builtins.str:
         """
-        安全组之外的、需要加入白名单的IP地址，可输入IP地址或CIDR格式的IP地址段。如果该字段与AllowList同时指定，以AllowList为准。
+        IP addresses outside the security group that need to be added to the allowlist. Enter IP addresses or CIDR-formatted IP ranges. If both this field and AllowList are specified, AllowList takes precedence
         """
         return pulumi.get(self, "user_allow_list")
 
@@ -198,7 +198,7 @@ class AwaitableGetAllowListResult(GetAllowListResult):
 def get_allow_list(id: Optional[builtins.str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAllowListResult:
     """
-    Data Source schema for Byteplus::RDSMsSQL::Allowlist
+    Data Source schema for Byteplus::RDSMsSQL::AllowList
 
 
     :param builtins.str id: Uniquely identifies the resource.
@@ -225,7 +225,7 @@ def get_allow_list(id: Optional[builtins.str] = None,
 def get_allow_list_output(id: Optional[pulumi.Input[builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAllowListResult]:
     """
-    Data Source schema for Byteplus::RDSMsSQL::Allowlist
+    Data Source schema for Byteplus::RDSMsSQL::AllowList
 
 
     :param builtins.str id: Uniquely identifies the resource.

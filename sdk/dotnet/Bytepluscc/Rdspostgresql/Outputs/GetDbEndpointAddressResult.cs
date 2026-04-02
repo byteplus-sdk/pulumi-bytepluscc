@@ -15,43 +15,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql.Outputs
     public sealed class GetDbEndpointAddressResult
     {
         /// <summary>
-        /// 可跨地域访问的私网地址。说明无此地址时则不返回该字段。
+        /// Private network address accessible across regions. Note: If this address is unavailable, this field will not be returned.
         /// </summary>
         public readonly string CrossRegionDomain;
         /// <summary>
-        /// 是否开启公网解析。取值为：false：默认值，私网解析。true：私网以及公网解析。
+        /// Whether public network resolution is enabled. Values: false: Default, private network resolution. true: Both private and public network resolution.
         /// </summary>
         public readonly bool DnsVisibility;
         /// <summary>
-        /// 连接域名。
+        /// Connection domain name
         /// </summary>
         public readonly string Domain;
         /// <summary>
-        /// 新的访问地址前缀。访问地址前缀应满足以下规则：由小写字母、数字和中划线（-）组成。至少包含 8 个字符，总长度（含后缀）不得超过 63 个字符。以小写字母开头，以小写字母或数字结尾。
+        /// New access address prefix. The access address prefix must meet the following rules: consists of lowercase letters, numbers, and hyphens (-). Must contain at least 8 characters. The total length (including suffix) must not exceed 63 characters. Must start with a lowercase letter and end with a lowercase letter or number.
         /// </summary>
         public readonly string DomainPrefix;
         /// <summary>
-        /// 私网地址类型。取值：LocalDomain：本地域域名。CrossRegionDomain：可跨地域访问域名。
+        /// Type of private network address. Values: LocalDomain: Local region domain name. CrossRegionDomain: Domain name accessible across regions.
         /// </summary>
         public readonly string DomainVisibilitySetting;
         /// <summary>
-        /// EIP 的 ID，仅对 Public 地址有效。
+        /// EIP ID, valid only for Public addresses.
         /// </summary>
         public readonly string EipId;
         /// <summary>
-        /// IP 地址。
+        /// IP address
         /// </summary>
         public readonly string IpAddress;
         /// <summary>
-        /// 网络地址类型，取值为：Private：私网连接地址。Public：公网连接地址。Inner：公共服务区地址。
+        /// Network address type. Values: Private: private network connection address. Public: public network connection address. Inner: public service zone address.
         /// </summary>
         public readonly string NetworkType;
         /// <summary>
-        /// 端口号。
+        /// Port number.
         /// </summary>
         public readonly string Port;
         /// <summary>
-        /// 子网 ID。
+        /// Subnet ID
         /// </summary>
         public readonly string SubnetId;
 

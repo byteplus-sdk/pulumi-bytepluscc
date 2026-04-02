@@ -17,52 +17,52 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceResult {
     /**
-     * @return 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+     * @return Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
      * 
      */
     private Boolean autoRenew;
     /**
-     * @return 计费状态。取值：Normal：正常。Overdue：欠费。Shutdown：关停。
+     * @return Billing status. Values: Normal: normal. Overdue: overdue. Shutdown: shutdown.
      * 
      */
     private String chargeStatus;
     /**
-     * @return 计费类型，取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+     * @return Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
      * 
      */
     private String chargeType;
     /**
-     * @return 实例总容量型存储空间大小，单位 GiB。
+     * @return Total capacity-type storage space for the instance, in GiB.
      * 
      */
     private Integer coldStorage;
     /**
-     * @return 实例创建时间（UTC 时间）。
+     * @return Instance creation time (UTC).
      * 
      */
     private String createTime;
     /**
-     * @return 实例删除保护功能开关状态。取值范围：enabled：已开启。disabled：未开启。说明关于实例删除保护的更多信息，请参见实例删除保护。
+     * @return Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
      * 
      */
     private String deletionProtection;
     /**
-     * @return 是否开启登录认证。取值：true：已开启登录认证。false：未开启登录认证。
+     * @return Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
      * 
      */
     private Boolean enableAuth;
     /**
-     * @return 是否开通存储型容量，取值：true：开通容量型存储。false：不开通容量型存储。说明容量型存储的详细介绍，请参见冷热分离介绍。仅当 MultiAZ（部署方式）取值为 false（单可用区部署）时，支持冷热分离功能。
+     * @return Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
      * 
      */
     private Boolean enableCloudStorage;
     /**
-     * @return 连接地址信息列表。
+     * @return Connection address information list
      * 
      */
     private List<GetInstanceEndpoint> endpoints;
     /**
-     * @return HBase 数据库引擎版本。当前仅支持 HBase 2.0 版本，取值默认为 HBase_2.0。
+     * @return HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
      * 
      */
     private String engineVersion;
@@ -72,202 +72,202 @@ public final class GetInstanceResult {
      */
     private String id;
     /**
-     * @return 实例 ID。
+     * @return Instance ID
      * 
      */
     private String instanceId;
     /**
-     * @return 实例名称。
+     * @return Instance name
      * 
      */
     private String instanceName;
     /**
-     * @return 实例类型。当前仅支持标准型，取值默认为 Standard。
+     * @return Instance type. Currently, only Standard is supported. The default value is Standard
      * 
      */
     private String instanceType;
     /**
-     * @return Master 节点个数。单可用区部署，默认包含 2 个 Master 节点。
+     * @return Number of Master nodes. For single-zone deployment, 2 Master nodes are included by default
      * 
      */
     private Integer masterCount;
     /**
-     * @return Master 节点的规格码。说明关于 Master 节点所支持的规格信息，请参见实例规格。Master 节点数量为固定值，不支持增减。
+     * @return Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
      * 
      */
     private String masterSpec;
     /**
-     * @return 实例的部署方式，取值：true：多可用区部署。false：单可用区部署。目前仅支持单可用区部署。
+     * @return Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
      * 
      */
     private Boolean multiAz;
     /**
-     * @return 实时主可用区子网 ID。
+     * @return Real-time primary availability zone subnet ID.
      * 
      */
     private String primarySubnetId;
     /**
-     * @return 实时主可用区 ID。
+     * @return Real-time primary zone ID
      * 
      */
     private String primaryZoneId;
     /**
-     * @return 实例所属的项目名称。
+     * @return Project name of the instance
      * 
      */
     private String projectName;
     /**
-     * @return 购买时长，单位：月。取值范围如下：1，2，3，4，5，6，7，8，9，12，24，36。说明当 ChargeType 为 PrePaid时，该参数必填。
+     * @return Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
      * 
      */
     private Integer purchaseMonths;
     /**
-     * @return 实例所属的地域 ID。
+     * @return Region ID of the instance.
      * 
      */
     private String regionId;
     /**
-     * @return RegionServer 节点的数量。
+     * @return Number of RegionServer nodes
      * 
      */
     private Integer rsCount;
     /**
-     * @return RegionServer 节点的规格码。
+     * @return RegionServer node specification code.
      * 
      */
     private String rsSpec;
     /**
-     * @return 实时备可用区子网 ID。
+     * @return Real-time standby availability zone subnet ID.
      * 
      */
     private String standbySubnetId;
     /**
-     * @return 实时备可用区 ID。
+     * @return Real-time standby zone ID
      * 
      */
     private String standbyZoneId;
     /**
-     * @return 实例当前状态。关于实例状态的更多说明，请参见实例状态说明。
+     * @return Current status of the instance. For more details about instance status, see Instance Status Description
      * 
      */
     private String status;
     /**
-     * @return 实例总存储容量，单位：GiB。
+     * @return Total storage capacity of the instance, unit: GiB.
      * 
      */
     private Integer storageCapacity;
     /**
-     * @return 实例的存储类型，取值：HdfsHdd：HDD 文件存储。HdfsSsd：SSD 文件存储。
+     * @return Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
      * 
      */
     private String storageType;
     /**
-     * @return 实例所属的子网 ID。单可用区实例，仅包含一个可用区的子网 ID。
+     * @return Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
      * 
      */
     private String subnetId;
     /**
-     * @return 需要绑定的标签键和标签值数组对象。说明支持一次传入多组标签键值对象，多组标签键值对象间用英文逗号（,）分隔。单次最多同时传入 20 组标签键值对，单个实例最多绑定 50 个标签。标签键值需满足设置规则，具体规则请参见标签设置规则。
+     * @return Array of tag keys and tag values to bind. Supports passing multiple sets of tag key-value objects at once, separated by commas (,). Up to 20 tag key-value pairs can be passed at a time, and up to 50 tags can be bound to a single instance. Tag keys and values must comply with the setting rules. For details, see Tag Setting Rules
      * 
      */
     private List<GetInstanceTag> tags;
     /**
-     * @return 实例已使用的容量型存储空间大小，单位 MiB。
+     * @return Capacity-type storage space used by the instance, in MiB
      * 
      */
     private Integer usedColdStorage;
     /**
-     * @return 主实例已使用的存储容量，单位：MiB。
+     * @return Storage capacity used by the primary instance, in MiB
      * 
      */
     private Double usedStorage;
     /**
-     * @return 私有网络 ID。说明您可以调用 DescribeVpcs 接口查询可创建 HBase 实例的私有网络信息，包括私有网络 ID。
+     * @return Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
      * 
      */
     private String vpcId;
     /**
-     * @return 实例所属的私有网络名称。
+     * @return Name of the private network to which the instance belongs.
      * 
      */
     private String vpcName;
     /**
-     * @return 实例所属的可用区 ID。
+     * @return Zone ID of the instance
      * 
      */
     private String zoneId;
     /**
-     * @return 实例所属的可用区名称。
+     * @return Name of the availability zone to which the instance belongs.
      * 
      */
     private String zoneName;
 
     private GetInstanceResult() {}
     /**
-     * @return 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+     * @return Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
      * 
      */
     public Boolean autoRenew() {
         return this.autoRenew;
     }
     /**
-     * @return 计费状态。取值：Normal：正常。Overdue：欠费。Shutdown：关停。
+     * @return Billing status. Values: Normal: normal. Overdue: overdue. Shutdown: shutdown.
      * 
      */
     public String chargeStatus() {
         return this.chargeStatus;
     }
     /**
-     * @return 计费类型，取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+     * @return Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
      * 
      */
     public String chargeType() {
         return this.chargeType;
     }
     /**
-     * @return 实例总容量型存储空间大小，单位 GiB。
+     * @return Total capacity-type storage space for the instance, in GiB.
      * 
      */
     public Integer coldStorage() {
         return this.coldStorage;
     }
     /**
-     * @return 实例创建时间（UTC 时间）。
+     * @return Instance creation time (UTC).
      * 
      */
     public String createTime() {
         return this.createTime;
     }
     /**
-     * @return 实例删除保护功能开关状态。取值范围：enabled：已开启。disabled：未开启。说明关于实例删除保护的更多信息，请参见实例删除保护。
+     * @return Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
      * 
      */
     public String deletionProtection() {
         return this.deletionProtection;
     }
     /**
-     * @return 是否开启登录认证。取值：true：已开启登录认证。false：未开启登录认证。
+     * @return Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
      * 
      */
     public Boolean enableAuth() {
         return this.enableAuth;
     }
     /**
-     * @return 是否开通存储型容量，取值：true：开通容量型存储。false：不开通容量型存储。说明容量型存储的详细介绍，请参见冷热分离介绍。仅当 MultiAZ（部署方式）取值为 false（单可用区部署）时，支持冷热分离功能。
+     * @return Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
      * 
      */
     public Boolean enableCloudStorage() {
         return this.enableCloudStorage;
     }
     /**
-     * @return 连接地址信息列表。
+     * @return Connection address information list
      * 
      */
     public List<GetInstanceEndpoint> endpoints() {
         return this.endpoints;
     }
     /**
-     * @return HBase 数据库引擎版本。当前仅支持 HBase 2.0 版本，取值默认为 HBase_2.0。
+     * @return HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
      * 
      */
     public String engineVersion() {
@@ -281,182 +281,182 @@ public final class GetInstanceResult {
         return this.id;
     }
     /**
-     * @return 实例 ID。
+     * @return Instance ID
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return 实例名称。
+     * @return Instance name
      * 
      */
     public String instanceName() {
         return this.instanceName;
     }
     /**
-     * @return 实例类型。当前仅支持标准型，取值默认为 Standard。
+     * @return Instance type. Currently, only Standard is supported. The default value is Standard
      * 
      */
     public String instanceType() {
         return this.instanceType;
     }
     /**
-     * @return Master 节点个数。单可用区部署，默认包含 2 个 Master 节点。
+     * @return Number of Master nodes. For single-zone deployment, 2 Master nodes are included by default
      * 
      */
     public Integer masterCount() {
         return this.masterCount;
     }
     /**
-     * @return Master 节点的规格码。说明关于 Master 节点所支持的规格信息，请参见实例规格。Master 节点数量为固定值，不支持增减。
+     * @return Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
      * 
      */
     public String masterSpec() {
         return this.masterSpec;
     }
     /**
-     * @return 实例的部署方式，取值：true：多可用区部署。false：单可用区部署。目前仅支持单可用区部署。
+     * @return Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
      * 
      */
     public Boolean multiAz() {
         return this.multiAz;
     }
     /**
-     * @return 实时主可用区子网 ID。
+     * @return Real-time primary availability zone subnet ID.
      * 
      */
     public String primarySubnetId() {
         return this.primarySubnetId;
     }
     /**
-     * @return 实时主可用区 ID。
+     * @return Real-time primary zone ID
      * 
      */
     public String primaryZoneId() {
         return this.primaryZoneId;
     }
     /**
-     * @return 实例所属的项目名称。
+     * @return Project name of the instance
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 购买时长，单位：月。取值范围如下：1，2，3，4，5，6，7，8，9，12，24，36。说明当 ChargeType 为 PrePaid时，该参数必填。
+     * @return Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
      * 
      */
     public Integer purchaseMonths() {
         return this.purchaseMonths;
     }
     /**
-     * @return 实例所属的地域 ID。
+     * @return Region ID of the instance.
      * 
      */
     public String regionId() {
         return this.regionId;
     }
     /**
-     * @return RegionServer 节点的数量。
+     * @return Number of RegionServer nodes
      * 
      */
     public Integer rsCount() {
         return this.rsCount;
     }
     /**
-     * @return RegionServer 节点的规格码。
+     * @return RegionServer node specification code.
      * 
      */
     public String rsSpec() {
         return this.rsSpec;
     }
     /**
-     * @return 实时备可用区子网 ID。
+     * @return Real-time standby availability zone subnet ID.
      * 
      */
     public String standbySubnetId() {
         return this.standbySubnetId;
     }
     /**
-     * @return 实时备可用区 ID。
+     * @return Real-time standby zone ID
      * 
      */
     public String standbyZoneId() {
         return this.standbyZoneId;
     }
     /**
-     * @return 实例当前状态。关于实例状态的更多说明，请参见实例状态说明。
+     * @return Current status of the instance. For more details about instance status, see Instance Status Description
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 实例总存储容量，单位：GiB。
+     * @return Total storage capacity of the instance, unit: GiB.
      * 
      */
     public Integer storageCapacity() {
         return this.storageCapacity;
     }
     /**
-     * @return 实例的存储类型，取值：HdfsHdd：HDD 文件存储。HdfsSsd：SSD 文件存储。
+     * @return Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
      * 
      */
     public String storageType() {
         return this.storageType;
     }
     /**
-     * @return 实例所属的子网 ID。单可用区实例，仅包含一个可用区的子网 ID。
+     * @return Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
      * 
      */
     public String subnetId() {
         return this.subnetId;
     }
     /**
-     * @return 需要绑定的标签键和标签值数组对象。说明支持一次传入多组标签键值对象，多组标签键值对象间用英文逗号（,）分隔。单次最多同时传入 20 组标签键值对，单个实例最多绑定 50 个标签。标签键值需满足设置规则，具体规则请参见标签设置规则。
+     * @return Array of tag keys and tag values to bind. Supports passing multiple sets of tag key-value objects at once, separated by commas (,). Up to 20 tag key-value pairs can be passed at a time, and up to 50 tags can be bound to a single instance. Tag keys and values must comply with the setting rules. For details, see Tag Setting Rules
      * 
      */
     public List<GetInstanceTag> tags() {
         return this.tags;
     }
     /**
-     * @return 实例已使用的容量型存储空间大小，单位 MiB。
+     * @return Capacity-type storage space used by the instance, in MiB
      * 
      */
     public Integer usedColdStorage() {
         return this.usedColdStorage;
     }
     /**
-     * @return 主实例已使用的存储容量，单位：MiB。
+     * @return Storage capacity used by the primary instance, in MiB
      * 
      */
     public Double usedStorage() {
         return this.usedStorage;
     }
     /**
-     * @return 私有网络 ID。说明您可以调用 DescribeVpcs 接口查询可创建 HBase 实例的私有网络信息，包括私有网络 ID。
+     * @return Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
      * 
      */
     public String vpcId() {
         return this.vpcId;
     }
     /**
-     * @return 实例所属的私有网络名称。
+     * @return Name of the private network to which the instance belongs.
      * 
      */
     public String vpcName() {
         return this.vpcName;
     }
     /**
-     * @return 实例所属的可用区 ID。
+     * @return Zone ID of the instance
      * 
      */
     public String zoneId() {
         return this.zoneId;
     }
     /**
-     * @return 实例所属的可用区名称。
+     * @return Name of the availability zone to which the instance belongs.
      * 
      */
     public String zoneName() {

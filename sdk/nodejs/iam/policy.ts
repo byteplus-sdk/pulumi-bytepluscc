@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 策略是对权限的一种描述，IAM用户、用户组或角色均需通过关联策略来赋予权限。当系统预设策略不能满足要求时，您可以创建自定义策略，对权限进行细粒度的定义。
+ * A policy describes permissions. IAM users, user groups, or roles must be granted permissions by associating policies. If system preset policies do not meet your requirements, you can create custom policies for fine-grained permission definition.
  *
  * ## Import
  *
@@ -44,46 +44,46 @@ export class Policy extends pulumi.CustomResource {
     }
 
     /**
-     * 策略绑定的身份数量。
+     * Number of identities bound to the policy.
      */
     public /*out*/ readonly attachmentCount!: pulumi.Output<number>;
     /**
-     * 系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
+     * Category of the system preset policy, usually the service code. This field is not returned for custom policies.
      */
     public /*out*/ readonly category!: pulumi.Output<string>;
     /**
-     * 策略创建时间。
+     * Policy creation time.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 策略描述，长度不超过128。
+     * Policy description, no more than 128 characters.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 是否是服务关联角色的策略，0代表否，1代表是。
+     * Indicates whether the policy is for a service-linked role. 0 means no; 1 means yes.
      */
     public /*out*/ readonly isServiceRolePolicy!: pulumi.Output<number>;
     /**
-     * 策略语法内容，例如：{"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
+     * Policy syntax content, for example: {"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
      */
     public readonly policyDocument!: pulumi.Output<string>;
     /**
-     * 策略名，长度1~64，支持英文、数字和+=,.@-_符号。
+     * Policy name, 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
      */
     public readonly policyName!: pulumi.Output<string>;
     public readonly policyRoles!: pulumi.Output<outputs.iam.PolicyPolicyRole[]>;
     /**
-     * 策略的TRN。
+     * Policy TRN.
      */
     public /*out*/ readonly policyTrn!: pulumi.Output<string>;
     /**
-     * 策略类型。System代表系统预设策略，Custom代表自定义策略。
+     * Policy type. System indicates a system preset policy; Custom indicates a custom policy.
      */
     public readonly policyType!: pulumi.Output<string>;
     public readonly policyUserGroups!: pulumi.Output<outputs.iam.PolicyPolicyUserGroup[]>;
     public readonly policyUsers!: pulumi.Output<outputs.iam.PolicyPolicyUser[]>;
     /**
-     * 策略更新时间。
+     * Policy update time.
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
 
@@ -148,46 +148,46 @@ export class Policy extends pulumi.CustomResource {
  */
 export interface PolicyState {
     /**
-     * 策略绑定的身份数量。
+     * Number of identities bound to the policy.
      */
     attachmentCount?: pulumi.Input<number>;
     /**
-     * 系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
+     * Category of the system preset policy, usually the service code. This field is not returned for custom policies.
      */
     category?: pulumi.Input<string>;
     /**
-     * 策略创建时间。
+     * Policy creation time.
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 策略描述，长度不超过128。
+     * Policy description, no more than 128 characters.
      */
     description?: pulumi.Input<string>;
     /**
-     * 是否是服务关联角色的策略，0代表否，1代表是。
+     * Indicates whether the policy is for a service-linked role. 0 means no; 1 means yes.
      */
     isServiceRolePolicy?: pulumi.Input<number>;
     /**
-     * 策略语法内容，例如：{"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
+     * Policy syntax content, for example: {"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
      */
     policyDocument?: pulumi.Input<string>;
     /**
-     * 策略名，长度1~64，支持英文、数字和+=,.@-_符号。
+     * Policy name, 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
      */
     policyName?: pulumi.Input<string>;
     policyRoles?: pulumi.Input<pulumi.Input<inputs.iam.PolicyPolicyRole>[]>;
     /**
-     * 策略的TRN。
+     * Policy TRN.
      */
     policyTrn?: pulumi.Input<string>;
     /**
-     * 策略类型。System代表系统预设策略，Custom代表自定义策略。
+     * Policy type. System indicates a system preset policy; Custom indicates a custom policy.
      */
     policyType?: pulumi.Input<string>;
     policyUserGroups?: pulumi.Input<pulumi.Input<inputs.iam.PolicyPolicyUserGroup>[]>;
     policyUsers?: pulumi.Input<pulumi.Input<inputs.iam.PolicyPolicyUser>[]>;
     /**
-     * 策略更新时间。
+     * Policy update time.
      */
     updatedTime?: pulumi.Input<string>;
 }
@@ -197,20 +197,20 @@ export interface PolicyState {
  */
 export interface PolicyArgs {
     /**
-     * 策略描述，长度不超过128。
+     * Policy description, no more than 128 characters.
      */
     description?: pulumi.Input<string>;
     /**
-     * 策略语法内容，例如：{"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
+     * Policy syntax content, for example: {"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
      */
     policyDocument: pulumi.Input<string>;
     /**
-     * 策略名，长度1~64，支持英文、数字和+=,.@-_符号。
+     * Policy name, 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
      */
     policyName: pulumi.Input<string>;
     policyRoles?: pulumi.Input<pulumi.Input<inputs.iam.PolicyPolicyRole>[]>;
     /**
-     * 策略类型。System代表系统预设策略，Custom代表自定义策略。
+     * Policy type. System indicates a system preset policy; Custom indicates a custom policy.
      */
     policyType: pulumi.Input<string>;
     policyUserGroups?: pulumi.Input<pulumi.Input<inputs.iam.PolicyPolicyUserGroup>[]>;

@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Cdn
 {
     /// <summary>
-    /// 全局配置扩展了域名的配置能力，具有以下优点：提升了黑白名单的容量。例如，IP 黑名单可以包含高达 30,000 个条目。提升了域名配置的效率。一个全局配置可与多个域名关联。提供了通用列表类型，可以在额外的域名配置中被使用。一个全局配置的修改可立刻应用于其关联的所有域名。
+    /// Global configuration extends domain configuration capabilities with the following advantages: increases the capacity of denylist and allowlist. For example, an IP denylist can contain up to 30,000 entries. Improves domain configuration efficiency. A single global configuration can be associated with multiple domains. Provides a common list type that can be used in additional domain configurations. Modifications to a global configuration are immediately applied to all associated domains.
     /// 
     /// ## Import
     /// 
@@ -23,67 +23,67 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     public partial class ShareConfig : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 表示一个 IP 白名单的配置，对应 ConfigType 是 allow*ip*access*rule。
+        /// Specifies the configuration for an IP allowlist, where ConfigType is allow*ip*access*rule.
         /// </summary>
         [Output("allowIpAccessRule")]
         public Output<Outputs.ShareConfigAllowIpAccessRule> AllowIpAccessRule { get; private set; } = null!;
 
         /// <summary>
-        /// 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
+        /// Indicates a configuration for a Referer allowlist. The corresponding ConfigType is allow*referer*access*rule.
         /// </summary>
         [Output("allowRefererAccessRule")]
         public Output<Outputs.ShareConfigAllowRefererAccessRule> AllowRefererAccessRule { get; private set; } = null!;
 
         /// <summary>
-        /// 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
+        /// Specifies the configuration for a common list, where ConfigType is common*match*list.
         /// </summary>
         [Output("commonMatchList")]
         public Output<Outputs.ShareConfigCommonMatchList> CommonMatchList { get; private set; } = null!;
 
         /// <summary>
-        /// 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
+        /// Specifies the name of the global configuration. Naming requirements: Names can include Chinese characters, letters, numbers, and underscores (_), and must be 3–45 characters long. One Chinese character counts as 3 characters. The name cannot be the same as any existing global configuration name under the primary account.
         /// </summary>
         [Output("configName")]
         public Output<string> ConfigName { get; private set; } = null!;
 
         /// <summary>
-        /// 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
+        /// This parameter specifies the type of global configuration. Available values are: deny*ip*access*rule: indicates an IP denylist. allow*ip*access*rule: indicates an IP allowlist. deny*referer*access*rule: indicates a Referer denylist. allow*referer*access*rule: indicates a Referer allowlist. common*match*list: indicates a common list.
         /// </summary>
         [Output("configType")]
         public Output<string> ConfigType { get; private set; } = null!;
 
         /// <summary>
-        /// 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access*rule。
+        /// Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access*rule.
         /// </summary>
         [Output("denyIpAccessRule")]
         public Output<Outputs.ShareConfigDenyIpAccessRule> DenyIpAccessRule { get; private set; } = null!;
 
         /// <summary>
-        /// 表示一个 Referer 黑名单的配置，对应 ConfigType 是 deny*referer*access*rule。
+        /// Indicates a configuration for a Referer denylist. The corresponding ConfigType is deny*referer*access*rule.
         /// </summary>
         [Output("denyRefererAccessRule")]
         public Output<Outputs.ShareConfigDenyRefererAccessRule> DenyRefererAccessRule { get; private set; } = null!;
 
         /// <summary>
-        /// 表示与该全局配置关联的加速域名的数量。
+        /// Indicates the number of accelerated domains associated with this global configuration.
         /// </summary>
         [Output("domainCount")]
         public Output<int> DomainCount { get; private set; } = null!;
 
         /// <summary>
-        /// 表示该全局配置所归属的项目名称。
+        /// Specifies the project name to which the global configuration belongs.
         /// </summary>
         [Output("project")]
         public Output<string> Project { get; private set; } = null!;
 
         /// <summary>
-        /// 表示该自定义错误页面的 HTML 代码。
+        /// Specifies the HTML code for the custom error page.
         /// </summary>
         [Output("ruleContent")]
         public Output<string> RuleContent { get; private set; } = null!;
 
         /// <summary>
-        /// 表示该全局配置的最近修改时间，单位是 Unix 时间戳。
+        /// Indicates the last modification time of this global configuration, in Unix timestamp.
         /// </summary>
         [Output("updatedTime")]
         public Output<int> UpdatedTime { get; private set; } = null!;
@@ -136,49 +136,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     public sealed class ShareConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示一个 IP 白名单的配置，对应 ConfigType 是 allow*ip*access*rule。
+        /// Specifies the configuration for an IP allowlist, where ConfigType is allow*ip*access*rule.
         /// </summary>
         [Input("allowIpAccessRule")]
         public Input<Inputs.ShareConfigAllowIpAccessRuleArgs>? AllowIpAccessRule { get; set; }
 
         /// <summary>
-        /// 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
+        /// Indicates a configuration for a Referer allowlist. The corresponding ConfigType is allow*referer*access*rule.
         /// </summary>
         [Input("allowRefererAccessRule")]
         public Input<Inputs.ShareConfigAllowRefererAccessRuleArgs>? AllowRefererAccessRule { get; set; }
 
         /// <summary>
-        /// 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
+        /// Specifies the configuration for a common list, where ConfigType is common*match*list.
         /// </summary>
         [Input("commonMatchList")]
         public Input<Inputs.ShareConfigCommonMatchListArgs>? CommonMatchList { get; set; }
 
         /// <summary>
-        /// 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
+        /// Specifies the name of the global configuration. Naming requirements: Names can include Chinese characters, letters, numbers, and underscores (_), and must be 3–45 characters long. One Chinese character counts as 3 characters. The name cannot be the same as any existing global configuration name under the primary account.
         /// </summary>
         [Input("configName")]
         public Input<string>? ConfigName { get; set; }
 
         /// <summary>
-        /// 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
+        /// This parameter specifies the type of global configuration. Available values are: deny*ip*access*rule: indicates an IP denylist. allow*ip*access*rule: indicates an IP allowlist. deny*referer*access*rule: indicates a Referer denylist. allow*referer*access*rule: indicates a Referer allowlist. common*match*list: indicates a common list.
         /// </summary>
         [Input("configType")]
         public Input<string>? ConfigType { get; set; }
 
         /// <summary>
-        /// 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access*rule。
+        /// Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access*rule.
         /// </summary>
         [Input("denyIpAccessRule")]
         public Input<Inputs.ShareConfigDenyIpAccessRuleArgs>? DenyIpAccessRule { get; set; }
 
         /// <summary>
-        /// 表示一个 Referer 黑名单的配置，对应 ConfigType 是 deny*referer*access*rule。
+        /// Indicates a configuration for a Referer denylist. The corresponding ConfigType is deny*referer*access*rule.
         /// </summary>
         [Input("denyRefererAccessRule")]
         public Input<Inputs.ShareConfigDenyRefererAccessRuleArgs>? DenyRefererAccessRule { get; set; }
 
         /// <summary>
-        /// 表示该全局配置所归属的项目名称。
+        /// Specifies the project name to which the global configuration belongs.
         /// </summary>
         [Input("project")]
         public Input<string>? Project { get; set; }
@@ -192,67 +192,67 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     public sealed class ShareConfigState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示一个 IP 白名单的配置，对应 ConfigType 是 allow*ip*access*rule。
+        /// Specifies the configuration for an IP allowlist, where ConfigType is allow*ip*access*rule.
         /// </summary>
         [Input("allowIpAccessRule")]
         public Input<Inputs.ShareConfigAllowIpAccessRuleGetArgs>? AllowIpAccessRule { get; set; }
 
         /// <summary>
-        /// 表示一个 Referer 白名单的配置，对应 ConfigType 是 allow*referer*access*rule。
+        /// Indicates a configuration for a Referer allowlist. The corresponding ConfigType is allow*referer*access*rule.
         /// </summary>
         [Input("allowRefererAccessRule")]
         public Input<Inputs.ShareConfigAllowRefererAccessRuleGetArgs>? AllowRefererAccessRule { get; set; }
 
         /// <summary>
-        /// 表示一个通用列表的配置，对应 ConfigType 是 common*match*list。
+        /// Specifies the configuration for a common list, where ConfigType is common*match*list.
         /// </summary>
         [Input("commonMatchList")]
         public Input<Inputs.ShareConfigCommonMatchListGetArgs>? CommonMatchList { get; set; }
 
         /// <summary>
-        /// 表示全局配置的名称。名称有以下要求：名称可以包含汉字、字母、数字、下划线（_），长度在 3-45 个字符之间。一个汉字占 3 个字符。名称不能与主账号下某个已有的全局配置的名称相同。
+        /// Specifies the name of the global configuration. Naming requirements: Names can include Chinese characters, letters, numbers, and underscores (_), and must be 3–45 characters long. One Chinese character counts as 3 characters. The name cannot be the same as any existing global configuration name under the primary account.
         /// </summary>
         [Input("configName")]
         public Input<string>? ConfigName { get; set; }
 
         /// <summary>
-        /// 表示该全局配置的类型。该参数有以下取值：deny*ip*access*rule：表示 IP 黑名单。allow*ip*access*rule：表示 IP 白名单。deny*referer*access*rule：表示 Referer 黑名单。allow*referer*access*rule：表示 Referer 白名单。common*match*list：表示通用列表。
+        /// This parameter specifies the type of global configuration. Available values are: deny*ip*access*rule: indicates an IP denylist. allow*ip*access*rule: indicates an IP allowlist. deny*referer*access*rule: indicates a Referer denylist. allow*referer*access*rule: indicates a Referer allowlist. common*match*list: indicates a common list.
         /// </summary>
         [Input("configType")]
         public Input<string>? ConfigType { get; set; }
 
         /// <summary>
-        /// 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access*rule。
+        /// Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access*rule.
         /// </summary>
         [Input("denyIpAccessRule")]
         public Input<Inputs.ShareConfigDenyIpAccessRuleGetArgs>? DenyIpAccessRule { get; set; }
 
         /// <summary>
-        /// 表示一个 Referer 黑名单的配置，对应 ConfigType 是 deny*referer*access*rule。
+        /// Indicates a configuration for a Referer denylist. The corresponding ConfigType is deny*referer*access*rule.
         /// </summary>
         [Input("denyRefererAccessRule")]
         public Input<Inputs.ShareConfigDenyRefererAccessRuleGetArgs>? DenyRefererAccessRule { get; set; }
 
         /// <summary>
-        /// 表示与该全局配置关联的加速域名的数量。
+        /// Indicates the number of accelerated domains associated with this global configuration.
         /// </summary>
         [Input("domainCount")]
         public Input<int>? DomainCount { get; set; }
 
         /// <summary>
-        /// 表示该全局配置所归属的项目名称。
+        /// Specifies the project name to which the global configuration belongs.
         /// </summary>
         [Input("project")]
         public Input<string>? Project { get; set; }
 
         /// <summary>
-        /// 表示该自定义错误页面的 HTML 代码。
+        /// Specifies the HTML code for the custom error page.
         /// </summary>
         [Input("ruleContent")]
         public Input<string>? RuleContent { get; set; }
 
         /// <summary>
-        /// 表示该全局配置的最近修改时间，单位是 Unix 时间戳。
+        /// Indicates the last modification time of this global configuration, in Unix timestamp.
         /// </summary>
         [Input("updatedTime")]
         public Input<int>? UpdatedTime { get; set; }

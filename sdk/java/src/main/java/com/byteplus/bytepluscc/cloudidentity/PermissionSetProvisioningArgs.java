@@ -15,14 +15,14 @@ public final class PermissionSetProvisioningArgs extends com.pulumi.resources.Re
     public static final PermissionSetProvisioningArgs Empty = new PermissionSetProvisioningArgs();
 
     /**
-     * 权限集 ID。
+     * Permission set ID
      * 
      */
     @Import(name="permissionSetId", required=true)
     private Output<String> permissionSetId;
 
     /**
-     * @return 权限集 ID。
+     * @return Permission set ID
      * 
      */
     public Output<String> permissionSetId() {
@@ -30,14 +30,14 @@ public final class PermissionSetProvisioningArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 授权的账号 ID。
+     * Authorized account ID
      * 
      */
     @Import(name="targetId", required=true)
     private Output<String> targetId;
 
     /**
-     * @return 授权的账号 ID。
+     * @return Authorized account ID
      * 
      */
     public Output<String> targetId() {
@@ -70,7 +70,7 @@ public final class PermissionSetProvisioningArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param permissionSetId 权限集 ID。
+         * @param permissionSetId Permission set ID
          * 
          * @return builder
          * 
@@ -81,7 +81,7 @@ public final class PermissionSetProvisioningArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param permissionSetId 权限集 ID。
+         * @param permissionSetId Permission set ID
          * 
          * @return builder
          * 
@@ -91,7 +91,7 @@ public final class PermissionSetProvisioningArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param targetId 授权的账号 ID。
+         * @param targetId Authorized account ID
          * 
          * @return builder
          * 
@@ -102,7 +102,7 @@ public final class PermissionSetProvisioningArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param targetId 授权的账号 ID。
+         * @param targetId Authorized account ID
          * 
          * @return builder
          * 

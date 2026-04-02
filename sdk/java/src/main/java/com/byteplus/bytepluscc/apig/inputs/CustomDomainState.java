@@ -18,14 +18,14 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
     public static final CustomDomainState Empty = new CustomDomainState();
 
     /**
-     * 自定义域名证书ID。
+     * Custom Domain Certificate ID
      * 
      */
     @Import(name="certificateId")
     private @Nullable Output<String> certificateId;
 
     /**
-     * @return 自定义域名证书ID。
+     * @return Custom Domain Certificate ID
      * 
      */
     public Optional<Output<String>> certificateId() {
@@ -33,14 +33,14 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备注。
+     * Remarks
      * 
      */
     @Import(name="comments")
     private @Nullable Output<String> comments;
 
     /**
-     * @return 备注。
+     * @return Remarks
      * 
      */
     public Optional<Output<String>> comments() {
@@ -48,14 +48,14 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建时间。
+     * Creation Time
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 创建时间。
+     * @return Creation Time
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -63,14 +63,14 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 自定义域名ID。
+     * Custom Domain ID
      * 
      */
     @Import(name="customDomainId")
     private @Nullable Output<String> customDomainId;
 
     /**
-     * @return 自定义域名ID。
+     * @return Custom Domain ID
      * 
      */
     public Optional<Output<String>> customDomainId() {
@@ -78,14 +78,14 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 自定义域名。
+     * Custom Domain
      * 
      */
     @Import(name="domain")
     private @Nullable Output<String> domain;
 
     /**
-     * @return 自定义域名。
+     * @return Custom Domain
      * 
      */
     public Optional<Output<String>> domain() {
@@ -93,14 +93,14 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 协议，取值：HTTP。HTTPS。
+     * Protocol. Values: HTTP, HTTPS
      * 
      */
     @Import(name="protocols")
     private @Nullable Output<List<String>> protocols;
 
     /**
-     * @return 协议，取值：HTTP。HTTPS。
+     * @return Protocol. Values: HTTP, HTTPS
      * 
      */
     public Optional<Output<List<String>>> protocols() {
@@ -108,14 +108,14 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 服务ID。
+     * Service ID
      * 
      */
     @Import(name="serviceId")
     private @Nullable Output<String> serviceId;
 
     /**
-     * @return 服务ID。
+     * @return Service ID
      * 
      */
     public Optional<Output<String>> serviceId() {
@@ -123,14 +123,14 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 重定向到HTTPS。
+     * Redirect to HTTPS
      * 
      */
     @Import(name="sslRedirect")
     private @Nullable Output<Boolean> sslRedirect;
 
     /**
-     * @return 重定向到HTTPS。
+     * @return Redirect to HTTPS
      * 
      */
     public Optional<Output<Boolean>> sslRedirect() {
@@ -138,14 +138,14 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 状态，取值：Creating：配置中。CreationFailed：配置失败。Deleting：删除中。DeletionFailed：删除失败。Verified：正常。
+     * Status. Values: Creating: configuring; CreationFailed: configuration failed; Deleting: deleting; DeletionFailed: deletion failed; Verified: active
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 状态，取值：Creating：配置中。CreationFailed：配置失败。Deleting：删除中。DeletionFailed：删除失败。Verified：正常。
+     * @return Status. Values: Creating: configuring; CreationFailed: configuration failed; Deleting: deleting; DeletionFailed: deletion failed; Verified: active
      * 
      */
     public Optional<Output<String>> status() {
@@ -153,14 +153,14 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 更新时间。
+     * Update Time
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 更新时间。
+     * @return Update Time
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -201,7 +201,7 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateId 自定义域名证书ID。
+         * @param certificateId Custom Domain Certificate ID
          * 
          * @return builder
          * 
@@ -212,7 +212,7 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateId 自定义域名证书ID。
+         * @param certificateId Custom Domain Certificate ID
          * 
          * @return builder
          * 
@@ -222,7 +222,7 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param comments 备注。
+         * @param comments Remarks
          * 
          * @return builder
          * 
@@ -233,7 +233,7 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param comments 备注。
+         * @param comments Remarks
          * 
          * @return builder
          * 
@@ -243,7 +243,7 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 创建时间。
+         * @param createdTime Creation Time
          * 
          * @return builder
          * 
@@ -254,7 +254,7 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 创建时间。
+         * @param createdTime Creation Time
          * 
          * @return builder
          * 
@@ -264,7 +264,7 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customDomainId 自定义域名ID。
+         * @param customDomainId Custom Domain ID
          * 
          * @return builder
          * 
@@ -275,7 +275,7 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customDomainId 自定义域名ID。
+         * @param customDomainId Custom Domain ID
          * 
          * @return builder
          * 
@@ -285,7 +285,7 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param domain 自定义域名。
+         * @param domain Custom Domain
          * 
          * @return builder
          * 
@@ -296,7 +296,7 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param domain 自定义域名。
+         * @param domain Custom Domain
          * 
          * @return builder
          * 
@@ -306,7 +306,7 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocols 协议，取值：HTTP。HTTPS。
+         * @param protocols Protocol. Values: HTTP, HTTPS
          * 
          * @return builder
          * 
@@ -317,7 +317,7 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocols 协议，取值：HTTP。HTTPS。
+         * @param protocols Protocol. Values: HTTP, HTTPS
          * 
          * @return builder
          * 
@@ -327,7 +327,7 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocols 协议，取值：HTTP。HTTPS。
+         * @param protocols Protocol. Values: HTTP, HTTPS
          * 
          * @return builder
          * 
@@ -337,7 +337,7 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serviceId 服务ID。
+         * @param serviceId Service ID
          * 
          * @return builder
          * 
@@ -348,7 +348,7 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serviceId 服务ID。
+         * @param serviceId Service ID
          * 
          * @return builder
          * 
@@ -358,7 +358,7 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslRedirect 重定向到HTTPS。
+         * @param sslRedirect Redirect to HTTPS
          * 
          * @return builder
          * 
@@ -369,7 +369,7 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslRedirect 重定向到HTTPS。
+         * @param sslRedirect Redirect to HTTPS
          * 
          * @return builder
          * 
@@ -379,7 +379,7 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 状态，取值：Creating：配置中。CreationFailed：配置失败。Deleting：删除中。DeletionFailed：删除失败。Verified：正常。
+         * @param status Status. Values: Creating: configuring; CreationFailed: configuration failed; Deleting: deleting; DeletionFailed: deletion failed; Verified: active
          * 
          * @return builder
          * 
@@ -390,7 +390,7 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 状态，取值：Creating：配置中。CreationFailed：配置失败。Deleting：删除中。DeletionFailed：删除失败。Verified：正常。
+         * @param status Status. Values: Creating: configuring; CreationFailed: configuration failed; Deleting: deleting; DeletionFailed: deletion failed; Verified: active
          * 
          * @return builder
          * 
@@ -400,7 +400,7 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 更新时间。
+         * @param updatedTime Update Time
          * 
          * @return builder
          * 
@@ -411,7 +411,7 @@ public final class CustomDomainState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 更新时间。
+         * @param updatedTime Update Time
          * 
          * @return builder
          * 

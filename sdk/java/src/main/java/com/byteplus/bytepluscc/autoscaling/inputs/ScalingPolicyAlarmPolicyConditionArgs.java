@@ -16,14 +16,14 @@ public final class ScalingPolicyAlarmPolicyConditionArgs extends com.pulumi.reso
     public static final ScalingPolicyAlarmPolicyConditionArgs Empty = new ScalingPolicyAlarmPolicyConditionArgs();
 
     /**
-     * 指标告警时的规则表达式对象。&gt;：大于。&lt;：小于。=：等于。
+     * Rule expression object for metric alarms. &gt;: Greater than. &lt;: Less than. =: Equal to.
      * 
      */
     @Import(name="comparisonOperator")
     private @Nullable Output<String> comparisonOperator;
 
     /**
-     * @return 指标告警时的规则表达式对象。&gt;：大于。&lt;：小于。=：等于。
+     * @return Rule expression object for metric alarms. &gt;: Greater than. &lt;: Less than. =: Equal to.
      * 
      */
     public Optional<Output<String>> comparisonOperator() {
@@ -31,14 +31,14 @@ public final class ScalingPolicyAlarmPolicyConditionArgs extends com.pulumi.reso
     }
 
     /**
-     * 指标告警时的监控指标名称。CpuTotal*Max：带内CPU使用率最大值。CpuTotal*Min：带内CPU使用率最小值。CpuTotal*Avg：带内CPU使用率平均值。MemoryUsedUtilization*Max：带内内存使用率最大值。MemoryUsedUtilization*Min：带内内存使用率最小值。MemoryUsedUtilization*Avg：带内内存使用率平均值。Instance*CpuBusy*Max：带外CPU利用率最大值。Instance*CpuBusy*Min：带外CPU利用率最小值。Instance*CpuBusy*Avg：带外CPU利用率平均值。Instance*NetTxBits*Avg: 带外网络流出速率平均值。Instance*NetRxBits*Avg: 带外网络流入速率平均值。Instance*NetTxPackets*Avg: 带外网络发送包速率平均值。Instance*NetRxPackets*Avg: 带外网络接收包速率平均值。SystemDiskReadBytes*Avg: 带内系统盘读带宽平均值。SystemDiskWriteBytes*Avg: 带内系统盘写带宽平均值。SystemDiskReadIOPS*Avg: 带内系统盘读IOPS平均值。SystemDiskWriteIOPS*Avg: 带内系统盘写IOPS平均值。NetTcpConnection_Avg: 带内TCP连接数平均值。
+     * Monitoring metric names for metric alarms. CpuTotal*Max: Maximum in-band CPU usage. CpuTotal*Min: Minimum in-band CPU usage. CpuTotal*Avg: Average in-band CPU usage. MemoryUsedUtilization*Max: Maximum in-band memory usage. MemoryUsedUtilization*Min: Minimum in-band memory usage. MemoryUsedUtilization*Avg: Average in-band memory usage. Instance*CpuBusy*Max: Maximum out-of-band CPU utilization. Instance*CpuBusy*Min: Minimum out-of-band CPU utilization. Instance*CpuBusy*Avg: Average out-of-band CPU utilization. Instance*NetTxBits*Avg: Average out-of-band network outbound rate. Instance*NetRxBits*Avg: Average out-of-band network inbound rate. Instance*NetTxPackets*Avg: Average out-of-band network packet send rate. Instance*NetRxPackets*Avg: Average out-of-band network packet receive rate. SystemDiskReadBytes*Avg: Average in-band system disk read bandwidth. SystemDiskWriteBytes*Avg: Average in-band system disk write bandwidth. SystemDiskReadIOPS*Avg: Average in-band system disk read IOPS. SystemDiskWriteIOPS*Avg: Average in-band system disk write IOPS. NetTcpConnection_Avg: Average in-band TCP connection count.
      * 
      */
     @Import(name="metricName")
     private @Nullable Output<String> metricName;
 
     /**
-     * @return 指标告警时的监控指标名称。CpuTotal*Max：带内CPU使用率最大值。CpuTotal*Min：带内CPU使用率最小值。CpuTotal*Avg：带内CPU使用率平均值。MemoryUsedUtilization*Max：带内内存使用率最大值。MemoryUsedUtilization*Min：带内内存使用率最小值。MemoryUsedUtilization*Avg：带内内存使用率平均值。Instance*CpuBusy*Max：带外CPU利用率最大值。Instance*CpuBusy*Min：带外CPU利用率最小值。Instance*CpuBusy*Avg：带外CPU利用率平均值。Instance*NetTxBits*Avg: 带外网络流出速率平均值。Instance*NetRxBits*Avg: 带外网络流入速率平均值。Instance*NetTxPackets*Avg: 带外网络发送包速率平均值。Instance*NetRxPackets*Avg: 带外网络接收包速率平均值。SystemDiskReadBytes*Avg: 带内系统盘读带宽平均值。SystemDiskWriteBytes*Avg: 带内系统盘写带宽平均值。SystemDiskReadIOPS*Avg: 带内系统盘读IOPS平均值。SystemDiskWriteIOPS*Avg: 带内系统盘写IOPS平均值。NetTcpConnection_Avg: 带内TCP连接数平均值。
+     * @return Monitoring metric names for metric alarms. CpuTotal*Max: Maximum in-band CPU usage. CpuTotal*Min: Minimum in-band CPU usage. CpuTotal*Avg: Average in-band CPU usage. MemoryUsedUtilization*Max: Maximum in-band memory usage. MemoryUsedUtilization*Min: Minimum in-band memory usage. MemoryUsedUtilization*Avg: Average in-band memory usage. Instance*CpuBusy*Max: Maximum out-of-band CPU utilization. Instance*CpuBusy*Min: Minimum out-of-band CPU utilization. Instance*CpuBusy*Avg: Average out-of-band CPU utilization. Instance*NetTxBits*Avg: Average out-of-band network outbound rate. Instance*NetRxBits*Avg: Average out-of-band network inbound rate. Instance*NetTxPackets*Avg: Average out-of-band network packet send rate. Instance*NetRxPackets*Avg: Average out-of-band network packet receive rate. SystemDiskReadBytes*Avg: Average in-band system disk read bandwidth. SystemDiskWriteBytes*Avg: Average in-band system disk write bandwidth. SystemDiskReadIOPS*Avg: Average in-band system disk read IOPS. SystemDiskWriteIOPS*Avg: Average in-band system disk write IOPS. NetTcpConnection_Avg: Average in-band TCP connection count.
      * 
      */
     public Optional<Output<String>> metricName() {
@@ -46,14 +46,14 @@ public final class ScalingPolicyAlarmPolicyConditionArgs extends com.pulumi.reso
     }
 
     /**
-     * 指标告警时的监控指标阈值的单位。当AlarmPolicy.Conditions.MetricName参数取值为CPU/内存使用率时: Percent。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写带宽时: Bytes/Second(IEC)。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写IOPS时: Count/Second。当AlarmPolicy.Conditions.MetricName参数取值为TCP连接数时: Count。当AlarmPolicy.Condition.MetricName参数取值为网络流入/流出速率时: Bits/Second(IEC)。当AlarmPolicy.Condition.MetricName参数取值为网络收发包速率时: Packet/Second。
+     * The unit for the monitoring metric threshold when an alarm is triggered. When the AlarmPolicy.Conditions.MetricName parameter is set to CPU/memory usage: Percent. When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write bandwidth: Bytes/Second(IEC). When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write IOPS: Count/Second. When the AlarmPolicy.Conditions.MetricName parameter is set to TCP connections: Count. When the AlarmPolicy.Condition.MetricName parameter is set to network inbound/outbound rate: Bits/Second(IEC). When the AlarmPolicy.Condition.MetricName parameter is set to network packet transmission rate: Packet/Second.
      * 
      */
     @Import(name="metricUnit")
     private @Nullable Output<String> metricUnit;
 
     /**
-     * @return 指标告警时的监控指标阈值的单位。当AlarmPolicy.Conditions.MetricName参数取值为CPU/内存使用率时: Percent。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写带宽时: Bytes/Second(IEC)。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写IOPS时: Count/Second。当AlarmPolicy.Conditions.MetricName参数取值为TCP连接数时: Count。当AlarmPolicy.Condition.MetricName参数取值为网络流入/流出速率时: Bits/Second(IEC)。当AlarmPolicy.Condition.MetricName参数取值为网络收发包速率时: Packet/Second。
+     * @return The unit for the monitoring metric threshold when an alarm is triggered. When the AlarmPolicy.Conditions.MetricName parameter is set to CPU/memory usage: Percent. When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write bandwidth: Bytes/Second(IEC). When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write IOPS: Count/Second. When the AlarmPolicy.Conditions.MetricName parameter is set to TCP connections: Count. When the AlarmPolicy.Condition.MetricName parameter is set to network inbound/outbound rate: Bits/Second(IEC). When the AlarmPolicy.Condition.MetricName parameter is set to network packet transmission rate: Packet/Second.
      * 
      */
     public Optional<Output<String>> metricUnit() {
@@ -61,14 +61,14 @@ public final class ScalingPolicyAlarmPolicyConditionArgs extends com.pulumi.reso
     }
 
     /**
-     * 指标告警时的监控指标的阈值。当AlarmPolicy.Conditions.MetricUnit取值为Percent时：1 ～ 100。当AlarmPolicy.Conditions.MetricUnit取值为Bytes/Second(IEC)时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count/Second时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Bits/Second(IEC)时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Packet/Second时：大于0的整数。
+     * The threshold value for the monitoring metric when an alarm is triggered. When AlarmPolicy.Conditions.MetricUnit is set to Percent: 1–100. When AlarmPolicy.Conditions.MetricUnit is set to Bytes/Second(IEC): an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count/Second: an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count: an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Bits/Second(IEC): an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Packet/Second: an integer greater than 0.
      * 
      */
     @Import(name="threshold")
     private @Nullable Output<String> threshold;
 
     /**
-     * @return 指标告警时的监控指标的阈值。当AlarmPolicy.Conditions.MetricUnit取值为Percent时：1 ～ 100。当AlarmPolicy.Conditions.MetricUnit取值为Bytes/Second(IEC)时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count/Second时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Bits/Second(IEC)时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Packet/Second时：大于0的整数。
+     * @return The threshold value for the monitoring metric when an alarm is triggered. When AlarmPolicy.Conditions.MetricUnit is set to Percent: 1–100. When AlarmPolicy.Conditions.MetricUnit is set to Bytes/Second(IEC): an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count/Second: an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count: an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Bits/Second(IEC): an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Packet/Second: an integer greater than 0.
      * 
      */
     public Optional<Output<String>> threshold() {
@@ -103,7 +103,7 @@ public final class ScalingPolicyAlarmPolicyConditionArgs extends com.pulumi.reso
         }
 
         /**
-         * @param comparisonOperator 指标告警时的规则表达式对象。&gt;：大于。&lt;：小于。=：等于。
+         * @param comparisonOperator Rule expression object for metric alarms. &gt;: Greater than. &lt;: Less than. =: Equal to.
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class ScalingPolicyAlarmPolicyConditionArgs extends com.pulumi.reso
         }
 
         /**
-         * @param comparisonOperator 指标告警时的规则表达式对象。&gt;：大于。&lt;：小于。=：等于。
+         * @param comparisonOperator Rule expression object for metric alarms. &gt;: Greater than. &lt;: Less than. =: Equal to.
          * 
          * @return builder
          * 
@@ -124,7 +124,7 @@ public final class ScalingPolicyAlarmPolicyConditionArgs extends com.pulumi.reso
         }
 
         /**
-         * @param metricName 指标告警时的监控指标名称。CpuTotal*Max：带内CPU使用率最大值。CpuTotal*Min：带内CPU使用率最小值。CpuTotal*Avg：带内CPU使用率平均值。MemoryUsedUtilization*Max：带内内存使用率最大值。MemoryUsedUtilization*Min：带内内存使用率最小值。MemoryUsedUtilization*Avg：带内内存使用率平均值。Instance*CpuBusy*Max：带外CPU利用率最大值。Instance*CpuBusy*Min：带外CPU利用率最小值。Instance*CpuBusy*Avg：带外CPU利用率平均值。Instance*NetTxBits*Avg: 带外网络流出速率平均值。Instance*NetRxBits*Avg: 带外网络流入速率平均值。Instance*NetTxPackets*Avg: 带外网络发送包速率平均值。Instance*NetRxPackets*Avg: 带外网络接收包速率平均值。SystemDiskReadBytes*Avg: 带内系统盘读带宽平均值。SystemDiskWriteBytes*Avg: 带内系统盘写带宽平均值。SystemDiskReadIOPS*Avg: 带内系统盘读IOPS平均值。SystemDiskWriteIOPS*Avg: 带内系统盘写IOPS平均值。NetTcpConnection_Avg: 带内TCP连接数平均值。
+         * @param metricName Monitoring metric names for metric alarms. CpuTotal*Max: Maximum in-band CPU usage. CpuTotal*Min: Minimum in-band CPU usage. CpuTotal*Avg: Average in-band CPU usage. MemoryUsedUtilization*Max: Maximum in-band memory usage. MemoryUsedUtilization*Min: Minimum in-band memory usage. MemoryUsedUtilization*Avg: Average in-band memory usage. Instance*CpuBusy*Max: Maximum out-of-band CPU utilization. Instance*CpuBusy*Min: Minimum out-of-band CPU utilization. Instance*CpuBusy*Avg: Average out-of-band CPU utilization. Instance*NetTxBits*Avg: Average out-of-band network outbound rate. Instance*NetRxBits*Avg: Average out-of-band network inbound rate. Instance*NetTxPackets*Avg: Average out-of-band network packet send rate. Instance*NetRxPackets*Avg: Average out-of-band network packet receive rate. SystemDiskReadBytes*Avg: Average in-band system disk read bandwidth. SystemDiskWriteBytes*Avg: Average in-band system disk write bandwidth. SystemDiskReadIOPS*Avg: Average in-band system disk read IOPS. SystemDiskWriteIOPS*Avg: Average in-band system disk write IOPS. NetTcpConnection_Avg: Average in-band TCP connection count.
          * 
          * @return builder
          * 
@@ -135,7 +135,7 @@ public final class ScalingPolicyAlarmPolicyConditionArgs extends com.pulumi.reso
         }
 
         /**
-         * @param metricName 指标告警时的监控指标名称。CpuTotal*Max：带内CPU使用率最大值。CpuTotal*Min：带内CPU使用率最小值。CpuTotal*Avg：带内CPU使用率平均值。MemoryUsedUtilization*Max：带内内存使用率最大值。MemoryUsedUtilization*Min：带内内存使用率最小值。MemoryUsedUtilization*Avg：带内内存使用率平均值。Instance*CpuBusy*Max：带外CPU利用率最大值。Instance*CpuBusy*Min：带外CPU利用率最小值。Instance*CpuBusy*Avg：带外CPU利用率平均值。Instance*NetTxBits*Avg: 带外网络流出速率平均值。Instance*NetRxBits*Avg: 带外网络流入速率平均值。Instance*NetTxPackets*Avg: 带外网络发送包速率平均值。Instance*NetRxPackets*Avg: 带外网络接收包速率平均值。SystemDiskReadBytes*Avg: 带内系统盘读带宽平均值。SystemDiskWriteBytes*Avg: 带内系统盘写带宽平均值。SystemDiskReadIOPS*Avg: 带内系统盘读IOPS平均值。SystemDiskWriteIOPS*Avg: 带内系统盘写IOPS平均值。NetTcpConnection_Avg: 带内TCP连接数平均值。
+         * @param metricName Monitoring metric names for metric alarms. CpuTotal*Max: Maximum in-band CPU usage. CpuTotal*Min: Minimum in-band CPU usage. CpuTotal*Avg: Average in-band CPU usage. MemoryUsedUtilization*Max: Maximum in-band memory usage. MemoryUsedUtilization*Min: Minimum in-band memory usage. MemoryUsedUtilization*Avg: Average in-band memory usage. Instance*CpuBusy*Max: Maximum out-of-band CPU utilization. Instance*CpuBusy*Min: Minimum out-of-band CPU utilization. Instance*CpuBusy*Avg: Average out-of-band CPU utilization. Instance*NetTxBits*Avg: Average out-of-band network outbound rate. Instance*NetRxBits*Avg: Average out-of-band network inbound rate. Instance*NetTxPackets*Avg: Average out-of-band network packet send rate. Instance*NetRxPackets*Avg: Average out-of-band network packet receive rate. SystemDiskReadBytes*Avg: Average in-band system disk read bandwidth. SystemDiskWriteBytes*Avg: Average in-band system disk write bandwidth. SystemDiskReadIOPS*Avg: Average in-band system disk read IOPS. SystemDiskWriteIOPS*Avg: Average in-band system disk write IOPS. NetTcpConnection_Avg: Average in-band TCP connection count.
          * 
          * @return builder
          * 
@@ -145,7 +145,7 @@ public final class ScalingPolicyAlarmPolicyConditionArgs extends com.pulumi.reso
         }
 
         /**
-         * @param metricUnit 指标告警时的监控指标阈值的单位。当AlarmPolicy.Conditions.MetricName参数取值为CPU/内存使用率时: Percent。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写带宽时: Bytes/Second(IEC)。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写IOPS时: Count/Second。当AlarmPolicy.Conditions.MetricName参数取值为TCP连接数时: Count。当AlarmPolicy.Condition.MetricName参数取值为网络流入/流出速率时: Bits/Second(IEC)。当AlarmPolicy.Condition.MetricName参数取值为网络收发包速率时: Packet/Second。
+         * @param metricUnit The unit for the monitoring metric threshold when an alarm is triggered. When the AlarmPolicy.Conditions.MetricName parameter is set to CPU/memory usage: Percent. When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write bandwidth: Bytes/Second(IEC). When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write IOPS: Count/Second. When the AlarmPolicy.Conditions.MetricName parameter is set to TCP connections: Count. When the AlarmPolicy.Condition.MetricName parameter is set to network inbound/outbound rate: Bits/Second(IEC). When the AlarmPolicy.Condition.MetricName parameter is set to network packet transmission rate: Packet/Second.
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class ScalingPolicyAlarmPolicyConditionArgs extends com.pulumi.reso
         }
 
         /**
-         * @param metricUnit 指标告警时的监控指标阈值的单位。当AlarmPolicy.Conditions.MetricName参数取值为CPU/内存使用率时: Percent。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写带宽时: Bytes/Second(IEC)。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写IOPS时: Count/Second。当AlarmPolicy.Conditions.MetricName参数取值为TCP连接数时: Count。当AlarmPolicy.Condition.MetricName参数取值为网络流入/流出速率时: Bits/Second(IEC)。当AlarmPolicy.Condition.MetricName参数取值为网络收发包速率时: Packet/Second。
+         * @param metricUnit The unit for the monitoring metric threshold when an alarm is triggered. When the AlarmPolicy.Conditions.MetricName parameter is set to CPU/memory usage: Percent. When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write bandwidth: Bytes/Second(IEC). When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write IOPS: Count/Second. When the AlarmPolicy.Conditions.MetricName parameter is set to TCP connections: Count. When the AlarmPolicy.Condition.MetricName parameter is set to network inbound/outbound rate: Bits/Second(IEC). When the AlarmPolicy.Condition.MetricName parameter is set to network packet transmission rate: Packet/Second.
          * 
          * @return builder
          * 
@@ -166,7 +166,7 @@ public final class ScalingPolicyAlarmPolicyConditionArgs extends com.pulumi.reso
         }
 
         /**
-         * @param threshold 指标告警时的监控指标的阈值。当AlarmPolicy.Conditions.MetricUnit取值为Percent时：1 ～ 100。当AlarmPolicy.Conditions.MetricUnit取值为Bytes/Second(IEC)时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count/Second时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Bits/Second(IEC)时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Packet/Second时：大于0的整数。
+         * @param threshold The threshold value for the monitoring metric when an alarm is triggered. When AlarmPolicy.Conditions.MetricUnit is set to Percent: 1–100. When AlarmPolicy.Conditions.MetricUnit is set to Bytes/Second(IEC): an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count/Second: an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count: an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Bits/Second(IEC): an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Packet/Second: an integer greater than 0.
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class ScalingPolicyAlarmPolicyConditionArgs extends com.pulumi.reso
         }
 
         /**
-         * @param threshold 指标告警时的监控指标的阈值。当AlarmPolicy.Conditions.MetricUnit取值为Percent时：1 ～ 100。当AlarmPolicy.Conditions.MetricUnit取值为Bytes/Second(IEC)时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count/Second时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Bits/Second(IEC)时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Packet/Second时：大于0的整数。
+         * @param threshold The threshold value for the monitoring metric when an alarm is triggered. When AlarmPolicy.Conditions.MetricUnit is set to Percent: 1–100. When AlarmPolicy.Conditions.MetricUnit is set to Bytes/Second(IEC): an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count/Second: an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count: an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Bits/Second(IEC): an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Packet/Second: an integer greater than 0.
          * 
          * @return builder
          * 

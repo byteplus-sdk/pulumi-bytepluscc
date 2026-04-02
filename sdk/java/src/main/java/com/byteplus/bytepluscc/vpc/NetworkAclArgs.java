@@ -22,14 +22,14 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
     public static final NetworkAclArgs Empty = new NetworkAclArgs();
 
     /**
-     * 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * @return Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
      * 
      */
     public Optional<Output<String>> description() {
@@ -51,14 +51,14 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+     * Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
      * 
      */
     @Import(name="networkAclName")
     private @Nullable Output<String> networkAclName;
 
     /**
-     * @return 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+     * @return Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
      * 
      */
     public Optional<Output<String>> networkAclName() {
@@ -66,14 +66,14 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网络ACL所属项目的名称。不填默认加入default项目。
+     * Name of the project associated with the network ACL. If not specified, added to the default project.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 网络ACL所属项目的名称。不填默认加入default项目。
+     * @return Name of the project associated with the network ACL. If not specified, added to the default project.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -95,14 +95,14 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网络ACL所属VPC的ID。
+     * ID of the VPC associated with the network ACL.
      * 
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
-     * @return 网络ACL所属VPC的ID。
+     * @return ID of the VPC associated with the network ACL.
      * 
      */
     public Output<String> vpcId() {
@@ -141,7 +141,7 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+         * @param description Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+         * @param description Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
          * 
          * @return builder
          * 
@@ -188,7 +188,7 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkAclName 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+         * @param networkAclName Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkAclName 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+         * @param networkAclName Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
          * 
          * @return builder
          * 
@@ -209,7 +209,7 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 网络ACL所属项目的名称。不填默认加入default项目。
+         * @param projectName Name of the project associated with the network ACL. If not specified, added to the default project.
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 网络ACL所属项目的名称。不填默认加入default项目。
+         * @param projectName Name of the project associated with the network ACL. If not specified, added to the default project.
          * 
          * @return builder
          * 
@@ -256,7 +256,7 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 网络ACL所属VPC的ID。
+         * @param vpcId ID of the VPC associated with the network ACL.
          * 
          * @return builder
          * 
@@ -267,7 +267,7 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 网络ACL所属VPC的ID。
+         * @param vpcId ID of the VPC associated with the network ACL.
          * 
          * @return builder
          * 

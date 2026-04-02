@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class GetDomainHttpsForcedRedirectResult
     {
         /// <summary>
-        /// 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。启用后，内容分发网络会将收到的 HTTP 请求重定向到 HTTPS 请求。false：表示禁用该特性。禁用后，内容分发网络不会将 HTTP 请求重定向到 HTTPS 请求。要启用该特性，您的加速域名必须已启用 HTTPS。
+        /// Indicates whether to enable this feature. This parameter has the following values: true: enables the feature. When enabled, the content delivery network redirects HTTP requests to HTTPS requests. false: disables the feature. When disabled, the content delivery network does not redirect HTTP requests to HTTPS requests. To enable this feature, your acceleration domain must have HTTPS enabled.
         /// </summary>
         public readonly bool EnableForcedRedirect;
         /// <summary>
-        /// 表示当收到 HTTPS 请求时内容分发网络的重定向响应状态码。该参数有以下取值：301：表示返回的状态码是 301。302：表示返回的状态码是 302。该参数的默认值是 301。
+        /// Indicates the redirect response status code for the CDN when receiving HTTPS requests. The parameter values are: 301: returns status code 301. 302: returns status code 302. The default value is 301.
         /// </summary>
         public readonly string StatusCode;
 

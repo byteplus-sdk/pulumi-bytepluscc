@@ -15,27 +15,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Organization.Outputs
     public sealed class AccountSecureContactInfo
     {
         /// <summary>
-        /// 安全邮箱。
+        /// Security email
         /// </summary>
         public readonly string? Email;
         /// <summary>
-        /// 安全邮箱是否验证，1: 未验证，2: 已验证。
+        /// Security email verification status: 1. Not verified, 2. Verified
         /// </summary>
         public readonly int? EmailVerified;
         /// <summary>
-        /// 变更中的新邮箱。
+        /// New email being changed
         /// </summary>
         public readonly string? NewEmail;
         /// <summary>
-        /// 变更中的新手机号。
+        /// New mobile number being changed
         /// </summary>
         public readonly string? NewPhone;
         /// <summary>
-        /// 安全手机号。
+        /// Security mobile number
         /// </summary>
         public readonly string? Phone;
         /// <summary>
-        /// 安全手机号是否验证，1: 未验证，2: 已验证。
+        /// Security mobile number verification status: 1. Not verified, 2. Verified
         /// </summary>
         public readonly int? PhoneVerified;
 

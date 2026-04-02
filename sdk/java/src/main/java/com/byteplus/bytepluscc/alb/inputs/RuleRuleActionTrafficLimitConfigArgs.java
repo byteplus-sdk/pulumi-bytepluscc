@@ -16,14 +16,14 @@ public final class RuleRuleActionTrafficLimitConfigArgs extends com.pulumi.resou
     public static final RuleRuleActionTrafficLimitConfigArgs Empty = new RuleRuleActionTrafficLimitConfigArgs();
 
     /**
-     * 每秒请求数。
+     * Requests per second.
      * 
      */
     @Import(name="qps")
     private @Nullable Output<Integer> qps;
 
     /**
-     * @return 每秒请求数。
+     * @return Requests per second.
      * 
      */
     public Optional<Output<Integer>> qps() {
@@ -55,7 +55,7 @@ public final class RuleRuleActionTrafficLimitConfigArgs extends com.pulumi.resou
         }
 
         /**
-         * @param qps 每秒请求数。
+         * @param qps Requests per second.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class RuleRuleActionTrafficLimitConfigArgs extends com.pulumi.resou
         }
 
         /**
-         * @param qps 每秒请求数。
+         * @param qps Requests per second.
          * 
          * @return builder
          * 

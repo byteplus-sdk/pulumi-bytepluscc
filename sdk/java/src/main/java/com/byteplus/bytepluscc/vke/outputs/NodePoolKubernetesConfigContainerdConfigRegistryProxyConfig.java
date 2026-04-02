@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig {
     /**
-     * @return 代理地址。
+     * @return Proxy address.
      * 
      */
     private @Nullable List<String> proxyEndpoints;
     /**
-     * @return 容器镜像仓库地址。
+     * @return Container image repository address.
      * 
      */
     private @Nullable String registry;
 
     private NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig() {}
     /**
-     * @return 代理地址。
+     * @return Proxy address.
      * 
      */
     public List<String> proxyEndpoints() {
         return this.proxyEndpoints == null ? List.of() : this.proxyEndpoints;
     }
     /**
-     * @return 容器镜像仓库地址。
+     * @return Container image repository address.
      * 
      */
     public Optional<String> registry() {

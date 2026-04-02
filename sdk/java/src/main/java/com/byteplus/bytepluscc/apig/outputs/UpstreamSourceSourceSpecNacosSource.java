@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UpstreamSourceSourceSpecNacosSource {
     /**
-     * @return 认证配置。
+     * @return Authentication configuration
      * 
      */
     private @Nullable UpstreamSourceSourceSpecNacosSourceAuthConfig authConfig;
@@ -23,14 +23,14 @@ public final class UpstreamSourceSourceSpecNacosSource {
      */
     private @Nullable String nacosId;
     /**
-     * @return Nacos名称。
+     * @return Nacos name
      * 
      */
     private @Nullable String nacosName;
 
     private UpstreamSourceSourceSpecNacosSource() {}
     /**
-     * @return 认证配置。
+     * @return Authentication configuration
      * 
      */
     public Optional<UpstreamSourceSourceSpecNacosSourceAuthConfig> authConfig() {
@@ -44,7 +44,7 @@ public final class UpstreamSourceSourceSpecNacosSource {
         return Optional.ofNullable(this.nacosId);
     }
     /**
-     * @return Nacos名称。
+     * @return Nacos name
      * 
      */
     public Optional<String> nacosName() {

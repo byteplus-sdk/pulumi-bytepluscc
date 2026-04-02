@@ -23,14 +23,14 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
     public static final GatewayArgs Empty = new GatewayArgs();
 
     /**
-     * 网关备注信息。长度限制为0~253个字符。
+     * Gateway remarks. Length limit: 0–253 characters.
      * 
      */
     @Import(name="comments")
     private @Nullable Output<String> comments;
 
     /**
-     * @return 网关备注信息。长度限制为0~253个字符。
+     * @return Gateway remarks. Length limit: 0–253 characters.
      * 
      */
     public Optional<Output<String>> comments() {
@@ -38,14 +38,14 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 自定义日志配置。
+     * Custom log configuration
      * 
      */
     @Import(name="customLog")
     private @Nullable Output<GatewayCustomLogArgs> customLog;
 
     /**
-     * @return 自定义日志配置。
+     * @return Custom log configuration
      * 
      */
     public Optional<Output<GatewayCustomLogArgs>> customLog() {
@@ -53,14 +53,14 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 日志配置。
+     * Log configuration
      * 
      */
     @Import(name="logSpec")
     private @Nullable Output<GatewayLogSpecArgs> logSpec;
 
     /**
-     * @return 日志配置。
+     * @return Log configuration
      * 
      */
     public Optional<Output<GatewayLogSpecArgs>> logSpec() {
@@ -68,14 +68,14 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监控配置信息。
+     * Monitoring configuration information
      * 
      */
     @Import(name="monitorSpec")
     private @Nullable Output<GatewayMonitorSpecArgs> monitorSpec;
 
     /**
-     * @return 监控配置信息。
+     * @return Monitoring configuration information
      * 
      */
     public Optional<Output<GatewayMonitorSpecArgs>> monitorSpec() {
@@ -83,14 +83,14 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网关名称。
+     * Gateway name
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return 网关名称。
+     * @return Gateway name
      * 
      */
     public Output<String> name() {
@@ -98,14 +98,14 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 项目名称。
+     * Project name
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 项目名称。
+     * @return Project name
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -113,14 +113,14 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 资源规格配置信息。
+     * Resource specification configuration information
      * 
      */
     @Import(name="resourceSpec")
     private @Nullable Output<GatewayResourceSpecArgs> resourceSpec;
 
     /**
-     * @return 资源规格配置信息。
+     * @return Resource specification configuration information
      * 
      */
     public Optional<Output<GatewayResourceSpecArgs>> resourceSpec() {
@@ -128,14 +128,14 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子网ID列表。长度限制为1~2个。
+     * Subnet ID list. Length limit: 1–2
      * 
      */
     @Import(name="subnetIds")
     private @Nullable Output<List<String>> subnetIds;
 
     /**
-     * @return 子网ID列表。长度限制为1~2个。
+     * @return Subnet ID list. Length limit: 1–2
      * 
      */
     public Optional<Output<List<String>>> subnetIds() {
@@ -143,14 +143,14 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 链路追踪配置信息。
+     * Link tracing configuration information.
      * 
      */
     @Import(name="traceSpec")
     private @Nullable Output<GatewayTraceSpecArgs> traceSpec;
 
     /**
-     * @return 链路追踪配置信息。
+     * @return Link tracing configuration information.
      * 
      */
     public Optional<Output<GatewayTraceSpecArgs>> traceSpec() {
@@ -158,14 +158,14 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网关类型，取值：standard：标准网关。serverless：Serverless网关（暂不支持）。
+     * Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 网关类型，取值：standard：标准网关。serverless：Serverless网关（暂不支持）。
+     * @return Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
      * 
      */
     public Optional<Output<String>> type() {
@@ -222,7 +222,7 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param comments 网关备注信息。长度限制为0~253个字符。
+         * @param comments Gateway remarks. Length limit: 0–253 characters.
          * 
          * @return builder
          * 
@@ -233,7 +233,7 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param comments 网关备注信息。长度限制为0~253个字符。
+         * @param comments Gateway remarks. Length limit: 0–253 characters.
          * 
          * @return builder
          * 
@@ -243,7 +243,7 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customLog 自定义日志配置。
+         * @param customLog Custom log configuration
          * 
          * @return builder
          * 
@@ -254,7 +254,7 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customLog 自定义日志配置。
+         * @param customLog Custom log configuration
          * 
          * @return builder
          * 
@@ -264,7 +264,7 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param logSpec 日志配置。
+         * @param logSpec Log configuration
          * 
          * @return builder
          * 
@@ -275,7 +275,7 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param logSpec 日志配置。
+         * @param logSpec Log configuration
          * 
          * @return builder
          * 
@@ -285,7 +285,7 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param monitorSpec 监控配置信息。
+         * @param monitorSpec Monitoring configuration information
          * 
          * @return builder
          * 
@@ -296,7 +296,7 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param monitorSpec 监控配置信息。
+         * @param monitorSpec Monitoring configuration information
          * 
          * @return builder
          * 
@@ -306,7 +306,7 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 网关名称。
+         * @param name Gateway name
          * 
          * @return builder
          * 
@@ -317,7 +317,7 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 网关名称。
+         * @param name Gateway name
          * 
          * @return builder
          * 
@@ -327,7 +327,7 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 项目名称。
+         * @param projectName Project name
          * 
          * @return builder
          * 
@@ -338,7 +338,7 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 项目名称。
+         * @param projectName Project name
          * 
          * @return builder
          * 
@@ -348,7 +348,7 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resourceSpec 资源规格配置信息。
+         * @param resourceSpec Resource specification configuration information
          * 
          * @return builder
          * 
@@ -359,7 +359,7 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resourceSpec 资源规格配置信息。
+         * @param resourceSpec Resource specification configuration information
          * 
          * @return builder
          * 
@@ -369,7 +369,7 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetIds 子网ID列表。长度限制为1~2个。
+         * @param subnetIds Subnet ID list. Length limit: 1–2
          * 
          * @return builder
          * 
@@ -380,7 +380,7 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetIds 子网ID列表。长度限制为1~2个。
+         * @param subnetIds Subnet ID list. Length limit: 1–2
          * 
          * @return builder
          * 
@@ -390,7 +390,7 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetIds 子网ID列表。长度限制为1~2个。
+         * @param subnetIds Subnet ID list. Length limit: 1–2
          * 
          * @return builder
          * 
@@ -400,7 +400,7 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param traceSpec 链路追踪配置信息。
+         * @param traceSpec Link tracing configuration information.
          * 
          * @return builder
          * 
@@ -411,7 +411,7 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param traceSpec 链路追踪配置信息。
+         * @param traceSpec Link tracing configuration information.
          * 
          * @return builder
          * 
@@ -421,7 +421,7 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type 网关类型，取值：standard：标准网关。serverless：Serverless网关（暂不支持）。
+         * @param type Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
          * 
          * @return builder
          * 
@@ -432,7 +432,7 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type 网关类型，取值：standard：标准网关。serverless：Serverless网关（暂不支持）。
+         * @param type Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
          * 
          * @return builder
          * 

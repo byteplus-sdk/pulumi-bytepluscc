@@ -31,27 +31,27 @@ export interface GetInstanceArgs {
  */
 export interface GetInstanceResult {
     /**
-     * 创建实例的主账号 ID。
+     * Main account ID for creating the instance.
      */
     readonly accountId: string;
     /**
-     * Kafka 实例的计费类型等计费信息。
+     * Billing type and related billing information for the Kafka instance.
      */
     readonly chargeInfo: outputs.kafka.GetInstanceChargeInfo;
     /**
-     * 实例的计算规格。
+     * Instance compute specification.
      */
     readonly computeSpec: string;
     /**
-     * Kafka 实例的连接信息。
+     * Connection information for the Kafka instance.
      */
     readonly connectionInfos: outputs.kafka.GetInstanceConnectionInfo[];
     /**
-     * 实例的创建时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+     * Instance creation time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
      */
     readonly createdTime: string;
     /**
-     * EIP 的 ID。
+     * EIP ID.
      */
     readonly eipId: string;
     /**
@@ -59,107 +59,107 @@ export interface GetInstanceResult {
      */
     readonly id: string;
     /**
-     * Kafka 实例的简单描述。长度范围为 1~128 个字符。
+     * Brief description of the Kafka instance. Length must be between 1 and 128 characters.
      */
     readonly instanceDescription: string;
     /**
-     * Kafka 实例的 ID。
+     * Kafka instance ID.
      */
     readonly instanceId: string;
     /**
-     * Kafka 实例的名称。只能包含中文、字母、数字、下划线（_）和连字符（-）。不能以数字和连字符（-）开头。长度范围为 1~128 个字符。
+     * Name of the Kafka instance. Only Chinese characters, letters, numbers, underscores (_), and hyphens (-) are allowed. Cannot start with a number or hyphen (-). Length must be between 1 and 128 characters.
      */
     readonly instanceName: string;
     /**
-     * Kafka 实例的状态。Error：错误, Deleting：删除中, Creating：部署中, Upgrading：升级中, Updating：变更中, Running：运行中, Scaling：更配中, Rebuilding：重建中, Destroying：销毁中, Restarting：重启中, Migrating：迁移中, Restoring：恢复中, Importing：导入中, NetCreating：申请公网中, NetReleasing：释放公网中, Rollingback：回滚中, CreateFailed：创建失败, UpgradeFailed：升级失败, ScaleFailed：更配失败, RestartFailed：重启失败
+     * Status of the Kafka instance. Error: error, Deleting: deleting, Creating: deploying, Upgrading: upgrading, Updating: updating, Running: running, Scaling: scaling, Rebuilding: rebuilding, Destroying: destroying, Restarting: restarting, Migrating: migrating, Restoring: restoring, Importing: importing, NetCreating: applying for public network, NetReleasing: releasing public network, Rollingback: rolling back, CreateFailed: creation failed, UpgradeFailed: upgrade failed, ScaleFailed: scaling failed, RestartFailed: restart failed
      */
     readonly instanceStatus: string;
     /**
-     * 实例绑定的白名单 ID 列表。绑定白名单后，仅配置在白名单中的 IP 地址与地址段才能访问此实例。若未设置此参数，新 Kafka 实例将绑定白名单 default，对应 IP 地址为 0.0.0.0，表示允许所有地址访问该 Kafka 实例。
+     * List of allowlist IDs bound to the instance. After binding an allowlist, only IP addresses and ranges configured in the allowlist can access this instance. If this parameter is not set, the new Kafka instance will bind the allowlist 'default', with IP address 0.0.0.0, allowing all addresses to access the Kafka instance.
      */
     readonly ipWhiteLists: string[];
     /**
-     * 是否开启再均衡。
+     * Whether to enable rebalancing.
      */
     readonly needRebalance: boolean;
     /**
-     * Kafka 实例的初始参数配置,格式为json,参数列表: 最大消息大小(MessageMaxByte)1-12MB 默认10, 消息保留时间(LogRetentionHours)0-2160Hour 默认72, 消费位点保留时长(OffsetRetentionMinutes)1-10080Min 默认4320 消息时间类型(MessageTimestampType)LogAppendTime/CreateTime 消息写入到服务端时间、producer创建消息时间。
+     * Initial parameter configuration for Kafka instances, formatted as JSON. Parameter list: Maximum message size (MessageMaxByte) 1–12 MB, default 10; message retention time (LogRetentionHours) 0–2160 hours, default 72; offset retention duration (OffsetRetentionMinutes) 1–10080 minutes, default 4320; message timestamp type (MessageTimestampType) LogAppendTime/CreateTime—time when the message is written to the server or when the producer creates the message.
      */
     readonly parameters: string;
     /**
-     * 分区数量。
+     * Number of partitions.
      */
     readonly partitionNumber: number;
     /**
-     * 是否开启公网解析。
+     * Whether to enable public network domain resolution.
      */
     readonly privateDomainOnPublic: boolean;
     /**
-     * 当前创建的 Kafka 实例所属的 IAM 项目。
+     * IAM project to which the currently created Kafka instance belongs.
      */
     readonly projectName: string;
     /**
-     * 实例的存储空间，单位为 GiB, 必须指定为 100 的倍数。
+     * Instance storage space, measured in GiB, must be specified as a multiple of 100.
      */
     readonly storageSpace: number;
     /**
-     * Kafka 实例数据存储的云盘类型。可设置为 ESSD*FlexPL 或 ESSD*PL0，默认为 ESSD_FlexPL。
+     * Cloud disk type for Kafka instance data storage. Can be set to ESSD*FlexPL or ESSD*PL0; default is ESSD_FlexPL.
      */
     readonly storageType: string;
     /**
-     * 实例所在的 VPC 子网 ID。
+     * VPC subnet ID where the instance is located.
      */
     readonly subnetId: string;
     /**
-     * 云资源标签。可以将实例通过标签进行归类，便于实例的搜索和资源聚合。
+     * Cloud resource tags. You can categorize instances by tags for easier search and resource aggregation.
      */
     readonly tags: outputs.kafka.GetInstanceTag[];
     /**
-     * 一个 Kafka 实例下的 Topic 列表
+     * List of topics under a Kafka instance
      */
     readonly topics: string[];
     /**
-     * 当前实例剩余可用消费组个数。
+     * The remaining number of available consumer groups for the current instance.
      */
     readonly usableGroupNumber: number;
     /**
-     * 当前实例剩余可用分区数。
+     * Number of available partitions remaining for the current instance.
      */
     readonly usablePartitionNumber: number;
     /**
-     * 当前实例已经创建的消费组(Group)个数。
+     * Number of consumer groups (Group) currently created in the instance.
      */
     readonly usedGroupNumber: number;
     /**
-     * 当前实例已经使用的分区个数。
+     * Number of partitions currently used by the instance.
      */
     readonly usedPartitionNumber: number;
     /**
-     * 实例已用储空间，单位为 GiB。
+     * Used storage space of the instance, measured in GiB.
      */
     readonly usedStorageSpace: number;
     /**
-     * 当前实例已创建的 Topic 个数。
+     * Number of topics created in the current instance.
      */
     readonly usedTopicNumber: number;
     /**
-     * SASL/PLAIN 用户名称，需要满足以下要求: 1.由小写字母、数字、连字符（-）或下划线组成。2.长度为 3~64 个字符。3.用户名不支持设置为 admin 或 monitor,且实例内用户名称唯一。
+     * SASL/PLAIN username. Requirements: 1. Consists of lowercase letters, numbers, hyphens (-), or underscores. 2. Length: 3–64 characters. 3. Username cannot be set to admin or monitor, and must be unique within the instance.
      */
     readonly userName: string;
     /**
-     * SASL/PLAIN 用户的密码，需要满足以下要求: 1.长度在8到32个字符 2.由大写字母、小写字母、数字、特殊字符中的任意三种组成 3.支持的特殊字符包括 !@#$%^&*()_+-=。
+     * Password for SASL/PLAIN users. Must meet the following requirements: 1. Length between 8 and 32 characters 2. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters 3. Supported special characters: !@#$%^&*()_+-=
      */
     readonly userPassword: string;
     /**
-     * 支持的 Kafka 版本，当前支持的版本包括 2.2.2, 2.8.2。
+     * Supported Kafka versions. Currently supported versions include 2.2.2 and 2.8.2.
      */
     readonly version: string;
     /**
-     * 实例所在的私有网络 (VPC) ID。
+     * Private network (VPC) ID where the instance is located.
      */
     readonly vpcId: string;
     /**
-     * 实例所在的可用区 ID。消息队列 Kafka版实例支持跨 AZ 部署, 多个可用区ID之间以逗号间隔。
+     * Availability zone ID where the instance is located. Message Queue for Kafka instances support cross-AZ deployment; separate multiple availability zone IDs with commas.
      */
     readonly zoneId: string;
 }

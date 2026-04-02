@@ -14,15 +14,15 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type ScalingConfigurationEip struct {
-	// 公网IP的带宽峰值，默认为1，单位：Mbps。取值：当Eip.BillingType取值为PostPaidByBandwidth时，取值为1 ～ 500。当Eip.BillingType取值为PostPaidByTraffic时，取值为1 ～ 200。
+	// Peak bandwidth for the public IP. Default is 1, unit: Mbps. Value: When Eip.BillingType is set to PostPaidByBandwidth, the value is 1–500. When Eip.BillingType is set to PostPaidByTraffic, the value is 1–200.
 	Bandwidth *int `pulumi:"bandwidth"`
-	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。 您可以调用 DescribeBandwidthPackages 接口，查询共享带宽包的ID。 公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的线路类型相同。共享带宽包为IPv4类型。
+	// ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package. You can call the DescribeBandwidthPackages API to query the shared bandwidth package ID. The public IP can be added to the shared bandwidth package only if the following conditions are met: Both have the same security protection type. Both have the same line type. The shared bandwidth package is IPv4 type.
 	BandwidthPackageId *string `pulumi:"bandwidthPackageId"`
-	// 公网IP的计费类型，取值：PostPaidByBandwidth（默认）：按量计费-按带宽上限计费。PostPaidByTraffic：按量计费-按实际流量计费。
+	// Billing type for public IP. Options: PostPaidByBandwidth (default): Pay-as-you-go, billed by bandwidth cap. PostPaidByTraffic: Pay-as-you-go, billed by actual traffic.
 	BillingType *string `pulumi:"billingType"`
-	// 线路类型，取值：BGP（默认）：BGP线路。若您的账号已申请使用静态单线，ISP还可以传入ChinaMobile（表示中国移动）、ChinaTelecom（表示中国电信）、ChinaUnicom（表示中国联通）。
+	// Line type. Values: BGP (default): BGP line. If your account has applied for static single line, ISP can also be set to ChinaMobile (China Mobile), ChinaTelecom (China Telecom), or ChinaUnicom (China Unicom).
 	Isp *string `pulumi:"isp"`
-	// 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+	// Whether the public IP is deleted along with the instance. This applies only to pay-as-you-go public IPs and takes effect when deleting the instance in the ECS console. For retention details after deleting an instance in a scaling group, see the detailed instructions in instance management. Values: true: The public IP is deleted with the instance. false: The public IP is not deleted with the instance
 	ReleaseWithInstance *bool `pulumi:"releaseWithInstance"`
 }
 
@@ -38,15 +38,15 @@ type ScalingConfigurationEipInput interface {
 }
 
 type ScalingConfigurationEipArgs struct {
-	// 公网IP的带宽峰值，默认为1，单位：Mbps。取值：当Eip.BillingType取值为PostPaidByBandwidth时，取值为1 ～ 500。当Eip.BillingType取值为PostPaidByTraffic时，取值为1 ～ 200。
+	// Peak bandwidth for the public IP. Default is 1, unit: Mbps. Value: When Eip.BillingType is set to PostPaidByBandwidth, the value is 1–500. When Eip.BillingType is set to PostPaidByTraffic, the value is 1–200.
 	Bandwidth pulumi.IntPtrInput `pulumi:"bandwidth"`
-	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。 您可以调用 DescribeBandwidthPackages 接口，查询共享带宽包的ID。 公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的线路类型相同。共享带宽包为IPv4类型。
+	// ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package. You can call the DescribeBandwidthPackages API to query the shared bandwidth package ID. The public IP can be added to the shared bandwidth package only if the following conditions are met: Both have the same security protection type. Both have the same line type. The shared bandwidth package is IPv4 type.
 	BandwidthPackageId pulumi.StringPtrInput `pulumi:"bandwidthPackageId"`
-	// 公网IP的计费类型，取值：PostPaidByBandwidth（默认）：按量计费-按带宽上限计费。PostPaidByTraffic：按量计费-按实际流量计费。
+	// Billing type for public IP. Options: PostPaidByBandwidth (default): Pay-as-you-go, billed by bandwidth cap. PostPaidByTraffic: Pay-as-you-go, billed by actual traffic.
 	BillingType pulumi.StringPtrInput `pulumi:"billingType"`
-	// 线路类型，取值：BGP（默认）：BGP线路。若您的账号已申请使用静态单线，ISP还可以传入ChinaMobile（表示中国移动）、ChinaTelecom（表示中国电信）、ChinaUnicom（表示中国联通）。
+	// Line type. Values: BGP (default): BGP line. If your account has applied for static single line, ISP can also be set to ChinaMobile (China Mobile), ChinaTelecom (China Telecom), or ChinaUnicom (China Unicom).
 	Isp pulumi.StringPtrInput `pulumi:"isp"`
-	// 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+	// Whether the public IP is deleted along with the instance. This applies only to pay-as-you-go public IPs and takes effect when deleting the instance in the ECS console. For retention details after deleting an instance in a scaling group, see the detailed instructions in instance management. Values: true: The public IP is deleted with the instance. false: The public IP is not deleted with the instance
 	ReleaseWithInstance pulumi.BoolPtrInput `pulumi:"releaseWithInstance"`
 }
 
@@ -127,27 +127,27 @@ func (o ScalingConfigurationEipOutput) ToScalingConfigurationEipPtrOutputWithCon
 	}).(ScalingConfigurationEipPtrOutput)
 }
 
-// 公网IP的带宽峰值，默认为1，单位：Mbps。取值：当Eip.BillingType取值为PostPaidByBandwidth时，取值为1 ～ 500。当Eip.BillingType取值为PostPaidByTraffic时，取值为1 ～ 200。
+// Peak bandwidth for the public IP. Default is 1, unit: Mbps. Value: When Eip.BillingType is set to PostPaidByBandwidth, the value is 1–500. When Eip.BillingType is set to PostPaidByTraffic, the value is 1–200.
 func (o ScalingConfigurationEipOutput) Bandwidth() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ScalingConfigurationEip) *int { return v.Bandwidth }).(pulumi.IntPtrOutput)
 }
 
-// 共享带宽包的ID，表示将公网IP加入到共享带宽包。 您可以调用 DescribeBandwidthPackages 接口，查询共享带宽包的ID。 公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的线路类型相同。共享带宽包为IPv4类型。
+// ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package. You can call the DescribeBandwidthPackages API to query the shared bandwidth package ID. The public IP can be added to the shared bandwidth package only if the following conditions are met: Both have the same security protection type. Both have the same line type. The shared bandwidth package is IPv4 type.
 func (o ScalingConfigurationEipOutput) BandwidthPackageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingConfigurationEip) *string { return v.BandwidthPackageId }).(pulumi.StringPtrOutput)
 }
 
-// 公网IP的计费类型，取值：PostPaidByBandwidth（默认）：按量计费-按带宽上限计费。PostPaidByTraffic：按量计费-按实际流量计费。
+// Billing type for public IP. Options: PostPaidByBandwidth (default): Pay-as-you-go, billed by bandwidth cap. PostPaidByTraffic: Pay-as-you-go, billed by actual traffic.
 func (o ScalingConfigurationEipOutput) BillingType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingConfigurationEip) *string { return v.BillingType }).(pulumi.StringPtrOutput)
 }
 
-// 线路类型，取值：BGP（默认）：BGP线路。若您的账号已申请使用静态单线，ISP还可以传入ChinaMobile（表示中国移动）、ChinaTelecom（表示中国电信）、ChinaUnicom（表示中国联通）。
+// Line type. Values: BGP (default): BGP line. If your account has applied for static single line, ISP can also be set to ChinaMobile (China Mobile), ChinaTelecom (China Telecom), or ChinaUnicom (China Unicom).
 func (o ScalingConfigurationEipOutput) Isp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingConfigurationEip) *string { return v.Isp }).(pulumi.StringPtrOutput)
 }
 
-// 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+// Whether the public IP is deleted along with the instance. This applies only to pay-as-you-go public IPs and takes effect when deleting the instance in the ECS console. For retention details after deleting an instance in a scaling group, see the detailed instructions in instance management. Values: true: The public IP is deleted with the instance. false: The public IP is not deleted with the instance
 func (o ScalingConfigurationEipOutput) ReleaseWithInstance() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ScalingConfigurationEip) *bool { return v.ReleaseWithInstance }).(pulumi.BoolPtrOutput)
 }
@@ -176,7 +176,7 @@ func (o ScalingConfigurationEipPtrOutput) Elem() ScalingConfigurationEipOutput {
 	}).(ScalingConfigurationEipOutput)
 }
 
-// 公网IP的带宽峰值，默认为1，单位：Mbps。取值：当Eip.BillingType取值为PostPaidByBandwidth时，取值为1 ～ 500。当Eip.BillingType取值为PostPaidByTraffic时，取值为1 ～ 200。
+// Peak bandwidth for the public IP. Default is 1, unit: Mbps. Value: When Eip.BillingType is set to PostPaidByBandwidth, the value is 1–500. When Eip.BillingType is set to PostPaidByTraffic, the value is 1–200.
 func (o ScalingConfigurationEipPtrOutput) Bandwidth() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ScalingConfigurationEip) *int {
 		if v == nil {
@@ -186,7 +186,7 @@ func (o ScalingConfigurationEipPtrOutput) Bandwidth() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 共享带宽包的ID，表示将公网IP加入到共享带宽包。 您可以调用 DescribeBandwidthPackages 接口，查询共享带宽包的ID。 公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的线路类型相同。共享带宽包为IPv4类型。
+// ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package. You can call the DescribeBandwidthPackages API to query the shared bandwidth package ID. The public IP can be added to the shared bandwidth package only if the following conditions are met: Both have the same security protection type. Both have the same line type. The shared bandwidth package is IPv4 type.
 func (o ScalingConfigurationEipPtrOutput) BandwidthPackageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScalingConfigurationEip) *string {
 		if v == nil {
@@ -196,7 +196,7 @@ func (o ScalingConfigurationEipPtrOutput) BandwidthPackageId() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// 公网IP的计费类型，取值：PostPaidByBandwidth（默认）：按量计费-按带宽上限计费。PostPaidByTraffic：按量计费-按实际流量计费。
+// Billing type for public IP. Options: PostPaidByBandwidth (default): Pay-as-you-go, billed by bandwidth cap. PostPaidByTraffic: Pay-as-you-go, billed by actual traffic.
 func (o ScalingConfigurationEipPtrOutput) BillingType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScalingConfigurationEip) *string {
 		if v == nil {
@@ -206,7 +206,7 @@ func (o ScalingConfigurationEipPtrOutput) BillingType() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 线路类型，取值：BGP（默认）：BGP线路。若您的账号已申请使用静态单线，ISP还可以传入ChinaMobile（表示中国移动）、ChinaTelecom（表示中国电信）、ChinaUnicom（表示中国联通）。
+// Line type. Values: BGP (default): BGP line. If your account has applied for static single line, ISP can also be set to ChinaMobile (China Mobile), ChinaTelecom (China Telecom), or ChinaUnicom (China Unicom).
 func (o ScalingConfigurationEipPtrOutput) Isp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScalingConfigurationEip) *string {
 		if v == nil {
@@ -216,7 +216,7 @@ func (o ScalingConfigurationEipPtrOutput) Isp() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+// Whether the public IP is deleted along with the instance. This applies only to pay-as-you-go public IPs and takes effect when deleting the instance in the ECS console. For retention details after deleting an instance in a scaling group, see the detailed instructions in instance management. Values: true: The public IP is deleted with the instance. false: The public IP is not deleted with the instance
 func (o ScalingConfigurationEipPtrOutput) ReleaseWithInstance() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ScalingConfigurationEip) *bool {
 		if v == nil {
@@ -227,9 +227,9 @@ func (o ScalingConfigurationEipPtrOutput) ReleaseWithInstance() pulumi.BoolPtrOu
 }
 
 type ScalingConfigurationInstanceTypeOverride struct {
-	// 指定抢占式实例的规格。参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
+	// Specify the specifications for preemptible instances. Parameter   - N: Indicates the sequence number of the instance specification, value range 1–10. Value   - InstanceType: Specifies the specification for the preemptible instance. Use & to separate multiple specifications.
 	InstanceType *string `pulumi:"instanceType"`
-	// 指定抢占式实例规格每小时的最高价格参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
+	// Specify the maximum hourly price for preemptible instance types. Parameter   - N: Indicates the instance type sequence number. Value: 1–10. PriceLimit: Specifies the maximum hourly price for the preemptible instance type. Value: Greater than 0, up to three decimal places. Use & to separate multiple prices.
 	PriceLimit *float64 `pulumi:"priceLimit"`
 }
 
@@ -245,9 +245,9 @@ type ScalingConfigurationInstanceTypeOverrideInput interface {
 }
 
 type ScalingConfigurationInstanceTypeOverrideArgs struct {
-	// 指定抢占式实例的规格。参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
+	// Specify the specifications for preemptible instances. Parameter   - N: Indicates the sequence number of the instance specification, value range 1–10. Value   - InstanceType: Specifies the specification for the preemptible instance. Use & to separate multiple specifications.
 	InstanceType pulumi.StringPtrInput `pulumi:"instanceType"`
-	// 指定抢占式实例规格每小时的最高价格参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
+	// Specify the maximum hourly price for preemptible instance types. Parameter   - N: Indicates the instance type sequence number. Value: 1–10. PriceLimit: Specifies the maximum hourly price for the preemptible instance type. Value: Greater than 0, up to three decimal places. Use & to separate multiple prices.
 	PriceLimit pulumi.Float64PtrInput `pulumi:"priceLimit"`
 }
 
@@ -302,12 +302,12 @@ func (o ScalingConfigurationInstanceTypeOverrideOutput) ToScalingConfigurationIn
 	return o
 }
 
-// 指定抢占式实例的规格。参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
+// Specify the specifications for preemptible instances. Parameter   - N: Indicates the sequence number of the instance specification, value range 1–10. Value   - InstanceType: Specifies the specification for the preemptible instance. Use & to separate multiple specifications.
 func (o ScalingConfigurationInstanceTypeOverrideOutput) InstanceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingConfigurationInstanceTypeOverride) *string { return v.InstanceType }).(pulumi.StringPtrOutput)
 }
 
-// 指定抢占式实例规格每小时的最高价格参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
+// Specify the maximum hourly price for preemptible instance types. Parameter   - N: Indicates the instance type sequence number. Value: 1–10. PriceLimit: Specifies the maximum hourly price for the preemptible instance type. Value: Greater than 0, up to three decimal places. Use & to separate multiple prices.
 func (o ScalingConfigurationInstanceTypeOverrideOutput) PriceLimit() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v ScalingConfigurationInstanceTypeOverride) *float64 { return v.PriceLimit }).(pulumi.Float64PtrOutput)
 }
@@ -333,9 +333,9 @@ func (o ScalingConfigurationInstanceTypeOverrideArrayOutput) Index(i pulumi.IntI
 }
 
 type ScalingConfigurationTag struct {
-	// 标签键。
+	// Tag key
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value *string `pulumi:"value"`
 }
 
@@ -351,9 +351,9 @@ type ScalingConfigurationTagInput interface {
 }
 
 type ScalingConfigurationTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -408,12 +408,12 @@ func (o ScalingConfigurationTagOutput) ToScalingConfigurationTagOutputWithContex
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o ScalingConfigurationTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingConfigurationTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value
 func (o ScalingConfigurationTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingConfigurationTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -439,17 +439,17 @@ func (o ScalingConfigurationTagArrayOutput) Index(i pulumi.IntInput) ScalingConf
 }
 
 type ScalingConfigurationVolume struct {
-	// 云盘是否随实例释放：true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+	// Whether the cloud disk is released with the instance: true (default): The cloud disk is released with the instance. false: The cloud disk is not released with the instance. When set to false, this does not apply to system disks. System disks are always released with the instance and cannot be retained.
 	DeleteWithInstance *bool `pulumi:"deleteWithInstance"`
-	// 通过此参数可配置云盘额外性能包IOPS性能大小，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceIOPS 表示第N个云盘的额外性能包IOPS大小：IOPS: 1-50000。Balance: 1-50000。
+	// You can use this parameter to configure the extra performance package IOPS size for cloud disks. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. '1' represents the system disk; '2' or greater represents a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceIOPS specifies the extra performance package IOPS size for the Nth disk: IOPS: 1–50000. Balance: 1–50000.
 	ExtraPerformanceIops *int `pulumi:"extraPerformanceIops"`
-	// 通过此参数可配置云盘额外性能包吞吐性能大小，单位MB/s，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceThroughputMB 表示第N个云盘的额外性能包吞吐大小：Throughput：1-650。
+	// You can use this parameter to configure the extra performance package throughput size for cloud disks, in MB/s. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. '1' represents the system disk; '2' or greater represents a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceThroughputMB specifies the extra performance package throughput size for the Nth disk: Throughput: 1–650.
 	ExtraPerformanceThroughputMb *int `pulumi:"extraPerformanceThroughputMb"`
-	// 通过此参数可为云盘购买额外性能，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包。取值：2～16。ExtraPerformanceTypeId 表示第N个云盘的额外性能包类型：IOPS:IOPS型，使用ExtraPerformanceIOPS参数。Balance: 均衡型，使用ExtraPerformanceIOPS参数。Throughput：吞吐量型，使用ExtraPerformanceThroughputMB参数。
+	// This parameter allows you to purchase extra performance for cloud disks. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. "1" is the system disk; "2" or greater indicates a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceTypeId specifies the extra performance package type for the Nth disk: IOPS: IOPS type, use the ExtraPerformanceIOPS parameter. Balance: Balanced type, use the ExtraPerformanceIOPS parameter. Throughput: Throughput type, use the ExtraPerformanceThroughputMB parameter.
 	ExtraPerformanceTypeId *string `pulumi:"extraPerformanceTypeId"`
-	// 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。如果是 ESSD_FlexPL 并使用额外性能，大小必须 >= 500 GB。
+	// Cloud disk capacity, in GiB. System disk range: 10–500. Data disk range: 10–8192. If using ESSD_FlexPL with additional performance, size must be >= 500 GB
 	Size *int `pulumi:"size"`
-	// 云盘的类型：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。
+	// Cloud disk types: ESSD*FlexPL: Extreme SSD FlexPL. ESSD*PL0: Extreme SSD PL0.
 	VolumeType *string `pulumi:"volumeType"`
 }
 
@@ -465,17 +465,17 @@ type ScalingConfigurationVolumeInput interface {
 }
 
 type ScalingConfigurationVolumeArgs struct {
-	// 云盘是否随实例释放：true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+	// Whether the cloud disk is released with the instance: true (default): The cloud disk is released with the instance. false: The cloud disk is not released with the instance. When set to false, this does not apply to system disks. System disks are always released with the instance and cannot be retained.
 	DeleteWithInstance pulumi.BoolPtrInput `pulumi:"deleteWithInstance"`
-	// 通过此参数可配置云盘额外性能包IOPS性能大小，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceIOPS 表示第N个云盘的额外性能包IOPS大小：IOPS: 1-50000。Balance: 1-50000。
+	// You can use this parameter to configure the extra performance package IOPS size for cloud disks. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. '1' represents the system disk; '2' or greater represents a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceIOPS specifies the extra performance package IOPS size for the Nth disk: IOPS: 1–50000. Balance: 1–50000.
 	ExtraPerformanceIops pulumi.IntPtrInput `pulumi:"extraPerformanceIops"`
-	// 通过此参数可配置云盘额外性能包吞吐性能大小，单位MB/s，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceThroughputMB 表示第N个云盘的额外性能包吞吐大小：Throughput：1-650。
+	// You can use this parameter to configure the extra performance package throughput size for cloud disks, in MB/s. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. '1' represents the system disk; '2' or greater represents a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceThroughputMB specifies the extra performance package throughput size for the Nth disk: Throughput: 1–650.
 	ExtraPerformanceThroughputMb pulumi.IntPtrInput `pulumi:"extraPerformanceThroughputMb"`
-	// 通过此参数可为云盘购买额外性能，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包。取值：2～16。ExtraPerformanceTypeId 表示第N个云盘的额外性能包类型：IOPS:IOPS型，使用ExtraPerformanceIOPS参数。Balance: 均衡型，使用ExtraPerformanceIOPS参数。Throughput：吞吐量型，使用ExtraPerformanceThroughputMB参数。
+	// This parameter allows you to purchase extra performance for cloud disks. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. "1" is the system disk; "2" or greater indicates a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceTypeId specifies the extra performance package type for the Nth disk: IOPS: IOPS type, use the ExtraPerformanceIOPS parameter. Balance: Balanced type, use the ExtraPerformanceIOPS parameter. Throughput: Throughput type, use the ExtraPerformanceThroughputMB parameter.
 	ExtraPerformanceTypeId pulumi.StringPtrInput `pulumi:"extraPerformanceTypeId"`
-	// 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。如果是 ESSD_FlexPL 并使用额外性能，大小必须 >= 500 GB。
+	// Cloud disk capacity, in GiB. System disk range: 10–500. Data disk range: 10–8192. If using ESSD_FlexPL with additional performance, size must be >= 500 GB
 	Size pulumi.IntPtrInput `pulumi:"size"`
-	// 云盘的类型：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。
+	// Cloud disk types: ESSD*FlexPL: Extreme SSD FlexPL. ESSD*PL0: Extreme SSD PL0.
 	VolumeType pulumi.StringPtrInput `pulumi:"volumeType"`
 }
 
@@ -530,32 +530,32 @@ func (o ScalingConfigurationVolumeOutput) ToScalingConfigurationVolumeOutputWith
 	return o
 }
 
-// 云盘是否随实例释放：true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+// Whether the cloud disk is released with the instance: true (default): The cloud disk is released with the instance. false: The cloud disk is not released with the instance. When set to false, this does not apply to system disks. System disks are always released with the instance and cannot be retained.
 func (o ScalingConfigurationVolumeOutput) DeleteWithInstance() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ScalingConfigurationVolume) *bool { return v.DeleteWithInstance }).(pulumi.BoolPtrOutput)
 }
 
-// 通过此参数可配置云盘额外性能包IOPS性能大小，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceIOPS 表示第N个云盘的额外性能包IOPS大小：IOPS: 1-50000。Balance: 1-50000。
+// You can use this parameter to configure the extra performance package IOPS size for cloud disks. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. '1' represents the system disk; '2' or greater represents a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceIOPS specifies the extra performance package IOPS size for the Nth disk: IOPS: 1–50000. Balance: 1–50000.
 func (o ScalingConfigurationVolumeOutput) ExtraPerformanceIops() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ScalingConfigurationVolume) *int { return v.ExtraPerformanceIops }).(pulumi.IntPtrOutput)
 }
 
-// 通过此参数可配置云盘额外性能包吞吐性能大小，单位MB/s，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceThroughputMB 表示第N个云盘的额外性能包吞吐大小：Throughput：1-650。
+// You can use this parameter to configure the extra performance package throughput size for cloud disks, in MB/s. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. '1' represents the system disk; '2' or greater represents a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceThroughputMB specifies the extra performance package throughput size for the Nth disk: Throughput: 1–650.
 func (o ScalingConfigurationVolumeOutput) ExtraPerformanceThroughputMb() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ScalingConfigurationVolume) *int { return v.ExtraPerformanceThroughputMb }).(pulumi.IntPtrOutput)
 }
 
-// 通过此参数可为云盘购买额外性能，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包。取值：2～16。ExtraPerformanceTypeId 表示第N个云盘的额外性能包类型：IOPS:IOPS型，使用ExtraPerformanceIOPS参数。Balance: 均衡型，使用ExtraPerformanceIOPS参数。Throughput：吞吐量型，使用ExtraPerformanceThroughputMB参数。
+// This parameter allows you to purchase extra performance for cloud disks. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. "1" is the system disk; "2" or greater indicates a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceTypeId specifies the extra performance package type for the Nth disk: IOPS: IOPS type, use the ExtraPerformanceIOPS parameter. Balance: Balanced type, use the ExtraPerformanceIOPS parameter. Throughput: Throughput type, use the ExtraPerformanceThroughputMB parameter.
 func (o ScalingConfigurationVolumeOutput) ExtraPerformanceTypeId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingConfigurationVolume) *string { return v.ExtraPerformanceTypeId }).(pulumi.StringPtrOutput)
 }
 
-// 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。如果是 ESSD_FlexPL 并使用额外性能，大小必须 >= 500 GB。
+// Cloud disk capacity, in GiB. System disk range: 10–500. Data disk range: 10–8192. If using ESSD_FlexPL with additional performance, size must be >= 500 GB
 func (o ScalingConfigurationVolumeOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ScalingConfigurationVolume) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
 
-// 云盘的类型：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。
+// Cloud disk types: ESSD*FlexPL: Extreme SSD FlexPL. ESSD*PL0: Extreme SSD PL0.
 func (o ScalingConfigurationVolumeOutput) VolumeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingConfigurationVolume) *string { return v.VolumeType }).(pulumi.StringPtrOutput)
 }
@@ -580,14 +580,280 @@ func (o ScalingConfigurationVolumeArrayOutput) Index(i pulumi.IntInput) ScalingC
 	}).(ScalingConfigurationVolumeOutput)
 }
 
+type ScalingGroupInstance struct {
+	// Whether to enable managed mode for the instance when AttachInstances is performed
+	Entrusted *bool `pulumi:"entrusted"`
+	// ECS instance ID, unique identifier of the subresource
+	InstanceId *string `pulumi:"instanceId"`
+	// Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
+	LifecycleHook *bool `pulumi:"lifecycleHook"`
+}
+
+// ScalingGroupInstanceInput is an input type that accepts ScalingGroupInstanceArgs and ScalingGroupInstanceOutput values.
+// You can construct a concrete instance of `ScalingGroupInstanceInput` via:
+//
+//	ScalingGroupInstanceArgs{...}
+type ScalingGroupInstanceInput interface {
+	pulumi.Input
+
+	ToScalingGroupInstanceOutput() ScalingGroupInstanceOutput
+	ToScalingGroupInstanceOutputWithContext(context.Context) ScalingGroupInstanceOutput
+}
+
+type ScalingGroupInstanceArgs struct {
+	// Whether to enable managed mode for the instance when AttachInstances is performed
+	Entrusted pulumi.BoolPtrInput `pulumi:"entrusted"`
+	// ECS instance ID, unique identifier of the subresource
+	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
+	// Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
+	LifecycleHook pulumi.BoolPtrInput `pulumi:"lifecycleHook"`
+}
+
+func (ScalingGroupInstanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScalingGroupInstance)(nil)).Elem()
+}
+
+func (i ScalingGroupInstanceArgs) ToScalingGroupInstanceOutput() ScalingGroupInstanceOutput {
+	return i.ToScalingGroupInstanceOutputWithContext(context.Background())
+}
+
+func (i ScalingGroupInstanceArgs) ToScalingGroupInstanceOutputWithContext(ctx context.Context) ScalingGroupInstanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScalingGroupInstanceOutput)
+}
+
+// ScalingGroupInstanceArrayInput is an input type that accepts ScalingGroupInstanceArray and ScalingGroupInstanceArrayOutput values.
+// You can construct a concrete instance of `ScalingGroupInstanceArrayInput` via:
+//
+//	ScalingGroupInstanceArray{ ScalingGroupInstanceArgs{...} }
+type ScalingGroupInstanceArrayInput interface {
+	pulumi.Input
+
+	ToScalingGroupInstanceArrayOutput() ScalingGroupInstanceArrayOutput
+	ToScalingGroupInstanceArrayOutputWithContext(context.Context) ScalingGroupInstanceArrayOutput
+}
+
+type ScalingGroupInstanceArray []ScalingGroupInstanceInput
+
+func (ScalingGroupInstanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScalingGroupInstance)(nil)).Elem()
+}
+
+func (i ScalingGroupInstanceArray) ToScalingGroupInstanceArrayOutput() ScalingGroupInstanceArrayOutput {
+	return i.ToScalingGroupInstanceArrayOutputWithContext(context.Background())
+}
+
+func (i ScalingGroupInstanceArray) ToScalingGroupInstanceArrayOutputWithContext(ctx context.Context) ScalingGroupInstanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScalingGroupInstanceArrayOutput)
+}
+
+type ScalingGroupInstanceOutput struct{ *pulumi.OutputState }
+
+func (ScalingGroupInstanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScalingGroupInstance)(nil)).Elem()
+}
+
+func (o ScalingGroupInstanceOutput) ToScalingGroupInstanceOutput() ScalingGroupInstanceOutput {
+	return o
+}
+
+func (o ScalingGroupInstanceOutput) ToScalingGroupInstanceOutputWithContext(ctx context.Context) ScalingGroupInstanceOutput {
+	return o
+}
+
+// Whether to enable managed mode for the instance when AttachInstances is performed
+func (o ScalingGroupInstanceOutput) Entrusted() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ScalingGroupInstance) *bool { return v.Entrusted }).(pulumi.BoolPtrOutput)
+}
+
+// ECS instance ID, unique identifier of the subresource
+func (o ScalingGroupInstanceOutput) InstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingGroupInstance) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
+}
+
+// Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
+func (o ScalingGroupInstanceOutput) LifecycleHook() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ScalingGroupInstance) *bool { return v.LifecycleHook }).(pulumi.BoolPtrOutput)
+}
+
+type ScalingGroupInstanceArrayOutput struct{ *pulumi.OutputState }
+
+func (ScalingGroupInstanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScalingGroupInstance)(nil)).Elem()
+}
+
+func (o ScalingGroupInstanceArrayOutput) ToScalingGroupInstanceArrayOutput() ScalingGroupInstanceArrayOutput {
+	return o
+}
+
+func (o ScalingGroupInstanceArrayOutput) ToScalingGroupInstanceArrayOutputWithContext(ctx context.Context) ScalingGroupInstanceArrayOutput {
+	return o
+}
+
+func (o ScalingGroupInstanceArrayOutput) Index(i pulumi.IntInput) ScalingGroupInstanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ScalingGroupInstance {
+		return vs[0].([]ScalingGroupInstance)[vs[1].(int)]
+	}).(ScalingGroupInstanceOutput)
+}
+
+type ScalingGroupInstanceRemovePolicy struct {
+	// Whether to decrease the desired instance count synchronously when DetachInstances or RemoveInstances is performed
+	DecreaseDesiredCapacity *bool `pulumi:"decreaseDesiredCapacity"`
+	// Instance removal policy for DetachInstances
+	DetachOption *string `pulumi:"detachOption"`
+	// Whether to force delete the instance when RemoveInstances is performed
+	ForceDelete *bool `pulumi:"forceDelete"`
+	// ECS instance ID, unique identifier of the subresource
+	InstanceId *string `pulumi:"instanceId"`
+	// Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
+	LifecycleHook *bool `pulumi:"lifecycleHook"`
+	// Mode: How to handle an instance when it is removed from the scaling group: Detach means only remove from the scaling group, Remove means remove and delete the instance
+	Mode *string `pulumi:"mode"`
+	// Removal mode for RemoveInstances
+	RemoveMode *string `pulumi:"removeMode"`
+}
+
+// ScalingGroupInstanceRemovePolicyInput is an input type that accepts ScalingGroupInstanceRemovePolicyArgs and ScalingGroupInstanceRemovePolicyOutput values.
+// You can construct a concrete instance of `ScalingGroupInstanceRemovePolicyInput` via:
+//
+//	ScalingGroupInstanceRemovePolicyArgs{...}
+type ScalingGroupInstanceRemovePolicyInput interface {
+	pulumi.Input
+
+	ToScalingGroupInstanceRemovePolicyOutput() ScalingGroupInstanceRemovePolicyOutput
+	ToScalingGroupInstanceRemovePolicyOutputWithContext(context.Context) ScalingGroupInstanceRemovePolicyOutput
+}
+
+type ScalingGroupInstanceRemovePolicyArgs struct {
+	// Whether to decrease the desired instance count synchronously when DetachInstances or RemoveInstances is performed
+	DecreaseDesiredCapacity pulumi.BoolPtrInput `pulumi:"decreaseDesiredCapacity"`
+	// Instance removal policy for DetachInstances
+	DetachOption pulumi.StringPtrInput `pulumi:"detachOption"`
+	// Whether to force delete the instance when RemoveInstances is performed
+	ForceDelete pulumi.BoolPtrInput `pulumi:"forceDelete"`
+	// ECS instance ID, unique identifier of the subresource
+	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
+	// Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
+	LifecycleHook pulumi.BoolPtrInput `pulumi:"lifecycleHook"`
+	// Mode: How to handle an instance when it is removed from the scaling group: Detach means only remove from the scaling group, Remove means remove and delete the instance
+	Mode pulumi.StringPtrInput `pulumi:"mode"`
+	// Removal mode for RemoveInstances
+	RemoveMode pulumi.StringPtrInput `pulumi:"removeMode"`
+}
+
+func (ScalingGroupInstanceRemovePolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScalingGroupInstanceRemovePolicy)(nil)).Elem()
+}
+
+func (i ScalingGroupInstanceRemovePolicyArgs) ToScalingGroupInstanceRemovePolicyOutput() ScalingGroupInstanceRemovePolicyOutput {
+	return i.ToScalingGroupInstanceRemovePolicyOutputWithContext(context.Background())
+}
+
+func (i ScalingGroupInstanceRemovePolicyArgs) ToScalingGroupInstanceRemovePolicyOutputWithContext(ctx context.Context) ScalingGroupInstanceRemovePolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScalingGroupInstanceRemovePolicyOutput)
+}
+
+// ScalingGroupInstanceRemovePolicyArrayInput is an input type that accepts ScalingGroupInstanceRemovePolicyArray and ScalingGroupInstanceRemovePolicyArrayOutput values.
+// You can construct a concrete instance of `ScalingGroupInstanceRemovePolicyArrayInput` via:
+//
+//	ScalingGroupInstanceRemovePolicyArray{ ScalingGroupInstanceRemovePolicyArgs{...} }
+type ScalingGroupInstanceRemovePolicyArrayInput interface {
+	pulumi.Input
+
+	ToScalingGroupInstanceRemovePolicyArrayOutput() ScalingGroupInstanceRemovePolicyArrayOutput
+	ToScalingGroupInstanceRemovePolicyArrayOutputWithContext(context.Context) ScalingGroupInstanceRemovePolicyArrayOutput
+}
+
+type ScalingGroupInstanceRemovePolicyArray []ScalingGroupInstanceRemovePolicyInput
+
+func (ScalingGroupInstanceRemovePolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScalingGroupInstanceRemovePolicy)(nil)).Elem()
+}
+
+func (i ScalingGroupInstanceRemovePolicyArray) ToScalingGroupInstanceRemovePolicyArrayOutput() ScalingGroupInstanceRemovePolicyArrayOutput {
+	return i.ToScalingGroupInstanceRemovePolicyArrayOutputWithContext(context.Background())
+}
+
+func (i ScalingGroupInstanceRemovePolicyArray) ToScalingGroupInstanceRemovePolicyArrayOutputWithContext(ctx context.Context) ScalingGroupInstanceRemovePolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScalingGroupInstanceRemovePolicyArrayOutput)
+}
+
+type ScalingGroupInstanceRemovePolicyOutput struct{ *pulumi.OutputState }
+
+func (ScalingGroupInstanceRemovePolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScalingGroupInstanceRemovePolicy)(nil)).Elem()
+}
+
+func (o ScalingGroupInstanceRemovePolicyOutput) ToScalingGroupInstanceRemovePolicyOutput() ScalingGroupInstanceRemovePolicyOutput {
+	return o
+}
+
+func (o ScalingGroupInstanceRemovePolicyOutput) ToScalingGroupInstanceRemovePolicyOutputWithContext(ctx context.Context) ScalingGroupInstanceRemovePolicyOutput {
+	return o
+}
+
+// Whether to decrease the desired instance count synchronously when DetachInstances or RemoveInstances is performed
+func (o ScalingGroupInstanceRemovePolicyOutput) DecreaseDesiredCapacity() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ScalingGroupInstanceRemovePolicy) *bool { return v.DecreaseDesiredCapacity }).(pulumi.BoolPtrOutput)
+}
+
+// Instance removal policy for DetachInstances
+func (o ScalingGroupInstanceRemovePolicyOutput) DetachOption() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingGroupInstanceRemovePolicy) *string { return v.DetachOption }).(pulumi.StringPtrOutput)
+}
+
+// Whether to force delete the instance when RemoveInstances is performed
+func (o ScalingGroupInstanceRemovePolicyOutput) ForceDelete() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ScalingGroupInstanceRemovePolicy) *bool { return v.ForceDelete }).(pulumi.BoolPtrOutput)
+}
+
+// ECS instance ID, unique identifier of the subresource
+func (o ScalingGroupInstanceRemovePolicyOutput) InstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingGroupInstanceRemovePolicy) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
+}
+
+// Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
+func (o ScalingGroupInstanceRemovePolicyOutput) LifecycleHook() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ScalingGroupInstanceRemovePolicy) *bool { return v.LifecycleHook }).(pulumi.BoolPtrOutput)
+}
+
+// Mode: How to handle an instance when it is removed from the scaling group: Detach means only remove from the scaling group, Remove means remove and delete the instance
+func (o ScalingGroupInstanceRemovePolicyOutput) Mode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingGroupInstanceRemovePolicy) *string { return v.Mode }).(pulumi.StringPtrOutput)
+}
+
+// Removal mode for RemoveInstances
+func (o ScalingGroupInstanceRemovePolicyOutput) RemoveMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScalingGroupInstanceRemovePolicy) *string { return v.RemoveMode }).(pulumi.StringPtrOutput)
+}
+
+type ScalingGroupInstanceRemovePolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (ScalingGroupInstanceRemovePolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScalingGroupInstanceRemovePolicy)(nil)).Elem()
+}
+
+func (o ScalingGroupInstanceRemovePolicyArrayOutput) ToScalingGroupInstanceRemovePolicyArrayOutput() ScalingGroupInstanceRemovePolicyArrayOutput {
+	return o
+}
+
+func (o ScalingGroupInstanceRemovePolicyArrayOutput) ToScalingGroupInstanceRemovePolicyArrayOutputWithContext(ctx context.Context) ScalingGroupInstanceRemovePolicyArrayOutput {
+	return o
+}
+
+func (o ScalingGroupInstanceRemovePolicyArrayOutput) Index(i pulumi.IntInput) ScalingGroupInstanceRemovePolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ScalingGroupInstanceRemovePolicy {
+		return vs[0].([]ScalingGroupInstanceRemovePolicy)[vs[1].(int)]
+	}).(ScalingGroupInstanceRemovePolicyOutput)
+}
+
 type ScalingGroupInstancesDistribution struct {
-	// 当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+	// Whether pay-as-you-go instances are allowed to supplement spot capacity if spot instances cannot be created due to price or inventory constraints. true: allowed. false (default): not allowed.
 	CompensateWithOnDemand *bool `pulumi:"compensateWithOnDemand"`
-	// 伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+	// Minimum number of pay-as-you-go instances in the scaling group. Value range: 0~2000. If the number of pay-as-you-go instances in the group is less than this value, pay-as-you-go instances will be prioritized for creation.
 	OnDemandBaseCapacity *int `pulumi:"onDemandBaseCapacity"`
-	// 伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+	// After the scaling group meets the minimum number of pay-as-you-go instances, the proportion of pay-as-you-go instances among the excess instances. Value range: 0–100.
 	OnDemandPercentageAboveBaseCapacity *int `pulumi:"onDemandPercentageAboveBaseCapacity"`
-	// 是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+	// Whether to allow preemptible instance replacement upon expiration. If enabled, the scaling group will proactively create a new preemptible instance to replace the current one about 5 minutes before the preemptible instance is reclaimed. true: allowed. false (default): not allowed.
 	SpotInstanceRemedy *bool `pulumi:"spotInstanceRemedy"`
 }
 
@@ -603,13 +869,13 @@ type ScalingGroupInstancesDistributionInput interface {
 }
 
 type ScalingGroupInstancesDistributionArgs struct {
-	// 当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+	// Whether pay-as-you-go instances are allowed to supplement spot capacity if spot instances cannot be created due to price or inventory constraints. true: allowed. false (default): not allowed.
 	CompensateWithOnDemand pulumi.BoolPtrInput `pulumi:"compensateWithOnDemand"`
-	// 伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+	// Minimum number of pay-as-you-go instances in the scaling group. Value range: 0~2000. If the number of pay-as-you-go instances in the group is less than this value, pay-as-you-go instances will be prioritized for creation.
 	OnDemandBaseCapacity pulumi.IntPtrInput `pulumi:"onDemandBaseCapacity"`
-	// 伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+	// After the scaling group meets the minimum number of pay-as-you-go instances, the proportion of pay-as-you-go instances among the excess instances. Value range: 0–100.
 	OnDemandPercentageAboveBaseCapacity pulumi.IntPtrInput `pulumi:"onDemandPercentageAboveBaseCapacity"`
-	// 是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+	// Whether to allow preemptible instance replacement upon expiration. If enabled, the scaling group will proactively create a new preemptible instance to replace the current one about 5 minutes before the preemptible instance is reclaimed. true: allowed. false (default): not allowed.
 	SpotInstanceRemedy pulumi.BoolPtrInput `pulumi:"spotInstanceRemedy"`
 }
 
@@ -690,22 +956,22 @@ func (o ScalingGroupInstancesDistributionOutput) ToScalingGroupInstancesDistribu
 	}).(ScalingGroupInstancesDistributionPtrOutput)
 }
 
-// 当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+// Whether pay-as-you-go instances are allowed to supplement spot capacity if spot instances cannot be created due to price or inventory constraints. true: allowed. false (default): not allowed.
 func (o ScalingGroupInstancesDistributionOutput) CompensateWithOnDemand() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ScalingGroupInstancesDistribution) *bool { return v.CompensateWithOnDemand }).(pulumi.BoolPtrOutput)
 }
 
-// 伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+// Minimum number of pay-as-you-go instances in the scaling group. Value range: 0~2000. If the number of pay-as-you-go instances in the group is less than this value, pay-as-you-go instances will be prioritized for creation.
 func (o ScalingGroupInstancesDistributionOutput) OnDemandBaseCapacity() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ScalingGroupInstancesDistribution) *int { return v.OnDemandBaseCapacity }).(pulumi.IntPtrOutput)
 }
 
-// 伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+// After the scaling group meets the minimum number of pay-as-you-go instances, the proportion of pay-as-you-go instances among the excess instances. Value range: 0–100.
 func (o ScalingGroupInstancesDistributionOutput) OnDemandPercentageAboveBaseCapacity() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ScalingGroupInstancesDistribution) *int { return v.OnDemandPercentageAboveBaseCapacity }).(pulumi.IntPtrOutput)
 }
 
-// 是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+// Whether to allow preemptible instance replacement upon expiration. If enabled, the scaling group will proactively create a new preemptible instance to replace the current one about 5 minutes before the preemptible instance is reclaimed. true: allowed. false (default): not allowed.
 func (o ScalingGroupInstancesDistributionOutput) SpotInstanceRemedy() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ScalingGroupInstancesDistribution) *bool { return v.SpotInstanceRemedy }).(pulumi.BoolPtrOutput)
 }
@@ -734,7 +1000,7 @@ func (o ScalingGroupInstancesDistributionPtrOutput) Elem() ScalingGroupInstances
 	}).(ScalingGroupInstancesDistributionOutput)
 }
 
-// 当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+// Whether pay-as-you-go instances are allowed to supplement spot capacity if spot instances cannot be created due to price or inventory constraints. true: allowed. false (default): not allowed.
 func (o ScalingGroupInstancesDistributionPtrOutput) CompensateWithOnDemand() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ScalingGroupInstancesDistribution) *bool {
 		if v == nil {
@@ -744,7 +1010,7 @@ func (o ScalingGroupInstancesDistributionPtrOutput) CompensateWithOnDemand() pul
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+// Minimum number of pay-as-you-go instances in the scaling group. Value range: 0~2000. If the number of pay-as-you-go instances in the group is less than this value, pay-as-you-go instances will be prioritized for creation.
 func (o ScalingGroupInstancesDistributionPtrOutput) OnDemandBaseCapacity() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ScalingGroupInstancesDistribution) *int {
 		if v == nil {
@@ -754,7 +1020,7 @@ func (o ScalingGroupInstancesDistributionPtrOutput) OnDemandBaseCapacity() pulum
 	}).(pulumi.IntPtrOutput)
 }
 
-// 伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+// After the scaling group meets the minimum number of pay-as-you-go instances, the proportion of pay-as-you-go instances among the excess instances. Value range: 0–100.
 func (o ScalingGroupInstancesDistributionPtrOutput) OnDemandPercentageAboveBaseCapacity() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ScalingGroupInstancesDistribution) *int {
 		if v == nil {
@@ -764,7 +1030,7 @@ func (o ScalingGroupInstancesDistributionPtrOutput) OnDemandPercentageAboveBaseC
 	}).(pulumi.IntPtrOutput)
 }
 
-// 是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+// Whether to allow preemptible instance replacement upon expiration. If enabled, the scaling group will proactively create a new preemptible instance to replace the current one about 5 minutes before the preemptible instance is reclaimed. true: allowed. false (default): not allowed.
 func (o ScalingGroupInstancesDistributionPtrOutput) SpotInstanceRemedy() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ScalingGroupInstancesDistribution) *bool {
 		if v == nil {
@@ -775,9 +1041,9 @@ func (o ScalingGroupInstancesDistributionPtrOutput) SpotInstanceRemedy() pulumi.
 }
 
 type ScalingGroupLaunchTemplateOverride struct {
-	// 指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
+	// Specify the instance type. This parameter is valid only when the LaunchTemplateId parameter is set.
 	InstanceType *string `pulumi:"instanceType"`
-	// 指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+	// Specify the maximum hourly price for spot instance types. This parameter is valid only when the LaunchTemplateId parameter is set and the launch template's billing mode is SpotWithPriceLimit.
 	PriceLimit *float64 `pulumi:"priceLimit"`
 }
 
@@ -793,9 +1059,9 @@ type ScalingGroupLaunchTemplateOverrideInput interface {
 }
 
 type ScalingGroupLaunchTemplateOverrideArgs struct {
-	// 指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
+	// Specify the instance type. This parameter is valid only when the LaunchTemplateId parameter is set.
 	InstanceType pulumi.StringPtrInput `pulumi:"instanceType"`
-	// 指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+	// Specify the maximum hourly price for spot instance types. This parameter is valid only when the LaunchTemplateId parameter is set and the launch template's billing mode is SpotWithPriceLimit.
 	PriceLimit pulumi.Float64PtrInput `pulumi:"priceLimit"`
 }
 
@@ -850,12 +1116,12 @@ func (o ScalingGroupLaunchTemplateOverrideOutput) ToScalingGroupLaunchTemplateOv
 	return o
 }
 
-// 指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
+// Specify the instance type. This parameter is valid only when the LaunchTemplateId parameter is set.
 func (o ScalingGroupLaunchTemplateOverrideOutput) InstanceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingGroupLaunchTemplateOverride) *string { return v.InstanceType }).(pulumi.StringPtrOutput)
 }
 
-// 指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+// Specify the maximum hourly price for spot instance types. This parameter is valid only when the LaunchTemplateId parameter is set and the launch template's billing mode is SpotWithPriceLimit.
 func (o ScalingGroupLaunchTemplateOverrideOutput) PriceLimit() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v ScalingGroupLaunchTemplateOverride) *float64 { return v.PriceLimit }).(pulumi.Float64PtrOutput)
 }
@@ -881,13 +1147,13 @@ func (o ScalingGroupLaunchTemplateOverrideArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type ScalingGroupServerGroupAttribute struct {
-	// 负载均衡后端服务器组中服务器的端口号。取值1 ～ 65535。
+	// Port number of the server in the backend server group for load balancing. Range: 1–65535.
 	Port *int `pulumi:"port"`
-	// 负载均衡后端服务器组的ID。
+	// Backend server group ID for load balancing.
 	ServerGroupId *string `pulumi:"serverGroupId"`
-	// 负载均衡服务器组类型。单个CLB/ALB最多支持添加20个后端服务器组，所有CLB/ALB最多支持添加100个后端服务器。ALB：应用型负载均衡。CLB：传统型型负载均衡（默认）。
+	// Load balancing server group type. A single CLB/ALB supports up to 20 backend server groups, and the total number of backend servers supported by all CLB/ALB is 100. ALB: Application Load Balancer. CLB: Classic Load Balancer (default).
 	Type *string `pulumi:"type"`
-	// 负载均衡后端服务器组中服务器的权重。
+	// Weight of servers in the backend server group of the load balancer
 	Weight *int `pulumi:"weight"`
 }
 
@@ -903,13 +1169,13 @@ type ScalingGroupServerGroupAttributeInput interface {
 }
 
 type ScalingGroupServerGroupAttributeArgs struct {
-	// 负载均衡后端服务器组中服务器的端口号。取值1 ～ 65535。
+	// Port number of the server in the backend server group for load balancing. Range: 1–65535.
 	Port pulumi.IntPtrInput `pulumi:"port"`
-	// 负载均衡后端服务器组的ID。
+	// Backend server group ID for load balancing.
 	ServerGroupId pulumi.StringPtrInput `pulumi:"serverGroupId"`
-	// 负载均衡服务器组类型。单个CLB/ALB最多支持添加20个后端服务器组，所有CLB/ALB最多支持添加100个后端服务器。ALB：应用型负载均衡。CLB：传统型型负载均衡（默认）。
+	// Load balancing server group type. A single CLB/ALB supports up to 20 backend server groups, and the total number of backend servers supported by all CLB/ALB is 100. ALB: Application Load Balancer. CLB: Classic Load Balancer (default).
 	Type pulumi.StringPtrInput `pulumi:"type"`
-	// 负载均衡后端服务器组中服务器的权重。
+	// Weight of servers in the backend server group of the load balancer
 	Weight pulumi.IntPtrInput `pulumi:"weight"`
 }
 
@@ -964,22 +1230,22 @@ func (o ScalingGroupServerGroupAttributeOutput) ToScalingGroupServerGroupAttribu
 	return o
 }
 
-// 负载均衡后端服务器组中服务器的端口号。取值1 ～ 65535。
+// Port number of the server in the backend server group for load balancing. Range: 1–65535.
 func (o ScalingGroupServerGroupAttributeOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ScalingGroupServerGroupAttribute) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
-// 负载均衡后端服务器组的ID。
+// Backend server group ID for load balancing.
 func (o ScalingGroupServerGroupAttributeOutput) ServerGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingGroupServerGroupAttribute) *string { return v.ServerGroupId }).(pulumi.StringPtrOutput)
 }
 
-// 负载均衡服务器组类型。单个CLB/ALB最多支持添加20个后端服务器组，所有CLB/ALB最多支持添加100个后端服务器。ALB：应用型负载均衡。CLB：传统型型负载均衡（默认）。
+// Load balancing server group type. A single CLB/ALB supports up to 20 backend server groups, and the total number of backend servers supported by all CLB/ALB is 100. ALB: Application Load Balancer. CLB: Classic Load Balancer (default).
 func (o ScalingGroupServerGroupAttributeOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingGroupServerGroupAttribute) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
-// 负载均衡后端服务器组中服务器的权重。
+// Weight of servers in the backend server group of the load balancer
 func (o ScalingGroupServerGroupAttributeOutput) Weight() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ScalingGroupServerGroupAttribute) *int { return v.Weight }).(pulumi.IntPtrOutput)
 }
@@ -1005,9 +1271,9 @@ func (o ScalingGroupServerGroupAttributeArrayOutput) Index(i pulumi.IntInput) Sc
 }
 
 type ScalingGroupTag struct {
-	// 用户标签的标签键。
+	// User label tag key
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。
+	// The value of the user tag.
 	Value *string `pulumi:"value"`
 }
 
@@ -1023,9 +1289,9 @@ type ScalingGroupTagInput interface {
 }
 
 type ScalingGroupTagArgs struct {
-	// 用户标签的标签键。
+	// User label tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// The value of the user tag.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -1080,12 +1346,12 @@ func (o ScalingGroupTagOutput) ToScalingGroupTagOutputWithContext(ctx context.Co
 	return o
 }
 
-// 用户标签的标签键。
+// User label tag key
 func (o ScalingGroupTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingGroupTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。
+// The value of the user tag.
 func (o ScalingGroupTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingGroupTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -1111,9 +1377,9 @@ func (o ScalingGroupTagArrayOutput) Index(i pulumi.IntInput) ScalingGroupTagOutp
 }
 
 type ScalingLifecycleHookLifecycleCommand struct {
-	// 云助手命令ID，表示触发生命周期挂钩后在实例中执行云助手命令。如果命令执行成功，则按照CONTINUE执行挂起结束后的策略。如果命令执行失败/超时或生命周期挂钩超时，则按照LifecycleHookPolicy参数的配置执行挂起结束后的策略。
+	// Cloud Assistant command ID, indicates that after the lifecycle hook is triggered, the Cloud Assistant command is executed on the instance. If the command executes successfully, the post-suspend policy is executed according to CONTINUE. If the command fails, times out, or the lifecycle hook times out, the post-suspend policy is executed according to the LifecycleHookPolicy parameter configuration.
 	CommandId *string `pulumi:"commandId"`
-	// 云助手命令中的参数和参数值。参数的个数范围为0~60，且需要注意：参数不允许为空字符串，最多支持64个字符。值允许为空字符串。参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+	// Parameters and values in the Cloud Assistant command. The number of parameters ranges from 0 to 60. Note: Parameters cannot be empty strings and can have up to 64 characters. Values can be empty strings. After Base64 encoding, the combined length of parameters and the original command content must not exceed 16 KB. The set of parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
 	Parameters *string `pulumi:"parameters"`
 }
 
@@ -1129,9 +1395,9 @@ type ScalingLifecycleHookLifecycleCommandInput interface {
 }
 
 type ScalingLifecycleHookLifecycleCommandArgs struct {
-	// 云助手命令ID，表示触发生命周期挂钩后在实例中执行云助手命令。如果命令执行成功，则按照CONTINUE执行挂起结束后的策略。如果命令执行失败/超时或生命周期挂钩超时，则按照LifecycleHookPolicy参数的配置执行挂起结束后的策略。
+	// Cloud Assistant command ID, indicates that after the lifecycle hook is triggered, the Cloud Assistant command is executed on the instance. If the command executes successfully, the post-suspend policy is executed according to CONTINUE. If the command fails, times out, or the lifecycle hook times out, the post-suspend policy is executed according to the LifecycleHookPolicy parameter configuration.
 	CommandId pulumi.StringPtrInput `pulumi:"commandId"`
-	// 云助手命令中的参数和参数值。参数的个数范围为0~60，且需要注意：参数不允许为空字符串，最多支持64个字符。值允许为空字符串。参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+	// Parameters and values in the Cloud Assistant command. The number of parameters ranges from 0 to 60. Note: Parameters cannot be empty strings and can have up to 64 characters. Values can be empty strings. After Base64 encoding, the combined length of parameters and the original command content must not exceed 16 KB. The set of parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
 	Parameters pulumi.StringPtrInput `pulumi:"parameters"`
 }
 
@@ -1212,12 +1478,12 @@ func (o ScalingLifecycleHookLifecycleCommandOutput) ToScalingLifecycleHookLifecy
 	}).(ScalingLifecycleHookLifecycleCommandPtrOutput)
 }
 
-// 云助手命令ID，表示触发生命周期挂钩后在实例中执行云助手命令。如果命令执行成功，则按照CONTINUE执行挂起结束后的策略。如果命令执行失败/超时或生命周期挂钩超时，则按照LifecycleHookPolicy参数的配置执行挂起结束后的策略。
+// Cloud Assistant command ID, indicates that after the lifecycle hook is triggered, the Cloud Assistant command is executed on the instance. If the command executes successfully, the post-suspend policy is executed according to CONTINUE. If the command fails, times out, or the lifecycle hook times out, the post-suspend policy is executed according to the LifecycleHookPolicy parameter configuration.
 func (o ScalingLifecycleHookLifecycleCommandOutput) CommandId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingLifecycleHookLifecycleCommand) *string { return v.CommandId }).(pulumi.StringPtrOutput)
 }
 
-// 云助手命令中的参数和参数值。参数的个数范围为0~60，且需要注意：参数不允许为空字符串，最多支持64个字符。值允许为空字符串。参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+// Parameters and values in the Cloud Assistant command. The number of parameters ranges from 0 to 60. Note: Parameters cannot be empty strings and can have up to 64 characters. Values can be empty strings. After Base64 encoding, the combined length of parameters and the original command content must not exceed 16 KB. The set of parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
 func (o ScalingLifecycleHookLifecycleCommandOutput) Parameters() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingLifecycleHookLifecycleCommand) *string { return v.Parameters }).(pulumi.StringPtrOutput)
 }
@@ -1246,7 +1512,7 @@ func (o ScalingLifecycleHookLifecycleCommandPtrOutput) Elem() ScalingLifecycleHo
 	}).(ScalingLifecycleHookLifecycleCommandOutput)
 }
 
-// 云助手命令ID，表示触发生命周期挂钩后在实例中执行云助手命令。如果命令执行成功，则按照CONTINUE执行挂起结束后的策略。如果命令执行失败/超时或生命周期挂钩超时，则按照LifecycleHookPolicy参数的配置执行挂起结束后的策略。
+// Cloud Assistant command ID, indicates that after the lifecycle hook is triggered, the Cloud Assistant command is executed on the instance. If the command executes successfully, the post-suspend policy is executed according to CONTINUE. If the command fails, times out, or the lifecycle hook times out, the post-suspend policy is executed according to the LifecycleHookPolicy parameter configuration.
 func (o ScalingLifecycleHookLifecycleCommandPtrOutput) CommandId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScalingLifecycleHookLifecycleCommand) *string {
 		if v == nil {
@@ -1256,7 +1522,7 @@ func (o ScalingLifecycleHookLifecycleCommandPtrOutput) CommandId() pulumi.String
 	}).(pulumi.StringPtrOutput)
 }
 
-// 云助手命令中的参数和参数值。参数的个数范围为0~60，且需要注意：参数不允许为空字符串，最多支持64个字符。值允许为空字符串。参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+// Parameters and values in the Cloud Assistant command. The number of parameters ranges from 0 to 60. Note: Parameters cannot be empty strings and can have up to 64 characters. Values can be empty strings. After Base64 encoding, the combined length of parameters and the original command content must not exceed 16 KB. The set of parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
 func (o ScalingLifecycleHookLifecycleCommandPtrOutput) Parameters() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScalingLifecycleHookLifecycleCommand) *string {
 		if v == nil {
@@ -1267,16 +1533,16 @@ func (o ScalingLifecycleHookLifecycleCommandPtrOutput) Parameters() pulumi.Strin
 }
 
 type ScalingPolicyAlarmPolicy struct {
-	// 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
+	// Detailed monitoring metric information for single-metric monitoring. Valid only when ScalingPolicyType is set to Alarm.
 	Condition *ScalingPolicyAlarmPolicyCondition `pulumi:"condition"`
-	// 多指标告警时的判定条件。&&：多个指标同时成立才判定为触发告警。||（默认）：任意指标满足条件就判定为触发告警。
+	// Determination conditions for multi-metric alarms. &&: Alarm is triggered only when all metrics meet the conditions. || (default): Alarm is triggered when any metric meets the condition.
 	ConditionOperator *string                             `pulumi:"conditionOperator"`
 	Conditions        []ScalingPolicyAlarmPolicyCondition `pulumi:"conditions"`
-	// 报警任务的生效时间段。
+	// The effective period for the alarm task.
 	Effective *string `pulumi:"effective"`
-	// 当监控指标数据连续几次达到阈值时，即触发伸缩行为。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+	// Scaling actions are triggered when monitoring metric data reaches the threshold for several consecutive times. Valid only when ScalingPolicyType is set to Alarm and required.
 	EvaluationCount *int `pulumi:"evaluationCount"`
-	// 报警任务的类型，取值：Static：表示由agent采集的静态监控。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+	// Type of alarm task. Options: Static: static monitoring collected by agent. Valid only when ScalingPolicyType is set to Alarm and required.
 	RuleType *string `pulumi:"ruleType"`
 }
 
@@ -1292,16 +1558,16 @@ type ScalingPolicyAlarmPolicyInput interface {
 }
 
 type ScalingPolicyAlarmPolicyArgs struct {
-	// 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
+	// Detailed monitoring metric information for single-metric monitoring. Valid only when ScalingPolicyType is set to Alarm.
 	Condition ScalingPolicyAlarmPolicyConditionPtrInput `pulumi:"condition"`
-	// 多指标告警时的判定条件。&&：多个指标同时成立才判定为触发告警。||（默认）：任意指标满足条件就判定为触发告警。
+	// Determination conditions for multi-metric alarms. &&: Alarm is triggered only when all metrics meet the conditions. || (default): Alarm is triggered when any metric meets the condition.
 	ConditionOperator pulumi.StringPtrInput                       `pulumi:"conditionOperator"`
 	Conditions        ScalingPolicyAlarmPolicyConditionArrayInput `pulumi:"conditions"`
-	// 报警任务的生效时间段。
+	// The effective period for the alarm task.
 	Effective pulumi.StringPtrInput `pulumi:"effective"`
-	// 当监控指标数据连续几次达到阈值时，即触发伸缩行为。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+	// Scaling actions are triggered when monitoring metric data reaches the threshold for several consecutive times. Valid only when ScalingPolicyType is set to Alarm and required.
 	EvaluationCount pulumi.IntPtrInput `pulumi:"evaluationCount"`
-	// 报警任务的类型，取值：Static：表示由agent采集的静态监控。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+	// Type of alarm task. Options: Static: static monitoring collected by agent. Valid only when ScalingPolicyType is set to Alarm and required.
 	RuleType pulumi.StringPtrInput `pulumi:"ruleType"`
 }
 
@@ -1382,12 +1648,12 @@ func (o ScalingPolicyAlarmPolicyOutput) ToScalingPolicyAlarmPolicyPtrOutputWithC
 	}).(ScalingPolicyAlarmPolicyPtrOutput)
 }
 
-// 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
+// Detailed monitoring metric information for single-metric monitoring. Valid only when ScalingPolicyType is set to Alarm.
 func (o ScalingPolicyAlarmPolicyOutput) Condition() ScalingPolicyAlarmPolicyConditionPtrOutput {
 	return o.ApplyT(func(v ScalingPolicyAlarmPolicy) *ScalingPolicyAlarmPolicyCondition { return v.Condition }).(ScalingPolicyAlarmPolicyConditionPtrOutput)
 }
 
-// 多指标告警时的判定条件。&&：多个指标同时成立才判定为触发告警。||（默认）：任意指标满足条件就判定为触发告警。
+// Determination conditions for multi-metric alarms. &&: Alarm is triggered only when all metrics meet the conditions. || (default): Alarm is triggered when any metric meets the condition.
 func (o ScalingPolicyAlarmPolicyOutput) ConditionOperator() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingPolicyAlarmPolicy) *string { return v.ConditionOperator }).(pulumi.StringPtrOutput)
 }
@@ -1396,17 +1662,17 @@ func (o ScalingPolicyAlarmPolicyOutput) Conditions() ScalingPolicyAlarmPolicyCon
 	return o.ApplyT(func(v ScalingPolicyAlarmPolicy) []ScalingPolicyAlarmPolicyCondition { return v.Conditions }).(ScalingPolicyAlarmPolicyConditionArrayOutput)
 }
 
-// 报警任务的生效时间段。
+// The effective period for the alarm task.
 func (o ScalingPolicyAlarmPolicyOutput) Effective() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingPolicyAlarmPolicy) *string { return v.Effective }).(pulumi.StringPtrOutput)
 }
 
-// 当监控指标数据连续几次达到阈值时，即触发伸缩行为。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+// Scaling actions are triggered when monitoring metric data reaches the threshold for several consecutive times. Valid only when ScalingPolicyType is set to Alarm and required.
 func (o ScalingPolicyAlarmPolicyOutput) EvaluationCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ScalingPolicyAlarmPolicy) *int { return v.EvaluationCount }).(pulumi.IntPtrOutput)
 }
 
-// 报警任务的类型，取值：Static：表示由agent采集的静态监控。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+// Type of alarm task. Options: Static: static monitoring collected by agent. Valid only when ScalingPolicyType is set to Alarm and required.
 func (o ScalingPolicyAlarmPolicyOutput) RuleType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingPolicyAlarmPolicy) *string { return v.RuleType }).(pulumi.StringPtrOutput)
 }
@@ -1435,7 +1701,7 @@ func (o ScalingPolicyAlarmPolicyPtrOutput) Elem() ScalingPolicyAlarmPolicyOutput
 	}).(ScalingPolicyAlarmPolicyOutput)
 }
 
-// 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
+// Detailed monitoring metric information for single-metric monitoring. Valid only when ScalingPolicyType is set to Alarm.
 func (o ScalingPolicyAlarmPolicyPtrOutput) Condition() ScalingPolicyAlarmPolicyConditionPtrOutput {
 	return o.ApplyT(func(v *ScalingPolicyAlarmPolicy) *ScalingPolicyAlarmPolicyCondition {
 		if v == nil {
@@ -1445,7 +1711,7 @@ func (o ScalingPolicyAlarmPolicyPtrOutput) Condition() ScalingPolicyAlarmPolicyC
 	}).(ScalingPolicyAlarmPolicyConditionPtrOutput)
 }
 
-// 多指标告警时的判定条件。&&：多个指标同时成立才判定为触发告警。||（默认）：任意指标满足条件就判定为触发告警。
+// Determination conditions for multi-metric alarms. &&: Alarm is triggered only when all metrics meet the conditions. || (default): Alarm is triggered when any metric meets the condition.
 func (o ScalingPolicyAlarmPolicyPtrOutput) ConditionOperator() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScalingPolicyAlarmPolicy) *string {
 		if v == nil {
@@ -1464,7 +1730,7 @@ func (o ScalingPolicyAlarmPolicyPtrOutput) Conditions() ScalingPolicyAlarmPolicy
 	}).(ScalingPolicyAlarmPolicyConditionArrayOutput)
 }
 
-// 报警任务的生效时间段。
+// The effective period for the alarm task.
 func (o ScalingPolicyAlarmPolicyPtrOutput) Effective() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScalingPolicyAlarmPolicy) *string {
 		if v == nil {
@@ -1474,7 +1740,7 @@ func (o ScalingPolicyAlarmPolicyPtrOutput) Effective() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 当监控指标数据连续几次达到阈值时，即触发伸缩行为。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+// Scaling actions are triggered when monitoring metric data reaches the threshold for several consecutive times. Valid only when ScalingPolicyType is set to Alarm and required.
 func (o ScalingPolicyAlarmPolicyPtrOutput) EvaluationCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ScalingPolicyAlarmPolicy) *int {
 		if v == nil {
@@ -1484,7 +1750,7 @@ func (o ScalingPolicyAlarmPolicyPtrOutput) EvaluationCount() pulumi.IntPtrOutput
 	}).(pulumi.IntPtrOutput)
 }
 
-// 报警任务的类型，取值：Static：表示由agent采集的静态监控。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+// Type of alarm task. Options: Static: static monitoring collected by agent. Valid only when ScalingPolicyType is set to Alarm and required.
 func (o ScalingPolicyAlarmPolicyPtrOutput) RuleType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScalingPolicyAlarmPolicy) *string {
 		if v == nil {
@@ -1495,13 +1761,13 @@ func (o ScalingPolicyAlarmPolicyPtrOutput) RuleType() pulumi.StringPtrOutput {
 }
 
 type ScalingPolicyAlarmPolicyCondition struct {
-	// 指标告警时的规则表达式对象。>：大于。<：小于。=：等于。
+	// Rule expression object for metric alarms. >: Greater than. <: Less than. =: Equal to.
 	ComparisonOperator *string `pulumi:"comparisonOperator"`
-	// 指标告警时的监控指标名称。CpuTotal*Max：带内CPU使用率最大值。CpuTotal*Min：带内CPU使用率最小值。CpuTotal*Avg：带内CPU使用率平均值。MemoryUsedUtilization*Max：带内内存使用率最大值。MemoryUsedUtilization*Min：带内内存使用率最小值。MemoryUsedUtilization*Avg：带内内存使用率平均值。Instance*CpuBusy*Max：带外CPU利用率最大值。Instance*CpuBusy*Min：带外CPU利用率最小值。Instance*CpuBusy*Avg：带外CPU利用率平均值。Instance*NetTxBits*Avg: 带外网络流出速率平均值。Instance*NetRxBits*Avg: 带外网络流入速率平均值。Instance*NetTxPackets*Avg: 带外网络发送包速率平均值。Instance*NetRxPackets*Avg: 带外网络接收包速率平均值。SystemDiskReadBytes*Avg: 带内系统盘读带宽平均值。SystemDiskWriteBytes*Avg: 带内系统盘写带宽平均值。SystemDiskReadIOPS*Avg: 带内系统盘读IOPS平均值。SystemDiskWriteIOPS*Avg: 带内系统盘写IOPS平均值。NetTcpConnection_Avg: 带内TCP连接数平均值。
+	// Monitoring metric names for metric alarms. CpuTotal*Max: Maximum in-band CPU usage. CpuTotal*Min: Minimum in-band CPU usage. CpuTotal*Avg: Average in-band CPU usage. MemoryUsedUtilization*Max: Maximum in-band memory usage. MemoryUsedUtilization*Min: Minimum in-band memory usage. MemoryUsedUtilization*Avg: Average in-band memory usage. Instance*CpuBusy*Max: Maximum out-of-band CPU utilization. Instance*CpuBusy*Min: Minimum out-of-band CPU utilization. Instance*CpuBusy*Avg: Average out-of-band CPU utilization. Instance*NetTxBits*Avg: Average out-of-band network outbound rate. Instance*NetRxBits*Avg: Average out-of-band network inbound rate. Instance*NetTxPackets*Avg: Average out-of-band network packet send rate. Instance*NetRxPackets*Avg: Average out-of-band network packet receive rate. SystemDiskReadBytes*Avg: Average in-band system disk read bandwidth. SystemDiskWriteBytes*Avg: Average in-band system disk write bandwidth. SystemDiskReadIOPS*Avg: Average in-band system disk read IOPS. SystemDiskWriteIOPS*Avg: Average in-band system disk write IOPS. NetTcpConnection_Avg: Average in-band TCP connection count.
 	MetricName *string `pulumi:"metricName"`
-	// 指标告警时的监控指标阈值的单位。当AlarmPolicy.Conditions.MetricName参数取值为CPU/内存使用率时: Percent。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写带宽时: Bytes/Second(IEC)。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写IOPS时: Count/Second。当AlarmPolicy.Conditions.MetricName参数取值为TCP连接数时: Count。当AlarmPolicy.Condition.MetricName参数取值为网络流入/流出速率时: Bits/Second(IEC)。当AlarmPolicy.Condition.MetricName参数取值为网络收发包速率时: Packet/Second。
+	// The unit for the monitoring metric threshold when an alarm is triggered. When the AlarmPolicy.Conditions.MetricName parameter is set to CPU/memory usage: Percent. When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write bandwidth: Bytes/Second(IEC). When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write IOPS: Count/Second. When the AlarmPolicy.Conditions.MetricName parameter is set to TCP connections: Count. When the AlarmPolicy.Condition.MetricName parameter is set to network inbound/outbound rate: Bits/Second(IEC). When the AlarmPolicy.Condition.MetricName parameter is set to network packet transmission rate: Packet/Second.
 	MetricUnit *string `pulumi:"metricUnit"`
-	// 指标告警时的监控指标的阈值。当AlarmPolicy.Conditions.MetricUnit取值为Percent时：1 ～ 100。当AlarmPolicy.Conditions.MetricUnit取值为Bytes/Second(IEC)时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count/Second时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Bits/Second(IEC)时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Packet/Second时：大于0的整数。
+	// The threshold value for the monitoring metric when an alarm is triggered. When AlarmPolicy.Conditions.MetricUnit is set to Percent: 1–100. When AlarmPolicy.Conditions.MetricUnit is set to Bytes/Second(IEC): an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count/Second: an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count: an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Bits/Second(IEC): an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Packet/Second: an integer greater than 0.
 	Threshold *string `pulumi:"threshold"`
 }
 
@@ -1517,13 +1783,13 @@ type ScalingPolicyAlarmPolicyConditionInput interface {
 }
 
 type ScalingPolicyAlarmPolicyConditionArgs struct {
-	// 指标告警时的规则表达式对象。>：大于。<：小于。=：等于。
+	// Rule expression object for metric alarms. >: Greater than. <: Less than. =: Equal to.
 	ComparisonOperator pulumi.StringPtrInput `pulumi:"comparisonOperator"`
-	// 指标告警时的监控指标名称。CpuTotal*Max：带内CPU使用率最大值。CpuTotal*Min：带内CPU使用率最小值。CpuTotal*Avg：带内CPU使用率平均值。MemoryUsedUtilization*Max：带内内存使用率最大值。MemoryUsedUtilization*Min：带内内存使用率最小值。MemoryUsedUtilization*Avg：带内内存使用率平均值。Instance*CpuBusy*Max：带外CPU利用率最大值。Instance*CpuBusy*Min：带外CPU利用率最小值。Instance*CpuBusy*Avg：带外CPU利用率平均值。Instance*NetTxBits*Avg: 带外网络流出速率平均值。Instance*NetRxBits*Avg: 带外网络流入速率平均值。Instance*NetTxPackets*Avg: 带外网络发送包速率平均值。Instance*NetRxPackets*Avg: 带外网络接收包速率平均值。SystemDiskReadBytes*Avg: 带内系统盘读带宽平均值。SystemDiskWriteBytes*Avg: 带内系统盘写带宽平均值。SystemDiskReadIOPS*Avg: 带内系统盘读IOPS平均值。SystemDiskWriteIOPS*Avg: 带内系统盘写IOPS平均值。NetTcpConnection_Avg: 带内TCP连接数平均值。
+	// Monitoring metric names for metric alarms. CpuTotal*Max: Maximum in-band CPU usage. CpuTotal*Min: Minimum in-band CPU usage. CpuTotal*Avg: Average in-band CPU usage. MemoryUsedUtilization*Max: Maximum in-band memory usage. MemoryUsedUtilization*Min: Minimum in-band memory usage. MemoryUsedUtilization*Avg: Average in-band memory usage. Instance*CpuBusy*Max: Maximum out-of-band CPU utilization. Instance*CpuBusy*Min: Minimum out-of-band CPU utilization. Instance*CpuBusy*Avg: Average out-of-band CPU utilization. Instance*NetTxBits*Avg: Average out-of-band network outbound rate. Instance*NetRxBits*Avg: Average out-of-band network inbound rate. Instance*NetTxPackets*Avg: Average out-of-band network packet send rate. Instance*NetRxPackets*Avg: Average out-of-band network packet receive rate. SystemDiskReadBytes*Avg: Average in-band system disk read bandwidth. SystemDiskWriteBytes*Avg: Average in-band system disk write bandwidth. SystemDiskReadIOPS*Avg: Average in-band system disk read IOPS. SystemDiskWriteIOPS*Avg: Average in-band system disk write IOPS. NetTcpConnection_Avg: Average in-band TCP connection count.
 	MetricName pulumi.StringPtrInput `pulumi:"metricName"`
-	// 指标告警时的监控指标阈值的单位。当AlarmPolicy.Conditions.MetricName参数取值为CPU/内存使用率时: Percent。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写带宽时: Bytes/Second(IEC)。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写IOPS时: Count/Second。当AlarmPolicy.Conditions.MetricName参数取值为TCP连接数时: Count。当AlarmPolicy.Condition.MetricName参数取值为网络流入/流出速率时: Bits/Second(IEC)。当AlarmPolicy.Condition.MetricName参数取值为网络收发包速率时: Packet/Second。
+	// The unit for the monitoring metric threshold when an alarm is triggered. When the AlarmPolicy.Conditions.MetricName parameter is set to CPU/memory usage: Percent. When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write bandwidth: Bytes/Second(IEC). When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write IOPS: Count/Second. When the AlarmPolicy.Conditions.MetricName parameter is set to TCP connections: Count. When the AlarmPolicy.Condition.MetricName parameter is set to network inbound/outbound rate: Bits/Second(IEC). When the AlarmPolicy.Condition.MetricName parameter is set to network packet transmission rate: Packet/Second.
 	MetricUnit pulumi.StringPtrInput `pulumi:"metricUnit"`
-	// 指标告警时的监控指标的阈值。当AlarmPolicy.Conditions.MetricUnit取值为Percent时：1 ～ 100。当AlarmPolicy.Conditions.MetricUnit取值为Bytes/Second(IEC)时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count/Second时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Bits/Second(IEC)时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Packet/Second时：大于0的整数。
+	// The threshold value for the monitoring metric when an alarm is triggered. When AlarmPolicy.Conditions.MetricUnit is set to Percent: 1–100. When AlarmPolicy.Conditions.MetricUnit is set to Bytes/Second(IEC): an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count/Second: an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count: an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Bits/Second(IEC): an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Packet/Second: an integer greater than 0.
 	Threshold pulumi.StringPtrInput `pulumi:"threshold"`
 }
 
@@ -1629,22 +1895,22 @@ func (o ScalingPolicyAlarmPolicyConditionOutput) ToScalingPolicyAlarmPolicyCondi
 	}).(ScalingPolicyAlarmPolicyConditionPtrOutput)
 }
 
-// 指标告警时的规则表达式对象。>：大于。<：小于。=：等于。
+// Rule expression object for metric alarms. >: Greater than. <: Less than. =: Equal to.
 func (o ScalingPolicyAlarmPolicyConditionOutput) ComparisonOperator() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingPolicyAlarmPolicyCondition) *string { return v.ComparisonOperator }).(pulumi.StringPtrOutput)
 }
 
-// 指标告警时的监控指标名称。CpuTotal*Max：带内CPU使用率最大值。CpuTotal*Min：带内CPU使用率最小值。CpuTotal*Avg：带内CPU使用率平均值。MemoryUsedUtilization*Max：带内内存使用率最大值。MemoryUsedUtilization*Min：带内内存使用率最小值。MemoryUsedUtilization*Avg：带内内存使用率平均值。Instance*CpuBusy*Max：带外CPU利用率最大值。Instance*CpuBusy*Min：带外CPU利用率最小值。Instance*CpuBusy*Avg：带外CPU利用率平均值。Instance*NetTxBits*Avg: 带外网络流出速率平均值。Instance*NetRxBits*Avg: 带外网络流入速率平均值。Instance*NetTxPackets*Avg: 带外网络发送包速率平均值。Instance*NetRxPackets*Avg: 带外网络接收包速率平均值。SystemDiskReadBytes*Avg: 带内系统盘读带宽平均值。SystemDiskWriteBytes*Avg: 带内系统盘写带宽平均值。SystemDiskReadIOPS*Avg: 带内系统盘读IOPS平均值。SystemDiskWriteIOPS*Avg: 带内系统盘写IOPS平均值。NetTcpConnection_Avg: 带内TCP连接数平均值。
+// Monitoring metric names for metric alarms. CpuTotal*Max: Maximum in-band CPU usage. CpuTotal*Min: Minimum in-band CPU usage. CpuTotal*Avg: Average in-band CPU usage. MemoryUsedUtilization*Max: Maximum in-band memory usage. MemoryUsedUtilization*Min: Minimum in-band memory usage. MemoryUsedUtilization*Avg: Average in-band memory usage. Instance*CpuBusy*Max: Maximum out-of-band CPU utilization. Instance*CpuBusy*Min: Minimum out-of-band CPU utilization. Instance*CpuBusy*Avg: Average out-of-band CPU utilization. Instance*NetTxBits*Avg: Average out-of-band network outbound rate. Instance*NetRxBits*Avg: Average out-of-band network inbound rate. Instance*NetTxPackets*Avg: Average out-of-band network packet send rate. Instance*NetRxPackets*Avg: Average out-of-band network packet receive rate. SystemDiskReadBytes*Avg: Average in-band system disk read bandwidth. SystemDiskWriteBytes*Avg: Average in-band system disk write bandwidth. SystemDiskReadIOPS*Avg: Average in-band system disk read IOPS. SystemDiskWriteIOPS*Avg: Average in-band system disk write IOPS. NetTcpConnection_Avg: Average in-band TCP connection count.
 func (o ScalingPolicyAlarmPolicyConditionOutput) MetricName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingPolicyAlarmPolicyCondition) *string { return v.MetricName }).(pulumi.StringPtrOutput)
 }
 
-// 指标告警时的监控指标阈值的单位。当AlarmPolicy.Conditions.MetricName参数取值为CPU/内存使用率时: Percent。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写带宽时: Bytes/Second(IEC)。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写IOPS时: Count/Second。当AlarmPolicy.Conditions.MetricName参数取值为TCP连接数时: Count。当AlarmPolicy.Condition.MetricName参数取值为网络流入/流出速率时: Bits/Second(IEC)。当AlarmPolicy.Condition.MetricName参数取值为网络收发包速率时: Packet/Second。
+// The unit for the monitoring metric threshold when an alarm is triggered. When the AlarmPolicy.Conditions.MetricName parameter is set to CPU/memory usage: Percent. When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write bandwidth: Bytes/Second(IEC). When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write IOPS: Count/Second. When the AlarmPolicy.Conditions.MetricName parameter is set to TCP connections: Count. When the AlarmPolicy.Condition.MetricName parameter is set to network inbound/outbound rate: Bits/Second(IEC). When the AlarmPolicy.Condition.MetricName parameter is set to network packet transmission rate: Packet/Second.
 func (o ScalingPolicyAlarmPolicyConditionOutput) MetricUnit() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingPolicyAlarmPolicyCondition) *string { return v.MetricUnit }).(pulumi.StringPtrOutput)
 }
 
-// 指标告警时的监控指标的阈值。当AlarmPolicy.Conditions.MetricUnit取值为Percent时：1 ～ 100。当AlarmPolicy.Conditions.MetricUnit取值为Bytes/Second(IEC)时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count/Second时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Bits/Second(IEC)时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Packet/Second时：大于0的整数。
+// The threshold value for the monitoring metric when an alarm is triggered. When AlarmPolicy.Conditions.MetricUnit is set to Percent: 1–100. When AlarmPolicy.Conditions.MetricUnit is set to Bytes/Second(IEC): an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count/Second: an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count: an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Bits/Second(IEC): an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Packet/Second: an integer greater than 0.
 func (o ScalingPolicyAlarmPolicyConditionOutput) Threshold() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingPolicyAlarmPolicyCondition) *string { return v.Threshold }).(pulumi.StringPtrOutput)
 }
@@ -1673,7 +1939,7 @@ func (o ScalingPolicyAlarmPolicyConditionPtrOutput) Elem() ScalingPolicyAlarmPol
 	}).(ScalingPolicyAlarmPolicyConditionOutput)
 }
 
-// 指标告警时的规则表达式对象。>：大于。<：小于。=：等于。
+// Rule expression object for metric alarms. >: Greater than. <: Less than. =: Equal to.
 func (o ScalingPolicyAlarmPolicyConditionPtrOutput) ComparisonOperator() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScalingPolicyAlarmPolicyCondition) *string {
 		if v == nil {
@@ -1683,7 +1949,7 @@ func (o ScalingPolicyAlarmPolicyConditionPtrOutput) ComparisonOperator() pulumi.
 	}).(pulumi.StringPtrOutput)
 }
 
-// 指标告警时的监控指标名称。CpuTotal*Max：带内CPU使用率最大值。CpuTotal*Min：带内CPU使用率最小值。CpuTotal*Avg：带内CPU使用率平均值。MemoryUsedUtilization*Max：带内内存使用率最大值。MemoryUsedUtilization*Min：带内内存使用率最小值。MemoryUsedUtilization*Avg：带内内存使用率平均值。Instance*CpuBusy*Max：带外CPU利用率最大值。Instance*CpuBusy*Min：带外CPU利用率最小值。Instance*CpuBusy*Avg：带外CPU利用率平均值。Instance*NetTxBits*Avg: 带外网络流出速率平均值。Instance*NetRxBits*Avg: 带外网络流入速率平均值。Instance*NetTxPackets*Avg: 带外网络发送包速率平均值。Instance*NetRxPackets*Avg: 带外网络接收包速率平均值。SystemDiskReadBytes*Avg: 带内系统盘读带宽平均值。SystemDiskWriteBytes*Avg: 带内系统盘写带宽平均值。SystemDiskReadIOPS*Avg: 带内系统盘读IOPS平均值。SystemDiskWriteIOPS*Avg: 带内系统盘写IOPS平均值。NetTcpConnection_Avg: 带内TCP连接数平均值。
+// Monitoring metric names for metric alarms. CpuTotal*Max: Maximum in-band CPU usage. CpuTotal*Min: Minimum in-band CPU usage. CpuTotal*Avg: Average in-band CPU usage. MemoryUsedUtilization*Max: Maximum in-band memory usage. MemoryUsedUtilization*Min: Minimum in-band memory usage. MemoryUsedUtilization*Avg: Average in-band memory usage. Instance*CpuBusy*Max: Maximum out-of-band CPU utilization. Instance*CpuBusy*Min: Minimum out-of-band CPU utilization. Instance*CpuBusy*Avg: Average out-of-band CPU utilization. Instance*NetTxBits*Avg: Average out-of-band network outbound rate. Instance*NetRxBits*Avg: Average out-of-band network inbound rate. Instance*NetTxPackets*Avg: Average out-of-band network packet send rate. Instance*NetRxPackets*Avg: Average out-of-band network packet receive rate. SystemDiskReadBytes*Avg: Average in-band system disk read bandwidth. SystemDiskWriteBytes*Avg: Average in-band system disk write bandwidth. SystemDiskReadIOPS*Avg: Average in-band system disk read IOPS. SystemDiskWriteIOPS*Avg: Average in-band system disk write IOPS. NetTcpConnection_Avg: Average in-band TCP connection count.
 func (o ScalingPolicyAlarmPolicyConditionPtrOutput) MetricName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScalingPolicyAlarmPolicyCondition) *string {
 		if v == nil {
@@ -1693,7 +1959,7 @@ func (o ScalingPolicyAlarmPolicyConditionPtrOutput) MetricName() pulumi.StringPt
 	}).(pulumi.StringPtrOutput)
 }
 
-// 指标告警时的监控指标阈值的单位。当AlarmPolicy.Conditions.MetricName参数取值为CPU/内存使用率时: Percent。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写带宽时: Bytes/Second(IEC)。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写IOPS时: Count/Second。当AlarmPolicy.Conditions.MetricName参数取值为TCP连接数时: Count。当AlarmPolicy.Condition.MetricName参数取值为网络流入/流出速率时: Bits/Second(IEC)。当AlarmPolicy.Condition.MetricName参数取值为网络收发包速率时: Packet/Second。
+// The unit for the monitoring metric threshold when an alarm is triggered. When the AlarmPolicy.Conditions.MetricName parameter is set to CPU/memory usage: Percent. When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write bandwidth: Bytes/Second(IEC). When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write IOPS: Count/Second. When the AlarmPolicy.Conditions.MetricName parameter is set to TCP connections: Count. When the AlarmPolicy.Condition.MetricName parameter is set to network inbound/outbound rate: Bits/Second(IEC). When the AlarmPolicy.Condition.MetricName parameter is set to network packet transmission rate: Packet/Second.
 func (o ScalingPolicyAlarmPolicyConditionPtrOutput) MetricUnit() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScalingPolicyAlarmPolicyCondition) *string {
 		if v == nil {
@@ -1703,7 +1969,7 @@ func (o ScalingPolicyAlarmPolicyConditionPtrOutput) MetricUnit() pulumi.StringPt
 	}).(pulumi.StringPtrOutput)
 }
 
-// 指标告警时的监控指标的阈值。当AlarmPolicy.Conditions.MetricUnit取值为Percent时：1 ～ 100。当AlarmPolicy.Conditions.MetricUnit取值为Bytes/Second(IEC)时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count/Second时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Bits/Second(IEC)时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Packet/Second时：大于0的整数。
+// The threshold value for the monitoring metric when an alarm is triggered. When AlarmPolicy.Conditions.MetricUnit is set to Percent: 1–100. When AlarmPolicy.Conditions.MetricUnit is set to Bytes/Second(IEC): an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count/Second: an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count: an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Bits/Second(IEC): an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Packet/Second: an integer greater than 0.
 func (o ScalingPolicyAlarmPolicyConditionPtrOutput) Threshold() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScalingPolicyAlarmPolicyCondition) *string {
 		if v == nil {
@@ -1734,19 +2000,19 @@ func (o ScalingPolicyAlarmPolicyConditionArrayOutput) Index(i pulumi.IntInput) S
 }
 
 type ScalingPolicyScheduledPolicy struct {
-	// 表示任务的触发时间，默认为此刻。当ScalingPolicyType值为Scheduled时，表示定时任务的触发时间。当ScalingPolicyType值为Recurrence时：如果ScheduledPolicy.RecurrenceType为空，则表示仅按照此处指定的日期和时间执行一次。如果ScheduledPolicy.RecurrenceType不为空，则表示周期任务开始时间。
+	// Indicates the trigger time for the task. The default is the current time. When ScalingPolicyType is set to Scheduled, this specifies the trigger time for the scheduled task. When ScalingPolicyType is set to Recurrence: If ScheduledPolicy.RecurrenceType is empty, the task is executed only once at the specified date and time. If ScheduledPolicy.RecurrenceType is not empty, this specifies the start time for the recurring task.
 	LaunchTime *string `pulumi:"launchTime"`
-	// 表示任务的触发时间。只读字段，修改或创建使用LaunchTime。
+	// Indicates the task trigger time. This is a read-only field; use LaunchTime to modify or create.
 	LaunchTimeRead *string `pulumi:"launchTimeRead"`
-	// 表示周期任务的结束时间。仅支持选择自创建当日起365日内的时间。若不配置，则根据重复周期（ScheduledPolicy.RecurrenceType）默认为此刻后的一天/周/月。设置为空，表示本任务永不停止。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+	// Indicates the end time for the recurring task. Only supports selecting a time within 365 days from the creation date. If not configured, defaults to one day/week/month after the current time based on the recurrence cycle (ScheduledPolicy.RecurrenceType). If set to empty, the task never stops. Valid only when ScalingPolicyType is set to Recurrence and required.
 	RecurrenceEndTime *string `pulumi:"recurrenceEndTime"`
-	// 表示周期任务的结束时间。只读字段，修改或创建使用RecurrenceEndTime。
+	// Indicates the end time for the recurring task. Read-only field; use RecurrenceEndTime for modification or creation.
 	RecurrenceEndTimeRead *string `pulumi:"recurrenceEndTimeRead"`
-	// 表示周期任务的开始执行时间。当ScalingPolicyType取值为Recurrence时有效。
+	// Indicates the start time for the recurring task. Valid only when ScalingPolicyType is set to Recurrence.
 	RecurrenceStartTime *string `pulumi:"recurrenceStartTime"`
-	// 表示周期任务的重复周期，取值：Daily：每XX天执行一次。Weekly：选择每周中的几天，每天执行一次。Monthly：选择每月中XX号到XX号，每天执行一次。Cron：按照指定的Cron表达式执行。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+	// Indicates the recurrence cycle for scheduled tasks. Values: Daily: Executes once every XX days. Weekly: Select specific days of the week, executes once per day. Monthly: Select XX to XX days of the month, executes once per day. Cron: Executes according to the specified Cron expression. Required and valid only when ScalingPolicyType is set to Recurrence.
 	RecurrenceType *string `pulumi:"recurrenceType"`
-	// 表示重复执行周期任务的数值。当ScheduledPolicy.RecurrenceType参数取值为Daily时，只能填写一个值，取值：1   - 31。当ScheduledPolicy.RecurrenceType参数取值为Weekly时，可以填入多个值，使用英文逗号（,）分隔。星期一到星期日的取值依次为：1,2,3,4,5,6,7。当ScheduledPolicy.RecurrenceType参数取值为Monthly时，格式为A-B。A、B的取值范围均为1-31，且B必须大于等于A。当ScheduledPolicy.RecurrenceType参数取值为Cron 时，表示UTC+8时间，支持分、时、日、月、星期的5域表达式，支持通配符英文逗号（,）、英文问号（?）、连词符（-）、星号（*）、井号（#）、斜线（/）、L和W。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+	// Specifies the value for recurring tasks. When the ScheduledPolicy.RecurrenceType parameter is set to Daily, only one value can be entered: 1–31. When the ScheduledPolicy.RecurrenceType parameter is set to Weekly, multiple values can be entered, separated by commas (,). Values for Monday to Sunday are: 1 (Monday), 2 (Tuesday), 3 (Wednesday), 4 (Thursday), 5 (Friday), 6 (Saturday), 7 (Sunday). When the ScheduledPolicy.RecurrenceType parameter is set to Monthly, the format is A-B. Both A and B range from 1–31, and B must be greater than or equal to A. When the ScheduledPolicy.RecurrenceType parameter is set to Cron, it uses UTC+8 time and supports a five-field expression for minute, hour, day, month, and week. Wildcards supported include comma (,), question mark (?), hyphen (-), asterisk (*), hash (#), slash (/), L, and W. This field is valid and required when ScalingPolicyType is set to Recurrence.
 	RecurrenceValue *string `pulumi:"recurrenceValue"`
 }
 
@@ -1762,19 +2028,19 @@ type ScalingPolicyScheduledPolicyInput interface {
 }
 
 type ScalingPolicyScheduledPolicyArgs struct {
-	// 表示任务的触发时间，默认为此刻。当ScalingPolicyType值为Scheduled时，表示定时任务的触发时间。当ScalingPolicyType值为Recurrence时：如果ScheduledPolicy.RecurrenceType为空，则表示仅按照此处指定的日期和时间执行一次。如果ScheduledPolicy.RecurrenceType不为空，则表示周期任务开始时间。
+	// Indicates the trigger time for the task. The default is the current time. When ScalingPolicyType is set to Scheduled, this specifies the trigger time for the scheduled task. When ScalingPolicyType is set to Recurrence: If ScheduledPolicy.RecurrenceType is empty, the task is executed only once at the specified date and time. If ScheduledPolicy.RecurrenceType is not empty, this specifies the start time for the recurring task.
 	LaunchTime pulumi.StringPtrInput `pulumi:"launchTime"`
-	// 表示任务的触发时间。只读字段，修改或创建使用LaunchTime。
+	// Indicates the task trigger time. This is a read-only field; use LaunchTime to modify or create.
 	LaunchTimeRead pulumi.StringPtrInput `pulumi:"launchTimeRead"`
-	// 表示周期任务的结束时间。仅支持选择自创建当日起365日内的时间。若不配置，则根据重复周期（ScheduledPolicy.RecurrenceType）默认为此刻后的一天/周/月。设置为空，表示本任务永不停止。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+	// Indicates the end time for the recurring task. Only supports selecting a time within 365 days from the creation date. If not configured, defaults to one day/week/month after the current time based on the recurrence cycle (ScheduledPolicy.RecurrenceType). If set to empty, the task never stops. Valid only when ScalingPolicyType is set to Recurrence and required.
 	RecurrenceEndTime pulumi.StringPtrInput `pulumi:"recurrenceEndTime"`
-	// 表示周期任务的结束时间。只读字段，修改或创建使用RecurrenceEndTime。
+	// Indicates the end time for the recurring task. Read-only field; use RecurrenceEndTime for modification or creation.
 	RecurrenceEndTimeRead pulumi.StringPtrInput `pulumi:"recurrenceEndTimeRead"`
-	// 表示周期任务的开始执行时间。当ScalingPolicyType取值为Recurrence时有效。
+	// Indicates the start time for the recurring task. Valid only when ScalingPolicyType is set to Recurrence.
 	RecurrenceStartTime pulumi.StringPtrInput `pulumi:"recurrenceStartTime"`
-	// 表示周期任务的重复周期，取值：Daily：每XX天执行一次。Weekly：选择每周中的几天，每天执行一次。Monthly：选择每月中XX号到XX号，每天执行一次。Cron：按照指定的Cron表达式执行。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+	// Indicates the recurrence cycle for scheduled tasks. Values: Daily: Executes once every XX days. Weekly: Select specific days of the week, executes once per day. Monthly: Select XX to XX days of the month, executes once per day. Cron: Executes according to the specified Cron expression. Required and valid only when ScalingPolicyType is set to Recurrence.
 	RecurrenceType pulumi.StringPtrInput `pulumi:"recurrenceType"`
-	// 表示重复执行周期任务的数值。当ScheduledPolicy.RecurrenceType参数取值为Daily时，只能填写一个值，取值：1   - 31。当ScheduledPolicy.RecurrenceType参数取值为Weekly时，可以填入多个值，使用英文逗号（,）分隔。星期一到星期日的取值依次为：1,2,3,4,5,6,7。当ScheduledPolicy.RecurrenceType参数取值为Monthly时，格式为A-B。A、B的取值范围均为1-31，且B必须大于等于A。当ScheduledPolicy.RecurrenceType参数取值为Cron 时，表示UTC+8时间，支持分、时、日、月、星期的5域表达式，支持通配符英文逗号（,）、英文问号（?）、连词符（-）、星号（*）、井号（#）、斜线（/）、L和W。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+	// Specifies the value for recurring tasks. When the ScheduledPolicy.RecurrenceType parameter is set to Daily, only one value can be entered: 1–31. When the ScheduledPolicy.RecurrenceType parameter is set to Weekly, multiple values can be entered, separated by commas (,). Values for Monday to Sunday are: 1 (Monday), 2 (Tuesday), 3 (Wednesday), 4 (Thursday), 5 (Friday), 6 (Saturday), 7 (Sunday). When the ScheduledPolicy.RecurrenceType parameter is set to Monthly, the format is A-B. Both A and B range from 1–31, and B must be greater than or equal to A. When the ScheduledPolicy.RecurrenceType parameter is set to Cron, it uses UTC+8 time and supports a five-field expression for minute, hour, day, month, and week. Wildcards supported include comma (,), question mark (?), hyphen (-), asterisk (*), hash (#), slash (/), L, and W. This field is valid and required when ScalingPolicyType is set to Recurrence.
 	RecurrenceValue pulumi.StringPtrInput `pulumi:"recurrenceValue"`
 }
 
@@ -1855,37 +2121,37 @@ func (o ScalingPolicyScheduledPolicyOutput) ToScalingPolicyScheduledPolicyPtrOut
 	}).(ScalingPolicyScheduledPolicyPtrOutput)
 }
 
-// 表示任务的触发时间，默认为此刻。当ScalingPolicyType值为Scheduled时，表示定时任务的触发时间。当ScalingPolicyType值为Recurrence时：如果ScheduledPolicy.RecurrenceType为空，则表示仅按照此处指定的日期和时间执行一次。如果ScheduledPolicy.RecurrenceType不为空，则表示周期任务开始时间。
+// Indicates the trigger time for the task. The default is the current time. When ScalingPolicyType is set to Scheduled, this specifies the trigger time for the scheduled task. When ScalingPolicyType is set to Recurrence: If ScheduledPolicy.RecurrenceType is empty, the task is executed only once at the specified date and time. If ScheduledPolicy.RecurrenceType is not empty, this specifies the start time for the recurring task.
 func (o ScalingPolicyScheduledPolicyOutput) LaunchTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingPolicyScheduledPolicy) *string { return v.LaunchTime }).(pulumi.StringPtrOutput)
 }
 
-// 表示任务的触发时间。只读字段，修改或创建使用LaunchTime。
+// Indicates the task trigger time. This is a read-only field; use LaunchTime to modify or create.
 func (o ScalingPolicyScheduledPolicyOutput) LaunchTimeRead() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingPolicyScheduledPolicy) *string { return v.LaunchTimeRead }).(pulumi.StringPtrOutput)
 }
 
-// 表示周期任务的结束时间。仅支持选择自创建当日起365日内的时间。若不配置，则根据重复周期（ScheduledPolicy.RecurrenceType）默认为此刻后的一天/周/月。设置为空，表示本任务永不停止。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+// Indicates the end time for the recurring task. Only supports selecting a time within 365 days from the creation date. If not configured, defaults to one day/week/month after the current time based on the recurrence cycle (ScheduledPolicy.RecurrenceType). If set to empty, the task never stops. Valid only when ScalingPolicyType is set to Recurrence and required.
 func (o ScalingPolicyScheduledPolicyOutput) RecurrenceEndTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingPolicyScheduledPolicy) *string { return v.RecurrenceEndTime }).(pulumi.StringPtrOutput)
 }
 
-// 表示周期任务的结束时间。只读字段，修改或创建使用RecurrenceEndTime。
+// Indicates the end time for the recurring task. Read-only field; use RecurrenceEndTime for modification or creation.
 func (o ScalingPolicyScheduledPolicyOutput) RecurrenceEndTimeRead() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingPolicyScheduledPolicy) *string { return v.RecurrenceEndTimeRead }).(pulumi.StringPtrOutput)
 }
 
-// 表示周期任务的开始执行时间。当ScalingPolicyType取值为Recurrence时有效。
+// Indicates the start time for the recurring task. Valid only when ScalingPolicyType is set to Recurrence.
 func (o ScalingPolicyScheduledPolicyOutput) RecurrenceStartTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingPolicyScheduledPolicy) *string { return v.RecurrenceStartTime }).(pulumi.StringPtrOutput)
 }
 
-// 表示周期任务的重复周期，取值：Daily：每XX天执行一次。Weekly：选择每周中的几天，每天执行一次。Monthly：选择每月中XX号到XX号，每天执行一次。Cron：按照指定的Cron表达式执行。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+// Indicates the recurrence cycle for scheduled tasks. Values: Daily: Executes once every XX days. Weekly: Select specific days of the week, executes once per day. Monthly: Select XX to XX days of the month, executes once per day. Cron: Executes according to the specified Cron expression. Required and valid only when ScalingPolicyType is set to Recurrence.
 func (o ScalingPolicyScheduledPolicyOutput) RecurrenceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingPolicyScheduledPolicy) *string { return v.RecurrenceType }).(pulumi.StringPtrOutput)
 }
 
-// 表示重复执行周期任务的数值。当ScheduledPolicy.RecurrenceType参数取值为Daily时，只能填写一个值，取值：1   - 31。当ScheduledPolicy.RecurrenceType参数取值为Weekly时，可以填入多个值，使用英文逗号（,）分隔。星期一到星期日的取值依次为：1,2,3,4,5,6,7。当ScheduledPolicy.RecurrenceType参数取值为Monthly时，格式为A-B。A、B的取值范围均为1-31，且B必须大于等于A。当ScheduledPolicy.RecurrenceType参数取值为Cron 时，表示UTC+8时间，支持分、时、日、月、星期的5域表达式，支持通配符英文逗号（,）、英文问号（?）、连词符（-）、星号（*）、井号（#）、斜线（/）、L和W。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+// Specifies the value for recurring tasks. When the ScheduledPolicy.RecurrenceType parameter is set to Daily, only one value can be entered: 1–31. When the ScheduledPolicy.RecurrenceType parameter is set to Weekly, multiple values can be entered, separated by commas (,). Values for Monday to Sunday are: 1 (Monday), 2 (Tuesday), 3 (Wednesday), 4 (Thursday), 5 (Friday), 6 (Saturday), 7 (Sunday). When the ScheduledPolicy.RecurrenceType parameter is set to Monthly, the format is A-B. Both A and B range from 1–31, and B must be greater than or equal to A. When the ScheduledPolicy.RecurrenceType parameter is set to Cron, it uses UTC+8 time and supports a five-field expression for minute, hour, day, month, and week. Wildcards supported include comma (,), question mark (?), hyphen (-), asterisk (*), hash (#), slash (/), L, and W. This field is valid and required when ScalingPolicyType is set to Recurrence.
 func (o ScalingPolicyScheduledPolicyOutput) RecurrenceValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScalingPolicyScheduledPolicy) *string { return v.RecurrenceValue }).(pulumi.StringPtrOutput)
 }
@@ -1914,7 +2180,7 @@ func (o ScalingPolicyScheduledPolicyPtrOutput) Elem() ScalingPolicyScheduledPoli
 	}).(ScalingPolicyScheduledPolicyOutput)
 }
 
-// 表示任务的触发时间，默认为此刻。当ScalingPolicyType值为Scheduled时，表示定时任务的触发时间。当ScalingPolicyType值为Recurrence时：如果ScheduledPolicy.RecurrenceType为空，则表示仅按照此处指定的日期和时间执行一次。如果ScheduledPolicy.RecurrenceType不为空，则表示周期任务开始时间。
+// Indicates the trigger time for the task. The default is the current time. When ScalingPolicyType is set to Scheduled, this specifies the trigger time for the scheduled task. When ScalingPolicyType is set to Recurrence: If ScheduledPolicy.RecurrenceType is empty, the task is executed only once at the specified date and time. If ScheduledPolicy.RecurrenceType is not empty, this specifies the start time for the recurring task.
 func (o ScalingPolicyScheduledPolicyPtrOutput) LaunchTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScalingPolicyScheduledPolicy) *string {
 		if v == nil {
@@ -1924,7 +2190,7 @@ func (o ScalingPolicyScheduledPolicyPtrOutput) LaunchTime() pulumi.StringPtrOutp
 	}).(pulumi.StringPtrOutput)
 }
 
-// 表示任务的触发时间。只读字段，修改或创建使用LaunchTime。
+// Indicates the task trigger time. This is a read-only field; use LaunchTime to modify or create.
 func (o ScalingPolicyScheduledPolicyPtrOutput) LaunchTimeRead() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScalingPolicyScheduledPolicy) *string {
 		if v == nil {
@@ -1934,7 +2200,7 @@ func (o ScalingPolicyScheduledPolicyPtrOutput) LaunchTimeRead() pulumi.StringPtr
 	}).(pulumi.StringPtrOutput)
 }
 
-// 表示周期任务的结束时间。仅支持选择自创建当日起365日内的时间。若不配置，则根据重复周期（ScheduledPolicy.RecurrenceType）默认为此刻后的一天/周/月。设置为空，表示本任务永不停止。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+// Indicates the end time for the recurring task. Only supports selecting a time within 365 days from the creation date. If not configured, defaults to one day/week/month after the current time based on the recurrence cycle (ScheduledPolicy.RecurrenceType). If set to empty, the task never stops. Valid only when ScalingPolicyType is set to Recurrence and required.
 func (o ScalingPolicyScheduledPolicyPtrOutput) RecurrenceEndTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScalingPolicyScheduledPolicy) *string {
 		if v == nil {
@@ -1944,7 +2210,7 @@ func (o ScalingPolicyScheduledPolicyPtrOutput) RecurrenceEndTime() pulumi.String
 	}).(pulumi.StringPtrOutput)
 }
 
-// 表示周期任务的结束时间。只读字段，修改或创建使用RecurrenceEndTime。
+// Indicates the end time for the recurring task. Read-only field; use RecurrenceEndTime for modification or creation.
 func (o ScalingPolicyScheduledPolicyPtrOutput) RecurrenceEndTimeRead() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScalingPolicyScheduledPolicy) *string {
 		if v == nil {
@@ -1954,7 +2220,7 @@ func (o ScalingPolicyScheduledPolicyPtrOutput) RecurrenceEndTimeRead() pulumi.St
 	}).(pulumi.StringPtrOutput)
 }
 
-// 表示周期任务的开始执行时间。当ScalingPolicyType取值为Recurrence时有效。
+// Indicates the start time for the recurring task. Valid only when ScalingPolicyType is set to Recurrence.
 func (o ScalingPolicyScheduledPolicyPtrOutput) RecurrenceStartTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScalingPolicyScheduledPolicy) *string {
 		if v == nil {
@@ -1964,7 +2230,7 @@ func (o ScalingPolicyScheduledPolicyPtrOutput) RecurrenceStartTime() pulumi.Stri
 	}).(pulumi.StringPtrOutput)
 }
 
-// 表示周期任务的重复周期，取值：Daily：每XX天执行一次。Weekly：选择每周中的几天，每天执行一次。Monthly：选择每月中XX号到XX号，每天执行一次。Cron：按照指定的Cron表达式执行。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+// Indicates the recurrence cycle for scheduled tasks. Values: Daily: Executes once every XX days. Weekly: Select specific days of the week, executes once per day. Monthly: Select XX to XX days of the month, executes once per day. Cron: Executes according to the specified Cron expression. Required and valid only when ScalingPolicyType is set to Recurrence.
 func (o ScalingPolicyScheduledPolicyPtrOutput) RecurrenceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScalingPolicyScheduledPolicy) *string {
 		if v == nil {
@@ -1974,7 +2240,7 @@ func (o ScalingPolicyScheduledPolicyPtrOutput) RecurrenceType() pulumi.StringPtr
 	}).(pulumi.StringPtrOutput)
 }
 
-// 表示重复执行周期任务的数值。当ScheduledPolicy.RecurrenceType参数取值为Daily时，只能填写一个值，取值：1   - 31。当ScheduledPolicy.RecurrenceType参数取值为Weekly时，可以填入多个值，使用英文逗号（,）分隔。星期一到星期日的取值依次为：1,2,3,4,5,6,7。当ScheduledPolicy.RecurrenceType参数取值为Monthly时，格式为A-B。A、B的取值范围均为1-31，且B必须大于等于A。当ScheduledPolicy.RecurrenceType参数取值为Cron 时，表示UTC+8时间，支持分、时、日、月、星期的5域表达式，支持通配符英文逗号（,）、英文问号（?）、连词符（-）、星号（*）、井号（#）、斜线（/）、L和W。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+// Specifies the value for recurring tasks. When the ScheduledPolicy.RecurrenceType parameter is set to Daily, only one value can be entered: 1–31. When the ScheduledPolicy.RecurrenceType parameter is set to Weekly, multiple values can be entered, separated by commas (,). Values for Monday to Sunday are: 1 (Monday), 2 (Tuesday), 3 (Wednesday), 4 (Thursday), 5 (Friday), 6 (Saturday), 7 (Sunday). When the ScheduledPolicy.RecurrenceType parameter is set to Monthly, the format is A-B. Both A and B range from 1–31, and B must be greater than or equal to A. When the ScheduledPolicy.RecurrenceType parameter is set to Cron, it uses UTC+8 time and supports a five-field expression for minute, hour, day, month, and week. Wildcards supported include comma (,), question mark (?), hyphen (-), asterisk (*), hash (#), slash (/), L, and W. This field is valid and required when ScalingPolicyType is set to Recurrence.
 func (o ScalingPolicyScheduledPolicyPtrOutput) RecurrenceValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScalingPolicyScheduledPolicy) *string {
 		if v == nil {
@@ -1985,15 +2251,15 @@ func (o ScalingPolicyScheduledPolicyPtrOutput) RecurrenceValue() pulumi.StringPt
 }
 
 type GetScalingConfigurationEip struct {
-	// 公网IP的带宽峰值，默认为1，单位：Mbps。取值：当Eip.BillingType取值为PostPaidByBandwidth时，取值为1 ～ 500。当Eip.BillingType取值为PostPaidByTraffic时，取值为1 ～ 200。
+	// Peak bandwidth for the public IP. Default is 1, unit: Mbps. Value: When Eip.BillingType is set to PostPaidByBandwidth, the value is 1–500. When Eip.BillingType is set to PostPaidByTraffic, the value is 1–200.
 	Bandwidth int `pulumi:"bandwidth"`
-	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。 您可以调用 DescribeBandwidthPackages 接口，查询共享带宽包的ID。 公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的线路类型相同。共享带宽包为IPv4类型。
+	// ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package. You can call the DescribeBandwidthPackages API to query the shared bandwidth package ID. The public IP can be added to the shared bandwidth package only if the following conditions are met: Both have the same security protection type. Both have the same line type. The shared bandwidth package is IPv4 type.
 	BandwidthPackageId string `pulumi:"bandwidthPackageId"`
-	// 公网IP的计费类型，取值：PostPaidByBandwidth（默认）：按量计费-按带宽上限计费。PostPaidByTraffic：按量计费-按实际流量计费。
+	// Billing type for public IP. Options: PostPaidByBandwidth (default): Pay-as-you-go, billed by bandwidth cap. PostPaidByTraffic: Pay-as-you-go, billed by actual traffic.
 	BillingType string `pulumi:"billingType"`
-	// 线路类型，取值：BGP（默认）：BGP线路。若您的账号已申请使用静态单线，ISP还可以传入ChinaMobile（表示中国移动）、ChinaTelecom（表示中国电信）、ChinaUnicom（表示中国联通）。
+	// Line type. Values: BGP (default): BGP line. If your account has applied for static single line, ISP can also be set to ChinaMobile (China Mobile), ChinaTelecom (China Telecom), or ChinaUnicom (China Unicom).
 	Isp string `pulumi:"isp"`
-	// 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+	// Whether the public IP is deleted along with the instance. This applies only to pay-as-you-go public IPs and takes effect when deleting the instance in the ECS console. For retention details after deleting an instance in a scaling group, see the detailed instructions in instance management. Values: true: The public IP is deleted with the instance. false: The public IP is not deleted with the instance
 	ReleaseWithInstance bool `pulumi:"releaseWithInstance"`
 }
 
@@ -2009,15 +2275,15 @@ type GetScalingConfigurationEipInput interface {
 }
 
 type GetScalingConfigurationEipArgs struct {
-	// 公网IP的带宽峰值，默认为1，单位：Mbps。取值：当Eip.BillingType取值为PostPaidByBandwidth时，取值为1 ～ 500。当Eip.BillingType取值为PostPaidByTraffic时，取值为1 ～ 200。
+	// Peak bandwidth for the public IP. Default is 1, unit: Mbps. Value: When Eip.BillingType is set to PostPaidByBandwidth, the value is 1–500. When Eip.BillingType is set to PostPaidByTraffic, the value is 1–200.
 	Bandwidth pulumi.IntInput `pulumi:"bandwidth"`
-	// 共享带宽包的ID，表示将公网IP加入到共享带宽包。 您可以调用 DescribeBandwidthPackages 接口，查询共享带宽包的ID。 公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的线路类型相同。共享带宽包为IPv4类型。
+	// ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package. You can call the DescribeBandwidthPackages API to query the shared bandwidth package ID. The public IP can be added to the shared bandwidth package only if the following conditions are met: Both have the same security protection type. Both have the same line type. The shared bandwidth package is IPv4 type.
 	BandwidthPackageId pulumi.StringInput `pulumi:"bandwidthPackageId"`
-	// 公网IP的计费类型，取值：PostPaidByBandwidth（默认）：按量计费-按带宽上限计费。PostPaidByTraffic：按量计费-按实际流量计费。
+	// Billing type for public IP. Options: PostPaidByBandwidth (default): Pay-as-you-go, billed by bandwidth cap. PostPaidByTraffic: Pay-as-you-go, billed by actual traffic.
 	BillingType pulumi.StringInput `pulumi:"billingType"`
-	// 线路类型，取值：BGP（默认）：BGP线路。若您的账号已申请使用静态单线，ISP还可以传入ChinaMobile（表示中国移动）、ChinaTelecom（表示中国电信）、ChinaUnicom（表示中国联通）。
+	// Line type. Values: BGP (default): BGP line. If your account has applied for static single line, ISP can also be set to ChinaMobile (China Mobile), ChinaTelecom (China Telecom), or ChinaUnicom (China Unicom).
 	Isp pulumi.StringInput `pulumi:"isp"`
-	// 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+	// Whether the public IP is deleted along with the instance. This applies only to pay-as-you-go public IPs and takes effect when deleting the instance in the ECS console. For retention details after deleting an instance in a scaling group, see the detailed instructions in instance management. Values: true: The public IP is deleted with the instance. false: The public IP is not deleted with the instance
 	ReleaseWithInstance pulumi.BoolInput `pulumi:"releaseWithInstance"`
 }
 
@@ -2047,35 +2313,35 @@ func (o GetScalingConfigurationEipOutput) ToGetScalingConfigurationEipOutputWith
 	return o
 }
 
-// 公网IP的带宽峰值，默认为1，单位：Mbps。取值：当Eip.BillingType取值为PostPaidByBandwidth时，取值为1 ～ 500。当Eip.BillingType取值为PostPaidByTraffic时，取值为1 ～ 200。
+// Peak bandwidth for the public IP. Default is 1, unit: Mbps. Value: When Eip.BillingType is set to PostPaidByBandwidth, the value is 1–500. When Eip.BillingType is set to PostPaidByTraffic, the value is 1–200.
 func (o GetScalingConfigurationEipOutput) Bandwidth() pulumi.IntOutput {
 	return o.ApplyT(func(v GetScalingConfigurationEip) int { return v.Bandwidth }).(pulumi.IntOutput)
 }
 
-// 共享带宽包的ID，表示将公网IP加入到共享带宽包。 您可以调用 DescribeBandwidthPackages 接口，查询共享带宽包的ID。 公网IP加入到共享带宽包必须同时满足如下条件：二者的安全防护类型相同。二者的线路类型相同。共享带宽包为IPv4类型。
+// ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package. You can call the DescribeBandwidthPackages API to query the shared bandwidth package ID. The public IP can be added to the shared bandwidth package only if the following conditions are met: Both have the same security protection type. Both have the same line type. The shared bandwidth package is IPv4 type.
 func (o GetScalingConfigurationEipOutput) BandwidthPackageId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingConfigurationEip) string { return v.BandwidthPackageId }).(pulumi.StringOutput)
 }
 
-// 公网IP的计费类型，取值：PostPaidByBandwidth（默认）：按量计费-按带宽上限计费。PostPaidByTraffic：按量计费-按实际流量计费。
+// Billing type for public IP. Options: PostPaidByBandwidth (default): Pay-as-you-go, billed by bandwidth cap. PostPaidByTraffic: Pay-as-you-go, billed by actual traffic.
 func (o GetScalingConfigurationEipOutput) BillingType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingConfigurationEip) string { return v.BillingType }).(pulumi.StringOutput)
 }
 
-// 线路类型，取值：BGP（默认）：BGP线路。若您的账号已申请使用静态单线，ISP还可以传入ChinaMobile（表示中国移动）、ChinaTelecom（表示中国电信）、ChinaUnicom（表示中国联通）。
+// Line type. Values: BGP (default): BGP line. If your account has applied for static single line, ISP can also be set to ChinaMobile (China Mobile), ChinaTelecom (China Telecom), or ChinaUnicom (China Unicom).
 func (o GetScalingConfigurationEipOutput) Isp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingConfigurationEip) string { return v.Isp }).(pulumi.StringOutput)
 }
 
-// 公网IP是否随实例删除。仅按量计费公网IP且在ECS控制台删除实例时生效，在伸缩组中删除实例后公网IP的保留情况请参见实例管理中的详细说明。取值：true：公网IP随实例删除。false：公网IP不随实例删除。
+// Whether the public IP is deleted along with the instance. This applies only to pay-as-you-go public IPs and takes effect when deleting the instance in the ECS console. For retention details after deleting an instance in a scaling group, see the detailed instructions in instance management. Values: true: The public IP is deleted with the instance. false: The public IP is not deleted with the instance
 func (o GetScalingConfigurationEipOutput) ReleaseWithInstance() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetScalingConfigurationEip) bool { return v.ReleaseWithInstance }).(pulumi.BoolOutput)
 }
 
 type GetScalingConfigurationInstanceTypeOverride struct {
-	// 指定抢占式实例的规格。参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
+	// Specify the specifications for preemptible instances. Parameter   - N: Indicates the sequence number of the instance specification, value range 1–10. Value   - InstanceType: Specifies the specification for the preemptible instance. Use & to separate multiple specifications.
 	InstanceType string `pulumi:"instanceType"`
-	// 指定抢占式实例规格每小时的最高价格参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
+	// Specify the maximum hourly price for preemptible instance types. Parameter   - N: Indicates the instance type sequence number. Value: 1–10. PriceLimit: Specifies the maximum hourly price for the preemptible instance type. Value: Greater than 0, up to three decimal places. Use & to separate multiple prices.
 	PriceLimit float64 `pulumi:"priceLimit"`
 }
 
@@ -2091,9 +2357,9 @@ type GetScalingConfigurationInstanceTypeOverrideInput interface {
 }
 
 type GetScalingConfigurationInstanceTypeOverrideArgs struct {
-	// 指定抢占式实例的规格。参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
+	// Specify the specifications for preemptible instances. Parameter   - N: Indicates the sequence number of the instance specification, value range 1–10. Value   - InstanceType: Specifies the specification for the preemptible instance. Use & to separate multiple specifications.
 	InstanceType pulumi.StringInput `pulumi:"instanceType"`
-	// 指定抢占式实例规格每小时的最高价格参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
+	// Specify the maximum hourly price for preemptible instance types. Parameter   - N: Indicates the instance type sequence number. Value: 1–10. PriceLimit: Specifies the maximum hourly price for the preemptible instance type. Value: Greater than 0, up to three decimal places. Use & to separate multiple prices.
 	PriceLimit pulumi.Float64Input `pulumi:"priceLimit"`
 }
 
@@ -2148,12 +2414,12 @@ func (o GetScalingConfigurationInstanceTypeOverrideOutput) ToGetScalingConfigura
 	return o
 }
 
-// 指定抢占式实例的规格。参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - InstanceType：表示抢占式实例的规格。多个规格之间用&分隔。
+// Specify the specifications for preemptible instances. Parameter   - N: Indicates the sequence number of the instance specification, value range 1–10. Value   - InstanceType: Specifies the specification for the preemptible instance. Use & to separate multiple specifications.
 func (o GetScalingConfigurationInstanceTypeOverrideOutput) InstanceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingConfigurationInstanceTypeOverride) string { return v.InstanceType }).(pulumi.StringOutput)
 }
 
-// 指定抢占式实例规格每小时的最高价格参数   - N：表示实例规格的序号，取值为1 ～ 10。取值   - PriceLimit：表示抢占式实例规格每小时的最高价格。取值：大于0，且最大不超过3位小数。多个价格之间用&分隔。
+// Specify the maximum hourly price for preemptible instance types. Parameter   - N: Indicates the instance type sequence number. Value: 1–10. PriceLimit: Specifies the maximum hourly price for the preemptible instance type. Value: Greater than 0, up to three decimal places. Use & to separate multiple prices.
 func (o GetScalingConfigurationInstanceTypeOverrideOutput) PriceLimit() pulumi.Float64Output {
 	return o.ApplyT(func(v GetScalingConfigurationInstanceTypeOverride) float64 { return v.PriceLimit }).(pulumi.Float64Output)
 }
@@ -2179,9 +2445,9 @@ func (o GetScalingConfigurationInstanceTypeOverrideArrayOutput) Index(i pulumi.I
 }
 
 type GetScalingConfigurationTag struct {
-	// 标签键。
+	// Tag key
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value string `pulumi:"value"`
 }
 
@@ -2197,9 +2463,9 @@ type GetScalingConfigurationTagInput interface {
 }
 
 type GetScalingConfigurationTagArgs struct {
-	// 标签键。
+	// Tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -2254,12 +2520,12 @@ func (o GetScalingConfigurationTagOutput) ToGetScalingConfigurationTagOutputWith
 	return o
 }
 
-// 标签键。
+// Tag key
 func (o GetScalingConfigurationTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingConfigurationTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value
 func (o GetScalingConfigurationTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingConfigurationTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -2285,17 +2551,17 @@ func (o GetScalingConfigurationTagArrayOutput) Index(i pulumi.IntInput) GetScali
 }
 
 type GetScalingConfigurationVolume struct {
-	// 云盘是否随实例释放：true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+	// Whether the cloud disk is released with the instance: true (default): The cloud disk is released with the instance. false: The cloud disk is not released with the instance. When set to false, this does not apply to system disks. System disks are always released with the instance and cannot be retained.
 	DeleteWithInstance bool `pulumi:"deleteWithInstance"`
-	// 通过此参数可配置云盘额外性能包IOPS性能大小，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceIOPS 表示第N个云盘的额外性能包IOPS大小：IOPS: 1-50000。Balance: 1-50000。
+	// You can use this parameter to configure the extra performance package IOPS size for cloud disks. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. '1' represents the system disk; '2' or greater represents a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceIOPS specifies the extra performance package IOPS size for the Nth disk: IOPS: 1–50000. Balance: 1–50000.
 	ExtraPerformanceIops int `pulumi:"extraPerformanceIops"`
-	// 通过此参数可配置云盘额外性能包吞吐性能大小，单位MB/s，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceThroughputMB 表示第N个云盘的额外性能包吞吐大小：Throughput：1-650。
+	// You can use this parameter to configure the extra performance package throughput size for cloud disks, in MB/s. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. '1' represents the system disk; '2' or greater represents a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceThroughputMB specifies the extra performance package throughput size for the Nth disk: Throughput: 1–650.
 	ExtraPerformanceThroughputMb int `pulumi:"extraPerformanceThroughputMb"`
-	// 通过此参数可为云盘购买额外性能，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包。取值：2～16。ExtraPerformanceTypeId 表示第N个云盘的额外性能包类型：IOPS:IOPS型，使用ExtraPerformanceIOPS参数。Balance: 均衡型，使用ExtraPerformanceIOPS参数。Throughput：吞吐量型，使用ExtraPerformanceThroughputMB参数。
+	// This parameter allows you to purchase extra performance for cloud disks. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. "1" is the system disk; "2" or greater indicates a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceTypeId specifies the extra performance package type for the Nth disk: IOPS: IOPS type, use the ExtraPerformanceIOPS parameter. Balance: Balanced type, use the ExtraPerformanceIOPS parameter. Throughput: Throughput type, use the ExtraPerformanceThroughputMB parameter.
 	ExtraPerformanceTypeId string `pulumi:"extraPerformanceTypeId"`
-	// 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。如果是 ESSD_FlexPL 并使用额外性能，大小必须 >= 500 GB。
+	// Cloud disk capacity, in GiB. System disk range: 10–500. Data disk range: 10–8192. If using ESSD_FlexPL with additional performance, size must be >= 500 GB
 	Size int `pulumi:"size"`
-	// 云盘的类型：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。
+	// Cloud disk types: ESSD*FlexPL: Extreme SSD FlexPL. ESSD*PL0: Extreme SSD PL0.
 	VolumeType string `pulumi:"volumeType"`
 }
 
@@ -2311,17 +2577,17 @@ type GetScalingConfigurationVolumeInput interface {
 }
 
 type GetScalingConfigurationVolumeArgs struct {
-	// 云盘是否随实例释放：true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+	// Whether the cloud disk is released with the instance: true (default): The cloud disk is released with the instance. false: The cloud disk is not released with the instance. When set to false, this does not apply to system disks. System disks are always released with the instance and cannot be retained.
 	DeleteWithInstance pulumi.BoolInput `pulumi:"deleteWithInstance"`
-	// 通过此参数可配置云盘额外性能包IOPS性能大小，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceIOPS 表示第N个云盘的额外性能包IOPS大小：IOPS: 1-50000。Balance: 1-50000。
+	// You can use this parameter to configure the extra performance package IOPS size for cloud disks. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. '1' represents the system disk; '2' or greater represents a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceIOPS specifies the extra performance package IOPS size for the Nth disk: IOPS: 1–50000. Balance: 1–50000.
 	ExtraPerformanceIops pulumi.IntInput `pulumi:"extraPerformanceIops"`
-	// 通过此参数可配置云盘额外性能包吞吐性能大小，单位MB/s，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceThroughputMB 表示第N个云盘的额外性能包吞吐大小：Throughput：1-650。
+	// You can use this parameter to configure the extra performance package throughput size for cloud disks, in MB/s. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. '1' represents the system disk; '2' or greater represents a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceThroughputMB specifies the extra performance package throughput size for the Nth disk: Throughput: 1–650.
 	ExtraPerformanceThroughputMb pulumi.IntInput `pulumi:"extraPerformanceThroughputMb"`
-	// 通过此参数可为云盘购买额外性能，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包。取值：2～16。ExtraPerformanceTypeId 表示第N个云盘的额外性能包类型：IOPS:IOPS型，使用ExtraPerformanceIOPS参数。Balance: 均衡型，使用ExtraPerformanceIOPS参数。Throughput：吞吐量型，使用ExtraPerformanceThroughputMB参数。
+	// This parameter allows you to purchase extra performance for cloud disks. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. "1" is the system disk; "2" or greater indicates a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceTypeId specifies the extra performance package type for the Nth disk: IOPS: IOPS type, use the ExtraPerformanceIOPS parameter. Balance: Balanced type, use the ExtraPerformanceIOPS parameter. Throughput: Throughput type, use the ExtraPerformanceThroughputMB parameter.
 	ExtraPerformanceTypeId pulumi.StringInput `pulumi:"extraPerformanceTypeId"`
-	// 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。如果是 ESSD_FlexPL 并使用额外性能，大小必须 >= 500 GB。
+	// Cloud disk capacity, in GiB. System disk range: 10–500. Data disk range: 10–8192. If using ESSD_FlexPL with additional performance, size must be >= 500 GB
 	Size pulumi.IntInput `pulumi:"size"`
-	// 云盘的类型：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。
+	// Cloud disk types: ESSD*FlexPL: Extreme SSD FlexPL. ESSD*PL0: Extreme SSD PL0.
 	VolumeType pulumi.StringInput `pulumi:"volumeType"`
 }
 
@@ -2376,32 +2642,32 @@ func (o GetScalingConfigurationVolumeOutput) ToGetScalingConfigurationVolumeOutp
 	return o
 }
 
-// 云盘是否随实例释放：true（默认值）：云盘随实例释放。false：云盘不随实例释放。取值为false时对系统盘无效，系统盘默认随实例释放，不允许保留。
+// Whether the cloud disk is released with the instance: true (default): The cloud disk is released with the instance. false: The cloud disk is not released with the instance. When set to false, this does not apply to system disks. System disks are always released with the instance and cannot be retained.
 func (o GetScalingConfigurationVolumeOutput) DeleteWithInstance() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetScalingConfigurationVolume) bool { return v.DeleteWithInstance }).(pulumi.BoolOutput)
 }
 
-// 通过此参数可配置云盘额外性能包IOPS性能大小，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceIOPS 表示第N个云盘的额外性能包IOPS大小：IOPS: 1-50000。Balance: 1-50000。
+// You can use this parameter to configure the extra performance package IOPS size for cloud disks. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. '1' represents the system disk; '2' or greater represents a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceIOPS specifies the extra performance package IOPS size for the Nth disk: IOPS: 1–50000. Balance: 1–50000.
 func (o GetScalingConfigurationVolumeOutput) ExtraPerformanceIops() pulumi.IntOutput {
 	return o.ApplyT(func(v GetScalingConfigurationVolume) int { return v.ExtraPerformanceIops }).(pulumi.IntOutput)
 }
 
-// 通过此参数可配置云盘额外性能包吞吐性能大小，单位MB/s，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包，取值：2～16。ExtraPerformanceThroughputMB 表示第N个云盘的额外性能包吞吐大小：Throughput：1-650。
+// You can use this parameter to configure the extra performance package throughput size for cloud disks, in MB/s. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. '1' represents the system disk; '2' or greater represents a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceThroughputMB specifies the extra performance package throughput size for the Nth disk: Throughput: 1–650.
 func (o GetScalingConfigurationVolumeOutput) ExtraPerformanceThroughputMb() pulumi.IntOutput {
 	return o.ApplyT(func(v GetScalingConfigurationVolume) int { return v.ExtraPerformanceThroughputMb }).(pulumi.IntOutput)
 }
 
-// 通过此参数可为云盘购买额外性能，仅ESSD FlexPL支持。参数   - N：表示云盘的序号，序号为“1”表示系统盘，序号为“2”或大于“2”表示数据盘，仅数据盘支持额外性能包。取值：2～16。ExtraPerformanceTypeId 表示第N个云盘的额外性能包类型：IOPS:IOPS型，使用ExtraPerformanceIOPS参数。Balance: 均衡型，使用ExtraPerformanceIOPS参数。Throughput：吞吐量型，使用ExtraPerformanceThroughputMB参数。
+// This parameter allows you to purchase extra performance for cloud disks. Only ESSD FlexPL is supported. Parameter   - N: Indicates the disk sequence number. "1" is the system disk; "2" or greater indicates a data disk. Only data disks support extra performance packages. Value: 2–16. ExtraPerformanceTypeId specifies the extra performance package type for the Nth disk: IOPS: IOPS type, use the ExtraPerformanceIOPS parameter. Balance: Balanced type, use the ExtraPerformanceIOPS parameter. Throughput: Throughput type, use the ExtraPerformanceThroughputMB parameter.
 func (o GetScalingConfigurationVolumeOutput) ExtraPerformanceTypeId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingConfigurationVolume) string { return v.ExtraPerformanceTypeId }).(pulumi.StringOutput)
 }
 
-// 云盘的容量，单位为GiB。系统盘取值范围：10   - 500。数据盘取值范围：10   - 8192。如果是 ESSD_FlexPL 并使用额外性能，大小必须 >= 500 GB。
+// Cloud disk capacity, in GiB. System disk range: 10–500. Data disk range: 10–8192. If using ESSD_FlexPL with additional performance, size must be >= 500 GB
 func (o GetScalingConfigurationVolumeOutput) Size() pulumi.IntOutput {
 	return o.ApplyT(func(v GetScalingConfigurationVolume) int { return v.Size }).(pulumi.IntOutput)
 }
 
-// 云盘的类型：ESSD*FlexPL：极速型SSDFlexPL。ESSD*PL0：极速型SSD PL0。
+// Cloud disk types: ESSD*FlexPL: Extreme SSD FlexPL. ESSD*PL0: Extreme SSD PL0.
 func (o GetScalingConfigurationVolumeOutput) VolumeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingConfigurationVolume) string { return v.VolumeType }).(pulumi.StringOutput)
 }
@@ -2426,14 +2692,352 @@ func (o GetScalingConfigurationVolumeArrayOutput) Index(i pulumi.IntInput) GetSc
 	}).(GetScalingConfigurationVolumeOutput)
 }
 
+type GetScalingGroupInstance struct {
+	// Time when the instance joined the scaling group
+	CreatedTime string `pulumi:"createdTime"`
+	// How the instance joined the scaling group (Attached / AutoCreated)
+	CreationType string `pulumi:"creationType"`
+	// Whether to enable managed mode for the instance when AttachInstances is performed
+	Entrusted bool `pulumi:"entrusted"`
+	// ECS instance ID, unique identifier of the subresource
+	InstanceId string `pulumi:"instanceId"`
+	// Launch template ID used by the instance
+	LaunchTemplateId string `pulumi:"launchTemplateId"`
+	// Launch template version used by the instance
+	LaunchTemplateVersion string `pulumi:"launchTemplateVersion"`
+	// Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
+	LifecycleHook bool `pulumi:"lifecycleHook"`
+	// Scaling configuration ID associated with the instance
+	ScalingConfigurationId string `pulumi:"scalingConfigurationId"`
+	// Scaling policy ID associated with the instance
+	ScalingPolicyId string `pulumi:"scalingPolicyId"`
+	// Current status of the instance in the scaling group
+	Status string `pulumi:"status"`
+	// Availability zone of the instance
+	ZoneId string `pulumi:"zoneId"`
+}
+
+// GetScalingGroupInstanceInput is an input type that accepts GetScalingGroupInstanceArgs and GetScalingGroupInstanceOutput values.
+// You can construct a concrete instance of `GetScalingGroupInstanceInput` via:
+//
+//	GetScalingGroupInstanceArgs{...}
+type GetScalingGroupInstanceInput interface {
+	pulumi.Input
+
+	ToGetScalingGroupInstanceOutput() GetScalingGroupInstanceOutput
+	ToGetScalingGroupInstanceOutputWithContext(context.Context) GetScalingGroupInstanceOutput
+}
+
+type GetScalingGroupInstanceArgs struct {
+	// Time when the instance joined the scaling group
+	CreatedTime pulumi.StringInput `pulumi:"createdTime"`
+	// How the instance joined the scaling group (Attached / AutoCreated)
+	CreationType pulumi.StringInput `pulumi:"creationType"`
+	// Whether to enable managed mode for the instance when AttachInstances is performed
+	Entrusted pulumi.BoolInput `pulumi:"entrusted"`
+	// ECS instance ID, unique identifier of the subresource
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// Launch template ID used by the instance
+	LaunchTemplateId pulumi.StringInput `pulumi:"launchTemplateId"`
+	// Launch template version used by the instance
+	LaunchTemplateVersion pulumi.StringInput `pulumi:"launchTemplateVersion"`
+	// Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
+	LifecycleHook pulumi.BoolInput `pulumi:"lifecycleHook"`
+	// Scaling configuration ID associated with the instance
+	ScalingConfigurationId pulumi.StringInput `pulumi:"scalingConfigurationId"`
+	// Scaling policy ID associated with the instance
+	ScalingPolicyId pulumi.StringInput `pulumi:"scalingPolicyId"`
+	// Current status of the instance in the scaling group
+	Status pulumi.StringInput `pulumi:"status"`
+	// Availability zone of the instance
+	ZoneId pulumi.StringInput `pulumi:"zoneId"`
+}
+
+func (GetScalingGroupInstanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScalingGroupInstance)(nil)).Elem()
+}
+
+func (i GetScalingGroupInstanceArgs) ToGetScalingGroupInstanceOutput() GetScalingGroupInstanceOutput {
+	return i.ToGetScalingGroupInstanceOutputWithContext(context.Background())
+}
+
+func (i GetScalingGroupInstanceArgs) ToGetScalingGroupInstanceOutputWithContext(ctx context.Context) GetScalingGroupInstanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScalingGroupInstanceOutput)
+}
+
+// GetScalingGroupInstanceArrayInput is an input type that accepts GetScalingGroupInstanceArray and GetScalingGroupInstanceArrayOutput values.
+// You can construct a concrete instance of `GetScalingGroupInstanceArrayInput` via:
+//
+//	GetScalingGroupInstanceArray{ GetScalingGroupInstanceArgs{...} }
+type GetScalingGroupInstanceArrayInput interface {
+	pulumi.Input
+
+	ToGetScalingGroupInstanceArrayOutput() GetScalingGroupInstanceArrayOutput
+	ToGetScalingGroupInstanceArrayOutputWithContext(context.Context) GetScalingGroupInstanceArrayOutput
+}
+
+type GetScalingGroupInstanceArray []GetScalingGroupInstanceInput
+
+func (GetScalingGroupInstanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScalingGroupInstance)(nil)).Elem()
+}
+
+func (i GetScalingGroupInstanceArray) ToGetScalingGroupInstanceArrayOutput() GetScalingGroupInstanceArrayOutput {
+	return i.ToGetScalingGroupInstanceArrayOutputWithContext(context.Background())
+}
+
+func (i GetScalingGroupInstanceArray) ToGetScalingGroupInstanceArrayOutputWithContext(ctx context.Context) GetScalingGroupInstanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScalingGroupInstanceArrayOutput)
+}
+
+type GetScalingGroupInstanceOutput struct{ *pulumi.OutputState }
+
+func (GetScalingGroupInstanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScalingGroupInstance)(nil)).Elem()
+}
+
+func (o GetScalingGroupInstanceOutput) ToGetScalingGroupInstanceOutput() GetScalingGroupInstanceOutput {
+	return o
+}
+
+func (o GetScalingGroupInstanceOutput) ToGetScalingGroupInstanceOutputWithContext(ctx context.Context) GetScalingGroupInstanceOutput {
+	return o
+}
+
+// Time when the instance joined the scaling group
+func (o GetScalingGroupInstanceOutput) CreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingGroupInstance) string { return v.CreatedTime }).(pulumi.StringOutput)
+}
+
+// How the instance joined the scaling group (Attached / AutoCreated)
+func (o GetScalingGroupInstanceOutput) CreationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingGroupInstance) string { return v.CreationType }).(pulumi.StringOutput)
+}
+
+// Whether to enable managed mode for the instance when AttachInstances is performed
+func (o GetScalingGroupInstanceOutput) Entrusted() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetScalingGroupInstance) bool { return v.Entrusted }).(pulumi.BoolOutput)
+}
+
+// ECS instance ID, unique identifier of the subresource
+func (o GetScalingGroupInstanceOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingGroupInstance) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// Launch template ID used by the instance
+func (o GetScalingGroupInstanceOutput) LaunchTemplateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingGroupInstance) string { return v.LaunchTemplateId }).(pulumi.StringOutput)
+}
+
+// Launch template version used by the instance
+func (o GetScalingGroupInstanceOutput) LaunchTemplateVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingGroupInstance) string { return v.LaunchTemplateVersion }).(pulumi.StringOutput)
+}
+
+// Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
+func (o GetScalingGroupInstanceOutput) LifecycleHook() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetScalingGroupInstance) bool { return v.LifecycleHook }).(pulumi.BoolOutput)
+}
+
+// Scaling configuration ID associated with the instance
+func (o GetScalingGroupInstanceOutput) ScalingConfigurationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingGroupInstance) string { return v.ScalingConfigurationId }).(pulumi.StringOutput)
+}
+
+// Scaling policy ID associated with the instance
+func (o GetScalingGroupInstanceOutput) ScalingPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingGroupInstance) string { return v.ScalingPolicyId }).(pulumi.StringOutput)
+}
+
+// Current status of the instance in the scaling group
+func (o GetScalingGroupInstanceOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingGroupInstance) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// Availability zone of the instance
+func (o GetScalingGroupInstanceOutput) ZoneId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingGroupInstance) string { return v.ZoneId }).(pulumi.StringOutput)
+}
+
+type GetScalingGroupInstanceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScalingGroupInstanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScalingGroupInstance)(nil)).Elem()
+}
+
+func (o GetScalingGroupInstanceArrayOutput) ToGetScalingGroupInstanceArrayOutput() GetScalingGroupInstanceArrayOutput {
+	return o
+}
+
+func (o GetScalingGroupInstanceArrayOutput) ToGetScalingGroupInstanceArrayOutputWithContext(ctx context.Context) GetScalingGroupInstanceArrayOutput {
+	return o
+}
+
+func (o GetScalingGroupInstanceArrayOutput) Index(i pulumi.IntInput) GetScalingGroupInstanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScalingGroupInstance {
+		return vs[0].([]GetScalingGroupInstance)[vs[1].(int)]
+	}).(GetScalingGroupInstanceOutput)
+}
+
+type GetScalingGroupInstanceRemovePolicy struct {
+	// Whether to decrease the desired instance count synchronously when DetachInstances or RemoveInstances is performed
+	DecreaseDesiredCapacity bool `pulumi:"decreaseDesiredCapacity"`
+	// Instance removal policy for DetachInstances
+	DetachOption string `pulumi:"detachOption"`
+	// Whether to force delete the instance when RemoveInstances is performed
+	ForceDelete bool `pulumi:"forceDelete"`
+	// ECS instance ID, unique identifier of the subresource
+	InstanceId string `pulumi:"instanceId"`
+	// Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
+	LifecycleHook bool `pulumi:"lifecycleHook"`
+	// Mode: How to handle an instance when it is removed from the scaling group: Detach means only remove from the scaling group, Remove means remove and delete the instance
+	Mode string `pulumi:"mode"`
+	// Removal mode for RemoveInstances
+	RemoveMode string `pulumi:"removeMode"`
+}
+
+// GetScalingGroupInstanceRemovePolicyInput is an input type that accepts GetScalingGroupInstanceRemovePolicyArgs and GetScalingGroupInstanceRemovePolicyOutput values.
+// You can construct a concrete instance of `GetScalingGroupInstanceRemovePolicyInput` via:
+//
+//	GetScalingGroupInstanceRemovePolicyArgs{...}
+type GetScalingGroupInstanceRemovePolicyInput interface {
+	pulumi.Input
+
+	ToGetScalingGroupInstanceRemovePolicyOutput() GetScalingGroupInstanceRemovePolicyOutput
+	ToGetScalingGroupInstanceRemovePolicyOutputWithContext(context.Context) GetScalingGroupInstanceRemovePolicyOutput
+}
+
+type GetScalingGroupInstanceRemovePolicyArgs struct {
+	// Whether to decrease the desired instance count synchronously when DetachInstances or RemoveInstances is performed
+	DecreaseDesiredCapacity pulumi.BoolInput `pulumi:"decreaseDesiredCapacity"`
+	// Instance removal policy for DetachInstances
+	DetachOption pulumi.StringInput `pulumi:"detachOption"`
+	// Whether to force delete the instance when RemoveInstances is performed
+	ForceDelete pulumi.BoolInput `pulumi:"forceDelete"`
+	// ECS instance ID, unique identifier of the subresource
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
+	LifecycleHook pulumi.BoolInput `pulumi:"lifecycleHook"`
+	// Mode: How to handle an instance when it is removed from the scaling group: Detach means only remove from the scaling group, Remove means remove and delete the instance
+	Mode pulumi.StringInput `pulumi:"mode"`
+	// Removal mode for RemoveInstances
+	RemoveMode pulumi.StringInput `pulumi:"removeMode"`
+}
+
+func (GetScalingGroupInstanceRemovePolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScalingGroupInstanceRemovePolicy)(nil)).Elem()
+}
+
+func (i GetScalingGroupInstanceRemovePolicyArgs) ToGetScalingGroupInstanceRemovePolicyOutput() GetScalingGroupInstanceRemovePolicyOutput {
+	return i.ToGetScalingGroupInstanceRemovePolicyOutputWithContext(context.Background())
+}
+
+func (i GetScalingGroupInstanceRemovePolicyArgs) ToGetScalingGroupInstanceRemovePolicyOutputWithContext(ctx context.Context) GetScalingGroupInstanceRemovePolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScalingGroupInstanceRemovePolicyOutput)
+}
+
+// GetScalingGroupInstanceRemovePolicyArrayInput is an input type that accepts GetScalingGroupInstanceRemovePolicyArray and GetScalingGroupInstanceRemovePolicyArrayOutput values.
+// You can construct a concrete instance of `GetScalingGroupInstanceRemovePolicyArrayInput` via:
+//
+//	GetScalingGroupInstanceRemovePolicyArray{ GetScalingGroupInstanceRemovePolicyArgs{...} }
+type GetScalingGroupInstanceRemovePolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetScalingGroupInstanceRemovePolicyArrayOutput() GetScalingGroupInstanceRemovePolicyArrayOutput
+	ToGetScalingGroupInstanceRemovePolicyArrayOutputWithContext(context.Context) GetScalingGroupInstanceRemovePolicyArrayOutput
+}
+
+type GetScalingGroupInstanceRemovePolicyArray []GetScalingGroupInstanceRemovePolicyInput
+
+func (GetScalingGroupInstanceRemovePolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScalingGroupInstanceRemovePolicy)(nil)).Elem()
+}
+
+func (i GetScalingGroupInstanceRemovePolicyArray) ToGetScalingGroupInstanceRemovePolicyArrayOutput() GetScalingGroupInstanceRemovePolicyArrayOutput {
+	return i.ToGetScalingGroupInstanceRemovePolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetScalingGroupInstanceRemovePolicyArray) ToGetScalingGroupInstanceRemovePolicyArrayOutputWithContext(ctx context.Context) GetScalingGroupInstanceRemovePolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScalingGroupInstanceRemovePolicyArrayOutput)
+}
+
+type GetScalingGroupInstanceRemovePolicyOutput struct{ *pulumi.OutputState }
+
+func (GetScalingGroupInstanceRemovePolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScalingGroupInstanceRemovePolicy)(nil)).Elem()
+}
+
+func (o GetScalingGroupInstanceRemovePolicyOutput) ToGetScalingGroupInstanceRemovePolicyOutput() GetScalingGroupInstanceRemovePolicyOutput {
+	return o
+}
+
+func (o GetScalingGroupInstanceRemovePolicyOutput) ToGetScalingGroupInstanceRemovePolicyOutputWithContext(ctx context.Context) GetScalingGroupInstanceRemovePolicyOutput {
+	return o
+}
+
+// Whether to decrease the desired instance count synchronously when DetachInstances or RemoveInstances is performed
+func (o GetScalingGroupInstanceRemovePolicyOutput) DecreaseDesiredCapacity() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetScalingGroupInstanceRemovePolicy) bool { return v.DecreaseDesiredCapacity }).(pulumi.BoolOutput)
+}
+
+// Instance removal policy for DetachInstances
+func (o GetScalingGroupInstanceRemovePolicyOutput) DetachOption() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingGroupInstanceRemovePolicy) string { return v.DetachOption }).(pulumi.StringOutput)
+}
+
+// Whether to force delete the instance when RemoveInstances is performed
+func (o GetScalingGroupInstanceRemovePolicyOutput) ForceDelete() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetScalingGroupInstanceRemovePolicy) bool { return v.ForceDelete }).(pulumi.BoolOutput)
+}
+
+// ECS instance ID, unique identifier of the subresource
+func (o GetScalingGroupInstanceRemovePolicyOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingGroupInstanceRemovePolicy) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// Whether to trigger lifecycle hooks when the instance is attached, detached, or removed
+func (o GetScalingGroupInstanceRemovePolicyOutput) LifecycleHook() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetScalingGroupInstanceRemovePolicy) bool { return v.LifecycleHook }).(pulumi.BoolOutput)
+}
+
+// Mode: How to handle an instance when it is removed from the scaling group: Detach means only remove from the scaling group, Remove means remove and delete the instance
+func (o GetScalingGroupInstanceRemovePolicyOutput) Mode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingGroupInstanceRemovePolicy) string { return v.Mode }).(pulumi.StringOutput)
+}
+
+// Removal mode for RemoveInstances
+func (o GetScalingGroupInstanceRemovePolicyOutput) RemoveMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScalingGroupInstanceRemovePolicy) string { return v.RemoveMode }).(pulumi.StringOutput)
+}
+
+type GetScalingGroupInstanceRemovePolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScalingGroupInstanceRemovePolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScalingGroupInstanceRemovePolicy)(nil)).Elem()
+}
+
+func (o GetScalingGroupInstanceRemovePolicyArrayOutput) ToGetScalingGroupInstanceRemovePolicyArrayOutput() GetScalingGroupInstanceRemovePolicyArrayOutput {
+	return o
+}
+
+func (o GetScalingGroupInstanceRemovePolicyArrayOutput) ToGetScalingGroupInstanceRemovePolicyArrayOutputWithContext(ctx context.Context) GetScalingGroupInstanceRemovePolicyArrayOutput {
+	return o
+}
+
+func (o GetScalingGroupInstanceRemovePolicyArrayOutput) Index(i pulumi.IntInput) GetScalingGroupInstanceRemovePolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScalingGroupInstanceRemovePolicy {
+		return vs[0].([]GetScalingGroupInstanceRemovePolicy)[vs[1].(int)]
+	}).(GetScalingGroupInstanceRemovePolicyOutput)
+}
+
 type GetScalingGroupInstancesDistribution struct {
-	// 当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+	// Whether pay-as-you-go instances are allowed to supplement spot capacity if spot instances cannot be created due to price or inventory constraints. true: allowed. false (default): not allowed.
 	CompensateWithOnDemand bool `pulumi:"compensateWithOnDemand"`
-	// 伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+	// Minimum number of pay-as-you-go instances in the scaling group. Value range: 0~2000. If the number of pay-as-you-go instances in the group is less than this value, pay-as-you-go instances will be prioritized for creation.
 	OnDemandBaseCapacity int `pulumi:"onDemandBaseCapacity"`
-	// 伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+	// After the scaling group meets the minimum number of pay-as-you-go instances, the proportion of pay-as-you-go instances among the excess instances. Value range: 0–100.
 	OnDemandPercentageAboveBaseCapacity int `pulumi:"onDemandPercentageAboveBaseCapacity"`
-	// 是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+	// Whether to allow preemptible instance replacement upon expiration. If enabled, the scaling group will proactively create a new preemptible instance to replace the current one about 5 minutes before the preemptible instance is reclaimed. true: allowed. false (default): not allowed.
 	SpotInstanceRemedy bool `pulumi:"spotInstanceRemedy"`
 }
 
@@ -2449,13 +3053,13 @@ type GetScalingGroupInstancesDistributionInput interface {
 }
 
 type GetScalingGroupInstancesDistributionArgs struct {
-	// 当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+	// Whether pay-as-you-go instances are allowed to supplement spot capacity if spot instances cannot be created due to price or inventory constraints. true: allowed. false (default): not allowed.
 	CompensateWithOnDemand pulumi.BoolInput `pulumi:"compensateWithOnDemand"`
-	// 伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+	// Minimum number of pay-as-you-go instances in the scaling group. Value range: 0~2000. If the number of pay-as-you-go instances in the group is less than this value, pay-as-you-go instances will be prioritized for creation.
 	OnDemandBaseCapacity pulumi.IntInput `pulumi:"onDemandBaseCapacity"`
-	// 伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+	// After the scaling group meets the minimum number of pay-as-you-go instances, the proportion of pay-as-you-go instances among the excess instances. Value range: 0–100.
 	OnDemandPercentageAboveBaseCapacity pulumi.IntInput `pulumi:"onDemandPercentageAboveBaseCapacity"`
-	// 是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+	// Whether to allow preemptible instance replacement upon expiration. If enabled, the scaling group will proactively create a new preemptible instance to replace the current one about 5 minutes before the preemptible instance is reclaimed. true: allowed. false (default): not allowed.
 	SpotInstanceRemedy pulumi.BoolInput `pulumi:"spotInstanceRemedy"`
 }
 
@@ -2485,32 +3089,32 @@ func (o GetScalingGroupInstancesDistributionOutput) ToGetScalingGroupInstancesDi
 	return o
 }
 
-// 当因价格、库存等原因无法创建足够的抢占式实例时，是否允许使用按量实例补充抢占式容量。true: 允许。false（默认）: 不允许。
+// Whether pay-as-you-go instances are allowed to supplement spot capacity if spot instances cannot be created due to price or inventory constraints. true: allowed. false (default): not allowed.
 func (o GetScalingGroupInstancesDistributionOutput) CompensateWithOnDemand() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetScalingGroupInstancesDistribution) bool { return v.CompensateWithOnDemand }).(pulumi.BoolOutput)
 }
 
-// 伸缩组中按量计费实例个数的最小值，取值范围：0~2000。当组中按量计费实例个数少于该值时，将优先创建按量计费的实例。
+// Minimum number of pay-as-you-go instances in the scaling group. Value range: 0~2000. If the number of pay-as-you-go instances in the group is less than this value, pay-as-you-go instances will be prioritized for creation.
 func (o GetScalingGroupInstancesDistributionOutput) OnDemandBaseCapacity() pulumi.IntOutput {
 	return o.ApplyT(func(v GetScalingGroupInstancesDistribution) int { return v.OnDemandBaseCapacity }).(pulumi.IntOutput)
 }
 
-// 伸缩组满足最小按量实例数要求后，超出的实例中按量实例应占的比例，取值范围：0～100。
+// After the scaling group meets the minimum number of pay-as-you-go instances, the proportion of pay-as-you-go instances among the excess instances. Value range: 0–100.
 func (o GetScalingGroupInstancesDistributionOutput) OnDemandPercentageAboveBaseCapacity() pulumi.IntOutput {
 	return o.ApplyT(func(v GetScalingGroupInstancesDistribution) int { return v.OnDemandPercentageAboveBaseCapacity }).(pulumi.IntOutput)
 }
 
-// 是否允许抢占式实例到期替换。开启则表示在抢占式实例被回收前5分钟左右，伸缩组将主动新建新的抢占式实例替换掉当前抢占式实例。true: 允许。false（默认）: 不允许。
+// Whether to allow preemptible instance replacement upon expiration. If enabled, the scaling group will proactively create a new preemptible instance to replace the current one about 5 minutes before the preemptible instance is reclaimed. true: allowed. false (default): not allowed.
 func (o GetScalingGroupInstancesDistributionOutput) SpotInstanceRemedy() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetScalingGroupInstancesDistribution) bool { return v.SpotInstanceRemedy }).(pulumi.BoolOutput)
 }
 
 type GetScalingGroupLaunchTemplateOverride struct {
-	// 指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
+	// Specify the instance type. This parameter is valid only when the LaunchTemplateId parameter is set.
 	InstanceType string `pulumi:"instanceType"`
-	// 指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+	// Specify the maximum hourly price for spot instance types. This parameter is valid only when the LaunchTemplateId parameter is set and the launch template's billing mode is SpotWithPriceLimit.
 	PriceLimit float64 `pulumi:"priceLimit"`
-	// 实例规格的权重。
+	// Instance type weight
 	WeightedCapacity int `pulumi:"weightedCapacity"`
 }
 
@@ -2526,11 +3130,11 @@ type GetScalingGroupLaunchTemplateOverrideInput interface {
 }
 
 type GetScalingGroupLaunchTemplateOverrideArgs struct {
-	// 指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
+	// Specify the instance type. This parameter is valid only when the LaunchTemplateId parameter is set.
 	InstanceType pulumi.StringInput `pulumi:"instanceType"`
-	// 指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+	// Specify the maximum hourly price for spot instance types. This parameter is valid only when the LaunchTemplateId parameter is set and the launch template's billing mode is SpotWithPriceLimit.
 	PriceLimit pulumi.Float64Input `pulumi:"priceLimit"`
-	// 实例规格的权重。
+	// Instance type weight
 	WeightedCapacity pulumi.IntInput `pulumi:"weightedCapacity"`
 }
 
@@ -2585,17 +3189,17 @@ func (o GetScalingGroupLaunchTemplateOverrideOutput) ToGetScalingGroupLaunchTemp
 	return o
 }
 
-// 指定实例规格。本参数仅当LaunchTemplateId参数存在取值时生有效。
+// Specify the instance type. This parameter is valid only when the LaunchTemplateId parameter is set.
 func (o GetScalingGroupLaunchTemplateOverrideOutput) InstanceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingGroupLaunchTemplateOverride) string { return v.InstanceType }).(pulumi.StringOutput)
 }
 
-// 指定抢占式实例规格每小时的最高价格。本参数仅当LaunchTemplateId参数存在取值，且启动模版的计费模式为设置出价上限的抢占式实例（即SpotWithPriceLimit）时有效。
+// Specify the maximum hourly price for spot instance types. This parameter is valid only when the LaunchTemplateId parameter is set and the launch template's billing mode is SpotWithPriceLimit.
 func (o GetScalingGroupLaunchTemplateOverrideOutput) PriceLimit() pulumi.Float64Output {
 	return o.ApplyT(func(v GetScalingGroupLaunchTemplateOverride) float64 { return v.PriceLimit }).(pulumi.Float64Output)
 }
 
-// 实例规格的权重。
+// Instance type weight
 func (o GetScalingGroupLaunchTemplateOverrideOutput) WeightedCapacity() pulumi.IntOutput {
 	return o.ApplyT(func(v GetScalingGroupLaunchTemplateOverride) int { return v.WeightedCapacity }).(pulumi.IntOutput)
 }
@@ -2621,15 +3225,15 @@ func (o GetScalingGroupLaunchTemplateOverrideArrayOutput) Index(i pulumi.IntInpu
 }
 
 type GetScalingGroupServerGroupAttribute struct {
-	// 负载均衡实例的ID。
+	// ID of the load balancer instance.
 	LoadBalancerId string `pulumi:"loadBalancerId"`
-	// 负载均衡后端服务器组中服务器的端口号。取值1 ～ 65535。
+	// Port number of the server in the backend server group for load balancing. Range: 1–65535.
 	Port int `pulumi:"port"`
-	// 负载均衡后端服务器组的ID。
+	// Backend server group ID for load balancing.
 	ServerGroupId string `pulumi:"serverGroupId"`
-	// 负载均衡服务器组类型。单个CLB/ALB最多支持添加20个后端服务器组，所有CLB/ALB最多支持添加100个后端服务器。ALB：应用型负载均衡。CLB：传统型型负载均衡（默认）。
+	// Load balancing server group type. A single CLB/ALB supports up to 20 backend server groups, and the total number of backend servers supported by all CLB/ALB is 100. ALB: Application Load Balancer. CLB: Classic Load Balancer (default).
 	Type string `pulumi:"type"`
-	// 负载均衡后端服务器组中服务器的权重。
+	// Weight of servers in the backend server group of the load balancer
 	Weight int `pulumi:"weight"`
 }
 
@@ -2645,15 +3249,15 @@ type GetScalingGroupServerGroupAttributeInput interface {
 }
 
 type GetScalingGroupServerGroupAttributeArgs struct {
-	// 负载均衡实例的ID。
+	// ID of the load balancer instance.
 	LoadBalancerId pulumi.StringInput `pulumi:"loadBalancerId"`
-	// 负载均衡后端服务器组中服务器的端口号。取值1 ～ 65535。
+	// Port number of the server in the backend server group for load balancing. Range: 1–65535.
 	Port pulumi.IntInput `pulumi:"port"`
-	// 负载均衡后端服务器组的ID。
+	// Backend server group ID for load balancing.
 	ServerGroupId pulumi.StringInput `pulumi:"serverGroupId"`
-	// 负载均衡服务器组类型。单个CLB/ALB最多支持添加20个后端服务器组，所有CLB/ALB最多支持添加100个后端服务器。ALB：应用型负载均衡。CLB：传统型型负载均衡（默认）。
+	// Load balancing server group type. A single CLB/ALB supports up to 20 backend server groups, and the total number of backend servers supported by all CLB/ALB is 100. ALB: Application Load Balancer. CLB: Classic Load Balancer (default).
 	Type pulumi.StringInput `pulumi:"type"`
-	// 负载均衡后端服务器组中服务器的权重。
+	// Weight of servers in the backend server group of the load balancer
 	Weight pulumi.IntInput `pulumi:"weight"`
 }
 
@@ -2708,27 +3312,27 @@ func (o GetScalingGroupServerGroupAttributeOutput) ToGetScalingGroupServerGroupA
 	return o
 }
 
-// 负载均衡实例的ID。
+// ID of the load balancer instance.
 func (o GetScalingGroupServerGroupAttributeOutput) LoadBalancerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingGroupServerGroupAttribute) string { return v.LoadBalancerId }).(pulumi.StringOutput)
 }
 
-// 负载均衡后端服务器组中服务器的端口号。取值1 ～ 65535。
+// Port number of the server in the backend server group for load balancing. Range: 1–65535.
 func (o GetScalingGroupServerGroupAttributeOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetScalingGroupServerGroupAttribute) int { return v.Port }).(pulumi.IntOutput)
 }
 
-// 负载均衡后端服务器组的ID。
+// Backend server group ID for load balancing.
 func (o GetScalingGroupServerGroupAttributeOutput) ServerGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingGroupServerGroupAttribute) string { return v.ServerGroupId }).(pulumi.StringOutput)
 }
 
-// 负载均衡服务器组类型。单个CLB/ALB最多支持添加20个后端服务器组，所有CLB/ALB最多支持添加100个后端服务器。ALB：应用型负载均衡。CLB：传统型型负载均衡（默认）。
+// Load balancing server group type. A single CLB/ALB supports up to 20 backend server groups, and the total number of backend servers supported by all CLB/ALB is 100. ALB: Application Load Balancer. CLB: Classic Load Balancer (default).
 func (o GetScalingGroupServerGroupAttributeOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingGroupServerGroupAttribute) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// 负载均衡后端服务器组中服务器的权重。
+// Weight of servers in the backend server group of the load balancer
 func (o GetScalingGroupServerGroupAttributeOutput) Weight() pulumi.IntOutput {
 	return o.ApplyT(func(v GetScalingGroupServerGroupAttribute) int { return v.Weight }).(pulumi.IntOutput)
 }
@@ -2754,9 +3358,9 @@ func (o GetScalingGroupServerGroupAttributeArrayOutput) Index(i pulumi.IntInput)
 }
 
 type GetScalingGroupTag struct {
-	// 用户标签的标签键。
+	// User label tag key
 	Key string `pulumi:"key"`
-	// 用户标签的标签值。
+	// The value of the user tag.
 	Value string `pulumi:"value"`
 }
 
@@ -2772,9 +3376,9 @@ type GetScalingGroupTagInput interface {
 }
 
 type GetScalingGroupTagArgs struct {
-	// 用户标签的标签键。
+	// User label tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// The value of the user tag.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -2829,12 +3433,12 @@ func (o GetScalingGroupTagOutput) ToGetScalingGroupTagOutputWithContext(ctx cont
 	return o
 }
 
-// 用户标签的标签键。
+// User label tag key
 func (o GetScalingGroupTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingGroupTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。
+// The value of the user tag.
 func (o GetScalingGroupTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingGroupTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -2860,9 +3464,9 @@ func (o GetScalingGroupTagArrayOutput) Index(i pulumi.IntInput) GetScalingGroupT
 }
 
 type GetScalingLifecycleHookLifecycleCommand struct {
-	// 云助手命令ID，表示触发生命周期挂钩后在实例中执行云助手命令。如果命令执行成功，则按照CONTINUE执行挂起结束后的策略。如果命令执行失败/超时或生命周期挂钩超时，则按照LifecycleHookPolicy参数的配置执行挂起结束后的策略。
+	// Cloud Assistant command ID, indicates that after the lifecycle hook is triggered, the Cloud Assistant command is executed on the instance. If the command executes successfully, the post-suspend policy is executed according to CONTINUE. If the command fails, times out, or the lifecycle hook times out, the post-suspend policy is executed according to the LifecycleHookPolicy parameter configuration.
 	CommandId string `pulumi:"commandId"`
-	// 云助手命令中的参数和参数值。参数的个数范围为0~60，且需要注意：参数不允许为空字符串，最多支持64个字符。值允许为空字符串。参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+	// Parameters and values in the Cloud Assistant command. The number of parameters ranges from 0 to 60. Note: Parameters cannot be empty strings and can have up to 64 characters. Values can be empty strings. After Base64 encoding, the combined length of parameters and the original command content must not exceed 16 KB. The set of parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
 	Parameters string `pulumi:"parameters"`
 }
 
@@ -2878,9 +3482,9 @@ type GetScalingLifecycleHookLifecycleCommandInput interface {
 }
 
 type GetScalingLifecycleHookLifecycleCommandArgs struct {
-	// 云助手命令ID，表示触发生命周期挂钩后在实例中执行云助手命令。如果命令执行成功，则按照CONTINUE执行挂起结束后的策略。如果命令执行失败/超时或生命周期挂钩超时，则按照LifecycleHookPolicy参数的配置执行挂起结束后的策略。
+	// Cloud Assistant command ID, indicates that after the lifecycle hook is triggered, the Cloud Assistant command is executed on the instance. If the command executes successfully, the post-suspend policy is executed according to CONTINUE. If the command fails, times out, or the lifecycle hook times out, the post-suspend policy is executed according to the LifecycleHookPolicy parameter configuration.
 	CommandId pulumi.StringInput `pulumi:"commandId"`
-	// 云助手命令中的参数和参数值。参数的个数范围为0~60，且需要注意：参数不允许为空字符串，最多支持64个字符。值允许为空字符串。参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+	// Parameters and values in the Cloud Assistant command. The number of parameters ranges from 0 to 60. Note: Parameters cannot be empty strings and can have up to 64 characters. Values can be empty strings. After Base64 encoding, the combined length of parameters and the original command content must not exceed 16 KB. The set of parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
 	Parameters pulumi.StringInput `pulumi:"parameters"`
 }
 
@@ -2910,28 +3514,28 @@ func (o GetScalingLifecycleHookLifecycleCommandOutput) ToGetScalingLifecycleHook
 	return o
 }
 
-// 云助手命令ID，表示触发生命周期挂钩后在实例中执行云助手命令。如果命令执行成功，则按照CONTINUE执行挂起结束后的策略。如果命令执行失败/超时或生命周期挂钩超时，则按照LifecycleHookPolicy参数的配置执行挂起结束后的策略。
+// Cloud Assistant command ID, indicates that after the lifecycle hook is triggered, the Cloud Assistant command is executed on the instance. If the command executes successfully, the post-suspend policy is executed according to CONTINUE. If the command fails, times out, or the lifecycle hook times out, the post-suspend policy is executed according to the LifecycleHookPolicy parameter configuration.
 func (o GetScalingLifecycleHookLifecycleCommandOutput) CommandId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingLifecycleHookLifecycleCommand) string { return v.CommandId }).(pulumi.StringOutput)
 }
 
-// 云助手命令中的参数和参数值。参数的个数范围为0~60，且需要注意：参数不允许为空字符串，最多支持64个字符。值允许为空字符串。参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+// Parameters and values in the Cloud Assistant command. The number of parameters ranges from 0 to 60. Note: Parameters cannot be empty strings and can have up to 64 characters. Values can be empty strings. After Base64 encoding, the combined length of parameters and the original command content must not exceed 16 KB. The set of parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
 func (o GetScalingLifecycleHookLifecycleCommandOutput) Parameters() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingLifecycleHookLifecycleCommand) string { return v.Parameters }).(pulumi.StringOutput)
 }
 
 type GetScalingPolicyAlarmPolicy struct {
-	// 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
+	// Detailed monitoring metric information for single-metric monitoring. Valid only when ScalingPolicyType is set to Alarm.
 	Condition GetScalingPolicyAlarmPolicyCondition `pulumi:"condition"`
-	// 多指标告警时的判定条件。&&：多个指标同时成立才判定为触发告警。||（默认）：任意指标满足条件就判定为触发告警。
+	// Determination conditions for multi-metric alarms. &&: Alarm is triggered only when all metrics meet the conditions. || (default): Alarm is triggered when any metric meets the condition.
 	ConditionOperator string `pulumi:"conditionOperator"`
-	// 多指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效，且必须配置AlarmPolicy.Condition.x或AlarmPolicy.Conditions.x相关参数，当二者同时配置时，仅AlarmPolicy.Conditions.x生效。
+	// Detailed information about monitoring metrics for multi-metric monitoring. Valid only when ScalingPolicyType is set to Alarm. You must configure either AlarmPolicy.Condition.x or AlarmPolicy.Conditions.x parameters. If both are configured, only AlarmPolicy.Conditions.x takes effect.
 	Conditions []GetScalingPolicyAlarmPolicyCondition `pulumi:"conditions"`
-	// 报警任务的生效时间段。
+	// The effective period for the alarm task.
 	Effective string `pulumi:"effective"`
-	// 当监控指标数据连续几次达到阈值时，即触发伸缩行为。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+	// Scaling actions are triggered when monitoring metric data reaches the threshold for several consecutive times. Valid only when ScalingPolicyType is set to Alarm and required.
 	EvaluationCount int `pulumi:"evaluationCount"`
-	// 报警任务的类型，取值：Static：表示由agent采集的静态监控。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+	// Type of alarm task. Options: Static: static monitoring collected by agent. Valid only when ScalingPolicyType is set to Alarm and required.
 	RuleType string `pulumi:"ruleType"`
 }
 
@@ -2947,17 +3551,17 @@ type GetScalingPolicyAlarmPolicyInput interface {
 }
 
 type GetScalingPolicyAlarmPolicyArgs struct {
-	// 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
+	// Detailed monitoring metric information for single-metric monitoring. Valid only when ScalingPolicyType is set to Alarm.
 	Condition GetScalingPolicyAlarmPolicyConditionInput `pulumi:"condition"`
-	// 多指标告警时的判定条件。&&：多个指标同时成立才判定为触发告警。||（默认）：任意指标满足条件就判定为触发告警。
+	// Determination conditions for multi-metric alarms. &&: Alarm is triggered only when all metrics meet the conditions. || (default): Alarm is triggered when any metric meets the condition.
 	ConditionOperator pulumi.StringInput `pulumi:"conditionOperator"`
-	// 多指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效，且必须配置AlarmPolicy.Condition.x或AlarmPolicy.Conditions.x相关参数，当二者同时配置时，仅AlarmPolicy.Conditions.x生效。
+	// Detailed information about monitoring metrics for multi-metric monitoring. Valid only when ScalingPolicyType is set to Alarm. You must configure either AlarmPolicy.Condition.x or AlarmPolicy.Conditions.x parameters. If both are configured, only AlarmPolicy.Conditions.x takes effect.
 	Conditions GetScalingPolicyAlarmPolicyConditionArrayInput `pulumi:"conditions"`
-	// 报警任务的生效时间段。
+	// The effective period for the alarm task.
 	Effective pulumi.StringInput `pulumi:"effective"`
-	// 当监控指标数据连续几次达到阈值时，即触发伸缩行为。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+	// Scaling actions are triggered when monitoring metric data reaches the threshold for several consecutive times. Valid only when ScalingPolicyType is set to Alarm and required.
 	EvaluationCount pulumi.IntInput `pulumi:"evaluationCount"`
-	// 报警任务的类型，取值：Static：表示由agent采集的静态监控。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+	// Type of alarm task. Options: Static: static monitoring collected by agent. Valid only when ScalingPolicyType is set to Alarm and required.
 	RuleType pulumi.StringInput `pulumi:"ruleType"`
 }
 
@@ -2987,44 +3591,44 @@ func (o GetScalingPolicyAlarmPolicyOutput) ToGetScalingPolicyAlarmPolicyOutputWi
 	return o
 }
 
-// 单指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效。
+// Detailed monitoring metric information for single-metric monitoring. Valid only when ScalingPolicyType is set to Alarm.
 func (o GetScalingPolicyAlarmPolicyOutput) Condition() GetScalingPolicyAlarmPolicyConditionOutput {
 	return o.ApplyT(func(v GetScalingPolicyAlarmPolicy) GetScalingPolicyAlarmPolicyCondition { return v.Condition }).(GetScalingPolicyAlarmPolicyConditionOutput)
 }
 
-// 多指标告警时的判定条件。&&：多个指标同时成立才判定为触发告警。||（默认）：任意指标满足条件就判定为触发告警。
+// Determination conditions for multi-metric alarms. &&: Alarm is triggered only when all metrics meet the conditions. || (default): Alarm is triggered when any metric meets the condition.
 func (o GetScalingPolicyAlarmPolicyOutput) ConditionOperator() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingPolicyAlarmPolicy) string { return v.ConditionOperator }).(pulumi.StringOutput)
 }
 
-// 多指标监控时的监控指标详细信息。仅当ScalingPolicyType取值为Alarm时有效，且必须配置AlarmPolicy.Condition.x或AlarmPolicy.Conditions.x相关参数，当二者同时配置时，仅AlarmPolicy.Conditions.x生效。
+// Detailed information about monitoring metrics for multi-metric monitoring. Valid only when ScalingPolicyType is set to Alarm. You must configure either AlarmPolicy.Condition.x or AlarmPolicy.Conditions.x parameters. If both are configured, only AlarmPolicy.Conditions.x takes effect.
 func (o GetScalingPolicyAlarmPolicyOutput) Conditions() GetScalingPolicyAlarmPolicyConditionArrayOutput {
 	return o.ApplyT(func(v GetScalingPolicyAlarmPolicy) []GetScalingPolicyAlarmPolicyCondition { return v.Conditions }).(GetScalingPolicyAlarmPolicyConditionArrayOutput)
 }
 
-// 报警任务的生效时间段。
+// The effective period for the alarm task.
 func (o GetScalingPolicyAlarmPolicyOutput) Effective() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingPolicyAlarmPolicy) string { return v.Effective }).(pulumi.StringOutput)
 }
 
-// 当监控指标数据连续几次达到阈值时，即触发伸缩行为。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+// Scaling actions are triggered when monitoring metric data reaches the threshold for several consecutive times. Valid only when ScalingPolicyType is set to Alarm and required.
 func (o GetScalingPolicyAlarmPolicyOutput) EvaluationCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetScalingPolicyAlarmPolicy) int { return v.EvaluationCount }).(pulumi.IntOutput)
 }
 
-// 报警任务的类型，取值：Static：表示由agent采集的静态监控。仅当ScalingPolicyType取值为Alarm时有效且为必填项。
+// Type of alarm task. Options: Static: static monitoring collected by agent. Valid only when ScalingPolicyType is set to Alarm and required.
 func (o GetScalingPolicyAlarmPolicyOutput) RuleType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingPolicyAlarmPolicy) string { return v.RuleType }).(pulumi.StringOutput)
 }
 
 type GetScalingPolicyAlarmPolicyCondition struct {
-	// 指标告警时的规则表达式对象。>：大于。<：小于。=：等于。
+	// Rule expression object for metric alarms. >: Greater than. <: Less than. =: Equal to.
 	ComparisonOperator string `pulumi:"comparisonOperator"`
-	// 指标告警时的监控指标名称。CpuTotal*Max：带内CPU使用率最大值。CpuTotal*Min：带内CPU使用率最小值。CpuTotal*Avg：带内CPU使用率平均值。MemoryUsedUtilization*Max：带内内存使用率最大值。MemoryUsedUtilization*Min：带内内存使用率最小值。MemoryUsedUtilization*Avg：带内内存使用率平均值。Instance*CpuBusy*Max：带外CPU利用率最大值。Instance*CpuBusy*Min：带外CPU利用率最小值。Instance*CpuBusy*Avg：带外CPU利用率平均值。Instance*NetTxBits*Avg: 带外网络流出速率平均值。Instance*NetRxBits*Avg: 带外网络流入速率平均值。Instance*NetTxPackets*Avg: 带外网络发送包速率平均值。Instance*NetRxPackets*Avg: 带外网络接收包速率平均值。SystemDiskReadBytes*Avg: 带内系统盘读带宽平均值。SystemDiskWriteBytes*Avg: 带内系统盘写带宽平均值。SystemDiskReadIOPS*Avg: 带内系统盘读IOPS平均值。SystemDiskWriteIOPS*Avg: 带内系统盘写IOPS平均值。NetTcpConnection_Avg: 带内TCP连接数平均值。
+	// Monitoring metric names for metric alarms. CpuTotal*Max: Maximum in-band CPU usage. CpuTotal*Min: Minimum in-band CPU usage. CpuTotal*Avg: Average in-band CPU usage. MemoryUsedUtilization*Max: Maximum in-band memory usage. MemoryUsedUtilization*Min: Minimum in-band memory usage. MemoryUsedUtilization*Avg: Average in-band memory usage. Instance*CpuBusy*Max: Maximum out-of-band CPU utilization. Instance*CpuBusy*Min: Minimum out-of-band CPU utilization. Instance*CpuBusy*Avg: Average out-of-band CPU utilization. Instance*NetTxBits*Avg: Average out-of-band network outbound rate. Instance*NetRxBits*Avg: Average out-of-band network inbound rate. Instance*NetTxPackets*Avg: Average out-of-band network packet send rate. Instance*NetRxPackets*Avg: Average out-of-band network packet receive rate. SystemDiskReadBytes*Avg: Average in-band system disk read bandwidth. SystemDiskWriteBytes*Avg: Average in-band system disk write bandwidth. SystemDiskReadIOPS*Avg: Average in-band system disk read IOPS. SystemDiskWriteIOPS*Avg: Average in-band system disk write IOPS. NetTcpConnection_Avg: Average in-band TCP connection count.
 	MetricName string `pulumi:"metricName"`
-	// 指标告警时的监控指标阈值的单位。当AlarmPolicy.Conditions.MetricName参数取值为CPU/内存使用率时: Percent。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写带宽时: Bytes/Second(IEC)。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写IOPS时: Count/Second。当AlarmPolicy.Conditions.MetricName参数取值为TCP连接数时: Count。当AlarmPolicy.Condition.MetricName参数取值为网络流入/流出速率时: Bits/Second(IEC)。当AlarmPolicy.Condition.MetricName参数取值为网络收发包速率时: Packet/Second。
+	// The unit for the monitoring metric threshold when an alarm is triggered. When the AlarmPolicy.Conditions.MetricName parameter is set to CPU/memory usage: Percent. When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write bandwidth: Bytes/Second(IEC). When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write IOPS: Count/Second. When the AlarmPolicy.Conditions.MetricName parameter is set to TCP connections: Count. When the AlarmPolicy.Condition.MetricName parameter is set to network inbound/outbound rate: Bits/Second(IEC). When the AlarmPolicy.Condition.MetricName parameter is set to network packet transmission rate: Packet/Second.
 	MetricUnit string `pulumi:"metricUnit"`
-	// 指标告警时的监控指标的阈值。当AlarmPolicy.Conditions.MetricUnit取值为Percent时：1 ～ 100。当AlarmPolicy.Conditions.MetricUnit取值为Bytes/Second(IEC)时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count/Second时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Bits/Second(IEC)时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Packet/Second时：大于0的整数。
+	// The threshold value for the monitoring metric when an alarm is triggered. When AlarmPolicy.Conditions.MetricUnit is set to Percent: 1–100. When AlarmPolicy.Conditions.MetricUnit is set to Bytes/Second(IEC): an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count/Second: an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count: an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Bits/Second(IEC): an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Packet/Second: an integer greater than 0.
 	Threshold string `pulumi:"threshold"`
 }
 
@@ -3040,13 +3644,13 @@ type GetScalingPolicyAlarmPolicyConditionInput interface {
 }
 
 type GetScalingPolicyAlarmPolicyConditionArgs struct {
-	// 指标告警时的规则表达式对象。>：大于。<：小于。=：等于。
+	// Rule expression object for metric alarms. >: Greater than. <: Less than. =: Equal to.
 	ComparisonOperator pulumi.StringInput `pulumi:"comparisonOperator"`
-	// 指标告警时的监控指标名称。CpuTotal*Max：带内CPU使用率最大值。CpuTotal*Min：带内CPU使用率最小值。CpuTotal*Avg：带内CPU使用率平均值。MemoryUsedUtilization*Max：带内内存使用率最大值。MemoryUsedUtilization*Min：带内内存使用率最小值。MemoryUsedUtilization*Avg：带内内存使用率平均值。Instance*CpuBusy*Max：带外CPU利用率最大值。Instance*CpuBusy*Min：带外CPU利用率最小值。Instance*CpuBusy*Avg：带外CPU利用率平均值。Instance*NetTxBits*Avg: 带外网络流出速率平均值。Instance*NetRxBits*Avg: 带外网络流入速率平均值。Instance*NetTxPackets*Avg: 带外网络发送包速率平均值。Instance*NetRxPackets*Avg: 带外网络接收包速率平均值。SystemDiskReadBytes*Avg: 带内系统盘读带宽平均值。SystemDiskWriteBytes*Avg: 带内系统盘写带宽平均值。SystemDiskReadIOPS*Avg: 带内系统盘读IOPS平均值。SystemDiskWriteIOPS*Avg: 带内系统盘写IOPS平均值。NetTcpConnection_Avg: 带内TCP连接数平均值。
+	// Monitoring metric names for metric alarms. CpuTotal*Max: Maximum in-band CPU usage. CpuTotal*Min: Minimum in-band CPU usage. CpuTotal*Avg: Average in-band CPU usage. MemoryUsedUtilization*Max: Maximum in-band memory usage. MemoryUsedUtilization*Min: Minimum in-band memory usage. MemoryUsedUtilization*Avg: Average in-band memory usage. Instance*CpuBusy*Max: Maximum out-of-band CPU utilization. Instance*CpuBusy*Min: Minimum out-of-band CPU utilization. Instance*CpuBusy*Avg: Average out-of-band CPU utilization. Instance*NetTxBits*Avg: Average out-of-band network outbound rate. Instance*NetRxBits*Avg: Average out-of-band network inbound rate. Instance*NetTxPackets*Avg: Average out-of-band network packet send rate. Instance*NetRxPackets*Avg: Average out-of-band network packet receive rate. SystemDiskReadBytes*Avg: Average in-band system disk read bandwidth. SystemDiskWriteBytes*Avg: Average in-band system disk write bandwidth. SystemDiskReadIOPS*Avg: Average in-band system disk read IOPS. SystemDiskWriteIOPS*Avg: Average in-band system disk write IOPS. NetTcpConnection_Avg: Average in-band TCP connection count.
 	MetricName pulumi.StringInput `pulumi:"metricName"`
-	// 指标告警时的监控指标阈值的单位。当AlarmPolicy.Conditions.MetricName参数取值为CPU/内存使用率时: Percent。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写带宽时: Bytes/Second(IEC)。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写IOPS时: Count/Second。当AlarmPolicy.Conditions.MetricName参数取值为TCP连接数时: Count。当AlarmPolicy.Condition.MetricName参数取值为网络流入/流出速率时: Bits/Second(IEC)。当AlarmPolicy.Condition.MetricName参数取值为网络收发包速率时: Packet/Second。
+	// The unit for the monitoring metric threshold when an alarm is triggered. When the AlarmPolicy.Conditions.MetricName parameter is set to CPU/memory usage: Percent. When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write bandwidth: Bytes/Second(IEC). When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write IOPS: Count/Second. When the AlarmPolicy.Conditions.MetricName parameter is set to TCP connections: Count. When the AlarmPolicy.Condition.MetricName parameter is set to network inbound/outbound rate: Bits/Second(IEC). When the AlarmPolicy.Condition.MetricName parameter is set to network packet transmission rate: Packet/Second.
 	MetricUnit pulumi.StringInput `pulumi:"metricUnit"`
-	// 指标告警时的监控指标的阈值。当AlarmPolicy.Conditions.MetricUnit取值为Percent时：1 ～ 100。当AlarmPolicy.Conditions.MetricUnit取值为Bytes/Second(IEC)时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count/Second时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Bits/Second(IEC)时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Packet/Second时：大于0的整数。
+	// The threshold value for the monitoring metric when an alarm is triggered. When AlarmPolicy.Conditions.MetricUnit is set to Percent: 1–100. When AlarmPolicy.Conditions.MetricUnit is set to Bytes/Second(IEC): an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count/Second: an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count: an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Bits/Second(IEC): an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Packet/Second: an integer greater than 0.
 	Threshold pulumi.StringInput `pulumi:"threshold"`
 }
 
@@ -3101,22 +3705,22 @@ func (o GetScalingPolicyAlarmPolicyConditionOutput) ToGetScalingPolicyAlarmPolic
 	return o
 }
 
-// 指标告警时的规则表达式对象。>：大于。<：小于。=：等于。
+// Rule expression object for metric alarms. >: Greater than. <: Less than. =: Equal to.
 func (o GetScalingPolicyAlarmPolicyConditionOutput) ComparisonOperator() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingPolicyAlarmPolicyCondition) string { return v.ComparisonOperator }).(pulumi.StringOutput)
 }
 
-// 指标告警时的监控指标名称。CpuTotal*Max：带内CPU使用率最大值。CpuTotal*Min：带内CPU使用率最小值。CpuTotal*Avg：带内CPU使用率平均值。MemoryUsedUtilization*Max：带内内存使用率最大值。MemoryUsedUtilization*Min：带内内存使用率最小值。MemoryUsedUtilization*Avg：带内内存使用率平均值。Instance*CpuBusy*Max：带外CPU利用率最大值。Instance*CpuBusy*Min：带外CPU利用率最小值。Instance*CpuBusy*Avg：带外CPU利用率平均值。Instance*NetTxBits*Avg: 带外网络流出速率平均值。Instance*NetRxBits*Avg: 带外网络流入速率平均值。Instance*NetTxPackets*Avg: 带外网络发送包速率平均值。Instance*NetRxPackets*Avg: 带外网络接收包速率平均值。SystemDiskReadBytes*Avg: 带内系统盘读带宽平均值。SystemDiskWriteBytes*Avg: 带内系统盘写带宽平均值。SystemDiskReadIOPS*Avg: 带内系统盘读IOPS平均值。SystemDiskWriteIOPS*Avg: 带内系统盘写IOPS平均值。NetTcpConnection_Avg: 带内TCP连接数平均值。
+// Monitoring metric names for metric alarms. CpuTotal*Max: Maximum in-band CPU usage. CpuTotal*Min: Minimum in-band CPU usage. CpuTotal*Avg: Average in-band CPU usage. MemoryUsedUtilization*Max: Maximum in-band memory usage. MemoryUsedUtilization*Min: Minimum in-band memory usage. MemoryUsedUtilization*Avg: Average in-band memory usage. Instance*CpuBusy*Max: Maximum out-of-band CPU utilization. Instance*CpuBusy*Min: Minimum out-of-band CPU utilization. Instance*CpuBusy*Avg: Average out-of-band CPU utilization. Instance*NetTxBits*Avg: Average out-of-band network outbound rate. Instance*NetRxBits*Avg: Average out-of-band network inbound rate. Instance*NetTxPackets*Avg: Average out-of-band network packet send rate. Instance*NetRxPackets*Avg: Average out-of-band network packet receive rate. SystemDiskReadBytes*Avg: Average in-band system disk read bandwidth. SystemDiskWriteBytes*Avg: Average in-band system disk write bandwidth. SystemDiskReadIOPS*Avg: Average in-band system disk read IOPS. SystemDiskWriteIOPS*Avg: Average in-band system disk write IOPS. NetTcpConnection_Avg: Average in-band TCP connection count.
 func (o GetScalingPolicyAlarmPolicyConditionOutput) MetricName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingPolicyAlarmPolicyCondition) string { return v.MetricName }).(pulumi.StringOutput)
 }
 
-// 指标告警时的监控指标阈值的单位。当AlarmPolicy.Conditions.MetricName参数取值为CPU/内存使用率时: Percent。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写带宽时: Bytes/Second(IEC)。当AlarmPolicy.Conditions.MetricName参数取值为系统盘读/写IOPS时: Count/Second。当AlarmPolicy.Conditions.MetricName参数取值为TCP连接数时: Count。当AlarmPolicy.Condition.MetricName参数取值为网络流入/流出速率时: Bits/Second(IEC)。当AlarmPolicy.Condition.MetricName参数取值为网络收发包速率时: Packet/Second。
+// The unit for the monitoring metric threshold when an alarm is triggered. When the AlarmPolicy.Conditions.MetricName parameter is set to CPU/memory usage: Percent. When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write bandwidth: Bytes/Second(IEC). When the AlarmPolicy.Conditions.MetricName parameter is set to system disk read/write IOPS: Count/Second. When the AlarmPolicy.Conditions.MetricName parameter is set to TCP connections: Count. When the AlarmPolicy.Condition.MetricName parameter is set to network inbound/outbound rate: Bits/Second(IEC). When the AlarmPolicy.Condition.MetricName parameter is set to network packet transmission rate: Packet/Second.
 func (o GetScalingPolicyAlarmPolicyConditionOutput) MetricUnit() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingPolicyAlarmPolicyCondition) string { return v.MetricUnit }).(pulumi.StringOutput)
 }
 
-// 指标告警时的监控指标的阈值。当AlarmPolicy.Conditions.MetricUnit取值为Percent时：1 ～ 100。当AlarmPolicy.Conditions.MetricUnit取值为Bytes/Second(IEC)时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count/Second时：大于0的整数。当AlarmPolicy.Conditions.MetricUnit取值为Count时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Bits/Second(IEC)时：大于0的整数。当AlarmPolicy.Condition.MetricUnit取值为Packet/Second时：大于0的整数。
+// The threshold value for the monitoring metric when an alarm is triggered. When AlarmPolicy.Conditions.MetricUnit is set to Percent: 1–100. When AlarmPolicy.Conditions.MetricUnit is set to Bytes/Second(IEC): an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count/Second: an integer greater than 0. When AlarmPolicy.Conditions.MetricUnit is set to Count: an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Bits/Second(IEC): an integer greater than 0. When AlarmPolicy.Condition.MetricUnit is set to Packet/Second: an integer greater than 0.
 func (o GetScalingPolicyAlarmPolicyConditionOutput) Threshold() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingPolicyAlarmPolicyCondition) string { return v.Threshold }).(pulumi.StringOutput)
 }
@@ -3142,19 +3746,19 @@ func (o GetScalingPolicyAlarmPolicyConditionArrayOutput) Index(i pulumi.IntInput
 }
 
 type GetScalingPolicyScheduledPolicy struct {
-	// 表示任务的触发时间，默认为此刻。当ScalingPolicyType值为Scheduled时，表示定时任务的触发时间。当ScalingPolicyType值为Recurrence时：如果ScheduledPolicy.RecurrenceType为空，则表示仅按照此处指定的日期和时间执行一次。如果ScheduledPolicy.RecurrenceType不为空，则表示周期任务开始时间。
+	// Indicates the trigger time for the task. The default is the current time. When ScalingPolicyType is set to Scheduled, this specifies the trigger time for the scheduled task. When ScalingPolicyType is set to Recurrence: If ScheduledPolicy.RecurrenceType is empty, the task is executed only once at the specified date and time. If ScheduledPolicy.RecurrenceType is not empty, this specifies the start time for the recurring task.
 	LaunchTime string `pulumi:"launchTime"`
-	// 表示任务的触发时间。只读字段，修改或创建使用LaunchTime。
+	// Indicates the task trigger time. This is a read-only field; use LaunchTime to modify or create.
 	LaunchTimeRead string `pulumi:"launchTimeRead"`
-	// 表示周期任务的结束时间。仅支持选择自创建当日起365日内的时间。若不配置，则根据重复周期（ScheduledPolicy.RecurrenceType）默认为此刻后的一天/周/月。设置为空，表示本任务永不停止。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+	// Indicates the end time for the recurring task. Only supports selecting a time within 365 days from the creation date. If not configured, defaults to one day/week/month after the current time based on the recurrence cycle (ScheduledPolicy.RecurrenceType). If set to empty, the task never stops. Valid only when ScalingPolicyType is set to Recurrence and required.
 	RecurrenceEndTime string `pulumi:"recurrenceEndTime"`
-	// 表示周期任务的结束时间。只读字段，修改或创建使用RecurrenceEndTime。
+	// Indicates the end time for the recurring task. Read-only field; use RecurrenceEndTime for modification or creation.
 	RecurrenceEndTimeRead string `pulumi:"recurrenceEndTimeRead"`
-	// 表示周期任务的开始执行时间。当ScalingPolicyType取值为Recurrence时有效。
+	// Indicates the start time for the recurring task. Valid only when ScalingPolicyType is set to Recurrence.
 	RecurrenceStartTime string `pulumi:"recurrenceStartTime"`
-	// 表示周期任务的重复周期，取值：Daily：每XX天执行一次。Weekly：选择每周中的几天，每天执行一次。Monthly：选择每月中XX号到XX号，每天执行一次。Cron：按照指定的Cron表达式执行。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+	// Indicates the recurrence cycle for scheduled tasks. Values: Daily: Executes once every XX days. Weekly: Select specific days of the week, executes once per day. Monthly: Select XX to XX days of the month, executes once per day. Cron: Executes according to the specified Cron expression. Required and valid only when ScalingPolicyType is set to Recurrence.
 	RecurrenceType string `pulumi:"recurrenceType"`
-	// 表示重复执行周期任务的数值。当ScheduledPolicy.RecurrenceType参数取值为Daily时，只能填写一个值，取值：1   - 31。当ScheduledPolicy.RecurrenceType参数取值为Weekly时，可以填入多个值，使用英文逗号（,）分隔。星期一到星期日的取值依次为：1,2,3,4,5,6,7。当ScheduledPolicy.RecurrenceType参数取值为Monthly时，格式为A-B。A、B的取值范围均为1-31，且B必须大于等于A。当ScheduledPolicy.RecurrenceType参数取值为Cron 时，表示UTC+8时间，支持分、时、日、月、星期的5域表达式，支持通配符英文逗号（,）、英文问号（?）、连词符（-）、星号（*）、井号（#）、斜线（/）、L和W。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+	// Specifies the value for recurring tasks. When the ScheduledPolicy.RecurrenceType parameter is set to Daily, only one value can be entered: 1–31. When the ScheduledPolicy.RecurrenceType parameter is set to Weekly, multiple values can be entered, separated by commas (,). Values for Monday to Sunday are: 1 (Monday), 2 (Tuesday), 3 (Wednesday), 4 (Thursday), 5 (Friday), 6 (Saturday), 7 (Sunday). When the ScheduledPolicy.RecurrenceType parameter is set to Monthly, the format is A-B. Both A and B range from 1–31, and B must be greater than or equal to A. When the ScheduledPolicy.RecurrenceType parameter is set to Cron, it uses UTC+8 time and supports a five-field expression for minute, hour, day, month, and week. Wildcards supported include comma (,), question mark (?), hyphen (-), asterisk (*), hash (#), slash (/), L, and W. This field is valid and required when ScalingPolicyType is set to Recurrence.
 	RecurrenceValue string `pulumi:"recurrenceValue"`
 }
 
@@ -3170,19 +3774,19 @@ type GetScalingPolicyScheduledPolicyInput interface {
 }
 
 type GetScalingPolicyScheduledPolicyArgs struct {
-	// 表示任务的触发时间，默认为此刻。当ScalingPolicyType值为Scheduled时，表示定时任务的触发时间。当ScalingPolicyType值为Recurrence时：如果ScheduledPolicy.RecurrenceType为空，则表示仅按照此处指定的日期和时间执行一次。如果ScheduledPolicy.RecurrenceType不为空，则表示周期任务开始时间。
+	// Indicates the trigger time for the task. The default is the current time. When ScalingPolicyType is set to Scheduled, this specifies the trigger time for the scheduled task. When ScalingPolicyType is set to Recurrence: If ScheduledPolicy.RecurrenceType is empty, the task is executed only once at the specified date and time. If ScheduledPolicy.RecurrenceType is not empty, this specifies the start time for the recurring task.
 	LaunchTime pulumi.StringInput `pulumi:"launchTime"`
-	// 表示任务的触发时间。只读字段，修改或创建使用LaunchTime。
+	// Indicates the task trigger time. This is a read-only field; use LaunchTime to modify or create.
 	LaunchTimeRead pulumi.StringInput `pulumi:"launchTimeRead"`
-	// 表示周期任务的结束时间。仅支持选择自创建当日起365日内的时间。若不配置，则根据重复周期（ScheduledPolicy.RecurrenceType）默认为此刻后的一天/周/月。设置为空，表示本任务永不停止。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+	// Indicates the end time for the recurring task. Only supports selecting a time within 365 days from the creation date. If not configured, defaults to one day/week/month after the current time based on the recurrence cycle (ScheduledPolicy.RecurrenceType). If set to empty, the task never stops. Valid only when ScalingPolicyType is set to Recurrence and required.
 	RecurrenceEndTime pulumi.StringInput `pulumi:"recurrenceEndTime"`
-	// 表示周期任务的结束时间。只读字段，修改或创建使用RecurrenceEndTime。
+	// Indicates the end time for the recurring task. Read-only field; use RecurrenceEndTime for modification or creation.
 	RecurrenceEndTimeRead pulumi.StringInput `pulumi:"recurrenceEndTimeRead"`
-	// 表示周期任务的开始执行时间。当ScalingPolicyType取值为Recurrence时有效。
+	// Indicates the start time for the recurring task. Valid only when ScalingPolicyType is set to Recurrence.
 	RecurrenceStartTime pulumi.StringInput `pulumi:"recurrenceStartTime"`
-	// 表示周期任务的重复周期，取值：Daily：每XX天执行一次。Weekly：选择每周中的几天，每天执行一次。Monthly：选择每月中XX号到XX号，每天执行一次。Cron：按照指定的Cron表达式执行。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+	// Indicates the recurrence cycle for scheduled tasks. Values: Daily: Executes once every XX days. Weekly: Select specific days of the week, executes once per day. Monthly: Select XX to XX days of the month, executes once per day. Cron: Executes according to the specified Cron expression. Required and valid only when ScalingPolicyType is set to Recurrence.
 	RecurrenceType pulumi.StringInput `pulumi:"recurrenceType"`
-	// 表示重复执行周期任务的数值。当ScheduledPolicy.RecurrenceType参数取值为Daily时，只能填写一个值，取值：1   - 31。当ScheduledPolicy.RecurrenceType参数取值为Weekly时，可以填入多个值，使用英文逗号（,）分隔。星期一到星期日的取值依次为：1,2,3,4,5,6,7。当ScheduledPolicy.RecurrenceType参数取值为Monthly时，格式为A-B。A、B的取值范围均为1-31，且B必须大于等于A。当ScheduledPolicy.RecurrenceType参数取值为Cron 时，表示UTC+8时间，支持分、时、日、月、星期的5域表达式，支持通配符英文逗号（,）、英文问号（?）、连词符（-）、星号（*）、井号（#）、斜线（/）、L和W。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+	// Specifies the value for recurring tasks. When the ScheduledPolicy.RecurrenceType parameter is set to Daily, only one value can be entered: 1–31. When the ScheduledPolicy.RecurrenceType parameter is set to Weekly, multiple values can be entered, separated by commas (,). Values for Monday to Sunday are: 1 (Monday), 2 (Tuesday), 3 (Wednesday), 4 (Thursday), 5 (Friday), 6 (Saturday), 7 (Sunday). When the ScheduledPolicy.RecurrenceType parameter is set to Monthly, the format is A-B. Both A and B range from 1–31, and B must be greater than or equal to A. When the ScheduledPolicy.RecurrenceType parameter is set to Cron, it uses UTC+8 time and supports a five-field expression for minute, hour, day, month, and week. Wildcards supported include comma (,), question mark (?), hyphen (-), asterisk (*), hash (#), slash (/), L, and W. This field is valid and required when ScalingPolicyType is set to Recurrence.
 	RecurrenceValue pulumi.StringInput `pulumi:"recurrenceValue"`
 }
 
@@ -3212,37 +3816,37 @@ func (o GetScalingPolicyScheduledPolicyOutput) ToGetScalingPolicyScheduledPolicy
 	return o
 }
 
-// 表示任务的触发时间，默认为此刻。当ScalingPolicyType值为Scheduled时，表示定时任务的触发时间。当ScalingPolicyType值为Recurrence时：如果ScheduledPolicy.RecurrenceType为空，则表示仅按照此处指定的日期和时间执行一次。如果ScheduledPolicy.RecurrenceType不为空，则表示周期任务开始时间。
+// Indicates the trigger time for the task. The default is the current time. When ScalingPolicyType is set to Scheduled, this specifies the trigger time for the scheduled task. When ScalingPolicyType is set to Recurrence: If ScheduledPolicy.RecurrenceType is empty, the task is executed only once at the specified date and time. If ScheduledPolicy.RecurrenceType is not empty, this specifies the start time for the recurring task.
 func (o GetScalingPolicyScheduledPolicyOutput) LaunchTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingPolicyScheduledPolicy) string { return v.LaunchTime }).(pulumi.StringOutput)
 }
 
-// 表示任务的触发时间。只读字段，修改或创建使用LaunchTime。
+// Indicates the task trigger time. This is a read-only field; use LaunchTime to modify or create.
 func (o GetScalingPolicyScheduledPolicyOutput) LaunchTimeRead() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingPolicyScheduledPolicy) string { return v.LaunchTimeRead }).(pulumi.StringOutput)
 }
 
-// 表示周期任务的结束时间。仅支持选择自创建当日起365日内的时间。若不配置，则根据重复周期（ScheduledPolicy.RecurrenceType）默认为此刻后的一天/周/月。设置为空，表示本任务永不停止。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+// Indicates the end time for the recurring task. Only supports selecting a time within 365 days from the creation date. If not configured, defaults to one day/week/month after the current time based on the recurrence cycle (ScheduledPolicy.RecurrenceType). If set to empty, the task never stops. Valid only when ScalingPolicyType is set to Recurrence and required.
 func (o GetScalingPolicyScheduledPolicyOutput) RecurrenceEndTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingPolicyScheduledPolicy) string { return v.RecurrenceEndTime }).(pulumi.StringOutput)
 }
 
-// 表示周期任务的结束时间。只读字段，修改或创建使用RecurrenceEndTime。
+// Indicates the end time for the recurring task. Read-only field; use RecurrenceEndTime for modification or creation.
 func (o GetScalingPolicyScheduledPolicyOutput) RecurrenceEndTimeRead() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingPolicyScheduledPolicy) string { return v.RecurrenceEndTimeRead }).(pulumi.StringOutput)
 }
 
-// 表示周期任务的开始执行时间。当ScalingPolicyType取值为Recurrence时有效。
+// Indicates the start time for the recurring task. Valid only when ScalingPolicyType is set to Recurrence.
 func (o GetScalingPolicyScheduledPolicyOutput) RecurrenceStartTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingPolicyScheduledPolicy) string { return v.RecurrenceStartTime }).(pulumi.StringOutput)
 }
 
-// 表示周期任务的重复周期，取值：Daily：每XX天执行一次。Weekly：选择每周中的几天，每天执行一次。Monthly：选择每月中XX号到XX号，每天执行一次。Cron：按照指定的Cron表达式执行。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+// Indicates the recurrence cycle for scheduled tasks. Values: Daily: Executes once every XX days. Weekly: Select specific days of the week, executes once per day. Monthly: Select XX to XX days of the month, executes once per day. Cron: Executes according to the specified Cron expression. Required and valid only when ScalingPolicyType is set to Recurrence.
 func (o GetScalingPolicyScheduledPolicyOutput) RecurrenceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingPolicyScheduledPolicy) string { return v.RecurrenceType }).(pulumi.StringOutput)
 }
 
-// 表示重复执行周期任务的数值。当ScheduledPolicy.RecurrenceType参数取值为Daily时，只能填写一个值，取值：1   - 31。当ScheduledPolicy.RecurrenceType参数取值为Weekly时，可以填入多个值，使用英文逗号（,）分隔。星期一到星期日的取值依次为：1,2,3,4,5,6,7。当ScheduledPolicy.RecurrenceType参数取值为Monthly时，格式为A-B。A、B的取值范围均为1-31，且B必须大于等于A。当ScheduledPolicy.RecurrenceType参数取值为Cron 时，表示UTC+8时间，支持分、时、日、月、星期的5域表达式，支持通配符英文逗号（,）、英文问号（?）、连词符（-）、星号（*）、井号（#）、斜线（/）、L和W。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+// Specifies the value for recurring tasks. When the ScheduledPolicy.RecurrenceType parameter is set to Daily, only one value can be entered: 1–31. When the ScheduledPolicy.RecurrenceType parameter is set to Weekly, multiple values can be entered, separated by commas (,). Values for Monday to Sunday are: 1 (Monday), 2 (Tuesday), 3 (Wednesday), 4 (Thursday), 5 (Friday), 6 (Saturday), 7 (Sunday). When the ScheduledPolicy.RecurrenceType parameter is set to Monthly, the format is A-B. Both A and B range from 1–31, and B must be greater than or equal to A. When the ScheduledPolicy.RecurrenceType parameter is set to Cron, it uses UTC+8 time and supports a five-field expression for minute, hour, day, month, and week. Wildcards supported include comma (,), question mark (?), hyphen (-), asterisk (*), hash (#), slash (/), L, and W. This field is valid and required when ScalingPolicyType is set to Recurrence.
 func (o GetScalingPolicyScheduledPolicyOutput) RecurrenceValue() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScalingPolicyScheduledPolicy) string { return v.RecurrenceValue }).(pulumi.StringOutput)
 }
@@ -3256,6 +3860,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ScalingConfigurationTagArrayInput)(nil)).Elem(), ScalingConfigurationTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScalingConfigurationVolumeInput)(nil)).Elem(), ScalingConfigurationVolumeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScalingConfigurationVolumeArrayInput)(nil)).Elem(), ScalingConfigurationVolumeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScalingGroupInstanceInput)(nil)).Elem(), ScalingGroupInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScalingGroupInstanceArrayInput)(nil)).Elem(), ScalingGroupInstanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScalingGroupInstanceRemovePolicyInput)(nil)).Elem(), ScalingGroupInstanceRemovePolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScalingGroupInstanceRemovePolicyArrayInput)(nil)).Elem(), ScalingGroupInstanceRemovePolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScalingGroupInstancesDistributionInput)(nil)).Elem(), ScalingGroupInstancesDistributionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScalingGroupInstancesDistributionPtrInput)(nil)).Elem(), ScalingGroupInstancesDistributionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScalingGroupLaunchTemplateOverrideInput)(nil)).Elem(), ScalingGroupLaunchTemplateOverrideArgs{})
@@ -3280,6 +3888,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingConfigurationTagArrayInput)(nil)).Elem(), GetScalingConfigurationTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingConfigurationVolumeInput)(nil)).Elem(), GetScalingConfigurationVolumeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingConfigurationVolumeArrayInput)(nil)).Elem(), GetScalingConfigurationVolumeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingGroupInstanceInput)(nil)).Elem(), GetScalingGroupInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingGroupInstanceArrayInput)(nil)).Elem(), GetScalingGroupInstanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingGroupInstanceRemovePolicyInput)(nil)).Elem(), GetScalingGroupInstanceRemovePolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingGroupInstanceRemovePolicyArrayInput)(nil)).Elem(), GetScalingGroupInstanceRemovePolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingGroupInstancesDistributionInput)(nil)).Elem(), GetScalingGroupInstancesDistributionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingGroupLaunchTemplateOverrideInput)(nil)).Elem(), GetScalingGroupLaunchTemplateOverrideArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetScalingGroupLaunchTemplateOverrideArrayInput)(nil)).Elem(), GetScalingGroupLaunchTemplateOverrideArray{})
@@ -3300,6 +3912,10 @@ func init() {
 	pulumi.RegisterOutputType(ScalingConfigurationTagArrayOutput{})
 	pulumi.RegisterOutputType(ScalingConfigurationVolumeOutput{})
 	pulumi.RegisterOutputType(ScalingConfigurationVolumeArrayOutput{})
+	pulumi.RegisterOutputType(ScalingGroupInstanceOutput{})
+	pulumi.RegisterOutputType(ScalingGroupInstanceArrayOutput{})
+	pulumi.RegisterOutputType(ScalingGroupInstanceRemovePolicyOutput{})
+	pulumi.RegisterOutputType(ScalingGroupInstanceRemovePolicyArrayOutput{})
 	pulumi.RegisterOutputType(ScalingGroupInstancesDistributionOutput{})
 	pulumi.RegisterOutputType(ScalingGroupInstancesDistributionPtrOutput{})
 	pulumi.RegisterOutputType(ScalingGroupLaunchTemplateOverrideOutput{})
@@ -3324,6 +3940,10 @@ func init() {
 	pulumi.RegisterOutputType(GetScalingConfigurationTagArrayOutput{})
 	pulumi.RegisterOutputType(GetScalingConfigurationVolumeOutput{})
 	pulumi.RegisterOutputType(GetScalingConfigurationVolumeArrayOutput{})
+	pulumi.RegisterOutputType(GetScalingGroupInstanceOutput{})
+	pulumi.RegisterOutputType(GetScalingGroupInstanceArrayOutput{})
+	pulumi.RegisterOutputType(GetScalingGroupInstanceRemovePolicyOutput{})
+	pulumi.RegisterOutputType(GetScalingGroupInstanceRemovePolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetScalingGroupInstancesDistributionOutput{})
 	pulumi.RegisterOutputType(GetScalingGroupLaunchTemplateOverrideOutput{})
 	pulumi.RegisterOutputType(GetScalingGroupLaunchTemplateOverrideArrayOutput{})

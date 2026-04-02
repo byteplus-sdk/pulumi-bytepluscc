@@ -12,98 +12,98 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainTcpListenerConfig {
     /**
-     * @return 接入协议类型。
+     * @return Access protocol type
      * 
      */
     private String accessProtocol;
     /**
-     * @return 防护模式。
+     * @return Protection mode
      * 
      */
     private Integer defenceMode;
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     private String instanceId;
     /**
-     * @return 实例名称。
+     * @return Instance name.
      * 
      */
     private String instanceName;
     /**
-     * @return 监听器 ID。
+     * @return Listener ID.
      * 
      */
     private String listenerId;
     /**
-     * @return 是否从 ALB 中丢失关联。
+     * @return Disassociated from ALB
      * 
      */
     private Integer lostAssociationFromAlb;
     /**
-     * @return 监听器的端口号。
+     * @return Listener port number
      * 
      */
     private String port;
     /**
-     * @return 监听器协议类型。
+     * @return Listener protocol type.
      * 
      */
     private String protocol;
 
     private GetDomainTcpListenerConfig() {}
     /**
-     * @return 接入协议类型。
+     * @return Access protocol type
      * 
      */
     public String accessProtocol() {
         return this.accessProtocol;
     }
     /**
-     * @return 防护模式。
+     * @return Protection mode
      * 
      */
     public Integer defenceMode() {
         return this.defenceMode;
     }
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return 实例名称。
+     * @return Instance name.
      * 
      */
     public String instanceName() {
         return this.instanceName;
     }
     /**
-     * @return 监听器 ID。
+     * @return Listener ID.
      * 
      */
     public String listenerId() {
         return this.listenerId;
     }
     /**
-     * @return 是否从 ALB 中丢失关联。
+     * @return Disassociated from ALB
      * 
      */
     public Integer lostAssociationFromAlb() {
         return this.lostAssociationFromAlb;
     }
     /**
-     * @return 监听器的端口号。
+     * @return Listener port number
      * 
      */
     public String port() {
         return this.port;
     }
     /**
-     * @return 监听器协议类型。
+     * @return Listener protocol type.
      * 
      */
     public String protocol() {

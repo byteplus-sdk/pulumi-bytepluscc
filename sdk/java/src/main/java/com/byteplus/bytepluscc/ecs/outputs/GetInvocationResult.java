@@ -17,47 +17,47 @@ import java.util.Objects;
 @CustomType
 public final class GetInvocationResult {
     /**
-     * @return 命令内容。
+     * @return Command content.
      * 
      */
     private String commandContent;
     /**
-     * @return 被调用命令的描述。
+     * @return Description of the invoked command.
      * 
      */
     private String commandDescription;
     /**
-     * @return 命令ID。
+     * @return Command ID.
      * 
      */
     private String commandId;
     /**
-     * @return 任务触发时的命令名称。
+     * @return Command name when the task is triggered.
      * 
      */
     private String commandName;
     /**
-     * @return 被调用命令的提供方。
+     * @return Provider of the invoked command.
      * 
      */
     private String commandProvider;
     /**
-     * @return 作业触发的命令类型。
+     * @return Command type triggered by the job.
      * 
      */
     private String commandType;
     /**
-     * @return 被调用命令是否使用自定义参数。true：已启用。false：未启用。
+     * @return Whether the invoked command uses custom parameters. true: enabled. false: not enabled.
      * 
      */
     private Boolean enableParameter;
     /**
-     * @return 任务结束时间。
+     * @return Task end time.
      * 
      */
     private String endTime;
     /**
-     * @return 执行频率。RepeatMode=Rate 时本参数必填。格式：&lt;执行间隔数值&gt;&lt;执行间隔单位&gt;，执行间隔单位：支持分钟（5m-60m）、小时（1h-24h）和天（1d-7d）。执行间隔基于固定频率，与作业实际执行需要的时间无关。创建作业后基于LaunchTime执行一次，根据间隔设置确定下一次执行时间。
+     * @return Execution frequency. This parameter is required when RepeatMode=Rate. Format: \n\n\n\n. Interval units supported: minutes (5m–60m), hours (1h–24h), and days (1d–7d). The interval is based on a fixed frequency and is independent of the actual job execution time. After job creation, it executes once based on LaunchTime, and the next execution time is determined by the interval setting.
      * 
      */
     private String frequency;
@@ -67,160 +67,160 @@ public final class GetInvocationResult {
      */
     private String id;
     /**
-     * @return 实例ID列表，最多支持200个ID。
+     * @return Instance ID list, supports up to 200 IDs.
      * 
      */
     private List<String> instanceIds;
     /**
-     * @return 执行实例数量。
+     * @return Number of instances executed.
      * 
      */
     private Integer instanceNumber;
     /**
-     * @return 作业描述，默认为空字符串，不超过256个字符。
+     * @return Job description. Defaults to an empty string and must not exceed 256 characters.
      * 
      */
     private String invocationDescription;
     /**
-     * @return 任务执行 ID。
+     * @return Task execution ID.
      * 
      */
     private String invocationId;
     /**
-     * @return 作业名称。不超过64个字符。暂不限制特殊字符。同地域下作业名称可重复。
+     * @return Job name. Maximum 64 characters. No restriction on special characters. Job names can be duplicated within the same region.
      * 
      */
     private String invocationName;
     /**
-     * @return 单台实例执行命令的结果。
+     * @return Result of command execution on a single instance.
      * 
      */
     private List<GetInvocationInvocationResult> invocationResults;
     /**
-     * @return 命令执行的总执行状态。
+     * @return Overall execution status of the command.
      * 
      */
     private String invocationStatus;
     /**
-     * @return 执行时间。
+     * @return Execution time.
      * 
      */
     private String launchTime;
     /**
-     * @return 任务触发时的命令自定义参数定义。
+     * @return Custom parameter definition for the command triggered by the task.
      * 
      */
     private List<GetInvocationParameterDefinition> parameterDefinitions;
     /**
-     * @return 命令中包含自定义参数时，需通过本参数传入自定义参数的键值对。自定义参数个数范围为0~60。Key不允许为空字符串，最多支持64个字符。Value允许为空字符串。自定义参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的自定义参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+     * @return When the command includes custom parameters, use this parameter to pass custom parameter key-value pairs. The number of custom parameters ranges from 0 to 60. Key cannot be an empty string and supports up to 64 characters. Value can be an empty string. The combined length of custom parameters and original command content after Base64 encoding must not exceed 16 KB. The set of custom parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
      * 
      */
     private String parameters;
     /**
-     * @return 资源所属项目，一个资源只能归属于一个项目。
+     * @return Project to which the resource belongs; each resource can belong to only one project.
      * 
      */
     private String projectName;
     /**
-     * @return 周期结束时间，仅适用于周期任务（Rate）。
+     * @return Cycle end time, applicable only to periodic tasks (Rate).
      * 
      */
     private String recurrenceEndTime;
     /**
-     * @return 设置命令执行的方式。Once：默认，表示立即执行命令。Rate：周期执行命令，需要通过Frequency参数传入Rate表达式指定执行周期。Fixed：定时执行命令，需要通过LaunchTime参数指定的执行时间。
+     * @return Set the command execution mode. Once: Default, executes the command immediately. Rate: Executes the command periodically; specify the execution cycle using the Frequency parameter and Rate expression. Fixed: Executes the command at a scheduled time; specify the execution time using the LaunchTime parameter.
      * 
      */
     private String repeatMode;
     /**
-     * @return 任务开始时间。
+     * @return Task start time.
      * 
      */
     private String startTime;
     /**
-     * @return 标签键值对。
+     * @return Tag key-value pair.
      * 
      */
     private List<GetInvocationTag> tags;
     /**
-     * @return 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。默认值：60。可选范围为：30~86400。
+     * @return Maximum timeout for command execution in ECS instances, in seconds. Default: 60. Optional range: 30–86400.
      * 
      */
     private Integer timeout;
     /**
-     * @return 在ECS实例中执行命令的用户名称。
+     * @return User name for executing the command in the ECS instance.
      * 
      */
     private String username;
     /**
-     * @return 自定义windows用户的密码。
+     * @return Password for custom Windows user.
      * 
      */
     private String windowsPassword;
     /**
-     * @return 创建的命令在ECS实例中运行的目录。
+     * @return Directory where the created command runs in the ECS instance.
      * 
      */
     private String workingDir;
 
     private GetInvocationResult() {}
     /**
-     * @return 命令内容。
+     * @return Command content.
      * 
      */
     public String commandContent() {
         return this.commandContent;
     }
     /**
-     * @return 被调用命令的描述。
+     * @return Description of the invoked command.
      * 
      */
     public String commandDescription() {
         return this.commandDescription;
     }
     /**
-     * @return 命令ID。
+     * @return Command ID.
      * 
      */
     public String commandId() {
         return this.commandId;
     }
     /**
-     * @return 任务触发时的命令名称。
+     * @return Command name when the task is triggered.
      * 
      */
     public String commandName() {
         return this.commandName;
     }
     /**
-     * @return 被调用命令的提供方。
+     * @return Provider of the invoked command.
      * 
      */
     public String commandProvider() {
         return this.commandProvider;
     }
     /**
-     * @return 作业触发的命令类型。
+     * @return Command type triggered by the job.
      * 
      */
     public String commandType() {
         return this.commandType;
     }
     /**
-     * @return 被调用命令是否使用自定义参数。true：已启用。false：未启用。
+     * @return Whether the invoked command uses custom parameters. true: enabled. false: not enabled.
      * 
      */
     public Boolean enableParameter() {
         return this.enableParameter;
     }
     /**
-     * @return 任务结束时间。
+     * @return Task end time.
      * 
      */
     public String endTime() {
         return this.endTime;
     }
     /**
-     * @return 执行频率。RepeatMode=Rate 时本参数必填。格式：&lt;执行间隔数值&gt;&lt;执行间隔单位&gt;，执行间隔单位：支持分钟（5m-60m）、小时（1h-24h）和天（1d-7d）。执行间隔基于固定频率，与作业实际执行需要的时间无关。创建作业后基于LaunchTime执行一次，根据间隔设置确定下一次执行时间。
+     * @return Execution frequency. This parameter is required when RepeatMode=Rate. Format: \n\n\n\n. Interval units supported: minutes (5m–60m), hours (1h–24h), and days (1d–7d). The interval is based on a fixed frequency and is independent of the actual job execution time. After job creation, it executes once based on LaunchTime, and the next execution time is determined by the interval setting.
      * 
      */
     public String frequency() {
@@ -234,133 +234,133 @@ public final class GetInvocationResult {
         return this.id;
     }
     /**
-     * @return 实例ID列表，最多支持200个ID。
+     * @return Instance ID list, supports up to 200 IDs.
      * 
      */
     public List<String> instanceIds() {
         return this.instanceIds;
     }
     /**
-     * @return 执行实例数量。
+     * @return Number of instances executed.
      * 
      */
     public Integer instanceNumber() {
         return this.instanceNumber;
     }
     /**
-     * @return 作业描述，默认为空字符串，不超过256个字符。
+     * @return Job description. Defaults to an empty string and must not exceed 256 characters.
      * 
      */
     public String invocationDescription() {
         return this.invocationDescription;
     }
     /**
-     * @return 任务执行 ID。
+     * @return Task execution ID.
      * 
      */
     public String invocationId() {
         return this.invocationId;
     }
     /**
-     * @return 作业名称。不超过64个字符。暂不限制特殊字符。同地域下作业名称可重复。
+     * @return Job name. Maximum 64 characters. No restriction on special characters. Job names can be duplicated within the same region.
      * 
      */
     public String invocationName() {
         return this.invocationName;
     }
     /**
-     * @return 单台实例执行命令的结果。
+     * @return Result of command execution on a single instance.
      * 
      */
     public List<GetInvocationInvocationResult> invocationResults() {
         return this.invocationResults;
     }
     /**
-     * @return 命令执行的总执行状态。
+     * @return Overall execution status of the command.
      * 
      */
     public String invocationStatus() {
         return this.invocationStatus;
     }
     /**
-     * @return 执行时间。
+     * @return Execution time.
      * 
      */
     public String launchTime() {
         return this.launchTime;
     }
     /**
-     * @return 任务触发时的命令自定义参数定义。
+     * @return Custom parameter definition for the command triggered by the task.
      * 
      */
     public List<GetInvocationParameterDefinition> parameterDefinitions() {
         return this.parameterDefinitions;
     }
     /**
-     * @return 命令中包含自定义参数时，需通过本参数传入自定义参数的键值对。自定义参数个数范围为0~60。Key不允许为空字符串，最多支持64个字符。Value允许为空字符串。自定义参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的自定义参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+     * @return When the command includes custom parameters, use this parameter to pass custom parameter key-value pairs. The number of custom parameters ranges from 0 to 60. Key cannot be an empty string and supports up to 64 characters. Value can be an empty string. The combined length of custom parameters and original command content after Base64 encoding must not exceed 16 KB. The set of custom parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
      * 
      */
     public String parameters() {
         return this.parameters;
     }
     /**
-     * @return 资源所属项目，一个资源只能归属于一个项目。
+     * @return Project to which the resource belongs; each resource can belong to only one project.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 周期结束时间，仅适用于周期任务（Rate）。
+     * @return Cycle end time, applicable only to periodic tasks (Rate).
      * 
      */
     public String recurrenceEndTime() {
         return this.recurrenceEndTime;
     }
     /**
-     * @return 设置命令执行的方式。Once：默认，表示立即执行命令。Rate：周期执行命令，需要通过Frequency参数传入Rate表达式指定执行周期。Fixed：定时执行命令，需要通过LaunchTime参数指定的执行时间。
+     * @return Set the command execution mode. Once: Default, executes the command immediately. Rate: Executes the command periodically; specify the execution cycle using the Frequency parameter and Rate expression. Fixed: Executes the command at a scheduled time; specify the execution time using the LaunchTime parameter.
      * 
      */
     public String repeatMode() {
         return this.repeatMode;
     }
     /**
-     * @return 任务开始时间。
+     * @return Task start time.
      * 
      */
     public String startTime() {
         return this.startTime;
     }
     /**
-     * @return 标签键值对。
+     * @return Tag key-value pair.
      * 
      */
     public List<GetInvocationTag> tags() {
         return this.tags;
     }
     /**
-     * @return 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。默认值：60。可选范围为：30~86400。
+     * @return Maximum timeout for command execution in ECS instances, in seconds. Default: 60. Optional range: 30–86400.
      * 
      */
     public Integer timeout() {
         return this.timeout;
     }
     /**
-     * @return 在ECS实例中执行命令的用户名称。
+     * @return User name for executing the command in the ECS instance.
      * 
      */
     public String username() {
         return this.username;
     }
     /**
-     * @return 自定义windows用户的密码。
+     * @return Password for custom Windows user.
      * 
      */
     public String windowsPassword() {
         return this.windowsPassword;
     }
     /**
-     * @return 创建的命令在ECS实例中运行的目录。
+     * @return Directory where the created command runs in the ECS instance.
      * 
      */
     public String workingDir() {

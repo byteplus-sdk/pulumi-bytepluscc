@@ -12,38 +12,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RuleRuleActionFixedResponseConfig {
     /**
-     * @return 返回的固定内容。
+     * @return Fixed response content.
      * 
      */
     private @Nullable String content;
     /**
-     * @return 返回的固定内容的格式。text/plain、text/css、text/html、application/javascript、application/json
+     * @return Format of fixed response content. text/plain, text/css, text/html, application/javascript, application/json
      * 
      */
     private @Nullable String contentType;
     /**
-     * @return 返回的 HTTP 状态码。
+     * @return Returned HTTP status code.
      * 
      */
     private @Nullable String httpCode;
 
     private RuleRuleActionFixedResponseConfig() {}
     /**
-     * @return 返回的固定内容。
+     * @return Fixed response content.
      * 
      */
     public Optional<String> content() {
         return Optional.ofNullable(this.content);
     }
     /**
-     * @return 返回的固定内容的格式。text/plain、text/css、text/html、application/javascript、application/json
+     * @return Format of fixed response content. text/plain, text/css, text/html, application/javascript, application/json
      * 
      */
     public Optional<String> contentType() {
         return Optional.ofNullable(this.contentType);
     }
     /**
-     * @return 返回的 HTTP 状态码。
+     * @return Returned HTTP status code.
      * 
      */
     public Optional<String> httpCode() {

@@ -16,14 +16,14 @@ public final class ShareConfigCommonMatchListArgs extends com.pulumi.resources.R
     public static final ShareConfigCommonMatchListArgs Empty = new ShareConfigCommonMatchListArgs();
 
     /**
-     * 表示该通用列表的内容。
+     * Specifies the contents of the common list.
      * 
      */
     @Import(name="commonType")
     private @Nullable Output<ShareConfigCommonMatchListCommonTypeArgs> commonType;
 
     /**
-     * @return 表示该通用列表的内容。
+     * @return Specifies the contents of the common list.
      * 
      */
     public Optional<Output<ShareConfigCommonMatchListCommonTypeArgs>> commonType() {
@@ -55,7 +55,7 @@ public final class ShareConfigCommonMatchListArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param commonType 表示该通用列表的内容。
+         * @param commonType Specifies the contents of the common list.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class ShareConfigCommonMatchListArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param commonType 表示该通用列表的内容。
+         * @param commonType Specifies the contents of the common list.
          * 
          * @return builder
          * 

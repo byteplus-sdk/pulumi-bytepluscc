@@ -18,14 +18,14 @@ public final class InstanceImageArgs extends com.pulumi.resources.ResourceArgs {
     public static final InstanceImageArgs Empty = new InstanceImageArgs();
 
     /**
-     * 实例的镜像ID。
+     * Instance image ID.
      * 
      */
     @Import(name="imageId", required=true)
     private Output<String> imageId;
 
     /**
-     * @return 实例的镜像ID。
+     * @return Instance image ID.
      * 
      */
     public Output<String> imageId() {
@@ -33,14 +33,14 @@ public final class InstanceImageArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的镜像发布版本。
+     * The image release version of the instance.
      * 
      */
     @Import(name="imageReleaseVersion")
     private @Nullable Output<String> imageReleaseVersion;
 
     /**
-     * @return 实例的镜像发布版本。
+     * @return The image release version of the instance.
      * 
      */
     public Optional<Output<String>> imageReleaseVersion() {
@@ -48,14 +48,14 @@ public final class InstanceImageArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例是否保留镜像凭证。
+     * Whether the instance retains image credentials
      * 
      */
     @Import(name="keepImageCredential")
     private @Nullable Output<Boolean> keepImageCredential;
 
     /**
-     * @return 实例是否保留镜像凭证。
+     * @return Whether the instance retains image credentials
      * 
      */
     public Optional<Output<Boolean>> keepImageCredential() {
@@ -63,14 +63,14 @@ public final class InstanceImageArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+     * Instance security enhancement policy. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images
      * 
      */
     @Import(name="securityEnhancementStrategy")
     private @Nullable Output<String> securityEnhancementStrategy;
 
     /**
-     * @return 实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+     * @return Instance security enhancement policy. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images
      * 
      */
     public Optional<Output<String>> securityEnhancementStrategy() {
@@ -105,7 +105,7 @@ public final class InstanceImageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param imageId 实例的镜像ID。
+         * @param imageId Instance image ID.
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class InstanceImageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param imageId 实例的镜像ID。
+         * @param imageId Instance image ID.
          * 
          * @return builder
          * 
@@ -126,7 +126,7 @@ public final class InstanceImageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param imageReleaseVersion 实例的镜像发布版本。
+         * @param imageReleaseVersion The image release version of the instance.
          * 
          * @return builder
          * 
@@ -137,7 +137,7 @@ public final class InstanceImageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param imageReleaseVersion 实例的镜像发布版本。
+         * @param imageReleaseVersion The image release version of the instance.
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class InstanceImageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keepImageCredential 实例是否保留镜像凭证。
+         * @param keepImageCredential Whether the instance retains image credentials
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class InstanceImageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keepImageCredential 实例是否保留镜像凭证。
+         * @param keepImageCredential Whether the instance retains image credentials
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class InstanceImageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityEnhancementStrategy 实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+         * @param securityEnhancementStrategy Instance security enhancement policy. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class InstanceImageArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityEnhancementStrategy 实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+         * @param securityEnhancementStrategy Instance security enhancement policy. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images
          * 
          * @return builder
          * 

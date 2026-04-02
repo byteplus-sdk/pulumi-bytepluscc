@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 连接终端是位于数据库和应用程序之间的网络代理服务，用于代理应用程序访问数据库时的所有请求，具有高可用、高性能、可运维、简单易用等特点，支持读写分离和负载均衡等高级功能。云数据库 PostgreSQL 版提供了默认终端和自定义只读终端两种类型。
+// The connection endpoint is a network proxy service positioned between the database and the application, handling all requests from the application to the database. It features high availability, high performance, maintainability, and ease of use, and supports advanced functions such as read/write splitting and load balancing. The PostgreSQL cloud database provides two types of endpoints: default endpoint and custom read-only endpoint.
 //
 // ## Example Usage
 //
@@ -52,34 +52,34 @@ type DbEndpoint struct {
 	pulumi.CustomResourceState
 
 	Addresses DbEndpointAddressArrayOutput `pulumi:"addresses"`
-	// 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入。Disable：不自动加入（默认）。
+	// When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
 	AutoAddNewNodes pulumi.StringOutput `pulumi:"autoAddNewNodes"`
-	// 地址描述。
+	// Address description
 	Description pulumi.StringOutput `pulumi:"description"`
-	// 是否已开启全局只读。Enable：开启。Disable：未开启。
+	// Whether global read-only is enabled. Enable: Enabled. Disable: Not enabled.
 	EnableReadOnly pulumi.StringOutput `pulumi:"enableReadOnly"`
-	// 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+	// Whether read/write splitting is enabled. Values: Enable: Enabled. Disable: Not enabled.
 	EnableReadWriteSplitting pulumi.StringOutput `pulumi:"enableReadWriteSplitting"`
-	// 实例连接终端 ID。
+	// Instance connection endpoint ID.
 	EndpointId pulumi.StringOutput `pulumi:"endpointId"`
-	// 实例连接终端名称。
+	// Instance connection endpoint name.
 	EndpointName pulumi.StringOutput `pulumi:"endpointName"`
-	// 终端类型：Cluster：默认终端（默认创建）。Custom：自定义终端。
+	// Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
 	EndpointType pulumi.StringOutput `pulumi:"endpointType"`
-	// 实例 ID。
+	// Instance ID.
 	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
-	// 连接终端配置的节点列表。说明当 EndpointType 为 Custom 时必选。主节点无需传节点 ID，传入 Primary 字符串即可。
+	// List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string 'Primary'.
 	Nodes pulumi.StringOutput `pulumi:"nodes"`
-	// 只读权重分配模式。取值：Default：标准权重分配（默认值）。Custom：自定义权重分配。
+	// Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
 	ReadOnlyNodeDistributionType pulumi.StringOutput `pulumi:"readOnlyNodeDistributionType"`
-	// 只读节点的最大延迟阈值，当只读节点延迟时间超过该值时，读取流量不发往该节点，单位：秒。取值：0~3600。默认值：30。说明支持对开通了读写分离的默认终端设置此参数。
+	// Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
 	ReadOnlyNodeMaxDelayTime pulumi.IntOutput                        `pulumi:"readOnlyNodeMaxDelayTime"`
 	ReadOnlyNodeWeights      DbEndpointReadOnlyNodeWeightArrayOutput `pulumi:"readOnlyNodeWeights"`
-	// 读写模式：ReadWrite：读写。ReadOnly：只读。
+	// Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
 	ReadWriteMode pulumi.StringOutput `pulumi:"readWriteMode"`
-	// 终端开启读写分离后，为终端设置的代理连接数。代理连接数的取值下限为 20。代理连接数的取值上限取决于实例主节点的规格，不同规格支持的代理连接数上限不同，详细信息请参见产品规格。
+	// After enabling read/write splitting for the endpoint, set the number of proxy connections for the endpoint. The minimum value for proxy connections is 20. The maximum value depends on the specifications of the primary node; different specifications support different maximum proxy connections. For details, see product specifications.
 	ReadWriteProxyConnection pulumi.IntOutput `pulumi:"readWriteProxyConnection"`
-	// 终端是否将写请求发送给写节点（目前仅主节点为写节点）。取值：true：是。默认值。false：否。
+	// Whether the endpoint sends write requests to the write node (currently only the primary node is the write node). Values: true: Yes (default). false: No.
 	WriteNodeHaltWriting pulumi.BoolOutput `pulumi:"writeNodeHaltWriting"`
 }
 
@@ -114,67 +114,67 @@ func GetDbEndpoint(ctx *pulumi.Context,
 // Input properties used for looking up and filtering DbEndpoint resources.
 type dbEndpointState struct {
 	Addresses []DbEndpointAddress `pulumi:"addresses"`
-	// 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入。Disable：不自动加入（默认）。
+	// When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
 	AutoAddNewNodes *string `pulumi:"autoAddNewNodes"`
-	// 地址描述。
+	// Address description
 	Description *string `pulumi:"description"`
-	// 是否已开启全局只读。Enable：开启。Disable：未开启。
+	// Whether global read-only is enabled. Enable: Enabled. Disable: Not enabled.
 	EnableReadOnly *string `pulumi:"enableReadOnly"`
-	// 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+	// Whether read/write splitting is enabled. Values: Enable: Enabled. Disable: Not enabled.
 	EnableReadWriteSplitting *string `pulumi:"enableReadWriteSplitting"`
-	// 实例连接终端 ID。
+	// Instance connection endpoint ID.
 	EndpointId *string `pulumi:"endpointId"`
-	// 实例连接终端名称。
+	// Instance connection endpoint name.
 	EndpointName *string `pulumi:"endpointName"`
-	// 终端类型：Cluster：默认终端（默认创建）。Custom：自定义终端。
+	// Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
 	EndpointType *string `pulumi:"endpointType"`
-	// 实例 ID。
+	// Instance ID.
 	InstanceId *string `pulumi:"instanceId"`
-	// 连接终端配置的节点列表。说明当 EndpointType 为 Custom 时必选。主节点无需传节点 ID，传入 Primary 字符串即可。
+	// List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string 'Primary'.
 	Nodes *string `pulumi:"nodes"`
-	// 只读权重分配模式。取值：Default：标准权重分配（默认值）。Custom：自定义权重分配。
+	// Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
 	ReadOnlyNodeDistributionType *string `pulumi:"readOnlyNodeDistributionType"`
-	// 只读节点的最大延迟阈值，当只读节点延迟时间超过该值时，读取流量不发往该节点，单位：秒。取值：0~3600。默认值：30。说明支持对开通了读写分离的默认终端设置此参数。
+	// Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
 	ReadOnlyNodeMaxDelayTime *int                           `pulumi:"readOnlyNodeMaxDelayTime"`
 	ReadOnlyNodeWeights      []DbEndpointReadOnlyNodeWeight `pulumi:"readOnlyNodeWeights"`
-	// 读写模式：ReadWrite：读写。ReadOnly：只读。
+	// Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
 	ReadWriteMode *string `pulumi:"readWriteMode"`
-	// 终端开启读写分离后，为终端设置的代理连接数。代理连接数的取值下限为 20。代理连接数的取值上限取决于实例主节点的规格，不同规格支持的代理连接数上限不同，详细信息请参见产品规格。
+	// After enabling read/write splitting for the endpoint, set the number of proxy connections for the endpoint. The minimum value for proxy connections is 20. The maximum value depends on the specifications of the primary node; different specifications support different maximum proxy connections. For details, see product specifications.
 	ReadWriteProxyConnection *int `pulumi:"readWriteProxyConnection"`
-	// 终端是否将写请求发送给写节点（目前仅主节点为写节点）。取值：true：是。默认值。false：否。
+	// Whether the endpoint sends write requests to the write node (currently only the primary node is the write node). Values: true: Yes (default). false: No.
 	WriteNodeHaltWriting *bool `pulumi:"writeNodeHaltWriting"`
 }
 
 type DbEndpointState struct {
 	Addresses DbEndpointAddressArrayInput
-	// 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入。Disable：不自动加入（默认）。
+	// When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
 	AutoAddNewNodes pulumi.StringPtrInput
-	// 地址描述。
+	// Address description
 	Description pulumi.StringPtrInput
-	// 是否已开启全局只读。Enable：开启。Disable：未开启。
+	// Whether global read-only is enabled. Enable: Enabled. Disable: Not enabled.
 	EnableReadOnly pulumi.StringPtrInput
-	// 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+	// Whether read/write splitting is enabled. Values: Enable: Enabled. Disable: Not enabled.
 	EnableReadWriteSplitting pulumi.StringPtrInput
-	// 实例连接终端 ID。
+	// Instance connection endpoint ID.
 	EndpointId pulumi.StringPtrInput
-	// 实例连接终端名称。
+	// Instance connection endpoint name.
 	EndpointName pulumi.StringPtrInput
-	// 终端类型：Cluster：默认终端（默认创建）。Custom：自定义终端。
+	// Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
 	EndpointType pulumi.StringPtrInput
-	// 实例 ID。
+	// Instance ID.
 	InstanceId pulumi.StringPtrInput
-	// 连接终端配置的节点列表。说明当 EndpointType 为 Custom 时必选。主节点无需传节点 ID，传入 Primary 字符串即可。
+	// List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string 'Primary'.
 	Nodes pulumi.StringPtrInput
-	// 只读权重分配模式。取值：Default：标准权重分配（默认值）。Custom：自定义权重分配。
+	// Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
 	ReadOnlyNodeDistributionType pulumi.StringPtrInput
-	// 只读节点的最大延迟阈值，当只读节点延迟时间超过该值时，读取流量不发往该节点，单位：秒。取值：0~3600。默认值：30。说明支持对开通了读写分离的默认终端设置此参数。
+	// Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
 	ReadOnlyNodeMaxDelayTime pulumi.IntPtrInput
 	ReadOnlyNodeWeights      DbEndpointReadOnlyNodeWeightArrayInput
-	// 读写模式：ReadWrite：读写。ReadOnly：只读。
+	// Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
 	ReadWriteMode pulumi.StringPtrInput
-	// 终端开启读写分离后，为终端设置的代理连接数。代理连接数的取值下限为 20。代理连接数的取值上限取决于实例主节点的规格，不同规格支持的代理连接数上限不同，详细信息请参见产品规格。
+	// After enabling read/write splitting for the endpoint, set the number of proxy connections for the endpoint. The minimum value for proxy connections is 20. The maximum value depends on the specifications of the primary node; different specifications support different maximum proxy connections. For details, see product specifications.
 	ReadWriteProxyConnection pulumi.IntPtrInput
-	// 终端是否将写请求发送给写节点（目前仅主节点为写节点）。取值：true：是。默认值。false：否。
+	// Whether the endpoint sends write requests to the write node (currently only the primary node is the write node). Values: true: Yes (default). false: No.
 	WriteNodeHaltWriting pulumi.BoolPtrInput
 }
 
@@ -184,52 +184,52 @@ func (DbEndpointState) ElementType() reflect.Type {
 
 type dbEndpointArgs struct {
 	Addresses []DbEndpointAddress `pulumi:"addresses"`
-	// 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+	// Whether read/write splitting is enabled. Values: Enable: Enabled. Disable: Not enabled.
 	EnableReadWriteSplitting *string `pulumi:"enableReadWriteSplitting"`
-	// 实例连接终端名称。
+	// Instance connection endpoint name.
 	EndpointName *string `pulumi:"endpointName"`
-	// 终端类型：Cluster：默认终端（默认创建）。Custom：自定义终端。
+	// Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
 	EndpointType *string `pulumi:"endpointType"`
-	// 实例 ID。
+	// Instance ID.
 	InstanceId *string `pulumi:"instanceId"`
-	// 连接终端配置的节点列表。说明当 EndpointType 为 Custom 时必选。主节点无需传节点 ID，传入 Primary 字符串即可。
+	// List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string 'Primary'.
 	Nodes *string `pulumi:"nodes"`
-	// 只读权重分配模式。取值：Default：标准权重分配（默认值）。Custom：自定义权重分配。
+	// Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
 	ReadOnlyNodeDistributionType *string `pulumi:"readOnlyNodeDistributionType"`
-	// 只读节点的最大延迟阈值，当只读节点延迟时间超过该值时，读取流量不发往该节点，单位：秒。取值：0~3600。默认值：30。说明支持对开通了读写分离的默认终端设置此参数。
+	// Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
 	ReadOnlyNodeMaxDelayTime *int                           `pulumi:"readOnlyNodeMaxDelayTime"`
 	ReadOnlyNodeWeights      []DbEndpointReadOnlyNodeWeight `pulumi:"readOnlyNodeWeights"`
-	// 读写模式：ReadWrite：读写。ReadOnly：只读。
+	// Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
 	ReadWriteMode *string `pulumi:"readWriteMode"`
-	// 终端开启读写分离后，为终端设置的代理连接数。代理连接数的取值下限为 20。代理连接数的取值上限取决于实例主节点的规格，不同规格支持的代理连接数上限不同，详细信息请参见产品规格。
+	// After enabling read/write splitting for the endpoint, set the number of proxy connections for the endpoint. The minimum value for proxy connections is 20. The maximum value depends on the specifications of the primary node; different specifications support different maximum proxy connections. For details, see product specifications.
 	ReadWriteProxyConnection *int `pulumi:"readWriteProxyConnection"`
-	// 终端是否将写请求发送给写节点（目前仅主节点为写节点）。取值：true：是。默认值。false：否。
+	// Whether the endpoint sends write requests to the write node (currently only the primary node is the write node). Values: true: Yes (default). false: No.
 	WriteNodeHaltWriting *bool `pulumi:"writeNodeHaltWriting"`
 }
 
 // The set of arguments for constructing a DbEndpoint resource.
 type DbEndpointArgs struct {
 	Addresses DbEndpointAddressArrayInput
-	// 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+	// Whether read/write splitting is enabled. Values: Enable: Enabled. Disable: Not enabled.
 	EnableReadWriteSplitting pulumi.StringPtrInput
-	// 实例连接终端名称。
+	// Instance connection endpoint name.
 	EndpointName pulumi.StringPtrInput
-	// 终端类型：Cluster：默认终端（默认创建）。Custom：自定义终端。
+	// Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
 	EndpointType pulumi.StringPtrInput
-	// 实例 ID。
+	// Instance ID.
 	InstanceId pulumi.StringPtrInput
-	// 连接终端配置的节点列表。说明当 EndpointType 为 Custom 时必选。主节点无需传节点 ID，传入 Primary 字符串即可。
+	// List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string 'Primary'.
 	Nodes pulumi.StringPtrInput
-	// 只读权重分配模式。取值：Default：标准权重分配（默认值）。Custom：自定义权重分配。
+	// Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
 	ReadOnlyNodeDistributionType pulumi.StringPtrInput
-	// 只读节点的最大延迟阈值，当只读节点延迟时间超过该值时，读取流量不发往该节点，单位：秒。取值：0~3600。默认值：30。说明支持对开通了读写分离的默认终端设置此参数。
+	// Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
 	ReadOnlyNodeMaxDelayTime pulumi.IntPtrInput
 	ReadOnlyNodeWeights      DbEndpointReadOnlyNodeWeightArrayInput
-	// 读写模式：ReadWrite：读写。ReadOnly：只读。
+	// Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
 	ReadWriteMode pulumi.StringPtrInput
-	// 终端开启读写分离后，为终端设置的代理连接数。代理连接数的取值下限为 20。代理连接数的取值上限取决于实例主节点的规格，不同规格支持的代理连接数上限不同，详细信息请参见产品规格。
+	// After enabling read/write splitting for the endpoint, set the number of proxy connections for the endpoint. The minimum value for proxy connections is 20. The maximum value depends on the specifications of the primary node; different specifications support different maximum proxy connections. For details, see product specifications.
 	ReadWriteProxyConnection pulumi.IntPtrInput
-	// 终端是否将写请求发送给写节点（目前仅主节点为写节点）。取值：true：是。默认值。false：否。
+	// Whether the endpoint sends write requests to the write node (currently only the primary node is the write node). Values: true: Yes (default). false: No.
 	WriteNodeHaltWriting pulumi.BoolPtrInput
 }
 
@@ -324,57 +324,57 @@ func (o DbEndpointOutput) Addresses() DbEndpointAddressArrayOutput {
 	return o.ApplyT(func(v *DbEndpoint) DbEndpointAddressArrayOutput { return v.Addresses }).(DbEndpointAddressArrayOutput)
 }
 
-// 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入。Disable：不自动加入（默认）。
+// When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
 func (o DbEndpointOutput) AutoAddNewNodes() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbEndpoint) pulumi.StringOutput { return v.AutoAddNewNodes }).(pulumi.StringOutput)
 }
 
-// 地址描述。
+// Address description
 func (o DbEndpointOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbEndpoint) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// 是否已开启全局只读。Enable：开启。Disable：未开启。
+// Whether global read-only is enabled. Enable: Enabled. Disable: Not enabled.
 func (o DbEndpointOutput) EnableReadOnly() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbEndpoint) pulumi.StringOutput { return v.EnableReadOnly }).(pulumi.StringOutput)
 }
 
-// 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+// Whether read/write splitting is enabled. Values: Enable: Enabled. Disable: Not enabled.
 func (o DbEndpointOutput) EnableReadWriteSplitting() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbEndpoint) pulumi.StringOutput { return v.EnableReadWriteSplitting }).(pulumi.StringOutput)
 }
 
-// 实例连接终端 ID。
+// Instance connection endpoint ID.
 func (o DbEndpointOutput) EndpointId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbEndpoint) pulumi.StringOutput { return v.EndpointId }).(pulumi.StringOutput)
 }
 
-// 实例连接终端名称。
+// Instance connection endpoint name.
 func (o DbEndpointOutput) EndpointName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbEndpoint) pulumi.StringOutput { return v.EndpointName }).(pulumi.StringOutput)
 }
 
-// 终端类型：Cluster：默认终端（默认创建）。Custom：自定义终端。
+// Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
 func (o DbEndpointOutput) EndpointType() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbEndpoint) pulumi.StringOutput { return v.EndpointType }).(pulumi.StringOutput)
 }
 
-// 实例 ID。
+// Instance ID.
 func (o DbEndpointOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbEndpoint) pulumi.StringOutput { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 连接终端配置的节点列表。说明当 EndpointType 为 Custom 时必选。主节点无需传节点 ID，传入 Primary 字符串即可。
+// List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string 'Primary'.
 func (o DbEndpointOutput) Nodes() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbEndpoint) pulumi.StringOutput { return v.Nodes }).(pulumi.StringOutput)
 }
 
-// 只读权重分配模式。取值：Default：标准权重分配（默认值）。Custom：自定义权重分配。
+// Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
 func (o DbEndpointOutput) ReadOnlyNodeDistributionType() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbEndpoint) pulumi.StringOutput { return v.ReadOnlyNodeDistributionType }).(pulumi.StringOutput)
 }
 
-// 只读节点的最大延迟阈值，当只读节点延迟时间超过该值时，读取流量不发往该节点，单位：秒。取值：0~3600。默认值：30。说明支持对开通了读写分离的默认终端设置此参数。
+// Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
 func (o DbEndpointOutput) ReadOnlyNodeMaxDelayTime() pulumi.IntOutput {
 	return o.ApplyT(func(v *DbEndpoint) pulumi.IntOutput { return v.ReadOnlyNodeMaxDelayTime }).(pulumi.IntOutput)
 }
@@ -383,17 +383,17 @@ func (o DbEndpointOutput) ReadOnlyNodeWeights() DbEndpointReadOnlyNodeWeightArra
 	return o.ApplyT(func(v *DbEndpoint) DbEndpointReadOnlyNodeWeightArrayOutput { return v.ReadOnlyNodeWeights }).(DbEndpointReadOnlyNodeWeightArrayOutput)
 }
 
-// 读写模式：ReadWrite：读写。ReadOnly：只读。
+// Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
 func (o DbEndpointOutput) ReadWriteMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbEndpoint) pulumi.StringOutput { return v.ReadWriteMode }).(pulumi.StringOutput)
 }
 
-// 终端开启读写分离后，为终端设置的代理连接数。代理连接数的取值下限为 20。代理连接数的取值上限取决于实例主节点的规格，不同规格支持的代理连接数上限不同，详细信息请参见产品规格。
+// After enabling read/write splitting for the endpoint, set the number of proxy connections for the endpoint. The minimum value for proxy connections is 20. The maximum value depends on the specifications of the primary node; different specifications support different maximum proxy connections. For details, see product specifications.
 func (o DbEndpointOutput) ReadWriteProxyConnection() pulumi.IntOutput {
 	return o.ApplyT(func(v *DbEndpoint) pulumi.IntOutput { return v.ReadWriteProxyConnection }).(pulumi.IntOutput)
 }
 
-// 终端是否将写请求发送给写节点（目前仅主节点为写节点）。取值：true：是。默认值。false：否。
+// Whether the endpoint sends write requests to the write node (currently only the primary node is the write node). Values: true: Yes (default). false: No.
 func (o DbEndpointOutput) WriteNodeHaltWriting() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DbEndpoint) pulumi.BoolOutput { return v.WriteNodeHaltWriting }).(pulumi.BoolOutput)
 }

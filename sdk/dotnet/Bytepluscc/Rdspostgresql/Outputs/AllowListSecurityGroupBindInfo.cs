@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql.Outputs
     public sealed class AllowListSecurityGroupBindInfo
     {
         /// <summary>
-        /// 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。
+        /// Mode for associating security groups. Values: IngressDirectionIp: inbound IP. AssociateEcsIp: associate ECS IP.
         /// </summary>
         public readonly string? BindMode;
         /// <summary>
-        /// 安全组中的 IP 列表。
+        /// IP address list in the security group.
         /// </summary>
         public readonly ImmutableArray<string> IpLists;
         /// <summary>
-        /// 安全组 ID。
+        /// Security group ID.
         /// </summary>
         public readonly string? SecurityGroupId;
         /// <summary>
-        /// 安全组名称。
+        /// Security group name.
         /// </summary>
         public readonly string? SecurityGroupName;
 

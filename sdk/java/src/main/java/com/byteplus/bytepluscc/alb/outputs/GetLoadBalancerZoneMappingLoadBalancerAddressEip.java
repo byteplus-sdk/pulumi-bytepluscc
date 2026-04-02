@@ -14,86 +14,86 @@ import java.util.Objects;
 @CustomType
 public final class GetLoadBalancerZoneMappingLoadBalancerAddressEip {
     /**
-     * @return EIP的绑定模式，例如Default或Normal。
+     * @return EIP binding mode, such as Default or Normal.
      * 
      */
     private String associationMode;
     /**
-     * @return EIP的带宽峰值，单位为Mbps。
+     * @return Peak bandwidth of EIP, in Mbps.
      * 
      */
     private Integer bandwidth;
     /**
-     * @return 弹性公网IP（EIP）的地址。
+     * @return Address of the Elastic IP (EIP).
      * 
      */
     private String eipAddress;
     /**
-     * @return EIP的计费方式，2为按带宽计费，3为按流量计费。
+     * @return EIP billing method: 2 for bandwidth-based, 3 for traffic-based.
      * 
      */
     private Integer eipBillingType;
     /**
-     * @return EIP的类型，例如静态BGP。
+     * @return EIP type, such as static BGP.
      * 
      */
     private String eipType;
     /**
-     * @return 公网IP的线路类型，BGP表示多线。
+     * @return Line type of the public IP, BGP indicates multi-line.
      * 
      */
     private String isp;
     /**
-     * @return EIP的接入点位置信息列表。
+     * @return List of EIP access point location information.
      * 
      */
     private List<GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocation> popLocations;
 
     private GetLoadBalancerZoneMappingLoadBalancerAddressEip() {}
     /**
-     * @return EIP的绑定模式，例如Default或Normal。
+     * @return EIP binding mode, such as Default or Normal.
      * 
      */
     public String associationMode() {
         return this.associationMode;
     }
     /**
-     * @return EIP的带宽峰值，单位为Mbps。
+     * @return Peak bandwidth of EIP, in Mbps.
      * 
      */
     public Integer bandwidth() {
         return this.bandwidth;
     }
     /**
-     * @return 弹性公网IP（EIP）的地址。
+     * @return Address of the Elastic IP (EIP).
      * 
      */
     public String eipAddress() {
         return this.eipAddress;
     }
     /**
-     * @return EIP的计费方式，2为按带宽计费，3为按流量计费。
+     * @return EIP billing method: 2 for bandwidth-based, 3 for traffic-based.
      * 
      */
     public Integer eipBillingType() {
         return this.eipBillingType;
     }
     /**
-     * @return EIP的类型，例如静态BGP。
+     * @return EIP type, such as static BGP.
      * 
      */
     public String eipType() {
         return this.eipType;
     }
     /**
-     * @return 公网IP的线路类型，BGP表示多线。
+     * @return Line type of the public IP, BGP indicates multi-line.
      * 
      */
     public String isp() {
         return this.isp;
     }
     /**
-     * @return EIP的接入点位置信息列表。
+     * @return List of EIP access point location information.
      * 
      */
     public List<GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocation> popLocations() {

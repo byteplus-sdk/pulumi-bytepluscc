@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls.Inputs
     public sealed class TopicTagArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 用户标签的标签键。
+        /// User tag key.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// 用户标签的标签值。
+        /// User tag value.
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

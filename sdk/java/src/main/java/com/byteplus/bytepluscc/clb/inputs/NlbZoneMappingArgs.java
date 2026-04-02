@@ -17,14 +17,14 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
     public static final NlbZoneMappingArgs Empty = new NlbZoneMappingArgs();
 
     /**
-     * 网卡ID。
+     * Network interface card ID.
      * 
      */
     @Import(name="eniId")
     private @Nullable Output<String> eniId;
 
     /**
-     * @return 网卡ID。
+     * @return Network interface card ID.
      * 
      */
     public Optional<Output<String>> eniId() {
@@ -32,14 +32,14 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * NLB实例的私网IPv4 VIP地址。该参数不传入，则系统自动从子网中分配一个可用的IPv4地址。
+     * Private IPv4 VIP address of the NLB instance. If this parameter is not provided, the system automatically assigns an available IPv4 address from the subnet.
      * 
      */
     @Import(name="ipv4Address")
     private @Nullable Output<String> ipv4Address;
 
     /**
-     * @return NLB实例的私网IPv4 VIP地址。该参数不传入，则系统自动从子网中分配一个可用的IPv4地址。
+     * @return Private IPv4 VIP address of the NLB instance. If this parameter is not provided, the system automatically assigns an available IPv4 address from the subnet.
      * 
      */
     public Optional<Output<String>> ipv4Address() {
@@ -47,14 +47,14 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * NLB实例的公网IPv4 EIP地址。
+     * Public IPv4 EIP address of the NLB instance.
      * 
      */
     @Import(name="ipv4EipAddress")
     private @Nullable Output<String> ipv4EipAddress;
 
     /**
-     * @return NLB实例的公网IPv4 EIP地址。
+     * @return Public IPv4 EIP address of the NLB instance.
      * 
      */
     public Optional<Output<String>> ipv4EipAddress() {
@@ -62,14 +62,14 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * NLB实例的公网IPv4 EIP ID。
+     * Public IPv4 EIP ID of the NLB instance.
      * 
      */
     @Import(name="ipv4EipId")
     private @Nullable Output<String> ipv4EipId;
 
     /**
-     * @return NLB实例的公网IPv4 EIP ID。
+     * @return Public IPv4 EIP ID of the NLB instance.
      * 
      */
     public Optional<Output<String>> ipv4EipId() {
@@ -77,14 +77,14 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * NLB实例私网IPv4地址的健康状态。Healthy：健康。Unhealthy：异常。
+     * Health status of the NLB instance&#39;s private IPv4 address. Healthy: healthy. Unhealthy: abnormal.
      * 
      */
     @Import(name="ipv4HcStatus")
     private @Nullable Output<String> ipv4HcStatus;
 
     /**
-     * @return NLB实例私网IPv4地址的健康状态。Healthy：健康。Unhealthy：异常。
+     * @return Health status of the NLB instance&#39;s private IPv4 address. Healthy: healthy. Unhealthy: abnormal.
      * 
      */
     public Optional<Output<String>> ipv4HcStatus() {
@@ -92,14 +92,14 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * NLB实例的私网IPv4 LIP地址。
+     * Private IPv4 LIP address of the NLB instance.
      * 
      */
     @Import(name="ipv4LocalAddresses")
     private @Nullable Output<List<String>> ipv4LocalAddresses;
 
     /**
-     * @return NLB实例的私网IPv4 LIP地址。
+     * @return Private IPv4 LIP address of the NLB instance.
      * 
      */
     public Optional<Output<List<String>>> ipv4LocalAddresses() {
@@ -107,14 +107,14 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * NLB实例的私网IPv6 VIP地址。
+     * Private IPv6 VIP address of the NLB instance.
      * 
      */
     @Import(name="ipv6Address")
     private @Nullable Output<String> ipv6Address;
 
     /**
-     * @return NLB实例的私网IPv6 VIP地址。
+     * @return Private IPv6 VIP address of the NLB instance.
      * 
      */
     public Optional<Output<String>> ipv6Address() {
@@ -122,14 +122,14 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * NLB实例关联的IPv6公网带宽的ID。
+     * ID of the IPv6 public bandwidth associated with the NLB instance.
      * 
      */
     @Import(name="ipv6EipId")
     private @Nullable Output<String> ipv6EipId;
 
     /**
-     * @return NLB实例关联的IPv6公网带宽的ID。
+     * @return ID of the IPv6 public bandwidth associated with the NLB instance.
      * 
      */
     public Optional<Output<String>> ipv6EipId() {
@@ -137,14 +137,14 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * NLB实例私网IPv6地址的健康状态。Healthy：健康。Unhealthy：异常。
+     * Health status of the NLB instance&#39;s private IPv6 address. Healthy: healthy. Unhealthy: abnormal.
      * 
      */
     @Import(name="ipv6HcStatus")
     private @Nullable Output<String> ipv6HcStatus;
 
     /**
-     * @return NLB实例私网IPv6地址的健康状态。Healthy：健康。Unhealthy：异常。
+     * @return Health status of the NLB instance&#39;s private IPv6 address. Healthy: healthy. Unhealthy: abnormal.
      * 
      */
     public Optional<Output<String>> ipv6HcStatus() {
@@ -152,14 +152,14 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * NLB实例的私网IPv6 LIP地址。
+     * Private IPv6 LIP address of the NLB instance.
      * 
      */
     @Import(name="ipv6LocalAddresses")
     private @Nullable Output<List<String>> ipv6LocalAddresses;
 
     /**
-     * @return NLB实例的私网IPv6 LIP地址。
+     * @return Private IPv6 LIP address of the NLB instance.
      * 
      */
     public Optional<Output<List<String>>> ipv6LocalAddresses() {
@@ -167,14 +167,14 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * NLB实例所属的子网ID。
+     * Subnet ID to which the NLB instance belongs.
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return NLB实例所属的子网ID。
+     * @return Subnet ID to which the NLB instance belongs.
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -182,14 +182,14 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * NLB实例所属的可用区ID。
+     * Availability zone ID to which the NLB instance belongs.
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return NLB实例所属的可用区ID。
+     * @return Availability zone ID to which the NLB instance belongs.
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -232,7 +232,7 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param eniId 网卡ID。
+         * @param eniId Network interface card ID.
          * 
          * @return builder
          * 
@@ -243,7 +243,7 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param eniId 网卡ID。
+         * @param eniId Network interface card ID.
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ipv4Address NLB实例的私网IPv4 VIP地址。该参数不传入，则系统自动从子网中分配一个可用的IPv4地址。
+         * @param ipv4Address Private IPv4 VIP address of the NLB instance. If this parameter is not provided, the system automatically assigns an available IPv4 address from the subnet.
          * 
          * @return builder
          * 
@@ -264,7 +264,7 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ipv4Address NLB实例的私网IPv4 VIP地址。该参数不传入，则系统自动从子网中分配一个可用的IPv4地址。
+         * @param ipv4Address Private IPv4 VIP address of the NLB instance. If this parameter is not provided, the system automatically assigns an available IPv4 address from the subnet.
          * 
          * @return builder
          * 
@@ -274,7 +274,7 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ipv4EipAddress NLB实例的公网IPv4 EIP地址。
+         * @param ipv4EipAddress Public IPv4 EIP address of the NLB instance.
          * 
          * @return builder
          * 
@@ -285,7 +285,7 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ipv4EipAddress NLB实例的公网IPv4 EIP地址。
+         * @param ipv4EipAddress Public IPv4 EIP address of the NLB instance.
          * 
          * @return builder
          * 
@@ -295,7 +295,7 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ipv4EipId NLB实例的公网IPv4 EIP ID。
+         * @param ipv4EipId Public IPv4 EIP ID of the NLB instance.
          * 
          * @return builder
          * 
@@ -306,7 +306,7 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ipv4EipId NLB实例的公网IPv4 EIP ID。
+         * @param ipv4EipId Public IPv4 EIP ID of the NLB instance.
          * 
          * @return builder
          * 
@@ -316,7 +316,7 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ipv4HcStatus NLB实例私网IPv4地址的健康状态。Healthy：健康。Unhealthy：异常。
+         * @param ipv4HcStatus Health status of the NLB instance&#39;s private IPv4 address. Healthy: healthy. Unhealthy: abnormal.
          * 
          * @return builder
          * 
@@ -327,7 +327,7 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ipv4HcStatus NLB实例私网IPv4地址的健康状态。Healthy：健康。Unhealthy：异常。
+         * @param ipv4HcStatus Health status of the NLB instance&#39;s private IPv4 address. Healthy: healthy. Unhealthy: abnormal.
          * 
          * @return builder
          * 
@@ -337,7 +337,7 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ipv4LocalAddresses NLB实例的私网IPv4 LIP地址。
+         * @param ipv4LocalAddresses Private IPv4 LIP address of the NLB instance.
          * 
          * @return builder
          * 
@@ -348,7 +348,7 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ipv4LocalAddresses NLB实例的私网IPv4 LIP地址。
+         * @param ipv4LocalAddresses Private IPv4 LIP address of the NLB instance.
          * 
          * @return builder
          * 
@@ -358,7 +358,7 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ipv4LocalAddresses NLB实例的私网IPv4 LIP地址。
+         * @param ipv4LocalAddresses Private IPv4 LIP address of the NLB instance.
          * 
          * @return builder
          * 
@@ -368,7 +368,7 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ipv6Address NLB实例的私网IPv6 VIP地址。
+         * @param ipv6Address Private IPv6 VIP address of the NLB instance.
          * 
          * @return builder
          * 
@@ -379,7 +379,7 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ipv6Address NLB实例的私网IPv6 VIP地址。
+         * @param ipv6Address Private IPv6 VIP address of the NLB instance.
          * 
          * @return builder
          * 
@@ -389,7 +389,7 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ipv6EipId NLB实例关联的IPv6公网带宽的ID。
+         * @param ipv6EipId ID of the IPv6 public bandwidth associated with the NLB instance.
          * 
          * @return builder
          * 
@@ -400,7 +400,7 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ipv6EipId NLB实例关联的IPv6公网带宽的ID。
+         * @param ipv6EipId ID of the IPv6 public bandwidth associated with the NLB instance.
          * 
          * @return builder
          * 
@@ -410,7 +410,7 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ipv6HcStatus NLB实例私网IPv6地址的健康状态。Healthy：健康。Unhealthy：异常。
+         * @param ipv6HcStatus Health status of the NLB instance&#39;s private IPv6 address. Healthy: healthy. Unhealthy: abnormal.
          * 
          * @return builder
          * 
@@ -421,7 +421,7 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ipv6HcStatus NLB实例私网IPv6地址的健康状态。Healthy：健康。Unhealthy：异常。
+         * @param ipv6HcStatus Health status of the NLB instance&#39;s private IPv6 address. Healthy: healthy. Unhealthy: abnormal.
          * 
          * @return builder
          * 
@@ -431,7 +431,7 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ipv6LocalAddresses NLB实例的私网IPv6 LIP地址。
+         * @param ipv6LocalAddresses Private IPv6 LIP address of the NLB instance.
          * 
          * @return builder
          * 
@@ -442,7 +442,7 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ipv6LocalAddresses NLB实例的私网IPv6 LIP地址。
+         * @param ipv6LocalAddresses Private IPv6 LIP address of the NLB instance.
          * 
          * @return builder
          * 
@@ -452,7 +452,7 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param ipv6LocalAddresses NLB实例的私网IPv6 LIP地址。
+         * @param ipv6LocalAddresses Private IPv6 LIP address of the NLB instance.
          * 
          * @return builder
          * 
@@ -462,7 +462,7 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param subnetId NLB实例所属的子网ID。
+         * @param subnetId Subnet ID to which the NLB instance belongs.
          * 
          * @return builder
          * 
@@ -473,7 +473,7 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param subnetId NLB实例所属的子网ID。
+         * @param subnetId Subnet ID to which the NLB instance belongs.
          * 
          * @return builder
          * 
@@ -483,7 +483,7 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param zoneId NLB实例所属的可用区ID。
+         * @param zoneId Availability zone ID to which the NLB instance belongs.
          * 
          * @return builder
          * 
@@ -494,7 +494,7 @@ public final class NlbZoneMappingArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param zoneId NLB实例所属的可用区ID。
+         * @param zoneId Availability zone ID to which the NLB instance belongs.
          * 
          * @return builder
          * 

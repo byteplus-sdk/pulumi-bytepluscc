@@ -70,7 +70,7 @@ class GetDeploymentSetResult:
     @pulumi.getter
     def capacities(self) -> Sequence['outputs.GetDeploymentSetCapacityResult']:
         """
-        实例启动模板版本信息。
+        Instance launch template version information.
         """
         return pulumi.get(self, "capacities")
 
@@ -78,7 +78,7 @@ class GetDeploymentSetResult:
     @pulumi.getter(name="createdAt")
     def created_at(self) -> builtins.str:
         """
-        部署集的创建时间。
+        Deployment set creation time.
         """
         return pulumi.get(self, "created_at")
 
@@ -86,7 +86,7 @@ class GetDeploymentSetResult:
     @pulumi.getter(name="deploymentSetGroupNumber")
     def deployment_set_group_number(self) -> builtins.int:
         """
-        部署集组的序号，取值范围：1～7。
+        Deployment set group index. Value range: 1–7.
         """
         return pulumi.get(self, "deployment_set_group_number")
 
@@ -94,7 +94,7 @@ class GetDeploymentSetResult:
     @pulumi.getter(name="deploymentSetId")
     def deployment_set_id(self) -> builtins.str:
         """
-        部署集ID。
+        Deployment set ID.
         """
         return pulumi.get(self, "deployment_set_id")
 
@@ -102,7 +102,7 @@ class GetDeploymentSetResult:
     @pulumi.getter(name="deploymentSetName")
     def deployment_set_name(self) -> builtins.str:
         """
-        部署集名称。不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1～128个字符。
+        Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
         """
         return pulumi.get(self, "deployment_set_name")
 
@@ -110,7 +110,7 @@ class GetDeploymentSetResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        部署集的描述信息。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”。长度限制在255个字符以内。
+        Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period '.', space, underscore '_', hyphen '-', equals '=', English comma ',', Chinese comma '，', and Chinese period '。'. Length limit: within 255 characters.
         """
         return pulumi.get(self, "description")
 
@@ -118,7 +118,7 @@ class GetDeploymentSetResult:
     @pulumi.getter
     def granularity(self) -> builtins.str:
         """
-        部署粒度，取值：host：物理机。rack：机架。switch：交换机。
+        Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
         """
         return pulumi.get(self, "granularity")
 
@@ -126,7 +126,7 @@ class GetDeploymentSetResult:
     @pulumi.getter(name="groupCount")
     def group_count(self) -> builtins.int:
         """
-        部署集组数量。为部署集组高可用策略设置分组数量。取值范围：1～7。默认值：7。
+        Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
         """
         return pulumi.get(self, "group_count")
 
@@ -142,7 +142,7 @@ class GetDeploymentSetResult:
     @pulumi.getter(name="instanceAmount")
     def instance_amount(self) -> builtins.int:
         """
-        部署集内的ECS实例数量。
+        Number of ECS instances in the deployment set.
         """
         return pulumi.get(self, "instance_amount")
 
@@ -150,7 +150,7 @@ class GetDeploymentSetResult:
     @pulumi.getter(name="instanceIds")
     def instance_ids(self) -> Sequence[builtins.str]:
         """
-        部署集内的ECS实例ID列表。
+        List of ECS instance IDs in the deployment set.
         """
         return pulumi.get(self, "instance_ids")
 
@@ -158,7 +158,7 @@ class GetDeploymentSetResult:
     @pulumi.getter
     def strategy(self) -> builtins.str:
         """
-        部署策略，取值：Availability（默认）：高可用策略。AvailabilityGroup：部署集组高可用策略。
+        Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
         """
         return pulumi.get(self, "strategy")
 

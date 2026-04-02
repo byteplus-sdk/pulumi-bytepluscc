@@ -25,14 +25,14 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 描述信息。
+     * Description.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 描述信息。
+     * @return Description.
      * 
      */
     public Optional<Output<String>> description() {
@@ -40,14 +40,14 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 终端 ID。
+     * Terminal ID.
      * 
      */
     @Import(name="endpointId")
     private @Nullable Output<String> endpointId;
 
     /**
-     * @return 终端 ID。
+     * @return Terminal ID.
      * 
      */
     public Optional<Output<String>> endpointId() {
@@ -55,14 +55,14 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 终端名称。
+     * Terminal name.
      * 
      */
     @Import(name="endpointName")
     private @Nullable Output<String> endpointName;
 
     /**
-     * @return 终端名称。
+     * @return Terminal name.
      * 
      */
     public Optional<Output<String>> endpointName() {
@@ -70,14 +70,14 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 终端类型。取值如下：Primary：表示主节点终端。ROCluster：表示只读集群终端。RO：表示只读节点终端。
+     * Terminal type. Possible values: Primary: primary node terminal. ROCluster: read-only cluster terminal. RO: read-only node terminal.
      * 
      */
     @Import(name="endpointType")
     private @Nullable Output<String> endpointType;
 
     /**
-     * @return 终端类型。取值如下：Primary：表示主节点终端。ROCluster：表示只读集群终端。RO：表示只读节点终端。
+     * @return Terminal type. Possible values: Primary: primary node terminal. ROCluster: read-only cluster terminal. RO: read-only node terminal.
      * 
      */
     public Optional<Output<String>> endpointType() {
@@ -126,7 +126,7 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param description 描述信息。
+         * @param description Description.
          * 
          * @return builder
          * 
@@ -137,7 +137,7 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param description 描述信息。
+         * @param description Description.
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param endpointId 终端 ID。
+         * @param endpointId Terminal ID.
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param endpointId 终端 ID。
+         * @param endpointId Terminal ID.
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param endpointName 终端名称。
+         * @param endpointName Terminal name.
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param endpointName 终端名称。
+         * @param endpointName Terminal name.
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param endpointType 终端类型。取值如下：Primary：表示主节点终端。ROCluster：表示只读集群终端。RO：表示只读节点终端。
+         * @param endpointType Terminal type. Possible values: Primary: primary node terminal. ROCluster: read-only cluster terminal. RO: read-only node terminal.
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param endpointType 终端类型。取值如下：Primary：表示主节点终端。ROCluster：表示只读集群终端。RO：表示只读节点终端。
+         * @param endpointType Terminal type. Possible values: Primary: primary node terminal. ROCluster: read-only cluster terminal. RO: read-only node terminal.
          * 
          * @return builder
          * 

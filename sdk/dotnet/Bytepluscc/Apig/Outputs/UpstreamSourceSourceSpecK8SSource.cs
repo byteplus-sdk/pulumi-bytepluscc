@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class UpstreamSourceSourceSpecK8SSource
     {
         /// <summary>
-        /// 集群ID。
+        /// Cluster ID
         /// </summary>
         public readonly string? ClusterId;
         /// <summary>
-        /// 集群类型。
+        /// Cluster type
         /// </summary>
         public readonly string? ClusterType;
 

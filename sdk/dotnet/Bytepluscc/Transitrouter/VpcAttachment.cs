@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
 {
     /// <summary>
-    /// 通过在私有网络和中转路由器之间建立连接，可以实现私有网络与中转路由器的私网互通。
+    /// By establishing a connection between the private network and the transit router, you can enable private network communication between the private network and the transit router.
     /// 
     /// ## Import
     /// 
@@ -23,7 +23,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
     public partial class VpcAttachment : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 是否启动路径一致模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是。开启后，TR转发流量至该VPC连接时，将选择相同的可用区连接点转发请求流量和返回流量。false：否。
+        /// Whether to enable path consistency mode. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. When enabled, TR forwarding traffic to this VPC connection will select the same availability zone connection point for both request and return traffic. false: No.
         /// </summary>
         [Output("applianceModeEnabled")]
         public Output<bool> ApplianceModeEnabled { get; private set; } = null!;
@@ -32,37 +32,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
         public Output<ImmutableArray<Outputs.VpcAttachmentAttachPoint>> AttachPoints { get; private set; } = null!;
 
         /// <summary>
-        /// 是否自动同步TR路由到网络实例路由表中。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是，表示系统会自动同步该网络实例连接关联转发的TR路由表中的路由条目到网络实例的路由表中，仅当该参数配置为true，且网络实例连接关联转发的TR路由表中存在路由条目时，系统才会自动同步TR路由到网络实例的路由表中。false（默认值）：否。
+        /// Whether to automatically synchronize TR routes to the network instance route table. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. The system will automatically synchronize route entries from the TR route table associated with this network instance connection to the network instance's route table. The system will only synchronize TR routes if this parameter is set to true and there are route entries in the associated TR route table. false (default): No.
         /// </summary>
         [Output("autoPublishRouteEnabled")]
         public Output<bool> AutoPublishRouteEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// 网络实例连接的带宽上限，单位为Gbps。
+        /// Maximum bandwidth for the network instance connection, in Gbps.
         /// </summary>
         [Output("bandwidth")]
         public Output<int> Bandwidth { get; private set; } = null!;
 
         /// <summary>
-        /// 创建时间。
+        /// Creation time.
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        /// Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启IPv6功能。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是。false：否。
+        /// Whether to enable IPv6. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. false: No.
         /// </summary>
         [Output("ipv6Enabled")]
         public Output<bool> Ipv6Enabled { get; private set; } = null!;
 
         /// <summary>
-        /// 网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+        /// Network instance connection status. Creating: Creating. Deleting: Deleting. Pending: Configuring. Available: Available.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -71,31 +71,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
         public Output<ImmutableArray<Outputs.VpcAttachmentTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 网络实例连接的ID。
+        /// Network instance connection ID.
         /// </summary>
         [Output("transitRouterAttachmentId")]
         public Output<string> TransitRouterAttachmentId { get; private set; } = null!;
 
         /// <summary>
-        /// 网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
+        /// Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
         /// </summary>
         [Output("transitRouterAttachmentName")]
         public Output<string> TransitRouterAttachmentName { get; private set; } = null!;
 
         /// <summary>
-        /// 中转路由器实例的ID。
+        /// Transit router instance ID.
         /// </summary>
         [Output("transitRouterId")]
         public Output<string> TransitRouterId { get; private set; } = null!;
 
         /// <summary>
-        /// 更新时间。
+        /// Update time.
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 私有网络实例的ID。
+        /// Private network instance ID.
         /// </summary>
         [Output("vpcId")]
         public Output<string> VpcId { get; private set; } = null!;
@@ -148,7 +148,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
     public sealed class VpcAttachmentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 是否启动路径一致模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是。开启后，TR转发流量至该VPC连接时，将选择相同的可用区连接点转发请求流量和返回流量。false：否。
+        /// Whether to enable path consistency mode. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. When enabled, TR forwarding traffic to this VPC connection will select the same availability zone connection point for both request and return traffic. false: No.
         /// </summary>
         [Input("applianceModeEnabled")]
         public Input<bool>? ApplianceModeEnabled { get; set; }
@@ -162,19 +162,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
         }
 
         /// <summary>
-        /// 是否自动同步TR路由到网络实例路由表中。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是，表示系统会自动同步该网络实例连接关联转发的TR路由表中的路由条目到网络实例的路由表中，仅当该参数配置为true，且网络实例连接关联转发的TR路由表中存在路由条目时，系统才会自动同步TR路由到网络实例的路由表中。false（默认值）：否。
+        /// Whether to automatically synchronize TR routes to the network instance route table. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. The system will automatically synchronize route entries from the TR route table associated with this network instance connection to the network instance's route table. The system will only synchronize TR routes if this parameter is set to true and there are route entries in the associated TR route table. false (default): No.
         /// </summary>
         [Input("autoPublishRouteEnabled")]
         public Input<bool>? AutoPublishRouteEnabled { get; set; }
 
         /// <summary>
-        /// 网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        /// Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 是否开启IPv6功能。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是。false：否。
+        /// Whether to enable IPv6. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. false: No.
         /// </summary>
         [Input("ipv6Enabled")]
         public Input<bool>? Ipv6Enabled { get; set; }
@@ -188,19 +188,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
         }
 
         /// <summary>
-        /// 网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
+        /// Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
         /// </summary>
         [Input("transitRouterAttachmentName")]
         public Input<string>? TransitRouterAttachmentName { get; set; }
 
         /// <summary>
-        /// 中转路由器实例的ID。
+        /// Transit router instance ID.
         /// </summary>
         [Input("transitRouterId", required: true)]
         public Input<string> TransitRouterId { get; set; } = null!;
 
         /// <summary>
-        /// 私有网络实例的ID。
+        /// Private network instance ID.
         /// </summary>
         [Input("vpcId", required: true)]
         public Input<string> VpcId { get; set; } = null!;
@@ -214,7 +214,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
     public sealed class VpcAttachmentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 是否启动路径一致模式。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是。开启后，TR转发流量至该VPC连接时，将选择相同的可用区连接点转发请求流量和返回流量。false：否。
+        /// Whether to enable path consistency mode. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. When enabled, TR forwarding traffic to this VPC connection will select the same availability zone connection point for both request and return traffic. false: No.
         /// </summary>
         [Input("applianceModeEnabled")]
         public Input<bool>? ApplianceModeEnabled { get; set; }
@@ -228,37 +228,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
         }
 
         /// <summary>
-        /// 是否自动同步TR路由到网络实例路由表中。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是，表示系统会自动同步该网络实例连接关联转发的TR路由表中的路由条目到网络实例的路由表中，仅当该参数配置为true，且网络实例连接关联转发的TR路由表中存在路由条目时，系统才会自动同步TR路由到网络实例的路由表中。false（默认值）：否。
+        /// Whether to automatically synchronize TR routes to the network instance route table. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. The system will automatically synchronize route entries from the TR route table associated with this network instance connection to the network instance's route table. The system will only synchronize TR routes if this parameter is set to true and there are route entries in the associated TR route table. false (default): No.
         /// </summary>
         [Input("autoPublishRouteEnabled")]
         public Input<bool>? AutoPublishRouteEnabled { get; set; }
 
         /// <summary>
-        /// 网络实例连接的带宽上限，单位为Gbps。
+        /// Maximum bandwidth for the network instance connection, in Gbps.
         /// </summary>
         [Input("bandwidth")]
         public Input<int>? Bandwidth { get; set; }
 
         /// <summary>
-        /// 创建时间。
+        /// Creation time.
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        /// Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 是否开启IPv6功能。请严格按照以下枚举值的大小写输入，不要传入其他取值。true：是。false：否。
+        /// Whether to enable IPv6. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. false: No.
         /// </summary>
         [Input("ipv6Enabled")]
         public Input<bool>? Ipv6Enabled { get; set; }
 
         /// <summary>
-        /// 网络实例连接的状态。Creating: 创建中。Deleting: 删除中。Pending：配置中。Available：可用。
+        /// Network instance connection status. Creating: Creating. Deleting: Deleting. Pending: Configuring. Available: Available.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -272,31 +272,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
         }
 
         /// <summary>
-        /// 网络实例连接的ID。
+        /// Network instance connection ID.
         /// </summary>
         [Input("transitRouterAttachmentId")]
         public Input<string>? TransitRouterAttachmentId { get; set; }
 
         /// <summary>
-        /// 网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
+        /// Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
         /// </summary>
         [Input("transitRouterAttachmentName")]
         public Input<string>? TransitRouterAttachmentName { get; set; }
 
         /// <summary>
-        /// 中转路由器实例的ID。
+        /// Transit router instance ID.
         /// </summary>
         [Input("transitRouterId")]
         public Input<string>? TransitRouterId { get; set; }
 
         /// <summary>
-        /// 更新时间。
+        /// Update time.
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }
 
         /// <summary>
-        /// 私有网络实例的ID。
+        /// Private network instance ID.
         /// </summary>
         [Input("vpcId")]
         public Input<string>? VpcId { get; set; }

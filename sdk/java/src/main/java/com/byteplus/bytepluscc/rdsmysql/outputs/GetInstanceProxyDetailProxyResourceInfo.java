@@ -11,38 +11,38 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceProxyDetailProxyResourceInfo {
     /**
-     * @return 实例数据库代理服务当前的核数。
+     * @return Current number of cores for the instance database proxy service
      * 
      */
     private Integer currentProxyCpuNum;
     /**
-     * @return 用户可为数据库代理服务配置的最多核数。
+     * @return Maximum number of cores configurable for database proxy service.
      * 
      */
     private Integer maxProxyCpuNum;
     /**
-     * @return 用户可为数据库代理服务配置的最少核数。
+     * @return Minimum number of CPU cores configurable for the database proxy service
      * 
      */
     private Integer minProxyCpuNum;
 
     private GetInstanceProxyDetailProxyResourceInfo() {}
     /**
-     * @return 实例数据库代理服务当前的核数。
+     * @return Current number of cores for the instance database proxy service
      * 
      */
     public Integer currentProxyCpuNum() {
         return this.currentProxyCpuNum;
     }
     /**
-     * @return 用户可为数据库代理服务配置的最多核数。
+     * @return Maximum number of cores configurable for database proxy service.
      * 
      */
     public Integer maxProxyCpuNum() {
         return this.maxProxyCpuNum;
     }
     /**
-     * @return 用户可为数据库代理服务配置的最少核数。
+     * @return Minimum number of CPU cores configurable for the database proxy service
      * 
      */
     public Integer minProxyCpuNum() {

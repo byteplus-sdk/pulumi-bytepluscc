@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class UpstreamSourceSourceSpec
     {
         /// <summary>
-        /// 容器集群来源。
+        /// Container cluster source
         /// </summary>
         public readonly Outputs.UpstreamSourceSourceSpecK8SSource? K8SSource;
         /// <summary>
-        /// 注册中心来源。
+        /// Registry source
         /// </summary>
         public readonly Outputs.UpstreamSourceSourceSpecNacosSource? NacosSource;
 

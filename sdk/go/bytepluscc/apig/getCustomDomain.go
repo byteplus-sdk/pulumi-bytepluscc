@@ -30,27 +30,27 @@ type LookupCustomDomainArgs struct {
 
 // A collection of values returned by getCustomDomain.
 type LookupCustomDomainResult struct {
-	// 自定义域名证书ID。
+	// Custom Domain Certificate ID
 	CertificateId string `pulumi:"certificateId"`
-	// 备注。
+	// Remarks
 	Comments string `pulumi:"comments"`
-	// 创建时间。
+	// Creation Time
 	CreatedTime string `pulumi:"createdTime"`
-	// 自定义域名ID。
+	// Custom Domain ID
 	CustomDomainId string `pulumi:"customDomainId"`
-	// 自定义域名。
+	// Custom Domain
 	Domain string `pulumi:"domain"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 协议，取值：HTTP。HTTPS。
+	// Protocol. Values: HTTP, HTTPS
 	Protocols []string `pulumi:"protocols"`
-	// 服务ID。
+	// Service ID
 	ServiceId string `pulumi:"serviceId"`
-	// 重定向到HTTPS。
+	// Redirect to HTTPS
 	SslRedirect bool `pulumi:"sslRedirect"`
-	// 状态，取值：Creating：配置中。CreationFailed：配置失败。Deleting：删除中。DeletionFailed：删除失败。Verified：正常。
+	// Status. Values: Creating: configuring; CreationFailed: configuration failed; Deleting: deleting; DeletionFailed: deletion failed; Verified: active
 	Status string `pulumi:"status"`
-	// 更新时间。
+	// Update Time
 	UpdatedTime string `pulumi:"updatedTime"`
 }
 
@@ -88,27 +88,27 @@ func (o LookupCustomDomainResultOutput) ToLookupCustomDomainResultOutputWithCont
 	return o
 }
 
-// 自定义域名证书ID。
+// Custom Domain Certificate ID
 func (o LookupCustomDomainResultOutput) CertificateId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomDomainResult) string { return v.CertificateId }).(pulumi.StringOutput)
 }
 
-// 备注。
+// Remarks
 func (o LookupCustomDomainResultOutput) Comments() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomDomainResult) string { return v.Comments }).(pulumi.StringOutput)
 }
 
-// 创建时间。
+// Creation Time
 func (o LookupCustomDomainResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomDomainResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 自定义域名ID。
+// Custom Domain ID
 func (o LookupCustomDomainResultOutput) CustomDomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomDomainResult) string { return v.CustomDomainId }).(pulumi.StringOutput)
 }
 
-// 自定义域名。
+// Custom Domain
 func (o LookupCustomDomainResultOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomDomainResult) string { return v.Domain }).(pulumi.StringOutput)
 }
@@ -118,27 +118,27 @@ func (o LookupCustomDomainResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomDomainResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 协议，取值：HTTP。HTTPS。
+// Protocol. Values: HTTP, HTTPS
 func (o LookupCustomDomainResultOutput) Protocols() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupCustomDomainResult) []string { return v.Protocols }).(pulumi.StringArrayOutput)
 }
 
-// 服务ID。
+// Service ID
 func (o LookupCustomDomainResultOutput) ServiceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomDomainResult) string { return v.ServiceId }).(pulumi.StringOutput)
 }
 
-// 重定向到HTTPS。
+// Redirect to HTTPS
 func (o LookupCustomDomainResultOutput) SslRedirect() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupCustomDomainResult) bool { return v.SslRedirect }).(pulumi.BoolOutput)
 }
 
-// 状态，取值：Creating：配置中。CreationFailed：配置失败。Deleting：删除中。DeletionFailed：删除失败。Verified：正常。
+// Status. Values: Creating: configuring; CreationFailed: configuration failed; Deleting: deleting; DeletionFailed: deletion failed; Verified: active
 func (o LookupCustomDomainResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomDomainResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 更新时间。
+// Update Time
 func (o LookupCustomDomainResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCustomDomainResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }

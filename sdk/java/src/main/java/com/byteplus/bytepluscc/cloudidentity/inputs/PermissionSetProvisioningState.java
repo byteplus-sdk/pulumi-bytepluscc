@@ -16,14 +16,14 @@ public final class PermissionSetProvisioningState extends com.pulumi.resources.R
     public static final PermissionSetProvisioningState Empty = new PermissionSetProvisioningState();
 
     /**
-     * 创建时间。
+     * Creation time
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 创建时间。
+     * @return Creation time
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -31,14 +31,14 @@ public final class PermissionSetProvisioningState extends com.pulumi.resources.R
     }
 
     /**
-     * 权限集 ID。
+     * Permission set ID
      * 
      */
     @Import(name="permissionSetId")
     private @Nullable Output<String> permissionSetId;
 
     /**
-     * @return 权限集 ID。
+     * @return Permission set ID
      * 
      */
     public Optional<Output<String>> permissionSetId() {
@@ -46,14 +46,14 @@ public final class PermissionSetProvisioningState extends com.pulumi.resources.R
     }
 
     /**
-     * 权限集名。
+     * Permission set name
      * 
      */
     @Import(name="permissionSetName")
     private @Nullable Output<String> permissionSetName;
 
     /**
-     * @return 权限集名。
+     * @return Permission set name
      * 
      */
     public Optional<Output<String>> permissionSetName() {
@@ -61,14 +61,14 @@ public final class PermissionSetProvisioningState extends com.pulumi.resources.R
     }
 
     /**
-     * 权限集状态 Running：运行中,Reprovision Required：需要重新部署,Provision Failed：部署失败,Provisioned：已部署
+     * Permission set status Running: In progress, Reprovision Required: Redeployment required, Provision Failed: Deployment failed, Provisioned: Deployed
      * 
      */
     @Import(name="provisioningStatus")
     private @Nullable Output<String> provisioningStatus;
 
     /**
-     * @return 权限集状态 Running：运行中,Reprovision Required：需要重新部署,Provision Failed：部署失败,Provisioned：已部署
+     * @return Permission set status Running: In progress, Reprovision Required: Redeployment required, Provision Failed: Deployment failed, Provisioned: Deployed
      * 
      */
     public Optional<Output<String>> provisioningStatus() {
@@ -76,14 +76,14 @@ public final class PermissionSetProvisioningState extends com.pulumi.resources.R
     }
 
     /**
-     * 授权的账号 ID。
+     * Authorized account ID
      * 
      */
     @Import(name="targetId")
     private @Nullable Output<String> targetId;
 
     /**
-     * @return 授权的账号 ID。
+     * @return Authorized account ID
      * 
      */
     public Optional<Output<String>> targetId() {
@@ -91,14 +91,14 @@ public final class PermissionSetProvisioningState extends com.pulumi.resources.R
     }
 
     /**
-     * 账号名。
+     * Account name
      * 
      */
     @Import(name="targetName")
     private @Nullable Output<String> targetName;
 
     /**
-     * @return 账号名。
+     * @return Account name
      * 
      */
     public Optional<Output<String>> targetName() {
@@ -106,14 +106,14 @@ public final class PermissionSetProvisioningState extends com.pulumi.resources.R
     }
 
     /**
-     * 更新时间。
+     * Update time
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 更新时间。
+     * @return Update time
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -151,7 +151,7 @@ public final class PermissionSetProvisioningState extends com.pulumi.resources.R
         }
 
         /**
-         * @param createdTime 创建时间。
+         * @param createdTime Creation time
          * 
          * @return builder
          * 
@@ -162,7 +162,7 @@ public final class PermissionSetProvisioningState extends com.pulumi.resources.R
         }
 
         /**
-         * @param createdTime 创建时间。
+         * @param createdTime Creation time
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class PermissionSetProvisioningState extends com.pulumi.resources.R
         }
 
         /**
-         * @param permissionSetId 权限集 ID。
+         * @param permissionSetId Permission set ID
          * 
          * @return builder
          * 
@@ -183,7 +183,7 @@ public final class PermissionSetProvisioningState extends com.pulumi.resources.R
         }
 
         /**
-         * @param permissionSetId 权限集 ID。
+         * @param permissionSetId Permission set ID
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class PermissionSetProvisioningState extends com.pulumi.resources.R
         }
 
         /**
-         * @param permissionSetName 权限集名。
+         * @param permissionSetName Permission set name
          * 
          * @return builder
          * 
@@ -204,7 +204,7 @@ public final class PermissionSetProvisioningState extends com.pulumi.resources.R
         }
 
         /**
-         * @param permissionSetName 权限集名。
+         * @param permissionSetName Permission set name
          * 
          * @return builder
          * 
@@ -214,7 +214,7 @@ public final class PermissionSetProvisioningState extends com.pulumi.resources.R
         }
 
         /**
-         * @param provisioningStatus 权限集状态 Running：运行中,Reprovision Required：需要重新部署,Provision Failed：部署失败,Provisioned：已部署
+         * @param provisioningStatus Permission set status Running: In progress, Reprovision Required: Redeployment required, Provision Failed: Deployment failed, Provisioned: Deployed
          * 
          * @return builder
          * 
@@ -225,7 +225,7 @@ public final class PermissionSetProvisioningState extends com.pulumi.resources.R
         }
 
         /**
-         * @param provisioningStatus 权限集状态 Running：运行中,Reprovision Required：需要重新部署,Provision Failed：部署失败,Provisioned：已部署
+         * @param provisioningStatus Permission set status Running: In progress, Reprovision Required: Redeployment required, Provision Failed: Deployment failed, Provisioned: Deployed
          * 
          * @return builder
          * 
@@ -235,7 +235,7 @@ public final class PermissionSetProvisioningState extends com.pulumi.resources.R
         }
 
         /**
-         * @param targetId 授权的账号 ID。
+         * @param targetId Authorized account ID
          * 
          * @return builder
          * 
@@ -246,7 +246,7 @@ public final class PermissionSetProvisioningState extends com.pulumi.resources.R
         }
 
         /**
-         * @param targetId 授权的账号 ID。
+         * @param targetId Authorized account ID
          * 
          * @return builder
          * 
@@ -256,7 +256,7 @@ public final class PermissionSetProvisioningState extends com.pulumi.resources.R
         }
 
         /**
-         * @param targetName 账号名。
+         * @param targetName Account name
          * 
          * @return builder
          * 
@@ -267,7 +267,7 @@ public final class PermissionSetProvisioningState extends com.pulumi.resources.R
         }
 
         /**
-         * @param targetName 账号名。
+         * @param targetName Account name
          * 
          * @return builder
          * 
@@ -277,7 +277,7 @@ public final class PermissionSetProvisioningState extends com.pulumi.resources.R
         }
 
         /**
-         * @param updatedTime 更新时间。
+         * @param updatedTime Update time
          * 
          * @return builder
          * 
@@ -288,7 +288,7 @@ public final class PermissionSetProvisioningState extends com.pulumi.resources.R
         }
 
         /**
-         * @param updatedTime 更新时间。
+         * @param updatedTime Update time
          * 
          * @return builder
          * 

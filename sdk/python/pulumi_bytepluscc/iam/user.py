@@ -30,22 +30,20 @@ class UserArgs:
                  groups: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  login_profile: Optional[pulumi.Input['UserLoginProfileArgs']] = None,
                  mobile_phone: Optional[pulumi.Input[builtins.str]] = None,
-                 mobile_phone_is_verify: Optional[pulumi.Input[builtins.bool]] = None,
                  policies: Optional[pulumi.Input[Sequence[pulumi.Input['UserPolicyArgs']]]] = None,
                  security_config: Optional[pulumi.Input['UserSecurityConfigArgs']] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['UserTagArgs']]]] = None):
         """
         The set of arguments for constructing a User resource.
-        :param pulumi.Input[builtins.str] user_name: 子用户名称，用户名。长度1~64，支持英文、数字、下划线、和.-@符号。
-        :param pulumi.Input[builtins.str] description: 子用户对应的描述信息，长度不超过255。
-        :param pulumi.Input[builtins.str] display_name: 子用户对应的展示名称，用户显示名。长度1~128，仅支持中文、英文、数字、空格和.-_@符号。
-        :param pulumi.Input[builtins.str] email: 子用户对应的电子邮件地址。
-        :param pulumi.Input[builtins.bool] email_is_verify: 子用户电子邮件地址是否已验证。true代表已验证，false代表未验证。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] groups: 子用户归属的用户组。
-        :param pulumi.Input['UserLoginProfileArgs'] login_profile: 子用户的登录配置。
-        :param pulumi.Input[builtins.str] mobile_phone: 子用户对应的手机号。
-        :param pulumi.Input[builtins.bool] mobile_phone_is_verify: 子用户手机号是否已验证。true代表已验证，false代表未验证。
-        :param pulumi.Input['UserSecurityConfigArgs'] security_config: 子用户的操作保护配置。
+        :param pulumi.Input[builtins.str] user_name: Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-@ characters.
+        :param pulumi.Input[builtins.str] description: Description for the sub-user, up to 255 characters.
+        :param pulumi.Input[builtins.str] display_name: Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_@ characters only.
+        :param pulumi.Input[builtins.str] email: Sub-user's email address.
+        :param pulumi.Input[builtins.bool] email_is_verify: Whether the sub-user's email address is verified. 'true' means verified, 'false' means not verified.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] groups: User group to which the sub-user belongs.
+        :param pulumi.Input['UserLoginProfileArgs'] login_profile: Login configuration for the sub-user.
+        :param pulumi.Input[builtins.str] mobile_phone: Sub-user's mobile number.
+        :param pulumi.Input['UserSecurityConfigArgs'] security_config: Operation protection configuration for the sub-user.
         """
         pulumi.set(__self__, "user_name", user_name)
         if description is not None:
@@ -62,8 +60,6 @@ class UserArgs:
             pulumi.set(__self__, "login_profile", login_profile)
         if mobile_phone is not None:
             pulumi.set(__self__, "mobile_phone", mobile_phone)
-        if mobile_phone_is_verify is not None:
-            pulumi.set(__self__, "mobile_phone_is_verify", mobile_phone_is_verify)
         if policies is not None:
             pulumi.set(__self__, "policies", policies)
         if security_config is not None:
@@ -75,7 +71,7 @@ class UserArgs:
     @pulumi.getter(name="userName")
     def user_name(self) -> pulumi.Input[builtins.str]:
         """
-        子用户名称，用户名。长度1~64，支持英文、数字、下划线、和.-@符号。
+        Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-@ characters.
         """
         return pulumi.get(self, "user_name")
 
@@ -87,7 +83,7 @@ class UserArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子用户对应的描述信息，长度不超过255。
+        Description for the sub-user, up to 255 characters.
         """
         return pulumi.get(self, "description")
 
@@ -99,7 +95,7 @@ class UserArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子用户对应的展示名称，用户显示名。长度1~128，仅支持中文、英文、数字、空格和.-_@符号。
+        Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_@ characters only.
         """
         return pulumi.get(self, "display_name")
 
@@ -111,7 +107,7 @@ class UserArgs:
     @pulumi.getter
     def email(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子用户对应的电子邮件地址。
+        Sub-user's email address.
         """
         return pulumi.get(self, "email")
 
@@ -123,7 +119,7 @@ class UserArgs:
     @pulumi.getter(name="emailIsVerify")
     def email_is_verify(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        子用户电子邮件地址是否已验证。true代表已验证，false代表未验证。
+        Whether the sub-user's email address is verified. 'true' means verified, 'false' means not verified.
         """
         return pulumi.get(self, "email_is_verify")
 
@@ -135,7 +131,7 @@ class UserArgs:
     @pulumi.getter
     def groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        子用户归属的用户组。
+        User group to which the sub-user belongs.
         """
         return pulumi.get(self, "groups")
 
@@ -147,7 +143,7 @@ class UserArgs:
     @pulumi.getter(name="loginProfile")
     def login_profile(self) -> Optional[pulumi.Input['UserLoginProfileArgs']]:
         """
-        子用户的登录配置。
+        Login configuration for the sub-user.
         """
         return pulumi.get(self, "login_profile")
 
@@ -159,25 +155,13 @@ class UserArgs:
     @pulumi.getter(name="mobilePhone")
     def mobile_phone(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子用户对应的手机号。
+        Sub-user's mobile number.
         """
         return pulumi.get(self, "mobile_phone")
 
     @mobile_phone.setter
     def mobile_phone(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "mobile_phone", value)
-
-    @property
-    @pulumi.getter(name="mobilePhoneIsVerify")
-    def mobile_phone_is_verify(self) -> Optional[pulumi.Input[builtins.bool]]:
-        """
-        子用户手机号是否已验证。true代表已验证，false代表未验证。
-        """
-        return pulumi.get(self, "mobile_phone_is_verify")
-
-    @mobile_phone_is_verify.setter
-    def mobile_phone_is_verify(self, value: Optional[pulumi.Input[builtins.bool]]):
-        pulumi.set(self, "mobile_phone_is_verify", value)
 
     @property
     @pulumi.getter
@@ -192,7 +176,7 @@ class UserArgs:
     @pulumi.getter(name="securityConfig")
     def security_config(self) -> Optional[pulumi.Input['UserSecurityConfigArgs']]:
         """
-        子用户的操作保护配置。
+        Operation protection configuration for the sub-user.
         """
         return pulumi.get(self, "security_config")
 
@@ -233,21 +217,21 @@ class _UserState:
                  user_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering User resources.
-        :param pulumi.Input[builtins.float] account_id: 子用户归属的主账号。
-        :param pulumi.Input[builtins.str] create_date: 子用户对应的创建时间。
-        :param pulumi.Input[builtins.str] description: 子用户对应的描述信息，长度不超过255。
-        :param pulumi.Input[builtins.str] display_name: 子用户对应的展示名称，用户显示名。长度1~128，仅支持中文、英文、数字、空格和.-_@符号。
-        :param pulumi.Input[builtins.str] email: 子用户对应的电子邮件地址。
-        :param pulumi.Input[builtins.bool] email_is_verify: 子用户电子邮件地址是否已验证。true代表已验证，false代表未验证。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] groups: 子用户归属的用户组。
-        :param pulumi.Input['UserLoginProfileArgs'] login_profile: 子用户的登录配置。
-        :param pulumi.Input[builtins.str] mobile_phone: 子用户对应的手机号。
-        :param pulumi.Input[builtins.bool] mobile_phone_is_verify: 子用户手机号是否已验证。true代表已验证，false代表未验证。
-        :param pulumi.Input['UserSecurityConfigArgs'] security_config: 子用户的操作保护配置。
-        :param pulumi.Input[builtins.str] trn: 子用户对应的Trn表达式。
-        :param pulumi.Input[builtins.str] update_date: 子用户对应的更新时间。
-        :param pulumi.Input[builtins.int] user_id: 子用户的ID。
-        :param pulumi.Input[builtins.str] user_name: 子用户名称，用户名。长度1~64，支持英文、数字、下划线、和.-@符号。
+        :param pulumi.Input[builtins.float] account_id: Main account to which the sub-user belongs.
+        :param pulumi.Input[builtins.str] create_date: Sub-user's creation time.
+        :param pulumi.Input[builtins.str] description: Description for the sub-user, up to 255 characters.
+        :param pulumi.Input[builtins.str] display_name: Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_@ characters only.
+        :param pulumi.Input[builtins.str] email: Sub-user's email address.
+        :param pulumi.Input[builtins.bool] email_is_verify: Whether the sub-user's email address is verified. 'true' means verified, 'false' means not verified.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] groups: User group to which the sub-user belongs.
+        :param pulumi.Input['UserLoginProfileArgs'] login_profile: Login configuration for the sub-user.
+        :param pulumi.Input[builtins.str] mobile_phone: Sub-user's mobile number.
+        :param pulumi.Input[builtins.bool] mobile_phone_is_verify: Whether the sub-user's phone number is verified. 'true' means verified, 'false' means not verified.
+        :param pulumi.Input['UserSecurityConfigArgs'] security_config: Operation protection configuration for the sub-user.
+        :param pulumi.Input[builtins.str] trn: TRN expression for the sub-user.
+        :param pulumi.Input[builtins.str] update_date: Update time for the sub-user.
+        :param pulumi.Input[builtins.int] user_id: Sub-user's ID.
+        :param pulumi.Input[builtins.str] user_name: Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-@ characters.
         """
         if access_keys is not None:
             pulumi.set(__self__, "access_keys", access_keys)
@@ -299,7 +283,7 @@ class _UserState:
     @pulumi.getter(name="accountId")
     def account_id(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        子用户归属的主账号。
+        Main account to which the sub-user belongs.
         """
         return pulumi.get(self, "account_id")
 
@@ -311,7 +295,7 @@ class _UserState:
     @pulumi.getter(name="createDate")
     def create_date(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子用户对应的创建时间。
+        Sub-user's creation time.
         """
         return pulumi.get(self, "create_date")
 
@@ -323,7 +307,7 @@ class _UserState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子用户对应的描述信息，长度不超过255。
+        Description for the sub-user, up to 255 characters.
         """
         return pulumi.get(self, "description")
 
@@ -335,7 +319,7 @@ class _UserState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子用户对应的展示名称，用户显示名。长度1~128，仅支持中文、英文、数字、空格和.-_@符号。
+        Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_@ characters only.
         """
         return pulumi.get(self, "display_name")
 
@@ -347,7 +331,7 @@ class _UserState:
     @pulumi.getter
     def email(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子用户对应的电子邮件地址。
+        Sub-user's email address.
         """
         return pulumi.get(self, "email")
 
@@ -359,7 +343,7 @@ class _UserState:
     @pulumi.getter(name="emailIsVerify")
     def email_is_verify(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        子用户电子邮件地址是否已验证。true代表已验证，false代表未验证。
+        Whether the sub-user's email address is verified. 'true' means verified, 'false' means not verified.
         """
         return pulumi.get(self, "email_is_verify")
 
@@ -371,7 +355,7 @@ class _UserState:
     @pulumi.getter
     def groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        子用户归属的用户组。
+        User group to which the sub-user belongs.
         """
         return pulumi.get(self, "groups")
 
@@ -383,7 +367,7 @@ class _UserState:
     @pulumi.getter(name="loginProfile")
     def login_profile(self) -> Optional[pulumi.Input['UserLoginProfileArgs']]:
         """
-        子用户的登录配置。
+        Login configuration for the sub-user.
         """
         return pulumi.get(self, "login_profile")
 
@@ -395,7 +379,7 @@ class _UserState:
     @pulumi.getter(name="mobilePhone")
     def mobile_phone(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子用户对应的手机号。
+        Sub-user's mobile number.
         """
         return pulumi.get(self, "mobile_phone")
 
@@ -407,7 +391,7 @@ class _UserState:
     @pulumi.getter(name="mobilePhoneIsVerify")
     def mobile_phone_is_verify(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        子用户手机号是否已验证。true代表已验证，false代表未验证。
+        Whether the sub-user's phone number is verified. 'true' means verified, 'false' means not verified.
         """
         return pulumi.get(self, "mobile_phone_is_verify")
 
@@ -428,7 +412,7 @@ class _UserState:
     @pulumi.getter(name="securityConfig")
     def security_config(self) -> Optional[pulumi.Input['UserSecurityConfigArgs']]:
         """
-        子用户的操作保护配置。
+        Operation protection configuration for the sub-user.
         """
         return pulumi.get(self, "security_config")
 
@@ -449,7 +433,7 @@ class _UserState:
     @pulumi.getter
     def trn(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子用户对应的Trn表达式。
+        TRN expression for the sub-user.
         """
         return pulumi.get(self, "trn")
 
@@ -461,7 +445,7 @@ class _UserState:
     @pulumi.getter(name="updateDate")
     def update_date(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子用户对应的更新时间。
+        Update time for the sub-user.
         """
         return pulumi.get(self, "update_date")
 
@@ -473,7 +457,7 @@ class _UserState:
     @pulumi.getter(name="userId")
     def user_id(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        子用户的ID。
+        Sub-user's ID.
         """
         return pulumi.get(self, "user_id")
 
@@ -485,7 +469,7 @@ class _UserState:
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        子用户名称，用户名。长度1~64，支持英文、数字、下划线、和.-@符号。
+        Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-@ characters.
         """
         return pulumi.get(self, "user_name")
 
@@ -507,14 +491,13 @@ class User(pulumi.CustomResource):
                  groups: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  login_profile: Optional[pulumi.Input[Union['UserLoginProfileArgs', 'UserLoginProfileArgsDict']]] = None,
                  mobile_phone: Optional[pulumi.Input[builtins.str]] = None,
-                 mobile_phone_is_verify: Optional[pulumi.Input[builtins.bool]] = None,
                  policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UserPolicyArgs', 'UserPolicyArgsDict']]]]] = None,
                  security_config: Optional[pulumi.Input[Union['UserSecurityConfigArgs', 'UserSecurityConfigArgsDict']]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UserTagArgs', 'UserTagArgsDict']]]]] = None,
                  user_name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        IAM子用户是访问控制的一种身份，由账号或是拥有权限的用户创建。用户被授予权限后，可登录控制台或使用访问密钥调用API访问云资源。
+        An IAM sub-user is an identity for access control, created by an account or a user with permissions. After permissions are granted, the user can log in to the console or use the access key to call APIs to access cloud resources.
 
         ## Import
 
@@ -524,16 +507,15 @@ class User(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: 子用户对应的描述信息，长度不超过255。
-        :param pulumi.Input[builtins.str] display_name: 子用户对应的展示名称，用户显示名。长度1~128，仅支持中文、英文、数字、空格和.-_@符号。
-        :param pulumi.Input[builtins.str] email: 子用户对应的电子邮件地址。
-        :param pulumi.Input[builtins.bool] email_is_verify: 子用户电子邮件地址是否已验证。true代表已验证，false代表未验证。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] groups: 子用户归属的用户组。
-        :param pulumi.Input[Union['UserLoginProfileArgs', 'UserLoginProfileArgsDict']] login_profile: 子用户的登录配置。
-        :param pulumi.Input[builtins.str] mobile_phone: 子用户对应的手机号。
-        :param pulumi.Input[builtins.bool] mobile_phone_is_verify: 子用户手机号是否已验证。true代表已验证，false代表未验证。
-        :param pulumi.Input[Union['UserSecurityConfigArgs', 'UserSecurityConfigArgsDict']] security_config: 子用户的操作保护配置。
-        :param pulumi.Input[builtins.str] user_name: 子用户名称，用户名。长度1~64，支持英文、数字、下划线、和.-@符号。
+        :param pulumi.Input[builtins.str] description: Description for the sub-user, up to 255 characters.
+        :param pulumi.Input[builtins.str] display_name: Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_@ characters only.
+        :param pulumi.Input[builtins.str] email: Sub-user's email address.
+        :param pulumi.Input[builtins.bool] email_is_verify: Whether the sub-user's email address is verified. 'true' means verified, 'false' means not verified.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] groups: User group to which the sub-user belongs.
+        :param pulumi.Input[Union['UserLoginProfileArgs', 'UserLoginProfileArgsDict']] login_profile: Login configuration for the sub-user.
+        :param pulumi.Input[builtins.str] mobile_phone: Sub-user's mobile number.
+        :param pulumi.Input[Union['UserSecurityConfigArgs', 'UserSecurityConfigArgsDict']] security_config: Operation protection configuration for the sub-user.
+        :param pulumi.Input[builtins.str] user_name: Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-@ characters.
         """
         ...
     @overload
@@ -542,7 +524,7 @@ class User(pulumi.CustomResource):
                  args: UserArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        IAM子用户是访问控制的一种身份，由账号或是拥有权限的用户创建。用户被授予权限后，可登录控制台或使用访问密钥调用API访问云资源。
+        An IAM sub-user is an identity for access control, created by an account or a user with permissions. After permissions are granted, the user can log in to the console or use the access key to call APIs to access cloud resources.
 
         ## Import
 
@@ -572,7 +554,6 @@ class User(pulumi.CustomResource):
                  groups: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  login_profile: Optional[pulumi.Input[Union['UserLoginProfileArgs', 'UserLoginProfileArgsDict']]] = None,
                  mobile_phone: Optional[pulumi.Input[builtins.str]] = None,
-                 mobile_phone_is_verify: Optional[pulumi.Input[builtins.bool]] = None,
                  policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UserPolicyArgs', 'UserPolicyArgsDict']]]]] = None,
                  security_config: Optional[pulumi.Input[Union['UserSecurityConfigArgs', 'UserSecurityConfigArgsDict']]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UserTagArgs', 'UserTagArgsDict']]]]] = None,
@@ -593,7 +574,6 @@ class User(pulumi.CustomResource):
             __props__.__dict__["groups"] = groups
             __props__.__dict__["login_profile"] = login_profile
             __props__.__dict__["mobile_phone"] = mobile_phone
-            __props__.__dict__["mobile_phone_is_verify"] = mobile_phone_is_verify
             __props__.__dict__["policies"] = policies
             __props__.__dict__["security_config"] = security_config
             __props__.__dict__["tags"] = tags
@@ -603,6 +583,7 @@ class User(pulumi.CustomResource):
             __props__.__dict__["access_keys"] = None
             __props__.__dict__["account_id"] = None
             __props__.__dict__["create_date"] = None
+            __props__.__dict__["mobile_phone_is_verify"] = None
             __props__.__dict__["trn"] = None
             __props__.__dict__["update_date"] = None
             __props__.__dict__["user_id"] = None
@@ -641,21 +622,21 @@ class User(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.float] account_id: 子用户归属的主账号。
-        :param pulumi.Input[builtins.str] create_date: 子用户对应的创建时间。
-        :param pulumi.Input[builtins.str] description: 子用户对应的描述信息，长度不超过255。
-        :param pulumi.Input[builtins.str] display_name: 子用户对应的展示名称，用户显示名。长度1~128，仅支持中文、英文、数字、空格和.-_@符号。
-        :param pulumi.Input[builtins.str] email: 子用户对应的电子邮件地址。
-        :param pulumi.Input[builtins.bool] email_is_verify: 子用户电子邮件地址是否已验证。true代表已验证，false代表未验证。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] groups: 子用户归属的用户组。
-        :param pulumi.Input[Union['UserLoginProfileArgs', 'UserLoginProfileArgsDict']] login_profile: 子用户的登录配置。
-        :param pulumi.Input[builtins.str] mobile_phone: 子用户对应的手机号。
-        :param pulumi.Input[builtins.bool] mobile_phone_is_verify: 子用户手机号是否已验证。true代表已验证，false代表未验证。
-        :param pulumi.Input[Union['UserSecurityConfigArgs', 'UserSecurityConfigArgsDict']] security_config: 子用户的操作保护配置。
-        :param pulumi.Input[builtins.str] trn: 子用户对应的Trn表达式。
-        :param pulumi.Input[builtins.str] update_date: 子用户对应的更新时间。
-        :param pulumi.Input[builtins.int] user_id: 子用户的ID。
-        :param pulumi.Input[builtins.str] user_name: 子用户名称，用户名。长度1~64，支持英文、数字、下划线、和.-@符号。
+        :param pulumi.Input[builtins.float] account_id: Main account to which the sub-user belongs.
+        :param pulumi.Input[builtins.str] create_date: Sub-user's creation time.
+        :param pulumi.Input[builtins.str] description: Description for the sub-user, up to 255 characters.
+        :param pulumi.Input[builtins.str] display_name: Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_@ characters only.
+        :param pulumi.Input[builtins.str] email: Sub-user's email address.
+        :param pulumi.Input[builtins.bool] email_is_verify: Whether the sub-user's email address is verified. 'true' means verified, 'false' means not verified.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] groups: User group to which the sub-user belongs.
+        :param pulumi.Input[Union['UserLoginProfileArgs', 'UserLoginProfileArgsDict']] login_profile: Login configuration for the sub-user.
+        :param pulumi.Input[builtins.str] mobile_phone: Sub-user's mobile number.
+        :param pulumi.Input[builtins.bool] mobile_phone_is_verify: Whether the sub-user's phone number is verified. 'true' means verified, 'false' means not verified.
+        :param pulumi.Input[Union['UserSecurityConfigArgs', 'UserSecurityConfigArgsDict']] security_config: Operation protection configuration for the sub-user.
+        :param pulumi.Input[builtins.str] trn: TRN expression for the sub-user.
+        :param pulumi.Input[builtins.str] update_date: Update time for the sub-user.
+        :param pulumi.Input[builtins.int] user_id: Sub-user's ID.
+        :param pulumi.Input[builtins.str] user_name: Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-@ characters.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -690,7 +671,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter(name="accountId")
     def account_id(self) -> pulumi.Output[builtins.float]:
         """
-        子用户归属的主账号。
+        Main account to which the sub-user belongs.
         """
         return pulumi.get(self, "account_id")
 
@@ -698,7 +679,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter(name="createDate")
     def create_date(self) -> pulumi.Output[builtins.str]:
         """
-        子用户对应的创建时间。
+        Sub-user's creation time.
         """
         return pulumi.get(self, "create_date")
 
@@ -706,7 +687,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        子用户对应的描述信息，长度不超过255。
+        Description for the sub-user, up to 255 characters.
         """
         return pulumi.get(self, "description")
 
@@ -714,7 +695,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[builtins.str]:
         """
-        子用户对应的展示名称，用户显示名。长度1~128，仅支持中文、英文、数字、空格和.-_@符号。
+        Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_@ characters only.
         """
         return pulumi.get(self, "display_name")
 
@@ -722,7 +703,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter
     def email(self) -> pulumi.Output[builtins.str]:
         """
-        子用户对应的电子邮件地址。
+        Sub-user's email address.
         """
         return pulumi.get(self, "email")
 
@@ -730,7 +711,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter(name="emailIsVerify")
     def email_is_verify(self) -> pulumi.Output[builtins.bool]:
         """
-        子用户电子邮件地址是否已验证。true代表已验证，false代表未验证。
+        Whether the sub-user's email address is verified. 'true' means verified, 'false' means not verified.
         """
         return pulumi.get(self, "email_is_verify")
 
@@ -738,7 +719,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter
     def groups(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        子用户归属的用户组。
+        User group to which the sub-user belongs.
         """
         return pulumi.get(self, "groups")
 
@@ -746,7 +727,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter(name="loginProfile")
     def login_profile(self) -> pulumi.Output['outputs.UserLoginProfile']:
         """
-        子用户的登录配置。
+        Login configuration for the sub-user.
         """
         return pulumi.get(self, "login_profile")
 
@@ -754,7 +735,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter(name="mobilePhone")
     def mobile_phone(self) -> pulumi.Output[builtins.str]:
         """
-        子用户对应的手机号。
+        Sub-user's mobile number.
         """
         return pulumi.get(self, "mobile_phone")
 
@@ -762,7 +743,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter(name="mobilePhoneIsVerify")
     def mobile_phone_is_verify(self) -> pulumi.Output[builtins.bool]:
         """
-        子用户手机号是否已验证。true代表已验证，false代表未验证。
+        Whether the sub-user's phone number is verified. 'true' means verified, 'false' means not verified.
         """
         return pulumi.get(self, "mobile_phone_is_verify")
 
@@ -775,7 +756,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter(name="securityConfig")
     def security_config(self) -> pulumi.Output['outputs.UserSecurityConfig']:
         """
-        子用户的操作保护配置。
+        Operation protection configuration for the sub-user.
         """
         return pulumi.get(self, "security_config")
 
@@ -788,7 +769,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter
     def trn(self) -> pulumi.Output[builtins.str]:
         """
-        子用户对应的Trn表达式。
+        TRN expression for the sub-user.
         """
         return pulumi.get(self, "trn")
 
@@ -796,7 +777,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter(name="updateDate")
     def update_date(self) -> pulumi.Output[builtins.str]:
         """
-        子用户对应的更新时间。
+        Update time for the sub-user.
         """
         return pulumi.get(self, "update_date")
 
@@ -804,7 +785,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter(name="userId")
     def user_id(self) -> pulumi.Output[builtins.int]:
         """
-        子用户的ID。
+        Sub-user's ID.
         """
         return pulumi.get(self, "user_id")
 
@@ -812,7 +793,7 @@ class User(pulumi.CustomResource):
     @pulumi.getter(name="userName")
     def user_name(self) -> pulumi.Output[builtins.str]:
         """
-        子用户名称，用户名。长度1~64，支持英文、数字、下划线、和.-@符号。
+        Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-@ characters.
         """
         return pulumi.get(self, "user_name")
 

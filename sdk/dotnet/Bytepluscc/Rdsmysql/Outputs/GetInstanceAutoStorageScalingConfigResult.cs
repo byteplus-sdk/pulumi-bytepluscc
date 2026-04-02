@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Outputs
     public sealed class GetInstanceAutoStorageScalingConfigResult
     {
         /// <summary>
-        /// 是否开启实例的自动扩容功能。取值：true：是。false：否。
+        /// Whether to enable automatic scaling for the instance. Values: true: Yes. false: No.
         /// </summary>
         public readonly bool EnableStorageAutoScale;
         /// <summary>
-        /// 触发自动扩容的可用存储空间占比。取值范围为 10~50，默认值为 10，单位为 %。
+        /// Percentage of available storage space that triggers automatic scaling. Value range: 10–50, default: 10, unit: %
         /// </summary>
         public readonly int StorageThreshold;
         /// <summary>
-        /// 可自动扩容的存储空间上限。该字段的取值下限为实例存储空间+20GB；取值上限为实例主节点规格对应的存储空间取值范围的上限，单位为 GB。关于不同规格可选择存储空间取值范围的详细信息。
+        /// Maximum storage space for automatic expansion. The minimum value is instance storage space + 20 GB; the maximum value is the upper limit of the storage space range for the primary node specification, in GB. See details about selectable storage space ranges for different specifications.
         /// </summary>
         public readonly int StorageUpperBound;
 

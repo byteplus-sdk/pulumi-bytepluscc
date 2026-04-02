@@ -16,12 +16,12 @@ import javax.annotation.Nullable;
 public final class ClusterMonitoringConfig {
     private @Nullable List<ClusterMonitoringConfigComponentConfig> componentConfigs;
     /**
-     * @return 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+     * @return Whether to enable external Prometheus to collect control plane component metrics for the cluster. Parameter values: true: enabled. false: not enabled.
      * 
      */
     private @Nullable Boolean enableMetricsExternalCollection;
     /**
-     * @return 监控数据所属的工作区 ID。
+     * @return Workspace ID to which the monitoring data belongs.
      * 
      */
     private @Nullable String workspaceId;
@@ -31,14 +31,14 @@ public final class ClusterMonitoringConfig {
         return this.componentConfigs == null ? List.of() : this.componentConfigs;
     }
     /**
-     * @return 是否开启外部 Promtheus 采集集群控制面组件指标，参数值说明：true：开启。false：不开启。
+     * @return Whether to enable external Prometheus to collect control plane component metrics for the cluster. Parameter values: true: enabled. false: not enabled.
      * 
      */
     public Optional<Boolean> enableMetricsExternalCollection() {
         return Optional.ofNullable(this.enableMetricsExternalCollection);
     }
     /**
-     * @return 监控数据所属的工作区 ID。
+     * @return Workspace ID to which the monitoring data belongs.
      * 
      */
     public Optional<String> workspaceId() {

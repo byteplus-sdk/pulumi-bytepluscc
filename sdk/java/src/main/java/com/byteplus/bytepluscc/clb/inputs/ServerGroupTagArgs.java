@@ -16,14 +16,14 @@ public final class ServerGroupTagArgs extends com.pulumi.resources.ResourceArgs 
     public static final ServerGroupTagArgs Empty = new ServerGroupTagArgs();
 
     /**
-     * 绑定的标签键信息。
+     * Information about bound tag keys.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 绑定的标签键信息。
+     * @return Information about bound tag keys.
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class ServerGroupTagArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 绑定的标签值信息。
+     * Bound tag value information.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 绑定的标签值信息。
+     * @return Bound tag value information.
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class ServerGroupTagArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param key 绑定的标签键信息。
+         * @param key Information about bound tag keys.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class ServerGroupTagArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param key 绑定的标签键信息。
+         * @param key Information about bound tag keys.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class ServerGroupTagArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param value 绑定的标签值信息。
+         * @param value Bound tag value information.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class ServerGroupTagArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param value 绑定的标签值信息。
+         * @param value Bound tag value information.
          * 
          * @return builder
          * 

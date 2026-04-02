@@ -11,38 +11,38 @@ import java.util.Objects;
 @CustomType
 public final class GetNodePoolKubernetesConfigTaint {
     /**
-     * @return 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+     * @return Taint effect. Values: NoSchedule: (default) Do not schedule. NoExecute: Evict pods that do not tolerate the taint. PreferNoSchedule: Prefer not to schedule.
      * 
      */
     private String effect;
     /**
-     * @return 污点键。
+     * @return Taint key.
      * 
      */
     private String key;
     /**
-     * @return 污点值。
+     * @return Taint value
      * 
      */
     private String value;
 
     private GetNodePoolKubernetesConfigTaint() {}
     /**
-     * @return 污点效果，取值：NoSchedule：（默认值）不调度。NoExecute：驱逐没有容忍污点的 Pod。PreferNoSchedule：尽量避免调度。
+     * @return Taint effect. Values: NoSchedule: (default) Do not schedule. NoExecute: Evict pods that do not tolerate the taint. PreferNoSchedule: Prefer not to schedule.
      * 
      */
     public String effect() {
         return this.effect;
     }
     /**
-     * @return 污点键。
+     * @return Taint key.
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return 污点值。
+     * @return Taint value
      * 
      */
     public String value() {

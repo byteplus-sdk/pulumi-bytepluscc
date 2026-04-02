@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainRequestBlockRule {
     /**
-     * @return 表示一个拦截规则列表。列表中最多可以包含 10 条规则。当 Switch 是 true 时，该参数为必填。
+     * @return Represents a list of interception rules. The list can contain up to 10 rules. When Switch is true, this parameter is required.
      * 
      */
     private List<GetDomainRequestBlockRuleBlockRule> blockRules;
     /**
-     * @return 表示该模块的配置开关。该参数有以下取值：true：表示启用该模块。false：表示禁用该模块。该参数的默认值是 false。
+     * @return Indicates the configuration switch for this module. This parameter has the following values: true: enables the module. false: disables the module. The default value is false.
      * 
      */
     private Boolean switch_;
 
     private GetDomainRequestBlockRule() {}
     /**
-     * @return 表示一个拦截规则列表。列表中最多可以包含 10 条规则。当 Switch 是 true 时，该参数为必填。
+     * @return Represents a list of interception rules. The list can contain up to 10 rules. When Switch is true, this parameter is required.
      * 
      */
     public List<GetDomainRequestBlockRuleBlockRule> blockRules() {
         return this.blockRules;
     }
     /**
-     * @return 表示该模块的配置开关。该参数有以下取值：true：表示启用该模块。false：表示禁用该模块。该参数的默认值是 false。
+     * @return Indicates the configuration switch for this module. This parameter has the following values: true: enables the module. false: disables the module. The default value is false.
      * 
      */
     public Boolean switch_() {

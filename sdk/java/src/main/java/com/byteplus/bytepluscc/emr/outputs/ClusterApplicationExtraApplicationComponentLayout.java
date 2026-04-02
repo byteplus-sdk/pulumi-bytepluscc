@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ClusterApplicationExtraApplicationComponentLayout {
     /**
-     * @return 组件名称。
+     * @return Component name.
      * 
      */
     private @Nullable String componentName;
     /**
-     * @return 组件的布局范围。
+     * @return Component layout scope.
      * 
      */
     private @Nullable ClusterApplicationExtraApplicationComponentLayoutEffectiveScope effectiveScope;
 
     private ClusterApplicationExtraApplicationComponentLayout() {}
     /**
-     * @return 组件名称。
+     * @return Component name.
      * 
      */
     public Optional<String> componentName() {
         return Optional.ofNullable(this.componentName);
     }
     /**
-     * @return 组件的布局范围。
+     * @return Component layout scope.
      * 
      */
     public Optional<ClusterApplicationExtraApplicationComponentLayoutEffectiveScope> effectiveScope() {

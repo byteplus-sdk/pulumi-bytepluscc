@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb.Outputs
     public sealed class ClbEnis
     {
         /// <summary>
-        /// 负载均衡实例的私网IP地址。
+        /// Private IP address of the load balancer instance
         /// </summary>
         public readonly string? EniAddress;
         /// <summary>
-        /// 负载均衡实例占用的网卡ID。
+        /// Network interface ID occupied by the load balancer instance
         /// </summary>
         public readonly string? EniId;
 

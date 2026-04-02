@@ -12,38 +12,38 @@ import java.util.Objects;
 @CustomType
 public final class GetUpstreamBackendTarget {
     /**
-     * @return 健康检查状态。
+     * @return Health Check Status
      * 
      */
     private String healthStatus;
     /**
-     * @return 后端节点IP。
+     * @return Backend node IP
      * 
      */
     private String ip;
     /**
-     * @return 后端节点端口。
+     * @return Backend node port
      * 
      */
     private Integer port;
 
     private GetUpstreamBackendTarget() {}
     /**
-     * @return 健康检查状态。
+     * @return Health Check Status
      * 
      */
     public String healthStatus() {
         return this.healthStatus;
     }
     /**
-     * @return 后端节点IP。
+     * @return Backend node IP
      * 
      */
     public String ip() {
         return this.ip;
     }
     /**
-     * @return 后端节点端口。
+     * @return Backend node port
      * 
      */
     public Integer port() {

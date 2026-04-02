@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class GetShareConfigDenyIpAccessRule {
     /**
-     * @return 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access_rule。
+     * @return Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access_rule.
      * 
      */
     private List<String> rules;
 
     private GetShareConfigDenyIpAccessRule() {}
     /**
-     * @return 表示一个 IP 黑名单的配置，对应 ConfigType 是 deny*ip*access_rule。
+     * @return Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access_rule.
      * 
      */
     public List<String> rules() {

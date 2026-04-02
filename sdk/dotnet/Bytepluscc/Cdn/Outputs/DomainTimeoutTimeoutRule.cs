@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class DomainTimeoutTimeoutRule
     {
         /// <summary>
-        /// 表示该配置模块的生效条件，由一组规则组成。
+        /// Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
         /// </summary>
         public readonly Outputs.DomainTimeoutTimeoutRuleCondition? Condition;
         /// <summary>
-        /// 表示超时时间的配置。
+        /// Indicates the timeout configuration.
         /// </summary>
         public readonly Outputs.DomainTimeoutTimeoutRuleTimeoutAction? TimeoutAction;
 

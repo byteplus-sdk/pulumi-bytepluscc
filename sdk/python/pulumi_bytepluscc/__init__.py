@@ -334,6 +334,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "cen/grantInstance",
+  "fqn": "pulumi_bytepluscc.cen",
+  "classes": {
+   "bytepluscc:cen/grantInstance:GrantInstance": "GrantInstance"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "clb/acl",
   "fqn": "pulumi_bytepluscc.clb",
   "classes": {
@@ -854,6 +862,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "privatezone/userVpcAuthorization",
+  "fqn": "pulumi_bytepluscc.privatezone",
+  "classes": {
+   "bytepluscc:privatezone/userVpcAuthorization:UserVpcAuthorization": "UserVpcAuthorization"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "rabbitmq/instance",
   "fqn": "pulumi_bytepluscc.rabbitmq",
   "classes": {
@@ -1094,6 +1110,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "vedbm/account",
+  "fqn": "pulumi_bytepluscc.vedbm",
+  "classes": {
+   "bytepluscc:vedbm/account:Account": "Account"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "vedbm/allowList",
   "fqn": "pulumi_bytepluscc.vedbm",
   "classes": {
@@ -1122,6 +1146,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.vedbm",
   "classes": {
    "bytepluscc:vedbm/instance:Instance": "Instance"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vefaas/function",
+  "fqn": "pulumi_bytepluscc.vefaas",
+  "classes": {
+   "bytepluscc:vefaas/function:Function": "Function"
   }
  },
  {
@@ -1346,6 +1378,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.vpn",
   "classes": {
    "bytepluscc:vpn/customerGateway:CustomerGateway": "CustomerGateway"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vpn/vpnConnection",
+  "fqn": "pulumi_bytepluscc.vpn",
+  "classes": {
+   "bytepluscc:vpn/vpnConnection:VpnConnection": "VpnConnection"
   }
  },
  {

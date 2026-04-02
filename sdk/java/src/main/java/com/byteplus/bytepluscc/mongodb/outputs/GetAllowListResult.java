@@ -14,47 +14,47 @@ import java.util.Objects;
 @CustomType
 public final class GetAllowListResult {
     /**
-     * @return 白名单类型。取值范围如下：Ordinary：普通白名单；Default：默认白名单。
+     * @return Allowlist type. Valid values: Ordinary: ordinary allowlist; Default: default allowlist.
      * 
      */
     private String allowListCategory;
     /**
-     * @return 白名单的备注信息，长度不可超过 200 个字符。
+     * @return Allowlist remarks. Maximum length: 200 characters.
      * 
      */
     private String allowListDesc;
     /**
-     * @return 白名单 ID。
+     * @return Allowlist ID.
      * 
      */
     private String allowListId;
     /**
-     * @return 白名单内的 IP 地址（或地址段）总数。
+     * @return Total number of IP addresses (or address ranges) in the allowlist.
      * 
      */
     private Integer allowListIpNum;
     /**
-     * @return 白名单名称，名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 1~128 个字符。
+     * @return Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters.
      * 
      */
     private String allowListName;
     /**
-     * @return 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+     * @return IP address type in the allowlist. Only IPv4 addresses are currently supported.
      * 
      */
     private String allowListType;
     /**
-     * @return 输入 IP 地址或 CIDR 格式的 IP 地址段。
+     * @return Enter an IP address or a CIDR-format IP address range.
      * 
      */
     private List<String> allowLists;
     /**
-     * @return 已绑定当前白名单的实例总数。
+     * @return Total number of instances bound to the current allowlist.
      * 
      */
     private Integer associatedInstanceNum;
     /**
-     * @return 已绑定当前白名单的实例信息。
+     * @return Instance information bound to the current allowlist.
      * 
      */
     private List<GetAllowListAssociatedInstance> associatedInstances;
@@ -64,70 +64,70 @@ public final class GetAllowListResult {
      */
     private String id;
     /**
-     * @return 当前白名单所属的项目。
+     * @return Project to which the current allowlist belongs.
      * 
      */
     private String projectName;
 
     private GetAllowListResult() {}
     /**
-     * @return 白名单类型。取值范围如下：Ordinary：普通白名单；Default：默认白名单。
+     * @return Allowlist type. Valid values: Ordinary: ordinary allowlist; Default: default allowlist.
      * 
      */
     public String allowListCategory() {
         return this.allowListCategory;
     }
     /**
-     * @return 白名单的备注信息，长度不可超过 200 个字符。
+     * @return Allowlist remarks. Maximum length: 200 characters.
      * 
      */
     public String allowListDesc() {
         return this.allowListDesc;
     }
     /**
-     * @return 白名单 ID。
+     * @return Allowlist ID.
      * 
      */
     public String allowListId() {
         return this.allowListId;
     }
     /**
-     * @return 白名单内的 IP 地址（或地址段）总数。
+     * @return Total number of IP addresses (or address ranges) in the allowlist.
      * 
      */
     public Integer allowListIpNum() {
         return this.allowListIpNum;
     }
     /**
-     * @return 白名单名称，名称需同时满足如下要求：不能以数字、中划线（-）开头。只能包含中文、字母、数字、下划线（_）和中划线（-）。长度需为 1~128 个字符。
+     * @return Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters.
      * 
      */
     public String allowListName() {
         return this.allowListName;
     }
     /**
-     * @return 白名单内的 IP 地址类型。当前仅支持 IPv4 地址。
+     * @return IP address type in the allowlist. Only IPv4 addresses are currently supported.
      * 
      */
     public String allowListType() {
         return this.allowListType;
     }
     /**
-     * @return 输入 IP 地址或 CIDR 格式的 IP 地址段。
+     * @return Enter an IP address or a CIDR-format IP address range.
      * 
      */
     public List<String> allowLists() {
         return this.allowLists;
     }
     /**
-     * @return 已绑定当前白名单的实例总数。
+     * @return Total number of instances bound to the current allowlist.
      * 
      */
     public Integer associatedInstanceNum() {
         return this.associatedInstanceNum;
     }
     /**
-     * @return 已绑定当前白名单的实例信息。
+     * @return Instance information bound to the current allowlist.
      * 
      */
     public List<GetAllowListAssociatedInstance> associatedInstances() {
@@ -141,7 +141,7 @@ public final class GetAllowListResult {
         return this.id;
     }
     /**
-     * @return 当前白名单所属的项目。
+     * @return Project to which the current allowlist belongs.
      * 
      */
     public String projectName() {

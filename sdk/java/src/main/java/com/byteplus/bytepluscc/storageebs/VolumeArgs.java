@@ -22,14 +22,14 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
     public static final VolumeArgs Empty = new VolumeArgs();
 
     /**
-     * 自动快照策略ID。
+     * Automatic snapshot policy ID.
      * 
      */
     @Import(name="autoSnapshotPolicyId")
     private @Nullable Output<String> autoSnapshotPolicyId;
 
     /**
-     * @return 自动快照策略ID。
+     * @return Automatic snapshot policy ID.
      * 
      */
     public Optional<Output<String>> autoSnapshotPolicyId() {
@@ -37,14 +37,14 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
+     * When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
      * 
      */
     @Import(name="deleteWithInstance")
     private @Nullable Output<Boolean> deleteWithInstance;
 
     /**
-     * @return 释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
+     * @return When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
      * 
      */
     public Optional<Output<Boolean>> deleteWithInstance() {
@@ -52,14 +52,14 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
+     * Disk description. Default is empty. Length must be between 1 and 255 characters.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
+     * @return Disk description. Default is empty. Length must be between 1 and 255 characters.
      * 
      */
     public Optional<Output<String>> description() {
@@ -67,14 +67,14 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 额外性能。
+     * Extra performance.
      * 
      */
     @Import(name="extraPerformance")
     private @Nullable Output<VolumeExtraPerformanceArgs> extraPerformance;
 
     /**
-     * @return 额外性能。
+     * @return Extra performance.
      * 
      */
     public Optional<Output<VolumeExtraPerformanceArgs>> extraPerformance() {
@@ -82,14 +82,14 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建云盘的同时挂载的ECS实例ID。
+     * ECS instance ID mounted when creating the cloud disk.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 创建云盘的同时挂载的ECS实例ID。
+     * @return ECS instance ID mounted when creating the cloud disk.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -97,14 +97,14 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
+     * Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
      * 
      */
     @Import(name="kind")
     private @Nullable Output<String> kind;
 
     /**
-     * @return 云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
+     * @return Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
      * 
      */
     public Optional<Output<String>> kind() {
@@ -112,14 +112,14 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
+     * Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
      * 
      */
     @Import(name="payType")
     private @Nullable Output<String> payType;
 
     /**
-     * @return 付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
+     * @return Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
      * 
      */
     public Optional<Output<String>> payType() {
@@ -127,14 +127,14 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 云盘所要加入的Project（项目）名称。
+     * Project name to which the disk will be added.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 云盘所要加入的Project（项目）名称。
+     * @return Project name to which the disk will be added.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -142,14 +142,14 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
+     * Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
      * 
      */
     @Import(name="size", required=true)
     private Output<Double> size;
 
     /**
-     * @return Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
+     * @return Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
      * 
      */
     public Output<Double> size() {
@@ -157,14 +157,14 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 源快照。
+     * Source snapshot.
      * 
      */
     @Import(name="sourceSnapshotId")
     private @Nullable Output<String> sourceSnapshotId;
 
     /**
-     * @return 源快照。
+     * @return Source snapshot.
      * 
      */
     public Optional<Output<String>> sourceSnapshotId() {
@@ -179,14 +179,14 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
+     * Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
      * 
      */
     @Import(name="volumeName", required=true)
     private Output<String> volumeName;
 
     /**
-     * @return 云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
+     * @return Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
      * 
      */
     public Output<String> volumeName() {
@@ -194,14 +194,14 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
+     * Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
      * 
      */
     @Import(name="volumeType", required=true)
     private Output<String> volumeType;
 
     /**
-     * @return 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
+     * @return Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
      * 
      */
     public Output<String> volumeType() {
@@ -209,14 +209,14 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 可用区ID。
+     * Availability zone ID.
      * 
      */
     @Import(name="zoneId", required=true)
     private Output<String> zoneId;
 
     /**
-     * @return 可用区ID。
+     * @return Availability zone ID.
      * 
      */
     public Output<String> zoneId() {
@@ -261,7 +261,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoSnapshotPolicyId 自动快照策略ID。
+         * @param autoSnapshotPolicyId Automatic snapshot policy ID.
          * 
          * @return builder
          * 
@@ -272,7 +272,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoSnapshotPolicyId 自动快照策略ID。
+         * @param autoSnapshotPolicyId Automatic snapshot policy ID.
          * 
          * @return builder
          * 
@@ -282,7 +282,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deleteWithInstance 释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
+         * @param deleteWithInstance When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
          * 
          * @return builder
          * 
@@ -293,7 +293,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deleteWithInstance 释放实例时，该云盘是否随实例一起释放，取值说明如下：true：云盘随实例一起释放。false：云盘不随实例一起释放。
+         * @param deleteWithInstance When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
          * 
          * @return builder
          * 
@@ -303,7 +303,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
+         * @param description Disk description. Default is empty. Length must be between 1 and 255 characters.
          * 
          * @return builder
          * 
@@ -314,7 +314,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 云盘的描述信息，默认为空，长度限制在1 ~ 255字符之间。
+         * @param description Disk description. Default is empty. Length must be between 1 and 255 characters.
          * 
          * @return builder
          * 
@@ -324,7 +324,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param extraPerformance 额外性能。
+         * @param extraPerformance Extra performance.
          * 
          * @return builder
          * 
@@ -335,7 +335,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param extraPerformance 额外性能。
+         * @param extraPerformance Extra performance.
          * 
          * @return builder
          * 
@@ -345,7 +345,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 创建云盘的同时挂载的ECS实例ID。
+         * @param instanceId ECS instance ID mounted when creating the cloud disk.
          * 
          * @return builder
          * 
@@ -356,7 +356,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 创建云盘的同时挂载的ECS实例ID。
+         * @param instanceId ECS instance ID mounted when creating the cloud disk.
          * 
          * @return builder
          * 
@@ -366,7 +366,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kind 云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
+         * @param kind Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
          * 
          * @return builder
          * 
@@ -377,7 +377,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kind 云盘属性，data表示数据盘。默认值为data。说明： 仅支持创建数据盘。
+         * @param kind Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
          * 
          * @return builder
          * 
@@ -387,7 +387,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param payType 付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
+         * @param payType Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
          * 
          * @return builder
          * 
@@ -398,7 +398,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param payType 付费类型，说明如下： Pre：预付费（包年包月） Post：后付费（按量计费）。
+         * @param payType Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
          * 
          * @return builder
          * 
@@ -408,7 +408,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 云盘所要加入的Project（项目）名称。
+         * @param projectName Project name to which the disk will be added.
          * 
          * @return builder
          * 
@@ -419,7 +419,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 云盘所要加入的Project（项目）名称。
+         * @param projectName Project name to which the disk will be added.
          * 
          * @return builder
          * 
@@ -429,7 +429,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param size Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
+         * @param size Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
          * 
          * @return builder
          * 
@@ -440,7 +440,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param size Size，数据盘容量大小，单位为GiB。不同类型的数据盘容量范围如下：ESSD*PL0：10~65536 GiB；ESSD*FlexPL：10~65536 GiB；TSSD_TL0：40~65536 GiB
+         * @param size Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
          * 
          * @return builder
          * 
@@ -450,7 +450,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceSnapshotId 源快照。
+         * @param sourceSnapshotId Source snapshot.
          * 
          * @return builder
          * 
@@ -461,7 +461,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceSnapshotId 源快照。
+         * @param sourceSnapshotId Source snapshot.
          * 
          * @return builder
          * 
@@ -484,7 +484,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param volumeName 云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
+         * @param volumeName Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
          * 
          * @return builder
          * 
@@ -495,7 +495,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param volumeName 云盘显示名称。命名规则如下：首字符仅支持中文、字母或下划线（*）。可包含中文、字母、数字、下划线（*）或中划线（-）。长度限制在1~128字符之间。
+         * @param volumeName Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
          * 
          * @return builder
          * 
@@ -505,7 +505,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param volumeType 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
+         * @param volumeType Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
          * 
          * @return builder
          * 
@@ -516,7 +516,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param volumeType 云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0: 吞吐型SSD云盘。
+         * @param volumeType Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
          * 
          * @return builder
          * 
@@ -526,7 +526,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 可用区ID。
+         * @param zoneId Availability zone ID.
          * 
          * @return builder
          * 
@@ -537,7 +537,7 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 可用区ID。
+         * @param zoneId Availability zone ID.
          * 
          * @return builder
          * 

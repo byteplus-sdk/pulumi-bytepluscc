@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
     public sealed class GetInstanceCpuMemoryResult
     {
         /// <summary>
-        /// 实例的核数。
+        /// Number of instance cores.
         /// </summary>
         public readonly int CoreCount;
         /// <summary>
-        /// 实例的CPU数量。
+        /// Number of vCPUs for the instance.
         /// </summary>
         public readonly int CpuNumber;
         /// <summary>
-        /// 实例的内存大小，单位MB。
+        /// Instance memory size (MB).
         /// </summary>
         public readonly int MemorySize;
         /// <summary>
-        /// 实例的每核线程数。
+        /// Threads per core for the instance.
         /// </summary>
         public readonly int ThreadsPerCore;
 

@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ServerGroupTag {
     /**
-     * @return 绑定的标签键信息。
+     * @return Information about bound tag keys.
      * 
      */
     private @Nullable String key;
     /**
-     * @return 绑定的标签值信息。
+     * @return Bound tag value information.
      * 
      */
     private @Nullable String value;
 
     private ServerGroupTag() {}
     /**
-     * @return 绑定的标签键信息。
+     * @return Information about bound tag keys.
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return 绑定的标签值信息。
+     * @return Bound tag value information.
      * 
      */
     public Optional<String> value() {

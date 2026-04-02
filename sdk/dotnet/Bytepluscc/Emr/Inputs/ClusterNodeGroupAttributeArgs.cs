@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Inputs
     public sealed class ClusterNodeGroupAttributeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 公网带宽。默认值 8M。后续如果用户侧调整了，emr侧需要同步该信息。
+        /// Public bandwidth. Default is 8M. If the user changes it later, EMR needs to synchronize this information.
         /// </summary>
         [Input("bandwidth")]
         public Input<int>? Bandwidth { get; set; }
 
         /// <summary>
-        /// 节点组付费类型。为空时，复用集群的chargeType。Master、Core组必须复用集群维度的付费类型。当集群的chargeType为PRE时，task节点组的chargeType允许设置为POST；当集群的chargeType为POST时，节点组的chargeType默认为POST，节点组上的此参数设置无效。
+        /// Node group billing type. If empty, reuses the cluster's chargeType. Master and Core groups must reuse the cluster-level billing type. When the cluster's chargeType is PRE, the task node group's chargeType can be set to POST. When the cluster's chargeType is POST, the node group's chargeType defaults to POST, and this parameter setting on the node group is invalid.
         /// </summary>
         [Input("chargeType")]
         public Input<string>? ChargeType { get; set; }
@@ -37,7 +37,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Inputs
         private InputList<string>? _ecsInstanceTypes;
 
         /// <summary>
-        /// 节点组的ecs机型列表。当前只支持设置1个机型。即List的长度限制为1。
+        /// Node group's ECS instance type list. Only one instance type can be set. The list length is limited to 1.
         /// </summary>
         public InputList<string> EcsInstanceTypes
         {
@@ -46,31 +46,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Inputs
         }
 
         /// <summary>
-        /// ecs的密钥对名称。
+        /// ECS key pair name.
         /// </summary>
         [Input("ecsKeyPairName")]
         public Input<string>? EcsKeyPairName { get; set; }
 
         /// <summary>
-        /// Ecs root账号的密码。
+        /// Password for ECS root account.
         /// </summary>
         [Input("ecsPassword")]
         public Input<string>? EcsPassword { get; set; }
 
         /// <summary>
-        /// 节点组当前期望购买的节点数量。
+        /// Current expected number of nodes to purchase for the node group.
         /// </summary>
         [Input("nodeCount")]
         public Input<int>? NodeCount { get; set; }
 
         /// <summary>
-        /// 长度为1~128个字符，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+        /// Length: 1–128 characters. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
         /// </summary>
         [Input("nodeGroupName")]
         public Input<string>? NodeGroupName { get; set; }
 
         /// <summary>
-        /// 节点组类型。
+        /// Node group type.
         /// </summary>
         [Input("nodeGroupType")]
         public Input<string>? NodeGroupType { get; set; }
@@ -79,7 +79,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Inputs
         private InputList<string>? _subnetIds;
 
         /// <summary>
-        /// 子网Id列表，目前只能传递一个参数，且各节点组的子网Id都是相同的。
+        /// Subnet ID list. Currently, only one parameter can be passed, and all node groups must use the same subnet ID.
         /// </summary>
         public InputList<string> SubnetIds
         {
@@ -88,19 +88,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Inputs
         }
 
         /// <summary>
-        /// 系统盘配置。
+        /// System disk configuration.
         /// </summary>
         [Input("systemDisk")]
         public Input<Inputs.ClusterNodeGroupAttributeSystemDiskArgs>? SystemDisk { get; set; }
 
         /// <summary>
-        /// 是否挂载公网ip。
+        /// Whether to attach public IP.
         /// </summary>
         [Input("withPublicIp")]
         public Input<bool>? WithPublicIp { get; set; }
 
         /// <summary>
-        /// 可用区ID。
+        /// Availability zone ID.
         /// </summary>
         [Input("zoneId")]
         public Input<string>? ZoneId { get; set; }

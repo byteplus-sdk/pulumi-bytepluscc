@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Outputs
     public sealed class InstanceResourcesStorage
     {
         /// <summary>
-        /// 资源大小。
+        /// Resource size
         /// </summary>
         public readonly int? Size;
         /// <summary>
-        /// 资源单位。
+        /// Resource unit
         /// </summary>
         public readonly string? Unit;
 

@@ -12,38 +12,38 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceLocalVolume {
     /**
-     * @return 实例挂载的本地盘数量。
+     * @return The number of local disks attached to the instance.
      * 
      */
     private Integer count;
     /**
-     * @return 实例挂载的本地盘的单盘容量，单位GiB。
+     * @return Capacity of each local disk mounted to the instance (GiB).
      * 
      */
     private Integer size;
     /**
-     * @return 本地盘类型，取值：LOCAL_SSD：SSD本地盘。LOCAL_HDD：HDD本地盘。
+     * @return Local disk type. Values: LOCAL_SSD: SSD local disk. LOCAL_HDD: HDD local disk.
      * 
      */
     private String volumeType;
 
     private GetInstanceLocalVolume() {}
     /**
-     * @return 实例挂载的本地盘数量。
+     * @return The number of local disks attached to the instance.
      * 
      */
     public Integer count() {
         return this.count;
     }
     /**
-     * @return 实例挂载的本地盘的单盘容量，单位GiB。
+     * @return Capacity of each local disk mounted to the instance (GiB).
      * 
      */
     public Integer size() {
         return this.size;
     }
     /**
-     * @return 本地盘类型，取值：LOCAL_SSD：SSD本地盘。LOCAL_HDD：HDD本地盘。
+     * @return Local disk type. Values: LOCAL_SSD: SSD local disk. LOCAL_HDD: HDD local disk.
      * 
      */
     public String volumeType() {

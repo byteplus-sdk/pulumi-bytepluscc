@@ -30,69 +30,69 @@ type LookupInstanceArgs struct {
 
 // A collection of values returned by getInstance.
 type LookupInstanceResult struct {
-	// 账户ID。
+	// Account ID.
 	AccountId string `pulumi:"accountId"`
-	// vePFS 文件系统吞吐上限。
+	// VePFS file system throughput limit.
 	Bandwidth int `pulumi:"bandwidth"`
-	// 文件系统容量，单位为 TiB。
+	// File system capacity, unit: TiB.
 	Capacity int `pulumi:"capacity"`
-	// 容量信息。
+	// Capacity information.
 	CapacityInfo GetInstanceCapacityInfo `pulumi:"capacityInfo"`
-	// 计费状态，默认为 Normal，表示正常计费。
+	// Billing status. Default is Normal, indicating standard billing.
 	ChargeStatus string `pulumi:"chargeStatus"`
-	// 计费类型。取值说明如下：PayAsYouGo：按量计费。
+	// Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
 	ChargeType string `pulumi:"chargeType"`
-	// 创建时间。
+	// Creation time.
 	CreatedTime string `pulumi:"createdTime"`
-	// 文件系统描述信息。
+	// File system description.
 	Description string `pulumi:"description"`
-	// 扩容后是否开启数据均衡，取值说明如下：true：扩容后立即开启数据均衡。false：扩容后不开启数据均衡。注意：仅 100MB/s/TiB 规格的文件系统支持数据均衡功能。由于数据均衡过程会消耗存储节点的网络和磁盘带宽，导致文件系统的性能下降，建议您评估业务需求，谨慎开启。数据均衡的时间主要受存量数据量的影响，如果您的存量数据较多，均衡的时间可能会较长，根据扩容容量大小和文件系统状态，此过程可能需要花费数小时至 2 天的时间，建议您在业务低峰期开启并耐心等待。
+	// Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
 	EnableRestripe bool `pulumi:"enableRestripe"`
-	// 过期时间。
+	// Expiration time.
 	ExpireTime string `pulumi:"expireTime"`
-	// 文件系统 ID。
+	// File system ID.
 	FileSystemId string `pulumi:"fileSystemId"`
-	// 文件系统名称。命名规范如下：只能以中文或英文开头。只能包含中文、字母、数字、半角句号（.）、下划线（_）或中划线（-）。长度需要在 1~128 个字符内。
+	// File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
 	FileSystemName string `pulumi:"fileSystemName"`
-	// 文件系统类型，默认为 VePFS。
+	// File system type. Default is VePFS.
 	FileSystemType string `pulumi:"fileSystemType"`
-	// 文件系统释放时间。
+	// File system release time.
 	FreeTime string `pulumi:"freeTime"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 文件系统所属项目，默认为 default。
+	// Project to which the file system belongs. Default is default.
 	ProjectName string `pulumi:"projectName"`
-	// 协议类型，默认为 VePFS。
+	// Protocol type. Default is VePFS.
 	ProtocolType string `pulumi:"protocolType"`
-	// 读带宽值, 单位MB/s。
+	// Read bandwidth value, unit: MB/s.
 	ReadBandwidth int `pulumi:"readBandwidth"`
-	// 生成的辅助网卡所在的安全组ID。
+	// Security group ID for the generated auxiliary NIC.
 	SecurityGroupId string `pulumi:"securityGroupId"`
-	// 文件系统状态。取值说明如下：Running：实例运行中。Creating：实例创建中。CreateError：实例创建失败。Updating：实例更新中。UpdateError：实例更新失败。Expanding：实例扩容中。ExpandError：实例扩容失败。Deleting：实例删除中。DeleteError：实例删除失败。Stopped：实例已关停。Error：实例处于错误状态。
+	// File system status. Value descriptions are as follows: Running: Instance is running. Creating: Instance is being created. CreateError: Instance creation failed. Updating: Instance is being updated. UpdateError: Instance update failed. Expanding: Instance is being expanded. ExpandError: Instance expansion failed. Deleting: Instance is being deleted. DeleteError: Instance deletion failed. Stopped: Instance is stopped. Error: Instance is in an error state.
 	Status string `pulumi:"status"`
-	// 文件系统关停时间。
+	// File system shutdown time.
 	StopServiceTime string `pulumi:"stopServiceTime"`
-	// 文件系统规格，取值说明如下：Advance*100：100MB/s/TiB。Performance：性能版。Intelligent*Computing：智算版。
+	// File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
 	StoreType string `pulumi:"storeType"`
-	// 文件系统规格中文名称，支持如下：100MB/s/TiB。性能版。智算版。
+	// File system specification name in Chinese. Supported options: 100MB/s/TiB. Performance. Intelligent Computing.
 	StoreTypeCn string `pulumi:"storeTypeCn"`
-	// 存储类型英文名。
+	// Storage type English name.
 	StoreTypeEn string `pulumi:"storeTypeEn"`
-	// 子网 ID。子网必须属于所选的可用区。
+	// Subnet ID. The subnet must belong to the selected availability zone.
 	SubnetId string `pulumi:"subnetId"`
-	// 标签列表。
+	// Tag list.
 	Tags []GetInstanceTag `pulumi:"tags"`
-	// 文件系统更新时间。
+	// File system update time.
 	UpdatedTime string `pulumi:"updatedTime"`
-	// 文件系统版本号。
+	// File system version number.
 	VersionNumber string `pulumi:"versionNumber"`
-	// 私有网络 ID。
+	// Private network ID.
 	VpcId string `pulumi:"vpcId"`
-	// 写带宽值, 单位MB/s。
+	// Write bandwidth value, measured in MB/s.
 	WriteBandwidth int `pulumi:"writeBandwidth"`
-	// 可用区 ID。
+	// Availability zone ID.
 	ZoneId string `pulumi:"zoneId"`
-	// 可用区名称。
+	// Availability zone name.
 	ZoneName string `pulumi:"zoneName"`
 }
 
@@ -130,72 +130,72 @@ func (o LookupInstanceResultOutput) ToLookupInstanceResultOutputWithContext(ctx 
 	return o
 }
 
-// 账户ID。
+// Account ID.
 func (o LookupInstanceResultOutput) AccountId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.AccountId }).(pulumi.StringOutput)
 }
 
-// vePFS 文件系统吞吐上限。
+// VePFS file system throughput limit.
 func (o LookupInstanceResultOutput) Bandwidth() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.Bandwidth }).(pulumi.IntOutput)
 }
 
-// 文件系统容量，单位为 TiB。
+// File system capacity, unit: TiB.
 func (o LookupInstanceResultOutput) Capacity() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.Capacity }).(pulumi.IntOutput)
 }
 
-// 容量信息。
+// Capacity information.
 func (o LookupInstanceResultOutput) CapacityInfo() GetInstanceCapacityInfoOutput {
 	return o.ApplyT(func(v LookupInstanceResult) GetInstanceCapacityInfo { return v.CapacityInfo }).(GetInstanceCapacityInfoOutput)
 }
 
-// 计费状态，默认为 Normal，表示正常计费。
+// Billing status. Default is Normal, indicating standard billing.
 func (o LookupInstanceResultOutput) ChargeStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ChargeStatus }).(pulumi.StringOutput)
 }
 
-// 计费类型。取值说明如下：PayAsYouGo：按量计费。
+// Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
 func (o LookupInstanceResultOutput) ChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ChargeType }).(pulumi.StringOutput)
 }
 
-// 创建时间。
+// Creation time.
 func (o LookupInstanceResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 文件系统描述信息。
+// File system description.
 func (o LookupInstanceResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 扩容后是否开启数据均衡，取值说明如下：true：扩容后立即开启数据均衡。false：扩容后不开启数据均衡。注意：仅 100MB/s/TiB 规格的文件系统支持数据均衡功能。由于数据均衡过程会消耗存储节点的网络和磁盘带宽，导致文件系统的性能下降，建议您评估业务需求，谨慎开启。数据均衡的时间主要受存量数据量的影响，如果您的存量数据较多，均衡的时间可能会较长，根据扩容容量大小和文件系统状态，此过程可能需要花费数小时至 2 天的时间，建议您在业务低峰期开启并耐心等待。
+// Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
 func (o LookupInstanceResultOutput) EnableRestripe() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupInstanceResult) bool { return v.EnableRestripe }).(pulumi.BoolOutput)
 }
 
-// 过期时间。
+// Expiration time.
 func (o LookupInstanceResultOutput) ExpireTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ExpireTime }).(pulumi.StringOutput)
 }
 
-// 文件系统 ID。
+// File system ID.
 func (o LookupInstanceResultOutput) FileSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.FileSystemId }).(pulumi.StringOutput)
 }
 
-// 文件系统名称。命名规范如下：只能以中文或英文开头。只能包含中文、字母、数字、半角句号（.）、下划线（_）或中划线（-）。长度需要在 1~128 个字符内。
+// File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
 func (o LookupInstanceResultOutput) FileSystemName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.FileSystemName }).(pulumi.StringOutput)
 }
 
-// 文件系统类型，默认为 VePFS。
+// File system type. Default is VePFS.
 func (o LookupInstanceResultOutput) FileSystemType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.FileSystemType }).(pulumi.StringOutput)
 }
 
-// 文件系统释放时间。
+// File system release time.
 func (o LookupInstanceResultOutput) FreeTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.FreeTime }).(pulumi.StringOutput)
 }
@@ -205,87 +205,87 @@ func (o LookupInstanceResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 文件系统所属项目，默认为 default。
+// Project to which the file system belongs. Default is default.
 func (o LookupInstanceResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 协议类型，默认为 VePFS。
+// Protocol type. Default is VePFS.
 func (o LookupInstanceResultOutput) ProtocolType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ProtocolType }).(pulumi.StringOutput)
 }
 
-// 读带宽值, 单位MB/s。
+// Read bandwidth value, unit: MB/s.
 func (o LookupInstanceResultOutput) ReadBandwidth() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.ReadBandwidth }).(pulumi.IntOutput)
 }
 
-// 生成的辅助网卡所在的安全组ID。
+// Security group ID for the generated auxiliary NIC.
 func (o LookupInstanceResultOutput) SecurityGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.SecurityGroupId }).(pulumi.StringOutput)
 }
 
-// 文件系统状态。取值说明如下：Running：实例运行中。Creating：实例创建中。CreateError：实例创建失败。Updating：实例更新中。UpdateError：实例更新失败。Expanding：实例扩容中。ExpandError：实例扩容失败。Deleting：实例删除中。DeleteError：实例删除失败。Stopped：实例已关停。Error：实例处于错误状态。
+// File system status. Value descriptions are as follows: Running: Instance is running. Creating: Instance is being created. CreateError: Instance creation failed. Updating: Instance is being updated. UpdateError: Instance update failed. Expanding: Instance is being expanded. ExpandError: Instance expansion failed. Deleting: Instance is being deleted. DeleteError: Instance deletion failed. Stopped: Instance is stopped. Error: Instance is in an error state.
 func (o LookupInstanceResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 文件系统关停时间。
+// File system shutdown time.
 func (o LookupInstanceResultOutput) StopServiceTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.StopServiceTime }).(pulumi.StringOutput)
 }
 
-// 文件系统规格，取值说明如下：Advance*100：100MB/s/TiB。Performance：性能版。Intelligent*Computing：智算版。
+// File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
 func (o LookupInstanceResultOutput) StoreType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.StoreType }).(pulumi.StringOutput)
 }
 
-// 文件系统规格中文名称，支持如下：100MB/s/TiB。性能版。智算版。
+// File system specification name in Chinese. Supported options: 100MB/s/TiB. Performance. Intelligent Computing.
 func (o LookupInstanceResultOutput) StoreTypeCn() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.StoreTypeCn }).(pulumi.StringOutput)
 }
 
-// 存储类型英文名。
+// Storage type English name.
 func (o LookupInstanceResultOutput) StoreTypeEn() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.StoreTypeEn }).(pulumi.StringOutput)
 }
 
-// 子网 ID。子网必须属于所选的可用区。
+// Subnet ID. The subnet must belong to the selected availability zone.
 func (o LookupInstanceResultOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// 标签列表。
+// Tag list.
 func (o LookupInstanceResultOutput) Tags() GetInstanceTagArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceTag { return v.Tags }).(GetInstanceTagArrayOutput)
 }
 
-// 文件系统更新时间。
+// File system update time.
 func (o LookupInstanceResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// 文件系统版本号。
+// File system version number.
 func (o LookupInstanceResultOutput) VersionNumber() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.VersionNumber }).(pulumi.StringOutput)
 }
 
-// 私有网络 ID。
+// Private network ID.
 func (o LookupInstanceResultOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.VpcId }).(pulumi.StringOutput)
 }
 
-// 写带宽值, 单位MB/s。
+// Write bandwidth value, measured in MB/s.
 func (o LookupInstanceResultOutput) WriteBandwidth() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.WriteBandwidth }).(pulumi.IntOutput)
 }
 
-// 可用区 ID。
+// Availability zone ID.
 func (o LookupInstanceResultOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ZoneId }).(pulumi.StringOutput)
 }
 
-// 可用区名称。
+// Availability zone name.
 func (o LookupInstanceResultOutput) ZoneName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.ZoneName }).(pulumi.StringOutput)
 }

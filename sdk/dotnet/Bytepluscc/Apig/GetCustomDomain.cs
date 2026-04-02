@@ -65,23 +65,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
     public sealed class GetCustomDomainResult
     {
         /// <summary>
-        /// 自定义域名证书ID。
+        /// Custom Domain Certificate ID
         /// </summary>
         public readonly string CertificateId;
         /// <summary>
-        /// 备注。
+        /// Remarks
         /// </summary>
         public readonly string Comments;
         /// <summary>
-        /// 创建时间。
+        /// Creation Time
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 自定义域名ID。
+        /// Custom Domain ID
         /// </summary>
         public readonly string CustomDomainId;
         /// <summary>
-        /// 自定义域名。
+        /// Custom Domain
         /// </summary>
         public readonly string Domain;
         /// <summary>
@@ -89,23 +89,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 协议，取值：HTTP。HTTPS。
+        /// Protocol. Values: HTTP, HTTPS
         /// </summary>
         public readonly ImmutableArray<string> Protocols;
         /// <summary>
-        /// 服务ID。
+        /// Service ID
         /// </summary>
         public readonly string ServiceId;
         /// <summary>
-        /// 重定向到HTTPS。
+        /// Redirect to HTTPS
         /// </summary>
         public readonly bool SslRedirect;
         /// <summary>
-        /// 状态，取值：Creating：配置中。CreationFailed：配置失败。Deleting：删除中。DeletionFailed：删除失败。Verified：正常。
+        /// Status. Values: Creating: configuring; CreationFailed: configuration failed; Deleting: deleting; DeletionFailed: deletion failed; Verified: active
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// 更新时间。
+        /// Update Time
         /// </summary>
         public readonly string UpdatedTime;
 

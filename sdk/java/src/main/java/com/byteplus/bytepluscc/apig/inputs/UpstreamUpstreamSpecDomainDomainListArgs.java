@@ -17,14 +17,14 @@ public final class UpstreamUpstreamSpecDomainDomainListArgs extends com.pulumi.r
     public static final UpstreamUpstreamSpecDomainDomainListArgs Empty = new UpstreamUpstreamSpecDomainDomainListArgs();
 
     /**
-     * 域名。
+     * Domain name
      * 
      */
     @Import(name="domain")
     private @Nullable Output<String> domain;
 
     /**
-     * @return 域名。
+     * @return Domain name
      * 
      */
     public Optional<Output<String>> domain() {
@@ -32,14 +32,14 @@ public final class UpstreamUpstreamSpecDomainDomainListArgs extends com.pulumi.r
     }
 
     /**
-     * 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+     * Port. Default: 80 for HTTP, 443 for HTTPS
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+     * @return Port. Default: 80 for HTTP, 443 for HTTPS
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -72,7 +72,7 @@ public final class UpstreamUpstreamSpecDomainDomainListArgs extends com.pulumi.r
         }
 
         /**
-         * @param domain 域名。
+         * @param domain Domain name
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class UpstreamUpstreamSpecDomainDomainListArgs extends com.pulumi.r
         }
 
         /**
-         * @param domain 域名。
+         * @param domain Domain name
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class UpstreamUpstreamSpecDomainDomainListArgs extends com.pulumi.r
         }
 
         /**
-         * @param port 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+         * @param port Port. Default: 80 for HTTP, 443 for HTTPS
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class UpstreamUpstreamSpecDomainDomainListArgs extends com.pulumi.r
         }
 
         /**
-         * @param port 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+         * @param port Port. Default: 80 for HTTP, 443 for HTTPS
          * 
          * @return builder
          * 

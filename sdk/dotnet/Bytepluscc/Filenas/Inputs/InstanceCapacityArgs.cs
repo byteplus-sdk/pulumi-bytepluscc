@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas.Inputs
     public sealed class InstanceCapacityArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 文件系统可用总容量，单位为 GiB。
+        /// Total available file system capacity, in GiB
         /// </summary>
         [Input("total")]
         public Input<double>? Total { get; set; }
 
         /// <summary>
-        /// 文件系统已使用容量，单位为 MiB。
+        /// Used file system capacity, in MiB
         /// </summary>
         [Input("used")]
         public Input<double>? Used { get; set; }

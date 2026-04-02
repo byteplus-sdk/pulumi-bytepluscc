@@ -15,31 +15,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm.Outputs
     public sealed class GetInstanceNodeResult
     {
         /// <summary>
-        /// 节点切主的优先级，取值范围为 0~15。数值越大，优先级越高。
+        /// Node failover priority. Range: 0~15. Higher values indicate higher priority
         /// </summary>
         public readonly int FailoverPriority;
         /// <summary>
-        /// 内存大小，单位为 GiB。
+        /// Memory size, in GiB.
         /// </summary>
         public readonly int Memory;
         /// <summary>
-        /// 节点 ID。
+        /// Node ID
         /// </summary>
         public readonly string NodeId;
         /// <summary>
-        /// 节点规格。
+        /// Node specification.
         /// </summary>
         public readonly string NodeSpec;
         /// <summary>
-        /// 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+        /// Node type. Values: Primary: primary node. ReadOnly: read-only node.
         /// </summary>
         public readonly string NodeType;
         /// <summary>
-        /// CPU 大小，例如当取值为 1 时表示 CPU 大小为 1U。
+        /// CPU size. For example, a value of 1 indicates a CPU size of 1U.
         /// </summary>
         public readonly int VCpu;
         /// <summary>
-        /// 可用区 ID。
+        /// Availability zone ID
         /// </summary>
         public readonly string ZoneId;
 

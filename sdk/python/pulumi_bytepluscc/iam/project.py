@@ -26,10 +26,10 @@ class ProjectArgs:
                  parent_project_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Project resource.
-        :param pulumi.Input[builtins.str] project_name: 项目名称
-        :param pulumi.Input[builtins.str] description: 描述
-        :param pulumi.Input[builtins.str] display_name: 展示名
-        :param pulumi.Input[builtins.str] parent_project_name: 父项目名称
+        :param pulumi.Input[builtins.str] project_name: Project Name
+        :param pulumi.Input[builtins.str] description: Description
+        :param pulumi.Input[builtins.str] display_name: Display Name
+        :param pulumi.Input[builtins.str] parent_project_name: Parent Project Name
         """
         pulumi.set(__self__, "project_name", project_name)
         if description is not None:
@@ -43,7 +43,7 @@ class ProjectArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Input[builtins.str]:
         """
-        项目名称
+        Project Name
         """
         return pulumi.get(self, "project_name")
 
@@ -55,7 +55,7 @@ class ProjectArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        描述
+        Description
         """
         return pulumi.get(self, "description")
 
@@ -67,7 +67,7 @@ class ProjectArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        展示名
+        Display Name
         """
         return pulumi.get(self, "display_name")
 
@@ -79,7 +79,7 @@ class ProjectArgs:
     @pulumi.getter(name="parentProjectName")
     def parent_project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        父项目名称
+        Parent Project Name
         """
         return pulumi.get(self, "parent_project_name")
 
@@ -103,16 +103,16 @@ class _ProjectState:
                  updated_time: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Project resources.
-        :param pulumi.Input[builtins.int] account_id: 账号ID
-        :param pulumi.Input[builtins.str] created_time: 创建时间
-        :param pulumi.Input[builtins.str] description: 描述
-        :param pulumi.Input[builtins.str] display_name: 展示名
-        :param pulumi.Input[builtins.bool] has_permission: 是否可见
-        :param pulumi.Input[builtins.str] parent_project_name: 父项目名称
-        :param pulumi.Input[builtins.str] path: 项目路径
-        :param pulumi.Input[builtins.str] project_name: 项目名称
-        :param pulumi.Input[builtins.str] status: 启用状态
-        :param pulumi.Input[builtins.str] updated_time: 更新时间
+        :param pulumi.Input[builtins.int] account_id: Account ID
+        :param pulumi.Input[builtins.str] created_time: Creation Time
+        :param pulumi.Input[builtins.str] description: Description
+        :param pulumi.Input[builtins.str] display_name: Display Name
+        :param pulumi.Input[builtins.bool] has_permission: Visible
+        :param pulumi.Input[builtins.str] parent_project_name: Parent Project Name
+        :param pulumi.Input[builtins.str] path: Project Path
+        :param pulumi.Input[builtins.str] project_name: Project Name
+        :param pulumi.Input[builtins.str] status: Enabled Status
+        :param pulumi.Input[builtins.str] updated_time: Update Time
         """
         if account_id is not None:
             pulumi.set(__self__, "account_id", account_id)
@@ -139,7 +139,7 @@ class _ProjectState:
     @pulumi.getter(name="accountId")
     def account_id(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        账号ID
+        Account ID
         """
         return pulumi.get(self, "account_id")
 
@@ -151,7 +151,7 @@ class _ProjectState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建时间
+        Creation Time
         """
         return pulumi.get(self, "created_time")
 
@@ -163,7 +163,7 @@ class _ProjectState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        描述
+        Description
         """
         return pulumi.get(self, "description")
 
@@ -175,7 +175,7 @@ class _ProjectState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        展示名
+        Display Name
         """
         return pulumi.get(self, "display_name")
 
@@ -187,7 +187,7 @@ class _ProjectState:
     @pulumi.getter(name="hasPermission")
     def has_permission(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否可见
+        Visible
         """
         return pulumi.get(self, "has_permission")
 
@@ -199,7 +199,7 @@ class _ProjectState:
     @pulumi.getter(name="parentProjectName")
     def parent_project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        父项目名称
+        Parent Project Name
         """
         return pulumi.get(self, "parent_project_name")
 
@@ -211,7 +211,7 @@ class _ProjectState:
     @pulumi.getter
     def path(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        项目路径
+        Project Path
         """
         return pulumi.get(self, "path")
 
@@ -223,7 +223,7 @@ class _ProjectState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        项目名称
+        Project Name
         """
         return pulumi.get(self, "project_name")
 
@@ -235,7 +235,7 @@ class _ProjectState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        启用状态
+        Enabled Status
         """
         return pulumi.get(self, "status")
 
@@ -247,7 +247,7 @@ class _ProjectState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        更新时间
+        Update Time
         """
         return pulumi.get(self, "updated_time")
 
@@ -268,7 +268,7 @@ class Project(pulumi.CustomResource):
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        资源项目（Project）是提供的一种资源分组管理的机制，帮助您达成逻辑层面的资源隔离，您能够通过资源项目进行项目制授权和分账等操作。
+        Resource project (Project) provides a mechanism for resource group management, helping you achieve logical resource isolation. You can use resource projects for project-based authorization, billing, and other operations.
 
         ## Example Usage
 
@@ -291,10 +291,10 @@ class Project(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: 描述
-        :param pulumi.Input[builtins.str] display_name: 展示名
-        :param pulumi.Input[builtins.str] parent_project_name: 父项目名称
-        :param pulumi.Input[builtins.str] project_name: 项目名称
+        :param pulumi.Input[builtins.str] description: Description
+        :param pulumi.Input[builtins.str] display_name: Display Name
+        :param pulumi.Input[builtins.str] parent_project_name: Parent Project Name
+        :param pulumi.Input[builtins.str] project_name: Project Name
         """
         ...
     @overload
@@ -303,7 +303,7 @@ class Project(pulumi.CustomResource):
                  args: ProjectArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        资源项目（Project）是提供的一种资源分组管理的机制，帮助您达成逻辑层面的资源隔离，您能够通过资源项目进行项目制授权和分账等操作。
+        Resource project (Project) provides a mechanism for resource group management, helping you achieve logical resource isolation. You can use resource projects for project-based authorization, billing, and other operations.
 
         ## Example Usage
 
@@ -391,16 +391,16 @@ class Project(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] account_id: 账号ID
-        :param pulumi.Input[builtins.str] created_time: 创建时间
-        :param pulumi.Input[builtins.str] description: 描述
-        :param pulumi.Input[builtins.str] display_name: 展示名
-        :param pulumi.Input[builtins.bool] has_permission: 是否可见
-        :param pulumi.Input[builtins.str] parent_project_name: 父项目名称
-        :param pulumi.Input[builtins.str] path: 项目路径
-        :param pulumi.Input[builtins.str] project_name: 项目名称
-        :param pulumi.Input[builtins.str] status: 启用状态
-        :param pulumi.Input[builtins.str] updated_time: 更新时间
+        :param pulumi.Input[builtins.int] account_id: Account ID
+        :param pulumi.Input[builtins.str] created_time: Creation Time
+        :param pulumi.Input[builtins.str] description: Description
+        :param pulumi.Input[builtins.str] display_name: Display Name
+        :param pulumi.Input[builtins.bool] has_permission: Visible
+        :param pulumi.Input[builtins.str] parent_project_name: Parent Project Name
+        :param pulumi.Input[builtins.str] path: Project Path
+        :param pulumi.Input[builtins.str] project_name: Project Name
+        :param pulumi.Input[builtins.str] status: Enabled Status
+        :param pulumi.Input[builtins.str] updated_time: Update Time
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -422,7 +422,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter(name="accountId")
     def account_id(self) -> pulumi.Output[builtins.int]:
         """
-        账号ID
+        Account ID
         """
         return pulumi.get(self, "account_id")
 
@@ -430,7 +430,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        创建时间
+        Creation Time
         """
         return pulumi.get(self, "created_time")
 
@@ -438,7 +438,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        描述
+        Description
         """
         return pulumi.get(self, "description")
 
@@ -446,7 +446,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[builtins.str]:
         """
-        展示名
+        Display Name
         """
         return pulumi.get(self, "display_name")
 
@@ -454,7 +454,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter(name="hasPermission")
     def has_permission(self) -> pulumi.Output[builtins.bool]:
         """
-        是否可见
+        Visible
         """
         return pulumi.get(self, "has_permission")
 
@@ -462,7 +462,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter(name="parentProjectName")
     def parent_project_name(self) -> pulumi.Output[builtins.str]:
         """
-        父项目名称
+        Parent Project Name
         """
         return pulumi.get(self, "parent_project_name")
 
@@ -470,7 +470,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter
     def path(self) -> pulumi.Output[builtins.str]:
         """
-        项目路径
+        Project Path
         """
         return pulumi.get(self, "path")
 
@@ -478,7 +478,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        项目名称
+        Project Name
         """
         return pulumi.get(self, "project_name")
 
@@ -486,7 +486,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        启用状态
+        Enabled Status
         """
         return pulumi.get(self, "status")
 
@@ -494,7 +494,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        更新时间
+        Update Time
         """
         return pulumi.get(self, "updated_time")
 

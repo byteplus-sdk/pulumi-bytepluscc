@@ -13,74 +13,74 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceInstanceConfigurationNodeSpecsAssign {
     /**
-     * @return 磁盘额外性能包相关配置。
+     * @return Disk extra performance package configuration.
      * 
      */
     private GetInstanceInstanceConfigurationNodeSpecsAssignExtraPerformance extraPerformance;
     /**
-     * @return 节点数量。配置数据节点数量时，在不同部署方式下，需要注意以下信息：单可用区部署：建议生产环境至少配置 3 个数据节点，配置 2 个节点时存在脑裂风险。如果启用专有主节点，2 个数据节点不会脑裂。双可用区部署，默认启用专有主节点：建议生产环境至少配置 4 个数据节点，即每个可用区两个数据节点。三可用区部署，默认启用专有主节点：建议生产环境至少配置 6 个数据节点，即每个可用区两个数据节点。数据节点数量可设范围为 1~100，如果有更多数据节点的需求，可申请开白提升配额到 200。配置 Master 节点：如果没有启用专有主节点，那么 Master 节点的配置和数据节点相同，否则 Master 配置是独立的。配置专有主节点，如需启用专有主节点，数量默认配置为 3。配置 Kibana 节点，数量固定为 1。配置协调节点，如需启用，生产环境建议至少 2 个协调节点，可配范围为 2~50。温数据节点：如需启用，生产环境建议至少 3 个温数据节点，最多可配置 100 个。冷数据节点：如需启用，生产环境建议至少 2 个温数据节点，最多可配置 100 个。
+     * @return Node count. When configuring the number of data nodes, note the following based on deployment mode: Single availability zone deployment: For production environments, configure at least 3 data nodes. Configuring 2 nodes poses a split-brain risk. If dedicated master nodes are enabled, 2 data nodes will not result in split-brain. Dual availability zone deployment, dedicated master nodes enabled by default: For production environments, configure at least 4 data nodes—2 per availability zone. Triple availability zone deployment, dedicated master nodes enabled by default: For production environments, configure at least 6 data nodes—2 per availability zone. You can set the number of data nodes from 1 to 100. If you need more, apply to increase the quota to 200. Master node configuration: If dedicated master nodes are not enabled, master node configuration matches data nodes; otherwise, master node configuration is independent. Dedicated master node configuration: If you need to enable dedicated master nodes, the default number is 3. Kibana node configuration: The number is fixed at 1. Coordinator node configuration: If enabled, configure at least 2 coordinator nodes for production environments. The configurable range is 2–50. Warm data nodes: If enabled, configure at least 3 warm data nodes for production environments, up to 100. Cold data nodes: If enabled, configure at least 2 cold data nodes for production environments, up to 100.
      * 
      */
     private Integer number;
     /**
-     * @return 计算资源规格名称。您可以通过调用DescribeNodeAvailableSpecs接口获取可用的节点规格列表。如需了解规格详情，请参见V2 实例规格
+     * @return Compute resource specification name. You can call the DescribeNodeAvailableSpecs API to get the list of available node specifications. For details, see V2 instance specifications.
      * 
      */
     private String resourceSpecName;
     /**
-     * @return 存储容量，单位为 GiB。默认值为 100GiB，调整步长为 10GiB。说明Kibana 节点的 StorageSize 设置为0，即&#34;StorageSize&#34;: 0。专有主节点和协调节点的 StorageSize 默认是 20。
+     * @return Storage capacity, measured in GiB. Default value is 100 GiB, adjustment step is 10 GiB. Note: StorageSize for Kibana nodes is set to 0, i.e., &#34;StorageSize&#34;: 0. StorageSize for dedicated master and coordinator nodes defaults to 20
      * 
      */
     private Integer storageSize;
     /**
-     * @return 存储规格名称，当前支持的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0。es.volume.essd.flexpl-standard：标准版-高性能云盘-flexpl。说明Kibana 节点的 StorageSpecName 设置为空，即&#34;StorageSpecName&#34;: &#34;&#34;。
+     * @return Storage specification name. Currently supported specifications: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0. es.volume.essd.flexpl-standard: Standard Edition   - High Performance Cloud Disk   - flexpl. Note: StorageSpecName for Kibana nodes is set to empty, i.e., &#34;StorageSpecName&#34;: &#34;&#34;
      * 
      */
     private String storageSpecName;
     /**
-     * @return 节点类型。请先了解节点类型的作用，然后结合业务判断是否需要创建，详情请参见节点类型。Master：Master 节点。Hot：数据节点。Cold：冷数据节点。Warm：温数据节点。Kibana：Kibana 节点。Coordinator：协调节点。
+     * @return Node type. Please understand the function of each node type first, then determine whether to create based on your business needs. For details, see node types. Master: Master node. Hot: Data node. Cold: Cold data node. Warm: Warm data node. Kibana: Kibana node. Coordinator: Coordinator node
      * 
      */
     private String type;
 
     private GetInstanceInstanceConfigurationNodeSpecsAssign() {}
     /**
-     * @return 磁盘额外性能包相关配置。
+     * @return Disk extra performance package configuration.
      * 
      */
     public GetInstanceInstanceConfigurationNodeSpecsAssignExtraPerformance extraPerformance() {
         return this.extraPerformance;
     }
     /**
-     * @return 节点数量。配置数据节点数量时，在不同部署方式下，需要注意以下信息：单可用区部署：建议生产环境至少配置 3 个数据节点，配置 2 个节点时存在脑裂风险。如果启用专有主节点，2 个数据节点不会脑裂。双可用区部署，默认启用专有主节点：建议生产环境至少配置 4 个数据节点，即每个可用区两个数据节点。三可用区部署，默认启用专有主节点：建议生产环境至少配置 6 个数据节点，即每个可用区两个数据节点。数据节点数量可设范围为 1~100，如果有更多数据节点的需求，可申请开白提升配额到 200。配置 Master 节点：如果没有启用专有主节点，那么 Master 节点的配置和数据节点相同，否则 Master 配置是独立的。配置专有主节点，如需启用专有主节点，数量默认配置为 3。配置 Kibana 节点，数量固定为 1。配置协调节点，如需启用，生产环境建议至少 2 个协调节点，可配范围为 2~50。温数据节点：如需启用，生产环境建议至少 3 个温数据节点，最多可配置 100 个。冷数据节点：如需启用，生产环境建议至少 2 个温数据节点，最多可配置 100 个。
+     * @return Node count. When configuring the number of data nodes, note the following based on deployment mode: Single availability zone deployment: For production environments, configure at least 3 data nodes. Configuring 2 nodes poses a split-brain risk. If dedicated master nodes are enabled, 2 data nodes will not result in split-brain. Dual availability zone deployment, dedicated master nodes enabled by default: For production environments, configure at least 4 data nodes—2 per availability zone. Triple availability zone deployment, dedicated master nodes enabled by default: For production environments, configure at least 6 data nodes—2 per availability zone. You can set the number of data nodes from 1 to 100. If you need more, apply to increase the quota to 200. Master node configuration: If dedicated master nodes are not enabled, master node configuration matches data nodes; otherwise, master node configuration is independent. Dedicated master node configuration: If you need to enable dedicated master nodes, the default number is 3. Kibana node configuration: The number is fixed at 1. Coordinator node configuration: If enabled, configure at least 2 coordinator nodes for production environments. The configurable range is 2–50. Warm data nodes: If enabled, configure at least 3 warm data nodes for production environments, up to 100. Cold data nodes: If enabled, configure at least 2 cold data nodes for production environments, up to 100.
      * 
      */
     public Integer number() {
         return this.number;
     }
     /**
-     * @return 计算资源规格名称。您可以通过调用DescribeNodeAvailableSpecs接口获取可用的节点规格列表。如需了解规格详情，请参见V2 实例规格
+     * @return Compute resource specification name. You can call the DescribeNodeAvailableSpecs API to get the list of available node specifications. For details, see V2 instance specifications.
      * 
      */
     public String resourceSpecName() {
         return this.resourceSpecName;
     }
     /**
-     * @return 存储容量，单位为 GiB。默认值为 100GiB，调整步长为 10GiB。说明Kibana 节点的 StorageSize 设置为0，即&#34;StorageSize&#34;: 0。专有主节点和协调节点的 StorageSize 默认是 20。
+     * @return Storage capacity, measured in GiB. Default value is 100 GiB, adjustment step is 10 GiB. Note: StorageSize for Kibana nodes is set to 0, i.e., &#34;StorageSize&#34;: 0. StorageSize for dedicated master and coordinator nodes defaults to 20
      * 
      */
     public Integer storageSize() {
         return this.storageSize;
     }
     /**
-     * @return 存储规格名称，当前支持的规格如下：es.volume.essd.pl0：标准版-高性能云盘-pl0。es.volume.essd.flexpl-standard：标准版-高性能云盘-flexpl。说明Kibana 节点的 StorageSpecName 设置为空，即&#34;StorageSpecName&#34;: &#34;&#34;。
+     * @return Storage specification name. Currently supported specifications: es.volume.essd.pl0: Standard Edition   - High Performance Cloud Disk   - pl0. es.volume.essd.flexpl-standard: Standard Edition   - High Performance Cloud Disk   - flexpl. Note: StorageSpecName for Kibana nodes is set to empty, i.e., &#34;StorageSpecName&#34;: &#34;&#34;
      * 
      */
     public String storageSpecName() {
         return this.storageSpecName;
     }
     /**
-     * @return 节点类型。请先了解节点类型的作用，然后结合业务判断是否需要创建，详情请参见节点类型。Master：Master 节点。Hot：数据节点。Cold：冷数据节点。Warm：温数据节点。Kibana：Kibana 节点。Coordinator：协调节点。
+     * @return Node type. Please understand the function of each node type first, then determine whether to create based on your business needs. For details, see node types. Master: Master node. Hot: Data node. Cold: Cold data node. Warm: Warm data node. Kibana: Kibana node. Coordinator: Coordinator node
      * 
      */
     public String type() {

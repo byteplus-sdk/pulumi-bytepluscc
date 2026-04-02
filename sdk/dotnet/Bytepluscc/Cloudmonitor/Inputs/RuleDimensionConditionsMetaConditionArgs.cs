@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Inputs
     public sealed class RuleDimensionConditionsMetaConditionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 是否为全量资源。true：全部资源。false：部分资源。
+        /// Whether all resources are included. true: All resources. false: Partial resources.
         /// </summary>
         [Input("allDimensions")]
         public Input<bool>? AllDimensions { get; set; }
 
         /// <summary>
-        /// 判断条件。and：全部满足。or：任意满足。
+        /// Condition. and: All conditions met. or: Any condition met.
         /// </summary>
         [Input("condition")]
         public Input<string>? Condition { get; set; }

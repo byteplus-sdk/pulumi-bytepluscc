@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ClusterStatusCondition {
     /**
-     * @return 条件类型
+     * @return Condition type
      * 
      */
     private @Nullable String type;
 
     private ClusterStatusCondition() {}
     /**
-     * @return 条件类型
+     * @return Condition type
      * 
      */
     public Optional<String> type() {

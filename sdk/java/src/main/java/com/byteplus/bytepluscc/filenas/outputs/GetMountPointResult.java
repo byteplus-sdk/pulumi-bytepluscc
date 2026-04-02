@@ -14,22 +14,22 @@ import java.util.Objects;
 @CustomType
 public final class GetMountPointResult {
     /**
-     * @return 客户端信息。
+     * @return Client information.
      * 
      */
     private List<GetMountPointClient> clients;
     /**
-     * @return 挂载点创建时间。
+     * @return Mount point creation time.
      * 
      */
     private String createdTime;
     /**
-     * @return DNS 地址。
+     * @return DNS address.
      * 
      */
     private String domain;
     /**
-     * @return 文件系统 ID。
+     * @return File system ID.
      * 
      */
     private String fileSystemId;
@@ -39,85 +39,85 @@ public final class GetMountPointResult {
      */
     private String id;
     /**
-     * @return 挂载点地址。
+     * @return Mount point address.
      * 
      */
     private String ip;
     /**
-     * @return 挂载点 ID。
+     * @return Mount point ID.
      * 
      */
     private String mountPointId;
     /**
-     * @return 挂载点名称。
+     * @return Mount point name.
      * 
      */
     private String mountPointName;
     /**
-     * @return 挂载点绑定的权限组信息。
+     * @return Permission group information bound to the mount point.
      * 
      */
     private GetMountPointPermissionGroup permissionGroup;
     /**
-     * @return 权限组 ID。
+     * @return Permission group ID.
      * 
      */
     private String permissionGroupId;
     /**
-     * @return 挂载点状态。取值：Running：运行中。Creating：创建中。Updating：更新中。Error：异常。Deleting：删除中。DeleteError：删除异常。Deleted：已删除。Stopped：已停止。
+     * @return Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
      * 
      */
     private String status;
     /**
-     * @return 子网 ID。
+     * @return Subnet ID.
      * 
      */
     private String subnetId;
     /**
-     * @return 子网名称。
+     * @return Subnet name.
      * 
      */
     private String subnetName;
     /**
-     * @return 挂载点更新时间。
+     * @return Mount point update time.
      * 
      */
     private String updatedTime;
     /**
-     * @return 私有网络 ID。
+     * @return Private network ID.
      * 
      */
     private String vpcId;
     /**
-     * @return 私有网络名称。
+     * @return Private network name.
      * 
      */
     private String vpcName;
 
     private GetMountPointResult() {}
     /**
-     * @return 客户端信息。
+     * @return Client information.
      * 
      */
     public List<GetMountPointClient> clients() {
         return this.clients;
     }
     /**
-     * @return 挂载点创建时间。
+     * @return Mount point creation time.
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return DNS 地址。
+     * @return DNS address.
      * 
      */
     public String domain() {
         return this.domain;
     }
     /**
-     * @return 文件系统 ID。
+     * @return File system ID.
      * 
      */
     public String fileSystemId() {
@@ -131,77 +131,77 @@ public final class GetMountPointResult {
         return this.id;
     }
     /**
-     * @return 挂载点地址。
+     * @return Mount point address.
      * 
      */
     public String ip() {
         return this.ip;
     }
     /**
-     * @return 挂载点 ID。
+     * @return Mount point ID.
      * 
      */
     public String mountPointId() {
         return this.mountPointId;
     }
     /**
-     * @return 挂载点名称。
+     * @return Mount point name.
      * 
      */
     public String mountPointName() {
         return this.mountPointName;
     }
     /**
-     * @return 挂载点绑定的权限组信息。
+     * @return Permission group information bound to the mount point.
      * 
      */
     public GetMountPointPermissionGroup permissionGroup() {
         return this.permissionGroup;
     }
     /**
-     * @return 权限组 ID。
+     * @return Permission group ID.
      * 
      */
     public String permissionGroupId() {
         return this.permissionGroupId;
     }
     /**
-     * @return 挂载点状态。取值：Running：运行中。Creating：创建中。Updating：更新中。Error：异常。Deleting：删除中。DeleteError：删除异常。Deleted：已删除。Stopped：已停止。
+     * @return Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 子网 ID。
+     * @return Subnet ID.
      * 
      */
     public String subnetId() {
         return this.subnetId;
     }
     /**
-     * @return 子网名称。
+     * @return Subnet name.
      * 
      */
     public String subnetName() {
         return this.subnetName;
     }
     /**
-     * @return 挂载点更新时间。
+     * @return Mount point update time.
      * 
      */
     public String updatedTime() {
         return this.updatedTime;
     }
     /**
-     * @return 私有网络 ID。
+     * @return Private network ID.
      * 
      */
     public String vpcId() {
         return this.vpcId;
     }
     /**
-     * @return 私有网络名称。
+     * @return Private network name.
      * 
      */
     public String vpcName() {

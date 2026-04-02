@@ -16,14 +16,14 @@ public final class MountPointClientArgs extends com.pulumi.resources.ResourceArg
     public static final MountPointClientArgs Empty = new MountPointClientArgs();
 
     /**
-     * 客户端的私有网络 IP 地址。
+     * Client&#39;s private network IP address.
      * 
      */
     @Import(name="ip")
     private @Nullable Output<String> ip;
 
     /**
-     * @return 客户端的私有网络 IP 地址。
+     * @return Client&#39;s private network IP address.
      * 
      */
     public Optional<Output<String>> ip() {
@@ -31,14 +31,14 @@ public final class MountPointClientArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 挂载协议版本号。取值：NFSv3。
+     * Mount protocol version. Value: NFSv3.
      * 
      */
     @Import(name="protocolVersion")
     private @Nullable Output<String> protocolVersion;
 
     /**
-     * @return 挂载协议版本号。取值：NFSv3。
+     * @return Mount protocol version. Value: NFSv3.
      * 
      */
     public Optional<Output<String>> protocolVersion() {
@@ -46,14 +46,14 @@ public final class MountPointClientArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * 私有网络名称。
+     * Private network name.
      * 
      */
     @Import(name="vpcName")
     private @Nullable Output<String> vpcName;
 
     /**
-     * @return 私有网络名称。
+     * @return Private network name.
      * 
      */
     public Optional<Output<String>> vpcName() {
@@ -87,7 +87,7 @@ public final class MountPointClientArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param ip 客户端的私有网络 IP 地址。
+         * @param ip Client&#39;s private network IP address.
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class MountPointClientArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param ip 客户端的私有网络 IP 地址。
+         * @param ip Client&#39;s private network IP address.
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class MountPointClientArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param protocolVersion 挂载协议版本号。取值：NFSv3。
+         * @param protocolVersion Mount protocol version. Value: NFSv3.
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class MountPointClientArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param protocolVersion 挂载协议版本号。取值：NFSv3。
+         * @param protocolVersion Mount protocol version. Value: NFSv3.
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class MountPointClientArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param vpcName 私有网络名称。
+         * @param vpcName Private network name.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class MountPointClientArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param vpcName 私有网络名称。
+         * @param vpcName Private network name.
          * 
          * @return builder
          * 

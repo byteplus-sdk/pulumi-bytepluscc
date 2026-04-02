@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainTimeoutTimeoutRule {
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     private @Nullable DomainTimeoutTimeoutRuleCondition condition;
     /**
-     * @return 表示超时时间的配置。
+     * @return Indicates the timeout configuration.
      * 
      */
     private @Nullable DomainTimeoutTimeoutRuleTimeoutAction timeoutAction;
 
     private DomainTimeoutTimeoutRule() {}
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public Optional<DomainTimeoutTimeoutRuleCondition> condition() {
         return Optional.ofNullable(this.condition);
     }
     /**
-     * @return 表示超时时间的配置。
+     * @return Indicates the timeout configuration.
      * 
      */
     public Optional<DomainTimeoutTimeoutRuleTimeoutAction> timeoutAction() {

@@ -14,8 +14,8 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * 当您创建好云身份中心用户后，需要授予用户访问到各账号的登录访问权限。
- * 当用户访问火山引擎云资源的权限访问具备可抽象的共性时，如：网络运维权限、安全管理权限等，您可以在云身份中心预置访问权限集作为权限模版，最终基于访问权限集来实现中心化授权。云身份中心将会为您同步分发访问权限集到各个账号，减少企业权限的运维成本。
+ * After you create a Cloud Identity Center user, you need to grant the user login access to each account.
+ * When users require access to Volcano Engine cloud resources with permissions that share abstractable characteristics, such as network operations permissions or security management permissions, you can predefine permission sets in the Cloud Identity Center as templates. You can achieve centralized authorization based on these permission sets. The Cloud Identity Center will synchronize and distribute permission sets to each account, reducing enterprise permission management costs.
  * 
  * ## Example Usage
  * 
@@ -65,112 +65,112 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:cloudidentity/permissionSetAssignment:PermissionSetAssignment")
 public class PermissionSetAssignment extends com.pulumi.resources.CustomResource {
     /**
-     * 授权创建时间。
+     * Authorization creation time
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 授权创建时间。
+     * @return Authorization creation time
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 权限集 ID。
+     * Permission set ID
      * 
      */
     @Export(name="permissionSetId", refs={String.class}, tree="[0]")
     private Output<String> permissionSetId;
 
     /**
-     * @return 权限集 ID。
+     * @return Permission set ID
      * 
      */
     public Output<String> permissionSetId() {
         return this.permissionSetId;
     }
     /**
-     * 权限集名称。
+     * Permission set name
      * 
      */
     @Export(name="permissionSetName", refs={String.class}, tree="[0]")
     private Output<String> permissionSetName;
 
     /**
-     * @return 权限集名称。
+     * @return Permission set name
      * 
      */
     public Output<String> permissionSetName() {
         return this.permissionSetName;
     }
     /**
-     * 云身份中心对象 ID
+     * Cloud Identity Center object ID
      * 
      */
     @Export(name="principalId", refs={String.class}, tree="[0]")
     private Output<String> principalId;
 
     /**
-     * @return 云身份中心对象 ID
+     * @return Cloud Identity Center object ID
      * 
      */
     public Output<String> principalId() {
         return this.principalId;
     }
     /**
-     * 云身份中心对象名。
+     * Cloud Identity Center object name
      * 
      */
     @Export(name="principalName", refs={String.class}, tree="[0]")
     private Output<String> principalName;
 
     /**
-     * @return 云身份中心对象名。
+     * @return Cloud Identity Center object name
      * 
      */
     public Output<String> principalName() {
         return this.principalName;
     }
     /**
-     * 云身份中心对象类型，User 或者 Group。
+     * Cloud Identity Center object type: User or Group
      * 
      */
     @Export(name="principalType", refs={String.class}, tree="[0]")
     private Output<String> principalType;
 
     /**
-     * @return 云身份中心对象类型，User 或者 Group。
+     * @return Cloud Identity Center object type: User or Group
      * 
      */
     public Output<String> principalType() {
         return this.principalType;
     }
     /**
-     * 授权账号 ID。
+     * Authorized account ID
      * 
      */
     @Export(name="targetId", refs={String.class}, tree="[0]")
     private Output<String> targetId;
 
     /**
-     * @return 授权账号 ID。
+     * @return Authorized account ID
      * 
      */
     public Output<String> targetId() {
         return this.targetId;
     }
     /**
-     * 授权账号名。
+     * Authorized account name
      * 
      */
     @Export(name="targetName", refs={String.class}, tree="[0]")
     private Output<String> targetName;
 
     /**
-     * @return 授权账号名。
+     * @return Authorized account name
      * 
      */
     public Output<String> targetName() {

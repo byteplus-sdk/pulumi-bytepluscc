@@ -14,37 +14,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class UpstreamCircuitBreakingSettingsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 最小弹出时间。单位为毫秒。取值限制为1~86400000。默认值为30秒。
+        /// Minimum pop time, in milliseconds. Value range: 1–86400000. Default: 30 seconds
         /// </summary>
         [Input("baseEjectionTime")]
         public Input<int>? BaseEjectionTime { get; set; }
 
         /// <summary>
-        /// 连续失败次数。取值限制为1~100。默认值为5。
+        /// Consecutive failure count. Value range: 1~100. Default: 5
         /// </summary>
         [Input("consecutiveErrors")]
         public Input<int>? ConsecutiveErrors { get; set; }
 
         /// <summary>
-        /// 开启。
+        /// Enable
         /// </summary>
         [Input("enable")]
         public Input<bool>? Enable { get; set; }
 
         /// <summary>
-        /// 计算周期。单位为毫秒。取值限制为1~86400000。默认值为10秒。
+        /// Calculation cycle, in milliseconds. Value range: 1–86400000. Default: 10 seconds
         /// </summary>
         [Input("interval")]
         public Input<int>? Interval { get; set; }
 
         /// <summary>
-        /// 最大熔断比例。取值限制为1~100。默认值为20%。
+        /// Maximum circuit breaking ratio. Value range: 1~100. Default: 20%
         /// </summary>
         [Input("maxEjectionPercent")]
         public Input<int>? MaxEjectionPercent { get; set; }
 
         /// <summary>
-        /// 最小健康比例。取值限制为0~100。默认值为60%。
+        /// Minimum health ratio. Value range: 0~100. Default: 60%
         /// </summary>
         [Input("minHealthPercent")]
         public Input<int>? MinHealthPercent { get; set; }

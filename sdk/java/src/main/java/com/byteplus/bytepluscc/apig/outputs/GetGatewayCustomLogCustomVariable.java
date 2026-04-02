@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetGatewayCustomLogCustomVariable {
     /**
-     * @return 字段别名。
+     * @return Field alias
      * 
      */
     private String aliasesInLog;
     /**
-     * @return 请求头键。
+     * @return Request header key
      * 
      */
     private String key;
 
     private GetGatewayCustomLogCustomVariable() {}
     /**
-     * @return 字段别名。
+     * @return Field alias
      * 
      */
     public String aliasesInLog() {
         return this.aliasesInLog;
     }
     /**
-     * @return 请求头键。
+     * @return Request header key
      * 
      */
     public String key() {

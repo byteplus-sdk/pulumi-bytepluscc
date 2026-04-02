@@ -12,50 +12,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceCpuMemory {
     /**
-     * @return 实例的核数。
+     * @return Number of instance cores.
      * 
      */
     private @Nullable Integer coreCount;
     /**
-     * @return 实例的CPU数量。
+     * @return Number of vCPUs for the instance.
      * 
      */
     private @Nullable Integer cpuNumber;
     /**
-     * @return 实例的内存大小，单位MB。
+     * @return Instance memory size (MB).
      * 
      */
     private @Nullable Integer memorySize;
     /**
-     * @return 实例的每核线程数。
+     * @return Threads per core for the instance.
      * 
      */
     private @Nullable Integer threadsPerCore;
 
     private InstanceCpuMemory() {}
     /**
-     * @return 实例的核数。
+     * @return Number of instance cores.
      * 
      */
     public Optional<Integer> coreCount() {
         return Optional.ofNullable(this.coreCount);
     }
     /**
-     * @return 实例的CPU数量。
+     * @return Number of vCPUs for the instance.
      * 
      */
     public Optional<Integer> cpuNumber() {
         return Optional.ofNullable(this.cpuNumber);
     }
     /**
-     * @return 实例的内存大小，单位MB。
+     * @return Instance memory size (MB).
      * 
      */
     public Optional<Integer> memorySize() {
         return Optional.ofNullable(this.memorySize);
     }
     /**
-     * @return 实例的每核线程数。
+     * @return Threads per core for the instance.
      * 
      */
     public Optional<Integer> threadsPerCore() {

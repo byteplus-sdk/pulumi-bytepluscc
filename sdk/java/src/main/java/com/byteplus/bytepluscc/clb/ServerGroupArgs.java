@@ -20,14 +20,14 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
     public static final ServerGroupArgs Empty = new ServerGroupArgs();
 
     /**
-     * 后端服务器组的IP地址类型。ipv4：后端服务器组为IPv4类型。ipv6：后端服务器组为IPv6类型。
+     * IP address type of the backend server group. ipv4: The backend server group is of IPv4 type. ipv6: The backend server group is of IPv6 type.
      * 
      */
     @Import(name="addressIpVersion")
     private @Nullable Output<String> addressIpVersion;
 
     /**
-     * @return 后端服务器组的IP地址类型。ipv4：后端服务器组为IPv4类型。ipv6：后端服务器组为IPv6类型。
+     * @return IP address type of the backend server group. ipv4: The backend server group is of IPv4 type. ipv6: The backend server group is of IPv6 type.
      * 
      */
     public Optional<Output<String>> addressIpVersion() {
@@ -35,14 +35,14 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启全端口转发。on：开启全端口转发。off：关闭全端口转发。
+     * Whether to enable all-port forwarding. on: enable all-port forwarding. off: disable all-port forwarding.
      * 
      */
     @Import(name="anyPortEnabled")
     private @Nullable Output<String> anyPortEnabled;
 
     /**
-     * @return 是否开启全端口转发。on：开启全端口转发。off：关闭全端口转发。
+     * @return Whether to enable all-port forwarding. on: enable all-port forwarding. off: disable all-port forwarding.
      * 
      */
     public Optional<Output<String>> anyPortEnabled() {
@@ -50,14 +50,14 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 后端服务器组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个符。不填则默认为空字符串。
+     * Description of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 后端服务器组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个符。不填则默认为空字符串。
+     * @return Description of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
      * 
      */
     public Optional<Output<String>> description() {
@@ -65,14 +65,14 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 后端服务器组所属的CLB实例ID。
+     * CLB instance ID to which the backend server group belongs.
      * 
      */
     @Import(name="loadBalancerId", required=true)
     private Output<String> loadBalancerId;
 
     /**
-     * @return 后端服务器组所属的CLB实例ID。
+     * @return CLB instance ID to which the backend server group belongs.
      * 
      */
     public Output<String> loadBalancerId() {
@@ -80,14 +80,14 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 后端服务器组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。限制为1 ～ 128个字符。不填默认为后端服务器组ID。
+     * Name of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the backend server group ID.
      * 
      */
     @Import(name="serverGroupName")
     private @Nullable Output<String> serverGroupName;
 
     /**
-     * @return 后端服务器组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。限制为1 ～ 128个字符。不填默认为后端服务器组ID。
+     * @return Name of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the backend server group ID.
      * 
      */
     public Optional<Output<String>> serverGroupName() {
@@ -109,14 +109,14 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 后端服务器组的类型。instance：表示该后端服务器组只能添加云服务器的主网卡或辅助网卡作为后端服务器。ip：表示该后端服务器组只能添加IP地址作为后端服务器。
+     * Type of the backend server group. instance: This backend server group can only add the primary or auxiliary network card of a cloud server as backend servers. ip: This backend server group can only add IP addresses as backend servers.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 后端服务器组的类型。instance：表示该后端服务器组只能添加云服务器的主网卡或辅助网卡作为后端服务器。ip：表示该后端服务器组只能添加IP地址作为后端服务器。
+     * @return Type of the backend server group. instance: This backend server group can only add the primary or auxiliary network card of a cloud server as backend servers. ip: This backend server group can only add IP addresses as backend servers.
      * 
      */
     public Optional<Output<String>> type() {
@@ -155,7 +155,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param addressIpVersion 后端服务器组的IP地址类型。ipv4：后端服务器组为IPv4类型。ipv6：后端服务器组为IPv6类型。
+         * @param addressIpVersion IP address type of the backend server group. ipv4: The backend server group is of IPv4 type. ipv6: The backend server group is of IPv6 type.
          * 
          * @return builder
          * 
@@ -166,7 +166,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param addressIpVersion 后端服务器组的IP地址类型。ipv4：后端服务器组为IPv4类型。ipv6：后端服务器组为IPv6类型。
+         * @param addressIpVersion IP address type of the backend server group. ipv4: The backend server group is of IPv4 type. ipv6: The backend server group is of IPv6 type.
          * 
          * @return builder
          * 
@@ -176,7 +176,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param anyPortEnabled 是否开启全端口转发。on：开启全端口转发。off：关闭全端口转发。
+         * @param anyPortEnabled Whether to enable all-port forwarding. on: enable all-port forwarding. off: disable all-port forwarding.
          * 
          * @return builder
          * 
@@ -187,7 +187,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param anyPortEnabled 是否开启全端口转发。on：开启全端口转发。off：关闭全端口转发。
+         * @param anyPortEnabled Whether to enable all-port forwarding. on: enable all-port forwarding. off: disable all-port forwarding.
          * 
          * @return builder
          * 
@@ -197,7 +197,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 后端服务器组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个符。不填则默认为空字符串。
+         * @param description Description of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
          * 
          * @return builder
          * 
@@ -208,7 +208,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 后端服务器组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个符。不填则默认为空字符串。
+         * @param description Description of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
          * 
          * @return builder
          * 
@@ -218,7 +218,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerId 后端服务器组所属的CLB实例ID。
+         * @param loadBalancerId CLB instance ID to which the backend server group belongs.
          * 
          * @return builder
          * 
@@ -229,7 +229,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerId 后端服务器组所属的CLB实例ID。
+         * @param loadBalancerId CLB instance ID to which the backend server group belongs.
          * 
          * @return builder
          * 
@@ -239,7 +239,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serverGroupName 后端服务器组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。限制为1 ～ 128个字符。不填默认为后端服务器组ID。
+         * @param serverGroupName Name of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the backend server group ID.
          * 
          * @return builder
          * 
@@ -250,7 +250,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serverGroupName 后端服务器组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。限制为1 ～ 128个字符。不填默认为后端服务器组ID。
+         * @param serverGroupName Name of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the backend server group ID.
          * 
          * @return builder
          * 
@@ -286,7 +286,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type 后端服务器组的类型。instance：表示该后端服务器组只能添加云服务器的主网卡或辅助网卡作为后端服务器。ip：表示该后端服务器组只能添加IP地址作为后端服务器。
+         * @param type Type of the backend server group. instance: This backend server group can only add the primary or auxiliary network card of a cloud server as backend servers. ip: This backend server group can only add IP addresses as backend servers.
          * 
          * @return builder
          * 
@@ -297,7 +297,7 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type 后端服务器组的类型。instance：表示该后端服务器组只能添加云服务器的主网卡或辅助网卡作为后端服务器。ip：表示该后端服务器组只能添加IP地址作为后端服务器。
+         * @param type Type of the backend server group. instance: This backend server group can only add the primary or auxiliary network card of a cloud server as backend servers. ip: This backend server group can only add IP addresses as backend servers.
          * 
          * @return builder
          * 

@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetGatewayServiceDomain {
     /**
-     * @return 域名。
+     * @return Domain.
      * 
      */
     private String domain;
     /**
-     * @return 域名类型。取值：public：公网。private：私网。
+     * @return Domain type. Options: public: Public network. private: Private network.
      * 
      */
     private String type;
 
     private GetGatewayServiceDomain() {}
     /**
-     * @return 域名。
+     * @return Domain.
      * 
      */
     public String domain() {
         return this.domain;
     }
     /**
-     * @return 域名类型。取值：public：公网。private：私网。
+     * @return Domain type. Options: public: Public network. private: Private network.
      * 
      */
     public String type() {

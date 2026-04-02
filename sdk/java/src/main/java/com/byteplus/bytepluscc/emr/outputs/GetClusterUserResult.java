@@ -13,22 +13,22 @@ import java.util.Objects;
 @CustomType
 public final class GetClusterUserResult {
     /**
-     * @return 集群ID。
+     * @return Cluster ID.
      * 
      */
     private String clusterId;
     /**
-     * @return 创建时间。
+     * @return Creation time.
      * 
      */
     private Integer createdTime;
     /**
-     * @return 创建者用户名。
+     * @return Creator username.
      * 
      */
     private String creatorName;
     /**
-     * @return 用户组描述。
+     * @return User group description.
      * 
      */
     private String description;
@@ -38,55 +38,55 @@ public final class GetClusterUserResult {
      */
     private String id;
     /**
-     * @return 旧的用户的登录密码。修改密码时必填。
+     * @return Old user login password. Required when changing password.
      * 
      */
     private String oldPassword;
     /**
-     * @return 新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
+     * @return New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
      * 
      */
     private String password;
     /**
-     * @return 更新时间。
+     * @return Last updated time.
      * 
      */
     private Integer updatedTime;
     /**
-     * @return 所属用户组名称。
+     * @return User group name.
      * 
      */
     private List<String> userGroupNames;
     /**
-     * @return 集群用户名。仅支持小写字母。
+     * @return Cluster username. Only lowercase letters are supported.
      * 
      */
     private String userName;
 
     private GetClusterUserResult() {}
     /**
-     * @return 集群ID。
+     * @return Cluster ID.
      * 
      */
     public String clusterId() {
         return this.clusterId;
     }
     /**
-     * @return 创建时间。
+     * @return Creation time.
      * 
      */
     public Integer createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 创建者用户名。
+     * @return Creator username.
      * 
      */
     public String creatorName() {
         return this.creatorName;
     }
     /**
-     * @return 用户组描述。
+     * @return User group description.
      * 
      */
     public String description() {
@@ -100,35 +100,35 @@ public final class GetClusterUserResult {
         return this.id;
     }
     /**
-     * @return 旧的用户的登录密码。修改密码时必填。
+     * @return Old user login password. Required when changing password.
      * 
      */
     public String oldPassword() {
         return this.oldPassword;
     }
     /**
-     * @return 新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
+     * @return New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
      * 
      */
     public String password() {
         return this.password;
     }
     /**
-     * @return 更新时间。
+     * @return Last updated time.
      * 
      */
     public Integer updatedTime() {
         return this.updatedTime;
     }
     /**
-     * @return 所属用户组名称。
+     * @return User group name.
      * 
      */
     public List<String> userGroupNames() {
         return this.userGroupNames;
     }
     /**
-     * @return 集群用户名。仅支持小写字母。
+     * @return Cluster username. Only lowercase letters are supported.
      * 
      */
     public String userName() {

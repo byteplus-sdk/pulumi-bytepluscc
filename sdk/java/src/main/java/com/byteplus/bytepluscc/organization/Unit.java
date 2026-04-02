@@ -15,7 +15,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * 企业组织的创建者管理员账号可以新建组织单元来搭建企业的组织结构，对账号进行分组织单元管理。组织单元可以分多个组织单元层级，管理员账号也可属于任意层级的任意组织单元节点。
+ * The administrator account that created the enterprise organization can create organizational units to build the enterprise&#39;s organizational structure and manage accounts by organizational unit. Organizational units can have multiple hierarchical levels, and administrator accounts can belong to any organizational unit node at any level.
  * 
  * ## Example Usage
  * 
@@ -64,168 +64,168 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:organization/unit:Unit")
 public class Unit extends com.pulumi.resources.CustomResource {
     /**
-     * 创建时间。
+     * Creation time.
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 创建时间。
+     * @return Creation time.
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 删除标识。
+     * Deletion flag.
      * 
      */
     @Export(name="deleteUk", refs={String.class}, tree="[0]")
     private Output<String> deleteUk;
 
     /**
-     * @return 删除标识。
+     * @return Deletion flag.
      * 
      */
     public Output<String> deleteUk() {
         return this.deleteUk;
     }
     /**
-     * 删除时间。
+     * Deletion time.
      * 
      */
     @Export(name="deletedTime", refs={String.class}, tree="[0]")
     private Output<String> deletedTime;
 
     /**
-     * @return 删除时间。
+     * @return Deletion time.
      * 
      */
     public Output<String> deletedTime() {
         return this.deletedTime;
     }
     /**
-     * 深度。
+     * Depth.
      * 
      */
     @Export(name="depth", refs={Integer.class}, tree="[0]")
     private Output<Integer> depth;
 
     /**
-     * @return 深度。
+     * @return Depth.
      * 
      */
     public Output<Integer> depth() {
         return this.depth;
     }
     /**
-     * 描述。
+     * Description.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 描述。
+     * @return Description.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 组织单元名称。
+     * Organizational unit name.
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return 组织单元名称。
+     * @return Organizational unit name.
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * 组织ID。
+     * Organization ID.
      * 
      */
     @Export(name="orgId", refs={String.class}, tree="[0]")
     private Output<String> orgId;
 
     /**
-     * @return 组织ID。
+     * @return Organization ID.
      * 
      */
     public Output<String> orgId() {
         return this.orgId;
     }
     /**
-     * 组织类型。企业组织： 1
+     * Organization type. Enterprise organization: 1
      * 
      */
     @Export(name="orgType", refs={Integer.class}, tree="[0]")
     private Output<Integer> orgType;
 
     /**
-     * @return 组织类型。企业组织： 1
+     * @return Organization type. Enterprise organization: 1
      * 
      */
     public Output<Integer> orgType() {
         return this.orgType;
     }
     /**
-     * 组织单元ID。
+     * Organizational unit ID.
      * 
      */
     @Export(name="orgUnitId", refs={String.class}, tree="[0]")
     private Output<String> orgUnitId;
 
     /**
-     * @return 组织单元ID。
+     * @return Organizational unit ID.
      * 
      */
     public Output<String> orgUnitId() {
         return this.orgUnitId;
     }
     /**
-     * 管理员ID。
+     * Administrator ID.
      * 
      */
     @Export(name="owner", refs={String.class}, tree="[0]")
     private Output<String> owner;
 
     /**
-     * @return 管理员ID。
+     * @return Administrator ID.
      * 
      */
     public Output<String> owner() {
         return this.owner;
     }
     /**
-     * 父单元Id。
+     * Parent unit ID.
      * 
      */
     @Export(name="parentId", refs={String.class}, tree="[0]")
     private Output<String> parentId;
 
     /**
-     * @return 父单元Id。
+     * @return Parent unit ID.
      * 
      */
     public Output<String> parentId() {
         return this.parentId;
     }
     /**
-     * 更新时间。
+     * Update time.
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 更新时间。
+     * @return Update time.
      * 
      */
     public Output<String> updatedTime() {

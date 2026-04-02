@@ -31,12 +31,12 @@ class AllowListArgs:
                  project_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a AllowList resource.
-        :param pulumi.Input[builtins.str] allow_list_name: 白名单名称。
-        :param pulumi.Input[builtins.str] allow_list: IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
-        :param pulumi.Input[builtins.str] allow_list_desc: 白名单描述。
-        :param pulumi.Input[builtins.str] allow_list_type: 白名单内的IP地址类型，当前仅支持IPv4。
-        :param pulumi.Input[builtins.str] modify_mode: 修改白名单的方式，支持设置为：Cover（默认）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
-        :param pulumi.Input[builtins.str] project_name: 白名单所属的项目名称，当该参数留空时，新建的白名单默认加入 default 项目
+        :param pulumi.Input[builtins.str] allow_list_name: Allowlist name.
+        :param pulumi.Input[builtins.str] allow_list: IP allowlist. Separate multiple IP addresses with commas (,). Duplicate entries are not allowed.
+        :param pulumi.Input[builtins.str] allow_list_desc: Allowlist description.
+        :param pulumi.Input[builtins.str] allow_list_type: IP address type in the allowlist. Only IPv4 is currently supported.
+        :param pulumi.Input[builtins.str] modify_mode: How to modify the allowlist. Supported settings: Cover (default): Overwrite the original allowlist with the values in the AllowList parameter. Append: Add IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
+        :param pulumi.Input[builtins.str] project_name: Project name associated with the allowlist. If left blank, the new allowlist will be added to the default project.
         """
         pulumi.set(__self__, "allow_list_name", allow_list_name)
         if allow_list is not None:
@@ -56,7 +56,7 @@ class AllowListArgs:
     @pulumi.getter(name="allowListName")
     def allow_list_name(self) -> pulumi.Input[builtins.str]:
         """
-        白名单名称。
+        Allowlist name.
         """
         return pulumi.get(self, "allow_list_name")
 
@@ -68,7 +68,7 @@ class AllowListArgs:
     @pulumi.getter(name="allowList")
     def allow_list(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+        IP allowlist. Separate multiple IP addresses with commas (,). Duplicate entries are not allowed.
         """
         return pulumi.get(self, "allow_list")
 
@@ -80,7 +80,7 @@ class AllowListArgs:
     @pulumi.getter(name="allowListDesc")
     def allow_list_desc(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        白名单描述。
+        Allowlist description.
         """
         return pulumi.get(self, "allow_list_desc")
 
@@ -92,7 +92,7 @@ class AllowListArgs:
     @pulumi.getter(name="allowListType")
     def allow_list_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        白名单内的IP地址类型，当前仅支持IPv4。
+        IP address type in the allowlist. Only IPv4 is currently supported.
         """
         return pulumi.get(self, "allow_list_type")
 
@@ -113,7 +113,7 @@ class AllowListArgs:
     @pulumi.getter(name="modifyMode")
     def modify_mode(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        修改白名单的方式，支持设置为：Cover（默认）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
+        How to modify the allowlist. Supported settings: Cover (default): Overwrite the original allowlist with the values in the AllowList parameter. Append: Add IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
         """
         return pulumi.get(self, "modify_mode")
 
@@ -125,7 +125,7 @@ class AllowListArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        白名单所属的项目名称，当该参数留空时，新建的白名单默认加入 default 项目
+        Project name associated with the allowlist. If left blank, the new allowlist will be added to the default project.
         """
         return pulumi.get(self, "project_name")
 
@@ -149,15 +149,15 @@ class _AllowListState:
                  project_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering AllowList resources.
-        :param pulumi.Input[builtins.str] allow_list: IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
-        :param pulumi.Input[builtins.str] allow_list_desc: 白名单描述。
-        :param pulumi.Input[builtins.str] allow_list_id: 白名单的id。
-        :param pulumi.Input[builtins.int] allow_list_ip_num: 白名单内的 IP 地址（或地址段）总数。
-        :param pulumi.Input[builtins.str] allow_list_name: 白名单名称。
-        :param pulumi.Input[builtins.str] allow_list_type: 白名单内的IP地址类型，当前仅支持IPv4。
-        :param pulumi.Input[builtins.int] associated_instance_num: 白名单下绑定的实例总数
-        :param pulumi.Input[builtins.str] modify_mode: 修改白名单的方式，支持设置为：Cover（默认）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
-        :param pulumi.Input[builtins.str] project_name: 白名单所属的项目名称，当该参数留空时，新建的白名单默认加入 default 项目
+        :param pulumi.Input[builtins.str] allow_list: IP allowlist. Separate multiple IP addresses with commas (,). Duplicate entries are not allowed.
+        :param pulumi.Input[builtins.str] allow_list_desc: Allowlist description.
+        :param pulumi.Input[builtins.str] allow_list_id: Allowlist ID.
+        :param pulumi.Input[builtins.int] allow_list_ip_num: Total number of IP addresses (or address ranges) in the allowlist.
+        :param pulumi.Input[builtins.str] allow_list_name: Allowlist name.
+        :param pulumi.Input[builtins.str] allow_list_type: IP address type in the allowlist. Only IPv4 is currently supported.
+        :param pulumi.Input[builtins.int] associated_instance_num: Total number of instances bound to the allowlist.
+        :param pulumi.Input[builtins.str] modify_mode: How to modify the allowlist. Supported settings: Cover (default): Overwrite the original allowlist with the values in the AllowList parameter. Append: Add IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
+        :param pulumi.Input[builtins.str] project_name: Project name associated with the allowlist. If left blank, the new allowlist will be added to the default project.
         """
         if allow_list is not None:
             pulumi.set(__self__, "allow_list", allow_list)
@@ -184,7 +184,7 @@ class _AllowListState:
     @pulumi.getter(name="allowList")
     def allow_list(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+        IP allowlist. Separate multiple IP addresses with commas (,). Duplicate entries are not allowed.
         """
         return pulumi.get(self, "allow_list")
 
@@ -196,7 +196,7 @@ class _AllowListState:
     @pulumi.getter(name="allowListDesc")
     def allow_list_desc(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        白名单描述。
+        Allowlist description.
         """
         return pulumi.get(self, "allow_list_desc")
 
@@ -208,7 +208,7 @@ class _AllowListState:
     @pulumi.getter(name="allowListId")
     def allow_list_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        白名单的id。
+        Allowlist ID.
         """
         return pulumi.get(self, "allow_list_id")
 
@@ -220,7 +220,7 @@ class _AllowListState:
     @pulumi.getter(name="allowListIpNum")
     def allow_list_ip_num(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        白名单内的 IP 地址（或地址段）总数。
+        Total number of IP addresses (or address ranges) in the allowlist.
         """
         return pulumi.get(self, "allow_list_ip_num")
 
@@ -232,7 +232,7 @@ class _AllowListState:
     @pulumi.getter(name="allowListName")
     def allow_list_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        白名单名称。
+        Allowlist name.
         """
         return pulumi.get(self, "allow_list_name")
 
@@ -244,7 +244,7 @@ class _AllowListState:
     @pulumi.getter(name="allowListType")
     def allow_list_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        白名单内的IP地址类型，当前仅支持IPv4。
+        IP address type in the allowlist. Only IPv4 is currently supported.
         """
         return pulumi.get(self, "allow_list_type")
 
@@ -256,7 +256,7 @@ class _AllowListState:
     @pulumi.getter(name="associatedInstanceNum")
     def associated_instance_num(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        白名单下绑定的实例总数
+        Total number of instances bound to the allowlist.
         """
         return pulumi.get(self, "associated_instance_num")
 
@@ -277,7 +277,7 @@ class _AllowListState:
     @pulumi.getter(name="modifyMode")
     def modify_mode(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        修改白名单的方式，支持设置为：Cover（默认）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
+        How to modify the allowlist. Supported settings: Cover (default): Overwrite the original allowlist with the values in the AllowList parameter. Append: Add IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
         """
         return pulumi.get(self, "modify_mode")
 
@@ -289,7 +289,7 @@ class _AllowListState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        白名单所属的项目名称，当该参数留空时，新建的白名单默认加入 default 项目
+        Project name associated with the allowlist. If left blank, the new allowlist will be added to the default project.
         """
         return pulumi.get(self, "project_name")
 
@@ -313,7 +313,7 @@ class AllowList(pulumi.CustomResource):
                  project_name: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        vedbm访问白名单。
+        vedbm access allowlist.
 
         ## Import
 
@@ -323,12 +323,12 @@ class AllowList(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] allow_list: IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
-        :param pulumi.Input[builtins.str] allow_list_desc: 白名单描述。
-        :param pulumi.Input[builtins.str] allow_list_name: 白名单名称。
-        :param pulumi.Input[builtins.str] allow_list_type: 白名单内的IP地址类型，当前仅支持IPv4。
-        :param pulumi.Input[builtins.str] modify_mode: 修改白名单的方式，支持设置为：Cover（默认）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
-        :param pulumi.Input[builtins.str] project_name: 白名单所属的项目名称，当该参数留空时，新建的白名单默认加入 default 项目
+        :param pulumi.Input[builtins.str] allow_list: IP allowlist. Separate multiple IP addresses with commas (,). Duplicate entries are not allowed.
+        :param pulumi.Input[builtins.str] allow_list_desc: Allowlist description.
+        :param pulumi.Input[builtins.str] allow_list_name: Allowlist name.
+        :param pulumi.Input[builtins.str] allow_list_type: IP address type in the allowlist. Only IPv4 is currently supported.
+        :param pulumi.Input[builtins.str] modify_mode: How to modify the allowlist. Supported settings: Cover (default): Overwrite the original allowlist with the values in the AllowList parameter. Append: Add IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
+        :param pulumi.Input[builtins.str] project_name: Project name associated with the allowlist. If left blank, the new allowlist will be added to the default project.
         """
         ...
     @overload
@@ -337,7 +337,7 @@ class AllowList(pulumi.CustomResource):
                  args: AllowListArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        vedbm访问白名单。
+        vedbm access allowlist.
 
         ## Import
 
@@ -415,15 +415,15 @@ class AllowList(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] allow_list: IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
-        :param pulumi.Input[builtins.str] allow_list_desc: 白名单描述。
-        :param pulumi.Input[builtins.str] allow_list_id: 白名单的id。
-        :param pulumi.Input[builtins.int] allow_list_ip_num: 白名单内的 IP 地址（或地址段）总数。
-        :param pulumi.Input[builtins.str] allow_list_name: 白名单名称。
-        :param pulumi.Input[builtins.str] allow_list_type: 白名单内的IP地址类型，当前仅支持IPv4。
-        :param pulumi.Input[builtins.int] associated_instance_num: 白名单下绑定的实例总数
-        :param pulumi.Input[builtins.str] modify_mode: 修改白名单的方式，支持设置为：Cover（默认）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
-        :param pulumi.Input[builtins.str] project_name: 白名单所属的项目名称，当该参数留空时，新建的白名单默认加入 default 项目
+        :param pulumi.Input[builtins.str] allow_list: IP allowlist. Separate multiple IP addresses with commas (,). Duplicate entries are not allowed.
+        :param pulumi.Input[builtins.str] allow_list_desc: Allowlist description.
+        :param pulumi.Input[builtins.str] allow_list_id: Allowlist ID.
+        :param pulumi.Input[builtins.int] allow_list_ip_num: Total number of IP addresses (or address ranges) in the allowlist.
+        :param pulumi.Input[builtins.str] allow_list_name: Allowlist name.
+        :param pulumi.Input[builtins.str] allow_list_type: IP address type in the allowlist. Only IPv4 is currently supported.
+        :param pulumi.Input[builtins.int] associated_instance_num: Total number of instances bound to the allowlist.
+        :param pulumi.Input[builtins.str] modify_mode: How to modify the allowlist. Supported settings: Cover (default): Overwrite the original allowlist with the values in the AllowList parameter. Append: Add IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
+        :param pulumi.Input[builtins.str] project_name: Project name associated with the allowlist. If left blank, the new allowlist will be added to the default project.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -445,7 +445,7 @@ class AllowList(pulumi.CustomResource):
     @pulumi.getter(name="allowList")
     def allow_list(self) -> pulumi.Output[builtins.str]:
         """
-        IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+        IP allowlist. Separate multiple IP addresses with commas (,). Duplicate entries are not allowed.
         """
         return pulumi.get(self, "allow_list")
 
@@ -453,7 +453,7 @@ class AllowList(pulumi.CustomResource):
     @pulumi.getter(name="allowListDesc")
     def allow_list_desc(self) -> pulumi.Output[builtins.str]:
         """
-        白名单描述。
+        Allowlist description.
         """
         return pulumi.get(self, "allow_list_desc")
 
@@ -461,7 +461,7 @@ class AllowList(pulumi.CustomResource):
     @pulumi.getter(name="allowListId")
     def allow_list_id(self) -> pulumi.Output[builtins.str]:
         """
-        白名单的id。
+        Allowlist ID.
         """
         return pulumi.get(self, "allow_list_id")
 
@@ -469,7 +469,7 @@ class AllowList(pulumi.CustomResource):
     @pulumi.getter(name="allowListIpNum")
     def allow_list_ip_num(self) -> pulumi.Output[builtins.int]:
         """
-        白名单内的 IP 地址（或地址段）总数。
+        Total number of IP addresses (or address ranges) in the allowlist.
         """
         return pulumi.get(self, "allow_list_ip_num")
 
@@ -477,7 +477,7 @@ class AllowList(pulumi.CustomResource):
     @pulumi.getter(name="allowListName")
     def allow_list_name(self) -> pulumi.Output[builtins.str]:
         """
-        白名单名称。
+        Allowlist name.
         """
         return pulumi.get(self, "allow_list_name")
 
@@ -485,7 +485,7 @@ class AllowList(pulumi.CustomResource):
     @pulumi.getter(name="allowListType")
     def allow_list_type(self) -> pulumi.Output[builtins.str]:
         """
-        白名单内的IP地址类型，当前仅支持IPv4。
+        IP address type in the allowlist. Only IPv4 is currently supported.
         """
         return pulumi.get(self, "allow_list_type")
 
@@ -493,7 +493,7 @@ class AllowList(pulumi.CustomResource):
     @pulumi.getter(name="associatedInstanceNum")
     def associated_instance_num(self) -> pulumi.Output[builtins.int]:
         """
-        白名单下绑定的实例总数
+        Total number of instances bound to the allowlist.
         """
         return pulumi.get(self, "associated_instance_num")
 
@@ -506,7 +506,7 @@ class AllowList(pulumi.CustomResource):
     @pulumi.getter(name="modifyMode")
     def modify_mode(self) -> pulumi.Output[builtins.str]:
         """
-        修改白名单的方式，支持设置为：Cover（默认）：使用 AllowList 参数中的值覆盖原白名单。Append：在原白名单中增加 AllowList 参数中输入的 IP 地址。Delete：在原白名单中删除 AllowList 参数中输入的 IP 地址。至少需要保留一个 IP 地址。
+        How to modify the allowlist. Supported settings: Cover (default): Overwrite the original allowlist with the values in the AllowList parameter. Append: Add IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
         """
         return pulumi.get(self, "modify_mode")
 
@@ -514,7 +514,7 @@ class AllowList(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        白名单所属的项目名称，当该参数留空时，新建的白名单默认加入 default 项目
+        Project name associated with the allowlist. If left blank, the new allowlist will be added to the default project.
         """
         return pulumi.get(self, "project_name")
 

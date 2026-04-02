@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
 {
     /// <summary>
-    /// 云身份中心用户，与企业员工身份一一映射。云身份中心用户是一种身份类型，可与某个账号下的IAM用户身份进行唯一关联并单点登录。云身份中心提供企业员工身份全生命周期管理、权限管理能力，推荐您在本产品内统一管理员工身份。
+    /// Cloud Identity Center users are mapped one-to-one with enterprise employee identities. A Cloud Identity Center user is an identity type that can be uniquely linked to an IAM user under an account for single sign-on. Cloud Identity Center provides full lifecycle management and permission management for enterprise employee identities. We recommend that you centrally manage employee identities within this product.
     /// 
     /// ## Example Usage
     /// 
@@ -47,73 +47,73 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     public partial class User : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 创建时间。
+        /// Creation Time.
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 用户描述。
+        /// User Description.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 用户显示名。
+        /// User Display Name.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// 邮箱。
+        /// Email.
         /// </summary>
         [Output("email")]
         public Output<string> Email { get; private set; } = null!;
 
         /// <summary>
-        /// 身份类型。
+        /// Identity Type.
         /// </summary>
         [Output("identityType")]
         public Output<string> IdentityType { get; private set; } = null!;
 
         /// <summary>
-        /// 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+        /// Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
         /// </summary>
         [Output("password")]
         public Output<string> Password { get; private set; } = null!;
 
         /// <summary>
-        /// 首次登陆需不需要重置密码。
+        /// Is password reset required on first login?
         /// </summary>
         [Output("passwordResetRequired")]
         public Output<bool> PasswordResetRequired { get; private set; } = null!;
 
         /// <summary>
-        /// 手机号。
+        /// Mobile Number.
         /// </summary>
         [Output("phone")]
         public Output<string> Phone { get; private set; } = null!;
 
         /// <summary>
-        /// 用户来源。
+        /// User Source.
         /// </summary>
         [Output("source")]
         public Output<string> Source { get; private set; } = null!;
 
         /// <summary>
-        /// 更新时间。
+        /// Update Time.
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 用户id。
+        /// User ID.
         /// </summary>
         [Output("userId")]
         public Output<string> UserId { get; private set; } = null!;
 
         /// <summary>
-        /// 用户名。
+        /// Username.
         /// </summary>
         [Output("userName")]
         public Output<string> UserName { get; private set; } = null!;
@@ -166,43 +166,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     public sealed class UserArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 用户描述。
+        /// User Description.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 用户显示名。
+        /// User Display Name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// 邮箱。
+        /// Email.
         /// </summary>
         [Input("email")]
         public Input<string>? Email { get; set; }
 
         /// <summary>
-        /// 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+        /// Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
         /// </summary>
         [Input("password")]
         public Input<string>? Password { get; set; }
 
         /// <summary>
-        /// 首次登陆需不需要重置密码。
+        /// Is password reset required on first login?
         /// </summary>
         [Input("passwordResetRequired")]
         public Input<bool>? PasswordResetRequired { get; set; }
 
         /// <summary>
-        /// 手机号。
+        /// Mobile Number.
         /// </summary>
         [Input("phone")]
         public Input<string>? Phone { get; set; }
 
         /// <summary>
-        /// 用户名。
+        /// Username.
         /// </summary>
         [Input("userName")]
         public Input<string>? UserName { get; set; }
@@ -216,73 +216,73 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     public sealed class UserState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 创建时间。
+        /// Creation Time.
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 用户描述。
+        /// User Description.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 用户显示名。
+        /// User Display Name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// 邮箱。
+        /// Email.
         /// </summary>
         [Input("email")]
         public Input<string>? Email { get; set; }
 
         /// <summary>
-        /// 身份类型。
+        /// Identity Type.
         /// </summary>
         [Input("identityType")]
         public Input<string>? IdentityType { get; set; }
 
         /// <summary>
-        /// 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+        /// Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
         /// </summary>
         [Input("password")]
         public Input<string>? Password { get; set; }
 
         /// <summary>
-        /// 首次登陆需不需要重置密码。
+        /// Is password reset required on first login?
         /// </summary>
         [Input("passwordResetRequired")]
         public Input<bool>? PasswordResetRequired { get; set; }
 
         /// <summary>
-        /// 手机号。
+        /// Mobile Number.
         /// </summary>
         [Input("phone")]
         public Input<string>? Phone { get; set; }
 
         /// <summary>
-        /// 用户来源。
+        /// User Source.
         /// </summary>
         [Input("source")]
         public Input<string>? Source { get; set; }
 
         /// <summary>
-        /// 更新时间。
+        /// Update Time.
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }
 
         /// <summary>
-        /// 用户id。
+        /// User ID.
         /// </summary>
         [Input("userId")]
         public Input<string>? UserId { get; set; }
 
         /// <summary>
-        /// 用户名。
+        /// Username.
         /// </summary>
         [Input("userName")]
         public Input<string>? UserName { get; set; }

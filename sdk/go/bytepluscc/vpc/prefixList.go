@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 前缀列表是一组CIDR地址块的集合，用于简化安全组规则、路由表条目的配置。当前缀列表修改时，所有关联它的资源均会同步修改。
+// A prefix list is a collection of CIDR blocks used to simplify the configuration of security group rules and route table entries. When the prefix list is modified, all associated resources are updated synchronously.
 //
 // ## Example Usage
 //
@@ -64,29 +64,29 @@ import (
 type PrefixList struct {
 	pulumi.CustomResourceState
 
-	// 前缀列表关联的资源数量。
+	// Number of resources associated with the prefix list.
 	AssociationCount           pulumi.IntOutput                               `pulumi:"associationCount"`
 	AssociationsRouteTables    PrefixListAssociationsRouteTableArrayOutput    `pulumi:"associationsRouteTables"`
 	AssociationsSecurityGroups PrefixListAssociationsSecurityGroupArrayOutput `pulumi:"associationsSecurityGroups"`
-	// 前缀列表的创建时间。
+	// Creation time of the prefix list.
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// 前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+	// Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
 	Description pulumi.StringOutput `pulumi:"description"`
-	// IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。
+	// IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
 	IpVersion pulumi.StringOutput `pulumi:"ipVersion"`
-	// 最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。
+	// Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
 	MaxEntries        pulumi.IntOutput                     `pulumi:"maxEntries"`
 	PrefixListEntries PrefixListPrefixListEntryArrayOutput `pulumi:"prefixListEntries"`
-	// 前缀列表的ID。
+	// Prefix list ID.
 	PrefixListId pulumi.StringOutput `pulumi:"prefixListId"`
-	// 前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。
+	// Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
 	PrefixListName pulumi.StringOutput `pulumi:"prefixListName"`
-	// 前缀列表所属项目的名称，不填默认加入default项目。
+	// Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
-	// 前缀列表的状态。取值：Available：可用；Creating：创建中；Deleting：删除中；Pending：修改中。
+	// Status of the prefix list. Values: Available: available; Creating: creating; Deleting: deleting; Pending: modifying.
 	Status pulumi.StringOutput      `pulumi:"status"`
 	Tags   PrefixListTagArrayOutput `pulumi:"tags"`
-	// 前缀列表的最近一次修改时间。
+	// Last modification time of the prefix list.
 	UpdatedTime pulumi.StringOutput `pulumi:"updatedTime"`
 }
 
@@ -123,56 +123,56 @@ func GetPrefixList(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering PrefixList resources.
 type prefixListState struct {
-	// 前缀列表关联的资源数量。
+	// Number of resources associated with the prefix list.
 	AssociationCount           *int                                  `pulumi:"associationCount"`
 	AssociationsRouteTables    []PrefixListAssociationsRouteTable    `pulumi:"associationsRouteTables"`
 	AssociationsSecurityGroups []PrefixListAssociationsSecurityGroup `pulumi:"associationsSecurityGroups"`
-	// 前缀列表的创建时间。
+	// Creation time of the prefix list.
 	CreatedTime *string `pulumi:"createdTime"`
-	// 前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+	// Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
 	Description *string `pulumi:"description"`
-	// IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。
+	// IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
 	IpVersion *string `pulumi:"ipVersion"`
-	// 最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。
+	// Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
 	MaxEntries        *int                        `pulumi:"maxEntries"`
 	PrefixListEntries []PrefixListPrefixListEntry `pulumi:"prefixListEntries"`
-	// 前缀列表的ID。
+	// Prefix list ID.
 	PrefixListId *string `pulumi:"prefixListId"`
-	// 前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。
+	// Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
 	PrefixListName *string `pulumi:"prefixListName"`
-	// 前缀列表所属项目的名称，不填默认加入default项目。
+	// Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
 	ProjectName *string `pulumi:"projectName"`
-	// 前缀列表的状态。取值：Available：可用；Creating：创建中；Deleting：删除中；Pending：修改中。
+	// Status of the prefix list. Values: Available: available; Creating: creating; Deleting: deleting; Pending: modifying.
 	Status *string         `pulumi:"status"`
 	Tags   []PrefixListTag `pulumi:"tags"`
-	// 前缀列表的最近一次修改时间。
+	// Last modification time of the prefix list.
 	UpdatedTime *string `pulumi:"updatedTime"`
 }
 
 type PrefixListState struct {
-	// 前缀列表关联的资源数量。
+	// Number of resources associated with the prefix list.
 	AssociationCount           pulumi.IntPtrInput
 	AssociationsRouteTables    PrefixListAssociationsRouteTableArrayInput
 	AssociationsSecurityGroups PrefixListAssociationsSecurityGroupArrayInput
-	// 前缀列表的创建时间。
+	// Creation time of the prefix list.
 	CreatedTime pulumi.StringPtrInput
-	// 前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+	// Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
 	Description pulumi.StringPtrInput
-	// IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。
+	// IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
 	IpVersion pulumi.StringPtrInput
-	// 最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。
+	// Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
 	MaxEntries        pulumi.IntPtrInput
 	PrefixListEntries PrefixListPrefixListEntryArrayInput
-	// 前缀列表的ID。
+	// Prefix list ID.
 	PrefixListId pulumi.StringPtrInput
-	// 前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。
+	// Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
 	PrefixListName pulumi.StringPtrInput
-	// 前缀列表所属项目的名称，不填默认加入default项目。
+	// Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
 	ProjectName pulumi.StringPtrInput
-	// 前缀列表的状态。取值：Available：可用；Creating：创建中；Deleting：删除中；Pending：修改中。
+	// Status of the prefix list. Values: Available: available; Creating: creating; Deleting: deleting; Pending: modifying.
 	Status pulumi.StringPtrInput
 	Tags   PrefixListTagArrayInput
-	// 前缀列表的最近一次修改时间。
+	// Last modification time of the prefix list.
 	UpdatedTime pulumi.StringPtrInput
 }
 
@@ -181,32 +181,32 @@ func (PrefixListState) ElementType() reflect.Type {
 }
 
 type prefixListArgs struct {
-	// 前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+	// Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
 	Description *string `pulumi:"description"`
-	// IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。
+	// IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
 	IpVersion *string `pulumi:"ipVersion"`
-	// 最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。
+	// Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
 	MaxEntries        int                         `pulumi:"maxEntries"`
 	PrefixListEntries []PrefixListPrefixListEntry `pulumi:"prefixListEntries"`
-	// 前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。
+	// Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
 	PrefixListName *string `pulumi:"prefixListName"`
-	// 前缀列表所属项目的名称，不填默认加入default项目。
+	// Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
 	ProjectName *string         `pulumi:"projectName"`
 	Tags        []PrefixListTag `pulumi:"tags"`
 }
 
 // The set of arguments for constructing a PrefixList resource.
 type PrefixListArgs struct {
-	// 前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+	// Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
 	Description pulumi.StringPtrInput
-	// IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。
+	// IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
 	IpVersion pulumi.StringPtrInput
-	// 最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。
+	// Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
 	MaxEntries        pulumi.IntInput
 	PrefixListEntries PrefixListPrefixListEntryArrayInput
-	// 前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。
+	// Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
 	PrefixListName pulumi.StringPtrInput
-	// 前缀列表所属项目的名称，不填默认加入default项目。
+	// Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
 	ProjectName pulumi.StringPtrInput
 	Tags        PrefixListTagArrayInput
 }
@@ -298,7 +298,7 @@ func (o PrefixListOutput) ToPrefixListOutputWithContext(ctx context.Context) Pre
 	return o
 }
 
-// 前缀列表关联的资源数量。
+// Number of resources associated with the prefix list.
 func (o PrefixListOutput) AssociationCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *PrefixList) pulumi.IntOutput { return v.AssociationCount }).(pulumi.IntOutput)
 }
@@ -313,22 +313,22 @@ func (o PrefixListOutput) AssociationsSecurityGroups() PrefixListAssociationsSec
 	}).(PrefixListAssociationsSecurityGroupArrayOutput)
 }
 
-// 前缀列表的创建时间。
+// Creation time of the prefix list.
 func (o PrefixListOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrefixList) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 前缀列表的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+// Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
 func (o PrefixListOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrefixList) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// IP版本类型。取值：IPv4（默认值）：IPv4类型。IPv6：IPv6类型。
+// IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
 func (o PrefixListOutput) IpVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrefixList) pulumi.StringOutput { return v.IpVersion }).(pulumi.StringOutput)
 }
 
-// 最大条目数，即前缀列表最多可添加条目的数量。取值范围为1～200。
+// Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
 func (o PrefixListOutput) MaxEntries() pulumi.IntOutput {
 	return o.ApplyT(func(v *PrefixList) pulumi.IntOutput { return v.MaxEntries }).(pulumi.IntOutput)
 }
@@ -337,22 +337,22 @@ func (o PrefixListOutput) PrefixListEntries() PrefixListPrefixListEntryArrayOutp
 	return o.ApplyT(func(v *PrefixList) PrefixListPrefixListEntryArrayOutput { return v.PrefixListEntries }).(PrefixListPrefixListEntryArrayOutput)
 }
 
-// 前缀列表的ID。
+// Prefix list ID.
 func (o PrefixListOutput) PrefixListId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrefixList) pulumi.StringOutput { return v.PrefixListId }).(pulumi.StringOutput)
 }
 
-// 前缀列表的名称。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。
+// Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
 func (o PrefixListOutput) PrefixListName() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrefixList) pulumi.StringOutput { return v.PrefixListName }).(pulumi.StringOutput)
 }
 
-// 前缀列表所属项目的名称，不填默认加入default项目。
+// Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
 func (o PrefixListOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrefixList) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 前缀列表的状态。取值：Available：可用；Creating：创建中；Deleting：删除中；Pending：修改中。
+// Status of the prefix list. Values: Available: available; Creating: creating; Deleting: deleting; Pending: modifying.
 func (o PrefixListOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrefixList) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
@@ -361,7 +361,7 @@ func (o PrefixListOutput) Tags() PrefixListTagArrayOutput {
 	return o.ApplyT(func(v *PrefixList) PrefixListTagArrayOutput { return v.Tags }).(PrefixListTagArrayOutput)
 }
 
-// 前缀列表的最近一次修改时间。
+// Last modification time of the prefix list.
 func (o PrefixListOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrefixList) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }

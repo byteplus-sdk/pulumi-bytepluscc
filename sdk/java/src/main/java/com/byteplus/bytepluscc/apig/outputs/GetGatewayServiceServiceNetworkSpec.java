@@ -13,38 +13,38 @@ import java.util.Objects;
 @CustomType
 public final class GetGatewayServiceServiceNetworkSpec {
     /**
-     * @return 开启私网。
+     * @return Enable private network.
      * 
      */
     private Boolean enablePrivateNetwork;
     /**
-     * @return 开启公网。
+     * @return Enable public network.
      * 
      */
     private Boolean enablePublicNetwork;
     /**
-     * @return 私网域名解析的目标IP。
+     * @return Target IP for private network domain resolution.
      * 
      */
     private List<String> privateNetworkIps;
 
     private GetGatewayServiceServiceNetworkSpec() {}
     /**
-     * @return 开启私网。
+     * @return Enable private network.
      * 
      */
     public Boolean enablePrivateNetwork() {
         return this.enablePrivateNetwork;
     }
     /**
-     * @return 开启公网。
+     * @return Enable public network.
      * 
      */
     public Boolean enablePublicNetwork() {
         return this.enablePublicNetwork;
     }
     /**
-     * @return 私网域名解析的目标IP。
+     * @return Target IP for private network domain resolution.
      * 
      */
     public List<String> privateNetworkIps() {

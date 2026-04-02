@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink.Inputs
     public sealed class EndpointServiceResourceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 终端节点服务ID。
+        /// Endpoint service ID.
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 待添加到终端节点服务中的服务资源ID。
+        /// Service resource ID to be added to the endpoint service.
         /// </summary>
         [Input("resourceId")]
         public Input<string>? ResourceId { get; set; }
@@ -29,7 +29,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink.Inputs
         private InputList<string>? _zoneIds;
 
         /// <summary>
-        /// 负载均衡提供服务的可用区。
+        /// Availability zone where the load balancer provides service.
         /// </summary>
         public InputList<string> ZoneIds
         {

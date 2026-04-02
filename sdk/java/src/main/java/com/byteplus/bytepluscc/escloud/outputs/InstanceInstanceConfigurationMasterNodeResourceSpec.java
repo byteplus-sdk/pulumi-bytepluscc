@@ -13,62 +13,62 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceInstanceConfigurationMasterNodeResourceSpec {
     /**
-     * @return 节点规格的 CPU 资源，单位为核（Core）
+     * @return CPU resources of node specification, unit: cores.
      * 
      */
     private @Nullable Integer cpu;
     /**
-     * @return 节点规格的描述信息
+     * @return Description of node specifications
      * 
      */
     private @Nullable String description;
     /**
-     * @return 节点规格的显示名称
+     * @return Display name of node specification
      * 
      */
     private @Nullable String displayName;
     /**
-     * @return 节点规格的内存容量，单位 GiB
+     * @return Memory capacity of node specification, unit: GiB.
      * 
      */
     private @Nullable Integer memory;
     /**
-     * @return 节点规格。如需了解节点规格类型和详情
+     * @return Node specification. For information about node specification types and details, please refer to the documentation.
      * 
      */
     private @Nullable String name;
 
     private InstanceInstanceConfigurationMasterNodeResourceSpec() {}
     /**
-     * @return 节点规格的 CPU 资源，单位为核（Core）
+     * @return CPU resources of node specification, unit: cores.
      * 
      */
     public Optional<Integer> cpu() {
         return Optional.ofNullable(this.cpu);
     }
     /**
-     * @return 节点规格的描述信息
+     * @return Description of node specifications
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return 节点规格的显示名称
+     * @return Display name of node specification
      * 
      */
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return 节点规格的内存容量，单位 GiB
+     * @return Memory capacity of node specification, unit: GiB.
      * 
      */
     public Optional<Integer> memory() {
         return Optional.ofNullable(this.memory);
     }
     /**
-     * @return 节点规格。如需了解节点规格类型和详情
+     * @return Node specification. For information about node specification types and details, please refer to the documentation.
      * 
      */
     public Optional<String> name() {

@@ -13,74 +13,74 @@ import java.util.Objects;
 @CustomType
 public final class GetGroupAttachedPolicy {
     /**
-     * @return 策略绑定时间。
+     * @return Policy binding time.
      * 
      */
     private String attachTime;
     /**
-     * @return 策略描述。
+     * @return Policy description.
      * 
      */
     private String description;
     /**
-     * @return 策略名。
+     * @return Policy name.
      * 
      */
     private String policyName;
     /**
-     * @return 策略授权的作用范围，特指项目范围。
+     * @return Scope of policy authorization, specifically the project scope.
      * 
      */
     private List<GetGroupAttachedPolicyPolicyScope> policyScopes;
     /**
-     * @return 策略TRN。
+     * @return Policy TRN.
      * 
      */
     private String policyTrn;
     /**
-     * @return 策略类型。System代表系统预设策略，Custom代表自定义策略。
+     * @return Policy type. System indicates a system predefined policy; Custom indicates a custom policy.
      * 
      */
     private String policyType;
 
     private GetGroupAttachedPolicy() {}
     /**
-     * @return 策略绑定时间。
+     * @return Policy binding time.
      * 
      */
     public String attachTime() {
         return this.attachTime;
     }
     /**
-     * @return 策略描述。
+     * @return Policy description.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 策略名。
+     * @return Policy name.
      * 
      */
     public String policyName() {
         return this.policyName;
     }
     /**
-     * @return 策略授权的作用范围，特指项目范围。
+     * @return Scope of policy authorization, specifically the project scope.
      * 
      */
     public List<GetGroupAttachedPolicyPolicyScope> policyScopes() {
         return this.policyScopes;
     }
     /**
-     * @return 策略TRN。
+     * @return Policy TRN.
      * 
      */
     public String policyTrn() {
         return this.policyTrn;
     }
     /**
-     * @return 策略类型。System代表系统预设策略，Custom代表自定义策略。
+     * @return Policy type. System indicates a system predefined policy; Custom indicates a custom policy.
      * 
      */
     public String policyType() {

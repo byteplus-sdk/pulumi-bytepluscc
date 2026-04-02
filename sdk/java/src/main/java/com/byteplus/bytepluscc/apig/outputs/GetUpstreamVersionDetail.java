@@ -13,38 +13,38 @@ import java.util.Objects;
 @CustomType
 public final class GetUpstreamVersionDetail {
     /**
-     * @return 标签。
+     * @return Tag
      * 
      */
     private List<GetUpstreamVersionDetailLabel> labels;
     /**
-     * @return 版本名称。支持大小写字母、数字和中划线（-），长度限制为2~63个字符。不能以中划线（-）开头。
+     * @return Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
      * 
      */
     private String name;
     /**
-     * @return 更新时间。
+     * @return Update time
      * 
      */
     private String updateTime;
 
     private GetUpstreamVersionDetail() {}
     /**
-     * @return 标签。
+     * @return Tag
      * 
      */
     public List<GetUpstreamVersionDetailLabel> labels() {
         return this.labels;
     }
     /**
-     * @return 版本名称。支持大小写字母、数字和中划线（-），长度限制为2~63个字符。不能以中划线（-）开头。
+     * @return Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 更新时间。
+     * @return Update time
      * 
      */
     public String updateTime() {

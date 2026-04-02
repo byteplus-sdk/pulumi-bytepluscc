@@ -29,10 +29,10 @@ class Ipv6GatewayArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['Ipv6GatewayTagArgs']]]] = None):
         """
         The set of arguments for constructing a Ipv6Gateway resource.
-        :param pulumi.Input[builtins.str] vpc_id: 需关联IPv6网关实例的VPC ID。每个VPC只能关联一个IPv6网关实例，需确保待关联的VPC未关联其他IPv6网关实例。
-        :param pulumi.Input[builtins.str] description: IPv6网关实例的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
-        :param pulumi.Input[builtins.str] name: IPv6网关实例的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为IPv6网关ID。
-        :param pulumi.Input[builtins.str] project_name: IPv6网关所属项目的名称。
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID to be associated with the IPv6 gateway instance. Each VPC can only be associated with one IPv6 gateway instance. Ensure the VPC to be associated is not linked to another IPv6 gateway instance
+        :param pulumi.Input[builtins.str] description: Description of the IPv6 gateway instance. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。)
+        :param pulumi.Input[builtins.str] name: Name of the IPv6 gateway instance. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the IPv6 gateway ID
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the IPv6 gateway belongs
         """
         pulumi.set(__self__, "vpc_id", vpc_id)
         if description is not None:
@@ -48,7 +48,7 @@ class Ipv6GatewayArgs:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Input[builtins.str]:
         """
-        需关联IPv6网关实例的VPC ID。每个VPC只能关联一个IPv6网关实例，需确保待关联的VPC未关联其他IPv6网关实例。
+        VPC ID to be associated with the IPv6 gateway instance. Each VPC can only be associated with one IPv6 gateway instance. Ensure the VPC to be associated is not linked to another IPv6 gateway instance
         """
         return pulumi.get(self, "vpc_id")
 
@@ -60,7 +60,7 @@ class Ipv6GatewayArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IPv6网关实例的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        Description of the IPv6 gateway instance. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。)
         """
         return pulumi.get(self, "description")
 
@@ -72,7 +72,7 @@ class Ipv6GatewayArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IPv6网关实例的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为IPv6网关ID。
+        Name of the IPv6 gateway instance. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the IPv6 gateway ID
         """
         return pulumi.get(self, "name")
 
@@ -84,7 +84,7 @@ class Ipv6GatewayArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IPv6网关所属项目的名称。
+        Name of the project to which the IPv6 gateway belongs
         """
         return pulumi.get(self, "project_name")
 
@@ -117,15 +117,15 @@ class _Ipv6GatewayState:
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Ipv6Gateway resources.
-        :param pulumi.Input[builtins.str] created_time: IPv6网关实例的创建时间。
-        :param pulumi.Input[builtins.str] description: IPv6网关实例的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
-        :param pulumi.Input[builtins.str] ipv6_gateway_id: IPv6网关实例的ID。
-        :param pulumi.Input[builtins.str] name: IPv6网关实例的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为IPv6网关ID。
-        :param pulumi.Input[builtins.str] project_name: IPv6网关所属项目的名称。
-        :param pulumi.Input[builtins.str] route_table_id: IPv6网关实例关联的路由表ID。
-        :param pulumi.Input[builtins.str] status: IPv6网关实例的运行状态。取值如下：Creating：创建中。Deleting：删除中。Available：可用。
-        :param pulumi.Input[builtins.str] updated_time: IPv6网关实例的修改时间。
-        :param pulumi.Input[builtins.str] vpc_id: 需关联IPv6网关实例的VPC ID。每个VPC只能关联一个IPv6网关实例，需确保待关联的VPC未关联其他IPv6网关实例。
+        :param pulumi.Input[builtins.str] created_time: Creation time of the IPv6 gateway instance
+        :param pulumi.Input[builtins.str] description: Description of the IPv6 gateway instance. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。)
+        :param pulumi.Input[builtins.str] ipv6_gateway_id: IPv6 gateway instance ID
+        :param pulumi.Input[builtins.str] name: Name of the IPv6 gateway instance. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the IPv6 gateway ID
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the IPv6 gateway belongs
+        :param pulumi.Input[builtins.str] route_table_id: Route table ID associated with the IPv6 gateway instance
+        :param pulumi.Input[builtins.str] status: Operating status of the IPv6 gateway instance. Possible values: Creating: Creating. Deleting: Deleting. Available: Available
+        :param pulumi.Input[builtins.str] updated_time: Modification time of the IPv6 gateway instance
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID to be associated with the IPv6 gateway instance. Each VPC can only be associated with one IPv6 gateway instance. Ensure the VPC to be associated is not linked to another IPv6 gateway instance
         """
         if created_time is not None:
             pulumi.set(__self__, "created_time", created_time)
@@ -152,7 +152,7 @@ class _Ipv6GatewayState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IPv6网关实例的创建时间。
+        Creation time of the IPv6 gateway instance
         """
         return pulumi.get(self, "created_time")
 
@@ -164,7 +164,7 @@ class _Ipv6GatewayState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IPv6网关实例的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        Description of the IPv6 gateway instance. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。)
         """
         return pulumi.get(self, "description")
 
@@ -176,7 +176,7 @@ class _Ipv6GatewayState:
     @pulumi.getter(name="ipv6GatewayId")
     def ipv6_gateway_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IPv6网关实例的ID。
+        IPv6 gateway instance ID
         """
         return pulumi.get(self, "ipv6_gateway_id")
 
@@ -188,7 +188,7 @@ class _Ipv6GatewayState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IPv6网关实例的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为IPv6网关ID。
+        Name of the IPv6 gateway instance. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the IPv6 gateway ID
         """
         return pulumi.get(self, "name")
 
@@ -200,7 +200,7 @@ class _Ipv6GatewayState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IPv6网关所属项目的名称。
+        Name of the project to which the IPv6 gateway belongs
         """
         return pulumi.get(self, "project_name")
 
@@ -212,7 +212,7 @@ class _Ipv6GatewayState:
     @pulumi.getter(name="routeTableId")
     def route_table_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IPv6网关实例关联的路由表ID。
+        Route table ID associated with the IPv6 gateway instance
         """
         return pulumi.get(self, "route_table_id")
 
@@ -224,7 +224,7 @@ class _Ipv6GatewayState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IPv6网关实例的运行状态。取值如下：Creating：创建中。Deleting：删除中。Available：可用。
+        Operating status of the IPv6 gateway instance. Possible values: Creating: Creating. Deleting: Deleting. Available: Available
         """
         return pulumi.get(self, "status")
 
@@ -245,7 +245,7 @@ class _Ipv6GatewayState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IPv6网关实例的修改时间。
+        Modification time of the IPv6 gateway instance
         """
         return pulumi.get(self, "updated_time")
 
@@ -257,7 +257,7 @@ class _Ipv6GatewayState:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        需关联IPv6网关实例的VPC ID。每个VPC只能关联一个IPv6网关实例，需确保待关联的VPC未关联其他IPv6网关实例。
+        VPC ID to be associated with the IPv6 gateway instance. Each VPC can only be associated with one IPv6 gateway instance. Ensure the VPC to be associated is not linked to another IPv6 gateway instance
         """
         return pulumi.get(self, "vpc_id")
 
@@ -279,7 +279,7 @@ class Ipv6Gateway(pulumi.CustomResource):
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        IPv6网关服务的运行载体，创建IPv6网关实例是进行IPv6公网配置的前提。
+        Carrier for the IPv6 gateway service. Creating an IPv6 gateway instance is required for IPv6 public network configuration
 
         ## Example Usage
 
@@ -306,10 +306,10 @@ class Ipv6Gateway(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: IPv6网关实例的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
-        :param pulumi.Input[builtins.str] name: IPv6网关实例的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为IPv6网关ID。
-        :param pulumi.Input[builtins.str] project_name: IPv6网关所属项目的名称。
-        :param pulumi.Input[builtins.str] vpc_id: 需关联IPv6网关实例的VPC ID。每个VPC只能关联一个IPv6网关实例，需确保待关联的VPC未关联其他IPv6网关实例。
+        :param pulumi.Input[builtins.str] description: Description of the IPv6 gateway instance. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。)
+        :param pulumi.Input[builtins.str] name: Name of the IPv6 gateway instance. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the IPv6 gateway ID
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the IPv6 gateway belongs
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID to be associated with the IPv6 gateway instance. Each VPC can only be associated with one IPv6 gateway instance. Ensure the VPC to be associated is not linked to another IPv6 gateway instance
         """
         ...
     @overload
@@ -318,7 +318,7 @@ class Ipv6Gateway(pulumi.CustomResource):
                  args: Ipv6GatewayArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        IPv6网关服务的运行载体，创建IPv6网关实例是进行IPv6公网配置的前提。
+        Carrier for the IPv6 gateway service. Creating an IPv6 gateway instance is required for IPv6 public network configuration
 
         ## Example Usage
 
@@ -411,15 +411,15 @@ class Ipv6Gateway(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] created_time: IPv6网关实例的创建时间。
-        :param pulumi.Input[builtins.str] description: IPv6网关实例的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
-        :param pulumi.Input[builtins.str] ipv6_gateway_id: IPv6网关实例的ID。
-        :param pulumi.Input[builtins.str] name: IPv6网关实例的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为IPv6网关ID。
-        :param pulumi.Input[builtins.str] project_name: IPv6网关所属项目的名称。
-        :param pulumi.Input[builtins.str] route_table_id: IPv6网关实例关联的路由表ID。
-        :param pulumi.Input[builtins.str] status: IPv6网关实例的运行状态。取值如下：Creating：创建中。Deleting：删除中。Available：可用。
-        :param pulumi.Input[builtins.str] updated_time: IPv6网关实例的修改时间。
-        :param pulumi.Input[builtins.str] vpc_id: 需关联IPv6网关实例的VPC ID。每个VPC只能关联一个IPv6网关实例，需确保待关联的VPC未关联其他IPv6网关实例。
+        :param pulumi.Input[builtins.str] created_time: Creation time of the IPv6 gateway instance
+        :param pulumi.Input[builtins.str] description: Description of the IPv6 gateway instance. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。)
+        :param pulumi.Input[builtins.str] ipv6_gateway_id: IPv6 gateway instance ID
+        :param pulumi.Input[builtins.str] name: Name of the IPv6 gateway instance. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the IPv6 gateway ID
+        :param pulumi.Input[builtins.str] project_name: Name of the project to which the IPv6 gateway belongs
+        :param pulumi.Input[builtins.str] route_table_id: Route table ID associated with the IPv6 gateway instance
+        :param pulumi.Input[builtins.str] status: Operating status of the IPv6 gateway instance. Possible values: Creating: Creating. Deleting: Deleting. Available: Available
+        :param pulumi.Input[builtins.str] updated_time: Modification time of the IPv6 gateway instance
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID to be associated with the IPv6 gateway instance. Each VPC can only be associated with one IPv6 gateway instance. Ensure the VPC to be associated is not linked to another IPv6 gateway instance
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -441,7 +441,7 @@ class Ipv6Gateway(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        IPv6网关实例的创建时间。
+        Creation time of the IPv6 gateway instance
         """
         return pulumi.get(self, "created_time")
 
@@ -449,7 +449,7 @@ class Ipv6Gateway(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        IPv6网关实例的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        Description of the IPv6 gateway instance. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。)
         """
         return pulumi.get(self, "description")
 
@@ -457,7 +457,7 @@ class Ipv6Gateway(pulumi.CustomResource):
     @pulumi.getter(name="ipv6GatewayId")
     def ipv6_gateway_id(self) -> pulumi.Output[builtins.str]:
         """
-        IPv6网关实例的ID。
+        IPv6 gateway instance ID
         """
         return pulumi.get(self, "ipv6_gateway_id")
 
@@ -465,7 +465,7 @@ class Ipv6Gateway(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[builtins.str]:
         """
-        IPv6网关实例的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为IPv6网关ID。
+        Name of the IPv6 gateway instance. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the IPv6 gateway ID
         """
         return pulumi.get(self, "name")
 
@@ -473,7 +473,7 @@ class Ipv6Gateway(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        IPv6网关所属项目的名称。
+        Name of the project to which the IPv6 gateway belongs
         """
         return pulumi.get(self, "project_name")
 
@@ -481,7 +481,7 @@ class Ipv6Gateway(pulumi.CustomResource):
     @pulumi.getter(name="routeTableId")
     def route_table_id(self) -> pulumi.Output[builtins.str]:
         """
-        IPv6网关实例关联的路由表ID。
+        Route table ID associated with the IPv6 gateway instance
         """
         return pulumi.get(self, "route_table_id")
 
@@ -489,7 +489,7 @@ class Ipv6Gateway(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        IPv6网关实例的运行状态。取值如下：Creating：创建中。Deleting：删除中。Available：可用。
+        Operating status of the IPv6 gateway instance. Possible values: Creating: Creating. Deleting: Deleting. Available: Available
         """
         return pulumi.get(self, "status")
 
@@ -502,7 +502,7 @@ class Ipv6Gateway(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        IPv6网关实例的修改时间。
+        Modification time of the IPv6 gateway instance
         """
         return pulumi.get(self, "updated_time")
 
@@ -510,7 +510,7 @@ class Ipv6Gateway(pulumi.CustomResource):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Output[builtins.str]:
         """
-        需关联IPv6网关实例的VPC ID。每个VPC只能关联一个IPv6网关实例，需确保待关联的VPC未关联其他IPv6网关实例。
+        VPC ID to be associated with the IPv6 gateway instance. Each VPC can only be associated with one IPv6 gateway instance. Ensure the VPC to be associated is not linked to another IPv6 gateway instance
         """
         return pulumi.get(self, "vpc_id")
 

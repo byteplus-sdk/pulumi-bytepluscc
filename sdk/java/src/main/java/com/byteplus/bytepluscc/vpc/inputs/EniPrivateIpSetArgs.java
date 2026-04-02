@@ -17,14 +17,14 @@ public final class EniPrivateIpSetArgs extends com.pulumi.resources.ResourceArgs
     public static final EniPrivateIpSetArgs Empty = new EniPrivateIpSetArgs();
 
     /**
-     * 网卡主私网IPv4关联的公网IP的信息。
+     * Information about the public IP associated with the primary private IPv4 address of the network interface.
      * 
      */
     @Import(name="associatedElasticIp")
     private @Nullable Output<EniPrivateIpSetAssociatedElasticIpArgs> associatedElasticIp;
 
     /**
-     * @return 网卡主私网IPv4关联的公网IP的信息。
+     * @return Information about the public IP associated with the primary private IPv4 address of the network interface.
      * 
      */
     public Optional<Output<EniPrivateIpSetAssociatedElasticIpArgs>> associatedElasticIp() {
@@ -32,14 +32,14 @@ public final class EniPrivateIpSetArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 网卡的私网IP地址。
+     * Private IP address of the network interface.
      * 
      */
     @Import(name="privateIpAddress")
     private @Nullable Output<String> privateIpAddress;
 
     /**
-     * @return 网卡的私网IP地址。
+     * @return Private IP address of the network interface.
      * 
      */
     public Optional<Output<String>> privateIpAddress() {
@@ -72,7 +72,7 @@ public final class EniPrivateIpSetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param associatedElasticIp 网卡主私网IPv4关联的公网IP的信息。
+         * @param associatedElasticIp Information about the public IP associated with the primary private IPv4 address of the network interface.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class EniPrivateIpSetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param associatedElasticIp 网卡主私网IPv4关联的公网IP的信息。
+         * @param associatedElasticIp Information about the public IP associated with the primary private IPv4 address of the network interface.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class EniPrivateIpSetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param privateIpAddress 网卡的私网IP地址。
+         * @param privateIpAddress Private IP address of the network interface.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class EniPrivateIpSetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param privateIpAddress 网卡的私网IP地址。
+         * @param privateIpAddress Private IP address of the network interface.
          * 
          * @return builder
          * 

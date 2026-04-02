@@ -16,14 +16,14 @@ public final class DomainRefererAccessRuleSharedConfigArgs extends com.pulumi.re
     public static final DomainRefererAccessRuleSharedConfigArgs Empty = new DomainRefererAccessRuleSharedConfigArgs();
 
     /**
-     * 表示一个全局配置的名称。
+     * Indicates the name of a global configuration.
      * 
      */
     @Import(name="configName")
     private @Nullable Output<String> configName;
 
     /**
-     * @return 表示一个全局配置的名称。
+     * @return Indicates the name of a global configuration.
      * 
      */
     public Optional<Output<String>> configName() {
@@ -55,7 +55,7 @@ public final class DomainRefererAccessRuleSharedConfigArgs extends com.pulumi.re
         }
 
         /**
-         * @param configName 表示一个全局配置的名称。
+         * @param configName Indicates the name of a global configuration.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class DomainRefererAccessRuleSharedConfigArgs extends com.pulumi.re
         }
 
         /**
-         * @param configName 表示一个全局配置的名称。
+         * @param configName Indicates the name of a global configuration.
          * 
          * @return builder
          * 

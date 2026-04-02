@@ -12,50 +12,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class EndpointServicePrivateDnsNameConfiguration {
     /**
-     * @return 域验证名称。
+     * @return Domain verification name.
      * 
      */
     private @Nullable String name;
     /**
-     * @return 域验证状态。PendingVerification：待验证Verifying：验证中Verified：验证通过Failed：验证失败
+     * @return Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
      * 
      */
     private @Nullable String status;
     /**
-     * @return 域验证类型。TXT：TXT记录。
+     * @return Domain verification type. TXT: TXT record.
      * 
      */
     private @Nullable String type;
     /**
-     * @return 域验证值。
+     * @return Domain verification value.
      * 
      */
     private @Nullable String value;
 
     private EndpointServicePrivateDnsNameConfiguration() {}
     /**
-     * @return 域验证名称。
+     * @return Domain verification name.
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return 域验证状态。PendingVerification：待验证Verifying：验证中Verified：验证通过Failed：验证失败
+     * @return Domain verification status. PendingVerification: Pending verification. Verifying: In progress. Verified: Verified. Failed: Verification failed.
      * 
      */
     public Optional<String> status() {
         return Optional.ofNullable(this.status);
     }
     /**
-     * @return 域验证类型。TXT：TXT记录。
+     * @return Domain verification type. TXT: TXT record.
      * 
      */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }
     /**
-     * @return 域验证值。
+     * @return Domain verification value.
      * 
      */
     public Optional<String> value() {

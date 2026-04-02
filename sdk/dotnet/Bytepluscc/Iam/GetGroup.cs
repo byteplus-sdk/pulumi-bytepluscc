@@ -65,23 +65,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
     public sealed class GetGroupResult
     {
         /// <summary>
-        /// 用户组所属主账号的ID。
+        /// ID of the primary account to which the user group belongs.
         /// </summary>
         public readonly int AccountId;
         /// <summary>
-        /// 用户组绑定的策略信息。
+        /// Policy information bound to the user group.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGroupAttachedPolicyResult> AttachedPolicies;
         /// <summary>
-        /// 用户组的创建时间。
+        /// User group creation time.
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 用户组描述信息。长度不超过128。
+        /// User group description. Maximum length: 128 characters.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 用户组显示名称。长度不超过64。
+        /// User group display name. Maximum length: 64 characters.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -89,19 +89,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 用户组的更新时间。
+        /// User group update time.
         /// </summary>
         public readonly string UpdatedTime;
         /// <summary>
-        /// 用户组ID。
+        /// User group ID.
         /// </summary>
         public readonly int UserGroupId;
         /// <summary>
-        /// 用户组名称。长度1~64，支持英文、数字和.-_符号。
+        /// User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
         /// </summary>
         public readonly string UserGroupName;
         /// <summary>
-        /// 用户组内绑定的用户信息。
+        /// User information associated with the user group.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGroupUserResult> Users;
 

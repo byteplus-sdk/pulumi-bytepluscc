@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Natgateway.Inputs
     public sealed class NgwEipAddressArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 公网IP的ID。
+        /// Public IP ID
         /// </summary>
         [Input("allocationId")]
         public Input<string>? AllocationId { get; set; }
 
         /// <summary>
-        /// 公网IP的地址。
+        /// Public IP address
         /// </summary>
         [Input("eipAddress")]
         public Input<string>? EipAddress { get; set; }
 
         /// <summary>
-        /// 公网IP的使用状态。Idle：未使用。UsedBySnat：被SNAT规则使用。UsedByDnat：被DNAT规则使用。UsedByNat：被SNAT/DNAT规则同时使用。
+        /// Usage status of the public IP. Idle: Not used. UsedBySnat: Used by SNAT rule. UsedByDnat: Used by DNAT rule. UsedByNat: Used by both SNAT and DNAT rules.
         /// </summary>
         [Input("usingStatus")]
         public Input<string>? UsingStatus { get; set; }

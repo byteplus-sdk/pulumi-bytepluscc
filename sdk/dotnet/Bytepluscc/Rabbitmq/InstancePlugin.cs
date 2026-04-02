@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq
 {
     /// <summary>
-    /// 在消息队列 RabbitMQ版控制台中创建实例之后，实例插件默认为关闭状态，您可以手动为实例开启/关闭插件。开启/关闭部分插件会导致集群滚动重启，建议避开业务运行时段执行该操作。集群滚动重启时会造成未持久化的消息丢失，也会出现短暂的连接不稳定现象，例如连接断开，断开后会根据客户端配置决定是否自动重连。
+    /// After you create an instance in the RabbitMQ console, plugins are disabled by default. You can manually enable or disable plugins for the instance. Enabling or disabling certain plugins will cause a rolling restart of the cluster. It is recommended to perform this operation outside of business hours. A rolling restart may result in the loss of non-persistent messages and temporary connection instability, such as connection drops. After a connection drop, whether the client automatically reconnects depends on its configuration
     /// 
     /// ## Example Usage
     /// 
@@ -42,55 +42,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq
     public partial class InstancePlugin : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 插件描述。
+        /// Plugin description
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 关闭此插件的注意事项说明。
+        /// Notes for disabling this plugin
         /// </summary>
         [Output("disablePrompt")]
         public Output<string> DisablePrompt { get; private set; } = null!;
 
         /// <summary>
-        /// 开启此插件的注意事项说明。
+        /// Notes for enabling this plugin
         /// </summary>
         [Output("enablePrompt")]
         public Output<string> EnablePrompt { get; private set; } = null!;
 
         /// <summary>
-        /// 是否已开启插件。true：插件已开启。false：插件已关闭。
+        /// Whether the plugin is enabled. true: The plugin is enabled. false: The plugin is disabled
         /// </summary>
         [Output("enabled")]
         public Output<bool> Enabled { get; private set; } = null!;
 
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID
         /// </summary>
         [Output("instanceId")]
         public Output<string> InstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// 开启或关闭插件是否会引发 RabbitMQ 实例重启。true：会重启实例。false：不会重启实例。
+        /// Whether enabling or disabling the plugin will cause a RabbitMQ instance restart. true: The instance will restart. false: The instance will not restart
         /// </summary>
         [Output("needRebootOnChange")]
         public Output<bool> NeedRebootOnChange { get; private set; } = null!;
 
         /// <summary>
-        /// 插件名称。
+        /// Plugin name
         /// </summary>
         [Output("pluginName")]
         public Output<string> PluginName { get; private set; } = null!;
 
         /// <summary>
-        /// 插件监听的端口。
+        /// Plugin listening port
         /// </summary>
         [Output("port")]
         public Output<int> Port { get; private set; } = null!;
 
         /// <summary>
-        /// 插件版本。
+        /// Plugin version
         /// </summary>
         [Output("version")]
         public Output<string> Version { get; private set; } = null!;
@@ -143,13 +143,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq
     public sealed class InstancePluginArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID
         /// </summary>
         [Input("instanceId", required: true)]
         public Input<string> InstanceId { get; set; } = null!;
 
         /// <summary>
-        /// 插件名称。
+        /// Plugin name
         /// </summary>
         [Input("pluginName")]
         public Input<string>? PluginName { get; set; }
@@ -163,55 +163,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq
     public sealed class InstancePluginState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 插件描述。
+        /// Plugin description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 关闭此插件的注意事项说明。
+        /// Notes for disabling this plugin
         /// </summary>
         [Input("disablePrompt")]
         public Input<string>? DisablePrompt { get; set; }
 
         /// <summary>
-        /// 开启此插件的注意事项说明。
+        /// Notes for enabling this plugin
         /// </summary>
         [Input("enablePrompt")]
         public Input<string>? EnablePrompt { get; set; }
 
         /// <summary>
-        /// 是否已开启插件。true：插件已开启。false：插件已关闭。
+        /// Whether the plugin is enabled. true: The plugin is enabled. false: The plugin is disabled
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 开启或关闭插件是否会引发 RabbitMQ 实例重启。true：会重启实例。false：不会重启实例。
+        /// Whether enabling or disabling the plugin will cause a RabbitMQ instance restart. true: The instance will restart. false: The instance will not restart
         /// </summary>
         [Input("needRebootOnChange")]
         public Input<bool>? NeedRebootOnChange { get; set; }
 
         /// <summary>
-        /// 插件名称。
+        /// Plugin name
         /// </summary>
         [Input("pluginName")]
         public Input<string>? PluginName { get; set; }
 
         /// <summary>
-        /// 插件监听的端口。
+        /// Plugin listening port
         /// </summary>
         [Input("port")]
         public Input<int>? Port { get; set; }
 
         /// <summary>
-        /// 插件版本。
+        /// Plugin version
         /// </summary>
         [Input("version")]
         public Input<string>? Version { get; set; }

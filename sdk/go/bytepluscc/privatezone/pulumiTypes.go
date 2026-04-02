@@ -14,13 +14,13 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type ResolverEndpointIpConfig struct {
-	// 终端节点 IP 地址所在的可用区。为了保证高可用，建议您至少添加 2 个可用区。
+	// Availability zone for the endpoint IP address. To ensure high availability, it is recommended to add at least 2 availability zones
 	AzId *string `pulumi:"azId"`
-	// 终端节点的 IPv4 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+	// IPv4 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
 	Ip *string `pulumi:"ip"`
-	// 终端节点的 IPv6 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+	// IPv6 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
 	Ipv6 *string `pulumi:"ipv6"`
-	// 终端节点 IP 地址所在的子网 ID。
+	// Subnet ID for the endpoint IP address
 	SubnetId *string `pulumi:"subnetId"`
 }
 
@@ -36,13 +36,13 @@ type ResolverEndpointIpConfigInput interface {
 }
 
 type ResolverEndpointIpConfigArgs struct {
-	// 终端节点 IP 地址所在的可用区。为了保证高可用，建议您至少添加 2 个可用区。
+	// Availability zone for the endpoint IP address. To ensure high availability, it is recommended to add at least 2 availability zones
 	AzId pulumi.StringPtrInput `pulumi:"azId"`
-	// 终端节点的 IPv4 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+	// IPv4 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
 	Ip pulumi.StringPtrInput `pulumi:"ip"`
-	// 终端节点的 IPv6 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+	// IPv6 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
 	Ipv6 pulumi.StringPtrInput `pulumi:"ipv6"`
-	// 终端节点 IP 地址所在的子网 ID。
+	// Subnet ID for the endpoint IP address
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
@@ -97,22 +97,22 @@ func (o ResolverEndpointIpConfigOutput) ToResolverEndpointIpConfigOutputWithCont
 	return o
 }
 
-// 终端节点 IP 地址所在的可用区。为了保证高可用，建议您至少添加 2 个可用区。
+// Availability zone for the endpoint IP address. To ensure high availability, it is recommended to add at least 2 availability zones
 func (o ResolverEndpointIpConfigOutput) AzId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ResolverEndpointIpConfig) *string { return v.AzId }).(pulumi.StringPtrOutput)
 }
 
-// 终端节点的 IPv4 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+// IPv4 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
 func (o ResolverEndpointIpConfigOutput) Ip() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ResolverEndpointIpConfig) *string { return v.Ip }).(pulumi.StringPtrOutput)
 }
 
-// 终端节点的 IPv6 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+// IPv6 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
 func (o ResolverEndpointIpConfigOutput) Ipv6() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ResolverEndpointIpConfig) *string { return v.Ipv6 }).(pulumi.StringPtrOutput)
 }
 
-// 终端节点 IP 地址所在的子网 ID。
+// Subnet ID for the endpoint IP address
 func (o ResolverEndpointIpConfigOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ResolverEndpointIpConfig) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
@@ -138,9 +138,9 @@ func (o ResolverEndpointIpConfigArrayOutput) Index(i pulumi.IntInput) ResolverEn
 }
 
 type ResolverEndpointTag struct {
-	// 用户标签的标签键。
+	// User tag key
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value
 	Value *string `pulumi:"value"`
 }
 
@@ -156,9 +156,9 @@ type ResolverEndpointTagInput interface {
 }
 
 type ResolverEndpointTagArgs struct {
-	// 用户标签的标签键。
+	// User tag key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -213,12 +213,12 @@ func (o ResolverEndpointTagOutput) ToResolverEndpointTagOutputWithContext(ctx co
 	return o
 }
 
-// 用户标签的标签键。
+// User tag key
 func (o ResolverEndpointTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ResolverEndpointTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。
+// User tag value
 func (o ResolverEndpointTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ResolverEndpointTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -244,9 +244,9 @@ func (o ResolverEndpointTagArrayOutput) Index(i pulumi.IntInput) ResolverEndpoin
 }
 
 type ResolverRuleForwardIP struct {
-	// VPC 外部的 DNS 服务器的 IP 地址。
+	// IP address of the external DNS server for the VPC
 	Ip *string `pulumi:"ip"`
-	// VPC 外部的 DNS 服务器的端口。
+	// Port of the external DNS server for the VPC
 	Port *int `pulumi:"port"`
 }
 
@@ -262,9 +262,9 @@ type ResolverRuleForwardIPInput interface {
 }
 
 type ResolverRuleForwardIPArgs struct {
-	// VPC 外部的 DNS 服务器的 IP 地址。
+	// IP address of the external DNS server for the VPC
 	Ip pulumi.StringPtrInput `pulumi:"ip"`
-	// VPC 外部的 DNS 服务器的端口。
+	// Port of the external DNS server for the VPC
 	Port pulumi.IntPtrInput `pulumi:"port"`
 }
 
@@ -319,12 +319,12 @@ func (o ResolverRuleForwardIPOutput) ToResolverRuleForwardIPOutputWithContext(ct
 	return o
 }
 
-// VPC 外部的 DNS 服务器的 IP 地址。
+// IP address of the external DNS server for the VPC
 func (o ResolverRuleForwardIPOutput) Ip() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ResolverRuleForwardIP) *string { return v.Ip }).(pulumi.StringPtrOutput)
 }
 
-// VPC 外部的 DNS 服务器的端口。
+// Port of the external DNS server for the VPC
 func (o ResolverRuleForwardIPOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ResolverRuleForwardIP) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
@@ -350,9 +350,9 @@ func (o ResolverRuleForwardIPArrayOutput) Index(i pulumi.IntInput) ResolverRuleF
 }
 
 type ResolverRuleTag struct {
-	// 用户标签的标签键。
+	// Tag key for the user tag
 	Key *string `pulumi:"key"`
-	// 用户标签的标签值。
+	// Tag value for the user tag
 	Value *string `pulumi:"value"`
 }
 
@@ -368,9 +368,9 @@ type ResolverRuleTagInput interface {
 }
 
 type ResolverRuleTagArgs struct {
-	// 用户标签的标签键。
+	// Tag key for the user tag
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// Tag value for the user tag
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -425,12 +425,12 @@ func (o ResolverRuleTagOutput) ToResolverRuleTagOutputWithContext(ctx context.Co
 	return o
 }
 
-// 用户标签的标签键。
+// Tag key for the user tag
 func (o ResolverRuleTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ResolverRuleTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 用户标签的标签值。
+// Tag value for the user tag
 func (o ResolverRuleTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ResolverRuleTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -456,9 +456,9 @@ func (o ResolverRuleTagArrayOutput) Index(i pulumi.IntInput) ResolverRuleTagOutp
 }
 
 type ResolverRuleVpC struct {
-	// VPC 的地域。
+	// Region of the VPC
 	Region *string `pulumi:"region"`
-	// VPC 的 ID。
+	// VPC ID
 	VpcId *string `pulumi:"vpcId"`
 }
 
@@ -474,9 +474,9 @@ type ResolverRuleVpCInput interface {
 }
 
 type ResolverRuleVpCArgs struct {
-	// VPC 的地域。
+	// Region of the VPC
 	Region pulumi.StringPtrInput `pulumi:"region"`
-	// VPC 的 ID。
+	// VPC ID
 	VpcId pulumi.StringPtrInput `pulumi:"vpcId"`
 }
 
@@ -531,12 +531,12 @@ func (o ResolverRuleVpCOutput) ToResolverRuleVpCOutputWithContext(ctx context.Co
 	return o
 }
 
-// VPC 的地域。
+// Region of the VPC
 func (o ResolverRuleVpCOutput) Region() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ResolverRuleVpC) *string { return v.Region }).(pulumi.StringPtrOutput)
 }
 
-// VPC 的 ID。
+// VPC ID
 func (o ResolverRuleVpCOutput) VpcId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ResolverRuleVpC) *string { return v.VpcId }).(pulumi.StringPtrOutput)
 }
@@ -562,13 +562,13 @@ func (o ResolverRuleVpCArrayOutput) Index(i pulumi.IntInput) ResolverRuleVpCOutp
 }
 
 type GetResolverEndpointIpConfig struct {
-	// 终端节点 IP 地址所在的可用区。为了保证高可用，建议您至少添加 2 个可用区。
+	// Availability zone for the endpoint IP address. To ensure high availability, it is recommended to add at least 2 availability zones
 	AzId string `pulumi:"azId"`
-	// 终端节点的 IPv4 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+	// IPv4 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
 	Ip string `pulumi:"ip"`
-	// 终端节点的 IPv6 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+	// IPv6 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
 	Ipv6 string `pulumi:"ipv6"`
-	// 终端节点 IP 地址所在的子网 ID。
+	// Subnet ID for the endpoint IP address
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -584,13 +584,13 @@ type GetResolverEndpointIpConfigInput interface {
 }
 
 type GetResolverEndpointIpConfigArgs struct {
-	// 终端节点 IP 地址所在的可用区。为了保证高可用，建议您至少添加 2 个可用区。
+	// Availability zone for the endpoint IP address. To ensure high availability, it is recommended to add at least 2 availability zones
 	AzId pulumi.StringInput `pulumi:"azId"`
-	// 终端节点的 IPv4 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+	// IPv4 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
 	Ip pulumi.StringInput `pulumi:"ip"`
-	// 终端节点的 IPv6 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+	// IPv6 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
 	Ipv6 pulumi.StringInput `pulumi:"ipv6"`
-	// 终端节点 IP 地址所在的子网 ID。
+	// Subnet ID for the endpoint IP address
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
@@ -645,22 +645,22 @@ func (o GetResolverEndpointIpConfigOutput) ToGetResolverEndpointIpConfigOutputWi
 	return o
 }
 
-// 终端节点 IP 地址所在的可用区。为了保证高可用，建议您至少添加 2 个可用区。
+// Availability zone for the endpoint IP address. To ensure high availability, it is recommended to add at least 2 availability zones
 func (o GetResolverEndpointIpConfigOutput) AzId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolverEndpointIpConfig) string { return v.AzId }).(pulumi.StringOutput)
 }
 
-// 终端节点的 IPv4 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+// IPv4 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
 func (o GetResolverEndpointIpConfigOutput) Ip() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolverEndpointIpConfig) string { return v.Ip }).(pulumi.StringOutput)
 }
 
-// 终端节点的 IPv6 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+// IPv6 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
 func (o GetResolverEndpointIpConfigOutput) Ipv6() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolverEndpointIpConfig) string { return v.Ipv6 }).(pulumi.StringOutput)
 }
 
-// 终端节点 IP 地址所在的子网 ID。
+// Subnet ID for the endpoint IP address
 func (o GetResolverEndpointIpConfigOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolverEndpointIpConfig) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -686,9 +686,9 @@ func (o GetResolverEndpointIpConfigArrayOutput) Index(i pulumi.IntInput) GetReso
 }
 
 type GetResolverEndpointTag struct {
-	// 用户标签的标签键。
+	// User tag key
 	Key string `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value
 	Value string `pulumi:"value"`
 }
 
@@ -704,9 +704,9 @@ type GetResolverEndpointTagInput interface {
 }
 
 type GetResolverEndpointTagArgs struct {
-	// 用户标签的标签键。
+	// User tag key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// User tag value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -761,12 +761,12 @@ func (o GetResolverEndpointTagOutput) ToGetResolverEndpointTagOutputWithContext(
 	return o
 }
 
-// 用户标签的标签键。
+// User tag key
 func (o GetResolverEndpointTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolverEndpointTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。
+// User tag value
 func (o GetResolverEndpointTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolverEndpointTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -792,9 +792,9 @@ func (o GetResolverEndpointTagArrayOutput) Index(i pulumi.IntInput) GetResolverE
 }
 
 type GetResolverRuleForwardIP struct {
-	// VPC 外部的 DNS 服务器的 IP 地址。
+	// IP address of the external DNS server for the VPC
 	Ip string `pulumi:"ip"`
-	// VPC 外部的 DNS 服务器的端口。
+	// Port of the external DNS server for the VPC
 	Port int `pulumi:"port"`
 }
 
@@ -810,9 +810,9 @@ type GetResolverRuleForwardIPInput interface {
 }
 
 type GetResolverRuleForwardIPArgs struct {
-	// VPC 外部的 DNS 服务器的 IP 地址。
+	// IP address of the external DNS server for the VPC
 	Ip pulumi.StringInput `pulumi:"ip"`
-	// VPC 外部的 DNS 服务器的端口。
+	// Port of the external DNS server for the VPC
 	Port pulumi.IntInput `pulumi:"port"`
 }
 
@@ -867,12 +867,12 @@ func (o GetResolverRuleForwardIPOutput) ToGetResolverRuleForwardIPOutputWithCont
 	return o
 }
 
-// VPC 外部的 DNS 服务器的 IP 地址。
+// IP address of the external DNS server for the VPC
 func (o GetResolverRuleForwardIPOutput) Ip() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolverRuleForwardIP) string { return v.Ip }).(pulumi.StringOutput)
 }
 
-// VPC 外部的 DNS 服务器的端口。
+// Port of the external DNS server for the VPC
 func (o GetResolverRuleForwardIPOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetResolverRuleForwardIP) int { return v.Port }).(pulumi.IntOutput)
 }
@@ -898,9 +898,9 @@ func (o GetResolverRuleForwardIPArrayOutput) Index(i pulumi.IntInput) GetResolve
 }
 
 type GetResolverRuleTag struct {
-	// 用户标签的标签键。
+	// Tag key for the user tag
 	Key string `pulumi:"key"`
-	// 用户标签的标签值。
+	// Tag value for the user tag
 	Value string `pulumi:"value"`
 }
 
@@ -916,9 +916,9 @@ type GetResolverRuleTagInput interface {
 }
 
 type GetResolverRuleTagArgs struct {
-	// 用户标签的标签键。
+	// Tag key for the user tag
 	Key pulumi.StringInput `pulumi:"key"`
-	// 用户标签的标签值。
+	// Tag value for the user tag
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -973,12 +973,12 @@ func (o GetResolverRuleTagOutput) ToGetResolverRuleTagOutputWithContext(ctx cont
 	return o
 }
 
-// 用户标签的标签键。
+// Tag key for the user tag
 func (o GetResolverRuleTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolverRuleTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 用户标签的标签值。
+// Tag value for the user tag
 func (o GetResolverRuleTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolverRuleTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -1004,13 +1004,13 @@ func (o GetResolverRuleTagArrayOutput) Index(i pulumi.IntInput) GetResolverRuleT
 }
 
 type GetResolverRuleVpC struct {
-	// 创建该 VPC 的账号 ID。
+	// Account ID that created the VPC
 	AccountId string `pulumi:"accountId"`
-	// VPC 的地域。
+	// Region of the VPC
 	Region string `pulumi:"region"`
-	// VPC 的地域的名称。
+	// Name of the VPC region
 	RegionName string `pulumi:"regionName"`
-	// VPC 的 ID。
+	// VPC ID
 	VpcId string `pulumi:"vpcId"`
 }
 
@@ -1026,13 +1026,13 @@ type GetResolverRuleVpCInput interface {
 }
 
 type GetResolverRuleVpCArgs struct {
-	// 创建该 VPC 的账号 ID。
+	// Account ID that created the VPC
 	AccountId pulumi.StringInput `pulumi:"accountId"`
-	// VPC 的地域。
+	// Region of the VPC
 	Region pulumi.StringInput `pulumi:"region"`
-	// VPC 的地域的名称。
+	// Name of the VPC region
 	RegionName pulumi.StringInput `pulumi:"regionName"`
-	// VPC 的 ID。
+	// VPC ID
 	VpcId pulumi.StringInput `pulumi:"vpcId"`
 }
 
@@ -1087,22 +1087,22 @@ func (o GetResolverRuleVpCOutput) ToGetResolverRuleVpCOutputWithContext(ctx cont
 	return o
 }
 
-// 创建该 VPC 的账号 ID。
+// Account ID that created the VPC
 func (o GetResolverRuleVpCOutput) AccountId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolverRuleVpC) string { return v.AccountId }).(pulumi.StringOutput)
 }
 
-// VPC 的地域。
+// Region of the VPC
 func (o GetResolverRuleVpCOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolverRuleVpC) string { return v.Region }).(pulumi.StringOutput)
 }
 
-// VPC 的地域的名称。
+// Name of the VPC region
 func (o GetResolverRuleVpCOutput) RegionName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolverRuleVpC) string { return v.RegionName }).(pulumi.StringOutput)
 }
 
-// VPC 的 ID。
+// VPC ID
 func (o GetResolverRuleVpCOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolverRuleVpC) string { return v.VpcId }).(pulumi.StringOutput)
 }

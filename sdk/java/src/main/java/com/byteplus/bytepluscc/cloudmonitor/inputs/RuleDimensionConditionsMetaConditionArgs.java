@@ -19,14 +19,14 @@ public final class RuleDimensionConditionsMetaConditionArgs extends com.pulumi.r
     public static final RuleDimensionConditionsMetaConditionArgs Empty = new RuleDimensionConditionsMetaConditionArgs();
 
     /**
-     * 是否为全量资源。true：全部资源。false：部分资源。
+     * Whether all resources are included. true: All resources. false: Partial resources.
      * 
      */
     @Import(name="allDimensions")
     private @Nullable Output<Boolean> allDimensions;
 
     /**
-     * @return 是否为全量资源。true：全部资源。false：部分资源。
+     * @return Whether all resources are included. true: All resources. false: Partial resources.
      * 
      */
     public Optional<Output<Boolean>> allDimensions() {
@@ -34,14 +34,14 @@ public final class RuleDimensionConditionsMetaConditionArgs extends com.pulumi.r
     }
 
     /**
-     * 判断条件。and：全部满足。or：任意满足。
+     * Condition. and: All conditions met. or: Any condition met.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<String> condition;
 
     /**
-     * @return 判断条件。and：全部满足。or：任意满足。
+     * @return Condition. and: All conditions met. or: Any condition met.
      * 
      */
     public Optional<Output<String>> condition() {
@@ -82,7 +82,7 @@ public final class RuleDimensionConditionsMetaConditionArgs extends com.pulumi.r
         }
 
         /**
-         * @param allDimensions 是否为全量资源。true：全部资源。false：部分资源。
+         * @param allDimensions Whether all resources are included. true: All resources. false: Partial resources.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class RuleDimensionConditionsMetaConditionArgs extends com.pulumi.r
         }
 
         /**
-         * @param allDimensions 是否为全量资源。true：全部资源。false：部分资源。
+         * @param allDimensions Whether all resources are included. true: All resources. false: Partial resources.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class RuleDimensionConditionsMetaConditionArgs extends com.pulumi.r
         }
 
         /**
-         * @param condition 判断条件。and：全部满足。or：任意满足。
+         * @param condition Condition. and: All conditions met. or: Any condition met.
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class RuleDimensionConditionsMetaConditionArgs extends com.pulumi.r
         }
 
         /**
-         * @param condition 判断条件。and：全部满足。or：任意满足。
+         * @param condition Condition. and: All conditions met. or: Any condition met.
          * 
          * @return builder
          * 

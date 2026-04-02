@@ -15,27 +15,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Outputs
     public sealed class GroupTopicInfoPartitionInfo
     {
         /// <summary>
-        /// 当前消费位点。
+        /// Current consumption position.
         /// </summary>
         public readonly int? CurrentOffset;
         /// <summary>
-        /// Consumer Group 的名称。
+        /// Name of the Consumer Group.
         /// </summary>
         public readonly string? GroupName;
         /// <summary>
-        /// 分区中未被消费的消息条数。
+        /// Number of unconsumed messages in the partition.
         /// </summary>
         public readonly int? Lag;
         /// <summary>
-        /// 最新消费位点。
+        /// Latest consumption position.
         /// </summary>
         public readonly int? LatestOffset;
         /// <summary>
-        /// 分区序号。
+        /// Partition number.
         /// </summary>
         public readonly int? PartitionId;
         /// <summary>
-        /// Consumer Group 订阅的 Topic 名称。
+        /// Name of the Topic subscribed by the Consumer Group.
         /// </summary>
         public readonly string? TopicName;
 

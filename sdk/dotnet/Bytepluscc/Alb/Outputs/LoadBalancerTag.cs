@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class LoadBalancerTag
     {
         /// <summary>
-        /// 标签的键，用于标识标签的类别。
+        /// Tag key, used to identify the tag category.
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// 标签的值，用于标识具体的标签内容。
+        /// Tag value used to identify the specific tag content.
         /// </summary>
         public readonly string? Value;
 

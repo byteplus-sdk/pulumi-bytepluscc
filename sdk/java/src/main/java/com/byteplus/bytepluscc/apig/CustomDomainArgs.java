@@ -19,14 +19,14 @@ public final class CustomDomainArgs extends com.pulumi.resources.ResourceArgs {
     public static final CustomDomainArgs Empty = new CustomDomainArgs();
 
     /**
-     * 自定义域名证书ID。
+     * Custom Domain Certificate ID
      * 
      */
     @Import(name="certificateId")
     private @Nullable Output<String> certificateId;
 
     /**
-     * @return 自定义域名证书ID。
+     * @return Custom Domain Certificate ID
      * 
      */
     public Optional<Output<String>> certificateId() {
@@ -34,14 +34,14 @@ public final class CustomDomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备注。
+     * Remarks
      * 
      */
     @Import(name="comments")
     private @Nullable Output<String> comments;
 
     /**
-     * @return 备注。
+     * @return Remarks
      * 
      */
     public Optional<Output<String>> comments() {
@@ -49,14 +49,14 @@ public final class CustomDomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 自定义域名。
+     * Custom Domain
      * 
      */
     @Import(name="domain", required=true)
     private Output<String> domain;
 
     /**
-     * @return 自定义域名。
+     * @return Custom Domain
      * 
      */
     public Output<String> domain() {
@@ -64,14 +64,14 @@ public final class CustomDomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 协议，取值：HTTP。HTTPS。
+     * Protocol. Values: HTTP, HTTPS
      * 
      */
     @Import(name="protocols", required=true)
     private Output<List<String>> protocols;
 
     /**
-     * @return 协议，取值：HTTP。HTTPS。
+     * @return Protocol. Values: HTTP, HTTPS
      * 
      */
     public Output<List<String>> protocols() {
@@ -79,14 +79,14 @@ public final class CustomDomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 服务ID。
+     * Service ID
      * 
      */
     @Import(name="serviceId", required=true)
     private Output<String> serviceId;
 
     /**
-     * @return 服务ID。
+     * @return Service ID
      * 
      */
     public Output<String> serviceId() {
@@ -94,14 +94,14 @@ public final class CustomDomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 重定向到HTTPS。
+     * Redirect to HTTPS
      * 
      */
     @Import(name="sslRedirect")
     private @Nullable Output<Boolean> sslRedirect;
 
     /**
-     * @return 重定向到HTTPS。
+     * @return Redirect to HTTPS
      * 
      */
     public Optional<Output<Boolean>> sslRedirect() {
@@ -138,7 +138,7 @@ public final class CustomDomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateId 自定义域名证书ID。
+         * @param certificateId Custom Domain Certificate ID
          * 
          * @return builder
          * 
@@ -149,7 +149,7 @@ public final class CustomDomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateId 自定义域名证书ID。
+         * @param certificateId Custom Domain Certificate ID
          * 
          * @return builder
          * 
@@ -159,7 +159,7 @@ public final class CustomDomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param comments 备注。
+         * @param comments Remarks
          * 
          * @return builder
          * 
@@ -170,7 +170,7 @@ public final class CustomDomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param comments 备注。
+         * @param comments Remarks
          * 
          * @return builder
          * 
@@ -180,7 +180,7 @@ public final class CustomDomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param domain 自定义域名。
+         * @param domain Custom Domain
          * 
          * @return builder
          * 
@@ -191,7 +191,7 @@ public final class CustomDomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param domain 自定义域名。
+         * @param domain Custom Domain
          * 
          * @return builder
          * 
@@ -201,7 +201,7 @@ public final class CustomDomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocols 协议，取值：HTTP。HTTPS。
+         * @param protocols Protocol. Values: HTTP, HTTPS
          * 
          * @return builder
          * 
@@ -212,7 +212,7 @@ public final class CustomDomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocols 协议，取值：HTTP。HTTPS。
+         * @param protocols Protocol. Values: HTTP, HTTPS
          * 
          * @return builder
          * 
@@ -222,7 +222,7 @@ public final class CustomDomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocols 协议，取值：HTTP。HTTPS。
+         * @param protocols Protocol. Values: HTTP, HTTPS
          * 
          * @return builder
          * 
@@ -232,7 +232,7 @@ public final class CustomDomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serviceId 服务ID。
+         * @param serviceId Service ID
          * 
          * @return builder
          * 
@@ -243,7 +243,7 @@ public final class CustomDomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serviceId 服务ID。
+         * @param serviceId Service ID
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class CustomDomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslRedirect 重定向到HTTPS。
+         * @param sslRedirect Redirect to HTTPS
          * 
          * @return builder
          * 
@@ -264,7 +264,7 @@ public final class CustomDomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslRedirect 重定向到HTTPS。
+         * @param sslRedirect Redirect to HTTPS
          * 
          * @return builder
          * 

@@ -30,35 +30,35 @@ type LookupResolverRuleArgs struct {
 
 // A collection of values returned by getResolverRule.
 type LookupResolverRuleResult struct {
-	// 转发规则的创建时间
+	// Creation time of the forwarding rule
 	CreatedTime string `pulumi:"createdTime"`
-	// 转发规则是否被启用。true：启用。false：禁用。
+	// Whether the forwarding rule is enabled. true: enabled. false: disabled
 	Enable bool `pulumi:"enable"`
-	// 终端节点的 ID。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
+	// Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
 	EndpointId int `pulumi:"endpointId"`
-	// 外部的 DNS 服务器的 IP 地址和端口。您最多只能添加 10 个 IP 地址。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
+	// IP address and port of the external DNS server. You can add up to 10 IP addresses. This parameter is only valid and required when the Type parameter is OUTBOUND
 	ForwardIPs []GetResolverRuleForwardIP `pulumi:"forwardIPs"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 最近一次更新转发规则的账号的 ID
+	// Account ID of the last update to the forwarding rule
 	LastOperator string `pulumi:"lastOperator"`
-	// 递归 DNS 服务器的出口 IP 地址的运营商。该参数仅在 Type 参数是 LINE 时有效。支持的取值：移动：中国移动，电信：中国电信，联通：中国联通
+	// Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
 	Line string `pulumi:"line"`
-	// 转发规则的名称。支持 UTF-8 格式。
+	// Name of the forwarding rule. Supports UTF-8 format
 	Name string `pulumi:"name"`
-	// 转发规则所属的项目名称。默认为 default。
+	// Project name associated with the forwarding rule. Default is default
 	ProjectName string `pulumi:"projectName"`
-	// 转发规则的 ID。
+	// Forwarding rule ID
 	RuleId string `pulumi:"ruleId"`
-	// 转发规则所属的一个或多个标签
+	// One or more tags associated with the forwarding rule
 	Tags []GetResolverRuleTag `pulumi:"tags"`
-	// 转发规则类型。OUTBOUND：转发到外部的 DNS 服务器。LINE：自定义公网递归 DNS 服务器的出口 IP 地址的运营商。
+	// Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
 	Type string `pulumi:"type"`
-	// 转发规则的更新时间
+	// Update time of the forwarding rule
 	UpdatedTime string `pulumi:"updatedTime"`
-	// 转发规则所关联的 VPC。转发规则在关联的 VPC 中生效。Type 参数是 OUTBOUND 时，VPC 的地域必须和终端节点所在的地域相同。
+	// VPC associated with the forwarding rule. The forwarding rule takes effect in the associated VPC. When the Type parameter is OUTBOUND, the VPC region must match the region of the endpoint
 	VpCs []GetResolverRuleVpC `pulumi:"vpCs"`
-	// 转发规则转发规则所关联的域名。您可以输入一个或多个域名。多个域名之间使用英文逗号, 分隔。最多支持输入 500 个域名。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。如果您把该参数设置为 *，则转发规则适用于 VPC 关联的所有域名。
+	// Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
 	ZoneName string `pulumi:"zoneName"`
 }
 
@@ -96,22 +96,22 @@ func (o LookupResolverRuleResultOutput) ToLookupResolverRuleResultOutputWithCont
 	return o
 }
 
-// 转发规则的创建时间
+// Creation time of the forwarding rule
 func (o LookupResolverRuleResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResolverRuleResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 转发规则是否被启用。true：启用。false：禁用。
+// Whether the forwarding rule is enabled. true: enabled. false: disabled
 func (o LookupResolverRuleResultOutput) Enable() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupResolverRuleResult) bool { return v.Enable }).(pulumi.BoolOutput)
 }
 
-// 终端节点的 ID。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
+// Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
 func (o LookupResolverRuleResultOutput) EndpointId() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupResolverRuleResult) int { return v.EndpointId }).(pulumi.IntOutput)
 }
 
-// 外部的 DNS 服务器的 IP 地址和端口。您最多只能添加 10 个 IP 地址。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
+// IP address and port of the external DNS server. You can add up to 10 IP addresses. This parameter is only valid and required when the Type parameter is OUTBOUND
 func (o LookupResolverRuleResultOutput) ForwardIPs() GetResolverRuleForwardIPArrayOutput {
 	return o.ApplyT(func(v LookupResolverRuleResult) []GetResolverRuleForwardIP { return v.ForwardIPs }).(GetResolverRuleForwardIPArrayOutput)
 }
@@ -121,52 +121,52 @@ func (o LookupResolverRuleResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResolverRuleResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 最近一次更新转发规则的账号的 ID
+// Account ID of the last update to the forwarding rule
 func (o LookupResolverRuleResultOutput) LastOperator() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResolverRuleResult) string { return v.LastOperator }).(pulumi.StringOutput)
 }
 
-// 递归 DNS 服务器的出口 IP 地址的运营商。该参数仅在 Type 参数是 LINE 时有效。支持的取值：移动：中国移动，电信：中国电信，联通：中国联通
+// Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
 func (o LookupResolverRuleResultOutput) Line() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResolverRuleResult) string { return v.Line }).(pulumi.StringOutput)
 }
 
-// 转发规则的名称。支持 UTF-8 格式。
+// Name of the forwarding rule. Supports UTF-8 format
 func (o LookupResolverRuleResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResolverRuleResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 转发规则所属的项目名称。默认为 default。
+// Project name associated with the forwarding rule. Default is default
 func (o LookupResolverRuleResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResolverRuleResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 转发规则的 ID。
+// Forwarding rule ID
 func (o LookupResolverRuleResultOutput) RuleId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResolverRuleResult) string { return v.RuleId }).(pulumi.StringOutput)
 }
 
-// 转发规则所属的一个或多个标签
+// One or more tags associated with the forwarding rule
 func (o LookupResolverRuleResultOutput) Tags() GetResolverRuleTagArrayOutput {
 	return o.ApplyT(func(v LookupResolverRuleResult) []GetResolverRuleTag { return v.Tags }).(GetResolverRuleTagArrayOutput)
 }
 
-// 转发规则类型。OUTBOUND：转发到外部的 DNS 服务器。LINE：自定义公网递归 DNS 服务器的出口 IP 地址的运营商。
+// Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
 func (o LookupResolverRuleResultOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResolverRuleResult) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// 转发规则的更新时间
+// Update time of the forwarding rule
 func (o LookupResolverRuleResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResolverRuleResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// 转发规则所关联的 VPC。转发规则在关联的 VPC 中生效。Type 参数是 OUTBOUND 时，VPC 的地域必须和终端节点所在的地域相同。
+// VPC associated with the forwarding rule. The forwarding rule takes effect in the associated VPC. When the Type parameter is OUTBOUND, the VPC region must match the region of the endpoint
 func (o LookupResolverRuleResultOutput) VpCs() GetResolverRuleVpCArrayOutput {
 	return o.ApplyT(func(v LookupResolverRuleResult) []GetResolverRuleVpC { return v.VpCs }).(GetResolverRuleVpCArrayOutput)
 }
 
-// 转发规则转发规则所关联的域名。您可以输入一个或多个域名。多个域名之间使用英文逗号, 分隔。最多支持输入 500 个域名。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。如果您把该参数设置为 *，则转发规则适用于 VPC 关联的所有域名。
+// Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
 func (o LookupResolverRuleResultOutput) ZoneName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResolverRuleResult) string { return v.ZoneName }).(pulumi.StringOutput)
 }

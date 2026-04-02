@@ -14,37 +14,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
     public sealed class DefaultNodePoolNodeStatisticsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Phase=Creating的节点总数量。
+        /// Total number of nodes with Phase=Creating.
         /// </summary>
         [Input("creatingCount")]
         public Input<int>? CreatingCount { get; set; }
 
         /// <summary>
-        /// Phase=Deleting的节点总数量。
+        /// Total number of nodes with Phase=Deleting.
         /// </summary>
         [Input("deletingCount")]
         public Input<int>? DeletingCount { get; set; }
 
         /// <summary>
-        /// Phase=Failed的节点总数量。
+        /// Total number of nodes with Phase=Failed
         /// </summary>
         [Input("failedCount")]
         public Input<int>? FailedCount { get; set; }
 
         /// <summary>
-        /// Phase=Running的节点总数量。
+        /// Total number of nodes with Phase=Running
         /// </summary>
         [Input("runningCount")]
         public Input<int>? RunningCount { get; set; }
 
         /// <summary>
-        /// 节点池中的节点总数量。
+        /// Total number of nodes in the node pool.
         /// </summary>
         [Input("totalCount")]
         public Input<int>? TotalCount { get; set; }
 
         /// <summary>
-        /// Phase=Updating的节点总数量。
+        /// Total number of nodes with Phase=Updating
         /// </summary>
         [Input("updatingCount")]
         public Input<int>? UpdatingCount { get; set; }

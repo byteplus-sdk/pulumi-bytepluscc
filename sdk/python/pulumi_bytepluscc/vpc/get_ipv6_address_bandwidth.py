@@ -97,7 +97,7 @@ class GetIpv6AddressBandwidthResult:
     @pulumi.getter(name="allocationId")
     def allocation_id(self) -> builtins.str:
         """
-        IPv6公网带宽的ID。
+        IPv6 public bandwidth ID
         """
         return pulumi.get(self, "allocation_id")
 
@@ -105,7 +105,7 @@ class GetIpv6AddressBandwidthResult:
     @pulumi.getter
     def bandwidth(self) -> builtins.int:
         """
-        IPv6公网带宽的带宽上限。
+        IPv6 public bandwidth cap
         """
         return pulumi.get(self, "bandwidth")
 
@@ -113,7 +113,7 @@ class GetIpv6AddressBandwidthResult:
     @pulumi.getter(name="bandwidthPackageId")
     def bandwidth_package_id(self) -> builtins.str:
         """
-        IPv6共享带宽包的ID。
+        IPv6 shared bandwidth package ID
         """
         return pulumi.get(self, "bandwidth_package_id")
 
@@ -121,7 +121,7 @@ class GetIpv6AddressBandwidthResult:
     @pulumi.getter(name="billingType")
     def billing_type(self) -> builtins.int:
         """
-        IPv6公网带宽的计费类型。2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+        IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
         """
         return pulumi.get(self, "billing_type")
 
@@ -129,7 +129,7 @@ class GetIpv6AddressBandwidthResult:
     @pulumi.getter(name="businessStatus")
     def business_status(self) -> builtins.str:
         """
-        IPv6公网带宽是否被锁定。Normal：正常。FinancialLocked：被锁定。
+        Whether IPv6 public bandwidth is locked. Normal: Normal. FinancialLocked: Locked.
         """
         return pulumi.get(self, "business_status")
 
@@ -137,7 +137,7 @@ class GetIpv6AddressBandwidthResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        IPv6公网带宽的开通时间。
+        IPv6 public bandwidth activation time
         """
         return pulumi.get(self, "created_time")
 
@@ -145,7 +145,7 @@ class GetIpv6AddressBandwidthResult:
     @pulumi.getter(name="deletedTime")
     def deleted_time(self) -> builtins.str:
         """
-        IPv6公网带宽的删除时间。
+        IPv6 public bandwidth deletion time
         """
         return pulumi.get(self, "deleted_time")
 
@@ -161,7 +161,7 @@ class GetIpv6AddressBandwidthResult:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> builtins.str:
         """
-        IPv6公网带宽关联的实例ID。
+        Instance ID associated with IPv6 public bandwidth
         """
         return pulumi.get(self, "instance_id")
 
@@ -169,7 +169,7 @@ class GetIpv6AddressBandwidthResult:
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> builtins.str:
         """
-        IPv6公网带宽关联的实例类型。EcsInstance：云服务器实例。ClbInstance：负载均衡。
+        Instance type associated with IPv6 public bandwidth. EcsInstance: Cloud server instance. ClbInstance: Load balancer.
         """
         return pulumi.get(self, "instance_type")
 
@@ -177,7 +177,7 @@ class GetIpv6AddressBandwidthResult:
     @pulumi.getter(name="ipv6Address")
     def ipv6_address(self) -> builtins.str:
         """
-        IPv6地址。
+        IPv6 address
         """
         return pulumi.get(self, "ipv6_address")
 
@@ -185,7 +185,7 @@ class GetIpv6AddressBandwidthResult:
     @pulumi.getter(name="ipv6GatewayId")
     def ipv6_gateway_id(self) -> builtins.str:
         """
-        IPv6网关的ID。
+        IPv6 gateway ID
         """
         return pulumi.get(self, "ipv6_gateway_id")
 
@@ -193,7 +193,7 @@ class GetIpv6AddressBandwidthResult:
     @pulumi.getter
     def isp(self) -> builtins.str:
         """
-        IPv6公网带宽的线路类型。BGP：BGP（多线）。
+        IPv6 public bandwidth line type. BGP: BGP (multi-line).
         """
         return pulumi.get(self, "isp")
 
@@ -201,7 +201,7 @@ class GetIpv6AddressBandwidthResult:
     @pulumi.getter(name="lockReason")
     def lock_reason(self) -> builtins.str:
         """
-        IPv6公网带宽被锁定的原因。该参数只有IPv6公网带宽处于FinancialLocked状态时才有返回值。Financial：因欠费被锁定。Security：因安全被锁定。
+        Reason for IPv6 public bandwidth lock. This parameter is returned only when IPv6 public bandwidth is in FinancialLocked status. Financial: Locked due to overdue payment. Security: Locked due to security reasons.
         """
         return pulumi.get(self, "lock_reason")
 
@@ -209,7 +209,7 @@ class GetIpv6AddressBandwidthResult:
     @pulumi.getter(name="networkType")
     def network_type(self) -> builtins.str:
         """
-        IPv6地址的通信类型。Private：私网通信类型。Public：公网通信类型。
+        IPv6 address communication type. Private: Private network communication type. Public: Public network communication type.
         """
         return pulumi.get(self, "network_type")
 
@@ -217,7 +217,7 @@ class GetIpv6AddressBandwidthResult:
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> builtins.str:
         """
-        IPv6公网带宽欠费关停的时间。
+        IPv6 public bandwidth deactivation time due to overdue payment
         """
         return pulumi.get(self, "overdue_time")
 
@@ -225,7 +225,7 @@ class GetIpv6AddressBandwidthResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        IPv6公网带宽的项目。
+        IPv6 public bandwidth project
         """
         return pulumi.get(self, "project_name")
 
@@ -233,7 +233,7 @@ class GetIpv6AddressBandwidthResult:
     @pulumi.getter(name="serviceManaged")
     def service_managed(self) -> builtins.bool:
         """
-        是否为服务托管。
+        Service hosting status
         """
         return pulumi.get(self, "service_managed")
 
@@ -241,7 +241,7 @@ class GetIpv6AddressBandwidthResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        IPv6公网带宽的状态。Creating：创建中。Available：可用。
+        IPv6 public bandwidth status. Creating: Creating. Available: Available.
         """
         return pulumi.get(self, "status")
 
@@ -249,7 +249,7 @@ class GetIpv6AddressBandwidthResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetIpv6AddressBandwidthTagResult']:
         """
-        标签信息
+        Tag information
         """
         return pulumi.get(self, "tags")
 
@@ -257,7 +257,7 @@ class GetIpv6AddressBandwidthResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        IPv6公网带宽的最近操作时间。
+        IPv6 public bandwidth last operation time
         """
         return pulumi.get(self, "updated_time")
 

@@ -11,62 +11,62 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceRdmaNetworkInterfaceDetail {
     /**
-     * @return 网关地址。
+     * @return Gateway address.
      * 
      */
     private String gateway;
     /**
-     * @return IP地址。
+     * @return IP address
      * 
      */
     private String ip;
     /**
-     * @return 子网掩码。
+     * @return Subnet mask.
      * 
      */
     private String mask;
     /**
-     * @return 交换机名称。
+     * @return Switch name.
      * 
      */
     private String switchName;
     /**
-     * @return 交换机端口。
+     * @return Switch port.
      * 
      */
     private String switchPort;
 
     private GetInstanceRdmaNetworkInterfaceDetail() {}
     /**
-     * @return 网关地址。
+     * @return Gateway address.
      * 
      */
     public String gateway() {
         return this.gateway;
     }
     /**
-     * @return IP地址。
+     * @return IP address
      * 
      */
     public String ip() {
         return this.ip;
     }
     /**
-     * @return 子网掩码。
+     * @return Subnet mask.
      * 
      */
     public String mask() {
         return this.mask;
     }
     /**
-     * @return 交换机名称。
+     * @return Switch name.
      * 
      */
     public String switchName() {
         return this.switchName;
     }
     /**
-     * @return 交换机端口。
+     * @return Switch port.
      * 
      */
     public String switchPort() {

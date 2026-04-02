@@ -20,14 +20,14 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
     public static final TransitRouterArgs Empty = new TransitRouterArgs();
 
     /**
-     * 中转路由器的ASN号。取值范围为64512 ～ 65534 和 4200000000 ～ 4294967294，默认值为64512。
+     * ASN of the transit router. Value range: 64512–65534 and 4200000000–4294967294. Default value: 64512
      * 
      */
     @Import(name="asn")
     private @Nullable Output<Integer> asn;
 
     /**
-     * @return 中转路由器的ASN号。取值范围为64512 ～ 65534 和 4200000000 ～ 4294967294，默认值为64512。
+     * @return ASN of the transit router. Value range: 64512–65534 and 4200000000–4294967294. Default value: 64512
      * 
      */
     public Optional<Output<Integer>> asn() {
@@ -35,14 +35,14 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * Description of the transit router instance. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is entered, the default is an empty string
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+     * @return Description of the transit router instance. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is entered, the default is an empty string
      * 
      */
     public Optional<Output<String>> description() {
@@ -50,14 +50,14 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+     * Whether multicast is enabled for the transit router. true: enabled. false (default): not enabled
      * 
      */
     @Import(name="multicastEnabled")
     private @Nullable Output<Boolean> multicastEnabled;
 
     /**
-     * @return 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+     * @return Whether multicast is enabled for the transit router. true: enabled. false (default): not enabled
      * 
      */
     public Optional<Output<Boolean>> multicastEnabled() {
@@ -65,14 +65,14 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
+     * Name of the project to which the transit router instance belongs. If this parameter is not provided or no value is entered, the default is &#39;default&#39;
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
+     * @return Name of the project to which the transit router instance belongs. If this parameter is not provided or no value is entered, the default is &#39;default&#39;
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -87,14 +87,14 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 中转路由器实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为中转路由器实例的ID。
+     * Name of the transit router instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
      * 
      */
     @Import(name="transitRouterName")
     private @Nullable Output<String> transitRouterName;
 
     /**
-     * @return 中转路由器实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为中转路由器实例的ID。
+     * @return Name of the transit router instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
      * 
      */
     public Optional<Output<String>> transitRouterName() {
@@ -131,7 +131,7 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param asn 中转路由器的ASN号。取值范围为64512 ～ 65534 和 4200000000 ～ 4294967294，默认值为64512。
+         * @param asn ASN of the transit router. Value range: 64512–65534 and 4200000000–4294967294. Default value: 64512
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param asn 中转路由器的ASN号。取值范围为64512 ～ 65534 和 4200000000 ～ 4294967294，默认值为64512。
+         * @param asn ASN of the transit router. Value range: 64512–65534 and 4200000000–4294967294. Default value: 64512
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+         * @param description Description of the transit router instance. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is entered, the default is an empty string
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 中转路由器实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+         * @param description Description of the transit router instance. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is entered, the default is an empty string
          * 
          * @return builder
          * 
@@ -173,7 +173,7 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param multicastEnabled 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+         * @param multicastEnabled Whether multicast is enabled for the transit router. true: enabled. false (default): not enabled
          * 
          * @return builder
          * 
@@ -184,7 +184,7 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param multicastEnabled 中转路由器是否开启组播。true：开启。false（默认值）：不开启
+         * @param multicastEnabled Whether multicast is enabled for the transit router. true: enabled. false (default): not enabled
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
+         * @param projectName Name of the project to which the transit router instance belongs. If this parameter is not provided or no value is entered, the default is &#39;default&#39;
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 中转路由器实例所属项目的名称。不传入该参数或该参数不传入数值时，默认为default。
+         * @param projectName Name of the project to which the transit router instance belongs. If this parameter is not provided or no value is entered, the default is &#39;default&#39;
          * 
          * @return builder
          * 
@@ -228,7 +228,7 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param transitRouterName 中转路由器实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为中转路由器实例的ID。
+         * @param transitRouterName Name of the transit router instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
          * 
          * @return builder
          * 
@@ -239,7 +239,7 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param transitRouterName 中转路由器实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为中转路由器实例的ID。
+         * @param transitRouterName Name of the transit router instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
          * 
          * @return builder
          * 

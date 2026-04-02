@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GetUpstreamVersionDetailLabelResult
     {
         /// <summary>
-        /// 键。
+        /// Key
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// 值。
+        /// Value
         /// </summary>
         public readonly string Value;
 

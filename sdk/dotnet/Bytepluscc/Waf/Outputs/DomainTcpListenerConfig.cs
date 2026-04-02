@@ -15,35 +15,35 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf.Outputs
     public sealed class DomainTcpListenerConfig
     {
         /// <summary>
-        /// 接入协议类型。
+        /// Access protocol type
         /// </summary>
         public readonly string? AccessProtocol;
         /// <summary>
-        /// 防护模式。
+        /// Protection mode
         /// </summary>
         public readonly int? DefenceMode;
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID.
         /// </summary>
         public readonly string? InstanceId;
         /// <summary>
-        /// 实例名称。
+        /// Instance name.
         /// </summary>
         public readonly string? InstanceName;
         /// <summary>
-        /// 监听器 ID。
+        /// Listener ID.
         /// </summary>
         public readonly string? ListenerId;
         /// <summary>
-        /// 是否从 ALB 中丢失关联。
+        /// Disassociated from ALB
         /// </summary>
         public readonly int? LostAssociationFromAlb;
         /// <summary>
-        /// 监听器的端口号。
+        /// Listener port number
         /// </summary>
         public readonly string? Port;
         /// <summary>
-        /// 监听器协议类型。
+        /// Listener protocol type.
         /// </summary>
         public readonly string? Protocol;
 

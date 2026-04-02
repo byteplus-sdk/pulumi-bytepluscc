@@ -16,14 +16,14 @@ public final class NodeKubernetesConfigLabelArgs extends com.pulumi.resources.Re
     public static final NodeKubernetesConfigLabelArgs Empty = new NodeKubernetesConfigLabelArgs();
 
     /**
-     * 标签键，有效的标签键有两个段：&lt;前缀&gt;和&lt;名称&gt;，用斜杠（/）分隔。&lt;名称&gt;是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。&lt;前缀&gt;是可选的。如果指定&lt;前缀&gt;，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。&lt;前缀&gt;和&lt;名称&gt;总长度不超过 82 个字符。
+     * Label key. A valid label key consists of two parts: \n\n and \n\n, separated by a slash (/). \n\n is required and supports uppercase and lowercase English letters, numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and must not exceed 63 characters. \n\n is optional. If specified, \n\n must be a DNS subdomain: a series of DNS labels separated by periods (.), with a maximum length of 253 characters. The total length of \n\n and \n\n must not exceed 82 characters.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 标签键，有效的标签键有两个段：&lt;前缀&gt;和&lt;名称&gt;，用斜杠（/）分隔。&lt;名称&gt;是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。&lt;前缀&gt;是可选的。如果指定&lt;前缀&gt;，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。&lt;前缀&gt;和&lt;名称&gt;总长度不超过 82 个字符。
+     * @return Label key. A valid label key consists of two parts: \n\n and \n\n, separated by a slash (/). \n\n is required and supports uppercase and lowercase English letters, numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and must not exceed 63 characters. \n\n is optional. If specified, \n\n must be a DNS subdomain: a series of DNS labels separated by periods (.), with a maximum length of 253 characters. The total length of \n\n and \n\n must not exceed 82 characters.
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class NodeKubernetesConfigLabelArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 标签值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+     * Tag value, up to 63 characters (can be empty). Can start and end with an English letter (upper or lower case) or a digit. Supported special characters: hyphen (-), underscore (_), period (.).
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 标签值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+     * @return Tag value, up to 63 characters (can be empty). Can start and end with an English letter (upper or lower case) or a digit. Supported special characters: hyphen (-), underscore (_), period (.).
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class NodeKubernetesConfigLabelArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param key 标签键，有效的标签键有两个段：&lt;前缀&gt;和&lt;名称&gt;，用斜杠（/）分隔。&lt;名称&gt;是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。&lt;前缀&gt;是可选的。如果指定&lt;前缀&gt;，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。&lt;前缀&gt;和&lt;名称&gt;总长度不超过 82 个字符。
+         * @param key Label key. A valid label key consists of two parts: \n\n and \n\n, separated by a slash (/). \n\n is required and supports uppercase and lowercase English letters, numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and must not exceed 63 characters. \n\n is optional. If specified, \n\n must be a DNS subdomain: a series of DNS labels separated by periods (.), with a maximum length of 253 characters. The total length of \n\n and \n\n must not exceed 82 characters.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class NodeKubernetesConfigLabelArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param key 标签键，有效的标签键有两个段：&lt;前缀&gt;和&lt;名称&gt;，用斜杠（/）分隔。&lt;名称&gt;是必须的，支持英文大小写字母、数字、短划线（-）、下划线（_）、英文句号（ .），以字母或数字开头和结尾，长度不超过 63 个字符。&lt;前缀&gt;是可选的。如果指定&lt;前缀&gt;，则必须是 DNS 子域：由英文句号（.）分隔的一系列 DNS 标签，长度不超过 253 个字符。&lt;前缀&gt;和&lt;名称&gt;总长度不超过 82 个字符。
+         * @param key Label key. A valid label key consists of two parts: \n\n and \n\n, separated by a slash (/). \n\n is required and supports uppercase and lowercase English letters, numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and must not exceed 63 characters. \n\n is optional. If specified, \n\n must be a DNS subdomain: a series of DNS labels separated by periods (.), with a maximum length of 253 characters. The total length of \n\n and \n\n must not exceed 82 characters.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class NodeKubernetesConfigLabelArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param value 标签值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+         * @param value Tag value, up to 63 characters (can be empty). Can start and end with an English letter (upper or lower case) or a digit. Supported special characters: hyphen (-), underscore (_), period (.).
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class NodeKubernetesConfigLabelArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param value 标签值，长度不超过 63 个字符（可以为空）。支持以英文大小写字母、数字开头和结尾。支持特殊字符：短划线（-）、下划线（_）、英文句号（.）。
+         * @param value Tag value, up to 63 characters (can be empty). Can start and end with an English letter (upper or lower case) or a digit. Supported special characters: hyphen (-), underscore (_), period (.).
          * 
          * @return builder
          * 

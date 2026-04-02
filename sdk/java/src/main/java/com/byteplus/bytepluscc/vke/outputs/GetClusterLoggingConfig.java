@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetClusterLoggingConfig {
     /**
-     * @return 集群的日志项目（Log Project）ID。 如果为空，表示集群的日志项目未被创建。
+     * @return Cluster log project (Log Project) ID. If empty, the cluster log project has not been created.
      * 
      */
     private String logProjectId;
     /**
-     * @return 集群的日志选项信息。
+     * @return Cluster log option information.
      * 
      */
     private List<GetClusterLoggingConfigLogSetup> logSetups;
 
     private GetClusterLoggingConfig() {}
     /**
-     * @return 集群的日志项目（Log Project）ID。 如果为空，表示集群的日志项目未被创建。
+     * @return Cluster log project (Log Project) ID. If empty, the cluster log project has not been created.
      * 
      */
     public String logProjectId() {
         return this.logProjectId;
     }
     /**
-     * @return 集群的日志选项信息。
+     * @return Cluster log option information.
      * 
      */
     public List<GetClusterLoggingConfigLogSetup> logSetups() {

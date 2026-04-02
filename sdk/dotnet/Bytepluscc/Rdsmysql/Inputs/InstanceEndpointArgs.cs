@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Inputs
     public sealed class InstanceEndpointArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入Disable：不自动加入（默认）。
+        /// When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
         /// </summary>
         [Input("autoAddNewNodes")]
         public Input<string>? AutoAddNewNodes { get; set; }
@@ -23,7 +23,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Inputs
         private InputList<string>? _connectionInfoTags;
 
         /// <summary>
-        /// 连接终端标签。
+        /// Connection endpoint tag.
         /// </summary>
         public InputList<string> ConnectionInfoTags
         {
@@ -32,103 +32,103 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Inputs
         }
 
         /// <summary>
-        /// 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。
+        /// Connection endpoint type. Values: Proxy: proxy endpoint. Direct: direct endpoint
         /// </summary>
         [Input("connectionMode")]
         public Input<string>? ConnectionMode { get; set; }
 
         /// <summary>
-        /// 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。
+        /// Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
         /// </summary>
         [Input("connectionPoolType")]
         public Input<string>? ConnectionPoolType { get; set; }
 
         /// <summary>
-        /// 连接终端的描述信息。
+        /// Description of the connection endpoint
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 是否启用连接保持。取值：true：是。false：否。
+        /// Enable connection keep-alive. Options: true: yes. false: no
         /// </summary>
         [Input("enableConnectionPersistent")]
         public Input<bool>? EnableConnectionPersistent { get; set; }
 
         /// <summary>
-        /// 是否已开启全局只读，取值：Enable：开启。Disable：未开启。
+        /// Is global read-only enabled? Values: Enable: enabled. Disable: not enabled.
         /// </summary>
         [Input("enableReadOnly")]
         public Input<string>? EnableReadOnly { get; set; }
 
         /// <summary>
-        /// 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+        /// Whether to enable read/write separation. Values: Enable: Enabled. Disable: Not enabled.
         /// </summary>
         [Input("enableReadWriteSplitting")]
         public Input<string>? EnableReadWriteSplitting { get; set; }
 
         /// <summary>
-        /// 实例连接终端 ID。
+        /// Instance connection endpoint ID.
         /// </summary>
         [Input("endpointId")]
         public Input<string>? EndpointId { get; set; }
 
         /// <summary>
-        /// 实例连接终端名称。
+        /// Instance connection endpoint name.
         /// </summary>
         [Input("endpointName")]
         public Input<string>? EndpointName { get; set; }
 
         /// <summary>
-        /// 终端类型。取值为 Custom，自定义终端。
+        /// Endpoint type. Value: Custom, custom endpoint.
         /// </summary>
         [Input("endpointType")]
         public Input<string>? EndpointType { get; set; }
 
         /// <summary>
-        /// 空闲连接回收功能是否开启。true：开启。false：不开启。
+        /// Whether the idle connection recycling feature is enabled. true: Enabled. false: Not enabled.
         /// </summary>
         [Input("idleConnectionReclaim")]
         public Input<bool>? IdleConnectionReclaim { get; set; }
 
         /// <summary>
-        /// 是否开启事务分离。取值：true：是。false：否。
+        /// Whether to enable transaction separation. Values: true: Yes. false: No.
         /// </summary>
         [Input("implicitTransSplit")]
         public Input<bool>? ImplicitTransSplit { get; set; }
 
         /// <summary>
-        /// 是否开启主节点路由。取值：true：是。false：否。
+        /// Whether to enable primary node routing. Values: true: Yes. false: No.
         /// </summary>
         [Input("masterNodeRouting")]
         public Input<bool>? MasterNodeRouting { get; set; }
 
         /// <summary>
-        /// 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。
+        /// Overload protection timeout. Value range: integer between 60 and 7200, in seconds.
         /// </summary>
         [Input("masterProtectorTimeout")]
         public Input<int>? MasterProtectorTimeout { get; set; }
 
         /// <summary>
-        /// 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+        /// Multi-Statements mode for proxy endpoints. Values: Strict: strict mode (default). Loose: loose mode
         /// </summary>
         [Input("multiStatementsMode")]
         public Input<string>? MultiStatementsMode { get; set; }
 
         /// <summary>
-        /// 是否开启过载保护。取值：true：是。false：否。
+        /// Overload protection enabled. Values: true: yes. false: no
         /// </summary>
         [Input("overloadProtection")]
         public Input<bool>? OverloadProtection { get; set; }
 
         /// <summary>
-        /// 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+        /// Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, valid values are: LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, valid values are: Default: automatic allocation based on specification weights. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling.
         /// </summary>
         [Input("readOnlyNodeDistributionType")]
         public Input<string>? ReadOnlyNodeDistributionType { get; set; }
 
         /// <summary>
-        /// 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+        /// Read-only node latency threshold. Value range: 1~3600, default is 30, unit: seconds.
         /// </summary>
         [Input("readOnlyNodeMaxDelayTime")]
         public Input<int>? ReadOnlyNodeMaxDelayTime { get; set; }
@@ -142,7 +142,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Inputs
         }
 
         /// <summary>
-        /// 读写模式：ReadWrite：读写。ReadOnly：只读。
+        /// Read/write mode: ReadWrite: read/write. ReadOnly: read-only
         /// </summary>
         [Input("readWriteMode")]
         public Input<string>? ReadWriteMode { get; set; }

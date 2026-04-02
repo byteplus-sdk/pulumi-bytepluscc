@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class DomainConditionalOriginOriginRule
     {
         /// <summary>
-        /// 表示列表中一条规则的操作配置。
+        /// Indicates the operation configuration for a rule in the list.
         /// </summary>
         public readonly Outputs.DomainConditionalOriginOriginRuleActions? Actions;
         /// <summary>
-        /// 表示该配置模块的生效条件，由一组规则组成。
+        /// Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
         /// </summary>
         public readonly Outputs.DomainConditionalOriginOriginRuleCondition? Condition;
 

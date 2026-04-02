@@ -14,31 +14,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Inputs
     public sealed class RuleRuleActionRedirectConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 重定向域名，仅支持精确域名。
+        /// Redirect domain. Only exact domains are supported.
         /// </summary>
         [Input("host")]
         public Input<string>? Host { get; set; }
 
         /// <summary>
-        /// 重定向状态码，支持301，302，307，308。
+        /// Redirect status codes supported: 301, 302, 307, 308.
         /// </summary>
         [Input("httpCode")]
         public Input<string>? HttpCode { get; set; }
 
         /// <summary>
-        /// 重定向 URI。。
+        /// Redirect URI..
         /// </summary>
         [Input("path")]
         public Input<string>? Path { get; set; }
 
         /// <summary>
-        /// 重定向端口。
+        /// Redirect port.
         /// </summary>
         [Input("port")]
         public Input<string>? Port { get; set; }
 
         /// <summary>
-        /// 重定向使用的协议，支持HTTP，HTTPS。
+        /// Protocol used for redirect. Supports HTTP and HTTPS.
         /// </summary>
         [Input("protocol")]
         public Input<string>? Protocol { get; set; }

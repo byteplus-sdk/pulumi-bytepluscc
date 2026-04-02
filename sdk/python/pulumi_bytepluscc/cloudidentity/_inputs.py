@@ -28,7 +28,7 @@ if not MYPY:
     class GroupMemberArgsDict(TypedDict):
         user_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        用户id。
+        User ID
         """
 elif False:
     GroupMemberArgsDict: TypeAlias = Mapping[str, Any]
@@ -38,7 +38,7 @@ class GroupMemberArgs:
     def __init__(__self__, *,
                  user_id: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] user_id: 用户id。
+        :param pulumi.Input[builtins.str] user_id: User ID
         """
         if user_id is not None:
             pulumi.set(__self__, "user_id", user_id)
@@ -47,7 +47,7 @@ class GroupMemberArgs:
     @pulumi.getter(name="userId")
     def user_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户id。
+        User ID
         """
         return pulumi.get(self, "user_id")
 
@@ -60,15 +60,15 @@ if not MYPY:
     class PermissionSetPermissionPolicyArgsDict(TypedDict):
         permission_policy_document: NotRequired[pulumi.Input[builtins.str]]
         """
-        策略语法内容。语法可参考 策略语法说明。
+        Policy syntax content. Refer to policy syntax documentation
         """
         permission_policy_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        策略名称。
+        Policy Name
         """
         permission_policy_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        策略类型，System or Inline。
+        Policy Type: System or Inline
         """
 elif False:
     PermissionSetPermissionPolicyArgsDict: TypeAlias = Mapping[str, Any]
@@ -80,9 +80,9 @@ class PermissionSetPermissionPolicyArgs:
                  permission_policy_name: Optional[pulumi.Input[builtins.str]] = None,
                  permission_policy_type: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] permission_policy_document: 策略语法内容。语法可参考 策略语法说明。
-        :param pulumi.Input[builtins.str] permission_policy_name: 策略名称。
-        :param pulumi.Input[builtins.str] permission_policy_type: 策略类型，System or Inline。
+        :param pulumi.Input[builtins.str] permission_policy_document: Policy syntax content. Refer to policy syntax documentation
+        :param pulumi.Input[builtins.str] permission_policy_name: Policy Name
+        :param pulumi.Input[builtins.str] permission_policy_type: Policy Type: System or Inline
         """
         if permission_policy_document is not None:
             pulumi.set(__self__, "permission_policy_document", permission_policy_document)
@@ -95,7 +95,7 @@ class PermissionSetPermissionPolicyArgs:
     @pulumi.getter(name="permissionPolicyDocument")
     def permission_policy_document(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        策略语法内容。语法可参考 策略语法说明。
+        Policy syntax content. Refer to policy syntax documentation
         """
         return pulumi.get(self, "permission_policy_document")
 
@@ -107,7 +107,7 @@ class PermissionSetPermissionPolicyArgs:
     @pulumi.getter(name="permissionPolicyName")
     def permission_policy_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        策略名称。
+        Policy Name
         """
         return pulumi.get(self, "permission_policy_name")
 
@@ -119,7 +119,7 @@ class PermissionSetPermissionPolicyArgs:
     @pulumi.getter(name="permissionPolicyType")
     def permission_policy_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        策略类型，System or Inline。
+        Policy Type: System or Inline
         """
         return pulumi.get(self, "permission_policy_type")
 

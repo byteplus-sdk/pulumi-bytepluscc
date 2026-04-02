@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReserved {
     /**
-     * @return 资源名称，取值为 cpu 或 memory。
+     * @return Resource name. Values: cpu or memory
      * 
      */
     private String name;
     /**
-     * @return 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+     * @return Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
      * 
      */
     private String quantity;
 
     private GetDefaultNodePoolKubernetesConfigKubeletConfigKubeReserved() {}
     /**
-     * @return 资源名称，取值为 cpu 或 memory。
+     * @return Resource name. Values: cpu or memory
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 指定资源的资源量。   - 当资源为 cpu 时，取值示例为 200m。   - 当资源为 memory 时，取值示例为 1G
+     * @return Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
      * 
      */
     public String quantity() {

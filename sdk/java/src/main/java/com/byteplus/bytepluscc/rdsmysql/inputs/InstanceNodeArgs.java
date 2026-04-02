@@ -15,14 +15,14 @@ public final class InstanceNodeArgs extends com.pulumi.resources.ResourceArgs {
     public static final InstanceNodeArgs Empty = new InstanceNodeArgs();
 
     /**
-     * 节点规格。
+     * Node specification.
      * 
      */
     @Import(name="nodeSpec", required=true)
     private Output<String> nodeSpec;
 
     /**
-     * @return 节点规格。
+     * @return Node specification.
      * 
      */
     public Output<String> nodeSpec() {
@@ -30,14 +30,14 @@ public final class InstanceNodeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。
+     * Node type. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node.
      * 
      */
     @Import(name="nodeType", required=true)
     private Output<String> nodeType;
 
     /**
-     * @return 节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。
+     * @return Node type. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node.
      * 
      */
     public Output<String> nodeType() {
@@ -45,14 +45,14 @@ public final class InstanceNodeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 可用区 ID。
+     * Availability zone ID
      * 
      */
     @Import(name="zoneId", required=true)
     private Output<String> zoneId;
 
     /**
-     * @return 可用区 ID。
+     * @return Availability zone ID
      * 
      */
     public Output<String> zoneId() {
@@ -86,7 +86,7 @@ public final class InstanceNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeSpec 节点规格。
+         * @param nodeSpec Node specification.
          * 
          * @return builder
          * 
@@ -97,7 +97,7 @@ public final class InstanceNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeSpec 节点规格。
+         * @param nodeSpec Node specification.
          * 
          * @return builder
          * 
@@ -107,7 +107,7 @@ public final class InstanceNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeType 节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。
+         * @param nodeType Node type. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node.
          * 
          * @return builder
          * 
@@ -118,7 +118,7 @@ public final class InstanceNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeType 节点类型。取值：Primary：主节点。Secondary：备节点。ReadOnly：只读节点。
+         * @param nodeType Node type. Values: Primary: primary node. Secondary: secondary node. ReadOnly: read-only node.
          * 
          * @return builder
          * 
@@ -128,7 +128,7 @@ public final class InstanceNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 可用区 ID。
+         * @param zoneId Availability zone ID
          * 
          * @return builder
          * 
@@ -139,7 +139,7 @@ public final class InstanceNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 可用区 ID。
+         * @param zoneId Availability zone ID
          * 
          * @return builder
          * 

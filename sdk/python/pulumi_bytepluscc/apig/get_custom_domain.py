@@ -66,7 +66,7 @@ class GetCustomDomainResult:
     @pulumi.getter(name="certificateId")
     def certificate_id(self) -> builtins.str:
         """
-        自定义域名证书ID。
+        Custom Domain Certificate ID
         """
         return pulumi.get(self, "certificate_id")
 
@@ -74,7 +74,7 @@ class GetCustomDomainResult:
     @pulumi.getter
     def comments(self) -> builtins.str:
         """
-        备注。
+        Remarks
         """
         return pulumi.get(self, "comments")
 
@@ -82,7 +82,7 @@ class GetCustomDomainResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        创建时间。
+        Creation Time
         """
         return pulumi.get(self, "created_time")
 
@@ -90,7 +90,7 @@ class GetCustomDomainResult:
     @pulumi.getter(name="customDomainId")
     def custom_domain_id(self) -> builtins.str:
         """
-        自定义域名ID。
+        Custom Domain ID
         """
         return pulumi.get(self, "custom_domain_id")
 
@@ -98,7 +98,7 @@ class GetCustomDomainResult:
     @pulumi.getter
     def domain(self) -> builtins.str:
         """
-        自定义域名。
+        Custom Domain
         """
         return pulumi.get(self, "domain")
 
@@ -114,7 +114,7 @@ class GetCustomDomainResult:
     @pulumi.getter
     def protocols(self) -> Sequence[builtins.str]:
         """
-        协议，取值：HTTP。HTTPS。
+        Protocol. Values: HTTP, HTTPS
         """
         return pulumi.get(self, "protocols")
 
@@ -122,7 +122,7 @@ class GetCustomDomainResult:
     @pulumi.getter(name="serviceId")
     def service_id(self) -> builtins.str:
         """
-        服务ID。
+        Service ID
         """
         return pulumi.get(self, "service_id")
 
@@ -130,7 +130,7 @@ class GetCustomDomainResult:
     @pulumi.getter(name="sslRedirect")
     def ssl_redirect(self) -> builtins.bool:
         """
-        重定向到HTTPS。
+        Redirect to HTTPS
         """
         return pulumi.get(self, "ssl_redirect")
 
@@ -138,7 +138,7 @@ class GetCustomDomainResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        状态，取值：Creating：配置中。CreationFailed：配置失败。Deleting：删除中。DeletionFailed：删除失败。Verified：正常。
+        Status. Values: Creating: configuring; CreationFailed: configuration failed; Deleting: deleting; DeletionFailed: deletion failed; Verified: active
         """
         return pulumi.get(self, "status")
 
@@ -146,7 +146,7 @@ class GetCustomDomainResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        更新时间。
+        Update Time
         """
         return pulumi.get(self, "updated_time")
 

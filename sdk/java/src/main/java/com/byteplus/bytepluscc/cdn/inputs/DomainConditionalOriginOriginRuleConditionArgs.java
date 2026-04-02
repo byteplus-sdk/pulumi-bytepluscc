@@ -26,14 +26,14 @@ public final class DomainConditionalOriginOriginRuleConditionArgs extends com.pu
     }
 
     /**
-     * 表示这些条件组之间的关系。该参数有以下取值：or：表示关系是 &#34;或&#34;。在这个情况下，只要满足一个条件组，用户请求就匹配该规则。and：表示关系是 &#34;与&#34;。在这个情况下，必须满足所有条件组，用户请求才匹配该规则。该参数的默认值是 or。
+     * Specifies the relationship between these condition groups. This parameter has the following values: or: Indicates an &#39;or&#39; relationship. In this case, if any condition group is met, the user request matches the rule. and: Indicates an &#39;and&#39; relationship. In this case, all condition groups must be met for the user request to match the rule. The default value is or.
      * 
      */
     @Import(name="connective")
     private @Nullable Output<String> connective;
 
     /**
-     * @return 表示这些条件组之间的关系。该参数有以下取值：or：表示关系是 &#34;或&#34;。在这个情况下，只要满足一个条件组，用户请求就匹配该规则。and：表示关系是 &#34;与&#34;。在这个情况下，必须满足所有条件组，用户请求才匹配该规则。该参数的默认值是 or。
+     * @return Specifies the relationship between these condition groups. This parameter has the following values: or: Indicates an &#39;or&#39; relationship. In this case, if any condition group is met, the user request matches the rule. and: Indicates an &#39;and&#39; relationship. In this case, all condition groups must be met for the user request to match the rule. The default value is or.
      * 
      */
     public Optional<Output<String>> connective() {
@@ -41,14 +41,14 @@ public final class DomainConditionalOriginOriginRuleConditionArgs extends com.pu
     }
 
     /**
-     * 表示每个过滤条件是否是一个条件组。该参数值始终是 true，表示每个过滤条件是一个条件组。当前，每个条件组中只能包含一个过滤条件。
+     * Indicates whether each filter condition is a condition group. The value of this parameter is always true, meaning each filter condition is a condition group. Currently, each condition group can only contain one filter condition.
      * 
      */
     @Import(name="isGroup")
     private @Nullable Output<Boolean> isGroup;
 
     /**
-     * @return 表示每个过滤条件是否是一个条件组。该参数值始终是 true，表示每个过滤条件是一个条件组。当前，每个条件组中只能包含一个过滤条件。
+     * @return Indicates whether each filter condition is a condition group. The value of this parameter is always true, meaning each filter condition is a condition group. Currently, each condition group can only contain one filter condition.
      * 
      */
     public Optional<Output<Boolean>> isGroup() {
@@ -95,7 +95,7 @@ public final class DomainConditionalOriginOriginRuleConditionArgs extends com.pu
         }
 
         /**
-         * @param connective 表示这些条件组之间的关系。该参数有以下取值：or：表示关系是 &#34;或&#34;。在这个情况下，只要满足一个条件组，用户请求就匹配该规则。and：表示关系是 &#34;与&#34;。在这个情况下，必须满足所有条件组，用户请求才匹配该规则。该参数的默认值是 or。
+         * @param connective Specifies the relationship between these condition groups. This parameter has the following values: or: Indicates an &#39;or&#39; relationship. In this case, if any condition group is met, the user request matches the rule. and: Indicates an &#39;and&#39; relationship. In this case, all condition groups must be met for the user request to match the rule. The default value is or.
          * 
          * @return builder
          * 
@@ -106,7 +106,7 @@ public final class DomainConditionalOriginOriginRuleConditionArgs extends com.pu
         }
 
         /**
-         * @param connective 表示这些条件组之间的关系。该参数有以下取值：or：表示关系是 &#34;或&#34;。在这个情况下，只要满足一个条件组，用户请求就匹配该规则。and：表示关系是 &#34;与&#34;。在这个情况下，必须满足所有条件组，用户请求才匹配该规则。该参数的默认值是 or。
+         * @param connective Specifies the relationship between these condition groups. This parameter has the following values: or: Indicates an &#39;or&#39; relationship. In this case, if any condition group is met, the user request matches the rule. and: Indicates an &#39;and&#39; relationship. In this case, all condition groups must be met for the user request to match the rule. The default value is or.
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class DomainConditionalOriginOriginRuleConditionArgs extends com.pu
         }
 
         /**
-         * @param isGroup 表示每个过滤条件是否是一个条件组。该参数值始终是 true，表示每个过滤条件是一个条件组。当前，每个条件组中只能包含一个过滤条件。
+         * @param isGroup Indicates whether each filter condition is a condition group. The value of this parameter is always true, meaning each filter condition is a condition group. Currently, each condition group can only contain one filter condition.
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class DomainConditionalOriginOriginRuleConditionArgs extends com.pu
         }
 
         /**
-         * @param isGroup 表示每个过滤条件是否是一个条件组。该参数值始终是 true，表示每个过滤条件是一个条件组。当前，每个条件组中只能包含一个过滤条件。
+         * @param isGroup Indicates whether each filter condition is a condition group. The value of this parameter is always true, meaning each filter condition is a condition group. Currently, each condition group can only contain one filter condition.
          * 
          * @return builder
          * 

@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceKeyPair {
     /**
-     * @return 实例的公钥。
+     * @return Instance public key
      * 
      */
     private String keyPairId;
     /**
-     * @return 实例的密钥对名称。
+     * @return Instance key pair name
      * 
      */
     private String keyPairName;
 
     private GetInstanceKeyPair() {}
     /**
-     * @return 实例的公钥。
+     * @return Instance public key
      * 
      */
     public String keyPairId() {
         return this.keyPairId;
     }
     /**
-     * @return 实例的密钥对名称。
+     * @return Instance key pair name
      * 
      */
     public String keyPairName() {

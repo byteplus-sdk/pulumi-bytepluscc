@@ -15,55 +15,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class GetNodePoolKubernetesConfigKubeletConfigResult
     {
         /// <summary>
-        /// 配置 kubelet 的 CpuManagerPolicy 策略，包含 none 和 static 两种策略
+        /// Configure kubelet CpuManagerPolicy. Supports none and static policies
         /// </summary>
         public readonly string CpuManagerPolicy;
         /// <summary>
-        /// 触发 Pod 驱逐操作的一组硬性门限。
+        /// Set of hard thresholds for triggering Pod eviction
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNodePoolKubernetesConfigKubeletConfigEvictionHardResult> EvictionHards;
         /// <summary>
-        /// 特性门控。
+        /// Feature gate
         /// </summary>
         public readonly Outputs.GetNodePoolKubernetesConfigKubeletConfigFeatureGatesResult FeatureGates;
         /// <summary>
-        /// 每秒发送到 API 服务器的突发请求数量上限。不包括事件和节点心跳 API，其速率限制由一组不同的标志控制。
+        /// Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
         /// </summary>
         public readonly int KubeApiBurst;
         /// <summary>
-        /// 与 apiserver 通信的每秒查询个数（QPS）。不包含事件和节点心跳 API，它们的速率限制是由一组不同的标志所控制。
+        /// Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
         /// </summary>
         public readonly int KubeApiQps;
         /// <summary>
-        /// 节点预留给 Kubernetes 系统组件的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
+        /// Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNodePoolKubernetesConfigKubeletConfigKubeReservedResult> KubeReserveds;
         /// <summary>
-        /// 配置 kubelet 支持的最大 Pod 数量
+        /// Configure the maximum number of Pods supported by kubelet
         /// </summary>
         public readonly int MaxPods;
         /// <summary>
-        /// 设置突发性镜像拉取的个数上限，在不超过 RegistryPullQps 设置值的前提下暂时允许此参数所给的镜像拉取个数。
+        /// Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
         /// </summary>
         public readonly int RegistryBurst;
         /// <summary>
-        /// 可用来限制镜像仓库的 QPS 上限
+        /// Used to limit the QPS cap for the image repository
         /// </summary>
         public readonly int RegistryPullQps;
         /// <summary>
-        /// 逐一拉取镜像。
+        /// Pull images sequentially
         /// </summary>
         public readonly bool SerializeImagePulls;
         /// <summary>
-        /// 节点预留给操作系统的资源。默认按照 节点预留资源策略 中默认值的一半进行资源预留。
+        /// Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNodePoolKubernetesConfigKubeletConfigSystemReservedResult> SystemReserveds;
         /// <summary>
-        /// 拓扑管理策略，取值：none：（默认）禁用拓扑管理策略。restricted：kubelet 仅接受在所请求资源上实现最佳 NUMA（Non-Uniform Memory Access，非一致存储访问结构）的 Pod。best-effort：kubelet 会优先选择在 CPU 和设备资源上实现 NUMA 的 Pod。single-numa-node：kubelet 仅允许在同一个节点的 CPU 和设备资源上实现 NUMA 的 Pod。
+        /// Topology management policy. Values: none (default): disables topology management policy. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node
         /// </summary>
         public readonly string TopologyManagerPolicy;
         /// <summary>
-        /// 拓扑管理策略的资源粒度，取值：container：表示资源对齐粒度为容器级。pod：表示资源对齐粒度为 Pod 级。
+        /// Resource granularity for topology management policy. Values: container: resource alignment at container level pod: resource alignment at Pod level
         /// </summary>
         public readonly string TopologyManagerScope;
 

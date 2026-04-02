@@ -65,31 +65,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
     public sealed class GetCertificateResult
     {
         /// <summary>
-        /// 证书ID。
+        /// Certificate ID
         /// </summary>
         public readonly string CertificateId;
         /// <summary>
-        /// 证书名称，长度限制为1 ～ 128个字符，必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。
+        /// Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
         /// </summary>
         public readonly string CertificateName;
         /// <summary>
-        /// 证书类型，取值：CA：CA证书、Server：服务器证书。
+        /// Certificate type. Options: CA: CA certificate; Server: server certificate
         /// </summary>
         public readonly string CertificateType;
         /// <summary>
-        /// 证书创建时间。
+        /// Certificate creation time
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 证书描述。
+        /// Certificate description
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 证书域名。
+        /// Certificate domain name
         /// </summary>
         public readonly string DomainName;
         /// <summary>
-        /// 证书过期时间。
+        /// Certificate expiration time
         /// </summary>
         public readonly string ExpiredAt;
         /// <summary>
@@ -97,31 +97,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 证书关联的监听器列表。
+        /// List of listeners associated with the certificate
         /// </summary>
         public readonly ImmutableArray<string> Listeners;
         /// <summary>
-        /// 服务器证书的私钥，当证书类型为Server时必填。
+        /// Server certificate private key. Required when certificate type is Server
         /// </summary>
         public readonly string PrivateKey;
         /// <summary>
-        /// 项目名称。
+        /// Project name
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// 服务器证书的公钥。
+        /// Server certificate public key
         /// </summary>
         public readonly string PublicKey;
         /// <summary>
-        /// 证书扩展域名列表，用英文',' 分隔多个域名， 包含(commonName,DnsName,IP)。
+        /// Certificate subject alternative name list. Use English ',' to separate multiple domain names. Includes (commonName, DnsName, IP)
         /// </summary>
         public readonly string San;
         /// <summary>
-        /// 证书的状态，取值为：Creating：创建中。Active：运行中。Deleting：删除中。
+        /// Certificate status. Options: Creating: creating; Active: active; Deleting: deleting
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// 标签列表。
+        /// Tag list
         /// </summary>
         public readonly ImmutableArray<Outputs.GetCertificateTagResult> Tags;
 

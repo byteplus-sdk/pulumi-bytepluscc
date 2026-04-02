@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 日志服务支持日志检索与分析功能，配置索引后才能进行日志检索和分析操作。配置索引时需要指定索引的类型和各个字段的数据类型，索引的配置决定了检索方式和检索结果的精度。
+ * The log service supports log search and analysis. You must configure indexes to enable log search and analysis. When configuring indexes, specify the index type and the data type for each field. The index configuration determines the search method and the precision of search results.
  *
  * ## Import
  *
@@ -44,28 +44,28 @@ export class Index extends pulumi.CustomResource {
     }
 
     /**
-     * 索引创建的时间。
+     * Index creation time.
      */
     public /*out*/ readonly createTime!: pulumi.Output<string>;
     /**
-     * 是否开启索引自动更新，开启后系统将根据新出现的字段自动添加到键值索引。true：开启自动更新。false：不开启自动更新。
+     * Enable automatic index updates? When enabled, the system will automatically add newly detected fields to the key-value index. true: Enable automatic updates. false: Do not enable automatic updates.
      */
     public readonly enableAutoIndex!: pulumi.Output<boolean>;
     /**
-     * 全文索引配置。此字段为 null 或者未配置，表示不开启全文索引。全文索引配置和键值索引配置至少配置一项，即 FullText 和 KeyValue 之间应至少指定一个参数。
+     * Full-text index configuration. If this field is null or not configured, full-text indexing is disabled. At least one of full-text index or key-value index must be configured; that is, at least one parameter between FullText and KeyValue must be specified.
      */
     public readonly fullText!: pulumi.Output<outputs.tls.IndexFullText>;
     public readonly keyValues!: pulumi.Output<outputs.tls.IndexKeyValue[]>;
     /**
-     * 统计字段值的最大长度，默认为 2048，取值范围为 64~16384，单位为字节。说明单个字段值的长度超过您所指定的最大长度时，超出部分将被截断，不参与分析。字段最大长度更新后，只对增量数据有效。
+     * Set the maximum length for field values. The default is 2048. The valid range is 64–16384 bytes. If a single field value exceeds the specified maximum length, the excess part will be truncated and excluded from analysis. After updating the maximum field length, only incremental data is affected.
      */
     public readonly maxTextLen!: pulumi.Output<number>;
     /**
-     * 索引最近修改的时间。
+     * Last modified time of the index.
      */
     public /*out*/ readonly modifyTime!: pulumi.Output<string>;
     /**
-     * 日志主题ID。
+     * Log topic ID.
      */
     public readonly topicId!: pulumi.Output<string>;
     public readonly userInnerKeyValues!: pulumi.Output<outputs.tls.IndexUserInnerKeyValue[]>;
@@ -115,28 +115,28 @@ export class Index extends pulumi.CustomResource {
  */
 export interface IndexState {
     /**
-     * 索引创建的时间。
+     * Index creation time.
      */
     createTime?: pulumi.Input<string>;
     /**
-     * 是否开启索引自动更新，开启后系统将根据新出现的字段自动添加到键值索引。true：开启自动更新。false：不开启自动更新。
+     * Enable automatic index updates? When enabled, the system will automatically add newly detected fields to the key-value index. true: Enable automatic updates. false: Do not enable automatic updates.
      */
     enableAutoIndex?: pulumi.Input<boolean>;
     /**
-     * 全文索引配置。此字段为 null 或者未配置，表示不开启全文索引。全文索引配置和键值索引配置至少配置一项，即 FullText 和 KeyValue 之间应至少指定一个参数。
+     * Full-text index configuration. If this field is null or not configured, full-text indexing is disabled. At least one of full-text index or key-value index must be configured; that is, at least one parameter between FullText and KeyValue must be specified.
      */
     fullText?: pulumi.Input<inputs.tls.IndexFullText>;
     keyValues?: pulumi.Input<pulumi.Input<inputs.tls.IndexKeyValue>[]>;
     /**
-     * 统计字段值的最大长度，默认为 2048，取值范围为 64~16384，单位为字节。说明单个字段值的长度超过您所指定的最大长度时，超出部分将被截断，不参与分析。字段最大长度更新后，只对增量数据有效。
+     * Set the maximum length for field values. The default is 2048. The valid range is 64–16384 bytes. If a single field value exceeds the specified maximum length, the excess part will be truncated and excluded from analysis. After updating the maximum field length, only incremental data is affected.
      */
     maxTextLen?: pulumi.Input<number>;
     /**
-     * 索引最近修改的时间。
+     * Last modified time of the index.
      */
     modifyTime?: pulumi.Input<string>;
     /**
-     * 日志主题ID。
+     * Log topic ID.
      */
     topicId?: pulumi.Input<string>;
     userInnerKeyValues?: pulumi.Input<pulumi.Input<inputs.tls.IndexUserInnerKeyValue>[]>;
@@ -147,20 +147,20 @@ export interface IndexState {
  */
 export interface IndexArgs {
     /**
-     * 是否开启索引自动更新，开启后系统将根据新出现的字段自动添加到键值索引。true：开启自动更新。false：不开启自动更新。
+     * Enable automatic index updates? When enabled, the system will automatically add newly detected fields to the key-value index. true: Enable automatic updates. false: Do not enable automatic updates.
      */
     enableAutoIndex?: pulumi.Input<boolean>;
     /**
-     * 全文索引配置。此字段为 null 或者未配置，表示不开启全文索引。全文索引配置和键值索引配置至少配置一项，即 FullText 和 KeyValue 之间应至少指定一个参数。
+     * Full-text index configuration. If this field is null or not configured, full-text indexing is disabled. At least one of full-text index or key-value index must be configured; that is, at least one parameter between FullText and KeyValue must be specified.
      */
     fullText?: pulumi.Input<inputs.tls.IndexFullText>;
     keyValues?: pulumi.Input<pulumi.Input<inputs.tls.IndexKeyValue>[]>;
     /**
-     * 统计字段值的最大长度，默认为 2048，取值范围为 64~16384，单位为字节。说明单个字段值的长度超过您所指定的最大长度时，超出部分将被截断，不参与分析。字段最大长度更新后，只对增量数据有效。
+     * Set the maximum length for field values. The default is 2048. The valid range is 64–16384 bytes. If a single field value exceeds the specified maximum length, the excess part will be truncated and excluded from analysis. After updating the maximum field length, only incremental data is affected.
      */
     maxTextLen?: pulumi.Input<number>;
     /**
-     * 日志主题ID。
+     * Log topic ID.
      */
     topicId: pulumi.Input<string>;
     userInnerKeyValues?: pulumi.Input<pulumi.Input<inputs.tls.IndexUserInnerKeyValue>[]>;

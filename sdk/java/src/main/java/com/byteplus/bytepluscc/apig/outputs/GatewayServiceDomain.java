@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GatewayServiceDomain {
     /**
-     * @return 域名。
+     * @return Domain.
      * 
      */
     private @Nullable String domain;
     /**
-     * @return 域名类型。取值：public：公网。private：私网。
+     * @return Domain type. Options: public: Public network. private: Private network.
      * 
      */
     private @Nullable String type;
 
     private GatewayServiceDomain() {}
     /**
-     * @return 域名。
+     * @return Domain.
      * 
      */
     public Optional<String> domain() {
         return Optional.ofNullable(this.domain);
     }
     /**
-     * @return 域名类型。取值：public：公网。private：私网。
+     * @return Domain type. Options: public: Public network. private: Private network.
      * 
      */
     public Optional<String> type() {

@@ -16,14 +16,14 @@ public final class NodeStatusConditionArgs extends com.pulumi.resources.Resource
     public static final NodeStatusConditionArgs Empty = new NodeStatusConditionArgs();
 
     /**
-     * 节点当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing，Ok，Unschedulable，InitilizeFailed，NotReady，Balance，ResourceCleanupFailed，Unknown。
+     * Status condition under the node&#39;s current primary state, indicating the reason for entering this primary state. There can be multiple reasons. Parameter values: Progressing, Ok, Unschedulable, InitilizeFailed, NotReady, Balance, ResourceCleanupFailed, Unknown.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 节点当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing，Ok，Unschedulable，InitilizeFailed，NotReady，Balance，ResourceCleanupFailed，Unknown。
+     * @return Status condition under the node&#39;s current primary state, indicating the reason for entering this primary state. There can be multiple reasons. Parameter values: Progressing, Ok, Unschedulable, InitilizeFailed, NotReady, Balance, ResourceCleanupFailed, Unknown.
      * 
      */
     public Optional<Output<String>> type() {
@@ -55,7 +55,7 @@ public final class NodeStatusConditionArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param type 节点当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing，Ok，Unschedulable，InitilizeFailed，NotReady，Balance，ResourceCleanupFailed，Unknown。
+         * @param type Status condition under the node&#39;s current primary state, indicating the reason for entering this primary state. There can be multiple reasons. Parameter values: Progressing, Ok, Unschedulable, InitilizeFailed, NotReady, Balance, ResourceCleanupFailed, Unknown.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class NodeStatusConditionArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param type 节点当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing，Ok，Unschedulable，InitilizeFailed，NotReady，Balance，ResourceCleanupFailed，Unknown。
+         * @param type Status condition under the node&#39;s current primary state, indicating the reason for entering this primary state. There can be multiple reasons. Parameter values: Progressing, Ok, Unschedulable, InitilizeFailed, NotReady, Balance, ResourceCleanupFailed, Unknown.
          * 
          * @return builder
          * 

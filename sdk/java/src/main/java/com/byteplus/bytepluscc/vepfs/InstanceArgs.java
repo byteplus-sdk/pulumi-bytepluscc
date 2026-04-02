@@ -21,14 +21,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     public static final InstanceArgs Empty = new InstanceArgs();
 
     /**
-     * 文件系统容量，单位为 TiB。
+     * File system capacity, unit: TiB.
      * 
      */
     @Import(name="capacity", required=true)
     private Output<Integer> capacity;
 
     /**
-     * @return 文件系统容量，单位为 TiB。
+     * @return File system capacity, unit: TiB.
      * 
      */
     public Output<Integer> capacity() {
@@ -36,14 +36,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 计费类型。取值说明如下：PayAsYouGo：按量计费。
+     * Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
      * 
      */
     @Import(name="chargeType")
     private @Nullable Output<String> chargeType;
 
     /**
-     * @return 计费类型。取值说明如下：PayAsYouGo：按量计费。
+     * @return Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
      * 
      */
     public Optional<Output<String>> chargeType() {
@@ -51,14 +51,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 文件系统描述信息。
+     * File system description.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 文件系统描述信息。
+     * @return File system description.
      * 
      */
     public Optional<Output<String>> description() {
@@ -66,14 +66,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 扩容后是否开启数据均衡，取值说明如下：true：扩容后立即开启数据均衡。false：扩容后不开启数据均衡。注意：仅 100MB/s/TiB 规格的文件系统支持数据均衡功能。由于数据均衡过程会消耗存储节点的网络和磁盘带宽，导致文件系统的性能下降，建议您评估业务需求，谨慎开启。数据均衡的时间主要受存量数据量的影响，如果您的存量数据较多，均衡的时间可能会较长，根据扩容容量大小和文件系统状态，此过程可能需要花费数小时至 2 天的时间，建议您在业务低峰期开启并耐心等待。
+     * Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
      * 
      */
     @Import(name="enableRestripe")
     private @Nullable Output<Boolean> enableRestripe;
 
     /**
-     * @return 扩容后是否开启数据均衡，取值说明如下：true：扩容后立即开启数据均衡。false：扩容后不开启数据均衡。注意：仅 100MB/s/TiB 规格的文件系统支持数据均衡功能。由于数据均衡过程会消耗存储节点的网络和磁盘带宽，导致文件系统的性能下降，建议您评估业务需求，谨慎开启。数据均衡的时间主要受存量数据量的影响，如果您的存量数据较多，均衡的时间可能会较长，根据扩容容量大小和文件系统状态，此过程可能需要花费数小时至 2 天的时间，建议您在业务低峰期开启并耐心等待。
+     * @return Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
      * 
      */
     public Optional<Output<Boolean>> enableRestripe() {
@@ -81,14 +81,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 文件系统名称。命名规范如下：只能以中文或英文开头。只能包含中文、字母、数字、半角句号（.）、下划线（_）或中划线（-）。长度需要在 1~128 个字符内。
+     * File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
      * 
      */
     @Import(name="fileSystemName", required=true)
     private Output<String> fileSystemName;
 
     /**
-     * @return 文件系统名称。命名规范如下：只能以中文或英文开头。只能包含中文、字母、数字、半角句号（.）、下划线（_）或中划线（-）。长度需要在 1~128 个字符内。
+     * @return File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
      * 
      */
     public Output<String> fileSystemName() {
@@ -96,14 +96,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 文件系统类型，默认为 VePFS。
+     * File system type. Default is VePFS.
      * 
      */
     @Import(name="fileSystemType")
     private @Nullable Output<String> fileSystemType;
 
     /**
-     * @return 文件系统类型，默认为 VePFS。
+     * @return File system type. Default is VePFS.
      * 
      */
     public Optional<Output<String>> fileSystemType() {
@@ -111,14 +111,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 文件系统所属项目，默认为 default。
+     * Project to which the file system belongs. Default is default.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 文件系统所属项目，默认为 default。
+     * @return Project to which the file system belongs. Default is default.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -126,14 +126,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 协议类型，默认为 VePFS。
+     * Protocol type. Default is VePFS.
      * 
      */
     @Import(name="protocolType")
     private @Nullable Output<String> protocolType;
 
     /**
-     * @return 协议类型，默认为 VePFS。
+     * @return Protocol type. Default is VePFS.
      * 
      */
     public Optional<Output<String>> protocolType() {
@@ -141,14 +141,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 文件系统规格，取值说明如下：Advance*100：100MB/s/TiB。Performance：性能版。Intelligent*Computing：智算版。
+     * File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
      * 
      */
     @Import(name="storeType", required=true)
     private Output<String> storeType;
 
     /**
-     * @return 文件系统规格，取值说明如下：Advance*100：100MB/s/TiB。Performance：性能版。Intelligent*Computing：智算版。
+     * @return File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
      * 
      */
     public Output<String> storeType() {
@@ -156,14 +156,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子网 ID。子网必须属于所选的可用区。
+     * Subnet ID. The subnet must belong to the selected availability zone.
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return 子网 ID。子网必须属于所选的可用区。
+     * @return Subnet ID. The subnet must belong to the selected availability zone.
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -178,14 +178,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 文件系统版本号。
+     * File system version number.
      * 
      */
     @Import(name="versionNumber")
     private @Nullable Output<String> versionNumber;
 
     /**
-     * @return 文件系统版本号。
+     * @return File system version number.
      * 
      */
     public Optional<Output<String>> versionNumber() {
@@ -193,14 +193,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 私有网络 ID。
+     * Private network ID.
      * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
-     * @return 私有网络 ID。
+     * @return Private network ID.
      * 
      */
     public Optional<Output<String>> vpcId() {
@@ -208,14 +208,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 可用区 ID。
+     * Availability zone ID.
      * 
      */
     @Import(name="zoneId", required=true)
     private Output<String> zoneId;
 
     /**
-     * @return 可用区 ID。
+     * @return Availability zone ID.
      * 
      */
     public Output<String> zoneId() {
@@ -260,7 +260,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param capacity 文件系统容量，单位为 TiB。
+         * @param capacity File system capacity, unit: TiB.
          * 
          * @return builder
          * 
@@ -271,7 +271,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param capacity 文件系统容量，单位为 TiB。
+         * @param capacity File system capacity, unit: TiB.
          * 
          * @return builder
          * 
@@ -281,7 +281,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeType 计费类型。取值说明如下：PayAsYouGo：按量计费。
+         * @param chargeType Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
          * 
          * @return builder
          * 
@@ -292,7 +292,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param chargeType 计费类型。取值说明如下：PayAsYouGo：按量计费。
+         * @param chargeType Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
          * 
          * @return builder
          * 
@@ -302,7 +302,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 文件系统描述信息。
+         * @param description File system description.
          * 
          * @return builder
          * 
@@ -313,7 +313,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 文件系统描述信息。
+         * @param description File system description.
          * 
          * @return builder
          * 
@@ -323,7 +323,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableRestripe 扩容后是否开启数据均衡，取值说明如下：true：扩容后立即开启数据均衡。false：扩容后不开启数据均衡。注意：仅 100MB/s/TiB 规格的文件系统支持数据均衡功能。由于数据均衡过程会消耗存储节点的网络和磁盘带宽，导致文件系统的性能下降，建议您评估业务需求，谨慎开启。数据均衡的时间主要受存量数据量的影响，如果您的存量数据较多，均衡的时间可能会较长，根据扩容容量大小和文件系统状态，此过程可能需要花费数小时至 2 天的时间，建议您在业务低峰期开启并耐心等待。
+         * @param enableRestripe Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
          * 
          * @return builder
          * 
@@ -334,7 +334,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableRestripe 扩容后是否开启数据均衡，取值说明如下：true：扩容后立即开启数据均衡。false：扩容后不开启数据均衡。注意：仅 100MB/s/TiB 规格的文件系统支持数据均衡功能。由于数据均衡过程会消耗存储节点的网络和磁盘带宽，导致文件系统的性能下降，建议您评估业务需求，谨慎开启。数据均衡的时间主要受存量数据量的影响，如果您的存量数据较多，均衡的时间可能会较长，根据扩容容量大小和文件系统状态，此过程可能需要花费数小时至 2 天的时间，建议您在业务低峰期开启并耐心等待。
+         * @param enableRestripe Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
          * 
          * @return builder
          * 
@@ -344,7 +344,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fileSystemName 文件系统名称。命名规范如下：只能以中文或英文开头。只能包含中文、字母、数字、半角句号（.）、下划线（_）或中划线（-）。长度需要在 1~128 个字符内。
+         * @param fileSystemName File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
          * 
          * @return builder
          * 
@@ -355,7 +355,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fileSystemName 文件系统名称。命名规范如下：只能以中文或英文开头。只能包含中文、字母、数字、半角句号（.）、下划线（_）或中划线（-）。长度需要在 1~128 个字符内。
+         * @param fileSystemName File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
          * 
          * @return builder
          * 
@@ -365,7 +365,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fileSystemType 文件系统类型，默认为 VePFS。
+         * @param fileSystemType File system type. Default is VePFS.
          * 
          * @return builder
          * 
@@ -376,7 +376,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fileSystemType 文件系统类型，默认为 VePFS。
+         * @param fileSystemType File system type. Default is VePFS.
          * 
          * @return builder
          * 
@@ -386,7 +386,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 文件系统所属项目，默认为 default。
+         * @param projectName Project to which the file system belongs. Default is default.
          * 
          * @return builder
          * 
@@ -397,7 +397,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 文件系统所属项目，默认为 default。
+         * @param projectName Project to which the file system belongs. Default is default.
          * 
          * @return builder
          * 
@@ -407,7 +407,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocolType 协议类型，默认为 VePFS。
+         * @param protocolType Protocol type. Default is VePFS.
          * 
          * @return builder
          * 
@@ -418,7 +418,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocolType 协议类型，默认为 VePFS。
+         * @param protocolType Protocol type. Default is VePFS.
          * 
          * @return builder
          * 
@@ -428,7 +428,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storeType 文件系统规格，取值说明如下：Advance*100：100MB/s/TiB。Performance：性能版。Intelligent*Computing：智算版。
+         * @param storeType File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
          * 
          * @return builder
          * 
@@ -439,7 +439,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param storeType 文件系统规格，取值说明如下：Advance*100：100MB/s/TiB。Performance：性能版。Intelligent*Computing：智算版。
+         * @param storeType File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
          * 
          * @return builder
          * 
@@ -449,7 +449,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId 子网 ID。子网必须属于所选的可用区。
+         * @param subnetId Subnet ID. The subnet must belong to the selected availability zone.
          * 
          * @return builder
          * 
@@ -460,7 +460,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId 子网 ID。子网必须属于所选的可用区。
+         * @param subnetId Subnet ID. The subnet must belong to the selected availability zone.
          * 
          * @return builder
          * 
@@ -483,7 +483,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param versionNumber 文件系统版本号。
+         * @param versionNumber File system version number.
          * 
          * @return builder
          * 
@@ -494,7 +494,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param versionNumber 文件系统版本号。
+         * @param versionNumber File system version number.
          * 
          * @return builder
          * 
@@ -504,7 +504,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 私有网络 ID。
+         * @param vpcId Private network ID.
          * 
          * @return builder
          * 
@@ -515,7 +515,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 私有网络 ID。
+         * @param vpcId Private network ID.
          * 
          * @return builder
          * 
@@ -525,7 +525,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 可用区 ID。
+         * @param zoneId Availability zone ID.
          * 
          * @return builder
          * 
@@ -536,7 +536,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 可用区 ID。
+         * @param zoneId Availability zone ID.
          * 
          * @return builder
          * 

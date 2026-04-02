@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb.Inputs
     public sealed class ClbEniArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 负载均衡实例的私网IP地址。
+        /// Private IP address of the load balancer instance
         /// </summary>
         [Input("eniAddress")]
         public Input<string>? EniAddress { get; set; }
 
         /// <summary>
-        /// 负载均衡实例占用的网卡ID。
+        /// Network interface ID occupied by the load balancer instance
         /// </summary>
         [Input("eniId")]
         public Input<string>? EniId { get; set; }

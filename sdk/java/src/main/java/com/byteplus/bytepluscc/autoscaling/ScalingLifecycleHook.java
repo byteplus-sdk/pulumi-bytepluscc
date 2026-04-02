@@ -16,7 +16,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * 伸缩组触发伸缩规则、健康检查、实例数量检查后，生命周期挂钩可以将“加入中”、“移出中”、“停用中”实例的状态挂起，进入 加入/移出挂起中 状态，此时实例处于等待状态，您可以在这段时间内进行自定义操作，直至生命周期挂钩超时或您手动结束挂起。
+ * After the scaling group triggers scaling rules, health checks, and instance count checks, the lifecycle hook can suspend instances that are in the &#39;joining&#39;, &#39;removing&#39;, or &#39;disabling&#39; state, putting them into the joining/removing suspended state. The instances are now in a waiting state, and you can perform custom operations during this period until the lifecycle hook times out or you manually end the suspension.
  * 
  * ## Example Usage
  * 
@@ -33,98 +33,98 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:autoscaling/scalingLifecycleHook:ScalingLifecycleHook")
 public class ScalingLifecycleHook extends com.pulumi.resources.CustomResource {
     /**
-     * 云助手相关命令信息。
+     * Cloud Assistant command information.
      * 
      */
     @Export(name="lifecycleCommand", refs={ScalingLifecycleHookLifecycleCommand.class}, tree="[0]")
     private Output<ScalingLifecycleHookLifecycleCommand> lifecycleCommand;
 
     /**
-     * @return 云助手相关命令信息。
+     * @return Cloud Assistant command information.
      * 
      */
     public Output<ScalingLifecycleHookLifecycleCommand> lifecycleCommand() {
         return this.lifecycleCommand;
     }
     /**
-     * 生命周期挂钩ID。
+     * Lifecycle hook ID.
      * 
      */
     @Export(name="lifecycleHookId", refs={String.class}, tree="[0]")
     private Output<String> lifecycleHookId;
 
     /**
-     * @return 生命周期挂钩ID。
+     * @return Lifecycle hook ID.
      * 
      */
     public Output<String> lifecycleHookId() {
         return this.lifecycleHookId;
     }
     /**
-     * 生命周期挂钩名称，创建后不可修改。取值：不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1 ~ 128个字符之间。
+     * Lifecycle hook name, cannot be modified after creation. Values: Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
      * 
      */
     @Export(name="lifecycleHookName", refs={String.class}, tree="[0]")
     private Output<String> lifecycleHookName;
 
     /**
-     * @return 生命周期挂钩名称，创建后不可修改。取值：不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1 ~ 128个字符之间。
+     * @return Lifecycle hook name, cannot be modified after creation. Values: Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
      * 
      */
     public Output<String> lifecycleHookName() {
         return this.lifecycleHookName;
     }
     /**
-     * 实例挂起状态结束后执行的策略。取值：CONTINUE：继续执行。REJECT：中止后续操作。ROLLBACK：针对弹性收缩活动，会拒绝释放ECS实例，进行回滚；针对弹性扩张活动，效果同REJECT一样。
+     * Policy executed after the instance suspension ends. Values: CONTINUE: Continue execution. REJECT: Abort subsequent actions. ROLLBACK: For elastic scale-in activities, the release of ECS instances is rejected and rollback is performed; for elastic scale-out activities, the effect is the same as REJECT.
      * 
      */
     @Export(name="lifecycleHookPolicy", refs={String.class}, tree="[0]")
     private Output<String> lifecycleHookPolicy;
 
     /**
-     * @return 实例挂起状态结束后执行的策略。取值：CONTINUE：继续执行。REJECT：中止后续操作。ROLLBACK：针对弹性收缩活动，会拒绝释放ECS实例，进行回滚；针对弹性扩张活动，效果同REJECT一样。
+     * @return Policy executed after the instance suspension ends. Values: CONTINUE: Continue execution. REJECT: Abort subsequent actions. ROLLBACK: For elastic scale-in activities, the release of ECS instances is rejected and rollback is performed; for elastic scale-out activities, the effect is the same as REJECT.
      * 
      */
     public Output<String> lifecycleHookPolicy() {
         return this.lifecycleHookPolicy;
     }
     /**
-     * ECS实例保持挂起状态的时间，超时后，自动结束挂起状态，根据执行策略继续执行扩缩容行为。 请您评估自定义操作的处理时间后，设置合适的超时时间。取值：30 ～ 21600（6小时），单位 s，且必须为整数。
+     * Duration for which the ECS instance remains suspended. After timeout, the suspended state ends automatically and scaling actions continue according to the execution policy. Please evaluate the processing time for custom operations and set an appropriate timeout. Values: 30 to 21600 (6 hours), unit: s, must be an integer.
      * 
      */
     @Export(name="lifecycleHookTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> lifecycleHookTimeout;
 
     /**
-     * @return ECS实例保持挂起状态的时间，超时后，自动结束挂起状态，根据执行策略继续执行扩缩容行为。 请您评估自定义操作的处理时间后，设置合适的超时时间。取值：30 ～ 21600（6小时），单位 s，且必须为整数。
+     * @return Duration for which the ECS instance remains suspended. After timeout, the suspended state ends automatically and scaling actions continue according to the execution policy. Please evaluate the processing time for custom operations and set an appropriate timeout. Values: 30 to 21600 (6 hours), unit: s, must be an integer.
      * 
      */
     public Output<Integer> lifecycleHookTimeout() {
         return this.lifecycleHookTimeout;
     }
     /**
-     * 伸缩活动的类型，发生指定类型的伸缩活动时，生命周期挂钩会被触发并挂起ECS实例。取值：SCALE*IN：弹性收缩活动。SCALE*OUT：弹性扩张活动。
+     * Type of scaling activity. When a specified type of scaling activity occurs, the lifecycle hook is triggered and the ECS instance is suspended. Values: SCALE*IN: Elastic scale-in activity. SCALE*OUT: Elastic scale-out activity.
      * 
      */
     @Export(name="lifecycleHookType", refs={String.class}, tree="[0]")
     private Output<String> lifecycleHookType;
 
     /**
-     * @return 伸缩活动的类型，发生指定类型的伸缩活动时，生命周期挂钩会被触发并挂起ECS实例。取值：SCALE*IN：弹性收缩活动。SCALE*OUT：弹性扩张活动。
+     * @return Type of scaling activity. When a specified type of scaling activity occurs, the lifecycle hook is triggered and the ECS instance is suspended. Values: SCALE*IN: Elastic scale-in activity. SCALE*OUT: Elastic scale-out activity.
      * 
      */
     public Output<String> lifecycleHookType() {
         return this.lifecycleHookType;
     }
     /**
-     * 伸缩组ID。
+     * Scaling group ID.
      * 
      */
     @Export(name="scalingGroupId", refs={String.class}, tree="[0]")
     private Output<String> scalingGroupId;
 
     /**
-     * @return 伸缩组ID。
+     * @return Scaling group ID.
      * 
      */
     public Output<String> scalingGroupId() {

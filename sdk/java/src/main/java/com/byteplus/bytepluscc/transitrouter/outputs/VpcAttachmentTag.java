@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class VpcAttachmentTag {
     /**
-     * @return 用户标签的标签键。
+     * @return Tag key for user tag.
      * 
      */
     private @Nullable String key;
     /**
-     * @return 用户标签的标签值。
+     * @return Tag value for user tag.
      * 
      */
     private @Nullable String value;
 
     private VpcAttachmentTag() {}
     /**
-     * @return 用户标签的标签键。
+     * @return Tag key for user tag.
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return 用户标签的标签值。
+     * @return Tag value for user tag.
      * 
      */
     public Optional<String> value() {

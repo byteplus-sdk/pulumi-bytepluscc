@@ -15,85 +15,85 @@ import javax.annotation.Nullable;
 @CustomType
 public final class IndexKeyValueValue {
     /**
-     * @return 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+     * @return Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
      * 
      */
     private @Nullable Boolean autoIndexFlag;
     /**
-     * @return 是否区分大小写。默认为 false。
+     * @return Whether to distinguish case. Default is false.
      * 
      */
     private @Nullable Boolean caseSensitive;
     /**
-     * @return 字段的分词符。默认为空（&#34;&#34;）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !{@literal @}#%^&amp;*()-_=\\&#34;&#39;, &lt;&gt;/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+     * @return Token separators for the field. Default is empty (&#34;&#34;). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !{@literal @}#%^&amp;*()-_=\\&#34;&#39;, &lt;&gt;/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
      * 
      */
     private @Nullable String delimiter;
     /**
-     * @return 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+     * @return When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
      * 
      */
     private @Nullable Boolean includeChinese;
     /**
-     * @return 是否为 JSON 字段中所有值为文本的字段创建索引。
+     * @return Create indexes for all fields with text values in the JSON field.
      * 
      */
     private @Nullable Boolean indexAll;
     /**
-     * @return 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+     * @return Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
      * 
      */
     private @Nullable Boolean indexSqlAll;
     private @Nullable List<IndexKeyValueValueJsonKey> jsonKeys;
     /**
-     * @return 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+     * @return Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
      * 
      */
     private @Nullable Boolean sqlFlag;
     /**
-     * @return 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+     * @return Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
      * 
      */
     private @Nullable String valueType;
 
     private IndexKeyValueValue() {}
     /**
-     * @return 该索引是否是自动索引添加。true：该索引为自动添加。false：该索引非自动添加。
+     * @return Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
      * 
      */
     public Optional<Boolean> autoIndexFlag() {
         return Optional.ofNullable(this.autoIndexFlag);
     }
     /**
-     * @return 是否区分大小写。默认为 false。
+     * @return Whether to distinguish case. Default is false.
      * 
      */
     public Optional<Boolean> caseSensitive() {
         return Optional.ofNullable(this.caseSensitive);
     }
     /**
-     * @return 字段的分词符。默认为空（&#34;&#34;）。字符串中每个字符代表一个分词符。长度为 0~256 字节，长度为 0 时表示不分词。仅支持以下字符中的一种或者多种：大小写字母、数字以及 !{@literal @}#%^&amp;*()-_=\\&#34;&#39;, &lt;&gt;/?|;:\	\r[]{}.。支持同时配置包含中文和分词符。
+     * @return Token separators for the field. Default is empty (&#34;&#34;). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !{@literal @}#%^&amp;*()-_=\\&#34;&#39;, &lt;&gt;/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
      * 
      */
     public Optional<String> delimiter() {
         return Optional.ofNullable(this.delimiter);
     }
     /**
-     * @return 检索时，是否对日志的中文内容按照中文语法进行分词。启用：日志内的中文字符：根据常见的中文语法对日志进行分词，不支持自定义中文内容的分词符。日志内的非中文字符：按照分词符参数中指定的分词符对日志进行分词。未启用：按照分词符参数中指定的分词符对日志进行分词。
+     * @return When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
      * 
      */
     public Optional<Boolean> includeChinese() {
         return Optional.ofNullable(this.includeChinese);
     }
     /**
-     * @return 是否为 JSON 字段中所有值为文本的字段创建索引。
+     * @return Create indexes for all fields with text values in the JSON field.
      * 
      */
     public Optional<Boolean> indexAll() {
         return Optional.ofNullable(this.indexAll);
     }
     /**
-     * @return 是否为 JSON 字段开启自动索引和统计功能。true：开启自动索引和统计功能。false：不开启自动索引和统计功能。
+     * @return Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
      * 
      */
     public Optional<Boolean> indexSqlAll() {
@@ -103,14 +103,14 @@ public final class IndexKeyValueValue {
         return this.jsonKeys == null ? List.of() : this.jsonKeys;
     }
     /**
-     * @return 字段是否开启分析功能。默认为 false。开启统计分析功能后，支持配置分词符和包含中文。
+     * @return Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
      * 
      */
     public Optional<Boolean> sqlFlag() {
         return Optional.ofNullable(this.sqlFlag);
     }
     /**
-     * @return 字段类型。目前支持 long、double、text 和 json。long 和 double 类型不支持配置分词符、包含中文、大小写敏感。仅 json 类型支持进一步配置 JsonKeys 子字段。
+     * @return Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
      * 
      */
     public Optional<String> valueType() {

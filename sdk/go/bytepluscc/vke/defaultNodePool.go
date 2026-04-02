@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 除标准的自定义节点池外，容器服务支持 默认节点池（固定名称vke-default-nodepool）能力，用来纳管已有云服务器（ECS）实例。默认节点池的安全配置、高级配置、更多配置等配置能力与标准节点池一致，但不具备扩缩容、编辑数量等能力。
+// In addition to standard custom node pools, container service supports the default node pool (fixed name vke-default-nodepool) for managing existing cloud server (ECS) instances. The default node pool has the same security, advanced, and additional configuration capabilities as standard node pools, but does not support scaling or editing the number of nodes.
 //
 // ## Import
 //
@@ -22,28 +22,28 @@ import (
 type DefaultNodePool struct {
 	pulumi.CustomResourceState
 
-	// 节点池伸缩策略配置。
+	// Node pool scaling policy configuration
 	AutoScaling DefaultNodePoolAutoScalingOutput `pulumi:"autoScaling"`
-	// 节点池所在集群的 ID。
+	// Cluster ID where the node pool is located
 	ClusterId pulumi.StringOutput `pulumi:"clusterId"`
-	// 创建节点池的时间。
+	// Node pool creation time
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// 节点池 Kubernetes 相关配置。
+	// Kubernetes-related configuration for the node pool
 	KubernetesConfig DefaultNodePoolKubernetesConfigOutput `pulumi:"kubernetesConfig"`
-	// 托管节点池配置。
+	// Managed node pool configuration
 	Management DefaultNodePoolManagementOutput `pulumi:"management"`
-	// 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+	// Node pool name. Must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length: 2–64 characters
 	Name pulumi.StringOutput `pulumi:"name"`
-	// 节点池中云服务器（ECS）实例配置。
+	// Cloud server (ECS) instance configuration in the node pool
 	NodeConfig DefaultNodePoolNodeConfigOutput `pulumi:"nodeConfig"`
-	// 节点池 ID 。
+	// Node pool ID
 	NodePoolId pulumi.StringOutput `pulumi:"nodePoolId"`
-	// 节点池中的节点统计。
+	// Node statistics in the node pool.
 	NodeStatistics DefaultNodePoolNodeStatisticsOutput `pulumi:"nodeStatistics"`
-	// 节点池状态。
+	// Node pool status
 	Status DefaultNodePoolStatusOutput   `pulumi:"status"`
 	Tags   DefaultNodePoolTagArrayOutput `pulumi:"tags"`
-	// 更新节点池的时间。
+	// Time when the node pool was updated
 	UpdatedTime pulumi.StringOutput `pulumi:"updatedTime"`
 }
 
@@ -83,54 +83,54 @@ func GetDefaultNodePool(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DefaultNodePool resources.
 type defaultNodePoolState struct {
-	// 节点池伸缩策略配置。
+	// Node pool scaling policy configuration
 	AutoScaling *DefaultNodePoolAutoScaling `pulumi:"autoScaling"`
-	// 节点池所在集群的 ID。
+	// Cluster ID where the node pool is located
 	ClusterId *string `pulumi:"clusterId"`
-	// 创建节点池的时间。
+	// Node pool creation time
 	CreatedTime *string `pulumi:"createdTime"`
-	// 节点池 Kubernetes 相关配置。
+	// Kubernetes-related configuration for the node pool
 	KubernetesConfig *DefaultNodePoolKubernetesConfig `pulumi:"kubernetesConfig"`
-	// 托管节点池配置。
+	// Managed node pool configuration
 	Management *DefaultNodePoolManagement `pulumi:"management"`
-	// 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+	// Node pool name. Must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length: 2–64 characters
 	Name *string `pulumi:"name"`
-	// 节点池中云服务器（ECS）实例配置。
+	// Cloud server (ECS) instance configuration in the node pool
 	NodeConfig *DefaultNodePoolNodeConfig `pulumi:"nodeConfig"`
-	// 节点池 ID 。
+	// Node pool ID
 	NodePoolId *string `pulumi:"nodePoolId"`
-	// 节点池中的节点统计。
+	// Node statistics in the node pool.
 	NodeStatistics *DefaultNodePoolNodeStatistics `pulumi:"nodeStatistics"`
-	// 节点池状态。
+	// Node pool status
 	Status *DefaultNodePoolStatus `pulumi:"status"`
 	Tags   []DefaultNodePoolTag   `pulumi:"tags"`
-	// 更新节点池的时间。
+	// Time when the node pool was updated
 	UpdatedTime *string `pulumi:"updatedTime"`
 }
 
 type DefaultNodePoolState struct {
-	// 节点池伸缩策略配置。
+	// Node pool scaling policy configuration
 	AutoScaling DefaultNodePoolAutoScalingPtrInput
-	// 节点池所在集群的 ID。
+	// Cluster ID where the node pool is located
 	ClusterId pulumi.StringPtrInput
-	// 创建节点池的时间。
+	// Node pool creation time
 	CreatedTime pulumi.StringPtrInput
-	// 节点池 Kubernetes 相关配置。
+	// Kubernetes-related configuration for the node pool
 	KubernetesConfig DefaultNodePoolKubernetesConfigPtrInput
-	// 托管节点池配置。
+	// Managed node pool configuration
 	Management DefaultNodePoolManagementPtrInput
-	// 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+	// Node pool name. Must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length: 2–64 characters
 	Name pulumi.StringPtrInput
-	// 节点池中云服务器（ECS）实例配置。
+	// Cloud server (ECS) instance configuration in the node pool
 	NodeConfig DefaultNodePoolNodeConfigPtrInput
-	// 节点池 ID 。
+	// Node pool ID
 	NodePoolId pulumi.StringPtrInput
-	// 节点池中的节点统计。
+	// Node statistics in the node pool.
 	NodeStatistics DefaultNodePoolNodeStatisticsPtrInput
-	// 节点池状态。
+	// Node pool status
 	Status DefaultNodePoolStatusPtrInput
 	Tags   DefaultNodePoolTagArrayInput
-	// 更新节点池的时间。
+	// Time when the node pool was updated
 	UpdatedTime pulumi.StringPtrInput
 }
 
@@ -139,22 +139,22 @@ func (DefaultNodePoolState) ElementType() reflect.Type {
 }
 
 type defaultNodePoolArgs struct {
-	// 节点池所在集群的 ID。
+	// Cluster ID where the node pool is located
 	ClusterId string `pulumi:"clusterId"`
-	// 节点池 Kubernetes 相关配置。
+	// Kubernetes-related configuration for the node pool
 	KubernetesConfig *DefaultNodePoolKubernetesConfig `pulumi:"kubernetesConfig"`
-	// 节点池中云服务器（ECS）实例配置。
+	// Cloud server (ECS) instance configuration in the node pool
 	NodeConfig DefaultNodePoolNodeConfig `pulumi:"nodeConfig"`
 	Tags       []DefaultNodePoolTag      `pulumi:"tags"`
 }
 
 // The set of arguments for constructing a DefaultNodePool resource.
 type DefaultNodePoolArgs struct {
-	// 节点池所在集群的 ID。
+	// Cluster ID where the node pool is located
 	ClusterId pulumi.StringInput
-	// 节点池 Kubernetes 相关配置。
+	// Kubernetes-related configuration for the node pool
 	KubernetesConfig DefaultNodePoolKubernetesConfigPtrInput
-	// 节点池中云服务器（ECS）实例配置。
+	// Cloud server (ECS) instance configuration in the node pool
 	NodeConfig DefaultNodePoolNodeConfigInput
 	Tags       DefaultNodePoolTagArrayInput
 }
@@ -246,52 +246,52 @@ func (o DefaultNodePoolOutput) ToDefaultNodePoolOutputWithContext(ctx context.Co
 	return o
 }
 
-// 节点池伸缩策略配置。
+// Node pool scaling policy configuration
 func (o DefaultNodePoolOutput) AutoScaling() DefaultNodePoolAutoScalingOutput {
 	return o.ApplyT(func(v *DefaultNodePool) DefaultNodePoolAutoScalingOutput { return v.AutoScaling }).(DefaultNodePoolAutoScalingOutput)
 }
 
-// 节点池所在集群的 ID。
+// Cluster ID where the node pool is located
 func (o DefaultNodePoolOutput) ClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DefaultNodePool) pulumi.StringOutput { return v.ClusterId }).(pulumi.StringOutput)
 }
 
-// 创建节点池的时间。
+// Node pool creation time
 func (o DefaultNodePoolOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *DefaultNodePool) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 节点池 Kubernetes 相关配置。
+// Kubernetes-related configuration for the node pool
 func (o DefaultNodePoolOutput) KubernetesConfig() DefaultNodePoolKubernetesConfigOutput {
 	return o.ApplyT(func(v *DefaultNodePool) DefaultNodePoolKubernetesConfigOutput { return v.KubernetesConfig }).(DefaultNodePoolKubernetesConfigOutput)
 }
 
-// 托管节点池配置。
+// Managed node pool configuration
 func (o DefaultNodePoolOutput) Management() DefaultNodePoolManagementOutput {
 	return o.ApplyT(func(v *DefaultNodePool) DefaultNodePoolManagementOutput { return v.Management }).(DefaultNodePoolManagementOutput)
 }
 
-// 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+// Node pool name. Must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length: 2–64 characters
 func (o DefaultNodePoolOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *DefaultNodePool) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// 节点池中云服务器（ECS）实例配置。
+// Cloud server (ECS) instance configuration in the node pool
 func (o DefaultNodePoolOutput) NodeConfig() DefaultNodePoolNodeConfigOutput {
 	return o.ApplyT(func(v *DefaultNodePool) DefaultNodePoolNodeConfigOutput { return v.NodeConfig }).(DefaultNodePoolNodeConfigOutput)
 }
 
-// 节点池 ID 。
+// Node pool ID
 func (o DefaultNodePoolOutput) NodePoolId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DefaultNodePool) pulumi.StringOutput { return v.NodePoolId }).(pulumi.StringOutput)
 }
 
-// 节点池中的节点统计。
+// Node statistics in the node pool.
 func (o DefaultNodePoolOutput) NodeStatistics() DefaultNodePoolNodeStatisticsOutput {
 	return o.ApplyT(func(v *DefaultNodePool) DefaultNodePoolNodeStatisticsOutput { return v.NodeStatistics }).(DefaultNodePoolNodeStatisticsOutput)
 }
 
-// 节点池状态。
+// Node pool status
 func (o DefaultNodePoolOutput) Status() DefaultNodePoolStatusOutput {
 	return o.ApplyT(func(v *DefaultNodePool) DefaultNodePoolStatusOutput { return v.Status }).(DefaultNodePoolStatusOutput)
 }
@@ -300,7 +300,7 @@ func (o DefaultNodePoolOutput) Tags() DefaultNodePoolTagArrayOutput {
 	return o.ApplyT(func(v *DefaultNodePool) DefaultNodePoolTagArrayOutput { return v.Tags }).(DefaultNodePoolTagArrayOutput)
 }
 
-// 更新节点池的时间。
+// Time when the node pool was updated
 func (o DefaultNodePoolOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *DefaultNodePool) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }

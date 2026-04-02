@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainCustomErrorPageErrorPageRule {
     /**
-     * @return 表示规则的相关配置。
+     * @return Indicates the relevant configuration for the rule.
      * 
      */
     private GetDomainCustomErrorPageErrorPageRuleErrorPageAction errorPageAction;
 
     private GetDomainCustomErrorPageErrorPageRule() {}
     /**
-     * @return 表示规则的相关配置。
+     * @return Indicates the relevant configuration for the rule.
      * 
      */
     public GetDomainCustomErrorPageErrorPageRuleErrorPageAction errorPageAction() {

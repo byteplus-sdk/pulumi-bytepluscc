@@ -16,14 +16,14 @@ public final class SnapshotTagArgs extends com.pulumi.resources.ResourceArgs {
     public static final SnapshotTagArgs Empty = new SnapshotTagArgs();
 
     /**
-     * 为资源添加的用户标签的标签键。命名规则如下：不能以任何大小写形式的volc:或sys:开头。volc:或sys:开头为系统预留标签键禁止创建。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“{@literal @}”。长度限制在1～128个字符之间。
+     * User tag key added to the resource. Naming rules: Cannot start with volc: or sys: in any case. Keys starting with volc: or sys: are reserved system tag keys and cannot be created. Only language characters, numbers, spaces, and the following English symbols are allowed: &#39;_&#39;, &#39;.&#39;, &#39;:&#39;, &#39;/&#39;, &#39;=&#39;, &#39;+&#39;, &#39;-&#39;, &#39;{@literal @}&#39;. Length must be between 1 and 128 characters.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 为资源添加的用户标签的标签键。命名规则如下：不能以任何大小写形式的volc:或sys:开头。volc:或sys:开头为系统预留标签键禁止创建。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“{@literal @}”。长度限制在1～128个字符之间。
+     * @return User tag key added to the resource. Naming rules: Cannot start with volc: or sys: in any case. Keys starting with volc: or sys: are reserved system tag keys and cannot be created. Only language characters, numbers, spaces, and the following English symbols are allowed: &#39;_&#39;, &#39;.&#39;, &#39;:&#39;, &#39;/&#39;, &#39;=&#39;, &#39;+&#39;, &#39;-&#39;, &#39;{@literal @}&#39;. Length must be between 1 and 128 characters.
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class SnapshotTagArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 为资源添加的用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“{@literal @}”。允许为空，长度限制在0～256个字符之间。
+     * User tag value added to the resource. Naming rules: Only language characters, numbers, spaces, and the following English symbols are allowed: &#39;_&#39;, &#39;.&#39;, &#39;:&#39;, &#39;/&#39;, &#39;=&#39;, &#39;+&#39;, &#39;-&#39;, &#39;{@literal @}&#39;. Can be empty. Length must be between 0 and 256 characters.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 为资源添加的用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“{@literal @}”。允许为空，长度限制在0～256个字符之间。
+     * @return User tag value added to the resource. Naming rules: Only language characters, numbers, spaces, and the following English symbols are allowed: &#39;_&#39;, &#39;.&#39;, &#39;:&#39;, &#39;/&#39;, &#39;=&#39;, &#39;+&#39;, &#39;-&#39;, &#39;{@literal @}&#39;. Can be empty. Length must be between 0 and 256 characters.
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class SnapshotTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param key 为资源添加的用户标签的标签键。命名规则如下：不能以任何大小写形式的volc:或sys:开头。volc:或sys:开头为系统预留标签键禁止创建。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“{@literal @}”。长度限制在1～128个字符之间。
+         * @param key User tag key added to the resource. Naming rules: Cannot start with volc: or sys: in any case. Keys starting with volc: or sys: are reserved system tag keys and cannot be created. Only language characters, numbers, spaces, and the following English symbols are allowed: &#39;_&#39;, &#39;.&#39;, &#39;:&#39;, &#39;/&#39;, &#39;=&#39;, &#39;+&#39;, &#39;-&#39;, &#39;{@literal @}&#39;. Length must be between 1 and 128 characters.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class SnapshotTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param key 为资源添加的用户标签的标签键。命名规则如下：不能以任何大小写形式的volc:或sys:开头。volc:或sys:开头为系统预留标签键禁止创建。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“{@literal @}”。长度限制在1～128个字符之间。
+         * @param key User tag key added to the resource. Naming rules: Cannot start with volc: or sys: in any case. Keys starting with volc: or sys: are reserved system tag keys and cannot be created. Only language characters, numbers, spaces, and the following English symbols are allowed: &#39;_&#39;, &#39;.&#39;, &#39;:&#39;, &#39;/&#39;, &#39;=&#39;, &#39;+&#39;, &#39;-&#39;, &#39;{@literal @}&#39;. Length must be between 1 and 128 characters.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class SnapshotTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value 为资源添加的用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“{@literal @}”。允许为空，长度限制在0～256个字符之间。
+         * @param value User tag value added to the resource. Naming rules: Only language characters, numbers, spaces, and the following English symbols are allowed: &#39;_&#39;, &#39;.&#39;, &#39;:&#39;, &#39;/&#39;, &#39;=&#39;, &#39;+&#39;, &#39;-&#39;, &#39;{@literal @}&#39;. Can be empty. Length must be between 0 and 256 characters.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class SnapshotTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value 为资源添加的用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“{@literal @}”。允许为空，长度限制在0～256个字符之间。
+         * @param value User tag value added to the resource. Naming rules: Only language characters, numbers, spaces, and the following English symbols are allowed: &#39;_&#39;, &#39;.&#39;, &#39;:&#39;, &#39;/&#39;, &#39;=&#39;, &#39;+&#39;, &#39;-&#39;, &#39;{@literal @}&#39;. Can be empty. Length must be between 0 and 256 characters.
          * 
          * @return builder
          * 

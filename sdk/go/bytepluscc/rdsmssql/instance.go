@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 云数据库 SQL Server 版是基于世界一流的商用型数据库产品 Microsoft SQL Server 打造的一种稳定、可靠、可弹性伸缩的在线数据库服务。实例是使用云数据库 SQL Server 版的第一步
+// Cloud Database SQL Server Edition is a stable, reliable, and scalable online database service built on the world-class commercial database product Microsoft SQL Server. Creating an instance is the first step to using Cloud Database SQL Server Edition
 //
 // ## Import
 //
@@ -22,74 +22,74 @@ import (
 type Instance struct {
 	pulumi.CustomResourceState
 
-	// 需要修改的实例高级特性。该接口当前属于加白接口，如需使用，您可以联系技术支持。示例值：{"Key":"Value"}
+	// Advanced instance features to modify. This API currently requires allowlisting. To use it, contact technical support. Example value: {"Key":"Value"}
 	AdvancedFeatures pulumi.StringOutput `pulumi:"advancedFeatures"`
-	// 允许访问的白名单ID列表。
+	// Allowlist ID list permitted for access.
 	AllowListIds pulumi.StringArrayOutput `pulumi:"allowListIds"`
-	// 实例已用备份空间。单位：GiB。
+	// Used backup space for the instance, in GiB.
 	BackupUse pulumi.Float64Output `pulumi:"backupUse"`
-	// 付费方式。
+	// Payment method.
 	ChargeInfo      InstanceChargeInfoOutput          `pulumi:"chargeInfo"`
 	ConnectionInfos InstanceConnectionInfoArrayOutput `pulumi:"connectionInfos"`
-	// 创建时间。
+	// Creation time.
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// 兼容版本。取值如下：SQLServer*2019*Std：表示 SQL Server 2019 标准版。SQLServer*2019*Ent：表示 SQL Server 2019 企业版。SQLServer*2019*Web：表示 SQL Server 2019 Web 版。SQLServer*2022*Std：表示 SQL Server 2022 标准版。SQLServer*2022*Ent：表示 SQL Server 2022 企业版。SQLServer*2022*Web：表示 SQL Server 2022 Web 版。
+	// Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
 	DbEngineVersion pulumi.StringOutput `pulumi:"dbEngineVersion"`
-	// 内核版本号。
+	// Kernel version number.
 	InnerVersion pulumi.StringOutput `pulumi:"innerVersion"`
-	// 实例分类。取值：Primary：主实例。ReadOnly：只读实例。
+	// Instance category. Values: Primary: primary instance. ReadOnly: read-only instance.
 	InstanceCategory pulumi.StringOutput `pulumi:"instanceCategory"`
-	// 实例ID。
+	// Instance ID.
 	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
-	// 实例名称。实例名称的命名规则如下：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在 1~128 之间。
+	// Instance name. Naming rules: Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
 	InstanceName pulumi.StringOutput `pulumi:"instanceName"`
-	// 实例状态，取值：Running：运行中。Creating：创建中。CreateFailed：创建失败。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主节点切换中。Error：错误。
+	// Instance status. Values: Running: running. Creating: creating. CreateFailed: creation failed. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: primary node switching. Error: error.
 	InstanceStatus pulumi.StringOutput `pulumi:"instanceStatus"`
-	// 实例类型。取值如下：HA（高可用）、Basic（基础版）、Cluster（集群版）。不同引擎版本支持的类型不同：2019 Std 支持 HA/Basic；2019 Ent 支持 Cluster/Basic；2019 Web 支持 Basic。
+	// Instance type. Available values: HA (High Availability), Basic, Cluster. Supported types vary by engine version: 2019 Std supports HA/Basic; 2019 Ent supports Cluster/Basic; 2019 Web supports Basic.
 	InstanceType pulumi.StringOutput `pulumi:"instanceType"`
-	// 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC时间）。默认取值为 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。说明：为保护云数据库的稳定性，系统会不定期对实例进行维护。可维护时间段建议设置在业务低峰期，避免对业务造成影响。在可维护时间段内，实例可能会出现 1~2 次的连接闪断，需确保应用程序具有自动重连机制。可维护时间段最小时间间隔 1 小时，最大时间间隔 24 小时，不允许跨天选择可维护时间段。
+	// Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time). Default: UTC18:00Z-21:59Z (Beijing time 02:00-05:59). Note: To ensure cloud database stability, the system performs maintenance on instances periodically. It is recommended to set the maintenance window during off-peak hours to avoid business impact. During the maintenance window, the instance may experience 1–2 brief disconnections. Ensure your application supports automatic reconnection. The minimum maintenance window is 1 hour, the maximum is 24 hours, and cross-day maintenance windows are not allowed.
 	MaintenanceTime pulumi.StringOutput `pulumi:"maintenanceTime"`
-	// 主节点ID。手动切换主备节点时，该参数为必填项。
+	// Primary node ID. This parameter is required when manually switching master and standby nodes.
 	MasterNodeId pulumi.StringOutput `pulumi:"masterNodeId"`
-	// 内存大小，单位为 GiB。
+	// Memory size, in GiB.
 	Memory          pulumi.IntOutput                  `pulumi:"memory"`
 	NodeDetailInfos InstanceNodeDetailInfoArrayOutput `pulumi:"nodeDetailInfos"`
-	// 实例规格代码。
+	// Instance specification code.
 	NodeSpec pulumi.StringOutput `pulumi:"nodeSpec"`
-	// 端口
+	// Port.
 	Port pulumi.StringOutput `pulumi:"port"`
-	// 主实例ID。如果为空说明它是主实例。
+	// Primary instance ID. If this field is empty, this instance is the primary instance.
 	PrimaryInstanceId pulumi.StringOutput `pulumi:"primaryInstanceId"`
-	// 所属项目。
+	// Project.
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
-	// 只读实例数量。
+	// Number of read-only instances.
 	ReadOnlyNumber pulumi.IntOutput `pulumi:"readOnlyNumber"`
-	// 实例字符集排序规则，默认 Chinese*PRC*CI*AS。目前已支持大多数原生字符集具体取值如下：Latin1*General*CI*AS，Latin1*General*CS*AS，SQL*Latin1*General*CP1*CI*AS，SQL*Latin1*General*CP1*CS*AS，Chinese*PRC*CI*AS，Chinese*PRC*CS*AS，Chinese*PRC*BIN，Japanese*CI*AS，Japanese*CS*AS，Chinese*Taiwan*Stroke*CI*AS，Chinese*Taiwan*Stroke*CS*AS，Thai*CI*AS，Chinese*PRC*CI*AI，Chinese*PRC*BIN2，Cyrillic*General*CI_AS。
+	// Instance collation. Default: Chinese*PRC*CI*AS. Most native collations are supported. Available values: Latin1*General*CI*AS, Latin1*General*CS*AS, SQL*Latin1*General*CP1*CI*AS, SQL*Latin1*General*CP1*CS*AS, Chinese*PRC*CI*AS, Chinese*PRC*CS*AS, Chinese*PRC*BIN, Japanese*CI*AS, Japanese*CS*AS, Chinese*Taiwan*Stroke*CI*AS, Chinese*Taiwan*Stroke*CS*AS, Thai*CI*AS, Chinese*PRC*CI*AI, Chinese*PRC*BIN2, Cyrillic*General*CI_AS.
 	ServerCollation pulumi.StringOutput `pulumi:"serverCollation"`
-	// 表示是否开启慢日志，取值如下：true：表示开启慢日志。false：表示不开启慢日志。
+	// Indicates whether slow logs are enabled. Available values: true: slow logs enabled. false: slow logs disabled.
 	SlowQueryEnable pulumi.BoolOutput `pulumi:"slowQueryEnable"`
-	// 慢日志的阈值，取值范围为 [1~10]，单位：秒（s）。
+	// Slow log threshold. Range: [1~10], unit: seconds (s).
 	SlowQueryTime pulumi.StringOutput `pulumi:"slowQueryTime"`
-	// 存储空间大小，单位为 GiB。取值范围：20GiB ~ 4000GiB，步长为 10GiB。
+	// Storage size, in GiB. Range: 20 GiB ~ 4000 GiB, increment: 10 GiB.
 	StorageSpace pulumi.IntOutput `pulumi:"storageSpace"`
-	// 实例存储类型。
+	// Instance storage type.
 	StorageType pulumi.StringOutput `pulumi:"storageType"`
-	// 实例已用储空间。单位：GiB。
+	// Used storage space for the instance. Unit: GiB.
 	StorageUse pulumi.Float64Output `pulumi:"storageUse"`
-	// 子网 ID。当主备节点不在同一个可用区时，主备节点的子网也需设置为对应可用区私有网络下的子网，多个可用区需使用英文分号（;）隔开。
+	// Subnet ID. If the primary and standby nodes are in different availability zones, their subnets must be set to the corresponding private network subnets for each zone. Use a semicolon (;) to separate multiple zones.
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
-	// 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=。
+	// Password for the high-privilege account. Password rules: 8–32 characters; must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !@#$%^&*()_+-=.
 	SuperAccountPassword pulumi.StringOutput    `pulumi:"superAccountPassword"`
 	Tags                 InstanceTagArrayOutput `pulumi:"tags"`
-	// 时区。
+	// Time zone.
 	TimeZone pulumi.StringOutput `pulumi:"timeZone"`
-	// 更新时间。
+	// Update time.
 	UpdatedTime pulumi.StringOutput `pulumi:"updatedTime"`
-	// CPU 大小。例如：1 表示 1核。
+	// CPU size. For example: 1 means 1 core.
 	Vcpu pulumi.IntOutput `pulumi:"vcpu"`
 	// VPC ID
 	VpcId pulumi.StringOutput `pulumi:"vpcId"`
-	// 节点所在可用区。当主备节点不在同一个可用区时，您可以使用英文分号（;）隔开，默认第一个为主节点可用区，第二个为备节点可用区。
+	// Availability zone of the node. If the primary and standby nodes are in different availability zones, use a semicolon (;) to separate them. The first is the primary node's zone by default, the second is the standby node's zone.
 	ZoneId pulumi.StringOutput `pulumi:"zoneId"`
 }
 
@@ -150,146 +150,146 @@ func GetInstance(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Instance resources.
 type instanceState struct {
-	// 需要修改的实例高级特性。该接口当前属于加白接口，如需使用，您可以联系技术支持。示例值：{"Key":"Value"}
+	// Advanced instance features to modify. This API currently requires allowlisting. To use it, contact technical support. Example value: {"Key":"Value"}
 	AdvancedFeatures *string `pulumi:"advancedFeatures"`
-	// 允许访问的白名单ID列表。
+	// Allowlist ID list permitted for access.
 	AllowListIds []string `pulumi:"allowListIds"`
-	// 实例已用备份空间。单位：GiB。
+	// Used backup space for the instance, in GiB.
 	BackupUse *float64 `pulumi:"backupUse"`
-	// 付费方式。
+	// Payment method.
 	ChargeInfo      *InstanceChargeInfo      `pulumi:"chargeInfo"`
 	ConnectionInfos []InstanceConnectionInfo `pulumi:"connectionInfos"`
-	// 创建时间。
+	// Creation time.
 	CreatedTime *string `pulumi:"createdTime"`
-	// 兼容版本。取值如下：SQLServer*2019*Std：表示 SQL Server 2019 标准版。SQLServer*2019*Ent：表示 SQL Server 2019 企业版。SQLServer*2019*Web：表示 SQL Server 2019 Web 版。SQLServer*2022*Std：表示 SQL Server 2022 标准版。SQLServer*2022*Ent：表示 SQL Server 2022 企业版。SQLServer*2022*Web：表示 SQL Server 2022 Web 版。
+	// Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
 	DbEngineVersion *string `pulumi:"dbEngineVersion"`
-	// 内核版本号。
+	// Kernel version number.
 	InnerVersion *string `pulumi:"innerVersion"`
-	// 实例分类。取值：Primary：主实例。ReadOnly：只读实例。
+	// Instance category. Values: Primary: primary instance. ReadOnly: read-only instance.
 	InstanceCategory *string `pulumi:"instanceCategory"`
-	// 实例ID。
+	// Instance ID.
 	InstanceId *string `pulumi:"instanceId"`
-	// 实例名称。实例名称的命名规则如下：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在 1~128 之间。
+	// Instance name. Naming rules: Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
 	InstanceName *string `pulumi:"instanceName"`
-	// 实例状态，取值：Running：运行中。Creating：创建中。CreateFailed：创建失败。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主节点切换中。Error：错误。
+	// Instance status. Values: Running: running. Creating: creating. CreateFailed: creation failed. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: primary node switching. Error: error.
 	InstanceStatus *string `pulumi:"instanceStatus"`
-	// 实例类型。取值如下：HA（高可用）、Basic（基础版）、Cluster（集群版）。不同引擎版本支持的类型不同：2019 Std 支持 HA/Basic；2019 Ent 支持 Cluster/Basic；2019 Web 支持 Basic。
+	// Instance type. Available values: HA (High Availability), Basic, Cluster. Supported types vary by engine version: 2019 Std supports HA/Basic; 2019 Ent supports Cluster/Basic; 2019 Web supports Basic.
 	InstanceType *string `pulumi:"instanceType"`
-	// 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC时间）。默认取值为 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。说明：为保护云数据库的稳定性，系统会不定期对实例进行维护。可维护时间段建议设置在业务低峰期，避免对业务造成影响。在可维护时间段内，实例可能会出现 1~2 次的连接闪断，需确保应用程序具有自动重连机制。可维护时间段最小时间间隔 1 小时，最大时间间隔 24 小时，不允许跨天选择可维护时间段。
+	// Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time). Default: UTC18:00Z-21:59Z (Beijing time 02:00-05:59). Note: To ensure cloud database stability, the system performs maintenance on instances periodically. It is recommended to set the maintenance window during off-peak hours to avoid business impact. During the maintenance window, the instance may experience 1–2 brief disconnections. Ensure your application supports automatic reconnection. The minimum maintenance window is 1 hour, the maximum is 24 hours, and cross-day maintenance windows are not allowed.
 	MaintenanceTime *string `pulumi:"maintenanceTime"`
-	// 主节点ID。手动切换主备节点时，该参数为必填项。
+	// Primary node ID. This parameter is required when manually switching master and standby nodes.
 	MasterNodeId *string `pulumi:"masterNodeId"`
-	// 内存大小，单位为 GiB。
+	// Memory size, in GiB.
 	Memory          *int                     `pulumi:"memory"`
 	NodeDetailInfos []InstanceNodeDetailInfo `pulumi:"nodeDetailInfos"`
-	// 实例规格代码。
+	// Instance specification code.
 	NodeSpec *string `pulumi:"nodeSpec"`
-	// 端口
+	// Port.
 	Port *string `pulumi:"port"`
-	// 主实例ID。如果为空说明它是主实例。
+	// Primary instance ID. If this field is empty, this instance is the primary instance.
 	PrimaryInstanceId *string `pulumi:"primaryInstanceId"`
-	// 所属项目。
+	// Project.
 	ProjectName *string `pulumi:"projectName"`
-	// 只读实例数量。
+	// Number of read-only instances.
 	ReadOnlyNumber *int `pulumi:"readOnlyNumber"`
-	// 实例字符集排序规则，默认 Chinese*PRC*CI*AS。目前已支持大多数原生字符集具体取值如下：Latin1*General*CI*AS，Latin1*General*CS*AS，SQL*Latin1*General*CP1*CI*AS，SQL*Latin1*General*CP1*CS*AS，Chinese*PRC*CI*AS，Chinese*PRC*CS*AS，Chinese*PRC*BIN，Japanese*CI*AS，Japanese*CS*AS，Chinese*Taiwan*Stroke*CI*AS，Chinese*Taiwan*Stroke*CS*AS，Thai*CI*AS，Chinese*PRC*CI*AI，Chinese*PRC*BIN2，Cyrillic*General*CI_AS。
+	// Instance collation. Default: Chinese*PRC*CI*AS. Most native collations are supported. Available values: Latin1*General*CI*AS, Latin1*General*CS*AS, SQL*Latin1*General*CP1*CI*AS, SQL*Latin1*General*CP1*CS*AS, Chinese*PRC*CI*AS, Chinese*PRC*CS*AS, Chinese*PRC*BIN, Japanese*CI*AS, Japanese*CS*AS, Chinese*Taiwan*Stroke*CI*AS, Chinese*Taiwan*Stroke*CS*AS, Thai*CI*AS, Chinese*PRC*CI*AI, Chinese*PRC*BIN2, Cyrillic*General*CI_AS.
 	ServerCollation *string `pulumi:"serverCollation"`
-	// 表示是否开启慢日志，取值如下：true：表示开启慢日志。false：表示不开启慢日志。
+	// Indicates whether slow logs are enabled. Available values: true: slow logs enabled. false: slow logs disabled.
 	SlowQueryEnable *bool `pulumi:"slowQueryEnable"`
-	// 慢日志的阈值，取值范围为 [1~10]，单位：秒（s）。
+	// Slow log threshold. Range: [1~10], unit: seconds (s).
 	SlowQueryTime *string `pulumi:"slowQueryTime"`
-	// 存储空间大小，单位为 GiB。取值范围：20GiB ~ 4000GiB，步长为 10GiB。
+	// Storage size, in GiB. Range: 20 GiB ~ 4000 GiB, increment: 10 GiB.
 	StorageSpace *int `pulumi:"storageSpace"`
-	// 实例存储类型。
+	// Instance storage type.
 	StorageType *string `pulumi:"storageType"`
-	// 实例已用储空间。单位：GiB。
+	// Used storage space for the instance. Unit: GiB.
 	StorageUse *float64 `pulumi:"storageUse"`
-	// 子网 ID。当主备节点不在同一个可用区时，主备节点的子网也需设置为对应可用区私有网络下的子网，多个可用区需使用英文分号（;）隔开。
+	// Subnet ID. If the primary and standby nodes are in different availability zones, their subnets must be set to the corresponding private network subnets for each zone. Use a semicolon (;) to separate multiple zones.
 	SubnetId *string `pulumi:"subnetId"`
-	// 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=。
+	// Password for the high-privilege account. Password rules: 8–32 characters; must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !@#$%^&*()_+-=.
 	SuperAccountPassword *string       `pulumi:"superAccountPassword"`
 	Tags                 []InstanceTag `pulumi:"tags"`
-	// 时区。
+	// Time zone.
 	TimeZone *string `pulumi:"timeZone"`
-	// 更新时间。
+	// Update time.
 	UpdatedTime *string `pulumi:"updatedTime"`
-	// CPU 大小。例如：1 表示 1核。
+	// CPU size. For example: 1 means 1 core.
 	Vcpu *int `pulumi:"vcpu"`
 	// VPC ID
 	VpcId *string `pulumi:"vpcId"`
-	// 节点所在可用区。当主备节点不在同一个可用区时，您可以使用英文分号（;）隔开，默认第一个为主节点可用区，第二个为备节点可用区。
+	// Availability zone of the node. If the primary and standby nodes are in different availability zones, use a semicolon (;) to separate them. The first is the primary node's zone by default, the second is the standby node's zone.
 	ZoneId *string `pulumi:"zoneId"`
 }
 
 type InstanceState struct {
-	// 需要修改的实例高级特性。该接口当前属于加白接口，如需使用，您可以联系技术支持。示例值：{"Key":"Value"}
+	// Advanced instance features to modify. This API currently requires allowlisting. To use it, contact technical support. Example value: {"Key":"Value"}
 	AdvancedFeatures pulumi.StringPtrInput
-	// 允许访问的白名单ID列表。
+	// Allowlist ID list permitted for access.
 	AllowListIds pulumi.StringArrayInput
-	// 实例已用备份空间。单位：GiB。
+	// Used backup space for the instance, in GiB.
 	BackupUse pulumi.Float64PtrInput
-	// 付费方式。
+	// Payment method.
 	ChargeInfo      InstanceChargeInfoPtrInput
 	ConnectionInfos InstanceConnectionInfoArrayInput
-	// 创建时间。
+	// Creation time.
 	CreatedTime pulumi.StringPtrInput
-	// 兼容版本。取值如下：SQLServer*2019*Std：表示 SQL Server 2019 标准版。SQLServer*2019*Ent：表示 SQL Server 2019 企业版。SQLServer*2019*Web：表示 SQL Server 2019 Web 版。SQLServer*2022*Std：表示 SQL Server 2022 标准版。SQLServer*2022*Ent：表示 SQL Server 2022 企业版。SQLServer*2022*Web：表示 SQL Server 2022 Web 版。
+	// Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
 	DbEngineVersion pulumi.StringPtrInput
-	// 内核版本号。
+	// Kernel version number.
 	InnerVersion pulumi.StringPtrInput
-	// 实例分类。取值：Primary：主实例。ReadOnly：只读实例。
+	// Instance category. Values: Primary: primary instance. ReadOnly: read-only instance.
 	InstanceCategory pulumi.StringPtrInput
-	// 实例ID。
+	// Instance ID.
 	InstanceId pulumi.StringPtrInput
-	// 实例名称。实例名称的命名规则如下：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在 1~128 之间。
+	// Instance name. Naming rules: Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
 	InstanceName pulumi.StringPtrInput
-	// 实例状态，取值：Running：运行中。Creating：创建中。CreateFailed：创建失败。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主节点切换中。Error：错误。
+	// Instance status. Values: Running: running. Creating: creating. CreateFailed: creation failed. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: primary node switching. Error: error.
 	InstanceStatus pulumi.StringPtrInput
-	// 实例类型。取值如下：HA（高可用）、Basic（基础版）、Cluster（集群版）。不同引擎版本支持的类型不同：2019 Std 支持 HA/Basic；2019 Ent 支持 Cluster/Basic；2019 Web 支持 Basic。
+	// Instance type. Available values: HA (High Availability), Basic, Cluster. Supported types vary by engine version: 2019 Std supports HA/Basic; 2019 Ent supports Cluster/Basic; 2019 Web supports Basic.
 	InstanceType pulumi.StringPtrInput
-	// 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC时间）。默认取值为 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。说明：为保护云数据库的稳定性，系统会不定期对实例进行维护。可维护时间段建议设置在业务低峰期，避免对业务造成影响。在可维护时间段内，实例可能会出现 1~2 次的连接闪断，需确保应用程序具有自动重连机制。可维护时间段最小时间间隔 1 小时，最大时间间隔 24 小时，不允许跨天选择可维护时间段。
+	// Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time). Default: UTC18:00Z-21:59Z (Beijing time 02:00-05:59). Note: To ensure cloud database stability, the system performs maintenance on instances periodically. It is recommended to set the maintenance window during off-peak hours to avoid business impact. During the maintenance window, the instance may experience 1–2 brief disconnections. Ensure your application supports automatic reconnection. The minimum maintenance window is 1 hour, the maximum is 24 hours, and cross-day maintenance windows are not allowed.
 	MaintenanceTime pulumi.StringPtrInput
-	// 主节点ID。手动切换主备节点时，该参数为必填项。
+	// Primary node ID. This parameter is required when manually switching master and standby nodes.
 	MasterNodeId pulumi.StringPtrInput
-	// 内存大小，单位为 GiB。
+	// Memory size, in GiB.
 	Memory          pulumi.IntPtrInput
 	NodeDetailInfos InstanceNodeDetailInfoArrayInput
-	// 实例规格代码。
+	// Instance specification code.
 	NodeSpec pulumi.StringPtrInput
-	// 端口
+	// Port.
 	Port pulumi.StringPtrInput
-	// 主实例ID。如果为空说明它是主实例。
+	// Primary instance ID. If this field is empty, this instance is the primary instance.
 	PrimaryInstanceId pulumi.StringPtrInput
-	// 所属项目。
+	// Project.
 	ProjectName pulumi.StringPtrInput
-	// 只读实例数量。
+	// Number of read-only instances.
 	ReadOnlyNumber pulumi.IntPtrInput
-	// 实例字符集排序规则，默认 Chinese*PRC*CI*AS。目前已支持大多数原生字符集具体取值如下：Latin1*General*CI*AS，Latin1*General*CS*AS，SQL*Latin1*General*CP1*CI*AS，SQL*Latin1*General*CP1*CS*AS，Chinese*PRC*CI*AS，Chinese*PRC*CS*AS，Chinese*PRC*BIN，Japanese*CI*AS，Japanese*CS*AS，Chinese*Taiwan*Stroke*CI*AS，Chinese*Taiwan*Stroke*CS*AS，Thai*CI*AS，Chinese*PRC*CI*AI，Chinese*PRC*BIN2，Cyrillic*General*CI_AS。
+	// Instance collation. Default: Chinese*PRC*CI*AS. Most native collations are supported. Available values: Latin1*General*CI*AS, Latin1*General*CS*AS, SQL*Latin1*General*CP1*CI*AS, SQL*Latin1*General*CP1*CS*AS, Chinese*PRC*CI*AS, Chinese*PRC*CS*AS, Chinese*PRC*BIN, Japanese*CI*AS, Japanese*CS*AS, Chinese*Taiwan*Stroke*CI*AS, Chinese*Taiwan*Stroke*CS*AS, Thai*CI*AS, Chinese*PRC*CI*AI, Chinese*PRC*BIN2, Cyrillic*General*CI_AS.
 	ServerCollation pulumi.StringPtrInput
-	// 表示是否开启慢日志，取值如下：true：表示开启慢日志。false：表示不开启慢日志。
+	// Indicates whether slow logs are enabled. Available values: true: slow logs enabled. false: slow logs disabled.
 	SlowQueryEnable pulumi.BoolPtrInput
-	// 慢日志的阈值，取值范围为 [1~10]，单位：秒（s）。
+	// Slow log threshold. Range: [1~10], unit: seconds (s).
 	SlowQueryTime pulumi.StringPtrInput
-	// 存储空间大小，单位为 GiB。取值范围：20GiB ~ 4000GiB，步长为 10GiB。
+	// Storage size, in GiB. Range: 20 GiB ~ 4000 GiB, increment: 10 GiB.
 	StorageSpace pulumi.IntPtrInput
-	// 实例存储类型。
+	// Instance storage type.
 	StorageType pulumi.StringPtrInput
-	// 实例已用储空间。单位：GiB。
+	// Used storage space for the instance. Unit: GiB.
 	StorageUse pulumi.Float64PtrInput
-	// 子网 ID。当主备节点不在同一个可用区时，主备节点的子网也需设置为对应可用区私有网络下的子网，多个可用区需使用英文分号（;）隔开。
+	// Subnet ID. If the primary and standby nodes are in different availability zones, their subnets must be set to the corresponding private network subnets for each zone. Use a semicolon (;) to separate multiple zones.
 	SubnetId pulumi.StringPtrInput
-	// 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=。
+	// Password for the high-privilege account. Password rules: 8–32 characters; must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !@#$%^&*()_+-=.
 	SuperAccountPassword pulumi.StringPtrInput
 	Tags                 InstanceTagArrayInput
-	// 时区。
+	// Time zone.
 	TimeZone pulumi.StringPtrInput
-	// 更新时间。
+	// Update time.
 	UpdatedTime pulumi.StringPtrInput
-	// CPU 大小。例如：1 表示 1核。
+	// CPU size. For example: 1 means 1 core.
 	Vcpu pulumi.IntPtrInput
 	// VPC ID
 	VpcId pulumi.StringPtrInput
-	// 节点所在可用区。当主备节点不在同一个可用区时，您可以使用英文分号（;）隔开，默认第一个为主节点可用区，第二个为备节点可用区。
+	// Availability zone of the node. If the primary and standby nodes are in different availability zones, use a semicolon (;) to separate them. The first is the primary node's zone by default, the second is the standby node's zone.
 	ZoneId pulumi.StringPtrInput
 }
 
@@ -298,79 +298,79 @@ func (InstanceState) ElementType() reflect.Type {
 }
 
 type instanceArgs struct {
-	// 需要修改的实例高级特性。该接口当前属于加白接口，如需使用，您可以联系技术支持。示例值：{"Key":"Value"}
+	// Advanced instance features to modify. This API currently requires allowlisting. To use it, contact technical support. Example value: {"Key":"Value"}
 	AdvancedFeatures *string `pulumi:"advancedFeatures"`
-	// 允许访问的白名单ID列表。
+	// Allowlist ID list permitted for access.
 	AllowListIds []string `pulumi:"allowListIds"`
-	// 付费方式。
+	// Payment method.
 	ChargeInfo *InstanceChargeInfo `pulumi:"chargeInfo"`
-	// 兼容版本。取值如下：SQLServer*2019*Std：表示 SQL Server 2019 标准版。SQLServer*2019*Ent：表示 SQL Server 2019 企业版。SQLServer*2019*Web：表示 SQL Server 2019 Web 版。SQLServer*2022*Std：表示 SQL Server 2022 标准版。SQLServer*2022*Ent：表示 SQL Server 2022 企业版。SQLServer*2022*Web：表示 SQL Server 2022 Web 版。
+	// Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
 	DbEngineVersion string `pulumi:"dbEngineVersion"`
-	// 实例名称。实例名称的命名规则如下：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在 1~128 之间。
+	// Instance name. Naming rules: Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
 	InstanceName *string `pulumi:"instanceName"`
-	// 实例类型。取值如下：HA（高可用）、Basic（基础版）、Cluster（集群版）。不同引擎版本支持的类型不同：2019 Std 支持 HA/Basic；2019 Ent 支持 Cluster/Basic；2019 Web 支持 Basic。
+	// Instance type. Available values: HA (High Availability), Basic, Cluster. Supported types vary by engine version: 2019 Std supports HA/Basic; 2019 Ent supports Cluster/Basic; 2019 Web supports Basic.
 	InstanceType string `pulumi:"instanceType"`
-	// 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC时间）。默认取值为 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。说明：为保护云数据库的稳定性，系统会不定期对实例进行维护。可维护时间段建议设置在业务低峰期，避免对业务造成影响。在可维护时间段内，实例可能会出现 1~2 次的连接闪断，需确保应用程序具有自动重连机制。可维护时间段最小时间间隔 1 小时，最大时间间隔 24 小时，不允许跨天选择可维护时间段。
+	// Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time). Default: UTC18:00Z-21:59Z (Beijing time 02:00-05:59). Note: To ensure cloud database stability, the system performs maintenance on instances periodically. It is recommended to set the maintenance window during off-peak hours to avoid business impact. During the maintenance window, the instance may experience 1–2 brief disconnections. Ensure your application supports automatic reconnection. The minimum maintenance window is 1 hour, the maximum is 24 hours, and cross-day maintenance windows are not allowed.
 	MaintenanceTime *string `pulumi:"maintenanceTime"`
-	// 主节点ID。手动切换主备节点时，该参数为必填项。
+	// Primary node ID. This parameter is required when manually switching master and standby nodes.
 	MasterNodeId *string `pulumi:"masterNodeId"`
-	// 实例规格代码。
+	// Instance specification code.
 	NodeSpec string `pulumi:"nodeSpec"`
-	// 所属项目。
+	// Project.
 	ProjectName *string `pulumi:"projectName"`
-	// 实例字符集排序规则，默认 Chinese*PRC*CI*AS。目前已支持大多数原生字符集具体取值如下：Latin1*General*CI*AS，Latin1*General*CS*AS，SQL*Latin1*General*CP1*CI*AS，SQL*Latin1*General*CP1*CS*AS，Chinese*PRC*CI*AS，Chinese*PRC*CS*AS，Chinese*PRC*BIN，Japanese*CI*AS，Japanese*CS*AS，Chinese*Taiwan*Stroke*CI*AS，Chinese*Taiwan*Stroke*CS*AS，Thai*CI*AS，Chinese*PRC*CI*AI，Chinese*PRC*BIN2，Cyrillic*General*CI_AS。
+	// Instance collation. Default: Chinese*PRC*CI*AS. Most native collations are supported. Available values: Latin1*General*CI*AS, Latin1*General*CS*AS, SQL*Latin1*General*CP1*CI*AS, SQL*Latin1*General*CP1*CS*AS, Chinese*PRC*CI*AS, Chinese*PRC*CS*AS, Chinese*PRC*BIN, Japanese*CI*AS, Japanese*CS*AS, Chinese*Taiwan*Stroke*CI*AS, Chinese*Taiwan*Stroke*CS*AS, Thai*CI*AS, Chinese*PRC*CI*AI, Chinese*PRC*BIN2, Cyrillic*General*CI_AS.
 	ServerCollation *string `pulumi:"serverCollation"`
-	// 存储空间大小，单位为 GiB。取值范围：20GiB ~ 4000GiB，步长为 10GiB。
+	// Storage size, in GiB. Range: 20 GiB ~ 4000 GiB, increment: 10 GiB.
 	StorageSpace int `pulumi:"storageSpace"`
-	// 子网 ID。当主备节点不在同一个可用区时，主备节点的子网也需设置为对应可用区私有网络下的子网，多个可用区需使用英文分号（;）隔开。
+	// Subnet ID. If the primary and standby nodes are in different availability zones, their subnets must be set to the corresponding private network subnets for each zone. Use a semicolon (;) to separate multiple zones.
 	SubnetId string `pulumi:"subnetId"`
-	// 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=。
+	// Password for the high-privilege account. Password rules: 8–32 characters; must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !@#$%^&*()_+-=.
 	SuperAccountPassword string        `pulumi:"superAccountPassword"`
 	Tags                 []InstanceTag `pulumi:"tags"`
-	// 时区。
+	// Time zone.
 	TimeZone string `pulumi:"timeZone"`
 	// VPC ID
 	VpcId string `pulumi:"vpcId"`
-	// 节点所在可用区。当主备节点不在同一个可用区时，您可以使用英文分号（;）隔开，默认第一个为主节点可用区，第二个为备节点可用区。
+	// Availability zone of the node. If the primary and standby nodes are in different availability zones, use a semicolon (;) to separate them. The first is the primary node's zone by default, the second is the standby node's zone.
 	ZoneId string `pulumi:"zoneId"`
 }
 
 // The set of arguments for constructing a Instance resource.
 type InstanceArgs struct {
-	// 需要修改的实例高级特性。该接口当前属于加白接口，如需使用，您可以联系技术支持。示例值：{"Key":"Value"}
+	// Advanced instance features to modify. This API currently requires allowlisting. To use it, contact technical support. Example value: {"Key":"Value"}
 	AdvancedFeatures pulumi.StringPtrInput
-	// 允许访问的白名单ID列表。
+	// Allowlist ID list permitted for access.
 	AllowListIds pulumi.StringArrayInput
-	// 付费方式。
+	// Payment method.
 	ChargeInfo InstanceChargeInfoPtrInput
-	// 兼容版本。取值如下：SQLServer*2019*Std：表示 SQL Server 2019 标准版。SQLServer*2019*Ent：表示 SQL Server 2019 企业版。SQLServer*2019*Web：表示 SQL Server 2019 Web 版。SQLServer*2022*Std：表示 SQL Server 2022 标准版。SQLServer*2022*Ent：表示 SQL Server 2022 企业版。SQLServer*2022*Web：表示 SQL Server 2022 Web 版。
+	// Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
 	DbEngineVersion pulumi.StringInput
-	// 实例名称。实例名称的命名规则如下：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在 1~128 之间。
+	// Instance name. Naming rules: Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
 	InstanceName pulumi.StringPtrInput
-	// 实例类型。取值如下：HA（高可用）、Basic（基础版）、Cluster（集群版）。不同引擎版本支持的类型不同：2019 Std 支持 HA/Basic；2019 Ent 支持 Cluster/Basic；2019 Web 支持 Basic。
+	// Instance type. Available values: HA (High Availability), Basic, Cluster. Supported types vary by engine version: 2019 Std supports HA/Basic; 2019 Ent supports Cluster/Basic; 2019 Web supports Basic.
 	InstanceType pulumi.StringInput
-	// 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC时间）。默认取值为 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。说明：为保护云数据库的稳定性，系统会不定期对实例进行维护。可维护时间段建议设置在业务低峰期，避免对业务造成影响。在可维护时间段内，实例可能会出现 1~2 次的连接闪断，需确保应用程序具有自动重连机制。可维护时间段最小时间间隔 1 小时，最大时间间隔 24 小时，不允许跨天选择可维护时间段。
+	// Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time). Default: UTC18:00Z-21:59Z (Beijing time 02:00-05:59). Note: To ensure cloud database stability, the system performs maintenance on instances periodically. It is recommended to set the maintenance window during off-peak hours to avoid business impact. During the maintenance window, the instance may experience 1–2 brief disconnections. Ensure your application supports automatic reconnection. The minimum maintenance window is 1 hour, the maximum is 24 hours, and cross-day maintenance windows are not allowed.
 	MaintenanceTime pulumi.StringPtrInput
-	// 主节点ID。手动切换主备节点时，该参数为必填项。
+	// Primary node ID. This parameter is required when manually switching master and standby nodes.
 	MasterNodeId pulumi.StringPtrInput
-	// 实例规格代码。
+	// Instance specification code.
 	NodeSpec pulumi.StringInput
-	// 所属项目。
+	// Project.
 	ProjectName pulumi.StringPtrInput
-	// 实例字符集排序规则，默认 Chinese*PRC*CI*AS。目前已支持大多数原生字符集具体取值如下：Latin1*General*CI*AS，Latin1*General*CS*AS，SQL*Latin1*General*CP1*CI*AS，SQL*Latin1*General*CP1*CS*AS，Chinese*PRC*CI*AS，Chinese*PRC*CS*AS，Chinese*PRC*BIN，Japanese*CI*AS，Japanese*CS*AS，Chinese*Taiwan*Stroke*CI*AS，Chinese*Taiwan*Stroke*CS*AS，Thai*CI*AS，Chinese*PRC*CI*AI，Chinese*PRC*BIN2，Cyrillic*General*CI_AS。
+	// Instance collation. Default: Chinese*PRC*CI*AS. Most native collations are supported. Available values: Latin1*General*CI*AS, Latin1*General*CS*AS, SQL*Latin1*General*CP1*CI*AS, SQL*Latin1*General*CP1*CS*AS, Chinese*PRC*CI*AS, Chinese*PRC*CS*AS, Chinese*PRC*BIN, Japanese*CI*AS, Japanese*CS*AS, Chinese*Taiwan*Stroke*CI*AS, Chinese*Taiwan*Stroke*CS*AS, Thai*CI*AS, Chinese*PRC*CI*AI, Chinese*PRC*BIN2, Cyrillic*General*CI_AS.
 	ServerCollation pulumi.StringPtrInput
-	// 存储空间大小，单位为 GiB。取值范围：20GiB ~ 4000GiB，步长为 10GiB。
+	// Storage size, in GiB. Range: 20 GiB ~ 4000 GiB, increment: 10 GiB.
 	StorageSpace pulumi.IntInput
-	// 子网 ID。当主备节点不在同一个可用区时，主备节点的子网也需设置为对应可用区私有网络下的子网，多个可用区需使用英文分号（;）隔开。
+	// Subnet ID. If the primary and standby nodes are in different availability zones, their subnets must be set to the corresponding private network subnets for each zone. Use a semicolon (;) to separate multiple zones.
 	SubnetId pulumi.StringInput
-	// 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=。
+	// Password for the high-privilege account. Password rules: 8–32 characters; must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !@#$%^&*()_+-=.
 	SuperAccountPassword pulumi.StringInput
 	Tags                 InstanceTagArrayInput
-	// 时区。
+	// Time zone.
 	TimeZone pulumi.StringInput
 	// VPC ID
 	VpcId pulumi.StringInput
-	// 节点所在可用区。当主备节点不在同一个可用区时，您可以使用英文分号（;）隔开，默认第一个为主节点可用区，第二个为备节点可用区。
+	// Availability zone of the node. If the primary and standby nodes are in different availability zones, use a semicolon (;) to separate them. The first is the primary node's zone by default, the second is the standby node's zone.
 	ZoneId pulumi.StringInput
 }
 
@@ -461,22 +461,22 @@ func (o InstanceOutput) ToInstanceOutputWithContext(ctx context.Context) Instanc
 	return o
 }
 
-// 需要修改的实例高级特性。该接口当前属于加白接口，如需使用，您可以联系技术支持。示例值：{"Key":"Value"}
+// Advanced instance features to modify. This API currently requires allowlisting. To use it, contact technical support. Example value: {"Key":"Value"}
 func (o InstanceOutput) AdvancedFeatures() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.AdvancedFeatures }).(pulumi.StringOutput)
 }
 
-// 允许访问的白名单ID列表。
+// Allowlist ID list permitted for access.
 func (o InstanceOutput) AllowListIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringArrayOutput { return v.AllowListIds }).(pulumi.StringArrayOutput)
 }
 
-// 实例已用备份空间。单位：GiB。
+// Used backup space for the instance, in GiB.
 func (o InstanceOutput) BackupUse() pulumi.Float64Output {
 	return o.ApplyT(func(v *Instance) pulumi.Float64Output { return v.BackupUse }).(pulumi.Float64Output)
 }
 
-// 付费方式。
+// Payment method.
 func (o InstanceOutput) ChargeInfo() InstanceChargeInfoOutput {
 	return o.ApplyT(func(v *Instance) InstanceChargeInfoOutput { return v.ChargeInfo }).(InstanceChargeInfoOutput)
 }
@@ -485,57 +485,57 @@ func (o InstanceOutput) ConnectionInfos() InstanceConnectionInfoArrayOutput {
 	return o.ApplyT(func(v *Instance) InstanceConnectionInfoArrayOutput { return v.ConnectionInfos }).(InstanceConnectionInfoArrayOutput)
 }
 
-// 创建时间。
+// Creation time.
 func (o InstanceOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 兼容版本。取值如下：SQLServer*2019*Std：表示 SQL Server 2019 标准版。SQLServer*2019*Ent：表示 SQL Server 2019 企业版。SQLServer*2019*Web：表示 SQL Server 2019 Web 版。SQLServer*2022*Std：表示 SQL Server 2022 标准版。SQLServer*2022*Ent：表示 SQL Server 2022 企业版。SQLServer*2022*Web：表示 SQL Server 2022 Web 版。
+// Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
 func (o InstanceOutput) DbEngineVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.DbEngineVersion }).(pulumi.StringOutput)
 }
 
-// 内核版本号。
+// Kernel version number.
 func (o InstanceOutput) InnerVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.InnerVersion }).(pulumi.StringOutput)
 }
 
-// 实例分类。取值：Primary：主实例。ReadOnly：只读实例。
+// Instance category. Values: Primary: primary instance. ReadOnly: read-only instance.
 func (o InstanceOutput) InstanceCategory() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.InstanceCategory }).(pulumi.StringOutput)
 }
 
-// 实例ID。
+// Instance ID.
 func (o InstanceOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 实例名称。实例名称的命名规则如下：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在 1~128 之间。
+// Instance name. Naming rules: Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
 func (o InstanceOutput) InstanceName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.InstanceName }).(pulumi.StringOutput)
 }
 
-// 实例状态，取值：Running：运行中。Creating：创建中。CreateFailed：创建失败。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主节点切换中。Error：错误。
+// Instance status. Values: Running: running. Creating: creating. CreateFailed: creation failed. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: primary node switching. Error: error.
 func (o InstanceOutput) InstanceStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.InstanceStatus }).(pulumi.StringOutput)
 }
 
-// 实例类型。取值如下：HA（高可用）、Basic（基础版）、Cluster（集群版）。不同引擎版本支持的类型不同：2019 Std 支持 HA/Basic；2019 Ent 支持 Cluster/Basic；2019 Web 支持 Basic。
+// Instance type. Available values: HA (High Availability), Basic, Cluster. Supported types vary by engine version: 2019 Std supports HA/Basic; 2019 Ent supports Cluster/Basic; 2019 Web supports Basic.
 func (o InstanceOutput) InstanceType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.InstanceType }).(pulumi.StringOutput)
 }
 
-// 实例的可维护时间段。格式：HH:mmZ-HH:mmZ（UTC时间）。默认取值为 UTC18:00Z-21:59Z（即北京时间 02:00-05:59）。说明：为保护云数据库的稳定性，系统会不定期对实例进行维护。可维护时间段建议设置在业务低峰期，避免对业务造成影响。在可维护时间段内，实例可能会出现 1~2 次的连接闪断，需确保应用程序具有自动重连机制。可维护时间段最小时间间隔 1 小时，最大时间间隔 24 小时，不允许跨天选择可维护时间段。
+// Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time). Default: UTC18:00Z-21:59Z (Beijing time 02:00-05:59). Note: To ensure cloud database stability, the system performs maintenance on instances periodically. It is recommended to set the maintenance window during off-peak hours to avoid business impact. During the maintenance window, the instance may experience 1–2 brief disconnections. Ensure your application supports automatic reconnection. The minimum maintenance window is 1 hour, the maximum is 24 hours, and cross-day maintenance windows are not allowed.
 func (o InstanceOutput) MaintenanceTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.MaintenanceTime }).(pulumi.StringOutput)
 }
 
-// 主节点ID。手动切换主备节点时，该参数为必填项。
+// Primary node ID. This parameter is required when manually switching master and standby nodes.
 func (o InstanceOutput) MasterNodeId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.MasterNodeId }).(pulumi.StringOutput)
 }
 
-// 内存大小，单位为 GiB。
+// Memory size, in GiB.
 func (o InstanceOutput) Memory() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.Memory }).(pulumi.IntOutput)
 }
@@ -544,67 +544,67 @@ func (o InstanceOutput) NodeDetailInfos() InstanceNodeDetailInfoArrayOutput {
 	return o.ApplyT(func(v *Instance) InstanceNodeDetailInfoArrayOutput { return v.NodeDetailInfos }).(InstanceNodeDetailInfoArrayOutput)
 }
 
-// 实例规格代码。
+// Instance specification code.
 func (o InstanceOutput) NodeSpec() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.NodeSpec }).(pulumi.StringOutput)
 }
 
-// 端口
+// Port.
 func (o InstanceOutput) Port() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.Port }).(pulumi.StringOutput)
 }
 
-// 主实例ID。如果为空说明它是主实例。
+// Primary instance ID. If this field is empty, this instance is the primary instance.
 func (o InstanceOutput) PrimaryInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.PrimaryInstanceId }).(pulumi.StringOutput)
 }
 
-// 所属项目。
+// Project.
 func (o InstanceOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 只读实例数量。
+// Number of read-only instances.
 func (o InstanceOutput) ReadOnlyNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.ReadOnlyNumber }).(pulumi.IntOutput)
 }
 
-// 实例字符集排序规则，默认 Chinese*PRC*CI*AS。目前已支持大多数原生字符集具体取值如下：Latin1*General*CI*AS，Latin1*General*CS*AS，SQL*Latin1*General*CP1*CI*AS，SQL*Latin1*General*CP1*CS*AS，Chinese*PRC*CI*AS，Chinese*PRC*CS*AS，Chinese*PRC*BIN，Japanese*CI*AS，Japanese*CS*AS，Chinese*Taiwan*Stroke*CI*AS，Chinese*Taiwan*Stroke*CS*AS，Thai*CI*AS，Chinese*PRC*CI*AI，Chinese*PRC*BIN2，Cyrillic*General*CI_AS。
+// Instance collation. Default: Chinese*PRC*CI*AS. Most native collations are supported. Available values: Latin1*General*CI*AS, Latin1*General*CS*AS, SQL*Latin1*General*CP1*CI*AS, SQL*Latin1*General*CP1*CS*AS, Chinese*PRC*CI*AS, Chinese*PRC*CS*AS, Chinese*PRC*BIN, Japanese*CI*AS, Japanese*CS*AS, Chinese*Taiwan*Stroke*CI*AS, Chinese*Taiwan*Stroke*CS*AS, Thai*CI*AS, Chinese*PRC*CI*AI, Chinese*PRC*BIN2, Cyrillic*General*CI_AS.
 func (o InstanceOutput) ServerCollation() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.ServerCollation }).(pulumi.StringOutput)
 }
 
-// 表示是否开启慢日志，取值如下：true：表示开启慢日志。false：表示不开启慢日志。
+// Indicates whether slow logs are enabled. Available values: true: slow logs enabled. false: slow logs disabled.
 func (o InstanceOutput) SlowQueryEnable() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Instance) pulumi.BoolOutput { return v.SlowQueryEnable }).(pulumi.BoolOutput)
 }
 
-// 慢日志的阈值，取值范围为 [1~10]，单位：秒（s）。
+// Slow log threshold. Range: [1~10], unit: seconds (s).
 func (o InstanceOutput) SlowQueryTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.SlowQueryTime }).(pulumi.StringOutput)
 }
 
-// 存储空间大小，单位为 GiB。取值范围：20GiB ~ 4000GiB，步长为 10GiB。
+// Storage size, in GiB. Range: 20 GiB ~ 4000 GiB, increment: 10 GiB.
 func (o InstanceOutput) StorageSpace() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.StorageSpace }).(pulumi.IntOutput)
 }
 
-// 实例存储类型。
+// Instance storage type.
 func (o InstanceOutput) StorageType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.StorageType }).(pulumi.StringOutput)
 }
 
-// 实例已用储空间。单位：GiB。
+// Used storage space for the instance. Unit: GiB.
 func (o InstanceOutput) StorageUse() pulumi.Float64Output {
 	return o.ApplyT(func(v *Instance) pulumi.Float64Output { return v.StorageUse }).(pulumi.Float64Output)
 }
 
-// 子网 ID。当主备节点不在同一个可用区时，主备节点的子网也需设置为对应可用区私有网络下的子网，多个可用区需使用英文分号（;）隔开。
+// Subnet ID. If the primary and standby nodes are in different availability zones, their subnets must be set to the corresponding private network subnets for each zone. Use a semicolon (;) to separate multiple zones.
 func (o InstanceOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// 高权限账号的密码。密码规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=。
+// Password for the high-privilege account. Password rules: 8–32 characters; must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !@#$%^&*()_+-=.
 func (o InstanceOutput) SuperAccountPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.SuperAccountPassword }).(pulumi.StringOutput)
 }
@@ -613,17 +613,17 @@ func (o InstanceOutput) Tags() InstanceTagArrayOutput {
 	return o.ApplyT(func(v *Instance) InstanceTagArrayOutput { return v.Tags }).(InstanceTagArrayOutput)
 }
 
-// 时区。
+// Time zone.
 func (o InstanceOutput) TimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.TimeZone }).(pulumi.StringOutput)
 }
 
-// 更新时间。
+// Update time.
 func (o InstanceOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// CPU 大小。例如：1 表示 1核。
+// CPU size. For example: 1 means 1 core.
 func (o InstanceOutput) Vcpu() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.Vcpu }).(pulumi.IntOutput)
 }
@@ -633,7 +633,7 @@ func (o InstanceOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.VpcId }).(pulumi.StringOutput)
 }
 
-// 节点所在可用区。当主备节点不在同一个可用区时，您可以使用英文分号（;）隔开，默认第一个为主节点可用区，第二个为备节点可用区。
+// Availability zone of the node. If the primary and standby nodes are in different availability zones, use a semicolon (;) to separate them. The first is the primary node's zone by default, the second is the standby node's zone.
 func (o InstanceOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.ZoneId }).(pulumi.StringOutput)
 }

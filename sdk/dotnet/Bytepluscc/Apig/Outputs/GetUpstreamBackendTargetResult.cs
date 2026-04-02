@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GetUpstreamBackendTargetResult
     {
         /// <summary>
-        /// 健康检查状态。
+        /// Health Check Status
         /// </summary>
         public readonly string HealthStatus;
         /// <summary>
-        /// 后端节点IP。
+        /// Backend node IP
         /// </summary>
         public readonly string Ip;
         /// <summary>
-        /// 后端节点端口。
+        /// Backend node port
         /// </summary>
         public readonly int Port;
 

@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm.Inputs
     public sealed class DatabaseDatabasesPrivilegeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 需授权的账号名称
+        /// Account name to be authorized
         /// </summary>
         [Input("accountName")]
         public Input<string>? AccountName { get; set; }
 
         /// <summary>
-        /// 授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+        /// Database permission type: ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
         /// </summary>
         [Input("accountPrivilege")]
         public Input<string>? AccountPrivilege { get; set; }
@@ -29,7 +29,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm.Inputs
         private InputList<string>? _accountPrivilegeDetails;
 
         /// <summary>
-        /// 具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+        /// Specific SQL operation permissions, separated by English commas; required for Custom type
         /// </summary>
         public InputList<string> AccountPrivilegeDetails
         {

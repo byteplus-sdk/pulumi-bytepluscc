@@ -12,50 +12,50 @@ import java.util.Objects;
 @CustomType
 public final class GetLoadBalancerGlobalAccelerator {
     /**
-     * @return 绑定的全球加速实例的ID。
+     * @return ID of the bound Global Accelerator instance.
      * 
      */
     private String acceleratorId;
     /**
-     * @return 绑定的全球加速监听器的ID。
+     * @return ID of the bound Global Accelerator listener.
      * 
      */
     private String acceleratorListenerId;
     /**
-     * @return 绑定的终端节点组的ID。
+     * @return ID of the bound endpoint group.
      * 
      */
     private String endpointGroupId;
     /**
-     * @return 后端服务器的权重，决定流量分发比例。
+     * @return Weight of the backend server, determines traffic distribution ratio.
      * 
      */
     private Integer weight;
 
     private GetLoadBalancerGlobalAccelerator() {}
     /**
-     * @return 绑定的全球加速实例的ID。
+     * @return ID of the bound Global Accelerator instance.
      * 
      */
     public String acceleratorId() {
         return this.acceleratorId;
     }
     /**
-     * @return 绑定的全球加速监听器的ID。
+     * @return ID of the bound Global Accelerator listener.
      * 
      */
     public String acceleratorListenerId() {
         return this.acceleratorListenerId;
     }
     /**
-     * @return 绑定的终端节点组的ID。
+     * @return ID of the bound endpoint group.
      * 
      */
     public String endpointGroupId() {
         return this.endpointGroupId;
     }
     /**
-     * @return 后端服务器的权重，决定流量分发比例。
+     * @return Weight of the backend server, determines traffic distribution ratio.
      * 
      */
     public Integer weight() {

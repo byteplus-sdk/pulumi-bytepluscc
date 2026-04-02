@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetNodePoolKubernetesConfigKubeletConfigEvictionHard {
     /**
-     * @return 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+     * @return Hard threshold name. Options: memory.available, nodefs.available, nodefs.inodesFree, imagefs.available
      * 
      */
     private String key;
     /**
-     * @return 硬性门限值。
+     * @return Hard threshold value.
      * 
      */
     private String value;
 
     private GetNodePoolKubernetesConfigKubeletConfigEvictionHard() {}
     /**
-     * @return 硬性门限名称。取值：memory.available、nodefs.available、nodefs.inodesFree、imagefs.available
+     * @return Hard threshold name. Options: memory.available, nodefs.available, nodefs.inodesFree, imagefs.available
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return 硬性门限值。
+     * @return Hard threshold value.
      * 
      */
     public String value() {

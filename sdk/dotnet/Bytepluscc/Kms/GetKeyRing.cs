@@ -65,11 +65,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
     public sealed class GetKeyRingResult
     {
         /// <summary>
-        /// 密钥环创建日期。
+        /// Keyring creation date
         /// </summary>
         public readonly int CreateDate;
         /// <summary>
-        /// 密钥环描述，长度为 0   - 8192 个字符。
+        /// Keyring description, length: 0–8192 characters
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -77,31 +77,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 密钥环密钥次数。
+        /// Number of keys in keyring
         /// </summary>
         public readonly int KeyCount;
         /// <summary>
-        /// 密钥环唯一标识符，UUID形式。
+        /// Keyring unique identifier, in UUID format
         /// </summary>
         public readonly string KeyRingId;
         /// <summary>
-        /// 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+        /// Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
         /// </summary>
         public readonly string KeyringName;
         /// <summary>
-        /// 密钥环类型，取值：CustomKeyring。
+        /// Keyring type, value: CustomKeyring
         /// </summary>
         public readonly string KeyringType;
         /// <summary>
-        /// 项目名称，默认值：default。
+        /// Project name, default value: default
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// 密钥环租户ID。
+        /// Keyring tenant ID
         /// </summary>
         public readonly string Uid;
         /// <summary>
-        /// 密钥环更新日期。
+        /// Keyring update date
         /// </summary>
         public readonly int UpdateDate;
 

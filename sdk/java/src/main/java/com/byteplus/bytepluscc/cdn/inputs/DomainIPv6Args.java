@@ -16,14 +16,14 @@ public final class DomainIPv6Args extends com.pulumi.resources.ResourceArgs {
     public static final DomainIPv6Args Empty = new DomainIPv6Args();
 
     /**
-     * 指定是否启用 IPv6 配置。该参数有以下取值：true：表示启用 IPv6。false：表示禁用 IPv6。
+     * Specifies whether to enable IPv6 configuration. This parameter has the following values: true: Enables IPv6. false: Disables IPv6.
      * 
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
-     * @return 指定是否启用 IPv6 配置。该参数有以下取值：true：表示启用 IPv6。false：表示禁用 IPv6。
+     * @return Specifies whether to enable IPv6 configuration. This parameter has the following values: true: Enables IPv6. false: Disables IPv6.
      * 
      */
     public Optional<Output<Boolean>> switch_() {
@@ -55,7 +55,7 @@ public final class DomainIPv6Args extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param switch_ 指定是否启用 IPv6 配置。该参数有以下取值：true：表示启用 IPv6。false：表示禁用 IPv6。
+         * @param switch_ Specifies whether to enable IPv6 configuration. This parameter has the following values: true: Enables IPv6. false: Disables IPv6.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class DomainIPv6Args extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param switch_ 指定是否启用 IPv6 配置。该参数有以下取值：true：表示启用 IPv6。false：表示禁用 IPv6。
+         * @param switch_ Specifies whether to enable IPv6 configuration. This parameter has the following values: true: Enables IPv6. false: Disables IPv6.
          * 
          * @return builder
          * 

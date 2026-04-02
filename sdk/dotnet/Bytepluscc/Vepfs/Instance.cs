@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Vepfs
 {
     /// <summary>
-    /// 文件存储 vePFS 是推出的一种高吞吐、低延时、可扩展并行的文件系统服务，满足高性能计算场景下高吞吐低延时的数据读写需求，可广泛应用于 HPC 高性能计算、AI 人工智能训练或推理、能源勘探、工业仿真、影视渲染、生命科学、气象分析等场景。同时，vePFS 提供一键化部署及配套监控报警能力，免去部署、维护费用的同时，最大化提升您的业务效率。
+    /// File storage vePFS is a newly launched high-throughput, low-latency, scalable parallel file system service designed to meet the high-throughput and low-latency data read/write requirements in high-performance computing scenarios. It can be widely used in HPC (high-performance computing), AI training or inference, energy exploration, industrial simulation, film rendering, life sciences, meteorological analysis, and other scenarios. vePFS also provides one-click deployment and integrated monitoring and alerting capabilities, eliminating deployment and maintenance costs while maximizing your business efficiency.
     /// 
     /// ## Example Usage
     /// 
@@ -60,145 +60,145 @@ namespace Byteplus.Pulumi.Bytepluscc.Vepfs
     public partial class Instance : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 账户ID。
+        /// Account ID.
         /// </summary>
         [Output("accountId")]
         public Output<string> AccountId { get; private set; } = null!;
 
         /// <summary>
-        /// vePFS 文件系统吞吐上限。
+        /// VePFS file system throughput limit.
         /// </summary>
         [Output("bandwidth")]
         public Output<int> Bandwidth { get; private set; } = null!;
 
         /// <summary>
-        /// 文件系统容量，单位为 TiB。
+        /// File system capacity, unit: TiB.
         /// </summary>
         [Output("capacity")]
         public Output<int> Capacity { get; private set; } = null!;
 
         /// <summary>
-        /// 容量信息。
+        /// Capacity information.
         /// </summary>
         [Output("capacityInfo")]
         public Output<Outputs.InstanceCapacityInfo> CapacityInfo { get; private set; } = null!;
 
         /// <summary>
-        /// 计费状态，默认为 Normal，表示正常计费。
+        /// Billing status. Default is Normal, indicating standard billing.
         /// </summary>
         [Output("chargeStatus")]
         public Output<string> ChargeStatus { get; private set; } = null!;
 
         /// <summary>
-        /// 计费类型。取值说明如下：PayAsYouGo：按量计费。
+        /// Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
         /// </summary>
         [Output("chargeType")]
         public Output<string> ChargeType { get; private set; } = null!;
 
         /// <summary>
-        /// 创建时间。
+        /// Creation time.
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 文件系统描述信息。
+        /// File system description.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 扩容后是否开启数据均衡，取值说明如下：true：扩容后立即开启数据均衡。false：扩容后不开启数据均衡。注意：仅 100MB/s/TiB 规格的文件系统支持数据均衡功能。由于数据均衡过程会消耗存储节点的网络和磁盘带宽，导致文件系统的性能下降，建议您评估业务需求，谨慎开启。数据均衡的时间主要受存量数据量的影响，如果您的存量数据较多，均衡的时间可能会较长，根据扩容容量大小和文件系统状态，此过程可能需要花费数小时至 2 天的时间，建议您在业务低峰期开启并耐心等待。
+        /// Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
         /// </summary>
         [Output("enableRestripe")]
         public Output<bool> EnableRestripe { get; private set; } = null!;
 
         /// <summary>
-        /// 过期时间。
+        /// Expiration time.
         /// </summary>
         [Output("expireTime")]
         public Output<string> ExpireTime { get; private set; } = null!;
 
         /// <summary>
-        /// 文件系统 ID。
+        /// File system ID.
         /// </summary>
         [Output("fileSystemId")]
         public Output<string> FileSystemId { get; private set; } = null!;
 
         /// <summary>
-        /// 文件系统名称。命名规范如下：只能以中文或英文开头。只能包含中文、字母、数字、半角句号（.）、下划线（_）或中划线（-）。长度需要在 1~128 个字符内。
+        /// File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
         /// </summary>
         [Output("fileSystemName")]
         public Output<string> FileSystemName { get; private set; } = null!;
 
         /// <summary>
-        /// 文件系统类型，默认为 VePFS。
+        /// File system type. Default is VePFS.
         /// </summary>
         [Output("fileSystemType")]
         public Output<string> FileSystemType { get; private set; } = null!;
 
         /// <summary>
-        /// 文件系统释放时间。
+        /// File system release time.
         /// </summary>
         [Output("freeTime")]
         public Output<string> FreeTime { get; private set; } = null!;
 
         /// <summary>
-        /// 文件系统所属项目，默认为 default。
+        /// Project to which the file system belongs. Default is default.
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 协议类型，默认为 VePFS。
+        /// Protocol type. Default is VePFS.
         /// </summary>
         [Output("protocolType")]
         public Output<string> ProtocolType { get; private set; } = null!;
 
         /// <summary>
-        /// 读带宽值, 单位MB/s。
+        /// Read bandwidth value, unit: MB/s.
         /// </summary>
         [Output("readBandwidth")]
         public Output<int> ReadBandwidth { get; private set; } = null!;
 
         /// <summary>
-        /// 生成的辅助网卡所在的安全组ID。
+        /// Security group ID for the generated auxiliary NIC.
         /// </summary>
         [Output("securityGroupId")]
         public Output<string> SecurityGroupId { get; private set; } = null!;
 
         /// <summary>
-        /// 文件系统状态。取值说明如下：Running：实例运行中。Creating：实例创建中。CreateError：实例创建失败。Updating：实例更新中。UpdateError：实例更新失败。Expanding：实例扩容中。ExpandError：实例扩容失败。Deleting：实例删除中。DeleteError：实例删除失败。Stopped：实例已关停。Error：实例处于错误状态。
+        /// File system status. Value descriptions are as follows: Running: Instance is running. Creating: Instance is being created. CreateError: Instance creation failed. Updating: Instance is being updated. UpdateError: Instance update failed. Expanding: Instance is being expanded. ExpandError: Instance expansion failed. Deleting: Instance is being deleted. DeleteError: Instance deletion failed. Stopped: Instance is stopped. Error: Instance is in an error state.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// 文件系统关停时间。
+        /// File system shutdown time.
         /// </summary>
         [Output("stopServiceTime")]
         public Output<string> StopServiceTime { get; private set; } = null!;
 
         /// <summary>
-        /// 文件系统规格，取值说明如下：Advance*100：100MB/s/TiB。Performance：性能版。Intelligent*Computing：智算版。
+        /// File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
         /// </summary>
         [Output("storeType")]
         public Output<string> StoreType { get; private set; } = null!;
 
         /// <summary>
-        /// 文件系统规格中文名称，支持如下：100MB/s/TiB。性能版。智算版。
+        /// File system specification name in Chinese. Supported options: 100MB/s/TiB. Performance. Intelligent Computing.
         /// </summary>
         [Output("storeTypeCn")]
         public Output<string> StoreTypeCn { get; private set; } = null!;
 
         /// <summary>
-        /// 存储类型英文名。
+        /// Storage type English name.
         /// </summary>
         [Output("storeTypeEn")]
         public Output<string> StoreTypeEn { get; private set; } = null!;
 
         /// <summary>
-        /// 子网 ID。子网必须属于所选的可用区。
+        /// Subnet ID. The subnet must belong to the selected availability zone.
         /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
@@ -207,37 +207,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Vepfs
         public Output<ImmutableArray<Outputs.InstanceTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 文件系统更新时间。
+        /// File system update time.
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 文件系统版本号。
+        /// File system version number.
         /// </summary>
         [Output("versionNumber")]
         public Output<string> VersionNumber { get; private set; } = null!;
 
         /// <summary>
-        /// 私有网络 ID。
+        /// Private network ID.
         /// </summary>
         [Output("vpcId")]
         public Output<string> VpcId { get; private set; } = null!;
 
         /// <summary>
-        /// 写带宽值, 单位MB/s。
+        /// Write bandwidth value, measured in MB/s.
         /// </summary>
         [Output("writeBandwidth")]
         public Output<int> WriteBandwidth { get; private set; } = null!;
 
         /// <summary>
-        /// 可用区 ID。
+        /// Availability zone ID.
         /// </summary>
         [Output("zoneId")]
         public Output<string> ZoneId { get; private set; } = null!;
 
         /// <summary>
-        /// 可用区名称。
+        /// Availability zone name.
         /// </summary>
         [Output("zoneName")]
         public Output<string> ZoneName { get; private set; } = null!;
@@ -290,61 +290,61 @@ namespace Byteplus.Pulumi.Bytepluscc.Vepfs
     public sealed class InstanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 文件系统容量，单位为 TiB。
+        /// File system capacity, unit: TiB.
         /// </summary>
         [Input("capacity", required: true)]
         public Input<int> Capacity { get; set; } = null!;
 
         /// <summary>
-        /// 计费类型。取值说明如下：PayAsYouGo：按量计费。
+        /// Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
         /// </summary>
         [Input("chargeType")]
         public Input<string>? ChargeType { get; set; }
 
         /// <summary>
-        /// 文件系统描述信息。
+        /// File system description.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 扩容后是否开启数据均衡，取值说明如下：true：扩容后立即开启数据均衡。false：扩容后不开启数据均衡。注意：仅 100MB/s/TiB 规格的文件系统支持数据均衡功能。由于数据均衡过程会消耗存储节点的网络和磁盘带宽，导致文件系统的性能下降，建议您评估业务需求，谨慎开启。数据均衡的时间主要受存量数据量的影响，如果您的存量数据较多，均衡的时间可能会较长，根据扩容容量大小和文件系统状态，此过程可能需要花费数小时至 2 天的时间，建议您在业务低峰期开启并耐心等待。
+        /// Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
         /// </summary>
         [Input("enableRestripe")]
         public Input<bool>? EnableRestripe { get; set; }
 
         /// <summary>
-        /// 文件系统名称。命名规范如下：只能以中文或英文开头。只能包含中文、字母、数字、半角句号（.）、下划线（_）或中划线（-）。长度需要在 1~128 个字符内。
+        /// File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
         /// </summary>
         [Input("fileSystemName", required: true)]
         public Input<string> FileSystemName { get; set; } = null!;
 
         /// <summary>
-        /// 文件系统类型，默认为 VePFS。
+        /// File system type. Default is VePFS.
         /// </summary>
         [Input("fileSystemType")]
         public Input<string>? FileSystemType { get; set; }
 
         /// <summary>
-        /// 文件系统所属项目，默认为 default。
+        /// Project to which the file system belongs. Default is default.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 协议类型，默认为 VePFS。
+        /// Protocol type. Default is VePFS.
         /// </summary>
         [Input("protocolType")]
         public Input<string>? ProtocolType { get; set; }
 
         /// <summary>
-        /// 文件系统规格，取值说明如下：Advance*100：100MB/s/TiB。Performance：性能版。Intelligent*Computing：智算版。
+        /// File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
         /// </summary>
         [Input("storeType", required: true)]
         public Input<string> StoreType { get; set; } = null!;
 
         /// <summary>
-        /// 子网 ID。子网必须属于所选的可用区。
+        /// Subnet ID. The subnet must belong to the selected availability zone.
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
@@ -358,19 +358,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vepfs
         }
 
         /// <summary>
-        /// 文件系统版本号。
+        /// File system version number.
         /// </summary>
         [Input("versionNumber")]
         public Input<string>? VersionNumber { get; set; }
 
         /// <summary>
-        /// 私有网络 ID。
+        /// Private network ID.
         /// </summary>
         [Input("vpcId")]
         public Input<string>? VpcId { get; set; }
 
         /// <summary>
-        /// 可用区 ID。
+        /// Availability zone ID.
         /// </summary>
         [Input("zoneId", required: true)]
         public Input<string> ZoneId { get; set; } = null!;
@@ -384,145 +384,145 @@ namespace Byteplus.Pulumi.Bytepluscc.Vepfs
     public sealed class InstanceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 账户ID。
+        /// Account ID.
         /// </summary>
         [Input("accountId")]
         public Input<string>? AccountId { get; set; }
 
         /// <summary>
-        /// vePFS 文件系统吞吐上限。
+        /// VePFS file system throughput limit.
         /// </summary>
         [Input("bandwidth")]
         public Input<int>? Bandwidth { get; set; }
 
         /// <summary>
-        /// 文件系统容量，单位为 TiB。
+        /// File system capacity, unit: TiB.
         /// </summary>
         [Input("capacity")]
         public Input<int>? Capacity { get; set; }
 
         /// <summary>
-        /// 容量信息。
+        /// Capacity information.
         /// </summary>
         [Input("capacityInfo")]
         public Input<Inputs.InstanceCapacityInfoGetArgs>? CapacityInfo { get; set; }
 
         /// <summary>
-        /// 计费状态，默认为 Normal，表示正常计费。
+        /// Billing status. Default is Normal, indicating standard billing.
         /// </summary>
         [Input("chargeStatus")]
         public Input<string>? ChargeStatus { get; set; }
 
         /// <summary>
-        /// 计费类型。取值说明如下：PayAsYouGo：按量计费。
+        /// Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
         /// </summary>
         [Input("chargeType")]
         public Input<string>? ChargeType { get; set; }
 
         /// <summary>
-        /// 创建时间。
+        /// Creation time.
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 文件系统描述信息。
+        /// File system description.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 扩容后是否开启数据均衡，取值说明如下：true：扩容后立即开启数据均衡。false：扩容后不开启数据均衡。注意：仅 100MB/s/TiB 规格的文件系统支持数据均衡功能。由于数据均衡过程会消耗存储节点的网络和磁盘带宽，导致文件系统的性能下降，建议您评估业务需求，谨慎开启。数据均衡的时间主要受存量数据量的影响，如果您的存量数据较多，均衡的时间可能会较长，根据扩容容量大小和文件系统状态，此过程可能需要花费数小时至 2 天的时间，建议您在业务低峰期开启并耐心等待。
+        /// Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
         /// </summary>
         [Input("enableRestripe")]
         public Input<bool>? EnableRestripe { get; set; }
 
         /// <summary>
-        /// 过期时间。
+        /// Expiration time.
         /// </summary>
         [Input("expireTime")]
         public Input<string>? ExpireTime { get; set; }
 
         /// <summary>
-        /// 文件系统 ID。
+        /// File system ID.
         /// </summary>
         [Input("fileSystemId")]
         public Input<string>? FileSystemId { get; set; }
 
         /// <summary>
-        /// 文件系统名称。命名规范如下：只能以中文或英文开头。只能包含中文、字母、数字、半角句号（.）、下划线（_）或中划线（-）。长度需要在 1~128 个字符内。
+        /// File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
         /// </summary>
         [Input("fileSystemName")]
         public Input<string>? FileSystemName { get; set; }
 
         /// <summary>
-        /// 文件系统类型，默认为 VePFS。
+        /// File system type. Default is VePFS.
         /// </summary>
         [Input("fileSystemType")]
         public Input<string>? FileSystemType { get; set; }
 
         /// <summary>
-        /// 文件系统释放时间。
+        /// File system release time.
         /// </summary>
         [Input("freeTime")]
         public Input<string>? FreeTime { get; set; }
 
         /// <summary>
-        /// 文件系统所属项目，默认为 default。
+        /// Project to which the file system belongs. Default is default.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 协议类型，默认为 VePFS。
+        /// Protocol type. Default is VePFS.
         /// </summary>
         [Input("protocolType")]
         public Input<string>? ProtocolType { get; set; }
 
         /// <summary>
-        /// 读带宽值, 单位MB/s。
+        /// Read bandwidth value, unit: MB/s.
         /// </summary>
         [Input("readBandwidth")]
         public Input<int>? ReadBandwidth { get; set; }
 
         /// <summary>
-        /// 生成的辅助网卡所在的安全组ID。
+        /// Security group ID for the generated auxiliary NIC.
         /// </summary>
         [Input("securityGroupId")]
         public Input<string>? SecurityGroupId { get; set; }
 
         /// <summary>
-        /// 文件系统状态。取值说明如下：Running：实例运行中。Creating：实例创建中。CreateError：实例创建失败。Updating：实例更新中。UpdateError：实例更新失败。Expanding：实例扩容中。ExpandError：实例扩容失败。Deleting：实例删除中。DeleteError：实例删除失败。Stopped：实例已关停。Error：实例处于错误状态。
+        /// File system status. Value descriptions are as follows: Running: Instance is running. Creating: Instance is being created. CreateError: Instance creation failed. Updating: Instance is being updated. UpdateError: Instance update failed. Expanding: Instance is being expanded. ExpandError: Instance expansion failed. Deleting: Instance is being deleted. DeleteError: Instance deletion failed. Stopped: Instance is stopped. Error: Instance is in an error state.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// 文件系统关停时间。
+        /// File system shutdown time.
         /// </summary>
         [Input("stopServiceTime")]
         public Input<string>? StopServiceTime { get; set; }
 
         /// <summary>
-        /// 文件系统规格，取值说明如下：Advance*100：100MB/s/TiB。Performance：性能版。Intelligent*Computing：智算版。
+        /// File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
         /// </summary>
         [Input("storeType")]
         public Input<string>? StoreType { get; set; }
 
         /// <summary>
-        /// 文件系统规格中文名称，支持如下：100MB/s/TiB。性能版。智算版。
+        /// File system specification name in Chinese. Supported options: 100MB/s/TiB. Performance. Intelligent Computing.
         /// </summary>
         [Input("storeTypeCn")]
         public Input<string>? StoreTypeCn { get; set; }
 
         /// <summary>
-        /// 存储类型英文名。
+        /// Storage type English name.
         /// </summary>
         [Input("storeTypeEn")]
         public Input<string>? StoreTypeEn { get; set; }
 
         /// <summary>
-        /// 子网 ID。子网必须属于所选的可用区。
+        /// Subnet ID. The subnet must belong to the selected availability zone.
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
@@ -536,37 +536,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Vepfs
         }
 
         /// <summary>
-        /// 文件系统更新时间。
+        /// File system update time.
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }
 
         /// <summary>
-        /// 文件系统版本号。
+        /// File system version number.
         /// </summary>
         [Input("versionNumber")]
         public Input<string>? VersionNumber { get; set; }
 
         /// <summary>
-        /// 私有网络 ID。
+        /// Private network ID.
         /// </summary>
         [Input("vpcId")]
         public Input<string>? VpcId { get; set; }
 
         /// <summary>
-        /// 写带宽值, 单位MB/s。
+        /// Write bandwidth value, measured in MB/s.
         /// </summary>
         [Input("writeBandwidth")]
         public Input<int>? WriteBandwidth { get; set; }
 
         /// <summary>
-        /// 可用区 ID。
+        /// Availability zone ID.
         /// </summary>
         [Input("zoneId")]
         public Input<string>? ZoneId { get; set; }
 
         /// <summary>
-        /// 可用区名称。
+        /// Availability zone name.
         /// </summary>
         [Input("zoneName")]
         public Input<string>? ZoneName { get; set; }

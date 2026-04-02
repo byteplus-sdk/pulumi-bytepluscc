@@ -31,79 +31,79 @@ export interface GetClusterArgs {
  */
 export interface GetClusterResult {
     /**
-     * 账号ID。
+     * Account ID.
      */
     readonly accountId: number;
     /**
-     * 集群服务的扩展信息列表，包括服务的自定义配置项、服务组件的自定义部署拓扑设置，以及服务的元数据连接配置信息。
+     * Cluster service extension information list, including custom configuration items for services, custom deployment topology settings for service components, and metadata connection configuration information for services.
      */
     readonly applicationExtras: outputs.emr.GetClusterApplicationExtra[];
     /**
-     * 集群安装的服务名称列表。创建字段。
+     * List of service names installed in the cluster. Creation-related field.
      */
     readonly applicationNames: string[];
     /**
-     * 集群安装的服务列表。只读字段。
+     * Installed service list for cluster. Read-only field.
      */
     readonly applications: outputs.emr.GetClusterApplication[];
     /**
-     * 集群的引导脚本列表。
+     * Cluster bootstrap script list.
      */
     readonly bootstrapScripts: outputs.emr.GetClusterBootstrapScript[];
     /**
-     * 包月的配置参数，当chargeType=PRE时，必选。
+     * Monthly subscription configuration parameters. Required when chargeType=PRE.
      */
     readonly chargePreConfig: outputs.emr.GetClusterChargePreConfig;
     /**
-     * 付费类型，PRE表示包月，POST表示按量计费。
+     * Payment type. PRE means monthly subscription, POST means pay-as-you-go.
      */
     readonly chargeType: string;
     /**
-     * 集群dns域名后缀列表。
+     * Cluster DNS domain suffix list.
      */
     readonly clusterDomainNames: string[];
     /**
-     * 集群ID。
+     * Cluster ID.
      */
     readonly clusterId: string;
     /**
-     * 集群名称。
+     * Cluster name.
      */
     readonly clusterName: string;
     /**
-     * 集群状态。
+     * Cluster status.
      */
     readonly clusterState: string;
     /**
-     * 集群类型。
+     * Cluster type.
      */
     readonly clusterType: string;
     /**
-     * 集群创建时间。
+     * Cluster creation time.
      */
     readonly createdTime: number;
     /**
-     * 创建者ID。
+     * Creator ID.
      */
     readonly creatorId: number;
     /**
-     * 创建者名称。
+     * Creator name.
      */
     readonly creatorName: string;
     /**
-     * 部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
+     * Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
      */
     readonly deployMode: string;
     /**
-     * ECS镜像ID。
+     * ECS image ID.
      */
     readonly ecsImageId: string;
     /**
-     * 集群过期时间。
+     * Cluster expiration time.
      */
     readonly expireTime: number;
     /**
-     * HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
+     * HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
      */
     readonly historyServerMode: string;
     /**
@@ -111,43 +111,43 @@ export interface GetClusterResult {
      */
     readonly id: string;
     /**
-     * 集群全局的节点信息。
+     * Cluster global node information.
      */
     readonly nodeAttribute: outputs.emr.GetClusterNodeAttribute;
     /**
-     * 节点组属性列表。
+     * Node group property list.
      */
     readonly nodeGroupAttributes: outputs.emr.GetClusterNodeGroupAttribute[];
     /**
-     * 资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+     * Project to which the resource belongs. Default is 'default'. Each resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length is 64 characters.
      */
     readonly projectName: string;
     /**
-     * 集群创建完成时间。
+     * Cluster creation completion time.
      */
     readonly readyTime: number;
     /**
-     * 集群版本。
+     * Cluster version.
      */
     readonly releaseVersion: string;
     /**
-     * 集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+     * Cluster global security group ID. All ECS in node groups will join this security group.
      */
     readonly securityGroupId: string;
     /**
-     * 安全模式。
+     * Security mode.
      */
     readonly securityMode: string;
     /**
-     * 状态变更原因。
+     * Status change reason.
      */
     readonly stateChangeReason: outputs.emr.GetClusterStateChangeReason;
     /**
-     * 标签列表。
+     * Tag list.
      */
     readonly tags: outputs.emr.GetClusterTag[];
     /**
-     * 集群终止时间。
+     * Cluster termination time.
      */
     readonly terminateTime: number;
     /**

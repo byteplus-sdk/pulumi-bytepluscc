@@ -18,14 +18,14 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
     public static final PermissionState Empty = new PermissionState();
 
     /**
-     * RBAC 权限策略资源被授权的时间。
+     * Time when the RBAC policy resource was authorized.
      * 
      */
     @Import(name="authorizedAt")
     private @Nullable Output<String> authorizedAt;
 
     /**
-     * @return RBAC 权限策略资源被授权的时间。
+     * @return Time when the RBAC policy resource was authorized.
      * 
      */
     public Optional<Output<String>> authorizedAt() {
@@ -33,14 +33,14 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+     * Grantor ID. Can be an IAM user ID or an IAM role ID.
      * 
      */
     @Import(name="authorizerId")
     private @Nullable Output<Integer> authorizerId;
 
     /**
-     * @return 授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+     * @return Grantor ID. Can be an IAM user ID or an IAM role ID.
      * 
      */
     public Optional<Output<Integer>> authorizerId() {
@@ -48,14 +48,14 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 授权者名称
+     * Grantor name
      * 
      */
     @Import(name="authorizerName")
     private @Nullable Output<String> authorizerName;
 
     /**
-     * @return 授权者名称
+     * @return Grantor name
      * 
      */
     public Optional<Output<String>> authorizerName() {
@@ -63,14 +63,14 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+     * Type of grantor. Possible values: User: IAM user. Role: IAM role. Account: account.
      * 
      */
     @Import(name="authorizerType")
     private @Nullable Output<String> authorizerType;
 
     /**
-     * @return 授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+     * @return Type of grantor. Possible values: User: IAM user. Role: IAM role. Account: account.
      * 
      */
     public Optional<Output<String>> authorizerType() {
@@ -78,14 +78,14 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 需要授权给 IAM 用户或角色的集群 ID。roleDomain为namespace或cluster时必须填写该参数值。
+     * Cluster ID to be authorized for the IAM user or role. This parameter is required when roleDomain is namespace or cluster.
      * 
      */
     @Import(name="clusterId")
     private @Nullable Output<String> clusterId;
 
     /**
-     * @return 需要授权给 IAM 用户或角色的集群 ID。roleDomain为namespace或cluster时必须填写该参数值。
+     * @return Cluster ID to be authorized for the IAM user or role. This parameter is required when roleDomain is namespace or cluster.
      * 
      */
     public Optional<Output<String>> clusterId() {
@@ -93,14 +93,14 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * RBAC 权限策略资源创建的时间。
+     * Time when the RBAC policy resource was created.
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return RBAC 权限策略资源创建的时间。
+     * @return Time when the RBAC policy resource was created.
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -108,14 +108,14 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 被授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+     * Grantee ID. Can be an IAM user ID or an IAM role ID.
      * 
      */
     @Import(name="granteeId")
     private @Nullable Output<Integer> granteeId;
 
     /**
-     * @return 被授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+     * @return Grantee ID. Can be an IAM user ID or an IAM role ID.
      * 
      */
     public Optional<Output<Integer>> granteeId() {
@@ -123,14 +123,14 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 被授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+     * Type of grantee. Possible values: User: IAM user. Role: IAM role. Account: account.
      * 
      */
     @Import(name="granteeType")
     private @Nullable Output<String> granteeType;
 
     /**
-     * @return 被授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+     * @return Type of grantee. Possible values: User: IAM user. Role: IAM role. Account: account.
      * 
      */
     public Optional<Output<String>> granteeType() {
@@ -138,14 +138,14 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 给被授权者授予的 RBAC 角色是否为自定义角色，取值如下：true：自定义角色。false：（默认值）系统预置的角色。
+     * Whether the RBAC role granted to the grantee is a custom role. Possible values: true: custom role. false (default): system predefined role.
      * 
      */
     @Import(name="isCustomRole")
     private @Nullable Output<Boolean> isCustomRole;
 
     /**
-     * @return 给被授权者授予的 RBAC 角色是否为自定义角色，取值如下：true：自定义角色。false：（默认值）系统预置的角色。
+     * @return Whether the RBAC role granted to the grantee is a custom role. Possible values: true: custom role. false (default): system predefined role.
      * 
      */
     public Optional<Output<Boolean>> isCustomRole() {
@@ -153,14 +153,14 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * RBAC 权限策略资源在 Kubernetes 中的对象名称。
+     * The object name of the RBAC policy resource in Kubernetes.
      * 
      */
     @Import(name="kubeRoleBindingName")
     private @Nullable Output<String> kubeRoleBindingName;
 
     /**
-     * @return RBAC 权限策略资源在 Kubernetes 中的对象名称。
+     * @return The object name of the RBAC policy resource in Kubernetes.
      * 
      */
     public Optional<Output<String>> kubeRoleBindingName() {
@@ -168,14 +168,14 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 授权详细消息。
+     * Authorization details message.
      * 
      */
     @Import(name="message")
     private @Nullable Output<String> message;
 
     /**
-     * @return 授权详细消息。
+     * @return Authorization details message.
      * 
      */
     public Optional<Output<String>> message() {
@@ -183,14 +183,14 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 需要授权给 IAM 用户或角色的名空间名称。roleDomain等于namespace时必须填写该参数值。roleDomain不等于namespace时，填写该参数值不生效。
+     * Namespace name to be authorized for the IAM user or role. This parameter is required when roleDomain equals namespace. If roleDomain does not equal namespace, this parameter is not effective.
      * 
      */
     @Import(name="namespace")
     private @Nullable Output<String> namespace;
 
     /**
-     * @return 需要授权给 IAM 用户或角色的名空间名称。roleDomain等于namespace时必须填写该参数值。roleDomain不等于namespace时，填写该参数值不生效。
+     * @return Namespace name to be authorized for the IAM user or role. This parameter is required when roleDomain equals namespace. If roleDomain does not equal namespace, this parameter is not effective.
      * 
      */
     public Optional<Output<String>> namespace() {
@@ -198,14 +198,14 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * RBAC 权限策略资源 ID。
+     * RBAC policy resource ID.
      * 
      */
     @Import(name="permissionId")
     private @Nullable Output<String> permissionId;
 
     /**
-     * @return RBAC 权限策略资源 ID。
+     * @return RBAC policy resource ID.
      * 
      */
     public Optional<Output<String>> permissionId() {
@@ -213,14 +213,14 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 项目选择器
+     * Project selector
      * 
      */
     @Import(name="projectSelector")
     private @Nullable Output<String> projectSelector;
 
     /**
-     * @return 项目选择器
+     * @return Project selector
      * 
      */
     public Optional<Output<String>> projectSelector() {
@@ -228,14 +228,14 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 撤销授权的时间。
+     * Time when authorization is revoked.
      * 
      */
     @Import(name="revokedAt")
     private @Nullable Output<String> revokedAt;
 
     /**
-     * @return 撤销授权的时间。
+     * @return Time when authorization is revoked.
      * 
      */
     public Optional<Output<String>> revokedAt() {
@@ -243,14 +243,14 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 为 IAM 用户或角色授予的权限类型，取值如下：namespace：授予命名空间级别的权限。cluster：授予集群级别的权限。all_clusters：授予当前账号下全部集群级别的权限。
+     * The permission type granted to an IAM user or role. Possible values: namespace: grants permissions at the namespace level. cluster: grants permissions at the cluster level. all_clusters: grants permissions at the cluster level for all clusters under the current account.
      * 
      */
     @Import(name="roleDomain")
     private @Nullable Output<String> roleDomain;
 
     /**
-     * @return 为 IAM 用户或角色授予的权限类型，取值如下：namespace：授予命名空间级别的权限。cluster：授予集群级别的权限。all_clusters：授予当前账号下全部集群级别的权限。
+     * @return The permission type granted to an IAM user or role. Possible values: namespace: grants permissions at the namespace level. cluster: grants permissions at the cluster level. all_clusters: grants permissions at the cluster level for all clusters under the current account.
      * 
      */
     public Optional<Output<String>> roleDomain() {
@@ -258,14 +258,14 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 给被授权者授予的 RBAC 角色名称。目前必须填写该参数。当roleDomain为all_clusters时，不可以自定义角色名称。
+     * Name of the RBAC role granted to the grantee. This parameter must be specified. When roleDomain is all_clusters, custom role names are not allowed.
      * 
      */
     @Import(name="roleName")
     private @Nullable Output<String> roleName;
 
     /**
-     * @return 给被授权者授予的 RBAC 角色名称。目前必须填写该参数。当roleDomain为all_clusters时，不可以自定义角色名称。
+     * @return Name of the RBAC role granted to the grantee. This parameter must be specified. When roleDomain is all_clusters, custom role names are not allowed.
      * 
      */
     public Optional<Output<String>> roleName() {
@@ -273,14 +273,14 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * RBAC 权限访问策略资源的状态，取值如下：Success：授权成功。Failed：授权失败。Pending：授权中。PartialSuccess：部分授权成功。
+     * Status of the RBAC access policy resource. Possible values: Success: authorization succeeded. Failed: authorization failed. Pending: authorization in progress. PartialSuccess: partial authorization succeeded.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return RBAC 权限访问策略资源的状态，取值如下：Success：授权成功。Failed：授权失败。Pending：授权中。PartialSuccess：部分授权成功。
+     * @return Status of the RBAC access policy resource. Possible values: Success: authorization succeeded. Failed: authorization failed. Pending: authorization in progress. PartialSuccess: partial authorization succeeded.
      * 
      */
     public Optional<Output<String>> status() {
@@ -329,7 +329,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param authorizedAt RBAC 权限策略资源被授权的时间。
+         * @param authorizedAt Time when the RBAC policy resource was authorized.
          * 
          * @return builder
          * 
@@ -340,7 +340,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param authorizedAt RBAC 权限策略资源被授权的时间。
+         * @param authorizedAt Time when the RBAC policy resource was authorized.
          * 
          * @return builder
          * 
@@ -350,7 +350,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param authorizerId 授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+         * @param authorizerId Grantor ID. Can be an IAM user ID or an IAM role ID.
          * 
          * @return builder
          * 
@@ -361,7 +361,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param authorizerId 授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+         * @param authorizerId Grantor ID. Can be an IAM user ID or an IAM role ID.
          * 
          * @return builder
          * 
@@ -371,7 +371,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param authorizerName 授权者名称
+         * @param authorizerName Grantor name
          * 
          * @return builder
          * 
@@ -382,7 +382,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param authorizerName 授权者名称
+         * @param authorizerName Grantor name
          * 
          * @return builder
          * 
@@ -392,7 +392,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param authorizerType 授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+         * @param authorizerType Type of grantor. Possible values: User: IAM user. Role: IAM role. Account: account.
          * 
          * @return builder
          * 
@@ -403,7 +403,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param authorizerType 授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+         * @param authorizerType Type of grantor. Possible values: User: IAM user. Role: IAM role. Account: account.
          * 
          * @return builder
          * 
@@ -413,7 +413,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterId 需要授权给 IAM 用户或角色的集群 ID。roleDomain为namespace或cluster时必须填写该参数值。
+         * @param clusterId Cluster ID to be authorized for the IAM user or role. This parameter is required when roleDomain is namespace or cluster.
          * 
          * @return builder
          * 
@@ -424,7 +424,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterId 需要授权给 IAM 用户或角色的集群 ID。roleDomain为namespace或cluster时必须填写该参数值。
+         * @param clusterId Cluster ID to be authorized for the IAM user or role. This parameter is required when roleDomain is namespace or cluster.
          * 
          * @return builder
          * 
@@ -434,7 +434,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime RBAC 权限策略资源创建的时间。
+         * @param createdTime Time when the RBAC policy resource was created.
          * 
          * @return builder
          * 
@@ -445,7 +445,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime RBAC 权限策略资源创建的时间。
+         * @param createdTime Time when the RBAC policy resource was created.
          * 
          * @return builder
          * 
@@ -455,7 +455,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param granteeId 被授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+         * @param granteeId Grantee ID. Can be an IAM user ID or an IAM role ID.
          * 
          * @return builder
          * 
@@ -466,7 +466,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param granteeId 被授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+         * @param granteeId Grantee ID. Can be an IAM user ID or an IAM role ID.
          * 
          * @return builder
          * 
@@ -476,7 +476,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param granteeType 被授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+         * @param granteeType Type of grantee. Possible values: User: IAM user. Role: IAM role. Account: account.
          * 
          * @return builder
          * 
@@ -487,7 +487,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param granteeType 被授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+         * @param granteeType Type of grantee. Possible values: User: IAM user. Role: IAM role. Account: account.
          * 
          * @return builder
          * 
@@ -497,7 +497,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isCustomRole 给被授权者授予的 RBAC 角色是否为自定义角色，取值如下：true：自定义角色。false：（默认值）系统预置的角色。
+         * @param isCustomRole Whether the RBAC role granted to the grantee is a custom role. Possible values: true: custom role. false (default): system predefined role.
          * 
          * @return builder
          * 
@@ -508,7 +508,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isCustomRole 给被授权者授予的 RBAC 角色是否为自定义角色，取值如下：true：自定义角色。false：（默认值）系统预置的角色。
+         * @param isCustomRole Whether the RBAC role granted to the grantee is a custom role. Possible values: true: custom role. false (default): system predefined role.
          * 
          * @return builder
          * 
@@ -518,7 +518,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kubeRoleBindingName RBAC 权限策略资源在 Kubernetes 中的对象名称。
+         * @param kubeRoleBindingName The object name of the RBAC policy resource in Kubernetes.
          * 
          * @return builder
          * 
@@ -529,7 +529,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kubeRoleBindingName RBAC 权限策略资源在 Kubernetes 中的对象名称。
+         * @param kubeRoleBindingName The object name of the RBAC policy resource in Kubernetes.
          * 
          * @return builder
          * 
@@ -539,7 +539,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param message 授权详细消息。
+         * @param message Authorization details message.
          * 
          * @return builder
          * 
@@ -550,7 +550,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param message 授权详细消息。
+         * @param message Authorization details message.
          * 
          * @return builder
          * 
@@ -560,7 +560,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param namespace 需要授权给 IAM 用户或角色的名空间名称。roleDomain等于namespace时必须填写该参数值。roleDomain不等于namespace时，填写该参数值不生效。
+         * @param namespace Namespace name to be authorized for the IAM user or role. This parameter is required when roleDomain equals namespace. If roleDomain does not equal namespace, this parameter is not effective.
          * 
          * @return builder
          * 
@@ -571,7 +571,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param namespace 需要授权给 IAM 用户或角色的名空间名称。roleDomain等于namespace时必须填写该参数值。roleDomain不等于namespace时，填写该参数值不生效。
+         * @param namespace Namespace name to be authorized for the IAM user or role. This parameter is required when roleDomain equals namespace. If roleDomain does not equal namespace, this parameter is not effective.
          * 
          * @return builder
          * 
@@ -581,7 +581,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param permissionId RBAC 权限策略资源 ID。
+         * @param permissionId RBAC policy resource ID.
          * 
          * @return builder
          * 
@@ -592,7 +592,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param permissionId RBAC 权限策略资源 ID。
+         * @param permissionId RBAC policy resource ID.
          * 
          * @return builder
          * 
@@ -602,7 +602,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectSelector 项目选择器
+         * @param projectSelector Project selector
          * 
          * @return builder
          * 
@@ -613,7 +613,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectSelector 项目选择器
+         * @param projectSelector Project selector
          * 
          * @return builder
          * 
@@ -623,7 +623,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param revokedAt 撤销授权的时间。
+         * @param revokedAt Time when authorization is revoked.
          * 
          * @return builder
          * 
@@ -634,7 +634,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param revokedAt 撤销授权的时间。
+         * @param revokedAt Time when authorization is revoked.
          * 
          * @return builder
          * 
@@ -644,7 +644,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param roleDomain 为 IAM 用户或角色授予的权限类型，取值如下：namespace：授予命名空间级别的权限。cluster：授予集群级别的权限。all_clusters：授予当前账号下全部集群级别的权限。
+         * @param roleDomain The permission type granted to an IAM user or role. Possible values: namespace: grants permissions at the namespace level. cluster: grants permissions at the cluster level. all_clusters: grants permissions at the cluster level for all clusters under the current account.
          * 
          * @return builder
          * 
@@ -655,7 +655,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param roleDomain 为 IAM 用户或角色授予的权限类型，取值如下：namespace：授予命名空间级别的权限。cluster：授予集群级别的权限。all_clusters：授予当前账号下全部集群级别的权限。
+         * @param roleDomain The permission type granted to an IAM user or role. Possible values: namespace: grants permissions at the namespace level. cluster: grants permissions at the cluster level. all_clusters: grants permissions at the cluster level for all clusters under the current account.
          * 
          * @return builder
          * 
@@ -665,7 +665,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param roleName 给被授权者授予的 RBAC 角色名称。目前必须填写该参数。当roleDomain为all_clusters时，不可以自定义角色名称。
+         * @param roleName Name of the RBAC role granted to the grantee. This parameter must be specified. When roleDomain is all_clusters, custom role names are not allowed.
          * 
          * @return builder
          * 
@@ -676,7 +676,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param roleName 给被授权者授予的 RBAC 角色名称。目前必须填写该参数。当roleDomain为all_clusters时，不可以自定义角色名称。
+         * @param roleName Name of the RBAC role granted to the grantee. This parameter must be specified. When roleDomain is all_clusters, custom role names are not allowed.
          * 
          * @return builder
          * 
@@ -686,7 +686,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status RBAC 权限访问策略资源的状态，取值如下：Success：授权成功。Failed：授权失败。Pending：授权中。PartialSuccess：部分授权成功。
+         * @param status Status of the RBAC access policy resource. Possible values: Success: authorization succeeded. Failed: authorization failed. Pending: authorization in progress. PartialSuccess: partial authorization succeeded.
          * 
          * @return builder
          * 
@@ -697,7 +697,7 @@ public final class PermissionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status RBAC 权限访问策略资源的状态，取值如下：Success：授权成功。Failed：授权失败。Pending：授权中。PartialSuccess：部分授权成功。
+         * @param status Status of the RBAC access policy resource. Possible values: Success: authorization succeeded. Failed: authorization failed. Pending: authorization in progress. PartialSuccess: partial authorization succeeded.
          * 
          * @return builder
          * 

@@ -11,38 +11,38 @@ import java.util.Objects;
 @CustomType
 public final class GetDnsControlPolicyDomainListV1 {
     /**
-     * @return 具体地址信息。
+     * @return Specific address information.
      * 
      */
     private String address;
     /**
-     * @return 描述信息。
+     * @return Description information.
      * 
      */
     private String description;
     /**
-     * @return 地址类型。支持的取值如下所示。ip：IPv4 地址；ipv6：IPv6 地址；domain：域名；port：端口。
+     * @return Address type. Supported values are as follows. ip: IPv4 address; ipv6: IPv6 address; domain: domain name; port: port number.
      * 
      */
     private String type;
 
     private GetDnsControlPolicyDomainListV1() {}
     /**
-     * @return 具体地址信息。
+     * @return Specific address information.
      * 
      */
     public String address() {
         return this.address;
     }
     /**
-     * @return 描述信息。
+     * @return Description information.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 地址类型。支持的取值如下所示。ip：IPv4 地址；ipv6：IPv6 地址；domain：域名；port：端口。
+     * @return Address type. Supported values are as follows. ip: IPv4 address; ipv6: IPv6 address; domain: domain name; port: port number.
      * 
      */
     public String type() {

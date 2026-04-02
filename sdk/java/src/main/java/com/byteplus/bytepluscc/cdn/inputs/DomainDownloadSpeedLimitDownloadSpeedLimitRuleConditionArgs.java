@@ -25,14 +25,14 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionArgs e
     }
 
     /**
-     * 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 &#34;AND&#34;。OR：表示逻辑关系是 &#34;OR&#34;。该参数的默认值是 OR。
+     * Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is &#39;AND&#39;. OR: indicates the logical relationship is &#39;OR&#39;. The default value is OR.
      * 
      */
     @Import(name="connective")
     private @Nullable Output<String> connective;
 
     /**
-     * @return 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 &#34;AND&#34;。OR：表示逻辑关系是 &#34;OR&#34;。该参数的默认值是 OR。
+     * @return Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is &#39;AND&#39;. OR: indicates the logical relationship is &#39;OR&#39;. The default value is OR.
      * 
      */
     public Optional<Output<String>> connective() {
@@ -78,7 +78,7 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionArgs e
         }
 
         /**
-         * @param connective 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 &#34;AND&#34;。OR：表示逻辑关系是 &#34;OR&#34;。该参数的默认值是 OR。
+         * @param connective Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is &#39;AND&#39;. OR: indicates the logical relationship is &#39;OR&#39;. The default value is OR.
          * 
          * @return builder
          * 
@@ -89,7 +89,7 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionArgs e
         }
 
         /**
-         * @param connective 表示多条ConditionRule 之间的逻辑关系。该参数有以下取值：AND: 表示逻辑关系是 &#34;AND&#34;。OR：表示逻辑关系是 &#34;OR&#34;。该参数的默认值是 OR。
+         * @param connective Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is &#39;AND&#39;. OR: indicates the logical relationship is &#39;OR&#39;. The default value is OR.
          * 
          * @return builder
          * 

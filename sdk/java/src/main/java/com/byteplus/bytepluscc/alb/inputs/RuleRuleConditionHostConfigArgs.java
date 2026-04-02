@@ -17,14 +17,14 @@ public final class RuleRuleConditionHostConfigArgs extends com.pulumi.resources.
     public static final RuleRuleConditionHostConfigArgs Empty = new RuleRuleConditionHostConfigArgs();
 
     /**
-     * 转发规则的域名，支持泛域名和精确域名。
+     * Domain name of the forwarding rule. Supports wildcard and exact domains.
      * 
      */
     @Import(name="values")
     private @Nullable Output<List<String>> values;
 
     /**
-     * @return 转发规则的域名，支持泛域名和精确域名。
+     * @return Domain name of the forwarding rule. Supports wildcard and exact domains.
      * 
      */
     public Optional<Output<List<String>>> values() {
@@ -56,7 +56,7 @@ public final class RuleRuleConditionHostConfigArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param values 转发规则的域名，支持泛域名和精确域名。
+         * @param values Domain name of the forwarding rule. Supports wildcard and exact domains.
          * 
          * @return builder
          * 
@@ -67,7 +67,7 @@ public final class RuleRuleConditionHostConfigArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param values 转发规则的域名，支持泛域名和精确域名。
+         * @param values Domain name of the forwarding rule. Supports wildcard and exact domains.
          * 
          * @return builder
          * 
@@ -77,7 +77,7 @@ public final class RuleRuleConditionHostConfigArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param values 转发规则的域名，支持泛域名和精确域名。
+         * @param values Domain name of the forwarding rule. Supports wildcard and exact domains.
          * 
          * @return builder
          * 

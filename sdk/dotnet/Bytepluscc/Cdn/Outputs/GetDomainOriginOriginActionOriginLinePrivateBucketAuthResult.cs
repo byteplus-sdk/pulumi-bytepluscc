@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class GetDomainOriginOriginActionOriginLinePrivateBucketAuthResult
     {
         /// <summary>
-        /// 表示对象存储桶所在的第三方云厂商。该参数有以下取值：cos：表示腾讯云。oss：表示阿里云。aws：表示 Amazon AWS。
+        /// Indicates the third-party cloud provider where the object storage bucket is located. The parameter values are: cos: Tencent Cloud. oss: Alibaba Cloud. aws: Amazon AWS.
         /// </summary>
         public readonly string AuthType;
         /// <summary>
-        /// 表示对象存储桶是否来自第三方云厂商。该参数有以下取值：true：表示对象存储桶来自第三方云厂商。该参数的默认值是 false。
+        /// Indicates whether the object storage bucket is from a third-party cloud provider. This parameter has the following values: true: the object storage bucket is from a third-party cloud provider. The default value is false
         /// </summary>
         public readonly bool Switch;
         /// <summary>
-        /// 表示该第三方云厂商的访问密钥。该参数仅当 Switch 是 true 时有效。
+        /// Specifies the access key for the third-party cloud provider. This parameter is only valid when Switch is true.
         /// </summary>
         public readonly Outputs.GetDomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformationResult TosAuthInformation;
 

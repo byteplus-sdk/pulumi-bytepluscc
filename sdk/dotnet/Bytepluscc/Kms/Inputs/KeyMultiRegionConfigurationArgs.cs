@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms.Inputs
     public sealed class KeyMultiRegionConfigurationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 多区域密钥的类型。
+        /// Multi-region key type.
         /// </summary>
         [Input("multiRegionKeyType")]
         public Input<string>? MultiRegionKeyType { get; set; }
 
         /// <summary>
-        /// 主多区域键的事务识别号和区域 ID。
+        /// Primary multi-region key transaction identifier and region ID.
         /// </summary>
         [Input("primaryKey")]
         public Input<Inputs.KeyMultiRegionConfigurationPrimaryKeyArgs>? PrimaryKey { get; set; }

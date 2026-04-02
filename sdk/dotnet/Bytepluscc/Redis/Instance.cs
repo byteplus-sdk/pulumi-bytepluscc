@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Redis
 {
     /// <summary>
-    /// 缓存数据库 Redis 版的基本单位是实例。实例是独立的、虚拟化的数据库运行环境，是多个数据节点与代理节点的集合，数据节点上运行 Redis 引擎。
+    /// The basic unit of Redis cache database is the instance. An instance is an independent, virtualized database runtime environment, consisting of multiple data nodes and proxy nodes. The Redis engine runs on the data nodes.
     /// 
     /// ## Example Usage
     /// 
@@ -73,37 +73,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
     public partial class Instance : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 白名单 ID 列表。若该参数留空，新建实例默认不加入任何白名单。您可以调用 DescribeAllowLists 接口查询当前账号下指定地域内的所有 IP 白名单信息，包括白名单 ID 信息。每个实例最多支持绑定 100 个白名单，每次可最多批量绑定 100 个白名单。每个实例最多支持绑定 1000 个 IP 地址或 CIDR 格式的 IP 地址段。
+        /// Allowlist ID list. If left empty, the new instance will not be added to any allowlist by default. You can call the DescribeAllowLists API to query all IP allowlist information, including allowlist IDs, for the specified region under your account. Each instance supports binding up to 100 allowlists, and you can batch bind up to 100 allowlists at a time. Each instance supports binding up to 1000 IP addresses or CIDR-format IP address ranges.
         /// </summary>
         [Output("allowListIds")]
         public Output<ImmutableArray<string>> AllowListIds { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启自动续费。取值范围如下：false（默认值）：不开启。true：开启。
+        /// Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
         /// </summary>
         [Output("autoRenew")]
         public Output<bool> AutoRenew { get; private set; } = null!;
 
         /// <summary>
-        /// 为变更前创建的全量备份设置备份名称。
+        /// Set a backup name for the full backup created before changes.
         /// </summary>
         [Output("backupPointName")]
         public Output<string> BackupPointName { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
+        /// Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
         /// </summary>
         [Output("blueGreenRole")]
         public Output<string> BlueGreenRole { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的容量信息。
+        /// Capacity information of the instance.
         /// </summary>
         [Output("capacity")]
         public Output<Outputs.InstanceCapacity> Capacity { get; private set; } = null!;
 
         /// <summary>
-        /// 实例计费类型。取值范围如下：PrePaid：包年包月（也称预付费）。PostPaid：按量计费（也称后付费）。
+        /// Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
         /// </summary>
         [Output("chargeType")]
         public Output<string> ChargeType { get; private set; } = null!;
@@ -112,55 +112,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         public Output<ImmutableArray<Outputs.InstanceConfigureNode>> ConfigureNodes { get; private set; } = null!;
 
         /// <summary>
-        /// 是否在变更前创建备份。
+        /// Whether to create a backup before making changes.
         /// </summary>
         [Output("createBackup")]
         public Output<bool> CreateBackup { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的创建时间。
+        /// Creation time of the instance.
         /// </summary>
         [Output("createTime")]
         public Output<string> CreateTime { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的数据存储形态。该参数仅对企业版（即ServiceType为Enterprise）实例有意义；社区版（即ServiceType为Basic）实例不涉及数据存储形态，DataLayout取值固定为RAM。若该参数留空，表示不使用数据存储形态进行筛选。
+        /// Data storage type of the instance. This parameter is only relevant for Enterprise Edition instances (ServiceType=Enterprise). Community Edition instances (ServiceType=Basic) do not involve data storage type, and DataLayout is always set to RAM. If this parameter is left empty, data storage type is not used as a filter.
         /// </summary>
         [Output("dataLayout")]
         public Output<string> DataLayout { get; private set; } = null!;
 
         /// <summary>
-        /// 开启或关闭实例删除保护功能。
+        /// Enable or disable instance deletion protection.
         /// </summary>
         [Output("deletionProtection")]
         public Output<string> DeletionProtection { get; private set; } = null!;
 
         /// <summary>
-        /// 数据库版本号。
+        /// Database version number.
         /// </summary>
         [Output("engineVersion")]
         public Output<string> EngineVersion { get; private set; } = null!;
 
         /// <summary>
-        /// 实例到期时间。
+        /// Instance expiration time.
         /// </summary>
         [Output("expiredTime")]
         public Output<string> ExpiredTime { get; private set; } = null!;
 
         /// <summary>
-        /// Redis 实例的类型。取值范围如下：PrimarySecondary：主备实例；Standalone：单节点实例。若该参数留空，表示不使用实例类型条件进行筛选。关于实例类型的更多信息，请参见产品架构。
+        /// Type of Redis instance. Valid values: PrimarySecondary: primary-secondary instance; Standalone: single-node instance. If this parameter is left empty, instance type is not used as a filter. For more information about instance types, see Product Architecture.
         /// </summary>
         [Output("instanceClass")]
         public Output<string> InstanceClass { get; private set; } = null!;
 
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID.
         /// </summary>
         [Output("instanceId")]
         public Output<string> InstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// 实例名称。命名规则：不能以数字、中划线（-）开头；只能包含中文、字母、数字、下划线（_）和中划线（-）；长度需要在1~128个字符内。
+        /// Instance name. Naming rules: Cannot start with a digit or hyphen (-); can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-); length must be 1–128 characters.
         /// </summary>
         [Output("instanceName")]
         public Output<string> InstanceName { get; private set; } = null!;
@@ -169,121 +169,121 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         public Output<ImmutableArray<Outputs.InstanceInstanceShard>> InstanceShards { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的可维护时间段，格式为HH:mm-HH:mm（UTC+8）。
+        /// Maintenance window for the instance, format: HH:mm-HH:mm (UTC+8).
         /// </summary>
         [Output("maintenanceTime")]
         public Output<string> MaintenanceTime { get; private set; } = null!;
 
         /// <summary>
-        /// 实例当前单分片最大连接数。每分片的默认连接数为10000，您也可以根据业务需要调用ModifyDBInstanceMaxConn接口修改单分片的最大连接数。
+        /// Current maximum connections per shard for the instance. The default connection limit per shard is 10,000. You can also call the ModifyDBInstanceMaxConn API to adjust the maximum connections per shard based on your business needs.
         /// </summary>
         [Output("maxConnections")]
         public Output<int> MaxConnections { get; private set; } = null!;
 
         /// <summary>
-        /// 设置实例的可用区部署方案。
+        /// Set the deployment scheme for the instance's availability zone.
         /// </summary>
         [Output("multiAz")]
         public Output<string> MultiAz { get; private set; } = null!;
 
         /// <summary>
-        /// 为新建实例开启或关闭免密访问功能。取值范围如下：open：开启免密访问。close（默认值）：关闭免密访问。
+        /// Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
         /// </summary>
         [Output("noAuthMode")]
         public Output<string> NoAuthMode { get; private set; } = null!;
 
         /// <summary>
-        /// Proxy 和 Server 节点 ID 列表。
+        /// List of Proxy and Server node IDs.
         /// </summary>
         [Output("nodeIds")]
         public Output<ImmutableArray<string>> NodeIds { get; private set; } = null!;
 
         /// <summary>
-        /// 每个分片中的节点数。取值范围为1~6。每个账号在每个地域下默认最多可创建4个256MiB规格的节点，若需要调整配额上限为10个，请参见账号配额。取值为1时表示创建单节点实例；取值大于1时表示创建主备实例。关于两种类型实例的功能特性差异详情，请参见功能特性差异。
+        /// Number of nodes in each shard. Value range: 1–6. By default, each account can create up to 4 nodes of 256 MiB specification per region. To increase the quota limit to 10, see Account Quotas. A value of 1 creates a single-node instance; a value greater than 1 creates a primary-secondary instance. For details on the differences between these two types of instances, see Feature Differences.
         /// </summary>
         [Output("nodeNumber")]
         public Output<int> NodeNumber { get; private set; } = null!;
 
         /// <summary>
-        /// 需要应用到新实例的参数模板。缓存数据库 Redis 版为每个数据库版本都创建了一份默认的系统参数模板，模板中包含了该版本支持设置的所有参数和默认参数值。若该参数留空，默认会根据您设置的数据库版本（即 EngineVersion）为新建实例选择并应用对应版本的系统参数模板。您可以调用 DescribeParameterGroups 接口查询当前账号和地域下的所有参数模板的基本信息，包括参数模板 ID。
+        /// The parameter template to be applied to the new instance. Redis for Cache Database creates a default system parameter template for each database version, which includes all parameters supported by that version and their default values. If this parameter is left blank, the system will select and apply the corresponding version's system parameter template for the new instance based on the database version you set (i.e., EngineVersion). You can call the DescribeParameterGroups API to query basic information about all parameter templates under your account and region, including the parameter template ID.
         /// </summary>
         [Output("parameterGroupId")]
         public Output<string> ParameterGroupId { get; private set; } = null!;
 
         /// <summary>
-        /// 设置默认数据库 default 账号的密码。
+        /// Set the password for the default account of the default database.
         /// </summary>
         [Output("password")]
         public Output<string> Password { get; private set; } = null!;
 
         /// <summary>
-        /// 自定义私网连接地址的端口号。取值范围：1024~65535。若该参数留空，私网连接地址默认使用6379端口。实例创建成功后，还可以修改私网地址的端口号，修改方法请参见修改端口号。
+        /// Custom port number for the private network connection address. Value range: 1024~65535. If this parameter is left blank, the private network connection address uses port 6379 by default. After the instance is created, you can also modify the port number of the private network address. For instructions, see Modify Port Number.
         /// </summary>
         [Output("port")]
         public Output<int> Port { get; private set; } = null!;
 
         /// <summary>
-        /// 实例私网连接地址的域名。
+        /// The domain name for the instance's private network connection address.
         /// </summary>
         [Output("privateAddress")]
         public Output<string> PrivateAddress { get; private set; } = null!;
 
         /// <summary>
-        /// 实例私网连接地址的端口号。
+        /// Port number for the instance's private network connection address.
         /// </summary>
         [Output("privatePort")]
         public Output<string> PrivatePort { get; private set; } = null!;
 
         /// <summary>
-        /// 实例所属的项目。
+        /// Project to which the instance belongs.
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 购买时长，单位：月。取值范围如下：按月购买：1，2，3，4，5，6，7，8，9。按年购买：12，24，36。当ChargeType为PrePaid时，该参数必填。
+        /// Purchase duration, unit: month. Value options: Monthly purchase: 1, 2, 3, 4, 5, 6, 7, 8, 9. Annual purchase: 12, 24, 36. When ChargeType is PrePaid, this parameter is required.
         /// </summary>
         [Output("purchaseMonths")]
         public Output<int> PurchaseMonths { get; private set; } = null!;
 
         /// <summary>
-        /// 设置是否保留额外带宽
+        /// Set whether to reserve additional bandwidth
         /// </summary>
         [Output("reserveAdditionalBandwidth")]
         public Output<bool> ReserveAdditionalBandwidth { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的服务类型
+        /// Service type of the instance
         /// </summary>
         [Output("serviceType")]
         public Output<string> ServiceType { get; private set; } = null!;
 
         /// <summary>
-        /// 实例中每个分片的内存容量。单位：MiB。
+        /// Memory capacity of each shard in the instance. Unit: MiB.
         /// </summary>
         [Output("shardCapacity")]
         public Output<int> ShardCapacity { get; private set; } = null!;
 
         /// <summary>
-        /// 实例中的分片数量。取值范围为 2~256。仅当 ShardedCluster 取值为 1（即启用分片集群）时，需要指定该参数。
+        /// Number of shards in the instance. Value range: 2–256. Specify this parameter only when ShardedCluster is set to 1 (enabled).
         /// </summary>
         [Output("shardNumber")]
         public Output<int> ShardNumber { get; private set; } = null!;
 
         /// <summary>
-        /// 是否启用分片集群。取值范围如下：0：不启用。1：启用。
+        /// Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
         /// </summary>
         [Output("shardedCluster")]
         public Output<int> ShardedCluster { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的服务类型，取值范围如下：Basic（默认值）：社区版；Enterprise：企业版。
+        /// Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// 设置实例的子网ID。子网具有可用区属性，必须选择目标私有网络中与实例属于同一可用区下的子网。子网是私有网络内的IP地址块私有网络中的所有云资源都必须部署在子网内，子网为云资源分配私网IP地址，您可以调用CreateSubnet接口创建子网。您可以调用DescribeSubnets接口查询指定可用区内的所有子网列表信息，包括子网ID。
+        /// Set the subnet ID for the instance. Subnets have availability zone attributes; you must select a subnet in the target private network that belongs to the same availability zone as the instance. A subnet is an IP address block within a private network. All cloud resources in the private network must be deployed in a subnet. The subnet assigns private IP addresses to cloud resources. You can call the CreateSubnet API to create a subnet. You can call the DescribeSubnets API to query the list of all subnets in a specified availability zone, including subnet IDs.
         /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
@@ -292,13 +292,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         public Output<ImmutableArray<Outputs.InstanceTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 实例私网连接地址所对应的 IPv6 地址。仅当实例使用了 IPv6 地址时才会返回该参数。
+        /// The IPv6 address corresponding to the instance's private network connection address. This parameter is returned only if the instance uses an IPv6 address.
         /// </summary>
         [Output("viPv6")]
         public Output<string> ViPv6 { get; private set; } = null!;
 
         /// <summary>
-        /// 实例私网连接地址所对应的 IPv4 地址。
+        /// IPv4 address corresponding to the instance's private network connection address.
         /// </summary>
         [Output("vip")]
         public Output<string> Vip { get; private set; } = null!;
@@ -307,19 +307,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         public Output<ImmutableArray<Outputs.InstanceVisitAddr>> VisitAddrs { get; private set; } = null!;
 
         /// <summary>
-        /// 开启或关闭免密访问功能。取值范围如下：open：开启免密访问；close：关闭免密访问。参数取值不区分大小写。
+        /// Enable or disable password-free access. Valid values: open: enable password-free access; close: disable password-free access. Values are case-insensitive.
         /// </summary>
         [Output("vpcAuthMode")]
         public Output<string> VpcAuthMode { get; private set; } = null!;
 
         /// <summary>
-        /// 设置实例的私有网络ID。建议Redis实例与需要连接的ECS实例在同一私有网络，否则它们无法通过内网互通来实现最佳性能。您可以调用CreateVpc接口创建私有网络。您可以调用DescribeVpcs接口查询符合指定条件的私有网络信息，包括私有网络ID。
+        /// Set the private network ID for the instance. It is recommended that the Redis instance and the ECS instance you want to connect to are in the same private network; otherwise, they cannot communicate optimally via the internal network. You can call the CreateVpc API to create a private network. You can call the DescribeVpcs API to query private network information that meets specified conditions, including the private network ID.
         /// </summary>
         [Output("vpcId")]
         public Output<string> VpcId { get; private set; } = null!;
 
         /// <summary>
-        /// 实例所在的可用区列表。
+        /// List of available zones where the instance is located.
         /// </summary>
         [Output("zoneIds")]
         public Output<ImmutableArray<string>> ZoneIds { get; private set; } = null!;
@@ -375,7 +375,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         private InputList<string>? _allowListIds;
 
         /// <summary>
-        /// 白名单 ID 列表。若该参数留空，新建实例默认不加入任何白名单。您可以调用 DescribeAllowLists 接口查询当前账号下指定地域内的所有 IP 白名单信息，包括白名单 ID 信息。每个实例最多支持绑定 100 个白名单，每次可最多批量绑定 100 个白名单。每个实例最多支持绑定 1000 个 IP 地址或 CIDR 格式的 IP 地址段。
+        /// Allowlist ID list. If left empty, the new instance will not be added to any allowlist by default. You can call the DescribeAllowLists API to query all IP allowlist information, including allowlist IDs, for the specified region under your account. Each instance supports binding up to 100 allowlists, and you can batch bind up to 100 allowlists at a time. Each instance supports binding up to 1000 IP addresses or CIDR-format IP address ranges.
         /// </summary>
         public InputList<string> AllowListIds
         {
@@ -384,19 +384,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         }
 
         /// <summary>
-        /// 是否开启自动续费。取值范围如下：false（默认值）：不开启。true：开启。
+        /// Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
         /// </summary>
         [Input("autoRenew")]
         public Input<bool>? AutoRenew { get; set; }
 
         /// <summary>
-        /// 为变更前创建的全量备份设置备份名称。
+        /// Set a backup name for the full backup created before changes.
         /// </summary>
         [Input("backupPointName")]
         public Input<string>? BackupPointName { get; set; }
 
         /// <summary>
-        /// 实例计费类型。取值范围如下：PrePaid：包年包月（也称预付费）。PostPaid：按量计费（也称后付费）。
+        /// Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
         /// </summary>
         [Input("chargeType")]
         public Input<string>? ChargeType { get; set; }
@@ -410,103 +410,103 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         }
 
         /// <summary>
-        /// 是否在变更前创建备份。
+        /// Whether to create a backup before making changes.
         /// </summary>
         [Input("createBackup")]
         public Input<bool>? CreateBackup { get; set; }
 
         /// <summary>
-        /// 开启或关闭实例删除保护功能。
+        /// Enable or disable instance deletion protection.
         /// </summary>
         [Input("deletionProtection")]
         public Input<string>? DeletionProtection { get; set; }
 
         /// <summary>
-        /// 数据库版本号。
+        /// Database version number.
         /// </summary>
         [Input("engineVersion", required: true)]
         public Input<string> EngineVersion { get; set; } = null!;
 
         /// <summary>
-        /// 实例名称。命名规则：不能以数字、中划线（-）开头；只能包含中文、字母、数字、下划线（_）和中划线（-）；长度需要在1~128个字符内。
+        /// Instance name. Naming rules: Cannot start with a digit or hyphen (-); can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-); length must be 1–128 characters.
         /// </summary>
         [Input("instanceName")]
         public Input<string>? InstanceName { get; set; }
 
         /// <summary>
-        /// 设置实例的可用区部署方案。
+        /// Set the deployment scheme for the instance's availability zone.
         /// </summary>
         [Input("multiAz", required: true)]
         public Input<string> MultiAz { get; set; } = null!;
 
         /// <summary>
-        /// 为新建实例开启或关闭免密访问功能。取值范围如下：open：开启免密访问。close（默认值）：关闭免密访问。
+        /// Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
         /// </summary>
         [Input("noAuthMode")]
         public Input<string>? NoAuthMode { get; set; }
 
         /// <summary>
-        /// 每个分片中的节点数。取值范围为1~6。每个账号在每个地域下默认最多可创建4个256MiB规格的节点，若需要调整配额上限为10个，请参见账号配额。取值为1时表示创建单节点实例；取值大于1时表示创建主备实例。关于两种类型实例的功能特性差异详情，请参见功能特性差异。
+        /// Number of nodes in each shard. Value range: 1–6. By default, each account can create up to 4 nodes of 256 MiB specification per region. To increase the quota limit to 10, see Account Quotas. A value of 1 creates a single-node instance; a value greater than 1 creates a primary-secondary instance. For details on the differences between these two types of instances, see Feature Differences.
         /// </summary>
         [Input("nodeNumber", required: true)]
         public Input<int> NodeNumber { get; set; } = null!;
 
         /// <summary>
-        /// 需要应用到新实例的参数模板。缓存数据库 Redis 版为每个数据库版本都创建了一份默认的系统参数模板，模板中包含了该版本支持设置的所有参数和默认参数值。若该参数留空，默认会根据您设置的数据库版本（即 EngineVersion）为新建实例选择并应用对应版本的系统参数模板。您可以调用 DescribeParameterGroups 接口查询当前账号和地域下的所有参数模板的基本信息，包括参数模板 ID。
+        /// The parameter template to be applied to the new instance. Redis for Cache Database creates a default system parameter template for each database version, which includes all parameters supported by that version and their default values. If this parameter is left blank, the system will select and apply the corresponding version's system parameter template for the new instance based on the database version you set (i.e., EngineVersion). You can call the DescribeParameterGroups API to query basic information about all parameter templates under your account and region, including the parameter template ID.
         /// </summary>
         [Input("parameterGroupId")]
         public Input<string>? ParameterGroupId { get; set; }
 
         /// <summary>
-        /// 设置默认数据库 default 账号的密码。
+        /// Set the password for the default account of the default database.
         /// </summary>
         [Input("password")]
         public Input<string>? Password { get; set; }
 
         /// <summary>
-        /// 自定义私网连接地址的端口号。取值范围：1024~65535。若该参数留空，私网连接地址默认使用6379端口。实例创建成功后，还可以修改私网地址的端口号，修改方法请参见修改端口号。
+        /// Custom port number for the private network connection address. Value range: 1024~65535. If this parameter is left blank, the private network connection address uses port 6379 by default. After the instance is created, you can also modify the port number of the private network address. For instructions, see Modify Port Number.
         /// </summary>
         [Input("port")]
         public Input<int>? Port { get; set; }
 
         /// <summary>
-        /// 实例所属的项目。
+        /// Project to which the instance belongs.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 购买时长，单位：月。取值范围如下：按月购买：1，2，3，4，5，6，7，8，9。按年购买：12，24，36。当ChargeType为PrePaid时，该参数必填。
+        /// Purchase duration, unit: month. Value options: Monthly purchase: 1, 2, 3, 4, 5, 6, 7, 8, 9. Annual purchase: 12, 24, 36. When ChargeType is PrePaid, this parameter is required.
         /// </summary>
         [Input("purchaseMonths")]
         public Input<int>? PurchaseMonths { get; set; }
 
         /// <summary>
-        /// 设置是否保留额外带宽
+        /// Set whether to reserve additional bandwidth
         /// </summary>
         [Input("reserveAdditionalBandwidth")]
         public Input<bool>? ReserveAdditionalBandwidth { get; set; }
 
         /// <summary>
-        /// 实例中每个分片的内存容量。单位：MiB。
+        /// Memory capacity of each shard in the instance. Unit: MiB.
         /// </summary>
         [Input("shardCapacity", required: true)]
         public Input<int> ShardCapacity { get; set; } = null!;
 
         /// <summary>
-        /// 实例中的分片数量。取值范围为 2~256。仅当 ShardedCluster 取值为 1（即启用分片集群）时，需要指定该参数。
+        /// Number of shards in the instance. Value range: 2–256. Specify this parameter only when ShardedCluster is set to 1 (enabled).
         /// </summary>
         [Input("shardNumber")]
         public Input<int>? ShardNumber { get; set; }
 
         /// <summary>
-        /// 是否启用分片集群。取值范围如下：0：不启用。1：启用。
+        /// Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
         /// </summary>
         [Input("shardedCluster", required: true)]
         public Input<int> ShardedCluster { get; set; } = null!;
 
         /// <summary>
-        /// 设置实例的子网ID。子网具有可用区属性，必须选择目标私有网络中与实例属于同一可用区下的子网。子网是私有网络内的IP地址块私有网络中的所有云资源都必须部署在子网内，子网为云资源分配私网IP地址，您可以调用CreateSubnet接口创建子网。您可以调用DescribeSubnets接口查询指定可用区内的所有子网列表信息，包括子网ID。
+        /// Set the subnet ID for the instance. Subnets have availability zone attributes; you must select a subnet in the target private network that belongs to the same availability zone as the instance. A subnet is an IP address block within a private network. All cloud resources in the private network must be deployed in a subnet. The subnet assigns private IP addresses to cloud resources. You can call the CreateSubnet API to create a subnet. You can call the DescribeSubnets API to query the list of all subnets in a specified availability zone, including subnet IDs.
         /// </summary>
         [Input("subnetId", required: true)]
         public Input<string> SubnetId { get; set; } = null!;
@@ -520,7 +520,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         }
 
         /// <summary>
-        /// 设置实例的私有网络ID。建议Redis实例与需要连接的ECS实例在同一私有网络，否则它们无法通过内网互通来实现最佳性能。您可以调用CreateVpc接口创建私有网络。您可以调用DescribeVpcs接口查询符合指定条件的私有网络信息，包括私有网络ID。
+        /// Set the private network ID for the instance. It is recommended that the Redis instance and the ECS instance you want to connect to are in the same private network; otherwise, they cannot communicate optimally via the internal network. You can call the CreateVpc API to create a private network. You can call the DescribeVpcs API to query private network information that meets specified conditions, including the private network ID.
         /// </summary>
         [Input("vpcId", required: true)]
         public Input<string> VpcId { get; set; } = null!;
@@ -537,7 +537,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         private InputList<string>? _allowListIds;
 
         /// <summary>
-        /// 白名单 ID 列表。若该参数留空，新建实例默认不加入任何白名单。您可以调用 DescribeAllowLists 接口查询当前账号下指定地域内的所有 IP 白名单信息，包括白名单 ID 信息。每个实例最多支持绑定 100 个白名单，每次可最多批量绑定 100 个白名单。每个实例最多支持绑定 1000 个 IP 地址或 CIDR 格式的 IP 地址段。
+        /// Allowlist ID list. If left empty, the new instance will not be added to any allowlist by default. You can call the DescribeAllowLists API to query all IP allowlist information, including allowlist IDs, for the specified region under your account. Each instance supports binding up to 100 allowlists, and you can batch bind up to 100 allowlists at a time. Each instance supports binding up to 1000 IP addresses or CIDR-format IP address ranges.
         /// </summary>
         public InputList<string> AllowListIds
         {
@@ -546,31 +546,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         }
 
         /// <summary>
-        /// 是否开启自动续费。取值范围如下：false（默认值）：不开启。true：开启。
+        /// Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
         /// </summary>
         [Input("autoRenew")]
         public Input<bool>? AutoRenew { get; set; }
 
         /// <summary>
-        /// 为变更前创建的全量备份设置备份名称。
+        /// Set a backup name for the full backup created before changes.
         /// </summary>
         [Input("backupPointName")]
         public Input<string>? BackupPointName { get; set; }
 
         /// <summary>
-        /// 实例的蓝绿部署角色。取值范围如下：Blue：蓝色实例。Green： 绿色实例。仅使用过蓝绿部署功能的 Redis 实例会返回该参数。
+        /// Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
         /// </summary>
         [Input("blueGreenRole")]
         public Input<string>? BlueGreenRole { get; set; }
 
         /// <summary>
-        /// 实例的容量信息。
+        /// Capacity information of the instance.
         /// </summary>
         [Input("capacity")]
         public Input<Inputs.InstanceCapacityGetArgs>? Capacity { get; set; }
 
         /// <summary>
-        /// 实例计费类型。取值范围如下：PrePaid：包年包月（也称预付费）。PostPaid：按量计费（也称后付费）。
+        /// Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
         /// </summary>
         [Input("chargeType")]
         public Input<string>? ChargeType { get; set; }
@@ -584,55 +584,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         }
 
         /// <summary>
-        /// 是否在变更前创建备份。
+        /// Whether to create a backup before making changes.
         /// </summary>
         [Input("createBackup")]
         public Input<bool>? CreateBackup { get; set; }
 
         /// <summary>
-        /// 实例的创建时间。
+        /// Creation time of the instance.
         /// </summary>
         [Input("createTime")]
         public Input<string>? CreateTime { get; set; }
 
         /// <summary>
-        /// 实例的数据存储形态。该参数仅对企业版（即ServiceType为Enterprise）实例有意义；社区版（即ServiceType为Basic）实例不涉及数据存储形态，DataLayout取值固定为RAM。若该参数留空，表示不使用数据存储形态进行筛选。
+        /// Data storage type of the instance. This parameter is only relevant for Enterprise Edition instances (ServiceType=Enterprise). Community Edition instances (ServiceType=Basic) do not involve data storage type, and DataLayout is always set to RAM. If this parameter is left empty, data storage type is not used as a filter.
         /// </summary>
         [Input("dataLayout")]
         public Input<string>? DataLayout { get; set; }
 
         /// <summary>
-        /// 开启或关闭实例删除保护功能。
+        /// Enable or disable instance deletion protection.
         /// </summary>
         [Input("deletionProtection")]
         public Input<string>? DeletionProtection { get; set; }
 
         /// <summary>
-        /// 数据库版本号。
+        /// Database version number.
         /// </summary>
         [Input("engineVersion")]
         public Input<string>? EngineVersion { get; set; }
 
         /// <summary>
-        /// 实例到期时间。
+        /// Instance expiration time.
         /// </summary>
         [Input("expiredTime")]
         public Input<string>? ExpiredTime { get; set; }
 
         /// <summary>
-        /// Redis 实例的类型。取值范围如下：PrimarySecondary：主备实例；Standalone：单节点实例。若该参数留空，表示不使用实例类型条件进行筛选。关于实例类型的更多信息，请参见产品架构。
+        /// Type of Redis instance. Valid values: PrimarySecondary: primary-secondary instance; Standalone: single-node instance. If this parameter is left empty, instance type is not used as a filter. For more information about instance types, see Product Architecture.
         /// </summary>
         [Input("instanceClass")]
         public Input<string>? InstanceClass { get; set; }
 
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID.
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 实例名称。命名规则：不能以数字、中划线（-）开头；只能包含中文、字母、数字、下划线（_）和中划线（-）；长度需要在1~128个字符内。
+        /// Instance name. Naming rules: Cannot start with a digit or hyphen (-); can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-); length must be 1–128 characters.
         /// </summary>
         [Input("instanceName")]
         public Input<string>? InstanceName { get; set; }
@@ -646,25 +646,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         }
 
         /// <summary>
-        /// 实例的可维护时间段，格式为HH:mm-HH:mm（UTC+8）。
+        /// Maintenance window for the instance, format: HH:mm-HH:mm (UTC+8).
         /// </summary>
         [Input("maintenanceTime")]
         public Input<string>? MaintenanceTime { get; set; }
 
         /// <summary>
-        /// 实例当前单分片最大连接数。每分片的默认连接数为10000，您也可以根据业务需要调用ModifyDBInstanceMaxConn接口修改单分片的最大连接数。
+        /// Current maximum connections per shard for the instance. The default connection limit per shard is 10,000. You can also call the ModifyDBInstanceMaxConn API to adjust the maximum connections per shard based on your business needs.
         /// </summary>
         [Input("maxConnections")]
         public Input<int>? MaxConnections { get; set; }
 
         /// <summary>
-        /// 设置实例的可用区部署方案。
+        /// Set the deployment scheme for the instance's availability zone.
         /// </summary>
         [Input("multiAz")]
         public Input<string>? MultiAz { get; set; }
 
         /// <summary>
-        /// 为新建实例开启或关闭免密访问功能。取值范围如下：open：开启免密访问。close（默认值）：关闭免密访问。
+        /// Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
         /// </summary>
         [Input("noAuthMode")]
         public Input<string>? NoAuthMode { get; set; }
@@ -673,7 +673,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         private InputList<string>? _nodeIds;
 
         /// <summary>
-        /// Proxy 和 Server 节点 ID 列表。
+        /// List of Proxy and Server node IDs.
         /// </summary>
         public InputList<string> NodeIds
         {
@@ -682,91 +682,91 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         }
 
         /// <summary>
-        /// 每个分片中的节点数。取值范围为1~6。每个账号在每个地域下默认最多可创建4个256MiB规格的节点，若需要调整配额上限为10个，请参见账号配额。取值为1时表示创建单节点实例；取值大于1时表示创建主备实例。关于两种类型实例的功能特性差异详情，请参见功能特性差异。
+        /// Number of nodes in each shard. Value range: 1–6. By default, each account can create up to 4 nodes of 256 MiB specification per region. To increase the quota limit to 10, see Account Quotas. A value of 1 creates a single-node instance; a value greater than 1 creates a primary-secondary instance. For details on the differences between these two types of instances, see Feature Differences.
         /// </summary>
         [Input("nodeNumber")]
         public Input<int>? NodeNumber { get; set; }
 
         /// <summary>
-        /// 需要应用到新实例的参数模板。缓存数据库 Redis 版为每个数据库版本都创建了一份默认的系统参数模板，模板中包含了该版本支持设置的所有参数和默认参数值。若该参数留空，默认会根据您设置的数据库版本（即 EngineVersion）为新建实例选择并应用对应版本的系统参数模板。您可以调用 DescribeParameterGroups 接口查询当前账号和地域下的所有参数模板的基本信息，包括参数模板 ID。
+        /// The parameter template to be applied to the new instance. Redis for Cache Database creates a default system parameter template for each database version, which includes all parameters supported by that version and their default values. If this parameter is left blank, the system will select and apply the corresponding version's system parameter template for the new instance based on the database version you set (i.e., EngineVersion). You can call the DescribeParameterGroups API to query basic information about all parameter templates under your account and region, including the parameter template ID.
         /// </summary>
         [Input("parameterGroupId")]
         public Input<string>? ParameterGroupId { get; set; }
 
         /// <summary>
-        /// 设置默认数据库 default 账号的密码。
+        /// Set the password for the default account of the default database.
         /// </summary>
         [Input("password")]
         public Input<string>? Password { get; set; }
 
         /// <summary>
-        /// 自定义私网连接地址的端口号。取值范围：1024~65535。若该参数留空，私网连接地址默认使用6379端口。实例创建成功后，还可以修改私网地址的端口号，修改方法请参见修改端口号。
+        /// Custom port number for the private network connection address. Value range: 1024~65535. If this parameter is left blank, the private network connection address uses port 6379 by default. After the instance is created, you can also modify the port number of the private network address. For instructions, see Modify Port Number.
         /// </summary>
         [Input("port")]
         public Input<int>? Port { get; set; }
 
         /// <summary>
-        /// 实例私网连接地址的域名。
+        /// The domain name for the instance's private network connection address.
         /// </summary>
         [Input("privateAddress")]
         public Input<string>? PrivateAddress { get; set; }
 
         /// <summary>
-        /// 实例私网连接地址的端口号。
+        /// Port number for the instance's private network connection address.
         /// </summary>
         [Input("privatePort")]
         public Input<string>? PrivatePort { get; set; }
 
         /// <summary>
-        /// 实例所属的项目。
+        /// Project to which the instance belongs.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 购买时长，单位：月。取值范围如下：按月购买：1，2，3，4，5，6，7，8，9。按年购买：12，24，36。当ChargeType为PrePaid时，该参数必填。
+        /// Purchase duration, unit: month. Value options: Monthly purchase: 1, 2, 3, 4, 5, 6, 7, 8, 9. Annual purchase: 12, 24, 36. When ChargeType is PrePaid, this parameter is required.
         /// </summary>
         [Input("purchaseMonths")]
         public Input<int>? PurchaseMonths { get; set; }
 
         /// <summary>
-        /// 设置是否保留额外带宽
+        /// Set whether to reserve additional bandwidth
         /// </summary>
         [Input("reserveAdditionalBandwidth")]
         public Input<bool>? ReserveAdditionalBandwidth { get; set; }
 
         /// <summary>
-        /// 实例的服务类型
+        /// Service type of the instance
         /// </summary>
         [Input("serviceType")]
         public Input<string>? ServiceType { get; set; }
 
         /// <summary>
-        /// 实例中每个分片的内存容量。单位：MiB。
+        /// Memory capacity of each shard in the instance. Unit: MiB.
         /// </summary>
         [Input("shardCapacity")]
         public Input<int>? ShardCapacity { get; set; }
 
         /// <summary>
-        /// 实例中的分片数量。取值范围为 2~256。仅当 ShardedCluster 取值为 1（即启用分片集群）时，需要指定该参数。
+        /// Number of shards in the instance. Value range: 2–256. Specify this parameter only when ShardedCluster is set to 1 (enabled).
         /// </summary>
         [Input("shardNumber")]
         public Input<int>? ShardNumber { get; set; }
 
         /// <summary>
-        /// 是否启用分片集群。取值范围如下：0：不启用。1：启用。
+        /// Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
         /// </summary>
         [Input("shardedCluster")]
         public Input<int>? ShardedCluster { get; set; }
 
         /// <summary>
-        /// 实例的服务类型，取值范围如下：Basic（默认值）：社区版；Enterprise：企业版。
+        /// Service type of the instance. Value options: Basic (default): Community Edition; Enterprise: Enterprise Edition.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// 设置实例的子网ID。子网具有可用区属性，必须选择目标私有网络中与实例属于同一可用区下的子网。子网是私有网络内的IP地址块私有网络中的所有云资源都必须部署在子网内，子网为云资源分配私网IP地址，您可以调用CreateSubnet接口创建子网。您可以调用DescribeSubnets接口查询指定可用区内的所有子网列表信息，包括子网ID。
+        /// Set the subnet ID for the instance. Subnets have availability zone attributes; you must select a subnet in the target private network that belongs to the same availability zone as the instance. A subnet is an IP address block within a private network. All cloud resources in the private network must be deployed in a subnet. The subnet assigns private IP addresses to cloud resources. You can call the CreateSubnet API to create a subnet. You can call the DescribeSubnets API to query the list of all subnets in a specified availability zone, including subnet IDs.
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
@@ -780,13 +780,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         }
 
         /// <summary>
-        /// 实例私网连接地址所对应的 IPv6 地址。仅当实例使用了 IPv6 地址时才会返回该参数。
+        /// The IPv6 address corresponding to the instance's private network connection address. This parameter is returned only if the instance uses an IPv6 address.
         /// </summary>
         [Input("viPv6")]
         public Input<string>? ViPv6 { get; set; }
 
         /// <summary>
-        /// 实例私网连接地址所对应的 IPv4 地址。
+        /// IPv4 address corresponding to the instance's private network connection address.
         /// </summary>
         [Input("vip")]
         public Input<string>? Vip { get; set; }
@@ -800,13 +800,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         }
 
         /// <summary>
-        /// 开启或关闭免密访问功能。取值范围如下：open：开启免密访问；close：关闭免密访问。参数取值不区分大小写。
+        /// Enable or disable password-free access. Valid values: open: enable password-free access; close: disable password-free access. Values are case-insensitive.
         /// </summary>
         [Input("vpcAuthMode")]
         public Input<string>? VpcAuthMode { get; set; }
 
         /// <summary>
-        /// 设置实例的私有网络ID。建议Redis实例与需要连接的ECS实例在同一私有网络，否则它们无法通过内网互通来实现最佳性能。您可以调用CreateVpc接口创建私有网络。您可以调用DescribeVpcs接口查询符合指定条件的私有网络信息，包括私有网络ID。
+        /// Set the private network ID for the instance. It is recommended that the Redis instance and the ECS instance you want to connect to are in the same private network; otherwise, they cannot communicate optimally via the internal network. You can call the CreateVpc API to create a private network. You can call the DescribeVpcs API to query private network information that meets specified conditions, including the private network ID.
         /// </summary>
         [Input("vpcId")]
         public Input<string>? VpcId { get; set; }
@@ -815,7 +815,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         private InputList<string>? _zoneIds;
 
         /// <summary>
-        /// 实例所在的可用区列表。
+        /// List of available zones where the instance is located.
         /// </summary>
         public InputList<string> ZoneIds
         {

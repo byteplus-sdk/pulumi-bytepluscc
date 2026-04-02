@@ -18,14 +18,14 @@ public final class TrafficMirrorFilterArgs extends com.pulumi.resources.Resource
     public static final TrafficMirrorFilterArgs Empty = new TrafficMirrorFilterArgs();
 
     /**
-     * 筛选条件实例描述。
+     * Filter condition instance description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 筛选条件实例描述。
+     * @return Filter condition instance description
      * 
      */
     public Optional<Output<String>> description() {
@@ -33,14 +33,14 @@ public final class TrafficMirrorFilterArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 筛选条件所属项目的名称。
+     * Project name of the filter condition
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 筛选条件所属项目的名称。
+     * @return Project name of the filter condition
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -55,14 +55,14 @@ public final class TrafficMirrorFilterArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * 筛选条件名称。
+     * Filter condition name
      * 
      */
     @Import(name="trafficMirrorFilterName")
     private @Nullable Output<String> trafficMirrorFilterName;
 
     /**
-     * @return 筛选条件名称。
+     * @return Filter condition name
      * 
      */
     public Optional<Output<String>> trafficMirrorFilterName() {
@@ -97,7 +97,7 @@ public final class TrafficMirrorFilterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param description 筛选条件实例描述。
+         * @param description Filter condition instance description
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class TrafficMirrorFilterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param description 筛选条件实例描述。
+         * @param description Filter condition instance description
          * 
          * @return builder
          * 
@@ -118,7 +118,7 @@ public final class TrafficMirrorFilterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param projectName 筛选条件所属项目的名称。
+         * @param projectName Project name of the filter condition
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class TrafficMirrorFilterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param projectName 筛选条件所属项目的名称。
+         * @param projectName Project name of the filter condition
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class TrafficMirrorFilterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param trafficMirrorFilterName 筛选条件名称。
+         * @param trafficMirrorFilterName Filter condition name
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class TrafficMirrorFilterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param trafficMirrorFilterName 筛选条件名称。
+         * @param trafficMirrorFilterName Filter condition name
          * 
          * @return builder
          * 

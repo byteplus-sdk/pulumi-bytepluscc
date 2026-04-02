@@ -16,14 +16,14 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
     public static final ListenerDomainExtensionArgs Empty = new ListenerDomainExtensionArgs();
 
     /**
-     * 域名使用的服务器证书 ID 。当证书来源为 cert_center 时生效。
+     * Server certificate ID used by the domain. Effective when the certificate source is cert_center.
      * 
      */
     @Import(name="certCenterCertificateId")
     private @Nullable Output<String> certCenterCertificateId;
 
     /**
-     * @return 域名使用的服务器证书 ID 。当证书来源为 cert_center 时生效。
+     * @return Server certificate ID used by the domain. Effective when the certificate source is cert_center.
      * 
      */
     public Optional<Output<String>> certCenterCertificateId() {
@@ -31,14 +31,14 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 域名使用的服务器证书 ID。当证书来源为 alb 时生效。
+     * Server certificate ID used by the domain. Effective when the certificate source is alb.
      * 
      */
     @Import(name="certificateId")
     private @Nullable Output<String> certificateId;
 
     /**
-     * @return 域名使用的服务器证书 ID。当证书来源为 alb 时生效。
+     * @return Server certificate ID used by the domain. Effective when the certificate source is alb.
      * 
      */
     public Optional<Output<String>> certificateId() {
@@ -46,14 +46,14 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 域名使用的服务器证书的来源，取值：alb：表示通过 ALB 上传的证书。cert_center：表示通过火山引擎证书中心购买或上传的 SSL 证书。
+     * Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
      * 
      */
     @Import(name="certificateSource")
     private @Nullable Output<String> certificateSource;
 
     /**
-     * @return 域名使用的服务器证书的来源，取值：alb：表示通过 ALB 上传的证书。cert_center：表示通过火山引擎证书中心购买或上传的 SSL 证书。
+     * @return Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
      * 
      */
     public Optional<Output<String>> certificateSource() {
@@ -61,14 +61,14 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 域名。通常不能为空，若实例支持自动选择扩展证书，即SniAutoMatch为on，则Domain需传入空字符串。需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含小写字、字、‘.’、‘-‘、‘*’。长度限制为1 ～ 128个字符。泛域名：使用“*”代替1个或多个字符。“*”必须在域名开头或结尾。同一条域名中“*”不能出现两次。“*”前后不能有除了.以外的字符。精确域名：符合域名规范的精确域名。同一HTTPS监听器下的域名不能重复。匹配域名时，对域名的大小写不敏感。
+     * Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one &#39;.&#39; and cannot start or end with &#39;.&#39;. Only lowercase letters, digits, &#39;.&#39;, &#39;-&#39;, and &#39;*&#39; are allowed. Length must be between 1 and 128 characters. Wildcard domain: use &#39;*&#39; to replace one or more characters. &#39;*&#39; must be at the beginning or end of the domain name. &#39;*&#39; cannot appear twice in the same domain name. No characters except &#39;.&#39; can be before or after &#39;*&#39;. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
      * 
      */
     @Import(name="domain")
     private @Nullable Output<String> domain;
 
     /**
-     * @return 域名。通常不能为空，若实例支持自动选择扩展证书，即SniAutoMatch为on，则Domain需传入空字符串。需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含小写字、字、‘.’、‘-‘、‘*’。长度限制为1 ～ 128个字符。泛域名：使用“*”代替1个或多个字符。“*”必须在域名开头或结尾。同一条域名中“*”不能出现两次。“*”前后不能有除了.以外的字符。精确域名：符合域名规范的精确域名。同一HTTPS监听器下的域名不能重复。匹配域名时，对域名的大小写不敏感。
+     * @return Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one &#39;.&#39; and cannot start or end with &#39;.&#39;. Only lowercase letters, digits, &#39;.&#39;, &#39;-&#39;, and &#39;*&#39; are allowed. Length must be between 1 and 128 characters. Wildcard domain: use &#39;*&#39; to replace one or more characters. &#39;*&#39; must be at the beginning or end of the domain name. &#39;*&#39; cannot appear twice in the same domain name. No characters except &#39;.&#39; can be before or after &#39;*&#39;. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
      * 
      */
     public Optional<Output<String>> domain() {
@@ -76,14 +76,14 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * HTTPS监听器关联的私有叶子证书 ID。创建 HTTPS 监听器且证书来源为 pca_leaf 时必传。
+     * Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
      * 
      */
     @Import(name="pcaLeafCertificateId")
     private @Nullable Output<String> pcaLeafCertificateId;
 
     /**
-     * @return HTTPS监听器关联的私有叶子证书 ID。创建 HTTPS 监听器且证书来源为 pca_leaf 时必传。
+     * @return Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
      * 
      */
     public Optional<Output<String>> pcaLeafCertificateId() {
@@ -91,14 +91,14 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 若实例支持自动选择扩展证书，即SniAutoMatch为on时，则Domain是空字符串。San为证书的扩展域名，用英文,分隔多个域名。
+     * If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
      * 
      */
     @Import(name="san")
     private @Nullable Output<String> san;
 
     /**
-     * @return 若实例支持自动选择扩展证书，即SniAutoMatch为on时，则Domain是空字符串。San为证书的扩展域名，用英文,分隔多个域名。
+     * @return If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
      * 
      */
     public Optional<Output<String>> san() {
@@ -135,7 +135,7 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param certCenterCertificateId 域名使用的服务器证书 ID 。当证书来源为 cert_center 时生效。
+         * @param certCenterCertificateId Server certificate ID used by the domain. Effective when the certificate source is cert_center.
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param certCenterCertificateId 域名使用的服务器证书 ID 。当证书来源为 cert_center 时生效。
+         * @param certCenterCertificateId Server certificate ID used by the domain. Effective when the certificate source is cert_center.
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param certificateId 域名使用的服务器证书 ID。当证书来源为 alb 时生效。
+         * @param certificateId Server certificate ID used by the domain. Effective when the certificate source is alb.
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param certificateId 域名使用的服务器证书 ID。当证书来源为 alb 时生效。
+         * @param certificateId Server certificate ID used by the domain. Effective when the certificate source is alb.
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param certificateSource 域名使用的服务器证书的来源，取值：alb：表示通过 ALB 上传的证书。cert_center：表示通过火山引擎证书中心购买或上传的 SSL 证书。
+         * @param certificateSource Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
          * 
          * @return builder
          * 
@@ -188,7 +188,7 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param certificateSource 域名使用的服务器证书的来源，取值：alb：表示通过 ALB 上传的证书。cert_center：表示通过火山引擎证书中心购买或上传的 SSL 证书。
+         * @param certificateSource Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
          * 
          * @return builder
          * 
@@ -198,7 +198,7 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param domain 域名。通常不能为空，若实例支持自动选择扩展证书，即SniAutoMatch为on，则Domain需传入空字符串。需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含小写字、字、‘.’、‘-‘、‘*’。长度限制为1 ～ 128个字符。泛域名：使用“*”代替1个或多个字符。“*”必须在域名开头或结尾。同一条域名中“*”不能出现两次。“*”前后不能有除了.以外的字符。精确域名：符合域名规范的精确域名。同一HTTPS监听器下的域名不能重复。匹配域名时，对域名的大小写不敏感。
+         * @param domain Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one &#39;.&#39; and cannot start or end with &#39;.&#39;. Only lowercase letters, digits, &#39;.&#39;, &#39;-&#39;, and &#39;*&#39; are allowed. Length must be between 1 and 128 characters. Wildcard domain: use &#39;*&#39; to replace one or more characters. &#39;*&#39; must be at the beginning or end of the domain name. &#39;*&#39; cannot appear twice in the same domain name. No characters except &#39;.&#39; can be before or after &#39;*&#39;. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
          * 
          * @return builder
          * 
@@ -209,7 +209,7 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param domain 域名。通常不能为空，若实例支持自动选择扩展证书，即SniAutoMatch为on，则Domain需传入空字符串。需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含小写字、字、‘.’、‘-‘、‘*’。长度限制为1 ～ 128个字符。泛域名：使用“*”代替1个或多个字符。“*”必须在域名开头或结尾。同一条域名中“*”不能出现两次。“*”前后不能有除了.以外的字符。精确域名：符合域名规范的精确域名。同一HTTPS监听器下的域名不能重复。匹配域名时，对域名的大小写不敏感。
+         * @param domain Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one &#39;.&#39; and cannot start or end with &#39;.&#39;. Only lowercase letters, digits, &#39;.&#39;, &#39;-&#39;, and &#39;*&#39; are allowed. Length must be between 1 and 128 characters. Wildcard domain: use &#39;*&#39; to replace one or more characters. &#39;*&#39; must be at the beginning or end of the domain name. &#39;*&#39; cannot appear twice in the same domain name. No characters except &#39;.&#39; can be before or after &#39;*&#39;. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
          * 
          * @return builder
          * 
@@ -219,7 +219,7 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param pcaLeafCertificateId HTTPS监听器关联的私有叶子证书 ID。创建 HTTPS 监听器且证书来源为 pca_leaf 时必传。
+         * @param pcaLeafCertificateId Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
          * 
          * @return builder
          * 
@@ -230,7 +230,7 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param pcaLeafCertificateId HTTPS监听器关联的私有叶子证书 ID。创建 HTTPS 监听器且证书来源为 pca_leaf 时必传。
+         * @param pcaLeafCertificateId Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
          * 
          * @return builder
          * 
@@ -240,7 +240,7 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param san 若实例支持自动选择扩展证书，即SniAutoMatch为on时，则Domain是空字符串。San为证书的扩展域名，用英文,分隔多个域名。
+         * @param san If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
          * 
          * @return builder
          * 
@@ -251,7 +251,7 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param san 若实例支持自动选择扩展证书，即SniAutoMatch为on时，则Domain是空字符串。San为证书的扩展域名，用英文,分隔多个域名。
+         * @param san If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
          * 
          * @return builder
          * 

@@ -31,14 +31,14 @@ public final class InstanceInstanceConfigurationVpcArgs extends com.pulumi.resou
     }
 
     /**
-     * VPC 名称。
+     * VPC name
      * 
      */
     @Import(name="vpcName")
     private @Nullable Output<String> vpcName;
 
     /**
-     * @return VPC 名称。
+     * @return VPC name
      * 
      */
     public Optional<Output<String>> vpcName() {
@@ -92,7 +92,7 @@ public final class InstanceInstanceConfigurationVpcArgs extends com.pulumi.resou
         }
 
         /**
-         * @param vpcName VPC 名称。
+         * @param vpcName VPC name
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class InstanceInstanceConfigurationVpcArgs extends com.pulumi.resou
         }
 
         /**
-         * @param vpcName VPC 名称。
+         * @param vpcName VPC name
          * 
          * @return builder
          * 

@@ -16,7 +16,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 数据库
+ * Database
  * 
  * ## Example Usage
  * 
@@ -33,14 +33,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:rdsmysql/database:Database")
 public class Database extends com.pulumi.resources.CustomResource {
     /**
-     * 数据库字符集。目前支持的字符集包含：utf8、utf8mb4（默认）、latin1、ascii。
+     * Database character set. Supported character sets: utf8, utf8mb4 (default), latin1, ascii.
      * 
      */
     @Export(name="characterSetName", refs={String.class}, tree="[0]")
     private Output<String> characterSetName;
 
     /**
-     * @return 数据库字符集。目前支持的字符集包含：utf8、utf8mb4（默认）、latin1、ascii。
+     * @return Database character set. Supported character sets: utf8, utf8mb4 (default), latin1, ascii.
      * 
      */
     public Output<String> characterSetName() {
@@ -53,56 +53,56 @@ public class Database extends com.pulumi.resources.CustomResource {
         return this.databasePrivileges;
     }
     /**
-     * 数据库的描述信息，长度不超过 256 个字符。该字段可选，若不设置该字段，或设置了该字段但描述信息长度为 0 ，则描述信息为空。
+     * Database description, up to 256 characters. This field is optional. If not set, or if set with a description length of 0, the description will be empty.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 数据库的描述信息，长度不超过 256 个字符。该字段可选，若不设置该字段，或设置了该字段但描述信息长度为 0 ，则描述信息为空。
+     * @return Database description, up to 256 characters. This field is optional. If not set, or if set with a description length of 0, the description will be empty.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 数据库实例 ID。
+     * Database instance ID.
      * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
-     * @return 数据库实例 ID。
+     * @return Database instance ID.
      * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
-     * 数据库名称。命名规则如下：名称唯一。长度为 2~64 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）或中划线（-）组成。不能使用某些预留字，包括 root、admin 等。
+     * Database name. Naming rules: must be unique; length must be 2–64 characters; must start with a letter and end with a letter or number; can contain letters, numbers, underscores (_), or hyphens (-); certain reserved words, such as root and admin, cannot be used.
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return 数据库名称。命名规则如下：名称唯一。长度为 2~64 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）或中划线（-）组成。不能使用某些预留字，包括 root、admin 等。
+     * @return Database name. Naming rules: must be unique; length must be 2–64 characters; must start with a letter and end with a letter or number; can contain letters, numbers, underscores (_), or hyphens (-); certain reserved words, such as root and admin, cannot be used.
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * 数据库状态。取值为：Unavailable：不可用。Available：可用。
+     * Database status. Values: Unavailable (not available), Available (available).
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 数据库状态。取值为：Unavailable：不可用。Available：可用。
+     * @return Database status. Values: Unavailable (not available), Available (available).
      * 
      */
     public Output<String> status() {

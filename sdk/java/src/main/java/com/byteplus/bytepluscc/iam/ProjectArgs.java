@@ -17,14 +17,14 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
     public static final ProjectArgs Empty = new ProjectArgs();
 
     /**
-     * 描述
+     * Description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 描述
+     * @return Description
      * 
      */
     public Optional<Output<String>> description() {
@@ -32,14 +32,14 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 展示名
+     * Display Name
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return 展示名
+     * @return Display Name
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -47,14 +47,14 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 父项目名称
+     * Parent Project Name
      * 
      */
     @Import(name="parentProjectName")
     private @Nullable Output<String> parentProjectName;
 
     /**
-     * @return 父项目名称
+     * @return Parent Project Name
      * 
      */
     public Optional<Output<String>> parentProjectName() {
@@ -62,14 +62,14 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 项目名称
+     * Project Name
      * 
      */
     @Import(name="projectName", required=true)
     private Output<String> projectName;
 
     /**
-     * @return 项目名称
+     * @return Project Name
      * 
      */
     public Output<String> projectName() {
@@ -104,7 +104,7 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 描述
+         * @param description Description
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 描述
+         * @param description Description
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName 展示名
+         * @param displayName Display Name
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName 展示名
+         * @param displayName Display Name
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param parentProjectName 父项目名称
+         * @param parentProjectName Parent Project Name
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param parentProjectName 父项目名称
+         * @param parentProjectName Parent Project Name
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 项目名称
+         * @param projectName Project Name
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 项目名称
+         * @param projectName Project Name
          * 
          * @return builder
          * 

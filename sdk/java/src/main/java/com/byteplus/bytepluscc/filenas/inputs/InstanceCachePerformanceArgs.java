@@ -16,14 +16,14 @@ public final class InstanceCachePerformanceArgs extends com.pulumi.resources.Res
     public static final InstanceCachePerformanceArgs Empty = new InstanceCachePerformanceArgs();
 
     /**
-     * 预配置带宽，用于增加文件系统带宽。
+     * Provisioned bandwidth, used to increase file system bandwidth
      * 
      */
     @Import(name="cacheBandwidth")
     private @Nullable Output<Integer> cacheBandwidth;
 
     /**
-     * @return 预配置带宽，用于增加文件系统带宽。
+     * @return Provisioned bandwidth, used to increase file system bandwidth
      * 
      */
     public Optional<Output<Integer>> cacheBandwidth() {
@@ -55,7 +55,7 @@ public final class InstanceCachePerformanceArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param cacheBandwidth 预配置带宽，用于增加文件系统带宽。
+         * @param cacheBandwidth Provisioned bandwidth, used to increase file system bandwidth
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class InstanceCachePerformanceArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param cacheBandwidth 预配置带宽，用于增加文件系统带宽。
+         * @param cacheBandwidth Provisioned bandwidth, used to increase file system bandwidth
          * 
          * @return builder
          * 

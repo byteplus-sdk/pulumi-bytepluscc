@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class NodePoolKubernetesConfigContainerdConfig
     {
         /// <summary>
-        /// 指定跳过证书认证的容器镜像仓库地址。
+        /// Specify the container image repository address to skip certificate verification.
         /// </summary>
         public readonly ImmutableArray<string> InsecureRegistries;
         public readonly ImmutableArray<Outputs.NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig> RegistryProxyConfigs;

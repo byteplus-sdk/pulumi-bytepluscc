@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class UpstreamSourceSourceSpecNacosSourceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 认证配置。
+        /// Authentication configuration
         /// </summary>
         [Input("authConfig")]
         public Input<Inputs.UpstreamSourceSourceSpecNacosSourceAuthConfigArgs>? AuthConfig { get; set; }
@@ -26,7 +26,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
         public Input<string>? NacosId { get; set; }
 
         /// <summary>
-        /// Nacos名称。
+        /// Nacos name
         /// </summary>
         [Input("nacosName")]
         public Input<string>? NacosName { get; set; }

@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * 服务作为业务对外暴露的入口，可以通过绑定域名功能，将您的自定义域名绑定至服务。
+ * The service serves as the entry point for external access. You can bind your custom domain to the service using the domain binding feature
  *
  * ## Example Usage
  *
@@ -61,43 +61,43 @@ export class CustomDomain extends pulumi.CustomResource {
     }
 
     /**
-     * 自定义域名证书ID。
+     * Custom Domain Certificate ID
      */
     public readonly certificateId!: pulumi.Output<string>;
     /**
-     * 备注。
+     * Remarks
      */
     public readonly comments!: pulumi.Output<string>;
     /**
-     * 创建时间。
+     * Creation Time
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 自定义域名ID。
+     * Custom Domain ID
      */
     public /*out*/ readonly customDomainId!: pulumi.Output<string>;
     /**
-     * 自定义域名。
+     * Custom Domain
      */
     public readonly domain!: pulumi.Output<string>;
     /**
-     * 协议，取值：HTTP。HTTPS。
+     * Protocol. Values: HTTP, HTTPS
      */
     public readonly protocols!: pulumi.Output<string[]>;
     /**
-     * 服务ID。
+     * Service ID
      */
     public readonly serviceId!: pulumi.Output<string>;
     /**
-     * 重定向到HTTPS。
+     * Redirect to HTTPS
      */
     public readonly sslRedirect!: pulumi.Output<boolean>;
     /**
-     * 状态，取值：Creating：配置中。CreationFailed：配置失败。Deleting：删除中。DeletionFailed：删除失败。Verified：正常。
+     * Status. Values: Creating: configuring; CreationFailed: configuration failed; Deleting: deleting; DeletionFailed: deletion failed; Verified: active
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     /**
-     * 更新时间。
+     * Update Time
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
 
@@ -156,43 +156,43 @@ export class CustomDomain extends pulumi.CustomResource {
  */
 export interface CustomDomainState {
     /**
-     * 自定义域名证书ID。
+     * Custom Domain Certificate ID
      */
     certificateId?: pulumi.Input<string>;
     /**
-     * 备注。
+     * Remarks
      */
     comments?: pulumi.Input<string>;
     /**
-     * 创建时间。
+     * Creation Time
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 自定义域名ID。
+     * Custom Domain ID
      */
     customDomainId?: pulumi.Input<string>;
     /**
-     * 自定义域名。
+     * Custom Domain
      */
     domain?: pulumi.Input<string>;
     /**
-     * 协议，取值：HTTP。HTTPS。
+     * Protocol. Values: HTTP, HTTPS
      */
     protocols?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 服务ID。
+     * Service ID
      */
     serviceId?: pulumi.Input<string>;
     /**
-     * 重定向到HTTPS。
+     * Redirect to HTTPS
      */
     sslRedirect?: pulumi.Input<boolean>;
     /**
-     * 状态，取值：Creating：配置中。CreationFailed：配置失败。Deleting：删除中。DeletionFailed：删除失败。Verified：正常。
+     * Status. Values: Creating: configuring; CreationFailed: configuration failed; Deleting: deleting; DeletionFailed: deletion failed; Verified: active
      */
     status?: pulumi.Input<string>;
     /**
-     * 更新时间。
+     * Update Time
      */
     updatedTime?: pulumi.Input<string>;
 }
@@ -202,27 +202,27 @@ export interface CustomDomainState {
  */
 export interface CustomDomainArgs {
     /**
-     * 自定义域名证书ID。
+     * Custom Domain Certificate ID
      */
     certificateId?: pulumi.Input<string>;
     /**
-     * 备注。
+     * Remarks
      */
     comments?: pulumi.Input<string>;
     /**
-     * 自定义域名。
+     * Custom Domain
      */
     domain: pulumi.Input<string>;
     /**
-     * 协议，取值：HTTP。HTTPS。
+     * Protocol. Values: HTTP, HTTPS
      */
     protocols: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 服务ID。
+     * Service ID
      */
     serviceId: pulumi.Input<string>;
     /**
-     * 重定向到HTTPS。
+     * Redirect to HTTPS
      */
     sslRedirect?: pulumi.Input<boolean>;
 }

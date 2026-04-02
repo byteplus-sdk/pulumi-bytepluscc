@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Outputs
     public sealed class InstanceEndpoints
     {
         /// <summary>
-        /// 实例私网访问接入点响应数据。
+        /// Instance private network access endpoint response data
         /// </summary>
         public readonly Outputs.InstanceEndpointsOverlay? Overlay;
         /// <summary>
-        /// 实例公网访问接入点响应数据。
+        /// Instance public access endpoint response data
         /// </summary>
         public readonly Outputs.InstanceEndpointsPublic? Public;
 

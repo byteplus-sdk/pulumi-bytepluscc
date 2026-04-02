@@ -18,14 +18,14 @@ public final class DomainOriginOriginActionOriginLinePrivateBucketAuthArgs exten
     public static final DomainOriginOriginActionOriginLinePrivateBucketAuthArgs Empty = new DomainOriginOriginActionOriginLinePrivateBucketAuthArgs();
 
     /**
-     * 表示对象存储桶所在的第三方云厂商。该参数有以下取值：cos：表示腾讯云。oss：表示阿里云。aws：表示 Amazon AWS。
+     * Indicates the third-party cloud provider where the object storage bucket is located. The parameter values are: cos: Tencent Cloud. oss: Alibaba Cloud. aws: Amazon AWS.
      * 
      */
     @Import(name="authType")
     private @Nullable Output<String> authType;
 
     /**
-     * @return 表示对象存储桶所在的第三方云厂商。该参数有以下取值：cos：表示腾讯云。oss：表示阿里云。aws：表示 Amazon AWS。
+     * @return Indicates the third-party cloud provider where the object storage bucket is located. The parameter values are: cos: Tencent Cloud. oss: Alibaba Cloud. aws: Amazon AWS.
      * 
      */
     public Optional<Output<String>> authType() {
@@ -33,14 +33,14 @@ public final class DomainOriginOriginActionOriginLinePrivateBucketAuthArgs exten
     }
 
     /**
-     * 表示对象存储桶是否来自第三方云厂商。该参数有以下取值：true：表示对象存储桶来自第三方云厂商。该参数的默认值是 false。
+     * Indicates whether the object storage bucket is from a third-party cloud provider. This parameter has the following values: true: the object storage bucket is from a third-party cloud provider. The default value is false
      * 
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
-     * @return 表示对象存储桶是否来自第三方云厂商。该参数有以下取值：true：表示对象存储桶来自第三方云厂商。该参数的默认值是 false。
+     * @return Indicates whether the object storage bucket is from a third-party cloud provider. This parameter has the following values: true: the object storage bucket is from a third-party cloud provider. The default value is false
      * 
      */
     public Optional<Output<Boolean>> switch_() {
@@ -48,14 +48,14 @@ public final class DomainOriginOriginActionOriginLinePrivateBucketAuthArgs exten
     }
 
     /**
-     * 表示该第三方云厂商的访问密钥。该参数仅当 Switch 是 true 时有效。
+     * Specifies the access key for the third-party cloud provider. This parameter is only valid when Switch is true.
      * 
      */
     @Import(name="tosAuthInformation")
     private @Nullable Output<DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformationArgs> tosAuthInformation;
 
     /**
-     * @return 表示该第三方云厂商的访问密钥。该参数仅当 Switch 是 true 时有效。
+     * @return Specifies the access key for the third-party cloud provider. This parameter is only valid when Switch is true.
      * 
      */
     public Optional<Output<DomainOriginOriginActionOriginLinePrivateBucketAuthTosAuthInformationArgs>> tosAuthInformation() {
@@ -89,7 +89,7 @@ public final class DomainOriginOriginActionOriginLinePrivateBucketAuthArgs exten
         }
 
         /**
-         * @param authType 表示对象存储桶所在的第三方云厂商。该参数有以下取值：cos：表示腾讯云。oss：表示阿里云。aws：表示 Amazon AWS。
+         * @param authType Indicates the third-party cloud provider where the object storage bucket is located. The parameter values are: cos: Tencent Cloud. oss: Alibaba Cloud. aws: Amazon AWS.
          * 
          * @return builder
          * 
@@ -100,7 +100,7 @@ public final class DomainOriginOriginActionOriginLinePrivateBucketAuthArgs exten
         }
 
         /**
-         * @param authType 表示对象存储桶所在的第三方云厂商。该参数有以下取值：cos：表示腾讯云。oss：表示阿里云。aws：表示 Amazon AWS。
+         * @param authType Indicates the third-party cloud provider where the object storage bucket is located. The parameter values are: cos: Tencent Cloud. oss: Alibaba Cloud. aws: Amazon AWS.
          * 
          * @return builder
          * 
@@ -110,7 +110,7 @@ public final class DomainOriginOriginActionOriginLinePrivateBucketAuthArgs exten
         }
 
         /**
-         * @param switch_ 表示对象存储桶是否来自第三方云厂商。该参数有以下取值：true：表示对象存储桶来自第三方云厂商。该参数的默认值是 false。
+         * @param switch_ Indicates whether the object storage bucket is from a third-party cloud provider. This parameter has the following values: true: the object storage bucket is from a third-party cloud provider. The default value is false
          * 
          * @return builder
          * 
@@ -121,7 +121,7 @@ public final class DomainOriginOriginActionOriginLinePrivateBucketAuthArgs exten
         }
 
         /**
-         * @param switch_ 表示对象存储桶是否来自第三方云厂商。该参数有以下取值：true：表示对象存储桶来自第三方云厂商。该参数的默认值是 false。
+         * @param switch_ Indicates whether the object storage bucket is from a third-party cloud provider. This parameter has the following values: true: the object storage bucket is from a third-party cloud provider. The default value is false
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class DomainOriginOriginActionOriginLinePrivateBucketAuthArgs exten
         }
 
         /**
-         * @param tosAuthInformation 表示该第三方云厂商的访问密钥。该参数仅当 Switch 是 true 时有效。
+         * @param tosAuthInformation Specifies the access key for the third-party cloud provider. This parameter is only valid when Switch is true.
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class DomainOriginOriginActionOriginLinePrivateBucketAuthArgs exten
         }
 
         /**
-         * @param tosAuthInformation 表示该第三方云厂商的访问密钥。该参数仅当 Switch 是 true 时有效。
+         * @param tosAuthInformation Specifies the access key for the third-party cloud provider. This parameter is only valid when Switch is true.
          * 
          * @return builder
          * 

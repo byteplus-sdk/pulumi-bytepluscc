@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Natgateway.Inputs
     public sealed class NgwNatIpAddressArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 中转Ip地址。
+        /// Transit IP address
         /// </summary>
         [Input("natIpAddress")]
         public Input<string>? NatIpAddress { get; set; }
 
         /// <summary>
-        /// 中转Ip id。
+        /// Transit IP ID
         /// </summary>
         [Input("natIpId")]
         public Input<string>? NatIpId { get; set; }

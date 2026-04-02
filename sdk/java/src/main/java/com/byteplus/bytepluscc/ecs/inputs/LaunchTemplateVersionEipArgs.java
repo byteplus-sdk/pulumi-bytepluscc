@@ -19,14 +19,14 @@ public final class LaunchTemplateVersionEipArgs extends com.pulumi.resources.Res
     public static final LaunchTemplateVersionEipArgs Empty = new LaunchTemplateVersionEipArgs();
 
     /**
-     * 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+     * Maximum bandwidth for the public IP, measured in Mbps. Value range: 1–200. Default: 1
      * 
      */
     @Import(name="bandwidth")
     private @Nullable Output<Integer> bandwidth;
 
     /**
-     * @return 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+     * @return Maximum bandwidth for the public IP, measured in Mbps. Value range: 1–200. Default: 1
      * 
      */
     public Optional<Output<Integer>> bandwidth() {
@@ -34,14 +34,14 @@ public final class LaunchTemplateVersionEipArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+     * Shared bandwidth package ID, indicating that the public IP is added to the shared bandwidth package
      * 
      */
     @Import(name="bandwidthPackageId")
     private @Nullable Output<String> bandwidthPackageId;
 
     /**
-     * @return 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+     * @return Shared bandwidth package ID, indicating that the public IP is added to the shared bandwidth package
      * 
      */
     public Optional<Output<String>> bandwidthPackageId() {
@@ -49,14 +49,14 @@ public final class LaunchTemplateVersionEipArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+     * Billing method for the public IP. Values: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic
      * 
      */
     @Import(name="billingType")
     private @Nullable Output<Integer> billingType;
 
     /**
-     * @return 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+     * @return Billing method for the public IP. Values: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic
      * 
      */
     public Optional<Output<Integer>> billingType() {
@@ -64,14 +64,14 @@ public final class LaunchTemplateVersionEipArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+     * Line type of the public IP. Values: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line
      * 
      */
     @Import(name="isp")
     private @Nullable Output<String> isp;
 
     /**
-     * @return 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+     * @return Line type of the public IP. Values: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line
      * 
      */
     public Optional<Output<String>> isp() {
@@ -79,14 +79,14 @@ public final class LaunchTemplateVersionEipArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 公网IP是否随实例删除，仅按量计费公网IP生效。
+     * Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs.
      * 
      */
     @Import(name="releaseWithInstance")
     private @Nullable Output<Boolean> releaseWithInstance;
 
     /**
-     * @return 公网IP是否随实例删除，仅按量计费公网IP生效。
+     * @return Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs.
      * 
      */
     public Optional<Output<Boolean>> releaseWithInstance() {
@@ -94,14 +94,14 @@ public final class LaunchTemplateVersionEipArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 安全防护包ID。
+     * Security protection package ID.
      * 
      */
     @Import(name="securityProtectionInstanceId")
     private @Nullable Output<Integer> securityProtectionInstanceId;
 
     /**
-     * @return 安全防护包ID。
+     * @return Security protection package ID.
      * 
      */
     public Optional<Output<Integer>> securityProtectionInstanceId() {
@@ -109,14 +109,14 @@ public final class LaunchTemplateVersionEipArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+     * Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
      * 
      */
     @Import(name="securityProtectionTypes")
     private @Nullable Output<List<String>> securityProtectionTypes;
 
     /**
-     * @return 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+     * @return Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
      * 
      */
     public Optional<Output<List<String>>> securityProtectionTypes() {
@@ -154,7 +154,7 @@ public final class LaunchTemplateVersionEipArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param bandwidth 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+         * @param bandwidth Maximum bandwidth for the public IP, measured in Mbps. Value range: 1–200. Default: 1
          * 
          * @return builder
          * 
@@ -165,7 +165,7 @@ public final class LaunchTemplateVersionEipArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param bandwidth 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+         * @param bandwidth Maximum bandwidth for the public IP, measured in Mbps. Value range: 1–200. Default: 1
          * 
          * @return builder
          * 
@@ -175,7 +175,7 @@ public final class LaunchTemplateVersionEipArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param bandwidthPackageId 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+         * @param bandwidthPackageId Shared bandwidth package ID, indicating that the public IP is added to the shared bandwidth package
          * 
          * @return builder
          * 
@@ -186,7 +186,7 @@ public final class LaunchTemplateVersionEipArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param bandwidthPackageId 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+         * @param bandwidthPackageId Shared bandwidth package ID, indicating that the public IP is added to the shared bandwidth package
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class LaunchTemplateVersionEipArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param billingType 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+         * @param billingType Billing method for the public IP. Values: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic
          * 
          * @return builder
          * 
@@ -207,7 +207,7 @@ public final class LaunchTemplateVersionEipArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param billingType 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+         * @param billingType Billing method for the public IP. Values: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic
          * 
          * @return builder
          * 
@@ -217,7 +217,7 @@ public final class LaunchTemplateVersionEipArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param isp 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+         * @param isp Line type of the public IP. Values: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line
          * 
          * @return builder
          * 
@@ -228,7 +228,7 @@ public final class LaunchTemplateVersionEipArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param isp 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+         * @param isp Line type of the public IP. Values: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line
          * 
          * @return builder
          * 
@@ -238,7 +238,7 @@ public final class LaunchTemplateVersionEipArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param releaseWithInstance 公网IP是否随实例删除，仅按量计费公网IP生效。
+         * @param releaseWithInstance Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs.
          * 
          * @return builder
          * 
@@ -249,7 +249,7 @@ public final class LaunchTemplateVersionEipArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param releaseWithInstance 公网IP是否随实例删除，仅按量计费公网IP生效。
+         * @param releaseWithInstance Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs.
          * 
          * @return builder
          * 
@@ -259,7 +259,7 @@ public final class LaunchTemplateVersionEipArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param securityProtectionInstanceId 安全防护包ID。
+         * @param securityProtectionInstanceId Security protection package ID.
          * 
          * @return builder
          * 
@@ -270,7 +270,7 @@ public final class LaunchTemplateVersionEipArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param securityProtectionInstanceId 安全防护包ID。
+         * @param securityProtectionInstanceId Security protection package ID.
          * 
          * @return builder
          * 
@@ -280,7 +280,7 @@ public final class LaunchTemplateVersionEipArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param securityProtectionTypes 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+         * @param securityProtectionTypes Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
          * 
          * @return builder
          * 
@@ -291,7 +291,7 @@ public final class LaunchTemplateVersionEipArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param securityProtectionTypes 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+         * @param securityProtectionTypes Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
          * 
          * @return builder
          * 
@@ -301,7 +301,7 @@ public final class LaunchTemplateVersionEipArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param securityProtectionTypes 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+         * @param securityProtectionTypes Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
          * 
          * @return builder
          * 

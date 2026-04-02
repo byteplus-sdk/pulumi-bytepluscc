@@ -17,14 +17,14 @@ public final class DomainBackendGroupBackendArgs extends com.pulumi.resources.Re
     public static final DomainBackendGroupBackendArgs Empty = new DomainBackendGroupBackendArgs();
 
     /**
-     * 源站 IP 地址。
+     * Origin IP address
      * 
      */
     @Import(name="ip")
     private @Nullable Output<String> ip;
 
     /**
-     * @return 源站 IP 地址。
+     * @return Origin IP address
      * 
      */
     public Optional<Output<String>> ip() {
@@ -32,14 +32,14 @@ public final class DomainBackendGroupBackendArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 源站端口。
+     * Origin port
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return 源站端口。
+     * @return Origin port
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -47,14 +47,14 @@ public final class DomainBackendGroupBackendArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 源站协议。
+     * Origin protocol.
      * 
      */
     @Import(name="protocol")
     private @Nullable Output<String> protocol;
 
     /**
-     * @return 源站协议。
+     * @return Origin protocol.
      * 
      */
     public Optional<Output<String>> protocol() {
@@ -62,14 +62,14 @@ public final class DomainBackendGroupBackendArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 源站权重。
+     * Origin weight
      * 
      */
     @Import(name="weight")
     private @Nullable Output<Integer> weight;
 
     /**
-     * @return 源站权重。
+     * @return Origin weight
      * 
      */
     public Optional<Output<Integer>> weight() {
@@ -104,7 +104,7 @@ public final class DomainBackendGroupBackendArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ip 源站 IP 地址。
+         * @param ip Origin IP address
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class DomainBackendGroupBackendArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ip 源站 IP 地址。
+         * @param ip Origin IP address
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class DomainBackendGroupBackendArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param port 源站端口。
+         * @param port Origin port
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class DomainBackendGroupBackendArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param port 源站端口。
+         * @param port Origin port
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class DomainBackendGroupBackendArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param protocol 源站协议。
+         * @param protocol Origin protocol.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class DomainBackendGroupBackendArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param protocol 源站协议。
+         * @param protocol Origin protocol.
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class DomainBackendGroupBackendArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param weight 源站权重。
+         * @param weight Origin weight
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class DomainBackendGroupBackendArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param weight 源站权重。
+         * @param weight Origin weight
          * 
          * @return builder
          * 

@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Inputs
     public sealed class GroupTopicInfoArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Topic 的创建时间。
+        /// Topic creation time.
         /// </summary>
         [Input("createTime")]
         public Input<string>? CreateTime { get; set; }
 
         /// <summary>
-        /// Topic 的描述语句。
+        /// Topic description.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Topic 中未被消费的消息条数。
+        /// Number of unconsumed messages in the Topic.
         /// </summary>
         [Input("lag")]
         public Input<int>? Lag { get; set; }
@@ -40,19 +40,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Inputs
         }
 
         /// <summary>
-        /// Topic 分区数。
+        /// Number of Topic partitions.
         /// </summary>
         [Input("partitions")]
         public Input<int>? Partitions { get; set; }
 
         /// <summary>
-        /// 数据在 Topic 中的保留时长，单位为小时。
+        /// Retention period of data in the Topic, in hours.
         /// </summary>
         [Input("retention")]
         public Input<int>? Retention { get; set; }
 
         /// <summary>
-        /// Topic 的状态。
+        /// Topic status.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -64,7 +64,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Inputs
         public Input<string>? TopicId { get; set; }
 
         /// <summary>
-        /// Topic 的名称。
+        /// Topic name.
         /// </summary>
         [Input("topicName")]
         public Input<string>? TopicName { get; set; }

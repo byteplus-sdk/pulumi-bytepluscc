@@ -15,7 +15,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * 从私网NAT网关所属子网分配，用于IP地址转换。
+ * Allocated from the subnet associated with the private NAT gateway for IP address translation.
  * 
  * ## Example Usage
  * 
@@ -65,112 +65,112 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:natgateway/natIp:NatIp")
 public class NatIp extends com.pulumi.resources.CustomResource {
     /**
-     * 是否为默认中转IP。true：是。false：否。
+     * Whether this is the default transit IP. true: Yes. false: No.
      * 
      */
     @Export(name="isDefault", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isDefault;
 
     /**
-     * @return 是否为默认中转IP。true：是。false：否。
+     * @return Whether this is the default transit IP. true: Yes. false: No.
      * 
      */
     public Output<Boolean> isDefault() {
         return this.isDefault;
     }
     /**
-     * 私网NAT网关ID。
+     * Private NAT gateway ID.
      * 
      */
     @Export(name="natGatewayId", refs={String.class}, tree="[0]")
     private Output<String> natGatewayId;
 
     /**
-     * @return 私网NAT网关ID。
+     * @return Private NAT gateway ID.
      * 
      */
     public Output<String> natGatewayId() {
         return this.natGatewayId;
     }
     /**
-     * 中转IP的地址。若不填，则系统自动从私网NAT网关所在子网随机分配一个空闲的IP地址。
+     * Transit IP address. If not specified, the system automatically randomly assigns an available IP address from the subnet of the private NAT gateway.
      * 
      */
     @Export(name="natIp", refs={String.class}, tree="[0]")
     private Output<String> natIp;
 
     /**
-     * @return 中转IP的地址。若不填，则系统自动从私网NAT网关所在子网随机分配一个空闲的IP地址。
+     * @return Transit IP address. If not specified, the system automatically randomly assigns an available IP address from the subnet of the private NAT gateway.
      * 
      */
     public Output<String> natIp() {
         return this.natIp;
     }
     /**
-     * 中转IP的描述。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * Description of the transit IP. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
      * 
      */
     @Export(name="natIpDescription", refs={String.class}, tree="[0]")
     private Output<String> natIpDescription;
 
     /**
-     * @return 中转IP的描述。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * @return Description of the transit IP. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
      * 
      */
     public Output<String> natIpDescription() {
         return this.natIpDescription;
     }
     /**
-     * 中转IP的ID。
+     * Transit IP ID.
      * 
      */
     @Export(name="natIpId", refs={String.class}, tree="[0]")
     private Output<String> natIpId;
 
     /**
-     * @return 中转IP的ID。
+     * @return Transit IP ID.
      * 
      */
     public Output<String> natIpId() {
         return this.natIpId;
     }
     /**
-     * 中转IP的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。不填默认为中转IP的ID。
+     * Name of the transit IP. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number; can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the transit IP ID.
      * 
      */
     @Export(name="natIpName", refs={String.class}, tree="[0]")
     private Output<String> natIpName;
 
     /**
-     * @return 中转IP的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。不填默认为中转IP的ID。
+     * @return Name of the transit IP. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number; can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the transit IP ID.
      * 
      */
     public Output<String> natIpName() {
         return this.natIpName;
     }
     /**
-     * 中转IP的状态。Creating：创建中。Available：可用。Deleting：删除中。Deleted：已删除。
+     * Status of the transit IP. Creating: Being created. Available: Available. Deleting: Being deleted. Deleted: Deleted.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 中转IP的状态。Creating：创建中。Available：可用。Deleting：删除中。Deleted：已删除。
+     * @return Status of the transit IP. Creating: Being created. Available: Available. Deleting: Being deleted. Deleted: Deleted.
      * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
-     * 中转IP的使用状态。Idle：未使用。UsedBySnat：被SNAT规则使用。UsedByDnat：被DNAT规则使用。UsedByNat：被SNAT/DNAT规则同时使用。
+     * Usage status of the transit IP. Idle: Not used. UsedBySnat: Used by SNAT rule. UsedByDnat: Used by DNAT rule. UsedByNat: Used by both SNAT and DNAT rules.
      * 
      */
     @Export(name="usingStatus", refs={String.class}, tree="[0]")
     private Output<String> usingStatus;
 
     /**
-     * @return 中转IP的使用状态。Idle：未使用。UsedBySnat：被SNAT规则使用。UsedByDnat：被DNAT规则使用。UsedByNat：被SNAT/DNAT规则同时使用。
+     * @return Usage status of the transit IP. Idle: Not used. UsedBySnat: Used by SNAT rule. UsedByDnat: Used by DNAT rule. UsedByNat: Used by both SNAT and DNAT rules.
      * 
      */
     public Output<String> usingStatus() {

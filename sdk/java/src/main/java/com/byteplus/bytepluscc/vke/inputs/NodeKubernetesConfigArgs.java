@@ -19,14 +19,14 @@ public final class NodeKubernetesConfigArgs extends com.pulumi.resources.Resourc
     public static final NodeKubernetesConfigArgs Empty = new NodeKubernetesConfigArgs();
 
     /**
-     * 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+     * Node lock configuration. Options: false (default): not locked; true: locked
      * 
      */
     @Import(name="cordon")
     private @Nullable Output<Boolean> cordon;
 
     /**
-     * @return 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+     * @return Node lock configuration. Options: false (default): not locked; true: locked
      * 
      */
     public Optional<Output<Boolean>> cordon() {
@@ -74,7 +74,7 @@ public final class NodeKubernetesConfigArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param cordon 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+         * @param cordon Node lock configuration. Options: false (default): not locked; true: locked
          * 
          * @return builder
          * 
@@ -85,7 +85,7 @@ public final class NodeKubernetesConfigArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param cordon 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+         * @param cordon Node lock configuration. Options: false (default): not locked; true: locked
          * 
          * @return builder
          * 

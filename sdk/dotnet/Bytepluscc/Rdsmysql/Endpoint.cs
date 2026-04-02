@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
 {
     /// <summary>
-    /// 连接终端是云数据库 MySQL 版提供的位于数据库和应用程序之间的网络代理服务。根据连接终端的功能差异，连接终端可以分为代理终端和直连终端两种类型。通过代理终端的连接将经过代理，可使用代理相关的特性和功能，如读写分离、负载均衡、空闲连接回收和 Multi-Statements 等；通过直连终端的连接将直连到对应节点，不能使用代理相关特性。
+    /// The endpoint is a network proxy service provided by Cloud Database MySQL Edition, located between the database and application. Based on endpoint functionality, endpoints are classified as proxy endpoints and direct endpoints. Connections via proxy endpoints pass through the proxy and support features such as read/write splitting, load balancing, idle connection recycling, and Multi-Statements. Connections via direct endpoints connect directly to the corresponding node and do not support proxy-related features.
     /// 
     /// ## Import
     /// 
@@ -26,133 +26,133 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         public Output<ImmutableArray<Outputs.EndpointAddress>> Addresses { get; private set; } = null!;
 
         /// <summary>
-        /// 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：true：自动加入。false：不自动加入（默认）。
+        /// When the endpoint type is read/write or read-only, you can set whether new nodes are automatically added. Values: true: automatically added. false: not automatically added (default).
         /// </summary>
         [Output("autoAddNewNodes")]
         public Output<bool> AutoAddNewNodes { get; private set; } = null!;
 
         /// <summary>
-        /// 是否关联所有的备节点。取值：true：是。默认值。false：否。说明仅多节点实例的只读终端支持该配置。仅在实例有两个或更多备节点时才能关闭此功能。
+        /// Associate all replica nodes. Values: true: enabled (default). false: disabled. Note: Only read-only endpoints of multi-node instances support this configuration. This feature can be disabled only if the instance has two or more replica nodes.
         /// </summary>
         [Output("connectAllSlaveNodes")]
         public Output<bool> ConnectAllSlaveNodes { get; private set; } = null!;
 
         /// <summary>
-        /// 连接终端标签。
+        /// Connection endpoint tags.
         /// </summary>
         [Output("connectionInfoTags")]
         public Output<ImmutableArray<string>> ConnectionInfoTags { get; private set; } = null!;
 
         /// <summary>
-        /// 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。说明如实例的数据库代理功能已开启，可以取值为 Proxy 或 Direct。如实例的数据库代理功能未开启，仅可以取值为 Direct。可调用 DescribeDBInstanceDetail 接口查询实例数据库代理功能的开启状态。
+        /// Endpoint type. Options: Proxy: proxy endpoint. Direct: direct endpoint. Note: If the database proxy feature is enabled for the instance, you can select Proxy or Direct. If the database proxy feature is not enabled, only Direct is available. You can call the DescribeDBInstanceDetail API to check the status of the database proxy feature for the instance.
         /// </summary>
         [Output("connectionMode")]
         public Output<string> ConnectionMode { get; private set; } = null!;
 
         /// <summary>
-        /// 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。说明单节点实例不支持该功能。
+        /// Connection pool type for proxy endpoints. Options: Transaction: transaction-level connection pool (default). Direct: direct mode. Note: Single-node instances do not support this feature.
         /// </summary>
         [Output("connectionPoolType")]
         public Output<string> ConnectionPoolType { get; private set; } = null!;
 
         /// <summary>
-        /// 连接终端的 SQL 转发规则。
+        /// SQL forwarding rules for the connection endpoint.
         /// </summary>
         [Output("customRouteStrategy")]
         public Output<Outputs.EndpointCustomRouteStrategy> CustomRouteStrategy { get; private set; } = null!;
 
         /// <summary>
-        /// 备注。
+        /// Remarks.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启连接终端的连接保持功能。取值：true：是。false：否。说明仅代理终端支持该设置。
+        /// Enable connection keep-alive for the endpoint. Values: true: enabled. false: disabled. Note: Only proxy endpoints support this setting.
         /// </summary>
         [Output("enableConnectionPersistent")]
         public Output<bool> EnableConnectionPersistent { get; private set; } = null!;
 
         /// <summary>
-        /// 是否已开启全局只读，取值：Enable：开启。Disable：未开启。
+        /// Enable global read-only. Values: Enable: enabled. Disable: not enabled.
         /// </summary>
         [Output("enableReadOnly")]
         public Output<string> EnableReadOnly { get; private set; } = null!;
 
         /// <summary>
-        /// 实例连接终端 ID。
+        /// Instance connection endpoint ID.
         /// </summary>
         [Output("endpointId")]
         public Output<string> EndpointId { get; private set; } = null!;
 
         /// <summary>
-        /// 实例连接终端名称。
+        /// Instance connection endpoint name.
         /// </summary>
         [Output("endpointName")]
         public Output<string> EndpointName { get; private set; } = null!;
 
         /// <summary>
-        /// 终端类型。取值为 Custom，自定义终端。
+        /// Endpoint type. Value: Custom (custom endpoint).
         /// </summary>
         [Output("endpointType")]
         public Output<string> EndpointType { get; private set; } = null!;
 
         /// <summary>
-        /// 空闲连接回收功能是否开启。true：开启。false：不开启。说明仅代理终端会返回该字段。
+        /// Enable idle connection recycling. true: enabled. false: not enabled. Note: This field is returned only for proxy endpoints.
         /// </summary>
         [Output("idleConnectionReclaim")]
         public Output<bool> IdleConnectionReclaim { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启事务分离。取值：true：是。false：否。说明仅代理终端会返回该字段。
+        /// Enable transaction separation. Options: true: yes. false: no. Note: Only proxy endpoints return this field.
         /// </summary>
         [Output("implicitTransSplit")]
         public Output<bool> ImplicitTransSplit { get; private set; } = null!;
 
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID.
         /// </summary>
         [Output("instanceId")]
         public Output<string> InstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启主节点路由。取值：true：是。false：否。说明仅代理终端会返回该字段。
+        /// Enable primary node routing. Values: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
         /// </summary>
         [Output("masterNodeRouting")]
         public Output<bool> MasterNodeRouting { get; private set; } = null!;
 
         /// <summary>
-        /// 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。说明仅代理终端会返回该字段。
+        /// Overload protection timeout. Value range: integer between 60~7200. Unit: seconds. Note: This field is returned only for proxy endpoints.
         /// </summary>
         [Output("masterProtectorTimeout")]
         public Output<int> MasterProtectorTimeout { get; private set; } = null!;
 
         /// <summary>
-        /// 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+        /// Multi-Statements mode for proxy endpoints. Options: Strict: strict mode (default). Loose: loose mode.
         /// </summary>
         [Output("multiStatementsMode")]
         public Output<string> MultiStatementsMode { get; private set; } = null!;
 
         /// <summary>
-        /// 连接终端配置的节点 ID 列表。当 EndpointType 为 Custom 时必选。说明如需将主节点加入终端，不需填写主节点 ID，只需填写 Primary。多个节点 ID 之间用英文逗号（,）分隔。
+        /// List of node IDs configured for the connection endpoint. Required when EndpointType is Custom. Note: To add the primary node to the endpoint, do not enter the primary node ID; just enter Primary. Separate multiple node IDs with commas (,).
         /// </summary>
         [Output("nodes")]
         public Output<string> Nodes { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启过载保护。取值：true：是。false：否。说明仅代理终端会返回该字段。
+        /// Enable overload protection. Options: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
         /// </summary>
         [Output("overloadProtection")]
         public Output<bool> OverloadProtection { get; private set; } = null!;
 
         /// <summary>
-        /// 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+        /// Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, the value range is: LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, the value range is: Default: automatic allocation based on specification weight. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling.
         /// </summary>
         [Output("readOnlyNodeDistributionType")]
         public Output<string> ReadOnlyNodeDistributionType { get; private set; } = null!;
 
         /// <summary>
-        /// 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+        /// Read-only node latency threshold. Value range: 1~3600. Default: 30. Unit: seconds.
         /// </summary>
         [Output("readOnlyNodeMaxDelayTime")]
         public Output<int> ReadOnlyNodeMaxDelayTime { get; private set; } = null!;
@@ -161,13 +161,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         public Output<ImmutableArray<Outputs.EndpointReadOnlyNodeWeight>> ReadOnlyNodeWeights { get; private set; } = null!;
 
         /// <summary>
-        /// 读写模式：ReadWrite：读写。ReadOnly：只读。
+        /// Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
         /// </summary>
         [Output("readWriteMode")]
         public Output<string> ReadWriteMode { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启读写分离。取值：true：是。默认值。false：否。
+        /// Enable read/write splitting. Values: true: enabled (default). false: disabled.
         /// </summary>
         [Output("readWriteSpliting")]
         public Output<bool> ReadWriteSpliting { get; private set; } = null!;
@@ -228,109 +228,109 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         }
 
         /// <summary>
-        /// 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：true：自动加入。false：不自动加入（默认）。
+        /// When the endpoint type is read/write or read-only, you can set whether new nodes are automatically added. Values: true: automatically added. false: not automatically added (default).
         /// </summary>
         [Input("autoAddNewNodes")]
         public Input<bool>? AutoAddNewNodes { get; set; }
 
         /// <summary>
-        /// 是否关联所有的备节点。取值：true：是。默认值。false：否。说明仅多节点实例的只读终端支持该配置。仅在实例有两个或更多备节点时才能关闭此功能。
+        /// Associate all replica nodes. Values: true: enabled (default). false: disabled. Note: Only read-only endpoints of multi-node instances support this configuration. This feature can be disabled only if the instance has two or more replica nodes.
         /// </summary>
         [Input("connectAllSlaveNodes")]
         public Input<bool>? ConnectAllSlaveNodes { get; set; }
 
         /// <summary>
-        /// 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。说明如实例的数据库代理功能已开启，可以取值为 Proxy 或 Direct。如实例的数据库代理功能未开启，仅可以取值为 Direct。可调用 DescribeDBInstanceDetail 接口查询实例数据库代理功能的开启状态。
+        /// Endpoint type. Options: Proxy: proxy endpoint. Direct: direct endpoint. Note: If the database proxy feature is enabled for the instance, you can select Proxy or Direct. If the database proxy feature is not enabled, only Direct is available. You can call the DescribeDBInstanceDetail API to check the status of the database proxy feature for the instance.
         /// </summary>
         [Input("connectionMode")]
         public Input<string>? ConnectionMode { get; set; }
 
         /// <summary>
-        /// 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。说明单节点实例不支持该功能。
+        /// Connection pool type for proxy endpoints. Options: Transaction: transaction-level connection pool (default). Direct: direct mode. Note: Single-node instances do not support this feature.
         /// </summary>
         [Input("connectionPoolType")]
         public Input<string>? ConnectionPoolType { get; set; }
 
         /// <summary>
-        /// 备注。
+        /// Remarks.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 是否开启连接终端的连接保持功能。取值：true：是。false：否。说明仅代理终端支持该设置。
+        /// Enable connection keep-alive for the endpoint. Values: true: enabled. false: disabled. Note: Only proxy endpoints support this setting.
         /// </summary>
         [Input("enableConnectionPersistent")]
         public Input<bool>? EnableConnectionPersistent { get; set; }
 
         /// <summary>
-        /// 实例连接终端名称。
+        /// Instance connection endpoint name.
         /// </summary>
         [Input("endpointName")]
         public Input<string>? EndpointName { get; set; }
 
         /// <summary>
-        /// 终端类型。取值为 Custom，自定义终端。
+        /// Endpoint type. Value: Custom (custom endpoint).
         /// </summary>
         [Input("endpointType")]
         public Input<string>? EndpointType { get; set; }
 
         /// <summary>
-        /// 空闲连接回收功能是否开启。true：开启。false：不开启。说明仅代理终端会返回该字段。
+        /// Enable idle connection recycling. true: enabled. false: not enabled. Note: This field is returned only for proxy endpoints.
         /// </summary>
         [Input("idleConnectionReclaim")]
         public Input<bool>? IdleConnectionReclaim { get; set; }
 
         /// <summary>
-        /// 是否开启事务分离。取值：true：是。false：否。说明仅代理终端会返回该字段。
+        /// Enable transaction separation. Options: true: yes. false: no. Note: Only proxy endpoints return this field.
         /// </summary>
         [Input("implicitTransSplit")]
         public Input<bool>? ImplicitTransSplit { get; set; }
 
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID.
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 是否开启主节点路由。取值：true：是。false：否。说明仅代理终端会返回该字段。
+        /// Enable primary node routing. Values: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
         /// </summary>
         [Input("masterNodeRouting")]
         public Input<bool>? MasterNodeRouting { get; set; }
 
         /// <summary>
-        /// 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。说明仅代理终端会返回该字段。
+        /// Overload protection timeout. Value range: integer between 60~7200. Unit: seconds. Note: This field is returned only for proxy endpoints.
         /// </summary>
         [Input("masterProtectorTimeout")]
         public Input<int>? MasterProtectorTimeout { get; set; }
 
         /// <summary>
-        /// 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+        /// Multi-Statements mode for proxy endpoints. Options: Strict: strict mode (default). Loose: loose mode.
         /// </summary>
         [Input("multiStatementsMode")]
         public Input<string>? MultiStatementsMode { get; set; }
 
         /// <summary>
-        /// 连接终端配置的节点 ID 列表。当 EndpointType 为 Custom 时必选。说明如需将主节点加入终端，不需填写主节点 ID，只需填写 Primary。多个节点 ID 之间用英文逗号（,）分隔。
+        /// List of node IDs configured for the connection endpoint. Required when EndpointType is Custom. Note: To add the primary node to the endpoint, do not enter the primary node ID; just enter Primary. Separate multiple node IDs with commas (,).
         /// </summary>
         [Input("nodes")]
         public Input<string>? Nodes { get; set; }
 
         /// <summary>
-        /// 是否开启过载保护。取值：true：是。false：否。说明仅代理终端会返回该字段。
+        /// Enable overload protection. Options: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
         /// </summary>
         [Input("overloadProtection")]
         public Input<bool>? OverloadProtection { get; set; }
 
         /// <summary>
-        /// 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+        /// Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, the value range is: LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, the value range is: Default: automatic allocation based on specification weight. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling.
         /// </summary>
         [Input("readOnlyNodeDistributionType")]
         public Input<string>? ReadOnlyNodeDistributionType { get; set; }
 
         /// <summary>
-        /// 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+        /// Read-only node latency threshold. Value range: 1~3600. Default: 30. Unit: seconds.
         /// </summary>
         [Input("readOnlyNodeMaxDelayTime")]
         public Input<int>? ReadOnlyNodeMaxDelayTime { get; set; }
@@ -344,13 +344,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         }
 
         /// <summary>
-        /// 读写模式：ReadWrite：读写。ReadOnly：只读。
+        /// Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
         /// </summary>
         [Input("readWriteMode")]
         public Input<string>? ReadWriteMode { get; set; }
 
         /// <summary>
-        /// 是否开启读写分离。取值：true：是。默认值。false：否。
+        /// Enable read/write splitting. Values: true: enabled (default). false: disabled.
         /// </summary>
         [Input("readWriteSpliting")]
         public Input<bool>? ReadWriteSpliting { get; set; }
@@ -372,13 +372,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         }
 
         /// <summary>
-        /// 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：true：自动加入。false：不自动加入（默认）。
+        /// When the endpoint type is read/write or read-only, you can set whether new nodes are automatically added. Values: true: automatically added. false: not automatically added (default).
         /// </summary>
         [Input("autoAddNewNodes")]
         public Input<bool>? AutoAddNewNodes { get; set; }
 
         /// <summary>
-        /// 是否关联所有的备节点。取值：true：是。默认值。false：否。说明仅多节点实例的只读终端支持该配置。仅在实例有两个或更多备节点时才能关闭此功能。
+        /// Associate all replica nodes. Values: true: enabled (default). false: disabled. Note: Only read-only endpoints of multi-node instances support this configuration. This feature can be disabled only if the instance has two or more replica nodes.
         /// </summary>
         [Input("connectAllSlaveNodes")]
         public Input<bool>? ConnectAllSlaveNodes { get; set; }
@@ -387,7 +387,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         private InputList<string>? _connectionInfoTags;
 
         /// <summary>
-        /// 连接终端标签。
+        /// Connection endpoint tags.
         /// </summary>
         public InputList<string> ConnectionInfoTags
         {
@@ -396,115 +396,115 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         }
 
         /// <summary>
-        /// 连接终端类型。取值：Proxy：代理终端。Direct：直连终端。说明如实例的数据库代理功能已开启，可以取值为 Proxy 或 Direct。如实例的数据库代理功能未开启，仅可以取值为 Direct。可调用 DescribeDBInstanceDetail 接口查询实例数据库代理功能的开启状态。
+        /// Endpoint type. Options: Proxy: proxy endpoint. Direct: direct endpoint. Note: If the database proxy feature is enabled for the instance, you can select Proxy or Direct. If the database proxy feature is not enabled, only Direct is available. You can call the DescribeDBInstanceDetail API to check the status of the database proxy feature for the instance.
         /// </summary>
         [Input("connectionMode")]
         public Input<string>? ConnectionMode { get; set; }
 
         /// <summary>
-        /// 代理终端的连接池类型。取值：Transaction：事务级连接池。默认值。Direct：直连模式。说明单节点实例不支持该功能。
+        /// Connection pool type for proxy endpoints. Options: Transaction: transaction-level connection pool (default). Direct: direct mode. Note: Single-node instances do not support this feature.
         /// </summary>
         [Input("connectionPoolType")]
         public Input<string>? ConnectionPoolType { get; set; }
 
         /// <summary>
-        /// 连接终端的 SQL 转发规则。
+        /// SQL forwarding rules for the connection endpoint.
         /// </summary>
         [Input("customRouteStrategy")]
         public Input<Inputs.EndpointCustomRouteStrategyGetArgs>? CustomRouteStrategy { get; set; }
 
         /// <summary>
-        /// 备注。
+        /// Remarks.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 是否开启连接终端的连接保持功能。取值：true：是。false：否。说明仅代理终端支持该设置。
+        /// Enable connection keep-alive for the endpoint. Values: true: enabled. false: disabled. Note: Only proxy endpoints support this setting.
         /// </summary>
         [Input("enableConnectionPersistent")]
         public Input<bool>? EnableConnectionPersistent { get; set; }
 
         /// <summary>
-        /// 是否已开启全局只读，取值：Enable：开启。Disable：未开启。
+        /// Enable global read-only. Values: Enable: enabled. Disable: not enabled.
         /// </summary>
         [Input("enableReadOnly")]
         public Input<string>? EnableReadOnly { get; set; }
 
         /// <summary>
-        /// 实例连接终端 ID。
+        /// Instance connection endpoint ID.
         /// </summary>
         [Input("endpointId")]
         public Input<string>? EndpointId { get; set; }
 
         /// <summary>
-        /// 实例连接终端名称。
+        /// Instance connection endpoint name.
         /// </summary>
         [Input("endpointName")]
         public Input<string>? EndpointName { get; set; }
 
         /// <summary>
-        /// 终端类型。取值为 Custom，自定义终端。
+        /// Endpoint type. Value: Custom (custom endpoint).
         /// </summary>
         [Input("endpointType")]
         public Input<string>? EndpointType { get; set; }
 
         /// <summary>
-        /// 空闲连接回收功能是否开启。true：开启。false：不开启。说明仅代理终端会返回该字段。
+        /// Enable idle connection recycling. true: enabled. false: not enabled. Note: This field is returned only for proxy endpoints.
         /// </summary>
         [Input("idleConnectionReclaim")]
         public Input<bool>? IdleConnectionReclaim { get; set; }
 
         /// <summary>
-        /// 是否开启事务分离。取值：true：是。false：否。说明仅代理终端会返回该字段。
+        /// Enable transaction separation. Options: true: yes. false: no. Note: Only proxy endpoints return this field.
         /// </summary>
         [Input("implicitTransSplit")]
         public Input<bool>? ImplicitTransSplit { get; set; }
 
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID.
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 是否开启主节点路由。取值：true：是。false：否。说明仅代理终端会返回该字段。
+        /// Enable primary node routing. Values: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
         /// </summary>
         [Input("masterNodeRouting")]
         public Input<bool>? MasterNodeRouting { get; set; }
 
         /// <summary>
-        /// 过载保护超时时间。取值范围为 60~7200 之间的整数，单位为秒。说明仅代理终端会返回该字段。
+        /// Overload protection timeout. Value range: integer between 60~7200. Unit: seconds. Note: This field is returned only for proxy endpoints.
         /// </summary>
         [Input("masterProtectorTimeout")]
         public Input<int>? MasterProtectorTimeout { get; set; }
 
         /// <summary>
-        /// 代理终端的 Multi-Statements 模式。取值：Strict：Strict 模式。默认值。Loose：Loose 模式。
+        /// Multi-Statements mode for proxy endpoints. Options: Strict: strict mode (default). Loose: loose mode.
         /// </summary>
         [Input("multiStatementsMode")]
         public Input<string>? MultiStatementsMode { get; set; }
 
         /// <summary>
-        /// 连接终端配置的节点 ID 列表。当 EndpointType 为 Custom 时必选。说明如需将主节点加入终端，不需填写主节点 ID，只需填写 Primary。多个节点 ID 之间用英文逗号（,）分隔。
+        /// List of node IDs configured for the connection endpoint. Required when EndpointType is Custom. Note: To add the primary node to the endpoint, do not enter the primary node ID; just enter Primary. Separate multiple node IDs with commas (,).
         /// </summary>
         [Input("nodes")]
         public Input<string>? Nodes { get; set; }
 
         /// <summary>
-        /// 是否开启过载保护。取值：true：是。false：否。说明仅代理终端会返回该字段。
+        /// Enable overload protection. Options: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
         /// </summary>
         [Input("overloadProtection")]
         public Input<bool>? OverloadProtection { get; set; }
 
         /// <summary>
-        /// 读权重分配模式。当开通读写分离设置为 true 时需要传入此参数。在 CreateDBEndpoint 和 ModifyDBEndpoint 接口中做请求参数时，取值范围如下：LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。在 DescribeDBInstanceDetail 接口中做返回参数时，取值范围如下：Default：按规格权重自动分配。Custom：自定义分配权重。RoundRobin：轮询调度。LoadSchedule：负载调度。RoundRobinCustom：自定义权重的轮询调度。RoundRobinAuto：自动分配权重的轮询调度。
+        /// Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, the value range is: LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, the value range is: Default: automatic allocation based on specification weight. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling.
         /// </summary>
         [Input("readOnlyNodeDistributionType")]
         public Input<string>? ReadOnlyNodeDistributionType { get; set; }
 
         /// <summary>
-        /// 只读节点延迟阈值。取值范围为 1~3600，默认为 30，单位为秒。
+        /// Read-only node latency threshold. Value range: 1~3600. Default: 30. Unit: seconds.
         /// </summary>
         [Input("readOnlyNodeMaxDelayTime")]
         public Input<int>? ReadOnlyNodeMaxDelayTime { get; set; }
@@ -518,13 +518,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         }
 
         /// <summary>
-        /// 读写模式：ReadWrite：读写。ReadOnly：只读。
+        /// Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
         /// </summary>
         [Input("readWriteMode")]
         public Input<string>? ReadWriteMode { get; set; }
 
         /// <summary>
-        /// 是否开启读写分离。取值：true：是。默认值。false：否。
+        /// Enable read/write splitting. Values: true: enabled (default). false: disabled.
         /// </summary>
         [Input("readWriteSpliting")]
         public Input<bool>? ReadWriteSpliting { get; set; }

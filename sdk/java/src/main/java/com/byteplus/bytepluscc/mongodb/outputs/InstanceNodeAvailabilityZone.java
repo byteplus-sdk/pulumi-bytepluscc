@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceNodeAvailabilityZone {
     /**
-     * @return 当前可用区中需要添加的只读节点数量。当前仅副本集实例和分片集群实例中 Shard 分片支持添加只读节点。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该值表示单个副本集实例中的只读节点总数量。每个副本集实例最多支持添加 5 个只读节点。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该值表示每个 Shard 分片中的只读节点数量。每个 Shard 分片最多添加 5 个只读节点。
+     * @return Number of read-only nodes to add in the current availability zone. Currently, only replica set instances and Shard nodes in sharded cluster instances support adding read-only nodes. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this value indicates the total number of read-only nodes in a single replica set instance. Each replica set instance supports up to 5 read-only nodes. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this value indicates the number of read-only nodes per Shard node. Each Shard node supports up to 5 read-only nodes.
      * 
      */
     private @Nullable Integer nodeNumber;
     /**
-     * @return 只读节点所在的可用区。
+     * @return Availability zone of the read-only node.
      * 
      */
     private @Nullable String zoneId;
 
     private InstanceNodeAvailabilityZone() {}
     /**
-     * @return 当前可用区中需要添加的只读节点数量。当前仅副本集实例和分片集群实例中 Shard 分片支持添加只读节点。其中：当实例类型为副本集（即 InstanceType 取值为 ReplicaSet）时，该值表示单个副本集实例中的只读节点总数量。每个副本集实例最多支持添加 5 个只读节点。当实例类型为分片集群（即 InstanceType 取值为 ShardedCluster）时，该值表示每个 Shard 分片中的只读节点数量。每个 Shard 分片最多添加 5 个只读节点。
+     * @return Number of read-only nodes to add in the current availability zone. Currently, only replica set instances and Shard nodes in sharded cluster instances support adding read-only nodes. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this value indicates the total number of read-only nodes in a single replica set instance. Each replica set instance supports up to 5 read-only nodes. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this value indicates the number of read-only nodes per Shard node. Each Shard node supports up to 5 read-only nodes.
      * 
      */
     public Optional<Integer> nodeNumber() {
         return Optional.ofNullable(this.nodeNumber);
     }
     /**
-     * @return 只读节点所在的可用区。
+     * @return Availability zone of the read-only node.
      * 
      */
     public Optional<String> zoneId() {

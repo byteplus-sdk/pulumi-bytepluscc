@@ -25,9 +25,9 @@ class UnitArgs:
                  description: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Unit resource.
-        :param pulumi.Input[builtins.str] name: 组织单元名称。
-        :param pulumi.Input[builtins.str] parent_id: 父单元Id。
-        :param pulumi.Input[builtins.str] description: 描述。
+        :param pulumi.Input[builtins.str] name: Organizational unit name.
+        :param pulumi.Input[builtins.str] parent_id: Parent unit ID.
+        :param pulumi.Input[builtins.str] description: Description.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "parent_id", parent_id)
@@ -38,7 +38,7 @@ class UnitArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[builtins.str]:
         """
-        组织单元名称。
+        Organizational unit name.
         """
         return pulumi.get(self, "name")
 
@@ -50,7 +50,7 @@ class UnitArgs:
     @pulumi.getter(name="parentId")
     def parent_id(self) -> pulumi.Input[builtins.str]:
         """
-        父单元Id。
+        Parent unit ID.
         """
         return pulumi.get(self, "parent_id")
 
@@ -62,7 +62,7 @@ class UnitArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        描述。
+        Description.
         """
         return pulumi.get(self, "description")
 
@@ -88,18 +88,18 @@ class _UnitState:
                  updated_time: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Unit resources.
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] delete_uk: 删除标识。
-        :param pulumi.Input[builtins.str] deleted_time: 删除时间。
-        :param pulumi.Input[builtins.int] depth: 深度。
-        :param pulumi.Input[builtins.str] description: 描述。
-        :param pulumi.Input[builtins.str] name: 组织单元名称。
-        :param pulumi.Input[builtins.str] org_id: 组织ID。
-        :param pulumi.Input[builtins.int] org_type: 组织类型。企业组织： 1
-        :param pulumi.Input[builtins.str] org_unit_id: 组织单元ID。
-        :param pulumi.Input[builtins.str] owner: 管理员ID。
-        :param pulumi.Input[builtins.str] parent_id: 父单元Id。
-        :param pulumi.Input[builtins.str] updated_time: 更新时间。
+        :param pulumi.Input[builtins.str] created_time: Creation time.
+        :param pulumi.Input[builtins.str] delete_uk: Deletion flag.
+        :param pulumi.Input[builtins.str] deleted_time: Deletion time.
+        :param pulumi.Input[builtins.int] depth: Depth.
+        :param pulumi.Input[builtins.str] description: Description.
+        :param pulumi.Input[builtins.str] name: Organizational unit name.
+        :param pulumi.Input[builtins.str] org_id: Organization ID.
+        :param pulumi.Input[builtins.int] org_type: Organization type. Enterprise organization: 1
+        :param pulumi.Input[builtins.str] org_unit_id: Organizational unit ID.
+        :param pulumi.Input[builtins.str] owner: Administrator ID.
+        :param pulumi.Input[builtins.str] parent_id: Parent unit ID.
+        :param pulumi.Input[builtins.str] updated_time: Update time.
         """
         if created_time is not None:
             pulumi.set(__self__, "created_time", created_time)
@@ -130,7 +130,7 @@ class _UnitState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建时间。
+        Creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -142,7 +142,7 @@ class _UnitState:
     @pulumi.getter(name="deleteUk")
     def delete_uk(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        删除标识。
+        Deletion flag.
         """
         return pulumi.get(self, "delete_uk")
 
@@ -154,7 +154,7 @@ class _UnitState:
     @pulumi.getter(name="deletedTime")
     def deleted_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        删除时间。
+        Deletion time.
         """
         return pulumi.get(self, "deleted_time")
 
@@ -166,7 +166,7 @@ class _UnitState:
     @pulumi.getter
     def depth(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        深度。
+        Depth.
         """
         return pulumi.get(self, "depth")
 
@@ -178,7 +178,7 @@ class _UnitState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        描述。
+        Description.
         """
         return pulumi.get(self, "description")
 
@@ -190,7 +190,7 @@ class _UnitState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        组织单元名称。
+        Organizational unit name.
         """
         return pulumi.get(self, "name")
 
@@ -202,7 +202,7 @@ class _UnitState:
     @pulumi.getter(name="orgId")
     def org_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        组织ID。
+        Organization ID.
         """
         return pulumi.get(self, "org_id")
 
@@ -214,7 +214,7 @@ class _UnitState:
     @pulumi.getter(name="orgType")
     def org_type(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        组织类型。企业组织： 1
+        Organization type. Enterprise organization: 1
         """
         return pulumi.get(self, "org_type")
 
@@ -226,7 +226,7 @@ class _UnitState:
     @pulumi.getter(name="orgUnitId")
     def org_unit_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        组织单元ID。
+        Organizational unit ID.
         """
         return pulumi.get(self, "org_unit_id")
 
@@ -238,7 +238,7 @@ class _UnitState:
     @pulumi.getter
     def owner(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        管理员ID。
+        Administrator ID.
         """
         return pulumi.get(self, "owner")
 
@@ -250,7 +250,7 @@ class _UnitState:
     @pulumi.getter(name="parentId")
     def parent_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        父单元Id。
+        Parent unit ID.
         """
         return pulumi.get(self, "parent_id")
 
@@ -262,7 +262,7 @@ class _UnitState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        更新时间。
+        Update time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -282,7 +282,7 @@ class Unit(pulumi.CustomResource):
                  parent_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        企业组织的创建者管理员账号可以新建组织单元来搭建企业的组织结构，对账号进行分组织单元管理。组织单元可以分多个组织单元层级，管理员账号也可属于任意层级的任意组织单元节点。
+        The administrator account that created the enterprise organization can create organizational units to build the enterprise's organizational structure and manage accounts by organizational unit. Organizational units can have multiple hierarchical levels, and administrator accounts can belong to any organizational unit node at any level.
 
         ## Example Usage
 
@@ -304,9 +304,9 @@ class Unit(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: 描述。
-        :param pulumi.Input[builtins.str] name: 组织单元名称。
-        :param pulumi.Input[builtins.str] parent_id: 父单元Id。
+        :param pulumi.Input[builtins.str] description: Description.
+        :param pulumi.Input[builtins.str] name: Organizational unit name.
+        :param pulumi.Input[builtins.str] parent_id: Parent unit ID.
         """
         ...
     @overload
@@ -315,7 +315,7 @@ class Unit(pulumi.CustomResource):
                  args: UnitArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        企业组织的创建者管理员账号可以新建组织单元来搭建企业的组织结构，对账号进行分组织单元管理。组织单元可以分多个组织单元层级，管理员账号也可属于任意层级的任意组织单元节点。
+        The administrator account that created the enterprise organization can create organizational units to build the enterprise's organizational structure and manage accounts by organizational unit. Organizational units can have multiple hierarchical levels, and administrator accounts can belong to any organizational unit node at any level.
 
         ## Example Usage
 
@@ -407,18 +407,18 @@ class Unit(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] delete_uk: 删除标识。
-        :param pulumi.Input[builtins.str] deleted_time: 删除时间。
-        :param pulumi.Input[builtins.int] depth: 深度。
-        :param pulumi.Input[builtins.str] description: 描述。
-        :param pulumi.Input[builtins.str] name: 组织单元名称。
-        :param pulumi.Input[builtins.str] org_id: 组织ID。
-        :param pulumi.Input[builtins.int] org_type: 组织类型。企业组织： 1
-        :param pulumi.Input[builtins.str] org_unit_id: 组织单元ID。
-        :param pulumi.Input[builtins.str] owner: 管理员ID。
-        :param pulumi.Input[builtins.str] parent_id: 父单元Id。
-        :param pulumi.Input[builtins.str] updated_time: 更新时间。
+        :param pulumi.Input[builtins.str] created_time: Creation time.
+        :param pulumi.Input[builtins.str] delete_uk: Deletion flag.
+        :param pulumi.Input[builtins.str] deleted_time: Deletion time.
+        :param pulumi.Input[builtins.int] depth: Depth.
+        :param pulumi.Input[builtins.str] description: Description.
+        :param pulumi.Input[builtins.str] name: Organizational unit name.
+        :param pulumi.Input[builtins.str] org_id: Organization ID.
+        :param pulumi.Input[builtins.int] org_type: Organization type. Enterprise organization: 1
+        :param pulumi.Input[builtins.str] org_unit_id: Organizational unit ID.
+        :param pulumi.Input[builtins.str] owner: Administrator ID.
+        :param pulumi.Input[builtins.str] parent_id: Parent unit ID.
+        :param pulumi.Input[builtins.str] updated_time: Update time.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -442,7 +442,7 @@ class Unit(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        创建时间。
+        Creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -450,7 +450,7 @@ class Unit(pulumi.CustomResource):
     @pulumi.getter(name="deleteUk")
     def delete_uk(self) -> pulumi.Output[builtins.str]:
         """
-        删除标识。
+        Deletion flag.
         """
         return pulumi.get(self, "delete_uk")
 
@@ -458,7 +458,7 @@ class Unit(pulumi.CustomResource):
     @pulumi.getter(name="deletedTime")
     def deleted_time(self) -> pulumi.Output[builtins.str]:
         """
-        删除时间。
+        Deletion time.
         """
         return pulumi.get(self, "deleted_time")
 
@@ -466,7 +466,7 @@ class Unit(pulumi.CustomResource):
     @pulumi.getter
     def depth(self) -> pulumi.Output[builtins.int]:
         """
-        深度。
+        Depth.
         """
         return pulumi.get(self, "depth")
 
@@ -474,7 +474,7 @@ class Unit(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        描述。
+        Description.
         """
         return pulumi.get(self, "description")
 
@@ -482,7 +482,7 @@ class Unit(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[builtins.str]:
         """
-        组织单元名称。
+        Organizational unit name.
         """
         return pulumi.get(self, "name")
 
@@ -490,7 +490,7 @@ class Unit(pulumi.CustomResource):
     @pulumi.getter(name="orgId")
     def org_id(self) -> pulumi.Output[builtins.str]:
         """
-        组织ID。
+        Organization ID.
         """
         return pulumi.get(self, "org_id")
 
@@ -498,7 +498,7 @@ class Unit(pulumi.CustomResource):
     @pulumi.getter(name="orgType")
     def org_type(self) -> pulumi.Output[builtins.int]:
         """
-        组织类型。企业组织： 1
+        Organization type. Enterprise organization: 1
         """
         return pulumi.get(self, "org_type")
 
@@ -506,7 +506,7 @@ class Unit(pulumi.CustomResource):
     @pulumi.getter(name="orgUnitId")
     def org_unit_id(self) -> pulumi.Output[builtins.str]:
         """
-        组织单元ID。
+        Organizational unit ID.
         """
         return pulumi.get(self, "org_unit_id")
 
@@ -514,7 +514,7 @@ class Unit(pulumi.CustomResource):
     @pulumi.getter
     def owner(self) -> pulumi.Output[builtins.str]:
         """
-        管理员ID。
+        Administrator ID.
         """
         return pulumi.get(self, "owner")
 
@@ -522,7 +522,7 @@ class Unit(pulumi.CustomResource):
     @pulumi.getter(name="parentId")
     def parent_id(self) -> pulumi.Output[builtins.str]:
         """
-        父单元Id。
+        Parent unit ID.
         """
         return pulumi.get(self, "parent_id")
 
@@ -530,7 +530,7 @@ class Unit(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        更新时间。
+        Update time.
         """
         return pulumi.get(self, "updated_time")
 

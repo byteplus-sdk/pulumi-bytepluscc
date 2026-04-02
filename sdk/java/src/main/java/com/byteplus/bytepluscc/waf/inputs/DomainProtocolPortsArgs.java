@@ -17,14 +17,14 @@ public final class DomainProtocolPortsArgs extends com.pulumi.resources.Resource
     public static final DomainProtocolPortsArgs Empty = new DomainProtocolPortsArgs();
 
     /**
-     * HTTP 协议的端口号。
+     * HTTP protocol port number
      * 
      */
     @Import(name="http")
     private @Nullable Output<List<Integer>> http;
 
     /**
-     * @return HTTP 协议的端口号。
+     * @return HTTP protocol port number
      * 
      */
     public Optional<Output<List<Integer>>> http() {
@@ -32,14 +32,14 @@ public final class DomainProtocolPortsArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * HTTPS 协议的端口号。
+     * HTTPS protocol port number
      * 
      */
     @Import(name="https")
     private @Nullable Output<List<Integer>> https;
 
     /**
-     * @return HTTPS 协议的端口号。
+     * @return HTTPS protocol port number
      * 
      */
     public Optional<Output<List<Integer>>> https() {
@@ -72,7 +72,7 @@ public final class DomainProtocolPortsArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param http HTTP 协议的端口号。
+         * @param http HTTP protocol port number
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class DomainProtocolPortsArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param http HTTP 协议的端口号。
+         * @param http HTTP protocol port number
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class DomainProtocolPortsArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param http HTTP 协议的端口号。
+         * @param http HTTP protocol port number
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class DomainProtocolPortsArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param https HTTPS 协议的端口号。
+         * @param https HTTPS protocol port number
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class DomainProtocolPortsArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param https HTTPS 协议的端口号。
+         * @param https HTTPS protocol port number
          * 
          * @return builder
          * 
@@ -124,7 +124,7 @@ public final class DomainProtocolPortsArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param https HTTPS 协议的端口号。
+         * @param https HTTPS protocol port number
          * 
          * @return builder
          * 

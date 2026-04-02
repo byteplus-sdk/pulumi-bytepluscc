@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class GetAddonStatusResult
     {
         /// <summary>
-        /// 组件当前主状态下的状态条件。
+        /// Status conditions under the component's current primary state.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAddonStatusConditionResult> Conditions;
         /// <summary>
-        /// 组件的状态，参数值有：Running, Failed, Creating, Deleting, Updating
+        /// Component status. Parameter values include: Running, Failed, Creating, Deleting, Updating
         /// </summary>
         public readonly string Phase;
 

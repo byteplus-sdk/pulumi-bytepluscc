@@ -20,14 +20,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
     public static final FlowLogState Empty = new FlowLogState();
 
     /**
-     * 流日志的采样间隔。取值如下。1：1分钟。5：5分钟。10（默认值）：10分钟。
+     * Stream log sampling interval. Options: 1: 1 minute. 5: 5 minutes. 10 (default): 10 minutes.
      * 
      */
     @Import(name="aggregationInterval")
     private @Nullable Output<Integer> aggregationInterval;
 
     /**
-     * @return 流日志的采样间隔。取值如下。1：1分钟。5：5分钟。10（默认值）：10分钟。
+     * @return Stream log sampling interval. Options: 1: 1 minute. 5: 5 minutes. 10 (default): 10 minutes.
      * 
      */
     public Optional<Output<Integer>> aggregationInterval() {
@@ -35,14 +35,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 流日志是否被锁定。Normal: 正常。FinancialLocked: 被锁定。
+     * Whether the flow log is locked. Normal: normal. FinancialLocked: locked.
      * 
      */
     @Import(name="businessStatus")
     private @Nullable Output<String> businessStatus;
 
     /**
-     * @return 流日志是否被锁定。Normal: 正常。FinancialLocked: 被锁定。
+     * @return Whether the flow log is locked. Normal: normal. FinancialLocked: locked.
      * 
      */
     public Optional<Output<String>> businessStatus() {
@@ -50,14 +50,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 流日志的创建时间。
+     * Creation time of the flow log.
      * 
      */
     @Import(name="createdAt")
     private @Nullable Output<String> createdAt;
 
     /**
-     * @return 流日志的创建时间。
+     * @return Creation time of the flow log.
      * 
      */
     public Optional<Output<String>> createdAt() {
@@ -65,14 +65,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 流日志的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * Description of the stream log. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 流日志的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * @return Description of the stream log. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
      * 
      */
     public Optional<Output<String>> description() {
@@ -80,14 +80,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否自动配置索引。索引用于检索分析数据，流日志在检索分析之前，必须先配置索引。true：是。false（默认值）：否。
+     * Whether to automatically configure indexes. Indexes are used for retrieving and analyzing data. Stream logs must have indexes configured before retrieval and analysis. true: Yes. false (default): No.
      * 
      */
     @Import(name="enableIndex")
     private @Nullable Output<Boolean> enableIndex;
 
     /**
-     * @return 是否自动配置索引。索引用于检索分析数据，流日志在检索分析之前，必须先配置索引。true：是。false（默认值）：否。
+     * @return Whether to automatically configure indexes. Indexes are used for retrieving and analyzing data. Stream logs must have indexes configured before retrieval and analysis. true: Yes. false (default): No.
      * 
      */
     public Optional<Output<Boolean>> enableIndex() {
@@ -95,14 +95,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 流日志的ID。
+     * Stream log ID.
      * 
      */
     @Import(name="flowLogId")
     private @Nullable Output<String> flowLogId;
 
     /**
-     * @return 流日志的ID。
+     * @return Stream log ID.
      * 
      */
     public Optional<Output<String>> flowLogId() {
@@ -110,14 +110,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 流日志的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为流日志实例的ID。
+     * Name of the flow log. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the flow log instance ID.
      * 
      */
     @Import(name="flowLogName")
     private @Nullable Output<String> flowLogName;
 
     /**
-     * @return 流日志的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为流日志实例的ID。
+     * @return Name of the flow log. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the flow log instance ID.
      * 
      */
     public Optional<Output<String>> flowLogName() {
@@ -125,14 +125,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 流日志被锁定的原因。financial: 因欠费被锁定。unlock：欠费关停后充值恢复过程中。空值 : 没有被锁定。
+     * Reason for stream log lock. financial: Locked due to overdue payment. unlock: In the process of restoring after payment following suspension due to overdue payment. Empty value: Not locked.
      * 
      */
     @Import(name="lockReason")
     private @Nullable Output<String> lockReason;
 
     /**
-     * @return 流日志被锁定的原因。financial: 因欠费被锁定。unlock：欠费关停后充值恢复过程中。空值 : 没有被锁定。
+     * @return Reason for stream log lock. financial: Locked due to overdue payment. unlock: In the process of restoring after payment following suspension due to overdue payment. Empty value: Not locked.
      * 
      */
     public Optional<Output<String>> lockReason() {
@@ -140,14 +140,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 流日志项目的ID。
+     * Flow log project ID.
      * 
      */
     @Import(name="logProjectId")
     private @Nullable Output<String> logProjectId;
 
     /**
-     * @return 流日志项目的ID。
+     * @return Flow log project ID.
      * 
      */
     public Optional<Output<String>> logProjectId() {
@@ -155,14 +155,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+     * Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
      * 
      */
     @Import(name="logProjectName")
     private @Nullable Output<String> logProjectName;
 
     /**
-     * @return 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+     * @return Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
      * 
      */
     public Optional<Output<String>> logProjectName() {
@@ -170,14 +170,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 流日志主题的ID。
+     * Flow log topic ID.
      * 
      */
     @Import(name="logTopicId")
     private @Nullable Output<String> logTopicId;
 
     /**
-     * @return 流日志主题的ID。
+     * @return Flow log topic ID.
      * 
      */
     public Optional<Output<String>> logTopicId() {
@@ -185,14 +185,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+     * Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
      * 
      */
     @Import(name="logTopicName")
     private @Nullable Output<String> logTopicName;
 
     /**
-     * @return 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+     * @return Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
      * 
      */
     public Optional<Output<String>> logTopicName() {
@@ -200,14 +200,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 流流日志所属项目的名称。
+     * Name of the project to which the flow log belongs.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 流流日志所属项目的名称。
+     * @return Name of the project to which the flow log belongs.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -215,14 +215,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 要捕获流量的资源ID。
+     * Resource ID for traffic capture.
      * 
      */
     @Import(name="resourceId")
     private @Nullable Output<String> resourceId;
 
     /**
-     * @return 要捕获流量的资源ID。
+     * @return Resource ID for traffic capture.
      * 
      */
     public Optional<Output<String>> resourceId() {
@@ -230,14 +230,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 要采集流量的资源类型，取值如下：vpc：私有网络。subnet：子网。eni：网卡。
+     * Resource type for traffic collection. Values: vpc: Virtual Private Cloud. subnet: subnet. eni: network interface.
      * 
      */
     @Import(name="resourceType")
     private @Nullable Output<String> resourceType;
 
     /**
-     * @return 要采集流量的资源类型，取值如下：vpc：私有网络。subnet：子网。eni：网卡。
+     * @return Resource type for traffic collection. Values: vpc: Virtual Private Cloud. subnet: subnet. eni: network interface.
      * 
      */
     public Optional<Output<String>> resourceType() {
@@ -245,14 +245,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 流日志的状态。取值如下：Active：启动状态。Pending：正在操作中。Inactive：未启动状态。Creating：正在创建中。Deleting：正在删除中。
+     * Status of the flow log. Values: Active: active. Pending: pending. Inactive: inactive. Creating: creating. Deleting: deleting.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 流日志的状态。取值如下：Active：启动状态。Pending：正在操作中。Inactive：未启动状态。Creating：正在创建中。Deleting：正在删除中。
+     * @return Status of the flow log. Values: Active: active. Pending: pending. Inactive: inactive. Creating: creating. Deleting: deleting.
      * 
      */
     public Optional<Output<String>> status() {
@@ -267,14 +267,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 采集的流量类型。取值如下：All：全部流量。Allow：网络ACL和安全组允许的流量。Drop：网络ACL和安全组拒绝的流量。
+     * Type of traffic collected. Values: All: all traffic. Allow: traffic allowed by network ACLs and security groups. Drop: traffic denied by network ACLs and security groups.
      * 
      */
     @Import(name="trafficType")
     private @Nullable Output<String> trafficType;
 
     /**
-     * @return 采集的流量类型。取值如下：All：全部流量。Allow：网络ACL和安全组允许的流量。Drop：网络ACL和安全组拒绝的流量。
+     * @return Type of traffic collected. Values: All: all traffic. Allow: traffic allowed by network ACLs and security groups. Drop: traffic denied by network ACLs and security groups.
      * 
      */
     public Optional<Output<String>> trafficType() {
@@ -282,14 +282,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 更新流日志的时间。
+     * Time when the stream log was updated.
      * 
      */
     @Import(name="updatedAt")
     private @Nullable Output<String> updatedAt;
 
     /**
-     * @return 更新流日志的时间。
+     * @return Time when the stream log was updated.
      * 
      */
     public Optional<Output<String>> updatedAt() {
@@ -297,14 +297,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 流日志的VPC的ID。
+     * VPC ID for the flow log.
      * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
-     * @return 流日志的VPC的ID。
+     * @return VPC ID for the flow log.
      * 
      */
     public Optional<Output<String>> vpcId() {
@@ -355,7 +355,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aggregationInterval 流日志的采样间隔。取值如下。1：1分钟。5：5分钟。10（默认值）：10分钟。
+         * @param aggregationInterval Stream log sampling interval. Options: 1: 1 minute. 5: 5 minutes. 10 (default): 10 minutes.
          * 
          * @return builder
          * 
@@ -366,7 +366,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aggregationInterval 流日志的采样间隔。取值如下。1：1分钟。5：5分钟。10（默认值）：10分钟。
+         * @param aggregationInterval Stream log sampling interval. Options: 1: 1 minute. 5: 5 minutes. 10 (default): 10 minutes.
          * 
          * @return builder
          * 
@@ -376,7 +376,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param businessStatus 流日志是否被锁定。Normal: 正常。FinancialLocked: 被锁定。
+         * @param businessStatus Whether the flow log is locked. Normal: normal. FinancialLocked: locked.
          * 
          * @return builder
          * 
@@ -387,7 +387,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param businessStatus 流日志是否被锁定。Normal: 正常。FinancialLocked: 被锁定。
+         * @param businessStatus Whether the flow log is locked. Normal: normal. FinancialLocked: locked.
          * 
          * @return builder
          * 
@@ -397,7 +397,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdAt 流日志的创建时间。
+         * @param createdAt Creation time of the flow log.
          * 
          * @return builder
          * 
@@ -408,7 +408,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdAt 流日志的创建时间。
+         * @param createdAt Creation time of the flow log.
          * 
          * @return builder
          * 
@@ -418,7 +418,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 流日志的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+         * @param description Description of the stream log. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
          * 
          * @return builder
          * 
@@ -429,7 +429,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 流日志的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+         * @param description Description of the stream log. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
          * 
          * @return builder
          * 
@@ -439,7 +439,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableIndex 是否自动配置索引。索引用于检索分析数据，流日志在检索分析之前，必须先配置索引。true：是。false（默认值）：否。
+         * @param enableIndex Whether to automatically configure indexes. Indexes are used for retrieving and analyzing data. Stream logs must have indexes configured before retrieval and analysis. true: Yes. false (default): No.
          * 
          * @return builder
          * 
@@ -450,7 +450,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableIndex 是否自动配置索引。索引用于检索分析数据，流日志在检索分析之前，必须先配置索引。true：是。false（默认值）：否。
+         * @param enableIndex Whether to automatically configure indexes. Indexes are used for retrieving and analyzing data. Stream logs must have indexes configured before retrieval and analysis. true: Yes. false (default): No.
          * 
          * @return builder
          * 
@@ -460,7 +460,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param flowLogId 流日志的ID。
+         * @param flowLogId Stream log ID.
          * 
          * @return builder
          * 
@@ -471,7 +471,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param flowLogId 流日志的ID。
+         * @param flowLogId Stream log ID.
          * 
          * @return builder
          * 
@@ -481,7 +481,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param flowLogName 流日志的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为流日志实例的ID。
+         * @param flowLogName Name of the flow log. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the flow log instance ID.
          * 
          * @return builder
          * 
@@ -492,7 +492,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param flowLogName 流日志的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为流日志实例的ID。
+         * @param flowLogName Name of the flow log. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the flow log instance ID.
          * 
          * @return builder
          * 
@@ -502,7 +502,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lockReason 流日志被锁定的原因。financial: 因欠费被锁定。unlock：欠费关停后充值恢复过程中。空值 : 没有被锁定。
+         * @param lockReason Reason for stream log lock. financial: Locked due to overdue payment. unlock: In the process of restoring after payment following suspension due to overdue payment. Empty value: Not locked.
          * 
          * @return builder
          * 
@@ -513,7 +513,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lockReason 流日志被锁定的原因。financial: 因欠费被锁定。unlock：欠费关停后充值恢复过程中。空值 : 没有被锁定。
+         * @param lockReason Reason for stream log lock. financial: Locked due to overdue payment. unlock: In the process of restoring after payment following suspension due to overdue payment. Empty value: Not locked.
          * 
          * @return builder
          * 
@@ -523,7 +523,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param logProjectId 流日志项目的ID。
+         * @param logProjectId Flow log project ID.
          * 
          * @return builder
          * 
@@ -534,7 +534,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param logProjectId 流日志项目的ID。
+         * @param logProjectId Flow log project ID.
          * 
          * @return builder
          * 
@@ -544,7 +544,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param logProjectName 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+         * @param logProjectName Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
          * 
          * @return builder
          * 
@@ -555,7 +555,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param logProjectName 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+         * @param logProjectName Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
          * 
          * @return builder
          * 
@@ -565,7 +565,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param logTopicId 流日志主题的ID。
+         * @param logTopicId Flow log topic ID.
          * 
          * @return builder
          * 
@@ -576,7 +576,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param logTopicId 流日志主题的ID。
+         * @param logTopicId Flow log topic ID.
          * 
          * @return builder
          * 
@@ -586,7 +586,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param logTopicName 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+         * @param logTopicName Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
          * 
          * @return builder
          * 
@@ -597,7 +597,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param logTopicName 流日志项目的名称。名称只能由小写字母、数字和连字符（-）组成。必须以小写字母或者数字开头和结尾。名称的长度范围为 3~63 个字符。
+         * @param logTopicName Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
          * 
          * @return builder
          * 
@@ -607,7 +607,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 流流日志所属项目的名称。
+         * @param projectName Name of the project to which the flow log belongs.
          * 
          * @return builder
          * 
@@ -618,7 +618,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 流流日志所属项目的名称。
+         * @param projectName Name of the project to which the flow log belongs.
          * 
          * @return builder
          * 
@@ -628,7 +628,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resourceId 要捕获流量的资源ID。
+         * @param resourceId Resource ID for traffic capture.
          * 
          * @return builder
          * 
@@ -639,7 +639,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resourceId 要捕获流量的资源ID。
+         * @param resourceId Resource ID for traffic capture.
          * 
          * @return builder
          * 
@@ -649,7 +649,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resourceType 要采集流量的资源类型，取值如下：vpc：私有网络。subnet：子网。eni：网卡。
+         * @param resourceType Resource type for traffic collection. Values: vpc: Virtual Private Cloud. subnet: subnet. eni: network interface.
          * 
          * @return builder
          * 
@@ -660,7 +660,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resourceType 要采集流量的资源类型，取值如下：vpc：私有网络。subnet：子网。eni：网卡。
+         * @param resourceType Resource type for traffic collection. Values: vpc: Virtual Private Cloud. subnet: subnet. eni: network interface.
          * 
          * @return builder
          * 
@@ -670,7 +670,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 流日志的状态。取值如下：Active：启动状态。Pending：正在操作中。Inactive：未启动状态。Creating：正在创建中。Deleting：正在删除中。
+         * @param status Status of the flow log. Values: Active: active. Pending: pending. Inactive: inactive. Creating: creating. Deleting: deleting.
          * 
          * @return builder
          * 
@@ -681,7 +681,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 流日志的状态。取值如下：Active：启动状态。Pending：正在操作中。Inactive：未启动状态。Creating：正在创建中。Deleting：正在删除中。
+         * @param status Status of the flow log. Values: Active: active. Pending: pending. Inactive: inactive. Creating: creating. Deleting: deleting.
          * 
          * @return builder
          * 
@@ -704,7 +704,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param trafficType 采集的流量类型。取值如下：All：全部流量。Allow：网络ACL和安全组允许的流量。Drop：网络ACL和安全组拒绝的流量。
+         * @param trafficType Type of traffic collected. Values: All: all traffic. Allow: traffic allowed by network ACLs and security groups. Drop: traffic denied by network ACLs and security groups.
          * 
          * @return builder
          * 
@@ -715,7 +715,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param trafficType 采集的流量类型。取值如下：All：全部流量。Allow：网络ACL和安全组允许的流量。Drop：网络ACL和安全组拒绝的流量。
+         * @param trafficType Type of traffic collected. Values: All: all traffic. Allow: traffic allowed by network ACLs and security groups. Drop: traffic denied by network ACLs and security groups.
          * 
          * @return builder
          * 
@@ -725,7 +725,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedAt 更新流日志的时间。
+         * @param updatedAt Time when the stream log was updated.
          * 
          * @return builder
          * 
@@ -736,7 +736,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedAt 更新流日志的时间。
+         * @param updatedAt Time when the stream log was updated.
          * 
          * @return builder
          * 
@@ -746,7 +746,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 流日志的VPC的ID。
+         * @param vpcId VPC ID for the flow log.
          * 
          * @return builder
          * 
@@ -757,7 +757,7 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 流日志的VPC的ID。
+         * @param vpcId VPC ID for the flow log.
          * 
          * @return builder
          * 

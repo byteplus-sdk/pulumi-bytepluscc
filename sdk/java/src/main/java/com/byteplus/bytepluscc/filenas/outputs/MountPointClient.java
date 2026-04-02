@@ -12,38 +12,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class MountPointClient {
     /**
-     * @return 客户端的私有网络 IP 地址。
+     * @return Client&#39;s private network IP address.
      * 
      */
     private @Nullable String ip;
     /**
-     * @return 挂载协议版本号。取值：NFSv3。
+     * @return Mount protocol version. Value: NFSv3.
      * 
      */
     private @Nullable String protocolVersion;
     /**
-     * @return 私有网络名称。
+     * @return Private network name.
      * 
      */
     private @Nullable String vpcName;
 
     private MountPointClient() {}
     /**
-     * @return 客户端的私有网络 IP 地址。
+     * @return Client&#39;s private network IP address.
      * 
      */
     public Optional<String> ip() {
         return Optional.ofNullable(this.ip);
     }
     /**
-     * @return 挂载协议版本号。取值：NFSv3。
+     * @return Mount protocol version. Value: NFSv3.
      * 
      */
     public Optional<String> protocolVersion() {
         return Optional.ofNullable(this.protocolVersion);
     }
     /**
-     * @return 私有网络名称。
+     * @return Private network name.
      * 
      */
     public Optional<String> vpcName() {

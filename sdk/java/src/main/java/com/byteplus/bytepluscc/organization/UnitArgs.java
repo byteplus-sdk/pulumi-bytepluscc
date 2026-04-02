@@ -17,14 +17,14 @@ public final class UnitArgs extends com.pulumi.resources.ResourceArgs {
     public static final UnitArgs Empty = new UnitArgs();
 
     /**
-     * 描述。
+     * Description.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 描述。
+     * @return Description.
      * 
      */
     public Optional<Output<String>> description() {
@@ -32,14 +32,14 @@ public final class UnitArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 组织单元名称。
+     * Organizational unit name.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return 组织单元名称。
+     * @return Organizational unit name.
      * 
      */
     public Output<String> name() {
@@ -47,14 +47,14 @@ public final class UnitArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 父单元Id。
+     * Parent unit ID.
      * 
      */
     @Import(name="parentId", required=true)
     private Output<String> parentId;
 
     /**
-     * @return 父单元Id。
+     * @return Parent unit ID.
      * 
      */
     public Output<String> parentId() {
@@ -88,7 +88,7 @@ public final class UnitArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 描述。
+         * @param description Description.
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class UnitArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 描述。
+         * @param description Description.
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class UnitArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 组织单元名称。
+         * @param name Organizational unit name.
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class UnitArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 组织单元名称。
+         * @param name Organizational unit name.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class UnitArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param parentId 父单元Id。
+         * @param parentId Parent unit ID.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class UnitArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param parentId 父单元Id。
+         * @param parentId Parent unit ID.
          * 
          * @return builder
          * 

@@ -15,20 +15,20 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceInstanceShard {
     /**
-     * @return 分片中的节点数量
+     * @return Number of nodes in each shard
      * 
      */
     private @Nullable Integer nodeNumber;
     private @Nullable List<InstanceInstanceShardServerNode> serverNodes;
     /**
-     * @return 分片 ID。
+     * @return Shard ID.
      * 
      */
     private @Nullable String shardId;
 
     private InstanceInstanceShard() {}
     /**
-     * @return 分片中的节点数量
+     * @return Number of nodes in each shard
      * 
      */
     public Optional<Integer> nodeNumber() {
@@ -38,7 +38,7 @@ public final class InstanceInstanceShard {
         return this.serverNodes == null ? List.of() : this.serverNodes;
     }
     /**
-     * @return 分片 ID。
+     * @return Shard ID.
      * 
      */
     public Optional<String> shardId() {

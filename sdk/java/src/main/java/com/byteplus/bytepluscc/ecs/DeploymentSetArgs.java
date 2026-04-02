@@ -19,14 +19,14 @@ public final class DeploymentSetArgs extends com.pulumi.resources.ResourceArgs {
     public static final DeploymentSetArgs Empty = new DeploymentSetArgs();
 
     /**
-     * 部署集组的序号，取值范围：1～7。
+     * Deployment set group index. Value range: 1–7.
      * 
      */
     @Import(name="deploymentSetGroupNumber")
     private @Nullable Output<Integer> deploymentSetGroupNumber;
 
     /**
-     * @return 部署集组的序号，取值范围：1～7。
+     * @return Deployment set group index. Value range: 1–7.
      * 
      */
     public Optional<Output<Integer>> deploymentSetGroupNumber() {
@@ -34,14 +34,14 @@ public final class DeploymentSetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 部署集名称。不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1～128个字符。
+     * Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
      * 
      */
     @Import(name="deploymentSetName", required=true)
     private Output<String> deploymentSetName;
 
     /**
-     * @return 部署集名称。不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1～128个字符。
+     * @return Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
      * 
      */
     public Output<String> deploymentSetName() {
@@ -49,14 +49,14 @@ public final class DeploymentSetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 部署集的描述信息。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”。长度限制在255个字符以内。
+     * Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period &#39;.&#39;, space, underscore &#39;_&#39;, hyphen &#39;-&#39;, equals &#39;=&#39;, English comma &#39;,&#39;, Chinese comma &#39;，&#39;, and Chinese period &#39;。&#39;. Length limit: within 255 characters.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 部署集的描述信息。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”。长度限制在255个字符以内。
+     * @return Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period &#39;.&#39;, space, underscore &#39;_&#39;, hyphen &#39;-&#39;, equals &#39;=&#39;, English comma &#39;,&#39;, Chinese comma &#39;，&#39;, and Chinese period &#39;。&#39;. Length limit: within 255 characters.
      * 
      */
     public Optional<Output<String>> description() {
@@ -64,14 +64,14 @@ public final class DeploymentSetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 部署粒度，取值：host：物理机。rack：机架。switch：交换机。
+     * Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
      * 
      */
     @Import(name="granularity")
     private @Nullable Output<String> granularity;
 
     /**
-     * @return 部署粒度，取值：host：物理机。rack：机架。switch：交换机。
+     * @return Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
      * 
      */
     public Optional<Output<String>> granularity() {
@@ -79,14 +79,14 @@ public final class DeploymentSetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 部署集组数量。为部署集组高可用策略设置分组数量。取值范围：1～7。默认值：7。
+     * Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
      * 
      */
     @Import(name="groupCount")
     private @Nullable Output<Integer> groupCount;
 
     /**
-     * @return 部署集组数量。为部署集组高可用策略设置分组数量。取值范围：1～7。默认值：7。
+     * @return Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
      * 
      */
     public Optional<Output<Integer>> groupCount() {
@@ -94,14 +94,14 @@ public final class DeploymentSetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 部署集内的ECS实例ID列表。
+     * List of ECS instance IDs in the deployment set.
      * 
      */
     @Import(name="instanceIds")
     private @Nullable Output<List<String>> instanceIds;
 
     /**
-     * @return 部署集内的ECS实例ID列表。
+     * @return List of ECS instance IDs in the deployment set.
      * 
      */
     public Optional<Output<List<String>>> instanceIds() {
@@ -109,14 +109,14 @@ public final class DeploymentSetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 部署策略，取值：Availability（默认）：高可用策略。AvailabilityGroup：部署集组高可用策略。
+     * Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
      * 
      */
     @Import(name="strategy")
     private @Nullable Output<String> strategy;
 
     /**
-     * @return 部署策略，取值：Availability（默认）：高可用策略。AvailabilityGroup：部署集组高可用策略。
+     * @return Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
      * 
      */
     public Optional<Output<String>> strategy() {
@@ -154,7 +154,7 @@ public final class DeploymentSetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deploymentSetGroupNumber 部署集组的序号，取值范围：1～7。
+         * @param deploymentSetGroupNumber Deployment set group index. Value range: 1–7.
          * 
          * @return builder
          * 
@@ -165,7 +165,7 @@ public final class DeploymentSetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deploymentSetGroupNumber 部署集组的序号，取值范围：1～7。
+         * @param deploymentSetGroupNumber Deployment set group index. Value range: 1–7.
          * 
          * @return builder
          * 
@@ -175,7 +175,7 @@ public final class DeploymentSetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deploymentSetName 部署集名称。不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1～128个字符。
+         * @param deploymentSetName Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
          * 
          * @return builder
          * 
@@ -186,7 +186,7 @@ public final class DeploymentSetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deploymentSetName 部署集名称。不能以数字、中划线、下划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1～128个字符。
+         * @param deploymentSetName Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class DeploymentSetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 部署集的描述信息。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”。长度限制在255个字符以内。
+         * @param description Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period &#39;.&#39;, space, underscore &#39;_&#39;, hyphen &#39;-&#39;, equals &#39;=&#39;, English comma &#39;,&#39;, Chinese comma &#39;，&#39;, and Chinese period &#39;。&#39;. Length limit: within 255 characters.
          * 
          * @return builder
          * 
@@ -207,7 +207,7 @@ public final class DeploymentSetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 部署集的描述信息。必须以字母或中文开头。只能包含中文、字母、数字、点“.”、空格、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、中文逗号“，”和中文句号“。”。长度限制在255个字符以内。
+         * @param description Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period &#39;.&#39;, space, underscore &#39;_&#39;, hyphen &#39;-&#39;, equals &#39;=&#39;, English comma &#39;,&#39;, Chinese comma &#39;，&#39;, and Chinese period &#39;。&#39;. Length limit: within 255 characters.
          * 
          * @return builder
          * 
@@ -217,7 +217,7 @@ public final class DeploymentSetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param granularity 部署粒度，取值：host：物理机。rack：机架。switch：交换机。
+         * @param granularity Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
          * 
          * @return builder
          * 
@@ -228,7 +228,7 @@ public final class DeploymentSetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param granularity 部署粒度，取值：host：物理机。rack：机架。switch：交换机。
+         * @param granularity Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
          * 
          * @return builder
          * 
@@ -238,7 +238,7 @@ public final class DeploymentSetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupCount 部署集组数量。为部署集组高可用策略设置分组数量。取值范围：1～7。默认值：7。
+         * @param groupCount Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
          * 
          * @return builder
          * 
@@ -249,7 +249,7 @@ public final class DeploymentSetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupCount 部署集组数量。为部署集组高可用策略设置分组数量。取值范围：1～7。默认值：7。
+         * @param groupCount Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
          * 
          * @return builder
          * 
@@ -259,7 +259,7 @@ public final class DeploymentSetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceIds 部署集内的ECS实例ID列表。
+         * @param instanceIds List of ECS instance IDs in the deployment set.
          * 
          * @return builder
          * 
@@ -270,7 +270,7 @@ public final class DeploymentSetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceIds 部署集内的ECS实例ID列表。
+         * @param instanceIds List of ECS instance IDs in the deployment set.
          * 
          * @return builder
          * 
@@ -280,7 +280,7 @@ public final class DeploymentSetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceIds 部署集内的ECS实例ID列表。
+         * @param instanceIds List of ECS instance IDs in the deployment set.
          * 
          * @return builder
          * 
@@ -290,7 +290,7 @@ public final class DeploymentSetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param strategy 部署策略，取值：Availability（默认）：高可用策略。AvailabilityGroup：部署集组高可用策略。
+         * @param strategy Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
          * 
          * @return builder
          * 
@@ -301,7 +301,7 @@ public final class DeploymentSetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param strategy 部署策略，取值：Availability（默认）：高可用策略。AvailabilityGroup：部署集组高可用策略。
+         * @param strategy Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
          * 
          * @return builder
          * 

@@ -16,37 +16,37 @@ import java.util.Objects;
 @CustomType
 public final class GetNlbListenerResult {
     /**
-     * @return TLS监听器服务器证书的ID，仅支持传入证书中心 SSL 证书。。
+     * @return TLS listener server certificate ID. Only SSL certificates from the certificate center are supported.
      * 
      */
     private String certificateId;
     /**
-     * @return 监听器的连接超时时间（秒）。
+     * @return Listener connection timeout (seconds)
      * 
      */
     private Integer connectionTimeout;
     /**
-     * @return 监听器的创建时间。
+     * @return Listener creation time
      * 
      */
     private String createdTime;
     /**
-     * @return 监听器描述信息。
+     * @return Listener description
      * 
      */
     private String description;
     /**
-     * @return 是否启用监听器。true：开启；false：关闭。
+     * @return Listener enabled: true (enabled); false (disabled)
      * 
      */
     private Boolean enabled;
     /**
-     * @return 全端口监听的结束端口，仅当Port为0时有效。
+     * @return End port for all-port listening. Valid only when Port is 0.
      * 
      */
     private Integer endPort;
     /**
-     * @return 后端实例健康检查响应信息。
+     * @return Backend instance health check response information
      * 
      */
     private List<GetNlbListenerHealth> healths;
@@ -56,106 +56,106 @@ public final class GetNlbListenerResult {
      */
     private String id;
     /**
-     * @return 监听器唯一标识。
+     * @return Listener unique identifier
      * 
      */
     private String listenerId;
     /**
-     * @return 监听器名称。
+     * @return Listener name
      * 
      */
     private String listenerName;
     /**
-     * @return 负载均衡实例ID。
+     * @return Load balancer instance ID
      * 
      */
     private String loadBalancerId;
     /**
-     * @return 监听器接收请求的端口，0表示启用全端口监听。
+     * @return Port on which the listener receives requests. 0 indicates all-port listening is enabled.
      * 
      */
     private Integer port;
     /**
-     * @return 监听协议类型。TCP,UDP,TLS
+     * @return Listener protocol type: TCP, UDP, TLS
      * 
      */
     private String protocol;
     /**
-     * @return TLS 安全策略ID，支持系统安全策略和自定义安全策略。系统安全策略取值：.tls*cipher*policy*1*0.tls*cipher*policy*1*1.tls*cipher*policy*1*2.tls*cipher*policy*1*2*strict.tls*cipher*policy*1*2*strict*with*1_3.自定义安全策略：输入自定义安全策略 ID。当Protocol为TLS 时，该参数为必填。。
+     * @return TLS security policy ID. Supports both system security policies and custom security policies. System security policy values: .tls*cipher*policy*1*0 .tls*cipher*policy*1*1 .tls*cipher*policy*1*2 .tls*cipher*policy*1*2*strict .tls*cipher*policy*1*2*strict*with*1_3. For custom security policies, enter the custom security policy ID. This parameter is required when Protocol is TLS.
      * 
      */
     private String securityPolicyId;
     /**
-     * @return 监听器关联的服务器组ID。
+     * @return Server group ID associated with the listener
      * 
      */
     private String serverGroupId;
     /**
-     * @return 全端口监听的起始端口，仅当Port为0时有效。
+     * @return Start port for all-port listening. Valid only when Port is 0.
      * 
      */
     private Integer startPort;
     /**
-     * @return 监听器的状态。
+     * @return Listener status
      * 
      */
     private String status;
     /**
-     * @return 资源标签。
+     * @return Resource tags
      * 
      */
     private List<GetNlbListenerTag> tags;
     /**
-     * @return 监听器最近操作时间。
+     * @return Listener&#39;s most recent operation time
      * 
      */
     private String updatedTime;
 
     private GetNlbListenerResult() {}
     /**
-     * @return TLS监听器服务器证书的ID，仅支持传入证书中心 SSL 证书。。
+     * @return TLS listener server certificate ID. Only SSL certificates from the certificate center are supported.
      * 
      */
     public String certificateId() {
         return this.certificateId;
     }
     /**
-     * @return 监听器的连接超时时间（秒）。
+     * @return Listener connection timeout (seconds)
      * 
      */
     public Integer connectionTimeout() {
         return this.connectionTimeout;
     }
     /**
-     * @return 监听器的创建时间。
+     * @return Listener creation time
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 监听器描述信息。
+     * @return Listener description
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 是否启用监听器。true：开启；false：关闭。
+     * @return Listener enabled: true (enabled); false (disabled)
      * 
      */
     public Boolean enabled() {
         return this.enabled;
     }
     /**
-     * @return 全端口监听的结束端口，仅当Port为0时有效。
+     * @return End port for all-port listening. Valid only when Port is 0.
      * 
      */
     public Integer endPort() {
         return this.endPort;
     }
     /**
-     * @return 后端实例健康检查响应信息。
+     * @return Backend instance health check response information
      * 
      */
     public List<GetNlbListenerHealth> healths() {
@@ -169,77 +169,77 @@ public final class GetNlbListenerResult {
         return this.id;
     }
     /**
-     * @return 监听器唯一标识。
+     * @return Listener unique identifier
      * 
      */
     public String listenerId() {
         return this.listenerId;
     }
     /**
-     * @return 监听器名称。
+     * @return Listener name
      * 
      */
     public String listenerName() {
         return this.listenerName;
     }
     /**
-     * @return 负载均衡实例ID。
+     * @return Load balancer instance ID
      * 
      */
     public String loadBalancerId() {
         return this.loadBalancerId;
     }
     /**
-     * @return 监听器接收请求的端口，0表示启用全端口监听。
+     * @return Port on which the listener receives requests. 0 indicates all-port listening is enabled.
      * 
      */
     public Integer port() {
         return this.port;
     }
     /**
-     * @return 监听协议类型。TCP,UDP,TLS
+     * @return Listener protocol type: TCP, UDP, TLS
      * 
      */
     public String protocol() {
         return this.protocol;
     }
     /**
-     * @return TLS 安全策略ID，支持系统安全策略和自定义安全策略。系统安全策略取值：.tls*cipher*policy*1*0.tls*cipher*policy*1*1.tls*cipher*policy*1*2.tls*cipher*policy*1*2*strict.tls*cipher*policy*1*2*strict*with*1_3.自定义安全策略：输入自定义安全策略 ID。当Protocol为TLS 时，该参数为必填。。
+     * @return TLS security policy ID. Supports both system security policies and custom security policies. System security policy values: .tls*cipher*policy*1*0 .tls*cipher*policy*1*1 .tls*cipher*policy*1*2 .tls*cipher*policy*1*2*strict .tls*cipher*policy*1*2*strict*with*1_3. For custom security policies, enter the custom security policy ID. This parameter is required when Protocol is TLS.
      * 
      */
     public String securityPolicyId() {
         return this.securityPolicyId;
     }
     /**
-     * @return 监听器关联的服务器组ID。
+     * @return Server group ID associated with the listener
      * 
      */
     public String serverGroupId() {
         return this.serverGroupId;
     }
     /**
-     * @return 全端口监听的起始端口，仅当Port为0时有效。
+     * @return Start port for all-port listening. Valid only when Port is 0.
      * 
      */
     public Integer startPort() {
         return this.startPort;
     }
     /**
-     * @return 监听器的状态。
+     * @return Listener status
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 资源标签。
+     * @return Resource tags
      * 
      */
     public List<GetNlbListenerTag> tags() {
         return this.tags;
     }
     /**
-     * @return 监听器最近操作时间。
+     * @return Listener&#39;s most recent operation time
      * 
      */
     public String updatedTime() {

@@ -13,50 +13,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UpstreamUpstreamSpecAiProvider {
     /**
-     * @return 模型地址。
+     * @return Model address
      * 
      */
     private @Nullable String baseUrl;
     /**
-     * @return 火山自部署模型服务。
+     * @return Volcano Engine self-hosted model service
      * 
      */
     private @Nullable UpstreamUpstreamSpecAiProviderCustomModelService customModelService;
     /**
-     * @return 模型服务商名称。
+     * @return Model Service Provider Name
      * 
      */
     private @Nullable String name;
     /**
-     * @return 模型API key。
+     * @return Model API key
      * 
      */
     private @Nullable String token;
 
     private UpstreamUpstreamSpecAiProvider() {}
     /**
-     * @return 模型地址。
+     * @return Model address
      * 
      */
     public Optional<String> baseUrl() {
         return Optional.ofNullable(this.baseUrl);
     }
     /**
-     * @return 火山自部署模型服务。
+     * @return Volcano Engine self-hosted model service
      * 
      */
     public Optional<UpstreamUpstreamSpecAiProviderCustomModelService> customModelService() {
         return Optional.ofNullable(this.customModelService);
     }
     /**
-     * @return 模型服务商名称。
+     * @return Model Service Provider Name
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return 模型API key。
+     * @return Model API key
      * 
      */
     public Optional<String> token() {

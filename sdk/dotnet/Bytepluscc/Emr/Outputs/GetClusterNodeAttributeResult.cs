@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Outputs
     public sealed class GetClusterNodeAttributeResult
     {
         /// <summary>
-        /// ECS实例角色。
+        /// ECS instance role.
         /// </summary>
         public readonly string EcsIamRole;
         /// <summary>
-        /// 可用区ID。
+        /// Zone ID.
         /// </summary>
         public readonly string ZoneId;
 

@@ -20,25 +20,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud.Inputs
         public Input<bool>? ForbidStop { get; set; }
 
         /// <summary>
-        /// 资源信息。
+        /// Resource information
         /// </summary>
         [Input("reduceSpecConfig")]
         public Input<Inputs.InstanceTransferInfoReduceSpecConfigGetArgs>? ReduceSpecConfig { get; set; }
 
         /// <summary>
-        /// 数据迁移任务进度，百分制。
+        /// Data migration task progress, percentage
         /// </summary>
         [Input("transferProgress")]
         public Input<double>? TransferProgress { get; set; }
 
         /// <summary>
-        /// 数据迁移任务状态。
+        /// Data migration task status
         /// </summary>
         [Input("transferStatus")]
         public Input<string>? TransferStatus { get; set; }
 
         /// <summary>
-        /// 数据迁移任务 ID。
+        /// Data migration task ID
         /// </summary>
         [Input("transferTaskId")]
         public Input<string>? TransferTaskId { get; set; }

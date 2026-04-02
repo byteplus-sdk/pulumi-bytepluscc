@@ -15,31 +15,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class NodePoolNodeConfigDataVolume
     {
         /// <summary>
-        /// 文件系统，取值：  - Ext4 (默认值)  - Xfs
+        /// File system. Options:   - Ext4 (default)   - Xfs
         /// </summary>
         public readonly string? FileSystem;
         /// <summary>
-        /// 磁盘格式化后的目标挂载目录。
+        /// Target mount directory after disk formatting.
         /// </summary>
         public readonly string? MountPoint;
         /// <summary>
-        /// 放置组Id
+        /// Placement group ID
         /// </summary>
         public readonly string? PlacementGroupId;
         /// <summary>
-        /// 磁盘容量，单位 GiB。
+        /// Disk capacity, in GiB.
         /// </summary>
         public readonly int? Size;
         /// <summary>
-        /// 使用快照创建数据盘。您可以调用DescribeSnapshots接口查询快照ID。说明  - 仅极速型SSD和高效性云盘支持通过快照创建云盘  - 仅状态为“可用”(available)的快照支持创建新云盘，“创建中”、“回滚中”、“删除中”及“错误”状态下的快照不支持创建新云盘。
+        /// Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the 'available' status can be used to create new disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks.
         /// </summary>
         public readonly string? SnapshotId;
         /// <summary>
-        /// 放置子组
+        /// Placement subgroup
         /// </summary>
         public readonly int? SubgroupNumber;
         /// <summary>
-        /// 磁盘类型：ESSD*PL0：性能级别为 PL0 的极速型 SSD 云盘。ESSD*FlexPL：性能级别为 PL1 的极速型 SSD 云盘。
+        /// Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
         /// </summary>
         public readonly string? Type;
 

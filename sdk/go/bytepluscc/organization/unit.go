@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 企业组织的创建者管理员账号可以新建组织单元来搭建企业的组织结构，对账号进行分组织单元管理。组织单元可以分多个组织单元层级，管理员账号也可属于任意层级的任意组织单元节点。
+// The administrator account that created the enterprise organization can create organizational units to build the enterprise's organizational structure and manage accounts by organizational unit. Organizational units can have multiple hierarchical levels, and administrator accounts can belong to any organizational unit node at any level.
 //
 // ## Example Usage
 //
@@ -50,29 +50,29 @@ import (
 type Unit struct {
 	pulumi.CustomResourceState
 
-	// 创建时间。
+	// Creation time.
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// 删除标识。
+	// Deletion flag.
 	DeleteUk pulumi.StringOutput `pulumi:"deleteUk"`
-	// 删除时间。
+	// Deletion time.
 	DeletedTime pulumi.StringOutput `pulumi:"deletedTime"`
-	// 深度。
+	// Depth.
 	Depth pulumi.IntOutput `pulumi:"depth"`
-	// 描述。
+	// Description.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// 组织单元名称。
+	// Organizational unit name.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// 组织ID。
+	// Organization ID.
 	OrgId pulumi.StringOutput `pulumi:"orgId"`
-	// 组织类型。企业组织： 1
+	// Organization type. Enterprise organization: 1
 	OrgType pulumi.IntOutput `pulumi:"orgType"`
-	// 组织单元ID。
+	// Organizational unit ID.
 	OrgUnitId pulumi.StringOutput `pulumi:"orgUnitId"`
-	// 管理员ID。
+	// Administrator ID.
 	Owner pulumi.StringOutput `pulumi:"owner"`
-	// 父单元Id。
+	// Parent unit ID.
 	ParentId pulumi.StringOutput `pulumi:"parentId"`
-	// 更新时间。
+	// Update time.
 	UpdatedTime pulumi.StringOutput `pulumi:"updatedTime"`
 }
 
@@ -112,56 +112,56 @@ func GetUnit(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Unit resources.
 type unitState struct {
-	// 创建时间。
+	// Creation time.
 	CreatedTime *string `pulumi:"createdTime"`
-	// 删除标识。
+	// Deletion flag.
 	DeleteUk *string `pulumi:"deleteUk"`
-	// 删除时间。
+	// Deletion time.
 	DeletedTime *string `pulumi:"deletedTime"`
-	// 深度。
+	// Depth.
 	Depth *int `pulumi:"depth"`
-	// 描述。
+	// Description.
 	Description *string `pulumi:"description"`
-	// 组织单元名称。
+	// Organizational unit name.
 	Name *string `pulumi:"name"`
-	// 组织ID。
+	// Organization ID.
 	OrgId *string `pulumi:"orgId"`
-	// 组织类型。企业组织： 1
+	// Organization type. Enterprise organization: 1
 	OrgType *int `pulumi:"orgType"`
-	// 组织单元ID。
+	// Organizational unit ID.
 	OrgUnitId *string `pulumi:"orgUnitId"`
-	// 管理员ID。
+	// Administrator ID.
 	Owner *string `pulumi:"owner"`
-	// 父单元Id。
+	// Parent unit ID.
 	ParentId *string `pulumi:"parentId"`
-	// 更新时间。
+	// Update time.
 	UpdatedTime *string `pulumi:"updatedTime"`
 }
 
 type UnitState struct {
-	// 创建时间。
+	// Creation time.
 	CreatedTime pulumi.StringPtrInput
-	// 删除标识。
+	// Deletion flag.
 	DeleteUk pulumi.StringPtrInput
-	// 删除时间。
+	// Deletion time.
 	DeletedTime pulumi.StringPtrInput
-	// 深度。
+	// Depth.
 	Depth pulumi.IntPtrInput
-	// 描述。
+	// Description.
 	Description pulumi.StringPtrInput
-	// 组织单元名称。
+	// Organizational unit name.
 	Name pulumi.StringPtrInput
-	// 组织ID。
+	// Organization ID.
 	OrgId pulumi.StringPtrInput
-	// 组织类型。企业组织： 1
+	// Organization type. Enterprise organization: 1
 	OrgType pulumi.IntPtrInput
-	// 组织单元ID。
+	// Organizational unit ID.
 	OrgUnitId pulumi.StringPtrInput
-	// 管理员ID。
+	// Administrator ID.
 	Owner pulumi.StringPtrInput
-	// 父单元Id。
+	// Parent unit ID.
 	ParentId pulumi.StringPtrInput
-	// 更新时间。
+	// Update time.
 	UpdatedTime pulumi.StringPtrInput
 }
 
@@ -170,21 +170,21 @@ func (UnitState) ElementType() reflect.Type {
 }
 
 type unitArgs struct {
-	// 描述。
+	// Description.
 	Description *string `pulumi:"description"`
-	// 组织单元名称。
+	// Organizational unit name.
 	Name string `pulumi:"name"`
-	// 父单元Id。
+	// Parent unit ID.
 	ParentId string `pulumi:"parentId"`
 }
 
 // The set of arguments for constructing a Unit resource.
 type UnitArgs struct {
-	// 描述。
+	// Description.
 	Description pulumi.StringPtrInput
-	// 组织单元名称。
+	// Organizational unit name.
 	Name pulumi.StringInput
-	// 父单元Id。
+	// Parent unit ID.
 	ParentId pulumi.StringInput
 }
 
@@ -275,62 +275,62 @@ func (o UnitOutput) ToUnitOutputWithContext(ctx context.Context) UnitOutput {
 	return o
 }
 
-// 创建时间。
+// Creation time.
 func (o UnitOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Unit) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 删除标识。
+// Deletion flag.
 func (o UnitOutput) DeleteUk() pulumi.StringOutput {
 	return o.ApplyT(func(v *Unit) pulumi.StringOutput { return v.DeleteUk }).(pulumi.StringOutput)
 }
 
-// 删除时间。
+// Deletion time.
 func (o UnitOutput) DeletedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Unit) pulumi.StringOutput { return v.DeletedTime }).(pulumi.StringOutput)
 }
 
-// 深度。
+// Depth.
 func (o UnitOutput) Depth() pulumi.IntOutput {
 	return o.ApplyT(func(v *Unit) pulumi.IntOutput { return v.Depth }).(pulumi.IntOutput)
 }
 
-// 描述。
+// Description.
 func (o UnitOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Unit) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// 组织单元名称。
+// Organizational unit name.
 func (o UnitOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *Unit) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// 组织ID。
+// Organization ID.
 func (o UnitOutput) OrgId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Unit) pulumi.StringOutput { return v.OrgId }).(pulumi.StringOutput)
 }
 
-// 组织类型。企业组织： 1
+// Organization type. Enterprise organization: 1
 func (o UnitOutput) OrgType() pulumi.IntOutput {
 	return o.ApplyT(func(v *Unit) pulumi.IntOutput { return v.OrgType }).(pulumi.IntOutput)
 }
 
-// 组织单元ID。
+// Organizational unit ID.
 func (o UnitOutput) OrgUnitId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Unit) pulumi.StringOutput { return v.OrgUnitId }).(pulumi.StringOutput)
 }
 
-// 管理员ID。
+// Administrator ID.
 func (o UnitOutput) Owner() pulumi.StringOutput {
 	return o.ApplyT(func(v *Unit) pulumi.StringOutput { return v.Owner }).(pulumi.StringOutput)
 }
 
-// 父单元Id。
+// Parent unit ID.
 func (o UnitOutput) ParentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Unit) pulumi.StringOutput { return v.ParentId }).(pulumi.StringOutput)
 }
 
-// 更新时间。
+// Update time.
 func (o UnitOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Unit) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }

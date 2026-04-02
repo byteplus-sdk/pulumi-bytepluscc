@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class GetRuleRuleConditionHeaderConfigResult
     {
         /// <summary>
-        /// 头字段键。
+        /// Header field key.
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// 头字段值。
+        /// Header field value.
         /// </summary>
         public readonly ImmutableArray<string> Values;
 

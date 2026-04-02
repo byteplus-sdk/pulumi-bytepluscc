@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 public final class DomainCustomErrorPage {
     private @Nullable List<DomainCustomErrorPageErrorPageRule> errorPageRules;
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Indicates whether this feature is enabled. The parameter values are: true: Enabled. false: Disabled. The default value is false.
      * 
      */
     private @Nullable Boolean switch_;
@@ -25,7 +25,7 @@ public final class DomainCustomErrorPage {
         return this.errorPageRules == null ? List.of() : this.errorPageRules;
     }
     /**
-     * @return 表示是否启用该特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Indicates whether this feature is enabled. The parameter values are: true: Enabled. false: Disabled. The default value is false.
      * 
      */
     public Optional<Boolean> switch_() {

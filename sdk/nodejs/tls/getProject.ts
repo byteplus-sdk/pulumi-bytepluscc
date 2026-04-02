@@ -31,15 +31,15 @@ export interface GetProjectArgs {
  */
 export interface GetProjectResult {
     /**
-     * 日志项目创建时间。
+     * Log project creation time
      */
     readonly createdTime: string;
     /**
-     * 日志项目的简单描述。
+     * Brief description of the log project
      */
     readonly description: string;
     /**
-     * 日志项目所属的 IAM 项目。
+     * The IAM project associated with the log project
      */
     readonly iamProjectName: string;
     /**
@@ -47,23 +47,23 @@ export interface GetProjectResult {
      */
     readonly id: string;
     /**
-     * 私网连接域名。
+     * Private network connection domain name
      */
     readonly innerNetDomain: string;
     /**
-     * 日志项目的 ID。
+     * Log project ID
      */
     readonly projectId: string;
     /**
-     * 日志项目名称。
+     * Log project name
      */
     readonly projectName: string;
     /**
-     * 标签信息。
+     * Tag information
      */
     readonly tags: outputs.tls.GetProjectTag[];
     /**
-     * 当前日志项目下的日志主题数量。
+     * Number of log topics in the current log project
      */
     readonly topicCount: number;
 }

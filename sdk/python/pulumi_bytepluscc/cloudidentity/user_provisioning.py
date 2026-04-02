@@ -30,14 +30,14 @@ class UserProvisioningArgs:
                  duplication_suffix: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a UserProvisioning resource.
-        :param pulumi.Input[builtins.str] deletion_strategy: 删除策略。
-        :param pulumi.Input[builtins.str] duplication_strategy: 用户名冲突策略。
-        :param pulumi.Input[builtins.str] identity_source_strategy: 身份源冲突策略。
-        :param pulumi.Input[builtins.str] principal_id: 身份id。
-        :param pulumi.Input[builtins.str] principal_type: 身份类型。
-        :param pulumi.Input[builtins.str] target_id: 目标id。
-        :param pulumi.Input[builtins.str] description: 任务描述。
-        :param pulumi.Input[builtins.str] duplication_suffix: 本次同步IAM用户名称后缀。
+        :param pulumi.Input[builtins.str] deletion_strategy: Deletion Policy
+        :param pulumi.Input[builtins.str] duplication_strategy: Username Conflict Policy
+        :param pulumi.Input[builtins.str] identity_source_strategy: Identity Source Conflict Policy
+        :param pulumi.Input[builtins.str] principal_id: Identity ID
+        :param pulumi.Input[builtins.str] principal_type: Identity Type
+        :param pulumi.Input[builtins.str] target_id: Target ID
+        :param pulumi.Input[builtins.str] description: Task Description
+        :param pulumi.Input[builtins.str] duplication_suffix: Suffix for IAM user name in this synchronization
         """
         pulumi.set(__self__, "deletion_strategy", deletion_strategy)
         pulumi.set(__self__, "duplication_strategy", duplication_strategy)
@@ -54,7 +54,7 @@ class UserProvisioningArgs:
     @pulumi.getter(name="deletionStrategy")
     def deletion_strategy(self) -> pulumi.Input[builtins.str]:
         """
-        删除策略。
+        Deletion Policy
         """
         return pulumi.get(self, "deletion_strategy")
 
@@ -66,7 +66,7 @@ class UserProvisioningArgs:
     @pulumi.getter(name="duplicationStrategy")
     def duplication_strategy(self) -> pulumi.Input[builtins.str]:
         """
-        用户名冲突策略。
+        Username Conflict Policy
         """
         return pulumi.get(self, "duplication_strategy")
 
@@ -78,7 +78,7 @@ class UserProvisioningArgs:
     @pulumi.getter(name="identitySourceStrategy")
     def identity_source_strategy(self) -> pulumi.Input[builtins.str]:
         """
-        身份源冲突策略。
+        Identity Source Conflict Policy
         """
         return pulumi.get(self, "identity_source_strategy")
 
@@ -90,7 +90,7 @@ class UserProvisioningArgs:
     @pulumi.getter(name="principalId")
     def principal_id(self) -> pulumi.Input[builtins.str]:
         """
-        身份id。
+        Identity ID
         """
         return pulumi.get(self, "principal_id")
 
@@ -102,7 +102,7 @@ class UserProvisioningArgs:
     @pulumi.getter(name="principalType")
     def principal_type(self) -> pulumi.Input[builtins.str]:
         """
-        身份类型。
+        Identity Type
         """
         return pulumi.get(self, "principal_type")
 
@@ -114,7 +114,7 @@ class UserProvisioningArgs:
     @pulumi.getter(name="targetId")
     def target_id(self) -> pulumi.Input[builtins.str]:
         """
-        目标id。
+        Target ID
         """
         return pulumi.get(self, "target_id")
 
@@ -126,7 +126,7 @@ class UserProvisioningArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        任务描述。
+        Task Description
         """
         return pulumi.get(self, "description")
 
@@ -138,7 +138,7 @@ class UserProvisioningArgs:
     @pulumi.getter(name="duplicationSuffix")
     def duplication_suffix(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        本次同步IAM用户名称后缀。
+        Suffix for IAM user name in this synchronization
         """
         return pulumi.get(self, "duplication_suffix")
 
@@ -165,19 +165,19 @@ class _UserProvisioningState:
                  user_provisioning_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering UserProvisioning resources.
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] deletion_strategy: 删除策略。
-        :param pulumi.Input[builtins.str] description: 任务描述。
-        :param pulumi.Input[builtins.str] duplication_strategy: 用户名冲突策略。
-        :param pulumi.Input[builtins.str] duplication_suffix: 本次同步IAM用户名称后缀。
-        :param pulumi.Input[builtins.str] identity_source_strategy: 身份源冲突策略。
-        :param pulumi.Input[builtins.str] principal_id: 身份id。
-        :param pulumi.Input[builtins.str] principal_name: 目标名称。
-        :param pulumi.Input[builtins.str] principal_type: 身份类型。
-        :param pulumi.Input[builtins.str] provision_status: 授权任务状态。Provisioned 授权成功，Provisioning 正在授权，DeleteProvisioning 授权解除中，DeleteProvisioned 授权解除成功
-        :param pulumi.Input[builtins.str] target_id: 目标id。
-        :param pulumi.Input[builtins.str] updated_time: 更新时间。
-        :param pulumi.Input[builtins.str] user_provisioning_id: IAM 用户同步任务ID。
+        :param pulumi.Input[builtins.str] created_time: Creation Time
+        :param pulumi.Input[builtins.str] deletion_strategy: Deletion Policy
+        :param pulumi.Input[builtins.str] description: Task Description
+        :param pulumi.Input[builtins.str] duplication_strategy: Username Conflict Policy
+        :param pulumi.Input[builtins.str] duplication_suffix: Suffix for IAM user name in this synchronization
+        :param pulumi.Input[builtins.str] identity_source_strategy: Identity Source Conflict Policy
+        :param pulumi.Input[builtins.str] principal_id: Identity ID
+        :param pulumi.Input[builtins.str] principal_name: Target Name
+        :param pulumi.Input[builtins.str] principal_type: Identity Type
+        :param pulumi.Input[builtins.str] provision_status: Authorization Task Status. Provisioned: authorization successful, Provisioning: authorizing, DeleteProvisioning: revoking authorization, DeleteProvisioned: authorization revoked successfully.
+        :param pulumi.Input[builtins.str] target_id: Target ID
+        :param pulumi.Input[builtins.str] updated_time: Update Time
+        :param pulumi.Input[builtins.str] user_provisioning_id: IAM User Synchronization Task ID
         """
         if created_time is not None:
             pulumi.set(__self__, "created_time", created_time)
@@ -210,7 +210,7 @@ class _UserProvisioningState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建时间。
+        Creation Time
         """
         return pulumi.get(self, "created_time")
 
@@ -222,7 +222,7 @@ class _UserProvisioningState:
     @pulumi.getter(name="deletionStrategy")
     def deletion_strategy(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        删除策略。
+        Deletion Policy
         """
         return pulumi.get(self, "deletion_strategy")
 
@@ -234,7 +234,7 @@ class _UserProvisioningState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        任务描述。
+        Task Description
         """
         return pulumi.get(self, "description")
 
@@ -246,7 +246,7 @@ class _UserProvisioningState:
     @pulumi.getter(name="duplicationStrategy")
     def duplication_strategy(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户名冲突策略。
+        Username Conflict Policy
         """
         return pulumi.get(self, "duplication_strategy")
 
@@ -258,7 +258,7 @@ class _UserProvisioningState:
     @pulumi.getter(name="duplicationSuffix")
     def duplication_suffix(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        本次同步IAM用户名称后缀。
+        Suffix for IAM user name in this synchronization
         """
         return pulumi.get(self, "duplication_suffix")
 
@@ -270,7 +270,7 @@ class _UserProvisioningState:
     @pulumi.getter(name="identitySourceStrategy")
     def identity_source_strategy(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        身份源冲突策略。
+        Identity Source Conflict Policy
         """
         return pulumi.get(self, "identity_source_strategy")
 
@@ -282,7 +282,7 @@ class _UserProvisioningState:
     @pulumi.getter(name="principalId")
     def principal_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        身份id。
+        Identity ID
         """
         return pulumi.get(self, "principal_id")
 
@@ -294,7 +294,7 @@ class _UserProvisioningState:
     @pulumi.getter(name="principalName")
     def principal_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        目标名称。
+        Target Name
         """
         return pulumi.get(self, "principal_name")
 
@@ -306,7 +306,7 @@ class _UserProvisioningState:
     @pulumi.getter(name="principalType")
     def principal_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        身份类型。
+        Identity Type
         """
         return pulumi.get(self, "principal_type")
 
@@ -318,7 +318,7 @@ class _UserProvisioningState:
     @pulumi.getter(name="provisionStatus")
     def provision_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        授权任务状态。Provisioned 授权成功，Provisioning 正在授权，DeleteProvisioning 授权解除中，DeleteProvisioned 授权解除成功
+        Authorization Task Status. Provisioned: authorization successful, Provisioning: authorizing, DeleteProvisioning: revoking authorization, DeleteProvisioned: authorization revoked successfully.
         """
         return pulumi.get(self, "provision_status")
 
@@ -330,7 +330,7 @@ class _UserProvisioningState:
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        目标id。
+        Target ID
         """
         return pulumi.get(self, "target_id")
 
@@ -342,7 +342,7 @@ class _UserProvisioningState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        更新时间。
+        Update Time
         """
         return pulumi.get(self, "updated_time")
 
@@ -354,7 +354,7 @@ class _UserProvisioningState:
     @pulumi.getter(name="userProvisioningId")
     def user_provisioning_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IAM 用户同步任务ID。
+        IAM User Synchronization Task ID
         """
         return pulumi.get(self, "user_provisioning_id")
 
@@ -379,7 +379,7 @@ class UserProvisioning(pulumi.CustomResource):
                  target_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        当您创建好云身份中心用户后，需要授予用户访问到各账号的登录访问权限。
+        After you create a Cloud Identity Center user, you need to grant the user login access to each account.
 
         ## Example Usage
 
@@ -406,14 +406,14 @@ class UserProvisioning(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] deletion_strategy: 删除策略。
-        :param pulumi.Input[builtins.str] description: 任务描述。
-        :param pulumi.Input[builtins.str] duplication_strategy: 用户名冲突策略。
-        :param pulumi.Input[builtins.str] duplication_suffix: 本次同步IAM用户名称后缀。
-        :param pulumi.Input[builtins.str] identity_source_strategy: 身份源冲突策略。
-        :param pulumi.Input[builtins.str] principal_id: 身份id。
-        :param pulumi.Input[builtins.str] principal_type: 身份类型。
-        :param pulumi.Input[builtins.str] target_id: 目标id。
+        :param pulumi.Input[builtins.str] deletion_strategy: Deletion Policy
+        :param pulumi.Input[builtins.str] description: Task Description
+        :param pulumi.Input[builtins.str] duplication_strategy: Username Conflict Policy
+        :param pulumi.Input[builtins.str] duplication_suffix: Suffix for IAM user name in this synchronization
+        :param pulumi.Input[builtins.str] identity_source_strategy: Identity Source Conflict Policy
+        :param pulumi.Input[builtins.str] principal_id: Identity ID
+        :param pulumi.Input[builtins.str] principal_type: Identity Type
+        :param pulumi.Input[builtins.str] target_id: Target ID
         """
         ...
     @overload
@@ -422,7 +422,7 @@ class UserProvisioning(pulumi.CustomResource):
                  args: UserProvisioningArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        当您创建好云身份中心用户后，需要授予用户访问到各账号的登录访问权限。
+        After you create a Cloud Identity Center user, you need to grant the user login access to each account.
 
         ## Example Usage
 
@@ -534,19 +534,19 @@ class UserProvisioning(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] created_time: 创建时间。
-        :param pulumi.Input[builtins.str] deletion_strategy: 删除策略。
-        :param pulumi.Input[builtins.str] description: 任务描述。
-        :param pulumi.Input[builtins.str] duplication_strategy: 用户名冲突策略。
-        :param pulumi.Input[builtins.str] duplication_suffix: 本次同步IAM用户名称后缀。
-        :param pulumi.Input[builtins.str] identity_source_strategy: 身份源冲突策略。
-        :param pulumi.Input[builtins.str] principal_id: 身份id。
-        :param pulumi.Input[builtins.str] principal_name: 目标名称。
-        :param pulumi.Input[builtins.str] principal_type: 身份类型。
-        :param pulumi.Input[builtins.str] provision_status: 授权任务状态。Provisioned 授权成功，Provisioning 正在授权，DeleteProvisioning 授权解除中，DeleteProvisioned 授权解除成功
-        :param pulumi.Input[builtins.str] target_id: 目标id。
-        :param pulumi.Input[builtins.str] updated_time: 更新时间。
-        :param pulumi.Input[builtins.str] user_provisioning_id: IAM 用户同步任务ID。
+        :param pulumi.Input[builtins.str] created_time: Creation Time
+        :param pulumi.Input[builtins.str] deletion_strategy: Deletion Policy
+        :param pulumi.Input[builtins.str] description: Task Description
+        :param pulumi.Input[builtins.str] duplication_strategy: Username Conflict Policy
+        :param pulumi.Input[builtins.str] duplication_suffix: Suffix for IAM user name in this synchronization
+        :param pulumi.Input[builtins.str] identity_source_strategy: Identity Source Conflict Policy
+        :param pulumi.Input[builtins.str] principal_id: Identity ID
+        :param pulumi.Input[builtins.str] principal_name: Target Name
+        :param pulumi.Input[builtins.str] principal_type: Identity Type
+        :param pulumi.Input[builtins.str] provision_status: Authorization Task Status. Provisioned: authorization successful, Provisioning: authorizing, DeleteProvisioning: revoking authorization, DeleteProvisioned: authorization revoked successfully.
+        :param pulumi.Input[builtins.str] target_id: Target ID
+        :param pulumi.Input[builtins.str] updated_time: Update Time
+        :param pulumi.Input[builtins.str] user_provisioning_id: IAM User Synchronization Task ID
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -571,7 +571,7 @@ class UserProvisioning(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        创建时间。
+        Creation Time
         """
         return pulumi.get(self, "created_time")
 
@@ -579,7 +579,7 @@ class UserProvisioning(pulumi.CustomResource):
     @pulumi.getter(name="deletionStrategy")
     def deletion_strategy(self) -> pulumi.Output[builtins.str]:
         """
-        删除策略。
+        Deletion Policy
         """
         return pulumi.get(self, "deletion_strategy")
 
@@ -587,7 +587,7 @@ class UserProvisioning(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        任务描述。
+        Task Description
         """
         return pulumi.get(self, "description")
 
@@ -595,7 +595,7 @@ class UserProvisioning(pulumi.CustomResource):
     @pulumi.getter(name="duplicationStrategy")
     def duplication_strategy(self) -> pulumi.Output[builtins.str]:
         """
-        用户名冲突策略。
+        Username Conflict Policy
         """
         return pulumi.get(self, "duplication_strategy")
 
@@ -603,7 +603,7 @@ class UserProvisioning(pulumi.CustomResource):
     @pulumi.getter(name="duplicationSuffix")
     def duplication_suffix(self) -> pulumi.Output[builtins.str]:
         """
-        本次同步IAM用户名称后缀。
+        Suffix for IAM user name in this synchronization
         """
         return pulumi.get(self, "duplication_suffix")
 
@@ -611,7 +611,7 @@ class UserProvisioning(pulumi.CustomResource):
     @pulumi.getter(name="identitySourceStrategy")
     def identity_source_strategy(self) -> pulumi.Output[builtins.str]:
         """
-        身份源冲突策略。
+        Identity Source Conflict Policy
         """
         return pulumi.get(self, "identity_source_strategy")
 
@@ -619,7 +619,7 @@ class UserProvisioning(pulumi.CustomResource):
     @pulumi.getter(name="principalId")
     def principal_id(self) -> pulumi.Output[builtins.str]:
         """
-        身份id。
+        Identity ID
         """
         return pulumi.get(self, "principal_id")
 
@@ -627,7 +627,7 @@ class UserProvisioning(pulumi.CustomResource):
     @pulumi.getter(name="principalName")
     def principal_name(self) -> pulumi.Output[builtins.str]:
         """
-        目标名称。
+        Target Name
         """
         return pulumi.get(self, "principal_name")
 
@@ -635,7 +635,7 @@ class UserProvisioning(pulumi.CustomResource):
     @pulumi.getter(name="principalType")
     def principal_type(self) -> pulumi.Output[builtins.str]:
         """
-        身份类型。
+        Identity Type
         """
         return pulumi.get(self, "principal_type")
 
@@ -643,7 +643,7 @@ class UserProvisioning(pulumi.CustomResource):
     @pulumi.getter(name="provisionStatus")
     def provision_status(self) -> pulumi.Output[builtins.str]:
         """
-        授权任务状态。Provisioned 授权成功，Provisioning 正在授权，DeleteProvisioning 授权解除中，DeleteProvisioned 授权解除成功
+        Authorization Task Status. Provisioned: authorization successful, Provisioning: authorizing, DeleteProvisioning: revoking authorization, DeleteProvisioned: authorization revoked successfully.
         """
         return pulumi.get(self, "provision_status")
 
@@ -651,7 +651,7 @@ class UserProvisioning(pulumi.CustomResource):
     @pulumi.getter(name="targetId")
     def target_id(self) -> pulumi.Output[builtins.str]:
         """
-        目标id。
+        Target ID
         """
         return pulumi.get(self, "target_id")
 
@@ -659,7 +659,7 @@ class UserProvisioning(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        更新时间。
+        Update Time
         """
         return pulumi.get(self, "updated_time")
 
@@ -667,7 +667,7 @@ class UserProvisioning(pulumi.CustomResource):
     @pulumi.getter(name="userProvisioningId")
     def user_provisioning_id(self) -> pulumi.Output[builtins.str]:
         """
-        IAM 用户同步任务ID。
+        IAM User Synchronization Task ID
         """
         return pulumi.get(self, "user_provisioning_id")
 

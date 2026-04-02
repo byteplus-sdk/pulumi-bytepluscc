@@ -82,7 +82,7 @@ class GetMountPointResult:
     @pulumi.getter
     def clients(self) -> Sequence['outputs.GetMountPointClientResult']:
         """
-        客户端信息。
+        Client information.
         """
         return pulumi.get(self, "clients")
 
@@ -90,7 +90,7 @@ class GetMountPointResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        挂载点创建时间。
+        Mount point creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -98,7 +98,7 @@ class GetMountPointResult:
     @pulumi.getter
     def domain(self) -> builtins.str:
         """
-        DNS 地址。
+        DNS address.
         """
         return pulumi.get(self, "domain")
 
@@ -106,7 +106,7 @@ class GetMountPointResult:
     @pulumi.getter(name="fileSystemId")
     def file_system_id(self) -> builtins.str:
         """
-        文件系统 ID。
+        File system ID.
         """
         return pulumi.get(self, "file_system_id")
 
@@ -122,7 +122,7 @@ class GetMountPointResult:
     @pulumi.getter
     def ip(self) -> builtins.str:
         """
-        挂载点地址。
+        Mount point address.
         """
         return pulumi.get(self, "ip")
 
@@ -130,7 +130,7 @@ class GetMountPointResult:
     @pulumi.getter(name="mountPointId")
     def mount_point_id(self) -> builtins.str:
         """
-        挂载点 ID。
+        Mount point ID.
         """
         return pulumi.get(self, "mount_point_id")
 
@@ -138,7 +138,7 @@ class GetMountPointResult:
     @pulumi.getter(name="mountPointName")
     def mount_point_name(self) -> builtins.str:
         """
-        挂载点名称。
+        Mount point name.
         """
         return pulumi.get(self, "mount_point_name")
 
@@ -146,7 +146,7 @@ class GetMountPointResult:
     @pulumi.getter(name="permissionGroup")
     def permission_group(self) -> 'outputs.GetMountPointPermissionGroupResult':
         """
-        挂载点绑定的权限组信息。
+        Permission group information bound to the mount point.
         """
         return pulumi.get(self, "permission_group")
 
@@ -154,7 +154,7 @@ class GetMountPointResult:
     @pulumi.getter(name="permissionGroupId")
     def permission_group_id(self) -> builtins.str:
         """
-        权限组 ID。
+        Permission group ID.
         """
         return pulumi.get(self, "permission_group_id")
 
@@ -162,7 +162,7 @@ class GetMountPointResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        挂载点状态。取值：Running：运行中。Creating：创建中。Updating：更新中。Error：异常。Deleting：删除中。DeleteError：删除异常。Deleted：已删除。Stopped：已停止。
+        Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
         """
         return pulumi.get(self, "status")
 
@@ -170,7 +170,7 @@ class GetMountPointResult:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> builtins.str:
         """
-        子网 ID。
+        Subnet ID.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -178,7 +178,7 @@ class GetMountPointResult:
     @pulumi.getter(name="subnetName")
     def subnet_name(self) -> builtins.str:
         """
-        子网名称。
+        Subnet name.
         """
         return pulumi.get(self, "subnet_name")
 
@@ -186,7 +186,7 @@ class GetMountPointResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        挂载点更新时间。
+        Mount point update time.
         """
         return pulumi.get(self, "updated_time")
 
@@ -194,7 +194,7 @@ class GetMountPointResult:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> builtins.str:
         """
-        私有网络 ID。
+        Private network ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -202,7 +202,7 @@ class GetMountPointResult:
     @pulumi.getter(name="vpcName")
     def vpc_name(self) -> builtins.str:
         """
-        私有网络名称。
+        Private network name.
         """
         return pulumi.get(self, "vpc_name")
 

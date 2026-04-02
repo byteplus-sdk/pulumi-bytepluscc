@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceResources {
     /**
-     * @return 资源统计响应数据。
+     * @return Resource statistics response data
      * 
      */
     private GetInstanceResourcesStorage storage;
 
     private GetInstanceResources() {}
     /**
-     * @return 资源统计响应数据。
+     * @return Resource statistics response data
      * 
      */
     public GetInstanceResourcesStorage storage() {

@@ -31,19 +31,19 @@ export interface GetGroupArgs {
  */
 export interface GetGroupResult {
     /**
-     * Consumer Group 创建时间。
+     * Consumer Group creation time.
      */
     readonly createdTime: string;
     /**
-     * Consumer Group 描述。
+     * Consumer Group description.
      */
     readonly description: string;
     /**
-     * Consumer Group 的 ID。
+     * Consumer Group ID.
      */
     readonly groupId: string;
     /**
-     * 自定义设置Consumer Group 的名称，约束限制如下：只能由小写英文字符、数字、下划线和中划线（-）组成。长度为 3~64 字符。
+     * Set the Consumer Group name manually. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
      */
     readonly groupName: string;
     /**
@@ -51,27 +51,27 @@ export interface GetGroupResult {
      */
     readonly id: string;
     /**
-     * 所属 BMQ 实例 ID。
+     * BMQ instance ID.
      */
     readonly instanceId: string;
     /**
-     * Consumer Group 所属用户的 ID。
+     * User ID associated with the Consumer Group.
      */
     readonly ownerId: string;
     /**
-     * Consumer Group 所属用户的名称。
+     * Name of the user associated with the Consumer Group.
      */
     readonly ownerName: string;
     /**
-     * 重置消费位点信息。
+     * Reset consumption position information.
      */
     readonly resetInfo: outputs.bmq.GetGroupResetInfo;
     /**
-     * Consumer Group 的状态。
+     * Consumer Group status.
      */
     readonly status: string;
     /**
-     * Topic 列表。
+     * Topic list.
      */
     readonly topicInfos: outputs.bmq.GetGroupTopicInfo[];
 }

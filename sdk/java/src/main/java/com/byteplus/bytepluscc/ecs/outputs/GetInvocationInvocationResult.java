@@ -12,146 +12,146 @@ import java.util.Objects;
 @CustomType
 public final class GetInvocationInvocationResult {
     /**
-     * @return 命令ID。
+     * @return Command ID.
      * 
      */
     private String commandId;
     /**
-     * @return 命令执行的完成时间。
+     * @return Command execution completion time.
      * 
      */
     private String endTime;
     /**
-     * @return 命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+     * @return Error codes for command execution failure. TaskDeliveryTimeout: Indicates command delivery timeout. TaskExecutionTimeout: Indicates command execution timeout. TaskExecutionFailed: Indicates command execution failure.
      * 
      */
     private String errorCode;
     /**
-     * @return 命令执行失败的错误信息。
+     * @return Error message for command execution failure.
      * 
      */
     private String errorMessage;
     /**
-     * @return 脚本执行后的退出状态码。
+     * @return Exit status code after script execution.
      * 
      */
     private Integer exitCode;
     /**
-     * @return 实例ID。
+     * @return Instance ID.
      * 
      */
     private String instanceId;
     /**
-     * @return 任务执行ID。
+     * @return Task execution ID.
      * 
      */
     private String invocationId;
     /**
-     * @return 任务执行结果ID。
+     * @return Task execution result ID.
      * 
      */
     private String invocationResultId;
     /**
-     * @return 单台实例的命令进度状态。
+     * @return Command progress status for a single instance.
      * 
      */
     private String invocationResultStatus;
     /**
-     * @return 经过Base64编码的命令执行后输出信息。
+     * @return Output information after command execution, encoded in Base64.
      * 
      */
     private String output;
     /**
-     * @return 命令在实例中开始执行的时间。
+     * @return Time when the command starts executing in the instance.
      * 
      */
     private String startTime;
     /**
-     * @return 在实例中执行命令的用户名称。
+     * @return User name for executing the command in the instance.
      * 
      */
     private String username;
 
     private GetInvocationInvocationResult() {}
     /**
-     * @return 命令ID。
+     * @return Command ID.
      * 
      */
     public String commandId() {
         return this.commandId;
     }
     /**
-     * @return 命令执行的完成时间。
+     * @return Command execution completion time.
      * 
      */
     public String endTime() {
         return this.endTime;
     }
     /**
-     * @return 命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+     * @return Error codes for command execution failure. TaskDeliveryTimeout: Indicates command delivery timeout. TaskExecutionTimeout: Indicates command execution timeout. TaskExecutionFailed: Indicates command execution failure.
      * 
      */
     public String errorCode() {
         return this.errorCode;
     }
     /**
-     * @return 命令执行失败的错误信息。
+     * @return Error message for command execution failure.
      * 
      */
     public String errorMessage() {
         return this.errorMessage;
     }
     /**
-     * @return 脚本执行后的退出状态码。
+     * @return Exit status code after script execution.
      * 
      */
     public Integer exitCode() {
         return this.exitCode;
     }
     /**
-     * @return 实例ID。
+     * @return Instance ID.
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return 任务执行ID。
+     * @return Task execution ID.
      * 
      */
     public String invocationId() {
         return this.invocationId;
     }
     /**
-     * @return 任务执行结果ID。
+     * @return Task execution result ID.
      * 
      */
     public String invocationResultId() {
         return this.invocationResultId;
     }
     /**
-     * @return 单台实例的命令进度状态。
+     * @return Command progress status for a single instance.
      * 
      */
     public String invocationResultStatus() {
         return this.invocationResultStatus;
     }
     /**
-     * @return 经过Base64编码的命令执行后输出信息。
+     * @return Output information after command execution, encoded in Base64.
      * 
      */
     public String output() {
         return this.output;
     }
     /**
-     * @return 命令在实例中开始执行的时间。
+     * @return Time when the command starts executing in the instance.
      * 
      */
     public String startTime() {
         return this.startTime;
     }
     /**
-     * @return 在实例中执行命令的用户名称。
+     * @return User name for executing the command in the instance.
      * 
      */
     public String username() {

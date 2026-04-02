@@ -15,22 +15,22 @@ import java.util.Objects;
 @CustomType
 public final class GetServerGroupResult {
     /**
-     * @return 后端服务器组的IP地址类型。ipv4：后端服务器组为IPv4类型。ipv6：后端服务器组为IPv6类型。
+     * @return IP address type of the backend server group. ipv4: The backend server group is of IPv4 type. ipv6: The backend server group is of IPv6 type.
      * 
      */
     private String addressIpVersion;
     /**
-     * @return 是否开启全端口转发。on：开启全端口转发。off：关闭全端口转发。
+     * @return Whether to enable all-port forwarding. on: enable all-port forwarding. off: disable all-port forwarding.
      * 
      */
     private String anyPortEnabled;
     /**
-     * @return 后端服务器组的创建时间。
+     * @return Creation time of the backend server group.
      * 
      */
     private String createTime;
     /**
-     * @return 后端服务器组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个符。不填则默认为空字符串。
+     * @return Description of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
      * 
      */
     private String description;
@@ -40,70 +40,70 @@ public final class GetServerGroupResult {
      */
     private String id;
     /**
-     * @return 后端服务器组关联的监听器信息。
+     * @return Listener information associated with the backend server group.
      * 
      */
     private List<GetServerGroupListener> listeners;
     /**
-     * @return 后端服务器组所属的CLB实例ID。
+     * @return CLB instance ID to which the backend server group belongs.
      * 
      */
     private String loadBalancerId;
     /**
-     * @return 后端服务器组的ID。
+     * @return Backend server group ID.
      * 
      */
     private String serverGroupId;
     /**
-     * @return 后端服务器组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。限制为1 ～ 128个字符。不填默认为后端服务器组ID。
+     * @return Name of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the backend server group ID.
      * 
      */
     private String serverGroupName;
     /**
-     * @return 后端服务器组中服务器的信息。
+     * @return Information about servers in the backend server group.
      * 
      */
     private List<GetServerGroupServer> servers;
     /**
-     * @return 标签信息。
+     * @return Tag information.
      * 
      */
     private List<GetServerGroupTag> tags;
     /**
-     * @return 后端服务器组的类型。instance：表示该后端服务器组只能添加云服务器的主网卡或辅助网卡作为后端服务器。ip：表示该后端服务器组只能添加IP地址作为后端服务器。
+     * @return Type of the backend server group. instance: This backend server group can only add the primary or auxiliary network card of a cloud server as backend servers. ip: This backend server group can only add IP addresses as backend servers.
      * 
      */
     private String type;
     /**
-     * @return 后端服务器组的最近操作时间。
+     * @return Last operation time of the backend server group.
      * 
      */
     private String updateTime;
 
     private GetServerGroupResult() {}
     /**
-     * @return 后端服务器组的IP地址类型。ipv4：后端服务器组为IPv4类型。ipv6：后端服务器组为IPv6类型。
+     * @return IP address type of the backend server group. ipv4: The backend server group is of IPv4 type. ipv6: The backend server group is of IPv6 type.
      * 
      */
     public String addressIpVersion() {
         return this.addressIpVersion;
     }
     /**
-     * @return 是否开启全端口转发。on：开启全端口转发。off：关闭全端口转发。
+     * @return Whether to enable all-port forwarding. on: enable all-port forwarding. off: disable all-port forwarding.
      * 
      */
     public String anyPortEnabled() {
         return this.anyPortEnabled;
     }
     /**
-     * @return 后端服务器组的创建时间。
+     * @return Creation time of the backend server group.
      * 
      */
     public String createTime() {
         return this.createTime;
     }
     /**
-     * @return 后端服务器组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个符。不填则默认为空字符串。
+     * @return Description of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
      * 
      */
     public String description() {
@@ -117,56 +117,56 @@ public final class GetServerGroupResult {
         return this.id;
     }
     /**
-     * @return 后端服务器组关联的监听器信息。
+     * @return Listener information associated with the backend server group.
      * 
      */
     public List<GetServerGroupListener> listeners() {
         return this.listeners;
     }
     /**
-     * @return 后端服务器组所属的CLB实例ID。
+     * @return CLB instance ID to which the backend server group belongs.
      * 
      */
     public String loadBalancerId() {
         return this.loadBalancerId;
     }
     /**
-     * @return 后端服务器组的ID。
+     * @return Backend server group ID.
      * 
      */
     public String serverGroupId() {
         return this.serverGroupId;
     }
     /**
-     * @return 后端服务器组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。限制为1 ～ 128个字符。不填默认为后端服务器组ID。
+     * @return Name of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the backend server group ID.
      * 
      */
     public String serverGroupName() {
         return this.serverGroupName;
     }
     /**
-     * @return 后端服务器组中服务器的信息。
+     * @return Information about servers in the backend server group.
      * 
      */
     public List<GetServerGroupServer> servers() {
         return this.servers;
     }
     /**
-     * @return 标签信息。
+     * @return Tag information.
      * 
      */
     public List<GetServerGroupTag> tags() {
         return this.tags;
     }
     /**
-     * @return 后端服务器组的类型。instance：表示该后端服务器组只能添加云服务器的主网卡或辅助网卡作为后端服务器。ip：表示该后端服务器组只能添加IP地址作为后端服务器。
+     * @return Type of the backend server group. instance: This backend server group can only add the primary or auxiliary network card of a cloud server as backend servers. ip: This backend server group can only add IP addresses as backend servers.
      * 
      */
     public String type() {
         return this.type;
     }
     /**
-     * @return 后端服务器组的最近操作时间。
+     * @return Last operation time of the backend server group.
      * 
      */
     public String updateTime() {

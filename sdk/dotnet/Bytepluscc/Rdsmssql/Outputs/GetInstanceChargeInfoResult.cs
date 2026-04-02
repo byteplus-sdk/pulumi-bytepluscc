@@ -15,39 +15,39 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql.Outputs
     public sealed class GetInstanceChargeInfoResult
     {
         /// <summary>
-        /// 预付费场景下是否自动续费。true：自动续费（默认）。false：不自动续费。
+        /// Auto-renewal for prepaid scenarios. true: auto-renew (default). false: do not auto-renew.
         /// </summary>
         public readonly bool AutoRenew;
         /// <summary>
-        /// 计费到期时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        /// Billing expiration time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
         /// </summary>
         public readonly string ChargeEndTime;
         /// <summary>
-        /// 计费开始时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        /// Billing start time, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
         /// </summary>
         public readonly string ChargeStartTime;
         /// <summary>
-        /// 付费状态。取值：Normal：表示实例正常。Overdue：表示实例欠费。Unpaid：表示实例等待支付。
+        /// Payment status. Possible values: Normal: instance is normal. Overdue: instance is overdue. Unpaid: instance is awaiting payment.
         /// </summary>
         public readonly string ChargeStatus;
         /// <summary>
-        /// 付费类型。取值：PostPaid：表示按量付费。PrePaid：表示包年包月。
+        /// Billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription.
         /// </summary>
         public readonly string ChargeType;
         /// <summary>
-        /// 欠费关停时预计释放时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        /// Estimated release time when service is suspended due to overdue payment. Format: yyyy-MM-ddTHH:mm:ssZ (UTC time).
         /// </summary>
         public readonly string OverdueReclaimTime;
         /// <summary>
-        /// 欠费关停时间，格式为 yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        /// Shutdown time due to overdue payment, in the format yyyy-MM-ddTHH:mm:ssZ (UTC time).
         /// </summary>
         public readonly string OverdueTime;
         /// <summary>
-        /// 预付费场景下的购买时长。默认值：1。
+        /// Purchase duration for prepaid scenarios. Default: 1 month.
         /// </summary>
         public readonly int Period;
         /// <summary>
-        /// 预付费场景下的购买周期。Month：表示包月(默认值)。Year：表示包年。
+        /// Purchase cycle for prepaid scenarios. Month: monthly subscription (default). Year: annual subscription.
         /// </summary>
         public readonly string PeriodUnit;
 

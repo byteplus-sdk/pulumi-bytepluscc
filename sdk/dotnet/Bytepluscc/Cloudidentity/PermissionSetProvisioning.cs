@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
 {
     /// <summary>
-    /// 给指定的账号部署权限集。
+    /// Deploy permission set to the specified account
     /// 
     /// ## Example Usage
     /// 
@@ -42,43 +42,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     public partial class PermissionSetProvisioning : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 创建时间。
+        /// Creation time
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 权限集 ID。
+        /// Permission set ID
         /// </summary>
         [Output("permissionSetId")]
         public Output<string> PermissionSetId { get; private set; } = null!;
 
         /// <summary>
-        /// 权限集名。
+        /// Permission set name
         /// </summary>
         [Output("permissionSetName")]
         public Output<string> PermissionSetName { get; private set; } = null!;
 
         /// <summary>
-        /// 权限集状态 Running：运行中,Reprovision Required：需要重新部署,Provision Failed：部署失败,Provisioned：已部署
+        /// Permission set status Running: In progress, Reprovision Required: Redeployment required, Provision Failed: Deployment failed, Provisioned: Deployed
         /// </summary>
         [Output("provisioningStatus")]
         public Output<string> ProvisioningStatus { get; private set; } = null!;
 
         /// <summary>
-        /// 授权的账号 ID。
+        /// Authorized account ID
         /// </summary>
         [Output("targetId")]
         public Output<string> TargetId { get; private set; } = null!;
 
         /// <summary>
-        /// 账号名。
+        /// Account name
         /// </summary>
         [Output("targetName")]
         public Output<string> TargetName { get; private set; } = null!;
 
         /// <summary>
-        /// 更新时间。
+        /// Update time
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
@@ -131,13 +131,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     public sealed class PermissionSetProvisioningArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 权限集 ID。
+        /// Permission set ID
         /// </summary>
         [Input("permissionSetId", required: true)]
         public Input<string> PermissionSetId { get; set; } = null!;
 
         /// <summary>
-        /// 授权的账号 ID。
+        /// Authorized account ID
         /// </summary>
         [Input("targetId", required: true)]
         public Input<string> TargetId { get; set; } = null!;
@@ -151,43 +151,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     public sealed class PermissionSetProvisioningState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 创建时间。
+        /// Creation time
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 权限集 ID。
+        /// Permission set ID
         /// </summary>
         [Input("permissionSetId")]
         public Input<string>? PermissionSetId { get; set; }
 
         /// <summary>
-        /// 权限集名。
+        /// Permission set name
         /// </summary>
         [Input("permissionSetName")]
         public Input<string>? PermissionSetName { get; set; }
 
         /// <summary>
-        /// 权限集状态 Running：运行中,Reprovision Required：需要重新部署,Provision Failed：部署失败,Provisioned：已部署
+        /// Permission set status Running: In progress, Reprovision Required: Redeployment required, Provision Failed: Deployment failed, Provisioned: Deployed
         /// </summary>
         [Input("provisioningStatus")]
         public Input<string>? ProvisioningStatus { get; set; }
 
         /// <summary>
-        /// 授权的账号 ID。
+        /// Authorized account ID
         /// </summary>
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }
 
         /// <summary>
-        /// 账号名。
+        /// Account name
         /// </summary>
         [Input("targetName")]
         public Input<string>? TargetName { get; set; }
 
         /// <summary>
-        /// 更新时间。
+        /// Update time
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }

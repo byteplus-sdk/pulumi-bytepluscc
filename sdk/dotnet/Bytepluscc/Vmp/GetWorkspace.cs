@@ -65,15 +65,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp
     public sealed class GetWorkspaceResult
     {
         /// <summary>
-        /// 工作区创建时间，RFC3339 格式。
+        /// Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+        /// </summary>
+        public readonly string AuthType;
+        /// <summary>
+        /// Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+        /// </summary>
+        public readonly string BearerToken;
+        /// <summary>
+        /// Workspace creation time, RFC3339 format
         /// </summary>
         public readonly string CreateTime;
         /// <summary>
-        /// 是否开启工作区删除保护,true：开启，false：关闭。
+        /// Enable workspace deletion protection: true for enabled, false for disabled
         /// </summary>
         public readonly bool DeleteProtectionEnabled;
         /// <summary>
-        /// 工作区描述信息，字符串形式，长度限制为 0～200。
+        /// Workspace description, string, length limit 0–200
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -81,68 +89,100 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 工作区规格详情。
+        /// Workspace specification details
         /// </summary>
         public readonly Outputs.GetWorkspaceInstanceTypeResult InstanceType;
         /// <summary>
-        /// 工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
+        /// Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
         /// </summary>
         public readonly string InstanceTypeId;
         /// <summary>
-        /// 工作区名称，字符串形式，长度限制为 1～100。
+        /// Workspace name, string, length limit 1–100
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// 工作区预期欠费回收时间，RFC3339 格式。
+        /// Workspace expected overdue recovery time, RFC3339 format
         /// </summary>
         public readonly string OverdueReclaimTime;
         /// <summary>
-        /// 工作区 BasicAuth 密码。
+        /// Workspace BasicAuth password
         /// </summary>
         public readonly string Password;
         /// <summary>
-        /// 项目名称。
+        /// Project name
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// 工作区 Push Gateway URL 地址。
+        /// Workspace public Push Gateway URL address.
+        /// </summary>
+        public readonly string PrometheusPushEndpoint;
+        /// <summary>
+        /// Workspace Push Gateway URL address
         /// </summary>
         public readonly string PrometheusPushIntranetEndpoint;
         /// <summary>
-        /// 工作区 Query URL 地址。
+        /// Workspace public Query URL address.
+        /// </summary>
+        public readonly string PrometheusQueryEndpoint;
+        /// <summary>
+        /// Workspace Query URL address
         /// </summary>
         public readonly string PrometheusQueryIntranetEndpoint;
         /// <summary>
-        /// 工作区 RemoteWrite URL 地址。
+        /// Workspace public RemoteWrite URL address.
+        /// </summary>
+        public readonly string PrometheusWriteEndpoint;
+        /// <summary>
+        /// Workspace RemoteWrite URL address
         /// </summary>
         public readonly string PrometheusWriteIntranetEndpoint;
         /// <summary>
-        /// 工作区配额详情。
+        /// Whether to enable workspace public access capability. true: enabled, false: disabled.
+        /// </summary>
+        public readonly bool PublicAccessEnabled;
+        /// <summary>
+        /// Workspace public Query bandwidth (Mbps).
+        /// </summary>
+        public readonly int PublicQueryBandwidth;
+        /// <summary>
+        /// Workspace public RemoteWrite bandwidth (Mbps).
+        /// </summary>
+        public readonly int PublicWriteBandwidth;
+        /// <summary>
+        /// Workspace quota details
         /// </summary>
         public readonly Outputs.GetWorkspaceQuotaResult Quota;
         /// <summary>
-        /// 工作区状态，取值：Creating：创建中 Active：正常 Updating：更新中 Deleting：删除中 OverdueShutted：欠费关停 Resuming：恢复中 Error：错误。
+        /// Workspace public Query search latency offset.
+        /// </summary>
+        public readonly string SearchLatencyOffset;
+        /// <summary>
+        /// Workspace status. Values: Creating: creating Active: active Updating: updating Deleting: deleting OverdueShutted: overdue shutdown Resuming: resuming Error: error
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// 工作区标签。
+        /// Workspace tags
         /// </summary>
         public readonly ImmutableArray<Outputs.GetWorkspaceTagResult> Tags;
         /// <summary>
-        /// 工作区用量。
+        /// Workspace usage
         /// </summary>
         public readonly Outputs.GetWorkspaceUsageResult Usage;
         /// <summary>
-        /// 工作区 BasicAuth 用户名。
+        /// Workspace BasicAuth username
         /// </summary>
         public readonly string Username;
         /// <summary>
-        /// 工作区Id。
+        /// Workspace ID
         /// </summary>
         public readonly string WorkspaceId;
 
         [OutputConstructor]
         private GetWorkspaceResult(
+            string authType,
+
+            string bearerToken,
+
             string createTime,
 
             bool deleteProtectionEnabled,
@@ -163,13 +203,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp
 
             string projectName,
 
+            string prometheusPushEndpoint,
+
             string prometheusPushIntranetEndpoint,
+
+            string prometheusQueryEndpoint,
 
             string prometheusQueryIntranetEndpoint,
 
+            string prometheusWriteEndpoint,
+
             string prometheusWriteIntranetEndpoint,
 
+            bool publicAccessEnabled,
+
+            int publicQueryBandwidth,
+
+            int publicWriteBandwidth,
+
             Outputs.GetWorkspaceQuotaResult quota,
+
+            string searchLatencyOffset,
 
             string status,
 
@@ -181,6 +235,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp
 
             string workspaceId)
         {
+            AuthType = authType;
+            BearerToken = bearerToken;
             CreateTime = createTime;
             DeleteProtectionEnabled = deleteProtectionEnabled;
             Description = description;
@@ -191,10 +247,17 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp
             OverdueReclaimTime = overdueReclaimTime;
             Password = password;
             ProjectName = projectName;
+            PrometheusPushEndpoint = prometheusPushEndpoint;
             PrometheusPushIntranetEndpoint = prometheusPushIntranetEndpoint;
+            PrometheusQueryEndpoint = prometheusQueryEndpoint;
             PrometheusQueryIntranetEndpoint = prometheusQueryIntranetEndpoint;
+            PrometheusWriteEndpoint = prometheusWriteEndpoint;
             PrometheusWriteIntranetEndpoint = prometheusWriteIntranetEndpoint;
+            PublicAccessEnabled = publicAccessEnabled;
+            PublicQueryBandwidth = publicQueryBandwidth;
+            PublicWriteBandwidth = publicWriteBandwidth;
             Quota = quota;
+            SearchLatencyOffset = searchLatencyOffset;
             Status = status;
             Tags = tags;
             Usage = usage;

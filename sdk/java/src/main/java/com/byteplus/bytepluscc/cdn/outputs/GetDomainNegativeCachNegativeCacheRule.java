@@ -13,50 +13,50 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainNegativeCachNegativeCacheRule {
     /**
-     * @return 表示缓存的行为。当前您仅可指定 cache。cache 表示行为是缓存。
+     * @return Represents the cache behavior. Currently, you can only specify cache. cache means the behavior is caching.
      * 
      */
     private String action;
     /**
-     * @return 表示内容分发网络对请求的文件匹配 ConditionRule 时，是否忽略大小写。该参数有以下取值：true：表示忽略大小写。false：表示不忽略大小写。该参数的默认值是 false。
+     * @return Indicates whether the CDN ignores case when matching files in a request with ConditionRule. The parameter has the following options: true: ignore case. false: do not ignore case. The default value is false.
      * 
      */
     private Boolean ignoreCase;
     /**
-     * @return 指定一个需要缓存的状态码。状态码的范围是 400-599。您也可以指定 4xx 或者 5xx。4xx 表示 400 到 499 之间的所有状态码。5xx 表示 500 到 599 之间的所有状态码。
+     * @return Specify a status code to cache. The status code range is 400–599. You can also specify 4xx or 5xx. 4xx refers to all status codes from 400 to 499. 5xx refers to all status codes from 500 to 599.
      * 
      */
     private String statusCode;
     /**
-     * @return 表示状态码的缓存时间。单位是秒。时间的范围是 1-315,360,000。315,360,000 表示 10年。
+     * @return Indicates the cache duration for status codes, in seconds. The range is 1–315,360,000. 315,360,000 means 10 years.
      * 
      */
     private Integer ttl;
 
     private GetDomainNegativeCachNegativeCacheRule() {}
     /**
-     * @return 表示缓存的行为。当前您仅可指定 cache。cache 表示行为是缓存。
+     * @return Represents the cache behavior. Currently, you can only specify cache. cache means the behavior is caching.
      * 
      */
     public String action() {
         return this.action;
     }
     /**
-     * @return 表示内容分发网络对请求的文件匹配 ConditionRule 时，是否忽略大小写。该参数有以下取值：true：表示忽略大小写。false：表示不忽略大小写。该参数的默认值是 false。
+     * @return Indicates whether the CDN ignores case when matching files in a request with ConditionRule. The parameter has the following options: true: ignore case. false: do not ignore case. The default value is false.
      * 
      */
     public Boolean ignoreCase() {
         return this.ignoreCase;
     }
     /**
-     * @return 指定一个需要缓存的状态码。状态码的范围是 400-599。您也可以指定 4xx 或者 5xx。4xx 表示 400 到 499 之间的所有状态码。5xx 表示 500 到 599 之间的所有状态码。
+     * @return Specify a status code to cache. The status code range is 400–599. You can also specify 4xx or 5xx. 4xx refers to all status codes from 400 to 499. 5xx refers to all status codes from 500 to 599.
      * 
      */
     public String statusCode() {
         return this.statusCode;
     }
     /**
-     * @return 表示状态码的缓存时间。单位是秒。时间的范围是 1-315,360,000。315,360,000 表示 10年。
+     * @return Indicates the cache duration for status codes, in seconds. The range is 1–315,360,000. 315,360,000 means 10 years.
      * 
      */
     public Integer ttl() {

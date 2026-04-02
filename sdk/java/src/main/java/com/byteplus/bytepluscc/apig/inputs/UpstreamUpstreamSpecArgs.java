@@ -22,14 +22,14 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
     public static final UpstreamUpstreamSpecArgs Empty = new UpstreamUpstreamSpecArgs();
 
     /**
-     * AI模型代理。
+     * AI model proxy
      * 
      */
     @Import(name="aiProvider")
     private @Nullable Output<UpstreamUpstreamSpecAiProviderArgs> aiProvider;
 
     /**
-     * @return AI模型代理。
+     * @return AI model proxy
      * 
      */
     public Optional<Output<UpstreamUpstreamSpecAiProviderArgs>> aiProvider() {
@@ -37,14 +37,14 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 固定域名。
+     * Fixed domain name
      * 
      */
     @Import(name="domain")
     private @Nullable Output<UpstreamUpstreamSpecDomainArgs> domain;
 
     /**
-     * @return 固定域名。
+     * @return Fixed domain name
      * 
      */
     public Optional<Output<UpstreamUpstreamSpecDomainArgs>> domain() {
@@ -59,14 +59,14 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 容器服务。
+     * Container Service
      * 
      */
     @Import(name="k8SService")
     private @Nullable Output<UpstreamUpstreamSpecK8SServiceArgs> k8SService;
 
     /**
-     * @return 容器服务。
+     * @return Container Service
      * 
      */
     public Optional<Output<UpstreamUpstreamSpecK8SServiceArgs>> k8SService() {
@@ -74,14 +74,14 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 注册中心。
+     * Registry Center
      * 
      */
     @Import(name="nacosService")
     private @Nullable Output<UpstreamUpstreamSpecNacosServiceArgs> nacosService;
 
     /**
-     * @return 注册中心。
+     * @return Registry Center
      * 
      */
     public Optional<Output<UpstreamUpstreamSpecNacosServiceArgs>> nacosService() {
@@ -89,14 +89,14 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 函数服务。
+     * Function service
      * 
      */
     @Import(name="veFaas")
     private @Nullable Output<UpstreamUpstreamSpecVeFaasArgs> veFaas;
 
     /**
-     * @return 函数服务。
+     * @return Function service
      * 
      */
     public Optional<Output<UpstreamUpstreamSpecVeFaasArgs>> veFaas() {
@@ -133,7 +133,7 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param aiProvider AI模型代理。
+         * @param aiProvider AI model proxy
          * 
          * @return builder
          * 
@@ -144,7 +144,7 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param aiProvider AI模型代理。
+         * @param aiProvider AI model proxy
          * 
          * @return builder
          * 
@@ -154,7 +154,7 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param domain 固定域名。
+         * @param domain Fixed domain name
          * 
          * @return builder
          * 
@@ -165,7 +165,7 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param domain 固定域名。
+         * @param domain Fixed domain name
          * 
          * @return builder
          * 
@@ -188,7 +188,7 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param k8SService 容器服务。
+         * @param k8SService Container Service
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param k8SService 容器服务。
+         * @param k8SService Container Service
          * 
          * @return builder
          * 
@@ -209,7 +209,7 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param nacosService 注册中心。
+         * @param nacosService Registry Center
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param nacosService 注册中心。
+         * @param nacosService Registry Center
          * 
          * @return builder
          * 
@@ -230,7 +230,7 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param veFaas 函数服务。
+         * @param veFaas Function service
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param veFaas 函数服务。
+         * @param veFaas Function service
          * 
          * @return builder
          * 

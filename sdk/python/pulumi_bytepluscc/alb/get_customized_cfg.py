@@ -67,7 +67,7 @@ class GetCustomizedCfgResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        个性化配置的创建时间。
+        Creation time of the personalized configuration.
         """
         return pulumi.get(self, "created_time")
 
@@ -75,7 +75,8 @@ class GetCustomizedCfgResult:
     @pulumi.getter(name="customizedCfgContent")
     def customized_cfg_content(self) -> builtins.str:
         """
-        个性化配置项内容。具体规则如下：长度不超过4096字符。空格和分号需要转义。不同的配置项之间通过";\\r\\n"分隔，配置项不能重复。当前支持的配置项有ssl*protocols、ssl*ciphers、client*max*body*size、keepalive*timeout、proxy*request*buffering、proxy*connect*timeout、add*header、client*header*timeout、proxy*read*timeout、proxy*send*timeout、client*body*timeout、send*timeout和ssl*verify*depth。详细信息参见官网文档。
+        Content of the personalized configuration item. Specific rules: Length must not exceed 4096 characters. Spaces and semicolons must be escaped. Different configuration items are separated by ';
+        '. Configuration items cannot be duplicated. Currently supported configuration items include ssl*protocols, ssl*ciphers, client*max*body*size, keepalive*timeout, proxy*request*buffering, proxy*connect*timeout, add*header, client*header*timeout, proxy*read*timeout, proxy*send*timeout, client*body*timeout, send*timeout, and ssl*verify*depth. For details, see the official documentation.
         """
         return pulumi.get(self, "customized_cfg_content")
 
@@ -83,7 +84,7 @@ class GetCustomizedCfgResult:
     @pulumi.getter(name="customizedCfgId")
     def customized_cfg_id(self) -> builtins.str:
         """
-        个性化配置的 ID 。
+        Personalized configuration ID.
         """
         return pulumi.get(self, "customized_cfg_id")
 
@@ -91,7 +92,7 @@ class GetCustomizedCfgResult:
     @pulumi.getter(name="customizedCfgName")
     def customized_cfg_name(self) -> builtins.str:
         """
-        个性化配置的名字。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。长度限制为1 ～ 128个字符。
+        Name of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
         """
         return pulumi.get(self, "customized_cfg_name")
 
@@ -99,7 +100,7 @@ class GetCustomizedCfgResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        个性化配置的描述。具体规则如下：不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）长度限制为1 ～ 255个字符。不填默认为空字符串。
+        Description of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
         """
         return pulumi.get(self, "description")
 
@@ -115,7 +116,7 @@ class GetCustomizedCfgResult:
     @pulumi.getter
     def listeners(self) -> Sequence['outputs.GetCustomizedCfgListenerResult']:
         """
-        个性化配置关联的监听器列表。
+        List of listeners associated with the personalized configuration.
         """
         return pulumi.get(self, "listeners")
 
@@ -123,7 +124,7 @@ class GetCustomizedCfgResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        个性化配置所属项目名称。
+        Project name to which the personalized configuration belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -131,7 +132,7 @@ class GetCustomizedCfgResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        个性化配置状态。包括Active、Configuring、Creating或者Deleting。
+        Status of the personalized configuration. Includes Active, Configuring, Creating, or Deleting.
         """
         return pulumi.get(self, "status")
 
@@ -139,7 +140,7 @@ class GetCustomizedCfgResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetCustomizedCfgTagResult']:
         """
-        标签列表。
+        Tag list.
         """
         return pulumi.get(self, "tags")
 
@@ -147,7 +148,7 @@ class GetCustomizedCfgResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        个性化配置的最近操作时间。
+        Last operation time of the personalized configuration.
         """
         return pulumi.get(self, "updated_time")
 

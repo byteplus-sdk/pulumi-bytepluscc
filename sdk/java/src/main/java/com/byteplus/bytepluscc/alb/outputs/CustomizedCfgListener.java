@@ -13,50 +13,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class CustomizedCfgListener {
     /**
-     * @return 监听器的 ID。
+     * @return Listener ID.
      * 
      */
     private @Nullable String listenerId;
     /**
-     * @return 监听器的名称。
+     * @return Listener name.
      * 
      */
     private @Nullable String listenerName;
     /**
-     * @return 监听器的端口。
+     * @return Listener port.
      * 
      */
     private @Nullable Integer port;
     /**
-     * @return 监听器的协议。
+     * @return Listener protocol.
      * 
      */
     private @Nullable String protocol;
 
     private CustomizedCfgListener() {}
     /**
-     * @return 监听器的 ID。
+     * @return Listener ID.
      * 
      */
     public Optional<String> listenerId() {
         return Optional.ofNullable(this.listenerId);
     }
     /**
-     * @return 监听器的名称。
+     * @return Listener name.
      * 
      */
     public Optional<String> listenerName() {
         return Optional.ofNullable(this.listenerName);
     }
     /**
-     * @return 监听器的端口。
+     * @return Listener port.
      * 
      */
     public Optional<Integer> port() {
         return Optional.ofNullable(this.port);
     }
     /**
-     * @return 监听器的协议。
+     * @return Listener protocol.
      * 
      */
     public Optional<String> protocol() {

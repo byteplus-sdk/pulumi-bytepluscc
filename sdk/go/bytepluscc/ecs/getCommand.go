@@ -30,41 +30,41 @@ type LookupCommandArgs struct {
 
 // A collection of values returned by getCommand.
 type LookupCommandResult struct {
-	// 命令内容。请根据ContentEncoding参数传入相应命令内容。命令内容不能超过16KB。
+	// Command content. Enter the command content according to the ContentEncoding parameter. Command content must not exceed 16 KB.
 	CommandContent string `pulumi:"commandContent"`
-	// 自定义命令ID。
+	// Custom command ID.
 	CommandId string `pulumi:"commandId"`
-	// 命令内容是否经过Base64编码处理。Base64（默认）：经过Base64编码处理。PlainText： 未进行编码处理。
+	// Whether the command content is processed with Base64 encoding. Base64 (default): Processed with Base64 encoding. PlainText: Not encoded.
 	ContentEncoding string `pulumi:"contentEncoding"`
-	// 创建时间。
+	// Creation time.
 	CreatedTime string `pulumi:"createdTime"`
-	// 命令描述，默认为空字符串。字符长度0~256。不限制特殊字符。
+	// Command description. Defaults to an empty string. Character length: 0~256. No restriction on special characters.
 	Description string `pulumi:"description"`
-	// 创建的命令是否使用自定义参数。false：默认，表示不使用自定义参数。true：表示使用自定义参数。
+	// Whether the created command uses custom parameters. false: Default, does not use custom parameters. true: Uses custom parameters.
 	EnableParameter bool `pulumi:"enableParameter"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 命令被调用次数。
+	// Number of times the command has been invoked.
 	InvocationTimes int `pulumi:"invocationTimes"`
-	// 命令名称。字符长度1~32。不限制特殊字符。
+	// Command name. Character length: 1~32. No restriction on special characters.
 	Name string `pulumi:"name"`
-	// 自定义参数定义信息。
+	// Custom parameter definition information.
 	ParameterDefinitions []GetCommandParameterDefinition `pulumi:"parameterDefinitions"`
-	// 资源所属项目，一个资源只能归属于一个项目。
+	// Project to which the resource belongs. Each resource can belong to only one project.
 	ProjectName string `pulumi:"projectName"`
-	// 命令的提供方。
+	// Command provider.
 	ProviderName string `pulumi:"providerName"`
-	// 标签键值对。
+	// Tag key-value pair.
 	Tags []GetCommandTag `pulumi:"tags"`
-	// 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。取值范围：30~86400。默认值：60。
+	// Maximum timeout for executing the created command on ECS instances, in seconds. Value range: 30~86400. Default: 60.
 	Timeout int `pulumi:"timeout"`
-	// 命令的类型。Shell：表示创建一个在Linux实例中运行的Shell脚本。Python：表示创建一个Python脚本。Bat：表示创建一个Bat脚本。PowerShell：表示创建一个PowerShell脚本。
+	// Command type. Shell: Creates a Shell script for Linux instances. Python: Creates a Python script. Bat: Creates a Bat script. PowerShell: Creates a PowerShell script.
 	Type string `pulumi:"type"`
-	// 更新时间。
+	// Update time.
 	UpdatedTime string `pulumi:"updatedTime"`
-	// 执行命令时的用户名。
+	// Username for executing the command.
 	Username string `pulumi:"username"`
-	// 创建的命令在ECS实例中运行的目录。
+	// Directory where the created command runs on ECS instances.
 	WorkingDir string `pulumi:"workingDir"`
 }
 
@@ -102,32 +102,32 @@ func (o LookupCommandResultOutput) ToLookupCommandResultOutputWithContext(ctx co
 	return o
 }
 
-// 命令内容。请根据ContentEncoding参数传入相应命令内容。命令内容不能超过16KB。
+// Command content. Enter the command content according to the ContentEncoding parameter. Command content must not exceed 16 KB.
 func (o LookupCommandResultOutput) CommandContent() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCommandResult) string { return v.CommandContent }).(pulumi.StringOutput)
 }
 
-// 自定义命令ID。
+// Custom command ID.
 func (o LookupCommandResultOutput) CommandId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCommandResult) string { return v.CommandId }).(pulumi.StringOutput)
 }
 
-// 命令内容是否经过Base64编码处理。Base64（默认）：经过Base64编码处理。PlainText： 未进行编码处理。
+// Whether the command content is processed with Base64 encoding. Base64 (default): Processed with Base64 encoding. PlainText: Not encoded.
 func (o LookupCommandResultOutput) ContentEncoding() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCommandResult) string { return v.ContentEncoding }).(pulumi.StringOutput)
 }
 
-// 创建时间。
+// Creation time.
 func (o LookupCommandResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCommandResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 命令描述，默认为空字符串。字符长度0~256。不限制特殊字符。
+// Command description. Defaults to an empty string. Character length: 0~256. No restriction on special characters.
 func (o LookupCommandResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCommandResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 创建的命令是否使用自定义参数。false：默认，表示不使用自定义参数。true：表示使用自定义参数。
+// Whether the created command uses custom parameters. false: Default, does not use custom parameters. true: Uses custom parameters.
 func (o LookupCommandResultOutput) EnableParameter() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupCommandResult) bool { return v.EnableParameter }).(pulumi.BoolOutput)
 }
@@ -137,57 +137,57 @@ func (o LookupCommandResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCommandResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 命令被调用次数。
+// Number of times the command has been invoked.
 func (o LookupCommandResultOutput) InvocationTimes() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupCommandResult) int { return v.InvocationTimes }).(pulumi.IntOutput)
 }
 
-// 命令名称。字符长度1~32。不限制特殊字符。
+// Command name. Character length: 1~32. No restriction on special characters.
 func (o LookupCommandResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCommandResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 自定义参数定义信息。
+// Custom parameter definition information.
 func (o LookupCommandResultOutput) ParameterDefinitions() GetCommandParameterDefinitionArrayOutput {
 	return o.ApplyT(func(v LookupCommandResult) []GetCommandParameterDefinition { return v.ParameterDefinitions }).(GetCommandParameterDefinitionArrayOutput)
 }
 
-// 资源所属项目，一个资源只能归属于一个项目。
+// Project to which the resource belongs. Each resource can belong to only one project.
 func (o LookupCommandResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCommandResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 命令的提供方。
+// Command provider.
 func (o LookupCommandResultOutput) ProviderName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCommandResult) string { return v.ProviderName }).(pulumi.StringOutput)
 }
 
-// 标签键值对。
+// Tag key-value pair.
 func (o LookupCommandResultOutput) Tags() GetCommandTagArrayOutput {
 	return o.ApplyT(func(v LookupCommandResult) []GetCommandTag { return v.Tags }).(GetCommandTagArrayOutput)
 }
 
-// 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。取值范围：30~86400。默认值：60。
+// Maximum timeout for executing the created command on ECS instances, in seconds. Value range: 30~86400. Default: 60.
 func (o LookupCommandResultOutput) Timeout() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupCommandResult) int { return v.Timeout }).(pulumi.IntOutput)
 }
 
-// 命令的类型。Shell：表示创建一个在Linux实例中运行的Shell脚本。Python：表示创建一个Python脚本。Bat：表示创建一个Bat脚本。PowerShell：表示创建一个PowerShell脚本。
+// Command type. Shell: Creates a Shell script for Linux instances. Python: Creates a Python script. Bat: Creates a Bat script. PowerShell: Creates a PowerShell script.
 func (o LookupCommandResultOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCommandResult) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// 更新时间。
+// Update time.
 func (o LookupCommandResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCommandResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// 执行命令时的用户名。
+// Username for executing the command.
 func (o LookupCommandResultOutput) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCommandResult) string { return v.Username }).(pulumi.StringOutput)
 }
 
-// 创建的命令在ECS实例中运行的目录。
+// Directory where the created command runs on ECS instances.
 func (o LookupCommandResultOutput) WorkingDir() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCommandResult) string { return v.WorkingDir }).(pulumi.StringOutput)
 }

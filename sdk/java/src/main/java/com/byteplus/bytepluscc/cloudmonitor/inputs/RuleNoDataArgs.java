@@ -17,14 +17,14 @@ public final class RuleNoDataArgs extends com.pulumi.resources.ResourceArgs {
     public static final RuleNoDataArgs Empty = new RuleNoDataArgs();
 
     /**
-     * 是否开启无数据告警。取值：true：开启无数据告警。false：（默认）关闭无数据告警。
+     * Enable no data alert. Values: true: enable no data alert. false (default): disable no data alert.
      * 
      */
     @Import(name="enable")
     private @Nullable Output<Boolean> enable;
 
     /**
-     * @return 是否开启无数据告警。取值：true：开启无数据告警。false：（默认）关闭无数据告警。
+     * @return Enable no data alert. Values: true: enable no data alert. false (default): disable no data alert.
      * 
      */
     public Optional<Output<Boolean>> enable() {
@@ -32,14 +32,14 @@ public final class RuleNoDataArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 无数据告警触发阈值，如果在配置的阈值周期内检测无数据上报，则会触发无数据告警。当Enable配置为true时，该字段为必填。整数形式，取值范围为 3～20。
+     * No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
      * 
      */
     @Import(name="evaluationCount")
     private @Nullable Output<Integer> evaluationCount;
 
     /**
-     * @return 无数据告警触发阈值，如果在配置的阈值周期内检测无数据上报，则会触发无数据告警。当Enable配置为true时，该字段为必填。整数形式，取值范围为 3～20。
+     * @return No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
      * 
      */
     public Optional<Output<Integer>> evaluationCount() {
@@ -72,7 +72,7 @@ public final class RuleNoDataArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enable 是否开启无数据告警。取值：true：开启无数据告警。false：（默认）关闭无数据告警。
+         * @param enable Enable no data alert. Values: true: enable no data alert. false (default): disable no data alert.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class RuleNoDataArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enable 是否开启无数据告警。取值：true：开启无数据告警。false：（默认）关闭无数据告警。
+         * @param enable Enable no data alert. Values: true: enable no data alert. false (default): disable no data alert.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class RuleNoDataArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param evaluationCount 无数据告警触发阈值，如果在配置的阈值周期内检测无数据上报，则会触发无数据告警。当Enable配置为true时，该字段为必填。整数形式，取值范围为 3～20。
+         * @param evaluationCount No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class RuleNoDataArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param evaluationCount 无数据告警触发阈值，如果在配置的阈值周期内检测无数据上报，则会触发无数据告警。当Enable配置为true时，该字段为必填。整数形式，取值范围为 3～20。
+         * @param evaluationCount No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
          * 
          * @return builder
          * 

@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 通过在VPN连接的IPsec连接和中转路由器之间建立连接，可以实现VPN连通的网络与中转路由器的私网互通。
+// By establishing a connection between the IPsec connection of the VPN and the transit router, you can enable communication between the VPN-connected network and the private network of the transit router.
 //
 // ## Example Usage
 //
@@ -59,32 +59,32 @@ import (
 type VpnAttachment struct {
 	pulumi.CustomResourceState
 
-	// 是否自动同步TR路由到网络实例路由表中。
+	// Whether to automatically sync TR routes to the network instance route table.
 	AutoPublishRouteEnabled pulumi.BoolOutput `pulumi:"autoPublishRouteEnabled"`
-	// 创建时间。
+	// Creation time.
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// 网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+	// Network instance connection description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// 是否开启健康检查收敛路由功能。true：是。仅当IPsec连接开启健康检查功能时生效，且只支持收敛静态路由，不支持收敛BGP路由。false：否。
+	// Whether to enable health check route convergence. true: Yes. Effective only when the IPsec connection has health check enabled; supports convergence of static routes only, not BGP routes. false: No.
 	HealthCheckRevokeRouteEnabled pulumi.BoolOutput `pulumi:"healthCheckRevokeRouteEnabled"`
-	// 是否开启IPv6功能。
+	// Whether to enable IPv6.
 	Ipv6Enabled pulumi.BoolOutput `pulumi:"ipv6Enabled"`
-	// 网络实例连接的状态。Creating：创建中。Deleting：删除中。Pending：配置中。Available：可用。
+	// Network instance connection status. Creating: being created. Deleting: being deleted. Pending: being configured. Available: available.
 	Status pulumi.StringOutput         `pulumi:"status"`
 	Tags   VpnAttachmentTagArrayOutput `pulumi:"tags"`
-	// 网络实例连接的ID。
+	// Network instance connection ID.
 	TransitRouterAttachmentId pulumi.StringOutput `pulumi:"transitRouterAttachmentId"`
-	// 网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
+	// Network instance connection name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
 	TransitRouterAttachmentName pulumi.StringOutput `pulumi:"transitRouterAttachmentName"`
-	// 中转路由器实例的ID。
+	// Transit router instance ID.
 	TransitRouterId pulumi.StringOutput `pulumi:"transitRouterId"`
-	// 关联的TR路由表ID。
+	// Associated TR route table ID.
 	TransitRouterRouteTableId pulumi.StringOutput `pulumi:"transitRouterRouteTableId"`
-	// 更新时间。
+	// Update time.
 	UpdatedTime pulumi.StringOutput `pulumi:"updatedTime"`
-	// IPsec连接的ID。
+	// IPsec connection ID.
 	VpnConnectionId pulumi.StringOutput `pulumi:"vpnConnectionId"`
-	// IPsec连接所属可用区的ID。
+	// ID of the availability zone to which the IPsec connection belongs.
 	ZoneId pulumi.StringOutput `pulumi:"zoneId"`
 }
 
@@ -127,62 +127,62 @@ func GetVpnAttachment(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering VpnAttachment resources.
 type vpnAttachmentState struct {
-	// 是否自动同步TR路由到网络实例路由表中。
+	// Whether to automatically sync TR routes to the network instance route table.
 	AutoPublishRouteEnabled *bool `pulumi:"autoPublishRouteEnabled"`
-	// 创建时间。
+	// Creation time.
 	CreatedTime *string `pulumi:"createdTime"`
-	// 网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+	// Network instance connection description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
 	Description *string `pulumi:"description"`
-	// 是否开启健康检查收敛路由功能。true：是。仅当IPsec连接开启健康检查功能时生效，且只支持收敛静态路由，不支持收敛BGP路由。false：否。
+	// Whether to enable health check route convergence. true: Yes. Effective only when the IPsec connection has health check enabled; supports convergence of static routes only, not BGP routes. false: No.
 	HealthCheckRevokeRouteEnabled *bool `pulumi:"healthCheckRevokeRouteEnabled"`
-	// 是否开启IPv6功能。
+	// Whether to enable IPv6.
 	Ipv6Enabled *bool `pulumi:"ipv6Enabled"`
-	// 网络实例连接的状态。Creating：创建中。Deleting：删除中。Pending：配置中。Available：可用。
+	// Network instance connection status. Creating: being created. Deleting: being deleted. Pending: being configured. Available: available.
 	Status *string            `pulumi:"status"`
 	Tags   []VpnAttachmentTag `pulumi:"tags"`
-	// 网络实例连接的ID。
+	// Network instance connection ID.
 	TransitRouterAttachmentId *string `pulumi:"transitRouterAttachmentId"`
-	// 网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
+	// Network instance connection name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
 	TransitRouterAttachmentName *string `pulumi:"transitRouterAttachmentName"`
-	// 中转路由器实例的ID。
+	// Transit router instance ID.
 	TransitRouterId *string `pulumi:"transitRouterId"`
-	// 关联的TR路由表ID。
+	// Associated TR route table ID.
 	TransitRouterRouteTableId *string `pulumi:"transitRouterRouteTableId"`
-	// 更新时间。
+	// Update time.
 	UpdatedTime *string `pulumi:"updatedTime"`
-	// IPsec连接的ID。
+	// IPsec connection ID.
 	VpnConnectionId *string `pulumi:"vpnConnectionId"`
-	// IPsec连接所属可用区的ID。
+	// ID of the availability zone to which the IPsec connection belongs.
 	ZoneId *string `pulumi:"zoneId"`
 }
 
 type VpnAttachmentState struct {
-	// 是否自动同步TR路由到网络实例路由表中。
+	// Whether to automatically sync TR routes to the network instance route table.
 	AutoPublishRouteEnabled pulumi.BoolPtrInput
-	// 创建时间。
+	// Creation time.
 	CreatedTime pulumi.StringPtrInput
-	// 网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+	// Network instance connection description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
 	Description pulumi.StringPtrInput
-	// 是否开启健康检查收敛路由功能。true：是。仅当IPsec连接开启健康检查功能时生效，且只支持收敛静态路由，不支持收敛BGP路由。false：否。
+	// Whether to enable health check route convergence. true: Yes. Effective only when the IPsec connection has health check enabled; supports convergence of static routes only, not BGP routes. false: No.
 	HealthCheckRevokeRouteEnabled pulumi.BoolPtrInput
-	// 是否开启IPv6功能。
+	// Whether to enable IPv6.
 	Ipv6Enabled pulumi.BoolPtrInput
-	// 网络实例连接的状态。Creating：创建中。Deleting：删除中。Pending：配置中。Available：可用。
+	// Network instance connection status. Creating: being created. Deleting: being deleted. Pending: being configured. Available: available.
 	Status pulumi.StringPtrInput
 	Tags   VpnAttachmentTagArrayInput
-	// 网络实例连接的ID。
+	// Network instance connection ID.
 	TransitRouterAttachmentId pulumi.StringPtrInput
-	// 网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
+	// Network instance connection name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
 	TransitRouterAttachmentName pulumi.StringPtrInput
-	// 中转路由器实例的ID。
+	// Transit router instance ID.
 	TransitRouterId pulumi.StringPtrInput
-	// 关联的TR路由表ID。
+	// Associated TR route table ID.
 	TransitRouterRouteTableId pulumi.StringPtrInput
-	// 更新时间。
+	// Update time.
 	UpdatedTime pulumi.StringPtrInput
-	// IPsec连接的ID。
+	// IPsec connection ID.
 	VpnConnectionId pulumi.StringPtrInput
-	// IPsec连接所属可用区的ID。
+	// ID of the availability zone to which the IPsec connection belongs.
 	ZoneId pulumi.StringPtrInput
 }
 
@@ -191,39 +191,39 @@ func (VpnAttachmentState) ElementType() reflect.Type {
 }
 
 type vpnAttachmentArgs struct {
-	// 网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+	// Network instance connection description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
 	Description *string `pulumi:"description"`
-	// 是否开启健康检查收敛路由功能。true：是。仅当IPsec连接开启健康检查功能时生效，且只支持收敛静态路由，不支持收敛BGP路由。false：否。
+	// Whether to enable health check route convergence. true: Yes. Effective only when the IPsec connection has health check enabled; supports convergence of static routes only, not BGP routes. false: No.
 	HealthCheckRevokeRouteEnabled *bool              `pulumi:"healthCheckRevokeRouteEnabled"`
 	Tags                          []VpnAttachmentTag `pulumi:"tags"`
-	// 网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
+	// Network instance connection name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
 	TransitRouterAttachmentName *string `pulumi:"transitRouterAttachmentName"`
-	// 中转路由器实例的ID。
+	// Transit router instance ID.
 	TransitRouterId string `pulumi:"transitRouterId"`
-	// 关联的TR路由表ID。
+	// Associated TR route table ID.
 	TransitRouterRouteTableId *string `pulumi:"transitRouterRouteTableId"`
-	// IPsec连接的ID。
+	// IPsec connection ID.
 	VpnConnectionId string `pulumi:"vpnConnectionId"`
-	// IPsec连接所属可用区的ID。
+	// ID of the availability zone to which the IPsec connection belongs.
 	ZoneId string `pulumi:"zoneId"`
 }
 
 // The set of arguments for constructing a VpnAttachment resource.
 type VpnAttachmentArgs struct {
-	// 网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+	// Network instance connection description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
 	Description pulumi.StringPtrInput
-	// 是否开启健康检查收敛路由功能。true：是。仅当IPsec连接开启健康检查功能时生效，且只支持收敛静态路由，不支持收敛BGP路由。false：否。
+	// Whether to enable health check route convergence. true: Yes. Effective only when the IPsec connection has health check enabled; supports convergence of static routes only, not BGP routes. false: No.
 	HealthCheckRevokeRouteEnabled pulumi.BoolPtrInput
 	Tags                          VpnAttachmentTagArrayInput
-	// 网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
+	// Network instance connection name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
 	TransitRouterAttachmentName pulumi.StringPtrInput
-	// 中转路由器实例的ID。
+	// Transit router instance ID.
 	TransitRouterId pulumi.StringInput
-	// 关联的TR路由表ID。
+	// Associated TR route table ID.
 	TransitRouterRouteTableId pulumi.StringPtrInput
-	// IPsec连接的ID。
+	// IPsec connection ID.
 	VpnConnectionId pulumi.StringInput
-	// IPsec连接所属可用区的ID。
+	// ID of the availability zone to which the IPsec connection belongs.
 	ZoneId pulumi.StringInput
 }
 
@@ -314,32 +314,32 @@ func (o VpnAttachmentOutput) ToVpnAttachmentOutputWithContext(ctx context.Contex
 	return o
 }
 
-// 是否自动同步TR路由到网络实例路由表中。
+// Whether to automatically sync TR routes to the network instance route table.
 func (o VpnAttachmentOutput) AutoPublishRouteEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *VpnAttachment) pulumi.BoolOutput { return v.AutoPublishRouteEnabled }).(pulumi.BoolOutput)
 }
 
-// 创建时间。
+// Creation time.
 func (o VpnAttachmentOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *VpnAttachment) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 网络实例连接的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+// Network instance connection description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
 func (o VpnAttachmentOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *VpnAttachment) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// 是否开启健康检查收敛路由功能。true：是。仅当IPsec连接开启健康检查功能时生效，且只支持收敛静态路由，不支持收敛BGP路由。false：否。
+// Whether to enable health check route convergence. true: Yes. Effective only when the IPsec connection has health check enabled; supports convergence of static routes only, not BGP routes. false: No.
 func (o VpnAttachmentOutput) HealthCheckRevokeRouteEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *VpnAttachment) pulumi.BoolOutput { return v.HealthCheckRevokeRouteEnabled }).(pulumi.BoolOutput)
 }
 
-// 是否开启IPv6功能。
+// Whether to enable IPv6.
 func (o VpnAttachmentOutput) Ipv6Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *VpnAttachment) pulumi.BoolOutput { return v.Ipv6Enabled }).(pulumi.BoolOutput)
 }
 
-// 网络实例连接的状态。Creating：创建中。Deleting：删除中。Pending：配置中。Available：可用。
+// Network instance connection status. Creating: being created. Deleting: being deleted. Pending: being configured. Available: available.
 func (o VpnAttachmentOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *VpnAttachment) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
@@ -348,37 +348,37 @@ func (o VpnAttachmentOutput) Tags() VpnAttachmentTagArrayOutput {
 	return o.ApplyT(func(v *VpnAttachment) VpnAttachmentTagArrayOutput { return v.Tags }).(VpnAttachmentTagArrayOutput)
 }
 
-// 网络实例连接的ID。
+// Network instance connection ID.
 func (o VpnAttachmentOutput) TransitRouterAttachmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VpnAttachment) pulumi.StringOutput { return v.TransitRouterAttachmentId }).(pulumi.StringOutput)
 }
 
-// 网络实例连接的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和短横线（-）。长度限制为1 ~ 128个字符。不传入该参数或该参数不传入数值时，默认为网络实例连接的ID。
+// Network instance connection name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
 func (o VpnAttachmentOutput) TransitRouterAttachmentName() pulumi.StringOutput {
 	return o.ApplyT(func(v *VpnAttachment) pulumi.StringOutput { return v.TransitRouterAttachmentName }).(pulumi.StringOutput)
 }
 
-// 中转路由器实例的ID。
+// Transit router instance ID.
 func (o VpnAttachmentOutput) TransitRouterId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VpnAttachment) pulumi.StringOutput { return v.TransitRouterId }).(pulumi.StringOutput)
 }
 
-// 关联的TR路由表ID。
+// Associated TR route table ID.
 func (o VpnAttachmentOutput) TransitRouterRouteTableId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VpnAttachment) pulumi.StringOutput { return v.TransitRouterRouteTableId }).(pulumi.StringOutput)
 }
 
-// 更新时间。
+// Update time.
 func (o VpnAttachmentOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *VpnAttachment) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// IPsec连接的ID。
+// IPsec connection ID.
 func (o VpnAttachmentOutput) VpnConnectionId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VpnAttachment) pulumi.StringOutput { return v.VpnConnectionId }).(pulumi.StringOutput)
 }
 
-// IPsec连接所属可用区的ID。
+// ID of the availability zone to which the IPsec connection belongs.
 func (o VpnAttachmentOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VpnAttachment) pulumi.StringOutput { return v.ZoneId }).(pulumi.StringOutput)
 }

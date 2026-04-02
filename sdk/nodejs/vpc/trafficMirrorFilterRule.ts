@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * 筛选条件由筛选规则组成，分为入向筛选规则和出向筛选规则。
+ * Filtering conditions are composed of filtering rules, divided into inbound filtering rules and outbound filtering rules.
  *
  * ## Example Usage
  *
@@ -62,51 +62,51 @@ export class TrafficMirrorFilterRule extends pulumi.CustomResource {
     }
 
     /**
-     * 筛选规则的描述。
+     * Description of the filtering rule.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 目的网段。
+     * Destination network segment.
      */
     public readonly destinationCidrBlock!: pulumi.Output<string>;
     /**
-     * 流量目的端口范围。当Protocol传入all或icmp时，无需传入本参数，默认取值-1/-1，表示不限制端口。当Protocol传入tcp或udp时，本参数为必选，取值范围1～65535，使用正斜线（/）隔开起始端口和终止端口，如1/50、80/80。
+     * Destination port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
      */
     public readonly destinationPortRange!: pulumi.Output<string>;
     /**
-     * 流量采集策略。accept：允许。即当镜像源的流量匹配该规则时，复制该流量至镜像目标进行监控分析。reject：拒绝。即当镜像源的流量匹配该规则时，不复制该流量，拒绝对该流量进行监控分析。
+     * Traffic capture policy. accept: allow. When traffic from the mirror source matches this rule, the traffic is copied to the mirror target for monitoring and analysis. reject: reject. When traffic from the mirror source matches this rule, the traffic is not copied and monitoring and analysis are not performed.
      */
     public readonly policy!: pulumi.Output<string>;
     /**
-     * 筛选规则的优先级，范围为1-1000。数值越小，优先级越高。默认为1，1为最高优先级。同一筛选条件同一方向的优先级唯一。
+     * Priority of the filtering rule, ranging from 1 to 1000. The smaller the value, the higher the priority. Default is 1, which is the highest priority. For the same filtering condition and direction, the priority must be unique.
      */
     public readonly priority!: pulumi.Output<number>;
     /**
-     * 流量的协议。取值如下：all：含TCP、UDP、ICMP协议。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。
+     * Traffic protocol. Valid values: all: includes TCP, UDP, and ICMP protocols. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol.
      */
     public readonly protocol!: pulumi.Output<string>;
     /**
-     * 流量源网段。
+     * Source network segment.
      */
     public readonly sourceCidrBlock!: pulumi.Output<string>;
     /**
-     * 流量源端口范围。当Protocol传入all或icmp时，无需传入本参数，默认取值-1/-1，表示不限制端口。当Protocol传入tcp或udp时，本参数为必选，取值范围1～65535，使用正斜线（/）隔开起始端口和终止端口，如1/50、80/80。
+     * Source port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
      */
     public readonly sourcePortRange!: pulumi.Output<string>;
     /**
-     * 筛选规则的状态。Available：可用。Deleting：删除中。Creating：创建中。Pending：修改中。
+     * Status of the filtering rule. Available: available. Deleting: deleting. Creating: creating. Pending: modifying.
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     /**
-     * 流量的方向。取值如下：ingress：入向规则。egress：出向规则。
+     * Traffic direction. Valid values: ingress: inbound rule. egress: outbound rule.
      */
     public readonly trafficDirection!: pulumi.Output<string>;
     /**
-     * 筛选条件的ID。
+     * Filtering condition ID.
      */
     public readonly trafficMirrorFilterId!: pulumi.Output<string>;
     /**
-     * 筛选规则的ID。
+     * Filtering rule ID.
      */
     public /*out*/ readonly trafficMirrorFilterRuleId!: pulumi.Output<string>;
 
@@ -178,51 +178,51 @@ export class TrafficMirrorFilterRule extends pulumi.CustomResource {
  */
 export interface TrafficMirrorFilterRuleState {
     /**
-     * 筛选规则的描述。
+     * Description of the filtering rule.
      */
     description?: pulumi.Input<string>;
     /**
-     * 目的网段。
+     * Destination network segment.
      */
     destinationCidrBlock?: pulumi.Input<string>;
     /**
-     * 流量目的端口范围。当Protocol传入all或icmp时，无需传入本参数，默认取值-1/-1，表示不限制端口。当Protocol传入tcp或udp时，本参数为必选，取值范围1～65535，使用正斜线（/）隔开起始端口和终止端口，如1/50、80/80。
+     * Destination port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
      */
     destinationPortRange?: pulumi.Input<string>;
     /**
-     * 流量采集策略。accept：允许。即当镜像源的流量匹配该规则时，复制该流量至镜像目标进行监控分析。reject：拒绝。即当镜像源的流量匹配该规则时，不复制该流量，拒绝对该流量进行监控分析。
+     * Traffic capture policy. accept: allow. When traffic from the mirror source matches this rule, the traffic is copied to the mirror target for monitoring and analysis. reject: reject. When traffic from the mirror source matches this rule, the traffic is not copied and monitoring and analysis are not performed.
      */
     policy?: pulumi.Input<string>;
     /**
-     * 筛选规则的优先级，范围为1-1000。数值越小，优先级越高。默认为1，1为最高优先级。同一筛选条件同一方向的优先级唯一。
+     * Priority of the filtering rule, ranging from 1 to 1000. The smaller the value, the higher the priority. Default is 1, which is the highest priority. For the same filtering condition and direction, the priority must be unique.
      */
     priority?: pulumi.Input<number>;
     /**
-     * 流量的协议。取值如下：all：含TCP、UDP、ICMP协议。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。
+     * Traffic protocol. Valid values: all: includes TCP, UDP, and ICMP protocols. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol.
      */
     protocol?: pulumi.Input<string>;
     /**
-     * 流量源网段。
+     * Source network segment.
      */
     sourceCidrBlock?: pulumi.Input<string>;
     /**
-     * 流量源端口范围。当Protocol传入all或icmp时，无需传入本参数，默认取值-1/-1，表示不限制端口。当Protocol传入tcp或udp时，本参数为必选，取值范围1～65535，使用正斜线（/）隔开起始端口和终止端口，如1/50、80/80。
+     * Source port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
      */
     sourcePortRange?: pulumi.Input<string>;
     /**
-     * 筛选规则的状态。Available：可用。Deleting：删除中。Creating：创建中。Pending：修改中。
+     * Status of the filtering rule. Available: available. Deleting: deleting. Creating: creating. Pending: modifying.
      */
     status?: pulumi.Input<string>;
     /**
-     * 流量的方向。取值如下：ingress：入向规则。egress：出向规则。
+     * Traffic direction. Valid values: ingress: inbound rule. egress: outbound rule.
      */
     trafficDirection?: pulumi.Input<string>;
     /**
-     * 筛选条件的ID。
+     * Filtering condition ID.
      */
     trafficMirrorFilterId?: pulumi.Input<string>;
     /**
-     * 筛选规则的ID。
+     * Filtering rule ID.
      */
     trafficMirrorFilterRuleId?: pulumi.Input<string>;
 }
@@ -232,43 +232,43 @@ export interface TrafficMirrorFilterRuleState {
  */
 export interface TrafficMirrorFilterRuleArgs {
     /**
-     * 筛选规则的描述。
+     * Description of the filtering rule.
      */
     description?: pulumi.Input<string>;
     /**
-     * 目的网段。
+     * Destination network segment.
      */
     destinationCidrBlock: pulumi.Input<string>;
     /**
-     * 流量目的端口范围。当Protocol传入all或icmp时，无需传入本参数，默认取值-1/-1，表示不限制端口。当Protocol传入tcp或udp时，本参数为必选，取值范围1～65535，使用正斜线（/）隔开起始端口和终止端口，如1/50、80/80。
+     * Destination port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
      */
     destinationPortRange?: pulumi.Input<string>;
     /**
-     * 流量采集策略。accept：允许。即当镜像源的流量匹配该规则时，复制该流量至镜像目标进行监控分析。reject：拒绝。即当镜像源的流量匹配该规则时，不复制该流量，拒绝对该流量进行监控分析。
+     * Traffic capture policy. accept: allow. When traffic from the mirror source matches this rule, the traffic is copied to the mirror target for monitoring and analysis. reject: reject. When traffic from the mirror source matches this rule, the traffic is not copied and monitoring and analysis are not performed.
      */
     policy: pulumi.Input<string>;
     /**
-     * 筛选规则的优先级，范围为1-1000。数值越小，优先级越高。默认为1，1为最高优先级。同一筛选条件同一方向的优先级唯一。
+     * Priority of the filtering rule, ranging from 1 to 1000. The smaller the value, the higher the priority. Default is 1, which is the highest priority. For the same filtering condition and direction, the priority must be unique.
      */
     priority?: pulumi.Input<number>;
     /**
-     * 流量的协议。取值如下：all：含TCP、UDP、ICMP协议。tcp：TCP协议。udp：UDP协议。icmp：ICMP协议。
+     * Traffic protocol. Valid values: all: includes TCP, UDP, and ICMP protocols. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol.
      */
     protocol: pulumi.Input<string>;
     /**
-     * 流量源网段。
+     * Source network segment.
      */
     sourceCidrBlock: pulumi.Input<string>;
     /**
-     * 流量源端口范围。当Protocol传入all或icmp时，无需传入本参数，默认取值-1/-1，表示不限制端口。当Protocol传入tcp或udp时，本参数为必选，取值范围1～65535，使用正斜线（/）隔开起始端口和终止端口，如1/50、80/80。
+     * Source port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
      */
     sourcePortRange?: pulumi.Input<string>;
     /**
-     * 流量的方向。取值如下：ingress：入向规则。egress：出向规则。
+     * Traffic direction. Valid values: ingress: inbound rule. egress: outbound rule.
      */
     trafficDirection: pulumi.Input<string>;
     /**
-     * 筛选条件的ID。
+     * Filtering condition ID.
      */
     trafficMirrorFilterId: pulumi.Input<string>;
 }

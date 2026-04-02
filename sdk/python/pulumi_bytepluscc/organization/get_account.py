@@ -112,7 +112,7 @@ class GetAccountResult:
     @pulumi.getter(name="accountId")
     def account_id(self) -> builtins.str:
         """
-        火山账号ID。
+        Volcano account ID
         """
         return pulumi.get(self, "account_id")
 
@@ -120,7 +120,7 @@ class GetAccountResult:
     @pulumi.getter(name="accountName")
     def account_name(self) -> builtins.str:
         """
-        账户名称。5-20个字符。
+        Account name. 5–20 characters
         """
         return pulumi.get(self, "account_name")
 
@@ -128,7 +128,7 @@ class GetAccountResult:
     @pulumi.getter(name="allowConsole")
     def allow_console(self) -> builtins.int:
         """
-        允许控制台访问，1: 允许，2: 不允许。
+        Allow console access: 1. Allowed, 2. Not allowed
         """
         return pulumi.get(self, "allow_console")
 
@@ -136,7 +136,7 @@ class GetAccountResult:
     @pulumi.getter(name="allowExit")
     def allow_exit(self) -> builtins.int:
         """
-        允许退出，1: 允许，2: 不允许。
+        Allow exit: 1. Allowed, 2. Not allowed
         """
         return pulumi.get(self, "allow_exit")
 
@@ -144,7 +144,7 @@ class GetAccountResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        创建时间。
+        Creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -152,7 +152,7 @@ class GetAccountResult:
     @pulumi.getter(name="deleteUk")
     def delete_uk(self) -> builtins.str:
         """
-        删除标记。
+        Deletion flag
         """
         return pulumi.get(self, "delete_uk")
 
@@ -160,7 +160,7 @@ class GetAccountResult:
     @pulumi.getter(name="deletedTime")
     def deleted_time(self) -> builtins.str:
         """
-        删除时间。
+        Deletion time
         """
         return pulumi.get(self, "deleted_time")
 
@@ -168,7 +168,7 @@ class GetAccountResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        描述。
+        Description
         """
         return pulumi.get(self, "description")
 
@@ -176,7 +176,7 @@ class GetAccountResult:
     @pulumi.getter(name="iamRole")
     def iam_role(self) -> builtins.str:
         """
-        IAM角色名称。
+        IAM role name
         """
         return pulumi.get(self, "iam_role")
 
@@ -192,7 +192,7 @@ class GetAccountResult:
     @pulumi.getter(name="isOwner")
     def is_owner(self) -> builtins.int:
         """
-        是否是管理员，0.非管理员，1.管理员。
+        Administrator status: 0. Non-administrator, 1. Administrator
         """
         return pulumi.get(self, "is_owner")
 
@@ -200,7 +200,7 @@ class GetAccountResult:
     @pulumi.getter(name="joinType")
     def join_type(self) -> builtins.int:
         """
-        加入类型，1: 创建，2: 邀请。
+        Join type: 1. Create, 2. Invite
         """
         return pulumi.get(self, "join_type")
 
@@ -208,7 +208,7 @@ class GetAccountResult:
     @pulumi.getter(name="mainName")
     def main_name(self) -> builtins.str:
         """
-        主体名称。
+        Subject name
         """
         return pulumi.get(self, "main_name")
 
@@ -216,7 +216,7 @@ class GetAccountResult:
     @pulumi.getter(name="memberAccountId")
     def member_account_id(self) -> builtins.str:
         """
-        组织成员账号ID。
+        Organization member account ID
         """
         return pulumi.get(self, "member_account_id")
 
@@ -224,7 +224,7 @@ class GetAccountResult:
     @pulumi.getter(name="orgId")
     def org_id(self) -> builtins.str:
         """
-        组织ID。
+        Organization ID
         """
         return pulumi.get(self, "org_id")
 
@@ -232,7 +232,7 @@ class GetAccountResult:
     @pulumi.getter(name="orgType")
     def org_type(self) -> builtins.int:
         """
-        组织类型，1.企业组织。
+        Organization type: 1. Enterprise organization
         """
         return pulumi.get(self, "org_type")
 
@@ -240,7 +240,7 @@ class GetAccountResult:
     @pulumi.getter(name="orgUnitId")
     def org_unit_id(self) -> builtins.str:
         """
-        组织单元ID。传入 0 加入到 root 单元。
+        Organizational unit ID. Enter 0 to join the root unit
         """
         return pulumi.get(self, "org_unit_id")
 
@@ -248,7 +248,7 @@ class GetAccountResult:
     @pulumi.getter(name="orgUnitName")
     def org_unit_name(self) -> builtins.str:
         """
-        组织单元名称。
+        Organizational unit name
         """
         return pulumi.get(self, "org_unit_name")
 
@@ -256,7 +256,7 @@ class GetAccountResult:
     @pulumi.getter(name="orgVerificationId")
     def org_verification_id(self) -> builtins.str:
         """
-        认证主体ID。
+        Authentication subject ID
         """
         return pulumi.get(self, "org_verification_id")
 
@@ -264,7 +264,7 @@ class GetAccountResult:
     @pulumi.getter
     def owner(self) -> builtins.str:
         """
-        管理员ID。
+        Administrator ID
         """
         return pulumi.get(self, "owner")
 
@@ -272,7 +272,7 @@ class GetAccountResult:
     @pulumi.getter
     def password(self) -> builtins.str:
         """
-        账户密码。
+        Account password
         """
         return pulumi.get(self, "password")
 
@@ -280,7 +280,7 @@ class GetAccountResult:
     @pulumi.getter(name="secureContactInfo")
     def secure_contact_info(self) -> 'outputs.GetAccountSecureContactInfoResult':
         """
-        安全联系信息。
+        Security contact information
         """
         return pulumi.get(self, "secure_contact_info")
 
@@ -288,7 +288,7 @@ class GetAccountResult:
     @pulumi.getter(name="showName")
     def show_name(self) -> builtins.str:
         """
-        显示名称。
+        Display name
         """
         return pulumi.get(self, "show_name")
 
@@ -296,7 +296,7 @@ class GetAccountResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetAccountTagResult']:
         """
-        标签列表。
+        Tag list
         """
         return pulumi.get(self, "tags")
 
@@ -304,7 +304,7 @@ class GetAccountResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        更新时间。
+        Update time
         """
         return pulumi.get(self, "updated_time")
 
@@ -312,7 +312,7 @@ class GetAccountResult:
     @pulumi.getter(name="verificationRelationId")
     def verification_relation_id(self) -> builtins.str:
         """
-        被继承认证主体的账号ID，给非管理员认证主体创建账号时需要，账号需已加入企业组织。默认不传，则继承企业组织管理员的认证主体。
+        Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
         """
         return pulumi.get(self, "verification_relation_id")
 

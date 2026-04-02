@@ -14,86 +14,86 @@ import java.util.Objects;
 @CustomType
 public final class GetLaunchTemplateLaunchTemplateVersionEip {
     /**
-     * @return 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+     * @return Public IP bandwidth cap, unit: Mbps. Value range: 1–200. Default: 1.
      * 
      */
     private Integer bandwidth;
     /**
-     * @return 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+     * @return Shared bandwidth package ID, indicates adding the public IP to the shared bandwidth package.
      * 
      */
     private String bandwidthPackageId;
     /**
-     * @return 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+     * @return Billing method for public IP. Values: 2: Pay-as-you-go—by bandwidth cap. 3: Pay-as-you-go—by actual traffic.
      * 
      */
     private Integer billingType;
     /**
-     * @return 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+     * @return Line type for the public IP. Options: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line.
      * 
      */
     private String isp;
     /**
-     * @return 公网IP是否随实例删除，仅按量计费公网IP生效。
+     * @return Whether the public IP is released with the instance; only applies to pay-as-you-go public IPs
      * 
      */
     private Boolean releaseWithInstance;
     /**
-     * @return 安全防护包ID。
+     * @return Security protection package ID
      * 
      */
     private Integer securityProtectionInstanceId;
     /**
-     * @return 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+     * @return Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS Native Protection (Enterprise Edition) instance.
      * 
      */
     private List<String> securityProtectionTypes;
 
     private GetLaunchTemplateLaunchTemplateVersionEip() {}
     /**
-     * @return 公网IP的带宽上限，单位：Mbps。取值范围：1～200。默认值：1。
+     * @return Public IP bandwidth cap, unit: Mbps. Value range: 1–200. Default: 1.
      * 
      */
     public Integer bandwidth() {
         return this.bandwidth;
     }
     /**
-     * @return 共享带宽包的ID，表示将公网IP加入到共享带宽包。
+     * @return Shared bandwidth package ID, indicates adding the public IP to the shared bandwidth package.
      * 
      */
     public String bandwidthPackageId() {
         return this.bandwidthPackageId;
     }
     /**
-     * @return 公网IP的计费方式，取值：2：按量计费-按带宽上限计费。3：按量计费-按实际流量计费。
+     * @return Billing method for public IP. Values: 2: Pay-as-you-go—by bandwidth cap. 3: Pay-as-you-go—by actual traffic.
      * 
      */
     public Integer billingType() {
         return this.billingType;
     }
     /**
-     * @return 公网IP的线路类型，取值：BGP：BGP（多线）。ChinaMobile：中国移动静态单线。ChinaTelecom：国电信静态单线。ChinaUnicom：中国联通静态单线。
+     * @return Line type for the public IP. Options: BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line.
      * 
      */
     public String isp() {
         return this.isp;
     }
     /**
-     * @return 公网IP是否随实例删除，仅按量计费公网IP生效。
+     * @return Whether the public IP is released with the instance; only applies to pay-as-you-go public IPs
      * 
      */
     public Boolean releaseWithInstance() {
         return this.releaseWithInstance;
     }
     /**
-     * @return 安全防护包ID。
+     * @return Security protection package ID
      * 
      */
     public Integer securityProtectionInstanceId() {
         return this.securityProtectionInstanceId;
     }
     /**
-     * @return 公网IP的安全防护类型。取值：AntiDDoS_Enhanced：申请增强防护类型的公网IP，可加入到DDoS原生防护（企业版）实例。
+     * @return Security protection type for public IP. Value: AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS Native Protection (Enterprise Edition) instance.
      * 
      */
     public List<String> securityProtectionTypes() {

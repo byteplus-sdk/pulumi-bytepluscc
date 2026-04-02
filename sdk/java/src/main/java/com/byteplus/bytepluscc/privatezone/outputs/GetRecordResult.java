@@ -13,17 +13,17 @@ import java.util.Objects;
 @CustomType
 public final class GetRecordResult {
     /**
-     * @return 解析记录的创建时间。
+     * @return Creation time of the DNS record.
      * 
      */
     private String createdAt;
     /**
-     * @return 解析记录是否被启用。
+     * @return Indicates whether the DNS record is enabled.
      * 
      */
     private Boolean enable;
     /**
-     * @return 子域名的域名前缀。
+     * @return Domain prefix for the subdomain.
      * 
      */
     private String host;
@@ -33,78 +33,78 @@ public final class GetRecordResult {
      */
     private String id;
     /**
-     * @return 最近一次更新解析记录的账号 ID。
+     * @return Account ID of the most recent update to the DNS record.
      * 
      */
     private String lastOperator;
     /**
-     * @return 解析记录的线路，只能是默认线路 default。
+     * @return DNS record route, only the default route &#39;default&#39; is supported.
      * 
      */
     private String line;
     /**
-     * @return 解析记录 ID。
+     * @return DNS record ID.
      * 
      */
     private String recordId;
     /**
-     * @return 备注。支持 UTF-8 字符。不能超过 16 个字符。默认值为空字符串。
+     * @return Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
      * 
      */
     private String remark;
     /**
-     * @return 解析记录的过期时间。单位为秒。默认值为 600。
+     * @return DNS record TTL (time to live), in seconds. Default is 600.
      * 
      */
     private Integer ttl;
     /**
-     * @return 解析记录类型。该参数的取值如下：A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。
+     * @return DNS record type. Valid values are: A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record. A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record.
      * 
      */
     private String type;
     /**
-     * @return 解析记录最近一次的更新时间。
+     * @return Last update time of the DNS record.
      * 
      */
     private String updatedAt;
     /**
-     * @return 记录值。
+     * @return Record value.
      * 
      */
     private String value;
     /**
-     * @return 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
+     * @return Record weight. The weight takes effect only when load balancing is enabled for the domain name.
      * 
      */
     private Integer weight;
     /**
-     * @return 该记录集是否开启了负载均衡。
+     * @return Indicates whether load balancing is enabled for this record set.
      * 
      */
     private Boolean weightEnabled;
     /**
-     * @return 域名 ID。
+     * @return Domain name ID.
      * 
      */
     private Integer zid;
 
     private GetRecordResult() {}
     /**
-     * @return 解析记录的创建时间。
+     * @return Creation time of the DNS record.
      * 
      */
     public String createdAt() {
         return this.createdAt;
     }
     /**
-     * @return 解析记录是否被启用。
+     * @return Indicates whether the DNS record is enabled.
      * 
      */
     public Boolean enable() {
         return this.enable;
     }
     /**
-     * @return 子域名的域名前缀。
+     * @return Domain prefix for the subdomain.
      * 
      */
     public String host() {
@@ -118,77 +118,77 @@ public final class GetRecordResult {
         return this.id;
     }
     /**
-     * @return 最近一次更新解析记录的账号 ID。
+     * @return Account ID of the most recent update to the DNS record.
      * 
      */
     public String lastOperator() {
         return this.lastOperator;
     }
     /**
-     * @return 解析记录的线路，只能是默认线路 default。
+     * @return DNS record route, only the default route &#39;default&#39; is supported.
      * 
      */
     public String line() {
         return this.line;
     }
     /**
-     * @return 解析记录 ID。
+     * @return DNS record ID.
      * 
      */
     public String recordId() {
         return this.recordId;
     }
     /**
-     * @return 备注。支持 UTF-8 字符。不能超过 16 个字符。默认值为空字符串。
+     * @return Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
      * 
      */
     public String remark() {
         return this.remark;
     }
     /**
-     * @return 解析记录的过期时间。单位为秒。默认值为 600。
+     * @return DNS record TTL (time to live), in seconds. Default is 600.
      * 
      */
     public Integer ttl() {
         return this.ttl;
     }
     /**
-     * @return 解析记录类型。该参数的取值如下：A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。A：A 记录。AAAA：AAAA 记录。CNAME：CNAME 记录。TXT：TXT 记录。MX：MX 记录。PTR：PTR 记录。
+     * @return DNS record type. Valid values are: A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record. A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record.
      * 
      */
     public String type() {
         return this.type;
     }
     /**
-     * @return 解析记录最近一次的更新时间。
+     * @return Last update time of the DNS record.
      * 
      */
     public String updatedAt() {
         return this.updatedAt;
     }
     /**
-     * @return 记录值。
+     * @return Record value.
      * 
      */
     public String value() {
         return this.value;
     }
     /**
-     * @return 记录的权重。只有域名开启了负载均衡后，记录值的权重才会生效。
+     * @return Record weight. The weight takes effect only when load balancing is enabled for the domain name.
      * 
      */
     public Integer weight() {
         return this.weight;
     }
     /**
-     * @return 该记录集是否开启了负载均衡。
+     * @return Indicates whether load balancing is enabled for this record set.
      * 
      */
     public Boolean weightEnabled() {
         return this.weightEnabled;
     }
     /**
-     * @return 域名 ID。
+     * @return Domain name ID.
      * 
      */
     public Integer zid() {

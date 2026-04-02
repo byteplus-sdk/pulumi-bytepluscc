@@ -18,14 +18,14 @@ public final class ClusterApplicationExtraApplicationConfigArgs extends com.pulu
     public static final ClusterApplicationExtraApplicationConfigArgs Empty = new ClusterApplicationExtraApplicationConfigArgs();
 
     /**
-     * 组件实例名称。
+     * Component instance name.
      * 
      */
     @Import(name="componentInstanceName")
     private @Nullable Output<String> componentInstanceName;
 
     /**
-     * @return 组件实例名称。
+     * @return Component instance name.
      * 
      */
     public Optional<Output<String>> componentInstanceName() {
@@ -33,14 +33,14 @@ public final class ClusterApplicationExtraApplicationConfigArgs extends com.pulu
     }
 
     /**
-     * 组件名称。
+     * Component name.
      * 
      */
     @Import(name="componentName")
     private @Nullable Output<String> componentName;
 
     /**
-     * @return 组件名称。
+     * @return Component name.
      * 
      */
     public Optional<Output<String>> componentName() {
@@ -48,14 +48,14 @@ public final class ClusterApplicationExtraApplicationConfigArgs extends com.pulu
     }
 
     /**
-     * 配置文件名。
+     * Configuration file name.
      * 
      */
     @Import(name="configFileName")
     private @Nullable Output<String> configFileName;
 
     /**
-     * @return 配置文件名。
+     * @return Configuration file name.
      * 
      */
     public Optional<Output<String>> configFileName() {
@@ -63,14 +63,14 @@ public final class ClusterApplicationExtraApplicationConfigArgs extends com.pulu
     }
 
     /**
-     * 配置项名称。
+     * Configuration item name.
      * 
      */
     @Import(name="configItemKey")
     private @Nullable Output<String> configItemKey;
 
     /**
-     * @return 配置项名称。
+     * @return Configuration item name.
      * 
      */
     public Optional<Output<String>> configItemKey() {
@@ -78,14 +78,14 @@ public final class ClusterApplicationExtraApplicationConfigArgs extends com.pulu
     }
 
     /**
-     * 配置项值。
+     * Configuration item value.
      * 
      */
     @Import(name="configItemValue")
     private @Nullable Output<String> configItemValue;
 
     /**
-     * @return 配置项值。
+     * @return Configuration item value.
      * 
      */
     public Optional<Output<String>> configItemValue() {
@@ -93,14 +93,14 @@ public final class ClusterApplicationExtraApplicationConfigArgs extends com.pulu
     }
 
     /**
-     * 是否删除。
+     * Whether to delete.
      * 
      */
     @Import(name="deleted")
     private @Nullable Output<Boolean> deleted;
 
     /**
-     * @return 是否删除。
+     * @return Whether to delete.
      * 
      */
     public Optional<Output<Boolean>> deleted() {
@@ -108,14 +108,14 @@ public final class ClusterApplicationExtraApplicationConfigArgs extends com.pulu
     }
 
     /**
-     * 影响组件。
+     * Affected component.
      * 
      */
     @Import(name="effectiveScope")
     private @Nullable Output<ClusterApplicationExtraApplicationConfigEffectiveScopeArgs> effectiveScope;
 
     /**
-     * @return 影响组件。
+     * @return Affected component.
      * 
      */
     public Optional<Output<ClusterApplicationExtraApplicationConfigEffectiveScopeArgs>> effectiveScope() {
@@ -153,7 +153,7 @@ public final class ClusterApplicationExtraApplicationConfigArgs extends com.pulu
         }
 
         /**
-         * @param componentInstanceName 组件实例名称。
+         * @param componentInstanceName Component instance name.
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class ClusterApplicationExtraApplicationConfigArgs extends com.pulu
         }
 
         /**
-         * @param componentInstanceName 组件实例名称。
+         * @param componentInstanceName Component instance name.
          * 
          * @return builder
          * 
@@ -174,7 +174,7 @@ public final class ClusterApplicationExtraApplicationConfigArgs extends com.pulu
         }
 
         /**
-         * @param componentName 组件名称。
+         * @param componentName Component name.
          * 
          * @return builder
          * 
@@ -185,7 +185,7 @@ public final class ClusterApplicationExtraApplicationConfigArgs extends com.pulu
         }
 
         /**
-         * @param componentName 组件名称。
+         * @param componentName Component name.
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class ClusterApplicationExtraApplicationConfigArgs extends com.pulu
         }
 
         /**
-         * @param configFileName 配置文件名。
+         * @param configFileName Configuration file name.
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class ClusterApplicationExtraApplicationConfigArgs extends com.pulu
         }
 
         /**
-         * @param configFileName 配置文件名。
+         * @param configFileName Configuration file name.
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class ClusterApplicationExtraApplicationConfigArgs extends com.pulu
         }
 
         /**
-         * @param configItemKey 配置项名称。
+         * @param configItemKey Configuration item name.
          * 
          * @return builder
          * 
@@ -227,7 +227,7 @@ public final class ClusterApplicationExtraApplicationConfigArgs extends com.pulu
         }
 
         /**
-         * @param configItemKey 配置项名称。
+         * @param configItemKey Configuration item name.
          * 
          * @return builder
          * 
@@ -237,7 +237,7 @@ public final class ClusterApplicationExtraApplicationConfigArgs extends com.pulu
         }
 
         /**
-         * @param configItemValue 配置项值。
+         * @param configItemValue Configuration item value.
          * 
          * @return builder
          * 
@@ -248,7 +248,7 @@ public final class ClusterApplicationExtraApplicationConfigArgs extends com.pulu
         }
 
         /**
-         * @param configItemValue 配置项值。
+         * @param configItemValue Configuration item value.
          * 
          * @return builder
          * 
@@ -258,7 +258,7 @@ public final class ClusterApplicationExtraApplicationConfigArgs extends com.pulu
         }
 
         /**
-         * @param deleted 是否删除。
+         * @param deleted Whether to delete.
          * 
          * @return builder
          * 
@@ -269,7 +269,7 @@ public final class ClusterApplicationExtraApplicationConfigArgs extends com.pulu
         }
 
         /**
-         * @param deleted 是否删除。
+         * @param deleted Whether to delete.
          * 
          * @return builder
          * 
@@ -279,7 +279,7 @@ public final class ClusterApplicationExtraApplicationConfigArgs extends com.pulu
         }
 
         /**
-         * @param effectiveScope 影响组件。
+         * @param effectiveScope Affected component.
          * 
          * @return builder
          * 
@@ -290,7 +290,7 @@ public final class ClusterApplicationExtraApplicationConfigArgs extends com.pulu
         }
 
         /**
-         * @param effectiveScope 影响组件。
+         * @param effectiveScope Affected component.
          * 
          * @return builder
          * 

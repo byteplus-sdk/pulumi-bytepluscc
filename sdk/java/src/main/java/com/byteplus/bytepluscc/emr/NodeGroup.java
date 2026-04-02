@@ -22,7 +22,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * E-MapReduce集群由多个不同类型的实例节点组成，包括主实例节点（Master）、核心实例节点（Core）和计算实例节点（Task）。不同实例节点上部署的服务进程不同，负责完成的任务也不同。
+ * An E-MapReduce cluster consists of multiple types of instance nodes, including master instance nodes (Master), core instance nodes (Core), and task instance nodes (Task). Different service processes are deployed on each node type, and each is responsible for different tasks.
  * 
  * ## Example Usage
  * 
@@ -45,56 +45,56 @@ public class NodeGroup extends com.pulumi.resources.CustomResource {
         return this.applicationLayouts;
     }
     /**
-     * 包周期付费配置。
+     * Subscription payment configuration.
      * 
      */
     @Export(name="chargePreConfig", refs={NodeGroupChargePreConfig.class}, tree="[0]")
     private Output<NodeGroupChargePreConfig> chargePreConfig;
 
     /**
-     * @return 包周期付费配置。
+     * @return Subscription payment configuration.
      * 
      */
     public Output<NodeGroupChargePreConfig> chargePreConfig() {
         return this.chargePreConfig;
     }
     /**
-     * 付费类型。PRE表示包月，POST表示按量计费。
+     * Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
      * 
      */
     @Export(name="chargeType", refs={String.class}, tree="[0]")
     private Output<String> chargeType;
 
     /**
-     * @return 付费类型。PRE表示包月，POST表示按量计费。
+     * @return Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
      * 
      */
     public Output<String> chargeType() {
         return this.chargeType;
     }
     /**
-     * 集群ID。
+     * Cluster ID.
      * 
      */
     @Export(name="clusterId", refs={String.class}, tree="[0]")
     private Output<String> clusterId;
 
     /**
-     * @return 集群ID。
+     * @return Cluster ID.
      * 
      */
     public Output<String> clusterId() {
         return this.clusterId;
     }
     /**
-     * 创建时间。
+     * Creation time.
      * 
      */
     @Export(name="createdTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> createdTime;
 
     /**
-     * @return 创建时间。
+     * @return Creation time.
      * 
      */
     public Output<Integer> createdTime() {
@@ -107,98 +107,98 @@ public class NodeGroup extends com.pulumi.resources.CustomResource {
         return this.dataDisks;
     }
     /**
-     * ECS实例规格列表。当前修改仅支持单个实例规格。
+     * ECS instance specification list. Currently, only a single instance specification can be modified.
      * 
      */
     @Export(name="ecsInstanceTypes", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> ecsInstanceTypes;
 
     /**
-     * @return ECS实例规格列表。当前修改仅支持单个实例规格。
+     * @return ECS instance specification list. Currently, only a single instance specification can be modified.
      * 
      */
     public Output<List<String>> ecsInstanceTypes() {
         return this.ecsInstanceTypes;
     }
     /**
-     * 返回的节点组组件的自定义配置参数列表。
+     * Custom configuration parameter list for the returned node group components.
      * 
      */
     @Export(name="layoutComponentNames", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> layoutComponentNames;
 
     /**
-     * @return 返回的节点组组件的自定义配置参数列表。
+     * @return Custom configuration parameter list for the returned node group components.
      * 
      */
     public Output<List<String>> layoutComponentNames() {
         return this.layoutComponentNames;
     }
     /**
-     * 节点数量。取值范围：1~1000。
+     * Node count. Value range: 1~1000.
      * 
      */
     @Export(name="nodeCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> nodeCount;
 
     /**
-     * @return 节点数量。取值范围：1~1000。
+     * @return Node count. Value range: 1~1000.
      * 
      */
     public Output<Integer> nodeCount() {
         return this.nodeCount;
     }
     /**
-     * 节点组ID。
+     * Node group ID.
      * 
      */
     @Export(name="nodeGroupId", refs={String.class}, tree="[0]")
     private Output<String> nodeGroupId;
 
     /**
-     * @return 节点组ID。
+     * @return Node group ID.
      * 
      */
     public Output<String> nodeGroupId() {
         return this.nodeGroupId;
     }
     /**
-     * 节点组名称。
+     * Node group name.
      * 
      */
     @Export(name="nodeGroupName", refs={String.class}, tree="[0]")
     private Output<String> nodeGroupName;
 
     /**
-     * @return 节点组名称。
+     * @return Node group name.
      * 
      */
     public Output<String> nodeGroupName() {
         return this.nodeGroupName;
     }
     /**
-     * 节点组状态。RUNNING：运行中。EXTENDING：扩容中。REDUCING：缩容中。DISK_EXTENDING：磁盘扩容中。MODIFYING：变配中。
+     * Node group status. RUNNING: Running. EXTENDING: Expanding. REDUCING: Shrinking. DISK_EXTENDING: Disk expansion. MODIFYING: Configuration modification in progress.
      * 
      */
     @Export(name="nodeGroupState", refs={String.class}, tree="[0]")
     private Output<String> nodeGroupState;
 
     /**
-     * @return 节点组状态。RUNNING：运行中。EXTENDING：扩容中。REDUCING：缩容中。DISK_EXTENDING：磁盘扩容中。MODIFYING：变配中。
+     * @return Node group status. RUNNING: Running. EXTENDING: Expanding. REDUCING: Shrinking. DISK_EXTENDING: Disk expansion. MODIFYING: Configuration modification in progress.
      * 
      */
     public Output<String> nodeGroupState() {
         return this.nodeGroupState;
     }
     /**
-     * 节点组类型。
+     * Node group type.
      * 
      */
     @Export(name="nodeGroupType", refs={String.class}, tree="[0]")
     private Output<String> nodeGroupType;
 
     /**
-     * @return 节点组类型。
+     * @return Node group type.
      * 
      */
     public Output<String> nodeGroupType() {
@@ -211,84 +211,84 @@ public class NodeGroup extends com.pulumi.resources.CustomResource {
         return this.nodes;
     }
     /**
-     * 子网ID列表。
+     * Subnet ID list.
      * 
      */
     @Export(name="subnetIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> subnetIds;
 
     /**
-     * @return 子网ID列表。
+     * @return Subnet ID list.
      * 
      */
     public Output<List<String>> subnetIds() {
         return this.subnetIds;
     }
     /**
-     * 系统盘。
+     * System disk.
      * 
      */
     @Export(name="systemDisk", refs={NodeGroupSystemDisk.class}, tree="[0]")
     private Output<NodeGroupSystemDisk> systemDisk;
 
     /**
-     * @return 系统盘。
+     * @return System disk.
      * 
      */
     public Output<NodeGroupSystemDisk> systemDisk() {
         return this.systemDisk;
     }
     /**
-     * 待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
+     * Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
      * 
      */
     @Export(name="targetDiskSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> targetDiskSize;
 
     /**
-     * @return 待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
+     * @return Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
      * 
      */
     public Output<Integer> targetDiskSize() {
         return this.targetDiskSize;
     }
     /**
-     * 集群终止时间。
+     * Cluster termination time.
      * 
      */
     @Export(name="terminateTime", refs={String.class}, tree="[0]")
     private Output<String> terminateTime;
 
     /**
-     * @return 集群终止时间。
+     * @return Cluster termination time.
      * 
      */
     public Output<String> terminateTime() {
         return this.terminateTime;
     }
     /**
-     * ECS是否附带公网IP。
+     * Whether the ECS instance includes a public IP.
      * 
      */
     @Export(name="withPublicIp", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> withPublicIp;
 
     /**
-     * @return ECS是否附带公网IP。
+     * @return Whether the ECS instance includes a public IP.
      * 
      */
     public Output<Boolean> withPublicIp() {
         return this.withPublicIp;
     }
     /**
-     * zoneId，为空时默认复用集群的zoneId。
+     * zoneId. If empty, the cluster&#39;s zoneId is reused by default.
      * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
-     * @return zoneId，为空时默认复用集群的zoneId。
+     * @return zoneId. If empty, the cluster&#39;s zoneId is reused by default.
      * 
      */
     public Output<String> zoneId() {

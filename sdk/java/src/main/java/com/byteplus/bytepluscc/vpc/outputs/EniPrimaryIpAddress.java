@@ -14,38 +14,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class EniPrimaryIpAddress {
     /**
-     * @return 网卡主私网IPv4关联的公网IP的信息。
+     * @return Information about the public IP associated with the primary private IPv4 address of the network interface.
      * 
      */
     private @Nullable EniPrimaryIpAddressAssociatedElasticIp associatedElasticIp;
     /**
-     * @return 是否为主私网IPv4地址。
+     * @return Indicates whether this is the primary private IPv4 address.
      * 
      */
     private @Nullable Boolean primary;
     /**
-     * @return 网卡的私网IP地址。
+     * @return Private IP address of the network interface.
      * 
      */
     private @Nullable String privateIpAddress;
 
     private EniPrimaryIpAddress() {}
     /**
-     * @return 网卡主私网IPv4关联的公网IP的信息。
+     * @return Information about the public IP associated with the primary private IPv4 address of the network interface.
      * 
      */
     public Optional<EniPrimaryIpAddressAssociatedElasticIp> associatedElasticIp() {
         return Optional.ofNullable(this.associatedElasticIp);
     }
     /**
-     * @return 是否为主私网IPv4地址。
+     * @return Indicates whether this is the primary private IPv4 address.
      * 
      */
     public Optional<Boolean> primary() {
         return Optional.ofNullable(this.primary);
     }
     /**
-     * @return 网卡的私网IP地址。
+     * @return Private IP address of the network interface.
      * 
      */
     public Optional<String> privateIpAddress() {

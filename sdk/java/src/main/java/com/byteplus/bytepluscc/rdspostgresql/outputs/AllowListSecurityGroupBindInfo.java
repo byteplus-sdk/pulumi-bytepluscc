@@ -13,50 +13,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AllowListSecurityGroupBindInfo {
     /**
-     * @return 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。
+     * @return Mode for associating security groups. Values: IngressDirectionIp: inbound IP. AssociateEcsIp: associate ECS IP.
      * 
      */
     private @Nullable String bindMode;
     /**
-     * @return 安全组中的 IP 列表。
+     * @return IP address list in the security group.
      * 
      */
     private @Nullable List<String> ipLists;
     /**
-     * @return 安全组 ID。
+     * @return Security group ID.
      * 
      */
     private @Nullable String securityGroupId;
     /**
-     * @return 安全组名称。
+     * @return Security group name.
      * 
      */
     private @Nullable String securityGroupName;
 
     private AllowListSecurityGroupBindInfo() {}
     /**
-     * @return 关联安全组的模式。取值：IngressDirectionIp：入方向 IP。AssociateEcsIp：关联 ECSIP。
+     * @return Mode for associating security groups. Values: IngressDirectionIp: inbound IP. AssociateEcsIp: associate ECS IP.
      * 
      */
     public Optional<String> bindMode() {
         return Optional.ofNullable(this.bindMode);
     }
     /**
-     * @return 安全组中的 IP 列表。
+     * @return IP address list in the security group.
      * 
      */
     public List<String> ipLists() {
         return this.ipLists == null ? List.of() : this.ipLists;
     }
     /**
-     * @return 安全组 ID。
+     * @return Security group ID.
      * 
      */
     public Optional<String> securityGroupId() {
         return Optional.ofNullable(this.securityGroupId);
     }
     /**
-     * @return 安全组名称。
+     * @return Security group name.
      * 
      */
     public Optional<String> securityGroupName() {

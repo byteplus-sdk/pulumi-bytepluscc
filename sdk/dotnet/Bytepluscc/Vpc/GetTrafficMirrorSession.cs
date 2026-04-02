@@ -65,15 +65,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class GetTrafficMirrorSessionResult
     {
         /// <summary>
-        /// 会话计费状态。Normal：正常计费中。  - FinancialLocked：欠费锁定。
+        /// Session billing status. Normal: Billing in progress.   - FinancialLocked: Locked due to overdue payment
         /// </summary>
         public readonly string BusinessStatus;
         /// <summary>
-        /// 创建时间。
+        /// Creation time
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 镜像会话实例描述。
+        /// Mirror session instance description
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -81,55 +81,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 锁定原因。
+        /// Lock reason
         /// </summary>
         public readonly string LockReason;
         /// <summary>
-        /// 镜像源实例ID，当前只支持ECS的主网卡和辅助网卡。
+        /// Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
         /// </summary>
         public readonly string NetworkInterfaceId;
         /// <summary>
-        /// 镜像会话MTU，超过被截断，取值范围：64～9600。
+        /// Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
         /// </summary>
         public readonly int PacketLength;
         /// <summary>
-        /// 镜像会话优先级，取值范围1 ～ 32766，同一账户下镜像会话优先级不能重复。
+        /// Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
         /// </summary>
         public readonly int Priority;
         /// <summary>
-        /// 所属项目的名称
+        /// Name of the associated project
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// 会话状态。
+        /// Session status
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// 标签信息。
+        /// Tag information
         /// </summary>
         public readonly ImmutableArray<Outputs.GetTrafficMirrorSessionTagResult> Tags;
         /// <summary>
-        /// 筛选条件实例ID。
+        /// Filter condition instance ID
         /// </summary>
         public readonly string TrafficMirrorFilterId;
         /// <summary>
-        /// 镜像会话实例ID。
+        /// Mirror session instance ID
         /// </summary>
         public readonly string TrafficMirrorSessionId;
         /// <summary>
-        /// 镜像会话名称。
+        /// Mirror session name
         /// </summary>
         public readonly string TrafficMirrorSessionName;
         /// <summary>
-        /// 镜像源实例列表。
+        /// Mirror source instance list
         /// </summary>
         public readonly ImmutableArray<string> TrafficMirrorSourceIds;
         /// <summary>
-        /// 镜像目的实例ID。
+        /// Mirror destination instance ID
         /// </summary>
         public readonly string TrafficMirrorTargetId;
         /// <summary>
-        /// 镜像会话VNI，取值范围1 ～ 16777215。
+        /// Mirror session VNI. Range: 1–16777215
         /// </summary>
         public readonly int VirtualNetworkId;
 

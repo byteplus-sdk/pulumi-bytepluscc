@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class GetUpstreamUpstreamSpecVeFaasResult
     {
         /// <summary>
-        /// 函数ID。
+        /// Function ID
         /// </summary>
         public readonly string FunctionId;
 

@@ -12,38 +12,38 @@ import java.util.Objects;
 @CustomType
 public final class GetOrganizationOwner {
     /**
-     * @return 账号ID
+     * @return Account ID
      * 
      */
     private Integer accountId;
     /**
-     * @return 账号名称
+     * @return Account Name
      * 
      */
     private String accountName;
     /**
-     * @return 主体名称
+     * @return Entity Name
      * 
      */
     private String mainName;
 
     private GetOrganizationOwner() {}
     /**
-     * @return 账号ID
+     * @return Account ID
      * 
      */
     public Integer accountId() {
         return this.accountId;
     }
     /**
-     * @return 账号名称
+     * @return Account Name
      * 
      */
     public String accountName() {
         return this.accountName;
     }
     /**
-     * @return 主体名称
+     * @return Entity Name
      * 
      */
     public String mainName() {

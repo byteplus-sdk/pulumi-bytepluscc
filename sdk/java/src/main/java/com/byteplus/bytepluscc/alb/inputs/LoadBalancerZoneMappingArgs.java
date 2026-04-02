@@ -16,14 +16,14 @@ public final class LoadBalancerZoneMappingArgs extends com.pulumi.resources.Reso
     public static final LoadBalancerZoneMappingArgs Empty = new LoadBalancerZoneMappingArgs();
 
     /**
-     * 可用区内提供服务的子网ID。
+     * Subnet ID providing services within the availability zone.
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return 可用区内提供服务的子网ID。
+     * @return Subnet ID providing services within the availability zone.
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -31,14 +31,14 @@ public final class LoadBalancerZoneMappingArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 可用区的唯一标识符。
+     * Unique identifier of the availability zone.
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return 可用区的唯一标识符。
+     * @return Unique identifier of the availability zone.
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -71,7 +71,7 @@ public final class LoadBalancerZoneMappingArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param subnetId 可用区内提供服务的子网ID。
+         * @param subnetId Subnet ID providing services within the availability zone.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class LoadBalancerZoneMappingArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param subnetId 可用区内提供服务的子网ID。
+         * @param subnetId Subnet ID providing services within the availability zone.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class LoadBalancerZoneMappingArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param zoneId 可用区的唯一标识符。
+         * @param zoneId Unique identifier of the availability zone.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class LoadBalancerZoneMappingArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param zoneId 可用区的唯一标识符。
+         * @param zoneId Unique identifier of the availability zone.
          * 
          * @return builder
          * 

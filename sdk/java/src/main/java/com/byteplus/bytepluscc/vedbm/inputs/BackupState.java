@@ -18,14 +18,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     public static final BackupState Empty = new BackupState();
 
     /**
-     * 备份的结束时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      * 
      */
     @Import(name="backupEndTime")
     private @Nullable Output<String> backupEndTime;
 
     /**
-     * @return 备份的结束时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * @return Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      * 
      */
     public Optional<Output<String>> backupEndTime() {
@@ -33,14 +33,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备份文件大小，单位为 KiB。
+     * Backup file size, unit: KiB
      * 
      */
     @Import(name="backupFileSize")
     private @Nullable Output<Integer> backupFileSize;
 
     /**
-     * @return 备份文件大小，单位为 KiB。
+     * @return Backup file size, unit: KiB
      * 
      */
     public Optional<Output<Integer>> backupFileSize() {
@@ -48,14 +48,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备份 ID。
+     * Backup ID
      * 
      */
     @Import(name="backupId")
     private @Nullable Output<String> backupId;
 
     /**
-     * @return 备份 ID。
+     * @return Backup ID
      * 
      */
     public Optional<Output<String>> backupId() {
@@ -63,14 +63,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备份方式，目前仅支持物理备份。
+     * Backup method, currently only physical backup is supported
      * 
      */
     @Import(name="backupMethod")
     private @Nullable Output<String> backupMethod;
 
     /**
-     * @return 备份方式，目前仅支持物理备份。
+     * @return Backup method, currently only physical backup is supported
      * 
      */
     public Optional<Output<String>> backupMethod() {
@@ -78,14 +78,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 数据备份保留天数。
+     * Data backup retention days
      * 
      */
     @Import(name="backupRetentionPeriod")
     private @Nullable Output<Integer> backupRetentionPeriod;
 
     /**
-     * @return 数据备份保留天数。
+     * @return Data backup retention days
      * 
      */
     public Optional<Output<Integer>> backupRetentionPeriod() {
@@ -93,14 +93,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备份的开始时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      * 
      */
     @Import(name="backupStartTime")
     private @Nullable Output<String> backupStartTime;
 
     /**
-     * @return 备份的开始时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * @return Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      * 
      */
     public Optional<Output<String>> backupStartTime() {
@@ -108,14 +108,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备份状态。
+     * Backup status
      * 
      */
     @Import(name="backupStatus")
     private @Nullable Output<String> backupStatus;
 
     /**
-     * @return 备份状态。
+     * @return Backup status
      * 
      */
     public Optional<Output<String>> backupStatus() {
@@ -123,14 +123,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+     * Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
      * 
      */
     @Import(name="backupTime")
     private @Nullable Output<String> backupTime;
 
     /**
-     * @return 执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+     * @return Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
      * 
      */
     public Optional<Output<String>> backupTime() {
@@ -138,14 +138,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备份类型，目前仅支持全量备份。
+     * Backup type, currently only full backup is supported
      * 
      */
     @Import(name="backupType")
     private @Nullable Output<String> backupType;
 
     /**
-     * @return 备份类型，目前仅支持全量备份。
+     * @return Backup type, currently only full backup is supported
      * 
      */
     public Optional<Output<String>> backupType() {
@@ -153,14 +153,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 一致性备份的时间点，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * Consistency backup timestamp, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      * 
      */
     @Import(name="consistentTime")
     private @Nullable Output<String> consistentTime;
 
     /**
-     * @return 一致性备份的时间点，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+     * @return Consistency backup timestamp, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
      * 
      */
     public Optional<Output<String>> consistentTime() {
@@ -168,14 +168,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启持续备份，取值固定为 true。
+     * Enable continuous backup, value is always true
      * 
      */
     @Import(name="continueBackup")
     private @Nullable Output<Boolean> continueBackup;
 
     /**
-     * @return 是否开启持续备份，取值固定为 true。
+     * @return Enable continuous backup, value is always true
      * 
      */
     public Optional<Output<Boolean>> continueBackup() {
@@ -183,14 +183,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建类型。
+     * Creation type
      * 
      */
     @Import(name="createType")
     private @Nullable Output<String> createType;
 
     /**
-     * @return 创建类型。
+     * @return Creation type
      * 
      */
     public Optional<Output<String>> createType() {
@@ -198,14 +198,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 全量备份周期，多个取值用英文逗号（,）隔开。
+     * Full backup cycle, use commas (,) to separate multiple values
      * 
      */
     @Import(name="fullBackupPeriod")
     private @Nullable Output<String> fullBackupPeriod;
 
     /**
-     * @return 全量备份周期，多个取值用英文逗号（,）隔开。
+     * @return Full backup cycle, use commas (,) to separate multiple values
      * 
      */
     public Optional<Output<String>> fullBackupPeriod() {
@@ -213,14 +213,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例ID。
+     * Instance ID
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 实例ID。
+     * @return Instance ID
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -265,7 +265,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupEndTime 备份的结束时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         * @param backupEndTime Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
          * 
          * @return builder
          * 
@@ -276,7 +276,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupEndTime 备份的结束时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         * @param backupEndTime Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
          * 
          * @return builder
          * 
@@ -286,7 +286,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupFileSize 备份文件大小，单位为 KiB。
+         * @param backupFileSize Backup file size, unit: KiB
          * 
          * @return builder
          * 
@@ -297,7 +297,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupFileSize 备份文件大小，单位为 KiB。
+         * @param backupFileSize Backup file size, unit: KiB
          * 
          * @return builder
          * 
@@ -307,7 +307,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupId 备份 ID。
+         * @param backupId Backup ID
          * 
          * @return builder
          * 
@@ -318,7 +318,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupId 备份 ID。
+         * @param backupId Backup ID
          * 
          * @return builder
          * 
@@ -328,7 +328,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupMethod 备份方式，目前仅支持物理备份。
+         * @param backupMethod Backup method, currently only physical backup is supported
          * 
          * @return builder
          * 
@@ -339,7 +339,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupMethod 备份方式，目前仅支持物理备份。
+         * @param backupMethod Backup method, currently only physical backup is supported
          * 
          * @return builder
          * 
@@ -349,7 +349,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupRetentionPeriod 数据备份保留天数。
+         * @param backupRetentionPeriod Data backup retention days
          * 
          * @return builder
          * 
@@ -360,7 +360,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupRetentionPeriod 数据备份保留天数。
+         * @param backupRetentionPeriod Data backup retention days
          * 
          * @return builder
          * 
@@ -370,7 +370,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupStartTime 备份的开始时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         * @param backupStartTime Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
          * 
          * @return builder
          * 
@@ -381,7 +381,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupStartTime 备份的开始时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         * @param backupStartTime Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
          * 
          * @return builder
          * 
@@ -391,7 +391,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupStatus 备份状态。
+         * @param backupStatus Backup status
          * 
          * @return builder
          * 
@@ -402,7 +402,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupStatus 备份状态。
+         * @param backupStatus Backup status
          * 
          * @return builder
          * 
@@ -412,7 +412,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupTime 执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+         * @param backupTime Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
          * 
          * @return builder
          * 
@@ -423,7 +423,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupTime 执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+         * @param backupTime Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
          * 
          * @return builder
          * 
@@ -433,7 +433,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupType 备份类型，目前仅支持全量备份。
+         * @param backupType Backup type, currently only full backup is supported
          * 
          * @return builder
          * 
@@ -444,7 +444,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupType 备份类型，目前仅支持全量备份。
+         * @param backupType Backup type, currently only full backup is supported
          * 
          * @return builder
          * 
@@ -454,7 +454,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param consistentTime 一致性备份的时间点，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         * @param consistentTime Consistency backup timestamp, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
          * 
          * @return builder
          * 
@@ -465,7 +465,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param consistentTime 一致性备份的时间点，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+         * @param consistentTime Consistency backup timestamp, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
          * 
          * @return builder
          * 
@@ -475,7 +475,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param continueBackup 是否开启持续备份，取值固定为 true。
+         * @param continueBackup Enable continuous backup, value is always true
          * 
          * @return builder
          * 
@@ -486,7 +486,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param continueBackup 是否开启持续备份，取值固定为 true。
+         * @param continueBackup Enable continuous backup, value is always true
          * 
          * @return builder
          * 
@@ -496,7 +496,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createType 创建类型。
+         * @param createType Creation type
          * 
          * @return builder
          * 
@@ -507,7 +507,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createType 创建类型。
+         * @param createType Creation type
          * 
          * @return builder
          * 
@@ -517,7 +517,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fullBackupPeriod 全量备份周期，多个取值用英文逗号（,）隔开。
+         * @param fullBackupPeriod Full backup cycle, use commas (,) to separate multiple values
          * 
          * @return builder
          * 
@@ -528,7 +528,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fullBackupPeriod 全量备份周期，多个取值用英文逗号（,）隔开。
+         * @param fullBackupPeriod Full backup cycle, use commas (,) to separate multiple values
          * 
          * @return builder
          * 
@@ -538,7 +538,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例ID。
+         * @param instanceId Instance ID
          * 
          * @return builder
          * 
@@ -549,7 +549,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例ID。
+         * @param instanceId Instance ID
          * 
          * @return builder
          * 

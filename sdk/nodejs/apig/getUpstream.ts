@@ -31,27 +31,27 @@ export interface GetUpstreamArgs {
  */
 export interface GetUpstreamResult {
     /**
-     * 后端节点，Upstream来源类型为VeFaas时无效。
+     * Backend node. Not valid when the upstream source type is VeFaas
      */
     readonly backendTargets: outputs.apig.GetUpstreamBackendTarget[];
     /**
-     * 服务熔断配置。
+     * Service circuit breaking configuration
      */
     readonly circuitBreakingSettings: outputs.apig.GetUpstreamCircuitBreakingSettings;
     /**
-     * 备注。
+     * Remarks
      */
     readonly comments: string;
     /**
-     * 连接池配置。
+     * Connection Pool Configuration
      */
     readonly connectionPoolSettings: outputs.apig.GetUpstreamConnectionPoolSettings;
     /**
-     * Upstream创建时间。
+     * Upstream creation time
      */
     readonly createdTime: string;
     /**
-     * 网关实例ID。
+     * Gateway Instance ID
      */
     readonly gatewayId: string;
     /**
@@ -59,27 +59,27 @@ export interface GetUpstreamResult {
      */
     readonly id: string;
     /**
-     * 负载均衡配置。
+     * Load Balancing Configuration
      */
     readonly loadBalancerSettings: outputs.apig.GetUpstreamLoadBalancerSettings;
     /**
-     * Upstream名称。
+     * Upstream name
      */
     readonly name: string;
     /**
-     * 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
+     * Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
      */
     readonly protocol: string;
     /**
-     * Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
+     * Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
      */
     readonly sourceType: string;
     /**
-     * TLS配置。
+     * TLS Configuration
      */
     readonly tlsSettings: outputs.apig.GetUpstreamTlsSettings;
     /**
-     * Upstream更新时间。
+     * Upstream update time
      */
     readonly updatedTime: string;
     /**
@@ -87,11 +87,11 @@ export interface GetUpstreamResult {
      */
     readonly upstreamId: string;
     /**
-     * Upstream配置。
+     * Upstream Configuration
      */
     readonly upstreamSpec: outputs.apig.GetUpstreamUpstreamSpec;
     /**
-     * Upstream版本，仅在Upstream来源类型为K8S时有效。
+     * Upstream version, only valid when the upstream source type is K8S
      */
     readonly versionDetails: outputs.apig.GetUpstreamVersionDetail[];
 }

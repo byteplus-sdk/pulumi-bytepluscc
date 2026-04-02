@@ -34,16 +34,16 @@ class UpstreamArgs:
                  tls_settings: Optional[pulumi.Input['UpstreamTlsSettingsArgs']] = None):
         """
         The set of arguments for constructing a Upstream resource.
-        :param pulumi.Input[builtins.str] gateway_id: 网关实例ID。
-        :param pulumi.Input[builtins.str] name: Upstream名称。
-        :param pulumi.Input[builtins.str] source_type: Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
-        :param pulumi.Input['UpstreamUpstreamSpecArgs'] upstream_spec: Upstream配置。
-        :param pulumi.Input['UpstreamCircuitBreakingSettingsArgs'] circuit_breaking_settings: 服务熔断配置。
-        :param pulumi.Input[builtins.str] comments: 备注。
-        :param pulumi.Input['UpstreamConnectionPoolSettingsArgs'] connection_pool_settings: 连接池配置。
-        :param pulumi.Input['UpstreamLoadBalancerSettingsArgs'] load_balancer_settings: 负载均衡配置。
-        :param pulumi.Input[builtins.str] protocol: 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
-        :param pulumi.Input['UpstreamTlsSettingsArgs'] tls_settings: TLS配置。
+        :param pulumi.Input[builtins.str] gateway_id: Gateway Instance ID
+        :param pulumi.Input[builtins.str] name: Upstream name
+        :param pulumi.Input[builtins.str] source_type: Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
+        :param pulumi.Input['UpstreamUpstreamSpecArgs'] upstream_spec: Upstream Configuration
+        :param pulumi.Input['UpstreamCircuitBreakingSettingsArgs'] circuit_breaking_settings: Service circuit breaking configuration
+        :param pulumi.Input[builtins.str] comments: Remarks
+        :param pulumi.Input['UpstreamConnectionPoolSettingsArgs'] connection_pool_settings: Connection Pool Configuration
+        :param pulumi.Input['UpstreamLoadBalancerSettingsArgs'] load_balancer_settings: Load Balancing Configuration
+        :param pulumi.Input[builtins.str] protocol: Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
+        :param pulumi.Input['UpstreamTlsSettingsArgs'] tls_settings: TLS Configuration
         """
         pulumi.set(__self__, "gateway_id", gateway_id)
         pulumi.set(__self__, "name", name)
@@ -66,7 +66,7 @@ class UpstreamArgs:
     @pulumi.getter(name="gatewayId")
     def gateway_id(self) -> pulumi.Input[builtins.str]:
         """
-        网关实例ID。
+        Gateway Instance ID
         """
         return pulumi.get(self, "gateway_id")
 
@@ -78,7 +78,7 @@ class UpstreamArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[builtins.str]:
         """
-        Upstream名称。
+        Upstream name
         """
         return pulumi.get(self, "name")
 
@@ -90,7 +90,7 @@ class UpstreamArgs:
     @pulumi.getter(name="sourceType")
     def source_type(self) -> pulumi.Input[builtins.str]:
         """
-        Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
+        Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
         """
         return pulumi.get(self, "source_type")
 
@@ -102,7 +102,7 @@ class UpstreamArgs:
     @pulumi.getter(name="upstreamSpec")
     def upstream_spec(self) -> pulumi.Input['UpstreamUpstreamSpecArgs']:
         """
-        Upstream配置。
+        Upstream Configuration
         """
         return pulumi.get(self, "upstream_spec")
 
@@ -114,7 +114,7 @@ class UpstreamArgs:
     @pulumi.getter(name="circuitBreakingSettings")
     def circuit_breaking_settings(self) -> Optional[pulumi.Input['UpstreamCircuitBreakingSettingsArgs']]:
         """
-        服务熔断配置。
+        Service circuit breaking configuration
         """
         return pulumi.get(self, "circuit_breaking_settings")
 
@@ -126,7 +126,7 @@ class UpstreamArgs:
     @pulumi.getter
     def comments(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        备注。
+        Remarks
         """
         return pulumi.get(self, "comments")
 
@@ -138,7 +138,7 @@ class UpstreamArgs:
     @pulumi.getter(name="connectionPoolSettings")
     def connection_pool_settings(self) -> Optional[pulumi.Input['UpstreamConnectionPoolSettingsArgs']]:
         """
-        连接池配置。
+        Connection Pool Configuration
         """
         return pulumi.get(self, "connection_pool_settings")
 
@@ -150,7 +150,7 @@ class UpstreamArgs:
     @pulumi.getter(name="loadBalancerSettings")
     def load_balancer_settings(self) -> Optional[pulumi.Input['UpstreamLoadBalancerSettingsArgs']]:
         """
-        负载均衡配置。
+        Load Balancing Configuration
         """
         return pulumi.get(self, "load_balancer_settings")
 
@@ -162,7 +162,7 @@ class UpstreamArgs:
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
+        Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
         """
         return pulumi.get(self, "protocol")
 
@@ -174,7 +174,7 @@ class UpstreamArgs:
     @pulumi.getter(name="tlsSettings")
     def tls_settings(self) -> Optional[pulumi.Input['UpstreamTlsSettingsArgs']]:
         """
-        TLS配置。
+        TLS Configuration
         """
         return pulumi.get(self, "tls_settings")
 
@@ -203,19 +203,19 @@ class _UpstreamState:
                  version_details: Optional[pulumi.Input[Sequence[pulumi.Input['UpstreamVersionDetailArgs']]]] = None):
         """
         Input properties used for looking up and filtering Upstream resources.
-        :param pulumi.Input['UpstreamCircuitBreakingSettingsArgs'] circuit_breaking_settings: 服务熔断配置。
-        :param pulumi.Input[builtins.str] comments: 备注。
-        :param pulumi.Input['UpstreamConnectionPoolSettingsArgs'] connection_pool_settings: 连接池配置。
-        :param pulumi.Input[builtins.str] created_time: Upstream创建时间。
-        :param pulumi.Input[builtins.str] gateway_id: 网关实例ID。
-        :param pulumi.Input['UpstreamLoadBalancerSettingsArgs'] load_balancer_settings: 负载均衡配置。
-        :param pulumi.Input[builtins.str] name: Upstream名称。
-        :param pulumi.Input[builtins.str] protocol: 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
-        :param pulumi.Input[builtins.str] source_type: Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
-        :param pulumi.Input['UpstreamTlsSettingsArgs'] tls_settings: TLS配置。
-        :param pulumi.Input[builtins.str] updated_time: Upstream更新时间。
+        :param pulumi.Input['UpstreamCircuitBreakingSettingsArgs'] circuit_breaking_settings: Service circuit breaking configuration
+        :param pulumi.Input[builtins.str] comments: Remarks
+        :param pulumi.Input['UpstreamConnectionPoolSettingsArgs'] connection_pool_settings: Connection Pool Configuration
+        :param pulumi.Input[builtins.str] created_time: Upstream creation time
+        :param pulumi.Input[builtins.str] gateway_id: Gateway Instance ID
+        :param pulumi.Input['UpstreamLoadBalancerSettingsArgs'] load_balancer_settings: Load Balancing Configuration
+        :param pulumi.Input[builtins.str] name: Upstream name
+        :param pulumi.Input[builtins.str] protocol: Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
+        :param pulumi.Input[builtins.str] source_type: Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
+        :param pulumi.Input['UpstreamTlsSettingsArgs'] tls_settings: TLS Configuration
+        :param pulumi.Input[builtins.str] updated_time: Upstream update time
         :param pulumi.Input[builtins.str] upstream_id: Upstream ID。
-        :param pulumi.Input['UpstreamUpstreamSpecArgs'] upstream_spec: Upstream配置。
+        :param pulumi.Input['UpstreamUpstreamSpecArgs'] upstream_spec: Upstream Configuration
         """
         if backend_targets is not None:
             pulumi.set(__self__, "backend_targets", backend_targets)
@@ -261,7 +261,7 @@ class _UpstreamState:
     @pulumi.getter(name="circuitBreakingSettings")
     def circuit_breaking_settings(self) -> Optional[pulumi.Input['UpstreamCircuitBreakingSettingsArgs']]:
         """
-        服务熔断配置。
+        Service circuit breaking configuration
         """
         return pulumi.get(self, "circuit_breaking_settings")
 
@@ -273,7 +273,7 @@ class _UpstreamState:
     @pulumi.getter
     def comments(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        备注。
+        Remarks
         """
         return pulumi.get(self, "comments")
 
@@ -285,7 +285,7 @@ class _UpstreamState:
     @pulumi.getter(name="connectionPoolSettings")
     def connection_pool_settings(self) -> Optional[pulumi.Input['UpstreamConnectionPoolSettingsArgs']]:
         """
-        连接池配置。
+        Connection Pool Configuration
         """
         return pulumi.get(self, "connection_pool_settings")
 
@@ -297,7 +297,7 @@ class _UpstreamState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Upstream创建时间。
+        Upstream creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -309,7 +309,7 @@ class _UpstreamState:
     @pulumi.getter(name="gatewayId")
     def gateway_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网关实例ID。
+        Gateway Instance ID
         """
         return pulumi.get(self, "gateway_id")
 
@@ -321,7 +321,7 @@ class _UpstreamState:
     @pulumi.getter(name="loadBalancerSettings")
     def load_balancer_settings(self) -> Optional[pulumi.Input['UpstreamLoadBalancerSettingsArgs']]:
         """
-        负载均衡配置。
+        Load Balancing Configuration
         """
         return pulumi.get(self, "load_balancer_settings")
 
@@ -333,7 +333,7 @@ class _UpstreamState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Upstream名称。
+        Upstream name
         """
         return pulumi.get(self, "name")
 
@@ -345,7 +345,7 @@ class _UpstreamState:
     @pulumi.getter
     def protocol(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
+        Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
         """
         return pulumi.get(self, "protocol")
 
@@ -357,7 +357,7 @@ class _UpstreamState:
     @pulumi.getter(name="sourceType")
     def source_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
+        Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
         """
         return pulumi.get(self, "source_type")
 
@@ -369,7 +369,7 @@ class _UpstreamState:
     @pulumi.getter(name="tlsSettings")
     def tls_settings(self) -> Optional[pulumi.Input['UpstreamTlsSettingsArgs']]:
         """
-        TLS配置。
+        TLS Configuration
         """
         return pulumi.get(self, "tls_settings")
 
@@ -381,7 +381,7 @@ class _UpstreamState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Upstream更新时间。
+        Upstream update time
         """
         return pulumi.get(self, "updated_time")
 
@@ -405,7 +405,7 @@ class _UpstreamState:
     @pulumi.getter(name="upstreamSpec")
     def upstream_spec(self) -> Optional[pulumi.Input['UpstreamUpstreamSpecArgs']]:
         """
-        Upstream配置。
+        Upstream Configuration
         """
         return pulumi.get(self, "upstream_spec")
 
@@ -441,7 +441,7 @@ class Upstream(pulumi.CustomResource):
                  upstream_spec: Optional[pulumi.Input[Union['UpstreamUpstreamSpecArgs', 'UpstreamUpstreamSpecArgsDict']]] = None,
                  __props__=None):
         """
-        Upstream 是对 API 网关实例后端的抽象。您可以将具有相同功能的后端应用抽象为一个 Upstream，实现路由和后端应用解耦，更灵活地支持后端应用的灰度发布、多版本管理等场景。本文为您介绍 Upstream 的概念及作用。
+        Upstream is an abstraction of the backend for API gateway instances. You can group backend applications with the same functionality into an upstream, which decouples routing from backend applications and provides flexible support for scenarios such as canary releases and multi-version management. This article introduces the concept and purpose of upstream
 
         ## Import
 
@@ -451,16 +451,16 @@ class Upstream(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['UpstreamCircuitBreakingSettingsArgs', 'UpstreamCircuitBreakingSettingsArgsDict']] circuit_breaking_settings: 服务熔断配置。
-        :param pulumi.Input[builtins.str] comments: 备注。
-        :param pulumi.Input[Union['UpstreamConnectionPoolSettingsArgs', 'UpstreamConnectionPoolSettingsArgsDict']] connection_pool_settings: 连接池配置。
-        :param pulumi.Input[builtins.str] gateway_id: 网关实例ID。
-        :param pulumi.Input[Union['UpstreamLoadBalancerSettingsArgs', 'UpstreamLoadBalancerSettingsArgsDict']] load_balancer_settings: 负载均衡配置。
-        :param pulumi.Input[builtins.str] name: Upstream名称。
-        :param pulumi.Input[builtins.str] protocol: 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
-        :param pulumi.Input[builtins.str] source_type: Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
-        :param pulumi.Input[Union['UpstreamTlsSettingsArgs', 'UpstreamTlsSettingsArgsDict']] tls_settings: TLS配置。
-        :param pulumi.Input[Union['UpstreamUpstreamSpecArgs', 'UpstreamUpstreamSpecArgsDict']] upstream_spec: Upstream配置。
+        :param pulumi.Input[Union['UpstreamCircuitBreakingSettingsArgs', 'UpstreamCircuitBreakingSettingsArgsDict']] circuit_breaking_settings: Service circuit breaking configuration
+        :param pulumi.Input[builtins.str] comments: Remarks
+        :param pulumi.Input[Union['UpstreamConnectionPoolSettingsArgs', 'UpstreamConnectionPoolSettingsArgsDict']] connection_pool_settings: Connection Pool Configuration
+        :param pulumi.Input[builtins.str] gateway_id: Gateway Instance ID
+        :param pulumi.Input[Union['UpstreamLoadBalancerSettingsArgs', 'UpstreamLoadBalancerSettingsArgsDict']] load_balancer_settings: Load Balancing Configuration
+        :param pulumi.Input[builtins.str] name: Upstream name
+        :param pulumi.Input[builtins.str] protocol: Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
+        :param pulumi.Input[builtins.str] source_type: Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
+        :param pulumi.Input[Union['UpstreamTlsSettingsArgs', 'UpstreamTlsSettingsArgsDict']] tls_settings: TLS Configuration
+        :param pulumi.Input[Union['UpstreamUpstreamSpecArgs', 'UpstreamUpstreamSpecArgsDict']] upstream_spec: Upstream Configuration
         """
         ...
     @overload
@@ -469,7 +469,7 @@ class Upstream(pulumi.CustomResource):
                  args: UpstreamArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Upstream 是对 API 网关实例后端的抽象。您可以将具有相同功能的后端应用抽象为一个 Upstream，实现路由和后端应用解耦，更灵活地支持后端应用的灰度发布、多版本管理等场景。本文为您介绍 Upstream 的概念及作用。
+        Upstream is an abstraction of the backend for API gateway instances. You can group backend applications with the same functionality into an upstream, which decouples routing from backend applications and provides flexible support for scenarios such as canary releases and multi-version management. This article introduces the concept and purpose of upstream
 
         ## Import
 
@@ -566,19 +566,19 @@ class Upstream(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['UpstreamCircuitBreakingSettingsArgs', 'UpstreamCircuitBreakingSettingsArgsDict']] circuit_breaking_settings: 服务熔断配置。
-        :param pulumi.Input[builtins.str] comments: 备注。
-        :param pulumi.Input[Union['UpstreamConnectionPoolSettingsArgs', 'UpstreamConnectionPoolSettingsArgsDict']] connection_pool_settings: 连接池配置。
-        :param pulumi.Input[builtins.str] created_time: Upstream创建时间。
-        :param pulumi.Input[builtins.str] gateway_id: 网关实例ID。
-        :param pulumi.Input[Union['UpstreamLoadBalancerSettingsArgs', 'UpstreamLoadBalancerSettingsArgsDict']] load_balancer_settings: 负载均衡配置。
-        :param pulumi.Input[builtins.str] name: Upstream名称。
-        :param pulumi.Input[builtins.str] protocol: 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
-        :param pulumi.Input[builtins.str] source_type: Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
-        :param pulumi.Input[Union['UpstreamTlsSettingsArgs', 'UpstreamTlsSettingsArgsDict']] tls_settings: TLS配置。
-        :param pulumi.Input[builtins.str] updated_time: Upstream更新时间。
+        :param pulumi.Input[Union['UpstreamCircuitBreakingSettingsArgs', 'UpstreamCircuitBreakingSettingsArgsDict']] circuit_breaking_settings: Service circuit breaking configuration
+        :param pulumi.Input[builtins.str] comments: Remarks
+        :param pulumi.Input[Union['UpstreamConnectionPoolSettingsArgs', 'UpstreamConnectionPoolSettingsArgsDict']] connection_pool_settings: Connection Pool Configuration
+        :param pulumi.Input[builtins.str] created_time: Upstream creation time
+        :param pulumi.Input[builtins.str] gateway_id: Gateway Instance ID
+        :param pulumi.Input[Union['UpstreamLoadBalancerSettingsArgs', 'UpstreamLoadBalancerSettingsArgsDict']] load_balancer_settings: Load Balancing Configuration
+        :param pulumi.Input[builtins.str] name: Upstream name
+        :param pulumi.Input[builtins.str] protocol: Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
+        :param pulumi.Input[builtins.str] source_type: Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
+        :param pulumi.Input[Union['UpstreamTlsSettingsArgs', 'UpstreamTlsSettingsArgsDict']] tls_settings: TLS Configuration
+        :param pulumi.Input[builtins.str] updated_time: Upstream update time
         :param pulumi.Input[builtins.str] upstream_id: Upstream ID。
-        :param pulumi.Input[Union['UpstreamUpstreamSpecArgs', 'UpstreamUpstreamSpecArgsDict']] upstream_spec: Upstream配置。
+        :param pulumi.Input[Union['UpstreamUpstreamSpecArgs', 'UpstreamUpstreamSpecArgsDict']] upstream_spec: Upstream Configuration
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -610,7 +610,7 @@ class Upstream(pulumi.CustomResource):
     @pulumi.getter(name="circuitBreakingSettings")
     def circuit_breaking_settings(self) -> pulumi.Output['outputs.UpstreamCircuitBreakingSettings']:
         """
-        服务熔断配置。
+        Service circuit breaking configuration
         """
         return pulumi.get(self, "circuit_breaking_settings")
 
@@ -618,7 +618,7 @@ class Upstream(pulumi.CustomResource):
     @pulumi.getter
     def comments(self) -> pulumi.Output[builtins.str]:
         """
-        备注。
+        Remarks
         """
         return pulumi.get(self, "comments")
 
@@ -626,7 +626,7 @@ class Upstream(pulumi.CustomResource):
     @pulumi.getter(name="connectionPoolSettings")
     def connection_pool_settings(self) -> pulumi.Output['outputs.UpstreamConnectionPoolSettings']:
         """
-        连接池配置。
+        Connection Pool Configuration
         """
         return pulumi.get(self, "connection_pool_settings")
 
@@ -634,7 +634,7 @@ class Upstream(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        Upstream创建时间。
+        Upstream creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -642,7 +642,7 @@ class Upstream(pulumi.CustomResource):
     @pulumi.getter(name="gatewayId")
     def gateway_id(self) -> pulumi.Output[builtins.str]:
         """
-        网关实例ID。
+        Gateway Instance ID
         """
         return pulumi.get(self, "gateway_id")
 
@@ -650,7 +650,7 @@ class Upstream(pulumi.CustomResource):
     @pulumi.getter(name="loadBalancerSettings")
     def load_balancer_settings(self) -> pulumi.Output['outputs.UpstreamLoadBalancerSettings']:
         """
-        负载均衡配置。
+        Load Balancing Configuration
         """
         return pulumi.get(self, "load_balancer_settings")
 
@@ -658,7 +658,7 @@ class Upstream(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[builtins.str]:
         """
-        Upstream名称。
+        Upstream name
         """
         return pulumi.get(self, "name")
 
@@ -666,7 +666,7 @@ class Upstream(pulumi.CustomResource):
     @pulumi.getter
     def protocol(self) -> pulumi.Output[builtins.str]:
         """
-        协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
+        Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
         """
         return pulumi.get(self, "protocol")
 
@@ -674,7 +674,7 @@ class Upstream(pulumi.CustomResource):
     @pulumi.getter(name="sourceType")
     def source_type(self) -> pulumi.Output[builtins.str]:
         """
-        Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
+        Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
         """
         return pulumi.get(self, "source_type")
 
@@ -682,7 +682,7 @@ class Upstream(pulumi.CustomResource):
     @pulumi.getter(name="tlsSettings")
     def tls_settings(self) -> pulumi.Output['outputs.UpstreamTlsSettings']:
         """
-        TLS配置。
+        TLS Configuration
         """
         return pulumi.get(self, "tls_settings")
 
@@ -690,7 +690,7 @@ class Upstream(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        Upstream更新时间。
+        Upstream update time
         """
         return pulumi.get(self, "updated_time")
 
@@ -706,7 +706,7 @@ class Upstream(pulumi.CustomResource):
     @pulumi.getter(name="upstreamSpec")
     def upstream_spec(self) -> pulumi.Output['outputs.UpstreamUpstreamSpec']:
         """
-        Upstream配置。
+        Upstream Configuration
         """
         return pulumi.get(self, "upstream_spec")
 

@@ -12,62 +12,62 @@ import java.util.Objects;
 @CustomType
 public final class GetAclListener {
     /**
-     * @return 监听器对本访问控制策略组的控制方式。white：白名单。监听器监听CLB的流量时，CLB仅转发其白名单关联访问控制策略组中IP地址的请求。black：黑名单。监听器监听CLB的流量时，对于黑名单关联访问控制策略组中IP地址的请求，CLB拒绝转发。
+     * @return Listener control mode for this access control policy group. white: allowlist. When the listener monitors CLB traffic, CLB only forwards requests from IP addresses associated with the allowlist access control policy group. black: denylist. When the listener monitors CLB traffic, CLB rejects requests from IP addresses associated with the denylist access control policy group.
      * 
      */
     private String aclType;
     /**
-     * @return 监听器的ID。
+     * @return Listener ID
      * 
      */
     private String listenerId;
     /**
-     * @return 监听器的名称。
+     * @return Listener name
      * 
      */
     private String listenerName;
     /**
-     * @return 监听器的端口。
+     * @return Listener port
      * 
      */
     private Integer port;
     /**
-     * @return 监听器的协议。包括 TCP、UDP、HTTP、HTTPS。
+     * @return Listener protocol. Includes TCP, UDP, HTTP, HTTPS.
      * 
      */
     private String protocol;
 
     private GetAclListener() {}
     /**
-     * @return 监听器对本访问控制策略组的控制方式。white：白名单。监听器监听CLB的流量时，CLB仅转发其白名单关联访问控制策略组中IP地址的请求。black：黑名单。监听器监听CLB的流量时，对于黑名单关联访问控制策略组中IP地址的请求，CLB拒绝转发。
+     * @return Listener control mode for this access control policy group. white: allowlist. When the listener monitors CLB traffic, CLB only forwards requests from IP addresses associated with the allowlist access control policy group. black: denylist. When the listener monitors CLB traffic, CLB rejects requests from IP addresses associated with the denylist access control policy group.
      * 
      */
     public String aclType() {
         return this.aclType;
     }
     /**
-     * @return 监听器的ID。
+     * @return Listener ID
      * 
      */
     public String listenerId() {
         return this.listenerId;
     }
     /**
-     * @return 监听器的名称。
+     * @return Listener name
      * 
      */
     public String listenerName() {
         return this.listenerName;
     }
     /**
-     * @return 监听器的端口。
+     * @return Listener port
      * 
      */
     public Integer port() {
         return this.port;
     }
     /**
-     * @return 监听器的协议。包括 TCP、UDP、HTTP、HTTPS。
+     * @return Listener protocol. Includes TCP, UDP, HTTP, HTTPS.
      * 
      */
     public String protocol() {

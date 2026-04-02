@@ -13,86 +13,86 @@ import java.util.Objects;
 @CustomType
 public final class GetClusterApplicationExtraApplicationConfig {
     /**
-     * @return 组件实例名称。
+     * @return Component instance name.
      * 
      */
     private String componentInstanceName;
     /**
-     * @return 组件名称。
+     * @return Component name.
      * 
      */
     private String componentName;
     /**
-     * @return 配置文件名。
+     * @return Configuration file name.
      * 
      */
     private String configFileName;
     /**
-     * @return 配置项名称。
+     * @return Configuration item name.
      * 
      */
     private String configItemKey;
     /**
-     * @return 配置项值。
+     * @return Configuration item value.
      * 
      */
     private String configItemValue;
     /**
-     * @return 是否删除。
+     * @return Whether to delete.
      * 
      */
     private Boolean deleted;
     /**
-     * @return 影响组件。
+     * @return Affected component.
      * 
      */
     private GetClusterApplicationExtraApplicationConfigEffectiveScope effectiveScope;
 
     private GetClusterApplicationExtraApplicationConfig() {}
     /**
-     * @return 组件实例名称。
+     * @return Component instance name.
      * 
      */
     public String componentInstanceName() {
         return this.componentInstanceName;
     }
     /**
-     * @return 组件名称。
+     * @return Component name.
      * 
      */
     public String componentName() {
         return this.componentName;
     }
     /**
-     * @return 配置文件名。
+     * @return Configuration file name.
      * 
      */
     public String configFileName() {
         return this.configFileName;
     }
     /**
-     * @return 配置项名称。
+     * @return Configuration item name.
      * 
      */
     public String configItemKey() {
         return this.configItemKey;
     }
     /**
-     * @return 配置项值。
+     * @return Configuration item value.
      * 
      */
     public String configItemValue() {
         return this.configItemValue;
     }
     /**
-     * @return 是否删除。
+     * @return Whether to delete.
      * 
      */
     public Boolean deleted() {
         return this.deleted;
     }
     /**
-     * @return 影响组件。
+     * @return Affected component.
      * 
      */
     public GetClusterApplicationExtraApplicationConfigEffectiveScope effectiveScope() {

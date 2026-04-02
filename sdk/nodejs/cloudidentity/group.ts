@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 当您需要批量为云身份中心用户进行SSO授权时，您可以先通过用户组进行批量的用户管理。
+ * When you need to grant SSO authorization to Cloud Identity Center users in bulk, you can first manage users in bulk through user groups
  *
  * ## Import
  *
@@ -44,36 +44,36 @@ export class Group extends pulumi.CustomResource {
     }
 
     /**
-     * 创建时间。
+     * Creation Time
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 描述。
+     * Description
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 显示名。
+     * Display Name
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * 用户组id。
+     * User Group ID
      */
     public /*out*/ readonly groupId!: pulumi.Output<string>;
     /**
-     * 用户组名称。
+     * User Group Name
      */
     public readonly groupName!: pulumi.Output<string>;
     /**
-     * 用户组类型。
+     * User Group Type
      */
     public readonly joinType!: pulumi.Output<string>;
     public readonly members!: pulumi.Output<outputs.cloudidentity.GroupMember[]>;
     /**
-     * 用户组来源。
+     * User Group Source
      */
     public /*out*/ readonly source!: pulumi.Output<string>;
     /**
-     * 更新时间。
+     * Update Time
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
 
@@ -127,36 +127,36 @@ export class Group extends pulumi.CustomResource {
  */
 export interface GroupState {
     /**
-     * 创建时间。
+     * Creation Time
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 描述。
+     * Description
      */
     description?: pulumi.Input<string>;
     /**
-     * 显示名。
+     * Display Name
      */
     displayName?: pulumi.Input<string>;
     /**
-     * 用户组id。
+     * User Group ID
      */
     groupId?: pulumi.Input<string>;
     /**
-     * 用户组名称。
+     * User Group Name
      */
     groupName?: pulumi.Input<string>;
     /**
-     * 用户组类型。
+     * User Group Type
      */
     joinType?: pulumi.Input<string>;
     members?: pulumi.Input<pulumi.Input<inputs.cloudidentity.GroupMember>[]>;
     /**
-     * 用户组来源。
+     * User Group Source
      */
     source?: pulumi.Input<string>;
     /**
-     * 更新时间。
+     * Update Time
      */
     updatedTime?: pulumi.Input<string>;
 }
@@ -166,19 +166,19 @@ export interface GroupState {
  */
 export interface GroupArgs {
     /**
-     * 描述。
+     * Description
      */
     description?: pulumi.Input<string>;
     /**
-     * 显示名。
+     * Display Name
      */
     displayName?: pulumi.Input<string>;
     /**
-     * 用户组名称。
+     * User Group Name
      */
     groupName: pulumi.Input<string>;
     /**
-     * 用户组类型。
+     * User Group Type
      */
     joinType: pulumi.Input<string>;
     members?: pulumi.Input<pulumi.Input<inputs.cloudidentity.GroupMember>[]>;

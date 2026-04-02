@@ -30,55 +30,55 @@ type LookupKeyArgs struct {
 
 // A collection of values returned by getKey.
 type LookupKeyResult struct {
-	// 密钥创建时间。
+	// Key creation time.
 	CreatedTime int `pulumi:"createdTime"`
-	// 密钥描述:长度为 0   - 8192 个字符。
+	// Key description: Length 0–8192 characters.
 	Description string `pulumi:"description"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+	// User master key archive operation (enter 1 to archive, 2 to unarchive).
 	KeyArchiveOperation int `pulumi:"keyArchiveOperation"`
-	// 用户主密钥启用操作（用户输入1=启用，2=禁用）
+	// User master key enable operation (enter 1 to enable, 2 to disable).
 	KeyEnableOperation int `pulumi:"keyEnableOperation"`
-	// 密钥唯一标识符，UUID形式。
+	// Key unique identifier in UUID format.
 	KeyId string `pulumi:"keyId"`
-	// 密钥材料过期时间，当值为空时表示不会过期。
+	// Key material expiration time. If empty, the key does not expire.
 	KeyMaterialExpireTime string `pulumi:"keyMaterialExpireTime"`
-	// 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+	// Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
 	KeyName string `pulumi:"keyName"`
-	// 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+	// User master key rotation operation (enter 1 to enable, 2 to disable).
 	KeyRotationOperation int `pulumi:"keyRotationOperation"`
-	// 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
+	// Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
 	KeySpec string `pulumi:"keySpec"`
-	// 密钥状态：Enable，Disable，PendingDelete，Archived，PendingImport。
+	// Key status: Enable, Disable, PendingDelete, Archived, PendingImport.
 	KeyState string `pulumi:"keyState"`
-	// 密钥用途，取值：ENCRYPT*DECRYPT，SIGN*VERIFY，GENERATE*VERIFY*MAC。
+	// Key usage. Options: ENCRYPT*DECRYPT, SIGN*VERIFY, GENERATE*VERIFY*MAC.
 	KeyUsage string `pulumi:"keyUsage"`
-	// 密钥环名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+	// Key ring name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
 	KeyringName string `pulumi:"keyringName"`
-	// 密钥最后轮转时间。
+	// Key last rotation time.
 	LastRotationTime string `pulumi:"lastRotationTime"`
-	// 是否为 Multi-region 类型的主密钥。
+	// Is this a multi-region type master key.
 	MultiRegion bool `pulumi:"multiRegion"`
-	// Multi-region key 配置信息。
+	// Multi-region key configuration information.
 	MultiRegionConfiguration GetKeyMultiRegionConfiguration `pulumi:"multiRegionConfiguration"`
-	// 密钥来源，取值：CloudKMS，External，ExternalKeyStore。
+	// Key source. Options: CloudKMS, External, ExternalKeyStore.
 	Origin string `pulumi:"origin"`
-	// 密钥保护级别，取值：SOFTWARE，HSM。
+	// Key protection level. Options: SOFTWARE, HSM.
 	ProtectionLevel string `pulumi:"protectionLevel"`
-	// 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+	// Key rotation period (days). Range: [90, 2560].
 	RotateInterval int `pulumi:"rotateInterval"`
-	// 密钥轮转状态，取值：Enable，Disable。
+	// Key rotation status. Options: Enable, Disable.
 	RotateState string `pulumi:"rotateState"`
-	// 密钥删除时间。
+	// Key deletion time.
 	ScheduleDeleteTime string `pulumi:"scheduleDeleteTime"`
-	// 密钥轮转时间。
+	// Key rotation time.
 	ScheduleRotationTime string `pulumi:"scheduleRotationTime"`
-	// KMS密钥的标签信息
+	// KMS key label information.
 	Tags []GetKeyTag `pulumi:"tags"`
-	// 资源名称，格式应为 trn:${Service}:${Region}:${AccountID}:${ResourcePath}。
+	// Resource name. Format should be trn:${Service}:${Region}:${AccountID}:${ResourcePath}.
 	Trn string `pulumi:"trn"`
-	// 密钥更新时间。
+	// Key update time.
 	UpdatedTime int `pulumi:"updatedTime"`
 }
 
@@ -116,12 +116,12 @@ func (o LookupKeyResultOutput) ToLookupKeyResultOutputWithContext(ctx context.Co
 	return o
 }
 
-// 密钥创建时间。
+// Key creation time.
 func (o LookupKeyResultOutput) CreatedTime() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupKeyResult) int { return v.CreatedTime }).(pulumi.IntOutput)
 }
 
-// 密钥描述:长度为 0   - 8192 个字符。
+// Key description: Length 0–8192 characters.
 func (o LookupKeyResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -131,112 +131,112 @@ func (o LookupKeyResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 用户主密钥归档操作（用户输入1=归档，2=取消归档）
+// User master key archive operation (enter 1 to archive, 2 to unarchive).
 func (o LookupKeyResultOutput) KeyArchiveOperation() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupKeyResult) int { return v.KeyArchiveOperation }).(pulumi.IntOutput)
 }
 
-// 用户主密钥启用操作（用户输入1=启用，2=禁用）
+// User master key enable operation (enter 1 to enable, 2 to disable).
 func (o LookupKeyResultOutput) KeyEnableOperation() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupKeyResult) int { return v.KeyEnableOperation }).(pulumi.IntOutput)
 }
 
-// 密钥唯一标识符，UUID形式。
+// Key unique identifier in UUID format.
 func (o LookupKeyResultOutput) KeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyResult) string { return v.KeyId }).(pulumi.StringOutput)
 }
 
-// 密钥材料过期时间，当值为空时表示不会过期。
+// Key material expiration time. If empty, the key does not expire.
 func (o LookupKeyResultOutput) KeyMaterialExpireTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyResult) string { return v.KeyMaterialExpireTime }).(pulumi.StringOutput)
 }
 
-// 主密钥名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+// Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
 func (o LookupKeyResultOutput) KeyName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyResult) string { return v.KeyName }).(pulumi.StringOutput)
 }
 
-// 用户主密钥轮转操作（用户输入1=开启，2=关闭）
+// User master key rotation operation (enter 1 to enable, 2 to disable).
 func (o LookupKeyResultOutput) KeyRotationOperation() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupKeyResult) int { return v.KeyRotationOperation }).(pulumi.IntOutput)
 }
 
-// 对称密钥：SYMMETRIC*256，SYMMETRIC*128，非对称密钥：RSA*2048，RSA*3072，RSA*4096，EC*P256，EC*P256K，EC*P384，EC*P521，EC*SM2。
+// Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
 func (o LookupKeyResultOutput) KeySpec() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyResult) string { return v.KeySpec }).(pulumi.StringOutput)
 }
 
-// 密钥状态：Enable，Disable，PendingDelete，Archived，PendingImport。
+// Key status: Enable, Disable, PendingDelete, Archived, PendingImport.
 func (o LookupKeyResultOutput) KeyState() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyResult) string { return v.KeyState }).(pulumi.StringOutput)
 }
 
-// 密钥用途，取值：ENCRYPT*DECRYPT，SIGN*VERIFY，GENERATE*VERIFY*MAC。
+// Key usage. Options: ENCRYPT*DECRYPT, SIGN*VERIFY, GENERATE*VERIFY*MAC.
 func (o LookupKeyResultOutput) KeyUsage() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyResult) string { return v.KeyUsage }).(pulumi.StringOutput)
 }
 
-// 密钥环名称，长度为 2   - 31 个字符，合法字符：[a-zA-Z0-9-_]。
+// Key ring name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
 func (o LookupKeyResultOutput) KeyringName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyResult) string { return v.KeyringName }).(pulumi.StringOutput)
 }
 
-// 密钥最后轮转时间。
+// Key last rotation time.
 func (o LookupKeyResultOutput) LastRotationTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyResult) string { return v.LastRotationTime }).(pulumi.StringOutput)
 }
 
-// 是否为 Multi-region 类型的主密钥。
+// Is this a multi-region type master key.
 func (o LookupKeyResultOutput) MultiRegion() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupKeyResult) bool { return v.MultiRegion }).(pulumi.BoolOutput)
 }
 
-// Multi-region key 配置信息。
+// Multi-region key configuration information.
 func (o LookupKeyResultOutput) MultiRegionConfiguration() GetKeyMultiRegionConfigurationOutput {
 	return o.ApplyT(func(v LookupKeyResult) GetKeyMultiRegionConfiguration { return v.MultiRegionConfiguration }).(GetKeyMultiRegionConfigurationOutput)
 }
 
-// 密钥来源，取值：CloudKMS，External，ExternalKeyStore。
+// Key source. Options: CloudKMS, External, ExternalKeyStore.
 func (o LookupKeyResultOutput) Origin() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyResult) string { return v.Origin }).(pulumi.StringOutput)
 }
 
-// 密钥保护级别，取值：SOFTWARE，HSM。
+// Key protection level. Options: SOFTWARE, HSM.
 func (o LookupKeyResultOutput) ProtectionLevel() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyResult) string { return v.ProtectionLevel }).(pulumi.StringOutput)
 }
 
-// 密钥轮转周期，单位：天；取值范围：[90, 2560]。
+// Key rotation period (days). Range: [90, 2560].
 func (o LookupKeyResultOutput) RotateInterval() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupKeyResult) int { return v.RotateInterval }).(pulumi.IntOutput)
 }
 
-// 密钥轮转状态，取值：Enable，Disable。
+// Key rotation status. Options: Enable, Disable.
 func (o LookupKeyResultOutput) RotateState() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyResult) string { return v.RotateState }).(pulumi.StringOutput)
 }
 
-// 密钥删除时间。
+// Key deletion time.
 func (o LookupKeyResultOutput) ScheduleDeleteTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyResult) string { return v.ScheduleDeleteTime }).(pulumi.StringOutput)
 }
 
-// 密钥轮转时间。
+// Key rotation time.
 func (o LookupKeyResultOutput) ScheduleRotationTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyResult) string { return v.ScheduleRotationTime }).(pulumi.StringOutput)
 }
 
-// KMS密钥的标签信息
+// KMS key label information.
 func (o LookupKeyResultOutput) Tags() GetKeyTagArrayOutput {
 	return o.ApplyT(func(v LookupKeyResult) []GetKeyTag { return v.Tags }).(GetKeyTagArrayOutput)
 }
 
-// 资源名称，格式应为 trn:${Service}:${Region}:${AccountID}:${ResourcePath}。
+// Resource name. Format should be trn:${Service}:${Region}:${AccountID}:${ResourcePath}.
 func (o LookupKeyResultOutput) Trn() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyResult) string { return v.Trn }).(pulumi.StringOutput)
 }
 
-// 密钥更新时间。
+// Key update time.
 func (o LookupKeyResultOutput) UpdatedTime() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupKeyResult) int { return v.UpdatedTime }).(pulumi.IntOutput)
 }

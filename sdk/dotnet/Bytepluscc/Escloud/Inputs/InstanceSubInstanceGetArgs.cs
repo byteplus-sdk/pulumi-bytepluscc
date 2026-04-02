@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud.Inputs
     public sealed class InstanceSubInstanceGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 企业级 SQL 分析实例 ID。
+        /// Enterprise-level SQL analysis instance ID.
         /// </summary>
         [Input("subInstanceId")]
         public Input<string>? SubInstanceId { get; set; }
 
         /// <summary>
-        /// 实例状态。
+        /// Instance status
         /// </summary>
         [Input("subInstanceStatus")]
         public Input<string>? SubInstanceStatus { get; set; }
 
         /// <summary>
-        /// 实例类型。
+        /// Instance type
         /// </summary>
         [Input("subInstanceType")]
         public Input<string>? SubInstanceType { get; set; }

@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class SandboxInstanceTosMountConfig {
     /**
-     * @return 沙箱实例是否启用了实例级别的 TOS 挂载，参数值说明：true：是，false：否。
+     * @return Whether instance-level TOS mount is enabled for the sandbox instance. Parameter description: true: yes, false: no
      * 
      */
     private @Nullable Boolean enable;
@@ -22,7 +22,7 @@ public final class SandboxInstanceTosMountConfig {
 
     private SandboxInstanceTosMountConfig() {}
     /**
-     * @return 沙箱实例是否启用了实例级别的 TOS 挂载，参数值说明：true：是，false：否。
+     * @return Whether instance-level TOS mount is enabled for the sandbox instance. Parameter description: true: yes, false: no
      * 
      */
     public Optional<Boolean> enable() {

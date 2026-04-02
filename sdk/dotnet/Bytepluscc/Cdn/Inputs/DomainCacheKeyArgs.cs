@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainCacheKeyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示在 Condition 情况下，内容分发网络执行的操作。
+        /// Indicates the action performed by the content delivery network under the Condition scenario.
         /// </summary>
         [Input("cacheKeyAction")]
         public Input<Inputs.DomainCacheKeyCacheKeyActionArgs>? CacheKeyAction { get; set; }
 
         /// <summary>
-        /// 表示该配置模块的生效条件，由一组规则组成。
+        /// Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
         /// </summary>
         [Input("condition")]
         public Input<Inputs.DomainCacheKeyConditionArgs>? Condition { get; set; }

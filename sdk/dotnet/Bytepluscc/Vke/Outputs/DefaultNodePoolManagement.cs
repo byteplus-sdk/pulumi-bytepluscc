@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class DefaultNodePoolManagement
     {
         /// <summary>
-        /// 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+        /// Whether managed mode is enabled for the node pool. Values:   - true: enabled   - false: disabled
         /// </summary>
         public readonly bool? Enabled;
         /// <summary>
-        /// 检查自愈配置。
+        /// Check self-healing configuration.
         /// </summary>
         public readonly Outputs.DefaultNodePoolManagementRemedyConfig? RemedyConfig;
 

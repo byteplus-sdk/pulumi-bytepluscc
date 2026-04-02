@@ -17,14 +17,14 @@ public final class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleArgs e
     public static final DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleArgs Empty = new DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleArgs();
 
     /**
-     * 表示该规则中的黑名单或者白名单的配置。
+     * Indicates the configuration of the denylist or allowlist in this rule.
      * 
      */
     @Import(name="accessAction")
     private @Nullable Output<DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessActionArgs> accessAction;
 
     /**
-     * @return 表示该规则中的黑名单或者白名单的配置。
+     * @return Indicates the configuration of the denylist or allowlist in this rule.
      * 
      */
     public Optional<Output<DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessActionArgs>> accessAction() {
@@ -32,14 +32,14 @@ public final class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleArgs e
     }
 
     /**
-     * 表示该配置模块的生效条件，由一组规则组成。
+     * Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionArgs> condition;
 
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public Optional<Output<DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleConditionArgs>> condition() {
@@ -72,7 +72,7 @@ public final class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleArgs e
         }
 
         /**
-         * @param accessAction 表示该规则中的黑名单或者白名单的配置。
+         * @param accessAction Indicates the configuration of the denylist or allowlist in this rule.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleArgs e
         }
 
         /**
-         * @param accessAction 表示该规则中的黑名单或者白名单的配置。
+         * @param accessAction Indicates the configuration of the denylist or allowlist in this rule.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleArgs e
         }
 
         /**
-         * @param condition 表示该配置模块的生效条件，由一组规则组成。
+         * @param condition Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class DomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleArgs e
         }
 
         /**
-         * @param condition 表示该配置模块的生效条件，由一组规则组成。
+         * @param condition Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          * 
          * @return builder
          * 

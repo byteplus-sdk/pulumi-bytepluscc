@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 public final class InstanceResourceTag {
     private @Nullable List<InstanceResourceTagTagKv> tagKvs;
     /**
-     * @return 标签类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+     * @return Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
      * 
      */
     private @Nullable String type;
@@ -25,7 +25,7 @@ public final class InstanceResourceTag {
         return this.tagKvs == null ? List.of() : this.tagKvs;
     }
     /**
-     * @return 标签类型，取值如下：CUSTOM：自定义设置标签。SYSTEM：系统标签。
+     * @return Tag type. Options: CUSTOM: custom tag. SYSTEM: system tag
      * 
      */
     public Optional<String> type() {

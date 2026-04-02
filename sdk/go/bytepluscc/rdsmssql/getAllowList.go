@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Data Source schema for Byteplus::RDSMsSQL::Allowlist
+// Data Source schema for Byteplus::RDSMsSQL::AllowList
 func LookupAllowList(ctx *pulumi.Context, args *LookupAllowListArgs, opts ...pulumi.InvokeOption) (*LookupAllowListResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAllowListResult
@@ -30,31 +30,31 @@ type LookupAllowListArgs struct {
 
 // A collection of values returned by getAllowList.
 type LookupAllowListResult struct {
-	// IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+	// IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
 	AllowList string `pulumi:"allowList"`
-	// 白名单分类。
+	// Allowlist category
 	AllowListCategory string `pulumi:"allowListCategory"`
-	// 白名单描述。
+	// Allowlist description
 	AllowListDesc string `pulumi:"allowListDesc"`
-	// 白名单的id。
+	// Allowlist ID
 	AllowListId string `pulumi:"allowListId"`
-	// AllowListIP数量。
+	// Allowlist IP count
 	AllowListIpNum int `pulumi:"allowListIpNum"`
-	// 白名单名称。
+	// Allowlist name
 	AllowListName string `pulumi:"allowListName"`
-	// 白名单内的IP地址类型，当前仅支持IPv4。
+	// IP address type in the allowlist. Only IPv4 is supported
 	AllowListType string `pulumi:"allowListType"`
-	// 绑定的实例数量。解绑实例的白名单时必传。
+	// Number of bound instances. Required when unbinding an instance from the allowlist
 	AssociatedInstanceNum int `pulumi:"associatedInstanceNum"`
-	// 绑定的实例列表。
+	// Bound instance list
 	AssociatedInstances []GetAllowListAssociatedInstance `pulumi:"associatedInstances"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 实例ID。
+	// Instance ID
 	InstanceId string `pulumi:"instanceId"`
-	// 项目名称。
+	// Project name
 	ProjectName string `pulumi:"projectName"`
-	// 安全组之外的、需要加入白名单的IP地址，可输入IP地址或CIDR格式的IP地址段。如果该字段与AllowList同时指定，以AllowList为准。
+	// IP addresses outside the security group that need to be added to the allowlist. Enter IP addresses or CIDR-formatted IP ranges. If both this field and AllowList are specified, AllowList takes precedence
 	UserAllowList string `pulumi:"userAllowList"`
 }
 
@@ -92,47 +92,47 @@ func (o LookupAllowListResultOutput) ToLookupAllowListResultOutputWithContext(ct
 	return o
 }
 
-// IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+// IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
 func (o LookupAllowListResultOutput) AllowList() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAllowListResult) string { return v.AllowList }).(pulumi.StringOutput)
 }
 
-// 白名单分类。
+// Allowlist category
 func (o LookupAllowListResultOutput) AllowListCategory() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAllowListResult) string { return v.AllowListCategory }).(pulumi.StringOutput)
 }
 
-// 白名单描述。
+// Allowlist description
 func (o LookupAllowListResultOutput) AllowListDesc() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAllowListResult) string { return v.AllowListDesc }).(pulumi.StringOutput)
 }
 
-// 白名单的id。
+// Allowlist ID
 func (o LookupAllowListResultOutput) AllowListId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAllowListResult) string { return v.AllowListId }).(pulumi.StringOutput)
 }
 
-// AllowListIP数量。
+// Allowlist IP count
 func (o LookupAllowListResultOutput) AllowListIpNum() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAllowListResult) int { return v.AllowListIpNum }).(pulumi.IntOutput)
 }
 
-// 白名单名称。
+// Allowlist name
 func (o LookupAllowListResultOutput) AllowListName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAllowListResult) string { return v.AllowListName }).(pulumi.StringOutput)
 }
 
-// 白名单内的IP地址类型，当前仅支持IPv4。
+// IP address type in the allowlist. Only IPv4 is supported
 func (o LookupAllowListResultOutput) AllowListType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAllowListResult) string { return v.AllowListType }).(pulumi.StringOutput)
 }
 
-// 绑定的实例数量。解绑实例的白名单时必传。
+// Number of bound instances. Required when unbinding an instance from the allowlist
 func (o LookupAllowListResultOutput) AssociatedInstanceNum() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAllowListResult) int { return v.AssociatedInstanceNum }).(pulumi.IntOutput)
 }
 
-// 绑定的实例列表。
+// Bound instance list
 func (o LookupAllowListResultOutput) AssociatedInstances() GetAllowListAssociatedInstanceArrayOutput {
 	return o.ApplyT(func(v LookupAllowListResult) []GetAllowListAssociatedInstance { return v.AssociatedInstances }).(GetAllowListAssociatedInstanceArrayOutput)
 }
@@ -142,17 +142,17 @@ func (o LookupAllowListResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAllowListResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 实例ID。
+// Instance ID
 func (o LookupAllowListResultOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAllowListResult) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 项目名称。
+// Project name
 func (o LookupAllowListResultOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAllowListResult) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 安全组之外的、需要加入白名单的IP地址，可输入IP地址或CIDR格式的IP地址段。如果该字段与AllowList同时指定，以AllowList为准。
+// IP addresses outside the security group that need to be added to the allowlist. Enter IP addresses or CIDR-formatted IP ranges. If both this field and AllowList are specified, AllowList takes precedence
 func (o LookupAllowListResultOutput) UserAllowList() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAllowListResult) string { return v.UserAllowList }).(pulumi.StringOutput)
 }

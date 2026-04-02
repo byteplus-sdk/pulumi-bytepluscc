@@ -16,14 +16,14 @@ public final class GatewayServiceAuthSpecArgs extends com.pulumi.resources.Resou
     public static final GatewayServiceAuthSpecArgs Empty = new GatewayServiceAuthSpecArgs();
 
     /**
-     * 是否开启认证。
+     * Whether authentication is enabled.
      * 
      */
     @Import(name="enable")
     private @Nullable Output<Boolean> enable;
 
     /**
-     * @return 是否开启认证。
+     * @return Whether authentication is enabled.
      * 
      */
     public Optional<Output<Boolean>> enable() {
@@ -55,7 +55,7 @@ public final class GatewayServiceAuthSpecArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param enable 是否开启认证。
+         * @param enable Whether authentication is enabled.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class GatewayServiceAuthSpecArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param enable 是否开启认证。
+         * @param enable Whether authentication is enabled.
          * 
          * @return builder
          * 

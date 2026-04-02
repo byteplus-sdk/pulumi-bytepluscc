@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class GatewayServiceAuthSpecArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 是否开启认证。
+        /// Whether authentication is enabled.
         /// </summary>
         [Input("enable")]
         public Input<bool>? Enable { get; set; }

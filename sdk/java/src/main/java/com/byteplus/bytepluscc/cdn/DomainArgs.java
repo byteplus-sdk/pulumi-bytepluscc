@@ -59,14 +59,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     public static final DomainArgs Empty = new DomainArgs();
 
     /**
-     * 表示 &#34;地域访问控制&#34; 特性的配置模块。该特性默认为禁用。
+     * Indicates the configuration module for the &#39;regional access control&#39; feature. This feature is disabled by default.
      * 
      */
     @Import(name="areaAccessRule")
     private @Nullable Output<DomainAreaAccessRuleArgs> areaAccessRule;
 
     /**
-     * @return 表示 &#34;地域访问控制&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#39;regional access control&#39; feature. This feature is disabled by default.
      * 
      */
     public Optional<Output<DomainAreaAccessRuleArgs>> areaAccessRule() {
@@ -81,14 +81,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 &#34;共享缓存&#34; 特性的配置模块。该特性默认为禁用。
+     * Specifies the configuration module for the &#39;shared cache&#39; feature. This feature is disabled by default.
      * 
      */
     @Import(name="cacheHost")
     private @Nullable Output<DomainCacheHostArgs> cacheHost;
 
     /**
-     * @return 表示 &#34;共享缓存&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Specifies the configuration module for the &#39;shared cache&#39; feature. This feature is disabled by default.
      * 
      */
     public Optional<Output<DomainCacheHostArgs>> cacheHost() {
@@ -110,14 +110,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 &#34;智能压缩&#34; 特性的配置模块。该特性默认为禁用。
+     * Represents the configuration module for the &#39;Smart Compression&#39; feature. This feature is disabled by default.
      * 
      */
     @Import(name="compression")
     private @Nullable Output<DomainCompressionArgs> compression;
 
     /**
-     * @return 表示 &#34;智能压缩&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Represents the configuration module for the &#39;Smart Compression&#39; feature. This feature is disabled by default.
      * 
      */
     public Optional<Output<DomainCompressionArgs>> compression() {
@@ -125,14 +125,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 &#34;条件源站&#34; 特性的配置模块。
+     * Specifies the configuration module for the &#39;Conditional Origin&#39; feature.
      * 
      */
     @Import(name="conditionalOrigin")
     private @Nullable Output<DomainConditionalOriginArgs> conditionalOrigin;
 
     /**
-     * @return 表示 &#34;条件源站&#34; 特性的配置模块。
+     * @return Specifies the configuration module for the &#39;Conditional Origin&#39; feature.
      * 
      */
     public Optional<Output<DomainConditionalOriginArgs>> conditionalOrigin() {
@@ -140,14 +140,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 &#34;自定义错误页面&#34; 特性的配置模块。该特性默认为禁用。
+     * Indicates the configuration module for the &#34;Custom Error Page&#34; feature. This feature is disabled by default.
      * 
      */
     @Import(name="customErrorPage")
     private @Nullable Output<DomainCustomErrorPageArgs> customErrorPage;
 
     /**
-     * @return 表示 &#34;自定义错误页面&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#34;Custom Error Page&#34; feature. This feature is disabled by default.
      * 
      */
     public Optional<Output<DomainCustomErrorPageArgs>> customErrorPage() {
@@ -155,14 +155,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 &#34;自定义头部黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+     * Represents the configuration module for the &#39;Custom Header Allowlist and Blocklist&#39; feature. This feature is disabled by default.
      * 
      */
     @Import(name="customizeAccessRule")
     private @Nullable Output<DomainCustomizeAccessRuleArgs> customizeAccessRule;
 
     /**
-     * @return 表示 &#34;自定义头部黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Represents the configuration module for the &#39;Custom Header Allowlist and Blocklist&#39; feature. This feature is disabled by default.
      * 
      */
     public Optional<Output<DomainCustomizeAccessRuleArgs>> customizeAccessRule() {
@@ -170,14 +170,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示该加速域名。
+     * Indicates the acceleration domain name.
      * 
      */
     @Import(name="domain", required=true)
     private Output<String> domain;
 
     /**
-     * @return 表示该加速域名。
+     * @return Indicates the acceleration domain name.
      * 
      */
     public Output<String> domain() {
@@ -185,14 +185,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 &#34;下载限速&#34; 特性的配置模块。该特性默认为禁用。
+     * Represents the configuration module for the &#39;Download Speed Limit&#39; feature. This feature is disabled by default.
      * 
      */
     @Import(name="downloadSpeedLimit")
     private @Nullable Output<DomainDownloadSpeedLimitArgs> downloadSpeedLimit;
 
     /**
-     * @return 表示 &#34;下载限速&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Represents the configuration module for the &#39;Download Speed Limit&#39; feature. This feature is disabled by default.
      * 
      */
     public Optional<Output<DomainDownloadSpeedLimitArgs>> downloadSpeedLimit() {
@@ -200,14 +200,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示是否启用 &#34;回源重定向跟随&#34; 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * Specifies whether to enable the &#39;origin redirect follow&#39; feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
      * 
      */
     @Import(name="followRedirect")
     private @Nullable Output<Boolean> followRedirect;
 
     /**
-     * @return 表示是否启用 &#34;回源重定向跟随&#34; 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Specifies whether to enable the &#39;origin redirect follow&#39; feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
      * 
      */
     public Optional<Output<Boolean>> followRedirect() {
@@ -215,14 +215,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 &#34;HTTPS 强制跳转到 HTTP&#34; 特性的配置模块。该特性默认是禁用。
+     * Represents the configuration module for the &#39;Force HTTPS Redirect to HTTP&#39; feature. This feature is disabled by default.
      * 
      */
     @Import(name="httpForcedRedirect")
     private @Nullable Output<DomainHttpForcedRedirectArgs> httpForcedRedirect;
 
     /**
-     * @return 表示 &#34;HTTPS 强制跳转到 HTTP&#34; 特性的配置模块。该特性默认是禁用。
+     * @return Represents the configuration module for the &#39;Force HTTPS Redirect to HTTP&#39; feature. This feature is disabled by default.
      * 
      */
     public Optional<Output<DomainHttpForcedRedirectArgs>> httpForcedRedirect() {
@@ -230,14 +230,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 HTTPS 配置模块。该功能默认是禁用。
+     * Indicates the HTTPS configuration module. This feature is disabled by default.
      * 
      */
     @Import(name="https")
     private @Nullable Output<DomainHttpsArgs> https;
 
     /**
-     * @return 表示 HTTPS 配置模块。该功能默认是禁用。
+     * @return Indicates the HTTPS configuration module. This feature is disabled by default.
      * 
      */
     public Optional<Output<DomainHttpsArgs>> https() {
@@ -245,14 +245,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 IPv6 特性的配置模块。
+     * Indicates the configuration module for the IPv6 feature.
      * 
      */
     @Import(name="iPv6")
     private @Nullable Output<DomainIPv6Args> iPv6;
 
     /**
-     * @return 表示 IPv6 特性的配置模块。
+     * @return Indicates the configuration module for the IPv6 feature.
      * 
      */
     public Optional<Output<DomainIPv6Args>> iPv6() {
@@ -260,14 +260,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 &#34;IP 黑白名单&#34; 特性的配置模块。该特性默认为禁用。该特性提供了两种配置方式：常规配置：指定 RuleType 和 Ip 对当前域名进行配置。全局配置：指定 SharedConfig 使用一个全局配置。全局配置是白名单功能。您只能选择一种配置方式。
+     * Specifies the configuration module for the &#39;IP allowlist and blocklist&#39; feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
      * 
      */
     @Import(name="ipAccessRule")
     private @Nullable Output<DomainIpAccessRuleArgs> ipAccessRule;
 
     /**
-     * @return 表示 &#34;IP 黑白名单&#34; 特性的配置模块。该特性默认为禁用。该特性提供了两种配置方式：常规配置：指定 RuleType 和 Ip 对当前域名进行配置。全局配置：指定 SharedConfig 使用一个全局配置。全局配置是白名单功能。您只能选择一种配置方式。
+     * @return Specifies the configuration module for the &#39;IP allowlist and blocklist&#39; feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
      * 
      */
     public Optional<Output<DomainIpAccessRuleArgs>> ipAccessRule() {
@@ -275,14 +275,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 &#34;禁用 HTTP Method&#34; 特性的配置模块。该特性默认为禁用。
+     * Represents the configuration module for the &#39;Disable HTTP Method&#39; feature. This feature is disabled by default.
      * 
      */
     @Import(name="methodDeniedRule")
     private @Nullable Output<DomainMethodDeniedRuleArgs> methodDeniedRule;
 
     /**
-     * @return 表示 &#34;禁用 HTTP Method&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Represents the configuration module for the &#39;Disable HTTP Method&#39; feature. This feature is disabled by default.
      * 
      */
     public Optional<Output<DomainMethodDeniedRuleArgs>> methodDeniedRule() {
@@ -290,14 +290,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示多重范围（multi-range) 特性的配置模块。该特性默认为禁用。
+     * Indicates the configuration module for the multi-range feature. This feature is disabled by default
      * 
      */
     @Import(name="multiRange")
     private @Nullable Output<DomainMultiRangeArgs> multiRange;
 
     /**
-     * @return 表示多重范围（multi-range) 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the multi-range feature. This feature is disabled by default
      * 
      */
     public Optional<Output<DomainMultiRangeArgs>> multiRange() {
@@ -312,14 +312,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 &#34;离线缓存&#34; 特性的配置模块。
+     * Indicates the configuration module for the &#39;offline cache&#39; feature.
      * 
      */
     @Import(name="offlineCache")
     private @Nullable Output<DomainOfflineCacheArgs> offlineCache;
 
     /**
-     * @return 表示 &#34;离线缓存&#34; 特性的配置模块。
+     * @return Indicates the configuration module for the &#39;offline cache&#39; feature.
      * 
      */
     public Optional<Output<DomainOfflineCacheArgs>> offlineCache() {
@@ -327,14 +327,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 &#34;Origin 黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+     * Indicates the configuration module for the &#39;Origin allowlist and blacklist&#39; feature. This feature is disabled by default.
      * 
      */
     @Import(name="originAccessRule")
     private @Nullable Output<DomainOriginAccessRuleArgs> originAccessRule;
 
     /**
-     * @return 表示 &#34;Origin 黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#39;Origin allowlist and blacklist&#39; feature. This feature is disabled by default.
      * 
      */
     public Optional<Output<DomainOriginAccessRuleArgs>> originAccessRule() {
@@ -349,14 +349,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 源站证书校验
+     * Origin certificate validation
      * 
      */
     @Import(name="originCertCheck")
     private @Nullable Output<DomainOriginCertCheckArgs> originCertCheck;
 
     /**
-     * @return 源站证书校验
+     * @return Origin certificate validation
      * 
      */
     public Optional<Output<DomainOriginCertCheckArgs>> originCertCheck() {
@@ -364,14 +364,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+     * If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
      * 
      */
     @Import(name="originHost")
     private @Nullable Output<String> originHost;
 
     /**
-     * @return 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+     * @return If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
      * 
      */
     public Optional<Output<String>> originHost() {
@@ -379,14 +379,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 &#34;IPv6 回源&#34; 的配置。该参数有以下取值：ipv6*first：表示内容分发网络始终尝试获取源站域名的 IPv6 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv4 地址。ipv4*first：表示内容分发网络始终尝试获取源站域名的 IPv4 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv6 地址。followclient：表示内容分发网络尝试获取与用户请求相同类型的 IP 地址。该参数的默认值是 followclient。由于海外部分回源节点不支持向 IPv6 地址发送回源请求，该功能仅适用于位于中国内地的回源节点。
+     * Indicates the configuration for &#34;IPv6 origin fetch.&#34; This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user&#39;s request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
      * 
      */
     @Import(name="originIPv6")
     private @Nullable Output<String> originIPv6;
 
     /**
-     * @return 表示 &#34;IPv6 回源&#34; 的配置。该参数有以下取值：ipv6*first：表示内容分发网络始终尝试获取源站域名的 IPv6 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv4 地址。ipv4*first：表示内容分发网络始终尝试获取源站域名的 IPv4 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv6 地址。followclient：表示内容分发网络尝试获取与用户请求相同类型的 IP 地址。该参数的默认值是 followclient。由于海外部分回源节点不支持向 IPv6 地址发送回源请求，该功能仅适用于位于中国内地的回源节点。
+     * @return Indicates the configuration for &#34;IPv6 origin fetch.&#34; This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user&#39;s request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
      * 
      */
     public Optional<Output<String>> originIPv6() {
@@ -394,14 +394,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示回源请求使用的协议。该参数有以下取值：http：表示回源请求使用 HTTP 协议。https：表示回源请求使用 HTTPS 协议。followclient：表示回源协议与用户请求使用的协议相同。
+     * Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user&#39;s request.
      * 
      */
     @Import(name="originProtocol")
     private @Nullable Output<String> originProtocol;
 
     /**
-     * @return 表示回源请求使用的协议。该参数有以下取值：http：表示回源请求使用 HTTP 协议。https：表示回源请求使用 HTTPS 协议。followclient：表示回源协议与用户请求使用的协议相同。
+     * @return Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user&#39;s request.
      * 
      */
     public Optional<Output<String>> originProtocol() {
@@ -409,14 +409,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示是否启用 &#34;Range 回源&#34; 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * Indicates whether the &#39;Range Origin&#39; feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
      * 
      */
     @Import(name="originRange")
     private @Nullable Output<Boolean> originRange;
 
     /**
-     * @return 表示是否启用 &#34;Range 回源&#34; 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+     * @return Indicates whether the &#39;Range Origin&#39; feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
      * 
      */
     public Optional<Output<Boolean>> originRange() {
@@ -424,14 +424,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 &#34;回源重试设置&#34; 特性的配置模块。
+     * Indicates the configuration module for the &#34;origin fetch retry settings&#34; feature.
      * 
      */
     @Import(name="originRetry")
     private @Nullable Output<DomainOriginRetryArgs> originRetry;
 
     /**
-     * @return 表示 &#34;回源重试设置&#34; 特性的配置模块。
+     * @return Indicates the configuration module for the &#34;origin fetch retry settings&#34; feature.
      * 
      */
     public Optional<Output<DomainOriginRetryArgs>> originRetry() {
@@ -439,14 +439,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 &#34;回源 URL 改写&#34; 特性的配置模块。
+     * Indicates the configuration module for the &#39;Origin URL Rewrite&#39; feature.
      * 
      */
     @Import(name="originRewrite")
     private @Nullable Output<DomainOriginRewriteArgs> originRewrite;
 
     /**
-     * @return 表示 &#34;回源 URL 改写&#34; 特性的配置模块。
+     * @return Indicates the configuration module for the &#39;Origin URL Rewrite&#39; feature.
      * 
      */
     public Optional<Output<DomainOriginRewriteArgs>> originRewrite() {
@@ -454,14 +454,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 &#34;回源 SNI&#34; 特性的配置模块。
+     * Indicates the configuration module for the &#39;origin SNI&#39; feature.
      * 
      */
     @Import(name="originSni")
     private @Nullable Output<DomainOriginSniArgs> originSni;
 
     /**
-     * @return 表示 &#34;回源 SNI&#34; 特性的配置模块。
+     * @return Indicates the configuration module for the &#39;origin SNI&#39; feature.
      * 
      */
     public Optional<Output<DomainOriginSniArgs>> originSni() {
@@ -476,14 +476,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 &#34;页面优化&#34; 特性的配置模块。
+     * Specifies the configuration module for the &#39;page optimization&#39; feature.
      * 
      */
     @Import(name="pageOptimization")
     private @Nullable Output<DomainPageOptimizationArgs> pageOptimization;
 
     /**
-     * @return 表示 &#34;页面优化&#34; 特性的配置模块。
+     * @return Specifies the configuration module for the &#39;page optimization&#39; feature.
      * 
      */
     public Optional<Output<DomainPageOptimizationArgs>> pageOptimization() {
@@ -491,14 +491,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示该加速域名归属的项目。
+     * Indicates the project to which the acceleration domain belongs
      * 
      */
     @Import(name="project")
     private @Nullable Output<String> project;
 
     /**
-     * @return 表示该加速域名归属的项目。
+     * @return Indicates the project to which the acceleration domain belongs
      * 
      */
     public Optional<Output<String>> project() {
@@ -506,14 +506,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 QUIC 特性的配置模块。该特性默认是禁用。
+     * Indicates the configuration module for the QUIC feature. This feature is disabled by default.
      * 
      */
     @Import(name="quic")
     private @Nullable Output<DomainQuicArgs> quic;
 
     /**
-     * @return 表示 QUIC 特性的配置模块。该特性默认是禁用。
+     * @return Indicates the configuration module for the QUIC feature. This feature is disabled by default.
      * 
      */
     public Optional<Output<DomainQuicArgs>> quic() {
@@ -521,14 +521,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 &#34;URL 重定向改写&#34; 特性的配置模块。该特性默认为禁用。
+     * Represents the configuration module for the &#39;URL Redirect Rewrite&#39; feature. This feature is disabled by default.
      * 
      */
     @Import(name="redirectionRewrite")
     private @Nullable Output<DomainRedirectionRewriteArgs> redirectionRewrite;
 
     /**
-     * @return 表示 &#34;URL 重定向改写&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Represents the configuration module for the &#39;URL Redirect Rewrite&#39; feature. This feature is disabled by default.
      * 
      */
     public Optional<Output<DomainRedirectionRewriteArgs>> redirectionRewrite() {
@@ -536,14 +536,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 &#34;Referer 黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+     * Indicates the configuration module for the &#34;Referer Allowlist and Denylist&#34; feature. This feature is disabled by default.
      * 
      */
     @Import(name="refererAccessRule")
     private @Nullable Output<DomainRefererAccessRuleArgs> refererAccessRule;
 
     /**
-     * @return 表示 &#34;Referer 黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#34;Referer Allowlist and Denylist&#34; feature. This feature is disabled by default.
      * 
      */
     public Optional<Output<DomainRefererAccessRuleArgs>> refererAccessRule() {
@@ -551,14 +551,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 &#34;远程鉴权&#34; 特性的配置模块。该特性默认为禁用。
+     * Indicates the configuration module for the &#39;remote authentication&#39; feature. This feature is disabled by default.
      * 
      */
     @Import(name="remoteAuth")
     private @Nullable Output<DomainRemoteAuthArgs> remoteAuth;
 
     /**
-     * @return 表示 &#34;远程鉴权&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#39;remote authentication&#39; feature. This feature is disabled by default.
      * 
      */
     public Optional<Output<DomainRemoteAuthArgs>> remoteAuth() {
@@ -566,14 +566,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 &#34;自定义拦截&#34; 特性的配置模块。该特性默认为禁用。
+     * Indicates the configuration module for the &#39;Custom Interception&#39; feature. This feature is disabled by default
      * 
      */
     @Import(name="requestBlockRule")
     private @Nullable Output<DomainRequestBlockRuleArgs> requestBlockRule;
 
     /**
-     * @return 表示 &#34;自定义拦截&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#39;Custom Interception&#39; feature. This feature is disabled by default
      * 
      */
     public Optional<Output<DomainRequestBlockRuleArgs>> requestBlockRule() {
@@ -595,14 +595,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 &#34;标准 HLS 加密改写&#34; 特性的配置模块。该特性默认为禁用。
+     * Indicates the configuration module for the &#34;Standard HLS Encryption Rewrite&#34; feature. This feature is disabled by default.
      * 
      */
     @Import(name="rewriteHls")
     private @Nullable Output<DomainRewriteHlsArgs> rewriteHls;
 
     /**
-     * @return 表示 &#34;标准 HLS 加密改写&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#34;Standard HLS Encryption Rewrite&#34; feature. This feature is disabled by default.
      * 
      */
     public Optional<Output<DomainRewriteHlsArgs>> rewriteHls() {
@@ -610,14 +610,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示该加速域名的加速区域。该参数有以下取值：chinese*mainland：表示中国内地。global：表示全球。outside*chinese_mainland：表示全球（不含中国内地）。
+     * Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
      * 
      */
     @Import(name="serviceRegion")
     private @Nullable Output<String> serviceRegion;
 
     /**
-     * @return 表示该加速域名的加速区域。该参数有以下取值：chinese*mainland：表示中国内地。global：表示全球。outside*chinese_mainland：表示全球（不含中国内地）。
+     * @return Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
      * 
      */
     public Optional<Output<String>> serviceRegion() {
@@ -625,14 +625,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示该域名的业务类型。该参数有以下取值：download：表示文件下载。web：表示网页。video：表示音视频点播。
+     * Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
      * 
      */
     @Import(name="serviceType", required=true)
     private Output<String> serviceType;
 
     /**
-     * @return 表示该域名的业务类型。该参数有以下取值：download：表示文件下载。web：表示网页。video：表示音视频点播。
+     * @return Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
      * 
      */
     public Output<String> serviceType() {
@@ -640,14 +640,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 &#34;URL 鉴权&#34; 特性的配置模块。该特性默认为禁用。
+     * Indicates the configuration module for the &#39;URL Authentication&#39; feature. This feature is disabled by default
      * 
      */
     @Import(name="signedUrlAuth")
     private @Nullable Output<DomainSignedUrlAuthArgs> signedUrlAuth;
 
     /**
-     * @return 表示 &#34;URL 鉴权&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#39;URL Authentication&#39; feature. This feature is disabled by default
      * 
      */
     public Optional<Output<DomainSignedUrlAuthArgs>> signedUrlAuth() {
@@ -662,14 +662,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 &#34;回源超时时间&#34; 特性的配置模块。该特性默认为禁用。
+     * Indicates the configuration module for the &#39;origin timeout&#39; feature. This feature is disabled by default.
      * 
      */
     @Import(name="timeout")
     private @Nullable Output<DomainTimeoutArgs> timeout;
 
     /**
-     * @return 表示 &#34;回源超时时间&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#39;origin timeout&#39; feature. This feature is disabled by default.
      * 
      */
     public Optional<Output<DomainTimeoutArgs>> timeout() {
@@ -677,14 +677,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 &#34;UA 黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+     * Indicates the configuration module for the &#34;UA allowlist and blocklist&#34; feature. This feature is disabled by default.
      * 
      */
     @Import(name="uaAccessRule")
     private @Nullable Output<DomainUaAccessRuleArgs> uaAccessRule;
 
     /**
-     * @return 表示 &#34;UA 黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#34;UA allowlist and blocklist&#34; feature. This feature is disabled by default.
      * 
      */
     public Optional<Output<DomainUaAccessRuleArgs>> uaAccessRule() {
@@ -692,14 +692,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 &#34;URL 标准化&#34; 特性的配置模块。该特性默认为禁用。
+     * Specifies the configuration module for the &#39;URL normalization&#39; feature. This feature is disabled by default.
      * 
      */
     @Import(name="urlNormalize")
     private @Nullable Output<DomainUrlNormalizeArgs> urlNormalize;
 
     /**
-     * @return 表示 &#34;URL 标准化&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Specifies the configuration module for the &#39;URL normalization&#39; feature. This feature is disabled by default.
      * 
      */
     public Optional<Output<DomainUrlNormalizeArgs>> urlNormalize() {
@@ -707,14 +707,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 表示 &#34;视频拖拽&#34; 特性的配置模块。该特性默认为禁用。
+     * Indicates the configuration module for the &#34;Video Drag&#34; feature. This feature is disabled by default.
      * 
      */
     @Import(name="videoDrag")
     private @Nullable Output<DomainVideoDragArgs> videoDrag;
 
     /**
-     * @return 表示 &#34;视频拖拽&#34; 特性的配置模块。该特性默认为禁用。
+     * @return Indicates the configuration module for the &#34;Video Drag&#34; feature. This feature is disabled by default.
      * 
      */
     public Optional<Output<DomainVideoDragArgs>> videoDrag() {
@@ -794,7 +794,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param areaAccessRule 表示 &#34;地域访问控制&#34; 特性的配置模块。该特性默认为禁用。
+         * @param areaAccessRule Indicates the configuration module for the &#39;regional access control&#39; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -805,7 +805,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param areaAccessRule 表示 &#34;地域访问控制&#34; 特性的配置模块。该特性默认为禁用。
+         * @param areaAccessRule Indicates the configuration module for the &#39;regional access control&#39; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -828,7 +828,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cacheHost 表示 &#34;共享缓存&#34; 特性的配置模块。该特性默认为禁用。
+         * @param cacheHost Specifies the configuration module for the &#39;shared cache&#39; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -839,7 +839,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cacheHost 表示 &#34;共享缓存&#34; 特性的配置模块。该特性默认为禁用。
+         * @param cacheHost Specifies the configuration module for the &#39;shared cache&#39; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -875,7 +875,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compression 表示 &#34;智能压缩&#34; 特性的配置模块。该特性默认为禁用。
+         * @param compression Represents the configuration module for the &#39;Smart Compression&#39; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -886,7 +886,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compression 表示 &#34;智能压缩&#34; 特性的配置模块。该特性默认为禁用。
+         * @param compression Represents the configuration module for the &#39;Smart Compression&#39; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -896,7 +896,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param conditionalOrigin 表示 &#34;条件源站&#34; 特性的配置模块。
+         * @param conditionalOrigin Specifies the configuration module for the &#39;Conditional Origin&#39; feature.
          * 
          * @return builder
          * 
@@ -907,7 +907,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param conditionalOrigin 表示 &#34;条件源站&#34; 特性的配置模块。
+         * @param conditionalOrigin Specifies the configuration module for the &#39;Conditional Origin&#39; feature.
          * 
          * @return builder
          * 
@@ -917,7 +917,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customErrorPage 表示 &#34;自定义错误页面&#34; 特性的配置模块。该特性默认为禁用。
+         * @param customErrorPage Indicates the configuration module for the &#34;Custom Error Page&#34; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -928,7 +928,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customErrorPage 表示 &#34;自定义错误页面&#34; 特性的配置模块。该特性默认为禁用。
+         * @param customErrorPage Indicates the configuration module for the &#34;Custom Error Page&#34; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -938,7 +938,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customizeAccessRule 表示 &#34;自定义头部黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+         * @param customizeAccessRule Represents the configuration module for the &#39;Custom Header Allowlist and Blocklist&#39; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -949,7 +949,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customizeAccessRule 表示 &#34;自定义头部黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+         * @param customizeAccessRule Represents the configuration module for the &#39;Custom Header Allowlist and Blocklist&#39; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -959,7 +959,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param domain 表示该加速域名。
+         * @param domain Indicates the acceleration domain name.
          * 
          * @return builder
          * 
@@ -970,7 +970,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param domain 表示该加速域名。
+         * @param domain Indicates the acceleration domain name.
          * 
          * @return builder
          * 
@@ -980,7 +980,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param downloadSpeedLimit 表示 &#34;下载限速&#34; 特性的配置模块。该特性默认为禁用。
+         * @param downloadSpeedLimit Represents the configuration module for the &#39;Download Speed Limit&#39; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -991,7 +991,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param downloadSpeedLimit 表示 &#34;下载限速&#34; 特性的配置模块。该特性默认为禁用。
+         * @param downloadSpeedLimit Represents the configuration module for the &#39;Download Speed Limit&#39; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -1001,7 +1001,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param followRedirect 表示是否启用 &#34;回源重定向跟随&#34; 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+         * @param followRedirect Specifies whether to enable the &#39;origin redirect follow&#39; feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
          * 
          * @return builder
          * 
@@ -1012,7 +1012,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param followRedirect 表示是否启用 &#34;回源重定向跟随&#34; 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+         * @param followRedirect Specifies whether to enable the &#39;origin redirect follow&#39; feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
          * 
          * @return builder
          * 
@@ -1022,7 +1022,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param httpForcedRedirect 表示 &#34;HTTPS 强制跳转到 HTTP&#34; 特性的配置模块。该特性默认是禁用。
+         * @param httpForcedRedirect Represents the configuration module for the &#39;Force HTTPS Redirect to HTTP&#39; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -1033,7 +1033,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param httpForcedRedirect 表示 &#34;HTTPS 强制跳转到 HTTP&#34; 特性的配置模块。该特性默认是禁用。
+         * @param httpForcedRedirect Represents the configuration module for the &#39;Force HTTPS Redirect to HTTP&#39; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -1043,7 +1043,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param https 表示 HTTPS 配置模块。该功能默认是禁用。
+         * @param https Indicates the HTTPS configuration module. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -1054,7 +1054,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param https 表示 HTTPS 配置模块。该功能默认是禁用。
+         * @param https Indicates the HTTPS configuration module. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -1064,7 +1064,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param iPv6 表示 IPv6 特性的配置模块。
+         * @param iPv6 Indicates the configuration module for the IPv6 feature.
          * 
          * @return builder
          * 
@@ -1075,7 +1075,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param iPv6 表示 IPv6 特性的配置模块。
+         * @param iPv6 Indicates the configuration module for the IPv6 feature.
          * 
          * @return builder
          * 
@@ -1085,7 +1085,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipAccessRule 表示 &#34;IP 黑白名单&#34; 特性的配置模块。该特性默认为禁用。该特性提供了两种配置方式：常规配置：指定 RuleType 和 Ip 对当前域名进行配置。全局配置：指定 SharedConfig 使用一个全局配置。全局配置是白名单功能。您只能选择一种配置方式。
+         * @param ipAccessRule Specifies the configuration module for the &#39;IP allowlist and blocklist&#39; feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
          * 
          * @return builder
          * 
@@ -1096,7 +1096,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipAccessRule 表示 &#34;IP 黑白名单&#34; 特性的配置模块。该特性默认为禁用。该特性提供了两种配置方式：常规配置：指定 RuleType 和 Ip 对当前域名进行配置。全局配置：指定 SharedConfig 使用一个全局配置。全局配置是白名单功能。您只能选择一种配置方式。
+         * @param ipAccessRule Specifies the configuration module for the &#39;IP allowlist and blocklist&#39; feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
          * 
          * @return builder
          * 
@@ -1106,7 +1106,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param methodDeniedRule 表示 &#34;禁用 HTTP Method&#34; 特性的配置模块。该特性默认为禁用。
+         * @param methodDeniedRule Represents the configuration module for the &#39;Disable HTTP Method&#39; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -1117,7 +1117,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param methodDeniedRule 表示 &#34;禁用 HTTP Method&#34; 特性的配置模块。该特性默认为禁用。
+         * @param methodDeniedRule Represents the configuration module for the &#39;Disable HTTP Method&#39; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -1127,7 +1127,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param multiRange 表示多重范围（multi-range) 特性的配置模块。该特性默认为禁用。
+         * @param multiRange Indicates the configuration module for the multi-range feature. This feature is disabled by default
          * 
          * @return builder
          * 
@@ -1138,7 +1138,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param multiRange 表示多重范围（multi-range) 特性的配置模块。该特性默认为禁用。
+         * @param multiRange Indicates the configuration module for the multi-range feature. This feature is disabled by default
          * 
          * @return builder
          * 
@@ -1161,7 +1161,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param offlineCache 表示 &#34;离线缓存&#34; 特性的配置模块。
+         * @param offlineCache Indicates the configuration module for the &#39;offline cache&#39; feature.
          * 
          * @return builder
          * 
@@ -1172,7 +1172,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param offlineCache 表示 &#34;离线缓存&#34; 特性的配置模块。
+         * @param offlineCache Indicates the configuration module for the &#39;offline cache&#39; feature.
          * 
          * @return builder
          * 
@@ -1182,7 +1182,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param originAccessRule 表示 &#34;Origin 黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+         * @param originAccessRule Indicates the configuration module for the &#39;Origin allowlist and blacklist&#39; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -1193,7 +1193,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param originAccessRule 表示 &#34;Origin 黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+         * @param originAccessRule Indicates the configuration module for the &#39;Origin allowlist and blacklist&#39; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -1216,7 +1216,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param originCertCheck 源站证书校验
+         * @param originCertCheck Origin certificate validation
          * 
          * @return builder
          * 
@@ -1227,7 +1227,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param originCertCheck 源站证书校验
+         * @param originCertCheck Origin certificate validation
          * 
          * @return builder
          * 
@@ -1237,7 +1237,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param originHost 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+         * @param originHost If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
          * 
          * @return builder
          * 
@@ -1248,7 +1248,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param originHost 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数对所有源站配置生效，但是优先级低于源站配置中 OriginHost 参数。该参数的默认值与 Domain 相同。如果源站是一个对象存储桶，您无需指定该参数。其默认值与源站配置中的 Address 相同。
+         * @param originHost If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
          * 
          * @return builder
          * 
@@ -1258,7 +1258,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param originIPv6 表示 &#34;IPv6 回源&#34; 的配置。该参数有以下取值：ipv6*first：表示内容分发网络始终尝试获取源站域名的 IPv6 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv4 地址。ipv4*first：表示内容分发网络始终尝试获取源站域名的 IPv4 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv6 地址。followclient：表示内容分发网络尝试获取与用户请求相同类型的 IP 地址。该参数的默认值是 followclient。由于海外部分回源节点不支持向 IPv6 地址发送回源请求，该功能仅适用于位于中国内地的回源节点。
+         * @param originIPv6 Indicates the configuration for &#34;IPv6 origin fetch.&#34; This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user&#39;s request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
          * 
          * @return builder
          * 
@@ -1269,7 +1269,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param originIPv6 表示 &#34;IPv6 回源&#34; 的配置。该参数有以下取值：ipv6*first：表示内容分发网络始终尝试获取源站域名的 IPv6 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv4 地址。ipv4*first：表示内容分发网络始终尝试获取源站域名的 IPv4 地址。如果无法获取该 IP 地址，内容分发网络才尝试获取源站域名的 IPv6 地址。followclient：表示内容分发网络尝试获取与用户请求相同类型的 IP 地址。该参数的默认值是 followclient。由于海外部分回源节点不支持向 IPv6 地址发送回源请求，该功能仅适用于位于中国内地的回源节点。
+         * @param originIPv6 Indicates the configuration for &#34;IPv6 origin fetch.&#34; This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user&#39;s request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
          * 
          * @return builder
          * 
@@ -1279,7 +1279,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param originProtocol 表示回源请求使用的协议。该参数有以下取值：http：表示回源请求使用 HTTP 协议。https：表示回源请求使用 HTTPS 协议。followclient：表示回源协议与用户请求使用的协议相同。
+         * @param originProtocol Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user&#39;s request.
          * 
          * @return builder
          * 
@@ -1290,7 +1290,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param originProtocol 表示回源请求使用的协议。该参数有以下取值：http：表示回源请求使用 HTTP 协议。https：表示回源请求使用 HTTPS 协议。followclient：表示回源协议与用户请求使用的协议相同。
+         * @param originProtocol Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user&#39;s request.
          * 
          * @return builder
          * 
@@ -1300,7 +1300,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param originRange 表示是否启用 &#34;Range 回源&#34; 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+         * @param originRange Indicates whether the &#39;Range Origin&#39; feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
          * 
          * @return builder
          * 
@@ -1311,7 +1311,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param originRange 表示是否启用 &#34;Range 回源&#34; 特性。该参数有以下取值：true：表示启用该特性。false：表示禁用该特性。该参数的默认值是 false。
+         * @param originRange Indicates whether the &#39;Range Origin&#39; feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
          * 
          * @return builder
          * 
@@ -1321,7 +1321,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param originRetry 表示 &#34;回源重试设置&#34; 特性的配置模块。
+         * @param originRetry Indicates the configuration module for the &#34;origin fetch retry settings&#34; feature.
          * 
          * @return builder
          * 
@@ -1332,7 +1332,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param originRetry 表示 &#34;回源重试设置&#34; 特性的配置模块。
+         * @param originRetry Indicates the configuration module for the &#34;origin fetch retry settings&#34; feature.
          * 
          * @return builder
          * 
@@ -1342,7 +1342,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param originRewrite 表示 &#34;回源 URL 改写&#34; 特性的配置模块。
+         * @param originRewrite Indicates the configuration module for the &#39;Origin URL Rewrite&#39; feature.
          * 
          * @return builder
          * 
@@ -1353,7 +1353,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param originRewrite 表示 &#34;回源 URL 改写&#34; 特性的配置模块。
+         * @param originRewrite Indicates the configuration module for the &#39;Origin URL Rewrite&#39; feature.
          * 
          * @return builder
          * 
@@ -1363,7 +1363,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param originSni 表示 &#34;回源 SNI&#34; 特性的配置模块。
+         * @param originSni Indicates the configuration module for the &#39;origin SNI&#39; feature.
          * 
          * @return builder
          * 
@@ -1374,7 +1374,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param originSni 表示 &#34;回源 SNI&#34; 特性的配置模块。
+         * @param originSni Indicates the configuration module for the &#39;origin SNI&#39; feature.
          * 
          * @return builder
          * 
@@ -1397,7 +1397,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param pageOptimization 表示 &#34;页面优化&#34; 特性的配置模块。
+         * @param pageOptimization Specifies the configuration module for the &#39;page optimization&#39; feature.
          * 
          * @return builder
          * 
@@ -1408,7 +1408,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param pageOptimization 表示 &#34;页面优化&#34; 特性的配置模块。
+         * @param pageOptimization Specifies the configuration module for the &#39;page optimization&#39; feature.
          * 
          * @return builder
          * 
@@ -1418,7 +1418,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param project 表示该加速域名归属的项目。
+         * @param project Indicates the project to which the acceleration domain belongs
          * 
          * @return builder
          * 
@@ -1429,7 +1429,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param project 表示该加速域名归属的项目。
+         * @param project Indicates the project to which the acceleration domain belongs
          * 
          * @return builder
          * 
@@ -1439,7 +1439,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param quic 表示 QUIC 特性的配置模块。该特性默认是禁用。
+         * @param quic Indicates the configuration module for the QUIC feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -1450,7 +1450,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param quic 表示 QUIC 特性的配置模块。该特性默认是禁用。
+         * @param quic Indicates the configuration module for the QUIC feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -1460,7 +1460,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param redirectionRewrite 表示 &#34;URL 重定向改写&#34; 特性的配置模块。该特性默认为禁用。
+         * @param redirectionRewrite Represents the configuration module for the &#39;URL Redirect Rewrite&#39; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -1471,7 +1471,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param redirectionRewrite 表示 &#34;URL 重定向改写&#34; 特性的配置模块。该特性默认为禁用。
+         * @param redirectionRewrite Represents the configuration module for the &#39;URL Redirect Rewrite&#39; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -1481,7 +1481,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param refererAccessRule 表示 &#34;Referer 黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+         * @param refererAccessRule Indicates the configuration module for the &#34;Referer Allowlist and Denylist&#34; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -1492,7 +1492,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param refererAccessRule 表示 &#34;Referer 黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+         * @param refererAccessRule Indicates the configuration module for the &#34;Referer Allowlist and Denylist&#34; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -1502,7 +1502,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param remoteAuth 表示 &#34;远程鉴权&#34; 特性的配置模块。该特性默认为禁用。
+         * @param remoteAuth Indicates the configuration module for the &#39;remote authentication&#39; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -1513,7 +1513,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param remoteAuth 表示 &#34;远程鉴权&#34; 特性的配置模块。该特性默认为禁用。
+         * @param remoteAuth Indicates the configuration module for the &#39;remote authentication&#39; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -1523,7 +1523,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param requestBlockRule 表示 &#34;自定义拦截&#34; 特性的配置模块。该特性默认为禁用。
+         * @param requestBlockRule Indicates the configuration module for the &#39;Custom Interception&#39; feature. This feature is disabled by default
          * 
          * @return builder
          * 
@@ -1534,7 +1534,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param requestBlockRule 表示 &#34;自定义拦截&#34; 特性的配置模块。该特性默认为禁用。
+         * @param requestBlockRule Indicates the configuration module for the &#39;Custom Interception&#39; feature. This feature is disabled by default
          * 
          * @return builder
          * 
@@ -1570,7 +1570,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param rewriteHls 表示 &#34;标准 HLS 加密改写&#34; 特性的配置模块。该特性默认为禁用。
+         * @param rewriteHls Indicates the configuration module for the &#34;Standard HLS Encryption Rewrite&#34; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -1581,7 +1581,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param rewriteHls 表示 &#34;标准 HLS 加密改写&#34; 特性的配置模块。该特性默认为禁用。
+         * @param rewriteHls Indicates the configuration module for the &#34;Standard HLS Encryption Rewrite&#34; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -1591,7 +1591,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serviceRegion 表示该加速域名的加速区域。该参数有以下取值：chinese*mainland：表示中国内地。global：表示全球。outside*chinese_mainland：表示全球（不含中国内地）。
+         * @param serviceRegion Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
          * 
          * @return builder
          * 
@@ -1602,7 +1602,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serviceRegion 表示该加速域名的加速区域。该参数有以下取值：chinese*mainland：表示中国内地。global：表示全球。outside*chinese_mainland：表示全球（不含中国内地）。
+         * @param serviceRegion Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
          * 
          * @return builder
          * 
@@ -1612,7 +1612,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serviceType 表示该域名的业务类型。该参数有以下取值：download：表示文件下载。web：表示网页。video：表示音视频点播。
+         * @param serviceType Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
          * 
          * @return builder
          * 
@@ -1623,7 +1623,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serviceType 表示该域名的业务类型。该参数有以下取值：download：表示文件下载。web：表示网页。video：表示音视频点播。
+         * @param serviceType Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
          * 
          * @return builder
          * 
@@ -1633,7 +1633,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param signedUrlAuth 表示 &#34;URL 鉴权&#34; 特性的配置模块。该特性默认为禁用。
+         * @param signedUrlAuth Indicates the configuration module for the &#39;URL Authentication&#39; feature. This feature is disabled by default
          * 
          * @return builder
          * 
@@ -1644,7 +1644,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param signedUrlAuth 表示 &#34;URL 鉴权&#34; 特性的配置模块。该特性默认为禁用。
+         * @param signedUrlAuth Indicates the configuration module for the &#39;URL Authentication&#39; feature. This feature is disabled by default
          * 
          * @return builder
          * 
@@ -1667,7 +1667,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeout 表示 &#34;回源超时时间&#34; 特性的配置模块。该特性默认为禁用。
+         * @param timeout Indicates the configuration module for the &#39;origin timeout&#39; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -1678,7 +1678,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeout 表示 &#34;回源超时时间&#34; 特性的配置模块。该特性默认为禁用。
+         * @param timeout Indicates the configuration module for the &#39;origin timeout&#39; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -1688,7 +1688,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param uaAccessRule 表示 &#34;UA 黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+         * @param uaAccessRule Indicates the configuration module for the &#34;UA allowlist and blocklist&#34; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -1699,7 +1699,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param uaAccessRule 表示 &#34;UA 黑白名单&#34; 特性的配置模块。该特性默认为禁用。
+         * @param uaAccessRule Indicates the configuration module for the &#34;UA allowlist and blocklist&#34; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -1709,7 +1709,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param urlNormalize 表示 &#34;URL 标准化&#34; 特性的配置模块。该特性默认为禁用。
+         * @param urlNormalize Specifies the configuration module for the &#39;URL normalization&#39; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -1720,7 +1720,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param urlNormalize 表示 &#34;URL 标准化&#34; 特性的配置模块。该特性默认为禁用。
+         * @param urlNormalize Specifies the configuration module for the &#39;URL normalization&#39; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -1730,7 +1730,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param videoDrag 表示 &#34;视频拖拽&#34; 特性的配置模块。该特性默认为禁用。
+         * @param videoDrag Indicates the configuration module for the &#34;Video Drag&#34; feature. This feature is disabled by default.
          * 
          * @return builder
          * 
@@ -1741,7 +1741,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param videoDrag 表示 &#34;视频拖拽&#34; 特性的配置模块。该特性默认为禁用。
+         * @param videoDrag Indicates the configuration module for the &#34;Video Drag&#34; feature. This feature is disabled by default.
          * 
          * @return builder
          * 

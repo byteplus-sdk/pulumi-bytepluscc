@@ -19,7 +19,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 备份是数据库的重要运行时文件，基于备份文件，数据库能够实现容灾、恢复等功能。云数据库 MySQL 版提供了数据备份和日志备份两种备份能力：通过数据备份可将数据库恢复至某个备份集，通过日志备份可将数据库恢复至指定时间点。
+ * Backups are important runtime files for the database. Based on backup files, the database can achieve disaster recovery and restoration. MySQL Cloud Database provides two backup capabilities: data backup and log backup. Data backup allows you to restore the database to a specific backup set, while log backup enables restoration to a specified point in time
  * 
  * ## Example Usage
  * 
@@ -72,56 +72,56 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:rdsmysql/backup:Backup")
 public class Backup extends com.pulumi.resources.CustomResource {
     /**
-     * 备份创建结束时间（UTC）。
+     * Backup creation end time (UTC)
      * 
      */
     @Export(name="backupEndTime", refs={String.class}, tree="[0]")
     private Output<String> backupEndTime;
 
     /**
-     * @return 备份创建结束时间（UTC）。
+     * @return Backup creation end time (UTC)
      * 
      */
     public Output<String> backupEndTime() {
         return this.backupEndTime;
     }
     /**
-     * 备份文件名。
+     * Backup file name
      * 
      */
     @Export(name="backupFileName", refs={String.class}, tree="[0]")
     private Output<String> backupFileName;
 
     /**
-     * @return 备份文件名。
+     * @return Backup file name
      * 
      */
     public Output<String> backupFileName() {
         return this.backupFileName;
     }
     /**
-     * 备份文件大小，单位为字节。
+     * Backup file size (bytes)
      * 
      */
     @Export(name="backupFileSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> backupFileSize;
 
     /**
-     * @return 备份文件大小，单位为字节。
+     * @return Backup file size (bytes)
      * 
      */
     public Output<Integer> backupFileSize() {
         return this.backupFileSize;
     }
     /**
-     * 备份 ID。
+     * Backup ID
      * 
      */
     @Export(name="backupId", refs={String.class}, tree="[0]")
     private Output<String> backupId;
 
     /**
-     * @return 备份 ID。
+     * @return Backup ID
      * 
      */
     public Output<String> backupId() {
@@ -134,126 +134,126 @@ public class Backup extends com.pulumi.resources.CustomResource {
         return this.backupMetas;
     }
     /**
-     * 备份类型，取值：Physical（物理备份）、Logical（逻辑备份）、Snapshot（快照备份）。
+     * Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
      * 
      */
     @Export(name="backupMethod", refs={String.class}, tree="[0]")
     private Output<String> backupMethod;
 
     /**
-     * @return 备份类型，取值：Physical（物理备份）、Logical（逻辑备份）、Snapshot（快照备份）。
+     * @return Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
      * 
      */
     public Output<String> backupMethod() {
         return this.backupMethod;
     }
     /**
-     * 备份的名称。
+     * Backup name
      * 
      */
     @Export(name="backupName", refs={String.class}, tree="[0]")
     private Output<String> backupName;
 
     /**
-     * @return 备份的名称。
+     * @return Backup name
      * 
      */
     public Output<String> backupName() {
         return this.backupName;
     }
     /**
-     * 备份所在区域。
+     * Backup region
      * 
      */
     @Export(name="backupRegion", refs={String.class}, tree="[0]")
     private Output<String> backupRegion;
 
     /**
-     * @return 备份所在区域。
+     * @return Backup region
      * 
      */
     public Output<String> backupRegion() {
         return this.backupRegion;
     }
     /**
-     * 备份创建开始时间（UTC）。
+     * Backup creation start time (UTC)
      * 
      */
     @Export(name="backupStartTime", refs={String.class}, tree="[0]")
     private Output<String> backupStartTime;
 
     /**
-     * @return 备份创建开始时间（UTC）。
+     * @return Backup creation start time (UTC)
      * 
      */
     public Output<String> backupStartTime() {
         return this.backupStartTime;
     }
     /**
-     * 备份状态，取值：Success（成功）、Failed（失败）、Running（执行中）。
+     * Backup status. Values: Success, Failed, Running
      * 
      */
     @Export(name="backupStatus", refs={String.class}, tree="[0]")
     private Output<String> backupStatus;
 
     /**
-     * @return 备份状态，取值：Success（成功）、Failed（失败）、Running（执行中）。
+     * @return Backup status. Values: Success, Failed, Running
      * 
      */
     public Output<String> backupStatus() {
         return this.backupStatus;
     }
     /**
-     * 备份方式，取值：Full（全量/库表备）、Increment（增量备份）、DumpAll（全库备份）。
+     * Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
      * 
      */
     @Export(name="backupType", refs={String.class}, tree="[0]")
     private Output<String> backupType;
 
     /**
-     * @return 备份方式，取值：Full（全量/库表备）、Increment（增量备份）、DumpAll（全库备份）。
+     * @return Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
      * 
      */
     public Output<String> backupType() {
         return this.backupType;
     }
     /**
-     * 一致性时间点。
+     * Consistency time point
      * 
      */
     @Export(name="consistentTime", refs={String.class}, tree="[0]")
     private Output<String> consistentTime;
 
     /**
-     * @return 一致性时间点。
+     * @return Consistency time point
      * 
      */
     public Output<String> consistentTime() {
         return this.consistentTime;
     }
     /**
-     * 备份创建者，取值：System（系统）、User（用户）。
+     * Backup creator. Values: System (system), User (user)
      * 
      */
     @Export(name="createType", refs={String.class}, tree="[0]")
     private Output<String> createType;
 
     /**
-     * @return 备份创建者，取值：System（系统）、User（用户）。
+     * @return Backup creator. Values: System (system), User (user)
      * 
      */
     public Output<String> createType() {
         return this.createType;
     }
     /**
-     * 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+     * Compatible version. Values: MySQL*5*7: MySQL 5.7 version; MySQL*8*0: MySQL 8.0 version
      * 
      */
     @Export(name="dbEngineVersion", refs={String.class}, tree="[0]")
     private Output<String> dbEngineVersion;
 
     /**
-     * @return 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+     * @return Compatible version. Values: MySQL*5*7: MySQL 5.7 version; MySQL*8*0: MySQL 8.0 version
      * 
      */
     public Output<String> dbEngineVersion() {
@@ -266,98 +266,98 @@ public class Backup extends com.pulumi.resources.CustomResource {
         return this.dbTableInfos;
     }
     /**
-     * 下载状态。
+     * Download status
      * 
      */
     @Export(name="downloadStatus", refs={String.class}, tree="[0]")
     private Output<String> downloadStatus;
 
     /**
-     * @return 下载状态。
+     * @return Download status
      * 
      */
     public Output<String> downloadStatus() {
         return this.downloadStatus;
     }
     /**
-     * 数据库引擎类型。取值：InnoDB：InnoDB 引擎。RocksDB：RocksDB 引擎。
+     * Database engine type. Values: InnoDB: InnoDB engine; RocksDB: RocksDB engine
      * 
      */
     @Export(name="engineType", refs={String.class}, tree="[0]")
     private Output<String> engineType;
 
     /**
-     * @return 数据库引擎类型。取值：InnoDB：InnoDB 引擎。RocksDB：RocksDB 引擎。
+     * @return Database engine type. Values: InnoDB: InnoDB engine; RocksDB: RocksDB engine
      * 
      */
     public Output<String> engineType() {
         return this.engineType;
     }
     /**
-     * 备份失败的错误信息。
+     * Error message for backup failure
      * 
      */
     @Export(name="errorMessage", refs={String.class}, tree="[0]")
     private Output<String> errorMessage;
 
     /**
-     * @return 备份失败的错误信息。
+     * @return Error message for backup failure
      * 
      */
     public Output<String> errorMessage() {
         return this.errorMessage;
     }
     /**
-     * 备份过期时间（UTC）。
+     * Backup expiration time (UTC)
      * 
      */
     @Export(name="expiredTime", refs={String.class}, tree="[0]")
     private Output<String> expiredTime;
 
     /**
-     * @return 备份过期时间（UTC）。
+     * @return Backup expiration time (UTC)
      * 
      */
     public Output<String> expiredTime() {
         return this.expiredTime;
     }
     /**
-     * 实例 ID。
+     * Instance ID
      * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
-     * @return 实例 ID。
+     * @return Instance ID
      * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
-     * 是否加密。
+     * Whether encrypted
      * 
      */
     @Export(name="isEncrypted", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEncrypted;
 
     /**
-     * @return 是否加密。
+     * @return Whether encrypted
      * 
      */
     public Output<Boolean> isEncrypted() {
         return this.isEncrypted;
     }
     /**
-     * 是否已过期。
+     * Whether expired
      * 
      */
     @Export(name="isExpired", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isExpired;
 
     /**
-     * @return 是否已过期。
+     * @return Whether expired
      * 
      */
     public Output<Boolean> isExpired() {

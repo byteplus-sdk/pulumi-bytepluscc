@@ -19,14 +19,14 @@ public final class InstanceInstanceShardArgs extends com.pulumi.resources.Resour
     public static final InstanceInstanceShardArgs Empty = new InstanceInstanceShardArgs();
 
     /**
-     * 分片中的节点数量
+     * Number of nodes in each shard
      * 
      */
     @Import(name="nodeNumber")
     private @Nullable Output<Integer> nodeNumber;
 
     /**
-     * @return 分片中的节点数量
+     * @return Number of nodes in each shard
      * 
      */
     public Optional<Output<Integer>> nodeNumber() {
@@ -41,14 +41,14 @@ public final class InstanceInstanceShardArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * 分片 ID。
+     * Shard ID.
      * 
      */
     @Import(name="shardId")
     private @Nullable Output<String> shardId;
 
     /**
-     * @return 分片 ID。
+     * @return Shard ID.
      * 
      */
     public Optional<Output<String>> shardId() {
@@ -82,7 +82,7 @@ public final class InstanceInstanceShardArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param nodeNumber 分片中的节点数量
+         * @param nodeNumber Number of nodes in each shard
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class InstanceInstanceShardArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param nodeNumber 分片中的节点数量
+         * @param nodeNumber Number of nodes in each shard
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class InstanceInstanceShardArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param shardId 分片 ID。
+         * @param shardId Shard ID.
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class InstanceInstanceShardArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param shardId 分片 ID。
+         * @param shardId Shard ID.
          * 
          * @return builder
          * 

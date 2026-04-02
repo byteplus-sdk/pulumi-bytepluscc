@@ -16,14 +16,14 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
     public static final UserAccessKeyArgs Empty = new UserAccessKeyArgs();
 
     /**
-     * 访问密钥ID。
+     * Access key ID.
      * 
      */
     @Import(name="accessKeyId")
     private @Nullable Output<String> accessKeyId;
 
     /**
-     * @return 访问密钥ID。
+     * @return Access key ID.
      * 
      */
     public Optional<Output<String>> accessKeyId() {
@@ -31,14 +31,14 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 访问密钥创建时间。
+     * Access key creation time.
      * 
      */
     @Import(name="createDate")
     private @Nullable Output<String> createDate;
 
     /**
-     * @return 访问密钥创建时间。
+     * @return Access key creation time.
      * 
      */
     public Optional<Output<String>> createDate() {
@@ -46,14 +46,14 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 最近一次使用的服务区域。
+     * Most recently used service region.
      * 
      */
     @Import(name="region")
     private @Nullable Output<String> region;
 
     /**
-     * @return 最近一次使用的服务区域。
+     * @return Most recently used service region.
      * 
      */
     public Optional<Output<String>> region() {
@@ -61,14 +61,14 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 访问密钥最近一次使用时间。
+     * Last used time of the access key.
      * 
      */
     @Import(name="requestTime")
     private @Nullable Output<String> requestTime;
 
     /**
-     * @return 访问密钥最近一次使用时间。
+     * @return Last used time of the access key.
      * 
      */
     public Optional<Output<String>> requestTime() {
@@ -76,14 +76,14 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 最近一次使用的服务名称。
+     * Name of the most recently used service.
      * 
      */
     @Import(name="service")
     private @Nullable Output<String> service;
 
     /**
-     * @return 最近一次使用的服务名称。
+     * @return Name of the most recently used service.
      * 
      */
     public Optional<Output<String>> service() {
@@ -91,14 +91,14 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 访问密钥状态。Active代表启用，Inactive代表禁用。
+     * Access key status. &#39;Active&#39; means enabled, &#39;Inactive&#39; means disabled.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 访问密钥状态。Active代表启用，Inactive代表禁用。
+     * @return Access key status. &#39;Active&#39; means enabled, &#39;Inactive&#39; means disabled.
      * 
      */
     public Optional<Output<String>> status() {
@@ -106,14 +106,14 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 访问密钥更新时间。
+     * Access key update time.
      * 
      */
     @Import(name="updateDate")
     private @Nullable Output<String> updateDate;
 
     /**
-     * @return 访问密钥更新时间。
+     * @return Access key update time.
      * 
      */
     public Optional<Output<String>> updateDate() {
@@ -121,14 +121,14 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 访问密钥Secret。
+     * Access key Secret.
      * 
      */
     @Import(name="userName")
     private @Nullable Output<String> userName;
 
     /**
-     * @return 访问密钥Secret。
+     * @return Access key Secret.
      * 
      */
     public Optional<Output<String>> userName() {
@@ -167,7 +167,7 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accessKeyId 访问密钥ID。
+         * @param accessKeyId Access key ID.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accessKeyId 访问密钥ID。
+         * @param accessKeyId Access key ID.
          * 
          * @return builder
          * 
@@ -188,7 +188,7 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createDate 访问密钥创建时间。
+         * @param createDate Access key creation time.
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createDate 访问密钥创建时间。
+         * @param createDate Access key creation time.
          * 
          * @return builder
          * 
@@ -209,7 +209,7 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param region 最近一次使用的服务区域。
+         * @param region Most recently used service region.
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param region 最近一次使用的服务区域。
+         * @param region Most recently used service region.
          * 
          * @return builder
          * 
@@ -230,7 +230,7 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param requestTime 访问密钥最近一次使用时间。
+         * @param requestTime Last used time of the access key.
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param requestTime 访问密钥最近一次使用时间。
+         * @param requestTime Last used time of the access key.
          * 
          * @return builder
          * 
@@ -251,7 +251,7 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param service 最近一次使用的服务名称。
+         * @param service Name of the most recently used service.
          * 
          * @return builder
          * 
@@ -262,7 +262,7 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param service 最近一次使用的服务名称。
+         * @param service Name of the most recently used service.
          * 
          * @return builder
          * 
@@ -272,7 +272,7 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 访问密钥状态。Active代表启用，Inactive代表禁用。
+         * @param status Access key status. &#39;Active&#39; means enabled, &#39;Inactive&#39; means disabled.
          * 
          * @return builder
          * 
@@ -283,7 +283,7 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 访问密钥状态。Active代表启用，Inactive代表禁用。
+         * @param status Access key status. &#39;Active&#39; means enabled, &#39;Inactive&#39; means disabled.
          * 
          * @return builder
          * 
@@ -293,7 +293,7 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updateDate 访问密钥更新时间。
+         * @param updateDate Access key update time.
          * 
          * @return builder
          * 
@@ -304,7 +304,7 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updateDate 访问密钥更新时间。
+         * @param updateDate Access key update time.
          * 
          * @return builder
          * 
@@ -314,7 +314,7 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userName 访问密钥Secret。
+         * @param userName Access key Secret.
          * 
          * @return builder
          * 
@@ -325,7 +325,7 @@ public final class UserAccessKeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userName 访问密钥Secret。
+         * @param userName Access key Secret.
          * 
          * @return builder
          * 

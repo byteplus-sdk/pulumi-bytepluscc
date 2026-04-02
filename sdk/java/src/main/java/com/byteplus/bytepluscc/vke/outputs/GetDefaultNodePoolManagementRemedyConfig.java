@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDefaultNodePoolManagementRemedyConfig {
     /**
-     * @return 是否开启检查自愈。
+     * @return Enable self-healing check
      * 
      */
     private Boolean enabled;
     /**
-     * @return 检查自愈规则ID。
+     * @return Self-healing rule ID
      * 
      */
     private String remedyId;
 
     private GetDefaultNodePoolManagementRemedyConfig() {}
     /**
-     * @return 是否开启检查自愈。
+     * @return Enable self-healing check
      * 
      */
     public Boolean enabled() {
         return this.enabled;
     }
     /**
-     * @return 检查自愈规则ID。
+     * @return Self-healing rule ID
      * 
      */
     public String remedyId() {

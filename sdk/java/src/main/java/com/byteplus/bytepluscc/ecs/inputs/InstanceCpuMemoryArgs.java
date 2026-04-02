@@ -16,14 +16,14 @@ public final class InstanceCpuMemoryArgs extends com.pulumi.resources.ResourceAr
     public static final InstanceCpuMemoryArgs Empty = new InstanceCpuMemoryArgs();
 
     /**
-     * 实例的核数。
+     * Number of instance cores.
      * 
      */
     @Import(name="coreCount")
     private @Nullable Output<Integer> coreCount;
 
     /**
-     * @return 实例的核数。
+     * @return Number of instance cores.
      * 
      */
     public Optional<Output<Integer>> coreCount() {
@@ -31,14 +31,14 @@ public final class InstanceCpuMemoryArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 实例的CPU数量。
+     * Number of vCPUs for the instance.
      * 
      */
     @Import(name="cpuNumber")
     private @Nullable Output<Integer> cpuNumber;
 
     /**
-     * @return 实例的CPU数量。
+     * @return Number of vCPUs for the instance.
      * 
      */
     public Optional<Output<Integer>> cpuNumber() {
@@ -46,14 +46,14 @@ public final class InstanceCpuMemoryArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 实例的内存大小，单位MB。
+     * Instance memory size (MB).
      * 
      */
     @Import(name="memorySize")
     private @Nullable Output<Integer> memorySize;
 
     /**
-     * @return 实例的内存大小，单位MB。
+     * @return Instance memory size (MB).
      * 
      */
     public Optional<Output<Integer>> memorySize() {
@@ -61,14 +61,14 @@ public final class InstanceCpuMemoryArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * 实例的每核线程数。
+     * Threads per core for the instance.
      * 
      */
     @Import(name="threadsPerCore")
     private @Nullable Output<Integer> threadsPerCore;
 
     /**
-     * @return 实例的每核线程数。
+     * @return Threads per core for the instance.
      * 
      */
     public Optional<Output<Integer>> threadsPerCore() {
@@ -103,7 +103,7 @@ public final class InstanceCpuMemoryArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param coreCount 实例的核数。
+         * @param coreCount Number of instance cores.
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class InstanceCpuMemoryArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param coreCount 实例的核数。
+         * @param coreCount Number of instance cores.
          * 
          * @return builder
          * 
@@ -124,7 +124,7 @@ public final class InstanceCpuMemoryArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param cpuNumber 实例的CPU数量。
+         * @param cpuNumber Number of vCPUs for the instance.
          * 
          * @return builder
          * 
@@ -135,7 +135,7 @@ public final class InstanceCpuMemoryArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param cpuNumber 实例的CPU数量。
+         * @param cpuNumber Number of vCPUs for the instance.
          * 
          * @return builder
          * 
@@ -145,7 +145,7 @@ public final class InstanceCpuMemoryArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param memorySize 实例的内存大小，单位MB。
+         * @param memorySize Instance memory size (MB).
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class InstanceCpuMemoryArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param memorySize 实例的内存大小，单位MB。
+         * @param memorySize Instance memory size (MB).
          * 
          * @return builder
          * 
@@ -166,7 +166,7 @@ public final class InstanceCpuMemoryArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param threadsPerCore 实例的每核线程数。
+         * @param threadsPerCore Threads per core for the instance.
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class InstanceCpuMemoryArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param threadsPerCore 实例的每核线程数。
+         * @param threadsPerCore Threads per core for the instance.
          * 
          * @return builder
          * 

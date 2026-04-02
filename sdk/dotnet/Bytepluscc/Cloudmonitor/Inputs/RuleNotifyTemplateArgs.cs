@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Inputs
     public sealed class RuleNotifyTemplateArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 通知渠道，取值：email：邮箱sms：短信phone：电话lark：飞书dingtalk：钉钉wecom：企业微信slack：Slackapi：回调地址。
+        /// Notification channel. Options: email: Email sms: SMS phone: Phone feishu: Feishu dingtalk: DingTalk wecom: WeCom slack: Slack api: Callback URL.
         /// </summary>
         [Input("channel")]
         public Input<string>? Channel { get; set; }
 
         /// <summary>
-        /// 通知模版 ID。注意每种通知渠道仅支持配置 1 个通知模版 ID。
+        /// Notification template ID. Note: Each notification channel supports only one notification template ID.
         /// </summary>
         [Input("notifyTemplateId")]
         public Input<string>? NotifyTemplateId { get; set; }

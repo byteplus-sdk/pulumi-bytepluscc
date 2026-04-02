@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam.Outputs
     public sealed class PolicyPolicyRole
     {
         /// <summary>
-        /// 对应用户、角色、用户组的名称。
+        /// Name of the corresponding user, role, or user group.
         /// </summary>
         public readonly string? Name;
         public readonly ImmutableArray<Outputs.PolicyPolicyRolePolicyScope> PolicyScopes;

@@ -17,14 +17,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
     public static final UserState Empty = new UserState();
 
     /**
-     * 创建时间。
+     * Creation Time.
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 创建时间。
+     * @return Creation Time.
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -32,14 +32,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 用户描述。
+     * User Description.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 用户描述。
+     * @return User Description.
      * 
      */
     public Optional<Output<String>> description() {
@@ -47,14 +47,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 用户显示名。
+     * User Display Name.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return 用户显示名。
+     * @return User Display Name.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -62,14 +62,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 邮箱。
+     * Email.
      * 
      */
     @Import(name="email")
     private @Nullable Output<String> email;
 
     /**
-     * @return 邮箱。
+     * @return Email.
      * 
      */
     public Optional<Output<String>> email() {
@@ -77,14 +77,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 身份类型。
+     * Identity Type.
      * 
      */
     @Import(name="identityType")
     private @Nullable Output<String> identityType;
 
     /**
-     * @return 身份类型。
+     * @return Identity Type.
      * 
      */
     public Optional<Output<String>> identityType() {
@@ -92,14 +92,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+     * Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
      * 
      */
     @Import(name="password")
     private @Nullable Output<String> password;
 
     /**
-     * @return 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+     * @return Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
      * 
      */
     public Optional<Output<String>> password() {
@@ -107,14 +107,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 首次登陆需不需要重置密码。
+     * Is password reset required on first login?
      * 
      */
     @Import(name="passwordResetRequired")
     private @Nullable Output<Boolean> passwordResetRequired;
 
     /**
-     * @return 首次登陆需不需要重置密码。
+     * @return Is password reset required on first login?
      * 
      */
     public Optional<Output<Boolean>> passwordResetRequired() {
@@ -122,14 +122,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 手机号。
+     * Mobile Number.
      * 
      */
     @Import(name="phone")
     private @Nullable Output<String> phone;
 
     /**
-     * @return 手机号。
+     * @return Mobile Number.
      * 
      */
     public Optional<Output<String>> phone() {
@@ -137,14 +137,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 用户来源。
+     * User Source.
      * 
      */
     @Import(name="source")
     private @Nullable Output<String> source;
 
     /**
-     * @return 用户来源。
+     * @return User Source.
      * 
      */
     public Optional<Output<String>> source() {
@@ -152,14 +152,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 更新时间。
+     * Update Time.
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 更新时间。
+     * @return Update Time.
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -167,14 +167,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 用户id。
+     * User ID.
      * 
      */
     @Import(name="userId")
     private @Nullable Output<String> userId;
 
     /**
-     * @return 用户id。
+     * @return User ID.
      * 
      */
     public Optional<Output<String>> userId() {
@@ -182,14 +182,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 用户名。
+     * Username.
      * 
      */
     @Import(name="userName")
     private @Nullable Output<String> userName;
 
     /**
-     * @return 用户名。
+     * @return Username.
      * 
      */
     public Optional<Output<String>> userName() {
@@ -232,7 +232,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 创建时间。
+         * @param createdTime Creation Time.
          * 
          * @return builder
          * 
@@ -243,7 +243,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 创建时间。
+         * @param createdTime Creation Time.
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 用户描述。
+         * @param description User Description.
          * 
          * @return builder
          * 
@@ -264,7 +264,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 用户描述。
+         * @param description User Description.
          * 
          * @return builder
          * 
@@ -274,7 +274,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName 用户显示名。
+         * @param displayName User Display Name.
          * 
          * @return builder
          * 
@@ -285,7 +285,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName 用户显示名。
+         * @param displayName User Display Name.
          * 
          * @return builder
          * 
@@ -295,7 +295,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param email 邮箱。
+         * @param email Email.
          * 
          * @return builder
          * 
@@ -306,7 +306,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param email 邮箱。
+         * @param email Email.
          * 
          * @return builder
          * 
@@ -316,7 +316,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param identityType 身份类型。
+         * @param identityType Identity Type.
          * 
          * @return builder
          * 
@@ -327,7 +327,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param identityType 身份类型。
+         * @param identityType Identity Type.
          * 
          * @return builder
          * 
@@ -337,7 +337,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param password 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+         * @param password Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
          * 
          * @return builder
          * 
@@ -348,7 +348,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param password 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+         * @param password Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
          * 
          * @return builder
          * 
@@ -358,7 +358,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param passwordResetRequired 首次登陆需不需要重置密码。
+         * @param passwordResetRequired Is password reset required on first login?
          * 
          * @return builder
          * 
@@ -369,7 +369,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param passwordResetRequired 首次登陆需不需要重置密码。
+         * @param passwordResetRequired Is password reset required on first login?
          * 
          * @return builder
          * 
@@ -379,7 +379,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param phone 手机号。
+         * @param phone Mobile Number.
          * 
          * @return builder
          * 
@@ -390,7 +390,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param phone 手机号。
+         * @param phone Mobile Number.
          * 
          * @return builder
          * 
@@ -400,7 +400,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param source 用户来源。
+         * @param source User Source.
          * 
          * @return builder
          * 
@@ -411,7 +411,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param source 用户来源。
+         * @param source User Source.
          * 
          * @return builder
          * 
@@ -421,7 +421,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 更新时间。
+         * @param updatedTime Update Time.
          * 
          * @return builder
          * 
@@ -432,7 +432,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 更新时间。
+         * @param updatedTime Update Time.
          * 
          * @return builder
          * 
@@ -442,7 +442,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userId 用户id。
+         * @param userId User ID.
          * 
          * @return builder
          * 
@@ -453,7 +453,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userId 用户id。
+         * @param userId User ID.
          * 
          * @return builder
          * 
@@ -463,7 +463,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userName 用户名。
+         * @param userName Username.
          * 
          * @return builder
          * 
@@ -474,7 +474,7 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userName 用户名。
+         * @param userName Username.
          * 
          * @return builder
          * 

@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms.Outputs
     public sealed class KeyMultiRegionConfiguration
     {
         /// <summary>
-        /// 多区域密钥的类型。
+        /// Multi-region key type.
         /// </summary>
         public readonly string? MultiRegionKeyType;
         /// <summary>
-        /// 主多区域键的事务识别号和区域 ID。
+        /// Primary multi-region key transaction identifier and region ID.
         /// </summary>
         public readonly Outputs.KeyMultiRegionConfigurationPrimaryKey? PrimaryKey;
         public readonly ImmutableArray<Outputs.KeyMultiRegionConfigurationReplicaKey> ReplicaKeys;

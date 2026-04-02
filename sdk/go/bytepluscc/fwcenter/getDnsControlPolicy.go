@@ -30,35 +30,35 @@ type LookupDnsControlPolicyArgs struct {
 
 // A collection of values returned by getDnsControlPolicy.
 type LookupDnsControlPolicyResult struct {
-	// 用户的唯一标识ID。
+	// User's unique identifier.
 	AccountId string `pulumi:"accountId"`
-	// 策略的描述信息。
+	// Policy description information.
 	Description string `pulumi:"description"`
-	// 访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
+	// Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
 	Destination string `pulumi:"destination"`
-	// 域名地址簿名称列表。
+	// Domain address book name list.
 	DestinationGroupLists []string `pulumi:"destinationGroupLists"`
-	// 访问目的的类型。domain：域名；group：域名地址簿。
+	// Type of access target. domain: domain; group: domain address book.
 	DestinationType string `pulumi:"destinationType"`
-	// 域名地址簿的域名列表。
+	// Domain list in the domain address book.
 	DomainListV1s []GetDnsControlPolicyDomainListV1 `pulumi:"domainListV1s"`
-	// 域名列表。
+	// Domain list.
 	DomainLists []string `pulumi:"domainLists"`
-	// 命中计数，表示该域名黑名单访问控制策略被触发的次数。
+	// Hit count, indicating the number of times the domain denylist access control policy was triggered.
 	HitCnt int `pulumi:"hitCnt"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 互联网边界防火墙实例ID。
+	// Internet border firewall instance ID.
 	InternetFirewallId string `pulumi:"internetFirewallId"`
-	// 最近命中时间戳，表示该域名黑名单访问控制策略最后一次被触发的时间。
+	// Latest hit timestamp, indicating the last time the domain denylist access control policy was triggered.
 	LastHitTime int `pulumi:"lastHitTime"`
-	// 访问控制策略的唯一标识ID。
+	// Unique identifier of the access control policy.
 	RuleId string `pulumi:"ruleId"`
-	// 访问源信息，包含VPC列表。
+	// Access source information, including VPC list.
 	Sources []GetDnsControlPolicySource `pulumi:"sources"`
-	// 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
+	// Switch status of the domain denylist access control policy. false: Off; true: On.
 	Status bool `pulumi:"status"`
-	// 该域名黑名单访问控制策略占用的策略数量。
+	// Number of policies occupied by this domain denylist access control policy.
 	UseCount int `pulumi:"useCount"`
 }
 
@@ -96,42 +96,42 @@ func (o LookupDnsControlPolicyResultOutput) ToLookupDnsControlPolicyResultOutput
 	return o
 }
 
-// 用户的唯一标识ID。
+// User's unique identifier.
 func (o LookupDnsControlPolicyResultOutput) AccountId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDnsControlPolicyResult) string { return v.AccountId }).(pulumi.StringOutput)
 }
 
-// 策略的描述信息。
+// Policy description information.
 func (o LookupDnsControlPolicyResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDnsControlPolicyResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
+// Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
 func (o LookupDnsControlPolicyResultOutput) Destination() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDnsControlPolicyResult) string { return v.Destination }).(pulumi.StringOutput)
 }
 
-// 域名地址簿名称列表。
+// Domain address book name list.
 func (o LookupDnsControlPolicyResultOutput) DestinationGroupLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupDnsControlPolicyResult) []string { return v.DestinationGroupLists }).(pulumi.StringArrayOutput)
 }
 
-// 访问目的的类型。domain：域名；group：域名地址簿。
+// Type of access target. domain: domain; group: domain address book.
 func (o LookupDnsControlPolicyResultOutput) DestinationType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDnsControlPolicyResult) string { return v.DestinationType }).(pulumi.StringOutput)
 }
 
-// 域名地址簿的域名列表。
+// Domain list in the domain address book.
 func (o LookupDnsControlPolicyResultOutput) DomainListV1s() GetDnsControlPolicyDomainListV1ArrayOutput {
 	return o.ApplyT(func(v LookupDnsControlPolicyResult) []GetDnsControlPolicyDomainListV1 { return v.DomainListV1s }).(GetDnsControlPolicyDomainListV1ArrayOutput)
 }
 
-// 域名列表。
+// Domain list.
 func (o LookupDnsControlPolicyResultOutput) DomainLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupDnsControlPolicyResult) []string { return v.DomainLists }).(pulumi.StringArrayOutput)
 }
 
-// 命中计数，表示该域名黑名单访问控制策略被触发的次数。
+// Hit count, indicating the number of times the domain denylist access control policy was triggered.
 func (o LookupDnsControlPolicyResultOutput) HitCnt() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupDnsControlPolicyResult) int { return v.HitCnt }).(pulumi.IntOutput)
 }
@@ -141,32 +141,32 @@ func (o LookupDnsControlPolicyResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDnsControlPolicyResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 互联网边界防火墙实例ID。
+// Internet border firewall instance ID.
 func (o LookupDnsControlPolicyResultOutput) InternetFirewallId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDnsControlPolicyResult) string { return v.InternetFirewallId }).(pulumi.StringOutput)
 }
 
-// 最近命中时间戳，表示该域名黑名单访问控制策略最后一次被触发的时间。
+// Latest hit timestamp, indicating the last time the domain denylist access control policy was triggered.
 func (o LookupDnsControlPolicyResultOutput) LastHitTime() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupDnsControlPolicyResult) int { return v.LastHitTime }).(pulumi.IntOutput)
 }
 
-// 访问控制策略的唯一标识ID。
+// Unique identifier of the access control policy.
 func (o LookupDnsControlPolicyResultOutput) RuleId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDnsControlPolicyResult) string { return v.RuleId }).(pulumi.StringOutput)
 }
 
-// 访问源信息，包含VPC列表。
+// Access source information, including VPC list.
 func (o LookupDnsControlPolicyResultOutput) Sources() GetDnsControlPolicySourceArrayOutput {
 	return o.ApplyT(func(v LookupDnsControlPolicyResult) []GetDnsControlPolicySource { return v.Sources }).(GetDnsControlPolicySourceArrayOutput)
 }
 
-// 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
+// Switch status of the domain denylist access control policy. false: Off; true: On.
 func (o LookupDnsControlPolicyResultOutput) Status() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDnsControlPolicyResult) bool { return v.Status }).(pulumi.BoolOutput)
 }
 
-// 该域名黑名单访问控制策略占用的策略数量。
+// Number of policies occupied by this domain denylist access control policy.
 func (o LookupDnsControlPolicyResultOutput) UseCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupDnsControlPolicyResult) int { return v.UseCount }).(pulumi.IntOutput)
 }

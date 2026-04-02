@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class UpstreamUpstreamSpecVeFaasGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 函数ID。
+        /// Function ID
         /// </summary>
         [Input("functionId")]
         public Input<string>? FunctionId { get; set; }

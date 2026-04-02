@@ -107,8 +107,8 @@ class AclAclEntry(dict):
                  description: Optional[builtins.str] = None,
                  entry: Optional[builtins.str] = None):
         """
-        :param builtins.str description: IP条目的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
-        :param builtins.str entry: IP条目的地址段，只支持CIDR地址。
+        :param builtins.str description: Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
+        :param builtins.str entry: IP entry address range; only CIDR addresses are supported
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -119,7 +119,7 @@ class AclAclEntry(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        IP条目的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+        Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
         """
         return pulumi.get(self, "description")
 
@@ -127,7 +127,7 @@ class AclAclEntry(dict):
     @pulumi.getter
     def entry(self) -> Optional[builtins.str]:
         """
-        IP条目的地址段，只支持CIDR地址。
+        IP entry address range; only CIDR addresses are supported
         """
         return pulumi.get(self, "entry")
 
@@ -154,7 +154,7 @@ class AclListener(dict):
     def __init__(__self__, *,
                  acl_type: Optional[builtins.str] = None):
         """
-        :param builtins.str acl_type: 监听器对本访问控制策略组的控制方式。white：白名单方式；black：黑名单方式
+        :param builtins.str acl_type: Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
         """
         if acl_type is not None:
             pulumi.set(__self__, "acl_type", acl_type)
@@ -163,7 +163,7 @@ class AclListener(dict):
     @pulumi.getter(name="aclType")
     def acl_type(self) -> Optional[builtins.str]:
         """
-        监听器对本访问控制策略组的控制方式。white：白名单方式；black：黑名单方式
+        Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
         """
         return pulumi.get(self, "acl_type")
 
@@ -174,8 +174,8 @@ class AclTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 用户标签的标签键。长度限制为1～128个字符。大小写敏感。不能以volc:和sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
-        :param builtins.str value: 用户标签的标签值。长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+        :param builtins.str key: User tag key. Length limit: 1–128 characters. Case sensitive. Cannot start with any combination of volc: or sys: (case insensitive). Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Tag keys for the same resource must be unique
+        :param builtins.str value: User tag value. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -186,7 +186,7 @@ class AclTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        用户标签的标签键。长度限制为1～128个字符。大小写敏感。不能以volc:和sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+        User tag key. Length limit: 1–128 characters. Case sensitive. Cannot start with any combination of volc: or sys: (case insensitive). Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Tag keys for the same resource must be unique
         """
         return pulumi.get(self, "key")
 
@@ -194,7 +194,7 @@ class AclTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        用户标签的标签值。长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+        User tag value. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @
         """
         return pulumi.get(self, "value")
 
@@ -205,8 +205,8 @@ class CertificateTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: User tag key
+        :param builtins.str value: User tag value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -217,7 +217,7 @@ class CertificateTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        用户标签的标签键。
+        User tag key
         """
         return pulumi.get(self, "key")
 
@@ -225,7 +225,7 @@ class CertificateTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        用户标签的标签值。
+        User tag value
         """
         return pulumi.get(self, "value")
 
@@ -257,10 +257,10 @@ class CustomizedCfgListener(dict):
                  port: Optional[builtins.int] = None,
                  protocol: Optional[builtins.str] = None):
         """
-        :param builtins.str listener_id: 监听器的 ID。
-        :param builtins.str listener_name: 监听器的名称。
-        :param builtins.int port: 监听器的端口。
-        :param builtins.str protocol: 监听器的协议。
+        :param builtins.str listener_id: Listener ID.
+        :param builtins.str listener_name: Listener name.
+        :param builtins.int port: Listener port.
+        :param builtins.str protocol: Listener protocol.
         """
         if listener_id is not None:
             pulumi.set(__self__, "listener_id", listener_id)
@@ -275,7 +275,7 @@ class CustomizedCfgListener(dict):
     @pulumi.getter(name="listenerId")
     def listener_id(self) -> Optional[builtins.str]:
         """
-        监听器的 ID。
+        Listener ID.
         """
         return pulumi.get(self, "listener_id")
 
@@ -283,7 +283,7 @@ class CustomizedCfgListener(dict):
     @pulumi.getter(name="listenerName")
     def listener_name(self) -> Optional[builtins.str]:
         """
-        监听器的名称。
+        Listener name.
         """
         return pulumi.get(self, "listener_name")
 
@@ -291,7 +291,7 @@ class CustomizedCfgListener(dict):
     @pulumi.getter
     def port(self) -> Optional[builtins.int]:
         """
-        监听器的端口。
+        Listener port.
         """
         return pulumi.get(self, "port")
 
@@ -299,7 +299,7 @@ class CustomizedCfgListener(dict):
     @pulumi.getter
     def protocol(self) -> Optional[builtins.str]:
         """
-        监听器的协议。
+        Listener protocol.
         """
         return pulumi.get(self, "protocol")
 
@@ -310,8 +310,8 @@ class CustomizedCfgTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: User tag key.
+        :param builtins.str value: User tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -322,7 +322,7 @@ class CustomizedCfgTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        用户标签的标签键。
+        User tag key.
         """
         return pulumi.get(self, "key")
 
@@ -330,7 +330,7 @@ class CustomizedCfgTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        用户标签的标签值。
+        User tag value.
         """
         return pulumi.get(self, "value")
 
@@ -341,8 +341,8 @@ class HealthCheckTemplateTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 用户标签的标签键。具体规则如下：长度限制为1～128个字符。大小写敏感。不能以sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
-        :param builtins.str value: 用户标签的标签值。如果传入该参数，则必须先传入Tags.N.Key。具体规则如下：长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+        :param builtins.str key: Tag key for user tags. Rules: Length must be 1–128 characters. Case-sensitive. Cannot start with any case combination of sys:. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Tag keys for the same resource must be unique.
+        :param builtins.str value: Tag value for the user tag. If you specify this parameter, you must first specify Tags.N.Key. Rules: Length must be between 0 and 256 characters. Case-sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -353,7 +353,7 @@ class HealthCheckTemplateTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        用户标签的标签键。具体规则如下：长度限制为1～128个字符。大小写敏感。不能以sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+        Tag key for user tags. Rules: Length must be 1–128 characters. Case-sensitive. Cannot start with any case combination of sys:. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Tag keys for the same resource must be unique.
         """
         return pulumi.get(self, "key")
 
@@ -361,7 +361,7 @@ class HealthCheckTemplateTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        用户标签的标签值。如果传入该参数，则必须先传入Tags.N.Key。具体规则如下：长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+        Tag value for the user tag. If you specify this parameter, you must first specify Tags.N.Key. Rules: Length must be between 0 and 256 characters. Case-sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @.
         """
         return pulumi.get(self, "value")
 
@@ -399,12 +399,12 @@ class ListenerDomainExtension(dict):
                  pca_leaf_certificate_id: Optional[builtins.str] = None,
                  san: Optional[builtins.str] = None):
         """
-        :param builtins.str cert_center_certificate_id: 域名使用的服务器证书 ID 。当证书来源为 cert_center 时生效。
-        :param builtins.str certificate_id: 域名使用的服务器证书 ID。当证书来源为 alb 时生效。
-        :param builtins.str certificate_source: 域名使用的服务器证书的来源，取值：alb：表示通过 ALB 上传的证书。cert_center：表示通过火山引擎证书中心购买或上传的 SSL 证书。
-        :param builtins.str domain: 域名。通常不能为空，若实例支持自动选择扩展证书，即SniAutoMatch为on，则Domain需传入空字符串。需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含小写字、字、‘.’、‘-‘、‘*’。长度限制为1 ～ 128个字符。泛域名：使用“*”代替1个或多个字符。“*”必须在域名开头或结尾。同一条域名中“*”不能出现两次。“*”前后不能有除了.以外的字符。精确域名：符合域名规范的精确域名。同一HTTPS监听器下的域名不能重复。匹配域名时，对域名的大小写不敏感。
-        :param builtins.str pca_leaf_certificate_id: HTTPS监听器关联的私有叶子证书 ID。创建 HTTPS 监听器且证书来源为 pca_leaf 时必传。
-        :param builtins.str san: 若实例支持自动选择扩展证书，即SniAutoMatch为on时，则Domain是空字符串。San为证书的扩展域名，用英文,分隔多个域名。
+        :param builtins.str cert_center_certificate_id: Server certificate ID used by the domain. Effective when the certificate source is cert_center.
+        :param builtins.str certificate_id: Server certificate ID used by the domain. Effective when the certificate source is alb.
+        :param builtins.str certificate_source: Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
+        :param builtins.str domain: Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length must be between 1 and 128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters except '.' can be before or after '*'. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
+        :param builtins.str pca_leaf_certificate_id: Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
+        :param builtins.str san: If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
         """
         if cert_center_certificate_id is not None:
             pulumi.set(__self__, "cert_center_certificate_id", cert_center_certificate_id)
@@ -423,7 +423,7 @@ class ListenerDomainExtension(dict):
     @pulumi.getter(name="certCenterCertificateId")
     def cert_center_certificate_id(self) -> Optional[builtins.str]:
         """
-        域名使用的服务器证书 ID 。当证书来源为 cert_center 时生效。
+        Server certificate ID used by the domain. Effective when the certificate source is cert_center.
         """
         return pulumi.get(self, "cert_center_certificate_id")
 
@@ -431,7 +431,7 @@ class ListenerDomainExtension(dict):
     @pulumi.getter(name="certificateId")
     def certificate_id(self) -> Optional[builtins.str]:
         """
-        域名使用的服务器证书 ID。当证书来源为 alb 时生效。
+        Server certificate ID used by the domain. Effective when the certificate source is alb.
         """
         return pulumi.get(self, "certificate_id")
 
@@ -439,7 +439,7 @@ class ListenerDomainExtension(dict):
     @pulumi.getter(name="certificateSource")
     def certificate_source(self) -> Optional[builtins.str]:
         """
-        域名使用的服务器证书的来源，取值：alb：表示通过 ALB 上传的证书。cert_center：表示通过火山引擎证书中心购买或上传的 SSL 证书。
+        Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
         """
         return pulumi.get(self, "certificate_source")
 
@@ -447,7 +447,7 @@ class ListenerDomainExtension(dict):
     @pulumi.getter
     def domain(self) -> Optional[builtins.str]:
         """
-        域名。通常不能为空，若实例支持自动选择扩展证书，即SniAutoMatch为on，则Domain需传入空字符串。需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含小写字、字、‘.’、‘-‘、‘*’。长度限制为1 ～ 128个字符。泛域名：使用“*”代替1个或多个字符。“*”必须在域名开头或结尾。同一条域名中“*”不能出现两次。“*”前后不能有除了.以外的字符。精确域名：符合域名规范的精确域名。同一HTTPS监听器下的域名不能重复。匹配域名时，对域名的大小写不敏感。
+        Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length must be between 1 and 128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters except '.' can be before or after '*'. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
         """
         return pulumi.get(self, "domain")
 
@@ -455,7 +455,7 @@ class ListenerDomainExtension(dict):
     @pulumi.getter(name="pcaLeafCertificateId")
     def pca_leaf_certificate_id(self) -> Optional[builtins.str]:
         """
-        HTTPS监听器关联的私有叶子证书 ID。创建 HTTPS 监听器且证书来源为 pca_leaf 时必传。
+        Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
         """
         return pulumi.get(self, "pca_leaf_certificate_id")
 
@@ -463,7 +463,7 @@ class ListenerDomainExtension(dict):
     @pulumi.getter
     def san(self) -> Optional[builtins.str]:
         """
-        若实例支持自动选择扩展证书，即SniAutoMatch为on时，则Domain是空字符串。San为证书的扩展域名，用英文,分隔多个域名。
+        If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
         """
         return pulumi.get(self, "san")
 
@@ -493,8 +493,8 @@ class ListenerServerGroup(dict):
                  server_group_id: Optional[builtins.str] = None,
                  server_group_name: Optional[builtins.str] = None):
         """
-        :param builtins.str server_group_id: 服务器组 ID 。
-        :param builtins.str server_group_name: 服务器组名称。
+        :param builtins.str server_group_id: Server group ID.
+        :param builtins.str server_group_name: Server group name.
         """
         if server_group_id is not None:
             pulumi.set(__self__, "server_group_id", server_group_id)
@@ -505,7 +505,7 @@ class ListenerServerGroup(dict):
     @pulumi.getter(name="serverGroupId")
     def server_group_id(self) -> Optional[builtins.str]:
         """
-        服务器组 ID 。
+        Server group ID.
         """
         return pulumi.get(self, "server_group_id")
 
@@ -513,7 +513,7 @@ class ListenerServerGroup(dict):
     @pulumi.getter(name="serverGroupName")
     def server_group_name(self) -> Optional[builtins.str]:
         """
-        服务器组名称。
+        Server group name.
         """
         return pulumi.get(self, "server_group_name")
 
@@ -524,8 +524,8 @@ class ListenerTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 用户标签的标签键。具体规则如下：长度限制为1～128个字符。大小写敏感。不能以volc:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
-        :param builtins.str value: 用户标签的标签值。具体规则如下：长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+        :param builtins.str key: Tag key for user tags. Rules are as follows: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
+        :param builtins.str value: The value of the user tag. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -536,7 +536,7 @@ class ListenerTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        用户标签的标签键。具体规则如下：长度限制为1～128个字符。大小写敏感。不能以volc:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+        Tag key for user tags. Rules are as follows: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
         """
         return pulumi.get(self, "key")
 
@@ -544,7 +544,7 @@ class ListenerTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        用户标签的标签值。具体规则如下：长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+        The value of the user tag. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
         """
         return pulumi.get(self, "value")
 
@@ -579,11 +579,11 @@ class LoadBalancerEipBillingConfig(dict):
                  security_protection_instance_id: Optional[builtins.int] = None,
                  security_protection_types: Optional[builtins.str] = None):
         """
-        :param builtins.int bandwidth: EIP的带宽峰值，单位为Mbps。
-        :param builtins.int billing_type: EIP的计费方式，2为按带宽计费，3为按流量计费。
-        :param builtins.str isp: 公网IP的线路类型，BGP表示多线。
-        :param builtins.int security_protection_instance_id: 创建ALB公网实例时，如果使用了IP防护资源，则需要指定一个DDoS原生防护实例的ID。
-        :param builtins.str security_protection_types: 创建 ALB 公网实例时，ALB 允许购买多个公网IP防护资源。公网 IP 防护资源的具体规则如下：多个防护资源之间用半角逗号（,）分隔。防护资源的取值如下：AntiDDoS_Enhanced：您申请的是增强防护类型的公网 IP，可以将此 IP 加入到 DDoS 原生防护实例。不填：您申请的是基础防护类型的公网 IP 。
+        :param builtins.int bandwidth: Peak bandwidth of EIP, in Mbps.
+        :param builtins.int billing_type: EIP billing method: 2 for bandwidth-based, 3 for traffic-based.
+        :param builtins.str isp: Line type of the public IP, BGP indicates multi-line.
+        :param builtins.int security_protection_instance_id: When creating an ALB public instance, if IP protection resources are used, you must specify a DDoS native protection instance ID.
+        :param builtins.str security_protection_types: When creating a public ALB instance, ALB allows you to purchase multiple public IP protection resources. The rules for public IP protection resources are as follows: separate multiple protection resources with a comma (,). The values for protection resources are: AntiDDoS_Enhanced: You are requesting an enhanced protection type public IP, which can be added to a native DDoS protection instance. If not specified: You are requesting a basic protection type public IP.
         """
         if bandwidth is not None:
             pulumi.set(__self__, "bandwidth", bandwidth)
@@ -600,7 +600,7 @@ class LoadBalancerEipBillingConfig(dict):
     @pulumi.getter
     def bandwidth(self) -> Optional[builtins.int]:
         """
-        EIP的带宽峰值，单位为Mbps。
+        Peak bandwidth of EIP, in Mbps.
         """
         return pulumi.get(self, "bandwidth")
 
@@ -608,7 +608,7 @@ class LoadBalancerEipBillingConfig(dict):
     @pulumi.getter(name="billingType")
     def billing_type(self) -> Optional[builtins.int]:
         """
-        EIP的计费方式，2为按带宽计费，3为按流量计费。
+        EIP billing method: 2 for bandwidth-based, 3 for traffic-based.
         """
         return pulumi.get(self, "billing_type")
 
@@ -616,7 +616,7 @@ class LoadBalancerEipBillingConfig(dict):
     @pulumi.getter
     def isp(self) -> Optional[builtins.str]:
         """
-        公网IP的线路类型，BGP表示多线。
+        Line type of the public IP, BGP indicates multi-line.
         """
         return pulumi.get(self, "isp")
 
@@ -624,7 +624,7 @@ class LoadBalancerEipBillingConfig(dict):
     @pulumi.getter(name="securityProtectionInstanceId")
     def security_protection_instance_id(self) -> Optional[builtins.int]:
         """
-        创建ALB公网实例时，如果使用了IP防护资源，则需要指定一个DDoS原生防护实例的ID。
+        When creating an ALB public instance, if IP protection resources are used, you must specify a DDoS native protection instance ID.
         """
         return pulumi.get(self, "security_protection_instance_id")
 
@@ -632,7 +632,7 @@ class LoadBalancerEipBillingConfig(dict):
     @pulumi.getter(name="securityProtectionTypes")
     def security_protection_types(self) -> Optional[builtins.str]:
         """
-        创建 ALB 公网实例时，ALB 允许购买多个公网IP防护资源。公网 IP 防护资源的具体规则如下：多个防护资源之间用半角逗号（,）分隔。防护资源的取值如下：AntiDDoS_Enhanced：您申请的是增强防护类型的公网 IP，可以将此 IP 加入到 DDoS 原生防护实例。不填：您申请的是基础防护类型的公网 IP 。
+        When creating a public ALB instance, ALB allows you to purchase multiple public IP protection resources. The rules for public IP protection resources are as follows: separate multiple protection resources with a comma (,). The values for protection resources are: AntiDDoS_Enhanced: You are requesting an enhanced protection type public IP, which can be added to a native DDoS protection instance. If not specified: You are requesting a basic protection type public IP.
         """
         return pulumi.get(self, "security_protection_types")
 
@@ -666,10 +666,10 @@ class LoadBalancerGlobalAccelerator(dict):
                  endpoint_group_id: Optional[builtins.str] = None,
                  weight: Optional[builtins.int] = None):
         """
-        :param builtins.str accelerator_id: 绑定的全球加速实例的ID。
-        :param builtins.str accelerator_listener_id: 绑定的全球加速监听器的ID。
-        :param builtins.str endpoint_group_id: 绑定的终端节点组的ID。
-        :param builtins.int weight: 后端服务器的权重，决定流量分发比例。
+        :param builtins.str accelerator_id: ID of the bound Global Accelerator instance.
+        :param builtins.str accelerator_listener_id: ID of the bound Global Accelerator listener.
+        :param builtins.str endpoint_group_id: ID of the bound endpoint group.
+        :param builtins.int weight: Weight of the backend server, determines traffic distribution ratio.
         """
         if accelerator_id is not None:
             pulumi.set(__self__, "accelerator_id", accelerator_id)
@@ -684,7 +684,7 @@ class LoadBalancerGlobalAccelerator(dict):
     @pulumi.getter(name="acceleratorId")
     def accelerator_id(self) -> Optional[builtins.str]:
         """
-        绑定的全球加速实例的ID。
+        ID of the bound Global Accelerator instance.
         """
         return pulumi.get(self, "accelerator_id")
 
@@ -692,7 +692,7 @@ class LoadBalancerGlobalAccelerator(dict):
     @pulumi.getter(name="acceleratorListenerId")
     def accelerator_listener_id(self) -> Optional[builtins.str]:
         """
-        绑定的全球加速监听器的ID。
+        ID of the bound Global Accelerator listener.
         """
         return pulumi.get(self, "accelerator_listener_id")
 
@@ -700,7 +700,7 @@ class LoadBalancerGlobalAccelerator(dict):
     @pulumi.getter(name="endpointGroupId")
     def endpoint_group_id(self) -> Optional[builtins.str]:
         """
-        绑定的终端节点组的ID。
+        ID of the bound endpoint group.
         """
         return pulumi.get(self, "endpoint_group_id")
 
@@ -708,7 +708,7 @@ class LoadBalancerGlobalAccelerator(dict):
     @pulumi.getter
     def weight(self) -> Optional[builtins.int]:
         """
-        后端服务器的权重，决定流量分发比例。
+        Weight of the backend server, determines traffic distribution ratio.
         """
         return pulumi.get(self, "weight")
 
@@ -737,9 +737,9 @@ class LoadBalancerIpv6EipBillingConfig(dict):
                  billing_type: Optional[builtins.int] = None,
                  isp: Optional[builtins.str] = None):
         """
-        :param builtins.int bandwidth: IPv6 EIP的带宽峰值，单位为Mbps。
-        :param builtins.int billing_type: IPv6 EIP的计费方式，2为按带宽计费，3为按流量计费。
-        :param builtins.str isp: IPv6公网IP的线路类型，BGP表示多线。
+        :param builtins.int bandwidth: Peak bandwidth of IPv6 EIP, in Mbps.
+        :param builtins.int billing_type: Billing method for IPv6 EIP: 2 for bandwidth-based, 3 for traffic-based.
+        :param builtins.str isp: Line type of IPv6 public IP; BGP indicates multi-line.
         """
         if bandwidth is not None:
             pulumi.set(__self__, "bandwidth", bandwidth)
@@ -752,7 +752,7 @@ class LoadBalancerIpv6EipBillingConfig(dict):
     @pulumi.getter
     def bandwidth(self) -> Optional[builtins.int]:
         """
-        IPv6 EIP的带宽峰值，单位为Mbps。
+        Peak bandwidth of IPv6 EIP, in Mbps.
         """
         return pulumi.get(self, "bandwidth")
 
@@ -760,7 +760,7 @@ class LoadBalancerIpv6EipBillingConfig(dict):
     @pulumi.getter(name="billingType")
     def billing_type(self) -> Optional[builtins.int]:
         """
-        IPv6 EIP的计费方式，2为按带宽计费，3为按流量计费。
+        Billing method for IPv6 EIP: 2 for bandwidth-based, 3 for traffic-based.
         """
         return pulumi.get(self, "billing_type")
 
@@ -768,7 +768,7 @@ class LoadBalancerIpv6EipBillingConfig(dict):
     @pulumi.getter
     def isp(self) -> Optional[builtins.str]:
         """
-        IPv6公网IP的线路类型，BGP表示多线。
+        Line type of IPv6 public IP; BGP indicates multi-line.
         """
         return pulumi.get(self, "isp")
 
@@ -779,8 +779,8 @@ class LoadBalancerTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签的键，用于标识标签的类别。
-        :param builtins.str value: 标签的值，用于标识具体的标签内容。
+        :param builtins.str key: Tag key, used to identify the tag category.
+        :param builtins.str value: Tag value used to identify the specific tag content.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -791,7 +791,7 @@ class LoadBalancerTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签的键，用于标识标签的类别。
+        Tag key, used to identify the tag category.
         """
         return pulumi.get(self, "key")
 
@@ -799,7 +799,7 @@ class LoadBalancerTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签的值，用于标识具体的标签内容。
+        Tag value used to identify the specific tag content.
         """
         return pulumi.get(self, "value")
 
@@ -829,8 +829,8 @@ class LoadBalancerZoneMapping(dict):
                  subnet_id: Optional[builtins.str] = None,
                  zone_id: Optional[builtins.str] = None):
         """
-        :param builtins.str subnet_id: 可用区内提供服务的子网ID。
-        :param builtins.str zone_id: 可用区的唯一标识符。
+        :param builtins.str subnet_id: Subnet ID providing services within the availability zone.
+        :param builtins.str zone_id: Unique identifier of the availability zone.
         """
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
@@ -841,7 +841,7 @@ class LoadBalancerZoneMapping(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[builtins.str]:
         """
-        可用区内提供服务的子网ID。
+        Subnet ID providing services within the availability zone.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -849,7 +849,7 @@ class LoadBalancerZoneMapping(dict):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[builtins.str]:
         """
-        可用区的唯一标识符。
+        Unique identifier of the availability zone.
         """
         return pulumi.get(self, "zone_id")
 
@@ -882,8 +882,8 @@ class RuleForwardGroupConfig(dict):
                  sticky_session_enabled: Optional[builtins.str] = None,
                  sticky_session_timeout: Optional[builtins.int] = None):
         """
-        :param builtins.str sticky_session_enabled: 是否开启组间会话保持。on：开启。off：不开启。
-        :param builtins.int sticky_session_timeout: 组件回话保持的超时时间。单位：秒。
+        :param builtins.str sticky_session_enabled: Whether to enable inter-group session persistence. on: enabled. off: disabled.
+        :param builtins.int sticky_session_timeout: Component session stickiness timeout. Unit: seconds.
         """
         if server_group_tuples is not None:
             pulumi.set(__self__, "server_group_tuples", server_group_tuples)
@@ -901,7 +901,7 @@ class RuleForwardGroupConfig(dict):
     @pulumi.getter(name="stickySessionEnabled")
     def sticky_session_enabled(self) -> Optional[builtins.str]:
         """
-        是否开启组间会话保持。on：开启。off：不开启。
+        Whether to enable inter-group session persistence. on: enabled. off: disabled.
         """
         return pulumi.get(self, "sticky_session_enabled")
 
@@ -909,7 +909,7 @@ class RuleForwardGroupConfig(dict):
     @pulumi.getter(name="stickySessionTimeout")
     def sticky_session_timeout(self) -> Optional[builtins.int]:
         """
-        组件回话保持的超时时间。单位：秒。
+        Component session stickiness timeout. Unit: seconds.
         """
         return pulumi.get(self, "sticky_session_timeout")
 
@@ -937,8 +937,8 @@ class RuleForwardGroupConfigServerGroupTuple(dict):
                  server_group_id: Optional[builtins.str] = None,
                  weight: Optional[builtins.int] = None):
         """
-        :param builtins.str server_group_id: 转发到的目的服务器组 ID。
-        :param builtins.int weight: 服务器组权重。
+        :param builtins.str server_group_id: Destination server group ID.
+        :param builtins.int weight: Server group weight.
         """
         if server_group_id is not None:
             pulumi.set(__self__, "server_group_id", server_group_id)
@@ -949,7 +949,7 @@ class RuleForwardGroupConfigServerGroupTuple(dict):
     @pulumi.getter(name="serverGroupId")
     def server_group_id(self) -> Optional[builtins.str]:
         """
-        转发到的目的服务器组 ID。
+        Destination server group ID.
         """
         return pulumi.get(self, "server_group_id")
 
@@ -957,7 +957,7 @@ class RuleForwardGroupConfigServerGroupTuple(dict):
     @pulumi.getter
     def weight(self) -> Optional[builtins.int]:
         """
-        服务器组权重。
+        Server group weight.
         """
         return pulumi.get(self, "weight")
 
@@ -996,11 +996,11 @@ class RuleRedirectConfig(dict):
                  redirect_protocol: Optional[builtins.str] = None,
                  redirect_uri: Optional[builtins.str] = None):
         """
-        :param builtins.str redirect_domain: 重定向的域名。若创建/修改重定向类型的转发规则时，重定向域名设置为空，接口会返回${host}，该变量含义为重定向域名与请求域名保持一致，但不支持创建/修改时，将重定向域名设置为${host}.。
-        :param builtins.str redirect_http_code: 重定向状态码。301、302、307、308。
-        :param builtins.str redirect_port: 重定向的端口。若创建/修改重定向类型的转发规则时，重定向端口设置为空，接口会返回${port}，该变量含义为重定向端口与请求端口（监听器端口）保持一致，但不支持创建/修改时，将重定向端口设置为${port}.。
-        :param builtins.str redirect_protocol: 重定向使用的协议。HTTP、HTTPS。
-        :param builtins.str redirect_uri: 重定向的URI。若创建/修改重定向类型的转发规则时，重定向uri设置为空，接口会返回${request*uri}，该变量含义为重定向uri与请求uri保持一致，但不支持创建/修改时，将重定向uri设置为${request*uri}.。
+        :param builtins.str redirect_domain: Redirect domain name. If the redirect domain name is left empty when creating or modifying a redirect forwarding rule, the API returns ${host}, which means the redirect domain matches the request domain. However, setting the redirect domain to ${host} is not supported when creating or modifying rules.
+        :param builtins.str redirect_http_code: Redirect status codes: 301, 302, 307, 308.
+        :param builtins.str redirect_port: Redirect port. If the redirect port is left empty when creating or modifying a redirect forwarding rule, the API returns ${port}, which means the redirect port matches the request port (listener port). However, setting the redirect port to ${port} is not supported when creating or modifying rules.
+        :param builtins.str redirect_protocol: Protocol used for redirect. HTTP, HTTPS.
+        :param builtins.str redirect_uri: Redirect URI. If the redirect URI is left empty when creating or modifying a redirect forwarding rule, the API returns ${request*uri}, which means the redirect URI matches the request URI. However, setting the redirect URI to ${request*uri} is not supported when creating or modifying rules.
         """
         if redirect_domain is not None:
             pulumi.set(__self__, "redirect_domain", redirect_domain)
@@ -1017,7 +1017,7 @@ class RuleRedirectConfig(dict):
     @pulumi.getter(name="redirectDomain")
     def redirect_domain(self) -> Optional[builtins.str]:
         """
-        重定向的域名。若创建/修改重定向类型的转发规则时，重定向域名设置为空，接口会返回${host}，该变量含义为重定向域名与请求域名保持一致，但不支持创建/修改时，将重定向域名设置为${host}.。
+        Redirect domain name. If the redirect domain name is left empty when creating or modifying a redirect forwarding rule, the API returns ${host}, which means the redirect domain matches the request domain. However, setting the redirect domain to ${host} is not supported when creating or modifying rules.
         """
         return pulumi.get(self, "redirect_domain")
 
@@ -1025,7 +1025,7 @@ class RuleRedirectConfig(dict):
     @pulumi.getter(name="redirectHttpCode")
     def redirect_http_code(self) -> Optional[builtins.str]:
         """
-        重定向状态码。301、302、307、308。
+        Redirect status codes: 301, 302, 307, 308.
         """
         return pulumi.get(self, "redirect_http_code")
 
@@ -1033,7 +1033,7 @@ class RuleRedirectConfig(dict):
     @pulumi.getter(name="redirectPort")
     def redirect_port(self) -> Optional[builtins.str]:
         """
-        重定向的端口。若创建/修改重定向类型的转发规则时，重定向端口设置为空，接口会返回${port}，该变量含义为重定向端口与请求端口（监听器端口）保持一致，但不支持创建/修改时，将重定向端口设置为${port}.。
+        Redirect port. If the redirect port is left empty when creating or modifying a redirect forwarding rule, the API returns ${port}, which means the redirect port matches the request port (listener port). However, setting the redirect port to ${port} is not supported when creating or modifying rules.
         """
         return pulumi.get(self, "redirect_port")
 
@@ -1041,7 +1041,7 @@ class RuleRedirectConfig(dict):
     @pulumi.getter(name="redirectProtocol")
     def redirect_protocol(self) -> Optional[builtins.str]:
         """
-        重定向使用的协议。HTTP、HTTPS。
+        Protocol used for redirect. HTTP, HTTPS.
         """
         return pulumi.get(self, "redirect_protocol")
 
@@ -1049,7 +1049,7 @@ class RuleRedirectConfig(dict):
     @pulumi.getter(name="redirectUri")
     def redirect_uri(self) -> Optional[builtins.str]:
         """
-        重定向的URI。若创建/修改重定向类型的转发规则时，重定向uri设置为空，接口会返回${request*uri}，该变量含义为重定向uri与请求uri保持一致，但不支持创建/修改时，将重定向uri设置为${request*uri}.。
+        Redirect URI. If the redirect URI is left empty when creating or modifying a redirect forwarding rule, the API returns ${request*uri}, which means the redirect URI matches the request URI. However, setting the redirect URI to ${request*uri} is not supported when creating or modifying rules.
         """
         return pulumi.get(self, "redirect_uri")
 
@@ -1076,7 +1076,7 @@ class RuleRewriteConfig(dict):
     def __init__(__self__, *,
                  rewrite_path: Optional[builtins.str] = None):
         """
-        :param builtins.str rewrite_path: 重写路径。
+        :param builtins.str rewrite_path: Rewrite path.
         """
         if rewrite_path is not None:
             pulumi.set(__self__, "rewrite_path", rewrite_path)
@@ -1085,7 +1085,7 @@ class RuleRewriteConfig(dict):
     @pulumi.getter(name="rewritePath")
     def rewrite_path(self) -> Optional[builtins.str]:
         """
-        重写路径。
+        Rewrite path.
         """
         return pulumi.get(self, "rewrite_path")
 
@@ -1130,7 +1130,7 @@ class RuleRuleAction(dict):
         :param 'RuleRuleActionRedirectConfigArgs' redirect_config: RedirectConfig
         :param 'RuleRuleActionRewriteConfigArgs' rewrite_config: RewriteConfig
         :param 'RuleRuleActionTrafficLimitConfigArgs' traffic_limit_config: TrafficLimitConfig
-        :param builtins.str type: 转发规则动作类型。ForwardGroup：转发至多个虚拟服务器组。Redirect： 重定向。Rewrite： 重写。TrafficLimit：流量限速。
+        :param builtins.str type: Forwarding rule action types. ForwardGroup: forward to multiple virtual server groups. Redirect: redirect. Rewrite: rewrite. TrafficLimit: traffic limiting.
         """
         if fixed_response_config is not None:
             pulumi.set(__self__, "fixed_response_config", fixed_response_config)
@@ -1189,7 +1189,7 @@ class RuleRuleAction(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        转发规则动作类型。ForwardGroup：转发至多个虚拟服务器组。Redirect： 重定向。Rewrite： 重写。TrafficLimit：流量限速。
+        Forwarding rule action types. ForwardGroup: forward to multiple virtual server groups. Redirect: redirect. Rewrite: rewrite. TrafficLimit: traffic limiting.
         """
         return pulumi.get(self, "type")
 
@@ -1220,9 +1220,9 @@ class RuleRuleActionFixedResponseConfig(dict):
                  content_type: Optional[builtins.str] = None,
                  http_code: Optional[builtins.str] = None):
         """
-        :param builtins.str content: 返回的固定内容。
-        :param builtins.str content_type: 返回的固定内容的格式。text/plain、text/css、text/html、application/javascript、application/json
-        :param builtins.str http_code: 返回的 HTTP 状态码。
+        :param builtins.str content: Fixed response content.
+        :param builtins.str content_type: Format of fixed response content. text/plain, text/css, text/html, application/javascript, application/json
+        :param builtins.str http_code: Returned HTTP status code.
         """
         if content is not None:
             pulumi.set(__self__, "content", content)
@@ -1235,7 +1235,7 @@ class RuleRuleActionFixedResponseConfig(dict):
     @pulumi.getter
     def content(self) -> Optional[builtins.str]:
         """
-        返回的固定内容。
+        Fixed response content.
         """
         return pulumi.get(self, "content")
 
@@ -1243,7 +1243,7 @@ class RuleRuleActionFixedResponseConfig(dict):
     @pulumi.getter(name="contentType")
     def content_type(self) -> Optional[builtins.str]:
         """
-        返回的固定内容的格式。text/plain、text/css、text/html、application/javascript、application/json
+        Format of fixed response content. text/plain, text/css, text/html, application/javascript, application/json
         """
         return pulumi.get(self, "content_type")
 
@@ -1251,7 +1251,7 @@ class RuleRuleActionFixedResponseConfig(dict):
     @pulumi.getter(name="httpCode")
     def http_code(self) -> Optional[builtins.str]:
         """
-        返回的 HTTP 状态码。
+        Returned HTTP status code.
         """
         return pulumi.get(self, "http_code")
 
@@ -1308,8 +1308,8 @@ class RuleRuleActionForwardGroupConfigServerGroupStickySession(dict):
                  enabled: Optional[builtins.str] = None,
                  timeout: Optional[builtins.int] = None):
         """
-        :param builtins.str enabled: 是否开启组间会话保持。on：开启。off：不开启。
-        :param builtins.int timeout: 组件回话保持的超时时间。单位：秒。
+        :param builtins.str enabled: Whether to enable inter-group session persistence. on: enabled. off: disabled.
+        :param builtins.int timeout: Component session stickiness timeout. Unit: seconds.
         """
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
@@ -1320,7 +1320,7 @@ class RuleRuleActionForwardGroupConfigServerGroupStickySession(dict):
     @pulumi.getter
     def enabled(self) -> Optional[builtins.str]:
         """
-        是否开启组间会话保持。on：开启。off：不开启。
+        Whether to enable inter-group session persistence. on: enabled. off: disabled.
         """
         return pulumi.get(self, "enabled")
 
@@ -1328,7 +1328,7 @@ class RuleRuleActionForwardGroupConfigServerGroupStickySession(dict):
     @pulumi.getter
     def timeout(self) -> Optional[builtins.int]:
         """
-        组件回话保持的超时时间。单位：秒。
+        Component session stickiness timeout. Unit: seconds.
         """
         return pulumi.get(self, "timeout")
 
@@ -1356,8 +1356,8 @@ class RuleRuleActionForwardGroupConfigServerGroupTuple(dict):
                  server_group_id: Optional[builtins.str] = None,
                  weight: Optional[builtins.int] = None):
         """
-        :param builtins.str server_group_id: 转发到的目的服务器组 ID。
-        :param builtins.int weight: 服务器组权重。
+        :param builtins.str server_group_id: Destination server group ID.
+        :param builtins.int weight: Server group weight.
         """
         if server_group_id is not None:
             pulumi.set(__self__, "server_group_id", server_group_id)
@@ -1368,7 +1368,7 @@ class RuleRuleActionForwardGroupConfigServerGroupTuple(dict):
     @pulumi.getter(name="serverGroupId")
     def server_group_id(self) -> Optional[builtins.str]:
         """
-        转发到的目的服务器组 ID。
+        Destination server group ID.
         """
         return pulumi.get(self, "server_group_id")
 
@@ -1376,7 +1376,7 @@ class RuleRuleActionForwardGroupConfigServerGroupTuple(dict):
     @pulumi.getter
     def weight(self) -> Optional[builtins.int]:
         """
-        服务器组权重。
+        Server group weight.
         """
         return pulumi.get(self, "weight")
 
@@ -1407,11 +1407,11 @@ class RuleRuleActionRedirectConfig(dict):
                  port: Optional[builtins.str] = None,
                  protocol: Optional[builtins.str] = None):
         """
-        :param builtins.str host: 重定向域名，仅支持精确域名。
-        :param builtins.str http_code: 重定向状态码，支持301，302，307，308。
-        :param builtins.str path: 重定向 URI。。
-        :param builtins.str port: 重定向端口。
-        :param builtins.str protocol: 重定向使用的协议，支持HTTP，HTTPS。
+        :param builtins.str host: Redirect domain. Only exact domains are supported.
+        :param builtins.str http_code: Redirect status codes supported: 301, 302, 307, 308.
+        :param builtins.str path: Redirect URI..
+        :param builtins.str port: Redirect port.
+        :param builtins.str protocol: Protocol used for redirect. Supports HTTP and HTTPS.
         """
         if host is not None:
             pulumi.set(__self__, "host", host)
@@ -1428,7 +1428,7 @@ class RuleRuleActionRedirectConfig(dict):
     @pulumi.getter
     def host(self) -> Optional[builtins.str]:
         """
-        重定向域名，仅支持精确域名。
+        Redirect domain. Only exact domains are supported.
         """
         return pulumi.get(self, "host")
 
@@ -1436,7 +1436,7 @@ class RuleRuleActionRedirectConfig(dict):
     @pulumi.getter(name="httpCode")
     def http_code(self) -> Optional[builtins.str]:
         """
-        重定向状态码，支持301，302，307，308。
+        Redirect status codes supported: 301, 302, 307, 308.
         """
         return pulumi.get(self, "http_code")
 
@@ -1444,7 +1444,7 @@ class RuleRuleActionRedirectConfig(dict):
     @pulumi.getter
     def path(self) -> Optional[builtins.str]:
         """
-        重定向 URI。。
+        Redirect URI..
         """
         return pulumi.get(self, "path")
 
@@ -1452,7 +1452,7 @@ class RuleRuleActionRedirectConfig(dict):
     @pulumi.getter
     def port(self) -> Optional[builtins.str]:
         """
-        重定向端口。
+        Redirect port.
         """
         return pulumi.get(self, "port")
 
@@ -1460,7 +1460,7 @@ class RuleRuleActionRedirectConfig(dict):
     @pulumi.getter
     def protocol(self) -> Optional[builtins.str]:
         """
-        重定向使用的协议，支持HTTP，HTTPS。
+        Protocol used for redirect. Supports HTTP and HTTPS.
         """
         return pulumi.get(self, "protocol")
 
@@ -1470,7 +1470,7 @@ class RuleRuleActionRewriteConfig(dict):
     def __init__(__self__, *,
                  path: Optional[builtins.str] = None):
         """
-        :param builtins.str path: 重写路径。
+        :param builtins.str path: Rewrite path.
         """
         if path is not None:
             pulumi.set(__self__, "path", path)
@@ -1479,7 +1479,7 @@ class RuleRuleActionRewriteConfig(dict):
     @pulumi.getter
     def path(self) -> Optional[builtins.str]:
         """
-        重写路径。
+        Rewrite path.
         """
         return pulumi.get(self, "path")
 
@@ -1489,7 +1489,7 @@ class RuleRuleActionTrafficLimitConfig(dict):
     def __init__(__self__, *,
                  qps: Optional[builtins.int] = None):
         """
-        :param builtins.int qps: 每秒请求数。
+        :param builtins.int qps: Requests per second.
         """
         if qps is not None:
             pulumi.set(__self__, "qps", qps)
@@ -1498,7 +1498,7 @@ class RuleRuleActionTrafficLimitConfig(dict):
     @pulumi.getter
     def qps(self) -> Optional[builtins.int]:
         """
-        每秒请求数。
+        Requests per second.
         """
         return pulumi.get(self, "qps")
 
@@ -1543,7 +1543,7 @@ class RuleRuleCondition(dict):
         :param 'RuleRuleConditionMethodConfigArgs' method_config: MethodConfig。
         :param 'RuleRuleConditionPathConfigArgs' path_config: PathConfig。
         :param 'RuleRuleConditionQueryStringConfigArgs' query_string_config: QueryStringConfig。
-        :param builtins.str type: 标准版转发规则条件类型。Host： 域名。Path： 路径。Header：HTTP头字段。Method: 请求方法。QueryString: 查询参数。
+        :param builtins.str type: Standard forwarding rule condition types. Host: domain name. Path: path. Header: HTTP header field. Method: request method. QueryString: query parameter.
         """
         if header_config is not None:
             pulumi.set(__self__, "header_config", header_config)
@@ -1602,7 +1602,7 @@ class RuleRuleCondition(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        标准版转发规则条件类型。Host： 域名。Path： 路径。Header：HTTP头字段。Method: 请求方法。QueryString: 查询参数。
+        Standard forwarding rule condition types. Host: domain name. Path: path. Header: HTTP header field. Method: request method. QueryString: query parameter.
         """
         return pulumi.get(self, "type")
 
@@ -1613,8 +1613,8 @@ class RuleRuleConditionHeaderConfig(dict):
                  key: Optional[builtins.str] = None,
                  values: Optional[Sequence[builtins.str]] = None):
         """
-        :param builtins.str key: 头字段键。
-        :param Sequence[builtins.str] values: 头字段值。
+        :param builtins.str key: Header field key.
+        :param Sequence[builtins.str] values: Header field value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -1625,7 +1625,7 @@ class RuleRuleConditionHeaderConfig(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        头字段键。
+        Header field key.
         """
         return pulumi.get(self, "key")
 
@@ -1633,7 +1633,7 @@ class RuleRuleConditionHeaderConfig(dict):
     @pulumi.getter
     def values(self) -> Optional[Sequence[builtins.str]]:
         """
-        头字段值。
+        Header field value.
         """
         return pulumi.get(self, "values")
 
@@ -1643,7 +1643,7 @@ class RuleRuleConditionHostConfig(dict):
     def __init__(__self__, *,
                  values: Optional[Sequence[builtins.str]] = None):
         """
-        :param Sequence[builtins.str] values: 转发规则的域名，支持泛域名和精确域名。
+        :param Sequence[builtins.str] values: Domain name of the forwarding rule. Supports wildcard and exact domains.
         """
         if values is not None:
             pulumi.set(__self__, "values", values)
@@ -1652,7 +1652,7 @@ class RuleRuleConditionHostConfig(dict):
     @pulumi.getter
     def values(self) -> Optional[Sequence[builtins.str]]:
         """
-        转发规则的域名，支持泛域名和精确域名。
+        Domain name of the forwarding rule. Supports wildcard and exact domains.
         """
         return pulumi.get(self, "values")
 
@@ -1662,7 +1662,7 @@ class RuleRuleConditionMethodConfig(dict):
     def __init__(__self__, *,
                  values: Optional[Sequence[builtins.str]] = None):
         """
-        :param Sequence[builtins.str] values: 请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+        :param Sequence[builtins.str] values: Request method. Supports HEAD, GET, POST, OPTIONS, PUT, PATCH, DELETE.
         """
         if values is not None:
             pulumi.set(__self__, "values", values)
@@ -1671,7 +1671,7 @@ class RuleRuleConditionMethodConfig(dict):
     @pulumi.getter
     def values(self) -> Optional[Sequence[builtins.str]]:
         """
-        请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+        Request method. Supports HEAD, GET, POST, OPTIONS, PUT, PATCH, DELETE.
         """
         return pulumi.get(self, "values")
 
@@ -1681,7 +1681,7 @@ class RuleRuleConditionPathConfig(dict):
     def __init__(__self__, *,
                  values: Optional[Sequence[builtins.str]] = None):
         """
-        :param Sequence[builtins.str] values: 转发规则的URL，仅支持绝对路径。
+        :param Sequence[builtins.str] values: Forwarding rule URL. Only absolute paths are supported.
         """
         if values is not None:
             pulumi.set(__self__, "values", values)
@@ -1690,7 +1690,7 @@ class RuleRuleConditionPathConfig(dict):
     @pulumi.getter
     def values(self) -> Optional[Sequence[builtins.str]]:
         """
-        转发规则的URL，仅支持绝对路径。
+        Forwarding rule URL. Only absolute paths are supported.
         """
         return pulumi.get(self, "values")
 
@@ -1714,8 +1714,8 @@ class RuleRuleConditionQueryStringConfigValue(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 查询字符串键。
-        :param builtins.str value: 查询字符串值。
+        :param builtins.str key: Query string key.
+        :param builtins.str value: Query string value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -1726,7 +1726,7 @@ class RuleRuleConditionQueryStringConfigValue(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        查询字符串键。
+        Query string key.
         """
         return pulumi.get(self, "key")
 
@@ -1734,7 +1734,7 @@ class RuleRuleConditionQueryStringConfigValue(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        查询字符串值。
+        Query string value.
         """
         return pulumi.get(self, "value")
 
@@ -1778,18 +1778,18 @@ class ServerGroupHealthCheck(dict):
                  unhealthy_threshold: Optional[builtins.int] = None,
                  uri: Optional[builtins.str] = None):
         """
-        :param builtins.str domain: 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。需至少包含一个‘.’，且不允许以‘.’开头或结尾。域名每一级由字母、数字、‘-’、‘.’字符组成，且‘-’不得出现在每一级的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示负载均衡使用各后端服务器的私网IP地址进行健康检查。
-        :param builtins.str enabled: 监听器是否开启健康检查功能。取值：on：开启（默认值）。off：不开启。
-        :param builtins.int healthy_threshold: 健康检查的健康阈值。表示连续执行指定次数的健康检查，结果均为正常的后端服务器将判定为健康检查正常。单位：次，取值：2~10，默认值为 3。
-        :param builtins.str http_code: 健康检查正常的HTTP状态码，多个状态码间用半角逗号分隔。只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值如下：http*2xx（默认值）。http*3xx（默认值）。http*4xx 。http*5xx 。
-        :param builtins.str http_version: 健康检查HTTP协议版本，只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值：HTTP1.0（使用API时，HTTP协议版本默认值）。HTTP1.1。
-        :param builtins.int interval: 开启健康检查后，执行健康检查的时间间隔。 单位：秒，取值：1~300s，默认值为 2。
-        :param builtins.str method: 开启健康检查后，健康检查的方法。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。取值如下：GET：服务器需支持GET方法。HEAD（默认）：服务器仅返回HEAD头部信息，可以降低后端性能消耗，但服务器需要支持HEAD方法。
-        :param builtins.int port: 健康检查端口。支持取值：0（默认值）：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
-        :param builtins.str protocol: 健康检查协议，当前支持HTTP、TCP。默认值为 HTTP。
-        :param builtins.int timeout: 健康检查的响应超时时间。表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查异常。单位：秒，取值：1~60，默认值为 2。
-        :param builtins.int unhealthy_threshold: 健康检查的不健康阈值。表示连续执行指定次数的健康检查，结果均为异常的后端服务器将判定为健康检查异常。单位：次，取值：2~10，默认值为 3。
-        :param builtins.str uri: 健康检查的路径，需配置为后端服务器上真实对外提供的路径。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’ 字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+        :param builtins.str domain: Domain name for health check. Configure this as the actual service address provided by the backend server. This parameter takes effect only when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with '.'. Each level of the domain name can contain letters, digits, '-', and '.' characters, and '-' cannot appear at the beginning or end of any level. Length: 1–128 characters. If this parameter is not specified or no value is provided, the default is empty, meaning the load balancer uses the private IP address of each backend server for health checks.
+        :param builtins.str enabled: Whether the listener enables health check. Values: on: enabled (default), off: disabled.
+        :param builtins.int healthy_threshold: Health check threshold. Indicates the number of consecutive successful health checks required for a backend server to be considered healthy. Unit: times. Value range: 2–10. Default: 3.
+        :param builtins.str http_code: HTTP status codes for a successful health check. Separate multiple codes with commas. This parameter is available only when HealthCheck.Protocol is HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
+        :param builtins.str http_version: Health check HTTP protocol version. This parameter is available only when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default for API usage), HTTP1.1.
+        :param builtins.int interval: After health checks are enabled, the interval for performing health checks. Unit: seconds. Value range: 1–300s. Default: 2.
+        :param builtins.str method: Health check method after health checks are enabled. This parameter is valid only when HealthCheck.Protocol is set to HTTP. Values: GET: The server must support the GET method. HEAD (default): The server returns only the HEAD header, which reduces backend resource consumption, but the server must support the HEAD method.
+        :param builtins.int port: Health check port. Supported values: 0 (default): Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
+        :param builtins.str protocol: Health check protocol. Currently supports HTTP and TCP. Default: HTTP.
+        :param builtins.int timeout: Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered abnormal. Unit: seconds. Value range: 1–60. Default: 2.
+        :param builtins.int unhealthy_threshold: Unhealthy threshold for health checks. Indicates that a backend server is considered unhealthy if it fails the specified number of consecutive health checks. Unit: times. Range: 2–10. Default: 3.
+        :param builtins.str uri: Health check path. Must be configured as the actual path provided by the backend server. This parameter is only effective when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length: 1–128 characters. If this parameter is not specified or specified without a value, the default is '/'.
         """
         if domain is not None:
             pulumi.set(__self__, "domain", domain)
@@ -1820,7 +1820,7 @@ class ServerGroupHealthCheck(dict):
     @pulumi.getter
     def domain(self) -> Optional[builtins.str]:
         """
-        健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。需至少包含一个‘.’，且不允许以‘.’开头或结尾。域名每一级由字母、数字、‘-’、‘.’字符组成，且‘-’不得出现在每一级的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示负载均衡使用各后端服务器的私网IP地址进行健康检查。
+        Domain name for health check. Configure this as the actual service address provided by the backend server. This parameter takes effect only when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with '.'. Each level of the domain name can contain letters, digits, '-', and '.' characters, and '-' cannot appear at the beginning or end of any level. Length: 1–128 characters. If this parameter is not specified or no value is provided, the default is empty, meaning the load balancer uses the private IP address of each backend server for health checks.
         """
         return pulumi.get(self, "domain")
 
@@ -1828,7 +1828,7 @@ class ServerGroupHealthCheck(dict):
     @pulumi.getter
     def enabled(self) -> Optional[builtins.str]:
         """
-        监听器是否开启健康检查功能。取值：on：开启（默认值）。off：不开启。
+        Whether the listener enables health check. Values: on: enabled (default), off: disabled.
         """
         return pulumi.get(self, "enabled")
 
@@ -1836,7 +1836,7 @@ class ServerGroupHealthCheck(dict):
     @pulumi.getter(name="healthyThreshold")
     def healthy_threshold(self) -> Optional[builtins.int]:
         """
-        健康检查的健康阈值。表示连续执行指定次数的健康检查，结果均为正常的后端服务器将判定为健康检查正常。单位：次，取值：2~10，默认值为 3。
+        Health check threshold. Indicates the number of consecutive successful health checks required for a backend server to be considered healthy. Unit: times. Value range: 2–10. Default: 3.
         """
         return pulumi.get(self, "healthy_threshold")
 
@@ -1844,7 +1844,7 @@ class ServerGroupHealthCheck(dict):
     @pulumi.getter(name="httpCode")
     def http_code(self) -> Optional[builtins.str]:
         """
-        健康检查正常的HTTP状态码，多个状态码间用半角逗号分隔。只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值如下：http*2xx（默认值）。http*3xx（默认值）。http*4xx 。http*5xx 。
+        HTTP status codes for a successful health check. Separate multiple codes with commas. This parameter is available only when HealthCheck.Protocol is HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
         """
         return pulumi.get(self, "http_code")
 
@@ -1852,7 +1852,7 @@ class ServerGroupHealthCheck(dict):
     @pulumi.getter(name="httpVersion")
     def http_version(self) -> Optional[builtins.str]:
         """
-        健康检查HTTP协议版本，只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值：HTTP1.0（使用API时，HTTP协议版本默认值）。HTTP1.1。
+        Health check HTTP protocol version. This parameter is available only when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default for API usage), HTTP1.1.
         """
         return pulumi.get(self, "http_version")
 
@@ -1860,7 +1860,7 @@ class ServerGroupHealthCheck(dict):
     @pulumi.getter
     def interval(self) -> Optional[builtins.int]:
         """
-        开启健康检查后，执行健康检查的时间间隔。 单位：秒，取值：1~300s，默认值为 2。
+        After health checks are enabled, the interval for performing health checks. Unit: seconds. Value range: 1–300s. Default: 2.
         """
         return pulumi.get(self, "interval")
 
@@ -1868,7 +1868,7 @@ class ServerGroupHealthCheck(dict):
     @pulumi.getter
     def method(self) -> Optional[builtins.str]:
         """
-        开启健康检查后，健康检查的方法。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。取值如下：GET：服务器需支持GET方法。HEAD（默认）：服务器仅返回HEAD头部信息，可以降低后端性能消耗，但服务器需要支持HEAD方法。
+        Health check method after health checks are enabled. This parameter is valid only when HealthCheck.Protocol is set to HTTP. Values: GET: The server must support the GET method. HEAD (default): The server returns only the HEAD header, which reduces backend resource consumption, but the server must support the HEAD method.
         """
         return pulumi.get(self, "method")
 
@@ -1876,7 +1876,7 @@ class ServerGroupHealthCheck(dict):
     @pulumi.getter
     def port(self) -> Optional[builtins.int]:
         """
-        健康检查端口。支持取值：0（默认值）：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
+        Health check port. Supported values: 0 (default): Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
         """
         return pulumi.get(self, "port")
 
@@ -1884,7 +1884,7 @@ class ServerGroupHealthCheck(dict):
     @pulumi.getter
     def protocol(self) -> Optional[builtins.str]:
         """
-        健康检查协议，当前支持HTTP、TCP。默认值为 HTTP。
+        Health check protocol. Currently supports HTTP and TCP. Default: HTTP.
         """
         return pulumi.get(self, "protocol")
 
@@ -1892,7 +1892,7 @@ class ServerGroupHealthCheck(dict):
     @pulumi.getter
     def timeout(self) -> Optional[builtins.int]:
         """
-        健康检查的响应超时时间。表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查异常。单位：秒，取值：1~60，默认值为 2。
+        Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered abnormal. Unit: seconds. Value range: 1–60. Default: 2.
         """
         return pulumi.get(self, "timeout")
 
@@ -1900,7 +1900,7 @@ class ServerGroupHealthCheck(dict):
     @pulumi.getter(name="unhealthyThreshold")
     def unhealthy_threshold(self) -> Optional[builtins.int]:
         """
-        健康检查的不健康阈值。表示连续执行指定次数的健康检查，结果均为异常的后端服务器将判定为健康检查异常。单位：次，取值：2~10，默认值为 3。
+        Unhealthy threshold for health checks. Indicates that a backend server is considered unhealthy if it fails the specified number of consecutive health checks. Unit: times. Range: 2–10. Default: 3.
         """
         return pulumi.get(self, "unhealthy_threshold")
 
@@ -1908,7 +1908,7 @@ class ServerGroupHealthCheck(dict):
     @pulumi.getter
     def uri(self) -> Optional[builtins.str]:
         """
-        健康检查的路径，需配置为后端服务器上真实对外提供的路径。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’ 字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+        Health check path. Must be configured as the actual path provided by the backend server. This parameter is only effective when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length: 1–128 characters. If this parameter is not specified or specified without a value, the default is '/'.
         """
         return pulumi.get(self, "uri")
 
@@ -1935,7 +1935,7 @@ class ServerGroupListener(dict):
     def __init__(__self__, *,
                  listener_id: Optional[builtins.str] = None):
         """
-        :param builtins.str listener_id: 监听器的ID。
+        :param builtins.str listener_id: Listener ID.
         """
         if listener_id is not None:
             pulumi.set(__self__, "listener_id", listener_id)
@@ -1944,7 +1944,7 @@ class ServerGroupListener(dict):
     @pulumi.getter(name="listenerId")
     def listener_id(self) -> Optional[builtins.str]:
         """
-        监听器的ID。
+        Listener ID.
         """
         return pulumi.get(self, "listener_id")
 
@@ -1982,14 +1982,14 @@ class ServerGroupServer(dict):
                  type: Optional[builtins.str] = None,
                  weight: Optional[builtins.int] = None):
         """
-        :param builtins.str description: 后端服务器的描述。
-        :param builtins.str instance_id: 云服务器实例或网卡的ID。
-        :param builtins.str ip: 后端服务器的私网IP地址。
-        :param builtins.int port: 后端服务器接收请求的端口号。
-        :param builtins.str remote_enabled: 是否开启远端IP功能。当后端服务器实例类型为IP地址，即 Type 取值为 ip 时，此字段有效。取值：on：开启。off（默认值）：不开启。
-        :param builtins.str server_id: 后端服务器ID。
-        :param builtins.str type: 后端服务器实例类型。ecs：云服务器实例。eni：辅助网卡。ip：IP地址（仅 Ip 类型服务器组有效）。
-        :param builtins.int weight: 后端服务器的权重。
+        :param builtins.str description: Description of the backend server.
+        :param builtins.str instance_id: ID of the cloud server instance or network interface card.
+        :param builtins.str ip: Private IP address of the backend server.
+        :param builtins.int port: Port number on which the backend server receives requests.
+        :param builtins.str remote_enabled: Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
+        :param builtins.str server_id: Backend server ID.
+        :param builtins.str type: Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
+        :param builtins.int weight: Weight of the backend server.
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -2012,7 +2012,7 @@ class ServerGroupServer(dict):
     @pulumi.getter
     def description(self) -> Optional[builtins.str]:
         """
-        后端服务器的描述。
+        Description of the backend server.
         """
         return pulumi.get(self, "description")
 
@@ -2020,7 +2020,7 @@ class ServerGroupServer(dict):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[builtins.str]:
         """
-        云服务器实例或网卡的ID。
+        ID of the cloud server instance or network interface card.
         """
         return pulumi.get(self, "instance_id")
 
@@ -2028,7 +2028,7 @@ class ServerGroupServer(dict):
     @pulumi.getter
     def ip(self) -> Optional[builtins.str]:
         """
-        后端服务器的私网IP地址。
+        Private IP address of the backend server.
         """
         return pulumi.get(self, "ip")
 
@@ -2036,7 +2036,7 @@ class ServerGroupServer(dict):
     @pulumi.getter
     def port(self) -> Optional[builtins.int]:
         """
-        后端服务器接收请求的端口号。
+        Port number on which the backend server receives requests.
         """
         return pulumi.get(self, "port")
 
@@ -2044,7 +2044,7 @@ class ServerGroupServer(dict):
     @pulumi.getter(name="remoteEnabled")
     def remote_enabled(self) -> Optional[builtins.str]:
         """
-        是否开启远端IP功能。当后端服务器实例类型为IP地址，即 Type 取值为 ip 时，此字段有效。取值：on：开启。off（默认值）：不开启。
+        Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
         """
         return pulumi.get(self, "remote_enabled")
 
@@ -2052,7 +2052,7 @@ class ServerGroupServer(dict):
     @pulumi.getter(name="serverId")
     def server_id(self) -> Optional[builtins.str]:
         """
-        后端服务器ID。
+        Backend server ID.
         """
         return pulumi.get(self, "server_id")
 
@@ -2060,7 +2060,7 @@ class ServerGroupServer(dict):
     @pulumi.getter
     def type(self) -> Optional[builtins.str]:
         """
-        后端服务器实例类型。ecs：云服务器实例。eni：辅助网卡。ip：IP地址（仅 Ip 类型服务器组有效）。
+        Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
         """
         return pulumi.get(self, "type")
 
@@ -2068,7 +2068,7 @@ class ServerGroupServer(dict):
     @pulumi.getter
     def weight(self) -> Optional[builtins.int]:
         """
-        后端服务器的权重。
+        Weight of the backend server.
         """
         return pulumi.get(self, "weight")
 
@@ -2102,10 +2102,10 @@ class ServerGroupStickySessionConfig(dict):
                  sticky_session_enabled: Optional[builtins.str] = None,
                  sticky_session_type: Optional[builtins.str] = None):
         """
-        :param builtins.str cookie: 服务配置的会话保持 Cookie 名称。仅在开启会话保持功能并选择重写 Cookie 时有效。 具体规则如下：Cookie 名称长度为1~200个字符。名称只能包含 ASCII 英文字母和数字字符，不能包含半角逗号（,）、半角分号（;）或空格，也不能以美元符号（$）开头。当 tickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 server时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，该参数无效。
-        :param builtins.int cookie_timeout: 会话保持 Cookie 超时时间。仅在开启会话保持功能并选择植入 Cookie 时有效。 单位：秒。具体规则如下：超时时间的取值范围：1～86400。 默认值为：1000。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionType 为 server 时，此参数无效。
-        :param builtins.str sticky_session_enabled: 是否开启会话保持功能。on：开启；off（默认值）：关闭。
-        :param builtins.str sticky_session_type: 对 Cookie 的处理方式。当 StickySessionConfig.StickySessionEnabled 值为 on 时，此字段参数必填。取值如下：insert：植入 Cookie；ALB 会记录客户端请求第一次转发到的后端服务器。ALB 在返回请求中植入 Cookie ，后续客户端请求携带此 Cookie，ALB 会将请求转发到之前记录的后端服务器上。server：重写 Cookie；开启重写 Cookie 的会话保持后，在客户端请求第一次转发到后端服务器后，ALB 在返回请求中发现您自定义的 Cookie 时，会对原来的 Cookie 进行重写。后续客户端请求携带改写后的 Cookie，ALB 会将请求转发到之前记录的后端服务器上。
+        :param builtins.str cookie: Name of the session persistence Cookie for service configuration. This is only valid when session persistence is enabled and Cookie overwrite is selected. The specific rules are as follows: The Cookie name must be 1–200 characters long. The name can only contain ASCII letters and digits, cannot contain commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). This parameter is required when tickySessionConfig.StickySessionEnabled is set to on and StickySessionConfig.StickySessionType is server. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert.
+        :param builtins.int cookie_timeout: Session persistence cookie timeout. Only valid when session persistence is enabled and the insert cookie option is selected. Unit: seconds. Rules: Timeout range: 1–86400. Default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
+        :param builtins.str sticky_session_enabled: Enable session persistence. on: Enable; off (default): Disable.
+        :param builtins.str sticky_session_type: Cookie handling method. This field is required when StickySessionConfig.StickySessionEnabled is set to on. Parameter values: insert: Inserts a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response. Subsequent client requests carry this Cookie, and ALB forwards the requests to the previously recorded backend server. server: Overwrites the Cookie. When session persistence with Cookie overwrite is enabled, after the client's first request is forwarded to the backend server, if ALB detects your custom Cookie in the response, it overwrites the original Cookie. Subsequent client requests carry the overwritten Cookie, and ALB forwards the requests to the previously recorded backend server.
         """
         if cookie is not None:
             pulumi.set(__self__, "cookie", cookie)
@@ -2120,7 +2120,7 @@ class ServerGroupStickySessionConfig(dict):
     @pulumi.getter
     def cookie(self) -> Optional[builtins.str]:
         """
-        服务配置的会话保持 Cookie 名称。仅在开启会话保持功能并选择重写 Cookie 时有效。 具体规则如下：Cookie 名称长度为1~200个字符。名称只能包含 ASCII 英文字母和数字字符，不能包含半角逗号（,）、半角分号（;）或空格，也不能以美元符号（$）开头。当 tickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 server时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，该参数无效。
+        Name of the session persistence Cookie for service configuration. This is only valid when session persistence is enabled and Cookie overwrite is selected. The specific rules are as follows: The Cookie name must be 1–200 characters long. The name can only contain ASCII letters and digits, cannot contain commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). This parameter is required when tickySessionConfig.StickySessionEnabled is set to on and StickySessionConfig.StickySessionType is server. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert.
         """
         return pulumi.get(self, "cookie")
 
@@ -2128,7 +2128,7 @@ class ServerGroupStickySessionConfig(dict):
     @pulumi.getter(name="cookieTimeout")
     def cookie_timeout(self) -> Optional[builtins.int]:
         """
-        会话保持 Cookie 超时时间。仅在开启会话保持功能并选择植入 Cookie 时有效。 单位：秒。具体规则如下：超时时间的取值范围：1～86400。 默认值为：1000。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionType 为 server 时，此参数无效。
+        Session persistence cookie timeout. Only valid when session persistence is enabled and the insert cookie option is selected. Unit: seconds. Rules: Timeout range: 1–86400. Default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
         """
         return pulumi.get(self, "cookie_timeout")
 
@@ -2136,7 +2136,7 @@ class ServerGroupStickySessionConfig(dict):
     @pulumi.getter(name="stickySessionEnabled")
     def sticky_session_enabled(self) -> Optional[builtins.str]:
         """
-        是否开启会话保持功能。on：开启；off（默认值）：关闭。
+        Enable session persistence. on: Enable; off (default): Disable.
         """
         return pulumi.get(self, "sticky_session_enabled")
 
@@ -2144,7 +2144,7 @@ class ServerGroupStickySessionConfig(dict):
     @pulumi.getter(name="stickySessionType")
     def sticky_session_type(self) -> Optional[builtins.str]:
         """
-        对 Cookie 的处理方式。当 StickySessionConfig.StickySessionEnabled 值为 on 时，此字段参数必填。取值如下：insert：植入 Cookie；ALB 会记录客户端请求第一次转发到的后端服务器。ALB 在返回请求中植入 Cookie ，后续客户端请求携带此 Cookie，ALB 会将请求转发到之前记录的后端服务器上。server：重写 Cookie；开启重写 Cookie 的会话保持后，在客户端请求第一次转发到后端服务器后，ALB 在返回请求中发现您自定义的 Cookie 时，会对原来的 Cookie 进行重写。后续客户端请求携带改写后的 Cookie，ALB 会将请求转发到之前记录的后端服务器上。
+        Cookie handling method. This field is required when StickySessionConfig.StickySessionEnabled is set to on. Parameter values: insert: Inserts a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response. Subsequent client requests carry this Cookie, and ALB forwards the requests to the previously recorded backend server. server: Overwrites the Cookie. When session persistence with Cookie overwrite is enabled, after the client's first request is forwarded to the backend server, if ALB detects your custom Cookie in the response, it overwrites the original Cookie. Subsequent client requests carry the overwritten Cookie, and ALB forwards the requests to the previously recorded backend server.
         """
         return pulumi.get(self, "sticky_session_type")
 
@@ -2155,8 +2155,8 @@ class ServerGroupTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签的标签键。同一资源的标签键不允许重复。
-        :param builtins.str value: 标签的标签值。
+        :param builtins.str key: Tag key. Tag keys for the same resource must be unique.
+        :param builtins.str value: Tag value of the tag.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -2167,7 +2167,7 @@ class ServerGroupTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签的标签键。同一资源的标签键不允许重复。
+        Tag key. Tag keys for the same resource must be unique.
         """
         return pulumi.get(self, "key")
 
@@ -2175,7 +2175,7 @@ class ServerGroupTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签的标签值。
+        Tag value of the tag.
         """
         return pulumi.get(self, "value")
 
@@ -2186,8 +2186,8 @@ class GetAclAclEntryResult(dict):
                  description: builtins.str,
                  entry: builtins.str):
         """
-        :param builtins.str description: IP条目的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
-        :param builtins.str entry: IP条目的地址段，只支持CIDR地址。
+        :param builtins.str description: Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
+        :param builtins.str entry: IP entry address range; only CIDR addresses are supported
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "entry", entry)
@@ -2196,7 +2196,7 @@ class GetAclAclEntryResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        IP条目的描述。不能以http://或https://开头。必须以字母或中文开头，可包含数字、英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。） 。长度限制为1 ～ 255个字符。不填默认为空字符串。
+        Description of the IP entry. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length limit: 1–255 characters. If not specified, defaults to an empty string
         """
         return pulumi.get(self, "description")
 
@@ -2204,7 +2204,7 @@ class GetAclAclEntryResult(dict):
     @pulumi.getter
     def entry(self) -> builtins.str:
         """
-        IP条目的地址段，只支持CIDR地址。
+        IP entry address range; only CIDR addresses are supported
         """
         return pulumi.get(self, "entry")
 
@@ -2218,11 +2218,11 @@ class GetAclListenerResult(dict):
                  port: builtins.int,
                  protocol: builtins.str):
         """
-        :param builtins.str acl_type: 监听器对本访问控制策略组的控制方式。white：白名单方式；black：黑名单方式
-        :param builtins.str listener_id: 监听器的ID
-        :param builtins.str listener_name: 监听器的名称
-        :param builtins.int port: 监听器的端口
-        :param builtins.str protocol: 监听器的协议
+        :param builtins.str acl_type: Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
+        :param builtins.str listener_id: Listener ID
+        :param builtins.str listener_name: Listener name
+        :param builtins.int port: Listener port
+        :param builtins.str protocol: Listener protocol
         """
         pulumi.set(__self__, "acl_type", acl_type)
         pulumi.set(__self__, "listener_id", listener_id)
@@ -2234,7 +2234,7 @@ class GetAclListenerResult(dict):
     @pulumi.getter(name="aclType")
     def acl_type(self) -> builtins.str:
         """
-        监听器对本访问控制策略组的控制方式。white：白名单方式；black：黑名单方式
+        Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
         """
         return pulumi.get(self, "acl_type")
 
@@ -2242,7 +2242,7 @@ class GetAclListenerResult(dict):
     @pulumi.getter(name="listenerId")
     def listener_id(self) -> builtins.str:
         """
-        监听器的ID
+        Listener ID
         """
         return pulumi.get(self, "listener_id")
 
@@ -2250,7 +2250,7 @@ class GetAclListenerResult(dict):
     @pulumi.getter(name="listenerName")
     def listener_name(self) -> builtins.str:
         """
-        监听器的名称
+        Listener name
         """
         return pulumi.get(self, "listener_name")
 
@@ -2258,7 +2258,7 @@ class GetAclListenerResult(dict):
     @pulumi.getter
     def port(self) -> builtins.int:
         """
-        监听器的端口
+        Listener port
         """
         return pulumi.get(self, "port")
 
@@ -2266,7 +2266,7 @@ class GetAclListenerResult(dict):
     @pulumi.getter
     def protocol(self) -> builtins.str:
         """
-        监听器的协议
+        Listener protocol
         """
         return pulumi.get(self, "protocol")
 
@@ -2277,8 +2277,8 @@ class GetAclTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 用户标签的标签键。长度限制为1～128个字符。大小写敏感。不能以volc:和sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
-        :param builtins.str value: 用户标签的标签值。长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+        :param builtins.str key: User tag key. Length limit: 1–128 characters. Case sensitive. Cannot start with any combination of volc: or sys: (case insensitive). Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Tag keys for the same resource must be unique
+        :param builtins.str value: User tag value. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -2287,7 +2287,7 @@ class GetAclTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        用户标签的标签键。长度限制为1～128个字符。大小写敏感。不能以volc:和sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+        User tag key. Length limit: 1–128 characters. Case sensitive. Cannot start with any combination of volc: or sys: (case insensitive). Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Tag keys for the same resource must be unique
         """
         return pulumi.get(self, "key")
 
@@ -2295,7 +2295,7 @@ class GetAclTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        用户标签的标签值。长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+        User tag value. Length limit: 0–256 characters. Case sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @
         """
         return pulumi.get(self, "value")
 
@@ -2306,8 +2306,8 @@ class GetCertificateTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: User tag key
+        :param builtins.str value: User tag value
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -2316,7 +2316,7 @@ class GetCertificateTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        用户标签的标签键。
+        User tag key
         """
         return pulumi.get(self, "key")
 
@@ -2324,7 +2324,7 @@ class GetCertificateTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        用户标签的标签值。
+        User tag value
         """
         return pulumi.get(self, "value")
 
@@ -2337,10 +2337,10 @@ class GetCustomizedCfgListenerResult(dict):
                  port: builtins.int,
                  protocol: builtins.str):
         """
-        :param builtins.str listener_id: 监听器的 ID。
-        :param builtins.str listener_name: 监听器的名称。
-        :param builtins.int port: 监听器的端口。
-        :param builtins.str protocol: 监听器的协议。
+        :param builtins.str listener_id: Listener ID.
+        :param builtins.str listener_name: Listener name.
+        :param builtins.int port: Listener port.
+        :param builtins.str protocol: Listener protocol.
         """
         pulumi.set(__self__, "listener_id", listener_id)
         pulumi.set(__self__, "listener_name", listener_name)
@@ -2351,7 +2351,7 @@ class GetCustomizedCfgListenerResult(dict):
     @pulumi.getter(name="listenerId")
     def listener_id(self) -> builtins.str:
         """
-        监听器的 ID。
+        Listener ID.
         """
         return pulumi.get(self, "listener_id")
 
@@ -2359,7 +2359,7 @@ class GetCustomizedCfgListenerResult(dict):
     @pulumi.getter(name="listenerName")
     def listener_name(self) -> builtins.str:
         """
-        监听器的名称。
+        Listener name.
         """
         return pulumi.get(self, "listener_name")
 
@@ -2367,7 +2367,7 @@ class GetCustomizedCfgListenerResult(dict):
     @pulumi.getter
     def port(self) -> builtins.int:
         """
-        监听器的端口。
+        Listener port.
         """
         return pulumi.get(self, "port")
 
@@ -2375,7 +2375,7 @@ class GetCustomizedCfgListenerResult(dict):
     @pulumi.getter
     def protocol(self) -> builtins.str:
         """
-        监听器的协议。
+        Listener protocol.
         """
         return pulumi.get(self, "protocol")
 
@@ -2386,8 +2386,8 @@ class GetCustomizedCfgTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: User tag key.
+        :param builtins.str value: User tag value.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -2396,7 +2396,7 @@ class GetCustomizedCfgTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        用户标签的标签键。
+        User tag key.
         """
         return pulumi.get(self, "key")
 
@@ -2404,7 +2404,7 @@ class GetCustomizedCfgTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        用户标签的标签值。
+        User tag value.
         """
         return pulumi.get(self, "value")
 
@@ -2415,8 +2415,8 @@ class GetHealthCheckTemplateTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 用户标签的标签键。具体规则如下：长度限制为1～128个字符。大小写敏感。不能以sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
-        :param builtins.str value: 用户标签的标签值。如果传入该参数，则必须先传入Tags.N.Key。具体规则如下：长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+        :param builtins.str key: Tag key for user tags. Rules: Length must be 1–128 characters. Case-sensitive. Cannot start with any case combination of sys:. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Tag keys for the same resource must be unique.
+        :param builtins.str value: Tag value for the user tag. If you specify this parameter, you must first specify Tags.N.Key. Rules: Length must be between 0 and 256 characters. Case-sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -2425,7 +2425,7 @@ class GetHealthCheckTemplateTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        用户标签的标签键。具体规则如下：长度限制为1～128个字符。大小写敏感。不能以sys:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+        Tag key for user tags. Rules: Length must be 1–128 characters. Case-sensitive. Cannot start with any case combination of sys:. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @. Tag keys for the same resource must be unique.
         """
         return pulumi.get(self, "key")
 
@@ -2433,7 +2433,7 @@ class GetHealthCheckTemplateTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        用户标签的标签值。如果传入该参数，则必须先传入Tags.N.Key。具体规则如下：长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+        Tag value for the user tag. If you specify this parameter, you must first specify Tags.N.Key. Rules: Length must be between 0 and 256 characters. Case-sensitive. Cannot start or end with a space. Supports characters from all languages, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @.
         """
         return pulumi.get(self, "value")
 
@@ -2450,14 +2450,14 @@ class GetListenerDomainExtensionResult(dict):
                  pca_leaf_certificate_id: builtins.str,
                  san: builtins.str):
         """
-        :param builtins.str cert_center_certificate_id: 域名使用的服务器证书 ID 。当证书来源为 cert_center 时生效。
-        :param builtins.str certificate_id: 域名使用的服务器证书 ID。当证书来源为 alb 时生效。
-        :param builtins.str certificate_source: 域名使用的服务器证书的来源，取值：alb：表示通过 ALB 上传的证书。cert_center：表示通过火山引擎证书中心购买或上传的 SSL 证书。
-        :param builtins.str domain: 域名。通常不能为空，若实例支持自动选择扩展证书，即SniAutoMatch为on，则Domain需传入空字符串。需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含小写字、字、‘.’、‘-‘、‘*’。长度限制为1 ～ 128个字符。泛域名：使用“*”代替1个或多个字符。“*”必须在域名开头或结尾。同一条域名中“*”不能出现两次。“*”前后不能有除了.以外的字符。精确域名：符合域名规范的精确域名。同一HTTPS监听器下的域名不能重复。匹配域名时，对域名的大小写不敏感。
-        :param builtins.str domain_extension_id: 扩展域名 ID 。
-        :param builtins.str listener_id: 扩展域名所属的监听器 ID。
-        :param builtins.str pca_leaf_certificate_id: HTTPS监听器关联的私有叶子证书 ID。创建 HTTPS 监听器且证书来源为 pca_leaf 时必传。
-        :param builtins.str san: 若实例支持自动选择扩展证书，即SniAutoMatch为on时，则Domain是空字符串。San为证书的扩展域名，用英文,分隔多个域名。
+        :param builtins.str cert_center_certificate_id: Server certificate ID used by the domain. Effective when the certificate source is cert_center.
+        :param builtins.str certificate_id: Server certificate ID used by the domain. Effective when the certificate source is alb.
+        :param builtins.str certificate_source: Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
+        :param builtins.str domain: Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length must be between 1 and 128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters except '.' can be before or after '*'. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
+        :param builtins.str domain_extension_id: Extended domain name ID.
+        :param builtins.str listener_id: Listener ID to which the extended domain name belongs.
+        :param builtins.str pca_leaf_certificate_id: Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
+        :param builtins.str san: If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
         """
         pulumi.set(__self__, "cert_center_certificate_id", cert_center_certificate_id)
         pulumi.set(__self__, "certificate_id", certificate_id)
@@ -2472,7 +2472,7 @@ class GetListenerDomainExtensionResult(dict):
     @pulumi.getter(name="certCenterCertificateId")
     def cert_center_certificate_id(self) -> builtins.str:
         """
-        域名使用的服务器证书 ID 。当证书来源为 cert_center 时生效。
+        Server certificate ID used by the domain. Effective when the certificate source is cert_center.
         """
         return pulumi.get(self, "cert_center_certificate_id")
 
@@ -2480,7 +2480,7 @@ class GetListenerDomainExtensionResult(dict):
     @pulumi.getter(name="certificateId")
     def certificate_id(self) -> builtins.str:
         """
-        域名使用的服务器证书 ID。当证书来源为 alb 时生效。
+        Server certificate ID used by the domain. Effective when the certificate source is alb.
         """
         return pulumi.get(self, "certificate_id")
 
@@ -2488,7 +2488,7 @@ class GetListenerDomainExtensionResult(dict):
     @pulumi.getter(name="certificateSource")
     def certificate_source(self) -> builtins.str:
         """
-        域名使用的服务器证书的来源，取值：alb：表示通过 ALB 上传的证书。cert_center：表示通过火山引擎证书中心购买或上传的 SSL 证书。
+        Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
         """
         return pulumi.get(self, "certificate_source")
 
@@ -2496,7 +2496,7 @@ class GetListenerDomainExtensionResult(dict):
     @pulumi.getter
     def domain(self) -> builtins.str:
         """
-        域名。通常不能为空，若实例支持自动选择扩展证书，即SniAutoMatch为on，则Domain需传入空字符串。需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含小写字、字、‘.’、‘-‘、‘*’。长度限制为1 ～ 128个字符。泛域名：使用“*”代替1个或多个字符。“*”必须在域名开头或结尾。同一条域名中“*”不能出现两次。“*”前后不能有除了.以外的字符。精确域名：符合域名规范的精确域名。同一HTTPS监听器下的域名不能重复。匹配域名时，对域名的大小写不敏感。
+        Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length must be between 1 and 128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters except '.' can be before or after '*'. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
         """
         return pulumi.get(self, "domain")
 
@@ -2504,7 +2504,7 @@ class GetListenerDomainExtensionResult(dict):
     @pulumi.getter(name="domainExtensionId")
     def domain_extension_id(self) -> builtins.str:
         """
-        扩展域名 ID 。
+        Extended domain name ID.
         """
         return pulumi.get(self, "domain_extension_id")
 
@@ -2512,7 +2512,7 @@ class GetListenerDomainExtensionResult(dict):
     @pulumi.getter(name="listenerId")
     def listener_id(self) -> builtins.str:
         """
-        扩展域名所属的监听器 ID。
+        Listener ID to which the extended domain name belongs.
         """
         return pulumi.get(self, "listener_id")
 
@@ -2520,7 +2520,7 @@ class GetListenerDomainExtensionResult(dict):
     @pulumi.getter(name="pcaLeafCertificateId")
     def pca_leaf_certificate_id(self) -> builtins.str:
         """
-        HTTPS监听器关联的私有叶子证书 ID。创建 HTTPS 监听器且证书来源为 pca_leaf 时必传。
+        Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
         """
         return pulumi.get(self, "pca_leaf_certificate_id")
 
@@ -2528,7 +2528,7 @@ class GetListenerDomainExtensionResult(dict):
     @pulumi.getter
     def san(self) -> builtins.str:
         """
-        若实例支持自动选择扩展证书，即SniAutoMatch为on时，则Domain是空字符串。San为证书的扩展域名，用英文,分隔多个域名。
+        If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
         """
         return pulumi.get(self, "san")
 
@@ -2539,8 +2539,8 @@ class GetListenerServerGroupResult(dict):
                  server_group_id: builtins.str,
                  server_group_name: builtins.str):
         """
-        :param builtins.str server_group_id: 服务器组 ID 。
-        :param builtins.str server_group_name: 服务器组名称。
+        :param builtins.str server_group_id: Server group ID.
+        :param builtins.str server_group_name: Server group name.
         """
         pulumi.set(__self__, "server_group_id", server_group_id)
         pulumi.set(__self__, "server_group_name", server_group_name)
@@ -2549,7 +2549,7 @@ class GetListenerServerGroupResult(dict):
     @pulumi.getter(name="serverGroupId")
     def server_group_id(self) -> builtins.str:
         """
-        服务器组 ID 。
+        Server group ID.
         """
         return pulumi.get(self, "server_group_id")
 
@@ -2557,7 +2557,7 @@ class GetListenerServerGroupResult(dict):
     @pulumi.getter(name="serverGroupName")
     def server_group_name(self) -> builtins.str:
         """
-        服务器组名称。
+        Server group name.
         """
         return pulumi.get(self, "server_group_name")
 
@@ -2568,8 +2568,8 @@ class GetListenerTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 用户标签的标签键。具体规则如下：长度限制为1～128个字符。大小写敏感。不能以volc:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
-        :param builtins.str value: 用户标签的标签值。具体规则如下：长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+        :param builtins.str key: Tag key for user tags. Rules are as follows: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
+        :param builtins.str value: The value of the user tag. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -2578,7 +2578,7 @@ class GetListenerTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        用户标签的标签键。具体规则如下：长度限制为1～128个字符。大小写敏感。不能以volc:的任意大小写组合开头。不能以空格开头或结尾。允许包含各国语言文字、数字、空格）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。同一资源的标签键不允许重复。
+        Tag key for user tags. Rules are as follows: Length must be between 1 and 128 characters. Case sensitive. Cannot start with any case combination of volc:. Cannot start or end with a space. Can include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), minus signs (-), and @. Tag keys for the same resource must be unique.
         """
         return pulumi.get(self, "key")
 
@@ -2586,7 +2586,7 @@ class GetListenerTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        用户标签的标签值。具体规则如下：长度限制为0～256个字符。大小写敏感。不能以空格开头或结尾。允许包含各国语言文字、数字、空格（）、下划线（_）、点号（.）、半角冒（:）、斜杠（/）、等号（=）、加号（+）、减号（-）和@。
+        The value of the user tag. Rules: Length must be between 0 and 256 characters. Case sensitive. Cannot start or end with a space. May include characters from any language, numbers, spaces, underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @.
         """
         return pulumi.get(self, "value")
 
@@ -2600,11 +2600,11 @@ class GetLoadBalancerEipBillingConfigResult(dict):
                  security_protection_instance_id: builtins.int,
                  security_protection_types: builtins.str):
         """
-        :param builtins.int bandwidth: EIP的带宽峰值，单位为Mbps。
-        :param builtins.int billing_type: EIP的计费方式，2为按带宽计费，3为按流量计费。
-        :param builtins.str isp: 公网IP的线路类型，BGP表示多线。
-        :param builtins.int security_protection_instance_id: 创建ALB公网实例时，如果使用了IP防护资源，则需要指定一个DDoS原生防护实例的ID。
-        :param builtins.str security_protection_types: 创建 ALB 公网实例时，ALB 允许购买多个公网IP防护资源。公网 IP 防护资源的具体规则如下：多个防护资源之间用半角逗号（,）分隔。防护资源的取值如下：AntiDDoS_Enhanced：您申请的是增强防护类型的公网 IP，可以将此 IP 加入到 DDoS 原生防护实例。不填：您申请的是基础防护类型的公网 IP 。
+        :param builtins.int bandwidth: Peak bandwidth of EIP, in Mbps.
+        :param builtins.int billing_type: EIP billing method: 2 for bandwidth-based, 3 for traffic-based.
+        :param builtins.str isp: Line type of the public IP, BGP indicates multi-line.
+        :param builtins.int security_protection_instance_id: When creating an ALB public instance, if IP protection resources are used, you must specify a DDoS native protection instance ID.
+        :param builtins.str security_protection_types: When creating a public ALB instance, ALB allows you to purchase multiple public IP protection resources. The rules for public IP protection resources are as follows: separate multiple protection resources with a comma (,). The values for protection resources are: AntiDDoS_Enhanced: You are requesting an enhanced protection type public IP, which can be added to a native DDoS protection instance. If not specified: You are requesting a basic protection type public IP.
         """
         pulumi.set(__self__, "bandwidth", bandwidth)
         pulumi.set(__self__, "billing_type", billing_type)
@@ -2616,7 +2616,7 @@ class GetLoadBalancerEipBillingConfigResult(dict):
     @pulumi.getter
     def bandwidth(self) -> builtins.int:
         """
-        EIP的带宽峰值，单位为Mbps。
+        Peak bandwidth of EIP, in Mbps.
         """
         return pulumi.get(self, "bandwidth")
 
@@ -2624,7 +2624,7 @@ class GetLoadBalancerEipBillingConfigResult(dict):
     @pulumi.getter(name="billingType")
     def billing_type(self) -> builtins.int:
         """
-        EIP的计费方式，2为按带宽计费，3为按流量计费。
+        EIP billing method: 2 for bandwidth-based, 3 for traffic-based.
         """
         return pulumi.get(self, "billing_type")
 
@@ -2632,7 +2632,7 @@ class GetLoadBalancerEipBillingConfigResult(dict):
     @pulumi.getter
     def isp(self) -> builtins.str:
         """
-        公网IP的线路类型，BGP表示多线。
+        Line type of the public IP, BGP indicates multi-line.
         """
         return pulumi.get(self, "isp")
 
@@ -2640,7 +2640,7 @@ class GetLoadBalancerEipBillingConfigResult(dict):
     @pulumi.getter(name="securityProtectionInstanceId")
     def security_protection_instance_id(self) -> builtins.int:
         """
-        创建ALB公网实例时，如果使用了IP防护资源，则需要指定一个DDoS原生防护实例的ID。
+        When creating an ALB public instance, if IP protection resources are used, you must specify a DDoS native protection instance ID.
         """
         return pulumi.get(self, "security_protection_instance_id")
 
@@ -2648,7 +2648,7 @@ class GetLoadBalancerEipBillingConfigResult(dict):
     @pulumi.getter(name="securityProtectionTypes")
     def security_protection_types(self) -> builtins.str:
         """
-        创建 ALB 公网实例时，ALB 允许购买多个公网IP防护资源。公网 IP 防护资源的具体规则如下：多个防护资源之间用半角逗号（,）分隔。防护资源的取值如下：AntiDDoS_Enhanced：您申请的是增强防护类型的公网 IP，可以将此 IP 加入到 DDoS 原生防护实例。不填：您申请的是基础防护类型的公网 IP 。
+        When creating a public ALB instance, ALB allows you to purchase multiple public IP protection resources. The rules for public IP protection resources are as follows: separate multiple protection resources with a comma (,). The values for protection resources are: AntiDDoS_Enhanced: You are requesting an enhanced protection type public IP, which can be added to a native DDoS protection instance. If not specified: You are requesting a basic protection type public IP.
         """
         return pulumi.get(self, "security_protection_types")
 
@@ -2661,10 +2661,10 @@ class GetLoadBalancerGlobalAcceleratorResult(dict):
                  endpoint_group_id: builtins.str,
                  weight: builtins.int):
         """
-        :param builtins.str accelerator_id: 绑定的全球加速实例的ID。
-        :param builtins.str accelerator_listener_id: 绑定的全球加速监听器的ID。
-        :param builtins.str endpoint_group_id: 绑定的终端节点组的ID。
-        :param builtins.int weight: 后端服务器的权重，决定流量分发比例。
+        :param builtins.str accelerator_id: ID of the bound Global Accelerator instance.
+        :param builtins.str accelerator_listener_id: ID of the bound Global Accelerator listener.
+        :param builtins.str endpoint_group_id: ID of the bound endpoint group.
+        :param builtins.int weight: Weight of the backend server, determines traffic distribution ratio.
         """
         pulumi.set(__self__, "accelerator_id", accelerator_id)
         pulumi.set(__self__, "accelerator_listener_id", accelerator_listener_id)
@@ -2675,7 +2675,7 @@ class GetLoadBalancerGlobalAcceleratorResult(dict):
     @pulumi.getter(name="acceleratorId")
     def accelerator_id(self) -> builtins.str:
         """
-        绑定的全球加速实例的ID。
+        ID of the bound Global Accelerator instance.
         """
         return pulumi.get(self, "accelerator_id")
 
@@ -2683,7 +2683,7 @@ class GetLoadBalancerGlobalAcceleratorResult(dict):
     @pulumi.getter(name="acceleratorListenerId")
     def accelerator_listener_id(self) -> builtins.str:
         """
-        绑定的全球加速监听器的ID。
+        ID of the bound Global Accelerator listener.
         """
         return pulumi.get(self, "accelerator_listener_id")
 
@@ -2691,7 +2691,7 @@ class GetLoadBalancerGlobalAcceleratorResult(dict):
     @pulumi.getter(name="endpointGroupId")
     def endpoint_group_id(self) -> builtins.str:
         """
-        绑定的终端节点组的ID。
+        ID of the bound endpoint group.
         """
         return pulumi.get(self, "endpoint_group_id")
 
@@ -2699,7 +2699,7 @@ class GetLoadBalancerGlobalAcceleratorResult(dict):
     @pulumi.getter
     def weight(self) -> builtins.int:
         """
-        后端服务器的权重，决定流量分发比例。
+        Weight of the backend server, determines traffic distribution ratio.
         """
         return pulumi.get(self, "weight")
 
@@ -2711,9 +2711,9 @@ class GetLoadBalancerIpv6EipBillingConfigResult(dict):
                  billing_type: builtins.int,
                  isp: builtins.str):
         """
-        :param builtins.int bandwidth: IPv6 EIP的带宽峰值，单位为Mbps。
-        :param builtins.int billing_type: IPv6 EIP的计费方式，2为按带宽计费，3为按流量计费。
-        :param builtins.str isp: IPv6公网IP的线路类型，BGP表示多线。
+        :param builtins.int bandwidth: Peak bandwidth of IPv6 EIP, in Mbps.
+        :param builtins.int billing_type: Billing method for IPv6 EIP: 2 for bandwidth-based, 3 for traffic-based.
+        :param builtins.str isp: Line type of IPv6 public IP; BGP indicates multi-line.
         """
         pulumi.set(__self__, "bandwidth", bandwidth)
         pulumi.set(__self__, "billing_type", billing_type)
@@ -2723,7 +2723,7 @@ class GetLoadBalancerIpv6EipBillingConfigResult(dict):
     @pulumi.getter
     def bandwidth(self) -> builtins.int:
         """
-        IPv6 EIP的带宽峰值，单位为Mbps。
+        Peak bandwidth of IPv6 EIP, in Mbps.
         """
         return pulumi.get(self, "bandwidth")
 
@@ -2731,7 +2731,7 @@ class GetLoadBalancerIpv6EipBillingConfigResult(dict):
     @pulumi.getter(name="billingType")
     def billing_type(self) -> builtins.int:
         """
-        IPv6 EIP的计费方式，2为按带宽计费，3为按流量计费。
+        Billing method for IPv6 EIP: 2 for bandwidth-based, 3 for traffic-based.
         """
         return pulumi.get(self, "billing_type")
 
@@ -2739,7 +2739,7 @@ class GetLoadBalancerIpv6EipBillingConfigResult(dict):
     @pulumi.getter
     def isp(self) -> builtins.str:
         """
-        IPv6公网IP的线路类型，BGP表示多线。
+        Line type of IPv6 public IP; BGP indicates multi-line.
         """
         return pulumi.get(self, "isp")
 
@@ -2750,8 +2750,8 @@ class GetLoadBalancerTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签的键，用于标识标签的类别。
-        :param builtins.str value: 标签的值，用于标识具体的标签内容。
+        :param builtins.str key: Tag key, used to identify the tag category.
+        :param builtins.str value: Tag value used to identify the specific tag content.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -2760,7 +2760,7 @@ class GetLoadBalancerTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签的键，用于标识标签的类别。
+        Tag key, used to identify the tag category.
         """
         return pulumi.get(self, "key")
 
@@ -2768,7 +2768,7 @@ class GetLoadBalancerTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签的值，用于标识具体的标签内容。
+        Tag value used to identify the specific tag content.
         """
         return pulumi.get(self, "value")
 
@@ -2780,9 +2780,9 @@ class GetLoadBalancerZoneMappingResult(dict):
                  subnet_id: builtins.str,
                  zone_id: builtins.str):
         """
-        :param Sequence['GetLoadBalancerZoneMappingLoadBalancerAddressArgs'] load_balancer_addresses: 该可用区下负载均衡提供的IP地址列表。
-        :param builtins.str subnet_id: 可用区内提供服务的子网ID。
-        :param builtins.str zone_id: 可用区的唯一标识符。
+        :param Sequence['GetLoadBalancerZoneMappingLoadBalancerAddressArgs'] load_balancer_addresses: List of IP addresses provided by the load balancer in this availability zone.
+        :param builtins.str subnet_id: Subnet ID providing services within the availability zone.
+        :param builtins.str zone_id: Unique identifier of the availability zone.
         """
         pulumi.set(__self__, "load_balancer_addresses", load_balancer_addresses)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -2792,7 +2792,7 @@ class GetLoadBalancerZoneMappingResult(dict):
     @pulumi.getter(name="loadBalancerAddresses")
     def load_balancer_addresses(self) -> Sequence['outputs.GetLoadBalancerZoneMappingLoadBalancerAddressResult']:
         """
-        该可用区下负载均衡提供的IP地址列表。
+        List of IP addresses provided by the load balancer in this availability zone.
         """
         return pulumi.get(self, "load_balancer_addresses")
 
@@ -2800,7 +2800,7 @@ class GetLoadBalancerZoneMappingResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> builtins.str:
         """
-        可用区内提供服务的子网ID。
+        Subnet ID providing services within the availability zone.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -2808,7 +2808,7 @@ class GetLoadBalancerZoneMappingResult(dict):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> builtins.str:
         """
-        可用区的唯一标识符。
+        Unique identifier of the availability zone.
         """
         return pulumi.get(self, "zone_id")
 
@@ -2825,14 +2825,14 @@ class GetLoadBalancerZoneMappingLoadBalancerAddressResult(dict):
                  ipv6_eip: 'outputs.GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipResult',
                  ipv6_eip_id: builtins.str):
         """
-        :param 'GetLoadBalancerZoneMappingLoadBalancerAddressEipArgs' eip: 弹性公网IP（EIP）的详细信息。
-        :param builtins.str eip_address: 绑定的弹性公网IP（EIP）的地址。
-        :param builtins.str eip_id: 绑定的弹性公网IP（EIP）的ID。
-        :param builtins.str eni_address: 弹性网卡（ENI）上的私网IP地址。
-        :param builtins.str eni_id: IP地址所属的弹性网卡（ENI）的ID。
-        :param builtins.str eni_ipv6_address: 弹性网卡（ENI）上的IPv6私网地址。
-        :param 'GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipArgs' ipv6_eip: IPv6弹性公网IP的详细信息。
-        :param builtins.str ipv6_eip_id: 绑定的IPv6 EIP的ID。
+        :param 'GetLoadBalancerZoneMappingLoadBalancerAddressEipArgs' eip: Detailed information of the Elastic Public IP (EIP).
+        :param builtins.str eip_address: Address of the bound Elastic Public IP (EIP).
+        :param builtins.str eip_id: ID of the bound Elastic IP (EIP).
+        :param builtins.str eni_address: Private IP address on the Elastic Network Interface (ENI).
+        :param builtins.str eni_id: ID of the Elastic Network Interface (ENI) to which the IP address belongs.
+        :param builtins.str eni_ipv6_address: IPv6 private address on the Elastic Network Interface (ENI).
+        :param 'GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipArgs' ipv6_eip: Detailed information about the IPv6 Elastic Public IP.
+        :param builtins.str ipv6_eip_id: ID of the bound IPv6 EIP.
         """
         pulumi.set(__self__, "eip", eip)
         pulumi.set(__self__, "eip_address", eip_address)
@@ -2847,7 +2847,7 @@ class GetLoadBalancerZoneMappingLoadBalancerAddressResult(dict):
     @pulumi.getter
     def eip(self) -> 'outputs.GetLoadBalancerZoneMappingLoadBalancerAddressEipResult':
         """
-        弹性公网IP（EIP）的详细信息。
+        Detailed information of the Elastic Public IP (EIP).
         """
         return pulumi.get(self, "eip")
 
@@ -2855,7 +2855,7 @@ class GetLoadBalancerZoneMappingLoadBalancerAddressResult(dict):
     @pulumi.getter(name="eipAddress")
     def eip_address(self) -> builtins.str:
         """
-        绑定的弹性公网IP（EIP）的地址。
+        Address of the bound Elastic Public IP (EIP).
         """
         return pulumi.get(self, "eip_address")
 
@@ -2863,7 +2863,7 @@ class GetLoadBalancerZoneMappingLoadBalancerAddressResult(dict):
     @pulumi.getter(name="eipId")
     def eip_id(self) -> builtins.str:
         """
-        绑定的弹性公网IP（EIP）的ID。
+        ID of the bound Elastic IP (EIP).
         """
         return pulumi.get(self, "eip_id")
 
@@ -2871,7 +2871,7 @@ class GetLoadBalancerZoneMappingLoadBalancerAddressResult(dict):
     @pulumi.getter(name="eniAddress")
     def eni_address(self) -> builtins.str:
         """
-        弹性网卡（ENI）上的私网IP地址。
+        Private IP address on the Elastic Network Interface (ENI).
         """
         return pulumi.get(self, "eni_address")
 
@@ -2879,7 +2879,7 @@ class GetLoadBalancerZoneMappingLoadBalancerAddressResult(dict):
     @pulumi.getter(name="eniId")
     def eni_id(self) -> builtins.str:
         """
-        IP地址所属的弹性网卡（ENI）的ID。
+        ID of the Elastic Network Interface (ENI) to which the IP address belongs.
         """
         return pulumi.get(self, "eni_id")
 
@@ -2887,7 +2887,7 @@ class GetLoadBalancerZoneMappingLoadBalancerAddressResult(dict):
     @pulumi.getter(name="eniIpv6Address")
     def eni_ipv6_address(self) -> builtins.str:
         """
-        弹性网卡（ENI）上的IPv6私网地址。
+        IPv6 private address on the Elastic Network Interface (ENI).
         """
         return pulumi.get(self, "eni_ipv6_address")
 
@@ -2895,7 +2895,7 @@ class GetLoadBalancerZoneMappingLoadBalancerAddressResult(dict):
     @pulumi.getter(name="ipv6Eip")
     def ipv6_eip(self) -> 'outputs.GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipResult':
         """
-        IPv6弹性公网IP的详细信息。
+        Detailed information about the IPv6 Elastic Public IP.
         """
         return pulumi.get(self, "ipv6_eip")
 
@@ -2903,7 +2903,7 @@ class GetLoadBalancerZoneMappingLoadBalancerAddressResult(dict):
     @pulumi.getter(name="ipv6EipId")
     def ipv6_eip_id(self) -> builtins.str:
         """
-        绑定的IPv6 EIP的ID。
+        ID of the bound IPv6 EIP.
         """
         return pulumi.get(self, "ipv6_eip_id")
 
@@ -2919,13 +2919,13 @@ class GetLoadBalancerZoneMappingLoadBalancerAddressEipResult(dict):
                  isp: builtins.str,
                  pop_locations: Sequence['outputs.GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationResult']):
         """
-        :param builtins.str association_mode: EIP的绑定模式，例如Default或Normal。
-        :param builtins.int bandwidth: EIP的带宽峰值，单位为Mbps。
-        :param builtins.str eip_address: 弹性公网IP（EIP）的地址。
-        :param builtins.int eip_billing_type: EIP的计费方式，2为按带宽计费，3为按流量计费。
-        :param builtins.str eip_type: EIP的类型，例如静态BGP。
-        :param builtins.str isp: 公网IP的线路类型，BGP表示多线。
-        :param Sequence['GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArgs'] pop_locations: EIP的接入点位置信息列表。
+        :param builtins.str association_mode: EIP binding mode, such as Default or Normal.
+        :param builtins.int bandwidth: Peak bandwidth of EIP, in Mbps.
+        :param builtins.str eip_address: Address of the Elastic IP (EIP).
+        :param builtins.int eip_billing_type: EIP billing method: 2 for bandwidth-based, 3 for traffic-based.
+        :param builtins.str eip_type: EIP type, such as static BGP.
+        :param builtins.str isp: Line type of the public IP, BGP indicates multi-line.
+        :param Sequence['GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationArgs'] pop_locations: List of EIP access point location information.
         """
         pulumi.set(__self__, "association_mode", association_mode)
         pulumi.set(__self__, "bandwidth", bandwidth)
@@ -2939,7 +2939,7 @@ class GetLoadBalancerZoneMappingLoadBalancerAddressEipResult(dict):
     @pulumi.getter(name="associationMode")
     def association_mode(self) -> builtins.str:
         """
-        EIP的绑定模式，例如Default或Normal。
+        EIP binding mode, such as Default or Normal.
         """
         return pulumi.get(self, "association_mode")
 
@@ -2947,7 +2947,7 @@ class GetLoadBalancerZoneMappingLoadBalancerAddressEipResult(dict):
     @pulumi.getter
     def bandwidth(self) -> builtins.int:
         """
-        EIP的带宽峰值，单位为Mbps。
+        Peak bandwidth of EIP, in Mbps.
         """
         return pulumi.get(self, "bandwidth")
 
@@ -2955,7 +2955,7 @@ class GetLoadBalancerZoneMappingLoadBalancerAddressEipResult(dict):
     @pulumi.getter(name="eipAddress")
     def eip_address(self) -> builtins.str:
         """
-        弹性公网IP（EIP）的地址。
+        Address of the Elastic IP (EIP).
         """
         return pulumi.get(self, "eip_address")
 
@@ -2963,7 +2963,7 @@ class GetLoadBalancerZoneMappingLoadBalancerAddressEipResult(dict):
     @pulumi.getter(name="eipBillingType")
     def eip_billing_type(self) -> builtins.int:
         """
-        EIP的计费方式，2为按带宽计费，3为按流量计费。
+        EIP billing method: 2 for bandwidth-based, 3 for traffic-based.
         """
         return pulumi.get(self, "eip_billing_type")
 
@@ -2971,7 +2971,7 @@ class GetLoadBalancerZoneMappingLoadBalancerAddressEipResult(dict):
     @pulumi.getter(name="eipType")
     def eip_type(self) -> builtins.str:
         """
-        EIP的类型，例如静态BGP。
+        EIP type, such as static BGP.
         """
         return pulumi.get(self, "eip_type")
 
@@ -2979,7 +2979,7 @@ class GetLoadBalancerZoneMappingLoadBalancerAddressEipResult(dict):
     @pulumi.getter
     def isp(self) -> builtins.str:
         """
-        公网IP的线路类型，BGP表示多线。
+        Line type of the public IP, BGP indicates multi-line.
         """
         return pulumi.get(self, "isp")
 
@@ -2987,7 +2987,7 @@ class GetLoadBalancerZoneMappingLoadBalancerAddressEipResult(dict):
     @pulumi.getter(name="popLocations")
     def pop_locations(self) -> Sequence['outputs.GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationResult']:
         """
-        EIP的接入点位置信息列表。
+        List of EIP access point location information.
         """
         return pulumi.get(self, "pop_locations")
 
@@ -2998,8 +2998,8 @@ class GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationResult(dict):
                  pop_id: builtins.str,
                  pop_name: builtins.str):
         """
-        :param builtins.str pop_id: 接入点（PoP）的唯一ID。
-        :param builtins.str pop_name: 接入点（PoP）的名称。
+        :param builtins.str pop_id: Unique ID of the access point (PoP).
+        :param builtins.str pop_name: Name of the access point (PoP).
         """
         pulumi.set(__self__, "pop_id", pop_id)
         pulumi.set(__self__, "pop_name", pop_name)
@@ -3008,7 +3008,7 @@ class GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationResult(dict):
     @pulumi.getter(name="popId")
     def pop_id(self) -> builtins.str:
         """
-        接入点（PoP）的唯一ID。
+        Unique ID of the access point (PoP).
         """
         return pulumi.get(self, "pop_id")
 
@@ -3016,7 +3016,7 @@ class GetLoadBalancerZoneMappingLoadBalancerAddressEipPopLocationResult(dict):
     @pulumi.getter(name="popName")
     def pop_name(self) -> builtins.str:
         """
-        接入点（PoP）的名称。
+        Name of the access point (PoP).
         """
         return pulumi.get(self, "pop_name")
 
@@ -3028,9 +3028,9 @@ class GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipResult(dict):
                  billing_type: builtins.int,
                  isp: builtins.str):
         """
-        :param builtins.int bandwidth: IPv6 EIP的带宽峰值，单位为Mbps。
-        :param builtins.int billing_type: IPv6 EIP的计费方式，2为按带宽计费，3为按流量计费。
-        :param builtins.str isp: IPv6公网IP的线路类型，BGP表示多线。
+        :param builtins.int bandwidth: Peak bandwidth of IPv6 EIP, in Mbps.
+        :param builtins.int billing_type: Billing method for IPv6 EIP: 2 for bandwidth-based, 3 for traffic-based.
+        :param builtins.str isp: Line type of IPv6 public IP; BGP indicates multi-line.
         """
         pulumi.set(__self__, "bandwidth", bandwidth)
         pulumi.set(__self__, "billing_type", billing_type)
@@ -3040,7 +3040,7 @@ class GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipResult(dict):
     @pulumi.getter
     def bandwidth(self) -> builtins.int:
         """
-        IPv6 EIP的带宽峰值，单位为Mbps。
+        Peak bandwidth of IPv6 EIP, in Mbps.
         """
         return pulumi.get(self, "bandwidth")
 
@@ -3048,7 +3048,7 @@ class GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipResult(dict):
     @pulumi.getter(name="billingType")
     def billing_type(self) -> builtins.int:
         """
-        IPv6 EIP的计费方式，2为按带宽计费，3为按流量计费。
+        Billing method for IPv6 EIP: 2 for bandwidth-based, 3 for traffic-based.
         """
         return pulumi.get(self, "billing_type")
 
@@ -3056,7 +3056,7 @@ class GetLoadBalancerZoneMappingLoadBalancerAddressIpv6EipResult(dict):
     @pulumi.getter
     def isp(self) -> builtins.str:
         """
-        IPv6公网IP的线路类型，BGP表示多线。
+        Line type of IPv6 public IP; BGP indicates multi-line.
         """
         return pulumi.get(self, "isp")
 
@@ -3068,9 +3068,9 @@ class GetRuleForwardGroupConfigResult(dict):
                  sticky_session_enabled: builtins.str,
                  sticky_session_timeout: builtins.int):
         """
-        :param Sequence['GetRuleForwardGroupConfigServerGroupTupleArgs'] server_group_tuples: 转发到的目的服务器组列表。
-        :param builtins.str sticky_session_enabled: 是否开启组间会话保持。on：开启。off：不开启。
-        :param builtins.int sticky_session_timeout: 组件回话保持的超时时间。单位：秒。
+        :param Sequence['GetRuleForwardGroupConfigServerGroupTupleArgs'] server_group_tuples: Destination server group list.
+        :param builtins.str sticky_session_enabled: Whether to enable inter-group session persistence. on: enabled. off: disabled.
+        :param builtins.int sticky_session_timeout: Component session stickiness timeout. Unit: seconds.
         """
         pulumi.set(__self__, "server_group_tuples", server_group_tuples)
         pulumi.set(__self__, "sticky_session_enabled", sticky_session_enabled)
@@ -3080,7 +3080,7 @@ class GetRuleForwardGroupConfigResult(dict):
     @pulumi.getter(name="serverGroupTuples")
     def server_group_tuples(self) -> Sequence['outputs.GetRuleForwardGroupConfigServerGroupTupleResult']:
         """
-        转发到的目的服务器组列表。
+        Destination server group list.
         """
         return pulumi.get(self, "server_group_tuples")
 
@@ -3088,7 +3088,7 @@ class GetRuleForwardGroupConfigResult(dict):
     @pulumi.getter(name="stickySessionEnabled")
     def sticky_session_enabled(self) -> builtins.str:
         """
-        是否开启组间会话保持。on：开启。off：不开启。
+        Whether to enable inter-group session persistence. on: enabled. off: disabled.
         """
         return pulumi.get(self, "sticky_session_enabled")
 
@@ -3096,7 +3096,7 @@ class GetRuleForwardGroupConfigResult(dict):
     @pulumi.getter(name="stickySessionTimeout")
     def sticky_session_timeout(self) -> builtins.int:
         """
-        组件回话保持的超时时间。单位：秒。
+        Component session stickiness timeout. Unit: seconds.
         """
         return pulumi.get(self, "sticky_session_timeout")
 
@@ -3107,8 +3107,8 @@ class GetRuleForwardGroupConfigServerGroupTupleResult(dict):
                  server_group_id: builtins.str,
                  weight: builtins.int):
         """
-        :param builtins.str server_group_id: 转发到的目的服务器组 ID。
-        :param builtins.int weight: 服务器组权重。
+        :param builtins.str server_group_id: Destination server group ID.
+        :param builtins.int weight: Server group weight.
         """
         pulumi.set(__self__, "server_group_id", server_group_id)
         pulumi.set(__self__, "weight", weight)
@@ -3117,7 +3117,7 @@ class GetRuleForwardGroupConfigServerGroupTupleResult(dict):
     @pulumi.getter(name="serverGroupId")
     def server_group_id(self) -> builtins.str:
         """
-        转发到的目的服务器组 ID。
+        Destination server group ID.
         """
         return pulumi.get(self, "server_group_id")
 
@@ -3125,7 +3125,7 @@ class GetRuleForwardGroupConfigServerGroupTupleResult(dict):
     @pulumi.getter
     def weight(self) -> builtins.int:
         """
-        服务器组权重。
+        Server group weight.
         """
         return pulumi.get(self, "weight")
 
@@ -3139,11 +3139,11 @@ class GetRuleRedirectConfigResult(dict):
                  redirect_protocol: builtins.str,
                  redirect_uri: builtins.str):
         """
-        :param builtins.str redirect_domain: 重定向的域名。若创建/修改重定向类型的转发规则时，重定向域名设置为空，接口会返回${host}，该变量含义为重定向域名与请求域名保持一致，但不支持创建/修改时，将重定向域名设置为${host}.。
-        :param builtins.str redirect_http_code: 重定向状态码。301、302、307、308。
-        :param builtins.str redirect_port: 重定向的端口。若创建/修改重定向类型的转发规则时，重定向端口设置为空，接口会返回${port}，该变量含义为重定向端口与请求端口（监听器端口）保持一致，但不支持创建/修改时，将重定向端口设置为${port}.。
-        :param builtins.str redirect_protocol: 重定向使用的协议。HTTP、HTTPS。
-        :param builtins.str redirect_uri: 重定向的URI。若创建/修改重定向类型的转发规则时，重定向uri设置为空，接口会返回${request*uri}，该变量含义为重定向uri与请求uri保持一致，但不支持创建/修改时，将重定向uri设置为${request*uri}.。
+        :param builtins.str redirect_domain: Redirect domain name. If the redirect domain name is left empty when creating or modifying a redirect forwarding rule, the API returns ${host}, which means the redirect domain matches the request domain. However, setting the redirect domain to ${host} is not supported when creating or modifying rules.
+        :param builtins.str redirect_http_code: Redirect status codes: 301, 302, 307, 308.
+        :param builtins.str redirect_port: Redirect port. If the redirect port is left empty when creating or modifying a redirect forwarding rule, the API returns ${port}, which means the redirect port matches the request port (listener port). However, setting the redirect port to ${port} is not supported when creating or modifying rules.
+        :param builtins.str redirect_protocol: Protocol used for redirect. HTTP, HTTPS.
+        :param builtins.str redirect_uri: Redirect URI. If the redirect URI is left empty when creating or modifying a redirect forwarding rule, the API returns ${request*uri}, which means the redirect URI matches the request URI. However, setting the redirect URI to ${request*uri} is not supported when creating or modifying rules.
         """
         pulumi.set(__self__, "redirect_domain", redirect_domain)
         pulumi.set(__self__, "redirect_http_code", redirect_http_code)
@@ -3155,7 +3155,7 @@ class GetRuleRedirectConfigResult(dict):
     @pulumi.getter(name="redirectDomain")
     def redirect_domain(self) -> builtins.str:
         """
-        重定向的域名。若创建/修改重定向类型的转发规则时，重定向域名设置为空，接口会返回${host}，该变量含义为重定向域名与请求域名保持一致，但不支持创建/修改时，将重定向域名设置为${host}.。
+        Redirect domain name. If the redirect domain name is left empty when creating or modifying a redirect forwarding rule, the API returns ${host}, which means the redirect domain matches the request domain. However, setting the redirect domain to ${host} is not supported when creating or modifying rules.
         """
         return pulumi.get(self, "redirect_domain")
 
@@ -3163,7 +3163,7 @@ class GetRuleRedirectConfigResult(dict):
     @pulumi.getter(name="redirectHttpCode")
     def redirect_http_code(self) -> builtins.str:
         """
-        重定向状态码。301、302、307、308。
+        Redirect status codes: 301, 302, 307, 308.
         """
         return pulumi.get(self, "redirect_http_code")
 
@@ -3171,7 +3171,7 @@ class GetRuleRedirectConfigResult(dict):
     @pulumi.getter(name="redirectPort")
     def redirect_port(self) -> builtins.str:
         """
-        重定向的端口。若创建/修改重定向类型的转发规则时，重定向端口设置为空，接口会返回${port}，该变量含义为重定向端口与请求端口（监听器端口）保持一致，但不支持创建/修改时，将重定向端口设置为${port}.。
+        Redirect port. If the redirect port is left empty when creating or modifying a redirect forwarding rule, the API returns ${port}, which means the redirect port matches the request port (listener port). However, setting the redirect port to ${port} is not supported when creating or modifying rules.
         """
         return pulumi.get(self, "redirect_port")
 
@@ -3179,7 +3179,7 @@ class GetRuleRedirectConfigResult(dict):
     @pulumi.getter(name="redirectProtocol")
     def redirect_protocol(self) -> builtins.str:
         """
-        重定向使用的协议。HTTP、HTTPS。
+        Protocol used for redirect. HTTP, HTTPS.
         """
         return pulumi.get(self, "redirect_protocol")
 
@@ -3187,7 +3187,7 @@ class GetRuleRedirectConfigResult(dict):
     @pulumi.getter(name="redirectUri")
     def redirect_uri(self) -> builtins.str:
         """
-        重定向的URI。若创建/修改重定向类型的转发规则时，重定向uri设置为空，接口会返回${request*uri}，该变量含义为重定向uri与请求uri保持一致，但不支持创建/修改时，将重定向uri设置为${request*uri}.。
+        Redirect URI. If the redirect URI is left empty when creating or modifying a redirect forwarding rule, the API returns ${request*uri}, which means the redirect URI matches the request URI. However, setting the redirect URI to ${request*uri} is not supported when creating or modifying rules.
         """
         return pulumi.get(self, "redirect_uri")
 
@@ -3197,7 +3197,7 @@ class GetRuleRewriteConfigResult(dict):
     def __init__(__self__, *,
                  rewrite_path: builtins.str):
         """
-        :param builtins.str rewrite_path: 重写路径。
+        :param builtins.str rewrite_path: Rewrite path.
         """
         pulumi.set(__self__, "rewrite_path", rewrite_path)
 
@@ -3205,7 +3205,7 @@ class GetRuleRewriteConfigResult(dict):
     @pulumi.getter(name="rewritePath")
     def rewrite_path(self) -> builtins.str:
         """
-        重写路径。
+        Rewrite path.
         """
         return pulumi.get(self, "rewrite_path")
 
@@ -3225,7 +3225,7 @@ class GetRuleRuleActionResult(dict):
         :param 'GetRuleRuleActionRedirectConfigArgs' redirect_config: RedirectConfig
         :param 'GetRuleRuleActionRewriteConfigArgs' rewrite_config: RewriteConfig
         :param 'GetRuleRuleActionTrafficLimitConfigArgs' traffic_limit_config: TrafficLimitConfig
-        :param builtins.str type: 转发规则动作类型。ForwardGroup：转发至多个虚拟服务器组。Redirect： 重定向。Rewrite： 重写。TrafficLimit：流量限速。
+        :param builtins.str type: Forwarding rule action types. ForwardGroup: forward to multiple virtual server groups. Redirect: redirect. Rewrite: rewrite. TrafficLimit: traffic limiting.
         """
         pulumi.set(__self__, "fixed_response_config", fixed_response_config)
         pulumi.set(__self__, "forward_group_config", forward_group_config)
@@ -3278,7 +3278,7 @@ class GetRuleRuleActionResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        转发规则动作类型。ForwardGroup：转发至多个虚拟服务器组。Redirect： 重定向。Rewrite： 重写。TrafficLimit：流量限速。
+        Forwarding rule action types. ForwardGroup: forward to multiple virtual server groups. Redirect: redirect. Rewrite: rewrite. TrafficLimit: traffic limiting.
         """
         return pulumi.get(self, "type")
 
@@ -3290,9 +3290,9 @@ class GetRuleRuleActionFixedResponseConfigResult(dict):
                  content_type: builtins.str,
                  http_code: builtins.str):
         """
-        :param builtins.str content: 返回的固定内容。
-        :param builtins.str content_type: 返回的固定内容的格式。text/plain、text/css、text/html、application/javascript、application/json
-        :param builtins.str http_code: 返回的 HTTP 状态码。
+        :param builtins.str content: Fixed response content.
+        :param builtins.str content_type: Format of fixed response content. text/plain, text/css, text/html, application/javascript, application/json
+        :param builtins.str http_code: Returned HTTP status code.
         """
         pulumi.set(__self__, "content", content)
         pulumi.set(__self__, "content_type", content_type)
@@ -3302,7 +3302,7 @@ class GetRuleRuleActionFixedResponseConfigResult(dict):
     @pulumi.getter
     def content(self) -> builtins.str:
         """
-        返回的固定内容。
+        Fixed response content.
         """
         return pulumi.get(self, "content")
 
@@ -3310,7 +3310,7 @@ class GetRuleRuleActionFixedResponseConfigResult(dict):
     @pulumi.getter(name="contentType")
     def content_type(self) -> builtins.str:
         """
-        返回的固定内容的格式。text/plain、text/css、text/html、application/javascript、application/json
+        Format of fixed response content. text/plain, text/css, text/html, application/javascript, application/json
         """
         return pulumi.get(self, "content_type")
 
@@ -3318,7 +3318,7 @@ class GetRuleRuleActionFixedResponseConfigResult(dict):
     @pulumi.getter(name="httpCode")
     def http_code(self) -> builtins.str:
         """
-        返回的 HTTP 状态码。
+        Returned HTTP status code.
         """
         return pulumi.get(self, "http_code")
 
@@ -3358,8 +3358,8 @@ class GetRuleRuleActionForwardGroupConfigServerGroupStickySessionResult(dict):
                  enabled: builtins.str,
                  timeout: builtins.int):
         """
-        :param builtins.str enabled: 是否开启组间会话保持。on：开启。off：不开启。
-        :param builtins.int timeout: 组件回话保持的超时时间。单位：秒。
+        :param builtins.str enabled: Whether to enable inter-group session persistence. on: enabled. off: disabled.
+        :param builtins.int timeout: Component session stickiness timeout. Unit: seconds.
         """
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "timeout", timeout)
@@ -3368,7 +3368,7 @@ class GetRuleRuleActionForwardGroupConfigServerGroupStickySessionResult(dict):
     @pulumi.getter
     def enabled(self) -> builtins.str:
         """
-        是否开启组间会话保持。on：开启。off：不开启。
+        Whether to enable inter-group session persistence. on: enabled. off: disabled.
         """
         return pulumi.get(self, "enabled")
 
@@ -3376,7 +3376,7 @@ class GetRuleRuleActionForwardGroupConfigServerGroupStickySessionResult(dict):
     @pulumi.getter
     def timeout(self) -> builtins.int:
         """
-        组件回话保持的超时时间。单位：秒。
+        Component session stickiness timeout. Unit: seconds.
         """
         return pulumi.get(self, "timeout")
 
@@ -3387,8 +3387,8 @@ class GetRuleRuleActionForwardGroupConfigServerGroupTupleResult(dict):
                  server_group_id: builtins.str,
                  weight: builtins.int):
         """
-        :param builtins.str server_group_id: 转发到的目的服务器组 ID。
-        :param builtins.int weight: 服务器组权重。
+        :param builtins.str server_group_id: Destination server group ID.
+        :param builtins.int weight: Server group weight.
         """
         pulumi.set(__self__, "server_group_id", server_group_id)
         pulumi.set(__self__, "weight", weight)
@@ -3397,7 +3397,7 @@ class GetRuleRuleActionForwardGroupConfigServerGroupTupleResult(dict):
     @pulumi.getter(name="serverGroupId")
     def server_group_id(self) -> builtins.str:
         """
-        转发到的目的服务器组 ID。
+        Destination server group ID.
         """
         return pulumi.get(self, "server_group_id")
 
@@ -3405,7 +3405,7 @@ class GetRuleRuleActionForwardGroupConfigServerGroupTupleResult(dict):
     @pulumi.getter
     def weight(self) -> builtins.int:
         """
-        服务器组权重。
+        Server group weight.
         """
         return pulumi.get(self, "weight")
 
@@ -3419,11 +3419,11 @@ class GetRuleRuleActionRedirectConfigResult(dict):
                  port: builtins.str,
                  protocol: builtins.str):
         """
-        :param builtins.str host: 重定向域名，仅支持精确域名。
-        :param builtins.str http_code: 重定向状态码，支持301，302，307，308。
-        :param builtins.str path: 重定向 URI。。
-        :param builtins.str port: 重定向端口。
-        :param builtins.str protocol: 重定向使用的协议，支持HTTP，HTTPS。
+        :param builtins.str host: Redirect domain. Only exact domains are supported.
+        :param builtins.str http_code: Redirect status codes supported: 301, 302, 307, 308.
+        :param builtins.str path: Redirect URI..
+        :param builtins.str port: Redirect port.
+        :param builtins.str protocol: Protocol used for redirect. Supports HTTP and HTTPS.
         """
         pulumi.set(__self__, "host", host)
         pulumi.set(__self__, "http_code", http_code)
@@ -3435,7 +3435,7 @@ class GetRuleRuleActionRedirectConfigResult(dict):
     @pulumi.getter
     def host(self) -> builtins.str:
         """
-        重定向域名，仅支持精确域名。
+        Redirect domain. Only exact domains are supported.
         """
         return pulumi.get(self, "host")
 
@@ -3443,7 +3443,7 @@ class GetRuleRuleActionRedirectConfigResult(dict):
     @pulumi.getter(name="httpCode")
     def http_code(self) -> builtins.str:
         """
-        重定向状态码，支持301，302，307，308。
+        Redirect status codes supported: 301, 302, 307, 308.
         """
         return pulumi.get(self, "http_code")
 
@@ -3451,7 +3451,7 @@ class GetRuleRuleActionRedirectConfigResult(dict):
     @pulumi.getter
     def path(self) -> builtins.str:
         """
-        重定向 URI。。
+        Redirect URI..
         """
         return pulumi.get(self, "path")
 
@@ -3459,7 +3459,7 @@ class GetRuleRuleActionRedirectConfigResult(dict):
     @pulumi.getter
     def port(self) -> builtins.str:
         """
-        重定向端口。
+        Redirect port.
         """
         return pulumi.get(self, "port")
 
@@ -3467,7 +3467,7 @@ class GetRuleRuleActionRedirectConfigResult(dict):
     @pulumi.getter
     def protocol(self) -> builtins.str:
         """
-        重定向使用的协议，支持HTTP，HTTPS。
+        Protocol used for redirect. Supports HTTP and HTTPS.
         """
         return pulumi.get(self, "protocol")
 
@@ -3477,7 +3477,7 @@ class GetRuleRuleActionRewriteConfigResult(dict):
     def __init__(__self__, *,
                  path: builtins.str):
         """
-        :param builtins.str path: 重写路径。
+        :param builtins.str path: Rewrite path.
         """
         pulumi.set(__self__, "path", path)
 
@@ -3485,7 +3485,7 @@ class GetRuleRuleActionRewriteConfigResult(dict):
     @pulumi.getter
     def path(self) -> builtins.str:
         """
-        重写路径。
+        Rewrite path.
         """
         return pulumi.get(self, "path")
 
@@ -3495,7 +3495,7 @@ class GetRuleRuleActionTrafficLimitConfigResult(dict):
     def __init__(__self__, *,
                  qps: builtins.int):
         """
-        :param builtins.int qps: 每秒请求数。
+        :param builtins.int qps: Requests per second.
         """
         pulumi.set(__self__, "qps", qps)
 
@@ -3503,7 +3503,7 @@ class GetRuleRuleActionTrafficLimitConfigResult(dict):
     @pulumi.getter
     def qps(self) -> builtins.int:
         """
-        每秒请求数。
+        Requests per second.
         """
         return pulumi.get(self, "qps")
 
@@ -3523,7 +3523,7 @@ class GetRuleRuleConditionResult(dict):
         :param 'GetRuleRuleConditionMethodConfigArgs' method_config: MethodConfig。
         :param 'GetRuleRuleConditionPathConfigArgs' path_config: PathConfig。
         :param 'GetRuleRuleConditionQueryStringConfigArgs' query_string_config: QueryStringConfig。
-        :param builtins.str type: 标准版转发规则条件类型。Host： 域名。Path： 路径。Header：HTTP头字段。Method: 请求方法。QueryString: 查询参数。
+        :param builtins.str type: Standard forwarding rule condition types. Host: domain name. Path: path. Header: HTTP header field. Method: request method. QueryString: query parameter.
         """
         pulumi.set(__self__, "header_config", header_config)
         pulumi.set(__self__, "host_config", host_config)
@@ -3576,7 +3576,7 @@ class GetRuleRuleConditionResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        标准版转发规则条件类型。Host： 域名。Path： 路径。Header：HTTP头字段。Method: 请求方法。QueryString: 查询参数。
+        Standard forwarding rule condition types. Host: domain name. Path: path. Header: HTTP header field. Method: request method. QueryString: query parameter.
         """
         return pulumi.get(self, "type")
 
@@ -3587,8 +3587,8 @@ class GetRuleRuleConditionHeaderConfigResult(dict):
                  key: builtins.str,
                  values: Sequence[builtins.str]):
         """
-        :param builtins.str key: 头字段键。
-        :param Sequence[builtins.str] values: 头字段值。
+        :param builtins.str key: Header field key.
+        :param Sequence[builtins.str] values: Header field value.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "values", values)
@@ -3597,7 +3597,7 @@ class GetRuleRuleConditionHeaderConfigResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        头字段键。
+        Header field key.
         """
         return pulumi.get(self, "key")
 
@@ -3605,7 +3605,7 @@ class GetRuleRuleConditionHeaderConfigResult(dict):
     @pulumi.getter
     def values(self) -> Sequence[builtins.str]:
         """
-        头字段值。
+        Header field value.
         """
         return pulumi.get(self, "values")
 
@@ -3615,7 +3615,7 @@ class GetRuleRuleConditionHostConfigResult(dict):
     def __init__(__self__, *,
                  values: Sequence[builtins.str]):
         """
-        :param Sequence[builtins.str] values: 转发规则的域名，支持泛域名和精确域名。
+        :param Sequence[builtins.str] values: Domain name of the forwarding rule. Supports wildcard and exact domains.
         """
         pulumi.set(__self__, "values", values)
 
@@ -3623,7 +3623,7 @@ class GetRuleRuleConditionHostConfigResult(dict):
     @pulumi.getter
     def values(self) -> Sequence[builtins.str]:
         """
-        转发规则的域名，支持泛域名和精确域名。
+        Domain name of the forwarding rule. Supports wildcard and exact domains.
         """
         return pulumi.get(self, "values")
 
@@ -3633,7 +3633,7 @@ class GetRuleRuleConditionMethodConfigResult(dict):
     def __init__(__self__, *,
                  values: Sequence[builtins.str]):
         """
-        :param Sequence[builtins.str] values: 请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+        :param Sequence[builtins.str] values: Request method. Supports HEAD, GET, POST, OPTIONS, PUT, PATCH, DELETE.
         """
         pulumi.set(__self__, "values", values)
 
@@ -3641,7 +3641,7 @@ class GetRuleRuleConditionMethodConfigResult(dict):
     @pulumi.getter
     def values(self) -> Sequence[builtins.str]:
         """
-        请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+        Request method. Supports HEAD, GET, POST, OPTIONS, PUT, PATCH, DELETE.
         """
         return pulumi.get(self, "values")
 
@@ -3651,7 +3651,7 @@ class GetRuleRuleConditionPathConfigResult(dict):
     def __init__(__self__, *,
                  values: Sequence[builtins.str]):
         """
-        :param Sequence[builtins.str] values: 转发规则的URL，仅支持绝对路径。
+        :param Sequence[builtins.str] values: Forwarding rule URL. Only absolute paths are supported.
         """
         pulumi.set(__self__, "values", values)
 
@@ -3659,7 +3659,7 @@ class GetRuleRuleConditionPathConfigResult(dict):
     @pulumi.getter
     def values(self) -> Sequence[builtins.str]:
         """
-        转发规则的URL，仅支持绝对路径。
+        Forwarding rule URL. Only absolute paths are supported.
         """
         return pulumi.get(self, "values")
 
@@ -3688,8 +3688,8 @@ class GetRuleRuleConditionQueryStringConfigValueResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 查询字符串键。
-        :param builtins.str value: 查询字符串值。
+        :param builtins.str key: Query string key.
+        :param builtins.str value: Query string value.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -3698,7 +3698,7 @@ class GetRuleRuleConditionQueryStringConfigValueResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        查询字符串键。
+        Query string key.
         """
         return pulumi.get(self, "key")
 
@@ -3706,7 +3706,7 @@ class GetRuleRuleConditionQueryStringConfigValueResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        查询字符串值。
+        Query string value.
         """
         return pulumi.get(self, "value")
 
@@ -3727,18 +3727,18 @@ class GetServerGroupHealthCheckResult(dict):
                  unhealthy_threshold: builtins.int,
                  uri: builtins.str):
         """
-        :param builtins.str domain: 健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。需至少包含一个‘.’，且不允许以‘.’开头或结尾。域名每一级由字母、数字、‘-’、‘.’字符组成，且‘-’不得出现在每一级的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示负载均衡使用各后端服务器的私网IP地址进行健康检查。
-        :param builtins.str enabled: 监听器是否开启健康检查功能。取值：on：开启（默认值）。off：不开启。
-        :param builtins.int healthy_threshold: 健康检查的健康阈值。表示连续执行指定次数的健康检查，结果均为正常的后端服务器将判定为健康检查正常。单位：次，取值：2~10，默认值为 3。
-        :param builtins.str http_code: 健康检查正常的HTTP状态码，多个状态码间用半角逗号分隔。只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值如下：http*2xx（默认值）。http*3xx（默认值）。http*4xx 。http*5xx 。
-        :param builtins.str http_version: 健康检查HTTP协议版本，只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值：HTTP1.0（使用API时，HTTP协议版本默认值）。HTTP1.1。
-        :param builtins.int interval: 开启健康检查后，执行健康检查的时间间隔。 单位：秒，取值：1~300s，默认值为 2。
-        :param builtins.str method: 开启健康检查后，健康检查的方法。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。取值如下：GET：服务器需支持GET方法。HEAD（默认）：服务器仅返回HEAD头部信息，可以降低后端性能消耗，但服务器需要支持HEAD方法。
-        :param builtins.int port: 健康检查端口。支持取值：0（默认值）：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
-        :param builtins.str protocol: 健康检查协议，当前支持HTTP、TCP。默认值为 HTTP。
-        :param builtins.int timeout: 健康检查的响应超时时间。表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查异常。单位：秒，取值：1~60，默认值为 2。
-        :param builtins.int unhealthy_threshold: 健康检查的不健康阈值。表示连续执行指定次数的健康检查，结果均为异常的后端服务器将判定为健康检查异常。单位：次，取值：2~10，默认值为 3。
-        :param builtins.str uri: 健康检查的路径，需配置为后端服务器上真实对外提供的路径。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’ 字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+        :param builtins.str domain: Domain name for health check. Configure this as the actual service address provided by the backend server. This parameter takes effect only when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with '.'. Each level of the domain name can contain letters, digits, '-', and '.' characters, and '-' cannot appear at the beginning or end of any level. Length: 1–128 characters. If this parameter is not specified or no value is provided, the default is empty, meaning the load balancer uses the private IP address of each backend server for health checks.
+        :param builtins.str enabled: Whether the listener enables health check. Values: on: enabled (default), off: disabled.
+        :param builtins.int healthy_threshold: Health check threshold. Indicates the number of consecutive successful health checks required for a backend server to be considered healthy. Unit: times. Value range: 2–10. Default: 3.
+        :param builtins.str http_code: HTTP status codes for a successful health check. Separate multiple codes with commas. This parameter is available only when HealthCheck.Protocol is HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
+        :param builtins.str http_version: Health check HTTP protocol version. This parameter is available only when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default for API usage), HTTP1.1.
+        :param builtins.int interval: After health checks are enabled, the interval for performing health checks. Unit: seconds. Value range: 1–300s. Default: 2.
+        :param builtins.str method: Health check method after health checks are enabled. This parameter is valid only when HealthCheck.Protocol is set to HTTP. Values: GET: The server must support the GET method. HEAD (default): The server returns only the HEAD header, which reduces backend resource consumption, but the server must support the HEAD method.
+        :param builtins.int port: Health check port. Supported values: 0 (default): Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
+        :param builtins.str protocol: Health check protocol. Currently supports HTTP and TCP. Default: HTTP.
+        :param builtins.int timeout: Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered abnormal. Unit: seconds. Value range: 1–60. Default: 2.
+        :param builtins.int unhealthy_threshold: Unhealthy threshold for health checks. Indicates that a backend server is considered unhealthy if it fails the specified number of consecutive health checks. Unit: times. Range: 2–10. Default: 3.
+        :param builtins.str uri: Health check path. Must be configured as the actual path provided by the backend server. This parameter is only effective when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length: 1–128 characters. If this parameter is not specified or specified without a value, the default is '/'.
         """
         pulumi.set(__self__, "domain", domain)
         pulumi.set(__self__, "enabled", enabled)
@@ -3757,7 +3757,7 @@ class GetServerGroupHealthCheckResult(dict):
     @pulumi.getter
     def domain(self) -> builtins.str:
         """
-        健康检查的域名，需配置为后端服务器上真实对外提供服务的地址。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。需至少包含一个‘.’，且不允许以‘.’开头或结尾。域名每一级由字母、数字、‘-’、‘.’字符组成，且‘-’不得出现在每一级的头部或尾部。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为空，表示负载均衡使用各后端服务器的私网IP地址进行健康检查。
+        Domain name for health check. Configure this as the actual service address provided by the backend server. This parameter takes effect only when HealthCheck.Protocol is set to HTTP. The domain name must contain at least one '.', and cannot start or end with '.'. Each level of the domain name can contain letters, digits, '-', and '.' characters, and '-' cannot appear at the beginning or end of any level. Length: 1–128 characters. If this parameter is not specified or no value is provided, the default is empty, meaning the load balancer uses the private IP address of each backend server for health checks.
         """
         return pulumi.get(self, "domain")
 
@@ -3765,7 +3765,7 @@ class GetServerGroupHealthCheckResult(dict):
     @pulumi.getter
     def enabled(self) -> builtins.str:
         """
-        监听器是否开启健康检查功能。取值：on：开启（默认值）。off：不开启。
+        Whether the listener enables health check. Values: on: enabled (default), off: disabled.
         """
         return pulumi.get(self, "enabled")
 
@@ -3773,7 +3773,7 @@ class GetServerGroupHealthCheckResult(dict):
     @pulumi.getter(name="healthyThreshold")
     def healthy_threshold(self) -> builtins.int:
         """
-        健康检查的健康阈值。表示连续执行指定次数的健康检查，结果均为正常的后端服务器将判定为健康检查正常。单位：次，取值：2~10，默认值为 3。
+        Health check threshold. Indicates the number of consecutive successful health checks required for a backend server to be considered healthy. Unit: times. Value range: 2–10. Default: 3.
         """
         return pulumi.get(self, "healthy_threshold")
 
@@ -3781,7 +3781,7 @@ class GetServerGroupHealthCheckResult(dict):
     @pulumi.getter(name="httpCode")
     def http_code(self) -> builtins.str:
         """
-        健康检查正常的HTTP状态码，多个状态码间用半角逗号分隔。只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值如下：http*2xx（默认值）。http*3xx（默认值）。http*4xx 。http*5xx 。
+        HTTP status codes for a successful health check. Separate multiple codes with commas. This parameter is available only when HealthCheck.Protocol is HTTP. Valid values: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
         """
         return pulumi.get(self, "http_code")
 
@@ -3789,7 +3789,7 @@ class GetServerGroupHealthCheckResult(dict):
     @pulumi.getter(name="httpVersion")
     def http_version(self) -> builtins.str:
         """
-        健康检查HTTP协议版本，只有 HealthCheck.Protocol 为 HTTP 时才存在该参数。取值：HTTP1.0（使用API时，HTTP协议版本默认值）。HTTP1.1。
+        Health check HTTP protocol version. This parameter is available only when HealthCheck.Protocol is set to HTTP. Values: HTTP1.0 (default for API usage), HTTP1.1.
         """
         return pulumi.get(self, "http_version")
 
@@ -3797,7 +3797,7 @@ class GetServerGroupHealthCheckResult(dict):
     @pulumi.getter
     def interval(self) -> builtins.int:
         """
-        开启健康检查后，执行健康检查的时间间隔。 单位：秒，取值：1~300s，默认值为 2。
+        After health checks are enabled, the interval for performing health checks. Unit: seconds. Value range: 1–300s. Default: 2.
         """
         return pulumi.get(self, "interval")
 
@@ -3805,7 +3805,7 @@ class GetServerGroupHealthCheckResult(dict):
     @pulumi.getter
     def method(self) -> builtins.str:
         """
-        开启健康检查后，健康检查的方法。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。取值如下：GET：服务器需支持GET方法。HEAD（默认）：服务器仅返回HEAD头部信息，可以降低后端性能消耗，但服务器需要支持HEAD方法。
+        Health check method after health checks are enabled. This parameter is valid only when HealthCheck.Protocol is set to HTTP. Values: GET: The server must support the GET method. HEAD (default): The server returns only the HEAD header, which reduces backend resource consumption, but the server must support the HEAD method.
         """
         return pulumi.get(self, "method")
 
@@ -3813,7 +3813,7 @@ class GetServerGroupHealthCheckResult(dict):
     @pulumi.getter
     def port(self) -> builtins.int:
         """
-        健康检查端口。支持取值：0（默认值）：使用后端服务器端口进行健康检查。1-65535：使用您指定的端口进行健康检查。
+        Health check port. Supported values: 0 (default): Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
         """
         return pulumi.get(self, "port")
 
@@ -3821,7 +3821,7 @@ class GetServerGroupHealthCheckResult(dict):
     @pulumi.getter
     def protocol(self) -> builtins.str:
         """
-        健康检查协议，当前支持HTTP、TCP。默认值为 HTTP。
+        Health check protocol. Currently supports HTTP and TCP. Default: HTTP.
         """
         return pulumi.get(self, "protocol")
 
@@ -3829,7 +3829,7 @@ class GetServerGroupHealthCheckResult(dict):
     @pulumi.getter
     def timeout(self) -> builtins.int:
         """
-        健康检查的响应超时时间。表示如果后端服务器在指定的时间内没有正确响应，则判定为健康检查异常。单位：秒，取值：1~60，默认值为 2。
+        Health check response timeout. If the backend server does not respond correctly within the specified time, the health check is considered abnormal. Unit: seconds. Value range: 1–60. Default: 2.
         """
         return pulumi.get(self, "timeout")
 
@@ -3837,7 +3837,7 @@ class GetServerGroupHealthCheckResult(dict):
     @pulumi.getter(name="unhealthyThreshold")
     def unhealthy_threshold(self) -> builtins.int:
         """
-        健康检查的不健康阈值。表示连续执行指定次数的健康检查，结果均为异常的后端服务器将判定为健康检查异常。单位：次，取值：2~10，默认值为 3。
+        Unhealthy threshold for health checks. Indicates that a backend server is considered unhealthy if it fails the specified number of consecutive health checks. Unit: times. Range: 2–10. Default: 3.
         """
         return pulumi.get(self, "unhealthy_threshold")
 
@@ -3845,7 +3845,7 @@ class GetServerGroupHealthCheckResult(dict):
     @pulumi.getter
     def uri(self) -> builtins.str:
         """
-        健康检查的路径，需配置为后端服务器上真实对外提供的路径。只有 HealthCheck.Protocol 设置为 HTTP 时该参数生效。必须以字符‘/’开头。仅包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&’、‘＝’ 字符。长度限制为1 ～ 128个字符。不传入该参数或该参数不传入数值时，默认为“/”。
+        Health check path. Must be configured as the actual path provided by the backend server. This parameter is only effective when HealthCheck.Protocol is set to HTTP. Must start with '/'. Only letters, numbers, '-', '_', '/', '.', '%', '?', '#', '&', '=' are allowed. Length: 1–128 characters. If this parameter is not specified or specified without a value, the default is '/'.
         """
         return pulumi.get(self, "uri")
 
@@ -3855,7 +3855,7 @@ class GetServerGroupListenerResult(dict):
     def __init__(__self__, *,
                  listener_id: builtins.str):
         """
-        :param builtins.str listener_id: 监听器的ID。
+        :param builtins.str listener_id: Listener ID.
         """
         pulumi.set(__self__, "listener_id", listener_id)
 
@@ -3863,7 +3863,7 @@ class GetServerGroupListenerResult(dict):
     @pulumi.getter(name="listenerId")
     def listener_id(self) -> builtins.str:
         """
-        监听器的ID。
+        Listener ID.
         """
         return pulumi.get(self, "listener_id")
 
@@ -3880,14 +3880,14 @@ class GetServerGroupServerResult(dict):
                  type: builtins.str,
                  weight: builtins.int):
         """
-        :param builtins.str description: 后端服务器的描述。
-        :param builtins.str instance_id: 云服务器实例或网卡的ID。
-        :param builtins.str ip: 后端服务器的私网IP地址。
-        :param builtins.int port: 后端服务器接收请求的端口号。
-        :param builtins.str remote_enabled: 是否开启远端IP功能。当后端服务器实例类型为IP地址，即 Type 取值为 ip 时，此字段有效。取值：on：开启。off（默认值）：不开启。
-        :param builtins.str server_id: 后端服务器ID。
-        :param builtins.str type: 后端服务器实例类型。ecs：云服务器实例。eni：辅助网卡。ip：IP地址（仅 Ip 类型服务器组有效）。
-        :param builtins.int weight: 后端服务器的权重。
+        :param builtins.str description: Description of the backend server.
+        :param builtins.str instance_id: ID of the cloud server instance or network interface card.
+        :param builtins.str ip: Private IP address of the backend server.
+        :param builtins.int port: Port number on which the backend server receives requests.
+        :param builtins.str remote_enabled: Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
+        :param builtins.str server_id: Backend server ID.
+        :param builtins.str type: Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
+        :param builtins.int weight: Weight of the backend server.
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "instance_id", instance_id)
@@ -3902,7 +3902,7 @@ class GetServerGroupServerResult(dict):
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        后端服务器的描述。
+        Description of the backend server.
         """
         return pulumi.get(self, "description")
 
@@ -3910,7 +3910,7 @@ class GetServerGroupServerResult(dict):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> builtins.str:
         """
-        云服务器实例或网卡的ID。
+        ID of the cloud server instance or network interface card.
         """
         return pulumi.get(self, "instance_id")
 
@@ -3918,7 +3918,7 @@ class GetServerGroupServerResult(dict):
     @pulumi.getter
     def ip(self) -> builtins.str:
         """
-        后端服务器的私网IP地址。
+        Private IP address of the backend server.
         """
         return pulumi.get(self, "ip")
 
@@ -3926,7 +3926,7 @@ class GetServerGroupServerResult(dict):
     @pulumi.getter
     def port(self) -> builtins.int:
         """
-        后端服务器接收请求的端口号。
+        Port number on which the backend server receives requests.
         """
         return pulumi.get(self, "port")
 
@@ -3934,7 +3934,7 @@ class GetServerGroupServerResult(dict):
     @pulumi.getter(name="remoteEnabled")
     def remote_enabled(self) -> builtins.str:
         """
-        是否开启远端IP功能。当后端服务器实例类型为IP地址，即 Type 取值为 ip 时，此字段有效。取值：on：开启。off（默认值）：不开启。
+        Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
         """
         return pulumi.get(self, "remote_enabled")
 
@@ -3942,7 +3942,7 @@ class GetServerGroupServerResult(dict):
     @pulumi.getter(name="serverId")
     def server_id(self) -> builtins.str:
         """
-        后端服务器ID。
+        Backend server ID.
         """
         return pulumi.get(self, "server_id")
 
@@ -3950,7 +3950,7 @@ class GetServerGroupServerResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        后端服务器实例类型。ecs：云服务器实例。eni：辅助网卡。ip：IP地址（仅 Ip 类型服务器组有效）。
+        Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
         """
         return pulumi.get(self, "type")
 
@@ -3958,7 +3958,7 @@ class GetServerGroupServerResult(dict):
     @pulumi.getter
     def weight(self) -> builtins.int:
         """
-        后端服务器的权重。
+        Weight of the backend server.
         """
         return pulumi.get(self, "weight")
 
@@ -3971,10 +3971,10 @@ class GetServerGroupStickySessionConfigResult(dict):
                  sticky_session_enabled: builtins.str,
                  sticky_session_type: builtins.str):
         """
-        :param builtins.str cookie: 服务配置的会话保持 Cookie 名称。仅在开启会话保持功能并选择重写 Cookie 时有效。 具体规则如下：Cookie 名称长度为1~200个字符。名称只能包含 ASCII 英文字母和数字字符，不能包含半角逗号（,）、半角分号（;）或空格，也不能以美元符号（$）开头。当 tickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 server时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，该参数无效。
-        :param builtins.int cookie_timeout: 会话保持 Cookie 超时时间。仅在开启会话保持功能并选择植入 Cookie 时有效。 单位：秒。具体规则如下：超时时间的取值范围：1～86400。 默认值为：1000。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionType 为 server 时，此参数无效。
-        :param builtins.str sticky_session_enabled: 是否开启会话保持功能。on：开启；off（默认值）：关闭。
-        :param builtins.str sticky_session_type: 对 Cookie 的处理方式。当 StickySessionConfig.StickySessionEnabled 值为 on 时，此字段参数必填。取值如下：insert：植入 Cookie；ALB 会记录客户端请求第一次转发到的后端服务器。ALB 在返回请求中植入 Cookie ，后续客户端请求携带此 Cookie，ALB 会将请求转发到之前记录的后端服务器上。server：重写 Cookie；开启重写 Cookie 的会话保持后，在客户端请求第一次转发到后端服务器后，ALB 在返回请求中发现您自定义的 Cookie 时，会对原来的 Cookie 进行重写。后续客户端请求携带改写后的 Cookie，ALB 会将请求转发到之前记录的后端服务器上。
+        :param builtins.str cookie: Name of the session persistence Cookie for service configuration. This is only valid when session persistence is enabled and Cookie overwrite is selected. The specific rules are as follows: The Cookie name must be 1–200 characters long. The name can only contain ASCII letters and digits, cannot contain commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). This parameter is required when tickySessionConfig.StickySessionEnabled is set to on and StickySessionConfig.StickySessionType is server. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert.
+        :param builtins.int cookie_timeout: Session persistence cookie timeout. Only valid when session persistence is enabled and the insert cookie option is selected. Unit: seconds. Rules: Timeout range: 1–86400. Default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
+        :param builtins.str sticky_session_enabled: Enable session persistence. on: Enable; off (default): Disable.
+        :param builtins.str sticky_session_type: Cookie handling method. This field is required when StickySessionConfig.StickySessionEnabled is set to on. Parameter values: insert: Inserts a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response. Subsequent client requests carry this Cookie, and ALB forwards the requests to the previously recorded backend server. server: Overwrites the Cookie. When session persistence with Cookie overwrite is enabled, after the client's first request is forwarded to the backend server, if ALB detects your custom Cookie in the response, it overwrites the original Cookie. Subsequent client requests carry the overwritten Cookie, and ALB forwards the requests to the previously recorded backend server.
         """
         pulumi.set(__self__, "cookie", cookie)
         pulumi.set(__self__, "cookie_timeout", cookie_timeout)
@@ -3985,7 +3985,7 @@ class GetServerGroupStickySessionConfigResult(dict):
     @pulumi.getter
     def cookie(self) -> builtins.str:
         """
-        服务配置的会话保持 Cookie 名称。仅在开启会话保持功能并选择重写 Cookie 时有效。 具体规则如下：Cookie 名称长度为1~200个字符。名称只能包含 ASCII 英文字母和数字字符，不能包含半角逗号（,）、半角分号（;）或空格，也不能以美元符号（$）开头。当 tickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 server时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，该参数无效。
+        Name of the session persistence Cookie for service configuration. This is only valid when session persistence is enabled and Cookie overwrite is selected. The specific rules are as follows: The Cookie name must be 1–200 characters long. The name can only contain ASCII letters and digits, cannot contain commas (,), semicolons (;), or spaces, and cannot start with a dollar sign ($). This parameter is required when tickySessionConfig.StickySessionEnabled is set to on and StickySessionConfig.StickySessionType is server. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert.
         """
         return pulumi.get(self, "cookie")
 
@@ -3993,7 +3993,7 @@ class GetServerGroupStickySessionConfigResult(dict):
     @pulumi.getter(name="cookieTimeout")
     def cookie_timeout(self) -> builtins.int:
         """
-        会话保持 Cookie 超时时间。仅在开启会话保持功能并选择植入 Cookie 时有效。 单位：秒。具体规则如下：超时时间的取值范围：1～86400。 默认值为：1000。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionConfig.StickySessionType 为 insert 时，此参数必填。当 StickySessionConfig.StickySessionEnabled 值为 on，且 StickySessionType 为 server 时，此参数无效。
+        Session persistence cookie timeout. Only valid when session persistence is enabled and the insert cookie option is selected. Unit: seconds. Rules: Timeout range: 1–86400. Default: 1000. This parameter is required when StickySessionConfig.StickySessionEnabled is on and StickySessionConfig.StickySessionType is insert. This parameter is invalid when StickySessionConfig.StickySessionEnabled is on and StickySessionType is server.
         """
         return pulumi.get(self, "cookie_timeout")
 
@@ -4001,7 +4001,7 @@ class GetServerGroupStickySessionConfigResult(dict):
     @pulumi.getter(name="stickySessionEnabled")
     def sticky_session_enabled(self) -> builtins.str:
         """
-        是否开启会话保持功能。on：开启；off（默认值）：关闭。
+        Enable session persistence. on: Enable; off (default): Disable.
         """
         return pulumi.get(self, "sticky_session_enabled")
 
@@ -4009,7 +4009,7 @@ class GetServerGroupStickySessionConfigResult(dict):
     @pulumi.getter(name="stickySessionType")
     def sticky_session_type(self) -> builtins.str:
         """
-        对 Cookie 的处理方式。当 StickySessionConfig.StickySessionEnabled 值为 on 时，此字段参数必填。取值如下：insert：植入 Cookie；ALB 会记录客户端请求第一次转发到的后端服务器。ALB 在返回请求中植入 Cookie ，后续客户端请求携带此 Cookie，ALB 会将请求转发到之前记录的后端服务器上。server：重写 Cookie；开启重写 Cookie 的会话保持后，在客户端请求第一次转发到后端服务器后，ALB 在返回请求中发现您自定义的 Cookie 时，会对原来的 Cookie 进行重写。后续客户端请求携带改写后的 Cookie，ALB 会将请求转发到之前记录的后端服务器上。
+        Cookie handling method. This field is required when StickySessionConfig.StickySessionEnabled is set to on. Parameter values: insert: Inserts a Cookie. ALB records the backend server to which the client's first request is forwarded. ALB inserts a Cookie in the response. Subsequent client requests carry this Cookie, and ALB forwards the requests to the previously recorded backend server. server: Overwrites the Cookie. When session persistence with Cookie overwrite is enabled, after the client's first request is forwarded to the backend server, if ALB detects your custom Cookie in the response, it overwrites the original Cookie. Subsequent client requests carry the overwritten Cookie, and ALB forwards the requests to the previously recorded backend server.
         """
         return pulumi.get(self, "sticky_session_type")
 
@@ -4020,8 +4020,8 @@ class GetServerGroupTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签的标签键。同一资源的标签键不允许重复。
-        :param builtins.str value: 标签的标签值。
+        :param builtins.str key: Tag key. Tag keys for the same resource must be unique.
+        :param builtins.str value: Tag value of the tag.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -4030,7 +4030,7 @@ class GetServerGroupTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签的标签键。同一资源的标签键不允许重复。
+        Tag key. Tag keys for the same resource must be unique.
         """
         return pulumi.get(self, "key")
 
@@ -4038,7 +4038,7 @@ class GetServerGroupTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签的标签值。
+        Tag value of the tag.
         """
         return pulumi.get(self, "value")
 

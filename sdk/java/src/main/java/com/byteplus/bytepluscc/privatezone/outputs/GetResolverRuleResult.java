@@ -17,22 +17,22 @@ import java.util.Objects;
 @CustomType
 public final class GetResolverRuleResult {
     /**
-     * @return 转发规则的创建时间
+     * @return Creation time of the forwarding rule
      * 
      */
     private String createdTime;
     /**
-     * @return 转发规则是否被启用。true：启用。false：禁用。
+     * @return Whether the forwarding rule is enabled. true: enabled. false: disabled
      * 
      */
     private Boolean enable;
     /**
-     * @return 终端节点的 ID。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
+     * @return Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
      * 
      */
     private Integer endpointId;
     /**
-     * @return 外部的 DNS 服务器的 IP 地址和端口。您最多只能添加 10 个 IP 地址。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
+     * @return IP address and port of the external DNS server. You can add up to 10 IP addresses. This parameter is only valid and required when the Type parameter is OUTBOUND
      * 
      */
     private List<GetResolverRuleForwardIP> forwardIPs;
@@ -42,80 +42,80 @@ public final class GetResolverRuleResult {
      */
     private String id;
     /**
-     * @return 最近一次更新转发规则的账号的 ID
+     * @return Account ID of the last update to the forwarding rule
      * 
      */
     private String lastOperator;
     /**
-     * @return 递归 DNS 服务器的出口 IP 地址的运营商。该参数仅在 Type 参数是 LINE 时有效。支持的取值：移动：中国移动，电信：中国电信，联通：中国联通
+     * @return Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
      * 
      */
     private String line;
     /**
-     * @return 转发规则的名称。支持 UTF-8 格式。
+     * @return Name of the forwarding rule. Supports UTF-8 format
      * 
      */
     private String name;
     /**
-     * @return 转发规则所属的项目名称。默认为 default。
+     * @return Project name associated with the forwarding rule. Default is default
      * 
      */
     private String projectName;
     /**
-     * @return 转发规则的 ID。
+     * @return Forwarding rule ID
      * 
      */
     private String ruleId;
     /**
-     * @return 转发规则所属的一个或多个标签
+     * @return One or more tags associated with the forwarding rule
      * 
      */
     private List<GetResolverRuleTag> tags;
     /**
-     * @return 转发规则类型。OUTBOUND：转发到外部的 DNS 服务器。LINE：自定义公网递归 DNS 服务器的出口 IP 地址的运营商。
+     * @return Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
      * 
      */
     private String type;
     /**
-     * @return 转发规则的更新时间
+     * @return Update time of the forwarding rule
      * 
      */
     private String updatedTime;
     /**
-     * @return 转发规则所关联的 VPC。转发规则在关联的 VPC 中生效。Type 参数是 OUTBOUND 时，VPC 的地域必须和终端节点所在的地域相同。
+     * @return VPC associated with the forwarding rule. The forwarding rule takes effect in the associated VPC. When the Type parameter is OUTBOUND, the VPC region must match the region of the endpoint
      * 
      */
     private List<GetResolverRuleVpC> vpCs;
     /**
-     * @return 转发规则转发规则所关联的域名。您可以输入一个或多个域名。多个域名之间使用英文逗号, 分隔。最多支持输入 500 个域名。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。如果您把该参数设置为 *，则转发规则适用于 VPC 关联的所有域名。
+     * @return Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
      * 
      */
     private String zoneName;
 
     private GetResolverRuleResult() {}
     /**
-     * @return 转发规则的创建时间
+     * @return Creation time of the forwarding rule
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 转发规则是否被启用。true：启用。false：禁用。
+     * @return Whether the forwarding rule is enabled. true: enabled. false: disabled
      * 
      */
     public Boolean enable() {
         return this.enable;
     }
     /**
-     * @return 终端节点的 ID。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
+     * @return Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
      * 
      */
     public Integer endpointId() {
         return this.endpointId;
     }
     /**
-     * @return 外部的 DNS 服务器的 IP 地址和端口。您最多只能添加 10 个 IP 地址。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。
+     * @return IP address and port of the external DNS server. You can add up to 10 IP addresses. This parameter is only valid and required when the Type parameter is OUTBOUND
      * 
      */
     public List<GetResolverRuleForwardIP> forwardIPs() {
@@ -129,70 +129,70 @@ public final class GetResolverRuleResult {
         return this.id;
     }
     /**
-     * @return 最近一次更新转发规则的账号的 ID
+     * @return Account ID of the last update to the forwarding rule
      * 
      */
     public String lastOperator() {
         return this.lastOperator;
     }
     /**
-     * @return 递归 DNS 服务器的出口 IP 地址的运营商。该参数仅在 Type 参数是 LINE 时有效。支持的取值：移动：中国移动，电信：中国电信，联通：中国联通
+     * @return Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
      * 
      */
     public String line() {
         return this.line;
     }
     /**
-     * @return 转发规则的名称。支持 UTF-8 格式。
+     * @return Name of the forwarding rule. Supports UTF-8 format
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 转发规则所属的项目名称。默认为 default。
+     * @return Project name associated with the forwarding rule. Default is default
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 转发规则的 ID。
+     * @return Forwarding rule ID
      * 
      */
     public String ruleId() {
         return this.ruleId;
     }
     /**
-     * @return 转发规则所属的一个或多个标签
+     * @return One or more tags associated with the forwarding rule
      * 
      */
     public List<GetResolverRuleTag> tags() {
         return this.tags;
     }
     /**
-     * @return 转发规则类型。OUTBOUND：转发到外部的 DNS 服务器。LINE：自定义公网递归 DNS 服务器的出口 IP 地址的运营商。
+     * @return Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
      * 
      */
     public String type() {
         return this.type;
     }
     /**
-     * @return 转发规则的更新时间
+     * @return Update time of the forwarding rule
      * 
      */
     public String updatedTime() {
         return this.updatedTime;
     }
     /**
-     * @return 转发规则所关联的 VPC。转发规则在关联的 VPC 中生效。Type 参数是 OUTBOUND 时，VPC 的地域必须和终端节点所在的地域相同。
+     * @return VPC associated with the forwarding rule. The forwarding rule takes effect in the associated VPC. When the Type parameter is OUTBOUND, the VPC region must match the region of the endpoint
      * 
      */
     public List<GetResolverRuleVpC> vpCs() {
         return this.vpCs;
     }
     /**
-     * @return 转发规则转发规则所关联的域名。您可以输入一个或多个域名。多个域名之间使用英文逗号, 分隔。最多支持输入 500 个域名。该参数仅在 Type 参数是 OUTBOUND 时有效且为必选参数。如果您把该参数设置为 *，则转发规则适用于 VPC 关联的所有域名。
+     * @return Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
      * 
      */
     public String zoneName() {

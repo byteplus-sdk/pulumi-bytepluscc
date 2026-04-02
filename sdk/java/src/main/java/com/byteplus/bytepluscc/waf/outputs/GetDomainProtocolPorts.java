@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainProtocolPorts {
     /**
-     * @return HTTP 协议的端口号。
+     * @return HTTP protocol port number
      * 
      */
     private List<Integer> http;
     /**
-     * @return HTTPS 协议的端口号。
+     * @return HTTPS protocol port number
      * 
      */
     private List<Integer> https;
 
     private GetDomainProtocolPorts() {}
     /**
-     * @return HTTP 协议的端口号。
+     * @return HTTP protocol port number
      * 
      */
     public List<Integer> http() {
         return this.http;
     }
     /**
-     * @return HTTPS 协议的端口号。
+     * @return HTTPS protocol port number
      * 
      */
     public List<Integer> https() {

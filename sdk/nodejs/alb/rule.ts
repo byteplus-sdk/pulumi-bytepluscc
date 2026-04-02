@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * ALB 按照您设置的转发规则，对不同特征的访问流量进行分发。您可以为一个监听器配置多条转发规则。基础版 ALB 实例支持基于域名和路径的转发规则。标准版 ALB 实例支持基于域名、路径和 HTTP 标头的转发规则，并支持复合转发条件。
+ * ALB distributes incoming traffic based on the forwarding rules you set. You can configure multiple forwarding rules for a single listener. Basic edition ALB instances support forwarding rules based on domain and path. Standard edition ALB instances support forwarding rules based on domain, path, and HTTP headers, and support composite forwarding conditions.
  *
  * ## Import
  *
@@ -44,61 +44,61 @@ export class Rule extends pulumi.CustomResource {
     }
 
     /**
-     * 转发规则的描述。
+     * Forwarding rule description.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 转发规则的域名。
+     * Domain name of the forwarding rule.
      */
     public readonly domain!: pulumi.Output<string>;
     /**
-     * 转发规则服务器组配置
+     * Forwarding rule server group configuration.
      */
     public readonly forwardGroupConfig!: pulumi.Output<outputs.alb.RuleForwardGroupConfig>;
     /**
-     * 监听器ID。
+     * Listener ID.
      */
     public readonly listenerId!: pulumi.Output<string>;
     /**
-     * 标准版转发规则优先级。
+     * Standard edition forwarding rule priority.
      */
     public readonly priority!: pulumi.Output<number>;
     /**
-     * 重定向相关配置信息。
+     * Redirect-related configuration information.
      */
     public readonly redirectConfig!: pulumi.Output<outputs.alb.RuleRedirectConfig>;
     /**
-     * 重定向相关配置信息。
+     * Redirect-related configuration information.
      */
     public readonly rewriteConfig!: pulumi.Output<outputs.alb.RuleRewriteConfig>;
     /**
-     * 转发规则重写配置开关。on：开启。off：关闭。
+     * Forwarding rule rewrite configuration switch. on: enabled. off: disabled.
      */
     public readonly rewriteEnabled!: pulumi.Output<string>;
     /**
-     * 转发规则动作。空：默认转发至服务器组。Redirect：重定向。
+     * Forwarding rule action. Empty: default forward to server group. Redirect: redirect.
      */
     public readonly ruleAction!: pulumi.Output<string>;
     public readonly ruleActions!: pulumi.Output<outputs.alb.RuleRuleAction[]>;
     public readonly ruleConditions!: pulumi.Output<outputs.alb.RuleRuleCondition[]>;
     /**
-     * 转发规则ID。
+     * Forwarding rule ID.
      */
     public /*out*/ readonly ruleId!: pulumi.Output<string>;
     /**
-     * 转发规则关联的后端服务器组ID。
+     * Backend server group ID associated with the forwarding rule.
      */
     public readonly serverGroupId!: pulumi.Output<string>;
     /**
-     * 转发规则 QPS 限速开关。on：开启。off：关闭。
+     * Forwarding rule QPS throttling switch. on: enabled. off: disabled.
      */
     public readonly trafficLimitEnabled!: pulumi.Output<string>;
     /**
-     * 每秒请求数。取值范围：100～100000。
+     * Requests per second. Range: 100–100000.
      */
     public readonly trafficLimitQps!: pulumi.Output<number>;
     /**
-     * 转发规则的URL。
+     * Forwarding rule URL.
      */
     public readonly url!: pulumi.Output<string>;
 
@@ -163,61 +163,61 @@ export class Rule extends pulumi.CustomResource {
  */
 export interface RuleState {
     /**
-     * 转发规则的描述。
+     * Forwarding rule description.
      */
     description?: pulumi.Input<string>;
     /**
-     * 转发规则的域名。
+     * Domain name of the forwarding rule.
      */
     domain?: pulumi.Input<string>;
     /**
-     * 转发规则服务器组配置
+     * Forwarding rule server group configuration.
      */
     forwardGroupConfig?: pulumi.Input<inputs.alb.RuleForwardGroupConfig>;
     /**
-     * 监听器ID。
+     * Listener ID.
      */
     listenerId?: pulumi.Input<string>;
     /**
-     * 标准版转发规则优先级。
+     * Standard edition forwarding rule priority.
      */
     priority?: pulumi.Input<number>;
     /**
-     * 重定向相关配置信息。
+     * Redirect-related configuration information.
      */
     redirectConfig?: pulumi.Input<inputs.alb.RuleRedirectConfig>;
     /**
-     * 重定向相关配置信息。
+     * Redirect-related configuration information.
      */
     rewriteConfig?: pulumi.Input<inputs.alb.RuleRewriteConfig>;
     /**
-     * 转发规则重写配置开关。on：开启。off：关闭。
+     * Forwarding rule rewrite configuration switch. on: enabled. off: disabled.
      */
     rewriteEnabled?: pulumi.Input<string>;
     /**
-     * 转发规则动作。空：默认转发至服务器组。Redirect：重定向。
+     * Forwarding rule action. Empty: default forward to server group. Redirect: redirect.
      */
     ruleAction?: pulumi.Input<string>;
     ruleActions?: pulumi.Input<pulumi.Input<inputs.alb.RuleRuleAction>[]>;
     ruleConditions?: pulumi.Input<pulumi.Input<inputs.alb.RuleRuleCondition>[]>;
     /**
-     * 转发规则ID。
+     * Forwarding rule ID.
      */
     ruleId?: pulumi.Input<string>;
     /**
-     * 转发规则关联的后端服务器组ID。
+     * Backend server group ID associated with the forwarding rule.
      */
     serverGroupId?: pulumi.Input<string>;
     /**
-     * 转发规则 QPS 限速开关。on：开启。off：关闭。
+     * Forwarding rule QPS throttling switch. on: enabled. off: disabled.
      */
     trafficLimitEnabled?: pulumi.Input<string>;
     /**
-     * 每秒请求数。取值范围：100～100000。
+     * Requests per second. Range: 100–100000.
      */
     trafficLimitQps?: pulumi.Input<number>;
     /**
-     * 转发规则的URL。
+     * Forwarding rule URL.
      */
     url?: pulumi.Input<string>;
 }
@@ -227,57 +227,57 @@ export interface RuleState {
  */
 export interface RuleArgs {
     /**
-     * 转发规则的描述。
+     * Forwarding rule description.
      */
     description?: pulumi.Input<string>;
     /**
-     * 转发规则的域名。
+     * Domain name of the forwarding rule.
      */
     domain?: pulumi.Input<string>;
     /**
-     * 转发规则服务器组配置
+     * Forwarding rule server group configuration.
      */
     forwardGroupConfig?: pulumi.Input<inputs.alb.RuleForwardGroupConfig>;
     /**
-     * 监听器ID。
+     * Listener ID.
      */
     listenerId: pulumi.Input<string>;
     /**
-     * 标准版转发规则优先级。
+     * Standard edition forwarding rule priority.
      */
     priority?: pulumi.Input<number>;
     /**
-     * 重定向相关配置信息。
+     * Redirect-related configuration information.
      */
     redirectConfig?: pulumi.Input<inputs.alb.RuleRedirectConfig>;
     /**
-     * 重定向相关配置信息。
+     * Redirect-related configuration information.
      */
     rewriteConfig?: pulumi.Input<inputs.alb.RuleRewriteConfig>;
     /**
-     * 转发规则重写配置开关。on：开启。off：关闭。
+     * Forwarding rule rewrite configuration switch. on: enabled. off: disabled.
      */
     rewriteEnabled?: pulumi.Input<string>;
     /**
-     * 转发规则动作。空：默认转发至服务器组。Redirect：重定向。
+     * Forwarding rule action. Empty: default forward to server group. Redirect: redirect.
      */
     ruleAction?: pulumi.Input<string>;
     ruleActions?: pulumi.Input<pulumi.Input<inputs.alb.RuleRuleAction>[]>;
     ruleConditions?: pulumi.Input<pulumi.Input<inputs.alb.RuleRuleCondition>[]>;
     /**
-     * 转发规则关联的后端服务器组ID。
+     * Backend server group ID associated with the forwarding rule.
      */
     serverGroupId?: pulumi.Input<string>;
     /**
-     * 转发规则 QPS 限速开关。on：开启。off：关闭。
+     * Forwarding rule QPS throttling switch. on: enabled. off: disabled.
      */
     trafficLimitEnabled?: pulumi.Input<string>;
     /**
-     * 每秒请求数。取值范围：100～100000。
+     * Requests per second. Range: 100–100000.
      */
     trafficLimitQps?: pulumi.Input<number>;
     /**
-     * 转发规则的URL。
+     * Forwarding rule URL.
      */
     url?: pulumi.Input<string>;
 }

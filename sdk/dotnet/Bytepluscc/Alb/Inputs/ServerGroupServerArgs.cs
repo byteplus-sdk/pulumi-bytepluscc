@@ -14,49 +14,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Inputs
     public sealed class ServerGroupServerArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 后端服务器的描述。
+        /// Description of the backend server.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 云服务器实例或网卡的ID。
+        /// ID of the cloud server instance or network interface card.
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 后端服务器的私网IP地址。
+        /// Private IP address of the backend server.
         /// </summary>
         [Input("ip")]
         public Input<string>? Ip { get; set; }
 
         /// <summary>
-        /// 后端服务器接收请求的端口号。
+        /// Port number on which the backend server receives requests.
         /// </summary>
         [Input("port")]
         public Input<int>? Port { get; set; }
 
         /// <summary>
-        /// 是否开启远端IP功能。当后端服务器实例类型为IP地址，即 Type 取值为 ip 时，此字段有效。取值：on：开启。off（默认值）：不开启。
+        /// Enable remote IP feature. This field is valid only when the backend server instance type is IP address, that is, when Type is set to ip. Parameter values: on: Enable. off (default): Disable.
         /// </summary>
         [Input("remoteEnabled")]
         public Input<string>? RemoteEnabled { get; set; }
 
         /// <summary>
-        /// 后端服务器ID。
+        /// Backend server ID.
         /// </summary>
         [Input("serverId")]
         public Input<string>? ServerId { get; set; }
 
         /// <summary>
-        /// 后端服务器实例类型。ecs：云服务器实例。eni：辅助网卡。ip：IP地址（仅 Ip 类型服务器组有效）。
+        /// Backend server instance type. ecs: ECS instance. eni: auxiliary ENI. ip: IP address (valid only for IP-type server groups).
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// 后端服务器的权重。
+        /// Weight of the backend server.
         /// </summary>
         [Input("weight")]
         public Input<int>? Weight { get; set; }

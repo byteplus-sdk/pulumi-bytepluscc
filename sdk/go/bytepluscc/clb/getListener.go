@@ -30,97 +30,97 @@ type LookupListenerArgs struct {
 
 // A collection of values returned by getListener.
 type LookupListenerResult struct {
-	// 监听器绑定的访问控制策略组ID。仅AclStatus参数为on时返回。
+	// ID of the access control policy group bound to the listener. Returned only when the AclStatus parameter is set to on.
 	AclIds []string `pulumi:"aclIds"`
-	// 是否开启访问控制功能。取值如下：on：开启。off（默认值）：不开启。
+	// Enable access control. Values: on: enabled. off (default): disabled.
 	AclStatus string `pulumi:"aclStatus"`
-	// 访问控制的方式。white：白名单。black：黑名单。仅AclStatus参数为on时，本参数有效。
+	// Access control mode. white: Allowlist. black: Denylist. This parameter is valid only when the AclStatus parameter is on.
 	AclType string `pulumi:"aclType"`
-	// 监听器的带宽上限，即此监听器独占CLB实例的带宽，单位为Mbps。-1（默认值）：此监听器不独占CLB的带，与其他监听器共享CLB实例未被独占的带宽。取值范围：1～CLB实例未被独占的带宽。
+	// Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.
 	Bandwidth int `pulumi:"bandwidth"`
-	// 双向认证的CA证书。
+	// CA certificate for mutual authentication.
 	CaCertificateId string `pulumi:"caCertificateId"`
-	// 是否开启双向认证。on：开启。off（默认值）：不开启。
+	// Enable mutual authentication. on: enabled. off (default): disabled.
 	CaEnabled string `pulumi:"caEnabled"`
-	// 证书中心的证书的ID。
+	// Certificate ID from Certificate Center.
 	CertCenterCertificateId string `pulumi:"certCenterCertificateId"`
-	// CLB侧证书管理模块的证书的ID。
+	// Certificate ID from the CLB certificate management module.
 	CertificateId string `pulumi:"certificateId"`
-	// 证书的来源。clb (默认)：CLB上传的证书。cert_center：证书中心上传的证书。user：用户上传的证书。
+	// Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
 	CertificateSource string `pulumi:"certificateSource"`
-	// 读取客户端请求正文的超时时间。此超时时间仅针对两个连续的读操作之间设置，而非整个请求的传输过程。取值范围为 30-120秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效
+	// Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
 	ClientBodyTimeout int `pulumi:"clientBodyTimeout"`
-	// 读取客户端请求头的超时时间。取值范围为30-120秒。默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+	// Timeout for reading the client request header. Value range: 30–120 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
 	ClientHeaderTimeout int `pulumi:"clientHeaderTimeout"`
-	// 监听器是否开启连接优雅中断功能。on：开启。off：不开启。参数Protocol返回为HTTP或HTTPS时，该参数固定返回off。
+	// Whether the listener enables graceful connection termination. on: enabled. off: not enabled. When Protocol returns HTTP or HTTPS, this parameter always returns off.
 	ConnectionDrainEnabled string `pulumi:"connectionDrainEnabled"`
-	// 连接优雅中断的超时时间，单位为秒。参数ConnectionDrainEnabled返回为off时，该参数返回0。
+	// Timeout for graceful connection termination, in seconds. If ConnectionDrainEnabled returns off, this parameter returns 0.
 	ConnectionDrainTimeout int `pulumi:"connectionDrainTimeout"`
-	// 后端服务器配置的会话保持的Cookie名称。仅参数PersistenceType取server时，本参数有效且必填。只能包含字母、数字、下划线（_）和中划线（-）。长度限制在1～200字符之间。
+	// Name of the session persistence cookie configured on the backend server. This parameter is valid and required only when PersistenceType is set to server. Only letters, numbers, underscores (_), and hyphens (-) are allowed. Length must be between 1 and 200 characters.
 	Cookie string `pulumi:"cookie"`
-	// 每秒新建连接数的上限。-1（默认值）：不限制，即CLB实例的新建连接数上限。取值范围：1～CLB实例的新连接数上限。
+	// Maximum number of new connections per second. -1 (default): No limit, which means the maximum number of new connections allowed by the CLB instance. Value range: 1 to the maximum number of new connections allowed by the CLB instance.
 	Cps int `pulumi:"cps"`
-	// 监听器的创建时间。
+	// Creation time of the listener.
 	CreatedTime string `pulumi:"createdTime"`
-	// 监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
+	// Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
 	Description string `pulumi:"description"`
-	// 是否启用监听器。on（默认值）：开启。off：不开启。
+	// Enable listener. on (default): enabled. off: disabled.
 	Enabled string `pulumi:"enabled"`
-	// 全端口监听的结束端口，取值范围为1-65535。参数Port为“0”时，该参数必须传入，且该参数取值应大于tartPort。
+	// End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.
 	EndPort int `pulumi:"endPort"`
-	// 监听器的连接超时时间。仅参数Protocol取TCP或UDP时，本参数有效。取值如下：TCP协议：10-900秒，默认为900秒。UDP协议：1-300秒，默认为90秒。
+	// Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
 	EstablishedTimeout int `pulumi:"establishedTimeout"`
-	// 健康检查相关信息。
+	// Health check information.
 	HealthCheck GetListenerHealthCheck `pulumi:"healthCheck"`
-	// 监听器是否开启前端HTTP 2.0协议。仅参数`Protocol取HTTPS时，本参数有效。取值如下：|on：开启。off（默认值）：不开启。
+	// Whether the listener enables frontend HTTP 2.0 protocol. This parameter is valid only when Protocol is set to HTTPS. Values: on: enabled. off (default): disabled.
 	Http2Enabled string `pulumi:"http2Enabled"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 客户端与CLB之间的长连接超时时间。取值范围为 0-900秒，默认为75秒。0表示禁用长连接。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+	// Keep-alive timeout between the client and CLB. Range: 0–900 seconds, default is 75 seconds. 0 disables keep-alive. This parameter is valid only when Protocol is set to HTTP or HTTPS.
 	KeepaliveTimeout int `pulumi:"keepaliveTimeout"`
-	// 监听器的ID。
+	// Listener ID.
 	ListenerId string `pulumi:"listenerId"`
-	// 监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
+	// Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If left blank, 'Protocol-Port' will be used as the default listener name.
 	ListenerName string `pulumi:"listenerName"`
-	// CLB实例的ID。
+	// ID of the CLB instance.
 	LoadBalancerId string `pulumi:"loadBalancerId"`
-	// 最大并发连接数的上限。-1（默认值）：不限制，CLB实例的最大并发连接数上限。取值范围：1～CLB实例的最大并发连接数上限。
+	// Maximum concurrent connections limit. -1 (default): unlimited (up to the maximum concurrent connections supported by the CLB instance). Value range: 1 to the maximum concurrent connections limit of the CLB instance.
 	MaxConnections int `pulumi:"maxConnections"`
-	// 会话保持的超时时间，单位为秒。取值范围根据参数PersistenceType取值有所不同。PersistenceType置为source_ip时，取值范围为1～3600。PersistenceType配置为insert时，取值范围为1～86400。
+	// Session persistence timeout, in seconds. The value range depends on the PersistenceType parameter. When PersistenceType is set to source_ip, the range is 1–3600. When PersistenceType is set to insert, the range is 1–86400.
 	PersistenceTimeout int `pulumi:"persistenceTimeout"`
-	// 会话保持的类型。取值如下：off（默认值）：不启用会话保持。source_ip：源地址IP，仅参数ProtocolTCP或UDP时，本取值有效。insert：植入Cookie，仅参数Protocol取HTTP或HTTPS且Scheduler取wrr时，本取值生效。server：重写Cookie，仅参数Protocol取HTTP或HTTPS且Scheduler取wrr时，本取值生效。。
+	// Session persistence type. Values: off (default): session persistence disabled. source_ip: source IP address, valid only when Protocol is TCP or UDP. insert: insert Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr. server: rewrite Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr.
 	PersistenceType string `pulumi:"persistenceType"`
-	// 监听器接收请求使用的端口。取值范围为 0～65535。参数Protocol为“TCP”或“UDP”时，支持传入0，表示用全端口监听。
+	// Port used by the listener to receive requests. Value range: 0–65535. When the Protocol parameter is 'TCP' or 'UDP', 0 is supported, which enables listening on all ports.
 	Port int `pulumi:"port"`
-	// 监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
+	// Listener protocol. Includes: TCP, UDP, HTTP, HTTPS.
 	Protocol string `pulumi:"protocol"`
-	// CLB与后端服务器之间的连接建立超时时间。建议大于健康检查超时时间。取值范围为 4-120秒，默认为4。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+	// Connection establishment timeout between CLB and backend server. Recommended to be greater than the health check timeout. Range: 4–120 seconds, default is 4. This parameter is valid only when Protocol is set to HTTP or HTTPS.
 	ProxyConnectTimeout int `pulumi:"proxyConnectTimeout"`
-	// 是否启用Proxy-Protocol协议。仅参数Protocol取TCP或UDP时，本参数有效。取值如下：off（默认值）：关闭。standard：开启。
+	// Enable Proxy-Protocol. This parameter is valid only when Protocol is TCP or UDP. Values: off (default): disabled. standard: enabled.
 	ProxyProtocolType string `pulumi:"proxyProtocolType"`
-	// CLB从后端服务器读取响应的超时时间。此超时时间仅针对两个连续的读操作之间设置，而非整个响应的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+	// Timeout for CLB to read responses from backend servers. This timeout applies only between two consecutive read operations, not for the entire response transmission. Value range: 30–3600 seconds. Default: 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
 	ProxyReadTimeout int `pulumi:"proxyReadTimeout"`
-	// CLB将请求传输到后端服务器的超时时间。此超时仅针对两个连续的写操作之间设置，而非整个请求的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+	// Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
 	ProxySendTimeout int `pulumi:"proxySendTimeout"`
-	// 监听器绑定的规则ID列表。
+	// List of rule IDs bound to the listener.
 	RuleIds []string `pulumi:"ruleIds"`
-	// 监听器使用的调度算法。wrr（默认值）：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
+	// Scheduling algorithm used by the listener. wrr (default): Weighted round robin. wlc: Weighted least connections. sh: Source address hash.
 	Scheduler string `pulumi:"scheduler"`
-	// HTTPS监听器的TLS安全策略。仅参数Protocol取HTTPS时，本参数有效。 取值如下：default*policy（默认值）：支持SSL v3、TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*0：支持TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*1：支持TLS v1.1、TLS v1.2。tls*cipher*policy*1*2：支持TLS v1.2。tls*cipher*policy*1*2*strict：支持TLS v1.2。
+	// TLS security policy for HTTPS listeners. This parameter is valid only when Protocol is set to HTTPS. Values: default*policy (default): supports SSL v3, TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*0: supports TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*1: supports TLS v1.1, TLS v1.2. tls*cipher*policy*1*2: supports TLS v1.2. tls*cipher*policy*1*2*strict: supports TLS v1.2.
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
-	// CLB向客户端发送响应的超时时间。此超时仅针对两个连续的写操作之间设置，而非整响应的传输过程。取值范围为 1-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+	// Timeout for CLB to send responses to the client. This timeout applies only between two consecutive write operations, not the entire response transmission. Range: 1–3600 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
 	SendTimeout int `pulumi:"sendTimeout"`
-	// 监听器关联的后端服务器组 ID。
+	// ID of the backend server group associated with the listener.
 	ServerGroupId string `pulumi:"serverGroupId"`
-	// 全端口监听的起始端口，取值范围为1-65535。参数Port为“0”时，该参数必须传入。
+	// Start port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required.
 	StartPort int `pulumi:"startPort"`
-	// 监听器的状态。Creating：创建中。Active：运行中。Deleting: 删除中。Disabled: 已停用。
+	// Listener status. Creating: being created. Active: running. Deleting: being deleted. Disabled: disabled.
 	Status string `pulumi:"status"`
-	// 监听器所属标签。
+	// Tag associated with the listener.
 	Tags []GetListenerTag `pulumi:"tags"`
-	// 监听器最近一次的操作时间。
+	// Last operation time of the listener.
 	UpdatedTime string `pulumi:"updatedTime"`
-	// 是否将经过七层监听器的流量送至Web应用防火墙进行检测和过滤。on：是。off：否。
+	// Send traffic passing through the Layer 7 listener to the Web Application Firewall for inspection and filtering. on: yes. off: no.
 	WafProtectionEnabled string `pulumi:"wafProtectionEnabled"`
 }
 
@@ -158,112 +158,112 @@ func (o LookupListenerResultOutput) ToLookupListenerResultOutputWithContext(ctx 
 	return o
 }
 
-// 监听器绑定的访问控制策略组ID。仅AclStatus参数为on时返回。
+// ID of the access control policy group bound to the listener. Returned only when the AclStatus parameter is set to on.
 func (o LookupListenerResultOutput) AclIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupListenerResult) []string { return v.AclIds }).(pulumi.StringArrayOutput)
 }
 
-// 是否开启访问控制功能。取值如下：on：开启。off（默认值）：不开启。
+// Enable access control. Values: on: enabled. off (default): disabled.
 func (o LookupListenerResultOutput) AclStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupListenerResult) string { return v.AclStatus }).(pulumi.StringOutput)
 }
 
-// 访问控制的方式。white：白名单。black：黑名单。仅AclStatus参数为on时，本参数有效。
+// Access control mode. white: Allowlist. black: Denylist. This parameter is valid only when the AclStatus parameter is on.
 func (o LookupListenerResultOutput) AclType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupListenerResult) string { return v.AclType }).(pulumi.StringOutput)
 }
 
-// 监听器的带宽上限，即此监听器独占CLB实例的带宽，单位为Mbps。-1（默认值）：此监听器不独占CLB的带，与其他监听器共享CLB实例未被独占的带宽。取值范围：1～CLB实例未被独占的带宽。
+// Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.
 func (o LookupListenerResultOutput) Bandwidth() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupListenerResult) int { return v.Bandwidth }).(pulumi.IntOutput)
 }
 
-// 双向认证的CA证书。
+// CA certificate for mutual authentication.
 func (o LookupListenerResultOutput) CaCertificateId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupListenerResult) string { return v.CaCertificateId }).(pulumi.StringOutput)
 }
 
-// 是否开启双向认证。on：开启。off（默认值）：不开启。
+// Enable mutual authentication. on: enabled. off (default): disabled.
 func (o LookupListenerResultOutput) CaEnabled() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupListenerResult) string { return v.CaEnabled }).(pulumi.StringOutput)
 }
 
-// 证书中心的证书的ID。
+// Certificate ID from Certificate Center.
 func (o LookupListenerResultOutput) CertCenterCertificateId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupListenerResult) string { return v.CertCenterCertificateId }).(pulumi.StringOutput)
 }
 
-// CLB侧证书管理模块的证书的ID。
+// Certificate ID from the CLB certificate management module.
 func (o LookupListenerResultOutput) CertificateId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupListenerResult) string { return v.CertificateId }).(pulumi.StringOutput)
 }
 
-// 证书的来源。clb (默认)：CLB上传的证书。cert_center：证书中心上传的证书。user：用户上传的证书。
+// Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
 func (o LookupListenerResultOutput) CertificateSource() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupListenerResult) string { return v.CertificateSource }).(pulumi.StringOutput)
 }
 
-// 读取客户端请求正文的超时时间。此超时时间仅针对两个连续的读操作之间设置，而非整个请求的传输过程。取值范围为 30-120秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效
+// Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
 func (o LookupListenerResultOutput) ClientBodyTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupListenerResult) int { return v.ClientBodyTimeout }).(pulumi.IntOutput)
 }
 
-// 读取客户端请求头的超时时间。取值范围为30-120秒。默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+// Timeout for reading the client request header. Value range: 30–120 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
 func (o LookupListenerResultOutput) ClientHeaderTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupListenerResult) int { return v.ClientHeaderTimeout }).(pulumi.IntOutput)
 }
 
-// 监听器是否开启连接优雅中断功能。on：开启。off：不开启。参数Protocol返回为HTTP或HTTPS时，该参数固定返回off。
+// Whether the listener enables graceful connection termination. on: enabled. off: not enabled. When Protocol returns HTTP or HTTPS, this parameter always returns off.
 func (o LookupListenerResultOutput) ConnectionDrainEnabled() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupListenerResult) string { return v.ConnectionDrainEnabled }).(pulumi.StringOutput)
 }
 
-// 连接优雅中断的超时时间，单位为秒。参数ConnectionDrainEnabled返回为off时，该参数返回0。
+// Timeout for graceful connection termination, in seconds. If ConnectionDrainEnabled returns off, this parameter returns 0.
 func (o LookupListenerResultOutput) ConnectionDrainTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupListenerResult) int { return v.ConnectionDrainTimeout }).(pulumi.IntOutput)
 }
 
-// 后端服务器配置的会话保持的Cookie名称。仅参数PersistenceType取server时，本参数有效且必填。只能包含字母、数字、下划线（_）和中划线（-）。长度限制在1～200字符之间。
+// Name of the session persistence cookie configured on the backend server. This parameter is valid and required only when PersistenceType is set to server. Only letters, numbers, underscores (_), and hyphens (-) are allowed. Length must be between 1 and 200 characters.
 func (o LookupListenerResultOutput) Cookie() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupListenerResult) string { return v.Cookie }).(pulumi.StringOutput)
 }
 
-// 每秒新建连接数的上限。-1（默认值）：不限制，即CLB实例的新建连接数上限。取值范围：1～CLB实例的新连接数上限。
+// Maximum number of new connections per second. -1 (default): No limit, which means the maximum number of new connections allowed by the CLB instance. Value range: 1 to the maximum number of new connections allowed by the CLB instance.
 func (o LookupListenerResultOutput) Cps() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupListenerResult) int { return v.Cps }).(pulumi.IntOutput)
 }
 
-// 监听器的创建时间。
+// Creation time of the listener.
 func (o LookupListenerResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupListenerResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
+// Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
 func (o LookupListenerResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupListenerResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// 是否启用监听器。on（默认值）：开启。off：不开启。
+// Enable listener. on (default): enabled. off: disabled.
 func (o LookupListenerResultOutput) Enabled() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupListenerResult) string { return v.Enabled }).(pulumi.StringOutput)
 }
 
-// 全端口监听的结束端口，取值范围为1-65535。参数Port为“0”时，该参数必须传入，且该参数取值应大于tartPort。
+// End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.
 func (o LookupListenerResultOutput) EndPort() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupListenerResult) int { return v.EndPort }).(pulumi.IntOutput)
 }
 
-// 监听器的连接超时时间。仅参数Protocol取TCP或UDP时，本参数有效。取值如下：TCP协议：10-900秒，默认为900秒。UDP协议：1-300秒，默认为90秒。
+// Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
 func (o LookupListenerResultOutput) EstablishedTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupListenerResult) int { return v.EstablishedTimeout }).(pulumi.IntOutput)
 }
 
-// 健康检查相关信息。
+// Health check information.
 func (o LookupListenerResultOutput) HealthCheck() GetListenerHealthCheckOutput {
 	return o.ApplyT(func(v LookupListenerResult) GetListenerHealthCheck { return v.HealthCheck }).(GetListenerHealthCheckOutput)
 }
 
-// 监听器是否开启前端HTTP 2.0协议。仅参数`Protocol取HTTPS时，本参数有效。取值如下：|on：开启。off（默认值）：不开启。
+// Whether the listener enables frontend HTTP 2.0 protocol. This parameter is valid only when Protocol is set to HTTPS. Values: on: enabled. off (default): disabled.
 func (o LookupListenerResultOutput) Http2Enabled() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupListenerResult) string { return v.Http2Enabled }).(pulumi.StringOutput)
 }
@@ -273,117 +273,117 @@ func (o LookupListenerResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupListenerResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 客户端与CLB之间的长连接超时时间。取值范围为 0-900秒，默认为75秒。0表示禁用长连接。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+// Keep-alive timeout between the client and CLB. Range: 0–900 seconds, default is 75 seconds. 0 disables keep-alive. This parameter is valid only when Protocol is set to HTTP or HTTPS.
 func (o LookupListenerResultOutput) KeepaliveTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupListenerResult) int { return v.KeepaliveTimeout }).(pulumi.IntOutput)
 }
 
-// 监听器的ID。
+// Listener ID.
 func (o LookupListenerResultOutput) ListenerId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupListenerResult) string { return v.ListenerId }).(pulumi.StringOutput)
 }
 
-// 监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
+// Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If left blank, 'Protocol-Port' will be used as the default listener name.
 func (o LookupListenerResultOutput) ListenerName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupListenerResult) string { return v.ListenerName }).(pulumi.StringOutput)
 }
 
-// CLB实例的ID。
+// ID of the CLB instance.
 func (o LookupListenerResultOutput) LoadBalancerId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupListenerResult) string { return v.LoadBalancerId }).(pulumi.StringOutput)
 }
 
-// 最大并发连接数的上限。-1（默认值）：不限制，CLB实例的最大并发连接数上限。取值范围：1～CLB实例的最大并发连接数上限。
+// Maximum concurrent connections limit. -1 (default): unlimited (up to the maximum concurrent connections supported by the CLB instance). Value range: 1 to the maximum concurrent connections limit of the CLB instance.
 func (o LookupListenerResultOutput) MaxConnections() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupListenerResult) int { return v.MaxConnections }).(pulumi.IntOutput)
 }
 
-// 会话保持的超时时间，单位为秒。取值范围根据参数PersistenceType取值有所不同。PersistenceType置为source_ip时，取值范围为1～3600。PersistenceType配置为insert时，取值范围为1～86400。
+// Session persistence timeout, in seconds. The value range depends on the PersistenceType parameter. When PersistenceType is set to source_ip, the range is 1–3600. When PersistenceType is set to insert, the range is 1–86400.
 func (o LookupListenerResultOutput) PersistenceTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupListenerResult) int { return v.PersistenceTimeout }).(pulumi.IntOutput)
 }
 
-// 会话保持的类型。取值如下：off（默认值）：不启用会话保持。source_ip：源地址IP，仅参数ProtocolTCP或UDP时，本取值有效。insert：植入Cookie，仅参数Protocol取HTTP或HTTPS且Scheduler取wrr时，本取值生效。server：重写Cookie，仅参数Protocol取HTTP或HTTPS且Scheduler取wrr时，本取值生效。。
+// Session persistence type. Values: off (default): session persistence disabled. source_ip: source IP address, valid only when Protocol is TCP or UDP. insert: insert Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr. server: rewrite Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr.
 func (o LookupListenerResultOutput) PersistenceType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupListenerResult) string { return v.PersistenceType }).(pulumi.StringOutput)
 }
 
-// 监听器接收请求使用的端口。取值范围为 0～65535。参数Protocol为“TCP”或“UDP”时，支持传入0，表示用全端口监听。
+// Port used by the listener to receive requests. Value range: 0–65535. When the Protocol parameter is 'TCP' or 'UDP', 0 is supported, which enables listening on all ports.
 func (o LookupListenerResultOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupListenerResult) int { return v.Port }).(pulumi.IntOutput)
 }
 
-// 监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
+// Listener protocol. Includes: TCP, UDP, HTTP, HTTPS.
 func (o LookupListenerResultOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupListenerResult) string { return v.Protocol }).(pulumi.StringOutput)
 }
 
-// CLB与后端服务器之间的连接建立超时时间。建议大于健康检查超时时间。取值范围为 4-120秒，默认为4。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+// Connection establishment timeout between CLB and backend server. Recommended to be greater than the health check timeout. Range: 4–120 seconds, default is 4. This parameter is valid only when Protocol is set to HTTP or HTTPS.
 func (o LookupListenerResultOutput) ProxyConnectTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupListenerResult) int { return v.ProxyConnectTimeout }).(pulumi.IntOutput)
 }
 
-// 是否启用Proxy-Protocol协议。仅参数Protocol取TCP或UDP时，本参数有效。取值如下：off（默认值）：关闭。standard：开启。
+// Enable Proxy-Protocol. This parameter is valid only when Protocol is TCP or UDP. Values: off (default): disabled. standard: enabled.
 func (o LookupListenerResultOutput) ProxyProtocolType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupListenerResult) string { return v.ProxyProtocolType }).(pulumi.StringOutput)
 }
 
-// CLB从后端服务器读取响应的超时时间。此超时时间仅针对两个连续的读操作之间设置，而非整个响应的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+// Timeout for CLB to read responses from backend servers. This timeout applies only between two consecutive read operations, not for the entire response transmission. Value range: 30–3600 seconds. Default: 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
 func (o LookupListenerResultOutput) ProxyReadTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupListenerResult) int { return v.ProxyReadTimeout }).(pulumi.IntOutput)
 }
 
-// CLB将请求传输到后端服务器的超时时间。此超时仅针对两个连续的写操作之间设置，而非整个请求的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+// Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
 func (o LookupListenerResultOutput) ProxySendTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupListenerResult) int { return v.ProxySendTimeout }).(pulumi.IntOutput)
 }
 
-// 监听器绑定的规则ID列表。
+// List of rule IDs bound to the listener.
 func (o LookupListenerResultOutput) RuleIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupListenerResult) []string { return v.RuleIds }).(pulumi.StringArrayOutput)
 }
 
-// 监听器使用的调度算法。wrr（默认值）：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
+// Scheduling algorithm used by the listener. wrr (default): Weighted round robin. wlc: Weighted least connections. sh: Source address hash.
 func (o LookupListenerResultOutput) Scheduler() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupListenerResult) string { return v.Scheduler }).(pulumi.StringOutput)
 }
 
-// HTTPS监听器的TLS安全策略。仅参数Protocol取HTTPS时，本参数有效。 取值如下：default*policy（默认值）：支持SSL v3、TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*0：支持TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*1：支持TLS v1.1、TLS v1.2。tls*cipher*policy*1*2：支持TLS v1.2。tls*cipher*policy*1*2*strict：支持TLS v1.2。
+// TLS security policy for HTTPS listeners. This parameter is valid only when Protocol is set to HTTPS. Values: default*policy (default): supports SSL v3, TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*0: supports TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*1: supports TLS v1.1, TLS v1.2. tls*cipher*policy*1*2: supports TLS v1.2. tls*cipher*policy*1*2*strict: supports TLS v1.2.
 func (o LookupListenerResultOutput) SecurityPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupListenerResult) string { return v.SecurityPolicyId }).(pulumi.StringOutput)
 }
 
-// CLB向客户端发送响应的超时时间。此超时仅针对两个连续的写操作之间设置，而非整响应的传输过程。取值范围为 1-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+// Timeout for CLB to send responses to the client. This timeout applies only between two consecutive write operations, not the entire response transmission. Range: 1–3600 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
 func (o LookupListenerResultOutput) SendTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupListenerResult) int { return v.SendTimeout }).(pulumi.IntOutput)
 }
 
-// 监听器关联的后端服务器组 ID。
+// ID of the backend server group associated with the listener.
 func (o LookupListenerResultOutput) ServerGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupListenerResult) string { return v.ServerGroupId }).(pulumi.StringOutput)
 }
 
-// 全端口监听的起始端口，取值范围为1-65535。参数Port为“0”时，该参数必须传入。
+// Start port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required.
 func (o LookupListenerResultOutput) StartPort() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupListenerResult) int { return v.StartPort }).(pulumi.IntOutput)
 }
 
-// 监听器的状态。Creating：创建中。Active：运行中。Deleting: 删除中。Disabled: 已停用。
+// Listener status. Creating: being created. Active: running. Deleting: being deleted. Disabled: disabled.
 func (o LookupListenerResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupListenerResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 监听器所属标签。
+// Tag associated with the listener.
 func (o LookupListenerResultOutput) Tags() GetListenerTagArrayOutput {
 	return o.ApplyT(func(v LookupListenerResult) []GetListenerTag { return v.Tags }).(GetListenerTagArrayOutput)
 }
 
-// 监听器最近一次的操作时间。
+// Last operation time of the listener.
 func (o LookupListenerResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupListenerResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }
 
-// 是否将经过七层监听器的流量送至Web应用防火墙进行检测和过滤。on：是。off：否。
+// Send traffic passing through the Layer 7 listener to the Web Application Firewall for inspection and filtering. on: yes. off: no.
 func (o LookupListenerResultOutput) WafProtectionEnabled() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupListenerResult) string { return v.WafProtectionEnabled }).(pulumi.StringOutput)
 }

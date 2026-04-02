@@ -16,14 +16,14 @@ public final class SandboxInstanceTosMountConfigTosMountPointArgs extends com.pu
     public static final SandboxInstanceTosMountConfigTosMountPointArgs Empty = new SandboxInstanceTosMountConfigTosMountPointArgs();
 
     /**
-     * 沙箱实例挂载的 TOS 远端目录。
+     * TOS remote directory mounted by the sandbox instance
      * 
      */
     @Import(name="bucketPath")
     private @Nullable Output<String> bucketPath;
 
     /**
-     * @return 沙箱实例挂载的 TOS 远端目录。
+     * @return TOS remote directory mounted by the sandbox instance
      * 
      */
     public Optional<Output<String>> bucketPath() {
@@ -31,14 +31,14 @@ public final class SandboxInstanceTosMountConfigTosMountPointArgs extends com.pu
     }
 
     /**
-     * 沙箱实例挂载的 TOS 存储桶本地目录。该目录为沙箱应用已配置的 TOS 存储挂载的本地目录时，系统根据指定的本地目录，修改与之对应的 TOS BucketPath。
+     * Local directory of the TOS bucket mounted by the sandbox instance. If this directory is the local directory configured for TOS storage mount in the sandbox application, the system modifies the corresponding TOS BucketPath based on the specified local directory
      * 
      */
     @Import(name="localMountPath")
     private @Nullable Output<String> localMountPath;
 
     /**
-     * @return 沙箱实例挂载的 TOS 存储桶本地目录。该目录为沙箱应用已配置的 TOS 存储挂载的本地目录时，系统根据指定的本地目录，修改与之对应的 TOS BucketPath。
+     * @return Local directory of the TOS bucket mounted by the sandbox instance. If this directory is the local directory configured for TOS storage mount in the sandbox application, the system modifies the corresponding TOS BucketPath based on the specified local directory
      * 
      */
     public Optional<Output<String>> localMountPath() {
@@ -71,7 +71,7 @@ public final class SandboxInstanceTosMountConfigTosMountPointArgs extends com.pu
         }
 
         /**
-         * @param bucketPath 沙箱实例挂载的 TOS 远端目录。
+         * @param bucketPath TOS remote directory mounted by the sandbox instance
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class SandboxInstanceTosMountConfigTosMountPointArgs extends com.pu
         }
 
         /**
-         * @param bucketPath 沙箱实例挂载的 TOS 远端目录。
+         * @param bucketPath TOS remote directory mounted by the sandbox instance
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class SandboxInstanceTosMountConfigTosMountPointArgs extends com.pu
         }
 
         /**
-         * @param localMountPath 沙箱实例挂载的 TOS 存储桶本地目录。该目录为沙箱应用已配置的 TOS 存储挂载的本地目录时，系统根据指定的本地目录，修改与之对应的 TOS BucketPath。
+         * @param localMountPath Local directory of the TOS bucket mounted by the sandbox instance. If this directory is the local directory configured for TOS storage mount in the sandbox application, the system modifies the corresponding TOS BucketPath based on the specified local directory
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class SandboxInstanceTosMountConfigTosMountPointArgs extends com.pu
         }
 
         /**
-         * @param localMountPath 沙箱实例挂载的 TOS 存储桶本地目录。该目录为沙箱应用已配置的 TOS 存储挂载的本地目录时，系统根据指定的本地目录，修改与之对应的 TOS BucketPath。
+         * @param localMountPath Local directory of the TOS bucket mounted by the sandbox instance. If this directory is the local directory configured for TOS storage mount in the sandbox application, the system modifies the corresponding TOS BucketPath based on the specified local directory
          * 
          * @return builder
          * 

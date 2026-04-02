@@ -19,14 +19,14 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
     public static final KafkaTriggerState Empty = new KafkaTriggerState();
 
     /**
-     * 触发器批量消费的最长等待时间。单位为毫秒（ms），取值范围为 1000 ~ 60000 ms，默认值为 1000 ms。
+     * Maximum wait time for batch consumption by the trigger. Unit: milliseconds (ms). Valid range: 1000–60000 ms. Default: 1000 ms.
      * 
      */
     @Import(name="batchFlushDurationMilliseconds")
     private @Nullable Output<Integer> batchFlushDurationMilliseconds;
 
     /**
-     * @return 触发器批量消费的最长等待时间。单位为毫秒（ms），取值范围为 1000 ~ 60000 ms，默认值为 1000 ms。
+     * @return Maximum wait time for batch consumption by the trigger. Unit: milliseconds (ms). Valid range: 1000–60000 ms. Default: 1000 ms.
      * 
      */
     public Optional<Output<Integer>> batchFlushDurationMilliseconds() {
@@ -34,14 +34,14 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 触发器批量消费的每批次消息数。
+     * Number of messages per batch for trigger batch consumption.
      * 
      */
     @Import(name="batchSize")
     private @Nullable Output<Integer> batchSize;
 
     /**
-     * @return 触发器批量消费的每批次消息数。
+     * @return Number of messages per batch for trigger batch consumption.
      * 
      */
     public Optional<Output<Integer>> batchSize() {
@@ -49,14 +49,14 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 消息队列 Kafka 实例的消费组名字。
+     * Consumer group name of the Kafka message queue instance.
      * 
      */
     @Import(name="consumerGroup")
     private @Nullable Output<String> consumerGroup;
 
     /**
-     * @return 消息队列 Kafka 实例的消费组名字。
+     * @return Consumer group name of the Kafka message queue instance.
      * 
      */
     public Optional<Output<String>> consumerGroup() {
@@ -64,14 +64,14 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Kafka 触发器创建时间。
+     * Kafka trigger creation time.
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return Kafka 触发器创建时间。
+     * @return Kafka trigger creation time.
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -79,14 +79,14 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Kafka 触发器描述。长度限制为 200 个字符以内。
+     * Description of the Kafka trigger. Limited to 200 characters.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return Kafka 触发器描述。长度限制为 200 个字符以内。
+     * @return Description of the Kafka trigger. Limited to 200 characters.
      * 
      */
     public Optional<Output<String>> description() {
@@ -94,14 +94,14 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否在创建触发器的同时启用触发器。取值：true：启用。false：关闭。
+     * Enable the trigger when creating it. Options: true—enable. false—disable.
      * 
      */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
     /**
-     * @return 是否在创建触发器的同时启用触发器。取值：true：启用。false：关闭。
+     * @return Enable the trigger when creating it. Options: true—enable. false—disable.
      * 
      */
     public Optional<Output<Boolean>> enabled() {
@@ -109,14 +109,14 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 函数 ID。
+     * Function ID.
      * 
      */
     @Import(name="functionId")
     private @Nullable Output<String> functionId;
 
     /**
-     * @return 函数 ID。
+     * @return Function ID.
      * 
      */
     public Optional<Output<String>> functionId() {
@@ -124,14 +124,14 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
+     * Kafka identity authentication. Function service uses Kafka ACL permission policies to authenticate message consumption for SASL users of types PLAIN and SCRAM-SHA-256.
      * 
      */
     @Import(name="kafkaCredentials")
     private @Nullable Output<KafkaTriggerKafkaCredentialsArgs> kafkaCredentials;
 
     /**
-     * @return Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
+     * @return Kafka identity authentication. Function service uses Kafka ACL permission policies to authenticate message consumption for SASL users of types PLAIN and SCRAM-SHA-256.
      * 
      */
     public Optional<Output<KafkaTriggerKafkaCredentialsArgs>> kafkaCredentials() {
@@ -139,14 +139,14 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Kafka 触发器 ID。
+     * Kafka trigger ID.
      * 
      */
     @Import(name="kafkaTriggerId")
     private @Nullable Output<String> kafkaTriggerId;
 
     /**
-     * @return Kafka 触发器 ID。
+     * @return Kafka trigger ID.
      * 
      */
     public Optional<Output<String>> kafkaTriggerId() {
@@ -154,14 +154,14 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。
+     * Maximum number of retries when the function encounters a runtime error (including user code errors and runtime errors). Valid values: positive integers from 0 to 100.
      * 
      */
     @Import(name="maximumRetryAttempts")
     private @Nullable Output<Integer> maximumRetryAttempts;
 
     /**
-     * @return 函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。
+     * @return Maximum number of retries when the function encounters a runtime error (including user code errors and runtime errors). Valid values: positive integers from 0 to 100.
      * 
      */
     public Optional<Output<Integer>> maximumRetryAttempts() {
@@ -169,14 +169,14 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 消息队列 Kafka 实例 ID。
+     * Kafka message queue instance ID.
      * 
      */
     @Import(name="mqInstanceId")
     private @Nullable Output<String> mqInstanceId;
 
     /**
-     * @return 消息队列 Kafka 实例 ID。
+     * @return Kafka message queue instance ID.
      * 
      */
     public Optional<Output<String>> mqInstanceId() {
@@ -184,14 +184,14 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Kafka 触发器名字。同一函数下，触发器名称不可重复。只能包含大小写字母、数字、下划线，并且以字母开头，长度限制为 4~63 个字符。
+     * Kafka trigger name. Trigger names must be unique within the same function. Only uppercase and lowercase letters, numbers, and underscores are allowed, must start with a letter, and be 4–63 characters long.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return Kafka 触发器名字。同一函数下，触发器名称不可重复。只能包含大小写字母、数字、下划线，并且以字母开头，长度限制为 4~63 个字符。
+     * @return Kafka trigger name. Trigger names must be unique within the same function. Only uppercase and lowercase letters, numbers, and underscores are allowed, must start with a letter, and be 4–63 characters long.
      * 
      */
     public Optional<Output<String>> name() {
@@ -199,14 +199,14 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 指定开始消费 Topic 中消息的位置。取值：Latest：只消费订阅 Topic 后产生的消息。Earliest：从 Topic 中生产的第一条消息开始消费。
+     * Specify the starting position for consuming messages in the Topic. Options: Latest—consume only messages produced after subscribing to the Topic. Earliest—consume from the first message produced in the Topic.
      * 
      */
     @Import(name="startingPosition")
     private @Nullable Output<String> startingPosition;
 
     /**
-     * @return 指定开始消费 Topic 中消息的位置。取值：Latest：只消费订阅 Topic 后产生的消息。Earliest：从 Topic 中生产的第一条消息开始消费。
+     * @return Specify the starting position for consuming messages in the Topic. Options: Latest—consume only messages produced after subscribing to the Topic. Earliest—consume from the first message produced in the Topic.
      * 
      */
     public Optional<Output<String>> startingPosition() {
@@ -214,14 +214,14 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Kafka 触发器状态。参数值说明：ready：运行，failed：失败，pending：启动中
+     * Kafka trigger status. Parameter values: ready—running, failed—failed, pending—starting.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return Kafka 触发器状态。参数值说明：ready：运行，failed：失败，pending：启动中
+     * @return Kafka trigger status. Parameter values: ready—running, failed—failed, pending—starting.
      * 
      */
     public Optional<Output<String>> status() {
@@ -229,14 +229,14 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 消息队列 Kafka 实例的 Topic 名称。
+     * Topic name of the Kafka message queue instance.
      * 
      */
     @Import(name="topicName")
     private @Nullable Output<String> topicName;
 
     /**
-     * @return 消息队列 Kafka 实例的 Topic 名称。
+     * @return Topic name of the Kafka message queue instance.
      * 
      */
     public Optional<Output<String>> topicName() {
@@ -244,14 +244,14 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Kafka 触发器最近一次更新时间。
+     * Last update time of the Kafka trigger.
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return Kafka 触发器最近一次更新时间。
+     * @return Last update time of the Kafka trigger.
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -298,7 +298,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param batchFlushDurationMilliseconds 触发器批量消费的最长等待时间。单位为毫秒（ms），取值范围为 1000 ~ 60000 ms，默认值为 1000 ms。
+         * @param batchFlushDurationMilliseconds Maximum wait time for batch consumption by the trigger. Unit: milliseconds (ms). Valid range: 1000–60000 ms. Default: 1000 ms.
          * 
          * @return builder
          * 
@@ -309,7 +309,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param batchFlushDurationMilliseconds 触发器批量消费的最长等待时间。单位为毫秒（ms），取值范围为 1000 ~ 60000 ms，默认值为 1000 ms。
+         * @param batchFlushDurationMilliseconds Maximum wait time for batch consumption by the trigger. Unit: milliseconds (ms). Valid range: 1000–60000 ms. Default: 1000 ms.
          * 
          * @return builder
          * 
@@ -319,7 +319,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param batchSize 触发器批量消费的每批次消息数。
+         * @param batchSize Number of messages per batch for trigger batch consumption.
          * 
          * @return builder
          * 
@@ -330,7 +330,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param batchSize 触发器批量消费的每批次消息数。
+         * @param batchSize Number of messages per batch for trigger batch consumption.
          * 
          * @return builder
          * 
@@ -340,7 +340,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param consumerGroup 消息队列 Kafka 实例的消费组名字。
+         * @param consumerGroup Consumer group name of the Kafka message queue instance.
          * 
          * @return builder
          * 
@@ -351,7 +351,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param consumerGroup 消息队列 Kafka 实例的消费组名字。
+         * @param consumerGroup Consumer group name of the Kafka message queue instance.
          * 
          * @return builder
          * 
@@ -361,7 +361,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime Kafka 触发器创建时间。
+         * @param createdTime Kafka trigger creation time.
          * 
          * @return builder
          * 
@@ -372,7 +372,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime Kafka 触发器创建时间。
+         * @param createdTime Kafka trigger creation time.
          * 
          * @return builder
          * 
@@ -382,7 +382,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Kafka 触发器描述。长度限制为 200 个字符以内。
+         * @param description Description of the Kafka trigger. Limited to 200 characters.
          * 
          * @return builder
          * 
@@ -393,7 +393,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Kafka 触发器描述。长度限制为 200 个字符以内。
+         * @param description Description of the Kafka trigger. Limited to 200 characters.
          * 
          * @return builder
          * 
@@ -403,7 +403,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enabled 是否在创建触发器的同时启用触发器。取值：true：启用。false：关闭。
+         * @param enabled Enable the trigger when creating it. Options: true—enable. false—disable.
          * 
          * @return builder
          * 
@@ -414,7 +414,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enabled 是否在创建触发器的同时启用触发器。取值：true：启用。false：关闭。
+         * @param enabled Enable the trigger when creating it. Options: true—enable. false—disable.
          * 
          * @return builder
          * 
@@ -424,7 +424,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param functionId 函数 ID。
+         * @param functionId Function ID.
          * 
          * @return builder
          * 
@@ -435,7 +435,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param functionId 函数 ID。
+         * @param functionId Function ID.
          * 
          * @return builder
          * 
@@ -445,7 +445,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kafkaCredentials Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
+         * @param kafkaCredentials Kafka identity authentication. Function service uses Kafka ACL permission policies to authenticate message consumption for SASL users of types PLAIN and SCRAM-SHA-256.
          * 
          * @return builder
          * 
@@ -456,7 +456,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kafkaCredentials Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
+         * @param kafkaCredentials Kafka identity authentication. Function service uses Kafka ACL permission policies to authenticate message consumption for SASL users of types PLAIN and SCRAM-SHA-256.
          * 
          * @return builder
          * 
@@ -466,7 +466,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kafkaTriggerId Kafka 触发器 ID。
+         * @param kafkaTriggerId Kafka trigger ID.
          * 
          * @return builder
          * 
@@ -477,7 +477,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kafkaTriggerId Kafka 触发器 ID。
+         * @param kafkaTriggerId Kafka trigger ID.
          * 
          * @return builder
          * 
@@ -487,7 +487,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maximumRetryAttempts 函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。
+         * @param maximumRetryAttempts Maximum number of retries when the function encounters a runtime error (including user code errors and runtime errors). Valid values: positive integers from 0 to 100.
          * 
          * @return builder
          * 
@@ -498,7 +498,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maximumRetryAttempts 函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。
+         * @param maximumRetryAttempts Maximum number of retries when the function encounters a runtime error (including user code errors and runtime errors). Valid values: positive integers from 0 to 100.
          * 
          * @return builder
          * 
@@ -508,7 +508,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mqInstanceId 消息队列 Kafka 实例 ID。
+         * @param mqInstanceId Kafka message queue instance ID.
          * 
          * @return builder
          * 
@@ -519,7 +519,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mqInstanceId 消息队列 Kafka 实例 ID。
+         * @param mqInstanceId Kafka message queue instance ID.
          * 
          * @return builder
          * 
@@ -529,7 +529,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name Kafka 触发器名字。同一函数下，触发器名称不可重复。只能包含大小写字母、数字、下划线，并且以字母开头，长度限制为 4~63 个字符。
+         * @param name Kafka trigger name. Trigger names must be unique within the same function. Only uppercase and lowercase letters, numbers, and underscores are allowed, must start with a letter, and be 4–63 characters long.
          * 
          * @return builder
          * 
@@ -540,7 +540,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name Kafka 触发器名字。同一函数下，触发器名称不可重复。只能包含大小写字母、数字、下划线，并且以字母开头，长度限制为 4~63 个字符。
+         * @param name Kafka trigger name. Trigger names must be unique within the same function. Only uppercase and lowercase letters, numbers, and underscores are allowed, must start with a letter, and be 4–63 characters long.
          * 
          * @return builder
          * 
@@ -550,7 +550,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param startingPosition 指定开始消费 Topic 中消息的位置。取值：Latest：只消费订阅 Topic 后产生的消息。Earliest：从 Topic 中生产的第一条消息开始消费。
+         * @param startingPosition Specify the starting position for consuming messages in the Topic. Options: Latest—consume only messages produced after subscribing to the Topic. Earliest—consume from the first message produced in the Topic.
          * 
          * @return builder
          * 
@@ -561,7 +561,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param startingPosition 指定开始消费 Topic 中消息的位置。取值：Latest：只消费订阅 Topic 后产生的消息。Earliest：从 Topic 中生产的第一条消息开始消费。
+         * @param startingPosition Specify the starting position for consuming messages in the Topic. Options: Latest—consume only messages produced after subscribing to the Topic. Earliest—consume from the first message produced in the Topic.
          * 
          * @return builder
          * 
@@ -571,7 +571,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status Kafka 触发器状态。参数值说明：ready：运行，failed：失败，pending：启动中
+         * @param status Kafka trigger status. Parameter values: ready—running, failed—failed, pending—starting.
          * 
          * @return builder
          * 
@@ -582,7 +582,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status Kafka 触发器状态。参数值说明：ready：运行，failed：失败，pending：启动中
+         * @param status Kafka trigger status. Parameter values: ready—running, failed—failed, pending—starting.
          * 
          * @return builder
          * 
@@ -592,7 +592,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param topicName 消息队列 Kafka 实例的 Topic 名称。
+         * @param topicName Topic name of the Kafka message queue instance.
          * 
          * @return builder
          * 
@@ -603,7 +603,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param topicName 消息队列 Kafka 实例的 Topic 名称。
+         * @param topicName Topic name of the Kafka message queue instance.
          * 
          * @return builder
          * 
@@ -613,7 +613,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime Kafka 触发器最近一次更新时间。
+         * @param updatedTime Last update time of the Kafka trigger.
          * 
          * @return builder
          * 
@@ -624,7 +624,7 @@ public final class KafkaTriggerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime Kafka 触发器最近一次更新时间。
+         * @param updatedTime Last update time of the Kafka trigger.
          * 
          * @return builder
          * 

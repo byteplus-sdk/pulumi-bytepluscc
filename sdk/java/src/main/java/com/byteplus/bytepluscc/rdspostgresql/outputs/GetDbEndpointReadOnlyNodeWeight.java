@@ -12,38 +12,38 @@ import java.util.Objects;
 @CustomType
 public final class GetDbEndpointReadOnlyNodeWeight {
     /**
-     * @return 只读节点需要传入 NodeId。
+     * @return Read-only nodes require the NodeId to be provided.
      * 
      */
     private String nodeId;
     /**
-     * @return 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+     * @return Node type. Values: Primary: primary node. ReadOnly: read-only node.
      * 
      */
     private String nodeType;
     /**
-     * @return 节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+     * @return Read weight of the node, increases in increments of 100, maximum value is 40000. Note: Weights cannot all be set to 0.
      * 
      */
     private Integer weight;
 
     private GetDbEndpointReadOnlyNodeWeight() {}
     /**
-     * @return 只读节点需要传入 NodeId。
+     * @return Read-only nodes require the NodeId to be provided.
      * 
      */
     public String nodeId() {
         return this.nodeId;
     }
     /**
-     * @return 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+     * @return Node type. Values: Primary: primary node. ReadOnly: read-only node.
      * 
      */
     public String nodeType() {
         return this.nodeType;
     }
     /**
-     * @return 节点的读权重，以 100 递增，最大值为 40000。说明权重不可全部设置为 0。
+     * @return Read weight of the node, increases in increments of 100, maximum value is 40000. Note: Weights cannot all be set to 0.
      * 
      */
     public Integer weight() {

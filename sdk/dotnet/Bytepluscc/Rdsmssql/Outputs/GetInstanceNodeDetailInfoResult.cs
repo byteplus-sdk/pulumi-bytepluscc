@@ -15,55 +15,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql.Outputs
     public sealed class GetInstanceNodeDetailInfoResult
     {
         /// <summary>
-        /// 节点的创建时间。
+        /// Node creation time.
         /// </summary>
         public readonly string CreateTime;
         /// <summary>
-        /// 节点主机名。
+        /// Node hostname.
         /// </summary>
         public readonly string HostName;
         /// <summary>
-        /// 实例ID。
+        /// Instance ID.
         /// </summary>
         public readonly string InstanceId;
         /// <summary>
-        /// 内存大小，单位为 GiB。
+        /// Memory size, in GiB.
         /// </summary>
         public readonly int Memory;
         /// <summary>
-        /// 节点ID。
+        /// Node ID.
         /// </summary>
         public readonly string NodeId;
         /// <summary>
-        /// 节点IP。
+        /// Node IP.
         /// </summary>
         public readonly string NodeIp;
         /// <summary>
-        /// 节点规格。
+        /// Node specification.
         /// </summary>
         public readonly string NodeSpec;
         /// <summary>
-        /// 节点状态，取值为：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主备切换中。Error：错误。
+        /// Node status. Possible values: Running: running. Creating: creating. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: master/standby switching. Error: error.
         /// </summary>
         public readonly string NodeStatus;
         /// <summary>
-        /// 节点类型。取值：Primary：表示主节点终端。ReadOnly：表示只读节点终端。Secondary：表示备节点终端。
+        /// Node type. Possible values: Primary: primary node terminal. ReadOnly: read-only node terminal. Secondary: standby node terminal.
         /// </summary>
         public readonly string NodeType;
         /// <summary>
-        /// 区域ID。
+        /// Region ID.
         /// </summary>
         public readonly string RegionId;
         /// <summary>
-        /// 更新时间。
+        /// Update time.
         /// </summary>
         public readonly string UpdateTime;
         /// <summary>
-        /// vCPU 数量。
+        /// vCPU count.
         /// </summary>
         public readonly int Vcpu;
         /// <summary>
-        /// 可用区ID。
+        /// Availability zone ID.
         /// </summary>
         public readonly string ZoneId;
 

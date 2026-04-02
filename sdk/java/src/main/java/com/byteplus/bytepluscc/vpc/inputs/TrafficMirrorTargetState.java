@@ -18,14 +18,14 @@ public final class TrafficMirrorTargetState extends com.pulumi.resources.Resourc
     public static final TrafficMirrorTargetState Empty = new TrafficMirrorTargetState();
 
     /**
-     * 镜像会话的创建时间。
+     * Creation time of the mirror session.
      * 
      */
     @Import(name="createdAt")
     private @Nullable Output<String> createdAt;
 
     /**
-     * @return 镜像会话的创建时间。
+     * @return Creation time of the mirror session.
      * 
      */
     public Optional<Output<String>> createdAt() {
@@ -33,14 +33,14 @@ public final class TrafficMirrorTargetState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
+     * Listener description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, the default value is an empty string.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
+     * @return Listener description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, the default value is an empty string.
      * 
      */
     public Optional<Output<String>> description() {
@@ -48,14 +48,14 @@ public final class TrafficMirrorTargetState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 镜像目的的资源ID。
+     * Resource ID of the mirror target.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 镜像目的的资源ID。
+     * @return Resource ID of the mirror target.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -63,14 +63,14 @@ public final class TrafficMirrorTargetState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 镜像目的的资源类型。NetworkInterface：弹性网卡。ClbInstance：传统型负载均衡。
+     * Resource type of the mirror target. NetworkInterface: Elastic network interface. ClbInstance: Classic load balancer.
      * 
      */
     @Import(name="instanceType")
     private @Nullable Output<String> instanceType;
 
     /**
-     * @return 镜像目的的资源类型。NetworkInterface：弹性网卡。ClbInstance：传统型负载均衡。
+     * @return Resource type of the mirror target. NetworkInterface: Elastic network interface. ClbInstance: Classic load balancer.
      * 
      */
     public Optional<Output<String>> instanceType() {
@@ -78,14 +78,14 @@ public final class TrafficMirrorTargetState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 镜像目的所属项目的名称。不填默认加入default项目。
+     * Name of the project to which the mirror target belongs. If not specified, it will be added to the default project.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 镜像目的所属项目的名称。不填默认加入default项目。
+     * @return Name of the project to which the mirror target belongs. If not specified, it will be added to the default project.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -93,14 +93,14 @@ public final class TrafficMirrorTargetState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 镜像目的状态。Available：可用。Creating：创建中。
+     * Status of the mirror target. Available: Available. Creating: Creating.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 镜像目的状态。Available：可用。Creating：创建中。
+     * @return Status of the mirror target. Available: Available. Creating: Creating.
      * 
      */
     public Optional<Output<String>> status() {
@@ -115,14 +115,14 @@ public final class TrafficMirrorTargetState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 镜像目的的ID。
+     * ID of the mirror target.
      * 
      */
     @Import(name="trafficMirrorTargetId")
     private @Nullable Output<String> trafficMirrorTargetId;
 
     /**
-     * @return 镜像目的的ID。
+     * @return ID of the mirror target.
      * 
      */
     public Optional<Output<String>> trafficMirrorTargetId() {
@@ -130,14 +130,14 @@ public final class TrafficMirrorTargetState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
+     * Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, the default is &#39;protocol-port&#39; as the listener name.
      * 
      */
     @Import(name="trafficMirrorTargetName")
     private @Nullable Output<String> trafficMirrorTargetName;
 
     /**
-     * @return 监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
+     * @return Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, the default is &#39;protocol-port&#39; as the listener name.
      * 
      */
     public Optional<Output<String>> trafficMirrorTargetName() {
@@ -145,14 +145,14 @@ public final class TrafficMirrorTargetState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 镜像会话的更新时间。
+     * Update time of the mirror session.
      * 
      */
     @Import(name="updatedAt")
     private @Nullable Output<String> updatedAt;
 
     /**
-     * @return 镜像会话的更新时间。
+     * @return Update time of the mirror session.
      * 
      */
     public Optional<Output<String>> updatedAt() {
@@ -193,7 +193,7 @@ public final class TrafficMirrorTargetState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param createdAt 镜像会话的创建时间。
+         * @param createdAt Creation time of the mirror session.
          * 
          * @return builder
          * 
@@ -204,7 +204,7 @@ public final class TrafficMirrorTargetState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param createdAt 镜像会话的创建时间。
+         * @param createdAt Creation time of the mirror session.
          * 
          * @return builder
          * 
@@ -214,7 +214,7 @@ public final class TrafficMirrorTargetState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param description 监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
+         * @param description Listener description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, the default value is an empty string.
          * 
          * @return builder
          * 
@@ -225,7 +225,7 @@ public final class TrafficMirrorTargetState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param description 监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
+         * @param description Listener description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, the default value is an empty string.
          * 
          * @return builder
          * 
@@ -235,7 +235,7 @@ public final class TrafficMirrorTargetState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param instanceId 镜像目的的资源ID。
+         * @param instanceId Resource ID of the mirror target.
          * 
          * @return builder
          * 
@@ -246,7 +246,7 @@ public final class TrafficMirrorTargetState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param instanceId 镜像目的的资源ID。
+         * @param instanceId Resource ID of the mirror target.
          * 
          * @return builder
          * 
@@ -256,7 +256,7 @@ public final class TrafficMirrorTargetState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param instanceType 镜像目的的资源类型。NetworkInterface：弹性网卡。ClbInstance：传统型负载均衡。
+         * @param instanceType Resource type of the mirror target. NetworkInterface: Elastic network interface. ClbInstance: Classic load balancer.
          * 
          * @return builder
          * 
@@ -267,7 +267,7 @@ public final class TrafficMirrorTargetState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param instanceType 镜像目的的资源类型。NetworkInterface：弹性网卡。ClbInstance：传统型负载均衡。
+         * @param instanceType Resource type of the mirror target. NetworkInterface: Elastic network interface. ClbInstance: Classic load balancer.
          * 
          * @return builder
          * 
@@ -277,7 +277,7 @@ public final class TrafficMirrorTargetState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param projectName 镜像目的所属项目的名称。不填默认加入default项目。
+         * @param projectName Name of the project to which the mirror target belongs. If not specified, it will be added to the default project.
          * 
          * @return builder
          * 
@@ -288,7 +288,7 @@ public final class TrafficMirrorTargetState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param projectName 镜像目的所属项目的名称。不填默认加入default项目。
+         * @param projectName Name of the project to which the mirror target belongs. If not specified, it will be added to the default project.
          * 
          * @return builder
          * 
@@ -298,7 +298,7 @@ public final class TrafficMirrorTargetState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param status 镜像目的状态。Available：可用。Creating：创建中。
+         * @param status Status of the mirror target. Available: Available. Creating: Creating.
          * 
          * @return builder
          * 
@@ -309,7 +309,7 @@ public final class TrafficMirrorTargetState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param status 镜像目的状态。Available：可用。Creating：创建中。
+         * @param status Status of the mirror target. Available: Available. Creating: Creating.
          * 
          * @return builder
          * 
@@ -332,7 +332,7 @@ public final class TrafficMirrorTargetState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param trafficMirrorTargetId 镜像目的的ID。
+         * @param trafficMirrorTargetId ID of the mirror target.
          * 
          * @return builder
          * 
@@ -343,7 +343,7 @@ public final class TrafficMirrorTargetState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param trafficMirrorTargetId 镜像目的的ID。
+         * @param trafficMirrorTargetId ID of the mirror target.
          * 
          * @return builder
          * 
@@ -353,7 +353,7 @@ public final class TrafficMirrorTargetState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param trafficMirrorTargetName 监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
+         * @param trafficMirrorTargetName Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, the default is &#39;protocol-port&#39; as the listener name.
          * 
          * @return builder
          * 
@@ -364,7 +364,7 @@ public final class TrafficMirrorTargetState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param trafficMirrorTargetName 监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
+         * @param trafficMirrorTargetName Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, the default is &#39;protocol-port&#39; as the listener name.
          * 
          * @return builder
          * 
@@ -374,7 +374,7 @@ public final class TrafficMirrorTargetState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param updatedAt 镜像会话的更新时间。
+         * @param updatedAt Update time of the mirror session.
          * 
          * @return builder
          * 
@@ -385,7 +385,7 @@ public final class TrafficMirrorTargetState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param updatedAt 镜像会话的更新时间。
+         * @param updatedAt Update time of the mirror session.
          * 
          * @return builder
          * 

@@ -22,13 +22,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
         }
 
         /// <summary>
-        /// 表示这些条件组之间的关系。该参数有以下取值：or：表示关系是 "或"。在这个情况下，只要满足一个条件组，用户请求就匹配该规则。and：表示关系是 "与"。在这个情况下，必须满足所有条件组，用户请求才匹配该规则。该参数的默认值是 or。
+        /// Specifies the relationship between these condition groups. This parameter has the following values: or: Indicates an 'or' relationship. In this case, if any condition group is met, the user request matches the rule. and: Indicates an 'and' relationship. In this case, all condition groups must be met for the user request to match the rule. The default value is or.
         /// </summary>
         [Input("connective")]
         public Input<string>? Connective { get; set; }
 
         /// <summary>
-        /// 表示每个过滤条件是否是一个条件组。该参数值始终是 true，表示每个过滤条件是一个条件组。当前，每个条件组中只能包含一个过滤条件。
+        /// Indicates whether each filter condition is a condition group. The value of this parameter is always true, meaning each filter condition is a condition group. Currently, each condition group can only contain one filter condition.
         /// </summary>
         [Input("isGroup")]
         public Input<bool>? IsGroup { get; set; }

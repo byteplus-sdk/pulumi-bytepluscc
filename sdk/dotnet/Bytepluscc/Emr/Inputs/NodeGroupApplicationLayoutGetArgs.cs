@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Inputs
     public sealed class NodeGroupApplicationLayoutGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 应用名称。
+        /// Application name.
         /// </summary>
         [Input("applicationName")]
         public Input<string>? ApplicationName { get; set; }
@@ -23,7 +23,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Inputs
         private InputList<string>? _layoutComponentNames;
 
         /// <summary>
-        /// 组件的自定义配置参数列表。
+        /// Custom configuration parameter list for the component.
         /// </summary>
         public InputList<string> LayoutComponentNames
         {

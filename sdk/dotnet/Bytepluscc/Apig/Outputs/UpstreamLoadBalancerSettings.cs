@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class UpstreamLoadBalancerSettings
     {
         /// <summary>
-        /// 一致性哈希负载均衡。
+        /// Consistent Hash Load Balancing
         /// </summary>
         public readonly Outputs.UpstreamLoadBalancerSettingsConsistentHashLb? ConsistentHashLb;
         /// <summary>
-        /// 负载均衡策略，取值：SimpleLB：简单负载均衡。ConsistentHashLB：一致性哈希负载均衡。
+        /// Load balancing policy. Options: SimpleLB: simple load balancing. ConsistentHashLB: consistent hash load balancing
         /// </summary>
         public readonly string? LbPolicy;
         /// <summary>
-        /// 简单负载均衡，取值：ROUND*ROBIN：轮询。LEAST*CONN：最小连接数。RANDOM：随机。
+        /// Simple load balancing. Options: ROUND*ROBIN: round robin. LEAST*CONN: least connections. RANDOM: random
         /// </summary>
         public readonly string? SimpleLb;
         /// <summary>
-        /// 预热时间。单位为秒。
+        /// Warm-up time (seconds)
         /// </summary>
         public readonly int? WarmupDuration;
 

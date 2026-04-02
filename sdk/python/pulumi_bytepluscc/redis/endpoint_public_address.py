@@ -27,11 +27,11 @@ class EndpointPublicAddressArgs:
                  upgrade_region_domain: Optional[pulumi.Input[builtins.bool]] = None):
         """
         The set of arguments for constructing a EndpointPublicAddress resource.
-        :param pulumi.Input[builtins.str] eip_id: 弹性公网 IP 的 ID。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
-        :param pulumi.Input[builtins.str] new_address_prefix: 修改后的连接地址前缀。连接地址前缀需同时满足如下要求：由小写字母、数字或连字符（-）组成。以字母开头，字母或数字结尾。长度为 8~53 个字符。修改后的连接地址需要保证全局唯一，不可以与火山引擎中任何地域下的任何连接地址重名。
-        :param pulumi.Input[builtins.int] port: 端口号。
-        :param pulumi.Input[builtins.bool] upgrade_region_domain: 是否升级连接地址的域名后缀。取值范围如下：true：升级。false（默认值）：不升级。注意当需要升级域名后缀（即 UpgradeRegionDomain 为 true）时，必须同时传入连接地址前缀信息（即 Address 参数不允许为空。）升级域名后缀后，原有的连接会断开，请及时修改客户端的连接信息，使用新的连接地址来连接实例。连接实例的具体方法，请参见连接实例。连接地址域名后缀升级后不支持再降级回原来的后缀，请谨慎操作。升级后的连接地址域名后缀会自动包含实例所属地域信息，旧的连接地址会保留 12 小时，12 小时保留期到期后会被自动释放。更多详情，请参见升级域名后缀。
+        :param pulumi.Input[builtins.str] eip_id: ID of the Elastic Public IP
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
+        :param pulumi.Input[builtins.str] new_address_prefix: Modified connection address prefix. The connection address prefix must meet the following requirements: Consist of lowercase letters, numbers, or hyphens (-). Start with a letter and end with a letter or number. Length must be 8–53 characters. The modified connection address must be globally unique and must not duplicate any connection address in any region of Volcano Engine.
+        :param pulumi.Input[builtins.int] port: Port number
+        :param pulumi.Input[builtins.bool] upgrade_region_domain: Whether to upgrade the domain suffix of the connection address. Valid values: true: Upgrade. false (default): Do not upgrade. Note: When upgrading the domain suffix (i.e., UpgradeRegionDomain is true), you must also provide the connection address prefix (i.e., the Address parameter cannot be empty). After upgrading the domain suffix, existing connections will be disconnected. Please promptly update your client connection information and use the new connection address to connect to the instance. For details on connecting to an instance, see Connect to Instance. Once the domain suffix of the connection address is upgraded, it cannot be downgraded to the original suffix. Please proceed with caution. The upgraded domain suffix will automatically include the region information of the instance. The old connection address will be retained for 12 hours and will be automatically released after the retention period expires. For more details, see Upgrade Domain Suffix.
         """
         pulumi.set(__self__, "eip_id", eip_id)
         pulumi.set(__self__, "instance_id", instance_id)
@@ -46,7 +46,7 @@ class EndpointPublicAddressArgs:
     @pulumi.getter(name="eipId")
     def eip_id(self) -> pulumi.Input[builtins.str]:
         """
-        弹性公网 IP 的 ID。
+        ID of the Elastic Public IP
         """
         return pulumi.get(self, "eip_id")
 
@@ -58,7 +58,7 @@ class EndpointPublicAddressArgs:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Input[builtins.str]:
         """
-        实例 ID。
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -70,7 +70,7 @@ class EndpointPublicAddressArgs:
     @pulumi.getter(name="newAddressPrefix")
     def new_address_prefix(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        修改后的连接地址前缀。连接地址前缀需同时满足如下要求：由小写字母、数字或连字符（-）组成。以字母开头，字母或数字结尾。长度为 8~53 个字符。修改后的连接地址需要保证全局唯一，不可以与火山引擎中任何地域下的任何连接地址重名。
+        Modified connection address prefix. The connection address prefix must meet the following requirements: Consist of lowercase letters, numbers, or hyphens (-). Start with a letter and end with a letter or number. Length must be 8–53 characters. The modified connection address must be globally unique and must not duplicate any connection address in any region of Volcano Engine.
         """
         return pulumi.get(self, "new_address_prefix")
 
@@ -82,7 +82,7 @@ class EndpointPublicAddressArgs:
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        端口号。
+        Port number
         """
         return pulumi.get(self, "port")
 
@@ -94,7 +94,7 @@ class EndpointPublicAddressArgs:
     @pulumi.getter(name="upgradeRegionDomain")
     def upgrade_region_domain(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否升级连接地址的域名后缀。取值范围如下：true：升级。false（默认值）：不升级。注意当需要升级域名后缀（即 UpgradeRegionDomain 为 true）时，必须同时传入连接地址前缀信息（即 Address 参数不允许为空。）升级域名后缀后，原有的连接会断开，请及时修改客户端的连接信息，使用新的连接地址来连接实例。连接实例的具体方法，请参见连接实例。连接地址域名后缀升级后不支持再降级回原来的后缀，请谨慎操作。升级后的连接地址域名后缀会自动包含实例所属地域信息，旧的连接地址会保留 12 小时，12 小时保留期到期后会被自动释放。更多详情，请参见升级域名后缀。
+        Whether to upgrade the domain suffix of the connection address. Valid values: true: Upgrade. false (default): Do not upgrade. Note: When upgrading the domain suffix (i.e., UpgradeRegionDomain is true), you must also provide the connection address prefix (i.e., the Address parameter cannot be empty). After upgrading the domain suffix, existing connections will be disconnected. Please promptly update your client connection information and use the new connection address to connect to the instance. For details on connecting to an instance, see Connect to Instance. Once the domain suffix of the connection address is upgraded, it cannot be downgraded to the original suffix. Please proceed with caution. The upgraded domain suffix will automatically include the region information of the instance. The old connection address will be retained for 12 hours and will be automatically released after the retention period expires. For more details, see Upgrade Domain Suffix.
         """
         return pulumi.get(self, "upgrade_region_domain")
 
@@ -117,15 +117,15 @@ class _EndpointPublicAddressState:
                  vip: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering EndpointPublicAddress resources.
-        :param pulumi.Input[builtins.str] addr_type: 连接地址类型，取值范围如下：Private：私网连接地址。Public：公网连接地址。DirectLink：直连地址。说明仅启用分片集群的 Redis 实例申请了直连地址后，才会返回直连地址信息。关于连接地址的更多信息，请参见连接地址类型。
-        :param pulumi.Input[builtins.str] address: IP 地址或者域名。
-        :param pulumi.Input[builtins.str] eip_id: 弹性公网 IP 的 ID。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
-        :param pulumi.Input[builtins.str] new_address_prefix: 修改后的连接地址前缀。连接地址前缀需同时满足如下要求：由小写字母、数字或连字符（-）组成。以字母开头，字母或数字结尾。长度为 8~53 个字符。修改后的连接地址需要保证全局唯一，不可以与火山引擎中任何地域下的任何连接地址重名。
-        :param pulumi.Input[builtins.int] port: 端口号。
-        :param pulumi.Input[builtins.bool] upgrade_region_domain: 是否升级连接地址的域名后缀。取值范围如下：true：升级。false（默认值）：不升级。注意当需要升级域名后缀（即 UpgradeRegionDomain 为 true）时，必须同时传入连接地址前缀信息（即 Address 参数不允许为空。）升级域名后缀后，原有的连接会断开，请及时修改客户端的连接信息，使用新的连接地址来连接实例。连接实例的具体方法，请参见连接实例。连接地址域名后缀升级后不支持再降级回原来的后缀，请谨慎操作。升级后的连接地址域名后缀会自动包含实例所属地域信息，旧的连接地址会保留 12 小时，12 小时保留期到期后会被自动释放。更多详情，请参见升级域名后缀。
-        :param pulumi.Input[builtins.str] vi_pv6: 连接地址所对应的 IPv6 地址。说明仅当实例使用了 IPv6 地址时才会返回该参数。仅私网地址和直连地址支持 IPv6 地址，公网地址不支持，因此当连接地址类型为公网地址（即 AddrType 为 Public）时，该参数值固定为空。
-        :param pulumi.Input[builtins.str] vip: 连接地址所对应的 IPv4 地址。
+        :param pulumi.Input[builtins.str] addr_type: Connection address type. Valid values: Private: Private network connection address. Public: Public network connection address. DirectLink: Direct connection address. Note: Direct connection address information is returned only when a sharded Redis cluster instance has applied for a direct connection address. For more information about connection address types, see Connection Address Types.
+        :param pulumi.Input[builtins.str] address: IP address or domain name
+        :param pulumi.Input[builtins.str] eip_id: ID of the Elastic Public IP
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
+        :param pulumi.Input[builtins.str] new_address_prefix: Modified connection address prefix. The connection address prefix must meet the following requirements: Consist of lowercase letters, numbers, or hyphens (-). Start with a letter and end with a letter or number. Length must be 8–53 characters. The modified connection address must be globally unique and must not duplicate any connection address in any region of Volcano Engine.
+        :param pulumi.Input[builtins.int] port: Port number
+        :param pulumi.Input[builtins.bool] upgrade_region_domain: Whether to upgrade the domain suffix of the connection address. Valid values: true: Upgrade. false (default): Do not upgrade. Note: When upgrading the domain suffix (i.e., UpgradeRegionDomain is true), you must also provide the connection address prefix (i.e., the Address parameter cannot be empty). After upgrading the domain suffix, existing connections will be disconnected. Please promptly update your client connection information and use the new connection address to connect to the instance. For details on connecting to an instance, see Connect to Instance. Once the domain suffix of the connection address is upgraded, it cannot be downgraded to the original suffix. Please proceed with caution. The upgraded domain suffix will automatically include the region information of the instance. The old connection address will be retained for 12 hours and will be automatically released after the retention period expires. For more details, see Upgrade Domain Suffix.
+        :param pulumi.Input[builtins.str] vi_pv6: IPv6 address corresponding to the connection address. Note: This parameter is returned only if the instance uses an IPv6 address. Only private network addresses and direct connection addresses support IPv6; public network addresses do not. Therefore, when the connection address type is Public (i.e., AddrType is Public), this parameter is always empty.
+        :param pulumi.Input[builtins.str] vip: IPv4 address corresponding to the connection address
         """
         if addr_type is not None:
             pulumi.set(__self__, "addr_type", addr_type)
@@ -150,7 +150,7 @@ class _EndpointPublicAddressState:
     @pulumi.getter(name="addrType")
     def addr_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        连接地址类型，取值范围如下：Private：私网连接地址。Public：公网连接地址。DirectLink：直连地址。说明仅启用分片集群的 Redis 实例申请了直连地址后，才会返回直连地址信息。关于连接地址的更多信息，请参见连接地址类型。
+        Connection address type. Valid values: Private: Private network connection address. Public: Public network connection address. DirectLink: Direct connection address. Note: Direct connection address information is returned only when a sharded Redis cluster instance has applied for a direct connection address. For more information about connection address types, see Connection Address Types.
         """
         return pulumi.get(self, "addr_type")
 
@@ -162,7 +162,7 @@ class _EndpointPublicAddressState:
     @pulumi.getter
     def address(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        IP 地址或者域名。
+        IP address or domain name
         """
         return pulumi.get(self, "address")
 
@@ -174,7 +174,7 @@ class _EndpointPublicAddressState:
     @pulumi.getter(name="eipId")
     def eip_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        弹性公网 IP 的 ID。
+        ID of the Elastic Public IP
         """
         return pulumi.get(self, "eip_id")
 
@@ -186,7 +186,7 @@ class _EndpointPublicAddressState:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例 ID。
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -198,7 +198,7 @@ class _EndpointPublicAddressState:
     @pulumi.getter(name="newAddressPrefix")
     def new_address_prefix(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        修改后的连接地址前缀。连接地址前缀需同时满足如下要求：由小写字母、数字或连字符（-）组成。以字母开头，字母或数字结尾。长度为 8~53 个字符。修改后的连接地址需要保证全局唯一，不可以与火山引擎中任何地域下的任何连接地址重名。
+        Modified connection address prefix. The connection address prefix must meet the following requirements: Consist of lowercase letters, numbers, or hyphens (-). Start with a letter and end with a letter or number. Length must be 8–53 characters. The modified connection address must be globally unique and must not duplicate any connection address in any region of Volcano Engine.
         """
         return pulumi.get(self, "new_address_prefix")
 
@@ -210,7 +210,7 @@ class _EndpointPublicAddressState:
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        端口号。
+        Port number
         """
         return pulumi.get(self, "port")
 
@@ -222,7 +222,7 @@ class _EndpointPublicAddressState:
     @pulumi.getter(name="upgradeRegionDomain")
     def upgrade_region_domain(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否升级连接地址的域名后缀。取值范围如下：true：升级。false（默认值）：不升级。注意当需要升级域名后缀（即 UpgradeRegionDomain 为 true）时，必须同时传入连接地址前缀信息（即 Address 参数不允许为空。）升级域名后缀后，原有的连接会断开，请及时修改客户端的连接信息，使用新的连接地址来连接实例。连接实例的具体方法，请参见连接实例。连接地址域名后缀升级后不支持再降级回原来的后缀，请谨慎操作。升级后的连接地址域名后缀会自动包含实例所属地域信息，旧的连接地址会保留 12 小时，12 小时保留期到期后会被自动释放。更多详情，请参见升级域名后缀。
+        Whether to upgrade the domain suffix of the connection address. Valid values: true: Upgrade. false (default): Do not upgrade. Note: When upgrading the domain suffix (i.e., UpgradeRegionDomain is true), you must also provide the connection address prefix (i.e., the Address parameter cannot be empty). After upgrading the domain suffix, existing connections will be disconnected. Please promptly update your client connection information and use the new connection address to connect to the instance. For details on connecting to an instance, see Connect to Instance. Once the domain suffix of the connection address is upgraded, it cannot be downgraded to the original suffix. Please proceed with caution. The upgraded domain suffix will automatically include the region information of the instance. The old connection address will be retained for 12 hours and will be automatically released after the retention period expires. For more details, see Upgrade Domain Suffix.
         """
         return pulumi.get(self, "upgrade_region_domain")
 
@@ -234,7 +234,7 @@ class _EndpointPublicAddressState:
     @pulumi.getter(name="viPv6")
     def vi_pv6(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        连接地址所对应的 IPv6 地址。说明仅当实例使用了 IPv6 地址时才会返回该参数。仅私网地址和直连地址支持 IPv6 地址，公网地址不支持，因此当连接地址类型为公网地址（即 AddrType 为 Public）时，该参数值固定为空。
+        IPv6 address corresponding to the connection address. Note: This parameter is returned only if the instance uses an IPv6 address. Only private network addresses and direct connection addresses support IPv6; public network addresses do not. Therefore, when the connection address type is Public (i.e., AddrType is Public), this parameter is always empty.
         """
         return pulumi.get(self, "vi_pv6")
 
@@ -246,7 +246,7 @@ class _EndpointPublicAddressState:
     @pulumi.getter
     def vip(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        连接地址所对应的 IPv4 地址。
+        IPv4 address corresponding to the connection address
         """
         return pulumi.get(self, "vip")
 
@@ -268,7 +268,7 @@ class EndpointPublicAddress(pulumi.CustomResource):
                  upgrade_region_domain: Optional[pulumi.Input[builtins.bool]] = None,
                  __props__=None):
         """
-        开启公网访问，以便 VPC 外的设备来访问 Redis 实例。
+        Enable public network access so that devices outside the VPC can access the Redis instance.
 
         ## Example Usage
 
@@ -290,11 +290,11 @@ class EndpointPublicAddress(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] eip_id: 弹性公网 IP 的 ID。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
-        :param pulumi.Input[builtins.str] new_address_prefix: 修改后的连接地址前缀。连接地址前缀需同时满足如下要求：由小写字母、数字或连字符（-）组成。以字母开头，字母或数字结尾。长度为 8~53 个字符。修改后的连接地址需要保证全局唯一，不可以与火山引擎中任何地域下的任何连接地址重名。
-        :param pulumi.Input[builtins.int] port: 端口号。
-        :param pulumi.Input[builtins.bool] upgrade_region_domain: 是否升级连接地址的域名后缀。取值范围如下：true：升级。false（默认值）：不升级。注意当需要升级域名后缀（即 UpgradeRegionDomain 为 true）时，必须同时传入连接地址前缀信息（即 Address 参数不允许为空。）升级域名后缀后，原有的连接会断开，请及时修改客户端的连接信息，使用新的连接地址来连接实例。连接实例的具体方法，请参见连接实例。连接地址域名后缀升级后不支持再降级回原来的后缀，请谨慎操作。升级后的连接地址域名后缀会自动包含实例所属地域信息，旧的连接地址会保留 12 小时，12 小时保留期到期后会被自动释放。更多详情，请参见升级域名后缀。
+        :param pulumi.Input[builtins.str] eip_id: ID of the Elastic Public IP
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
+        :param pulumi.Input[builtins.str] new_address_prefix: Modified connection address prefix. The connection address prefix must meet the following requirements: Consist of lowercase letters, numbers, or hyphens (-). Start with a letter and end with a letter or number. Length must be 8–53 characters. The modified connection address must be globally unique and must not duplicate any connection address in any region of Volcano Engine.
+        :param pulumi.Input[builtins.int] port: Port number
+        :param pulumi.Input[builtins.bool] upgrade_region_domain: Whether to upgrade the domain suffix of the connection address. Valid values: true: Upgrade. false (default): Do not upgrade. Note: When upgrading the domain suffix (i.e., UpgradeRegionDomain is true), you must also provide the connection address prefix (i.e., the Address parameter cannot be empty). After upgrading the domain suffix, existing connections will be disconnected. Please promptly update your client connection information and use the new connection address to connect to the instance. For details on connecting to an instance, see Connect to Instance. Once the domain suffix of the connection address is upgraded, it cannot be downgraded to the original suffix. Please proceed with caution. The upgraded domain suffix will automatically include the region information of the instance. The old connection address will be retained for 12 hours and will be automatically released after the retention period expires. For more details, see Upgrade Domain Suffix.
         """
         ...
     @overload
@@ -303,7 +303,7 @@ class EndpointPublicAddress(pulumi.CustomResource):
                  args: EndpointPublicAddressArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        开启公网访问，以便 VPC 外的设备来访问 Redis 实例。
+        Enable public network access so that devices outside the VPC can access the Redis instance.
 
         ## Example Usage
 
@@ -391,15 +391,15 @@ class EndpointPublicAddress(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] addr_type: 连接地址类型，取值范围如下：Private：私网连接地址。Public：公网连接地址。DirectLink：直连地址。说明仅启用分片集群的 Redis 实例申请了直连地址后，才会返回直连地址信息。关于连接地址的更多信息，请参见连接地址类型。
-        :param pulumi.Input[builtins.str] address: IP 地址或者域名。
-        :param pulumi.Input[builtins.str] eip_id: 弹性公网 IP 的 ID。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
-        :param pulumi.Input[builtins.str] new_address_prefix: 修改后的连接地址前缀。连接地址前缀需同时满足如下要求：由小写字母、数字或连字符（-）组成。以字母开头，字母或数字结尾。长度为 8~53 个字符。修改后的连接地址需要保证全局唯一，不可以与火山引擎中任何地域下的任何连接地址重名。
-        :param pulumi.Input[builtins.int] port: 端口号。
-        :param pulumi.Input[builtins.bool] upgrade_region_domain: 是否升级连接地址的域名后缀。取值范围如下：true：升级。false（默认值）：不升级。注意当需要升级域名后缀（即 UpgradeRegionDomain 为 true）时，必须同时传入连接地址前缀信息（即 Address 参数不允许为空。）升级域名后缀后，原有的连接会断开，请及时修改客户端的连接信息，使用新的连接地址来连接实例。连接实例的具体方法，请参见连接实例。连接地址域名后缀升级后不支持再降级回原来的后缀，请谨慎操作。升级后的连接地址域名后缀会自动包含实例所属地域信息，旧的连接地址会保留 12 小时，12 小时保留期到期后会被自动释放。更多详情，请参见升级域名后缀。
-        :param pulumi.Input[builtins.str] vi_pv6: 连接地址所对应的 IPv6 地址。说明仅当实例使用了 IPv6 地址时才会返回该参数。仅私网地址和直连地址支持 IPv6 地址，公网地址不支持，因此当连接地址类型为公网地址（即 AddrType 为 Public）时，该参数值固定为空。
-        :param pulumi.Input[builtins.str] vip: 连接地址所对应的 IPv4 地址。
+        :param pulumi.Input[builtins.str] addr_type: Connection address type. Valid values: Private: Private network connection address. Public: Public network connection address. DirectLink: Direct connection address. Note: Direct connection address information is returned only when a sharded Redis cluster instance has applied for a direct connection address. For more information about connection address types, see Connection Address Types.
+        :param pulumi.Input[builtins.str] address: IP address or domain name
+        :param pulumi.Input[builtins.str] eip_id: ID of the Elastic Public IP
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
+        :param pulumi.Input[builtins.str] new_address_prefix: Modified connection address prefix. The connection address prefix must meet the following requirements: Consist of lowercase letters, numbers, or hyphens (-). Start with a letter and end with a letter or number. Length must be 8–53 characters. The modified connection address must be globally unique and must not duplicate any connection address in any region of Volcano Engine.
+        :param pulumi.Input[builtins.int] port: Port number
+        :param pulumi.Input[builtins.bool] upgrade_region_domain: Whether to upgrade the domain suffix of the connection address. Valid values: true: Upgrade. false (default): Do not upgrade. Note: When upgrading the domain suffix (i.e., UpgradeRegionDomain is true), you must also provide the connection address prefix (i.e., the Address parameter cannot be empty). After upgrading the domain suffix, existing connections will be disconnected. Please promptly update your client connection information and use the new connection address to connect to the instance. For details on connecting to an instance, see Connect to Instance. Once the domain suffix of the connection address is upgraded, it cannot be downgraded to the original suffix. Please proceed with caution. The upgraded domain suffix will automatically include the region information of the instance. The old connection address will be retained for 12 hours and will be automatically released after the retention period expires. For more details, see Upgrade Domain Suffix.
+        :param pulumi.Input[builtins.str] vi_pv6: IPv6 address corresponding to the connection address. Note: This parameter is returned only if the instance uses an IPv6 address. Only private network addresses and direct connection addresses support IPv6; public network addresses do not. Therefore, when the connection address type is Public (i.e., AddrType is Public), this parameter is always empty.
+        :param pulumi.Input[builtins.str] vip: IPv4 address corresponding to the connection address
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -420,7 +420,7 @@ class EndpointPublicAddress(pulumi.CustomResource):
     @pulumi.getter(name="addrType")
     def addr_type(self) -> pulumi.Output[builtins.str]:
         """
-        连接地址类型，取值范围如下：Private：私网连接地址。Public：公网连接地址。DirectLink：直连地址。说明仅启用分片集群的 Redis 实例申请了直连地址后，才会返回直连地址信息。关于连接地址的更多信息，请参见连接地址类型。
+        Connection address type. Valid values: Private: Private network connection address. Public: Public network connection address. DirectLink: Direct connection address. Note: Direct connection address information is returned only when a sharded Redis cluster instance has applied for a direct connection address. For more information about connection address types, see Connection Address Types.
         """
         return pulumi.get(self, "addr_type")
 
@@ -428,7 +428,7 @@ class EndpointPublicAddress(pulumi.CustomResource):
     @pulumi.getter
     def address(self) -> pulumi.Output[builtins.str]:
         """
-        IP 地址或者域名。
+        IP address or domain name
         """
         return pulumi.get(self, "address")
 
@@ -436,7 +436,7 @@ class EndpointPublicAddress(pulumi.CustomResource):
     @pulumi.getter(name="eipId")
     def eip_id(self) -> pulumi.Output[builtins.str]:
         """
-        弹性公网 IP 的 ID。
+        ID of the Elastic Public IP
         """
         return pulumi.get(self, "eip_id")
 
@@ -444,7 +444,7 @@ class EndpointPublicAddress(pulumi.CustomResource):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例 ID。
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -452,7 +452,7 @@ class EndpointPublicAddress(pulumi.CustomResource):
     @pulumi.getter(name="newAddressPrefix")
     def new_address_prefix(self) -> pulumi.Output[builtins.str]:
         """
-        修改后的连接地址前缀。连接地址前缀需同时满足如下要求：由小写字母、数字或连字符（-）组成。以字母开头，字母或数字结尾。长度为 8~53 个字符。修改后的连接地址需要保证全局唯一，不可以与火山引擎中任何地域下的任何连接地址重名。
+        Modified connection address prefix. The connection address prefix must meet the following requirements: Consist of lowercase letters, numbers, or hyphens (-). Start with a letter and end with a letter or number. Length must be 8–53 characters. The modified connection address must be globally unique and must not duplicate any connection address in any region of Volcano Engine.
         """
         return pulumi.get(self, "new_address_prefix")
 
@@ -460,7 +460,7 @@ class EndpointPublicAddress(pulumi.CustomResource):
     @pulumi.getter
     def port(self) -> pulumi.Output[builtins.int]:
         """
-        端口号。
+        Port number
         """
         return pulumi.get(self, "port")
 
@@ -468,7 +468,7 @@ class EndpointPublicAddress(pulumi.CustomResource):
     @pulumi.getter(name="upgradeRegionDomain")
     def upgrade_region_domain(self) -> pulumi.Output[builtins.bool]:
         """
-        是否升级连接地址的域名后缀。取值范围如下：true：升级。false（默认值）：不升级。注意当需要升级域名后缀（即 UpgradeRegionDomain 为 true）时，必须同时传入连接地址前缀信息（即 Address 参数不允许为空。）升级域名后缀后，原有的连接会断开，请及时修改客户端的连接信息，使用新的连接地址来连接实例。连接实例的具体方法，请参见连接实例。连接地址域名后缀升级后不支持再降级回原来的后缀，请谨慎操作。升级后的连接地址域名后缀会自动包含实例所属地域信息，旧的连接地址会保留 12 小时，12 小时保留期到期后会被自动释放。更多详情，请参见升级域名后缀。
+        Whether to upgrade the domain suffix of the connection address. Valid values: true: Upgrade. false (default): Do not upgrade. Note: When upgrading the domain suffix (i.e., UpgradeRegionDomain is true), you must also provide the connection address prefix (i.e., the Address parameter cannot be empty). After upgrading the domain suffix, existing connections will be disconnected. Please promptly update your client connection information and use the new connection address to connect to the instance. For details on connecting to an instance, see Connect to Instance. Once the domain suffix of the connection address is upgraded, it cannot be downgraded to the original suffix. Please proceed with caution. The upgraded domain suffix will automatically include the region information of the instance. The old connection address will be retained for 12 hours and will be automatically released after the retention period expires. For more details, see Upgrade Domain Suffix.
         """
         return pulumi.get(self, "upgrade_region_domain")
 
@@ -476,7 +476,7 @@ class EndpointPublicAddress(pulumi.CustomResource):
     @pulumi.getter(name="viPv6")
     def vi_pv6(self) -> pulumi.Output[builtins.str]:
         """
-        连接地址所对应的 IPv6 地址。说明仅当实例使用了 IPv6 地址时才会返回该参数。仅私网地址和直连地址支持 IPv6 地址，公网地址不支持，因此当连接地址类型为公网地址（即 AddrType 为 Public）时，该参数值固定为空。
+        IPv6 address corresponding to the connection address. Note: This parameter is returned only if the instance uses an IPv6 address. Only private network addresses and direct connection addresses support IPv6; public network addresses do not. Therefore, when the connection address type is Public (i.e., AddrType is Public), this parameter is always empty.
         """
         return pulumi.get(self, "vi_pv6")
 
@@ -484,7 +484,7 @@ class EndpointPublicAddress(pulumi.CustomResource):
     @pulumi.getter
     def vip(self) -> pulumi.Output[builtins.str]:
         """
-        连接地址所对应的 IPv4 地址。
+        IPv4 address corresponding to the connection address
         """
         return pulumi.get(self, "vip")
 

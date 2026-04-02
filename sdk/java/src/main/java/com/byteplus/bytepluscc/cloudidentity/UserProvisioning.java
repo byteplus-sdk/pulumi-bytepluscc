@@ -14,7 +14,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * 当您创建好云身份中心用户后，需要授予用户访问到各账号的登录访问权限。
+ * After you create a Cloud Identity Center user, you need to grant the user login access to each account.
  * 
  * ## Example Usage
  * 
@@ -68,182 +68,182 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:cloudidentity/userProvisioning:UserProvisioning")
 public class UserProvisioning extends com.pulumi.resources.CustomResource {
     /**
-     * 创建时间。
+     * Creation Time
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 创建时间。
+     * @return Creation Time
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 删除策略。
+     * Deletion Policy
      * 
      */
     @Export(name="deletionStrategy", refs={String.class}, tree="[0]")
     private Output<String> deletionStrategy;
 
     /**
-     * @return 删除策略。
+     * @return Deletion Policy
      * 
      */
     public Output<String> deletionStrategy() {
         return this.deletionStrategy;
     }
     /**
-     * 任务描述。
+     * Task Description
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 任务描述。
+     * @return Task Description
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 用户名冲突策略。
+     * Username Conflict Policy
      * 
      */
     @Export(name="duplicationStrategy", refs={String.class}, tree="[0]")
     private Output<String> duplicationStrategy;
 
     /**
-     * @return 用户名冲突策略。
+     * @return Username Conflict Policy
      * 
      */
     public Output<String> duplicationStrategy() {
         return this.duplicationStrategy;
     }
     /**
-     * 本次同步IAM用户名称后缀。
+     * Suffix for IAM user name in this synchronization
      * 
      */
     @Export(name="duplicationSuffix", refs={String.class}, tree="[0]")
     private Output<String> duplicationSuffix;
 
     /**
-     * @return 本次同步IAM用户名称后缀。
+     * @return Suffix for IAM user name in this synchronization
      * 
      */
     public Output<String> duplicationSuffix() {
         return this.duplicationSuffix;
     }
     /**
-     * 身份源冲突策略。
+     * Identity Source Conflict Policy
      * 
      */
     @Export(name="identitySourceStrategy", refs={String.class}, tree="[0]")
     private Output<String> identitySourceStrategy;
 
     /**
-     * @return 身份源冲突策略。
+     * @return Identity Source Conflict Policy
      * 
      */
     public Output<String> identitySourceStrategy() {
         return this.identitySourceStrategy;
     }
     /**
-     * 身份id。
+     * Identity ID
      * 
      */
     @Export(name="principalId", refs={String.class}, tree="[0]")
     private Output<String> principalId;
 
     /**
-     * @return 身份id。
+     * @return Identity ID
      * 
      */
     public Output<String> principalId() {
         return this.principalId;
     }
     /**
-     * 目标名称。
+     * Target Name
      * 
      */
     @Export(name="principalName", refs={String.class}, tree="[0]")
     private Output<String> principalName;
 
     /**
-     * @return 目标名称。
+     * @return Target Name
      * 
      */
     public Output<String> principalName() {
         return this.principalName;
     }
     /**
-     * 身份类型。
+     * Identity Type
      * 
      */
     @Export(name="principalType", refs={String.class}, tree="[0]")
     private Output<String> principalType;
 
     /**
-     * @return 身份类型。
+     * @return Identity Type
      * 
      */
     public Output<String> principalType() {
         return this.principalType;
     }
     /**
-     * 授权任务状态。Provisioned 授权成功，Provisioning 正在授权，DeleteProvisioning 授权解除中，DeleteProvisioned 授权解除成功
+     * Authorization Task Status. Provisioned: authorization successful, Provisioning: authorizing, DeleteProvisioning: revoking authorization, DeleteProvisioned: authorization revoked successfully.
      * 
      */
     @Export(name="provisionStatus", refs={String.class}, tree="[0]")
     private Output<String> provisionStatus;
 
     /**
-     * @return 授权任务状态。Provisioned 授权成功，Provisioning 正在授权，DeleteProvisioning 授权解除中，DeleteProvisioned 授权解除成功
+     * @return Authorization Task Status. Provisioned: authorization successful, Provisioning: authorizing, DeleteProvisioning: revoking authorization, DeleteProvisioned: authorization revoked successfully.
      * 
      */
     public Output<String> provisionStatus() {
         return this.provisionStatus;
     }
     /**
-     * 目标id。
+     * Target ID
      * 
      */
     @Export(name="targetId", refs={String.class}, tree="[0]")
     private Output<String> targetId;
 
     /**
-     * @return 目标id。
+     * @return Target ID
      * 
      */
     public Output<String> targetId() {
         return this.targetId;
     }
     /**
-     * 更新时间。
+     * Update Time
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 更新时间。
+     * @return Update Time
      * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
-     * IAM 用户同步任务ID。
+     * IAM User Synchronization Task ID
      * 
      */
     @Export(name="userProvisioningId", refs={String.class}, tree="[0]")
     private Output<String> userProvisioningId;
 
     /**
-     * @return IAM 用户同步任务ID。
+     * @return IAM User Synchronization Task ID
      * 
      */
     public Output<String> userProvisioningId() {

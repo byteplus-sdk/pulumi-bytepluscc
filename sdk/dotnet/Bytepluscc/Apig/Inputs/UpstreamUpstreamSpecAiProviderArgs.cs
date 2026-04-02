@@ -14,25 +14,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class UpstreamUpstreamSpecAiProviderArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 模型地址。
+        /// Model address
         /// </summary>
         [Input("baseUrl")]
         public Input<string>? BaseUrl { get; set; }
 
         /// <summary>
-        /// 火山自部署模型服务。
+        /// Volcano Engine self-hosted model service
         /// </summary>
         [Input("customModelService")]
         public Input<Inputs.UpstreamUpstreamSpecAiProviderCustomModelServiceArgs>? CustomModelService { get; set; }
 
         /// <summary>
-        /// 模型服务商名称。
+        /// Model Service Provider Name
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 模型API key。
+        /// Model API key
         /// </summary>
         [Input("token")]
         public Input<string>? Token { get; set; }

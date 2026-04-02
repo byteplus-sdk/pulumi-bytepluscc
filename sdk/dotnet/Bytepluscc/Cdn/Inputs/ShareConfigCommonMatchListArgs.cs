@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class ShareConfigCommonMatchListArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示该通用列表的内容。
+        /// Specifies the contents of the common list.
         /// </summary>
         [Input("commonType")]
         public Input<Inputs.ShareConfigCommonMatchListCommonTypeArgs>? CommonType { get; set; }

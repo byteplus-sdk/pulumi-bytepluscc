@@ -17,14 +17,14 @@ public final class InstanceKibanaConfigArgs extends com.pulumi.resources.Resourc
     public static final InstanceKibanaConfigArgs Empty = new InstanceKibanaConfigArgs();
 
     /**
-     * 接口请求超时时长，默认为 30000 毫秒，即后端响应时长超过 30 秒时将出现503 Request timed out报错。如果需要正常获得响应、减少 503 报错，您可以选择增加请求超时时长。
+     * API request timeout duration. Default is 30000 milliseconds. If the backend response exceeds 30 seconds, a 503 Request timed out error will occur. To receive responses normally and reduce 503 errors, you can increase the request timeout duration
      * 
      */
     @Import(name="requestTimeout")
     private @Nullable Output<Integer> requestTimeout;
 
     /**
-     * @return 接口请求超时时长，默认为 30000 毫秒，即后端响应时长超过 30 秒时将出现503 Request timed out报错。如果需要正常获得响应、减少 503 报错，您可以选择增加请求超时时长。
+     * @return API request timeout duration. Default is 30000 milliseconds. If the backend response exceeds 30 seconds, a 503 Request timed out error will occur. To receive responses normally and reduce 503 errors, you can increase the request timeout duration
      * 
      */
     public Optional<Output<Integer>> requestTimeout() {
@@ -32,14 +32,14 @@ public final class InstanceKibanaConfigArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 是否主动延长会话有效期。true：默认值，表示每次页面请求都会延长会话有效期。false：不会主动延长会话有效期。此种配置下可以实现会话超时过期效果，当登录时长达到 Session 有效时长后，将会自动退出登录。
+     * Whether to proactively extend session validity. true: Default value, session validity is extended with each page request. false: Session validity is not proactively extended. With this setting, session timeout can occur; when login duration reaches the session validity period, you will be automatically logged out.
      * 
      */
     @Import(name="sessionKeepAlive")
     private @Nullable Output<Boolean> sessionKeepAlive;
 
     /**
-     * @return 是否主动延长会话有效期。true：默认值，表示每次页面请求都会延长会话有效期。false：不会主动延长会话有效期。此种配置下可以实现会话超时过期效果，当登录时长达到 Session 有效时长后，将会自动退出登录。
+     * @return Whether to proactively extend session validity. true: Default value, session validity is extended with each page request. false: Session validity is not proactively extended. With this setting, session timeout can occur; when login duration reaches the session validity period, you will be automatically logged out.
      * 
      */
     public Optional<Output<Boolean>> sessionKeepAlive() {
@@ -47,14 +47,14 @@ public final class InstanceKibanaConfigArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 会话有效时长，默认为 3600000 毫秒（1 小时）。如果您选择将 Session 活动保持设置为否，当登录时长达到 Session 有效时长后，将会自动退出登录。
+     * Session validity duration. Default is 3600000 milliseconds (1 hour). If you set Session activity retention to No, you will be automatically logged out when the login duration reaches the session validity duration
      * 
      */
     @Import(name="sessionTtl")
     private @Nullable Output<Integer> sessionTtl;
 
     /**
-     * @return 会话有效时长，默认为 3600000 毫秒（1 小时）。如果您选择将 Session 活动保持设置为否，当登录时长达到 Session 有效时长后，将会自动退出登录。
+     * @return Session validity duration. Default is 3600000 milliseconds (1 hour). If you set Session activity retention to No, you will be automatically logged out when the login duration reaches the session validity duration
      * 
      */
     public Optional<Output<Integer>> sessionTtl() {
@@ -88,7 +88,7 @@ public final class InstanceKibanaConfigArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param requestTimeout 接口请求超时时长，默认为 30000 毫秒，即后端响应时长超过 30 秒时将出现503 Request timed out报错。如果需要正常获得响应、减少 503 报错，您可以选择增加请求超时时长。
+         * @param requestTimeout API request timeout duration. Default is 30000 milliseconds. If the backend response exceeds 30 seconds, a 503 Request timed out error will occur. To receive responses normally and reduce 503 errors, you can increase the request timeout duration
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class InstanceKibanaConfigArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param requestTimeout 接口请求超时时长，默认为 30000 毫秒，即后端响应时长超过 30 秒时将出现503 Request timed out报错。如果需要正常获得响应、减少 503 报错，您可以选择增加请求超时时长。
+         * @param requestTimeout API request timeout duration. Default is 30000 milliseconds. If the backend response exceeds 30 seconds, a 503 Request timed out error will occur. To receive responses normally and reduce 503 errors, you can increase the request timeout duration
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class InstanceKibanaConfigArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param sessionKeepAlive 是否主动延长会话有效期。true：默认值，表示每次页面请求都会延长会话有效期。false：不会主动延长会话有效期。此种配置下可以实现会话超时过期效果，当登录时长达到 Session 有效时长后，将会自动退出登录。
+         * @param sessionKeepAlive Whether to proactively extend session validity. true: Default value, session validity is extended with each page request. false: Session validity is not proactively extended. With this setting, session timeout can occur; when login duration reaches the session validity period, you will be automatically logged out.
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class InstanceKibanaConfigArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param sessionKeepAlive 是否主动延长会话有效期。true：默认值，表示每次页面请求都会延长会话有效期。false：不会主动延长会话有效期。此种配置下可以实现会话超时过期效果，当登录时长达到 Session 有效时长后，将会自动退出登录。
+         * @param sessionKeepAlive Whether to proactively extend session validity. true: Default value, session validity is extended with each page request. false: Session validity is not proactively extended. With this setting, session timeout can occur; when login duration reaches the session validity period, you will be automatically logged out.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class InstanceKibanaConfigArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param sessionTtl 会话有效时长，默认为 3600000 毫秒（1 小时）。如果您选择将 Session 活动保持设置为否，当登录时长达到 Session 有效时长后，将会自动退出登录。
+         * @param sessionTtl Session validity duration. Default is 3600000 milliseconds (1 hour). If you set Session activity retention to No, you will be automatically logged out when the login duration reaches the session validity duration
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class InstanceKibanaConfigArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param sessionTtl 会话有效时长，默认为 3600000 毫秒（1 小时）。如果您选择将 Session 活动保持设置为否，当登录时长达到 Session 有效时长后，将会自动退出登录。
+         * @param sessionTtl Session validity duration. Default is 3600000 milliseconds (1 hour). If you set Session activity retention to No, you will be automatically logged out when the login duration reaches the session validity duration
          * 
          * @return builder
          * 

@@ -65,43 +65,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
     public sealed class GetLoadBalancerResult
     {
         /// <summary>
-        /// ALB 实例的 IP 类型。IPv4：IPv4 类型；DualStack：IPv4&amp;IPv6 双栈类型。
+        /// IP type of the ALB instance. IPv4: IPv4 type; DualStack: IPv4 &amp; IPv6 dual stack type.
         /// </summary>
         public readonly string AddressIpVersion;
         /// <summary>
-        /// 绑定的共享带宽包ID，可实现带宽共享。
+        /// ID of the bound shared bandwidth package, enabling bandwidth sharing.
         /// </summary>
         public readonly string BandwidthPackageId;
         /// <summary>
-        /// ALB 实例的服务状态。Normal：正常；FinancialLocked：因欠费被锁定。
+        /// Service status of the ALB instance. Normal: normal; FinancialLocked: locked due to overdue payment.
         /// </summary>
         public readonly string BusinessStatus;
         /// <summary>
-        /// ALB 实例的创建时间。
+        /// Creation time of the ALB instance.
         /// </summary>
         public readonly string CreateTime;
         /// <summary>
-        /// 删除保护开关。on：开启；off：关闭。
+        /// Delete protection switch. on: enabled; off: disabled.
         /// </summary>
         public readonly string DeleteProtection;
         /// <summary>
-        /// ALB 实例的预期回收时间。该参数只有实例处于 FinancialLocked 状态时有返回值。
+        /// Expected reclamation time of the ALB instance. This parameter is only returned when the instance is in the FinancialLocked state.
         /// </summary>
         public readonly string DeletedTime;
         /// <summary>
-        /// ALB 实例的描述。
+        /// Description of the ALB instance.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// DNS域名。
+        /// DNS domain name.
         /// </summary>
         public readonly string DnsName;
         /// <summary>
-        /// 公网IP的计费配置，仅适用于公网实例。
+        /// Billing configuration for public IP, only applicable to public instances.
         /// </summary>
         public readonly Outputs.GetLoadBalancerEipBillingConfigResult EipBillingConfig;
         /// <summary>
-        /// 全球加速器配置，用于提升跨地域访问速度。
+        /// Global accelerator configuration, used to improve cross-region access speed.
         /// </summary>
         public readonly Outputs.GetLoadBalancerGlobalAcceleratorResult GlobalAccelerator;
         /// <summary>
@@ -109,87 +109,87 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+        /// When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
         /// </summary>
         public readonly string Ipv6BandwidthPackageId;
         /// <summary>
-        /// IPv6公网IP的计費配置，仅适用于公网实例。
+        /// Billing configuration for IPv6 public IP, only applicable to public instances.
         /// </summary>
         public readonly Outputs.GetLoadBalancerIpv6EipBillingConfigResult Ipv6EipBillingConfig;
         /// <summary>
-        /// ALB实例计费类型，当前仅支持按量计费（取值为1）。
+        /// ALB instance billing type. Currently, only pay-as-you-go is supported (value is 1).
         /// </summary>
         public readonly int LoadBalancerBillingType;
         /// <summary>
-        /// 应用型负载均衡的版本。Basic：基础版；Standard：标准版。
+        /// Version of the application load balancer. Basic: Basic version; Standard: Standard version.
         /// </summary>
         public readonly string LoadBalancerEdition;
         /// <summary>
-        /// ALB 实例 ID。
+        /// ALB instance ID.
         /// </summary>
         public readonly string LoadBalancerId;
         /// <summary>
-        /// ALB 实例的名称。
+        /// Name of the ALB instance.
         /// </summary>
         public readonly string LoadBalancerName;
         /// <summary>
-        /// ALB 实例被冻结的原因，例如 Financial（欠费）或 Security（安全原因）。仅在实例被锁定时返回。
+        /// Reason for ALB instance freeze, such as Financial (arrears) or Security (security reasons). Returned only when the instance is locked.
         /// </summary>
         public readonly string LockReason;
         /// <summary>
-        /// 修改保护原因。仅在 ModificationProtectionStatus 为 ConsoleProtection 时，该参数有效且合法。
+        /// Reason for modification protection. This parameter is valid and legitimate only when ModificationProtectionStatus is ConsoleProtection.
         /// </summary>
         public readonly string ModificationProtectionReason;
         /// <summary>
-        /// 修改保护状态。NonProtection：不保护；ConsoleProtection：控制台修改保护，通过控制台无法修改实例配置。
+        /// Modification protection status. NonProtection: Not protected; ConsoleProtection: Console modification protection, instance configuration cannot be modified through the console.
         /// </summary>
         public readonly string ModificationProtectionStatus;
         /// <summary>
-        /// ALB 实例的冻结时间。该参数只有实例处于 FinancialLocked 状态时有返回值。
+        /// Freeze time of the ALB instance. This parameter is only returned when the instance is in the FinancialLocked state.
         /// </summary>
         public readonly string OverdueTime;
         /// <summary>
-        /// 实例所属项目名称。
+        /// Name of the project to which the instance belongs.
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+        /// ALB supports the Proxy Protocol and records the client's real IP.
         /// </summary>
         public readonly string ProxyProtocolEnabled;
         /// <summary>
-        /// ALB 实例状态：Active（运行中）、Provisioning（创建中）、Configuring（配置中）、Deleting（删除中）、CreateFailed（创建失败）、Inactive（已停止）。
+        /// ALB instance status: Active (running), Provisioning (creating), Configuring (configuring), Deleting (deleting), CreateFailed (creation failed), Inactive (stopped).
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// 为实例绑定的标签列表，用于分类和计费。
+        /// List of tags bound to the instance, used for categorization and billing.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetLoadBalancerTagResult> Tags;
         /// <summary>
-        /// ALB 实例的类型。取值是 public 或 private 。public：表示创建一个公网负载均衡实例，系统会分配一个公网IP地址和一个私网IP地址，可用于转发公网请求和私网请求。private：表示创建一个私网负载均衡实例，系统会分配一个私网IP地址，仅用于转发私网请求。
+        /// Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// ALB 实例的最后更新时间。
+        /// Last update time of the ALB instance.
         /// </summary>
         public readonly string UpdateTime;
         /// <summary>
-        /// 负载均衡实例所属的私有网络（VPC）的ID。
+        /// ID of the Virtual Private Cloud (VPC) to which the load balancer instance belongs.
         /// </summary>
         public readonly string VpcId;
         /// <summary>
-        /// ALB 实例绑定的 WAF 安全防护实例 ID。
+        /// ID of the WAF security protection instance bound to the ALB instance.
         /// </summary>
         public readonly string WafInstanceId;
         /// <summary>
-        /// WAF防护的域名，用于精确匹配防护规则。
+        /// Domain name protected by WAF, used for precise rule matching.
         /// </summary>
         public readonly string WafProtectedDomain;
         /// <summary>
-        /// WAF 安全防护开关。on：开启；off：关闭。
+        /// WAF security protection switch. on: enabled; off: disabled.
         /// </summary>
         public readonly string WafProtectionEnabled;
         /// <summary>
-        /// 可用区映射列表，定义了实例在哪些可用区提供服务。
+        /// Availability zone mapping list, defines which availability zones the instance provides services in.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetLoadBalancerZoneMappingResult> ZoneMappings;
 

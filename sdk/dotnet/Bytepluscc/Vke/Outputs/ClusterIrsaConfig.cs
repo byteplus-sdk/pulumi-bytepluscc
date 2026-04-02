@@ -15,27 +15,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class ClusterIrsaConfig
     {
         /// <summary>
-        /// 接受令牌的标识符。
+        /// Identifier for accepting tokens
         /// </summary>
         public readonly string? Audience;
         /// <summary>
-        /// 是否开启 IRSA 功能，参数值说明：true：开启,false：不开启
+        /// Whether to enable IRSA feature. Parameter values: true: enabled; false: not enabled.
         /// </summary>
         public readonly bool? Enabled;
         /// <summary>
-        /// OIDC（OpenID Connect）提供商 URL 地址，OIDC 提供商的唯一标识。
+        /// OIDC (OpenID Connect) provider URL, the unique identifier for the OIDC provider.
         /// </summary>
         public readonly string? Issuer;
         /// <summary>
-        /// JWKS（JSON Web Key Set）的 URL。文件内的公钥被用来验证从 OIDC 提供者返回的任何 JWT（JSON Web Tokens）。
+        /// JWKS (JSON Web Key Set) URL. The public keys in the file are used to verify any JWT (JSON Web Tokens) returned from the OIDC provider.
         /// </summary>
         public readonly string? JwksUrl;
         /// <summary>
-        /// OIDC 提供商 TRN。
+        /// OIDC provider TRN.
         /// </summary>
         public readonly string? OidcTrn;
         /// <summary>
-        /// OIDC 提供商的 JSON 格式配置文档，包含了有关 OIDC 提供商的信息。
+        /// OIDC provider configuration document in JSON format, containing information about the OIDC provider.
         /// </summary>
         public readonly string? OpenIdConfigUrl;
 

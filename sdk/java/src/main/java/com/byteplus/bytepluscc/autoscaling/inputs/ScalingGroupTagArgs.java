@@ -16,14 +16,14 @@ public final class ScalingGroupTagArgs extends com.pulumi.resources.ResourceArgs
     public static final ScalingGroupTagArgs Empty = new ScalingGroupTagArgs();
 
     /**
-     * 用户标签的标签键。
+     * User label tag key
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 用户标签的标签键。
+     * @return User label tag key
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class ScalingGroupTagArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 用户标签的标签值。
+     * The value of the user tag.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 用户标签的标签值。
+     * @return The value of the user tag.
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class ScalingGroupTagArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param key 用户标签的标签键。
+         * @param key User label tag key
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class ScalingGroupTagArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param key 用户标签的标签键。
+         * @param key User label tag key
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class ScalingGroupTagArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param value 用户标签的标签值。
+         * @param value The value of the user tag.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class ScalingGroupTagArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param value 用户标签的标签值。
+         * @param value The value of the user tag.
          * 
          * @return builder
          * 

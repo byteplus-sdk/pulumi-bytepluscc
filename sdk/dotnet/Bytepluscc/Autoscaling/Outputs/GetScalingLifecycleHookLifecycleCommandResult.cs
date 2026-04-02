@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling.Outputs
     public sealed class GetScalingLifecycleHookLifecycleCommandResult
     {
         /// <summary>
-        /// 云助手命令ID，表示触发生命周期挂钩后在实例中执行云助手命令。如果命令执行成功，则按照CONTINUE执行挂起结束后的策略。如果命令执行失败/超时或生命周期挂钩超时，则按照LifecycleHookPolicy参数的配置执行挂起结束后的策略。
+        /// Cloud Assistant command ID, indicates that after the lifecycle hook is triggered, the Cloud Assistant command is executed on the instance. If the command executes successfully, the post-suspend policy is executed according to CONTINUE. If the command fails, times out, or the lifecycle hook times out, the post-suspend policy is executed according to the LifecycleHookPolicy parameter configuration.
         /// </summary>
         public readonly string CommandId;
         /// <summary>
-        /// 云助手命令中的参数和参数值。参数的个数范围为0~60，且需要注意：参数不允许为空字符串，最多支持64个字符。值允许为空字符串。参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+        /// Parameters and values in the Cloud Assistant command. The number of parameters ranges from 0 to 60. Note: Parameters cannot be empty strings and can have up to 64 characters. Values can be empty strings. After Base64 encoding, the combined length of parameters and the original command content must not exceed 16 KB. The set of parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
         /// </summary>
         public readonly string Parameters;
 

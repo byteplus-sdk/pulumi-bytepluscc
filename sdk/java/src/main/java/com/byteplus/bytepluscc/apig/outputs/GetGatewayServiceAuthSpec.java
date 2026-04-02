@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetGatewayServiceAuthSpec {
     /**
-     * @return 是否开启认证。
+     * @return Whether authentication is enabled.
      * 
      */
     private Boolean enable;
 
     private GetGatewayServiceAuthSpec() {}
     /**
-     * @return 是否开启认证。
+     * @return Whether authentication is enabled.
      * 
      */
     public Boolean enable() {

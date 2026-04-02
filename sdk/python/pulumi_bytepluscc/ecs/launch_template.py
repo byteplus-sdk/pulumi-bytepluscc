@@ -29,10 +29,10 @@ class LaunchTemplateArgs:
                  launch_template_version: Optional[pulumi.Input['LaunchTemplateLaunchTemplateVersionArgs']] = None):
         """
         The set of arguments for constructing a LaunchTemplate resource.
-        :param pulumi.Input[builtins.str] launch_template_name: 实例启动模板名称。
-        :param pulumi.Input[builtins.int] default_version_number: 实例启动模板的默认版本号。
-        :param pulumi.Input[builtins.str] launch_template_project_name: 实例启动模版所属项目。
-        :param pulumi.Input['LaunchTemplateLaunchTemplateVersionArgs'] launch_template_version: 实例启动模板版本信息。
+        :param pulumi.Input[builtins.str] launch_template_name: Instance launch template name.
+        :param pulumi.Input[builtins.int] default_version_number: Instance launch template default version number
+        :param pulumi.Input[builtins.str] launch_template_project_name: Project associated with the instance launch template.
+        :param pulumi.Input['LaunchTemplateLaunchTemplateVersionArgs'] launch_template_version: Instance launch template version information
         """
         pulumi.set(__self__, "launch_template_name", launch_template_name)
         if default_version_number is not None:
@@ -48,7 +48,7 @@ class LaunchTemplateArgs:
     @pulumi.getter(name="launchTemplateName")
     def launch_template_name(self) -> pulumi.Input[builtins.str]:
         """
-        实例启动模板名称。
+        Instance launch template name.
         """
         return pulumi.get(self, "launch_template_name")
 
@@ -60,7 +60,7 @@ class LaunchTemplateArgs:
     @pulumi.getter(name="defaultVersionNumber")
     def default_version_number(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例启动模板的默认版本号。
+        Instance launch template default version number
         """
         return pulumi.get(self, "default_version_number")
 
@@ -72,7 +72,7 @@ class LaunchTemplateArgs:
     @pulumi.getter(name="launchTemplateProjectName")
     def launch_template_project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例启动模版所属项目。
+        Project associated with the instance launch template.
         """
         return pulumi.get(self, "launch_template_project_name")
 
@@ -93,7 +93,7 @@ class LaunchTemplateArgs:
     @pulumi.getter(name="launchTemplateVersion")
     def launch_template_version(self) -> Optional[pulumi.Input['LaunchTemplateLaunchTemplateVersionArgs']]:
         """
-        实例启动模板版本信息。
+        Instance launch template version information
         """
         return pulumi.get(self, "launch_template_version")
 
@@ -116,14 +116,14 @@ class _LaunchTemplateState:
                  updated_at: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering LaunchTemplate resources.
-        :param pulumi.Input[builtins.str] created_at: 实例启动模板的创建时间。
-        :param pulumi.Input[builtins.int] default_version_number: 实例启动模板的默认版本号。
-        :param pulumi.Input[builtins.int] latest_version_number: 实例启动模的最新版本号。
-        :param pulumi.Input[builtins.str] launch_template_id: 实例启动模板 ID。
-        :param pulumi.Input[builtins.str] launch_template_name: 实例启动模板名称。
-        :param pulumi.Input[builtins.str] launch_template_project_name: 实例启动模版所属项目。
-        :param pulumi.Input['LaunchTemplateLaunchTemplateVersionArgs'] launch_template_version: 实例启动模板版本信息。
-        :param pulumi.Input[builtins.str] updated_at: 实例启动模板的更新时间。
+        :param pulumi.Input[builtins.str] created_at: Instance launch template creation time
+        :param pulumi.Input[builtins.int] default_version_number: Instance launch template default version number
+        :param pulumi.Input[builtins.int] latest_version_number: Latest version number of the instance launch template.
+        :param pulumi.Input[builtins.str] launch_template_id: Instance launch template ID
+        :param pulumi.Input[builtins.str] launch_template_name: Instance launch template name.
+        :param pulumi.Input[builtins.str] launch_template_project_name: Project associated with the instance launch template.
+        :param pulumi.Input['LaunchTemplateLaunchTemplateVersionArgs'] launch_template_version: Instance launch template version information
+        :param pulumi.Input[builtins.str] updated_at: Instance launch template update time
         """
         if created_at is not None:
             pulumi.set(__self__, "created_at", created_at)
@@ -148,7 +148,7 @@ class _LaunchTemplateState:
     @pulumi.getter(name="createdAt")
     def created_at(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例启动模板的创建时间。
+        Instance launch template creation time
         """
         return pulumi.get(self, "created_at")
 
@@ -160,7 +160,7 @@ class _LaunchTemplateState:
     @pulumi.getter(name="defaultVersionNumber")
     def default_version_number(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例启动模板的默认版本号。
+        Instance launch template default version number
         """
         return pulumi.get(self, "default_version_number")
 
@@ -172,7 +172,7 @@ class _LaunchTemplateState:
     @pulumi.getter(name="latestVersionNumber")
     def latest_version_number(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例启动模的最新版本号。
+        Latest version number of the instance launch template.
         """
         return pulumi.get(self, "latest_version_number")
 
@@ -184,7 +184,7 @@ class _LaunchTemplateState:
     @pulumi.getter(name="launchTemplateId")
     def launch_template_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例启动模板 ID。
+        Instance launch template ID
         """
         return pulumi.get(self, "launch_template_id")
 
@@ -196,7 +196,7 @@ class _LaunchTemplateState:
     @pulumi.getter(name="launchTemplateName")
     def launch_template_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例启动模板名称。
+        Instance launch template name.
         """
         return pulumi.get(self, "launch_template_name")
 
@@ -208,7 +208,7 @@ class _LaunchTemplateState:
     @pulumi.getter(name="launchTemplateProjectName")
     def launch_template_project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例启动模版所属项目。
+        Project associated with the instance launch template.
         """
         return pulumi.get(self, "launch_template_project_name")
 
@@ -229,7 +229,7 @@ class _LaunchTemplateState:
     @pulumi.getter(name="launchTemplateVersion")
     def launch_template_version(self) -> Optional[pulumi.Input['LaunchTemplateLaunchTemplateVersionArgs']]:
         """
-        实例启动模板版本信息。
+        Instance launch template version information
         """
         return pulumi.get(self, "launch_template_version")
 
@@ -241,7 +241,7 @@ class _LaunchTemplateState:
     @pulumi.getter(name="updatedAt")
     def updated_at(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例启动模板的更新时间。
+        Instance launch template update time
         """
         return pulumi.get(self, "updated_at")
 
@@ -263,7 +263,7 @@ class LaunchTemplate(pulumi.CustomResource):
                  launch_template_version: Optional[pulumi.Input[Union['LaunchTemplateLaunchTemplateVersionArgs', 'LaunchTemplateLaunchTemplateVersionArgsDict']]] = None,
                  __props__=None):
         """
-        实例启动模板是一系列实例配置信息的集合，用于快速购买实例。在模板中，您可以存储除密码外的全部配置信息，包括密钥对、计算规格、云盘、网络等，如果配置信息均有效，便可以一键成功购买实例，无需进行重复配置。
+        An instance launch template is a collection of instance configuration information for quickly purchasing instances. You can store all configuration information except passwords in the template, including key pairs, compute specifications, cloud disks, networks, etc. If all configuration information is valid, you can purchase instances with one click without repeated configuration.
 
         ## Import
 
@@ -273,10 +273,10 @@ class LaunchTemplate(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] default_version_number: 实例启动模板的默认版本号。
-        :param pulumi.Input[builtins.str] launch_template_name: 实例启动模板名称。
-        :param pulumi.Input[builtins.str] launch_template_project_name: 实例启动模版所属项目。
-        :param pulumi.Input[Union['LaunchTemplateLaunchTemplateVersionArgs', 'LaunchTemplateLaunchTemplateVersionArgsDict']] launch_template_version: 实例启动模板版本信息。
+        :param pulumi.Input[builtins.int] default_version_number: Instance launch template default version number
+        :param pulumi.Input[builtins.str] launch_template_name: Instance launch template name.
+        :param pulumi.Input[builtins.str] launch_template_project_name: Project associated with the instance launch template.
+        :param pulumi.Input[Union['LaunchTemplateLaunchTemplateVersionArgs', 'LaunchTemplateLaunchTemplateVersionArgsDict']] launch_template_version: Instance launch template version information
         """
         ...
     @overload
@@ -285,7 +285,7 @@ class LaunchTemplate(pulumi.CustomResource):
                  args: LaunchTemplateArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        实例启动模板是一系列实例配置信息的集合，用于快速购买实例。在模板中，您可以存储除密码外的全部配置信息，包括密钥对、计算规格、云盘、网络等，如果配置信息均有效，便可以一键成功购买实例，无需进行重复配置。
+        An instance launch template is a collection of instance configuration information for quickly purchasing instances. You can store all configuration information except passwords in the template, including key pairs, compute specifications, cloud disks, networks, etc. If all configuration information is valid, you can purchase instances with one click without repeated configuration.
 
         ## Import
 
@@ -359,14 +359,14 @@ class LaunchTemplate(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] created_at: 实例启动模板的创建时间。
-        :param pulumi.Input[builtins.int] default_version_number: 实例启动模板的默认版本号。
-        :param pulumi.Input[builtins.int] latest_version_number: 实例启动模的最新版本号。
-        :param pulumi.Input[builtins.str] launch_template_id: 实例启动模板 ID。
-        :param pulumi.Input[builtins.str] launch_template_name: 实例启动模板名称。
-        :param pulumi.Input[builtins.str] launch_template_project_name: 实例启动模版所属项目。
-        :param pulumi.Input[Union['LaunchTemplateLaunchTemplateVersionArgs', 'LaunchTemplateLaunchTemplateVersionArgsDict']] launch_template_version: 实例启动模板版本信息。
-        :param pulumi.Input[builtins.str] updated_at: 实例启动模板的更新时间。
+        :param pulumi.Input[builtins.str] created_at: Instance launch template creation time
+        :param pulumi.Input[builtins.int] default_version_number: Instance launch template default version number
+        :param pulumi.Input[builtins.int] latest_version_number: Latest version number of the instance launch template.
+        :param pulumi.Input[builtins.str] launch_template_id: Instance launch template ID
+        :param pulumi.Input[builtins.str] launch_template_name: Instance launch template name.
+        :param pulumi.Input[builtins.str] launch_template_project_name: Project associated with the instance launch template.
+        :param pulumi.Input[Union['LaunchTemplateLaunchTemplateVersionArgs', 'LaunchTemplateLaunchTemplateVersionArgsDict']] launch_template_version: Instance launch template version information
+        :param pulumi.Input[builtins.str] updated_at: Instance launch template update time
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -387,7 +387,7 @@ class LaunchTemplate(pulumi.CustomResource):
     @pulumi.getter(name="createdAt")
     def created_at(self) -> pulumi.Output[builtins.str]:
         """
-        实例启动模板的创建时间。
+        Instance launch template creation time
         """
         return pulumi.get(self, "created_at")
 
@@ -395,7 +395,7 @@ class LaunchTemplate(pulumi.CustomResource):
     @pulumi.getter(name="defaultVersionNumber")
     def default_version_number(self) -> pulumi.Output[builtins.int]:
         """
-        实例启动模板的默认版本号。
+        Instance launch template default version number
         """
         return pulumi.get(self, "default_version_number")
 
@@ -403,7 +403,7 @@ class LaunchTemplate(pulumi.CustomResource):
     @pulumi.getter(name="latestVersionNumber")
     def latest_version_number(self) -> pulumi.Output[builtins.int]:
         """
-        实例启动模的最新版本号。
+        Latest version number of the instance launch template.
         """
         return pulumi.get(self, "latest_version_number")
 
@@ -411,7 +411,7 @@ class LaunchTemplate(pulumi.CustomResource):
     @pulumi.getter(name="launchTemplateId")
     def launch_template_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例启动模板 ID。
+        Instance launch template ID
         """
         return pulumi.get(self, "launch_template_id")
 
@@ -419,7 +419,7 @@ class LaunchTemplate(pulumi.CustomResource):
     @pulumi.getter(name="launchTemplateName")
     def launch_template_name(self) -> pulumi.Output[builtins.str]:
         """
-        实例启动模板名称。
+        Instance launch template name.
         """
         return pulumi.get(self, "launch_template_name")
 
@@ -427,7 +427,7 @@ class LaunchTemplate(pulumi.CustomResource):
     @pulumi.getter(name="launchTemplateProjectName")
     def launch_template_project_name(self) -> pulumi.Output[builtins.str]:
         """
-        实例启动模版所属项目。
+        Project associated with the instance launch template.
         """
         return pulumi.get(self, "launch_template_project_name")
 
@@ -440,7 +440,7 @@ class LaunchTemplate(pulumi.CustomResource):
     @pulumi.getter(name="launchTemplateVersion")
     def launch_template_version(self) -> pulumi.Output['outputs.LaunchTemplateLaunchTemplateVersion']:
         """
-        实例启动模板版本信息。
+        Instance launch template version information
         """
         return pulumi.get(self, "launch_template_version")
 
@@ -448,7 +448,7 @@ class LaunchTemplate(pulumi.CustomResource):
     @pulumi.getter(name="updatedAt")
     def updated_at(self) -> pulumi.Output[builtins.str]:
         """
-        实例启动模板的更新时间。
+        Instance launch template update time
         """
         return pulumi.get(self, "updated_at")
 

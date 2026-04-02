@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
     public sealed class DefaultNodePoolNodeConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 节点的第一块数据盘是否已配置并格式化挂载作为容器镜像和日志的存储目录，参数值说明：false：未配置并格式化。true：已配置并格式化。
+        /// Whether the first data disk on the node has been configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted true: configured and formatted
         /// </summary>
         [Input("additionalContainerStorageEnabled")]
         public Input<bool>? AdditionalContainerStorageEnabled { get; set; }
 
         /// <summary>
-        /// 云服务器实例到期是否自动续费，参数值说明：true：自动续费false：不自动续费仅当InstanceChargeType=PrePaid时才返回的参数。
+        /// Whether the cloud server instance is automatically renewed upon expiration. Parameter values: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
         /// </summary>
         [Input("autoRenew")]
         public Input<bool>? AutoRenew { get; set; }
 
         /// <summary>
-        /// 云服务器实例每次自动续费时长，单位为月。仅当AutoRenew=true时才返回的参数。
+        /// Automatic renewal duration for cloud server instance, in months. This parameter is returned only when AutoRenew=true.
         /// </summary>
         [Input("autoRenewPeriod")]
         public Input<int>? AutoRenewPeriod { get; set; }
@@ -40,19 +40,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         }
 
         /// <summary>
-        /// 实例在部署集中的分组号，0表示未设置
+        /// Group number of the instance in the deployment set. 0 means not set
         /// </summary>
         [Input("deploymentSetGroupNumber")]
         public Input<int>? DeploymentSetGroupNumber { get; set; }
 
         /// <summary>
-        /// 实例需要加入的部署集ID
+        /// Deployment set ID to be added to the instance
         /// </summary>
         [Input("deploymentSetId")]
         public Input<string>? DeploymentSetId { get; set; }
 
         /// <summary>
-        /// 节点对应的主机名称。
+        /// Host name corresponding to the node
         /// </summary>
         [Input("hostname")]
         public Input<string>? Hostname { get; set; }
@@ -61,7 +61,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         private InputList<string>? _hpcClusterIds;
 
         /// <summary>
-        /// 高性能计算集群 ID。当节点池配置为高性能计算 GPU 型规格节点时，返回高性能计算集群 ID。
+        /// High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
         /// </summary>
         public InputList<string> HpcClusterIds
         {
@@ -70,25 +70,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         }
 
         /// <summary>
-        /// 节点对应云服务器所使用的镜像 ID。
+        /// Image ID used by the cloud server corresponding to the node
         /// </summary>
         [Input("imageId")]
         public Input<string>? ImageId { get; set; }
 
         /// <summary>
-        /// 创建并初始化节点后执行的自定义脚本。Base64 编码后的 Shell 格式脚本。
+        /// Custom script executed after creating and initializing the node. Shell script in Base64 encoding
         /// </summary>
         [Input("initializeScript")]
         public Input<string>? InitializeScript { get; set; }
 
         /// <summary>
-        /// 云服务器实例计费类型，参数值说明：PostPaid：按量计费PrePaid：包年包月
+        /// Billing type for cloud server instance. Parameter value description: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
         /// </summary>
         [Input("instanceChargeType")]
         public Input<string>? InstanceChargeType { get; set; }
 
         /// <summary>
-        /// 节点（实例）名称。
+        /// Node (instance) name
         /// </summary>
         [Input("instanceName")]
         public Input<string>? InstanceName { get; set; }
@@ -97,7 +97,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         private InputList<string>? _instanceTypeIds;
 
         /// <summary>
-        /// 节点对应的云服务器实例规格 ID 列表。
+        /// List of cloud server instance type IDs corresponding to the node
         /// </summary>
         public InputList<string> InstanceTypeIds
         {
@@ -106,61 +106,61 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         }
 
         /// <summary>
-        /// 设置抢占式实例和按量实例的混合策略。当SpotStrategy为SpotAsPriceGo时，该策略生效。。
+        /// Configure the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is set to SpotAsPriceGo
         /// </summary>
         [Input("instancesDistribution")]
         public Input<Inputs.DefaultNodePoolNodeConfigInstancesDistributionGetArgs>? InstancesDistribution { get; set; }
 
         /// <summary>
-        /// 节点名称前缀，为空字符串或 nil 时表示未开启节点名称前缀策略。
+        /// Node name prefix. An empty string or nil means the node name prefix policy is not enabled
         /// </summary>
         [Input("namePrefix")]
         public Input<string>? NamePrefix { get; set; }
 
         /// <summary>
-        /// 节点间的网络通讯模式。
+        /// Network communication mode between nodes
         /// </summary>
         [Input("networkTrafficMode")]
         public Input<string>? NetworkTrafficMode { get; set; }
 
         /// <summary>
-        /// 云服务器实例购买时长，单位为月。仅当InstanceChargeType=PrePaid时才返回的参数。
+        /// Duration for purchasing cloud server instance, in months. This parameter is returned only when InstanceChargeType=PrePaid
         /// </summary>
         [Input("period")]
         public Input<int>? Period { get; set; }
 
         /// <summary>
-        /// 部署节点前执行脚本。
+        /// Script executed before deploying nodes
         /// </summary>
         [Input("preScript")]
         public Input<string>? PreScript { get; set; }
 
         /// <summary>
-        /// ECS所属项目，一个ECS只能归属于一个项目。
+        /// The project to which the ECS belongs. Each ECS can only belong to one project.
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 节点自动开启公网访问的配置信息
+        /// Configuration for automatic public network access for nodes
         /// </summary>
         [Input("publicAccessConfig")]
         public Input<Inputs.DefaultNodePoolNodeConfigPublicAccessConfigGetArgs>? PublicAccessConfig { get; set; }
 
         /// <summary>
-        /// 节点是否自动开启公网访问。取值：  - false：关闭  - true：开启
+        /// Whether the node automatically enables public network access. Values:   - false: disabled   - true: enabled
         /// </summary>
         [Input("publicAccessEnabled")]
         public Input<bool>? PublicAccessEnabled { get; set; }
 
         /// <summary>
-        /// 节点安全配置。
+        /// Node security configuration.
         /// </summary>
         [Input("security")]
         public Input<Inputs.DefaultNodePoolNodeConfigSecurityGetArgs>? Security { get; set; }
 
         /// <summary>
-        /// 按量计费的抢占式策略，当InstanceChargeType=PostPaid时NoSpot：正常按量计费实例。SpotAsPriceGo：系统自动出价，跟随当前市场实际价格。
+        /// Preemptive policy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: regular pay-as-you-go instance. SpotAsPriceGo: system auto-bidding, follows current market price.
         /// </summary>
         [Input("spotStrategy")]
         public Input<string>? SpotStrategy { get; set; }
@@ -169,7 +169,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         private InputList<string>? _subnetIds;
 
         /// <summary>
-        /// 节点网络所属的子网 ID 列表。
+        /// List of subnet IDs to which the node network belongs.
         /// </summary>
         public InputList<string> SubnetIds
         {
@@ -178,7 +178,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         }
 
         /// <summary>
-        /// 节点的系统盘配置。
+        /// System disk configuration for the node
         /// </summary>
         [Input("systemVolume")]
         public Input<Inputs.DefaultNodePoolNodeConfigSystemVolumeGetArgs>? SystemVolume { get; set; }

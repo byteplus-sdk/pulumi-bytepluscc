@@ -47,8 +47,8 @@ class InstanceCapacityInfo(dict):
                  total_ti_b: Optional[builtins.int] = None,
                  used_gi_b: Optional[builtins.int] = None):
         """
-        :param builtins.int total_ti_b: 文件系统总容量，单位为 TiB。注意：磁盘均衡耗时会根据集群容量、集群负载等因素有所不同，如 PiB 级以上的集群扩容通常需要天级别的磁盘均衡时间，磁盘均衡完成后扩容容量才会生效（并为扩容容量计费）。
-        :param builtins.int used_gi_b: 已使用容量（GiB）。
+        :param builtins.int total_ti_b: Total file system capacity, unit: TiB. Note: Disk balancing time varies based on cluster capacity, cluster load, and other factors. For clusters above the PiB level, expansion typically requires day-level disk balancing time. The expansion capacity becomes effective (and is billed) only after disk balancing is complete.
+        :param builtins.int used_gi_b: Used capacity (GiB).
         """
         if total_ti_b is not None:
             pulumi.set(__self__, "total_ti_b", total_ti_b)
@@ -59,7 +59,7 @@ class InstanceCapacityInfo(dict):
     @pulumi.getter(name="totalTiB")
     def total_ti_b(self) -> Optional[builtins.int]:
         """
-        文件系统总容量，单位为 TiB。注意：磁盘均衡耗时会根据集群容量、集群负载等因素有所不同，如 PiB 级以上的集群扩容通常需要天级别的磁盘均衡时间，磁盘均衡完成后扩容容量才会生效（并为扩容容量计费）。
+        Total file system capacity, unit: TiB. Note: Disk balancing time varies based on cluster capacity, cluster load, and other factors. For clusters above the PiB level, expansion typically requires day-level disk balancing time. The expansion capacity becomes effective (and is billed) only after disk balancing is complete.
         """
         return pulumi.get(self, "total_ti_b")
 
@@ -67,7 +67,7 @@ class InstanceCapacityInfo(dict):
     @pulumi.getter(name="usedGiB")
     def used_gi_b(self) -> Optional[builtins.int]:
         """
-        已使用容量（GiB）。
+        Used capacity (GiB).
         """
         return pulumi.get(self, "used_gi_b")
 
@@ -78,8 +78,8 @@ class InstanceTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: User tag key.
+        :param builtins.str value: User tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -90,7 +90,7 @@ class InstanceTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        用户标签的标签键。
+        User tag key.
         """
         return pulumi.get(self, "key")
 
@@ -98,7 +98,7 @@ class InstanceTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        用户标签的标签值。
+        User tag value.
         """
         return pulumi.get(self, "value")
 
@@ -109,8 +109,8 @@ class GetInstanceCapacityInfoResult(dict):
                  total_ti_b: builtins.int,
                  used_gi_b: builtins.int):
         """
-        :param builtins.int total_ti_b: 文件系统总容量，单位为 TiB。注意：磁盘均衡耗时会根据集群容量、集群负载等因素有所不同，如 PiB 级以上的集群扩容通常需要天级别的磁盘均衡时间，磁盘均衡完成后扩容容量才会生效（并为扩容容量计费）。
-        :param builtins.int used_gi_b: 已使用容量（GiB）。
+        :param builtins.int total_ti_b: Total file system capacity, unit: TiB. Note: Disk balancing time varies based on cluster capacity, cluster load, and other factors. For clusters above the PiB level, expansion typically requires day-level disk balancing time. The expansion capacity becomes effective (and is billed) only after disk balancing is complete.
+        :param builtins.int used_gi_b: Used capacity (GiB).
         """
         pulumi.set(__self__, "total_ti_b", total_ti_b)
         pulumi.set(__self__, "used_gi_b", used_gi_b)
@@ -119,7 +119,7 @@ class GetInstanceCapacityInfoResult(dict):
     @pulumi.getter(name="totalTiB")
     def total_ti_b(self) -> builtins.int:
         """
-        文件系统总容量，单位为 TiB。注意：磁盘均衡耗时会根据集群容量、集群负载等因素有所不同，如 PiB 级以上的集群扩容通常需要天级别的磁盘均衡时间，磁盘均衡完成后扩容容量才会生效（并为扩容容量计费）。
+        Total file system capacity, unit: TiB. Note: Disk balancing time varies based on cluster capacity, cluster load, and other factors. For clusters above the PiB level, expansion typically requires day-level disk balancing time. The expansion capacity becomes effective (and is billed) only after disk balancing is complete.
         """
         return pulumi.get(self, "total_ti_b")
 
@@ -127,7 +127,7 @@ class GetInstanceCapacityInfoResult(dict):
     @pulumi.getter(name="usedGiB")
     def used_gi_b(self) -> builtins.int:
         """
-        已使用容量（GiB）。
+        Used capacity (GiB).
         """
         return pulumi.get(self, "used_gi_b")
 
@@ -139,9 +139,9 @@ class GetInstanceTagResult(dict):
                  type: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str type: 标签类型，说明如下：Custom: 用户自定义标签。System: 系统标签。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: User tag key.
+        :param builtins.str type: Tag type. Descriptions are as follows: Custom: User-defined tag. System: System tag.
+        :param builtins.str value: User tag value.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "type", type)
@@ -151,7 +151,7 @@ class GetInstanceTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        用户标签的标签键。
+        User tag key.
         """
         return pulumi.get(self, "key")
 
@@ -159,7 +159,7 @@ class GetInstanceTagResult(dict):
     @pulumi.getter
     def type(self) -> builtins.str:
         """
-        标签类型，说明如下：Custom: 用户自定义标签。System: 系统标签。
+        Tag type. Descriptions are as follows: Custom: User-defined tag. System: System tag.
         """
         return pulumi.get(self, "type")
 
@@ -167,7 +167,7 @@ class GetInstanceTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        用户标签的标签值。
+        User tag value.
         """
         return pulumi.get(self, "value")
 

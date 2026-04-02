@@ -16,14 +16,14 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
     public static final RepositoryState Empty = new RepositoryState();
 
     /**
-     * 访问等级，取值如下：Private：私有类型 OCI 制品仓库，只能被有权限的用户访问。Public：公有类型 OCI 制品仓库，可以被所有用户访问。单次可填写一个或多个访问等级。
+     * Access level. Values include: Private: Private OCI artifact repository, accessible only to authorized users. Public: Public OCI artifact repository, accessible to all users. You can specify one or more access levels in a single entry.
      * 
      */
     @Import(name="accessLevel")
     private @Nullable Output<String> accessLevel;
 
     /**
-     * @return 访问等级，取值如下：Private：私有类型 OCI 制品仓库，只能被有权限的用户访问。Public：公有类型 OCI 制品仓库，可以被所有用户访问。单次可填写一个或多个访问等级。
+     * @return Access level. Values include: Private: Private OCI artifact repository, accessible only to authorized users. Public: Public OCI artifact repository, accessible to all users. You can specify one or more access levels in a single entry.
      * 
      */
     public Optional<Output<String>> accessLevel() {
@@ -31,14 +31,14 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建 OCI 制品仓库的时间。RFC3339 格式的 UTC+0 时间。
+     * Creation time of the OCI artifact repository. RFC3339 format, UTC+0 time.
      * 
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
-     * @return 创建 OCI 制品仓库的时间。RFC3339 格式的 UTC+0 时间。
+     * @return Creation time of the OCI artifact repository. RFC3339 format, UTC+0 time.
      * 
      */
     public Optional<Output<String>> createTime() {
@@ -46,14 +46,14 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 镜像仓库描述，描述长度为 0~300 个 UTF-8 字符。
+     * Image repository description, with a length of 0–300 UTF-8 characters.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 镜像仓库描述，描述长度为 0~300 个 UTF-8 字符。
+     * @return Image repository description, with a length of 0–300 UTF-8 characters.
      * 
      */
     public Optional<Output<String>> description() {
@@ -61,14 +61,14 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * OCI 制品仓库名称。同一个命名空间下，名称必须唯一。支持小写英文、数字、分隔符（分隔符可输入一个.或/、一个或多个-、一个或两个_，且分隔符不能出现在首位或末位，不能连续出现），长度限制为 1～128 个字符。
+     * OCI artifact repository name. The name must be unique within the same namespace. Supports lowercase English letters, numbers, and delimiters (delimiters can be a single &#39;.&#39; or &#39;/&#39;, one or more &#39;-&#39;, or one or two &#39;_&#39;. Delimiters cannot appear at the beginning or end of the name, nor can they appear consecutively). Length must be between 1 and 128 characters.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return OCI 制品仓库名称。同一个命名空间下，名称必须唯一。支持小写英文、数字、分隔符（分隔符可输入一个.或/、一个或多个-、一个或两个_，且分隔符不能出现在首位或末位，不能连续出现），长度限制为 1～128 个字符。
+     * @return OCI artifact repository name. The name must be unique within the same namespace. Supports lowercase English letters, numbers, and delimiters (delimiters can be a single &#39;.&#39; or &#39;/&#39;, one or more &#39;-&#39;, or one or two &#39;_&#39;. Delimiters cannot appear at the beginning or end of the name, nor can they appear consecutively). Length must be between 1 and 128 characters.
      * 
      */
     public Optional<Output<String>> name() {
@@ -76,14 +76,14 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 目标命名空间名称。在 镜像仓库控制台 目标实例的 命名空间 页面，获取命名空间名称。
+     * Target namespace name. Obtain the namespace name from the Namespace page of the target instance in the Image Repository Console.
      * 
      */
     @Import(name="namespace")
     private @Nullable Output<String> namespace;
 
     /**
-     * @return 目标命名空间名称。在 镜像仓库控制台 目标实例的 命名空间 页面，获取命名空间名称。
+     * @return Target namespace name. Obtain the namespace name from the Namespace page of the target instance in the Image Repository Console.
      * 
      */
     public Optional<Output<String>> namespace() {
@@ -91,14 +91,14 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 指定命名空间所属的镜像仓库实例名称。在 镜像仓库控制台 的 实例列表 页面，获取实例名称。
+     * Specify the name of the image repository instance to which the namespace belongs. Obtain the instance name from the Instance List page in the Image Repository Console.
      * 
      */
     @Import(name="registry")
     private @Nullable Output<String> registry;
 
     /**
-     * @return 指定命名空间所属的镜像仓库实例名称。在 镜像仓库控制台 的 实例列表 页面，获取实例名称。
+     * @return Specify the name of the image repository instance to which the namespace belongs. Obtain the instance name from the Instance List page in the Image Repository Console.
      * 
      */
     public Optional<Output<String>> registry() {
@@ -106,14 +106,14 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 最近一次更新 OCI 制品仓库的时间。RFC3339 格式的 UTC+0 时间。
+     * Last updated time for the OCI artifact repository. RFC3339 format, UTC+0 time.
      * 
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
-     * @return 最近一次更新 OCI 制品仓库的时间。RFC3339 格式的 UTC+0 时间。
+     * @return Last updated time for the OCI artifact repository. RFC3339 format, UTC+0 time.
      * 
      */
     public Optional<Output<String>> updateTime() {
@@ -151,7 +151,7 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accessLevel 访问等级，取值如下：Private：私有类型 OCI 制品仓库，只能被有权限的用户访问。Public：公有类型 OCI 制品仓库，可以被所有用户访问。单次可填写一个或多个访问等级。
+         * @param accessLevel Access level. Values include: Private: Private OCI artifact repository, accessible only to authorized users. Public: Public OCI artifact repository, accessible to all users. You can specify one or more access levels in a single entry.
          * 
          * @return builder
          * 
@@ -162,7 +162,7 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accessLevel 访问等级，取值如下：Private：私有类型 OCI 制品仓库，只能被有权限的用户访问。Public：公有类型 OCI 制品仓库，可以被所有用户访问。单次可填写一个或多个访问等级。
+         * @param accessLevel Access level. Values include: Private: Private OCI artifact repository, accessible only to authorized users. Public: Public OCI artifact repository, accessible to all users. You can specify one or more access levels in a single entry.
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createTime 创建 OCI 制品仓库的时间。RFC3339 格式的 UTC+0 时间。
+         * @param createTime Creation time of the OCI artifact repository. RFC3339 format, UTC+0 time.
          * 
          * @return builder
          * 
@@ -183,7 +183,7 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createTime 创建 OCI 制品仓库的时间。RFC3339 格式的 UTC+0 时间。
+         * @param createTime Creation time of the OCI artifact repository. RFC3339 format, UTC+0 time.
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 镜像仓库描述，描述长度为 0~300 个 UTF-8 字符。
+         * @param description Image repository description, with a length of 0–300 UTF-8 characters.
          * 
          * @return builder
          * 
@@ -204,7 +204,7 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 镜像仓库描述，描述长度为 0~300 个 UTF-8 字符。
+         * @param description Image repository description, with a length of 0–300 UTF-8 characters.
          * 
          * @return builder
          * 
@@ -214,7 +214,7 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name OCI 制品仓库名称。同一个命名空间下，名称必须唯一。支持小写英文、数字、分隔符（分隔符可输入一个.或/、一个或多个-、一个或两个_，且分隔符不能出现在首位或末位，不能连续出现），长度限制为 1～128 个字符。
+         * @param name OCI artifact repository name. The name must be unique within the same namespace. Supports lowercase English letters, numbers, and delimiters (delimiters can be a single &#39;.&#39; or &#39;/&#39;, one or more &#39;-&#39;, or one or two &#39;_&#39;. Delimiters cannot appear at the beginning or end of the name, nor can they appear consecutively). Length must be between 1 and 128 characters.
          * 
          * @return builder
          * 
@@ -225,7 +225,7 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name OCI 制品仓库名称。同一个命名空间下，名称必须唯一。支持小写英文、数字、分隔符（分隔符可输入一个.或/、一个或多个-、一个或两个_，且分隔符不能出现在首位或末位，不能连续出现），长度限制为 1～128 个字符。
+         * @param name OCI artifact repository name. The name must be unique within the same namespace. Supports lowercase English letters, numbers, and delimiters (delimiters can be a single &#39;.&#39; or &#39;/&#39;, one or more &#39;-&#39;, or one or two &#39;_&#39;. Delimiters cannot appear at the beginning or end of the name, nor can they appear consecutively). Length must be between 1 and 128 characters.
          * 
          * @return builder
          * 
@@ -235,7 +235,7 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param namespace 目标命名空间名称。在 镜像仓库控制台 目标实例的 命名空间 页面，获取命名空间名称。
+         * @param namespace Target namespace name. Obtain the namespace name from the Namespace page of the target instance in the Image Repository Console.
          * 
          * @return builder
          * 
@@ -246,7 +246,7 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param namespace 目标命名空间名称。在 镜像仓库控制台 目标实例的 命名空间 页面，获取命名空间名称。
+         * @param namespace Target namespace name. Obtain the namespace name from the Namespace page of the target instance in the Image Repository Console.
          * 
          * @return builder
          * 
@@ -256,7 +256,7 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param registry 指定命名空间所属的镜像仓库实例名称。在 镜像仓库控制台 的 实例列表 页面，获取实例名称。
+         * @param registry Specify the name of the image repository instance to which the namespace belongs. Obtain the instance name from the Instance List page in the Image Repository Console.
          * 
          * @return builder
          * 
@@ -267,7 +267,7 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param registry 指定命名空间所属的镜像仓库实例名称。在 镜像仓库控制台 的 实例列表 页面，获取实例名称。
+         * @param registry Specify the name of the image repository instance to which the namespace belongs. Obtain the instance name from the Instance List page in the Image Repository Console.
          * 
          * @return builder
          * 
@@ -277,7 +277,7 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updateTime 最近一次更新 OCI 制品仓库的时间。RFC3339 格式的 UTC+0 时间。
+         * @param updateTime Last updated time for the OCI artifact repository. RFC3339 format, UTC+0 time.
          * 
          * @return builder
          * 
@@ -288,7 +288,7 @@ public final class RepositoryState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updateTime 最近一次更新 OCI 制品仓库的时间。RFC3339 格式的 UTC+0 时间。
+         * @param updateTime Last updated time for the OCI artifact repository. RFC3339 format, UTC+0 time.
          * 
          * @return builder
          * 

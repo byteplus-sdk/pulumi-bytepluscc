@@ -11,50 +11,50 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainRequestHeaderRequestHeaderActionRequestHeaderInstance {
     /**
-     * @return 表示如何设置鉴权请求头。当前您只能设置该参数值为 set。set 表示设置请求头。此时，您需要在 Key 中指定您需要设置的请求头。如果您设置的请求头不存在，内容分发网络会在鉴权请求中添加该请求头。如果您设置的请求头已存在，内容分发网络会使用 Value 的值作为该请求头的值。
+     * @return Indicates how to set the authentication request header. Currently, you can only set this parameter to set. set means to configure the request header. You need to specify the request header in Key. If the request header does not exist, the content delivery network adds it to the authentication request. If the request header already exists, the content delivery network uses the value specified in Value as the header value.
      * 
      */
     private String action;
     /**
-     * @return 指定一个头部的名称。名称的长度不能超过 1,024 个字符，不区分大小写。同时，名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（&#34;），Delete（ASCII code 127）
+     * @return Specifies the name of a header. The name cannot exceed 1,024 characters and is case insensitive. It can contain any printable ASCII character except: underscore (_), space, double quotes (&#34;), and Delete (ASCII code 127).
      * 
      */
     private String key;
     /**
-     * @return 表示 Key 的值。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。当 ValueType 是 constant 时，您需要指定一个固定字符串作为头部的值。。该头部值的长度不能超过 1,024 个字符，可以包含除了以下字符的可打印 ASCII 字符：美元符号（$）、Delete（ASCII code 127）
+     * @return Indicates the value of the Key. This parameter is only valid when Action equals &#34;set&#34;. If Action does not equal &#34;set&#34;, this parameter is invalid. When ValueType is constant, you must specify a fixed string as the header value. The header value cannot exceed 1,024 characters and can contain any printable ASCII character except the following: dollar sign ($), Delete (ASCII code 127)
      * 
      */
     private String value;
     /**
-     * @return 指定 Key 的取值类型。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。该参数有以下取值：constant：表示 Key 的值是一个固定字符串。variable：表示 Key 的值来自一个变量。customize：表示 Key 的值是一个变量与固定字符串拼接后的字符串。
+     * @return Specifies the value type for the Key. This parameter is only valid when Action is set to &#39;set&#39;. If Action is not &#39;set&#39;, this parameter is invalid. The parameter has the following values: constant: the Key value is a fixed string. variable: the Key value comes from a variable. customize: the Key value is a string formed by concatenating a variable and a fixed string.
      * 
      */
     private String valueType;
 
     private GetDomainRequestHeaderRequestHeaderActionRequestHeaderInstance() {}
     /**
-     * @return 表示如何设置鉴权请求头。当前您只能设置该参数值为 set。set 表示设置请求头。此时，您需要在 Key 中指定您需要设置的请求头。如果您设置的请求头不存在，内容分发网络会在鉴权请求中添加该请求头。如果您设置的请求头已存在，内容分发网络会使用 Value 的值作为该请求头的值。
+     * @return Indicates how to set the authentication request header. Currently, you can only set this parameter to set. set means to configure the request header. You need to specify the request header in Key. If the request header does not exist, the content delivery network adds it to the authentication request. If the request header already exists, the content delivery network uses the value specified in Value as the header value.
      * 
      */
     public String action() {
         return this.action;
     }
     /**
-     * @return 指定一个头部的名称。名称的长度不能超过 1,024 个字符，不区分大小写。同时，名称可以包含除了以下字符的可打印 ASCII 字符：下划线（_）、空格、双引号（&#34;），Delete（ASCII code 127）
+     * @return Specifies the name of a header. The name cannot exceed 1,024 characters and is case insensitive. It can contain any printable ASCII character except: underscore (_), space, double quotes (&#34;), and Delete (ASCII code 127).
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return 表示 Key 的值。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。当 ValueType 是 constant 时，您需要指定一个固定字符串作为头部的值。。该头部值的长度不能超过 1,024 个字符，可以包含除了以下字符的可打印 ASCII 字符：美元符号（$）、Delete（ASCII code 127）
+     * @return Indicates the value of the Key. This parameter is only valid when Action equals &#34;set&#34;. If Action does not equal &#34;set&#34;, this parameter is invalid. When ValueType is constant, you must specify a fixed string as the header value. The header value cannot exceed 1,024 characters and can contain any printable ASCII character except the following: dollar sign ($), Delete (ASCII code 127)
      * 
      */
     public String value() {
         return this.value;
     }
     /**
-     * @return 指定 Key 的取值类型。该参数仅当 Action 是 set 的时候才有效。如果 Action 不是 set，该参数无效。该参数有以下取值：constant：表示 Key 的值是一个固定字符串。variable：表示 Key 的值来自一个变量。customize：表示 Key 的值是一个变量与固定字符串拼接后的字符串。
+     * @return Specifies the value type for the Key. This parameter is only valid when Action is set to &#39;set&#39;. If Action is not &#39;set&#39;, this parameter is invalid. The parameter has the following values: constant: the Key value is a fixed string. variable: the Key value comes from a variable. customize: the Key value is a string formed by concatenating a variable and a fixed string.
      * 
      */
     public String valueType() {

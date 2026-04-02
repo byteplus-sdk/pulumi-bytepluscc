@@ -20,14 +20,14 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
     public static final NodeState Empty = new NodeState();
 
     /**
-     * 选择配置节点的数据盘并格式化挂载作为容器镜像和日志的存储目录，取值：false：（默认值）关闭。默认节点池：表示不挂载数据盘。自定义节点池：使用节点池的数据盘配置进行挂载，被添加到节点池的 ECS 实例数据盘必须包含目标节点池指定了挂载的数据盘（含本地盘），且盘类型和大小完全一致。true: 开启。此时必须同时配置 ContainerStoragePath 参数。节点通过 ContainerStoragePath参数中的配置进行挂载，而忽略节点池的数据盘配置，对被添加到节点池的 ECS 实例数据盘无特殊要求。
+     * Select the data disk for the node, format and mount it as the storage directory for container images and logs. Values: false (default): Disabled. Default node pool: indicates no data disk is mounted. Custom node pool: mounts according to the node pool&#39;s data disk configuration. ECS instance data disks added to the node pool must include the data disk specified for mounting by the target node pool (including local disks), and the disk type and size must match exactly. true: Enabled. You must also configure the ContainerStoragePath parameter. The node mounts according to the configuration in the ContainerStoragePath parameter and ignores the node pool&#39;s data disk configuration. There are no special requirements for ECS instance data disks added to the node pool.
      * 
      */
     @Import(name="additionalContainerStorageEnabled")
     private @Nullable Output<Boolean> additionalContainerStorageEnabled;
 
     /**
-     * @return 选择配置节点的数据盘并格式化挂载作为容器镜像和日志的存储目录，取值：false：（默认值）关闭。默认节点池：表示不挂载数据盘。自定义节点池：使用节点池的数据盘配置进行挂载，被添加到节点池的 ECS 实例数据盘必须包含目标节点池指定了挂载的数据盘（含本地盘），且盘类型和大小完全一致。true: 开启。此时必须同时配置 ContainerStoragePath 参数。节点通过 ContainerStoragePath参数中的配置进行挂载，而忽略节点池的数据盘配置，对被添加到节点池的 ECS 实例数据盘无特殊要求。
+     * @return Select the data disk for the node, format and mount it as the storage directory for container images and logs. Values: false (default): Disabled. Default node pool: indicates no data disk is mounted. Custom node pool: mounts according to the node pool&#39;s data disk configuration. ECS instance data disks added to the node pool must include the data disk specified for mounting by the target node pool (including local disks), and the disk type and size must match exactly. true: Enabled. You must also configure the ContainerStoragePath parameter. The node mounts according to the configuration in the ContainerStoragePath parameter and ignores the node pool&#39;s data disk configuration. There are no special requirements for ECS instance data disks added to the node pool.
      * 
      */
     public Optional<Output<Boolean>> additionalContainerStorageEnabled() {
@@ -35,14 +35,14 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 集群的 ID。
+     * Cluster ID.
      * 
      */
     @Import(name="clusterId")
     private @Nullable Output<String> clusterId;
 
     /**
-     * @return 集群的 ID。
+     * @return Cluster ID.
      * 
      */
     public Optional<Output<String>> clusterId() {
@@ -50,16 +50,16 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 使用该数据盘设备挂载容器和镜像存储目录/var/lib/containerd。
-     * 仅当AdditionalContainerStorageEnabled=true时有效，且不能为空。须满足以下条件，否则将初始化失败：仅支持已挂载数据盘的 ECS 实例。指定数据盘设备名时，请确保该数据盘设备存在，否则会初始化失败。指定数据盘分区或逻辑卷名时，请确保该分区或逻辑卷存在，且为 ext4 文件系统。
+     * Use this data disk device to mount the container and image storage directory /var/lib/containerd.
+     * Valid only when AdditionalContainerStorageEnabled=true and cannot be empty. The following conditions must be met, otherwise initialization will fail: Only ECS instances with mounted data disks are supported. When specifying a data disk device name, ensure the device exists, otherwise initialization will fail. When specifying a data disk partition or logical volume name, ensure the partition or logical volume exists and uses the ext4 file system.
      * 
      */
     @Import(name="containerStoragePath")
     private @Nullable Output<String> containerStoragePath;
 
     /**
-     * @return 使用该数据盘设备挂载容器和镜像存储目录/var/lib/containerd。
-     * 仅当AdditionalContainerStorageEnabled=true时有效，且不能为空。须满足以下条件，否则将初始化失败：仅支持已挂载数据盘的 ECS 实例。指定数据盘设备名时，请确保该数据盘设备存在，否则会初始化失败。指定数据盘分区或逻辑卷名时，请确保该分区或逻辑卷存在，且为 ext4 文件系统。
+     * @return Use this data disk device to mount the container and image storage directory /var/lib/containerd.
+     * Valid only when AdditionalContainerStorageEnabled=true and cannot be empty. The following conditions must be met, otherwise initialization will fail: Only ECS instances with mounted data disks are supported. When specifying a data disk device name, ensure the device exists, otherwise initialization will fail. When specifying a data disk partition or logical volume name, ensure the partition or logical volume exists and uses the ext4 file system.
      * 
      */
     public Optional<Output<String>> containerStoragePath() {
@@ -67,14 +67,14 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建时间。
+     * Creation time.
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 创建时间。
+     * @return Creation time.
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -82,14 +82,14 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点对应的 ECS 实例使用的镜像 ID。
+     * Image ID used by the ECS instance corresponding to the node.
      * 
      */
     @Import(name="imageId")
     private @Nullable Output<String> imageId;
 
     /**
-     * @return 节点对应的 ECS 实例使用的镜像 ID。
+     * @return Image ID used by the ECS instance corresponding to the node.
      * 
      */
     public Optional<Output<String>> imageId() {
@@ -97,14 +97,14 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建 ECS 节点并完成 Kubernetes 组件部署后执行的脚本。支持 Shell 格式，Base64 编码后长度不超过 1 KB。为空时，节点继承使用默认节点池配置的初始化脚本NodeConfig.InitializeScript。自定义填写脚本内容后，使用自定义的脚本，忽略默认节点池配置的初始化脚本。
+     * Script executed after creating ECS nodes and deploying Kubernetes components. Supports Shell format. Base64-encoded length must not exceed 1 KB. If left empty, the node inherits the default node pool initialization script NodeConfig.InitializeScript. If you enter a custom script, the custom script will be used and the default node pool initialization script will be ignored.
      * 
      */
     @Import(name="initializeScript")
     private @Nullable Output<String> initializeScript;
 
     /**
-     * @return 创建 ECS 节点并完成 Kubernetes 组件部署后执行的脚本。支持 Shell 格式，Base64 编码后长度不超过 1 KB。为空时，节点继承使用默认节点池配置的初始化脚本NodeConfig.InitializeScript。自定义填写脚本内容后，使用自定义的脚本，忽略默认节点池配置的初始化脚本。
+     * @return Script executed after creating ECS nodes and deploying Kubernetes components. Supports Shell format. Base64-encoded length must not exceed 1 KB. If left empty, the node inherits the default node pool initialization script NodeConfig.InitializeScript. If you enter a custom script, the custom script will be used and the default node pool initialization script will be ignored.
      * 
      */
     public Optional<Output<String>> initializeScript() {
@@ -112,14 +112,14 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点对应的云服务器实例 ID。
+     * Cloud server instance ID corresponding to the node.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 节点对应的云服务器实例 ID。
+     * @return Cloud server instance ID corresponding to the node.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -127,14 +127,14 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否为虚拟节点，参数值说明：false：否 true：是。
+     * Is it a virtual node? Parameter value description: false: No, true: Yes.
      * 
      */
     @Import(name="isVirtual")
     private @Nullable Output<Boolean> isVirtual;
 
     /**
-     * @return 是否为虚拟节点，参数值说明：false：否 true：是。
+     * @return Is it a virtual node? Parameter value description: false: No, true: Yes.
      * 
      */
     public Optional<Output<Boolean>> isVirtual() {
@@ -142,14 +142,14 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否保留原 ECS 实例名称，取值：false：（默认值）不保留原 ECS 实例名称，由容器服务自动为其命名。true：保留原 ECS 实例名称。
+     * Whether to retain the original ECS instance name. Options: false (default): do not retain the original ECS instance name; Container Service automatically assigns a name. true: retain the original ECS instance name.
      * 
      */
     @Import(name="keepInstanceName")
     private @Nullable Output<Boolean> keepInstanceName;
 
     /**
-     * @return 是否保留原 ECS 实例名称，取值：false：（默认值）不保留原 ECS 实例名称，由容器服务自动为其命名。true：保留原 ECS 实例名称。
+     * @return Whether to retain the original ECS instance name. Options: false (default): do not retain the original ECS instance name; Container Service automatically assigns a name. true: retain the original ECS instance name.
      * 
      */
     public Optional<Output<Boolean>> keepInstanceName() {
@@ -157,14 +157,14 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点 Kubernetes 相关配置。为空时，节点继承使用默认节点池的 Kubernetes 配置KubernetesConfig.Labels/Taints/Cordon。自定义填写配置后，使用自定义配置内容，忽略默认节点池的 Kubernetes 配置。
+     * Kubernetes-related configuration for the node. If empty, the node inherits the default node pool&#39;s Kubernetes configuration: KubernetesConfig.Labels/Taints/Cordon. If custom configuration is provided, the node uses the custom configuration and ignores the default node pool&#39;s Kubernetes configuration.
      * 
      */
     @Import(name="kubernetesConfig")
     private @Nullable Output<NodeKubernetesConfigArgs> kubernetesConfig;
 
     /**
-     * @return 节点 Kubernetes 相关配置。为空时，节点继承使用默认节点池的 Kubernetes 配置KubernetesConfig.Labels/Taints/Cordon。自定义填写配置后，使用自定义配置内容，忽略默认节点池的 Kubernetes 配置。
+     * @return Kubernetes-related configuration for the node. If empty, the node inherits the default node pool&#39;s Kubernetes configuration: KubernetesConfig.Labels/Taints/Cordon. If custom configuration is provided, the node uses the custom configuration and ignores the default node pool&#39;s Kubernetes configuration.
      * 
      */
     public Optional<Output<NodeKubernetesConfigArgs>> kubernetesConfig() {
@@ -172,14 +172,14 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点名称。
+     * Node name.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 节点名称。
+     * @return Node name.
      * 
      */
     public Optional<Output<String>> name() {
@@ -187,14 +187,14 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点 ID。
+     * Node ID.
      * 
      */
     @Import(name="nodeId")
     private @Nullable Output<String> nodeId;
 
     /**
-     * @return 节点 ID。
+     * @return Node ID.
      * 
      */
     public Optional<Output<String>> nodeId() {
@@ -202,14 +202,14 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点池 ID。不传入参数值：表示将已有 ECS 实例添加到默认节点池。传入参数值：表示将已有 ECS 实例添加到自定义节点池。
+     * Node pool ID. If no parameter value is provided: add existing ECS instances to the default node pool. If a parameter value is provided: add existing ECS instances to a custom node pool.
      * 
      */
     @Import(name="nodePoolId")
     private @Nullable Output<String> nodePoolId;
 
     /**
-     * @return 节点池 ID。不传入参数值：表示将已有 ECS 实例添加到默认节点池。传入参数值：表示将已有 ECS 实例添加到自定义节点池。
+     * @return Node pool ID. If no parameter value is provided: add existing ECS instances to the default node pool. If a parameter value is provided: add existing ECS instances to a custom node pool.
      * 
      */
     public Optional<Output<String>> nodePoolId() {
@@ -217,14 +217,14 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点角色，参数值说明：Worker：Worker节点。
+     * Node role. Parameter value description: Worker: Worker node.
      * 
      */
     @Import(name="roles")
     private @Nullable Output<List<String>> roles;
 
     /**
-     * @return 节点角色，参数值说明：Worker：Worker节点。
+     * @return Node role. Parameter value description: Worker: Worker node.
      * 
      */
     public Optional<Output<List<String>>> roles() {
@@ -232,14 +232,14 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点状态。
+     * Node status.
      * 
      */
     @Import(name="status")
     private @Nullable Output<NodeStatusArgs> status;
 
     /**
-     * @return 节点状态。
+     * @return Node status.
      * 
      */
     public Optional<Output<NodeStatusArgs>> status() {
@@ -247,14 +247,14 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 更新时间。
+     * Update time.
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 更新时间。
+     * @return Update time.
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -262,14 +262,14 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 可用区 ID。
+     * Availability zone ID.
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return 可用区 ID。
+     * @return Availability zone ID.
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -317,7 +317,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param additionalContainerStorageEnabled 选择配置节点的数据盘并格式化挂载作为容器镜像和日志的存储目录，取值：false：（默认值）关闭。默认节点池：表示不挂载数据盘。自定义节点池：使用节点池的数据盘配置进行挂载，被添加到节点池的 ECS 实例数据盘必须包含目标节点池指定了挂载的数据盘（含本地盘），且盘类型和大小完全一致。true: 开启。此时必须同时配置 ContainerStoragePath 参数。节点通过 ContainerStoragePath参数中的配置进行挂载，而忽略节点池的数据盘配置，对被添加到节点池的 ECS 实例数据盘无特殊要求。
+         * @param additionalContainerStorageEnabled Select the data disk for the node, format and mount it as the storage directory for container images and logs. Values: false (default): Disabled. Default node pool: indicates no data disk is mounted. Custom node pool: mounts according to the node pool&#39;s data disk configuration. ECS instance data disks added to the node pool must include the data disk specified for mounting by the target node pool (including local disks), and the disk type and size must match exactly. true: Enabled. You must also configure the ContainerStoragePath parameter. The node mounts according to the configuration in the ContainerStoragePath parameter and ignores the node pool&#39;s data disk configuration. There are no special requirements for ECS instance data disks added to the node pool.
          * 
          * @return builder
          * 
@@ -328,7 +328,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param additionalContainerStorageEnabled 选择配置节点的数据盘并格式化挂载作为容器镜像和日志的存储目录，取值：false：（默认值）关闭。默认节点池：表示不挂载数据盘。自定义节点池：使用节点池的数据盘配置进行挂载，被添加到节点池的 ECS 实例数据盘必须包含目标节点池指定了挂载的数据盘（含本地盘），且盘类型和大小完全一致。true: 开启。此时必须同时配置 ContainerStoragePath 参数。节点通过 ContainerStoragePath参数中的配置进行挂载，而忽略节点池的数据盘配置，对被添加到节点池的 ECS 实例数据盘无特殊要求。
+         * @param additionalContainerStorageEnabled Select the data disk for the node, format and mount it as the storage directory for container images and logs. Values: false (default): Disabled. Default node pool: indicates no data disk is mounted. Custom node pool: mounts according to the node pool&#39;s data disk configuration. ECS instance data disks added to the node pool must include the data disk specified for mounting by the target node pool (including local disks), and the disk type and size must match exactly. true: Enabled. You must also configure the ContainerStoragePath parameter. The node mounts according to the configuration in the ContainerStoragePath parameter and ignores the node pool&#39;s data disk configuration. There are no special requirements for ECS instance data disks added to the node pool.
          * 
          * @return builder
          * 
@@ -338,7 +338,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterId 集群的 ID。
+         * @param clusterId Cluster ID.
          * 
          * @return builder
          * 
@@ -349,7 +349,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterId 集群的 ID。
+         * @param clusterId Cluster ID.
          * 
          * @return builder
          * 
@@ -359,8 +359,8 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param containerStoragePath 使用该数据盘设备挂载容器和镜像存储目录/var/lib/containerd。
-         * 仅当AdditionalContainerStorageEnabled=true时有效，且不能为空。须满足以下条件，否则将初始化失败：仅支持已挂载数据盘的 ECS 实例。指定数据盘设备名时，请确保该数据盘设备存在，否则会初始化失败。指定数据盘分区或逻辑卷名时，请确保该分区或逻辑卷存在，且为 ext4 文件系统。
+         * @param containerStoragePath Use this data disk device to mount the container and image storage directory /var/lib/containerd.
+         * Valid only when AdditionalContainerStorageEnabled=true and cannot be empty. The following conditions must be met, otherwise initialization will fail: Only ECS instances with mounted data disks are supported. When specifying a data disk device name, ensure the device exists, otherwise initialization will fail. When specifying a data disk partition or logical volume name, ensure the partition or logical volume exists and uses the ext4 file system.
          * 
          * @return builder
          * 
@@ -371,8 +371,8 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param containerStoragePath 使用该数据盘设备挂载容器和镜像存储目录/var/lib/containerd。
-         * 仅当AdditionalContainerStorageEnabled=true时有效，且不能为空。须满足以下条件，否则将初始化失败：仅支持已挂载数据盘的 ECS 实例。指定数据盘设备名时，请确保该数据盘设备存在，否则会初始化失败。指定数据盘分区或逻辑卷名时，请确保该分区或逻辑卷存在，且为 ext4 文件系统。
+         * @param containerStoragePath Use this data disk device to mount the container and image storage directory /var/lib/containerd.
+         * Valid only when AdditionalContainerStorageEnabled=true and cannot be empty. The following conditions must be met, otherwise initialization will fail: Only ECS instances with mounted data disks are supported. When specifying a data disk device name, ensure the device exists, otherwise initialization will fail. When specifying a data disk partition or logical volume name, ensure the partition or logical volume exists and uses the ext4 file system.
          * 
          * @return builder
          * 
@@ -382,7 +382,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 创建时间。
+         * @param createdTime Creation time.
          * 
          * @return builder
          * 
@@ -393,7 +393,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 创建时间。
+         * @param createdTime Creation time.
          * 
          * @return builder
          * 
@@ -403,7 +403,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param imageId 节点对应的 ECS 实例使用的镜像 ID。
+         * @param imageId Image ID used by the ECS instance corresponding to the node.
          * 
          * @return builder
          * 
@@ -414,7 +414,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param imageId 节点对应的 ECS 实例使用的镜像 ID。
+         * @param imageId Image ID used by the ECS instance corresponding to the node.
          * 
          * @return builder
          * 
@@ -424,7 +424,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param initializeScript 创建 ECS 节点并完成 Kubernetes 组件部署后执行的脚本。支持 Shell 格式，Base64 编码后长度不超过 1 KB。为空时，节点继承使用默认节点池配置的初始化脚本NodeConfig.InitializeScript。自定义填写脚本内容后，使用自定义的脚本，忽略默认节点池配置的初始化脚本。
+         * @param initializeScript Script executed after creating ECS nodes and deploying Kubernetes components. Supports Shell format. Base64-encoded length must not exceed 1 KB. If left empty, the node inherits the default node pool initialization script NodeConfig.InitializeScript. If you enter a custom script, the custom script will be used and the default node pool initialization script will be ignored.
          * 
          * @return builder
          * 
@@ -435,7 +435,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param initializeScript 创建 ECS 节点并完成 Kubernetes 组件部署后执行的脚本。支持 Shell 格式，Base64 编码后长度不超过 1 KB。为空时，节点继承使用默认节点池配置的初始化脚本NodeConfig.InitializeScript。自定义填写脚本内容后，使用自定义的脚本，忽略默认节点池配置的初始化脚本。
+         * @param initializeScript Script executed after creating ECS nodes and deploying Kubernetes components. Supports Shell format. Base64-encoded length must not exceed 1 KB. If left empty, the node inherits the default node pool initialization script NodeConfig.InitializeScript. If you enter a custom script, the custom script will be used and the default node pool initialization script will be ignored.
          * 
          * @return builder
          * 
@@ -445,7 +445,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 节点对应的云服务器实例 ID。
+         * @param instanceId Cloud server instance ID corresponding to the node.
          * 
          * @return builder
          * 
@@ -456,7 +456,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 节点对应的云服务器实例 ID。
+         * @param instanceId Cloud server instance ID corresponding to the node.
          * 
          * @return builder
          * 
@@ -466,7 +466,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isVirtual 是否为虚拟节点，参数值说明：false：否 true：是。
+         * @param isVirtual Is it a virtual node? Parameter value description: false: No, true: Yes.
          * 
          * @return builder
          * 
@@ -477,7 +477,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isVirtual 是否为虚拟节点，参数值说明：false：否 true：是。
+         * @param isVirtual Is it a virtual node? Parameter value description: false: No, true: Yes.
          * 
          * @return builder
          * 
@@ -487,7 +487,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keepInstanceName 是否保留原 ECS 实例名称，取值：false：（默认值）不保留原 ECS 实例名称，由容器服务自动为其命名。true：保留原 ECS 实例名称。
+         * @param keepInstanceName Whether to retain the original ECS instance name. Options: false (default): do not retain the original ECS instance name; Container Service automatically assigns a name. true: retain the original ECS instance name.
          * 
          * @return builder
          * 
@@ -498,7 +498,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keepInstanceName 是否保留原 ECS 实例名称，取值：false：（默认值）不保留原 ECS 实例名称，由容器服务自动为其命名。true：保留原 ECS 实例名称。
+         * @param keepInstanceName Whether to retain the original ECS instance name. Options: false (default): do not retain the original ECS instance name; Container Service automatically assigns a name. true: retain the original ECS instance name.
          * 
          * @return builder
          * 
@@ -508,7 +508,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kubernetesConfig 节点 Kubernetes 相关配置。为空时，节点继承使用默认节点池的 Kubernetes 配置KubernetesConfig.Labels/Taints/Cordon。自定义填写配置后，使用自定义配置内容，忽略默认节点池的 Kubernetes 配置。
+         * @param kubernetesConfig Kubernetes-related configuration for the node. If empty, the node inherits the default node pool&#39;s Kubernetes configuration: KubernetesConfig.Labels/Taints/Cordon. If custom configuration is provided, the node uses the custom configuration and ignores the default node pool&#39;s Kubernetes configuration.
          * 
          * @return builder
          * 
@@ -519,7 +519,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kubernetesConfig 节点 Kubernetes 相关配置。为空时，节点继承使用默认节点池的 Kubernetes 配置KubernetesConfig.Labels/Taints/Cordon。自定义填写配置后，使用自定义配置内容，忽略默认节点池的 Kubernetes 配置。
+         * @param kubernetesConfig Kubernetes-related configuration for the node. If empty, the node inherits the default node pool&#39;s Kubernetes configuration: KubernetesConfig.Labels/Taints/Cordon. If custom configuration is provided, the node uses the custom configuration and ignores the default node pool&#39;s Kubernetes configuration.
          * 
          * @return builder
          * 
@@ -529,7 +529,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 节点名称。
+         * @param name Node name.
          * 
          * @return builder
          * 
@@ -540,7 +540,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 节点名称。
+         * @param name Node name.
          * 
          * @return builder
          * 
@@ -550,7 +550,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeId 节点 ID。
+         * @param nodeId Node ID.
          * 
          * @return builder
          * 
@@ -561,7 +561,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeId 节点 ID。
+         * @param nodeId Node ID.
          * 
          * @return builder
          * 
@@ -571,7 +571,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodePoolId 节点池 ID。不传入参数值：表示将已有 ECS 实例添加到默认节点池。传入参数值：表示将已有 ECS 实例添加到自定义节点池。
+         * @param nodePoolId Node pool ID. If no parameter value is provided: add existing ECS instances to the default node pool. If a parameter value is provided: add existing ECS instances to a custom node pool.
          * 
          * @return builder
          * 
@@ -582,7 +582,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodePoolId 节点池 ID。不传入参数值：表示将已有 ECS 实例添加到默认节点池。传入参数值：表示将已有 ECS 实例添加到自定义节点池。
+         * @param nodePoolId Node pool ID. If no parameter value is provided: add existing ECS instances to the default node pool. If a parameter value is provided: add existing ECS instances to a custom node pool.
          * 
          * @return builder
          * 
@@ -592,7 +592,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param roles 节点角色，参数值说明：Worker：Worker节点。
+         * @param roles Node role. Parameter value description: Worker: Worker node.
          * 
          * @return builder
          * 
@@ -603,7 +603,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param roles 节点角色，参数值说明：Worker：Worker节点。
+         * @param roles Node role. Parameter value description: Worker: Worker node.
          * 
          * @return builder
          * 
@@ -613,7 +613,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param roles 节点角色，参数值说明：Worker：Worker节点。
+         * @param roles Node role. Parameter value description: Worker: Worker node.
          * 
          * @return builder
          * 
@@ -623,7 +623,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 节点状态。
+         * @param status Node status.
          * 
          * @return builder
          * 
@@ -634,7 +634,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 节点状态。
+         * @param status Node status.
          * 
          * @return builder
          * 
@@ -644,7 +644,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 更新时间。
+         * @param updatedTime Update time.
          * 
          * @return builder
          * 
@@ -655,7 +655,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 更新时间。
+         * @param updatedTime Update time.
          * 
          * @return builder
          * 
@@ -665,7 +665,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 可用区 ID。
+         * @param zoneId Availability zone ID.
          * 
          * @return builder
          * 
@@ -676,7 +676,7 @@ public final class NodeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneId 可用区 ID。
+         * @param zoneId Availability zone ID.
          * 
          * @return builder
          * 

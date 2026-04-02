@@ -20,14 +20,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     public static final ListenerState Empty = new ListenerState();
 
     /**
-     * 监听器绑定的访问控制策略组ID。仅AclStatus参数为on时返回。
+     * ID of the access control policy group bound to the listener. Returned only when the AclStatus parameter is set to on.
      * 
      */
     @Import(name="aclIds")
     private @Nullable Output<List<String>> aclIds;
 
     /**
-     * @return 监听器绑定的访问控制策略组ID。仅AclStatus参数为on时返回。
+     * @return ID of the access control policy group bound to the listener. Returned only when the AclStatus parameter is set to on.
      * 
      */
     public Optional<Output<List<String>>> aclIds() {
@@ -35,14 +35,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启访问控制功能。取值如下：on：开启。off（默认值）：不开启。
+     * Enable access control. Values: on: enabled. off (default): disabled.
      * 
      */
     @Import(name="aclStatus")
     private @Nullable Output<String> aclStatus;
 
     /**
-     * @return 是否开启访问控制功能。取值如下：on：开启。off（默认值）：不开启。
+     * @return Enable access control. Values: on: enabled. off (default): disabled.
      * 
      */
     public Optional<Output<String>> aclStatus() {
@@ -50,14 +50,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 访问控制的方式。white：白名单。black：黑名单。仅AclStatus参数为on时，本参数有效。
+     * Access control mode. white: Allowlist. black: Denylist. This parameter is valid only when the AclStatus parameter is on.
      * 
      */
     @Import(name="aclType")
     private @Nullable Output<String> aclType;
 
     /**
-     * @return 访问控制的方式。white：白名单。black：黑名单。仅AclStatus参数为on时，本参数有效。
+     * @return Access control mode. white: Allowlist. black: Denylist. This parameter is valid only when the AclStatus parameter is on.
      * 
      */
     public Optional<Output<String>> aclType() {
@@ -65,14 +65,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器的带宽上限，即此监听器独占CLB实例的带宽，单位为Mbps。-1（默认值）：此监听器不独占CLB的带，与其他监听器共享CLB实例未被独占的带宽。取值范围：1～CLB实例未被独占的带宽。
+     * Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.
      * 
      */
     @Import(name="bandwidth")
     private @Nullable Output<Integer> bandwidth;
 
     /**
-     * @return 监听器的带宽上限，即此监听器独占CLB实例的带宽，单位为Mbps。-1（默认值）：此监听器不独占CLB的带，与其他监听器共享CLB实例未被独占的带宽。取值范围：1～CLB实例未被独占的带宽。
+     * @return Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.
      * 
      */
     public Optional<Output<Integer>> bandwidth() {
@@ -80,14 +80,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 双向认证的CA证书。
+     * CA certificate for mutual authentication.
      * 
      */
     @Import(name="caCertificateId")
     private @Nullable Output<String> caCertificateId;
 
     /**
-     * @return 双向认证的CA证书。
+     * @return CA certificate for mutual authentication.
      * 
      */
     public Optional<Output<String>> caCertificateId() {
@@ -95,14 +95,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启双向认证。on：开启。off（默认值）：不开启。
+     * Enable mutual authentication. on: enabled. off (default): disabled.
      * 
      */
     @Import(name="caEnabled")
     private @Nullable Output<String> caEnabled;
 
     /**
-     * @return 是否开启双向认证。on：开启。off（默认值）：不开启。
+     * @return Enable mutual authentication. on: enabled. off (default): disabled.
      * 
      */
     public Optional<Output<String>> caEnabled() {
@@ -110,14 +110,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 证书中心的证书的ID。
+     * Certificate ID from Certificate Center.
      * 
      */
     @Import(name="certCenterCertificateId")
     private @Nullable Output<String> certCenterCertificateId;
 
     /**
-     * @return 证书中心的证书的ID。
+     * @return Certificate ID from Certificate Center.
      * 
      */
     public Optional<Output<String>> certCenterCertificateId() {
@@ -125,14 +125,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * CLB侧证书管理模块的证书的ID。
+     * Certificate ID from the CLB certificate management module.
      * 
      */
     @Import(name="certificateId")
     private @Nullable Output<String> certificateId;
 
     /**
-     * @return CLB侧证书管理模块的证书的ID。
+     * @return Certificate ID from the CLB certificate management module.
      * 
      */
     public Optional<Output<String>> certificateId() {
@@ -140,14 +140,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 证书的来源。clb (默认)：CLB上传的证书。cert_center：证书中心上传的证书。user：用户上传的证书。
+     * Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
      * 
      */
     @Import(name="certificateSource")
     private @Nullable Output<String> certificateSource;
 
     /**
-     * @return 证书的来源。clb (默认)：CLB上传的证书。cert_center：证书中心上传的证书。user：用户上传的证书。
+     * @return Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
      * 
      */
     public Optional<Output<String>> certificateSource() {
@@ -155,14 +155,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 读取客户端请求正文的超时时间。此超时时间仅针对两个连续的读操作之间设置，而非整个请求的传输过程。取值范围为 30-120秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效
+     * Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
      * 
      */
     @Import(name="clientBodyTimeout")
     private @Nullable Output<Integer> clientBodyTimeout;
 
     /**
-     * @return 读取客户端请求正文的超时时间。此超时时间仅针对两个连续的读操作之间设置，而非整个请求的传输过程。取值范围为 30-120秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效
+     * @return Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
      * 
      */
     public Optional<Output<Integer>> clientBodyTimeout() {
@@ -170,14 +170,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 读取客户端请求头的超时时间。取值范围为30-120秒。默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+     * Timeout for reading the client request header. Value range: 30–120 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
      * 
      */
     @Import(name="clientHeaderTimeout")
     private @Nullable Output<Integer> clientHeaderTimeout;
 
     /**
-     * @return 读取客户端请求头的超时时间。取值范围为30-120秒。默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+     * @return Timeout for reading the client request header. Value range: 30–120 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
      * 
      */
     public Optional<Output<Integer>> clientHeaderTimeout() {
@@ -185,14 +185,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器是否开启连接优雅中断功能。on：开启。off：不开启。参数Protocol返回为HTTP或HTTPS时，该参数固定返回off。
+     * Whether the listener enables graceful connection termination. on: enabled. off: not enabled. When Protocol returns HTTP or HTTPS, this parameter always returns off.
      * 
      */
     @Import(name="connectionDrainEnabled")
     private @Nullable Output<String> connectionDrainEnabled;
 
     /**
-     * @return 监听器是否开启连接优雅中断功能。on：开启。off：不开启。参数Protocol返回为HTTP或HTTPS时，该参数固定返回off。
+     * @return Whether the listener enables graceful connection termination. on: enabled. off: not enabled. When Protocol returns HTTP or HTTPS, this parameter always returns off.
      * 
      */
     public Optional<Output<String>> connectionDrainEnabled() {
@@ -200,14 +200,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 连接优雅中断的超时时间，单位为秒。参数ConnectionDrainEnabled返回为off时，该参数返回0。
+     * Timeout for graceful connection termination, in seconds. If ConnectionDrainEnabled returns off, this parameter returns 0.
      * 
      */
     @Import(name="connectionDrainTimeout")
     private @Nullable Output<Integer> connectionDrainTimeout;
 
     /**
-     * @return 连接优雅中断的超时时间，单位为秒。参数ConnectionDrainEnabled返回为off时，该参数返回0。
+     * @return Timeout for graceful connection termination, in seconds. If ConnectionDrainEnabled returns off, this parameter returns 0.
      * 
      */
     public Optional<Output<Integer>> connectionDrainTimeout() {
@@ -215,14 +215,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 后端服务器配置的会话保持的Cookie名称。仅参数PersistenceType取server时，本参数有效且必填。只能包含字母、数字、下划线（_）和中划线（-）。长度限制在1～200字符之间。
+     * Name of the session persistence cookie configured on the backend server. This parameter is valid and required only when PersistenceType is set to server. Only letters, numbers, underscores (_), and hyphens (-) are allowed. Length must be between 1 and 200 characters.
      * 
      */
     @Import(name="cookie")
     private @Nullable Output<String> cookie;
 
     /**
-     * @return 后端服务器配置的会话保持的Cookie名称。仅参数PersistenceType取server时，本参数有效且必填。只能包含字母、数字、下划线（_）和中划线（-）。长度限制在1～200字符之间。
+     * @return Name of the session persistence cookie configured on the backend server. This parameter is valid and required only when PersistenceType is set to server. Only letters, numbers, underscores (_), and hyphens (-) are allowed. Length must be between 1 and 200 characters.
      * 
      */
     public Optional<Output<String>> cookie() {
@@ -230,14 +230,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 每秒新建连接数的上限。-1（默认值）：不限制，即CLB实例的新建连接数上限。取值范围：1～CLB实例的新连接数上限。
+     * Maximum number of new connections per second. -1 (default): No limit, which means the maximum number of new connections allowed by the CLB instance. Value range: 1 to the maximum number of new connections allowed by the CLB instance.
      * 
      */
     @Import(name="cps")
     private @Nullable Output<Integer> cps;
 
     /**
-     * @return 每秒新建连接数的上限。-1（默认值）：不限制，即CLB实例的新建连接数上限。取值范围：1～CLB实例的新连接数上限。
+     * @return Maximum number of new connections per second. -1 (default): No limit, which means the maximum number of new connections allowed by the CLB instance. Value range: 1 to the maximum number of new connections allowed by the CLB instance.
      * 
      */
     public Optional<Output<Integer>> cps() {
@@ -245,14 +245,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器的创建时间。
+     * Creation time of the listener.
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 监听器的创建时间。
+     * @return Creation time of the listener.
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -260,14 +260,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
+     * Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
+     * @return Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
      * 
      */
     public Optional<Output<String>> description() {
@@ -275,14 +275,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否启用监听器。on（默认值）：开启。off：不开启。
+     * Enable listener. on (default): enabled. off: disabled.
      * 
      */
     @Import(name="enabled")
     private @Nullable Output<String> enabled;
 
     /**
-     * @return 是否启用监听器。on（默认值）：开启。off：不开启。
+     * @return Enable listener. on (default): enabled. off: disabled.
      * 
      */
     public Optional<Output<String>> enabled() {
@@ -290,14 +290,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 全端口监听的结束端口，取值范围为1-65535。参数Port为“0”时，该参数必须传入，且该参数取值应大于tartPort。
+     * End port for all-port listening. Range: 1–65535. When Port is &#39;0&#39;, this parameter is required and must be greater than startPort.
      * 
      */
     @Import(name="endPort")
     private @Nullable Output<Integer> endPort;
 
     /**
-     * @return 全端口监听的结束端口，取值范围为1-65535。参数Port为“0”时，该参数必须传入，且该参数取值应大于tartPort。
+     * @return End port for all-port listening. Range: 1–65535. When Port is &#39;0&#39;, this parameter is required and must be greater than startPort.
      * 
      */
     public Optional<Output<Integer>> endPort() {
@@ -305,14 +305,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器的连接超时时间。仅参数Protocol取TCP或UDP时，本参数有效。取值如下：TCP协议：10-900秒，默认为900秒。UDP协议：1-300秒，默认为90秒。
+     * Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
      * 
      */
     @Import(name="establishedTimeout")
     private @Nullable Output<Integer> establishedTimeout;
 
     /**
-     * @return 监听器的连接超时时间。仅参数Protocol取TCP或UDP时，本参数有效。取值如下：TCP协议：10-900秒，默认为900秒。UDP协议：1-300秒，默认为90秒。
+     * @return Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
      * 
      */
     public Optional<Output<Integer>> establishedTimeout() {
@@ -320,14 +320,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 健康检查相关信息。
+     * Health check information.
      * 
      */
     @Import(name="healthCheck")
     private @Nullable Output<ListenerHealthCheckArgs> healthCheck;
 
     /**
-     * @return 健康检查相关信息。
+     * @return Health check information.
      * 
      */
     public Optional<Output<ListenerHealthCheckArgs>> healthCheck() {
@@ -335,14 +335,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器是否开启前端HTTP 2.0协议。仅参数`Protocol取HTTPS时，本参数有效。取值如下：|on：开启。off（默认值）：不开启。
+     * Whether the listener enables frontend HTTP 2.0 protocol. This parameter is valid only when Protocol is set to HTTPS. Values: on: enabled. off (default): disabled.
      * 
      */
     @Import(name="http2Enabled")
     private @Nullable Output<String> http2Enabled;
 
     /**
-     * @return 监听器是否开启前端HTTP 2.0协议。仅参数`Protocol取HTTPS时，本参数有效。取值如下：|on：开启。off（默认值）：不开启。
+     * @return Whether the listener enables frontend HTTP 2.0 protocol. This parameter is valid only when Protocol is set to HTTPS. Values: on: enabled. off (default): disabled.
      * 
      */
     public Optional<Output<String>> http2Enabled() {
@@ -350,14 +350,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 客户端与CLB之间的长连接超时时间。取值范围为 0-900秒，默认为75秒。0表示禁用长连接。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+     * Keep-alive timeout between the client and CLB. Range: 0–900 seconds, default is 75 seconds. 0 disables keep-alive. This parameter is valid only when Protocol is set to HTTP or HTTPS.
      * 
      */
     @Import(name="keepaliveTimeout")
     private @Nullable Output<Integer> keepaliveTimeout;
 
     /**
-     * @return 客户端与CLB之间的长连接超时时间。取值范围为 0-900秒，默认为75秒。0表示禁用长连接。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+     * @return Keep-alive timeout between the client and CLB. Range: 0–900 seconds, default is 75 seconds. 0 disables keep-alive. This parameter is valid only when Protocol is set to HTTP or HTTPS.
      * 
      */
     public Optional<Output<Integer>> keepaliveTimeout() {
@@ -365,14 +365,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器的ID。
+     * Listener ID.
      * 
      */
     @Import(name="listenerId")
     private @Nullable Output<String> listenerId;
 
     /**
-     * @return 监听器的ID。
+     * @return Listener ID.
      * 
      */
     public Optional<Output<String>> listenerId() {
@@ -380,14 +380,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
+     * Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If left blank, &#39;Protocol-Port&#39; will be used as the default listener name.
      * 
      */
     @Import(name="listenerName")
     private @Nullable Output<String> listenerName;
 
     /**
-     * @return 监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
+     * @return Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If left blank, &#39;Protocol-Port&#39; will be used as the default listener name.
      * 
      */
     public Optional<Output<String>> listenerName() {
@@ -395,14 +395,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * CLB实例的ID。
+     * ID of the CLB instance.
      * 
      */
     @Import(name="loadBalancerId")
     private @Nullable Output<String> loadBalancerId;
 
     /**
-     * @return CLB实例的ID。
+     * @return ID of the CLB instance.
      * 
      */
     public Optional<Output<String>> loadBalancerId() {
@@ -410,14 +410,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 最大并发连接数的上限。-1（默认值）：不限制，CLB实例的最大并发连接数上限。取值范围：1～CLB实例的最大并发连接数上限。
+     * Maximum concurrent connections limit. -1 (default): unlimited (up to the maximum concurrent connections supported by the CLB instance). Value range: 1 to the maximum concurrent connections limit of the CLB instance.
      * 
      */
     @Import(name="maxConnections")
     private @Nullable Output<Integer> maxConnections;
 
     /**
-     * @return 最大并发连接数的上限。-1（默认值）：不限制，CLB实例的最大并发连接数上限。取值范围：1～CLB实例的最大并发连接数上限。
+     * @return Maximum concurrent connections limit. -1 (default): unlimited (up to the maximum concurrent connections supported by the CLB instance). Value range: 1 to the maximum concurrent connections limit of the CLB instance.
      * 
      */
     public Optional<Output<Integer>> maxConnections() {
@@ -425,14 +425,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 会话保持的超时时间，单位为秒。取值范围根据参数PersistenceType取值有所不同。PersistenceType置为source_ip时，取值范围为1～3600。PersistenceType配置为insert时，取值范围为1～86400。
+     * Session persistence timeout, in seconds. The value range depends on the PersistenceType parameter. When PersistenceType is set to source_ip, the range is 1–3600. When PersistenceType is set to insert, the range is 1–86400.
      * 
      */
     @Import(name="persistenceTimeout")
     private @Nullable Output<Integer> persistenceTimeout;
 
     /**
-     * @return 会话保持的超时时间，单位为秒。取值范围根据参数PersistenceType取值有所不同。PersistenceType置为source_ip时，取值范围为1～3600。PersistenceType配置为insert时，取值范围为1～86400。
+     * @return Session persistence timeout, in seconds. The value range depends on the PersistenceType parameter. When PersistenceType is set to source_ip, the range is 1–3600. When PersistenceType is set to insert, the range is 1–86400.
      * 
      */
     public Optional<Output<Integer>> persistenceTimeout() {
@@ -440,14 +440,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 会话保持的类型。取值如下：off（默认值）：不启用会话保持。source_ip：源地址IP，仅参数ProtocolTCP或UDP时，本取值有效。insert：植入Cookie，仅参数Protocol取HTTP或HTTPS且Scheduler取wrr时，本取值生效。server：重写Cookie，仅参数Protocol取HTTP或HTTPS且Scheduler取wrr时，本取值生效。。
+     * Session persistence type. Values: off (default): session persistence disabled. source_ip: source IP address, valid only when Protocol is TCP or UDP. insert: insert Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr. server: rewrite Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr.
      * 
      */
     @Import(name="persistenceType")
     private @Nullable Output<String> persistenceType;
 
     /**
-     * @return 会话保持的类型。取值如下：off（默认值）：不启用会话保持。source_ip：源地址IP，仅参数ProtocolTCP或UDP时，本取值有效。insert：植入Cookie，仅参数Protocol取HTTP或HTTPS且Scheduler取wrr时，本取值生效。server：重写Cookie，仅参数Protocol取HTTP或HTTPS且Scheduler取wrr时，本取值生效。。
+     * @return Session persistence type. Values: off (default): session persistence disabled. source_ip: source IP address, valid only when Protocol is TCP or UDP. insert: insert Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr. server: rewrite Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr.
      * 
      */
     public Optional<Output<String>> persistenceType() {
@@ -455,14 +455,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器接收请求使用的端口。取值范围为 0～65535。参数Protocol为“TCP”或“UDP”时，支持传入0，表示用全端口监听。
+     * Port used by the listener to receive requests. Value range: 0–65535. When the Protocol parameter is &#39;TCP&#39; or &#39;UDP&#39;, 0 is supported, which enables listening on all ports.
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return 监听器接收请求使用的端口。取值范围为 0～65535。参数Protocol为“TCP”或“UDP”时，支持传入0，表示用全端口监听。
+     * @return Port used by the listener to receive requests. Value range: 0–65535. When the Protocol parameter is &#39;TCP&#39; or &#39;UDP&#39;, 0 is supported, which enables listening on all ports.
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -470,14 +470,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
+     * Listener protocol. Includes: TCP, UDP, HTTP, HTTPS.
      * 
      */
     @Import(name="protocol")
     private @Nullable Output<String> protocol;
 
     /**
-     * @return 监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
+     * @return Listener protocol. Includes: TCP, UDP, HTTP, HTTPS.
      * 
      */
     public Optional<Output<String>> protocol() {
@@ -485,14 +485,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * CLB与后端服务器之间的连接建立超时时间。建议大于健康检查超时时间。取值范围为 4-120秒，默认为4。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+     * Connection establishment timeout between CLB and backend server. Recommended to be greater than the health check timeout. Range: 4–120 seconds, default is 4. This parameter is valid only when Protocol is set to HTTP or HTTPS.
      * 
      */
     @Import(name="proxyConnectTimeout")
     private @Nullable Output<Integer> proxyConnectTimeout;
 
     /**
-     * @return CLB与后端服务器之间的连接建立超时时间。建议大于健康检查超时时间。取值范围为 4-120秒，默认为4。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+     * @return Connection establishment timeout between CLB and backend server. Recommended to be greater than the health check timeout. Range: 4–120 seconds, default is 4. This parameter is valid only when Protocol is set to HTTP or HTTPS.
      * 
      */
     public Optional<Output<Integer>> proxyConnectTimeout() {
@@ -500,14 +500,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否启用Proxy-Protocol协议。仅参数Protocol取TCP或UDP时，本参数有效。取值如下：off（默认值）：关闭。standard：开启。
+     * Enable Proxy-Protocol. This parameter is valid only when Protocol is TCP or UDP. Values: off (default): disabled. standard: enabled.
      * 
      */
     @Import(name="proxyProtocolType")
     private @Nullable Output<String> proxyProtocolType;
 
     /**
-     * @return 是否启用Proxy-Protocol协议。仅参数Protocol取TCP或UDP时，本参数有效。取值如下：off（默认值）：关闭。standard：开启。
+     * @return Enable Proxy-Protocol. This parameter is valid only when Protocol is TCP or UDP. Values: off (default): disabled. standard: enabled.
      * 
      */
     public Optional<Output<String>> proxyProtocolType() {
@@ -515,14 +515,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * CLB从后端服务器读取响应的超时时间。此超时时间仅针对两个连续的读操作之间设置，而非整个响应的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+     * Timeout for CLB to read responses from backend servers. This timeout applies only between two consecutive read operations, not for the entire response transmission. Value range: 30–3600 seconds. Default: 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
      * 
      */
     @Import(name="proxyReadTimeout")
     private @Nullable Output<Integer> proxyReadTimeout;
 
     /**
-     * @return CLB从后端服务器读取响应的超时时间。此超时时间仅针对两个连续的读操作之间设置，而非整个响应的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+     * @return Timeout for CLB to read responses from backend servers. This timeout applies only between two consecutive read operations, not for the entire response transmission. Value range: 30–3600 seconds. Default: 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
      * 
      */
     public Optional<Output<Integer>> proxyReadTimeout() {
@@ -530,14 +530,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * CLB将请求传输到后端服务器的超时时间。此超时仅针对两个连续的写操作之间设置，而非整个请求的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+     * Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
      * 
      */
     @Import(name="proxySendTimeout")
     private @Nullable Output<Integer> proxySendTimeout;
 
     /**
-     * @return CLB将请求传输到后端服务器的超时时间。此超时仅针对两个连续的写操作之间设置，而非整个请求的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+     * @return Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
      * 
      */
     public Optional<Output<Integer>> proxySendTimeout() {
@@ -545,14 +545,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器绑定的规则ID列表。
+     * List of rule IDs bound to the listener.
      * 
      */
     @Import(name="ruleIds")
     private @Nullable Output<List<String>> ruleIds;
 
     /**
-     * @return 监听器绑定的规则ID列表。
+     * @return List of rule IDs bound to the listener.
      * 
      */
     public Optional<Output<List<String>>> ruleIds() {
@@ -560,14 +560,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器使用的调度算法。wrr（默认值）：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
+     * Scheduling algorithm used by the listener. wrr (default): Weighted round robin. wlc: Weighted least connections. sh: Source address hash.
      * 
      */
     @Import(name="scheduler")
     private @Nullable Output<String> scheduler;
 
     /**
-     * @return 监听器使用的调度算法。wrr（默认值）：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
+     * @return Scheduling algorithm used by the listener. wrr (default): Weighted round robin. wlc: Weighted least connections. sh: Source address hash.
      * 
      */
     public Optional<Output<String>> scheduler() {
@@ -575,14 +575,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * HTTPS监听器的TLS安全策略。仅参数Protocol取HTTPS时，本参数有效。 取值如下：default*policy（默认值）：支持SSL v3、TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*0：支持TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*1：支持TLS v1.1、TLS v1.2。tls*cipher*policy*1*2：支持TLS v1.2。tls*cipher*policy*1*2*strict：支持TLS v1.2。
+     * TLS security policy for HTTPS listeners. This parameter is valid only when Protocol is set to HTTPS. Values: default*policy (default): supports SSL v3, TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*0: supports TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*1: supports TLS v1.1, TLS v1.2. tls*cipher*policy*1*2: supports TLS v1.2. tls*cipher*policy*1*2*strict: supports TLS v1.2.
      * 
      */
     @Import(name="securityPolicyId")
     private @Nullable Output<String> securityPolicyId;
 
     /**
-     * @return HTTPS监听器的TLS安全策略。仅参数Protocol取HTTPS时，本参数有效。 取值如下：default*policy（默认值）：支持SSL v3、TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*0：支持TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*1：支持TLS v1.1、TLS v1.2。tls*cipher*policy*1*2：支持TLS v1.2。tls*cipher*policy*1*2*strict：支持TLS v1.2。
+     * @return TLS security policy for HTTPS listeners. This parameter is valid only when Protocol is set to HTTPS. Values: default*policy (default): supports SSL v3, TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*0: supports TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*1: supports TLS v1.1, TLS v1.2. tls*cipher*policy*1*2: supports TLS v1.2. tls*cipher*policy*1*2*strict: supports TLS v1.2.
      * 
      */
     public Optional<Output<String>> securityPolicyId() {
@@ -590,14 +590,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * CLB向客户端发送响应的超时时间。此超时仅针对两个连续的写操作之间设置，而非整响应的传输过程。取值范围为 1-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+     * Timeout for CLB to send responses to the client. This timeout applies only between two consecutive write operations, not the entire response transmission. Range: 1–3600 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
      * 
      */
     @Import(name="sendTimeout")
     private @Nullable Output<Integer> sendTimeout;
 
     /**
-     * @return CLB向客户端发送响应的超时时间。此超时仅针对两个连续的写操作之间设置，而非整响应的传输过程。取值范围为 1-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+     * @return Timeout for CLB to send responses to the client. This timeout applies only between two consecutive write operations, not the entire response transmission. Range: 1–3600 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
      * 
      */
     public Optional<Output<Integer>> sendTimeout() {
@@ -605,14 +605,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器关联的后端服务器组 ID。
+     * ID of the backend server group associated with the listener.
      * 
      */
     @Import(name="serverGroupId")
     private @Nullable Output<String> serverGroupId;
 
     /**
-     * @return 监听器关联的后端服务器组 ID。
+     * @return ID of the backend server group associated with the listener.
      * 
      */
     public Optional<Output<String>> serverGroupId() {
@@ -620,14 +620,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 全端口监听的起始端口，取值范围为1-65535。参数Port为“0”时，该参数必须传入。
+     * Start port for all-port listening. Range: 1–65535. When Port is &#39;0&#39;, this parameter is required.
      * 
      */
     @Import(name="startPort")
     private @Nullable Output<Integer> startPort;
 
     /**
-     * @return 全端口监听的起始端口，取值范围为1-65535。参数Port为“0”时，该参数必须传入。
+     * @return Start port for all-port listening. Range: 1–65535. When Port is &#39;0&#39;, this parameter is required.
      * 
      */
     public Optional<Output<Integer>> startPort() {
@@ -635,14 +635,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器的状态。Creating：创建中。Active：运行中。Deleting: 删除中。Disabled: 已停用。
+     * Listener status. Creating: being created. Active: running. Deleting: being deleted. Disabled: disabled.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 监听器的状态。Creating：创建中。Active：运行中。Deleting: 删除中。Disabled: 已停用。
+     * @return Listener status. Creating: being created. Active: running. Deleting: being deleted. Disabled: disabled.
      * 
      */
     public Optional<Output<String>> status() {
@@ -657,14 +657,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 监听器最近一次的操作时间。
+     * Last operation time of the listener.
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 监听器最近一次的操作时间。
+     * @return Last operation time of the listener.
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -672,14 +672,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否将经过七层监听器的流量送至Web应用防火墙进行检测和过滤。on：是。off：否。
+     * Send traffic passing through the Layer 7 listener to the Web Application Firewall for inspection and filtering. on: yes. off: no.
      * 
      */
     @Import(name="wafProtectionEnabled")
     private @Nullable Output<String> wafProtectionEnabled;
 
     /**
-     * @return 是否将经过七层监听器的流量送至Web应用防火墙进行检测和过滤。on：是。off：否。
+     * @return Send traffic passing through the Layer 7 listener to the Web Application Firewall for inspection and filtering. on: yes. off: no.
      * 
      */
     public Optional<Output<String>> wafProtectionEnabled() {
@@ -755,7 +755,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclIds 监听器绑定的访问控制策略组ID。仅AclStatus参数为on时返回。
+         * @param aclIds ID of the access control policy group bound to the listener. Returned only when the AclStatus parameter is set to on.
          * 
          * @return builder
          * 
@@ -766,7 +766,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclIds 监听器绑定的访问控制策略组ID。仅AclStatus参数为on时返回。
+         * @param aclIds ID of the access control policy group bound to the listener. Returned only when the AclStatus parameter is set to on.
          * 
          * @return builder
          * 
@@ -776,7 +776,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclIds 监听器绑定的访问控制策略组ID。仅AclStatus参数为on时返回。
+         * @param aclIds ID of the access control policy group bound to the listener. Returned only when the AclStatus parameter is set to on.
          * 
          * @return builder
          * 
@@ -786,7 +786,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclStatus 是否开启访问控制功能。取值如下：on：开启。off（默认值）：不开启。
+         * @param aclStatus Enable access control. Values: on: enabled. off (default): disabled.
          * 
          * @return builder
          * 
@@ -797,7 +797,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclStatus 是否开启访问控制功能。取值如下：on：开启。off（默认值）：不开启。
+         * @param aclStatus Enable access control. Values: on: enabled. off (default): disabled.
          * 
          * @return builder
          * 
@@ -807,7 +807,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclType 访问控制的方式。white：白名单。black：黑名单。仅AclStatus参数为on时，本参数有效。
+         * @param aclType Access control mode. white: Allowlist. black: Denylist. This parameter is valid only when the AclStatus parameter is on.
          * 
          * @return builder
          * 
@@ -818,7 +818,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param aclType 访问控制的方式。white：白名单。black：黑名单。仅AclStatus参数为on时，本参数有效。
+         * @param aclType Access control mode. white: Allowlist. black: Denylist. This parameter is valid only when the AclStatus parameter is on.
          * 
          * @return builder
          * 
@@ -828,7 +828,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param bandwidth 监听器的带宽上限，即此监听器独占CLB实例的带宽，单位为Mbps。-1（默认值）：此监听器不独占CLB的带，与其他监听器共享CLB实例未被独占的带宽。取值范围：1～CLB实例未被独占的带宽。
+         * @param bandwidth Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.
          * 
          * @return builder
          * 
@@ -839,7 +839,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param bandwidth 监听器的带宽上限，即此监听器独占CLB实例的带宽，单位为Mbps。-1（默认值）：此监听器不独占CLB的带，与其他监听器共享CLB实例未被独占的带宽。取值范围：1～CLB实例未被独占的带宽。
+         * @param bandwidth Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.
          * 
          * @return builder
          * 
@@ -849,7 +849,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param caCertificateId 双向认证的CA证书。
+         * @param caCertificateId CA certificate for mutual authentication.
          * 
          * @return builder
          * 
@@ -860,7 +860,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param caCertificateId 双向认证的CA证书。
+         * @param caCertificateId CA certificate for mutual authentication.
          * 
          * @return builder
          * 
@@ -870,7 +870,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param caEnabled 是否开启双向认证。on：开启。off（默认值）：不开启。
+         * @param caEnabled Enable mutual authentication. on: enabled. off (default): disabled.
          * 
          * @return builder
          * 
@@ -881,7 +881,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param caEnabled 是否开启双向认证。on：开启。off（默认值）：不开启。
+         * @param caEnabled Enable mutual authentication. on: enabled. off (default): disabled.
          * 
          * @return builder
          * 
@@ -891,7 +891,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certCenterCertificateId 证书中心的证书的ID。
+         * @param certCenterCertificateId Certificate ID from Certificate Center.
          * 
          * @return builder
          * 
@@ -902,7 +902,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certCenterCertificateId 证书中心的证书的ID。
+         * @param certCenterCertificateId Certificate ID from Certificate Center.
          * 
          * @return builder
          * 
@@ -912,7 +912,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateId CLB侧证书管理模块的证书的ID。
+         * @param certificateId Certificate ID from the CLB certificate management module.
          * 
          * @return builder
          * 
@@ -923,7 +923,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateId CLB侧证书管理模块的证书的ID。
+         * @param certificateId Certificate ID from the CLB certificate management module.
          * 
          * @return builder
          * 
@@ -933,7 +933,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateSource 证书的来源。clb (默认)：CLB上传的证书。cert_center：证书中心上传的证书。user：用户上传的证书。
+         * @param certificateSource Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
          * 
          * @return builder
          * 
@@ -944,7 +944,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateSource 证书的来源。clb (默认)：CLB上传的证书。cert_center：证书中心上传的证书。user：用户上传的证书。
+         * @param certificateSource Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
          * 
          * @return builder
          * 
@@ -954,7 +954,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clientBodyTimeout 读取客户端请求正文的超时时间。此超时时间仅针对两个连续的读操作之间设置，而非整个请求的传输过程。取值范围为 30-120秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效
+         * @param clientBodyTimeout Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
          * 
          * @return builder
          * 
@@ -965,7 +965,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clientBodyTimeout 读取客户端请求正文的超时时间。此超时时间仅针对两个连续的读操作之间设置，而非整个请求的传输过程。取值范围为 30-120秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效
+         * @param clientBodyTimeout Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
          * 
          * @return builder
          * 
@@ -975,7 +975,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clientHeaderTimeout 读取客户端请求头的超时时间。取值范围为30-120秒。默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+         * @param clientHeaderTimeout Timeout for reading the client request header. Value range: 30–120 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
          * 
          * @return builder
          * 
@@ -986,7 +986,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clientHeaderTimeout 读取客户端请求头的超时时间。取值范围为30-120秒。默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+         * @param clientHeaderTimeout Timeout for reading the client request header. Value range: 30–120 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
          * 
          * @return builder
          * 
@@ -996,7 +996,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param connectionDrainEnabled 监听器是否开启连接优雅中断功能。on：开启。off：不开启。参数Protocol返回为HTTP或HTTPS时，该参数固定返回off。
+         * @param connectionDrainEnabled Whether the listener enables graceful connection termination. on: enabled. off: not enabled. When Protocol returns HTTP or HTTPS, this parameter always returns off.
          * 
          * @return builder
          * 
@@ -1007,7 +1007,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param connectionDrainEnabled 监听器是否开启连接优雅中断功能。on：开启。off：不开启。参数Protocol返回为HTTP或HTTPS时，该参数固定返回off。
+         * @param connectionDrainEnabled Whether the listener enables graceful connection termination. on: enabled. off: not enabled. When Protocol returns HTTP or HTTPS, this parameter always returns off.
          * 
          * @return builder
          * 
@@ -1017,7 +1017,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param connectionDrainTimeout 连接优雅中断的超时时间，单位为秒。参数ConnectionDrainEnabled返回为off时，该参数返回0。
+         * @param connectionDrainTimeout Timeout for graceful connection termination, in seconds. If ConnectionDrainEnabled returns off, this parameter returns 0.
          * 
          * @return builder
          * 
@@ -1028,7 +1028,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param connectionDrainTimeout 连接优雅中断的超时时间，单位为秒。参数ConnectionDrainEnabled返回为off时，该参数返回0。
+         * @param connectionDrainTimeout Timeout for graceful connection termination, in seconds. If ConnectionDrainEnabled returns off, this parameter returns 0.
          * 
          * @return builder
          * 
@@ -1038,7 +1038,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cookie 后端服务器配置的会话保持的Cookie名称。仅参数PersistenceType取server时，本参数有效且必填。只能包含字母、数字、下划线（_）和中划线（-）。长度限制在1～200字符之间。
+         * @param cookie Name of the session persistence cookie configured on the backend server. This parameter is valid and required only when PersistenceType is set to server. Only letters, numbers, underscores (_), and hyphens (-) are allowed. Length must be between 1 and 200 characters.
          * 
          * @return builder
          * 
@@ -1049,7 +1049,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cookie 后端服务器配置的会话保持的Cookie名称。仅参数PersistenceType取server时，本参数有效且必填。只能包含字母、数字、下划线（_）和中划线（-）。长度限制在1～200字符之间。
+         * @param cookie Name of the session persistence cookie configured on the backend server. This parameter is valid and required only when PersistenceType is set to server. Only letters, numbers, underscores (_), and hyphens (-) are allowed. Length must be between 1 and 200 characters.
          * 
          * @return builder
          * 
@@ -1059,7 +1059,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cps 每秒新建连接数的上限。-1（默认值）：不限制，即CLB实例的新建连接数上限。取值范围：1～CLB实例的新连接数上限。
+         * @param cps Maximum number of new connections per second. -1 (default): No limit, which means the maximum number of new connections allowed by the CLB instance. Value range: 1 to the maximum number of new connections allowed by the CLB instance.
          * 
          * @return builder
          * 
@@ -1070,7 +1070,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cps 每秒新建连接数的上限。-1（默认值）：不限制，即CLB实例的新建连接数上限。取值范围：1～CLB实例的新连接数上限。
+         * @param cps Maximum number of new connections per second. -1 (default): No limit, which means the maximum number of new connections allowed by the CLB instance. Value range: 1 to the maximum number of new connections allowed by the CLB instance.
          * 
          * @return builder
          * 
@@ -1080,7 +1080,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 监听器的创建时间。
+         * @param createdTime Creation time of the listener.
          * 
          * @return builder
          * 
@@ -1091,7 +1091,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 监听器的创建时间。
+         * @param createdTime Creation time of the listener.
          * 
          * @return builder
          * 
@@ -1101,7 +1101,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
+         * @param description Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
          * 
          * @return builder
          * 
@@ -1112,7 +1112,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 监听器的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ～ 255个字符。不填则默认值为空字符串。
+         * @param description Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
          * 
          * @return builder
          * 
@@ -1122,7 +1122,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enabled 是否启用监听器。on（默认值）：开启。off：不开启。
+         * @param enabled Enable listener. on (default): enabled. off: disabled.
          * 
          * @return builder
          * 
@@ -1133,7 +1133,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enabled 是否启用监听器。on（默认值）：开启。off：不开启。
+         * @param enabled Enable listener. on (default): enabled. off: disabled.
          * 
          * @return builder
          * 
@@ -1143,7 +1143,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endPort 全端口监听的结束端口，取值范围为1-65535。参数Port为“0”时，该参数必须传入，且该参数取值应大于tartPort。
+         * @param endPort End port for all-port listening. Range: 1–65535. When Port is &#39;0&#39;, this parameter is required and must be greater than startPort.
          * 
          * @return builder
          * 
@@ -1154,7 +1154,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endPort 全端口监听的结束端口，取值范围为1-65535。参数Port为“0”时，该参数必须传入，且该参数取值应大于tartPort。
+         * @param endPort End port for all-port listening. Range: 1–65535. When Port is &#39;0&#39;, this parameter is required and must be greater than startPort.
          * 
          * @return builder
          * 
@@ -1164,7 +1164,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param establishedTimeout 监听器的连接超时时间。仅参数Protocol取TCP或UDP时，本参数有效。取值如下：TCP协议：10-900秒，默认为900秒。UDP协议：1-300秒，默认为90秒。
+         * @param establishedTimeout Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
          * 
          * @return builder
          * 
@@ -1175,7 +1175,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param establishedTimeout 监听器的连接超时时间。仅参数Protocol取TCP或UDP时，本参数有效。取值如下：TCP协议：10-900秒，默认为900秒。UDP协议：1-300秒，默认为90秒。
+         * @param establishedTimeout Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
          * 
          * @return builder
          * 
@@ -1185,7 +1185,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param healthCheck 健康检查相关信息。
+         * @param healthCheck Health check information.
          * 
          * @return builder
          * 
@@ -1196,7 +1196,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param healthCheck 健康检查相关信息。
+         * @param healthCheck Health check information.
          * 
          * @return builder
          * 
@@ -1206,7 +1206,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param http2Enabled 监听器是否开启前端HTTP 2.0协议。仅参数`Protocol取HTTPS时，本参数有效。取值如下：|on：开启。off（默认值）：不开启。
+         * @param http2Enabled Whether the listener enables frontend HTTP 2.0 protocol. This parameter is valid only when Protocol is set to HTTPS. Values: on: enabled. off (default): disabled.
          * 
          * @return builder
          * 
@@ -1217,7 +1217,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param http2Enabled 监听器是否开启前端HTTP 2.0协议。仅参数`Protocol取HTTPS时，本参数有效。取值如下：|on：开启。off（默认值）：不开启。
+         * @param http2Enabled Whether the listener enables frontend HTTP 2.0 protocol. This parameter is valid only when Protocol is set to HTTPS. Values: on: enabled. off (default): disabled.
          * 
          * @return builder
          * 
@@ -1227,7 +1227,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keepaliveTimeout 客户端与CLB之间的长连接超时时间。取值范围为 0-900秒，默认为75秒。0表示禁用长连接。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+         * @param keepaliveTimeout Keep-alive timeout between the client and CLB. Range: 0–900 seconds, default is 75 seconds. 0 disables keep-alive. This parameter is valid only when Protocol is set to HTTP or HTTPS.
          * 
          * @return builder
          * 
@@ -1238,7 +1238,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keepaliveTimeout 客户端与CLB之间的长连接超时时间。取值范围为 0-900秒，默认为75秒。0表示禁用长连接。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+         * @param keepaliveTimeout Keep-alive timeout between the client and CLB. Range: 0–900 seconds, default is 75 seconds. 0 disables keep-alive. This parameter is valid only when Protocol is set to HTTP or HTTPS.
          * 
          * @return builder
          * 
@@ -1248,7 +1248,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listenerId 监听器的ID。
+         * @param listenerId Listener ID.
          * 
          * @return builder
          * 
@@ -1259,7 +1259,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listenerId 监听器的ID。
+         * @param listenerId Listener ID.
          * 
          * @return builder
          * 
@@ -1269,7 +1269,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listenerName 监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
+         * @param listenerName Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If left blank, &#39;Protocol-Port&#39; will be used as the default listener name.
          * 
          * @return builder
          * 
@@ -1280,7 +1280,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listenerName 监听器的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线_）和中划线（-）。长度限制在1～128字符之间。不填则默认将“协议-端口”作为监听器名称。
+         * @param listenerName Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If left blank, &#39;Protocol-Port&#39; will be used as the default listener name.
          * 
          * @return builder
          * 
@@ -1290,7 +1290,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerId CLB实例的ID。
+         * @param loadBalancerId ID of the CLB instance.
          * 
          * @return builder
          * 
@@ -1301,7 +1301,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerId CLB实例的ID。
+         * @param loadBalancerId ID of the CLB instance.
          * 
          * @return builder
          * 
@@ -1311,7 +1311,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maxConnections 最大并发连接数的上限。-1（默认值）：不限制，CLB实例的最大并发连接数上限。取值范围：1～CLB实例的最大并发连接数上限。
+         * @param maxConnections Maximum concurrent connections limit. -1 (default): unlimited (up to the maximum concurrent connections supported by the CLB instance). Value range: 1 to the maximum concurrent connections limit of the CLB instance.
          * 
          * @return builder
          * 
@@ -1322,7 +1322,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maxConnections 最大并发连接数的上限。-1（默认值）：不限制，CLB实例的最大并发连接数上限。取值范围：1～CLB实例的最大并发连接数上限。
+         * @param maxConnections Maximum concurrent connections limit. -1 (default): unlimited (up to the maximum concurrent connections supported by the CLB instance). Value range: 1 to the maximum concurrent connections limit of the CLB instance.
          * 
          * @return builder
          * 
@@ -1332,7 +1332,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param persistenceTimeout 会话保持的超时时间，单位为秒。取值范围根据参数PersistenceType取值有所不同。PersistenceType置为source_ip时，取值范围为1～3600。PersistenceType配置为insert时，取值范围为1～86400。
+         * @param persistenceTimeout Session persistence timeout, in seconds. The value range depends on the PersistenceType parameter. When PersistenceType is set to source_ip, the range is 1–3600. When PersistenceType is set to insert, the range is 1–86400.
          * 
          * @return builder
          * 
@@ -1343,7 +1343,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param persistenceTimeout 会话保持的超时时间，单位为秒。取值范围根据参数PersistenceType取值有所不同。PersistenceType置为source_ip时，取值范围为1～3600。PersistenceType配置为insert时，取值范围为1～86400。
+         * @param persistenceTimeout Session persistence timeout, in seconds. The value range depends on the PersistenceType parameter. When PersistenceType is set to source_ip, the range is 1–3600. When PersistenceType is set to insert, the range is 1–86400.
          * 
          * @return builder
          * 
@@ -1353,7 +1353,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param persistenceType 会话保持的类型。取值如下：off（默认值）：不启用会话保持。source_ip：源地址IP，仅参数ProtocolTCP或UDP时，本取值有效。insert：植入Cookie，仅参数Protocol取HTTP或HTTPS且Scheduler取wrr时，本取值生效。server：重写Cookie，仅参数Protocol取HTTP或HTTPS且Scheduler取wrr时，本取值生效。。
+         * @param persistenceType Session persistence type. Values: off (default): session persistence disabled. source_ip: source IP address, valid only when Protocol is TCP or UDP. insert: insert Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr. server: rewrite Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr.
          * 
          * @return builder
          * 
@@ -1364,7 +1364,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param persistenceType 会话保持的类型。取值如下：off（默认值）：不启用会话保持。source_ip：源地址IP，仅参数ProtocolTCP或UDP时，本取值有效。insert：植入Cookie，仅参数Protocol取HTTP或HTTPS且Scheduler取wrr时，本取值生效。server：重写Cookie，仅参数Protocol取HTTP或HTTPS且Scheduler取wrr时，本取值生效。。
+         * @param persistenceType Session persistence type. Values: off (default): session persistence disabled. source_ip: source IP address, valid only when Protocol is TCP or UDP. insert: insert Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr. server: rewrite Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr.
          * 
          * @return builder
          * 
@@ -1374,7 +1374,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param port 监听器接收请求使用的端口。取值范围为 0～65535。参数Protocol为“TCP”或“UDP”时，支持传入0，表示用全端口监听。
+         * @param port Port used by the listener to receive requests. Value range: 0–65535. When the Protocol parameter is &#39;TCP&#39; or &#39;UDP&#39;, 0 is supported, which enables listening on all ports.
          * 
          * @return builder
          * 
@@ -1385,7 +1385,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param port 监听器接收请求使用的端口。取值范围为 0～65535。参数Protocol为“TCP”或“UDP”时，支持传入0，表示用全端口监听。
+         * @param port Port used by the listener to receive requests. Value range: 0–65535. When the Protocol parameter is &#39;TCP&#39; or &#39;UDP&#39;, 0 is supported, which enables listening on all ports.
          * 
          * @return builder
          * 
@@ -1395,7 +1395,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocol 监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
+         * @param protocol Listener protocol. Includes: TCP, UDP, HTTP, HTTPS.
          * 
          * @return builder
          * 
@@ -1406,7 +1406,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocol 监听器的协议。包括：TCP、UDP、HTTP、HTTPS。
+         * @param protocol Listener protocol. Includes: TCP, UDP, HTTP, HTTPS.
          * 
          * @return builder
          * 
@@ -1416,7 +1416,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyConnectTimeout CLB与后端服务器之间的连接建立超时时间。建议大于健康检查超时时间。取值范围为 4-120秒，默认为4。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+         * @param proxyConnectTimeout Connection establishment timeout between CLB and backend server. Recommended to be greater than the health check timeout. Range: 4–120 seconds, default is 4. This parameter is valid only when Protocol is set to HTTP or HTTPS.
          * 
          * @return builder
          * 
@@ -1427,7 +1427,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyConnectTimeout CLB与后端服务器之间的连接建立超时时间。建议大于健康检查超时时间。取值范围为 4-120秒，默认为4。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+         * @param proxyConnectTimeout Connection establishment timeout between CLB and backend server. Recommended to be greater than the health check timeout. Range: 4–120 seconds, default is 4. This parameter is valid only when Protocol is set to HTTP or HTTPS.
          * 
          * @return builder
          * 
@@ -1437,7 +1437,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyProtocolType 是否启用Proxy-Protocol协议。仅参数Protocol取TCP或UDP时，本参数有效。取值如下：off（默认值）：关闭。standard：开启。
+         * @param proxyProtocolType Enable Proxy-Protocol. This parameter is valid only when Protocol is TCP or UDP. Values: off (default): disabled. standard: enabled.
          * 
          * @return builder
          * 
@@ -1448,7 +1448,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyProtocolType 是否启用Proxy-Protocol协议。仅参数Protocol取TCP或UDP时，本参数有效。取值如下：off（默认值）：关闭。standard：开启。
+         * @param proxyProtocolType Enable Proxy-Protocol. This parameter is valid only when Protocol is TCP or UDP. Values: off (default): disabled. standard: enabled.
          * 
          * @return builder
          * 
@@ -1458,7 +1458,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyReadTimeout CLB从后端服务器读取响应的超时时间。此超时时间仅针对两个连续的读操作之间设置，而非整个响应的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+         * @param proxyReadTimeout Timeout for CLB to read responses from backend servers. This timeout applies only between two consecutive read operations, not for the entire response transmission. Value range: 30–3600 seconds. Default: 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
          * 
          * @return builder
          * 
@@ -1469,7 +1469,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyReadTimeout CLB从后端服务器读取响应的超时时间。此超时时间仅针对两个连续的读操作之间设置，而非整个响应的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+         * @param proxyReadTimeout Timeout for CLB to read responses from backend servers. This timeout applies only between two consecutive read operations, not for the entire response transmission. Value range: 30–3600 seconds. Default: 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
          * 
          * @return builder
          * 
@@ -1479,7 +1479,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxySendTimeout CLB将请求传输到后端服务器的超时时间。此超时仅针对两个连续的写操作之间设置，而非整个请求的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+         * @param proxySendTimeout Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
          * 
          * @return builder
          * 
@@ -1490,7 +1490,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxySendTimeout CLB将请求传输到后端服务器的超时时间。此超时仅针对两个连续的写操作之间设置，而非整个请求的传输过程。取值范围为30-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+         * @param proxySendTimeout Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
          * 
          * @return builder
          * 
@@ -1500,7 +1500,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleIds 监听器绑定的规则ID列表。
+         * @param ruleIds List of rule IDs bound to the listener.
          * 
          * @return builder
          * 
@@ -1511,7 +1511,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleIds 监听器绑定的规则ID列表。
+         * @param ruleIds List of rule IDs bound to the listener.
          * 
          * @return builder
          * 
@@ -1521,7 +1521,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleIds 监听器绑定的规则ID列表。
+         * @param ruleIds List of rule IDs bound to the listener.
          * 
          * @return builder
          * 
@@ -1531,7 +1531,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scheduler 监听器使用的调度算法。wrr（默认值）：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
+         * @param scheduler Scheduling algorithm used by the listener. wrr (default): Weighted round robin. wlc: Weighted least connections. sh: Source address hash.
          * 
          * @return builder
          * 
@@ -1542,7 +1542,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scheduler 监听器使用的调度算法。wrr（默认值）：加权轮询。wlc：加权最小连接数。sh：源地址哈希。
+         * @param scheduler Scheduling algorithm used by the listener. wrr (default): Weighted round robin. wlc: Weighted least connections. sh: Source address hash.
          * 
          * @return builder
          * 
@@ -1552,7 +1552,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityPolicyId HTTPS监听器的TLS安全策略。仅参数Protocol取HTTPS时，本参数有效。 取值如下：default*policy（默认值）：支持SSL v3、TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*0：支持TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*1：支持TLS v1.1、TLS v1.2。tls*cipher*policy*1*2：支持TLS v1.2。tls*cipher*policy*1*2*strict：支持TLS v1.2。
+         * @param securityPolicyId TLS security policy for HTTPS listeners. This parameter is valid only when Protocol is set to HTTPS. Values: default*policy (default): supports SSL v3, TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*0: supports TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*1: supports TLS v1.1, TLS v1.2. tls*cipher*policy*1*2: supports TLS v1.2. tls*cipher*policy*1*2*strict: supports TLS v1.2.
          * 
          * @return builder
          * 
@@ -1563,7 +1563,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityPolicyId HTTPS监听器的TLS安全策略。仅参数Protocol取HTTPS时，本参数有效。 取值如下：default*policy（默认值）：支持SSL v3、TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*0：支持TLS v1.0、TLS v1.1、TLS v1.2。tls*cipher*policy*1*1：支持TLS v1.1、TLS v1.2。tls*cipher*policy*1*2：支持TLS v1.2。tls*cipher*policy*1*2*strict：支持TLS v1.2。
+         * @param securityPolicyId TLS security policy for HTTPS listeners. This parameter is valid only when Protocol is set to HTTPS. Values: default*policy (default): supports SSL v3, TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*0: supports TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*1: supports TLS v1.1, TLS v1.2. tls*cipher*policy*1*2: supports TLS v1.2. tls*cipher*policy*1*2*strict: supports TLS v1.2.
          * 
          * @return builder
          * 
@@ -1573,7 +1573,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sendTimeout CLB向客户端发送响应的超时时间。此超时仅针对两个连续的写操作之间设置，而非整响应的传输过程。取值范围为 1-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+         * @param sendTimeout Timeout for CLB to send responses to the client. This timeout applies only between two consecutive write operations, not the entire response transmission. Range: 1–3600 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
          * 
          * @return builder
          * 
@@ -1584,7 +1584,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sendTimeout CLB向客户端发送响应的超时时间。此超时仅针对两个连续的写操作之间设置，而非整响应的传输过程。取值范围为 1-3600秒，默认为60秒。仅参数Protocol取HTTP或HTTPS时，本参数有效。
+         * @param sendTimeout Timeout for CLB to send responses to the client. This timeout applies only between two consecutive write operations, not the entire response transmission. Range: 1–3600 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
          * 
          * @return builder
          * 
@@ -1594,7 +1594,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serverGroupId 监听器关联的后端服务器组 ID。
+         * @param serverGroupId ID of the backend server group associated with the listener.
          * 
          * @return builder
          * 
@@ -1605,7 +1605,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param serverGroupId 监听器关联的后端服务器组 ID。
+         * @param serverGroupId ID of the backend server group associated with the listener.
          * 
          * @return builder
          * 
@@ -1615,7 +1615,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param startPort 全端口监听的起始端口，取值范围为1-65535。参数Port为“0”时，该参数必须传入。
+         * @param startPort Start port for all-port listening. Range: 1–65535. When Port is &#39;0&#39;, this parameter is required.
          * 
          * @return builder
          * 
@@ -1626,7 +1626,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param startPort 全端口监听的起始端口，取值范围为1-65535。参数Port为“0”时，该参数必须传入。
+         * @param startPort Start port for all-port listening. Range: 1–65535. When Port is &#39;0&#39;, this parameter is required.
          * 
          * @return builder
          * 
@@ -1636,7 +1636,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 监听器的状态。Creating：创建中。Active：运行中。Deleting: 删除中。Disabled: 已停用。
+         * @param status Listener status. Creating: being created. Active: running. Deleting: being deleted. Disabled: disabled.
          * 
          * @return builder
          * 
@@ -1647,7 +1647,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 监听器的状态。Creating：创建中。Active：运行中。Deleting: 删除中。Disabled: 已停用。
+         * @param status Listener status. Creating: being created. Active: running. Deleting: being deleted. Disabled: disabled.
          * 
          * @return builder
          * 
@@ -1670,7 +1670,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 监听器最近一次的操作时间。
+         * @param updatedTime Last operation time of the listener.
          * 
          * @return builder
          * 
@@ -1681,7 +1681,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 监听器最近一次的操作时间。
+         * @param updatedTime Last operation time of the listener.
          * 
          * @return builder
          * 
@@ -1691,7 +1691,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param wafProtectionEnabled 是否将经过七层监听器的流量送至Web应用防火墙进行检测和过滤。on：是。off：否。
+         * @param wafProtectionEnabled Send traffic passing through the Layer 7 listener to the Web Application Firewall for inspection and filtering. on: yes. off: no.
          * 
          * @return builder
          * 
@@ -1702,7 +1702,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param wafProtectionEnabled 是否将经过七层监听器的流量送至Web应用防火墙进行检测和过滤。on：是。off：否。
+         * @param wafProtectionEnabled Send traffic passing through the Layer 7 listener to the Web Application Firewall for inspection and filtering. on: yes. off: no.
          * 
          * @return builder
          * 

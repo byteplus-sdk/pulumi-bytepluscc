@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetUpstreamSourceSourceSpecNacosSource {
     /**
-     * @return 认证配置。
+     * @return Authentication configuration
      * 
      */
     private GetUpstreamSourceSourceSpecNacosSourceAuthConfig authConfig;
@@ -22,14 +22,14 @@ public final class GetUpstreamSourceSourceSpecNacosSource {
      */
     private String nacosId;
     /**
-     * @return Nacos名称。
+     * @return Nacos name
      * 
      */
     private String nacosName;
 
     private GetUpstreamSourceSourceSpecNacosSource() {}
     /**
-     * @return 认证配置。
+     * @return Authentication configuration
      * 
      */
     public GetUpstreamSourceSourceSpecNacosSourceAuthConfig authConfig() {
@@ -43,7 +43,7 @@ public final class GetUpstreamSourceSourceSpecNacosSource {
         return this.nacosId;
     }
     /**
-     * @return Nacos名称。
+     * @return Nacos name
      * 
      */
     public String nacosName() {

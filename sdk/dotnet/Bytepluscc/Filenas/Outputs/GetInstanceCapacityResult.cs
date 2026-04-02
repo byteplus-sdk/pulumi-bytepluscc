@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas.Outputs
     public sealed class GetInstanceCapacityResult
     {
         /// <summary>
-        /// 文件系统可用总容量，单位为 GiB。
+        /// Total available file system capacity, in GiB
         /// </summary>
         public readonly double Total;
         /// <summary>
-        /// 文件系统已使用容量，单位为 MiB。
+        /// Used file system capacity, in MiB
         /// </summary>
         public readonly double Used;
 

@@ -16,14 +16,14 @@ public final class TrafficMirrorTargetTagArgs extends com.pulumi.resources.Resou
     public static final TrafficMirrorTargetTagArgs Empty = new TrafficMirrorTargetTagArgs();
 
     /**
-     * 标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和{@literal @}（{@literal @}）。若标签键开头或结尾存在空格，系统会自动为其去除。
+     * Tag key. Length must be between 1 and 128 characters. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and {@literal @} ({@literal @}). If the tag key starts or ends with a space, the system will automatically remove it.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和{@literal @}（{@literal @}）。若标签键开头或结尾存在空格，系统会自动为其去除。
+     * @return Tag key. Length must be between 1 and 128 characters. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and {@literal @} ({@literal @}). If the tag key starts or ends with a space, the system will automatically remove it.
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class TrafficMirrorTargetTagArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 标签的标签值。长度取值范围为0～256字符，不填默认为空。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和{@literal @}（{@literal @}）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+     * Tag value. Length must be between 0 and 256 characters. If not specified, the default is empty. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and {@literal @} ({@literal @}). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 标签的标签值。长度取值范围为0～256字符，不填默认为空。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和{@literal @}（{@literal @}）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+     * @return Tag value. Length must be between 0 and 256 characters. If not specified, the default is empty. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and {@literal @} ({@literal @}). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class TrafficMirrorTargetTagArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param key 标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和{@literal @}（{@literal @}）。若标签键开头或结尾存在空格，系统会自动为其去除。
+         * @param key Tag key. Length must be between 1 and 128 characters. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and {@literal @} ({@literal @}). If the tag key starts or ends with a space, the system will automatically remove it.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class TrafficMirrorTargetTagArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param key 标签的标签键。长度取值范围为1~128字符，允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和{@literal @}（{@literal @}）。若标签键开头或结尾存在空格，系统会自动为其去除。
+         * @param key Tag key. Length must be between 1 and 128 characters. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and {@literal @} ({@literal @}). If the tag key starts or ends with a space, the system will automatically remove it.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class TrafficMirrorTargetTagArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param value 标签的标签值。长度取值范围为0～256字符，不填默认为空。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和{@literal @}（{@literal @}）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+         * @param value Tag value. Length must be between 0 and 256 characters. If not specified, the default is empty. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and {@literal @} ({@literal @}). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class TrafficMirrorTargetTagArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param value 标签的标签值。长度取值范围为0～256字符，不填默认为空。允许输入各国语言文字、数字、空格（ ）、下划线（_）、点号（.）、半角冒号（:）、斜杠（/）、等号（=）、加号（+）、中划线（-）和{@literal @}（{@literal @}）。大小写敏感。若标签值开头或结尾存在空格，系统会自动为其去除。
+         * @param value Tag value. Length must be between 0 and 256 characters. If not specified, the default is empty. Supports input of characters from any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and {@literal @} ({@literal @}). Case sensitive. If the tag value starts or ends with a space, the system will automatically remove it.
          * 
          * @return builder
          * 

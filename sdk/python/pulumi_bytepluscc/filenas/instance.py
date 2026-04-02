@@ -36,17 +36,17 @@ class InstanceArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceTagArgs']]]] = None):
         """
         The set of arguments for constructing a Instance resource.
-        :param pulumi.Input[builtins.str] charge_type: 计费类型，取值 PayAsYouGo，表示按量计费。
-        :param pulumi.Input[builtins.str] file_system_name: 文件系统名称。
-        :param pulumi.Input[builtins.str] file_system_type: 文件系统类型。取值说明：Extreme：NAS 极速型；Capacity：NAS 容量型；Cache：NAS 缓存型。
-        :param pulumi.Input[builtins.str] protocol_type: 文件系统协议类型。取值 NFS，表示 NFS 协议，常用于 Linux 客户端。
-        :param pulumi.Input[builtins.str] zone_id: 可用区 ID。
-        :param pulumi.Input['InstanceCachePerformanceArgs'] cache_performance: 缓存型性能信息。
-        :param pulumi.Input['InstanceCapacityArgs'] capacity: 文件系统容量。
-        :param pulumi.Input[builtins.str] description: 描述信息。
-        :param pulumi.Input[builtins.str] project_name: 所属项目，默认值为 default 项目。
-        :param pulumi.Input[builtins.str] snapshot_id: 创建时使用的快照 ID。传入该参数后，将使用该快照新建文件系统。
-        :param pulumi.Input[builtins.str] storage_type: 存储类型，取值Standard，表示标准型。
+        :param pulumi.Input[builtins.str] charge_type: Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
+        :param pulumi.Input[builtins.str] file_system_name: File system name
+        :param pulumi.Input[builtins.str] file_system_type: File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
+        :param pulumi.Input[builtins.str] protocol_type: File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
+        :param pulumi.Input[builtins.str] zone_id: Availability Zone ID
+        :param pulumi.Input['InstanceCachePerformanceArgs'] cache_performance: Cache performance information
+        :param pulumi.Input['InstanceCapacityArgs'] capacity: File system capacity
+        :param pulumi.Input[builtins.str] description: Description
+        :param pulumi.Input[builtins.str] project_name: Project, default value is the Default project
+        :param pulumi.Input[builtins.str] snapshot_id: Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
+        :param pulumi.Input[builtins.str] storage_type: Storage type. Value: Standard, indicates standard type
         """
         pulumi.set(__self__, "charge_type", charge_type)
         pulumi.set(__self__, "file_system_name", file_system_name)
@@ -72,7 +72,7 @@ class InstanceArgs:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> pulumi.Input[builtins.str]:
         """
-        计费类型，取值 PayAsYouGo，表示按量计费。
+        Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
         """
         return pulumi.get(self, "charge_type")
 
@@ -84,7 +84,7 @@ class InstanceArgs:
     @pulumi.getter(name="fileSystemName")
     def file_system_name(self) -> pulumi.Input[builtins.str]:
         """
-        文件系统名称。
+        File system name
         """
         return pulumi.get(self, "file_system_name")
 
@@ -96,7 +96,7 @@ class InstanceArgs:
     @pulumi.getter(name="fileSystemType")
     def file_system_type(self) -> pulumi.Input[builtins.str]:
         """
-        文件系统类型。取值说明：Extreme：NAS 极速型；Capacity：NAS 容量型；Cache：NAS 缓存型。
+        File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
         """
         return pulumi.get(self, "file_system_type")
 
@@ -108,7 +108,7 @@ class InstanceArgs:
     @pulumi.getter(name="protocolType")
     def protocol_type(self) -> pulumi.Input[builtins.str]:
         """
-        文件系统协议类型。取值 NFS，表示 NFS 协议，常用于 Linux 客户端。
+        File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
         """
         return pulumi.get(self, "protocol_type")
 
@@ -120,7 +120,7 @@ class InstanceArgs:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Input[builtins.str]:
         """
-        可用区 ID。
+        Availability Zone ID
         """
         return pulumi.get(self, "zone_id")
 
@@ -132,7 +132,7 @@ class InstanceArgs:
     @pulumi.getter(name="cachePerformance")
     def cache_performance(self) -> Optional[pulumi.Input['InstanceCachePerformanceArgs']]:
         """
-        缓存型性能信息。
+        Cache performance information
         """
         return pulumi.get(self, "cache_performance")
 
@@ -144,7 +144,7 @@ class InstanceArgs:
     @pulumi.getter
     def capacity(self) -> Optional[pulumi.Input['InstanceCapacityArgs']]:
         """
-        文件系统容量。
+        File system capacity
         """
         return pulumi.get(self, "capacity")
 
@@ -156,7 +156,7 @@ class InstanceArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        描述信息。
+        Description
         """
         return pulumi.get(self, "description")
 
@@ -168,7 +168,7 @@ class InstanceArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        所属项目，默认值为 default 项目。
+        Project, default value is the Default project
         """
         return pulumi.get(self, "project_name")
 
@@ -180,7 +180,7 @@ class InstanceArgs:
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建时使用的快照 ID。传入该参数后，将使用该快照新建文件系统。
+        Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
         """
         return pulumi.get(self, "snapshot_id")
 
@@ -192,7 +192,7 @@ class InstanceArgs:
     @pulumi.getter(name="storageType")
     def storage_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        存储类型，取值Standard，表示标准型。
+        Storage type. Value: Standard, indicates standard type
         """
         return pulumi.get(self, "storage_type")
 
@@ -233,23 +233,23 @@ class _InstanceState:
                  zone_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Instance resources.
-        :param pulumi.Input['InstanceCachePerformanceArgs'] cache_performance: 缓存型性能信息。
-        :param pulumi.Input['InstanceCapacityArgs'] capacity: 文件系统容量。
-        :param pulumi.Input[builtins.str] charge_type: 计费类型，取值 PayAsYouGo，表示按量计费。
-        :param pulumi.Input[builtins.str] create_time: 创建时间
-        :param pulumi.Input[builtins.str] description: 描述信息。
-        :param pulumi.Input[builtins.str] file_system_id: 文件系统 ID。
-        :param pulumi.Input[builtins.str] file_system_name: 文件系统名称。
-        :param pulumi.Input[builtins.str] file_system_type: 文件系统类型。取值说明：Extreme：NAS 极速型；Capacity：NAS 容量型；Cache：NAS 缓存型。
-        :param pulumi.Input[builtins.str] project_name: 所属项目，默认值为 default 项目。
-        :param pulumi.Input[builtins.str] protocol_type: 文件系统协议类型。取值 NFS，表示 NFS 协议，常用于 Linux 客户端。
-        :param pulumi.Input[builtins.int] snapshot_count: 快照数量
-        :param pulumi.Input[builtins.str] snapshot_id: 创建时使用的快照 ID。传入该参数后，将使用该快照新建文件系统。
-        :param pulumi.Input[builtins.str] status: 文件系统状态。取值说明如下：Unknown：状态未知。Running：文件系统运行中。Creating：文件系统创建中。Expanding：文件系统升级中。Error：文件系统错误。Deleting：文件系统删除中。DeleteError：文件系统删除失败。Deleted：文件系统已删除。Stopped：文件系统已停服。
-        :param pulumi.Input[builtins.str] storage_type: 存储类型，取值Standard，表示标准型。
-        :param pulumi.Input[builtins.str] update_time: 更新时间
-        :param pulumi.Input[builtins.str] zone_id: 可用区 ID。
-        :param pulumi.Input[builtins.str] zone_name: 可用区名称。
+        :param pulumi.Input['InstanceCachePerformanceArgs'] cache_performance: Cache performance information
+        :param pulumi.Input['InstanceCapacityArgs'] capacity: File system capacity
+        :param pulumi.Input[builtins.str] charge_type: Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
+        :param pulumi.Input[builtins.str] create_time: Creation time
+        :param pulumi.Input[builtins.str] description: Description
+        :param pulumi.Input[builtins.str] file_system_id: File system ID
+        :param pulumi.Input[builtins.str] file_system_name: File system name
+        :param pulumi.Input[builtins.str] file_system_type: File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
+        :param pulumi.Input[builtins.str] project_name: Project, default value is the Default project
+        :param pulumi.Input[builtins.str] protocol_type: File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
+        :param pulumi.Input[builtins.int] snapshot_count: Number of snapshots
+        :param pulumi.Input[builtins.str] snapshot_id: Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
+        :param pulumi.Input[builtins.str] status: File system status. Possible values: Unknown: Status unknown. Running: File system running. Creating: File system being created. Expanding: File system being upgraded. Error: File system error. Deleting: File system being deleted. DeleteError: File system deletion failed. Deleted: File system deleted. Stopped: File system stopped.
+        :param pulumi.Input[builtins.str] storage_type: Storage type. Value: Standard, indicates standard type
+        :param pulumi.Input[builtins.str] update_time: Update time
+        :param pulumi.Input[builtins.str] zone_id: Availability Zone ID
+        :param pulumi.Input[builtins.str] zone_name: Availability Zone name
         """
         if cache_performance is not None:
             pulumi.set(__self__, "cache_performance", cache_performance)
@@ -292,7 +292,7 @@ class _InstanceState:
     @pulumi.getter(name="cachePerformance")
     def cache_performance(self) -> Optional[pulumi.Input['InstanceCachePerformanceArgs']]:
         """
-        缓存型性能信息。
+        Cache performance information
         """
         return pulumi.get(self, "cache_performance")
 
@@ -304,7 +304,7 @@ class _InstanceState:
     @pulumi.getter
     def capacity(self) -> Optional[pulumi.Input['InstanceCapacityArgs']]:
         """
-        文件系统容量。
+        File system capacity
         """
         return pulumi.get(self, "capacity")
 
@@ -316,7 +316,7 @@ class _InstanceState:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        计费类型，取值 PayAsYouGo，表示按量计费。
+        Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
         """
         return pulumi.get(self, "charge_type")
 
@@ -328,7 +328,7 @@ class _InstanceState:
     @pulumi.getter(name="createTime")
     def create_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建时间
+        Creation time
         """
         return pulumi.get(self, "create_time")
 
@@ -340,7 +340,7 @@ class _InstanceState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        描述信息。
+        Description
         """
         return pulumi.get(self, "description")
 
@@ -352,7 +352,7 @@ class _InstanceState:
     @pulumi.getter(name="fileSystemId")
     def file_system_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        文件系统 ID。
+        File system ID
         """
         return pulumi.get(self, "file_system_id")
 
@@ -364,7 +364,7 @@ class _InstanceState:
     @pulumi.getter(name="fileSystemName")
     def file_system_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        文件系统名称。
+        File system name
         """
         return pulumi.get(self, "file_system_name")
 
@@ -376,7 +376,7 @@ class _InstanceState:
     @pulumi.getter(name="fileSystemType")
     def file_system_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        文件系统类型。取值说明：Extreme：NAS 极速型；Capacity：NAS 容量型；Cache：NAS 缓存型。
+        File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
         """
         return pulumi.get(self, "file_system_type")
 
@@ -388,7 +388,7 @@ class _InstanceState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        所属项目，默认值为 default 项目。
+        Project, default value is the Default project
         """
         return pulumi.get(self, "project_name")
 
@@ -400,7 +400,7 @@ class _InstanceState:
     @pulumi.getter(name="protocolType")
     def protocol_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        文件系统协议类型。取值 NFS，表示 NFS 协议，常用于 Linux 客户端。
+        File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
         """
         return pulumi.get(self, "protocol_type")
 
@@ -412,7 +412,7 @@ class _InstanceState:
     @pulumi.getter(name="snapshotCount")
     def snapshot_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        快照数量
+        Number of snapshots
         """
         return pulumi.get(self, "snapshot_count")
 
@@ -424,7 +424,7 @@ class _InstanceState:
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建时使用的快照 ID。传入该参数后，将使用该快照新建文件系统。
+        Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
         """
         return pulumi.get(self, "snapshot_id")
 
@@ -436,7 +436,7 @@ class _InstanceState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        文件系统状态。取值说明如下：Unknown：状态未知。Running：文件系统运行中。Creating：文件系统创建中。Expanding：文件系统升级中。Error：文件系统错误。Deleting：文件系统删除中。DeleteError：文件系统删除失败。Deleted：文件系统已删除。Stopped：文件系统已停服。
+        File system status. Possible values: Unknown: Status unknown. Running: File system running. Creating: File system being created. Expanding: File system being upgraded. Error: File system error. Deleting: File system being deleted. DeleteError: File system deletion failed. Deleted: File system deleted. Stopped: File system stopped.
         """
         return pulumi.get(self, "status")
 
@@ -448,7 +448,7 @@ class _InstanceState:
     @pulumi.getter(name="storageType")
     def storage_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        存储类型，取值Standard，表示标准型。
+        Storage type. Value: Standard, indicates standard type
         """
         return pulumi.get(self, "storage_type")
 
@@ -469,7 +469,7 @@ class _InstanceState:
     @pulumi.getter(name="updateTime")
     def update_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        更新时间
+        Update time
         """
         return pulumi.get(self, "update_time")
 
@@ -481,7 +481,7 @@ class _InstanceState:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        可用区 ID。
+        Availability Zone ID
         """
         return pulumi.get(self, "zone_id")
 
@@ -493,7 +493,7 @@ class _InstanceState:
     @pulumi.getter(name="zoneName")
     def zone_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        可用区名称。
+        Availability Zone name
         """
         return pulumi.get(self, "zone_name")
 
@@ -522,7 +522,7 @@ class Instance(pulumi.CustomResource):
                  zone_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        文件系统通过标准的 NFS 协议为您提供文件存储服务，用于网络文件远程访问，通过管理控制台创建挂载地址后，即可按需在客户端中通过标准的 POSIX 接口对文件系统进行访问。
+        The file system provides file storage services through the standard NFS protocol for remote network file access. After creating a mount point in the management console, you can access the file system on your client as needed using the standard POSIX interface
 
         ## Example Usage
 
@@ -549,17 +549,17 @@ class Instance(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['InstanceCachePerformanceArgs', 'InstanceCachePerformanceArgsDict']] cache_performance: 缓存型性能信息。
-        :param pulumi.Input[Union['InstanceCapacityArgs', 'InstanceCapacityArgsDict']] capacity: 文件系统容量。
-        :param pulumi.Input[builtins.str] charge_type: 计费类型，取值 PayAsYouGo，表示按量计费。
-        :param pulumi.Input[builtins.str] description: 描述信息。
-        :param pulumi.Input[builtins.str] file_system_name: 文件系统名称。
-        :param pulumi.Input[builtins.str] file_system_type: 文件系统类型。取值说明：Extreme：NAS 极速型；Capacity：NAS 容量型；Cache：NAS 缓存型。
-        :param pulumi.Input[builtins.str] project_name: 所属项目，默认值为 default 项目。
-        :param pulumi.Input[builtins.str] protocol_type: 文件系统协议类型。取值 NFS，表示 NFS 协议，常用于 Linux 客户端。
-        :param pulumi.Input[builtins.str] snapshot_id: 创建时使用的快照 ID。传入该参数后，将使用该快照新建文件系统。
-        :param pulumi.Input[builtins.str] storage_type: 存储类型，取值Standard，表示标准型。
-        :param pulumi.Input[builtins.str] zone_id: 可用区 ID。
+        :param pulumi.Input[Union['InstanceCachePerformanceArgs', 'InstanceCachePerformanceArgsDict']] cache_performance: Cache performance information
+        :param pulumi.Input[Union['InstanceCapacityArgs', 'InstanceCapacityArgsDict']] capacity: File system capacity
+        :param pulumi.Input[builtins.str] charge_type: Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
+        :param pulumi.Input[builtins.str] description: Description
+        :param pulumi.Input[builtins.str] file_system_name: File system name
+        :param pulumi.Input[builtins.str] file_system_type: File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
+        :param pulumi.Input[builtins.str] project_name: Project, default value is the Default project
+        :param pulumi.Input[builtins.str] protocol_type: File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
+        :param pulumi.Input[builtins.str] snapshot_id: Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
+        :param pulumi.Input[builtins.str] storage_type: Storage type. Value: Standard, indicates standard type
+        :param pulumi.Input[builtins.str] zone_id: Availability Zone ID
         """
         ...
     @overload
@@ -568,7 +568,7 @@ class Instance(pulumi.CustomResource):
                  args: InstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        文件系统通过标准的 NFS 协议为您提供文件存储服务，用于网络文件远程访问，通过管理控制台创建挂载地址后，即可按需在客户端中通过标准的 POSIX 接口对文件系统进行访问。
+        The file system provides file storage services through the standard NFS protocol for remote network file access. After creating a mount point in the management console, you can access the file system on your client as needed using the standard POSIX interface
 
         ## Example Usage
 
@@ -692,23 +692,23 @@ class Instance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['InstanceCachePerformanceArgs', 'InstanceCachePerformanceArgsDict']] cache_performance: 缓存型性能信息。
-        :param pulumi.Input[Union['InstanceCapacityArgs', 'InstanceCapacityArgsDict']] capacity: 文件系统容量。
-        :param pulumi.Input[builtins.str] charge_type: 计费类型，取值 PayAsYouGo，表示按量计费。
-        :param pulumi.Input[builtins.str] create_time: 创建时间
-        :param pulumi.Input[builtins.str] description: 描述信息。
-        :param pulumi.Input[builtins.str] file_system_id: 文件系统 ID。
-        :param pulumi.Input[builtins.str] file_system_name: 文件系统名称。
-        :param pulumi.Input[builtins.str] file_system_type: 文件系统类型。取值说明：Extreme：NAS 极速型；Capacity：NAS 容量型；Cache：NAS 缓存型。
-        :param pulumi.Input[builtins.str] project_name: 所属项目，默认值为 default 项目。
-        :param pulumi.Input[builtins.str] protocol_type: 文件系统协议类型。取值 NFS，表示 NFS 协议，常用于 Linux 客户端。
-        :param pulumi.Input[builtins.int] snapshot_count: 快照数量
-        :param pulumi.Input[builtins.str] snapshot_id: 创建时使用的快照 ID。传入该参数后，将使用该快照新建文件系统。
-        :param pulumi.Input[builtins.str] status: 文件系统状态。取值说明如下：Unknown：状态未知。Running：文件系统运行中。Creating：文件系统创建中。Expanding：文件系统升级中。Error：文件系统错误。Deleting：文件系统删除中。DeleteError：文件系统删除失败。Deleted：文件系统已删除。Stopped：文件系统已停服。
-        :param pulumi.Input[builtins.str] storage_type: 存储类型，取值Standard，表示标准型。
-        :param pulumi.Input[builtins.str] update_time: 更新时间
-        :param pulumi.Input[builtins.str] zone_id: 可用区 ID。
-        :param pulumi.Input[builtins.str] zone_name: 可用区名称。
+        :param pulumi.Input[Union['InstanceCachePerformanceArgs', 'InstanceCachePerformanceArgsDict']] cache_performance: Cache performance information
+        :param pulumi.Input[Union['InstanceCapacityArgs', 'InstanceCapacityArgsDict']] capacity: File system capacity
+        :param pulumi.Input[builtins.str] charge_type: Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
+        :param pulumi.Input[builtins.str] create_time: Creation time
+        :param pulumi.Input[builtins.str] description: Description
+        :param pulumi.Input[builtins.str] file_system_id: File system ID
+        :param pulumi.Input[builtins.str] file_system_name: File system name
+        :param pulumi.Input[builtins.str] file_system_type: File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
+        :param pulumi.Input[builtins.str] project_name: Project, default value is the Default project
+        :param pulumi.Input[builtins.str] protocol_type: File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
+        :param pulumi.Input[builtins.int] snapshot_count: Number of snapshots
+        :param pulumi.Input[builtins.str] snapshot_id: Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
+        :param pulumi.Input[builtins.str] status: File system status. Possible values: Unknown: Status unknown. Running: File system running. Creating: File system being created. Expanding: File system being upgraded. Error: File system error. Deleting: File system being deleted. DeleteError: File system deletion failed. Deleted: File system deleted. Stopped: File system stopped.
+        :param pulumi.Input[builtins.str] storage_type: Storage type. Value: Standard, indicates standard type
+        :param pulumi.Input[builtins.str] update_time: Update time
+        :param pulumi.Input[builtins.str] zone_id: Availability Zone ID
+        :param pulumi.Input[builtins.str] zone_name: Availability Zone name
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -738,7 +738,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="cachePerformance")
     def cache_performance(self) -> pulumi.Output['outputs.InstanceCachePerformance']:
         """
-        缓存型性能信息。
+        Cache performance information
         """
         return pulumi.get(self, "cache_performance")
 
@@ -746,7 +746,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def capacity(self) -> pulumi.Output['outputs.InstanceCapacity']:
         """
-        文件系统容量。
+        File system capacity
         """
         return pulumi.get(self, "capacity")
 
@@ -754,7 +754,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> pulumi.Output[builtins.str]:
         """
-        计费类型，取值 PayAsYouGo，表示按量计费。
+        Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
         """
         return pulumi.get(self, "charge_type")
 
@@ -762,7 +762,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="createTime")
     def create_time(self) -> pulumi.Output[builtins.str]:
         """
-        创建时间
+        Creation time
         """
         return pulumi.get(self, "create_time")
 
@@ -770,7 +770,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        描述信息。
+        Description
         """
         return pulumi.get(self, "description")
 
@@ -778,7 +778,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="fileSystemId")
     def file_system_id(self) -> pulumi.Output[builtins.str]:
         """
-        文件系统 ID。
+        File system ID
         """
         return pulumi.get(self, "file_system_id")
 
@@ -786,7 +786,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="fileSystemName")
     def file_system_name(self) -> pulumi.Output[builtins.str]:
         """
-        文件系统名称。
+        File system name
         """
         return pulumi.get(self, "file_system_name")
 
@@ -794,7 +794,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="fileSystemType")
     def file_system_type(self) -> pulumi.Output[builtins.str]:
         """
-        文件系统类型。取值说明：Extreme：NAS 极速型；Capacity：NAS 容量型；Cache：NAS 缓存型。
+        File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
         """
         return pulumi.get(self, "file_system_type")
 
@@ -802,7 +802,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        所属项目，默认值为 default 项目。
+        Project, default value is the Default project
         """
         return pulumi.get(self, "project_name")
 
@@ -810,7 +810,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="protocolType")
     def protocol_type(self) -> pulumi.Output[builtins.str]:
         """
-        文件系统协议类型。取值 NFS，表示 NFS 协议，常用于 Linux 客户端。
+        File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
         """
         return pulumi.get(self, "protocol_type")
 
@@ -818,7 +818,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="snapshotCount")
     def snapshot_count(self) -> pulumi.Output[builtins.int]:
         """
-        快照数量
+        Number of snapshots
         """
         return pulumi.get(self, "snapshot_count")
 
@@ -826,7 +826,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> pulumi.Output[builtins.str]:
         """
-        创建时使用的快照 ID。传入该参数后，将使用该快照新建文件系统。
+        Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
         """
         return pulumi.get(self, "snapshot_id")
 
@@ -834,7 +834,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        文件系统状态。取值说明如下：Unknown：状态未知。Running：文件系统运行中。Creating：文件系统创建中。Expanding：文件系统升级中。Error：文件系统错误。Deleting：文件系统删除中。DeleteError：文件系统删除失败。Deleted：文件系统已删除。Stopped：文件系统已停服。
+        File system status. Possible values: Unknown: Status unknown. Running: File system running. Creating: File system being created. Expanding: File system being upgraded. Error: File system error. Deleting: File system being deleted. DeleteError: File system deletion failed. Deleted: File system deleted. Stopped: File system stopped.
         """
         return pulumi.get(self, "status")
 
@@ -842,7 +842,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="storageType")
     def storage_type(self) -> pulumi.Output[builtins.str]:
         """
-        存储类型，取值Standard，表示标准型。
+        Storage type. Value: Standard, indicates standard type
         """
         return pulumi.get(self, "storage_type")
 
@@ -855,7 +855,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="updateTime")
     def update_time(self) -> pulumi.Output[builtins.str]:
         """
-        更新时间
+        Update time
         """
         return pulumi.get(self, "update_time")
 
@@ -863,7 +863,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Output[builtins.str]:
         """
-        可用区 ID。
+        Availability Zone ID
         """
         return pulumi.get(self, "zone_id")
 
@@ -871,7 +871,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="zoneName")
     def zone_name(self) -> pulumi.Output[builtins.str]:
         """
-        可用区名称。
+        Availability Zone name
         """
         return pulumi.get(self, "zone_name")
 

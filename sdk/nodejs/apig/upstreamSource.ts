@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * API 网关支持基于容器服务（VKE）集和容器服务的注册集群功能，将集群导入到 API 网关实例，将其作为网关的 Upstream 来源，以便网关获取集群中的 Service 列表。
+ * The API Gateway supports cluster registration based on container services (VKE) and container service clusters. Import clusters into the API Gateway instance to use them as Upstream sources, allowing the gateway to retrieve the Service list from the cluster
  *
  * ## Import
  *
@@ -44,47 +44,47 @@ export class UpstreamSource extends pulumi.CustomResource {
     }
 
     /**
-     * 备注，长度限制为0~253个字符。
+     * Remarks, length limit: 0–253 characters
      */
     public readonly comments!: pulumi.Output<string>;
     /**
-     * 创建时间。
+     * Creation time
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 网关实例ID。
+     * Gateway instance ID
      */
     public readonly gatewayId!: pulumi.Output<string>;
     /**
-     * 路由同步。开启后，API网关会自动监听Ingress资源的变化，并将Ingress资源转义为服务，域名，Upstream等资源合并至当前网关。由Ingress转义的资源不支持在控制台操作。仅支持容器集群来源类型。
+     * Route synchronization. When enabled, the API Gateway automatically monitors changes to Ingress resources and converts them into services, domains, Upstream, and other resources, merging them into the current gateway. Resources converted from Ingress cannot be managed in the console. Only supported for container cluster source type
      */
     public readonly ingressSettings!: pulumi.Output<outputs.apig.UpstreamSourceIngressSettings>;
     /**
-     * Upstream来源配置。
+     * Upstream source configuration
      */
     public readonly sourceSpec!: pulumi.Output<outputs.apig.UpstreamSourceSourceSpec>;
     /**
-     * Upstream来源类型，取值：K8S：容器集群。Nacos：注册中心。
+     * Upstream source type. Options: K8S: Container cluster. Nacos: Registry
      */
     public readonly sourceType!: pulumi.Output<string>;
     /**
-     * 导入状态，取值：Syncing：导入中。SyncedSucceed：导入成功。SyncedFailed：导入失败。
+     * Import status. Options: Syncing: Importing. SyncedSucceed: Import successful. SyncedFailed: Import failed
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     /**
-     * 导入状态信息，取值：ConnectionFailed：Nacos集群无法连接。AuthenticationFailed：认证失败。PermissionFailed：Nacos集群无法连接。
+     * Import status information. Options: ConnectionFailed: Unable to connect to Nacos cluster. AuthenticationFailed: Authentication failed. PermissionFailed: Unable to connect to Nacos cluster
      */
     public /*out*/ readonly statusMessage!: pulumi.Output<string>;
     /**
-     * 更新时间。
+     * Update time
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
     /**
-     * Upstream来源ID。
+     * Upstream source ID
      */
     public /*out*/ readonly upstreamSourceId!: pulumi.Output<string>;
     /**
-     * 指定命名空间。
+     * Specify namespace
      */
     public readonly watchNamespaces!: pulumi.Output<string[]>;
 
@@ -145,47 +145,47 @@ export class UpstreamSource extends pulumi.CustomResource {
  */
 export interface UpstreamSourceState {
     /**
-     * 备注，长度限制为0~253个字符。
+     * Remarks, length limit: 0–253 characters
      */
     comments?: pulumi.Input<string>;
     /**
-     * 创建时间。
+     * Creation time
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 网关实例ID。
+     * Gateway instance ID
      */
     gatewayId?: pulumi.Input<string>;
     /**
-     * 路由同步。开启后，API网关会自动监听Ingress资源的变化，并将Ingress资源转义为服务，域名，Upstream等资源合并至当前网关。由Ingress转义的资源不支持在控制台操作。仅支持容器集群来源类型。
+     * Route synchronization. When enabled, the API Gateway automatically monitors changes to Ingress resources and converts them into services, domains, Upstream, and other resources, merging them into the current gateway. Resources converted from Ingress cannot be managed in the console. Only supported for container cluster source type
      */
     ingressSettings?: pulumi.Input<inputs.apig.UpstreamSourceIngressSettings>;
     /**
-     * Upstream来源配置。
+     * Upstream source configuration
      */
     sourceSpec?: pulumi.Input<inputs.apig.UpstreamSourceSourceSpec>;
     /**
-     * Upstream来源类型，取值：K8S：容器集群。Nacos：注册中心。
+     * Upstream source type. Options: K8S: Container cluster. Nacos: Registry
      */
     sourceType?: pulumi.Input<string>;
     /**
-     * 导入状态，取值：Syncing：导入中。SyncedSucceed：导入成功。SyncedFailed：导入失败。
+     * Import status. Options: Syncing: Importing. SyncedSucceed: Import successful. SyncedFailed: Import failed
      */
     status?: pulumi.Input<string>;
     /**
-     * 导入状态信息，取值：ConnectionFailed：Nacos集群无法连接。AuthenticationFailed：认证失败。PermissionFailed：Nacos集群无法连接。
+     * Import status information. Options: ConnectionFailed: Unable to connect to Nacos cluster. AuthenticationFailed: Authentication failed. PermissionFailed: Unable to connect to Nacos cluster
      */
     statusMessage?: pulumi.Input<string>;
     /**
-     * 更新时间。
+     * Update time
      */
     updatedTime?: pulumi.Input<string>;
     /**
-     * Upstream来源ID。
+     * Upstream source ID
      */
     upstreamSourceId?: pulumi.Input<string>;
     /**
-     * 指定命名空间。
+     * Specify namespace
      */
     watchNamespaces?: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -195,27 +195,27 @@ export interface UpstreamSourceState {
  */
 export interface UpstreamSourceArgs {
     /**
-     * 备注，长度限制为0~253个字符。
+     * Remarks, length limit: 0–253 characters
      */
     comments?: pulumi.Input<string>;
     /**
-     * 网关实例ID。
+     * Gateway instance ID
      */
     gatewayId: pulumi.Input<string>;
     /**
-     * 路由同步。开启后，API网关会自动监听Ingress资源的变化，并将Ingress资源转义为服务，域名，Upstream等资源合并至当前网关。由Ingress转义的资源不支持在控制台操作。仅支持容器集群来源类型。
+     * Route synchronization. When enabled, the API Gateway automatically monitors changes to Ingress resources and converts them into services, domains, Upstream, and other resources, merging them into the current gateway. Resources converted from Ingress cannot be managed in the console. Only supported for container cluster source type
      */
     ingressSettings?: pulumi.Input<inputs.apig.UpstreamSourceIngressSettings>;
     /**
-     * Upstream来源配置。
+     * Upstream source configuration
      */
     sourceSpec: pulumi.Input<inputs.apig.UpstreamSourceSourceSpec>;
     /**
-     * Upstream来源类型，取值：K8S：容器集群。Nacos：注册中心。
+     * Upstream source type. Options: K8S: Container cluster. Nacos: Registry
      */
     sourceType: pulumi.Input<string>;
     /**
-     * 指定命名空间。
+     * Specify namespace
      */
     watchNamespaces?: pulumi.Input<pulumi.Input<string>[]>;
 }

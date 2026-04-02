@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRules {
     /**
-     * @return 表示一个变量列表。
+     * @return Indicates a variable list
      * 
      */
     private List<GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesCustomVariableInstance> customVariableInstances;
 
     private GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRules() {}
     /**
-     * @return 表示一个变量列表。
+     * @return Indicates a variable list
      * 
      */
     public List<GetDomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesCustomVariableInstance> customVariableInstances() {

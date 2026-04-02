@@ -17,14 +17,14 @@ public final class NodePoolNodeConfigPublicAccessConfigArgs extends com.pulumi.r
     public static final NodePoolNodeConfigPublicAccessConfigArgs Empty = new NodePoolNodeConfigPublicAccessConfigArgs();
 
     /**
-     * 公网 IP 的带宽峰值，单位：Mbps。
+     * Peak bandwidth for public IP, unit: Mbps
      * 
      */
     @Import(name="bandwidth")
     private @Nullable Output<Integer> bandwidth;
 
     /**
-     * @return 公网 IP 的带宽峰值，单位：Mbps。
+     * @return Peak bandwidth for public IP, unit: Mbps
      * 
      */
     public Optional<Output<Integer>> bandwidth() {
@@ -32,14 +32,14 @@ public final class NodePoolNodeConfigPublicAccessConfigArgs extends com.pulumi.r
     }
 
     /**
-     * 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+     * Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
      * 
      */
     @Import(name="billingType")
     private @Nullable Output<Integer> billingType;
 
     /**
-     * @return 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+     * @return Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
      * 
      */
     public Optional<Output<Integer>> billingType() {
@@ -47,14 +47,14 @@ public final class NodePoolNodeConfigPublicAccessConfigArgs extends com.pulumi.r
     }
 
     /**
-     * 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+     * Public IP line type. Parameter description: BGP: BGP (multi-line)
      * 
      */
     @Import(name="isp")
     private @Nullable Output<String> isp;
 
     /**
-     * @return 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+     * @return Public IP line type. Parameter description: BGP: BGP (multi-line)
      * 
      */
     public Optional<Output<String>> isp() {
@@ -88,7 +88,7 @@ public final class NodePoolNodeConfigPublicAccessConfigArgs extends com.pulumi.r
         }
 
         /**
-         * @param bandwidth 公网 IP 的带宽峰值，单位：Mbps。
+         * @param bandwidth Peak bandwidth for public IP, unit: Mbps
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class NodePoolNodeConfigPublicAccessConfigArgs extends com.pulumi.r
         }
 
         /**
-         * @param bandwidth 公网 IP 的带宽峰值，单位：Mbps。
+         * @param bandwidth Peak bandwidth for public IP, unit: Mbps
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class NodePoolNodeConfigPublicAccessConfigArgs extends com.pulumi.r
         }
 
         /**
-         * @param billingType 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+         * @param billingType Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class NodePoolNodeConfigPublicAccessConfigArgs extends com.pulumi.r
         }
 
         /**
-         * @param billingType 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+         * @param billingType Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class NodePoolNodeConfigPublicAccessConfigArgs extends com.pulumi.r
         }
 
         /**
-         * @param isp 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+         * @param isp Public IP line type. Parameter description: BGP: BGP (multi-line)
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class NodePoolNodeConfigPublicAccessConfigArgs extends com.pulumi.r
         }
 
         /**
-         * @param isp 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+         * @param isp Public IP line type. Parameter description: BGP: BGP (multi-line)
          * 
          * @return builder
          * 

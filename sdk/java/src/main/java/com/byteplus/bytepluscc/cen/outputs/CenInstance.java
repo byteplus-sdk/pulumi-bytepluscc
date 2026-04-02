@@ -12,50 +12,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class CenInstance {
     /**
-     * @return 网络实例的ID。
+     * @return Network instance ID
      * 
      */
     private @Nullable String instanceId;
     /**
-     * @return 网络实例所属账号的ID。
+     * @return Account ID for the network instance
      * 
      */
     private @Nullable String instanceOwnerId;
     /**
-     * @return 网络实例所在的地域。
+     * @return Region where the network instance is located
      * 
      */
     private @Nullable String instanceRegionId;
     /**
-     * @return 网络实例的类型。
+     * @return Type of the network instance
      * 
      */
     private @Nullable String instanceType;
 
     private CenInstance() {}
     /**
-     * @return 网络实例的ID。
+     * @return Network instance ID
      * 
      */
     public Optional<String> instanceId() {
         return Optional.ofNullable(this.instanceId);
     }
     /**
-     * @return 网络实例所属账号的ID。
+     * @return Account ID for the network instance
      * 
      */
     public Optional<String> instanceOwnerId() {
         return Optional.ofNullable(this.instanceOwnerId);
     }
     /**
-     * @return 网络实例所在的地域。
+     * @return Region where the network instance is located
      * 
      */
     public Optional<String> instanceRegionId() {
         return Optional.ofNullable(this.instanceRegionId);
     }
     /**
-     * @return 网络实例的类型。
+     * @return Type of the network instance
      * 
      */
     public Optional<String> instanceType() {

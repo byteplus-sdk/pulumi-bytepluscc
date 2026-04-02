@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class LaunchTemplateLaunchTemplateVersionTag {
     /**
-     * @return 给资源添加的用户标签的标签键。
+     * @return Tag key for user tags added to the resource.
      * 
      */
     private @Nullable String key;
     /**
-     * @return 给资源添加的用户标签的标签值。
+     * @return User tag value added to the resource
      * 
      */
     private @Nullable String value;
 
     private LaunchTemplateLaunchTemplateVersionTag() {}
     /**
-     * @return 给资源添加的用户标签的标签键。
+     * @return Tag key for user tags added to the resource.
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return 给资源添加的用户标签的标签值。
+     * @return User tag value added to the resource
      * 
      */
     public Optional<String> value() {

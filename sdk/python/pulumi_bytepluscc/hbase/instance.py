@@ -47,27 +47,27 @@ class InstanceArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceTagArgs']]]] = None):
         """
         The set of arguments for constructing a Instance resource.
-        :param pulumi.Input[builtins.str] charge_type: 计费类型，取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
-        :param pulumi.Input[builtins.str] engine_version: HBase 数据库引擎版本。当前仅支持 HBase 2.0 版本，取值默认为 HBase_2.0。
-        :param pulumi.Input[builtins.str] master_spec: Master 节点的规格码。说明关于 Master 节点所支持的规格信息，请参见实例规格。Master 节点数量为固定值，不支持增减。
-        :param pulumi.Input[builtins.str] region_id: 实例所属的地域 ID。
-        :param pulumi.Input[builtins.int] rs_count: RegionServer 节点的数量。
-        :param pulumi.Input[builtins.str] rs_spec: RegionServer 节点的规格码。
-        :param pulumi.Input[builtins.int] storage_capacity: 实例总存储容量，单位：GiB。
-        :param pulumi.Input[builtins.str] storage_type: 实例的存储类型，取值：HdfsHdd：HDD 文件存储。HdfsSsd：SSD 文件存储。
-        :param pulumi.Input[builtins.str] subnet_id: 实例所属的子网 ID。单可用区实例，仅包含一个可用区的子网 ID。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络 ID。说明您可以调用 DescribeVpcs 接口查询可创建 HBase 实例的私有网络信息，包括私有网络 ID。
-        :param pulumi.Input[builtins.str] zone_id: 实例所属的可用区 ID。
-        :param pulumi.Input[builtins.bool] auto_renew: 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
-        :param pulumi.Input[builtins.int] cold_storage: 实例总容量型存储空间大小，单位 GiB。
-        :param pulumi.Input[builtins.str] deletion_protection: 实例删除保护功能开关状态。取值范围：enabled：已开启。disabled：未开启。说明关于实例删除保护的更多信息，请参见实例删除保护。
-        :param pulumi.Input[builtins.bool] enable_auth: 是否开启登录认证。取值：true：已开启登录认证。false：未开启登录认证。
-        :param pulumi.Input[builtins.bool] enable_cloud_storage: 是否开通存储型容量，取值：true：开通容量型存储。false：不开通容量型存储。说明容量型存储的详细介绍，请参见冷热分离介绍。仅当 MultiAZ（部署方式）取值为 false（单可用区部署）时，支持冷热分离功能。
-        :param pulumi.Input[builtins.str] instance_name: 实例名称。
-        :param pulumi.Input[builtins.str] instance_type: 实例类型。当前仅支持标准型，取值默认为 Standard。
-        :param pulumi.Input[builtins.bool] multi_az: 实例的部署方式，取值：true：多可用区部署。false：单可用区部署。目前仅支持单可用区部署。
-        :param pulumi.Input[builtins.str] project_name: 实例所属的项目名称。
-        :param pulumi.Input[builtins.int] purchase_months: 购买时长，单位：月。取值范围如下：1，2，3，4，5，6，7，8，9，12，24，36。说明当 ChargeType 为 PrePaid时，该参数必填。
+        :param pulumi.Input[builtins.str] charge_type: Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
+        :param pulumi.Input[builtins.str] engine_version: HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
+        :param pulumi.Input[builtins.str] master_spec: Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
+        :param pulumi.Input[builtins.str] region_id: Region ID of the instance.
+        :param pulumi.Input[builtins.int] rs_count: Number of RegionServer nodes
+        :param pulumi.Input[builtins.str] rs_spec: RegionServer node specification code.
+        :param pulumi.Input[builtins.int] storage_capacity: Total storage capacity of the instance, unit: GiB.
+        :param pulumi.Input[builtins.str] storage_type: Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
+        :param pulumi.Input[builtins.str] vpc_id: Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
+        :param pulumi.Input[builtins.str] zone_id: Zone ID of the instance
+        :param pulumi.Input[builtins.bool] auto_renew: Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
+        :param pulumi.Input[builtins.int] cold_storage: Total capacity-type storage space for the instance, in GiB.
+        :param pulumi.Input[builtins.str] deletion_protection: Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
+        :param pulumi.Input[builtins.bool] enable_auth: Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
+        :param pulumi.Input[builtins.bool] enable_cloud_storage: Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
+        :param pulumi.Input[builtins.str] instance_name: Instance name
+        :param pulumi.Input[builtins.str] instance_type: Instance type. Currently, only Standard is supported. The default value is Standard
+        :param pulumi.Input[builtins.bool] multi_az: Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
+        :param pulumi.Input[builtins.str] project_name: Project name of the instance
+        :param pulumi.Input[builtins.int] purchase_months: Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
         """
         pulumi.set(__self__, "charge_type", charge_type)
         pulumi.set(__self__, "engine_version", engine_version)
@@ -109,7 +109,7 @@ class InstanceArgs:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> pulumi.Input[builtins.str]:
         """
-        计费类型，取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+        Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
         """
         return pulumi.get(self, "charge_type")
 
@@ -121,7 +121,7 @@ class InstanceArgs:
     @pulumi.getter(name="engineVersion")
     def engine_version(self) -> pulumi.Input[builtins.str]:
         """
-        HBase 数据库引擎版本。当前仅支持 HBase 2.0 版本，取值默认为 HBase_2.0。
+        HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
         """
         return pulumi.get(self, "engine_version")
 
@@ -133,7 +133,7 @@ class InstanceArgs:
     @pulumi.getter(name="masterSpec")
     def master_spec(self) -> pulumi.Input[builtins.str]:
         """
-        Master 节点的规格码。说明关于 Master 节点所支持的规格信息，请参见实例规格。Master 节点数量为固定值，不支持增减。
+        Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
         """
         return pulumi.get(self, "master_spec")
 
@@ -145,7 +145,7 @@ class InstanceArgs:
     @pulumi.getter(name="regionId")
     def region_id(self) -> pulumi.Input[builtins.str]:
         """
-        实例所属的地域 ID。
+        Region ID of the instance.
         """
         return pulumi.get(self, "region_id")
 
@@ -157,7 +157,7 @@ class InstanceArgs:
     @pulumi.getter(name="rsCount")
     def rs_count(self) -> pulumi.Input[builtins.int]:
         """
-        RegionServer 节点的数量。
+        Number of RegionServer nodes
         """
         return pulumi.get(self, "rs_count")
 
@@ -169,7 +169,7 @@ class InstanceArgs:
     @pulumi.getter(name="rsSpec")
     def rs_spec(self) -> pulumi.Input[builtins.str]:
         """
-        RegionServer 节点的规格码。
+        RegionServer node specification code.
         """
         return pulumi.get(self, "rs_spec")
 
@@ -181,7 +181,7 @@ class InstanceArgs:
     @pulumi.getter(name="storageCapacity")
     def storage_capacity(self) -> pulumi.Input[builtins.int]:
         """
-        实例总存储容量，单位：GiB。
+        Total storage capacity of the instance, unit: GiB.
         """
         return pulumi.get(self, "storage_capacity")
 
@@ -193,7 +193,7 @@ class InstanceArgs:
     @pulumi.getter(name="storageType")
     def storage_type(self) -> pulumi.Input[builtins.str]:
         """
-        实例的存储类型，取值：HdfsHdd：HDD 文件存储。HdfsSsd：SSD 文件存储。
+        Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
         """
         return pulumi.get(self, "storage_type")
 
@@ -205,7 +205,7 @@ class InstanceArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[builtins.str]:
         """
-        实例所属的子网 ID。单可用区实例，仅包含一个可用区的子网 ID。
+        Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
         """
         return pulumi.get(self, "subnet_id")
 
@@ -217,7 +217,7 @@ class InstanceArgs:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Input[builtins.str]:
         """
-        私有网络 ID。说明您可以调用 DescribeVpcs 接口查询可创建 HBase 实例的私有网络信息，包括私有网络 ID。
+        Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -229,7 +229,7 @@ class InstanceArgs:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Input[builtins.str]:
         """
-        实例所属的可用区 ID。
+        Zone ID of the instance
         """
         return pulumi.get(self, "zone_id")
 
@@ -241,7 +241,7 @@ class InstanceArgs:
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+        Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -253,7 +253,7 @@ class InstanceArgs:
     @pulumi.getter(name="coldStorage")
     def cold_storage(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例总容量型存储空间大小，单位 GiB。
+        Total capacity-type storage space for the instance, in GiB.
         """
         return pulumi.get(self, "cold_storage")
 
@@ -265,7 +265,7 @@ class InstanceArgs:
     @pulumi.getter(name="deletionProtection")
     def deletion_protection(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例删除保护功能开关状态。取值范围：enabled：已开启。disabled：未开启。说明关于实例删除保护的更多信息，请参见实例删除保护。
+        Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
         """
         return pulumi.get(self, "deletion_protection")
 
@@ -277,7 +277,7 @@ class InstanceArgs:
     @pulumi.getter(name="enableAuth")
     def enable_auth(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启登录认证。取值：true：已开启登录认证。false：未开启登录认证。
+        Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
         """
         return pulumi.get(self, "enable_auth")
 
@@ -289,7 +289,7 @@ class InstanceArgs:
     @pulumi.getter(name="enableCloudStorage")
     def enable_cloud_storage(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开通存储型容量，取值：true：开通容量型存储。false：不开通容量型存储。说明容量型存储的详细介绍，请参见冷热分离介绍。仅当 MultiAZ（部署方式）取值为 false（单可用区部署）时，支持冷热分离功能。
+        Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
         """
         return pulumi.get(self, "enable_cloud_storage")
 
@@ -310,7 +310,7 @@ class InstanceArgs:
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例名称。
+        Instance name
         """
         return pulumi.get(self, "instance_name")
 
@@ -322,7 +322,7 @@ class InstanceArgs:
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例类型。当前仅支持标准型，取值默认为 Standard。
+        Instance type. Currently, only Standard is supported. The default value is Standard
         """
         return pulumi.get(self, "instance_type")
 
@@ -334,7 +334,7 @@ class InstanceArgs:
     @pulumi.getter(name="multiAz")
     def multi_az(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        实例的部署方式，取值：true：多可用区部署。false：单可用区部署。目前仅支持单可用区部署。
+        Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
         """
         return pulumi.get(self, "multi_az")
 
@@ -346,7 +346,7 @@ class InstanceArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所属的项目名称。
+        Project name of the instance
         """
         return pulumi.get(self, "project_name")
 
@@ -358,7 +358,7 @@ class InstanceArgs:
     @pulumi.getter(name="purchaseMonths")
     def purchase_months(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        购买时长，单位：月。取值范围如下：1，2，3，4，5，6，7，8，9，12，24，36。说明当 ChargeType 为 PrePaid时，该参数必填。
+        Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
         """
         return pulumi.get(self, "purchase_months")
 
@@ -417,40 +417,40 @@ class _InstanceState:
                  zone_name: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Instance resources.
-        :param pulumi.Input[builtins.bool] auto_renew: 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
-        :param pulumi.Input[builtins.str] charge_status: 计费状态。取值：Normal：正常。Overdue：欠费。Shutdown：关停。
-        :param pulumi.Input[builtins.str] charge_type: 计费类型，取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
-        :param pulumi.Input[builtins.int] cold_storage: 实例总容量型存储空间大小，单位 GiB。
-        :param pulumi.Input[builtins.str] create_time: 实例创建时间（UTC 时间）。
-        :param pulumi.Input[builtins.str] deletion_protection: 实例删除保护功能开关状态。取值范围：enabled：已开启。disabled：未开启。说明关于实例删除保护的更多信息，请参见实例删除保护。
-        :param pulumi.Input[builtins.bool] enable_auth: 是否开启登录认证。取值：true：已开启登录认证。false：未开启登录认证。
-        :param pulumi.Input[builtins.bool] enable_cloud_storage: 是否开通存储型容量，取值：true：开通容量型存储。false：不开通容量型存储。说明容量型存储的详细介绍，请参见冷热分离介绍。仅当 MultiAZ（部署方式）取值为 false（单可用区部署）时，支持冷热分离功能。
-        :param pulumi.Input[builtins.str] engine_version: HBase 数据库引擎版本。当前仅支持 HBase 2.0 版本，取值默认为 HBase_2.0。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
-        :param pulumi.Input[builtins.str] instance_name: 实例名称。
-        :param pulumi.Input[builtins.str] instance_type: 实例类型。当前仅支持标准型，取值默认为 Standard。
-        :param pulumi.Input[builtins.int] master_count: Master 节点个数。单可用区部署，默认包含 2 个 Master 节点。
-        :param pulumi.Input[builtins.str] master_spec: Master 节点的规格码。说明关于 Master 节点所支持的规格信息，请参见实例规格。Master 节点数量为固定值，不支持增减。
-        :param pulumi.Input[builtins.bool] multi_az: 实例的部署方式，取值：true：多可用区部署。false：单可用区部署。目前仅支持单可用区部署。
-        :param pulumi.Input[builtins.str] primary_subnet_id: 实时主可用区子网 ID。
-        :param pulumi.Input[builtins.str] primary_zone_id: 实时主可用区 ID。
-        :param pulumi.Input[builtins.str] project_name: 实例所属的项目名称。
-        :param pulumi.Input[builtins.int] purchase_months: 购买时长，单位：月。取值范围如下：1，2，3，4，5，6，7，8，9，12，24，36。说明当 ChargeType 为 PrePaid时，该参数必填。
-        :param pulumi.Input[builtins.str] region_id: 实例所属的地域 ID。
-        :param pulumi.Input[builtins.int] rs_count: RegionServer 节点的数量。
-        :param pulumi.Input[builtins.str] rs_spec: RegionServer 节点的规格码。
-        :param pulumi.Input[builtins.str] standby_subnet_id: 实时备可用区子网 ID。
-        :param pulumi.Input[builtins.str] standby_zone_id: 实时备可用区 ID。
-        :param pulumi.Input[builtins.str] status: 实例当前状态。关于实例状态的更多说明，请参见实例状态说明。
-        :param pulumi.Input[builtins.int] storage_capacity: 实例总存储容量，单位：GiB。
-        :param pulumi.Input[builtins.str] storage_type: 实例的存储类型，取值：HdfsHdd：HDD 文件存储。HdfsSsd：SSD 文件存储。
-        :param pulumi.Input[builtins.str] subnet_id: 实例所属的子网 ID。单可用区实例，仅包含一个可用区的子网 ID。
-        :param pulumi.Input[builtins.int] used_cold_storage: 实例已使用的容量型存储空间大小，单位 MiB。
-        :param pulumi.Input[builtins.float] used_storage: 主实例已使用的存储容量，单位：MiB。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络 ID。说明您可以调用 DescribeVpcs 接口查询可创建 HBase 实例的私有网络信息，包括私有网络 ID。
-        :param pulumi.Input[builtins.str] vpc_name: 实例所属的私有网络名称。
-        :param pulumi.Input[builtins.str] zone_id: 实例所属的可用区 ID。
-        :param pulumi.Input[builtins.str] zone_name: 实例所属的可用区名称。
+        :param pulumi.Input[builtins.bool] auto_renew: Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
+        :param pulumi.Input[builtins.str] charge_status: Billing status. Values: Normal: normal. Overdue: overdue. Shutdown: shutdown.
+        :param pulumi.Input[builtins.str] charge_type: Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
+        :param pulumi.Input[builtins.int] cold_storage: Total capacity-type storage space for the instance, in GiB.
+        :param pulumi.Input[builtins.str] create_time: Instance creation time (UTC).
+        :param pulumi.Input[builtins.str] deletion_protection: Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
+        :param pulumi.Input[builtins.bool] enable_auth: Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
+        :param pulumi.Input[builtins.bool] enable_cloud_storage: Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
+        :param pulumi.Input[builtins.str] engine_version: HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
+        :param pulumi.Input[builtins.str] instance_name: Instance name
+        :param pulumi.Input[builtins.str] instance_type: Instance type. Currently, only Standard is supported. The default value is Standard
+        :param pulumi.Input[builtins.int] master_count: Number of Master nodes. For single-zone deployment, 2 Master nodes are included by default
+        :param pulumi.Input[builtins.str] master_spec: Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
+        :param pulumi.Input[builtins.bool] multi_az: Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
+        :param pulumi.Input[builtins.str] primary_subnet_id: Real-time primary availability zone subnet ID.
+        :param pulumi.Input[builtins.str] primary_zone_id: Real-time primary zone ID
+        :param pulumi.Input[builtins.str] project_name: Project name of the instance
+        :param pulumi.Input[builtins.int] purchase_months: Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
+        :param pulumi.Input[builtins.str] region_id: Region ID of the instance.
+        :param pulumi.Input[builtins.int] rs_count: Number of RegionServer nodes
+        :param pulumi.Input[builtins.str] rs_spec: RegionServer node specification code.
+        :param pulumi.Input[builtins.str] standby_subnet_id: Real-time standby availability zone subnet ID.
+        :param pulumi.Input[builtins.str] standby_zone_id: Real-time standby zone ID
+        :param pulumi.Input[builtins.str] status: Current status of the instance. For more details about instance status, see Instance Status Description
+        :param pulumi.Input[builtins.int] storage_capacity: Total storage capacity of the instance, unit: GiB.
+        :param pulumi.Input[builtins.str] storage_type: Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
+        :param pulumi.Input[builtins.int] used_cold_storage: Capacity-type storage space used by the instance, in MiB
+        :param pulumi.Input[builtins.float] used_storage: Storage capacity used by the primary instance, in MiB
+        :param pulumi.Input[builtins.str] vpc_id: Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
+        :param pulumi.Input[builtins.str] vpc_name: Name of the private network to which the instance belongs.
+        :param pulumi.Input[builtins.str] zone_id: Zone ID of the instance
+        :param pulumi.Input[builtins.str] zone_name: Name of the availability zone to which the instance belongs.
         """
         if auto_renew is not None:
             pulumi.set(__self__, "auto_renew", auto_renew)
@@ -529,7 +529,7 @@ class _InstanceState:
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+        Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -541,7 +541,7 @@ class _InstanceState:
     @pulumi.getter(name="chargeStatus")
     def charge_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        计费状态。取值：Normal：正常。Overdue：欠费。Shutdown：关停。
+        Billing status. Values: Normal: normal. Overdue: overdue. Shutdown: shutdown.
         """
         return pulumi.get(self, "charge_status")
 
@@ -553,7 +553,7 @@ class _InstanceState:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        计费类型，取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+        Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
         """
         return pulumi.get(self, "charge_type")
 
@@ -565,7 +565,7 @@ class _InstanceState:
     @pulumi.getter(name="coldStorage")
     def cold_storage(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例总容量型存储空间大小，单位 GiB。
+        Total capacity-type storage space for the instance, in GiB.
         """
         return pulumi.get(self, "cold_storage")
 
@@ -577,7 +577,7 @@ class _InstanceState:
     @pulumi.getter(name="createTime")
     def create_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例创建时间（UTC 时间）。
+        Instance creation time (UTC).
         """
         return pulumi.get(self, "create_time")
 
@@ -589,7 +589,7 @@ class _InstanceState:
     @pulumi.getter(name="deletionProtection")
     def deletion_protection(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例删除保护功能开关状态。取值范围：enabled：已开启。disabled：未开启。说明关于实例删除保护的更多信息，请参见实例删除保护。
+        Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
         """
         return pulumi.get(self, "deletion_protection")
 
@@ -601,7 +601,7 @@ class _InstanceState:
     @pulumi.getter(name="enableAuth")
     def enable_auth(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启登录认证。取值：true：已开启登录认证。false：未开启登录认证。
+        Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
         """
         return pulumi.get(self, "enable_auth")
 
@@ -613,7 +613,7 @@ class _InstanceState:
     @pulumi.getter(name="enableCloudStorage")
     def enable_cloud_storage(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开通存储型容量，取值：true：开通容量型存储。false：不开通容量型存储。说明容量型存储的详细介绍，请参见冷热分离介绍。仅当 MultiAZ（部署方式）取值为 false（单可用区部署）时，支持冷热分离功能。
+        Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
         """
         return pulumi.get(self, "enable_cloud_storage")
 
@@ -634,7 +634,7 @@ class _InstanceState:
     @pulumi.getter(name="engineVersion")
     def engine_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        HBase 数据库引擎版本。当前仅支持 HBase 2.0 版本，取值默认为 HBase_2.0。
+        HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
         """
         return pulumi.get(self, "engine_version")
 
@@ -646,7 +646,7 @@ class _InstanceState:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例 ID。
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -658,7 +658,7 @@ class _InstanceState:
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例名称。
+        Instance name
         """
         return pulumi.get(self, "instance_name")
 
@@ -670,7 +670,7 @@ class _InstanceState:
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例类型。当前仅支持标准型，取值默认为 Standard。
+        Instance type. Currently, only Standard is supported. The default value is Standard
         """
         return pulumi.get(self, "instance_type")
 
@@ -682,7 +682,7 @@ class _InstanceState:
     @pulumi.getter(name="masterCount")
     def master_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        Master 节点个数。单可用区部署，默认包含 2 个 Master 节点。
+        Number of Master nodes. For single-zone deployment, 2 Master nodes are included by default
         """
         return pulumi.get(self, "master_count")
 
@@ -694,7 +694,7 @@ class _InstanceState:
     @pulumi.getter(name="masterSpec")
     def master_spec(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Master 节点的规格码。说明关于 Master 节点所支持的规格信息，请参见实例规格。Master 节点数量为固定值，不支持增减。
+        Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
         """
         return pulumi.get(self, "master_spec")
 
@@ -706,7 +706,7 @@ class _InstanceState:
     @pulumi.getter(name="multiAz")
     def multi_az(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        实例的部署方式，取值：true：多可用区部署。false：单可用区部署。目前仅支持单可用区部署。
+        Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
         """
         return pulumi.get(self, "multi_az")
 
@@ -718,7 +718,7 @@ class _InstanceState:
     @pulumi.getter(name="primarySubnetId")
     def primary_subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实时主可用区子网 ID。
+        Real-time primary availability zone subnet ID.
         """
         return pulumi.get(self, "primary_subnet_id")
 
@@ -730,7 +730,7 @@ class _InstanceState:
     @pulumi.getter(name="primaryZoneId")
     def primary_zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实时主可用区 ID。
+        Real-time primary zone ID
         """
         return pulumi.get(self, "primary_zone_id")
 
@@ -742,7 +742,7 @@ class _InstanceState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所属的项目名称。
+        Project name of the instance
         """
         return pulumi.get(self, "project_name")
 
@@ -754,7 +754,7 @@ class _InstanceState:
     @pulumi.getter(name="purchaseMonths")
     def purchase_months(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        购买时长，单位：月。取值范围如下：1，2，3，4，5，6，7，8，9，12，24，36。说明当 ChargeType 为 PrePaid时，该参数必填。
+        Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
         """
         return pulumi.get(self, "purchase_months")
 
@@ -766,7 +766,7 @@ class _InstanceState:
     @pulumi.getter(name="regionId")
     def region_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所属的地域 ID。
+        Region ID of the instance.
         """
         return pulumi.get(self, "region_id")
 
@@ -778,7 +778,7 @@ class _InstanceState:
     @pulumi.getter(name="rsCount")
     def rs_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        RegionServer 节点的数量。
+        Number of RegionServer nodes
         """
         return pulumi.get(self, "rs_count")
 
@@ -790,7 +790,7 @@ class _InstanceState:
     @pulumi.getter(name="rsSpec")
     def rs_spec(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        RegionServer 节点的规格码。
+        RegionServer node specification code.
         """
         return pulumi.get(self, "rs_spec")
 
@@ -802,7 +802,7 @@ class _InstanceState:
     @pulumi.getter(name="standbySubnetId")
     def standby_subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实时备可用区子网 ID。
+        Real-time standby availability zone subnet ID.
         """
         return pulumi.get(self, "standby_subnet_id")
 
@@ -814,7 +814,7 @@ class _InstanceState:
     @pulumi.getter(name="standbyZoneId")
     def standby_zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实时备可用区 ID。
+        Real-time standby zone ID
         """
         return pulumi.get(self, "standby_zone_id")
 
@@ -826,7 +826,7 @@ class _InstanceState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例当前状态。关于实例状态的更多说明，请参见实例状态说明。
+        Current status of the instance. For more details about instance status, see Instance Status Description
         """
         return pulumi.get(self, "status")
 
@@ -838,7 +838,7 @@ class _InstanceState:
     @pulumi.getter(name="storageCapacity")
     def storage_capacity(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例总存储容量，单位：GiB。
+        Total storage capacity of the instance, unit: GiB.
         """
         return pulumi.get(self, "storage_capacity")
 
@@ -850,7 +850,7 @@ class _InstanceState:
     @pulumi.getter(name="storageType")
     def storage_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的存储类型，取值：HdfsHdd：HDD 文件存储。HdfsSsd：SSD 文件存储。
+        Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
         """
         return pulumi.get(self, "storage_type")
 
@@ -862,7 +862,7 @@ class _InstanceState:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所属的子网 ID。单可用区实例，仅包含一个可用区的子网 ID。
+        Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
         """
         return pulumi.get(self, "subnet_id")
 
@@ -883,7 +883,7 @@ class _InstanceState:
     @pulumi.getter(name="usedColdStorage")
     def used_cold_storage(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例已使用的容量型存储空间大小，单位 MiB。
+        Capacity-type storage space used by the instance, in MiB
         """
         return pulumi.get(self, "used_cold_storage")
 
@@ -895,7 +895,7 @@ class _InstanceState:
     @pulumi.getter(name="usedStorage")
     def used_storage(self) -> Optional[pulumi.Input[builtins.float]]:
         """
-        主实例已使用的存储容量，单位：MiB。
+        Storage capacity used by the primary instance, in MiB
         """
         return pulumi.get(self, "used_storage")
 
@@ -907,7 +907,7 @@ class _InstanceState:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        私有网络 ID。说明您可以调用 DescribeVpcs 接口查询可创建 HBase 实例的私有网络信息，包括私有网络 ID。
+        Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -919,7 +919,7 @@ class _InstanceState:
     @pulumi.getter(name="vpcName")
     def vpc_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所属的私有网络名称。
+        Name of the private network to which the instance belongs.
         """
         return pulumi.get(self, "vpc_name")
 
@@ -931,7 +931,7 @@ class _InstanceState:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所属的可用区 ID。
+        Zone ID of the instance
         """
         return pulumi.get(self, "zone_id")
 
@@ -943,7 +943,7 @@ class _InstanceState:
     @pulumi.getter(name="zoneName")
     def zone_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所属的可用区名称。
+        Name of the availability zone to which the instance belongs.
         """
         return pulumi.get(self, "zone_name")
 
@@ -983,7 +983,7 @@ class Instance(pulumi.CustomResource):
                  zone_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        表格数据库 HBase 版是基于 Apache HBase 提供的全托管 NoSQL 服务，兼容标准 HBase 访问协议，具备低成本存储、高扩展吞吐等优势。
+        Table Database HBase Edition is a fully managed NoSQL service based on Apache HBase, compatible with the standard HBase access protocol, offering advantages such as low-cost storage and high scalability throughput.
 
         ## Example Usage
 
@@ -1026,27 +1026,27 @@ class Instance(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.bool] auto_renew: 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
-        :param pulumi.Input[builtins.str] charge_type: 计费类型，取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
-        :param pulumi.Input[builtins.int] cold_storage: 实例总容量型存储空间大小，单位 GiB。
-        :param pulumi.Input[builtins.str] deletion_protection: 实例删除保护功能开关状态。取值范围：enabled：已开启。disabled：未开启。说明关于实例删除保护的更多信息，请参见实例删除保护。
-        :param pulumi.Input[builtins.bool] enable_auth: 是否开启登录认证。取值：true：已开启登录认证。false：未开启登录认证。
-        :param pulumi.Input[builtins.bool] enable_cloud_storage: 是否开通存储型容量，取值：true：开通容量型存储。false：不开通容量型存储。说明容量型存储的详细介绍，请参见冷热分离介绍。仅当 MultiAZ（部署方式）取值为 false（单可用区部署）时，支持冷热分离功能。
-        :param pulumi.Input[builtins.str] engine_version: HBase 数据库引擎版本。当前仅支持 HBase 2.0 版本，取值默认为 HBase_2.0。
-        :param pulumi.Input[builtins.str] instance_name: 实例名称。
-        :param pulumi.Input[builtins.str] instance_type: 实例类型。当前仅支持标准型，取值默认为 Standard。
-        :param pulumi.Input[builtins.str] master_spec: Master 节点的规格码。说明关于 Master 节点所支持的规格信息，请参见实例规格。Master 节点数量为固定值，不支持增减。
-        :param pulumi.Input[builtins.bool] multi_az: 实例的部署方式，取值：true：多可用区部署。false：单可用区部署。目前仅支持单可用区部署。
-        :param pulumi.Input[builtins.str] project_name: 实例所属的项目名称。
-        :param pulumi.Input[builtins.int] purchase_months: 购买时长，单位：月。取值范围如下：1，2，3，4，5，6，7，8，9，12，24，36。说明当 ChargeType 为 PrePaid时，该参数必填。
-        :param pulumi.Input[builtins.str] region_id: 实例所属的地域 ID。
-        :param pulumi.Input[builtins.int] rs_count: RegionServer 节点的数量。
-        :param pulumi.Input[builtins.str] rs_spec: RegionServer 节点的规格码。
-        :param pulumi.Input[builtins.int] storage_capacity: 实例总存储容量，单位：GiB。
-        :param pulumi.Input[builtins.str] storage_type: 实例的存储类型，取值：HdfsHdd：HDD 文件存储。HdfsSsd：SSD 文件存储。
-        :param pulumi.Input[builtins.str] subnet_id: 实例所属的子网 ID。单可用区实例，仅包含一个可用区的子网 ID。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络 ID。说明您可以调用 DescribeVpcs 接口查询可创建 HBase 实例的私有网络信息，包括私有网络 ID。
-        :param pulumi.Input[builtins.str] zone_id: 实例所属的可用区 ID。
+        :param pulumi.Input[builtins.bool] auto_renew: Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
+        :param pulumi.Input[builtins.str] charge_type: Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
+        :param pulumi.Input[builtins.int] cold_storage: Total capacity-type storage space for the instance, in GiB.
+        :param pulumi.Input[builtins.str] deletion_protection: Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
+        :param pulumi.Input[builtins.bool] enable_auth: Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
+        :param pulumi.Input[builtins.bool] enable_cloud_storage: Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
+        :param pulumi.Input[builtins.str] engine_version: HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
+        :param pulumi.Input[builtins.str] instance_name: Instance name
+        :param pulumi.Input[builtins.str] instance_type: Instance type. Currently, only Standard is supported. The default value is Standard
+        :param pulumi.Input[builtins.str] master_spec: Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
+        :param pulumi.Input[builtins.bool] multi_az: Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
+        :param pulumi.Input[builtins.str] project_name: Project name of the instance
+        :param pulumi.Input[builtins.int] purchase_months: Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
+        :param pulumi.Input[builtins.str] region_id: Region ID of the instance.
+        :param pulumi.Input[builtins.int] rs_count: Number of RegionServer nodes
+        :param pulumi.Input[builtins.str] rs_spec: RegionServer node specification code.
+        :param pulumi.Input[builtins.int] storage_capacity: Total storage capacity of the instance, unit: GiB.
+        :param pulumi.Input[builtins.str] storage_type: Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
+        :param pulumi.Input[builtins.str] vpc_id: Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
+        :param pulumi.Input[builtins.str] zone_id: Zone ID of the instance
         """
         ...
     @overload
@@ -1055,7 +1055,7 @@ class Instance(pulumi.CustomResource):
                  args: InstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        表格数据库 HBase 版是基于 Apache HBase 提供的全托管 NoSQL 服务，兼容标准 HBase 访问协议，具备低成本存储、高扩展吞吐等优势。
+        Table Database HBase Edition is a fully managed NoSQL service based on Apache HBase, compatible with the standard HBase access protocol, offering advantages such as low-cost storage and high scalability throughput.
 
         ## Example Usage
 
@@ -1254,40 +1254,40 @@ class Instance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.bool] auto_renew: 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
-        :param pulumi.Input[builtins.str] charge_status: 计费状态。取值：Normal：正常。Overdue：欠费。Shutdown：关停。
-        :param pulumi.Input[builtins.str] charge_type: 计费类型，取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
-        :param pulumi.Input[builtins.int] cold_storage: 实例总容量型存储空间大小，单位 GiB。
-        :param pulumi.Input[builtins.str] create_time: 实例创建时间（UTC 时间）。
-        :param pulumi.Input[builtins.str] deletion_protection: 实例删除保护功能开关状态。取值范围：enabled：已开启。disabled：未开启。说明关于实例删除保护的更多信息，请参见实例删除保护。
-        :param pulumi.Input[builtins.bool] enable_auth: 是否开启登录认证。取值：true：已开启登录认证。false：未开启登录认证。
-        :param pulumi.Input[builtins.bool] enable_cloud_storage: 是否开通存储型容量，取值：true：开通容量型存储。false：不开通容量型存储。说明容量型存储的详细介绍，请参见冷热分离介绍。仅当 MultiAZ（部署方式）取值为 false（单可用区部署）时，支持冷热分离功能。
-        :param pulumi.Input[builtins.str] engine_version: HBase 数据库引擎版本。当前仅支持 HBase 2.0 版本，取值默认为 HBase_2.0。
-        :param pulumi.Input[builtins.str] instance_id: 实例 ID。
-        :param pulumi.Input[builtins.str] instance_name: 实例名称。
-        :param pulumi.Input[builtins.str] instance_type: 实例类型。当前仅支持标准型，取值默认为 Standard。
-        :param pulumi.Input[builtins.int] master_count: Master 节点个数。单可用区部署，默认包含 2 个 Master 节点。
-        :param pulumi.Input[builtins.str] master_spec: Master 节点的规格码。说明关于 Master 节点所支持的规格信息，请参见实例规格。Master 节点数量为固定值，不支持增减。
-        :param pulumi.Input[builtins.bool] multi_az: 实例的部署方式，取值：true：多可用区部署。false：单可用区部署。目前仅支持单可用区部署。
-        :param pulumi.Input[builtins.str] primary_subnet_id: 实时主可用区子网 ID。
-        :param pulumi.Input[builtins.str] primary_zone_id: 实时主可用区 ID。
-        :param pulumi.Input[builtins.str] project_name: 实例所属的项目名称。
-        :param pulumi.Input[builtins.int] purchase_months: 购买时长，单位：月。取值范围如下：1，2，3，4，5，6，7，8，9，12，24，36。说明当 ChargeType 为 PrePaid时，该参数必填。
-        :param pulumi.Input[builtins.str] region_id: 实例所属的地域 ID。
-        :param pulumi.Input[builtins.int] rs_count: RegionServer 节点的数量。
-        :param pulumi.Input[builtins.str] rs_spec: RegionServer 节点的规格码。
-        :param pulumi.Input[builtins.str] standby_subnet_id: 实时备可用区子网 ID。
-        :param pulumi.Input[builtins.str] standby_zone_id: 实时备可用区 ID。
-        :param pulumi.Input[builtins.str] status: 实例当前状态。关于实例状态的更多说明，请参见实例状态说明。
-        :param pulumi.Input[builtins.int] storage_capacity: 实例总存储容量，单位：GiB。
-        :param pulumi.Input[builtins.str] storage_type: 实例的存储类型，取值：HdfsHdd：HDD 文件存储。HdfsSsd：SSD 文件存储。
-        :param pulumi.Input[builtins.str] subnet_id: 实例所属的子网 ID。单可用区实例，仅包含一个可用区的子网 ID。
-        :param pulumi.Input[builtins.int] used_cold_storage: 实例已使用的容量型存储空间大小，单位 MiB。
-        :param pulumi.Input[builtins.float] used_storage: 主实例已使用的存储容量，单位：MiB。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络 ID。说明您可以调用 DescribeVpcs 接口查询可创建 HBase 实例的私有网络信息，包括私有网络 ID。
-        :param pulumi.Input[builtins.str] vpc_name: 实例所属的私有网络名称。
-        :param pulumi.Input[builtins.str] zone_id: 实例所属的可用区 ID。
-        :param pulumi.Input[builtins.str] zone_name: 实例所属的可用区名称。
+        :param pulumi.Input[builtins.bool] auto_renew: Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
+        :param pulumi.Input[builtins.str] charge_status: Billing status. Values: Normal: normal. Overdue: overdue. Shutdown: shutdown.
+        :param pulumi.Input[builtins.str] charge_type: Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
+        :param pulumi.Input[builtins.int] cold_storage: Total capacity-type storage space for the instance, in GiB.
+        :param pulumi.Input[builtins.str] create_time: Instance creation time (UTC).
+        :param pulumi.Input[builtins.str] deletion_protection: Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
+        :param pulumi.Input[builtins.bool] enable_auth: Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
+        :param pulumi.Input[builtins.bool] enable_cloud_storage: Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
+        :param pulumi.Input[builtins.str] engine_version: HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
+        :param pulumi.Input[builtins.str] instance_name: Instance name
+        :param pulumi.Input[builtins.str] instance_type: Instance type. Currently, only Standard is supported. The default value is Standard
+        :param pulumi.Input[builtins.int] master_count: Number of Master nodes. For single-zone deployment, 2 Master nodes are included by default
+        :param pulumi.Input[builtins.str] master_spec: Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
+        :param pulumi.Input[builtins.bool] multi_az: Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
+        :param pulumi.Input[builtins.str] primary_subnet_id: Real-time primary availability zone subnet ID.
+        :param pulumi.Input[builtins.str] primary_zone_id: Real-time primary zone ID
+        :param pulumi.Input[builtins.str] project_name: Project name of the instance
+        :param pulumi.Input[builtins.int] purchase_months: Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
+        :param pulumi.Input[builtins.str] region_id: Region ID of the instance.
+        :param pulumi.Input[builtins.int] rs_count: Number of RegionServer nodes
+        :param pulumi.Input[builtins.str] rs_spec: RegionServer node specification code.
+        :param pulumi.Input[builtins.str] standby_subnet_id: Real-time standby availability zone subnet ID.
+        :param pulumi.Input[builtins.str] standby_zone_id: Real-time standby zone ID
+        :param pulumi.Input[builtins.str] status: Current status of the instance. For more details about instance status, see Instance Status Description
+        :param pulumi.Input[builtins.int] storage_capacity: Total storage capacity of the instance, unit: GiB.
+        :param pulumi.Input[builtins.str] storage_type: Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
+        :param pulumi.Input[builtins.int] used_cold_storage: Capacity-type storage space used by the instance, in MiB
+        :param pulumi.Input[builtins.float] used_storage: Storage capacity used by the primary instance, in MiB
+        :param pulumi.Input[builtins.str] vpc_id: Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
+        :param pulumi.Input[builtins.str] vpc_name: Name of the private network to which the instance belongs.
+        :param pulumi.Input[builtins.str] zone_id: Zone ID of the instance
+        :param pulumi.Input[builtins.str] zone_name: Name of the availability zone to which the instance belongs.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1335,7 +1335,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> pulumi.Output[builtins.bool]:
         """
-        预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+        Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -1343,7 +1343,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="chargeStatus")
     def charge_status(self) -> pulumi.Output[builtins.str]:
         """
-        计费状态。取值：Normal：正常。Overdue：欠费。Shutdown：关停。
+        Billing status. Values: Normal: normal. Overdue: overdue. Shutdown: shutdown.
         """
         return pulumi.get(self, "charge_status")
 
@@ -1351,7 +1351,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> pulumi.Output[builtins.str]:
         """
-        计费类型，取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+        Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
         """
         return pulumi.get(self, "charge_type")
 
@@ -1359,7 +1359,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="coldStorage")
     def cold_storage(self) -> pulumi.Output[builtins.int]:
         """
-        实例总容量型存储空间大小，单位 GiB。
+        Total capacity-type storage space for the instance, in GiB.
         """
         return pulumi.get(self, "cold_storage")
 
@@ -1367,7 +1367,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="createTime")
     def create_time(self) -> pulumi.Output[builtins.str]:
         """
-        实例创建时间（UTC 时间）。
+        Instance creation time (UTC).
         """
         return pulumi.get(self, "create_time")
 
@@ -1375,7 +1375,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="deletionProtection")
     def deletion_protection(self) -> pulumi.Output[builtins.str]:
         """
-        实例删除保护功能开关状态。取值范围：enabled：已开启。disabled：未开启。说明关于实例删除保护的更多信息，请参见实例删除保护。
+        Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
         """
         return pulumi.get(self, "deletion_protection")
 
@@ -1383,7 +1383,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="enableAuth")
     def enable_auth(self) -> pulumi.Output[builtins.bool]:
         """
-        是否开启登录认证。取值：true：已开启登录认证。false：未开启登录认证。
+        Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
         """
         return pulumi.get(self, "enable_auth")
 
@@ -1391,7 +1391,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="enableCloudStorage")
     def enable_cloud_storage(self) -> pulumi.Output[builtins.bool]:
         """
-        是否开通存储型容量，取值：true：开通容量型存储。false：不开通容量型存储。说明容量型存储的详细介绍，请参见冷热分离介绍。仅当 MultiAZ（部署方式）取值为 false（单可用区部署）时，支持冷热分离功能。
+        Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
         """
         return pulumi.get(self, "enable_cloud_storage")
 
@@ -1404,7 +1404,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="engineVersion")
     def engine_version(self) -> pulumi.Output[builtins.str]:
         """
-        HBase 数据库引擎版本。当前仅支持 HBase 2.0 版本，取值默认为 HBase_2.0。
+        HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
         """
         return pulumi.get(self, "engine_version")
 
@@ -1412,7 +1412,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例 ID。
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -1420,7 +1420,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> pulumi.Output[builtins.str]:
         """
-        实例名称。
+        Instance name
         """
         return pulumi.get(self, "instance_name")
 
@@ -1428,7 +1428,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> pulumi.Output[builtins.str]:
         """
-        实例类型。当前仅支持标准型，取值默认为 Standard。
+        Instance type. Currently, only Standard is supported. The default value is Standard
         """
         return pulumi.get(self, "instance_type")
 
@@ -1436,7 +1436,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="masterCount")
     def master_count(self) -> pulumi.Output[builtins.int]:
         """
-        Master 节点个数。单可用区部署，默认包含 2 个 Master 节点。
+        Number of Master nodes. For single-zone deployment, 2 Master nodes are included by default
         """
         return pulumi.get(self, "master_count")
 
@@ -1444,7 +1444,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="masterSpec")
     def master_spec(self) -> pulumi.Output[builtins.str]:
         """
-        Master 节点的规格码。说明关于 Master 节点所支持的规格信息，请参见实例规格。Master 节点数量为固定值，不支持增减。
+        Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
         """
         return pulumi.get(self, "master_spec")
 
@@ -1452,7 +1452,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="multiAz")
     def multi_az(self) -> pulumi.Output[builtins.bool]:
         """
-        实例的部署方式，取值：true：多可用区部署。false：单可用区部署。目前仅支持单可用区部署。
+        Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
         """
         return pulumi.get(self, "multi_az")
 
@@ -1460,7 +1460,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="primarySubnetId")
     def primary_subnet_id(self) -> pulumi.Output[builtins.str]:
         """
-        实时主可用区子网 ID。
+        Real-time primary availability zone subnet ID.
         """
         return pulumi.get(self, "primary_subnet_id")
 
@@ -1468,7 +1468,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="primaryZoneId")
     def primary_zone_id(self) -> pulumi.Output[builtins.str]:
         """
-        实时主可用区 ID。
+        Real-time primary zone ID
         """
         return pulumi.get(self, "primary_zone_id")
 
@@ -1476,7 +1476,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        实例所属的项目名称。
+        Project name of the instance
         """
         return pulumi.get(self, "project_name")
 
@@ -1484,7 +1484,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="purchaseMonths")
     def purchase_months(self) -> pulumi.Output[builtins.int]:
         """
-        购买时长，单位：月。取值范围如下：1，2，3，4，5，6，7，8，9，12，24，36。说明当 ChargeType 为 PrePaid时，该参数必填。
+        Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
         """
         return pulumi.get(self, "purchase_months")
 
@@ -1492,7 +1492,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="regionId")
     def region_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例所属的地域 ID。
+        Region ID of the instance.
         """
         return pulumi.get(self, "region_id")
 
@@ -1500,7 +1500,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="rsCount")
     def rs_count(self) -> pulumi.Output[builtins.int]:
         """
-        RegionServer 节点的数量。
+        Number of RegionServer nodes
         """
         return pulumi.get(self, "rs_count")
 
@@ -1508,7 +1508,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="rsSpec")
     def rs_spec(self) -> pulumi.Output[builtins.str]:
         """
-        RegionServer 节点的规格码。
+        RegionServer node specification code.
         """
         return pulumi.get(self, "rs_spec")
 
@@ -1516,7 +1516,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="standbySubnetId")
     def standby_subnet_id(self) -> pulumi.Output[builtins.str]:
         """
-        实时备可用区子网 ID。
+        Real-time standby availability zone subnet ID.
         """
         return pulumi.get(self, "standby_subnet_id")
 
@@ -1524,7 +1524,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="standbyZoneId")
     def standby_zone_id(self) -> pulumi.Output[builtins.str]:
         """
-        实时备可用区 ID。
+        Real-time standby zone ID
         """
         return pulumi.get(self, "standby_zone_id")
 
@@ -1532,7 +1532,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        实例当前状态。关于实例状态的更多说明，请参见实例状态说明。
+        Current status of the instance. For more details about instance status, see Instance Status Description
         """
         return pulumi.get(self, "status")
 
@@ -1540,7 +1540,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="storageCapacity")
     def storage_capacity(self) -> pulumi.Output[builtins.int]:
         """
-        实例总存储容量，单位：GiB。
+        Total storage capacity of the instance, unit: GiB.
         """
         return pulumi.get(self, "storage_capacity")
 
@@ -1548,7 +1548,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="storageType")
     def storage_type(self) -> pulumi.Output[builtins.str]:
         """
-        实例的存储类型，取值：HdfsHdd：HDD 文件存储。HdfsSsd：SSD 文件存储。
+        Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
         """
         return pulumi.get(self, "storage_type")
 
@@ -1556,7 +1556,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例所属的子网 ID。单可用区实例，仅包含一个可用区的子网 ID。
+        Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
         """
         return pulumi.get(self, "subnet_id")
 
@@ -1569,7 +1569,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="usedColdStorage")
     def used_cold_storage(self) -> pulumi.Output[builtins.int]:
         """
-        实例已使用的容量型存储空间大小，单位 MiB。
+        Capacity-type storage space used by the instance, in MiB
         """
         return pulumi.get(self, "used_cold_storage")
 
@@ -1577,7 +1577,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="usedStorage")
     def used_storage(self) -> pulumi.Output[builtins.float]:
         """
-        主实例已使用的存储容量，单位：MiB。
+        Storage capacity used by the primary instance, in MiB
         """
         return pulumi.get(self, "used_storage")
 
@@ -1585,7 +1585,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Output[builtins.str]:
         """
-        私有网络 ID。说明您可以调用 DescribeVpcs 接口查询可创建 HBase 实例的私有网络信息，包括私有网络 ID。
+        Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -1593,7 +1593,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="vpcName")
     def vpc_name(self) -> pulumi.Output[builtins.str]:
         """
-        实例所属的私有网络名称。
+        Name of the private network to which the instance belongs.
         """
         return pulumi.get(self, "vpc_name")
 
@@ -1601,7 +1601,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例所属的可用区 ID。
+        Zone ID of the instance
         """
         return pulumi.get(self, "zone_id")
 
@@ -1609,7 +1609,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="zoneName")
     def zone_name(self) -> pulumi.Output[builtins.str]:
         """
-        实例所属的可用区名称。
+        Name of the availability zone to which the instance belongs.
         """
         return pulumi.get(self, "zone_name")
 

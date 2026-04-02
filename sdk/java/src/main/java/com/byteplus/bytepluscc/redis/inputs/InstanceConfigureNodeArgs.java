@@ -16,14 +16,14 @@ public final class InstanceConfigureNodeArgs extends com.pulumi.resources.Resour
     public static final InstanceConfigureNodeArgs Empty = new InstanceConfigureNodeArgs();
 
     /**
-     * 每个节点所属的可用区。
+     * The availability zone each node belongs to.
      * 
      */
     @Import(name="az")
     private @Nullable Output<String> az;
 
     /**
-     * @return 每个节点所属的可用区。
+     * @return The availability zone each node belongs to.
      * 
      */
     public Optional<Output<String>> az() {
@@ -55,7 +55,7 @@ public final class InstanceConfigureNodeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param az 每个节点所属的可用区。
+         * @param az The availability zone each node belongs to.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class InstanceConfigureNodeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param az 每个节点所属的可用区。
+         * @param az The availability zone each node belongs to.
          * 
          * @return builder
          * 

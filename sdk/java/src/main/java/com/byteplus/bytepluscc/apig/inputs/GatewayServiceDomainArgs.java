@@ -16,14 +16,14 @@ public final class GatewayServiceDomainArgs extends com.pulumi.resources.Resourc
     public static final GatewayServiceDomainArgs Empty = new GatewayServiceDomainArgs();
 
     /**
-     * 域名。
+     * Domain.
      * 
      */
     @Import(name="domain")
     private @Nullable Output<String> domain;
 
     /**
-     * @return 域名。
+     * @return Domain.
      * 
      */
     public Optional<Output<String>> domain() {
@@ -31,14 +31,14 @@ public final class GatewayServiceDomainArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 域名类型。取值：public：公网。private：私网。
+     * Domain type. Options: public: Public network. private: Private network.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return 域名类型。取值：public：公网。private：私网。
+     * @return Domain type. Options: public: Public network. private: Private network.
      * 
      */
     public Optional<Output<String>> type() {
@@ -71,7 +71,7 @@ public final class GatewayServiceDomainArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param domain 域名。
+         * @param domain Domain.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class GatewayServiceDomainArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param domain 域名。
+         * @param domain Domain.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class GatewayServiceDomainArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param type 域名类型。取值：public：公网。private：私网。
+         * @param type Domain type. Options: public: Public network. private: Private network.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class GatewayServiceDomainArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param type 域名类型。取值：public：公网。private：私网。
+         * @param type Domain type. Options: public: Public network. private: Private network.
          * 
          * @return builder
          * 

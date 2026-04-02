@@ -12,50 +12,50 @@ import java.util.Objects;
 @CustomType
 public final class GetUpstreamUpstreamSpecAiProvider {
     /**
-     * @return 模型地址。
+     * @return Model address
      * 
      */
     private String baseUrl;
     /**
-     * @return 火山自部署模型服务。
+     * @return Volcano Engine self-hosted model service
      * 
      */
     private GetUpstreamUpstreamSpecAiProviderCustomModelService customModelService;
     /**
-     * @return 模型服务商名称。
+     * @return Model Service Provider Name
      * 
      */
     private String name;
     /**
-     * @return 模型API key。
+     * @return Model API key
      * 
      */
     private String token;
 
     private GetUpstreamUpstreamSpecAiProvider() {}
     /**
-     * @return 模型地址。
+     * @return Model address
      * 
      */
     public String baseUrl() {
         return this.baseUrl;
     }
     /**
-     * @return 火山自部署模型服务。
+     * @return Volcano Engine self-hosted model service
      * 
      */
     public GetUpstreamUpstreamSpecAiProviderCustomModelService customModelService() {
         return this.customModelService;
     }
     /**
-     * @return 模型服务商名称。
+     * @return Model Service Provider Name
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 模型API key。
+     * @return Model API key
      * 
      */
     public String token() {

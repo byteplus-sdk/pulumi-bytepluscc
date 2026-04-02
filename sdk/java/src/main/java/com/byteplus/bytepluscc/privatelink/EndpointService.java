@@ -20,7 +20,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 终端节点服务是可以与其他VPC通过终端节点建立私网连接的服务。
+ * The endpoint service enables private network connections between VPCs via endpoints.
  * 
  * ## Example Usage
  * 
@@ -37,168 +37,168 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:privatelink/endpointService:EndpointService")
 public class EndpointService extends com.pulumi.resources.CustomResource {
     /**
-     * 是否自动接受终端节点连接。true：终端节点服务自动接受终端节点连接。false：终端节点服务不会自动接受终端节点连接，需要调用EnableVpcEndpointConnection接口手动接受。
+     * Whether to automatically accept endpoint connections. true: The endpoint service automatically accepts endpoint connections. false: The endpoint service does not automatically accept endpoint connections; you must manually accept them by calling the EnableVpcEndpointConnection API.
      * 
      */
     @Export(name="autoAcceptEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> autoAcceptEnabled;
 
     /**
-     * @return 是否自动接受终端节点连接。true：终端节点服务自动接受终端节点连接。false：终端节点服务不会自动接受终端节点连接，需要调用EnableVpcEndpointConnection接口手动接受。
+     * @return Whether to automatically accept endpoint connections. true: The endpoint service automatically accepts endpoint connections. false: The endpoint service does not automatically accept endpoint connections; you must manually accept them by calling the EnableVpcEndpointConnection API.
      * 
      */
     public Output<Boolean> autoAcceptEnabled() {
         return this.autoAcceptEnabled;
     }
     /**
-     * 终端节点服务的计费类型。0：不计费。3：按量计费。
+     * Billing type of the endpoint service. 0: No charge. 3: Pay-as-you-go.
      * 
      */
     @Export(name="billingType", refs={Integer.class}, tree="[0]")
     private Output<Integer> billingType;
 
     /**
-     * @return 终端节点服务的计费类型。0：不计费。3：按量计费。
+     * @return Billing type of the endpoint service. 0: No charge. 3: Pay-as-you-go.
      * 
      */
     public Output<Integer> billingType() {
         return this.billingType;
     }
     /**
-     * 终端节点服务是否被锁定。Normal：正常。FinancialLocked：被锁定。说明该参数返回为空时，表示终端节点服务未锁定。
+     * Whether the endpoint service is locked. Normal: normal. FinancialLocked: locked. If this parameter is empty, the endpoint service is not locked.
      * 
      */
     @Export(name="businessStatus", refs={String.class}, tree="[0]")
     private Output<String> businessStatus;
 
     /**
-     * @return 终端节点服务是否被锁定。Normal：正常。FinancialLocked：被锁定。说明该参数返回为空时，表示终端节点服务未锁定。
+     * @return Whether the endpoint service is locked. Normal: normal. FinancialLocked: locked. If this parameter is empty, the endpoint service is not locked.
      * 
      */
     public Output<String> businessStatus() {
         return this.businessStatus;
     }
     /**
-     * 终端节点服务的创建时间。
+     * Creation time of the endpoint service.
      * 
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
-     * @return 终端节点服务的创建时间。
+     * @return Creation time of the endpoint service.
      * 
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
-     * 终端节点服务的描述信息。
+     * Description of the endpoint service.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 终端节点服务的描述信息。
+     * @return Description of the endpoint service.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 终端节点服务的IP协议类型。返回值中仅包含ipv4时，说明该终端节点服务为IPv4类型，仅支持提供IPv4服务。返回值中同时包含ipv4和ipv6时，说明该终端节点服务为双栈类型，支持同时提供IPv4和IPv6服务。
+     * IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
      * 
      */
     @Export(name="ipAddressVersions", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> ipAddressVersions;
 
     /**
-     * @return 终端节点服务的IP协议类型。返回值中仅包含ipv4时，说明该终端节点服务为IPv4类型，仅支持提供IPv4服务。返回值中同时包含ipv4和ipv6时，说明该终端节点服务为双栈类型，支持同时提供IPv4和IPv6服务。
+     * @return IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
      * 
      */
     public Output<List<String>> ipAddressVersions() {
         return this.ipAddressVersions;
     }
     /**
-     * 私网连接的付费账号。Endpoint：终端节点账号。EndpointService：终端节点服务账号。
+     * Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
      * 
      */
     @Export(name="payer", refs={String.class}, tree="[0]")
     private Output<String> payer;
 
     /**
-     * @return 私网连接的付费账号。Endpoint：终端节点账号。EndpointService：终端节点服务账号。
+     * @return Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
      * 
      */
     public Output<String> payer() {
         return this.payer;
     }
     /**
-     * 终端节点服务是否启用私有DNS名称。false：未启用。true：已启用。
+     * Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
      * 
      */
     @Export(name="privateDnsEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> privateDnsEnabled;
 
     /**
-     * @return 终端节点服务是否启用私有DNS名称。false：未启用。true：已启用。
+     * @return Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
      * 
      */
     public Output<Boolean> privateDnsEnabled() {
         return this.privateDnsEnabled;
     }
     /**
-     * 终端节点服务的私有DNS名称。参数PrivateDNSEnabled返回值为false时，该参数返回空。
+     * Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
      * 
      */
     @Export(name="privateDnsName", refs={String.class}, tree="[0]")
     private Output<String> privateDnsName;
 
     /**
-     * @return 终端节点服务的私有DNS名称。参数PrivateDNSEnabled返回值为false时，该参数返回空。
+     * @return Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
      * 
      */
     public Output<String> privateDnsName() {
         return this.privateDnsName;
     }
     /**
-     * 终端节点服务私有DNS名称的配置信息。说明PrivateDNSType为private时，不返回该参数。
+     * Configuration information for the private DNS name of the endpoint service. Note: If PrivateDNSType is private, this parameter is not returned.
      * 
      */
     @Export(name="privateDnsNameConfiguration", refs={EndpointServicePrivateDnsNameConfiguration.class}, tree="[0]")
     private Output<EndpointServicePrivateDnsNameConfiguration> privateDnsNameConfiguration;
 
     /**
-     * @return 终端节点服务私有DNS名称的配置信息。说明PrivateDNSType为private时，不返回该参数。
+     * @return Configuration information for the private DNS name of the endpoint service. Note: If PrivateDNSType is private, this parameter is not returned.
      * 
      */
     public Output<EndpointServicePrivateDnsNameConfiguration> privateDnsNameConfiguration() {
         return this.privateDnsNameConfiguration;
     }
     /**
-     * 私有DNS名称的域名类型。public：公网。说明未开通自定义私网域名功能时，不返回该参数。
+     * Domain name type of the private DNS name. public: public network. Note: If the custom private domain name feature is not enabled, this parameter is not returned.
      * 
      */
     @Export(name="privateDnsType", refs={String.class}, tree="[0]")
     private Output<String> privateDnsType;
 
     /**
-     * @return 私有DNS名称的域名类型。public：公网。说明未开通自定义私网域名功能时，不返回该参数。
+     * @return Domain name type of the private DNS name. public: public network. Note: If the custom private domain name feature is not enabled, this parameter is not returned.
      * 
      */
     public Output<String> privateDnsType() {
         return this.privateDnsType;
     }
     /**
-     * 终端节点服务所属的项目名称。
+     * Project name to which the endpoint service belongs.
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 终端节点服务所属的项目名称。
+     * @return Project name to which the endpoint service belongs.
      * 
      */
     public Output<String> projectName() {
@@ -211,126 +211,126 @@ public class EndpointService extends com.pulumi.resources.CustomResource {
         return this.resources;
     }
     /**
-     * 终端节点服务的服务域名。
+     * Service domain name of the endpoint service.
      * 
      */
     @Export(name="serviceDomain", refs={String.class}, tree="[0]")
     private Output<String> serviceDomain;
 
     /**
-     * @return 终端节点服务的服务域名。
+     * @return Service domain name of the endpoint service.
      * 
      */
     public Output<String> serviceDomain() {
         return this.serviceDomain;
     }
     /**
-     * 终端节点服务的ID。
+     * Endpoint service ID.
      * 
      */
     @Export(name="serviceId", refs={String.class}, tree="[0]")
     private Output<String> serviceId;
 
     /**
-     * @return 终端节点服务的ID。
+     * @return Endpoint service ID.
      * 
      */
     public Output<String> serviceId() {
         return this.serviceId;
     }
     /**
-     * 终端节点服务的名称。
+     * Name of the endpoint service.
      * 
      */
     @Export(name="serviceName", refs={String.class}, tree="[0]")
     private Output<String> serviceName;
 
     /**
-     * @return 终端节点服务的名称。
+     * @return Name of the endpoint service.
      * 
      */
     public Output<String> serviceName() {
         return this.serviceName;
     }
     /**
-     * 是否为托管终端节点服务。false：非托管终端节点服务。true：托管终端节点服务。说明终端节点服务所属账号未开通托管终端节点服务功能时，不返回该参数。
+     * Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
      * 
      */
     @Export(name="serviceNameManaged", refs={String.class}, tree="[0]")
     private Output<String> serviceNameManaged;
 
     /**
-     * @return 是否为托管终端节点服务。false：非托管终端节点服务。true：托管终端节点服务。说明终端节点服务所属账号未开通托管终端节点服务功能时，不返回该参数。
+     * @return Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
      * 
      */
     public Output<String> serviceNameManaged() {
         return this.serviceNameManaged;
     }
     /**
-     * 终端节点服务的名称后缀。设置名称后缀后，系统会按照com.volces.privatelink.&lt;地域ID&gt;.&lt;名称后缀&gt;的格式生成终端节点服务的名称。说明该参数正在邀测中，如需使用不同名称后缀区分业务，请联系客户经理。
+     * Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
      * 
      */
     @Export(name="serviceNameSuffix", refs={String.class}, tree="[0]")
     private Output<String> serviceNameSuffix;
 
     /**
-     * @return 终端节点服务的名称后缀。设置名称后缀后，系统会按照com.volces.privatelink.&lt;地域ID&gt;.&lt;名称后缀&gt;的格式生成终端节点服务的名称。说明该参数正在邀测中，如需使用不同名称后缀区分业务，请联系客户经理。
+     * @return Suffix of the endpoint service name. After setting the name suffix, the system generates the endpoint service name in the format com.volces.privatelink.\n\n.\n\n. Note: This parameter is currently in invitation-only testing. To use different name suffixes to distinguish businesses, contact your account manager.
      * 
      */
     public Output<String> serviceNameSuffix() {
         return this.serviceNameSuffix;
     }
     /**
-     * 当前服务主体。
+     * Current service principal.
      * 
      */
     @Export(name="serviceOwner", refs={String.class}, tree="[0]")
     private Output<String> serviceOwner;
 
     /**
-     * @return 当前服务主体。
+     * @return Current service principal.
      * 
      */
     public Output<String> serviceOwner() {
         return this.serviceOwner;
     }
     /**
-     * 服务资源的类型。CLB：负载均衡CLB。ALB：应用型负载均衡ALB。RDSMySQL：云数据库 MySQL版。
+     * Type of service resource. CLB: Load Balancer CLB. ALB: Application Load Balancer ALB. RDSMySQL: Cloud Database MySQL Edition.
      * 
      */
     @Export(name="serviceResourceType", refs={String.class}, tree="[0]")
     private Output<String> serviceResourceType;
 
     /**
-     * @return 服务资源的类型。CLB：负载均衡CLB。ALB：应用型负载均衡ALB。RDSMySQL：云数据库 MySQL版。
+     * @return Type of service resource. CLB: Load Balancer CLB. ALB: Application Load Balancer ALB. RDSMySQL: Cloud Database MySQL Edition.
      * 
      */
     public Output<String> serviceResourceType() {
         return this.serviceResourceType;
     }
     /**
-     * 终端节点服务的类型。Interface：接口终端节点服务。
+     * Type of the endpoint service. Interface: Interface endpoint service.
      * 
      */
     @Export(name="serviceType", refs={String.class}, tree="[0]")
     private Output<String> serviceType;
 
     /**
-     * @return 终端节点服务的类型。Interface：接口终端节点服务。
+     * @return Type of the endpoint service. Interface: Interface endpoint service.
      * 
      */
     public Output<String> serviceType() {
         return this.serviceType;
     }
     /**
-     * 终端节点服务的状态。Creating：创建中。Pending：配置修改中。Available：可用。Deleting：删除中。
+     * Status of the endpoint service. Creating: being created. Pending: configuration being modified. Available: available. Deleting: being deleted.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 终端节点服务的状态。Creating：创建中。Pending：配置修改中。Available：可用。Deleting：删除中。
+     * @return Status of the endpoint service. Creating: being created. Pending: configuration being modified. Available: available. Deleting: being deleted.
      * 
      */
     public Output<String> status() {
@@ -343,42 +343,42 @@ public class EndpointService extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 终端节点服务的最近操作时间。
+     * Most recent operation time of the endpoint service.
      * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
-     * @return 终端节点服务的最近操作时间。
+     * @return Most recent operation time of the endpoint service.
      * 
      */
     public Output<String> updateTime() {
         return this.updateTime;
     }
     /**
-     * 是否启用通配符域名。true：启用。false：未启用。
+     * Whether to enable wildcard domain name. true: Enabled. false: Not enabled.
      * 
      */
     @Export(name="wildcardDomainEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> wildcardDomainEnabled;
 
     /**
-     * @return 是否启用通配符域名。true：启用。false：未启用。
+     * @return Whether to enable wildcard domain name. true: Enabled. false: Not enabled.
      * 
      */
     public Output<Boolean> wildcardDomainEnabled() {
         return this.wildcardDomainEnabled;
     }
     /**
-     * 终端节点服务提供服务的可用区。说明参数ServiceResourceType返回值为RDSMySQL时，该参数返回空值。
+     * Availability zone where the endpoint service provides service. Note: If the ServiceResourceType parameter returns RDSMySQL, this parameter returns an empty value.
      * 
      */
     @Export(name="zoneIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> zoneIds;
 
     /**
-     * @return 终端节点服务提供服务的可用区。说明参数ServiceResourceType返回值为RDSMySQL时，该参数返回空值。
+     * @return Availability zone where the endpoint service provides service. Note: If the ServiceResourceType parameter returns RDSMySQL, this parameter returns an empty value.
      * 
      */
     public Output<List<String>> zoneIds() {

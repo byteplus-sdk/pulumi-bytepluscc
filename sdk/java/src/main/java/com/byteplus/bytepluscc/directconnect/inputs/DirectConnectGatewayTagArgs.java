@@ -16,14 +16,14 @@ public final class DirectConnectGatewayTagArgs extends com.pulumi.resources.Reso
     public static final DirectConnectGatewayTagArgs Empty = new DirectConnectGatewayTagArgs();
 
     /**
-     * 用户标签的标签键。长度取值范围为1~128字符。
+     * User label tag key. Length must be between 1 and 128 characters.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 用户标签的标签键。长度取值范围为1~128字符。
+     * @return User label tag key. Length must be between 1 and 128 characters.
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class DirectConnectGatewayTagArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * 用户标签的标签值。长度取值范围为0~256字符。
+     * User label tag value. Length must be between 0 and 256 characters.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 用户标签的标签值。长度取值范围为0~256字符。
+     * @return User label tag value. Length must be between 0 and 256 characters.
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class DirectConnectGatewayTagArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param key 用户标签的标签键。长度取值范围为1~128字符。
+         * @param key User label tag key. Length must be between 1 and 128 characters.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class DirectConnectGatewayTagArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param key 用户标签的标签键。长度取值范围为1~128字符。
+         * @param key User label tag key. Length must be between 1 and 128 characters.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class DirectConnectGatewayTagArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param value 用户标签的标签值。长度取值范围为0~256字符。
+         * @param value User label tag value. Length must be between 0 and 256 characters.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class DirectConnectGatewayTagArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param value 用户标签的标签值。长度取值范围为0~256字符。
+         * @param value User label tag value. Length must be between 0 and 256 characters.
          * 
          * @return builder
          * 

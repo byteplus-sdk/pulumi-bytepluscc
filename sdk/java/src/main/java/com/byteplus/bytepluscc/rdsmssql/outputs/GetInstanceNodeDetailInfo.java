@@ -12,158 +12,158 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceNodeDetailInfo {
     /**
-     * @return 节点的创建时间。
+     * @return Node creation time.
      * 
      */
     private String createTime;
     /**
-     * @return 节点主机名。
+     * @return Node hostname.
      * 
      */
     private String hostName;
     /**
-     * @return 实例ID。
+     * @return Instance ID.
      * 
      */
     private String instanceId;
     /**
-     * @return 内存大小，单位为 GiB。
+     * @return Memory size, in GiB.
      * 
      */
     private Integer memory;
     /**
-     * @return 节点ID。
+     * @return Node ID.
      * 
      */
     private String nodeId;
     /**
-     * @return 节点IP。
+     * @return Node IP.
      * 
      */
     private String nodeIp;
     /**
-     * @return 节点规格。
+     * @return Node specification.
      * 
      */
     private String nodeSpec;
     /**
-     * @return 节点状态，取值为：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主备切换中。Error：错误。
+     * @return Node status. Possible values: Running: running. Creating: creating. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: master/standby switching. Error: error.
      * 
      */
     private String nodeStatus;
     /**
-     * @return 节点类型。取值：Primary：表示主节点终端。ReadOnly：表示只读节点终端。Secondary：表示备节点终端。
+     * @return Node type. Possible values: Primary: primary node terminal. ReadOnly: read-only node terminal. Secondary: standby node terminal.
      * 
      */
     private String nodeType;
     /**
-     * @return 区域ID。
+     * @return Region ID.
      * 
      */
     private String regionId;
     /**
-     * @return 更新时间。
+     * @return Update time.
      * 
      */
     private String updateTime;
     /**
-     * @return vCPU 数量。
+     * @return vCPU count.
      * 
      */
     private Integer vcpu;
     /**
-     * @return 可用区ID。
+     * @return Availability zone ID.
      * 
      */
     private String zoneId;
 
     private GetInstanceNodeDetailInfo() {}
     /**
-     * @return 节点的创建时间。
+     * @return Node creation time.
      * 
      */
     public String createTime() {
         return this.createTime;
     }
     /**
-     * @return 节点主机名。
+     * @return Node hostname.
      * 
      */
     public String hostName() {
         return this.hostName;
     }
     /**
-     * @return 实例ID。
+     * @return Instance ID.
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return 内存大小，单位为 GiB。
+     * @return Memory size, in GiB.
      * 
      */
     public Integer memory() {
         return this.memory;
     }
     /**
-     * @return 节点ID。
+     * @return Node ID.
      * 
      */
     public String nodeId() {
         return this.nodeId;
     }
     /**
-     * @return 节点IP。
+     * @return Node IP.
      * 
      */
     public String nodeIp() {
         return this.nodeIp;
     }
     /**
-     * @return 节点规格。
+     * @return Node specification.
      * 
      */
     public String nodeSpec() {
         return this.nodeSpec;
     }
     /**
-     * @return 节点状态，取值为：Running：运行中。Creating：创建中。Deleting：删除中。Restarting：重启中。Updating：变更中。MasterChanging：主备切换中。Error：错误。
+     * @return Node status. Possible values: Running: running. Creating: creating. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: master/standby switching. Error: error.
      * 
      */
     public String nodeStatus() {
         return this.nodeStatus;
     }
     /**
-     * @return 节点类型。取值：Primary：表示主节点终端。ReadOnly：表示只读节点终端。Secondary：表示备节点终端。
+     * @return Node type. Possible values: Primary: primary node terminal. ReadOnly: read-only node terminal. Secondary: standby node terminal.
      * 
      */
     public String nodeType() {
         return this.nodeType;
     }
     /**
-     * @return 区域ID。
+     * @return Region ID.
      * 
      */
     public String regionId() {
         return this.regionId;
     }
     /**
-     * @return 更新时间。
+     * @return Update time.
      * 
      */
     public String updateTime() {
         return this.updateTime;
     }
     /**
-     * @return vCPU 数量。
+     * @return vCPU count.
      * 
      */
     public Integer vcpu() {
         return this.vcpu;
     }
     /**
-     * @return 可用区ID。
+     * @return Availability zone ID.
      * 
      */
     public String zoneId() {

@@ -17,7 +17,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Inputs
         private InputList<string>? _values;
 
         /// <summary>
-        /// 请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+        /// Request method. Supports HEAD, GET, POST, OPTIONS, PUT, PATCH, DELETE.
         /// </summary>
         public InputList<string> Values
         {

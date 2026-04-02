@@ -12,86 +12,86 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceNode {
     /**
-     * @return 节点切主的优先级，取值范围为 0~15。数值越大，优先级越高。
+     * @return Node failover priority. Range: 0~15. Higher values indicate higher priority
      * 
      */
     private Integer failoverPriority;
     /**
-     * @return 内存大小，单位为 GiB。
+     * @return Memory size, in GiB.
      * 
      */
     private Integer memory;
     /**
-     * @return 节点 ID。
+     * @return Node ID
      * 
      */
     private String nodeId;
     /**
-     * @return 节点规格。
+     * @return Node specification.
      * 
      */
     private String nodeSpec;
     /**
-     * @return 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+     * @return Node type. Values: Primary: primary node. ReadOnly: read-only node.
      * 
      */
     private String nodeType;
     /**
-     * @return CPU 大小，例如当取值为 1 时表示 CPU 大小为 1U。
+     * @return CPU size. For example, a value of 1 indicates a CPU size of 1U.
      * 
      */
     private Integer vCpu;
     /**
-     * @return 可用区 ID。
+     * @return Availability zone ID
      * 
      */
     private String zoneId;
 
     private GetInstanceNode() {}
     /**
-     * @return 节点切主的优先级，取值范围为 0~15。数值越大，优先级越高。
+     * @return Node failover priority. Range: 0~15. Higher values indicate higher priority
      * 
      */
     public Integer failoverPriority() {
         return this.failoverPriority;
     }
     /**
-     * @return 内存大小，单位为 GiB。
+     * @return Memory size, in GiB.
      * 
      */
     public Integer memory() {
         return this.memory;
     }
     /**
-     * @return 节点 ID。
+     * @return Node ID
      * 
      */
     public String nodeId() {
         return this.nodeId;
     }
     /**
-     * @return 节点规格。
+     * @return Node specification.
      * 
      */
     public String nodeSpec() {
         return this.nodeSpec;
     }
     /**
-     * @return 节点类型。取值：Primary：主节点。ReadOnly：只读节点。
+     * @return Node type. Values: Primary: primary node. ReadOnly: read-only node.
      * 
      */
     public String nodeType() {
         return this.nodeType;
     }
     /**
-     * @return CPU 大小，例如当取值为 1 时表示 CPU 大小为 1U。
+     * @return CPU size. For example, a value of 1 indicates a CPU size of 1U.
      * 
      */
     public Integer vCpu() {
         return this.vCpu;
     }
     /**
-     * @return 可用区 ID。
+     * @return Availability zone ID
      * 
      */
     public String zoneId() {

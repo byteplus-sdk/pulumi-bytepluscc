@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RegistryProxyCache {
     /**
-     * @return ProxyCache支持的镜像仓库实例类型，参数值说明如下：DockerHub：dockerhub 镜像仓库。
+     * @return Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
      * 
      */
     private @Nullable String type;
 
     private RegistryProxyCache() {}
     /**
-     * @return ProxyCache支持的镜像仓库实例类型，参数值说明如下：DockerHub：dockerhub 镜像仓库。
+     * @return Instance types supported by ProxyCache for container registry. Parameter values are as follows: DockerHub: DockerHub container registry
      * 
      */
     public Optional<String> type() {

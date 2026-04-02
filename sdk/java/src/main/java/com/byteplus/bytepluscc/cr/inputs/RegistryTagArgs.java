@@ -16,14 +16,14 @@ public final class RegistryTagArgs extends com.pulumi.resources.ResourceArgs {
     public static final RegistryTagArgs Empty = new RegistryTagArgs();
 
     /**
-     * 标签的 Key 值。
+     * Tag key values
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 标签的 Key 值。
+     * @return Tag key values
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class RegistryTagArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 标签的 Value 值列表。
+     * List of tag values
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 标签的 Value 值列表。
+     * @return List of tag values
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class RegistryTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param key 标签的 Key 值。
+         * @param key Tag key values
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class RegistryTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param key 标签的 Key 值。
+         * @param key Tag key values
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class RegistryTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value 标签的 Value 值列表。
+         * @param value List of tag values
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class RegistryTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value 标签的 Value 值列表。
+         * @param value List of tag values
          * 
          * @return builder
          * 

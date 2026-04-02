@@ -31,15 +31,15 @@ export interface GetTrafficMirrorFilterArgs {
  */
 export interface GetTrafficMirrorFilterResult {
     /**
-     * 筛选条件的创建时间。
+     * Filter condition creation time
      */
     readonly createdTime: string;
     /**
-     * 筛选条件实例描述。
+     * Filter condition instance description
      */
     readonly description: string;
     /**
-     * 出方向筛选规则的详细信息。
+     * Outbound filter rule details
      */
     readonly egressFilterRules: outputs.vpc.GetTrafficMirrorFilterEgressFilterRule[];
     /**
@@ -47,27 +47,27 @@ export interface GetTrafficMirrorFilterResult {
      */
     readonly id: string;
     /**
-     * 入方向筛选规则的详细信息。
+     * Inbound filter rule details
      */
     readonly ingressFilterRules: outputs.vpc.GetTrafficMirrorFilterIngressFilterRule[];
     /**
-     * 筛选条件所属项目的名称。
+     * Project name of the filter condition
      */
     readonly projectName: string;
     /**
-     * 筛选条件状态。
+     * Filter condition status
      */
     readonly status: string;
     /**
-     * 标签信息
+     * Tag information
      */
     readonly tags: outputs.vpc.GetTrafficMirrorFilterTag[];
     /**
-     * 筛选条件实例ID。
+     * Filter condition instance ID
      */
     readonly trafficMirrorFilterId: string;
     /**
-     * 筛选条件名称。
+     * Filter condition name
      */
     readonly trafficMirrorFilterName: string;
 }

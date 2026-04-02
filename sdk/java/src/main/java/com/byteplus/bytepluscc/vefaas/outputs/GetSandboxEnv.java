@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetSandboxEnv {
     /**
-     * @return 环境变量键。
+     * @return Environment variable key
      * 
      */
     private String key;
     /**
-     * @return 环境变量值。
+     * @return Environment variable value
      * 
      */
     private String value;
 
     private GetSandboxEnv() {}
     /**
-     * @return 环境变量键。
+     * @return Environment variable key
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return 环境变量值。
+     * @return Environment variable value
      * 
      */
     public String value() {

@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * 云身份中心用户，与企业员工身份一一映射。云身份中心用户是一种身份类型，可与某个账号下的IAM用户身份进行唯一关联并单点登录。云身份中心提供企业员工身份全生命周期管理、权限管理能力，推荐您在本产品内统一管理员工身份。
+ * Cloud Identity Center users are mapped one-to-one with enterprise employee identities. A Cloud Identity Center user is an identity type that can be uniquely linked to an IAM user under an account for single sign-on. Cloud Identity Center provides full lifecycle management and permission management for enterprise employee identities. We recommend that you centrally manage employee identities within this product.
  *
  * ## Example Usage
  *
@@ -59,51 +59,51 @@ export class User extends pulumi.CustomResource {
     }
 
     /**
-     * 创建时间。
+     * Creation Time.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     /**
-     * 用户描述。
+     * User Description.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * 用户显示名。
+     * User Display Name.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * 邮箱。
+     * Email.
      */
     public readonly email!: pulumi.Output<string>;
     /**
-     * 身份类型。
+     * Identity Type.
      */
     public /*out*/ readonly identityType!: pulumi.Output<string>;
     /**
-     * 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+     * Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
      */
     public readonly password!: pulumi.Output<string>;
     /**
-     * 首次登陆需不需要重置密码。
+     * Is password reset required on first login?
      */
     public readonly passwordResetRequired!: pulumi.Output<boolean>;
     /**
-     * 手机号。
+     * Mobile Number.
      */
     public readonly phone!: pulumi.Output<string>;
     /**
-     * 用户来源。
+     * User Source.
      */
     public /*out*/ readonly source!: pulumi.Output<string>;
     /**
-     * 更新时间。
+     * Update Time.
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
     /**
-     * 用户id。
+     * User ID.
      */
     public /*out*/ readonly userId!: pulumi.Output<string>;
     /**
-     * 用户名。
+     * Username.
      */
     public readonly userName!: pulumi.Output<string>;
 
@@ -157,51 +157,51 @@ export class User extends pulumi.CustomResource {
  */
 export interface UserState {
     /**
-     * 创建时间。
+     * Creation Time.
      */
     createdTime?: pulumi.Input<string>;
     /**
-     * 用户描述。
+     * User Description.
      */
     description?: pulumi.Input<string>;
     /**
-     * 用户显示名。
+     * User Display Name.
      */
     displayName?: pulumi.Input<string>;
     /**
-     * 邮箱。
+     * Email.
      */
     email?: pulumi.Input<string>;
     /**
-     * 身份类型。
+     * Identity Type.
      */
     identityType?: pulumi.Input<string>;
     /**
-     * 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+     * Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
      */
     password?: pulumi.Input<string>;
     /**
-     * 首次登陆需不需要重置密码。
+     * Is password reset required on first login?
      */
     passwordResetRequired?: pulumi.Input<boolean>;
     /**
-     * 手机号。
+     * Mobile Number.
      */
     phone?: pulumi.Input<string>;
     /**
-     * 用户来源。
+     * User Source.
      */
     source?: pulumi.Input<string>;
     /**
-     * 更新时间。
+     * Update Time.
      */
     updatedTime?: pulumi.Input<string>;
     /**
-     * 用户id。
+     * User ID.
      */
     userId?: pulumi.Input<string>;
     /**
-     * 用户名。
+     * Username.
      */
     userName?: pulumi.Input<string>;
 }
@@ -211,31 +211,31 @@ export interface UserState {
  */
 export interface UserArgs {
     /**
-     * 用户描述。
+     * User Description.
      */
     description?: pulumi.Input<string>;
     /**
-     * 用户显示名。
+     * User Display Name.
      */
     displayName?: pulumi.Input<string>;
     /**
-     * 邮箱。
+     * Email.
      */
     email?: pulumi.Input<string>;
     /**
-     * 密码。密码长度8-32位字符,包含大写字母、小写字母、数字和物特殊符号至少3种。
+     * Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
      */
     password?: pulumi.Input<string>;
     /**
-     * 首次登陆需不需要重置密码。
+     * Is password reset required on first login?
      */
     passwordResetRequired?: pulumi.Input<boolean>;
     /**
-     * 手机号。
+     * Mobile Number.
      */
     phone?: pulumi.Input<string>;
     /**
-     * 用户名。
+     * Username.
      */
     userName?: pulumi.Input<string>;
 }

@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr.Outputs
     public sealed class GetRegistryTagResult
     {
         /// <summary>
-        /// 标签的 Key 值。
+        /// Tag key values
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// 标签的 Value 值列表。
+        /// List of tag values
         /// </summary>
         public readonly string Value;
 

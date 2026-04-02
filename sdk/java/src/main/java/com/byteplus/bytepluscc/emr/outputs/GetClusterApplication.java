@@ -12,98 +12,98 @@ import java.util.Objects;
 @CustomType
 public final class GetClusterApplication {
     /**
-     * @return 应用配置路径。
+     * @return Application configuration path.
      * 
      */
     private String applicationConfigHome;
     /**
-     * @return 应用安装路径。
+     * @return Application installation path.
      * 
      */
     private String applicationHome;
     /**
-     * @return 应用名称。
+     * @return Application name.
      * 
      */
     private String applicationName;
     /**
-     * @return 服务状态。NORMAL：正常；WARNING：告警；STOPPED：已停止；INIT：初始化中；INSTALLING：安装中；INSTALLED：已安装；STARTING：启动中；STARTED：已启动；STOPPING：停止中；UNINSTALLING：卸载中；UNINSTALLED：已卸载；EXCEPTION：异常。
+     * @return Service status. NORMAL: normal; WARNING: alert; STOPPED: stopped; INIT: initializing; INSTALLING: installing; INSTALLED: installed; STARTING: starting; STARTED: started; STOPPING: stopping; UNINSTALLING: uninstalling; UNINSTALLED: uninstalled; EXCEPTION: exception.
      * 
      */
     private String applicationState;
     /**
-     * @return 应用版本。
+     * @return Application version.
      * 
      */
     private String applicationVersion;
     /**
-     * @return 应用用户组。
+     * @return Application user group.
      * 
      */
     private String group;
     /**
-     * @return 是否支持客户端。
+     * @return Whether client is supported.
      * 
      */
     private Boolean supportClient;
     /**
-     * @return 应用用户。
+     * @return Application user.
      * 
      */
     private String user;
 
     private GetClusterApplication() {}
     /**
-     * @return 应用配置路径。
+     * @return Application configuration path.
      * 
      */
     public String applicationConfigHome() {
         return this.applicationConfigHome;
     }
     /**
-     * @return 应用安装路径。
+     * @return Application installation path.
      * 
      */
     public String applicationHome() {
         return this.applicationHome;
     }
     /**
-     * @return 应用名称。
+     * @return Application name.
      * 
      */
     public String applicationName() {
         return this.applicationName;
     }
     /**
-     * @return 服务状态。NORMAL：正常；WARNING：告警；STOPPED：已停止；INIT：初始化中；INSTALLING：安装中；INSTALLED：已安装；STARTING：启动中；STARTED：已启动；STOPPING：停止中；UNINSTALLING：卸载中；UNINSTALLED：已卸载；EXCEPTION：异常。
+     * @return Service status. NORMAL: normal; WARNING: alert; STOPPED: stopped; INIT: initializing; INSTALLING: installing; INSTALLED: installed; STARTING: starting; STARTED: started; STOPPING: stopping; UNINSTALLING: uninstalling; UNINSTALLED: uninstalled; EXCEPTION: exception.
      * 
      */
     public String applicationState() {
         return this.applicationState;
     }
     /**
-     * @return 应用版本。
+     * @return Application version.
      * 
      */
     public String applicationVersion() {
         return this.applicationVersion;
     }
     /**
-     * @return 应用用户组。
+     * @return Application user group.
      * 
      */
     public String group() {
         return this.group;
     }
     /**
-     * @return 是否支持客户端。
+     * @return Whether client is supported.
      * 
      */
     public Boolean supportClient() {
         return this.supportClient;
     }
     /**
-     * @return 应用用户。
+     * @return Application user.
      * 
      */
     public String user() {

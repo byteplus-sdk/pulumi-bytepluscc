@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone.Outputs
     public sealed class GetResolverRuleForwardIPResult
     {
         /// <summary>
-        /// VPC 外部的 DNS 服务器的 IP 地址。
+        /// IP address of the external DNS server for the VPC
         /// </summary>
         public readonly string Ip;
         /// <summary>
-        /// VPC 外部的 DNS 服务器的端口。
+        /// Port of the external DNS server for the VPC
         /// </summary>
         public readonly int Port;
 

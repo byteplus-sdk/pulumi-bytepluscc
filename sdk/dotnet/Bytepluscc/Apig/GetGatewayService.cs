@@ -65,39 +65,39 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
     public sealed class GetGatewayServiceResult
     {
         /// <summary>
-        /// 认证配置。
+        /// Authentication configuration.
         /// </summary>
         public readonly Outputs.GetGatewayServiceAuthSpecResult AuthSpec;
         /// <summary>
-        /// 备注，长度限制为0~253个字符。
+        /// Remarks. Length must be 0–253 characters.
         /// </summary>
         public readonly string Comments;
         /// <summary>
-        /// 创建时间。
+        /// Creation time.
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 自定义域名列表。
+        /// Custom domain list.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGatewayServiceCustomDomainResult> CustomDomains;
         /// <summary>
-        /// 域名详情。
+        /// Domain details.
         /// </summary>
         public readonly Outputs.GetGatewayServiceDomainSpecResult DomainSpec;
         /// <summary>
-        /// 域名类型，取值：DefaultDomain：默认域名。CustomDomain：自定义域名。
+        /// Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
         /// </summary>
         public readonly string DomainType;
         /// <summary>
-        /// 默认域名。
+        /// Default domain.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGatewayServiceDomainResult> Domains;
         /// <summary>
-        /// 网关ID。
+        /// Gateway ID.
         /// </summary>
         public readonly string GatewayId;
         /// <summary>
-        /// 网关名称。
+        /// Gateway name.
         /// </summary>
         public readonly string GatewayName;
         /// <summary>
@@ -105,31 +105,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 服务创建失败、删除失败或异常时的错误信息。
+        /// Error message for service creation failure, deletion failure, or abnormal status.
         /// </summary>
         public readonly string Message;
         /// <summary>
-        /// 服务支持的协议。取值：HTTP：HTTP。HTTPS：HTTPS。
+        /// Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
         /// </summary>
         public readonly ImmutableArray<string> Protocols;
         /// <summary>
-        /// 服务ID。
+        /// Service ID.
         /// </summary>
         public readonly string ServiceId;
         /// <summary>
-        /// 服务名称。支持大小写字母、数字和中划线（-），长度限制为2~128个字符。不能以中划线（-）开头。
+        /// Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
         /// </summary>
         public readonly string ServiceName;
         /// <summary>
-        /// 服务默认域名网络配置。。
+        /// Default domain network configuration..
         /// </summary>
         public readonly Outputs.GetGatewayServiceServiceNetworkSpecResult ServiceNetworkSpec;
         /// <summary>
-        /// 服务类型，取值：AIProvider：AI模型代理。
+        /// Service type. Options: AIProvider: AI model proxy.
         /// </summary>
         public readonly string ServiceType;
         /// <summary>
-        /// Creating：创建中。CreatedFailed：创建失败。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+        /// Creating: Creating. CreatedFailed: Creation failed. Running: Running. Deleting: Deleting. DeletedFailed: Deletion failed. Abnormal: Abnormal.
         /// </summary>
         public readonly string Status;
 

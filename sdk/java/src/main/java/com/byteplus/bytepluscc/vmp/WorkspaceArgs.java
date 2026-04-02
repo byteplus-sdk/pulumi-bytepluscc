@@ -3,11 +3,13 @@
 
 package com.byteplus.bytepluscc.vmp;
 
+import com.byteplus.bytepluscc.vmp.inputs.WorkspaceQuotaArgs;
 import com.byteplus.bytepluscc.vmp.inputs.WorkspaceTagArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -20,14 +22,44 @@ public final class WorkspaceArgs extends com.pulumi.resources.ResourceArgs {
     public static final WorkspaceArgs Empty = new WorkspaceArgs();
 
     /**
-     * 是否开启工作区删除保护,true：开启，false：关闭。
+     * Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+     * 
+     */
+    @Import(name="authType")
+    private @Nullable Output<String> authType;
+
+    /**
+     * @return Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+     * 
+     */
+    public Optional<Output<String>> authType() {
+        return Optional.ofNullable(this.authType);
+    }
+
+    /**
+     * Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+     * 
+     */
+    @Import(name="bearerToken")
+    private @Nullable Output<String> bearerToken;
+
+    /**
+     * @return Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+     * 
+     */
+    public Optional<Output<String>> bearerToken() {
+        return Optional.ofNullable(this.bearerToken);
+    }
+
+    /**
+     * Enable workspace deletion protection: true for enabled, false for disabled
      * 
      */
     @Import(name="deleteProtectionEnabled")
     private @Nullable Output<Boolean> deleteProtectionEnabled;
 
     /**
-     * @return 是否开启工作区删除保护,true：开启，false：关闭。
+     * @return Enable workspace deletion protection: true for enabled, false for disabled
      * 
      */
     public Optional<Output<Boolean>> deleteProtectionEnabled() {
@@ -35,14 +67,14 @@ public final class WorkspaceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 工作区描述信息，字符串形式，长度限制为 0～200。
+     * Workspace description, string, length limit 0–200
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 工作区描述信息，字符串形式，长度限制为 0～200。
+     * @return Workspace description, string, length limit 0–200
      * 
      */
     public Optional<Output<String>> description() {
@@ -50,14 +82,14 @@ public final class WorkspaceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
+     * Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
      * 
      */
     @Import(name="instanceTypeId", required=true)
     private Output<String> instanceTypeId;
 
     /**
-     * @return 工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
+     * @return Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
      * 
      */
     public Output<String> instanceTypeId() {
@@ -65,14 +97,14 @@ public final class WorkspaceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 工作区名称，字符串形式，长度限制为 1～100。
+     * Workspace name, string, length limit 1–100
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return 工作区名称，字符串形式，长度限制为 1～100。
+     * @return Workspace name, string, length limit 1–100
      * 
      */
     public Output<String> name() {
@@ -80,14 +112,14 @@ public final class WorkspaceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 工作区 BasicAuth 密码。
+     * Workspace BasicAuth password
      * 
      */
     @Import(name="password")
     private @Nullable Output<String> password;
 
     /**
-     * @return 工作区 BasicAuth 密码。
+     * @return Workspace BasicAuth password
      * 
      */
     public Optional<Output<String>> password() {
@@ -95,18 +127,93 @@ public final class WorkspaceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 项目名称。
+     * Project name
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 项目名称。
+     * @return Project name
      * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
+    }
+
+    /**
+     * Whether to enable workspace public access capability. true: enabled, false: disabled.
+     * 
+     */
+    @Import(name="publicAccessEnabled")
+    private @Nullable Output<Boolean> publicAccessEnabled;
+
+    /**
+     * @return Whether to enable workspace public access capability. true: enabled, false: disabled.
+     * 
+     */
+    public Optional<Output<Boolean>> publicAccessEnabled() {
+        return Optional.ofNullable(this.publicAccessEnabled);
+    }
+
+    /**
+     * Workspace public Query bandwidth (Mbps).
+     * 
+     */
+    @Import(name="publicQueryBandwidth")
+    private @Nullable Output<Integer> publicQueryBandwidth;
+
+    /**
+     * @return Workspace public Query bandwidth (Mbps).
+     * 
+     */
+    public Optional<Output<Integer>> publicQueryBandwidth() {
+        return Optional.ofNullable(this.publicQueryBandwidth);
+    }
+
+    /**
+     * Workspace public RemoteWrite bandwidth (Mbps).
+     * 
+     */
+    @Import(name="publicWriteBandwidth")
+    private @Nullable Output<Integer> publicWriteBandwidth;
+
+    /**
+     * @return Workspace public RemoteWrite bandwidth (Mbps).
+     * 
+     */
+    public Optional<Output<Integer>> publicWriteBandwidth() {
+        return Optional.ofNullable(this.publicWriteBandwidth);
+    }
+
+    /**
+     * Workspace quota details
+     * 
+     */
+    @Import(name="quota")
+    private @Nullable Output<WorkspaceQuotaArgs> quota;
+
+    /**
+     * @return Workspace quota details
+     * 
+     */
+    public Optional<Output<WorkspaceQuotaArgs>> quota() {
+        return Optional.ofNullable(this.quota);
+    }
+
+    /**
+     * Workspace public Query search latency offset.
+     * 
+     */
+    @Import(name="searchLatencyOffset")
+    private @Nullable Output<String> searchLatencyOffset;
+
+    /**
+     * @return Workspace public Query search latency offset.
+     * 
+     */
+    public Optional<Output<String>> searchLatencyOffset() {
+        return Optional.ofNullable(this.searchLatencyOffset);
     }
 
     @Import(name="tags")
@@ -117,14 +224,14 @@ public final class WorkspaceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 工作区 BasicAuth 用户名。
+     * Workspace BasicAuth username
      * 
      */
     @Import(name="username")
     private @Nullable Output<String> username;
 
     /**
-     * @return 工作区 BasicAuth 用户名。
+     * @return Workspace BasicAuth username
      * 
      */
     public Optional<Output<String>> username() {
@@ -134,12 +241,19 @@ public final class WorkspaceArgs extends com.pulumi.resources.ResourceArgs {
     private WorkspaceArgs() {}
 
     private WorkspaceArgs(WorkspaceArgs $) {
+        this.authType = $.authType;
+        this.bearerToken = $.bearerToken;
         this.deleteProtectionEnabled = $.deleteProtectionEnabled;
         this.description = $.description;
         this.instanceTypeId = $.instanceTypeId;
         this.name = $.name;
         this.password = $.password;
         this.projectName = $.projectName;
+        this.publicAccessEnabled = $.publicAccessEnabled;
+        this.publicQueryBandwidth = $.publicQueryBandwidth;
+        this.publicWriteBandwidth = $.publicWriteBandwidth;
+        this.quota = $.quota;
+        this.searchLatencyOffset = $.searchLatencyOffset;
         this.tags = $.tags;
         this.username = $.username;
     }
@@ -163,7 +277,49 @@ public final class WorkspaceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deleteProtectionEnabled 是否开启工作区删除保护,true：开启，false：关闭。
+         * @param authType Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder authType(@Nullable Output<String> authType) {
+            $.authType = authType;
+            return this;
+        }
+
+        /**
+         * @param authType Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder authType(String authType) {
+            return authType(Output.of(authType));
+        }
+
+        /**
+         * @param bearerToken Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder bearerToken(@Nullable Output<String> bearerToken) {
+            $.bearerToken = bearerToken;
+            return this;
+        }
+
+        /**
+         * @param bearerToken Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder bearerToken(String bearerToken) {
+            return bearerToken(Output.of(bearerToken));
+        }
+
+        /**
+         * @param deleteProtectionEnabled Enable workspace deletion protection: true for enabled, false for disabled
          * 
          * @return builder
          * 
@@ -174,7 +330,7 @@ public final class WorkspaceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deleteProtectionEnabled 是否开启工作区删除保护,true：开启，false：关闭。
+         * @param deleteProtectionEnabled Enable workspace deletion protection: true for enabled, false for disabled
          * 
          * @return builder
          * 
@@ -184,7 +340,7 @@ public final class WorkspaceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 工作区描述信息，字符串形式，长度限制为 0～200。
+         * @param description Workspace description, string, length limit 0–200
          * 
          * @return builder
          * 
@@ -195,7 +351,7 @@ public final class WorkspaceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 工作区描述信息，字符串形式，长度限制为 0～200。
+         * @param description Workspace description, string, length limit 0–200
          * 
          * @return builder
          * 
@@ -205,7 +361,7 @@ public final class WorkspaceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceTypeId 工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
+         * @param instanceTypeId Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
          * 
          * @return builder
          * 
@@ -216,7 +372,7 @@ public final class WorkspaceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceTypeId 工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
+         * @param instanceTypeId Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
          * 
          * @return builder
          * 
@@ -226,7 +382,7 @@ public final class WorkspaceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 工作区名称，字符串形式，长度限制为 1～100。
+         * @param name Workspace name, string, length limit 1–100
          * 
          * @return builder
          * 
@@ -237,7 +393,7 @@ public final class WorkspaceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 工作区名称，字符串形式，长度限制为 1～100。
+         * @param name Workspace name, string, length limit 1–100
          * 
          * @return builder
          * 
@@ -247,7 +403,7 @@ public final class WorkspaceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param password 工作区 BasicAuth 密码。
+         * @param password Workspace BasicAuth password
          * 
          * @return builder
          * 
@@ -258,7 +414,7 @@ public final class WorkspaceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param password 工作区 BasicAuth 密码。
+         * @param password Workspace BasicAuth password
          * 
          * @return builder
          * 
@@ -268,7 +424,7 @@ public final class WorkspaceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 项目名称。
+         * @param projectName Project name
          * 
          * @return builder
          * 
@@ -279,13 +435,118 @@ public final class WorkspaceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 项目名称。
+         * @param projectName Project name
          * 
          * @return builder
          * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
+        }
+
+        /**
+         * @param publicAccessEnabled Whether to enable workspace public access capability. true: enabled, false: disabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder publicAccessEnabled(@Nullable Output<Boolean> publicAccessEnabled) {
+            $.publicAccessEnabled = publicAccessEnabled;
+            return this;
+        }
+
+        /**
+         * @param publicAccessEnabled Whether to enable workspace public access capability. true: enabled, false: disabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder publicAccessEnabled(Boolean publicAccessEnabled) {
+            return publicAccessEnabled(Output.of(publicAccessEnabled));
+        }
+
+        /**
+         * @param publicQueryBandwidth Workspace public Query bandwidth (Mbps).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder publicQueryBandwidth(@Nullable Output<Integer> publicQueryBandwidth) {
+            $.publicQueryBandwidth = publicQueryBandwidth;
+            return this;
+        }
+
+        /**
+         * @param publicQueryBandwidth Workspace public Query bandwidth (Mbps).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder publicQueryBandwidth(Integer publicQueryBandwidth) {
+            return publicQueryBandwidth(Output.of(publicQueryBandwidth));
+        }
+
+        /**
+         * @param publicWriteBandwidth Workspace public RemoteWrite bandwidth (Mbps).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder publicWriteBandwidth(@Nullable Output<Integer> publicWriteBandwidth) {
+            $.publicWriteBandwidth = publicWriteBandwidth;
+            return this;
+        }
+
+        /**
+         * @param publicWriteBandwidth Workspace public RemoteWrite bandwidth (Mbps).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder publicWriteBandwidth(Integer publicWriteBandwidth) {
+            return publicWriteBandwidth(Output.of(publicWriteBandwidth));
+        }
+
+        /**
+         * @param quota Workspace quota details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder quota(@Nullable Output<WorkspaceQuotaArgs> quota) {
+            $.quota = quota;
+            return this;
+        }
+
+        /**
+         * @param quota Workspace quota details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder quota(WorkspaceQuotaArgs quota) {
+            return quota(Output.of(quota));
+        }
+
+        /**
+         * @param searchLatencyOffset Workspace public Query search latency offset.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder searchLatencyOffset(@Nullable Output<String> searchLatencyOffset) {
+            $.searchLatencyOffset = searchLatencyOffset;
+            return this;
+        }
+
+        /**
+         * @param searchLatencyOffset Workspace public Query search latency offset.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder searchLatencyOffset(String searchLatencyOffset) {
+            return searchLatencyOffset(Output.of(searchLatencyOffset));
         }
 
         public Builder tags(@Nullable Output<List<WorkspaceTagArgs>> tags) {
@@ -302,7 +563,7 @@ public final class WorkspaceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param username 工作区 BasicAuth 用户名。
+         * @param username Workspace BasicAuth username
          * 
          * @return builder
          * 
@@ -313,7 +574,7 @@ public final class WorkspaceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param username 工作区 BasicAuth 用户名。
+         * @param username Workspace BasicAuth username
          * 
          * @return builder
          * 

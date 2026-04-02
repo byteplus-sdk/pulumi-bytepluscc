@@ -13,50 +13,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UpstreamConnectionPoolSettings {
     /**
-     * @return 开启。
+     * @return Enable
      * 
      */
     private @Nullable Boolean enable;
     /**
-     * @return HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+     * @return Maximum HTTP/1 pending requests. Value range: 0~2^31-1. 0 means unlimited
      * 
      */
     private @Nullable Integer http1MaxPendingRequests;
     /**
-     * @return 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+     * @return Idle timeout, in seconds. Value range: 0–2^31-1. 0 means no limit
      * 
      */
     private @Nullable Integer idleTimeout;
     /**
-     * @return TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+     * @return Maximum TCP connections. Value range: 0~2^31-1. 0 means unlimited
      * 
      */
     private @Nullable Integer maxConnections;
 
     private UpstreamConnectionPoolSettings() {}
     /**
-     * @return 开启。
+     * @return Enable
      * 
      */
     public Optional<Boolean> enable() {
         return Optional.ofNullable(this.enable);
     }
     /**
-     * @return HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+     * @return Maximum HTTP/1 pending requests. Value range: 0~2^31-1. 0 means unlimited
      * 
      */
     public Optional<Integer> http1MaxPendingRequests() {
         return Optional.ofNullable(this.http1MaxPendingRequests);
     }
     /**
-     * @return 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+     * @return Idle timeout, in seconds. Value range: 0–2^31-1. 0 means no limit
      * 
      */
     public Optional<Integer> idleTimeout() {
         return Optional.ofNullable(this.idleTimeout);
     }
     /**
-     * @return TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+     * @return Maximum TCP connections. Value range: 0~2^31-1. 0 means unlimited
      * 
      */
     public Optional<Integer> maxConnections() {

@@ -65,51 +65,51 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
     public sealed class GetRuleResult
     {
         /// <summary>
-        /// 告警通知的方式。Email：邮件 Phone：电话 SMS：短信 Webhook：告警回调。
+        /// Alert notification method. Email: email, Phone: phone, SMS: SMS, Webhook: webhook callback.
         /// </summary>
         public readonly ImmutableArray<string> AlertMethods;
         /// <summary>
-        /// 告警状态。 alerting：告警中 normal：正常。
+        /// Alert status. alerting: In alert; normal: Normal.
         /// </summary>
         public readonly string AlertState;
         /// <summary>
-        /// 多指标判定条件。&amp;&amp;：多个指标同时成立才判定为触发告警,||：任意指标满足条件触发判定为告警。
+        /// Multi-metric determination condition. &amp;&amp;: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
         /// </summary>
         public readonly string ConditionOperator;
         /// <summary>
-        /// 告警条件。数组形式，支持填写多个指标判断语句，最多 10 个。
+        /// Alert conditions. Array format; supports multiple metric evaluation statements, up to 10.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRuleConditionResult> Conditions;
         /// <summary>
-        /// 告警策略绑定的告警通知组 ID。
+        /// Alert notification group ID bound to the alert policy.
         /// </summary>
         public readonly ImmutableArray<string> ContactGroupIds;
         /// <summary>
-        /// 告警策略创建时间，时间戳格式。
+        /// Alert policy creation time, in timestamp format.
         /// </summary>
         public readonly string CreatedAt;
         /// <summary>
-        /// 告警策略描述信息。
+        /// Alert policy description.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Dimension 配置。
+        /// Dimension configuration.
         /// </summary>
         public readonly Outputs.GetRuleDimensionConditionsResult DimensionConditions;
         /// <summary>
-        /// 策略生效的截止时间，格式为HH:MM。
+        /// Policy expiration time, in HH:MM format.
         /// </summary>
         public readonly string EffectEndAt;
         /// <summary>
-        /// 告警策略生效的开始时间，格式为HH:MM。
+        /// Policy start time, in HH:MM format.
         /// </summary>
         public readonly string EffectStartAt;
         /// <summary>
-        /// 告警策略的开启状态。,enable：开启,disable：禁用
+        /// Alert policy status. enable: enabled, disable: disabled
         /// </summary>
         public readonly string EnableState;
         /// <summary>
-        /// 触发告警需要持续的周期。单位为分钟。
+        /// Duration required to trigger an alert, in minutes.
         /// </summary>
         public readonly int EvaluationCount;
         /// <summary>
@@ -117,87 +117,87 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 告警级别。critical：严重,warning：警告,notice：通知
+        /// Alert level. critical: critical, warning: warning, notice: notification
         /// </summary>
         public readonly string Level;
         /// <summary>
-        /// 告警分级配置。
+        /// Alert severity configuration.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRuleLevelConditionResult> LevelConditions;
         /// <summary>
-        /// 告警策略是否用多指标。true：多指标,false：单指标（默认）。
+        /// Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
         /// </summary>
         public readonly bool MultipleConditions;
         /// <summary>
-        /// 监控指标所属的云产品。详情请参见 云产品监控指标 下各产品的 Namespace。
+        /// Cloud product associated with the monitoring metric. For details, see Namespace for each product in Cloud Product Monitoring Metrics.
         /// </summary>
         public readonly string Namespace;
         /// <summary>
-        /// 无数据告警。
+        /// No data alert.
         /// </summary>
         public readonly Outputs.GetRuleNoDataResult NoData;
         /// <summary>
-        /// 通知策略 ID。
+        /// Notification policy ID.
         /// </summary>
         public readonly string NotificationId;
         /// <summary>
-        /// 通知模版配置。
+        /// Notification template configuration.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRuleNotifyTemplateResult> NotifyTemplates;
         /// <summary>
-        /// 告警策略检测的资源 ID。
+        /// Resource ID detected by the alert policy.
         /// </summary>
         public readonly Outputs.GetRuleOriginalDimensionsResult OriginalDimensions;
         /// <summary>
-        /// 告警策略所属项目。
+        /// Project to which the alert policy belongs.
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// 告警恢复通知。
+        /// Alert recovery notification.
         /// </summary>
         public readonly Outputs.GetRuleRecoveryNotifyResult RecoveryNotify;
         /// <summary>
-        /// 云产品所属可用区 ID。
+        /// Availability zone ID of the cloud product.
         /// </summary>
         public readonly ImmutableArray<string> Regions;
         /// <summary>
-        /// 告警策略检测的资源类型。
+        /// Resource type detected by the alert policy.
         /// </summary>
         public readonly string ResourceType;
         /// <summary>
-        /// 告警策略 ID。
+        /// Alarm policy ID.
         /// </summary>
         public readonly string RuleId;
         /// <summary>
-        /// 告警策略名称。
+        /// Alert policy name.
         /// </summary>
         public readonly string RuleName;
         /// <summary>
-        /// 告警策略的类型。static：手动选择。dynamic：通过资源名称、项目和标签选择。
+        /// Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
         /// </summary>
         public readonly string RuleType;
         /// <summary>
-        /// 告警发送周期。单位为分钟。支持配置为 5、10、15、30、60、180、360、720、1440。
+        /// Alert sending interval, in minutes. Supported values: 5, 10, 15, 30, 60, 180, 360, 720, 1440.
         /// </summary>
         public readonly int SilenceTime;
         /// <summary>
-        /// 此策略引用的指标所属的维度。详情请参见 云产品监控指标 下各产品的 SubNamespace。
+        /// Dimension of the metric referenced by this policy. For details, see SubNamespace for each product in Cloud Product Monitoring Metrics.
         /// </summary>
         public readonly string SubNamespace;
         /// <summary>
-        /// 告警策略绑定 Tag。
+        /// Bind alert policy to Tag.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRuleTagResult> Tags;
         /// <summary>
-        /// 告警策略更新时间，时间戳格式。
+        /// Alarm policy update time, in timestamp format.
         /// </summary>
         public readonly string UpdatedAt;
         /// <summary>
-        /// 告警策略绑定的告警回调 URL 地址。
+        /// Alarm callback URL bound to the alarm policy.
         /// </summary>
         public readonly string Webhook;
         /// <summary>
-        /// 告警发生时告警回调 ID 列表。
+        /// Alarm callback ID list when an alarm occurs.
         /// </summary>
         public readonly ImmutableArray<string> WebhookIds;
 

@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Kms
 {
     /// <summary>
-    /// 用户管理密钥的集合，用户将相同类型或用途的密钥放在同一密钥环中以便于管理。
+    /// A collection for managing user keys; users place keys of the same type or purpose in the same keyring for easier management
     /// 
     /// ## Example Usage
     /// 
@@ -44,55 +44,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
     public partial class KeyRing : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 密钥环创建日期。
+        /// Keyring creation date
         /// </summary>
         [Output("createDate")]
         public Output<int> CreateDate { get; private set; } = null!;
 
         /// <summary>
-        /// 密钥环描述，长度为 0   - 8192 个字符。
+        /// Keyring description, length: 0–8192 characters
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 密钥环密钥次数。
+        /// Number of keys in keyring
         /// </summary>
         [Output("keyCount")]
         public Output<int> KeyCount { get; private set; } = null!;
 
         /// <summary>
-        /// 密钥环唯一标识符，UUID形式。
+        /// Keyring unique identifier, in UUID format
         /// </summary>
         [Output("keyRingId")]
         public Output<string> KeyRingId { get; private set; } = null!;
 
         /// <summary>
-        /// 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+        /// Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
         /// </summary>
         [Output("keyringName")]
         public Output<string> KeyringName { get; private set; } = null!;
 
         /// <summary>
-        /// 密钥环类型，取值：CustomKeyring。
+        /// Keyring type, value: CustomKeyring
         /// </summary>
         [Output("keyringType")]
         public Output<string> KeyringType { get; private set; } = null!;
 
         /// <summary>
-        /// 项目名称，默认值：default。
+        /// Project name, default value: default
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 密钥环租户ID。
+        /// Keyring tenant ID
         /// </summary>
         [Output("uid")]
         public Output<string> Uid { get; private set; } = null!;
 
         /// <summary>
-        /// 密钥环更新日期。
+        /// Keyring update date
         /// </summary>
         [Output("updateDate")]
         public Output<int> UpdateDate { get; private set; } = null!;
@@ -145,25 +145,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
     public sealed class KeyRingArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 密钥环描述，长度为 0   - 8192 个字符。
+        /// Keyring description, length: 0–8192 characters
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+        /// Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
         /// </summary>
         [Input("keyringName", required: true)]
         public Input<string> KeyringName { get; set; } = null!;
 
         /// <summary>
-        /// 密钥环类型，取值：CustomKeyring。
+        /// Keyring type, value: CustomKeyring
         /// </summary>
         [Input("keyringType")]
         public Input<string>? KeyringType { get; set; }
 
         /// <summary>
-        /// 项目名称，默认值：default。
+        /// Project name, default value: default
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
@@ -177,55 +177,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
     public sealed class KeyRingState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 密钥环创建日期。
+        /// Keyring creation date
         /// </summary>
         [Input("createDate")]
         public Input<int>? CreateDate { get; set; }
 
         /// <summary>
-        /// 密钥环描述，长度为 0   - 8192 个字符。
+        /// Keyring description, length: 0–8192 characters
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 密钥环密钥次数。
+        /// Number of keys in keyring
         /// </summary>
         [Input("keyCount")]
         public Input<int>? KeyCount { get; set; }
 
         /// <summary>
-        /// 密钥环唯一标识符，UUID形式。
+        /// Keyring unique identifier, in UUID format
         /// </summary>
         [Input("keyRingId")]
         public Input<string>? KeyRingId { get; set; }
 
         /// <summary>
-        /// 密钥环名称，长度为 2   - 31 个字符。合法字符：[a-zA-Z0-9-_]。
+        /// Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
         /// </summary>
         [Input("keyringName")]
         public Input<string>? KeyringName { get; set; }
 
         /// <summary>
-        /// 密钥环类型，取值：CustomKeyring。
+        /// Keyring type, value: CustomKeyring
         /// </summary>
         [Input("keyringType")]
         public Input<string>? KeyringType { get; set; }
 
         /// <summary>
-        /// 项目名称，默认值：default。
+        /// Project name, default value: default
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 密钥环租户ID。
+        /// Keyring tenant ID
         /// </summary>
         [Input("uid")]
         public Input<string>? Uid { get; set; }
 
         /// <summary>
-        /// 密钥环更新日期。
+        /// Keyring update date
         /// </summary>
         [Input("updateDate")]
         public Input<int>? UpdateDate { get; set; }

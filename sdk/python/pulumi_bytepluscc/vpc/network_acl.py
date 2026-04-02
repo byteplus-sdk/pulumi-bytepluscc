@@ -32,10 +32,10 @@ class NetworkAclArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkAclTagArgs']]]] = None):
         """
         The set of arguments for constructing a NetworkAcl resource.
-        :param pulumi.Input[builtins.str] vpc_id: 网络ACL所属VPC的ID。
-        :param pulumi.Input[builtins.str] description: 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
-        :param pulumi.Input[builtins.str] network_acl_name: 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
-        :param pulumi.Input[builtins.str] project_name: 网络ACL所属项目的名称。不填默认加入default项目。
+        :param pulumi.Input[builtins.str] vpc_id: ID of the VPC associated with the network ACL.
+        :param pulumi.Input[builtins.str] description: Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
+        :param pulumi.Input[builtins.str] network_acl_name: Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
+        :param pulumi.Input[builtins.str] project_name: Name of the project associated with the network ACL. If not specified, added to the default project.
         """
         pulumi.set(__self__, "vpc_id", vpc_id)
         if description is not None:
@@ -57,7 +57,7 @@ class NetworkAclArgs:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Input[builtins.str]:
         """
-        网络ACL所属VPC的ID。
+        ID of the VPC associated with the network ACL.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -69,7 +69,7 @@ class NetworkAclArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
         """
         return pulumi.get(self, "description")
 
@@ -99,7 +99,7 @@ class NetworkAclArgs:
     @pulumi.getter(name="networkAclName")
     def network_acl_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+        Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
         """
         return pulumi.get(self, "network_acl_name")
 
@@ -111,7 +111,7 @@ class NetworkAclArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络ACL所属项目的名称。不填默认加入default项目。
+        Name of the project associated with the network ACL. If not specified, added to the default project.
         """
         return pulumi.get(self, "project_name")
 
@@ -157,14 +157,14 @@ class _NetworkAclState:
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering NetworkAcl resources.
-        :param pulumi.Input[builtins.str] created_time: 网络ACL的创建时间。
-        :param pulumi.Input[builtins.str] description: 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
-        :param pulumi.Input[builtins.str] network_acl_id: 网络ACL的ID。
-        :param pulumi.Input[builtins.str] network_acl_name: 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
-        :param pulumi.Input[builtins.str] project_name: 网络ACL所属项目的名称。不填默认加入default项目。
-        :param pulumi.Input[builtins.str] status: 网络ACL的状态。Available：可用，Creating：创建中
-        :param pulumi.Input[builtins.str] updated_time: 网络ACL的更新时间。
-        :param pulumi.Input[builtins.str] vpc_id: 网络ACL所属VPC的ID。
+        :param pulumi.Input[builtins.str] created_time: Creation time of the network ACL.
+        :param pulumi.Input[builtins.str] description: Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
+        :param pulumi.Input[builtins.str] network_acl_id: Network ACL ID.
+        :param pulumi.Input[builtins.str] network_acl_name: Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
+        :param pulumi.Input[builtins.str] project_name: Name of the project associated with the network ACL. If not specified, added to the default project.
+        :param pulumi.Input[builtins.str] status: Status of the network ACL. Available: Available. Creating: Creating.
+        :param pulumi.Input[builtins.str] updated_time: Last updated time of the network ACL.
+        :param pulumi.Input[builtins.str] vpc_id: ID of the VPC associated with the network ACL.
         """
         if created_time is not None:
             pulumi.set(__self__, "created_time", created_time)
@@ -199,7 +199,7 @@ class _NetworkAclState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络ACL的创建时间。
+        Creation time of the network ACL.
         """
         return pulumi.get(self, "created_time")
 
@@ -229,7 +229,7 @@ class _NetworkAclState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
         """
         return pulumi.get(self, "description")
 
@@ -259,7 +259,7 @@ class _NetworkAclState:
     @pulumi.getter(name="networkAclId")
     def network_acl_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络ACL的ID。
+        Network ACL ID.
         """
         return pulumi.get(self, "network_acl_id")
 
@@ -271,7 +271,7 @@ class _NetworkAclState:
     @pulumi.getter(name="networkAclName")
     def network_acl_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+        Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
         """
         return pulumi.get(self, "network_acl_name")
 
@@ -283,7 +283,7 @@ class _NetworkAclState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络ACL所属项目的名称。不填默认加入default项目。
+        Name of the project associated with the network ACL. If not specified, added to the default project.
         """
         return pulumi.get(self, "project_name")
 
@@ -304,7 +304,7 @@ class _NetworkAclState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络ACL的状态。Available：可用，Creating：创建中
+        Status of the network ACL. Available: Available. Creating: Creating.
         """
         return pulumi.get(self, "status")
 
@@ -325,7 +325,7 @@ class _NetworkAclState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络ACL的更新时间。
+        Last updated time of the network ACL.
         """
         return pulumi.get(self, "updated_time")
 
@@ -337,7 +337,7 @@ class _NetworkAclState:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网络ACL所属VPC的ID。
+        ID of the VPC associated with the network ACL.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -362,7 +362,7 @@ class NetworkAcl(pulumi.CustomResource):
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        网络ACL用于控制子网的出入流量，其基于白名单原理设计，出入子网的流量必须被网络ACL规则允许才能放通。
+        The network ACL controls inbound and outbound traffic for subnets. It is designed based on the allowlist principle: traffic entering or leaving a subnet must be permitted by a network ACL rule to pass through.
 
         ## Import
 
@@ -372,10 +372,10 @@ class NetworkAcl(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
-        :param pulumi.Input[builtins.str] network_acl_name: 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
-        :param pulumi.Input[builtins.str] project_name: 网络ACL所属项目的名称。不填默认加入default项目。
-        :param pulumi.Input[builtins.str] vpc_id: 网络ACL所属VPC的ID。
+        :param pulumi.Input[builtins.str] description: Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
+        :param pulumi.Input[builtins.str] network_acl_name: Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
+        :param pulumi.Input[builtins.str] project_name: Name of the project associated with the network ACL. If not specified, added to the default project.
+        :param pulumi.Input[builtins.str] vpc_id: ID of the VPC associated with the network ACL.
         """
         ...
     @overload
@@ -384,7 +384,7 @@ class NetworkAcl(pulumi.CustomResource):
                  args: NetworkAclArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        网络ACL用于控制子网的出入流量，其基于白名单原理设计，出入子网的流量必须被网络ACL规则允许才能放通。
+        The network ACL controls inbound and outbound traffic for subnets. It is designed based on the allowlist principle: traffic entering or leaving a subnet must be permitted by a network ACL rule to pass through.
 
         ## Import
 
@@ -471,14 +471,14 @@ class NetworkAcl(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] created_time: 网络ACL的创建时间。
-        :param pulumi.Input[builtins.str] description: 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
-        :param pulumi.Input[builtins.str] network_acl_id: 网络ACL的ID。
-        :param pulumi.Input[builtins.str] network_acl_name: 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
-        :param pulumi.Input[builtins.str] project_name: 网络ACL所属项目的名称。不填默认加入default项目。
-        :param pulumi.Input[builtins.str] status: 网络ACL的状态。Available：可用，Creating：创建中
-        :param pulumi.Input[builtins.str] updated_time: 网络ACL的更新时间。
-        :param pulumi.Input[builtins.str] vpc_id: 网络ACL所属VPC的ID。
+        :param pulumi.Input[builtins.str] created_time: Creation time of the network ACL.
+        :param pulumi.Input[builtins.str] description: Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
+        :param pulumi.Input[builtins.str] network_acl_id: Network ACL ID.
+        :param pulumi.Input[builtins.str] network_acl_name: Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
+        :param pulumi.Input[builtins.str] project_name: Name of the project associated with the network ACL. If not specified, added to the default project.
+        :param pulumi.Input[builtins.str] status: Status of the network ACL. Available: Available. Creating: Creating.
+        :param pulumi.Input[builtins.str] updated_time: Last updated time of the network ACL.
+        :param pulumi.Input[builtins.str] vpc_id: ID of the VPC associated with the network ACL.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -504,7 +504,7 @@ class NetworkAcl(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        网络ACL的创建时间。
+        Creation time of the network ACL.
         """
         return pulumi.get(self, "created_time")
 
@@ -522,7 +522,7 @@ class NetworkAcl(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+        Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
         """
         return pulumi.get(self, "description")
 
@@ -540,7 +540,7 @@ class NetworkAcl(pulumi.CustomResource):
     @pulumi.getter(name="networkAclId")
     def network_acl_id(self) -> pulumi.Output[builtins.str]:
         """
-        网络ACL的ID。
+        Network ACL ID.
         """
         return pulumi.get(self, "network_acl_id")
 
@@ -548,7 +548,7 @@ class NetworkAcl(pulumi.CustomResource):
     @pulumi.getter(name="networkAclName")
     def network_acl_name(self) -> pulumi.Output[builtins.str]:
         """
-        网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+        Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
         """
         return pulumi.get(self, "network_acl_name")
 
@@ -556,7 +556,7 @@ class NetworkAcl(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        网络ACL所属项目的名称。不填默认加入default项目。
+        Name of the project associated with the network ACL. If not specified, added to the default project.
         """
         return pulumi.get(self, "project_name")
 
@@ -569,7 +569,7 @@ class NetworkAcl(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        网络ACL的状态。Available：可用，Creating：创建中
+        Status of the network ACL. Available: Available. Creating: Creating.
         """
         return pulumi.get(self, "status")
 
@@ -582,7 +582,7 @@ class NetworkAcl(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        网络ACL的更新时间。
+        Last updated time of the network ACL.
         """
         return pulumi.get(self, "updated_time")
 
@@ -590,7 +590,7 @@ class NetworkAcl(pulumi.CustomResource):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Output[builtins.str]:
         """
-        网络ACL所属VPC的ID。
+        ID of the VPC associated with the network ACL.
         """
         return pulumi.get(self, "vpc_id")
 

@@ -13,74 +13,74 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceDisasterRecoveryInstance {
     /**
-     * @return 主实例与灾备实例之间同步任务的 ID。
+     * @return ID of synchronization tasks between primary and disaster recovery instances.
      * 
      */
     private @Nullable String dtsTaskId;
     /**
-     * @return 主实例与灾备实例之间同步任务的名称。
+     * @return Name of the synchronization task between the primary instance and the disaster recovery instance
      * 
      */
     private @Nullable String dtsTaskName;
     /**
-     * @return 主实例与灾备实例之间同步任务的状态。
+     * @return Status of synchronization tasks between the primary instance and the disaster recovery instance
      * 
      */
     private @Nullable String dtsTaskStatus;
     /**
-     * @return 灾备实例的 ID。
+     * @return Disaster recovery instance ID.
      * 
      */
     private @Nullable String instanceId;
     /**
-     * @return 灾备实例的名称。
+     * @return Name of disaster recovery instance.
      * 
      */
     private @Nullable String instanceName;
     /**
-     * @return 灾备实例与主实例之间的时延。
+     * @return Latency between the disaster recovery instance and the primary instance.
      * 
      */
     private @Nullable Integer secondsBehindMaster;
 
     private InstanceDisasterRecoveryInstance() {}
     /**
-     * @return 主实例与灾备实例之间同步任务的 ID。
+     * @return ID of synchronization tasks between primary and disaster recovery instances.
      * 
      */
     public Optional<String> dtsTaskId() {
         return Optional.ofNullable(this.dtsTaskId);
     }
     /**
-     * @return 主实例与灾备实例之间同步任务的名称。
+     * @return Name of the synchronization task between the primary instance and the disaster recovery instance
      * 
      */
     public Optional<String> dtsTaskName() {
         return Optional.ofNullable(this.dtsTaskName);
     }
     /**
-     * @return 主实例与灾备实例之间同步任务的状态。
+     * @return Status of synchronization tasks between the primary instance and the disaster recovery instance
      * 
      */
     public Optional<String> dtsTaskStatus() {
         return Optional.ofNullable(this.dtsTaskStatus);
     }
     /**
-     * @return 灾备实例的 ID。
+     * @return Disaster recovery instance ID.
      * 
      */
     public Optional<String> instanceId() {
         return Optional.ofNullable(this.instanceId);
     }
     /**
-     * @return 灾备实例的名称。
+     * @return Name of disaster recovery instance.
      * 
      */
     public Optional<String> instanceName() {
         return Optional.ofNullable(this.instanceName);
     }
     /**
-     * @return 灾备实例与主实例之间的时延。
+     * @return Latency between the disaster recovery instance and the primary instance.
      * 
      */
     public Optional<Integer> secondsBehindMaster() {

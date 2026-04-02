@@ -17,14 +17,14 @@ public final class RuleDimensionConditionsProjectConditionArgs extends com.pulum
     public static final RuleDimensionConditionsProjectConditionArgs Empty = new RuleDimensionConditionsProjectConditionArgs();
 
     /**
-     * 项目名称列表。数组形式。多个值之间使用英文半角逗号,分割。
+     * Project name list, in array format. Separate multiple values with commas.
      * 
      */
     @Import(name="projects")
     private @Nullable Output<List<String>> projects;
 
     /**
-     * @return 项目名称列表。数组形式。多个值之间使用英文半角逗号,分割。
+     * @return Project name list, in array format. Separate multiple values with commas.
      * 
      */
     public Optional<Output<List<String>>> projects() {
@@ -56,7 +56,7 @@ public final class RuleDimensionConditionsProjectConditionArgs extends com.pulum
         }
 
         /**
-         * @param projects 项目名称列表。数组形式。多个值之间使用英文半角逗号,分割。
+         * @param projects Project name list, in array format. Separate multiple values with commas.
          * 
          * @return builder
          * 
@@ -67,7 +67,7 @@ public final class RuleDimensionConditionsProjectConditionArgs extends com.pulum
         }
 
         /**
-         * @param projects 项目名称列表。数组形式。多个值之间使用英文半角逗号,分割。
+         * @param projects Project name list, in array format. Separate multiple values with commas.
          * 
          * @return builder
          * 
@@ -77,7 +77,7 @@ public final class RuleDimensionConditionsProjectConditionArgs extends com.pulum
         }
 
         /**
-         * @param projects 项目名称列表。数组形式。多个值之间使用英文半角逗号,分割。
+         * @param projects Project name list, in array format. Separate multiple values with commas.
          * 
          * @return builder
          * 

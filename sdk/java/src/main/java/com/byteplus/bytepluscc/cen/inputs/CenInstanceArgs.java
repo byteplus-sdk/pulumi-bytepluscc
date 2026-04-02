@@ -16,14 +16,14 @@ public final class CenInstanceArgs extends com.pulumi.resources.ResourceArgs {
     public static final CenInstanceArgs Empty = new CenInstanceArgs();
 
     /**
-     * 网络实例的ID。
+     * Network instance ID
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 网络实例的ID。
+     * @return Network instance ID
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -31,14 +31,14 @@ public final class CenInstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网络实例所属账号的ID。
+     * Account ID for the network instance
      * 
      */
     @Import(name="instanceOwnerId")
     private @Nullable Output<String> instanceOwnerId;
 
     /**
-     * @return 网络实例所属账号的ID。
+     * @return Account ID for the network instance
      * 
      */
     public Optional<Output<String>> instanceOwnerId() {
@@ -46,14 +46,14 @@ public final class CenInstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网络实例所在的地域。
+     * Region where the network instance is located
      * 
      */
     @Import(name="instanceRegionId")
     private @Nullable Output<String> instanceRegionId;
 
     /**
-     * @return 网络实例所在的地域。
+     * @return Region where the network instance is located
      * 
      */
     public Optional<Output<String>> instanceRegionId() {
@@ -61,14 +61,14 @@ public final class CenInstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 网络实例的类型。
+     * Type of the network instance
      * 
      */
     @Import(name="instanceType")
     private @Nullable Output<String> instanceType;
 
     /**
-     * @return 网络实例的类型。
+     * @return Type of the network instance
      * 
      */
     public Optional<Output<String>> instanceType() {
@@ -103,7 +103,7 @@ public final class CenInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 网络实例的ID。
+         * @param instanceId Network instance ID
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class CenInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 网络实例的ID。
+         * @param instanceId Network instance ID
          * 
          * @return builder
          * 
@@ -124,7 +124,7 @@ public final class CenInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceOwnerId 网络实例所属账号的ID。
+         * @param instanceOwnerId Account ID for the network instance
          * 
          * @return builder
          * 
@@ -135,7 +135,7 @@ public final class CenInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceOwnerId 网络实例所属账号的ID。
+         * @param instanceOwnerId Account ID for the network instance
          * 
          * @return builder
          * 
@@ -145,7 +145,7 @@ public final class CenInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceRegionId 网络实例所在的地域。
+         * @param instanceRegionId Region where the network instance is located
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class CenInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceRegionId 网络实例所在的地域。
+         * @param instanceRegionId Region where the network instance is located
          * 
          * @return builder
          * 
@@ -166,7 +166,7 @@ public final class CenInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceType 网络实例的类型。
+         * @param instanceType Type of the network instance
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class CenInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceType 网络实例的类型。
+         * @param instanceType Type of the network instance
          * 
          * @return builder
          * 

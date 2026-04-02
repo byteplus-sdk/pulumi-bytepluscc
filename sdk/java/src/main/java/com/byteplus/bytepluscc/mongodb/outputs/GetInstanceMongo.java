@@ -12,98 +12,98 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceMongo {
     /**
-     * @return Mongos 的节点 ID。
+     * @return Mongos node ID
      * 
      */
     private String mongosNodeId;
     /**
-     * @return 节点规格。
+     * @return Node specification.
      * 
      */
     private String nodeSpec;
     /**
-     * @return 节点状态。
+     * @return Node status.
      * 
      */
     private String nodeStatus;
     /**
-     * @return 总内存。单位：GiB。
+     * @return Total memory. Unit: GiB.
      * 
      */
     private Double totalMemoryGb;
     /**
-     * @return 总核数。
+     * @return Total cores.
      * 
      */
     private Double totalvCpu;
     /**
-     * @return 已用内存。单位：GiB。
+     * @return Used memory. Unit: GiB.
      * 
      */
     private Double usedMemoryGb;
     /**
-     * @return 已用核数。
+     * @return Used cores.
      * 
      */
     private Double usedvCpu;
     /**
-     * @return 当前节点所属的可用区 ID。
+     * @return Availability zone ID of the current node.
      * 
      */
     private String zoneId;
 
     private GetInstanceMongo() {}
     /**
-     * @return Mongos 的节点 ID。
+     * @return Mongos node ID
      * 
      */
     public String mongosNodeId() {
         return this.mongosNodeId;
     }
     /**
-     * @return 节点规格。
+     * @return Node specification.
      * 
      */
     public String nodeSpec() {
         return this.nodeSpec;
     }
     /**
-     * @return 节点状态。
+     * @return Node status.
      * 
      */
     public String nodeStatus() {
         return this.nodeStatus;
     }
     /**
-     * @return 总内存。单位：GiB。
+     * @return Total memory. Unit: GiB.
      * 
      */
     public Double totalMemoryGb() {
         return this.totalMemoryGb;
     }
     /**
-     * @return 总核数。
+     * @return Total cores.
      * 
      */
     public Double totalvCpu() {
         return this.totalvCpu;
     }
     /**
-     * @return 已用内存。单位：GiB。
+     * @return Used memory. Unit: GiB.
      * 
      */
     public Double usedMemoryGb() {
         return this.usedMemoryGb;
     }
     /**
-     * @return 已用核数。
+     * @return Used cores.
      * 
      */
     public Double usedvCpu() {
         return this.usedvCpu;
     }
     /**
-     * @return 当前节点所属的可用区 ID。
+     * @return Availability zone ID of the current node.
      * 
      */
     public String zoneId() {

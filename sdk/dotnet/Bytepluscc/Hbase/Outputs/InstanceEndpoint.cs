@@ -15,27 +15,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Hbase.Outputs
     public sealed class InstanceEndpoint
     {
         /// <summary>
-        /// 连接地址类型，关于连接地址的更多信息，请参见连接地址类型。取值范围如下：Zk：ZK 地址。Thrift：Thrift2 地址。HBaseReUsedEipId：当 ZK 连接地址或 Thrift2 连接地址开启了公网访问时，会返回该参数，表示实例中其他组件（如 RS 节点、Master 节点等）共享绑定使用的 EIP ID 信息。
+        /// Connection address type. For more information about connection addresses, see Connection Address Types. The value range is as follows: Zk: ZK address. Thrift: Thrift2 address. HBaseReUsedEipId: When public access is enabled for the ZK or Thrift2 connection address, this parameter is returned, indicating the EIP ID information shared and used by other components in the instance (such as RS nodes, Master nodes, etc.)
         /// </summary>
         public readonly string? AddressType;
         /// <summary>
-        /// 当 ZK 连接地址或 Thrift2 连接地址开启了公网访问时，会返回该参数，表示 EIP ID。
+        /// When the ZK connection address or Thrift2 connection address enables public access, this parameter is returned, indicating the EIP ID.
         /// </summary>
         public readonly string? EipId;
         /// <summary>
-        /// 连接地址 ID。说明默认仅返回 ZK 私网连接地址。若您申请了 Thrift2 连接地址，或者为 ZK 或 Thrift2 连接地址开启了公网访问，那么还会同时对应连接地址的 ID。当连接地址类型为 HBaseReUsedEipId 时，连接地址 ID 也固定为 HBaseReUsedEipId。
+        /// Connection address ID. By default, only the ZK private network connection address is returned. If you apply for a Thrift2 connection address or enable public access for the ZK or Thrift2 connection address, the corresponding connection address ID will also be returned. When the connection address type is HBaseReUsedEipId, the connection address ID is fixed as HBaseReUsedEipId
         /// </summary>
         public readonly string? EndpointId;
         /// <summary>
-        /// 连接地址的连接串。说明默认仅返回 ZK 私网连接地址。若您申请了 Thrift2 连接地址，或者为 ZK 或 Thrift2 连接地址开启了公网访问，那么还会同时对应连接地址的连接串。当连接地址类型为 HBaseReUsedEipId 时，连接地址的连接串也固定为 HBaseReUsedEipId。
+        /// Connection string for the connection address. By default, only the ZK private network connection address is returned. If you have requested a Thrift2 connection address, or enabled public access for ZK or Thrift2 connection addresses, the corresponding connection string will also be provided. When the connection address type is HBaseReUsedEipId, the connection string is always set to HBaseReUsedEipId.
         /// </summary>
         public readonly string? EndpointStr;
         /// <summary>
-        /// 连接地址网络类型。取值范围如下：Public：公网访问地址。Private：私网访问地址。
+        /// Connection address network type. Value range: Public: public access address. Private: private access address.
         /// </summary>
         public readonly string? NetworkType;
         /// <summary>
-        /// 私网域名是否开启公网解析。
+        /// Whether public DNS resolution is enabled for the private network domain name.
         /// </summary>
         public readonly bool? PrivateDnsVisibility;
 

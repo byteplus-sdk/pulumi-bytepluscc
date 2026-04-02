@@ -19,14 +19,14 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHead
     public static final DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesArgs Empty = new DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesArgs();
 
     /**
-     * 表示鉴权请求头的设置策略。
+     * Indicates the configuration policy for authentication request headers.
      * 
      */
     @Import(name="requestHeaderComponents")
     private @Nullable Output<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponentsArgs> requestHeaderComponents;
 
     /**
-     * @return 表示鉴权请求头的设置策略。
+     * @return Indicates the configuration policy for authentication request headers.
      * 
      */
     public Optional<Output<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponentsArgs>> requestHeaderComponents() {
@@ -41,14 +41,14 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHead
     }
 
     /**
-     * 表示鉴权请求中 HOST 头部的值。该参数的默认值是 default，表示 HOST 头部的值与您的加速域名相同。
+     * Indicates the value of the HOST header in authentication requests. The default value for this parameter is default, meaning the HOST header matches your acceleration domain name.
      * 
      */
     @Import(name="requestHost")
     private @Nullable Output<String> requestHost;
 
     /**
-     * @return 表示鉴权请求中 HOST 头部的值。该参数的默认值是 default，表示 HOST 头部的值与您的加速域名相同。
+     * @return Indicates the value of the HOST header in authentication requests. The default value for this parameter is default, meaning the HOST header matches your acceleration domain name.
      * 
      */
     public Optional<Output<String>> requestHost() {
@@ -82,7 +82,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHead
         }
 
         /**
-         * @param requestHeaderComponents 表示鉴权请求头的设置策略。
+         * @param requestHeaderComponents Indicates the configuration policy for authentication request headers.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHead
         }
 
         /**
-         * @param requestHeaderComponents 表示鉴权请求头的设置策略。
+         * @param requestHeaderComponents Indicates the configuration policy for authentication request headers.
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHead
         }
 
         /**
-         * @param requestHost 表示鉴权请求中 HOST 头部的值。该参数的默认值是 default，表示 HOST 头部的值与您的加速域名相同。
+         * @param requestHost Indicates the value of the HOST header in authentication requests. The default value for this parameter is default, meaning the HOST header matches your acceleration domain name.
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHead
         }
 
         /**
-         * @param requestHost 表示鉴权请求中 HOST 头部的值。该参数的默认值是 default，表示 HOST 头部的值与您的加速域名相同。
+         * @param requestHost Indicates the value of the HOST header in authentication requests. The default value for this parameter is default, meaning the HOST header matches your acceleration domain name.
          * 
          * @return builder
          * 

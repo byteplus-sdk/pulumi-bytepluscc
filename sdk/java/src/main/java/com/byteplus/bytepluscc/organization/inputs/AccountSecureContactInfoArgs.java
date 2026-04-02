@@ -17,14 +17,14 @@ public final class AccountSecureContactInfoArgs extends com.pulumi.resources.Res
     public static final AccountSecureContactInfoArgs Empty = new AccountSecureContactInfoArgs();
 
     /**
-     * 安全邮箱。
+     * Security email
      * 
      */
     @Import(name="email")
     private @Nullable Output<String> email;
 
     /**
-     * @return 安全邮箱。
+     * @return Security email
      * 
      */
     public Optional<Output<String>> email() {
@@ -32,14 +32,14 @@ public final class AccountSecureContactInfoArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 安全邮箱是否验证，1: 未验证，2: 已验证。
+     * Security email verification status: 1. Not verified, 2. Verified
      * 
      */
     @Import(name="emailVerified")
     private @Nullable Output<Integer> emailVerified;
 
     /**
-     * @return 安全邮箱是否验证，1: 未验证，2: 已验证。
+     * @return Security email verification status: 1. Not verified, 2. Verified
      * 
      */
     public Optional<Output<Integer>> emailVerified() {
@@ -47,14 +47,14 @@ public final class AccountSecureContactInfoArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 变更中的新邮箱。
+     * New email being changed
      * 
      */
     @Import(name="newEmail")
     private @Nullable Output<String> newEmail;
 
     /**
-     * @return 变更中的新邮箱。
+     * @return New email being changed
      * 
      */
     public Optional<Output<String>> newEmail() {
@@ -62,14 +62,14 @@ public final class AccountSecureContactInfoArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 变更中的新手机号。
+     * New mobile number being changed
      * 
      */
     @Import(name="newPhone")
     private @Nullable Output<String> newPhone;
 
     /**
-     * @return 变更中的新手机号。
+     * @return New mobile number being changed
      * 
      */
     public Optional<Output<String>> newPhone() {
@@ -77,14 +77,14 @@ public final class AccountSecureContactInfoArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 安全手机号。
+     * Security mobile number
      * 
      */
     @Import(name="phone")
     private @Nullable Output<String> phone;
 
     /**
-     * @return 安全手机号。
+     * @return Security mobile number
      * 
      */
     public Optional<Output<String>> phone() {
@@ -92,14 +92,14 @@ public final class AccountSecureContactInfoArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * 安全手机号是否验证，1: 未验证，2: 已验证。
+     * Security mobile number verification status: 1. Not verified, 2. Verified
      * 
      */
     @Import(name="phoneVerified")
     private @Nullable Output<Integer> phoneVerified;
 
     /**
-     * @return 安全手机号是否验证，1: 未验证，2: 已验证。
+     * @return Security mobile number verification status: 1. Not verified, 2. Verified
      * 
      */
     public Optional<Output<Integer>> phoneVerified() {
@@ -136,7 +136,7 @@ public final class AccountSecureContactInfoArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param email 安全邮箱。
+         * @param email Security email
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class AccountSecureContactInfoArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param email 安全邮箱。
+         * @param email Security email
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class AccountSecureContactInfoArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param emailVerified 安全邮箱是否验证，1: 未验证，2: 已验证。
+         * @param emailVerified Security email verification status: 1. Not verified, 2. Verified
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class AccountSecureContactInfoArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param emailVerified 安全邮箱是否验证，1: 未验证，2: 已验证。
+         * @param emailVerified Security email verification status: 1. Not verified, 2. Verified
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class AccountSecureContactInfoArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param newEmail 变更中的新邮箱。
+         * @param newEmail New email being changed
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class AccountSecureContactInfoArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param newEmail 变更中的新邮箱。
+         * @param newEmail New email being changed
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class AccountSecureContactInfoArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param newPhone 变更中的新手机号。
+         * @param newPhone New mobile number being changed
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class AccountSecureContactInfoArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param newPhone 变更中的新手机号。
+         * @param newPhone New mobile number being changed
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class AccountSecureContactInfoArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param phone 安全手机号。
+         * @param phone Security mobile number
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class AccountSecureContactInfoArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param phone 安全手机号。
+         * @param phone Security mobile number
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class AccountSecureContactInfoArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param phoneVerified 安全手机号是否验证，1: 未验证，2: 已验证。
+         * @param phoneVerified Security mobile number verification status: 1. Not verified, 2. Verified
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class AccountSecureContactInfoArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param phoneVerified 安全手机号是否验证，1: 未验证，2: 已验证。
+         * @param phoneVerified Security mobile number verification status: 1. Not verified, 2. Verified
          * 
          * @return builder
          * 

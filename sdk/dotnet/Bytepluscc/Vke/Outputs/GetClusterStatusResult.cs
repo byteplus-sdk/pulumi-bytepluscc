@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class GetClusterStatusResult
     {
         /// <summary>
-        /// 状态条件列表
+        /// Status condition list
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterStatusConditionResult> Conditions;
         /// <summary>
-        /// 集群状态阶段
+        /// Cluster status phase.
         /// </summary>
         public readonly string Phase;
 

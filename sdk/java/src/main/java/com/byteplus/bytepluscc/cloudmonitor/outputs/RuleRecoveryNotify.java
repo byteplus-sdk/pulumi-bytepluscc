@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RuleRecoveryNotify {
     /**
-     * @return 是否开启告警恢复通知。取值：true：（默认）开启告警恢复通知。false：关闭告警恢复通知。
+     * @return Enable alert recovery notification. Options: true: (default) enable alert recovery notification, false: disable alert recovery notification.
      * 
      */
     private @Nullable Boolean enable;
 
     private RuleRecoveryNotify() {}
     /**
-     * @return 是否开启告警恢复通知。取值：true：（默认）开启告警恢复通知。false：关闭告警恢复通知。
+     * @return Enable alert recovery notification. Options: true: (default) enable alert recovery notification, false: disable alert recovery notification.
      * 
      */
     public Optional<Boolean> enable() {

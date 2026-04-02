@@ -17,7 +17,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * API请求参数 - 创建RDS SQL Server白名单（CreateAllowList）。
+ * API request parameter - Create RDS SQL Server allowlist (CreateAllowList)
  * 
  * ## Example Usage
  * 
@@ -34,112 +34,112 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:rdsmssql/allowList:AllowList")
 public class AllowList extends com.pulumi.resources.CustomResource {
     /**
-     * IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+     * IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
      * 
      */
     @Export(name="allowList", refs={String.class}, tree="[0]")
     private Output<String> allowList;
 
     /**
-     * @return IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+     * @return IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
      * 
      */
     public Output<String> allowList() {
         return this.allowList;
     }
     /**
-     * 白名单分类。
+     * Allowlist category
      * 
      */
     @Export(name="allowListCategory", refs={String.class}, tree="[0]")
     private Output<String> allowListCategory;
 
     /**
-     * @return 白名单分类。
+     * @return Allowlist category
      * 
      */
     public Output<String> allowListCategory() {
         return this.allowListCategory;
     }
     /**
-     * 白名单描述。
+     * Allowlist description
      * 
      */
     @Export(name="allowListDesc", refs={String.class}, tree="[0]")
     private Output<String> allowListDesc;
 
     /**
-     * @return 白名单描述。
+     * @return Allowlist description
      * 
      */
     public Output<String> allowListDesc() {
         return this.allowListDesc;
     }
     /**
-     * 白名单的id。
+     * Allowlist ID
      * 
      */
     @Export(name="allowListId", refs={String.class}, tree="[0]")
     private Output<String> allowListId;
 
     /**
-     * @return 白名单的id。
+     * @return Allowlist ID
      * 
      */
     public Output<String> allowListId() {
         return this.allowListId;
     }
     /**
-     * AllowListIP数量。
+     * Allowlist IP count
      * 
      */
     @Export(name="allowListIpNum", refs={Integer.class}, tree="[0]")
     private Output<Integer> allowListIpNum;
 
     /**
-     * @return AllowListIP数量。
+     * @return Allowlist IP count
      * 
      */
     public Output<Integer> allowListIpNum() {
         return this.allowListIpNum;
     }
     /**
-     * 白名单名称。
+     * Allowlist name
      * 
      */
     @Export(name="allowListName", refs={String.class}, tree="[0]")
     private Output<String> allowListName;
 
     /**
-     * @return 白名单名称。
+     * @return Allowlist name
      * 
      */
     public Output<String> allowListName() {
         return this.allowListName;
     }
     /**
-     * 白名单内的IP地址类型，当前仅支持IPv4。
+     * IP address type in the allowlist. Only IPv4 is supported
      * 
      */
     @Export(name="allowListType", refs={String.class}, tree="[0]")
     private Output<String> allowListType;
 
     /**
-     * @return 白名单内的IP地址类型，当前仅支持IPv4。
+     * @return IP address type in the allowlist. Only IPv4 is supported
      * 
      */
     public Output<String> allowListType() {
         return this.allowListType;
     }
     /**
-     * 绑定的实例数量。解绑实例的白名单时必传。
+     * Number of bound instances. Required when unbinding an instance from the allowlist
      * 
      */
     @Export(name="associatedInstanceNum", refs={Integer.class}, tree="[0]")
     private Output<Integer> associatedInstanceNum;
 
     /**
-     * @return 绑定的实例数量。解绑实例的白名单时必传。
+     * @return Number of bound instances. Required when unbinding an instance from the allowlist
      * 
      */
     public Output<Integer> associatedInstanceNum() {
@@ -152,42 +152,42 @@ public class AllowList extends com.pulumi.resources.CustomResource {
         return this.associatedInstances;
     }
     /**
-     * 实例ID。
+     * Instance ID
      * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
-     * @return 实例ID。
+     * @return Instance ID
      * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
-     * 项目名称。
+     * Project name
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 项目名称。
+     * @return Project name
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 安全组之外的、需要加入白名单的IP地址，可输入IP地址或CIDR格式的IP地址段。如果该字段与AllowList同时指定，以AllowList为准。
+     * IP addresses outside the security group that need to be added to the allowlist. Enter IP addresses or CIDR-formatted IP ranges. If both this field and AllowList are specified, AllowList takes precedence
      * 
      */
     @Export(name="userAllowList", refs={String.class}, tree="[0]")
     private Output<String> userAllowList;
 
     /**
-     * @return 安全组之外的、需要加入白名单的IP地址，可输入IP地址或CIDR格式的IP地址段。如果该字段与AllowList同时指定，以AllowList为准。
+     * @return IP addresses outside the security group that need to be added to the allowlist. Enter IP addresses or CIDR-formatted IP ranges. If both this field and AllowList are specified, AllowList takes precedence
      * 
      */
     public Output<String> userAllowList() {

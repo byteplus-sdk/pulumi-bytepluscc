@@ -11,8 +11,8 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
 {
     /// <summary>
-    /// 当您创建好云身份中心用户后，需要授予用户访问到各账号的登录访问权限。
-    /// 当用户访问火山引擎云资源的权限访问具备可抽象的共性时，如：网络运维权限、安全管理权限等，您可以在云身份中心预置访问权限集作为权限模版，最终基于访问权限集来实现中心化授权。云身份中心将会为您同步分发访问权限集到各个账号，减少企业权限的运维成本。
+    /// After you create a Cloud Identity Center user, you need to grant the user login access to each account.
+    /// When users require access to Volcano Engine cloud resources with permissions that share abstractable characteristics, such as network operations permissions or security management permissions, you can predefine permission sets in the Cloud Identity Center as templates. You can achieve centralized authorization based on these permission sets. The Cloud Identity Center will synchronize and distribute permission sets to each account, reducing enterprise permission management costs.
     /// 
     /// ## Example Usage
     /// 
@@ -45,49 +45,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     public partial class PermissionSetAssignment : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 授权创建时间。
+        /// Authorization creation time
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 权限集 ID。
+        /// Permission set ID
         /// </summary>
         [Output("permissionSetId")]
         public Output<string> PermissionSetId { get; private set; } = null!;
 
         /// <summary>
-        /// 权限集名称。
+        /// Permission set name
         /// </summary>
         [Output("permissionSetName")]
         public Output<string> PermissionSetName { get; private set; } = null!;
 
         /// <summary>
-        /// 云身份中心对象 ID
+        /// Cloud Identity Center object ID
         /// </summary>
         [Output("principalId")]
         public Output<string> PrincipalId { get; private set; } = null!;
 
         /// <summary>
-        /// 云身份中心对象名。
+        /// Cloud Identity Center object name
         /// </summary>
         [Output("principalName")]
         public Output<string> PrincipalName { get; private set; } = null!;
 
         /// <summary>
-        /// 云身份中心对象类型，User 或者 Group。
+        /// Cloud Identity Center object type: User or Group
         /// </summary>
         [Output("principalType")]
         public Output<string> PrincipalType { get; private set; } = null!;
 
         /// <summary>
-        /// 授权账号 ID。
+        /// Authorized account ID
         /// </summary>
         [Output("targetId")]
         public Output<string> TargetId { get; private set; } = null!;
 
         /// <summary>
-        /// 授权账号名。
+        /// Authorized account name
         /// </summary>
         [Output("targetName")]
         public Output<string> TargetName { get; private set; } = null!;
@@ -140,25 +140,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     public sealed class PermissionSetAssignmentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 权限集 ID。
+        /// Permission set ID
         /// </summary>
         [Input("permissionSetId", required: true)]
         public Input<string> PermissionSetId { get; set; } = null!;
 
         /// <summary>
-        /// 云身份中心对象 ID
+        /// Cloud Identity Center object ID
         /// </summary>
         [Input("principalId", required: true)]
         public Input<string> PrincipalId { get; set; } = null!;
 
         /// <summary>
-        /// 云身份中心对象类型，User 或者 Group。
+        /// Cloud Identity Center object type: User or Group
         /// </summary>
         [Input("principalType", required: true)]
         public Input<string> PrincipalType { get; set; } = null!;
 
         /// <summary>
-        /// 授权账号 ID。
+        /// Authorized account ID
         /// </summary>
         [Input("targetId", required: true)]
         public Input<string> TargetId { get; set; } = null!;
@@ -172,49 +172,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     public sealed class PermissionSetAssignmentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 授权创建时间。
+        /// Authorization creation time
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 权限集 ID。
+        /// Permission set ID
         /// </summary>
         [Input("permissionSetId")]
         public Input<string>? PermissionSetId { get; set; }
 
         /// <summary>
-        /// 权限集名称。
+        /// Permission set name
         /// </summary>
         [Input("permissionSetName")]
         public Input<string>? PermissionSetName { get; set; }
 
         /// <summary>
-        /// 云身份中心对象 ID
+        /// Cloud Identity Center object ID
         /// </summary>
         [Input("principalId")]
         public Input<string>? PrincipalId { get; set; }
 
         /// <summary>
-        /// 云身份中心对象名。
+        /// Cloud Identity Center object name
         /// </summary>
         [Input("principalName")]
         public Input<string>? PrincipalName { get; set; }
 
         /// <summary>
-        /// 云身份中心对象类型，User 或者 Group。
+        /// Cloud Identity Center object type: User or Group
         /// </summary>
         [Input("principalType")]
         public Input<string>? PrincipalType { get; set; }
 
         /// <summary>
-        /// 授权账号 ID。
+        /// Authorized account ID
         /// </summary>
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }
 
         /// <summary>
-        /// 授权账号名。
+        /// Authorized account name
         /// </summary>
         [Input("targetName")]
         public Input<string>? TargetName { get; set; }

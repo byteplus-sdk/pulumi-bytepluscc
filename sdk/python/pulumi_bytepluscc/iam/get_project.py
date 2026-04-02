@@ -66,7 +66,7 @@ class GetProjectResult:
     @pulumi.getter(name="accountId")
     def account_id(self) -> builtins.int:
         """
-        账号ID
+        Account ID
         """
         return pulumi.get(self, "account_id")
 
@@ -74,7 +74,7 @@ class GetProjectResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        创建时间
+        Creation Time
         """
         return pulumi.get(self, "created_time")
 
@@ -82,7 +82,7 @@ class GetProjectResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        描述
+        Description
         """
         return pulumi.get(self, "description")
 
@@ -90,7 +90,7 @@ class GetProjectResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> builtins.str:
         """
-        展示名
+        Display Name
         """
         return pulumi.get(self, "display_name")
 
@@ -98,7 +98,7 @@ class GetProjectResult:
     @pulumi.getter(name="hasPermission")
     def has_permission(self) -> builtins.bool:
         """
-        是否可见
+        Visible
         """
         return pulumi.get(self, "has_permission")
 
@@ -114,7 +114,7 @@ class GetProjectResult:
     @pulumi.getter(name="parentProjectName")
     def parent_project_name(self) -> builtins.str:
         """
-        父项目名称
+        Parent Project Name
         """
         return pulumi.get(self, "parent_project_name")
 
@@ -122,7 +122,7 @@ class GetProjectResult:
     @pulumi.getter
     def path(self) -> builtins.str:
         """
-        项目路径
+        Project Path
         """
         return pulumi.get(self, "path")
 
@@ -130,7 +130,7 @@ class GetProjectResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        项目名称
+        Project Name
         """
         return pulumi.get(self, "project_name")
 
@@ -138,7 +138,7 @@ class GetProjectResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        启用状态
+        Enabled Status
         """
         return pulumi.get(self, "status")
 
@@ -146,7 +146,7 @@ class GetProjectResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        更新时间
+        Update Time
         """
         return pulumi.get(self, "updated_time")
 

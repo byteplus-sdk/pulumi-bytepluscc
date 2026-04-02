@@ -17,14 +17,14 @@ public final class RuleRuleActionForwardGroupConfigServerGroupTupleArgs extends 
     public static final RuleRuleActionForwardGroupConfigServerGroupTupleArgs Empty = new RuleRuleActionForwardGroupConfigServerGroupTupleArgs();
 
     /**
-     * 转发到的目的服务器组 ID。
+     * Destination server group ID.
      * 
      */
     @Import(name="serverGroupId")
     private @Nullable Output<String> serverGroupId;
 
     /**
-     * @return 转发到的目的服务器组 ID。
+     * @return Destination server group ID.
      * 
      */
     public Optional<Output<String>> serverGroupId() {
@@ -32,14 +32,14 @@ public final class RuleRuleActionForwardGroupConfigServerGroupTupleArgs extends 
     }
 
     /**
-     * 服务器组权重。
+     * Server group weight.
      * 
      */
     @Import(name="weight")
     private @Nullable Output<Integer> weight;
 
     /**
-     * @return 服务器组权重。
+     * @return Server group weight.
      * 
      */
     public Optional<Output<Integer>> weight() {
@@ -72,7 +72,7 @@ public final class RuleRuleActionForwardGroupConfigServerGroupTupleArgs extends 
         }
 
         /**
-         * @param serverGroupId 转发到的目的服务器组 ID。
+         * @param serverGroupId Destination server group ID.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class RuleRuleActionForwardGroupConfigServerGroupTupleArgs extends 
         }
 
         /**
-         * @param serverGroupId 转发到的目的服务器组 ID。
+         * @param serverGroupId Destination server group ID.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class RuleRuleActionForwardGroupConfigServerGroupTupleArgs extends 
         }
 
         /**
-         * @param weight 服务器组权重。
+         * @param weight Server group weight.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class RuleRuleActionForwardGroupConfigServerGroupTupleArgs extends 
         }
 
         /**
-         * @param weight 服务器组权重。
+         * @param weight Server group weight.
          * 
          * @return builder
          * 

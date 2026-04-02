@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class GetDomainCustomizeAccessRuleCustomizeInstanceCustomizeRuleAccessActionResult
     {
         /// <summary>
-        /// 表示 CDN 是否接受 RequestHeader 的值为空的用户请求。头部值为空指的是以下任意情况：用户请求不包含 RequestHeader。用户请求包含 RequestHeader，但头部值为空（""）。
+        /// Indicates whether the CDN accepts user requests where the RequestHeader value is empty. An empty header value refers to either of the following situations: The user request does not include RequestHeader. The user request includes RequestHeader, but the header value is empty ("").
         /// </summary>
         public readonly bool AllowEmpty;
         /// <summary>
-        /// 表示一个正则表达式列表，用于匹配请求头的值。列表中的正则表达式不能超过 20 个，所有正则表达式总长度不能超过 1,024 个字符。正则表达式之间的关系是或。也就是说，如果一个用户请求中 RequestHeader 的值匹配任何一个正则表达式，该规则就匹配了这个请求。
+        /// Indicates a list of regular expressions used to match the value of the request header. The list can contain up to 20 regular expressions, and the total length of all expressions cannot exceed 1,024 characters. The relationship between the regular expressions is OR. That is, if the value of RequestHeader in a user request matches any regular expression, the rule applies to the request.
         /// </summary>
         public readonly ImmutableArray<string> ListRules;
         /// <summary>
-        /// 表示一个指定的请求头。头部名称不区分大小写，并且有以下要求：名称的长度不超过 1,024 个字符，名称不能是 Referer、User-Agent 或 Origin。名称可以包含字母，数字，下划线（_），连字符（-）。名称不能以数字开头。
+        /// Indicates a specified request header. Header names are case-insensitive and must meet the following requirements: The name must not exceed 1,024 characters. The name cannot be Referer, User-Agent, or Origin. The name can contain letters, digits, underscores (_), and hyphens (-). The name cannot start with a digit.
         /// </summary>
         public readonly string RequestHeader;
         /// <summary>
-        /// 表示名单的类型。该参数有以下取值：allow：表示该规则中定义的是一个白名单。如果一个用户请求不匹配白名单，CDN 会拒绝该请求，响应 403 状态码。deny：表示该规则中定义的是一个黑名单。如果一个用户请求匹配了黑名单，CDN 会拒绝该请求，响应 403 状态码。
+        /// Indicates the type of list. This parameter has the following values: allow: defines an allowlist in this rule. If a user request does not match the allowlist, the CDN rejects the request and returns a 403 status code. deny: defines a denylist in this rule. If a user request matches the denylist, the CDN rejects the request and returns a 403 status code.
         /// </summary>
         public readonly string RuleType;
 

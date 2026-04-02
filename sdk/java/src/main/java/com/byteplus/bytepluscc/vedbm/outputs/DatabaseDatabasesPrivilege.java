@@ -13,38 +13,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DatabaseDatabasesPrivilege {
     /**
-     * @return 需授权的账号名称
+     * @return Account name to be authorized
      * 
      */
     private @Nullable String accountName;
     /**
-     * @return 授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+     * @return Database permission type: ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
      * 
      */
     private @Nullable String accountPrivilege;
     /**
-     * @return 具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+     * @return Specific SQL operation permissions, separated by English commas; required for Custom type
      * 
      */
     private @Nullable List<String> accountPrivilegeDetails;
 
     private DatabaseDatabasesPrivilege() {}
     /**
-     * @return 需授权的账号名称
+     * @return Account name to be authorized
      * 
      */
     public Optional<String> accountName() {
         return Optional.ofNullable(this.accountName);
     }
     /**
-     * @return 授权数据库权限类型：ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
+     * @return Database permission type: ReadWrite/ReadOnly/DDLOnly/DMLOnly/Custom
      * 
      */
     public Optional<String> accountPrivilege() {
         return Optional.ofNullable(this.accountPrivilege);
     }
     /**
-     * @return 具体SQL操作权限，多个用英文逗号分隔；Custom类型时必填
+     * @return Specific SQL operation permissions, separated by English commas; required for Custom type
      * 
      */
     public List<String> accountPrivilegeDetails() {

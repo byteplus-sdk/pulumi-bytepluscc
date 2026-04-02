@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Cr
 {
     /// <summary>
-    /// 镜像仓库（Container Registry，CR）提供安全高可用的容器镜像、Helm Chart 等符合 OCI 标准的云原生制品托管服务，方便企业用户管理容器镜像和 Helm Chart 的全生命周期。
+    /// Container Registry (CR) provides secure, highly available hosting services for container images, Helm Charts, and other OCI-compliant cloud-native artifacts, making it easy for enterprise users to manage the full lifecycle of container images and Helm Charts
     /// 
     /// ## Example Usage
     /// 
@@ -51,55 +51,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr
     public partial class Registry : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 镜像仓库实例的付费类型，目前仅支持 PostCharge按量付费模式。
+        /// Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
         /// </summary>
         [Output("chargeType")]
         public Output<string> ChargeType { get; private set; } = null!;
 
         /// <summary>
-        /// 创建镜像仓库实例的时间。
+        /// Creation time of the container registry instance
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 仅计费类型为HybridCharge有值，实例到期时间
+        /// Instance expiration time is only available for HybridCharge billing type
         /// </summary>
         [Output("expireTime")]
         public Output<string> ExpireTime { get; private set; } = null!;
 
         /// <summary>
-        /// 标准版实例名称，同一个地域下，名称必须唯一。支持小写英文字母、数字、短划线（-）且数字不能在首位，短划线（-）不能在首位或末位，长度限制为 3～30 个字符。
+        /// Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// 填写实例需要关联的项目。一个实例仅支持关联一个项目
+        /// Enter the project to associate with the instance. Each instance can only be associated with one project
         /// </summary>
         [Output("project")]
         public Output<string> Project { get; private set; } = null!;
 
         /// <summary>
-        /// ProxyCache配置，设置为ProxyCache时必填
+        /// ProxyCache configuration. Required when set as ProxyCache
         /// </summary>
         [Output("proxyCache")]
         public Output<Outputs.RegistryProxyCache> ProxyCache { get; private set; } = null!;
 
         /// <summary>
-        /// 是否设置为ProxyCache实例
+        /// Set as ProxyCache instance
         /// </summary>
         [Output("proxyCacheEnabled")]
         public Output<bool> ProxyCacheEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// 仅计费类型为HybridCharge有值，实例自动续费类型
+        /// Instance auto-renewal type is only available for HybridCharge billing type
         /// </summary>
         [Output("renewType")]
         public Output<string> RenewType { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
+        /// Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
         /// </summary>
         [Output("status")]
         public Output<Outputs.RegistryStatus> Status { get; private set; } = null!;
@@ -108,7 +108,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr
         public Output<ImmutableArray<Outputs.RegistryTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
+        /// If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -161,19 +161,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr
     public sealed class RegistryArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 标准版实例名称，同一个地域下，名称必须唯一。支持小写英文字母、数字、短划线（-）且数字不能在首位，短划线（-）不能在首位或末位，长度限制为 3～30 个字符。
+        /// Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// 填写实例需要关联的项目。一个实例仅支持关联一个项目
+        /// Enter the project to associate with the instance. Each instance can only be associated with one project
         /// </summary>
         [Input("project")]
         public Input<string>? Project { get; set; }
 
         /// <summary>
-        /// 镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
+        /// Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
         /// </summary>
         [Input("status")]
         public Input<Inputs.RegistryStatusArgs>? Status { get; set; }
@@ -187,7 +187,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr
         }
 
         /// <summary>
-        /// 不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
+        /// If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
@@ -201,55 +201,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr
     public sealed class RegistryState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 镜像仓库实例的付费类型，目前仅支持 PostCharge按量付费模式。
+        /// Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
         /// </summary>
         [Input("chargeType")]
         public Input<string>? ChargeType { get; set; }
 
         /// <summary>
-        /// 创建镜像仓库实例的时间。
+        /// Creation time of the container registry instance
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 仅计费类型为HybridCharge有值，实例到期时间
+        /// Instance expiration time is only available for HybridCharge billing type
         /// </summary>
         [Input("expireTime")]
         public Input<string>? ExpireTime { get; set; }
 
         /// <summary>
-        /// 标准版实例名称，同一个地域下，名称必须唯一。支持小写英文字母、数字、短划线（-）且数字不能在首位，短划线（-）不能在首位或末位，长度限制为 3～30 个字符。
+        /// Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 填写实例需要关联的项目。一个实例仅支持关联一个项目
+        /// Enter the project to associate with the instance. Each instance can only be associated with one project
         /// </summary>
         [Input("project")]
         public Input<string>? Project { get; set; }
 
         /// <summary>
-        /// ProxyCache配置，设置为ProxyCache时必填
+        /// ProxyCache configuration. Required when set as ProxyCache
         /// </summary>
         [Input("proxyCache")]
         public Input<Inputs.RegistryProxyCacheGetArgs>? ProxyCache { get; set; }
 
         /// <summary>
-        /// 是否设置为ProxyCache实例
+        /// Set as ProxyCache instance
         /// </summary>
         [Input("proxyCacheEnabled")]
         public Input<bool>? ProxyCacheEnabled { get; set; }
 
         /// <summary>
-        /// 仅计费类型为HybridCharge有值，实例自动续费类型
+        /// Instance auto-renewal type is only available for HybridCharge billing type
         /// </summary>
         [Input("renewType")]
         public Input<string>? RenewType { get; set; }
 
         /// <summary>
-        /// 镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
+        /// Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
         /// </summary>
         [Input("status")]
         public Input<Inputs.RegistryStatusGetArgs>? Status { get; set; }
@@ -263,7 +263,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr
         }
 
         /// <summary>
-        /// 不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
+        /// If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

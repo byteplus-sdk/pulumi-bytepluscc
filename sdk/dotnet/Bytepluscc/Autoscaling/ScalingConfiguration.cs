@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
 {
     /// <summary>
-    /// 用于定义伸缩组中的实例配置，包括计算、内存、网络、存储、安全等，伸缩组扩容时，会按照此处的配置来源创建新实例。
+    /// Defines the instance configuration in the scaling group, including compute, memory, network, storage, and security. When the scaling group expands, new instances are created based on this configuration source.
     /// 
     /// ## Import
     /// 
@@ -23,49 +23,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
     public partial class ScalingConfiguration : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 资源创建时间(UTC时间)
+        /// Resource creation time (UTC)
         /// </summary>
         [Output("createdAt")]
         public Output<string> CreatedAt { get; private set; } = null!;
 
         /// <summary>
-        /// 公网IP。
+        /// Public IP.
         /// </summary>
         [Output("eip")]
         public Output<Outputs.ScalingConfigurationEip> Eip { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的主机名。取值：Linux实例允许使用点号分隔字符成多段，每段中允许使用字母、数字或中划线“-”。不能以点号“.”或中划线“-”开头或结尾，且不能连续使用点号“.”或中划线“-”。Linux系统的主机名长度限制为2～63个字符。Windows实例允许使用字母、数字或中划线“-”，不能完全是数字。不能以中划线“-”开头或结尾，且不能连续使用中划线“-”。Windows系统的主机名长度限制在2～15个字符。如不填，则遵循以下规则自动生成：结构：iv  - + 初始主机名，例如iv-3tigy72q3u3vj0******。已创建实例保持原主机名生成逻辑，不随实例重启发生变化。初始主机名生成逻辑：Linux：提取实例IDi-之后的全部字符。Windows：提取实例IDi-之后的后12位字符。
+        /// Instance hostname. Value: Linux instances allow periods to separate segments; each segment can contain letters, digits, or hyphens '-'. Cannot start or end with a period '.' or hyphen '-', and periods or hyphens cannot be used consecutively. Linux hostnames must be 2–63 characters long. Windows instances allow letters, digits, or hyphens '-', but cannot be entirely numeric. Cannot start or end with a hyphen '-', and hyphens cannot be used consecutively. Windows hostnames must be 2–15 characters long. If not specified, the hostname is automatically generated as follows: Structure: iv  - + initial hostname, for example iv-3tigy72q3u3vj0******. Created instances retain the original hostname generation logic and do not change upon instance restart. Initial hostname generation logic: Linux: extracts all characters after instance ID 'i-'. Windows: extracts the last 12 characters after instance ID 'i-'
         /// </summary>
         [Output("hostName")]
         public Output<string> HostName { get; private set; } = null!;
 
         /// <summary>
-        /// 实例所属的高性能计算集群的ID。仅当InstanceTypes.N指定为“高性能计算GPU型”时有效。
+        /// ID of the high-performance computing cluster to which the instance belongs. Only valid when InstanceTypes.N is specified as 'High-Performance Computing GPU'.
         /// </summary>
         [Output("hpcClusterId")]
         public Output<string> HpcClusterId { get; private set; } = null!;
 
         /// <summary>
-        /// 镜像ID，伸缩组自动创建实例时使用的镜像资源。
+        /// Image ID. The image resource used when the scaling group automatically creates an instance
         /// </summary>
         [Output("imageId")]
         public Output<string> ImageId { get; private set; } = null!;
 
         /// <summary>
-        /// 实例计费类型。取值：PrePaid（包年包月）/PostPaid（按量付费）
+        /// Instance billing type. Values: PrePaid (subscription) / PostPaid (pay-as-you-go)
         /// </summary>
         [Output("instanceChargeType")]
         public Output<string> InstanceChargeType { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的描述，取值：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0 ~ 255之间。不填默认为空字符串。
+        /// Instance description. Value: Cannot start with a digit or hyphen. Only Chinese characters, letters, digits, underscores, and hyphens are allowed. Length must be between 0 and 255 characters. If not specified, defaults to an empty string
         /// </summary>
         [Output("instanceDescription")]
         public Output<string> InstanceDescription { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的名称，取值：以字母或中文开头。只能包含中文、字母、数字、下划线“_”、中划线“-”和点号“.”。长度限制为1～128个字符。
+        /// Instance name. Rules: Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscore "_", hyphen "-", and period ".". Length: 1–128 characters.
         /// </summary>
         [Output("instanceName")]
         public Output<string> InstanceName { get; private set; } = null!;
@@ -74,75 +74,75 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
         public Output<ImmutableArray<Outputs.ScalingConfigurationInstanceTypeOverride>> InstanceTypeOverrides { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的计算规格列表。
+        /// List of compute specifications for the instance
         /// </summary>
         [Output("instanceTypes")]
         public Output<ImmutableArray<string>> InstanceTypes { get; private set; } = null!;
 
         /// <summary>
-        /// 是否为实例网卡分配IPv6地址。取值：0：不分配IPv6地址。1：分配IPv6地址，系统自动为您分配IPv6网段。
+        /// Assign an IPv6 address to the instance NIC. Values: 0: Do not assign an IPv6 address. 1: Assign an IPv6 address; the system automatically allocates an IPv6 subnet for you.
         /// </summary>
         [Output("ipv6AddressCount")]
         public Output<int> Ipv6AddressCount { get; private set; } = null!;
 
         /// <summary>
-        /// 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+        /// Name of the key pair. If both KeyPairName and Password are set, only KeyPairName takes effect
         /// </summary>
         [Output("keyPairName")]
         public Output<string> KeyPairName { get; private set; } = null!;
 
         /// <summary>
-        /// 生命周期状态。取值：Active（活跃）/InActive（非活跃）
+        /// Lifecycle status. Values: Active (active) / InActive (inactive)
         /// </summary>
         [Output("lifecycleState")]
         public Output<string> LifecycleState { get; private set; } = null!;
 
         /// <summary>
-        /// 使用“密码”方式登录实例时，请设置root登录密码：长度限制在8～30之间，密码只能由大写字母、小写字母、数字和特殊字符组成，且必须包含至少三项，特殊字符可以使用：`~!#$%^&amp;*()_-+= |，不能以“/”和“$6$”开头
+        /// When logging in to the instance using the 'Password' method, set the root login password: The password must be 8–30 characters long and consist of uppercase letters, lowercase letters, numbers, and special characters. At least three types must be included. Allowed special characters: `~!#$%^&amp;*()_-+= |. The password cannot start with '/' or '$6$'
         /// </summary>
         [Output("password")]
         public Output<string> Password { get; private set; } = null!;
 
         /// <summary>
-        /// 伸缩配置创建的实例所属项目，默认为空。一个资源只能归属于一个项目。
-        /// 只能包含字母、数字、下划线“_”、点“.”和中划线“-”。
-        /// 长度限制在64个字符以内。
+        /// The project to which the instance created by the scaling configuration belongs. Default is empty. Each resource can belong to only one project.
+        /// Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed.
+        /// Maximum length: 64 characters
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 伸缩配置ID。
+        /// Scaling configuration ID
         /// </summary>
         [Output("scalingConfigurationId")]
         public Output<string> ScalingConfigurationId { get; private set; } = null!;
 
         /// <summary>
-        /// 伸缩配置的名称，在同一地域下同一伸缩组内伸缩配置名称唯一。取值:只能以中文、字母开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+        /// Name of the scaling configuration. The name must be unique within the same scaling group in the same region. Rules: Must start with a Chinese character or letter. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length: 1–128 characters. Special characters are not supported.
         /// </summary>
         [Output("scalingConfigurationName")]
         public Output<string> ScalingConfigurationName { get; private set; } = null!;
 
         /// <summary>
-        /// 伸缩配置所属的伸缩组ID。
+        /// Scaling group ID to which the scaling configuration belongs
         /// </summary>
         [Output("scalingGroupId")]
         public Output<string> ScalingGroupId { get; private set; } = null!;
 
         /// <summary>
-        /// 是否开启安全加固，取值：Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+        /// Enable security hardening. Options: Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
         /// </summary>
         [Output("securityEnhancementStrategy")]
         public Output<string> SecurityEnhancementStrategy { get; private set; } = null!;
 
         /// <summary>
-        /// 实例主网卡关联的安全组ID。
+        /// Security group ID associated with the instance's primary network interface
         /// </summary>
         [Output("securityGroupIds")]
         public Output<ImmutableArray<string>> SecurityGroupIds { get; private set; } = null!;
 
         /// <summary>
-        /// 实例的抢占策略。取值：NoSpot（默认）：表示创建正常按量付费实例。SpotAsPriceGo：表示系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：表示需要设置出价上限的抢占式实例。
+        /// Instance preemption policy. Values: NoSpot (default): creates a standard pay-as-you-go instance. SpotAsPriceGo: system automatically bids, creating a preemptible instance that follows the current market price. SpotWithPriceLimit: creates a preemptible instance with a specified bid limit
         /// </summary>
         [Output("spotStrategy")]
         public Output<string> SpotStrategy { get; private set; } = null!;
@@ -151,13 +151,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
         public Output<ImmutableArray<Outputs.ScalingConfigurationTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 资源更新时间(UTC时间)
+        /// Resource update time (UTC)
         /// </summary>
         [Output("updatedAt")]
         public Output<string> UpdatedAt { get; private set; } = null!;
 
         /// <summary>
-        /// 实例自定义数据。设置的自定义数据必须经过Base64编码，且Base64编码前的自定义数据大小不能超过16KB。不填则默认为空。
+        /// Instance custom data. Custom data must be Base64 encoded, and the size before encoding must not exceed 16 KB. If not specified, defaults to empty
         /// </summary>
         [Output("userData")]
         public Output<string> UserData { get; private set; } = null!;
@@ -166,7 +166,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
         public Output<ImmutableArray<Outputs.ScalingConfigurationVolume>> Volumes { get; private set; } = null!;
 
         /// <summary>
-        /// 伸缩配置可用区ID。
+        /// Availability zone ID for the scaling configuration
         /// </summary>
         [Output("zoneId")]
         public Output<string> ZoneId { get; private set; } = null!;
@@ -219,37 +219,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
     public sealed class ScalingConfigurationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 公网IP。
+        /// Public IP.
         /// </summary>
         [Input("eip")]
         public Input<Inputs.ScalingConfigurationEipArgs>? Eip { get; set; }
 
         /// <summary>
-        /// 实例的主机名。取值：Linux实例允许使用点号分隔字符成多段，每段中允许使用字母、数字或中划线“-”。不能以点号“.”或中划线“-”开头或结尾，且不能连续使用点号“.”或中划线“-”。Linux系统的主机名长度限制为2～63个字符。Windows实例允许使用字母、数字或中划线“-”，不能完全是数字。不能以中划线“-”开头或结尾，且不能连续使用中划线“-”。Windows系统的主机名长度限制在2～15个字符。如不填，则遵循以下规则自动生成：结构：iv  - + 初始主机名，例如iv-3tigy72q3u3vj0******。已创建实例保持原主机名生成逻辑，不随实例重启发生变化。初始主机名生成逻辑：Linux：提取实例IDi-之后的全部字符。Windows：提取实例IDi-之后的后12位字符。
+        /// Instance hostname. Value: Linux instances allow periods to separate segments; each segment can contain letters, digits, or hyphens '-'. Cannot start or end with a period '.' or hyphen '-', and periods or hyphens cannot be used consecutively. Linux hostnames must be 2–63 characters long. Windows instances allow letters, digits, or hyphens '-', but cannot be entirely numeric. Cannot start or end with a hyphen '-', and hyphens cannot be used consecutively. Windows hostnames must be 2–15 characters long. If not specified, the hostname is automatically generated as follows: Structure: iv  - + initial hostname, for example iv-3tigy72q3u3vj0******. Created instances retain the original hostname generation logic and do not change upon instance restart. Initial hostname generation logic: Linux: extracts all characters after instance ID 'i-'. Windows: extracts the last 12 characters after instance ID 'i-'
         /// </summary>
         [Input("hostName")]
         public Input<string>? HostName { get; set; }
 
         /// <summary>
-        /// 实例所属的高性能计算集群的ID。仅当InstanceTypes.N指定为“高性能计算GPU型”时有效。
+        /// ID of the high-performance computing cluster to which the instance belongs. Only valid when InstanceTypes.N is specified as 'High-Performance Computing GPU'.
         /// </summary>
         [Input("hpcClusterId")]
         public Input<string>? HpcClusterId { get; set; }
 
         /// <summary>
-        /// 镜像ID，伸缩组自动创建实例时使用的镜像资源。
+        /// Image ID. The image resource used when the scaling group automatically creates an instance
         /// </summary>
         [Input("imageId")]
         public Input<string>? ImageId { get; set; }
 
         /// <summary>
-        /// 实例的描述，取值：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0 ~ 255之间。不填默认为空字符串。
+        /// Instance description. Value: Cannot start with a digit or hyphen. Only Chinese characters, letters, digits, underscores, and hyphens are allowed. Length must be between 0 and 255 characters. If not specified, defaults to an empty string
         /// </summary>
         [Input("instanceDescription")]
         public Input<string>? InstanceDescription { get; set; }
 
         /// <summary>
-        /// 实例的名称，取值：以字母或中文开头。只能包含中文、字母、数字、下划线“_”、中划线“-”和点号“.”。长度限制为1～128个字符。
+        /// Instance name. Rules: Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscore "_", hyphen "-", and period ".". Length: 1–128 characters.
         /// </summary>
         [Input("instanceName")]
         public Input<string>? InstanceName { get; set; }
@@ -263,51 +263,51 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
         }
 
         /// <summary>
-        /// 是否为实例网卡分配IPv6地址。取值：0：不分配IPv6地址。1：分配IPv6地址，系统自动为您分配IPv6网段。
+        /// Assign an IPv6 address to the instance NIC. Values: 0: Do not assign an IPv6 address. 1: Assign an IPv6 address; the system automatically allocates an IPv6 subnet for you.
         /// </summary>
         [Input("ipv6AddressCount")]
         public Input<int>? Ipv6AddressCount { get; set; }
 
         /// <summary>
-        /// 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+        /// Name of the key pair. If both KeyPairName and Password are set, only KeyPairName takes effect
         /// </summary>
         [Input("keyPairName")]
         public Input<string>? KeyPairName { get; set; }
 
         /// <summary>
-        /// 生命周期状态。取值：Active（活跃）/InActive（非活跃）
+        /// Lifecycle status. Values: Active (active) / InActive (inactive)
         /// </summary>
         [Input("lifecycleState")]
         public Input<string>? LifecycleState { get; set; }
 
         /// <summary>
-        /// 使用“密码”方式登录实例时，请设置root登录密码：长度限制在8～30之间，密码只能由大写字母、小写字母、数字和特殊字符组成，且必须包含至少三项，特殊字符可以使用：`~!#$%^&amp;*()_-+= |，不能以“/”和“$6$”开头
+        /// When logging in to the instance using the 'Password' method, set the root login password: The password must be 8–30 characters long and consist of uppercase letters, lowercase letters, numbers, and special characters. At least three types must be included. Allowed special characters: `~!#$%^&amp;*()_-+= |. The password cannot start with '/' or '$6$'
         /// </summary>
         [Input("password")]
         public Input<string>? Password { get; set; }
 
         /// <summary>
-        /// 伸缩配置创建的实例所属项目，默认为空。一个资源只能归属于一个项目。
-        /// 只能包含字母、数字、下划线“_”、点“.”和中划线“-”。
-        /// 长度限制在64个字符以内。
+        /// The project to which the instance created by the scaling configuration belongs. Default is empty. Each resource can belong to only one project.
+        /// Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed.
+        /// Maximum length: 64 characters
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 伸缩配置的名称，在同一地域下同一伸缩组内伸缩配置名称唯一。取值:只能以中文、字母开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+        /// Name of the scaling configuration. The name must be unique within the same scaling group in the same region. Rules: Must start with a Chinese character or letter. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length: 1–128 characters. Special characters are not supported.
         /// </summary>
         [Input("scalingConfigurationName")]
         public Input<string>? ScalingConfigurationName { get; set; }
 
         /// <summary>
-        /// 伸缩配置所属的伸缩组ID。
+        /// Scaling group ID to which the scaling configuration belongs
         /// </summary>
         [Input("scalingGroupId")]
         public Input<string>? ScalingGroupId { get; set; }
 
         /// <summary>
-        /// 是否开启安全加固，取值：Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+        /// Enable security hardening. Options: Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
         /// </summary>
         [Input("securityEnhancementStrategy")]
         public Input<string>? SecurityEnhancementStrategy { get; set; }
@@ -316,7 +316,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
         private InputList<string>? _securityGroupIds;
 
         /// <summary>
-        /// 实例主网卡关联的安全组ID。
+        /// Security group ID associated with the instance's primary network interface
         /// </summary>
         public InputList<string> SecurityGroupIds
         {
@@ -325,7 +325,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
         }
 
         /// <summary>
-        /// 实例的抢占策略。取值：NoSpot（默认）：表示创建正常按量付费实例。SpotAsPriceGo：表示系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：表示需要设置出价上限的抢占式实例。
+        /// Instance preemption policy. Values: NoSpot (default): creates a standard pay-as-you-go instance. SpotAsPriceGo: system automatically bids, creating a preemptible instance that follows the current market price. SpotWithPriceLimit: creates a preemptible instance with a specified bid limit
         /// </summary>
         [Input("spotStrategy")]
         public Input<string>? SpotStrategy { get; set; }
@@ -339,7 +339,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
         }
 
         /// <summary>
-        /// 实例自定义数据。设置的自定义数据必须经过Base64编码，且Base64编码前的自定义数据大小不能超过16KB。不填则默认为空。
+        /// Instance custom data. Custom data must be Base64 encoded, and the size before encoding must not exceed 16 KB. If not specified, defaults to empty
         /// </summary>
         [Input("userData")]
         public Input<string>? UserData { get; set; }
@@ -353,7 +353,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
         }
 
         /// <summary>
-        /// 伸缩配置可用区ID。
+        /// Availability zone ID for the scaling configuration
         /// </summary>
         [Input("zoneId")]
         public Input<string>? ZoneId { get; set; }
@@ -367,49 +367,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
     public sealed class ScalingConfigurationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 资源创建时间(UTC时间)
+        /// Resource creation time (UTC)
         /// </summary>
         [Input("createdAt")]
         public Input<string>? CreatedAt { get; set; }
 
         /// <summary>
-        /// 公网IP。
+        /// Public IP.
         /// </summary>
         [Input("eip")]
         public Input<Inputs.ScalingConfigurationEipGetArgs>? Eip { get; set; }
 
         /// <summary>
-        /// 实例的主机名。取值：Linux实例允许使用点号分隔字符成多段，每段中允许使用字母、数字或中划线“-”。不能以点号“.”或中划线“-”开头或结尾，且不能连续使用点号“.”或中划线“-”。Linux系统的主机名长度限制为2～63个字符。Windows实例允许使用字母、数字或中划线“-”，不能完全是数字。不能以中划线“-”开头或结尾，且不能连续使用中划线“-”。Windows系统的主机名长度限制在2～15个字符。如不填，则遵循以下规则自动生成：结构：iv  - + 初始主机名，例如iv-3tigy72q3u3vj0******。已创建实例保持原主机名生成逻辑，不随实例重启发生变化。初始主机名生成逻辑：Linux：提取实例IDi-之后的全部字符。Windows：提取实例IDi-之后的后12位字符。
+        /// Instance hostname. Value: Linux instances allow periods to separate segments; each segment can contain letters, digits, or hyphens '-'. Cannot start or end with a period '.' or hyphen '-', and periods or hyphens cannot be used consecutively. Linux hostnames must be 2–63 characters long. Windows instances allow letters, digits, or hyphens '-', but cannot be entirely numeric. Cannot start or end with a hyphen '-', and hyphens cannot be used consecutively. Windows hostnames must be 2–15 characters long. If not specified, the hostname is automatically generated as follows: Structure: iv  - + initial hostname, for example iv-3tigy72q3u3vj0******. Created instances retain the original hostname generation logic and do not change upon instance restart. Initial hostname generation logic: Linux: extracts all characters after instance ID 'i-'. Windows: extracts the last 12 characters after instance ID 'i-'
         /// </summary>
         [Input("hostName")]
         public Input<string>? HostName { get; set; }
 
         /// <summary>
-        /// 实例所属的高性能计算集群的ID。仅当InstanceTypes.N指定为“高性能计算GPU型”时有效。
+        /// ID of the high-performance computing cluster to which the instance belongs. Only valid when InstanceTypes.N is specified as 'High-Performance Computing GPU'.
         /// </summary>
         [Input("hpcClusterId")]
         public Input<string>? HpcClusterId { get; set; }
 
         /// <summary>
-        /// 镜像ID，伸缩组自动创建实例时使用的镜像资源。
+        /// Image ID. The image resource used when the scaling group automatically creates an instance
         /// </summary>
         [Input("imageId")]
         public Input<string>? ImageId { get; set; }
 
         /// <summary>
-        /// 实例计费类型。取值：PrePaid（包年包月）/PostPaid（按量付费）
+        /// Instance billing type. Values: PrePaid (subscription) / PostPaid (pay-as-you-go)
         /// </summary>
         [Input("instanceChargeType")]
         public Input<string>? InstanceChargeType { get; set; }
 
         /// <summary>
-        /// 实例的描述，取值：不能以数字、中划线开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0 ~ 255之间。不填默认为空字符串。
+        /// Instance description. Value: Cannot start with a digit or hyphen. Only Chinese characters, letters, digits, underscores, and hyphens are allowed. Length must be between 0 and 255 characters. If not specified, defaults to an empty string
         /// </summary>
         [Input("instanceDescription")]
         public Input<string>? InstanceDescription { get; set; }
 
         /// <summary>
-        /// 实例的名称，取值：以字母或中文开头。只能包含中文、字母、数字、下划线“_”、中划线“-”和点号“.”。长度限制为1～128个字符。
+        /// Instance name. Rules: Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscore "_", hyphen "-", and period ".". Length: 1–128 characters.
         /// </summary>
         [Input("instanceName")]
         public Input<string>? InstanceName { get; set; }
@@ -426,7 +426,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
         private InputList<string>? _instanceTypes;
 
         /// <summary>
-        /// 实例的计算规格列表。
+        /// List of compute specifications for the instance
         /// </summary>
         public InputList<string> InstanceTypes
         {
@@ -435,57 +435,57 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
         }
 
         /// <summary>
-        /// 是否为实例网卡分配IPv6地址。取值：0：不分配IPv6地址。1：分配IPv6地址，系统自动为您分配IPv6网段。
+        /// Assign an IPv6 address to the instance NIC. Values: 0: Do not assign an IPv6 address. 1: Assign an IPv6 address; the system automatically allocates an IPv6 subnet for you.
         /// </summary>
         [Input("ipv6AddressCount")]
         public Input<int>? Ipv6AddressCount { get; set; }
 
         /// <summary>
-        /// 密钥对的名称。如果同时设置了KeyPairName和Password，则仅生效KeyPairName。
+        /// Name of the key pair. If both KeyPairName and Password are set, only KeyPairName takes effect
         /// </summary>
         [Input("keyPairName")]
         public Input<string>? KeyPairName { get; set; }
 
         /// <summary>
-        /// 生命周期状态。取值：Active（活跃）/InActive（非活跃）
+        /// Lifecycle status. Values: Active (active) / InActive (inactive)
         /// </summary>
         [Input("lifecycleState")]
         public Input<string>? LifecycleState { get; set; }
 
         /// <summary>
-        /// 使用“密码”方式登录实例时，请设置root登录密码：长度限制在8～30之间，密码只能由大写字母、小写字母、数字和特殊字符组成，且必须包含至少三项，特殊字符可以使用：`~!#$%^&amp;*()_-+= |，不能以“/”和“$6$”开头
+        /// When logging in to the instance using the 'Password' method, set the root login password: The password must be 8–30 characters long and consist of uppercase letters, lowercase letters, numbers, and special characters. At least three types must be included. Allowed special characters: `~!#$%^&amp;*()_-+= |. The password cannot start with '/' or '$6$'
         /// </summary>
         [Input("password")]
         public Input<string>? Password { get; set; }
 
         /// <summary>
-        /// 伸缩配置创建的实例所属项目，默认为空。一个资源只能归属于一个项目。
-        /// 只能包含字母、数字、下划线“_”、点“.”和中划线“-”。
-        /// 长度限制在64个字符以内。
+        /// The project to which the instance created by the scaling configuration belongs. Default is empty. Each resource can belong to only one project.
+        /// Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed.
+        /// Maximum length: 64 characters
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 伸缩配置ID。
+        /// Scaling configuration ID
         /// </summary>
         [Input("scalingConfigurationId")]
         public Input<string>? ScalingConfigurationId { get; set; }
 
         /// <summary>
-        /// 伸缩配置的名称，在同一地域下同一伸缩组内伸缩配置名称唯一。取值:只能以中文、字母开头。只能包含中文、字母、数字、下划线和中划线。长度限制为1 ~ 128个字符。暂不支持特殊字符。
+        /// Name of the scaling configuration. The name must be unique within the same scaling group in the same region. Rules: Must start with a Chinese character or letter. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length: 1–128 characters. Special characters are not supported.
         /// </summary>
         [Input("scalingConfigurationName")]
         public Input<string>? ScalingConfigurationName { get; set; }
 
         /// <summary>
-        /// 伸缩配置所属的伸缩组ID。
+        /// Scaling group ID to which the scaling configuration belongs
         /// </summary>
         [Input("scalingGroupId")]
         public Input<string>? ScalingGroupId { get; set; }
 
         /// <summary>
-        /// 是否开启安全加固，取值：Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+        /// Enable security hardening. Options: Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
         /// </summary>
         [Input("securityEnhancementStrategy")]
         public Input<string>? SecurityEnhancementStrategy { get; set; }
@@ -494,7 +494,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
         private InputList<string>? _securityGroupIds;
 
         /// <summary>
-        /// 实例主网卡关联的安全组ID。
+        /// Security group ID associated with the instance's primary network interface
         /// </summary>
         public InputList<string> SecurityGroupIds
         {
@@ -503,7 +503,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
         }
 
         /// <summary>
-        /// 实例的抢占策略。取值：NoSpot（默认）：表示创建正常按量付费实例。SpotAsPriceGo：表示系统自动出价，跟随当前市场实际价格的抢占式实例。SpotWithPriceLimit：表示需要设置出价上限的抢占式实例。
+        /// Instance preemption policy. Values: NoSpot (default): creates a standard pay-as-you-go instance. SpotAsPriceGo: system automatically bids, creating a preemptible instance that follows the current market price. SpotWithPriceLimit: creates a preemptible instance with a specified bid limit
         /// </summary>
         [Input("spotStrategy")]
         public Input<string>? SpotStrategy { get; set; }
@@ -517,13 +517,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
         }
 
         /// <summary>
-        /// 资源更新时间(UTC时间)
+        /// Resource update time (UTC)
         /// </summary>
         [Input("updatedAt")]
         public Input<string>? UpdatedAt { get; set; }
 
         /// <summary>
-        /// 实例自定义数据。设置的自定义数据必须经过Base64编码，且Base64编码前的自定义数据大小不能超过16KB。不填则默认为空。
+        /// Instance custom data. Custom data must be Base64 encoded, and the size before encoding must not exceed 16 KB. If not specified, defaults to empty
         /// </summary>
         [Input("userData")]
         public Input<string>? UserData { get; set; }
@@ -537,7 +537,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
         }
 
         /// <summary>
-        /// 伸缩配置可用区ID。
+        /// Availability zone ID for the scaling configuration
         /// </summary>
         [Input("zoneId")]
         public Input<string>? ZoneId { get; set; }

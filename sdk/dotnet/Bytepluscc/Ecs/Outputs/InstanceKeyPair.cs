@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
     public sealed class InstanceKeyPair
     {
         /// <summary>
-        /// 实例的公钥。
+        /// Instance public key
         /// </summary>
         public readonly string? KeyPairId;
         /// <summary>
-        /// 实例的密钥对名称。
+        /// Instance key pair name
         /// </summary>
         public readonly string? KeyPairName;
 

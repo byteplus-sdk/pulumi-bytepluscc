@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ShareConfigAllowRefererAccessRule {
     /**
-     * @return 表示是否不允许 Referer 头部为空或者不包含 Referer 头部的请求。该参数有以下取值：true：表示不允许。如果请求的 Referer 头部为空或者不包含 Referer 头部，内容分发网络拒绝请求。false：表示允许。该参数的默认值是 false。
+     * @return Indicates whether requests with an empty Referer header or without a Referer header are not allowed. This parameter has the following values: true: Not allowed. If the Referer header is empty or missing, the content delivery network rejects the request. false: Allowed. The default value is false.
      * 
      */
     private @Nullable Boolean allowEmpty;
     /**
-     * @return 表示该通用列表的内容。
+     * @return Specifies the contents of the common list.
      * 
      */
     private @Nullable ShareConfigAllowRefererAccessRuleCommonType commonType;
 
     private ShareConfigAllowRefererAccessRule() {}
     /**
-     * @return 表示是否不允许 Referer 头部为空或者不包含 Referer 头部的请求。该参数有以下取值：true：表示不允许。如果请求的 Referer 头部为空或者不包含 Referer 头部，内容分发网络拒绝请求。false：表示允许。该参数的默认值是 false。
+     * @return Indicates whether requests with an empty Referer header or without a Referer header are not allowed. This parameter has the following values: true: Not allowed. If the Referer header is empty or missing, the content delivery network rejects the request. false: Allowed. The default value is false.
      * 
      */
     public Optional<Boolean> allowEmpty() {
         return Optional.ofNullable(this.allowEmpty);
     }
     /**
-     * @return 表示该通用列表的内容。
+     * @return Specifies the contents of the common list.
      * 
      */
     public Optional<ShareConfigAllowRefererAccessRuleCommonType> commonType() {

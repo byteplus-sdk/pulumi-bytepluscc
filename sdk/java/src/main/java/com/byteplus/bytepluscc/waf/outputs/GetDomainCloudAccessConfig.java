@@ -12,98 +12,98 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainCloudAccessConfig {
     /**
-     * @return 接入协议类型。
+     * @return Access protocol type
      * 
      */
     private String accessProtocol;
     /**
-     * @return 防护模式。
+     * @return Protection mode
      * 
      */
     private Integer defenceMode;
     /**
-     * @return 负载均衡实例 ID。
+     * @return Load balancing instance ID.
      * 
      */
     private String instanceId;
     /**
-     * @return 负载均衡实例名称。
+     * @return Load balancer instance name.
      * 
      */
     private String instanceName;
     /**
-     * @return 负载均衡监听器 ID。
+     * @return Load balancing listener ID.
      * 
      */
     private String listenerId;
     /**
-     * @return 是否从 ALB 中丢失关联。
+     * @return Disassociated from ALB
      * 
      */
     private Integer lostAssociationFromAlb;
     /**
-     * @return 监听器转发规则的端口号。
+     * @return Listener forwarding rule port number
      * 
      */
     private String port;
     /**
-     * @return 监听器转发规则的协议类型。
+     * @return Protocol type for listener forwarding rules.
      * 
      */
     private String protocol;
 
     private GetDomainCloudAccessConfig() {}
     /**
-     * @return 接入协议类型。
+     * @return Access protocol type
      * 
      */
     public String accessProtocol() {
         return this.accessProtocol;
     }
     /**
-     * @return 防护模式。
+     * @return Protection mode
      * 
      */
     public Integer defenceMode() {
         return this.defenceMode;
     }
     /**
-     * @return 负载均衡实例 ID。
+     * @return Load balancing instance ID.
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return 负载均衡实例名称。
+     * @return Load balancer instance name.
      * 
      */
     public String instanceName() {
         return this.instanceName;
     }
     /**
-     * @return 负载均衡监听器 ID。
+     * @return Load balancing listener ID.
      * 
      */
     public String listenerId() {
         return this.listenerId;
     }
     /**
-     * @return 是否从 ALB 中丢失关联。
+     * @return Disassociated from ALB
      * 
      */
     public Integer lostAssociationFromAlb() {
         return this.lostAssociationFromAlb;
     }
     /**
-     * @return 监听器转发规则的端口号。
+     * @return Listener forwarding rule port number
      * 
      */
     public String port() {
         return this.port;
     }
     /**
-     * @return 监听器转发规则的协议类型。
+     * @return Protocol type for listener forwarding rules.
      * 
      */
     public String protocol() {

@@ -31,10 +31,10 @@ class SecurityGroupArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityGroupTagArgs']]]] = None):
         """
         The set of arguments for constructing a SecurityGroup resource.
-        :param pulumi.Input[builtins.str] vpc_id: 安全组所属的VPC ID。
-        :param pulumi.Input[builtins.str] description: 安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
-        :param pulumi.Input[builtins.str] project_name: 安全组所属项目名称。不填默认项目为default。
-        :param pulumi.Input[builtins.str] security_group_name: 安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID to which the security group belongs
+        :param pulumi.Input[builtins.str] description: Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
+        :param pulumi.Input[builtins.str] project_name: Project name to which the security group belongs. Default project is 'default' if not specified
+        :param pulumi.Input[builtins.str] security_group_name: Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
         """
         pulumi.set(__self__, "vpc_id", vpc_id)
         if description is not None:
@@ -54,7 +54,7 @@ class SecurityGroupArgs:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Input[builtins.str]:
         """
-        安全组所属的VPC ID。
+        VPC ID to which the security group belongs
         """
         return pulumi.get(self, "vpc_id")
 
@@ -66,7 +66,7 @@ class SecurityGroupArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
+        Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
         """
         return pulumi.get(self, "description")
 
@@ -96,7 +96,7 @@ class SecurityGroupArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        安全组所属项目名称。不填默认项目为default。
+        Project name to which the security group belongs. Default project is 'default' if not specified
         """
         return pulumi.get(self, "project_name")
 
@@ -108,7 +108,7 @@ class SecurityGroupArgs:
     @pulumi.getter(name="securityGroupName")
     def security_group_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
+        Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
         """
         return pulumi.get(self, "security_group_name")
 
@@ -143,15 +143,15 @@ class _SecurityGroupState:
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering SecurityGroup resources.
-        :param pulumi.Input[builtins.str] creation_time: 安全组创建时间。
-        :param pulumi.Input[builtins.str] description: 安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
-        :param pulumi.Input[builtins.str] project_name: 安全组所属项目名称。不填默认项目为default。
-        :param pulumi.Input[builtins.str] security_group_id: 安全组ID。
-        :param pulumi.Input[builtins.str] security_group_name: 安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
-        :param pulumi.Input[builtins.bool] service_managed: 安全组是否为托管安全组。true为托管安全组，false为非托管安全组。
-        :param pulumi.Input[builtins.str] status: 安全组状态。Available为可用，Creating为创建中。
-        :param pulumi.Input[builtins.str] type: 安全组类型。1、default：默认安全组。2、normal：自定义安全组。3、VpnGW： VPN网关安全组。4、NatGW： Nat网关安全组。 5、cidr_only：CIDR-Only安全组。
-        :param pulumi.Input[builtins.str] vpc_id: 安全组所属的VPC ID。
+        :param pulumi.Input[builtins.str] creation_time: Security group creation time
+        :param pulumi.Input[builtins.str] description: Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
+        :param pulumi.Input[builtins.str] project_name: Project name to which the security group belongs. Default project is 'default' if not specified
+        :param pulumi.Input[builtins.str] security_group_id: Security group ID
+        :param pulumi.Input[builtins.str] security_group_name: Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
+        :param pulumi.Input[builtins.bool] service_managed: Indicates whether the security group is managed. true means managed security group, false means unmanaged security group
+        :param pulumi.Input[builtins.str] status: Security group status. Available means available for use, Creating means being created
+        :param pulumi.Input[builtins.str] type: Security group type. 1. default: default security group. 2. normal: custom security group. 3. VpnGW: VPN gateway security group. 4. NatGW: NAT gateway security group. 5. cidr_only: CIDR-Only security group
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID to which the security group belongs
         """
         if creation_time is not None:
             pulumi.set(__self__, "creation_time", creation_time)
@@ -182,7 +182,7 @@ class _SecurityGroupState:
     @pulumi.getter(name="creationTime")
     def creation_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        安全组创建时间。
+        Security group creation time
         """
         return pulumi.get(self, "creation_time")
 
@@ -194,7 +194,7 @@ class _SecurityGroupState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
+        Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
         """
         return pulumi.get(self, "description")
 
@@ -224,7 +224,7 @@ class _SecurityGroupState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        安全组所属项目名称。不填默认项目为default。
+        Project name to which the security group belongs. Default project is 'default' if not specified
         """
         return pulumi.get(self, "project_name")
 
@@ -236,7 +236,7 @@ class _SecurityGroupState:
     @pulumi.getter(name="securityGroupId")
     def security_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        安全组ID。
+        Security group ID
         """
         return pulumi.get(self, "security_group_id")
 
@@ -248,7 +248,7 @@ class _SecurityGroupState:
     @pulumi.getter(name="securityGroupName")
     def security_group_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
+        Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
         """
         return pulumi.get(self, "security_group_name")
 
@@ -260,7 +260,7 @@ class _SecurityGroupState:
     @pulumi.getter(name="serviceManaged")
     def service_managed(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        安全组是否为托管安全组。true为托管安全组，false为非托管安全组。
+        Indicates whether the security group is managed. true means managed security group, false means unmanaged security group
         """
         return pulumi.get(self, "service_managed")
 
@@ -272,7 +272,7 @@ class _SecurityGroupState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        安全组状态。Available为可用，Creating为创建中。
+        Security group status. Available means available for use, Creating means being created
         """
         return pulumi.get(self, "status")
 
@@ -293,7 +293,7 @@ class _SecurityGroupState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        安全组类型。1、default：默认安全组。2、normal：自定义安全组。3、VpnGW： VPN网关安全组。4、NatGW： Nat网关安全组。 5、cidr_only：CIDR-Only安全组。
+        Security group type. 1. default: default security group. 2. normal: custom security group. 3. VpnGW: VPN gateway security group. 4. NatGW: NAT gateway security group. 5. cidr_only: CIDR-Only security group
         """
         return pulumi.get(self, "type")
 
@@ -305,7 +305,7 @@ class _SecurityGroupState:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        安全组所属的VPC ID。
+        VPC ID to which the security group belongs
         """
         return pulumi.get(self, "vpc_id")
 
@@ -329,7 +329,7 @@ class SecurityGroup(pulumi.CustomResource):
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        安全组是一个逻辑意义上的分组，为同一个私有网络内具有相同安全保护需求并相互信任的网卡提供访问策略。您可以通过配置安全组规则，控制安全组关联网卡的出入流量。
+        A security group is a logical grouping that provides access policies for NICs within the same private network that share security requirements and mutual trust. You can control inbound and outbound traffic for associated NICs by configuring security group rules
 
         ## Import
 
@@ -339,10 +339,10 @@ class SecurityGroup(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: 安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
-        :param pulumi.Input[builtins.str] project_name: 安全组所属项目名称。不填默认项目为default。
-        :param pulumi.Input[builtins.str] security_group_name: 安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
-        :param pulumi.Input[builtins.str] vpc_id: 安全组所属的VPC ID。
+        :param pulumi.Input[builtins.str] description: Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
+        :param pulumi.Input[builtins.str] project_name: Project name to which the security group belongs. Default project is 'default' if not specified
+        :param pulumi.Input[builtins.str] security_group_name: Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID to which the security group belongs
         """
         ...
     @overload
@@ -351,7 +351,7 @@ class SecurityGroup(pulumi.CustomResource):
                  args: SecurityGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        安全组是一个逻辑意义上的分组，为同一个私有网络内具有相同安全保护需求并相互信任的网卡提供访问策略。您可以通过配置安全组规则，控制安全组关联网卡的出入流量。
+        A security group is a logical grouping that provides access policies for NICs within the same private network that share security requirements and mutual trust. You can control inbound and outbound traffic for associated NICs by configuring security group rules
 
         ## Import
 
@@ -433,15 +433,15 @@ class SecurityGroup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] creation_time: 安全组创建时间。
-        :param pulumi.Input[builtins.str] description: 安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
-        :param pulumi.Input[builtins.str] project_name: 安全组所属项目名称。不填默认项目为default。
-        :param pulumi.Input[builtins.str] security_group_id: 安全组ID。
-        :param pulumi.Input[builtins.str] security_group_name: 安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
-        :param pulumi.Input[builtins.bool] service_managed: 安全组是否为托管安全组。true为托管安全组，false为非托管安全组。
-        :param pulumi.Input[builtins.str] status: 安全组状态。Available为可用，Creating为创建中。
-        :param pulumi.Input[builtins.str] type: 安全组类型。1、default：默认安全组。2、normal：自定义安全组。3、VpnGW： VPN网关安全组。4、NatGW： Nat网关安全组。 5、cidr_only：CIDR-Only安全组。
-        :param pulumi.Input[builtins.str] vpc_id: 安全组所属的VPC ID。
+        :param pulumi.Input[builtins.str] creation_time: Security group creation time
+        :param pulumi.Input[builtins.str] description: Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
+        :param pulumi.Input[builtins.str] project_name: Project name to which the security group belongs. Default project is 'default' if not specified
+        :param pulumi.Input[builtins.str] security_group_id: Security group ID
+        :param pulumi.Input[builtins.str] security_group_name: Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
+        :param pulumi.Input[builtins.bool] service_managed: Indicates whether the security group is managed. true means managed security group, false means unmanaged security group
+        :param pulumi.Input[builtins.str] status: Security group status. Available means available for use, Creating means being created
+        :param pulumi.Input[builtins.str] type: Security group type. 1. default: default security group. 2. normal: custom security group. 3. VpnGW: VPN gateway security group. 4. NatGW: NAT gateway security group. 5. cidr_only: CIDR-Only security group
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID to which the security group belongs
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -465,7 +465,7 @@ class SecurityGroup(pulumi.CustomResource):
     @pulumi.getter(name="creationTime")
     def creation_time(self) -> pulumi.Output[builtins.str]:
         """
-        安全组创建时间。
+        Security group creation time
         """
         return pulumi.get(self, "creation_time")
 
@@ -473,7 +473,7 @@ class SecurityGroup(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
+        Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
         """
         return pulumi.get(self, "description")
 
@@ -491,7 +491,7 @@ class SecurityGroup(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        安全组所属项目名称。不填默认项目为default。
+        Project name to which the security group belongs. Default project is 'default' if not specified
         """
         return pulumi.get(self, "project_name")
 
@@ -499,7 +499,7 @@ class SecurityGroup(pulumi.CustomResource):
     @pulumi.getter(name="securityGroupId")
     def security_group_id(self) -> pulumi.Output[builtins.str]:
         """
-        安全组ID。
+        Security group ID
         """
         return pulumi.get(self, "security_group_id")
 
@@ -507,7 +507,7 @@ class SecurityGroup(pulumi.CustomResource):
     @pulumi.getter(name="securityGroupName")
     def security_group_name(self) -> pulumi.Output[builtins.str]:
         """
-        安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
+        Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
         """
         return pulumi.get(self, "security_group_name")
 
@@ -515,7 +515,7 @@ class SecurityGroup(pulumi.CustomResource):
     @pulumi.getter(name="serviceManaged")
     def service_managed(self) -> pulumi.Output[builtins.bool]:
         """
-        安全组是否为托管安全组。true为托管安全组，false为非托管安全组。
+        Indicates whether the security group is managed. true means managed security group, false means unmanaged security group
         """
         return pulumi.get(self, "service_managed")
 
@@ -523,7 +523,7 @@ class SecurityGroup(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        安全组状态。Available为可用，Creating为创建中。
+        Security group status. Available means available for use, Creating means being created
         """
         return pulumi.get(self, "status")
 
@@ -536,7 +536,7 @@ class SecurityGroup(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[builtins.str]:
         """
-        安全组类型。1、default：默认安全组。2、normal：自定义安全组。3、VpnGW： VPN网关安全组。4、NatGW： Nat网关安全组。 5、cidr_only：CIDR-Only安全组。
+        Security group type. 1. default: default security group. 2. normal: custom security group. 3. VpnGW: VPN gateway security group. 4. NatGW: NAT gateway security group. 5. cidr_only: CIDR-Only security group
         """
         return pulumi.get(self, "type")
 
@@ -544,7 +544,7 @@ class SecurityGroup(pulumi.CustomResource):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Output[builtins.str]:
         """
-        安全组所属的VPC ID。
+        VPC ID to which the security group belongs
         """
         return pulumi.get(self, "vpc_id")
 

@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainCompressionCompressionRule {
     /**
-     * @return 表示压缩操作的配置。
+     * @return Represents the configuration for compression operations.
      * 
      */
     private @Nullable DomainCompressionCompressionRuleCompressionAction compressionAction;
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     private @Nullable DomainCompressionCompressionRuleCondition condition;
 
     private DomainCompressionCompressionRule() {}
     /**
-     * @return 表示压缩操作的配置。
+     * @return Represents the configuration for compression operations.
      * 
      */
     public Optional<DomainCompressionCompressionRuleCompressionAction> compressionAction() {
         return Optional.ofNullable(this.compressionAction);
     }
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public Optional<DomainCompressionCompressionRuleCondition> condition() {

@@ -65,59 +65,59 @@ namespace Byteplus.Pulumi.Bytepluscc.Vepfs
     public sealed class GetInstanceResult
     {
         /// <summary>
-        /// 账户ID。
+        /// Account ID.
         /// </summary>
         public readonly string AccountId;
         /// <summary>
-        /// vePFS 文件系统吞吐上限。
+        /// VePFS file system throughput limit.
         /// </summary>
         public readonly int Bandwidth;
         /// <summary>
-        /// 文件系统容量，单位为 TiB。
+        /// File system capacity, unit: TiB.
         /// </summary>
         public readonly int Capacity;
         /// <summary>
-        /// 容量信息。
+        /// Capacity information.
         /// </summary>
         public readonly Outputs.GetInstanceCapacityInfoResult CapacityInfo;
         /// <summary>
-        /// 计费状态，默认为 Normal，表示正常计费。
+        /// Billing status. Default is Normal, indicating standard billing.
         /// </summary>
         public readonly string ChargeStatus;
         /// <summary>
-        /// 计费类型。取值说明如下：PayAsYouGo：按量计费。
+        /// Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
         /// </summary>
         public readonly string ChargeType;
         /// <summary>
-        /// 创建时间。
+        /// Creation time.
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 文件系统描述信息。
+        /// File system description.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 扩容后是否开启数据均衡，取值说明如下：true：扩容后立即开启数据均衡。false：扩容后不开启数据均衡。注意：仅 100MB/s/TiB 规格的文件系统支持数据均衡功能。由于数据均衡过程会消耗存储节点的网络和磁盘带宽，导致文件系统的性能下降，建议您评估业务需求，谨慎开启。数据均衡的时间主要受存量数据量的影响，如果您的存量数据较多，均衡的时间可能会较长，根据扩容容量大小和文件系统状态，此过程可能需要花费数小时至 2 天的时间，建议您在业务低峰期开启并耐心等待。
+        /// Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
         /// </summary>
         public readonly bool EnableRestripe;
         /// <summary>
-        /// 过期时间。
+        /// Expiration time.
         /// </summary>
         public readonly string ExpireTime;
         /// <summary>
-        /// 文件系统 ID。
+        /// File system ID.
         /// </summary>
         public readonly string FileSystemId;
         /// <summary>
-        /// 文件系统名称。命名规范如下：只能以中文或英文开头。只能包含中文、字母、数字、半角句号（.）、下划线（_）或中划线（-）。长度需要在 1~128 个字符内。
+        /// File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
         /// </summary>
         public readonly string FileSystemName;
         /// <summary>
-        /// 文件系统类型，默认为 VePFS。
+        /// File system type. Default is VePFS.
         /// </summary>
         public readonly string FileSystemType;
         /// <summary>
-        /// 文件系统释放时间。
+        /// File system release time.
         /// </summary>
         public readonly string FreeTime;
         /// <summary>
@@ -125,71 +125,71 @@ namespace Byteplus.Pulumi.Bytepluscc.Vepfs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 文件系统所属项目，默认为 default。
+        /// Project to which the file system belongs. Default is default.
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// 协议类型，默认为 VePFS。
+        /// Protocol type. Default is VePFS.
         /// </summary>
         public readonly string ProtocolType;
         /// <summary>
-        /// 读带宽值, 单位MB/s。
+        /// Read bandwidth value, unit: MB/s.
         /// </summary>
         public readonly int ReadBandwidth;
         /// <summary>
-        /// 生成的辅助网卡所在的安全组ID。
+        /// Security group ID for the generated auxiliary NIC.
         /// </summary>
         public readonly string SecurityGroupId;
         /// <summary>
-        /// 文件系统状态。取值说明如下：Running：实例运行中。Creating：实例创建中。CreateError：实例创建失败。Updating：实例更新中。UpdateError：实例更新失败。Expanding：实例扩容中。ExpandError：实例扩容失败。Deleting：实例删除中。DeleteError：实例删除失败。Stopped：实例已关停。Error：实例处于错误状态。
+        /// File system status. Value descriptions are as follows: Running: Instance is running. Creating: Instance is being created. CreateError: Instance creation failed. Updating: Instance is being updated. UpdateError: Instance update failed. Expanding: Instance is being expanded. ExpandError: Instance expansion failed. Deleting: Instance is being deleted. DeleteError: Instance deletion failed. Stopped: Instance is stopped. Error: Instance is in an error state.
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// 文件系统关停时间。
+        /// File system shutdown time.
         /// </summary>
         public readonly string StopServiceTime;
         /// <summary>
-        /// 文件系统规格，取值说明如下：Advance*100：100MB/s/TiB。Performance：性能版。Intelligent*Computing：智算版。
+        /// File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
         /// </summary>
         public readonly string StoreType;
         /// <summary>
-        /// 文件系统规格中文名称，支持如下：100MB/s/TiB。性能版。智算版。
+        /// File system specification name in Chinese. Supported options: 100MB/s/TiB. Performance. Intelligent Computing.
         /// </summary>
         public readonly string StoreTypeCn;
         /// <summary>
-        /// 存储类型英文名。
+        /// Storage type English name.
         /// </summary>
         public readonly string StoreTypeEn;
         /// <summary>
-        /// 子网 ID。子网必须属于所选的可用区。
+        /// Subnet ID. The subnet must belong to the selected availability zone.
         /// </summary>
         public readonly string SubnetId;
         /// <summary>
-        /// 标签列表。
+        /// Tag list.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceTagResult> Tags;
         /// <summary>
-        /// 文件系统更新时间。
+        /// File system update time.
         /// </summary>
         public readonly string UpdatedTime;
         /// <summary>
-        /// 文件系统版本号。
+        /// File system version number.
         /// </summary>
         public readonly string VersionNumber;
         /// <summary>
-        /// 私有网络 ID。
+        /// Private network ID.
         /// </summary>
         public readonly string VpcId;
         /// <summary>
-        /// 写带宽值, 单位MB/s。
+        /// Write bandwidth value, measured in MB/s.
         /// </summary>
         public readonly int WriteBandwidth;
         /// <summary>
-        /// 可用区 ID。
+        /// Availability zone ID.
         /// </summary>
         public readonly string ZoneId;
         /// <summary>
-        /// 可用区名称。
+        /// Availability zone name.
         /// </summary>
         public readonly string ZoneName;
 

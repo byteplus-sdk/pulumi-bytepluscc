@@ -15,27 +15,27 @@ import java.util.Objects;
 @CustomType
 public final class GetRouteTableResult {
     /**
-     * @return 路由表所属账号的ID。
+     * @return Account ID owning the route table
      * 
      */
     private String accountId;
     /**
-     * @return 创建路由表输入的关联类型。1、Subnet：子网关联。2、Gateway：网关关联。
+     * @return Association type for route table creation input. 1. Subnet: Subnet association 2. Gateway: Gateway association
      * 
      */
     private String associateType;
     /**
-     * @return 路由表创建时间。
+     * @return Route Table Creation Time
      * 
      */
     private String createdTime;
     /**
-     * @return 路由表关联的自定义路由条目列表。
+     * @return List of custom route entries associated with the route table
      * 
      */
     private List<GetRouteTableCustomRouteEntry> customRouteEntries;
     /**
-     * @return 路由表描述信息。
+     * @return Route Table Description
      * 
      */
     private String description;
@@ -45,97 +45,97 @@ public final class GetRouteTableResult {
      */
     private String id;
     /**
-     * @return 关联路由表的IPv4网关ID。
+     * @return IPv4 Gateway ID associated with the route table
      * 
      */
     private String ipv4GatewayId;
     /**
-     * @return 关联路由表的IPv6网关ID。
+     * @return IPv6 Gateway ID associated with the route table
      * 
      */
     private String ipv6GatewayId;
     /**
-     * @return 路由表所属项目的名称。
+     * @return Name of the project owning the route table
      * 
      */
     private String projectName;
     /**
-     * @return 路由表ID。
+     * @return Route Table ID
      * 
      */
     private String routeTableId;
     /**
-     * @return 路由表名称。
+     * @return Route Table Name
      * 
      */
     private String routeTableName;
     /**
-     * @return 路由表类型。1、Custom：自定义路由表。2、System：系统路由表。
+     * @return Route table type. 1. Custom: Custom route table 2. System: System route table
      * 
      */
     private String routeTableType;
     /**
-     * @return 关联的子网的ID列表。
+     * @return List of associated subnet IDs
      * 
      */
     private List<String> subnetIds;
     /**
-     * @return 路由表关联的系统默认路由条目列表。
+     * @return List of system default route entries associated with the route table
      * 
      */
     private List<GetRouteTableSystemRouteEntry> systemRouteEntries;
     /**
-     * @return 标签列表。
+     * @return Tag List
      * 
      */
     private List<GetRouteTableTag> tags;
     /**
-     * @return 路由表更新时间。
+     * @return Route Table Last Updated Time
      * 
      */
     private String updatedTime;
     /**
-     * @return 路由表所属VPC的ID。
+     * @return ID of the VPC owning the route table
      * 
      */
     private String vpcId;
     /**
-     * @return VPC的名称。
+     * @return VPC Name
      * 
      */
     private String vpcName;
 
     private GetRouteTableResult() {}
     /**
-     * @return 路由表所属账号的ID。
+     * @return Account ID owning the route table
      * 
      */
     public String accountId() {
         return this.accountId;
     }
     /**
-     * @return 创建路由表输入的关联类型。1、Subnet：子网关联。2、Gateway：网关关联。
+     * @return Association type for route table creation input. 1. Subnet: Subnet association 2. Gateway: Gateway association
      * 
      */
     public String associateType() {
         return this.associateType;
     }
     /**
-     * @return 路由表创建时间。
+     * @return Route Table Creation Time
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 路由表关联的自定义路由条目列表。
+     * @return List of custom route entries associated with the route table
      * 
      */
     public List<GetRouteTableCustomRouteEntry> customRouteEntries() {
         return this.customRouteEntries;
     }
     /**
-     * @return 路由表描述信息。
+     * @return Route Table Description
      * 
      */
     public String description() {
@@ -149,84 +149,84 @@ public final class GetRouteTableResult {
         return this.id;
     }
     /**
-     * @return 关联路由表的IPv4网关ID。
+     * @return IPv4 Gateway ID associated with the route table
      * 
      */
     public String ipv4GatewayId() {
         return this.ipv4GatewayId;
     }
     /**
-     * @return 关联路由表的IPv6网关ID。
+     * @return IPv6 Gateway ID associated with the route table
      * 
      */
     public String ipv6GatewayId() {
         return this.ipv6GatewayId;
     }
     /**
-     * @return 路由表所属项目的名称。
+     * @return Name of the project owning the route table
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 路由表ID。
+     * @return Route Table ID
      * 
      */
     public String routeTableId() {
         return this.routeTableId;
     }
     /**
-     * @return 路由表名称。
+     * @return Route Table Name
      * 
      */
     public String routeTableName() {
         return this.routeTableName;
     }
     /**
-     * @return 路由表类型。1、Custom：自定义路由表。2、System：系统路由表。
+     * @return Route table type. 1. Custom: Custom route table 2. System: System route table
      * 
      */
     public String routeTableType() {
         return this.routeTableType;
     }
     /**
-     * @return 关联的子网的ID列表。
+     * @return List of associated subnet IDs
      * 
      */
     public List<String> subnetIds() {
         return this.subnetIds;
     }
     /**
-     * @return 路由表关联的系统默认路由条目列表。
+     * @return List of system default route entries associated with the route table
      * 
      */
     public List<GetRouteTableSystemRouteEntry> systemRouteEntries() {
         return this.systemRouteEntries;
     }
     /**
-     * @return 标签列表。
+     * @return Tag List
      * 
      */
     public List<GetRouteTableTag> tags() {
         return this.tags;
     }
     /**
-     * @return 路由表更新时间。
+     * @return Route Table Last Updated Time
      * 
      */
     public String updatedTime() {
         return this.updatedTime;
     }
     /**
-     * @return 路由表所属VPC的ID。
+     * @return ID of the VPC owning the route table
      * 
      */
     public String vpcId() {
         return this.vpcId;
     }
     /**
-     * @return VPC的名称。
+     * @return VPC Name
      * 
      */
     public String vpcName() {

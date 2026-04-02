@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class NodePoolKubernetesConfigLabel
     {
         /// <summary>
-        /// 标签键。
+        /// Tag key.
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// 标签值。
+        /// Label value.
         /// </summary>
         public readonly string? Value;
 

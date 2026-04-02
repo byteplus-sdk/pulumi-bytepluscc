@@ -13,22 +13,22 @@ import java.util.Objects;
 @CustomType
 public final class GetSnapshotResult {
     /**
-     * @return 快照创建时间。
+     * @return Snapshot Creation Time
      * 
      */
     private String createdTime;
     /**
-     * @return 快照描述信息。
+     * @return Snapshot Description
      * 
      */
     private String description;
     /**
-     * @return 文件系统 ID。
+     * @return File System ID
      * 
      */
     private String fileSystemId;
     /**
-     * @return 文件系统名称。
+     * @return File System Name
      * 
      */
     private String fileSystemName;
@@ -38,80 +38,80 @@ public final class GetSnapshotResult {
      */
     private String id;
     /**
-     * @return 是否加密，当前仅支持false，即不加密。
+     * @return Is encryption enabled. Currently only false is supported (not encrypted)
      * 
      */
     private Boolean isEncrypt;
     /**
-     * @return 快照创建进度。
+     * @return Snapshot Creation Progress
      * 
      */
     private String progress;
     /**
-     * @return 快照保留时间，默认为2147483647，即永久保留。
+     * @return Snapshot Retention Period. Default is 2147483647 (permanent retention)
      * 
      */
     private Integer retentionDays;
     /**
-     * @return 快照 ID。
+     * @return Snapshot ID
      * 
      */
     private String snapshotId;
     /**
-     * @return 快照名称。
+     * @return Snapshot Name
      * 
      */
     private String snapshotName;
     /**
-     * @return 快照类型，默认为Manual，即手动快照。
+     * @return Snapshot Type. Default is Manual (manual snapshot)
      * 
      */
     private String snapshotType;
     /**
-     * @return 文件系统容量，单位为 GiB。
+     * @return File System Capacity (GiB)
      * 
      */
     private Integer sourceSize;
     /**
-     * @return 文件系统版本。
+     * @return File System Version
      * 
      */
     private String sourceVersion;
     /**
-     * @return 快照状态。说明如下：Progressing：正在创建。Accomplished：创建成功。Failed：创建失败。
+     * @return Snapshot Status. Details: Progressing: Creating. Accomplished: Created successfully. Failed: Creation failed
      * 
      */
     private String status;
     /**
-     * @return 可用区 ID。
+     * @return Availability Zone ID
      * 
      */
     private String zoneId;
 
     private GetSnapshotResult() {}
     /**
-     * @return 快照创建时间。
+     * @return Snapshot Creation Time
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 快照描述信息。
+     * @return Snapshot Description
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 文件系统 ID。
+     * @return File System ID
      * 
      */
     public String fileSystemId() {
         return this.fileSystemId;
     }
     /**
-     * @return 文件系统名称。
+     * @return File System Name
      * 
      */
     public String fileSystemName() {
@@ -125,70 +125,70 @@ public final class GetSnapshotResult {
         return this.id;
     }
     /**
-     * @return 是否加密，当前仅支持false，即不加密。
+     * @return Is encryption enabled. Currently only false is supported (not encrypted)
      * 
      */
     public Boolean isEncrypt() {
         return this.isEncrypt;
     }
     /**
-     * @return 快照创建进度。
+     * @return Snapshot Creation Progress
      * 
      */
     public String progress() {
         return this.progress;
     }
     /**
-     * @return 快照保留时间，默认为2147483647，即永久保留。
+     * @return Snapshot Retention Period. Default is 2147483647 (permanent retention)
      * 
      */
     public Integer retentionDays() {
         return this.retentionDays;
     }
     /**
-     * @return 快照 ID。
+     * @return Snapshot ID
      * 
      */
     public String snapshotId() {
         return this.snapshotId;
     }
     /**
-     * @return 快照名称。
+     * @return Snapshot Name
      * 
      */
     public String snapshotName() {
         return this.snapshotName;
     }
     /**
-     * @return 快照类型，默认为Manual，即手动快照。
+     * @return Snapshot Type. Default is Manual (manual snapshot)
      * 
      */
     public String snapshotType() {
         return this.snapshotType;
     }
     /**
-     * @return 文件系统容量，单位为 GiB。
+     * @return File System Capacity (GiB)
      * 
      */
     public Integer sourceSize() {
         return this.sourceSize;
     }
     /**
-     * @return 文件系统版本。
+     * @return File System Version
      * 
      */
     public String sourceVersion() {
         return this.sourceVersion;
     }
     /**
-     * @return 快照状态。说明如下：Progressing：正在创建。Accomplished：创建成功。Failed：创建失败。
+     * @return Snapshot Status. Details: Progressing: Creating. Accomplished: Created successfully. Failed: Creation failed
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 可用区 ID。
+     * @return Availability Zone ID
      * 
      */
     public String zoneId() {

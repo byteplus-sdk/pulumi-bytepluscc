@@ -16,14 +16,14 @@ public final class GatewayServiceDomainSpecArgs extends com.pulumi.resources.Res
     public static final GatewayServiceDomainSpecArgs Empty = new GatewayServiceDomainSpecArgs();
 
     /**
-     * 开启私网域名公网解析。
+     * Enable public resolution for private network domains.
      * 
      */
     @Import(name="enablePublicResolution")
     private @Nullable Output<Boolean> enablePublicResolution;
 
     /**
-     * @return 开启私网域名公网解析。
+     * @return Enable public resolution for private network domains.
      * 
      */
     public Optional<Output<Boolean>> enablePublicResolution() {
@@ -55,7 +55,7 @@ public final class GatewayServiceDomainSpecArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param enablePublicResolution 开启私网域名公网解析。
+         * @param enablePublicResolution Enable public resolution for private network domains.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class GatewayServiceDomainSpecArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param enablePublicResolution 开启私网域名公网解析。
+         * @param enablePublicResolution Enable public resolution for private network domains.
          * 
          * @return builder
          * 

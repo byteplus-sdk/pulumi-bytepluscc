@@ -18,14 +18,14 @@ public final class ImageDetectionResultsArgs extends com.pulumi.resources.Resour
     public static final ImageDetectionResultsArgs Empty = new ImageDetectionResultsArgs();
 
     /**
-     * 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
+     * Check status. Options: Finished (completed), Processing (in progress).
      * 
      */
     @Import(name="detectionStatus")
     private @Nullable Output<String> detectionStatus;
 
     /**
-     * @return 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
+     * @return Check status. Options: Finished (completed), Processing (in progress).
      * 
      */
     public Optional<Output<String>> detectionStatus() {
@@ -65,7 +65,7 @@ public final class ImageDetectionResultsArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param detectionStatus 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
+         * @param detectionStatus Check status. Options: Finished (completed), Processing (in progress).
          * 
          * @return builder
          * 
@@ -76,7 +76,7 @@ public final class ImageDetectionResultsArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param detectionStatus 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
+         * @param detectionStatus Check status. Options: Finished (completed), Processing (in progress).
          * 
          * @return builder
          * 

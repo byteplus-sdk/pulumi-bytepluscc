@@ -14,43 +14,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Inputs
     public sealed class ClusterApplicationExtraApplicationConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 组件实例名称。
+        /// Component instance name.
         /// </summary>
         [Input("componentInstanceName")]
         public Input<string>? ComponentInstanceName { get; set; }
 
         /// <summary>
-        /// 组件名称。
+        /// Component name.
         /// </summary>
         [Input("componentName")]
         public Input<string>? ComponentName { get; set; }
 
         /// <summary>
-        /// 配置文件名。
+        /// Configuration file name.
         /// </summary>
         [Input("configFileName")]
         public Input<string>? ConfigFileName { get; set; }
 
         /// <summary>
-        /// 配置项名称。
+        /// Configuration item name.
         /// </summary>
         [Input("configItemKey")]
         public Input<string>? ConfigItemKey { get; set; }
 
         /// <summary>
-        /// 配置项值。
+        /// Configuration item value.
         /// </summary>
         [Input("configItemValue")]
         public Input<string>? ConfigItemValue { get; set; }
 
         /// <summary>
-        /// 是否删除。
+        /// Whether to delete.
         /// </summary>
         [Input("deleted")]
         public Input<bool>? Deleted { get; set; }
 
         /// <summary>
-        /// 影响组件。
+        /// Affected component.
         /// </summary>
         [Input("effectiveScope")]
         public Input<Inputs.ClusterApplicationExtraApplicationConfigEffectiveScopeGetArgs>? EffectiveScope { get; set; }

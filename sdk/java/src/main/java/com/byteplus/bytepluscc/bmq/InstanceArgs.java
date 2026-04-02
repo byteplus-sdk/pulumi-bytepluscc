@@ -21,14 +21,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     public static final InstanceArgs Empty = new InstanceArgs();
 
     /**
-     * 是否开启自动续费，取值如下：true：开启自动续费。false：关闭自动续费。
+     * Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
      * 
      */
     @Import(name="autoRenew")
     private @Nullable Output<String> autoRenew;
 
     /**
-     * @return 是否开启自动续费，取值如下：true：开启自动续费。false：关闭自动续费。
+     * @return Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
      * 
      */
     public Optional<Output<String>> autoRenew() {
@@ -36,14 +36,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+     * Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
      * 
      */
     @Import(name="billingPeriod")
     private @Nullable Output<String> billingPeriod;
 
     /**
-     * @return 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+     * @return Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
      * 
      */
     public Optional<Output<String>> billingPeriod() {
@@ -51,14 +51,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的计费方式，取值如下：POST：按量计费。MIX：包年包月。
+     * Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
      * 
      */
     @Import(name="billingType", required=true)
     private Output<String> billingType;
 
     /**
-     * @return 实例的计费方式，取值如下：POST：按量计费。MIX：包年包月。
+     * @return Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
      * 
      */
     public Output<String> billingType() {
@@ -66,14 +66,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例的描述语句。
+     * Instance description statement
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 实例的描述语句。
+     * @return Instance description statement
      * 
      */
     public Optional<Output<String>> description() {
@@ -81,14 +81,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例是否开启公网访问。如果需要开启公网访问，请配置相同地域的公网 IP 的 ID。
+     * Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
      * 
      */
     @Import(name="eipId")
     private @Nullable Output<String> eipId;
 
     /**
-     * @return 实例是否开启公网访问。如果需要开启公网访问，请配置相同地域的公网 IP 的 ID。
+     * @return Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
      * 
      */
     public Optional<Output<String>> eipId() {
@@ -96,14 +96,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例所有接入点响应数据。
+     * Response data for all instance endpoints
      * 
      */
     @Import(name="endpoints")
     private @Nullable Output<InstanceEndpointsArgs> endpoints;
 
     /**
-     * @return 实例所有接入点响应数据。
+     * @return Response data for all instance endpoints
      * 
      */
     public Optional<Output<InstanceEndpointsArgs>> endpoints() {
@@ -111,14 +111,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例下所有 Topic 的消息保留时长，单位为小时。
+     * Message retention period for all topics under the instance, in hours
      * 
      */
     @Import(name="messageRetention")
     private @Nullable Output<Integer> messageRetention;
 
     /**
-     * @return 实例下所有 Topic 的消息保留时长，单位为小时。
+     * @return Message retention period for all topics under the instance, in hours
      * 
      */
     public Optional<Output<Integer>> messageRetention() {
@@ -126,14 +126,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 自定设置 BMQ 实例的名称，约束限制如下：由小写字母、数字和中划线（-）组成。长度为 1~64 字符。
+     * Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return 自定设置 BMQ 实例的名称，约束限制如下：由小写字母、数字和中划线（-）组成。长度为 1~64 字符。
+     * @return Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
      * 
      */
     public Output<String> name() {
@@ -141,14 +141,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例所属项目名称。
+     * Project name to which the instance belongs
      * 
      */
     @Import(name="projectName", required=true)
     private Output<String> projectName;
 
     /**
-     * @return 实例所属项目名称。
+     * @return Project name to which the instance belongs
      * 
      */
     public Output<String> projectName() {
@@ -156,14 +156,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例使用安全组列表。
+     * List of security groups used by the instance
      * 
      */
     @Import(name="securityGroupIdLists", required=true)
     private Output<List<String>> securityGroupIdLists;
 
     /**
-     * @return 实例使用安全组列表。
+     * @return List of security groups used by the instance
      * 
      */
     public Output<List<String>> securityGroupIdLists() {
@@ -171,14 +171,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例规格。
+     * Instance specification
      * 
      */
     @Import(name="specification", required=true)
     private Output<String> specification;
 
     /**
-     * @return 实例规格。
+     * @return Instance specification
      * 
      */
     public Output<String> specification() {
@@ -186,14 +186,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例使用的子网列表。
+     * List of subnets used by the instance
      * 
      */
     @Import(name="subnetIdLists", required=true)
     private Output<List<String>> subnetIdLists;
 
     /**
-     * @return 实例使用的子网列表。
+     * @return List of subnets used by the instance
      * 
      */
     public Output<List<String>> subnetIdLists() {
@@ -208,14 +208,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 包年包月类型实例的购买时长，单位为月。
+     * Purchase duration for subscription instances, in months
      * 
      */
     @Import(name="times")
     private @Nullable Output<Integer> times;
 
     /**
-     * @return 包年包月类型实例的购买时长，单位为月。
+     * @return Purchase duration for subscription instances, in months
      * 
      */
     public Optional<Output<Integer>> times() {
@@ -223,14 +223,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例所在VPC ID。
+     * VPC ID where the instance is located
      * 
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
-     * @return 实例所在VPC ID。
+     * @return VPC ID where the instance is located
      * 
      */
     public Output<String> vpcId() {
@@ -238,14 +238,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例所在可用区列表。
+     * List of availability zones where the instance is located
      * 
      */
     @Import(name="zoneIdLists", required=true)
     private Output<List<String>> zoneIdLists;
 
     /**
-     * @return 实例所在可用区列表。
+     * @return List of availability zones where the instance is located
      * 
      */
     public Output<List<String>> zoneIdLists() {
@@ -292,7 +292,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoRenew 是否开启自动续费，取值如下：true：开启自动续费。false：关闭自动续费。
+         * @param autoRenew Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
          * 
          * @return builder
          * 
@@ -303,7 +303,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoRenew 是否开启自动续费，取值如下：true：开启自动续费。false：关闭自动续费。
+         * @param autoRenew Whether to enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal
          * 
          * @return builder
          * 
@@ -313,7 +313,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param billingPeriod 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+         * @param billingPeriod Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
          * 
          * @return builder
          * 
@@ -324,7 +324,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param billingPeriod 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+         * @param billingPeriod Unit of purchase duration. Possible values: MONTHLY: Monthly purchase. YEARLY: Annual purchase
          * 
          * @return builder
          * 
@@ -334,7 +334,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param billingType 实例的计费方式，取值如下：POST：按量计费。MIX：包年包月。
+         * @param billingType Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
          * 
          * @return builder
          * 
@@ -345,7 +345,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param billingType 实例的计费方式，取值如下：POST：按量计费。MIX：包年包月。
+         * @param billingType Instance billing method. Possible values: POST: Pay-as-you-go. MIX: Subscription
          * 
          * @return builder
          * 
@@ -355,7 +355,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 实例的描述语句。
+         * @param description Instance description statement
          * 
          * @return builder
          * 
@@ -366,7 +366,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 实例的描述语句。
+         * @param description Instance description statement
          * 
          * @return builder
          * 
@@ -376,7 +376,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eipId 实例是否开启公网访问。如果需要开启公网访问，请配置相同地域的公网 IP 的 ID。
+         * @param eipId Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
          * 
          * @return builder
          * 
@@ -387,7 +387,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eipId 实例是否开启公网访问。如果需要开启公网访问，请配置相同地域的公网 IP 的 ID。
+         * @param eipId Whether public access is enabled for the instance. To enable public access, configure the public IP ID in the same region
          * 
          * @return builder
          * 
@@ -397,7 +397,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpoints 实例所有接入点响应数据。
+         * @param endpoints Response data for all instance endpoints
          * 
          * @return builder
          * 
@@ -408,7 +408,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpoints 实例所有接入点响应数据。
+         * @param endpoints Response data for all instance endpoints
          * 
          * @return builder
          * 
@@ -418,7 +418,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param messageRetention 实例下所有 Topic 的消息保留时长，单位为小时。
+         * @param messageRetention Message retention period for all topics under the instance, in hours
          * 
          * @return builder
          * 
@@ -429,7 +429,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param messageRetention 实例下所有 Topic 的消息保留时长，单位为小时。
+         * @param messageRetention Message retention period for all topics under the instance, in hours
          * 
          * @return builder
          * 
@@ -439,7 +439,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 自定设置 BMQ 实例的名称，约束限制如下：由小写字母、数字和中划线（-）组成。长度为 1~64 字符。
+         * @param name Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
          * 
          * @return builder
          * 
@@ -450,7 +450,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 自定设置 BMQ 实例的名称，约束限制如下：由小写字母、数字和中划线（-）组成。长度为 1~64 字符。
+         * @param name Set a custom name for the BMQ instance. Constraints: Use lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
          * 
          * @return builder
          * 
@@ -460,7 +460,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 实例所属项目名称。
+         * @param projectName Project name to which the instance belongs
          * 
          * @return builder
          * 
@@ -471,7 +471,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 实例所属项目名称。
+         * @param projectName Project name to which the instance belongs
          * 
          * @return builder
          * 
@@ -481,7 +481,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityGroupIdLists 实例使用安全组列表。
+         * @param securityGroupIdLists List of security groups used by the instance
          * 
          * @return builder
          * 
@@ -492,7 +492,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityGroupIdLists 实例使用安全组列表。
+         * @param securityGroupIdLists List of security groups used by the instance
          * 
          * @return builder
          * 
@@ -502,7 +502,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityGroupIdLists 实例使用安全组列表。
+         * @param securityGroupIdLists List of security groups used by the instance
          * 
          * @return builder
          * 
@@ -512,7 +512,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param specification 实例规格。
+         * @param specification Instance specification
          * 
          * @return builder
          * 
@@ -523,7 +523,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param specification 实例规格。
+         * @param specification Instance specification
          * 
          * @return builder
          * 
@@ -533,7 +533,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetIdLists 实例使用的子网列表。
+         * @param subnetIdLists List of subnets used by the instance
          * 
          * @return builder
          * 
@@ -544,7 +544,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetIdLists 实例使用的子网列表。
+         * @param subnetIdLists List of subnets used by the instance
          * 
          * @return builder
          * 
@@ -554,7 +554,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetIdLists 实例使用的子网列表。
+         * @param subnetIdLists List of subnets used by the instance
          * 
          * @return builder
          * 
@@ -577,7 +577,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param times 包年包月类型实例的购买时长，单位为月。
+         * @param times Purchase duration for subscription instances, in months
          * 
          * @return builder
          * 
@@ -588,7 +588,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param times 包年包月类型实例的购买时长，单位为月。
+         * @param times Purchase duration for subscription instances, in months
          * 
          * @return builder
          * 
@@ -598,7 +598,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 实例所在VPC ID。
+         * @param vpcId VPC ID where the instance is located
          * 
          * @return builder
          * 
@@ -609,7 +609,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 实例所在VPC ID。
+         * @param vpcId VPC ID where the instance is located
          * 
          * @return builder
          * 
@@ -619,7 +619,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneIdLists 实例所在可用区列表。
+         * @param zoneIdLists List of availability zones where the instance is located
          * 
          * @return builder
          * 
@@ -630,7 +630,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneIdLists 实例所在可用区列表。
+         * @param zoneIdLists List of availability zones where the instance is located
          * 
          * @return builder
          * 
@@ -640,7 +640,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param zoneIdLists 实例所在可用区列表。
+         * @param zoneIdLists List of availability zones where the instance is located
          * 
          * @return builder
          * 

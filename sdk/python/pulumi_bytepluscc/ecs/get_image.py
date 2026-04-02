@@ -28,13 +28,16 @@ class GetImageResult:
     """
     A collection of values returned by getImage.
     """
-    def __init__(__self__, architecture=None, boot_mode=None, created_at=None, description=None, detection_results=None, id=None, image_id=None, image_name=None, image_owner_id=None, instance_id=None, is_install_run_command_agent=None, is_lts=None, is_support_cloud_init=None, kernel=None, license_type=None, os_name=None, os_type=None, platform=None, platform_version=None, project_name=None, share_permissions=None, share_status=None, size=None, snapshot_group_id=None, snapshot_id=None, snapshots=None, status=None, tags=None, updated_at=None, virtual_size=None, visibility=None):
+    def __init__(__self__, architecture=None, boot_mode=None, create_whole_image=None, created_at=None, description=None, detection_results=None, id=None, image_id=None, image_name=None, image_owner_id=None, import_image=None, instance_id=None, is_install_run_command_agent=None, is_lts=None, is_support_cloud_init=None, kernel=None, license_type=None, need_detection=None, os_name=None, os_type=None, platform=None, platform_version=None, product_code=None, project_name=None, share_permissions=None, share_status=None, size=None, snapshot_group_id=None, snapshot_id=None, snapshots=None, status=None, tags=None, updated_at=None, virtual_size=None, visibility=None):
         if architecture and not isinstance(architecture, str):
             raise TypeError("Expected argument 'architecture' to be a str")
         pulumi.set(__self__, "architecture", architecture)
         if boot_mode and not isinstance(boot_mode, str):
             raise TypeError("Expected argument 'boot_mode' to be a str")
         pulumi.set(__self__, "boot_mode", boot_mode)
+        if create_whole_image and not isinstance(create_whole_image, bool):
+            raise TypeError("Expected argument 'create_whole_image' to be a bool")
+        pulumi.set(__self__, "create_whole_image", create_whole_image)
         if created_at and not isinstance(created_at, str):
             raise TypeError("Expected argument 'created_at' to be a str")
         pulumi.set(__self__, "created_at", created_at)
@@ -56,6 +59,9 @@ class GetImageResult:
         if image_owner_id and not isinstance(image_owner_id, str):
             raise TypeError("Expected argument 'image_owner_id' to be a str")
         pulumi.set(__self__, "image_owner_id", image_owner_id)
+        if import_image and not isinstance(import_image, dict):
+            raise TypeError("Expected argument 'import_image' to be a dict")
+        pulumi.set(__self__, "import_image", import_image)
         if instance_id and not isinstance(instance_id, str):
             raise TypeError("Expected argument 'instance_id' to be a str")
         pulumi.set(__self__, "instance_id", instance_id)
@@ -74,6 +80,9 @@ class GetImageResult:
         if license_type and not isinstance(license_type, str):
             raise TypeError("Expected argument 'license_type' to be a str")
         pulumi.set(__self__, "license_type", license_type)
+        if need_detection and not isinstance(need_detection, bool):
+            raise TypeError("Expected argument 'need_detection' to be a bool")
+        pulumi.set(__self__, "need_detection", need_detection)
         if os_name and not isinstance(os_name, str):
             raise TypeError("Expected argument 'os_name' to be a str")
         pulumi.set(__self__, "os_name", os_name)
@@ -86,6 +95,9 @@ class GetImageResult:
         if platform_version and not isinstance(platform_version, str):
             raise TypeError("Expected argument 'platform_version' to be a str")
         pulumi.set(__self__, "platform_version", platform_version)
+        if product_code and not isinstance(product_code, str):
+            raise TypeError("Expected argument 'product_code' to be a str")
+        pulumi.set(__self__, "product_code", product_code)
         if project_name and not isinstance(project_name, str):
             raise TypeError("Expected argument 'project_name' to be a str")
         pulumi.set(__self__, "project_name", project_name)
@@ -127,7 +139,7 @@ class GetImageResult:
     @pulumi.getter
     def architecture(self) -> builtins.str:
         """
-        镜像的架构类型。可以选择amd64（x86计算）、arm64（ARM计算）类型。
+        Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
         """
         return pulumi.get(self, "architecture")
 
@@ -135,15 +147,23 @@ class GetImageResult:
     @pulumi.getter(name="bootMode")
     def boot_mode(self) -> builtins.str:
         """
-        镜像的启动模式。可以选择BIOS、UEFI类型。
+        Image boot mode. You can select BIOS or UEFI
         """
         return pulumi.get(self, "boot_mode")
+
+    @property
+    @pulumi.getter(name="createWholeImage")
+    def create_whole_image(self) -> builtins.bool:
+        """
+        Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+        """
+        return pulumi.get(self, "create_whole_image")
 
     @property
     @pulumi.getter(name="createdAt")
     def created_at(self) -> builtins.str:
         """
-        镜像创建时间
+        Image creation time
         """
         return pulumi.get(self, "created_at")
 
@@ -151,7 +171,7 @@ class GetImageResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
+        Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores "_", hyphens "-", equals signs "=", English commas ",", English periods ".", Chinese commas "，", Chinese periods "。", and spaces. Length: 0–255 characters. If left blank, defaults to empty.
         """
         return pulumi.get(self, "description")
 
@@ -159,7 +179,7 @@ class GetImageResult:
     @pulumi.getter(name="detectionResults")
     def detection_results(self) -> 'outputs.GetImageDetectionResultsResult':
         """
-        镜像的检测结果。
+        Image check result.
         """
         return pulumi.get(self, "detection_results")
 
@@ -175,7 +195,7 @@ class GetImageResult:
     @pulumi.getter(name="imageId")
     def image_id(self) -> builtins.str:
         """
-        镜像ID。
+        Image ID
         """
         return pulumi.get(self, "image_id")
 
@@ -183,7 +203,7 @@ class GetImageResult:
     @pulumi.getter(name="imageName")
     def image_name(self) -> builtins.str:
         """
-        镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
+        Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores "_", hyphens "-", and periods ".". Length: 1–128 characters
         """
         return pulumi.get(self, "image_name")
 
@@ -191,15 +211,23 @@ class GetImageResult:
     @pulumi.getter(name="imageOwnerId")
     def image_owner_id(self) -> builtins.str:
         """
-        镜像所属的账号ID。
+        Account ID to which the image belongs.
         """
         return pulumi.get(self, "image_owner_id")
+
+    @property
+    @pulumi.getter(name="importImage")
+    def import_image(self) -> 'outputs.GetImageImportImageResult':
+        """
+        Imported image information
+        """
+        return pulumi.get(self, "import_image")
 
     @property
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> builtins.str:
         """
-        实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
+        Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
         """
         return pulumi.get(self, "instance_id")
 
@@ -207,7 +235,7 @@ class GetImageResult:
     @pulumi.getter(name="isInstallRunCommandAgent")
     def is_install_run_command_agent(self) -> builtins.bool:
         """
-        镜像中是否安装了云助手Agent。
+        Whether Cloud Assistant Agent is installed in the image
         """
         return pulumi.get(self, "is_install_run_command_agent")
 
@@ -215,7 +243,7 @@ class GetImageResult:
     @pulumi.getter(name="isLts")
     def is_lts(self) -> builtins.bool:
         """
-        公共镜像是否长期维护。
+        Whether the public image is maintained long-term.
         """
         return pulumi.get(self, "is_lts")
 
@@ -223,7 +251,7 @@ class GetImageResult:
     @pulumi.getter(name="isSupportCloudInit")
     def is_support_cloud_init(self) -> builtins.bool:
         """
-        镜像是否支持Cloud-init。
+        Whether the image supports Cloud-init.
         """
         return pulumi.get(self, "is_support_cloud_init")
 
@@ -231,7 +259,7 @@ class GetImageResult:
     @pulumi.getter
     def kernel(self) -> builtins.str:
         """
-        镜像的内核版本。
+        Image kernel version.
         """
         return pulumi.get(self, "kernel")
 
@@ -239,15 +267,23 @@ class GetImageResult:
     @pulumi.getter(name="licenseType")
     def license_type(self) -> builtins.str:
         """
-        镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
+        Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
         """
         return pulumi.get(self, "license_type")
+
+    @property
+    @pulumi.getter(name="needDetection")
+    def need_detection(self) -> builtins.bool:
+        """
+        Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+        """
+        return pulumi.get(self, "need_detection")
 
     @property
     @pulumi.getter(name="osName")
     def os_name(self) -> builtins.str:
         """
-        镜像操作系统的名称。
+        Name of the image operating system.
         """
         return pulumi.get(self, "os_name")
 
@@ -255,7 +291,7 @@ class GetImageResult:
     @pulumi.getter(name="osType")
     def os_type(self) -> builtins.str:
         """
-        操作系统类型。
+        Operating system type
         """
         return pulumi.get(self, "os_type")
 
@@ -263,7 +299,7 @@ class GetImageResult:
     @pulumi.getter
     def platform(self) -> builtins.str:
         """
-        镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
+        Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
         """
         return pulumi.get(self, "platform")
 
@@ -271,15 +307,23 @@ class GetImageResult:
     @pulumi.getter(name="platformVersion")
     def platform_version(self) -> builtins.str:
         """
-        镜像的发行版本。
+        Image release version.
         """
         return pulumi.get(self, "platform_version")
+
+    @property
+    @pulumi.getter(name="productCode")
+    def product_code(self) -> builtins.str:
+        """
+        Product code for marketplace image
+        """
+        return pulumi.get(self, "product_code")
 
     @property
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
+        Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
         """
         return pulumi.get(self, "project_name")
 
@@ -287,7 +331,7 @@ class GetImageResult:
     @pulumi.getter(name="sharePermissions")
     def share_permissions(self) -> Sequence[builtins.str]:
         """
-        镜像共享的账户
+        Accounts with which the image is shared
         """
         return pulumi.get(self, "share_permissions")
 
@@ -295,7 +339,7 @@ class GetImageResult:
     @pulumi.getter(name="shareStatus")
     def share_status(self) -> builtins.str:
         """
-        镜像共享状态。HasShared：自定义镜像已被共享给其他用户。当自定义镜像未被共享或使用公共镜像时，ShareStatus返回为空。
+        Image sharing status. HasShared: The custom image has been shared with other users. If the custom image is not shared or a public image is used, ShareStatus returns empty.
         """
         return pulumi.get(self, "share_status")
 
@@ -303,7 +347,7 @@ class GetImageResult:
     @pulumi.getter
     def size(self) -> builtins.int:
         """
-        镜像大小，单位为GiB。
+        Image size, in GiB.
         """
         return pulumi.get(self, "size")
 
@@ -311,7 +355,7 @@ class GetImageResult:
     @pulumi.getter(name="snapshotGroupId")
     def snapshot_group_id(self) -> builtins.str:
         """
-        快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
+        Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
         """
         return pulumi.get(self, "snapshot_group_id")
 
@@ -319,7 +363,7 @@ class GetImageResult:
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> builtins.str:
         """
-        系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
+        System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
         """
         return pulumi.get(self, "snapshot_id")
 
@@ -327,7 +371,7 @@ class GetImageResult:
     @pulumi.getter
     def snapshots(self) -> Sequence['outputs.GetImageSnapshotResult']:
         """
-        镜像关联快照的信息。
+        Information about snapshots associated with the image.
         """
         return pulumi.get(self, "snapshots")
 
@@ -335,7 +379,7 @@ class GetImageResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        镜像的状态。
+        Image status.
         """
         return pulumi.get(self, "status")
 
@@ -343,7 +387,7 @@ class GetImageResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetImageTagResult']:
         """
-        镜像绑定的标签列表。
+        List of tags bound to the image.
         """
         return pulumi.get(self, "tags")
 
@@ -351,7 +395,7 @@ class GetImageResult:
     @pulumi.getter(name="updatedAt")
     def updated_at(self) -> builtins.str:
         """
-        镜像更新时间
+        Image update time
         """
         return pulumi.get(self, "updated_at")
 
@@ -359,7 +403,7 @@ class GetImageResult:
     @pulumi.getter(name="virtualSize")
     def virtual_size(self) -> builtins.float:
         """
-        镜像大小，单位为Byte。
+        Image size, in Bytes.
         """
         return pulumi.get(self, "virtual_size")
 
@@ -367,7 +411,7 @@ class GetImageResult:
     @pulumi.getter
     def visibility(self) -> builtins.str:
         """
-        镜像的可见性。public：公共镜像。private：私有镜像。shared：共享镜像。
+        Image visibility. public: Public image. private: Private image. shared: Shared image.
         """
         return pulumi.get(self, "visibility")
 
@@ -380,6 +424,7 @@ class AwaitableGetImageResult(GetImageResult):
         return GetImageResult(
             architecture=self.architecture,
             boot_mode=self.boot_mode,
+            create_whole_image=self.create_whole_image,
             created_at=self.created_at,
             description=self.description,
             detection_results=self.detection_results,
@@ -387,16 +432,19 @@ class AwaitableGetImageResult(GetImageResult):
             image_id=self.image_id,
             image_name=self.image_name,
             image_owner_id=self.image_owner_id,
+            import_image=self.import_image,
             instance_id=self.instance_id,
             is_install_run_command_agent=self.is_install_run_command_agent,
             is_lts=self.is_lts,
             is_support_cloud_init=self.is_support_cloud_init,
             kernel=self.kernel,
             license_type=self.license_type,
+            need_detection=self.need_detection,
             os_name=self.os_name,
             os_type=self.os_type,
             platform=self.platform,
             platform_version=self.platform_version,
+            product_code=self.product_code,
             project_name=self.project_name,
             share_permissions=self.share_permissions,
             share_status=self.share_status,
@@ -427,6 +475,7 @@ def get_image(id: Optional[builtins.str] = None,
     return AwaitableGetImageResult(
         architecture=pulumi.get(__ret__, 'architecture'),
         boot_mode=pulumi.get(__ret__, 'boot_mode'),
+        create_whole_image=pulumi.get(__ret__, 'create_whole_image'),
         created_at=pulumi.get(__ret__, 'created_at'),
         description=pulumi.get(__ret__, 'description'),
         detection_results=pulumi.get(__ret__, 'detection_results'),
@@ -434,16 +483,19 @@ def get_image(id: Optional[builtins.str] = None,
         image_id=pulumi.get(__ret__, 'image_id'),
         image_name=pulumi.get(__ret__, 'image_name'),
         image_owner_id=pulumi.get(__ret__, 'image_owner_id'),
+        import_image=pulumi.get(__ret__, 'import_image'),
         instance_id=pulumi.get(__ret__, 'instance_id'),
         is_install_run_command_agent=pulumi.get(__ret__, 'is_install_run_command_agent'),
         is_lts=pulumi.get(__ret__, 'is_lts'),
         is_support_cloud_init=pulumi.get(__ret__, 'is_support_cloud_init'),
         kernel=pulumi.get(__ret__, 'kernel'),
         license_type=pulumi.get(__ret__, 'license_type'),
+        need_detection=pulumi.get(__ret__, 'need_detection'),
         os_name=pulumi.get(__ret__, 'os_name'),
         os_type=pulumi.get(__ret__, 'os_type'),
         platform=pulumi.get(__ret__, 'platform'),
         platform_version=pulumi.get(__ret__, 'platform_version'),
+        product_code=pulumi.get(__ret__, 'product_code'),
         project_name=pulumi.get(__ret__, 'project_name'),
         share_permissions=pulumi.get(__ret__, 'share_permissions'),
         share_status=pulumi.get(__ret__, 'share_status'),
@@ -471,6 +523,7 @@ def get_image_output(id: Optional[pulumi.Input[builtins.str]] = None,
     return __ret__.apply(lambda __response__: GetImageResult(
         architecture=pulumi.get(__response__, 'architecture'),
         boot_mode=pulumi.get(__response__, 'boot_mode'),
+        create_whole_image=pulumi.get(__response__, 'create_whole_image'),
         created_at=pulumi.get(__response__, 'created_at'),
         description=pulumi.get(__response__, 'description'),
         detection_results=pulumi.get(__response__, 'detection_results'),
@@ -478,16 +531,19 @@ def get_image_output(id: Optional[pulumi.Input[builtins.str]] = None,
         image_id=pulumi.get(__response__, 'image_id'),
         image_name=pulumi.get(__response__, 'image_name'),
         image_owner_id=pulumi.get(__response__, 'image_owner_id'),
+        import_image=pulumi.get(__response__, 'import_image'),
         instance_id=pulumi.get(__response__, 'instance_id'),
         is_install_run_command_agent=pulumi.get(__response__, 'is_install_run_command_agent'),
         is_lts=pulumi.get(__response__, 'is_lts'),
         is_support_cloud_init=pulumi.get(__response__, 'is_support_cloud_init'),
         kernel=pulumi.get(__response__, 'kernel'),
         license_type=pulumi.get(__response__, 'license_type'),
+        need_detection=pulumi.get(__response__, 'need_detection'),
         os_name=pulumi.get(__response__, 'os_name'),
         os_type=pulumi.get(__response__, 'os_type'),
         platform=pulumi.get(__response__, 'platform'),
         platform_version=pulumi.get(__response__, 'platform_version'),
+        product_code=pulumi.get(__response__, 'product_code'),
         project_name=pulumi.get(__response__, 'project_name'),
         share_permissions=pulumi.get(__response__, 'share_permissions'),
         share_status=pulumi.get(__response__, 'share_status'),

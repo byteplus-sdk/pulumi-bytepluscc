@@ -65,35 +65,35 @@ namespace Byteplus.Pulumi.Bytepluscc.Fwcenter
     public sealed class GetDnsControlPolicyResult
     {
         /// <summary>
-        /// 用户的唯一标识ID。
+        /// User's unique identifier.
         /// </summary>
         public readonly string AccountId;
         /// <summary>
-        /// 策略的描述信息。
+        /// Policy description information.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 访问目的，可以是域名或域名地址簿的唯一标识ID。当前仅支持一个地址簿。
+        /// Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
         /// </summary>
         public readonly string Destination;
         /// <summary>
-        /// 域名地址簿名称列表。
+        /// Domain address book name list.
         /// </summary>
         public readonly ImmutableArray<string> DestinationGroupLists;
         /// <summary>
-        /// 访问目的的类型。domain：域名；group：域名地址簿。
+        /// Type of access target. domain: domain; group: domain address book.
         /// </summary>
         public readonly string DestinationType;
         /// <summary>
-        /// 域名地址簿的域名列表。
+        /// Domain list in the domain address book.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDnsControlPolicyDomainListV1Result> DomainListV1s;
         /// <summary>
-        /// 域名列表。
+        /// Domain list.
         /// </summary>
         public readonly ImmutableArray<string> DomainLists;
         /// <summary>
-        /// 命中计数，表示该域名黑名单访问控制策略被触发的次数。
+        /// Hit count, indicating the number of times the domain denylist access control policy was triggered.
         /// </summary>
         public readonly int HitCnt;
         /// <summary>
@@ -101,27 +101,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Fwcenter
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 互联网边界防火墙实例ID。
+        /// Internet border firewall instance ID.
         /// </summary>
         public readonly string InternetFirewallId;
         /// <summary>
-        /// 最近命中时间戳，表示该域名黑名单访问控制策略最后一次被触发的时间。
+        /// Latest hit timestamp, indicating the last time the domain denylist access control policy was triggered.
         /// </summary>
         public readonly int LastHitTime;
         /// <summary>
-        /// 访问控制策略的唯一标识ID。
+        /// Unique identifier of the access control policy.
         /// </summary>
         public readonly string RuleId;
         /// <summary>
-        /// 访问源信息，包含VPC列表。
+        /// Access source information, including VPC list.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDnsControlPolicySourceResult> Sources;
         /// <summary>
-        /// 域名黑名单访问控制策略的开关状态。false：关闭；true：开启。
+        /// Switch status of the domain denylist access control policy. false: Off; true: On.
         /// </summary>
         public readonly bool Status;
         /// <summary>
-        /// 该域名黑名单访问控制策略占用的策略数量。
+        /// Number of policies occupied by this domain denylist access control policy.
         /// </summary>
         public readonly int UseCount;
 

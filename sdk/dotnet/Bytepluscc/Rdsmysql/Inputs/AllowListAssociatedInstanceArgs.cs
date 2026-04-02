@@ -14,31 +14,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql.Inputs
     public sealed class AllowListAssociatedInstanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 已绑定当前白名单的实例 ID。
+        /// Instance ID bound to the current allowlist.
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 已绑定当前白名单的实例名称。
+        /// Instance name bound to the current allowlist.
         /// </summary>
         [Input("instanceName")]
         public Input<string>? InstanceName { get; set; }
 
         /// <summary>
-        /// 实例状态。
+        /// Instance status.
         /// </summary>
         [Input("instanceStatus")]
         public Input<string>? InstanceStatus { get; set; }
 
         /// <summary>
-        /// 是否已同步最新的白名单。取值：true：是。false：否。说明在修改白名单时，如实例状态未处于运行中，白名单的修改不会立即同步到实例。
+        /// Has the latest allowlist been synchronized? Values: true: Yes. false: No. Note: When modifying the allowlist, if the instance is not running, changes to the allowlist will not be immediately synchronized to the instance.
         /// </summary>
         [Input("isLatest")]
         public Input<bool>? IsLatest { get; set; }
 
         /// <summary>
-        /// 实例所属的私有网络 ID。
+        /// Private network ID of the instance.
         /// </summary>
         [Input("vpc")]
         public Input<string>? Vpc { get; set; }

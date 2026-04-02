@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter.Outputs
     public sealed class VpcAttachmentTag
     {
         /// <summary>
-        /// 用户标签的标签键。
+        /// Tag key for user tag.
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// 用户标签的标签值。
+        /// Tag value for user tag.
         /// </summary>
         public readonly string? Value;
 

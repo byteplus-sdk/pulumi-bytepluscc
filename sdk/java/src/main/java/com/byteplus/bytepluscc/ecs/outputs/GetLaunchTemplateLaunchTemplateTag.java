@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetLaunchTemplateLaunchTemplateTag {
     /**
-     * @return 给资源添加的用户标签的标签键。
+     * @return Tag key for user tags added to the resource.
      * 
      */
     private String key;
     /**
-     * @return 给资源添加的用户标签的标签值。
+     * @return User tag value added to the resource
      * 
      */
     private String value;
 
     private GetLaunchTemplateLaunchTemplateTag() {}
     /**
-     * @return 给资源添加的用户标签的标签键。
+     * @return Tag key for user tags added to the resource.
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return 给资源添加的用户标签的标签值。
+     * @return User tag value added to the resource
      * 
      */
     public String value() {

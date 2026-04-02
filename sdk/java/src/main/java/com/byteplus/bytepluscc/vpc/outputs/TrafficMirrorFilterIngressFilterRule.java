@@ -13,158 +13,158 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TrafficMirrorFilterIngressFilterRule {
     /**
-     * @return 筛选规则实例描述。
+     * @return Filter rule instance description
      * 
      */
     private @Nullable String description;
     /**
-     * @return 筛选规则目的地址。
+     * @return Filter rule destination address
      * 
      */
     private @Nullable String destinationCidrBlock;
     /**
-     * @return 筛选规则目的端口范围。
+     * @return Filter rule destination port range
      * 
      */
     private @Nullable String destinationPortRange;
     /**
-     * @return 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+     * @return Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
      * 
      */
     private @Nullable String policy;
     /**
-     * @return 筛选规则优先级。
+     * @return Filter rule priority
      * 
      */
     private @Nullable Integer priority;
     /**
-     * @return 所属项目的名称。
+     * @return Project name
      * 
      */
     private @Nullable String projectName;
     /**
-     * @return 筛选规则协议类型。
+     * @return Filter rule protocol type
      * 
      */
     private @Nullable String protocol;
     /**
-     * @return 筛选规则源地址。
+     * @return Filter rule source address
      * 
      */
     private @Nullable String sourceCidrBlock;
     /**
-     * @return 筛选规则源端口范围。
+     * @return Filter rule source port range
      * 
      */
     private @Nullable String sourcePortRange;
     /**
-     * @return 筛选规则状态。
+     * @return Filter rule status
      * 
      */
     private @Nullable String status;
     /**
-     * @return 筛选规则方向。egress：出方向。ingress：入方向。
+     * @return Filter rule direction. egress: Outbound. ingress: Inbound
      * 
      */
     private @Nullable String trafficDirection;
     /**
-     * @return 筛选条件实例ID。
+     * @return Filter condition instance ID
      * 
      */
     private @Nullable String trafficMirrorFilterId;
     /**
-     * @return 筛选规则实例ID。
+     * @return Filter rule instance ID
      * 
      */
     private @Nullable String trafficMirrorFilterRuleId;
 
     private TrafficMirrorFilterIngressFilterRule() {}
     /**
-     * @return 筛选规则实例描述。
+     * @return Filter rule instance description
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return 筛选规则目的地址。
+     * @return Filter rule destination address
      * 
      */
     public Optional<String> destinationCidrBlock() {
         return Optional.ofNullable(this.destinationCidrBlock);
     }
     /**
-     * @return 筛选规则目的端口范围。
+     * @return Filter rule destination port range
      * 
      */
     public Optional<String> destinationPortRange() {
         return Optional.ofNullable(this.destinationPortRange);
     }
     /**
-     * @return 筛选规则行为。accept：采集流量镜像。reject：不采集流量镜像。
+     * @return Filter rule action. accept: Enable traffic mirroring. reject: Do not enable traffic mirroring
      * 
      */
     public Optional<String> policy() {
         return Optional.ofNullable(this.policy);
     }
     /**
-     * @return 筛选规则优先级。
+     * @return Filter rule priority
      * 
      */
     public Optional<Integer> priority() {
         return Optional.ofNullable(this.priority);
     }
     /**
-     * @return 所属项目的名称。
+     * @return Project name
      * 
      */
     public Optional<String> projectName() {
         return Optional.ofNullable(this.projectName);
     }
     /**
-     * @return 筛选规则协议类型。
+     * @return Filter rule protocol type
      * 
      */
     public Optional<String> protocol() {
         return Optional.ofNullable(this.protocol);
     }
     /**
-     * @return 筛选规则源地址。
+     * @return Filter rule source address
      * 
      */
     public Optional<String> sourceCidrBlock() {
         return Optional.ofNullable(this.sourceCidrBlock);
     }
     /**
-     * @return 筛选规则源端口范围。
+     * @return Filter rule source port range
      * 
      */
     public Optional<String> sourcePortRange() {
         return Optional.ofNullable(this.sourcePortRange);
     }
     /**
-     * @return 筛选规则状态。
+     * @return Filter rule status
      * 
      */
     public Optional<String> status() {
         return Optional.ofNullable(this.status);
     }
     /**
-     * @return 筛选规则方向。egress：出方向。ingress：入方向。
+     * @return Filter rule direction. egress: Outbound. ingress: Inbound
      * 
      */
     public Optional<String> trafficDirection() {
         return Optional.ofNullable(this.trafficDirection);
     }
     /**
-     * @return 筛选条件实例ID。
+     * @return Filter condition instance ID
      * 
      */
     public Optional<String> trafficMirrorFilterId() {
         return Optional.ofNullable(this.trafficMirrorFilterId);
     }
     /**
-     * @return 筛选规则实例ID。
+     * @return Filter rule instance ID
      * 
      */
     public Optional<String> trafficMirrorFilterRuleId() {

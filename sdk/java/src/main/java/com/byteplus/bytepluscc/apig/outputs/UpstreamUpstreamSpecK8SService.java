@@ -13,38 +13,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UpstreamUpstreamSpecK8SService {
     /**
-     * @return 容器服务名称。长度限制为2~63个字符。
+     * @return Container Service Name. Length: 2–63 characters
      * 
      */
     private @Nullable String name;
     /**
-     * @return 命名空间。长度限制为2~63个字符。
+     * @return Namespace. Length: 2~63 characters
      * 
      */
     private @Nullable String namespace;
     /**
-     * @return 端口。
+     * @return Port
      * 
      */
     private @Nullable Integer port;
 
     private UpstreamUpstreamSpecK8SService() {}
     /**
-     * @return 容器服务名称。长度限制为2~63个字符。
+     * @return Container Service Name. Length: 2–63 characters
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return 命名空间。长度限制为2~63个字符。
+     * @return Namespace. Length: 2~63 characters
      * 
      */
     public Optional<String> namespace() {
         return Optional.ofNullable(this.namespace);
     }
     /**
-     * @return 端口。
+     * @return Port
      * 
      */
     public Optional<Integer> port() {

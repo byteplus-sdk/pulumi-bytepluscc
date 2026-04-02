@@ -27,14 +27,14 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 用户组描述信息。长度不超过128。
+     * User group description. Maximum length: 128 characters.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 用户组描述信息。长度不超过128。
+     * @return User group description. Maximum length: 128 characters.
      * 
      */
     public Optional<Output<String>> description() {
@@ -42,14 +42,14 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 用户组显示名称。长度不超过64。
+     * User group display name. Maximum length: 64 characters.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return 用户组显示名称。长度不超过64。
+     * @return User group display name. Maximum length: 64 characters.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -57,14 +57,14 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 用户组名称。长度1~64，支持英文、数字和.-_符号。
+     * User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
      * 
      */
     @Import(name="userGroupName", required=true)
     private Output<String> userGroupName;
 
     /**
-     * @return 用户组名称。长度1~64，支持英文、数字和.-_符号。
+     * @return User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
      * 
      */
     public Output<String> userGroupName() {
@@ -120,7 +120,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 用户组描述信息。长度不超过128。
+         * @param description User group description. Maximum length: 128 characters.
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 用户组描述信息。长度不超过128。
+         * @param description User group description. Maximum length: 128 characters.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName 用户组显示名称。长度不超过64。
+         * @param displayName User group display name. Maximum length: 64 characters.
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName 用户组显示名称。长度不超过64。
+         * @param displayName User group display name. Maximum length: 64 characters.
          * 
          * @return builder
          * 
@@ -162,7 +162,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userGroupName 用户组名称。长度1~64，支持英文、数字和.-_符号。
+         * @param userGroupName User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
          * 
          * @return builder
          * 
@@ -173,7 +173,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userGroupName 用户组名称。长度1~64，支持英文、数字和.-_符号。
+         * @param userGroupName User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
          * 
          * @return builder
          * 

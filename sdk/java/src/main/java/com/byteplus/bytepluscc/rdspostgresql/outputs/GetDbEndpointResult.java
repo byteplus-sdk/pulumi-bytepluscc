@@ -16,42 +16,42 @@ import java.util.Objects;
 @CustomType
 public final class GetDbEndpointResult {
     /**
-     * @return 地址列表。
+     * @return Address list.
      * 
      */
     private List<GetDbEndpointAddress> addresses;
     /**
-     * @return 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入。Disable：不自动加入（默认）。
+     * @return When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
      * 
      */
     private String autoAddNewNodes;
     /**
-     * @return 地址描述。
+     * @return Address description
      * 
      */
     private String description;
     /**
-     * @return 是否已开启全局只读。Enable：开启。Disable：未开启。
+     * @return Whether global read-only is enabled. Enable: Enabled. Disable: Not enabled.
      * 
      */
     private String enableReadOnly;
     /**
-     * @return 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+     * @return Whether read/write splitting is enabled. Values: Enable: Enabled. Disable: Not enabled.
      * 
      */
     private String enableReadWriteSplitting;
     /**
-     * @return 实例连接终端 ID。
+     * @return Instance connection endpoint ID.
      * 
      */
     private String endpointId;
     /**
-     * @return 实例连接终端名称。
+     * @return Instance connection endpoint name.
      * 
      */
     private String endpointName;
     /**
-     * @return 终端类型：Cluster：默认终端（默认创建）。Custom：自定义终端。
+     * @return Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
      * 
      */
     private String endpointType;
@@ -61,98 +61,98 @@ public final class GetDbEndpointResult {
      */
     private String id;
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     private String instanceId;
     /**
-     * @return 连接终端配置的节点列表。说明当 EndpointType 为 Custom 时必选。主节点无需传节点 ID，传入 Primary 字符串即可。
+     * @return List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string &#39;Primary&#39;.
      * 
      */
     private String nodes;
     /**
-     * @return 只读权重分配模式。取值：Default：标准权重分配（默认值）。Custom：自定义权重分配。
+     * @return Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
      * 
      */
     private String readOnlyNodeDistributionType;
     /**
-     * @return 只读节点的最大延迟阈值，当只读节点延迟时间超过该值时，读取流量不发往该节点，单位：秒。取值：0~3600。默认值：30。说明支持对开通了读写分离的默认终端设置此参数。
+     * @return Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
      * 
      */
     private Integer readOnlyNodeMaxDelayTime;
     /**
-     * @return 连接终端配置的节点列表及对应的只读权重。
+     * @return List of nodes configured for the connection endpoint and their corresponding read-only weights.
      * 
      */
     private List<GetDbEndpointReadOnlyNodeWeight> readOnlyNodeWeights;
     /**
-     * @return 读写模式：ReadWrite：读写。ReadOnly：只读。
+     * @return Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
      * 
      */
     private String readWriteMode;
     /**
-     * @return 终端开启读写分离后，为终端设置的代理连接数。代理连接数的取值下限为 20。代理连接数的取值上限取决于实例主节点的规格，不同规格支持的代理连接数上限不同，详细信息请参见产品规格。
+     * @return After enabling read/write splitting for the endpoint, set the number of proxy connections for the endpoint. The minimum value for proxy connections is 20. The maximum value depends on the specifications of the primary node; different specifications support different maximum proxy connections. For details, see product specifications.
      * 
      */
     private Integer readWriteProxyConnection;
     /**
-     * @return 终端是否将写请求发送给写节点（目前仅主节点为写节点）。取值：true：是。默认值。false：否。
+     * @return Whether the endpoint sends write requests to the write node (currently only the primary node is the write node). Values: true: Yes (default). false: No.
      * 
      */
     private Boolean writeNodeHaltWriting;
 
     private GetDbEndpointResult() {}
     /**
-     * @return 地址列表。
+     * @return Address list.
      * 
      */
     public List<GetDbEndpointAddress> addresses() {
         return this.addresses;
     }
     /**
-     * @return 当终端类型为读写终端或只读终端时，支持设置新节点是否自动加入。取值：Enable：自动加入。Disable：不自动加入（默认）。
+     * @return When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
      * 
      */
     public String autoAddNewNodes() {
         return this.autoAddNewNodes;
     }
     /**
-     * @return 地址描述。
+     * @return Address description
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 是否已开启全局只读。Enable：开启。Disable：未开启。
+     * @return Whether global read-only is enabled. Enable: Enabled. Disable: Not enabled.
      * 
      */
     public String enableReadOnly() {
         return this.enableReadOnly;
     }
     /**
-     * @return 是否已开启读写分离，取值：Enable：开启。Disable：未开启。
+     * @return Whether read/write splitting is enabled. Values: Enable: Enabled. Disable: Not enabled.
      * 
      */
     public String enableReadWriteSplitting() {
         return this.enableReadWriteSplitting;
     }
     /**
-     * @return 实例连接终端 ID。
+     * @return Instance connection endpoint ID.
      * 
      */
     public String endpointId() {
         return this.endpointId;
     }
     /**
-     * @return 实例连接终端名称。
+     * @return Instance connection endpoint name.
      * 
      */
     public String endpointName() {
         return this.endpointName;
     }
     /**
-     * @return 终端类型：Cluster：默认终端（默认创建）。Custom：自定义终端。
+     * @return Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
      * 
      */
     public String endpointType() {
@@ -166,56 +166,56 @@ public final class GetDbEndpointResult {
         return this.id;
     }
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return 连接终端配置的节点列表。说明当 EndpointType 为 Custom 时必选。主节点无需传节点 ID，传入 Primary 字符串即可。
+     * @return List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string &#39;Primary&#39;.
      * 
      */
     public String nodes() {
         return this.nodes;
     }
     /**
-     * @return 只读权重分配模式。取值：Default：标准权重分配（默认值）。Custom：自定义权重分配。
+     * @return Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
      * 
      */
     public String readOnlyNodeDistributionType() {
         return this.readOnlyNodeDistributionType;
     }
     /**
-     * @return 只读节点的最大延迟阈值，当只读节点延迟时间超过该值时，读取流量不发往该节点，单位：秒。取值：0~3600。默认值：30。说明支持对开通了读写分离的默认终端设置此参数。
+     * @return Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
      * 
      */
     public Integer readOnlyNodeMaxDelayTime() {
         return this.readOnlyNodeMaxDelayTime;
     }
     /**
-     * @return 连接终端配置的节点列表及对应的只读权重。
+     * @return List of nodes configured for the connection endpoint and their corresponding read-only weights.
      * 
      */
     public List<GetDbEndpointReadOnlyNodeWeight> readOnlyNodeWeights() {
         return this.readOnlyNodeWeights;
     }
     /**
-     * @return 读写模式：ReadWrite：读写。ReadOnly：只读。
+     * @return Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
      * 
      */
     public String readWriteMode() {
         return this.readWriteMode;
     }
     /**
-     * @return 终端开启读写分离后，为终端设置的代理连接数。代理连接数的取值下限为 20。代理连接数的取值上限取决于实例主节点的规格，不同规格支持的代理连接数上限不同，详细信息请参见产品规格。
+     * @return After enabling read/write splitting for the endpoint, set the number of proxy connections for the endpoint. The minimum value for proxy connections is 20. The maximum value depends on the specifications of the primary node; different specifications support different maximum proxy connections. For details, see product specifications.
      * 
      */
     public Integer readWriteProxyConnection() {
         return this.readWriteProxyConnection;
     }
     /**
-     * @return 终端是否将写请求发送给写节点（目前仅主节点为写节点）。取值：true：是。默认值。false：否。
+     * @return Whether the endpoint sends write requests to the write node (currently only the primary node is the write node). Values: true: Yes (default). false: No.
      * 
      */
     public Boolean writeNodeHaltWriting() {

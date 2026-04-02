@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas.Outputs
     public sealed class GetSandboxInstanceImageInfoResult
     {
         /// <summary>
-        /// 沙箱实例程序的启动命令。如需指定脚本文件，请使用绝对路径，并确保脚本具有相应的可执行权限。
+        /// Startup command for the sandbox instance program. To specify a script file, use an absolute path and ensure the script has executable permissions
         /// </summary>
         public readonly string Command;
         /// <summary>
-        /// 沙箱实例使用的已预热镜像地址。
+        /// Preheated image address used by the sandbox instance
         /// </summary>
         public readonly string Image;
         /// <summary>
-        /// 沙箱实例使用的已预热镜像 ID。
+        /// Pre-warmed image ID used by the sandbox instance.
         /// </summary>
         public readonly string ImageId;
         /// <summary>
-        /// 沙箱实例镜像监听端口。
+        /// Listening port of the sandbox instance image.
         /// </summary>
         public readonly int Port;
 

@@ -12,50 +12,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GroupAttachedPolicyPolicyScope {
     /**
-     * @return 项目授权时间。
+     * @return Project authorization time.
      * 
      */
     private @Nullable String attachTime;
     /**
-     * @return 授权类型。Global代表全局授权（不限制项目），Project代表按项目授权。
+     * @return Authorization type. Global indicates global authorization (not limited by project); Project indicates project-based authorization.
      * 
      */
     private @Nullable String policyScopeType;
     /**
-     * @return 按项目授权时的项目显示名。
+     * @return Project display name for project-based authorization.
      * 
      */
     private @Nullable String projectDisplayName;
     /**
-     * @return 按项目授权时的项目名。
+     * @return Project name for project-based authorization.
      * 
      */
     private @Nullable String projectName;
 
     private GroupAttachedPolicyPolicyScope() {}
     /**
-     * @return 项目授权时间。
+     * @return Project authorization time.
      * 
      */
     public Optional<String> attachTime() {
         return Optional.ofNullable(this.attachTime);
     }
     /**
-     * @return 授权类型。Global代表全局授权（不限制项目），Project代表按项目授权。
+     * @return Authorization type. Global indicates global authorization (not limited by project); Project indicates project-based authorization.
      * 
      */
     public Optional<String> policyScopeType() {
         return Optional.ofNullable(this.policyScopeType);
     }
     /**
-     * @return 按项目授权时的项目显示名。
+     * @return Project display name for project-based authorization.
      * 
      */
     public Optional<String> projectDisplayName() {
         return Optional.ofNullable(this.projectDisplayName);
     }
     /**
-     * @return 按项目授权时的项目名。
+     * @return Project name for project-based authorization.
      * 
      */
     public Optional<String> projectName() {

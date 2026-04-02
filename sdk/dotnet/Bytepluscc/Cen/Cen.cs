@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Cen
 {
     /// <summary>
-    /// 云企业网（Cloud Enterprise Network，CEN）提供一种能够快速构建跨地域私有网络（VPC）与云下数据中心（IDC）之间高速、优质、稳定的网络能力，帮助您打造一张具有企业级规模和通信能力的全球云上网络。
+    /// Cloud Enterprise Network (CEN) provides fast, high-quality, and stable networking capabilities to quickly build private networks (VPC) across regions and between on-premises data centers (IDC), helping you create a global cloud network with enterprise-scale and communication capabilities
     /// 
     /// ## Import
     /// 
@@ -23,37 +23,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Cen
     public partial class Cen : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// CEN实例所属的账号ID。
+        /// Account ID to which the CEN instance belongs
         /// </summary>
         [Output("accountId")]
         public Output<string> AccountId { get; private set; } = null!;
 
         /// <summary>
-        /// 带宽包ID。
+        /// Bandwidth package ID
         /// </summary>
         [Output("cenBandwidthPackageIds")]
         public Output<ImmutableArray<string>> CenBandwidthPackageIds { get; private set; } = null!;
 
         /// <summary>
-        /// CEN实例的ID。
+        /// CEN instance ID
         /// </summary>
         [Output("cenId")]
         public Output<string> CenId { get; private set; } = null!;
 
         /// <summary>
-        /// CEN实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填则默认为CEN实例的ID。
+        /// Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
         /// </summary>
         [Output("cenName")]
         public Output<string> CenName { get; private set; } = null!;
 
         /// <summary>
-        /// 创建CEN实例的时间。
+        /// Time when the CEN instance was created
         /// </summary>
         [Output("creationTime")]
         public Output<string> CreationTime { get; private set; } = null!;
 
         /// <summary>
-        /// CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
+        /// Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
@@ -62,13 +62,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cen
         public Output<ImmutableArray<Outputs.CenInstance>> Instances { get; private set; } = null!;
 
         /// <summary>
-        /// CEN实例所属项目的名称。不填则默认为default。
+        /// Name of the project to which the CEN instance belongs. If not specified, defaults to 'default'
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// CEN实例的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+        /// Status of the CEN instance. Creating: Creating Deleting: Deleting Pending: Configuring Available: Available
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -77,7 +77,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cen
         public Output<ImmutableArray<Outputs.CenTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 更新CEN实例的时间。
+        /// Time when the CEN instance was updated
         /// </summary>
         [Output("updateTime")]
         public Output<string> UpdateTime { get; private set; } = null!;
@@ -130,13 +130,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cen
     public sealed class CenArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// CEN实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填则默认为CEN实例的ID。
+        /// Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
         /// </summary>
         [Input("cenName")]
         public Input<string>? CenName { get; set; }
 
         /// <summary>
-        /// CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
+        /// Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -150,7 +150,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cen
         }
 
         /// <summary>
-        /// CEN实例所属项目的名称。不填则默认为default。
+        /// Name of the project to which the CEN instance belongs. If not specified, defaults to 'default'
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
@@ -172,7 +172,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cen
     public sealed class CenState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// CEN实例所属的账号ID。
+        /// Account ID to which the CEN instance belongs
         /// </summary>
         [Input("accountId")]
         public Input<string>? AccountId { get; set; }
@@ -181,7 +181,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cen
         private InputList<string>? _cenBandwidthPackageIds;
 
         /// <summary>
-        /// 带宽包ID。
+        /// Bandwidth package ID
         /// </summary>
         public InputList<string> CenBandwidthPackageIds
         {
@@ -190,25 +190,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Cen
         }
 
         /// <summary>
-        /// CEN实例的ID。
+        /// CEN instance ID
         /// </summary>
         [Input("cenId")]
         public Input<string>? CenId { get; set; }
 
         /// <summary>
-        /// CEN实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填则默认为CEN实例的ID。
+        /// Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
         /// </summary>
         [Input("cenName")]
         public Input<string>? CenName { get; set; }
 
         /// <summary>
-        /// 创建CEN实例的时间。
+        /// Time when the CEN instance was created
         /// </summary>
         [Input("creationTime")]
         public Input<string>? CreationTime { get; set; }
 
         /// <summary>
-        /// CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
+        /// Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -222,13 +222,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cen
         }
 
         /// <summary>
-        /// CEN实例所属项目的名称。不填则默认为default。
+        /// Name of the project to which the CEN instance belongs. If not specified, defaults to 'default'
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// CEN实例的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+        /// Status of the CEN instance. Creating: Creating Deleting: Deleting Pending: Configuring Available: Available
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -242,7 +242,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cen
         }
 
         /// <summary>
-        /// 更新CEN实例的时间。
+        /// Time when the CEN instance was updated
         /// </summary>
         [Input("updateTime")]
         public Input<string>? UpdateTime { get; set; }

@@ -31,83 +31,83 @@ export interface GetClbArgs {
  */
 export interface GetClbResult {
     /**
-     * 负载均衡实例中访问日志的信息。
+     * Access log information in the load balancer instance
      */
     readonly accessLog: outputs.clb.GetClbAccessLog;
     /**
-     * 负载均衡实例所属的账号ID。
+     * Account ID to which the load balancer instance belongs
      */
     readonly accountId: string;
     /**
-     * CLB实例的IP地址类型。取值如下：ipv4（默认值）：表示该CLB为IPv4类型，仅支持转发IPv4请求。DualStack：表示该CLB为双栈类型，支持转发IPv4和IPv6请求。仅参数Type取private时，才可传入DualStack。
+     * IP address type of the CLB instance. Values: ipv4 (default): Indicates the CLB is IPv4 type and only supports forwarding IPv4 requests. DualStack: Indicates the CLB is dual-stack type and supports forwarding both IPv4 and IPv6 requests. DualStack can only be specified when Type is set to private
      */
     readonly addressIpVersion: string;
     /**
-     * 允许的多个端口范围。
+     * Allowed port ranges
      */
     readonly allowedPorts: string[];
     /**
-     * 是否开通自动续费。true：是，默认自动续费为1个月。false（默认值）：否
+     * Whether to enable auto-renewal. true: Yes, default auto-renewal is 1 month. false (default): No
      */
     readonly autoRenewal: boolean;
     /**
-     * 负载均衡实例是否被锁定。
+     * Whether the load balancer instance is locked
      */
     readonly businessStatus: string;
     /**
-     * 是否开启bypass安全组功能。
+     * Whether to enable bypass security group feature
      */
     readonly bypassSecurityGroupEnabled: string;
     /**
-     * 负载均衡实例的创建时间。
+     * Creation time of the load balancer instance
      */
     readonly createTime: string;
     /**
-     * 负载均衡实例的预期回收时间。
+     * Expected recycling time of the load balancer instance
      */
     readonly deletedTime: string;
     /**
-     * 负载均衡实例的描述。
+     * Description of the load balancer instance
      */
     readonly description: string;
     /**
-     * 负载均衡实例的公网IP的信息。
+     * Public IP information of the load balancer instance
      */
     readonly eip: outputs.clb.GetClbEip;
     /**
-     * 公网IP地址。
+     * Public IP address
      */
     readonly eipAddress: string;
     /**
-     * 公网IP ID。
+     * Public IP ID
      */
     readonly eipId: string;
     /**
-     * 负载均衡实例的启用状态。
+     * Enable status of the load balancer instance
      */
     readonly enabled: boolean;
     /**
-     * 负载均衡实例的私网IPv4地址信息。
+     * Private IPv4 address information of the load balancer instance
      */
     readonly eni: outputs.clb.GetClbEni;
     /**
-     * 负载均衡实例的私网IPv4地址数量。该参数和参数EniAddress不能同时传入，如果传入该参数，则无需传入EniAddress。
+     * Number of private IPv4 addresses for the load balancer instance. This parameter cannot be used together with EniAddress. If this parameter is provided, EniAddress is not required
      */
     readonly eniAddressNum: number;
     /**
-     * 负载均衡实例的私网IPv6地址。
+     * Private IPv6 address of the load balancer instance
      */
     readonly eniIpv6Address: string;
     /**
-     * 负载均衡实例的私网IPv4地址信息列表，创建时通过EniAddressNum指定数量。
+     * List of private IPv4 addresses for the load balancer instance, specified by EniAddressNum during creation
      */
     readonly enis: outputs.clb.GetClbEnis;
     /**
-     * 独占集群Id。
+     * Dedicated cluster ID
      */
     readonly exclusiveClusterId: string;
     /**
-     * 负载均衡实例到期时间。
+     * Expiration time of the load balancer instance
      */
     readonly expiredTime: string;
     /**
@@ -115,107 +115,107 @@ export interface GetClbResult {
      */
     readonly id: string;
     /**
-     * 负载均衡实例中监听器的信息。
+     * Listener information in the load balancer instance
      */
     readonly listeners: outputs.clb.GetClbListener[];
     /**
-     * CLB实例计费方式。取值如下：1：包年包月。2（默认值）：按量计费-按规格计费。3：按量计费-按使用量计费。
+     * CLB instance billing method. Available values: 1: Annual/monthly subscription. 2 (default): Pay-as-you-go (by specification). 3: Pay-as-you-go (by usage)
      */
     readonly loadBalancerBillingType: number;
     /**
-     * 负载均衡实例ID。
+     * Load balancer instance ID
      */
     readonly loadBalancerId: string;
     /**
-     * 负载均衡实例的名称。
+     * Name of the load balancer instance
      */
     readonly loadBalancerName: string;
     /**
-     * CLB实例的规格，不同规格提供的转发能力不同。small*1：小型I。small*2：小型II。medium*1：中型I。medium*2：中型II。large*1：大型I。large*2：大型II。
+     * CLB instance specification. Different specifications provide different forwarding capabilities. small*1: Small I. small*2: Small II. medium*1: Medium I. medium*2: Medium II. large*1: Large I. large*2: Large II
      */
     readonly loadBalancerSpec: string;
     /**
-     * 负载均衡实例被冻结的原因。
+     * Reason why the load balancer instance is frozen
      */
     readonly lockReason: string;
     /**
-     * 负载均衡实例的主可用区ID。
+     * Main availability zone ID of the load balancer instance
      */
     readonly masterZoneId: string;
     /**
-     * 设置修改保护状态的原因。仅参数ModificationProtectionStatus取ConsoleProtection时，本参数有效。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：半角句号（.）、下划线（_）和中划线（-）。长度限制为1 ～ 80个字符。
+     * Reason for setting modification protection status. This parameter is valid only when ModificationProtectionStatus is set to ConsoleProtection. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: half-width period (.), underscore (_), and hyphen (-). Length must be 1–80 characters
      */
     readonly modificationProtectionReason: string;
     /**
-     * CLB实例是否开启控制台上修改保护。开启后，禁止通过控制台修改实例或删除实例。取值如下：NonProtection：不开启。ConsoleProtection：开启。
+     * Whether CLB instance enables modification protection in the console. When enabled, modification or deletion via the console is prohibited. Available values: NonProtection: Disabled. ConsoleProtection: Enabled
      */
     readonly modificationProtectionStatus: string;
     /**
-     * 是否为新架构。
+     * Whether it is a new architecture
      */
     readonly newArch: boolean;
     /**
-     * 订单ID。仅在创建动作的参数LoadBalancerBillingType配置为1时，该参数有值。
+     * Order ID. This parameter is only available when LoadBalancerBillingType is set to 1 during creation
      */
     readonly orderId: string;
     /**
-     * 负载均衡实例的冻结时间。
+     * Freeze time of the load balancer instance
      */
     readonly overdueTime: string;
     /**
-     * 购买包年包月CLB实例的时长。默认为“1”。当PeriodUnit配置为Month时，取值范围为1～9，12，24和36。当PeriodUnit配置为Year时，取值范围为1～3。
+     * Duration for purchasing a CLB instance by year or by month. Default is '1'. When PeriodUnit is set to Month, valid values are 1–9, 12, 24, and 36. When PeriodUnit is set to Year, valid values are 1–3
      */
     readonly period: number;
     /**
-     * 购买包年包月CLB实例的时长单位。仅LoadBalancerBillingType取1时，本参数有效。取值如下：Month (默认值)：月。Year：年
+     * Duration unit for purchasing subscription CLB instances. This parameter is valid only when LoadBalancerBillingType is set to 1. Values: Month (default): month. Year: year
      */
     readonly periodUnit: string;
     /**
-     * CLB实例所属项目的名称。
+     * Name of the project associated with the CLB instance
      */
     readonly projectName: string;
     /**
-     * 负载均衡实例中后端服务器组的信息。
+     * Backend server group information in the load balancer instance
      */
     readonly serverGroups: outputs.clb.GetClbServerGroup[];
     /**
-     * CLB实例是否为托管资源。
+     * Whether the CLB instance is a managed resource
      */
     readonly serviceManaged: boolean;
     /**
-     * 负载均衡实例的备可用区ID。
+     * Secondary availability zone ID of the load balancer instance
      */
     readonly slaveZoneId: string;
     /**
-     * 负载均衡实例状态，Inactive：已停止。Active：运行中。Creating：创建中。Provisioning：创建中。Configuring：配置中。Deleting：删除中。CreateFailed：创建失败。
+     * Load balancer instance status: Inactive: stopped. Active: running. Creating: creating. Provisioning: creating. Configuring: configuring. Deleting: deleting. CreateFailed: creation failed.
      */
     readonly status: string;
     /**
-     * 负载均衡实例所属VPC内的子网ID。
+     * Subnet ID within the VPC of the load balancer instance
      */
     readonly subnetId: string;
     /**
-     * CLB实例标签。
+     * CLB instance tags
      */
     readonly tags: outputs.clb.GetClbTag[];
     /**
-     * 是否开启 TCP Timestamp 清除功能。
+     * Enable TCP timestamp removal
      */
     readonly timestampRemoveEnabled: string;
     /**
-     * CLB实例的类型。取值如下：public：公网类型。创建一个公网类型CLB实例，系统会分配一个公网IP地址，用于转发公网请求。private：私网类型。创建一个私网类型CLB实例，您需要为其绑定公网IP后，才能转发公网请求。
+     * CLB instance type. Values: public: Public type. When you create a public CLB instance, the system assigns a public IP address for forwarding public requests. private: Private type. When you create a private CLB instance, the system does not assign a public IP address; you must bind a public IP manually before it can forward public requests
      */
     readonly type: string;
     /**
-     * 负载均衡实例的最近操作时间。
+     * Most recent operation time of the load balancer instance
      */
     readonly updateTime: string;
     /**
-     * 负载均衡实例所属的VPC ID。
+     * VPC ID of the load balancer instance
      */
     readonly vpcId: string;
     /**
-     * 负载均衡实例的可用区类型。
+     * Availability zone type of the load balancer instance
      */
     readonly zoneType: string;
 }

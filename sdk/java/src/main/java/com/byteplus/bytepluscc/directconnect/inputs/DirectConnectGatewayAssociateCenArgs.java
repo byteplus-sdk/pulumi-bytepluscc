@@ -16,14 +16,14 @@ public final class DirectConnectGatewayAssociateCenArgs extends com.pulumi.resou
     public static final DirectConnectGatewayAssociateCenArgs Empty = new DirectConnectGatewayAssociateCenArgs();
 
     /**
-     * CEN的ID。
+     * ID of CEN.
      * 
      */
     @Import(name="cenId")
     private @Nullable Output<String> cenId;
 
     /**
-     * @return CEN的ID。
+     * @return ID of CEN.
      * 
      */
     public Optional<Output<String>> cenId() {
@@ -31,14 +31,14 @@ public final class DirectConnectGatewayAssociateCenArgs extends com.pulumi.resou
     }
 
     /**
-     * CEN的用户ID。
+     * User ID of CEN.
      * 
      */
     @Import(name="cenOwnerId")
     private @Nullable Output<String> cenOwnerId;
 
     /**
-     * @return CEN的用户ID。
+     * @return User ID of CEN.
      * 
      */
     public Optional<Output<String>> cenOwnerId() {
@@ -46,14 +46,14 @@ public final class DirectConnectGatewayAssociateCenArgs extends com.pulumi.resou
     }
 
     /**
-     * 实例在CEN中的状态。Attaching：加载中。Attached：已加载。
+     * Status of the instance in CEN. Attaching: attaching. Attached: attached.
      * 
      */
     @Import(name="cenStatus")
     private @Nullable Output<String> cenStatus;
 
     /**
-     * @return 实例在CEN中的状态。Attaching：加载中。Attached：已加载。
+     * @return Status of the instance in CEN. Attaching: attaching. Attached: attached.
      * 
      */
     public Optional<Output<String>> cenStatus() {
@@ -87,7 +87,7 @@ public final class DirectConnectGatewayAssociateCenArgs extends com.pulumi.resou
         }
 
         /**
-         * @param cenId CEN的ID。
+         * @param cenId ID of CEN.
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class DirectConnectGatewayAssociateCenArgs extends com.pulumi.resou
         }
 
         /**
-         * @param cenId CEN的ID。
+         * @param cenId ID of CEN.
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class DirectConnectGatewayAssociateCenArgs extends com.pulumi.resou
         }
 
         /**
-         * @param cenOwnerId CEN的用户ID。
+         * @param cenOwnerId User ID of CEN.
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class DirectConnectGatewayAssociateCenArgs extends com.pulumi.resou
         }
 
         /**
-         * @param cenOwnerId CEN的用户ID。
+         * @param cenOwnerId User ID of CEN.
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class DirectConnectGatewayAssociateCenArgs extends com.pulumi.resou
         }
 
         /**
-         * @param cenStatus 实例在CEN中的状态。Attaching：加载中。Attached：已加载。
+         * @param cenStatus Status of the instance in CEN. Attaching: attaching. Attached: attached.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class DirectConnectGatewayAssociateCenArgs extends com.pulumi.resou
         }
 
         /**
-         * @param cenStatus 实例在CEN中的状态。Attaching：加载中。Attached：已加载。
+         * @param cenStatus Status of the instance in CEN. Attaching: attaching. Attached: attached.
          * 
          * @return builder
          * 

@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Inputs
     public sealed class LoadBalancerTagGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 标签的键，用于标识标签的类别。
+        /// Tag key, used to identify the tag category.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// 标签的值，用于标识具体的标签内容。
+        /// Tag value used to identify the specific tag content.
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

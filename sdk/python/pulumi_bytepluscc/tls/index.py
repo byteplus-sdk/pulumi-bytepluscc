@@ -30,10 +30,10 @@ class IndexArgs:
                  user_inner_key_values: Optional[pulumi.Input[Sequence[pulumi.Input['IndexUserInnerKeyValueArgs']]]] = None):
         """
         The set of arguments for constructing a Index resource.
-        :param pulumi.Input[builtins.str] topic_id: 日志主题ID。
-        :param pulumi.Input[builtins.bool] enable_auto_index: 是否开启索引自动更新，开启后系统将根据新出现的字段自动添加到键值索引。true：开启自动更新。false：不开启自动更新。
-        :param pulumi.Input['IndexFullTextArgs'] full_text: 全文索引配置。此字段为 null 或者未配置，表示不开启全文索引。全文索引配置和键值索引配置至少配置一项，即 FullText 和 KeyValue 之间应至少指定一个参数。
-        :param pulumi.Input[builtins.int] max_text_len: 统计字段值的最大长度，默认为 2048，取值范围为 64~16384，单位为字节。说明单个字段值的长度超过您所指定的最大长度时，超出部分将被截断，不参与分析。字段最大长度更新后，只对增量数据有效。
+        :param pulumi.Input[builtins.str] topic_id: Log topic ID.
+        :param pulumi.Input[builtins.bool] enable_auto_index: Enable automatic index updates? When enabled, the system will automatically add newly detected fields to the key-value index. true: Enable automatic updates. false: Do not enable automatic updates.
+        :param pulumi.Input['IndexFullTextArgs'] full_text: Full-text index configuration. If this field is null or not configured, full-text indexing is disabled. At least one of full-text index or key-value index must be configured; that is, at least one parameter between FullText and KeyValue must be specified.
+        :param pulumi.Input[builtins.int] max_text_len: Set the maximum length for field values. The default is 2048. The valid range is 64–16384 bytes. If a single field value exceeds the specified maximum length, the excess part will be truncated and excluded from analysis. After updating the maximum field length, only incremental data is affected.
         """
         pulumi.set(__self__, "topic_id", topic_id)
         if enable_auto_index is not None:
@@ -51,7 +51,7 @@ class IndexArgs:
     @pulumi.getter(name="topicId")
     def topic_id(self) -> pulumi.Input[builtins.str]:
         """
-        日志主题ID。
+        Log topic ID.
         """
         return pulumi.get(self, "topic_id")
 
@@ -63,7 +63,7 @@ class IndexArgs:
     @pulumi.getter(name="enableAutoIndex")
     def enable_auto_index(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启索引自动更新，开启后系统将根据新出现的字段自动添加到键值索引。true：开启自动更新。false：不开启自动更新。
+        Enable automatic index updates? When enabled, the system will automatically add newly detected fields to the key-value index. true: Enable automatic updates. false: Do not enable automatic updates.
         """
         return pulumi.get(self, "enable_auto_index")
 
@@ -75,7 +75,7 @@ class IndexArgs:
     @pulumi.getter(name="fullText")
     def full_text(self) -> Optional[pulumi.Input['IndexFullTextArgs']]:
         """
-        全文索引配置。此字段为 null 或者未配置，表示不开启全文索引。全文索引配置和键值索引配置至少配置一项，即 FullText 和 KeyValue 之间应至少指定一个参数。
+        Full-text index configuration. If this field is null or not configured, full-text indexing is disabled. At least one of full-text index or key-value index must be configured; that is, at least one parameter between FullText and KeyValue must be specified.
         """
         return pulumi.get(self, "full_text")
 
@@ -96,7 +96,7 @@ class IndexArgs:
     @pulumi.getter(name="maxTextLen")
     def max_text_len(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        统计字段值的最大长度，默认为 2048，取值范围为 64~16384，单位为字节。说明单个字段值的长度超过您所指定的最大长度时，超出部分将被截断，不参与分析。字段最大长度更新后，只对增量数据有效。
+        Set the maximum length for field values. The default is 2048. The valid range is 64–16384 bytes. If a single field value exceeds the specified maximum length, the excess part will be truncated and excluded from analysis. After updating the maximum field length, only incremental data is affected.
         """
         return pulumi.get(self, "max_text_len")
 
@@ -127,12 +127,12 @@ class _IndexState:
                  user_inner_key_values: Optional[pulumi.Input[Sequence[pulumi.Input['IndexUserInnerKeyValueArgs']]]] = None):
         """
         Input properties used for looking up and filtering Index resources.
-        :param pulumi.Input[builtins.str] create_time: 索引创建的时间。
-        :param pulumi.Input[builtins.bool] enable_auto_index: 是否开启索引自动更新，开启后系统将根据新出现的字段自动添加到键值索引。true：开启自动更新。false：不开启自动更新。
-        :param pulumi.Input['IndexFullTextArgs'] full_text: 全文索引配置。此字段为 null 或者未配置，表示不开启全文索引。全文索引配置和键值索引配置至少配置一项，即 FullText 和 KeyValue 之间应至少指定一个参数。
-        :param pulumi.Input[builtins.int] max_text_len: 统计字段值的最大长度，默认为 2048，取值范围为 64~16384，单位为字节。说明单个字段值的长度超过您所指定的最大长度时，超出部分将被截断，不参与分析。字段最大长度更新后，只对增量数据有效。
-        :param pulumi.Input[builtins.str] modify_time: 索引最近修改的时间。
-        :param pulumi.Input[builtins.str] topic_id: 日志主题ID。
+        :param pulumi.Input[builtins.str] create_time: Index creation time.
+        :param pulumi.Input[builtins.bool] enable_auto_index: Enable automatic index updates? When enabled, the system will automatically add newly detected fields to the key-value index. true: Enable automatic updates. false: Do not enable automatic updates.
+        :param pulumi.Input['IndexFullTextArgs'] full_text: Full-text index configuration. If this field is null or not configured, full-text indexing is disabled. At least one of full-text index or key-value index must be configured; that is, at least one parameter between FullText and KeyValue must be specified.
+        :param pulumi.Input[builtins.int] max_text_len: Set the maximum length for field values. The default is 2048. The valid range is 64–16384 bytes. If a single field value exceeds the specified maximum length, the excess part will be truncated and excluded from analysis. After updating the maximum field length, only incremental data is affected.
+        :param pulumi.Input[builtins.str] modify_time: Last modified time of the index.
+        :param pulumi.Input[builtins.str] topic_id: Log topic ID.
         """
         if create_time is not None:
             pulumi.set(__self__, "create_time", create_time)
@@ -155,7 +155,7 @@ class _IndexState:
     @pulumi.getter(name="createTime")
     def create_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        索引创建的时间。
+        Index creation time.
         """
         return pulumi.get(self, "create_time")
 
@@ -167,7 +167,7 @@ class _IndexState:
     @pulumi.getter(name="enableAutoIndex")
     def enable_auto_index(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启索引自动更新，开启后系统将根据新出现的字段自动添加到键值索引。true：开启自动更新。false：不开启自动更新。
+        Enable automatic index updates? When enabled, the system will automatically add newly detected fields to the key-value index. true: Enable automatic updates. false: Do not enable automatic updates.
         """
         return pulumi.get(self, "enable_auto_index")
 
@@ -179,7 +179,7 @@ class _IndexState:
     @pulumi.getter(name="fullText")
     def full_text(self) -> Optional[pulumi.Input['IndexFullTextArgs']]:
         """
-        全文索引配置。此字段为 null 或者未配置，表示不开启全文索引。全文索引配置和键值索引配置至少配置一项，即 FullText 和 KeyValue 之间应至少指定一个参数。
+        Full-text index configuration. If this field is null or not configured, full-text indexing is disabled. At least one of full-text index or key-value index must be configured; that is, at least one parameter between FullText and KeyValue must be specified.
         """
         return pulumi.get(self, "full_text")
 
@@ -200,7 +200,7 @@ class _IndexState:
     @pulumi.getter(name="maxTextLen")
     def max_text_len(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        统计字段值的最大长度，默认为 2048，取值范围为 64~16384，单位为字节。说明单个字段值的长度超过您所指定的最大长度时，超出部分将被截断，不参与分析。字段最大长度更新后，只对增量数据有效。
+        Set the maximum length for field values. The default is 2048. The valid range is 64–16384 bytes. If a single field value exceeds the specified maximum length, the excess part will be truncated and excluded from analysis. After updating the maximum field length, only incremental data is affected.
         """
         return pulumi.get(self, "max_text_len")
 
@@ -212,7 +212,7 @@ class _IndexState:
     @pulumi.getter(name="modifyTime")
     def modify_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        索引最近修改的时间。
+        Last modified time of the index.
         """
         return pulumi.get(self, "modify_time")
 
@@ -224,7 +224,7 @@ class _IndexState:
     @pulumi.getter(name="topicId")
     def topic_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        日志主题ID。
+        Log topic ID.
         """
         return pulumi.get(self, "topic_id")
 
@@ -256,7 +256,7 @@ class Index(pulumi.CustomResource):
                  user_inner_key_values: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IndexUserInnerKeyValueArgs', 'IndexUserInnerKeyValueArgsDict']]]]] = None,
                  __props__=None):
         """
-        日志服务支持日志检索与分析功能，配置索引后才能进行日志检索和分析操作。配置索引时需要指定索引的类型和各个字段的数据类型，索引的配置决定了检索方式和检索结果的精度。
+        The log service supports log search and analysis. You must configure indexes to enable log search and analysis. When configuring indexes, specify the index type and the data type for each field. The index configuration determines the search method and the precision of search results.
 
         ## Import
 
@@ -266,10 +266,10 @@ class Index(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.bool] enable_auto_index: 是否开启索引自动更新，开启后系统将根据新出现的字段自动添加到键值索引。true：开启自动更新。false：不开启自动更新。
-        :param pulumi.Input[Union['IndexFullTextArgs', 'IndexFullTextArgsDict']] full_text: 全文索引配置。此字段为 null 或者未配置，表示不开启全文索引。全文索引配置和键值索引配置至少配置一项，即 FullText 和 KeyValue 之间应至少指定一个参数。
-        :param pulumi.Input[builtins.int] max_text_len: 统计字段值的最大长度，默认为 2048，取值范围为 64~16384，单位为字节。说明单个字段值的长度超过您所指定的最大长度时，超出部分将被截断，不参与分析。字段最大长度更新后，只对增量数据有效。
-        :param pulumi.Input[builtins.str] topic_id: 日志主题ID。
+        :param pulumi.Input[builtins.bool] enable_auto_index: Enable automatic index updates? When enabled, the system will automatically add newly detected fields to the key-value index. true: Enable automatic updates. false: Do not enable automatic updates.
+        :param pulumi.Input[Union['IndexFullTextArgs', 'IndexFullTextArgsDict']] full_text: Full-text index configuration. If this field is null or not configured, full-text indexing is disabled. At least one of full-text index or key-value index must be configured; that is, at least one parameter between FullText and KeyValue must be specified.
+        :param pulumi.Input[builtins.int] max_text_len: Set the maximum length for field values. The default is 2048. The valid range is 64–16384 bytes. If a single field value exceeds the specified maximum length, the excess part will be truncated and excluded from analysis. After updating the maximum field length, only incremental data is affected.
+        :param pulumi.Input[builtins.str] topic_id: Log topic ID.
         """
         ...
     @overload
@@ -278,7 +278,7 @@ class Index(pulumi.CustomResource):
                  args: IndexArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        日志服务支持日志检索与分析功能，配置索引后才能进行日志检索和分析操作。配置索引时需要指定索引的类型和各个字段的数据类型，索引的配置决定了检索方式和检索结果的精度。
+        The log service supports log search and analysis. You must configure indexes to enable log search and analysis. When configuring indexes, specify the index type and the data type for each field. The index configuration determines the search method and the precision of search results.
 
         ## Import
 
@@ -351,12 +351,12 @@ class Index(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] create_time: 索引创建的时间。
-        :param pulumi.Input[builtins.bool] enable_auto_index: 是否开启索引自动更新，开启后系统将根据新出现的字段自动添加到键值索引。true：开启自动更新。false：不开启自动更新。
-        :param pulumi.Input[Union['IndexFullTextArgs', 'IndexFullTextArgsDict']] full_text: 全文索引配置。此字段为 null 或者未配置，表示不开启全文索引。全文索引配置和键值索引配置至少配置一项，即 FullText 和 KeyValue 之间应至少指定一个参数。
-        :param pulumi.Input[builtins.int] max_text_len: 统计字段值的最大长度，默认为 2048，取值范围为 64~16384，单位为字节。说明单个字段值的长度超过您所指定的最大长度时，超出部分将被截断，不参与分析。字段最大长度更新后，只对增量数据有效。
-        :param pulumi.Input[builtins.str] modify_time: 索引最近修改的时间。
-        :param pulumi.Input[builtins.str] topic_id: 日志主题ID。
+        :param pulumi.Input[builtins.str] create_time: Index creation time.
+        :param pulumi.Input[builtins.bool] enable_auto_index: Enable automatic index updates? When enabled, the system will automatically add newly detected fields to the key-value index. true: Enable automatic updates. false: Do not enable automatic updates.
+        :param pulumi.Input[Union['IndexFullTextArgs', 'IndexFullTextArgsDict']] full_text: Full-text index configuration. If this field is null or not configured, full-text indexing is disabled. At least one of full-text index or key-value index must be configured; that is, at least one parameter between FullText and KeyValue must be specified.
+        :param pulumi.Input[builtins.int] max_text_len: Set the maximum length for field values. The default is 2048. The valid range is 64–16384 bytes. If a single field value exceeds the specified maximum length, the excess part will be truncated and excluded from analysis. After updating the maximum field length, only incremental data is affected.
+        :param pulumi.Input[builtins.str] modify_time: Last modified time of the index.
+        :param pulumi.Input[builtins.str] topic_id: Log topic ID.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -376,7 +376,7 @@ class Index(pulumi.CustomResource):
     @pulumi.getter(name="createTime")
     def create_time(self) -> pulumi.Output[builtins.str]:
         """
-        索引创建的时间。
+        Index creation time.
         """
         return pulumi.get(self, "create_time")
 
@@ -384,7 +384,7 @@ class Index(pulumi.CustomResource):
     @pulumi.getter(name="enableAutoIndex")
     def enable_auto_index(self) -> pulumi.Output[builtins.bool]:
         """
-        是否开启索引自动更新，开启后系统将根据新出现的字段自动添加到键值索引。true：开启自动更新。false：不开启自动更新。
+        Enable automatic index updates? When enabled, the system will automatically add newly detected fields to the key-value index. true: Enable automatic updates. false: Do not enable automatic updates.
         """
         return pulumi.get(self, "enable_auto_index")
 
@@ -392,7 +392,7 @@ class Index(pulumi.CustomResource):
     @pulumi.getter(name="fullText")
     def full_text(self) -> pulumi.Output['outputs.IndexFullText']:
         """
-        全文索引配置。此字段为 null 或者未配置，表示不开启全文索引。全文索引配置和键值索引配置至少配置一项，即 FullText 和 KeyValue 之间应至少指定一个参数。
+        Full-text index configuration. If this field is null or not configured, full-text indexing is disabled. At least one of full-text index or key-value index must be configured; that is, at least one parameter between FullText and KeyValue must be specified.
         """
         return pulumi.get(self, "full_text")
 
@@ -405,7 +405,7 @@ class Index(pulumi.CustomResource):
     @pulumi.getter(name="maxTextLen")
     def max_text_len(self) -> pulumi.Output[builtins.int]:
         """
-        统计字段值的最大长度，默认为 2048，取值范围为 64~16384，单位为字节。说明单个字段值的长度超过您所指定的最大长度时，超出部分将被截断，不参与分析。字段最大长度更新后，只对增量数据有效。
+        Set the maximum length for field values. The default is 2048. The valid range is 64–16384 bytes. If a single field value exceeds the specified maximum length, the excess part will be truncated and excluded from analysis. After updating the maximum field length, only incremental data is affected.
         """
         return pulumi.get(self, "max_text_len")
 
@@ -413,7 +413,7 @@ class Index(pulumi.CustomResource):
     @pulumi.getter(name="modifyTime")
     def modify_time(self) -> pulumi.Output[builtins.str]:
         """
-        索引最近修改的时间。
+        Last modified time of the index.
         """
         return pulumi.get(self, "modify_time")
 
@@ -421,7 +421,7 @@ class Index(pulumi.CustomResource):
     @pulumi.getter(name="topicId")
     def topic_id(self) -> pulumi.Output[builtins.str]:
         """
-        日志主题ID。
+        Log topic ID.
         """
         return pulumi.get(self, "topic_id")
 

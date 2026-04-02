@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 私有网络为云上资源构建隔离的、自主配置的虚拟网络环境。可以在私有网络中自定义IP地址段、安全组、路由策略等网络特性，简单高效安全地管理云上资源。
+ * A private network creates an isolated, self-configurable virtual network environment for cloud resources. You can customize IP address ranges, security groups, routing policies, and other network features within the private network to manage cloud resources simply, efficiently, and securely.
  *
  * ## Import
  *
@@ -44,93 +44,93 @@ export class Vpc extends pulumi.CustomResource {
     }
 
     /**
-     * VPC所属账号的ID。
+     * ID of the account to which the VPC belongs.
      */
     public /*out*/ readonly accountId!: pulumi.Output<string>;
     public /*out*/ readonly associateCens!: pulumi.Output<outputs.vpc.VpcAssociateCen[]>;
     /**
-     * VPC的IPv4网段。您可以使用以下网段或其子集作为VPC的IPv4网段：192.168.0.0/16 ~ 24、10.0.0.0/8 ~ 24、172.16.0.0/12 ~ 24。
+     * IPv4 CIDR block of the VPC. You can use the following CIDR blocks or their subsets as the VPC's IPv4 CIDR block: 192.168.0.0/16 ~ 24, 10.0.0.0/8 ~ 24, 172.16.0.0/12 ~ 24.
      */
     public readonly cidrBlock!: pulumi.Output<string>;
     /**
-     * 创建VPC的时间。
+     * Time when the VPC was created.
      */
     public /*out*/ readonly creationTime!: pulumi.Output<string>;
     /**
-     * VPC的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不能以http://或https://开头。
+     * Description of the VPC. Length must be between 0 and 255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Cannot start with http:// or https://.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * VPC的DNS服务器地址。单次调用数量上限为5个，每个DnsServer必须以合法IP形式给出。多个IP之间用&分隔。不填则配置为默认DNS服务器地址。
+     * DNS server addresses of the VPC. Maximum of 5 per request. Each DnsServer must be a valid IP address. Use & to separate multiple IPs. If not specified, defaults to the system DNS server addresses.
      */
     public readonly dnsServers!: pulumi.Output<string[]>;
     /**
-     * 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+     * Whether to enable IPv6 CIDR block. false (default): not enabled. true: enabled.
      */
     public readonly enableIpv6!: pulumi.Output<boolean>;
     /**
-     * VPC 绑定的 IPv4 网关的 ID。
+     * ID of the IPv4 gateway bound to the VPC.
      */
     public readonly ipv4GatewayId!: pulumi.Output<string>;
     /**
-     * VPC的IPv6网段。传入此参数后，参数Ipv6MaskLen不生效。参数Ipv6Isp传入非BGP后，参数Ipv6MaskLen和参数Ipv6CidrBlock二者必须传入一个。参数Ipv6Isp未传或传入BGP，此参数未传，则由系统自动分配IPv6网段。
+     * IPv6 CIDR block of the VPC. If this parameter is provided, the Ipv6MaskLen parameter is ignored. If the Ipv6Isp parameter is set to a value other than BGP, either the Ipv6MaskLen or Ipv6CidrBlock parameter must be provided. If the Ipv6Isp parameter is not provided or set to BGP and this parameter is not provided, the system automatically assigns an IPv6 CIDR block.
      */
     public readonly ipv6CidrBlock!: pulumi.Output<string>;
     /**
-     * 该VPC是否为默认VPC。true：默认VPC，表示该VPC是创建ECS实例时系统自动创建的VPC。false：非默认VPC，表示该VPC是用户手动创建的。
+     * Whether this VPC is the default VPC. true: default VPC, meaning the VPC was automatically created by the system when creating an ECS instance. false: non-default VPC, meaning the VPC was manually created by the user.
      */
     public /*out*/ readonly isDefault!: pulumi.Output<boolean>;
     /**
-     * VPC中创建的NAT网关的ID。
+     * ID of the NAT gateway created in the VPC.
      */
     public readonly natGatewayIds!: pulumi.Output<string[]>;
     /**
-     * VPC中的网络ACL的数量。
+     * Number of network ACLs in the VPC.
      */
     public /*out*/ readonly networkAclNum!: pulumi.Output<string>;
     /**
-     * VPC所属项目的名称。不填默认加入default项目。
+     * Name of the project to which the VPC belongs. If not specified, it is added to the default project.
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * VPC关联的路由表ID。
+     * ID of the route table associated with the VPC.
      */
     public /*out*/ readonly routeTableIds!: pulumi.Output<string[]>;
     /**
-     * VPC的辅助网段。
+     * Secondary CIDR block of the VPC.
      */
     public readonly secondaryCidrBlocks!: pulumi.Output<string[]>;
     /**
-     * VPC中安全组的列表。
+     * List of security groups in the VPC.
      */
     public /*out*/ readonly securityGroupIds!: pulumi.Output<string[]>;
     /**
-     * VPC的状态。Creating：创建中。Pending：已创建。Available：可用。
+     * Status of the VPC. Creating: being created. Created: created. Available: available.
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     /**
-     * VPC中子网的列表。
+     * List of subnets in the VPC.
      */
     public readonly subnetIds!: pulumi.Output<string[]>;
     /**
-     * VPC 是否启用 IPv4 网关。false（默认值）：不启用。true：启用。
+     * Whether the VPC enables the IPv4 gateway. false (default): not enabled. true: enabled.
      */
     public readonly supportIpv4Gateway!: pulumi.Output<boolean>;
     public readonly tags!: pulumi.Output<outputs.vpc.VpcTag[]>;
     /**
-     * 更新VPC的时间。
+     * Time when the VPC was updated.
      */
     public /*out*/ readonly updateTime!: pulumi.Output<string>;
     /**
-     * VPC的用户网段。
+     * User CIDR block of the VPC.
      */
     public /*out*/ readonly userCidrBlocks!: pulumi.Output<string[]>;
     /**
-     * VPC的ID。
+     * ID of the VPC.
      */
     public /*out*/ readonly vpcId!: pulumi.Output<string>;
     /**
-     * VPC的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为VPC实例的ID。不能以http://或https://开头。
+     * Name of the VPC. Length must be between 1 and 128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the VPC instance ID. Cannot start with http:// or https://.
      */
     public readonly vpcName!: pulumi.Output<string>;
 
@@ -208,93 +208,93 @@ export class Vpc extends pulumi.CustomResource {
  */
 export interface VpcState {
     /**
-     * VPC所属账号的ID。
+     * ID of the account to which the VPC belongs.
      */
     accountId?: pulumi.Input<string>;
     associateCens?: pulumi.Input<pulumi.Input<inputs.vpc.VpcAssociateCen>[]>;
     /**
-     * VPC的IPv4网段。您可以使用以下网段或其子集作为VPC的IPv4网段：192.168.0.0/16 ~ 24、10.0.0.0/8 ~ 24、172.16.0.0/12 ~ 24。
+     * IPv4 CIDR block of the VPC. You can use the following CIDR blocks or their subsets as the VPC's IPv4 CIDR block: 192.168.0.0/16 ~ 24, 10.0.0.0/8 ~ 24, 172.16.0.0/12 ~ 24.
      */
     cidrBlock?: pulumi.Input<string>;
     /**
-     * 创建VPC的时间。
+     * Time when the VPC was created.
      */
     creationTime?: pulumi.Input<string>;
     /**
-     * VPC的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不能以http://或https://开头。
+     * Description of the VPC. Length must be between 0 and 255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Cannot start with http:// or https://.
      */
     description?: pulumi.Input<string>;
     /**
-     * VPC的DNS服务器地址。单次调用数量上限为5个，每个DnsServer必须以合法IP形式给出。多个IP之间用&分隔。不填则配置为默认DNS服务器地址。
+     * DNS server addresses of the VPC. Maximum of 5 per request. Each DnsServer must be a valid IP address. Use & to separate multiple IPs. If not specified, defaults to the system DNS server addresses.
      */
     dnsServers?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+     * Whether to enable IPv6 CIDR block. false (default): not enabled. true: enabled.
      */
     enableIpv6?: pulumi.Input<boolean>;
     /**
-     * VPC 绑定的 IPv4 网关的 ID。
+     * ID of the IPv4 gateway bound to the VPC.
      */
     ipv4GatewayId?: pulumi.Input<string>;
     /**
-     * VPC的IPv6网段。传入此参数后，参数Ipv6MaskLen不生效。参数Ipv6Isp传入非BGP后，参数Ipv6MaskLen和参数Ipv6CidrBlock二者必须传入一个。参数Ipv6Isp未传或传入BGP，此参数未传，则由系统自动分配IPv6网段。
+     * IPv6 CIDR block of the VPC. If this parameter is provided, the Ipv6MaskLen parameter is ignored. If the Ipv6Isp parameter is set to a value other than BGP, either the Ipv6MaskLen or Ipv6CidrBlock parameter must be provided. If the Ipv6Isp parameter is not provided or set to BGP and this parameter is not provided, the system automatically assigns an IPv6 CIDR block.
      */
     ipv6CidrBlock?: pulumi.Input<string>;
     /**
-     * 该VPC是否为默认VPC。true：默认VPC，表示该VPC是创建ECS实例时系统自动创建的VPC。false：非默认VPC，表示该VPC是用户手动创建的。
+     * Whether this VPC is the default VPC. true: default VPC, meaning the VPC was automatically created by the system when creating an ECS instance. false: non-default VPC, meaning the VPC was manually created by the user.
      */
     isDefault?: pulumi.Input<boolean>;
     /**
-     * VPC中创建的NAT网关的ID。
+     * ID of the NAT gateway created in the VPC.
      */
     natGatewayIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * VPC中的网络ACL的数量。
+     * Number of network ACLs in the VPC.
      */
     networkAclNum?: pulumi.Input<string>;
     /**
-     * VPC所属项目的名称。不填默认加入default项目。
+     * Name of the project to which the VPC belongs. If not specified, it is added to the default project.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * VPC关联的路由表ID。
+     * ID of the route table associated with the VPC.
      */
     routeTableIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * VPC的辅助网段。
+     * Secondary CIDR block of the VPC.
      */
     secondaryCidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * VPC中安全组的列表。
+     * List of security groups in the VPC.
      */
     securityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * VPC的状态。Creating：创建中。Pending：已创建。Available：可用。
+     * Status of the VPC. Creating: being created. Created: created. Available: available.
      */
     status?: pulumi.Input<string>;
     /**
-     * VPC中子网的列表。
+     * List of subnets in the VPC.
      */
     subnetIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * VPC 是否启用 IPv4 网关。false（默认值）：不启用。true：启用。
+     * Whether the VPC enables the IPv4 gateway. false (default): not enabled. true: enabled.
      */
     supportIpv4Gateway?: pulumi.Input<boolean>;
     tags?: pulumi.Input<pulumi.Input<inputs.vpc.VpcTag>[]>;
     /**
-     * 更新VPC的时间。
+     * Time when the VPC was updated.
      */
     updateTime?: pulumi.Input<string>;
     /**
-     * VPC的用户网段。
+     * User CIDR block of the VPC.
      */
     userCidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * VPC的ID。
+     * ID of the VPC.
      */
     vpcId?: pulumi.Input<string>;
     /**
-     * VPC的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为VPC实例的ID。不能以http://或https://开头。
+     * Name of the VPC. Length must be between 1 and 128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the VPC instance ID. Cannot start with http:// or https://.
      */
     vpcName?: pulumi.Input<string>;
 }
@@ -304,52 +304,52 @@ export interface VpcState {
  */
 export interface VpcArgs {
     /**
-     * VPC的IPv4网段。您可以使用以下网段或其子集作为VPC的IPv4网段：192.168.0.0/16 ~ 24、10.0.0.0/8 ~ 24、172.16.0.0/12 ~ 24。
+     * IPv4 CIDR block of the VPC. You can use the following CIDR blocks or their subsets as the VPC's IPv4 CIDR block: 192.168.0.0/16 ~ 24, 10.0.0.0/8 ~ 24, 172.16.0.0/12 ~ 24.
      */
     cidrBlock?: pulumi.Input<string>;
     /**
-     * VPC的描述信息。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不能以http://或https://开头。
+     * Description of the VPC. Length must be between 0 and 255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Cannot start with http:// or https://.
      */
     description?: pulumi.Input<string>;
     /**
-     * VPC的DNS服务器地址。单次调用数量上限为5个，每个DnsServer必须以合法IP形式给出。多个IP之间用&分隔。不填则配置为默认DNS服务器地址。
+     * DNS server addresses of the VPC. Maximum of 5 per request. Each DnsServer must be a valid IP address. Use & to separate multiple IPs. If not specified, defaults to the system DNS server addresses.
      */
     dnsServers?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * 是否开启IPv6网段。false（默认值）：不开启。true：开启。
+     * Whether to enable IPv6 CIDR block. false (default): not enabled. true: enabled.
      */
     enableIpv6?: pulumi.Input<boolean>;
     /**
-     * VPC 绑定的 IPv4 网关的 ID。
+     * ID of the IPv4 gateway bound to the VPC.
      */
     ipv4GatewayId?: pulumi.Input<string>;
     /**
-     * VPC的IPv6网段。传入此参数后，参数Ipv6MaskLen不生效。参数Ipv6Isp传入非BGP后，参数Ipv6MaskLen和参数Ipv6CidrBlock二者必须传入一个。参数Ipv6Isp未传或传入BGP，此参数未传，则由系统自动分配IPv6网段。
+     * IPv6 CIDR block of the VPC. If this parameter is provided, the Ipv6MaskLen parameter is ignored. If the Ipv6Isp parameter is set to a value other than BGP, either the Ipv6MaskLen or Ipv6CidrBlock parameter must be provided. If the Ipv6Isp parameter is not provided or set to BGP and this parameter is not provided, the system automatically assigns an IPv6 CIDR block.
      */
     ipv6CidrBlock?: pulumi.Input<string>;
     /**
-     * VPC中创建的NAT网关的ID。
+     * ID of the NAT gateway created in the VPC.
      */
     natGatewayIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * VPC所属项目的名称。不填默认加入default项目。
+     * Name of the project to which the VPC belongs. If not specified, it is added to the default project.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * VPC的辅助网段。
+     * Secondary CIDR block of the VPC.
      */
     secondaryCidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * VPC中子网的列表。
+     * List of subnets in the VPC.
      */
     subnetIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * VPC 是否启用 IPv4 网关。false（默认值）：不启用。true：启用。
+     * Whether the VPC enables the IPv4 gateway. false (default): not enabled. true: enabled.
      */
     supportIpv4Gateway?: pulumi.Input<boolean>;
     tags?: pulumi.Input<pulumi.Input<inputs.vpc.VpcTag>[]>;
     /**
-     * VPC的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认为VPC实例的ID。不能以http://或https://开头。
+     * Name of the VPC. Length must be between 1 and 128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the VPC instance ID. Cannot start with http:// or https://.
      */
     vpcName?: pulumi.Input<string>;
 }

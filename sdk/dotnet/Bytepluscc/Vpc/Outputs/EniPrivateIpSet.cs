@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc.Outputs
     public sealed class EniPrivateIpSet
     {
         /// <summary>
-        /// 网卡主私网IPv4关联的公网IP的信息。
+        /// Information about the public IP associated with the primary private IPv4 address of the network interface.
         /// </summary>
         public readonly Outputs.EniPrivateIpSetAssociatedElasticIp? AssociatedElasticIp;
         /// <summary>
-        /// 网卡的私网IP地址。
+        /// Private IP address of the network interface.
         /// </summary>
         public readonly string? PrivateIpAddress;
 

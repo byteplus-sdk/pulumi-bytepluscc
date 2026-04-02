@@ -18,14 +18,14 @@ public final class UpstreamLoadBalancerSettingsConsistentHashLbArgs extends com.
     public static final UpstreamLoadBalancerSettingsConsistentHashLbArgs Empty = new UpstreamLoadBalancerSettingsConsistentHashLbArgs();
 
     /**
-     * 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+     * Overload protection parameter. Value range: 100–200. When set to 120, overload protection is triggered if the current active request count of an upstream node exceeds 120% of the average active request count. When overload protection is triggered, even if the request hash matches a specific upstream node, the load balancer will randomly select an upstream node
      * 
      */
     @Import(name="hashBalanceFactor")
     private @Nullable Output<Integer> hashBalanceFactor;
 
     /**
-     * @return 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+     * @return Overload protection parameter. Value range: 100–200. When set to 120, overload protection is triggered if the current active request count of an upstream node exceeds 120% of the average active request count. When overload protection is triggered, even if the request hash matches a specific upstream node, the load balancer will randomly select an upstream node
      * 
      */
     public Optional<Output<Integer>> hashBalanceFactor() {
@@ -33,14 +33,14 @@ public final class UpstreamLoadBalancerSettingsConsistentHashLbArgs extends com.
     }
 
     /**
-     * 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
+     * Consistent hash method. Options: UseSourceIp: based on source IP address. HttpQueryParameterName: based on parameter. HttpHeaderName: based on header. HTTPCookie: based on cookie
      * 
      */
     @Import(name="hashKey")
     private @Nullable Output<String> hashKey;
 
     /**
-     * @return 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
+     * @return Consistent hash method. Options: UseSourceIp: based on source IP address. HttpQueryParameterName: based on parameter. HttpHeaderName: based on header. HTTPCookie: based on cookie
      * 
      */
     public Optional<Output<String>> hashKey() {
@@ -63,14 +63,14 @@ public final class UpstreamLoadBalancerSettingsConsistentHashLbArgs extends com.
     }
 
     /**
-     * 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+     * Parameter. Supports printable ASCII characters, length: 1–256 characters
      * 
      */
     @Import(name="httpHeaderName")
     private @Nullable Output<String> httpHeaderName;
 
     /**
-     * @return 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+     * @return Parameter. Supports printable ASCII characters, length: 1–256 characters
      * 
      */
     public Optional<Output<String>> httpHeaderName() {
@@ -78,14 +78,14 @@ public final class UpstreamLoadBalancerSettingsConsistentHashLbArgs extends com.
     }
 
     /**
-     * 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+     * Parameter. Supports printable ASCII characters, length: 1–256 characters
      * 
      */
     @Import(name="httpQueryParameterName")
     private @Nullable Output<String> httpQueryParameterName;
 
     /**
-     * @return 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+     * @return Parameter. Supports printable ASCII characters, length: 1–256 characters
      * 
      */
     public Optional<Output<String>> httpQueryParameterName() {
@@ -93,14 +93,14 @@ public final class UpstreamLoadBalancerSettingsConsistentHashLbArgs extends com.
     }
 
     /**
-     * 源IP地址。
+     * Source IP address
      * 
      */
     @Import(name="useSourceIp")
     private @Nullable Output<String> useSourceIp;
 
     /**
-     * @return 源IP地址。
+     * @return Source IP address
      * 
      */
     public Optional<Output<String>> useSourceIp() {
@@ -137,7 +137,7 @@ public final class UpstreamLoadBalancerSettingsConsistentHashLbArgs extends com.
         }
 
         /**
-         * @param hashBalanceFactor 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+         * @param hashBalanceFactor Overload protection parameter. Value range: 100–200. When set to 120, overload protection is triggered if the current active request count of an upstream node exceeds 120% of the average active request count. When overload protection is triggered, even if the request hash matches a specific upstream node, the load balancer will randomly select an upstream node
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class UpstreamLoadBalancerSettingsConsistentHashLbArgs extends com.
         }
 
         /**
-         * @param hashBalanceFactor 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+         * @param hashBalanceFactor Overload protection parameter. Value range: 100–200. When set to 120, overload protection is triggered if the current active request count of an upstream node exceeds 120% of the average active request count. When overload protection is triggered, even if the request hash matches a specific upstream node, the load balancer will randomly select an upstream node
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class UpstreamLoadBalancerSettingsConsistentHashLbArgs extends com.
         }
 
         /**
-         * @param hashKey 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
+         * @param hashKey Consistent hash method. Options: UseSourceIp: based on source IP address. HttpQueryParameterName: based on parameter. HttpHeaderName: based on header. HTTPCookie: based on cookie
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class UpstreamLoadBalancerSettingsConsistentHashLbArgs extends com.
         }
 
         /**
-         * @param hashKey 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
+         * @param hashKey Consistent hash method. Options: UseSourceIp: based on source IP address. HttpQueryParameterName: based on parameter. HttpHeaderName: based on header. HTTPCookie: based on cookie
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class UpstreamLoadBalancerSettingsConsistentHashLbArgs extends com.
         }
 
         /**
-         * @param httpHeaderName 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+         * @param httpHeaderName Parameter. Supports printable ASCII characters, length: 1–256 characters
          * 
          * @return builder
          * 
@@ -211,7 +211,7 @@ public final class UpstreamLoadBalancerSettingsConsistentHashLbArgs extends com.
         }
 
         /**
-         * @param httpHeaderName 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+         * @param httpHeaderName Parameter. Supports printable ASCII characters, length: 1–256 characters
          * 
          * @return builder
          * 
@@ -221,7 +221,7 @@ public final class UpstreamLoadBalancerSettingsConsistentHashLbArgs extends com.
         }
 
         /**
-         * @param httpQueryParameterName 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+         * @param httpQueryParameterName Parameter. Supports printable ASCII characters, length: 1–256 characters
          * 
          * @return builder
          * 
@@ -232,7 +232,7 @@ public final class UpstreamLoadBalancerSettingsConsistentHashLbArgs extends com.
         }
 
         /**
-         * @param httpQueryParameterName 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+         * @param httpQueryParameterName Parameter. Supports printable ASCII characters, length: 1–256 characters
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class UpstreamLoadBalancerSettingsConsistentHashLbArgs extends com.
         }
 
         /**
-         * @param useSourceIp 源IP地址。
+         * @param useSourceIp Source IP address
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class UpstreamLoadBalancerSettingsConsistentHashLbArgs extends com.
         }
 
         /**
-         * @param useSourceIp 源IP地址。
+         * @param useSourceIp Source IP address
          * 
          * @return builder
          * 

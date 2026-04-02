@@ -16,14 +16,14 @@ public final class UpstreamTlsSettingsArgs extends com.pulumi.resources.Resource
     public static final UpstreamTlsSettingsArgs Empty = new UpstreamTlsSettingsArgs();
 
     /**
-     * SNI。留空时会将访问网关的域名透传到upstream。
+     * SNI. If left blank, the domain name accessed by the gateway will be passed through to the upstream
      * 
      */
     @Import(name="sni")
     private @Nullable Output<String> sni;
 
     /**
-     * @return SNI。留空时会将访问网关的域名透传到upstream。
+     * @return SNI. If left blank, the domain name accessed by the gateway will be passed through to the upstream
      * 
      */
     public Optional<Output<String>> sni() {
@@ -31,14 +31,14 @@ public final class UpstreamTlsSettingsArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * TLS模式，取值：DISABLE：关闭TLS。SIMPLE：单向TLS。
+     * TLS mode. Options: DISABLE: disable TLS. SIMPLE: one-way TLS
      * 
      */
     @Import(name="tlsMode")
     private @Nullable Output<String> tlsMode;
 
     /**
-     * @return TLS模式，取值：DISABLE：关闭TLS。SIMPLE：单向TLS。
+     * @return TLS mode. Options: DISABLE: disable TLS. SIMPLE: one-way TLS
      * 
      */
     public Optional<Output<String>> tlsMode() {
@@ -71,7 +71,7 @@ public final class UpstreamTlsSettingsArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param sni SNI。留空时会将访问网关的域名透传到upstream。
+         * @param sni SNI. If left blank, the domain name accessed by the gateway will be passed through to the upstream
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class UpstreamTlsSettingsArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param sni SNI。留空时会将访问网关的域名透传到upstream。
+         * @param sni SNI. If left blank, the domain name accessed by the gateway will be passed through to the upstream
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class UpstreamTlsSettingsArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param tlsMode TLS模式，取值：DISABLE：关闭TLS。SIMPLE：单向TLS。
+         * @param tlsMode TLS mode. Options: DISABLE: disable TLS. SIMPLE: one-way TLS
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class UpstreamTlsSettingsArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param tlsMode TLS模式，取值：DISABLE：关闭TLS。SIMPLE：单向TLS。
+         * @param tlsMode TLS mode. Options: DISABLE: disable TLS. SIMPLE: one-way TLS
          * 
          * @return builder
          * 

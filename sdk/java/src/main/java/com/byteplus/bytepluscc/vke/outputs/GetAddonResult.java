@@ -12,27 +12,27 @@ import java.util.Objects;
 @CustomType
 public final class GetAddonResult {
     /**
-     * @return 组件所在集群 ID。
+     * @return Cluster ID where the component is located.
      * 
      */
     private String clusterId;
     /**
-     * @return 组件配置。
+     * @return Component configuration.
      * 
      */
     private String config;
     /**
-     * @return 安装组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+     * @return Component installation time. Standard RFC3339 format, UTC+0 time.
      * 
      */
     private String createdTime;
     /**
-     * @return 组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
+     * @return Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
      * 
      */
     private String deployMode;
     /**
-     * @return 部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
+     * @return Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
      * 
      */
     private String deployNodeType;
@@ -42,57 +42,57 @@ public final class GetAddonResult {
      */
     private String id;
     /**
-     * @return 组件名称。
+     * @return Component name.
      * 
      */
     private String name;
     /**
-     * @return 组件状态。
+     * @return Component status.
      * 
      */
     private GetAddonStatus status;
     /**
-     * @return 更新组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+     * @return Component update time. Standard RFC3339 format, UTC+0 time.
      * 
      */
     private String updatedTime;
     /**
-     * @return 组件版本。
+     * @return Component version.
      * 
      */
     private String version;
 
     private GetAddonResult() {}
     /**
-     * @return 组件所在集群 ID。
+     * @return Cluster ID where the component is located.
      * 
      */
     public String clusterId() {
         return this.clusterId;
     }
     /**
-     * @return 组件配置。
+     * @return Component configuration.
      * 
      */
     public String config() {
         return this.config;
     }
     /**
-     * @return 安装组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+     * @return Component installation time. Standard RFC3339 format, UTC+0 time.
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
+     * @return Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
      * 
      */
     public String deployMode() {
         return this.deployMode;
     }
     /**
-     * @return 部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
+     * @return Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
      * 
      */
     public String deployNodeType() {
@@ -106,28 +106,28 @@ public final class GetAddonResult {
         return this.id;
     }
     /**
-     * @return 组件名称。
+     * @return Component name.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 组件状态。
+     * @return Component status.
      * 
      */
     public GetAddonStatus status() {
         return this.status;
     }
     /**
-     * @return 更新组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+     * @return Component update time. Standard RFC3339 format, UTC+0 time.
      * 
      */
     public String updatedTime() {
         return this.updatedTime;
     }
     /**
-     * @return 组件版本。
+     * @return Component version.
      * 
      */
     public String version() {

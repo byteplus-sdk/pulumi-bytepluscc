@@ -23,14 +23,14 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
     public static final NodePoolArgs Empty = new NodePoolArgs();
 
     /**
-     * 节点池伸缩策略配置。
+     * Node pool scaling policy configuration.
      * 
      */
     @Import(name="autoScaling")
     private @Nullable Output<NodePoolAutoScalingArgs> autoScaling;
 
     /**
-     * @return 节点池伸缩策略配置。
+     * @return Node pool scaling policy configuration.
      * 
      */
     public Optional<Output<NodePoolAutoScalingArgs>> autoScaling() {
@@ -38,14 +38,14 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点池所在集群的 ID。
+     * ID of the cluster where the node pool is located
      * 
      */
     @Import(name="clusterId", required=true)
     private Output<String> clusterId;
 
     /**
-     * @return 节点池所在集群的 ID。
+     * @return ID of the cluster where the node pool is located
      * 
      */
     public Output<String> clusterId() {
@@ -53,14 +53,14 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点池 Kubernetes 相关配置。
+     * Kubernetes-related configuration for the node pool
      * 
      */
     @Import(name="kubernetesConfig")
     private @Nullable Output<NodePoolKubernetesConfigArgs> kubernetesConfig;
 
     /**
-     * @return 节点池 Kubernetes 相关配置。
+     * @return Kubernetes-related configuration for the node pool
      * 
      */
     public Optional<Output<NodePoolKubernetesConfigArgs>> kubernetesConfig() {
@@ -68,14 +68,14 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 托管节点池配置。
+     * Managed node pool configuration
      * 
      */
     @Import(name="management")
     private @Nullable Output<NodePoolManagementArgs> management;
 
     /**
-     * @return 托管节点池配置。
+     * @return Managed node pool configuration
      * 
      */
     public Optional<Output<NodePoolManagementArgs>> management() {
@@ -83,14 +83,14 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+     * Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+     * @return Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
      * 
      */
     public Optional<Output<String>> name() {
@@ -98,14 +98,14 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点池中云服务器（ECS）实例配置。
+     * Cloud server (ECS) instance configuration in the node pool
      * 
      */
     @Import(name="nodeConfig")
     private @Nullable Output<NodePoolNodeConfigArgs> nodeConfig;
 
     /**
-     * @return 节点池中云服务器（ECS）实例配置。
+     * @return Cloud server (ECS) instance configuration in the node pool
      * 
      */
     public Optional<Output<NodePoolNodeConfigArgs>> nodeConfig() {
@@ -113,14 +113,14 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 删除节点池时，指定保留的相关资源，取值：取值为空：（默认值）删除关联资源。Ecs：删除节点池时，保留节点池中的云服务器（ECS）实例。若指定的节点池内存在包年包月的云服务器实例，且未选择保留云服务器，则该接口仅从节点池中移除云服务器实例，不会删除。您可以通过云服务器控制台或云服务器API查询到该实例，并按需执行后续操作。
+     * When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
      * 
      */
     @Import(name="retainResources")
     private @Nullable Output<List<String>> retainResources;
 
     /**
-     * @return 删除节点池时，指定保留的相关资源，取值：取值为空：（默认值）删除关联资源。Ecs：删除节点池时，保留节点池中的云服务器（ECS）实例。若指定的节点池内存在包年包月的云服务器实例，且未选择保留云服务器，则该接口仅从节点池中移除云服务器实例，不会删除。您可以通过云服务器控制台或云服务器API查询到该实例，并按需执行后续操作。
+     * @return When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
      * 
      */
     public Optional<Output<List<String>>> retainResources() {
@@ -166,7 +166,7 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoScaling 节点池伸缩策略配置。
+         * @param autoScaling Node pool scaling policy configuration.
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoScaling 节点池伸缩策略配置。
+         * @param autoScaling Node pool scaling policy configuration.
          * 
          * @return builder
          * 
@@ -187,7 +187,7 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterId 节点池所在集群的 ID。
+         * @param clusterId ID of the cluster where the node pool is located
          * 
          * @return builder
          * 
@@ -198,7 +198,7 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterId 节点池所在集群的 ID。
+         * @param clusterId ID of the cluster where the node pool is located
          * 
          * @return builder
          * 
@@ -208,7 +208,7 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kubernetesConfig 节点池 Kubernetes 相关配置。
+         * @param kubernetesConfig Kubernetes-related configuration for the node pool
          * 
          * @return builder
          * 
@@ -219,7 +219,7 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kubernetesConfig 节点池 Kubernetes 相关配置。
+         * @param kubernetesConfig Kubernetes-related configuration for the node pool
          * 
          * @return builder
          * 
@@ -229,7 +229,7 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param management 托管节点池配置。
+         * @param management Managed node pool configuration
          * 
          * @return builder
          * 
@@ -240,7 +240,7 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param management 托管节点池配置。
+         * @param management Managed node pool configuration
          * 
          * @return builder
          * 
@@ -250,7 +250,7 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+         * @param name Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
          * 
          * @return builder
          * 
@@ -261,7 +261,7 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 节点池名称。同一个集群下，节点池名称必须唯一。支持大小写英文字母、汉字、数字、短划线（-），长度限制为 2～64 个字符。
+         * @param name Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
          * 
          * @return builder
          * 
@@ -271,7 +271,7 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeConfig 节点池中云服务器（ECS）实例配置。
+         * @param nodeConfig Cloud server (ECS) instance configuration in the node pool
          * 
          * @return builder
          * 
@@ -282,7 +282,7 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeConfig 节点池中云服务器（ECS）实例配置。
+         * @param nodeConfig Cloud server (ECS) instance configuration in the node pool
          * 
          * @return builder
          * 
@@ -292,7 +292,7 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param retainResources 删除节点池时，指定保留的相关资源，取值：取值为空：（默认值）删除关联资源。Ecs：删除节点池时，保留节点池中的云服务器（ECS）实例。若指定的节点池内存在包年包月的云服务器实例，且未选择保留云服务器，则该接口仅从节点池中移除云服务器实例，不会删除。您可以通过云服务器控制台或云服务器API查询到该实例，并按需执行后续操作。
+         * @param retainResources When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
          * 
          * @return builder
          * 
@@ -303,7 +303,7 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param retainResources 删除节点池时，指定保留的相关资源，取值：取值为空：（默认值）删除关联资源。Ecs：删除节点池时，保留节点池中的云服务器（ECS）实例。若指定的节点池内存在包年包月的云服务器实例，且未选择保留云服务器，则该接口仅从节点池中移除云服务器实例，不会删除。您可以通过云服务器控制台或云服务器API查询到该实例，并按需执行后续操作。
+         * @param retainResources When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
          * 
          * @return builder
          * 
@@ -313,7 +313,7 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param retainResources 删除节点池时，指定保留的相关资源，取值：取值为空：（默认值）删除关联资源。Ecs：删除节点池时，保留节点池中的云服务器（ECS）实例。若指定的节点池内存在包年包月的云服务器实例，且未选择保留云服务器，则该接口仅从节点池中移除云服务器实例，不会删除。您可以通过云服务器控制台或云服务器API查询到该实例，并按需执行后续操作。
+         * @param retainResources When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
          * 
          * @return builder
          * 

@@ -13,74 +13,74 @@ import java.util.Objects;
 @CustomType
 public final class GetNodeGroupChargePreConfig {
     /**
-     * @return 是否开启自动续费。
+     * @return Whether to enable auto-renewal.
      * 
      */
     private Boolean autoRenew;
     /**
-     * @return 自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+     * @return Renewal duration when auto-renewal is triggered. When autoRenew=true, the default value is 1.
      * 
      */
     private Integer autoRenewPeriod;
     /**
-     * @return 自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+     * @return Renewal duration unit when auto-renewal is triggered. When autoRenew=true, the default value is Month. Value range: Month: month. Year: year.
      * 
      */
     private String autoRenewPeriodUnit;
     /**
-     * @return chargeType=PRE默认值=1，包月的购买时长单位。
+     * @return When chargeType=PRE, the default value is 1. The unit for the purchase duration when chargeType=PRE is monthly subscription.
      * 
      */
     private Integer chargePeriod;
     /**
-     * @return chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+     * @return When chargeType=PRE, the default value is Month. The unit for the purchase duration when chargeType=PRE is monthly subscription. Value range: Month (month), Year (year).
      * 
      */
     private String chargePeriodUnit;
     /**
-     * @return 付费类型，枚举值：POST，PRE。
+     * @return Payment type. Enum values: POST, PRE.
      * 
      */
     private String chargeType;
 
     private GetNodeGroupChargePreConfig() {}
     /**
-     * @return 是否开启自动续费。
+     * @return Whether to enable auto-renewal.
      * 
      */
     public Boolean autoRenew() {
         return this.autoRenew;
     }
     /**
-     * @return 自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+     * @return Renewal duration when auto-renewal is triggered. When autoRenew=true, the default value is 1.
      * 
      */
     public Integer autoRenewPeriod() {
         return this.autoRenewPeriod;
     }
     /**
-     * @return 自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+     * @return Renewal duration unit when auto-renewal is triggered. When autoRenew=true, the default value is Month. Value range: Month: month. Year: year.
      * 
      */
     public String autoRenewPeriodUnit() {
         return this.autoRenewPeriodUnit;
     }
     /**
-     * @return chargeType=PRE默认值=1，包月的购买时长单位。
+     * @return When chargeType=PRE, the default value is 1. The unit for the purchase duration when chargeType=PRE is monthly subscription.
      * 
      */
     public Integer chargePeriod() {
         return this.chargePeriod;
     }
     /**
-     * @return chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+     * @return When chargeType=PRE, the default value is Month. The unit for the purchase duration when chargeType=PRE is monthly subscription. Value range: Month (month), Year (year).
      * 
      */
     public String chargePeriodUnit() {
         return this.chargePeriodUnit;
     }
     /**
-     * @return 付费类型，枚举值：POST，PRE。
+     * @return Payment type. Enum values: POST, PRE.
      * 
      */
     public String chargeType() {

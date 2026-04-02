@@ -18,14 +18,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     public static final GroupState Empty = new GroupState();
 
     /**
-     * 创建时间。
+     * Creation Time
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 创建时间。
+     * @return Creation Time
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -33,14 +33,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 描述。
+     * Description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 描述。
+     * @return Description
      * 
      */
     public Optional<Output<String>> description() {
@@ -48,14 +48,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 显示名。
+     * Display Name
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return 显示名。
+     * @return Display Name
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -63,14 +63,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 用户组id。
+     * User Group ID
      * 
      */
     @Import(name="groupId")
     private @Nullable Output<String> groupId;
 
     /**
-     * @return 用户组id。
+     * @return User Group ID
      * 
      */
     public Optional<Output<String>> groupId() {
@@ -78,14 +78,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 用户组名称。
+     * User Group Name
      * 
      */
     @Import(name="groupName")
     private @Nullable Output<String> groupName;
 
     /**
-     * @return 用户组名称。
+     * @return User Group Name
      * 
      */
     public Optional<Output<String>> groupName() {
@@ -93,14 +93,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 用户组类型。
+     * User Group Type
      * 
      */
     @Import(name="joinType")
     private @Nullable Output<String> joinType;
 
     /**
-     * @return 用户组类型。
+     * @return User Group Type
      * 
      */
     public Optional<Output<String>> joinType() {
@@ -115,14 +115,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 用户组来源。
+     * User Group Source
      * 
      */
     @Import(name="source")
     private @Nullable Output<String> source;
 
     /**
-     * @return 用户组来源。
+     * @return User Group Source
      * 
      */
     public Optional<Output<String>> source() {
@@ -130,14 +130,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 更新时间。
+     * Update Time
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 更新时间。
+     * @return Update Time
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -177,7 +177,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 创建时间。
+         * @param createdTime Creation Time
          * 
          * @return builder
          * 
@@ -188,7 +188,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 创建时间。
+         * @param createdTime Creation Time
          * 
          * @return builder
          * 
@@ -198,7 +198,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 描述。
+         * @param description Description
          * 
          * @return builder
          * 
@@ -209,7 +209,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 描述。
+         * @param description Description
          * 
          * @return builder
          * 
@@ -219,7 +219,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName 显示名。
+         * @param displayName Display Name
          * 
          * @return builder
          * 
@@ -230,7 +230,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName 显示名。
+         * @param displayName Display Name
          * 
          * @return builder
          * 
@@ -240,7 +240,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupId 用户组id。
+         * @param groupId User Group ID
          * 
          * @return builder
          * 
@@ -251,7 +251,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupId 用户组id。
+         * @param groupId User Group ID
          * 
          * @return builder
          * 
@@ -261,7 +261,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupName 用户组名称。
+         * @param groupName User Group Name
          * 
          * @return builder
          * 
@@ -272,7 +272,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupName 用户组名称。
+         * @param groupName User Group Name
          * 
          * @return builder
          * 
@@ -282,7 +282,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param joinType 用户组类型。
+         * @param joinType User Group Type
          * 
          * @return builder
          * 
@@ -293,7 +293,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param joinType 用户组类型。
+         * @param joinType User Group Type
          * 
          * @return builder
          * 
@@ -316,7 +316,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param source 用户组来源。
+         * @param source User Group Source
          * 
          * @return builder
          * 
@@ -327,7 +327,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param source 用户组来源。
+         * @param source User Group Source
          * 
          * @return builder
          * 
@@ -337,7 +337,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 更新时间。
+         * @param updatedTime Update Time
          * 
          * @return builder
          * 
@@ -348,7 +348,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 更新时间。
+         * @param updatedTime Update Time
          * 
          * @return builder
          * 

@@ -14,31 +14,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示鉴权服务器的配置。
+        /// Indicates the configuration of the authentication server.
         /// </summary>
         [Input("authModeConfig")]
         public Input<Inputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthModeConfigGetArgs>? AuthModeConfig { get; set; }
 
         /// <summary>
-        /// 内容分发网络需要对鉴权服务器返回的鉴权状态码进行处理。该参数表示相关的配置。
+        /// The content delivery network needs to handle the authentication status codes returned by the authentication server. This parameter specifies the relevant configuration.
         /// </summary>
         [Input("authResponseConfig")]
         public Input<Inputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigGetArgs>? AuthResponseConfig { get; set; }
 
         /// <summary>
-        /// 表示鉴权请求的参数设置。
+        /// Represents the parameter settings for authentication requests.
         /// </summary>
         [Input("queryStringRules")]
         public Input<Inputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesGetArgs>? QueryStringRules { get; set; }
 
         /// <summary>
-        /// 表示鉴权请求正文的规则。您可以不指定该参数或者设置该参数值为 default。default 表示请求正文为空（""）。
+        /// Indicates the rule for the authentication request body. You can leave this parameter unspecified or set its value to default. default means the request body is empty ("").
         /// </summary>
         [Input("requestBodyRules")]
         public Input<string>? RequestBodyRules { get; set; }
 
         /// <summary>
-        /// 表示鉴权请求头的设置。您最多可以设置 50 个请求头。
+        /// Indicates the settings for authentication request headers. You can set up to 50 request headers.
         /// </summary>
         [Input("requestHeaderRules")]
         public Input<Inputs.DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesGetArgs>? RequestHeaderRules { get; set; }

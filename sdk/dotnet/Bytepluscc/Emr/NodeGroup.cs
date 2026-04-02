@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Emr
 {
     /// <summary>
-    /// E-MapReduce集群由多个不同类型的实例节点组成，包括主实例节点（Master）、核心实例节点（Core）和计算实例节点（Task）。不同实例节点上部署的服务进程不同，负责完成的任务也不同。
+    /// An E-MapReduce cluster consists of multiple types of instance nodes, including master instance nodes (Master), core instance nodes (Core), and task instance nodes (Task). Different service processes are deployed on each node type, and each is responsible for different tasks.
     /// 
     /// ## Import
     /// 
@@ -26,25 +26,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         public Output<ImmutableArray<Outputs.NodeGroupApplicationLayout>> ApplicationLayouts { get; private set; } = null!;
 
         /// <summary>
-        /// 包周期付费配置。
+        /// Subscription payment configuration.
         /// </summary>
         [Output("chargePreConfig")]
         public Output<Outputs.NodeGroupChargePreConfig> ChargePreConfig { get; private set; } = null!;
 
         /// <summary>
-        /// 付费类型。PRE表示包月，POST表示按量计费。
+        /// Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
         /// </summary>
         [Output("chargeType")]
         public Output<string> ChargeType { get; private set; } = null!;
 
         /// <summary>
-        /// 集群ID。
+        /// Cluster ID.
         /// </summary>
         [Output("clusterId")]
         public Output<string> ClusterId { get; private set; } = null!;
 
         /// <summary>
-        /// 创建时间。
+        /// Creation time.
         /// </summary>
         [Output("createdTime")]
         public Output<int> CreatedTime { get; private set; } = null!;
@@ -53,43 +53,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         public Output<ImmutableArray<Outputs.NodeGroupDataDisk>> DataDisks { get; private set; } = null!;
 
         /// <summary>
-        /// ECS实例规格列表。当前修改仅支持单个实例规格。
+        /// ECS instance specification list. Currently, only a single instance specification can be modified.
         /// </summary>
         [Output("ecsInstanceTypes")]
         public Output<ImmutableArray<string>> EcsInstanceTypes { get; private set; } = null!;
 
         /// <summary>
-        /// 返回的节点组组件的自定义配置参数列表。
+        /// Custom configuration parameter list for the returned node group components.
         /// </summary>
         [Output("layoutComponentNames")]
         public Output<ImmutableArray<string>> LayoutComponentNames { get; private set; } = null!;
 
         /// <summary>
-        /// 节点数量。取值范围：1~1000。
+        /// Node count. Value range: 1~1000.
         /// </summary>
         [Output("nodeCount")]
         public Output<int> NodeCount { get; private set; } = null!;
 
         /// <summary>
-        /// 节点组ID。
+        /// Node group ID.
         /// </summary>
         [Output("nodeGroupId")]
         public Output<string> NodeGroupId { get; private set; } = null!;
 
         /// <summary>
-        /// 节点组名称。
+        /// Node group name.
         /// </summary>
         [Output("nodeGroupName")]
         public Output<string> NodeGroupName { get; private set; } = null!;
 
         /// <summary>
-        /// 节点组状态。RUNNING：运行中。EXTENDING：扩容中。REDUCING：缩容中。DISK_EXTENDING：磁盘扩容中。MODIFYING：变配中。
+        /// Node group status. RUNNING: Running. EXTENDING: Expanding. REDUCING: Shrinking. DISK_EXTENDING: Disk expansion. MODIFYING: Configuration modification in progress.
         /// </summary>
         [Output("nodeGroupState")]
         public Output<string> NodeGroupStateValue { get; private set; } = null!;
 
         /// <summary>
-        /// 节点组类型。
+        /// Node group type.
         /// </summary>
         [Output("nodeGroupType")]
         public Output<string> NodeGroupType { get; private set; } = null!;
@@ -98,37 +98,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         public Output<ImmutableArray<Outputs.NodeGroupNode>> Nodes { get; private set; } = null!;
 
         /// <summary>
-        /// 子网ID列表。
+        /// Subnet ID list.
         /// </summary>
         [Output("subnetIds")]
         public Output<ImmutableArray<string>> SubnetIds { get; private set; } = null!;
 
         /// <summary>
-        /// 系统盘。
+        /// System disk.
         /// </summary>
         [Output("systemDisk")]
         public Output<Outputs.NodeGroupSystemDisk> SystemDisk { get; private set; } = null!;
 
         /// <summary>
-        /// 待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
+        /// Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
         /// </summary>
         [Output("targetDiskSize")]
         public Output<int> TargetDiskSize { get; private set; } = null!;
 
         /// <summary>
-        /// 集群终止时间。
+        /// Cluster termination time.
         /// </summary>
         [Output("terminateTime")]
         public Output<string> TerminateTime { get; private set; } = null!;
 
         /// <summary>
-        /// ECS是否附带公网IP。
+        /// Whether the ECS instance includes a public IP.
         /// </summary>
         [Output("withPublicIp")]
         public Output<bool> WithPublicIp { get; private set; } = null!;
 
         /// <summary>
-        /// zoneId，为空时默认复用集群的zoneId。
+        /// zoneId. If empty, the cluster's zoneId is reused by default.
         /// </summary>
         [Output("zoneId")]
         public Output<string> ZoneId { get; private set; } = null!;
@@ -189,19 +189,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         }
 
         /// <summary>
-        /// 包周期付费配置。
+        /// Subscription payment configuration.
         /// </summary>
         [Input("chargePreConfig")]
         public Input<Inputs.NodeGroupChargePreConfigArgs>? ChargePreConfig { get; set; }
 
         /// <summary>
-        /// 付费类型。PRE表示包月，POST表示按量计费。
+        /// Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
         /// </summary>
         [Input("chargeType", required: true)]
         public Input<string> ChargeType { get; set; } = null!;
 
         /// <summary>
-        /// 集群ID。
+        /// Cluster ID.
         /// </summary>
         [Input("clusterId", required: true)]
         public Input<string> ClusterId { get; set; } = null!;
@@ -218,7 +218,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         private InputList<string>? _ecsInstanceTypes;
 
         /// <summary>
-        /// ECS实例规格列表。当前修改仅支持单个实例规格。
+        /// ECS instance specification list. Currently, only a single instance specification can be modified.
         /// </summary>
         public InputList<string> EcsInstanceTypes
         {
@@ -227,19 +227,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         }
 
         /// <summary>
-        /// 节点数量。取值范围：1~1000。
+        /// Node count. Value range: 1~1000.
         /// </summary>
         [Input("nodeCount", required: true)]
         public Input<int> NodeCount { get; set; } = null!;
 
         /// <summary>
-        /// 节点组名称。
+        /// Node group name.
         /// </summary>
         [Input("nodeGroupName", required: true)]
         public Input<string> NodeGroupName { get; set; } = null!;
 
         /// <summary>
-        /// 节点组类型。
+        /// Node group type.
         /// </summary>
         [Input("nodeGroupType", required: true)]
         public Input<string> NodeGroupType { get; set; } = null!;
@@ -248,7 +248,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         private InputList<string>? _subnetIds;
 
         /// <summary>
-        /// 子网ID列表。
+        /// Subnet ID list.
         /// </summary>
         public InputList<string> SubnetIds
         {
@@ -257,25 +257,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         }
 
         /// <summary>
-        /// 系统盘。
+        /// System disk.
         /// </summary>
         [Input("systemDisk")]
         public Input<Inputs.NodeGroupSystemDiskArgs>? SystemDisk { get; set; }
 
         /// <summary>
-        /// 待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
+        /// Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
         /// </summary>
         [Input("targetDiskSize")]
         public Input<int>? TargetDiskSize { get; set; }
 
         /// <summary>
-        /// ECS是否附带公网IP。
+        /// Whether the ECS instance includes a public IP.
         /// </summary>
         [Input("withPublicIp")]
         public Input<bool>? WithPublicIp { get; set; }
 
         /// <summary>
-        /// zoneId，为空时默认复用集群的zoneId。
+        /// zoneId. If empty, the cluster's zoneId is reused by default.
         /// </summary>
         [Input("zoneId")]
         public Input<string>? ZoneId { get; set; }
@@ -297,25 +297,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         }
 
         /// <summary>
-        /// 包周期付费配置。
+        /// Subscription payment configuration.
         /// </summary>
         [Input("chargePreConfig")]
         public Input<Inputs.NodeGroupChargePreConfigGetArgs>? ChargePreConfig { get; set; }
 
         /// <summary>
-        /// 付费类型。PRE表示包月，POST表示按量计费。
+        /// Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
         /// </summary>
         [Input("chargeType")]
         public Input<string>? ChargeType { get; set; }
 
         /// <summary>
-        /// 集群ID。
+        /// Cluster ID.
         /// </summary>
         [Input("clusterId")]
         public Input<string>? ClusterId { get; set; }
 
         /// <summary>
-        /// 创建时间。
+        /// Creation time.
         /// </summary>
         [Input("createdTime")]
         public Input<int>? CreatedTime { get; set; }
@@ -332,7 +332,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         private InputList<string>? _ecsInstanceTypes;
 
         /// <summary>
-        /// ECS实例规格列表。当前修改仅支持单个实例规格。
+        /// ECS instance specification list. Currently, only a single instance specification can be modified.
         /// </summary>
         public InputList<string> EcsInstanceTypes
         {
@@ -344,7 +344,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         private InputList<string>? _layoutComponentNames;
 
         /// <summary>
-        /// 返回的节点组组件的自定义配置参数列表。
+        /// Custom configuration parameter list for the returned node group components.
         /// </summary>
         public InputList<string> LayoutComponentNames
         {
@@ -353,31 +353,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         }
 
         /// <summary>
-        /// 节点数量。取值范围：1~1000。
+        /// Node count. Value range: 1~1000.
         /// </summary>
         [Input("nodeCount")]
         public Input<int>? NodeCount { get; set; }
 
         /// <summary>
-        /// 节点组ID。
+        /// Node group ID.
         /// </summary>
         [Input("nodeGroupId")]
         public Input<string>? NodeGroupId { get; set; }
 
         /// <summary>
-        /// 节点组名称。
+        /// Node group name.
         /// </summary>
         [Input("nodeGroupName")]
         public Input<string>? NodeGroupName { get; set; }
 
         /// <summary>
-        /// 节点组状态。RUNNING：运行中。EXTENDING：扩容中。REDUCING：缩容中。DISK_EXTENDING：磁盘扩容中。MODIFYING：变配中。
+        /// Node group status. RUNNING: Running. EXTENDING: Expanding. REDUCING: Shrinking. DISK_EXTENDING: Disk expansion. MODIFYING: Configuration modification in progress.
         /// </summary>
         [Input("nodeGroupState")]
         public Input<string>? NodeGroupStateValue { get; set; }
 
         /// <summary>
-        /// 节点组类型。
+        /// Node group type.
         /// </summary>
         [Input("nodeGroupType")]
         public Input<string>? NodeGroupType { get; set; }
@@ -394,7 +394,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         private InputList<string>? _subnetIds;
 
         /// <summary>
-        /// 子网ID列表。
+        /// Subnet ID list.
         /// </summary>
         public InputList<string> SubnetIds
         {
@@ -403,31 +403,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         }
 
         /// <summary>
-        /// 系统盘。
+        /// System disk.
         /// </summary>
         [Input("systemDisk")]
         public Input<Inputs.NodeGroupSystemDiskGetArgs>? SystemDisk { get; set; }
 
         /// <summary>
-        /// 待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
+        /// Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
         /// </summary>
         [Input("targetDiskSize")]
         public Input<int>? TargetDiskSize { get; set; }
 
         /// <summary>
-        /// 集群终止时间。
+        /// Cluster termination time.
         /// </summary>
         [Input("terminateTime")]
         public Input<string>? TerminateTime { get; set; }
 
         /// <summary>
-        /// ECS是否附带公网IP。
+        /// Whether the ECS instance includes a public IP.
         /// </summary>
         [Input("withPublicIp")]
         public Input<bool>? WithPublicIp { get; set; }
 
         /// <summary>
-        /// zoneId，为空时默认复用集群的zoneId。
+        /// zoneId. If empty, the cluster's zoneId is reused by default.
         /// </summary>
         [Input("zoneId")]
         public Input<string>? ZoneId { get; set; }

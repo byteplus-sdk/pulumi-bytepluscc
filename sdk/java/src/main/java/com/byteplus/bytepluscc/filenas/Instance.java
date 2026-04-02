@@ -19,7 +19,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 文件系统通过标准的 NFS 协议为您提供文件存储服务，用于网络文件远程访问，通过管理控制台创建挂载地址后，即可按需在客户端中通过标准的 POSIX 接口对文件系统进行访问。
+ * The file system provides file storage services through the standard NFS protocol for remote network file access. After creating a mount point in the management console, you can access the file system on your client as needed using the standard POSIX interface
  * 
  * ## Example Usage
  * 
@@ -74,196 +74,196 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:filenas/instance:Instance")
 public class Instance extends com.pulumi.resources.CustomResource {
     /**
-     * 缓存型性能信息。
+     * Cache performance information
      * 
      */
     @Export(name="cachePerformance", refs={InstanceCachePerformance.class}, tree="[0]")
     private Output<InstanceCachePerformance> cachePerformance;
 
     /**
-     * @return 缓存型性能信息。
+     * @return Cache performance information
      * 
      */
     public Output<InstanceCachePerformance> cachePerformance() {
         return this.cachePerformance;
     }
     /**
-     * 文件系统容量。
+     * File system capacity
      * 
      */
     @Export(name="capacity", refs={InstanceCapacity.class}, tree="[0]")
     private Output<InstanceCapacity> capacity;
 
     /**
-     * @return 文件系统容量。
+     * @return File system capacity
      * 
      */
     public Output<InstanceCapacity> capacity() {
         return this.capacity;
     }
     /**
-     * 计费类型，取值 PayAsYouGo，表示按量计费。
+     * Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
      * 
      */
     @Export(name="chargeType", refs={String.class}, tree="[0]")
     private Output<String> chargeType;
 
     /**
-     * @return 计费类型，取值 PayAsYouGo，表示按量计费。
+     * @return Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
      * 
      */
     public Output<String> chargeType() {
         return this.chargeType;
     }
     /**
-     * 创建时间
+     * Creation time
      * 
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
-     * @return 创建时间
+     * @return Creation time
      * 
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
-     * 描述信息。
+     * Description
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 描述信息。
+     * @return Description
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 文件系统 ID。
+     * File system ID
      * 
      */
     @Export(name="fileSystemId", refs={String.class}, tree="[0]")
     private Output<String> fileSystemId;
 
     /**
-     * @return 文件系统 ID。
+     * @return File system ID
      * 
      */
     public Output<String> fileSystemId() {
         return this.fileSystemId;
     }
     /**
-     * 文件系统名称。
+     * File system name
      * 
      */
     @Export(name="fileSystemName", refs={String.class}, tree="[0]")
     private Output<String> fileSystemName;
 
     /**
-     * @return 文件系统名称。
+     * @return File system name
      * 
      */
     public Output<String> fileSystemName() {
         return this.fileSystemName;
     }
     /**
-     * 文件系统类型。取值说明：Extreme：NAS 极速型；Capacity：NAS 容量型；Cache：NAS 缓存型。
+     * File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
      * 
      */
     @Export(name="fileSystemType", refs={String.class}, tree="[0]")
     private Output<String> fileSystemType;
 
     /**
-     * @return 文件系统类型。取值说明：Extreme：NAS 极速型；Capacity：NAS 容量型；Cache：NAS 缓存型。
+     * @return File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
      * 
      */
     public Output<String> fileSystemType() {
         return this.fileSystemType;
     }
     /**
-     * 所属项目，默认值为 default 项目。
+     * Project, default value is the Default project
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 所属项目，默认值为 default 项目。
+     * @return Project, default value is the Default project
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 文件系统协议类型。取值 NFS，表示 NFS 协议，常用于 Linux 客户端。
+     * File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
      * 
      */
     @Export(name="protocolType", refs={String.class}, tree="[0]")
     private Output<String> protocolType;
 
     /**
-     * @return 文件系统协议类型。取值 NFS，表示 NFS 协议，常用于 Linux 客户端。
+     * @return File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
      * 
      */
     public Output<String> protocolType() {
         return this.protocolType;
     }
     /**
-     * 快照数量
+     * Number of snapshots
      * 
      */
     @Export(name="snapshotCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> snapshotCount;
 
     /**
-     * @return 快照数量
+     * @return Number of snapshots
      * 
      */
     public Output<Integer> snapshotCount() {
         return this.snapshotCount;
     }
     /**
-     * 创建时使用的快照 ID。传入该参数后，将使用该快照新建文件系统。
+     * Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
      * 
      */
     @Export(name="snapshotId", refs={String.class}, tree="[0]")
     private Output<String> snapshotId;
 
     /**
-     * @return 创建时使用的快照 ID。传入该参数后，将使用该快照新建文件系统。
+     * @return Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
      * 
      */
     public Output<String> snapshotId() {
         return this.snapshotId;
     }
     /**
-     * 文件系统状态。取值说明如下：Unknown：状态未知。Running：文件系统运行中。Creating：文件系统创建中。Expanding：文件系统升级中。Error：文件系统错误。Deleting：文件系统删除中。DeleteError：文件系统删除失败。Deleted：文件系统已删除。Stopped：文件系统已停服。
+     * File system status. Possible values: Unknown: Status unknown. Running: File system running. Creating: File system being created. Expanding: File system being upgraded. Error: File system error. Deleting: File system being deleted. DeleteError: File system deletion failed. Deleted: File system deleted. Stopped: File system stopped.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 文件系统状态。取值说明如下：Unknown：状态未知。Running：文件系统运行中。Creating：文件系统创建中。Expanding：文件系统升级中。Error：文件系统错误。Deleting：文件系统删除中。DeleteError：文件系统删除失败。Deleted：文件系统已删除。Stopped：文件系统已停服。
+     * @return File system status. Possible values: Unknown: Status unknown. Running: File system running. Creating: File system being created. Expanding: File system being upgraded. Error: File system error. Deleting: File system being deleted. DeleteError: File system deletion failed. Deleted: File system deleted. Stopped: File system stopped.
      * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
-     * 存储类型，取值Standard，表示标准型。
+     * Storage type. Value: Standard, indicates standard type
      * 
      */
     @Export(name="storageType", refs={String.class}, tree="[0]")
     private Output<String> storageType;
 
     /**
-     * @return 存储类型，取值Standard，表示标准型。
+     * @return Storage type. Value: Standard, indicates standard type
      * 
      */
     public Output<String> storageType() {
@@ -276,42 +276,42 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 更新时间
+     * Update time
      * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
-     * @return 更新时间
+     * @return Update time
      * 
      */
     public Output<String> updateTime() {
         return this.updateTime;
     }
     /**
-     * 可用区 ID。
+     * Availability Zone ID
      * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
-     * @return 可用区 ID。
+     * @return Availability Zone ID
      * 
      */
     public Output<String> zoneId() {
         return this.zoneId;
     }
     /**
-     * 可用区名称。
+     * Availability Zone name
      * 
      */
     @Export(name="zoneName", refs={String.class}, tree="[0]")
     private Output<String> zoneName;
 
     /**
-     * @return 可用区名称。
+     * @return Availability Zone name
      * 
      */
     public Output<String> zoneName() {

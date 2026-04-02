@@ -77,16 +77,16 @@ class InstanceChargeDetail(dict):
                  period: Optional[builtins.int] = None,
                  period_unit: Optional[builtins.str] = None):
         """
-        :param builtins.bool auto_renew: 包年包月实例到期后是否自动续费。
-        :param builtins.str charge_end_time: 实例的结束计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
-        :param builtins.str charge_expire_time: 包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
-        :param builtins.str charge_start_time: 实例的开始计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
-        :param builtins.str charge_status: 实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
-        :param builtins.str charge_type: 实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
-        :param builtins.str overdue_reclaim_time: 实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
-        :param builtins.str overdue_time: 实例的欠费关停时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
-        :param builtins.int period: 包年包月类型实例的购买时长。PeriodUnit 指定为 Month 时，取值范围为 1~9。PeriodUnit 指定为 Year 时，取值范围为 1~3。
-        :param builtins.str period_unit: 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+        :param builtins.bool auto_renew: Whether to automatically renew the subscription instance after expiration.
+        :param builtins.str charge_end_time: Instance billing end time. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
+        :param builtins.str charge_expire_time: Expiration time of the subscription instance. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
+        :param builtins.str charge_start_time: Instance billing start time. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
+        :param builtins.str charge_status: Instance billing status. Includes: Normal: normal, Overdue: pay-as-you-go overdue, Expired: subscription expired.
+        :param builtins.str charge_type: Instance billing type. Supported types include: PostPaid: pay-as-you-go, PrePaid: subscription.
+        :param builtins.str overdue_reclaim_time: Estimated release time after the instance is suspended due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
+        :param builtins.str overdue_time: Instance suspension time due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
+        :param builtins.int period: Subscription instance purchase duration. When PeriodUnit is set to Month, the value range is 1–9. When PeriodUnit is set to Year, the value range is 1–3.
+        :param builtins.str period_unit: Unit for purchase duration. Values: MONTHLY: monthly purchase, YEARLY: annual purchase.
         """
         if auto_renew is not None:
             pulumi.set(__self__, "auto_renew", auto_renew)
@@ -113,7 +113,7 @@ class InstanceChargeDetail(dict):
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> Optional[builtins.bool]:
         """
-        包年包月实例到期后是否自动续费。
+        Whether to automatically renew the subscription instance after expiration.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -121,7 +121,7 @@ class InstanceChargeDetail(dict):
     @pulumi.getter(name="chargeEndTime")
     def charge_end_time(self) -> Optional[builtins.str]:
         """
-        实例的结束计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        Instance billing end time. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
         """
         return pulumi.get(self, "charge_end_time")
 
@@ -129,7 +129,7 @@ class InstanceChargeDetail(dict):
     @pulumi.getter(name="chargeExpireTime")
     def charge_expire_time(self) -> Optional[builtins.str]:
         """
-        包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        Expiration time of the subscription instance. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
         """
         return pulumi.get(self, "charge_expire_time")
 
@@ -137,7 +137,7 @@ class InstanceChargeDetail(dict):
     @pulumi.getter(name="chargeStartTime")
     def charge_start_time(self) -> Optional[builtins.str]:
         """
-        实例的开始计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        Instance billing start time. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
         """
         return pulumi.get(self, "charge_start_time")
 
@@ -145,7 +145,7 @@ class InstanceChargeDetail(dict):
     @pulumi.getter(name="chargeStatus")
     def charge_status(self) -> Optional[builtins.str]:
         """
-        实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
+        Instance billing status. Includes: Normal: normal, Overdue: pay-as-you-go overdue, Expired: subscription expired.
         """
         return pulumi.get(self, "charge_status")
 
@@ -153,7 +153,7 @@ class InstanceChargeDetail(dict):
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> Optional[builtins.str]:
         """
-        实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
+        Instance billing type. Supported types include: PostPaid: pay-as-you-go, PrePaid: subscription.
         """
         return pulumi.get(self, "charge_type")
 
@@ -161,7 +161,7 @@ class InstanceChargeDetail(dict):
     @pulumi.getter(name="overdueReclaimTime")
     def overdue_reclaim_time(self) -> Optional[builtins.str]:
         """
-        实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        Estimated release time after the instance is suspended due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
         """
         return pulumi.get(self, "overdue_reclaim_time")
 
@@ -169,7 +169,7 @@ class InstanceChargeDetail(dict):
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> Optional[builtins.str]:
         """
-        实例的欠费关停时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        Instance suspension time due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
         """
         return pulumi.get(self, "overdue_time")
 
@@ -177,7 +177,7 @@ class InstanceChargeDetail(dict):
     @pulumi.getter
     def period(self) -> Optional[builtins.int]:
         """
-        包年包月类型实例的购买时长。PeriodUnit 指定为 Month 时，取值范围为 1~9。PeriodUnit 指定为 Year 时，取值范围为 1~3。
+        Subscription instance purchase duration. When PeriodUnit is set to Month, the value range is 1–9. When PeriodUnit is set to Year, the value range is 1–3.
         """
         return pulumi.get(self, "period")
 
@@ -185,7 +185,7 @@ class InstanceChargeDetail(dict):
     @pulumi.getter(name="periodUnit")
     def period_unit(self) -> Optional[builtins.str]:
         """
-        购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+        Unit for purchase duration. Values: MONTHLY: monthly purchase, YEARLY: annual purchase.
         """
         return pulumi.get(self, "period_unit")
 
@@ -224,11 +224,11 @@ class InstanceEndpoint(dict):
                  network_type: Optional[builtins.str] = None,
                  public_endpoint: Optional[builtins.str] = None):
         """
-        :param builtins.str endpoint_type: 实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
-        :param builtins.str internal_endpoint: 实例的私网访问域名。
-        :param builtins.str internal_ip_endpoint: 公共服务区 IP 接入点。
-        :param builtins.str network_type: 接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
-        :param builtins.str public_endpoint: 实例公网访问域名。仅在开启公网访问之后显示。
+        :param builtins.str endpoint_type: Type of instance endpoint. RabbitMQ instances provide the following endpoint types: WEB: Web UI endpoint, AMQP0*9*1: AMQP endpoint, MQTT: MQTT endpoint, WEB_MQTT: WEB and MQTT endpoints, STOMP: STOMP endpoint.
+        :param builtins.str internal_endpoint: Private network access domain name of the instance.
+        :param builtins.str internal_ip_endpoint: Public service zone IP endpoint.
+        :param builtins.str network_type: Network type of the endpoint. PrivateNetwork indicates a private network (VPC).
+        :param builtins.str public_endpoint: Instance public access domain name. Displayed only after public access is enabled.
         """
         if endpoint_type is not None:
             pulumi.set(__self__, "endpoint_type", endpoint_type)
@@ -245,7 +245,7 @@ class InstanceEndpoint(dict):
     @pulumi.getter(name="endpointType")
     def endpoint_type(self) -> Optional[builtins.str]:
         """
-        实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
+        Type of instance endpoint. RabbitMQ instances provide the following endpoint types: WEB: Web UI endpoint, AMQP0*9*1: AMQP endpoint, MQTT: MQTT endpoint, WEB_MQTT: WEB and MQTT endpoints, STOMP: STOMP endpoint.
         """
         return pulumi.get(self, "endpoint_type")
 
@@ -253,7 +253,7 @@ class InstanceEndpoint(dict):
     @pulumi.getter(name="internalEndpoint")
     def internal_endpoint(self) -> Optional[builtins.str]:
         """
-        实例的私网访问域名。
+        Private network access domain name of the instance.
         """
         return pulumi.get(self, "internal_endpoint")
 
@@ -261,7 +261,7 @@ class InstanceEndpoint(dict):
     @pulumi.getter(name="internalIpEndpoint")
     def internal_ip_endpoint(self) -> Optional[builtins.str]:
         """
-        公共服务区 IP 接入点。
+        Public service zone IP endpoint.
         """
         return pulumi.get(self, "internal_ip_endpoint")
 
@@ -269,7 +269,7 @@ class InstanceEndpoint(dict):
     @pulumi.getter(name="networkType")
     def network_type(self) -> Optional[builtins.str]:
         """
-        接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
+        Network type of the endpoint. PrivateNetwork indicates a private network (VPC).
         """
         return pulumi.get(self, "network_type")
 
@@ -277,7 +277,7 @@ class InstanceEndpoint(dict):
     @pulumi.getter(name="publicEndpoint")
     def public_endpoint(self) -> Optional[builtins.str]:
         """
-        实例公网访问域名。仅在开启公网访问之后显示。
+        Instance public access domain name. Displayed only after public access is enabled.
         """
         return pulumi.get(self, "public_endpoint")
 
@@ -288,8 +288,8 @@ class InstanceTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签的键。
-        :param builtins.str value: 标签的值。
+        :param builtins.str key: Tag key.
+        :param builtins.str value: Tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -300,7 +300,7 @@ class InstanceTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签的键。
+        Tag key.
         """
         return pulumi.get(self, "key")
 
@@ -308,7 +308,7 @@ class InstanceTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签的值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 
@@ -356,14 +356,14 @@ class PublicAddressChargeDetail(dict):
                  overdue_reclaim_time: Optional[builtins.str] = None,
                  overdue_time: Optional[builtins.str] = None):
         """
-        :param builtins.bool auto_renew: 包年包月实例到期后是否自动续费。
-        :param builtins.str charge_end_time: 实例的结束计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
-        :param builtins.str charge_expire_time: 包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
-        :param builtins.str charge_start_time: 实例的开始计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
-        :param builtins.str charge_status: 实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
-        :param builtins.str charge_type: 实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
-        :param builtins.str overdue_reclaim_time: 实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
-        :param builtins.str overdue_time: 实例的欠费关停时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        :param builtins.bool auto_renew: Whether subscription instances are automatically renewed after expiration.
+        :param builtins.str charge_end_time: Instance billing end time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
+        :param builtins.str charge_expire_time: Expiration time for subscription instances. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
+        :param builtins.str charge_start_time: Instance billing start time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
+        :param builtins.str charge_status: Instance billing status. Includes: Normal: normal, Overdue: pay-as-you-go overdue, Expired: subscription expired.
+        :param builtins.str charge_type: Instance billing type. Supported types: PostPaid: pay-as-you-go, PrePaid: subscription.
+        :param builtins.str overdue_reclaim_time: Estimated release time after instance is stopped due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
+        :param builtins.str overdue_time: Instance overdue shutdown time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
         """
         if auto_renew is not None:
             pulumi.set(__self__, "auto_renew", auto_renew)
@@ -386,7 +386,7 @@ class PublicAddressChargeDetail(dict):
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> Optional[builtins.bool]:
         """
-        包年包月实例到期后是否自动续费。
+        Whether subscription instances are automatically renewed after expiration.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -394,7 +394,7 @@ class PublicAddressChargeDetail(dict):
     @pulumi.getter(name="chargeEndTime")
     def charge_end_time(self) -> Optional[builtins.str]:
         """
-        实例的结束计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        Instance billing end time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
         """
         return pulumi.get(self, "charge_end_time")
 
@@ -402,7 +402,7 @@ class PublicAddressChargeDetail(dict):
     @pulumi.getter(name="chargeExpireTime")
     def charge_expire_time(self) -> Optional[builtins.str]:
         """
-        包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        Expiration time for subscription instances. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
         """
         return pulumi.get(self, "charge_expire_time")
 
@@ -410,7 +410,7 @@ class PublicAddressChargeDetail(dict):
     @pulumi.getter(name="chargeStartTime")
     def charge_start_time(self) -> Optional[builtins.str]:
         """
-        实例的开始计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        Instance billing start time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
         """
         return pulumi.get(self, "charge_start_time")
 
@@ -418,7 +418,7 @@ class PublicAddressChargeDetail(dict):
     @pulumi.getter(name="chargeStatus")
     def charge_status(self) -> Optional[builtins.str]:
         """
-        实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
+        Instance billing status. Includes: Normal: normal, Overdue: pay-as-you-go overdue, Expired: subscription expired.
         """
         return pulumi.get(self, "charge_status")
 
@@ -426,7 +426,7 @@ class PublicAddressChargeDetail(dict):
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> Optional[builtins.str]:
         """
-        实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
+        Instance billing type. Supported types: PostPaid: pay-as-you-go, PrePaid: subscription.
         """
         return pulumi.get(self, "charge_type")
 
@@ -434,7 +434,7 @@ class PublicAddressChargeDetail(dict):
     @pulumi.getter(name="overdueReclaimTime")
     def overdue_reclaim_time(self) -> Optional[builtins.str]:
         """
-        实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        Estimated release time after instance is stopped due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
         """
         return pulumi.get(self, "overdue_reclaim_time")
 
@@ -442,7 +442,7 @@ class PublicAddressChargeDetail(dict):
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> Optional[builtins.str]:
         """
-        实例的欠费关停时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        Instance overdue shutdown time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
         """
         return pulumi.get(self, "overdue_time")
 
@@ -481,11 +481,11 @@ class PublicAddressEndpoint(dict):
                  network_type: Optional[builtins.str] = None,
                  public_endpoint: Optional[builtins.str] = None):
         """
-        :param builtins.str endpoint_type: 实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
-        :param builtins.str internal_endpoint: 实例的私网访问域名。
-        :param builtins.str internal_ip_endpoint: 公共服务区 IP 接入点。
-        :param builtins.str network_type: 接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
-        :param builtins.str public_endpoint: 实例公网访问域名。仅在开启公网访问之后显示。
+        :param builtins.str endpoint_type: Access point type of the instance. RabbitMQ instance provides the following access point types: WEB: Web UI access point, AMQP0*9*1: AMQP access point, MQTT: MQTT access point, WEB_MQTT: WEB and MQTT access point, STOMP: STOMP access point.
+        :param builtins.str internal_endpoint: Instance private network access domain name.
+        :param builtins.str internal_ip_endpoint: Public service zone IP access point.
+        :param builtins.str network_type: Network type of the access point. PrivateNetwork indicates private VPC network.
+        :param builtins.str public_endpoint: Instance public access domain name. Displayed only after public access is enabled.
         """
         if endpoint_type is not None:
             pulumi.set(__self__, "endpoint_type", endpoint_type)
@@ -502,7 +502,7 @@ class PublicAddressEndpoint(dict):
     @pulumi.getter(name="endpointType")
     def endpoint_type(self) -> Optional[builtins.str]:
         """
-        实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
+        Access point type of the instance. RabbitMQ instance provides the following access point types: WEB: Web UI access point, AMQP0*9*1: AMQP access point, MQTT: MQTT access point, WEB_MQTT: WEB and MQTT access point, STOMP: STOMP access point.
         """
         return pulumi.get(self, "endpoint_type")
 
@@ -510,7 +510,7 @@ class PublicAddressEndpoint(dict):
     @pulumi.getter(name="internalEndpoint")
     def internal_endpoint(self) -> Optional[builtins.str]:
         """
-        实例的私网访问域名。
+        Instance private network access domain name.
         """
         return pulumi.get(self, "internal_endpoint")
 
@@ -518,7 +518,7 @@ class PublicAddressEndpoint(dict):
     @pulumi.getter(name="internalIpEndpoint")
     def internal_ip_endpoint(self) -> Optional[builtins.str]:
         """
-        公共服务区 IP 接入点。
+        Public service zone IP access point.
         """
         return pulumi.get(self, "internal_ip_endpoint")
 
@@ -526,7 +526,7 @@ class PublicAddressEndpoint(dict):
     @pulumi.getter(name="networkType")
     def network_type(self) -> Optional[builtins.str]:
         """
-        接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
+        Network type of the access point. PrivateNetwork indicates private VPC network.
         """
         return pulumi.get(self, "network_type")
 
@@ -534,7 +534,7 @@ class PublicAddressEndpoint(dict):
     @pulumi.getter(name="publicEndpoint")
     def public_endpoint(self) -> Optional[builtins.str]:
         """
-        实例公网访问域名。仅在开启公网访问之后显示。
+        Instance public access domain name. Displayed only after public access is enabled.
         """
         return pulumi.get(self, "public_endpoint")
 
@@ -545,8 +545,8 @@ class PublicAddressTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 标签的键。
-        :param builtins.str value: 标签的值。
+        :param builtins.str key: Tag key.
+        :param builtins.str value: Tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -557,7 +557,7 @@ class PublicAddressTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        标签的键。
+        Tag key.
         """
         return pulumi.get(self, "key")
 
@@ -565,7 +565,7 @@ class PublicAddressTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        标签的值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 
@@ -584,16 +584,16 @@ class GetInstanceChargeDetailResult(dict):
                  period: builtins.int,
                  period_unit: builtins.str):
         """
-        :param builtins.bool auto_renew: 包年包月实例到期后是否自动续费。
-        :param builtins.str charge_end_time: 实例的结束计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
-        :param builtins.str charge_expire_time: 包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
-        :param builtins.str charge_start_time: 实例的开始计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
-        :param builtins.str charge_status: 实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
-        :param builtins.str charge_type: 实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
-        :param builtins.str overdue_reclaim_time: 实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
-        :param builtins.str overdue_time: 实例的欠费关停时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
-        :param builtins.int period: 包年包月类型实例的购买时长。PeriodUnit 指定为 Month 时，取值范围为 1~9。PeriodUnit 指定为 Year 时，取值范围为 1~3。
-        :param builtins.str period_unit: 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+        :param builtins.bool auto_renew: Whether to automatically renew the subscription instance after expiration.
+        :param builtins.str charge_end_time: Instance billing end time. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
+        :param builtins.str charge_expire_time: Expiration time of the subscription instance. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
+        :param builtins.str charge_start_time: Instance billing start time. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
+        :param builtins.str charge_status: Instance billing status. Includes: Normal: normal, Overdue: pay-as-you-go overdue, Expired: subscription expired.
+        :param builtins.str charge_type: Instance billing type. Supported types include: PostPaid: pay-as-you-go, PrePaid: subscription.
+        :param builtins.str overdue_reclaim_time: Estimated release time after the instance is suspended due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
+        :param builtins.str overdue_time: Instance suspension time due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
+        :param builtins.int period: Subscription instance purchase duration. When PeriodUnit is set to Month, the value range is 1–9. When PeriodUnit is set to Year, the value range is 1–3.
+        :param builtins.str period_unit: Unit for purchase duration. Values: MONTHLY: monthly purchase, YEARLY: annual purchase.
         """
         pulumi.set(__self__, "auto_renew", auto_renew)
         pulumi.set(__self__, "charge_end_time", charge_end_time)
@@ -610,7 +610,7 @@ class GetInstanceChargeDetailResult(dict):
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> builtins.bool:
         """
-        包年包月实例到期后是否自动续费。
+        Whether to automatically renew the subscription instance after expiration.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -618,7 +618,7 @@ class GetInstanceChargeDetailResult(dict):
     @pulumi.getter(name="chargeEndTime")
     def charge_end_time(self) -> builtins.str:
         """
-        实例的结束计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        Instance billing end time. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
         """
         return pulumi.get(self, "charge_end_time")
 
@@ -626,7 +626,7 @@ class GetInstanceChargeDetailResult(dict):
     @pulumi.getter(name="chargeExpireTime")
     def charge_expire_time(self) -> builtins.str:
         """
-        包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        Expiration time of the subscription instance. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
         """
         return pulumi.get(self, "charge_expire_time")
 
@@ -634,7 +634,7 @@ class GetInstanceChargeDetailResult(dict):
     @pulumi.getter(name="chargeStartTime")
     def charge_start_time(self) -> builtins.str:
         """
-        实例的开始计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        Instance billing start time. The time format is YYYY-MM-DD'T'HH:MM:SS'Z'.
         """
         return pulumi.get(self, "charge_start_time")
 
@@ -642,7 +642,7 @@ class GetInstanceChargeDetailResult(dict):
     @pulumi.getter(name="chargeStatus")
     def charge_status(self) -> builtins.str:
         """
-        实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
+        Instance billing status. Includes: Normal: normal, Overdue: pay-as-you-go overdue, Expired: subscription expired.
         """
         return pulumi.get(self, "charge_status")
 
@@ -650,7 +650,7 @@ class GetInstanceChargeDetailResult(dict):
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> builtins.str:
         """
-        实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
+        Instance billing type. Supported types include: PostPaid: pay-as-you-go, PrePaid: subscription.
         """
         return pulumi.get(self, "charge_type")
 
@@ -658,7 +658,7 @@ class GetInstanceChargeDetailResult(dict):
     @pulumi.getter(name="overdueReclaimTime")
     def overdue_reclaim_time(self) -> builtins.str:
         """
-        实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        Estimated release time after the instance is suspended due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
         """
         return pulumi.get(self, "overdue_reclaim_time")
 
@@ -666,7 +666,7 @@ class GetInstanceChargeDetailResult(dict):
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> builtins.str:
         """
-        实例的欠费关停时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        Instance suspension time due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
         """
         return pulumi.get(self, "overdue_time")
 
@@ -674,7 +674,7 @@ class GetInstanceChargeDetailResult(dict):
     @pulumi.getter
     def period(self) -> builtins.int:
         """
-        包年包月类型实例的购买时长。PeriodUnit 指定为 Month 时，取值范围为 1~9。PeriodUnit 指定为 Year 时，取值范围为 1~3。
+        Subscription instance purchase duration. When PeriodUnit is set to Month, the value range is 1–9. When PeriodUnit is set to Year, the value range is 1–3.
         """
         return pulumi.get(self, "period")
 
@@ -682,7 +682,7 @@ class GetInstanceChargeDetailResult(dict):
     @pulumi.getter(name="periodUnit")
     def period_unit(self) -> builtins.str:
         """
-        购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+        Unit for purchase duration. Values: MONTHLY: monthly purchase, YEARLY: annual purchase.
         """
         return pulumi.get(self, "period_unit")
 
@@ -696,11 +696,11 @@ class GetInstanceEndpointResult(dict):
                  network_type: builtins.str,
                  public_endpoint: builtins.str):
         """
-        :param builtins.str endpoint_type: 实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
-        :param builtins.str internal_endpoint: 实例的私网访问域名。
-        :param builtins.str internal_ip_endpoint: 公共服务区 IP 接入点。
-        :param builtins.str network_type: 接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
-        :param builtins.str public_endpoint: 实例公网访问域名。仅在开启公网访问之后显示。
+        :param builtins.str endpoint_type: Type of instance endpoint. RabbitMQ instances provide the following endpoint types: WEB: Web UI endpoint, AMQP0*9*1: AMQP endpoint, MQTT: MQTT endpoint, WEB_MQTT: WEB and MQTT endpoints, STOMP: STOMP endpoint.
+        :param builtins.str internal_endpoint: Private network access domain name of the instance.
+        :param builtins.str internal_ip_endpoint: Public service zone IP endpoint.
+        :param builtins.str network_type: Network type of the endpoint. PrivateNetwork indicates a private network (VPC).
+        :param builtins.str public_endpoint: Instance public access domain name. Displayed only after public access is enabled.
         """
         pulumi.set(__self__, "endpoint_type", endpoint_type)
         pulumi.set(__self__, "internal_endpoint", internal_endpoint)
@@ -712,7 +712,7 @@ class GetInstanceEndpointResult(dict):
     @pulumi.getter(name="endpointType")
     def endpoint_type(self) -> builtins.str:
         """
-        实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
+        Type of instance endpoint. RabbitMQ instances provide the following endpoint types: WEB: Web UI endpoint, AMQP0*9*1: AMQP endpoint, MQTT: MQTT endpoint, WEB_MQTT: WEB and MQTT endpoints, STOMP: STOMP endpoint.
         """
         return pulumi.get(self, "endpoint_type")
 
@@ -720,7 +720,7 @@ class GetInstanceEndpointResult(dict):
     @pulumi.getter(name="internalEndpoint")
     def internal_endpoint(self) -> builtins.str:
         """
-        实例的私网访问域名。
+        Private network access domain name of the instance.
         """
         return pulumi.get(self, "internal_endpoint")
 
@@ -728,7 +728,7 @@ class GetInstanceEndpointResult(dict):
     @pulumi.getter(name="internalIpEndpoint")
     def internal_ip_endpoint(self) -> builtins.str:
         """
-        公共服务区 IP 接入点。
+        Public service zone IP endpoint.
         """
         return pulumi.get(self, "internal_ip_endpoint")
 
@@ -736,7 +736,7 @@ class GetInstanceEndpointResult(dict):
     @pulumi.getter(name="networkType")
     def network_type(self) -> builtins.str:
         """
-        接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
+        Network type of the endpoint. PrivateNetwork indicates a private network (VPC).
         """
         return pulumi.get(self, "network_type")
 
@@ -744,7 +744,7 @@ class GetInstanceEndpointResult(dict):
     @pulumi.getter(name="publicEndpoint")
     def public_endpoint(self) -> builtins.str:
         """
-        实例公网访问域名。仅在开启公网访问之后显示。
+        Instance public access domain name. Displayed only after public access is enabled.
         """
         return pulumi.get(self, "public_endpoint")
 
@@ -755,8 +755,8 @@ class GetInstanceTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签的键。
-        :param builtins.str value: 标签的值。
+        :param builtins.str key: Tag key.
+        :param builtins.str value: Tag value.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -765,7 +765,7 @@ class GetInstanceTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签的键。
+        Tag key.
         """
         return pulumi.get(self, "key")
 
@@ -773,7 +773,7 @@ class GetInstanceTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签的值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 
@@ -790,14 +790,14 @@ class GetPublicAddressChargeDetailResult(dict):
                  overdue_reclaim_time: builtins.str,
                  overdue_time: builtins.str):
         """
-        :param builtins.bool auto_renew: 包年包月实例到期后是否自动续费。
-        :param builtins.str charge_end_time: 实例的结束计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
-        :param builtins.str charge_expire_time: 包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
-        :param builtins.str charge_start_time: 实例的开始计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
-        :param builtins.str charge_status: 实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
-        :param builtins.str charge_type: 实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
-        :param builtins.str overdue_reclaim_time: 实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
-        :param builtins.str overdue_time: 实例的欠费关停时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        :param builtins.bool auto_renew: Whether subscription instances are automatically renewed after expiration.
+        :param builtins.str charge_end_time: Instance billing end time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
+        :param builtins.str charge_expire_time: Expiration time for subscription instances. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
+        :param builtins.str charge_start_time: Instance billing start time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
+        :param builtins.str charge_status: Instance billing status. Includes: Normal: normal, Overdue: pay-as-you-go overdue, Expired: subscription expired.
+        :param builtins.str charge_type: Instance billing type. Supported types: PostPaid: pay-as-you-go, PrePaid: subscription.
+        :param builtins.str overdue_reclaim_time: Estimated release time after instance is stopped due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
+        :param builtins.str overdue_time: Instance overdue shutdown time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
         """
         pulumi.set(__self__, "auto_renew", auto_renew)
         pulumi.set(__self__, "charge_end_time", charge_end_time)
@@ -812,7 +812,7 @@ class GetPublicAddressChargeDetailResult(dict):
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> builtins.bool:
         """
-        包年包月实例到期后是否自动续费。
+        Whether subscription instances are automatically renewed after expiration.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -820,7 +820,7 @@ class GetPublicAddressChargeDetailResult(dict):
     @pulumi.getter(name="chargeEndTime")
     def charge_end_time(self) -> builtins.str:
         """
-        实例的结束计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        Instance billing end time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
         """
         return pulumi.get(self, "charge_end_time")
 
@@ -828,7 +828,7 @@ class GetPublicAddressChargeDetailResult(dict):
     @pulumi.getter(name="chargeExpireTime")
     def charge_expire_time(self) -> builtins.str:
         """
-        包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        Expiration time for subscription instances. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
         """
         return pulumi.get(self, "charge_expire_time")
 
@@ -836,7 +836,7 @@ class GetPublicAddressChargeDetailResult(dict):
     @pulumi.getter(name="chargeStartTime")
     def charge_start_time(self) -> builtins.str:
         """
-        实例的开始计费时间，时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        Instance billing start time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
         """
         return pulumi.get(self, "charge_start_time")
 
@@ -844,7 +844,7 @@ class GetPublicAddressChargeDetailResult(dict):
     @pulumi.getter(name="chargeStatus")
     def charge_status(self) -> builtins.str:
         """
-        实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
+        Instance billing status. Includes: Normal: normal, Overdue: pay-as-you-go overdue, Expired: subscription expired.
         """
         return pulumi.get(self, "charge_status")
 
@@ -852,7 +852,7 @@ class GetPublicAddressChargeDetailResult(dict):
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> builtins.str:
         """
-        实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
+        Instance billing type. Supported types: PostPaid: pay-as-you-go, PrePaid: subscription.
         """
         return pulumi.get(self, "charge_type")
 
@@ -860,7 +860,7 @@ class GetPublicAddressChargeDetailResult(dict):
     @pulumi.getter(name="overdueReclaimTime")
     def overdue_reclaim_time(self) -> builtins.str:
         """
-        实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        Estimated release time after instance is stopped due to overdue payment. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
         """
         return pulumi.get(self, "overdue_reclaim_time")
 
@@ -868,7 +868,7 @@ class GetPublicAddressChargeDetailResult(dict):
     @pulumi.getter(name="overdueTime")
     def overdue_time(self) -> builtins.str:
         """
-        实例的欠费关停时间。时间显示格式为 YYYY-MM-DD'T'HH:MM:SS'Z'。
+        Instance overdue shutdown time. Time format: YYYY-MM-DD'T'HH:MM:SS'Z'.
         """
         return pulumi.get(self, "overdue_time")
 
@@ -882,11 +882,11 @@ class GetPublicAddressEndpointResult(dict):
                  network_type: builtins.str,
                  public_endpoint: builtins.str):
         """
-        :param builtins.str endpoint_type: 实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
-        :param builtins.str internal_endpoint: 实例的私网访问域名。
-        :param builtins.str internal_ip_endpoint: 公共服务区 IP 接入点。
-        :param builtins.str network_type: 接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
-        :param builtins.str public_endpoint: 实例公网访问域名。仅在开启公网访问之后显示。
+        :param builtins.str endpoint_type: Access point type of the instance. RabbitMQ instance provides the following access point types: WEB: Web UI access point, AMQP0*9*1: AMQP access point, MQTT: MQTT access point, WEB_MQTT: WEB and MQTT access point, STOMP: STOMP access point.
+        :param builtins.str internal_endpoint: Instance private network access domain name.
+        :param builtins.str internal_ip_endpoint: Public service zone IP access point.
+        :param builtins.str network_type: Network type of the access point. PrivateNetwork indicates private VPC network.
+        :param builtins.str public_endpoint: Instance public access domain name. Displayed only after public access is enabled.
         """
         pulumi.set(__self__, "endpoint_type", endpoint_type)
         pulumi.set(__self__, "internal_endpoint", internal_endpoint)
@@ -898,7 +898,7 @@ class GetPublicAddressEndpointResult(dict):
     @pulumi.getter(name="endpointType")
     def endpoint_type(self) -> builtins.str:
         """
-        实例的接入点类型。RabbitMQ实例提供的接入点类型包括：WEB：Web UI 接入点，AMQP0*9*1：AMQP 接入点，MQTT：MQTT接入点，WEB_MQTT：WEB ，MQTT 接入点，STOMP：STOMP 接入点。
+        Access point type of the instance. RabbitMQ instance provides the following access point types: WEB: Web UI access point, AMQP0*9*1: AMQP access point, MQTT: MQTT access point, WEB_MQTT: WEB and MQTT access point, STOMP: STOMP access point.
         """
         return pulumi.get(self, "endpoint_type")
 
@@ -906,7 +906,7 @@ class GetPublicAddressEndpointResult(dict):
     @pulumi.getter(name="internalEndpoint")
     def internal_endpoint(self) -> builtins.str:
         """
-        实例的私网访问域名。
+        Instance private network access domain name.
         """
         return pulumi.get(self, "internal_endpoint")
 
@@ -914,7 +914,7 @@ class GetPublicAddressEndpointResult(dict):
     @pulumi.getter(name="internalIpEndpoint")
     def internal_ip_endpoint(self) -> builtins.str:
         """
-        公共服务区 IP 接入点。
+        Public service zone IP access point.
         """
         return pulumi.get(self, "internal_ip_endpoint")
 
@@ -922,7 +922,7 @@ class GetPublicAddressEndpointResult(dict):
     @pulumi.getter(name="networkType")
     def network_type(self) -> builtins.str:
         """
-        接入点的网络类型。PrivateNetwork 表示私有网络 VPC。
+        Network type of the access point. PrivateNetwork indicates private VPC network.
         """
         return pulumi.get(self, "network_type")
 
@@ -930,7 +930,7 @@ class GetPublicAddressEndpointResult(dict):
     @pulumi.getter(name="publicEndpoint")
     def public_endpoint(self) -> builtins.str:
         """
-        实例公网访问域名。仅在开启公网访问之后显示。
+        Instance public access domain name. Displayed only after public access is enabled.
         """
         return pulumi.get(self, "public_endpoint")
 
@@ -941,8 +941,8 @@ class GetPublicAddressTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 标签的键。
-        :param builtins.str value: 标签的值。
+        :param builtins.str key: Tag key.
+        :param builtins.str value: Tag value.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -951,7 +951,7 @@ class GetPublicAddressTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        标签的键。
+        Tag key.
         """
         return pulumi.get(self, "key")
 
@@ -959,7 +959,7 @@ class GetPublicAddressTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        标签的值。
+        Tag value.
         """
         return pulumi.get(self, "value")
 

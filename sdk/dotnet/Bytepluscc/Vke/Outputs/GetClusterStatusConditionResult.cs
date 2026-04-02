@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class GetClusterStatusConditionResult
     {
         /// <summary>
-        /// 条件类型
+        /// Condition type
         /// </summary>
         public readonly string Type;
 

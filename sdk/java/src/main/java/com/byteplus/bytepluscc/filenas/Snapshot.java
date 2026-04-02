@@ -16,7 +16,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * 快照是一种备份方式，每个快照都是文件存储在某个时间点的备份。当数据丢失或故障时，您可以通过快照恢复文件存储数据，找回丢失的数据。
+ * A snapshot is a backup method. Each snapshot is a backup of file storage at a specific point in time. If data is lost or a failure occurs, you can use snapshots to restore file storage and recover lost data
  * 
  * ## Example Usage
  * 
@@ -65,196 +65,196 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:filenas/snapshot:Snapshot")
 public class Snapshot extends com.pulumi.resources.CustomResource {
     /**
-     * 快照创建时间。
+     * Snapshot Creation Time
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 快照创建时间。
+     * @return Snapshot Creation Time
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 快照描述信息。
+     * Snapshot Description
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 快照描述信息。
+     * @return Snapshot Description
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 文件系统 ID。
+     * File System ID
      * 
      */
     @Export(name="fileSystemId", refs={String.class}, tree="[0]")
     private Output<String> fileSystemId;
 
     /**
-     * @return 文件系统 ID。
+     * @return File System ID
      * 
      */
     public Output<String> fileSystemId() {
         return this.fileSystemId;
     }
     /**
-     * 文件系统名称。
+     * File System Name
      * 
      */
     @Export(name="fileSystemName", refs={String.class}, tree="[0]")
     private Output<String> fileSystemName;
 
     /**
-     * @return 文件系统名称。
+     * @return File System Name
      * 
      */
     public Output<String> fileSystemName() {
         return this.fileSystemName;
     }
     /**
-     * 是否加密，当前仅支持false，即不加密。
+     * Is encryption enabled. Currently only false is supported (not encrypted)
      * 
      */
     @Export(name="isEncrypt", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEncrypt;
 
     /**
-     * @return 是否加密，当前仅支持false，即不加密。
+     * @return Is encryption enabled. Currently only false is supported (not encrypted)
      * 
      */
     public Output<Boolean> isEncrypt() {
         return this.isEncrypt;
     }
     /**
-     * 快照创建进度。
+     * Snapshot Creation Progress
      * 
      */
     @Export(name="progress", refs={String.class}, tree="[0]")
     private Output<String> progress;
 
     /**
-     * @return 快照创建进度。
+     * @return Snapshot Creation Progress
      * 
      */
     public Output<String> progress() {
         return this.progress;
     }
     /**
-     * 快照保留时间，默认为2147483647，即永久保留。
+     * Snapshot Retention Period. Default is 2147483647 (permanent retention)
      * 
      */
     @Export(name="retentionDays", refs={Integer.class}, tree="[0]")
     private Output<Integer> retentionDays;
 
     /**
-     * @return 快照保留时间，默认为2147483647，即永久保留。
+     * @return Snapshot Retention Period. Default is 2147483647 (permanent retention)
      * 
      */
     public Output<Integer> retentionDays() {
         return this.retentionDays;
     }
     /**
-     * 快照 ID。
+     * Snapshot ID
      * 
      */
     @Export(name="snapshotId", refs={String.class}, tree="[0]")
     private Output<String> snapshotId;
 
     /**
-     * @return 快照 ID。
+     * @return Snapshot ID
      * 
      */
     public Output<String> snapshotId() {
         return this.snapshotId;
     }
     /**
-     * 快照名称。
+     * Snapshot Name
      * 
      */
     @Export(name="snapshotName", refs={String.class}, tree="[0]")
     private Output<String> snapshotName;
 
     /**
-     * @return 快照名称。
+     * @return Snapshot Name
      * 
      */
     public Output<String> snapshotName() {
         return this.snapshotName;
     }
     /**
-     * 快照类型，默认为Manual，即手动快照。
+     * Snapshot Type. Default is Manual (manual snapshot)
      * 
      */
     @Export(name="snapshotType", refs={String.class}, tree="[0]")
     private Output<String> snapshotType;
 
     /**
-     * @return 快照类型，默认为Manual，即手动快照。
+     * @return Snapshot Type. Default is Manual (manual snapshot)
      * 
      */
     public Output<String> snapshotType() {
         return this.snapshotType;
     }
     /**
-     * 文件系统容量，单位为 GiB。
+     * File System Capacity (GiB)
      * 
      */
     @Export(name="sourceSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> sourceSize;
 
     /**
-     * @return 文件系统容量，单位为 GiB。
+     * @return File System Capacity (GiB)
      * 
      */
     public Output<Integer> sourceSize() {
         return this.sourceSize;
     }
     /**
-     * 文件系统版本。
+     * File System Version
      * 
      */
     @Export(name="sourceVersion", refs={String.class}, tree="[0]")
     private Output<String> sourceVersion;
 
     /**
-     * @return 文件系统版本。
+     * @return File System Version
      * 
      */
     public Output<String> sourceVersion() {
         return this.sourceVersion;
     }
     /**
-     * 快照状态。说明如下：Progressing：正在创建。Accomplished：创建成功。Failed：创建失败。
+     * Snapshot Status. Details: Progressing: Creating. Accomplished: Created successfully. Failed: Creation failed
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 快照状态。说明如下：Progressing：正在创建。Accomplished：创建成功。Failed：创建失败。
+     * @return Snapshot Status. Details: Progressing: Creating. Accomplished: Created successfully. Failed: Creation failed
      * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
-     * 可用区 ID。
+     * Availability Zone ID
      * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
-     * @return 可用区 ID。
+     * @return Availability Zone ID
      * 
      */
     public Output<String> zoneId() {

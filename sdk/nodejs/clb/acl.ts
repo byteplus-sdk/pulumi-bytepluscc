@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * CLB提供监听级别的访问控制，如果您希望仅允许某些IP、或仅拒绝某些IP通过监听端口访问CLB实例，可以对该监听器设置访问控制策略。
+ * CLB provides listener-level access control. If you want to allow only certain IPs or deny only certain IPs from accessing the CLB instance through the listener port, you can set an access control policy for the listener.
  *
  * ## Example Usage
  *
@@ -72,41 +72,41 @@ export class Acl extends pulumi.CustomResource {
 
     public readonly aclEntries!: pulumi.Output<outputs.clb.AclAclEntry[]>;
     /**
-     * 访问控制策略组包含的IP条目数量。
+     * Number of IP entries contained in the access control policy group.
      */
     public /*out*/ readonly aclEntryCount!: pulumi.Output<number>;
     /**
-     * 访问控制策略组的ID。
+     * Access control policy group ID
      */
     public /*out*/ readonly aclId!: pulumi.Output<string>;
     /**
-     * 访问控制策略组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填默认为访问控制策略组ID。
+     * Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
      */
     public readonly aclName!: pulumi.Output<string>;
     /**
-     * 访问控制策略组的创建时间。
+     * Creation time of the access control policy group
      */
     public /*out*/ readonly createTime!: pulumi.Output<string>;
     /**
-     * 访问控制策略组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255字符。不填则默认为空字符串。
+     * Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
      */
     public readonly description!: pulumi.Output<string>;
     public /*out*/ readonly listeners!: pulumi.Output<outputs.clb.AclListener[]>;
     /**
-     * 访问控制策略组所属项目的名称。不填默认为default。
+     * Name of the project to which the access control policy group belongs. If not specified, defaults to 'default'.
      */
     public readonly projectName!: pulumi.Output<string>;
     /**
-     * 是否为托管资源。true：是。false：否。
+     * Is this a managed resource. true: yes. false: no.
      */
     public /*out*/ readonly serviceManaged!: pulumi.Output<boolean>;
     /**
-     * 访问控制策略组的状态。Creating：创建中。Active：正常可用。Configuring：配置中。Deleting：删除中。
+     * Status of the access control policy group. Creating: creating. Active: available. Configuring: configuring. Deleting: deleting.
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.clb.AclTag[]>;
     /**
-     * 访问控制策略组的最近操作时间。
+     * Last operation time of the access control policy group
      */
     public /*out*/ readonly updateTime!: pulumi.Output<string>;
 
@@ -161,41 +161,41 @@ export class Acl extends pulumi.CustomResource {
 export interface AclState {
     aclEntries?: pulumi.Input<pulumi.Input<inputs.clb.AclAclEntry>[]>;
     /**
-     * 访问控制策略组包含的IP条目数量。
+     * Number of IP entries contained in the access control policy group.
      */
     aclEntryCount?: pulumi.Input<number>;
     /**
-     * 访问控制策略组的ID。
+     * Access control policy group ID
      */
     aclId?: pulumi.Input<string>;
     /**
-     * 访问控制策略组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填默认为访问控制策略组ID。
+     * Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
      */
     aclName?: pulumi.Input<string>;
     /**
-     * 访问控制策略组的创建时间。
+     * Creation time of the access control policy group
      */
     createTime?: pulumi.Input<string>;
     /**
-     * 访问控制策略组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255字符。不填则默认为空字符串。
+     * Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
      */
     description?: pulumi.Input<string>;
     listeners?: pulumi.Input<pulumi.Input<inputs.clb.AclListener>[]>;
     /**
-     * 访问控制策略组所属项目的名称。不填默认为default。
+     * Name of the project to which the access control policy group belongs. If not specified, defaults to 'default'.
      */
     projectName?: pulumi.Input<string>;
     /**
-     * 是否为托管资源。true：是。false：否。
+     * Is this a managed resource. true: yes. false: no.
      */
     serviceManaged?: pulumi.Input<boolean>;
     /**
-     * 访问控制策略组的状态。Creating：创建中。Active：正常可用。Configuring：配置中。Deleting：删除中。
+     * Status of the access control policy group. Creating: creating. Active: available. Configuring: configuring. Deleting: deleting.
      */
     status?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.clb.AclTag>[]>;
     /**
-     * 访问控制策略组的最近操作时间。
+     * Last operation time of the access control policy group
      */
     updateTime?: pulumi.Input<string>;
 }
@@ -206,15 +206,15 @@ export interface AclState {
 export interface AclArgs {
     aclEntries?: pulumi.Input<pulumi.Input<inputs.clb.AclAclEntry>[]>;
     /**
-     * 访问控制策略组的名称。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填默认为访问控制策略组ID。
+     * Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
      */
     aclName?: pulumi.Input<string>;
     /**
-     * 访问控制策略组的描述。必须以字母、数字或中文开头，可包含字母、数字、中文及以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255字符。不填则默认为空字符串。
+     * Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
      */
     description?: pulumi.Input<string>;
     /**
-     * 访问控制策略组所属项目的名称。不填默认为default。
+     * Name of the project to which the access control policy group belongs. If not specified, defaults to 'default'.
      */
     projectName?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.clb.AclTag>[]>;

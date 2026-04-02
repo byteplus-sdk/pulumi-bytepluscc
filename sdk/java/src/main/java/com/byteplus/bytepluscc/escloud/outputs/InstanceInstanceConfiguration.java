@@ -31,336 +31,336 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceInstanceConfiguration {
     /**
-     * @return 管理员密码。
+     * @return Administrator password.
      * 
      */
     private @Nullable String adminPassword;
     /**
-     * @return 管理员用户名。
+     * @return Administrator username.
      * 
      */
     private @Nullable String adminUserName;
     /**
-     * @return 包年包月实例是否配置自动续费。true：自动续费，系统会在每次到期前自动为实例续费。false：未开启自动续费，需要在实例到期前进行手动续费。如需了解更多，请参见实例续费。
+     * @return Whether the subscription instance is set to auto-renewal. true: Auto-renewal; the system will automatically renew the instance before each expiration. false: Auto-renewal is not enabled; manual renewal is required before the instance expires. For more information, see Instance renewal.
      * 
      */
     private @Nullable Boolean autoRenew;
     /**
-     * @return 实例计费类型。PostPaid：按量计费。PrePaid：包年包月。
+     * @return Instance billing type. PostPaid: Pay-as-you-go. PrePaid: Subscription
      * 
      */
     private @Nullable String chargeType;
     /**
-     * @return 冷节点数量。
+     * @return Number of cold nodes.
      * 
      */
     private @Nullable Integer coldNodeNumber;
     /**
-     * @return 冷节点的节点规格配置详情。
+     * @return Node specification details for cold nodes
      * 
      */
     private @Nullable InstanceInstanceConfigurationColdNodeResourceSpec coldNodeResourceSpec;
     /**
-     * @return 冷节点的存储规格配置详情。
+     * @return Details of cold node storage specification configuration
      * 
      */
     private @Nullable InstanceInstanceConfigurationColdNodeStorageSpec coldNodeStorageSpec;
     /**
-     * @return 计费配置码，可以通过调用DescribeNodeAvailableSpecs接口获得。
+     * @return Billing configuration code, obtainable via the DescribeNodeAvailableSpecs API.
      * 
      */
     private @Nullable String configurationCode;
     /**
-     * @return 协调节点数量。
+     * @return Coordinator node count
      * 
      */
     private @Nullable Integer coordinatorNodeNumber;
     /**
-     * @return 协调节点的节点规格配置详情。
+     * @return Node specification configuration details for coordinator node.
      * 
      */
     private @Nullable InstanceInstanceConfigurationCoordinatorNodeResourceSpec coordinatorNodeResourceSpec;
     /**
-     * @return 协调节点的存储规格配置详情。
+     * @return Storage specification configuration details for coordinator node.
      * 
      */
     private @Nullable InstanceInstanceConfigurationCoordinatorNodeStorageSpec coordinatorNodeStorageSpec;
     /**
-     * @return 是否开启实例删除保护功能，取值说明如下：true：开启实例删除保护。false：关闭实例删除保护。说明开启实例删除保护后，您将无法通过控制台或者 API 删除实例。
+     * @return Enable instance deletion protection. Values: true: Enable instance deletion protection. false: Disable instance deletion protection. Note: After enabling deletion protection, you cannot delete the instance via console or API
      * 
      */
     private @Nullable Boolean deletionProtection;
     /**
-     * @return 是否启用 HTTPS 访问协议。true：启用 HTTPS 访问。false：不启用 HTTPS，使用 HTTP 访问。说明如果选择使用 HTTP 访问，将无需安全认证即可访问，并使用 HTTP 明文传输数据。您需要确保访问环境的安全性，且不要将访问接口暴露在公网环境上。实例创建完成后，支持根据业务需求修改传输协议。相关文档，请参见切换实例传输协议。
+     * @return Enable HTTPS access protocol. true: Enable HTTPS access. false: Disable HTTPS, use HTTP access. Note: If you choose HTTP access, you can access without security authentication and transmit data in plain HTTP. Ensure the security of your access environment and do not expose the API to the public network. After the instance is created, you can modify the transmission protocol as needed. For related documentation, see Switch Instance Transmission Protocol
      * 
      */
     private @Nullable Boolean enableHttps;
     /**
-     * @return Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即使用 Hot 声明。
+     * @return Whether the master node is dedicated. true: Master node is dedicated. false: Master node is combined with data node, that is, uses Hot node.
      * 
      */
     private @Nullable Boolean enablePureMaster;
     /**
-     * @return 数据节点数量。
+     * @return Number of data nodes
      * 
      */
     private @Nullable Integer hotNodeNumber;
     /**
-     * @return 数据节点的节点规格配置详情。
+     * @return Node specification configuration details for data node.
      * 
      */
     private @Nullable InstanceInstanceConfigurationHotNodeResourceSpec hotNodeResourceSpec;
     /**
-     * @return 数据节点的存储规格配置详情。
+     * @return Data node storage specification configuration details
      * 
      */
     private @Nullable InstanceInstanceConfigurationHotNodeStorageSpec hotNodeStorageSpec;
     /**
-     * @return 自定义设置实例名称。只能包含中文、字母、数字、短横线（-）和下划线（_），开头和结尾不能是数字和短横线（-）。长度在 1～128 个字符内。
+     * @return Set a custom instance name. Only Chinese characters, letters, numbers, hyphens (-), and underscores (_) are allowed. The name cannot start or end with a number or hyphen (-). Length must be between 1 and 128 characters.
      * 
      */
     private @Nullable String instanceName;
     /**
-     * @return kibana 节点数量。
+     * @return Number of Kibana nodes
      * 
      */
     private @Nullable Integer kibanaNodeNumber;
     /**
-     * @return Kibana 节点的节点规格配置详情。
+     * @return Kibana node specification configuration details
      * 
      */
     private @Nullable InstanceInstanceConfigurationKibanaNodeResourceSpec kibanaNodeResourceSpec;
     /**
-     * @return master 节点数量。
+     * @return Number of master nodes.
      * 
      */
     private @Nullable Integer masterNodeNumber;
     /**
-     * @return Master 节点的节点规格配置详情。
+     * @return Master node specification configuration details
      * 
      */
     private @Nullable InstanceInstanceConfigurationMasterNodeResourceSpec masterNodeResourceSpec;
     /**
-     * @return Master 节点的存储规格配置详情。
+     * @return Storage specification details for master node
      * 
      */
     private @Nullable InstanceInstanceConfigurationMasterNodeStorageSpec masterNodeStorageSpec;
     private @Nullable List<InstanceInstanceConfigurationNetworkSpec> networkSpecs;
     private @Nullable List<InstanceInstanceConfigurationNodeSpecsAssign> nodeSpecsAssigns;
     /**
-     * @return 包年包月实例的购买时长，单位：月。
+     * @return Subscription instance purchase duration, in months.
      * 
      */
     private @Nullable Integer period;
     /**
-     * @return 按需设置云搜索实例所属的项目，有利于云资源的分组管理。项目是提供的一种资源管理方式，有利于维护资源独立、数据安全；同时可从项目维度查看资源消费账单，便于计算云资源使用成本。如需了解更多信息，请参见项目概述
+     * @return Set the project for your cloud search instance as needed to facilitate grouping and management of cloud resources. Projects provide a resource management method that helps maintain resource independence and data security. You can also view resource consumption bills by project, making it easier to calculate cloud resource usage costs. For more information, see Project Overview
      * 
      */
     private @Nullable String projectName;
     /**
-     * @return 实例所在区域。
+     * @return Instance region
      * 
      */
     private @Nullable String regionId;
     /**
-     * @return 设置实例的子网信息。说明设置的子网必须是主可用区中的子网。
+     * @return Set subnet information for the instance. Note: The subnet must be in the primary zone.
      * 
      */
     private @Nullable InstanceInstanceConfigurationSubnet subnet;
     private @Nullable List<InstanceInstanceConfigurationTag> tags;
     /**
-     * @return API的版本，取值：2023-01-01。
+     * @return API version. Value: 2023-01-01.
      * 
      */
     private @Nullable String version;
     /**
-     * @return 设置实例的私有网络 VPC 信息。
+     * @return Set VPC information for the instance
      * 
      */
     private @Nullable InstanceInstanceConfigurationVpc vpc;
     /**
-     * @return 温节点数量。
+     * @return Warm node count.
      * 
      */
     private @Nullable Integer warmNodeNumber;
     /**
-     * @return 温节点的节点规格配置详情。
+     * @return Warm node specification configuration details.
      * 
      */
     private @Nullable InstanceInstanceConfigurationWarmNodeResourceSpec warmNodeResourceSpec;
     /**
-     * @return 温节点的存储规格配置详情。
+     * @return Storage specification details for warm nodes
      * 
      */
     private @Nullable InstanceInstanceConfigurationWarmNodeStorageSpec warmNodeStorageSpec;
     /**
-     * @return 实例所在可用区。说明如果是多可用区部署，则填写多个 ZoneId，使用英文逗号分隔，如cn-beijing-a,cn-beijing-c。最左侧的 ZoneId 为主可用区，其余为备可用区。
+     * @return Zone where the instance is located. Note: For multi-zone deployment, enter multiple ZoneIds separated by commas, e.g., cn-beijing-a,cn-beijing-c. The leftmost ZoneId is the primary zone, others are backup zones.
      * 
      */
     private @Nullable String zoneId;
     /**
-     * @return 实例的可用区数量。
+     * @return Number of instance availability zones.
      * 
      */
     private @Nullable Integer zoneNumber;
 
     private InstanceInstanceConfiguration() {}
     /**
-     * @return 管理员密码。
+     * @return Administrator password.
      * 
      */
     public Optional<String> adminPassword() {
         return Optional.ofNullable(this.adminPassword);
     }
     /**
-     * @return 管理员用户名。
+     * @return Administrator username.
      * 
      */
     public Optional<String> adminUserName() {
         return Optional.ofNullable(this.adminUserName);
     }
     /**
-     * @return 包年包月实例是否配置自动续费。true：自动续费，系统会在每次到期前自动为实例续费。false：未开启自动续费，需要在实例到期前进行手动续费。如需了解更多，请参见实例续费。
+     * @return Whether the subscription instance is set to auto-renewal. true: Auto-renewal; the system will automatically renew the instance before each expiration. false: Auto-renewal is not enabled; manual renewal is required before the instance expires. For more information, see Instance renewal.
      * 
      */
     public Optional<Boolean> autoRenew() {
         return Optional.ofNullable(this.autoRenew);
     }
     /**
-     * @return 实例计费类型。PostPaid：按量计费。PrePaid：包年包月。
+     * @return Instance billing type. PostPaid: Pay-as-you-go. PrePaid: Subscription
      * 
      */
     public Optional<String> chargeType() {
         return Optional.ofNullable(this.chargeType);
     }
     /**
-     * @return 冷节点数量。
+     * @return Number of cold nodes.
      * 
      */
     public Optional<Integer> coldNodeNumber() {
         return Optional.ofNullable(this.coldNodeNumber);
     }
     /**
-     * @return 冷节点的节点规格配置详情。
+     * @return Node specification details for cold nodes
      * 
      */
     public Optional<InstanceInstanceConfigurationColdNodeResourceSpec> coldNodeResourceSpec() {
         return Optional.ofNullable(this.coldNodeResourceSpec);
     }
     /**
-     * @return 冷节点的存储规格配置详情。
+     * @return Details of cold node storage specification configuration
      * 
      */
     public Optional<InstanceInstanceConfigurationColdNodeStorageSpec> coldNodeStorageSpec() {
         return Optional.ofNullable(this.coldNodeStorageSpec);
     }
     /**
-     * @return 计费配置码，可以通过调用DescribeNodeAvailableSpecs接口获得。
+     * @return Billing configuration code, obtainable via the DescribeNodeAvailableSpecs API.
      * 
      */
     public Optional<String> configurationCode() {
         return Optional.ofNullable(this.configurationCode);
     }
     /**
-     * @return 协调节点数量。
+     * @return Coordinator node count
      * 
      */
     public Optional<Integer> coordinatorNodeNumber() {
         return Optional.ofNullable(this.coordinatorNodeNumber);
     }
     /**
-     * @return 协调节点的节点规格配置详情。
+     * @return Node specification configuration details for coordinator node.
      * 
      */
     public Optional<InstanceInstanceConfigurationCoordinatorNodeResourceSpec> coordinatorNodeResourceSpec() {
         return Optional.ofNullable(this.coordinatorNodeResourceSpec);
     }
     /**
-     * @return 协调节点的存储规格配置详情。
+     * @return Storage specification configuration details for coordinator node.
      * 
      */
     public Optional<InstanceInstanceConfigurationCoordinatorNodeStorageSpec> coordinatorNodeStorageSpec() {
         return Optional.ofNullable(this.coordinatorNodeStorageSpec);
     }
     /**
-     * @return 是否开启实例删除保护功能，取值说明如下：true：开启实例删除保护。false：关闭实例删除保护。说明开启实例删除保护后，您将无法通过控制台或者 API 删除实例。
+     * @return Enable instance deletion protection. Values: true: Enable instance deletion protection. false: Disable instance deletion protection. Note: After enabling deletion protection, you cannot delete the instance via console or API
      * 
      */
     public Optional<Boolean> deletionProtection() {
         return Optional.ofNullable(this.deletionProtection);
     }
     /**
-     * @return 是否启用 HTTPS 访问协议。true：启用 HTTPS 访问。false：不启用 HTTPS，使用 HTTP 访问。说明如果选择使用 HTTP 访问，将无需安全认证即可访问，并使用 HTTP 明文传输数据。您需要确保访问环境的安全性，且不要将访问接口暴露在公网环境上。实例创建完成后，支持根据业务需求修改传输协议。相关文档，请参见切换实例传输协议。
+     * @return Enable HTTPS access protocol. true: Enable HTTPS access. false: Disable HTTPS, use HTTP access. Note: If you choose HTTP access, you can access without security authentication and transmit data in plain HTTP. Ensure the security of your access environment and do not expose the API to the public network. After the instance is created, you can modify the transmission protocol as needed. For related documentation, see Switch Instance Transmission Protocol
      * 
      */
     public Optional<Boolean> enableHttps() {
         return Optional.ofNullable(this.enableHttps);
     }
     /**
-     * @return Master 节点是否独立。true：Master 节点独立。false：Master 节点与数据节点重合，即使用 Hot 声明。
+     * @return Whether the master node is dedicated. true: Master node is dedicated. false: Master node is combined with data node, that is, uses Hot node.
      * 
      */
     public Optional<Boolean> enablePureMaster() {
         return Optional.ofNullable(this.enablePureMaster);
     }
     /**
-     * @return 数据节点数量。
+     * @return Number of data nodes
      * 
      */
     public Optional<Integer> hotNodeNumber() {
         return Optional.ofNullable(this.hotNodeNumber);
     }
     /**
-     * @return 数据节点的节点规格配置详情。
+     * @return Node specification configuration details for data node.
      * 
      */
     public Optional<InstanceInstanceConfigurationHotNodeResourceSpec> hotNodeResourceSpec() {
         return Optional.ofNullable(this.hotNodeResourceSpec);
     }
     /**
-     * @return 数据节点的存储规格配置详情。
+     * @return Data node storage specification configuration details
      * 
      */
     public Optional<InstanceInstanceConfigurationHotNodeStorageSpec> hotNodeStorageSpec() {
         return Optional.ofNullable(this.hotNodeStorageSpec);
     }
     /**
-     * @return 自定义设置实例名称。只能包含中文、字母、数字、短横线（-）和下划线（_），开头和结尾不能是数字和短横线（-）。长度在 1～128 个字符内。
+     * @return Set a custom instance name. Only Chinese characters, letters, numbers, hyphens (-), and underscores (_) are allowed. The name cannot start or end with a number or hyphen (-). Length must be between 1 and 128 characters.
      * 
      */
     public Optional<String> instanceName() {
         return Optional.ofNullable(this.instanceName);
     }
     /**
-     * @return kibana 节点数量。
+     * @return Number of Kibana nodes
      * 
      */
     public Optional<Integer> kibanaNodeNumber() {
         return Optional.ofNullable(this.kibanaNodeNumber);
     }
     /**
-     * @return Kibana 节点的节点规格配置详情。
+     * @return Kibana node specification configuration details
      * 
      */
     public Optional<InstanceInstanceConfigurationKibanaNodeResourceSpec> kibanaNodeResourceSpec() {
         return Optional.ofNullable(this.kibanaNodeResourceSpec);
     }
     /**
-     * @return master 节点数量。
+     * @return Number of master nodes.
      * 
      */
     public Optional<Integer> masterNodeNumber() {
         return Optional.ofNullable(this.masterNodeNumber);
     }
     /**
-     * @return Master 节点的节点规格配置详情。
+     * @return Master node specification configuration details
      * 
      */
     public Optional<InstanceInstanceConfigurationMasterNodeResourceSpec> masterNodeResourceSpec() {
         return Optional.ofNullable(this.masterNodeResourceSpec);
     }
     /**
-     * @return Master 节点的存储规格配置详情。
+     * @return Storage specification details for master node
      * 
      */
     public Optional<InstanceInstanceConfigurationMasterNodeStorageSpec> masterNodeStorageSpec() {
@@ -373,28 +373,28 @@ public final class InstanceInstanceConfiguration {
         return this.nodeSpecsAssigns == null ? List.of() : this.nodeSpecsAssigns;
     }
     /**
-     * @return 包年包月实例的购买时长，单位：月。
+     * @return Subscription instance purchase duration, in months.
      * 
      */
     public Optional<Integer> period() {
         return Optional.ofNullable(this.period);
     }
     /**
-     * @return 按需设置云搜索实例所属的项目，有利于云资源的分组管理。项目是提供的一种资源管理方式，有利于维护资源独立、数据安全；同时可从项目维度查看资源消费账单，便于计算云资源使用成本。如需了解更多信息，请参见项目概述
+     * @return Set the project for your cloud search instance as needed to facilitate grouping and management of cloud resources. Projects provide a resource management method that helps maintain resource independence and data security. You can also view resource consumption bills by project, making it easier to calculate cloud resource usage costs. For more information, see Project Overview
      * 
      */
     public Optional<String> projectName() {
         return Optional.ofNullable(this.projectName);
     }
     /**
-     * @return 实例所在区域。
+     * @return Instance region
      * 
      */
     public Optional<String> regionId() {
         return Optional.ofNullable(this.regionId);
     }
     /**
-     * @return 设置实例的子网信息。说明设置的子网必须是主可用区中的子网。
+     * @return Set subnet information for the instance. Note: The subnet must be in the primary zone.
      * 
      */
     public Optional<InstanceInstanceConfigurationSubnet> subnet() {
@@ -404,49 +404,49 @@ public final class InstanceInstanceConfiguration {
         return this.tags == null ? List.of() : this.tags;
     }
     /**
-     * @return API的版本，取值：2023-01-01。
+     * @return API version. Value: 2023-01-01.
      * 
      */
     public Optional<String> version() {
         return Optional.ofNullable(this.version);
     }
     /**
-     * @return 设置实例的私有网络 VPC 信息。
+     * @return Set VPC information for the instance
      * 
      */
     public Optional<InstanceInstanceConfigurationVpc> vpc() {
         return Optional.ofNullable(this.vpc);
     }
     /**
-     * @return 温节点数量。
+     * @return Warm node count.
      * 
      */
     public Optional<Integer> warmNodeNumber() {
         return Optional.ofNullable(this.warmNodeNumber);
     }
     /**
-     * @return 温节点的节点规格配置详情。
+     * @return Warm node specification configuration details.
      * 
      */
     public Optional<InstanceInstanceConfigurationWarmNodeResourceSpec> warmNodeResourceSpec() {
         return Optional.ofNullable(this.warmNodeResourceSpec);
     }
     /**
-     * @return 温节点的存储规格配置详情。
+     * @return Storage specification details for warm nodes
      * 
      */
     public Optional<InstanceInstanceConfigurationWarmNodeStorageSpec> warmNodeStorageSpec() {
         return Optional.ofNullable(this.warmNodeStorageSpec);
     }
     /**
-     * @return 实例所在可用区。说明如果是多可用区部署，则填写多个 ZoneId，使用英文逗号分隔，如cn-beijing-a,cn-beijing-c。最左侧的 ZoneId 为主可用区，其余为备可用区。
+     * @return Zone where the instance is located. Note: For multi-zone deployment, enter multiple ZoneIds separated by commas, e.g., cn-beijing-a,cn-beijing-c. The leftmost ZoneId is the primary zone, others are backup zones.
      * 
      */
     public Optional<String> zoneId() {
         return Optional.ofNullable(this.zoneId);
     }
     /**
-     * @return 实例的可用区数量。
+     * @return Number of instance availability zones.
      * 
      */
     public Optional<Integer> zoneNumber() {

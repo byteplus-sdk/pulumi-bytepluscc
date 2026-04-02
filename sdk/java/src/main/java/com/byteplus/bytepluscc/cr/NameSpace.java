@@ -14,7 +14,7 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * 命名空间是 OCI 制品仓库的集合，管理多个具有关联属性的 OCI 制品仓库。命名空间的名称通常为企业内部的组织团队名称、产品项目名称或个人自定义名称。
+ * A namespace is a collection of OCI artifact repositories that share related attributes. Namespace names are typically organization team names, product project names, or custom names within an enterprise.
  * 
  * ## Example Usage
  * 
@@ -63,56 +63,56 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:cr/nameSpace:NameSpace")
 public class NameSpace extends com.pulumi.resources.CustomResource {
     /**
-     * 命名空间的创建时间。
+     * Namespace creation time.
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 命名空间的创建时间。
+     * @return Namespace creation time.
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 命名空间名称。支持小写英文、数字、英文句号（.）、短划线（-）、下划线（_），标点符号不能出现在首位或末位，也不能连续输入。长度限制为 2～90 个字符。标准版实例：同一个镜像仓库实例下，名称必须唯一。体验版实例：同一地域下，所有账号范围内的命名空间名称需要保持唯一。如果您设置的命名空间名称已被占用，请尝试其他名称或者 购买标准版实例。
+     * Namespace name. Supports lowercase English letters, numbers, periods (.), hyphens (-), and underscores (_). Punctuation cannot appear at the beginning or end, nor be used consecutively. Length must be between 2 and 90 characters. Standard edition instance: The name must be unique within the same image repository instance. Trial edition instance: The namespace name must be unique across all accounts within the same region. If the namespace name you set is already taken, try another name or purchase a standard edition instance.
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return 命名空间名称。支持小写英文、数字、英文句号（.）、短划线（-）、下划线（_），标点符号不能出现在首位或末位，也不能连续输入。长度限制为 2～90 个字符。标准版实例：同一个镜像仓库实例下，名称必须唯一。体验版实例：同一地域下，所有账号范围内的命名空间名称需要保持唯一。如果您设置的命名空间名称已被占用，请尝试其他名称或者 购买标准版实例。
+     * @return Namespace name. Supports lowercase English letters, numbers, periods (.), hyphens (-), and underscores (_). Punctuation cannot appear at the beginning or end, nor be used consecutively. Length must be between 2 and 90 characters. Standard edition instance: The name must be unique within the same image repository instance. Trial edition instance: The namespace name must be unique across all accounts within the same region. If the namespace name you set is already taken, try another name or purchase a standard edition instance.
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * 命名空间所属项目的名称。参数值大小写敏感，不得超过 64 个字符。参数为空时，命名空间关联默认的 default项目。
+     * Name of the project to which the namespace belongs. This parameter is case-sensitive and must not exceed 64 characters. If the parameter is empty, the namespace is associated with the default project.
      * 
      */
     @Export(name="project", refs={String.class}, tree="[0]")
     private Output<String> project;
 
     /**
-     * @return 命名空间所属项目的名称。参数值大小写敏感，不得超过 64 个字符。参数为空时，命名空间关联默认的 default项目。
+     * @return Name of the project to which the namespace belongs. This parameter is case-sensitive and must not exceed 64 characters. If the parameter is empty, the namespace is associated with the default project.
      * 
      */
     public Output<String> project() {
         return this.project;
     }
     /**
-     * 指定的镜像仓库实例名称。通过 ListRegistries 或在 镜像仓库控制台 的 实例列表页面获取。
+     * Specify the image repository instance name. Obtain it via ListRegistries or from the instance list page in the image repository console.
      * 
      */
     @Export(name="registry", refs={String.class}, tree="[0]")
     private Output<String> registry;
 
     /**
-     * @return 指定的镜像仓库实例名称。通过 ListRegistries 或在 镜像仓库控制台 的 实例列表页面获取。
+     * @return Specify the image repository instance name. Obtain it via ListRegistries or from the instance list page in the image repository console.
      * 
      */
     public Output<String> registry() {

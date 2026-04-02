@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
     public sealed class DomainCacheHostCacheHostRuleCacheHostActionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 表示目标域名。 该目标域名必须是您账户下的一个加速域名。该参数指示 Domain 共享 CacheHost 的缓存。
+        /// Specifies the target domain name. The target domain name must be an acceleration domain under your account. This parameter indicates that Domain shares the cache of CacheHost.
         /// </summary>
         [Input("cacheHost")]
         public Input<string>? CacheHost { get; set; }

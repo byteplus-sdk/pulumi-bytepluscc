@@ -65,23 +65,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     public sealed class GetUserProvisioningResult
     {
         /// <summary>
-        /// 创建时间。
+        /// Creation Time
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
-        /// 删除策略。
+        /// Deletion Policy
         /// </summary>
         public readonly string DeletionStrategy;
         /// <summary>
-        /// 任务描述。
+        /// Task Description
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 用户名冲突策略。
+        /// Username Conflict Policy
         /// </summary>
         public readonly string DuplicationStrategy;
         /// <summary>
-        /// 本次同步IAM用户名称后缀。
+        /// Suffix for IAM user name in this synchronization
         /// </summary>
         public readonly string DuplicationSuffix;
         /// <summary>
@@ -89,35 +89,35 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 身份源冲突策略。
+        /// Identity Source Conflict Policy
         /// </summary>
         public readonly string IdentitySourceStrategy;
         /// <summary>
-        /// 身份id。
+        /// Identity ID
         /// </summary>
         public readonly string PrincipalId;
         /// <summary>
-        /// 目标名称。
+        /// Target Name
         /// </summary>
         public readonly string PrincipalName;
         /// <summary>
-        /// 身份类型。
+        /// Identity Type
         /// </summary>
         public readonly string PrincipalType;
         /// <summary>
-        /// 授权任务状态。Provisioned 授权成功，Provisioning 正在授权，DeleteProvisioning 授权解除中，DeleteProvisioned 授权解除成功
+        /// Authorization Task Status. Provisioned: authorization successful, Provisioning: authorizing, DeleteProvisioning: revoking authorization, DeleteProvisioned: authorization revoked successfully.
         /// </summary>
         public readonly string ProvisionStatus;
         /// <summary>
-        /// 目标id。
+        /// Target ID
         /// </summary>
         public readonly string TargetId;
         /// <summary>
-        /// 更新时间。
+        /// Update Time
         /// </summary>
         public readonly string UpdatedTime;
         /// <summary>
-        /// IAM 用户同步任务ID。
+        /// IAM User Synchronization Task ID
         /// </summary>
         public readonly string UserProvisioningId;
 

@@ -21,14 +21,14 @@ public final class LaunchTemplateArgs extends com.pulumi.resources.ResourceArgs 
     public static final LaunchTemplateArgs Empty = new LaunchTemplateArgs();
 
     /**
-     * 实例启动模板的默认版本号。
+     * Instance launch template default version number
      * 
      */
     @Import(name="defaultVersionNumber")
     private @Nullable Output<Integer> defaultVersionNumber;
 
     /**
-     * @return 实例启动模板的默认版本号。
+     * @return Instance launch template default version number
      * 
      */
     public Optional<Output<Integer>> defaultVersionNumber() {
@@ -36,14 +36,14 @@ public final class LaunchTemplateArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 实例启动模板名称。
+     * Instance launch template name.
      * 
      */
     @Import(name="launchTemplateName", required=true)
     private Output<String> launchTemplateName;
 
     /**
-     * @return 实例启动模板名称。
+     * @return Instance launch template name.
      * 
      */
     public Output<String> launchTemplateName() {
@@ -51,14 +51,14 @@ public final class LaunchTemplateArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 实例启动模版所属项目。
+     * Project associated with the instance launch template.
      * 
      */
     @Import(name="launchTemplateProjectName")
     private @Nullable Output<String> launchTemplateProjectName;
 
     /**
-     * @return 实例启动模版所属项目。
+     * @return Project associated with the instance launch template.
      * 
      */
     public Optional<Output<String>> launchTemplateProjectName() {
@@ -73,14 +73,14 @@ public final class LaunchTemplateArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 实例启动模板版本信息。
+     * Instance launch template version information
      * 
      */
     @Import(name="launchTemplateVersion")
     private @Nullable Output<LaunchTemplateLaunchTemplateVersionArgs> launchTemplateVersion;
 
     /**
-     * @return 实例启动模板版本信息。
+     * @return Instance launch template version information
      * 
      */
     public Optional<Output<LaunchTemplateLaunchTemplateVersionArgs>> launchTemplateVersion() {
@@ -116,7 +116,7 @@ public final class LaunchTemplateArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param defaultVersionNumber 实例启动模板的默认版本号。
+         * @param defaultVersionNumber Instance launch template default version number
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class LaunchTemplateArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param defaultVersionNumber 实例启动模板的默认版本号。
+         * @param defaultVersionNumber Instance launch template default version number
          * 
          * @return builder
          * 
@@ -137,7 +137,7 @@ public final class LaunchTemplateArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param launchTemplateName 实例启动模板名称。
+         * @param launchTemplateName Instance launch template name.
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class LaunchTemplateArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param launchTemplateName 实例启动模板名称。
+         * @param launchTemplateName Instance launch template name.
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class LaunchTemplateArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param launchTemplateProjectName 实例启动模版所属项目。
+         * @param launchTemplateProjectName Project associated with the instance launch template.
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class LaunchTemplateArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param launchTemplateProjectName 实例启动模版所属项目。
+         * @param launchTemplateProjectName Project associated with the instance launch template.
          * 
          * @return builder
          * 
@@ -192,7 +192,7 @@ public final class LaunchTemplateArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param launchTemplateVersion 实例启动模板版本信息。
+         * @param launchTemplateVersion Instance launch template version information
          * 
          * @return builder
          * 
@@ -203,7 +203,7 @@ public final class LaunchTemplateArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param launchTemplateVersion 实例启动模板版本信息。
+         * @param launchTemplateVersion Instance launch template version information
          * 
          * @return builder
          * 

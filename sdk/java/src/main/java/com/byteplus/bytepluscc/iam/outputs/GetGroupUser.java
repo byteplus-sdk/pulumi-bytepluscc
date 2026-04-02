@@ -12,62 +12,62 @@ import java.util.Objects;
 @CustomType
 public final class GetGroupUser {
     /**
-     * @return 用户描述。
+     * @return User description.
      * 
      */
     private String description;
     /**
-     * @return 用户显示名。
+     * @return User display name.
      * 
      */
     private String displayName;
     /**
-     * @return 用户加入用户组的时间。
+     * @return Time when the user joined the user group.
      * 
      */
     private String joinTime;
     /**
-     * @return 用户ID。
+     * @return User ID.
      * 
      */
     private Integer userId;
     /**
-     * @return 用户名。
+     * @return Username.
      * 
      */
     private String userName;
 
     private GetGroupUser() {}
     /**
-     * @return 用户描述。
+     * @return User description.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 用户显示名。
+     * @return User display name.
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return 用户加入用户组的时间。
+     * @return Time when the user joined the user group.
      * 
      */
     public String joinTime() {
         return this.joinTime;
     }
     /**
-     * @return 用户ID。
+     * @return User ID.
      * 
      */
     public Integer userId() {
         return this.userId;
     }
     /**
-     * @return 用户名。
+     * @return Username.
      * 
      */
     public String userName() {

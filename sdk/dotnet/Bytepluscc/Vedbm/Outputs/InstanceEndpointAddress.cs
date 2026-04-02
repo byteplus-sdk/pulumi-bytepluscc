@@ -15,31 +15,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm.Outputs
     public sealed class InstanceEndpointAddress
     {
         /// <summary>
-        /// 解析方式。当前返回值只能为 false。
+        /// Parsing method. The current return value can only be false.
         /// </summary>
         public readonly bool? DnsVisibility;
         /// <summary>
-        /// 实例内网访问域名。
+        /// Instance private access domain name.
         /// </summary>
         public readonly string? Domain;
         /// <summary>
-        /// 公网 ID。
+        /// Public network ID.
         /// </summary>
         public readonly string? EipId;
         /// <summary>
-        /// IP 地址。
+        /// IP address.
         /// </summary>
         public readonly string? IpAddress;
         /// <summary>
-        /// 网络类型：Private：私有网络 VPC。Public：公网访问。
+        /// Network type: Private: private network VPC. Public: public access.
         /// </summary>
         public readonly string? NetworkType;
         /// <summary>
-        /// 实例内网访问端口。
+        /// Instance private network access port.
         /// </summary>
         public readonly string? Port;
         /// <summary>
-        /// 子网 ID。子网必须属于所选的可用区。
+        /// Subnet ID. The subnet must belong to the selected availability zone.
         /// </summary>
         public readonly string? SubnetId;
 

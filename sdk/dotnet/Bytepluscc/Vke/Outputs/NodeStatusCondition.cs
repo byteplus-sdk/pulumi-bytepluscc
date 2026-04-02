@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class NodeStatusCondition
     {
         /// <summary>
-        /// 节点当前主状态下的状态条件，即进入该主状态的原因，可以有多个原因，参数值有：Progressing，Ok，Unschedulable，InitilizeFailed，NotReady，Balance，ResourceCleanupFailed，Unknown。
+        /// Status condition under the node's current primary state, indicating the reason for entering this primary state. There can be multiple reasons. Parameter values: Progressing, Ok, Unschedulable, InitilizeFailed, NotReady, Balance, ResourceCleanupFailed, Unknown.
         /// </summary>
         public readonly string? Type;
 

@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc.Inputs
     public sealed class VpcAssociateCenArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// CEN的ID。
+        /// ID of the CEN.
         /// </summary>
         [Input("cenId")]
         public Input<string>? CenId { get; set; }
 
         /// <summary>
-        /// CEN的用户ID。
+        /// User ID of the CEN.
         /// </summary>
         [Input("cenOwnerId")]
         public Input<string>? CenOwnerId { get; set; }
 
         /// <summary>
-        /// VPC在CEN中的状态。Attaching：加载中，Attached：已加载
+        /// Status of the VPC in the CEN. Loading: loading, Loaded: loaded
         /// </summary>
         [Input("cenStatus")]
         public Input<string>? CenStatus { get; set; }

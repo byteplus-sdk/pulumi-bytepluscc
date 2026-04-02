@@ -16,14 +16,14 @@ public final class UpstreamUpstreamSpecNacosServiceArgs extends com.pulumi.resou
     public static final UpstreamUpstreamSpecNacosServiceArgs Empty = new UpstreamUpstreamSpecNacosServiceArgs();
 
     /**
-     * 分组。
+     * Group
      * 
      */
     @Import(name="group")
     private @Nullable Output<String> group;
 
     /**
-     * @return 分组。
+     * @return Group
      * 
      */
     public Optional<Output<String>> group() {
@@ -31,14 +31,14 @@ public final class UpstreamUpstreamSpecNacosServiceArgs extends com.pulumi.resou
     }
 
     /**
-     * 命名空间。
+     * Namespace
      * 
      */
     @Import(name="namespace")
     private @Nullable Output<String> namespace;
 
     /**
-     * @return 命名空间。
+     * @return Namespace
      * 
      */
     public Optional<Output<String>> namespace() {
@@ -46,14 +46,14 @@ public final class UpstreamUpstreamSpecNacosServiceArgs extends com.pulumi.resou
     }
 
     /**
-     * 命名空间ID。
+     * Namespace ID
      * 
      */
     @Import(name="namespaceId")
     private @Nullable Output<String> namespaceId;
 
     /**
-     * @return 命名空间ID。
+     * @return Namespace ID
      * 
      */
     public Optional<Output<String>> namespaceId() {
@@ -61,14 +61,14 @@ public final class UpstreamUpstreamSpecNacosServiceArgs extends com.pulumi.resou
     }
 
     /**
-     * 服务。
+     * Service
      * 
      */
     @Import(name="service")
     private @Nullable Output<String> service;
 
     /**
-     * @return 服务。
+     * @return Service
      * 
      */
     public Optional<Output<String>> service() {
@@ -76,14 +76,14 @@ public final class UpstreamUpstreamSpecNacosServiceArgs extends com.pulumi.resou
     }
 
     /**
-     * Upstream来源ID。
+     * Upstream source ID
      * 
      */
     @Import(name="upstreamSourceId")
     private @Nullable Output<String> upstreamSourceId;
 
     /**
-     * @return Upstream来源ID。
+     * @return Upstream source ID
      * 
      */
     public Optional<Output<String>> upstreamSourceId() {
@@ -119,7 +119,7 @@ public final class UpstreamUpstreamSpecNacosServiceArgs extends com.pulumi.resou
         }
 
         /**
-         * @param group 分组。
+         * @param group Group
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class UpstreamUpstreamSpecNacosServiceArgs extends com.pulumi.resou
         }
 
         /**
-         * @param group 分组。
+         * @param group Group
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class UpstreamUpstreamSpecNacosServiceArgs extends com.pulumi.resou
         }
 
         /**
-         * @param namespace 命名空间。
+         * @param namespace Namespace
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class UpstreamUpstreamSpecNacosServiceArgs extends com.pulumi.resou
         }
 
         /**
-         * @param namespace 命名空间。
+         * @param namespace Namespace
          * 
          * @return builder
          * 
@@ -161,7 +161,7 @@ public final class UpstreamUpstreamSpecNacosServiceArgs extends com.pulumi.resou
         }
 
         /**
-         * @param namespaceId 命名空间ID。
+         * @param namespaceId Namespace ID
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class UpstreamUpstreamSpecNacosServiceArgs extends com.pulumi.resou
         }
 
         /**
-         * @param namespaceId 命名空间ID。
+         * @param namespaceId Namespace ID
          * 
          * @return builder
          * 
@@ -182,7 +182,7 @@ public final class UpstreamUpstreamSpecNacosServiceArgs extends com.pulumi.resou
         }
 
         /**
-         * @param service 服务。
+         * @param service Service
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class UpstreamUpstreamSpecNacosServiceArgs extends com.pulumi.resou
         }
 
         /**
-         * @param service 服务。
+         * @param service Service
          * 
          * @return builder
          * 
@@ -203,7 +203,7 @@ public final class UpstreamUpstreamSpecNacosServiceArgs extends com.pulumi.resou
         }
 
         /**
-         * @param upstreamSourceId Upstream来源ID。
+         * @param upstreamSourceId Upstream source ID
          * 
          * @return builder
          * 
@@ -214,7 +214,7 @@ public final class UpstreamUpstreamSpecNacosServiceArgs extends com.pulumi.resou
         }
 
         /**
-         * @param upstreamSourceId Upstream来源ID。
+         * @param upstreamSourceId Upstream source ID
          * 
          * @return builder
          * 

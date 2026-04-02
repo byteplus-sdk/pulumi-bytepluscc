@@ -17,15 +17,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Outputs
         public readonly ImmutableArray<Outputs.ClusterApplicationExtraApplicationComponentLayout> ApplicationComponentLayouts;
         public readonly ImmutableArray<Outputs.ClusterApplicationExtraApplicationConfig> ApplicationConfigs;
         /// <summary>
-        /// 应用名称。
+        /// Application name.
         /// </summary>
         public readonly string? ApplicationName;
         /// <summary>
-        /// 元数据连接id。
+        /// Metadata connection ID.
         /// </summary>
         public readonly string? ConnectionId;
         /// <summary>
-        /// 元数据连接类型。BUILT*IN*MYSQL：内置数据库。EXTERNAL*MYSQL：外置数据库。HIVE*METASTORE：HMS。
+        /// Metadata connection type. BUILT*IN*MYSQL: built-in database. EXTERNAL*MYSQL: external database. HIVE*METASTORE: HMS.
         /// </summary>
         public readonly string? ConnectionType;
 

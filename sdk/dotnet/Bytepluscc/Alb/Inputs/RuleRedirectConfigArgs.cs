@@ -14,31 +14,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Inputs
     public sealed class RuleRedirectConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 重定向的域名。若创建/修改重定向类型的转发规则时，重定向域名设置为空，接口会返回${host}，该变量含义为重定向域名与请求域名保持一致，但不支持创建/修改时，将重定向域名设置为${host}.。
+        /// Redirect domain name. If the redirect domain name is left empty when creating or modifying a redirect forwarding rule, the API returns ${host}, which means the redirect domain matches the request domain. However, setting the redirect domain to ${host} is not supported when creating or modifying rules.
         /// </summary>
         [Input("redirectDomain")]
         public Input<string>? RedirectDomain { get; set; }
 
         /// <summary>
-        /// 重定向状态码。301、302、307、308。
+        /// Redirect status codes: 301, 302, 307, 308.
         /// </summary>
         [Input("redirectHttpCode")]
         public Input<string>? RedirectHttpCode { get; set; }
 
         /// <summary>
-        /// 重定向的端口。若创建/修改重定向类型的转发规则时，重定向端口设置为空，接口会返回${port}，该变量含义为重定向端口与请求端口（监听器端口）保持一致，但不支持创建/修改时，将重定向端口设置为${port}.。
+        /// Redirect port. If the redirect port is left empty when creating or modifying a redirect forwarding rule, the API returns ${port}, which means the redirect port matches the request port (listener port). However, setting the redirect port to ${port} is not supported when creating or modifying rules.
         /// </summary>
         [Input("redirectPort")]
         public Input<string>? RedirectPort { get; set; }
 
         /// <summary>
-        /// 重定向使用的协议。HTTP、HTTPS。
+        /// Protocol used for redirect. HTTP, HTTPS.
         /// </summary>
         [Input("redirectProtocol")]
         public Input<string>? RedirectProtocol { get; set; }
 
         /// <summary>
-        /// 重定向的URI。若创建/修改重定向类型的转发规则时，重定向uri设置为空，接口会返回${request*uri}，该变量含义为重定向uri与请求uri保持一致，但不支持创建/修改时，将重定向uri设置为${request*uri}.。
+        /// Redirect URI. If the redirect URI is left empty when creating or modifying a redirect forwarding rule, the API returns ${request*uri}, which means the redirect URI matches the request URI. However, setting the redirect URI to ${request*uri} is not supported when creating or modifying rules.
         /// </summary>
         [Input("redirectUri")]
         public Input<string>? RedirectUri { get; set; }

@@ -11,50 +11,50 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceConnectionInfo {
     /**
-     * @return 实例的接入点类型。PLAINTEXT：默认接入点。SASL*PLAINTEXT：SASL接入点（私网）。SASL*SSL：SASL接入点（公网）。未开启公网访问时，不提供此接入点。
+     * @return Instance endpoint type. PLAINTEXT: default endpoint. SASL*PLAINTEXT: SASL endpoint (private network). SASL*SSL: SASL endpoint (public network). If public access is not enabled, this endpoint is not provided.
      * 
      */
     private String endpointType;
     /**
-     * @return 实例私网访问域名。
+     * @return Instance private network access domain name.
      * 
      */
     private String internalEndpoint;
     /**
-     * @return 接入点的网络类型。统一为 PrivateNetwork。
+     * @return Network type for the access point. Unified as PrivateNetwork.
      * 
      */
     private String networkType;
     /**
-     * @return 实例公网访问域名。
+     * @return Public access domain name for the instance.
      * 
      */
     private String publicEndpoint;
 
     private GetInstanceConnectionInfo() {}
     /**
-     * @return 实例的接入点类型。PLAINTEXT：默认接入点。SASL*PLAINTEXT：SASL接入点（私网）。SASL*SSL：SASL接入点（公网）。未开启公网访问时，不提供此接入点。
+     * @return Instance endpoint type. PLAINTEXT: default endpoint. SASL*PLAINTEXT: SASL endpoint (private network). SASL*SSL: SASL endpoint (public network). If public access is not enabled, this endpoint is not provided.
      * 
      */
     public String endpointType() {
         return this.endpointType;
     }
     /**
-     * @return 实例私网访问域名。
+     * @return Instance private network access domain name.
      * 
      */
     public String internalEndpoint() {
         return this.internalEndpoint;
     }
     /**
-     * @return 接入点的网络类型。统一为 PrivateNetwork。
+     * @return Network type for the access point. Unified as PrivateNetwork.
      * 
      */
     public String networkType() {
         return this.networkType;
     }
     /**
-     * @return 实例公网访问域名。
+     * @return Public access domain name for the instance.
      * 
      */
     public String publicEndpoint() {

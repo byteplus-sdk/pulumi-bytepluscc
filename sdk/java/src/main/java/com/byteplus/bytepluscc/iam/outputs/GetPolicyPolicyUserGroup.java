@@ -14,74 +14,74 @@ import java.util.Objects;
 @CustomType
 public final class GetPolicyPolicyUserGroup {
     /**
-     * @return 策略绑定时间。
+     * @return Policy binding time.
      * 
      */
     private String createdTime;
     /**
-     * @return 策略描述。
+     * @return Policy description.
      * 
      */
     private String description;
     /**
-     * @return 显示名称。
+     * @return Display name.
      * 
      */
     private String displayName;
     /**
-     * @return 唯一标识。
+     * @return Unique identifier.
      * 
      */
     private Integer entitiesId;
     /**
-     * @return 对应用户、角色、用户组的名称。
+     * @return Name of the corresponding user, role, or user group.
      * 
      */
     private String name;
     /**
-     * @return 策略绑定的项目列表。
+     * @return List of projects bound to the policy.
      * 
      */
     private List<GetPolicyPolicyUserGroupPolicyScope> policyScopes;
 
     private GetPolicyPolicyUserGroup() {}
     /**
-     * @return 策略绑定时间。
+     * @return Policy binding time.
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 策略描述。
+     * @return Policy description.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 显示名称。
+     * @return Display name.
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return 唯一标识。
+     * @return Unique identifier.
      * 
      */
     public Integer entitiesId() {
         return this.entitiesId;
     }
     /**
-     * @return 对应用户、角色、用户组的名称。
+     * @return Name of the corresponding user, role, or user group.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 策略绑定的项目列表。
+     * @return List of projects bound to the policy.
      * 
      */
     public List<GetPolicyPolicyUserGroupPolicyScope> policyScopes() {

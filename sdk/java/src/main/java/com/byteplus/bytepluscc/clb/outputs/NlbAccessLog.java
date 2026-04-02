@@ -13,38 +13,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NlbAccessLog {
     /**
-     * @return 是否开启访问日志。true：是。flase：否。
+     * @return Enable access logs. true: yes. false: no.
      * 
      */
     private @Nullable Boolean accessLogEnabled;
     /**
-     * @return 日志项目的ID。
+     * @return Log project ID.
      * 
      */
     private @Nullable String projectId;
     /**
-     * @return 日志主题的ID。
+     * @return Log topic ID.
      * 
      */
     private @Nullable String topicId;
 
     private NlbAccessLog() {}
     /**
-     * @return 是否开启访问日志。true：是。flase：否。
+     * @return Enable access logs. true: yes. false: no.
      * 
      */
     public Optional<Boolean> accessLogEnabled() {
         return Optional.ofNullable(this.accessLogEnabled);
     }
     /**
-     * @return 日志项目的ID。
+     * @return Log project ID.
      * 
      */
     public Optional<String> projectId() {
         return Optional.ofNullable(this.projectId);
     }
     /**
-     * @return 日志主题的ID。
+     * @return Log topic ID.
      * 
      */
     public Optional<String> topicId() {

@@ -14,9 +14,9 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type InstanceCapacity struct {
-	// 当前实例的内存总容量。单位：MiB。
+	// Total memory capacity of the current instance. Unit: MiB.
 	Total *int `pulumi:"total"`
-	// 当前实例已用容量。单位：MiB。
+	// Used capacity of the current instance. Unit: MiB.
 	Used *int `pulumi:"used"`
 }
 
@@ -32,9 +32,9 @@ type InstanceCapacityInput interface {
 }
 
 type InstanceCapacityArgs struct {
-	// 当前实例的内存总容量。单位：MiB。
+	// Total memory capacity of the current instance. Unit: MiB.
 	Total pulumi.IntPtrInput `pulumi:"total"`
-	// 当前实例已用容量。单位：MiB。
+	// Used capacity of the current instance. Unit: MiB.
 	Used pulumi.IntPtrInput `pulumi:"used"`
 }
 
@@ -115,12 +115,12 @@ func (o InstanceCapacityOutput) ToInstanceCapacityPtrOutputWithContext(ctx conte
 	}).(InstanceCapacityPtrOutput)
 }
 
-// 当前实例的内存总容量。单位：MiB。
+// Total memory capacity of the current instance. Unit: MiB.
 func (o InstanceCapacityOutput) Total() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceCapacity) *int { return v.Total }).(pulumi.IntPtrOutput)
 }
 
-// 当前实例已用容量。单位：MiB。
+// Used capacity of the current instance. Unit: MiB.
 func (o InstanceCapacityOutput) Used() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceCapacity) *int { return v.Used }).(pulumi.IntPtrOutput)
 }
@@ -149,7 +149,7 @@ func (o InstanceCapacityPtrOutput) Elem() InstanceCapacityOutput {
 	}).(InstanceCapacityOutput)
 }
 
-// 当前实例的内存总容量。单位：MiB。
+// Total memory capacity of the current instance. Unit: MiB.
 func (o InstanceCapacityPtrOutput) Total() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceCapacity) *int {
 		if v == nil {
@@ -159,7 +159,7 @@ func (o InstanceCapacityPtrOutput) Total() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// 当前实例已用容量。单位：MiB。
+// Used capacity of the current instance. Unit: MiB.
 func (o InstanceCapacityPtrOutput) Used() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *InstanceCapacity) *int {
 		if v == nil {
@@ -170,7 +170,7 @@ func (o InstanceCapacityPtrOutput) Used() pulumi.IntPtrOutput {
 }
 
 type InstanceConfigureNode struct {
-	// 每个节点所属的可用区。
+	// The availability zone each node belongs to.
 	Az *string `pulumi:"az"`
 }
 
@@ -186,7 +186,7 @@ type InstanceConfigureNodeInput interface {
 }
 
 type InstanceConfigureNodeArgs struct {
-	// 每个节点所属的可用区。
+	// The availability zone each node belongs to.
 	Az pulumi.StringPtrInput `pulumi:"az"`
 }
 
@@ -241,7 +241,7 @@ func (o InstanceConfigureNodeOutput) ToInstanceConfigureNodeOutputWithContext(ct
 	return o
 }
 
-// 每个节点所属的可用区。
+// The availability zone each node belongs to.
 func (o InstanceConfigureNodeOutput) Az() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceConfigureNode) *string { return v.Az }).(pulumi.StringPtrOutput)
 }
@@ -267,10 +267,10 @@ func (o InstanceConfigureNodeArrayOutput) Index(i pulumi.IntInput) InstanceConfi
 }
 
 type InstanceInstanceShard struct {
-	// 分片中的节点数量
+	// Number of nodes in each shard
 	NodeNumber  *int                              `pulumi:"nodeNumber"`
 	ServerNodes []InstanceInstanceShardServerNode `pulumi:"serverNodes"`
-	// 分片 ID。
+	// Shard ID.
 	ShardId *string `pulumi:"shardId"`
 }
 
@@ -286,10 +286,10 @@ type InstanceInstanceShardInput interface {
 }
 
 type InstanceInstanceShardArgs struct {
-	// 分片中的节点数量
+	// Number of nodes in each shard
 	NodeNumber  pulumi.IntPtrInput                        `pulumi:"nodeNumber"`
 	ServerNodes InstanceInstanceShardServerNodeArrayInput `pulumi:"serverNodes"`
-	// 分片 ID。
+	// Shard ID.
 	ShardId pulumi.StringPtrInput `pulumi:"shardId"`
 }
 
@@ -344,7 +344,7 @@ func (o InstanceInstanceShardOutput) ToInstanceInstanceShardOutputWithContext(ct
 	return o
 }
 
-// 分片中的节点数量
+// Number of nodes in each shard
 func (o InstanceInstanceShardOutput) NodeNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceShard) *int { return v.NodeNumber }).(pulumi.IntPtrOutput)
 }
@@ -353,7 +353,7 @@ func (o InstanceInstanceShardOutput) ServerNodes() InstanceInstanceShardServerNo
 	return o.ApplyT(func(v InstanceInstanceShard) []InstanceInstanceShardServerNode { return v.ServerNodes }).(InstanceInstanceShardServerNodeArrayOutput)
 }
 
-// 分片 ID。
+// Shard ID.
 func (o InstanceInstanceShardOutput) ShardId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceShard) *string { return v.ShardId }).(pulumi.StringPtrOutput)
 }
@@ -379,13 +379,13 @@ func (o InstanceInstanceShardArrayOutput) Index(i pulumi.IntInput) InstanceInsta
 }
 
 type InstanceInstanceShardServerNode struct {
-	// 节点当前的角色。取值范围如下：PrimaryNode：主节点。SecondaryNode：从节点。
+	// Current role of the node. Valid values: PrimaryNode: primary node; SecondaryNode: secondary node.
 	CurrentRole *string `pulumi:"currentRole"`
-	// 节点 ID。
+	// Node ID.
 	NodeId *string `pulumi:"nodeId"`
-	// 节点状态。取值范围如下：deploy：启动中。running：运行中。loading：数据加载中。error：错误。
+	// Node status. Valid values: deploy: starting; running: running; loading: loading data; error: error.
 	Status *string `pulumi:"status"`
-	// 节点所在的可用区。
+	// Availability zone where the node is located.
 	ZoneId *string `pulumi:"zoneId"`
 }
 
@@ -401,13 +401,13 @@ type InstanceInstanceShardServerNodeInput interface {
 }
 
 type InstanceInstanceShardServerNodeArgs struct {
-	// 节点当前的角色。取值范围如下：PrimaryNode：主节点。SecondaryNode：从节点。
+	// Current role of the node. Valid values: PrimaryNode: primary node; SecondaryNode: secondary node.
 	CurrentRole pulumi.StringPtrInput `pulumi:"currentRole"`
-	// 节点 ID。
+	// Node ID.
 	NodeId pulumi.StringPtrInput `pulumi:"nodeId"`
-	// 节点状态。取值范围如下：deploy：启动中。running：运行中。loading：数据加载中。error：错误。
+	// Node status. Valid values: deploy: starting; running: running; loading: loading data; error: error.
 	Status pulumi.StringPtrInput `pulumi:"status"`
-	// 节点所在的可用区。
+	// Availability zone where the node is located.
 	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
 }
 
@@ -462,22 +462,22 @@ func (o InstanceInstanceShardServerNodeOutput) ToInstanceInstanceShardServerNode
 	return o
 }
 
-// 节点当前的角色。取值范围如下：PrimaryNode：主节点。SecondaryNode：从节点。
+// Current role of the node. Valid values: PrimaryNode: primary node; SecondaryNode: secondary node.
 func (o InstanceInstanceShardServerNodeOutput) CurrentRole() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceShardServerNode) *string { return v.CurrentRole }).(pulumi.StringPtrOutput)
 }
 
-// 节点 ID。
+// Node ID.
 func (o InstanceInstanceShardServerNodeOutput) NodeId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceShardServerNode) *string { return v.NodeId }).(pulumi.StringPtrOutput)
 }
 
-// 节点状态。取值范围如下：deploy：启动中。running：运行中。loading：数据加载中。error：错误。
+// Node status. Valid values: deploy: starting; running: running; loading: loading data; error: error.
 func (o InstanceInstanceShardServerNodeOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceShardServerNode) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
-// 节点所在的可用区。
+// Availability zone where the node is located.
 func (o InstanceInstanceShardServerNodeOutput) ZoneId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceInstanceShardServerNode) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
 }
@@ -503,9 +503,9 @@ func (o InstanceInstanceShardServerNodeArrayOutput) Index(i pulumi.IntInput) Ins
 }
 
 type InstanceTag struct {
-	// 标签键。
+	// Tag key.
 	Key *string `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value *string `pulumi:"value"`
 }
 
@@ -521,9 +521,9 @@ type InstanceTagInput interface {
 }
 
 type InstanceTagArgs struct {
-	// 标签键。
+	// Tag key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -578,12 +578,12 @@ func (o InstanceTagOutput) ToInstanceTagOutputWithContext(ctx context.Context) I
 	return o
 }
 
-// 标签键。
+// Tag key.
 func (o InstanceTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 标签值。
+// Tag value.
 func (o InstanceTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -609,17 +609,17 @@ func (o InstanceTagArrayOutput) Index(i pulumi.IntInput) InstanceTagOutput {
 }
 
 type InstanceVisitAddr struct {
-	// 连接地址类型，取值范围如下：Private：私网连接地址；Public：公网连接地址；DirectLink：直连地址。
+	// Connection address type. Value options: Private: Private network connection address; Public: Public network connection address; DirectLink: Direct connection address.
 	AddrType *string `pulumi:"addrType"`
-	// IP 地址或者域名。
+	// IP address or domain name.
 	Address *string `pulumi:"address"`
-	// 实例公网地址所绑定的EIP ID。仅当连接地址类型（即AddrType）为Public公网连接地址时，返回该参数。
+	// EIP ID bound to the instance's public address. This parameter is returned only when the connection address type (AddrType) is Public.
 	EipId *string `pulumi:"eipId"`
-	// 端口号。
+	// Port number.
 	Port *string `pulumi:"port"`
-	// 连接地址所对应的 IPv6 地址。
+	// IPv6 address corresponding to the connection address.
 	ViPv6 *string `pulumi:"viPv6"`
-	// 连接地址所对应的 IPv4 地址。
+	// The IPv4 address corresponding to the connection address.
 	Vip *string `pulumi:"vip"`
 }
 
@@ -635,17 +635,17 @@ type InstanceVisitAddrInput interface {
 }
 
 type InstanceVisitAddrArgs struct {
-	// 连接地址类型，取值范围如下：Private：私网连接地址；Public：公网连接地址；DirectLink：直连地址。
+	// Connection address type. Value options: Private: Private network connection address; Public: Public network connection address; DirectLink: Direct connection address.
 	AddrType pulumi.StringPtrInput `pulumi:"addrType"`
-	// IP 地址或者域名。
+	// IP address or domain name.
 	Address pulumi.StringPtrInput `pulumi:"address"`
-	// 实例公网地址所绑定的EIP ID。仅当连接地址类型（即AddrType）为Public公网连接地址时，返回该参数。
+	// EIP ID bound to the instance's public address. This parameter is returned only when the connection address type (AddrType) is Public.
 	EipId pulumi.StringPtrInput `pulumi:"eipId"`
-	// 端口号。
+	// Port number.
 	Port pulumi.StringPtrInput `pulumi:"port"`
-	// 连接地址所对应的 IPv6 地址。
+	// IPv6 address corresponding to the connection address.
 	ViPv6 pulumi.StringPtrInput `pulumi:"viPv6"`
-	// 连接地址所对应的 IPv4 地址。
+	// The IPv4 address corresponding to the connection address.
 	Vip pulumi.StringPtrInput `pulumi:"vip"`
 }
 
@@ -700,32 +700,32 @@ func (o InstanceVisitAddrOutput) ToInstanceVisitAddrOutputWithContext(ctx contex
 	return o
 }
 
-// 连接地址类型，取值范围如下：Private：私网连接地址；Public：公网连接地址；DirectLink：直连地址。
+// Connection address type. Value options: Private: Private network connection address; Public: Public network connection address; DirectLink: Direct connection address.
 func (o InstanceVisitAddrOutput) AddrType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceVisitAddr) *string { return v.AddrType }).(pulumi.StringPtrOutput)
 }
 
-// IP 地址或者域名。
+// IP address or domain name.
 func (o InstanceVisitAddrOutput) Address() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceVisitAddr) *string { return v.Address }).(pulumi.StringPtrOutput)
 }
 
-// 实例公网地址所绑定的EIP ID。仅当连接地址类型（即AddrType）为Public公网连接地址时，返回该参数。
+// EIP ID bound to the instance's public address. This parameter is returned only when the connection address type (AddrType) is Public.
 func (o InstanceVisitAddrOutput) EipId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceVisitAddr) *string { return v.EipId }).(pulumi.StringPtrOutput)
 }
 
-// 端口号。
+// Port number.
 func (o InstanceVisitAddrOutput) Port() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceVisitAddr) *string { return v.Port }).(pulumi.StringPtrOutput)
 }
 
-// 连接地址所对应的 IPv6 地址。
+// IPv6 address corresponding to the connection address.
 func (o InstanceVisitAddrOutput) ViPv6() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceVisitAddr) *string { return v.ViPv6 }).(pulumi.StringPtrOutput)
 }
 
-// 连接地址所对应的 IPv4 地址。
+// The IPv4 address corresponding to the connection address.
 func (o InstanceVisitAddrOutput) Vip() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceVisitAddr) *string { return v.Vip }).(pulumi.StringPtrOutput)
 }
@@ -751,9 +751,9 @@ func (o InstanceVisitAddrArrayOutput) Index(i pulumi.IntInput) InstanceVisitAddr
 }
 
 type GetInstanceCapacity struct {
-	// 当前实例的内存总容量。单位：MiB。
+	// Total memory capacity of the current instance. Unit: MiB.
 	Total int `pulumi:"total"`
-	// 当前实例已用容量。单位：MiB。
+	// Used capacity of the current instance. Unit: MiB.
 	Used int `pulumi:"used"`
 }
 
@@ -769,9 +769,9 @@ type GetInstanceCapacityInput interface {
 }
 
 type GetInstanceCapacityArgs struct {
-	// 当前实例的内存总容量。单位：MiB。
+	// Total memory capacity of the current instance. Unit: MiB.
 	Total pulumi.IntInput `pulumi:"total"`
-	// 当前实例已用容量。单位：MiB。
+	// Used capacity of the current instance. Unit: MiB.
 	Used pulumi.IntInput `pulumi:"used"`
 }
 
@@ -801,18 +801,18 @@ func (o GetInstanceCapacityOutput) ToGetInstanceCapacityOutputWithContext(ctx co
 	return o
 }
 
-// 当前实例的内存总容量。单位：MiB。
+// Total memory capacity of the current instance. Unit: MiB.
 func (o GetInstanceCapacityOutput) Total() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceCapacity) int { return v.Total }).(pulumi.IntOutput)
 }
 
-// 当前实例已用容量。单位：MiB。
+// Used capacity of the current instance. Unit: MiB.
 func (o GetInstanceCapacityOutput) Used() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceCapacity) int { return v.Used }).(pulumi.IntOutput)
 }
 
 type GetInstanceConfigureNode struct {
-	// 每个节点所属的可用区。
+	// The availability zone each node belongs to.
 	Az string `pulumi:"az"`
 }
 
@@ -828,7 +828,7 @@ type GetInstanceConfigureNodeInput interface {
 }
 
 type GetInstanceConfigureNodeArgs struct {
-	// 每个节点所属的可用区。
+	// The availability zone each node belongs to.
 	Az pulumi.StringInput `pulumi:"az"`
 }
 
@@ -883,7 +883,7 @@ func (o GetInstanceConfigureNodeOutput) ToGetInstanceConfigureNodeOutputWithCont
 	return o
 }
 
-// 每个节点所属的可用区。
+// The availability zone each node belongs to.
 func (o GetInstanceConfigureNodeOutput) Az() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConfigureNode) string { return v.Az }).(pulumi.StringOutput)
 }
@@ -909,11 +909,11 @@ func (o GetInstanceConfigureNodeArrayOutput) Index(i pulumi.IntInput) GetInstanc
 }
 
 type GetInstanceInstanceShard struct {
-	// 分片中的节点数量
+	// Number of nodes in each shard
 	NodeNumber int `pulumi:"nodeNumber"`
-	// 分片中所有 Server 节点的详情列表。
+	// Detailed list of all Server nodes in the shard.
 	ServerNodes []GetInstanceInstanceShardServerNode `pulumi:"serverNodes"`
-	// 分片 ID。
+	// Shard ID.
 	ShardId string `pulumi:"shardId"`
 }
 
@@ -929,11 +929,11 @@ type GetInstanceInstanceShardInput interface {
 }
 
 type GetInstanceInstanceShardArgs struct {
-	// 分片中的节点数量
+	// Number of nodes in each shard
 	NodeNumber pulumi.IntInput `pulumi:"nodeNumber"`
-	// 分片中所有 Server 节点的详情列表。
+	// Detailed list of all Server nodes in the shard.
 	ServerNodes GetInstanceInstanceShardServerNodeArrayInput `pulumi:"serverNodes"`
-	// 分片 ID。
+	// Shard ID.
 	ShardId pulumi.StringInput `pulumi:"shardId"`
 }
 
@@ -988,17 +988,17 @@ func (o GetInstanceInstanceShardOutput) ToGetInstanceInstanceShardOutputWithCont
 	return o
 }
 
-// 分片中的节点数量
+// Number of nodes in each shard
 func (o GetInstanceInstanceShardOutput) NodeNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceInstanceShard) int { return v.NodeNumber }).(pulumi.IntOutput)
 }
 
-// 分片中所有 Server 节点的详情列表。
+// Detailed list of all Server nodes in the shard.
 func (o GetInstanceInstanceShardOutput) ServerNodes() GetInstanceInstanceShardServerNodeArrayOutput {
 	return o.ApplyT(func(v GetInstanceInstanceShard) []GetInstanceInstanceShardServerNode { return v.ServerNodes }).(GetInstanceInstanceShardServerNodeArrayOutput)
 }
 
-// 分片 ID。
+// Shard ID.
 func (o GetInstanceInstanceShardOutput) ShardId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceShard) string { return v.ShardId }).(pulumi.StringOutput)
 }
@@ -1024,13 +1024,13 @@ func (o GetInstanceInstanceShardArrayOutput) Index(i pulumi.IntInput) GetInstanc
 }
 
 type GetInstanceInstanceShardServerNode struct {
-	// 节点当前的角色。取值范围如下：PrimaryNode：主节点。SecondaryNode：从节点。
+	// Current role of the node. Valid values: PrimaryNode: primary node; SecondaryNode: secondary node.
 	CurrentRole string `pulumi:"currentRole"`
-	// 节点 ID。
+	// Node ID.
 	NodeId string `pulumi:"nodeId"`
-	// 节点状态。取值范围如下：deploy：启动中。running：运行中。loading：数据加载中。error：错误。
+	// Node status. Valid values: deploy: starting; running: running; loading: loading data; error: error.
 	Status string `pulumi:"status"`
-	// 节点所在的可用区。
+	// Availability zone where the node is located.
 	ZoneId string `pulumi:"zoneId"`
 }
 
@@ -1046,13 +1046,13 @@ type GetInstanceInstanceShardServerNodeInput interface {
 }
 
 type GetInstanceInstanceShardServerNodeArgs struct {
-	// 节点当前的角色。取值范围如下：PrimaryNode：主节点。SecondaryNode：从节点。
+	// Current role of the node. Valid values: PrimaryNode: primary node; SecondaryNode: secondary node.
 	CurrentRole pulumi.StringInput `pulumi:"currentRole"`
-	// 节点 ID。
+	// Node ID.
 	NodeId pulumi.StringInput `pulumi:"nodeId"`
-	// 节点状态。取值范围如下：deploy：启动中。running：运行中。loading：数据加载中。error：错误。
+	// Node status. Valid values: deploy: starting; running: running; loading: loading data; error: error.
 	Status pulumi.StringInput `pulumi:"status"`
-	// 节点所在的可用区。
+	// Availability zone where the node is located.
 	ZoneId pulumi.StringInput `pulumi:"zoneId"`
 }
 
@@ -1107,22 +1107,22 @@ func (o GetInstanceInstanceShardServerNodeOutput) ToGetInstanceInstanceShardServ
 	return o
 }
 
-// 节点当前的角色。取值范围如下：PrimaryNode：主节点。SecondaryNode：从节点。
+// Current role of the node. Valid values: PrimaryNode: primary node; SecondaryNode: secondary node.
 func (o GetInstanceInstanceShardServerNodeOutput) CurrentRole() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceShardServerNode) string { return v.CurrentRole }).(pulumi.StringOutput)
 }
 
-// 节点 ID。
+// Node ID.
 func (o GetInstanceInstanceShardServerNodeOutput) NodeId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceShardServerNode) string { return v.NodeId }).(pulumi.StringOutput)
 }
 
-// 节点状态。取值范围如下：deploy：启动中。running：运行中。loading：数据加载中。error：错误。
+// Node status. Valid values: deploy: starting; running: running; loading: loading data; error: error.
 func (o GetInstanceInstanceShardServerNodeOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceShardServerNode) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// 节点所在的可用区。
+// Availability zone where the node is located.
 func (o GetInstanceInstanceShardServerNodeOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceInstanceShardServerNode) string { return v.ZoneId }).(pulumi.StringOutput)
 }
@@ -1148,9 +1148,9 @@ func (o GetInstanceInstanceShardServerNodeArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetInstanceTag struct {
-	// 标签键。
+	// Tag key.
 	Key string `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value string `pulumi:"value"`
 }
 
@@ -1166,9 +1166,9 @@ type GetInstanceTagInput interface {
 }
 
 type GetInstanceTagArgs struct {
-	// 标签键。
+	// Tag key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// 标签值。
+	// Tag value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -1223,12 +1223,12 @@ func (o GetInstanceTagOutput) ToGetInstanceTagOutputWithContext(ctx context.Cont
 	return o
 }
 
-// 标签键。
+// Tag key.
 func (o GetInstanceTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 标签值。
+// Tag value.
 func (o GetInstanceTagOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceTag) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -1254,17 +1254,17 @@ func (o GetInstanceTagArrayOutput) Index(i pulumi.IntInput) GetInstanceTagOutput
 }
 
 type GetInstanceVisitAddr struct {
-	// 连接地址类型，取值范围如下：Private：私网连接地址；Public：公网连接地址；DirectLink：直连地址。
+	// Connection address type. Value options: Private: Private network connection address; Public: Public network connection address; DirectLink: Direct connection address.
 	AddrType string `pulumi:"addrType"`
-	// IP 地址或者域名。
+	// IP address or domain name.
 	Address string `pulumi:"address"`
-	// 实例公网地址所绑定的EIP ID。仅当连接地址类型（即AddrType）为Public公网连接地址时，返回该参数。
+	// EIP ID bound to the instance's public address. This parameter is returned only when the connection address type (AddrType) is Public.
 	EipId string `pulumi:"eipId"`
-	// 端口号。
+	// Port number.
 	Port string `pulumi:"port"`
-	// 连接地址所对应的 IPv6 地址。
+	// IPv6 address corresponding to the connection address.
 	ViPv6 string `pulumi:"viPv6"`
-	// 连接地址所对应的 IPv4 地址。
+	// The IPv4 address corresponding to the connection address.
 	Vip string `pulumi:"vip"`
 }
 
@@ -1280,17 +1280,17 @@ type GetInstanceVisitAddrInput interface {
 }
 
 type GetInstanceVisitAddrArgs struct {
-	// 连接地址类型，取值范围如下：Private：私网连接地址；Public：公网连接地址；DirectLink：直连地址。
+	// Connection address type. Value options: Private: Private network connection address; Public: Public network connection address; DirectLink: Direct connection address.
 	AddrType pulumi.StringInput `pulumi:"addrType"`
-	// IP 地址或者域名。
+	// IP address or domain name.
 	Address pulumi.StringInput `pulumi:"address"`
-	// 实例公网地址所绑定的EIP ID。仅当连接地址类型（即AddrType）为Public公网连接地址时，返回该参数。
+	// EIP ID bound to the instance's public address. This parameter is returned only when the connection address type (AddrType) is Public.
 	EipId pulumi.StringInput `pulumi:"eipId"`
-	// 端口号。
+	// Port number.
 	Port pulumi.StringInput `pulumi:"port"`
-	// 连接地址所对应的 IPv6 地址。
+	// IPv6 address corresponding to the connection address.
 	ViPv6 pulumi.StringInput `pulumi:"viPv6"`
-	// 连接地址所对应的 IPv4 地址。
+	// The IPv4 address corresponding to the connection address.
 	Vip pulumi.StringInput `pulumi:"vip"`
 }
 
@@ -1345,32 +1345,32 @@ func (o GetInstanceVisitAddrOutput) ToGetInstanceVisitAddrOutputWithContext(ctx 
 	return o
 }
 
-// 连接地址类型，取值范围如下：Private：私网连接地址；Public：公网连接地址；DirectLink：直连地址。
+// Connection address type. Value options: Private: Private network connection address; Public: Public network connection address; DirectLink: Direct connection address.
 func (o GetInstanceVisitAddrOutput) AddrType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceVisitAddr) string { return v.AddrType }).(pulumi.StringOutput)
 }
 
-// IP 地址或者域名。
+// IP address or domain name.
 func (o GetInstanceVisitAddrOutput) Address() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceVisitAddr) string { return v.Address }).(pulumi.StringOutput)
 }
 
-// 实例公网地址所绑定的EIP ID。仅当连接地址类型（即AddrType）为Public公网连接地址时，返回该参数。
+// EIP ID bound to the instance's public address. This parameter is returned only when the connection address type (AddrType) is Public.
 func (o GetInstanceVisitAddrOutput) EipId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceVisitAddr) string { return v.EipId }).(pulumi.StringOutput)
 }
 
-// 端口号。
+// Port number.
 func (o GetInstanceVisitAddrOutput) Port() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceVisitAddr) string { return v.Port }).(pulumi.StringOutput)
 }
 
-// 连接地址所对应的 IPv6 地址。
+// IPv6 address corresponding to the connection address.
 func (o GetInstanceVisitAddrOutput) ViPv6() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceVisitAddr) string { return v.ViPv6 }).(pulumi.StringOutput)
 }
 
-// 连接地址所对应的 IPv4 地址。
+// The IPv4 address corresponding to the connection address.
 func (o GetInstanceVisitAddrOutput) Vip() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceVisitAddr) string { return v.Vip }).(pulumi.StringOutput)
 }

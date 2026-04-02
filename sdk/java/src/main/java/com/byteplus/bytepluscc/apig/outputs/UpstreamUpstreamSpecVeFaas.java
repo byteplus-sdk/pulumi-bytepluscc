@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UpstreamUpstreamSpecVeFaas {
     /**
-     * @return 函数ID。
+     * @return Function ID
      * 
      */
     private @Nullable String functionId;
 
     private UpstreamUpstreamSpecVeFaas() {}
     /**
-     * @return 函数ID。
+     * @return Function ID
      * 
      */
     public Optional<String> functionId() {

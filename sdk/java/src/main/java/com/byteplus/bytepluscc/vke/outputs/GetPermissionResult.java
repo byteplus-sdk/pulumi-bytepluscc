@@ -13,42 +13,42 @@ import java.util.Objects;
 @CustomType
 public final class GetPermissionResult {
     /**
-     * @return RBAC 权限策略资源被授权的时间。
+     * @return Time when the RBAC policy resource was authorized.
      * 
      */
     private String authorizedAt;
     /**
-     * @return 授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+     * @return Grantor ID. Can be an IAM user ID or an IAM role ID.
      * 
      */
     private Integer authorizerId;
     /**
-     * @return 授权者名称
+     * @return Grantor name
      * 
      */
     private String authorizerName;
     /**
-     * @return 授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+     * @return Type of grantor. Possible values: User: IAM user. Role: IAM role. Account: account.
      * 
      */
     private String authorizerType;
     /**
-     * @return 需要授权给 IAM 用户或角色的集群 ID。roleDomain为namespace或cluster时必须填写该参数值。
+     * @return Cluster ID to be authorized for the IAM user or role. This parameter is required when roleDomain is namespace or cluster.
      * 
      */
     private String clusterId;
     /**
-     * @return RBAC 权限策略资源创建的时间。
+     * @return Time when the RBAC policy resource was created.
      * 
      */
     private String createdTime;
     /**
-     * @return 被授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+     * @return Grantee ID. Can be an IAM user ID or an IAM role ID.
      * 
      */
     private Integer granteeId;
     /**
-     * @return 被授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+     * @return Type of grantee. Possible values: User: IAM user. Role: IAM role. Account: account.
      * 
      */
     private String granteeType;
@@ -58,108 +58,108 @@ public final class GetPermissionResult {
      */
     private String id;
     /**
-     * @return 给被授权者授予的 RBAC 角色是否为自定义角色，取值如下：true：自定义角色。false：（默认值）系统预置的角色。
+     * @return Whether the RBAC role granted to the grantee is a custom role. Possible values: true: custom role. false (default): system predefined role.
      * 
      */
     private Boolean isCustomRole;
     /**
-     * @return RBAC 权限策略资源在 Kubernetes 中的对象名称。
+     * @return The object name of the RBAC policy resource in Kubernetes.
      * 
      */
     private String kubeRoleBindingName;
     /**
-     * @return 授权详细消息。
+     * @return Authorization details message.
      * 
      */
     private String message;
     /**
-     * @return 需要授权给 IAM 用户或角色的名空间名称。roleDomain等于namespace时必须填写该参数值。roleDomain不等于namespace时，填写该参数值不生效。
+     * @return Namespace name to be authorized for the IAM user or role. This parameter is required when roleDomain equals namespace. If roleDomain does not equal namespace, this parameter is not effective.
      * 
      */
     private String namespace;
     /**
-     * @return RBAC 权限策略资源 ID。
+     * @return RBAC policy resource ID.
      * 
      */
     private String permissionId;
     /**
-     * @return 项目选择器
+     * @return Project selector
      * 
      */
     private String projectSelector;
     /**
-     * @return 撤销授权的时间。
+     * @return Time when authorization is revoked.
      * 
      */
     private String revokedAt;
     /**
-     * @return 为 IAM 用户或角色授予的权限类型，取值如下：namespace：授予命名空间级别的权限。cluster：授予集群级别的权限。all_clusters：授予当前账号下全部集群级别的权限。
+     * @return The permission type granted to an IAM user or role. Possible values: namespace: grants permissions at the namespace level. cluster: grants permissions at the cluster level. all_clusters: grants permissions at the cluster level for all clusters under the current account.
      * 
      */
     private String roleDomain;
     /**
-     * @return 给被授权者授予的 RBAC 角色名称。目前必须填写该参数。当roleDomain为all_clusters时，不可以自定义角色名称。
+     * @return Name of the RBAC role granted to the grantee. This parameter must be specified. When roleDomain is all_clusters, custom role names are not allowed.
      * 
      */
     private String roleName;
     /**
-     * @return RBAC 权限访问策略资源的状态，取值如下：Success：授权成功。Failed：授权失败。Pending：授权中。PartialSuccess：部分授权成功。
+     * @return Status of the RBAC access policy resource. Possible values: Success: authorization succeeded. Failed: authorization failed. Pending: authorization in progress. PartialSuccess: partial authorization succeeded.
      * 
      */
     private String status;
 
     private GetPermissionResult() {}
     /**
-     * @return RBAC 权限策略资源被授权的时间。
+     * @return Time when the RBAC policy resource was authorized.
      * 
      */
     public String authorizedAt() {
         return this.authorizedAt;
     }
     /**
-     * @return 授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+     * @return Grantor ID. Can be an IAM user ID or an IAM role ID.
      * 
      */
     public Integer authorizerId() {
         return this.authorizerId;
     }
     /**
-     * @return 授权者名称
+     * @return Grantor name
      * 
      */
     public String authorizerName() {
         return this.authorizerName;
     }
     /**
-     * @return 授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+     * @return Type of grantor. Possible values: User: IAM user. Role: IAM role. Account: account.
      * 
      */
     public String authorizerType() {
         return this.authorizerType;
     }
     /**
-     * @return 需要授权给 IAM 用户或角色的集群 ID。roleDomain为namespace或cluster时必须填写该参数值。
+     * @return Cluster ID to be authorized for the IAM user or role. This parameter is required when roleDomain is namespace or cluster.
      * 
      */
     public String clusterId() {
         return this.clusterId;
     }
     /**
-     * @return RBAC 权限策略资源创建的时间。
+     * @return Time when the RBAC policy resource was created.
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 被授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+     * @return Grantee ID. Can be an IAM user ID or an IAM role ID.
      * 
      */
     public Integer granteeId() {
         return this.granteeId;
     }
     /**
-     * @return 被授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+     * @return Type of grantee. Possible values: User: IAM user. Role: IAM role. Account: account.
      * 
      */
     public String granteeType() {
@@ -173,70 +173,70 @@ public final class GetPermissionResult {
         return this.id;
     }
     /**
-     * @return 给被授权者授予的 RBAC 角色是否为自定义角色，取值如下：true：自定义角色。false：（默认值）系统预置的角色。
+     * @return Whether the RBAC role granted to the grantee is a custom role. Possible values: true: custom role. false (default): system predefined role.
      * 
      */
     public Boolean isCustomRole() {
         return this.isCustomRole;
     }
     /**
-     * @return RBAC 权限策略资源在 Kubernetes 中的对象名称。
+     * @return The object name of the RBAC policy resource in Kubernetes.
      * 
      */
     public String kubeRoleBindingName() {
         return this.kubeRoleBindingName;
     }
     /**
-     * @return 授权详细消息。
+     * @return Authorization details message.
      * 
      */
     public String message() {
         return this.message;
     }
     /**
-     * @return 需要授权给 IAM 用户或角色的名空间名称。roleDomain等于namespace时必须填写该参数值。roleDomain不等于namespace时，填写该参数值不生效。
+     * @return Namespace name to be authorized for the IAM user or role. This parameter is required when roleDomain equals namespace. If roleDomain does not equal namespace, this parameter is not effective.
      * 
      */
     public String namespace() {
         return this.namespace;
     }
     /**
-     * @return RBAC 权限策略资源 ID。
+     * @return RBAC policy resource ID.
      * 
      */
     public String permissionId() {
         return this.permissionId;
     }
     /**
-     * @return 项目选择器
+     * @return Project selector
      * 
      */
     public String projectSelector() {
         return this.projectSelector;
     }
     /**
-     * @return 撤销授权的时间。
+     * @return Time when authorization is revoked.
      * 
      */
     public String revokedAt() {
         return this.revokedAt;
     }
     /**
-     * @return 为 IAM 用户或角色授予的权限类型，取值如下：namespace：授予命名空间级别的权限。cluster：授予集群级别的权限。all_clusters：授予当前账号下全部集群级别的权限。
+     * @return The permission type granted to an IAM user or role. Possible values: namespace: grants permissions at the namespace level. cluster: grants permissions at the cluster level. all_clusters: grants permissions at the cluster level for all clusters under the current account.
      * 
      */
     public String roleDomain() {
         return this.roleDomain;
     }
     /**
-     * @return 给被授权者授予的 RBAC 角色名称。目前必须填写该参数。当roleDomain为all_clusters时，不可以自定义角色名称。
+     * @return Name of the RBAC role granted to the grantee. This parameter must be specified. When roleDomain is all_clusters, custom role names are not allowed.
      * 
      */
     public String roleName() {
         return this.roleName;
     }
     /**
-     * @return RBAC 权限访问策略资源的状态，取值如下：Success：授权成功。Failed：授权失败。Pending：授权中。PartialSuccess：部分授权成功。
+     * @return Status of the RBAC access policy resource. Possible values: Success: authorization succeeded. Failed: authorization failed. Pending: authorization in progress. PartialSuccess: partial authorization succeeded.
      * 
      */
     public String status() {

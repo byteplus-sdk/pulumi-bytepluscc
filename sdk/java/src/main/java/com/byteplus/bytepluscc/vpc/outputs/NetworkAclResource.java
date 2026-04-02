@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NetworkAclResource {
     /**
-     * @return 关联资源的ID。
+     * @return Associated resource ID.
      * 
      */
     private @Nullable String resourceId;
 
     private NetworkAclResource() {}
     /**
-     * @return 关联资源的ID。
+     * @return Associated resource ID.
      * 
      */
     public Optional<String> resourceId() {

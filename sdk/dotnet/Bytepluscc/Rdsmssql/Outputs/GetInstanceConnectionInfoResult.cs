@@ -15,23 +15,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql.Outputs
     public sealed class GetInstanceConnectionInfoResult
     {
         /// <summary>
-        /// 地址列表。
+        /// Address list.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceConnectionInfoAddressResult> Addresses;
         /// <summary>
-        /// 描述信息。
+        /// Description.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// 终端 ID。
+        /// Terminal ID.
         /// </summary>
         public readonly string EndpointId;
         /// <summary>
-        /// 终端名称。
+        /// Terminal name.
         /// </summary>
         public readonly string EndpointName;
         /// <summary>
-        /// 终端类型。取值如下：Primary：表示主节点终端。ROCluster：表示只读集群终端。RO：表示只读节点终端。
+        /// Terminal type. Possible values: Primary: primary node terminal. ROCluster: read-only cluster terminal. RO: read-only node terminal.
         /// </summary>
         public readonly string EndpointType;
 

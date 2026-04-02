@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceCapacity {
     /**
-     * @return 当前实例的内存总容量。单位：MiB。
+     * @return Total memory capacity of the current instance. Unit: MiB.
      * 
      */
     private @Nullable Integer total;
     /**
-     * @return 当前实例已用容量。单位：MiB。
+     * @return Used capacity of the current instance. Unit: MiB.
      * 
      */
     private @Nullable Integer used;
 
     private InstanceCapacity() {}
     /**
-     * @return 当前实例的内存总容量。单位：MiB。
+     * @return Total memory capacity of the current instance. Unit: MiB.
      * 
      */
     public Optional<Integer> total() {
         return Optional.ofNullable(this.total);
     }
     /**
-     * @return 当前实例已用容量。单位：MiB。
+     * @return Used capacity of the current instance. Unit: MiB.
      * 
      */
     public Optional<Integer> used() {

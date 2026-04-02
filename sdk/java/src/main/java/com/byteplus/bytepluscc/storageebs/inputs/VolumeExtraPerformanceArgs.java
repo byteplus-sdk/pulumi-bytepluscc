@@ -17,14 +17,14 @@ public final class VolumeExtraPerformanceArgs extends com.pulumi.resources.Resou
     public static final VolumeExtraPerformanceArgs Empty = new VolumeExtraPerformanceArgs();
 
     /**
-     * 额外性能的类型，取值如下：Balance：均衡型额外性能；IOPS：IOPS型额外性能；Throughput：吞吐量型额外性能。
+     * Type of extra performance. Value description: Balance: Balanced extra performance; IOPS: IOPS extra performance; Throughput: Throughput extra performance.
      * 
      */
     @Import(name="extraPerformanceTypeId")
     private @Nullable Output<String> extraPerformanceTypeId;
 
     /**
-     * @return 额外性能的类型，取值如下：Balance：均衡型额外性能；IOPS：IOPS型额外性能；Throughput：吞吐量型额外性能。
+     * @return Type of extra performance. Value description: Balance: Balanced extra performance; IOPS: IOPS extra performance; Throughput: Throughput extra performance.
      * 
      */
     public Optional<Output<String>> extraPerformanceTypeId() {
@@ -32,14 +32,14 @@ public final class VolumeExtraPerformanceArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 云盘的额外IOPS。
+     * Extra IOPS of the disk.
      * 
      */
     @Import(name="iops")
     private @Nullable Output<Double> iops;
 
     /**
-     * @return 云盘的额外IOPS。
+     * @return Extra IOPS of the disk.
      * 
      */
     public Optional<Output<Double>> iops() {
@@ -47,14 +47,14 @@ public final class VolumeExtraPerformanceArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 云盘的额外吞吐量。
+     * Extra throughput of the disk.
      * 
      */
     @Import(name="throughput")
     private @Nullable Output<Double> throughput;
 
     /**
-     * @return 云盘的额外吞吐量。
+     * @return Extra throughput of the disk.
      * 
      */
     public Optional<Output<Double>> throughput() {
@@ -88,7 +88,7 @@ public final class VolumeExtraPerformanceArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param extraPerformanceTypeId 额外性能的类型，取值如下：Balance：均衡型额外性能；IOPS：IOPS型额外性能；Throughput：吞吐量型额外性能。
+         * @param extraPerformanceTypeId Type of extra performance. Value description: Balance: Balanced extra performance; IOPS: IOPS extra performance; Throughput: Throughput extra performance.
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class VolumeExtraPerformanceArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param extraPerformanceTypeId 额外性能的类型，取值如下：Balance：均衡型额外性能；IOPS：IOPS型额外性能；Throughput：吞吐量型额外性能。
+         * @param extraPerformanceTypeId Type of extra performance. Value description: Balance: Balanced extra performance; IOPS: IOPS extra performance; Throughput: Throughput extra performance.
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class VolumeExtraPerformanceArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param iops 云盘的额外IOPS。
+         * @param iops Extra IOPS of the disk.
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class VolumeExtraPerformanceArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param iops 云盘的额外IOPS。
+         * @param iops Extra IOPS of the disk.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class VolumeExtraPerformanceArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param throughput 云盘的额外吞吐量。
+         * @param throughput Extra throughput of the disk.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class VolumeExtraPerformanceArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param throughput 云盘的额外吞吐量。
+         * @param throughput Extra throughput of the disk.
          * 
          * @return builder
          * 

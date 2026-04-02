@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetKeyTag {
     /**
-     * @return KMS密钥的标签键
+     * @return KMS key label key.
      * 
      */
     private String key;
     /**
-     * @return KMS密钥的标签值
+     * @return KMS key label value.
      * 
      */
     private String value;
 
     private GetKeyTag() {}
     /**
-     * @return KMS密钥的标签键
+     * @return KMS key label key.
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return KMS密钥的标签值
+     * @return KMS key label value.
      * 
      */
     public String value() {

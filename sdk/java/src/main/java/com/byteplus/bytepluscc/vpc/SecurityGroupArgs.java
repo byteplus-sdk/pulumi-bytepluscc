@@ -21,14 +21,14 @@ public final class SecurityGroupArgs extends com.pulumi.resources.ResourceArgs {
     public static final SecurityGroupArgs Empty = new SecurityGroupArgs();
 
     /**
-     * 安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
+     * Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
+     * @return Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
      * 
      */
     public Optional<Output<String>> description() {
@@ -50,14 +50,14 @@ public final class SecurityGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 安全组所属项目名称。不填默认项目为default。
+     * Project name to which the security group belongs. Default project is &#39;default&#39; if not specified
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 安全组所属项目名称。不填默认项目为default。
+     * @return Project name to which the security group belongs. Default project is &#39;default&#39; if not specified
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -65,14 +65,14 @@ public final class SecurityGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
+     * Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
      * 
      */
     @Import(name="securityGroupName")
     private @Nullable Output<String> securityGroupName;
 
     /**
-     * @return 安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
+     * @return Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
      * 
      */
     public Optional<Output<String>> securityGroupName() {
@@ -87,14 +87,14 @@ public final class SecurityGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 安全组所属的VPC ID。
+     * VPC ID to which the security group belongs
      * 
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
-     * @return 安全组所属的VPC ID。
+     * @return VPC ID to which the security group belongs
      * 
      */
     public Output<String> vpcId() {
@@ -132,7 +132,7 @@ public final class SecurityGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
+         * @param description Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
          * 
          * @return builder
          * 
@@ -143,7 +143,7 @@ public final class SecurityGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 安全组的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。不填默认空字符串。
+         * @param description Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class SecurityGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 安全组所属项目名称。不填默认项目为default。
+         * @param projectName Project name to which the security group belongs. Default project is &#39;default&#39; if not specified
          * 
          * @return builder
          * 
@@ -190,7 +190,7 @@ public final class SecurityGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 安全组所属项目名称。不填默认项目为default。
+         * @param projectName Project name to which the security group belongs. Default project is &#39;default&#39; if not specified
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class SecurityGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityGroupName 安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
+         * @param securityGroupName Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
          * 
          * @return builder
          * 
@@ -211,7 +211,7 @@ public final class SecurityGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityGroupName 安全组的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。不填默认是安全组的ID。
+         * @param securityGroupName Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
          * 
          * @return builder
          * 
@@ -234,7 +234,7 @@ public final class SecurityGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 安全组所属的VPC ID。
+         * @param vpcId VPC ID to which the security group belongs
          * 
          * @return builder
          * 
@@ -245,7 +245,7 @@ public final class SecurityGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 安全组所属的VPC ID。
+         * @param vpcId VPC ID to which the security group belongs
          * 
          * @return builder
          * 

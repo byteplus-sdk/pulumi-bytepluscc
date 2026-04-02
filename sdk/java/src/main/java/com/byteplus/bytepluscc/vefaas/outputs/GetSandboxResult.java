@@ -18,42 +18,42 @@ import java.util.Objects;
 @CustomType
 public final class GetSandboxResult {
     /**
-     * @return 沙箱实例所在可用区 ID。
+     * @return Availability zone ID of the sandbox instance
      * 
      */
     private String availabilityZone;
     /**
-     * @return 沙箱实例 CPU 规格：单位：milli cpu取值范围：250~16000,默认值：1000。
+     * @return Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
      * 
      */
     private Integer cpuMilli;
     /**
-     * @return 沙箱实例创建时间。
+     * @return Sandbox instance creation time.
      * 
      */
     private String createdTime;
     /**
-     * @return 沙箱实例环境变量。
+     * @return Sandbox instance environment variables
      * 
      */
     private List<GetSandboxEnv> envs;
     /**
-     * @return 沙箱实例启动失败错误码。参数值说明：internal*load*request*error：系统内部错误，function*initialize*failed：业务进程初始化错误，function*health*check*failed：健康检查错误，route_terminating：路由删除中，正常启动沙箱实例时，该字段为空。
+     * @return Sandbox instance startup failure error code. Parameter description: internal*load*request*error: internal system error, function*initialize*failed: business process initialization error, function*health*check*failed: health check error, route_terminating: route deletion in progress. This field is empty when the sandbox instance starts normally
      * 
      */
     private String errorCode;
     /**
-     * @return 沙箱实例启动失败的错误码详情。正常启动沙箱实例时，该字段为空。
+     * @return Details of the error code when the sandbox instance fails to start. This field is empty when the sandbox instance starts normally.
      * 
      */
     private String errorMessage;
     /**
-     * @return 沙箱实例存活时长。
+     * @return Sandbox instance uptime.
      * 
      */
     private String expireAt;
     /**
-     * @return 沙箱实例所属的沙箱应用 ID。
+     * @return Sandbox application ID to which the sandbox instance belongs
      * 
      */
     private String functionId;
@@ -63,118 +63,118 @@ public final class GetSandboxResult {
      */
     private String id;
     /**
-     * @return 沙箱实例镜像信息，包括镜像地址、启动命令、监听端口。
+     * @return Sandbox instance image information, including image address, startup command, and listening port.
      * 
      */
     private GetSandboxInstanceImageInfo instanceImageInfo;
     /**
-     * @return 沙箱实例级别对象存储（TOS）存储挂载配置。
+     * @return Instance-level object storage (TOS) mount configuration for the sandbox instance
      * 
      */
     private GetSandboxInstanceTosMountConfig instanceTosMountConfig;
     /**
-     * @return 沙箱实例类型 。参数值说明：elastic：弹性实例，frozen：冻结实例，activated：激活实例，reserved：预留实例。
+     * @return Sandbox instance type. Parameter description: elastic: elastic instance, frozen: frozen instance, activated: activated instance, reserved: reserved instance
      * 
      */
     private String instanceType;
     /**
-     * @return 单实例请求最大并发数：取值范围：10~1000,默认值：100。
+     * @return Maximum concurrent requests per instance: range: 10~1000, default: 100
      * 
      */
     private Integer maxConcurrency;
     /**
-     * @return 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
+     * @return Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
      * 
      */
     private Integer memoryMb;
     /**
-     * @return 沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为&lt;&#34;key&#34;:&#34;value&#34;&gt;。
+     * @return Sandbox instance label metadata used to tag and filter instances. Format: &lt;&#34;key&#34;:&#34;value&#34;&gt;
      * 
      */
     private List<GetSandboxMetadata> metadatas;
     /**
-     * @return 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
+     * @return Whether the sandbox instance is in Pending status. Parameter description: true: yes, false: no
      * 
      */
     private Boolean pending;
     /**
-     * @return 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
+     * @return Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
      * 
      */
     private Integer requestTimeout;
     /**
-     * @return 函数实例版本编号。
+     * @return Function instance version number
      * 
      */
     private Integer revisionNumber;
     /**
-     * @return 沙箱实例 ID。
+     * @return Sandbox instance ID
      * 
      */
     private String sandboxId;
     /**
-     * @return 沙箱实例状态。 参数值说明：Starting：开始启动，Ready：启动完成，Failed：启动失败，Terminating：终止中。
+     * @return Sandbox instance status. Parameter description: Starting: starting, Ready: startup completed, Failed: startup failed, Terminating: terminating
      * 
      */
     private String status;
     /**
-     * @return 沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
+     * @return Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
      * 
      */
     private Integer timeout;
 
     private GetSandboxResult() {}
     /**
-     * @return 沙箱实例所在可用区 ID。
+     * @return Availability zone ID of the sandbox instance
      * 
      */
     public String availabilityZone() {
         return this.availabilityZone;
     }
     /**
-     * @return 沙箱实例 CPU 规格：单位：milli cpu取值范围：250~16000,默认值：1000。
+     * @return Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
      * 
      */
     public Integer cpuMilli() {
         return this.cpuMilli;
     }
     /**
-     * @return 沙箱实例创建时间。
+     * @return Sandbox instance creation time.
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 沙箱实例环境变量。
+     * @return Sandbox instance environment variables
      * 
      */
     public List<GetSandboxEnv> envs() {
         return this.envs;
     }
     /**
-     * @return 沙箱实例启动失败错误码。参数值说明：internal*load*request*error：系统内部错误，function*initialize*failed：业务进程初始化错误，function*health*check*failed：健康检查错误，route_terminating：路由删除中，正常启动沙箱实例时，该字段为空。
+     * @return Sandbox instance startup failure error code. Parameter description: internal*load*request*error: internal system error, function*initialize*failed: business process initialization error, function*health*check*failed: health check error, route_terminating: route deletion in progress. This field is empty when the sandbox instance starts normally
      * 
      */
     public String errorCode() {
         return this.errorCode;
     }
     /**
-     * @return 沙箱实例启动失败的错误码详情。正常启动沙箱实例时，该字段为空。
+     * @return Details of the error code when the sandbox instance fails to start. This field is empty when the sandbox instance starts normally.
      * 
      */
     public String errorMessage() {
         return this.errorMessage;
     }
     /**
-     * @return 沙箱实例存活时长。
+     * @return Sandbox instance uptime.
      * 
      */
     public String expireAt() {
         return this.expireAt;
     }
     /**
-     * @return 沙箱实例所属的沙箱应用 ID。
+     * @return Sandbox application ID to which the sandbox instance belongs
      * 
      */
     public String functionId() {
@@ -188,84 +188,84 @@ public final class GetSandboxResult {
         return this.id;
     }
     /**
-     * @return 沙箱实例镜像信息，包括镜像地址、启动命令、监听端口。
+     * @return Sandbox instance image information, including image address, startup command, and listening port.
      * 
      */
     public GetSandboxInstanceImageInfo instanceImageInfo() {
         return this.instanceImageInfo;
     }
     /**
-     * @return 沙箱实例级别对象存储（TOS）存储挂载配置。
+     * @return Instance-level object storage (TOS) mount configuration for the sandbox instance
      * 
      */
     public GetSandboxInstanceTosMountConfig instanceTosMountConfig() {
         return this.instanceTosMountConfig;
     }
     /**
-     * @return 沙箱实例类型 。参数值说明：elastic：弹性实例，frozen：冻结实例，activated：激活实例，reserved：预留实例。
+     * @return Sandbox instance type. Parameter description: elastic: elastic instance, frozen: frozen instance, activated: activated instance, reserved: reserved instance
      * 
      */
     public String instanceType() {
         return this.instanceType;
     }
     /**
-     * @return 单实例请求最大并发数：取值范围：10~1000,默认值：100。
+     * @return Maximum concurrent requests per instance: range: 10~1000, default: 100
      * 
      */
     public Integer maxConcurrency() {
         return this.maxConcurrency;
     }
     /**
-     * @return 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
+     * @return Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
      * 
      */
     public Integer memoryMb() {
         return this.memoryMb;
     }
     /**
-     * @return 沙箱实例标签（Label）元信息，用于标记、筛选实例。格式为&lt;&#34;key&#34;:&#34;value&#34;&gt;。
+     * @return Sandbox instance label metadata used to tag and filter instances. Format: &lt;&#34;key&#34;:&#34;value&#34;&gt;
      * 
      */
     public List<GetSandboxMetadata> metadatas() {
         return this.metadatas;
     }
     /**
-     * @return 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
+     * @return Whether the sandbox instance is in Pending status. Parameter description: true: yes, false: no
      * 
      */
     public Boolean pending() {
         return this.pending;
     }
     /**
-     * @return 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
+     * @return Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
      * 
      */
     public Integer requestTimeout() {
         return this.requestTimeout;
     }
     /**
-     * @return 函数实例版本编号。
+     * @return Function instance version number
      * 
      */
     public Integer revisionNumber() {
         return this.revisionNumber;
     }
     /**
-     * @return 沙箱实例 ID。
+     * @return Sandbox instance ID
      * 
      */
     public String sandboxId() {
         return this.sandboxId;
     }
     /**
-     * @return 沙箱实例状态。 参数值说明：Starting：开始启动，Ready：启动完成，Failed：启动失败，Terminating：终止中。
+     * @return Sandbox instance status. Parameter description: Starting: starting, Ready: startup completed, Failed: startup failed, Terminating: terminating
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
+     * @return Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
      * 
      */
     public Integer timeout() {

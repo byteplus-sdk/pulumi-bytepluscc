@@ -18,14 +18,14 @@ public final class PermissionArgs extends com.pulumi.resources.ResourceArgs {
     public static final PermissionArgs Empty = new PermissionArgs();
 
     /**
-     * 授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+     * Grantor ID. Can be an IAM user ID or an IAM role ID.
      * 
      */
     @Import(name="authorizerId")
     private @Nullable Output<Integer> authorizerId;
 
     /**
-     * @return 授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+     * @return Grantor ID. Can be an IAM user ID or an IAM role ID.
      * 
      */
     public Optional<Output<Integer>> authorizerId() {
@@ -33,14 +33,14 @@ public final class PermissionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+     * Type of grantor. Possible values: User: IAM user. Role: IAM role. Account: account.
      * 
      */
     @Import(name="authorizerType")
     private @Nullable Output<String> authorizerType;
 
     /**
-     * @return 授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+     * @return Type of grantor. Possible values: User: IAM user. Role: IAM role. Account: account.
      * 
      */
     public Optional<Output<String>> authorizerType() {
@@ -48,14 +48,14 @@ public final class PermissionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 需要授权给 IAM 用户或角色的集群 ID。roleDomain为namespace或cluster时必须填写该参数值。
+     * Cluster ID to be authorized for the IAM user or role. This parameter is required when roleDomain is namespace or cluster.
      * 
      */
     @Import(name="clusterId")
     private @Nullable Output<String> clusterId;
 
     /**
-     * @return 需要授权给 IAM 用户或角色的集群 ID。roleDomain为namespace或cluster时必须填写该参数值。
+     * @return Cluster ID to be authorized for the IAM user or role. This parameter is required when roleDomain is namespace or cluster.
      * 
      */
     public Optional<Output<String>> clusterId() {
@@ -63,14 +63,14 @@ public final class PermissionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 被授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+     * Grantee ID. Can be an IAM user ID or an IAM role ID.
      * 
      */
     @Import(name="granteeId")
     private @Nullable Output<Integer> granteeId;
 
     /**
-     * @return 被授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+     * @return Grantee ID. Can be an IAM user ID or an IAM role ID.
      * 
      */
     public Optional<Output<Integer>> granteeId() {
@@ -78,14 +78,14 @@ public final class PermissionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 被授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+     * Type of grantee. Possible values: User: IAM user. Role: IAM role. Account: account.
      * 
      */
     @Import(name="granteeType")
     private @Nullable Output<String> granteeType;
 
     /**
-     * @return 被授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+     * @return Type of grantee. Possible values: User: IAM user. Role: IAM role. Account: account.
      * 
      */
     public Optional<Output<String>> granteeType() {
@@ -93,14 +93,14 @@ public final class PermissionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 给被授权者授予的 RBAC 角色是否为自定义角色，取值如下：true：自定义角色。false：（默认值）系统预置的角色。
+     * Whether the RBAC role granted to the grantee is a custom role. Possible values: true: custom role. false (default): system predefined role.
      * 
      */
     @Import(name="isCustomRole")
     private @Nullable Output<Boolean> isCustomRole;
 
     /**
-     * @return 给被授权者授予的 RBAC 角色是否为自定义角色，取值如下：true：自定义角色。false：（默认值）系统预置的角色。
+     * @return Whether the RBAC role granted to the grantee is a custom role. Possible values: true: custom role. false (default): system predefined role.
      * 
      */
     public Optional<Output<Boolean>> isCustomRole() {
@@ -108,14 +108,14 @@ public final class PermissionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 需要授权给 IAM 用户或角色的名空间名称。roleDomain等于namespace时必须填写该参数值。roleDomain不等于namespace时，填写该参数值不生效。
+     * Namespace name to be authorized for the IAM user or role. This parameter is required when roleDomain equals namespace. If roleDomain does not equal namespace, this parameter is not effective.
      * 
      */
     @Import(name="namespace")
     private @Nullable Output<String> namespace;
 
     /**
-     * @return 需要授权给 IAM 用户或角色的名空间名称。roleDomain等于namespace时必须填写该参数值。roleDomain不等于namespace时，填写该参数值不生效。
+     * @return Namespace name to be authorized for the IAM user or role. This parameter is required when roleDomain equals namespace. If roleDomain does not equal namespace, this parameter is not effective.
      * 
      */
     public Optional<Output<String>> namespace() {
@@ -123,14 +123,14 @@ public final class PermissionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 为 IAM 用户或角色授予的权限类型，取值如下：namespace：授予命名空间级别的权限。cluster：授予集群级别的权限。all_clusters：授予当前账号下全部集群级别的权限。
+     * The permission type granted to an IAM user or role. Possible values: namespace: grants permissions at the namespace level. cluster: grants permissions at the cluster level. all_clusters: grants permissions at the cluster level for all clusters under the current account.
      * 
      */
     @Import(name="roleDomain")
     private @Nullable Output<String> roleDomain;
 
     /**
-     * @return 为 IAM 用户或角色授予的权限类型，取值如下：namespace：授予命名空间级别的权限。cluster：授予集群级别的权限。all_clusters：授予当前账号下全部集群级别的权限。
+     * @return The permission type granted to an IAM user or role. Possible values: namespace: grants permissions at the namespace level. cluster: grants permissions at the cluster level. all_clusters: grants permissions at the cluster level for all clusters under the current account.
      * 
      */
     public Optional<Output<String>> roleDomain() {
@@ -138,14 +138,14 @@ public final class PermissionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 给被授权者授予的 RBAC 角色名称。目前必须填写该参数。当roleDomain为all_clusters时，不可以自定义角色名称。
+     * Name of the RBAC role granted to the grantee. This parameter must be specified. When roleDomain is all_clusters, custom role names are not allowed.
      * 
      */
     @Import(name="roleName")
     private @Nullable Output<String> roleName;
 
     /**
-     * @return 给被授权者授予的 RBAC 角色名称。目前必须填写该参数。当roleDomain为all_clusters时，不可以自定义角色名称。
+     * @return Name of the RBAC role granted to the grantee. This parameter must be specified. When roleDomain is all_clusters, custom role names are not allowed.
      * 
      */
     public Optional<Output<String>> roleName() {
@@ -185,7 +185,7 @@ public final class PermissionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param authorizerId 授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+         * @param authorizerId Grantor ID. Can be an IAM user ID or an IAM role ID.
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class PermissionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param authorizerId 授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+         * @param authorizerId Grantor ID. Can be an IAM user ID or an IAM role ID.
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class PermissionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param authorizerType 授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+         * @param authorizerType Type of grantor. Possible values: User: IAM user. Role: IAM role. Account: account.
          * 
          * @return builder
          * 
@@ -217,7 +217,7 @@ public final class PermissionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param authorizerType 授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+         * @param authorizerType Type of grantor. Possible values: User: IAM user. Role: IAM role. Account: account.
          * 
          * @return builder
          * 
@@ -227,7 +227,7 @@ public final class PermissionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterId 需要授权给 IAM 用户或角色的集群 ID。roleDomain为namespace或cluster时必须填写该参数值。
+         * @param clusterId Cluster ID to be authorized for the IAM user or role. This parameter is required when roleDomain is namespace or cluster.
          * 
          * @return builder
          * 
@@ -238,7 +238,7 @@ public final class PermissionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterId 需要授权给 IAM 用户或角色的集群 ID。roleDomain为namespace或cluster时必须填写该参数值。
+         * @param clusterId Cluster ID to be authorized for the IAM user or role. This parameter is required when roleDomain is namespace or cluster.
          * 
          * @return builder
          * 
@@ -248,7 +248,7 @@ public final class PermissionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param granteeId 被授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+         * @param granteeId Grantee ID. Can be an IAM user ID or an IAM role ID.
          * 
          * @return builder
          * 
@@ -259,7 +259,7 @@ public final class PermissionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param granteeId 被授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+         * @param granteeId Grantee ID. Can be an IAM user ID or an IAM role ID.
          * 
          * @return builder
          * 
@@ -269,7 +269,7 @@ public final class PermissionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param granteeType 被授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+         * @param granteeType Type of grantee. Possible values: User: IAM user. Role: IAM role. Account: account.
          * 
          * @return builder
          * 
@@ -280,7 +280,7 @@ public final class PermissionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param granteeType 被授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+         * @param granteeType Type of grantee. Possible values: User: IAM user. Role: IAM role. Account: account.
          * 
          * @return builder
          * 
@@ -290,7 +290,7 @@ public final class PermissionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isCustomRole 给被授权者授予的 RBAC 角色是否为自定义角色，取值如下：true：自定义角色。false：（默认值）系统预置的角色。
+         * @param isCustomRole Whether the RBAC role granted to the grantee is a custom role. Possible values: true: custom role. false (default): system predefined role.
          * 
          * @return builder
          * 
@@ -301,7 +301,7 @@ public final class PermissionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isCustomRole 给被授权者授予的 RBAC 角色是否为自定义角色，取值如下：true：自定义角色。false：（默认值）系统预置的角色。
+         * @param isCustomRole Whether the RBAC role granted to the grantee is a custom role. Possible values: true: custom role. false (default): system predefined role.
          * 
          * @return builder
          * 
@@ -311,7 +311,7 @@ public final class PermissionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param namespace 需要授权给 IAM 用户或角色的名空间名称。roleDomain等于namespace时必须填写该参数值。roleDomain不等于namespace时，填写该参数值不生效。
+         * @param namespace Namespace name to be authorized for the IAM user or role. This parameter is required when roleDomain equals namespace. If roleDomain does not equal namespace, this parameter is not effective.
          * 
          * @return builder
          * 
@@ -322,7 +322,7 @@ public final class PermissionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param namespace 需要授权给 IAM 用户或角色的名空间名称。roleDomain等于namespace时必须填写该参数值。roleDomain不等于namespace时，填写该参数值不生效。
+         * @param namespace Namespace name to be authorized for the IAM user or role. This parameter is required when roleDomain equals namespace. If roleDomain does not equal namespace, this parameter is not effective.
          * 
          * @return builder
          * 
@@ -332,7 +332,7 @@ public final class PermissionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param roleDomain 为 IAM 用户或角色授予的权限类型，取值如下：namespace：授予命名空间级别的权限。cluster：授予集群级别的权限。all_clusters：授予当前账号下全部集群级别的权限。
+         * @param roleDomain The permission type granted to an IAM user or role. Possible values: namespace: grants permissions at the namespace level. cluster: grants permissions at the cluster level. all_clusters: grants permissions at the cluster level for all clusters under the current account.
          * 
          * @return builder
          * 
@@ -343,7 +343,7 @@ public final class PermissionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param roleDomain 为 IAM 用户或角色授予的权限类型，取值如下：namespace：授予命名空间级别的权限。cluster：授予集群级别的权限。all_clusters：授予当前账号下全部集群级别的权限。
+         * @param roleDomain The permission type granted to an IAM user or role. Possible values: namespace: grants permissions at the namespace level. cluster: grants permissions at the cluster level. all_clusters: grants permissions at the cluster level for all clusters under the current account.
          * 
          * @return builder
          * 
@@ -353,7 +353,7 @@ public final class PermissionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param roleName 给被授权者授予的 RBAC 角色名称。目前必须填写该参数。当roleDomain为all_clusters时，不可以自定义角色名称。
+         * @param roleName Name of the RBAC role granted to the grantee. This parameter must be specified. When roleDomain is all_clusters, custom role names are not allowed.
          * 
          * @return builder
          * 
@@ -364,7 +364,7 @@ public final class PermissionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param roleName 给被授权者授予的 RBAC 角色名称。目前必须填写该参数。当roleDomain为all_clusters时，不可以自定义角色名称。
+         * @param roleName Name of the RBAC role granted to the grantee. This parameter must be specified. When roleDomain is all_clusters, custom role names are not allowed.
          * 
          * @return builder
          * 

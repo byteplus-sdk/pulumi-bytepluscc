@@ -31,15 +31,15 @@ export interface GetHpcClusterArgs {
  */
 export interface GetHpcClusterResult {
     /**
-     * 创建时间，格式满足RFC3339。
+     * Creation time, formatted according to RFC3339
      */
     readonly createdTime: string;
     /**
-     * 高性能计算集群描述，默认为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0～255之间。
+     * High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
      */
     readonly description: string;
     /**
-     * 高性能计算集群ID。
+     * High performance compute cluster ID
      */
     readonly hpcClusterId: string;
     /**
@@ -47,27 +47,27 @@ export interface GetHpcClusterResult {
      */
     readonly id: string;
     /**
-     * 高性能计算集群名称。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1～128之间。
+     * High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
      */
     readonly name: string;
     /**
-     * 项目名称。
+     * Project name
      */
     readonly projectName: string;
     /**
-     * 标签信息。
+     * Tag information
      */
     readonly tags: outputs.ecs.GetHpcClusterTag[];
     /**
-     * 更新时间，格式满足RFC3339。
+     * Update time, formatted according to RFC3339
      */
     readonly updatedTime: string;
     /**
-     * 私有网络ID。
+     * Private network ID
      */
     readonly vpcId: string;
     /**
-     * 高性能计算集群所属可用区ID。
+     * Availability zone ID of the high performance compute cluster
      */
     readonly zoneId: string;
 }

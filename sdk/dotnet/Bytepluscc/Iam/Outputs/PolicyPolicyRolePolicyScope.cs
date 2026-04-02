@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam.Outputs
     public sealed class PolicyPolicyRolePolicyScope
     {
         /// <summary>
-        /// 项目名。
+        /// Project name.
         /// </summary>
         public readonly string? ProjectName;
 

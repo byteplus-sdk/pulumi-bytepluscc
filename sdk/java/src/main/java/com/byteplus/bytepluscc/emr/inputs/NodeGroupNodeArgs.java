@@ -17,14 +17,14 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
     public static final NodeGroupNodeArgs Empty = new NodeGroupNodeArgs();
 
     /**
-     * 节点创建时间。
+     * Node creation time.
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<Integer> createdTime;
 
     /**
-     * @return 节点创建时间。
+     * @return Node creation time.
      * 
      */
     public Optional<Output<Integer>> createdTime() {
@@ -32,14 +32,14 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * ecs实例规格。
+     * ecs instance specification.
      * 
      */
     @Import(name="ecsInstanceType")
     private @Nullable Output<String> ecsInstanceType;
 
     /**
-     * @return ecs实例规格。
+     * @return ecs instance specification.
      * 
      */
     public Optional<Output<String>> ecsInstanceType() {
@@ -47,14 +47,14 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点FQDN。
+     * Node FQDN.
      * 
      */
     @Import(name="nodeFqdn")
     private @Nullable Output<String> nodeFqdn;
 
     /**
-     * @return 节点FQDN。
+     * @return Node FQDN.
      * 
      */
     public Optional<Output<String>> nodeFqdn() {
@@ -62,14 +62,14 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点ID。
+     * Node ID.
      * 
      */
     @Import(name="nodeId")
     private @Nullable Output<String> nodeId;
 
     /**
-     * @return 节点ID。
+     * @return Node ID.
      * 
      */
     public Optional<Output<String>> nodeId() {
@@ -77,14 +77,14 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点名称。
+     * Node name.
      * 
      */
     @Import(name="nodeName")
     private @Nullable Output<String> nodeName;
 
     /**
-     * @return 节点名称。
+     * @return Node name.
      * 
      */
     public Optional<Output<String>> nodeName() {
@@ -92,14 +92,14 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+     * Node status. UNKNOWN: Unknown. CREATING: Creating. RUNNING: Running. STOPPING: Stopping. STOPPED: Stopped. REBOOTING: Rebooting. DELETED: Deleted.
      * 
      */
     @Import(name="nodeState")
     private @Nullable Output<String> nodeState;
 
     /**
-     * @return 节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+     * @return Node status. UNKNOWN: Unknown. CREATING: Creating. RUNNING: Running. STOPPING: Stopping. STOPPED: Stopped. REBOOTING: Rebooting. DELETED: Deleted.
      * 
      */
     public Optional<Output<String>> nodeState() {
@@ -107,14 +107,14 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 私有IP。
+     * Private IP.
      * 
      */
     @Import(name="privateIp")
     private @Nullable Output<String> privateIp;
 
     /**
-     * @return 私有IP。
+     * @return Private IP.
      * 
      */
     public Optional<Output<String>> privateIp() {
@@ -122,14 +122,14 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 公网IP。
+     * Public IP.
      * 
      */
     @Import(name="publicIp")
     private @Nullable Output<String> publicIp;
 
     /**
-     * @return 公网IP。
+     * @return Public IP.
      * 
      */
     public Optional<Output<String>> publicIp() {
@@ -137,14 +137,14 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 准备完毕时间。
+     * Ready time.
      * 
      */
     @Import(name="readyTime")
     private @Nullable Output<Integer> readyTime;
 
     /**
-     * @return 准备完毕时间。
+     * @return Ready time.
      * 
      */
     public Optional<Output<Integer>> readyTime() {
@@ -152,14 +152,14 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 集群终止时间。
+     * Cluster termination time.
      * 
      */
     @Import(name="terminateTime")
     private @Nullable Output<Integer> terminateTime;
 
     /**
-     * @return 集群终止时间。
+     * @return Cluster termination time.
      * 
      */
     public Optional<Output<Integer>> terminateTime() {
@@ -200,7 +200,7 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 节点创建时间。
+         * @param createdTime Node creation time.
          * 
          * @return builder
          * 
@@ -211,7 +211,7 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 节点创建时间。
+         * @param createdTime Node creation time.
          * 
          * @return builder
          * 
@@ -221,7 +221,7 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ecsInstanceType ecs实例规格。
+         * @param ecsInstanceType ecs instance specification.
          * 
          * @return builder
          * 
@@ -232,7 +232,7 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ecsInstanceType ecs实例规格。
+         * @param ecsInstanceType ecs instance specification.
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeFqdn 节点FQDN。
+         * @param nodeFqdn Node FQDN.
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeFqdn 节点FQDN。
+         * @param nodeFqdn Node FQDN.
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeId 节点ID。
+         * @param nodeId Node ID.
          * 
          * @return builder
          * 
@@ -274,7 +274,7 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeId 节点ID。
+         * @param nodeId Node ID.
          * 
          * @return builder
          * 
@@ -284,7 +284,7 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeName 节点名称。
+         * @param nodeName Node name.
          * 
          * @return builder
          * 
@@ -295,7 +295,7 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeName 节点名称。
+         * @param nodeName Node name.
          * 
          * @return builder
          * 
@@ -305,7 +305,7 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeState 节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+         * @param nodeState Node status. UNKNOWN: Unknown. CREATING: Creating. RUNNING: Running. STOPPING: Stopping. STOPPED: Stopped. REBOOTING: Rebooting. DELETED: Deleted.
          * 
          * @return builder
          * 
@@ -316,7 +316,7 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeState 节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+         * @param nodeState Node status. UNKNOWN: Unknown. CREATING: Creating. RUNNING: Running. STOPPING: Stopping. STOPPED: Stopped. REBOOTING: Rebooting. DELETED: Deleted.
          * 
          * @return builder
          * 
@@ -326,7 +326,7 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param privateIp 私有IP。
+         * @param privateIp Private IP.
          * 
          * @return builder
          * 
@@ -337,7 +337,7 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param privateIp 私有IP。
+         * @param privateIp Private IP.
          * 
          * @return builder
          * 
@@ -347,7 +347,7 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param publicIp 公网IP。
+         * @param publicIp Public IP.
          * 
          * @return builder
          * 
@@ -358,7 +358,7 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param publicIp 公网IP。
+         * @param publicIp Public IP.
          * 
          * @return builder
          * 
@@ -368,7 +368,7 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param readyTime 准备完毕时间。
+         * @param readyTime Ready time.
          * 
          * @return builder
          * 
@@ -379,7 +379,7 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param readyTime 准备完毕时间。
+         * @param readyTime Ready time.
          * 
          * @return builder
          * 
@@ -389,7 +389,7 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param terminateTime 集群终止时间。
+         * @param terminateTime Cluster termination time.
          * 
          * @return builder
          * 
@@ -400,7 +400,7 @@ public final class NodeGroupNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param terminateTime 集群终止时间。
+         * @param terminateTime Cluster termination time.
          * 
          * @return builder
          * 

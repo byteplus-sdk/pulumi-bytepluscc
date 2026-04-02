@@ -17,14 +17,14 @@ public final class LoadBalancerIpv6EipBillingConfigArgs extends com.pulumi.resou
     public static final LoadBalancerIpv6EipBillingConfigArgs Empty = new LoadBalancerIpv6EipBillingConfigArgs();
 
     /**
-     * IPv6 EIP的带宽峰值，单位为Mbps。
+     * Peak bandwidth of IPv6 EIP, in Mbps.
      * 
      */
     @Import(name="bandwidth")
     private @Nullable Output<Integer> bandwidth;
 
     /**
-     * @return IPv6 EIP的带宽峰值，单位为Mbps。
+     * @return Peak bandwidth of IPv6 EIP, in Mbps.
      * 
      */
     public Optional<Output<Integer>> bandwidth() {
@@ -32,14 +32,14 @@ public final class LoadBalancerIpv6EipBillingConfigArgs extends com.pulumi.resou
     }
 
     /**
-     * IPv6 EIP的计费方式，2为按带宽计费，3为按流量计费。
+     * Billing method for IPv6 EIP: 2 for bandwidth-based, 3 for traffic-based.
      * 
      */
     @Import(name="billingType")
     private @Nullable Output<Integer> billingType;
 
     /**
-     * @return IPv6 EIP的计费方式，2为按带宽计费，3为按流量计费。
+     * @return Billing method for IPv6 EIP: 2 for bandwidth-based, 3 for traffic-based.
      * 
      */
     public Optional<Output<Integer>> billingType() {
@@ -47,14 +47,14 @@ public final class LoadBalancerIpv6EipBillingConfigArgs extends com.pulumi.resou
     }
 
     /**
-     * IPv6公网IP的线路类型，BGP表示多线。
+     * Line type of IPv6 public IP; BGP indicates multi-line.
      * 
      */
     @Import(name="isp")
     private @Nullable Output<String> isp;
 
     /**
-     * @return IPv6公网IP的线路类型，BGP表示多线。
+     * @return Line type of IPv6 public IP; BGP indicates multi-line.
      * 
      */
     public Optional<Output<String>> isp() {
@@ -88,7 +88,7 @@ public final class LoadBalancerIpv6EipBillingConfigArgs extends com.pulumi.resou
         }
 
         /**
-         * @param bandwidth IPv6 EIP的带宽峰值，单位为Mbps。
+         * @param bandwidth Peak bandwidth of IPv6 EIP, in Mbps.
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class LoadBalancerIpv6EipBillingConfigArgs extends com.pulumi.resou
         }
 
         /**
-         * @param bandwidth IPv6 EIP的带宽峰值，单位为Mbps。
+         * @param bandwidth Peak bandwidth of IPv6 EIP, in Mbps.
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class LoadBalancerIpv6EipBillingConfigArgs extends com.pulumi.resou
         }
 
         /**
-         * @param billingType IPv6 EIP的计费方式，2为按带宽计费，3为按流量计费。
+         * @param billingType Billing method for IPv6 EIP: 2 for bandwidth-based, 3 for traffic-based.
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class LoadBalancerIpv6EipBillingConfigArgs extends com.pulumi.resou
         }
 
         /**
-         * @param billingType IPv6 EIP的计费方式，2为按带宽计费，3为按流量计费。
+         * @param billingType Billing method for IPv6 EIP: 2 for bandwidth-based, 3 for traffic-based.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class LoadBalancerIpv6EipBillingConfigArgs extends com.pulumi.resou
         }
 
         /**
-         * @param isp IPv6公网IP的线路类型，BGP表示多线。
+         * @param isp Line type of IPv6 public IP; BGP indicates multi-line.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class LoadBalancerIpv6EipBillingConfigArgs extends com.pulumi.resou
         }
 
         /**
-         * @param isp IPv6公网IP的线路类型，BGP表示多线。
+         * @param isp Line type of IPv6 public IP; BGP indicates multi-line.
          * 
          * @return builder
          * 

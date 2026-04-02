@@ -14,25 +14,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Inputs
     public sealed class RuleDimensionConditionsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 根据资源名称选择告警对象的条件。当Type为meta时必填。
+        /// Condition for selecting alert objects based on resource name. Required when Type is meta.
         /// </summary>
         [Input("metaCondition")]
         public Input<Inputs.RuleDimensionConditionsMetaConditionGetArgs>? MetaCondition { get; set; }
 
         /// <summary>
-        /// 根据项目选择告警对象的条件。当Type为project时必填。
+        /// Condition for selecting alert targets by project. Required when Type is project.
         /// </summary>
         [Input("projectCondition")]
         public Input<Inputs.RuleDimensionConditionsProjectConditionGetArgs>? ProjectCondition { get; set; }
 
         /// <summary>
-        /// 根据标签选择告警对象的条件。当Type为tag时必填。
+        /// Condition for selecting alert objects by tag. Required when Type is tag.
         /// </summary>
         [Input("tagCondition")]
         public Input<Inputs.RuleDimensionConditionsTagConditionGetArgs>? TagCondition { get; set; }
 
         /// <summary>
-        /// Dimensions 类型。取值：project：根据项目选择告警对象。tag：根据标签选择告警对象。meta：根据资源名称选择告警对象。
+        /// Dimensions type. Values: project: Select alert targets by project. tag: Select alert targets by tag. meta: Select alert targets by resource name.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

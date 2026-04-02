@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetImageDetectionResults {
     /**
-     * @return 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
+     * @return Check status. Options: Finished (completed), Processing (in progress).
      * 
      */
     private String detectionStatus;
     /**
-     * @return 镜像检测项详情。
+     * @return Details of image check items.
      * 
      */
     private List<GetImageDetectionResultsItem> items;
 
     private GetImageDetectionResults() {}
     /**
-     * @return 检测状态。可以选择Finished（已完成）、Processing（处理中）类型。
+     * @return Check status. Options: Finished (completed), Processing (in progress).
      * 
      */
     public String detectionStatus() {
         return this.detectionStatus;
     }
     /**
-     * @return 镜像检测项详情。
+     * @return Details of image check items.
      * 
      */
     public List<GetImageDetectionResultsItem> items() {

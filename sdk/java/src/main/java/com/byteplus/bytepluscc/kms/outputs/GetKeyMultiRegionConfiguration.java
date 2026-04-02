@@ -14,38 +14,38 @@ import java.util.Objects;
 @CustomType
 public final class GetKeyMultiRegionConfiguration {
     /**
-     * @return 多区域密钥的类型。
+     * @return Multi-region key type.
      * 
      */
     private String multiRegionKeyType;
     /**
-     * @return 主多区域键的事务识别号和区域 ID。
+     * @return Primary multi-region key transaction identifier and region ID.
      * 
      */
     private GetKeyMultiRegionConfigurationPrimaryKey primaryKey;
     /**
-     * @return 副本多区域密钥的事务记录编号和区域 ID。
+     * @return Replica multi-region key transaction record number and region ID.
      * 
      */
     private List<GetKeyMultiRegionConfigurationReplicaKey> replicaKeys;
 
     private GetKeyMultiRegionConfiguration() {}
     /**
-     * @return 多区域密钥的类型。
+     * @return Multi-region key type.
      * 
      */
     public String multiRegionKeyType() {
         return this.multiRegionKeyType;
     }
     /**
-     * @return 主多区域键的事务识别号和区域 ID。
+     * @return Primary multi-region key transaction identifier and region ID.
      * 
      */
     public GetKeyMultiRegionConfigurationPrimaryKey primaryKey() {
         return this.primaryKey;
     }
     /**
-     * @return 副本多区域密钥的事务记录编号和区域 ID。
+     * @return Replica multi-region key transaction record number and region ID.
      * 
      */
     public List<GetKeyMultiRegionConfigurationReplicaKey> replicaKeys() {

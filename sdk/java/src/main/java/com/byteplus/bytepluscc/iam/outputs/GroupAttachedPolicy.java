@@ -14,20 +14,20 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GroupAttachedPolicy {
     /**
-     * @return 策略名。
+     * @return Policy name.
      * 
      */
     private @Nullable String policyName;
     private @Nullable List<GroupAttachedPolicyPolicyScope> policyScopes;
     /**
-     * @return 策略类型。System代表系统预设策略，Custom代表自定义策略。
+     * @return Policy type. System indicates a system predefined policy; Custom indicates a custom policy.
      * 
      */
     private @Nullable String policyType;
 
     private GroupAttachedPolicy() {}
     /**
-     * @return 策略名。
+     * @return Policy name.
      * 
      */
     public Optional<String> policyName() {
@@ -37,7 +37,7 @@ public final class GroupAttachedPolicy {
         return this.policyScopes == null ? List.of() : this.policyScopes;
     }
     /**
-     * @return 策略类型。System代表系统预设策略，Custom代表自定义策略。
+     * @return Policy type. System indicates a system predefined policy; Custom indicates a custom policy.
      * 
      */
     public Optional<String> policyType() {

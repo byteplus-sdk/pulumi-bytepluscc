@@ -70,7 +70,7 @@ class GetDbAccountResult:
     @pulumi.getter(name="accountDesc")
     def account_desc(self) -> builtins.str:
         """
-        账号信息描述信息，长度不超过 256 个字符。
+        Account information description, maximum length 256 characters.
         """
         return pulumi.get(self, "account_desc")
 
@@ -78,7 +78,7 @@ class GetDbAccountResult:
     @pulumi.getter(name="accountName")
     def account_name(self) -> builtins.str:
         """
-        数据库账号名称。命名规则如下：长度为 2~32 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）和中划线（-）组成。账号名称在实例内必须是唯一的。不能使用某些预留字，被禁用的预留字请参见禁用词列表。说明在高权限账号名称中可使用关键字 root 和 admin。
+        Database account name. Naming rules: Must be 2–32 characters long. Must start with a letter and end with a letter or number. Can contain letters, numbers, underscores (_), and hyphens (-). The account name must be unique within the instance. Certain reserved words cannot be used; for disabled reserved words, see the disabled word list. Note: The keywords root and admin can be used in high-privilege account names.
         """
         return pulumi.get(self, "account_name")
 
@@ -86,7 +86,7 @@ class GetDbAccountResult:
     @pulumi.getter(name="accountPassword")
     def account_password(self) -> builtins.str:
         """
-        数据库账号的密码。规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !@#$%^&*()_+-=,.&?|/。
+        Database account password. Rules: Length must be 8–32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !@#$%^&*()_+-=,.&?|/.
         """
         return pulumi.get(self, "account_password")
 
@@ -94,7 +94,7 @@ class GetDbAccountResult:
     @pulumi.getter(name="accountPrivileges")
     def account_privileges(self) -> Sequence['outputs.GetDbAccountAccountPrivilegeResult']:
         """
-        账号的指定数据库权限信息。说明当 AccountType 取值为 Super 时，无需为 AccountPrivileges 传值
+        Specified database privilege information for the account. Note: When AccountType is set to Super, AccountPrivileges does not need to be specified.
         """
         return pulumi.get(self, "account_privileges")
 
@@ -102,7 +102,7 @@ class GetDbAccountResult:
     @pulumi.getter(name="accountPrivilegesSqls")
     def account_privileges_sqls(self) -> Sequence[builtins.str]:
         """
-        账号的指定数据库权限信息的 SQL 语句。
+        SQL statement for the account's specified database permission information.
         """
         return pulumi.get(self, "account_privileges_sqls")
 
@@ -110,7 +110,7 @@ class GetDbAccountResult:
     @pulumi.getter(name="accountStatus")
     def account_status(self) -> builtins.str:
         """
-        账号状态，取值为：Unavailable：不可用。Available：可用。
+        Account status. Values: Unavailable: unavailable. Available: available.
         """
         return pulumi.get(self, "account_status")
 
@@ -118,7 +118,7 @@ class GetDbAccountResult:
     @pulumi.getter(name="accountType")
     def account_type(self) -> builtins.str:
         """
-        账号类型，取值范围：Super：高权限账号。Normal：普通账号。
+        Account type. Value options: Super: high-privilege account. Normal: regular account.
         """
         return pulumi.get(self, "account_type")
 
@@ -126,7 +126,7 @@ class GetDbAccountResult:
     @pulumi.getter(name="hasTableColumnPrivilegeDbNames")
     def has_table_column_privilege_db_names(self) -> Sequence[builtins.str]:
         """
-        账号拥有的表列权限所属的数据库。说明如果账号没有表列权限，则不返回该字段。
+        The database to which the account's table/column privileges belong. Note: If the account does not have table/column privileges, this field will not be returned.
         """
         return pulumi.get(self, "has_table_column_privilege_db_names")
 
@@ -134,7 +134,7 @@ class GetDbAccountResult:
     @pulumi.getter
     def host(self) -> builtins.str:
         """
-        指定的数据库账号可以访问数据库的 IP 地址。
+        IP address from which the specified database account can access the database.
         """
         return pulumi.get(self, "host")
 
@@ -150,7 +150,7 @@ class GetDbAccountResult:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> builtins.str:
         """
-        实例 ID。
+        Instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -158,7 +158,7 @@ class GetDbAccountResult:
     @pulumi.getter(name="tableColumnPrivileges")
     def table_column_privileges(self) -> Sequence['outputs.GetDbAccountTableColumnPrivilegeResult']:
         """
-        账号的表列权限设置。
+        Account table column permission settings.
         """
         return pulumi.get(self, "table_column_privileges")
 

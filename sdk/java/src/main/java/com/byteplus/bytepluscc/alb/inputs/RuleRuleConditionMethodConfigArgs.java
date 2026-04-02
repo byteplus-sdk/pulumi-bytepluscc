@@ -17,14 +17,14 @@ public final class RuleRuleConditionMethodConfigArgs extends com.pulumi.resource
     public static final RuleRuleConditionMethodConfigArgs Empty = new RuleRuleConditionMethodConfigArgs();
 
     /**
-     * 请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+     * Request method. Supports HEAD, GET, POST, OPTIONS, PUT, PATCH, DELETE.
      * 
      */
     @Import(name="values")
     private @Nullable Output<List<String>> values;
 
     /**
-     * @return 请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+     * @return Request method. Supports HEAD, GET, POST, OPTIONS, PUT, PATCH, DELETE.
      * 
      */
     public Optional<Output<List<String>>> values() {
@@ -56,7 +56,7 @@ public final class RuleRuleConditionMethodConfigArgs extends com.pulumi.resource
         }
 
         /**
-         * @param values 请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+         * @param values Request method. Supports HEAD, GET, POST, OPTIONS, PUT, PATCH, DELETE.
          * 
          * @return builder
          * 
@@ -67,7 +67,7 @@ public final class RuleRuleConditionMethodConfigArgs extends com.pulumi.resource
         }
 
         /**
-         * @param values 请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+         * @param values Request method. Supports HEAD, GET, POST, OPTIONS, PUT, PATCH, DELETE.
          * 
          * @return builder
          * 
@@ -77,7 +77,7 @@ public final class RuleRuleConditionMethodConfigArgs extends com.pulumi.resource
         }
 
         /**
-         * @param values 请求方法。支持HEAD、GET、POST、OPTIONS、PUT、PATCH、DELETE。
+         * @param values Request method. Supports HEAD, GET, POST, OPTIONS, PUT, PATCH, DELETE.
          * 
          * @return builder
          * 

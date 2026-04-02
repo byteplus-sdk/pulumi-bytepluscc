@@ -38,19 +38,19 @@ class InstanceArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceTagArgs']]]] = None):
         """
         The set of arguments for constructing a Instance resource.
-        :param pulumi.Input[builtins.str] compute_spec: RabbitMQ实例的计算规格。
-        :param pulumi.Input[builtins.int] storage_space: 实例总存储空间。单位为 GiB。
-        :param pulumi.Input[builtins.str] subnet_id: VPC的子网ID。
-        :param pulumi.Input[builtins.str] user_name: RabbitMQ WebUI管理员账号名。
-        :param pulumi.Input[builtins.str] user_password: RabbitMQ WebUI管理员密码。
-        :param pulumi.Input[builtins.str] version: 支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络（VPC）ID。
-        :param pulumi.Input[builtins.str] zone_id: 实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
-        :param pulumi.Input['InstanceChargeDetailArgs'] charge_detail: 实例的计费方式等计费信息。
-        :param pulumi.Input[builtins.str] eip_id: EIP的ID。
-        :param pulumi.Input[builtins.str] instance_description: 实例的简单描述。
-        :param pulumi.Input[builtins.str] instance_name: RabbitMQ 实例名称。
-        :param pulumi.Input[builtins.str] project_name: 实例所属的IAM项目。
+        :param pulumi.Input[builtins.str] compute_spec: Compute specification of the RabbitMQ instance.
+        :param pulumi.Input[builtins.int] storage_space: Total storage space of the instance, measured in GiB.
+        :param pulumi.Input[builtins.str] subnet_id: VPC subnet ID.
+        :param pulumi.Input[builtins.str] user_name: RabbitMQ WebUI administrator account name.
+        :param pulumi.Input[builtins.str] user_password: RabbitMQ WebUI administrator password.
+        :param pulumi.Input[builtins.str] version: Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
+        :param pulumi.Input[builtins.str] vpc_id: Private network (VPC) ID.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID where the instance is located. For high-availability instances across AZs, multiple availability zone IDs are returned.
+        :param pulumi.Input['InstanceChargeDetailArgs'] charge_detail: Instance billing method and related billing information.
+        :param pulumi.Input[builtins.str] eip_id: EIP ID.
+        :param pulumi.Input[builtins.str] instance_description: Brief description of the instance.
+        :param pulumi.Input[builtins.str] instance_name: RabbitMQ instance name.
+        :param pulumi.Input[builtins.str] project_name: IAM project to which the instance belongs.
         """
         pulumi.set(__self__, "compute_spec", compute_spec)
         pulumi.set(__self__, "storage_space", storage_space)
@@ -77,7 +77,7 @@ class InstanceArgs:
     @pulumi.getter(name="computeSpec")
     def compute_spec(self) -> pulumi.Input[builtins.str]:
         """
-        RabbitMQ实例的计算规格。
+        Compute specification of the RabbitMQ instance.
         """
         return pulumi.get(self, "compute_spec")
 
@@ -89,7 +89,7 @@ class InstanceArgs:
     @pulumi.getter(name="storageSpace")
     def storage_space(self) -> pulumi.Input[builtins.int]:
         """
-        实例总存储空间。单位为 GiB。
+        Total storage space of the instance, measured in GiB.
         """
         return pulumi.get(self, "storage_space")
 
@@ -101,7 +101,7 @@ class InstanceArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[builtins.str]:
         """
-        VPC的子网ID。
+        VPC subnet ID.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -113,7 +113,7 @@ class InstanceArgs:
     @pulumi.getter(name="userName")
     def user_name(self) -> pulumi.Input[builtins.str]:
         """
-        RabbitMQ WebUI管理员账号名。
+        RabbitMQ WebUI administrator account name.
         """
         return pulumi.get(self, "user_name")
 
@@ -125,7 +125,7 @@ class InstanceArgs:
     @pulumi.getter(name="userPassword")
     def user_password(self) -> pulumi.Input[builtins.str]:
         """
-        RabbitMQ WebUI管理员密码。
+        RabbitMQ WebUI administrator password.
         """
         return pulumi.get(self, "user_password")
 
@@ -137,7 +137,7 @@ class InstanceArgs:
     @pulumi.getter
     def version(self) -> pulumi.Input[builtins.str]:
         """
-        支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
+        Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
         """
         return pulumi.get(self, "version")
 
@@ -149,7 +149,7 @@ class InstanceArgs:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Input[builtins.str]:
         """
-        私有网络（VPC）ID。
+        Private network (VPC) ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -161,7 +161,7 @@ class InstanceArgs:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Input[builtins.str]:
         """
-        实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
+        Availability zone ID where the instance is located. For high-availability instances across AZs, multiple availability zone IDs are returned.
         """
         return pulumi.get(self, "zone_id")
 
@@ -173,7 +173,7 @@ class InstanceArgs:
     @pulumi.getter(name="chargeDetail")
     def charge_detail(self) -> Optional[pulumi.Input['InstanceChargeDetailArgs']]:
         """
-        实例的计费方式等计费信息。
+        Instance billing method and related billing information.
         """
         return pulumi.get(self, "charge_detail")
 
@@ -185,7 +185,7 @@ class InstanceArgs:
     @pulumi.getter(name="eipId")
     def eip_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        EIP的ID。
+        EIP ID.
         """
         return pulumi.get(self, "eip_id")
 
@@ -197,7 +197,7 @@ class InstanceArgs:
     @pulumi.getter(name="instanceDescription")
     def instance_description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的简单描述。
+        Brief description of the instance.
         """
         return pulumi.get(self, "instance_description")
 
@@ -209,7 +209,7 @@ class InstanceArgs:
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        RabbitMQ 实例名称。
+        RabbitMQ instance name.
         """
         return pulumi.get(self, "instance_name")
 
@@ -221,7 +221,7 @@ class InstanceArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所属的IAM项目。
+        IAM project to which the instance belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -268,28 +268,28 @@ class _InstanceState:
                  zone_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Instance resources.
-        :param pulumi.Input[builtins.str] account_id: 创建实例的主账号ID。
-        :param pulumi.Input[builtins.bool] apply_private_dns_to_public: 是否已开启公网解析功能。true：已开启, false：已关闭
-        :param pulumi.Input[builtins.str] arch_type: 实例的类型，即集群版或单机版。
-        :param pulumi.Input['InstanceChargeDetailArgs'] charge_detail: 实例的计费方式等计费信息。
-        :param pulumi.Input[builtins.str] compute_spec: RabbitMQ实例的计算规格。
-        :param pulumi.Input[builtins.str] created_time: 实例的创建时间。
-        :param pulumi.Input[builtins.str] eip_id: EIP的ID。
-        :param pulumi.Input[builtins.str] instance_description: 实例的简单描述。
-        :param pulumi.Input[builtins.str] instance_id: RabbitMQ 实例 ID。
-        :param pulumi.Input[builtins.str] instance_name: RabbitMQ 实例名称。
-        :param pulumi.Input[builtins.str] instance_status: 实例状态。
-        :param pulumi.Input[builtins.bool] is_encrypted: 是否开启了云盘加密。
-        :param pulumi.Input[builtins.str] project_name: 实例所属的IAM项目。
-        :param pulumi.Input[builtins.int] storage_space: 实例总存储空间。单位为 GiB。
-        :param pulumi.Input[builtins.str] subnet_id: VPC的子网ID。
-        :param pulumi.Input[builtins.int] used_storage_space: 实例已用存储空间。单位为 GiB。
-        :param pulumi.Input[builtins.str] user_name: RabbitMQ WebUI管理员账号名。
-        :param pulumi.Input[builtins.str] user_password: RabbitMQ WebUI管理员密码。
-        :param pulumi.Input[builtins.str] version: 支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络（VPC）ID。
-        :param pulumi.Input[builtins.str] zone_description: 可用区的描述信息。
-        :param pulumi.Input[builtins.str] zone_id: 实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
+        :param pulumi.Input[builtins.str] account_id: Main account ID used to create the instance.
+        :param pulumi.Input[builtins.bool] apply_private_dns_to_public: Whether public DNS resolution is enabled. true: enabled, false: disabled.
+        :param pulumi.Input[builtins.str] arch_type: Instance type, either cluster or standalone.
+        :param pulumi.Input['InstanceChargeDetailArgs'] charge_detail: Instance billing method and related billing information.
+        :param pulumi.Input[builtins.str] compute_spec: Compute specification of the RabbitMQ instance.
+        :param pulumi.Input[builtins.str] created_time: Instance creation time.
+        :param pulumi.Input[builtins.str] eip_id: EIP ID.
+        :param pulumi.Input[builtins.str] instance_description: Brief description of the instance.
+        :param pulumi.Input[builtins.str] instance_id: RabbitMQ instance ID.
+        :param pulumi.Input[builtins.str] instance_name: RabbitMQ instance name.
+        :param pulumi.Input[builtins.str] instance_status: Instance status.
+        :param pulumi.Input[builtins.bool] is_encrypted: Whether cloud disk encryption is enabled.
+        :param pulumi.Input[builtins.str] project_name: IAM project to which the instance belongs.
+        :param pulumi.Input[builtins.int] storage_space: Total storage space of the instance, measured in GiB.
+        :param pulumi.Input[builtins.str] subnet_id: VPC subnet ID.
+        :param pulumi.Input[builtins.int] used_storage_space: Used storage space of the instance, measured in GiB.
+        :param pulumi.Input[builtins.str] user_name: RabbitMQ WebUI administrator account name.
+        :param pulumi.Input[builtins.str] user_password: RabbitMQ WebUI administrator password.
+        :param pulumi.Input[builtins.str] version: Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
+        :param pulumi.Input[builtins.str] vpc_id: Private network (VPC) ID.
+        :param pulumi.Input[builtins.str] zone_description: Description of the availability zone.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID where the instance is located. For high-availability instances across AZs, multiple availability zone IDs are returned.
         """
         if account_id is not None:
             pulumi.set(__self__, "account_id", account_id)
@@ -344,7 +344,7 @@ class _InstanceState:
     @pulumi.getter(name="accountId")
     def account_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建实例的主账号ID。
+        Main account ID used to create the instance.
         """
         return pulumi.get(self, "account_id")
 
@@ -356,7 +356,7 @@ class _InstanceState:
     @pulumi.getter(name="applyPrivateDnsToPublic")
     def apply_private_dns_to_public(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否已开启公网解析功能。true：已开启, false：已关闭
+        Whether public DNS resolution is enabled. true: enabled, false: disabled.
         """
         return pulumi.get(self, "apply_private_dns_to_public")
 
@@ -368,7 +368,7 @@ class _InstanceState:
     @pulumi.getter(name="archType")
     def arch_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的类型，即集群版或单机版。
+        Instance type, either cluster or standalone.
         """
         return pulumi.get(self, "arch_type")
 
@@ -380,7 +380,7 @@ class _InstanceState:
     @pulumi.getter(name="chargeDetail")
     def charge_detail(self) -> Optional[pulumi.Input['InstanceChargeDetailArgs']]:
         """
-        实例的计费方式等计费信息。
+        Instance billing method and related billing information.
         """
         return pulumi.get(self, "charge_detail")
 
@@ -392,7 +392,7 @@ class _InstanceState:
     @pulumi.getter(name="computeSpec")
     def compute_spec(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        RabbitMQ实例的计算规格。
+        Compute specification of the RabbitMQ instance.
         """
         return pulumi.get(self, "compute_spec")
 
@@ -404,7 +404,7 @@ class _InstanceState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的创建时间。
+        Instance creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -416,7 +416,7 @@ class _InstanceState:
     @pulumi.getter(name="eipId")
     def eip_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        EIP的ID。
+        EIP ID.
         """
         return pulumi.get(self, "eip_id")
 
@@ -437,7 +437,7 @@ class _InstanceState:
     @pulumi.getter(name="instanceDescription")
     def instance_description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例的简单描述。
+        Brief description of the instance.
         """
         return pulumi.get(self, "instance_description")
 
@@ -449,7 +449,7 @@ class _InstanceState:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        RabbitMQ 实例 ID。
+        RabbitMQ instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -461,7 +461,7 @@ class _InstanceState:
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        RabbitMQ 实例名称。
+        RabbitMQ instance name.
         """
         return pulumi.get(self, "instance_name")
 
@@ -473,7 +473,7 @@ class _InstanceState:
     @pulumi.getter(name="instanceStatus")
     def instance_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例状态。
+        Instance status.
         """
         return pulumi.get(self, "instance_status")
 
@@ -485,7 +485,7 @@ class _InstanceState:
     @pulumi.getter(name="isEncrypted")
     def is_encrypted(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启了云盘加密。
+        Whether cloud disk encryption is enabled.
         """
         return pulumi.get(self, "is_encrypted")
 
@@ -497,7 +497,7 @@ class _InstanceState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所属的IAM项目。
+        IAM project to which the instance belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -509,7 +509,7 @@ class _InstanceState:
     @pulumi.getter(name="storageSpace")
     def storage_space(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例总存储空间。单位为 GiB。
+        Total storage space of the instance, measured in GiB.
         """
         return pulumi.get(self, "storage_space")
 
@@ -521,7 +521,7 @@ class _InstanceState:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPC的子网ID。
+        VPC subnet ID.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -542,7 +542,7 @@ class _InstanceState:
     @pulumi.getter(name="usedStorageSpace")
     def used_storage_space(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        实例已用存储空间。单位为 GiB。
+        Used storage space of the instance, measured in GiB.
         """
         return pulumi.get(self, "used_storage_space")
 
@@ -554,7 +554,7 @@ class _InstanceState:
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        RabbitMQ WebUI管理员账号名。
+        RabbitMQ WebUI administrator account name.
         """
         return pulumi.get(self, "user_name")
 
@@ -566,7 +566,7 @@ class _InstanceState:
     @pulumi.getter(name="userPassword")
     def user_password(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        RabbitMQ WebUI管理员密码。
+        RabbitMQ WebUI administrator password.
         """
         return pulumi.get(self, "user_password")
 
@@ -578,7 +578,7 @@ class _InstanceState:
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
+        Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
         """
         return pulumi.get(self, "version")
 
@@ -590,7 +590,7 @@ class _InstanceState:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        私有网络（VPC）ID。
+        Private network (VPC) ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -602,7 +602,7 @@ class _InstanceState:
     @pulumi.getter(name="zoneDescription")
     def zone_description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        可用区的描述信息。
+        Description of the availability zone.
         """
         return pulumi.get(self, "zone_description")
 
@@ -614,7 +614,7 @@ class _InstanceState:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
+        Availability zone ID where the instance is located. For high-availability instances across AZs, multiple availability zone IDs are returned.
         """
         return pulumi.get(self, "zone_id")
 
@@ -645,7 +645,7 @@ class Instance(pulumi.CustomResource):
                  zone_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        消息队列 RabbitMQ版是一款支持 AMQP（Advanced Message Queuing Protocol） 协议的分布式高可用消息队列产品，完全兼容 RabbitMQ 开源生态及多语言客户端，提供丰富的消息特性和灵活的消息路由，同时具备分布式、高吞吐、低延迟、灵活扩展的云消息服务优势，无需用户部署运维，能够轻松实现快速上云。
+        RabbitMQ Message Queue is a distributed, high-availability message queue product that supports the AMQP (Advanced Message Queuing Protocol) protocol. It is fully compatible with the RabbitMQ open-source ecosystem and multi-language clients, provides rich messaging features and flexible message routing, and offers the advantages of distributed architecture, high throughput, low latency, and flexible scalability as a cloud messaging service. No user deployment or maintenance is required, enabling easy and rapid cloud adoption.
 
         ## Import
 
@@ -655,19 +655,19 @@ class Instance(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['InstanceChargeDetailArgs', 'InstanceChargeDetailArgsDict']] charge_detail: 实例的计费方式等计费信息。
-        :param pulumi.Input[builtins.str] compute_spec: RabbitMQ实例的计算规格。
-        :param pulumi.Input[builtins.str] eip_id: EIP的ID。
-        :param pulumi.Input[builtins.str] instance_description: 实例的简单描述。
-        :param pulumi.Input[builtins.str] instance_name: RabbitMQ 实例名称。
-        :param pulumi.Input[builtins.str] project_name: 实例所属的IAM项目。
-        :param pulumi.Input[builtins.int] storage_space: 实例总存储空间。单位为 GiB。
-        :param pulumi.Input[builtins.str] subnet_id: VPC的子网ID。
-        :param pulumi.Input[builtins.str] user_name: RabbitMQ WebUI管理员账号名。
-        :param pulumi.Input[builtins.str] user_password: RabbitMQ WebUI管理员密码。
-        :param pulumi.Input[builtins.str] version: 支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络（VPC）ID。
-        :param pulumi.Input[builtins.str] zone_id: 实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
+        :param pulumi.Input[Union['InstanceChargeDetailArgs', 'InstanceChargeDetailArgsDict']] charge_detail: Instance billing method and related billing information.
+        :param pulumi.Input[builtins.str] compute_spec: Compute specification of the RabbitMQ instance.
+        :param pulumi.Input[builtins.str] eip_id: EIP ID.
+        :param pulumi.Input[builtins.str] instance_description: Brief description of the instance.
+        :param pulumi.Input[builtins.str] instance_name: RabbitMQ instance name.
+        :param pulumi.Input[builtins.str] project_name: IAM project to which the instance belongs.
+        :param pulumi.Input[builtins.int] storage_space: Total storage space of the instance, measured in GiB.
+        :param pulumi.Input[builtins.str] subnet_id: VPC subnet ID.
+        :param pulumi.Input[builtins.str] user_name: RabbitMQ WebUI administrator account name.
+        :param pulumi.Input[builtins.str] user_password: RabbitMQ WebUI administrator password.
+        :param pulumi.Input[builtins.str] version: Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
+        :param pulumi.Input[builtins.str] vpc_id: Private network (VPC) ID.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID where the instance is located. For high-availability instances across AZs, multiple availability zone IDs are returned.
         """
         ...
     @overload
@@ -676,7 +676,7 @@ class Instance(pulumi.CustomResource):
                  args: InstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        消息队列 RabbitMQ版是一款支持 AMQP（Advanced Message Queuing Protocol） 协议的分布式高可用消息队列产品，完全兼容 RabbitMQ 开源生态及多语言客户端，提供丰富的消息特性和灵活的消息路由，同时具备分布式、高吞吐、低延迟、灵活扩展的云消息服务优势，无需用户部署运维，能够轻松实现快速上云。
+        RabbitMQ Message Queue is a distributed, high-availability message queue product that supports the AMQP (Advanced Message Queuing Protocol) protocol. It is fully compatible with the RabbitMQ open-source ecosystem and multi-language clients, provides rich messaging features and flexible message routing, and offers the advantages of distributed architecture, high throughput, low latency, and flexible scalability as a cloud messaging service. No user deployment or maintenance is required, enabling easy and rapid cloud adoption.
 
         ## Import
 
@@ -803,28 +803,28 @@ class Instance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] account_id: 创建实例的主账号ID。
-        :param pulumi.Input[builtins.bool] apply_private_dns_to_public: 是否已开启公网解析功能。true：已开启, false：已关闭
-        :param pulumi.Input[builtins.str] arch_type: 实例的类型，即集群版或单机版。
-        :param pulumi.Input[Union['InstanceChargeDetailArgs', 'InstanceChargeDetailArgsDict']] charge_detail: 实例的计费方式等计费信息。
-        :param pulumi.Input[builtins.str] compute_spec: RabbitMQ实例的计算规格。
-        :param pulumi.Input[builtins.str] created_time: 实例的创建时间。
-        :param pulumi.Input[builtins.str] eip_id: EIP的ID。
-        :param pulumi.Input[builtins.str] instance_description: 实例的简单描述。
-        :param pulumi.Input[builtins.str] instance_id: RabbitMQ 实例 ID。
-        :param pulumi.Input[builtins.str] instance_name: RabbitMQ 实例名称。
-        :param pulumi.Input[builtins.str] instance_status: 实例状态。
-        :param pulumi.Input[builtins.bool] is_encrypted: 是否开启了云盘加密。
-        :param pulumi.Input[builtins.str] project_name: 实例所属的IAM项目。
-        :param pulumi.Input[builtins.int] storage_space: 实例总存储空间。单位为 GiB。
-        :param pulumi.Input[builtins.str] subnet_id: VPC的子网ID。
-        :param pulumi.Input[builtins.int] used_storage_space: 实例已用存储空间。单位为 GiB。
-        :param pulumi.Input[builtins.str] user_name: RabbitMQ WebUI管理员账号名。
-        :param pulumi.Input[builtins.str] user_password: RabbitMQ WebUI管理员密码。
-        :param pulumi.Input[builtins.str] version: 支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
-        :param pulumi.Input[builtins.str] vpc_id: 私有网络（VPC）ID。
-        :param pulumi.Input[builtins.str] zone_description: 可用区的描述信息。
-        :param pulumi.Input[builtins.str] zone_id: 实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
+        :param pulumi.Input[builtins.str] account_id: Main account ID used to create the instance.
+        :param pulumi.Input[builtins.bool] apply_private_dns_to_public: Whether public DNS resolution is enabled. true: enabled, false: disabled.
+        :param pulumi.Input[builtins.str] arch_type: Instance type, either cluster or standalone.
+        :param pulumi.Input[Union['InstanceChargeDetailArgs', 'InstanceChargeDetailArgsDict']] charge_detail: Instance billing method and related billing information.
+        :param pulumi.Input[builtins.str] compute_spec: Compute specification of the RabbitMQ instance.
+        :param pulumi.Input[builtins.str] created_time: Instance creation time.
+        :param pulumi.Input[builtins.str] eip_id: EIP ID.
+        :param pulumi.Input[builtins.str] instance_description: Brief description of the instance.
+        :param pulumi.Input[builtins.str] instance_id: RabbitMQ instance ID.
+        :param pulumi.Input[builtins.str] instance_name: RabbitMQ instance name.
+        :param pulumi.Input[builtins.str] instance_status: Instance status.
+        :param pulumi.Input[builtins.bool] is_encrypted: Whether cloud disk encryption is enabled.
+        :param pulumi.Input[builtins.str] project_name: IAM project to which the instance belongs.
+        :param pulumi.Input[builtins.int] storage_space: Total storage space of the instance, measured in GiB.
+        :param pulumi.Input[builtins.str] subnet_id: VPC subnet ID.
+        :param pulumi.Input[builtins.int] used_storage_space: Used storage space of the instance, measured in GiB.
+        :param pulumi.Input[builtins.str] user_name: RabbitMQ WebUI administrator account name.
+        :param pulumi.Input[builtins.str] user_password: RabbitMQ WebUI administrator password.
+        :param pulumi.Input[builtins.str] version: Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
+        :param pulumi.Input[builtins.str] vpc_id: Private network (VPC) ID.
+        :param pulumi.Input[builtins.str] zone_description: Description of the availability zone.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID where the instance is located. For high-availability instances across AZs, multiple availability zone IDs are returned.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -860,7 +860,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="accountId")
     def account_id(self) -> pulumi.Output[builtins.str]:
         """
-        创建实例的主账号ID。
+        Main account ID used to create the instance.
         """
         return pulumi.get(self, "account_id")
 
@@ -868,7 +868,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="applyPrivateDnsToPublic")
     def apply_private_dns_to_public(self) -> pulumi.Output[builtins.bool]:
         """
-        是否已开启公网解析功能。true：已开启, false：已关闭
+        Whether public DNS resolution is enabled. true: enabled, false: disabled.
         """
         return pulumi.get(self, "apply_private_dns_to_public")
 
@@ -876,7 +876,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="archType")
     def arch_type(self) -> pulumi.Output[builtins.str]:
         """
-        实例的类型，即集群版或单机版。
+        Instance type, either cluster or standalone.
         """
         return pulumi.get(self, "arch_type")
 
@@ -884,7 +884,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="chargeDetail")
     def charge_detail(self) -> pulumi.Output['outputs.InstanceChargeDetail']:
         """
-        实例的计费方式等计费信息。
+        Instance billing method and related billing information.
         """
         return pulumi.get(self, "charge_detail")
 
@@ -892,7 +892,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="computeSpec")
     def compute_spec(self) -> pulumi.Output[builtins.str]:
         """
-        RabbitMQ实例的计算规格。
+        Compute specification of the RabbitMQ instance.
         """
         return pulumi.get(self, "compute_spec")
 
@@ -900,7 +900,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        实例的创建时间。
+        Instance creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -908,7 +908,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="eipId")
     def eip_id(self) -> pulumi.Output[builtins.str]:
         """
-        EIP的ID。
+        EIP ID.
         """
         return pulumi.get(self, "eip_id")
 
@@ -921,7 +921,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="instanceDescription")
     def instance_description(self) -> pulumi.Output[builtins.str]:
         """
-        实例的简单描述。
+        Brief description of the instance.
         """
         return pulumi.get(self, "instance_description")
 
@@ -929,7 +929,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Output[builtins.str]:
         """
-        RabbitMQ 实例 ID。
+        RabbitMQ instance ID.
         """
         return pulumi.get(self, "instance_id")
 
@@ -937,7 +937,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> pulumi.Output[builtins.str]:
         """
-        RabbitMQ 实例名称。
+        RabbitMQ instance name.
         """
         return pulumi.get(self, "instance_name")
 
@@ -945,7 +945,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="instanceStatus")
     def instance_status(self) -> pulumi.Output[builtins.str]:
         """
-        实例状态。
+        Instance status.
         """
         return pulumi.get(self, "instance_status")
 
@@ -953,7 +953,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="isEncrypted")
     def is_encrypted(self) -> pulumi.Output[builtins.bool]:
         """
-        是否开启了云盘加密。
+        Whether cloud disk encryption is enabled.
         """
         return pulumi.get(self, "is_encrypted")
 
@@ -961,7 +961,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        实例所属的IAM项目。
+        IAM project to which the instance belongs.
         """
         return pulumi.get(self, "project_name")
 
@@ -969,7 +969,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="storageSpace")
     def storage_space(self) -> pulumi.Output[builtins.int]:
         """
-        实例总存储空间。单位为 GiB。
+        Total storage space of the instance, measured in GiB.
         """
         return pulumi.get(self, "storage_space")
 
@@ -977,7 +977,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[builtins.str]:
         """
-        VPC的子网ID。
+        VPC subnet ID.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -990,7 +990,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="usedStorageSpace")
     def used_storage_space(self) -> pulumi.Output[builtins.int]:
         """
-        实例已用存储空间。单位为 GiB。
+        Used storage space of the instance, measured in GiB.
         """
         return pulumi.get(self, "used_storage_space")
 
@@ -998,7 +998,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="userName")
     def user_name(self) -> pulumi.Output[builtins.str]:
         """
-        RabbitMQ WebUI管理员账号名。
+        RabbitMQ WebUI administrator account name.
         """
         return pulumi.get(self, "user_name")
 
@@ -1006,7 +1006,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="userPassword")
     def user_password(self) -> pulumi.Output[builtins.str]:
         """
-        RabbitMQ WebUI管理员密码。
+        RabbitMQ WebUI administrator password.
         """
         return pulumi.get(self, "user_password")
 
@@ -1014,7 +1014,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter
     def version(self) -> pulumi.Output[builtins.str]:
         """
-        支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
+        Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
         """
         return pulumi.get(self, "version")
 
@@ -1022,7 +1022,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> pulumi.Output[builtins.str]:
         """
-        私有网络（VPC）ID。
+        Private network (VPC) ID.
         """
         return pulumi.get(self, "vpc_id")
 
@@ -1030,7 +1030,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="zoneDescription")
     def zone_description(self) -> pulumi.Output[builtins.str]:
         """
-        可用区的描述信息。
+        Description of the availability zone.
         """
         return pulumi.get(self, "zone_description")
 
@@ -1038,7 +1038,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
+        Availability zone ID where the instance is located. For high-availability instances across AZs, multiple availability zone IDs are returned.
         """
         return pulumi.get(self, "zone_id")
 

@@ -20,14 +20,14 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
     public static final PermissionSetArgs Empty = new PermissionSetArgs();
 
     /**
-     * 权限集描述。
+     * Permission Set Description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 权限集描述。
+     * @return Permission Set Description
      * 
      */
     public Optional<Output<String>> description() {
@@ -35,14 +35,14 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 权限集名称。
+     * Permission Set Name
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return 权限集名称。
+     * @return Permission Set Name
      * 
      */
     public Output<String> name() {
@@ -57,14 +57,14 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 跳转控制台 URL。
+     * Console Redirect URL
      * 
      */
     @Import(name="relayState")
     private @Nullable Output<String> relayState;
 
     /**
-     * @return 跳转控制台 URL。
+     * @return Console Redirect URL
      * 
      */
     public Optional<Output<String>> relayState() {
@@ -72,14 +72,14 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * session 过期时间，单位秒。
+     * Session Expiration Time (seconds)
      * 
      */
     @Import(name="sessionDuration")
     private @Nullable Output<Integer> sessionDuration;
 
     /**
-     * @return session 过期时间，单位秒。
+     * @return Session Expiration Time (seconds)
      * 
      */
     public Optional<Output<Integer>> sessionDuration() {
@@ -115,7 +115,7 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 权限集描述。
+         * @param description Permission Set Description
          * 
          * @return builder
          * 
@@ -126,7 +126,7 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 权限集描述。
+         * @param description Permission Set Description
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 权限集名称。
+         * @param name Permission Set Name
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 权限集名称。
+         * @param name Permission Set Name
          * 
          * @return builder
          * 
@@ -170,7 +170,7 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param relayState 跳转控制台 URL。
+         * @param relayState Console Redirect URL
          * 
          * @return builder
          * 
@@ -181,7 +181,7 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param relayState 跳转控制台 URL。
+         * @param relayState Console Redirect URL
          * 
          * @return builder
          * 
@@ -191,7 +191,7 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sessionDuration session 过期时间，单位秒。
+         * @param sessionDuration Session Expiration Time (seconds)
          * 
          * @return builder
          * 
@@ -202,7 +202,7 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sessionDuration session 过期时间，单位秒。
+         * @param sessionDuration Session Expiration Time (seconds)
          * 
          * @return builder
          * 

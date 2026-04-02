@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
     public sealed class LaunchTemplateVersionTag
     {
         /// <summary>
-        /// 给资源添加的用户标签的标签键。
+        /// Tag key for user tags added to the resource.
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// 给资源添加的用户标签的标签值。
+        /// Tag value for user tags added to the resource
         /// </summary>
         public readonly string? Value;
 

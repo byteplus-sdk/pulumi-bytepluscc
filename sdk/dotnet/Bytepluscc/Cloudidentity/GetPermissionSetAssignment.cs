@@ -65,7 +65,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     public sealed class GetPermissionSetAssignmentResult
     {
         /// <summary>
-        /// 授权创建时间。
+        /// Authorization creation time
         /// </summary>
         public readonly string CreatedTime;
         /// <summary>
@@ -73,31 +73,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 权限集 ID。
+        /// Permission set ID
         /// </summary>
         public readonly string PermissionSetId;
         /// <summary>
-        /// 权限集名称。
+        /// Permission set name
         /// </summary>
         public readonly string PermissionSetName;
         /// <summary>
-        /// 云身份中心对象 ID
+        /// Cloud Identity Center object ID
         /// </summary>
         public readonly string PrincipalId;
         /// <summary>
-        /// 云身份中心对象名。
+        /// Cloud Identity Center object name
         /// </summary>
         public readonly string PrincipalName;
         /// <summary>
-        /// 云身份中心对象类型，User 或者 Group。
+        /// Cloud Identity Center object type: User or Group
         /// </summary>
         public readonly string PrincipalType;
         /// <summary>
-        /// 授权账号 ID。
+        /// Authorized account ID
         /// </summary>
         public readonly string TargetId;
         /// <summary>
-        /// 授权账号名。
+        /// Authorized account name
         /// </summary>
         public readonly string TargetName;
 

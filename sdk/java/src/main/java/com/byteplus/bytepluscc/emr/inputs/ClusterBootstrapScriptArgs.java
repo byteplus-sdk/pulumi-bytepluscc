@@ -17,14 +17,14 @@ public final class ClusterBootstrapScriptArgs extends com.pulumi.resources.Resou
     public static final ClusterBootstrapScriptArgs Empty = new ClusterBootstrapScriptArgs();
 
     /**
-     * 脚本执行范围。
+     * Script execution scope.
      * 
      */
     @Import(name="effectiveScope")
     private @Nullable Output<ClusterBootstrapScriptEffectiveScopeArgs> effectiveScope;
 
     /**
-     * @return 脚本执行范围。
+     * @return Script execution scope.
      * 
      */
     public Optional<Output<ClusterBootstrapScriptEffectiveScopeArgs>> effectiveScope() {
@@ -32,14 +32,14 @@ public final class ClusterBootstrapScriptArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 执行失败策略。取值范围：FAILED*CONTINUE：失败后继续执行其他任务。FAILED*BLOCK：失败后中断，不再继续执行后续任务。当脚本为BOOTSTRAP时，会导致创建集群、扩容节点组操作中断并失败。默认值：FAILED_BLOCK。
+     * Execution failure policy. Range: FAILED*CONTINUE: Continue with other tasks after failure. FAILED*BLOCK: Stop and do not execute subsequent tasks after failure. If the script is BOOTSTRAP, this will interrupt and fail cluster creation or node group expansion. Default: FAILED_BLOCK.
      * 
      */
     @Import(name="executionFailStrategy")
     private @Nullable Output<String> executionFailStrategy;
 
     /**
-     * @return 执行失败策略。取值范围：FAILED*CONTINUE：失败后继续执行其他任务。FAILED*BLOCK：失败后中断，不再继续执行后续任务。当脚本为BOOTSTRAP时，会导致创建集群、扩容节点组操作中断并失败。默认值：FAILED_BLOCK。
+     * @return Execution failure policy. Range: FAILED*CONTINUE: Continue with other tasks after failure. FAILED*BLOCK: Stop and do not execute subsequent tasks after failure. If the script is BOOTSTRAP, this will interrupt and fail cluster creation or node group expansion. Default: FAILED_BLOCK.
      * 
      */
     public Optional<Output<String>> executionFailStrategy() {
@@ -47,14 +47,14 @@ public final class ClusterBootstrapScriptArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 脚本的执行时机。仅scriptType=BOOTSTRAP时生效。BEFORE*APPLICATION*INSTALL：应用安装前。AFTER*APPLICATION*STARTED：应用启动后。默认值：BEFORE*APP*INSTALL
+     * Script execution timing. Only effective when scriptType=BOOTSTRAP. BEFORE*APPLICATION*INSTALL: before application installation. AFTER*APPLICATION*STARTED: after application startup. Default: BEFORE*APP*INSTALL.
      * 
      */
     @Import(name="executionMoment")
     private @Nullable Output<String> executionMoment;
 
     /**
-     * @return 脚本的执行时机。仅scriptType=BOOTSTRAP时生效。BEFORE*APPLICATION*INSTALL：应用安装前。AFTER*APPLICATION*STARTED：应用启动后。默认值：BEFORE*APP*INSTALL
+     * @return Script execution timing. Only effective when scriptType=BOOTSTRAP. BEFORE*APPLICATION*INSTALL: before application installation. AFTER*APPLICATION*STARTED: after application startup. Default: BEFORE*APP*INSTALL.
      * 
      */
     public Optional<Output<String>> executionMoment() {
@@ -62,14 +62,14 @@ public final class ClusterBootstrapScriptArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 脚本执行优先级。取值范围：1~1000。默认值1。
+     * Script execution priority. Range: 1~1000. Default: 1.
      * 
      */
     @Import(name="priority")
     private @Nullable Output<String> priority;
 
     /**
-     * @return 脚本执行优先级。取值范围：1~1000。默认值1。
+     * @return Script execution priority. Range: 1~1000. Default: 1.
      * 
      */
     public Optional<Output<String>> priority() {
@@ -77,14 +77,14 @@ public final class ClusterBootstrapScriptArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 脚本参数。
+     * Script parameters.
      * 
      */
     @Import(name="scriptArgs")
     private @Nullable Output<String> scriptArgs;
 
     /**
-     * @return 脚本参数。
+     * @return Script parameters.
      * 
      */
     public Optional<Output<String>> scriptArgs() {
@@ -92,14 +92,14 @@ public final class ClusterBootstrapScriptArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 脚本名称。必填。长度为1~128个字符，必须以大小字母或中文开头，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+     * Script name (required). Length: 1–128 characters. Must start with an uppercase or lowercase letter or Chinese character. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
      * 
      */
     @Import(name="scriptName")
     private @Nullable Output<String> scriptName;
 
     /**
-     * @return 脚本名称。必填。长度为1~128个字符，必须以大小字母或中文开头，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+     * @return Script name (required). Length: 1–128 characters. Must start with an uppercase or lowercase letter or Chinese character. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
      * 
      */
     public Optional<Output<String>> scriptName() {
@@ -107,14 +107,14 @@ public final class ClusterBootstrapScriptArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 脚本所在TOS路径。必填。以 tos:： 开头。
+     * Script TOS path. Required. Must start with &#39;tos:&#39;.
      * 
      */
     @Import(name="scriptPath")
     private @Nullable Output<String> scriptPath;
 
     /**
-     * @return 脚本所在TOS路径。必填。以 tos:： 开头。
+     * @return Script TOS path. Required. Must start with &#39;tos:&#39;.
      * 
      */
     public Optional<Output<String>> scriptPath() {
@@ -122,14 +122,14 @@ public final class ClusterBootstrapScriptArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 脚本类型。NORMAL：普通脚本。BOOTSTRAP：引导脚本。
+     * Script type. NORMAL: normal script. BOOTSTRAP: bootstrap script.
      * 
      */
     @Import(name="scriptType")
     private @Nullable Output<String> scriptType;
 
     /**
-     * @return 脚本类型。NORMAL：普通脚本。BOOTSTRAP：引导脚本。
+     * @return Script type. NORMAL: normal script. BOOTSTRAP: bootstrap script.
      * 
      */
     public Optional<Output<String>> scriptType() {
@@ -168,7 +168,7 @@ public final class ClusterBootstrapScriptArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param effectiveScope 脚本执行范围。
+         * @param effectiveScope Script execution scope.
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class ClusterBootstrapScriptArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param effectiveScope 脚本执行范围。
+         * @param effectiveScope Script execution scope.
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class ClusterBootstrapScriptArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param executionFailStrategy 执行失败策略。取值范围：FAILED*CONTINUE：失败后继续执行其他任务。FAILED*BLOCK：失败后中断，不再继续执行后续任务。当脚本为BOOTSTRAP时，会导致创建集群、扩容节点组操作中断并失败。默认值：FAILED_BLOCK。
+         * @param executionFailStrategy Execution failure policy. Range: FAILED*CONTINUE: Continue with other tasks after failure. FAILED*BLOCK: Stop and do not execute subsequent tasks after failure. If the script is BOOTSTRAP, this will interrupt and fail cluster creation or node group expansion. Default: FAILED_BLOCK.
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class ClusterBootstrapScriptArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param executionFailStrategy 执行失败策略。取值范围：FAILED*CONTINUE：失败后继续执行其他任务。FAILED*BLOCK：失败后中断，不再继续执行后续任务。当脚本为BOOTSTRAP时，会导致创建集群、扩容节点组操作中断并失败。默认值：FAILED_BLOCK。
+         * @param executionFailStrategy Execution failure policy. Range: FAILED*CONTINUE: Continue with other tasks after failure. FAILED*BLOCK: Stop and do not execute subsequent tasks after failure. If the script is BOOTSTRAP, this will interrupt and fail cluster creation or node group expansion. Default: FAILED_BLOCK.
          * 
          * @return builder
          * 
@@ -210,7 +210,7 @@ public final class ClusterBootstrapScriptArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param executionMoment 脚本的执行时机。仅scriptType=BOOTSTRAP时生效。BEFORE*APPLICATION*INSTALL：应用安装前。AFTER*APPLICATION*STARTED：应用启动后。默认值：BEFORE*APP*INSTALL
+         * @param executionMoment Script execution timing. Only effective when scriptType=BOOTSTRAP. BEFORE*APPLICATION*INSTALL: before application installation. AFTER*APPLICATION*STARTED: after application startup. Default: BEFORE*APP*INSTALL.
          * 
          * @return builder
          * 
@@ -221,7 +221,7 @@ public final class ClusterBootstrapScriptArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param executionMoment 脚本的执行时机。仅scriptType=BOOTSTRAP时生效。BEFORE*APPLICATION*INSTALL：应用安装前。AFTER*APPLICATION*STARTED：应用启动后。默认值：BEFORE*APP*INSTALL
+         * @param executionMoment Script execution timing. Only effective when scriptType=BOOTSTRAP. BEFORE*APPLICATION*INSTALL: before application installation. AFTER*APPLICATION*STARTED: after application startup. Default: BEFORE*APP*INSTALL.
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class ClusterBootstrapScriptArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param priority 脚本执行优先级。取值范围：1~1000。默认值1。
+         * @param priority Script execution priority. Range: 1~1000. Default: 1.
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class ClusterBootstrapScriptArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param priority 脚本执行优先级。取值范围：1~1000。默认值1。
+         * @param priority Script execution priority. Range: 1~1000. Default: 1.
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class ClusterBootstrapScriptArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param scriptArgs 脚本参数。
+         * @param scriptArgs Script parameters.
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class ClusterBootstrapScriptArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param scriptArgs 脚本参数。
+         * @param scriptArgs Script parameters.
          * 
          * @return builder
          * 
@@ -273,7 +273,7 @@ public final class ClusterBootstrapScriptArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param scriptName 脚本名称。必填。长度为1~128个字符，必须以大小字母或中文开头，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+         * @param scriptName Script name (required). Length: 1–128 characters. Must start with an uppercase or lowercase letter or Chinese character. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
          * 
          * @return builder
          * 
@@ -284,7 +284,7 @@ public final class ClusterBootstrapScriptArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param scriptName 脚本名称。必填。长度为1~128个字符，必须以大小字母或中文开头，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+         * @param scriptName Script name (required). Length: 1–128 characters. Must start with an uppercase or lowercase letter or Chinese character. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
          * 
          * @return builder
          * 
@@ -294,7 +294,7 @@ public final class ClusterBootstrapScriptArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param scriptPath 脚本所在TOS路径。必填。以 tos:： 开头。
+         * @param scriptPath Script TOS path. Required. Must start with &#39;tos:&#39;.
          * 
          * @return builder
          * 
@@ -305,7 +305,7 @@ public final class ClusterBootstrapScriptArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param scriptPath 脚本所在TOS路径。必填。以 tos:： 开头。
+         * @param scriptPath Script TOS path. Required. Must start with &#39;tos:&#39;.
          * 
          * @return builder
          * 
@@ -315,7 +315,7 @@ public final class ClusterBootstrapScriptArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param scriptType 脚本类型。NORMAL：普通脚本。BOOTSTRAP：引导脚本。
+         * @param scriptType Script type. NORMAL: normal script. BOOTSTRAP: bootstrap script.
          * 
          * @return builder
          * 
@@ -326,7 +326,7 @@ public final class ClusterBootstrapScriptArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param scriptType 脚本类型。NORMAL：普通脚本。BOOTSTRAP：引导脚本。
+         * @param scriptType Script type. NORMAL: normal script. BOOTSTRAP: bootstrap script.
          * 
          * @return builder
          * 

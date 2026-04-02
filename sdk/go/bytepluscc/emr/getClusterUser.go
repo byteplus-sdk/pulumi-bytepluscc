@@ -30,25 +30,25 @@ type LookupClusterUserArgs struct {
 
 // A collection of values returned by getClusterUser.
 type LookupClusterUserResult struct {
-	// 集群ID。
+	// Cluster ID.
 	ClusterId string `pulumi:"clusterId"`
-	// 创建时间。
+	// Creation time.
 	CreatedTime int `pulumi:"createdTime"`
-	// 创建者用户名。
+	// Creator username.
 	CreatorName string `pulumi:"creatorName"`
-	// 用户组描述。
+	// User group description.
 	Description string `pulumi:"description"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 旧的用户的登录密码。修改密码时必填。
+	// Old user login password. Required when changing password.
 	OldPassword string `pulumi:"oldPassword"`
-	// 新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
+	// New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
 	Password string `pulumi:"password"`
-	// 更新时间。
+	// Last updated time.
 	UpdatedTime int `pulumi:"updatedTime"`
-	// 所属用户组名称。
+	// User group name.
 	UserGroupNames []string `pulumi:"userGroupNames"`
-	// 集群用户名。仅支持小写字母。
+	// Cluster username. Only lowercase letters are supported.
 	UserName string `pulumi:"userName"`
 }
 
@@ -86,22 +86,22 @@ func (o LookupClusterUserResultOutput) ToLookupClusterUserResultOutputWithContex
 	return o
 }
 
-// 集群ID。
+// Cluster ID.
 func (o LookupClusterUserResultOutput) ClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterUserResult) string { return v.ClusterId }).(pulumi.StringOutput)
 }
 
-// 创建时间。
+// Creation time.
 func (o LookupClusterUserResultOutput) CreatedTime() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupClusterUserResult) int { return v.CreatedTime }).(pulumi.IntOutput)
 }
 
-// 创建者用户名。
+// Creator username.
 func (o LookupClusterUserResultOutput) CreatorName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterUserResult) string { return v.CreatorName }).(pulumi.StringOutput)
 }
 
-// 用户组描述。
+// User group description.
 func (o LookupClusterUserResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterUserResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -111,27 +111,27 @@ func (o LookupClusterUserResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterUserResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 旧的用户的登录密码。修改密码时必填。
+// Old user login password. Required when changing password.
 func (o LookupClusterUserResultOutput) OldPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterUserResult) string { return v.OldPassword }).(pulumi.StringOutput)
 }
 
-// 新的用户的登录密码。密码的长度需在8-20个字符之间，支持数字，字母，-，_ 且 至少包含1个数字和1个字母。
+// New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
 func (o LookupClusterUserResultOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterUserResult) string { return v.Password }).(pulumi.StringOutput)
 }
 
-// 更新时间。
+// Last updated time.
 func (o LookupClusterUserResultOutput) UpdatedTime() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupClusterUserResult) int { return v.UpdatedTime }).(pulumi.IntOutput)
 }
 
-// 所属用户组名称。
+// User group name.
 func (o LookupClusterUserResultOutput) UserGroupNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupClusterUserResult) []string { return v.UserGroupNames }).(pulumi.StringArrayOutput)
 }
 
-// 集群用户名。仅支持小写字母。
+// Cluster username. Only lowercase letters are supported.
 func (o LookupClusterUserResultOutput) UserName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterUserResult) string { return v.UserName }).(pulumi.StringOutput)
 }

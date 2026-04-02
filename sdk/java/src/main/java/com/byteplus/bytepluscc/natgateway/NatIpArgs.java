@@ -17,14 +17,14 @@ public final class NatIpArgs extends com.pulumi.resources.ResourceArgs {
     public static final NatIpArgs Empty = new NatIpArgs();
 
     /**
-     * 私网NAT网关ID。
+     * Private NAT gateway ID.
      * 
      */
     @Import(name="natGatewayId", required=true)
     private Output<String> natGatewayId;
 
     /**
-     * @return 私网NAT网关ID。
+     * @return Private NAT gateway ID.
      * 
      */
     public Output<String> natGatewayId() {
@@ -32,14 +32,14 @@ public final class NatIpArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 中转IP的地址。若不填，则系统自动从私网NAT网关所在子网随机分配一个空闲的IP地址。
+     * Transit IP address. If not specified, the system automatically randomly assigns an available IP address from the subnet of the private NAT gateway.
      * 
      */
     @Import(name="natIp")
     private @Nullable Output<String> natIp;
 
     /**
-     * @return 中转IP的地址。若不填，则系统自动从私网NAT网关所在子网随机分配一个空闲的IP地址。
+     * @return Transit IP address. If not specified, the system automatically randomly assigns an available IP address from the subnet of the private NAT gateway.
      * 
      */
     public Optional<Output<String>> natIp() {
@@ -47,14 +47,14 @@ public final class NatIpArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 中转IP的描述。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * Description of the transit IP. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
      * 
      */
     @Import(name="natIpDescription")
     private @Nullable Output<String> natIpDescription;
 
     /**
-     * @return 中转IP的描述。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * @return Description of the transit IP. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
      * 
      */
     public Optional<Output<String>> natIpDescription() {
@@ -62,14 +62,14 @@ public final class NatIpArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 中转IP的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。不填默认为中转IP的ID。
+     * Name of the transit IP. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number; can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the transit IP ID.
      * 
      */
     @Import(name="natIpName")
     private @Nullable Output<String> natIpName;
 
     /**
-     * @return 中转IP的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。不填默认为中转IP的ID。
+     * @return Name of the transit IP. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number; can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the transit IP ID.
      * 
      */
     public Optional<Output<String>> natIpName() {
@@ -104,7 +104,7 @@ public final class NatIpArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param natGatewayId 私网NAT网关ID。
+         * @param natGatewayId Private NAT gateway ID.
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class NatIpArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param natGatewayId 私网NAT网关ID。
+         * @param natGatewayId Private NAT gateway ID.
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class NatIpArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param natIp 中转IP的地址。若不填，则系统自动从私网NAT网关所在子网随机分配一个空闲的IP地址。
+         * @param natIp Transit IP address. If not specified, the system automatically randomly assigns an available IP address from the subnet of the private NAT gateway.
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class NatIpArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param natIp 中转IP的地址。若不填，则系统自动从私网NAT网关所在子网随机分配一个空闲的IP地址。
+         * @param natIp Transit IP address. If not specified, the system automatically randomly assigns an available IP address from the subnet of the private NAT gateway.
          * 
          * @return builder
          * 
@@ -146,7 +146,7 @@ public final class NatIpArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param natIpDescription 中转IP的描述。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+         * @param natIpDescription Description of the transit IP. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class NatIpArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param natIpDescription 中转IP的描述。长度限制为0~ 255个字符。不填默认为空字符串。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+         * @param natIpDescription Description of the transit IP. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class NatIpArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param natIpName 中转IP的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。不填默认为中转IP的ID。
+         * @param natIpName Name of the transit IP. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number; can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the transit IP ID.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class NatIpArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param natIpName 中转IP的名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短划线（-）。不填默认为中转IP的ID。
+         * @param natIpName Name of the transit IP. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number; can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the transit IP ID.
          * 
          * @return builder
          * 

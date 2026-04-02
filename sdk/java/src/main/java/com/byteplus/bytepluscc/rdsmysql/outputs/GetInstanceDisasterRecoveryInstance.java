@@ -12,74 +12,74 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceDisasterRecoveryInstance {
     /**
-     * @return 主实例与灾备实例之间同步任务的 ID。
+     * @return ID of synchronization tasks between primary and disaster recovery instances.
      * 
      */
     private String dtsTaskId;
     /**
-     * @return 主实例与灾备实例之间同步任务的名称。
+     * @return Name of the synchronization task between the primary instance and the disaster recovery instance
      * 
      */
     private String dtsTaskName;
     /**
-     * @return 主实例与灾备实例之间同步任务的状态。
+     * @return Status of synchronization tasks between the primary instance and the disaster recovery instance
      * 
      */
     private String dtsTaskStatus;
     /**
-     * @return 灾备实例的 ID。
+     * @return Disaster recovery instance ID.
      * 
      */
     private String instanceId;
     /**
-     * @return 灾备实例的名称。
+     * @return Name of disaster recovery instance.
      * 
      */
     private String instanceName;
     /**
-     * @return 灾备实例与主实例之间的时延。
+     * @return Latency between the disaster recovery instance and the primary instance.
      * 
      */
     private Integer secondsBehindMaster;
 
     private GetInstanceDisasterRecoveryInstance() {}
     /**
-     * @return 主实例与灾备实例之间同步任务的 ID。
+     * @return ID of synchronization tasks between primary and disaster recovery instances.
      * 
      */
     public String dtsTaskId() {
         return this.dtsTaskId;
     }
     /**
-     * @return 主实例与灾备实例之间同步任务的名称。
+     * @return Name of the synchronization task between the primary instance and the disaster recovery instance
      * 
      */
     public String dtsTaskName() {
         return this.dtsTaskName;
     }
     /**
-     * @return 主实例与灾备实例之间同步任务的状态。
+     * @return Status of synchronization tasks between the primary instance and the disaster recovery instance
      * 
      */
     public String dtsTaskStatus() {
         return this.dtsTaskStatus;
     }
     /**
-     * @return 灾备实例的 ID。
+     * @return Disaster recovery instance ID.
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return 灾备实例的名称。
+     * @return Name of disaster recovery instance.
      * 
      */
     public String instanceName() {
         return this.instanceName;
     }
     /**
-     * @return 灾备实例与主实例之间的时延。
+     * @return Latency between the disaster recovery instance and the primary instance.
      * 
      */
     public Integer secondsBehindMaster() {

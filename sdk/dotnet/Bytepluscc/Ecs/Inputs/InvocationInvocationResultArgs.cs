@@ -14,73 +14,73 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
     public sealed class InvocationInvocationResultArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 命令ID。
+        /// Command ID.
         /// </summary>
         [Input("commandId")]
         public Input<string>? CommandId { get; set; }
 
         /// <summary>
-        /// 命令执行的完成时间。
+        /// Command execution completion time.
         /// </summary>
         [Input("endTime")]
         public Input<string>? EndTime { get; set; }
 
         /// <summary>
-        /// 命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+        /// Error codes for command execution failure. TaskDeliveryTimeout: Indicates command delivery timeout. TaskExecutionTimeout: Indicates command execution timeout. TaskExecutionFailed: Indicates command execution failure.
         /// </summary>
         [Input("errorCode")]
         public Input<string>? ErrorCode { get; set; }
 
         /// <summary>
-        /// 命令执行失败的错误信息。
+        /// Error message for command execution failure.
         /// </summary>
         [Input("errorMessage")]
         public Input<string>? ErrorMessage { get; set; }
 
         /// <summary>
-        /// 脚本执行后的退出状态码。
+        /// Exit status code after script execution.
         /// </summary>
         [Input("exitCode")]
         public Input<int>? ExitCode { get; set; }
 
         /// <summary>
-        /// 实例ID。
+        /// Instance ID.
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 任务执行ID。
+        /// Task execution ID.
         /// </summary>
         [Input("invocationId")]
         public Input<string>? InvocationId { get; set; }
 
         /// <summary>
-        /// 任务执行结果ID。
+        /// Task execution result ID.
         /// </summary>
         [Input("invocationResultId")]
         public Input<string>? InvocationResultId { get; set; }
 
         /// <summary>
-        /// 单台实例的命令进度状态。
+        /// Command progress status for a single instance.
         /// </summary>
         [Input("invocationResultStatus")]
         public Input<string>? InvocationResultStatus { get; set; }
 
         /// <summary>
-        /// 经过Base64编码的命令执行后输出信息。
+        /// Output information after command execution, encoded in Base64.
         /// </summary>
         [Input("output")]
         public Input<string>? Output { get; set; }
 
         /// <summary>
-        /// 命令在实例中开始执行的时间。
+        /// Time when the command starts executing in the instance.
         /// </summary>
         [Input("startTime")]
         public Input<string>? StartTime { get; set; }
 
         /// <summary>
-        /// 在实例中执行命令的用户名称。
+        /// User name for executing the command in the instance.
         /// </summary>
         [Input("username")]
         public Input<string>? Username { get; set; }

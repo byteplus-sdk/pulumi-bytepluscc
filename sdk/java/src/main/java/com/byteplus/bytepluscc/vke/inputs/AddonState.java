@@ -17,14 +17,14 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
     public static final AddonState Empty = new AddonState();
 
     /**
-     * 组件所在集群 ID。
+     * Cluster ID where the component is located.
      * 
      */
     @Import(name="clusterId")
     private @Nullable Output<String> clusterId;
 
     /**
-     * @return 组件所在集群 ID。
+     * @return Cluster ID where the component is located.
      * 
      */
     public Optional<Output<String>> clusterId() {
@@ -32,14 +32,14 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 组件配置。
+     * Component configuration.
      * 
      */
     @Import(name="config")
     private @Nullable Output<String> config;
 
     /**
-     * @return 组件配置。
+     * @return Component configuration.
      * 
      */
     public Optional<Output<String>> config() {
@@ -47,14 +47,14 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 安装组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+     * Component installation time. Standard RFC3339 format, UTC+0 time.
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 安装组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+     * @return Component installation time. Standard RFC3339 format, UTC+0 time.
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -62,14 +62,14 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
+     * Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
      * 
      */
     @Import(name="deployMode")
     private @Nullable Output<String> deployMode;
 
     /**
-     * @return 组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
+     * @return Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
      * 
      */
     public Optional<Output<String>> deployMode() {
@@ -77,14 +77,14 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
+     * Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
      * 
      */
     @Import(name="deployNodeType")
     private @Nullable Output<String> deployNodeType;
 
     /**
-     * @return 部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
+     * @return Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
      * 
      */
     public Optional<Output<String>> deployNodeType() {
@@ -92,14 +92,14 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 组件名称。
+     * Component name.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return 组件名称。
+     * @return Component name.
      * 
      */
     public Optional<Output<String>> name() {
@@ -107,14 +107,14 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 组件状态。
+     * Component status.
      * 
      */
     @Import(name="status")
     private @Nullable Output<AddonStatusArgs> status;
 
     /**
-     * @return 组件状态。
+     * @return Component status.
      * 
      */
     public Optional<Output<AddonStatusArgs>> status() {
@@ -122,14 +122,14 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 更新组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+     * Component update time. Standard RFC3339 format, UTC+0 time.
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 更新组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+     * @return Component update time. Standard RFC3339 format, UTC+0 time.
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -137,14 +137,14 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 组件版本。
+     * Component version.
      * 
      */
     @Import(name="version")
     private @Nullable Output<String> version;
 
     /**
-     * @return 组件版本。
+     * @return Component version.
      * 
      */
     public Optional<Output<String>> version() {
@@ -184,7 +184,7 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterId 组件所在集群 ID。
+         * @param clusterId Cluster ID where the component is located.
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterId 组件所在集群 ID。
+         * @param clusterId Cluster ID where the component is located.
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param config 组件配置。
+         * @param config Component configuration.
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param config 组件配置。
+         * @param config Component configuration.
          * 
          * @return builder
          * 
@@ -226,7 +226,7 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 安装组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+         * @param createdTime Component installation time. Standard RFC3339 format, UTC+0 time.
          * 
          * @return builder
          * 
@@ -237,7 +237,7 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 安装组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+         * @param createdTime Component installation time. Standard RFC3339 format, UTC+0 time.
          * 
          * @return builder
          * 
@@ -247,7 +247,7 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deployMode 组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
+         * @param deployMode Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
          * 
          * @return builder
          * 
@@ -258,7 +258,7 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deployMode 组件部署模式，取值：Unmanaged：非托管模式部署。Managed：托管模式部署。
+         * @param deployMode Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
          * 
          * @return builder
          * 
@@ -268,7 +268,7 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deployNodeType 部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
+         * @param deployNodeType Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
          * 
          * @return builder
          * 
@@ -279,7 +279,7 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deployNodeType 部署节点的类型。仅DeployModes=Unmanaged时，才需要指定该参数。取值：Node：以节点方式部署。VirtualNode：以虚拟节点方式部署。
+         * @param deployNodeType Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 组件名称。
+         * @param name Component name.
          * 
          * @return builder
          * 
@@ -300,7 +300,7 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name 组件名称。
+         * @param name Component name.
          * 
          * @return builder
          * 
@@ -310,7 +310,7 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 组件状态。
+         * @param status Component status.
          * 
          * @return builder
          * 
@@ -321,7 +321,7 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 组件状态。
+         * @param status Component status.
          * 
          * @return builder
          * 
@@ -331,7 +331,7 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 更新组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+         * @param updatedTime Component update time. Standard RFC3339 format, UTC+0 time.
          * 
          * @return builder
          * 
@@ -342,7 +342,7 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 更新组件的时间。标准 RFC3339 格式的 UTC+0 时间。
+         * @param updatedTime Component update time. Standard RFC3339 format, UTC+0 time.
          * 
          * @return builder
          * 
@@ -352,7 +352,7 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param version 组件版本。
+         * @param version Component version.
          * 
          * @return builder
          * 
@@ -363,7 +363,7 @@ public final class AddonState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param version 组件版本。
+         * @param version Component version.
          * 
          * @return builder
          * 

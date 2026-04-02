@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetUpstreamSourceSourceSpec {
     /**
-     * @return 容器集群来源。
+     * @return Container cluster source
      * 
      */
     private GetUpstreamSourceSourceSpecK8SSource k8SSource;
     /**
-     * @return 注册中心来源。
+     * @return Registry source
      * 
      */
     private GetUpstreamSourceSourceSpecNacosSource nacosSource;
 
     private GetUpstreamSourceSourceSpec() {}
     /**
-     * @return 容器集群来源。
+     * @return Container cluster source
      * 
      */
     public GetUpstreamSourceSourceSpecK8SSource k8SSource() {
         return this.k8SSource;
     }
     /**
-     * @return 注册中心来源。
+     * @return Registry source
      * 
      */
     public GetUpstreamSourceSourceSpecNacosSource nacosSource() {

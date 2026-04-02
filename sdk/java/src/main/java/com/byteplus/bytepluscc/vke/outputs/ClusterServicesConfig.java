@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ClusterServicesConfig {
     /**
-     * @return Kubernetes 服务（Service）暴露的 IPv4 私有网络地址。
+     * @return IPv4 private network address exposed by Kubernetes Service.
      * 
      */
     private @Nullable List<String> serviceCidrsv4s;
 
     private ClusterServicesConfig() {}
     /**
-     * @return Kubernetes 服务（Service）暴露的 IPv4 私有网络地址。
+     * @return IPv4 private network address exposed by Kubernetes Service.
      * 
      */
     public List<String> serviceCidrsv4s() {

@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ClusterMonitoringConfigComponentConfig {
     /**
-     * @return 是否启用该监控组件，true 表示启用，false 表示禁用。
+     * @return Whether to enable this monitoring component. true means enabled; false means disabled.
      * 
      */
     private @Nullable Boolean enabled;
     /**
-     * @return 监控组件的名称，例如 &#39;prometheus&#39;、&#39;grafana&#39; 等。
+     * @return Name of the monitoring component, such as &#39;prometheus&#39;, &#39;grafana&#39;, etc.
      * 
      */
     private @Nullable String name;
 
     private ClusterMonitoringConfigComponentConfig() {}
     /**
-     * @return 是否启用该监控组件，true 表示启用，false 表示禁用。
+     * @return Whether to enable this monitoring component. true means enabled; false means disabled.
      * 
      */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
     /**
-     * @return 监控组件的名称，例如 &#39;prometheus&#39;、&#39;grafana&#39; 等。
+     * @return Name of the monitoring component, such as &#39;prometheus&#39;, &#39;grafana&#39;, etc.
      * 
      */
     public Optional<String> name() {

@@ -19,14 +19,14 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
     public static final CertificateArgs Empty = new CertificateArgs();
 
     /**
-     * 证书名称，长度限制为1 ～ 128个字符，必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。
+     * Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
      * 
      */
     @Import(name="certificateName")
     private @Nullable Output<String> certificateName;
 
     /**
-     * @return 证书名称，长度限制为1 ～ 128个字符，必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。
+     * @return Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
      * 
      */
     public Optional<Output<String>> certificateName() {
@@ -34,14 +34,14 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 证书类型，取值：CA：CA证书、Server：服务器证书。
+     * Certificate type. Options: CA: CA certificate; Server: server certificate
      * 
      */
     @Import(name="certificateType", required=true)
     private Output<String> certificateType;
 
     /**
-     * @return 证书类型，取值：CA：CA证书、Server：服务器证书。
+     * @return Certificate type. Options: CA: CA certificate; Server: server certificate
      * 
      */
     public Output<String> certificateType() {
@@ -49,14 +49,14 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 证书描述。
+     * Certificate description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 证书描述。
+     * @return Certificate description
      * 
      */
     public Optional<Output<String>> description() {
@@ -64,14 +64,14 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 服务器证书的私钥，当证书类型为Server时必填。
+     * Server certificate private key. Required when certificate type is Server
      * 
      */
     @Import(name="privateKey")
     private @Nullable Output<String> privateKey;
 
     /**
-     * @return 服务器证书的私钥，当证书类型为Server时必填。
+     * @return Server certificate private key. Required when certificate type is Server
      * 
      */
     public Optional<Output<String>> privateKey() {
@@ -79,14 +79,14 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 项目名称。
+     * Project name
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 项目名称。
+     * @return Project name
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -94,14 +94,14 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 服务器证书的公钥。
+     * Server certificate public key
      * 
      */
     @Import(name="publicKey", required=true)
     private Output<String> publicKey;
 
     /**
-     * @return 服务器证书的公钥。
+     * @return Server certificate public key
      * 
      */
     public Output<String> publicKey() {
@@ -146,7 +146,7 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateName 证书名称，长度限制为1 ～ 128个字符，必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。
+         * @param certificateName Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateName 证书名称，长度限制为1 ～ 128个字符，必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。
+         * @param certificateName Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateType 证书类型，取值：CA：CA证书、Server：服务器证书。
+         * @param certificateType Certificate type. Options: CA: CA certificate; Server: server certificate
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateType 证书类型，取值：CA：CA证书、Server：服务器证书。
+         * @param certificateType Certificate type. Options: CA: CA certificate; Server: server certificate
          * 
          * @return builder
          * 
@@ -188,7 +188,7 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 证书描述。
+         * @param description Certificate description
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 证书描述。
+         * @param description Certificate description
          * 
          * @return builder
          * 
@@ -209,7 +209,7 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param privateKey 服务器证书的私钥，当证书类型为Server时必填。
+         * @param privateKey Server certificate private key. Required when certificate type is Server
          * 
          * @return builder
          * 
@@ -220,7 +220,7 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param privateKey 服务器证书的私钥，当证书类型为Server时必填。
+         * @param privateKey Server certificate private key. Required when certificate type is Server
          * 
          * @return builder
          * 
@@ -230,7 +230,7 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 项目名称。
+         * @param projectName Project name
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 项目名称。
+         * @param projectName Project name
          * 
          * @return builder
          * 
@@ -251,7 +251,7 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param publicKey 服务器证书的公钥。
+         * @param publicKey Server certificate public key
          * 
          * @return builder
          * 
@@ -262,7 +262,7 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param publicKey 服务器证书的公钥。
+         * @param publicKey Server certificate public key
          * 
          * @return builder
          * 

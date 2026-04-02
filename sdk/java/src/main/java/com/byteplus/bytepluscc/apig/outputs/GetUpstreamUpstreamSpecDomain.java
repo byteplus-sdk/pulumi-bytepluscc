@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class GetUpstreamUpstreamSpecDomain {
     /**
-     * @return 域名列表。
+     * @return Domain name list
      * 
      */
     private List<GetUpstreamUpstreamSpecDomainDomainList> domainLists;
 
     private GetUpstreamUpstreamSpecDomain() {}
     /**
-     * @return 域名列表。
+     * @return Domain name list
      * 
      */
     public List<GetUpstreamUpstreamSpecDomainDomainList> domainLists() {

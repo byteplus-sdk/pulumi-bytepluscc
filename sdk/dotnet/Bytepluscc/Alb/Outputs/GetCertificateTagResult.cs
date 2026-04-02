@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
     public sealed class GetCertificateTagResult
     {
         /// <summary>
-        /// 用户标签的标签键。
+        /// User tag key
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// 用户标签的标签值。
+        /// User tag value
         /// </summary>
         public readonly string Value;
 

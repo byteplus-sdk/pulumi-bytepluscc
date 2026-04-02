@@ -35,6 +35,16 @@ export const getResolverRules: typeof import("./getResolverRules").getResolverRu
 export const getResolverRulesOutput: typeof import("./getResolverRules").getResolverRulesOutput = null as any;
 utilities.lazyLoad(exports, ["getResolverRules","getResolverRulesOutput"], () => require("./getResolverRules"));
 
+export { GetUserVpcAuthorizationArgs, GetUserVpcAuthorizationResult, GetUserVpcAuthorizationOutputArgs } from "./getUserVpcAuthorization";
+export const getUserVpcAuthorization: typeof import("./getUserVpcAuthorization").getUserVpcAuthorization = null as any;
+export const getUserVpcAuthorizationOutput: typeof import("./getUserVpcAuthorization").getUserVpcAuthorizationOutput = null as any;
+utilities.lazyLoad(exports, ["getUserVpcAuthorization","getUserVpcAuthorizationOutput"], () => require("./getUserVpcAuthorization"));
+
+export { GetUserVpcAuthorizationsResult } from "./getUserVpcAuthorizations";
+export const getUserVpcAuthorizations: typeof import("./getUserVpcAuthorizations").getUserVpcAuthorizations = null as any;
+export const getUserVpcAuthorizationsOutput: typeof import("./getUserVpcAuthorizations").getUserVpcAuthorizationsOutput = null as any;
+utilities.lazyLoad(exports, ["getUserVpcAuthorizations","getUserVpcAuthorizationsOutput"], () => require("./getUserVpcAuthorizations"));
+
 export { RecordArgs, RecordState } from "./record";
 export type Record = import("./record").Record;
 export const Record: typeof import("./record").Record = null as any;
@@ -50,6 +60,11 @@ export type ResolverRule = import("./resolverRule").ResolverRule;
 export const ResolverRule: typeof import("./resolverRule").ResolverRule = null as any;
 utilities.lazyLoad(exports, ["ResolverRule"], () => require("./resolverRule"));
 
+export { UserVpcAuthorizationArgs, UserVpcAuthorizationState } from "./userVpcAuthorization";
+export type UserVpcAuthorization = import("./userVpcAuthorization").UserVpcAuthorization;
+export const UserVpcAuthorization: typeof import("./userVpcAuthorization").UserVpcAuthorization = null as any;
+utilities.lazyLoad(exports, ["UserVpcAuthorization"], () => require("./userVpcAuthorization"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -61,6 +76,8 @@ const _module = {
                 return new ResolverEndpoint(name, <any>undefined, { urn })
             case "bytepluscc:privatezone/resolverRule:ResolverRule":
                 return new ResolverRule(name, <any>undefined, { urn })
+            case "bytepluscc:privatezone/userVpcAuthorization:UserVpcAuthorization":
+                return new UserVpcAuthorization(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -69,3 +86,4 @@ const _module = {
 pulumi.runtime.registerResourceModule("bytepluscc", "privatezone/record", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "privatezone/resolverEndpoint", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "privatezone/resolverRule", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "privatezone/userVpcAuthorization", _module)

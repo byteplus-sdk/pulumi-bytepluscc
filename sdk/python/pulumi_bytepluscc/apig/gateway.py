@@ -35,16 +35,16 @@ class GatewayArgs:
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Gateway resource.
-        :param pulumi.Input[builtins.str] name: 网关名称。
-        :param pulumi.Input[builtins.str] comments: 网关备注信息。长度限制为0~253个字符。
-        :param pulumi.Input['GatewayCustomLogArgs'] custom_log: 自定义日志配置。
-        :param pulumi.Input['GatewayLogSpecArgs'] log_spec: 日志配置。
-        :param pulumi.Input['GatewayMonitorSpecArgs'] monitor_spec: 监控配置信息。
-        :param pulumi.Input[builtins.str] project_name: 项目名称。
-        :param pulumi.Input['GatewayResourceSpecArgs'] resource_spec: 资源规格配置信息。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_ids: 子网ID列表。长度限制为1~2个。
-        :param pulumi.Input['GatewayTraceSpecArgs'] trace_spec: 链路追踪配置信息。
-        :param pulumi.Input[builtins.str] type: 网关类型，取值：standard：标准网关。serverless：Serverless网关（暂不支持）。
+        :param pulumi.Input[builtins.str] name: Gateway name
+        :param pulumi.Input[builtins.str] comments: Gateway remarks. Length limit: 0–253 characters.
+        :param pulumi.Input['GatewayCustomLogArgs'] custom_log: Custom log configuration
+        :param pulumi.Input['GatewayLogSpecArgs'] log_spec: Log configuration
+        :param pulumi.Input['GatewayMonitorSpecArgs'] monitor_spec: Monitoring configuration information
+        :param pulumi.Input[builtins.str] project_name: Project name
+        :param pulumi.Input['GatewayResourceSpecArgs'] resource_spec: Resource specification configuration information
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_ids: Subnet ID list. Length limit: 1–2
+        :param pulumi.Input['GatewayTraceSpecArgs'] trace_spec: Link tracing configuration information.
+        :param pulumi.Input[builtins.str] type: Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
         :param pulumi.Input[builtins.str] vpc_id: VPC ID。
         """
         pulumi.set(__self__, "name", name)
@@ -73,7 +73,7 @@ class GatewayArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[builtins.str]:
         """
-        网关名称。
+        Gateway name
         """
         return pulumi.get(self, "name")
 
@@ -85,7 +85,7 @@ class GatewayArgs:
     @pulumi.getter
     def comments(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网关备注信息。长度限制为0~253个字符。
+        Gateway remarks. Length limit: 0–253 characters.
         """
         return pulumi.get(self, "comments")
 
@@ -97,7 +97,7 @@ class GatewayArgs:
     @pulumi.getter(name="customLog")
     def custom_log(self) -> Optional[pulumi.Input['GatewayCustomLogArgs']]:
         """
-        自定义日志配置。
+        Custom log configuration
         """
         return pulumi.get(self, "custom_log")
 
@@ -109,7 +109,7 @@ class GatewayArgs:
     @pulumi.getter(name="logSpec")
     def log_spec(self) -> Optional[pulumi.Input['GatewayLogSpecArgs']]:
         """
-        日志配置。
+        Log configuration
         """
         return pulumi.get(self, "log_spec")
 
@@ -121,7 +121,7 @@ class GatewayArgs:
     @pulumi.getter(name="monitorSpec")
     def monitor_spec(self) -> Optional[pulumi.Input['GatewayMonitorSpecArgs']]:
         """
-        监控配置信息。
+        Monitoring configuration information
         """
         return pulumi.get(self, "monitor_spec")
 
@@ -133,7 +133,7 @@ class GatewayArgs:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        项目名称。
+        Project name
         """
         return pulumi.get(self, "project_name")
 
@@ -145,7 +145,7 @@ class GatewayArgs:
     @pulumi.getter(name="resourceSpec")
     def resource_spec(self) -> Optional[pulumi.Input['GatewayResourceSpecArgs']]:
         """
-        资源规格配置信息。
+        Resource specification configuration information
         """
         return pulumi.get(self, "resource_spec")
 
@@ -157,7 +157,7 @@ class GatewayArgs:
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        子网ID列表。长度限制为1~2个。
+        Subnet ID list. Length limit: 1–2
         """
         return pulumi.get(self, "subnet_ids")
 
@@ -169,7 +169,7 @@ class GatewayArgs:
     @pulumi.getter(name="traceSpec")
     def trace_spec(self) -> Optional[pulumi.Input['GatewayTraceSpecArgs']]:
         """
-        链路追踪配置信息。
+        Link tracing configuration information.
         """
         return pulumi.get(self, "trace_spec")
 
@@ -181,7 +181,7 @@ class GatewayArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网关类型，取值：standard：标准网关。serverless：Serverless网关（暂不支持）。
+        Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
         """
         return pulumi.get(self, "type")
 
@@ -226,23 +226,23 @@ class _GatewayState:
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Gateway resources.
-        :param pulumi.Input['GatewayBackendSpecArgs'] backend_spec: 后端服务配置信息。
-        :param pulumi.Input[builtins.str] comments: 网关备注信息。长度限制为0~253个字符。
-        :param pulumi.Input[builtins.str] created_time: 网关创建时间。
-        :param pulumi.Input['GatewayCustomLogArgs'] custom_log: 自定义日志配置。
-        :param pulumi.Input[builtins.str] gateway_id: 网关实例ID。
-        :param pulumi.Input['GatewayLogSpecArgs'] log_spec: 日志配置。
-        :param pulumi.Input[builtins.str] message: 网关创建失败、删除失败或异常时的错误信息。
-        :param pulumi.Input['GatewayMonitorSpecArgs'] monitor_spec: 监控配置信息。
-        :param pulumi.Input[builtins.str] name: 网关名称。
-        :param pulumi.Input['GatewayNetworkSpecArgs'] network_spec: 网络配置信息。
-        :param pulumi.Input[builtins.str] project_name: 项目名称。
-        :param pulumi.Input['GatewayResourceSpecArgs'] resource_spec: 资源规格配置信息。
-        :param pulumi.Input[builtins.str] status: 网关状态，取值：Creating：创建中。CreatedFailed：创建失败。Updating：更新中。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_ids: 子网ID列表。长度限制为1~2个。
-        :param pulumi.Input['GatewayTraceSpecArgs'] trace_spec: 链路追踪配置信息。
-        :param pulumi.Input[builtins.str] type: 网关类型，取值：standard：标准网关。serverless：Serverless网关（暂不支持）。
-        :param pulumi.Input[builtins.str] version: 网关版本。
+        :param pulumi.Input['GatewayBackendSpecArgs'] backend_spec: Backend service configuration information
+        :param pulumi.Input[builtins.str] comments: Gateway remarks. Length limit: 0–253 characters.
+        :param pulumi.Input[builtins.str] created_time: Gateway creation time
+        :param pulumi.Input['GatewayCustomLogArgs'] custom_log: Custom log configuration
+        :param pulumi.Input[builtins.str] gateway_id: Gateway instance ID
+        :param pulumi.Input['GatewayLogSpecArgs'] log_spec: Log configuration
+        :param pulumi.Input[builtins.str] message: Error message for gateway creation failure, deletion failure, or abnormal status
+        :param pulumi.Input['GatewayMonitorSpecArgs'] monitor_spec: Monitoring configuration information
+        :param pulumi.Input[builtins.str] name: Gateway name
+        :param pulumi.Input['GatewayNetworkSpecArgs'] network_spec: Network configuration information
+        :param pulumi.Input[builtins.str] project_name: Project name
+        :param pulumi.Input['GatewayResourceSpecArgs'] resource_spec: Resource specification configuration information
+        :param pulumi.Input[builtins.str] status: Gateway status. Options: Creating: Creating; CreatedFailed: Creation failed; Updating: Updating; Running: Running; Deleting: Deleting; DeletedFailed: Deletion failed; Abnormal: Abnormal
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_ids: Subnet ID list. Length limit: 1–2
+        :param pulumi.Input['GatewayTraceSpecArgs'] trace_spec: Link tracing configuration information.
+        :param pulumi.Input[builtins.str] type: Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
+        :param pulumi.Input[builtins.str] version: Gateway version.
         :param pulumi.Input[builtins.str] vpc_id: VPC ID。
         """
         if backend_spec is not None:
@@ -288,7 +288,7 @@ class _GatewayState:
     @pulumi.getter(name="backendSpec")
     def backend_spec(self) -> Optional[pulumi.Input['GatewayBackendSpecArgs']]:
         """
-        后端服务配置信息。
+        Backend service configuration information
         """
         return pulumi.get(self, "backend_spec")
 
@@ -300,7 +300,7 @@ class _GatewayState:
     @pulumi.getter
     def comments(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网关备注信息。长度限制为0~253个字符。
+        Gateway remarks. Length limit: 0–253 characters.
         """
         return pulumi.get(self, "comments")
 
@@ -312,7 +312,7 @@ class _GatewayState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网关创建时间。
+        Gateway creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -324,7 +324,7 @@ class _GatewayState:
     @pulumi.getter(name="customLog")
     def custom_log(self) -> Optional[pulumi.Input['GatewayCustomLogArgs']]:
         """
-        自定义日志配置。
+        Custom log configuration
         """
         return pulumi.get(self, "custom_log")
 
@@ -345,7 +345,7 @@ class _GatewayState:
     @pulumi.getter(name="gatewayId")
     def gateway_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网关实例ID。
+        Gateway instance ID
         """
         return pulumi.get(self, "gateway_id")
 
@@ -357,7 +357,7 @@ class _GatewayState:
     @pulumi.getter(name="logSpec")
     def log_spec(self) -> Optional[pulumi.Input['GatewayLogSpecArgs']]:
         """
-        日志配置。
+        Log configuration
         """
         return pulumi.get(self, "log_spec")
 
@@ -369,7 +369,7 @@ class _GatewayState:
     @pulumi.getter
     def message(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网关创建失败、删除失败或异常时的错误信息。
+        Error message for gateway creation failure, deletion failure, or abnormal status
         """
         return pulumi.get(self, "message")
 
@@ -381,7 +381,7 @@ class _GatewayState:
     @pulumi.getter(name="monitorSpec")
     def monitor_spec(self) -> Optional[pulumi.Input['GatewayMonitorSpecArgs']]:
         """
-        监控配置信息。
+        Monitoring configuration information
         """
         return pulumi.get(self, "monitor_spec")
 
@@ -393,7 +393,7 @@ class _GatewayState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网关名称。
+        Gateway name
         """
         return pulumi.get(self, "name")
 
@@ -405,7 +405,7 @@ class _GatewayState:
     @pulumi.getter(name="networkSpec")
     def network_spec(self) -> Optional[pulumi.Input['GatewayNetworkSpecArgs']]:
         """
-        网络配置信息。
+        Network configuration information
         """
         return pulumi.get(self, "network_spec")
 
@@ -417,7 +417,7 @@ class _GatewayState:
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        项目名称。
+        Project name
         """
         return pulumi.get(self, "project_name")
 
@@ -429,7 +429,7 @@ class _GatewayState:
     @pulumi.getter(name="resourceSpec")
     def resource_spec(self) -> Optional[pulumi.Input['GatewayResourceSpecArgs']]:
         """
-        资源规格配置信息。
+        Resource specification configuration information
         """
         return pulumi.get(self, "resource_spec")
 
@@ -441,7 +441,7 @@ class _GatewayState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网关状态，取值：Creating：创建中。CreatedFailed：创建失败。Updating：更新中。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+        Gateway status. Options: Creating: Creating; CreatedFailed: Creation failed; Updating: Updating; Running: Running; Deleting: Deleting; DeletedFailed: Deletion failed; Abnormal: Abnormal
         """
         return pulumi.get(self, "status")
 
@@ -453,7 +453,7 @@ class _GatewayState:
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        子网ID列表。长度限制为1~2个。
+        Subnet ID list. Length limit: 1–2
         """
         return pulumi.get(self, "subnet_ids")
 
@@ -465,7 +465,7 @@ class _GatewayState:
     @pulumi.getter(name="traceSpec")
     def trace_spec(self) -> Optional[pulumi.Input['GatewayTraceSpecArgs']]:
         """
-        链路追踪配置信息。
+        Link tracing configuration information.
         """
         return pulumi.get(self, "trace_spec")
 
@@ -477,7 +477,7 @@ class _GatewayState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网关类型，取值：standard：标准网关。serverless：Serverless网关（暂不支持）。
+        Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
         """
         return pulumi.get(self, "type")
 
@@ -489,7 +489,7 @@ class _GatewayState:
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        网关版本。
+        Gateway version.
         """
         return pulumi.get(self, "version")
 
@@ -529,7 +529,7 @@ class Gateway(pulumi.CustomResource):
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        API网关(Gateway)是API管理服务的核心组件，负责接收、处理、转发API请求，并提供安全认证、流量控制等功能。
+        API Gateway (Gateway) is the core component of the API management service. It receives, processes, and forwards API requests, and provides security authentication, traffic control, and other features
 
         ## Import
 
@@ -539,16 +539,16 @@ class Gateway(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] comments: 网关备注信息。长度限制为0~253个字符。
-        :param pulumi.Input[Union['GatewayCustomLogArgs', 'GatewayCustomLogArgsDict']] custom_log: 自定义日志配置。
-        :param pulumi.Input[Union['GatewayLogSpecArgs', 'GatewayLogSpecArgsDict']] log_spec: 日志配置。
-        :param pulumi.Input[Union['GatewayMonitorSpecArgs', 'GatewayMonitorSpecArgsDict']] monitor_spec: 监控配置信息。
-        :param pulumi.Input[builtins.str] name: 网关名称。
-        :param pulumi.Input[builtins.str] project_name: 项目名称。
-        :param pulumi.Input[Union['GatewayResourceSpecArgs', 'GatewayResourceSpecArgsDict']] resource_spec: 资源规格配置信息。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_ids: 子网ID列表。长度限制为1~2个。
-        :param pulumi.Input[Union['GatewayTraceSpecArgs', 'GatewayTraceSpecArgsDict']] trace_spec: 链路追踪配置信息。
-        :param pulumi.Input[builtins.str] type: 网关类型，取值：standard：标准网关。serverless：Serverless网关（暂不支持）。
+        :param pulumi.Input[builtins.str] comments: Gateway remarks. Length limit: 0–253 characters.
+        :param pulumi.Input[Union['GatewayCustomLogArgs', 'GatewayCustomLogArgsDict']] custom_log: Custom log configuration
+        :param pulumi.Input[Union['GatewayLogSpecArgs', 'GatewayLogSpecArgsDict']] log_spec: Log configuration
+        :param pulumi.Input[Union['GatewayMonitorSpecArgs', 'GatewayMonitorSpecArgsDict']] monitor_spec: Monitoring configuration information
+        :param pulumi.Input[builtins.str] name: Gateway name
+        :param pulumi.Input[builtins.str] project_name: Project name
+        :param pulumi.Input[Union['GatewayResourceSpecArgs', 'GatewayResourceSpecArgsDict']] resource_spec: Resource specification configuration information
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_ids: Subnet ID list. Length limit: 1–2
+        :param pulumi.Input[Union['GatewayTraceSpecArgs', 'GatewayTraceSpecArgsDict']] trace_spec: Link tracing configuration information.
+        :param pulumi.Input[builtins.str] type: Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
         :param pulumi.Input[builtins.str] vpc_id: VPC ID。
         """
         ...
@@ -558,7 +558,7 @@ class Gateway(pulumi.CustomResource):
                  args: GatewayArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        API网关(Gateway)是API管理服务的核心组件，负责接收、处理、转发API请求，并提供安全认证、流量控制等功能。
+        API Gateway (Gateway) is the core component of the API management service. It receives, processes, and forwards API requests, and provides security authentication, traffic control, and other features
 
         ## Import
 
@@ -658,23 +658,23 @@ class Gateway(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['GatewayBackendSpecArgs', 'GatewayBackendSpecArgsDict']] backend_spec: 后端服务配置信息。
-        :param pulumi.Input[builtins.str] comments: 网关备注信息。长度限制为0~253个字符。
-        :param pulumi.Input[builtins.str] created_time: 网关创建时间。
-        :param pulumi.Input[Union['GatewayCustomLogArgs', 'GatewayCustomLogArgsDict']] custom_log: 自定义日志配置。
-        :param pulumi.Input[builtins.str] gateway_id: 网关实例ID。
-        :param pulumi.Input[Union['GatewayLogSpecArgs', 'GatewayLogSpecArgsDict']] log_spec: 日志配置。
-        :param pulumi.Input[builtins.str] message: 网关创建失败、删除失败或异常时的错误信息。
-        :param pulumi.Input[Union['GatewayMonitorSpecArgs', 'GatewayMonitorSpecArgsDict']] monitor_spec: 监控配置信息。
-        :param pulumi.Input[builtins.str] name: 网关名称。
-        :param pulumi.Input[Union['GatewayNetworkSpecArgs', 'GatewayNetworkSpecArgsDict']] network_spec: 网络配置信息。
-        :param pulumi.Input[builtins.str] project_name: 项目名称。
-        :param pulumi.Input[Union['GatewayResourceSpecArgs', 'GatewayResourceSpecArgsDict']] resource_spec: 资源规格配置信息。
-        :param pulumi.Input[builtins.str] status: 网关状态，取值：Creating：创建中。CreatedFailed：创建失败。Updating：更新中。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_ids: 子网ID列表。长度限制为1~2个。
-        :param pulumi.Input[Union['GatewayTraceSpecArgs', 'GatewayTraceSpecArgsDict']] trace_spec: 链路追踪配置信息。
-        :param pulumi.Input[builtins.str] type: 网关类型，取值：standard：标准网关。serverless：Serverless网关（暂不支持）。
-        :param pulumi.Input[builtins.str] version: 网关版本。
+        :param pulumi.Input[Union['GatewayBackendSpecArgs', 'GatewayBackendSpecArgsDict']] backend_spec: Backend service configuration information
+        :param pulumi.Input[builtins.str] comments: Gateway remarks. Length limit: 0–253 characters.
+        :param pulumi.Input[builtins.str] created_time: Gateway creation time
+        :param pulumi.Input[Union['GatewayCustomLogArgs', 'GatewayCustomLogArgsDict']] custom_log: Custom log configuration
+        :param pulumi.Input[builtins.str] gateway_id: Gateway instance ID
+        :param pulumi.Input[Union['GatewayLogSpecArgs', 'GatewayLogSpecArgsDict']] log_spec: Log configuration
+        :param pulumi.Input[builtins.str] message: Error message for gateway creation failure, deletion failure, or abnormal status
+        :param pulumi.Input[Union['GatewayMonitorSpecArgs', 'GatewayMonitorSpecArgsDict']] monitor_spec: Monitoring configuration information
+        :param pulumi.Input[builtins.str] name: Gateway name
+        :param pulumi.Input[Union['GatewayNetworkSpecArgs', 'GatewayNetworkSpecArgsDict']] network_spec: Network configuration information
+        :param pulumi.Input[builtins.str] project_name: Project name
+        :param pulumi.Input[Union['GatewayResourceSpecArgs', 'GatewayResourceSpecArgsDict']] resource_spec: Resource specification configuration information
+        :param pulumi.Input[builtins.str] status: Gateway status. Options: Creating: Creating; CreatedFailed: Creation failed; Updating: Updating; Running: Running; Deleting: Deleting; DeletedFailed: Deletion failed; Abnormal: Abnormal
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_ids: Subnet ID list. Length limit: 1–2
+        :param pulumi.Input[Union['GatewayTraceSpecArgs', 'GatewayTraceSpecArgsDict']] trace_spec: Link tracing configuration information.
+        :param pulumi.Input[builtins.str] type: Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
+        :param pulumi.Input[builtins.str] version: Gateway version.
         :param pulumi.Input[builtins.str] vpc_id: VPC ID。
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -706,7 +706,7 @@ class Gateway(pulumi.CustomResource):
     @pulumi.getter(name="backendSpec")
     def backend_spec(self) -> pulumi.Output['outputs.GatewayBackendSpec']:
         """
-        后端服务配置信息。
+        Backend service configuration information
         """
         return pulumi.get(self, "backend_spec")
 
@@ -714,7 +714,7 @@ class Gateway(pulumi.CustomResource):
     @pulumi.getter
     def comments(self) -> pulumi.Output[builtins.str]:
         """
-        网关备注信息。长度限制为0~253个字符。
+        Gateway remarks. Length limit: 0–253 characters.
         """
         return pulumi.get(self, "comments")
 
@@ -722,7 +722,7 @@ class Gateway(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        网关创建时间。
+        Gateway creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -730,7 +730,7 @@ class Gateway(pulumi.CustomResource):
     @pulumi.getter(name="customLog")
     def custom_log(self) -> pulumi.Output['outputs.GatewayCustomLog']:
         """
-        自定义日志配置。
+        Custom log configuration
         """
         return pulumi.get(self, "custom_log")
 
@@ -743,7 +743,7 @@ class Gateway(pulumi.CustomResource):
     @pulumi.getter(name="gatewayId")
     def gateway_id(self) -> pulumi.Output[builtins.str]:
         """
-        网关实例ID。
+        Gateway instance ID
         """
         return pulumi.get(self, "gateway_id")
 
@@ -751,7 +751,7 @@ class Gateway(pulumi.CustomResource):
     @pulumi.getter(name="logSpec")
     def log_spec(self) -> pulumi.Output['outputs.GatewayLogSpec']:
         """
-        日志配置。
+        Log configuration
         """
         return pulumi.get(self, "log_spec")
 
@@ -759,7 +759,7 @@ class Gateway(pulumi.CustomResource):
     @pulumi.getter
     def message(self) -> pulumi.Output[builtins.str]:
         """
-        网关创建失败、删除失败或异常时的错误信息。
+        Error message for gateway creation failure, deletion failure, or abnormal status
         """
         return pulumi.get(self, "message")
 
@@ -767,7 +767,7 @@ class Gateway(pulumi.CustomResource):
     @pulumi.getter(name="monitorSpec")
     def monitor_spec(self) -> pulumi.Output['outputs.GatewayMonitorSpec']:
         """
-        监控配置信息。
+        Monitoring configuration information
         """
         return pulumi.get(self, "monitor_spec")
 
@@ -775,7 +775,7 @@ class Gateway(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[builtins.str]:
         """
-        网关名称。
+        Gateway name
         """
         return pulumi.get(self, "name")
 
@@ -783,7 +783,7 @@ class Gateway(pulumi.CustomResource):
     @pulumi.getter(name="networkSpec")
     def network_spec(self) -> pulumi.Output['outputs.GatewayNetworkSpec']:
         """
-        网络配置信息。
+        Network configuration information
         """
         return pulumi.get(self, "network_spec")
 
@@ -791,7 +791,7 @@ class Gateway(pulumi.CustomResource):
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[builtins.str]:
         """
-        项目名称。
+        Project name
         """
         return pulumi.get(self, "project_name")
 
@@ -799,7 +799,7 @@ class Gateway(pulumi.CustomResource):
     @pulumi.getter(name="resourceSpec")
     def resource_spec(self) -> pulumi.Output['outputs.GatewayResourceSpec']:
         """
-        资源规格配置信息。
+        Resource specification configuration information
         """
         return pulumi.get(self, "resource_spec")
 
@@ -807,7 +807,7 @@ class Gateway(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        网关状态，取值：Creating：创建中。CreatedFailed：创建失败。Updating：更新中。Running：运行中。Deleting：删除中。DeletedFailed：删除失败。Abnormal：异常。
+        Gateway status. Options: Creating: Creating; CreatedFailed: Creation failed; Updating: Updating; Running: Running; Deleting: Deleting; DeletedFailed: Deletion failed; Abnormal: Abnormal
         """
         return pulumi.get(self, "status")
 
@@ -815,7 +815,7 @@ class Gateway(pulumi.CustomResource):
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        子网ID列表。长度限制为1~2个。
+        Subnet ID list. Length limit: 1–2
         """
         return pulumi.get(self, "subnet_ids")
 
@@ -823,7 +823,7 @@ class Gateway(pulumi.CustomResource):
     @pulumi.getter(name="traceSpec")
     def trace_spec(self) -> pulumi.Output['outputs.GatewayTraceSpec']:
         """
-        链路追踪配置信息。
+        Link tracing configuration information.
         """
         return pulumi.get(self, "trace_spec")
 
@@ -831,7 +831,7 @@ class Gateway(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[builtins.str]:
         """
-        网关类型，取值：standard：标准网关。serverless：Serverless网关（暂不支持）。
+        Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
         """
         return pulumi.get(self, "type")
 
@@ -839,7 +839,7 @@ class Gateway(pulumi.CustomResource):
     @pulumi.getter
     def version(self) -> pulumi.Output[builtins.str]:
         """
-        网关版本。
+        Gateway version.
         """
         return pulumi.get(self, "version")
 

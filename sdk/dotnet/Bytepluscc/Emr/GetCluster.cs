@@ -65,79 +65,79 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
     public sealed class GetClusterResult
     {
         /// <summary>
-        /// 账号ID。
+        /// Account ID.
         /// </summary>
         public readonly int AccountId;
         /// <summary>
-        /// 集群服务的扩展信息列表，包括服务的自定义配置项、服务组件的自定义部署拓扑设置，以及服务的元数据连接配置信息。
+        /// Cluster service extension information list, including custom configuration items for services, custom deployment topology settings for service components, and metadata connection configuration information for services.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterApplicationExtraResult> ApplicationExtras;
         /// <summary>
-        /// 集群安装的服务名称列表。创建字段。
+        /// List of service names installed in the cluster. Creation-related field.
         /// </summary>
         public readonly ImmutableArray<string> ApplicationNames;
         /// <summary>
-        /// 集群安装的服务列表。只读字段。
+        /// Installed service list for cluster. Read-only field.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterApplicationResult> Applications;
         /// <summary>
-        /// 集群的引导脚本列表。
+        /// Cluster bootstrap script list.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterBootstrapScriptResult> BootstrapScripts;
         /// <summary>
-        /// 包月的配置参数，当chargeType=PRE时，必选。
+        /// Monthly subscription configuration parameters. Required when chargeType=PRE.
         /// </summary>
         public readonly Outputs.GetClusterChargePreConfigResult ChargePreConfig;
         /// <summary>
-        /// 付费类型，PRE表示包月，POST表示按量计费。
+        /// Payment type. PRE means monthly subscription, POST means pay-as-you-go.
         /// </summary>
         public readonly string ChargeType;
         /// <summary>
-        /// 集群dns域名后缀列表。
+        /// Cluster DNS domain suffix list.
         /// </summary>
         public readonly ImmutableArray<string> ClusterDomainNames;
         /// <summary>
-        /// 集群ID。
+        /// Cluster ID.
         /// </summary>
         public readonly string ClusterId;
         /// <summary>
-        /// 集群名称。
+        /// Cluster name.
         /// </summary>
         public readonly string ClusterName;
         /// <summary>
-        /// 集群状态。
+        /// Cluster status.
         /// </summary>
         public readonly string ClusterState;
         /// <summary>
-        /// 集群类型。
+        /// Cluster type.
         /// </summary>
         public readonly string ClusterType;
         /// <summary>
-        /// 集群创建时间。
+        /// Cluster creation time.
         /// </summary>
         public readonly int CreatedTime;
         /// <summary>
-        /// 创建者ID。
+        /// Creator ID.
         /// </summary>
         public readonly int CreatorId;
         /// <summary>
-        /// 创建者名称。
+        /// Creator name.
         /// </summary>
         public readonly string CreatorName;
         /// <summary>
-        /// 部署模式。SIMPLE表示简单模式，HIGH_AVAILABLE表示高可用模式。
+        /// Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
         /// </summary>
         public readonly string DeployMode;
         /// <summary>
-        /// ECS镜像ID。
+        /// ECS image ID.
         /// </summary>
         public readonly string EcsImageId;
         /// <summary>
-        /// 集群过期时间。
+        /// Cluster expiration time.
         /// </summary>
         public readonly int ExpireTime;
         /// <summary>
-        /// HistoryServer模式，LOCAL将活动数据存储于集群内，PHS将活动数据存储于集群外。
+        /// HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
         /// </summary>
         public readonly string HistoryServerMode;
         /// <summary>
@@ -145,43 +145,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 集群全局的节点信息。
+        /// Cluster global node information.
         /// </summary>
         public readonly Outputs.GetClusterNodeAttributeResult NodeAttribute;
         /// <summary>
-        /// 节点组属性列表。
+        /// Node group property list.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterNodeGroupAttributeResult> NodeGroupAttributes;
         /// <summary>
-        /// 资源所属项目，默认为default。一个资源只能归属于一个项目。只能包含字母、数字、下划线“_”、点“.”和中划线“-”。长度限制在64个字符以内。
+        /// Project to which the resource belongs. Default is 'default'. Each resource can belong to only one project. Only letters, numbers, underscores '_', dots '.', and hyphens '-' are allowed. Maximum length is 64 characters.
         /// </summary>
         public readonly string ProjectName;
         /// <summary>
-        /// 集群创建完成时间。
+        /// Cluster creation completion time.
         /// </summary>
         public readonly int ReadyTime;
         /// <summary>
-        /// 集群版本。
+        /// Cluster version.
         /// </summary>
         public readonly string ReleaseVersion;
         /// <summary>
-        /// 集群全局安全组ID，所有节点组下的ecs都会加入该安全组。
+        /// Cluster global security group ID. All ECS in node groups will join this security group.
         /// </summary>
         public readonly string SecurityGroupId;
         /// <summary>
-        /// 安全模式。
+        /// Security mode.
         /// </summary>
         public readonly string SecurityMode;
         /// <summary>
-        /// 状态变更原因。
+        /// Status change reason.
         /// </summary>
         public readonly Outputs.GetClusterStateChangeReasonResult StateChangeReason;
         /// <summary>
-        /// 标签列表。
+        /// Tag list.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterTagResult> Tags;
         /// <summary>
-        /// 集群终止时间。
+        /// Cluster termination time.
         /// </summary>
         public readonly int TerminateTime;
         /// <summary>

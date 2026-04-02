@@ -20,14 +20,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     public static final VpnGatewayState Empty = new VpnGatewayState();
 
     /**
-     * VPN网关的ASN。
+     * ASN of the VPN gateway.
      * 
      */
     @Import(name="asn")
     private @Nullable Output<Integer> asn;
 
     /**
-     * @return VPN网关的ASN。
+     * @return ASN of the VPN gateway.
      * 
      */
     public Optional<Output<Integer>> asn() {
@@ -35,14 +35,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPN网关的带宽规格。
+     * VPN gateway bandwidth specification.
      * 
      */
     @Import(name="bandwidth")
     private @Nullable Output<Integer> bandwidth;
 
     /**
-     * @return VPN网关的带宽规格。
+     * @return VPN gateway bandwidth specification.
      * 
      */
     public Optional<Output<Integer>> bandwidth() {
@@ -50,14 +50,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPN网关的计费类型。1：包年包月。2：按量计费（按固定规格）
+     * VPN gateway billing type. 1: Subscription. 2: Pay-as-you-go (fixed specification)
      * 
      */
     @Import(name="billingType")
     private @Nullable Output<Integer> billingType;
 
     /**
-     * @return VPN网关的计费类型。1：包年包月。2：按量计费（按固定规格）
+     * @return VPN gateway billing type. 1: Subscription. 2: Pay-as-you-go (fixed specification)
      * 
      */
     public Optional<Output<Integer>> billingType() {
@@ -65,14 +65,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPN网关的计费状态。Normal: 正常。FinancialLocked: 被锁定。
+     * VPN gateway billing status. Normal: Normal. FinancialLocked: Locked.
      * 
      */
     @Import(name="businessStatus")
     private @Nullable Output<String> businessStatus;
 
     /**
-     * @return VPN网关的计费状态。Normal: 正常。FinancialLocked: 被锁定。
+     * @return VPN gateway billing status. Normal: Normal. FinancialLocked: Locked.
      * 
      */
     public Optional<Output<String>> businessStatus() {
@@ -80,14 +80,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPN网关关联IPsec连接的数量。
+     * Number of IPsec connections associated with the VPN gateway.
      * 
      */
     @Import(name="connectionCount")
     private @Nullable Output<Integer> connectionCount;
 
     /**
-     * @return VPN网关关联IPsec连接的数量。
+     * @return Number of IPsec connections associated with the VPN gateway.
      * 
      */
     public Optional<Output<Integer>> connectionCount() {
@@ -95,14 +95,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建VPN网关的时间。
+     * Time when the VPN gateway was created.
      * 
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
-     * @return 创建VPN网关的时间。
+     * @return Time when the VPN gateway was created.
      * 
      */
     public Optional<Output<String>> createTime() {
@@ -110,14 +110,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 预期资源强制回收时间。
+     * Expected resource forced reclaim time.
      * 
      */
     @Import(name="deletedTime")
     private @Nullable Output<String> deletedTime;
 
     /**
-     * @return 预期资源强制回收时间。
+     * @return Expected resource forced reclaim time.
      * 
      */
     public Optional<Output<String>> deletedTime() {
@@ -125,14 +125,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPN网关的描述。
+     * Description of the VPN gateway.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return VPN网关的描述。
+     * @return Description of the VPN gateway.
      * 
      */
     public Optional<Output<String>> description() {
@@ -140,14 +140,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPN网关是否开启双隧道模式。true：开启false：关闭
+     * Whether dual tunnel mode is enabled for the VPN gateway. true: Enabled false: Disabled
      * 
      */
     @Import(name="dualTunnelEnabled")
     private @Nullable Output<Boolean> dualTunnelEnabled;
 
     /**
-     * @return VPN网关是否开启双隧道模式。true：开启false：关闭
+     * @return Whether dual tunnel mode is enabled for the VPN gateway. true: Enabled false: Disabled
      * 
      */
     public Optional<Output<Boolean>> dualTunnelEnabled() {
@@ -155,14 +155,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPN网关的到期时间。
+     * VPN gateway expiration time.
      * 
      */
     @Import(name="expiredTime")
     private @Nullable Output<String> expiredTime;
 
     /**
-     * @return VPN网关的到期时间。
+     * @return VPN gateway expiration time.
      * 
      */
     public Optional<Output<String>> expiredTime() {
@@ -170,14 +170,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPN网关的公网IP地址。
+     * VPN gateway public IP address.
      * 
      */
     @Import(name="ipAddress")
     private @Nullable Output<String> ipAddress;
 
     /**
-     * @return VPN网关的公网IP地址。
+     * @return VPN gateway public IP address.
      * 
      */
     public Optional<Output<String>> ipAddress() {
@@ -185,14 +185,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPN 网关的协议类型。ipv4*only：IPv4协议类型。ipv6*only：IPv6协议类型。ipv4_ipv6：双栈协议类型。
+     * VPN gateway protocol type. ipv4*only: IPv4 protocol type. ipv6*only: IPv6 protocol type. ipv4_ipv6: Dual-stack protocol type.
      * 
      */
     @Import(name="ipStackType")
     private @Nullable Output<String> ipStackType;
 
     /**
-     * @return VPN 网关的协议类型。ipv4*only：IPv4协议类型。ipv6*only：IPv6协议类型。ipv4_ipv6：双栈协议类型。
+     * @return VPN gateway protocol type. ipv4*only: IPv4 protocol type. ipv6*only: IPv6 protocol type. ipv4_ipv6: Dual-stack protocol type.
      * 
      */
     public Optional<Output<String>> ipStackType() {
@@ -200,14 +200,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPN网关的IP地址类型。ipv4：IPv4地址类型。ipv6：IPv6地址类型。
+     * IP address type of the VPN gateway. ipv4: IPv4 address type. ipv6: IPv6 address type.
      * 
      */
     @Import(name="ipVersion")
     private @Nullable Output<String> ipVersion;
 
     /**
-     * @return VPN网关的IP地址类型。ipv4：IPv4地址类型。ipv6：IPv6地址类型。
+     * @return IP address type of the VPN gateway. ipv4: IPv4 address type. ipv6: IPv6 address type.
      * 
      */
     public Optional<Output<String>> ipVersion() {
@@ -215,14 +215,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启IPSec功能。true：开启false：关闭。
+     * Enable IPSec feature. true: enabled false: disabled
      * 
      */
     @Import(name="ipsecEnabled")
     private @Nullable Output<Boolean> ipsecEnabled;
 
     /**
-     * @return 是否开启IPSec功能。true：开启false：关闭。
+     * @return Enable IPSec feature. true: enabled false: disabled
      * 
      */
     public Optional<Output<Boolean>> ipsecEnabled() {
@@ -230,14 +230,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 当前资源的状态是否被封禁。true：封禁false：未封禁。
+     * Whether the current resource is banned. true: Banned false: Not banned.
      * 
      */
     @Import(name="isBlocked")
     private @Nullable Output<Boolean> isBlocked;
 
     /**
-     * @return 当前资源的状态是否被封禁。true：封禁false：未封禁。
+     * @return Whether the current resource is banned. true: Banned false: Not banned.
      * 
      */
     public Optional<Output<Boolean>> isBlocked() {
@@ -245,14 +245,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPN网关的锁定原因。financial：因欠费被锁定。security：因安全被锁定。unlock：未锁定。
+     * VPN gateway lock reasons. financial: Locked due to overdue payment. security: Locked for security reasons. unlock: Not locked.
      * 
      */
     @Import(name="lockReason")
     private @Nullable Output<String> lockReason;
 
     /**
-     * @return VPN网关的锁定原因。financial：因欠费被锁定。security：因安全被锁定。unlock：未锁定。
+     * @return VPN gateway lock reasons. financial: Locked due to overdue payment. security: Locked for security reasons. unlock: Not locked.
      * 
      */
     public Optional<Output<String>> lockReason() {
@@ -260,14 +260,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+     * Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns an empty value.
      * 
      */
     @Import(name="overdueTime")
     private @Nullable Output<String> overdueTime;
 
     /**
-     * @return 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+     * @return Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns an empty value.
      * 
      */
     public Optional<Output<String>> overdueTime() {
@@ -275,14 +275,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 包年包月类型VPN网关购买的时长，默认“1”。当PeriodUnit传入值为Month，Period取值范围：1~9、12、24、36。当PeriodUnit传入值为Year，Period取值范围：1～3。
+     * Subscription VPN gateway purchase duration, default is &#39;1&#39;. If PeriodUnit is Month, Period value range: 1–9, 12, 24, 36. If PeriodUnit is Year, Period value range: 1–3.
      * 
      */
     @Import(name="period")
     private @Nullable Output<Integer> period;
 
     /**
-     * @return 包年包月类型VPN网关购买的时长，默认“1”。当PeriodUnit传入值为Month，Period取值范围：1~9、12、24、36。当PeriodUnit传入值为Year，Period取值范围：1～3。
+     * @return Subscription VPN gateway purchase duration, default is &#39;1&#39;. If PeriodUnit is Month, Period value range: 1–9, 12, 24, 36. If PeriodUnit is Year, Period value range: 1–3.
      * 
      */
     public Optional<Output<Integer>> period() {
@@ -290,14 +290,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 包年包月类型VPN网关购买时长的单位，默认“Month”。Month：月Year：年
+     * Unit for the purchase duration of subscription-based VPN gateways. Default is &#39;Month&#39;. Month: month Year: year
      * 
      */
     @Import(name="periodUnit")
     private @Nullable Output<String> periodUnit;
 
     /**
-     * @return 包年包月类型VPN网关购买时长的单位，默认“Month”。Month：月Year：年
+     * @return Unit for the purchase duration of subscription-based VPN gateways. Default is &#39;Month&#39;. Month: month Year: year
      * 
      */
     public Optional<Output<String>> periodUnit() {
@@ -305,14 +305,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPN网关所属的项目。不填默认为default，即创建的资源属于default项目。您可调用ListProjects查询当前账号下项目的信息。
+     * Project to which the VPN gateway belongs. If not specified, defaults to &#39;default&#39;, meaning the created resource belongs to the default project. You can call ListProjects to query project information under the current account.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return VPN网关所属的项目。不填默认为default，即创建的资源属于default项目。您可调用ListProjects查询当前账号下项目的信息。
+     * @return Project to which the VPN gateway belongs. If not specified, defaults to &#39;default&#39;, meaning the created resource belongs to the default project. You can call ListProjects to query project information under the current account.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -320,14 +320,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPN网关的路由条目数量。
+     * Number of route entries for the VPN gateway.
      * 
      */
     @Import(name="routeCount")
     private @Nullable Output<Integer> routeCount;
 
     /**
-     * @return VPN网关的路由条目数量。
+     * @return Number of route entries for the VPN gateway.
      * 
      */
     public Optional<Output<Integer>> routeCount() {
@@ -335,14 +335,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPN网关的第二个公网IP地址。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+     * Second public IP address of the VPN gateway. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
      * 
      */
     @Import(name="secondaryIpAddress")
     private @Nullable Output<String> secondaryIpAddress;
 
     /**
-     * @return VPN网关的第二个公网IP地址。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+     * @return Second public IP address of the VPN gateway. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
      * 
      */
     public Optional<Output<String>> secondaryIpAddress() {
@@ -350,14 +350,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPN网关实例关联的第二个子网的ID。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+     * ID of the second subnet associated with the VPN gateway instance. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
      * 
      */
     @Import(name="secondarySubnetId")
     private @Nullable Output<String> secondarySubnetId;
 
     /**
-     * @return VPN网关实例关联的第二个子网的ID。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+     * @return ID of the second subnet associated with the VPN gateway instance. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
      * 
      */
     public Optional<Output<String>> secondarySubnetId() {
@@ -365,14 +365,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启SSL VPN功能。true：开启false：关闭
+     * Enable SSL VPN feature. true: enabled false: disabled
      * 
      */
     @Import(name="sslEnabled")
     private @Nullable Output<Boolean> sslEnabled;
 
     /**
-     * @return 是否开启SSL VPN功能。true：开启false：关闭
+     * @return Enable SSL VPN feature. true: enabled false: disabled
      * 
      */
     public Optional<Output<Boolean>> sslEnabled() {
@@ -380,14 +380,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPN网关的最大SSL连接数。
+     * Maximum SSL connections for the VPN gateway.
      * 
      */
     @Import(name="sslMaxConnections")
     private @Nullable Output<Integer> sslMaxConnections;
 
     /**
-     * @return VPN网关的最大SSL连接数。
+     * @return Maximum SSL connections for the VPN gateway.
      * 
      */
     public Optional<Output<Integer>> sslMaxConnections() {
@@ -395,14 +395,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPN网关的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+     * Status of the VPN gateway. Creating: creating Deleting: deleting Pending: configuring Available: available
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return VPN网关的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+     * @return Status of the VPN gateway. Creating: creating Deleting: deleting Pending: configuring Available: available
      * 
      */
     public Optional<Output<String>> status() {
@@ -410,14 +410,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPN网关使用的端口所属子网的ID。
+     * ID of the subnet to which the port used by the VPN gateway belongs.
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return VPN网关使用的端口所属子网的ID。
+     * @return ID of the subnet to which the port used by the VPN gateway belongs.
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -432,14 +432,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 更新VPN网关的时间。
+     * VPN gateway update time.
      * 
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
-     * @return 更新VPN网关的时间。
+     * @return VPN gateway update time.
      * 
      */
     public Optional<Output<String>> updateTime() {
@@ -447,14 +447,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPN网关所在VPC的ID。
+     * VPC ID where the VPN gateway is located.
      * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
-     * @return VPN网关所在VPC的ID。
+     * @return VPC ID where the VPN gateway is located.
      * 
      */
     public Optional<Output<String>> vpcId() {
@@ -462,14 +462,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPN网关的ID。
+     * ID of the VPN gateway.
      * 
      */
     @Import(name="vpnGatewayId")
     private @Nullable Output<String> vpnGatewayId;
 
     /**
-     * @return VPN网关的ID。
+     * @return ID of the VPN gateway.
      * 
      */
     public Optional<Output<String>> vpnGatewayId() {
@@ -477,14 +477,14 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * VPN网关的名称。
+     * Name of the VPN gateway.
      * 
      */
     @Import(name="vpnGatewayName")
     private @Nullable Output<String> vpnGatewayName;
 
     /**
-     * @return VPN网关的名称。
+     * @return Name of the VPN gateway.
      * 
      */
     public Optional<Output<String>> vpnGatewayName() {
@@ -547,7 +547,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param asn VPN网关的ASN。
+         * @param asn ASN of the VPN gateway.
          * 
          * @return builder
          * 
@@ -558,7 +558,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param asn VPN网关的ASN。
+         * @param asn ASN of the VPN gateway.
          * 
          * @return builder
          * 
@@ -568,7 +568,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param bandwidth VPN网关的带宽规格。
+         * @param bandwidth VPN gateway bandwidth specification.
          * 
          * @return builder
          * 
@@ -579,7 +579,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param bandwidth VPN网关的带宽规格。
+         * @param bandwidth VPN gateway bandwidth specification.
          * 
          * @return builder
          * 
@@ -589,7 +589,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param billingType VPN网关的计费类型。1：包年包月。2：按量计费（按固定规格）
+         * @param billingType VPN gateway billing type. 1: Subscription. 2: Pay-as-you-go (fixed specification)
          * 
          * @return builder
          * 
@@ -600,7 +600,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param billingType VPN网关的计费类型。1：包年包月。2：按量计费（按固定规格）
+         * @param billingType VPN gateway billing type. 1: Subscription. 2: Pay-as-you-go (fixed specification)
          * 
          * @return builder
          * 
@@ -610,7 +610,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param businessStatus VPN网关的计费状态。Normal: 正常。FinancialLocked: 被锁定。
+         * @param businessStatus VPN gateway billing status. Normal: Normal. FinancialLocked: Locked.
          * 
          * @return builder
          * 
@@ -621,7 +621,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param businessStatus VPN网关的计费状态。Normal: 正常。FinancialLocked: 被锁定。
+         * @param businessStatus VPN gateway billing status. Normal: Normal. FinancialLocked: Locked.
          * 
          * @return builder
          * 
@@ -631,7 +631,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param connectionCount VPN网关关联IPsec连接的数量。
+         * @param connectionCount Number of IPsec connections associated with the VPN gateway.
          * 
          * @return builder
          * 
@@ -642,7 +642,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param connectionCount VPN网关关联IPsec连接的数量。
+         * @param connectionCount Number of IPsec connections associated with the VPN gateway.
          * 
          * @return builder
          * 
@@ -652,7 +652,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createTime 创建VPN网关的时间。
+         * @param createTime Time when the VPN gateway was created.
          * 
          * @return builder
          * 
@@ -663,7 +663,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createTime 创建VPN网关的时间。
+         * @param createTime Time when the VPN gateway was created.
          * 
          * @return builder
          * 
@@ -673,7 +673,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deletedTime 预期资源强制回收时间。
+         * @param deletedTime Expected resource forced reclaim time.
          * 
          * @return builder
          * 
@@ -684,7 +684,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deletedTime 预期资源强制回收时间。
+         * @param deletedTime Expected resource forced reclaim time.
          * 
          * @return builder
          * 
@@ -694,7 +694,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description VPN网关的描述。
+         * @param description Description of the VPN gateway.
          * 
          * @return builder
          * 
@@ -705,7 +705,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description VPN网关的描述。
+         * @param description Description of the VPN gateway.
          * 
          * @return builder
          * 
@@ -715,7 +715,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dualTunnelEnabled VPN网关是否开启双隧道模式。true：开启false：关闭
+         * @param dualTunnelEnabled Whether dual tunnel mode is enabled for the VPN gateway. true: Enabled false: Disabled
          * 
          * @return builder
          * 
@@ -726,7 +726,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dualTunnelEnabled VPN网关是否开启双隧道模式。true：开启false：关闭
+         * @param dualTunnelEnabled Whether dual tunnel mode is enabled for the VPN gateway. true: Enabled false: Disabled
          * 
          * @return builder
          * 
@@ -736,7 +736,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expiredTime VPN网关的到期时间。
+         * @param expiredTime VPN gateway expiration time.
          * 
          * @return builder
          * 
@@ -747,7 +747,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expiredTime VPN网关的到期时间。
+         * @param expiredTime VPN gateway expiration time.
          * 
          * @return builder
          * 
@@ -757,7 +757,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipAddress VPN网关的公网IP地址。
+         * @param ipAddress VPN gateway public IP address.
          * 
          * @return builder
          * 
@@ -768,7 +768,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipAddress VPN网关的公网IP地址。
+         * @param ipAddress VPN gateway public IP address.
          * 
          * @return builder
          * 
@@ -778,7 +778,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipStackType VPN 网关的协议类型。ipv4*only：IPv4协议类型。ipv6*only：IPv6协议类型。ipv4_ipv6：双栈协议类型。
+         * @param ipStackType VPN gateway protocol type. ipv4*only: IPv4 protocol type. ipv6*only: IPv6 protocol type. ipv4_ipv6: Dual-stack protocol type.
          * 
          * @return builder
          * 
@@ -789,7 +789,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipStackType VPN 网关的协议类型。ipv4*only：IPv4协议类型。ipv6*only：IPv6协议类型。ipv4_ipv6：双栈协议类型。
+         * @param ipStackType VPN gateway protocol type. ipv4*only: IPv4 protocol type. ipv6*only: IPv6 protocol type. ipv4_ipv6: Dual-stack protocol type.
          * 
          * @return builder
          * 
@@ -799,7 +799,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipVersion VPN网关的IP地址类型。ipv4：IPv4地址类型。ipv6：IPv6地址类型。
+         * @param ipVersion IP address type of the VPN gateway. ipv4: IPv4 address type. ipv6: IPv6 address type.
          * 
          * @return builder
          * 
@@ -810,7 +810,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipVersion VPN网关的IP地址类型。ipv4：IPv4地址类型。ipv6：IPv6地址类型。
+         * @param ipVersion IP address type of the VPN gateway. ipv4: IPv4 address type. ipv6: IPv6 address type.
          * 
          * @return builder
          * 
@@ -820,7 +820,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipsecEnabled 是否开启IPSec功能。true：开启false：关闭。
+         * @param ipsecEnabled Enable IPSec feature. true: enabled false: disabled
          * 
          * @return builder
          * 
@@ -831,7 +831,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipsecEnabled 是否开启IPSec功能。true：开启false：关闭。
+         * @param ipsecEnabled Enable IPSec feature. true: enabled false: disabled
          * 
          * @return builder
          * 
@@ -841,7 +841,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isBlocked 当前资源的状态是否被封禁。true：封禁false：未封禁。
+         * @param isBlocked Whether the current resource is banned. true: Banned false: Not banned.
          * 
          * @return builder
          * 
@@ -852,7 +852,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isBlocked 当前资源的状态是否被封禁。true：封禁false：未封禁。
+         * @param isBlocked Whether the current resource is banned. true: Banned false: Not banned.
          * 
          * @return builder
          * 
@@ -862,7 +862,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lockReason VPN网关的锁定原因。financial：因欠费被锁定。security：因安全被锁定。unlock：未锁定。
+         * @param lockReason VPN gateway lock reasons. financial: Locked due to overdue payment. security: Locked for security reasons. unlock: Not locked.
          * 
          * @return builder
          * 
@@ -873,7 +873,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lockReason VPN网关的锁定原因。financial：因欠费被锁定。security：因安全被锁定。unlock：未锁定。
+         * @param lockReason VPN gateway lock reasons. financial: Locked due to overdue payment. security: Locked for security reasons. unlock: Not locked.
          * 
          * @return builder
          * 
@@ -883,7 +883,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param overdueTime 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+         * @param overdueTime Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns an empty value.
          * 
          * @return builder
          * 
@@ -894,7 +894,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param overdueTime 资源冻结时间。仅当资源因为欠费冻结，此参数才会有返回值，否则均返回空值。
+         * @param overdueTime Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns an empty value.
          * 
          * @return builder
          * 
@@ -904,7 +904,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param period 包年包月类型VPN网关购买的时长，默认“1”。当PeriodUnit传入值为Month，Period取值范围：1~9、12、24、36。当PeriodUnit传入值为Year，Period取值范围：1～3。
+         * @param period Subscription VPN gateway purchase duration, default is &#39;1&#39;. If PeriodUnit is Month, Period value range: 1–9, 12, 24, 36. If PeriodUnit is Year, Period value range: 1–3.
          * 
          * @return builder
          * 
@@ -915,7 +915,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param period 包年包月类型VPN网关购买的时长，默认“1”。当PeriodUnit传入值为Month，Period取值范围：1~9、12、24、36。当PeriodUnit传入值为Year，Period取值范围：1～3。
+         * @param period Subscription VPN gateway purchase duration, default is &#39;1&#39;. If PeriodUnit is Month, Period value range: 1–9, 12, 24, 36. If PeriodUnit is Year, Period value range: 1–3.
          * 
          * @return builder
          * 
@@ -925,7 +925,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param periodUnit 包年包月类型VPN网关购买时长的单位，默认“Month”。Month：月Year：年
+         * @param periodUnit Unit for the purchase duration of subscription-based VPN gateways. Default is &#39;Month&#39;. Month: month Year: year
          * 
          * @return builder
          * 
@@ -936,7 +936,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param periodUnit 包年包月类型VPN网关购买时长的单位，默认“Month”。Month：月Year：年
+         * @param periodUnit Unit for the purchase duration of subscription-based VPN gateways. Default is &#39;Month&#39;. Month: month Year: year
          * 
          * @return builder
          * 
@@ -946,7 +946,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName VPN网关所属的项目。不填默认为default，即创建的资源属于default项目。您可调用ListProjects查询当前账号下项目的信息。
+         * @param projectName Project to which the VPN gateway belongs. If not specified, defaults to &#39;default&#39;, meaning the created resource belongs to the default project. You can call ListProjects to query project information under the current account.
          * 
          * @return builder
          * 
@@ -957,7 +957,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName VPN网关所属的项目。不填默认为default，即创建的资源属于default项目。您可调用ListProjects查询当前账号下项目的信息。
+         * @param projectName Project to which the VPN gateway belongs. If not specified, defaults to &#39;default&#39;, meaning the created resource belongs to the default project. You can call ListProjects to query project information under the current account.
          * 
          * @return builder
          * 
@@ -967,7 +967,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param routeCount VPN网关的路由条目数量。
+         * @param routeCount Number of route entries for the VPN gateway.
          * 
          * @return builder
          * 
@@ -978,7 +978,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param routeCount VPN网关的路由条目数量。
+         * @param routeCount Number of route entries for the VPN gateway.
          * 
          * @return builder
          * 
@@ -988,7 +988,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param secondaryIpAddress VPN网关的第二个公网IP地址。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+         * @param secondaryIpAddress Second public IP address of the VPN gateway. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
          * 
          * @return builder
          * 
@@ -999,7 +999,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param secondaryIpAddress VPN网关的第二个公网IP地址。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+         * @param secondaryIpAddress Second public IP address of the VPN gateway. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
          * 
          * @return builder
          * 
@@ -1009,7 +1009,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param secondarySubnetId VPN网关实例关联的第二个子网的ID。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+         * @param secondarySubnetId ID of the second subnet associated with the VPN gateway instance. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
          * 
          * @return builder
          * 
@@ -1020,7 +1020,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param secondarySubnetId VPN网关实例关联的第二个子网的ID。仅双隧道模式的VPN网关实例返回该参数，单隧道模式的VPN网关实例不返回该参数。
+         * @param secondarySubnetId ID of the second subnet associated with the VPN gateway instance. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
          * 
          * @return builder
          * 
@@ -1030,7 +1030,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslEnabled 是否开启SSL VPN功能。true：开启false：关闭
+         * @param sslEnabled Enable SSL VPN feature. true: enabled false: disabled
          * 
          * @return builder
          * 
@@ -1041,7 +1041,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslEnabled 是否开启SSL VPN功能。true：开启false：关闭
+         * @param sslEnabled Enable SSL VPN feature. true: enabled false: disabled
          * 
          * @return builder
          * 
@@ -1051,7 +1051,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslMaxConnections VPN网关的最大SSL连接数。
+         * @param sslMaxConnections Maximum SSL connections for the VPN gateway.
          * 
          * @return builder
          * 
@@ -1062,7 +1062,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslMaxConnections VPN网关的最大SSL连接数。
+         * @param sslMaxConnections Maximum SSL connections for the VPN gateway.
          * 
          * @return builder
          * 
@@ -1072,7 +1072,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status VPN网关的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+         * @param status Status of the VPN gateway. Creating: creating Deleting: deleting Pending: configuring Available: available
          * 
          * @return builder
          * 
@@ -1083,7 +1083,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status VPN网关的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+         * @param status Status of the VPN gateway. Creating: creating Deleting: deleting Pending: configuring Available: available
          * 
          * @return builder
          * 
@@ -1093,7 +1093,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId VPN网关使用的端口所属子网的ID。
+         * @param subnetId ID of the subnet to which the port used by the VPN gateway belongs.
          * 
          * @return builder
          * 
@@ -1104,7 +1104,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId VPN网关使用的端口所属子网的ID。
+         * @param subnetId ID of the subnet to which the port used by the VPN gateway belongs.
          * 
          * @return builder
          * 
@@ -1127,7 +1127,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updateTime 更新VPN网关的时间。
+         * @param updateTime VPN gateway update time.
          * 
          * @return builder
          * 
@@ -1138,7 +1138,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updateTime 更新VPN网关的时间。
+         * @param updateTime VPN gateway update time.
          * 
          * @return builder
          * 
@@ -1148,7 +1148,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId VPN网关所在VPC的ID。
+         * @param vpcId VPC ID where the VPN gateway is located.
          * 
          * @return builder
          * 
@@ -1159,7 +1159,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId VPN网关所在VPC的ID。
+         * @param vpcId VPC ID where the VPN gateway is located.
          * 
          * @return builder
          * 
@@ -1169,7 +1169,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpnGatewayId VPN网关的ID。
+         * @param vpnGatewayId ID of the VPN gateway.
          * 
          * @return builder
          * 
@@ -1180,7 +1180,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpnGatewayId VPN网关的ID。
+         * @param vpnGatewayId ID of the VPN gateway.
          * 
          * @return builder
          * 
@@ -1190,7 +1190,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpnGatewayName VPN网关的名称。
+         * @param vpnGatewayName Name of the VPN gateway.
          * 
          * @return builder
          * 
@@ -1201,7 +1201,7 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpnGatewayName VPN网关的名称。
+         * @param vpnGatewayName Name of the VPN gateway.
          * 
          * @return builder
          * 

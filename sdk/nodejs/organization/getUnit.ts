@@ -29,23 +29,23 @@ export interface GetUnitArgs {
  */
 export interface GetUnitResult {
     /**
-     * 创建时间。
+     * Creation time.
      */
     readonly createdTime: string;
     /**
-     * 删除标识。
+     * Deletion flag.
      */
     readonly deleteUk: string;
     /**
-     * 删除时间。
+     * Deletion time.
      */
     readonly deletedTime: string;
     /**
-     * 深度。
+     * Depth.
      */
     readonly depth: number;
     /**
-     * 描述。
+     * Description.
      */
     readonly description: string;
     /**
@@ -53,31 +53,31 @@ export interface GetUnitResult {
      */
     readonly id: string;
     /**
-     * 组织单元名称。
+     * Organizational unit name.
      */
     readonly name: string;
     /**
-     * 组织ID。
+     * Organization ID.
      */
     readonly orgId: string;
     /**
-     * 组织类型。企业组织： 1
+     * Organization type. Enterprise organization: 1
      */
     readonly orgType: number;
     /**
-     * 组织单元ID。
+     * Organizational unit ID.
      */
     readonly orgUnitId: string;
     /**
-     * 管理员ID。
+     * Administrator ID.
      */
     readonly owner: string;
     /**
-     * 父单元Id。
+     * Parent unit ID.
      */
     readonly parentId: string;
     /**
-     * 更新时间。
+     * Update time.
      */
     readonly updatedTime: string;
 }

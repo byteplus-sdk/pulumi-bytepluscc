@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
     public sealed class DeploymentSetCapacity
     {
         /// <summary>
-        /// 该可用区内，还可以加入当前部署集的ECS实例数量。
+        /// You can also include the number of ECS instances in the current deployment set within this availability zone.
         /// </summary>
         public readonly int? AvailableCount;
         /// <summary>
-        /// 部署集内属于该可用区的ECS实例数量。
+        /// Number of ECS instances in the deployment set that belong to this availability zone.
         /// </summary>
         public readonly int? UsedCount;
         /// <summary>
-        /// 可用区ID。只返回部署集内存量ECS实例所属的可用区ID。
+        /// Availability zone ID. Only returns the availability zone ID for ECS instances in the deployment set.
         /// </summary>
         public readonly string? ZoneId;
 

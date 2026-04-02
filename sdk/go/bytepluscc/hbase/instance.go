@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 表格数据库 HBase 版是基于 Apache HBase 提供的全托管 NoSQL 服务，兼容标准 HBase 访问协议，具备低成本存储、高扩展吞吐等优势。
+// Table Database HBase Edition is a fully managed NoSQL service based on Apache HBase, compatible with the standard HBase access protocol, offering advantages such as low-cost storage and high scalability throughput.
 //
 // ## Example Usage
 //
@@ -73,75 +73,75 @@ import (
 type Instance struct {
 	pulumi.CustomResourceState
 
-	// 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+	// Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
 	AutoRenew pulumi.BoolOutput `pulumi:"autoRenew"`
-	// 计费状态。取值：Normal：正常。Overdue：欠费。Shutdown：关停。
+	// Billing status. Values: Normal: normal. Overdue: overdue. Shutdown: shutdown.
 	ChargeStatus pulumi.StringOutput `pulumi:"chargeStatus"`
-	// 计费类型，取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+	// Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
 	ChargeType pulumi.StringOutput `pulumi:"chargeType"`
-	// 实例总容量型存储空间大小，单位 GiB。
+	// Total capacity-type storage space for the instance, in GiB.
 	ColdStorage pulumi.IntOutput `pulumi:"coldStorage"`
-	// 实例创建时间（UTC 时间）。
+	// Instance creation time (UTC).
 	CreateTime pulumi.StringOutput `pulumi:"createTime"`
-	// 实例删除保护功能开关状态。取值范围：enabled：已开启。disabled：未开启。说明关于实例删除保护的更多信息，请参见实例删除保护。
+	// Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
 	DeletionProtection pulumi.StringOutput `pulumi:"deletionProtection"`
-	// 是否开启登录认证。取值：true：已开启登录认证。false：未开启登录认证。
+	// Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
 	EnableAuth pulumi.BoolOutput `pulumi:"enableAuth"`
-	// 是否开通存储型容量，取值：true：开通容量型存储。false：不开通容量型存储。说明容量型存储的详细介绍，请参见冷热分离介绍。仅当 MultiAZ（部署方式）取值为 false（单可用区部署）时，支持冷热分离功能。
+	// Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
 	EnableCloudStorage pulumi.BoolOutput           `pulumi:"enableCloudStorage"`
 	Endpoints          InstanceEndpointArrayOutput `pulumi:"endpoints"`
-	// HBase 数据库引擎版本。当前仅支持 HBase 2.0 版本，取值默认为 HBase_2.0。
+	// HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
 	EngineVersion pulumi.StringOutput `pulumi:"engineVersion"`
-	// 实例 ID。
+	// Instance ID
 	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
-	// 实例名称。
+	// Instance name
 	InstanceName pulumi.StringOutput `pulumi:"instanceName"`
-	// 实例类型。当前仅支持标准型，取值默认为 Standard。
+	// Instance type. Currently, only Standard is supported. The default value is Standard
 	InstanceType pulumi.StringOutput `pulumi:"instanceType"`
-	// Master 节点个数。单可用区部署，默认包含 2 个 Master 节点。
+	// Number of Master nodes. For single-zone deployment, 2 Master nodes are included by default
 	MasterCount pulumi.IntOutput `pulumi:"masterCount"`
-	// Master 节点的规格码。说明关于 Master 节点所支持的规格信息，请参见实例规格。Master 节点数量为固定值，不支持增减。
+	// Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
 	MasterSpec pulumi.StringOutput `pulumi:"masterSpec"`
-	// 实例的部署方式，取值：true：多可用区部署。false：单可用区部署。目前仅支持单可用区部署。
+	// Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
 	MultiAz pulumi.BoolOutput `pulumi:"multiAz"`
-	// 实时主可用区子网 ID。
+	// Real-time primary availability zone subnet ID.
 	PrimarySubnetId pulumi.StringOutput `pulumi:"primarySubnetId"`
-	// 实时主可用区 ID。
+	// Real-time primary zone ID
 	PrimaryZoneId pulumi.StringOutput `pulumi:"primaryZoneId"`
-	// 实例所属的项目名称。
+	// Project name of the instance
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
-	// 购买时长，单位：月。取值范围如下：1，2，3，4，5，6，7，8，9，12，24，36。说明当 ChargeType 为 PrePaid时，该参数必填。
+	// Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
 	PurchaseMonths pulumi.IntOutput `pulumi:"purchaseMonths"`
-	// 实例所属的地域 ID。
+	// Region ID of the instance.
 	RegionId pulumi.StringOutput `pulumi:"regionId"`
-	// RegionServer 节点的数量。
+	// Number of RegionServer nodes
 	RsCount pulumi.IntOutput `pulumi:"rsCount"`
-	// RegionServer 节点的规格码。
+	// RegionServer node specification code.
 	RsSpec pulumi.StringOutput `pulumi:"rsSpec"`
-	// 实时备可用区子网 ID。
+	// Real-time standby availability zone subnet ID.
 	StandbySubnetId pulumi.StringOutput `pulumi:"standbySubnetId"`
-	// 实时备可用区 ID。
+	// Real-time standby zone ID
 	StandbyZoneId pulumi.StringOutput `pulumi:"standbyZoneId"`
-	// 实例当前状态。关于实例状态的更多说明，请参见实例状态说明。
+	// Current status of the instance. For more details about instance status, see Instance Status Description
 	Status pulumi.StringOutput `pulumi:"status"`
-	// 实例总存储容量，单位：GiB。
+	// Total storage capacity of the instance, unit: GiB.
 	StorageCapacity pulumi.IntOutput `pulumi:"storageCapacity"`
-	// 实例的存储类型，取值：HdfsHdd：HDD 文件存储。HdfsSsd：SSD 文件存储。
+	// Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
 	StorageType pulumi.StringOutput `pulumi:"storageType"`
-	// 实例所属的子网 ID。单可用区实例，仅包含一个可用区的子网 ID。
+	// Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
 	SubnetId pulumi.StringOutput    `pulumi:"subnetId"`
 	Tags     InstanceTagArrayOutput `pulumi:"tags"`
-	// 实例已使用的容量型存储空间大小，单位 MiB。
+	// Capacity-type storage space used by the instance, in MiB
 	UsedColdStorage pulumi.IntOutput `pulumi:"usedColdStorage"`
-	// 主实例已使用的存储容量，单位：MiB。
+	// Storage capacity used by the primary instance, in MiB
 	UsedStorage pulumi.Float64Output `pulumi:"usedStorage"`
-	// 私有网络 ID。说明您可以调用 DescribeVpcs 接口查询可创建 HBase 实例的私有网络信息，包括私有网络 ID。
+	// Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
 	VpcId pulumi.StringOutput `pulumi:"vpcId"`
-	// 实例所属的私有网络名称。
+	// Name of the private network to which the instance belongs.
 	VpcName pulumi.StringOutput `pulumi:"vpcName"`
-	// 实例所属的可用区 ID。
+	// Zone ID of the instance
 	ZoneId pulumi.StringOutput `pulumi:"zoneId"`
-	// 实例所属的可用区名称。
+	// Name of the availability zone to which the instance belongs.
 	ZoneName pulumi.StringOutput `pulumi:"zoneName"`
 }
 
@@ -208,148 +208,148 @@ func GetInstance(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Instance resources.
 type instanceState struct {
-	// 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+	// Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
 	AutoRenew *bool `pulumi:"autoRenew"`
-	// 计费状态。取值：Normal：正常。Overdue：欠费。Shutdown：关停。
+	// Billing status. Values: Normal: normal. Overdue: overdue. Shutdown: shutdown.
 	ChargeStatus *string `pulumi:"chargeStatus"`
-	// 计费类型，取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+	// Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
 	ChargeType *string `pulumi:"chargeType"`
-	// 实例总容量型存储空间大小，单位 GiB。
+	// Total capacity-type storage space for the instance, in GiB.
 	ColdStorage *int `pulumi:"coldStorage"`
-	// 实例创建时间（UTC 时间）。
+	// Instance creation time (UTC).
 	CreateTime *string `pulumi:"createTime"`
-	// 实例删除保护功能开关状态。取值范围：enabled：已开启。disabled：未开启。说明关于实例删除保护的更多信息，请参见实例删除保护。
+	// Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
 	DeletionProtection *string `pulumi:"deletionProtection"`
-	// 是否开启登录认证。取值：true：已开启登录认证。false：未开启登录认证。
+	// Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
 	EnableAuth *bool `pulumi:"enableAuth"`
-	// 是否开通存储型容量，取值：true：开通容量型存储。false：不开通容量型存储。说明容量型存储的详细介绍，请参见冷热分离介绍。仅当 MultiAZ（部署方式）取值为 false（单可用区部署）时，支持冷热分离功能。
+	// Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
 	EnableCloudStorage *bool              `pulumi:"enableCloudStorage"`
 	Endpoints          []InstanceEndpoint `pulumi:"endpoints"`
-	// HBase 数据库引擎版本。当前仅支持 HBase 2.0 版本，取值默认为 HBase_2.0。
+	// HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
 	EngineVersion *string `pulumi:"engineVersion"`
-	// 实例 ID。
+	// Instance ID
 	InstanceId *string `pulumi:"instanceId"`
-	// 实例名称。
+	// Instance name
 	InstanceName *string `pulumi:"instanceName"`
-	// 实例类型。当前仅支持标准型，取值默认为 Standard。
+	// Instance type. Currently, only Standard is supported. The default value is Standard
 	InstanceType *string `pulumi:"instanceType"`
-	// Master 节点个数。单可用区部署，默认包含 2 个 Master 节点。
+	// Number of Master nodes. For single-zone deployment, 2 Master nodes are included by default
 	MasterCount *int `pulumi:"masterCount"`
-	// Master 节点的规格码。说明关于 Master 节点所支持的规格信息，请参见实例规格。Master 节点数量为固定值，不支持增减。
+	// Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
 	MasterSpec *string `pulumi:"masterSpec"`
-	// 实例的部署方式，取值：true：多可用区部署。false：单可用区部署。目前仅支持单可用区部署。
+	// Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
 	MultiAz *bool `pulumi:"multiAz"`
-	// 实时主可用区子网 ID。
+	// Real-time primary availability zone subnet ID.
 	PrimarySubnetId *string `pulumi:"primarySubnetId"`
-	// 实时主可用区 ID。
+	// Real-time primary zone ID
 	PrimaryZoneId *string `pulumi:"primaryZoneId"`
-	// 实例所属的项目名称。
+	// Project name of the instance
 	ProjectName *string `pulumi:"projectName"`
-	// 购买时长，单位：月。取值范围如下：1，2，3，4，5，6，7，8，9，12，24，36。说明当 ChargeType 为 PrePaid时，该参数必填。
+	// Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
 	PurchaseMonths *int `pulumi:"purchaseMonths"`
-	// 实例所属的地域 ID。
+	// Region ID of the instance.
 	RegionId *string `pulumi:"regionId"`
-	// RegionServer 节点的数量。
+	// Number of RegionServer nodes
 	RsCount *int `pulumi:"rsCount"`
-	// RegionServer 节点的规格码。
+	// RegionServer node specification code.
 	RsSpec *string `pulumi:"rsSpec"`
-	// 实时备可用区子网 ID。
+	// Real-time standby availability zone subnet ID.
 	StandbySubnetId *string `pulumi:"standbySubnetId"`
-	// 实时备可用区 ID。
+	// Real-time standby zone ID
 	StandbyZoneId *string `pulumi:"standbyZoneId"`
-	// 实例当前状态。关于实例状态的更多说明，请参见实例状态说明。
+	// Current status of the instance. For more details about instance status, see Instance Status Description
 	Status *string `pulumi:"status"`
-	// 实例总存储容量，单位：GiB。
+	// Total storage capacity of the instance, unit: GiB.
 	StorageCapacity *int `pulumi:"storageCapacity"`
-	// 实例的存储类型，取值：HdfsHdd：HDD 文件存储。HdfsSsd：SSD 文件存储。
+	// Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
 	StorageType *string `pulumi:"storageType"`
-	// 实例所属的子网 ID。单可用区实例，仅包含一个可用区的子网 ID。
+	// Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
 	SubnetId *string       `pulumi:"subnetId"`
 	Tags     []InstanceTag `pulumi:"tags"`
-	// 实例已使用的容量型存储空间大小，单位 MiB。
+	// Capacity-type storage space used by the instance, in MiB
 	UsedColdStorage *int `pulumi:"usedColdStorage"`
-	// 主实例已使用的存储容量，单位：MiB。
+	// Storage capacity used by the primary instance, in MiB
 	UsedStorage *float64 `pulumi:"usedStorage"`
-	// 私有网络 ID。说明您可以调用 DescribeVpcs 接口查询可创建 HBase 实例的私有网络信息，包括私有网络 ID。
+	// Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
 	VpcId *string `pulumi:"vpcId"`
-	// 实例所属的私有网络名称。
+	// Name of the private network to which the instance belongs.
 	VpcName *string `pulumi:"vpcName"`
-	// 实例所属的可用区 ID。
+	// Zone ID of the instance
 	ZoneId *string `pulumi:"zoneId"`
-	// 实例所属的可用区名称。
+	// Name of the availability zone to which the instance belongs.
 	ZoneName *string `pulumi:"zoneName"`
 }
 
 type InstanceState struct {
-	// 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+	// Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
 	AutoRenew pulumi.BoolPtrInput
-	// 计费状态。取值：Normal：正常。Overdue：欠费。Shutdown：关停。
+	// Billing status. Values: Normal: normal. Overdue: overdue. Shutdown: shutdown.
 	ChargeStatus pulumi.StringPtrInput
-	// 计费类型，取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+	// Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
 	ChargeType pulumi.StringPtrInput
-	// 实例总容量型存储空间大小，单位 GiB。
+	// Total capacity-type storage space for the instance, in GiB.
 	ColdStorage pulumi.IntPtrInput
-	// 实例创建时间（UTC 时间）。
+	// Instance creation time (UTC).
 	CreateTime pulumi.StringPtrInput
-	// 实例删除保护功能开关状态。取值范围：enabled：已开启。disabled：未开启。说明关于实例删除保护的更多信息，请参见实例删除保护。
+	// Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
 	DeletionProtection pulumi.StringPtrInput
-	// 是否开启登录认证。取值：true：已开启登录认证。false：未开启登录认证。
+	// Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
 	EnableAuth pulumi.BoolPtrInput
-	// 是否开通存储型容量，取值：true：开通容量型存储。false：不开通容量型存储。说明容量型存储的详细介绍，请参见冷热分离介绍。仅当 MultiAZ（部署方式）取值为 false（单可用区部署）时，支持冷热分离功能。
+	// Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
 	EnableCloudStorage pulumi.BoolPtrInput
 	Endpoints          InstanceEndpointArrayInput
-	// HBase 数据库引擎版本。当前仅支持 HBase 2.0 版本，取值默认为 HBase_2.0。
+	// HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
 	EngineVersion pulumi.StringPtrInput
-	// 实例 ID。
+	// Instance ID
 	InstanceId pulumi.StringPtrInput
-	// 实例名称。
+	// Instance name
 	InstanceName pulumi.StringPtrInput
-	// 实例类型。当前仅支持标准型，取值默认为 Standard。
+	// Instance type. Currently, only Standard is supported. The default value is Standard
 	InstanceType pulumi.StringPtrInput
-	// Master 节点个数。单可用区部署，默认包含 2 个 Master 节点。
+	// Number of Master nodes. For single-zone deployment, 2 Master nodes are included by default
 	MasterCount pulumi.IntPtrInput
-	// Master 节点的规格码。说明关于 Master 节点所支持的规格信息，请参见实例规格。Master 节点数量为固定值，不支持增减。
+	// Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
 	MasterSpec pulumi.StringPtrInput
-	// 实例的部署方式，取值：true：多可用区部署。false：单可用区部署。目前仅支持单可用区部署。
+	// Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
 	MultiAz pulumi.BoolPtrInput
-	// 实时主可用区子网 ID。
+	// Real-time primary availability zone subnet ID.
 	PrimarySubnetId pulumi.StringPtrInput
-	// 实时主可用区 ID。
+	// Real-time primary zone ID
 	PrimaryZoneId pulumi.StringPtrInput
-	// 实例所属的项目名称。
+	// Project name of the instance
 	ProjectName pulumi.StringPtrInput
-	// 购买时长，单位：月。取值范围如下：1，2，3，4，5，6，7，8，9，12，24，36。说明当 ChargeType 为 PrePaid时，该参数必填。
+	// Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
 	PurchaseMonths pulumi.IntPtrInput
-	// 实例所属的地域 ID。
+	// Region ID of the instance.
 	RegionId pulumi.StringPtrInput
-	// RegionServer 节点的数量。
+	// Number of RegionServer nodes
 	RsCount pulumi.IntPtrInput
-	// RegionServer 节点的规格码。
+	// RegionServer node specification code.
 	RsSpec pulumi.StringPtrInput
-	// 实时备可用区子网 ID。
+	// Real-time standby availability zone subnet ID.
 	StandbySubnetId pulumi.StringPtrInput
-	// 实时备可用区 ID。
+	// Real-time standby zone ID
 	StandbyZoneId pulumi.StringPtrInput
-	// 实例当前状态。关于实例状态的更多说明，请参见实例状态说明。
+	// Current status of the instance. For more details about instance status, see Instance Status Description
 	Status pulumi.StringPtrInput
-	// 实例总存储容量，单位：GiB。
+	// Total storage capacity of the instance, unit: GiB.
 	StorageCapacity pulumi.IntPtrInput
-	// 实例的存储类型，取值：HdfsHdd：HDD 文件存储。HdfsSsd：SSD 文件存储。
+	// Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
 	StorageType pulumi.StringPtrInput
-	// 实例所属的子网 ID。单可用区实例，仅包含一个可用区的子网 ID。
+	// Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
 	SubnetId pulumi.StringPtrInput
 	Tags     InstanceTagArrayInput
-	// 实例已使用的容量型存储空间大小，单位 MiB。
+	// Capacity-type storage space used by the instance, in MiB
 	UsedColdStorage pulumi.IntPtrInput
-	// 主实例已使用的存储容量，单位：MiB。
+	// Storage capacity used by the primary instance, in MiB
 	UsedStorage pulumi.Float64PtrInput
-	// 私有网络 ID。说明您可以调用 DescribeVpcs 接口查询可创建 HBase 实例的私有网络信息，包括私有网络 ID。
+	// Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
 	VpcId pulumi.StringPtrInput
-	// 实例所属的私有网络名称。
+	// Name of the private network to which the instance belongs.
 	VpcName pulumi.StringPtrInput
-	// 实例所属的可用区 ID。
+	// Zone ID of the instance
 	ZoneId pulumi.StringPtrInput
-	// 实例所属的可用区名称。
+	// Name of the availability zone to which the instance belongs.
 	ZoneName pulumi.StringPtrInput
 }
 
@@ -358,97 +358,97 @@ func (InstanceState) ElementType() reflect.Type {
 }
 
 type instanceArgs struct {
-	// 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+	// Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
 	AutoRenew *bool `pulumi:"autoRenew"`
-	// 计费类型，取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+	// Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
 	ChargeType string `pulumi:"chargeType"`
-	// 实例总容量型存储空间大小，单位 GiB。
+	// Total capacity-type storage space for the instance, in GiB.
 	ColdStorage *int `pulumi:"coldStorage"`
-	// 实例删除保护功能开关状态。取值范围：enabled：已开启。disabled：未开启。说明关于实例删除保护的更多信息，请参见实例删除保护。
+	// Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
 	DeletionProtection *string `pulumi:"deletionProtection"`
-	// 是否开启登录认证。取值：true：已开启登录认证。false：未开启登录认证。
+	// Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
 	EnableAuth *bool `pulumi:"enableAuth"`
-	// 是否开通存储型容量，取值：true：开通容量型存储。false：不开通容量型存储。说明容量型存储的详细介绍，请参见冷热分离介绍。仅当 MultiAZ（部署方式）取值为 false（单可用区部署）时，支持冷热分离功能。
+	// Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
 	EnableCloudStorage *bool              `pulumi:"enableCloudStorage"`
 	Endpoints          []InstanceEndpoint `pulumi:"endpoints"`
-	// HBase 数据库引擎版本。当前仅支持 HBase 2.0 版本，取值默认为 HBase_2.0。
+	// HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
 	EngineVersion string `pulumi:"engineVersion"`
-	// 实例名称。
+	// Instance name
 	InstanceName *string `pulumi:"instanceName"`
-	// 实例类型。当前仅支持标准型，取值默认为 Standard。
+	// Instance type. Currently, only Standard is supported. The default value is Standard
 	InstanceType *string `pulumi:"instanceType"`
-	// Master 节点的规格码。说明关于 Master 节点所支持的规格信息，请参见实例规格。Master 节点数量为固定值，不支持增减。
+	// Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
 	MasterSpec string `pulumi:"masterSpec"`
-	// 实例的部署方式，取值：true：多可用区部署。false：单可用区部署。目前仅支持单可用区部署。
+	// Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
 	MultiAz *bool `pulumi:"multiAz"`
-	// 实例所属的项目名称。
+	// Project name of the instance
 	ProjectName *string `pulumi:"projectName"`
-	// 购买时长，单位：月。取值范围如下：1，2，3，4，5，6，7，8，9，12，24，36。说明当 ChargeType 为 PrePaid时，该参数必填。
+	// Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
 	PurchaseMonths *int `pulumi:"purchaseMonths"`
-	// 实例所属的地域 ID。
+	// Region ID of the instance.
 	RegionId string `pulumi:"regionId"`
-	// RegionServer 节点的数量。
+	// Number of RegionServer nodes
 	RsCount int `pulumi:"rsCount"`
-	// RegionServer 节点的规格码。
+	// RegionServer node specification code.
 	RsSpec string `pulumi:"rsSpec"`
-	// 实例总存储容量，单位：GiB。
+	// Total storage capacity of the instance, unit: GiB.
 	StorageCapacity int `pulumi:"storageCapacity"`
-	// 实例的存储类型，取值：HdfsHdd：HDD 文件存储。HdfsSsd：SSD 文件存储。
+	// Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
 	StorageType string `pulumi:"storageType"`
-	// 实例所属的子网 ID。单可用区实例，仅包含一个可用区的子网 ID。
+	// Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
 	SubnetId string        `pulumi:"subnetId"`
 	Tags     []InstanceTag `pulumi:"tags"`
-	// 私有网络 ID。说明您可以调用 DescribeVpcs 接口查询可创建 HBase 实例的私有网络信息，包括私有网络 ID。
+	// Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
 	VpcId string `pulumi:"vpcId"`
-	// 实例所属的可用区 ID。
+	// Zone ID of the instance
 	ZoneId string `pulumi:"zoneId"`
 }
 
 // The set of arguments for constructing a Instance resource.
 type InstanceArgs struct {
-	// 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+	// Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
 	AutoRenew pulumi.BoolPtrInput
-	// 计费类型，取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+	// Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
 	ChargeType pulumi.StringInput
-	// 实例总容量型存储空间大小，单位 GiB。
+	// Total capacity-type storage space for the instance, in GiB.
 	ColdStorage pulumi.IntPtrInput
-	// 实例删除保护功能开关状态。取值范围：enabled：已开启。disabled：未开启。说明关于实例删除保护的更多信息，请参见实例删除保护。
+	// Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
 	DeletionProtection pulumi.StringPtrInput
-	// 是否开启登录认证。取值：true：已开启登录认证。false：未开启登录认证。
+	// Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
 	EnableAuth pulumi.BoolPtrInput
-	// 是否开通存储型容量，取值：true：开通容量型存储。false：不开通容量型存储。说明容量型存储的详细介绍，请参见冷热分离介绍。仅当 MultiAZ（部署方式）取值为 false（单可用区部署）时，支持冷热分离功能。
+	// Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
 	EnableCloudStorage pulumi.BoolPtrInput
 	Endpoints          InstanceEndpointArrayInput
-	// HBase 数据库引擎版本。当前仅支持 HBase 2.0 版本，取值默认为 HBase_2.0。
+	// HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
 	EngineVersion pulumi.StringInput
-	// 实例名称。
+	// Instance name
 	InstanceName pulumi.StringPtrInput
-	// 实例类型。当前仅支持标准型，取值默认为 Standard。
+	// Instance type. Currently, only Standard is supported. The default value is Standard
 	InstanceType pulumi.StringPtrInput
-	// Master 节点的规格码。说明关于 Master 节点所支持的规格信息，请参见实例规格。Master 节点数量为固定值，不支持增减。
+	// Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
 	MasterSpec pulumi.StringInput
-	// 实例的部署方式，取值：true：多可用区部署。false：单可用区部署。目前仅支持单可用区部署。
+	// Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
 	MultiAz pulumi.BoolPtrInput
-	// 实例所属的项目名称。
+	// Project name of the instance
 	ProjectName pulumi.StringPtrInput
-	// 购买时长，单位：月。取值范围如下：1，2，3，4，5，6，7，8，9，12，24，36。说明当 ChargeType 为 PrePaid时，该参数必填。
+	// Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
 	PurchaseMonths pulumi.IntPtrInput
-	// 实例所属的地域 ID。
+	// Region ID of the instance.
 	RegionId pulumi.StringInput
-	// RegionServer 节点的数量。
+	// Number of RegionServer nodes
 	RsCount pulumi.IntInput
-	// RegionServer 节点的规格码。
+	// RegionServer node specification code.
 	RsSpec pulumi.StringInput
-	// 实例总存储容量，单位：GiB。
+	// Total storage capacity of the instance, unit: GiB.
 	StorageCapacity pulumi.IntInput
-	// 实例的存储类型，取值：HdfsHdd：HDD 文件存储。HdfsSsd：SSD 文件存储。
+	// Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
 	StorageType pulumi.StringInput
-	// 实例所属的子网 ID。单可用区实例，仅包含一个可用区的子网 ID。
+	// Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
 	SubnetId pulumi.StringInput
 	Tags     InstanceTagArrayInput
-	// 私有网络 ID。说明您可以调用 DescribeVpcs 接口查询可创建 HBase 实例的私有网络信息，包括私有网络 ID。
+	// Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
 	VpcId pulumi.StringInput
-	// 实例所属的可用区 ID。
+	// Zone ID of the instance
 	ZoneId pulumi.StringInput
 }
 
@@ -539,42 +539,42 @@ func (o InstanceOutput) ToInstanceOutputWithContext(ctx context.Context) Instanc
 	return o
 }
 
-// 预付费场景下是否自动续费。取值：true：自动续费。false：不自动续费。
+// Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
 func (o InstanceOutput) AutoRenew() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Instance) pulumi.BoolOutput { return v.AutoRenew }).(pulumi.BoolOutput)
 }
 
-// 计费状态。取值：Normal：正常。Overdue：欠费。Shutdown：关停。
+// Billing status. Values: Normal: normal. Overdue: overdue. Shutdown: shutdown.
 func (o InstanceOutput) ChargeStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.ChargeStatus }).(pulumi.StringOutput)
 }
 
-// 计费类型，取值：PostPaid：按量计费（后付费）。PrePaid：包年包月（预付费）。
+// Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
 func (o InstanceOutput) ChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.ChargeType }).(pulumi.StringOutput)
 }
 
-// 实例总容量型存储空间大小，单位 GiB。
+// Total capacity-type storage space for the instance, in GiB.
 func (o InstanceOutput) ColdStorage() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.ColdStorage }).(pulumi.IntOutput)
 }
 
-// 实例创建时间（UTC 时间）。
+// Instance creation time (UTC).
 func (o InstanceOutput) CreateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.CreateTime }).(pulumi.StringOutput)
 }
 
-// 实例删除保护功能开关状态。取值范围：enabled：已开启。disabled：未开启。说明关于实例删除保护的更多信息，请参见实例删除保护。
+// Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
 func (o InstanceOutput) DeletionProtection() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.DeletionProtection }).(pulumi.StringOutput)
 }
 
-// 是否开启登录认证。取值：true：已开启登录认证。false：未开启登录认证。
+// Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
 func (o InstanceOutput) EnableAuth() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Instance) pulumi.BoolOutput { return v.EnableAuth }).(pulumi.BoolOutput)
 }
 
-// 是否开通存储型容量，取值：true：开通容量型存储。false：不开通容量型存储。说明容量型存储的详细介绍，请参见冷热分离介绍。仅当 MultiAZ（部署方式）取值为 false（单可用区部署）时，支持冷热分离功能。
+// Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
 func (o InstanceOutput) EnableCloudStorage() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Instance) pulumi.BoolOutput { return v.EnableCloudStorage }).(pulumi.BoolOutput)
 }
@@ -583,102 +583,102 @@ func (o InstanceOutput) Endpoints() InstanceEndpointArrayOutput {
 	return o.ApplyT(func(v *Instance) InstanceEndpointArrayOutput { return v.Endpoints }).(InstanceEndpointArrayOutput)
 }
 
-// HBase 数据库引擎版本。当前仅支持 HBase 2.0 版本，取值默认为 HBase_2.0。
+// HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
 func (o InstanceOutput) EngineVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.EngineVersion }).(pulumi.StringOutput)
 }
 
-// 实例 ID。
+// Instance ID
 func (o InstanceOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.InstanceId }).(pulumi.StringOutput)
 }
 
-// 实例名称。
+// Instance name
 func (o InstanceOutput) InstanceName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.InstanceName }).(pulumi.StringOutput)
 }
 
-// 实例类型。当前仅支持标准型，取值默认为 Standard。
+// Instance type. Currently, only Standard is supported. The default value is Standard
 func (o InstanceOutput) InstanceType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.InstanceType }).(pulumi.StringOutput)
 }
 
-// Master 节点个数。单可用区部署，默认包含 2 个 Master 节点。
+// Number of Master nodes. For single-zone deployment, 2 Master nodes are included by default
 func (o InstanceOutput) MasterCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.MasterCount }).(pulumi.IntOutput)
 }
 
-// Master 节点的规格码。说明关于 Master 节点所支持的规格信息，请参见实例规格。Master 节点数量为固定值，不支持增减。
+// Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
 func (o InstanceOutput) MasterSpec() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.MasterSpec }).(pulumi.StringOutput)
 }
 
-// 实例的部署方式，取值：true：多可用区部署。false：单可用区部署。目前仅支持单可用区部署。
+// Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
 func (o InstanceOutput) MultiAz() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Instance) pulumi.BoolOutput { return v.MultiAz }).(pulumi.BoolOutput)
 }
 
-// 实时主可用区子网 ID。
+// Real-time primary availability zone subnet ID.
 func (o InstanceOutput) PrimarySubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.PrimarySubnetId }).(pulumi.StringOutput)
 }
 
-// 实时主可用区 ID。
+// Real-time primary zone ID
 func (o InstanceOutput) PrimaryZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.PrimaryZoneId }).(pulumi.StringOutput)
 }
 
-// 实例所属的项目名称。
+// Project name of the instance
 func (o InstanceOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// 购买时长，单位：月。取值范围如下：1，2，3，4，5，6，7，8，9，12，24，36。说明当 ChargeType 为 PrePaid时，该参数必填。
+// Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
 func (o InstanceOutput) PurchaseMonths() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.PurchaseMonths }).(pulumi.IntOutput)
 }
 
-// 实例所属的地域 ID。
+// Region ID of the instance.
 func (o InstanceOutput) RegionId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.RegionId }).(pulumi.StringOutput)
 }
 
-// RegionServer 节点的数量。
+// Number of RegionServer nodes
 func (o InstanceOutput) RsCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.RsCount }).(pulumi.IntOutput)
 }
 
-// RegionServer 节点的规格码。
+// RegionServer node specification code.
 func (o InstanceOutput) RsSpec() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.RsSpec }).(pulumi.StringOutput)
 }
 
-// 实时备可用区子网 ID。
+// Real-time standby availability zone subnet ID.
 func (o InstanceOutput) StandbySubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.StandbySubnetId }).(pulumi.StringOutput)
 }
 
-// 实时备可用区 ID。
+// Real-time standby zone ID
 func (o InstanceOutput) StandbyZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.StandbyZoneId }).(pulumi.StringOutput)
 }
 
-// 实例当前状态。关于实例状态的更多说明，请参见实例状态说明。
+// Current status of the instance. For more details about instance status, see Instance Status Description
 func (o InstanceOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
 
-// 实例总存储容量，单位：GiB。
+// Total storage capacity of the instance, unit: GiB.
 func (o InstanceOutput) StorageCapacity() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.StorageCapacity }).(pulumi.IntOutput)
 }
 
-// 实例的存储类型，取值：HdfsHdd：HDD 文件存储。HdfsSsd：SSD 文件存储。
+// Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
 func (o InstanceOutput) StorageType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.StorageType }).(pulumi.StringOutput)
 }
 
-// 实例所属的子网 ID。单可用区实例，仅包含一个可用区的子网 ID。
+// Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
 func (o InstanceOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -687,32 +687,32 @@ func (o InstanceOutput) Tags() InstanceTagArrayOutput {
 	return o.ApplyT(func(v *Instance) InstanceTagArrayOutput { return v.Tags }).(InstanceTagArrayOutput)
 }
 
-// 实例已使用的容量型存储空间大小，单位 MiB。
+// Capacity-type storage space used by the instance, in MiB
 func (o InstanceOutput) UsedColdStorage() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.UsedColdStorage }).(pulumi.IntOutput)
 }
 
-// 主实例已使用的存储容量，单位：MiB。
+// Storage capacity used by the primary instance, in MiB
 func (o InstanceOutput) UsedStorage() pulumi.Float64Output {
 	return o.ApplyT(func(v *Instance) pulumi.Float64Output { return v.UsedStorage }).(pulumi.Float64Output)
 }
 
-// 私有网络 ID。说明您可以调用 DescribeVpcs 接口查询可创建 HBase 实例的私有网络信息，包括私有网络 ID。
+// Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
 func (o InstanceOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.VpcId }).(pulumi.StringOutput)
 }
 
-// 实例所属的私有网络名称。
+// Name of the private network to which the instance belongs.
 func (o InstanceOutput) VpcName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.VpcName }).(pulumi.StringOutput)
 }
 
-// 实例所属的可用区 ID。
+// Zone ID of the instance
 func (o InstanceOutput) ZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.ZoneId }).(pulumi.StringOutput)
 }
 
-// 实例所属的可用区名称。
+// Name of the availability zone to which the instance belongs.
 func (o InstanceOutput) ZoneName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.ZoneName }).(pulumi.StringOutput)
 }

@@ -60,7 +60,7 @@ class GetPermissionSetAssignmentResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        授权创建时间。
+        Authorization creation time
         """
         return pulumi.get(self, "created_time")
 
@@ -76,7 +76,7 @@ class GetPermissionSetAssignmentResult:
     @pulumi.getter(name="permissionSetId")
     def permission_set_id(self) -> builtins.str:
         """
-        权限集 ID。
+        Permission set ID
         """
         return pulumi.get(self, "permission_set_id")
 
@@ -84,7 +84,7 @@ class GetPermissionSetAssignmentResult:
     @pulumi.getter(name="permissionSetName")
     def permission_set_name(self) -> builtins.str:
         """
-        权限集名称。
+        Permission set name
         """
         return pulumi.get(self, "permission_set_name")
 
@@ -92,7 +92,7 @@ class GetPermissionSetAssignmentResult:
     @pulumi.getter(name="principalId")
     def principal_id(self) -> builtins.str:
         """
-        云身份中心对象 ID
+        Cloud Identity Center object ID
         """
         return pulumi.get(self, "principal_id")
 
@@ -100,7 +100,7 @@ class GetPermissionSetAssignmentResult:
     @pulumi.getter(name="principalName")
     def principal_name(self) -> builtins.str:
         """
-        云身份中心对象名。
+        Cloud Identity Center object name
         """
         return pulumi.get(self, "principal_name")
 
@@ -108,7 +108,7 @@ class GetPermissionSetAssignmentResult:
     @pulumi.getter(name="principalType")
     def principal_type(self) -> builtins.str:
         """
-        云身份中心对象类型，User 或者 Group。
+        Cloud Identity Center object type: User or Group
         """
         return pulumi.get(self, "principal_type")
 
@@ -116,7 +116,7 @@ class GetPermissionSetAssignmentResult:
     @pulumi.getter(name="targetId")
     def target_id(self) -> builtins.str:
         """
-        授权账号 ID。
+        Authorized account ID
         """
         return pulumi.get(self, "target_id")
 
@@ -124,7 +124,7 @@ class GetPermissionSetAssignmentResult:
     @pulumi.getter(name="targetName")
     def target_name(self) -> builtins.str:
         """
-        授权账号名。
+        Authorized account name
         """
         return pulumi.get(self, "target_name")
 

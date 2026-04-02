@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb.Inputs
     public sealed class ClbListenerGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 监听器的ID。
+        /// Listener ID
         /// </summary>
         [Input("listenerId")]
         public Input<string>? ListenerId { get; set; }
 
         /// <summary>
-        /// 监听器的名称。
+        /// Listener name
         /// </summary>
         [Input("listenerName")]
         public Input<string>? ListenerName { get; set; }

@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Vke
 {
     /// <summary>
-    /// 容器服务提供集群 RBAC 授权功能，为 IAM 用户或角色授予 RBAC 访问权限，包括可访问的资源、权限的作用范围、预置的角色类型等，从而更好地管理集群的安全访问控制，满足企业用户细粒度的资源访问权限控制需求。
+    /// Container Service provides cluster RBAC authorization, granting RBAC access permissions to IAM users or roles. This includes accessible resources, scope of permissions, and predefined role types, enabling better management of cluster security access control and meeting enterprise users' requirements for fine-grained resource access control.
     /// 
     /// ## Example Usage
     /// 
@@ -47,109 +47,109 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     public partial class Permission : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// RBAC 权限策略资源被授权的时间。
+        /// Time when the RBAC policy resource was authorized.
         /// </summary>
         [Output("authorizedAt")]
         public Output<string> AuthorizedAt { get; private set; } = null!;
 
         /// <summary>
-        /// 授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+        /// Grantor ID. Can be an IAM user ID or an IAM role ID.
         /// </summary>
         [Output("authorizerId")]
         public Output<int> AuthorizerId { get; private set; } = null!;
 
         /// <summary>
-        /// 授权者名称
+        /// Grantor name
         /// </summary>
         [Output("authorizerName")]
         public Output<string> AuthorizerName { get; private set; } = null!;
 
         /// <summary>
-        /// 授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+        /// Type of grantor. Possible values: User: IAM user. Role: IAM role. Account: account.
         /// </summary>
         [Output("authorizerType")]
         public Output<string> AuthorizerType { get; private set; } = null!;
 
         /// <summary>
-        /// 需要授权给 IAM 用户或角色的集群 ID。roleDomain为namespace或cluster时必须填写该参数值。
+        /// Cluster ID to be authorized for the IAM user or role. This parameter is required when roleDomain is namespace or cluster.
         /// </summary>
         [Output("clusterId")]
         public Output<string> ClusterId { get; private set; } = null!;
 
         /// <summary>
-        /// RBAC 权限策略资源创建的时间。
+        /// Time when the RBAC policy resource was created.
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 被授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+        /// Grantee ID. Can be an IAM user ID or an IAM role ID.
         /// </summary>
         [Output("granteeId")]
         public Output<int> GranteeId { get; private set; } = null!;
 
         /// <summary>
-        /// 被授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+        /// Type of grantee. Possible values: User: IAM user. Role: IAM role. Account: account.
         /// </summary>
         [Output("granteeType")]
         public Output<string> GranteeType { get; private set; } = null!;
 
         /// <summary>
-        /// 给被授权者授予的 RBAC 角色是否为自定义角色，取值如下：true：自定义角色。false：（默认值）系统预置的角色。
+        /// Whether the RBAC role granted to the grantee is a custom role. Possible values: true: custom role. false (default): system predefined role.
         /// </summary>
         [Output("isCustomRole")]
         public Output<bool> IsCustomRole { get; private set; } = null!;
 
         /// <summary>
-        /// RBAC 权限策略资源在 Kubernetes 中的对象名称。
+        /// The object name of the RBAC policy resource in Kubernetes.
         /// </summary>
         [Output("kubeRoleBindingName")]
         public Output<string> KubeRoleBindingName { get; private set; } = null!;
 
         /// <summary>
-        /// 授权详细消息。
+        /// Authorization details message.
         /// </summary>
         [Output("message")]
         public Output<string> Message { get; private set; } = null!;
 
         /// <summary>
-        /// 需要授权给 IAM 用户或角色的名空间名称。roleDomain等于namespace时必须填写该参数值。roleDomain不等于namespace时，填写该参数值不生效。
+        /// Namespace name to be authorized for the IAM user or role. This parameter is required when roleDomain equals namespace. If roleDomain does not equal namespace, this parameter is not effective.
         /// </summary>
         [Output("namespace")]
         public Output<string> Namespace { get; private set; } = null!;
 
         /// <summary>
-        /// RBAC 权限策略资源 ID。
+        /// RBAC policy resource ID.
         /// </summary>
         [Output("permissionId")]
         public Output<string> PermissionId { get; private set; } = null!;
 
         /// <summary>
-        /// 项目选择器
+        /// Project selector
         /// </summary>
         [Output("projectSelector")]
         public Output<string> ProjectSelector { get; private set; } = null!;
 
         /// <summary>
-        /// 撤销授权的时间。
+        /// Time when authorization is revoked.
         /// </summary>
         [Output("revokedAt")]
         public Output<string> RevokedAt { get; private set; } = null!;
 
         /// <summary>
-        /// 为 IAM 用户或角色授予的权限类型，取值如下：namespace：授予命名空间级别的权限。cluster：授予集群级别的权限。all_clusters：授予当前账号下全部集群级别的权限。
+        /// The permission type granted to an IAM user or role. Possible values: namespace: grants permissions at the namespace level. cluster: grants permissions at the cluster level. all_clusters: grants permissions at the cluster level for all clusters under the current account.
         /// </summary>
         [Output("roleDomain")]
         public Output<string> RoleDomain { get; private set; } = null!;
 
         /// <summary>
-        /// 给被授权者授予的 RBAC 角色名称。目前必须填写该参数。当roleDomain为all_clusters时，不可以自定义角色名称。
+        /// Name of the RBAC role granted to the grantee. This parameter must be specified. When roleDomain is all_clusters, custom role names are not allowed.
         /// </summary>
         [Output("roleName")]
         public Output<string> RoleName { get; private set; } = null!;
 
         /// <summary>
-        /// RBAC 权限访问策略资源的状态，取值如下：Success：授权成功。Failed：授权失败。Pending：授权中。PartialSuccess：部分授权成功。
+        /// Status of the RBAC access policy resource. Possible values: Success: authorization succeeded. Failed: authorization failed. Pending: authorization in progress. PartialSuccess: partial authorization succeeded.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -202,55 +202,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     public sealed class PermissionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+        /// Grantor ID. Can be an IAM user ID or an IAM role ID.
         /// </summary>
         [Input("authorizerId")]
         public Input<int>? AuthorizerId { get; set; }
 
         /// <summary>
-        /// 授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+        /// Type of grantor. Possible values: User: IAM user. Role: IAM role. Account: account.
         /// </summary>
         [Input("authorizerType")]
         public Input<string>? AuthorizerType { get; set; }
 
         /// <summary>
-        /// 需要授权给 IAM 用户或角色的集群 ID。roleDomain为namespace或cluster时必须填写该参数值。
+        /// Cluster ID to be authorized for the IAM user or role. This parameter is required when roleDomain is namespace or cluster.
         /// </summary>
         [Input("clusterId")]
         public Input<string>? ClusterId { get; set; }
 
         /// <summary>
-        /// 被授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+        /// Grantee ID. Can be an IAM user ID or an IAM role ID.
         /// </summary>
         [Input("granteeId")]
         public Input<int>? GranteeId { get; set; }
 
         /// <summary>
-        /// 被授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+        /// Type of grantee. Possible values: User: IAM user. Role: IAM role. Account: account.
         /// </summary>
         [Input("granteeType")]
         public Input<string>? GranteeType { get; set; }
 
         /// <summary>
-        /// 给被授权者授予的 RBAC 角色是否为自定义角色，取值如下：true：自定义角色。false：（默认值）系统预置的角色。
+        /// Whether the RBAC role granted to the grantee is a custom role. Possible values: true: custom role. false (default): system predefined role.
         /// </summary>
         [Input("isCustomRole")]
         public Input<bool>? IsCustomRole { get; set; }
 
         /// <summary>
-        /// 需要授权给 IAM 用户或角色的名空间名称。roleDomain等于namespace时必须填写该参数值。roleDomain不等于namespace时，填写该参数值不生效。
+        /// Namespace name to be authorized for the IAM user or role. This parameter is required when roleDomain equals namespace. If roleDomain does not equal namespace, this parameter is not effective.
         /// </summary>
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }
 
         /// <summary>
-        /// 为 IAM 用户或角色授予的权限类型，取值如下：namespace：授予命名空间级别的权限。cluster：授予集群级别的权限。all_clusters：授予当前账号下全部集群级别的权限。
+        /// The permission type granted to an IAM user or role. Possible values: namespace: grants permissions at the namespace level. cluster: grants permissions at the cluster level. all_clusters: grants permissions at the cluster level for all clusters under the current account.
         /// </summary>
         [Input("roleDomain")]
         public Input<string>? RoleDomain { get; set; }
 
         /// <summary>
-        /// 给被授权者授予的 RBAC 角色名称。目前必须填写该参数。当roleDomain为all_clusters时，不可以自定义角色名称。
+        /// Name of the RBAC role granted to the grantee. This parameter must be specified. When roleDomain is all_clusters, custom role names are not allowed.
         /// </summary>
         [Input("roleName")]
         public Input<string>? RoleName { get; set; }
@@ -264,109 +264,109 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     public sealed class PermissionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// RBAC 权限策略资源被授权的时间。
+        /// Time when the RBAC policy resource was authorized.
         /// </summary>
         [Input("authorizedAt")]
         public Input<string>? AuthorizedAt { get; set; }
 
         /// <summary>
-        /// 授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+        /// Grantor ID. Can be an IAM user ID or an IAM role ID.
         /// </summary>
         [Input("authorizerId")]
         public Input<int>? AuthorizerId { get; set; }
 
         /// <summary>
-        /// 授权者名称
+        /// Grantor name
         /// </summary>
         [Input("authorizerName")]
         public Input<string>? AuthorizerName { get; set; }
 
         /// <summary>
-        /// 授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+        /// Type of grantor. Possible values: User: IAM user. Role: IAM role. Account: account.
         /// </summary>
         [Input("authorizerType")]
         public Input<string>? AuthorizerType { get; set; }
 
         /// <summary>
-        /// 需要授权给 IAM 用户或角色的集群 ID。roleDomain为namespace或cluster时必须填写该参数值。
+        /// Cluster ID to be authorized for the IAM user or role. This parameter is required when roleDomain is namespace or cluster.
         /// </summary>
         [Input("clusterId")]
         public Input<string>? ClusterId { get; set; }
 
         /// <summary>
-        /// RBAC 权限策略资源创建的时间。
+        /// Time when the RBAC policy resource was created.
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 被授权者的 ID。可以是 IAM 用户 ID，也可以是 IAM 角色 ID。
+        /// Grantee ID. Can be an IAM user ID or an IAM role ID.
         /// </summary>
         [Input("granteeId")]
         public Input<int>? GranteeId { get; set; }
 
         /// <summary>
-        /// 被授权者的类型，取值如下：User：IAM 用户。Role：IAM 角色。Account：账号。
+        /// Type of grantee. Possible values: User: IAM user. Role: IAM role. Account: account.
         /// </summary>
         [Input("granteeType")]
         public Input<string>? GranteeType { get; set; }
 
         /// <summary>
-        /// 给被授权者授予的 RBAC 角色是否为自定义角色，取值如下：true：自定义角色。false：（默认值）系统预置的角色。
+        /// Whether the RBAC role granted to the grantee is a custom role. Possible values: true: custom role. false (default): system predefined role.
         /// </summary>
         [Input("isCustomRole")]
         public Input<bool>? IsCustomRole { get; set; }
 
         /// <summary>
-        /// RBAC 权限策略资源在 Kubernetes 中的对象名称。
+        /// The object name of the RBAC policy resource in Kubernetes.
         /// </summary>
         [Input("kubeRoleBindingName")]
         public Input<string>? KubeRoleBindingName { get; set; }
 
         /// <summary>
-        /// 授权详细消息。
+        /// Authorization details message.
         /// </summary>
         [Input("message")]
         public Input<string>? Message { get; set; }
 
         /// <summary>
-        /// 需要授权给 IAM 用户或角色的名空间名称。roleDomain等于namespace时必须填写该参数值。roleDomain不等于namespace时，填写该参数值不生效。
+        /// Namespace name to be authorized for the IAM user or role. This parameter is required when roleDomain equals namespace. If roleDomain does not equal namespace, this parameter is not effective.
         /// </summary>
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }
 
         /// <summary>
-        /// RBAC 权限策略资源 ID。
+        /// RBAC policy resource ID.
         /// </summary>
         [Input("permissionId")]
         public Input<string>? PermissionId { get; set; }
 
         /// <summary>
-        /// 项目选择器
+        /// Project selector
         /// </summary>
         [Input("projectSelector")]
         public Input<string>? ProjectSelector { get; set; }
 
         /// <summary>
-        /// 撤销授权的时间。
+        /// Time when authorization is revoked.
         /// </summary>
         [Input("revokedAt")]
         public Input<string>? RevokedAt { get; set; }
 
         /// <summary>
-        /// 为 IAM 用户或角色授予的权限类型，取值如下：namespace：授予命名空间级别的权限。cluster：授予集群级别的权限。all_clusters：授予当前账号下全部集群级别的权限。
+        /// The permission type granted to an IAM user or role. Possible values: namespace: grants permissions at the namespace level. cluster: grants permissions at the cluster level. all_clusters: grants permissions at the cluster level for all clusters under the current account.
         /// </summary>
         [Input("roleDomain")]
         public Input<string>? RoleDomain { get; set; }
 
         /// <summary>
-        /// 给被授权者授予的 RBAC 角色名称。目前必须填写该参数。当roleDomain为all_clusters时，不可以自定义角色名称。
+        /// Name of the RBAC role granted to the grantee. This parameter must be specified. When roleDomain is all_clusters, custom role names are not allowed.
         /// </summary>
         [Input("roleName")]
         public Input<string>? RoleName { get; set; }
 
         /// <summary>
-        /// RBAC 权限访问策略资源的状态，取值如下：Success：授权成功。Failed：授权失败。Pending：授权中。PartialSuccess：部分授权成功。
+        /// Status of the RBAC access policy resource. Possible values: Success: authorization succeeded. Failed: authorization failed. Pending: authorization in progress. PartialSuccess: partial authorization succeeded.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }

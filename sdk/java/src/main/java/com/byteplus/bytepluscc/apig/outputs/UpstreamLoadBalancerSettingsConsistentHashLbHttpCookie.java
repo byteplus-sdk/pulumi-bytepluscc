@@ -13,38 +13,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UpstreamLoadBalancerSettingsConsistentHashLbHttpCookie {
     /**
-     * @return 名称。支持ASCII可打印字符，长度限制为0~256个字符。
+     * @return Name. Supports printable ASCII characters. Length: 0~256 characters
      * 
      */
     private @Nullable String name;
     /**
-     * @return 路径。支持ASCII可打印字符，长度限制为1~256个字符。
+     * @return Path. Supports printable ASCII characters. Length: 1~256 characters
      * 
      */
     private @Nullable String path;
     /**
-     * @return 有效期。单位为秒。
+     * @return Validity period, in seconds
      * 
      */
     private @Nullable Integer ttl;
 
     private UpstreamLoadBalancerSettingsConsistentHashLbHttpCookie() {}
     /**
-     * @return 名称。支持ASCII可打印字符，长度限制为0~256个字符。
+     * @return Name. Supports printable ASCII characters. Length: 0~256 characters
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return 路径。支持ASCII可打印字符，长度限制为1~256个字符。
+     * @return Path. Supports printable ASCII characters. Length: 1~256 characters
      * 
      */
     public Optional<String> path() {
         return Optional.ofNullable(this.path);
     }
     /**
-     * @return 有效期。单位为秒。
+     * @return Validity period, in seconds
      * 
      */
     public Optional<Integer> ttl() {

@@ -18,14 +18,14 @@ public final class ClusterChargePreConfigArgs extends com.pulumi.resources.Resou
     public static final ClusterChargePreConfigArgs Empty = new ClusterChargePreConfigArgs();
 
     /**
-     * 是否开启自动续费。取值范围：true：开启。false：不开启。
+     * Enable auto-renewal. Options: true (enabled), false (disabled).
      * 
      */
     @Import(name="autoRenew")
     private @Nullable Output<Boolean> autoRenew;
 
     /**
-     * @return 是否开启自动续费。取值范围：true：开启。false：不开启。
+     * @return Enable auto-renewal. Options: true (enabled), false (disabled).
      * 
      */
     public Optional<Output<Boolean>> autoRenew() {
@@ -33,14 +33,14 @@ public final class ClusterChargePreConfigArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 自动续费触发时的续费时长，当AutoRenew=true时，默认值=1。
+     * Renewal duration when auto-renewal is triggered. When AutoRenew=true, the default value is 1.
      * 
      */
     @Import(name="autoRenewPeriod")
     private @Nullable Output<Integer> autoRenewPeriod;
 
     /**
-     * @return 自动续费触发时的续费时长，当AutoRenew=true时，默认值=1。
+     * @return Renewal duration when auto-renewal is triggered. When AutoRenew=true, the default value is 1.
      * 
      */
     public Optional<Output<Integer>> autoRenewPeriod() {
@@ -48,14 +48,14 @@ public final class ClusterChargePreConfigArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 自动续费触发时的续费时长单位，当AutoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+     * Renewal duration unit when auto-renewal is triggered. When AutoRenew=true, default is Month. Options: Month, Year.
      * 
      */
     @Import(name="autoRenewPeriodUnit")
     private @Nullable Output<String> autoRenewPeriodUnit;
 
     /**
-     * @return 自动续费触发时的续费时长单位，当AutoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+     * @return Renewal duration unit when auto-renewal is triggered. When AutoRenew=true, default is Month. Options: Month, Year.
      * 
      */
     public Optional<Output<String>> autoRenewPeriodUnit() {
@@ -63,14 +63,14 @@ public final class ClusterChargePreConfigArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * chargeType=PRE默认值=1，包月的购买时长单位。
+     * When chargeType=PRE, default value=1. Unit for monthly subscription duration.
      * 
      */
     @Import(name="chargePeriod")
     private @Nullable Output<Integer> chargePeriod;
 
     /**
-     * @return chargeType=PRE默认值=1，包月的购买时长单位。
+     * @return When chargeType=PRE, default value=1. Unit for monthly subscription duration.
      * 
      */
     public Optional<Output<Integer>> chargePeriod() {
@@ -78,14 +78,14 @@ public final class ClusterChargePreConfigArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * chargeType=PRE时，默认值=Month，包月的购买时长单位，取值范围：Month：月。Year：年。
+     * When chargeType=PRE, default value=Month. Unit for monthly subscription duration. Range: Month: month. Year: year.
      * 
      */
     @Import(name="chargePeriodUnit")
     private @Nullable Output<String> chargePeriodUnit;
 
     /**
-     * @return chargeType=PRE时，默认值=Month，包月的购买时长单位，取值范围：Month：月。Year：年。
+     * @return When chargeType=PRE, default value=Month. Unit for monthly subscription duration. Range: Month: month. Year: year.
      * 
      */
     public Optional<Output<String>> chargePeriodUnit() {
@@ -93,14 +93,14 @@ public final class ClusterChargePreConfigArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * 付费类型，取值范围：PRE，POST。
+     * Payment type. Options: PRE, POST.
      * 
      */
     @Import(name="chargeType")
     private @Nullable Output<String> chargeType;
 
     /**
-     * @return 付费类型，取值范围：PRE，POST。
+     * @return Payment type. Options: PRE, POST.
      * 
      */
     public Optional<Output<String>> chargeType() {
@@ -137,7 +137,7 @@ public final class ClusterChargePreConfigArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param autoRenew 是否开启自动续费。取值范围：true：开启。false：不开启。
+         * @param autoRenew Enable auto-renewal. Options: true (enabled), false (disabled).
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class ClusterChargePreConfigArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param autoRenew 是否开启自动续费。取值范围：true：开启。false：不开启。
+         * @param autoRenew Enable auto-renewal. Options: true (enabled), false (disabled).
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class ClusterChargePreConfigArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param autoRenewPeriod 自动续费触发时的续费时长，当AutoRenew=true时，默认值=1。
+         * @param autoRenewPeriod Renewal duration when auto-renewal is triggered. When AutoRenew=true, the default value is 1.
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class ClusterChargePreConfigArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param autoRenewPeriod 自动续费触发时的续费时长，当AutoRenew=true时，默认值=1。
+         * @param autoRenewPeriod Renewal duration when auto-renewal is triggered. When AutoRenew=true, the default value is 1.
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class ClusterChargePreConfigArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param autoRenewPeriodUnit 自动续费触发时的续费时长单位，当AutoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+         * @param autoRenewPeriodUnit Renewal duration unit when auto-renewal is triggered. When AutoRenew=true, default is Month. Options: Month, Year.
          * 
          * @return builder
          * 
@@ -190,7 +190,7 @@ public final class ClusterChargePreConfigArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param autoRenewPeriodUnit 自动续费触发时的续费时长单位，当AutoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+         * @param autoRenewPeriodUnit Renewal duration unit when auto-renewal is triggered. When AutoRenew=true, default is Month. Options: Month, Year.
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class ClusterChargePreConfigArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param chargePeriod chargeType=PRE默认值=1，包月的购买时长单位。
+         * @param chargePeriod When chargeType=PRE, default value=1. Unit for monthly subscription duration.
          * 
          * @return builder
          * 
@@ -211,7 +211,7 @@ public final class ClusterChargePreConfigArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param chargePeriod chargeType=PRE默认值=1，包月的购买时长单位。
+         * @param chargePeriod When chargeType=PRE, default value=1. Unit for monthly subscription duration.
          * 
          * @return builder
          * 
@@ -221,7 +221,7 @@ public final class ClusterChargePreConfigArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param chargePeriodUnit chargeType=PRE时，默认值=Month，包月的购买时长单位，取值范围：Month：月。Year：年。
+         * @param chargePeriodUnit When chargeType=PRE, default value=Month. Unit for monthly subscription duration. Range: Month: month. Year: year.
          * 
          * @return builder
          * 
@@ -232,7 +232,7 @@ public final class ClusterChargePreConfigArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param chargePeriodUnit chargeType=PRE时，默认值=Month，包月的购买时长单位，取值范围：Month：月。Year：年。
+         * @param chargePeriodUnit When chargeType=PRE, default value=Month. Unit for monthly subscription duration. Range: Month: month. Year: year.
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class ClusterChargePreConfigArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param chargeType 付费类型，取值范围：PRE，POST。
+         * @param chargeType Payment type. Options: PRE, POST.
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class ClusterChargePreConfigArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param chargeType 付费类型，取值范围：PRE，POST。
+         * @param chargeType Payment type. Options: PRE, POST.
          * 
          * @return builder
          * 

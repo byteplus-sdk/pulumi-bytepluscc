@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseAction {
     /**
-     * @return 表示鉴权失败时，内容分发网络响应用户的状态码。您可以指定范围在 400-499 中的任意一个状态码。该参数的默认值是 403。
+     * @return Indicates the status code returned by the content delivery network to the user when authentication fails. You can specify any status code in the range 400–499. The default value is 403.
      * 
      */
     private @Nullable String statusCode;
 
     private DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigResponseAction() {}
     /**
-     * @return 表示鉴权失败时，内容分发网络响应用户的状态码。您可以指定范围在 400-499 中的任意一个状态码。该参数的默认值是 403。
+     * @return Indicates the status code returned by the content delivery network to the user when authentication fails. You can specify any status code in the range 400–499. The default value is 403.
      * 
      */
     public Optional<String> statusCode() {

@@ -17,7 +17,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         private InputList<string>? _subnetIds;
 
         /// <summary>
-        /// VPC-CNI 容器网络模型对应的 Pod 子网 ID 列表。
+        /// List of Pod subnet IDs for the VPC-CNI container network model.
         /// </summary>
         public InputList<string> SubnetIds
         {
@@ -26,7 +26,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         }
 
         /// <summary>
-        /// 是否开启 VPC-CNI 容器网络模型的 Trunk 模式。
+        /// Whether to enable Trunk mode for the VPC-CNI container network model
         /// </summary>
         [Input("trunkEniEnabled")]
         public Input<bool>? TrunkEniEnabled { get; set; }

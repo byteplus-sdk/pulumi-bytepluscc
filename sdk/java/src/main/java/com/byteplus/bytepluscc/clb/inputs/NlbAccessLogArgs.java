@@ -17,14 +17,14 @@ public final class NlbAccessLogArgs extends com.pulumi.resources.ResourceArgs {
     public static final NlbAccessLogArgs Empty = new NlbAccessLogArgs();
 
     /**
-     * 是否开启访问日志。true：是。flase：否。
+     * Enable access logs. true: yes. false: no.
      * 
      */
     @Import(name="accessLogEnabled")
     private @Nullable Output<Boolean> accessLogEnabled;
 
     /**
-     * @return 是否开启访问日志。true：是。flase：否。
+     * @return Enable access logs. true: yes. false: no.
      * 
      */
     public Optional<Output<Boolean>> accessLogEnabled() {
@@ -32,14 +32,14 @@ public final class NlbAccessLogArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 日志项目的ID。
+     * Log project ID.
      * 
      */
     @Import(name="projectId")
     private @Nullable Output<String> projectId;
 
     /**
-     * @return 日志项目的ID。
+     * @return Log project ID.
      * 
      */
     public Optional<Output<String>> projectId() {
@@ -47,14 +47,14 @@ public final class NlbAccessLogArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 日志主题的ID。
+     * Log topic ID.
      * 
      */
     @Import(name="topicId")
     private @Nullable Output<String> topicId;
 
     /**
-     * @return 日志主题的ID。
+     * @return Log topic ID.
      * 
      */
     public Optional<Output<String>> topicId() {
@@ -88,7 +88,7 @@ public final class NlbAccessLogArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accessLogEnabled 是否开启访问日志。true：是。flase：否。
+         * @param accessLogEnabled Enable access logs. true: yes. false: no.
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class NlbAccessLogArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accessLogEnabled 是否开启访问日志。true：是。flase：否。
+         * @param accessLogEnabled Enable access logs. true: yes. false: no.
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class NlbAccessLogArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectId 日志项目的ID。
+         * @param projectId Log project ID.
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class NlbAccessLogArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectId 日志项目的ID。
+         * @param projectId Log project ID.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class NlbAccessLogArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param topicId 日志主题的ID。
+         * @param topicId Log topic ID.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class NlbAccessLogArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param topicId 日志主题的ID。
+         * @param topicId Log topic ID.
          * 
          * @return builder
          * 

@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
     public sealed class NodePoolKubernetesConfigKubeletConfigFeatureGatesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 是否开启特性开关本地垂直Pod伸缩
+        /// Enable local vertical Pod autoscaling feature toggle
         /// </summary>
         [Input("inPlacePodVerticalScaling")]
         public Input<bool>? InPlacePodVerticalScaling { get; set; }
 
         /// <summary>
-        /// 是否开启 QoSResourceManager特性开关，取值：  - true 开启。  - false 关闭。
+        /// Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
         /// </summary>
         [Input("qoSResourceManager")]
         public Input<bool>? QoSResourceManager { get; set; }

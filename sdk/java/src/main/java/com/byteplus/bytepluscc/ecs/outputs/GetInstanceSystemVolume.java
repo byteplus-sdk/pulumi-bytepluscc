@@ -13,98 +13,112 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceSystemVolume {
     /**
-     * @return 实例是否随实例删除。
+     * @return Whether the attached resources are deleted along with the instance.
      * 
      */
     private Boolean deleteWithInstance;
     /**
-     * @return 实例的额外性能IOPS。
+     * @return Additional performance IOPS for the instance
      * 
      */
     private Integer extraPerformanceIops;
     /**
-     * @return 实例的额外性能吞吐量，单位MB。
+     * @return The additional performance throughput of the instance, in MB.
      * 
      */
     private Integer extraPerformanceThroughputMb;
     /**
-     * @return 额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+     * @return Type of additional performance. Values:
+     *   Balance: Balanced additional performance
+     *   IOPS: IOPS additional performance
+     *   Throughput: Throughput additional performance
      * 
      */
     private String extraPerformanceTypeId;
     /**
-     * @return 实例的大小，单位GiB。
+     * @return Instance size, in GiB
      * 
      */
     private Integer size;
     /**
-     * @return 实例的快照ID。
+     * @return Instance snapshot ID
      * 
      */
     private String snapshotId;
     /**
-     * @return 实例的卷ID。
+     * @return Instance volume ID.
      * 
      */
     private String volumeId;
     /**
-     * @return 云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+     * @return Cloud disk type. Values:
+     *   PTSSD: Performance SSD.
+     *   ESSD_PL0: Ultra SSD disk, PL0 specification.
+     *   ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+     *   TSSD_TL0: Throughput SSD disk.
      * 
      */
     private String volumeType;
 
     private GetInstanceSystemVolume() {}
     /**
-     * @return 实例是否随实例删除。
+     * @return Whether the attached resources are deleted along with the instance.
      * 
      */
     public Boolean deleteWithInstance() {
         return this.deleteWithInstance;
     }
     /**
-     * @return 实例的额外性能IOPS。
+     * @return Additional performance IOPS for the instance
      * 
      */
     public Integer extraPerformanceIops() {
         return this.extraPerformanceIops;
     }
     /**
-     * @return 实例的额外性能吞吐量，单位MB。
+     * @return The additional performance throughput of the instance, in MB.
      * 
      */
     public Integer extraPerformanceThroughputMb() {
         return this.extraPerformanceThroughputMb;
     }
     /**
-     * @return 额外性能的类型，取值如下：Balance：均衡型额外性能。IOPS：IOPS型额外性能。Throughput：吞吐量型额外性能。
+     * @return Type of additional performance. Values:
+     *   Balance: Balanced additional performance
+     *   IOPS: IOPS additional performance
+     *   Throughput: Throughput additional performance
      * 
      */
     public String extraPerformanceTypeId() {
         return this.extraPerformanceTypeId;
     }
     /**
-     * @return 实例的大小，单位GiB。
+     * @return Instance size, in GiB
      * 
      */
     public Integer size() {
         return this.size;
     }
     /**
-     * @return 实例的快照ID。
+     * @return Instance snapshot ID
      * 
      */
     public String snapshotId() {
         return this.snapshotId;
     }
     /**
-     * @return 实例的卷ID。
+     * @return Instance volume ID.
      * 
      */
     public String volumeId() {
         return this.volumeId;
     }
     /**
-     * @return 云盘类型，取值说明如下：PTSSD：性能型SSD。ESSD_PL0：极速型SSD云盘，PL0规格。ESSD_FlexPL: 极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘。
+     * @return Cloud disk type. Values:
+     *   PTSSD: Performance SSD.
+     *   ESSD_PL0: Ultra SSD disk, PL0 specification.
+     *   ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+     *   TSSD_TL0: Throughput SSD disk.
      * 
      */
     public String volumeType() {

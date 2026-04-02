@@ -28,12 +28,12 @@ class TransitRouterRouteEntryArgs:
                  transit_router_route_entry_next_hop_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a TransitRouterRouteEntry resource.
-        :param pulumi.Input[builtins.str] destination_cidr_block: 路由条目的目标网段。
-        :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_type: 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
-        :param pulumi.Input[builtins.str] transit_router_route_table_id: 中转路由器实例关联的路由表的ID。
-        :param pulumi.Input[builtins.str] description: TR路由表路由条目的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
-        :param pulumi.Input[builtins.str] transit_router_route_entry_name: 路由条目的名称。
-        :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_id: 路由条目的下一跳ID。
+        :param pulumi.Input[builtins.str] destination_cidr_block: Destination CIDR block of the route entry
+        :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_type: Next hop type of the route entry. Valid values: Attachment: Network instance. Traffic matching this route entry will be forwarded to the specified network instance. BlackHole: Black hole. Traffic matching this route entry will be dropped
+        :param pulumi.Input[builtins.str] transit_router_route_table_id: ID of the route table associated with the transit router instance
+        :param pulumi.Input[builtins.str] description: Description of the TR route table entry. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string
+        :param pulumi.Input[builtins.str] transit_router_route_entry_name: Name of the route entry
+        :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_id: Next hop ID of the route entry
         """
         pulumi.set(__self__, "destination_cidr_block", destination_cidr_block)
         pulumi.set(__self__, "transit_router_route_entry_next_hop_type", transit_router_route_entry_next_hop_type)
@@ -49,7 +49,7 @@ class TransitRouterRouteEntryArgs:
     @pulumi.getter(name="destinationCidrBlock")
     def destination_cidr_block(self) -> pulumi.Input[builtins.str]:
         """
-        路由条目的目标网段。
+        Destination CIDR block of the route entry
         """
         return pulumi.get(self, "destination_cidr_block")
 
@@ -61,7 +61,7 @@ class TransitRouterRouteEntryArgs:
     @pulumi.getter(name="transitRouterRouteEntryNextHopType")
     def transit_router_route_entry_next_hop_type(self) -> pulumi.Input[builtins.str]:
         """
-        路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
+        Next hop type of the route entry. Valid values: Attachment: Network instance. Traffic matching this route entry will be forwarded to the specified network instance. BlackHole: Black hole. Traffic matching this route entry will be dropped
         """
         return pulumi.get(self, "transit_router_route_entry_next_hop_type")
 
@@ -73,7 +73,7 @@ class TransitRouterRouteEntryArgs:
     @pulumi.getter(name="transitRouterRouteTableId")
     def transit_router_route_table_id(self) -> pulumi.Input[builtins.str]:
         """
-        中转路由器实例关联的路由表的ID。
+        ID of the route table associated with the transit router instance
         """
         return pulumi.get(self, "transit_router_route_table_id")
 
@@ -85,7 +85,7 @@ class TransitRouterRouteEntryArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        TR路由表路由条目的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        Description of the TR route table entry. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string
         """
         return pulumi.get(self, "description")
 
@@ -97,7 +97,7 @@ class TransitRouterRouteEntryArgs:
     @pulumi.getter(name="transitRouterRouteEntryName")
     def transit_router_route_entry_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        路由条目的名称。
+        Name of the route entry
         """
         return pulumi.get(self, "transit_router_route_entry_name")
 
@@ -109,7 +109,7 @@ class TransitRouterRouteEntryArgs:
     @pulumi.getter(name="transitRouterRouteEntryNextHopId")
     def transit_router_route_entry_next_hop_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        路由条目的下一跳ID。
+        Next hop ID of the route entry
         """
         return pulumi.get(self, "transit_router_route_entry_next_hop_id")
 
@@ -137,20 +137,20 @@ class _TransitRouterRouteEntryState:
                  updated_time: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering TransitRouterRouteEntry resources.
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] as_paths: 路由条目的AS路径。
-        :param pulumi.Input[builtins.str] created_time: 路由条目的创建时间。
-        :param pulumi.Input[builtins.str] description: TR路由表路由条目的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
-        :param pulumi.Input[builtins.str] destination_cidr_block: 路由条目的目标网段。
-        :param pulumi.Input[builtins.str] status: 路由条目的状态。Available：可用。Creating：创建中。Pending：配置中。Deleting：删除中。Conflicted：未生效。
-        :param pulumi.Input[builtins.str] transit_router_route_entry_id: TR路由条目的ID。
-        :param pulumi.Input[builtins.str] transit_router_route_entry_name: 路由条目的名称。
-        :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_id: 路由条目的下一跳ID。
-        :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_resource_id: 路由条目下一跳网络实例ID。
-        :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_resource_type: 路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
-        :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_type: 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
-        :param pulumi.Input[builtins.str] transit_router_route_entry_type: 路由条目的类型。Static：静态路由。Propagated：自动学习路由。
-        :param pulumi.Input[builtins.str] transit_router_route_table_id: 中转路由器实例关联的路由表的ID。
-        :param pulumi.Input[builtins.str] updated_time: 路由条目的更新时间。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] as_paths: AS path of the route entry
+        :param pulumi.Input[builtins.str] created_time: Creation time of the route entry
+        :param pulumi.Input[builtins.str] description: Description of the TR route table entry. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string
+        :param pulumi.Input[builtins.str] destination_cidr_block: Destination CIDR block of the route entry
+        :param pulumi.Input[builtins.str] status: Status of the route entry. Available: Available. Creating: Creating. Pending: Configuring. Deleting: Deleting. Conflicted: Inactive
+        :param pulumi.Input[builtins.str] transit_router_route_entry_id: ID of the TR route entry
+        :param pulumi.Input[builtins.str] transit_router_route_entry_name: Name of the route entry
+        :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_id: Next hop ID of the route entry
+        :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_resource_id: Next hop network instance ID of the route entry
+        :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_resource_type: Type of the next hop network instance for the route entry. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
+        :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_type: Next hop type of the route entry. Valid values: Attachment: Network instance. Traffic matching this route entry will be forwarded to the specified network instance. BlackHole: Black hole. Traffic matching this route entry will be dropped
+        :param pulumi.Input[builtins.str] transit_router_route_entry_type: Type of the route entry. Static: Static route. Propagated: Learned route
+        :param pulumi.Input[builtins.str] transit_router_route_table_id: ID of the route table associated with the transit router instance
+        :param pulumi.Input[builtins.str] updated_time: Last updated time of the route entry
         """
         if as_paths is not None:
             pulumi.set(__self__, "as_paths", as_paths)
@@ -185,7 +185,7 @@ class _TransitRouterRouteEntryState:
     @pulumi.getter(name="asPaths")
     def as_paths(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        路由条目的AS路径。
+        AS path of the route entry
         """
         return pulumi.get(self, "as_paths")
 
@@ -197,7 +197,7 @@ class _TransitRouterRouteEntryState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        路由条目的创建时间。
+        Creation time of the route entry
         """
         return pulumi.get(self, "created_time")
 
@@ -209,7 +209,7 @@ class _TransitRouterRouteEntryState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        TR路由表路由条目的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        Description of the TR route table entry. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string
         """
         return pulumi.get(self, "description")
 
@@ -221,7 +221,7 @@ class _TransitRouterRouteEntryState:
     @pulumi.getter(name="destinationCidrBlock")
     def destination_cidr_block(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        路由条目的目标网段。
+        Destination CIDR block of the route entry
         """
         return pulumi.get(self, "destination_cidr_block")
 
@@ -233,7 +233,7 @@ class _TransitRouterRouteEntryState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        路由条目的状态。Available：可用。Creating：创建中。Pending：配置中。Deleting：删除中。Conflicted：未生效。
+        Status of the route entry. Available: Available. Creating: Creating. Pending: Configuring. Deleting: Deleting. Conflicted: Inactive
         """
         return pulumi.get(self, "status")
 
@@ -245,7 +245,7 @@ class _TransitRouterRouteEntryState:
     @pulumi.getter(name="transitRouterRouteEntryId")
     def transit_router_route_entry_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        TR路由条目的ID。
+        ID of the TR route entry
         """
         return pulumi.get(self, "transit_router_route_entry_id")
 
@@ -257,7 +257,7 @@ class _TransitRouterRouteEntryState:
     @pulumi.getter(name="transitRouterRouteEntryName")
     def transit_router_route_entry_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        路由条目的名称。
+        Name of the route entry
         """
         return pulumi.get(self, "transit_router_route_entry_name")
 
@@ -269,7 +269,7 @@ class _TransitRouterRouteEntryState:
     @pulumi.getter(name="transitRouterRouteEntryNextHopId")
     def transit_router_route_entry_next_hop_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        路由条目的下一跳ID。
+        Next hop ID of the route entry
         """
         return pulumi.get(self, "transit_router_route_entry_next_hop_id")
 
@@ -281,7 +281,7 @@ class _TransitRouterRouteEntryState:
     @pulumi.getter(name="transitRouterRouteEntryNextHopResourceId")
     def transit_router_route_entry_next_hop_resource_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        路由条目下一跳网络实例ID。
+        Next hop network instance ID of the route entry
         """
         return pulumi.get(self, "transit_router_route_entry_next_hop_resource_id")
 
@@ -293,7 +293,7 @@ class _TransitRouterRouteEntryState:
     @pulumi.getter(name="transitRouterRouteEntryNextHopResourceType")
     def transit_router_route_entry_next_hop_resource_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+        Type of the next hop network instance for the route entry. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
         """
         return pulumi.get(self, "transit_router_route_entry_next_hop_resource_type")
 
@@ -305,7 +305,7 @@ class _TransitRouterRouteEntryState:
     @pulumi.getter(name="transitRouterRouteEntryNextHopType")
     def transit_router_route_entry_next_hop_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
+        Next hop type of the route entry. Valid values: Attachment: Network instance. Traffic matching this route entry will be forwarded to the specified network instance. BlackHole: Black hole. Traffic matching this route entry will be dropped
         """
         return pulumi.get(self, "transit_router_route_entry_next_hop_type")
 
@@ -317,7 +317,7 @@ class _TransitRouterRouteEntryState:
     @pulumi.getter(name="transitRouterRouteEntryType")
     def transit_router_route_entry_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        路由条目的类型。Static：静态路由。Propagated：自动学习路由。
+        Type of the route entry. Static: Static route. Propagated: Learned route
         """
         return pulumi.get(self, "transit_router_route_entry_type")
 
@@ -329,7 +329,7 @@ class _TransitRouterRouteEntryState:
     @pulumi.getter(name="transitRouterRouteTableId")
     def transit_router_route_table_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        中转路由器实例关联的路由表的ID。
+        ID of the route table associated with the transit router instance
         """
         return pulumi.get(self, "transit_router_route_table_id")
 
@@ -341,7 +341,7 @@ class _TransitRouterRouteEntryState:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        路由条目的更新时间。
+        Last updated time of the route entry
         """
         return pulumi.get(self, "updated_time")
 
@@ -364,7 +364,7 @@ class TransitRouterRouteEntry(pulumi.CustomResource):
                  transit_router_route_table_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        通过为网络实例连接或跨地域连接关联的路由表创建或删除静态路由，能够灵活地控制中转路由器中的流量走向。
+        By creating or deleting static routes in route tables associated with network instance connections or cross-region connections, you can flexibly control traffic direction in the transit router
 
         ## Import
 
@@ -374,12 +374,12 @@ class TransitRouterRouteEntry(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] description: TR路由表路由条目的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
-        :param pulumi.Input[builtins.str] destination_cidr_block: 路由条目的目标网段。
-        :param pulumi.Input[builtins.str] transit_router_route_entry_name: 路由条目的名称。
-        :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_id: 路由条目的下一跳ID。
-        :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_type: 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
-        :param pulumi.Input[builtins.str] transit_router_route_table_id: 中转路由器实例关联的路由表的ID。
+        :param pulumi.Input[builtins.str] description: Description of the TR route table entry. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string
+        :param pulumi.Input[builtins.str] destination_cidr_block: Destination CIDR block of the route entry
+        :param pulumi.Input[builtins.str] transit_router_route_entry_name: Name of the route entry
+        :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_id: Next hop ID of the route entry
+        :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_type: Next hop type of the route entry. Valid values: Attachment: Network instance. Traffic matching this route entry will be forwarded to the specified network instance. BlackHole: Black hole. Traffic matching this route entry will be dropped
+        :param pulumi.Input[builtins.str] transit_router_route_table_id: ID of the route table associated with the transit router instance
         """
         ...
     @overload
@@ -388,7 +388,7 @@ class TransitRouterRouteEntry(pulumi.CustomResource):
                  args: TransitRouterRouteEntryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        通过为网络实例连接或跨地域连接关联的路由表创建或删除静态路由，能够灵活地控制中转路由器中的流量走向。
+        By creating or deleting static routes in route tables associated with network instance connections or cross-region connections, you can flexibly control traffic direction in the transit router
 
         ## Import
 
@@ -477,20 +477,20 @@ class TransitRouterRouteEntry(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] as_paths: 路由条目的AS路径。
-        :param pulumi.Input[builtins.str] created_time: 路由条目的创建时间。
-        :param pulumi.Input[builtins.str] description: TR路由表路由条目的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
-        :param pulumi.Input[builtins.str] destination_cidr_block: 路由条目的目标网段。
-        :param pulumi.Input[builtins.str] status: 路由条目的状态。Available：可用。Creating：创建中。Pending：配置中。Deleting：删除中。Conflicted：未生效。
-        :param pulumi.Input[builtins.str] transit_router_route_entry_id: TR路由条目的ID。
-        :param pulumi.Input[builtins.str] transit_router_route_entry_name: 路由条目的名称。
-        :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_id: 路由条目的下一跳ID。
-        :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_resource_id: 路由条目下一跳网络实例ID。
-        :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_resource_type: 路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
-        :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_type: 路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
-        :param pulumi.Input[builtins.str] transit_router_route_entry_type: 路由条目的类型。Static：静态路由。Propagated：自动学习路由。
-        :param pulumi.Input[builtins.str] transit_router_route_table_id: 中转路由器实例关联的路由表的ID。
-        :param pulumi.Input[builtins.str] updated_time: 路由条目的更新时间。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] as_paths: AS path of the route entry
+        :param pulumi.Input[builtins.str] created_time: Creation time of the route entry
+        :param pulumi.Input[builtins.str] description: Description of the TR route table entry. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string
+        :param pulumi.Input[builtins.str] destination_cidr_block: Destination CIDR block of the route entry
+        :param pulumi.Input[builtins.str] status: Status of the route entry. Available: Available. Creating: Creating. Pending: Configuring. Deleting: Deleting. Conflicted: Inactive
+        :param pulumi.Input[builtins.str] transit_router_route_entry_id: ID of the TR route entry
+        :param pulumi.Input[builtins.str] transit_router_route_entry_name: Name of the route entry
+        :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_id: Next hop ID of the route entry
+        :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_resource_id: Next hop network instance ID of the route entry
+        :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_resource_type: Type of the next hop network instance for the route entry. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
+        :param pulumi.Input[builtins.str] transit_router_route_entry_next_hop_type: Next hop type of the route entry. Valid values: Attachment: Network instance. Traffic matching this route entry will be forwarded to the specified network instance. BlackHole: Black hole. Traffic matching this route entry will be dropped
+        :param pulumi.Input[builtins.str] transit_router_route_entry_type: Type of the route entry. Static: Static route. Propagated: Learned route
+        :param pulumi.Input[builtins.str] transit_router_route_table_id: ID of the route table associated with the transit router instance
+        :param pulumi.Input[builtins.str] updated_time: Last updated time of the route entry
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -516,7 +516,7 @@ class TransitRouterRouteEntry(pulumi.CustomResource):
     @pulumi.getter(name="asPaths")
     def as_paths(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        路由条目的AS路径。
+        AS path of the route entry
         """
         return pulumi.get(self, "as_paths")
 
@@ -524,7 +524,7 @@ class TransitRouterRouteEntry(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        路由条目的创建时间。
+        Creation time of the route entry
         """
         return pulumi.get(self, "created_time")
 
@@ -532,7 +532,7 @@ class TransitRouterRouteEntry(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[builtins.str]:
         """
-        TR路由表路由条目的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。长度限制为0 ~ 255个字符。不传入该参数或该参数不传入数值时，默认为空字符串。
+        Description of the TR route table entry. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string
         """
         return pulumi.get(self, "description")
 
@@ -540,7 +540,7 @@ class TransitRouterRouteEntry(pulumi.CustomResource):
     @pulumi.getter(name="destinationCidrBlock")
     def destination_cidr_block(self) -> pulumi.Output[builtins.str]:
         """
-        路由条目的目标网段。
+        Destination CIDR block of the route entry
         """
         return pulumi.get(self, "destination_cidr_block")
 
@@ -548,7 +548,7 @@ class TransitRouterRouteEntry(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[builtins.str]:
         """
-        路由条目的状态。Available：可用。Creating：创建中。Pending：配置中。Deleting：删除中。Conflicted：未生效。
+        Status of the route entry. Available: Available. Creating: Creating. Pending: Configuring. Deleting: Deleting. Conflicted: Inactive
         """
         return pulumi.get(self, "status")
 
@@ -556,7 +556,7 @@ class TransitRouterRouteEntry(pulumi.CustomResource):
     @pulumi.getter(name="transitRouterRouteEntryId")
     def transit_router_route_entry_id(self) -> pulumi.Output[builtins.str]:
         """
-        TR路由条目的ID。
+        ID of the TR route entry
         """
         return pulumi.get(self, "transit_router_route_entry_id")
 
@@ -564,7 +564,7 @@ class TransitRouterRouteEntry(pulumi.CustomResource):
     @pulumi.getter(name="transitRouterRouteEntryName")
     def transit_router_route_entry_name(self) -> pulumi.Output[builtins.str]:
         """
-        路由条目的名称。
+        Name of the route entry
         """
         return pulumi.get(self, "transit_router_route_entry_name")
 
@@ -572,7 +572,7 @@ class TransitRouterRouteEntry(pulumi.CustomResource):
     @pulumi.getter(name="transitRouterRouteEntryNextHopId")
     def transit_router_route_entry_next_hop_id(self) -> pulumi.Output[builtins.str]:
         """
-        路由条目的下一跳ID。
+        Next hop ID of the route entry
         """
         return pulumi.get(self, "transit_router_route_entry_next_hop_id")
 
@@ -580,7 +580,7 @@ class TransitRouterRouteEntry(pulumi.CustomResource):
     @pulumi.getter(name="transitRouterRouteEntryNextHopResourceId")
     def transit_router_route_entry_next_hop_resource_id(self) -> pulumi.Output[builtins.str]:
         """
-        路由条目下一跳网络实例ID。
+        Next hop network instance ID of the route entry
         """
         return pulumi.get(self, "transit_router_route_entry_next_hop_resource_id")
 
@@ -588,7 +588,7 @@ class TransitRouterRouteEntry(pulumi.CustomResource):
     @pulumi.getter(name="transitRouterRouteEntryNextHopResourceType")
     def transit_router_route_entry_next_hop_resource_type(self) -> pulumi.Output[builtins.str]:
         """
-        路由条目下一跳网络实例的类型。VPC：私有网络。VPN：VPN连接。DirectConnectGateway：专线网关。TransitRouter：中转路由器。
+        Type of the next hop network instance for the route entry. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
         """
         return pulumi.get(self, "transit_router_route_entry_next_hop_resource_type")
 
@@ -596,7 +596,7 @@ class TransitRouterRouteEntry(pulumi.CustomResource):
     @pulumi.getter(name="transitRouterRouteEntryNextHopType")
     def transit_router_route_entry_next_hop_type(self) -> pulumi.Output[builtins.str]:
         """
-        路由条目的下一跳类型。取值如下：Attachment：网络实例，表示匹配该路由条目的流量会被转发到指定的网络实例。BlackHole：黑洞，表示匹配该路由条目的流量会被丢弃。
+        Next hop type of the route entry. Valid values: Attachment: Network instance. Traffic matching this route entry will be forwarded to the specified network instance. BlackHole: Black hole. Traffic matching this route entry will be dropped
         """
         return pulumi.get(self, "transit_router_route_entry_next_hop_type")
 
@@ -604,7 +604,7 @@ class TransitRouterRouteEntry(pulumi.CustomResource):
     @pulumi.getter(name="transitRouterRouteEntryType")
     def transit_router_route_entry_type(self) -> pulumi.Output[builtins.str]:
         """
-        路由条目的类型。Static：静态路由。Propagated：自动学习路由。
+        Type of the route entry. Static: Static route. Propagated: Learned route
         """
         return pulumi.get(self, "transit_router_route_entry_type")
 
@@ -612,7 +612,7 @@ class TransitRouterRouteEntry(pulumi.CustomResource):
     @pulumi.getter(name="transitRouterRouteTableId")
     def transit_router_route_table_id(self) -> pulumi.Output[builtins.str]:
         """
-        中转路由器实例关联的路由表的ID。
+        ID of the route table associated with the transit router instance
         """
         return pulumi.get(self, "transit_router_route_table_id")
 
@@ -620,7 +620,7 @@ class TransitRouterRouteEntry(pulumi.CustomResource):
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> pulumi.Output[builtins.str]:
         """
-        路由条目的更新时间。
+        Last updated time of the route entry
         """
         return pulumi.get(self, "updated_time")
 

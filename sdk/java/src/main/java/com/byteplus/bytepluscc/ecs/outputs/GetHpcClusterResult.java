@@ -13,17 +13,17 @@ import java.util.Objects;
 @CustomType
 public final class GetHpcClusterResult {
     /**
-     * @return 创建时间，格式满足RFC3339。
+     * @return Creation time, formatted according to RFC3339
      * 
      */
     private String createdTime;
     /**
-     * @return 高性能计算集群描述，默认为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0～255之间。
+     * @return High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
      * 
      */
     private String description;
     /**
-     * @return 高性能计算集群ID。
+     * @return High performance compute cluster ID
      * 
      */
     private String hpcClusterId;
@@ -33,53 +33,53 @@ public final class GetHpcClusterResult {
      */
     private String id;
     /**
-     * @return 高性能计算集群名称。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1～128之间。
+     * @return High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
      * 
      */
     private String name;
     /**
-     * @return 项目名称。
+     * @return Project name
      * 
      */
     private String projectName;
     /**
-     * @return 标签信息。
+     * @return Tag information
      * 
      */
     private List<GetHpcClusterTag> tags;
     /**
-     * @return 更新时间，格式满足RFC3339。
+     * @return Update time, formatted according to RFC3339
      * 
      */
     private String updatedTime;
     /**
-     * @return 私有网络ID。
+     * @return Private network ID
      * 
      */
     private String vpcId;
     /**
-     * @return 高性能计算集群所属可用区ID。
+     * @return Availability zone ID of the high performance compute cluster
      * 
      */
     private String zoneId;
 
     private GetHpcClusterResult() {}
     /**
-     * @return 创建时间，格式满足RFC3339。
+     * @return Creation time, formatted according to RFC3339
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 高性能计算集群描述，默认为空字符串。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在0～255之间。
+     * @return High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 高性能计算集群ID。
+     * @return High performance compute cluster ID
      * 
      */
     public String hpcClusterId() {
@@ -93,42 +93,42 @@ public final class GetHpcClusterResult {
         return this.id;
     }
     /**
-     * @return 高性能计算集群名称。必须以字母或中文开头。只能包含中文、字母、数字、下划线和中划线。长度限制在1～128之间。
+     * @return High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 项目名称。
+     * @return Project name
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 标签信息。
+     * @return Tag information
      * 
      */
     public List<GetHpcClusterTag> tags() {
         return this.tags;
     }
     /**
-     * @return 更新时间，格式满足RFC3339。
+     * @return Update time, formatted according to RFC3339
      * 
      */
     public String updatedTime() {
         return this.updatedTime;
     }
     /**
-     * @return 私有网络ID。
+     * @return Private network ID
      * 
      */
     public String vpcId() {
         return this.vpcId;
     }
     /**
-     * @return 高性能计算集群所属可用区ID。
+     * @return Availability zone ID of the high performance compute cluster
      * 
      */
     public String zoneId() {

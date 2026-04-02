@@ -16,14 +16,14 @@ public final class SandboxEnvArgs extends com.pulumi.resources.ResourceArgs {
     public static final SandboxEnvArgs Empty = new SandboxEnvArgs();
 
     /**
-     * 环境变量键。
+     * Environment variable key
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return 环境变量键。
+     * @return Environment variable key
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class SandboxEnvArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 环境变量值。
+     * Environment variable value
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return 环境变量值。
+     * @return Environment variable value
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class SandboxEnvArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param key 环境变量键。
+         * @param key Environment variable key
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class SandboxEnvArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param key 环境变量键。
+         * @param key Environment variable key
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class SandboxEnvArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value 环境变量值。
+         * @param value Environment variable value
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class SandboxEnvArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value 环境变量值。
+         * @param value Environment variable value
          * 
          * @return builder
          * 

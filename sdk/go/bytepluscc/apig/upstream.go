@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Upstream 是对 API 网关实例后端的抽象。您可以将具有相同功能的后端应用抽象为一个 Upstream，实现路由和后端应用解耦，更灵活地支持后端应用的灰度发布、多版本管理等场景。本文为您介绍 Upstream 的概念及作用。
+// Upstream is an abstraction of the backend for API gateway instances. You can group backend applications with the same functionality into an upstream, which decouples routing from backend applications and provides flexible support for scenarios such as canary releases and multi-version management. This article introduces the concept and purpose of upstream
 //
 // ## Import
 //
@@ -23,31 +23,31 @@ type Upstream struct {
 	pulumi.CustomResourceState
 
 	BackendTargets UpstreamBackendTargetArrayOutput `pulumi:"backendTargets"`
-	// 服务熔断配置。
+	// Service circuit breaking configuration
 	CircuitBreakingSettings UpstreamCircuitBreakingSettingsOutput `pulumi:"circuitBreakingSettings"`
-	// 备注。
+	// Remarks
 	Comments pulumi.StringOutput `pulumi:"comments"`
-	// 连接池配置。
+	// Connection Pool Configuration
 	ConnectionPoolSettings UpstreamConnectionPoolSettingsOutput `pulumi:"connectionPoolSettings"`
-	// Upstream创建时间。
+	// Upstream creation time
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// 网关实例ID。
+	// Gateway Instance ID
 	GatewayId pulumi.StringOutput `pulumi:"gatewayId"`
-	// 负载均衡配置。
+	// Load Balancing Configuration
 	LoadBalancerSettings UpstreamLoadBalancerSettingsOutput `pulumi:"loadBalancerSettings"`
-	// Upstream名称。
+	// Upstream name
 	Name pulumi.StringOutput `pulumi:"name"`
-	// 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
+	// Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
 	Protocol pulumi.StringOutput `pulumi:"protocol"`
-	// Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
+	// Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
 	SourceType pulumi.StringOutput `pulumi:"sourceType"`
-	// TLS配置。
+	// TLS Configuration
 	TlsSettings UpstreamTlsSettingsOutput `pulumi:"tlsSettings"`
-	// Upstream更新时间。
+	// Upstream update time
 	UpdatedTime pulumi.StringOutput `pulumi:"updatedTime"`
 	// Upstream ID。
 	UpstreamId pulumi.StringOutput `pulumi:"upstreamId"`
-	// Upstream配置。
+	// Upstream Configuration
 	UpstreamSpec   UpstreamUpstreamSpecOutput       `pulumi:"upstreamSpec"`
 	VersionDetails UpstreamVersionDetailArrayOutput `pulumi:"versionDetails"`
 }
@@ -95,62 +95,62 @@ func GetUpstream(ctx *pulumi.Context,
 // Input properties used for looking up and filtering Upstream resources.
 type upstreamState struct {
 	BackendTargets []UpstreamBackendTarget `pulumi:"backendTargets"`
-	// 服务熔断配置。
+	// Service circuit breaking configuration
 	CircuitBreakingSettings *UpstreamCircuitBreakingSettings `pulumi:"circuitBreakingSettings"`
-	// 备注。
+	// Remarks
 	Comments *string `pulumi:"comments"`
-	// 连接池配置。
+	// Connection Pool Configuration
 	ConnectionPoolSettings *UpstreamConnectionPoolSettings `pulumi:"connectionPoolSettings"`
-	// Upstream创建时间。
+	// Upstream creation time
 	CreatedTime *string `pulumi:"createdTime"`
-	// 网关实例ID。
+	// Gateway Instance ID
 	GatewayId *string `pulumi:"gatewayId"`
-	// 负载均衡配置。
+	// Load Balancing Configuration
 	LoadBalancerSettings *UpstreamLoadBalancerSettings `pulumi:"loadBalancerSettings"`
-	// Upstream名称。
+	// Upstream name
 	Name *string `pulumi:"name"`
-	// 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
+	// Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
 	Protocol *string `pulumi:"protocol"`
-	// Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
+	// Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
 	SourceType *string `pulumi:"sourceType"`
-	// TLS配置。
+	// TLS Configuration
 	TlsSettings *UpstreamTlsSettings `pulumi:"tlsSettings"`
-	// Upstream更新时间。
+	// Upstream update time
 	UpdatedTime *string `pulumi:"updatedTime"`
 	// Upstream ID。
 	UpstreamId *string `pulumi:"upstreamId"`
-	// Upstream配置。
+	// Upstream Configuration
 	UpstreamSpec   *UpstreamUpstreamSpec   `pulumi:"upstreamSpec"`
 	VersionDetails []UpstreamVersionDetail `pulumi:"versionDetails"`
 }
 
 type UpstreamState struct {
 	BackendTargets UpstreamBackendTargetArrayInput
-	// 服务熔断配置。
+	// Service circuit breaking configuration
 	CircuitBreakingSettings UpstreamCircuitBreakingSettingsPtrInput
-	// 备注。
+	// Remarks
 	Comments pulumi.StringPtrInput
-	// 连接池配置。
+	// Connection Pool Configuration
 	ConnectionPoolSettings UpstreamConnectionPoolSettingsPtrInput
-	// Upstream创建时间。
+	// Upstream creation time
 	CreatedTime pulumi.StringPtrInput
-	// 网关实例ID。
+	// Gateway Instance ID
 	GatewayId pulumi.StringPtrInput
-	// 负载均衡配置。
+	// Load Balancing Configuration
 	LoadBalancerSettings UpstreamLoadBalancerSettingsPtrInput
-	// Upstream名称。
+	// Upstream name
 	Name pulumi.StringPtrInput
-	// 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
+	// Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
 	Protocol pulumi.StringPtrInput
-	// Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
+	// Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
 	SourceType pulumi.StringPtrInput
-	// TLS配置。
+	// TLS Configuration
 	TlsSettings UpstreamTlsSettingsPtrInput
-	// Upstream更新时间。
+	// Upstream update time
 	UpdatedTime pulumi.StringPtrInput
 	// Upstream ID。
 	UpstreamId pulumi.StringPtrInput
-	// Upstream配置。
+	// Upstream Configuration
 	UpstreamSpec   UpstreamUpstreamSpecPtrInput
 	VersionDetails UpstreamVersionDetailArrayInput
 }
@@ -160,49 +160,49 @@ func (UpstreamState) ElementType() reflect.Type {
 }
 
 type upstreamArgs struct {
-	// 服务熔断配置。
+	// Service circuit breaking configuration
 	CircuitBreakingSettings *UpstreamCircuitBreakingSettings `pulumi:"circuitBreakingSettings"`
-	// 备注。
+	// Remarks
 	Comments *string `pulumi:"comments"`
-	// 连接池配置。
+	// Connection Pool Configuration
 	ConnectionPoolSettings *UpstreamConnectionPoolSettings `pulumi:"connectionPoolSettings"`
-	// 网关实例ID。
+	// Gateway Instance ID
 	GatewayId string `pulumi:"gatewayId"`
-	// 负载均衡配置。
+	// Load Balancing Configuration
 	LoadBalancerSettings *UpstreamLoadBalancerSettings `pulumi:"loadBalancerSettings"`
-	// Upstream名称。
+	// Upstream name
 	Name string `pulumi:"name"`
-	// 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
+	// Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
 	Protocol *string `pulumi:"protocol"`
-	// Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
+	// Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
 	SourceType string `pulumi:"sourceType"`
-	// TLS配置。
+	// TLS Configuration
 	TlsSettings *UpstreamTlsSettings `pulumi:"tlsSettings"`
-	// Upstream配置。
+	// Upstream Configuration
 	UpstreamSpec UpstreamUpstreamSpec `pulumi:"upstreamSpec"`
 }
 
 // The set of arguments for constructing a Upstream resource.
 type UpstreamArgs struct {
-	// 服务熔断配置。
+	// Service circuit breaking configuration
 	CircuitBreakingSettings UpstreamCircuitBreakingSettingsPtrInput
-	// 备注。
+	// Remarks
 	Comments pulumi.StringPtrInput
-	// 连接池配置。
+	// Connection Pool Configuration
 	ConnectionPoolSettings UpstreamConnectionPoolSettingsPtrInput
-	// 网关实例ID。
+	// Gateway Instance ID
 	GatewayId pulumi.StringInput
-	// 负载均衡配置。
+	// Load Balancing Configuration
 	LoadBalancerSettings UpstreamLoadBalancerSettingsPtrInput
-	// Upstream名称。
+	// Upstream name
 	Name pulumi.StringInput
-	// 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
+	// Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
 	Protocol pulumi.StringPtrInput
-	// Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
+	// Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
 	SourceType pulumi.StringInput
-	// TLS配置。
+	// TLS Configuration
 	TlsSettings UpstreamTlsSettingsPtrInput
-	// Upstream配置。
+	// Upstream Configuration
 	UpstreamSpec UpstreamUpstreamSpecInput
 }
 
@@ -297,57 +297,57 @@ func (o UpstreamOutput) BackendTargets() UpstreamBackendTargetArrayOutput {
 	return o.ApplyT(func(v *Upstream) UpstreamBackendTargetArrayOutput { return v.BackendTargets }).(UpstreamBackendTargetArrayOutput)
 }
 
-// 服务熔断配置。
+// Service circuit breaking configuration
 func (o UpstreamOutput) CircuitBreakingSettings() UpstreamCircuitBreakingSettingsOutput {
 	return o.ApplyT(func(v *Upstream) UpstreamCircuitBreakingSettingsOutput { return v.CircuitBreakingSettings }).(UpstreamCircuitBreakingSettingsOutput)
 }
 
-// 备注。
+// Remarks
 func (o UpstreamOutput) Comments() pulumi.StringOutput {
 	return o.ApplyT(func(v *Upstream) pulumi.StringOutput { return v.Comments }).(pulumi.StringOutput)
 }
 
-// 连接池配置。
+// Connection Pool Configuration
 func (o UpstreamOutput) ConnectionPoolSettings() UpstreamConnectionPoolSettingsOutput {
 	return o.ApplyT(func(v *Upstream) UpstreamConnectionPoolSettingsOutput { return v.ConnectionPoolSettings }).(UpstreamConnectionPoolSettingsOutput)
 }
 
-// Upstream创建时间。
+// Upstream creation time
 func (o UpstreamOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Upstream) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 网关实例ID。
+// Gateway Instance ID
 func (o UpstreamOutput) GatewayId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Upstream) pulumi.StringOutput { return v.GatewayId }).(pulumi.StringOutput)
 }
 
-// 负载均衡配置。
+// Load Balancing Configuration
 func (o UpstreamOutput) LoadBalancerSettings() UpstreamLoadBalancerSettingsOutput {
 	return o.ApplyT(func(v *Upstream) UpstreamLoadBalancerSettingsOutput { return v.LoadBalancerSettings }).(UpstreamLoadBalancerSettingsOutput)
 }
 
-// Upstream名称。
+// Upstream name
 func (o UpstreamOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *Upstream) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// 协议，取值：HTTP：HTTP/1.1。HTTP2：HTTP/2。GRPC：GRPC。
+// Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
 func (o UpstreamOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v *Upstream) pulumi.StringOutput { return v.Protocol }).(pulumi.StringOutput)
 }
 
-// Upstream来源类型，取值：VeFaas：函数服务。ECS：云服务器。K8S：容器服务。Nacos：注册中心。AIProvider：AI模型代理。
+// Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
 func (o UpstreamOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Upstream) pulumi.StringOutput { return v.SourceType }).(pulumi.StringOutput)
 }
 
-// TLS配置。
+// TLS Configuration
 func (o UpstreamOutput) TlsSettings() UpstreamTlsSettingsOutput {
 	return o.ApplyT(func(v *Upstream) UpstreamTlsSettingsOutput { return v.TlsSettings }).(UpstreamTlsSettingsOutput)
 }
 
-// Upstream更新时间。
+// Upstream update time
 func (o UpstreamOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Upstream) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }
@@ -357,7 +357,7 @@ func (o UpstreamOutput) UpstreamId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Upstream) pulumi.StringOutput { return v.UpstreamId }).(pulumi.StringOutput)
 }
 
-// Upstream配置。
+// Upstream Configuration
 func (o UpstreamOutput) UpstreamSpec() UpstreamUpstreamSpecOutput {
 	return o.ApplyT(func(v *Upstream) UpstreamUpstreamSpecOutput { return v.UpstreamSpec }).(UpstreamUpstreamSpecOutput)
 }

@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 public final class InstanceShard {
     private @Nullable List<InstanceShardNode> nodes;
     /**
-     * @return Shard 节点的 ID。
+     * @return Shard node ID.
      * 
      */
     private @Nullable String shardId;
@@ -25,7 +25,7 @@ public final class InstanceShard {
         return this.nodes == null ? List.of() : this.nodes;
     }
     /**
-     * @return Shard 节点的 ID。
+     * @return Shard node ID.
      * 
      */
     public Optional<String> shardId() {

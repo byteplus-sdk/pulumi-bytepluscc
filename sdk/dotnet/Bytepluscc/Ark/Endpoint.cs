@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Ark
 {
     /// <summary>
-    /// 在使用大语言模型进行推理服务时，推理接入点（Endpoint）是模型调用的关键入口。开发者只需通过指定的 ID 即可向大模型发起 API / SDK 推理请求，实现快速接入与灵活调用。系统提供统一的 API 调用方式、调用监控、限流策略与安全保障机制，确保推理过程的稳定性与安全性。
+    /// When using large language models for inference services, the inference endpoint is the key entry point for model invocation. Developers can initiate API/SDK inference requests to the large model simply by specifying the ID, enabling quick access and flexible invocation. The system provides a unified API invocation method, call monitoring, rate limiting strategies, and security mechanisms to ensure stability and security during inference
     /// 
     /// ## Import
     /// 
@@ -23,109 +23,109 @@ namespace Byteplus.Pulumi.Bytepluscc.Ark
     public partial class Endpoint : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 是否只支持 BatchChat。如果为true，只能访问 Batch 推理接口，否则只能访问在线推理接口。
+        /// Whether only BatchChat is supported. If true, only batch inference interfaces can be accessed; otherwise, only online inference interfaces can be accessed
         /// </summary>
         [Output("batchOnly")]
         public Output<bool> BatchOnly { get; private set; } = null!;
 
         /// <summary>
-        /// 证书信息。
+        /// Certificate information
         /// </summary>
         [Output("certificate")]
         public Output<Outputs.EndpointCertificate> Certificate { get; private set; } = null!;
 
         /// <summary>
-        /// 接入点创建时间，RFC3339格式。
+        /// Endpoint creation time, RFC3339 format
         /// </summary>
         [Output("createTime")]
         public Output<string> CreateTime { get; private set; } = null!;
 
         /// <summary>
-        /// 接入点描述。
+        /// Endpoint description
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 推理接入点的ID。
+        /// Inference access point ID.
         /// </summary>
         [Output("endpointId")]
         public Output<string> EndpointId { get; private set; } = null!;
 
         /// <summary>
-        /// 接入点模型类型。取值:FoundationModel为基础模型;CustomModel为定制模型。
+        /// Access point model type. Options: FoundationModel for base model; CustomModel for custom model.
         /// </summary>
         [Output("endpointModelType")]
         public Output<string> EndpointModelType { get; private set; } = null!;
 
         /// <summary>
-        /// 接入点接入模型。
+        /// Endpoint access model
         /// </summary>
         [Output("modelReference")]
         public Output<Outputs.EndpointModelReference> ModelReference { get; private set; } = null!;
 
         /// <summary>
-        /// 模型单元，为空表示后付费；否则预付费。
+        /// Model unit. If empty, indicates postpaid; otherwise, prepaid.
         /// </summary>
         [Output("modelUnitId")]
         public Output<string> ModelUnitId { get; private set; } = null!;
 
         /// <summary>
-        /// 内容护栏方案。
+        /// Content guardrail scheme
         /// </summary>
         [Output("moderation")]
         public Output<Outputs.EndpointModeration> Moderation { get; private set; } = null!;
 
         /// <summary>
-        /// 接入点名称。
+        /// Endpoint name
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// 资源所属的项目名称，默认值为default。
+        /// Project name the resource belongs to; default value is "default"
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 接入点限流。
+        /// Endpoint rate limiting
         /// </summary>
         [Output("rateLimit")]
         public Output<Outputs.EndpointRateLimit> RateLimit { get; private set; } = null!;
 
         /// <summary>
-        /// 接入点切换的Id。
+        /// Endpoint switch ID
         /// </summary>
         [Output("rollingId")]
         public Output<string> RollingId { get; private set; } = null!;
 
         /// <summary>
-        /// 如果存在 TPM 保障包，则为 TPM 保障包 ID。
+        /// If a TPM protection package exists, this is the TPM protection package ID.
         /// </summary>
         [Output("scaleTierId")]
         public Output<string> ScaleTierId { get; private set; } = null!;
 
         /// <summary>
-        /// 接入点状态。
+        /// Endpoint status
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// 状态附加说明信息。
+        /// Additional status information
         /// </summary>
         [Output("statusReason")]
         public Output<string> StatusReason { get; private set; } = null!;
 
         /// <summary>
-        /// 是否支持接入点切换模型版本。
+        /// Whether endpoint supports switching model versions
         /// </summary>
         [Output("supportRolling")]
         public Output<bool> SupportRolling { get; private set; } = null!;
 
         /// <summary>
-        /// 是否支持TPM保障包。
+        /// Whether TPM protection package is supported
         /// </summary>
         [Output("supportScaleTier")]
         public Output<bool> SupportScaleTier { get; private set; } = null!;
@@ -134,7 +134,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ark
         public Output<ImmutableArray<Outputs.EndpointTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 接入点更新时间，RFC3339格式。
+        /// Endpoint update time, RFC3339 format
         /// </summary>
         [Output("updateTime")]
         public Output<string> UpdateTime { get; private set; } = null!;
@@ -187,43 +187,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Ark
     public sealed class EndpointArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 接入点描述。
+        /// Endpoint description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 接入点接入模型。
+        /// Endpoint access model
         /// </summary>
         [Input("modelReference", required: true)]
         public Input<Inputs.EndpointModelReferenceArgs> ModelReference { get; set; } = null!;
 
         /// <summary>
-        /// 模型单元，为空表示后付费；否则预付费。
+        /// Model unit. If empty, indicates postpaid; otherwise, prepaid.
         /// </summary>
         [Input("modelUnitId")]
         public Input<string>? ModelUnitId { get; set; }
 
         /// <summary>
-        /// 内容护栏方案。
+        /// Content guardrail scheme
         /// </summary>
         [Input("moderation")]
         public Input<Inputs.EndpointModerationArgs>? Moderation { get; set; }
 
         /// <summary>
-        /// 接入点名称。
+        /// Endpoint name
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// 资源所属的项目名称，默认值为default。
+        /// Project name the resource belongs to; default value is "default"
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 接入点限流。
+        /// Endpoint rate limiting
         /// </summary>
         [Input("rateLimit")]
         public Input<Inputs.EndpointRateLimitArgs>? RateLimit { get; set; }
@@ -245,109 +245,109 @@ namespace Byteplus.Pulumi.Bytepluscc.Ark
     public sealed class EndpointState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 是否只支持 BatchChat。如果为true，只能访问 Batch 推理接口，否则只能访问在线推理接口。
+        /// Whether only BatchChat is supported. If true, only batch inference interfaces can be accessed; otherwise, only online inference interfaces can be accessed
         /// </summary>
         [Input("batchOnly")]
         public Input<bool>? BatchOnly { get; set; }
 
         /// <summary>
-        /// 证书信息。
+        /// Certificate information
         /// </summary>
         [Input("certificate")]
         public Input<Inputs.EndpointCertificateGetArgs>? Certificate { get; set; }
 
         /// <summary>
-        /// 接入点创建时间，RFC3339格式。
+        /// Endpoint creation time, RFC3339 format
         /// </summary>
         [Input("createTime")]
         public Input<string>? CreateTime { get; set; }
 
         /// <summary>
-        /// 接入点描述。
+        /// Endpoint description
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 推理接入点的ID。
+        /// Inference access point ID.
         /// </summary>
         [Input("endpointId")]
         public Input<string>? EndpointId { get; set; }
 
         /// <summary>
-        /// 接入点模型类型。取值:FoundationModel为基础模型;CustomModel为定制模型。
+        /// Access point model type. Options: FoundationModel for base model; CustomModel for custom model.
         /// </summary>
         [Input("endpointModelType")]
         public Input<string>? EndpointModelType { get; set; }
 
         /// <summary>
-        /// 接入点接入模型。
+        /// Endpoint access model
         /// </summary>
         [Input("modelReference")]
         public Input<Inputs.EndpointModelReferenceGetArgs>? ModelReference { get; set; }
 
         /// <summary>
-        /// 模型单元，为空表示后付费；否则预付费。
+        /// Model unit. If empty, indicates postpaid; otherwise, prepaid.
         /// </summary>
         [Input("modelUnitId")]
         public Input<string>? ModelUnitId { get; set; }
 
         /// <summary>
-        /// 内容护栏方案。
+        /// Content guardrail scheme
         /// </summary>
         [Input("moderation")]
         public Input<Inputs.EndpointModerationGetArgs>? Moderation { get; set; }
 
         /// <summary>
-        /// 接入点名称。
+        /// Endpoint name
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// 资源所属的项目名称，默认值为default。
+        /// Project name the resource belongs to; default value is "default"
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 接入点限流。
+        /// Endpoint rate limiting
         /// </summary>
         [Input("rateLimit")]
         public Input<Inputs.EndpointRateLimitGetArgs>? RateLimit { get; set; }
 
         /// <summary>
-        /// 接入点切换的Id。
+        /// Endpoint switch ID
         /// </summary>
         [Input("rollingId")]
         public Input<string>? RollingId { get; set; }
 
         /// <summary>
-        /// 如果存在 TPM 保障包，则为 TPM 保障包 ID。
+        /// If a TPM protection package exists, this is the TPM protection package ID.
         /// </summary>
         [Input("scaleTierId")]
         public Input<string>? ScaleTierId { get; set; }
 
         /// <summary>
-        /// 接入点状态。
+        /// Endpoint status
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// 状态附加说明信息。
+        /// Additional status information
         /// </summary>
         [Input("statusReason")]
         public Input<string>? StatusReason { get; set; }
 
         /// <summary>
-        /// 是否支持接入点切换模型版本。
+        /// Whether endpoint supports switching model versions
         /// </summary>
         [Input("supportRolling")]
         public Input<bool>? SupportRolling { get; set; }
 
         /// <summary>
-        /// 是否支持TPM保障包。
+        /// Whether TPM protection package is supported
         /// </summary>
         [Input("supportScaleTier")]
         public Input<bool>? SupportScaleTier { get; set; }
@@ -361,7 +361,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ark
         }
 
         /// <summary>
-        /// 接入点更新时间，RFC3339格式。
+        /// Endpoint update time, RFC3339 format
         /// </summary>
         [Input("updateTime")]
         public Input<string>? UpdateTime { get; set; }

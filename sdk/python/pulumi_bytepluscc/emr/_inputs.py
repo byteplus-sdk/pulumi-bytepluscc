@@ -64,35 +64,35 @@ if not MYPY:
     class ClusterApplicationArgsDict(TypedDict):
         application_config_home: NotRequired[pulumi.Input[builtins.str]]
         """
-        应用配置路径。
+        Application configuration path.
         """
         application_home: NotRequired[pulumi.Input[builtins.str]]
         """
-        应用安装路径。
+        Application installation path.
         """
         application_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        应用名称。
+        Application name.
         """
         application_state: NotRequired[pulumi.Input[builtins.str]]
         """
-        服务状态。NORMAL：正常；WARNING：告警；STOPPED：已停止；INIT：初始化中；INSTALLING：安装中；INSTALLED：已安装；STARTING：启动中；STARTED：已启动；STOPPING：停止中；UNINSTALLING：卸载中；UNINSTALLED：已卸载；EXCEPTION：异常。
+        Service status. NORMAL: normal; WARNING: alert; STOPPED: stopped; INIT: initializing; INSTALLING: installing; INSTALLED: installed; STARTING: starting; STARTED: started; STOPPING: stopping; UNINSTALLING: uninstalling; UNINSTALLED: uninstalled; EXCEPTION: exception.
         """
         application_version: NotRequired[pulumi.Input[builtins.str]]
         """
-        应用版本。
+        Application version.
         """
         group: NotRequired[pulumi.Input[builtins.str]]
         """
-        应用用户组。
+        Application user group.
         """
         support_client: NotRequired[pulumi.Input[builtins.bool]]
         """
-        是否支持客户端。
+        Whether client is supported.
         """
         user: NotRequired[pulumi.Input[builtins.str]]
         """
-        应用用户。
+        Application user.
         """
 elif False:
     ClusterApplicationArgsDict: TypeAlias = Mapping[str, Any]
@@ -109,14 +109,14 @@ class ClusterApplicationArgs:
                  support_client: Optional[pulumi.Input[builtins.bool]] = None,
                  user: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] application_config_home: 应用配置路径。
-        :param pulumi.Input[builtins.str] application_home: 应用安装路径。
-        :param pulumi.Input[builtins.str] application_name: 应用名称。
-        :param pulumi.Input[builtins.str] application_state: 服务状态。NORMAL：正常；WARNING：告警；STOPPED：已停止；INIT：初始化中；INSTALLING：安装中；INSTALLED：已安装；STARTING：启动中；STARTED：已启动；STOPPING：停止中；UNINSTALLING：卸载中；UNINSTALLED：已卸载；EXCEPTION：异常。
-        :param pulumi.Input[builtins.str] application_version: 应用版本。
-        :param pulumi.Input[builtins.str] group: 应用用户组。
-        :param pulumi.Input[builtins.bool] support_client: 是否支持客户端。
-        :param pulumi.Input[builtins.str] user: 应用用户。
+        :param pulumi.Input[builtins.str] application_config_home: Application configuration path.
+        :param pulumi.Input[builtins.str] application_home: Application installation path.
+        :param pulumi.Input[builtins.str] application_name: Application name.
+        :param pulumi.Input[builtins.str] application_state: Service status. NORMAL: normal; WARNING: alert; STOPPED: stopped; INIT: initializing; INSTALLING: installing; INSTALLED: installed; STARTING: starting; STARTED: started; STOPPING: stopping; UNINSTALLING: uninstalling; UNINSTALLED: uninstalled; EXCEPTION: exception.
+        :param pulumi.Input[builtins.str] application_version: Application version.
+        :param pulumi.Input[builtins.str] group: Application user group.
+        :param pulumi.Input[builtins.bool] support_client: Whether client is supported.
+        :param pulumi.Input[builtins.str] user: Application user.
         """
         if application_config_home is not None:
             pulumi.set(__self__, "application_config_home", application_config_home)
@@ -139,7 +139,7 @@ class ClusterApplicationArgs:
     @pulumi.getter(name="applicationConfigHome")
     def application_config_home(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        应用配置路径。
+        Application configuration path.
         """
         return pulumi.get(self, "application_config_home")
 
@@ -151,7 +151,7 @@ class ClusterApplicationArgs:
     @pulumi.getter(name="applicationHome")
     def application_home(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        应用安装路径。
+        Application installation path.
         """
         return pulumi.get(self, "application_home")
 
@@ -163,7 +163,7 @@ class ClusterApplicationArgs:
     @pulumi.getter(name="applicationName")
     def application_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        应用名称。
+        Application name.
         """
         return pulumi.get(self, "application_name")
 
@@ -175,7 +175,7 @@ class ClusterApplicationArgs:
     @pulumi.getter(name="applicationState")
     def application_state(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        服务状态。NORMAL：正常；WARNING：告警；STOPPED：已停止；INIT：初始化中；INSTALLING：安装中；INSTALLED：已安装；STARTING：启动中；STARTED：已启动；STOPPING：停止中；UNINSTALLING：卸载中；UNINSTALLED：已卸载；EXCEPTION：异常。
+        Service status. NORMAL: normal; WARNING: alert; STOPPED: stopped; INIT: initializing; INSTALLING: installing; INSTALLED: installed; STARTING: starting; STARTED: started; STOPPING: stopping; UNINSTALLING: uninstalling; UNINSTALLED: uninstalled; EXCEPTION: exception.
         """
         return pulumi.get(self, "application_state")
 
@@ -187,7 +187,7 @@ class ClusterApplicationArgs:
     @pulumi.getter(name="applicationVersion")
     def application_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        应用版本。
+        Application version.
         """
         return pulumi.get(self, "application_version")
 
@@ -199,7 +199,7 @@ class ClusterApplicationArgs:
     @pulumi.getter
     def group(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        应用用户组。
+        Application user group.
         """
         return pulumi.get(self, "group")
 
@@ -211,7 +211,7 @@ class ClusterApplicationArgs:
     @pulumi.getter(name="supportClient")
     def support_client(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否支持客户端。
+        Whether client is supported.
         """
         return pulumi.get(self, "support_client")
 
@@ -223,7 +223,7 @@ class ClusterApplicationArgs:
     @pulumi.getter
     def user(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        应用用户。
+        Application user.
         """
         return pulumi.get(self, "user")
 
@@ -238,15 +238,15 @@ if not MYPY:
         application_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['ClusterApplicationExtraApplicationConfigArgsDict']]]]
         application_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        应用名称。
+        Application name.
         """
         connection_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        元数据连接id。
+        Metadata connection ID.
         """
         connection_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        元数据连接类型。BUILT*IN*MYSQL：内置数据库。EXTERNAL*MYSQL：外置数据库。HIVE*METASTORE：HMS。
+        Metadata connection type. BUILT*IN*MYSQL: built-in database. EXTERNAL*MYSQL: external database. HIVE*METASTORE: HMS.
         """
 elif False:
     ClusterApplicationExtraArgsDict: TypeAlias = Mapping[str, Any]
@@ -260,9 +260,9 @@ class ClusterApplicationExtraArgs:
                  connection_id: Optional[pulumi.Input[builtins.str]] = None,
                  connection_type: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] application_name: 应用名称。
-        :param pulumi.Input[builtins.str] connection_id: 元数据连接id。
-        :param pulumi.Input[builtins.str] connection_type: 元数据连接类型。BUILT*IN*MYSQL：内置数据库。EXTERNAL*MYSQL：外置数据库。HIVE*METASTORE：HMS。
+        :param pulumi.Input[builtins.str] application_name: Application name.
+        :param pulumi.Input[builtins.str] connection_id: Metadata connection ID.
+        :param pulumi.Input[builtins.str] connection_type: Metadata connection type. BUILT*IN*MYSQL: built-in database. EXTERNAL*MYSQL: external database. HIVE*METASTORE: HMS.
         """
         if application_component_layouts is not None:
             pulumi.set(__self__, "application_component_layouts", application_component_layouts)
@@ -297,7 +297,7 @@ class ClusterApplicationExtraArgs:
     @pulumi.getter(name="applicationName")
     def application_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        应用名称。
+        Application name.
         """
         return pulumi.get(self, "application_name")
 
@@ -309,7 +309,7 @@ class ClusterApplicationExtraArgs:
     @pulumi.getter(name="connectionId")
     def connection_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        元数据连接id。
+        Metadata connection ID.
         """
         return pulumi.get(self, "connection_id")
 
@@ -321,7 +321,7 @@ class ClusterApplicationExtraArgs:
     @pulumi.getter(name="connectionType")
     def connection_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        元数据连接类型。BUILT*IN*MYSQL：内置数据库。EXTERNAL*MYSQL：外置数据库。HIVE*METASTORE：HMS。
+        Metadata connection type. BUILT*IN*MYSQL: built-in database. EXTERNAL*MYSQL: external database. HIVE*METASTORE: HMS.
         """
         return pulumi.get(self, "connection_type")
 
@@ -334,11 +334,11 @@ if not MYPY:
     class ClusterApplicationExtraApplicationComponentLayoutArgsDict(TypedDict):
         component_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        组件名称。
+        Component name.
         """
         effective_scope: NotRequired[pulumi.Input['ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeArgsDict']]
         """
-        组件的布局范围。
+        Component layout scope.
         """
 elif False:
     ClusterApplicationExtraApplicationComponentLayoutArgsDict: TypeAlias = Mapping[str, Any]
@@ -349,8 +349,8 @@ class ClusterApplicationExtraApplicationComponentLayoutArgs:
                  component_name: Optional[pulumi.Input[builtins.str]] = None,
                  effective_scope: Optional[pulumi.Input['ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeArgs']] = None):
         """
-        :param pulumi.Input[builtins.str] component_name: 组件名称。
-        :param pulumi.Input['ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeArgs'] effective_scope: 组件的布局范围。
+        :param pulumi.Input[builtins.str] component_name: Component name.
+        :param pulumi.Input['ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeArgs'] effective_scope: Component layout scope.
         """
         if component_name is not None:
             pulumi.set(__self__, "component_name", component_name)
@@ -361,7 +361,7 @@ class ClusterApplicationExtraApplicationComponentLayoutArgs:
     @pulumi.getter(name="componentName")
     def component_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        组件名称。
+        Component name.
         """
         return pulumi.get(self, "component_name")
 
@@ -373,7 +373,7 @@ class ClusterApplicationExtraApplicationComponentLayoutArgs:
     @pulumi.getter(name="effectiveScope")
     def effective_scope(self) -> Optional[pulumi.Input['ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeArgs']]:
         """
-        组件的布局范围。
+        Component layout scope.
         """
         return pulumi.get(self, "effective_scope")
 
@@ -386,31 +386,31 @@ if not MYPY:
     class ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeArgsDict(TypedDict):
         component_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+        Component name list. Required when EffectiveType=COMPONENT_NAME.
         """
         effective_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+        Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
         """
         node_group_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+        Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
         """
         node_group_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+        Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
         """
         node_group_types: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+        Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
         """
         node_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        节点ID列表，EffectiveType=NODE_ID时，必选。
+        Node ID list. Required when EffectiveType=NODE_ID.
         """
         node_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        节点名列表，EffectiveType=NODE_NAME时，必选。
+        Node name list. Required when EffectiveType=NODE_NAME.
         """
 elif False:
     ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeArgsDict: TypeAlias = Mapping[str, Any]
@@ -426,13 +426,13 @@ class ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeArgs:
                  node_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  node_names: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] component_names: 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
-        :param pulumi.Input[builtins.str] effective_type: 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_group_ids: 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_group_names: 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_group_types: 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_ids: 节点ID列表，EffectiveType=NODE_ID时，必选。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_names: 节点名列表，EffectiveType=NODE_NAME时，必选。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] component_names: Component name list. Required when EffectiveType=COMPONENT_NAME.
+        :param pulumi.Input[builtins.str] effective_type: Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_group_ids: Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_group_names: Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_group_types: Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_ids: Node ID list. Required when EffectiveType=NODE_ID.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_names: Node name list. Required when EffectiveType=NODE_NAME.
         """
         if component_names is not None:
             pulumi.set(__self__, "component_names", component_names)
@@ -453,7 +453,7 @@ class ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeArgs:
     @pulumi.getter(name="componentNames")
     def component_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+        Component name list. Required when EffectiveType=COMPONENT_NAME.
         """
         return pulumi.get(self, "component_names")
 
@@ -465,7 +465,7 @@ class ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeArgs:
     @pulumi.getter(name="effectiveType")
     def effective_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+        Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
         """
         return pulumi.get(self, "effective_type")
 
@@ -477,7 +477,7 @@ class ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeArgs:
     @pulumi.getter(name="nodeGroupIds")
     def node_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+        Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
         """
         return pulumi.get(self, "node_group_ids")
 
@@ -489,7 +489,7 @@ class ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeArgs:
     @pulumi.getter(name="nodeGroupNames")
     def node_group_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+        Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
         """
         return pulumi.get(self, "node_group_names")
 
@@ -501,7 +501,7 @@ class ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeArgs:
     @pulumi.getter(name="nodeGroupTypes")
     def node_group_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+        Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
         """
         return pulumi.get(self, "node_group_types")
 
@@ -513,7 +513,7 @@ class ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeArgs:
     @pulumi.getter(name="nodeIds")
     def node_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        节点ID列表，EffectiveType=NODE_ID时，必选。
+        Node ID list. Required when EffectiveType=NODE_ID.
         """
         return pulumi.get(self, "node_ids")
 
@@ -525,7 +525,7 @@ class ClusterApplicationExtraApplicationComponentLayoutEffectiveScopeArgs:
     @pulumi.getter(name="nodeNames")
     def node_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        节点名列表，EffectiveType=NODE_NAME时，必选。
+        Node name list. Required when EffectiveType=NODE_NAME.
         """
         return pulumi.get(self, "node_names")
 
@@ -538,31 +538,31 @@ if not MYPY:
     class ClusterApplicationExtraApplicationConfigArgsDict(TypedDict):
         component_instance_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        组件实例名称。
+        Component instance name.
         """
         component_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        组件名称。
+        Component name.
         """
         config_file_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        配置文件名。
+        Configuration file name.
         """
         config_item_key: NotRequired[pulumi.Input[builtins.str]]
         """
-        配置项名称。
+        Configuration item name.
         """
         config_item_value: NotRequired[pulumi.Input[builtins.str]]
         """
-        配置项值。
+        Configuration item value.
         """
         deleted: NotRequired[pulumi.Input[builtins.bool]]
         """
-        是否删除。
+        Whether to delete.
         """
         effective_scope: NotRequired[pulumi.Input['ClusterApplicationExtraApplicationConfigEffectiveScopeArgsDict']]
         """
-        影响组件。
+        Affected component.
         """
 elif False:
     ClusterApplicationExtraApplicationConfigArgsDict: TypeAlias = Mapping[str, Any]
@@ -578,13 +578,13 @@ class ClusterApplicationExtraApplicationConfigArgs:
                  deleted: Optional[pulumi.Input[builtins.bool]] = None,
                  effective_scope: Optional[pulumi.Input['ClusterApplicationExtraApplicationConfigEffectiveScopeArgs']] = None):
         """
-        :param pulumi.Input[builtins.str] component_instance_name: 组件实例名称。
-        :param pulumi.Input[builtins.str] component_name: 组件名称。
-        :param pulumi.Input[builtins.str] config_file_name: 配置文件名。
-        :param pulumi.Input[builtins.str] config_item_key: 配置项名称。
-        :param pulumi.Input[builtins.str] config_item_value: 配置项值。
-        :param pulumi.Input[builtins.bool] deleted: 是否删除。
-        :param pulumi.Input['ClusterApplicationExtraApplicationConfigEffectiveScopeArgs'] effective_scope: 影响组件。
+        :param pulumi.Input[builtins.str] component_instance_name: Component instance name.
+        :param pulumi.Input[builtins.str] component_name: Component name.
+        :param pulumi.Input[builtins.str] config_file_name: Configuration file name.
+        :param pulumi.Input[builtins.str] config_item_key: Configuration item name.
+        :param pulumi.Input[builtins.str] config_item_value: Configuration item value.
+        :param pulumi.Input[builtins.bool] deleted: Whether to delete.
+        :param pulumi.Input['ClusterApplicationExtraApplicationConfigEffectiveScopeArgs'] effective_scope: Affected component.
         """
         if component_instance_name is not None:
             pulumi.set(__self__, "component_instance_name", component_instance_name)
@@ -605,7 +605,7 @@ class ClusterApplicationExtraApplicationConfigArgs:
     @pulumi.getter(name="componentInstanceName")
     def component_instance_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        组件实例名称。
+        Component instance name.
         """
         return pulumi.get(self, "component_instance_name")
 
@@ -617,7 +617,7 @@ class ClusterApplicationExtraApplicationConfigArgs:
     @pulumi.getter(name="componentName")
     def component_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        组件名称。
+        Component name.
         """
         return pulumi.get(self, "component_name")
 
@@ -629,7 +629,7 @@ class ClusterApplicationExtraApplicationConfigArgs:
     @pulumi.getter(name="configFileName")
     def config_file_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        配置文件名。
+        Configuration file name.
         """
         return pulumi.get(self, "config_file_name")
 
@@ -641,7 +641,7 @@ class ClusterApplicationExtraApplicationConfigArgs:
     @pulumi.getter(name="configItemKey")
     def config_item_key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        配置项名称。
+        Configuration item name.
         """
         return pulumi.get(self, "config_item_key")
 
@@ -653,7 +653,7 @@ class ClusterApplicationExtraApplicationConfigArgs:
     @pulumi.getter(name="configItemValue")
     def config_item_value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        配置项值。
+        Configuration item value.
         """
         return pulumi.get(self, "config_item_value")
 
@@ -665,7 +665,7 @@ class ClusterApplicationExtraApplicationConfigArgs:
     @pulumi.getter
     def deleted(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否删除。
+        Whether to delete.
         """
         return pulumi.get(self, "deleted")
 
@@ -677,7 +677,7 @@ class ClusterApplicationExtraApplicationConfigArgs:
     @pulumi.getter(name="effectiveScope")
     def effective_scope(self) -> Optional[pulumi.Input['ClusterApplicationExtraApplicationConfigEffectiveScopeArgs']]:
         """
-        影响组件。
+        Affected component.
         """
         return pulumi.get(self, "effective_scope")
 
@@ -690,31 +690,31 @@ if not MYPY:
     class ClusterApplicationExtraApplicationConfigEffectiveScopeArgsDict(TypedDict):
         component_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+        Component name list. Required when EffectiveType=COMPONENT_NAME.
         """
         effective_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+        Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
         """
         node_group_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+        Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
         """
         node_group_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+        Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
         """
         node_group_types: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+        Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
         """
         node_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        节点ID列表，EffectiveType=NODE_ID时，必选。
+        Node ID list. Required when EffectiveType=NODE_ID.
         """
         node_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        节点名列表，EffectiveType=NODE_NAME时，必选。
+        Node name list. Required when EffectiveType=NODE_NAME.
         """
 elif False:
     ClusterApplicationExtraApplicationConfigEffectiveScopeArgsDict: TypeAlias = Mapping[str, Any]
@@ -730,13 +730,13 @@ class ClusterApplicationExtraApplicationConfigEffectiveScopeArgs:
                  node_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  node_names: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] component_names: 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
-        :param pulumi.Input[builtins.str] effective_type: 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_group_ids: 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_group_names: 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_group_types: 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_ids: 节点ID列表，EffectiveType=NODE_ID时，必选。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_names: 节点名列表，EffectiveType=NODE_NAME时，必选。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] component_names: Component name list. Required when EffectiveType=COMPONENT_NAME.
+        :param pulumi.Input[builtins.str] effective_type: Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_group_ids: Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_group_names: Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_group_types: Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_ids: Node ID list. Required when EffectiveType=NODE_ID.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_names: Node name list. Required when EffectiveType=NODE_NAME.
         """
         if component_names is not None:
             pulumi.set(__self__, "component_names", component_names)
@@ -757,7 +757,7 @@ class ClusterApplicationExtraApplicationConfigEffectiveScopeArgs:
     @pulumi.getter(name="componentNames")
     def component_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+        Component name list. Required when EffectiveType=COMPONENT_NAME.
         """
         return pulumi.get(self, "component_names")
 
@@ -769,7 +769,7 @@ class ClusterApplicationExtraApplicationConfigEffectiveScopeArgs:
     @pulumi.getter(name="effectiveType")
     def effective_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+        Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
         """
         return pulumi.get(self, "effective_type")
 
@@ -781,7 +781,7 @@ class ClusterApplicationExtraApplicationConfigEffectiveScopeArgs:
     @pulumi.getter(name="nodeGroupIds")
     def node_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+        Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
         """
         return pulumi.get(self, "node_group_ids")
 
@@ -793,7 +793,7 @@ class ClusterApplicationExtraApplicationConfigEffectiveScopeArgs:
     @pulumi.getter(name="nodeGroupNames")
     def node_group_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+        Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
         """
         return pulumi.get(self, "node_group_names")
 
@@ -805,7 +805,7 @@ class ClusterApplicationExtraApplicationConfigEffectiveScopeArgs:
     @pulumi.getter(name="nodeGroupTypes")
     def node_group_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+        Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
         """
         return pulumi.get(self, "node_group_types")
 
@@ -817,7 +817,7 @@ class ClusterApplicationExtraApplicationConfigEffectiveScopeArgs:
     @pulumi.getter(name="nodeIds")
     def node_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        节点ID列表，EffectiveType=NODE_ID时，必选。
+        Node ID list. Required when EffectiveType=NODE_ID.
         """
         return pulumi.get(self, "node_ids")
 
@@ -829,7 +829,7 @@ class ClusterApplicationExtraApplicationConfigEffectiveScopeArgs:
     @pulumi.getter(name="nodeNames")
     def node_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        节点名列表，EffectiveType=NODE_NAME时，必选。
+        Node name list. Required when EffectiveType=NODE_NAME.
         """
         return pulumi.get(self, "node_names")
 
@@ -842,35 +842,35 @@ if not MYPY:
     class ClusterBootstrapScriptArgsDict(TypedDict):
         effective_scope: NotRequired[pulumi.Input['ClusterBootstrapScriptEffectiveScopeArgsDict']]
         """
-        脚本执行范围。
+        Script execution scope.
         """
         execution_fail_strategy: NotRequired[pulumi.Input[builtins.str]]
         """
-        执行失败策略。取值范围：FAILED*CONTINUE：失败后继续执行其他任务。FAILED*BLOCK：失败后中断，不再继续执行后续任务。当脚本为BOOTSTRAP时，会导致创建集群、扩容节点组操作中断并失败。默认值：FAILED_BLOCK。
+        Execution failure policy. Range: FAILED*CONTINUE: Continue with other tasks after failure. FAILED*BLOCK: Stop and do not execute subsequent tasks after failure. If the script is BOOTSTRAP, this will interrupt and fail cluster creation or node group expansion. Default: FAILED_BLOCK.
         """
         execution_moment: NotRequired[pulumi.Input[builtins.str]]
         """
-        脚本的执行时机。仅scriptType=BOOTSTRAP时生效。BEFORE*APPLICATION*INSTALL：应用安装前。AFTER*APPLICATION*STARTED：应用启动后。默认值：BEFORE*APP*INSTALL
+        Script execution timing. Only effective when scriptType=BOOTSTRAP. BEFORE*APPLICATION*INSTALL: before application installation. AFTER*APPLICATION*STARTED: after application startup. Default: BEFORE*APP*INSTALL.
         """
         priority: NotRequired[pulumi.Input[builtins.str]]
         """
-        脚本执行优先级。取值范围：1~1000。默认值1。
+        Script execution priority. Range: 1~1000. Default: 1.
         """
         script_args: NotRequired[pulumi.Input[builtins.str]]
         """
-        脚本参数。
+        Script parameters.
         """
         script_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        脚本名称。必填。长度为1~128个字符，必须以大小字母或中文开头，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+        Script name (required). Length: 1–128 characters. Must start with an uppercase or lowercase letter or Chinese character. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
         """
         script_path: NotRequired[pulumi.Input[builtins.str]]
         """
-        脚本所在TOS路径。必填。以 tos:： 开头。
+        Script TOS path. Required. Must start with 'tos:'.
         """
         script_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        脚本类型。NORMAL：普通脚本。BOOTSTRAP：引导脚本。
+        Script type. NORMAL: normal script. BOOTSTRAP: bootstrap script.
         """
 elif False:
     ClusterBootstrapScriptArgsDict: TypeAlias = Mapping[str, Any]
@@ -887,14 +887,14 @@ class ClusterBootstrapScriptArgs:
                  script_path: Optional[pulumi.Input[builtins.str]] = None,
                  script_type: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input['ClusterBootstrapScriptEffectiveScopeArgs'] effective_scope: 脚本执行范围。
-        :param pulumi.Input[builtins.str] execution_fail_strategy: 执行失败策略。取值范围：FAILED*CONTINUE：失败后继续执行其他任务。FAILED*BLOCK：失败后中断，不再继续执行后续任务。当脚本为BOOTSTRAP时，会导致创建集群、扩容节点组操作中断并失败。默认值：FAILED_BLOCK。
-        :param pulumi.Input[builtins.str] execution_moment: 脚本的执行时机。仅scriptType=BOOTSTRAP时生效。BEFORE*APPLICATION*INSTALL：应用安装前。AFTER*APPLICATION*STARTED：应用启动后。默认值：BEFORE*APP*INSTALL
-        :param pulumi.Input[builtins.str] priority: 脚本执行优先级。取值范围：1~1000。默认值1。
-        :param pulumi.Input[builtins.str] script_args: 脚本参数。
-        :param pulumi.Input[builtins.str] script_name: 脚本名称。必填。长度为1~128个字符，必须以大小字母或中文开头，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
-        :param pulumi.Input[builtins.str] script_path: 脚本所在TOS路径。必填。以 tos:： 开头。
-        :param pulumi.Input[builtins.str] script_type: 脚本类型。NORMAL：普通脚本。BOOTSTRAP：引导脚本。
+        :param pulumi.Input['ClusterBootstrapScriptEffectiveScopeArgs'] effective_scope: Script execution scope.
+        :param pulumi.Input[builtins.str] execution_fail_strategy: Execution failure policy. Range: FAILED*CONTINUE: Continue with other tasks after failure. FAILED*BLOCK: Stop and do not execute subsequent tasks after failure. If the script is BOOTSTRAP, this will interrupt and fail cluster creation or node group expansion. Default: FAILED_BLOCK.
+        :param pulumi.Input[builtins.str] execution_moment: Script execution timing. Only effective when scriptType=BOOTSTRAP. BEFORE*APPLICATION*INSTALL: before application installation. AFTER*APPLICATION*STARTED: after application startup. Default: BEFORE*APP*INSTALL.
+        :param pulumi.Input[builtins.str] priority: Script execution priority. Range: 1~1000. Default: 1.
+        :param pulumi.Input[builtins.str] script_args: Script parameters.
+        :param pulumi.Input[builtins.str] script_name: Script name (required). Length: 1–128 characters. Must start with an uppercase or lowercase letter or Chinese character. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
+        :param pulumi.Input[builtins.str] script_path: Script TOS path. Required. Must start with 'tos:'.
+        :param pulumi.Input[builtins.str] script_type: Script type. NORMAL: normal script. BOOTSTRAP: bootstrap script.
         """
         if effective_scope is not None:
             pulumi.set(__self__, "effective_scope", effective_scope)
@@ -917,7 +917,7 @@ class ClusterBootstrapScriptArgs:
     @pulumi.getter(name="effectiveScope")
     def effective_scope(self) -> Optional[pulumi.Input['ClusterBootstrapScriptEffectiveScopeArgs']]:
         """
-        脚本执行范围。
+        Script execution scope.
         """
         return pulumi.get(self, "effective_scope")
 
@@ -929,7 +929,7 @@ class ClusterBootstrapScriptArgs:
     @pulumi.getter(name="executionFailStrategy")
     def execution_fail_strategy(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        执行失败策略。取值范围：FAILED*CONTINUE：失败后继续执行其他任务。FAILED*BLOCK：失败后中断，不再继续执行后续任务。当脚本为BOOTSTRAP时，会导致创建集群、扩容节点组操作中断并失败。默认值：FAILED_BLOCK。
+        Execution failure policy. Range: FAILED*CONTINUE: Continue with other tasks after failure. FAILED*BLOCK: Stop and do not execute subsequent tasks after failure. If the script is BOOTSTRAP, this will interrupt and fail cluster creation or node group expansion. Default: FAILED_BLOCK.
         """
         return pulumi.get(self, "execution_fail_strategy")
 
@@ -941,7 +941,7 @@ class ClusterBootstrapScriptArgs:
     @pulumi.getter(name="executionMoment")
     def execution_moment(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        脚本的执行时机。仅scriptType=BOOTSTRAP时生效。BEFORE*APPLICATION*INSTALL：应用安装前。AFTER*APPLICATION*STARTED：应用启动后。默认值：BEFORE*APP*INSTALL
+        Script execution timing. Only effective when scriptType=BOOTSTRAP. BEFORE*APPLICATION*INSTALL: before application installation. AFTER*APPLICATION*STARTED: after application startup. Default: BEFORE*APP*INSTALL.
         """
         return pulumi.get(self, "execution_moment")
 
@@ -953,7 +953,7 @@ class ClusterBootstrapScriptArgs:
     @pulumi.getter
     def priority(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        脚本执行优先级。取值范围：1~1000。默认值1。
+        Script execution priority. Range: 1~1000. Default: 1.
         """
         return pulumi.get(self, "priority")
 
@@ -965,7 +965,7 @@ class ClusterBootstrapScriptArgs:
     @pulumi.getter(name="scriptArgs")
     def script_args(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        脚本参数。
+        Script parameters.
         """
         return pulumi.get(self, "script_args")
 
@@ -977,7 +977,7 @@ class ClusterBootstrapScriptArgs:
     @pulumi.getter(name="scriptName")
     def script_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        脚本名称。必填。长度为1~128个字符，必须以大小字母或中文开头，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+        Script name (required). Length: 1–128 characters. Must start with an uppercase or lowercase letter or Chinese character. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
         """
         return pulumi.get(self, "script_name")
 
@@ -989,7 +989,7 @@ class ClusterBootstrapScriptArgs:
     @pulumi.getter(name="scriptPath")
     def script_path(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        脚本所在TOS路径。必填。以 tos:： 开头。
+        Script TOS path. Required. Must start with 'tos:'.
         """
         return pulumi.get(self, "script_path")
 
@@ -1001,7 +1001,7 @@ class ClusterBootstrapScriptArgs:
     @pulumi.getter(name="scriptType")
     def script_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        脚本类型。NORMAL：普通脚本。BOOTSTRAP：引导脚本。
+        Script type. NORMAL: normal script. BOOTSTRAP: bootstrap script.
         """
         return pulumi.get(self, "script_type")
 
@@ -1014,31 +1014,31 @@ if not MYPY:
     class ClusterBootstrapScriptEffectiveScopeArgsDict(TypedDict):
         component_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+        Component name list. Required when EffectiveType=COMPONENT_NAME.
         """
         effective_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+        Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
         """
         node_group_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+        Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
         """
         node_group_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+        Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
         """
         node_group_types: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+        Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
         """
         node_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        节点ID列表，EffectiveType=NODE_ID时，必选。
+        Node ID list. Required when EffectiveType=NODE_ID.
         """
         node_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        节点名列表，EffectiveType=NODE_NAME时，必选。
+        Node name list. Required when EffectiveType=NODE_NAME.
         """
 elif False:
     ClusterBootstrapScriptEffectiveScopeArgsDict: TypeAlias = Mapping[str, Any]
@@ -1054,13 +1054,13 @@ class ClusterBootstrapScriptEffectiveScopeArgs:
                  node_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  node_names: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] component_names: 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
-        :param pulumi.Input[builtins.str] effective_type: 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_group_ids: 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_group_names: 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_group_types: 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_ids: 节点ID列表，EffectiveType=NODE_ID时，必选。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_names: 节点名列表，EffectiveType=NODE_NAME时，必选。
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] component_names: Component name list. Required when EffectiveType=COMPONENT_NAME.
+        :param pulumi.Input[builtins.str] effective_type: Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_group_ids: Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_group_names: Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_group_types: Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_ids: Node ID list. Required when EffectiveType=NODE_ID.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] node_names: Node name list. Required when EffectiveType=NODE_NAME.
         """
         if component_names is not None:
             pulumi.set(__self__, "component_names", component_names)
@@ -1081,7 +1081,7 @@ class ClusterBootstrapScriptEffectiveScopeArgs:
     @pulumi.getter(name="componentNames")
     def component_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+        Component name list. Required when EffectiveType=COMPONENT_NAME.
         """
         return pulumi.get(self, "component_names")
 
@@ -1093,7 +1093,7 @@ class ClusterBootstrapScriptEffectiveScopeArgs:
     @pulumi.getter(name="effectiveType")
     def effective_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+        Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
         """
         return pulumi.get(self, "effective_type")
 
@@ -1105,7 +1105,7 @@ class ClusterBootstrapScriptEffectiveScopeArgs:
     @pulumi.getter(name="nodeGroupIds")
     def node_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+        Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
         """
         return pulumi.get(self, "node_group_ids")
 
@@ -1117,7 +1117,7 @@ class ClusterBootstrapScriptEffectiveScopeArgs:
     @pulumi.getter(name="nodeGroupNames")
     def node_group_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+        Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
         """
         return pulumi.get(self, "node_group_names")
 
@@ -1129,7 +1129,7 @@ class ClusterBootstrapScriptEffectiveScopeArgs:
     @pulumi.getter(name="nodeGroupTypes")
     def node_group_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+        Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
         """
         return pulumi.get(self, "node_group_types")
 
@@ -1141,7 +1141,7 @@ class ClusterBootstrapScriptEffectiveScopeArgs:
     @pulumi.getter(name="nodeIds")
     def node_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        节点ID列表，EffectiveType=NODE_ID时，必选。
+        Node ID list. Required when EffectiveType=NODE_ID.
         """
         return pulumi.get(self, "node_ids")
 
@@ -1153,7 +1153,7 @@ class ClusterBootstrapScriptEffectiveScopeArgs:
     @pulumi.getter(name="nodeNames")
     def node_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        节点名列表，EffectiveType=NODE_NAME时，必选。
+        Node name list. Required when EffectiveType=NODE_NAME.
         """
         return pulumi.get(self, "node_names")
 
@@ -1166,27 +1166,27 @@ if not MYPY:
     class ClusterChargePreConfigArgsDict(TypedDict):
         auto_renew: NotRequired[pulumi.Input[builtins.bool]]
         """
-        是否开启自动续费。取值范围：true：开启。false：不开启。
+        Enable auto-renewal. Options: true (enabled), false (disabled).
         """
         auto_renew_period: NotRequired[pulumi.Input[builtins.int]]
         """
-        自动续费触发时的续费时长，当AutoRenew=true时，默认值=1。
+        Renewal duration when auto-renewal is triggered. When AutoRenew=true, the default value is 1.
         """
         auto_renew_period_unit: NotRequired[pulumi.Input[builtins.str]]
         """
-        自动续费触发时的续费时长单位，当AutoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+        Renewal duration unit when auto-renewal is triggered. When AutoRenew=true, default is Month. Options: Month, Year.
         """
         charge_period: NotRequired[pulumi.Input[builtins.int]]
         """
-        chargeType=PRE默认值=1，包月的购买时长单位。
+        When chargeType=PRE, default value=1. Unit for monthly subscription duration.
         """
         charge_period_unit: NotRequired[pulumi.Input[builtins.str]]
         """
-        chargeType=PRE时，默认值=Month，包月的购买时长单位，取值范围：Month：月。Year：年。
+        When chargeType=PRE, default value=Month. Unit for monthly subscription duration. Range: Month: month. Year: year.
         """
         charge_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        付费类型，取值范围：PRE，POST。
+        Payment type. Options: PRE, POST.
         """
 elif False:
     ClusterChargePreConfigArgsDict: TypeAlias = Mapping[str, Any]
@@ -1201,12 +1201,12 @@ class ClusterChargePreConfigArgs:
                  charge_period_unit: Optional[pulumi.Input[builtins.str]] = None,
                  charge_type: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.bool] auto_renew: 是否开启自动续费。取值范围：true：开启。false：不开启。
-        :param pulumi.Input[builtins.int] auto_renew_period: 自动续费触发时的续费时长，当AutoRenew=true时，默认值=1。
-        :param pulumi.Input[builtins.str] auto_renew_period_unit: 自动续费触发时的续费时长单位，当AutoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
-        :param pulumi.Input[builtins.int] charge_period: chargeType=PRE默认值=1，包月的购买时长单位。
-        :param pulumi.Input[builtins.str] charge_period_unit: chargeType=PRE时，默认值=Month，包月的购买时长单位，取值范围：Month：月。Year：年。
-        :param pulumi.Input[builtins.str] charge_type: 付费类型，取值范围：PRE，POST。
+        :param pulumi.Input[builtins.bool] auto_renew: Enable auto-renewal. Options: true (enabled), false (disabled).
+        :param pulumi.Input[builtins.int] auto_renew_period: Renewal duration when auto-renewal is triggered. When AutoRenew=true, the default value is 1.
+        :param pulumi.Input[builtins.str] auto_renew_period_unit: Renewal duration unit when auto-renewal is triggered. When AutoRenew=true, default is Month. Options: Month, Year.
+        :param pulumi.Input[builtins.int] charge_period: When chargeType=PRE, default value=1. Unit for monthly subscription duration.
+        :param pulumi.Input[builtins.str] charge_period_unit: When chargeType=PRE, default value=Month. Unit for monthly subscription duration. Range: Month: month. Year: year.
+        :param pulumi.Input[builtins.str] charge_type: Payment type. Options: PRE, POST.
         """
         if auto_renew is not None:
             pulumi.set(__self__, "auto_renew", auto_renew)
@@ -1225,7 +1225,7 @@ class ClusterChargePreConfigArgs:
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启自动续费。取值范围：true：开启。false：不开启。
+        Enable auto-renewal. Options: true (enabled), false (disabled).
         """
         return pulumi.get(self, "auto_renew")
 
@@ -1237,7 +1237,7 @@ class ClusterChargePreConfigArgs:
     @pulumi.getter(name="autoRenewPeriod")
     def auto_renew_period(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        自动续费触发时的续费时长，当AutoRenew=true时，默认值=1。
+        Renewal duration when auto-renewal is triggered. When AutoRenew=true, the default value is 1.
         """
         return pulumi.get(self, "auto_renew_period")
 
@@ -1249,7 +1249,7 @@ class ClusterChargePreConfigArgs:
     @pulumi.getter(name="autoRenewPeriodUnit")
     def auto_renew_period_unit(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        自动续费触发时的续费时长单位，当AutoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+        Renewal duration unit when auto-renewal is triggered. When AutoRenew=true, default is Month. Options: Month, Year.
         """
         return pulumi.get(self, "auto_renew_period_unit")
 
@@ -1261,7 +1261,7 @@ class ClusterChargePreConfigArgs:
     @pulumi.getter(name="chargePeriod")
     def charge_period(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        chargeType=PRE默认值=1，包月的购买时长单位。
+        When chargeType=PRE, default value=1. Unit for monthly subscription duration.
         """
         return pulumi.get(self, "charge_period")
 
@@ -1273,7 +1273,7 @@ class ClusterChargePreConfigArgs:
     @pulumi.getter(name="chargePeriodUnit")
     def charge_period_unit(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        chargeType=PRE时，默认值=Month，包月的购买时长单位，取值范围：Month：月。Year：年。
+        When chargeType=PRE, default value=Month. Unit for monthly subscription duration. Range: Month: month. Year: year.
         """
         return pulumi.get(self, "charge_period_unit")
 
@@ -1285,7 +1285,7 @@ class ClusterChargePreConfigArgs:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        付费类型，取值范围：PRE，POST。
+        Payment type. Options: PRE, POST.
         """
         return pulumi.get(self, "charge_type")
 
@@ -1298,11 +1298,11 @@ if not MYPY:
     class ClusterNodeAttributeArgsDict(TypedDict):
         ecs_iam_role: NotRequired[pulumi.Input[builtins.str]]
         """
-        ECS实例角色。
+        ECS instance role.
         """
         zone_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        可用区ID。
+        Zone ID.
         """
 elif False:
     ClusterNodeAttributeArgsDict: TypeAlias = Mapping[str, Any]
@@ -1313,8 +1313,8 @@ class ClusterNodeAttributeArgs:
                  ecs_iam_role: Optional[pulumi.Input[builtins.str]] = None,
                  zone_id: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] ecs_iam_role: ECS实例角色。
-        :param pulumi.Input[builtins.str] zone_id: 可用区ID。
+        :param pulumi.Input[builtins.str] ecs_iam_role: ECS instance role.
+        :param pulumi.Input[builtins.str] zone_id: Zone ID.
         """
         if ecs_iam_role is not None:
             pulumi.set(__self__, "ecs_iam_role", ecs_iam_role)
@@ -1325,7 +1325,7 @@ class ClusterNodeAttributeArgs:
     @pulumi.getter(name="ecsIamRole")
     def ecs_iam_role(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        ECS实例角色。
+        ECS instance role.
         """
         return pulumi.get(self, "ecs_iam_role")
 
@@ -1337,7 +1337,7 @@ class ClusterNodeAttributeArgs:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        可用区ID。
+        Zone ID.
         """
         return pulumi.get(self, "zone_id")
 
@@ -1350,52 +1350,52 @@ if not MYPY:
     class ClusterNodeGroupAttributeArgsDict(TypedDict):
         bandwidth: NotRequired[pulumi.Input[builtins.int]]
         """
-        公网带宽。默认值 8M。后续如果用户侧调整了，emr侧需要同步该信息。
+        Public bandwidth. Default is 8M. If the user changes it later, EMR needs to synchronize this information.
         """
         charge_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        节点组付费类型。为空时，复用集群的chargeType。Master、Core组必须复用集群维度的付费类型。当集群的chargeType为PRE时，task节点组的chargeType允许设置为POST；当集群的chargeType为POST时，节点组的chargeType默认为POST，节点组上的此参数设置无效。
+        Node group billing type. If empty, reuses the cluster's chargeType. Master and Core groups must reuse the cluster-level billing type. When the cluster's chargeType is PRE, the task node group's chargeType can be set to POST. When the cluster's chargeType is POST, the node group's chargeType defaults to POST, and this parameter setting on the node group is invalid.
         """
         data_disks: NotRequired[pulumi.Input[Sequence[pulumi.Input['ClusterNodeGroupAttributeDataDiskArgsDict']]]]
         ecs_instance_types: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        节点组的ecs机型列表。当前只支持设置1个机型。即List的长度限制为1。
+        Node group's ECS instance type list. Only one instance type can be set. The list length is limited to 1.
         """
         ecs_key_pair_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        ecs的密钥对名称。
+        ECS key pair name.
         """
         ecs_password: NotRequired[pulumi.Input[builtins.str]]
         """
-        Ecs root账号的密码。
+        Password for ECS root account.
         """
         node_count: NotRequired[pulumi.Input[builtins.int]]
         """
-        节点组当前期望购买的节点数量。
+        Current expected number of nodes to purchase for the node group.
         """
         node_group_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        长度为1~128个字符，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+        Length: 1–128 characters. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
         """
         node_group_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        节点组类型。
+        Node group type.
         """
         subnet_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        子网Id列表，目前只能传递一个参数，且各节点组的子网Id都是相同的。
+        Subnet ID list. Currently, only one parameter can be passed, and all node groups must use the same subnet ID.
         """
         system_disk: NotRequired[pulumi.Input['ClusterNodeGroupAttributeSystemDiskArgsDict']]
         """
-        系统盘配置。
+        System disk configuration.
         """
         with_public_ip: NotRequired[pulumi.Input[builtins.bool]]
         """
-        是否挂载公网ip。
+        Whether to attach public IP.
         """
         zone_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        可用区ID。
+        Availability zone ID.
         """
 elif False:
     ClusterNodeGroupAttributeArgsDict: TypeAlias = Mapping[str, Any]
@@ -1417,18 +1417,18 @@ class ClusterNodeGroupAttributeArgs:
                  with_public_ip: Optional[pulumi.Input[builtins.bool]] = None,
                  zone_id: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.int] bandwidth: 公网带宽。默认值 8M。后续如果用户侧调整了，emr侧需要同步该信息。
-        :param pulumi.Input[builtins.str] charge_type: 节点组付费类型。为空时，复用集群的chargeType。Master、Core组必须复用集群维度的付费类型。当集群的chargeType为PRE时，task节点组的chargeType允许设置为POST；当集群的chargeType为POST时，节点组的chargeType默认为POST，节点组上的此参数设置无效。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ecs_instance_types: 节点组的ecs机型列表。当前只支持设置1个机型。即List的长度限制为1。
-        :param pulumi.Input[builtins.str] ecs_key_pair_name: ecs的密钥对名称。
-        :param pulumi.Input[builtins.str] ecs_password: Ecs root账号的密码。
-        :param pulumi.Input[builtins.int] node_count: 节点组当前期望购买的节点数量。
-        :param pulumi.Input[builtins.str] node_group_name: 长度为1~128个字符，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
-        :param pulumi.Input[builtins.str] node_group_type: 节点组类型。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_ids: 子网Id列表，目前只能传递一个参数，且各节点组的子网Id都是相同的。
-        :param pulumi.Input['ClusterNodeGroupAttributeSystemDiskArgs'] system_disk: 系统盘配置。
-        :param pulumi.Input[builtins.bool] with_public_ip: 是否挂载公网ip。
-        :param pulumi.Input[builtins.str] zone_id: 可用区ID。
+        :param pulumi.Input[builtins.int] bandwidth: Public bandwidth. Default is 8M. If the user changes it later, EMR needs to synchronize this information.
+        :param pulumi.Input[builtins.str] charge_type: Node group billing type. If empty, reuses the cluster's chargeType. Master and Core groups must reuse the cluster-level billing type. When the cluster's chargeType is PRE, the task node group's chargeType can be set to POST. When the cluster's chargeType is POST, the node group's chargeType defaults to POST, and this parameter setting on the node group is invalid.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ecs_instance_types: Node group's ECS instance type list. Only one instance type can be set. The list length is limited to 1.
+        :param pulumi.Input[builtins.str] ecs_key_pair_name: ECS key pair name.
+        :param pulumi.Input[builtins.str] ecs_password: Password for ECS root account.
+        :param pulumi.Input[builtins.int] node_count: Current expected number of nodes to purchase for the node group.
+        :param pulumi.Input[builtins.str] node_group_name: Length: 1–128 characters. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
+        :param pulumi.Input[builtins.str] node_group_type: Node group type.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] subnet_ids: Subnet ID list. Currently, only one parameter can be passed, and all node groups must use the same subnet ID.
+        :param pulumi.Input['ClusterNodeGroupAttributeSystemDiskArgs'] system_disk: System disk configuration.
+        :param pulumi.Input[builtins.bool] with_public_ip: Whether to attach public IP.
+        :param pulumi.Input[builtins.str] zone_id: Availability zone ID.
         """
         if bandwidth is not None:
             pulumi.set(__self__, "bandwidth", bandwidth)
@@ -1461,7 +1461,7 @@ class ClusterNodeGroupAttributeArgs:
     @pulumi.getter
     def bandwidth(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        公网带宽。默认值 8M。后续如果用户侧调整了，emr侧需要同步该信息。
+        Public bandwidth. Default is 8M. If the user changes it later, EMR needs to synchronize this information.
         """
         return pulumi.get(self, "bandwidth")
 
@@ -1473,7 +1473,7 @@ class ClusterNodeGroupAttributeArgs:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点组付费类型。为空时，复用集群的chargeType。Master、Core组必须复用集群维度的付费类型。当集群的chargeType为PRE时，task节点组的chargeType允许设置为POST；当集群的chargeType为POST时，节点组的chargeType默认为POST，节点组上的此参数设置无效。
+        Node group billing type. If empty, reuses the cluster's chargeType. Master and Core groups must reuse the cluster-level billing type. When the cluster's chargeType is PRE, the task node group's chargeType can be set to POST. When the cluster's chargeType is POST, the node group's chargeType defaults to POST, and this parameter setting on the node group is invalid.
         """
         return pulumi.get(self, "charge_type")
 
@@ -1494,7 +1494,7 @@ class ClusterNodeGroupAttributeArgs:
     @pulumi.getter(name="ecsInstanceTypes")
     def ecs_instance_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        节点组的ecs机型列表。当前只支持设置1个机型。即List的长度限制为1。
+        Node group's ECS instance type list. Only one instance type can be set. The list length is limited to 1.
         """
         return pulumi.get(self, "ecs_instance_types")
 
@@ -1506,7 +1506,7 @@ class ClusterNodeGroupAttributeArgs:
     @pulumi.getter(name="ecsKeyPairName")
     def ecs_key_pair_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        ecs的密钥对名称。
+        ECS key pair name.
         """
         return pulumi.get(self, "ecs_key_pair_name")
 
@@ -1518,7 +1518,7 @@ class ClusterNodeGroupAttributeArgs:
     @pulumi.getter(name="ecsPassword")
     def ecs_password(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Ecs root账号的密码。
+        Password for ECS root account.
         """
         return pulumi.get(self, "ecs_password")
 
@@ -1530,7 +1530,7 @@ class ClusterNodeGroupAttributeArgs:
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        节点组当前期望购买的节点数量。
+        Current expected number of nodes to purchase for the node group.
         """
         return pulumi.get(self, "node_count")
 
@@ -1542,7 +1542,7 @@ class ClusterNodeGroupAttributeArgs:
     @pulumi.getter(name="nodeGroupName")
     def node_group_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        长度为1~128个字符，不能以 http:： 和 https:： 开头。可以包含中文、英文、数字、下划线（_）、或者短划线（-）。
+        Length: 1–128 characters. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
         """
         return pulumi.get(self, "node_group_name")
 
@@ -1554,7 +1554,7 @@ class ClusterNodeGroupAttributeArgs:
     @pulumi.getter(name="nodeGroupType")
     def node_group_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点组类型。
+        Node group type.
         """
         return pulumi.get(self, "node_group_type")
 
@@ -1566,7 +1566,7 @@ class ClusterNodeGroupAttributeArgs:
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        子网Id列表，目前只能传递一个参数，且各节点组的子网Id都是相同的。
+        Subnet ID list. Currently, only one parameter can be passed, and all node groups must use the same subnet ID.
         """
         return pulumi.get(self, "subnet_ids")
 
@@ -1578,7 +1578,7 @@ class ClusterNodeGroupAttributeArgs:
     @pulumi.getter(name="systemDisk")
     def system_disk(self) -> Optional[pulumi.Input['ClusterNodeGroupAttributeSystemDiskArgs']]:
         """
-        系统盘配置。
+        System disk configuration.
         """
         return pulumi.get(self, "system_disk")
 
@@ -1590,7 +1590,7 @@ class ClusterNodeGroupAttributeArgs:
     @pulumi.getter(name="withPublicIp")
     def with_public_ip(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否挂载公网ip。
+        Whether to attach public IP.
         """
         return pulumi.get(self, "with_public_ip")
 
@@ -1602,7 +1602,7 @@ class ClusterNodeGroupAttributeArgs:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        可用区ID。
+        Availability zone ID.
         """
         return pulumi.get(self, "zone_id")
 
@@ -1615,15 +1615,15 @@ if not MYPY:
     class ClusterNodeGroupAttributeDataDiskArgsDict(TypedDict):
         count: NotRequired[pulumi.Input[builtins.int]]
         """
-        磁盘块数，默认值4，最大15，最小1。
+        Number of disk blocks. Default is 4, maximum is 15, minimum is 1.
         """
         size: NotRequired[pulumi.Input[builtins.int]]
         """
-        磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+        Disk size. Default is 80GB, minimum is 60GB, maximum is 2048GB, unit: GB.
         """
         volume_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV
+        Disk type. ESSD*PL0: Ultra SSD*PL0. ESSD*PL1: Ultra SSD*PL1. ESSD*PL2: Ultra SSD*PL2. ESSD*PL3: Ultra SSD*PL3. ESSD*FLEXPL: Ultra SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
         """
 elif False:
     ClusterNodeGroupAttributeDataDiskArgsDict: TypeAlias = Mapping[str, Any]
@@ -1635,9 +1635,9 @@ class ClusterNodeGroupAttributeDataDiskArgs:
                  size: Optional[pulumi.Input[builtins.int]] = None,
                  volume_type: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.int] count: 磁盘块数，默认值4，最大15，最小1。
-        :param pulumi.Input[builtins.int] size: 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
-        :param pulumi.Input[builtins.str] volume_type: 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV
+        :param pulumi.Input[builtins.int] count: Number of disk blocks. Default is 4, maximum is 15, minimum is 1.
+        :param pulumi.Input[builtins.int] size: Disk size. Default is 80GB, minimum is 60GB, maximum is 2048GB, unit: GB.
+        :param pulumi.Input[builtins.str] volume_type: Disk type. ESSD*PL0: Ultra SSD*PL0. ESSD*PL1: Ultra SSD*PL1. ESSD*PL2: Ultra SSD*PL2. ESSD*PL3: Ultra SSD*PL3. ESSD*FLEXPL: Ultra SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
         """
         if count is not None:
             pulumi.set(__self__, "count", count)
@@ -1650,7 +1650,7 @@ class ClusterNodeGroupAttributeDataDiskArgs:
     @pulumi.getter
     def count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        磁盘块数，默认值4，最大15，最小1。
+        Number of disk blocks. Default is 4, maximum is 15, minimum is 1.
         """
         return pulumi.get(self, "count")
 
@@ -1662,7 +1662,7 @@ class ClusterNodeGroupAttributeDataDiskArgs:
     @pulumi.getter
     def size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+        Disk size. Default is 80GB, minimum is 60GB, maximum is 2048GB, unit: GB.
         """
         return pulumi.get(self, "size")
 
@@ -1674,7 +1674,7 @@ class ClusterNodeGroupAttributeDataDiskArgs:
     @pulumi.getter(name="volumeType")
     def volume_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV
+        Disk type. ESSD*PL0: Ultra SSD*PL0. ESSD*PL1: Ultra SSD*PL1. ESSD*PL2: Ultra SSD*PL2. ESSD*PL3: Ultra SSD*PL3. ESSD*FLEXPL: Ultra SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
         """
         return pulumi.get(self, "volume_type")
 
@@ -1687,11 +1687,11 @@ if not MYPY:
     class ClusterNodeGroupAttributeSystemDiskArgsDict(TypedDict):
         size: NotRequired[pulumi.Input[builtins.int]]
         """
-        磁盘大小。
+        Disk size.
         """
         volume_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        磁盘类型。
+        Disk type.
         """
 elif False:
     ClusterNodeGroupAttributeSystemDiskArgsDict: TypeAlias = Mapping[str, Any]
@@ -1702,8 +1702,8 @@ class ClusterNodeGroupAttributeSystemDiskArgs:
                  size: Optional[pulumi.Input[builtins.int]] = None,
                  volume_type: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.int] size: 磁盘大小。
-        :param pulumi.Input[builtins.str] volume_type: 磁盘类型。
+        :param pulumi.Input[builtins.int] size: Disk size.
+        :param pulumi.Input[builtins.str] volume_type: Disk type.
         """
         if size is not None:
             pulumi.set(__self__, "size", size)
@@ -1714,7 +1714,7 @@ class ClusterNodeGroupAttributeSystemDiskArgs:
     @pulumi.getter
     def size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        磁盘大小。
+        Disk size.
         """
         return pulumi.get(self, "size")
 
@@ -1726,7 +1726,7 @@ class ClusterNodeGroupAttributeSystemDiskArgs:
     @pulumi.getter(name="volumeType")
     def volume_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        磁盘类型。
+        Disk type.
         """
         return pulumi.get(self, "volume_type")
 
@@ -1739,11 +1739,11 @@ if not MYPY:
     class ClusterStateChangeReasonArgsDict(TypedDict):
         code: NotRequired[pulumi.Input[builtins.str]]
         """
-        状态更新码。
+        Status update code.
         """
         reason: NotRequired[pulumi.Input[builtins.str]]
         """
-        状态更新原因。
+        Status update reason.
         """
 elif False:
     ClusterStateChangeReasonArgsDict: TypeAlias = Mapping[str, Any]
@@ -1754,8 +1754,8 @@ class ClusterStateChangeReasonArgs:
                  code: Optional[pulumi.Input[builtins.str]] = None,
                  reason: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] code: 状态更新码。
-        :param pulumi.Input[builtins.str] reason: 状态更新原因。
+        :param pulumi.Input[builtins.str] code: Status update code.
+        :param pulumi.Input[builtins.str] reason: Status update reason.
         """
         if code is not None:
             pulumi.set(__self__, "code", code)
@@ -1766,7 +1766,7 @@ class ClusterStateChangeReasonArgs:
     @pulumi.getter
     def code(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        状态更新码。
+        Status update code.
         """
         return pulumi.get(self, "code")
 
@@ -1778,7 +1778,7 @@ class ClusterStateChangeReasonArgs:
     @pulumi.getter
     def reason(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        状态更新原因。
+        Status update reason.
         """
         return pulumi.get(self, "reason")
 
@@ -1791,11 +1791,11 @@ if not MYPY:
     class ClusterTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        用户标签的标签键。
+        User tag key.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        用户标签的标签值。
+        User tag value.
         """
 elif False:
     ClusterTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -1806,8 +1806,8 @@ class ClusterTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 用户标签的标签键。
-        :param pulumi.Input[builtins.str] value: 用户标签的标签值。
+        :param pulumi.Input[builtins.str] key: User tag key.
+        :param pulumi.Input[builtins.str] value: User tag value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -1818,7 +1818,7 @@ class ClusterTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户标签的标签键。
+        User tag key.
         """
         return pulumi.get(self, "key")
 
@@ -1830,7 +1830,7 @@ class ClusterTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户标签的标签值。
+        User tag value.
         """
         return pulumi.get(self, "value")
 
@@ -1843,11 +1843,11 @@ if not MYPY:
     class NodeGroupApplicationLayoutArgsDict(TypedDict):
         application_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        应用名称。
+        Application name.
         """
         layout_component_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
         """
-        组件的自定义配置参数列表。
+        Custom configuration parameter list for the component.
         """
 elif False:
     NodeGroupApplicationLayoutArgsDict: TypeAlias = Mapping[str, Any]
@@ -1858,8 +1858,8 @@ class NodeGroupApplicationLayoutArgs:
                  application_name: Optional[pulumi.Input[builtins.str]] = None,
                  layout_component_names: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None):
         """
-        :param pulumi.Input[builtins.str] application_name: 应用名称。
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] layout_component_names: 组件的自定义配置参数列表。
+        :param pulumi.Input[builtins.str] application_name: Application name.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] layout_component_names: Custom configuration parameter list for the component.
         """
         if application_name is not None:
             pulumi.set(__self__, "application_name", application_name)
@@ -1870,7 +1870,7 @@ class NodeGroupApplicationLayoutArgs:
     @pulumi.getter(name="applicationName")
     def application_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        应用名称。
+        Application name.
         """
         return pulumi.get(self, "application_name")
 
@@ -1882,7 +1882,7 @@ class NodeGroupApplicationLayoutArgs:
     @pulumi.getter(name="layoutComponentNames")
     def layout_component_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        组件的自定义配置参数列表。
+        Custom configuration parameter list for the component.
         """
         return pulumi.get(self, "layout_component_names")
 
@@ -1895,27 +1895,27 @@ if not MYPY:
     class NodeGroupChargePreConfigArgsDict(TypedDict):
         auto_renew: NotRequired[pulumi.Input[builtins.bool]]
         """
-        是否开启自动续费。
+        Whether to enable auto-renewal.
         """
         auto_renew_period: NotRequired[pulumi.Input[builtins.int]]
         """
-        自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+        Renewal duration when auto-renewal is triggered. When autoRenew=true, the default value is 1.
         """
         auto_renew_period_unit: NotRequired[pulumi.Input[builtins.str]]
         """
-        自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+        Renewal duration unit when auto-renewal is triggered. When autoRenew=true, the default value is Month. Value range: Month: month. Year: year.
         """
         charge_period: NotRequired[pulumi.Input[builtins.int]]
         """
-        chargeType=PRE默认值=1，包月的购买时长单位。
+        When chargeType=PRE, the default value is 1. The unit for the purchase duration when chargeType=PRE is monthly subscription.
         """
         charge_period_unit: NotRequired[pulumi.Input[builtins.str]]
         """
-        chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+        When chargeType=PRE, the default value is Month. The unit for the purchase duration when chargeType=PRE is monthly subscription. Value range: Month (month), Year (year).
         """
         charge_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        付费类型，枚举值：POST，PRE。
+        Payment type. Enum values: POST, PRE.
         """
 elif False:
     NodeGroupChargePreConfigArgsDict: TypeAlias = Mapping[str, Any]
@@ -1930,12 +1930,12 @@ class NodeGroupChargePreConfigArgs:
                  charge_period_unit: Optional[pulumi.Input[builtins.str]] = None,
                  charge_type: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.bool] auto_renew: 是否开启自动续费。
-        :param pulumi.Input[builtins.int] auto_renew_period: 自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
-        :param pulumi.Input[builtins.str] auto_renew_period_unit: 自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
-        :param pulumi.Input[builtins.int] charge_period: chargeType=PRE默认值=1，包月的购买时长单位。
-        :param pulumi.Input[builtins.str] charge_period_unit: chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
-        :param pulumi.Input[builtins.str] charge_type: 付费类型，枚举值：POST，PRE。
+        :param pulumi.Input[builtins.bool] auto_renew: Whether to enable auto-renewal.
+        :param pulumi.Input[builtins.int] auto_renew_period: Renewal duration when auto-renewal is triggered. When autoRenew=true, the default value is 1.
+        :param pulumi.Input[builtins.str] auto_renew_period_unit: Renewal duration unit when auto-renewal is triggered. When autoRenew=true, the default value is Month. Value range: Month: month. Year: year.
+        :param pulumi.Input[builtins.int] charge_period: When chargeType=PRE, the default value is 1. The unit for the purchase duration when chargeType=PRE is monthly subscription.
+        :param pulumi.Input[builtins.str] charge_period_unit: When chargeType=PRE, the default value is Month. The unit for the purchase duration when chargeType=PRE is monthly subscription. Value range: Month (month), Year (year).
+        :param pulumi.Input[builtins.str] charge_type: Payment type. Enum values: POST, PRE.
         """
         if auto_renew is not None:
             pulumi.set(__self__, "auto_renew", auto_renew)
@@ -1954,7 +1954,7 @@ class NodeGroupChargePreConfigArgs:
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启自动续费。
+        Whether to enable auto-renewal.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -1966,7 +1966,7 @@ class NodeGroupChargePreConfigArgs:
     @pulumi.getter(name="autoRenewPeriod")
     def auto_renew_period(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        自动续费触发时的续费时长，当autoRenew=true时，默认值=1。
+        Renewal duration when auto-renewal is triggered. When autoRenew=true, the default value is 1.
         """
         return pulumi.get(self, "auto_renew_period")
 
@@ -1978,7 +1978,7 @@ class NodeGroupChargePreConfigArgs:
     @pulumi.getter(name="autoRenewPeriodUnit")
     def auto_renew_period_unit(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        自动续费触发时的续费时长单位，当autoRenew=true时，默认值=Month。取值范围：Month：月。Year：年。
+        Renewal duration unit when auto-renewal is triggered. When autoRenew=true, the default value is Month. Value range: Month: month. Year: year.
         """
         return pulumi.get(self, "auto_renew_period_unit")
 
@@ -1990,7 +1990,7 @@ class NodeGroupChargePreConfigArgs:
     @pulumi.getter(name="chargePeriod")
     def charge_period(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        chargeType=PRE默认值=1，包月的购买时长单位。
+        When chargeType=PRE, the default value is 1. The unit for the purchase duration when chargeType=PRE is monthly subscription.
         """
         return pulumi.get(self, "charge_period")
 
@@ -2002,7 +2002,7 @@ class NodeGroupChargePreConfigArgs:
     @pulumi.getter(name="chargePeriodUnit")
     def charge_period_unit(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        chargeType=PRE时，默认值=Month，包月的购买时长单位。取值范围：Month：月。Year：年。
+        When chargeType=PRE, the default value is Month. The unit for the purchase duration when chargeType=PRE is monthly subscription. Value range: Month (month), Year (year).
         """
         return pulumi.get(self, "charge_period_unit")
 
@@ -2014,7 +2014,7 @@ class NodeGroupChargePreConfigArgs:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        付费类型，枚举值：POST，PRE。
+        Payment type. Enum values: POST, PRE.
         """
         return pulumi.get(self, "charge_type")
 
@@ -2027,15 +2027,15 @@ if not MYPY:
     class NodeGroupDataDiskArgsDict(TypedDict):
         count: NotRequired[pulumi.Input[builtins.int]]
         """
-        磁盘块数，默认值4，最大15，最小1。
+        Number of disk blocks. Default value: 4. Maximum: 15. Minimum: 1.
         """
         size: NotRequired[pulumi.Input[builtins.int]]
         """
-        磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+        Disk size. Default value: 80GB. Minimum: 60GB. Maximum: 2048GB. Unit: GB.
         """
         volume_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+        Disk type. ESSD*PL0: Ultra-fast SSD*PL0. ESSD*PL1: Ultra-fast SSD*PL1. ESSD*PL2: Ultra-fast SSD*PL2. ESSD*PL3: Ultra-fast SSD*PL3. ESSD*FLEXPL: Ultra-fast SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
         """
 elif False:
     NodeGroupDataDiskArgsDict: TypeAlias = Mapping[str, Any]
@@ -2047,9 +2047,9 @@ class NodeGroupDataDiskArgs:
                  size: Optional[pulumi.Input[builtins.int]] = None,
                  volume_type: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.int] count: 磁盘块数，默认值4，最大15，最小1。
-        :param pulumi.Input[builtins.int] size: 磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
-        :param pulumi.Input[builtins.str] volume_type: 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+        :param pulumi.Input[builtins.int] count: Number of disk blocks. Default value: 4. Maximum: 15. Minimum: 1.
+        :param pulumi.Input[builtins.int] size: Disk size. Default value: 80GB. Minimum: 60GB. Maximum: 2048GB. Unit: GB.
+        :param pulumi.Input[builtins.str] volume_type: Disk type. ESSD*PL0: Ultra-fast SSD*PL0. ESSD*PL1: Ultra-fast SSD*PL1. ESSD*PL2: Ultra-fast SSD*PL2. ESSD*PL3: Ultra-fast SSD*PL3. ESSD*FLEXPL: Ultra-fast SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
         """
         if count is not None:
             pulumi.set(__self__, "count", count)
@@ -2062,7 +2062,7 @@ class NodeGroupDataDiskArgs:
     @pulumi.getter
     def count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        磁盘块数，默认值4，最大15，最小1。
+        Number of disk blocks. Default value: 4. Maximum: 15. Minimum: 1.
         """
         return pulumi.get(self, "count")
 
@@ -2074,7 +2074,7 @@ class NodeGroupDataDiskArgs:
     @pulumi.getter
     def size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        磁盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+        Disk size. Default value: 80GB. Minimum: 60GB. Maximum: 2048GB. Unit: GB.
         """
         return pulumi.get(self, "size")
 
@@ -2086,7 +2086,7 @@ class NodeGroupDataDiskArgs:
     @pulumi.getter(name="volumeType")
     def volume_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+        Disk type. ESSD*PL0: Ultra-fast SSD*PL0. ESSD*PL1: Ultra-fast SSD*PL1. ESSD*PL2: Ultra-fast SSD*PL2. ESSD*PL3: Ultra-fast SSD*PL3. ESSD*FLEXPL: Ultra-fast SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
         """
         return pulumi.get(self, "volume_type")
 
@@ -2099,43 +2099,43 @@ if not MYPY:
     class NodeGroupNodeArgsDict(TypedDict):
         created_time: NotRequired[pulumi.Input[builtins.int]]
         """
-        节点创建时间。
+        Node creation time.
         """
         ecs_instance_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        ecs实例规格。
+        ecs instance specification.
         """
         node_fqdn: NotRequired[pulumi.Input[builtins.str]]
         """
-        节点FQDN。
+        Node FQDN.
         """
         node_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        节点ID。
+        Node ID.
         """
         node_name: NotRequired[pulumi.Input[builtins.str]]
         """
-        节点名称。
+        Node name.
         """
         node_state: NotRequired[pulumi.Input[builtins.str]]
         """
-        节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+        Node status. UNKNOWN: Unknown. CREATING: Creating. RUNNING: Running. STOPPING: Stopping. STOPPED: Stopped. REBOOTING: Rebooting. DELETED: Deleted.
         """
         private_ip: NotRequired[pulumi.Input[builtins.str]]
         """
-        私有IP。
+        Private IP.
         """
         public_ip: NotRequired[pulumi.Input[builtins.str]]
         """
-        公网IP。
+        Public IP.
         """
         ready_time: NotRequired[pulumi.Input[builtins.int]]
         """
-        准备完毕时间。
+        Ready time.
         """
         terminate_time: NotRequired[pulumi.Input[builtins.int]]
         """
-        集群终止时间。
+        Cluster termination time.
         """
 elif False:
     NodeGroupNodeArgsDict: TypeAlias = Mapping[str, Any]
@@ -2154,16 +2154,16 @@ class NodeGroupNodeArgs:
                  ready_time: Optional[pulumi.Input[builtins.int]] = None,
                  terminate_time: Optional[pulumi.Input[builtins.int]] = None):
         """
-        :param pulumi.Input[builtins.int] created_time: 节点创建时间。
-        :param pulumi.Input[builtins.str] ecs_instance_type: ecs实例规格。
-        :param pulumi.Input[builtins.str] node_fqdn: 节点FQDN。
-        :param pulumi.Input[builtins.str] node_id: 节点ID。
-        :param pulumi.Input[builtins.str] node_name: 节点名称。
-        :param pulumi.Input[builtins.str] node_state: 节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
-        :param pulumi.Input[builtins.str] private_ip: 私有IP。
-        :param pulumi.Input[builtins.str] public_ip: 公网IP。
-        :param pulumi.Input[builtins.int] ready_time: 准备完毕时间。
-        :param pulumi.Input[builtins.int] terminate_time: 集群终止时间。
+        :param pulumi.Input[builtins.int] created_time: Node creation time.
+        :param pulumi.Input[builtins.str] ecs_instance_type: ecs instance specification.
+        :param pulumi.Input[builtins.str] node_fqdn: Node FQDN.
+        :param pulumi.Input[builtins.str] node_id: Node ID.
+        :param pulumi.Input[builtins.str] node_name: Node name.
+        :param pulumi.Input[builtins.str] node_state: Node status. UNKNOWN: Unknown. CREATING: Creating. RUNNING: Running. STOPPING: Stopping. STOPPED: Stopped. REBOOTING: Rebooting. DELETED: Deleted.
+        :param pulumi.Input[builtins.str] private_ip: Private IP.
+        :param pulumi.Input[builtins.str] public_ip: Public IP.
+        :param pulumi.Input[builtins.int] ready_time: Ready time.
+        :param pulumi.Input[builtins.int] terminate_time: Cluster termination time.
         """
         if created_time is not None:
             pulumi.set(__self__, "created_time", created_time)
@@ -2190,7 +2190,7 @@ class NodeGroupNodeArgs:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        节点创建时间。
+        Node creation time.
         """
         return pulumi.get(self, "created_time")
 
@@ -2202,7 +2202,7 @@ class NodeGroupNodeArgs:
     @pulumi.getter(name="ecsInstanceType")
     def ecs_instance_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        ecs实例规格。
+        ecs instance specification.
         """
         return pulumi.get(self, "ecs_instance_type")
 
@@ -2214,7 +2214,7 @@ class NodeGroupNodeArgs:
     @pulumi.getter(name="nodeFqdn")
     def node_fqdn(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点FQDN。
+        Node FQDN.
         """
         return pulumi.get(self, "node_fqdn")
 
@@ -2226,7 +2226,7 @@ class NodeGroupNodeArgs:
     @pulumi.getter(name="nodeId")
     def node_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点ID。
+        Node ID.
         """
         return pulumi.get(self, "node_id")
 
@@ -2238,7 +2238,7 @@ class NodeGroupNodeArgs:
     @pulumi.getter(name="nodeName")
     def node_name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点名称。
+        Node name.
         """
         return pulumi.get(self, "node_name")
 
@@ -2250,7 +2250,7 @@ class NodeGroupNodeArgs:
     @pulumi.getter(name="nodeState")
     def node_state(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+        Node status. UNKNOWN: Unknown. CREATING: Creating. RUNNING: Running. STOPPING: Stopping. STOPPED: Stopped. REBOOTING: Rebooting. DELETED: Deleted.
         """
         return pulumi.get(self, "node_state")
 
@@ -2262,7 +2262,7 @@ class NodeGroupNodeArgs:
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        私有IP。
+        Private IP.
         """
         return pulumi.get(self, "private_ip")
 
@@ -2274,7 +2274,7 @@ class NodeGroupNodeArgs:
     @pulumi.getter(name="publicIp")
     def public_ip(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        公网IP。
+        Public IP.
         """
         return pulumi.get(self, "public_ip")
 
@@ -2286,7 +2286,7 @@ class NodeGroupNodeArgs:
     @pulumi.getter(name="readyTime")
     def ready_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        准备完毕时间。
+        Ready time.
         """
         return pulumi.get(self, "ready_time")
 
@@ -2298,7 +2298,7 @@ class NodeGroupNodeArgs:
     @pulumi.getter(name="terminateTime")
     def terminate_time(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        集群终止时间。
+        Cluster termination time.
         """
         return pulumi.get(self, "terminate_time")
 
@@ -2311,11 +2311,11 @@ if not MYPY:
     class NodeGroupSystemDiskArgsDict(TypedDict):
         size: NotRequired[pulumi.Input[builtins.int]]
         """
-        系统盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+        System disk size. Default value: 80GB. Minimum: 60GB. Maximum: 2048GB. Unit: GB.
         """
         volume_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+        Disk type. ESSD*PL0: Ultra-fast SSD*PL0. ESSD*PL1: Ultra-fast SSD*PL1. ESSD*PL2: Ultra-fast SSD*PL2. ESSD*PL3: Ultra-fast SSD*PL3. ESSD*FLEXPL: Ultra-fast SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
         """
 elif False:
     NodeGroupSystemDiskArgsDict: TypeAlias = Mapping[str, Any]
@@ -2326,8 +2326,8 @@ class NodeGroupSystemDiskArgs:
                  size: Optional[pulumi.Input[builtins.int]] = None,
                  volume_type: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.int] size: 系统盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
-        :param pulumi.Input[builtins.str] volume_type: 磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+        :param pulumi.Input[builtins.int] size: System disk size. Default value: 80GB. Minimum: 60GB. Maximum: 2048GB. Unit: GB.
+        :param pulumi.Input[builtins.str] volume_type: Disk type. ESSD*PL0: Ultra-fast SSD*PL0. ESSD*PL1: Ultra-fast SSD*PL1. ESSD*PL2: Ultra-fast SSD*PL2. ESSD*PL3: Ultra-fast SSD*PL3. ESSD*FLEXPL: Ultra-fast SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
         """
         if size is not None:
             pulumi.set(__self__, "size", size)
@@ -2338,7 +2338,7 @@ class NodeGroupSystemDiskArgs:
     @pulumi.getter
     def size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        系统盘大小，默认值80GB，最小60GB，最大2048GB，单位GB。
+        System disk size. Default value: 80GB. Minimum: 60GB. Maximum: 2048GB. Unit: GB.
         """
         return pulumi.get(self, "size")
 
@@ -2350,7 +2350,7 @@ class NodeGroupSystemDiskArgs:
     @pulumi.getter(name="volumeType")
     def volume_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        磁盘类型。ESSD*PL0 ：极速型SSD*PL0。ESSD*PL1 ：极速型SSD*PL1。ESSD*PL2 ：极速型SSD*PL2。ESSD*PL3 ：极速型SSD*PL3。ESSD*FLEXPL ：极速型SSD*FlexPL。ULTRA*DISK ：高效云盘。PTSSD ：性能型SSD。SSD ：通用型SSD。EHDD ：高效云盘。ZENYA*SSD ：Zenya。LOCAL*HDD ：大数据型HDD。LOCAL*SSD ：本地SSD型。LOCAL*SSD*SRIOV ：本地SSD型SRIOV。
+        Disk type. ESSD*PL0: Ultra-fast SSD*PL0. ESSD*PL1: Ultra-fast SSD*PL1. ESSD*PL2: Ultra-fast SSD*PL2. ESSD*PL3: Ultra-fast SSD*PL3. ESSD*FLEXPL: Ultra-fast SSD*FlexPL. ULTRA*DISK: Efficient cloud disk. PTSSD: Performance SSD. SSD: General SSD. EHDD: Efficient cloud disk. ZENYA*SSD: Zenya. LOCAL*HDD: Big data HDD. LOCAL*SSD: Local SSD. LOCAL*SSD*SRIOV: Local SSD SRIOV.
         """
         return pulumi.get(self, "volume_type")
 

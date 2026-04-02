@@ -15,43 +15,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Outputs
     public sealed class NodeGroupNode
     {
         /// <summary>
-        /// 节点创建时间。
+        /// Node creation time.
         /// </summary>
         public readonly int? CreatedTime;
         /// <summary>
-        /// ecs实例规格。
+        /// ecs instance specification.
         /// </summary>
         public readonly string? EcsInstanceType;
         /// <summary>
-        /// 节点FQDN。
+        /// Node FQDN.
         /// </summary>
         public readonly string? NodeFqdn;
         /// <summary>
-        /// 节点ID。
+        /// Node ID.
         /// </summary>
         public readonly string? NodeId;
         /// <summary>
-        /// 节点名称。
+        /// Node name.
         /// </summary>
         public readonly string? NodeName;
         /// <summary>
-        /// 节点状态。UNKNOWN：未知状态。CREATING：创建中。RUNNING：运行中。STOPPING：停止中。STOPPED：已停止。REBOOTING：重启中。DELETED：已删除。
+        /// Node status. UNKNOWN: Unknown. CREATING: Creating. RUNNING: Running. STOPPING: Stopping. STOPPED: Stopped. REBOOTING: Rebooting. DELETED: Deleted.
         /// </summary>
         public readonly string? NodeState;
         /// <summary>
-        /// 私有IP。
+        /// Private IP.
         /// </summary>
         public readonly string? PrivateIp;
         /// <summary>
-        /// 公网IP。
+        /// Public IP.
         /// </summary>
         public readonly string? PublicIp;
         /// <summary>
-        /// 准备完毕时间。
+        /// Ready time.
         /// </summary>
         public readonly int? ReadyTime;
         /// <summary>
-        /// 集群终止时间。
+        /// Cluster termination time.
         /// </summary>
         public readonly int? TerminateTime;
 

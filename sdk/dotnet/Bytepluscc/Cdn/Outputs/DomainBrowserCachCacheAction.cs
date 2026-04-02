@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class DomainBrowserCachCacheAction
     {
         /// <summary>
-        /// 表示缓存的行为。当前您仅可指定 cache。cache 表示行为是缓存。
+        /// Indicates caching behavior. Currently, you can only specify cache. cache means the behavior is caching.
         /// </summary>
         public readonly string? Action;
         /// <summary>
-        /// 该参数被多个 CDN 特性共享。
+        /// This parameter is shared by multiple CDN features.
         /// </summary>
         public readonly string? DefaultPolicy;
         /// <summary>
-        /// 表示 Value 是否是大小写敏感的。该参数有以下取值：true：表示大小写不敏感。false：表示大小写敏感。该参数的默认值为 false。
+        /// Indicates whether Value is case sensitive. The parameter has the following values: true: not case sensitive. false: case sensitive. The default value is false.
         /// </summary>
         public readonly bool? IgnoreCase;
         /// <summary>
-        /// 表示缓存的时间，单位为秒。时间范围为 0-315,360,000。315,360,000 表示 10年。如果您不希望内容分发网络对指定的内容进行缓存，您可以设置该参数为 0。
+        /// Indicates the cache duration in seconds. The valid range is 0–315,360,000. 315,360,000 represents 10 years. If you do not want the content delivery network to cache the specified content, set this parameter to 0.
         /// </summary>
         public readonly int? Ttl;
 

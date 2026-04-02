@@ -23,14 +23,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     public static final DomainArgs Empty = new DomainArgs();
 
     /**
-     * 接入模式。10：CNAME 接入，11：负载均衡（CLB）7 层接入。
+     * Access mode. 10: CNAME access, 11: Layer 7 load balancing (CLB) access.
      * 
      */
     @Import(name="accessMode", required=true)
     private Output<Integer> accessMode;
 
     /**
-     * @return 接入模式。10：CNAME 接入，11：负载均衡（CLB）7 层接入。
+     * @return Access mode. 10: CNAME access, 11: Layer 7 load balancing (CLB) access.
      * 
      */
     public Output<Integer> accessMode() {
@@ -38,14 +38,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启了 API 防护策略。0：关闭，1：开启。
+     * API protection policy enabled. 0: Off, 1: On
      * 
      */
     @Import(name="apiEnable")
     private @Nullable Output<Integer> apiEnable;
 
     /**
-     * @return 是否开启了 API 防护策略。0：关闭，1：开启。
+     * @return API protection policy enabled. 0: Off, 1: On
      * 
      */
     public Optional<Output<Integer>> apiEnable() {
@@ -53,14 +53,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启智能 CC 防护策略。0：关闭，1：开启。
+     * Whether to enable intelligent CC protection policy. 0: Disabled, 1: Enabled.
      * 
      */
     @Import(name="autoCcEnable")
     private @Nullable Output<Integer> autoCcEnable;
 
     /**
-     * @return 是否开启智能 CC 防护策略。0：关闭，1：开启。
+     * @return Whether to enable intelligent CC protection policy. 0: Disabled, 1: Enabled.
      * 
      */
     public Optional<Output<Integer>> autoCcEnable() {
@@ -75,14 +75,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启了黑名单策略。0：关闭, 1：开启。
+     * Denylist policy enabled. 0: Off, 1: On
      * 
      */
     @Import(name="blackIpEnable")
     private @Nullable Output<Integer> blackIpEnable;
 
     /**
-     * @return 是否开启了黑名单策略。0：关闭, 1：开启。
+     * @return Denylist policy enabled. 0: Off, 1: On
      * 
      */
     public Optional<Output<Integer>> blackIpEnable() {
@@ -90,14 +90,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启了区域封禁策略。0：关闭;1：开启。
+     * Whether to enable regional blocking policy. 0: Disabled; 1: Enabled.
      * 
      */
     @Import(name="blackLctEnable")
     private @Nullable Output<Integer> blackLctEnable;
 
     /**
-     * @return 是否开启了区域封禁策略。0：关闭;1：开启。
+     * @return Whether to enable regional blocking policy. 0: Disabled; 1: Enabled.
      * 
      */
     public Optional<Output<Integer>> blackLctEnable() {
@@ -105,14 +105,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启动态Token防护。
+     * Dynamic token protection enabled
      * 
      */
     @Import(name="botDytokenEnable")
     private @Nullable Output<Integer> botDytokenEnable;
 
     /**
-     * @return 是否开启动态Token防护。
+     * @return Dynamic token protection enabled
      * 
      */
     public Optional<Output<Integer>> botDytokenEnable() {
@@ -120,18 +120,18 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启 bot 频率限制策略。
-     * 0：关闭
-     * 1：开启。
+     * Bot rate limit policy enabled.
+     * 0: Off
+     * 1: On
      * 
      */
     @Import(name="botFrequencyEnable")
     private @Nullable Output<Integer> botFrequencyEnable;
 
     /**
-     * @return 是否开启 bot 频率限制策略。
-     * 0：关闭
-     * 1：开启。
+     * @return Bot rate limit policy enabled.
+     * 0: Off
+     * 1: On
      * 
      */
     public Optional<Output<Integer>> botFrequencyEnable() {
@@ -139,18 +139,18 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启 bot 统计防护策略。
-     * 0：关闭
-     * 1：开启。
+     * Bot statistics protection policy enabled.
+     * 0: Off
+     * 1: On
      * 
      */
     @Import(name="botRepeatEnable")
     private @Nullable Output<Integer> botRepeatEnable;
 
     /**
-     * @return 是否开启 bot 统计防护策略。
-     * 0：关闭
-     * 1：开启。
+     * @return Bot statistics protection policy enabled.
+     * 0: Off
+     * 1: On
      * 
      */
     public Optional<Output<Integer>> botRepeatEnable() {
@@ -158,22 +158,22 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 设置 bot 行为地图策略默认动作，当 BotSequenceEnable = 1 开启状态时生效。默认为 0 （观察）。
-     * 0：观察
-     * 2：拦截
-     * 6：JS 挑战
-     * 7：人机验证。
+     * Set the default action for the bot behavior map policy. Effective when BotSequenceEnable = 1 is enabled. Default is 0 (Observe).
+     * 0: Observe
+     * 2: Intercept
+     * 6: JS Challenge
+     * 7: CAPTCHA.
      * 
      */
     @Import(name="botSequenceDefaultAction")
     private @Nullable Output<Integer> botSequenceDefaultAction;
 
     /**
-     * @return 设置 bot 行为地图策略默认动作，当 BotSequenceEnable = 1 开启状态时生效。默认为 0 （观察）。
-     * 0：观察
-     * 2：拦截
-     * 6：JS 挑战
-     * 7：人机验证。
+     * @return Set the default action for the bot behavior map policy. Effective when BotSequenceEnable = 1 is enabled. Default is 0 (Observe).
+     * 0: Observe
+     * 2: Intercept
+     * 6: JS Challenge
+     * 7: CAPTCHA.
      * 
      */
     public Optional<Output<Integer>> botSequenceDefaultAction() {
@@ -181,18 +181,18 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启 bot 行为地图。
-     * 0：关闭
-     * 1：开启。
+     * Whether to enable bot behavior map.
+     * 0: Off
+     * 1: On.
      * 
      */
     @Import(name="botSequenceEnable")
     private @Nullable Output<Integer> botSequenceEnable;
 
     /**
-     * @return 是否开启 bot 行为地图。
-     * 0：关闭
-     * 1：开启。
+     * @return Whether to enable bot behavior map.
+     * 0: Off
+     * 1: On.
      * 
      */
     public Optional<Output<Integer>> botSequenceEnable() {
@@ -200,18 +200,18 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启 CC 防护策略。
-     * 0：关闭
-     * 1：开启。
+     * Whether to enable CC protection policy.
+     * 0: Disabled
+     * 1: Enabled.
      * 
      */
     @Import(name="ccEnable")
     private @Nullable Output<Integer> ccEnable;
 
     /**
-     * @return 是否开启 CC 防护策略。
-     * 0：关闭
-     * 1：开启。
+     * @return Whether to enable CC protection policy.
+     * 0: Disabled
+     * 1: Enabled.
      * 
      */
     public Optional<Output<Integer>> ccEnable() {
@@ -219,14 +219,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 托管至证书中心的证书ID。
+     * Certificate ID managed in Certificate Center
      * 
      */
     @Import(name="certificateId")
     private @Nullable Output<String> certificateId;
 
     /**
-     * @return 托管至证书中心的证书ID。
+     * @return Certificate ID managed in Certificate Center
      * 
      */
     public Optional<Output<String>> certificateId() {
@@ -234,14 +234,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 证书托管平台:waf/certificate_service。
+     * Certificate hosting platform: waf/certificate_service.
      * 
      */
     @Import(name="certificatePlatform")
     private @Nullable Output<String> certificatePlatform;
 
     /**
-     * @return 证书托管平台:waf/certificate_service。
+     * @return Certificate hosting platform: waf/certificate_service.
      * 
      */
     public Optional<Output<String>> certificatePlatform() {
@@ -249,14 +249,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 客户端IP获取方式。0:自定义Header字段,1:通过X-Forwarded-For(XFF)字段中第一个公网IP地址作为客户端真实IP地址。
+     * Client IP acquisition method. 0: Custom header field, 1: Use the first public IP address in the X-Forwarded-For (XFF) field as the real client IP address.
      * 
      */
     @Import(name="clientIpLocation")
     private @Nullable Output<Integer> clientIpLocation;
 
     /**
-     * @return 客户端IP获取方式。0:自定义Header字段,1:通过X-Forwarded-For(XFF)字段中第一个公网IP地址作为客户端真实IP地址。
+     * @return Client IP acquisition method. 0: Custom header field, 1: Use the first public IP address in the X-Forwarded-For (XFF) field as the real client IP address.
      * 
      */
     public Optional<Output<Integer>> clientIpLocation() {
@@ -264,14 +264,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 客户端请求body最大值(MB)。
+     * Maximum client request body size (MB).
      * 
      */
     @Import(name="clientMaxBodySize")
     private @Nullable Output<Integer> clientMaxBodySize;
 
     /**
-     * @return 客户端请求body最大值(MB)。
+     * @return Maximum client request body size (MB).
      * 
      */
     public Optional<Output<Integer>> clientMaxBodySize() {
@@ -286,14 +286,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启自定义BOT防护。
+     * Whether to enable custom bot protection.
      * 
      */
     @Import(name="customBotEnable")
     private @Nullable Output<Integer> customBotEnable;
 
     /**
-     * @return 是否开启自定义BOT防护。
+     * @return Whether to enable custom bot protection.
      * 
      */
     public Optional<Output<Integer>> customBotEnable() {
@@ -301,14 +301,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 自定义Header。
+     * Custom header.
      * 
      */
     @Import(name="customHeaders")
     private @Nullable Output<List<String>> customHeaders;
 
     /**
-     * @return 自定义Header。
+     * @return Custom header.
      * 
      */
     public Optional<Output<List<String>>> customHeaders() {
@@ -316,14 +316,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启自定义响应。
+     * Whether to enable custom response.
      * 
      */
     @Import(name="customRspEnable")
     private @Nullable Output<Integer> customRspEnable;
 
     /**
-     * @return 是否开启自定义响应。
+     * @return Whether to enable custom response.
      * 
      */
     public Optional<Output<Integer>> customRspEnable() {
@@ -331,14 +331,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 自定义SNI。
+     * Custom SNI.
      * 
      */
     @Import(name="customSni")
     private @Nullable Output<String> customSni;
 
     /**
-     * @return 自定义SNI。
+     * @return Custom SNI.
      * 
      */
     public Optional<Output<String>> customSni() {
@@ -346,28 +346,28 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 为例外 ALB 实例设置防护模式。
-     * 1：启用防护，已配置的防护策略生效。
-     * 2：暂停防护，仅执行转发而不检测，已配置的防护策略不生效。
-     * 3：回源模式，直接将请求解析至源站，不再转发至 WAF 实例。
-     * 设置例外防护实例后，域名可能还会存在以下防护状态：
-     * 5：部分启用，默认防护模式为启用防护，但存在例外实例为暂停防护或回源模式状态。
-     * 6：部分暂停，默认防护模式为暂停防护，但存在例外实例为启用防护或回源模式状态。
-     * 7：部分回源，默认防护模式为回源模式，但存在例外实例为启用防护或暂停防护状态。
+     * Set protection mode for exception ALB instances.
+     * 1: Enable protection. The configured protection policies take effect.
+     * 2: Pause protection. Only forwarding is performed without inspection; the configured protection policies do not take effect.
+     * 3: Origin mode. Requests are sent directly to the origin server and are no longer forwarded to the WAF instance.
+     * After configuring exception protection instances, the domain may also have the following protection statuses:
+     * 5: Partially enabled. The default protection mode is enabled, but some exception instances are in paused protection or origin mode.
+     * 6: Partially paused. The default protection mode is paused, but some exception instances are in enabled protection or origin mode.
+     * 7: Partially origin. The default protection mode is origin mode, but some exception instances are in enabled protection or paused protection.
      * 
      */
     @Import(name="defenceMode")
     private @Nullable Output<Integer> defenceMode;
 
     /**
-     * @return 为例外 ALB 实例设置防护模式。
-     * 1：启用防护，已配置的防护策略生效。
-     * 2：暂停防护，仅执行转发而不检测，已配置的防护策略不生效。
-     * 3：回源模式，直接将请求解析至源站，不再转发至 WAF 实例。
-     * 设置例外防护实例后，域名可能还会存在以下防护状态：
-     * 5：部分启用，默认防护模式为启用防护，但存在例外实例为暂停防护或回源模式状态。
-     * 6：部分暂停，默认防护模式为暂停防护，但存在例外实例为启用防护或回源模式状态。
-     * 7：部分回源，默认防护模式为回源模式，但存在例外实例为启用防护或暂停防护状态。
+     * @return Set protection mode for exception ALB instances.
+     * 1: Enable protection. The configured protection policies take effect.
+     * 2: Pause protection. Only forwarding is performed without inspection; the configured protection policies do not take effect.
+     * 3: Origin mode. Requests are sent directly to the origin server and are no longer forwarded to the WAF instance.
+     * After configuring exception protection instances, the domain may also have the following protection statuses:
+     * 5: Partially enabled. The default protection mode is enabled, but some exception instances are in paused protection or origin mode.
+     * 6: Partially paused. The default protection mode is paused, but some exception instances are in enabled protection or origin mode.
+     * 7: Partially origin. The default protection mode is origin mode, but some exception instances are in enabled protection or paused protection.
      * 
      */
     public Optional<Output<Integer>> defenceMode() {
@@ -375,14 +375,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启数据泄露防护。
+     * Data leakage protection enabled
      * 
      */
     @Import(name="dlpEnable")
     private @Nullable Output<Integer> dlpEnable;
 
     /**
-     * @return 是否开启数据泄露防护。
+     * @return Data leakage protection enabled
      * 
      */
     public Optional<Output<Integer>> dlpEnable() {
@@ -390,14 +390,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 防护的域名信息，支持泛域名和精确域名。
+     * Protected domain information. Supports wildcard and exact domains
      * 
      */
     @Import(name="domain", required=true)
     private Output<String> domain;
 
     /**
-     * @return 防护的域名信息，支持泛域名和精确域名。
+     * @return Protected domain information. Supports wildcard and exact domains
      * 
      */
     public Output<String> domain() {
@@ -405,14 +405,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启用户自定义重定向。0:关闭,1:开启。
+     * User-defined redirection enabled. 0: Off, 1: On
      * 
      */
     @Import(name="enableCustomRedirect")
     private @Nullable Output<Integer> enableCustomRedirect;
 
     /**
-     * @return 是否开启用户自定义重定向。0:关闭,1:开启。
+     * @return User-defined redirection enabled. 0: Off, 1: On
      * 
      */
     public Optional<Output<Integer>> enableCustomRedirect() {
@@ -420,14 +420,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启HTTP2.0。0:关闭,1:开启。
+     * Whether to enable HTTP/2.0. 0: Disabled, 1: Enabled.
      * 
      */
     @Import(name="enableHttp2")
     private @Nullable Output<Integer> enableHttp2;
 
     /**
-     * @return 是否开启HTTP2.0。0:关闭,1:开启。
+     * @return Whether to enable HTTP/2.0. 0: Disabled, 1: Enabled.
      * 
      */
     public Optional<Output<Integer>> enableHttp2() {
@@ -435,14 +435,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否支持防护Ipv6请求。0:关闭,1:开启。
+     * IPv6 request protection supported. 0: Off, 1: On
      * 
      */
     @Import(name="enableIpv6")
     private @Nullable Output<Integer> enableIpv6;
 
     /**
-     * @return 是否支持防护Ipv6请求。0:关闭,1:开启。
+     * @return IPv6 request protection supported. 0: Off, 1: On
      * 
      */
     public Optional<Output<Integer>> enableIpv6() {
@@ -450,14 +450,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启SNI配置。0:关闭,1:开启。
+     * Whether to enable SNI configuration. 0: Off, 1: On.
      * 
      */
     @Import(name="enableSni")
     private @Nullable Output<Integer> enableSni;
 
     /**
-     * @return 是否开启SNI配置。0:关闭,1:开启。
+     * @return Whether to enable SNI configuration. 0: Off, 1: On.
      * 
      */
     public Optional<Output<Integer>> enableSni() {
@@ -465,14 +465,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 长连接复用个数。
+     * Persistent connection reuse count
      * 
      */
     @Import(name="keepAliveRequest")
     private @Nullable Output<Integer> keepAliveRequest;
 
     /**
-     * @return 长连接复用个数。
+     * @return Persistent connection reuse count
      * 
      */
     public Optional<Output<Integer>> keepAliveRequest() {
@@ -480,14 +480,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 长连接保持时间(秒)。
+     * Persistent connection keep-alive time (seconds)
      * 
      */
     @Import(name="keepAliveTimeout")
     private @Nullable Output<Integer> keepAliveTimeout;
 
     /**
-     * @return 长连接保持时间(秒)。
+     * @return Persistent connection keep-alive time (seconds)
      * 
      */
     public Optional<Output<Integer>> keepAliveTimeout() {
@@ -495,14 +495,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 负载均衡算法类型。wrr:加权轮询,wlc:加权最小连接数,sh:源地址哈希。
+     * Load balancing algorithm type. wrr: Weighted round robin, wlc: Weighted least connections, sh: Source address hash.
      * 
      */
     @Import(name="lbAlgorithm")
     private @Nullable Output<String> lbAlgorithm;
 
     /**
-     * @return 负载均衡算法类型。wrr:加权轮询,wlc:加权最小连接数,sh:源地址哈希。
+     * @return Load balancing algorithm type. wrr: Weighted round robin, wlc: Weighted least connections, sh: Source address hash.
      * 
      */
     public Optional<Output<String>> lbAlgorithm() {
@@ -510,14 +510,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 项目名称。
+     * Project name.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 项目名称。
+     * @return Project name.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -525,14 +525,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启协议跟随。0:关闭,1:开启。
+     * Protocol following enabled. 0: Off, 1: On
      * 
      */
     @Import(name="protocolFollow")
     private @Nullable Output<Integer> protocolFollow;
 
     /**
-     * @return 是否开启协议跟随。0:关闭,1:开启。
+     * @return Protocol following enabled. 0: Off, 1: On
      * 
      */
     public Optional<Output<Integer>> protocolFollow() {
@@ -540,14 +540,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 接入端口信息。
+     * Access port information
      * 
      */
     @Import(name="protocolPorts")
     private @Nullable Output<DomainProtocolPortsArgs> protocolPorts;
 
     /**
-     * @return 接入端口信息。
+     * @return Access port information
      * 
      */
     public Optional<Output<DomainProtocolPortsArgs>> protocolPorts() {
@@ -555,14 +555,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 接入协议类型,支持HTTP/HTTPS。
+     * Access protocol type: supports HTTP/HTTPS
      * 
      */
     @Import(name="protocols")
     private @Nullable Output<List<String>> protocols;
 
     /**
-     * @return 接入协议类型,支持HTTP/HTTPS。
+     * @return Access protocol type: supports HTTP/HTTPS
      * 
      */
     public Optional<Output<List<String>>> protocols() {
@@ -570,14 +570,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启代理配置。0:关闭,1:开启。
+     * Proxy configuration enabled. 0: Off, 1: On
      * 
      */
     @Import(name="proxyConfig")
     private @Nullable Output<Integer> proxyConfig;
 
     /**
-     * @return 是否开启代理配置。0:关闭,1:开启。
+     * @return Proxy configuration enabled. 0: Off, 1: On
      * 
      */
     public Optional<Output<Integer>> proxyConfig() {
@@ -585,14 +585,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * WAF和后端服务器的建连超时时间(秒)。
+     * Connection timeout between WAF and backend server (seconds).
      * 
      */
     @Import(name="proxyConnectTimeout")
     private @Nullable Output<Integer> proxyConnectTimeout;
 
     /**
-     * @return WAF和后端服务器的建连超时时间(秒)。
+     * @return Connection timeout between WAF and backend server (seconds).
      * 
      */
     public Optional<Output<Integer>> proxyConnectTimeout() {
@@ -600,14 +600,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * WAF回源长连接可复用个数。
+     * Number of reusable WAF origin persistent connections.
      * 
      */
     @Import(name="proxyKeepAlive")
     private @Nullable Output<Integer> proxyKeepAlive;
 
     /**
-     * @return WAF回源长连接可复用个数。
+     * @return Number of reusable WAF origin persistent connections.
      * 
      */
     public Optional<Output<Integer>> proxyKeepAlive() {
@@ -615,14 +615,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 空闲长连接超时时间(秒)。
+     * Idle persistent connection timeout (seconds)
      * 
      */
     @Import(name="proxyKeepAliveTimeout")
     private @Nullable Output<Integer> proxyKeepAliveTimeout;
 
     /**
-     * @return 空闲长连接超时时间(秒)。
+     * @return Idle persistent connection timeout (seconds)
      * 
      */
     public Optional<Output<Integer>> proxyKeepAliveTimeout() {
@@ -630,14 +630,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * WAF从后端服务器读取响应的超时时间(秒)。
+     * Timeout for WAF to read response from backend server (seconds).
      * 
      */
     @Import(name="proxyReadTimeout")
     private @Nullable Output<Integer> proxyReadTimeout;
 
     /**
-     * @return WAF从后端服务器读取响应的超时时间(秒)。
+     * @return Timeout for WAF to read response from backend server (seconds).
      * 
      */
     public Optional<Output<Integer>> proxyReadTimeout() {
@@ -645,14 +645,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * WAF回源重试次数。
+     * WAF origin retry count.
      * 
      */
     @Import(name="proxyRetry")
     private @Nullable Output<Integer> proxyRetry;
 
     /**
-     * @return WAF回源重试次数。
+     * @return WAF origin retry count.
      * 
      */
     public Optional<Output<Integer>> proxyRetry() {
@@ -660,14 +660,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * WAF将请求传输到后端服务器的超时时间(秒)。
+     * Timeout for WAF to transmit request to backend server (seconds).
      * 
      */
     @Import(name="proxyWriteTimeout")
     private @Nullable Output<Integer> proxyWriteTimeout;
 
     /**
-     * @return WAF将请求传输到后端服务器的超时时间(秒)。
+     * @return Timeout for WAF to transmit request to backend server (seconds).
      * 
      */
     public Optional<Output<Integer>> proxyWriteTimeout() {
@@ -675,14 +675,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * CNAME接入回源方式。0:私网回源,1:公网回源。
+     * CNAME access origin method. 0: Private network origin, 1: Public network origin.
      * 
      */
     @Import(name="publicRealServer")
     private @Nullable Output<Integer> publicRealServer;
 
     /**
-     * @return CNAME接入回源方式。0:私网回源,1:公网回源。
+     * @return CNAME access origin method. 0: Private network origin, 1: Public network origin.
      * 
      */
     public Optional<Output<Integer>> publicRealServer() {
@@ -690,14 +690,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 加密套件。
+     * Cipher suite
      * 
      */
     @Import(name="sslCiphers")
     private @Nullable Output<List<String>> sslCiphers;
 
     /**
-     * @return 加密套件。
+     * @return Cipher suite
      * 
      */
     public Optional<Output<List<String>>> sslCiphers() {
@@ -705,14 +705,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * TLS协议版本。如:TLSv1,TLSv1.1,TLSv1.2,TLSv1.3。
+     * TLS protocol version. For example: TLSv1, TLSv1.1, TLSv1.2, TLSv1.3
      * 
      */
     @Import(name="sslProtocols")
     private @Nullable Output<List<String>> sslProtocols;
 
     /**
-     * @return TLS协议版本。如:TLSv1,TLSv1.1,TLSv1.2,TLSv1.3。
+     * @return TLS protocol version. For example: TLSv1, TLSv1.1, TLSv1.2, TLSv1.3
      * 
      */
     public Optional<Output<List<String>>> sslProtocols() {
@@ -720,14 +720,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启托管BOT防护。
+     * Whether to enable managed bot protection.
      * 
      */
     @Import(name="systemBotEnable")
     private @Nullable Output<Integer> systemBotEnable;
 
     /**
-     * @return 是否开启托管BOT防护。
+     * @return Whether to enable managed bot protection.
      * 
      */
     public Optional<Output<Integer>> systemBotEnable() {
@@ -735,14 +735,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启防篡改。
+     * Whether to enable anti-tampering.
      * 
      */
     @Import(name="tamperProofEnable")
     private @Nullable Output<Integer> tamperProofEnable;
 
     /**
-     * @return 是否开启防篡改。
+     * @return Whether to enable anti-tampering.
      * 
      */
     public Optional<Output<Integer>> tamperProofEnable() {
@@ -750,14 +750,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启日志服务。0:关闭,1:开启。
+     * Log service enabled. 0: Off, 1: On
      * 
      */
     @Import(name="tlsEnable")
     private @Nullable Output<Integer> tlsEnable;
 
     /**
-     * @return 是否开启日志服务。0:关闭,1:开启。
+     * @return Log service enabled. 0: Off, 1: On
      * 
      */
     public Optional<Output<Integer>> tlsEnable() {
@@ -765,14 +765,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 日志字段配置详情。
+     * Log field configuration details
      * 
      */
     @Import(name="tlsFieldsConfig")
     private @Nullable Output<DomainTlsFieldsConfigArgs> tlsFieldsConfig;
 
     /**
-     * @return 日志字段配置详情。
+     * @return Log field configuration details
      * 
      */
     public Optional<Output<DomainTlsFieldsConfigArgs>> tlsFieldsConfig() {
@@ -795,14 +795,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启WAF防护。
+     * WAF protection enabled
      * 
      */
     @Import(name="wafEnable")
     private @Nullable Output<Integer> wafEnable;
 
     /**
-     * @return 是否开启WAF防护。
+     * @return WAF protection enabled
      * 
      */
     public Optional<Output<Integer>> wafEnable() {
@@ -810,14 +810,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启白名单请求防护。
+     * Allowlist request protection enabled
      * 
      */
     @Import(name="wafWhiteReqEnable")
     private @Nullable Output<Integer> wafWhiteReqEnable;
 
     /**
-     * @return 是否开启白名单请求防护。
+     * @return Allowlist request protection enabled
      * 
      */
     public Optional<Output<Integer>> wafWhiteReqEnable() {
@@ -825,14 +825,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启白名单防护。
+     * Whether to enable allowlist protection.
      * 
      */
     @Import(name="whiteEnable")
     private @Nullable Output<Integer> whiteEnable;
 
     /**
-     * @return 是否开启白名单防护。
+     * @return Whether to enable allowlist protection.
      * 
      */
     public Optional<Output<Integer>> whiteEnable() {
@@ -840,14 +840,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否开启字段白名单防护。
+     * Field allowlist protection enabled
      * 
      */
     @Import(name="whiteFieldEnable")
     private @Nullable Output<Integer> whiteFieldEnable;
 
     /**
-     * @return 是否开启字段白名单防护。
+     * @return Field allowlist protection enabled
      * 
      */
     public Optional<Output<Integer>> whiteFieldEnable() {
@@ -932,7 +932,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accessMode 接入模式。10：CNAME 接入，11：负载均衡（CLB）7 层接入。
+         * @param accessMode Access mode. 10: CNAME access, 11: Layer 7 load balancing (CLB) access.
          * 
          * @return builder
          * 
@@ -943,7 +943,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accessMode 接入模式。10：CNAME 接入，11：负载均衡（CLB）7 层接入。
+         * @param accessMode Access mode. 10: CNAME access, 11: Layer 7 load balancing (CLB) access.
          * 
          * @return builder
          * 
@@ -953,7 +953,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param apiEnable 是否开启了 API 防护策略。0：关闭，1：开启。
+         * @param apiEnable API protection policy enabled. 0: Off, 1: On
          * 
          * @return builder
          * 
@@ -964,7 +964,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param apiEnable 是否开启了 API 防护策略。0：关闭，1：开启。
+         * @param apiEnable API protection policy enabled. 0: Off, 1: On
          * 
          * @return builder
          * 
@@ -974,7 +974,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoCcEnable 是否开启智能 CC 防护策略。0：关闭，1：开启。
+         * @param autoCcEnable Whether to enable intelligent CC protection policy. 0: Disabled, 1: Enabled.
          * 
          * @return builder
          * 
@@ -985,7 +985,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoCcEnable 是否开启智能 CC 防护策略。0：关闭，1：开启。
+         * @param autoCcEnable Whether to enable intelligent CC protection policy. 0: Disabled, 1: Enabled.
          * 
          * @return builder
          * 
@@ -1008,7 +1008,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param blackIpEnable 是否开启了黑名单策略。0：关闭, 1：开启。
+         * @param blackIpEnable Denylist policy enabled. 0: Off, 1: On
          * 
          * @return builder
          * 
@@ -1019,7 +1019,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param blackIpEnable 是否开启了黑名单策略。0：关闭, 1：开启。
+         * @param blackIpEnable Denylist policy enabled. 0: Off, 1: On
          * 
          * @return builder
          * 
@@ -1029,7 +1029,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param blackLctEnable 是否开启了区域封禁策略。0：关闭;1：开启。
+         * @param blackLctEnable Whether to enable regional blocking policy. 0: Disabled; 1: Enabled.
          * 
          * @return builder
          * 
@@ -1040,7 +1040,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param blackLctEnable 是否开启了区域封禁策略。0：关闭;1：开启。
+         * @param blackLctEnable Whether to enable regional blocking policy. 0: Disabled; 1: Enabled.
          * 
          * @return builder
          * 
@@ -1050,7 +1050,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param botDytokenEnable 是否开启动态Token防护。
+         * @param botDytokenEnable Dynamic token protection enabled
          * 
          * @return builder
          * 
@@ -1061,7 +1061,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param botDytokenEnable 是否开启动态Token防护。
+         * @param botDytokenEnable Dynamic token protection enabled
          * 
          * @return builder
          * 
@@ -1071,9 +1071,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param botFrequencyEnable 是否开启 bot 频率限制策略。
-         * 0：关闭
-         * 1：开启。
+         * @param botFrequencyEnable Bot rate limit policy enabled.
+         * 0: Off
+         * 1: On
          * 
          * @return builder
          * 
@@ -1084,9 +1084,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param botFrequencyEnable 是否开启 bot 频率限制策略。
-         * 0：关闭
-         * 1：开启。
+         * @param botFrequencyEnable Bot rate limit policy enabled.
+         * 0: Off
+         * 1: On
          * 
          * @return builder
          * 
@@ -1096,9 +1096,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param botRepeatEnable 是否开启 bot 统计防护策略。
-         * 0：关闭
-         * 1：开启。
+         * @param botRepeatEnable Bot statistics protection policy enabled.
+         * 0: Off
+         * 1: On
          * 
          * @return builder
          * 
@@ -1109,9 +1109,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param botRepeatEnable 是否开启 bot 统计防护策略。
-         * 0：关闭
-         * 1：开启。
+         * @param botRepeatEnable Bot statistics protection policy enabled.
+         * 0: Off
+         * 1: On
          * 
          * @return builder
          * 
@@ -1121,11 +1121,11 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param botSequenceDefaultAction 设置 bot 行为地图策略默认动作，当 BotSequenceEnable = 1 开启状态时生效。默认为 0 （观察）。
-         * 0：观察
-         * 2：拦截
-         * 6：JS 挑战
-         * 7：人机验证。
+         * @param botSequenceDefaultAction Set the default action for the bot behavior map policy. Effective when BotSequenceEnable = 1 is enabled. Default is 0 (Observe).
+         * 0: Observe
+         * 2: Intercept
+         * 6: JS Challenge
+         * 7: CAPTCHA.
          * 
          * @return builder
          * 
@@ -1136,11 +1136,11 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param botSequenceDefaultAction 设置 bot 行为地图策略默认动作，当 BotSequenceEnable = 1 开启状态时生效。默认为 0 （观察）。
-         * 0：观察
-         * 2：拦截
-         * 6：JS 挑战
-         * 7：人机验证。
+         * @param botSequenceDefaultAction Set the default action for the bot behavior map policy. Effective when BotSequenceEnable = 1 is enabled. Default is 0 (Observe).
+         * 0: Observe
+         * 2: Intercept
+         * 6: JS Challenge
+         * 7: CAPTCHA.
          * 
          * @return builder
          * 
@@ -1150,9 +1150,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param botSequenceEnable 是否开启 bot 行为地图。
-         * 0：关闭
-         * 1：开启。
+         * @param botSequenceEnable Whether to enable bot behavior map.
+         * 0: Off
+         * 1: On.
          * 
          * @return builder
          * 
@@ -1163,9 +1163,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param botSequenceEnable 是否开启 bot 行为地图。
-         * 0：关闭
-         * 1：开启。
+         * @param botSequenceEnable Whether to enable bot behavior map.
+         * 0: Off
+         * 1: On.
          * 
          * @return builder
          * 
@@ -1175,9 +1175,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ccEnable 是否开启 CC 防护策略。
-         * 0：关闭
-         * 1：开启。
+         * @param ccEnable Whether to enable CC protection policy.
+         * 0: Disabled
+         * 1: Enabled.
          * 
          * @return builder
          * 
@@ -1188,9 +1188,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ccEnable 是否开启 CC 防护策略。
-         * 0：关闭
-         * 1：开启。
+         * @param ccEnable Whether to enable CC protection policy.
+         * 0: Disabled
+         * 1: Enabled.
          * 
          * @return builder
          * 
@@ -1200,7 +1200,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateId 托管至证书中心的证书ID。
+         * @param certificateId Certificate ID managed in Certificate Center
          * 
          * @return builder
          * 
@@ -1211,7 +1211,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateId 托管至证书中心的证书ID。
+         * @param certificateId Certificate ID managed in Certificate Center
          * 
          * @return builder
          * 
@@ -1221,7 +1221,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificatePlatform 证书托管平台:waf/certificate_service。
+         * @param certificatePlatform Certificate hosting platform: waf/certificate_service.
          * 
          * @return builder
          * 
@@ -1232,7 +1232,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificatePlatform 证书托管平台:waf/certificate_service。
+         * @param certificatePlatform Certificate hosting platform: waf/certificate_service.
          * 
          * @return builder
          * 
@@ -1242,7 +1242,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clientIpLocation 客户端IP获取方式。0:自定义Header字段,1:通过X-Forwarded-For(XFF)字段中第一个公网IP地址作为客户端真实IP地址。
+         * @param clientIpLocation Client IP acquisition method. 0: Custom header field, 1: Use the first public IP address in the X-Forwarded-For (XFF) field as the real client IP address.
          * 
          * @return builder
          * 
@@ -1253,7 +1253,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clientIpLocation 客户端IP获取方式。0:自定义Header字段,1:通过X-Forwarded-For(XFF)字段中第一个公网IP地址作为客户端真实IP地址。
+         * @param clientIpLocation Client IP acquisition method. 0: Custom header field, 1: Use the first public IP address in the X-Forwarded-For (XFF) field as the real client IP address.
          * 
          * @return builder
          * 
@@ -1263,7 +1263,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clientMaxBodySize 客户端请求body最大值(MB)。
+         * @param clientMaxBodySize Maximum client request body size (MB).
          * 
          * @return builder
          * 
@@ -1274,7 +1274,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clientMaxBodySize 客户端请求body最大值(MB)。
+         * @param clientMaxBodySize Maximum client request body size (MB).
          * 
          * @return builder
          * 
@@ -1297,7 +1297,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customBotEnable 是否开启自定义BOT防护。
+         * @param customBotEnable Whether to enable custom bot protection.
          * 
          * @return builder
          * 
@@ -1308,7 +1308,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customBotEnable 是否开启自定义BOT防护。
+         * @param customBotEnable Whether to enable custom bot protection.
          * 
          * @return builder
          * 
@@ -1318,7 +1318,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customHeaders 自定义Header。
+         * @param customHeaders Custom header.
          * 
          * @return builder
          * 
@@ -1329,7 +1329,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customHeaders 自定义Header。
+         * @param customHeaders Custom header.
          * 
          * @return builder
          * 
@@ -1339,7 +1339,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customHeaders 自定义Header。
+         * @param customHeaders Custom header.
          * 
          * @return builder
          * 
@@ -1349,7 +1349,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customRspEnable 是否开启自定义响应。
+         * @param customRspEnable Whether to enable custom response.
          * 
          * @return builder
          * 
@@ -1360,7 +1360,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customRspEnable 是否开启自定义响应。
+         * @param customRspEnable Whether to enable custom response.
          * 
          * @return builder
          * 
@@ -1370,7 +1370,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customSni 自定义SNI。
+         * @param customSni Custom SNI.
          * 
          * @return builder
          * 
@@ -1381,7 +1381,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customSni 自定义SNI。
+         * @param customSni Custom SNI.
          * 
          * @return builder
          * 
@@ -1391,14 +1391,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param defenceMode 为例外 ALB 实例设置防护模式。
-         * 1：启用防护，已配置的防护策略生效。
-         * 2：暂停防护，仅执行转发而不检测，已配置的防护策略不生效。
-         * 3：回源模式，直接将请求解析至源站，不再转发至 WAF 实例。
-         * 设置例外防护实例后，域名可能还会存在以下防护状态：
-         * 5：部分启用，默认防护模式为启用防护，但存在例外实例为暂停防护或回源模式状态。
-         * 6：部分暂停，默认防护模式为暂停防护，但存在例外实例为启用防护或回源模式状态。
-         * 7：部分回源，默认防护模式为回源模式，但存在例外实例为启用防护或暂停防护状态。
+         * @param defenceMode Set protection mode for exception ALB instances.
+         * 1: Enable protection. The configured protection policies take effect.
+         * 2: Pause protection. Only forwarding is performed without inspection; the configured protection policies do not take effect.
+         * 3: Origin mode. Requests are sent directly to the origin server and are no longer forwarded to the WAF instance.
+         * After configuring exception protection instances, the domain may also have the following protection statuses:
+         * 5: Partially enabled. The default protection mode is enabled, but some exception instances are in paused protection or origin mode.
+         * 6: Partially paused. The default protection mode is paused, but some exception instances are in enabled protection or origin mode.
+         * 7: Partially origin. The default protection mode is origin mode, but some exception instances are in enabled protection or paused protection.
          * 
          * @return builder
          * 
@@ -1409,14 +1409,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param defenceMode 为例外 ALB 实例设置防护模式。
-         * 1：启用防护，已配置的防护策略生效。
-         * 2：暂停防护，仅执行转发而不检测，已配置的防护策略不生效。
-         * 3：回源模式，直接将请求解析至源站，不再转发至 WAF 实例。
-         * 设置例外防护实例后，域名可能还会存在以下防护状态：
-         * 5：部分启用，默认防护模式为启用防护，但存在例外实例为暂停防护或回源模式状态。
-         * 6：部分暂停，默认防护模式为暂停防护，但存在例外实例为启用防护或回源模式状态。
-         * 7：部分回源，默认防护模式为回源模式，但存在例外实例为启用防护或暂停防护状态。
+         * @param defenceMode Set protection mode for exception ALB instances.
+         * 1: Enable protection. The configured protection policies take effect.
+         * 2: Pause protection. Only forwarding is performed without inspection; the configured protection policies do not take effect.
+         * 3: Origin mode. Requests are sent directly to the origin server and are no longer forwarded to the WAF instance.
+         * After configuring exception protection instances, the domain may also have the following protection statuses:
+         * 5: Partially enabled. The default protection mode is enabled, but some exception instances are in paused protection or origin mode.
+         * 6: Partially paused. The default protection mode is paused, but some exception instances are in enabled protection or origin mode.
+         * 7: Partially origin. The default protection mode is origin mode, but some exception instances are in enabled protection or paused protection.
          * 
          * @return builder
          * 
@@ -1426,7 +1426,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dlpEnable 是否开启数据泄露防护。
+         * @param dlpEnable Data leakage protection enabled
          * 
          * @return builder
          * 
@@ -1437,7 +1437,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dlpEnable 是否开启数据泄露防护。
+         * @param dlpEnable Data leakage protection enabled
          * 
          * @return builder
          * 
@@ -1447,7 +1447,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param domain 防护的域名信息，支持泛域名和精确域名。
+         * @param domain Protected domain information. Supports wildcard and exact domains
          * 
          * @return builder
          * 
@@ -1458,7 +1458,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param domain 防护的域名信息，支持泛域名和精确域名。
+         * @param domain Protected domain information. Supports wildcard and exact domains
          * 
          * @return builder
          * 
@@ -1468,7 +1468,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableCustomRedirect 是否开启用户自定义重定向。0:关闭,1:开启。
+         * @param enableCustomRedirect User-defined redirection enabled. 0: Off, 1: On
          * 
          * @return builder
          * 
@@ -1479,7 +1479,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableCustomRedirect 是否开启用户自定义重定向。0:关闭,1:开启。
+         * @param enableCustomRedirect User-defined redirection enabled. 0: Off, 1: On
          * 
          * @return builder
          * 
@@ -1489,7 +1489,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableHttp2 是否开启HTTP2.0。0:关闭,1:开启。
+         * @param enableHttp2 Whether to enable HTTP/2.0. 0: Disabled, 1: Enabled.
          * 
          * @return builder
          * 
@@ -1500,7 +1500,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableHttp2 是否开启HTTP2.0。0:关闭,1:开启。
+         * @param enableHttp2 Whether to enable HTTP/2.0. 0: Disabled, 1: Enabled.
          * 
          * @return builder
          * 
@@ -1510,7 +1510,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableIpv6 是否支持防护Ipv6请求。0:关闭,1:开启。
+         * @param enableIpv6 IPv6 request protection supported. 0: Off, 1: On
          * 
          * @return builder
          * 
@@ -1521,7 +1521,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableIpv6 是否支持防护Ipv6请求。0:关闭,1:开启。
+         * @param enableIpv6 IPv6 request protection supported. 0: Off, 1: On
          * 
          * @return builder
          * 
@@ -1531,7 +1531,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableSni 是否开启SNI配置。0:关闭,1:开启。
+         * @param enableSni Whether to enable SNI configuration. 0: Off, 1: On.
          * 
          * @return builder
          * 
@@ -1542,7 +1542,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableSni 是否开启SNI配置。0:关闭,1:开启。
+         * @param enableSni Whether to enable SNI configuration. 0: Off, 1: On.
          * 
          * @return builder
          * 
@@ -1552,7 +1552,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keepAliveRequest 长连接复用个数。
+         * @param keepAliveRequest Persistent connection reuse count
          * 
          * @return builder
          * 
@@ -1563,7 +1563,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keepAliveRequest 长连接复用个数。
+         * @param keepAliveRequest Persistent connection reuse count
          * 
          * @return builder
          * 
@@ -1573,7 +1573,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keepAliveTimeout 长连接保持时间(秒)。
+         * @param keepAliveTimeout Persistent connection keep-alive time (seconds)
          * 
          * @return builder
          * 
@@ -1584,7 +1584,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param keepAliveTimeout 长连接保持时间(秒)。
+         * @param keepAliveTimeout Persistent connection keep-alive time (seconds)
          * 
          * @return builder
          * 
@@ -1594,7 +1594,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lbAlgorithm 负载均衡算法类型。wrr:加权轮询,wlc:加权最小连接数,sh:源地址哈希。
+         * @param lbAlgorithm Load balancing algorithm type. wrr: Weighted round robin, wlc: Weighted least connections, sh: Source address hash.
          * 
          * @return builder
          * 
@@ -1605,7 +1605,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lbAlgorithm 负载均衡算法类型。wrr:加权轮询,wlc:加权最小连接数,sh:源地址哈希。
+         * @param lbAlgorithm Load balancing algorithm type. wrr: Weighted round robin, wlc: Weighted least connections, sh: Source address hash.
          * 
          * @return builder
          * 
@@ -1615,7 +1615,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 项目名称。
+         * @param projectName Project name.
          * 
          * @return builder
          * 
@@ -1626,7 +1626,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 项目名称。
+         * @param projectName Project name.
          * 
          * @return builder
          * 
@@ -1636,7 +1636,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocolFollow 是否开启协议跟随。0:关闭,1:开启。
+         * @param protocolFollow Protocol following enabled. 0: Off, 1: On
          * 
          * @return builder
          * 
@@ -1647,7 +1647,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocolFollow 是否开启协议跟随。0:关闭,1:开启。
+         * @param protocolFollow Protocol following enabled. 0: Off, 1: On
          * 
          * @return builder
          * 
@@ -1657,7 +1657,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocolPorts 接入端口信息。
+         * @param protocolPorts Access port information
          * 
          * @return builder
          * 
@@ -1668,7 +1668,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocolPorts 接入端口信息。
+         * @param protocolPorts Access port information
          * 
          * @return builder
          * 
@@ -1678,7 +1678,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocols 接入协议类型,支持HTTP/HTTPS。
+         * @param protocols Access protocol type: supports HTTP/HTTPS
          * 
          * @return builder
          * 
@@ -1689,7 +1689,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocols 接入协议类型,支持HTTP/HTTPS。
+         * @param protocols Access protocol type: supports HTTP/HTTPS
          * 
          * @return builder
          * 
@@ -1699,7 +1699,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protocols 接入协议类型,支持HTTP/HTTPS。
+         * @param protocols Access protocol type: supports HTTP/HTTPS
          * 
          * @return builder
          * 
@@ -1709,7 +1709,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyConfig 是否开启代理配置。0:关闭,1:开启。
+         * @param proxyConfig Proxy configuration enabled. 0: Off, 1: On
          * 
          * @return builder
          * 
@@ -1720,7 +1720,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyConfig 是否开启代理配置。0:关闭,1:开启。
+         * @param proxyConfig Proxy configuration enabled. 0: Off, 1: On
          * 
          * @return builder
          * 
@@ -1730,7 +1730,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyConnectTimeout WAF和后端服务器的建连超时时间(秒)。
+         * @param proxyConnectTimeout Connection timeout between WAF and backend server (seconds).
          * 
          * @return builder
          * 
@@ -1741,7 +1741,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyConnectTimeout WAF和后端服务器的建连超时时间(秒)。
+         * @param proxyConnectTimeout Connection timeout between WAF and backend server (seconds).
          * 
          * @return builder
          * 
@@ -1751,7 +1751,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyKeepAlive WAF回源长连接可复用个数。
+         * @param proxyKeepAlive Number of reusable WAF origin persistent connections.
          * 
          * @return builder
          * 
@@ -1762,7 +1762,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyKeepAlive WAF回源长连接可复用个数。
+         * @param proxyKeepAlive Number of reusable WAF origin persistent connections.
          * 
          * @return builder
          * 
@@ -1772,7 +1772,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyKeepAliveTimeout 空闲长连接超时时间(秒)。
+         * @param proxyKeepAliveTimeout Idle persistent connection timeout (seconds)
          * 
          * @return builder
          * 
@@ -1783,7 +1783,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyKeepAliveTimeout 空闲长连接超时时间(秒)。
+         * @param proxyKeepAliveTimeout Idle persistent connection timeout (seconds)
          * 
          * @return builder
          * 
@@ -1793,7 +1793,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyReadTimeout WAF从后端服务器读取响应的超时时间(秒)。
+         * @param proxyReadTimeout Timeout for WAF to read response from backend server (seconds).
          * 
          * @return builder
          * 
@@ -1804,7 +1804,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyReadTimeout WAF从后端服务器读取响应的超时时间(秒)。
+         * @param proxyReadTimeout Timeout for WAF to read response from backend server (seconds).
          * 
          * @return builder
          * 
@@ -1814,7 +1814,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyRetry WAF回源重试次数。
+         * @param proxyRetry WAF origin retry count.
          * 
          * @return builder
          * 
@@ -1825,7 +1825,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyRetry WAF回源重试次数。
+         * @param proxyRetry WAF origin retry count.
          * 
          * @return builder
          * 
@@ -1835,7 +1835,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyWriteTimeout WAF将请求传输到后端服务器的超时时间(秒)。
+         * @param proxyWriteTimeout Timeout for WAF to transmit request to backend server (seconds).
          * 
          * @return builder
          * 
@@ -1846,7 +1846,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyWriteTimeout WAF将请求传输到后端服务器的超时时间(秒)。
+         * @param proxyWriteTimeout Timeout for WAF to transmit request to backend server (seconds).
          * 
          * @return builder
          * 
@@ -1856,7 +1856,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param publicRealServer CNAME接入回源方式。0:私网回源,1:公网回源。
+         * @param publicRealServer CNAME access origin method. 0: Private network origin, 1: Public network origin.
          * 
          * @return builder
          * 
@@ -1867,7 +1867,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param publicRealServer CNAME接入回源方式。0:私网回源,1:公网回源。
+         * @param publicRealServer CNAME access origin method. 0: Private network origin, 1: Public network origin.
          * 
          * @return builder
          * 
@@ -1877,7 +1877,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslCiphers 加密套件。
+         * @param sslCiphers Cipher suite
          * 
          * @return builder
          * 
@@ -1888,7 +1888,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslCiphers 加密套件。
+         * @param sslCiphers Cipher suite
          * 
          * @return builder
          * 
@@ -1898,7 +1898,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslCiphers 加密套件。
+         * @param sslCiphers Cipher suite
          * 
          * @return builder
          * 
@@ -1908,7 +1908,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslProtocols TLS协议版本。如:TLSv1,TLSv1.1,TLSv1.2,TLSv1.3。
+         * @param sslProtocols TLS protocol version. For example: TLSv1, TLSv1.1, TLSv1.2, TLSv1.3
          * 
          * @return builder
          * 
@@ -1919,7 +1919,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslProtocols TLS协议版本。如:TLSv1,TLSv1.1,TLSv1.2,TLSv1.3。
+         * @param sslProtocols TLS protocol version. For example: TLSv1, TLSv1.1, TLSv1.2, TLSv1.3
          * 
          * @return builder
          * 
@@ -1929,7 +1929,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sslProtocols TLS协议版本。如:TLSv1,TLSv1.1,TLSv1.2,TLSv1.3。
+         * @param sslProtocols TLS protocol version. For example: TLSv1, TLSv1.1, TLSv1.2, TLSv1.3
          * 
          * @return builder
          * 
@@ -1939,7 +1939,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param systemBotEnable 是否开启托管BOT防护。
+         * @param systemBotEnable Whether to enable managed bot protection.
          * 
          * @return builder
          * 
@@ -1950,7 +1950,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param systemBotEnable 是否开启托管BOT防护。
+         * @param systemBotEnable Whether to enable managed bot protection.
          * 
          * @return builder
          * 
@@ -1960,7 +1960,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param tamperProofEnable 是否开启防篡改。
+         * @param tamperProofEnable Whether to enable anti-tampering.
          * 
          * @return builder
          * 
@@ -1971,7 +1971,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param tamperProofEnable 是否开启防篡改。
+         * @param tamperProofEnable Whether to enable anti-tampering.
          * 
          * @return builder
          * 
@@ -1981,7 +1981,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param tlsEnable 是否开启日志服务。0:关闭,1:开启。
+         * @param tlsEnable Log service enabled. 0: Off, 1: On
          * 
          * @return builder
          * 
@@ -1992,7 +1992,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param tlsEnable 是否开启日志服务。0:关闭,1:开启。
+         * @param tlsEnable Log service enabled. 0: Off, 1: On
          * 
          * @return builder
          * 
@@ -2002,7 +2002,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param tlsFieldsConfig 日志字段配置详情。
+         * @param tlsFieldsConfig Log field configuration details
          * 
          * @return builder
          * 
@@ -2013,7 +2013,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param tlsFieldsConfig 日志字段配置详情。
+         * @param tlsFieldsConfig Log field configuration details
          * 
          * @return builder
          * 
@@ -2044,7 +2044,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param wafEnable 是否开启WAF防护。
+         * @param wafEnable WAF protection enabled
          * 
          * @return builder
          * 
@@ -2055,7 +2055,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param wafEnable 是否开启WAF防护。
+         * @param wafEnable WAF protection enabled
          * 
          * @return builder
          * 
@@ -2065,7 +2065,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param wafWhiteReqEnable 是否开启白名单请求防护。
+         * @param wafWhiteReqEnable Allowlist request protection enabled
          * 
          * @return builder
          * 
@@ -2076,7 +2076,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param wafWhiteReqEnable 是否开启白名单请求防护。
+         * @param wafWhiteReqEnable Allowlist request protection enabled
          * 
          * @return builder
          * 
@@ -2086,7 +2086,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param whiteEnable 是否开启白名单防护。
+         * @param whiteEnable Whether to enable allowlist protection.
          * 
          * @return builder
          * 
@@ -2097,7 +2097,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param whiteEnable 是否开启白名单防护。
+         * @param whiteEnable Whether to enable allowlist protection.
          * 
          * @return builder
          * 
@@ -2107,7 +2107,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param whiteFieldEnable 是否开启字段白名单防护。
+         * @param whiteFieldEnable Field allowlist protection enabled
          * 
          * @return builder
          * 
@@ -2118,7 +2118,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param whiteFieldEnable 是否开启字段白名单防护。
+         * @param whiteFieldEnable Field allowlist protection enabled
          * 
          * @return builder
          * 

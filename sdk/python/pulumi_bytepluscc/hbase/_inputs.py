@@ -28,27 +28,27 @@ if not MYPY:
     class InstanceEndpointArgsDict(TypedDict):
         address_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        连接地址类型，关于连接地址的更多信息，请参见连接地址类型。取值范围如下：Zk：ZK 地址。Thrift：Thrift2 地址。HBaseReUsedEipId：当 ZK 连接地址或 Thrift2 连接地址开启了公网访问时，会返回该参数，表示实例中其他组件（如 RS 节点、Master 节点等）共享绑定使用的 EIP ID 信息。
+        Connection address type. For more information about connection addresses, see Connection Address Types. The value range is as follows: Zk: ZK address. Thrift: Thrift2 address. HBaseReUsedEipId: When public access is enabled for the ZK or Thrift2 connection address, this parameter is returned, indicating the EIP ID information shared and used by other components in the instance (such as RS nodes, Master nodes, etc.)
         """
         eip_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        当 ZK 连接地址或 Thrift2 连接地址开启了公网访问时，会返回该参数，表示 EIP ID。
+        When the ZK connection address or Thrift2 connection address enables public access, this parameter is returned, indicating the EIP ID.
         """
         endpoint_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        连接地址 ID。说明默认仅返回 ZK 私网连接地址。若您申请了 Thrift2 连接地址，或者为 ZK 或 Thrift2 连接地址开启了公网访问，那么还会同时对应连接地址的 ID。当连接地址类型为 HBaseReUsedEipId 时，连接地址 ID 也固定为 HBaseReUsedEipId。
+        Connection address ID. By default, only the ZK private network connection address is returned. If you apply for a Thrift2 connection address or enable public access for the ZK or Thrift2 connection address, the corresponding connection address ID will also be returned. When the connection address type is HBaseReUsedEipId, the connection address ID is fixed as HBaseReUsedEipId
         """
         endpoint_str: NotRequired[pulumi.Input[builtins.str]]
         """
-        连接地址的连接串。说明默认仅返回 ZK 私网连接地址。若您申请了 Thrift2 连接地址，或者为 ZK 或 Thrift2 连接地址开启了公网访问，那么还会同时对应连接地址的连接串。当连接地址类型为 HBaseReUsedEipId 时，连接地址的连接串也固定为 HBaseReUsedEipId。
+        Connection string for the connection address. By default, only the ZK private network connection address is returned. If you have requested a Thrift2 connection address, or enabled public access for ZK or Thrift2 connection addresses, the corresponding connection string will also be provided. When the connection address type is HBaseReUsedEipId, the connection string is always set to HBaseReUsedEipId.
         """
         network_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        连接地址网络类型。取值范围如下：Public：公网访问地址。Private：私网访问地址。
+        Connection address network type. Value range: Public: public access address. Private: private access address.
         """
         private_dns_visibility: NotRequired[pulumi.Input[builtins.bool]]
         """
-        私网域名是否开启公网解析。
+        Whether public DNS resolution is enabled for the private network domain name.
         """
 elif False:
     InstanceEndpointArgsDict: TypeAlias = Mapping[str, Any]
@@ -63,12 +63,12 @@ class InstanceEndpointArgs:
                  network_type: Optional[pulumi.Input[builtins.str]] = None,
                  private_dns_visibility: Optional[pulumi.Input[builtins.bool]] = None):
         """
-        :param pulumi.Input[builtins.str] address_type: 连接地址类型，关于连接地址的更多信息，请参见连接地址类型。取值范围如下：Zk：ZK 地址。Thrift：Thrift2 地址。HBaseReUsedEipId：当 ZK 连接地址或 Thrift2 连接地址开启了公网访问时，会返回该参数，表示实例中其他组件（如 RS 节点、Master 节点等）共享绑定使用的 EIP ID 信息。
-        :param pulumi.Input[builtins.str] eip_id: 当 ZK 连接地址或 Thrift2 连接地址开启了公网访问时，会返回该参数，表示 EIP ID。
-        :param pulumi.Input[builtins.str] endpoint_id: 连接地址 ID。说明默认仅返回 ZK 私网连接地址。若您申请了 Thrift2 连接地址，或者为 ZK 或 Thrift2 连接地址开启了公网访问，那么还会同时对应连接地址的 ID。当连接地址类型为 HBaseReUsedEipId 时，连接地址 ID 也固定为 HBaseReUsedEipId。
-        :param pulumi.Input[builtins.str] endpoint_str: 连接地址的连接串。说明默认仅返回 ZK 私网连接地址。若您申请了 Thrift2 连接地址，或者为 ZK 或 Thrift2 连接地址开启了公网访问，那么还会同时对应连接地址的连接串。当连接地址类型为 HBaseReUsedEipId 时，连接地址的连接串也固定为 HBaseReUsedEipId。
-        :param pulumi.Input[builtins.str] network_type: 连接地址网络类型。取值范围如下：Public：公网访问地址。Private：私网访问地址。
-        :param pulumi.Input[builtins.bool] private_dns_visibility: 私网域名是否开启公网解析。
+        :param pulumi.Input[builtins.str] address_type: Connection address type. For more information about connection addresses, see Connection Address Types. The value range is as follows: Zk: ZK address. Thrift: Thrift2 address. HBaseReUsedEipId: When public access is enabled for the ZK or Thrift2 connection address, this parameter is returned, indicating the EIP ID information shared and used by other components in the instance (such as RS nodes, Master nodes, etc.)
+        :param pulumi.Input[builtins.str] eip_id: When the ZK connection address or Thrift2 connection address enables public access, this parameter is returned, indicating the EIP ID.
+        :param pulumi.Input[builtins.str] endpoint_id: Connection address ID. By default, only the ZK private network connection address is returned. If you apply for a Thrift2 connection address or enable public access for the ZK or Thrift2 connection address, the corresponding connection address ID will also be returned. When the connection address type is HBaseReUsedEipId, the connection address ID is fixed as HBaseReUsedEipId
+        :param pulumi.Input[builtins.str] endpoint_str: Connection string for the connection address. By default, only the ZK private network connection address is returned. If you have requested a Thrift2 connection address, or enabled public access for ZK or Thrift2 connection addresses, the corresponding connection string will also be provided. When the connection address type is HBaseReUsedEipId, the connection string is always set to HBaseReUsedEipId.
+        :param pulumi.Input[builtins.str] network_type: Connection address network type. Value range: Public: public access address. Private: private access address.
+        :param pulumi.Input[builtins.bool] private_dns_visibility: Whether public DNS resolution is enabled for the private network domain name.
         """
         if address_type is not None:
             pulumi.set(__self__, "address_type", address_type)
@@ -87,7 +87,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="addressType")
     def address_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        连接地址类型，关于连接地址的更多信息，请参见连接地址类型。取值范围如下：Zk：ZK 地址。Thrift：Thrift2 地址。HBaseReUsedEipId：当 ZK 连接地址或 Thrift2 连接地址开启了公网访问时，会返回该参数，表示实例中其他组件（如 RS 节点、Master 节点等）共享绑定使用的 EIP ID 信息。
+        Connection address type. For more information about connection addresses, see Connection Address Types. The value range is as follows: Zk: ZK address. Thrift: Thrift2 address. HBaseReUsedEipId: When public access is enabled for the ZK or Thrift2 connection address, this parameter is returned, indicating the EIP ID information shared and used by other components in the instance (such as RS nodes, Master nodes, etc.)
         """
         return pulumi.get(self, "address_type")
 
@@ -99,7 +99,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="eipId")
     def eip_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        当 ZK 连接地址或 Thrift2 连接地址开启了公网访问时，会返回该参数，表示 EIP ID。
+        When the ZK connection address or Thrift2 connection address enables public access, this parameter is returned, indicating the EIP ID.
         """
         return pulumi.get(self, "eip_id")
 
@@ -111,7 +111,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="endpointId")
     def endpoint_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        连接地址 ID。说明默认仅返回 ZK 私网连接地址。若您申请了 Thrift2 连接地址，或者为 ZK 或 Thrift2 连接地址开启了公网访问，那么还会同时对应连接地址的 ID。当连接地址类型为 HBaseReUsedEipId 时，连接地址 ID 也固定为 HBaseReUsedEipId。
+        Connection address ID. By default, only the ZK private network connection address is returned. If you apply for a Thrift2 connection address or enable public access for the ZK or Thrift2 connection address, the corresponding connection address ID will also be returned. When the connection address type is HBaseReUsedEipId, the connection address ID is fixed as HBaseReUsedEipId
         """
         return pulumi.get(self, "endpoint_id")
 
@@ -123,7 +123,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="endpointStr")
     def endpoint_str(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        连接地址的连接串。说明默认仅返回 ZK 私网连接地址。若您申请了 Thrift2 连接地址，或者为 ZK 或 Thrift2 连接地址开启了公网访问，那么还会同时对应连接地址的连接串。当连接地址类型为 HBaseReUsedEipId 时，连接地址的连接串也固定为 HBaseReUsedEipId。
+        Connection string for the connection address. By default, only the ZK private network connection address is returned. If you have requested a Thrift2 connection address, or enabled public access for ZK or Thrift2 connection addresses, the corresponding connection string will also be provided. When the connection address type is HBaseReUsedEipId, the connection string is always set to HBaseReUsedEipId.
         """
         return pulumi.get(self, "endpoint_str")
 
@@ -135,7 +135,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="networkType")
     def network_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        连接地址网络类型。取值范围如下：Public：公网访问地址。Private：私网访问地址。
+        Connection address network type. Value range: Public: public access address. Private: private access address.
         """
         return pulumi.get(self, "network_type")
 
@@ -147,7 +147,7 @@ class InstanceEndpointArgs:
     @pulumi.getter(name="privateDnsVisibility")
     def private_dns_visibility(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        私网域名是否开启公网解析。
+        Whether public DNS resolution is enabled for the private network domain name.
         """
         return pulumi.get(self, "private_dns_visibility")
 
@@ -160,11 +160,11 @@ if not MYPY:
     class InstanceTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例所绑定标签的标签键。
+        Tag key of the tags bound to the instance
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        实例所绑定标签的标签值。
+        Tag values bound to the instance.
         """
 elif False:
     InstanceTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -175,8 +175,8 @@ class InstanceTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 实例所绑定标签的标签键。
-        :param pulumi.Input[builtins.str] value: 实例所绑定标签的标签值。
+        :param pulumi.Input[builtins.str] key: Tag key of the tags bound to the instance
+        :param pulumi.Input[builtins.str] value: Tag values bound to the instance.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -187,7 +187,7 @@ class InstanceTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所绑定标签的标签键。
+        Tag key of the tags bound to the instance
         """
         return pulumi.get(self, "key")
 
@@ -199,7 +199,7 @@ class InstanceTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例所绑定标签的标签值。
+        Tag values bound to the instance.
         """
         return pulumi.get(self, "value")
 

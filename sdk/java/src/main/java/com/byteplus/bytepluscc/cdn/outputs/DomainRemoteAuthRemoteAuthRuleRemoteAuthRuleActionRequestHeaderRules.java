@@ -15,20 +15,20 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRules {
     /**
-     * @return 表示鉴权请求头的设置策略。
+     * @return Indicates the configuration policy for authentication request headers.
      * 
      */
     private @Nullable DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponents requestHeaderComponents;
     private @Nullable List<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderInstance> requestHeaderInstances;
     /**
-     * @return 表示鉴权请求中 HOST 头部的值。该参数的默认值是 default，表示 HOST 头部的值与您的加速域名相同。
+     * @return Indicates the value of the HOST header in authentication requests. The default value for this parameter is default, meaning the HOST header matches your acceleration domain name.
      * 
      */
     private @Nullable String requestHost;
 
     private DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRules() {}
     /**
-     * @return 表示鉴权请求头的设置策略。
+     * @return Indicates the configuration policy for authentication request headers.
      * 
      */
     public Optional<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponents> requestHeaderComponents() {
@@ -38,7 +38,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHead
         return this.requestHeaderInstances == null ? List.of() : this.requestHeaderInstances;
     }
     /**
-     * @return 表示鉴权请求中 HOST 头部的值。该参数的默认值是 default，表示 HOST 头部的值与您的加速域名相同。
+     * @return Indicates the value of the HOST header in authentication requests. The default value for this parameter is default, meaning the HOST header matches your acceleration domain name.
      * 
      */
     public Optional<String> requestHost() {

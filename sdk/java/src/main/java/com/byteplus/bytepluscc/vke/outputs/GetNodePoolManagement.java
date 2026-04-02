@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetNodePoolManagement {
     /**
-     * @return 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+     * @return Enable managed mode for node pool. Options:   - true: on   - false: off
      * 
      */
     private Boolean enabled;
     /**
-     * @return 检查自愈配置。
+     * @return Check self-healing configuration.
      * 
      */
     private GetNodePoolManagementRemedyConfig remedyConfig;
 
     private GetNodePoolManagement() {}
     /**
-     * @return 节点池是否开启托管。取值：  - true：开启。  - false：关闭。。
+     * @return Enable managed mode for node pool. Options:   - true: on   - false: off
      * 
      */
     public Boolean enabled() {
         return this.enabled;
     }
     /**
-     * @return 检查自愈配置。
+     * @return Check self-healing configuration.
      * 
      */
     public GetNodePoolManagementRemedyConfig remedyConfig() {

@@ -11,62 +11,62 @@ import java.util.Objects;
 @CustomType
 public final class GetRuleRedirectConfig {
     /**
-     * @return 转发规则重定向的域名，当前仅支持精确域名。规范如下：需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含字母、数字、‘.’、‘-‘。长度限制为1 ～ 128个字符。符合域名规范的精确域名，例如：www.test.com。
+     * @return The domain name for forwarding rule redirection currently supports only exact domain names. Specifications: Must contain at least one &#39;.&#39;, and cannot start or end with &#39;.&#39;. Only letters, numbers, &#39;.&#39;, and &#39;-&#39; are allowed. Length must be between 1 and 128 characters. Example of a valid exact domain name: www.test.com.
      * 
      */
     private String host;
     /**
-     * @return 转发规则重定向的路径。规范如下：必须以正斜线“/”开头，字符‘/’不能连续出现。仅允许包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&amp;’、‘＝’等字符。长度限制为1 ～ 128个字符。
+     * @return Path for forwarding rule redirection. Specifications: Must start with a forward slash &#39;/&#39;. Consecutive &#39;/&#39; characters are not allowed. Only letters, numbers, &#39;-&#39;, &#39;_&#39;, &#39;/&#39;, &#39;.&#39;, &#39;%&#39;, &#39;?&#39;, &#39;#&#39;, &#39;&amp;&#39;, &#39;=&#39;, and other specified characters are allowed. Length must be between 1 and 128 characters.
      * 
      */
     private String path;
     /**
-     * @return 转发规则重定向的端口，取值范围为 1~65535。
+     * @return Port for forwarding rule redirection. Value range: 1~65535.
      * 
      */
     private String port;
     /**
-     * @return 转发规则重定向的协议。取值如下：HTTP。HTTPS（默认值）。
+     * @return Protocol for forwarding rule redirection. Options: HTTP. HTTPS (default).
      * 
      */
     private String protocol;
     /**
-     * @return 转发规则重定向的状态码。取值如下：301（默认）：表示请求的资源已被永久移动到新的 URL，客户端应该使用新的 URL 进行后续请求。302：表示请求的资源被临时移动到新的 URL，但未来可能会再次更改，客户端应该使用新的 URL 进行后续请求。307：与 302 类似，但在重定向时要求客户端保持请求方法不变。例如，原来是 GET 请求，则重定向后仍然是 GET 请求。308：与 301 类似，但在重定向时要求客户端保持请求方法不变。
+     * @return Status code for forwarding rule redirection. Options: 301 (default): Indicates the requested resource has been permanently moved to a new URL. The client should use the new URL for subsequent requests. 302: Indicates the requested resource has been temporarily moved to a new URL and may change again in the future. The client should use the new URL for subsequent requests. 307: Similar to 302, but requires the client to keep the request method unchanged during redirection. For example, if the original request is GET, the redirected request remains GET. 308: Similar to 301, but requires the client to keep the request method unchanged during redirection.
      * 
      */
     private String statusCode;
 
     private GetRuleRedirectConfig() {}
     /**
-     * @return 转发规则重定向的域名，当前仅支持精确域名。规范如下：需至少包含一个‘.’，且不允许以‘.’开头或结尾。仅允许包含字母、数字、‘.’、‘-‘。长度限制为1 ～ 128个字符。符合域名规范的精确域名，例如：www.test.com。
+     * @return The domain name for forwarding rule redirection currently supports only exact domain names. Specifications: Must contain at least one &#39;.&#39;, and cannot start or end with &#39;.&#39;. Only letters, numbers, &#39;.&#39;, and &#39;-&#39; are allowed. Length must be between 1 and 128 characters. Example of a valid exact domain name: www.test.com.
      * 
      */
     public String host() {
         return this.host;
     }
     /**
-     * @return 转发规则重定向的路径。规范如下：必须以正斜线“/”开头，字符‘/’不能连续出现。仅允许包含字母、数字、‘-’、‘_’、‘/’、‘.’、‘%’、‘?’、‘#’、‘&amp;’、‘＝’等字符。长度限制为1 ～ 128个字符。
+     * @return Path for forwarding rule redirection. Specifications: Must start with a forward slash &#39;/&#39;. Consecutive &#39;/&#39; characters are not allowed. Only letters, numbers, &#39;-&#39;, &#39;_&#39;, &#39;/&#39;, &#39;.&#39;, &#39;%&#39;, &#39;?&#39;, &#39;#&#39;, &#39;&amp;&#39;, &#39;=&#39;, and other specified characters are allowed. Length must be between 1 and 128 characters.
      * 
      */
     public String path() {
         return this.path;
     }
     /**
-     * @return 转发规则重定向的端口，取值范围为 1~65535。
+     * @return Port for forwarding rule redirection. Value range: 1~65535.
      * 
      */
     public String port() {
         return this.port;
     }
     /**
-     * @return 转发规则重定向的协议。取值如下：HTTP。HTTPS（默认值）。
+     * @return Protocol for forwarding rule redirection. Options: HTTP. HTTPS (default).
      * 
      */
     public String protocol() {
         return this.protocol;
     }
     /**
-     * @return 转发规则重定向的状态码。取值如下：301（默认）：表示请求的资源已被永久移动到新的 URL，客户端应该使用新的 URL 进行后续请求。302：表示请求的资源被临时移动到新的 URL，但未来可能会再次更改，客户端应该使用新的 URL 进行后续请求。307：与 302 类似，但在重定向时要求客户端保持请求方法不变。例如，原来是 GET 请求，则重定向后仍然是 GET 请求。308：与 301 类似，但在重定向时要求客户端保持请求方法不变。
+     * @return Status code for forwarding rule redirection. Options: 301 (default): Indicates the requested resource has been permanently moved to a new URL. The client should use the new URL for subsequent requests. 302: Indicates the requested resource has been temporarily moved to a new URL and may change again in the future. The client should use the new URL for subsequent requests. 307: Similar to 302, but requires the client to keep the request method unchanged during redirection. For example, if the original request is GET, the redirected request remains GET. 308: Similar to 301, but requires the client to keep the request method unchanged during redirection.
      * 
      */
     public String statusCode() {

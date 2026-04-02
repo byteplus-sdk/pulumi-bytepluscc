@@ -15,35 +15,35 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr.Outputs
     public sealed class GetClusterApplicationResult
     {
         /// <summary>
-        /// 应用配置路径。
+        /// Application configuration path.
         /// </summary>
         public readonly string ApplicationConfigHome;
         /// <summary>
-        /// 应用安装路径。
+        /// Application installation path.
         /// </summary>
         public readonly string ApplicationHome;
         /// <summary>
-        /// 应用名称。
+        /// Application name.
         /// </summary>
         public readonly string ApplicationName;
         /// <summary>
-        /// 服务状态。NORMAL：正常；WARNING：告警；STOPPED：已停止；INIT：初始化中；INSTALLING：安装中；INSTALLED：已安装；STARTING：启动中；STARTED：已启动；STOPPING：停止中；UNINSTALLING：卸载中；UNINSTALLED：已卸载；EXCEPTION：异常。
+        /// Service status. NORMAL: normal; WARNING: alert; STOPPED: stopped; INIT: initializing; INSTALLING: installing; INSTALLED: installed; STARTING: starting; STARTED: started; STOPPING: stopping; UNINSTALLING: uninstalling; UNINSTALLED: uninstalled; EXCEPTION: exception.
         /// </summary>
         public readonly string ApplicationState;
         /// <summary>
-        /// 应用版本。
+        /// Application version.
         /// </summary>
         public readonly string ApplicationVersion;
         /// <summary>
-        /// 应用用户组。
+        /// Application user group.
         /// </summary>
         public readonly string Group;
         /// <summary>
-        /// 是否支持客户端。
+        /// Whether client is supported.
         /// </summary>
         public readonly bool SupportClient;
         /// <summary>
-        /// 应用用户。
+        /// Application user.
         /// </summary>
         public readonly string User;
 

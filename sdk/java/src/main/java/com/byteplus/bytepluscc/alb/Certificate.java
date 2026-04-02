@@ -16,7 +16,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * ALB 支持上传服务器证书、CA 证书到控制台，对上传的证书单独管理。
+ * ALB supports uploading server certificates and CA certificates to the console and manages uploaded certificates separately
  * 
  * ## Example Usage
  * 
@@ -72,182 +72,182 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:alb/certificate:Certificate")
 public class Certificate extends com.pulumi.resources.CustomResource {
     /**
-     * 证书ID。
+     * Certificate ID
      * 
      */
     @Export(name="certificateId", refs={String.class}, tree="[0]")
     private Output<String> certificateId;
 
     /**
-     * @return 证书ID。
+     * @return Certificate ID
      * 
      */
     public Output<String> certificateId() {
         return this.certificateId;
     }
     /**
-     * 证书名称，长度限制为1 ～ 128个字符，必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。
+     * Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
      * 
      */
     @Export(name="certificateName", refs={String.class}, tree="[0]")
     private Output<String> certificateName;
 
     /**
-     * @return 证书名称，长度限制为1 ～ 128个字符，必须以字母或中文开头，可包含数字、点号（.）、下划线（_）和短横线（-）。
+     * @return Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
      * 
      */
     public Output<String> certificateName() {
         return this.certificateName;
     }
     /**
-     * 证书类型，取值：CA：CA证书、Server：服务器证书。
+     * Certificate type. Options: CA: CA certificate; Server: server certificate
      * 
      */
     @Export(name="certificateType", refs={String.class}, tree="[0]")
     private Output<String> certificateType;
 
     /**
-     * @return 证书类型，取值：CA：CA证书、Server：服务器证书。
+     * @return Certificate type. Options: CA: CA certificate; Server: server certificate
      * 
      */
     public Output<String> certificateType() {
         return this.certificateType;
     }
     /**
-     * 证书创建时间。
+     * Certificate creation time
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 证书创建时间。
+     * @return Certificate creation time
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 证书描述。
+     * Certificate description
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 证书描述。
+     * @return Certificate description
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 证书域名。
+     * Certificate domain name
      * 
      */
     @Export(name="domainName", refs={String.class}, tree="[0]")
     private Output<String> domainName;
 
     /**
-     * @return 证书域名。
+     * @return Certificate domain name
      * 
      */
     public Output<String> domainName() {
         return this.domainName;
     }
     /**
-     * 证书过期时间。
+     * Certificate expiration time
      * 
      */
     @Export(name="expiredAt", refs={String.class}, tree="[0]")
     private Output<String> expiredAt;
 
     /**
-     * @return 证书过期时间。
+     * @return Certificate expiration time
      * 
      */
     public Output<String> expiredAt() {
         return this.expiredAt;
     }
     /**
-     * 证书关联的监听器列表。
+     * List of listeners associated with the certificate
      * 
      */
     @Export(name="listeners", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> listeners;
 
     /**
-     * @return 证书关联的监听器列表。
+     * @return List of listeners associated with the certificate
      * 
      */
     public Output<List<String>> listeners() {
         return this.listeners;
     }
     /**
-     * 服务器证书的私钥，当证书类型为Server时必填。
+     * Server certificate private key. Required when certificate type is Server
      * 
      */
     @Export(name="privateKey", refs={String.class}, tree="[0]")
     private Output<String> privateKey;
 
     /**
-     * @return 服务器证书的私钥，当证书类型为Server时必填。
+     * @return Server certificate private key. Required when certificate type is Server
      * 
      */
     public Output<String> privateKey() {
         return this.privateKey;
     }
     /**
-     * 项目名称。
+     * Project name
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 项目名称。
+     * @return Project name
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 服务器证书的公钥。
+     * Server certificate public key
      * 
      */
     @Export(name="publicKey", refs={String.class}, tree="[0]")
     private Output<String> publicKey;
 
     /**
-     * @return 服务器证书的公钥。
+     * @return Server certificate public key
      * 
      */
     public Output<String> publicKey() {
         return this.publicKey;
     }
     /**
-     * 证书扩展域名列表，用英文&#39;,&#39; 分隔多个域名， 包含(commonName,DnsName,IP)。
+     * Certificate subject alternative name list. Use English &#39;,&#39; to separate multiple domain names. Includes (commonName, DnsName, IP)
      * 
      */
     @Export(name="san", refs={String.class}, tree="[0]")
     private Output<String> san;
 
     /**
-     * @return 证书扩展域名列表，用英文&#39;,&#39; 分隔多个域名， 包含(commonName,DnsName,IP)。
+     * @return Certificate subject alternative name list. Use English &#39;,&#39; to separate multiple domain names. Includes (commonName, DnsName, IP)
      * 
      */
     public Output<String> san() {
         return this.san;
     }
     /**
-     * 证书的状态，取值为：Creating：创建中。Active：运行中。Deleting：删除中。
+     * Certificate status. Options: Creating: creating; Active: active; Deleting: deleting
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 证书的状态，取值为：Creating：创建中。Active：运行中。Deleting：删除中。
+     * @return Certificate status. Options: Creating: creating; Active: active; Deleting: deleting
      * 
      */
     public Output<String> status() {

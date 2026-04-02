@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainCustomizeAccessRuleCustomizeInstance {
     /**
-     * @return 表示列表中一条规则的配置。
+     * @return Describes the configuration for a rule in the list.
      * 
      */
     private GetDomainCustomizeAccessRuleCustomizeInstanceCustomizeRule customizeRule;
 
     private GetDomainCustomizeAccessRuleCustomizeInstance() {}
     /**
-     * @return 表示列表中一条规则的配置。
+     * @return Describes the configuration for a rule in the list.
      * 
      */
     public GetDomainCustomizeAccessRuleCustomizeInstanceCustomizeRule customizeRule() {

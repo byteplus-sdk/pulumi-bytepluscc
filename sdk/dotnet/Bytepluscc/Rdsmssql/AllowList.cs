@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
 {
     /// <summary>
-    /// API请求参数 - 创建RDS SQL Server白名单（CreateAllowList）。
+    /// API request parameter - Create RDS SQL Server allowlist (CreateAllowList)
     /// 
     /// ## Import
     /// 
@@ -23,49 +23,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
     public partial class AllowList : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+        /// IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
         /// </summary>
         [Output("allowList")]
         public Output<string> AllowListValue { get; private set; } = null!;
 
         /// <summary>
-        /// 白名单分类。
+        /// Allowlist category
         /// </summary>
         [Output("allowListCategory")]
         public Output<string> AllowListCategory { get; private set; } = null!;
 
         /// <summary>
-        /// 白名单描述。
+        /// Allowlist description
         /// </summary>
         [Output("allowListDesc")]
         public Output<string> AllowListDesc { get; private set; } = null!;
 
         /// <summary>
-        /// 白名单的id。
+        /// Allowlist ID
         /// </summary>
         [Output("allowListId")]
         public Output<string> AllowListId { get; private set; } = null!;
 
         /// <summary>
-        /// AllowListIP数量。
+        /// Allowlist IP count
         /// </summary>
         [Output("allowListIpNum")]
         public Output<int> AllowListIpNum { get; private set; } = null!;
 
         /// <summary>
-        /// 白名单名称。
+        /// Allowlist name
         /// </summary>
         [Output("allowListName")]
         public Output<string> AllowListName { get; private set; } = null!;
 
         /// <summary>
-        /// 白名单内的IP地址类型，当前仅支持IPv4。
+        /// IP address type in the allowlist. Only IPv4 is supported
         /// </summary>
         [Output("allowListType")]
         public Output<string> AllowListType { get; private set; } = null!;
 
         /// <summary>
-        /// 绑定的实例数量。解绑实例的白名单时必传。
+        /// Number of bound instances. Required when unbinding an instance from the allowlist
         /// </summary>
         [Output("associatedInstanceNum")]
         public Output<int> AssociatedInstanceNum { get; private set; } = null!;
@@ -74,19 +74,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
         public Output<ImmutableArray<Outputs.AllowListAssociatedInstance>> AssociatedInstances { get; private set; } = null!;
 
         /// <summary>
-        /// 实例ID。
+        /// Instance ID
         /// </summary>
         [Output("instanceId")]
         public Output<string> InstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// 项目名称。
+        /// Project name
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 安全组之外的、需要加入白名单的IP地址，可输入IP地址或CIDR格式的IP地址段。如果该字段与AllowList同时指定，以AllowList为准。
+        /// IP addresses outside the security group that need to be added to the allowlist. Enter IP addresses or CIDR-formatted IP ranges. If both this field and AllowList are specified, AllowList takes precedence
         /// </summary>
         [Output("userAllowList")]
         public Output<string> UserAllowList { get; private set; } = null!;
@@ -139,37 +139,37 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
     public sealed class AllowListArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+        /// IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
         /// </summary>
         [Input("allowList")]
         public Input<string>? AllowListValue { get; set; }
 
         /// <summary>
-        /// 白名单分类。
+        /// Allowlist category
         /// </summary>
         [Input("allowListCategory")]
         public Input<string>? AllowListCategory { get; set; }
 
         /// <summary>
-        /// 白名单描述。
+        /// Allowlist description
         /// </summary>
         [Input("allowListDesc")]
         public Input<string>? AllowListDesc { get; set; }
 
         /// <summary>
-        /// 白名单名称。
+        /// Allowlist name
         /// </summary>
         [Input("allowListName", required: true)]
         public Input<string> AllowListName { get; set; } = null!;
 
         /// <summary>
-        /// 白名单内的IP地址类型，当前仅支持IPv4。
+        /// IP address type in the allowlist. Only IPv4 is supported
         /// </summary>
         [Input("allowListType")]
         public Input<string>? AllowListType { get; set; }
 
         /// <summary>
-        /// 绑定的实例数量。解绑实例的白名单时必传。
+        /// Number of bound instances. Required when unbinding an instance from the allowlist
         /// </summary>
         [Input("associatedInstanceNum")]
         public Input<int>? AssociatedInstanceNum { get; set; }
@@ -183,19 +183,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
         }
 
         /// <summary>
-        /// 实例ID。
+        /// Instance ID
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 项目名称。
+        /// Project name
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 安全组之外的、需要加入白名单的IP地址，可输入IP地址或CIDR格式的IP地址段。如果该字段与AllowList同时指定，以AllowList为准。
+        /// IP addresses outside the security group that need to be added to the allowlist. Enter IP addresses or CIDR-formatted IP ranges. If both this field and AllowList are specified, AllowList takes precedence
         /// </summary>
         [Input("userAllowList")]
         public Input<string>? UserAllowList { get; set; }
@@ -209,49 +209,49 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
     public sealed class AllowListState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// IP 白名单，多个 IP 地址请以英文逗号（,）隔开，不可重复。
+        /// IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
         /// </summary>
         [Input("allowList")]
         public Input<string>? AllowListValue { get; set; }
 
         /// <summary>
-        /// 白名单分类。
+        /// Allowlist category
         /// </summary>
         [Input("allowListCategory")]
         public Input<string>? AllowListCategory { get; set; }
 
         /// <summary>
-        /// 白名单描述。
+        /// Allowlist description
         /// </summary>
         [Input("allowListDesc")]
         public Input<string>? AllowListDesc { get; set; }
 
         /// <summary>
-        /// 白名单的id。
+        /// Allowlist ID
         /// </summary>
         [Input("allowListId")]
         public Input<string>? AllowListId { get; set; }
 
         /// <summary>
-        /// AllowListIP数量。
+        /// Allowlist IP count
         /// </summary>
         [Input("allowListIpNum")]
         public Input<int>? AllowListIpNum { get; set; }
 
         /// <summary>
-        /// 白名单名称。
+        /// Allowlist name
         /// </summary>
         [Input("allowListName")]
         public Input<string>? AllowListName { get; set; }
 
         /// <summary>
-        /// 白名单内的IP地址类型，当前仅支持IPv4。
+        /// IP address type in the allowlist. Only IPv4 is supported
         /// </summary>
         [Input("allowListType")]
         public Input<string>? AllowListType { get; set; }
 
         /// <summary>
-        /// 绑定的实例数量。解绑实例的白名单时必传。
+        /// Number of bound instances. Required when unbinding an instance from the allowlist
         /// </summary>
         [Input("associatedInstanceNum")]
         public Input<int>? AssociatedInstanceNum { get; set; }
@@ -265,19 +265,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
         }
 
         /// <summary>
-        /// 实例ID。
+        /// Instance ID
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 项目名称。
+        /// Project name
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 安全组之外的、需要加入白名单的IP地址，可输入IP地址或CIDR格式的IP地址段。如果该字段与AllowList同时指定，以AllowList为准。
+        /// IP addresses outside the security group that need to be added to the allowlist. Enter IP addresses or CIDR-formatted IP ranges. If both this field and AllowList are specified, AllowList takes precedence
         /// </summary>
         [Input("userAllowList")]
         public Input<string>? UserAllowList { get; set; }

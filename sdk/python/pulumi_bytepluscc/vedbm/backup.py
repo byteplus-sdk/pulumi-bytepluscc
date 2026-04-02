@@ -28,12 +28,12 @@ class BackupArgs:
                  full_backup_period: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Backup resource.
-        :param pulumi.Input[builtins.str] instance_id: 实例ID。
-        :param pulumi.Input[builtins.str] backup_method: 备份方式，目前仅支持物理备份。
-        :param pulumi.Input[builtins.int] backup_retention_period: 数据备份保留天数。
-        :param pulumi.Input[builtins.str] backup_time: 执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
-        :param pulumi.Input[builtins.str] backup_type: 备份类型，目前仅支持全量备份。
-        :param pulumi.Input[builtins.str] full_backup_period: 全量备份周期，多个取值用英文逗号（,）隔开。
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
+        :param pulumi.Input[builtins.str] backup_method: Backup method, currently only physical backup is supported
+        :param pulumi.Input[builtins.int] backup_retention_period: Data backup retention days
+        :param pulumi.Input[builtins.str] backup_time: Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
+        :param pulumi.Input[builtins.str] backup_type: Backup type, currently only full backup is supported
+        :param pulumi.Input[builtins.str] full_backup_period: Full backup cycle, use commas (,) to separate multiple values
         """
         pulumi.set(__self__, "instance_id", instance_id)
         if backup_method is not None:
@@ -51,7 +51,7 @@ class BackupArgs:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Input[builtins.str]:
         """
-        实例ID。
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -63,7 +63,7 @@ class BackupArgs:
     @pulumi.getter(name="backupMethod")
     def backup_method(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        备份方式，目前仅支持物理备份。
+        Backup method, currently only physical backup is supported
         """
         return pulumi.get(self, "backup_method")
 
@@ -75,7 +75,7 @@ class BackupArgs:
     @pulumi.getter(name="backupRetentionPeriod")
     def backup_retention_period(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        数据备份保留天数。
+        Data backup retention days
         """
         return pulumi.get(self, "backup_retention_period")
 
@@ -87,7 +87,7 @@ class BackupArgs:
     @pulumi.getter(name="backupTime")
     def backup_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+        Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
         """
         return pulumi.get(self, "backup_time")
 
@@ -99,7 +99,7 @@ class BackupArgs:
     @pulumi.getter(name="backupType")
     def backup_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        备份类型，目前仅支持全量备份。
+        Backup type, currently only full backup is supported
         """
         return pulumi.get(self, "backup_type")
 
@@ -111,7 +111,7 @@ class BackupArgs:
     @pulumi.getter(name="fullBackupPeriod")
     def full_backup_period(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        全量备份周期，多个取值用英文逗号（,）隔开。
+        Full backup cycle, use commas (,) to separate multiple values
         """
         return pulumi.get(self, "full_backup_period")
 
@@ -139,20 +139,20 @@ class _BackupState:
                  instance_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Backup resources.
-        :param pulumi.Input[builtins.str] backup_end_time: 备份的结束时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
-        :param pulumi.Input[builtins.int] backup_file_size: 备份文件大小，单位为 KiB。
-        :param pulumi.Input[builtins.str] backup_id: 备份 ID。
-        :param pulumi.Input[builtins.str] backup_method: 备份方式，目前仅支持物理备份。
-        :param pulumi.Input[builtins.int] backup_retention_period: 数据备份保留天数。
-        :param pulumi.Input[builtins.str] backup_start_time: 备份的开始时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
-        :param pulumi.Input[builtins.str] backup_status: 备份状态。
-        :param pulumi.Input[builtins.str] backup_time: 执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
-        :param pulumi.Input[builtins.str] backup_type: 备份类型，目前仅支持全量备份。
-        :param pulumi.Input[builtins.str] consistent_time: 一致性备份的时间点，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
-        :param pulumi.Input[builtins.bool] continue_backup: 是否开启持续备份，取值固定为 true。
-        :param pulumi.Input[builtins.str] create_type: 创建类型。
-        :param pulumi.Input[builtins.str] full_backup_period: 全量备份周期，多个取值用英文逗号（,）隔开。
-        :param pulumi.Input[builtins.str] instance_id: 实例ID。
+        :param pulumi.Input[builtins.str] backup_end_time: Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
+        :param pulumi.Input[builtins.int] backup_file_size: Backup file size, unit: KiB
+        :param pulumi.Input[builtins.str] backup_id: Backup ID
+        :param pulumi.Input[builtins.str] backup_method: Backup method, currently only physical backup is supported
+        :param pulumi.Input[builtins.int] backup_retention_period: Data backup retention days
+        :param pulumi.Input[builtins.str] backup_start_time: Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
+        :param pulumi.Input[builtins.str] backup_status: Backup status
+        :param pulumi.Input[builtins.str] backup_time: Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
+        :param pulumi.Input[builtins.str] backup_type: Backup type, currently only full backup is supported
+        :param pulumi.Input[builtins.str] consistent_time: Consistency backup timestamp, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
+        :param pulumi.Input[builtins.bool] continue_backup: Enable continuous backup, value is always true
+        :param pulumi.Input[builtins.str] create_type: Creation type
+        :param pulumi.Input[builtins.str] full_backup_period: Full backup cycle, use commas (,) to separate multiple values
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
         """
         if backup_end_time is not None:
             pulumi.set(__self__, "backup_end_time", backup_end_time)
@@ -187,7 +187,7 @@ class _BackupState:
     @pulumi.getter(name="backupEndTime")
     def backup_end_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        备份的结束时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
         """
         return pulumi.get(self, "backup_end_time")
 
@@ -199,7 +199,7 @@ class _BackupState:
     @pulumi.getter(name="backupFileSize")
     def backup_file_size(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        备份文件大小，单位为 KiB。
+        Backup file size, unit: KiB
         """
         return pulumi.get(self, "backup_file_size")
 
@@ -211,7 +211,7 @@ class _BackupState:
     @pulumi.getter(name="backupId")
     def backup_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        备份 ID。
+        Backup ID
         """
         return pulumi.get(self, "backup_id")
 
@@ -223,7 +223,7 @@ class _BackupState:
     @pulumi.getter(name="backupMethod")
     def backup_method(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        备份方式，目前仅支持物理备份。
+        Backup method, currently only physical backup is supported
         """
         return pulumi.get(self, "backup_method")
 
@@ -235,7 +235,7 @@ class _BackupState:
     @pulumi.getter(name="backupRetentionPeriod")
     def backup_retention_period(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        数据备份保留天数。
+        Data backup retention days
         """
         return pulumi.get(self, "backup_retention_period")
 
@@ -247,7 +247,7 @@ class _BackupState:
     @pulumi.getter(name="backupStartTime")
     def backup_start_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        备份的开始时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
         """
         return pulumi.get(self, "backup_start_time")
 
@@ -259,7 +259,7 @@ class _BackupState:
     @pulumi.getter(name="backupStatus")
     def backup_status(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        备份状态。
+        Backup status
         """
         return pulumi.get(self, "backup_status")
 
@@ -271,7 +271,7 @@ class _BackupState:
     @pulumi.getter(name="backupTime")
     def backup_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+        Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
         """
         return pulumi.get(self, "backup_time")
 
@@ -283,7 +283,7 @@ class _BackupState:
     @pulumi.getter(name="backupType")
     def backup_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        备份类型，目前仅支持全量备份。
+        Backup type, currently only full backup is supported
         """
         return pulumi.get(self, "backup_type")
 
@@ -295,7 +295,7 @@ class _BackupState:
     @pulumi.getter(name="consistentTime")
     def consistent_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        一致性备份的时间点，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        Consistency backup timestamp, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
         """
         return pulumi.get(self, "consistent_time")
 
@@ -307,7 +307,7 @@ class _BackupState:
     @pulumi.getter(name="continueBackup")
     def continue_backup(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否开启持续备份，取值固定为 true。
+        Enable continuous backup, value is always true
         """
         return pulumi.get(self, "continue_backup")
 
@@ -319,7 +319,7 @@ class _BackupState:
     @pulumi.getter(name="createType")
     def create_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建类型。
+        Creation type
         """
         return pulumi.get(self, "create_type")
 
@@ -331,7 +331,7 @@ class _BackupState:
     @pulumi.getter(name="fullBackupPeriod")
     def full_backup_period(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        全量备份周期，多个取值用英文逗号（,）隔开。
+        Full backup cycle, use commas (,) to separate multiple values
         """
         return pulumi.get(self, "full_backup_period")
 
@@ -343,7 +343,7 @@ class _BackupState:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        实例ID。
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 
@@ -366,7 +366,7 @@ class Backup(pulumi.CustomResource):
                  instance_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        云数据库 veDB备份管理
+        Cloud Database veDB Backup Management
 
         ## Example Usage
 
@@ -391,12 +391,12 @@ class Backup(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] backup_method: 备份方式，目前仅支持物理备份。
-        :param pulumi.Input[builtins.int] backup_retention_period: 数据备份保留天数。
-        :param pulumi.Input[builtins.str] backup_time: 执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
-        :param pulumi.Input[builtins.str] backup_type: 备份类型，目前仅支持全量备份。
-        :param pulumi.Input[builtins.str] full_backup_period: 全量备份周期，多个取值用英文逗号（,）隔开。
-        :param pulumi.Input[builtins.str] instance_id: 实例ID。
+        :param pulumi.Input[builtins.str] backup_method: Backup method, currently only physical backup is supported
+        :param pulumi.Input[builtins.int] backup_retention_period: Data backup retention days
+        :param pulumi.Input[builtins.str] backup_time: Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
+        :param pulumi.Input[builtins.str] backup_type: Backup type, currently only full backup is supported
+        :param pulumi.Input[builtins.str] full_backup_period: Full backup cycle, use commas (,) to separate multiple values
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
         """
         ...
     @overload
@@ -405,7 +405,7 @@ class Backup(pulumi.CustomResource):
                  args: BackupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        云数据库 veDB备份管理
+        Cloud Database veDB Backup Management
 
         ## Example Usage
 
@@ -505,20 +505,20 @@ class Backup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] backup_end_time: 备份的结束时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
-        :param pulumi.Input[builtins.int] backup_file_size: 备份文件大小，单位为 KiB。
-        :param pulumi.Input[builtins.str] backup_id: 备份 ID。
-        :param pulumi.Input[builtins.str] backup_method: 备份方式，目前仅支持物理备份。
-        :param pulumi.Input[builtins.int] backup_retention_period: 数据备份保留天数。
-        :param pulumi.Input[builtins.str] backup_start_time: 备份的开始时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
-        :param pulumi.Input[builtins.str] backup_status: 备份状态。
-        :param pulumi.Input[builtins.str] backup_time: 执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
-        :param pulumi.Input[builtins.str] backup_type: 备份类型，目前仅支持全量备份。
-        :param pulumi.Input[builtins.str] consistent_time: 一致性备份的时间点，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
-        :param pulumi.Input[builtins.bool] continue_backup: 是否开启持续备份，取值固定为 true。
-        :param pulumi.Input[builtins.str] create_type: 创建类型。
-        :param pulumi.Input[builtins.str] full_backup_period: 全量备份周期，多个取值用英文逗号（,）隔开。
-        :param pulumi.Input[builtins.str] instance_id: 实例ID。
+        :param pulumi.Input[builtins.str] backup_end_time: Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
+        :param pulumi.Input[builtins.int] backup_file_size: Backup file size, unit: KiB
+        :param pulumi.Input[builtins.str] backup_id: Backup ID
+        :param pulumi.Input[builtins.str] backup_method: Backup method, currently only physical backup is supported
+        :param pulumi.Input[builtins.int] backup_retention_period: Data backup retention days
+        :param pulumi.Input[builtins.str] backup_start_time: Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
+        :param pulumi.Input[builtins.str] backup_status: Backup status
+        :param pulumi.Input[builtins.str] backup_time: Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
+        :param pulumi.Input[builtins.str] backup_type: Backup type, currently only full backup is supported
+        :param pulumi.Input[builtins.str] consistent_time: Consistency backup timestamp, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
+        :param pulumi.Input[builtins.bool] continue_backup: Enable continuous backup, value is always true
+        :param pulumi.Input[builtins.str] create_type: Creation type
+        :param pulumi.Input[builtins.str] full_backup_period: Full backup cycle, use commas (,) to separate multiple values
+        :param pulumi.Input[builtins.str] instance_id: Instance ID
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -544,7 +544,7 @@ class Backup(pulumi.CustomResource):
     @pulumi.getter(name="backupEndTime")
     def backup_end_time(self) -> pulumi.Output[builtins.str]:
         """
-        备份的结束时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
         """
         return pulumi.get(self, "backup_end_time")
 
@@ -552,7 +552,7 @@ class Backup(pulumi.CustomResource):
     @pulumi.getter(name="backupFileSize")
     def backup_file_size(self) -> pulumi.Output[builtins.int]:
         """
-        备份文件大小，单位为 KiB。
+        Backup file size, unit: KiB
         """
         return pulumi.get(self, "backup_file_size")
 
@@ -560,7 +560,7 @@ class Backup(pulumi.CustomResource):
     @pulumi.getter(name="backupId")
     def backup_id(self) -> pulumi.Output[builtins.str]:
         """
-        备份 ID。
+        Backup ID
         """
         return pulumi.get(self, "backup_id")
 
@@ -568,7 +568,7 @@ class Backup(pulumi.CustomResource):
     @pulumi.getter(name="backupMethod")
     def backup_method(self) -> pulumi.Output[builtins.str]:
         """
-        备份方式，目前仅支持物理备份。
+        Backup method, currently only physical backup is supported
         """
         return pulumi.get(self, "backup_method")
 
@@ -576,7 +576,7 @@ class Backup(pulumi.CustomResource):
     @pulumi.getter(name="backupRetentionPeriod")
     def backup_retention_period(self) -> pulumi.Output[builtins.int]:
         """
-        数据备份保留天数。
+        Data backup retention days
         """
         return pulumi.get(self, "backup_retention_period")
 
@@ -584,7 +584,7 @@ class Backup(pulumi.CustomResource):
     @pulumi.getter(name="backupStartTime")
     def backup_start_time(self) -> pulumi.Output[builtins.str]:
         """
-        备份的开始时间，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
         """
         return pulumi.get(self, "backup_start_time")
 
@@ -592,7 +592,7 @@ class Backup(pulumi.CustomResource):
     @pulumi.getter(name="backupStatus")
     def backup_status(self) -> pulumi.Output[builtins.str]:
         """
-        备份状态。
+        Backup status
         """
         return pulumi.get(self, "backup_status")
 
@@ -600,7 +600,7 @@ class Backup(pulumi.CustomResource):
     @pulumi.getter(name="backupTime")
     def backup_time(self) -> pulumi.Output[builtins.str]:
         """
-        执行备份任务的时间，间隔窗口为两小时。格式：HH:mmZ-HH:mmZ（UTC 时间）。
+        Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
         """
         return pulumi.get(self, "backup_time")
 
@@ -608,7 +608,7 @@ class Backup(pulumi.CustomResource):
     @pulumi.getter(name="backupType")
     def backup_type(self) -> pulumi.Output[builtins.str]:
         """
-        备份类型，目前仅支持全量备份。
+        Backup type, currently only full backup is supported
         """
         return pulumi.get(self, "backup_type")
 
@@ -616,7 +616,7 @@ class Backup(pulumi.CustomResource):
     @pulumi.getter(name="consistentTime")
     def consistent_time(self) -> pulumi.Output[builtins.str]:
         """
-        一致性备份的时间点，格式：yyyy-MM-ddTHH:mm:ssZ（UTC 时间）。
+        Consistency backup timestamp, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
         """
         return pulumi.get(self, "consistent_time")
 
@@ -624,7 +624,7 @@ class Backup(pulumi.CustomResource):
     @pulumi.getter(name="continueBackup")
     def continue_backup(self) -> pulumi.Output[builtins.bool]:
         """
-        是否开启持续备份，取值固定为 true。
+        Enable continuous backup, value is always true
         """
         return pulumi.get(self, "continue_backup")
 
@@ -632,7 +632,7 @@ class Backup(pulumi.CustomResource):
     @pulumi.getter(name="createType")
     def create_type(self) -> pulumi.Output[builtins.str]:
         """
-        创建类型。
+        Creation type
         """
         return pulumi.get(self, "create_type")
 
@@ -640,7 +640,7 @@ class Backup(pulumi.CustomResource):
     @pulumi.getter(name="fullBackupPeriod")
     def full_backup_period(self) -> pulumi.Output[builtins.str]:
         """
-        全量备份周期，多个取值用英文逗号（,）隔开。
+        Full backup cycle, use commas (,) to separate multiple values
         """
         return pulumi.get(self, "full_backup_period")
 
@@ -648,7 +648,7 @@ class Backup(pulumi.CustomResource):
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Output[builtins.str]:
         """
-        实例ID。
+        Instance ID
         """
         return pulumi.get(self, "instance_id")
 

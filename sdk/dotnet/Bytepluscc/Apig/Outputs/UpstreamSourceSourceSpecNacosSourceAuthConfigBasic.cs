@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
     public sealed class UpstreamSourceSourceSpecNacosSourceAuthConfigBasic
     {
         /// <summary>
-        /// 密码。
+        /// Password
         /// </summary>
         public readonly string? Password;
         /// <summary>
-        /// 用户名。
+        /// Username
         /// </summary>
         public readonly string? Username;
 

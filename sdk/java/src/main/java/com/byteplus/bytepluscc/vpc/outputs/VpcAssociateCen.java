@@ -12,38 +12,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class VpcAssociateCen {
     /**
-     * @return CEN的ID。
+     * @return ID of the CEN.
      * 
      */
     private @Nullable String cenId;
     /**
-     * @return CEN的用户ID。
+     * @return User ID of the CEN.
      * 
      */
     private @Nullable String cenOwnerId;
     /**
-     * @return VPC在CEN中的状态。Attaching：加载中，Attached：已加载
+     * @return Status of the VPC in the CEN. Loading: loading, Loaded: loaded
      * 
      */
     private @Nullable String cenStatus;
 
     private VpcAssociateCen() {}
     /**
-     * @return CEN的ID。
+     * @return ID of the CEN.
      * 
      */
     public Optional<String> cenId() {
         return Optional.ofNullable(this.cenId);
     }
     /**
-     * @return CEN的用户ID。
+     * @return User ID of the CEN.
      * 
      */
     public Optional<String> cenOwnerId() {
         return Optional.ofNullable(this.cenOwnerId);
     }
     /**
-     * @return VPC在CEN中的状态。Attaching：加载中，Attached：已加载
+     * @return Status of the VPC in the CEN. Loading: loading, Loaded: loaded
      * 
      */
     public Optional<String> cenStatus() {

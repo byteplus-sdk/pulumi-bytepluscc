@@ -16,14 +16,14 @@ public final class ScalingPolicyScheduledPolicyArgs extends com.pulumi.resources
     public static final ScalingPolicyScheduledPolicyArgs Empty = new ScalingPolicyScheduledPolicyArgs();
 
     /**
-     * 表示任务的触发时间，默认为此刻。当ScalingPolicyType值为Scheduled时，表示定时任务的触发时间。当ScalingPolicyType值为Recurrence时：如果ScheduledPolicy.RecurrenceType为空，则表示仅按照此处指定的日期和时间执行一次。如果ScheduledPolicy.RecurrenceType不为空，则表示周期任务开始时间。
+     * Indicates the trigger time for the task. The default is the current time. When ScalingPolicyType is set to Scheduled, this specifies the trigger time for the scheduled task. When ScalingPolicyType is set to Recurrence: If ScheduledPolicy.RecurrenceType is empty, the task is executed only once at the specified date and time. If ScheduledPolicy.RecurrenceType is not empty, this specifies the start time for the recurring task.
      * 
      */
     @Import(name="launchTime")
     private @Nullable Output<String> launchTime;
 
     /**
-     * @return 表示任务的触发时间，默认为此刻。当ScalingPolicyType值为Scheduled时，表示定时任务的触发时间。当ScalingPolicyType值为Recurrence时：如果ScheduledPolicy.RecurrenceType为空，则表示仅按照此处指定的日期和时间执行一次。如果ScheduledPolicy.RecurrenceType不为空，则表示周期任务开始时间。
+     * @return Indicates the trigger time for the task. The default is the current time. When ScalingPolicyType is set to Scheduled, this specifies the trigger time for the scheduled task. When ScalingPolicyType is set to Recurrence: If ScheduledPolicy.RecurrenceType is empty, the task is executed only once at the specified date and time. If ScheduledPolicy.RecurrenceType is not empty, this specifies the start time for the recurring task.
      * 
      */
     public Optional<Output<String>> launchTime() {
@@ -31,14 +31,14 @@ public final class ScalingPolicyScheduledPolicyArgs extends com.pulumi.resources
     }
 
     /**
-     * 表示任务的触发时间。只读字段，修改或创建使用LaunchTime。
+     * Indicates the task trigger time. This is a read-only field; use LaunchTime to modify or create.
      * 
      */
     @Import(name="launchTimeRead")
     private @Nullable Output<String> launchTimeRead;
 
     /**
-     * @return 表示任务的触发时间。只读字段，修改或创建使用LaunchTime。
+     * @return Indicates the task trigger time. This is a read-only field; use LaunchTime to modify or create.
      * 
      */
     public Optional<Output<String>> launchTimeRead() {
@@ -46,14 +46,14 @@ public final class ScalingPolicyScheduledPolicyArgs extends com.pulumi.resources
     }
 
     /**
-     * 表示周期任务的结束时间。仅支持选择自创建当日起365日内的时间。若不配置，则根据重复周期（ScheduledPolicy.RecurrenceType）默认为此刻后的一天/周/月。设置为空，表示本任务永不停止。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+     * Indicates the end time for the recurring task. Only supports selecting a time within 365 days from the creation date. If not configured, defaults to one day/week/month after the current time based on the recurrence cycle (ScheduledPolicy.RecurrenceType). If set to empty, the task never stops. Valid only when ScalingPolicyType is set to Recurrence and required.
      * 
      */
     @Import(name="recurrenceEndTime")
     private @Nullable Output<String> recurrenceEndTime;
 
     /**
-     * @return 表示周期任务的结束时间。仅支持选择自创建当日起365日内的时间。若不配置，则根据重复周期（ScheduledPolicy.RecurrenceType）默认为此刻后的一天/周/月。设置为空，表示本任务永不停止。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+     * @return Indicates the end time for the recurring task. Only supports selecting a time within 365 days from the creation date. If not configured, defaults to one day/week/month after the current time based on the recurrence cycle (ScheduledPolicy.RecurrenceType). If set to empty, the task never stops. Valid only when ScalingPolicyType is set to Recurrence and required.
      * 
      */
     public Optional<Output<String>> recurrenceEndTime() {
@@ -61,14 +61,14 @@ public final class ScalingPolicyScheduledPolicyArgs extends com.pulumi.resources
     }
 
     /**
-     * 表示周期任务的结束时间。只读字段，修改或创建使用RecurrenceEndTime。
+     * Indicates the end time for the recurring task. Read-only field; use RecurrenceEndTime for modification or creation.
      * 
      */
     @Import(name="recurrenceEndTimeRead")
     private @Nullable Output<String> recurrenceEndTimeRead;
 
     /**
-     * @return 表示周期任务的结束时间。只读字段，修改或创建使用RecurrenceEndTime。
+     * @return Indicates the end time for the recurring task. Read-only field; use RecurrenceEndTime for modification or creation.
      * 
      */
     public Optional<Output<String>> recurrenceEndTimeRead() {
@@ -76,14 +76,14 @@ public final class ScalingPolicyScheduledPolicyArgs extends com.pulumi.resources
     }
 
     /**
-     * 表示周期任务的开始执行时间。当ScalingPolicyType取值为Recurrence时有效。
+     * Indicates the start time for the recurring task. Valid only when ScalingPolicyType is set to Recurrence.
      * 
      */
     @Import(name="recurrenceStartTime")
     private @Nullable Output<String> recurrenceStartTime;
 
     /**
-     * @return 表示周期任务的开始执行时间。当ScalingPolicyType取值为Recurrence时有效。
+     * @return Indicates the start time for the recurring task. Valid only when ScalingPolicyType is set to Recurrence.
      * 
      */
     public Optional<Output<String>> recurrenceStartTime() {
@@ -91,14 +91,14 @@ public final class ScalingPolicyScheduledPolicyArgs extends com.pulumi.resources
     }
 
     /**
-     * 表示周期任务的重复周期，取值：Daily：每XX天执行一次。Weekly：选择每周中的几天，每天执行一次。Monthly：选择每月中XX号到XX号，每天执行一次。Cron：按照指定的Cron表达式执行。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+     * Indicates the recurrence cycle for scheduled tasks. Values: Daily: Executes once every XX days. Weekly: Select specific days of the week, executes once per day. Monthly: Select XX to XX days of the month, executes once per day. Cron: Executes according to the specified Cron expression. Required and valid only when ScalingPolicyType is set to Recurrence.
      * 
      */
     @Import(name="recurrenceType")
     private @Nullable Output<String> recurrenceType;
 
     /**
-     * @return 表示周期任务的重复周期，取值：Daily：每XX天执行一次。Weekly：选择每周中的几天，每天执行一次。Monthly：选择每月中XX号到XX号，每天执行一次。Cron：按照指定的Cron表达式执行。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+     * @return Indicates the recurrence cycle for scheduled tasks. Values: Daily: Executes once every XX days. Weekly: Select specific days of the week, executes once per day. Monthly: Select XX to XX days of the month, executes once per day. Cron: Executes according to the specified Cron expression. Required and valid only when ScalingPolicyType is set to Recurrence.
      * 
      */
     public Optional<Output<String>> recurrenceType() {
@@ -106,14 +106,14 @@ public final class ScalingPolicyScheduledPolicyArgs extends com.pulumi.resources
     }
 
     /**
-     * 表示重复执行周期任务的数值。当ScheduledPolicy.RecurrenceType参数取值为Daily时，只能填写一个值，取值：1   - 31。当ScheduledPolicy.RecurrenceType参数取值为Weekly时，可以填入多个值，使用英文逗号（,）分隔。星期一到星期日的取值依次为：1,2,3,4,5,6,7。当ScheduledPolicy.RecurrenceType参数取值为Monthly时，格式为A-B。A、B的取值范围均为1-31，且B必须大于等于A。当ScheduledPolicy.RecurrenceType参数取值为Cron 时，表示UTC+8时间，支持分、时、日、月、星期的5域表达式，支持通配符英文逗号（,）、英文问号（?）、连词符（-）、星号（*）、井号（#）、斜线（/）、L和W。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+     * Specifies the value for recurring tasks. When the ScheduledPolicy.RecurrenceType parameter is set to Daily, only one value can be entered: 1–31. When the ScheduledPolicy.RecurrenceType parameter is set to Weekly, multiple values can be entered, separated by commas (,). Values for Monday to Sunday are: 1 (Monday), 2 (Tuesday), 3 (Wednesday), 4 (Thursday), 5 (Friday), 6 (Saturday), 7 (Sunday). When the ScheduledPolicy.RecurrenceType parameter is set to Monthly, the format is A-B. Both A and B range from 1–31, and B must be greater than or equal to A. When the ScheduledPolicy.RecurrenceType parameter is set to Cron, it uses UTC+8 time and supports a five-field expression for minute, hour, day, month, and week. Wildcards supported include comma (,), question mark (?), hyphen (-), asterisk (*), hash (#), slash (/), L, and W. This field is valid and required when ScalingPolicyType is set to Recurrence.
      * 
      */
     @Import(name="recurrenceValue")
     private @Nullable Output<String> recurrenceValue;
 
     /**
-     * @return 表示重复执行周期任务的数值。当ScheduledPolicy.RecurrenceType参数取值为Daily时，只能填写一个值，取值：1   - 31。当ScheduledPolicy.RecurrenceType参数取值为Weekly时，可以填入多个值，使用英文逗号（,）分隔。星期一到星期日的取值依次为：1,2,3,4,5,6,7。当ScheduledPolicy.RecurrenceType参数取值为Monthly时，格式为A-B。A、B的取值范围均为1-31，且B必须大于等于A。当ScheduledPolicy.RecurrenceType参数取值为Cron 时，表示UTC+8时间，支持分、时、日、月、星期的5域表达式，支持通配符英文逗号（,）、英文问号（?）、连词符（-）、星号（*）、井号（#）、斜线（/）、L和W。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+     * @return Specifies the value for recurring tasks. When the ScheduledPolicy.RecurrenceType parameter is set to Daily, only one value can be entered: 1–31. When the ScheduledPolicy.RecurrenceType parameter is set to Weekly, multiple values can be entered, separated by commas (,). Values for Monday to Sunday are: 1 (Monday), 2 (Tuesday), 3 (Wednesday), 4 (Thursday), 5 (Friday), 6 (Saturday), 7 (Sunday). When the ScheduledPolicy.RecurrenceType parameter is set to Monthly, the format is A-B. Both A and B range from 1–31, and B must be greater than or equal to A. When the ScheduledPolicy.RecurrenceType parameter is set to Cron, it uses UTC+8 time and supports a five-field expression for minute, hour, day, month, and week. Wildcards supported include comma (,), question mark (?), hyphen (-), asterisk (*), hash (#), slash (/), L, and W. This field is valid and required when ScalingPolicyType is set to Recurrence.
      * 
      */
     public Optional<Output<String>> recurrenceValue() {
@@ -151,7 +151,7 @@ public final class ScalingPolicyScheduledPolicyArgs extends com.pulumi.resources
         }
 
         /**
-         * @param launchTime 表示任务的触发时间，默认为此刻。当ScalingPolicyType值为Scheduled时，表示定时任务的触发时间。当ScalingPolicyType值为Recurrence时：如果ScheduledPolicy.RecurrenceType为空，则表示仅按照此处指定的日期和时间执行一次。如果ScheduledPolicy.RecurrenceType不为空，则表示周期任务开始时间。
+         * @param launchTime Indicates the trigger time for the task. The default is the current time. When ScalingPolicyType is set to Scheduled, this specifies the trigger time for the scheduled task. When ScalingPolicyType is set to Recurrence: If ScheduledPolicy.RecurrenceType is empty, the task is executed only once at the specified date and time. If ScheduledPolicy.RecurrenceType is not empty, this specifies the start time for the recurring task.
          * 
          * @return builder
          * 
@@ -162,7 +162,7 @@ public final class ScalingPolicyScheduledPolicyArgs extends com.pulumi.resources
         }
 
         /**
-         * @param launchTime 表示任务的触发时间，默认为此刻。当ScalingPolicyType值为Scheduled时，表示定时任务的触发时间。当ScalingPolicyType值为Recurrence时：如果ScheduledPolicy.RecurrenceType为空，则表示仅按照此处指定的日期和时间执行一次。如果ScheduledPolicy.RecurrenceType不为空，则表示周期任务开始时间。
+         * @param launchTime Indicates the trigger time for the task. The default is the current time. When ScalingPolicyType is set to Scheduled, this specifies the trigger time for the scheduled task. When ScalingPolicyType is set to Recurrence: If ScheduledPolicy.RecurrenceType is empty, the task is executed only once at the specified date and time. If ScheduledPolicy.RecurrenceType is not empty, this specifies the start time for the recurring task.
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class ScalingPolicyScheduledPolicyArgs extends com.pulumi.resources
         }
 
         /**
-         * @param launchTimeRead 表示任务的触发时间。只读字段，修改或创建使用LaunchTime。
+         * @param launchTimeRead Indicates the task trigger time. This is a read-only field; use LaunchTime to modify or create.
          * 
          * @return builder
          * 
@@ -183,7 +183,7 @@ public final class ScalingPolicyScheduledPolicyArgs extends com.pulumi.resources
         }
 
         /**
-         * @param launchTimeRead 表示任务的触发时间。只读字段，修改或创建使用LaunchTime。
+         * @param launchTimeRead Indicates the task trigger time. This is a read-only field; use LaunchTime to modify or create.
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class ScalingPolicyScheduledPolicyArgs extends com.pulumi.resources
         }
 
         /**
-         * @param recurrenceEndTime 表示周期任务的结束时间。仅支持选择自创建当日起365日内的时间。若不配置，则根据重复周期（ScheduledPolicy.RecurrenceType）默认为此刻后的一天/周/月。设置为空，表示本任务永不停止。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+         * @param recurrenceEndTime Indicates the end time for the recurring task. Only supports selecting a time within 365 days from the creation date. If not configured, defaults to one day/week/month after the current time based on the recurrence cycle (ScheduledPolicy.RecurrenceType). If set to empty, the task never stops. Valid only when ScalingPolicyType is set to Recurrence and required.
          * 
          * @return builder
          * 
@@ -204,7 +204,7 @@ public final class ScalingPolicyScheduledPolicyArgs extends com.pulumi.resources
         }
 
         /**
-         * @param recurrenceEndTime 表示周期任务的结束时间。仅支持选择自创建当日起365日内的时间。若不配置，则根据重复周期（ScheduledPolicy.RecurrenceType）默认为此刻后的一天/周/月。设置为空，表示本任务永不停止。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+         * @param recurrenceEndTime Indicates the end time for the recurring task. Only supports selecting a time within 365 days from the creation date. If not configured, defaults to one day/week/month after the current time based on the recurrence cycle (ScheduledPolicy.RecurrenceType). If set to empty, the task never stops. Valid only when ScalingPolicyType is set to Recurrence and required.
          * 
          * @return builder
          * 
@@ -214,7 +214,7 @@ public final class ScalingPolicyScheduledPolicyArgs extends com.pulumi.resources
         }
 
         /**
-         * @param recurrenceEndTimeRead 表示周期任务的结束时间。只读字段，修改或创建使用RecurrenceEndTime。
+         * @param recurrenceEndTimeRead Indicates the end time for the recurring task. Read-only field; use RecurrenceEndTime for modification or creation.
          * 
          * @return builder
          * 
@@ -225,7 +225,7 @@ public final class ScalingPolicyScheduledPolicyArgs extends com.pulumi.resources
         }
 
         /**
-         * @param recurrenceEndTimeRead 表示周期任务的结束时间。只读字段，修改或创建使用RecurrenceEndTime。
+         * @param recurrenceEndTimeRead Indicates the end time for the recurring task. Read-only field; use RecurrenceEndTime for modification or creation.
          * 
          * @return builder
          * 
@@ -235,7 +235,7 @@ public final class ScalingPolicyScheduledPolicyArgs extends com.pulumi.resources
         }
 
         /**
-         * @param recurrenceStartTime 表示周期任务的开始执行时间。当ScalingPolicyType取值为Recurrence时有效。
+         * @param recurrenceStartTime Indicates the start time for the recurring task. Valid only when ScalingPolicyType is set to Recurrence.
          * 
          * @return builder
          * 
@@ -246,7 +246,7 @@ public final class ScalingPolicyScheduledPolicyArgs extends com.pulumi.resources
         }
 
         /**
-         * @param recurrenceStartTime 表示周期任务的开始执行时间。当ScalingPolicyType取值为Recurrence时有效。
+         * @param recurrenceStartTime Indicates the start time for the recurring task. Valid only when ScalingPolicyType is set to Recurrence.
          * 
          * @return builder
          * 
@@ -256,7 +256,7 @@ public final class ScalingPolicyScheduledPolicyArgs extends com.pulumi.resources
         }
 
         /**
-         * @param recurrenceType 表示周期任务的重复周期，取值：Daily：每XX天执行一次。Weekly：选择每周中的几天，每天执行一次。Monthly：选择每月中XX号到XX号，每天执行一次。Cron：按照指定的Cron表达式执行。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+         * @param recurrenceType Indicates the recurrence cycle for scheduled tasks. Values: Daily: Executes once every XX days. Weekly: Select specific days of the week, executes once per day. Monthly: Select XX to XX days of the month, executes once per day. Cron: Executes according to the specified Cron expression. Required and valid only when ScalingPolicyType is set to Recurrence.
          * 
          * @return builder
          * 
@@ -267,7 +267,7 @@ public final class ScalingPolicyScheduledPolicyArgs extends com.pulumi.resources
         }
 
         /**
-         * @param recurrenceType 表示周期任务的重复周期，取值：Daily：每XX天执行一次。Weekly：选择每周中的几天，每天执行一次。Monthly：选择每月中XX号到XX号，每天执行一次。Cron：按照指定的Cron表达式执行。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+         * @param recurrenceType Indicates the recurrence cycle for scheduled tasks. Values: Daily: Executes once every XX days. Weekly: Select specific days of the week, executes once per day. Monthly: Select XX to XX days of the month, executes once per day. Cron: Executes according to the specified Cron expression. Required and valid only when ScalingPolicyType is set to Recurrence.
          * 
          * @return builder
          * 
@@ -277,7 +277,7 @@ public final class ScalingPolicyScheduledPolicyArgs extends com.pulumi.resources
         }
 
         /**
-         * @param recurrenceValue 表示重复执行周期任务的数值。当ScheduledPolicy.RecurrenceType参数取值为Daily时，只能填写一个值，取值：1   - 31。当ScheduledPolicy.RecurrenceType参数取值为Weekly时，可以填入多个值，使用英文逗号（,）分隔。星期一到星期日的取值依次为：1,2,3,4,5,6,7。当ScheduledPolicy.RecurrenceType参数取值为Monthly时，格式为A-B。A、B的取值范围均为1-31，且B必须大于等于A。当ScheduledPolicy.RecurrenceType参数取值为Cron 时，表示UTC+8时间，支持分、时、日、月、星期的5域表达式，支持通配符英文逗号（,）、英文问号（?）、连词符（-）、星号（*）、井号（#）、斜线（/）、L和W。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+         * @param recurrenceValue Specifies the value for recurring tasks. When the ScheduledPolicy.RecurrenceType parameter is set to Daily, only one value can be entered: 1–31. When the ScheduledPolicy.RecurrenceType parameter is set to Weekly, multiple values can be entered, separated by commas (,). Values for Monday to Sunday are: 1 (Monday), 2 (Tuesday), 3 (Wednesday), 4 (Thursday), 5 (Friday), 6 (Saturday), 7 (Sunday). When the ScheduledPolicy.RecurrenceType parameter is set to Monthly, the format is A-B. Both A and B range from 1–31, and B must be greater than or equal to A. When the ScheduledPolicy.RecurrenceType parameter is set to Cron, it uses UTC+8 time and supports a five-field expression for minute, hour, day, month, and week. Wildcards supported include comma (,), question mark (?), hyphen (-), asterisk (*), hash (#), slash (/), L, and W. This field is valid and required when ScalingPolicyType is set to Recurrence.
          * 
          * @return builder
          * 
@@ -288,7 +288,7 @@ public final class ScalingPolicyScheduledPolicyArgs extends com.pulumi.resources
         }
 
         /**
-         * @param recurrenceValue 表示重复执行周期任务的数值。当ScheduledPolicy.RecurrenceType参数取值为Daily时，只能填写一个值，取值：1   - 31。当ScheduledPolicy.RecurrenceType参数取值为Weekly时，可以填入多个值，使用英文逗号（,）分隔。星期一到星期日的取值依次为：1,2,3,4,5,6,7。当ScheduledPolicy.RecurrenceType参数取值为Monthly时，格式为A-B。A、B的取值范围均为1-31，且B必须大于等于A。当ScheduledPolicy.RecurrenceType参数取值为Cron 时，表示UTC+8时间，支持分、时、日、月、星期的5域表达式，支持通配符英文逗号（,）、英文问号（?）、连词符（-）、星号（*）、井号（#）、斜线（/）、L和W。当ScalingPolicyType取值为Recurrence时有效且为必填项。
+         * @param recurrenceValue Specifies the value for recurring tasks. When the ScheduledPolicy.RecurrenceType parameter is set to Daily, only one value can be entered: 1–31. When the ScheduledPolicy.RecurrenceType parameter is set to Weekly, multiple values can be entered, separated by commas (,). Values for Monday to Sunday are: 1 (Monday), 2 (Tuesday), 3 (Wednesday), 4 (Thursday), 5 (Friday), 6 (Saturday), 7 (Sunday). When the ScheduledPolicy.RecurrenceType parameter is set to Monthly, the format is A-B. Both A and B range from 1–31, and B must be greater than or equal to A. When the ScheduledPolicy.RecurrenceType parameter is set to Cron, it uses UTC+8 time and supports a five-field expression for minute, hour, day, month, and week. Wildcards supported include comma (,), question mark (?), hyphen (-), asterisk (*), hash (#), slash (/), L, and W. This field is valid and required when ScalingPolicyType is set to Recurrence.
          * 
          * @return builder
          * 

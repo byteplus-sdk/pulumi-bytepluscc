@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ClusterNodeAttribute {
     /**
-     * @return ECS实例角色。
+     * @return ECS instance role.
      * 
      */
     private @Nullable String ecsIamRole;
     /**
-     * @return 可用区ID。
+     * @return Zone ID.
      * 
      */
     private @Nullable String zoneId;
 
     private ClusterNodeAttribute() {}
     /**
-     * @return ECS实例角色。
+     * @return ECS instance role.
      * 
      */
     public Optional<String> ecsIamRole() {
         return Optional.ofNullable(this.ecsIamRole);
     }
     /**
-     * @return 可用区ID。
+     * @return Zone ID.
      * 
      */
     public Optional<String> zoneId() {

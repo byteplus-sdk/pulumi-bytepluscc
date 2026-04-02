@@ -14,19 +14,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas.Inputs
     public sealed class MountPointPermissionGroupMountPointGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 文件系统 ID。
+        /// File system ID.
         /// </summary>
         [Input("fileSystemId")]
         public Input<string>? FileSystemId { get; set; }
 
         /// <summary>
-        /// 挂载点 ID。
+        /// Mount point ID.
         /// </summary>
         [Input("mountPointId")]
         public Input<string>? MountPointId { get; set; }
 
         /// <summary>
-        /// 挂载点名称。
+        /// Mount point name.
         /// </summary>
         [Input("mountPointName")]
         public Input<string>? MountPointName { get; set; }

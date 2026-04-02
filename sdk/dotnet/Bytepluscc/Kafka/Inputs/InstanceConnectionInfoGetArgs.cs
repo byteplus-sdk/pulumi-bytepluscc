@@ -14,25 +14,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Kafka.Inputs
     public sealed class InstanceConnectionInfoGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 实例的接入点类型。PLAINTEXT：默认接入点。SASL*PLAINTEXT：SASL接入点（私网）。SASL*SSL：SASL接入点（公网）。未开启公网访问时，不提供此接入点。
+        /// Instance endpoint type. PLAINTEXT: default endpoint. SASL*PLAINTEXT: SASL endpoint (private network). SASL*SSL: SASL endpoint (public network). If public access is not enabled, this endpoint is not provided.
         /// </summary>
         [Input("endpointType")]
         public Input<string>? EndpointType { get; set; }
 
         /// <summary>
-        /// 实例私网访问域名。
+        /// Instance private network access domain name.
         /// </summary>
         [Input("internalEndpoint")]
         public Input<string>? InternalEndpoint { get; set; }
 
         /// <summary>
-        /// 接入点的网络类型。统一为 PrivateNetwork。
+        /// Network type for the access point. Unified as PrivateNetwork.
         /// </summary>
         [Input("networkType")]
         public Input<string>? NetworkType { get; set; }
 
         /// <summary>
-        /// 实例公网访问域名。
+        /// Public access domain name for the instance.
         /// </summary>
         [Input("publicEndpoint")]
         public Input<string>? PublicEndpoint { get; set; }

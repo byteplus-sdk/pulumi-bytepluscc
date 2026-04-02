@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Vpc
 {
     /// <summary>
-    /// 子网是在指定可用区内分配的一段VPC网段内的网段，它为云上资源（如云服务器、负载均衡等）提供私网IP地址。
+    /// The subnet is a segment allocated within a specified availability zone from a VPC CIDR block, providing private IP addresses for cloud resources such as cloud servers and load balancers
     /// 
     /// ## Example Usage
     /// 
@@ -53,91 +53,91 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public partial class Subnet : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 子网所属账户的ID。
+        /// ID of the account to which the subnet belongs
         /// </summary>
         [Output("accountId")]
         public Output<string> AccountId { get; private set; } = null!;
 
         /// <summary>
-        /// 子网中可用的IP地址数量。
+        /// Number of available IP addresses in the subnet
         /// </summary>
         [Output("availableIpAddressCount")]
         public Output<int> AvailableIpAddressCount { get; private set; } = null!;
 
         /// <summary>
-        /// 子网的IPv4网段。
+        /// Subnet IPv4 CIDR block
         /// </summary>
         [Output("cidrBlock")]
         public Output<string> CidrBlock { get; private set; } = null!;
 
         /// <summary>
-        /// 子网的创建时间。
+        /// Subnet creation time
         /// </summary>
         [Output("createdTime")]
         public Output<string> CreatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 子网的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不能以http://或https://开头。
+        /// Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// 开启/关闭IPv6功能。仅当子网所属的VPC开通IPv6功能时，可配置此参数。1、true：开启。2、false：关闭。仅当子网内没有分配IPv6地址的云资源时，可配置此取值。
+        /// Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
         /// </summary>
         [Output("enableIpv6")]
         public Output<bool> EnableIpv6 { get; private set; } = null!;
 
         /// <summary>
-        /// 子网IPv6网段。1、创建/修改时请输入子网IPv6网段的最后8比特位（子网的掩码固定为/64）。2、仅当EnableIpv6设置为true时，支持配置本参数。3、取值范围：0～255。掩码固定为/64。
+        /// Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
         /// </summary>
         [Output("ipv6CidrBlock")]
         public Output<string> Ipv6CidrBlock { get; private set; } = null!;
 
         /// <summary>
-        /// 该子网是否为默认子网。1、true：默认子网，表示该子网是创建ECS实例时系统自动创建的子网。2、false：非默认子网，表示该子网是用户手动创建的。
+        /// Whether the subnet is a default subnet. 1. true: Default subnet, created automatically when an ECS instance is created. 2. false: Non-default subnet, created manually by the user
         /// </summary>
         [Output("isDefault")]
         public Output<bool> IsDefault { get; private set; } = null!;
 
         /// <summary>
-        /// 子网关联的网络ACL的ID。
+        /// ID of the network ACL associated with the subnet
         /// </summary>
         [Output("networkAclId")]
         public Output<string> NetworkAclId { get; private set; } = null!;
 
         /// <summary>
-        /// 子网所在VPC实例所属项目的名称。
+        /// Name of the project associated with the VPC instance where the subnet resides
         /// </summary>
         [Output("projectName")]
         public Output<string> ProjectName { get; private set; } = null!;
 
         /// <summary>
-        /// 只读字段，子网IPv6网段。
+        /// Read-only field, subnet IPv6 CIDR block
         /// </summary>
         [Output("readIpv6CidrBlock")]
         public Output<string> ReadIpv6CidrBlock { get; private set; } = null!;
 
         /// <summary>
-        /// 路由表信息。
+        /// Route table information
         /// </summary>
         [Output("routeTable")]
         public Output<Outputs.SubnetRouteTable> RouteTable { get; private set; } = null!;
 
         /// <summary>
-        /// 子网的状态。1、Pending：表示配置中。2、Available：表示可用。
+        /// Subnet status. 1. Pending: Configuring. 2. Available: Available
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// 待修改信息的子网的ID。
+        /// ID of the subnet whose information is to be modified
         /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
 
         /// <summary>
-        /// 子网的名称，长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不能以http://或https://开头，不填默认是子网的ID。
+        /// Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
         /// </summary>
         [Output("subnetName")]
         public Output<string> SubnetName { get; private set; } = null!;
@@ -146,25 +146,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         public Output<ImmutableArray<Outputs.SubnetTag>> Tags { get; private set; } = null!;
 
         /// <summary>
-        /// 子网下可用IP总数。
+        /// Total number of available IPs in the subnet
         /// </summary>
         [Output("totalIpv4Count")]
         public Output<int> TotalIpv4Count { get; private set; } = null!;
 
         /// <summary>
-        /// 子网的更新时间。
+        /// Subnet update time
         /// </summary>
         [Output("updatedTime")]
         public Output<string> UpdatedTime { get; private set; } = null!;
 
         /// <summary>
-        /// 子网所属VPC的ID。
+        /// ID of the VPC to which the subnet belongs
         /// </summary>
         [Output("vpcId")]
         public Output<string> VpcId { get; private set; } = null!;
 
         /// <summary>
-        /// 要创建的子网所属的可用区ID，更多可用区信息请参见地域和可用区。
+        /// Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
         /// </summary>
         [Output("zoneId")]
         public Output<string> ZoneId { get; private set; } = null!;
@@ -217,31 +217,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class SubnetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 子网的IPv4网段。
+        /// Subnet IPv4 CIDR block
         /// </summary>
         [Input("cidrBlock", required: true)]
         public Input<string> CidrBlock { get; set; } = null!;
 
         /// <summary>
-        /// 子网的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不能以http://或https://开头。
+        /// Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 开启/关闭IPv6功能。仅当子网所属的VPC开通IPv6功能时，可配置此参数。1、true：开启。2、false：关闭。仅当子网内没有分配IPv6地址的云资源时，可配置此取值。
+        /// Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
         /// </summary>
         [Input("enableIpv6")]
         public Input<bool>? EnableIpv6 { get; set; }
 
         /// <summary>
-        /// 子网IPv6网段。1、创建/修改时请输入子网IPv6网段的最后8比特位（子网的掩码固定为/64）。2、仅当EnableIpv6设置为true时，支持配置本参数。3、取值范围：0～255。掩码固定为/64。
+        /// Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
         /// </summary>
         [Input("ipv6CidrBlock")]
         public Input<string>? Ipv6CidrBlock { get; set; }
 
         /// <summary>
-        /// 子网的名称，长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不能以http://或https://开头，不填默认是子网的ID。
+        /// Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
         /// </summary>
         [Input("subnetName")]
         public Input<string>? SubnetName { get; set; }
@@ -255,13 +255,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 子网所属VPC的ID。
+        /// ID of the VPC to which the subnet belongs
         /// </summary>
         [Input("vpcId", required: true)]
         public Input<string> VpcId { get; set; } = null!;
 
         /// <summary>
-        /// 要创建的子网所属的可用区ID，更多可用区信息请参见地域和可用区。
+        /// Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
         /// </summary>
         [Input("zoneId", required: true)]
         public Input<string> ZoneId { get; set; } = null!;
@@ -275,91 +275,91 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public sealed class SubnetState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 子网所属账户的ID。
+        /// ID of the account to which the subnet belongs
         /// </summary>
         [Input("accountId")]
         public Input<string>? AccountId { get; set; }
 
         /// <summary>
-        /// 子网中可用的IP地址数量。
+        /// Number of available IP addresses in the subnet
         /// </summary>
         [Input("availableIpAddressCount")]
         public Input<int>? AvailableIpAddressCount { get; set; }
 
         /// <summary>
-        /// 子网的IPv4网段。
+        /// Subnet IPv4 CIDR block
         /// </summary>
         [Input("cidrBlock")]
         public Input<string>? CidrBlock { get; set; }
 
         /// <summary>
-        /// 子网的创建时间。
+        /// Subnet creation time
         /// </summary>
         [Input("createdTime")]
         public Input<string>? CreatedTime { get; set; }
 
         /// <summary>
-        /// 子网的描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不能以http://或https://开头。
+        /// Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// 开启/关闭IPv6功能。仅当子网所属的VPC开通IPv6功能时，可配置此参数。1、true：开启。2、false：关闭。仅当子网内没有分配IPv6地址的云资源时，可配置此取值。
+        /// Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
         /// </summary>
         [Input("enableIpv6")]
         public Input<bool>? EnableIpv6 { get; set; }
 
         /// <summary>
-        /// 子网IPv6网段。1、创建/修改时请输入子网IPv6网段的最后8比特位（子网的掩码固定为/64）。2、仅当EnableIpv6设置为true时，支持配置本参数。3、取值范围：0～255。掩码固定为/64。
+        /// Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
         /// </summary>
         [Input("ipv6CidrBlock")]
         public Input<string>? Ipv6CidrBlock { get; set; }
 
         /// <summary>
-        /// 该子网是否为默认子网。1、true：默认子网，表示该子网是创建ECS实例时系统自动创建的子网。2、false：非默认子网，表示该子网是用户手动创建的。
+        /// Whether the subnet is a default subnet. 1. true: Default subnet, created automatically when an ECS instance is created. 2. false: Non-default subnet, created manually by the user
         /// </summary>
         [Input("isDefault")]
         public Input<bool>? IsDefault { get; set; }
 
         /// <summary>
-        /// 子网关联的网络ACL的ID。
+        /// ID of the network ACL associated with the subnet
         /// </summary>
         [Input("networkAclId")]
         public Input<string>? NetworkAclId { get; set; }
 
         /// <summary>
-        /// 子网所在VPC实例所属项目的名称。
+        /// Name of the project associated with the VPC instance where the subnet resides
         /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
         /// <summary>
-        /// 只读字段，子网IPv6网段。
+        /// Read-only field, subnet IPv6 CIDR block
         /// </summary>
         [Input("readIpv6CidrBlock")]
         public Input<string>? ReadIpv6CidrBlock { get; set; }
 
         /// <summary>
-        /// 路由表信息。
+        /// Route table information
         /// </summary>
         [Input("routeTable")]
         public Input<Inputs.SubnetRouteTableGetArgs>? RouteTable { get; set; }
 
         /// <summary>
-        /// 子网的状态。1、Pending：表示配置中。2、Available：表示可用。
+        /// Subnet status. 1. Pending: Configuring. 2. Available: Available
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// 待修改信息的子网的ID。
+        /// ID of the subnet whose information is to be modified
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
 
         /// <summary>
-        /// 子网的名称，长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不能以http://或https://开头，不填默认是子网的ID。
+        /// Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
         /// </summary>
         [Input("subnetName")]
         public Input<string>? SubnetName { get; set; }
@@ -373,25 +373,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
         }
 
         /// <summary>
-        /// 子网下可用IP总数。
+        /// Total number of available IPs in the subnet
         /// </summary>
         [Input("totalIpv4Count")]
         public Input<int>? TotalIpv4Count { get; set; }
 
         /// <summary>
-        /// 子网的更新时间。
+        /// Subnet update time
         /// </summary>
         [Input("updatedTime")]
         public Input<string>? UpdatedTime { get; set; }
 
         /// <summary>
-        /// 子网所属VPC的ID。
+        /// ID of the VPC to which the subnet belongs
         /// </summary>
         [Input("vpcId")]
         public Input<string>? VpcId { get; set; }
 
         /// <summary>
-        /// 要创建的子网所属的可用区ID，更多可用区信息请参见地域和可用区。
+        /// Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
         /// </summary>
         [Input("zoneId")]
         public Input<string>? ZoneId { get; set; }

@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone.Outputs
     public sealed class GetResolverEndpointIpConfigResult
     {
         /// <summary>
-        /// 终端节点 IP 地址所在的可用区。为了保证高可用，建议您至少添加 2 个可用区。
+        /// Availability zone for the endpoint IP address. To ensure high availability, it is recommended to add at least 2 availability zones
         /// </summary>
         public readonly string AzId;
         /// <summary>
-        /// 终端节点的 IPv4 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+        /// IPv4 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
         /// </summary>
         public readonly string Ip;
         /// <summary>
-        /// 终端节点的 IPv6 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+        /// IPv6 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
         /// </summary>
         public readonly string Ipv6;
         /// <summary>
-        /// 终端节点 IP 地址所在的子网 ID。
+        /// Subnet ID for the endpoint IP address
         /// </summary>
         public readonly string SubnetId;
 

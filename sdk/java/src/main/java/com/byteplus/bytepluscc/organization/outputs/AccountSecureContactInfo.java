@@ -13,74 +13,74 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AccountSecureContactInfo {
     /**
-     * @return 安全邮箱。
+     * @return Security email
      * 
      */
     private @Nullable String email;
     /**
-     * @return 安全邮箱是否验证，1: 未验证，2: 已验证。
+     * @return Security email verification status: 1. Not verified, 2. Verified
      * 
      */
     private @Nullable Integer emailVerified;
     /**
-     * @return 变更中的新邮箱。
+     * @return New email being changed
      * 
      */
     private @Nullable String newEmail;
     /**
-     * @return 变更中的新手机号。
+     * @return New mobile number being changed
      * 
      */
     private @Nullable String newPhone;
     /**
-     * @return 安全手机号。
+     * @return Security mobile number
      * 
      */
     private @Nullable String phone;
     /**
-     * @return 安全手机号是否验证，1: 未验证，2: 已验证。
+     * @return Security mobile number verification status: 1. Not verified, 2. Verified
      * 
      */
     private @Nullable Integer phoneVerified;
 
     private AccountSecureContactInfo() {}
     /**
-     * @return 安全邮箱。
+     * @return Security email
      * 
      */
     public Optional<String> email() {
         return Optional.ofNullable(this.email);
     }
     /**
-     * @return 安全邮箱是否验证，1: 未验证，2: 已验证。
+     * @return Security email verification status: 1. Not verified, 2. Verified
      * 
      */
     public Optional<Integer> emailVerified() {
         return Optional.ofNullable(this.emailVerified);
     }
     /**
-     * @return 变更中的新邮箱。
+     * @return New email being changed
      * 
      */
     public Optional<String> newEmail() {
         return Optional.ofNullable(this.newEmail);
     }
     /**
-     * @return 变更中的新手机号。
+     * @return New mobile number being changed
      * 
      */
     public Optional<String> newPhone() {
         return Optional.ofNullable(this.newPhone);
     }
     /**
-     * @return 安全手机号。
+     * @return Security mobile number
      * 
      */
     public Optional<String> phone() {
         return Optional.ofNullable(this.phone);
     }
     /**
-     * @return 安全手机号是否验证，1: 未验证，2: 已验证。
+     * @return Security mobile number verification status: 1. Not verified, 2. Verified
      * 
      */
     public Optional<Integer> phoneVerified() {

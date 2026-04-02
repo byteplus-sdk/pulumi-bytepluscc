@@ -16,14 +16,14 @@ public final class RuleRuleActionFixedResponseConfigArgs extends com.pulumi.reso
     public static final RuleRuleActionFixedResponseConfigArgs Empty = new RuleRuleActionFixedResponseConfigArgs();
 
     /**
-     * 返回的固定内容。
+     * Fixed response content.
      * 
      */
     @Import(name="content")
     private @Nullable Output<String> content;
 
     /**
-     * @return 返回的固定内容。
+     * @return Fixed response content.
      * 
      */
     public Optional<Output<String>> content() {
@@ -31,14 +31,14 @@ public final class RuleRuleActionFixedResponseConfigArgs extends com.pulumi.reso
     }
 
     /**
-     * 返回的固定内容的格式。text/plain、text/css、text/html、application/javascript、application/json
+     * Format of fixed response content. text/plain, text/css, text/html, application/javascript, application/json
      * 
      */
     @Import(name="contentType")
     private @Nullable Output<String> contentType;
 
     /**
-     * @return 返回的固定内容的格式。text/plain、text/css、text/html、application/javascript、application/json
+     * @return Format of fixed response content. text/plain, text/css, text/html, application/javascript, application/json
      * 
      */
     public Optional<Output<String>> contentType() {
@@ -46,14 +46,14 @@ public final class RuleRuleActionFixedResponseConfigArgs extends com.pulumi.reso
     }
 
     /**
-     * 返回的 HTTP 状态码。
+     * Returned HTTP status code.
      * 
      */
     @Import(name="httpCode")
     private @Nullable Output<String> httpCode;
 
     /**
-     * @return 返回的 HTTP 状态码。
+     * @return Returned HTTP status code.
      * 
      */
     public Optional<Output<String>> httpCode() {
@@ -87,7 +87,7 @@ public final class RuleRuleActionFixedResponseConfigArgs extends com.pulumi.reso
         }
 
         /**
-         * @param content 返回的固定内容。
+         * @param content Fixed response content.
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class RuleRuleActionFixedResponseConfigArgs extends com.pulumi.reso
         }
 
         /**
-         * @param content 返回的固定内容。
+         * @param content Fixed response content.
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class RuleRuleActionFixedResponseConfigArgs extends com.pulumi.reso
         }
 
         /**
-         * @param contentType 返回的固定内容的格式。text/plain、text/css、text/html、application/javascript、application/json
+         * @param contentType Format of fixed response content. text/plain, text/css, text/html, application/javascript, application/json
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class RuleRuleActionFixedResponseConfigArgs extends com.pulumi.reso
         }
 
         /**
-         * @param contentType 返回的固定内容的格式。text/plain、text/css、text/html、application/javascript、application/json
+         * @param contentType Format of fixed response content. text/plain, text/css, text/html, application/javascript, application/json
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class RuleRuleActionFixedResponseConfigArgs extends com.pulumi.reso
         }
 
         /**
-         * @param httpCode 返回的 HTTP 状态码。
+         * @param httpCode Returned HTTP status code.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class RuleRuleActionFixedResponseConfigArgs extends com.pulumi.reso
         }
 
         /**
-         * @param httpCode 返回的 HTTP 状态码。
+         * @param httpCode Returned HTTP status code.
          * 
          * @return builder
          * 

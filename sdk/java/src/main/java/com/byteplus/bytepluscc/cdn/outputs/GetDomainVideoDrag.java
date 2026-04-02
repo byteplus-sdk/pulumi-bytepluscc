@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainVideoDrag {
     /**
-     * @return 智能压缩配置开关。该参数有以下取值：true：表示启用视频拖拽。false：表示禁用视频拖拽。
+     * @return Smart compression configuration switch. The parameter has the following options: true: enable video seeking. false: disable video seeking.
      * 
      */
     private Boolean switch_;
 
     private GetDomainVideoDrag() {}
     /**
-     * @return 智能压缩配置开关。该参数有以下取值：true：表示启用视频拖拽。false：表示禁用视频拖拽。
+     * @return Smart compression configuration switch. The parameter has the following options: true: enable video seeking. false: disable video seeking.
      * 
      */
     public Boolean switch_() {

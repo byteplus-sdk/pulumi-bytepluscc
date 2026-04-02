@@ -11,7 +11,7 @@ using Pulumi;
 namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
 {
     /// <summary>
-    /// 备份是数据库的重要运行时文件，基于备份文件，数据库能够实现容灾、恢复等功能。云数据库 MySQL 版提供了数据备份和日志备份两种备份能力：通过数据备份可将数据库恢复至某个备份集，通过日志备份可将数据库恢复至指定时间点。
+    /// Backups are important runtime files for the database. Based on backup files, the database can achieve disaster recovery and restoration. MySQL Cloud Database provides two backup capabilities: data backup and log backup. Data backup allows you to restore the database to a specific backup set, while log backup enables restoration to a specified point in time
     /// 
     /// ## Example Usage
     /// 
@@ -50,25 +50,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
     public partial class Backup : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// 备份创建结束时间（UTC）。
+        /// Backup creation end time (UTC)
         /// </summary>
         [Output("backupEndTime")]
         public Output<string> BackupEndTime { get; private set; } = null!;
 
         /// <summary>
-        /// 备份文件名。
+        /// Backup file name
         /// </summary>
         [Output("backupFileName")]
         public Output<string> BackupFileName { get; private set; } = null!;
 
         /// <summary>
-        /// 备份文件大小，单位为字节。
+        /// Backup file size (bytes)
         /// </summary>
         [Output("backupFileSize")]
         public Output<int> BackupFileSize { get; private set; } = null!;
 
         /// <summary>
-        /// 备份 ID。
+        /// Backup ID
         /// </summary>
         [Output("backupId")]
         public Output<string> BackupId { get; private set; } = null!;
@@ -77,55 +77,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         public Output<ImmutableArray<Outputs.BackupBackupMeta>> BackupMetas { get; private set; } = null!;
 
         /// <summary>
-        /// 备份类型，取值：Physical（物理备份）、Logical（逻辑备份）、Snapshot（快照备份）。
+        /// Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
         /// </summary>
         [Output("backupMethod")]
         public Output<string> BackupMethod { get; private set; } = null!;
 
         /// <summary>
-        /// 备份的名称。
+        /// Backup name
         /// </summary>
         [Output("backupName")]
         public Output<string> BackupName { get; private set; } = null!;
 
         /// <summary>
-        /// 备份所在区域。
+        /// Backup region
         /// </summary>
         [Output("backupRegion")]
         public Output<string> BackupRegion { get; private set; } = null!;
 
         /// <summary>
-        /// 备份创建开始时间（UTC）。
+        /// Backup creation start time (UTC)
         /// </summary>
         [Output("backupStartTime")]
         public Output<string> BackupStartTime { get; private set; } = null!;
 
         /// <summary>
-        /// 备份状态，取值：Success（成功）、Failed（失败）、Running（执行中）。
+        /// Backup status. Values: Success, Failed, Running
         /// </summary>
         [Output("backupStatus")]
         public Output<string> BackupStatus { get; private set; } = null!;
 
         /// <summary>
-        /// 备份方式，取值：Full（全量/库表备）、Increment（增量备份）、DumpAll（全库备份）。
+        /// Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
         /// </summary>
         [Output("backupType")]
         public Output<string> BackupType { get; private set; } = null!;
 
         /// <summary>
-        /// 一致性时间点。
+        /// Consistency time point
         /// </summary>
         [Output("consistentTime")]
         public Output<string> ConsistentTime { get; private set; } = null!;
 
         /// <summary>
-        /// 备份创建者，取值：System（系统）、User（用户）。
+        /// Backup creator. Values: System (system), User (user)
         /// </summary>
         [Output("createType")]
         public Output<string> CreateType { get; private set; } = null!;
 
         /// <summary>
-        /// 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+        /// Compatible version. Values: MySQL*5*7: MySQL 5.7 version; MySQL*8*0: MySQL 8.0 version
         /// </summary>
         [Output("dbEngineVersion")]
         public Output<string> DbEngineVersion { get; private set; } = null!;
@@ -134,43 +134,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         public Output<ImmutableArray<Outputs.BackupDbTableInfo>> DbTableInfos { get; private set; } = null!;
 
         /// <summary>
-        /// 下载状态。
+        /// Download status
         /// </summary>
         [Output("downloadStatus")]
         public Output<string> DownloadStatus { get; private set; } = null!;
 
         /// <summary>
-        /// 数据库引擎类型。取值：InnoDB：InnoDB 引擎。RocksDB：RocksDB 引擎。
+        /// Database engine type. Values: InnoDB: InnoDB engine; RocksDB: RocksDB engine
         /// </summary>
         [Output("engineType")]
         public Output<string> EngineType { get; private set; } = null!;
 
         /// <summary>
-        /// 备份失败的错误信息。
+        /// Error message for backup failure
         /// </summary>
         [Output("errorMessage")]
         public Output<string> ErrorMessage { get; private set; } = null!;
 
         /// <summary>
-        /// 备份过期时间（UTC）。
+        /// Backup expiration time (UTC)
         /// </summary>
         [Output("expiredTime")]
         public Output<string> ExpiredTime { get; private set; } = null!;
 
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID
         /// </summary>
         [Output("instanceId")]
         public Output<string> InstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// 是否加密。
+        /// Whether encrypted
         /// </summary>
         [Output("isEncrypted")]
         public Output<bool> IsEncrypted { get; private set; } = null!;
 
         /// <summary>
-        /// 是否已过期。
+        /// Whether expired
         /// </summary>
         [Output("isExpired")]
         public Output<bool> IsExpired { get; private set; } = null!;
@@ -231,19 +231,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         }
 
         /// <summary>
-        /// 备份类型，取值：Physical（物理备份）、Logical（逻辑备份）、Snapshot（快照备份）。
+        /// Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
         /// </summary>
         [Input("backupMethod")]
         public Input<string>? BackupMethod { get; set; }
 
         /// <summary>
-        /// 备份方式，取值：Full（全量/库表备）、Increment（增量备份）、DumpAll（全库备份）。
+        /// Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
         /// </summary>
         [Input("backupType")]
         public Input<string>? BackupType { get; set; }
 
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID
         /// </summary>
         [Input("instanceId", required: true)]
         public Input<string> InstanceId { get; set; } = null!;
@@ -257,25 +257,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
     public sealed class BackupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 备份创建结束时间（UTC）。
+        /// Backup creation end time (UTC)
         /// </summary>
         [Input("backupEndTime")]
         public Input<string>? BackupEndTime { get; set; }
 
         /// <summary>
-        /// 备份文件名。
+        /// Backup file name
         /// </summary>
         [Input("backupFileName")]
         public Input<string>? BackupFileName { get; set; }
 
         /// <summary>
-        /// 备份文件大小，单位为字节。
+        /// Backup file size (bytes)
         /// </summary>
         [Input("backupFileSize")]
         public Input<int>? BackupFileSize { get; set; }
 
         /// <summary>
-        /// 备份 ID。
+        /// Backup ID
         /// </summary>
         [Input("backupId")]
         public Input<string>? BackupId { get; set; }
@@ -289,55 +289,55 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         }
 
         /// <summary>
-        /// 备份类型，取值：Physical（物理备份）、Logical（逻辑备份）、Snapshot（快照备份）。
+        /// Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
         /// </summary>
         [Input("backupMethod")]
         public Input<string>? BackupMethod { get; set; }
 
         /// <summary>
-        /// 备份的名称。
+        /// Backup name
         /// </summary>
         [Input("backupName")]
         public Input<string>? BackupName { get; set; }
 
         /// <summary>
-        /// 备份所在区域。
+        /// Backup region
         /// </summary>
         [Input("backupRegion")]
         public Input<string>? BackupRegion { get; set; }
 
         /// <summary>
-        /// 备份创建开始时间（UTC）。
+        /// Backup creation start time (UTC)
         /// </summary>
         [Input("backupStartTime")]
         public Input<string>? BackupStartTime { get; set; }
 
         /// <summary>
-        /// 备份状态，取值：Success（成功）、Failed（失败）、Running（执行中）。
+        /// Backup status. Values: Success, Failed, Running
         /// </summary>
         [Input("backupStatus")]
         public Input<string>? BackupStatus { get; set; }
 
         /// <summary>
-        /// 备份方式，取值：Full（全量/库表备）、Increment（增量备份）、DumpAll（全库备份）。
+        /// Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
         /// </summary>
         [Input("backupType")]
         public Input<string>? BackupType { get; set; }
 
         /// <summary>
-        /// 一致性时间点。
+        /// Consistency time point
         /// </summary>
         [Input("consistentTime")]
         public Input<string>? ConsistentTime { get; set; }
 
         /// <summary>
-        /// 备份创建者，取值：System（系统）、User（用户）。
+        /// Backup creator. Values: System (system), User (user)
         /// </summary>
         [Input("createType")]
         public Input<string>? CreateType { get; set; }
 
         /// <summary>
-        /// 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+        /// Compatible version. Values: MySQL*5*7: MySQL 5.7 version; MySQL*8*0: MySQL 8.0 version
         /// </summary>
         [Input("dbEngineVersion")]
         public Input<string>? DbEngineVersion { get; set; }
@@ -351,43 +351,43 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         }
 
         /// <summary>
-        /// 下载状态。
+        /// Download status
         /// </summary>
         [Input("downloadStatus")]
         public Input<string>? DownloadStatus { get; set; }
 
         /// <summary>
-        /// 数据库引擎类型。取值：InnoDB：InnoDB 引擎。RocksDB：RocksDB 引擎。
+        /// Database engine type. Values: InnoDB: InnoDB engine; RocksDB: RocksDB engine
         /// </summary>
         [Input("engineType")]
         public Input<string>? EngineType { get; set; }
 
         /// <summary>
-        /// 备份失败的错误信息。
+        /// Error message for backup failure
         /// </summary>
         [Input("errorMessage")]
         public Input<string>? ErrorMessage { get; set; }
 
         /// <summary>
-        /// 备份过期时间（UTC）。
+        /// Backup expiration time (UTC)
         /// </summary>
         [Input("expiredTime")]
         public Input<string>? ExpiredTime { get; set; }
 
         /// <summary>
-        /// 实例 ID。
+        /// Instance ID
         /// </summary>
         [Input("instanceId")]
         public Input<string>? InstanceId { get; set; }
 
         /// <summary>
-        /// 是否加密。
+        /// Whether encrypted
         /// </summary>
         [Input("isEncrypted")]
         public Input<bool>? IsEncrypted { get; set; }
 
         /// <summary>
-        /// 是否已过期。
+        /// Whether expired
         /// </summary>
         [Input("isExpired")]
         public Input<bool>? IsExpired { get; set; }

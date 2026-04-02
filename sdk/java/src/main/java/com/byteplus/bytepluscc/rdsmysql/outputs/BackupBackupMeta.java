@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class BackupBackupMeta {
     /**
-     * @return 数据库名。
+     * @return Database name
      * 
      */
     private @Nullable String database;
     /**
-     * @return 表名列表。
+     * @return Table name list
      * 
      */
     private @Nullable List<String> tables;
 
     private BackupBackupMeta() {}
     /**
-     * @return 数据库名。
+     * @return Database name
      * 
      */
     public Optional<String> database() {
         return Optional.ofNullable(this.database);
     }
     /**
-     * @return 表名列表。
+     * @return Table name list
      * 
      */
     public List<String> tables() {

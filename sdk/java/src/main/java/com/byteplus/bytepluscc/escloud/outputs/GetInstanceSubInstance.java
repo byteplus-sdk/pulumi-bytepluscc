@@ -11,38 +11,38 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceSubInstance {
     /**
-     * @return 企业级 SQL 分析实例 ID。
+     * @return Enterprise-level SQL analysis instance ID.
      * 
      */
     private String subInstanceId;
     /**
-     * @return 实例状态。
+     * @return Instance status
      * 
      */
     private String subInstanceStatus;
     /**
-     * @return 实例类型。
+     * @return Instance type
      * 
      */
     private String subInstanceType;
 
     private GetInstanceSubInstance() {}
     /**
-     * @return 企业级 SQL 分析实例 ID。
+     * @return Enterprise-level SQL analysis instance ID.
      * 
      */
     public String subInstanceId() {
         return this.subInstanceId;
     }
     /**
-     * @return 实例状态。
+     * @return Instance status
      * 
      */
     public String subInstanceStatus() {
         return this.subInstanceStatus;
     }
     /**
-     * @return 实例类型。
+     * @return Instance type
      * 
      */
     public String subInstanceType() {

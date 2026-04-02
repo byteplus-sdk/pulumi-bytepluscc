@@ -11,38 +11,38 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTime {
     /**
-     * @return 表示限速发生的开始时间。时间格式是 mm:ss。如果 DayWeek 的参数值是 unlimited, BeginTime 和 EndTime 参数的默认值会分别被设置为 00:00 和 23:59。
+     * @return Indicates the start time for rate limiting. The time format is mm:ss. If the DayWeek parameter value is unlimited, the default values for BeginTime and EndTime will be set to 00:00 and 23:59, respectively.
      * 
      */
     private String beginTime;
     /**
-     * @return 表示限速发生的日期。该参数有以下取值：monday，tuesday，wednesday，thursday，friday，saturday，sunday，unlimited。unlimited 表示每天。您可以指定一个或多个值。多个值之间使用英文分号（;）分隔。
+     * @return Specifies the date when rate limiting occurs. This parameter has the following values: monday, tuesday, wednesday, thursday, friday, saturday, sunday, unlimited. unlimited means every day. You can specify one or more values. Separate multiple values with a semicolon (;).
      * 
      */
     private String dayWeek;
     /**
-     * @return 表示限速发生的结束时间。时间格式是 mm:ss。如果 DayWeek 的参数值是 unlimited, BeginTime 和 EndTime 参数的默认值会分别被设置为 00:00 和 23:59。
+     * @return Indicates the end time for rate limiting. The time format is mm:ss. If the DayWeek parameter is set to unlimited, the default values for BeginTime and EndTime are 00:00 and 23:59, respectively.
      * 
      */
     private String endTime;
 
     private GetDomainDownloadSpeedLimitDownloadSpeedLimitRuleDownloadSpeedLimitActionSpeedLimitTime() {}
     /**
-     * @return 表示限速发生的开始时间。时间格式是 mm:ss。如果 DayWeek 的参数值是 unlimited, BeginTime 和 EndTime 参数的默认值会分别被设置为 00:00 和 23:59。
+     * @return Indicates the start time for rate limiting. The time format is mm:ss. If the DayWeek parameter value is unlimited, the default values for BeginTime and EndTime will be set to 00:00 and 23:59, respectively.
      * 
      */
     public String beginTime() {
         return this.beginTime;
     }
     /**
-     * @return 表示限速发生的日期。该参数有以下取值：monday，tuesday，wednesday，thursday，friday，saturday，sunday，unlimited。unlimited 表示每天。您可以指定一个或多个值。多个值之间使用英文分号（;）分隔。
+     * @return Specifies the date when rate limiting occurs. This parameter has the following values: monday, tuesday, wednesday, thursday, friday, saturday, sunday, unlimited. unlimited means every day. You can specify one or more values. Separate multiple values with a semicolon (;).
      * 
      */
     public String dayWeek() {
         return this.dayWeek;
     }
     /**
-     * @return 表示限速发生的结束时间。时间格式是 mm:ss。如果 DayWeek 的参数值是 unlimited, BeginTime 和 EndTime 参数的默认值会分别被设置为 00:00 和 23:59。
+     * @return Indicates the end time for rate limiting. The time format is mm:ss. If the DayWeek parameter is set to unlimited, the default values for BeginTime and EndTime are 00:00 and 23:59, respectively.
      * 
      */
     public String endTime() {

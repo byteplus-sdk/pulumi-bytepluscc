@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
     public sealed class InvocationTag
     {
         /// <summary>
-        /// 用户标签的标签键。命名规则如下：不能以volc:或sys:的任意大小写组合开头。只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。长度限制在1～128个字符之间。
+        /// Tag key for user tags. Naming rules: Cannot start with any combination of 'volc:' or 'sys:' in any case. Can only contain letters, numbers, spaces, and English symbols '_', '.', ':', '/', '=', '+', '-', '@'. Length must be between 1 and 128 characters.
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// 用户标签的标签值。命名规则如下：只能包含语言字符、数字、空格和英文符号“_”、“.”、“:”、“/”、“=”、“+”、“-”、“@”。允许为空，长度限制在0～256个字符之间。
+        /// User tag value. Naming rules: Only letters, numbers, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty; length must be between 0 and 256 characters.
         /// </summary>
         public readonly string? Value;
 

@@ -13,122 +13,122 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceChargeDetail {
     /**
-     * @return 包年包月实例到期后是否自动续费。
+     * @return Whether to automatically renew the subscription instance after expiration.
      * 
      */
     private Boolean autoRenew;
     /**
-     * @return 实例的结束计费时间，时间显示格式为 YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;。
+     * @return Instance billing end time. The time format is YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;.
      * 
      */
     private String chargeEndTime;
     /**
-     * @return 包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;。
+     * @return Expiration time of the subscription instance. The time format is YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;.
      * 
      */
     private String chargeExpireTime;
     /**
-     * @return 实例的开始计费时间，时间显示格式为 YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;。
+     * @return Instance billing start time. The time format is YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;.
      * 
      */
     private String chargeStartTime;
     /**
-     * @return 实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
+     * @return Instance billing status. Includes: Normal: normal, Overdue: pay-as-you-go overdue, Expired: subscription expired.
      * 
      */
     private String chargeStatus;
     /**
-     * @return 实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
+     * @return Instance billing type. Supported types include: PostPaid: pay-as-you-go, PrePaid: subscription.
      * 
      */
     private String chargeType;
     /**
-     * @return 实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;。
+     * @return Estimated release time after the instance is suspended due to overdue payment. Time format: YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;.
      * 
      */
     private String overdueReclaimTime;
     /**
-     * @return 实例的欠费关停时间。时间显示格式为 YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;。
+     * @return Instance suspension time due to overdue payment. Time format: YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;.
      * 
      */
     private String overdueTime;
     /**
-     * @return 包年包月类型实例的购买时长。PeriodUnit 指定为 Month 时，取值范围为 1~9。PeriodUnit 指定为 Year 时，取值范围为 1~3。
+     * @return Subscription instance purchase duration. When PeriodUnit is set to Month, the value range is 1–9. When PeriodUnit is set to Year, the value range is 1–3.
      * 
      */
     private Integer period;
     /**
-     * @return 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+     * @return Unit for purchase duration. Values: MONTHLY: monthly purchase, YEARLY: annual purchase.
      * 
      */
     private String periodUnit;
 
     private GetInstanceChargeDetail() {}
     /**
-     * @return 包年包月实例到期后是否自动续费。
+     * @return Whether to automatically renew the subscription instance after expiration.
      * 
      */
     public Boolean autoRenew() {
         return this.autoRenew;
     }
     /**
-     * @return 实例的结束计费时间，时间显示格式为 YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;。
+     * @return Instance billing end time. The time format is YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;.
      * 
      */
     public String chargeEndTime() {
         return this.chargeEndTime;
     }
     /**
-     * @return 包年包月实例的到期时间。时间显示格式为 YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;。
+     * @return Expiration time of the subscription instance. The time format is YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;.
      * 
      */
     public String chargeExpireTime() {
         return this.chargeExpireTime;
     }
     /**
-     * @return 实例的开始计费时间，时间显示格式为 YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;。
+     * @return Instance billing start time. The time format is YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;.
      * 
      */
     public String chargeStartTime() {
         return this.chargeStartTime;
     }
     /**
-     * @return 实例的计费状态。包括：Normal：正常，Overdue：按量计费欠费，Expired：包年包月到期。
+     * @return Instance billing status. Includes: Normal: normal, Overdue: pay-as-you-go overdue, Expired: subscription expired.
      * 
      */
     public String chargeStatus() {
         return this.chargeStatus;
     }
     /**
-     * @return 实例的计费类型。支持的类型包括：PostPaid ：按量付费，PrePaid：包年包月。
+     * @return Instance billing type. Supported types include: PostPaid: pay-as-you-go, PrePaid: subscription.
      * 
      */
     public String chargeType() {
         return this.chargeType;
     }
     /**
-     * @return 实例欠费关停后的预计释放时间。时间显示格式为 YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;。
+     * @return Estimated release time after the instance is suspended due to overdue payment. Time format: YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;.
      * 
      */
     public String overdueReclaimTime() {
         return this.overdueReclaimTime;
     }
     /**
-     * @return 实例的欠费关停时间。时间显示格式为 YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;。
+     * @return Instance suspension time due to overdue payment. Time format: YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;.
      * 
      */
     public String overdueTime() {
         return this.overdueTime;
     }
     /**
-     * @return 包年包月类型实例的购买时长。PeriodUnit 指定为 Month 时，取值范围为 1~9。PeriodUnit 指定为 Year 时，取值范围为 1~3。
+     * @return Subscription instance purchase duration. When PeriodUnit is set to Month, the value range is 1–9. When PeriodUnit is set to Year, the value range is 1–3.
      * 
      */
     public Integer period() {
         return this.period;
     }
     /**
-     * @return 购买时长的单位，取值如下：MONTHLY：按月购买。YEARLY：按年购买。
+     * @return Unit for purchase duration. Values: MONTHLY: monthly purchase, YEARLY: annual purchase.
      * 
      */
     public String periodUnit() {

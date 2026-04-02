@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class GetEndpointCustomRouteStrategy {
     /**
-     * @return 自定义路由策略列表。
+     * @return Custom routing policy list.
      * 
      */
     private List<GetEndpointCustomRouteStrategyKeywordRouteStrategy> keywordRouteStrategies;
 
     private GetEndpointCustomRouteStrategy() {}
     /**
-     * @return 自定义路由策略列表。
+     * @return Custom routing policy list.
      * 
      */
     public List<GetEndpointCustomRouteStrategyKeywordRouteStrategy> keywordRouteStrategies() {

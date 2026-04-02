@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class DomainOriginArg
     {
         /// <summary>
-        /// 表示该配置模块的生效条件，由一组规则组成。
+        /// Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
         /// </summary>
         public readonly Outputs.DomainOriginArgCondition? Condition;
         /// <summary>
-        /// 表示在满足 Condition 条件时所执行的操作。
+        /// Represents the action performed when the Condition is met.
         /// </summary>
         public readonly Outputs.DomainOriginArgOriginArgAction? OriginArgAction;
 

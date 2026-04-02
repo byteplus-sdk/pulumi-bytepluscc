@@ -12,86 +12,86 @@ import java.util.Objects;
 @CustomType
 public final class GetClusterApplicationExtraApplicationConfigEffectiveScope {
     /**
-     * @return 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+     * @return Component name list. Required when EffectiveType=COMPONENT_NAME.
      * 
      */
     private List<String> componentNames;
     /**
-     * @return 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+     * @return Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
      * 
      */
     private String effectiveType;
     /**
-     * @return 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+     * @return Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
      * 
      */
     private List<String> nodeGroupIds;
     /**
-     * @return 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+     * @return Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
      * 
      */
     private List<String> nodeGroupNames;
     /**
-     * @return 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+     * @return Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
      * 
      */
     private List<String> nodeGroupTypes;
     /**
-     * @return 节点ID列表，EffectiveType=NODE_ID时，必选。
+     * @return Node ID list. Required when EffectiveType=NODE_ID.
      * 
      */
     private List<String> nodeIds;
     /**
-     * @return 节点名列表，EffectiveType=NODE_NAME时，必选。
+     * @return Node name list. Required when EffectiveType=NODE_NAME.
      * 
      */
     private List<String> nodeNames;
 
     private GetClusterApplicationExtraApplicationConfigEffectiveScope() {}
     /**
-     * @return 组件名列表，当EffectiveType=COMPONENT_NAME，必选。
+     * @return Component name list. Required when EffectiveType=COMPONENT_NAME.
      * 
      */
     public List<String> componentNames() {
         return this.componentNames;
     }
     /**
-     * @return 生效类型。CLUSTER，NODE*GROUP*NAME，NODE*GROUP*ID，NODE*GROUP*TYPE，NODE*NAME，NODE*ID，COMPONENT_NAME。
+     * @return Effective type. CLUSTER, NODE*GROUP*NAME, NODE*GROUP*ID, NODE*GROUP*TYPE, NODE*NAME, NODE*ID, COMPONENT_NAME.
      * 
      */
     public String effectiveType() {
         return this.effectiveType;
     }
     /**
-     * @return 节点组ID列表，EffectiveType=NODE*GROUP*ID时，必选。
+     * @return Node group ID list. Required when EffectiveType=NODE*GROUP*ID.
      * 
      */
     public List<String> nodeGroupIds() {
         return this.nodeGroupIds;
     }
     /**
-     * @return 节点组名称列表，EffectiveType=NODE*GROUP*NAME时，必选。
+     * @return Node group name list. Required when EffectiveType=NODE*GROUP*NAME.
      * 
      */
     public List<String> nodeGroupNames() {
         return this.nodeGroupNames;
     }
     /**
-     * @return 节点组类型列表，EffectiveType=NODE*GROUP*TYPE时，必选。目前包括MASTER、CORE、TASK。
+     * @return Node group type list. Required when EffectiveType=NODE*GROUP*TYPE. Currently includes MASTER, CORE, TASK.
      * 
      */
     public List<String> nodeGroupTypes() {
         return this.nodeGroupTypes;
     }
     /**
-     * @return 节点ID列表，EffectiveType=NODE_ID时，必选。
+     * @return Node ID list. Required when EffectiveType=NODE_ID.
      * 
      */
     public List<String> nodeIds() {
         return this.nodeIds;
     }
     /**
-     * @return 节点名列表，EffectiveType=NODE_NAME时，必选。
+     * @return Node name list. Required when EffectiveType=NODE_NAME.
      * 
      */
     public List<String> nodeNames() {

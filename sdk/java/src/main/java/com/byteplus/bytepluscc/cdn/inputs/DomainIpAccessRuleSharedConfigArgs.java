@@ -16,14 +16,14 @@ public final class DomainIpAccessRuleSharedConfigArgs extends com.pulumi.resourc
     public static final DomainIpAccessRuleSharedConfigArgs Empty = new DomainIpAccessRuleSharedConfigArgs();
 
     /**
-     * 表示一个全局配置的名称。
+     * Indicates the name of a global configuration.
      * 
      */
     @Import(name="configName")
     private @Nullable Output<String> configName;
 
     /**
-     * @return 表示一个全局配置的名称。
+     * @return Indicates the name of a global configuration.
      * 
      */
     public Optional<Output<String>> configName() {
@@ -55,7 +55,7 @@ public final class DomainIpAccessRuleSharedConfigArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param configName 表示一个全局配置的名称。
+         * @param configName Indicates the name of a global configuration.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class DomainIpAccessRuleSharedConfigArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param configName 表示一个全局配置的名称。
+         * @param configName Indicates the name of a global configuration.
          * 
          * @return builder
          * 

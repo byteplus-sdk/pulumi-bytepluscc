@@ -14,7 +14,7 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type GatewayBackendSpec struct {
-	// 是否支持VKE Flannel CNI。
+	// Whether VKE Flannel CNI is supported
 	IsVkeWithFlannelCniSupported *bool `pulumi:"isVkeWithFlannelCniSupported"`
 	// VKE Pod CIDR。
 	VkePodCidr *string `pulumi:"vkePodCidr"`
@@ -32,7 +32,7 @@ type GatewayBackendSpecInput interface {
 }
 
 type GatewayBackendSpecArgs struct {
-	// 是否支持VKE Flannel CNI。
+	// Whether VKE Flannel CNI is supported
 	IsVkeWithFlannelCniSupported pulumi.BoolPtrInput `pulumi:"isVkeWithFlannelCniSupported"`
 	// VKE Pod CIDR。
 	VkePodCidr pulumi.StringPtrInput `pulumi:"vkePodCidr"`
@@ -115,7 +115,7 @@ func (o GatewayBackendSpecOutput) ToGatewayBackendSpecPtrOutputWithContext(ctx c
 	}).(GatewayBackendSpecPtrOutput)
 }
 
-// 是否支持VKE Flannel CNI。
+// Whether VKE Flannel CNI is supported
 func (o GatewayBackendSpecOutput) IsVkeWithFlannelCniSupported() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GatewayBackendSpec) *bool { return v.IsVkeWithFlannelCniSupported }).(pulumi.BoolPtrOutput)
 }
@@ -149,7 +149,7 @@ func (o GatewayBackendSpecPtrOutput) Elem() GatewayBackendSpecOutput {
 	}).(GatewayBackendSpecOutput)
 }
 
-// 是否支持VKE Flannel CNI。
+// Whether VKE Flannel CNI is supported
 func (o GatewayBackendSpecPtrOutput) IsVkeWithFlannelCniSupported() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *GatewayBackendSpec) *bool {
 		if v == nil {
@@ -333,9 +333,9 @@ func (o GatewayCustomLogPtrOutput) ResponseHeaders() GatewayCustomLogResponseHea
 }
 
 type GatewayCustomLogCustomVariable struct {
-	// 字段别名。
+	// Field alias
 	AliasesInLog *string `pulumi:"aliasesInLog"`
-	// 请求头键。
+	// Request header key
 	Key *string `pulumi:"key"`
 }
 
@@ -351,9 +351,9 @@ type GatewayCustomLogCustomVariableInput interface {
 }
 
 type GatewayCustomLogCustomVariableArgs struct {
-	// 字段别名。
+	// Field alias
 	AliasesInLog pulumi.StringPtrInput `pulumi:"aliasesInLog"`
-	// 请求头键。
+	// Request header key
 	Key pulumi.StringPtrInput `pulumi:"key"`
 }
 
@@ -408,12 +408,12 @@ func (o GatewayCustomLogCustomVariableOutput) ToGatewayCustomLogCustomVariableOu
 	return o
 }
 
-// 字段别名。
+// Field alias
 func (o GatewayCustomLogCustomVariableOutput) AliasesInLog() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GatewayCustomLogCustomVariable) *string { return v.AliasesInLog }).(pulumi.StringPtrOutput)
 }
 
-// 请求头键。
+// Request header key
 func (o GatewayCustomLogCustomVariableOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GatewayCustomLogCustomVariable) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -439,9 +439,9 @@ func (o GatewayCustomLogCustomVariableArrayOutput) Index(i pulumi.IntInput) Gate
 }
 
 type GatewayCustomLogRequestHeader struct {
-	// 字段别名。
+	// Field alias
 	AliasesInLog *string `pulumi:"aliasesInLog"`
-	// 请求头键。
+	// Request header key
 	Key *string `pulumi:"key"`
 }
 
@@ -457,9 +457,9 @@ type GatewayCustomLogRequestHeaderInput interface {
 }
 
 type GatewayCustomLogRequestHeaderArgs struct {
-	// 字段别名。
+	// Field alias
 	AliasesInLog pulumi.StringPtrInput `pulumi:"aliasesInLog"`
-	// 请求头键。
+	// Request header key
 	Key pulumi.StringPtrInput `pulumi:"key"`
 }
 
@@ -514,12 +514,12 @@ func (o GatewayCustomLogRequestHeaderOutput) ToGatewayCustomLogRequestHeaderOutp
 	return o
 }
 
-// 字段别名。
+// Field alias
 func (o GatewayCustomLogRequestHeaderOutput) AliasesInLog() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GatewayCustomLogRequestHeader) *string { return v.AliasesInLog }).(pulumi.StringPtrOutput)
 }
 
-// 请求头键。
+// Request header key
 func (o GatewayCustomLogRequestHeaderOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GatewayCustomLogRequestHeader) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -545,9 +545,9 @@ func (o GatewayCustomLogRequestHeaderArrayOutput) Index(i pulumi.IntInput) Gatew
 }
 
 type GatewayCustomLogResponseHeader struct {
-	// 字段别名。
+	// Field alias
 	AliasesInLog *string `pulumi:"aliasesInLog"`
-	// 请求头键。
+	// Request header key
 	Key *string `pulumi:"key"`
 }
 
@@ -563,9 +563,9 @@ type GatewayCustomLogResponseHeaderInput interface {
 }
 
 type GatewayCustomLogResponseHeaderArgs struct {
-	// 字段别名。
+	// Field alias
 	AliasesInLog pulumi.StringPtrInput `pulumi:"aliasesInLog"`
-	// 请求头键。
+	// Request header key
 	Key pulumi.StringPtrInput `pulumi:"key"`
 }
 
@@ -620,12 +620,12 @@ func (o GatewayCustomLogResponseHeaderOutput) ToGatewayCustomLogResponseHeaderOu
 	return o
 }
 
-// 字段别名。
+// Field alias
 func (o GatewayCustomLogResponseHeaderOutput) AliasesInLog() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GatewayCustomLogResponseHeader) *string { return v.AliasesInLog }).(pulumi.StringPtrOutput)
 }
 
-// 请求头键。
+// Request header key
 func (o GatewayCustomLogResponseHeaderOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GatewayCustomLogResponseHeader) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -651,13 +651,13 @@ func (o GatewayCustomLogResponseHeaderArrayOutput) Index(i pulumi.IntInput) Gate
 }
 
 type GatewayEvent struct {
-	// 事件代码。
+	// Event code
 	Code *string `pulumi:"code"`
-	// 事件创建时间。
+	// Event creation time
 	CreatedTime *string `pulumi:"createdTime"`
-	// 附带信息。
+	// Additional information
 	Data *string `pulumi:"data"`
-	// 事件描述。
+	// Event description
 	Description *string `pulumi:"description"`
 }
 
@@ -673,13 +673,13 @@ type GatewayEventInput interface {
 }
 
 type GatewayEventArgs struct {
-	// 事件代码。
+	// Event code
 	Code pulumi.StringPtrInput `pulumi:"code"`
-	// 事件创建时间。
+	// Event creation time
 	CreatedTime pulumi.StringPtrInput `pulumi:"createdTime"`
-	// 附带信息。
+	// Additional information
 	Data pulumi.StringPtrInput `pulumi:"data"`
-	// 事件描述。
+	// Event description
 	Description pulumi.StringPtrInput `pulumi:"description"`
 }
 
@@ -734,22 +734,22 @@ func (o GatewayEventOutput) ToGatewayEventOutputWithContext(ctx context.Context)
 	return o
 }
 
-// 事件代码。
+// Event code
 func (o GatewayEventOutput) Code() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GatewayEvent) *string { return v.Code }).(pulumi.StringPtrOutput)
 }
 
-// 事件创建时间。
+// Event creation time
 func (o GatewayEventOutput) CreatedTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GatewayEvent) *string { return v.CreatedTime }).(pulumi.StringPtrOutput)
 }
 
-// 附带信息。
+// Additional information
 func (o GatewayEventOutput) Data() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GatewayEvent) *string { return v.Data }).(pulumi.StringPtrOutput)
 }
 
-// 事件描述。
+// Event description
 func (o GatewayEventOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GatewayEvent) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -775,11 +775,11 @@ func (o GatewayEventArrayOutput) Index(i pulumi.IntInput) GatewayEventOutput {
 }
 
 type GatewayLogSpec struct {
-	// 是否开启日志服务。
+	// Whether to enable log service
 	Enable *bool `pulumi:"enable"`
-	// 日志项目ID。
+	// Log project ID
 	ProjectId *string `pulumi:"projectId"`
-	// 日志主题ID。ProjectId 指定项目里面的日志主题。
+	// Log topic ID. ProjectId specifies the log topic within the project
 	TopicId *string `pulumi:"topicId"`
 }
 
@@ -795,11 +795,11 @@ type GatewayLogSpecInput interface {
 }
 
 type GatewayLogSpecArgs struct {
-	// 是否开启日志服务。
+	// Whether to enable log service
 	Enable pulumi.BoolPtrInput `pulumi:"enable"`
-	// 日志项目ID。
+	// Log project ID
 	ProjectId pulumi.StringPtrInput `pulumi:"projectId"`
-	// 日志主题ID。ProjectId 指定项目里面的日志主题。
+	// Log topic ID. ProjectId specifies the log topic within the project
 	TopicId pulumi.StringPtrInput `pulumi:"topicId"`
 }
 
@@ -880,17 +880,17 @@ func (o GatewayLogSpecOutput) ToGatewayLogSpecPtrOutputWithContext(ctx context.C
 	}).(GatewayLogSpecPtrOutput)
 }
 
-// 是否开启日志服务。
+// Whether to enable log service
 func (o GatewayLogSpecOutput) Enable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GatewayLogSpec) *bool { return v.Enable }).(pulumi.BoolPtrOutput)
 }
 
-// 日志项目ID。
+// Log project ID
 func (o GatewayLogSpecOutput) ProjectId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GatewayLogSpec) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
 
-// 日志主题ID。ProjectId 指定项目里面的日志主题。
+// Log topic ID. ProjectId specifies the log topic within the project
 func (o GatewayLogSpecOutput) TopicId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GatewayLogSpec) *string { return v.TopicId }).(pulumi.StringPtrOutput)
 }
@@ -919,7 +919,7 @@ func (o GatewayLogSpecPtrOutput) Elem() GatewayLogSpecOutput {
 	}).(GatewayLogSpecOutput)
 }
 
-// 是否开启日志服务。
+// Whether to enable log service
 func (o GatewayLogSpecPtrOutput) Enable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *GatewayLogSpec) *bool {
 		if v == nil {
@@ -929,7 +929,7 @@ func (o GatewayLogSpecPtrOutput) Enable() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 日志项目ID。
+// Log project ID
 func (o GatewayLogSpecPtrOutput) ProjectId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GatewayLogSpec) *string {
 		if v == nil {
@@ -939,7 +939,7 @@ func (o GatewayLogSpecPtrOutput) ProjectId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 日志主题ID。ProjectId 指定项目里面的日志主题。
+// Log topic ID. ProjectId specifies the log topic within the project
 func (o GatewayLogSpecPtrOutput) TopicId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GatewayLogSpec) *string {
 		if v == nil {
@@ -950,9 +950,9 @@ func (o GatewayLogSpecPtrOutput) TopicId() pulumi.StringPtrOutput {
 }
 
 type GatewayMonitorSpec struct {
-	// 托管Prometheus（VMP）服务。
+	// Managed Prometheus (VMP) service
 	Enable *bool `pulumi:"enable"`
-	// Prometheus工作区ID。
+	// Prometheus workspace ID
 	WorkspaceId *string `pulumi:"workspaceId"`
 }
 
@@ -968,9 +968,9 @@ type GatewayMonitorSpecInput interface {
 }
 
 type GatewayMonitorSpecArgs struct {
-	// 托管Prometheus（VMP）服务。
+	// Managed Prometheus (VMP) service
 	Enable pulumi.BoolPtrInput `pulumi:"enable"`
-	// Prometheus工作区ID。
+	// Prometheus workspace ID
 	WorkspaceId pulumi.StringPtrInput `pulumi:"workspaceId"`
 }
 
@@ -1051,12 +1051,12 @@ func (o GatewayMonitorSpecOutput) ToGatewayMonitorSpecPtrOutputWithContext(ctx c
 	}).(GatewayMonitorSpecPtrOutput)
 }
 
-// 托管Prometheus（VMP）服务。
+// Managed Prometheus (VMP) service
 func (o GatewayMonitorSpecOutput) Enable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GatewayMonitorSpec) *bool { return v.Enable }).(pulumi.BoolPtrOutput)
 }
 
-// Prometheus工作区ID。
+// Prometheus workspace ID
 func (o GatewayMonitorSpecOutput) WorkspaceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GatewayMonitorSpec) *string { return v.WorkspaceId }).(pulumi.StringPtrOutput)
 }
@@ -1085,7 +1085,7 @@ func (o GatewayMonitorSpecPtrOutput) Elem() GatewayMonitorSpecOutput {
 	}).(GatewayMonitorSpecOutput)
 }
 
-// 托管Prometheus（VMP）服务。
+// Managed Prometheus (VMP) service
 func (o GatewayMonitorSpecPtrOutput) Enable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *GatewayMonitorSpec) *bool {
 		if v == nil {
@@ -1095,7 +1095,7 @@ func (o GatewayMonitorSpecPtrOutput) Enable() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// Prometheus工作区ID。
+// Prometheus workspace ID
 func (o GatewayMonitorSpecPtrOutput) WorkspaceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GatewayMonitorSpec) *string {
 		if v == nil {
@@ -1109,7 +1109,7 @@ type GatewayNetworkSpec struct {
 	Subnets []GatewayNetworkSpecSubnet `pulumi:"subnets"`
 	// VPC ID。
 	VpcId *string `pulumi:"vpcId"`
-	// VPC名称。
+	// VPC name
 	VpcName *string `pulumi:"vpcName"`
 }
 
@@ -1128,7 +1128,7 @@ type GatewayNetworkSpecArgs struct {
 	Subnets GatewayNetworkSpecSubnetArrayInput `pulumi:"subnets"`
 	// VPC ID。
 	VpcId pulumi.StringPtrInput `pulumi:"vpcId"`
-	// VPC名称。
+	// VPC name
 	VpcName pulumi.StringPtrInput `pulumi:"vpcName"`
 }
 
@@ -1218,7 +1218,7 @@ func (o GatewayNetworkSpecOutput) VpcId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GatewayNetworkSpec) *string { return v.VpcId }).(pulumi.StringPtrOutput)
 }
 
-// VPC名称。
+// VPC name
 func (o GatewayNetworkSpecOutput) VpcName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GatewayNetworkSpec) *string { return v.VpcName }).(pulumi.StringPtrOutput)
 }
@@ -1266,7 +1266,7 @@ func (o GatewayNetworkSpecPtrOutput) VpcId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// VPC名称。
+// VPC name
 func (o GatewayNetworkSpecPtrOutput) VpcName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GatewayNetworkSpec) *string {
 		if v == nil {
@@ -1277,11 +1277,11 @@ func (o GatewayNetworkSpecPtrOutput) VpcName() pulumi.StringPtrOutput {
 }
 
 type GatewayNetworkSpecSubnet struct {
-	// 可用区。
+	// Availability zone
 	Az *string `pulumi:"az"`
-	// 子网ID。
+	// Subnet ID
 	SubnetId *string `pulumi:"subnetId"`
-	// 子网名称。
+	// Subnet name
 	SubnetName *string `pulumi:"subnetName"`
 }
 
@@ -1297,11 +1297,11 @@ type GatewayNetworkSpecSubnetInput interface {
 }
 
 type GatewayNetworkSpecSubnetArgs struct {
-	// 可用区。
+	// Availability zone
 	Az pulumi.StringPtrInput `pulumi:"az"`
-	// 子网ID。
+	// Subnet ID
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
-	// 子网名称。
+	// Subnet name
 	SubnetName pulumi.StringPtrInput `pulumi:"subnetName"`
 }
 
@@ -1356,17 +1356,17 @@ func (o GatewayNetworkSpecSubnetOutput) ToGatewayNetworkSpecSubnetOutputWithCont
 	return o
 }
 
-// 可用区。
+// Availability zone
 func (o GatewayNetworkSpecSubnetOutput) Az() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GatewayNetworkSpecSubnet) *string { return v.Az }).(pulumi.StringPtrOutput)
 }
 
-// 子网ID。
+// Subnet ID
 func (o GatewayNetworkSpecSubnetOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GatewayNetworkSpecSubnet) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
-// 子网名称。
+// Subnet name
 func (o GatewayNetworkSpecSubnetOutput) SubnetName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GatewayNetworkSpecSubnet) *string { return v.SubnetName }).(pulumi.StringPtrOutput)
 }
@@ -1392,17 +1392,17 @@ func (o GatewayNetworkSpecSubnetArrayOutput) Index(i pulumi.IntInput) GatewayNet
 }
 
 type GatewayResourceSpec struct {
-	// CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+	// CLB specification code. CLB specifications. Options: small*1: Small I; small*2: Small II; medium*1: Medium I; medium*2: Medium II; large*1: Large I; large*2: Large II
 	ClbSpecCode *string `pulumi:"clbSpecCode"`
-	// 节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+	// Node specifications. Options: 1c2g, 2c4g, 4c8g, 8c16g
 	InstanceSpecCode *string `pulumi:"instanceSpecCode"`
-	// 网络类型。默认值为开启公网，开启私网。
+	// Network type. Default value: enable public network, enable private network
 	NetworkType *GatewayResourceSpecNetworkType `pulumi:"networkType"`
-	// 公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+	// Public network bandwidth limit. This field is only used for the 'bandwidth limit billing' public network billing method. Unit: Mbps. Value range: 0–500. Default value: 0
 	PublicNetworkBandwidth *int `pulumi:"publicNetworkBandwidth"`
-	// 公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+	// Public network billing method. Options: traffic: billed by actual traffic; bandwidth: billed by bandwidth limit
 	PublicNetworkBillingType *string `pulumi:"publicNetworkBillingType"`
-	// 节点数量。取值限制为2~100。
+	// Node count. Value range: 2–100
 	Replicas *int `pulumi:"replicas"`
 }
 
@@ -1418,17 +1418,17 @@ type GatewayResourceSpecInput interface {
 }
 
 type GatewayResourceSpecArgs struct {
-	// CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+	// CLB specification code. CLB specifications. Options: small*1: Small I; small*2: Small II; medium*1: Medium I; medium*2: Medium II; large*1: Large I; large*2: Large II
 	ClbSpecCode pulumi.StringPtrInput `pulumi:"clbSpecCode"`
-	// 节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+	// Node specifications. Options: 1c2g, 2c4g, 4c8g, 8c16g
 	InstanceSpecCode pulumi.StringPtrInput `pulumi:"instanceSpecCode"`
-	// 网络类型。默认值为开启公网，开启私网。
+	// Network type. Default value: enable public network, enable private network
 	NetworkType GatewayResourceSpecNetworkTypePtrInput `pulumi:"networkType"`
-	// 公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+	// Public network bandwidth limit. This field is only used for the 'bandwidth limit billing' public network billing method. Unit: Mbps. Value range: 0–500. Default value: 0
 	PublicNetworkBandwidth pulumi.IntPtrInput `pulumi:"publicNetworkBandwidth"`
-	// 公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+	// Public network billing method. Options: traffic: billed by actual traffic; bandwidth: billed by bandwidth limit
 	PublicNetworkBillingType pulumi.StringPtrInput `pulumi:"publicNetworkBillingType"`
-	// 节点数量。取值限制为2~100。
+	// Node count. Value range: 2–100
 	Replicas pulumi.IntPtrInput `pulumi:"replicas"`
 }
 
@@ -1509,32 +1509,32 @@ func (o GatewayResourceSpecOutput) ToGatewayResourceSpecPtrOutputWithContext(ctx
 	}).(GatewayResourceSpecPtrOutput)
 }
 
-// CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+// CLB specification code. CLB specifications. Options: small*1: Small I; small*2: Small II; medium*1: Medium I; medium*2: Medium II; large*1: Large I; large*2: Large II
 func (o GatewayResourceSpecOutput) ClbSpecCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GatewayResourceSpec) *string { return v.ClbSpecCode }).(pulumi.StringPtrOutput)
 }
 
-// 节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+// Node specifications. Options: 1c2g, 2c4g, 4c8g, 8c16g
 func (o GatewayResourceSpecOutput) InstanceSpecCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GatewayResourceSpec) *string { return v.InstanceSpecCode }).(pulumi.StringPtrOutput)
 }
 
-// 网络类型。默认值为开启公网，开启私网。
+// Network type. Default value: enable public network, enable private network
 func (o GatewayResourceSpecOutput) NetworkType() GatewayResourceSpecNetworkTypePtrOutput {
 	return o.ApplyT(func(v GatewayResourceSpec) *GatewayResourceSpecNetworkType { return v.NetworkType }).(GatewayResourceSpecNetworkTypePtrOutput)
 }
 
-// 公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+// Public network bandwidth limit. This field is only used for the 'bandwidth limit billing' public network billing method. Unit: Mbps. Value range: 0–500. Default value: 0
 func (o GatewayResourceSpecOutput) PublicNetworkBandwidth() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GatewayResourceSpec) *int { return v.PublicNetworkBandwidth }).(pulumi.IntPtrOutput)
 }
 
-// 公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+// Public network billing method. Options: traffic: billed by actual traffic; bandwidth: billed by bandwidth limit
 func (o GatewayResourceSpecOutput) PublicNetworkBillingType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GatewayResourceSpec) *string { return v.PublicNetworkBillingType }).(pulumi.StringPtrOutput)
 }
 
-// 节点数量。取值限制为2~100。
+// Node count. Value range: 2–100
 func (o GatewayResourceSpecOutput) Replicas() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GatewayResourceSpec) *int { return v.Replicas }).(pulumi.IntPtrOutput)
 }
@@ -1563,7 +1563,7 @@ func (o GatewayResourceSpecPtrOutput) Elem() GatewayResourceSpecOutput {
 	}).(GatewayResourceSpecOutput)
 }
 
-// CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+// CLB specification code. CLB specifications. Options: small*1: Small I; small*2: Small II; medium*1: Medium I; medium*2: Medium II; large*1: Large I; large*2: Large II
 func (o GatewayResourceSpecPtrOutput) ClbSpecCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GatewayResourceSpec) *string {
 		if v == nil {
@@ -1573,7 +1573,7 @@ func (o GatewayResourceSpecPtrOutput) ClbSpecCode() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+// Node specifications. Options: 1c2g, 2c4g, 4c8g, 8c16g
 func (o GatewayResourceSpecPtrOutput) InstanceSpecCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GatewayResourceSpec) *string {
 		if v == nil {
@@ -1583,7 +1583,7 @@ func (o GatewayResourceSpecPtrOutput) InstanceSpecCode() pulumi.StringPtrOutput 
 	}).(pulumi.StringPtrOutput)
 }
 
-// 网络类型。默认值为开启公网，开启私网。
+// Network type. Default value: enable public network, enable private network
 func (o GatewayResourceSpecPtrOutput) NetworkType() GatewayResourceSpecNetworkTypePtrOutput {
 	return o.ApplyT(func(v *GatewayResourceSpec) *GatewayResourceSpecNetworkType {
 		if v == nil {
@@ -1593,7 +1593,7 @@ func (o GatewayResourceSpecPtrOutput) NetworkType() GatewayResourceSpecNetworkTy
 	}).(GatewayResourceSpecNetworkTypePtrOutput)
 }
 
-// 公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+// Public network bandwidth limit. This field is only used for the 'bandwidth limit billing' public network billing method. Unit: Mbps. Value range: 0–500. Default value: 0
 func (o GatewayResourceSpecPtrOutput) PublicNetworkBandwidth() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *GatewayResourceSpec) *int {
 		if v == nil {
@@ -1603,7 +1603,7 @@ func (o GatewayResourceSpecPtrOutput) PublicNetworkBandwidth() pulumi.IntPtrOutp
 	}).(pulumi.IntPtrOutput)
 }
 
-// 公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+// Public network billing method. Options: traffic: billed by actual traffic; bandwidth: billed by bandwidth limit
 func (o GatewayResourceSpecPtrOutput) PublicNetworkBillingType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GatewayResourceSpec) *string {
 		if v == nil {
@@ -1613,7 +1613,7 @@ func (o GatewayResourceSpecPtrOutput) PublicNetworkBillingType() pulumi.StringPt
 	}).(pulumi.StringPtrOutput)
 }
 
-// 节点数量。取值限制为2~100。
+// Node count. Value range: 2–100
 func (o GatewayResourceSpecPtrOutput) Replicas() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *GatewayResourceSpec) *int {
 		if v == nil {
@@ -1624,9 +1624,9 @@ func (o GatewayResourceSpecPtrOutput) Replicas() pulumi.IntPtrOutput {
 }
 
 type GatewayResourceSpecNetworkType struct {
-	// 是否启用私网。
+	// Whether to enable private network
 	EnablePrivateNetwork *bool `pulumi:"enablePrivateNetwork"`
-	// 是否启用公网。
+	// Whether to enable public network
 	EnablePublicNetwork *bool `pulumi:"enablePublicNetwork"`
 }
 
@@ -1642,9 +1642,9 @@ type GatewayResourceSpecNetworkTypeInput interface {
 }
 
 type GatewayResourceSpecNetworkTypeArgs struct {
-	// 是否启用私网。
+	// Whether to enable private network
 	EnablePrivateNetwork pulumi.BoolPtrInput `pulumi:"enablePrivateNetwork"`
-	// 是否启用公网。
+	// Whether to enable public network
 	EnablePublicNetwork pulumi.BoolPtrInput `pulumi:"enablePublicNetwork"`
 }
 
@@ -1725,12 +1725,12 @@ func (o GatewayResourceSpecNetworkTypeOutput) ToGatewayResourceSpecNetworkTypePt
 	}).(GatewayResourceSpecNetworkTypePtrOutput)
 }
 
-// 是否启用私网。
+// Whether to enable private network
 func (o GatewayResourceSpecNetworkTypeOutput) EnablePrivateNetwork() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GatewayResourceSpecNetworkType) *bool { return v.EnablePrivateNetwork }).(pulumi.BoolPtrOutput)
 }
 
-// 是否启用公网。
+// Whether to enable public network
 func (o GatewayResourceSpecNetworkTypeOutput) EnablePublicNetwork() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GatewayResourceSpecNetworkType) *bool { return v.EnablePublicNetwork }).(pulumi.BoolPtrOutput)
 }
@@ -1759,7 +1759,7 @@ func (o GatewayResourceSpecNetworkTypePtrOutput) Elem() GatewayResourceSpecNetwo
 	}).(GatewayResourceSpecNetworkTypeOutput)
 }
 
-// 是否启用私网。
+// Whether to enable private network
 func (o GatewayResourceSpecNetworkTypePtrOutput) EnablePrivateNetwork() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *GatewayResourceSpecNetworkType) *bool {
 		if v == nil {
@@ -1769,7 +1769,7 @@ func (o GatewayResourceSpecNetworkTypePtrOutput) EnablePrivateNetwork() pulumi.B
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 是否启用公网。
+// Whether to enable public network
 func (o GatewayResourceSpecNetworkTypePtrOutput) EnablePublicNetwork() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *GatewayResourceSpecNetworkType) *bool {
 		if v == nil {
@@ -1780,7 +1780,7 @@ func (o GatewayResourceSpecNetworkTypePtrOutput) EnablePublicNetwork() pulumi.Bo
 }
 
 type GatewayServiceAuthSpec struct {
-	// 是否开启认证。
+	// Whether authentication is enabled.
 	Enable *bool `pulumi:"enable"`
 }
 
@@ -1796,7 +1796,7 @@ type GatewayServiceAuthSpecInput interface {
 }
 
 type GatewayServiceAuthSpecArgs struct {
-	// 是否开启认证。
+	// Whether authentication is enabled.
 	Enable pulumi.BoolPtrInput `pulumi:"enable"`
 }
 
@@ -1877,7 +1877,7 @@ func (o GatewayServiceAuthSpecOutput) ToGatewayServiceAuthSpecPtrOutputWithConte
 	}).(GatewayServiceAuthSpecPtrOutput)
 }
 
-// 是否开启认证。
+// Whether authentication is enabled.
 func (o GatewayServiceAuthSpecOutput) Enable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GatewayServiceAuthSpec) *bool { return v.Enable }).(pulumi.BoolPtrOutput)
 }
@@ -1906,7 +1906,7 @@ func (o GatewayServiceAuthSpecPtrOutput) Elem() GatewayServiceAuthSpecOutput {
 	}).(GatewayServiceAuthSpecOutput)
 }
 
-// 是否开启认证。
+// Whether authentication is enabled.
 func (o GatewayServiceAuthSpecPtrOutput) Enable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *GatewayServiceAuthSpec) *bool {
 		if v == nil {
@@ -2005,9 +2005,9 @@ func (o GatewayServiceCustomDomainArrayOutput) Index(i pulumi.IntInput) GatewayS
 }
 
 type GatewayServiceDomain struct {
-	// 域名。
+	// Domain.
 	Domain *string `pulumi:"domain"`
-	// 域名类型。取值：public：公网。private：私网。
+	// Domain type. Options: public: Public network. private: Private network.
 	Type *string `pulumi:"type"`
 }
 
@@ -2023,9 +2023,9 @@ type GatewayServiceDomainInput interface {
 }
 
 type GatewayServiceDomainArgs struct {
-	// 域名。
+	// Domain.
 	Domain pulumi.StringPtrInput `pulumi:"domain"`
-	// 域名类型。取值：public：公网。private：私网。
+	// Domain type. Options: public: Public network. private: Private network.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -2080,12 +2080,12 @@ func (o GatewayServiceDomainOutput) ToGatewayServiceDomainOutputWithContext(ctx 
 	return o
 }
 
-// 域名。
+// Domain.
 func (o GatewayServiceDomainOutput) Domain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GatewayServiceDomain) *string { return v.Domain }).(pulumi.StringPtrOutput)
 }
 
-// 域名类型。取值：public：公网。private：私网。
+// Domain type. Options: public: Public network. private: Private network.
 func (o GatewayServiceDomainOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GatewayServiceDomain) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -2111,7 +2111,7 @@ func (o GatewayServiceDomainArrayOutput) Index(i pulumi.IntInput) GatewayService
 }
 
 type GatewayServiceDomainSpec struct {
-	// 开启私网域名公网解析。
+	// Enable public resolution for private network domains.
 	EnablePublicResolution *bool `pulumi:"enablePublicResolution"`
 }
 
@@ -2127,7 +2127,7 @@ type GatewayServiceDomainSpecInput interface {
 }
 
 type GatewayServiceDomainSpecArgs struct {
-	// 开启私网域名公网解析。
+	// Enable public resolution for private network domains.
 	EnablePublicResolution pulumi.BoolPtrInput `pulumi:"enablePublicResolution"`
 }
 
@@ -2208,7 +2208,7 @@ func (o GatewayServiceDomainSpecOutput) ToGatewayServiceDomainSpecPtrOutputWithC
 	}).(GatewayServiceDomainSpecPtrOutput)
 }
 
-// 开启私网域名公网解析。
+// Enable public resolution for private network domains.
 func (o GatewayServiceDomainSpecOutput) EnablePublicResolution() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GatewayServiceDomainSpec) *bool { return v.EnablePublicResolution }).(pulumi.BoolPtrOutput)
 }
@@ -2237,7 +2237,7 @@ func (o GatewayServiceDomainSpecPtrOutput) Elem() GatewayServiceDomainSpecOutput
 	}).(GatewayServiceDomainSpecOutput)
 }
 
-// 开启私网域名公网解析。
+// Enable public resolution for private network domains.
 func (o GatewayServiceDomainSpecPtrOutput) EnablePublicResolution() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *GatewayServiceDomainSpec) *bool {
 		if v == nil {
@@ -2248,11 +2248,11 @@ func (o GatewayServiceDomainSpecPtrOutput) EnablePublicResolution() pulumi.BoolP
 }
 
 type GatewayServiceServiceNetworkSpec struct {
-	// 开启私网。
+	// Enable private network.
 	EnablePrivateNetwork *bool `pulumi:"enablePrivateNetwork"`
-	// 开启公网。
+	// Enable public network.
 	EnablePublicNetwork *bool `pulumi:"enablePublicNetwork"`
-	// 私网域名解析的目标IP。
+	// Target IP for private network domain resolution.
 	PrivateNetworkIps []string `pulumi:"privateNetworkIps"`
 }
 
@@ -2268,11 +2268,11 @@ type GatewayServiceServiceNetworkSpecInput interface {
 }
 
 type GatewayServiceServiceNetworkSpecArgs struct {
-	// 开启私网。
+	// Enable private network.
 	EnablePrivateNetwork pulumi.BoolPtrInput `pulumi:"enablePrivateNetwork"`
-	// 开启公网。
+	// Enable public network.
 	EnablePublicNetwork pulumi.BoolPtrInput `pulumi:"enablePublicNetwork"`
-	// 私网域名解析的目标IP。
+	// Target IP for private network domain resolution.
 	PrivateNetworkIps pulumi.StringArrayInput `pulumi:"privateNetworkIps"`
 }
 
@@ -2353,17 +2353,17 @@ func (o GatewayServiceServiceNetworkSpecOutput) ToGatewayServiceServiceNetworkSp
 	}).(GatewayServiceServiceNetworkSpecPtrOutput)
 }
 
-// 开启私网。
+// Enable private network.
 func (o GatewayServiceServiceNetworkSpecOutput) EnablePrivateNetwork() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GatewayServiceServiceNetworkSpec) *bool { return v.EnablePrivateNetwork }).(pulumi.BoolPtrOutput)
 }
 
-// 开启公网。
+// Enable public network.
 func (o GatewayServiceServiceNetworkSpecOutput) EnablePublicNetwork() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GatewayServiceServiceNetworkSpec) *bool { return v.EnablePublicNetwork }).(pulumi.BoolPtrOutput)
 }
 
-// 私网域名解析的目标IP。
+// Target IP for private network domain resolution.
 func (o GatewayServiceServiceNetworkSpecOutput) PrivateNetworkIps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GatewayServiceServiceNetworkSpec) []string { return v.PrivateNetworkIps }).(pulumi.StringArrayOutput)
 }
@@ -2392,7 +2392,7 @@ func (o GatewayServiceServiceNetworkSpecPtrOutput) Elem() GatewayServiceServiceN
 	}).(GatewayServiceServiceNetworkSpecOutput)
 }
 
-// 开启私网。
+// Enable private network.
 func (o GatewayServiceServiceNetworkSpecPtrOutput) EnablePrivateNetwork() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *GatewayServiceServiceNetworkSpec) *bool {
 		if v == nil {
@@ -2402,7 +2402,7 @@ func (o GatewayServiceServiceNetworkSpecPtrOutput) EnablePrivateNetwork() pulumi
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 开启公网。
+// Enable public network.
 func (o GatewayServiceServiceNetworkSpecPtrOutput) EnablePublicNetwork() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *GatewayServiceServiceNetworkSpec) *bool {
 		if v == nil {
@@ -2412,7 +2412,7 @@ func (o GatewayServiceServiceNetworkSpecPtrOutput) EnablePublicNetwork() pulumi.
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 私网域名解析的目标IP。
+// Target IP for private network domain resolution.
 func (o GatewayServiceServiceNetworkSpecPtrOutput) PrivateNetworkIps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *GatewayServiceServiceNetworkSpec) []string {
 		if v == nil {
@@ -2423,13 +2423,13 @@ func (o GatewayServiceServiceNetworkSpecPtrOutput) PrivateNetworkIps() pulumi.St
 }
 
 type GatewayTraceSpec struct {
-	// 应用性能监控全链路版链路追踪配置。
+	// Application performance monitoring full-link trace configuration
 	ApmTraceSpec *GatewayTraceSpecApmTraceSpec `pulumi:"apmTraceSpec"`
-	// 是否启用链路追踪。
+	// Whether to enable trace
 	Enable *bool `pulumi:"enable"`
-	// 链路追踪配置信息。
+	// Link tracing configuration information.
 	TlsTraceSpec *GatewayTraceSpecTlsTraceSpec `pulumi:"tlsTraceSpec"`
-	// 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+	// Link tracing type. Possible values: tls: Log Service. apm: Application Performance Monitoring (APM) end-to-end version.
 	TraceType *string `pulumi:"traceType"`
 }
 
@@ -2445,13 +2445,13 @@ type GatewayTraceSpecInput interface {
 }
 
 type GatewayTraceSpecArgs struct {
-	// 应用性能监控全链路版链路追踪配置。
+	// Application performance monitoring full-link trace configuration
 	ApmTraceSpec GatewayTraceSpecApmTraceSpecPtrInput `pulumi:"apmTraceSpec"`
-	// 是否启用链路追踪。
+	// Whether to enable trace
 	Enable pulumi.BoolPtrInput `pulumi:"enable"`
-	// 链路追踪配置信息。
+	// Link tracing configuration information.
 	TlsTraceSpec GatewayTraceSpecTlsTraceSpecPtrInput `pulumi:"tlsTraceSpec"`
-	// 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+	// Link tracing type. Possible values: tls: Log Service. apm: Application Performance Monitoring (APM) end-to-end version.
 	TraceType pulumi.StringPtrInput `pulumi:"traceType"`
 }
 
@@ -2532,22 +2532,22 @@ func (o GatewayTraceSpecOutput) ToGatewayTraceSpecPtrOutputWithContext(ctx conte
 	}).(GatewayTraceSpecPtrOutput)
 }
 
-// 应用性能监控全链路版链路追踪配置。
+// Application performance monitoring full-link trace configuration
 func (o GatewayTraceSpecOutput) ApmTraceSpec() GatewayTraceSpecApmTraceSpecPtrOutput {
 	return o.ApplyT(func(v GatewayTraceSpec) *GatewayTraceSpecApmTraceSpec { return v.ApmTraceSpec }).(GatewayTraceSpecApmTraceSpecPtrOutput)
 }
 
-// 是否启用链路追踪。
+// Whether to enable trace
 func (o GatewayTraceSpecOutput) Enable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GatewayTraceSpec) *bool { return v.Enable }).(pulumi.BoolPtrOutput)
 }
 
-// 链路追踪配置信息。
+// Link tracing configuration information.
 func (o GatewayTraceSpecOutput) TlsTraceSpec() GatewayTraceSpecTlsTraceSpecPtrOutput {
 	return o.ApplyT(func(v GatewayTraceSpec) *GatewayTraceSpecTlsTraceSpec { return v.TlsTraceSpec }).(GatewayTraceSpecTlsTraceSpecPtrOutput)
 }
 
-// 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+// Link tracing type. Possible values: tls: Log Service. apm: Application Performance Monitoring (APM) end-to-end version.
 func (o GatewayTraceSpecOutput) TraceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GatewayTraceSpec) *string { return v.TraceType }).(pulumi.StringPtrOutput)
 }
@@ -2576,7 +2576,7 @@ func (o GatewayTraceSpecPtrOutput) Elem() GatewayTraceSpecOutput {
 	}).(GatewayTraceSpecOutput)
 }
 
-// 应用性能监控全链路版链路追踪配置。
+// Application performance monitoring full-link trace configuration
 func (o GatewayTraceSpecPtrOutput) ApmTraceSpec() GatewayTraceSpecApmTraceSpecPtrOutput {
 	return o.ApplyT(func(v *GatewayTraceSpec) *GatewayTraceSpecApmTraceSpec {
 		if v == nil {
@@ -2586,7 +2586,7 @@ func (o GatewayTraceSpecPtrOutput) ApmTraceSpec() GatewayTraceSpecApmTraceSpecPt
 	}).(GatewayTraceSpecApmTraceSpecPtrOutput)
 }
 
-// 是否启用链路追踪。
+// Whether to enable trace
 func (o GatewayTraceSpecPtrOutput) Enable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *GatewayTraceSpec) *bool {
 		if v == nil {
@@ -2596,7 +2596,7 @@ func (o GatewayTraceSpecPtrOutput) Enable() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 链路追踪配置信息。
+// Link tracing configuration information.
 func (o GatewayTraceSpecPtrOutput) TlsTraceSpec() GatewayTraceSpecTlsTraceSpecPtrOutput {
 	return o.ApplyT(func(v *GatewayTraceSpec) *GatewayTraceSpecTlsTraceSpec {
 		if v == nil {
@@ -2606,7 +2606,7 @@ func (o GatewayTraceSpecPtrOutput) TlsTraceSpec() GatewayTraceSpecTlsTraceSpecPt
 	}).(GatewayTraceSpecTlsTraceSpecPtrOutput)
 }
 
-// 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+// Link tracing type. Possible values: tls: Log Service. apm: Application Performance Monitoring (APM) end-to-end version.
 func (o GatewayTraceSpecPtrOutput) TraceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GatewayTraceSpec) *string {
 		if v == nil {
@@ -2758,7 +2758,7 @@ type GatewayTraceSpecTlsTraceSpec struct {
 	IamUserAk *string `pulumi:"iamUserAk"`
 	// Secret key。
 	IamUserSk *string `pulumi:"iamUserSk"`
-	// 日志项目ID。
+	// Log project ID
 	ProjectId *string `pulumi:"projectId"`
 	// Trace ID。
 	TraceId *string `pulumi:"traceId"`
@@ -2780,7 +2780,7 @@ type GatewayTraceSpecTlsTraceSpecArgs struct {
 	IamUserAk pulumi.StringPtrInput `pulumi:"iamUserAk"`
 	// Secret key。
 	IamUserSk pulumi.StringPtrInput `pulumi:"iamUserSk"`
-	// 日志项目ID。
+	// Log project ID
 	ProjectId pulumi.StringPtrInput `pulumi:"projectId"`
 	// Trace ID。
 	TraceId pulumi.StringPtrInput `pulumi:"traceId"`
@@ -2873,7 +2873,7 @@ func (o GatewayTraceSpecTlsTraceSpecOutput) IamUserSk() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GatewayTraceSpecTlsTraceSpec) *string { return v.IamUserSk }).(pulumi.StringPtrOutput)
 }
 
-// 日志项目ID。
+// Log project ID
 func (o GatewayTraceSpecTlsTraceSpecOutput) ProjectId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GatewayTraceSpecTlsTraceSpec) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
@@ -2927,7 +2927,7 @@ func (o GatewayTraceSpecTlsTraceSpecPtrOutput) IamUserSk() pulumi.StringPtrOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
-// 日志项目ID。
+// Log project ID
 func (o GatewayTraceSpecTlsTraceSpecPtrOutput) ProjectId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GatewayTraceSpecTlsTraceSpec) *string {
 		if v == nil {
@@ -2948,11 +2948,11 @@ func (o GatewayTraceSpecTlsTraceSpecPtrOutput) TraceId() pulumi.StringPtrOutput 
 }
 
 type UpstreamBackendTarget struct {
-	// 健康检查状态。
+	// Health Check Status
 	HealthStatus *string `pulumi:"healthStatus"`
-	// 后端节点IP。
+	// Backend node IP
 	Ip *string `pulumi:"ip"`
-	// 后端节点端口。
+	// Backend node port
 	Port *int `pulumi:"port"`
 }
 
@@ -2968,11 +2968,11 @@ type UpstreamBackendTargetInput interface {
 }
 
 type UpstreamBackendTargetArgs struct {
-	// 健康检查状态。
+	// Health Check Status
 	HealthStatus pulumi.StringPtrInput `pulumi:"healthStatus"`
-	// 后端节点IP。
+	// Backend node IP
 	Ip pulumi.StringPtrInput `pulumi:"ip"`
-	// 后端节点端口。
+	// Backend node port
 	Port pulumi.IntPtrInput `pulumi:"port"`
 }
 
@@ -3027,17 +3027,17 @@ func (o UpstreamBackendTargetOutput) ToUpstreamBackendTargetOutputWithContext(ct
 	return o
 }
 
-// 健康检查状态。
+// Health Check Status
 func (o UpstreamBackendTargetOutput) HealthStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamBackendTarget) *string { return v.HealthStatus }).(pulumi.StringPtrOutput)
 }
 
-// 后端节点IP。
+// Backend node IP
 func (o UpstreamBackendTargetOutput) Ip() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamBackendTarget) *string { return v.Ip }).(pulumi.StringPtrOutput)
 }
 
-// 后端节点端口。
+// Backend node port
 func (o UpstreamBackendTargetOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v UpstreamBackendTarget) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
@@ -3063,17 +3063,17 @@ func (o UpstreamBackendTargetArrayOutput) Index(i pulumi.IntInput) UpstreamBacke
 }
 
 type UpstreamCircuitBreakingSettings struct {
-	// 最小弹出时间。单位为毫秒。取值限制为1~86400000。默认值为30秒。
+	// Minimum pop time, in milliseconds. Value range: 1–86400000. Default: 30 seconds
 	BaseEjectionTime *int `pulumi:"baseEjectionTime"`
-	// 连续失败次数。取值限制为1~100。默认值为5。
+	// Consecutive failure count. Value range: 1~100. Default: 5
 	ConsecutiveErrors *int `pulumi:"consecutiveErrors"`
-	// 开启。
+	// Enable
 	Enable *bool `pulumi:"enable"`
-	// 计算周期。单位为毫秒。取值限制为1~86400000。默认值为10秒。
+	// Calculation cycle, in milliseconds. Value range: 1–86400000. Default: 10 seconds
 	Interval *int `pulumi:"interval"`
-	// 最大熔断比例。取值限制为1~100。默认值为20%。
+	// Maximum circuit breaking ratio. Value range: 1~100. Default: 20%
 	MaxEjectionPercent *int `pulumi:"maxEjectionPercent"`
-	// 最小健康比例。取值限制为0~100。默认值为60%。
+	// Minimum health ratio. Value range: 0~100. Default: 60%
 	MinHealthPercent *int `pulumi:"minHealthPercent"`
 }
 
@@ -3089,17 +3089,17 @@ type UpstreamCircuitBreakingSettingsInput interface {
 }
 
 type UpstreamCircuitBreakingSettingsArgs struct {
-	// 最小弹出时间。单位为毫秒。取值限制为1~86400000。默认值为30秒。
+	// Minimum pop time, in milliseconds. Value range: 1–86400000. Default: 30 seconds
 	BaseEjectionTime pulumi.IntPtrInput `pulumi:"baseEjectionTime"`
-	// 连续失败次数。取值限制为1~100。默认值为5。
+	// Consecutive failure count. Value range: 1~100. Default: 5
 	ConsecutiveErrors pulumi.IntPtrInput `pulumi:"consecutiveErrors"`
-	// 开启。
+	// Enable
 	Enable pulumi.BoolPtrInput `pulumi:"enable"`
-	// 计算周期。单位为毫秒。取值限制为1~86400000。默认值为10秒。
+	// Calculation cycle, in milliseconds. Value range: 1–86400000. Default: 10 seconds
 	Interval pulumi.IntPtrInput `pulumi:"interval"`
-	// 最大熔断比例。取值限制为1~100。默认值为20%。
+	// Maximum circuit breaking ratio. Value range: 1~100. Default: 20%
 	MaxEjectionPercent pulumi.IntPtrInput `pulumi:"maxEjectionPercent"`
-	// 最小健康比例。取值限制为0~100。默认值为60%。
+	// Minimum health ratio. Value range: 0~100. Default: 60%
 	MinHealthPercent pulumi.IntPtrInput `pulumi:"minHealthPercent"`
 }
 
@@ -3180,32 +3180,32 @@ func (o UpstreamCircuitBreakingSettingsOutput) ToUpstreamCircuitBreakingSettings
 	}).(UpstreamCircuitBreakingSettingsPtrOutput)
 }
 
-// 最小弹出时间。单位为毫秒。取值限制为1~86400000。默认值为30秒。
+// Minimum pop time, in milliseconds. Value range: 1–86400000. Default: 30 seconds
 func (o UpstreamCircuitBreakingSettingsOutput) BaseEjectionTime() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v UpstreamCircuitBreakingSettings) *int { return v.BaseEjectionTime }).(pulumi.IntPtrOutput)
 }
 
-// 连续失败次数。取值限制为1~100。默认值为5。
+// Consecutive failure count. Value range: 1~100. Default: 5
 func (o UpstreamCircuitBreakingSettingsOutput) ConsecutiveErrors() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v UpstreamCircuitBreakingSettings) *int { return v.ConsecutiveErrors }).(pulumi.IntPtrOutput)
 }
 
-// 开启。
+// Enable
 func (o UpstreamCircuitBreakingSettingsOutput) Enable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v UpstreamCircuitBreakingSettings) *bool { return v.Enable }).(pulumi.BoolPtrOutput)
 }
 
-// 计算周期。单位为毫秒。取值限制为1~86400000。默认值为10秒。
+// Calculation cycle, in milliseconds. Value range: 1–86400000. Default: 10 seconds
 func (o UpstreamCircuitBreakingSettingsOutput) Interval() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v UpstreamCircuitBreakingSettings) *int { return v.Interval }).(pulumi.IntPtrOutput)
 }
 
-// 最大熔断比例。取值限制为1~100。默认值为20%。
+// Maximum circuit breaking ratio. Value range: 1~100. Default: 20%
 func (o UpstreamCircuitBreakingSettingsOutput) MaxEjectionPercent() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v UpstreamCircuitBreakingSettings) *int { return v.MaxEjectionPercent }).(pulumi.IntPtrOutput)
 }
 
-// 最小健康比例。取值限制为0~100。默认值为60%。
+// Minimum health ratio. Value range: 0~100. Default: 60%
 func (o UpstreamCircuitBreakingSettingsOutput) MinHealthPercent() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v UpstreamCircuitBreakingSettings) *int { return v.MinHealthPercent }).(pulumi.IntPtrOutput)
 }
@@ -3234,7 +3234,7 @@ func (o UpstreamCircuitBreakingSettingsPtrOutput) Elem() UpstreamCircuitBreaking
 	}).(UpstreamCircuitBreakingSettingsOutput)
 }
 
-// 最小弹出时间。单位为毫秒。取值限制为1~86400000。默认值为30秒。
+// Minimum pop time, in milliseconds. Value range: 1–86400000. Default: 30 seconds
 func (o UpstreamCircuitBreakingSettingsPtrOutput) BaseEjectionTime() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *UpstreamCircuitBreakingSettings) *int {
 		if v == nil {
@@ -3244,7 +3244,7 @@ func (o UpstreamCircuitBreakingSettingsPtrOutput) BaseEjectionTime() pulumi.IntP
 	}).(pulumi.IntPtrOutput)
 }
 
-// 连续失败次数。取值限制为1~100。默认值为5。
+// Consecutive failure count. Value range: 1~100. Default: 5
 func (o UpstreamCircuitBreakingSettingsPtrOutput) ConsecutiveErrors() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *UpstreamCircuitBreakingSettings) *int {
 		if v == nil {
@@ -3254,7 +3254,7 @@ func (o UpstreamCircuitBreakingSettingsPtrOutput) ConsecutiveErrors() pulumi.Int
 	}).(pulumi.IntPtrOutput)
 }
 
-// 开启。
+// Enable
 func (o UpstreamCircuitBreakingSettingsPtrOutput) Enable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *UpstreamCircuitBreakingSettings) *bool {
 		if v == nil {
@@ -3264,7 +3264,7 @@ func (o UpstreamCircuitBreakingSettingsPtrOutput) Enable() pulumi.BoolPtrOutput 
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 计算周期。单位为毫秒。取值限制为1~86400000。默认值为10秒。
+// Calculation cycle, in milliseconds. Value range: 1–86400000. Default: 10 seconds
 func (o UpstreamCircuitBreakingSettingsPtrOutput) Interval() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *UpstreamCircuitBreakingSettings) *int {
 		if v == nil {
@@ -3274,7 +3274,7 @@ func (o UpstreamCircuitBreakingSettingsPtrOutput) Interval() pulumi.IntPtrOutput
 	}).(pulumi.IntPtrOutput)
 }
 
-// 最大熔断比例。取值限制为1~100。默认值为20%。
+// Maximum circuit breaking ratio. Value range: 1~100. Default: 20%
 func (o UpstreamCircuitBreakingSettingsPtrOutput) MaxEjectionPercent() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *UpstreamCircuitBreakingSettings) *int {
 		if v == nil {
@@ -3284,7 +3284,7 @@ func (o UpstreamCircuitBreakingSettingsPtrOutput) MaxEjectionPercent() pulumi.In
 	}).(pulumi.IntPtrOutput)
 }
 
-// 最小健康比例。取值限制为0~100。默认值为60%。
+// Minimum health ratio. Value range: 0~100. Default: 60%
 func (o UpstreamCircuitBreakingSettingsPtrOutput) MinHealthPercent() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *UpstreamCircuitBreakingSettings) *int {
 		if v == nil {
@@ -3295,13 +3295,13 @@ func (o UpstreamCircuitBreakingSettingsPtrOutput) MinHealthPercent() pulumi.IntP
 }
 
 type UpstreamConnectionPoolSettings struct {
-	// 开启。
+	// Enable
 	Enable *bool `pulumi:"enable"`
-	// HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+	// Maximum HTTP/1 pending requests. Value range: 0~2^31-1. 0 means unlimited
 	Http1MaxPendingRequests *int `pulumi:"http1MaxPendingRequests"`
-	// 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+	// Idle timeout, in seconds. Value range: 0–2^31-1. 0 means no limit
 	IdleTimeout *int `pulumi:"idleTimeout"`
-	// TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+	// Maximum TCP connections. Value range: 0~2^31-1. 0 means unlimited
 	MaxConnections *int `pulumi:"maxConnections"`
 }
 
@@ -3317,13 +3317,13 @@ type UpstreamConnectionPoolSettingsInput interface {
 }
 
 type UpstreamConnectionPoolSettingsArgs struct {
-	// 开启。
+	// Enable
 	Enable pulumi.BoolPtrInput `pulumi:"enable"`
-	// HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+	// Maximum HTTP/1 pending requests. Value range: 0~2^31-1. 0 means unlimited
 	Http1MaxPendingRequests pulumi.IntPtrInput `pulumi:"http1MaxPendingRequests"`
-	// 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+	// Idle timeout, in seconds. Value range: 0–2^31-1. 0 means no limit
 	IdleTimeout pulumi.IntPtrInput `pulumi:"idleTimeout"`
-	// TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+	// Maximum TCP connections. Value range: 0~2^31-1. 0 means unlimited
 	MaxConnections pulumi.IntPtrInput `pulumi:"maxConnections"`
 }
 
@@ -3404,22 +3404,22 @@ func (o UpstreamConnectionPoolSettingsOutput) ToUpstreamConnectionPoolSettingsPt
 	}).(UpstreamConnectionPoolSettingsPtrOutput)
 }
 
-// 开启。
+// Enable
 func (o UpstreamConnectionPoolSettingsOutput) Enable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v UpstreamConnectionPoolSettings) *bool { return v.Enable }).(pulumi.BoolPtrOutput)
 }
 
-// HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+// Maximum HTTP/1 pending requests. Value range: 0~2^31-1. 0 means unlimited
 func (o UpstreamConnectionPoolSettingsOutput) Http1MaxPendingRequests() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v UpstreamConnectionPoolSettings) *int { return v.Http1MaxPendingRequests }).(pulumi.IntPtrOutput)
 }
 
-// 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+// Idle timeout, in seconds. Value range: 0–2^31-1. 0 means no limit
 func (o UpstreamConnectionPoolSettingsOutput) IdleTimeout() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v UpstreamConnectionPoolSettings) *int { return v.IdleTimeout }).(pulumi.IntPtrOutput)
 }
 
-// TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+// Maximum TCP connections. Value range: 0~2^31-1. 0 means unlimited
 func (o UpstreamConnectionPoolSettingsOutput) MaxConnections() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v UpstreamConnectionPoolSettings) *int { return v.MaxConnections }).(pulumi.IntPtrOutput)
 }
@@ -3448,7 +3448,7 @@ func (o UpstreamConnectionPoolSettingsPtrOutput) Elem() UpstreamConnectionPoolSe
 	}).(UpstreamConnectionPoolSettingsOutput)
 }
 
-// 开启。
+// Enable
 func (o UpstreamConnectionPoolSettingsPtrOutput) Enable() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *UpstreamConnectionPoolSettings) *bool {
 		if v == nil {
@@ -3458,7 +3458,7 @@ func (o UpstreamConnectionPoolSettingsPtrOutput) Enable() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+// Maximum HTTP/1 pending requests. Value range: 0~2^31-1. 0 means unlimited
 func (o UpstreamConnectionPoolSettingsPtrOutput) Http1MaxPendingRequests() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *UpstreamConnectionPoolSettings) *int {
 		if v == nil {
@@ -3468,7 +3468,7 @@ func (o UpstreamConnectionPoolSettingsPtrOutput) Http1MaxPendingRequests() pulum
 	}).(pulumi.IntPtrOutput)
 }
 
-// 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+// Idle timeout, in seconds. Value range: 0–2^31-1. 0 means no limit
 func (o UpstreamConnectionPoolSettingsPtrOutput) IdleTimeout() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *UpstreamConnectionPoolSettings) *int {
 		if v == nil {
@@ -3478,7 +3478,7 @@ func (o UpstreamConnectionPoolSettingsPtrOutput) IdleTimeout() pulumi.IntPtrOutp
 	}).(pulumi.IntPtrOutput)
 }
 
-// TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+// Maximum TCP connections. Value range: 0~2^31-1. 0 means unlimited
 func (o UpstreamConnectionPoolSettingsPtrOutput) MaxConnections() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *UpstreamConnectionPoolSettings) *int {
 		if v == nil {
@@ -3489,13 +3489,13 @@ func (o UpstreamConnectionPoolSettingsPtrOutput) MaxConnections() pulumi.IntPtrO
 }
 
 type UpstreamLoadBalancerSettings struct {
-	// 一致性哈希负载均衡。
+	// Consistent Hash Load Balancing
 	ConsistentHashLb *UpstreamLoadBalancerSettingsConsistentHashLb `pulumi:"consistentHashLb"`
-	// 负载均衡策略，取值：SimpleLB：简单负载均衡。ConsistentHashLB：一致性哈希负载均衡。
+	// Load balancing policy. Options: SimpleLB: simple load balancing. ConsistentHashLB: consistent hash load balancing
 	LbPolicy *string `pulumi:"lbPolicy"`
-	// 简单负载均衡，取值：ROUND*ROBIN：轮询。LEAST*CONN：最小连接数。RANDOM：随机。
+	// Simple load balancing. Options: ROUND*ROBIN: round robin. LEAST*CONN: least connections. RANDOM: random
 	SimpleLb *string `pulumi:"simpleLb"`
-	// 预热时间。单位为秒。
+	// Warm-up time (seconds)
 	WarmupDuration *int `pulumi:"warmupDuration"`
 }
 
@@ -3511,13 +3511,13 @@ type UpstreamLoadBalancerSettingsInput interface {
 }
 
 type UpstreamLoadBalancerSettingsArgs struct {
-	// 一致性哈希负载均衡。
+	// Consistent Hash Load Balancing
 	ConsistentHashLb UpstreamLoadBalancerSettingsConsistentHashLbPtrInput `pulumi:"consistentHashLb"`
-	// 负载均衡策略，取值：SimpleLB：简单负载均衡。ConsistentHashLB：一致性哈希负载均衡。
+	// Load balancing policy. Options: SimpleLB: simple load balancing. ConsistentHashLB: consistent hash load balancing
 	LbPolicy pulumi.StringPtrInput `pulumi:"lbPolicy"`
-	// 简单负载均衡，取值：ROUND*ROBIN：轮询。LEAST*CONN：最小连接数。RANDOM：随机。
+	// Simple load balancing. Options: ROUND*ROBIN: round robin. LEAST*CONN: least connections. RANDOM: random
 	SimpleLb pulumi.StringPtrInput `pulumi:"simpleLb"`
-	// 预热时间。单位为秒。
+	// Warm-up time (seconds)
 	WarmupDuration pulumi.IntPtrInput `pulumi:"warmupDuration"`
 }
 
@@ -3598,24 +3598,24 @@ func (o UpstreamLoadBalancerSettingsOutput) ToUpstreamLoadBalancerSettingsPtrOut
 	}).(UpstreamLoadBalancerSettingsPtrOutput)
 }
 
-// 一致性哈希负载均衡。
+// Consistent Hash Load Balancing
 func (o UpstreamLoadBalancerSettingsOutput) ConsistentHashLb() UpstreamLoadBalancerSettingsConsistentHashLbPtrOutput {
 	return o.ApplyT(func(v UpstreamLoadBalancerSettings) *UpstreamLoadBalancerSettingsConsistentHashLb {
 		return v.ConsistentHashLb
 	}).(UpstreamLoadBalancerSettingsConsistentHashLbPtrOutput)
 }
 
-// 负载均衡策略，取值：SimpleLB：简单负载均衡。ConsistentHashLB：一致性哈希负载均衡。
+// Load balancing policy. Options: SimpleLB: simple load balancing. ConsistentHashLB: consistent hash load balancing
 func (o UpstreamLoadBalancerSettingsOutput) LbPolicy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamLoadBalancerSettings) *string { return v.LbPolicy }).(pulumi.StringPtrOutput)
 }
 
-// 简单负载均衡，取值：ROUND*ROBIN：轮询。LEAST*CONN：最小连接数。RANDOM：随机。
+// Simple load balancing. Options: ROUND*ROBIN: round robin. LEAST*CONN: least connections. RANDOM: random
 func (o UpstreamLoadBalancerSettingsOutput) SimpleLb() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamLoadBalancerSettings) *string { return v.SimpleLb }).(pulumi.StringPtrOutput)
 }
 
-// 预热时间。单位为秒。
+// Warm-up time (seconds)
 func (o UpstreamLoadBalancerSettingsOutput) WarmupDuration() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v UpstreamLoadBalancerSettings) *int { return v.WarmupDuration }).(pulumi.IntPtrOutput)
 }
@@ -3644,7 +3644,7 @@ func (o UpstreamLoadBalancerSettingsPtrOutput) Elem() UpstreamLoadBalancerSettin
 	}).(UpstreamLoadBalancerSettingsOutput)
 }
 
-// 一致性哈希负载均衡。
+// Consistent Hash Load Balancing
 func (o UpstreamLoadBalancerSettingsPtrOutput) ConsistentHashLb() UpstreamLoadBalancerSettingsConsistentHashLbPtrOutput {
 	return o.ApplyT(func(v *UpstreamLoadBalancerSettings) *UpstreamLoadBalancerSettingsConsistentHashLb {
 		if v == nil {
@@ -3654,7 +3654,7 @@ func (o UpstreamLoadBalancerSettingsPtrOutput) ConsistentHashLb() UpstreamLoadBa
 	}).(UpstreamLoadBalancerSettingsConsistentHashLbPtrOutput)
 }
 
-// 负载均衡策略，取值：SimpleLB：简单负载均衡。ConsistentHashLB：一致性哈希负载均衡。
+// Load balancing policy. Options: SimpleLB: simple load balancing. ConsistentHashLB: consistent hash load balancing
 func (o UpstreamLoadBalancerSettingsPtrOutput) LbPolicy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpstreamLoadBalancerSettings) *string {
 		if v == nil {
@@ -3664,7 +3664,7 @@ func (o UpstreamLoadBalancerSettingsPtrOutput) LbPolicy() pulumi.StringPtrOutput
 	}).(pulumi.StringPtrOutput)
 }
 
-// 简单负载均衡，取值：ROUND*ROBIN：轮询。LEAST*CONN：最小连接数。RANDOM：随机。
+// Simple load balancing. Options: ROUND*ROBIN: round robin. LEAST*CONN: least connections. RANDOM: random
 func (o UpstreamLoadBalancerSettingsPtrOutput) SimpleLb() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpstreamLoadBalancerSettings) *string {
 		if v == nil {
@@ -3674,7 +3674,7 @@ func (o UpstreamLoadBalancerSettingsPtrOutput) SimpleLb() pulumi.StringPtrOutput
 	}).(pulumi.StringPtrOutput)
 }
 
-// 预热时间。单位为秒。
+// Warm-up time (seconds)
 func (o UpstreamLoadBalancerSettingsPtrOutput) WarmupDuration() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *UpstreamLoadBalancerSettings) *int {
 		if v == nil {
@@ -3685,17 +3685,17 @@ func (o UpstreamLoadBalancerSettingsPtrOutput) WarmupDuration() pulumi.IntPtrOut
 }
 
 type UpstreamLoadBalancerSettingsConsistentHashLb struct {
-	// 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+	// Overload protection parameter. Value range: 100–200. When set to 120, overload protection is triggered if the current active request count of an upstream node exceeds 120% of the average active request count. When overload protection is triggered, even if the request hash matches a specific upstream node, the load balancer will randomly select an upstream node
 	HashBalanceFactor *int `pulumi:"hashBalanceFactor"`
-	// 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
+	// Consistent hash method. Options: UseSourceIp: based on source IP address. HttpQueryParameterName: based on parameter. HttpHeaderName: based on header. HTTPCookie: based on cookie
 	HashKey *string `pulumi:"hashKey"`
 	// Cookie。
 	HttpCookie *UpstreamLoadBalancerSettingsConsistentHashLbHttpCookie `pulumi:"httpCookie"`
-	// 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+	// Parameter. Supports printable ASCII characters, length: 1–256 characters
 	HttpHeaderName *string `pulumi:"httpHeaderName"`
-	// 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+	// Parameter. Supports printable ASCII characters, length: 1–256 characters
 	HttpQueryParameterName *string `pulumi:"httpQueryParameterName"`
-	// 源IP地址。
+	// Source IP address
 	UseSourceIp *string `pulumi:"useSourceIp"`
 }
 
@@ -3711,17 +3711,17 @@ type UpstreamLoadBalancerSettingsConsistentHashLbInput interface {
 }
 
 type UpstreamLoadBalancerSettingsConsistentHashLbArgs struct {
-	// 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+	// Overload protection parameter. Value range: 100–200. When set to 120, overload protection is triggered if the current active request count of an upstream node exceeds 120% of the average active request count. When overload protection is triggered, even if the request hash matches a specific upstream node, the load balancer will randomly select an upstream node
 	HashBalanceFactor pulumi.IntPtrInput `pulumi:"hashBalanceFactor"`
-	// 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
+	// Consistent hash method. Options: UseSourceIp: based on source IP address. HttpQueryParameterName: based on parameter. HttpHeaderName: based on header. HTTPCookie: based on cookie
 	HashKey pulumi.StringPtrInput `pulumi:"hashKey"`
 	// Cookie。
 	HttpCookie UpstreamLoadBalancerSettingsConsistentHashLbHttpCookiePtrInput `pulumi:"httpCookie"`
-	// 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+	// Parameter. Supports printable ASCII characters, length: 1–256 characters
 	HttpHeaderName pulumi.StringPtrInput `pulumi:"httpHeaderName"`
-	// 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+	// Parameter. Supports printable ASCII characters, length: 1–256 characters
 	HttpQueryParameterName pulumi.StringPtrInput `pulumi:"httpQueryParameterName"`
-	// 源IP地址。
+	// Source IP address
 	UseSourceIp pulumi.StringPtrInput `pulumi:"useSourceIp"`
 }
 
@@ -3802,12 +3802,12 @@ func (o UpstreamLoadBalancerSettingsConsistentHashLbOutput) ToUpstreamLoadBalanc
 	}).(UpstreamLoadBalancerSettingsConsistentHashLbPtrOutput)
 }
 
-// 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+// Overload protection parameter. Value range: 100–200. When set to 120, overload protection is triggered if the current active request count of an upstream node exceeds 120% of the average active request count. When overload protection is triggered, even if the request hash matches a specific upstream node, the load balancer will randomly select an upstream node
 func (o UpstreamLoadBalancerSettingsConsistentHashLbOutput) HashBalanceFactor() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v UpstreamLoadBalancerSettingsConsistentHashLb) *int { return v.HashBalanceFactor }).(pulumi.IntPtrOutput)
 }
 
-// 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
+// Consistent hash method. Options: UseSourceIp: based on source IP address. HttpQueryParameterName: based on parameter. HttpHeaderName: based on header. HTTPCookie: based on cookie
 func (o UpstreamLoadBalancerSettingsConsistentHashLbOutput) HashKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamLoadBalancerSettingsConsistentHashLb) *string { return v.HashKey }).(pulumi.StringPtrOutput)
 }
@@ -3819,17 +3819,17 @@ func (o UpstreamLoadBalancerSettingsConsistentHashLbOutput) HttpCookie() Upstrea
 	}).(UpstreamLoadBalancerSettingsConsistentHashLbHttpCookiePtrOutput)
 }
 
-// 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+// Parameter. Supports printable ASCII characters, length: 1–256 characters
 func (o UpstreamLoadBalancerSettingsConsistentHashLbOutput) HttpHeaderName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamLoadBalancerSettingsConsistentHashLb) *string { return v.HttpHeaderName }).(pulumi.StringPtrOutput)
 }
 
-// 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+// Parameter. Supports printable ASCII characters, length: 1–256 characters
 func (o UpstreamLoadBalancerSettingsConsistentHashLbOutput) HttpQueryParameterName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamLoadBalancerSettingsConsistentHashLb) *string { return v.HttpQueryParameterName }).(pulumi.StringPtrOutput)
 }
 
-// 源IP地址。
+// Source IP address
 func (o UpstreamLoadBalancerSettingsConsistentHashLbOutput) UseSourceIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamLoadBalancerSettingsConsistentHashLb) *string { return v.UseSourceIp }).(pulumi.StringPtrOutput)
 }
@@ -3858,7 +3858,7 @@ func (o UpstreamLoadBalancerSettingsConsistentHashLbPtrOutput) Elem() UpstreamLo
 	}).(UpstreamLoadBalancerSettingsConsistentHashLbOutput)
 }
 
-// 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+// Overload protection parameter. Value range: 100–200. When set to 120, overload protection is triggered if the current active request count of an upstream node exceeds 120% of the average active request count. When overload protection is triggered, even if the request hash matches a specific upstream node, the load balancer will randomly select an upstream node
 func (o UpstreamLoadBalancerSettingsConsistentHashLbPtrOutput) HashBalanceFactor() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *UpstreamLoadBalancerSettingsConsistentHashLb) *int {
 		if v == nil {
@@ -3868,7 +3868,7 @@ func (o UpstreamLoadBalancerSettingsConsistentHashLbPtrOutput) HashBalanceFactor
 	}).(pulumi.IntPtrOutput)
 }
 
-// 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
+// Consistent hash method. Options: UseSourceIp: based on source IP address. HttpQueryParameterName: based on parameter. HttpHeaderName: based on header. HTTPCookie: based on cookie
 func (o UpstreamLoadBalancerSettingsConsistentHashLbPtrOutput) HashKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpstreamLoadBalancerSettingsConsistentHashLb) *string {
 		if v == nil {
@@ -3888,7 +3888,7 @@ func (o UpstreamLoadBalancerSettingsConsistentHashLbPtrOutput) HttpCookie() Upst
 	}).(UpstreamLoadBalancerSettingsConsistentHashLbHttpCookiePtrOutput)
 }
 
-// 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+// Parameter. Supports printable ASCII characters, length: 1–256 characters
 func (o UpstreamLoadBalancerSettingsConsistentHashLbPtrOutput) HttpHeaderName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpstreamLoadBalancerSettingsConsistentHashLb) *string {
 		if v == nil {
@@ -3898,7 +3898,7 @@ func (o UpstreamLoadBalancerSettingsConsistentHashLbPtrOutput) HttpHeaderName() 
 	}).(pulumi.StringPtrOutput)
 }
 
-// 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+// Parameter. Supports printable ASCII characters, length: 1–256 characters
 func (o UpstreamLoadBalancerSettingsConsistentHashLbPtrOutput) HttpQueryParameterName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpstreamLoadBalancerSettingsConsistentHashLb) *string {
 		if v == nil {
@@ -3908,7 +3908,7 @@ func (o UpstreamLoadBalancerSettingsConsistentHashLbPtrOutput) HttpQueryParamete
 	}).(pulumi.StringPtrOutput)
 }
 
-// 源IP地址。
+// Source IP address
 func (o UpstreamLoadBalancerSettingsConsistentHashLbPtrOutput) UseSourceIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpstreamLoadBalancerSettingsConsistentHashLb) *string {
 		if v == nil {
@@ -3919,11 +3919,11 @@ func (o UpstreamLoadBalancerSettingsConsistentHashLbPtrOutput) UseSourceIp() pul
 }
 
 type UpstreamLoadBalancerSettingsConsistentHashLbHttpCookie struct {
-	// 名称。支持ASCII可打印字符，长度限制为0~256个字符。
+	// Name. Supports printable ASCII characters. Length: 0~256 characters
 	Name *string `pulumi:"name"`
-	// 路径。支持ASCII可打印字符，长度限制为1~256个字符。
+	// Path. Supports printable ASCII characters. Length: 1~256 characters
 	Path *string `pulumi:"path"`
-	// 有效期。单位为秒。
+	// Validity period, in seconds
 	Ttl *int `pulumi:"ttl"`
 }
 
@@ -3939,11 +3939,11 @@ type UpstreamLoadBalancerSettingsConsistentHashLbHttpCookieInput interface {
 }
 
 type UpstreamLoadBalancerSettingsConsistentHashLbHttpCookieArgs struct {
-	// 名称。支持ASCII可打印字符，长度限制为0~256个字符。
+	// Name. Supports printable ASCII characters. Length: 0~256 characters
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// 路径。支持ASCII可打印字符，长度限制为1~256个字符。
+	// Path. Supports printable ASCII characters. Length: 1~256 characters
 	Path pulumi.StringPtrInput `pulumi:"path"`
-	// 有效期。单位为秒。
+	// Validity period, in seconds
 	Ttl pulumi.IntPtrInput `pulumi:"ttl"`
 }
 
@@ -4024,17 +4024,17 @@ func (o UpstreamLoadBalancerSettingsConsistentHashLbHttpCookieOutput) ToUpstream
 	}).(UpstreamLoadBalancerSettingsConsistentHashLbHttpCookiePtrOutput)
 }
 
-// 名称。支持ASCII可打印字符，长度限制为0~256个字符。
+// Name. Supports printable ASCII characters. Length: 0~256 characters
 func (o UpstreamLoadBalancerSettingsConsistentHashLbHttpCookieOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamLoadBalancerSettingsConsistentHashLbHttpCookie) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// 路径。支持ASCII可打印字符，长度限制为1~256个字符。
+// Path. Supports printable ASCII characters. Length: 1~256 characters
 func (o UpstreamLoadBalancerSettingsConsistentHashLbHttpCookieOutput) Path() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamLoadBalancerSettingsConsistentHashLbHttpCookie) *string { return v.Path }).(pulumi.StringPtrOutput)
 }
 
-// 有效期。单位为秒。
+// Validity period, in seconds
 func (o UpstreamLoadBalancerSettingsConsistentHashLbHttpCookieOutput) Ttl() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v UpstreamLoadBalancerSettingsConsistentHashLbHttpCookie) *int { return v.Ttl }).(pulumi.IntPtrOutput)
 }
@@ -4063,7 +4063,7 @@ func (o UpstreamLoadBalancerSettingsConsistentHashLbHttpCookiePtrOutput) Elem() 
 	}).(UpstreamLoadBalancerSettingsConsistentHashLbHttpCookieOutput)
 }
 
-// 名称。支持ASCII可打印字符，长度限制为0~256个字符。
+// Name. Supports printable ASCII characters. Length: 0~256 characters
 func (o UpstreamLoadBalancerSettingsConsistentHashLbHttpCookiePtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpstreamLoadBalancerSettingsConsistentHashLbHttpCookie) *string {
 		if v == nil {
@@ -4073,7 +4073,7 @@ func (o UpstreamLoadBalancerSettingsConsistentHashLbHttpCookiePtrOutput) Name() 
 	}).(pulumi.StringPtrOutput)
 }
 
-// 路径。支持ASCII可打印字符，长度限制为1~256个字符。
+// Path. Supports printable ASCII characters. Length: 1~256 characters
 func (o UpstreamLoadBalancerSettingsConsistentHashLbHttpCookiePtrOutput) Path() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpstreamLoadBalancerSettingsConsistentHashLbHttpCookie) *string {
 		if v == nil {
@@ -4083,7 +4083,7 @@ func (o UpstreamLoadBalancerSettingsConsistentHashLbHttpCookiePtrOutput) Path() 
 	}).(pulumi.StringPtrOutput)
 }
 
-// 有效期。单位为秒。
+// Validity period, in seconds
 func (o UpstreamLoadBalancerSettingsConsistentHashLbHttpCookiePtrOutput) Ttl() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *UpstreamLoadBalancerSettingsConsistentHashLbHttpCookie) *int {
 		if v == nil {
@@ -4094,19 +4094,19 @@ func (o UpstreamLoadBalancerSettingsConsistentHashLbHttpCookiePtrOutput) Ttl() p
 }
 
 type UpstreamSourceIngressSettings struct {
-	// 是否启用所有Ingress类。
+	// Whether to enable all Ingress classes
 	EnableAllIngressClasses *bool `pulumi:"enableAllIngressClasses"`
-	// 是否全部命名空间。
+	// Whether all namespaces
 	EnableAllNamespaces *bool `pulumi:"enableAllNamespaces"`
-	// 是否开启。
+	// Whether enabled
 	EnableIngress *bool `pulumi:"enableIngress"`
-	// 是否监听IngressClass为空的资源。
+	// Whether to monitor resources with empty IngressClass
 	EnableIngressWithoutIngressClass *bool `pulumi:"enableIngressWithoutIngressClass"`
-	// 指定IngressClass。
+	// Specify IngressClass
 	IngressClasses []string `pulumi:"ingressClasses"`
-	// 流量入口切换。开启后，当前集群Ingress中Status的IP地址会被修改为当前网关的IP地址。
+	// Traffic entry switch. When enabled, the IP address in the Status of the current cluster's Ingress will be updated to the current gateway's IP address
 	UpdateStatus *bool `pulumi:"updateStatus"`
-	// 指定命名空间。
+	// Specify namespace
 	WatchNamespaces []string `pulumi:"watchNamespaces"`
 }
 
@@ -4122,19 +4122,19 @@ type UpstreamSourceIngressSettingsInput interface {
 }
 
 type UpstreamSourceIngressSettingsArgs struct {
-	// 是否启用所有Ingress类。
+	// Whether to enable all Ingress classes
 	EnableAllIngressClasses pulumi.BoolPtrInput `pulumi:"enableAllIngressClasses"`
-	// 是否全部命名空间。
+	// Whether all namespaces
 	EnableAllNamespaces pulumi.BoolPtrInput `pulumi:"enableAllNamespaces"`
-	// 是否开启。
+	// Whether enabled
 	EnableIngress pulumi.BoolPtrInput `pulumi:"enableIngress"`
-	// 是否监听IngressClass为空的资源。
+	// Whether to monitor resources with empty IngressClass
 	EnableIngressWithoutIngressClass pulumi.BoolPtrInput `pulumi:"enableIngressWithoutIngressClass"`
-	// 指定IngressClass。
+	// Specify IngressClass
 	IngressClasses pulumi.StringArrayInput `pulumi:"ingressClasses"`
-	// 流量入口切换。开启后，当前集群Ingress中Status的IP地址会被修改为当前网关的IP地址。
+	// Traffic entry switch. When enabled, the IP address in the Status of the current cluster's Ingress will be updated to the current gateway's IP address
 	UpdateStatus pulumi.BoolPtrInput `pulumi:"updateStatus"`
-	// 指定命名空间。
+	// Specify namespace
 	WatchNamespaces pulumi.StringArrayInput `pulumi:"watchNamespaces"`
 }
 
@@ -4215,37 +4215,37 @@ func (o UpstreamSourceIngressSettingsOutput) ToUpstreamSourceIngressSettingsPtrO
 	}).(UpstreamSourceIngressSettingsPtrOutput)
 }
 
-// 是否启用所有Ingress类。
+// Whether to enable all Ingress classes
 func (o UpstreamSourceIngressSettingsOutput) EnableAllIngressClasses() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v UpstreamSourceIngressSettings) *bool { return v.EnableAllIngressClasses }).(pulumi.BoolPtrOutput)
 }
 
-// 是否全部命名空间。
+// Whether all namespaces
 func (o UpstreamSourceIngressSettingsOutput) EnableAllNamespaces() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v UpstreamSourceIngressSettings) *bool { return v.EnableAllNamespaces }).(pulumi.BoolPtrOutput)
 }
 
-// 是否开启。
+// Whether enabled
 func (o UpstreamSourceIngressSettingsOutput) EnableIngress() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v UpstreamSourceIngressSettings) *bool { return v.EnableIngress }).(pulumi.BoolPtrOutput)
 }
 
-// 是否监听IngressClass为空的资源。
+// Whether to monitor resources with empty IngressClass
 func (o UpstreamSourceIngressSettingsOutput) EnableIngressWithoutIngressClass() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v UpstreamSourceIngressSettings) *bool { return v.EnableIngressWithoutIngressClass }).(pulumi.BoolPtrOutput)
 }
 
-// 指定IngressClass。
+// Specify IngressClass
 func (o UpstreamSourceIngressSettingsOutput) IngressClasses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v UpstreamSourceIngressSettings) []string { return v.IngressClasses }).(pulumi.StringArrayOutput)
 }
 
-// 流量入口切换。开启后，当前集群Ingress中Status的IP地址会被修改为当前网关的IP地址。
+// Traffic entry switch. When enabled, the IP address in the Status of the current cluster's Ingress will be updated to the current gateway's IP address
 func (o UpstreamSourceIngressSettingsOutput) UpdateStatus() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v UpstreamSourceIngressSettings) *bool { return v.UpdateStatus }).(pulumi.BoolPtrOutput)
 }
 
-// 指定命名空间。
+// Specify namespace
 func (o UpstreamSourceIngressSettingsOutput) WatchNamespaces() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v UpstreamSourceIngressSettings) []string { return v.WatchNamespaces }).(pulumi.StringArrayOutput)
 }
@@ -4274,7 +4274,7 @@ func (o UpstreamSourceIngressSettingsPtrOutput) Elem() UpstreamSourceIngressSett
 	}).(UpstreamSourceIngressSettingsOutput)
 }
 
-// 是否启用所有Ingress类。
+// Whether to enable all Ingress classes
 func (o UpstreamSourceIngressSettingsPtrOutput) EnableAllIngressClasses() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *UpstreamSourceIngressSettings) *bool {
 		if v == nil {
@@ -4284,7 +4284,7 @@ func (o UpstreamSourceIngressSettingsPtrOutput) EnableAllIngressClasses() pulumi
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 是否全部命名空间。
+// Whether all namespaces
 func (o UpstreamSourceIngressSettingsPtrOutput) EnableAllNamespaces() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *UpstreamSourceIngressSettings) *bool {
 		if v == nil {
@@ -4294,7 +4294,7 @@ func (o UpstreamSourceIngressSettingsPtrOutput) EnableAllNamespaces() pulumi.Boo
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 是否开启。
+// Whether enabled
 func (o UpstreamSourceIngressSettingsPtrOutput) EnableIngress() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *UpstreamSourceIngressSettings) *bool {
 		if v == nil {
@@ -4304,7 +4304,7 @@ func (o UpstreamSourceIngressSettingsPtrOutput) EnableIngress() pulumi.BoolPtrOu
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 是否监听IngressClass为空的资源。
+// Whether to monitor resources with empty IngressClass
 func (o UpstreamSourceIngressSettingsPtrOutput) EnableIngressWithoutIngressClass() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *UpstreamSourceIngressSettings) *bool {
 		if v == nil {
@@ -4314,7 +4314,7 @@ func (o UpstreamSourceIngressSettingsPtrOutput) EnableIngressWithoutIngressClass
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 指定IngressClass。
+// Specify IngressClass
 func (o UpstreamSourceIngressSettingsPtrOutput) IngressClasses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *UpstreamSourceIngressSettings) []string {
 		if v == nil {
@@ -4324,7 +4324,7 @@ func (o UpstreamSourceIngressSettingsPtrOutput) IngressClasses() pulumi.StringAr
 	}).(pulumi.StringArrayOutput)
 }
 
-// 流量入口切换。开启后，当前集群Ingress中Status的IP地址会被修改为当前网关的IP地址。
+// Traffic entry switch. When enabled, the IP address in the Status of the current cluster's Ingress will be updated to the current gateway's IP address
 func (o UpstreamSourceIngressSettingsPtrOutput) UpdateStatus() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *UpstreamSourceIngressSettings) *bool {
 		if v == nil {
@@ -4334,7 +4334,7 @@ func (o UpstreamSourceIngressSettingsPtrOutput) UpdateStatus() pulumi.BoolPtrOut
 	}).(pulumi.BoolPtrOutput)
 }
 
-// 指定命名空间。
+// Specify namespace
 func (o UpstreamSourceIngressSettingsPtrOutput) WatchNamespaces() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *UpstreamSourceIngressSettings) []string {
 		if v == nil {
@@ -4345,9 +4345,9 @@ func (o UpstreamSourceIngressSettingsPtrOutput) WatchNamespaces() pulumi.StringA
 }
 
 type UpstreamSourceSourceSpec struct {
-	// 容器集群来源。
+	// Container cluster source
 	K8SSource *UpstreamSourceSourceSpecK8SSource `pulumi:"k8SSource"`
-	// 注册中心来源。
+	// Registry source
 	NacosSource *UpstreamSourceSourceSpecNacosSource `pulumi:"nacosSource"`
 }
 
@@ -4363,9 +4363,9 @@ type UpstreamSourceSourceSpecInput interface {
 }
 
 type UpstreamSourceSourceSpecArgs struct {
-	// 容器集群来源。
+	// Container cluster source
 	K8SSource UpstreamSourceSourceSpecK8SSourcePtrInput `pulumi:"k8SSource"`
-	// 注册中心来源。
+	// Registry source
 	NacosSource UpstreamSourceSourceSpecNacosSourcePtrInput `pulumi:"nacosSource"`
 }
 
@@ -4446,12 +4446,12 @@ func (o UpstreamSourceSourceSpecOutput) ToUpstreamSourceSourceSpecPtrOutputWithC
 	}).(UpstreamSourceSourceSpecPtrOutput)
 }
 
-// 容器集群来源。
+// Container cluster source
 func (o UpstreamSourceSourceSpecOutput) K8SSource() UpstreamSourceSourceSpecK8SSourcePtrOutput {
 	return o.ApplyT(func(v UpstreamSourceSourceSpec) *UpstreamSourceSourceSpecK8SSource { return v.K8SSource }).(UpstreamSourceSourceSpecK8SSourcePtrOutput)
 }
 
-// 注册中心来源。
+// Registry source
 func (o UpstreamSourceSourceSpecOutput) NacosSource() UpstreamSourceSourceSpecNacosSourcePtrOutput {
 	return o.ApplyT(func(v UpstreamSourceSourceSpec) *UpstreamSourceSourceSpecNacosSource { return v.NacosSource }).(UpstreamSourceSourceSpecNacosSourcePtrOutput)
 }
@@ -4480,7 +4480,7 @@ func (o UpstreamSourceSourceSpecPtrOutput) Elem() UpstreamSourceSourceSpecOutput
 	}).(UpstreamSourceSourceSpecOutput)
 }
 
-// 容器集群来源。
+// Container cluster source
 func (o UpstreamSourceSourceSpecPtrOutput) K8SSource() UpstreamSourceSourceSpecK8SSourcePtrOutput {
 	return o.ApplyT(func(v *UpstreamSourceSourceSpec) *UpstreamSourceSourceSpecK8SSource {
 		if v == nil {
@@ -4490,7 +4490,7 @@ func (o UpstreamSourceSourceSpecPtrOutput) K8SSource() UpstreamSourceSourceSpecK
 	}).(UpstreamSourceSourceSpecK8SSourcePtrOutput)
 }
 
-// 注册中心来源。
+// Registry source
 func (o UpstreamSourceSourceSpecPtrOutput) NacosSource() UpstreamSourceSourceSpecNacosSourcePtrOutput {
 	return o.ApplyT(func(v *UpstreamSourceSourceSpec) *UpstreamSourceSourceSpecNacosSource {
 		if v == nil {
@@ -4501,9 +4501,9 @@ func (o UpstreamSourceSourceSpecPtrOutput) NacosSource() UpstreamSourceSourceSpe
 }
 
 type UpstreamSourceSourceSpecK8SSource struct {
-	// 集群ID。
+	// Cluster ID
 	ClusterId *string `pulumi:"clusterId"`
-	// 集群类型。
+	// Cluster type
 	ClusterType *string `pulumi:"clusterType"`
 }
 
@@ -4519,9 +4519,9 @@ type UpstreamSourceSourceSpecK8SSourceInput interface {
 }
 
 type UpstreamSourceSourceSpecK8SSourceArgs struct {
-	// 集群ID。
+	// Cluster ID
 	ClusterId pulumi.StringPtrInput `pulumi:"clusterId"`
-	// 集群类型。
+	// Cluster type
 	ClusterType pulumi.StringPtrInput `pulumi:"clusterType"`
 }
 
@@ -4602,12 +4602,12 @@ func (o UpstreamSourceSourceSpecK8SSourceOutput) ToUpstreamSourceSourceSpecK8SSo
 	}).(UpstreamSourceSourceSpecK8SSourcePtrOutput)
 }
 
-// 集群ID。
+// Cluster ID
 func (o UpstreamSourceSourceSpecK8SSourceOutput) ClusterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamSourceSourceSpecK8SSource) *string { return v.ClusterId }).(pulumi.StringPtrOutput)
 }
 
-// 集群类型。
+// Cluster type
 func (o UpstreamSourceSourceSpecK8SSourceOutput) ClusterType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamSourceSourceSpecK8SSource) *string { return v.ClusterType }).(pulumi.StringPtrOutput)
 }
@@ -4636,7 +4636,7 @@ func (o UpstreamSourceSourceSpecK8SSourcePtrOutput) Elem() UpstreamSourceSourceS
 	}).(UpstreamSourceSourceSpecK8SSourceOutput)
 }
 
-// 集群ID。
+// Cluster ID
 func (o UpstreamSourceSourceSpecK8SSourcePtrOutput) ClusterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpstreamSourceSourceSpecK8SSource) *string {
 		if v == nil {
@@ -4646,7 +4646,7 @@ func (o UpstreamSourceSourceSpecK8SSourcePtrOutput) ClusterId() pulumi.StringPtr
 	}).(pulumi.StringPtrOutput)
 }
 
-// 集群类型。
+// Cluster type
 func (o UpstreamSourceSourceSpecK8SSourcePtrOutput) ClusterType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpstreamSourceSourceSpecK8SSource) *string {
 		if v == nil {
@@ -4657,11 +4657,11 @@ func (o UpstreamSourceSourceSpecK8SSourcePtrOutput) ClusterType() pulumi.StringP
 }
 
 type UpstreamSourceSourceSpecNacosSource struct {
-	// 认证配置。
+	// Authentication configuration
 	AuthConfig *UpstreamSourceSourceSpecNacosSourceAuthConfig `pulumi:"authConfig"`
 	// Nacos ID。
 	NacosId *string `pulumi:"nacosId"`
-	// Nacos名称。
+	// Nacos name
 	NacosName *string `pulumi:"nacosName"`
 }
 
@@ -4677,11 +4677,11 @@ type UpstreamSourceSourceSpecNacosSourceInput interface {
 }
 
 type UpstreamSourceSourceSpecNacosSourceArgs struct {
-	// 认证配置。
+	// Authentication configuration
 	AuthConfig UpstreamSourceSourceSpecNacosSourceAuthConfigPtrInput `pulumi:"authConfig"`
 	// Nacos ID。
 	NacosId pulumi.StringPtrInput `pulumi:"nacosId"`
-	// Nacos名称。
+	// Nacos name
 	NacosName pulumi.StringPtrInput `pulumi:"nacosName"`
 }
 
@@ -4762,7 +4762,7 @@ func (o UpstreamSourceSourceSpecNacosSourceOutput) ToUpstreamSourceSourceSpecNac
 	}).(UpstreamSourceSourceSpecNacosSourcePtrOutput)
 }
 
-// 认证配置。
+// Authentication configuration
 func (o UpstreamSourceSourceSpecNacosSourceOutput) AuthConfig() UpstreamSourceSourceSpecNacosSourceAuthConfigPtrOutput {
 	return o.ApplyT(func(v UpstreamSourceSourceSpecNacosSource) *UpstreamSourceSourceSpecNacosSourceAuthConfig {
 		return v.AuthConfig
@@ -4774,7 +4774,7 @@ func (o UpstreamSourceSourceSpecNacosSourceOutput) NacosId() pulumi.StringPtrOut
 	return o.ApplyT(func(v UpstreamSourceSourceSpecNacosSource) *string { return v.NacosId }).(pulumi.StringPtrOutput)
 }
 
-// Nacos名称。
+// Nacos name
 func (o UpstreamSourceSourceSpecNacosSourceOutput) NacosName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamSourceSourceSpecNacosSource) *string { return v.NacosName }).(pulumi.StringPtrOutput)
 }
@@ -4803,7 +4803,7 @@ func (o UpstreamSourceSourceSpecNacosSourcePtrOutput) Elem() UpstreamSourceSourc
 	}).(UpstreamSourceSourceSpecNacosSourceOutput)
 }
 
-// 认证配置。
+// Authentication configuration
 func (o UpstreamSourceSourceSpecNacosSourcePtrOutput) AuthConfig() UpstreamSourceSourceSpecNacosSourceAuthConfigPtrOutput {
 	return o.ApplyT(func(v *UpstreamSourceSourceSpecNacosSource) *UpstreamSourceSourceSpecNacosSourceAuthConfig {
 		if v == nil {
@@ -4823,7 +4823,7 @@ func (o UpstreamSourceSourceSpecNacosSourcePtrOutput) NacosId() pulumi.StringPtr
 	}).(pulumi.StringPtrOutput)
 }
 
-// Nacos名称。
+// Nacos name
 func (o UpstreamSourceSourceSpecNacosSourcePtrOutput) NacosName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpstreamSourceSourceSpecNacosSource) *string {
 		if v == nil {
@@ -4834,7 +4834,7 @@ func (o UpstreamSourceSourceSpecNacosSourcePtrOutput) NacosName() pulumi.StringP
 }
 
 type UpstreamSourceSourceSpecNacosSourceAuthConfig struct {
-	// Basic认证。
+	// Basic authentication
 	Basic *UpstreamSourceSourceSpecNacosSourceAuthConfigBasic `pulumi:"basic"`
 }
 
@@ -4850,7 +4850,7 @@ type UpstreamSourceSourceSpecNacosSourceAuthConfigInput interface {
 }
 
 type UpstreamSourceSourceSpecNacosSourceAuthConfigArgs struct {
-	// Basic认证。
+	// Basic authentication
 	Basic UpstreamSourceSourceSpecNacosSourceAuthConfigBasicPtrInput `pulumi:"basic"`
 }
 
@@ -4931,7 +4931,7 @@ func (o UpstreamSourceSourceSpecNacosSourceAuthConfigOutput) ToUpstreamSourceSou
 	}).(UpstreamSourceSourceSpecNacosSourceAuthConfigPtrOutput)
 }
 
-// Basic认证。
+// Basic authentication
 func (o UpstreamSourceSourceSpecNacosSourceAuthConfigOutput) Basic() UpstreamSourceSourceSpecNacosSourceAuthConfigBasicPtrOutput {
 	return o.ApplyT(func(v UpstreamSourceSourceSpecNacosSourceAuthConfig) *UpstreamSourceSourceSpecNacosSourceAuthConfigBasic {
 		return v.Basic
@@ -4962,7 +4962,7 @@ func (o UpstreamSourceSourceSpecNacosSourceAuthConfigPtrOutput) Elem() UpstreamS
 	}).(UpstreamSourceSourceSpecNacosSourceAuthConfigOutput)
 }
 
-// Basic认证。
+// Basic authentication
 func (o UpstreamSourceSourceSpecNacosSourceAuthConfigPtrOutput) Basic() UpstreamSourceSourceSpecNacosSourceAuthConfigBasicPtrOutput {
 	return o.ApplyT(func(v *UpstreamSourceSourceSpecNacosSourceAuthConfig) *UpstreamSourceSourceSpecNacosSourceAuthConfigBasic {
 		if v == nil {
@@ -4973,9 +4973,9 @@ func (o UpstreamSourceSourceSpecNacosSourceAuthConfigPtrOutput) Basic() Upstream
 }
 
 type UpstreamSourceSourceSpecNacosSourceAuthConfigBasic struct {
-	// 密码。
+	// Password
 	Password *string `pulumi:"password"`
-	// 用户名。
+	// Username
 	Username *string `pulumi:"username"`
 }
 
@@ -4991,9 +4991,9 @@ type UpstreamSourceSourceSpecNacosSourceAuthConfigBasicInput interface {
 }
 
 type UpstreamSourceSourceSpecNacosSourceAuthConfigBasicArgs struct {
-	// 密码。
+	// Password
 	Password pulumi.StringPtrInput `pulumi:"password"`
-	// 用户名。
+	// Username
 	Username pulumi.StringPtrInput `pulumi:"username"`
 }
 
@@ -5074,12 +5074,12 @@ func (o UpstreamSourceSourceSpecNacosSourceAuthConfigBasicOutput) ToUpstreamSour
 	}).(UpstreamSourceSourceSpecNacosSourceAuthConfigBasicPtrOutput)
 }
 
-// 密码。
+// Password
 func (o UpstreamSourceSourceSpecNacosSourceAuthConfigBasicOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamSourceSourceSpecNacosSourceAuthConfigBasic) *string { return v.Password }).(pulumi.StringPtrOutput)
 }
 
-// 用户名。
+// Username
 func (o UpstreamSourceSourceSpecNacosSourceAuthConfigBasicOutput) Username() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamSourceSourceSpecNacosSourceAuthConfigBasic) *string { return v.Username }).(pulumi.StringPtrOutput)
 }
@@ -5108,7 +5108,7 @@ func (o UpstreamSourceSourceSpecNacosSourceAuthConfigBasicPtrOutput) Elem() Upst
 	}).(UpstreamSourceSourceSpecNacosSourceAuthConfigBasicOutput)
 }
 
-// 密码。
+// Password
 func (o UpstreamSourceSourceSpecNacosSourceAuthConfigBasicPtrOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpstreamSourceSourceSpecNacosSourceAuthConfigBasic) *string {
 		if v == nil {
@@ -5118,7 +5118,7 @@ func (o UpstreamSourceSourceSpecNacosSourceAuthConfigBasicPtrOutput) Password() 
 	}).(pulumi.StringPtrOutput)
 }
 
-// 用户名。
+// Username
 func (o UpstreamSourceSourceSpecNacosSourceAuthConfigBasicPtrOutput) Username() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpstreamSourceSourceSpecNacosSourceAuthConfigBasic) *string {
 		if v == nil {
@@ -5129,9 +5129,9 @@ func (o UpstreamSourceSourceSpecNacosSourceAuthConfigBasicPtrOutput) Username() 
 }
 
 type UpstreamTlsSettings struct {
-	// SNI。留空时会将访问网关的域名透传到upstream。
+	// SNI. If left blank, the domain name accessed by the gateway will be passed through to the upstream
 	Sni *string `pulumi:"sni"`
-	// TLS模式，取值：DISABLE：关闭TLS。SIMPLE：单向TLS。
+	// TLS mode. Options: DISABLE: disable TLS. SIMPLE: one-way TLS
 	TlsMode *string `pulumi:"tlsMode"`
 }
 
@@ -5147,9 +5147,9 @@ type UpstreamTlsSettingsInput interface {
 }
 
 type UpstreamTlsSettingsArgs struct {
-	// SNI。留空时会将访问网关的域名透传到upstream。
+	// SNI. If left blank, the domain name accessed by the gateway will be passed through to the upstream
 	Sni pulumi.StringPtrInput `pulumi:"sni"`
-	// TLS模式，取值：DISABLE：关闭TLS。SIMPLE：单向TLS。
+	// TLS mode. Options: DISABLE: disable TLS. SIMPLE: one-way TLS
 	TlsMode pulumi.StringPtrInput `pulumi:"tlsMode"`
 }
 
@@ -5230,12 +5230,12 @@ func (o UpstreamTlsSettingsOutput) ToUpstreamTlsSettingsPtrOutputWithContext(ctx
 	}).(UpstreamTlsSettingsPtrOutput)
 }
 
-// SNI。留空时会将访问网关的域名透传到upstream。
+// SNI. If left blank, the domain name accessed by the gateway will be passed through to the upstream
 func (o UpstreamTlsSettingsOutput) Sni() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamTlsSettings) *string { return v.Sni }).(pulumi.StringPtrOutput)
 }
 
-// TLS模式，取值：DISABLE：关闭TLS。SIMPLE：单向TLS。
+// TLS mode. Options: DISABLE: disable TLS. SIMPLE: one-way TLS
 func (o UpstreamTlsSettingsOutput) TlsMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamTlsSettings) *string { return v.TlsMode }).(pulumi.StringPtrOutput)
 }
@@ -5264,7 +5264,7 @@ func (o UpstreamTlsSettingsPtrOutput) Elem() UpstreamTlsSettingsOutput {
 	}).(UpstreamTlsSettingsOutput)
 }
 
-// SNI。留空时会将访问网关的域名透传到upstream。
+// SNI. If left blank, the domain name accessed by the gateway will be passed through to the upstream
 func (o UpstreamTlsSettingsPtrOutput) Sni() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpstreamTlsSettings) *string {
 		if v == nil {
@@ -5274,7 +5274,7 @@ func (o UpstreamTlsSettingsPtrOutput) Sni() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// TLS模式，取值：DISABLE：关闭TLS。SIMPLE：单向TLS。
+// TLS mode. Options: DISABLE: disable TLS. SIMPLE: one-way TLS
 func (o UpstreamTlsSettingsPtrOutput) TlsMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpstreamTlsSettings) *string {
 		if v == nil {
@@ -5285,16 +5285,16 @@ func (o UpstreamTlsSettingsPtrOutput) TlsMode() pulumi.StringPtrOutput {
 }
 
 type UpstreamUpstreamSpec struct {
-	// AI模型代理。
+	// AI model proxy
 	AiProvider *UpstreamUpstreamSpecAiProvider `pulumi:"aiProvider"`
-	// 固定域名。
+	// Fixed domain name
 	Domain       *UpstreamUpstreamSpecDomain       `pulumi:"domain"`
 	EcsInstances []UpstreamUpstreamSpecEcsInstance `pulumi:"ecsInstances"`
-	// 容器服务。
+	// Container Service
 	K8SService *UpstreamUpstreamSpecK8SService `pulumi:"k8SService"`
-	// 注册中心。
+	// Registry Center
 	NacosService *UpstreamUpstreamSpecNacosService `pulumi:"nacosService"`
-	// 函数服务。
+	// Function service
 	VeFaas *UpstreamUpstreamSpecVeFaas `pulumi:"veFaas"`
 }
 
@@ -5310,16 +5310,16 @@ type UpstreamUpstreamSpecInput interface {
 }
 
 type UpstreamUpstreamSpecArgs struct {
-	// AI模型代理。
+	// AI model proxy
 	AiProvider UpstreamUpstreamSpecAiProviderPtrInput `pulumi:"aiProvider"`
-	// 固定域名。
+	// Fixed domain name
 	Domain       UpstreamUpstreamSpecDomainPtrInput        `pulumi:"domain"`
 	EcsInstances UpstreamUpstreamSpecEcsInstanceArrayInput `pulumi:"ecsInstances"`
-	// 容器服务。
+	// Container Service
 	K8SService UpstreamUpstreamSpecK8SServicePtrInput `pulumi:"k8SService"`
-	// 注册中心。
+	// Registry Center
 	NacosService UpstreamUpstreamSpecNacosServicePtrInput `pulumi:"nacosService"`
-	// 函数服务。
+	// Function service
 	VeFaas UpstreamUpstreamSpecVeFaasPtrInput `pulumi:"veFaas"`
 }
 
@@ -5400,12 +5400,12 @@ func (o UpstreamUpstreamSpecOutput) ToUpstreamUpstreamSpecPtrOutputWithContext(c
 	}).(UpstreamUpstreamSpecPtrOutput)
 }
 
-// AI模型代理。
+// AI model proxy
 func (o UpstreamUpstreamSpecOutput) AiProvider() UpstreamUpstreamSpecAiProviderPtrOutput {
 	return o.ApplyT(func(v UpstreamUpstreamSpec) *UpstreamUpstreamSpecAiProvider { return v.AiProvider }).(UpstreamUpstreamSpecAiProviderPtrOutput)
 }
 
-// 固定域名。
+// Fixed domain name
 func (o UpstreamUpstreamSpecOutput) Domain() UpstreamUpstreamSpecDomainPtrOutput {
 	return o.ApplyT(func(v UpstreamUpstreamSpec) *UpstreamUpstreamSpecDomain { return v.Domain }).(UpstreamUpstreamSpecDomainPtrOutput)
 }
@@ -5414,17 +5414,17 @@ func (o UpstreamUpstreamSpecOutput) EcsInstances() UpstreamUpstreamSpecEcsInstan
 	return o.ApplyT(func(v UpstreamUpstreamSpec) []UpstreamUpstreamSpecEcsInstance { return v.EcsInstances }).(UpstreamUpstreamSpecEcsInstanceArrayOutput)
 }
 
-// 容器服务。
+// Container Service
 func (o UpstreamUpstreamSpecOutput) K8SService() UpstreamUpstreamSpecK8SServicePtrOutput {
 	return o.ApplyT(func(v UpstreamUpstreamSpec) *UpstreamUpstreamSpecK8SService { return v.K8SService }).(UpstreamUpstreamSpecK8SServicePtrOutput)
 }
 
-// 注册中心。
+// Registry Center
 func (o UpstreamUpstreamSpecOutput) NacosService() UpstreamUpstreamSpecNacosServicePtrOutput {
 	return o.ApplyT(func(v UpstreamUpstreamSpec) *UpstreamUpstreamSpecNacosService { return v.NacosService }).(UpstreamUpstreamSpecNacosServicePtrOutput)
 }
 
-// 函数服务。
+// Function service
 func (o UpstreamUpstreamSpecOutput) VeFaas() UpstreamUpstreamSpecVeFaasPtrOutput {
 	return o.ApplyT(func(v UpstreamUpstreamSpec) *UpstreamUpstreamSpecVeFaas { return v.VeFaas }).(UpstreamUpstreamSpecVeFaasPtrOutput)
 }
@@ -5453,7 +5453,7 @@ func (o UpstreamUpstreamSpecPtrOutput) Elem() UpstreamUpstreamSpecOutput {
 	}).(UpstreamUpstreamSpecOutput)
 }
 
-// AI模型代理。
+// AI model proxy
 func (o UpstreamUpstreamSpecPtrOutput) AiProvider() UpstreamUpstreamSpecAiProviderPtrOutput {
 	return o.ApplyT(func(v *UpstreamUpstreamSpec) *UpstreamUpstreamSpecAiProvider {
 		if v == nil {
@@ -5463,7 +5463,7 @@ func (o UpstreamUpstreamSpecPtrOutput) AiProvider() UpstreamUpstreamSpecAiProvid
 	}).(UpstreamUpstreamSpecAiProviderPtrOutput)
 }
 
-// 固定域名。
+// Fixed domain name
 func (o UpstreamUpstreamSpecPtrOutput) Domain() UpstreamUpstreamSpecDomainPtrOutput {
 	return o.ApplyT(func(v *UpstreamUpstreamSpec) *UpstreamUpstreamSpecDomain {
 		if v == nil {
@@ -5482,7 +5482,7 @@ func (o UpstreamUpstreamSpecPtrOutput) EcsInstances() UpstreamUpstreamSpecEcsIns
 	}).(UpstreamUpstreamSpecEcsInstanceArrayOutput)
 }
 
-// 容器服务。
+// Container Service
 func (o UpstreamUpstreamSpecPtrOutput) K8SService() UpstreamUpstreamSpecK8SServicePtrOutput {
 	return o.ApplyT(func(v *UpstreamUpstreamSpec) *UpstreamUpstreamSpecK8SService {
 		if v == nil {
@@ -5492,7 +5492,7 @@ func (o UpstreamUpstreamSpecPtrOutput) K8SService() UpstreamUpstreamSpecK8SServi
 	}).(UpstreamUpstreamSpecK8SServicePtrOutput)
 }
 
-// 注册中心。
+// Registry Center
 func (o UpstreamUpstreamSpecPtrOutput) NacosService() UpstreamUpstreamSpecNacosServicePtrOutput {
 	return o.ApplyT(func(v *UpstreamUpstreamSpec) *UpstreamUpstreamSpecNacosService {
 		if v == nil {
@@ -5502,7 +5502,7 @@ func (o UpstreamUpstreamSpecPtrOutput) NacosService() UpstreamUpstreamSpecNacosS
 	}).(UpstreamUpstreamSpecNacosServicePtrOutput)
 }
 
-// 函数服务。
+// Function service
 func (o UpstreamUpstreamSpecPtrOutput) VeFaas() UpstreamUpstreamSpecVeFaasPtrOutput {
 	return o.ApplyT(func(v *UpstreamUpstreamSpec) *UpstreamUpstreamSpecVeFaas {
 		if v == nil {
@@ -5513,13 +5513,13 @@ func (o UpstreamUpstreamSpecPtrOutput) VeFaas() UpstreamUpstreamSpecVeFaasPtrOut
 }
 
 type UpstreamUpstreamSpecAiProvider struct {
-	// 模型地址。
+	// Model address
 	BaseUrl *string `pulumi:"baseUrl"`
-	// 火山自部署模型服务。
+	// Volcano Engine self-hosted model service
 	CustomModelService *UpstreamUpstreamSpecAiProviderCustomModelService `pulumi:"customModelService"`
-	// 模型服务商名称。
+	// Model Service Provider Name
 	Name *string `pulumi:"name"`
-	// 模型API key。
+	// Model API key
 	Token *string `pulumi:"token"`
 }
 
@@ -5535,13 +5535,13 @@ type UpstreamUpstreamSpecAiProviderInput interface {
 }
 
 type UpstreamUpstreamSpecAiProviderArgs struct {
-	// 模型地址。
+	// Model address
 	BaseUrl pulumi.StringPtrInput `pulumi:"baseUrl"`
-	// 火山自部署模型服务。
+	// Volcano Engine self-hosted model service
 	CustomModelService UpstreamUpstreamSpecAiProviderCustomModelServicePtrInput `pulumi:"customModelService"`
-	// 模型服务商名称。
+	// Model Service Provider Name
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// 模型API key。
+	// Model API key
 	Token pulumi.StringPtrInput `pulumi:"token"`
 }
 
@@ -5622,24 +5622,24 @@ func (o UpstreamUpstreamSpecAiProviderOutput) ToUpstreamUpstreamSpecAiProviderPt
 	}).(UpstreamUpstreamSpecAiProviderPtrOutput)
 }
 
-// 模型地址。
+// Model address
 func (o UpstreamUpstreamSpecAiProviderOutput) BaseUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamUpstreamSpecAiProvider) *string { return v.BaseUrl }).(pulumi.StringPtrOutput)
 }
 
-// 火山自部署模型服务。
+// Volcano Engine self-hosted model service
 func (o UpstreamUpstreamSpecAiProviderOutput) CustomModelService() UpstreamUpstreamSpecAiProviderCustomModelServicePtrOutput {
 	return o.ApplyT(func(v UpstreamUpstreamSpecAiProvider) *UpstreamUpstreamSpecAiProviderCustomModelService {
 		return v.CustomModelService
 	}).(UpstreamUpstreamSpecAiProviderCustomModelServicePtrOutput)
 }
 
-// 模型服务商名称。
+// Model Service Provider Name
 func (o UpstreamUpstreamSpecAiProviderOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamUpstreamSpecAiProvider) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// 模型API key。
+// Model API key
 func (o UpstreamUpstreamSpecAiProviderOutput) Token() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamUpstreamSpecAiProvider) *string { return v.Token }).(pulumi.StringPtrOutput)
 }
@@ -5668,7 +5668,7 @@ func (o UpstreamUpstreamSpecAiProviderPtrOutput) Elem() UpstreamUpstreamSpecAiPr
 	}).(UpstreamUpstreamSpecAiProviderOutput)
 }
 
-// 模型地址。
+// Model address
 func (o UpstreamUpstreamSpecAiProviderPtrOutput) BaseUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpstreamUpstreamSpecAiProvider) *string {
 		if v == nil {
@@ -5678,7 +5678,7 @@ func (o UpstreamUpstreamSpecAiProviderPtrOutput) BaseUrl() pulumi.StringPtrOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
-// 火山自部署模型服务。
+// Volcano Engine self-hosted model service
 func (o UpstreamUpstreamSpecAiProviderPtrOutput) CustomModelService() UpstreamUpstreamSpecAiProviderCustomModelServicePtrOutput {
 	return o.ApplyT(func(v *UpstreamUpstreamSpecAiProvider) *UpstreamUpstreamSpecAiProviderCustomModelService {
 		if v == nil {
@@ -5688,7 +5688,7 @@ func (o UpstreamUpstreamSpecAiProviderPtrOutput) CustomModelService() UpstreamUp
 	}).(UpstreamUpstreamSpecAiProviderCustomModelServicePtrOutput)
 }
 
-// 模型服务商名称。
+// Model Service Provider Name
 func (o UpstreamUpstreamSpecAiProviderPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpstreamUpstreamSpecAiProvider) *string {
 		if v == nil {
@@ -5698,7 +5698,7 @@ func (o UpstreamUpstreamSpecAiProviderPtrOutput) Name() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 模型API key。
+// Model API key
 func (o UpstreamUpstreamSpecAiProviderPtrOutput) Token() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpstreamUpstreamSpecAiProvider) *string {
 		if v == nil {
@@ -5709,11 +5709,11 @@ func (o UpstreamUpstreamSpecAiProviderPtrOutput) Token() pulumi.StringPtrOutput 
 }
 
 type UpstreamUpstreamSpecAiProviderCustomModelService struct {
-	// 模型服务名称。
+	// Model Service Name
 	Name *string `pulumi:"name"`
-	// 命名空间。
+	// Namespace
 	Namespace *string `pulumi:"namespace"`
-	// 端口。
+	// Port
 	Port *int `pulumi:"port"`
 }
 
@@ -5729,11 +5729,11 @@ type UpstreamUpstreamSpecAiProviderCustomModelServiceInput interface {
 }
 
 type UpstreamUpstreamSpecAiProviderCustomModelServiceArgs struct {
-	// 模型服务名称。
+	// Model Service Name
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// 命名空间。
+	// Namespace
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
-	// 端口。
+	// Port
 	Port pulumi.IntPtrInput `pulumi:"port"`
 }
 
@@ -5814,17 +5814,17 @@ func (o UpstreamUpstreamSpecAiProviderCustomModelServiceOutput) ToUpstreamUpstre
 	}).(UpstreamUpstreamSpecAiProviderCustomModelServicePtrOutput)
 }
 
-// 模型服务名称。
+// Model Service Name
 func (o UpstreamUpstreamSpecAiProviderCustomModelServiceOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamUpstreamSpecAiProviderCustomModelService) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// 命名空间。
+// Namespace
 func (o UpstreamUpstreamSpecAiProviderCustomModelServiceOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamUpstreamSpecAiProviderCustomModelService) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
-// 端口。
+// Port
 func (o UpstreamUpstreamSpecAiProviderCustomModelServiceOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v UpstreamUpstreamSpecAiProviderCustomModelService) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
@@ -5853,7 +5853,7 @@ func (o UpstreamUpstreamSpecAiProviderCustomModelServicePtrOutput) Elem() Upstre
 	}).(UpstreamUpstreamSpecAiProviderCustomModelServiceOutput)
 }
 
-// 模型服务名称。
+// Model Service Name
 func (o UpstreamUpstreamSpecAiProviderCustomModelServicePtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpstreamUpstreamSpecAiProviderCustomModelService) *string {
 		if v == nil {
@@ -5863,7 +5863,7 @@ func (o UpstreamUpstreamSpecAiProviderCustomModelServicePtrOutput) Name() pulumi
 	}).(pulumi.StringPtrOutput)
 }
 
-// 命名空间。
+// Namespace
 func (o UpstreamUpstreamSpecAiProviderCustomModelServicePtrOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpstreamUpstreamSpecAiProviderCustomModelService) *string {
 		if v == nil {
@@ -5873,7 +5873,7 @@ func (o UpstreamUpstreamSpecAiProviderCustomModelServicePtrOutput) Namespace() p
 	}).(pulumi.StringPtrOutput)
 }
 
-// 端口。
+// Port
 func (o UpstreamUpstreamSpecAiProviderCustomModelServicePtrOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *UpstreamUpstreamSpecAiProviderCustomModelService) *int {
 		if v == nil {
@@ -6017,9 +6017,9 @@ func (o UpstreamUpstreamSpecDomainPtrOutput) DomainLists() UpstreamUpstreamSpecD
 }
 
 type UpstreamUpstreamSpecDomainDomainList struct {
-	// 域名。
+	// Domain name
 	Domain *string `pulumi:"domain"`
-	// 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+	// Port. Default: 80 for HTTP, 443 for HTTPS
 	Port *int `pulumi:"port"`
 }
 
@@ -6035,9 +6035,9 @@ type UpstreamUpstreamSpecDomainDomainListInput interface {
 }
 
 type UpstreamUpstreamSpecDomainDomainListArgs struct {
-	// 域名。
+	// Domain name
 	Domain pulumi.StringPtrInput `pulumi:"domain"`
-	// 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+	// Port. Default: 80 for HTTP, 443 for HTTPS
 	Port pulumi.IntPtrInput `pulumi:"port"`
 }
 
@@ -6092,12 +6092,12 @@ func (o UpstreamUpstreamSpecDomainDomainListOutput) ToUpstreamUpstreamSpecDomain
 	return o
 }
 
-// 域名。
+// Domain name
 func (o UpstreamUpstreamSpecDomainDomainListOutput) Domain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamUpstreamSpecDomainDomainList) *string { return v.Domain }).(pulumi.StringPtrOutput)
 }
 
-// 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+// Port. Default: 80 for HTTP, 443 for HTTPS
 func (o UpstreamUpstreamSpecDomainDomainListOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v UpstreamUpstreamSpecDomainDomainList) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
@@ -6123,11 +6123,11 @@ func (o UpstreamUpstreamSpecDomainDomainListArrayOutput) Index(i pulumi.IntInput
 }
 
 type UpstreamUpstreamSpecEcsInstance struct {
-	// 云服务器ID。
+	// Cloud server ID
 	EcsId *string `pulumi:"ecsId"`
-	// IP地址。
+	// IP address
 	Ip *string `pulumi:"ip"`
-	// 端口。
+	// Port
 	Port *int `pulumi:"port"`
 }
 
@@ -6143,11 +6143,11 @@ type UpstreamUpstreamSpecEcsInstanceInput interface {
 }
 
 type UpstreamUpstreamSpecEcsInstanceArgs struct {
-	// 云服务器ID。
+	// Cloud server ID
 	EcsId pulumi.StringPtrInput `pulumi:"ecsId"`
-	// IP地址。
+	// IP address
 	Ip pulumi.StringPtrInput `pulumi:"ip"`
-	// 端口。
+	// Port
 	Port pulumi.IntPtrInput `pulumi:"port"`
 }
 
@@ -6202,17 +6202,17 @@ func (o UpstreamUpstreamSpecEcsInstanceOutput) ToUpstreamUpstreamSpecEcsInstance
 	return o
 }
 
-// 云服务器ID。
+// Cloud server ID
 func (o UpstreamUpstreamSpecEcsInstanceOutput) EcsId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamUpstreamSpecEcsInstance) *string { return v.EcsId }).(pulumi.StringPtrOutput)
 }
 
-// IP地址。
+// IP address
 func (o UpstreamUpstreamSpecEcsInstanceOutput) Ip() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamUpstreamSpecEcsInstance) *string { return v.Ip }).(pulumi.StringPtrOutput)
 }
 
-// 端口。
+// Port
 func (o UpstreamUpstreamSpecEcsInstanceOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v UpstreamUpstreamSpecEcsInstance) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
@@ -6238,11 +6238,11 @@ func (o UpstreamUpstreamSpecEcsInstanceArrayOutput) Index(i pulumi.IntInput) Ups
 }
 
 type UpstreamUpstreamSpecK8SService struct {
-	// 容器服务名称。长度限制为2~63个字符。
+	// Container Service Name. Length: 2–63 characters
 	Name *string `pulumi:"name"`
-	// 命名空间。长度限制为2~63个字符。
+	// Namespace. Length: 2~63 characters
 	Namespace *string `pulumi:"namespace"`
-	// 端口。
+	// Port
 	Port *int `pulumi:"port"`
 }
 
@@ -6258,11 +6258,11 @@ type UpstreamUpstreamSpecK8SServiceInput interface {
 }
 
 type UpstreamUpstreamSpecK8SServiceArgs struct {
-	// 容器服务名称。长度限制为2~63个字符。
+	// Container Service Name. Length: 2–63 characters
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// 命名空间。长度限制为2~63个字符。
+	// Namespace. Length: 2~63 characters
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
-	// 端口。
+	// Port
 	Port pulumi.IntPtrInput `pulumi:"port"`
 }
 
@@ -6343,17 +6343,17 @@ func (o UpstreamUpstreamSpecK8SServiceOutput) ToUpstreamUpstreamSpecK8SServicePt
 	}).(UpstreamUpstreamSpecK8SServicePtrOutput)
 }
 
-// 容器服务名称。长度限制为2~63个字符。
+// Container Service Name. Length: 2–63 characters
 func (o UpstreamUpstreamSpecK8SServiceOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamUpstreamSpecK8SService) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// 命名空间。长度限制为2~63个字符。
+// Namespace. Length: 2~63 characters
 func (o UpstreamUpstreamSpecK8SServiceOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamUpstreamSpecK8SService) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
-// 端口。
+// Port
 func (o UpstreamUpstreamSpecK8SServiceOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v UpstreamUpstreamSpecK8SService) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
@@ -6382,7 +6382,7 @@ func (o UpstreamUpstreamSpecK8SServicePtrOutput) Elem() UpstreamUpstreamSpecK8SS
 	}).(UpstreamUpstreamSpecK8SServiceOutput)
 }
 
-// 容器服务名称。长度限制为2~63个字符。
+// Container Service Name. Length: 2–63 characters
 func (o UpstreamUpstreamSpecK8SServicePtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpstreamUpstreamSpecK8SService) *string {
 		if v == nil {
@@ -6392,7 +6392,7 @@ func (o UpstreamUpstreamSpecK8SServicePtrOutput) Name() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// 命名空间。长度限制为2~63个字符。
+// Namespace. Length: 2~63 characters
 func (o UpstreamUpstreamSpecK8SServicePtrOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpstreamUpstreamSpecK8SService) *string {
 		if v == nil {
@@ -6402,7 +6402,7 @@ func (o UpstreamUpstreamSpecK8SServicePtrOutput) Namespace() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
-// 端口。
+// Port
 func (o UpstreamUpstreamSpecK8SServicePtrOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *UpstreamUpstreamSpecK8SService) *int {
 		if v == nil {
@@ -6413,15 +6413,15 @@ func (o UpstreamUpstreamSpecK8SServicePtrOutput) Port() pulumi.IntPtrOutput {
 }
 
 type UpstreamUpstreamSpecNacosService struct {
-	// 分组。
+	// Group
 	Group *string `pulumi:"group"`
-	// 命名空间。
+	// Namespace
 	Namespace *string `pulumi:"namespace"`
-	// 命名空间ID。
+	// Namespace ID
 	NamespaceId *string `pulumi:"namespaceId"`
-	// 服务。
+	// Service
 	Service *string `pulumi:"service"`
-	// Upstream来源ID。
+	// Upstream source ID
 	UpstreamSourceId *string `pulumi:"upstreamSourceId"`
 }
 
@@ -6437,15 +6437,15 @@ type UpstreamUpstreamSpecNacosServiceInput interface {
 }
 
 type UpstreamUpstreamSpecNacosServiceArgs struct {
-	// 分组。
+	// Group
 	Group pulumi.StringPtrInput `pulumi:"group"`
-	// 命名空间。
+	// Namespace
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
-	// 命名空间ID。
+	// Namespace ID
 	NamespaceId pulumi.StringPtrInput `pulumi:"namespaceId"`
-	// 服务。
+	// Service
 	Service pulumi.StringPtrInput `pulumi:"service"`
-	// Upstream来源ID。
+	// Upstream source ID
 	UpstreamSourceId pulumi.StringPtrInput `pulumi:"upstreamSourceId"`
 }
 
@@ -6526,27 +6526,27 @@ func (o UpstreamUpstreamSpecNacosServiceOutput) ToUpstreamUpstreamSpecNacosServi
 	}).(UpstreamUpstreamSpecNacosServicePtrOutput)
 }
 
-// 分组。
+// Group
 func (o UpstreamUpstreamSpecNacosServiceOutput) Group() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamUpstreamSpecNacosService) *string { return v.Group }).(pulumi.StringPtrOutput)
 }
 
-// 命名空间。
+// Namespace
 func (o UpstreamUpstreamSpecNacosServiceOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamUpstreamSpecNacosService) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
-// 命名空间ID。
+// Namespace ID
 func (o UpstreamUpstreamSpecNacosServiceOutput) NamespaceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamUpstreamSpecNacosService) *string { return v.NamespaceId }).(pulumi.StringPtrOutput)
 }
 
-// 服务。
+// Service
 func (o UpstreamUpstreamSpecNacosServiceOutput) Service() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamUpstreamSpecNacosService) *string { return v.Service }).(pulumi.StringPtrOutput)
 }
 
-// Upstream来源ID。
+// Upstream source ID
 func (o UpstreamUpstreamSpecNacosServiceOutput) UpstreamSourceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamUpstreamSpecNacosService) *string { return v.UpstreamSourceId }).(pulumi.StringPtrOutput)
 }
@@ -6575,7 +6575,7 @@ func (o UpstreamUpstreamSpecNacosServicePtrOutput) Elem() UpstreamUpstreamSpecNa
 	}).(UpstreamUpstreamSpecNacosServiceOutput)
 }
 
-// 分组。
+// Group
 func (o UpstreamUpstreamSpecNacosServicePtrOutput) Group() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpstreamUpstreamSpecNacosService) *string {
 		if v == nil {
@@ -6585,7 +6585,7 @@ func (o UpstreamUpstreamSpecNacosServicePtrOutput) Group() pulumi.StringPtrOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
-// 命名空间。
+// Namespace
 func (o UpstreamUpstreamSpecNacosServicePtrOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpstreamUpstreamSpecNacosService) *string {
 		if v == nil {
@@ -6595,7 +6595,7 @@ func (o UpstreamUpstreamSpecNacosServicePtrOutput) Namespace() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// 命名空间ID。
+// Namespace ID
 func (o UpstreamUpstreamSpecNacosServicePtrOutput) NamespaceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpstreamUpstreamSpecNacosService) *string {
 		if v == nil {
@@ -6605,7 +6605,7 @@ func (o UpstreamUpstreamSpecNacosServicePtrOutput) NamespaceId() pulumi.StringPt
 	}).(pulumi.StringPtrOutput)
 }
 
-// 服务。
+// Service
 func (o UpstreamUpstreamSpecNacosServicePtrOutput) Service() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpstreamUpstreamSpecNacosService) *string {
 		if v == nil {
@@ -6615,7 +6615,7 @@ func (o UpstreamUpstreamSpecNacosServicePtrOutput) Service() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
-// Upstream来源ID。
+// Upstream source ID
 func (o UpstreamUpstreamSpecNacosServicePtrOutput) UpstreamSourceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpstreamUpstreamSpecNacosService) *string {
 		if v == nil {
@@ -6626,7 +6626,7 @@ func (o UpstreamUpstreamSpecNacosServicePtrOutput) UpstreamSourceId() pulumi.Str
 }
 
 type UpstreamUpstreamSpecVeFaas struct {
-	// 函数ID。
+	// Function ID
 	FunctionId *string `pulumi:"functionId"`
 }
 
@@ -6642,7 +6642,7 @@ type UpstreamUpstreamSpecVeFaasInput interface {
 }
 
 type UpstreamUpstreamSpecVeFaasArgs struct {
-	// 函数ID。
+	// Function ID
 	FunctionId pulumi.StringPtrInput `pulumi:"functionId"`
 }
 
@@ -6723,7 +6723,7 @@ func (o UpstreamUpstreamSpecVeFaasOutput) ToUpstreamUpstreamSpecVeFaasPtrOutputW
 	}).(UpstreamUpstreamSpecVeFaasPtrOutput)
 }
 
-// 函数ID。
+// Function ID
 func (o UpstreamUpstreamSpecVeFaasOutput) FunctionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamUpstreamSpecVeFaas) *string { return v.FunctionId }).(pulumi.StringPtrOutput)
 }
@@ -6752,7 +6752,7 @@ func (o UpstreamUpstreamSpecVeFaasPtrOutput) Elem() UpstreamUpstreamSpecVeFaasOu
 	}).(UpstreamUpstreamSpecVeFaasOutput)
 }
 
-// 函数ID。
+// Function ID
 func (o UpstreamUpstreamSpecVeFaasPtrOutput) FunctionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *UpstreamUpstreamSpecVeFaas) *string {
 		if v == nil {
@@ -6764,9 +6764,9 @@ func (o UpstreamUpstreamSpecVeFaasPtrOutput) FunctionId() pulumi.StringPtrOutput
 
 type UpstreamVersionDetail struct {
 	Labels []UpstreamVersionDetailLabel `pulumi:"labels"`
-	// 版本名称。支持大小写字母、数字和中划线（-），长度限制为2~63个字符。不能以中划线（-）开头。
+	// Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
 	Name *string `pulumi:"name"`
-	// 更新时间。
+	// Update time
 	UpdateTime *string `pulumi:"updateTime"`
 }
 
@@ -6783,9 +6783,9 @@ type UpstreamVersionDetailInput interface {
 
 type UpstreamVersionDetailArgs struct {
 	Labels UpstreamVersionDetailLabelArrayInput `pulumi:"labels"`
-	// 版本名称。支持大小写字母、数字和中划线（-），长度限制为2~63个字符。不能以中划线（-）开头。
+	// Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// 更新时间。
+	// Update time
 	UpdateTime pulumi.StringPtrInput `pulumi:"updateTime"`
 }
 
@@ -6844,12 +6844,12 @@ func (o UpstreamVersionDetailOutput) Labels() UpstreamVersionDetailLabelArrayOut
 	return o.ApplyT(func(v UpstreamVersionDetail) []UpstreamVersionDetailLabel { return v.Labels }).(UpstreamVersionDetailLabelArrayOutput)
 }
 
-// 版本名称。支持大小写字母、数字和中划线（-），长度限制为2~63个字符。不能以中划线（-）开头。
+// Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
 func (o UpstreamVersionDetailOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamVersionDetail) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// 更新时间。
+// Update time
 func (o UpstreamVersionDetailOutput) UpdateTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamVersionDetail) *string { return v.UpdateTime }).(pulumi.StringPtrOutput)
 }
@@ -6875,9 +6875,9 @@ func (o UpstreamVersionDetailArrayOutput) Index(i pulumi.IntInput) UpstreamVersi
 }
 
 type UpstreamVersionDetailLabel struct {
-	// 键。
+	// Key
 	Key *string `pulumi:"key"`
-	// 值。
+	// Value
 	Value *string `pulumi:"value"`
 }
 
@@ -6893,9 +6893,9 @@ type UpstreamVersionDetailLabelInput interface {
 }
 
 type UpstreamVersionDetailLabelArgs struct {
-	// 键。
+	// Key
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// 值。
+	// Value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -6950,12 +6950,12 @@ func (o UpstreamVersionDetailLabelOutput) ToUpstreamVersionDetailLabelOutputWith
 	return o
 }
 
-// 键。
+// Key
 func (o UpstreamVersionDetailLabelOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamVersionDetailLabel) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// 值。
+// Value
 func (o UpstreamVersionDetailLabelOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamVersionDetailLabel) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -6981,7 +6981,7 @@ func (o UpstreamVersionDetailLabelArrayOutput) Index(i pulumi.IntInput) Upstream
 }
 
 type GetGatewayBackendSpec struct {
-	// 是否支持VKE Flannel CNI。
+	// Whether VKE Flannel CNI is supported
 	IsVkeWithFlannelCniSupported bool `pulumi:"isVkeWithFlannelCniSupported"`
 	// VKE Pod CIDR。
 	VkePodCidr string `pulumi:"vkePodCidr"`
@@ -6999,7 +6999,7 @@ type GetGatewayBackendSpecInput interface {
 }
 
 type GetGatewayBackendSpecArgs struct {
-	// 是否支持VKE Flannel CNI。
+	// Whether VKE Flannel CNI is supported
 	IsVkeWithFlannelCniSupported pulumi.BoolInput `pulumi:"isVkeWithFlannelCniSupported"`
 	// VKE Pod CIDR。
 	VkePodCidr pulumi.StringInput `pulumi:"vkePodCidr"`
@@ -7031,7 +7031,7 @@ func (o GetGatewayBackendSpecOutput) ToGetGatewayBackendSpecOutputWithContext(ct
 	return o
 }
 
-// 是否支持VKE Flannel CNI。
+// Whether VKE Flannel CNI is supported
 func (o GetGatewayBackendSpecOutput) IsVkeWithFlannelCniSupported() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetGatewayBackendSpec) bool { return v.IsVkeWithFlannelCniSupported }).(pulumi.BoolOutput)
 }
@@ -7042,11 +7042,11 @@ func (o GetGatewayBackendSpecOutput) VkePodCidr() pulumi.StringOutput {
 }
 
 type GetGatewayCustomLog struct {
-	// 自定义变量信息。
+	// Custom variable information
 	CustomVariables []GetGatewayCustomLogCustomVariable `pulumi:"customVariables"`
-	// 请求头信息。
+	// Request header information
 	RequestHeaders []GetGatewayCustomLogRequestHeader `pulumi:"requestHeaders"`
-	// 响应头信息。
+	// Response header information
 	ResponseHeaders []GetGatewayCustomLogResponseHeader `pulumi:"responseHeaders"`
 }
 
@@ -7062,11 +7062,11 @@ type GetGatewayCustomLogInput interface {
 }
 
 type GetGatewayCustomLogArgs struct {
-	// 自定义变量信息。
+	// Custom variable information
 	CustomVariables GetGatewayCustomLogCustomVariableArrayInput `pulumi:"customVariables"`
-	// 请求头信息。
+	// Request header information
 	RequestHeaders GetGatewayCustomLogRequestHeaderArrayInput `pulumi:"requestHeaders"`
-	// 响应头信息。
+	// Response header information
 	ResponseHeaders GetGatewayCustomLogResponseHeaderArrayInput `pulumi:"responseHeaders"`
 }
 
@@ -7096,25 +7096,25 @@ func (o GetGatewayCustomLogOutput) ToGetGatewayCustomLogOutputWithContext(ctx co
 	return o
 }
 
-// 自定义变量信息。
+// Custom variable information
 func (o GetGatewayCustomLogOutput) CustomVariables() GetGatewayCustomLogCustomVariableArrayOutput {
 	return o.ApplyT(func(v GetGatewayCustomLog) []GetGatewayCustomLogCustomVariable { return v.CustomVariables }).(GetGatewayCustomLogCustomVariableArrayOutput)
 }
 
-// 请求头信息。
+// Request header information
 func (o GetGatewayCustomLogOutput) RequestHeaders() GetGatewayCustomLogRequestHeaderArrayOutput {
 	return o.ApplyT(func(v GetGatewayCustomLog) []GetGatewayCustomLogRequestHeader { return v.RequestHeaders }).(GetGatewayCustomLogRequestHeaderArrayOutput)
 }
 
-// 响应头信息。
+// Response header information
 func (o GetGatewayCustomLogOutput) ResponseHeaders() GetGatewayCustomLogResponseHeaderArrayOutput {
 	return o.ApplyT(func(v GetGatewayCustomLog) []GetGatewayCustomLogResponseHeader { return v.ResponseHeaders }).(GetGatewayCustomLogResponseHeaderArrayOutput)
 }
 
 type GetGatewayCustomLogCustomVariable struct {
-	// 字段别名。
+	// Field alias
 	AliasesInLog string `pulumi:"aliasesInLog"`
-	// 请求头键。
+	// Request header key
 	Key string `pulumi:"key"`
 }
 
@@ -7130,9 +7130,9 @@ type GetGatewayCustomLogCustomVariableInput interface {
 }
 
 type GetGatewayCustomLogCustomVariableArgs struct {
-	// 字段别名。
+	// Field alias
 	AliasesInLog pulumi.StringInput `pulumi:"aliasesInLog"`
-	// 请求头键。
+	// Request header key
 	Key pulumi.StringInput `pulumi:"key"`
 }
 
@@ -7187,12 +7187,12 @@ func (o GetGatewayCustomLogCustomVariableOutput) ToGetGatewayCustomLogCustomVari
 	return o
 }
 
-// 字段别名。
+// Field alias
 func (o GetGatewayCustomLogCustomVariableOutput) AliasesInLog() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGatewayCustomLogCustomVariable) string { return v.AliasesInLog }).(pulumi.StringOutput)
 }
 
-// 请求头键。
+// Request header key
 func (o GetGatewayCustomLogCustomVariableOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGatewayCustomLogCustomVariable) string { return v.Key }).(pulumi.StringOutput)
 }
@@ -7218,9 +7218,9 @@ func (o GetGatewayCustomLogCustomVariableArrayOutput) Index(i pulumi.IntInput) G
 }
 
 type GetGatewayCustomLogRequestHeader struct {
-	// 字段别名。
+	// Field alias
 	AliasesInLog string `pulumi:"aliasesInLog"`
-	// 请求头键。
+	// Request header key
 	Key string `pulumi:"key"`
 }
 
@@ -7236,9 +7236,9 @@ type GetGatewayCustomLogRequestHeaderInput interface {
 }
 
 type GetGatewayCustomLogRequestHeaderArgs struct {
-	// 字段别名。
+	// Field alias
 	AliasesInLog pulumi.StringInput `pulumi:"aliasesInLog"`
-	// 请求头键。
+	// Request header key
 	Key pulumi.StringInput `pulumi:"key"`
 }
 
@@ -7293,12 +7293,12 @@ func (o GetGatewayCustomLogRequestHeaderOutput) ToGetGatewayCustomLogRequestHead
 	return o
 }
 
-// 字段别名。
+// Field alias
 func (o GetGatewayCustomLogRequestHeaderOutput) AliasesInLog() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGatewayCustomLogRequestHeader) string { return v.AliasesInLog }).(pulumi.StringOutput)
 }
 
-// 请求头键。
+// Request header key
 func (o GetGatewayCustomLogRequestHeaderOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGatewayCustomLogRequestHeader) string { return v.Key }).(pulumi.StringOutput)
 }
@@ -7324,9 +7324,9 @@ func (o GetGatewayCustomLogRequestHeaderArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetGatewayCustomLogResponseHeader struct {
-	// 字段别名。
+	// Field alias
 	AliasesInLog string `pulumi:"aliasesInLog"`
-	// 请求头键。
+	// Request header key
 	Key string `pulumi:"key"`
 }
 
@@ -7342,9 +7342,9 @@ type GetGatewayCustomLogResponseHeaderInput interface {
 }
 
 type GetGatewayCustomLogResponseHeaderArgs struct {
-	// 字段别名。
+	// Field alias
 	AliasesInLog pulumi.StringInput `pulumi:"aliasesInLog"`
-	// 请求头键。
+	// Request header key
 	Key pulumi.StringInput `pulumi:"key"`
 }
 
@@ -7399,12 +7399,12 @@ func (o GetGatewayCustomLogResponseHeaderOutput) ToGetGatewayCustomLogResponseHe
 	return o
 }
 
-// 字段别名。
+// Field alias
 func (o GetGatewayCustomLogResponseHeaderOutput) AliasesInLog() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGatewayCustomLogResponseHeader) string { return v.AliasesInLog }).(pulumi.StringOutput)
 }
 
-// 请求头键。
+// Request header key
 func (o GetGatewayCustomLogResponseHeaderOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGatewayCustomLogResponseHeader) string { return v.Key }).(pulumi.StringOutput)
 }
@@ -7430,13 +7430,13 @@ func (o GetGatewayCustomLogResponseHeaderArrayOutput) Index(i pulumi.IntInput) G
 }
 
 type GetGatewayEvent struct {
-	// 事件代码。
+	// Event code
 	Code string `pulumi:"code"`
-	// 事件创建时间。
+	// Event creation time
 	CreatedTime string `pulumi:"createdTime"`
-	// 附带信息。
+	// Additional information
 	Data string `pulumi:"data"`
-	// 事件描述。
+	// Event description
 	Description string `pulumi:"description"`
 }
 
@@ -7452,13 +7452,13 @@ type GetGatewayEventInput interface {
 }
 
 type GetGatewayEventArgs struct {
-	// 事件代码。
+	// Event code
 	Code pulumi.StringInput `pulumi:"code"`
-	// 事件创建时间。
+	// Event creation time
 	CreatedTime pulumi.StringInput `pulumi:"createdTime"`
-	// 附带信息。
+	// Additional information
 	Data pulumi.StringInput `pulumi:"data"`
-	// 事件描述。
+	// Event description
 	Description pulumi.StringInput `pulumi:"description"`
 }
 
@@ -7513,22 +7513,22 @@ func (o GetGatewayEventOutput) ToGetGatewayEventOutputWithContext(ctx context.Co
 	return o
 }
 
-// 事件代码。
+// Event code
 func (o GetGatewayEventOutput) Code() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGatewayEvent) string { return v.Code }).(pulumi.StringOutput)
 }
 
-// 事件创建时间。
+// Event creation time
 func (o GetGatewayEventOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGatewayEvent) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 附带信息。
+// Additional information
 func (o GetGatewayEventOutput) Data() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGatewayEvent) string { return v.Data }).(pulumi.StringOutput)
 }
 
-// 事件描述。
+// Event description
 func (o GetGatewayEventOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGatewayEvent) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -7554,11 +7554,11 @@ func (o GetGatewayEventArrayOutput) Index(i pulumi.IntInput) GetGatewayEventOutp
 }
 
 type GetGatewayLogSpec struct {
-	// 是否开启日志服务。
+	// Whether to enable log service
 	Enable bool `pulumi:"enable"`
-	// 日志项目ID。
+	// Log project ID
 	ProjectId string `pulumi:"projectId"`
-	// 日志主题ID。ProjectId 指定项目里面的日志主题。
+	// Log topic ID. ProjectId specifies the log topic within the project
 	TopicId string `pulumi:"topicId"`
 }
 
@@ -7574,11 +7574,11 @@ type GetGatewayLogSpecInput interface {
 }
 
 type GetGatewayLogSpecArgs struct {
-	// 是否开启日志服务。
+	// Whether to enable log service
 	Enable pulumi.BoolInput `pulumi:"enable"`
-	// 日志项目ID。
+	// Log project ID
 	ProjectId pulumi.StringInput `pulumi:"projectId"`
-	// 日志主题ID。ProjectId 指定项目里面的日志主题。
+	// Log topic ID. ProjectId specifies the log topic within the project
 	TopicId pulumi.StringInput `pulumi:"topicId"`
 }
 
@@ -7608,25 +7608,25 @@ func (o GetGatewayLogSpecOutput) ToGetGatewayLogSpecOutputWithContext(ctx contex
 	return o
 }
 
-// 是否开启日志服务。
+// Whether to enable log service
 func (o GetGatewayLogSpecOutput) Enable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetGatewayLogSpec) bool { return v.Enable }).(pulumi.BoolOutput)
 }
 
-// 日志项目ID。
+// Log project ID
 func (o GetGatewayLogSpecOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGatewayLogSpec) string { return v.ProjectId }).(pulumi.StringOutput)
 }
 
-// 日志主题ID。ProjectId 指定项目里面的日志主题。
+// Log topic ID. ProjectId specifies the log topic within the project
 func (o GetGatewayLogSpecOutput) TopicId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGatewayLogSpec) string { return v.TopicId }).(pulumi.StringOutput)
 }
 
 type GetGatewayMonitorSpec struct {
-	// 托管Prometheus（VMP）服务。
+	// Managed Prometheus (VMP) service
 	Enable bool `pulumi:"enable"`
-	// Prometheus工作区ID。
+	// Prometheus workspace ID
 	WorkspaceId string `pulumi:"workspaceId"`
 }
 
@@ -7642,9 +7642,9 @@ type GetGatewayMonitorSpecInput interface {
 }
 
 type GetGatewayMonitorSpecArgs struct {
-	// 托管Prometheus（VMP）服务。
+	// Managed Prometheus (VMP) service
 	Enable pulumi.BoolInput `pulumi:"enable"`
-	// Prometheus工作区ID。
+	// Prometheus workspace ID
 	WorkspaceId pulumi.StringInput `pulumi:"workspaceId"`
 }
 
@@ -7674,22 +7674,22 @@ func (o GetGatewayMonitorSpecOutput) ToGetGatewayMonitorSpecOutputWithContext(ct
 	return o
 }
 
-// 托管Prometheus（VMP）服务。
+// Managed Prometheus (VMP) service
 func (o GetGatewayMonitorSpecOutput) Enable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetGatewayMonitorSpec) bool { return v.Enable }).(pulumi.BoolOutput)
 }
 
-// Prometheus工作区ID。
+// Prometheus workspace ID
 func (o GetGatewayMonitorSpecOutput) WorkspaceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGatewayMonitorSpec) string { return v.WorkspaceId }).(pulumi.StringOutput)
 }
 
 type GetGatewayNetworkSpec struct {
-	// 子网配置信息列表。
+	// Subnet configuration information list
 	Subnets []GetGatewayNetworkSpecSubnet `pulumi:"subnets"`
 	// VPC ID。
 	VpcId string `pulumi:"vpcId"`
-	// VPC名称。
+	// VPC name
 	VpcName string `pulumi:"vpcName"`
 }
 
@@ -7705,11 +7705,11 @@ type GetGatewayNetworkSpecInput interface {
 }
 
 type GetGatewayNetworkSpecArgs struct {
-	// 子网配置信息列表。
+	// Subnet configuration information list
 	Subnets GetGatewayNetworkSpecSubnetArrayInput `pulumi:"subnets"`
 	// VPC ID。
 	VpcId pulumi.StringInput `pulumi:"vpcId"`
-	// VPC名称。
+	// VPC name
 	VpcName pulumi.StringInput `pulumi:"vpcName"`
 }
 
@@ -7739,7 +7739,7 @@ func (o GetGatewayNetworkSpecOutput) ToGetGatewayNetworkSpecOutputWithContext(ct
 	return o
 }
 
-// 子网配置信息列表。
+// Subnet configuration information list
 func (o GetGatewayNetworkSpecOutput) Subnets() GetGatewayNetworkSpecSubnetArrayOutput {
 	return o.ApplyT(func(v GetGatewayNetworkSpec) []GetGatewayNetworkSpecSubnet { return v.Subnets }).(GetGatewayNetworkSpecSubnetArrayOutput)
 }
@@ -7749,17 +7749,17 @@ func (o GetGatewayNetworkSpecOutput) VpcId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGatewayNetworkSpec) string { return v.VpcId }).(pulumi.StringOutput)
 }
 
-// VPC名称。
+// VPC name
 func (o GetGatewayNetworkSpecOutput) VpcName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGatewayNetworkSpec) string { return v.VpcName }).(pulumi.StringOutput)
 }
 
 type GetGatewayNetworkSpecSubnet struct {
-	// 可用区。
+	// Availability zone
 	Az string `pulumi:"az"`
-	// 子网ID。
+	// Subnet ID
 	SubnetId string `pulumi:"subnetId"`
-	// 子网名称。
+	// Subnet name
 	SubnetName string `pulumi:"subnetName"`
 }
 
@@ -7775,11 +7775,11 @@ type GetGatewayNetworkSpecSubnetInput interface {
 }
 
 type GetGatewayNetworkSpecSubnetArgs struct {
-	// 可用区。
+	// Availability zone
 	Az pulumi.StringInput `pulumi:"az"`
-	// 子网ID。
+	// Subnet ID
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-	// 子网名称。
+	// Subnet name
 	SubnetName pulumi.StringInput `pulumi:"subnetName"`
 }
 
@@ -7834,17 +7834,17 @@ func (o GetGatewayNetworkSpecSubnetOutput) ToGetGatewayNetworkSpecSubnetOutputWi
 	return o
 }
 
-// 可用区。
+// Availability zone
 func (o GetGatewayNetworkSpecSubnetOutput) Az() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGatewayNetworkSpecSubnet) string { return v.Az }).(pulumi.StringOutput)
 }
 
-// 子网ID。
+// Subnet ID
 func (o GetGatewayNetworkSpecSubnetOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGatewayNetworkSpecSubnet) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// 子网名称。
+// Subnet name
 func (o GetGatewayNetworkSpecSubnetOutput) SubnetName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGatewayNetworkSpecSubnet) string { return v.SubnetName }).(pulumi.StringOutput)
 }
@@ -7870,17 +7870,17 @@ func (o GetGatewayNetworkSpecSubnetArrayOutput) Index(i pulumi.IntInput) GetGate
 }
 
 type GetGatewayResourceSpec struct {
-	// CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+	// CLB specification code. CLB specifications. Options: small*1: Small I; small*2: Small II; medium*1: Medium I; medium*2: Medium II; large*1: Large I; large*2: Large II
 	ClbSpecCode string `pulumi:"clbSpecCode"`
-	// 节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+	// Node specifications. Options: 1c2g, 2c4g, 4c8g, 8c16g
 	InstanceSpecCode string `pulumi:"instanceSpecCode"`
-	// 网络类型。默认值为开启公网，开启私网。
+	// Network type. Default value: enable public network, enable private network
 	NetworkType GetGatewayResourceSpecNetworkType `pulumi:"networkType"`
-	// 公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+	// Public network bandwidth limit. This field is only used for the 'bandwidth limit billing' public network billing method. Unit: Mbps. Value range: 0–500. Default value: 0
 	PublicNetworkBandwidth int `pulumi:"publicNetworkBandwidth"`
-	// 公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+	// Public network billing method. Options: traffic: billed by actual traffic; bandwidth: billed by bandwidth limit
 	PublicNetworkBillingType string `pulumi:"publicNetworkBillingType"`
-	// 节点数量。取值限制为2~100。
+	// Node count. Value range: 2–100
 	Replicas int `pulumi:"replicas"`
 }
 
@@ -7896,17 +7896,17 @@ type GetGatewayResourceSpecInput interface {
 }
 
 type GetGatewayResourceSpecArgs struct {
-	// CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+	// CLB specification code. CLB specifications. Options: small*1: Small I; small*2: Small II; medium*1: Medium I; medium*2: Medium II; large*1: Large I; large*2: Large II
 	ClbSpecCode pulumi.StringInput `pulumi:"clbSpecCode"`
-	// 节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+	// Node specifications. Options: 1c2g, 2c4g, 4c8g, 8c16g
 	InstanceSpecCode pulumi.StringInput `pulumi:"instanceSpecCode"`
-	// 网络类型。默认值为开启公网，开启私网。
+	// Network type. Default value: enable public network, enable private network
 	NetworkType GetGatewayResourceSpecNetworkTypeInput `pulumi:"networkType"`
-	// 公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+	// Public network bandwidth limit. This field is only used for the 'bandwidth limit billing' public network billing method. Unit: Mbps. Value range: 0–500. Default value: 0
 	PublicNetworkBandwidth pulumi.IntInput `pulumi:"publicNetworkBandwidth"`
-	// 公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+	// Public network billing method. Options: traffic: billed by actual traffic; bandwidth: billed by bandwidth limit
 	PublicNetworkBillingType pulumi.StringInput `pulumi:"publicNetworkBillingType"`
-	// 节点数量。取值限制为2~100。
+	// Node count. Value range: 2–100
 	Replicas pulumi.IntInput `pulumi:"replicas"`
 }
 
@@ -7936,40 +7936,40 @@ func (o GetGatewayResourceSpecOutput) ToGetGatewayResourceSpecOutputWithContext(
 	return o
 }
 
-// CLB规格编码。CLB规格，取值：small*1：小型 I。small*2：小型 II。medium*1：中型 I。medium*2：中型 II。large*1：大型 I。large*2：大型 II。
+// CLB specification code. CLB specifications. Options: small*1: Small I; small*2: Small II; medium*1: Medium I; medium*2: Medium II; large*1: Large I; large*2: Large II
 func (o GetGatewayResourceSpecOutput) ClbSpecCode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGatewayResourceSpec) string { return v.ClbSpecCode }).(pulumi.StringOutput)
 }
 
-// 节点规格，取值：1c2g。2c4g。4c8g。8c16g。
+// Node specifications. Options: 1c2g, 2c4g, 4c8g, 8c16g
 func (o GetGatewayResourceSpecOutput) InstanceSpecCode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGatewayResourceSpec) string { return v.InstanceSpecCode }).(pulumi.StringOutput)
 }
 
-// 网络类型。默认值为开启公网，开启私网。
+// Network type. Default value: enable public network, enable private network
 func (o GetGatewayResourceSpecOutput) NetworkType() GetGatewayResourceSpecNetworkTypeOutput {
 	return o.ApplyT(func(v GetGatewayResourceSpec) GetGatewayResourceSpecNetworkType { return v.NetworkType }).(GetGatewayResourceSpecNetworkTypeOutput)
 }
 
-// 公网带宽上限，该字段仅用于“按带宽上限收费”公网网络计费方式。单位为Mbps。取值限制为0~500。默认值为0。
+// Public network bandwidth limit. This field is only used for the 'bandwidth limit billing' public network billing method. Unit: Mbps. Value range: 0–500. Default value: 0
 func (o GetGatewayResourceSpecOutput) PublicNetworkBandwidth() pulumi.IntOutput {
 	return o.ApplyT(func(v GetGatewayResourceSpec) int { return v.PublicNetworkBandwidth }).(pulumi.IntOutput)
 }
 
-// 公网网络计费方式，取值：traffic：按实际流量计费。bandwidth：按带宽上限计费。
+// Public network billing method. Options: traffic: billed by actual traffic; bandwidth: billed by bandwidth limit
 func (o GetGatewayResourceSpecOutput) PublicNetworkBillingType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGatewayResourceSpec) string { return v.PublicNetworkBillingType }).(pulumi.StringOutput)
 }
 
-// 节点数量。取值限制为2~100。
+// Node count. Value range: 2–100
 func (o GetGatewayResourceSpecOutput) Replicas() pulumi.IntOutput {
 	return o.ApplyT(func(v GetGatewayResourceSpec) int { return v.Replicas }).(pulumi.IntOutput)
 }
 
 type GetGatewayResourceSpecNetworkType struct {
-	// 是否启用私网。
+	// Whether to enable private network
 	EnablePrivateNetwork bool `pulumi:"enablePrivateNetwork"`
-	// 是否启用公网。
+	// Whether to enable public network
 	EnablePublicNetwork bool `pulumi:"enablePublicNetwork"`
 }
 
@@ -7985,9 +7985,9 @@ type GetGatewayResourceSpecNetworkTypeInput interface {
 }
 
 type GetGatewayResourceSpecNetworkTypeArgs struct {
-	// 是否启用私网。
+	// Whether to enable private network
 	EnablePrivateNetwork pulumi.BoolInput `pulumi:"enablePrivateNetwork"`
-	// 是否启用公网。
+	// Whether to enable public network
 	EnablePublicNetwork pulumi.BoolInput `pulumi:"enablePublicNetwork"`
 }
 
@@ -8017,18 +8017,18 @@ func (o GetGatewayResourceSpecNetworkTypeOutput) ToGetGatewayResourceSpecNetwork
 	return o
 }
 
-// 是否启用私网。
+// Whether to enable private network
 func (o GetGatewayResourceSpecNetworkTypeOutput) EnablePrivateNetwork() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetGatewayResourceSpecNetworkType) bool { return v.EnablePrivateNetwork }).(pulumi.BoolOutput)
 }
 
-// 是否启用公网。
+// Whether to enable public network
 func (o GetGatewayResourceSpecNetworkTypeOutput) EnablePublicNetwork() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetGatewayResourceSpecNetworkType) bool { return v.EnablePublicNetwork }).(pulumi.BoolOutput)
 }
 
 type GetGatewayServiceAuthSpec struct {
-	// 是否开启认证。
+	// Whether authentication is enabled.
 	Enable bool `pulumi:"enable"`
 }
 
@@ -8044,7 +8044,7 @@ type GetGatewayServiceAuthSpecInput interface {
 }
 
 type GetGatewayServiceAuthSpecArgs struct {
-	// 是否开启认证。
+	// Whether authentication is enabled.
 	Enable pulumi.BoolInput `pulumi:"enable"`
 }
 
@@ -8074,15 +8074,15 @@ func (o GetGatewayServiceAuthSpecOutput) ToGetGatewayServiceAuthSpecOutputWithCo
 	return o
 }
 
-// 是否开启认证。
+// Whether authentication is enabled.
 func (o GetGatewayServiceAuthSpecOutput) Enable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetGatewayServiceAuthSpec) bool { return v.Enable }).(pulumi.BoolOutput)
 }
 
 type GetGatewayServiceCustomDomain struct {
-	// 自定义域名。
+	// Custom domain.
 	Domain string `pulumi:"domain"`
-	// 自定义域名ID。
+	// Custom domain ID.
 	DomainId string `pulumi:"domainId"`
 }
 
@@ -8098,9 +8098,9 @@ type GetGatewayServiceCustomDomainInput interface {
 }
 
 type GetGatewayServiceCustomDomainArgs struct {
-	// 自定义域名。
+	// Custom domain.
 	Domain pulumi.StringInput `pulumi:"domain"`
-	// 自定义域名ID。
+	// Custom domain ID.
 	DomainId pulumi.StringInput `pulumi:"domainId"`
 }
 
@@ -8155,12 +8155,12 @@ func (o GetGatewayServiceCustomDomainOutput) ToGetGatewayServiceCustomDomainOutp
 	return o
 }
 
-// 自定义域名。
+// Custom domain.
 func (o GetGatewayServiceCustomDomainOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGatewayServiceCustomDomain) string { return v.Domain }).(pulumi.StringOutput)
 }
 
-// 自定义域名ID。
+// Custom domain ID.
 func (o GetGatewayServiceCustomDomainOutput) DomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGatewayServiceCustomDomain) string { return v.DomainId }).(pulumi.StringOutput)
 }
@@ -8186,9 +8186,9 @@ func (o GetGatewayServiceCustomDomainArrayOutput) Index(i pulumi.IntInput) GetGa
 }
 
 type GetGatewayServiceDomain struct {
-	// 域名。
+	// Domain.
 	Domain string `pulumi:"domain"`
-	// 域名类型。取值：public：公网。private：私网。
+	// Domain type. Options: public: Public network. private: Private network.
 	Type string `pulumi:"type"`
 }
 
@@ -8204,9 +8204,9 @@ type GetGatewayServiceDomainInput interface {
 }
 
 type GetGatewayServiceDomainArgs struct {
-	// 域名。
+	// Domain.
 	Domain pulumi.StringInput `pulumi:"domain"`
-	// 域名类型。取值：public：公网。private：私网。
+	// Domain type. Options: public: Public network. private: Private network.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -8261,12 +8261,12 @@ func (o GetGatewayServiceDomainOutput) ToGetGatewayServiceDomainOutputWithContex
 	return o
 }
 
-// 域名。
+// Domain.
 func (o GetGatewayServiceDomainOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGatewayServiceDomain) string { return v.Domain }).(pulumi.StringOutput)
 }
 
-// 域名类型。取值：public：公网。private：私网。
+// Domain type. Options: public: Public network. private: Private network.
 func (o GetGatewayServiceDomainOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGatewayServiceDomain) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -8292,7 +8292,7 @@ func (o GetGatewayServiceDomainArrayOutput) Index(i pulumi.IntInput) GetGatewayS
 }
 
 type GetGatewayServiceDomainSpec struct {
-	// 开启私网域名公网解析。
+	// Enable public resolution for private network domains.
 	EnablePublicResolution bool `pulumi:"enablePublicResolution"`
 }
 
@@ -8308,7 +8308,7 @@ type GetGatewayServiceDomainSpecInput interface {
 }
 
 type GetGatewayServiceDomainSpecArgs struct {
-	// 开启私网域名公网解析。
+	// Enable public resolution for private network domains.
 	EnablePublicResolution pulumi.BoolInput `pulumi:"enablePublicResolution"`
 }
 
@@ -8338,17 +8338,17 @@ func (o GetGatewayServiceDomainSpecOutput) ToGetGatewayServiceDomainSpecOutputWi
 	return o
 }
 
-// 开启私网域名公网解析。
+// Enable public resolution for private network domains.
 func (o GetGatewayServiceDomainSpecOutput) EnablePublicResolution() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetGatewayServiceDomainSpec) bool { return v.EnablePublicResolution }).(pulumi.BoolOutput)
 }
 
 type GetGatewayServiceServiceNetworkSpec struct {
-	// 开启私网。
+	// Enable private network.
 	EnablePrivateNetwork bool `pulumi:"enablePrivateNetwork"`
-	// 开启公网。
+	// Enable public network.
 	EnablePublicNetwork bool `pulumi:"enablePublicNetwork"`
-	// 私网域名解析的目标IP。
+	// Target IP for private network domain resolution.
 	PrivateNetworkIps []string `pulumi:"privateNetworkIps"`
 }
 
@@ -8364,11 +8364,11 @@ type GetGatewayServiceServiceNetworkSpecInput interface {
 }
 
 type GetGatewayServiceServiceNetworkSpecArgs struct {
-	// 开启私网。
+	// Enable private network.
 	EnablePrivateNetwork pulumi.BoolInput `pulumi:"enablePrivateNetwork"`
-	// 开启公网。
+	// Enable public network.
 	EnablePublicNetwork pulumi.BoolInput `pulumi:"enablePublicNetwork"`
-	// 私网域名解析的目标IP。
+	// Target IP for private network domain resolution.
 	PrivateNetworkIps pulumi.StringArrayInput `pulumi:"privateNetworkIps"`
 }
 
@@ -8398,29 +8398,29 @@ func (o GetGatewayServiceServiceNetworkSpecOutput) ToGetGatewayServiceServiceNet
 	return o
 }
 
-// 开启私网。
+// Enable private network.
 func (o GetGatewayServiceServiceNetworkSpecOutput) EnablePrivateNetwork() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetGatewayServiceServiceNetworkSpec) bool { return v.EnablePrivateNetwork }).(pulumi.BoolOutput)
 }
 
-// 开启公网。
+// Enable public network.
 func (o GetGatewayServiceServiceNetworkSpecOutput) EnablePublicNetwork() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetGatewayServiceServiceNetworkSpec) bool { return v.EnablePublicNetwork }).(pulumi.BoolOutput)
 }
 
-// 私网域名解析的目标IP。
+// Target IP for private network domain resolution.
 func (o GetGatewayServiceServiceNetworkSpecOutput) PrivateNetworkIps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetGatewayServiceServiceNetworkSpec) []string { return v.PrivateNetworkIps }).(pulumi.StringArrayOutput)
 }
 
 type GetGatewayTraceSpec struct {
-	// 应用性能监控全链路版链路追踪配置。
+	// Application performance monitoring full-link trace configuration
 	ApmTraceSpec GetGatewayTraceSpecApmTraceSpec `pulumi:"apmTraceSpec"`
-	// 是否启用链路追踪。
+	// Whether to enable trace
 	Enable bool `pulumi:"enable"`
-	// 链路追踪配置信息。
+	// Link tracing configuration information.
 	TlsTraceSpec GetGatewayTraceSpecTlsTraceSpec `pulumi:"tlsTraceSpec"`
-	// 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+	// Link tracing type. Possible values: tls: Log Service. apm: Application Performance Monitoring (APM) end-to-end version.
 	TraceType string `pulumi:"traceType"`
 }
 
@@ -8436,13 +8436,13 @@ type GetGatewayTraceSpecInput interface {
 }
 
 type GetGatewayTraceSpecArgs struct {
-	// 应用性能监控全链路版链路追踪配置。
+	// Application performance monitoring full-link trace configuration
 	ApmTraceSpec GetGatewayTraceSpecApmTraceSpecInput `pulumi:"apmTraceSpec"`
-	// 是否启用链路追踪。
+	// Whether to enable trace
 	Enable pulumi.BoolInput `pulumi:"enable"`
-	// 链路追踪配置信息。
+	// Link tracing configuration information.
 	TlsTraceSpec GetGatewayTraceSpecTlsTraceSpecInput `pulumi:"tlsTraceSpec"`
-	// 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+	// Link tracing type. Possible values: tls: Log Service. apm: Application Performance Monitoring (APM) end-to-end version.
 	TraceType pulumi.StringInput `pulumi:"traceType"`
 }
 
@@ -8472,22 +8472,22 @@ func (o GetGatewayTraceSpecOutput) ToGetGatewayTraceSpecOutputWithContext(ctx co
 	return o
 }
 
-// 应用性能监控全链路版链路追踪配置。
+// Application performance monitoring full-link trace configuration
 func (o GetGatewayTraceSpecOutput) ApmTraceSpec() GetGatewayTraceSpecApmTraceSpecOutput {
 	return o.ApplyT(func(v GetGatewayTraceSpec) GetGatewayTraceSpecApmTraceSpec { return v.ApmTraceSpec }).(GetGatewayTraceSpecApmTraceSpecOutput)
 }
 
-// 是否启用链路追踪。
+// Whether to enable trace
 func (o GetGatewayTraceSpecOutput) Enable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetGatewayTraceSpec) bool { return v.Enable }).(pulumi.BoolOutput)
 }
 
-// 链路追踪配置信息。
+// Link tracing configuration information.
 func (o GetGatewayTraceSpecOutput) TlsTraceSpec() GetGatewayTraceSpecTlsTraceSpecOutput {
 	return o.ApplyT(func(v GetGatewayTraceSpec) GetGatewayTraceSpecTlsTraceSpec { return v.TlsTraceSpec }).(GetGatewayTraceSpecTlsTraceSpecOutput)
 }
 
-// 链路追踪类型，取值：tls：日志服务。apm：应用性能监控全链路版。
+// Link tracing type. Possible values: tls: Log Service. apm: Application Performance Monitoring (APM) end-to-end version.
 func (o GetGatewayTraceSpecOutput) TraceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGatewayTraceSpec) string { return v.TraceType }).(pulumi.StringOutput)
 }
@@ -8549,7 +8549,7 @@ type GetGatewayTraceSpecTlsTraceSpec struct {
 	IamUserAk string `pulumi:"iamUserAk"`
 	// Secret key。
 	IamUserSk string `pulumi:"iamUserSk"`
-	// 日志项目ID。
+	// Log project ID
 	ProjectId string `pulumi:"projectId"`
 	// Trace ID。
 	TraceId string `pulumi:"traceId"`
@@ -8571,7 +8571,7 @@ type GetGatewayTraceSpecTlsTraceSpecArgs struct {
 	IamUserAk pulumi.StringInput `pulumi:"iamUserAk"`
 	// Secret key。
 	IamUserSk pulumi.StringInput `pulumi:"iamUserSk"`
-	// 日志项目ID。
+	// Log project ID
 	ProjectId pulumi.StringInput `pulumi:"projectId"`
 	// Trace ID。
 	TraceId pulumi.StringInput `pulumi:"traceId"`
@@ -8613,7 +8613,7 @@ func (o GetGatewayTraceSpecTlsTraceSpecOutput) IamUserSk() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGatewayTraceSpecTlsTraceSpec) string { return v.IamUserSk }).(pulumi.StringOutput)
 }
 
-// 日志项目ID。
+// Log project ID
 func (o GetGatewayTraceSpecTlsTraceSpecOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGatewayTraceSpecTlsTraceSpec) string { return v.ProjectId }).(pulumi.StringOutput)
 }
@@ -8624,11 +8624,11 @@ func (o GetGatewayTraceSpecTlsTraceSpecOutput) TraceId() pulumi.StringOutput {
 }
 
 type GetUpstreamBackendTarget struct {
-	// 健康检查状态。
+	// Health Check Status
 	HealthStatus string `pulumi:"healthStatus"`
-	// 后端节点IP。
+	// Backend node IP
 	Ip string `pulumi:"ip"`
-	// 后端节点端口。
+	// Backend node port
 	Port int `pulumi:"port"`
 }
 
@@ -8644,11 +8644,11 @@ type GetUpstreamBackendTargetInput interface {
 }
 
 type GetUpstreamBackendTargetArgs struct {
-	// 健康检查状态。
+	// Health Check Status
 	HealthStatus pulumi.StringInput `pulumi:"healthStatus"`
-	// 后端节点IP。
+	// Backend node IP
 	Ip pulumi.StringInput `pulumi:"ip"`
-	// 后端节点端口。
+	// Backend node port
 	Port pulumi.IntInput `pulumi:"port"`
 }
 
@@ -8703,17 +8703,17 @@ func (o GetUpstreamBackendTargetOutput) ToGetUpstreamBackendTargetOutputWithCont
 	return o
 }
 
-// 健康检查状态。
+// Health Check Status
 func (o GetUpstreamBackendTargetOutput) HealthStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamBackendTarget) string { return v.HealthStatus }).(pulumi.StringOutput)
 }
 
-// 后端节点IP。
+// Backend node IP
 func (o GetUpstreamBackendTargetOutput) Ip() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamBackendTarget) string { return v.Ip }).(pulumi.StringOutput)
 }
 
-// 后端节点端口。
+// Backend node port
 func (o GetUpstreamBackendTargetOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetUpstreamBackendTarget) int { return v.Port }).(pulumi.IntOutput)
 }
@@ -8739,17 +8739,17 @@ func (o GetUpstreamBackendTargetArrayOutput) Index(i pulumi.IntInput) GetUpstrea
 }
 
 type GetUpstreamCircuitBreakingSettings struct {
-	// 最小弹出时间。单位为毫秒。取值限制为1~86400000。默认值为30秒。
+	// Minimum pop time, in milliseconds. Value range: 1–86400000. Default: 30 seconds
 	BaseEjectionTime int `pulumi:"baseEjectionTime"`
-	// 连续失败次数。取值限制为1~100。默认值为5。
+	// Consecutive failure count. Value range: 1~100. Default: 5
 	ConsecutiveErrors int `pulumi:"consecutiveErrors"`
-	// 开启。
+	// Enable
 	Enable bool `pulumi:"enable"`
-	// 计算周期。单位为毫秒。取值限制为1~86400000。默认值为10秒。
+	// Calculation cycle, in milliseconds. Value range: 1–86400000. Default: 10 seconds
 	Interval int `pulumi:"interval"`
-	// 最大熔断比例。取值限制为1~100。默认值为20%。
+	// Maximum circuit breaking ratio. Value range: 1~100. Default: 20%
 	MaxEjectionPercent int `pulumi:"maxEjectionPercent"`
-	// 最小健康比例。取值限制为0~100。默认值为60%。
+	// Minimum health ratio. Value range: 0~100. Default: 60%
 	MinHealthPercent int `pulumi:"minHealthPercent"`
 }
 
@@ -8765,17 +8765,17 @@ type GetUpstreamCircuitBreakingSettingsInput interface {
 }
 
 type GetUpstreamCircuitBreakingSettingsArgs struct {
-	// 最小弹出时间。单位为毫秒。取值限制为1~86400000。默认值为30秒。
+	// Minimum pop time, in milliseconds. Value range: 1–86400000. Default: 30 seconds
 	BaseEjectionTime pulumi.IntInput `pulumi:"baseEjectionTime"`
-	// 连续失败次数。取值限制为1~100。默认值为5。
+	// Consecutive failure count. Value range: 1~100. Default: 5
 	ConsecutiveErrors pulumi.IntInput `pulumi:"consecutiveErrors"`
-	// 开启。
+	// Enable
 	Enable pulumi.BoolInput `pulumi:"enable"`
-	// 计算周期。单位为毫秒。取值限制为1~86400000。默认值为10秒。
+	// Calculation cycle, in milliseconds. Value range: 1–86400000. Default: 10 seconds
 	Interval pulumi.IntInput `pulumi:"interval"`
-	// 最大熔断比例。取值限制为1~100。默认值为20%。
+	// Maximum circuit breaking ratio. Value range: 1~100. Default: 20%
 	MaxEjectionPercent pulumi.IntInput `pulumi:"maxEjectionPercent"`
-	// 最小健康比例。取值限制为0~100。默认值为60%。
+	// Minimum health ratio. Value range: 0~100. Default: 60%
 	MinHealthPercent pulumi.IntInput `pulumi:"minHealthPercent"`
 }
 
@@ -8805,44 +8805,44 @@ func (o GetUpstreamCircuitBreakingSettingsOutput) ToGetUpstreamCircuitBreakingSe
 	return o
 }
 
-// 最小弹出时间。单位为毫秒。取值限制为1~86400000。默认值为30秒。
+// Minimum pop time, in milliseconds. Value range: 1–86400000. Default: 30 seconds
 func (o GetUpstreamCircuitBreakingSettingsOutput) BaseEjectionTime() pulumi.IntOutput {
 	return o.ApplyT(func(v GetUpstreamCircuitBreakingSettings) int { return v.BaseEjectionTime }).(pulumi.IntOutput)
 }
 
-// 连续失败次数。取值限制为1~100。默认值为5。
+// Consecutive failure count. Value range: 1~100. Default: 5
 func (o GetUpstreamCircuitBreakingSettingsOutput) ConsecutiveErrors() pulumi.IntOutput {
 	return o.ApplyT(func(v GetUpstreamCircuitBreakingSettings) int { return v.ConsecutiveErrors }).(pulumi.IntOutput)
 }
 
-// 开启。
+// Enable
 func (o GetUpstreamCircuitBreakingSettingsOutput) Enable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetUpstreamCircuitBreakingSettings) bool { return v.Enable }).(pulumi.BoolOutput)
 }
 
-// 计算周期。单位为毫秒。取值限制为1~86400000。默认值为10秒。
+// Calculation cycle, in milliseconds. Value range: 1–86400000. Default: 10 seconds
 func (o GetUpstreamCircuitBreakingSettingsOutput) Interval() pulumi.IntOutput {
 	return o.ApplyT(func(v GetUpstreamCircuitBreakingSettings) int { return v.Interval }).(pulumi.IntOutput)
 }
 
-// 最大熔断比例。取值限制为1~100。默认值为20%。
+// Maximum circuit breaking ratio. Value range: 1~100. Default: 20%
 func (o GetUpstreamCircuitBreakingSettingsOutput) MaxEjectionPercent() pulumi.IntOutput {
 	return o.ApplyT(func(v GetUpstreamCircuitBreakingSettings) int { return v.MaxEjectionPercent }).(pulumi.IntOutput)
 }
 
-// 最小健康比例。取值限制为0~100。默认值为60%。
+// Minimum health ratio. Value range: 0~100. Default: 60%
 func (o GetUpstreamCircuitBreakingSettingsOutput) MinHealthPercent() pulumi.IntOutput {
 	return o.ApplyT(func(v GetUpstreamCircuitBreakingSettings) int { return v.MinHealthPercent }).(pulumi.IntOutput)
 }
 
 type GetUpstreamConnectionPoolSettings struct {
-	// 开启。
+	// Enable
 	Enable bool `pulumi:"enable"`
-	// HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+	// Maximum HTTP/1 pending requests. Value range: 0~2^31-1. 0 means unlimited
 	Http1MaxPendingRequests int `pulumi:"http1MaxPendingRequests"`
-	// 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+	// Idle timeout, in seconds. Value range: 0–2^31-1. 0 means no limit
 	IdleTimeout int `pulumi:"idleTimeout"`
-	// TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+	// Maximum TCP connections. Value range: 0~2^31-1. 0 means unlimited
 	MaxConnections int `pulumi:"maxConnections"`
 }
 
@@ -8858,13 +8858,13 @@ type GetUpstreamConnectionPoolSettingsInput interface {
 }
 
 type GetUpstreamConnectionPoolSettingsArgs struct {
-	// 开启。
+	// Enable
 	Enable pulumi.BoolInput `pulumi:"enable"`
-	// HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+	// Maximum HTTP/1 pending requests. Value range: 0~2^31-1. 0 means unlimited
 	Http1MaxPendingRequests pulumi.IntInput `pulumi:"http1MaxPendingRequests"`
-	// 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+	// Idle timeout, in seconds. Value range: 0–2^31-1. 0 means no limit
 	IdleTimeout pulumi.IntInput `pulumi:"idleTimeout"`
-	// TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+	// Maximum TCP connections. Value range: 0~2^31-1. 0 means unlimited
 	MaxConnections pulumi.IntInput `pulumi:"maxConnections"`
 }
 
@@ -8894,34 +8894,34 @@ func (o GetUpstreamConnectionPoolSettingsOutput) ToGetUpstreamConnectionPoolSett
 	return o
 }
 
-// 开启。
+// Enable
 func (o GetUpstreamConnectionPoolSettingsOutput) Enable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetUpstreamConnectionPoolSettings) bool { return v.Enable }).(pulumi.BoolOutput)
 }
 
-// HTTP/1最大等待请求数。取值限制为0~2^31-1，0为不限制。
+// Maximum HTTP/1 pending requests. Value range: 0~2^31-1. 0 means unlimited
 func (o GetUpstreamConnectionPoolSettingsOutput) Http1MaxPendingRequests() pulumi.IntOutput {
 	return o.ApplyT(func(v GetUpstreamConnectionPoolSettings) int { return v.Http1MaxPendingRequests }).(pulumi.IntOutput)
 }
 
-// 空闲超时时间。单位为秒。取值限制为0~2^31-1，0为不限制。
+// Idle timeout, in seconds. Value range: 0–2^31-1. 0 means no limit
 func (o GetUpstreamConnectionPoolSettingsOutput) IdleTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v GetUpstreamConnectionPoolSettings) int { return v.IdleTimeout }).(pulumi.IntOutput)
 }
 
-// TCP最大连接数。取值限制为0~2^31-1，0为不限制。
+// Maximum TCP connections. Value range: 0~2^31-1. 0 means unlimited
 func (o GetUpstreamConnectionPoolSettingsOutput) MaxConnections() pulumi.IntOutput {
 	return o.ApplyT(func(v GetUpstreamConnectionPoolSettings) int { return v.MaxConnections }).(pulumi.IntOutput)
 }
 
 type GetUpstreamLoadBalancerSettings struct {
-	// 一致性哈希负载均衡。
+	// Consistent Hash Load Balancing
 	ConsistentHashLb GetUpstreamLoadBalancerSettingsConsistentHashLb `pulumi:"consistentHashLb"`
-	// 负载均衡策略，取值：SimpleLB：简单负载均衡。ConsistentHashLB：一致性哈希负载均衡。
+	// Load balancing policy. Options: SimpleLB: simple load balancing. ConsistentHashLB: consistent hash load balancing
 	LbPolicy string `pulumi:"lbPolicy"`
-	// 简单负载均衡，取值：ROUND*ROBIN：轮询。LEAST*CONN：最小连接数。RANDOM：随机。
+	// Simple load balancing. Options: ROUND*ROBIN: round robin. LEAST*CONN: least connections. RANDOM: random
 	SimpleLb string `pulumi:"simpleLb"`
-	// 预热时间。单位为秒。
+	// Warm-up time (seconds)
 	WarmupDuration int `pulumi:"warmupDuration"`
 }
 
@@ -8937,13 +8937,13 @@ type GetUpstreamLoadBalancerSettingsInput interface {
 }
 
 type GetUpstreamLoadBalancerSettingsArgs struct {
-	// 一致性哈希负载均衡。
+	// Consistent Hash Load Balancing
 	ConsistentHashLb GetUpstreamLoadBalancerSettingsConsistentHashLbInput `pulumi:"consistentHashLb"`
-	// 负载均衡策略，取值：SimpleLB：简单负载均衡。ConsistentHashLB：一致性哈希负载均衡。
+	// Load balancing policy. Options: SimpleLB: simple load balancing. ConsistentHashLB: consistent hash load balancing
 	LbPolicy pulumi.StringInput `pulumi:"lbPolicy"`
-	// 简单负载均衡，取值：ROUND*ROBIN：轮询。LEAST*CONN：最小连接数。RANDOM：随机。
+	// Simple load balancing. Options: ROUND*ROBIN: round robin. LEAST*CONN: least connections. RANDOM: random
 	SimpleLb pulumi.StringInput `pulumi:"simpleLb"`
-	// 预热时间。单位为秒。
+	// Warm-up time (seconds)
 	WarmupDuration pulumi.IntInput `pulumi:"warmupDuration"`
 }
 
@@ -8973,40 +8973,40 @@ func (o GetUpstreamLoadBalancerSettingsOutput) ToGetUpstreamLoadBalancerSettings
 	return o
 }
 
-// 一致性哈希负载均衡。
+// Consistent Hash Load Balancing
 func (o GetUpstreamLoadBalancerSettingsOutput) ConsistentHashLb() GetUpstreamLoadBalancerSettingsConsistentHashLbOutput {
 	return o.ApplyT(func(v GetUpstreamLoadBalancerSettings) GetUpstreamLoadBalancerSettingsConsistentHashLb {
 		return v.ConsistentHashLb
 	}).(GetUpstreamLoadBalancerSettingsConsistentHashLbOutput)
 }
 
-// 负载均衡策略，取值：SimpleLB：简单负载均衡。ConsistentHashLB：一致性哈希负载均衡。
+// Load balancing policy. Options: SimpleLB: simple load balancing. ConsistentHashLB: consistent hash load balancing
 func (o GetUpstreamLoadBalancerSettingsOutput) LbPolicy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamLoadBalancerSettings) string { return v.LbPolicy }).(pulumi.StringOutput)
 }
 
-// 简单负载均衡，取值：ROUND*ROBIN：轮询。LEAST*CONN：最小连接数。RANDOM：随机。
+// Simple load balancing. Options: ROUND*ROBIN: round robin. LEAST*CONN: least connections. RANDOM: random
 func (o GetUpstreamLoadBalancerSettingsOutput) SimpleLb() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamLoadBalancerSettings) string { return v.SimpleLb }).(pulumi.StringOutput)
 }
 
-// 预热时间。单位为秒。
+// Warm-up time (seconds)
 func (o GetUpstreamLoadBalancerSettingsOutput) WarmupDuration() pulumi.IntOutput {
 	return o.ApplyT(func(v GetUpstreamLoadBalancerSettings) int { return v.WarmupDuration }).(pulumi.IntOutput)
 }
 
 type GetUpstreamLoadBalancerSettingsConsistentHashLb struct {
-	// 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+	// Overload protection parameter. Value range: 100–200. When set to 120, overload protection is triggered if the current active request count of an upstream node exceeds 120% of the average active request count. When overload protection is triggered, even if the request hash matches a specific upstream node, the load balancer will randomly select an upstream node
 	HashBalanceFactor int `pulumi:"hashBalanceFactor"`
-	// 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
+	// Consistent hash method. Options: UseSourceIp: based on source IP address. HttpQueryParameterName: based on parameter. HttpHeaderName: based on header. HTTPCookie: based on cookie
 	HashKey string `pulumi:"hashKey"`
 	// Cookie。
 	HttpCookie GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookie `pulumi:"httpCookie"`
-	// 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+	// Parameter. Supports printable ASCII characters, length: 1–256 characters
 	HttpHeaderName string `pulumi:"httpHeaderName"`
-	// 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+	// Parameter. Supports printable ASCII characters, length: 1–256 characters
 	HttpQueryParameterName string `pulumi:"httpQueryParameterName"`
-	// 源IP地址。
+	// Source IP address
 	UseSourceIp string `pulumi:"useSourceIp"`
 }
 
@@ -9022,17 +9022,17 @@ type GetUpstreamLoadBalancerSettingsConsistentHashLbInput interface {
 }
 
 type GetUpstreamLoadBalancerSettingsConsistentHashLbArgs struct {
-	// 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+	// Overload protection parameter. Value range: 100–200. When set to 120, overload protection is triggered if the current active request count of an upstream node exceeds 120% of the average active request count. When overload protection is triggered, even if the request hash matches a specific upstream node, the load balancer will randomly select an upstream node
 	HashBalanceFactor pulumi.IntInput `pulumi:"hashBalanceFactor"`
-	// 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
+	// Consistent hash method. Options: UseSourceIp: based on source IP address. HttpQueryParameterName: based on parameter. HttpHeaderName: based on header. HTTPCookie: based on cookie
 	HashKey pulumi.StringInput `pulumi:"hashKey"`
 	// Cookie。
 	HttpCookie GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookieInput `pulumi:"httpCookie"`
-	// 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+	// Parameter. Supports printable ASCII characters, length: 1–256 characters
 	HttpHeaderName pulumi.StringInput `pulumi:"httpHeaderName"`
-	// 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+	// Parameter. Supports printable ASCII characters, length: 1–256 characters
 	HttpQueryParameterName pulumi.StringInput `pulumi:"httpQueryParameterName"`
-	// 源IP地址。
+	// Source IP address
 	UseSourceIp pulumi.StringInput `pulumi:"useSourceIp"`
 }
 
@@ -9062,12 +9062,12 @@ func (o GetUpstreamLoadBalancerSettingsConsistentHashLbOutput) ToGetUpstreamLoad
 	return o
 }
 
-// 过载保护参数。取值限制为100~200。当取值为120时，upstream节点当前活跃请求数超过平均活跃请求数的120%时，将触发过载保护。当触发过载保护时，即使请求的hash命中某一upstream节点，负载均衡器也会随机选择upstream节点。
+// Overload protection parameter. Value range: 100–200. When set to 120, overload protection is triggered if the current active request count of an upstream node exceeds 120% of the average active request count. When overload protection is triggered, even if the request hash matches a specific upstream node, the load balancer will randomly select an upstream node
 func (o GetUpstreamLoadBalancerSettingsConsistentHashLbOutput) HashBalanceFactor() pulumi.IntOutput {
 	return o.ApplyT(func(v GetUpstreamLoadBalancerSettingsConsistentHashLb) int { return v.HashBalanceFactor }).(pulumi.IntOutput)
 }
 
-// 一致性哈希方式，取值：UseSourceIp：基于源IP地址。HttpQueryParameterName：基于参数。HttpHeaderName：基于头。HTTPCookie：基于cookie。
+// Consistent hash method. Options: UseSourceIp: based on source IP address. HttpQueryParameterName: based on parameter. HttpHeaderName: based on header. HTTPCookie: based on cookie
 func (o GetUpstreamLoadBalancerSettingsConsistentHashLbOutput) HashKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamLoadBalancerSettingsConsistentHashLb) string { return v.HashKey }).(pulumi.StringOutput)
 }
@@ -9079,27 +9079,27 @@ func (o GetUpstreamLoadBalancerSettingsConsistentHashLbOutput) HttpCookie() GetU
 	}).(GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookieOutput)
 }
 
-// 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+// Parameter. Supports printable ASCII characters, length: 1–256 characters
 func (o GetUpstreamLoadBalancerSettingsConsistentHashLbOutput) HttpHeaderName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamLoadBalancerSettingsConsistentHashLb) string { return v.HttpHeaderName }).(pulumi.StringOutput)
 }
 
-// 参数。支持ASCII可打印字符，长度限制为1~256个字符。
+// Parameter. Supports printable ASCII characters, length: 1–256 characters
 func (o GetUpstreamLoadBalancerSettingsConsistentHashLbOutput) HttpQueryParameterName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamLoadBalancerSettingsConsistentHashLb) string { return v.HttpQueryParameterName }).(pulumi.StringOutput)
 }
 
-// 源IP地址。
+// Source IP address
 func (o GetUpstreamLoadBalancerSettingsConsistentHashLbOutput) UseSourceIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamLoadBalancerSettingsConsistentHashLb) string { return v.UseSourceIp }).(pulumi.StringOutput)
 }
 
 type GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookie struct {
-	// 名称。支持ASCII可打印字符，长度限制为0~256个字符。
+	// Name. Supports printable ASCII characters. Length: 0~256 characters
 	Name string `pulumi:"name"`
-	// 路径。支持ASCII可打印字符，长度限制为1~256个字符。
+	// Path. Supports printable ASCII characters. Length: 1~256 characters
 	Path string `pulumi:"path"`
-	// 有效期。单位为秒。
+	// Validity period, in seconds
 	Ttl int `pulumi:"ttl"`
 }
 
@@ -9115,11 +9115,11 @@ type GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookieInput interface {
 }
 
 type GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookieArgs struct {
-	// 名称。支持ASCII可打印字符，长度限制为0~256个字符。
+	// Name. Supports printable ASCII characters. Length: 0~256 characters
 	Name pulumi.StringInput `pulumi:"name"`
-	// 路径。支持ASCII可打印字符，长度限制为1~256个字符。
+	// Path. Supports printable ASCII characters. Length: 1~256 characters
 	Path pulumi.StringInput `pulumi:"path"`
-	// 有效期。单位为秒。
+	// Validity period, in seconds
 	Ttl pulumi.IntInput `pulumi:"ttl"`
 }
 
@@ -9149,35 +9149,35 @@ func (o GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookieOutput) ToGetUp
 	return o
 }
 
-// 名称。支持ASCII可打印字符，长度限制为0~256个字符。
+// Name. Supports printable ASCII characters. Length: 0~256 characters
 func (o GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookieOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookie) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 路径。支持ASCII可打印字符，长度限制为1~256个字符。
+// Path. Supports printable ASCII characters. Length: 1~256 characters
 func (o GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookieOutput) Path() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookie) string { return v.Path }).(pulumi.StringOutput)
 }
 
-// 有效期。单位为秒。
+// Validity period, in seconds
 func (o GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookieOutput) Ttl() pulumi.IntOutput {
 	return o.ApplyT(func(v GetUpstreamLoadBalancerSettingsConsistentHashLbHttpCookie) int { return v.Ttl }).(pulumi.IntOutput)
 }
 
 type GetUpstreamSourceIngressSettings struct {
-	// 是否启用所有Ingress类。
+	// Whether to enable all Ingress classes
 	EnableAllIngressClasses bool `pulumi:"enableAllIngressClasses"`
-	// 是否全部命名空间。
+	// Whether all namespaces
 	EnableAllNamespaces bool `pulumi:"enableAllNamespaces"`
-	// 是否开启。
+	// Whether enabled
 	EnableIngress bool `pulumi:"enableIngress"`
-	// 是否监听IngressClass为空的资源。
+	// Whether to monitor resources with empty IngressClass
 	EnableIngressWithoutIngressClass bool `pulumi:"enableIngressWithoutIngressClass"`
-	// 指定IngressClass。
+	// Specify IngressClass
 	IngressClasses []string `pulumi:"ingressClasses"`
-	// 流量入口切换。开启后，当前集群Ingress中Status的IP地址会被修改为当前网关的IP地址。
+	// Traffic entry switch. When enabled, the IP address in the Status of the current cluster's Ingress will be updated to the current gateway's IP address
 	UpdateStatus bool `pulumi:"updateStatus"`
-	// 指定命名空间。
+	// Specify namespace
 	WatchNamespaces []string `pulumi:"watchNamespaces"`
 }
 
@@ -9193,19 +9193,19 @@ type GetUpstreamSourceIngressSettingsInput interface {
 }
 
 type GetUpstreamSourceIngressSettingsArgs struct {
-	// 是否启用所有Ingress类。
+	// Whether to enable all Ingress classes
 	EnableAllIngressClasses pulumi.BoolInput `pulumi:"enableAllIngressClasses"`
-	// 是否全部命名空间。
+	// Whether all namespaces
 	EnableAllNamespaces pulumi.BoolInput `pulumi:"enableAllNamespaces"`
-	// 是否开启。
+	// Whether enabled
 	EnableIngress pulumi.BoolInput `pulumi:"enableIngress"`
-	// 是否监听IngressClass为空的资源。
+	// Whether to monitor resources with empty IngressClass
 	EnableIngressWithoutIngressClass pulumi.BoolInput `pulumi:"enableIngressWithoutIngressClass"`
-	// 指定IngressClass。
+	// Specify IngressClass
 	IngressClasses pulumi.StringArrayInput `pulumi:"ingressClasses"`
-	// 流量入口切换。开启后，当前集群Ingress中Status的IP地址会被修改为当前网关的IP地址。
+	// Traffic entry switch. When enabled, the IP address in the Status of the current cluster's Ingress will be updated to the current gateway's IP address
 	UpdateStatus pulumi.BoolInput `pulumi:"updateStatus"`
-	// 指定命名空间。
+	// Specify namespace
 	WatchNamespaces pulumi.StringArrayInput `pulumi:"watchNamespaces"`
 }
 
@@ -9235,45 +9235,45 @@ func (o GetUpstreamSourceIngressSettingsOutput) ToGetUpstreamSourceIngressSettin
 	return o
 }
 
-// 是否启用所有Ingress类。
+// Whether to enable all Ingress classes
 func (o GetUpstreamSourceIngressSettingsOutput) EnableAllIngressClasses() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetUpstreamSourceIngressSettings) bool { return v.EnableAllIngressClasses }).(pulumi.BoolOutput)
 }
 
-// 是否全部命名空间。
+// Whether all namespaces
 func (o GetUpstreamSourceIngressSettingsOutput) EnableAllNamespaces() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetUpstreamSourceIngressSettings) bool { return v.EnableAllNamespaces }).(pulumi.BoolOutput)
 }
 
-// 是否开启。
+// Whether enabled
 func (o GetUpstreamSourceIngressSettingsOutput) EnableIngress() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetUpstreamSourceIngressSettings) bool { return v.EnableIngress }).(pulumi.BoolOutput)
 }
 
-// 是否监听IngressClass为空的资源。
+// Whether to monitor resources with empty IngressClass
 func (o GetUpstreamSourceIngressSettingsOutput) EnableIngressWithoutIngressClass() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetUpstreamSourceIngressSettings) bool { return v.EnableIngressWithoutIngressClass }).(pulumi.BoolOutput)
 }
 
-// 指定IngressClass。
+// Specify IngressClass
 func (o GetUpstreamSourceIngressSettingsOutput) IngressClasses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetUpstreamSourceIngressSettings) []string { return v.IngressClasses }).(pulumi.StringArrayOutput)
 }
 
-// 流量入口切换。开启后，当前集群Ingress中Status的IP地址会被修改为当前网关的IP地址。
+// Traffic entry switch. When enabled, the IP address in the Status of the current cluster's Ingress will be updated to the current gateway's IP address
 func (o GetUpstreamSourceIngressSettingsOutput) UpdateStatus() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetUpstreamSourceIngressSettings) bool { return v.UpdateStatus }).(pulumi.BoolOutput)
 }
 
-// 指定命名空间。
+// Specify namespace
 func (o GetUpstreamSourceIngressSettingsOutput) WatchNamespaces() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetUpstreamSourceIngressSettings) []string { return v.WatchNamespaces }).(pulumi.StringArrayOutput)
 }
 
 type GetUpstreamSourceSourceSpec struct {
-	// 容器集群来源。
+	// Container cluster source
 	K8SSource GetUpstreamSourceSourceSpecK8SSource `pulumi:"k8SSource"`
-	// 注册中心来源。
+	// Registry source
 	NacosSource GetUpstreamSourceSourceSpecNacosSource `pulumi:"nacosSource"`
 }
 
@@ -9289,9 +9289,9 @@ type GetUpstreamSourceSourceSpecInput interface {
 }
 
 type GetUpstreamSourceSourceSpecArgs struct {
-	// 容器集群来源。
+	// Container cluster source
 	K8SSource GetUpstreamSourceSourceSpecK8SSourceInput `pulumi:"k8SSource"`
-	// 注册中心来源。
+	// Registry source
 	NacosSource GetUpstreamSourceSourceSpecNacosSourceInput `pulumi:"nacosSource"`
 }
 
@@ -9321,20 +9321,20 @@ func (o GetUpstreamSourceSourceSpecOutput) ToGetUpstreamSourceSourceSpecOutputWi
 	return o
 }
 
-// 容器集群来源。
+// Container cluster source
 func (o GetUpstreamSourceSourceSpecOutput) K8SSource() GetUpstreamSourceSourceSpecK8SSourceOutput {
 	return o.ApplyT(func(v GetUpstreamSourceSourceSpec) GetUpstreamSourceSourceSpecK8SSource { return v.K8SSource }).(GetUpstreamSourceSourceSpecK8SSourceOutput)
 }
 
-// 注册中心来源。
+// Registry source
 func (o GetUpstreamSourceSourceSpecOutput) NacosSource() GetUpstreamSourceSourceSpecNacosSourceOutput {
 	return o.ApplyT(func(v GetUpstreamSourceSourceSpec) GetUpstreamSourceSourceSpecNacosSource { return v.NacosSource }).(GetUpstreamSourceSourceSpecNacosSourceOutput)
 }
 
 type GetUpstreamSourceSourceSpecK8SSource struct {
-	// 集群ID。
+	// Cluster ID
 	ClusterId string `pulumi:"clusterId"`
-	// 集群类型。
+	// Cluster type
 	ClusterType string `pulumi:"clusterType"`
 }
 
@@ -9350,9 +9350,9 @@ type GetUpstreamSourceSourceSpecK8SSourceInput interface {
 }
 
 type GetUpstreamSourceSourceSpecK8SSourceArgs struct {
-	// 集群ID。
+	// Cluster ID
 	ClusterId pulumi.StringInput `pulumi:"clusterId"`
-	// 集群类型。
+	// Cluster type
 	ClusterType pulumi.StringInput `pulumi:"clusterType"`
 }
 
@@ -9382,22 +9382,22 @@ func (o GetUpstreamSourceSourceSpecK8SSourceOutput) ToGetUpstreamSourceSourceSpe
 	return o
 }
 
-// 集群ID。
+// Cluster ID
 func (o GetUpstreamSourceSourceSpecK8SSourceOutput) ClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamSourceSourceSpecK8SSource) string { return v.ClusterId }).(pulumi.StringOutput)
 }
 
-// 集群类型。
+// Cluster type
 func (o GetUpstreamSourceSourceSpecK8SSourceOutput) ClusterType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamSourceSourceSpecK8SSource) string { return v.ClusterType }).(pulumi.StringOutput)
 }
 
 type GetUpstreamSourceSourceSpecNacosSource struct {
-	// 认证配置。
+	// Authentication configuration
 	AuthConfig GetUpstreamSourceSourceSpecNacosSourceAuthConfig `pulumi:"authConfig"`
 	// Nacos ID。
 	NacosId string `pulumi:"nacosId"`
-	// Nacos名称。
+	// Nacos name
 	NacosName string `pulumi:"nacosName"`
 }
 
@@ -9413,11 +9413,11 @@ type GetUpstreamSourceSourceSpecNacosSourceInput interface {
 }
 
 type GetUpstreamSourceSourceSpecNacosSourceArgs struct {
-	// 认证配置。
+	// Authentication configuration
 	AuthConfig GetUpstreamSourceSourceSpecNacosSourceAuthConfigInput `pulumi:"authConfig"`
 	// Nacos ID。
 	NacosId pulumi.StringInput `pulumi:"nacosId"`
-	// Nacos名称。
+	// Nacos name
 	NacosName pulumi.StringInput `pulumi:"nacosName"`
 }
 
@@ -9447,7 +9447,7 @@ func (o GetUpstreamSourceSourceSpecNacosSourceOutput) ToGetUpstreamSourceSourceS
 	return o
 }
 
-// 认证配置。
+// Authentication configuration
 func (o GetUpstreamSourceSourceSpecNacosSourceOutput) AuthConfig() GetUpstreamSourceSourceSpecNacosSourceAuthConfigOutput {
 	return o.ApplyT(func(v GetUpstreamSourceSourceSpecNacosSource) GetUpstreamSourceSourceSpecNacosSourceAuthConfig {
 		return v.AuthConfig
@@ -9459,13 +9459,13 @@ func (o GetUpstreamSourceSourceSpecNacosSourceOutput) NacosId() pulumi.StringOut
 	return o.ApplyT(func(v GetUpstreamSourceSourceSpecNacosSource) string { return v.NacosId }).(pulumi.StringOutput)
 }
 
-// Nacos名称。
+// Nacos name
 func (o GetUpstreamSourceSourceSpecNacosSourceOutput) NacosName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamSourceSourceSpecNacosSource) string { return v.NacosName }).(pulumi.StringOutput)
 }
 
 type GetUpstreamSourceSourceSpecNacosSourceAuthConfig struct {
-	// Basic认证。
+	// Basic authentication
 	Basic GetUpstreamSourceSourceSpecNacosSourceAuthConfigBasic `pulumi:"basic"`
 }
 
@@ -9481,7 +9481,7 @@ type GetUpstreamSourceSourceSpecNacosSourceAuthConfigInput interface {
 }
 
 type GetUpstreamSourceSourceSpecNacosSourceAuthConfigArgs struct {
-	// Basic认证。
+	// Basic authentication
 	Basic GetUpstreamSourceSourceSpecNacosSourceAuthConfigBasicInput `pulumi:"basic"`
 }
 
@@ -9511,7 +9511,7 @@ func (o GetUpstreamSourceSourceSpecNacosSourceAuthConfigOutput) ToGetUpstreamSou
 	return o
 }
 
-// Basic认证。
+// Basic authentication
 func (o GetUpstreamSourceSourceSpecNacosSourceAuthConfigOutput) Basic() GetUpstreamSourceSourceSpecNacosSourceAuthConfigBasicOutput {
 	return o.ApplyT(func(v GetUpstreamSourceSourceSpecNacosSourceAuthConfig) GetUpstreamSourceSourceSpecNacosSourceAuthConfigBasic {
 		return v.Basic
@@ -9519,9 +9519,9 @@ func (o GetUpstreamSourceSourceSpecNacosSourceAuthConfigOutput) Basic() GetUpstr
 }
 
 type GetUpstreamSourceSourceSpecNacosSourceAuthConfigBasic struct {
-	// 密码。
+	// Password
 	Password string `pulumi:"password"`
-	// 用户名。
+	// Username
 	Username string `pulumi:"username"`
 }
 
@@ -9537,9 +9537,9 @@ type GetUpstreamSourceSourceSpecNacosSourceAuthConfigBasicInput interface {
 }
 
 type GetUpstreamSourceSourceSpecNacosSourceAuthConfigBasicArgs struct {
-	// 密码。
+	// Password
 	Password pulumi.StringInput `pulumi:"password"`
-	// 用户名。
+	// Username
 	Username pulumi.StringInput `pulumi:"username"`
 }
 
@@ -9569,20 +9569,20 @@ func (o GetUpstreamSourceSourceSpecNacosSourceAuthConfigBasicOutput) ToGetUpstre
 	return o
 }
 
-// 密码。
+// Password
 func (o GetUpstreamSourceSourceSpecNacosSourceAuthConfigBasicOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamSourceSourceSpecNacosSourceAuthConfigBasic) string { return v.Password }).(pulumi.StringOutput)
 }
 
-// 用户名。
+// Username
 func (o GetUpstreamSourceSourceSpecNacosSourceAuthConfigBasicOutput) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamSourceSourceSpecNacosSourceAuthConfigBasic) string { return v.Username }).(pulumi.StringOutput)
 }
 
 type GetUpstreamTlsSettings struct {
-	// SNI。留空时会将访问网关的域名透传到upstream。
+	// SNI. If left blank, the domain name accessed by the gateway will be passed through to the upstream
 	Sni string `pulumi:"sni"`
-	// TLS模式，取值：DISABLE：关闭TLS。SIMPLE：单向TLS。
+	// TLS mode. Options: DISABLE: disable TLS. SIMPLE: one-way TLS
 	TlsMode string `pulumi:"tlsMode"`
 }
 
@@ -9598,9 +9598,9 @@ type GetUpstreamTlsSettingsInput interface {
 }
 
 type GetUpstreamTlsSettingsArgs struct {
-	// SNI。留空时会将访问网关的域名透传到upstream。
+	// SNI. If left blank, the domain name accessed by the gateway will be passed through to the upstream
 	Sni pulumi.StringInput `pulumi:"sni"`
-	// TLS模式，取值：DISABLE：关闭TLS。SIMPLE：单向TLS。
+	// TLS mode. Options: DISABLE: disable TLS. SIMPLE: one-way TLS
 	TlsMode pulumi.StringInput `pulumi:"tlsMode"`
 }
 
@@ -9630,28 +9630,28 @@ func (o GetUpstreamTlsSettingsOutput) ToGetUpstreamTlsSettingsOutputWithContext(
 	return o
 }
 
-// SNI。留空时会将访问网关的域名透传到upstream。
+// SNI. If left blank, the domain name accessed by the gateway will be passed through to the upstream
 func (o GetUpstreamTlsSettingsOutput) Sni() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamTlsSettings) string { return v.Sni }).(pulumi.StringOutput)
 }
 
-// TLS模式，取值：DISABLE：关闭TLS。SIMPLE：单向TLS。
+// TLS mode. Options: DISABLE: disable TLS. SIMPLE: one-way TLS
 func (o GetUpstreamTlsSettingsOutput) TlsMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamTlsSettings) string { return v.TlsMode }).(pulumi.StringOutput)
 }
 
 type GetUpstreamUpstreamSpec struct {
-	// AI模型代理。
+	// AI model proxy
 	AiProvider GetUpstreamUpstreamSpecAiProvider `pulumi:"aiProvider"`
-	// 固定域名。
+	// Fixed domain name
 	Domain GetUpstreamUpstreamSpecDomain `pulumi:"domain"`
-	// 云服务器。
+	// Cloud server
 	EcsInstances []GetUpstreamUpstreamSpecEcsInstance `pulumi:"ecsInstances"`
-	// 容器服务。
+	// Container Service
 	K8SService GetUpstreamUpstreamSpecK8SService `pulumi:"k8SService"`
-	// 注册中心。
+	// Registry Center
 	NacosService GetUpstreamUpstreamSpecNacosService `pulumi:"nacosService"`
-	// 函数服务。
+	// Function service
 	VeFaas GetUpstreamUpstreamSpecVeFaas `pulumi:"veFaas"`
 }
 
@@ -9667,17 +9667,17 @@ type GetUpstreamUpstreamSpecInput interface {
 }
 
 type GetUpstreamUpstreamSpecArgs struct {
-	// AI模型代理。
+	// AI model proxy
 	AiProvider GetUpstreamUpstreamSpecAiProviderInput `pulumi:"aiProvider"`
-	// 固定域名。
+	// Fixed domain name
 	Domain GetUpstreamUpstreamSpecDomainInput `pulumi:"domain"`
-	// 云服务器。
+	// Cloud server
 	EcsInstances GetUpstreamUpstreamSpecEcsInstanceArrayInput `pulumi:"ecsInstances"`
-	// 容器服务。
+	// Container Service
 	K8SService GetUpstreamUpstreamSpecK8SServiceInput `pulumi:"k8SService"`
-	// 注册中心。
+	// Registry Center
 	NacosService GetUpstreamUpstreamSpecNacosServiceInput `pulumi:"nacosService"`
-	// 函数服务。
+	// Function service
 	VeFaas GetUpstreamUpstreamSpecVeFaasInput `pulumi:"veFaas"`
 }
 
@@ -9707,44 +9707,44 @@ func (o GetUpstreamUpstreamSpecOutput) ToGetUpstreamUpstreamSpecOutputWithContex
 	return o
 }
 
-// AI模型代理。
+// AI model proxy
 func (o GetUpstreamUpstreamSpecOutput) AiProvider() GetUpstreamUpstreamSpecAiProviderOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpec) GetUpstreamUpstreamSpecAiProvider { return v.AiProvider }).(GetUpstreamUpstreamSpecAiProviderOutput)
 }
 
-// 固定域名。
+// Fixed domain name
 func (o GetUpstreamUpstreamSpecOutput) Domain() GetUpstreamUpstreamSpecDomainOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpec) GetUpstreamUpstreamSpecDomain { return v.Domain }).(GetUpstreamUpstreamSpecDomainOutput)
 }
 
-// 云服务器。
+// Cloud server
 func (o GetUpstreamUpstreamSpecOutput) EcsInstances() GetUpstreamUpstreamSpecEcsInstanceArrayOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpec) []GetUpstreamUpstreamSpecEcsInstance { return v.EcsInstances }).(GetUpstreamUpstreamSpecEcsInstanceArrayOutput)
 }
 
-// 容器服务。
+// Container Service
 func (o GetUpstreamUpstreamSpecOutput) K8SService() GetUpstreamUpstreamSpecK8SServiceOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpec) GetUpstreamUpstreamSpecK8SService { return v.K8SService }).(GetUpstreamUpstreamSpecK8SServiceOutput)
 }
 
-// 注册中心。
+// Registry Center
 func (o GetUpstreamUpstreamSpecOutput) NacosService() GetUpstreamUpstreamSpecNacosServiceOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpec) GetUpstreamUpstreamSpecNacosService { return v.NacosService }).(GetUpstreamUpstreamSpecNacosServiceOutput)
 }
 
-// 函数服务。
+// Function service
 func (o GetUpstreamUpstreamSpecOutput) VeFaas() GetUpstreamUpstreamSpecVeFaasOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpec) GetUpstreamUpstreamSpecVeFaas { return v.VeFaas }).(GetUpstreamUpstreamSpecVeFaasOutput)
 }
 
 type GetUpstreamUpstreamSpecAiProvider struct {
-	// 模型地址。
+	// Model address
 	BaseUrl string `pulumi:"baseUrl"`
-	// 火山自部署模型服务。
+	// Volcano Engine self-hosted model service
 	CustomModelService GetUpstreamUpstreamSpecAiProviderCustomModelService `pulumi:"customModelService"`
-	// 模型服务商名称。
+	// Model Service Provider Name
 	Name string `pulumi:"name"`
-	// 模型API key。
+	// Model API key
 	Token string `pulumi:"token"`
 }
 
@@ -9760,13 +9760,13 @@ type GetUpstreamUpstreamSpecAiProviderInput interface {
 }
 
 type GetUpstreamUpstreamSpecAiProviderArgs struct {
-	// 模型地址。
+	// Model address
 	BaseUrl pulumi.StringInput `pulumi:"baseUrl"`
-	// 火山自部署模型服务。
+	// Volcano Engine self-hosted model service
 	CustomModelService GetUpstreamUpstreamSpecAiProviderCustomModelServiceInput `pulumi:"customModelService"`
-	// 模型服务商名称。
+	// Model Service Provider Name
 	Name pulumi.StringInput `pulumi:"name"`
-	// 模型API key。
+	// Model API key
 	Token pulumi.StringInput `pulumi:"token"`
 }
 
@@ -9796,34 +9796,34 @@ func (o GetUpstreamUpstreamSpecAiProviderOutput) ToGetUpstreamUpstreamSpecAiProv
 	return o
 }
 
-// 模型地址。
+// Model address
 func (o GetUpstreamUpstreamSpecAiProviderOutput) BaseUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpecAiProvider) string { return v.BaseUrl }).(pulumi.StringOutput)
 }
 
-// 火山自部署模型服务。
+// Volcano Engine self-hosted model service
 func (o GetUpstreamUpstreamSpecAiProviderOutput) CustomModelService() GetUpstreamUpstreamSpecAiProviderCustomModelServiceOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpecAiProvider) GetUpstreamUpstreamSpecAiProviderCustomModelService {
 		return v.CustomModelService
 	}).(GetUpstreamUpstreamSpecAiProviderCustomModelServiceOutput)
 }
 
-// 模型服务商名称。
+// Model Service Provider Name
 func (o GetUpstreamUpstreamSpecAiProviderOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpecAiProvider) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 模型API key。
+// Model API key
 func (o GetUpstreamUpstreamSpecAiProviderOutput) Token() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpecAiProvider) string { return v.Token }).(pulumi.StringOutput)
 }
 
 type GetUpstreamUpstreamSpecAiProviderCustomModelService struct {
-	// 模型服务名称。
+	// Model Service Name
 	Name string `pulumi:"name"`
-	// 命名空间。
+	// Namespace
 	Namespace string `pulumi:"namespace"`
-	// 端口。
+	// Port
 	Port int `pulumi:"port"`
 }
 
@@ -9839,11 +9839,11 @@ type GetUpstreamUpstreamSpecAiProviderCustomModelServiceInput interface {
 }
 
 type GetUpstreamUpstreamSpecAiProviderCustomModelServiceArgs struct {
-	// 模型服务名称。
+	// Model Service Name
 	Name pulumi.StringInput `pulumi:"name"`
-	// 命名空间。
+	// Namespace
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// 端口。
+	// Port
 	Port pulumi.IntInput `pulumi:"port"`
 }
 
@@ -9873,23 +9873,23 @@ func (o GetUpstreamUpstreamSpecAiProviderCustomModelServiceOutput) ToGetUpstream
 	return o
 }
 
-// 模型服务名称。
+// Model Service Name
 func (o GetUpstreamUpstreamSpecAiProviderCustomModelServiceOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpecAiProviderCustomModelService) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 命名空间。
+// Namespace
 func (o GetUpstreamUpstreamSpecAiProviderCustomModelServiceOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpecAiProviderCustomModelService) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// 端口。
+// Port
 func (o GetUpstreamUpstreamSpecAiProviderCustomModelServiceOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpecAiProviderCustomModelService) int { return v.Port }).(pulumi.IntOutput)
 }
 
 type GetUpstreamUpstreamSpecDomain struct {
-	// 域名列表。
+	// Domain name list
 	DomainLists []GetUpstreamUpstreamSpecDomainDomainList `pulumi:"domainLists"`
 }
 
@@ -9905,7 +9905,7 @@ type GetUpstreamUpstreamSpecDomainInput interface {
 }
 
 type GetUpstreamUpstreamSpecDomainArgs struct {
-	// 域名列表。
+	// Domain name list
 	DomainLists GetUpstreamUpstreamSpecDomainDomainListArrayInput `pulumi:"domainLists"`
 }
 
@@ -9935,15 +9935,15 @@ func (o GetUpstreamUpstreamSpecDomainOutput) ToGetUpstreamUpstreamSpecDomainOutp
 	return o
 }
 
-// 域名列表。
+// Domain name list
 func (o GetUpstreamUpstreamSpecDomainOutput) DomainLists() GetUpstreamUpstreamSpecDomainDomainListArrayOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpecDomain) []GetUpstreamUpstreamSpecDomainDomainList { return v.DomainLists }).(GetUpstreamUpstreamSpecDomainDomainListArrayOutput)
 }
 
 type GetUpstreamUpstreamSpecDomainDomainList struct {
-	// 域名。
+	// Domain name
 	Domain string `pulumi:"domain"`
-	// 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+	// Port. Default: 80 for HTTP, 443 for HTTPS
 	Port int `pulumi:"port"`
 }
 
@@ -9959,9 +9959,9 @@ type GetUpstreamUpstreamSpecDomainDomainListInput interface {
 }
 
 type GetUpstreamUpstreamSpecDomainDomainListArgs struct {
-	// 域名。
+	// Domain name
 	Domain pulumi.StringInput `pulumi:"domain"`
-	// 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+	// Port. Default: 80 for HTTP, 443 for HTTPS
 	Port pulumi.IntInput `pulumi:"port"`
 }
 
@@ -10016,12 +10016,12 @@ func (o GetUpstreamUpstreamSpecDomainDomainListOutput) ToGetUpstreamUpstreamSpec
 	return o
 }
 
-// 域名。
+// Domain name
 func (o GetUpstreamUpstreamSpecDomainDomainListOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpecDomainDomainList) string { return v.Domain }).(pulumi.StringOutput)
 }
 
-// 端口。协议类型为HTTP时，默认值为80。协议类型为HTTPS时，默认值为443。
+// Port. Default: 80 for HTTP, 443 for HTTPS
 func (o GetUpstreamUpstreamSpecDomainDomainListOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpecDomainDomainList) int { return v.Port }).(pulumi.IntOutput)
 }
@@ -10047,11 +10047,11 @@ func (o GetUpstreamUpstreamSpecDomainDomainListArrayOutput) Index(i pulumi.IntIn
 }
 
 type GetUpstreamUpstreamSpecEcsInstance struct {
-	// 云服务器ID。
+	// Cloud server ID
 	EcsId string `pulumi:"ecsId"`
-	// IP地址。
+	// IP address
 	Ip string `pulumi:"ip"`
-	// 端口。
+	// Port
 	Port int `pulumi:"port"`
 }
 
@@ -10067,11 +10067,11 @@ type GetUpstreamUpstreamSpecEcsInstanceInput interface {
 }
 
 type GetUpstreamUpstreamSpecEcsInstanceArgs struct {
-	// 云服务器ID。
+	// Cloud server ID
 	EcsId pulumi.StringInput `pulumi:"ecsId"`
-	// IP地址。
+	// IP address
 	Ip pulumi.StringInput `pulumi:"ip"`
-	// 端口。
+	// Port
 	Port pulumi.IntInput `pulumi:"port"`
 }
 
@@ -10126,17 +10126,17 @@ func (o GetUpstreamUpstreamSpecEcsInstanceOutput) ToGetUpstreamUpstreamSpecEcsIn
 	return o
 }
 
-// 云服务器ID。
+// Cloud server ID
 func (o GetUpstreamUpstreamSpecEcsInstanceOutput) EcsId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpecEcsInstance) string { return v.EcsId }).(pulumi.StringOutput)
 }
 
-// IP地址。
+// IP address
 func (o GetUpstreamUpstreamSpecEcsInstanceOutput) Ip() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpecEcsInstance) string { return v.Ip }).(pulumi.StringOutput)
 }
 
-// 端口。
+// Port
 func (o GetUpstreamUpstreamSpecEcsInstanceOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpecEcsInstance) int { return v.Port }).(pulumi.IntOutput)
 }
@@ -10162,11 +10162,11 @@ func (o GetUpstreamUpstreamSpecEcsInstanceArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetUpstreamUpstreamSpecK8SService struct {
-	// 容器服务名称。长度限制为2~63个字符。
+	// Container Service Name. Length: 2–63 characters
 	Name string `pulumi:"name"`
-	// 命名空间。长度限制为2~63个字符。
+	// Namespace. Length: 2~63 characters
 	Namespace string `pulumi:"namespace"`
-	// 端口。
+	// Port
 	Port int `pulumi:"port"`
 }
 
@@ -10182,11 +10182,11 @@ type GetUpstreamUpstreamSpecK8SServiceInput interface {
 }
 
 type GetUpstreamUpstreamSpecK8SServiceArgs struct {
-	// 容器服务名称。长度限制为2~63个字符。
+	// Container Service Name. Length: 2–63 characters
 	Name pulumi.StringInput `pulumi:"name"`
-	// 命名空间。长度限制为2~63个字符。
+	// Namespace. Length: 2~63 characters
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// 端口。
+	// Port
 	Port pulumi.IntInput `pulumi:"port"`
 }
 
@@ -10216,31 +10216,31 @@ func (o GetUpstreamUpstreamSpecK8SServiceOutput) ToGetUpstreamUpstreamSpecK8SSer
 	return o
 }
 
-// 容器服务名称。长度限制为2~63个字符。
+// Container Service Name. Length: 2–63 characters
 func (o GetUpstreamUpstreamSpecK8SServiceOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpecK8SService) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 命名空间。长度限制为2~63个字符。
+// Namespace. Length: 2~63 characters
 func (o GetUpstreamUpstreamSpecK8SServiceOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpecK8SService) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// 端口。
+// Port
 func (o GetUpstreamUpstreamSpecK8SServiceOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpecK8SService) int { return v.Port }).(pulumi.IntOutput)
 }
 
 type GetUpstreamUpstreamSpecNacosService struct {
-	// 分组。
+	// Group
 	Group string `pulumi:"group"`
-	// 命名空间。
+	// Namespace
 	Namespace string `pulumi:"namespace"`
-	// 命名空间ID。
+	// Namespace ID
 	NamespaceId string `pulumi:"namespaceId"`
-	// 服务。
+	// Service
 	Service string `pulumi:"service"`
-	// Upstream来源ID。
+	// Upstream source ID
 	UpstreamSourceId string `pulumi:"upstreamSourceId"`
 }
 
@@ -10256,15 +10256,15 @@ type GetUpstreamUpstreamSpecNacosServiceInput interface {
 }
 
 type GetUpstreamUpstreamSpecNacosServiceArgs struct {
-	// 分组。
+	// Group
 	Group pulumi.StringInput `pulumi:"group"`
-	// 命名空间。
+	// Namespace
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// 命名空间ID。
+	// Namespace ID
 	NamespaceId pulumi.StringInput `pulumi:"namespaceId"`
-	// 服务。
+	// Service
 	Service pulumi.StringInput `pulumi:"service"`
-	// Upstream来源ID。
+	// Upstream source ID
 	UpstreamSourceId pulumi.StringInput `pulumi:"upstreamSourceId"`
 }
 
@@ -10294,33 +10294,33 @@ func (o GetUpstreamUpstreamSpecNacosServiceOutput) ToGetUpstreamUpstreamSpecNaco
 	return o
 }
 
-// 分组。
+// Group
 func (o GetUpstreamUpstreamSpecNacosServiceOutput) Group() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpecNacosService) string { return v.Group }).(pulumi.StringOutput)
 }
 
-// 命名空间。
+// Namespace
 func (o GetUpstreamUpstreamSpecNacosServiceOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpecNacosService) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// 命名空间ID。
+// Namespace ID
 func (o GetUpstreamUpstreamSpecNacosServiceOutput) NamespaceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpecNacosService) string { return v.NamespaceId }).(pulumi.StringOutput)
 }
 
-// 服务。
+// Service
 func (o GetUpstreamUpstreamSpecNacosServiceOutput) Service() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpecNacosService) string { return v.Service }).(pulumi.StringOutput)
 }
 
-// Upstream来源ID。
+// Upstream source ID
 func (o GetUpstreamUpstreamSpecNacosServiceOutput) UpstreamSourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpecNacosService) string { return v.UpstreamSourceId }).(pulumi.StringOutput)
 }
 
 type GetUpstreamUpstreamSpecVeFaas struct {
-	// 函数ID。
+	// Function ID
 	FunctionId string `pulumi:"functionId"`
 }
 
@@ -10336,7 +10336,7 @@ type GetUpstreamUpstreamSpecVeFaasInput interface {
 }
 
 type GetUpstreamUpstreamSpecVeFaasArgs struct {
-	// 函数ID。
+	// Function ID
 	FunctionId pulumi.StringInput `pulumi:"functionId"`
 }
 
@@ -10366,17 +10366,17 @@ func (o GetUpstreamUpstreamSpecVeFaasOutput) ToGetUpstreamUpstreamSpecVeFaasOutp
 	return o
 }
 
-// 函数ID。
+// Function ID
 func (o GetUpstreamUpstreamSpecVeFaasOutput) FunctionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamUpstreamSpecVeFaas) string { return v.FunctionId }).(pulumi.StringOutput)
 }
 
 type GetUpstreamVersionDetail struct {
-	// 标签。
+	// Tag
 	Labels []GetUpstreamVersionDetailLabel `pulumi:"labels"`
-	// 版本名称。支持大小写字母、数字和中划线（-），长度限制为2~63个字符。不能以中划线（-）开头。
+	// Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
 	Name string `pulumi:"name"`
-	// 更新时间。
+	// Update time
 	UpdateTime string `pulumi:"updateTime"`
 }
 
@@ -10392,11 +10392,11 @@ type GetUpstreamVersionDetailInput interface {
 }
 
 type GetUpstreamVersionDetailArgs struct {
-	// 标签。
+	// Tag
 	Labels GetUpstreamVersionDetailLabelArrayInput `pulumi:"labels"`
-	// 版本名称。支持大小写字母、数字和中划线（-），长度限制为2~63个字符。不能以中划线（-）开头。
+	// Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
 	Name pulumi.StringInput `pulumi:"name"`
-	// 更新时间。
+	// Update time
 	UpdateTime pulumi.StringInput `pulumi:"updateTime"`
 }
 
@@ -10451,17 +10451,17 @@ func (o GetUpstreamVersionDetailOutput) ToGetUpstreamVersionDetailOutputWithCont
 	return o
 }
 
-// 标签。
+// Tag
 func (o GetUpstreamVersionDetailOutput) Labels() GetUpstreamVersionDetailLabelArrayOutput {
 	return o.ApplyT(func(v GetUpstreamVersionDetail) []GetUpstreamVersionDetailLabel { return v.Labels }).(GetUpstreamVersionDetailLabelArrayOutput)
 }
 
-// 版本名称。支持大小写字母、数字和中划线（-），长度限制为2~63个字符。不能以中划线（-）开头。
+// Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
 func (o GetUpstreamVersionDetailOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamVersionDetail) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// 更新时间。
+// Update time
 func (o GetUpstreamVersionDetailOutput) UpdateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamVersionDetail) string { return v.UpdateTime }).(pulumi.StringOutput)
 }
@@ -10487,9 +10487,9 @@ func (o GetUpstreamVersionDetailArrayOutput) Index(i pulumi.IntInput) GetUpstrea
 }
 
 type GetUpstreamVersionDetailLabel struct {
-	// 键。
+	// Key
 	Key string `pulumi:"key"`
-	// 值。
+	// Value
 	Value string `pulumi:"value"`
 }
 
@@ -10505,9 +10505,9 @@ type GetUpstreamVersionDetailLabelInput interface {
 }
 
 type GetUpstreamVersionDetailLabelArgs struct {
-	// 键。
+	// Key
 	Key pulumi.StringInput `pulumi:"key"`
-	// 值。
+	// Value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -10562,12 +10562,12 @@ func (o GetUpstreamVersionDetailLabelOutput) ToGetUpstreamVersionDetailLabelOutp
 	return o
 }
 
-// 键。
+// Key
 func (o GetUpstreamVersionDetailLabelOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamVersionDetailLabel) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// 值。
+// Value
 func (o GetUpstreamVersionDetailLabelOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUpstreamVersionDetailLabel) string { return v.Value }).(pulumi.StringOutput)
 }

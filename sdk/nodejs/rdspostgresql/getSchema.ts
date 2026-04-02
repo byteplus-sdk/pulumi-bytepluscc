@@ -29,7 +29,7 @@ export interface GetSchemaArgs {
  */
 export interface GetSchemaResult {
     /**
-     * 数据库名称
+     * Database name
      */
     readonly dbName: string;
     /**
@@ -37,15 +37,15 @@ export interface GetSchemaResult {
      */
     readonly id: string;
     /**
-     * 实例 ID
+     * Instance ID
      */
     readonly instanceId: string;
     /**
-     * Schema 的 owner。说明实例只读账号、被禁用了 DDL 权限的高权限账号或被禁用了 DDL 权限的普通账号不能作为 Schema 的 owner。
+     * Schema owner. Note that instance read-only accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the Schema owner.
      */
     readonly owner: string;
     /**
-     * Schema 名称。长度 2~63 个字符。由字母、数字、下划线（*）或中划线（-）组成。以字母开头，字母或数字结尾。不能使用保留关键字，所有被禁用的关键词请参见禁用关键词。不能以 pg* 开头
+     * Schema name. Length: 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Reserved keywords are not allowed; for all disabled keywords, see Disabled Keywords. Cannot start with pg*
      */
     readonly schemaName: string;
 }

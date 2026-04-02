@@ -16,14 +16,14 @@ public final class GatewayEventArgs extends com.pulumi.resources.ResourceArgs {
     public static final GatewayEventArgs Empty = new GatewayEventArgs();
 
     /**
-     * 事件代码。
+     * Event code
      * 
      */
     @Import(name="code")
     private @Nullable Output<String> code;
 
     /**
-     * @return 事件代码。
+     * @return Event code
      * 
      */
     public Optional<Output<String>> code() {
@@ -31,14 +31,14 @@ public final class GatewayEventArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 事件创建时间。
+     * Event creation time
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 事件创建时间。
+     * @return Event creation time
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -46,14 +46,14 @@ public final class GatewayEventArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 附带信息。
+     * Additional information
      * 
      */
     @Import(name="data")
     private @Nullable Output<String> data;
 
     /**
-     * @return 附带信息。
+     * @return Additional information
      * 
      */
     public Optional<Output<String>> data() {
@@ -61,14 +61,14 @@ public final class GatewayEventArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 事件描述。
+     * Event description
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 事件描述。
+     * @return Event description
      * 
      */
     public Optional<Output<String>> description() {
@@ -103,7 +103,7 @@ public final class GatewayEventArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param code 事件代码。
+         * @param code Event code
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class GatewayEventArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param code 事件代码。
+         * @param code Event code
          * 
          * @return builder
          * 
@@ -124,7 +124,7 @@ public final class GatewayEventArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 事件创建时间。
+         * @param createdTime Event creation time
          * 
          * @return builder
          * 
@@ -135,7 +135,7 @@ public final class GatewayEventArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 事件创建时间。
+         * @param createdTime Event creation time
          * 
          * @return builder
          * 
@@ -145,7 +145,7 @@ public final class GatewayEventArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param data 附带信息。
+         * @param data Additional information
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class GatewayEventArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param data 附带信息。
+         * @param data Additional information
          * 
          * @return builder
          * 
@@ -166,7 +166,7 @@ public final class GatewayEventArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 事件描述。
+         * @param description Event description
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class GatewayEventArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 事件描述。
+         * @param description Event description
          * 
          * @return builder
          * 

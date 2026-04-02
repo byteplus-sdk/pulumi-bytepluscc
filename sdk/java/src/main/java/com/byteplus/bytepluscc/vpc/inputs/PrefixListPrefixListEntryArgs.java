@@ -16,14 +16,14 @@ public final class PrefixListPrefixListEntryArgs extends com.pulumi.resources.Re
     public static final PrefixListPrefixListEntryArgs Empty = new PrefixListPrefixListEntryArgs();
 
     /**
-     * 前缀列表条目的CIDR。
+     * CIDR of the prefix list entry.
      * 
      */
     @Import(name="cidr")
     private @Nullable Output<String> cidr;
 
     /**
-     * @return 前缀列表条目的CIDR。
+     * @return CIDR of the prefix list entry.
      * 
      */
     public Optional<Output<String>> cidr() {
@@ -31,14 +31,14 @@ public final class PrefixListPrefixListEntryArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * 前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * Description of the prefix list entry. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * @return Description of the prefix list entry. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
      * 
      */
     public Optional<Output<String>> description() {
@@ -71,7 +71,7 @@ public final class PrefixListPrefixListEntryArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param cidr 前缀列表条目的CIDR。
+         * @param cidr CIDR of the prefix list entry.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class PrefixListPrefixListEntryArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param cidr 前缀列表条目的CIDR。
+         * @param cidr CIDR of the prefix list entry.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class PrefixListPrefixListEntryArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param description 前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+         * @param description Description of the prefix list entry. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class PrefixListPrefixListEntryArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param description 前缀列表条目的描述。长度限制为0~255个字符，需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+         * @param description Description of the prefix list entry. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
          * 
          * @return builder
          * 

@@ -19,14 +19,14 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
     public static final DbAccountState Empty = new DbAccountState();
 
     /**
-     * 账号信息描述信息，长度不超过 256 个字符。
+     * Account information description, maximum length 256 characters.
      * 
      */
     @Import(name="accountDesc")
     private @Nullable Output<String> accountDesc;
 
     /**
-     * @return 账号信息描述信息，长度不超过 256 个字符。
+     * @return Account information description, maximum length 256 characters.
      * 
      */
     public Optional<Output<String>> accountDesc() {
@@ -34,14 +34,14 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 数据库账号名称。命名规则如下：长度为 2~32 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）和中划线（-）组成。账号名称在实例内必须是唯一的。不能使用某些预留字，被禁用的预留字请参见禁用词列表。说明在高权限账号名称中可使用关键字 root 和 admin。
+     * Database account name. Naming rules: Must be 2–32 characters long. Must start with a letter and end with a letter or number. Can contain letters, numbers, underscores (_), and hyphens (-). The account name must be unique within the instance. Certain reserved words cannot be used; for disabled reserved words, see the disabled word list. Note: The keywords root and admin can be used in high-privilege account names.
      * 
      */
     @Import(name="accountName")
     private @Nullable Output<String> accountName;
 
     /**
-     * @return 数据库账号名称。命名规则如下：长度为 2~32 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）和中划线（-）组成。账号名称在实例内必须是唯一的。不能使用某些预留字，被禁用的预留字请参见禁用词列表。说明在高权限账号名称中可使用关键字 root 和 admin。
+     * @return Database account name. Naming rules: Must be 2–32 characters long. Must start with a letter and end with a letter or number. Can contain letters, numbers, underscores (_), and hyphens (-). The account name must be unique within the instance. Certain reserved words cannot be used; for disabled reserved words, see the disabled word list. Note: The keywords root and admin can be used in high-privilege account names.
      * 
      */
     public Optional<Output<String>> accountName() {
@@ -49,14 +49,14 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 数据库账号的密码。规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/。
+     * Database account password. Rules: Length must be 8–32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/.
      * 
      */
     @Import(name="accountPassword")
     private @Nullable Output<String> accountPassword;
 
     /**
-     * @return 数据库账号的密码。规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/。
+     * @return Database account password. Rules: Length must be 8–32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/.
      * 
      */
     public Optional<Output<String>> accountPassword() {
@@ -71,14 +71,14 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 账号的指定数据库权限信息的 SQL 语句。
+     * SQL statement for the account&#39;s specified database permission information.
      * 
      */
     @Import(name="accountPrivilegesSqls")
     private @Nullable Output<List<String>> accountPrivilegesSqls;
 
     /**
-     * @return 账号的指定数据库权限信息的 SQL 语句。
+     * @return SQL statement for the account&#39;s specified database permission information.
      * 
      */
     public Optional<Output<List<String>>> accountPrivilegesSqls() {
@@ -86,14 +86,14 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 账号状态，取值为：Unavailable：不可用。Available：可用。
+     * Account status. Values: Unavailable: unavailable. Available: available.
      * 
      */
     @Import(name="accountStatus")
     private @Nullable Output<String> accountStatus;
 
     /**
-     * @return 账号状态，取值为：Unavailable：不可用。Available：可用。
+     * @return Account status. Values: Unavailable: unavailable. Available: available.
      * 
      */
     public Optional<Output<String>> accountStatus() {
@@ -101,14 +101,14 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 账号类型，取值范围：Super：高权限账号。Normal：普通账号。
+     * Account type. Value options: Super: high-privilege account. Normal: regular account.
      * 
      */
     @Import(name="accountType")
     private @Nullable Output<String> accountType;
 
     /**
-     * @return 账号类型，取值范围：Super：高权限账号。Normal：普通账号。
+     * @return Account type. Value options: Super: high-privilege account. Normal: regular account.
      * 
      */
     public Optional<Output<String>> accountType() {
@@ -116,14 +116,14 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 账号拥有的表列权限所属的数据库。说明如果账号没有表列权限，则不返回该字段。
+     * The database to which the account&#39;s table/column privileges belong. Note: If the account does not have table/column privileges, this field will not be returned.
      * 
      */
     @Import(name="hasTableColumnPrivilegeDbNames")
     private @Nullable Output<List<String>> hasTableColumnPrivilegeDbNames;
 
     /**
-     * @return 账号拥有的表列权限所属的数据库。说明如果账号没有表列权限，则不返回该字段。
+     * @return The database to which the account&#39;s table/column privileges belong. Note: If the account does not have table/column privileges, this field will not be returned.
      * 
      */
     public Optional<Output<List<String>>> hasTableColumnPrivilegeDbNames() {
@@ -131,14 +131,14 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 指定的数据库账号可以访问数据库的 IP 地址。
+     * IP address from which the specified database account can access the database.
      * 
      */
     @Import(name="host")
     private @Nullable Output<String> host;
 
     /**
-     * @return 指定的数据库账号可以访问数据库的 IP 地址。
+     * @return IP address from which the specified database account can access the database.
      * 
      */
     public Optional<Output<String>> host() {
@@ -146,14 +146,14 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例 ID。
+     * Instance ID.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 实例 ID。
+     * @return Instance ID.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -202,7 +202,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountDesc 账号信息描述信息，长度不超过 256 个字符。
+         * @param accountDesc Account information description, maximum length 256 characters.
          * 
          * @return builder
          * 
@@ -213,7 +213,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountDesc 账号信息描述信息，长度不超过 256 个字符。
+         * @param accountDesc Account information description, maximum length 256 characters.
          * 
          * @return builder
          * 
@@ -223,7 +223,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountName 数据库账号名称。命名规则如下：长度为 2~32 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）和中划线（-）组成。账号名称在实例内必须是唯一的。不能使用某些预留字，被禁用的预留字请参见禁用词列表。说明在高权限账号名称中可使用关键字 root 和 admin。
+         * @param accountName Database account name. Naming rules: Must be 2–32 characters long. Must start with a letter and end with a letter or number. Can contain letters, numbers, underscores (_), and hyphens (-). The account name must be unique within the instance. Certain reserved words cannot be used; for disabled reserved words, see the disabled word list. Note: The keywords root and admin can be used in high-privilege account names.
          * 
          * @return builder
          * 
@@ -234,7 +234,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountName 数据库账号名称。命名规则如下：长度为 2~32 个字符。以字母开头，以字母或数字结尾。由字母、数字、下划线（_）和中划线（-）组成。账号名称在实例内必须是唯一的。不能使用某些预留字，被禁用的预留字请参见禁用词列表。说明在高权限账号名称中可使用关键字 root 和 admin。
+         * @param accountName Database account name. Naming rules: Must be 2–32 characters long. Must start with a letter and end with a letter or number. Can contain letters, numbers, underscores (_), and hyphens (-). The account name must be unique within the instance. Certain reserved words cannot be used; for disabled reserved words, see the disabled word list. Note: The keywords root and admin can be used in high-privilege account names.
          * 
          * @return builder
          * 
@@ -244,7 +244,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountPassword 数据库账号的密码。规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/。
+         * @param accountPassword Database account password. Rules: Length must be 8–32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/.
          * 
          * @return builder
          * 
@@ -255,7 +255,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountPassword 数据库账号的密码。规则如下：长度为 8~32 个字符。由大写字母、小写字母、数字、特殊字符中的至少三种组成。特殊字符为 !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/。
+         * @param accountPassword Database account password. Rules: Length must be 8–32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/.
          * 
          * @return builder
          * 
@@ -278,7 +278,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountPrivilegesSqls 账号的指定数据库权限信息的 SQL 语句。
+         * @param accountPrivilegesSqls SQL statement for the account&#39;s specified database permission information.
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountPrivilegesSqls 账号的指定数据库权限信息的 SQL 语句。
+         * @param accountPrivilegesSqls SQL statement for the account&#39;s specified database permission information.
          * 
          * @return builder
          * 
@@ -299,7 +299,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountPrivilegesSqls 账号的指定数据库权限信息的 SQL 语句。
+         * @param accountPrivilegesSqls SQL statement for the account&#39;s specified database permission information.
          * 
          * @return builder
          * 
@@ -309,7 +309,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountStatus 账号状态，取值为：Unavailable：不可用。Available：可用。
+         * @param accountStatus Account status. Values: Unavailable: unavailable. Available: available.
          * 
          * @return builder
          * 
@@ -320,7 +320,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountStatus 账号状态，取值为：Unavailable：不可用。Available：可用。
+         * @param accountStatus Account status. Values: Unavailable: unavailable. Available: available.
          * 
          * @return builder
          * 
@@ -330,7 +330,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountType 账号类型，取值范围：Super：高权限账号。Normal：普通账号。
+         * @param accountType Account type. Value options: Super: high-privilege account. Normal: regular account.
          * 
          * @return builder
          * 
@@ -341,7 +341,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountType 账号类型，取值范围：Super：高权限账号。Normal：普通账号。
+         * @param accountType Account type. Value options: Super: high-privilege account. Normal: regular account.
          * 
          * @return builder
          * 
@@ -351,7 +351,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param hasTableColumnPrivilegeDbNames 账号拥有的表列权限所属的数据库。说明如果账号没有表列权限，则不返回该字段。
+         * @param hasTableColumnPrivilegeDbNames The database to which the account&#39;s table/column privileges belong. Note: If the account does not have table/column privileges, this field will not be returned.
          * 
          * @return builder
          * 
@@ -362,7 +362,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param hasTableColumnPrivilegeDbNames 账号拥有的表列权限所属的数据库。说明如果账号没有表列权限，则不返回该字段。
+         * @param hasTableColumnPrivilegeDbNames The database to which the account&#39;s table/column privileges belong. Note: If the account does not have table/column privileges, this field will not be returned.
          * 
          * @return builder
          * 
@@ -372,7 +372,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param hasTableColumnPrivilegeDbNames 账号拥有的表列权限所属的数据库。说明如果账号没有表列权限，则不返回该字段。
+         * @param hasTableColumnPrivilegeDbNames The database to which the account&#39;s table/column privileges belong. Note: If the account does not have table/column privileges, this field will not be returned.
          * 
          * @return builder
          * 
@@ -382,7 +382,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param host 指定的数据库账号可以访问数据库的 IP 地址。
+         * @param host IP address from which the specified database account can access the database.
          * 
          * @return builder
          * 
@@ -393,7 +393,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param host 指定的数据库账号可以访问数据库的 IP 地址。
+         * @param host IP address from which the specified database account can access the database.
          * 
          * @return builder
          * 
@@ -403,7 +403,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID.
          * 
          * @return builder
          * 
@@ -414,7 +414,7 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID.
          * 
          * @return builder
          * 

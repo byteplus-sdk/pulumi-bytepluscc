@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class GetDomainRequestBlockRuleResult
     {
         /// <summary>
-        /// 表示一个拦截规则列表。列表中最多可以包含 10 条规则。当 Switch 是 true 时，该参数为必填。
+        /// Represents a list of interception rules. The list can contain up to 10 rules. When Switch is true, this parameter is required.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDomainRequestBlockRuleBlockRuleResult> BlockRules;
         /// <summary>
-        /// 表示该模块的配置开关。该参数有以下取值：true：表示启用该模块。false：表示禁用该模块。该参数的默认值是 false。
+        /// Indicates the configuration switch for this module. This parameter has the following values: true: enables the module. false: disables the module. The default value is false.
         /// </summary>
         public readonly bool Switch;
 

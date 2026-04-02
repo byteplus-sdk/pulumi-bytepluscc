@@ -52,9 +52,9 @@ class NgwEipAddress(dict):
                  eip_address: Optional[builtins.str] = None,
                  using_status: Optional[builtins.str] = None):
         """
-        :param builtins.str allocation_id: 公网IP的ID。
-        :param builtins.str eip_address: 公网IP的地址。
-        :param builtins.str using_status: 公网IP的使用状态。Idle：未使用。UsedBySnat：被SNAT规则使用。UsedByDnat：被DNAT规则使用。UsedByNat：被SNAT/DNAT规则同时使用。
+        :param builtins.str allocation_id: Public IP ID
+        :param builtins.str eip_address: Public IP address
+        :param builtins.str using_status: Usage status of the public IP. Idle: Not used. UsedBySnat: Used by SNAT rule. UsedByDnat: Used by DNAT rule. UsedByNat: Used by both SNAT and DNAT rules.
         """
         if allocation_id is not None:
             pulumi.set(__self__, "allocation_id", allocation_id)
@@ -67,7 +67,7 @@ class NgwEipAddress(dict):
     @pulumi.getter(name="allocationId")
     def allocation_id(self) -> Optional[builtins.str]:
         """
-        公网IP的ID。
+        Public IP ID
         """
         return pulumi.get(self, "allocation_id")
 
@@ -75,7 +75,7 @@ class NgwEipAddress(dict):
     @pulumi.getter(name="eipAddress")
     def eip_address(self) -> Optional[builtins.str]:
         """
-        公网IP的地址。
+        Public IP address
         """
         return pulumi.get(self, "eip_address")
 
@@ -83,7 +83,7 @@ class NgwEipAddress(dict):
     @pulumi.getter(name="usingStatus")
     def using_status(self) -> Optional[builtins.str]:
         """
-        公网IP的使用状态。Idle：未使用。UsedBySnat：被SNAT规则使用。UsedByDnat：被DNAT规则使用。UsedByNat：被SNAT/DNAT规则同时使用。
+        Usage status of the public IP. Idle: Not used. UsedBySnat: Used by SNAT rule. UsedByDnat: Used by DNAT rule. UsedByNat: Used by both SNAT and DNAT rules.
         """
         return pulumi.get(self, "using_status")
 
@@ -113,8 +113,8 @@ class NgwNatIpAddress(dict):
                  nat_ip_address: Optional[builtins.str] = None,
                  nat_ip_id: Optional[builtins.str] = None):
         """
-        :param builtins.str nat_ip_address: 中转Ip地址。
-        :param builtins.str nat_ip_id: 中转Ip id。
+        :param builtins.str nat_ip_address: Transit IP address
+        :param builtins.str nat_ip_id: Transit IP ID
         """
         if nat_ip_address is not None:
             pulumi.set(__self__, "nat_ip_address", nat_ip_address)
@@ -125,7 +125,7 @@ class NgwNatIpAddress(dict):
     @pulumi.getter(name="natIpAddress")
     def nat_ip_address(self) -> Optional[builtins.str]:
         """
-        中转Ip地址。
+        Transit IP address
         """
         return pulumi.get(self, "nat_ip_address")
 
@@ -133,7 +133,7 @@ class NgwNatIpAddress(dict):
     @pulumi.getter(name="natIpId")
     def nat_ip_id(self) -> Optional[builtins.str]:
         """
-        中转Ip id。
+        Transit IP ID
         """
         return pulumi.get(self, "nat_ip_id")
 
@@ -144,8 +144,8 @@ class NgwTag(dict):
                  key: Optional[builtins.str] = None,
                  value: Optional[builtins.str] = None):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: User tag key.
+        :param builtins.str value: User tag value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -156,7 +156,7 @@ class NgwTag(dict):
     @pulumi.getter
     def key(self) -> Optional[builtins.str]:
         """
-        用户标签的标签键。
+        User tag key.
         """
         return pulumi.get(self, "key")
 
@@ -164,7 +164,7 @@ class NgwTag(dict):
     @pulumi.getter
     def value(self) -> Optional[builtins.str]:
         """
-        用户标签的标签值。
+        User tag value
         """
         return pulumi.get(self, "value")
 
@@ -176,9 +176,9 @@ class GetNgwEipAddressResult(dict):
                  eip_address: builtins.str,
                  using_status: builtins.str):
         """
-        :param builtins.str allocation_id: 公网IP的ID。
-        :param builtins.str eip_address: 公网IP的地址。
-        :param builtins.str using_status: 公网IP的使用状态。Idle：未使用。UsedBySnat：被SNAT规则使用。UsedByDnat：被DNAT规则使用。UsedByNat：被SNAT/DNAT规则同时使用。
+        :param builtins.str allocation_id: Public IP ID
+        :param builtins.str eip_address: Public IP address
+        :param builtins.str using_status: Usage status of the public IP. Idle: Not used. UsedBySnat: Used by SNAT rule. UsedByDnat: Used by DNAT rule. UsedByNat: Used by both SNAT and DNAT rules.
         """
         pulumi.set(__self__, "allocation_id", allocation_id)
         pulumi.set(__self__, "eip_address", eip_address)
@@ -188,7 +188,7 @@ class GetNgwEipAddressResult(dict):
     @pulumi.getter(name="allocationId")
     def allocation_id(self) -> builtins.str:
         """
-        公网IP的ID。
+        Public IP ID
         """
         return pulumi.get(self, "allocation_id")
 
@@ -196,7 +196,7 @@ class GetNgwEipAddressResult(dict):
     @pulumi.getter(name="eipAddress")
     def eip_address(self) -> builtins.str:
         """
-        公网IP的地址。
+        Public IP address
         """
         return pulumi.get(self, "eip_address")
 
@@ -204,7 +204,7 @@ class GetNgwEipAddressResult(dict):
     @pulumi.getter(name="usingStatus")
     def using_status(self) -> builtins.str:
         """
-        公网IP的使用状态。Idle：未使用。UsedBySnat：被SNAT规则使用。UsedByDnat：被DNAT规则使用。UsedByNat：被SNAT/DNAT规则同时使用。
+        Usage status of the public IP. Idle: Not used. UsedBySnat: Used by SNAT rule. UsedByDnat: Used by DNAT rule. UsedByNat: Used by both SNAT and DNAT rules.
         """
         return pulumi.get(self, "using_status")
 
@@ -215,8 +215,8 @@ class GetNgwNatIpAddressResult(dict):
                  nat_ip_address: builtins.str,
                  nat_ip_id: builtins.str):
         """
-        :param builtins.str nat_ip_address: 中转Ip地址。
-        :param builtins.str nat_ip_id: 中转Ip id。
+        :param builtins.str nat_ip_address: Transit IP address
+        :param builtins.str nat_ip_id: Transit IP ID
         """
         pulumi.set(__self__, "nat_ip_address", nat_ip_address)
         pulumi.set(__self__, "nat_ip_id", nat_ip_id)
@@ -225,7 +225,7 @@ class GetNgwNatIpAddressResult(dict):
     @pulumi.getter(name="natIpAddress")
     def nat_ip_address(self) -> builtins.str:
         """
-        中转Ip地址。
+        Transit IP address
         """
         return pulumi.get(self, "nat_ip_address")
 
@@ -233,7 +233,7 @@ class GetNgwNatIpAddressResult(dict):
     @pulumi.getter(name="natIpId")
     def nat_ip_id(self) -> builtins.str:
         """
-        中转Ip id。
+        Transit IP ID
         """
         return pulumi.get(self, "nat_ip_id")
 
@@ -244,8 +244,8 @@ class GetNgwTagResult(dict):
                  key: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str key: 用户标签的标签键。
-        :param builtins.str value: 用户标签的标签值。
+        :param builtins.str key: User tag key.
+        :param builtins.str value: User tag value
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -254,7 +254,7 @@ class GetNgwTagResult(dict):
     @pulumi.getter
     def key(self) -> builtins.str:
         """
-        用户标签的标签键。
+        User tag key.
         """
         return pulumi.get(self, "key")
 
@@ -262,7 +262,7 @@ class GetNgwTagResult(dict):
     @pulumi.getter
     def value(self) -> builtins.str:
         """
-        用户标签的标签值。
+        User tag value
         """
         return pulumi.get(self, "value")
 

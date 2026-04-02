@@ -14,86 +14,86 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DefaultNodePoolAutoScaling {
     /**
-     * @return 配置节点池的期望节点数。
+     * @return Configure the desired number of nodes in the node pool.
      * 
      */
     private @Nullable Integer desiredReplicas;
     /**
-     * @return 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+     * @return Configure the switch for node pool auto scaling. Parameter values: false: disabled true: enabled
      * 
      */
     private @Nullable Boolean enabled;
     /**
-     * @return 配置节点池的最大节点数。
+     * @return Configure the maximum number of nodes in the node pool
      * 
      */
     private @Nullable Integer maxReplicas;
     /**
-     * @return 配置节点池的最小节点数。
+     * @return Configure the minimum number of nodes in the node pool
      * 
      */
     private @Nullable Integer minReplicas;
     /**
-     * @return 优先级。
+     * @return Priority
      * 
      */
     private @Nullable Integer priority;
     /**
-     * @return 伸缩组ID。
+     * @return Scaling group ID
      * 
      */
     private @Nullable String scalingGroupId;
     /**
-     * @return 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+     * @return Multi-subnet scheduling policy for the node pool. Parameter value description: ZoneBalance: availability zone balancing policy. Priority: subnet priority policy.
      * 
      */
     private @Nullable String subnetPolicy;
 
     private DefaultNodePoolAutoScaling() {}
     /**
-     * @return 配置节点池的期望节点数。
+     * @return Configure the desired number of nodes in the node pool.
      * 
      */
     public Optional<Integer> desiredReplicas() {
         return Optional.ofNullable(this.desiredReplicas);
     }
     /**
-     * @return 配置节点池弹性伸缩功能开关，参数值说明：false：关闭。true：开启。
+     * @return Configure the switch for node pool auto scaling. Parameter values: false: disabled true: enabled
      * 
      */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
     /**
-     * @return 配置节点池的最大节点数。
+     * @return Configure the maximum number of nodes in the node pool
      * 
      */
     public Optional<Integer> maxReplicas() {
         return Optional.ofNullable(this.maxReplicas);
     }
     /**
-     * @return 配置节点池的最小节点数。
+     * @return Configure the minimum number of nodes in the node pool
      * 
      */
     public Optional<Integer> minReplicas() {
         return Optional.ofNullable(this.minReplicas);
     }
     /**
-     * @return 优先级。
+     * @return Priority
      * 
      */
     public Optional<Integer> priority() {
         return Optional.ofNullable(this.priority);
     }
     /**
-     * @return 伸缩组ID。
+     * @return Scaling group ID
      * 
      */
     public Optional<String> scalingGroupId() {
         return Optional.ofNullable(this.scalingGroupId);
     }
     /**
-     * @return 节点池的多子网调度策略，参数值说明：ZoneBalance：可用区均衡策略。Priority：子网优先级策略。
+     * @return Multi-subnet scheduling policy for the node pool. Parameter value description: ZoneBalance: availability zone balancing policy. Priority: subnet priority policy.
      * 
      */
     public Optional<String> subnetPolicy() {

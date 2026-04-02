@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Outputs
     public sealed class RuleDimensionConditionsProjectCondition
     {
         /// <summary>
-        /// 项目名称列表。数组形式。多个值之间使用英文半角逗号,分割。
+        /// Project name list, in array format. Separate multiple values with commas.
         /// </summary>
         public readonly ImmutableArray<string> Projects;
 

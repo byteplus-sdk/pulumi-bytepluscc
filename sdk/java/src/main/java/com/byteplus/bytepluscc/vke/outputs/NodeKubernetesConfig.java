@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NodeKubernetesConfig {
     /**
-     * @return 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+     * @return Node lock configuration. Options: false (default): not locked; true: locked
      * 
      */
     private @Nullable Boolean cordon;
@@ -24,7 +24,7 @@ public final class NodeKubernetesConfig {
 
     private NodeKubernetesConfig() {}
     /**
-     * @return 封锁节点配置，取值：false：（默认值）不封锁 true：封锁
+     * @return Node lock configuration. Options: false (default): not locked; true: locked
      * 
      */
     public Optional<Boolean> cordon() {

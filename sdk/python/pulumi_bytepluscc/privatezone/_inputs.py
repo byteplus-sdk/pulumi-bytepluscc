@@ -34,19 +34,19 @@ if not MYPY:
     class ResolverEndpointIpConfigArgsDict(TypedDict):
         az_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        终端节点 IP 地址所在的可用区。为了保证高可用，建议您至少添加 2 个可用区。
+        Availability zone for the endpoint IP address. To ensure high availability, it is recommended to add at least 2 availability zones
         """
         ip: NotRequired[pulumi.Input[builtins.str]]
         """
-        终端节点的 IPv4 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+        IPv4 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
         """
         ipv6: NotRequired[pulumi.Input[builtins.str]]
         """
-        终端节点的 IPv6 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+        IPv6 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
         """
         subnet_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        终端节点 IP 地址所在的子网 ID。
+        Subnet ID for the endpoint IP address
         """
 elif False:
     ResolverEndpointIpConfigArgsDict: TypeAlias = Mapping[str, Any]
@@ -59,10 +59,10 @@ class ResolverEndpointIpConfigArgs:
                  ipv6: Optional[pulumi.Input[builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] az_id: 终端节点 IP 地址所在的可用区。为了保证高可用，建议您至少添加 2 个可用区。
-        :param pulumi.Input[builtins.str] ip: 终端节点的 IPv4 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
-        :param pulumi.Input[builtins.str] ipv6: 终端节点的 IPv6 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
-        :param pulumi.Input[builtins.str] subnet_id: 终端节点 IP 地址所在的子网 ID。
+        :param pulumi.Input[builtins.str] az_id: Availability zone for the endpoint IP address. To ensure high availability, it is recommended to add at least 2 availability zones
+        :param pulumi.Input[builtins.str] ip: IPv4 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
+        :param pulumi.Input[builtins.str] ipv6: IPv6 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
+        :param pulumi.Input[builtins.str] subnet_id: Subnet ID for the endpoint IP address
         """
         if az_id is not None:
             pulumi.set(__self__, "az_id", az_id)
@@ -77,7 +77,7 @@ class ResolverEndpointIpConfigArgs:
     @pulumi.getter(name="azId")
     def az_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        终端节点 IP 地址所在的可用区。为了保证高可用，建议您至少添加 2 个可用区。
+        Availability zone for the endpoint IP address. To ensure high availability, it is recommended to add at least 2 availability zones
         """
         return pulumi.get(self, "az_id")
 
@@ -89,7 +89,7 @@ class ResolverEndpointIpConfigArgs:
     @pulumi.getter
     def ip(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        终端节点的 IPv4 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+        IPv4 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
         """
         return pulumi.get(self, "ip")
 
@@ -101,7 +101,7 @@ class ResolverEndpointIpConfigArgs:
     @pulumi.getter
     def ipv6(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        终端节点的 IPv6 地址。如果您不设置该参数，系统会自动分配一个 IP 地址。您最多只能添加 6 个 IP 地址。
+        IPv6 address of the endpoint. If you do not set this parameter, the system automatically assigns an IP address. You can add up to 6 IP addresses
         """
         return pulumi.get(self, "ipv6")
 
@@ -113,7 +113,7 @@ class ResolverEndpointIpConfigArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        终端节点 IP 地址所在的子网 ID。
+        Subnet ID for the endpoint IP address
         """
         return pulumi.get(self, "subnet_id")
 
@@ -126,11 +126,11 @@ if not MYPY:
     class ResolverEndpointTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        用户标签的标签键。
+        User tag key
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        用户标签的标签值。
+        User tag value
         """
 elif False:
     ResolverEndpointTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -141,8 +141,8 @@ class ResolverEndpointTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 用户标签的标签键。
-        :param pulumi.Input[builtins.str] value: 用户标签的标签值。
+        :param pulumi.Input[builtins.str] key: User tag key
+        :param pulumi.Input[builtins.str] value: User tag value
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -153,7 +153,7 @@ class ResolverEndpointTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户标签的标签键。
+        User tag key
         """
         return pulumi.get(self, "key")
 
@@ -165,7 +165,7 @@ class ResolverEndpointTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户标签的标签值。
+        User tag value
         """
         return pulumi.get(self, "value")
 
@@ -178,11 +178,11 @@ if not MYPY:
     class ResolverRuleForwardIPArgsDict(TypedDict):
         ip: NotRequired[pulumi.Input[builtins.str]]
         """
-        VPC 外部的 DNS 服务器的 IP 地址。
+        IP address of the external DNS server for the VPC
         """
         port: NotRequired[pulumi.Input[builtins.int]]
         """
-        VPC 外部的 DNS 服务器的端口。
+        Port of the external DNS server for the VPC
         """
 elif False:
     ResolverRuleForwardIPArgsDict: TypeAlias = Mapping[str, Any]
@@ -193,8 +193,8 @@ class ResolverRuleForwardIPArgs:
                  ip: Optional[pulumi.Input[builtins.str]] = None,
                  port: Optional[pulumi.Input[builtins.int]] = None):
         """
-        :param pulumi.Input[builtins.str] ip: VPC 外部的 DNS 服务器的 IP 地址。
-        :param pulumi.Input[builtins.int] port: VPC 外部的 DNS 服务器的端口。
+        :param pulumi.Input[builtins.str] ip: IP address of the external DNS server for the VPC
+        :param pulumi.Input[builtins.int] port: Port of the external DNS server for the VPC
         """
         if ip is not None:
             pulumi.set(__self__, "ip", ip)
@@ -205,7 +205,7 @@ class ResolverRuleForwardIPArgs:
     @pulumi.getter
     def ip(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPC 外部的 DNS 服务器的 IP 地址。
+        IP address of the external DNS server for the VPC
         """
         return pulumi.get(self, "ip")
 
@@ -217,7 +217,7 @@ class ResolverRuleForwardIPArgs:
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        VPC 外部的 DNS 服务器的端口。
+        Port of the external DNS server for the VPC
         """
         return pulumi.get(self, "port")
 
@@ -230,11 +230,11 @@ if not MYPY:
     class ResolverRuleTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        用户标签的标签键。
+        Tag key for the user tag
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        用户标签的标签值。
+        Tag value for the user tag
         """
 elif False:
     ResolverRuleTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -245,8 +245,8 @@ class ResolverRuleTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: 用户标签的标签键。
-        :param pulumi.Input[builtins.str] value: 用户标签的标签值。
+        :param pulumi.Input[builtins.str] key: Tag key for the user tag
+        :param pulumi.Input[builtins.str] value: Tag value for the user tag
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -257,7 +257,7 @@ class ResolverRuleTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户标签的标签键。
+        Tag key for the user tag
         """
         return pulumi.get(self, "key")
 
@@ -269,7 +269,7 @@ class ResolverRuleTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        用户标签的标签值。
+        Tag value for the user tag
         """
         return pulumi.get(self, "value")
 
@@ -282,11 +282,11 @@ if not MYPY:
     class ResolverRuleVpCArgsDict(TypedDict):
         region: NotRequired[pulumi.Input[builtins.str]]
         """
-        VPC 的地域。
+        Region of the VPC
         """
         vpc_id: NotRequired[pulumi.Input[builtins.str]]
         """
-        VPC 的 ID。
+        VPC ID
         """
 elif False:
     ResolverRuleVpCArgsDict: TypeAlias = Mapping[str, Any]
@@ -297,8 +297,8 @@ class ResolverRuleVpCArgs:
                  region: Optional[pulumi.Input[builtins.str]] = None,
                  vpc_id: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] region: VPC 的地域。
-        :param pulumi.Input[builtins.str] vpc_id: VPC 的 ID。
+        :param pulumi.Input[builtins.str] region: Region of the VPC
+        :param pulumi.Input[builtins.str] vpc_id: VPC ID
         """
         if region is not None:
             pulumi.set(__self__, "region", region)
@@ -309,7 +309,7 @@ class ResolverRuleVpCArgs:
     @pulumi.getter
     def region(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPC 的地域。
+        Region of the VPC
         """
         return pulumi.get(self, "region")
 
@@ -321,7 +321,7 @@ class ResolverRuleVpCArgs:
     @pulumi.getter(name="vpcId")
     def vpc_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        VPC 的 ID。
+        VPC ID
         """
         return pulumi.get(self, "vpc_id")
 

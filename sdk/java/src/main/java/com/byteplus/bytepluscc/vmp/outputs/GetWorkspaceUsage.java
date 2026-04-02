@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetWorkspaceUsage {
     /**
-     * @return 活跃时序数。
+     * @return Active time series count
      * 
      */
     private Integer activeSeries;
     /**
-     * @return 每秒写入样本数。
+     * @return Samples written per second
      * 
      */
     private Double ingestedSamplesPerSecond;
 
     private GetWorkspaceUsage() {}
     /**
-     * @return 活跃时序数。
+     * @return Active time series count
      * 
      */
     public Integer activeSeries() {
         return this.activeSeries;
     }
     /**
-     * @return 每秒写入样本数。
+     * @return Samples written per second
      * 
      */
     public Double ingestedSamplesPerSecond() {

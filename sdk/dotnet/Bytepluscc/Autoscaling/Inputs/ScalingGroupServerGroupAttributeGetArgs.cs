@@ -14,25 +14,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling.Inputs
     public sealed class ScalingGroupServerGroupAttributeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 负载均衡后端服务器组中服务器的端口号。取值1 ～ 65535。
+        /// Port number of the server in the backend server group for load balancing. Range: 1–65535.
         /// </summary>
         [Input("port")]
         public Input<int>? Port { get; set; }
 
         /// <summary>
-        /// 负载均衡后端服务器组的ID。
+        /// Backend server group ID for load balancing.
         /// </summary>
         [Input("serverGroupId")]
         public Input<string>? ServerGroupId { get; set; }
 
         /// <summary>
-        /// 负载均衡服务器组类型。单个CLB/ALB最多支持添加20个后端服务器组，所有CLB/ALB最多支持添加100个后端服务器。ALB：应用型负载均衡。CLB：传统型型负载均衡（默认）。
+        /// Load balancing server group type. A single CLB/ALB supports up to 20 backend server groups, and the total number of backend servers supported by all CLB/ALB is 100. ALB: Application Load Balancer. CLB: Classic Load Balancer (default).
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// 负载均衡后端服务器组中服务器的权重。
+        /// Weight of servers in the backend server group of the load balancer
         /// </summary>
         [Input("weight")]
         public Input<int>? Weight { get; set; }

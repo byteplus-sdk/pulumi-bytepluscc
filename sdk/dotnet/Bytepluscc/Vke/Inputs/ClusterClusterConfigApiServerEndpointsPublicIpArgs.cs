@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
     public sealed class ClusterClusterConfigApiServerEndpointsPublicIpArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 公网 IP 的 IPv4 地址。
+        /// IPv4 address of the public IP.
         /// </summary>
         [Input("ipv4")]
         public Input<string>? Ipv4 { get; set; }

@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class GetRuleRuleConditionPathConfig {
     /**
-     * @return 转发规则的URL，仅支持绝对路径。
+     * @return Forwarding rule URL. Only absolute paths are supported.
      * 
      */
     private List<String> values;
 
     private GetRuleRuleConditionPathConfig() {}
     /**
-     * @return 转发规则的URL，仅支持绝对路径。
+     * @return Forwarding rule URL. Only absolute paths are supported.
      * 
      */
     public List<String> values() {

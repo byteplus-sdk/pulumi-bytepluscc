@@ -22,14 +22,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
     public static final InvocationState Empty = new InvocationState();
 
     /**
-     * 命令内容。
+     * Command content.
      * 
      */
     @Import(name="commandContent")
     private @Nullable Output<String> commandContent;
 
     /**
-     * @return 命令内容。
+     * @return Command content.
      * 
      */
     public Optional<Output<String>> commandContent() {
@@ -37,14 +37,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 被调用命令的描述。
+     * Description of the invoked command.
      * 
      */
     @Import(name="commandDescription")
     private @Nullable Output<String> commandDescription;
 
     /**
-     * @return 被调用命令的描述。
+     * @return Description of the invoked command.
      * 
      */
     public Optional<Output<String>> commandDescription() {
@@ -52,14 +52,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 命令ID。
+     * Command ID.
      * 
      */
     @Import(name="commandId")
     private @Nullable Output<String> commandId;
 
     /**
-     * @return 命令ID。
+     * @return Command ID.
      * 
      */
     public Optional<Output<String>> commandId() {
@@ -67,14 +67,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 任务触发时的命令名称。
+     * Command name when the task is triggered.
      * 
      */
     @Import(name="commandName")
     private @Nullable Output<String> commandName;
 
     /**
-     * @return 任务触发时的命令名称。
+     * @return Command name when the task is triggered.
      * 
      */
     public Optional<Output<String>> commandName() {
@@ -82,14 +82,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 被调用命令的提供方。
+     * Provider of the invoked command.
      * 
      */
     @Import(name="commandProvider")
     private @Nullable Output<String> commandProvider;
 
     /**
-     * @return 被调用命令的提供方。
+     * @return Provider of the invoked command.
      * 
      */
     public Optional<Output<String>> commandProvider() {
@@ -97,14 +97,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 作业触发的命令类型。
+     * Command type triggered by the job.
      * 
      */
     @Import(name="commandType")
     private @Nullable Output<String> commandType;
 
     /**
-     * @return 作业触发的命令类型。
+     * @return Command type triggered by the job.
      * 
      */
     public Optional<Output<String>> commandType() {
@@ -112,14 +112,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 被调用命令是否使用自定义参数。true：已启用。false：未启用。
+     * Whether the invoked command uses custom parameters. true: enabled. false: not enabled.
      * 
      */
     @Import(name="enableParameter")
     private @Nullable Output<Boolean> enableParameter;
 
     /**
-     * @return 被调用命令是否使用自定义参数。true：已启用。false：未启用。
+     * @return Whether the invoked command uses custom parameters. true: enabled. false: not enabled.
      * 
      */
     public Optional<Output<Boolean>> enableParameter() {
@@ -127,14 +127,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 任务结束时间。
+     * Task end time.
      * 
      */
     @Import(name="endTime")
     private @Nullable Output<String> endTime;
 
     /**
-     * @return 任务结束时间。
+     * @return Task end time.
      * 
      */
     public Optional<Output<String>> endTime() {
@@ -142,14 +142,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 执行频率。RepeatMode=Rate 时本参数必填。格式：&lt;执行间隔数值&gt;&lt;执行间隔单位&gt;，执行间隔单位：支持分钟（5m-60m）、小时（1h-24h）和天（1d-7d）。执行间隔基于固定频率，与作业实际执行需要的时间无关。创建作业后基于LaunchTime执行一次，根据间隔设置确定下一次执行时间。
+     * Execution frequency. This parameter is required when RepeatMode=Rate. Format: \n\n\n\n. Interval units supported: minutes (5m–60m), hours (1h–24h), and days (1d–7d). The interval is based on a fixed frequency and is independent of the actual job execution time. After job creation, it executes once based on LaunchTime, and the next execution time is determined by the interval setting.
      * 
      */
     @Import(name="frequency")
     private @Nullable Output<String> frequency;
 
     /**
-     * @return 执行频率。RepeatMode=Rate 时本参数必填。格式：&lt;执行间隔数值&gt;&lt;执行间隔单位&gt;，执行间隔单位：支持分钟（5m-60m）、小时（1h-24h）和天（1d-7d）。执行间隔基于固定频率，与作业实际执行需要的时间无关。创建作业后基于LaunchTime执行一次，根据间隔设置确定下一次执行时间。
+     * @return Execution frequency. This parameter is required when RepeatMode=Rate. Format: \n\n\n\n. Interval units supported: minutes (5m–60m), hours (1h–24h), and days (1d–7d). The interval is based on a fixed frequency and is independent of the actual job execution time. After job creation, it executes once based on LaunchTime, and the next execution time is determined by the interval setting.
      * 
      */
     public Optional<Output<String>> frequency() {
@@ -157,14 +157,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例ID列表，最多支持200个ID。
+     * Instance ID list, supports up to 200 IDs.
      * 
      */
     @Import(name="instanceIds")
     private @Nullable Output<List<String>> instanceIds;
 
     /**
-     * @return 实例ID列表，最多支持200个ID。
+     * @return Instance ID list, supports up to 200 IDs.
      * 
      */
     public Optional<Output<List<String>>> instanceIds() {
@@ -172,14 +172,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 执行实例数量。
+     * Number of instances executed.
      * 
      */
     @Import(name="instanceNumber")
     private @Nullable Output<Integer> instanceNumber;
 
     /**
-     * @return 执行实例数量。
+     * @return Number of instances executed.
      * 
      */
     public Optional<Output<Integer>> instanceNumber() {
@@ -187,14 +187,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 作业描述，默认为空字符串，不超过256个字符。
+     * Job description. Defaults to an empty string and must not exceed 256 characters.
      * 
      */
     @Import(name="invocationDescription")
     private @Nullable Output<String> invocationDescription;
 
     /**
-     * @return 作业描述，默认为空字符串，不超过256个字符。
+     * @return Job description. Defaults to an empty string and must not exceed 256 characters.
      * 
      */
     public Optional<Output<String>> invocationDescription() {
@@ -202,14 +202,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 任务执行 ID。
+     * Task execution ID.
      * 
      */
     @Import(name="invocationId")
     private @Nullable Output<String> invocationId;
 
     /**
-     * @return 任务执行 ID。
+     * @return Task execution ID.
      * 
      */
     public Optional<Output<String>> invocationId() {
@@ -217,14 +217,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 作业名称。不超过64个字符。暂不限制特殊字符。同地域下作业名称可重复。
+     * Job name. Maximum 64 characters. No restriction on special characters. Job names can be duplicated within the same region.
      * 
      */
     @Import(name="invocationName")
     private @Nullable Output<String> invocationName;
 
     /**
-     * @return 作业名称。不超过64个字符。暂不限制特殊字符。同地域下作业名称可重复。
+     * @return Job name. Maximum 64 characters. No restriction on special characters. Job names can be duplicated within the same region.
      * 
      */
     public Optional<Output<String>> invocationName() {
@@ -239,14 +239,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 命令执行的总执行状态。
+     * Overall execution status of the command.
      * 
      */
     @Import(name="invocationStatus")
     private @Nullable Output<String> invocationStatus;
 
     /**
-     * @return 命令执行的总执行状态。
+     * @return Overall execution status of the command.
      * 
      */
     public Optional<Output<String>> invocationStatus() {
@@ -254,14 +254,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 执行时间。
+     * Execution time.
      * 
      */
     @Import(name="launchTime")
     private @Nullable Output<String> launchTime;
 
     /**
-     * @return 执行时间。
+     * @return Execution time.
      * 
      */
     public Optional<Output<String>> launchTime() {
@@ -276,14 +276,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 命令中包含自定义参数时，需通过本参数传入自定义参数的键值对。自定义参数个数范围为0~60。Key不允许为空字符串，最多支持64个字符。Value允许为空字符串。自定义参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的自定义参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+     * When the command includes custom parameters, use this parameter to pass custom parameter key-value pairs. The number of custom parameters ranges from 0 to 60. Key cannot be an empty string and supports up to 64 characters. Value can be an empty string. The combined length of custom parameters and original command content after Base64 encoding must not exceed 16 KB. The set of custom parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
      * 
      */
     @Import(name="parameters")
     private @Nullable Output<String> parameters;
 
     /**
-     * @return 命令中包含自定义参数时，需通过本参数传入自定义参数的键值对。自定义参数个数范围为0~60。Key不允许为空字符串，最多支持64个字符。Value允许为空字符串。自定义参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的自定义参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+     * @return When the command includes custom parameters, use this parameter to pass custom parameter key-value pairs. The number of custom parameters ranges from 0 to 60. Key cannot be an empty string and supports up to 64 characters. Value can be an empty string. The combined length of custom parameters and original command content after Base64 encoding must not exceed 16 KB. The set of custom parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
      * 
      */
     public Optional<Output<String>> parameters() {
@@ -291,14 +291,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 资源所属项目，一个资源只能归属于一个项目。
+     * Project to which the resource belongs; each resource can belong to only one project.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 资源所属项目，一个资源只能归属于一个项目。
+     * @return Project to which the resource belongs; each resource can belong to only one project.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -306,14 +306,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 周期结束时间，仅适用于周期任务（Rate）。
+     * Cycle end time, applicable only to periodic tasks (Rate).
      * 
      */
     @Import(name="recurrenceEndTime")
     private @Nullable Output<String> recurrenceEndTime;
 
     /**
-     * @return 周期结束时间，仅适用于周期任务（Rate）。
+     * @return Cycle end time, applicable only to periodic tasks (Rate).
      * 
      */
     public Optional<Output<String>> recurrenceEndTime() {
@@ -321,14 +321,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 设置命令执行的方式。Once：默认，表示立即执行命令。Rate：周期执行命令，需要通过Frequency参数传入Rate表达式指定执行周期。Fixed：定时执行命令，需要通过LaunchTime参数指定的执行时间。
+     * Set the command execution mode. Once: Default, executes the command immediately. Rate: Executes the command periodically; specify the execution cycle using the Frequency parameter and Rate expression. Fixed: Executes the command at a scheduled time; specify the execution time using the LaunchTime parameter.
      * 
      */
     @Import(name="repeatMode")
     private @Nullable Output<String> repeatMode;
 
     /**
-     * @return 设置命令执行的方式。Once：默认，表示立即执行命令。Rate：周期执行命令，需要通过Frequency参数传入Rate表达式指定执行周期。Fixed：定时执行命令，需要通过LaunchTime参数指定的执行时间。
+     * @return Set the command execution mode. Once: Default, executes the command immediately. Rate: Executes the command periodically; specify the execution cycle using the Frequency parameter and Rate expression. Fixed: Executes the command at a scheduled time; specify the execution time using the LaunchTime parameter.
      * 
      */
     public Optional<Output<String>> repeatMode() {
@@ -336,14 +336,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 任务开始时间。
+     * Task start time.
      * 
      */
     @Import(name="startTime")
     private @Nullable Output<String> startTime;
 
     /**
-     * @return 任务开始时间。
+     * @return Task start time.
      * 
      */
     public Optional<Output<String>> startTime() {
@@ -358,14 +358,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。默认值：60。可选范围为：30~86400。
+     * Maximum timeout for command execution in ECS instances, in seconds. Default: 60. Optional range: 30–86400.
      * 
      */
     @Import(name="timeout")
     private @Nullable Output<Integer> timeout;
 
     /**
-     * @return 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。默认值：60。可选范围为：30~86400。
+     * @return Maximum timeout for command execution in ECS instances, in seconds. Default: 60. Optional range: 30–86400.
      * 
      */
     public Optional<Output<Integer>> timeout() {
@@ -373,14 +373,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 在ECS实例中执行命令的用户名称。
+     * User name for executing the command in the ECS instance.
      * 
      */
     @Import(name="username")
     private @Nullable Output<String> username;
 
     /**
-     * @return 在ECS实例中执行命令的用户名称。
+     * @return User name for executing the command in the ECS instance.
      * 
      */
     public Optional<Output<String>> username() {
@@ -388,14 +388,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 自定义windows用户的密码。
+     * Password for custom Windows user.
      * 
      */
     @Import(name="windowsPassword")
     private @Nullable Output<String> windowsPassword;
 
     /**
-     * @return 自定义windows用户的密码。
+     * @return Password for custom Windows user.
      * 
      */
     public Optional<Output<String>> windowsPassword() {
@@ -403,14 +403,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建的命令在ECS实例中运行的目录。
+     * Directory where the created command runs in the ECS instance.
      * 
      */
     @Import(name="workingDir")
     private @Nullable Output<String> workingDir;
 
     /**
-     * @return 创建的命令在ECS实例中运行的目录。
+     * @return Directory where the created command runs in the ECS instance.
      * 
      */
     public Optional<Output<String>> workingDir() {
@@ -469,7 +469,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param commandContent 命令内容。
+         * @param commandContent Command content.
          * 
          * @return builder
          * 
@@ -480,7 +480,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param commandContent 命令内容。
+         * @param commandContent Command content.
          * 
          * @return builder
          * 
@@ -490,7 +490,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param commandDescription 被调用命令的描述。
+         * @param commandDescription Description of the invoked command.
          * 
          * @return builder
          * 
@@ -501,7 +501,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param commandDescription 被调用命令的描述。
+         * @param commandDescription Description of the invoked command.
          * 
          * @return builder
          * 
@@ -511,7 +511,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param commandId 命令ID。
+         * @param commandId Command ID.
          * 
          * @return builder
          * 
@@ -522,7 +522,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param commandId 命令ID。
+         * @param commandId Command ID.
          * 
          * @return builder
          * 
@@ -532,7 +532,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param commandName 任务触发时的命令名称。
+         * @param commandName Command name when the task is triggered.
          * 
          * @return builder
          * 
@@ -543,7 +543,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param commandName 任务触发时的命令名称。
+         * @param commandName Command name when the task is triggered.
          * 
          * @return builder
          * 
@@ -553,7 +553,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param commandProvider 被调用命令的提供方。
+         * @param commandProvider Provider of the invoked command.
          * 
          * @return builder
          * 
@@ -564,7 +564,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param commandProvider 被调用命令的提供方。
+         * @param commandProvider Provider of the invoked command.
          * 
          * @return builder
          * 
@@ -574,7 +574,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param commandType 作业触发的命令类型。
+         * @param commandType Command type triggered by the job.
          * 
          * @return builder
          * 
@@ -585,7 +585,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param commandType 作业触发的命令类型。
+         * @param commandType Command type triggered by the job.
          * 
          * @return builder
          * 
@@ -595,7 +595,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableParameter 被调用命令是否使用自定义参数。true：已启用。false：未启用。
+         * @param enableParameter Whether the invoked command uses custom parameters. true: enabled. false: not enabled.
          * 
          * @return builder
          * 
@@ -606,7 +606,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableParameter 被调用命令是否使用自定义参数。true：已启用。false：未启用。
+         * @param enableParameter Whether the invoked command uses custom parameters. true: enabled. false: not enabled.
          * 
          * @return builder
          * 
@@ -616,7 +616,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endTime 任务结束时间。
+         * @param endTime Task end time.
          * 
          * @return builder
          * 
@@ -627,7 +627,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endTime 任务结束时间。
+         * @param endTime Task end time.
          * 
          * @return builder
          * 
@@ -637,7 +637,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param frequency 执行频率。RepeatMode=Rate 时本参数必填。格式：&lt;执行间隔数值&gt;&lt;执行间隔单位&gt;，执行间隔单位：支持分钟（5m-60m）、小时（1h-24h）和天（1d-7d）。执行间隔基于固定频率，与作业实际执行需要的时间无关。创建作业后基于LaunchTime执行一次，根据间隔设置确定下一次执行时间。
+         * @param frequency Execution frequency. This parameter is required when RepeatMode=Rate. Format: \n\n\n\n. Interval units supported: minutes (5m–60m), hours (1h–24h), and days (1d–7d). The interval is based on a fixed frequency and is independent of the actual job execution time. After job creation, it executes once based on LaunchTime, and the next execution time is determined by the interval setting.
          * 
          * @return builder
          * 
@@ -648,7 +648,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param frequency 执行频率。RepeatMode=Rate 时本参数必填。格式：&lt;执行间隔数值&gt;&lt;执行间隔单位&gt;，执行间隔单位：支持分钟（5m-60m）、小时（1h-24h）和天（1d-7d）。执行间隔基于固定频率，与作业实际执行需要的时间无关。创建作业后基于LaunchTime执行一次，根据间隔设置确定下一次执行时间。
+         * @param frequency Execution frequency. This parameter is required when RepeatMode=Rate. Format: \n\n\n\n. Interval units supported: minutes (5m–60m), hours (1h–24h), and days (1d–7d). The interval is based on a fixed frequency and is independent of the actual job execution time. After job creation, it executes once based on LaunchTime, and the next execution time is determined by the interval setting.
          * 
          * @return builder
          * 
@@ -658,7 +658,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceIds 实例ID列表，最多支持200个ID。
+         * @param instanceIds Instance ID list, supports up to 200 IDs.
          * 
          * @return builder
          * 
@@ -669,7 +669,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceIds 实例ID列表，最多支持200个ID。
+         * @param instanceIds Instance ID list, supports up to 200 IDs.
          * 
          * @return builder
          * 
@@ -679,7 +679,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceIds 实例ID列表，最多支持200个ID。
+         * @param instanceIds Instance ID list, supports up to 200 IDs.
          * 
          * @return builder
          * 
@@ -689,7 +689,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceNumber 执行实例数量。
+         * @param instanceNumber Number of instances executed.
          * 
          * @return builder
          * 
@@ -700,7 +700,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceNumber 执行实例数量。
+         * @param instanceNumber Number of instances executed.
          * 
          * @return builder
          * 
@@ -710,7 +710,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param invocationDescription 作业描述，默认为空字符串，不超过256个字符。
+         * @param invocationDescription Job description. Defaults to an empty string and must not exceed 256 characters.
          * 
          * @return builder
          * 
@@ -721,7 +721,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param invocationDescription 作业描述，默认为空字符串，不超过256个字符。
+         * @param invocationDescription Job description. Defaults to an empty string and must not exceed 256 characters.
          * 
          * @return builder
          * 
@@ -731,7 +731,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param invocationId 任务执行 ID。
+         * @param invocationId Task execution ID.
          * 
          * @return builder
          * 
@@ -742,7 +742,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param invocationId 任务执行 ID。
+         * @param invocationId Task execution ID.
          * 
          * @return builder
          * 
@@ -752,7 +752,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param invocationName 作业名称。不超过64个字符。暂不限制特殊字符。同地域下作业名称可重复。
+         * @param invocationName Job name. Maximum 64 characters. No restriction on special characters. Job names can be duplicated within the same region.
          * 
          * @return builder
          * 
@@ -763,7 +763,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param invocationName 作业名称。不超过64个字符。暂不限制特殊字符。同地域下作业名称可重复。
+         * @param invocationName Job name. Maximum 64 characters. No restriction on special characters. Job names can be duplicated within the same region.
          * 
          * @return builder
          * 
@@ -786,7 +786,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param invocationStatus 命令执行的总执行状态。
+         * @param invocationStatus Overall execution status of the command.
          * 
          * @return builder
          * 
@@ -797,7 +797,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param invocationStatus 命令执行的总执行状态。
+         * @param invocationStatus Overall execution status of the command.
          * 
          * @return builder
          * 
@@ -807,7 +807,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param launchTime 执行时间。
+         * @param launchTime Execution time.
          * 
          * @return builder
          * 
@@ -818,7 +818,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param launchTime 执行时间。
+         * @param launchTime Execution time.
          * 
          * @return builder
          * 
@@ -841,7 +841,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param parameters 命令中包含自定义参数时，需通过本参数传入自定义参数的键值对。自定义参数个数范围为0~60。Key不允许为空字符串，最多支持64个字符。Value允许为空字符串。自定义参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的自定义参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+         * @param parameters When the command includes custom parameters, use this parameter to pass custom parameter key-value pairs. The number of custom parameters ranges from 0 to 60. Key cannot be an empty string and supports up to 64 characters. Value can be an empty string. The combined length of custom parameters and original command content after Base64 encoding must not exceed 16 KB. The set of custom parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
          * 
          * @return builder
          * 
@@ -852,7 +852,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param parameters 命令中包含自定义参数时，需通过本参数传入自定义参数的键值对。自定义参数个数范围为0~60。Key不允许为空字符串，最多支持64个字符。Value允许为空字符串。自定义参数与原始命令内容在Base64编码后，综合长度不能超过16KB。设置的自定义参数名集合必须为创建命令时定义的参数集的子集。对于未传入的参数，使用默认值代替。
+         * @param parameters When the command includes custom parameters, use this parameter to pass custom parameter key-value pairs. The number of custom parameters ranges from 0 to 60. Key cannot be an empty string and supports up to 64 characters. Value can be an empty string. The combined length of custom parameters and original command content after Base64 encoding must not exceed 16 KB. The set of custom parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
          * 
          * @return builder
          * 
@@ -862,7 +862,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 资源所属项目，一个资源只能归属于一个项目。
+         * @param projectName Project to which the resource belongs; each resource can belong to only one project.
          * 
          * @return builder
          * 
@@ -873,7 +873,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 资源所属项目，一个资源只能归属于一个项目。
+         * @param projectName Project to which the resource belongs; each resource can belong to only one project.
          * 
          * @return builder
          * 
@@ -883,7 +883,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param recurrenceEndTime 周期结束时间，仅适用于周期任务（Rate）。
+         * @param recurrenceEndTime Cycle end time, applicable only to periodic tasks (Rate).
          * 
          * @return builder
          * 
@@ -894,7 +894,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param recurrenceEndTime 周期结束时间，仅适用于周期任务（Rate）。
+         * @param recurrenceEndTime Cycle end time, applicable only to periodic tasks (Rate).
          * 
          * @return builder
          * 
@@ -904,7 +904,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param repeatMode 设置命令执行的方式。Once：默认，表示立即执行命令。Rate：周期执行命令，需要通过Frequency参数传入Rate表达式指定执行周期。Fixed：定时执行命令，需要通过LaunchTime参数指定的执行时间。
+         * @param repeatMode Set the command execution mode. Once: Default, executes the command immediately. Rate: Executes the command periodically; specify the execution cycle using the Frequency parameter and Rate expression. Fixed: Executes the command at a scheduled time; specify the execution time using the LaunchTime parameter.
          * 
          * @return builder
          * 
@@ -915,7 +915,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param repeatMode 设置命令执行的方式。Once：默认，表示立即执行命令。Rate：周期执行命令，需要通过Frequency参数传入Rate表达式指定执行周期。Fixed：定时执行命令，需要通过LaunchTime参数指定的执行时间。
+         * @param repeatMode Set the command execution mode. Once: Default, executes the command immediately. Rate: Executes the command periodically; specify the execution cycle using the Frequency parameter and Rate expression. Fixed: Executes the command at a scheduled time; specify the execution time using the LaunchTime parameter.
          * 
          * @return builder
          * 
@@ -925,7 +925,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param startTime 任务开始时间。
+         * @param startTime Task start time.
          * 
          * @return builder
          * 
@@ -936,7 +936,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param startTime 任务开始时间。
+         * @param startTime Task start time.
          * 
          * @return builder
          * 
@@ -959,7 +959,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeout 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。默认值：60。可选范围为：30~86400。
+         * @param timeout Maximum timeout for command execution in ECS instances, in seconds. Default: 60. Optional range: 30–86400.
          * 
          * @return builder
          * 
@@ -970,7 +970,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeout 创建的命令在ECS实例中执行时最大的超时时间，单位为秒。默认值：60。可选范围为：30~86400。
+         * @param timeout Maximum timeout for command execution in ECS instances, in seconds. Default: 60. Optional range: 30–86400.
          * 
          * @return builder
          * 
@@ -980,7 +980,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param username 在ECS实例中执行命令的用户名称。
+         * @param username User name for executing the command in the ECS instance.
          * 
          * @return builder
          * 
@@ -991,7 +991,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param username 在ECS实例中执行命令的用户名称。
+         * @param username User name for executing the command in the ECS instance.
          * 
          * @return builder
          * 
@@ -1001,7 +1001,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param windowsPassword 自定义windows用户的密码。
+         * @param windowsPassword Password for custom Windows user.
          * 
          * @return builder
          * 
@@ -1012,7 +1012,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param windowsPassword 自定义windows用户的密码。
+         * @param windowsPassword Password for custom Windows user.
          * 
          * @return builder
          * 
@@ -1022,7 +1022,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param workingDir 创建的命令在ECS实例中运行的目录。
+         * @param workingDir Directory where the created command runs in the ECS instance.
          * 
          * @return builder
          * 
@@ -1033,7 +1033,7 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param workingDir 创建的命令在ECS实例中运行的目录。
+         * @param workingDir Directory where the created command runs in the ECS instance.
          * 
          * @return builder
          * 

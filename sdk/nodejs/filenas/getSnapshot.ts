@@ -29,19 +29,19 @@ export interface GetSnapshotArgs {
  */
 export interface GetSnapshotResult {
     /**
-     * 快照创建时间。
+     * Snapshot Creation Time
      */
     readonly createdTime: string;
     /**
-     * 快照描述信息。
+     * Snapshot Description
      */
     readonly description: string;
     /**
-     * 文件系统 ID。
+     * File System ID
      */
     readonly fileSystemId: string;
     /**
-     * 文件系统名称。
+     * File System Name
      */
     readonly fileSystemName: string;
     /**
@@ -49,43 +49,43 @@ export interface GetSnapshotResult {
      */
     readonly id: string;
     /**
-     * 是否加密，当前仅支持false，即不加密。
+     * Is encryption enabled. Currently only false is supported (not encrypted)
      */
     readonly isEncrypt: boolean;
     /**
-     * 快照创建进度。
+     * Snapshot Creation Progress
      */
     readonly progress: string;
     /**
-     * 快照保留时间，默认为2147483647，即永久保留。
+     * Snapshot Retention Period. Default is 2147483647 (permanent retention)
      */
     readonly retentionDays: number;
     /**
-     * 快照 ID。
+     * Snapshot ID
      */
     readonly snapshotId: string;
     /**
-     * 快照名称。
+     * Snapshot Name
      */
     readonly snapshotName: string;
     /**
-     * 快照类型，默认为Manual，即手动快照。
+     * Snapshot Type. Default is Manual (manual snapshot)
      */
     readonly snapshotType: string;
     /**
-     * 文件系统容量，单位为 GiB。
+     * File System Capacity (GiB)
      */
     readonly sourceSize: number;
     /**
-     * 文件系统版本。
+     * File System Version
      */
     readonly sourceVersion: string;
     /**
-     * 快照状态。说明如下：Progressing：正在创建。Accomplished：创建成功。Failed：创建失败。
+     * Snapshot Status. Details: Progressing: Creating. Accomplished: Created successfully. Failed: Creation failed
      */
     readonly status: string;
     /**
-     * 可用区 ID。
+     * Availability Zone ID
      */
     readonly zoneId: string;
 }

@@ -21,7 +21,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 云搜索服务（Cloud Search）是提供的全托管一站式信息检索和分析平台，兼容 Elasticsearch、OpenSearch、Kibana、Dashboards、Cerebro 以及常用的开源插件，可应用于全文搜索、向量搜索、混合搜索、AI 搜索、时空检索等场景。使用云搜索服务，您可以实现一键部署、弹性扩缩、简化运维，快速构建日志分析、信息检索分析等实际业务。
+ * Cloud Search Service is a fully managed, one-stop information retrieval and analytics platform compatible with Elasticsearch, OpenSearch, Kibana, Dashboards, Cerebro, and common open-source plugins. It supports scenarios such as full-text search, vector search, hybrid search, AI search, and spatiotemporal retrieval. With Cloud Search Service, you can deploy with one click, scale elastically, simplify operations, and quickly build log analysis and information retrieval analytics for real-world business.
  * 
  * ## Example Usage
  * 
@@ -38,546 +38,546 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:escloud/instance:Instance")
 public class Instance extends com.pulumi.resources.CustomResource {
     /**
-     * 是否开启 cerebro。true：开启 cerebrofalse：不开启 cerebro
+     * Whether to enable cerebro. true: enable cerebro; false: do not enable cerebro.
      * 
      */
     @Export(name="cerebroEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> cerebroEnabled;
 
     /**
-     * @return 是否开启 cerebro。true：开启 cerebrofalse：不开启 cerebro
+     * @return Whether to enable cerebro. true: enable cerebro; false: do not enable cerebro.
      * 
      */
     public Output<Boolean> cerebroEnabled() {
         return this.cerebroEnabled;
     }
     /**
-     * cerebro 私网访问地址。说明Cerebro 和 Kibana 共享域名。如果是历史实例，访问地址有可能是http(s)://kibana-***开头
+     * Cerebro private network access address. Note: Cerebro and Kibana share the domain name. For legacy instances, the access address may start with http(s)://kibana-***
      * 
      */
     @Export(name="cerebroPrivateDomain", refs={String.class}, tree="[0]")
     private Output<String> cerebroPrivateDomain;
 
     /**
-     * @return cerebro 私网访问地址。说明Cerebro 和 Kibana 共享域名。如果是历史实例，访问地址有可能是http(s)://kibana-***开头
+     * @return Cerebro private network access address. Note: Cerebro and Kibana share the domain name. For legacy instances, the access address may start with http(s)://kibana-***
      * 
      */
     public Output<String> cerebroPrivateDomain() {
         return this.cerebroPrivateDomain;
     }
     /**
-     * erebro 公网访问地址。说明Cerebro 和 Kibana 共享域名。如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+     * Cerebro public access address. Note: Cerebro and Kibana share the same domain name. For legacy instances, the access address may start with http(s)://kibana-***
      * 
      */
     @Export(name="cerebroPublicDomain", refs={String.class}, tree="[0]")
     private Output<String> cerebroPublicDomain;
 
     /**
-     * @return erebro 公网访问地址。说明Cerebro 和 Kibana 共享域名。如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+     * @return Cerebro public access address. Note: Cerebro and Kibana share the same domain name. For legacy instances, the access address may start with http(s)://kibana-***
      * 
      */
     public Output<String> cerebroPublicDomain() {
         return this.cerebroPublicDomain;
     }
     /**
-     * 实例是否开启了计费。取值说明如下：true：已开启计费false：未开启计费
+     * Whether billing is enabled for the instance. Value description: true: Billing enabled false: Billing not enabled
      * 
      */
     @Export(name="chargeEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> chargeEnabled;
 
     /**
-     * @return 实例是否开启了计费。取值说明如下：true：已开启计费false：未开启计费
+     * @return Whether billing is enabled for the instance. Value description: true: Billing enabled false: Billing not enabled
      * 
      */
     public Output<Boolean> chargeEnabled() {
         return this.chargeEnabled;
     }
     /**
-     * 实例所属集群的 ID。
+     * ID of the cluster to which the instance belongs.
      * 
      */
     @Export(name="clusterId", refs={String.class}, tree="[0]")
     private Output<String> clusterId;
 
     /**
-     * @return 实例所属集群的 ID。
+     * @return ID of the cluster to which the instance belongs.
      * 
      */
     public Output<String> clusterId() {
         return this.clusterId;
     }
     /**
-     * 实例的创建时间。
+     * Instance creation time.
      * 
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
-     * @return 实例的创建时间。
+     * @return Instance creation time.
      * 
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
-     * 实例是否开启私网地址公网解析。true：已开启私网地址公网解析false：未开启私网地址公网解析
+     * Whether the instance has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
      * 
      */
     @Export(name="enableEsPrivateDomainPublic", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableEsPrivateDomainPublic;
 
     /**
-     * @return 实例是否开启私网地址公网解析。true：已开启私网地址公网解析false：未开启私网地址公网解析
+     * @return Whether the instance has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
      * 
      */
     public Output<Boolean> enableEsPrivateDomainPublic() {
         return this.enableEsPrivateDomainPublic;
     }
     /**
-     * 实例是否开启了私网访问。true：默认值，开启私网访问false：未开启私网访问
+     * Whether private network access is enabled for the instance. true: Default, private network access enabled; false: private network access not enabled.
      * 
      */
     @Export(name="enableEsPrivateNetwork", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableEsPrivateNetwork;
 
     /**
-     * @return 实例是否开启了私网访问。true：默认值，开启私网访问false：未开启私网访问
+     * @return Whether private network access is enabled for the instance. true: Default, private network access enabled; false: private network access not enabled.
      * 
      */
     public Output<Boolean> enableEsPrivateNetwork() {
         return this.enableEsPrivateNetwork;
     }
     /**
-     * 实例是否开启了公网访问。true：已开启公网访问false：未开启公网访问
+     * Whether the instance has enabled public access. true: Public access enabled. false: Public access not enabled
      * 
      */
     @Export(name="enableEsPublicNetwork", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableEsPublicNetwork;
 
     /**
-     * @return 实例是否开启了公网访问。true：已开启公网访问false：未开启公网访问
+     * @return Whether the instance has enabled public access. true: Public access enabled. false: Public access not enabled
      * 
      */
     public Output<Boolean> enableEsPublicNetwork() {
         return this.enableEsPublicNetwork;
     }
     /**
-     * Kibana 是否开启私网地址公网解析。true：已开启私网地址公网解析false：未开启私网地址公网解析
+     * Whether Kibana has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
      * 
      */
     @Export(name="enableKibanaPrivateDomainPublic", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableKibanaPrivateDomainPublic;
 
     /**
-     * @return Kibana 是否开启私网地址公网解析。true：已开启私网地址公网解析false：未开启私网地址公网解析
+     * @return Whether Kibana has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
      * 
      */
     public Output<Boolean> enableKibanaPrivateDomainPublic() {
         return this.enableKibanaPrivateDomainPublic;
     }
     /**
-     * Kibana 是否开启私网访问。true：默认值，已开启私网访问 false：未开启Kibana私网访问
+     * Whether Kibana private network access is enabled. true: Default value, private network access enabled false: Kibana private network access not enabled
      * 
      */
     @Export(name="enableKibanaPrivateNetwork", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableKibanaPrivateNetwork;
 
     /**
-     * @return Kibana 是否开启私网访问。true：默认值，已开启私网访问 false：未开启Kibana私网访问
+     * @return Whether Kibana private network access is enabled. true: Default value, private network access enabled false: Kibana private network access not enabled
      * 
      */
     public Output<Boolean> enableKibanaPrivateNetwork() {
         return this.enableKibanaPrivateNetwork;
     }
     /**
-     * Kibana 是否开启了公网访问。true：已开启公网访问 false：未开启公网访问
+     * Whether Kibana has enabled public access. true: Public access enabled false: Public access not enabled
      * 
      */
     @Export(name="enableKibanaPublicNetwork", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableKibanaPublicNetwork;
 
     /**
-     * @return Kibana 是否开启了公网访问。true：已开启公网访问 false：未开启公网访问
+     * @return Whether Kibana has enabled public access. true: Public access enabled false: Public access not enabled
      * 
      */
     public Output<Boolean> enableKibanaPublicNetwork() {
         return this.enableKibanaPublicNetwork;
     }
     /**
-     * 实例所绑定的 EIP。
+     * EIP bound to the instance.
      * 
      */
     @Export(name="esEip", refs={String.class}, tree="[0]")
     private Output<String> esEip;
 
     /**
-     * @return 实例所绑定的 EIP。
+     * @return EIP bound to the instance.
      * 
      */
     public Output<String> esEip() {
         return this.esEip;
     }
     /**
-     * 实例所绑定的 EIP 的 ID。
+     * ID of the EIP bound to the instance
      * 
      */
     @Export(name="esEipId", refs={String.class}, tree="[0]")
     private Output<String> esEipId;
 
     /**
-     * @return 实例所绑定的 EIP 的 ID。
+     * @return ID of the EIP bound to the instance
      * 
      */
     public Output<String> esEipId() {
         return this.esEipId;
     }
     /**
-     * 实例私网访问地址。
+     * Instance private network access address.
      * 
      */
     @Export(name="esPrivateEndpoint", refs={String.class}, tree="[0]")
     private Output<String> esPrivateEndpoint;
 
     /**
-     * @return 实例私网访问地址。
+     * @return Instance private network access address.
      * 
      */
     public Output<String> esPrivateEndpoint() {
         return this.esPrivateEndpoint;
     }
     /**
-     * 实例私网地址访问白名单。同 ESPrivateIpWhitelist
+     * Instance private network address access allowlist. Same as ESPrivateIpWhitelist
      * 
      */
     @Export(name="esPrivateIpAllowList", refs={String.class}, tree="[0]")
     private Output<String> esPrivateIpAllowList;
 
     /**
-     * @return 实例私网地址访问白名单。同 ESPrivateIpWhitelist
+     * @return Instance private network address access allowlist. Same as ESPrivateIpWhitelist
      * 
      */
     public Output<String> esPrivateIpAllowList() {
         return this.esPrivateIpAllowList;
     }
     /**
-     * 实例私网地址访问白名单。
+     * Instance private network address access allowlist
      * 
      */
     @Export(name="esPrivateIpWhitelist", refs={String.class}, tree="[0]")
     private Output<String> esPrivateIpWhitelist;
 
     /**
-     * @return 实例私网地址访问白名单。
+     * @return Instance private network address access allowlist
      * 
      */
     public Output<String> esPrivateIpWhitelist() {
         return this.esPrivateIpWhitelist;
     }
     /**
-     * ES公网带宽，单位:Mbps。
+     * ES public network bandwidth, unit: Mbps.
      * 
      */
     @Export(name="esPubBandwidth", refs={Integer.class}, tree="[0]")
     private Output<Integer> esPubBandwidth;
 
     /**
-     * @return ES公网带宽，单位:Mbps。
+     * @return ES public network bandwidth, unit: Mbps.
      * 
      */
     public Output<Integer> esPubBandwidth() {
         return this.esPubBandwidth;
     }
     /**
-     * 实例公网访问地址。
+     * Instance public access address
      * 
      */
     @Export(name="esPublicEndpoint", refs={String.class}, tree="[0]")
     private Output<String> esPublicEndpoint;
 
     /**
-     * @return 实例公网访问地址。
+     * @return Instance public access address
      * 
      */
     public Output<String> esPublicEndpoint() {
         return this.esPublicEndpoint;
     }
     /**
-     * 实例公网地址访问白名单。同 ESPublicIpWhitelist
+     * Instance public IP address access allowlist. Same as ESPublicIpWhitelist
      * 
      */
     @Export(name="esPublicIpAllowList", refs={String.class}, tree="[0]")
     private Output<String> esPublicIpAllowList;
 
     /**
-     * @return 实例公网地址访问白名单。同 ESPublicIpWhitelist
+     * @return Instance public IP address access allowlist. Same as ESPublicIpWhitelist
      * 
      */
     public Output<String> esPublicIpAllowList() {
         return this.esPublicIpAllowList;
     }
     /**
-     * 实例公网地址访问白名单。
+     * Allowlist for instance public network address access.
      * 
      */
     @Export(name="esPublicIpWhitelist", refs={String.class}, tree="[0]")
     private Output<String> esPublicIpWhitelist;
 
     /**
-     * @return 实例公网地址访问白名单。
+     * @return Allowlist for instance public network address access.
      * 
      */
     public Output<String> esPublicIpWhitelist() {
         return this.esPublicIpWhitelist;
     }
     /**
-     * 包年包月实例的付费过期时间。
+     * Expiration time for subscription instance payment
      * 
      */
     @Export(name="expireDate", refs={String.class}, tree="[0]")
     private Output<String> expireDate;
 
     /**
-     * @return 包年包月实例的付费过期时间。
+     * @return Expiration time for subscription instance payment
      * 
      */
     public Output<String> expireDate() {
         return this.expireDate;
     }
     /**
-     * 实例配置详情信息。
+     * Instance configuration details
      * 
      */
     @Export(name="instanceConfiguration", refs={InstanceInstanceConfiguration.class}, tree="[0]")
     private Output<InstanceInstanceConfiguration> instanceConfiguration;
 
     /**
-     * @return 实例配置详情信息。
+     * @return Instance configuration details
      * 
      */
     public Output<InstanceInstanceConfiguration> instanceConfiguration() {
         return this.instanceConfiguration;
     }
     /**
-     * 实例 ID。
+     * Instance ID
      * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
-     * @return 实例 ID。
+     * @return Instance ID
      * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
-     * Kibana 参数配置。
+     * Kibana parameter configuration
      * 
      */
     @Export(name="kibanaConfig", refs={InstanceKibanaConfig.class}, tree="[0]")
     private Output<InstanceKibanaConfig> kibanaConfig;
 
     /**
-     * @return Kibana 参数配置。
+     * @return Kibana parameter configuration
      * 
      */
     public Output<InstanceKibanaConfig> kibanaConfig() {
         return this.kibanaConfig;
     }
     /**
-     * Kibana 所绑定的 EIP。
+     * EIP bound to Kibana
      * 
      */
     @Export(name="kibanaEip", refs={String.class}, tree="[0]")
     private Output<String> kibanaEip;
 
     /**
-     * @return Kibana 所绑定的 EIP。
+     * @return EIP bound to Kibana
      * 
      */
     public Output<String> kibanaEip() {
         return this.kibanaEip;
     }
     /**
-     * Kibana 所绑定的 EIP 的 ID。
+     * ID of the EIP bound to Kibana.
      * 
      */
     @Export(name="kibanaEipId", refs={String.class}, tree="[0]")
     private Output<String> kibanaEipId;
 
     /**
-     * @return Kibana 所绑定的 EIP 的 ID。
+     * @return ID of the EIP bound to Kibana.
      * 
      */
     public Output<String> kibanaEipId() {
         return this.kibanaEipId;
     }
     /**
-     * Kibana 私网访问地址。说明如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+     * Kibana private network access address. Note: For historical instances, the access address may start with http(s)://kibana-***.
      * 
      */
     @Export(name="kibanaPrivateDomain", refs={String.class}, tree="[0]")
     private Output<String> kibanaPrivateDomain;
 
     /**
-     * @return Kibana 私网访问地址。说明如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+     * @return Kibana private network access address. Note: For historical instances, the access address may start with http(s)://kibana-***.
      * 
      */
     public Output<String> kibanaPrivateDomain() {
         return this.kibanaPrivateDomain;
     }
     /**
-     * Kibana 私网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。同 KibanaPrivateIpWhitelist
+     * Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPrivateIpWhitelist.
      * 
      */
     @Export(name="kibanaPrivateIpAllowList", refs={String.class}, tree="[0]")
     private Output<String> kibanaPrivateIpAllowList;
 
     /**
-     * @return Kibana 私网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。同 KibanaPrivateIpWhitelist
+     * @return Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPrivateIpWhitelist.
      * 
      */
     public Output<String> kibanaPrivateIpAllowList() {
         return this.kibanaPrivateIpAllowList;
     }
     /**
-     * Kibana 私网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。说明Cerebro 和 Kibana 共用一套白名单。
+     * Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist.
      * 
      */
     @Export(name="kibanaPrivateIpWhitelist", refs={String.class}, tree="[0]")
     private Output<String> kibanaPrivateIpWhitelist;
 
     /**
-     * @return Kibana 私网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。说明Cerebro 和 Kibana 共用一套白名单。
+     * @return Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist.
      * 
      */
     public Output<String> kibanaPrivateIpWhitelist() {
         return this.kibanaPrivateIpWhitelist;
     }
     /**
-     * Kibana公网带宽，单位: Mbps
+     * Kibana public network bandwidth, unit: Mbps
      * 
      */
     @Export(name="kibanaPubBandwidth", refs={Integer.class}, tree="[0]")
     private Output<Integer> kibanaPubBandwidth;
 
     /**
-     * @return Kibana公网带宽，单位: Mbps
+     * @return Kibana public network bandwidth, unit: Mbps
      * 
      */
     public Output<Integer> kibanaPubBandwidth() {
         return this.kibanaPubBandwidth;
     }
     /**
-     * Kibana 公网访问地址。说明如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+     * Kibana public access address. Note: For legacy instances, the access address may start with http(s)://kibana-***
      * 
      */
     @Export(name="kibanaPublicDomain", refs={String.class}, tree="[0]")
     private Output<String> kibanaPublicDomain;
 
     /**
-     * @return Kibana 公网访问地址。说明如果是历史实例，访问地址有可能是http(s)://kibana-***开头。
+     * @return Kibana public access address. Note: For legacy instances, the access address may start with http(s)://kibana-***
      * 
      */
     public Output<String> kibanaPublicDomain() {
         return this.kibanaPublicDomain;
     }
     /**
-     * Kibana 公网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。同 KibanaPublicIpWhitelist
+     * Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPublicIpWhitelist
      * 
      */
     @Export(name="kibanaPublicIpAllowList", refs={String.class}, tree="[0]")
     private Output<String> kibanaPublicIpAllowList;
 
     /**
-     * @return Kibana 公网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。同 KibanaPublicIpWhitelist
+     * @return Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPublicIpWhitelist
      * 
      */
     public Output<String> kibanaPublicIpAllowList() {
         return this.kibanaPublicIpAllowList;
     }
     /**
-     * Kibana 公网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。说明Cerebro 和 Kibana 共用一套白名单
+     * Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist
      * 
      */
     @Export(name="kibanaPublicIpWhitelist", refs={String.class}, tree="[0]")
     private Output<String> kibanaPublicIpWhitelist;
 
     /**
-     * @return Kibana 公网白名单。只有添加到白名单中的 IP 地址才可以访问可视化工具。说明Cerebro 和 Kibana 共用一套白名单
+     * @return Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist
      * 
      */
     public Output<String> kibanaPublicIpWhitelist() {
         return this.kibanaPublicIpWhitelist;
     }
     /**
-     * 主可用区
+     * Primary availability zone
      * 
      */
     @Export(name="mainZoneId", refs={String.class}, tree="[0]")
     private Output<String> mainZoneId;
 
     /**
-     * @return 主可用区
+     * @return Primary availability zone
      * 
      */
     public Output<String> mainZoneId() {
         return this.mainZoneId;
     }
     /**
-     * 实例的可维护日期。
+     * Instance maintenance date.
      * 
      */
     @Export(name="maintenanceDays", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> maintenanceDays;
 
     /**
-     * @return 实例的可维护日期。
+     * @return Instance maintenance date.
      * 
      */
     public Output<List<String>> maintenanceDays() {
         return this.maintenanceDays;
     }
     /**
-     * 实例的可维护时间段。
+     * Instance maintenance window.
      * 
      */
     @Export(name="maintenanceTime", refs={String.class}, tree="[0]")
     private Output<String> maintenanceTime;
 
     /**
-     * @return 实例的可维护时间段。
+     * @return Instance maintenance window.
      * 
      */
     public Output<String> maintenanceTime() {
         return this.maintenanceTime;
     }
     /**
-     * 实例当前状态。
+     * Current instance status
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 实例当前状态。
+     * @return Current instance status
      * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
-     * 子实例开启情况。
+     * Sub-instance activation status
      * 
      */
     @Export(name="subInstanceEnable", refs={String.class}, tree="[0]")
     private Output<String> subInstanceEnable;
 
     /**
-     * @return 子实例开启情况。
+     * @return Sub-instance activation status
      * 
      */
     public Output<String> subInstanceEnable() {
@@ -590,56 +590,56 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.subInstances;
     }
     /**
-     * 是否支持冷节点。
+     * Whether cold nodes are supported
      * 
      */
     @Export(name="supportColdNode", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> supportColdNode;
 
     /**
-     * @return 是否支持冷节点。
+     * @return Whether cold nodes are supported
      * 
      */
     public Output<Boolean> supportColdNode() {
         return this.supportColdNode;
     }
     /**
-     * 实例的总节点数。
+     * Total number of nodes in the instance
      * 
      */
     @Export(name="totalNodes", refs={Integer.class}, tree="[0]")
     private Output<Integer> totalNodes;
 
     /**
-     * @return 实例的总节点数。
+     * @return Total number of nodes in the instance
      * 
      */
     public Output<Integer> totalNodes() {
         return this.totalNodes;
     }
     /**
-     * 数据迁移任务信息。
+     * Data migration task information
      * 
      */
     @Export(name="transferInfo", refs={InstanceTransferInfo.class}, tree="[0]")
     private Output<InstanceTransferInfo> transferInfo;
 
     /**
-     * @return 数据迁移任务信息。
+     * @return Data migration task information
      * 
      */
     public Output<InstanceTransferInfo> transferInfo() {
         return this.transferInfo;
     }
     /**
-     * 实例所有者的用户 ID。
+     * Instance owner&#39;s user ID
      * 
      */
     @Export(name="userId", refs={String.class}, tree="[0]")
     private Output<String> userId;
 
     /**
-     * @return 实例所有者的用户 ID。
+     * @return Instance owner&#39;s user ID
      * 
      */
     public Output<String> userId() {

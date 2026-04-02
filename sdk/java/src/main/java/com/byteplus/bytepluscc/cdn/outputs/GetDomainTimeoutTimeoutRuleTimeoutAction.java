@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainTimeoutTimeoutRuleTimeoutAction {
     /**
-     * @return 表示 HTTP 请求的超时时间。该参数的取值范围是 5-60。
+     * @return Indicates the timeout period for HTTP requests. The value range for this parameter is 5–60.
      * 
      */
     private Integer httpTimeout;
     /**
-     * @return 表示 TCP 请求的超时时间。该参数的取值范围是 2-60。
+     * @return Indicates the timeout for TCP requests. The valid range for this parameter is 2–60.
      * 
      */
     private Integer tcpTimeout;
 
     private GetDomainTimeoutTimeoutRuleTimeoutAction() {}
     /**
-     * @return 表示 HTTP 请求的超时时间。该参数的取值范围是 5-60。
+     * @return Indicates the timeout period for HTTP requests. The value range for this parameter is 5–60.
      * 
      */
     public Integer httpTimeout() {
         return this.httpTimeout;
     }
     /**
-     * @return 表示 TCP 请求的超时时间。该参数的取值范围是 2-60。
+     * @return Indicates the timeout for TCP requests. The valid range for this parameter is 2–60.
      * 
      */
     public Integer tcpTimeout() {

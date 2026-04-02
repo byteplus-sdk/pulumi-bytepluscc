@@ -14,31 +14,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
     public sealed class InstanceRdmaNetworkInterfaceDetailArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 网关地址。
+        /// Gateway address.
         /// </summary>
         [Input("gateway")]
         public Input<string>? Gateway { get; set; }
 
         /// <summary>
-        /// IP地址。
+        /// IP address
         /// </summary>
         [Input("ip")]
         public Input<string>? Ip { get; set; }
 
         /// <summary>
-        /// 子网掩码。
+        /// Subnet mask.
         /// </summary>
         [Input("mask")]
         public Input<string>? Mask { get; set; }
 
         /// <summary>
-        /// 交换机名称。
+        /// Switch name.
         /// </summary>
         [Input("switchName")]
         public Input<string>? SwitchName { get; set; }
 
         /// <summary>
-        /// 交换机端口。
+        /// Switch port.
         /// </summary>
         [Input("switchPort")]
         public Input<string>? SwitchPort { get; set; }

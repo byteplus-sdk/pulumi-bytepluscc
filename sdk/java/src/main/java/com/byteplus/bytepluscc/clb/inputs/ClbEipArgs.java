@@ -18,14 +18,14 @@ public final class ClbEipArgs extends com.pulumi.resources.ResourceArgs {
     public static final ClbEipArgs Empty = new ClbEipArgs();
 
     /**
-     * 带宽峰值。
+     * Peak bandwidth
      * 
      */
     @Import(name="bandwidth")
     private @Nullable Output<Double> bandwidth;
 
     /**
-     * @return 带宽峰值。
+     * @return Peak bandwidth
      * 
      */
     public Optional<Output<Double>> bandwidth() {
@@ -33,14 +33,14 @@ public final class ClbEipArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 共享带宽包ID。
+     * Shared bandwidth package ID
      * 
      */
     @Import(name="bandwidthPackageId")
     private @Nullable Output<String> bandwidthPackageId;
 
     /**
-     * @return 共享带宽包ID。
+     * @return Shared bandwidth package ID
      * 
      */
     public Optional<Output<String>> bandwidthPackageId() {
@@ -48,14 +48,14 @@ public final class ClbEipArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 计费方式。
+     * Billing method
      * 
      */
     @Import(name="eipBillingType")
     private @Nullable Output<Double> eipBillingType;
 
     /**
-     * @return 计费方式。
+     * @return Billing method
      * 
      */
     public Optional<Output<Double>> eipBillingType() {
@@ -63,14 +63,14 @@ public final class ClbEipArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 线路类型。
+     * Line type
      * 
      */
     @Import(name="isp")
     private @Nullable Output<String> isp;
 
     /**
-     * @return 线路类型。
+     * @return Line type
      * 
      */
     public Optional<Output<String>> isp() {
@@ -78,14 +78,14 @@ public final class ClbEipArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 防护包ID。
+     * Protection package ID
      * 
      */
     @Import(name="securityProtectionInstanceId")
     private @Nullable Output<Double> securityProtectionInstanceId;
 
     /**
-     * @return 防护包ID。
+     * @return Protection package ID
      * 
      */
     public Optional<Output<Double>> securityProtectionInstanceId() {
@@ -93,14 +93,14 @@ public final class ClbEipArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 安全防护类型。
+     * Security protection type
      * 
      */
     @Import(name="securityProtectionTypes")
     private @Nullable Output<List<String>> securityProtectionTypes;
 
     /**
-     * @return 安全防护类型。
+     * @return Security protection type
      * 
      */
     public Optional<Output<List<String>>> securityProtectionTypes() {
@@ -137,7 +137,7 @@ public final class ClbEipArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param bandwidth 带宽峰值。
+         * @param bandwidth Peak bandwidth
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class ClbEipArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param bandwidth 带宽峰值。
+         * @param bandwidth Peak bandwidth
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class ClbEipArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param bandwidthPackageId 共享带宽包ID。
+         * @param bandwidthPackageId Shared bandwidth package ID
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class ClbEipArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param bandwidthPackageId 共享带宽包ID。
+         * @param bandwidthPackageId Shared bandwidth package ID
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class ClbEipArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eipBillingType 计费方式。
+         * @param eipBillingType Billing method
          * 
          * @return builder
          * 
@@ -190,7 +190,7 @@ public final class ClbEipArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eipBillingType 计费方式。
+         * @param eipBillingType Billing method
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class ClbEipArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isp 线路类型。
+         * @param isp Line type
          * 
          * @return builder
          * 
@@ -211,7 +211,7 @@ public final class ClbEipArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isp 线路类型。
+         * @param isp Line type
          * 
          * @return builder
          * 
@@ -221,7 +221,7 @@ public final class ClbEipArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityProtectionInstanceId 防护包ID。
+         * @param securityProtectionInstanceId Protection package ID
          * 
          * @return builder
          * 
@@ -232,7 +232,7 @@ public final class ClbEipArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityProtectionInstanceId 防护包ID。
+         * @param securityProtectionInstanceId Protection package ID
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class ClbEipArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityProtectionTypes 安全防护类型。
+         * @param securityProtectionTypes Security protection type
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class ClbEipArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityProtectionTypes 安全防护类型。
+         * @param securityProtectionTypes Security protection type
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class ClbEipArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityProtectionTypes 安全防护类型。
+         * @param securityProtectionTypes Security protection type
          * 
          * @return builder
          * 

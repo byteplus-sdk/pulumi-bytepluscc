@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
     public sealed class GatewayServiceDomainSpecArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 开启私网域名公网解析。
+        /// Enable public resolution for private network domains.
         /// </summary>
         [Input("enablePublicResolution")]
         public Input<bool>? EnablePublicResolution { get; set; }

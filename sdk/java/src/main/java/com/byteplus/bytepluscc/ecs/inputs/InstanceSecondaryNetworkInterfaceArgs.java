@@ -18,14 +18,14 @@ public final class InstanceSecondaryNetworkInterfaceArgs extends com.pulumi.reso
     public static final InstanceSecondaryNetworkInterfaceArgs Empty = new InstanceSecondaryNetworkInterfaceArgs();
 
     /**
-     * 实例的IPv6地址数量。
+     * The number of IPv6 addresses for the instance.
      * 
      */
     @Import(name="ipv6AddressCount")
     private @Nullable Output<Integer> ipv6AddressCount;
 
     /**
-     * @return 实例的IPv6地址数量。
+     * @return The number of IPv6 addresses for the instance.
      * 
      */
     public Optional<Output<Integer>> ipv6AddressCount() {
@@ -33,14 +33,14 @@ public final class InstanceSecondaryNetworkInterfaceArgs extends com.pulumi.reso
     }
 
     /**
-     * 实例的主IP地址。
+     * Instance primary IP address
      * 
      */
     @Import(name="primaryIpAddress")
     private @Nullable Output<String> primaryIpAddress;
 
     /**
-     * @return 实例的主IP地址。
+     * @return Instance primary IP address
      * 
      */
     public Optional<Output<String>> primaryIpAddress() {
@@ -48,14 +48,14 @@ public final class InstanceSecondaryNetworkInterfaceArgs extends com.pulumi.reso
     }
 
     /**
-     * 实例的私有IP地址。
+     * Instance private IP address.
      * 
      */
     @Import(name="privateIpAddresses")
     private @Nullable Output<List<String>> privateIpAddresses;
 
     /**
-     * @return 实例的私有IP地址。
+     * @return Instance private IP address.
      * 
      */
     public Optional<Output<List<String>>> privateIpAddresses() {
@@ -63,14 +63,14 @@ public final class InstanceSecondaryNetworkInterfaceArgs extends com.pulumi.reso
     }
 
     /**
-     * 实例的安全组ID。
+     * Instance security group ID
      * 
      */
     @Import(name="securityGroupIds")
     private @Nullable Output<List<String>> securityGroupIds;
 
     /**
-     * @return 实例的安全组ID。
+     * @return Instance security group ID
      * 
      */
     public Optional<Output<List<String>>> securityGroupIds() {
@@ -78,14 +78,14 @@ public final class InstanceSecondaryNetworkInterfaceArgs extends com.pulumi.reso
     }
 
     /**
-     * 实例的子网ID。
+     * Instance subnet ID.
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return 实例的子网ID。
+     * @return Instance subnet ID.
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -121,7 +121,7 @@ public final class InstanceSecondaryNetworkInterfaceArgs extends com.pulumi.reso
         }
 
         /**
-         * @param ipv6AddressCount 实例的IPv6地址数量。
+         * @param ipv6AddressCount The number of IPv6 addresses for the instance.
          * 
          * @return builder
          * 
@@ -132,7 +132,7 @@ public final class InstanceSecondaryNetworkInterfaceArgs extends com.pulumi.reso
         }
 
         /**
-         * @param ipv6AddressCount 实例的IPv6地址数量。
+         * @param ipv6AddressCount The number of IPv6 addresses for the instance.
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class InstanceSecondaryNetworkInterfaceArgs extends com.pulumi.reso
         }
 
         /**
-         * @param primaryIpAddress 实例的主IP地址。
+         * @param primaryIpAddress Instance primary IP address
          * 
          * @return builder
          * 
@@ -153,7 +153,7 @@ public final class InstanceSecondaryNetworkInterfaceArgs extends com.pulumi.reso
         }
 
         /**
-         * @param primaryIpAddress 实例的主IP地址。
+         * @param primaryIpAddress Instance primary IP address
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class InstanceSecondaryNetworkInterfaceArgs extends com.pulumi.reso
         }
 
         /**
-         * @param privateIpAddresses 实例的私有IP地址。
+         * @param privateIpAddresses Instance private IP address.
          * 
          * @return builder
          * 
@@ -174,7 +174,7 @@ public final class InstanceSecondaryNetworkInterfaceArgs extends com.pulumi.reso
         }
 
         /**
-         * @param privateIpAddresses 实例的私有IP地址。
+         * @param privateIpAddresses Instance private IP address.
          * 
          * @return builder
          * 
@@ -184,7 +184,7 @@ public final class InstanceSecondaryNetworkInterfaceArgs extends com.pulumi.reso
         }
 
         /**
-         * @param privateIpAddresses 实例的私有IP地址。
+         * @param privateIpAddresses Instance private IP address.
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class InstanceSecondaryNetworkInterfaceArgs extends com.pulumi.reso
         }
 
         /**
-         * @param securityGroupIds 实例的安全组ID。
+         * @param securityGroupIds Instance security group ID
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class InstanceSecondaryNetworkInterfaceArgs extends com.pulumi.reso
         }
 
         /**
-         * @param securityGroupIds 实例的安全组ID。
+         * @param securityGroupIds Instance security group ID
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class InstanceSecondaryNetworkInterfaceArgs extends com.pulumi.reso
         }
 
         /**
-         * @param securityGroupIds 实例的安全组ID。
+         * @param securityGroupIds Instance security group ID
          * 
          * @return builder
          * 
@@ -225,7 +225,7 @@ public final class InstanceSecondaryNetworkInterfaceArgs extends com.pulumi.reso
         }
 
         /**
-         * @param subnetId 实例的子网ID。
+         * @param subnetId Instance subnet ID.
          * 
          * @return builder
          * 
@@ -236,7 +236,7 @@ public final class InstanceSecondaryNetworkInterfaceArgs extends com.pulumi.reso
         }
 
         /**
-         * @param subnetId 实例的子网ID。
+         * @param subnetId Instance subnet ID.
          * 
          * @return builder
          * 

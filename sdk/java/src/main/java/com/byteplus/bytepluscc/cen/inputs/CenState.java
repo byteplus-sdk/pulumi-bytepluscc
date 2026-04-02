@@ -19,14 +19,14 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
     public static final CenState Empty = new CenState();
 
     /**
-     * CEN实例所属的账号ID。
+     * Account ID to which the CEN instance belongs
      * 
      */
     @Import(name="accountId")
     private @Nullable Output<String> accountId;
 
     /**
-     * @return CEN实例所属的账号ID。
+     * @return Account ID to which the CEN instance belongs
      * 
      */
     public Optional<Output<String>> accountId() {
@@ -34,14 +34,14 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 带宽包ID。
+     * Bandwidth package ID
      * 
      */
     @Import(name="cenBandwidthPackageIds")
     private @Nullable Output<List<String>> cenBandwidthPackageIds;
 
     /**
-     * @return 带宽包ID。
+     * @return Bandwidth package ID
      * 
      */
     public Optional<Output<List<String>>> cenBandwidthPackageIds() {
@@ -49,14 +49,14 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * CEN实例的ID。
+     * CEN instance ID
      * 
      */
     @Import(name="cenId")
     private @Nullable Output<String> cenId;
 
     /**
-     * @return CEN实例的ID。
+     * @return CEN instance ID
      * 
      */
     public Optional<Output<String>> cenId() {
@@ -64,14 +64,14 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * CEN实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填则默认为CEN实例的ID。
+     * Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
      * 
      */
     @Import(name="cenName")
     private @Nullable Output<String> cenName;
 
     /**
-     * @return CEN实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填则默认为CEN实例的ID。
+     * @return Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
      * 
      */
     public Optional<Output<String>> cenName() {
@@ -79,14 +79,14 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建CEN实例的时间。
+     * Time when the CEN instance was created
      * 
      */
     @Import(name="creationTime")
     private @Nullable Output<String> creationTime;
 
     /**
-     * @return 创建CEN实例的时间。
+     * @return Time when the CEN instance was created
      * 
      */
     public Optional<Output<String>> creationTime() {
@@ -94,14 +94,14 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
+     * Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
+     * @return Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
      * 
      */
     public Optional<Output<String>> description() {
@@ -116,14 +116,14 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * CEN实例所属项目的名称。不填则默认为default。
+     * Name of the project to which the CEN instance belongs. If not specified, defaults to &#39;default&#39;
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return CEN实例所属项目的名称。不填则默认为default。
+     * @return Name of the project to which the CEN instance belongs. If not specified, defaults to &#39;default&#39;
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -131,14 +131,14 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * CEN实例的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+     * Status of the CEN instance. Creating: Creating Deleting: Deleting Pending: Configuring Available: Available
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return CEN实例的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+     * @return Status of the CEN instance. Creating: Creating Deleting: Deleting Pending: Configuring Available: Available
      * 
      */
     public Optional<Output<String>> status() {
@@ -153,14 +153,14 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 更新CEN实例的时间。
+     * Time when the CEN instance was updated
      * 
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
-     * @return 更新CEN实例的时间。
+     * @return Time when the CEN instance was updated
      * 
      */
     public Optional<Output<String>> updateTime() {
@@ -202,7 +202,7 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountId CEN实例所属的账号ID。
+         * @param accountId Account ID to which the CEN instance belongs
          * 
          * @return builder
          * 
@@ -213,7 +213,7 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountId CEN实例所属的账号ID。
+         * @param accountId Account ID to which the CEN instance belongs
          * 
          * @return builder
          * 
@@ -223,7 +223,7 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cenBandwidthPackageIds 带宽包ID。
+         * @param cenBandwidthPackageIds Bandwidth package ID
          * 
          * @return builder
          * 
@@ -234,7 +234,7 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cenBandwidthPackageIds 带宽包ID。
+         * @param cenBandwidthPackageIds Bandwidth package ID
          * 
          * @return builder
          * 
@@ -244,7 +244,7 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cenBandwidthPackageIds 带宽包ID。
+         * @param cenBandwidthPackageIds Bandwidth package ID
          * 
          * @return builder
          * 
@@ -254,7 +254,7 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cenId CEN实例的ID。
+         * @param cenId CEN instance ID
          * 
          * @return builder
          * 
@@ -265,7 +265,7 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cenId CEN实例的ID。
+         * @param cenId CEN instance ID
          * 
          * @return builder
          * 
@@ -275,7 +275,7 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cenName CEN实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填则默认为CEN实例的ID。
+         * @param cenName Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
          * 
          * @return builder
          * 
@@ -286,7 +286,7 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cenName CEN实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填则默认为CEN实例的ID。
+         * @param cenName Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
          * 
          * @return builder
          * 
@@ -296,7 +296,7 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param creationTime 创建CEN实例的时间。
+         * @param creationTime Time when the CEN instance was created
          * 
          * @return builder
          * 
@@ -307,7 +307,7 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param creationTime 创建CEN实例的时间。
+         * @param creationTime Time when the CEN instance was created
          * 
          * @return builder
          * 
@@ -317,7 +317,7 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
+         * @param description Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
          * 
          * @return builder
          * 
@@ -328,7 +328,7 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
+         * @param description Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
          * 
          * @return builder
          * 
@@ -351,7 +351,7 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName CEN实例所属项目的名称。不填则默认为default。
+         * @param projectName Name of the project to which the CEN instance belongs. If not specified, defaults to &#39;default&#39;
          * 
          * @return builder
          * 
@@ -362,7 +362,7 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName CEN实例所属项目的名称。不填则默认为default。
+         * @param projectName Name of the project to which the CEN instance belongs. If not specified, defaults to &#39;default&#39;
          * 
          * @return builder
          * 
@@ -372,7 +372,7 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status CEN实例的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+         * @param status Status of the CEN instance. Creating: Creating Deleting: Deleting Pending: Configuring Available: Available
          * 
          * @return builder
          * 
@@ -383,7 +383,7 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status CEN实例的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+         * @param status Status of the CEN instance. Creating: Creating Deleting: Deleting Pending: Configuring Available: Available
          * 
          * @return builder
          * 
@@ -406,7 +406,7 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updateTime 更新CEN实例的时间。
+         * @param updateTime Time when the CEN instance was updated
          * 
          * @return builder
          * 
@@ -417,7 +417,7 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updateTime 更新CEN实例的时间。
+         * @param updateTime Time when the CEN instance was updated
          * 
          * @return builder
          * 

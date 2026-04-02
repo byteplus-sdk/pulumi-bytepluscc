@@ -100,7 +100,7 @@ class GetSnapshotResult:
     @pulumi.getter(name="creationTime")
     def creation_time(self) -> builtins.str:
         """
-        快照创建时间。
+        Snapshot creation time.
         """
         return pulumi.get(self, "creation_time")
 
@@ -108,7 +108,7 @@ class GetSnapshotResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        快照描述信息，默认为空，长度限制为0~255个字符。
+        Snapshot description. Default is empty. Length must be between 0 and 255 characters.
         """
         return pulumi.get(self, "description")
 
@@ -124,7 +124,7 @@ class GetSnapshotResult:
     @pulumi.getter(name="imageId")
     def image_id(self) -> builtins.str:
         """
-        镜像ID
+        Image ID
         """
         return pulumi.get(self, "image_id")
 
@@ -132,7 +132,7 @@ class GetSnapshotResult:
     @pulumi.getter(name="instantAccess")
     def instant_access(self) -> builtins.bool:
         """
-        快照是否开启极速可用能力，取值说明如下：true：已开启极速可用能力。false：未开启极速可用能力。
+        Whether the snapshot has enabled ultra-fast availability. Value options: true: ultra-fast availability enabled. false: ultra-fast availability not enabled.
         """
         return pulumi.get(self, "instant_access")
 
@@ -140,7 +140,7 @@ class GetSnapshotResult:
     @pulumi.getter
     def progress(self) -> builtins.int:
         """
-        快照转储进度。
+        Snapshot dump progress.
         """
         return pulumi.get(self, "progress")
 
@@ -148,7 +148,7 @@ class GetSnapshotResult:
     @pulumi.getter(name="projectName")
     def project_name(self) -> builtins.str:
         """
-        快照所要加入的Project（项目）名称。注意快照不会继承云盘的项目，即快照与云盘可以所属不同的项目。如果您在创建快照时未设置ProjectName，快照会默认加入default项目。
+        Name of the Project to which the snapshot will be added. Note: snapshots do not inherit the project of the cloud disk, so snapshots and cloud disks can belong to different projects. If you do not set ProjectName when creating the snapshot, it will be added to the default project.
         """
         return pulumi.get(self, "project_name")
 
@@ -156,7 +156,7 @@ class GetSnapshotResult:
     @pulumi.getter(name="retentionDays")
     def retention_days(self) -> builtins.int:
         """
-        快照保留时间，单位为天，取值说明如下：空：永久保留快照 。1~65536：指定保存天数。默认为空，即默认永久保留快照。说明快照保留时间从快照创建时刻开始计算。
+        Snapshot retention period, in days. Value options: empty: retain snapshot permanently. 1~65536: specify retention days. Default is empty, which means retain snapshot permanently. Snapshot retention period is calculated from the snapshot creation time.
         """
         return pulumi.get(self, "retention_days")
 
@@ -164,7 +164,7 @@ class GetSnapshotResult:
     @pulumi.getter
     def shared(self) -> builtins.bool:
         """
-        快照是否共享。
+        Whether the snapshot is shared.
         """
         return pulumi.get(self, "shared")
 
@@ -172,7 +172,7 @@ class GetSnapshotResult:
     @pulumi.getter(name="snapshotGroupId")
     def snapshot_group_id(self) -> builtins.str:
         """
-        快照一致性组ID。
+        Snapshot consistency group ID.
         """
         return pulumi.get(self, "snapshot_group_id")
 
@@ -180,7 +180,7 @@ class GetSnapshotResult:
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> builtins.str:
         """
-        快照ID。
+        Snapshot ID.
         """
         return pulumi.get(self, "snapshot_id")
 
@@ -188,7 +188,7 @@ class GetSnapshotResult:
     @pulumi.getter(name="snapshotName")
     def snapshot_name(self) -> builtins.str:
         """
-        创建的快照名称。命名规范如下：长度限制为1~128个字符。只能包含中文、字母、数字、下划线（_）、中划线（-）和英文句号（.）。为防止和自动快照的名称冲突，不能以“auto”开头。
+        Name of the created snapshot. Naming rules: length must be between 1 and 128 characters. Only Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) are allowed. To avoid conflicts with automatic snapshot names, the name cannot start with 'auto'.
         """
         return pulumi.get(self, "snapshot_name")
 
@@ -196,7 +196,7 @@ class GetSnapshotResult:
     @pulumi.getter(name="snapshotType")
     def snapshot_type(self) -> builtins.str:
         """
-        快照类型，取值说明如下：user：查询手动快照。auto：查询自动快照。share：查询共享快照。默认查询所有快照。
+        Snapshot type. The available values are: user: query manual snapshots. auto: query automatic snapshots. share: query shared snapshots. By default, all snapshots are queried.
         """
         return pulumi.get(self, "snapshot_type")
 
@@ -204,7 +204,7 @@ class GetSnapshotResult:
     @pulumi.getter
     def status(self) -> builtins.str:
         """
-        快照状态，取值说明如下：available：可用。creating：创建中。rollbacking：回滚中。deleted：已删除。failed：错误。
+        Snapshot status. Value options: available: available. creating: creating. rollbacking: rolling back. deleted: deleted. failed: error.
         """
         return pulumi.get(self, "status")
 
@@ -212,7 +212,7 @@ class GetSnapshotResult:
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetSnapshotTagResult']:
         """
-        快照的标签信息。
+        Snapshot tag information.
         """
         return pulumi.get(self, "tags")
 
@@ -220,7 +220,7 @@ class GetSnapshotResult:
     @pulumi.getter(name="volumeId")
     def volume_id(self) -> builtins.str:
         """
-        快照相关的云盘ID。
+        Cloud disk ID associated with the snapshot.
         """
         return pulumi.get(self, "volume_id")
 
@@ -228,7 +228,7 @@ class GetSnapshotResult:
     @pulumi.getter(name="volumeKind")
     def volume_kind(self) -> builtins.str:
         """
-        云盘种类，取值说明如下：system：系统盘。data：数据盘。
+        Cloud disk category. Value options: system: system disk. data: data disk.
         """
         return pulumi.get(self, "volume_kind")
 
@@ -236,7 +236,7 @@ class GetSnapshotResult:
     @pulumi.getter(name="volumeName")
     def volume_name(self) -> builtins.str:
         """
-        云盘名称。
+        Cloud disk name.
         """
         return pulumi.get(self, "volume_name")
 
@@ -244,7 +244,7 @@ class GetSnapshotResult:
     @pulumi.getter(name="volumeSize")
     def volume_size(self) -> builtins.int:
         """
-        云盘大小，单位为GiB。
+        Cloud disk size, in GiB.
         """
         return pulumi.get(self, "volume_size")
 
@@ -252,7 +252,7 @@ class GetSnapshotResult:
     @pulumi.getter(name="volumeStatus")
     def volume_status(self) -> builtins.str:
         """
-        云盘状态，取值说明如下：available：可用, attaching：挂载中, attached：已挂载, detaching：卸载中, creating：创建中, deleting：删除中, error：错误, extending：扩容中, ""：云盘被删除。
+        Cloud disk status. Value options: available: available, attaching: attaching, attached: attached, detaching: detaching, creating: creating, deleting: deleting, error: error, extending: expanding, "": cloud disk deleted.
         """
         return pulumi.get(self, "volume_status")
 
@@ -260,7 +260,7 @@ class GetSnapshotResult:
     @pulumi.getter(name="volumeType")
     def volume_type(self) -> builtins.str:
         """
-        云盘类型，取值说明如下：ESSD*PL0：极速型SSD云盘，PL0规格。ESSD*FlexPL：极速型SSD云盘，FlexPL规格。TSSD_TL0：吞吐型SSD云盘
+        Cloud disk type. Value options: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. TSSD_TL0: Throughput SSD cloud disk
         """
         return pulumi.get(self, "volume_type")
 
@@ -268,7 +268,7 @@ class GetSnapshotResult:
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> builtins.str:
         """
-        快照所在的可用区ID。
+        Availability zone ID where the snapshot is located.
         """
         return pulumi.get(self, "zone_id")
 

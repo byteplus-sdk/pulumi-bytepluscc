@@ -12,38 +12,38 @@ import java.util.Objects;
 @CustomType
 public final class GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig {
     /**
-     * @return 公网 IP 的带宽峰值，单位：Mbps。
+     * @return Peak bandwidth of the public IP, unit: Mbps
      * 
      */
     private Integer bandwidth;
     /**
-     * @return 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+     * @return Billing type for public IP: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic.
      * 
      */
     private Integer billingType;
     /**
-     * @return 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+     * @return Line type of the public IP. Parameter value description: BGP: BGP (multi-line)
      * 
      */
     private String isp;
 
     private GetClusterClusterConfigApiServerPublicAccessConfigPublicAccessNetworkConfig() {}
     /**
-     * @return 公网 IP 的带宽峰值，单位：Mbps。
+     * @return Peak bandwidth of the public IP, unit: Mbps
      * 
      */
     public Integer bandwidth() {
         return this.bandwidth;
     }
     /**
-     * @return 公网 IP 的计费类型：2：按量计费-按带宽上限。3：按量计费-按实际流量。
+     * @return Billing type for public IP: 2: Pay-as-you-go by bandwidth cap. 3: Pay-as-you-go by actual traffic.
      * 
      */
     public Integer billingType() {
         return this.billingType;
     }
     /**
-     * @return 公网 IP 的线路类型，参数值说明： BGP：BGP（多线）。
+     * @return Line type of the public IP. Parameter value description: BGP: BGP (multi-line)
      * 
      */
     public String isp() {

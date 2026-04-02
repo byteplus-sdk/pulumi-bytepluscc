@@ -16,14 +16,14 @@ public final class DirectConnectGatewayAssociateEicArgs extends com.pulumi.resou
     public static final DirectConnectGatewayAssociateEicArgs Empty = new DirectConnectGatewayAssociateEicArgs();
 
     /**
-     * EIC的ID。
+     * ID of EIC.
      * 
      */
     @Import(name="eicId")
     private @Nullable Output<String> eicId;
 
     /**
-     * @return EIC的ID。
+     * @return ID of EIC.
      * 
      */
     public Optional<Output<String>> eicId() {
@@ -31,14 +31,14 @@ public final class DirectConnectGatewayAssociateEicArgs extends com.pulumi.resou
     }
 
     /**
-     * EIC的用户ID。
+     * User ID of EIC.
      * 
      */
     @Import(name="eicOwnerId")
     private @Nullable Output<String> eicOwnerId;
 
     /**
-     * @return EIC的用户ID。
+     * @return User ID of EIC.
      * 
      */
     public Optional<Output<String>> eicOwnerId() {
@@ -46,14 +46,14 @@ public final class DirectConnectGatewayAssociateEicArgs extends com.pulumi.resou
     }
 
     /**
-     * 实例在EIC中的状态。
+     * Status of the instance in EIC.
      * 
      */
     @Import(name="eicStatus")
     private @Nullable Output<String> eicStatus;
 
     /**
-     * @return 实例在EIC中的状态。
+     * @return Status of the instance in EIC.
      * 
      */
     public Optional<Output<String>> eicStatus() {
@@ -87,7 +87,7 @@ public final class DirectConnectGatewayAssociateEicArgs extends com.pulumi.resou
         }
 
         /**
-         * @param eicId EIC的ID。
+         * @param eicId ID of EIC.
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class DirectConnectGatewayAssociateEicArgs extends com.pulumi.resou
         }
 
         /**
-         * @param eicId EIC的ID。
+         * @param eicId ID of EIC.
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class DirectConnectGatewayAssociateEicArgs extends com.pulumi.resou
         }
 
         /**
-         * @param eicOwnerId EIC的用户ID。
+         * @param eicOwnerId User ID of EIC.
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class DirectConnectGatewayAssociateEicArgs extends com.pulumi.resou
         }
 
         /**
-         * @param eicOwnerId EIC的用户ID。
+         * @param eicOwnerId User ID of EIC.
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class DirectConnectGatewayAssociateEicArgs extends com.pulumi.resou
         }
 
         /**
-         * @param eicStatus 实例在EIC中的状态。
+         * @param eicStatus Status of the instance in EIC.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class DirectConnectGatewayAssociateEicArgs extends com.pulumi.resou
         }
 
         /**
-         * @param eicStatus 实例在EIC中的状态。
+         * @param eicStatus Status of the instance in EIC.
          * 
          * @return builder
          * 

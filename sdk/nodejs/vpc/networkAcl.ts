@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * 网络ACL用于控制子网的出入流量，其基于白名单原理设计，出入子网的流量必须被网络ACL规则允许才能放通。
+ * The network ACL controls inbound and outbound traffic for subnets. It is designed based on the allowlist principle: traffic entering or leaving a subnet must be permitted by a network ACL rule to pass through.
  *
  * ## Import
  *
@@ -44,41 +44,41 @@ export class NetworkAcl extends pulumi.CustomResource {
     }
 
     /**
-     * 网络ACL的创建时间。
+     * Creation time of the network ACL.
      */
     public /*out*/ readonly createdTime!: pulumi.Output<string>;
     public /*out*/ readonly defaultEgressAclEntries!: pulumi.Output<outputs.vpc.NetworkAclDefaultEgressAclEntry[]>;
     public /*out*/ readonly defaultIngressAclEntries!: pulumi.Output<outputs.vpc.NetworkAclDefaultIngressAclEntry[]>;
     /**
-     * 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
      */
     public readonly description!: pulumi.Output<string>;
     public readonly egressAclEntries!: pulumi.Output<outputs.vpc.NetworkAclEgressAclEntry[]>;
     public readonly ingressAclEntries!: pulumi.Output<outputs.vpc.NetworkAclIngressAclEntry[]>;
     /**
-     * 网络ACL的ID。
+     * Network ACL ID.
      */
     public /*out*/ readonly networkAclId!: pulumi.Output<string>;
     /**
-     * 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+     * Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
      */
     public readonly networkAclName!: pulumi.Output<string>;
     /**
-     * 网络ACL所属项目的名称。不填默认加入default项目。
+     * Name of the project associated with the network ACL. If not specified, added to the default project.
      */
     public readonly projectName!: pulumi.Output<string>;
     public readonly resources!: pulumi.Output<outputs.vpc.NetworkAclResource[]>;
     /**
-     * 网络ACL的状态。Available：可用，Creating：创建中
+     * Status of the network ACL. Available: Available. Creating: Creating.
      */
     public /*out*/ readonly status!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.vpc.NetworkAclTag[]>;
     /**
-     * 网络ACL的更新时间。
+     * Last updated time of the network ACL.
      */
     public /*out*/ readonly updatedTime!: pulumi.Output<string>;
     /**
-     * 网络ACL所属VPC的ID。
+     * ID of the VPC associated with the network ACL.
      */
     public readonly vpcId!: pulumi.Output<string>;
 
@@ -139,41 +139,41 @@ export class NetworkAcl extends pulumi.CustomResource {
  */
 export interface NetworkAclState {
     /**
-     * 网络ACL的创建时间。
+     * Creation time of the network ACL.
      */
     createdTime?: pulumi.Input<string>;
     defaultEgressAclEntries?: pulumi.Input<pulumi.Input<inputs.vpc.NetworkAclDefaultEgressAclEntry>[]>;
     defaultIngressAclEntries?: pulumi.Input<pulumi.Input<inputs.vpc.NetworkAclDefaultIngressAclEntry>[]>;
     /**
-     * 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
      */
     description?: pulumi.Input<string>;
     egressAclEntries?: pulumi.Input<pulumi.Input<inputs.vpc.NetworkAclEgressAclEntry>[]>;
     ingressAclEntries?: pulumi.Input<pulumi.Input<inputs.vpc.NetworkAclIngressAclEntry>[]>;
     /**
-     * 网络ACL的ID。
+     * Network ACL ID.
      */
     networkAclId?: pulumi.Input<string>;
     /**
-     * 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+     * Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
      */
     networkAclName?: pulumi.Input<string>;
     /**
-     * 网络ACL所属项目的名称。不填默认加入default项目。
+     * Name of the project associated with the network ACL. If not specified, added to the default project.
      */
     projectName?: pulumi.Input<string>;
     resources?: pulumi.Input<pulumi.Input<inputs.vpc.NetworkAclResource>[]>;
     /**
-     * 网络ACL的状态。Available：可用，Creating：创建中
+     * Status of the network ACL. Available: Available. Creating: Creating.
      */
     status?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.vpc.NetworkAclTag>[]>;
     /**
-     * 网络ACL的更新时间。
+     * Last updated time of the network ACL.
      */
     updatedTime?: pulumi.Input<string>;
     /**
-     * 网络ACL所属VPC的ID。
+     * ID of the VPC associated with the network ACL.
      */
     vpcId?: pulumi.Input<string>;
 }
@@ -183,23 +183,23 @@ export interface NetworkAclState {
  */
 export interface NetworkAclArgs {
     /**
-     * 网络ACL描述信息。长度限制为0~ 255个字符。需要以字母、中文或数字开头。可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。）。
+     * Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
      */
     description?: pulumi.Input<string>;
     egressAclEntries?: pulumi.Input<pulumi.Input<inputs.vpc.NetworkAclEgressAclEntry>[]>;
     ingressAclEntries?: pulumi.Input<pulumi.Input<inputs.vpc.NetworkAclIngressAclEntry>[]>;
     /**
-     * 网络ACL名称。长度限制为1 ~ 128个字符。需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-）。
+     * Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
      */
     networkAclName?: pulumi.Input<string>;
     /**
-     * 网络ACL所属项目的名称。不填默认加入default项目。
+     * Name of the project associated with the network ACL. If not specified, added to the default project.
      */
     projectName?: pulumi.Input<string>;
     resources?: pulumi.Input<pulumi.Input<inputs.vpc.NetworkAclResource>[]>;
     tags?: pulumi.Input<pulumi.Input<inputs.vpc.NetworkAclTag>[]>;
     /**
-     * 网络ACL所属VPC的ID。
+     * ID of the VPC associated with the network ACL.
      */
     vpcId: pulumi.Input<string>;
 }

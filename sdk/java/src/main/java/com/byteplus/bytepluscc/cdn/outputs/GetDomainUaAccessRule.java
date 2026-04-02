@@ -13,62 +13,62 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainUaAccessRule {
     /**
-     * @return 表示是否允许 UA 为空（&#34;&#34;）或者不包含 UA 字段的请求访问加速域名。该参数有以下取值：true：表示允许。false：表示不允许。该参数的默认值是 false。
+     * @return Indicates whether requests with an empty UA (&#34;&#34;) or without a UA field are allowed to access the acceleration domain. The parameter has the following values: true: allowed. false: not allowed. The default value is false.
      * 
      */
     private Boolean allowEmpty;
     /**
-     * @return 表示 UA 字符串是否是大小写敏感的。该参数有以下取值：true: 表示 UA 字符串是大小写不敏感的。false: 表示 UA 字符串是大小写敏感的。该参数的默认值是 false。
+     * @return Indicates whether the UA string is case-sensitive. The parameter has the following options: true: The UA string is case-insensitive. false: The UA string is case-sensitive. The default value for this parameter is false.
      * 
      */
     private Boolean ignoreCase;
     /**
-     * @return 表示指定的是黑名单还是白名单。当 Switch 是 true 时，该参数为必填。该参数有以下取值：deny: 表示指定的是黑名单。allow: 表示指定的是白名单。
+     * @return Specifies whether a denylist or allowlist is used. When Switch is true, this parameter is required. The parameter values are as follows: deny: specifies a denylist. allow: specifies an allowlist.
      * 
      */
     private String ruleType;
     /**
-     * @return 表示是否启用 UA 黑白名单功能。该参数有以下取值：true: 表示启用。false: 表示禁用。
+     * @return Indicates whether the UA allowlist and blocklist feature is enabled. This parameter has the following values: true: enabled. false: disabled.
      * 
      */
     private Boolean switch_;
     /**
-     * @return 表示一个 UA 的列表。当 Switch 是 true 时，该参数为必填。该列表最多包含 1,000 个 UA。该参数的说明如下：该参数值的长度不能超过 30,000 个字符。如果 RuleType 是 allow，表示仅允许包含列表中的 UA 的请求访问加速域名。如果 RuleType 是 deny，表示如果访问请求包含列表中的 UA，则不允许访问加速域名。UA 能包含的字符有以下限制：UA 中可以使用 * 表示一个或者多个字符。* 仅可以出现在 UA 的开头和末尾。UA 不能只包含 *或者空格。UA 可以包含除了 Delete（ASCII code 127）的可打印 ASCII 字符。UA 如果包含符号，符号必须是被 HTML 编码的。
+     * @return Represents a list of UAs. When Switch is true, this parameter is required. The list can contain up to 1,000 UAs. The parameter details are as follows: The value length cannot exceed 30,000 characters. If RuleType is allow, only requests containing UAs in the list are permitted to access the acceleration domain. If RuleType is deny, requests containing UAs in the list are not permitted to access the acceleration domain. UA character restrictions are as follows: You can use * in a UA to represent one or more characters. * can only appear at the beginning or end of the UA. A UA cannot consist only of * or spaces. A UA can contain printable ASCII characters except Delete (ASCII code 127). If a UA contains symbols, the symbols must be HTML encoded.
      * 
      */
     private List<String> userAgents;
 
     private GetDomainUaAccessRule() {}
     /**
-     * @return 表示是否允许 UA 为空（&#34;&#34;）或者不包含 UA 字段的请求访问加速域名。该参数有以下取值：true：表示允许。false：表示不允许。该参数的默认值是 false。
+     * @return Indicates whether requests with an empty UA (&#34;&#34;) or without a UA field are allowed to access the acceleration domain. The parameter has the following values: true: allowed. false: not allowed. The default value is false.
      * 
      */
     public Boolean allowEmpty() {
         return this.allowEmpty;
     }
     /**
-     * @return 表示 UA 字符串是否是大小写敏感的。该参数有以下取值：true: 表示 UA 字符串是大小写不敏感的。false: 表示 UA 字符串是大小写敏感的。该参数的默认值是 false。
+     * @return Indicates whether the UA string is case-sensitive. The parameter has the following options: true: The UA string is case-insensitive. false: The UA string is case-sensitive. The default value for this parameter is false.
      * 
      */
     public Boolean ignoreCase() {
         return this.ignoreCase;
     }
     /**
-     * @return 表示指定的是黑名单还是白名单。当 Switch 是 true 时，该参数为必填。该参数有以下取值：deny: 表示指定的是黑名单。allow: 表示指定的是白名单。
+     * @return Specifies whether a denylist or allowlist is used. When Switch is true, this parameter is required. The parameter values are as follows: deny: specifies a denylist. allow: specifies an allowlist.
      * 
      */
     public String ruleType() {
         return this.ruleType;
     }
     /**
-     * @return 表示是否启用 UA 黑白名单功能。该参数有以下取值：true: 表示启用。false: 表示禁用。
+     * @return Indicates whether the UA allowlist and blocklist feature is enabled. This parameter has the following values: true: enabled. false: disabled.
      * 
      */
     public Boolean switch_() {
         return this.switch_;
     }
     /**
-     * @return 表示一个 UA 的列表。当 Switch 是 true 时，该参数为必填。该列表最多包含 1,000 个 UA。该参数的说明如下：该参数值的长度不能超过 30,000 个字符。如果 RuleType 是 allow，表示仅允许包含列表中的 UA 的请求访问加速域名。如果 RuleType 是 deny，表示如果访问请求包含列表中的 UA，则不允许访问加速域名。UA 能包含的字符有以下限制：UA 中可以使用 * 表示一个或者多个字符。* 仅可以出现在 UA 的开头和末尾。UA 不能只包含 *或者空格。UA 可以包含除了 Delete（ASCII code 127）的可打印 ASCII 字符。UA 如果包含符号，符号必须是被 HTML 编码的。
+     * @return Represents a list of UAs. When Switch is true, this parameter is required. The list can contain up to 1,000 UAs. The parameter details are as follows: The value length cannot exceed 30,000 characters. If RuleType is allow, only requests containing UAs in the list are permitted to access the acceleration domain. If RuleType is deny, requests containing UAs in the list are not permitted to access the acceleration domain. UA character restrictions are as follows: You can use * in a UA to represent one or more characters. * can only appear at the beginning or end of the UA. A UA cannot consist only of * or spaces. A UA can contain printable ASCII characters except Delete (ASCII code 127). If a UA contains symbols, the symbols must be HTML encoded.
      * 
      */
     public List<String> userAgents() {

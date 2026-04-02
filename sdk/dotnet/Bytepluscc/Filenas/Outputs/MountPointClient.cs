@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas.Outputs
     public sealed class MountPointClient
     {
         /// <summary>
-        /// 客户端的私有网络 IP 地址。
+        /// Client's private network IP address.
         /// </summary>
         public readonly string? Ip;
         /// <summary>
-        /// 挂载协议版本号。取值：NFSv3。
+        /// Mount protocol version. Value: NFSv3.
         /// </summary>
         public readonly string? ProtocolVersion;
         /// <summary>
-        /// 私有网络名称。
+        /// Private network name.
         /// </summary>
         public readonly string? VpcName;
 

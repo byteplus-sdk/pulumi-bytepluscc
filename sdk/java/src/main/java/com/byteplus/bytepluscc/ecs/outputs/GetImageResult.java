@@ -4,6 +4,7 @@
 package com.byteplus.bytepluscc.ecs.outputs;
 
 import com.byteplus.bytepluscc.ecs.outputs.GetImageDetectionResults;
+import com.byteplus.bytepluscc.ecs.outputs.GetImageImportImage;
 import com.byteplus.bytepluscc.ecs.outputs.GetImageSnapshot;
 import com.byteplus.bytepluscc.ecs.outputs.GetImageTag;
 import com.pulumi.core.annotations.CustomType;
@@ -18,27 +19,32 @@ import java.util.Objects;
 @CustomType
 public final class GetImageResult {
     /**
-     * @return 镜像的架构类型。可以选择amd64（x86计算）、arm64（ARM计算）类型。
+     * @return Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
      * 
      */
     private String architecture;
     /**
-     * @return 镜像的启动模式。可以选择BIOS、UEFI类型。
+     * @return Image boot mode. You can select BIOS or UEFI
      * 
      */
     private String bootMode;
     /**
-     * @return 镜像创建时间
+     * @return Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+     * 
+     */
+    private Boolean createWholeImage;
+    /**
+     * @return Image creation time
      * 
      */
     private String createdAt;
     /**
-     * @return 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
+     * @return Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, equals signs &#34;=&#34;, English commas &#34;,&#34;, English periods &#34;.&#34;, Chinese commas &#34;，&#34;, Chinese periods &#34;。&#34;, and spaces. Length: 0–255 characters. If left blank, defaults to empty.
      * 
      */
     private String description;
     /**
-     * @return 镜像的检测结果。
+     * @return Image check result.
      * 
      */
     private GetImageDetectionResults detectionResults;
@@ -48,162 +54,184 @@ public final class GetImageResult {
      */
     private String id;
     /**
-     * @return 镜像ID。
+     * @return Image ID
      * 
      */
     private String imageId;
     /**
-     * @return 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
+     * @return Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34;. Length: 1–128 characters
      * 
      */
     private String imageName;
     /**
-     * @return 镜像所属的账号ID。
+     * @return Account ID to which the image belongs.
      * 
      */
     private String imageOwnerId;
     /**
-     * @return 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
+     * @return Imported image information
+     * 
+     */
+    private GetImageImportImage importImage;
+    /**
+     * @return Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
      * 
      */
     private String instanceId;
     /**
-     * @return 镜像中是否安装了云助手Agent。
+     * @return Whether Cloud Assistant Agent is installed in the image
      * 
      */
     private Boolean isInstallRunCommandAgent;
     /**
-     * @return 公共镜像是否长期维护。
+     * @return Whether the public image is maintained long-term.
      * 
      */
     private Boolean isLts;
     /**
-     * @return 镜像是否支持Cloud-init。
+     * @return Whether the image supports Cloud-init.
      * 
      */
     private Boolean isSupportCloudInit;
     /**
-     * @return 镜像的内核版本。
+     * @return Image kernel version.
      * 
      */
     private String kernel;
     /**
-     * @return 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
+     * @return Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
      * 
      */
     private String licenseType;
     /**
-     * @return 镜像操作系统的名称。
+     * @return Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+     * 
+     */
+    private Boolean needDetection;
+    /**
+     * @return Name of the image operating system.
      * 
      */
     private String osName;
     /**
-     * @return 操作系统类型。
+     * @return Operating system type
      * 
      */
     private String osType;
     /**
-     * @return 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
+     * @return Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
      * 
      */
     private String platform;
     /**
-     * @return 镜像的发行版本。
+     * @return Image release version.
      * 
      */
     private String platformVersion;
     /**
-     * @return 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
+     * @return Product code for marketplace image
+     * 
+     */
+    private String productCode;
+    /**
+     * @return Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
      * 
      */
     private String projectName;
     /**
-     * @return 镜像共享的账户
+     * @return Accounts with which the image is shared
      * 
      */
     private List<String> sharePermissions;
     /**
-     * @return 镜像共享状态。HasShared：自定义镜像已被共享给其他用户。当自定义镜像未被共享或使用公共镜像时，ShareStatus返回为空。
+     * @return Image sharing status. HasShared: The custom image has been shared with other users. If the custom image is not shared or a public image is used, ShareStatus returns empty.
      * 
      */
     private String shareStatus;
     /**
-     * @return 镜像大小，单位为GiB。
+     * @return Image size, in GiB.
      * 
      */
     private Integer size;
     /**
-     * @return 快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
+     * @return Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
      * 
      */
     private String snapshotGroupId;
     /**
-     * @return 系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
+     * @return System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
      * 
      */
     private String snapshotId;
     /**
-     * @return 镜像关联快照的信息。
+     * @return Information about snapshots associated with the image.
      * 
      */
     private List<GetImageSnapshot> snapshots;
     /**
-     * @return 镜像的状态。
+     * @return Image status.
      * 
      */
     private String status;
     /**
-     * @return 镜像绑定的标签列表。
+     * @return List of tags bound to the image.
      * 
      */
     private List<GetImageTag> tags;
     /**
-     * @return 镜像更新时间
+     * @return Image update time
      * 
      */
     private String updatedAt;
     /**
-     * @return 镜像大小，单位为Byte。
+     * @return Image size, in Bytes.
      * 
      */
     private Double virtualSize;
     /**
-     * @return 镜像的可见性。public：公共镜像。private：私有镜像。shared：共享镜像。
+     * @return Image visibility. public: Public image. private: Private image. shared: Shared image.
      * 
      */
     private String visibility;
 
     private GetImageResult() {}
     /**
-     * @return 镜像的架构类型。可以选择amd64（x86计算）、arm64（ARM计算）类型。
+     * @return Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
      * 
      */
     public String architecture() {
         return this.architecture;
     }
     /**
-     * @return 镜像的启动模式。可以选择BIOS、UEFI类型。
+     * @return Image boot mode. You can select BIOS or UEFI
      * 
      */
     public String bootMode() {
         return this.bootMode;
     }
     /**
-     * @return 镜像创建时间
+     * @return Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
+     * 
+     */
+    public Boolean createWholeImage() {
+        return this.createWholeImage;
+    }
+    /**
+     * @return Image creation time
      * 
      */
     public String createdAt() {
         return this.createdAt;
     }
     /**
-     * @return 镜像描述。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、等号“=”、英文逗号“,”、英文句号“.”、中文逗号“，”、中文句号“。”和空格。长度限制为0～255个字符。不填默认为空。
+     * @return Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, equals signs &#34;=&#34;, English commas &#34;,&#34;, English periods &#34;.&#34;, Chinese commas &#34;，&#34;, Chinese periods &#34;。&#34;, and spaces. Length: 0–255 characters. If left blank, defaults to empty.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 镜像的检测结果。
+     * @return Image check result.
      * 
      */
     public GetImageDetectionResults detectionResults() {
@@ -217,175 +245,196 @@ public final class GetImageResult {
         return this.id;
     }
     /**
-     * @return 镜像ID。
+     * @return Image ID
      * 
      */
     public String imageId() {
         return this.imageId;
     }
     /**
-     * @return 镜像名称。必须以字母、汉字开头。只能包含中文、字母、数字、下划线“_”、中划线“-”、英文句号“.”。长度限制为1 ~ 128个字符。
+     * @return Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34;. Length: 1–128 characters
      * 
      */
     public String imageName() {
         return this.imageName;
     }
     /**
-     * @return 镜像所属的账号ID。
+     * @return Account ID to which the image belongs.
      * 
      */
     public String imageOwnerId() {
         return this.imageOwnerId;
     }
     /**
-     * @return 实例ID。本参数与SnapshotId、SnapshotGroupId参数，三选一必填。
+     * @return Imported image information
+     * 
+     */
+    public GetImageImportImage importImage() {
+        return this.importImage;
+    }
+    /**
+     * @return Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return 镜像中是否安装了云助手Agent。
+     * @return Whether Cloud Assistant Agent is installed in the image
      * 
      */
     public Boolean isInstallRunCommandAgent() {
         return this.isInstallRunCommandAgent;
     }
     /**
-     * @return 公共镜像是否长期维护。
+     * @return Whether the public image is maintained long-term.
      * 
      */
     public Boolean isLts() {
         return this.isLts;
     }
     /**
-     * @return 镜像是否支持Cloud-init。
+     * @return Whether the image supports Cloud-init.
      * 
      */
     public Boolean isSupportCloudInit() {
         return this.isSupportCloudInit;
     }
     /**
-     * @return 镜像的内核版本。
+     * @return Image kernel version.
      * 
      */
     public String kernel() {
         return this.kernel;
     }
     /**
-     * @return 镜像许可证类型。VolcanoEngine：默认，根据您设置的platform，采用官方渠道的许可证。BYOL：自带许可证（BYOL）。
+     * @return Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
      * 
      */
     public String licenseType() {
         return this.licenseType;
     }
     /**
-     * @return 镜像操作系统的名称。
+     * @return Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
+     * 
+     */
+    public Boolean needDetection() {
+        return this.needDetection;
+    }
+    /**
+     * @return Name of the image operating system.
      * 
      */
     public String osName() {
         return this.osName;
     }
     /**
-     * @return 操作系统类型。
+     * @return Operating system type
      * 
      */
     public String osType() {
         return this.osType;
     }
     /**
-     * @return 镜像操作系统的发行版本。可以选择CentOS、Debian、veLinux、Windows Server、Fedora、OpenSUSE、Ubuntu。
+     * @return Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
      * 
      */
     public String platform() {
         return this.platform;
     }
     /**
-     * @return 镜像的发行版本。
+     * @return Image release version.
      * 
      */
     public String platformVersion() {
         return this.platformVersion;
     }
     /**
-     * @return 资源所属项目。调用接口账号若仅拥有部分项目权限时必须传入有权限的项目信息。
+     * @return Product code for marketplace image
+     * 
+     */
+    public String productCode() {
+        return this.productCode;
+    }
+    /**
+     * @return Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 镜像共享的账户
+     * @return Accounts with which the image is shared
      * 
      */
     public List<String> sharePermissions() {
         return this.sharePermissions;
     }
     /**
-     * @return 镜像共享状态。HasShared：自定义镜像已被共享给其他用户。当自定义镜像未被共享或使用公共镜像时，ShareStatus返回为空。
+     * @return Image sharing status. HasShared: The custom image has been shared with other users. If the custom image is not shared or a public image is used, ShareStatus returns empty.
      * 
      */
     public String shareStatus() {
         return this.shareStatus;
     }
     /**
-     * @return 镜像大小，单位为GiB。
+     * @return Image size, in GiB.
      * 
      */
     public Integer size() {
         return this.size;
     }
     /**
-     * @return 快照一致性组ID，表示使用快照一致性组创建自定义镜像。本参数与SnapshotId、InstanceId参数，三选一必填。
+     * @return Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
      * 
      */
     public String snapshotGroupId() {
         return this.snapshotGroupId;
     }
     /**
-     * @return 系统盘快照ID，表示使用系统盘快照创建自定义镜像。本参数与InstanceId、SnapshotGroupId参数，三选一必填。
+     * @return System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
      * 
      */
     public String snapshotId() {
         return this.snapshotId;
     }
     /**
-     * @return 镜像关联快照的信息。
+     * @return Information about snapshots associated with the image.
      * 
      */
     public List<GetImageSnapshot> snapshots() {
         return this.snapshots;
     }
     /**
-     * @return 镜像的状态。
+     * @return Image status.
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 镜像绑定的标签列表。
+     * @return List of tags bound to the image.
      * 
      */
     public List<GetImageTag> tags() {
         return this.tags;
     }
     /**
-     * @return 镜像更新时间
+     * @return Image update time
      * 
      */
     public String updatedAt() {
         return this.updatedAt;
     }
     /**
-     * @return 镜像大小，单位为Byte。
+     * @return Image size, in Bytes.
      * 
      */
     public Double virtualSize() {
         return this.virtualSize;
     }
     /**
-     * @return 镜像的可见性。public：公共镜像。private：私有镜像。shared：共享镜像。
+     * @return Image visibility. public: Public image. private: Private image. shared: Shared image.
      * 
      */
     public String visibility() {
@@ -403,6 +452,7 @@ public final class GetImageResult {
     public static final class Builder {
         private String architecture;
         private String bootMode;
+        private Boolean createWholeImage;
         private String createdAt;
         private String description;
         private GetImageDetectionResults detectionResults;
@@ -410,16 +460,19 @@ public final class GetImageResult {
         private String imageId;
         private String imageName;
         private String imageOwnerId;
+        private GetImageImportImage importImage;
         private String instanceId;
         private Boolean isInstallRunCommandAgent;
         private Boolean isLts;
         private Boolean isSupportCloudInit;
         private String kernel;
         private String licenseType;
+        private Boolean needDetection;
         private String osName;
         private String osType;
         private String platform;
         private String platformVersion;
+        private String productCode;
         private String projectName;
         private List<String> sharePermissions;
         private String shareStatus;
@@ -437,6 +490,7 @@ public final class GetImageResult {
     	      Objects.requireNonNull(defaults);
     	      this.architecture = defaults.architecture;
     	      this.bootMode = defaults.bootMode;
+    	      this.createWholeImage = defaults.createWholeImage;
     	      this.createdAt = defaults.createdAt;
     	      this.description = defaults.description;
     	      this.detectionResults = defaults.detectionResults;
@@ -444,16 +498,19 @@ public final class GetImageResult {
     	      this.imageId = defaults.imageId;
     	      this.imageName = defaults.imageName;
     	      this.imageOwnerId = defaults.imageOwnerId;
+    	      this.importImage = defaults.importImage;
     	      this.instanceId = defaults.instanceId;
     	      this.isInstallRunCommandAgent = defaults.isInstallRunCommandAgent;
     	      this.isLts = defaults.isLts;
     	      this.isSupportCloudInit = defaults.isSupportCloudInit;
     	      this.kernel = defaults.kernel;
     	      this.licenseType = defaults.licenseType;
+    	      this.needDetection = defaults.needDetection;
     	      this.osName = defaults.osName;
     	      this.osType = defaults.osType;
     	      this.platform = defaults.platform;
     	      this.platformVersion = defaults.platformVersion;
+    	      this.productCode = defaults.productCode;
     	      this.projectName = defaults.projectName;
     	      this.sharePermissions = defaults.sharePermissions;
     	      this.shareStatus = defaults.shareStatus;
@@ -482,6 +539,14 @@ public final class GetImageResult {
               throw new MissingRequiredPropertyException("GetImageResult", "bootMode");
             }
             this.bootMode = bootMode;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder createWholeImage(Boolean createWholeImage) {
+            if (createWholeImage == null) {
+              throw new MissingRequiredPropertyException("GetImageResult", "createWholeImage");
+            }
+            this.createWholeImage = createWholeImage;
             return this;
         }
         @CustomType.Setter
@@ -541,6 +606,14 @@ public final class GetImageResult {
             return this;
         }
         @CustomType.Setter
+        public Builder importImage(GetImageImportImage importImage) {
+            if (importImage == null) {
+              throw new MissingRequiredPropertyException("GetImageResult", "importImage");
+            }
+            this.importImage = importImage;
+            return this;
+        }
+        @CustomType.Setter
         public Builder instanceId(String instanceId) {
             if (instanceId == null) {
               throw new MissingRequiredPropertyException("GetImageResult", "instanceId");
@@ -589,6 +662,14 @@ public final class GetImageResult {
             return this;
         }
         @CustomType.Setter
+        public Builder needDetection(Boolean needDetection) {
+            if (needDetection == null) {
+              throw new MissingRequiredPropertyException("GetImageResult", "needDetection");
+            }
+            this.needDetection = needDetection;
+            return this;
+        }
+        @CustomType.Setter
         public Builder osName(String osName) {
             if (osName == null) {
               throw new MissingRequiredPropertyException("GetImageResult", "osName");
@@ -618,6 +699,14 @@ public final class GetImageResult {
               throw new MissingRequiredPropertyException("GetImageResult", "platformVersion");
             }
             this.platformVersion = platformVersion;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder productCode(String productCode) {
+            if (productCode == null) {
+              throw new MissingRequiredPropertyException("GetImageResult", "productCode");
+            }
+            this.productCode = productCode;
             return this;
         }
         @CustomType.Setter
@@ -729,6 +818,7 @@ public final class GetImageResult {
             final var _resultValue = new GetImageResult();
             _resultValue.architecture = architecture;
             _resultValue.bootMode = bootMode;
+            _resultValue.createWholeImage = createWholeImage;
             _resultValue.createdAt = createdAt;
             _resultValue.description = description;
             _resultValue.detectionResults = detectionResults;
@@ -736,16 +826,19 @@ public final class GetImageResult {
             _resultValue.imageId = imageId;
             _resultValue.imageName = imageName;
             _resultValue.imageOwnerId = imageOwnerId;
+            _resultValue.importImage = importImage;
             _resultValue.instanceId = instanceId;
             _resultValue.isInstallRunCommandAgent = isInstallRunCommandAgent;
             _resultValue.isLts = isLts;
             _resultValue.isSupportCloudInit = isSupportCloudInit;
             _resultValue.kernel = kernel;
             _resultValue.licenseType = licenseType;
+            _resultValue.needDetection = needDetection;
             _resultValue.osName = osName;
             _resultValue.osType = osType;
             _resultValue.platform = platform;
             _resultValue.platformVersion = platformVersion;
+            _resultValue.productCode = productCode;
             _resultValue.projectName = projectName;
             _resultValue.sharePermissions = sharePermissions;
             _resultValue.shareStatus = shareStatus;

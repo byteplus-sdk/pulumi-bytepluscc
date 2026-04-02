@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * Plural Data Source schema for Byteplus::ECS::LaunchtemplateVersion
+ * Plural Data Source schema for Byteplus::ECS::LaunchTemplateVersion
  */
 export function getLaunchTemplateVersions(opts?: pulumi.InvokeOptions): Promise<GetLaunchTemplateVersionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -27,7 +27,7 @@ export interface GetLaunchTemplateVersionsResult {
     readonly ids: string[];
 }
 /**
- * Plural Data Source schema for Byteplus::ECS::LaunchtemplateVersion
+ * Plural Data Source schema for Byteplus::ECS::LaunchTemplateVersion
  */
 export function getLaunchTemplateVersionsOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLaunchTemplateVersionsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

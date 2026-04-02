@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 当您创建好云身份中心用户后，需要授予用户访问到各账号的登录访问权限。当用户访问火山引擎云资源的权限访问具备可抽象的共性时，如：网络运维权限、安全管理权限等，您可以在云身份中心预置访问权限集作为权限模版，最终基于访问权限集来实现中心化授权。云身份中心将会为您同步分发访问权限集到各个账号，减少企业权限的运维成本。
+// After you create a Cloud Identity Center user, you need to grant the user login access permissions to each account. When access permissions to Volcano Engine cloud resources share common characteristics, such as network operations permissions or security management permissions, you can predefine permission sets in the Cloud Identity Center as templates. You can achieve centralized authorization based on these permission sets. The Cloud Identity Center will synchronize and distribute permission sets to each account, reducing enterprise permission operation and maintenance costs
 //
 // ## Import
 //
@@ -22,22 +22,22 @@ import (
 type PermissionSet struct {
 	pulumi.CustomResourceState
 
-	// 创建时间。
+	// Creation Time
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
-	// 权限集描述。
+	// Permission Set Description
 	Description pulumi.StringOutput `pulumi:"description"`
-	// 权限集名称。
+	// Permission Set Name
 	Name               pulumi.StringOutput                      `pulumi:"name"`
 	PermissionPolicies PermissionSetPermissionPolicyArrayOutput `pulumi:"permissionPolicies"`
-	// 权限集 ID。
+	// Permission Set ID
 	PermissionSetId pulumi.StringOutput `pulumi:"permissionSetId"`
-	// 跳转控制台 URL。
+	// Console Redirect URL
 	RelayState pulumi.StringOutput `pulumi:"relayState"`
-	// session 过期时间，单位秒。
+	// Session Expiration Time (seconds)
 	SessionDuration pulumi.IntOutput `pulumi:"sessionDuration"`
-	// 状态通知配置。
+	// Status Notification Configuration
 	StatusNotifications pulumi.StringArrayOutput `pulumi:"statusNotifications"`
-	// 更新时间。
+	// Update Time
 	UpdatedTime pulumi.StringOutput `pulumi:"updatedTime"`
 }
 
@@ -74,42 +74,42 @@ func GetPermissionSet(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering PermissionSet resources.
 type permissionSetState struct {
-	// 创建时间。
+	// Creation Time
 	CreatedTime *string `pulumi:"createdTime"`
-	// 权限集描述。
+	// Permission Set Description
 	Description *string `pulumi:"description"`
-	// 权限集名称。
+	// Permission Set Name
 	Name               *string                         `pulumi:"name"`
 	PermissionPolicies []PermissionSetPermissionPolicy `pulumi:"permissionPolicies"`
-	// 权限集 ID。
+	// Permission Set ID
 	PermissionSetId *string `pulumi:"permissionSetId"`
-	// 跳转控制台 URL。
+	// Console Redirect URL
 	RelayState *string `pulumi:"relayState"`
-	// session 过期时间，单位秒。
+	// Session Expiration Time (seconds)
 	SessionDuration *int `pulumi:"sessionDuration"`
-	// 状态通知配置。
+	// Status Notification Configuration
 	StatusNotifications []string `pulumi:"statusNotifications"`
-	// 更新时间。
+	// Update Time
 	UpdatedTime *string `pulumi:"updatedTime"`
 }
 
 type PermissionSetState struct {
-	// 创建时间。
+	// Creation Time
 	CreatedTime pulumi.StringPtrInput
-	// 权限集描述。
+	// Permission Set Description
 	Description pulumi.StringPtrInput
-	// 权限集名称。
+	// Permission Set Name
 	Name               pulumi.StringPtrInput
 	PermissionPolicies PermissionSetPermissionPolicyArrayInput
-	// 权限集 ID。
+	// Permission Set ID
 	PermissionSetId pulumi.StringPtrInput
-	// 跳转控制台 URL。
+	// Console Redirect URL
 	RelayState pulumi.StringPtrInput
-	// session 过期时间，单位秒。
+	// Session Expiration Time (seconds)
 	SessionDuration pulumi.IntPtrInput
-	// 状态通知配置。
+	// Status Notification Configuration
 	StatusNotifications pulumi.StringArrayInput
-	// 更新时间。
+	// Update Time
 	UpdatedTime pulumi.StringPtrInput
 }
 
@@ -118,27 +118,27 @@ func (PermissionSetState) ElementType() reflect.Type {
 }
 
 type permissionSetArgs struct {
-	// 权限集描述。
+	// Permission Set Description
 	Description *string `pulumi:"description"`
-	// 权限集名称。
+	// Permission Set Name
 	Name               string                          `pulumi:"name"`
 	PermissionPolicies []PermissionSetPermissionPolicy `pulumi:"permissionPolicies"`
-	// 跳转控制台 URL。
+	// Console Redirect URL
 	RelayState *string `pulumi:"relayState"`
-	// session 过期时间，单位秒。
+	// Session Expiration Time (seconds)
 	SessionDuration *int `pulumi:"sessionDuration"`
 }
 
 // The set of arguments for constructing a PermissionSet resource.
 type PermissionSetArgs struct {
-	// 权限集描述。
+	// Permission Set Description
 	Description pulumi.StringPtrInput
-	// 权限集名称。
+	// Permission Set Name
 	Name               pulumi.StringInput
 	PermissionPolicies PermissionSetPermissionPolicyArrayInput
-	// 跳转控制台 URL。
+	// Console Redirect URL
 	RelayState pulumi.StringPtrInput
-	// session 过期时间，单位秒。
+	// Session Expiration Time (seconds)
 	SessionDuration pulumi.IntPtrInput
 }
 
@@ -229,17 +229,17 @@ func (o PermissionSetOutput) ToPermissionSetOutputWithContext(ctx context.Contex
 	return o
 }
 
-// 创建时间。
+// Creation Time
 func (o PermissionSetOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *PermissionSet) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 权限集描述。
+// Permission Set Description
 func (o PermissionSetOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *PermissionSet) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// 权限集名称。
+// Permission Set Name
 func (o PermissionSetOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *PermissionSet) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
@@ -248,27 +248,27 @@ func (o PermissionSetOutput) PermissionPolicies() PermissionSetPermissionPolicyA
 	return o.ApplyT(func(v *PermissionSet) PermissionSetPermissionPolicyArrayOutput { return v.PermissionPolicies }).(PermissionSetPermissionPolicyArrayOutput)
 }
 
-// 权限集 ID。
+// Permission Set ID
 func (o PermissionSetOutput) PermissionSetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PermissionSet) pulumi.StringOutput { return v.PermissionSetId }).(pulumi.StringOutput)
 }
 
-// 跳转控制台 URL。
+// Console Redirect URL
 func (o PermissionSetOutput) RelayState() pulumi.StringOutput {
 	return o.ApplyT(func(v *PermissionSet) pulumi.StringOutput { return v.RelayState }).(pulumi.StringOutput)
 }
 
-// session 过期时间，单位秒。
+// Session Expiration Time (seconds)
 func (o PermissionSetOutput) SessionDuration() pulumi.IntOutput {
 	return o.ApplyT(func(v *PermissionSet) pulumi.IntOutput { return v.SessionDuration }).(pulumi.IntOutput)
 }
 
-// 状态通知配置。
+// Status Notification Configuration
 func (o PermissionSetOutput) StatusNotifications() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *PermissionSet) pulumi.StringArrayOutput { return v.StatusNotifications }).(pulumi.StringArrayOutput)
 }
 
-// 更新时间。
+// Update Time
 func (o PermissionSetOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *PermissionSet) pulumi.StringOutput { return v.UpdatedTime }).(pulumi.StringOutput)
 }

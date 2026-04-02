@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// 沙箱实例是云沙箱中实际执行沙箱镜像的安全且隔离的容器运行环境。
+// A sandbox instance is a secure and isolated container runtime environment that actually runs the sandbox image in the cloud sandbox
 //
 // ## Import
 //
@@ -22,43 +22,43 @@ import (
 type Sandbox struct {
 	pulumi.CustomResourceState
 
-	// 沙箱实例所在可用区 ID。
+	// Availability zone ID of the sandbox instance
 	AvailabilityZone pulumi.StringOutput `pulumi:"availabilityZone"`
-	// 沙箱实例 CPU 规格：单位：milli cpu取值范围：250~16000,默认值：1000。
+	// Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
 	CpuMilli pulumi.IntOutput `pulumi:"cpuMilli"`
-	// 沙箱实例创建时间。
+	// Sandbox instance creation time.
 	CreatedTime pulumi.StringOutput   `pulumi:"createdTime"`
 	Envs        SandboxEnvArrayOutput `pulumi:"envs"`
-	// 沙箱实例启动失败错误码。参数值说明：internal*load*request*error：系统内部错误，function*initialize*failed：业务进程初始化错误，function*health*check*failed：健康检查错误，route_terminating：路由删除中，正常启动沙箱实例时，该字段为空。
+	// Sandbox instance startup failure error code. Parameter description: internal*load*request*error: internal system error, function*initialize*failed: business process initialization error, function*health*check*failed: health check error, route_terminating: route deletion in progress. This field is empty when the sandbox instance starts normally
 	ErrorCode pulumi.StringOutput `pulumi:"errorCode"`
-	// 沙箱实例启动失败的错误码详情。正常启动沙箱实例时，该字段为空。
+	// Details of the error code when the sandbox instance fails to start. This field is empty when the sandbox instance starts normally.
 	ErrorMessage pulumi.StringOutput `pulumi:"errorMessage"`
-	// 沙箱实例存活时长。
+	// Sandbox instance uptime.
 	ExpireAt pulumi.StringOutput `pulumi:"expireAt"`
-	// 沙箱实例所属的沙箱应用 ID。
+	// Sandbox application ID to which the sandbox instance belongs
 	FunctionId pulumi.StringOutput `pulumi:"functionId"`
-	// 沙箱实例镜像信息，包括镜像地址、启动命令、监听端口。
+	// Sandbox instance image information, including image address, startup command, and listening port.
 	InstanceImageInfo SandboxInstanceImageInfoOutput `pulumi:"instanceImageInfo"`
-	// 沙箱实例级别对象存储（TOS）存储挂载配置。
+	// Instance-level object storage (TOS) mount configuration for the sandbox instance
 	InstanceTosMountConfig SandboxInstanceTosMountConfigOutput `pulumi:"instanceTosMountConfig"`
-	// 沙箱实例类型 。参数值说明：elastic：弹性实例，frozen：冻结实例，activated：激活实例，reserved：预留实例。
+	// Sandbox instance type. Parameter description: elastic: elastic instance, frozen: frozen instance, activated: activated instance, reserved: reserved instance
 	InstanceType pulumi.StringOutput `pulumi:"instanceType"`
-	// 单实例请求最大并发数：取值范围：10~1000,默认值：100。
+	// Maximum concurrent requests per instance: range: 10~1000, default: 100
 	MaxConcurrency pulumi.IntOutput `pulumi:"maxConcurrency"`
-	// 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
+	// Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
 	MemoryMb  pulumi.IntOutput           `pulumi:"memoryMb"`
 	Metadatas SandboxMetadataArrayOutput `pulumi:"metadatas"`
-	// 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
+	// Whether the sandbox instance is in Pending status. Parameter description: true: yes, false: no
 	Pending pulumi.BoolOutput `pulumi:"pending"`
-	// 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
+	// Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
 	RequestTimeout pulumi.IntOutput `pulumi:"requestTimeout"`
-	// 函数实例版本编号。
+	// Function instance version number
 	RevisionNumber pulumi.IntOutput `pulumi:"revisionNumber"`
-	// 沙箱实例 ID。
+	// Sandbox instance ID
 	SandboxId pulumi.StringOutput `pulumi:"sandboxId"`
-	// 沙箱实例状态。 参数值说明：Starting：开始启动，Ready：启动完成，Failed：启动失败，Terminating：终止中。
+	// Sandbox instance status. Parameter description: Starting: starting, Ready: startup completed, Failed: startup failed, Terminating: terminating
 	Status pulumi.StringOutput `pulumi:"status"`
-	// 沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
+	// Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
 	Timeout pulumi.IntOutput `pulumi:"timeout"`
 }
 
@@ -95,84 +95,84 @@ func GetSandbox(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Sandbox resources.
 type sandboxState struct {
-	// 沙箱实例所在可用区 ID。
+	// Availability zone ID of the sandbox instance
 	AvailabilityZone *string `pulumi:"availabilityZone"`
-	// 沙箱实例 CPU 规格：单位：milli cpu取值范围：250~16000,默认值：1000。
+	// Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
 	CpuMilli *int `pulumi:"cpuMilli"`
-	// 沙箱实例创建时间。
+	// Sandbox instance creation time.
 	CreatedTime *string      `pulumi:"createdTime"`
 	Envs        []SandboxEnv `pulumi:"envs"`
-	// 沙箱实例启动失败错误码。参数值说明：internal*load*request*error：系统内部错误，function*initialize*failed：业务进程初始化错误，function*health*check*failed：健康检查错误，route_terminating：路由删除中，正常启动沙箱实例时，该字段为空。
+	// Sandbox instance startup failure error code. Parameter description: internal*load*request*error: internal system error, function*initialize*failed: business process initialization error, function*health*check*failed: health check error, route_terminating: route deletion in progress. This field is empty when the sandbox instance starts normally
 	ErrorCode *string `pulumi:"errorCode"`
-	// 沙箱实例启动失败的错误码详情。正常启动沙箱实例时，该字段为空。
+	// Details of the error code when the sandbox instance fails to start. This field is empty when the sandbox instance starts normally.
 	ErrorMessage *string `pulumi:"errorMessage"`
-	// 沙箱实例存活时长。
+	// Sandbox instance uptime.
 	ExpireAt *string `pulumi:"expireAt"`
-	// 沙箱实例所属的沙箱应用 ID。
+	// Sandbox application ID to which the sandbox instance belongs
 	FunctionId *string `pulumi:"functionId"`
-	// 沙箱实例镜像信息，包括镜像地址、启动命令、监听端口。
+	// Sandbox instance image information, including image address, startup command, and listening port.
 	InstanceImageInfo *SandboxInstanceImageInfo `pulumi:"instanceImageInfo"`
-	// 沙箱实例级别对象存储（TOS）存储挂载配置。
+	// Instance-level object storage (TOS) mount configuration for the sandbox instance
 	InstanceTosMountConfig *SandboxInstanceTosMountConfig `pulumi:"instanceTosMountConfig"`
-	// 沙箱实例类型 。参数值说明：elastic：弹性实例，frozen：冻结实例，activated：激活实例，reserved：预留实例。
+	// Sandbox instance type. Parameter description: elastic: elastic instance, frozen: frozen instance, activated: activated instance, reserved: reserved instance
 	InstanceType *string `pulumi:"instanceType"`
-	// 单实例请求最大并发数：取值范围：10~1000,默认值：100。
+	// Maximum concurrent requests per instance: range: 10~1000, default: 100
 	MaxConcurrency *int `pulumi:"maxConcurrency"`
-	// 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
+	// Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
 	MemoryMb  *int              `pulumi:"memoryMb"`
 	Metadatas []SandboxMetadata `pulumi:"metadatas"`
-	// 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
+	// Whether the sandbox instance is in Pending status. Parameter description: true: yes, false: no
 	Pending *bool `pulumi:"pending"`
-	// 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
+	// Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
 	RequestTimeout *int `pulumi:"requestTimeout"`
-	// 函数实例版本编号。
+	// Function instance version number
 	RevisionNumber *int `pulumi:"revisionNumber"`
-	// 沙箱实例 ID。
+	// Sandbox instance ID
 	SandboxId *string `pulumi:"sandboxId"`
-	// 沙箱实例状态。 参数值说明：Starting：开始启动，Ready：启动完成，Failed：启动失败，Terminating：终止中。
+	// Sandbox instance status. Parameter description: Starting: starting, Ready: startup completed, Failed: startup failed, Terminating: terminating
 	Status *string `pulumi:"status"`
-	// 沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
+	// Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
 	Timeout *int `pulumi:"timeout"`
 }
 
 type SandboxState struct {
-	// 沙箱实例所在可用区 ID。
+	// Availability zone ID of the sandbox instance
 	AvailabilityZone pulumi.StringPtrInput
-	// 沙箱实例 CPU 规格：单位：milli cpu取值范围：250~16000,默认值：1000。
+	// Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
 	CpuMilli pulumi.IntPtrInput
-	// 沙箱实例创建时间。
+	// Sandbox instance creation time.
 	CreatedTime pulumi.StringPtrInput
 	Envs        SandboxEnvArrayInput
-	// 沙箱实例启动失败错误码。参数值说明：internal*load*request*error：系统内部错误，function*initialize*failed：业务进程初始化错误，function*health*check*failed：健康检查错误，route_terminating：路由删除中，正常启动沙箱实例时，该字段为空。
+	// Sandbox instance startup failure error code. Parameter description: internal*load*request*error: internal system error, function*initialize*failed: business process initialization error, function*health*check*failed: health check error, route_terminating: route deletion in progress. This field is empty when the sandbox instance starts normally
 	ErrorCode pulumi.StringPtrInput
-	// 沙箱实例启动失败的错误码详情。正常启动沙箱实例时，该字段为空。
+	// Details of the error code when the sandbox instance fails to start. This field is empty when the sandbox instance starts normally.
 	ErrorMessage pulumi.StringPtrInput
-	// 沙箱实例存活时长。
+	// Sandbox instance uptime.
 	ExpireAt pulumi.StringPtrInput
-	// 沙箱实例所属的沙箱应用 ID。
+	// Sandbox application ID to which the sandbox instance belongs
 	FunctionId pulumi.StringPtrInput
-	// 沙箱实例镜像信息，包括镜像地址、启动命令、监听端口。
+	// Sandbox instance image information, including image address, startup command, and listening port.
 	InstanceImageInfo SandboxInstanceImageInfoPtrInput
-	// 沙箱实例级别对象存储（TOS）存储挂载配置。
+	// Instance-level object storage (TOS) mount configuration for the sandbox instance
 	InstanceTosMountConfig SandboxInstanceTosMountConfigPtrInput
-	// 沙箱实例类型 。参数值说明：elastic：弹性实例，frozen：冻结实例，activated：激活实例，reserved：预留实例。
+	// Sandbox instance type. Parameter description: elastic: elastic instance, frozen: frozen instance, activated: activated instance, reserved: reserved instance
 	InstanceType pulumi.StringPtrInput
-	// 单实例请求最大并发数：取值范围：10~1000,默认值：100。
+	// Maximum concurrent requests per instance: range: 10~1000, default: 100
 	MaxConcurrency pulumi.IntPtrInput
-	// 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
+	// Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
 	MemoryMb  pulumi.IntPtrInput
 	Metadatas SandboxMetadataArrayInput
-	// 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
+	// Whether the sandbox instance is in Pending status. Parameter description: true: yes, false: no
 	Pending pulumi.BoolPtrInput
-	// 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
+	// Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
 	RequestTimeout pulumi.IntPtrInput
-	// 函数实例版本编号。
+	// Function instance version number
 	RevisionNumber pulumi.IntPtrInput
-	// 沙箱实例 ID。
+	// Sandbox instance ID
 	SandboxId pulumi.StringPtrInput
-	// 沙箱实例状态。 参数值说明：Starting：开始启动，Ready：启动完成，Failed：启动失败，Terminating：终止中。
+	// Sandbox instance status. Parameter description: Starting: starting, Ready: startup completed, Failed: startup failed, Terminating: terminating
 	Status pulumi.StringPtrInput
-	// 沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
+	// Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
 	Timeout pulumi.IntPtrInput
 }
 
@@ -181,45 +181,45 @@ func (SandboxState) ElementType() reflect.Type {
 }
 
 type sandboxArgs struct {
-	// 沙箱实例 CPU 规格：单位：milli cpu取值范围：250~16000,默认值：1000。
+	// Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
 	CpuMilli *int         `pulumi:"cpuMilli"`
 	Envs     []SandboxEnv `pulumi:"envs"`
-	// 沙箱实例所属的沙箱应用 ID。
+	// Sandbox application ID to which the sandbox instance belongs
 	FunctionId string `pulumi:"functionId"`
-	// 沙箱实例镜像信息，包括镜像地址、启动命令、监听端口。
+	// Sandbox instance image information, including image address, startup command, and listening port.
 	InstanceImageInfo *SandboxInstanceImageInfo `pulumi:"instanceImageInfo"`
-	// 沙箱实例级别对象存储（TOS）存储挂载配置。
+	// Instance-level object storage (TOS) mount configuration for the sandbox instance
 	InstanceTosMountConfig *SandboxInstanceTosMountConfig `pulumi:"instanceTosMountConfig"`
-	// 单实例请求最大并发数：取值范围：10~1000,默认值：100。
+	// Maximum concurrent requests per instance: range: 10~1000, default: 100
 	MaxConcurrency *int `pulumi:"maxConcurrency"`
-	// 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
+	// Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
 	MemoryMb  *int              `pulumi:"memoryMb"`
 	Metadatas []SandboxMetadata `pulumi:"metadatas"`
-	// 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
+	// Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
 	RequestTimeout *int `pulumi:"requestTimeout"`
-	// 沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
+	// Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
 	Timeout *int `pulumi:"timeout"`
 }
 
 // The set of arguments for constructing a Sandbox resource.
 type SandboxArgs struct {
-	// 沙箱实例 CPU 规格：单位：milli cpu取值范围：250~16000,默认值：1000。
+	// Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
 	CpuMilli pulumi.IntPtrInput
 	Envs     SandboxEnvArrayInput
-	// 沙箱实例所属的沙箱应用 ID。
+	// Sandbox application ID to which the sandbox instance belongs
 	FunctionId pulumi.StringInput
-	// 沙箱实例镜像信息，包括镜像地址、启动命令、监听端口。
+	// Sandbox instance image information, including image address, startup command, and listening port.
 	InstanceImageInfo SandboxInstanceImageInfoPtrInput
-	// 沙箱实例级别对象存储（TOS）存储挂载配置。
+	// Instance-level object storage (TOS) mount configuration for the sandbox instance
 	InstanceTosMountConfig SandboxInstanceTosMountConfigPtrInput
-	// 单实例请求最大并发数：取值范围：10~1000,默认值：100。
+	// Maximum concurrent requests per instance: range: 10~1000, default: 100
 	MaxConcurrency pulumi.IntPtrInput
-	// 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
+	// Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
 	MemoryMb  pulumi.IntPtrInput
 	Metadatas SandboxMetadataArrayInput
-	// 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
+	// Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
 	RequestTimeout pulumi.IntPtrInput
-	// 沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
+	// Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
 	Timeout pulumi.IntPtrInput
 }
 
@@ -310,17 +310,17 @@ func (o SandboxOutput) ToSandboxOutputWithContext(ctx context.Context) SandboxOu
 	return o
 }
 
-// 沙箱实例所在可用区 ID。
+// Availability zone ID of the sandbox instance
 func (o SandboxOutput) AvailabilityZone() pulumi.StringOutput {
 	return o.ApplyT(func(v *Sandbox) pulumi.StringOutput { return v.AvailabilityZone }).(pulumi.StringOutput)
 }
 
-// 沙箱实例 CPU 规格：单位：milli cpu取值范围：250~16000,默认值：1000。
+// Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
 func (o SandboxOutput) CpuMilli() pulumi.IntOutput {
 	return o.ApplyT(func(v *Sandbox) pulumi.IntOutput { return v.CpuMilli }).(pulumi.IntOutput)
 }
 
-// 沙箱实例创建时间。
+// Sandbox instance creation time.
 func (o SandboxOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Sandbox) pulumi.StringOutput { return v.CreatedTime }).(pulumi.StringOutput)
 }
@@ -329,47 +329,47 @@ func (o SandboxOutput) Envs() SandboxEnvArrayOutput {
 	return o.ApplyT(func(v *Sandbox) SandboxEnvArrayOutput { return v.Envs }).(SandboxEnvArrayOutput)
 }
 
-// 沙箱实例启动失败错误码。参数值说明：internal*load*request*error：系统内部错误，function*initialize*failed：业务进程初始化错误，function*health*check*failed：健康检查错误，route_terminating：路由删除中，正常启动沙箱实例时，该字段为空。
+// Sandbox instance startup failure error code. Parameter description: internal*load*request*error: internal system error, function*initialize*failed: business process initialization error, function*health*check*failed: health check error, route_terminating: route deletion in progress. This field is empty when the sandbox instance starts normally
 func (o SandboxOutput) ErrorCode() pulumi.StringOutput {
 	return o.ApplyT(func(v *Sandbox) pulumi.StringOutput { return v.ErrorCode }).(pulumi.StringOutput)
 }
 
-// 沙箱实例启动失败的错误码详情。正常启动沙箱实例时，该字段为空。
+// Details of the error code when the sandbox instance fails to start. This field is empty when the sandbox instance starts normally.
 func (o SandboxOutput) ErrorMessage() pulumi.StringOutput {
 	return o.ApplyT(func(v *Sandbox) pulumi.StringOutput { return v.ErrorMessage }).(pulumi.StringOutput)
 }
 
-// 沙箱实例存活时长。
+// Sandbox instance uptime.
 func (o SandboxOutput) ExpireAt() pulumi.StringOutput {
 	return o.ApplyT(func(v *Sandbox) pulumi.StringOutput { return v.ExpireAt }).(pulumi.StringOutput)
 }
 
-// 沙箱实例所属的沙箱应用 ID。
+// Sandbox application ID to which the sandbox instance belongs
 func (o SandboxOutput) FunctionId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Sandbox) pulumi.StringOutput { return v.FunctionId }).(pulumi.StringOutput)
 }
 
-// 沙箱实例镜像信息，包括镜像地址、启动命令、监听端口。
+// Sandbox instance image information, including image address, startup command, and listening port.
 func (o SandboxOutput) InstanceImageInfo() SandboxInstanceImageInfoOutput {
 	return o.ApplyT(func(v *Sandbox) SandboxInstanceImageInfoOutput { return v.InstanceImageInfo }).(SandboxInstanceImageInfoOutput)
 }
 
-// 沙箱实例级别对象存储（TOS）存储挂载配置。
+// Instance-level object storage (TOS) mount configuration for the sandbox instance
 func (o SandboxOutput) InstanceTosMountConfig() SandboxInstanceTosMountConfigOutput {
 	return o.ApplyT(func(v *Sandbox) SandboxInstanceTosMountConfigOutput { return v.InstanceTosMountConfig }).(SandboxInstanceTosMountConfigOutput)
 }
 
-// 沙箱实例类型 。参数值说明：elastic：弹性实例，frozen：冻结实例，activated：激活实例，reserved：预留实例。
+// Sandbox instance type. Parameter description: elastic: elastic instance, frozen: frozen instance, activated: activated instance, reserved: reserved instance
 func (o SandboxOutput) InstanceType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Sandbox) pulumi.StringOutput { return v.InstanceType }).(pulumi.StringOutput)
 }
 
-// 单实例请求最大并发数：取值范围：10~1000,默认值：100。
+// Maximum concurrent requests per instance: range: 10~1000, default: 100
 func (o SandboxOutput) MaxConcurrency() pulumi.IntOutput {
 	return o.ApplyT(func(v *Sandbox) pulumi.IntOutput { return v.MaxConcurrency }).(pulumi.IntOutput)
 }
 
-// 沙箱实例内存规格：单位：MiB，取值范围：512~131072，默认值：2048
+// Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
 func (o SandboxOutput) MemoryMb() pulumi.IntOutput {
 	return o.ApplyT(func(v *Sandbox) pulumi.IntOutput { return v.MemoryMb }).(pulumi.IntOutput)
 }
@@ -378,32 +378,32 @@ func (o SandboxOutput) Metadatas() SandboxMetadataArrayOutput {
 	return o.ApplyT(func(v *Sandbox) SandboxMetadataArrayOutput { return v.Metadatas }).(SandboxMetadataArrayOutput)
 }
 
-// 沙箱实例是否处于 Pending 状态。参数值说明：true：是，false：否。
+// Whether the sandbox instance is in Pending status. Parameter description: true: yes, false: no
 func (o SandboxOutput) Pending() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Sandbox) pulumi.BoolOutput { return v.Pending }).(pulumi.BoolOutput)
 }
 
-// 请求超时时间：单位：秒，取值范围：1~900，正整数。默认值：30。
+// Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
 func (o SandboxOutput) RequestTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v *Sandbox) pulumi.IntOutput { return v.RequestTimeout }).(pulumi.IntOutput)
 }
 
-// 函数实例版本编号。
+// Function instance version number
 func (o SandboxOutput) RevisionNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v *Sandbox) pulumi.IntOutput { return v.RevisionNumber }).(pulumi.IntOutput)
 }
 
-// 沙箱实例 ID。
+// Sandbox instance ID
 func (o SandboxOutput) SandboxId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Sandbox) pulumi.StringOutput { return v.SandboxId }).(pulumi.StringOutput)
 }
 
-// 沙箱实例状态。 参数值说明：Starting：开始启动，Ready：启动完成，Failed：启动失败，Terminating：终止中。
+// Sandbox instance status. Parameter description: Starting: starting, Ready: startup completed, Failed: startup failed, Terminating: terminating
 func (o SandboxOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *Sandbox) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
 
-// 沙箱实例存活时长：单位：分钟，取值范围：3～1440，默认值：60。
+// Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
 func (o SandboxOutput) Timeout() pulumi.IntOutput {
 	return o.ApplyT(func(v *Sandbox) pulumi.IntOutput { return v.Timeout }).(pulumi.IntOutput)
 }

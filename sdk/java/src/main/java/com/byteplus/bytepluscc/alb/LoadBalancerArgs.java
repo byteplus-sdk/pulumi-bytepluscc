@@ -24,14 +24,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     public static final LoadBalancerArgs Empty = new LoadBalancerArgs();
 
     /**
-     * ALB 实例的 IP 类型。IPv4：IPv4 类型；DualStack：IPv4&amp;IPv6 双栈类型。
+     * IP type of the ALB instance. IPv4: IPv4 type; DualStack: IPv4 &amp; IPv6 dual stack type.
      * 
      */
     @Import(name="addressIpVersion")
     private @Nullable Output<String> addressIpVersion;
 
     /**
-     * @return ALB 实例的 IP 类型。IPv4：IPv4 类型；DualStack：IPv4&amp;IPv6 双栈类型。
+     * @return IP type of the ALB instance. IPv4: IPv4 type; DualStack: IPv4 &amp; IPv6 dual stack type.
      * 
      */
     public Optional<Output<String>> addressIpVersion() {
@@ -39,14 +39,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 绑定的共享带宽包ID，可实现带宽共享。
+     * ID of the bound shared bandwidth package, enabling bandwidth sharing.
      * 
      */
     @Import(name="bandwidthPackageId")
     private @Nullable Output<String> bandwidthPackageId;
 
     /**
-     * @return 绑定的共享带宽包ID，可实现带宽共享。
+     * @return ID of the bound shared bandwidth package, enabling bandwidth sharing.
      * 
      */
     public Optional<Output<String>> bandwidthPackageId() {
@@ -54,14 +54,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 删除保护开关。on：开启；off：关闭。
+     * Delete protection switch. on: enabled; off: disabled.
      * 
      */
     @Import(name="deleteProtection")
     private @Nullable Output<String> deleteProtection;
 
     /**
-     * @return 删除保护开关。on：开启；off：关闭。
+     * @return Delete protection switch. on: enabled; off: disabled.
      * 
      */
     public Optional<Output<String>> deleteProtection() {
@@ -69,14 +69,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * ALB 实例的描述。
+     * Description of the ALB instance.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return ALB 实例的描述。
+     * @return Description of the ALB instance.
      * 
      */
     public Optional<Output<String>> description() {
@@ -84,14 +84,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 公网IP的计费配置，仅适用于公网实例。
+     * Billing configuration for public IP, only applicable to public instances.
      * 
      */
     @Import(name="eipBillingConfig")
     private @Nullable Output<LoadBalancerEipBillingConfigArgs> eipBillingConfig;
 
     /**
-     * @return 公网IP的计费配置，仅适用于公网实例。
+     * @return Billing configuration for public IP, only applicable to public instances.
      * 
      */
     public Optional<Output<LoadBalancerEipBillingConfigArgs>> eipBillingConfig() {
@@ -99,14 +99,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 全球加速器配置，用于提升跨地域访问速度。
+     * Global accelerator configuration, used to improve cross-region access speed.
      * 
      */
     @Import(name="globalAccelerator")
     private @Nullable Output<LoadBalancerGlobalAcceleratorArgs> globalAccelerator;
 
     /**
-     * @return 全球加速器配置，用于提升跨地域访问速度。
+     * @return Global accelerator configuration, used to improve cross-region access speed.
      * 
      */
     public Optional<Output<LoadBalancerGlobalAcceleratorArgs>> globalAccelerator() {
@@ -114,14 +114,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+     * When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
      * 
      */
     @Import(name="ipv6BandwidthPackageId")
     private @Nullable Output<String> ipv6BandwidthPackageId;
 
     /**
-     * @return 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+     * @return When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
      * 
      */
     public Optional<Output<String>> ipv6BandwidthPackageId() {
@@ -129,14 +129,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * IPv6公网IP的计費配置，仅适用于公网实例。
+     * Billing configuration for IPv6 public IP, only applicable to public instances.
      * 
      */
     @Import(name="ipv6EipBillingConfig")
     private @Nullable Output<LoadBalancerIpv6EipBillingConfigArgs> ipv6EipBillingConfig;
 
     /**
-     * @return IPv6公网IP的计費配置，仅适用于公网实例。
+     * @return Billing configuration for IPv6 public IP, only applicable to public instances.
      * 
      */
     public Optional<Output<LoadBalancerIpv6EipBillingConfigArgs>> ipv6EipBillingConfig() {
@@ -144,14 +144,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * ALB实例计费类型，当前仅支持按量计费（取值为1）。
+     * ALB instance billing type. Currently, only pay-as-you-go is supported (value is 1).
      * 
      */
     @Import(name="loadBalancerBillingType")
     private @Nullable Output<Integer> loadBalancerBillingType;
 
     /**
-     * @return ALB实例计费类型，当前仅支持按量计费（取值为1）。
+     * @return ALB instance billing type. Currently, only pay-as-you-go is supported (value is 1).
      * 
      */
     public Optional<Output<Integer>> loadBalancerBillingType() {
@@ -159,14 +159,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 应用型负载均衡的版本。Basic：基础版；Standard：标准版。
+     * Version of the application load balancer. Basic: Basic version; Standard: Standard version.
      * 
      */
     @Import(name="loadBalancerEdition")
     private @Nullable Output<String> loadBalancerEdition;
 
     /**
-     * @return 应用型负载均衡的版本。Basic：基础版；Standard：标准版。
+     * @return Version of the application load balancer. Basic: Basic version; Standard: Standard version.
      * 
      */
     public Optional<Output<String>> loadBalancerEdition() {
@@ -174,14 +174,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * ALB 实例的名称。
+     * Name of the ALB instance.
      * 
      */
     @Import(name="loadBalancerName")
     private @Nullable Output<String> loadBalancerName;
 
     /**
-     * @return ALB 实例的名称。
+     * @return Name of the ALB instance.
      * 
      */
     public Optional<Output<String>> loadBalancerName() {
@@ -189,14 +189,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 修改保护原因。仅在 ModificationProtectionStatus 为 ConsoleProtection 时，该参数有效且合法。
+     * Reason for modification protection. This parameter is valid and legitimate only when ModificationProtectionStatus is ConsoleProtection.
      * 
      */
     @Import(name="modificationProtectionReason")
     private @Nullable Output<String> modificationProtectionReason;
 
     /**
-     * @return 修改保护原因。仅在 ModificationProtectionStatus 为 ConsoleProtection 时，该参数有效且合法。
+     * @return Reason for modification protection. This parameter is valid and legitimate only when ModificationProtectionStatus is ConsoleProtection.
      * 
      */
     public Optional<Output<String>> modificationProtectionReason() {
@@ -204,14 +204,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 修改保护状态。NonProtection：不保护；ConsoleProtection：控制台修改保护，通过控制台无法修改实例配置。
+     * Modification protection status. NonProtection: Not protected; ConsoleProtection: Console modification protection, instance configuration cannot be modified through the console.
      * 
      */
     @Import(name="modificationProtectionStatus")
     private @Nullable Output<String> modificationProtectionStatus;
 
     /**
-     * @return 修改保护状态。NonProtection：不保护；ConsoleProtection：控制台修改保护，通过控制台无法修改实例配置。
+     * @return Modification protection status. NonProtection: Not protected; ConsoleProtection: Console modification protection, instance configuration cannot be modified through the console.
      * 
      */
     public Optional<Output<String>> modificationProtectionStatus() {
@@ -219,14 +219,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例所属项目名称。
+     * Name of the project to which the instance belongs.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 实例所属项目名称。
+     * @return Name of the project to which the instance belongs.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -234,14 +234,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+     * ALB supports the Proxy Protocol and records the client&#39;s real IP.
      * 
      */
     @Import(name="proxyProtocolEnabled")
     private @Nullable Output<String> proxyProtocolEnabled;
 
     /**
-     * @return ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+     * @return ALB supports the Proxy Protocol and records the client&#39;s real IP.
      * 
      */
     public Optional<Output<String>> proxyProtocolEnabled() {
@@ -256,14 +256,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * ALB 实例的类型。取值是 public 或 private 。public：表示创建一个公网负载均衡实例，系统会分配一个公网IP地址和一个私网IP地址，可用于转发公网请求和私网请求。private：表示创建一个私网负载均衡实例，系统会分配一个私网IP地址，仅用于转发私网请求。
+     * Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return ALB 实例的类型。取值是 public 或 private 。public：表示创建一个公网负载均衡实例，系统会分配一个公网IP地址和一个私网IP地址，可用于转发公网请求和私网请求。private：表示创建一个私网负载均衡实例，系统会分配一个私网IP地址，仅用于转发私网请求。
+     * @return Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
      * 
      */
     public Output<String> type() {
@@ -271,14 +271,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 负载均衡实例所属的私有网络（VPC）的ID。
+     * ID of the Virtual Private Cloud (VPC) to which the load balancer instance belongs.
      * 
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
-     * @return 负载均衡实例所属的私有网络（VPC）的ID。
+     * @return ID of the Virtual Private Cloud (VPC) to which the load balancer instance belongs.
      * 
      */
     public Output<String> vpcId() {
@@ -286,14 +286,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * ALB 实例绑定的 WAF 安全防护实例 ID。
+     * ID of the WAF security protection instance bound to the ALB instance.
      * 
      */
     @Import(name="wafInstanceId")
     private @Nullable Output<String> wafInstanceId;
 
     /**
-     * @return ALB 实例绑定的 WAF 安全防护实例 ID。
+     * @return ID of the WAF security protection instance bound to the ALB instance.
      * 
      */
     public Optional<Output<String>> wafInstanceId() {
@@ -301,14 +301,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * WAF防护的域名，用于精确匹配防护规则。
+     * Domain name protected by WAF, used for precise rule matching.
      * 
      */
     @Import(name="wafProtectedDomain")
     private @Nullable Output<String> wafProtectedDomain;
 
     /**
-     * @return WAF防护的域名，用于精确匹配防护规则。
+     * @return Domain name protected by WAF, used for precise rule matching.
      * 
      */
     public Optional<Output<String>> wafProtectedDomain() {
@@ -316,14 +316,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * WAF 安全防护开关。on：开启；off：关闭。
+     * WAF security protection switch. on: enabled; off: disabled.
      * 
      */
     @Import(name="wafProtectionEnabled")
     private @Nullable Output<String> wafProtectionEnabled;
 
     /**
-     * @return WAF 安全防护开关。on：开启；off：关闭。
+     * @return WAF security protection switch. on: enabled; off: disabled.
      * 
      */
     public Optional<Output<String>> wafProtectionEnabled() {
@@ -383,7 +383,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param addressIpVersion ALB 实例的 IP 类型。IPv4：IPv4 类型；DualStack：IPv4&amp;IPv6 双栈类型。
+         * @param addressIpVersion IP type of the ALB instance. IPv4: IPv4 type; DualStack: IPv4 &amp; IPv6 dual stack type.
          * 
          * @return builder
          * 
@@ -394,7 +394,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param addressIpVersion ALB 实例的 IP 类型。IPv4：IPv4 类型；DualStack：IPv4&amp;IPv6 双栈类型。
+         * @param addressIpVersion IP type of the ALB instance. IPv4: IPv4 type; DualStack: IPv4 &amp; IPv6 dual stack type.
          * 
          * @return builder
          * 
@@ -404,7 +404,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param bandwidthPackageId 绑定的共享带宽包ID，可实现带宽共享。
+         * @param bandwidthPackageId ID of the bound shared bandwidth package, enabling bandwidth sharing.
          * 
          * @return builder
          * 
@@ -415,7 +415,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param bandwidthPackageId 绑定的共享带宽包ID，可实现带宽共享。
+         * @param bandwidthPackageId ID of the bound shared bandwidth package, enabling bandwidth sharing.
          * 
          * @return builder
          * 
@@ -425,7 +425,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deleteProtection 删除保护开关。on：开启；off：关闭。
+         * @param deleteProtection Delete protection switch. on: enabled; off: disabled.
          * 
          * @return builder
          * 
@@ -436,7 +436,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deleteProtection 删除保护开关。on：开启；off：关闭。
+         * @param deleteProtection Delete protection switch. on: enabled; off: disabled.
          * 
          * @return builder
          * 
@@ -446,7 +446,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description ALB 实例的描述。
+         * @param description Description of the ALB instance.
          * 
          * @return builder
          * 
@@ -457,7 +457,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description ALB 实例的描述。
+         * @param description Description of the ALB instance.
          * 
          * @return builder
          * 
@@ -467,7 +467,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eipBillingConfig 公网IP的计费配置，仅适用于公网实例。
+         * @param eipBillingConfig Billing configuration for public IP, only applicable to public instances.
          * 
          * @return builder
          * 
@@ -478,7 +478,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param eipBillingConfig 公网IP的计费配置，仅适用于公网实例。
+         * @param eipBillingConfig Billing configuration for public IP, only applicable to public instances.
          * 
          * @return builder
          * 
@@ -488,7 +488,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param globalAccelerator 全球加速器配置，用于提升跨地域访问速度。
+         * @param globalAccelerator Global accelerator configuration, used to improve cross-region access speed.
          * 
          * @return builder
          * 
@@ -499,7 +499,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param globalAccelerator 全球加速器配置，用于提升跨地域访问速度。
+         * @param globalAccelerator Global accelerator configuration, used to improve cross-region access speed.
          * 
          * @return builder
          * 
@@ -509,7 +509,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6BandwidthPackageId 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+         * @param ipv6BandwidthPackageId When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
          * 
          * @return builder
          * 
@@ -520,7 +520,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6BandwidthPackageId 创建 ALB 公网实例时，指定 Ipv6公网带宽要加入的共享带宽包 ID。
+         * @param ipv6BandwidthPackageId When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
          * 
          * @return builder
          * 
@@ -530,7 +530,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6EipBillingConfig IPv6公网IP的计費配置，仅适用于公网实例。
+         * @param ipv6EipBillingConfig Billing configuration for IPv6 public IP, only applicable to public instances.
          * 
          * @return builder
          * 
@@ -541,7 +541,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipv6EipBillingConfig IPv6公网IP的计費配置，仅适用于公网实例。
+         * @param ipv6EipBillingConfig Billing configuration for IPv6 public IP, only applicable to public instances.
          * 
          * @return builder
          * 
@@ -551,7 +551,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerBillingType ALB实例计费类型，当前仅支持按量计费（取值为1）。
+         * @param loadBalancerBillingType ALB instance billing type. Currently, only pay-as-you-go is supported (value is 1).
          * 
          * @return builder
          * 
@@ -562,7 +562,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerBillingType ALB实例计费类型，当前仅支持按量计费（取值为1）。
+         * @param loadBalancerBillingType ALB instance billing type. Currently, only pay-as-you-go is supported (value is 1).
          * 
          * @return builder
          * 
@@ -572,7 +572,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerEdition 应用型负载均衡的版本。Basic：基础版；Standard：标准版。
+         * @param loadBalancerEdition Version of the application load balancer. Basic: Basic version; Standard: Standard version.
          * 
          * @return builder
          * 
@@ -583,7 +583,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerEdition 应用型负载均衡的版本。Basic：基础版；Standard：标准版。
+         * @param loadBalancerEdition Version of the application load balancer. Basic: Basic version; Standard: Standard version.
          * 
          * @return builder
          * 
@@ -593,7 +593,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerName ALB 实例的名称。
+         * @param loadBalancerName Name of the ALB instance.
          * 
          * @return builder
          * 
@@ -604,7 +604,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancerName ALB 实例的名称。
+         * @param loadBalancerName Name of the ALB instance.
          * 
          * @return builder
          * 
@@ -614,7 +614,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modificationProtectionReason 修改保护原因。仅在 ModificationProtectionStatus 为 ConsoleProtection 时，该参数有效且合法。
+         * @param modificationProtectionReason Reason for modification protection. This parameter is valid and legitimate only when ModificationProtectionStatus is ConsoleProtection.
          * 
          * @return builder
          * 
@@ -625,7 +625,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modificationProtectionReason 修改保护原因。仅在 ModificationProtectionStatus 为 ConsoleProtection 时，该参数有效且合法。
+         * @param modificationProtectionReason Reason for modification protection. This parameter is valid and legitimate only when ModificationProtectionStatus is ConsoleProtection.
          * 
          * @return builder
          * 
@@ -635,7 +635,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modificationProtectionStatus 修改保护状态。NonProtection：不保护；ConsoleProtection：控制台修改保护，通过控制台无法修改实例配置。
+         * @param modificationProtectionStatus Modification protection status. NonProtection: Not protected; ConsoleProtection: Console modification protection, instance configuration cannot be modified through the console.
          * 
          * @return builder
          * 
@@ -646,7 +646,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modificationProtectionStatus 修改保护状态。NonProtection：不保护；ConsoleProtection：控制台修改保护，通过控制台无法修改实例配置。
+         * @param modificationProtectionStatus Modification protection status. NonProtection: Not protected; ConsoleProtection: Console modification protection, instance configuration cannot be modified through the console.
          * 
          * @return builder
          * 
@@ -656,7 +656,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 实例所属项目名称。
+         * @param projectName Name of the project to which the instance belongs.
          * 
          * @return builder
          * 
@@ -667,7 +667,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectName 实例所属项目名称。
+         * @param projectName Name of the project to which the instance belongs.
          * 
          * @return builder
          * 
@@ -677,7 +677,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyProtocolEnabled ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+         * @param proxyProtocolEnabled ALB supports the Proxy Protocol and records the client&#39;s real IP.
          * 
          * @return builder
          * 
@@ -688,7 +688,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyProtocolEnabled ALB 可支持 Proxy Protocol 协议并记录客户端真实 IP。
+         * @param proxyProtocolEnabled ALB supports the Proxy Protocol and records the client&#39;s real IP.
          * 
          * @return builder
          * 
@@ -711,7 +711,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type ALB 实例的类型。取值是 public 或 private 。public：表示创建一个公网负载均衡实例，系统会分配一个公网IP地址和一个私网IP地址，可用于转发公网请求和私网请求。private：表示创建一个私网负载均衡实例，系统会分配一个私网IP地址，仅用于转发私网请求。
+         * @param type Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
          * 
          * @return builder
          * 
@@ -722,7 +722,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type ALB 实例的类型。取值是 public 或 private 。public：表示创建一个公网负载均衡实例，系统会分配一个公网IP地址和一个私网IP地址，可用于转发公网请求和私网请求。private：表示创建一个私网负载均衡实例，系统会分配一个私网IP地址，仅用于转发私网请求。
+         * @param type Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
          * 
          * @return builder
          * 
@@ -732,7 +732,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 负载均衡实例所属的私有网络（VPC）的ID。
+         * @param vpcId ID of the Virtual Private Cloud (VPC) to which the load balancer instance belongs.
          * 
          * @return builder
          * 
@@ -743,7 +743,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 负载均衡实例所属的私有网络（VPC）的ID。
+         * @param vpcId ID of the Virtual Private Cloud (VPC) to which the load balancer instance belongs.
          * 
          * @return builder
          * 
@@ -753,7 +753,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param wafInstanceId ALB 实例绑定的 WAF 安全防护实例 ID。
+         * @param wafInstanceId ID of the WAF security protection instance bound to the ALB instance.
          * 
          * @return builder
          * 
@@ -764,7 +764,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param wafInstanceId ALB 实例绑定的 WAF 安全防护实例 ID。
+         * @param wafInstanceId ID of the WAF security protection instance bound to the ALB instance.
          * 
          * @return builder
          * 
@@ -774,7 +774,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param wafProtectedDomain WAF防护的域名，用于精确匹配防护规则。
+         * @param wafProtectedDomain Domain name protected by WAF, used for precise rule matching.
          * 
          * @return builder
          * 
@@ -785,7 +785,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param wafProtectedDomain WAF防护的域名，用于精确匹配防护规则。
+         * @param wafProtectedDomain Domain name protected by WAF, used for precise rule matching.
          * 
          * @return builder
          * 
@@ -795,7 +795,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param wafProtectionEnabled WAF 安全防护开关。on：开启；off：关闭。
+         * @param wafProtectionEnabled WAF security protection switch. on: enabled; off: disabled.
          * 
          * @return builder
          * 
@@ -806,7 +806,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param wafProtectionEnabled WAF 安全防护开关。on：开启；off：关闭。
+         * @param wafProtectionEnabled WAF security protection switch. on: enabled; off: disabled.
          * 
          * @return builder
          * 

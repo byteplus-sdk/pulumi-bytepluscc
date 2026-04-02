@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainRefererAccessRuleSharedConfig {
     /**
-     * @return 表示一个全局配置的名称。
+     * @return Indicates the name of a global configuration.
      * 
      */
     private String configName;
 
     private GetDomainRefererAccessRuleSharedConfig() {}
     /**
-     * @return 表示一个全局配置的名称。
+     * @return Indicates the name of a global configuration.
      * 
      */
     public String configName() {

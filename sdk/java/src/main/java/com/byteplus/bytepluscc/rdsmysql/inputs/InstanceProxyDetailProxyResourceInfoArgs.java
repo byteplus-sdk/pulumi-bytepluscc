@@ -16,14 +16,14 @@ public final class InstanceProxyDetailProxyResourceInfoArgs extends com.pulumi.r
     public static final InstanceProxyDetailProxyResourceInfoArgs Empty = new InstanceProxyDetailProxyResourceInfoArgs();
 
     /**
-     * 实例数据库代理服务当前的核数。
+     * Current number of cores for the instance database proxy service
      * 
      */
     @Import(name="currentProxyCpuNum")
     private @Nullable Output<Integer> currentProxyCpuNum;
 
     /**
-     * @return 实例数据库代理服务当前的核数。
+     * @return Current number of cores for the instance database proxy service
      * 
      */
     public Optional<Output<Integer>> currentProxyCpuNum() {
@@ -31,14 +31,14 @@ public final class InstanceProxyDetailProxyResourceInfoArgs extends com.pulumi.r
     }
 
     /**
-     * 用户可为数据库代理服务配置的最多核数。
+     * Maximum number of cores configurable for database proxy service.
      * 
      */
     @Import(name="maxProxyCpuNum")
     private @Nullable Output<Integer> maxProxyCpuNum;
 
     /**
-     * @return 用户可为数据库代理服务配置的最多核数。
+     * @return Maximum number of cores configurable for database proxy service.
      * 
      */
     public Optional<Output<Integer>> maxProxyCpuNum() {
@@ -46,14 +46,14 @@ public final class InstanceProxyDetailProxyResourceInfoArgs extends com.pulumi.r
     }
 
     /**
-     * 用户可为数据库代理服务配置的最少核数。
+     * Minimum number of CPU cores configurable for the database proxy service
      * 
      */
     @Import(name="minProxyCpuNum")
     private @Nullable Output<Integer> minProxyCpuNum;
 
     /**
-     * @return 用户可为数据库代理服务配置的最少核数。
+     * @return Minimum number of CPU cores configurable for the database proxy service
      * 
      */
     public Optional<Output<Integer>> minProxyCpuNum() {
@@ -87,7 +87,7 @@ public final class InstanceProxyDetailProxyResourceInfoArgs extends com.pulumi.r
         }
 
         /**
-         * @param currentProxyCpuNum 实例数据库代理服务当前的核数。
+         * @param currentProxyCpuNum Current number of cores for the instance database proxy service
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class InstanceProxyDetailProxyResourceInfoArgs extends com.pulumi.r
         }
 
         /**
-         * @param currentProxyCpuNum 实例数据库代理服务当前的核数。
+         * @param currentProxyCpuNum Current number of cores for the instance database proxy service
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class InstanceProxyDetailProxyResourceInfoArgs extends com.pulumi.r
         }
 
         /**
-         * @param maxProxyCpuNum 用户可为数据库代理服务配置的最多核数。
+         * @param maxProxyCpuNum Maximum number of cores configurable for database proxy service.
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class InstanceProxyDetailProxyResourceInfoArgs extends com.pulumi.r
         }
 
         /**
-         * @param maxProxyCpuNum 用户可为数据库代理服务配置的最多核数。
+         * @param maxProxyCpuNum Maximum number of cores configurable for database proxy service.
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class InstanceProxyDetailProxyResourceInfoArgs extends com.pulumi.r
         }
 
         /**
-         * @param minProxyCpuNum 用户可为数据库代理服务配置的最少核数。
+         * @param minProxyCpuNum Minimum number of CPU cores configurable for the database proxy service
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class InstanceProxyDetailProxyResourceInfoArgs extends com.pulumi.r
         }
 
         /**
-         * @param minProxyCpuNum 用户可为数据库代理服务配置的最少核数。
+         * @param minProxyCpuNum Minimum number of CPU cores configurable for the database proxy service
          * 
          * @return builder
          * 

@@ -17,14 +17,14 @@ public final class DomainResponseHeaderArgs extends com.pulumi.resources.Resourc
     public static final DomainResponseHeaderArgs Empty = new DomainResponseHeaderArgs();
 
     /**
-     * 表示该配置模块的生效条件，由一组规则组成。
+     * Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<DomainResponseHeaderConditionArgs> condition;
 
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public Optional<Output<DomainResponseHeaderConditionArgs>> condition() {
@@ -32,14 +32,14 @@ public final class DomainResponseHeaderArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * 表示内容分发网络在响应用户请求的时候，对响应头的操作。
+     * Indicates operations on the response header performed by the Content Delivery Network when responding to user requests.
      * 
      */
     @Import(name="responseHeaderAction")
     private @Nullable Output<DomainResponseHeaderResponseHeaderActionArgs> responseHeaderAction;
 
     /**
-     * @return 表示内容分发网络在响应用户请求的时候，对响应头的操作。
+     * @return Indicates operations on the response header performed by the Content Delivery Network when responding to user requests.
      * 
      */
     public Optional<Output<DomainResponseHeaderResponseHeaderActionArgs>> responseHeaderAction() {
@@ -72,7 +72,7 @@ public final class DomainResponseHeaderArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param condition 表示该配置模块的生效条件，由一组规则组成。
+         * @param condition Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class DomainResponseHeaderArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param condition 表示该配置模块的生效条件，由一组规则组成。
+         * @param condition Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class DomainResponseHeaderArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param responseHeaderAction 表示内容分发网络在响应用户请求的时候，对响应头的操作。
+         * @param responseHeaderAction Indicates operations on the response header performed by the Content Delivery Network when responding to user requests.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class DomainResponseHeaderArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param responseHeaderAction 表示内容分发网络在响应用户请求的时候，对响应头的操作。
+         * @param responseHeaderAction Indicates operations on the response header performed by the Content Delivery Network when responding to user requests.
          * 
          * @return builder
          * 

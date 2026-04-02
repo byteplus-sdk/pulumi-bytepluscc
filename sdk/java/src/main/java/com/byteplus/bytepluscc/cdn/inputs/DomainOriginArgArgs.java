@@ -17,14 +17,14 @@ public final class DomainOriginArgArgs extends com.pulumi.resources.ResourceArgs
     public static final DomainOriginArgArgs Empty = new DomainOriginArgArgs();
 
     /**
-     * 表示该配置模块的生效条件，由一组规则组成。
+     * Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     @Import(name="condition")
     private @Nullable Output<DomainOriginArgConditionArgs> condition;
 
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public Optional<Output<DomainOriginArgConditionArgs>> condition() {
@@ -32,14 +32,14 @@ public final class DomainOriginArgArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * 表示在满足 Condition 条件时所执行的操作。
+     * Represents the action performed when the Condition is met.
      * 
      */
     @Import(name="originArgAction")
     private @Nullable Output<DomainOriginArgOriginArgActionArgs> originArgAction;
 
     /**
-     * @return 表示在满足 Condition 条件时所执行的操作。
+     * @return Represents the action performed when the Condition is met.
      * 
      */
     public Optional<Output<DomainOriginArgOriginArgActionArgs>> originArgAction() {
@@ -72,7 +72,7 @@ public final class DomainOriginArgArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param condition 表示该配置模块的生效条件，由一组规则组成。
+         * @param condition Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class DomainOriginArgArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param condition 表示该配置模块的生效条件，由一组规则组成。
+         * @param condition Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class DomainOriginArgArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param originArgAction 表示在满足 Condition 条件时所执行的操作。
+         * @param originArgAction Represents the action performed when the Condition is met.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class DomainOriginArgArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param originArgAction 表示在满足 Condition 条件时所执行的操作。
+         * @param originArgAction Represents the action performed when the Condition is met.
          * 
          * @return builder
          * 

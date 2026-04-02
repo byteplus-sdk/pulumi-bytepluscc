@@ -11,50 +11,50 @@ import java.util.Objects;
 @CustomType
 public final class GetAllowListAssociatedInstance {
     /**
-     * @return 已绑定当前白名单的实例 ID。
+     * @return Instance ID bound to the current allowlist.
      * 
      */
     private String instanceId;
     /**
-     * @return 已绑定当前白名单的实例名称。
+     * @return Instance name bound to the current allowlist.
      * 
      */
     private String instanceName;
     /**
-     * @return 实例所属的项目名称。
+     * @return Project name of the instance.
      * 
      */
     private String projectName;
     /**
-     * @return 实例所属的私有网络 ID。
+     * @return Private network ID of the instance.
      * 
      */
     private String vpc;
 
     private GetAllowListAssociatedInstance() {}
     /**
-     * @return 已绑定当前白名单的实例 ID。
+     * @return Instance ID bound to the current allowlist.
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return 已绑定当前白名单的实例名称。
+     * @return Instance name bound to the current allowlist.
      * 
      */
     public String instanceName() {
         return this.instanceName;
     }
     /**
-     * @return 实例所属的项目名称。
+     * @return Project name of the instance.
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 实例所属的私有网络 ID。
+     * @return Private network ID of the instance.
      * 
      */
     public String vpc() {

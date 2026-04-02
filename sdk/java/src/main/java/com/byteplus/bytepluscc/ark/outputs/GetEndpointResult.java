@@ -18,32 +18,32 @@ import java.util.Objects;
 @CustomType
 public final class GetEndpointResult {
     /**
-     * @return 是否只支持 BatchChat。如果为true，只能访问 Batch 推理接口，否则只能访问在线推理接口。
+     * @return Whether only BatchChat is supported. If true, only batch inference interfaces can be accessed; otherwise, only online inference interfaces can be accessed
      * 
      */
     private Boolean batchOnly;
     /**
-     * @return 证书信息。
+     * @return Certificate information
      * 
      */
     private GetEndpointCertificate certificate;
     /**
-     * @return 接入点创建时间，RFC3339格式。
+     * @return Endpoint creation time, RFC3339 format
      * 
      */
     private String createTime;
     /**
-     * @return 接入点描述。
+     * @return Endpoint description
      * 
      */
     private String description;
     /**
-     * @return 推理接入点的ID。
+     * @return Inference access point ID.
      * 
      */
     private String endpointId;
     /**
-     * @return 接入点模型类型。取值:FoundationModel为基础模型;CustomModel为定制模型。
+     * @return Access point model type. Options: FoundationModel for base model; CustomModel for custom model.
      * 
      */
     private String endpointModelType;
@@ -53,114 +53,114 @@ public final class GetEndpointResult {
      */
     private String id;
     /**
-     * @return 接入点接入模型。
+     * @return Endpoint access model
      * 
      */
     private GetEndpointModelReference modelReference;
     /**
-     * @return 模型单元，为空表示后付费；否则预付费。
+     * @return Model unit. If empty, indicates postpaid; otherwise, prepaid.
      * 
      */
     private String modelUnitId;
     /**
-     * @return 内容护栏方案。
+     * @return Content guardrail scheme
      * 
      */
     private GetEndpointModeration moderation;
     /**
-     * @return 接入点名称。
+     * @return Endpoint name
      * 
      */
     private String name;
     /**
-     * @return 资源所属的项目名称，默认值为default。
+     * @return Project name the resource belongs to; default value is &#34;default&#34;
      * 
      */
     private String projectName;
     /**
-     * @return 接入点限流。
+     * @return Endpoint rate limiting
      * 
      */
     private GetEndpointRateLimit rateLimit;
     /**
-     * @return 接入点切换的Id。
+     * @return Endpoint switch ID
      * 
      */
     private String rollingId;
     /**
-     * @return 如果存在 TPM 保障包，则为 TPM 保障包 ID。
+     * @return If a TPM protection package exists, this is the TPM protection package ID.
      * 
      */
     private String scaleTierId;
     /**
-     * @return 接入点状态。
+     * @return Endpoint status
      * 
      */
     private String status;
     /**
-     * @return 状态附加说明信息。
+     * @return Additional status information
      * 
      */
     private String statusReason;
     /**
-     * @return 是否支持接入点切换模型版本。
+     * @return Whether endpoint supports switching model versions
      * 
      */
     private Boolean supportRolling;
     /**
-     * @return 是否支持TPM保障包。
+     * @return Whether TPM protection package is supported
      * 
      */
     private Boolean supportScaleTier;
     /**
-     * @return 接入点绑定的标签。
+     * @return Tags bound to the endpoint
      * 
      */
     private List<GetEndpointTag> tags;
     /**
-     * @return 接入点更新时间，RFC3339格式。
+     * @return Endpoint update time, RFC3339 format
      * 
      */
     private String updateTime;
 
     private GetEndpointResult() {}
     /**
-     * @return 是否只支持 BatchChat。如果为true，只能访问 Batch 推理接口，否则只能访问在线推理接口。
+     * @return Whether only BatchChat is supported. If true, only batch inference interfaces can be accessed; otherwise, only online inference interfaces can be accessed
      * 
      */
     public Boolean batchOnly() {
         return this.batchOnly;
     }
     /**
-     * @return 证书信息。
+     * @return Certificate information
      * 
      */
     public GetEndpointCertificate certificate() {
         return this.certificate;
     }
     /**
-     * @return 接入点创建时间，RFC3339格式。
+     * @return Endpoint creation time, RFC3339 format
      * 
      */
     public String createTime() {
         return this.createTime;
     }
     /**
-     * @return 接入点描述。
+     * @return Endpoint description
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 推理接入点的ID。
+     * @return Inference access point ID.
      * 
      */
     public String endpointId() {
         return this.endpointId;
     }
     /**
-     * @return 接入点模型类型。取值:FoundationModel为基础模型;CustomModel为定制模型。
+     * @return Access point model type. Options: FoundationModel for base model; CustomModel for custom model.
      * 
      */
     public String endpointModelType() {
@@ -174,98 +174,98 @@ public final class GetEndpointResult {
         return this.id;
     }
     /**
-     * @return 接入点接入模型。
+     * @return Endpoint access model
      * 
      */
     public GetEndpointModelReference modelReference() {
         return this.modelReference;
     }
     /**
-     * @return 模型单元，为空表示后付费；否则预付费。
+     * @return Model unit. If empty, indicates postpaid; otherwise, prepaid.
      * 
      */
     public String modelUnitId() {
         return this.modelUnitId;
     }
     /**
-     * @return 内容护栏方案。
+     * @return Content guardrail scheme
      * 
      */
     public GetEndpointModeration moderation() {
         return this.moderation;
     }
     /**
-     * @return 接入点名称。
+     * @return Endpoint name
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 资源所属的项目名称，默认值为default。
+     * @return Project name the resource belongs to; default value is &#34;default&#34;
      * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
-     * @return 接入点限流。
+     * @return Endpoint rate limiting
      * 
      */
     public GetEndpointRateLimit rateLimit() {
         return this.rateLimit;
     }
     /**
-     * @return 接入点切换的Id。
+     * @return Endpoint switch ID
      * 
      */
     public String rollingId() {
         return this.rollingId;
     }
     /**
-     * @return 如果存在 TPM 保障包，则为 TPM 保障包 ID。
+     * @return If a TPM protection package exists, this is the TPM protection package ID.
      * 
      */
     public String scaleTierId() {
         return this.scaleTierId;
     }
     /**
-     * @return 接入点状态。
+     * @return Endpoint status
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 状态附加说明信息。
+     * @return Additional status information
      * 
      */
     public String statusReason() {
         return this.statusReason;
     }
     /**
-     * @return 是否支持接入点切换模型版本。
+     * @return Whether endpoint supports switching model versions
      * 
      */
     public Boolean supportRolling() {
         return this.supportRolling;
     }
     /**
-     * @return 是否支持TPM保障包。
+     * @return Whether TPM protection package is supported
      * 
      */
     public Boolean supportScaleTier() {
         return this.supportScaleTier;
     }
     /**
-     * @return 接入点绑定的标签。
+     * @return Tags bound to the endpoint
      * 
      */
     public List<GetEndpointTag> tags() {
         return this.tags;
     }
     /**
-     * @return 接入点更新时间，RFC3339格式。
+     * @return Endpoint update time, RFC3339 format
      * 
      */
     public String updateTime() {

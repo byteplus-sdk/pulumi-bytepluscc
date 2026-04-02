@@ -14,37 +14,37 @@ import java.util.Objects;
 @CustomType
 public final class GetKafkaTriggerResult {
     /**
-     * @return 触发器批量消费的最长等待时间。单位为毫秒（ms），取值范围为 1000 ~ 60000 ms，默认值为 1000 ms。
+     * @return Maximum wait time for batch consumption by the trigger. Unit: milliseconds (ms). Valid range: 1000–60000 ms. Default: 1000 ms.
      * 
      */
     private Integer batchFlushDurationMilliseconds;
     /**
-     * @return 触发器批量消费的每批次消息数。
+     * @return Number of messages per batch for trigger batch consumption.
      * 
      */
     private Integer batchSize;
     /**
-     * @return 消息队列 Kafka 实例的消费组名字。
+     * @return Consumer group name of the Kafka message queue instance.
      * 
      */
     private String consumerGroup;
     /**
-     * @return Kafka 触发器创建时间。
+     * @return Kafka trigger creation time.
      * 
      */
     private String createdTime;
     /**
-     * @return Kafka 触发器描述。长度限制为 200 个字符以内。
+     * @return Description of the Kafka trigger. Limited to 200 characters.
      * 
      */
     private String description;
     /**
-     * @return 是否在创建触发器的同时启用触发器。取值：true：启用。false：关闭。
+     * @return Enable the trigger when creating it. Options: true—enable. false—disable.
      * 
      */
     private Boolean enabled;
     /**
-     * @return 函数 ID。
+     * @return Function ID.
      * 
      */
     private String functionId;
@@ -54,96 +54,96 @@ public final class GetKafkaTriggerResult {
      */
     private String id;
     /**
-     * @return Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
+     * @return Kafka identity authentication. Function service uses Kafka ACL permission policies to authenticate message consumption for SASL users of types PLAIN and SCRAM-SHA-256.
      * 
      */
     private GetKafkaTriggerKafkaCredentials kafkaCredentials;
     /**
-     * @return Kafka 触发器 ID。
+     * @return Kafka trigger ID.
      * 
      */
     private String kafkaTriggerId;
     /**
-     * @return 函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。
+     * @return Maximum number of retries when the function encounters a runtime error (including user code errors and runtime errors). Valid values: positive integers from 0 to 100.
      * 
      */
     private Integer maximumRetryAttempts;
     /**
-     * @return 消息队列 Kafka 实例 ID。
+     * @return Kafka message queue instance ID.
      * 
      */
     private String mqInstanceId;
     /**
-     * @return Kafka 触发器名字。同一函数下，触发器名称不可重复。只能包含大小写字母、数字、下划线，并且以字母开头，长度限制为 4~63 个字符。
+     * @return Kafka trigger name. Trigger names must be unique within the same function. Only uppercase and lowercase letters, numbers, and underscores are allowed, must start with a letter, and be 4–63 characters long.
      * 
      */
     private String name;
     /**
-     * @return 指定开始消费 Topic 中消息的位置。取值：Latest：只消费订阅 Topic 后产生的消息。Earliest：从 Topic 中生产的第一条消息开始消费。
+     * @return Specify the starting position for consuming messages in the Topic. Options: Latest—consume only messages produced after subscribing to the Topic. Earliest—consume from the first message produced in the Topic.
      * 
      */
     private String startingPosition;
     /**
-     * @return Kafka 触发器状态。参数值说明：ready：运行，failed：失败，pending：启动中
+     * @return Kafka trigger status. Parameter values: ready—running, failed—failed, pending—starting.
      * 
      */
     private String status;
     /**
-     * @return 消息队列 Kafka 实例的 Topic 名称。
+     * @return Topic name of the Kafka message queue instance.
      * 
      */
     private String topicName;
     /**
-     * @return Kafka 触发器最近一次更新时间。
+     * @return Last update time of the Kafka trigger.
      * 
      */
     private String updatedTime;
 
     private GetKafkaTriggerResult() {}
     /**
-     * @return 触发器批量消费的最长等待时间。单位为毫秒（ms），取值范围为 1000 ~ 60000 ms，默认值为 1000 ms。
+     * @return Maximum wait time for batch consumption by the trigger. Unit: milliseconds (ms). Valid range: 1000–60000 ms. Default: 1000 ms.
      * 
      */
     public Integer batchFlushDurationMilliseconds() {
         return this.batchFlushDurationMilliseconds;
     }
     /**
-     * @return 触发器批量消费的每批次消息数。
+     * @return Number of messages per batch for trigger batch consumption.
      * 
      */
     public Integer batchSize() {
         return this.batchSize;
     }
     /**
-     * @return 消息队列 Kafka 实例的消费组名字。
+     * @return Consumer group name of the Kafka message queue instance.
      * 
      */
     public String consumerGroup() {
         return this.consumerGroup;
     }
     /**
-     * @return Kafka 触发器创建时间。
+     * @return Kafka trigger creation time.
      * 
      */
     public String createdTime() {
         return this.createdTime;
     }
     /**
-     * @return Kafka 触发器描述。长度限制为 200 个字符以内。
+     * @return Description of the Kafka trigger. Limited to 200 characters.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return 是否在创建触发器的同时启用触发器。取值：true：启用。false：关闭。
+     * @return Enable the trigger when creating it. Options: true—enable. false—disable.
      * 
      */
     public Boolean enabled() {
         return this.enabled;
     }
     /**
-     * @return 函数 ID。
+     * @return Function ID.
      * 
      */
     public String functionId() {
@@ -157,63 +157,63 @@ public final class GetKafkaTriggerResult {
         return this.id;
     }
     /**
-     * @return Kafka 身份认证。函数服务将通过 Kafka ACL 权限策略，对 PLAIN 和 SCRAM-SHA-256 两种类型的 SASL 用户进行消息消费鉴权。
+     * @return Kafka identity authentication. Function service uses Kafka ACL permission policies to authenticate message consumption for SASL users of types PLAIN and SCRAM-SHA-256.
      * 
      */
     public GetKafkaTriggerKafkaCredentials kafkaCredentials() {
         return this.kafkaCredentials;
     }
     /**
-     * @return Kafka 触发器 ID。
+     * @return Kafka trigger ID.
      * 
      */
     public String kafkaTriggerId() {
         return this.kafkaTriggerId;
     }
     /**
-     * @return 函数发生运行错误（包括用户代码错误和 Runtime 错误）时的最大重试次数。取值范围为 0～100 的正整数。
+     * @return Maximum number of retries when the function encounters a runtime error (including user code errors and runtime errors). Valid values: positive integers from 0 to 100.
      * 
      */
     public Integer maximumRetryAttempts() {
         return this.maximumRetryAttempts;
     }
     /**
-     * @return 消息队列 Kafka 实例 ID。
+     * @return Kafka message queue instance ID.
      * 
      */
     public String mqInstanceId() {
         return this.mqInstanceId;
     }
     /**
-     * @return Kafka 触发器名字。同一函数下，触发器名称不可重复。只能包含大小写字母、数字、下划线，并且以字母开头，长度限制为 4~63 个字符。
+     * @return Kafka trigger name. Trigger names must be unique within the same function. Only uppercase and lowercase letters, numbers, and underscores are allowed, must start with a letter, and be 4–63 characters long.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return 指定开始消费 Topic 中消息的位置。取值：Latest：只消费订阅 Topic 后产生的消息。Earliest：从 Topic 中生产的第一条消息开始消费。
+     * @return Specify the starting position for consuming messages in the Topic. Options: Latest—consume only messages produced after subscribing to the Topic. Earliest—consume from the first message produced in the Topic.
      * 
      */
     public String startingPosition() {
         return this.startingPosition;
     }
     /**
-     * @return Kafka 触发器状态。参数值说明：ready：运行，failed：失败，pending：启动中
+     * @return Kafka trigger status. Parameter values: ready—running, failed—failed, pending—starting.
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return 消息队列 Kafka 实例的 Topic 名称。
+     * @return Topic name of the Kafka message queue instance.
      * 
      */
     public String topicName() {
         return this.topicName;
     }
     /**
-     * @return Kafka 触发器最近一次更新时间。
+     * @return Last update time of the Kafka trigger.
      * 
      */
     public String updatedTime() {

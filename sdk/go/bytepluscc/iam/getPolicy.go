@@ -30,33 +30,33 @@ type LookupPolicyArgs struct {
 
 // A collection of values returned by getPolicy.
 type LookupPolicyResult struct {
-	// 策略绑定的身份数量。
+	// Number of identities bound to the policy.
 	AttachmentCount int `pulumi:"attachmentCount"`
-	// 系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
+	// Category of the system preset policy, usually the service code. This field is not returned for custom policies.
 	Category string `pulumi:"category"`
-	// 策略创建时间。
+	// Policy creation time.
 	CreatedTime string `pulumi:"createdTime"`
-	// 策略描述，长度不超过128。
+	// Policy description, no more than 128 characters.
 	Description string `pulumi:"description"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 是否是服务关联角色的策略，0代表否，1代表是。
+	// Indicates whether the policy is for a service-linked role. 0 means no; 1 means yes.
 	IsServiceRolePolicy int `pulumi:"isServiceRolePolicy"`
-	// 策略语法内容，例如：{"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
+	// Policy syntax content, for example: {"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
 	PolicyDocument string `pulumi:"policyDocument"`
-	// 策略名，长度1~64，支持英文、数字和+=,.@-_符号。
+	// Policy name, 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
 	PolicyName string `pulumi:"policyName"`
-	// 策略绑定的角色列表。
+	// List of roles bound to the policy.
 	PolicyRoles []GetPolicyPolicyRole `pulumi:"policyRoles"`
-	// 策略的TRN。
+	// Policy TRN.
 	PolicyTrn string `pulumi:"policyTrn"`
-	// 策略类型。System代表系统预设策略，Custom代表自定义策略。
+	// Policy type. System indicates a system preset policy; Custom indicates a custom policy.
 	PolicyType string `pulumi:"policyType"`
-	// 策略绑定的用户组列表。
+	// List of user groups bound to the policy.
 	PolicyUserGroups []GetPolicyPolicyUserGroup `pulumi:"policyUserGroups"`
-	// 策略绑定的用户列表。
+	// List of users bound to the policy.
 	PolicyUsers []GetPolicyPolicyUser `pulumi:"policyUsers"`
-	// 策略更新时间。
+	// Policy update time.
 	UpdatedTime string `pulumi:"updatedTime"`
 }
 
@@ -94,22 +94,22 @@ func (o LookupPolicyResultOutput) ToLookupPolicyResultOutputWithContext(ctx cont
 	return o
 }
 
-// 策略绑定的身份数量。
+// Number of identities bound to the policy.
 func (o LookupPolicyResultOutput) AttachmentCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupPolicyResult) int { return v.AttachmentCount }).(pulumi.IntOutput)
 }
 
-// 系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
+// Category of the system preset policy, usually the service code. This field is not returned for custom policies.
 func (o LookupPolicyResultOutput) Category() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPolicyResult) string { return v.Category }).(pulumi.StringOutput)
 }
 
-// 策略创建时间。
+// Policy creation time.
 func (o LookupPolicyResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPolicyResult) string { return v.CreatedTime }).(pulumi.StringOutput)
 }
 
-// 策略描述，长度不超过128。
+// Policy description, no more than 128 characters.
 func (o LookupPolicyResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPolicyResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -119,47 +119,47 @@ func (o LookupPolicyResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPolicyResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 是否是服务关联角色的策略，0代表否，1代表是。
+// Indicates whether the policy is for a service-linked role. 0 means no; 1 means yes.
 func (o LookupPolicyResultOutput) IsServiceRolePolicy() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupPolicyResult) int { return v.IsServiceRolePolicy }).(pulumi.IntOutput)
 }
 
-// 策略语法内容，例如：{"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
+// Policy syntax content, for example: {"Statement":[{"Effect":"Allow","Action":["iam:","tag:"],"Resource":["*"]}]}
 func (o LookupPolicyResultOutput) PolicyDocument() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPolicyResult) string { return v.PolicyDocument }).(pulumi.StringOutput)
 }
 
-// 策略名，长度1~64，支持英文、数字和+=,.@-_符号。
+// Policy name, 1–64 characters. Supports English letters, numbers, and +=,.@-_ symbols.
 func (o LookupPolicyResultOutput) PolicyName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPolicyResult) string { return v.PolicyName }).(pulumi.StringOutput)
 }
 
-// 策略绑定的角色列表。
+// List of roles bound to the policy.
 func (o LookupPolicyResultOutput) PolicyRoles() GetPolicyPolicyRoleArrayOutput {
 	return o.ApplyT(func(v LookupPolicyResult) []GetPolicyPolicyRole { return v.PolicyRoles }).(GetPolicyPolicyRoleArrayOutput)
 }
 
-// 策略的TRN。
+// Policy TRN.
 func (o LookupPolicyResultOutput) PolicyTrn() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPolicyResult) string { return v.PolicyTrn }).(pulumi.StringOutput)
 }
 
-// 策略类型。System代表系统预设策略，Custom代表自定义策略。
+// Policy type. System indicates a system preset policy; Custom indicates a custom policy.
 func (o LookupPolicyResultOutput) PolicyType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPolicyResult) string { return v.PolicyType }).(pulumi.StringOutput)
 }
 
-// 策略绑定的用户组列表。
+// List of user groups bound to the policy.
 func (o LookupPolicyResultOutput) PolicyUserGroups() GetPolicyPolicyUserGroupArrayOutput {
 	return o.ApplyT(func(v LookupPolicyResult) []GetPolicyPolicyUserGroup { return v.PolicyUserGroups }).(GetPolicyPolicyUserGroupArrayOutput)
 }
 
-// 策略绑定的用户列表。
+// List of users bound to the policy.
 func (o LookupPolicyResultOutput) PolicyUsers() GetPolicyPolicyUserArrayOutput {
 	return o.ApplyT(func(v LookupPolicyResult) []GetPolicyPolicyUser { return v.PolicyUsers }).(GetPolicyPolicyUserArrayOutput)
 }
 
-// 策略更新时间。
+// Policy update time.
 func (o LookupPolicyResultOutput) UpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPolicyResult) string { return v.UpdatedTime }).(pulumi.StringOutput)
 }

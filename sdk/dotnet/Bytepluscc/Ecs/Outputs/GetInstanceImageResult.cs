@@ -15,19 +15,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Outputs
     public sealed class GetInstanceImageResult
     {
         /// <summary>
-        /// 实例的镜像ID。
+        /// Instance image ID.
         /// </summary>
         public readonly string ImageId;
         /// <summary>
-        /// 实例的镜像发布版本。
+        /// The image release version of the instance.
         /// </summary>
         public readonly string ImageReleaseVersion;
         /// <summary>
-        /// 实例是否保留镜像凭证。
+        /// Whether the instance retains image credentials
         /// </summary>
         public readonly bool KeepImageCredential;
         /// <summary>
-        /// 实例的安全增强策略。Active：开启安全加固，仅对公共镜像生效。InActive：关闭安全加固，对所有镜像生效。
+        /// Instance security enhancement policy. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images
         /// </summary>
         public readonly string SecurityEnhancementStrategy;
 

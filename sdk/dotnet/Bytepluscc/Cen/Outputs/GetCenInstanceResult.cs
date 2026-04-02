@@ -15,31 +15,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Cen.Outputs
     public sealed class GetCenInstanceResult
     {
         /// <summary>
-        /// 云企业网实例的ID。
+        /// CEN instance ID
         /// </summary>
         public readonly string CenId;
         /// <summary>
-        /// 网络实例的创建时间。
+        /// Creation time of the network instance
         /// </summary>
         public readonly string CreationTime;
         /// <summary>
-        /// 网络实例的ID。
+        /// Network instance ID
         /// </summary>
         public readonly string InstanceId;
         /// <summary>
-        /// 网络实例所属账号的ID。
+        /// Account ID for the network instance
         /// </summary>
         public readonly string InstanceOwnerId;
         /// <summary>
-        /// 网络实例所在的地域。
+        /// Region where the network instance is located
         /// </summary>
         public readonly string InstanceRegionId;
         /// <summary>
-        /// 网络实例的类型。
+        /// Type of the network instance
         /// </summary>
         public readonly string InstanceType;
         /// <summary>
-        /// 网络实例的加载状态。Attaching：加载中Available：可用
+        /// Loading status of the network instance. Attaching: Loading; Available: Available
         /// </summary>
         public readonly string Status;
 

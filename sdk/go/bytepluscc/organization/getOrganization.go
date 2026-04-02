@@ -32,11 +32,11 @@ type LookupOrganizationArgs struct {
 type LookupOrganizationResult struct {
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
-	// 组织详情
+	// Organization Details
 	Organization GetOrganizationOrganization `pulumi:"organization"`
-	// 组织ID
+	// Organization ID
 	OrganizationId string `pulumi:"organizationId"`
-	// 管理员详情
+	// Administrator Details
 	Owner GetOrganizationOwner `pulumi:"owner"`
 }
 
@@ -79,17 +79,17 @@ func (o LookupOrganizationResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupOrganizationResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// 组织详情
+// Organization Details
 func (o LookupOrganizationResultOutput) Organization() GetOrganizationOrganizationOutput {
 	return o.ApplyT(func(v LookupOrganizationResult) GetOrganizationOrganization { return v.Organization }).(GetOrganizationOrganizationOutput)
 }
 
-// 组织ID
+// Organization ID
 func (o LookupOrganizationResultOutput) OrganizationId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupOrganizationResult) string { return v.OrganizationId }).(pulumi.StringOutput)
 }
 
-// 管理员详情
+// Administrator Details
 func (o LookupOrganizationResultOutput) Owner() GetOrganizationOwnerOutput {
 	return o.ApplyT(func(v LookupOrganizationResult) GetOrganizationOwner { return v.Owner }).(GetOrganizationOwnerOutput)
 }

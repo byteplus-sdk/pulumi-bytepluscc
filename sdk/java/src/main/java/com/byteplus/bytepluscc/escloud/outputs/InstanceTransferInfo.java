@@ -20,22 +20,22 @@ public final class InstanceTransferInfo {
      */
     private @Nullable Boolean forbidStop;
     /**
-     * @return 资源信息。
+     * @return Resource information
      * 
      */
     private @Nullable InstanceTransferInfoReduceSpecConfig reduceSpecConfig;
     /**
-     * @return 数据迁移任务进度，百分制。
+     * @return Data migration task progress, percentage
      * 
      */
     private @Nullable Double transferProgress;
     /**
-     * @return 数据迁移任务状态。
+     * @return Data migration task status
      * 
      */
     private @Nullable String transferStatus;
     /**
-     * @return 数据迁移任务 ID。
+     * @return Data migration task ID
      * 
      */
     private @Nullable String transferTaskId;
@@ -49,28 +49,28 @@ public final class InstanceTransferInfo {
         return Optional.ofNullable(this.forbidStop);
     }
     /**
-     * @return 资源信息。
+     * @return Resource information
      * 
      */
     public Optional<InstanceTransferInfoReduceSpecConfig> reduceSpecConfig() {
         return Optional.ofNullable(this.reduceSpecConfig);
     }
     /**
-     * @return 数据迁移任务进度，百分制。
+     * @return Data migration task progress, percentage
      * 
      */
     public Optional<Double> transferProgress() {
         return Optional.ofNullable(this.transferProgress);
     }
     /**
-     * @return 数据迁移任务状态。
+     * @return Data migration task status
      * 
      */
     public Optional<String> transferStatus() {
         return Optional.ofNullable(this.transferStatus);
     }
     /**
-     * @return 数据迁移任务 ID。
+     * @return Data migration task ID
      * 
      */
     public Optional<String> transferTaskId() {

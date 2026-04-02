@@ -29,10 +29,10 @@ class RegistryArgs:
                  type: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Registry resource.
-        :param pulumi.Input[builtins.str] name: 标准版实例名称，同一个地域下，名称必须唯一。支持小写英文字母、数字、短划线（-）且数字不能在首位，短划线（-）不能在首位或末位，长度限制为 3～30 个字符。
-        :param pulumi.Input[builtins.str] project: 填写实例需要关联的项目。一个实例仅支持关联一个项目
-        :param pulumi.Input['RegistryStatusArgs'] status: 镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
-        :param pulumi.Input[builtins.str] type: 不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
+        :param pulumi.Input[builtins.str] name: Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
+        :param pulumi.Input[builtins.str] project: Enter the project to associate with the instance. Each instance can only be associated with one project
+        :param pulumi.Input['RegistryStatusArgs'] status: Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
+        :param pulumi.Input[builtins.str] type: If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
         """
         pulumi.set(__self__, "name", name)
         if project is not None:
@@ -48,7 +48,7 @@ class RegistryArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[builtins.str]:
         """
-        标准版实例名称，同一个地域下，名称必须唯一。支持小写英文字母、数字、短划线（-）且数字不能在首位，短划线（-）不能在首位或末位，长度限制为 3～30 个字符。
+        Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
         """
         return pulumi.get(self, "name")
 
@@ -60,7 +60,7 @@ class RegistryArgs:
     @pulumi.getter
     def project(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        填写实例需要关联的项目。一个实例仅支持关联一个项目
+        Enter the project to associate with the instance. Each instance can only be associated with one project
         """
         return pulumi.get(self, "project")
 
@@ -72,7 +72,7 @@ class RegistryArgs:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input['RegistryStatusArgs']]:
         """
-        镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
+        Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
         """
         return pulumi.get(self, "status")
 
@@ -93,7 +93,7 @@ class RegistryArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
+        If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
         """
         return pulumi.get(self, "type")
 
@@ -118,16 +118,16 @@ class _RegistryState:
                  type: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering Registry resources.
-        :param pulumi.Input[builtins.str] charge_type: 镜像仓库实例的付费类型，目前仅支持 PostCharge按量付费模式。
-        :param pulumi.Input[builtins.str] created_time: 创建镜像仓库实例的时间。
-        :param pulumi.Input[builtins.str] expire_time: 仅计费类型为HybridCharge有值，实例到期时间
-        :param pulumi.Input[builtins.str] name: 标准版实例名称，同一个地域下，名称必须唯一。支持小写英文字母、数字、短划线（-）且数字不能在首位，短划线（-）不能在首位或末位，长度限制为 3～30 个字符。
-        :param pulumi.Input[builtins.str] project: 填写实例需要关联的项目。一个实例仅支持关联一个项目
-        :param pulumi.Input['RegistryProxyCacheArgs'] proxy_cache: ProxyCache配置，设置为ProxyCache时必填
-        :param pulumi.Input[builtins.bool] proxy_cache_enabled: 是否设置为ProxyCache实例
-        :param pulumi.Input[builtins.str] renew_type: 仅计费类型为HybridCharge有值，实例自动续费类型
-        :param pulumi.Input['RegistryStatusArgs'] status: 镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
-        :param pulumi.Input[builtins.str] type: 不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
+        :param pulumi.Input[builtins.str] charge_type: Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
+        :param pulumi.Input[builtins.str] created_time: Creation time of the container registry instance
+        :param pulumi.Input[builtins.str] expire_time: Instance expiration time is only available for HybridCharge billing type
+        :param pulumi.Input[builtins.str] name: Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
+        :param pulumi.Input[builtins.str] project: Enter the project to associate with the instance. Each instance can only be associated with one project
+        :param pulumi.Input['RegistryProxyCacheArgs'] proxy_cache: ProxyCache configuration. Required when set as ProxyCache
+        :param pulumi.Input[builtins.bool] proxy_cache_enabled: Set as ProxyCache instance
+        :param pulumi.Input[builtins.str] renew_type: Instance auto-renewal type is only available for HybridCharge billing type
+        :param pulumi.Input['RegistryStatusArgs'] status: Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
+        :param pulumi.Input[builtins.str] type: If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
         """
         if charge_type is not None:
             pulumi.set(__self__, "charge_type", charge_type)
@@ -156,7 +156,7 @@ class _RegistryState:
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        镜像仓库实例的付费类型，目前仅支持 PostCharge按量付费模式。
+        Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
         """
         return pulumi.get(self, "charge_type")
 
@@ -168,7 +168,7 @@ class _RegistryState:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        创建镜像仓库实例的时间。
+        Creation time of the container registry instance
         """
         return pulumi.get(self, "created_time")
 
@@ -180,7 +180,7 @@ class _RegistryState:
     @pulumi.getter(name="expireTime")
     def expire_time(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        仅计费类型为HybridCharge有值，实例到期时间
+        Instance expiration time is only available for HybridCharge billing type
         """
         return pulumi.get(self, "expire_time")
 
@@ -192,7 +192,7 @@ class _RegistryState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        标准版实例名称，同一个地域下，名称必须唯一。支持小写英文字母、数字、短划线（-）且数字不能在首位，短划线（-）不能在首位或末位，长度限制为 3～30 个字符。
+        Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
         """
         return pulumi.get(self, "name")
 
@@ -204,7 +204,7 @@ class _RegistryState:
     @pulumi.getter
     def project(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        填写实例需要关联的项目。一个实例仅支持关联一个项目
+        Enter the project to associate with the instance. Each instance can only be associated with one project
         """
         return pulumi.get(self, "project")
 
@@ -216,7 +216,7 @@ class _RegistryState:
     @pulumi.getter(name="proxyCache")
     def proxy_cache(self) -> Optional[pulumi.Input['RegistryProxyCacheArgs']]:
         """
-        ProxyCache配置，设置为ProxyCache时必填
+        ProxyCache configuration. Required when set as ProxyCache
         """
         return pulumi.get(self, "proxy_cache")
 
@@ -228,7 +228,7 @@ class _RegistryState:
     @pulumi.getter(name="proxyCacheEnabled")
     def proxy_cache_enabled(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        是否设置为ProxyCache实例
+        Set as ProxyCache instance
         """
         return pulumi.get(self, "proxy_cache_enabled")
 
@@ -240,7 +240,7 @@ class _RegistryState:
     @pulumi.getter(name="renewType")
     def renew_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        仅计费类型为HybridCharge有值，实例自动续费类型
+        Instance auto-renewal type is only available for HybridCharge billing type
         """
         return pulumi.get(self, "renew_type")
 
@@ -252,7 +252,7 @@ class _RegistryState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input['RegistryStatusArgs']]:
         """
-        镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
+        Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
         """
         return pulumi.get(self, "status")
 
@@ -273,7 +273,7 @@ class _RegistryState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
+        If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
         """
         return pulumi.get(self, "type")
 
@@ -295,7 +295,7 @@ class Registry(pulumi.CustomResource):
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        镜像仓库（Container Registry，CR）提供安全高可用的容器镜像、Helm Chart 等符合 OCI 标准的云原生制品托管服务，方便企业用户管理容器镜像和 Helm Chart 的全生命周期。
+        Container Registry (CR) provides secure, highly available hosting services for container images, Helm Charts, and other OCI-compliant cloud-native artifacts, making it easy for enterprise users to manage the full lifecycle of container images and Helm Charts
 
         ## Example Usage
 
@@ -321,10 +321,10 @@ class Registry(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] name: 标准版实例名称，同一个地域下，名称必须唯一。支持小写英文字母、数字、短划线（-）且数字不能在首位，短划线（-）不能在首位或末位，长度限制为 3～30 个字符。
-        :param pulumi.Input[builtins.str] project: 填写实例需要关联的项目。一个实例仅支持关联一个项目
-        :param pulumi.Input[Union['RegistryStatusArgs', 'RegistryStatusArgsDict']] status: 镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
-        :param pulumi.Input[builtins.str] type: 不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
+        :param pulumi.Input[builtins.str] name: Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
+        :param pulumi.Input[builtins.str] project: Enter the project to associate with the instance. Each instance can only be associated with one project
+        :param pulumi.Input[Union['RegistryStatusArgs', 'RegistryStatusArgsDict']] status: Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
+        :param pulumi.Input[builtins.str] type: If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
         """
         ...
     @overload
@@ -333,7 +333,7 @@ class Registry(pulumi.CustomResource):
                  args: RegistryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        镜像仓库（Container Registry，CR）提供安全高可用的容器镜像、Helm Chart 等符合 OCI 标准的云原生制品托管服务，方便企业用户管理容器镜像和 Helm Chart 的全生命周期。
+        Container Registry (CR) provides secure, highly available hosting services for container images, Helm Charts, and other OCI-compliant cloud-native artifacts, making it easy for enterprise users to manage the full lifecycle of container images and Helm Charts
 
         ## Example Usage
 
@@ -427,16 +427,16 @@ class Registry(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.str] charge_type: 镜像仓库实例的付费类型，目前仅支持 PostCharge按量付费模式。
-        :param pulumi.Input[builtins.str] created_time: 创建镜像仓库实例的时间。
-        :param pulumi.Input[builtins.str] expire_time: 仅计费类型为HybridCharge有值，实例到期时间
-        :param pulumi.Input[builtins.str] name: 标准版实例名称，同一个地域下，名称必须唯一。支持小写英文字母、数字、短划线（-）且数字不能在首位，短划线（-）不能在首位或末位，长度限制为 3～30 个字符。
-        :param pulumi.Input[builtins.str] project: 填写实例需要关联的项目。一个实例仅支持关联一个项目
-        :param pulumi.Input[Union['RegistryProxyCacheArgs', 'RegistryProxyCacheArgsDict']] proxy_cache: ProxyCache配置，设置为ProxyCache时必填
-        :param pulumi.Input[builtins.bool] proxy_cache_enabled: 是否设置为ProxyCache实例
-        :param pulumi.Input[builtins.str] renew_type: 仅计费类型为HybridCharge有值，实例自动续费类型
-        :param pulumi.Input[Union['RegistryStatusArgs', 'RegistryStatusArgsDict']] status: 镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
-        :param pulumi.Input[builtins.str] type: 不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
+        :param pulumi.Input[builtins.str] charge_type: Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
+        :param pulumi.Input[builtins.str] created_time: Creation time of the container registry instance
+        :param pulumi.Input[builtins.str] expire_time: Instance expiration time is only available for HybridCharge billing type
+        :param pulumi.Input[builtins.str] name: Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
+        :param pulumi.Input[builtins.str] project: Enter the project to associate with the instance. Each instance can only be associated with one project
+        :param pulumi.Input[Union['RegistryProxyCacheArgs', 'RegistryProxyCacheArgsDict']] proxy_cache: ProxyCache configuration. Required when set as ProxyCache
+        :param pulumi.Input[builtins.bool] proxy_cache_enabled: Set as ProxyCache instance
+        :param pulumi.Input[builtins.str] renew_type: Instance auto-renewal type is only available for HybridCharge billing type
+        :param pulumi.Input[Union['RegistryStatusArgs', 'RegistryStatusArgsDict']] status: Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
+        :param pulumi.Input[builtins.str] type: If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -459,7 +459,7 @@ class Registry(pulumi.CustomResource):
     @pulumi.getter(name="chargeType")
     def charge_type(self) -> pulumi.Output[builtins.str]:
         """
-        镜像仓库实例的付费类型，目前仅支持 PostCharge按量付费模式。
+        Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
         """
         return pulumi.get(self, "charge_type")
 
@@ -467,7 +467,7 @@ class Registry(pulumi.CustomResource):
     @pulumi.getter(name="createdTime")
     def created_time(self) -> pulumi.Output[builtins.str]:
         """
-        创建镜像仓库实例的时间。
+        Creation time of the container registry instance
         """
         return pulumi.get(self, "created_time")
 
@@ -475,7 +475,7 @@ class Registry(pulumi.CustomResource):
     @pulumi.getter(name="expireTime")
     def expire_time(self) -> pulumi.Output[builtins.str]:
         """
-        仅计费类型为HybridCharge有值，实例到期时间
+        Instance expiration time is only available for HybridCharge billing type
         """
         return pulumi.get(self, "expire_time")
 
@@ -483,7 +483,7 @@ class Registry(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[builtins.str]:
         """
-        标准版实例名称，同一个地域下，名称必须唯一。支持小写英文字母、数字、短划线（-）且数字不能在首位，短划线（-）不能在首位或末位，长度限制为 3～30 个字符。
+        Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
         """
         return pulumi.get(self, "name")
 
@@ -491,7 +491,7 @@ class Registry(pulumi.CustomResource):
     @pulumi.getter
     def project(self) -> pulumi.Output[builtins.str]:
         """
-        填写实例需要关联的项目。一个实例仅支持关联一个项目
+        Enter the project to associate with the instance. Each instance can only be associated with one project
         """
         return pulumi.get(self, "project")
 
@@ -499,7 +499,7 @@ class Registry(pulumi.CustomResource):
     @pulumi.getter(name="proxyCache")
     def proxy_cache(self) -> pulumi.Output['outputs.RegistryProxyCache']:
         """
-        ProxyCache配置，设置为ProxyCache时必填
+        ProxyCache configuration. Required when set as ProxyCache
         """
         return pulumi.get(self, "proxy_cache")
 
@@ -507,7 +507,7 @@ class Registry(pulumi.CustomResource):
     @pulumi.getter(name="proxyCacheEnabled")
     def proxy_cache_enabled(self) -> pulumi.Output[builtins.bool]:
         """
-        是否设置为ProxyCache实例
+        Set as ProxyCache instance
         """
         return pulumi.get(self, "proxy_cache_enabled")
 
@@ -515,7 +515,7 @@ class Registry(pulumi.CustomResource):
     @pulumi.getter(name="renewType")
     def renew_type(self) -> pulumi.Output[builtins.str]:
         """
-        仅计费类型为HybridCharge有值，实例自动续费类型
+        Instance auto-renewal type is only available for HybridCharge billing type
         """
         return pulumi.get(self, "renew_type")
 
@@ -523,7 +523,7 @@ class Registry(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output['outputs.RegistryStatus']:
         """
-        镜像仓库实例状态，由 Phase 和 Conditions 组成。合法的 Phase 和 Conditions 组合如下所示：{Creating, [Progressing]}：创建中,{Running, [Ok]}：运行中,{Running, [Degraded]}：运行中,{Stopped, [Balance]}：欠费关停,{Stopped, [Released]}：待回收,{Stopped, [Released, Balance]}：欠费关停,{Starting, [Progressing]}：启动中,{Deleting, [Progressing]}：销毁中,{Failed, [Unknown]}：异常
+        Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
         """
         return pulumi.get(self, "status")
 
@@ -536,7 +536,7 @@ class Registry(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[builtins.str]:
         """
-        不填写默认创建标准版实例。Enterprise：标准版，Micro：小微版
+        If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
         """
         return pulumi.get(self, "type")
 

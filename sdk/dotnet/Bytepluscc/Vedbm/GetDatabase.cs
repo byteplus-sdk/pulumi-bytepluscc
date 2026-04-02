@@ -65,19 +65,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm
     public sealed class GetDatabaseResult
     {
         /// <summary>
-        /// 数据库字符集，可选值：utf8mb4（默认）、utf8、latin1、ascii
+        /// Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
         /// </summary>
         public readonly string CharacterSetName;
         /// <summary>
-        /// 数据库的权限信息
+        /// Database permission information
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabaseDatabasesPrivilegeResult> DatabasesPrivileges;
         /// <summary>
-        /// 数据库描述信息，长度0~256字符，可包含数字、中文、英文、下划线(_)、中划线(-)
+        /// Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
         /// </summary>
         public readonly string DbDesc;
         /// <summary>
-        /// 数据库名称。命名规则：当前实例下唯一；长度2~64字符；以字母开头，字母/数字结尾；由字母、数字、下划线(_)、中划线(-)组成；不能使用预留字
+        /// Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
         /// </summary>
         public readonly string DbName;
         /// <summary>
@@ -85,7 +85,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// 实例ID。
+        /// Instance ID
         /// </summary>
         public readonly string InstanceId;
 

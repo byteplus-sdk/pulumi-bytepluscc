@@ -17,7 +17,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 云企业网（Cloud Enterprise Network，CEN）提供一种能够快速构建跨地域私有网络（VPC）与云下数据中心（IDC）之间高速、优质、稳定的网络能力，帮助您打造一张具有企业级规模和通信能力的全球云上网络。
+ * Cloud Enterprise Network (CEN) provides fast, high-quality, and stable networking capabilities to quickly build private networks (VPC) across regions and between on-premises data centers (IDC), helping you create a global cloud network with enterprise-scale and communication capabilities
  * 
  * ## Example Usage
  * 
@@ -34,84 +34,84 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:cen/cen:Cen")
 public class Cen extends com.pulumi.resources.CustomResource {
     /**
-     * CEN实例所属的账号ID。
+     * Account ID to which the CEN instance belongs
      * 
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
-     * @return CEN实例所属的账号ID。
+     * @return Account ID to which the CEN instance belongs
      * 
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
-     * 带宽包ID。
+     * Bandwidth package ID
      * 
      */
     @Export(name="cenBandwidthPackageIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> cenBandwidthPackageIds;
 
     /**
-     * @return 带宽包ID。
+     * @return Bandwidth package ID
      * 
      */
     public Output<List<String>> cenBandwidthPackageIds() {
         return this.cenBandwidthPackageIds;
     }
     /**
-     * CEN实例的ID。
+     * CEN instance ID
      * 
      */
     @Export(name="cenId", refs={String.class}, tree="[0]")
     private Output<String> cenId;
 
     /**
-     * @return CEN实例的ID。
+     * @return CEN instance ID
      * 
      */
     public Output<String> cenId() {
         return this.cenId;
     }
     /**
-     * CEN实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填则默认为CEN实例的ID。
+     * Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
      * 
      */
     @Export(name="cenName", refs={String.class}, tree="[0]")
     private Output<String> cenName;
 
     /**
-     * @return CEN实例的名称。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：点号（.）、下划线（_）和中划线（-）。长度限制为1～128个字符。不填则默认为CEN实例的ID。
+     * @return Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
      * 
      */
     public Output<String> cenName() {
         return this.cenName;
     }
     /**
-     * 创建CEN实例的时间。
+     * Time when the CEN instance was created
      * 
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
-     * @return 创建CEN实例的时间。
+     * @return Time when the CEN instance was created
      * 
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
-     * CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
+     * Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return CEN实例的描述信息。必须以字母、数字或中文开头，可包含字母、数字、中文和以下特殊字符：英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、中划线（-）、中文逗号（，）、中文句号（。）。长度限制为0～255个字符。不填则默认为空。
+     * @return Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
      * 
      */
     public Output<String> description() {
@@ -124,28 +124,28 @@ public class Cen extends com.pulumi.resources.CustomResource {
         return this.instances;
     }
     /**
-     * CEN实例所属项目的名称。不填则默认为default。
+     * Name of the project to which the CEN instance belongs. If not specified, defaults to &#39;default&#39;
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return CEN实例所属项目的名称。不填则默认为default。
+     * @return Name of the project to which the CEN instance belongs. If not specified, defaults to &#39;default&#39;
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * CEN实例的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+     * Status of the CEN instance. Creating: Creating Deleting: Deleting Pending: Configuring Available: Available
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return CEN实例的状态。Creating: 创建中Deleting: 删除中Pending：配置中Available：可用
+     * @return Status of the CEN instance. Creating: Creating Deleting: Deleting Pending: Configuring Available: Available
      * 
      */
     public Output<String> status() {
@@ -158,14 +158,14 @@ public class Cen extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 更新CEN实例的时间。
+     * Time when the CEN instance was updated
      * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
-     * @return 更新CEN实例的时间。
+     * @return Time when the CEN instance was updated
      * 
      */
     public Output<String> updateTime() {

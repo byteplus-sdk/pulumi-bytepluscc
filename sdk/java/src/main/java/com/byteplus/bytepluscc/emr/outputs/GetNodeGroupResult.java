@@ -19,37 +19,37 @@ import java.util.Objects;
 @CustomType
 public final class GetNodeGroupResult {
     /**
-     * @return 当前节点组可布局的组件名称列表。
+     * @return List of component names that can be deployed in the current node group.
      * 
      */
     private List<GetNodeGroupApplicationLayout> applicationLayouts;
     /**
-     * @return 包周期付费配置。
+     * @return Subscription payment configuration.
      * 
      */
     private GetNodeGroupChargePreConfig chargePreConfig;
     /**
-     * @return 付费类型。PRE表示包月，POST表示按量计费。
+     * @return Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
      * 
      */
     private String chargeType;
     /**
-     * @return 集群ID。
+     * @return Cluster ID.
      * 
      */
     private String clusterId;
     /**
-     * @return 创建时间。
+     * @return Creation time.
      * 
      */
     private Integer createdTime;
     /**
-     * @return 数据盘配置。
+     * @return Data disk configuration.
      * 
      */
     private List<GetNodeGroupDataDisk> dataDisks;
     /**
-     * @return ECS实例规格列表。当前修改仅支持单个实例规格。
+     * @return ECS instance specification list. Currently, only a single instance specification can be modified.
      * 
      */
     private List<String> ecsInstanceTypes;
@@ -59,116 +59,116 @@ public final class GetNodeGroupResult {
      */
     private String id;
     /**
-     * @return 返回的节点组组件的自定义配置参数列表。
+     * @return Custom configuration parameter list for the returned node group components.
      * 
      */
     private List<String> layoutComponentNames;
     /**
-     * @return 节点数量。取值范围：1~1000。
+     * @return Node count. Value range: 1~1000.
      * 
      */
     private Integer nodeCount;
     /**
-     * @return 节点组ID。
+     * @return Node group ID.
      * 
      */
     private String nodeGroupId;
     /**
-     * @return 节点组名称。
+     * @return Node group name.
      * 
      */
     private String nodeGroupName;
     /**
-     * @return 节点组状态。RUNNING：运行中。EXTENDING：扩容中。REDUCING：缩容中。DISK_EXTENDING：磁盘扩容中。MODIFYING：变配中。
+     * @return Node group status. RUNNING: Running. EXTENDING: Expanding. REDUCING: Shrinking. DISK_EXTENDING: Disk expansion. MODIFYING: Configuration modification in progress.
      * 
      */
     private String nodeGroupState;
     /**
-     * @return 节点组类型。
+     * @return Node group type.
      * 
      */
     private String nodeGroupType;
     /**
-     * @return 节点列表。
+     * @return Node list.
      * 
      */
     private List<GetNodeGroupNode> nodes;
     /**
-     * @return 子网ID列表。
+     * @return Subnet ID list.
      * 
      */
     private List<String> subnetIds;
     /**
-     * @return 系统盘。
+     * @return System disk.
      * 
      */
     private GetNodeGroupSystemDisk systemDisk;
     /**
-     * @return 待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
+     * @return Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
      * 
      */
     private Integer targetDiskSize;
     /**
-     * @return 集群终止时间。
+     * @return Cluster termination time.
      * 
      */
     private String terminateTime;
     /**
-     * @return ECS是否附带公网IP。
+     * @return Whether the ECS instance includes a public IP.
      * 
      */
     private Boolean withPublicIp;
     /**
-     * @return zoneId，为空时默认复用集群的zoneId。
+     * @return zoneId. If empty, the cluster&#39;s zoneId is reused by default.
      * 
      */
     private String zoneId;
 
     private GetNodeGroupResult() {}
     /**
-     * @return 当前节点组可布局的组件名称列表。
+     * @return List of component names that can be deployed in the current node group.
      * 
      */
     public List<GetNodeGroupApplicationLayout> applicationLayouts() {
         return this.applicationLayouts;
     }
     /**
-     * @return 包周期付费配置。
+     * @return Subscription payment configuration.
      * 
      */
     public GetNodeGroupChargePreConfig chargePreConfig() {
         return this.chargePreConfig;
     }
     /**
-     * @return 付费类型。PRE表示包月，POST表示按量计费。
+     * @return Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
      * 
      */
     public String chargeType() {
         return this.chargeType;
     }
     /**
-     * @return 集群ID。
+     * @return Cluster ID.
      * 
      */
     public String clusterId() {
         return this.clusterId;
     }
     /**
-     * @return 创建时间。
+     * @return Creation time.
      * 
      */
     public Integer createdTime() {
         return this.createdTime;
     }
     /**
-     * @return 数据盘配置。
+     * @return Data disk configuration.
      * 
      */
     public List<GetNodeGroupDataDisk> dataDisks() {
         return this.dataDisks;
     }
     /**
-     * @return ECS实例规格列表。当前修改仅支持单个实例规格。
+     * @return ECS instance specification list. Currently, only a single instance specification can be modified.
      * 
      */
     public List<String> ecsInstanceTypes() {
@@ -182,91 +182,91 @@ public final class GetNodeGroupResult {
         return this.id;
     }
     /**
-     * @return 返回的节点组组件的自定义配置参数列表。
+     * @return Custom configuration parameter list for the returned node group components.
      * 
      */
     public List<String> layoutComponentNames() {
         return this.layoutComponentNames;
     }
     /**
-     * @return 节点数量。取值范围：1~1000。
+     * @return Node count. Value range: 1~1000.
      * 
      */
     public Integer nodeCount() {
         return this.nodeCount;
     }
     /**
-     * @return 节点组ID。
+     * @return Node group ID.
      * 
      */
     public String nodeGroupId() {
         return this.nodeGroupId;
     }
     /**
-     * @return 节点组名称。
+     * @return Node group name.
      * 
      */
     public String nodeGroupName() {
         return this.nodeGroupName;
     }
     /**
-     * @return 节点组状态。RUNNING：运行中。EXTENDING：扩容中。REDUCING：缩容中。DISK_EXTENDING：磁盘扩容中。MODIFYING：变配中。
+     * @return Node group status. RUNNING: Running. EXTENDING: Expanding. REDUCING: Shrinking. DISK_EXTENDING: Disk expansion. MODIFYING: Configuration modification in progress.
      * 
      */
     public String nodeGroupState() {
         return this.nodeGroupState;
     }
     /**
-     * @return 节点组类型。
+     * @return Node group type.
      * 
      */
     public String nodeGroupType() {
         return this.nodeGroupType;
     }
     /**
-     * @return 节点列表。
+     * @return Node list.
      * 
      */
     public List<GetNodeGroupNode> nodes() {
         return this.nodes;
     }
     /**
-     * @return 子网ID列表。
+     * @return Subnet ID list.
      * 
      */
     public List<String> subnetIds() {
         return this.subnetIds;
     }
     /**
-     * @return 系统盘。
+     * @return System disk.
      * 
      */
     public GetNodeGroupSystemDisk systemDisk() {
         return this.systemDisk;
     }
     /**
-     * @return 待扩容的目标磁盘大小，最小60GB，最大2048GB，单位GB。
+     * @return Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
      * 
      */
     public Integer targetDiskSize() {
         return this.targetDiskSize;
     }
     /**
-     * @return 集群终止时间。
+     * @return Cluster termination time.
      * 
      */
     public String terminateTime() {
         return this.terminateTime;
     }
     /**
-     * @return ECS是否附带公网IP。
+     * @return Whether the ECS instance includes a public IP.
      * 
      */
     public Boolean withPublicIp() {
         return this.withPublicIp;
     }
     /**
-     * @return zoneId，为空时默认复用集群的zoneId。
+     * @return zoneId. If empty, the cluster&#39;s zoneId is reused by default.
      * 
      */
     public String zoneId() {

@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainOriginRewriteOriginRewriteRule {
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     private GetDomainOriginRewriteOriginRewriteRuleCondition condition;
     /**
-     * @return 表示一个回源路径改写的规则配置。
+     * @return Indicates a rule configuration for origin path rewrite.
      * 
      */
     private GetDomainOriginRewriteOriginRewriteRuleOriginRewriteAction originRewriteAction;
 
     private GetDomainOriginRewriteOriginRewriteRule() {}
     /**
-     * @return 表示该配置模块的生效条件，由一组规则组成。
+     * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
      * 
      */
     public GetDomainOriginRewriteOriginRewriteRuleCondition condition() {
         return this.condition;
     }
     /**
-     * @return 表示一个回源路径改写的规则配置。
+     * @return Indicates a rule configuration for origin path rewrite.
      * 
      */
     public GetDomainOriginRewriteOriginRewriteRuleOriginRewriteAction originRewriteAction() {

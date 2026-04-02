@@ -17,14 +17,14 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
     public static final InvocationInvocationResultArgs Empty = new InvocationInvocationResultArgs();
 
     /**
-     * 命令ID。
+     * Command ID.
      * 
      */
     @Import(name="commandId")
     private @Nullable Output<String> commandId;
 
     /**
-     * @return 命令ID。
+     * @return Command ID.
      * 
      */
     public Optional<Output<String>> commandId() {
@@ -32,14 +32,14 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 命令执行的完成时间。
+     * Command execution completion time.
      * 
      */
     @Import(name="endTime")
     private @Nullable Output<String> endTime;
 
     /**
-     * @return 命令执行的完成时间。
+     * @return Command execution completion time.
      * 
      */
     public Optional<Output<String>> endTime() {
@@ -47,14 +47,14 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+     * Error codes for command execution failure. TaskDeliveryTimeout: Indicates command delivery timeout. TaskExecutionTimeout: Indicates command execution timeout. TaskExecutionFailed: Indicates command execution failure.
      * 
      */
     @Import(name="errorCode")
     private @Nullable Output<String> errorCode;
 
     /**
-     * @return 命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+     * @return Error codes for command execution failure. TaskDeliveryTimeout: Indicates command delivery timeout. TaskExecutionTimeout: Indicates command execution timeout. TaskExecutionFailed: Indicates command execution failure.
      * 
      */
     public Optional<Output<String>> errorCode() {
@@ -62,14 +62,14 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 命令执行失败的错误信息。
+     * Error message for command execution failure.
      * 
      */
     @Import(name="errorMessage")
     private @Nullable Output<String> errorMessage;
 
     /**
-     * @return 命令执行失败的错误信息。
+     * @return Error message for command execution failure.
      * 
      */
     public Optional<Output<String>> errorMessage() {
@@ -77,14 +77,14 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 脚本执行后的退出状态码。
+     * Exit status code after script execution.
      * 
      */
     @Import(name="exitCode")
     private @Nullable Output<Integer> exitCode;
 
     /**
-     * @return 脚本执行后的退出状态码。
+     * @return Exit status code after script execution.
      * 
      */
     public Optional<Output<Integer>> exitCode() {
@@ -92,14 +92,14 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 实例ID。
+     * Instance ID.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 实例ID。
+     * @return Instance ID.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -107,14 +107,14 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 任务执行ID。
+     * Task execution ID.
      * 
      */
     @Import(name="invocationId")
     private @Nullable Output<String> invocationId;
 
     /**
-     * @return 任务执行ID。
+     * @return Task execution ID.
      * 
      */
     public Optional<Output<String>> invocationId() {
@@ -122,14 +122,14 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 任务执行结果ID。
+     * Task execution result ID.
      * 
      */
     @Import(name="invocationResultId")
     private @Nullable Output<String> invocationResultId;
 
     /**
-     * @return 任务执行结果ID。
+     * @return Task execution result ID.
      * 
      */
     public Optional<Output<String>> invocationResultId() {
@@ -137,14 +137,14 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 单台实例的命令进度状态。
+     * Command progress status for a single instance.
      * 
      */
     @Import(name="invocationResultStatus")
     private @Nullable Output<String> invocationResultStatus;
 
     /**
-     * @return 单台实例的命令进度状态。
+     * @return Command progress status for a single instance.
      * 
      */
     public Optional<Output<String>> invocationResultStatus() {
@@ -152,14 +152,14 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 经过Base64编码的命令执行后输出信息。
+     * Output information after command execution, encoded in Base64.
      * 
      */
     @Import(name="output")
     private @Nullable Output<String> output;
 
     /**
-     * @return 经过Base64编码的命令执行后输出信息。
+     * @return Output information after command execution, encoded in Base64.
      * 
      */
     public Optional<Output<String>> output() {
@@ -167,14 +167,14 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 命令在实例中开始执行的时间。
+     * Time when the command starts executing in the instance.
      * 
      */
     @Import(name="startTime")
     private @Nullable Output<String> startTime;
 
     /**
-     * @return 命令在实例中开始执行的时间。
+     * @return Time when the command starts executing in the instance.
      * 
      */
     public Optional<Output<String>> startTime() {
@@ -182,14 +182,14 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
     }
 
     /**
-     * 在实例中执行命令的用户名称。
+     * User name for executing the command in the instance.
      * 
      */
     @Import(name="username")
     private @Nullable Output<String> username;
 
     /**
-     * @return 在实例中执行命令的用户名称。
+     * @return User name for executing the command in the instance.
      * 
      */
     public Optional<Output<String>> username() {
@@ -232,7 +232,7 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param commandId 命令ID。
+         * @param commandId Command ID.
          * 
          * @return builder
          * 
@@ -243,7 +243,7 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param commandId 命令ID。
+         * @param commandId Command ID.
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param endTime 命令执行的完成时间。
+         * @param endTime Command execution completion time.
          * 
          * @return builder
          * 
@@ -264,7 +264,7 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param endTime 命令执行的完成时间。
+         * @param endTime Command execution completion time.
          * 
          * @return builder
          * 
@@ -274,7 +274,7 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param errorCode 命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+         * @param errorCode Error codes for command execution failure. TaskDeliveryTimeout: Indicates command delivery timeout. TaskExecutionTimeout: Indicates command execution timeout. TaskExecutionFailed: Indicates command execution failure.
          * 
          * @return builder
          * 
@@ -285,7 +285,7 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param errorCode 命令执行失败的错误码。TaskDeliveryTimeout：表示命令下发超时。TaskExecutionTimeout：表示命令执行超时。TaskExecutionFailed：表示命令执行失败。
+         * @param errorCode Error codes for command execution failure. TaskDeliveryTimeout: Indicates command delivery timeout. TaskExecutionTimeout: Indicates command execution timeout. TaskExecutionFailed: Indicates command execution failure.
          * 
          * @return builder
          * 
@@ -295,7 +295,7 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param errorMessage 命令执行失败的错误信息。
+         * @param errorMessage Error message for command execution failure.
          * 
          * @return builder
          * 
@@ -306,7 +306,7 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param errorMessage 命令执行失败的错误信息。
+         * @param errorMessage Error message for command execution failure.
          * 
          * @return builder
          * 
@@ -316,7 +316,7 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param exitCode 脚本执行后的退出状态码。
+         * @param exitCode Exit status code after script execution.
          * 
          * @return builder
          * 
@@ -327,7 +327,7 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param exitCode 脚本执行后的退出状态码。
+         * @param exitCode Exit status code after script execution.
          * 
          * @return builder
          * 
@@ -337,7 +337,7 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param instanceId 实例ID。
+         * @param instanceId Instance ID.
          * 
          * @return builder
          * 
@@ -348,7 +348,7 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param instanceId 实例ID。
+         * @param instanceId Instance ID.
          * 
          * @return builder
          * 
@@ -358,7 +358,7 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param invocationId 任务执行ID。
+         * @param invocationId Task execution ID.
          * 
          * @return builder
          * 
@@ -369,7 +369,7 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param invocationId 任务执行ID。
+         * @param invocationId Task execution ID.
          * 
          * @return builder
          * 
@@ -379,7 +379,7 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param invocationResultId 任务执行结果ID。
+         * @param invocationResultId Task execution result ID.
          * 
          * @return builder
          * 
@@ -390,7 +390,7 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param invocationResultId 任务执行结果ID。
+         * @param invocationResultId Task execution result ID.
          * 
          * @return builder
          * 
@@ -400,7 +400,7 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param invocationResultStatus 单台实例的命令进度状态。
+         * @param invocationResultStatus Command progress status for a single instance.
          * 
          * @return builder
          * 
@@ -411,7 +411,7 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param invocationResultStatus 单台实例的命令进度状态。
+         * @param invocationResultStatus Command progress status for a single instance.
          * 
          * @return builder
          * 
@@ -421,7 +421,7 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param output 经过Base64编码的命令执行后输出信息。
+         * @param output Output information after command execution, encoded in Base64.
          * 
          * @return builder
          * 
@@ -432,7 +432,7 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param output 经过Base64编码的命令执行后输出信息。
+         * @param output Output information after command execution, encoded in Base64.
          * 
          * @return builder
          * 
@@ -442,7 +442,7 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param startTime 命令在实例中开始执行的时间。
+         * @param startTime Time when the command starts executing in the instance.
          * 
          * @return builder
          * 
@@ -453,7 +453,7 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param startTime 命令在实例中开始执行的时间。
+         * @param startTime Time when the command starts executing in the instance.
          * 
          * @return builder
          * 
@@ -463,7 +463,7 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param username 在实例中执行命令的用户名称。
+         * @param username User name for executing the command in the instance.
          * 
          * @return builder
          * 
@@ -474,7 +474,7 @@ public final class InvocationInvocationResultArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param username 在实例中执行命令的用户名称。
+         * @param username User name for executing the command in the instance.
          * 
          * @return builder
          * 

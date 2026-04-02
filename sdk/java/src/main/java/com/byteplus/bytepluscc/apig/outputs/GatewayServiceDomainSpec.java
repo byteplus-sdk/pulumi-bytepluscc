@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GatewayServiceDomainSpec {
     /**
-     * @return 开启私网域名公网解析。
+     * @return Enable public resolution for private network domains.
      * 
      */
     private @Nullable Boolean enablePublicResolution;
 
     private GatewayServiceDomainSpec() {}
     /**
-     * @return 开启私网域名公网解析。
+     * @return Enable public resolution for private network domains.
      * 
      */
     public Optional<Boolean> enablePublicResolution() {

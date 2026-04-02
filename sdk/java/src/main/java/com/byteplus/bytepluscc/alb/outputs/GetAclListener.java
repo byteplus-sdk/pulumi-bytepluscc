@@ -12,62 +12,62 @@ import java.util.Objects;
 @CustomType
 public final class GetAclListener {
     /**
-     * @return 监听器对本访问控制策略组的控制方式。white：白名单方式；black：黑名单方式
+     * @return Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
      * 
      */
     private String aclType;
     /**
-     * @return 监听器的ID
+     * @return Listener ID
      * 
      */
     private String listenerId;
     /**
-     * @return 监听器的名称
+     * @return Listener name
      * 
      */
     private String listenerName;
     /**
-     * @return 监听器的端口
+     * @return Listener port
      * 
      */
     private Integer port;
     /**
-     * @return 监听器的协议
+     * @return Listener protocol
      * 
      */
     private String protocol;
 
     private GetAclListener() {}
     /**
-     * @return 监听器对本访问控制策略组的控制方式。white：白名单方式；black：黑名单方式
+     * @return Control mode of the listener for this access control policy group. white: Allowlist mode; black: Denylist mode
      * 
      */
     public String aclType() {
         return this.aclType;
     }
     /**
-     * @return 监听器的ID
+     * @return Listener ID
      * 
      */
     public String listenerId() {
         return this.listenerId;
     }
     /**
-     * @return 监听器的名称
+     * @return Listener name
      * 
      */
     public String listenerName() {
         return this.listenerName;
     }
     /**
-     * @return 监听器的端口
+     * @return Listener port
      * 
      */
     public Integer port() {
         return this.port;
     }
     /**
-     * @return 监听器的协议
+     * @return Listener protocol
      * 
      */
     public String protocol() {

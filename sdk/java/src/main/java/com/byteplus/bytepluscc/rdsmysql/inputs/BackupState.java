@@ -21,14 +21,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     public static final BackupState Empty = new BackupState();
 
     /**
-     * 备份创建结束时间（UTC）。
+     * Backup creation end time (UTC)
      * 
      */
     @Import(name="backupEndTime")
     private @Nullable Output<String> backupEndTime;
 
     /**
-     * @return 备份创建结束时间（UTC）。
+     * @return Backup creation end time (UTC)
      * 
      */
     public Optional<Output<String>> backupEndTime() {
@@ -36,14 +36,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备份文件名。
+     * Backup file name
      * 
      */
     @Import(name="backupFileName")
     private @Nullable Output<String> backupFileName;
 
     /**
-     * @return 备份文件名。
+     * @return Backup file name
      * 
      */
     public Optional<Output<String>> backupFileName() {
@@ -51,14 +51,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备份文件大小，单位为字节。
+     * Backup file size (bytes)
      * 
      */
     @Import(name="backupFileSize")
     private @Nullable Output<Integer> backupFileSize;
 
     /**
-     * @return 备份文件大小，单位为字节。
+     * @return Backup file size (bytes)
      * 
      */
     public Optional<Output<Integer>> backupFileSize() {
@@ -66,14 +66,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备份 ID。
+     * Backup ID
      * 
      */
     @Import(name="backupId")
     private @Nullable Output<String> backupId;
 
     /**
-     * @return 备份 ID。
+     * @return Backup ID
      * 
      */
     public Optional<Output<String>> backupId() {
@@ -88,14 +88,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备份类型，取值：Physical（物理备份）、Logical（逻辑备份）、Snapshot（快照备份）。
+     * Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
      * 
      */
     @Import(name="backupMethod")
     private @Nullable Output<String> backupMethod;
 
     /**
-     * @return 备份类型，取值：Physical（物理备份）、Logical（逻辑备份）、Snapshot（快照备份）。
+     * @return Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
      * 
      */
     public Optional<Output<String>> backupMethod() {
@@ -103,14 +103,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备份的名称。
+     * Backup name
      * 
      */
     @Import(name="backupName")
     private @Nullable Output<String> backupName;
 
     /**
-     * @return 备份的名称。
+     * @return Backup name
      * 
      */
     public Optional<Output<String>> backupName() {
@@ -118,14 +118,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备份所在区域。
+     * Backup region
      * 
      */
     @Import(name="backupRegion")
     private @Nullable Output<String> backupRegion;
 
     /**
-     * @return 备份所在区域。
+     * @return Backup region
      * 
      */
     public Optional<Output<String>> backupRegion() {
@@ -133,14 +133,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备份创建开始时间（UTC）。
+     * Backup creation start time (UTC)
      * 
      */
     @Import(name="backupStartTime")
     private @Nullable Output<String> backupStartTime;
 
     /**
-     * @return 备份创建开始时间（UTC）。
+     * @return Backup creation start time (UTC)
      * 
      */
     public Optional<Output<String>> backupStartTime() {
@@ -148,14 +148,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备份状态，取值：Success（成功）、Failed（失败）、Running（执行中）。
+     * Backup status. Values: Success, Failed, Running
      * 
      */
     @Import(name="backupStatus")
     private @Nullable Output<String> backupStatus;
 
     /**
-     * @return 备份状态，取值：Success（成功）、Failed（失败）、Running（执行中）。
+     * @return Backup status. Values: Success, Failed, Running
      * 
      */
     public Optional<Output<String>> backupStatus() {
@@ -163,14 +163,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备份方式，取值：Full（全量/库表备）、Increment（增量备份）、DumpAll（全库备份）。
+     * Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
      * 
      */
     @Import(name="backupType")
     private @Nullable Output<String> backupType;
 
     /**
-     * @return 备份方式，取值：Full（全量/库表备）、Increment（增量备份）、DumpAll（全库备份）。
+     * @return Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
      * 
      */
     public Optional<Output<String>> backupType() {
@@ -178,14 +178,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 一致性时间点。
+     * Consistency time point
      * 
      */
     @Import(name="consistentTime")
     private @Nullable Output<String> consistentTime;
 
     /**
-     * @return 一致性时间点。
+     * @return Consistency time point
      * 
      */
     public Optional<Output<String>> consistentTime() {
@@ -193,14 +193,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备份创建者，取值：System（系统）、User（用户）。
+     * Backup creator. Values: System (system), User (user)
      * 
      */
     @Import(name="createType")
     private @Nullable Output<String> createType;
 
     /**
-     * @return 备份创建者，取值：System（系统）、User（用户）。
+     * @return Backup creator. Values: System (system), User (user)
      * 
      */
     public Optional<Output<String>> createType() {
@@ -208,14 +208,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+     * Compatible version. Values: MySQL*5*7: MySQL 5.7 version; MySQL*8*0: MySQL 8.0 version
      * 
      */
     @Import(name="dbEngineVersion")
     private @Nullable Output<String> dbEngineVersion;
 
     /**
-     * @return 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+     * @return Compatible version. Values: MySQL*5*7: MySQL 5.7 version; MySQL*8*0: MySQL 8.0 version
      * 
      */
     public Optional<Output<String>> dbEngineVersion() {
@@ -230,14 +230,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 下载状态。
+     * Download status
      * 
      */
     @Import(name="downloadStatus")
     private @Nullable Output<String> downloadStatus;
 
     /**
-     * @return 下载状态。
+     * @return Download status
      * 
      */
     public Optional<Output<String>> downloadStatus() {
@@ -245,14 +245,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 数据库引擎类型。取值：InnoDB：InnoDB 引擎。RocksDB：RocksDB 引擎。
+     * Database engine type. Values: InnoDB: InnoDB engine; RocksDB: RocksDB engine
      * 
      */
     @Import(name="engineType")
     private @Nullable Output<String> engineType;
 
     /**
-     * @return 数据库引擎类型。取值：InnoDB：InnoDB 引擎。RocksDB：RocksDB 引擎。
+     * @return Database engine type. Values: InnoDB: InnoDB engine; RocksDB: RocksDB engine
      * 
      */
     public Optional<Output<String>> engineType() {
@@ -260,14 +260,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备份失败的错误信息。
+     * Error message for backup failure
      * 
      */
     @Import(name="errorMessage")
     private @Nullable Output<String> errorMessage;
 
     /**
-     * @return 备份失败的错误信息。
+     * @return Error message for backup failure
      * 
      */
     public Optional<Output<String>> errorMessage() {
@@ -275,14 +275,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 备份过期时间（UTC）。
+     * Backup expiration time (UTC)
      * 
      */
     @Import(name="expiredTime")
     private @Nullable Output<String> expiredTime;
 
     /**
-     * @return 备份过期时间（UTC）。
+     * @return Backup expiration time (UTC)
      * 
      */
     public Optional<Output<String>> expiredTime() {
@@ -290,14 +290,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 实例 ID。
+     * Instance ID
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return 实例 ID。
+     * @return Instance ID
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -305,14 +305,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否加密。
+     * Whether encrypted
      * 
      */
     @Import(name="isEncrypted")
     private @Nullable Output<Boolean> isEncrypted;
 
     /**
-     * @return 是否加密。
+     * @return Whether encrypted
      * 
      */
     public Optional<Output<Boolean>> isEncrypted() {
@@ -320,14 +320,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否已过期。
+     * Whether expired
      * 
      */
     @Import(name="isExpired")
     private @Nullable Output<Boolean> isExpired;
 
     /**
-     * @return 是否已过期。
+     * @return Whether expired
      * 
      */
     public Optional<Output<Boolean>> isExpired() {
@@ -380,7 +380,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupEndTime 备份创建结束时间（UTC）。
+         * @param backupEndTime Backup creation end time (UTC)
          * 
          * @return builder
          * 
@@ -391,7 +391,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupEndTime 备份创建结束时间（UTC）。
+         * @param backupEndTime Backup creation end time (UTC)
          * 
          * @return builder
          * 
@@ -401,7 +401,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupFileName 备份文件名。
+         * @param backupFileName Backup file name
          * 
          * @return builder
          * 
@@ -412,7 +412,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupFileName 备份文件名。
+         * @param backupFileName Backup file name
          * 
          * @return builder
          * 
@@ -422,7 +422,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupFileSize 备份文件大小，单位为字节。
+         * @param backupFileSize Backup file size (bytes)
          * 
          * @return builder
          * 
@@ -433,7 +433,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupFileSize 备份文件大小，单位为字节。
+         * @param backupFileSize Backup file size (bytes)
          * 
          * @return builder
          * 
@@ -443,7 +443,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupId 备份 ID。
+         * @param backupId Backup ID
          * 
          * @return builder
          * 
@@ -454,7 +454,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupId 备份 ID。
+         * @param backupId Backup ID
          * 
          * @return builder
          * 
@@ -477,7 +477,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupMethod 备份类型，取值：Physical（物理备份）、Logical（逻辑备份）、Snapshot（快照备份）。
+         * @param backupMethod Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
          * 
          * @return builder
          * 
@@ -488,7 +488,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupMethod 备份类型，取值：Physical（物理备份）、Logical（逻辑备份）、Snapshot（快照备份）。
+         * @param backupMethod Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
          * 
          * @return builder
          * 
@@ -498,7 +498,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupName 备份的名称。
+         * @param backupName Backup name
          * 
          * @return builder
          * 
@@ -509,7 +509,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupName 备份的名称。
+         * @param backupName Backup name
          * 
          * @return builder
          * 
@@ -519,7 +519,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupRegion 备份所在区域。
+         * @param backupRegion Backup region
          * 
          * @return builder
          * 
@@ -530,7 +530,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupRegion 备份所在区域。
+         * @param backupRegion Backup region
          * 
          * @return builder
          * 
@@ -540,7 +540,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupStartTime 备份创建开始时间（UTC）。
+         * @param backupStartTime Backup creation start time (UTC)
          * 
          * @return builder
          * 
@@ -551,7 +551,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupStartTime 备份创建开始时间（UTC）。
+         * @param backupStartTime Backup creation start time (UTC)
          * 
          * @return builder
          * 
@@ -561,7 +561,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupStatus 备份状态，取值：Success（成功）、Failed（失败）、Running（执行中）。
+         * @param backupStatus Backup status. Values: Success, Failed, Running
          * 
          * @return builder
          * 
@@ -572,7 +572,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupStatus 备份状态，取值：Success（成功）、Failed（失败）、Running（执行中）。
+         * @param backupStatus Backup status. Values: Success, Failed, Running
          * 
          * @return builder
          * 
@@ -582,7 +582,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupType 备份方式，取值：Full（全量/库表备）、Increment（增量备份）、DumpAll（全库备份）。
+         * @param backupType Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
          * 
          * @return builder
          * 
@@ -593,7 +593,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backupType 备份方式，取值：Full（全量/库表备）、Increment（增量备份）、DumpAll（全库备份）。
+         * @param backupType Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
          * 
          * @return builder
          * 
@@ -603,7 +603,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param consistentTime 一致性时间点。
+         * @param consistentTime Consistency time point
          * 
          * @return builder
          * 
@@ -614,7 +614,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param consistentTime 一致性时间点。
+         * @param consistentTime Consistency time point
          * 
          * @return builder
          * 
@@ -624,7 +624,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createType 备份创建者，取值：System（系统）、User（用户）。
+         * @param createType Backup creator. Values: System (system), User (user)
          * 
          * @return builder
          * 
@@ -635,7 +635,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createType 备份创建者，取值：System（系统）、User（用户）。
+         * @param createType Backup creator. Values: System (system), User (user)
          * 
          * @return builder
          * 
@@ -645,7 +645,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbEngineVersion 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+         * @param dbEngineVersion Compatible version. Values: MySQL*5*7: MySQL 5.7 version; MySQL*8*0: MySQL 8.0 version
          * 
          * @return builder
          * 
@@ -656,7 +656,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbEngineVersion 兼容版本。取值：MySQL*5*7：MySQL 5.7 版本。MySQL*8*0：MySQL 8.0 版本。
+         * @param dbEngineVersion Compatible version. Values: MySQL*5*7: MySQL 5.7 version; MySQL*8*0: MySQL 8.0 version
          * 
          * @return builder
          * 
@@ -679,7 +679,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param downloadStatus 下载状态。
+         * @param downloadStatus Download status
          * 
          * @return builder
          * 
@@ -690,7 +690,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param downloadStatus 下载状态。
+         * @param downloadStatus Download status
          * 
          * @return builder
          * 
@@ -700,7 +700,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param engineType 数据库引擎类型。取值：InnoDB：InnoDB 引擎。RocksDB：RocksDB 引擎。
+         * @param engineType Database engine type. Values: InnoDB: InnoDB engine; RocksDB: RocksDB engine
          * 
          * @return builder
          * 
@@ -711,7 +711,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param engineType 数据库引擎类型。取值：InnoDB：InnoDB 引擎。RocksDB：RocksDB 引擎。
+         * @param engineType Database engine type. Values: InnoDB: InnoDB engine; RocksDB: RocksDB engine
          * 
          * @return builder
          * 
@@ -721,7 +721,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param errorMessage 备份失败的错误信息。
+         * @param errorMessage Error message for backup failure
          * 
          * @return builder
          * 
@@ -732,7 +732,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param errorMessage 备份失败的错误信息。
+         * @param errorMessage Error message for backup failure
          * 
          * @return builder
          * 
@@ -742,7 +742,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expiredTime 备份过期时间（UTC）。
+         * @param expiredTime Backup expiration time (UTC)
          * 
          * @return builder
          * 
@@ -753,7 +753,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param expiredTime 备份过期时间（UTC）。
+         * @param expiredTime Backup expiration time (UTC)
          * 
          * @return builder
          * 
@@ -763,7 +763,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID
          * 
          * @return builder
          * 
@@ -774,7 +774,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId 实例 ID。
+         * @param instanceId Instance ID
          * 
          * @return builder
          * 
@@ -784,7 +784,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isEncrypted 是否加密。
+         * @param isEncrypted Whether encrypted
          * 
          * @return builder
          * 
@@ -795,7 +795,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isEncrypted 是否加密。
+         * @param isEncrypted Whether encrypted
          * 
          * @return builder
          * 
@@ -805,7 +805,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isExpired 是否已过期。
+         * @param isExpired Whether expired
          * 
          * @return builder
          * 
@@ -816,7 +816,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isExpired 是否已过期。
+         * @param isExpired Whether expired
          * 
          * @return builder
          * 

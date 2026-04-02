@@ -31,15 +31,23 @@ export interface GetWorkspaceArgs {
  */
 export interface GetWorkspaceResult {
     /**
-     * 工作区创建时间，RFC3339 格式。
+     * Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
+     */
+    readonly authType: string;
+    /**
+     * Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
+     */
+    readonly bearerToken: string;
+    /**
+     * Workspace creation time, RFC3339 format
      */
     readonly createTime: string;
     /**
-     * 是否开启工作区删除保护,true：开启，false：关闭。
+     * Enable workspace deletion protection: true for enabled, false for disabled
      */
     readonly deleteProtectionEnabled: boolean;
     /**
-     * 工作区描述信息，字符串形式，长度限制为 0～200。
+     * Workspace description, string, length limit 0–200
      */
     readonly description: string;
     /**
@@ -47,63 +55,91 @@ export interface GetWorkspaceResult {
      */
     readonly id: string;
     /**
-     * 工作区规格详情。
+     * Workspace specification details
      */
     readonly instanceType: outputs.vmp.GetWorkspaceInstanceType;
     /**
-     * 工作区规格,vmp.standard.15d：15 天存储时长工作区。vmp.standard.30d：30 天存储时长工作区。vmp.standard.90d：90 天存储时长工作区。vmp.standard.180d：180 天存储时长工作区。vmp.standard.1y：1 年存储时长工作区。
+     * Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
      */
     readonly instanceTypeId: string;
     /**
-     * 工作区名称，字符串形式，长度限制为 1～100。
+     * Workspace name, string, length limit 1–100
      */
     readonly name: string;
     /**
-     * 工作区预期欠费回收时间，RFC3339 格式。
+     * Workspace expected overdue recovery time, RFC3339 format
      */
     readonly overdueReclaimTime: string;
     /**
-     * 工作区 BasicAuth 密码。
+     * Workspace BasicAuth password
      */
     readonly password: string;
     /**
-     * 项目名称。
+     * Project name
      */
     readonly projectName: string;
     /**
-     * 工作区 Push Gateway URL 地址。
+     * Workspace public Push Gateway URL address.
+     */
+    readonly prometheusPushEndpoint: string;
+    /**
+     * Workspace Push Gateway URL address
      */
     readonly prometheusPushIntranetEndpoint: string;
     /**
-     * 工作区 Query URL 地址。
+     * Workspace public Query URL address.
+     */
+    readonly prometheusQueryEndpoint: string;
+    /**
+     * Workspace Query URL address
      */
     readonly prometheusQueryIntranetEndpoint: string;
     /**
-     * 工作区 RemoteWrite URL 地址。
+     * Workspace public RemoteWrite URL address.
+     */
+    readonly prometheusWriteEndpoint: string;
+    /**
+     * Workspace RemoteWrite URL address
      */
     readonly prometheusWriteIntranetEndpoint: string;
     /**
-     * 工作区配额详情。
+     * Whether to enable workspace public access capability. true: enabled, false: disabled.
+     */
+    readonly publicAccessEnabled: boolean;
+    /**
+     * Workspace public Query bandwidth (Mbps).
+     */
+    readonly publicQueryBandwidth: number;
+    /**
+     * Workspace public RemoteWrite bandwidth (Mbps).
+     */
+    readonly publicWriteBandwidth: number;
+    /**
+     * Workspace quota details
      */
     readonly quota: outputs.vmp.GetWorkspaceQuota;
     /**
-     * 工作区状态，取值：Creating：创建中 Active：正常 Updating：更新中 Deleting：删除中 OverdueShutted：欠费关停 Resuming：恢复中 Error：错误。
+     * Workspace public Query search latency offset.
+     */
+    readonly searchLatencyOffset: string;
+    /**
+     * Workspace status. Values: Creating: creating Active: active Updating: updating Deleting: deleting OverdueShutted: overdue shutdown Resuming: resuming Error: error
      */
     readonly status: string;
     /**
-     * 工作区标签。
+     * Workspace tags
      */
     readonly tags: outputs.vmp.GetWorkspaceTag[];
     /**
-     * 工作区用量。
+     * Workspace usage
      */
     readonly usage: outputs.vmp.GetWorkspaceUsage;
     /**
-     * 工作区 BasicAuth 用户名。
+     * Workspace BasicAuth username
      */
     readonly username: string;
     /**
-     * 工作区Id。
+     * Workspace ID
      */
     readonly workspaceId: string;
 }

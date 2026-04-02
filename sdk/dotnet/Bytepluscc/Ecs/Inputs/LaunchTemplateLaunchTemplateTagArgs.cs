@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
     public sealed class LaunchTemplateLaunchTemplateTagArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 给资源添加的用户标签的标签键。
+        /// Tag key for user tags added to the resource.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// 给资源添加的用户标签的标签值。
+        /// User tag value added to the resource
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

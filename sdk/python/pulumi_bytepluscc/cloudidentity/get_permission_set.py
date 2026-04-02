@@ -64,7 +64,7 @@ class GetPermissionSetResult:
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
         """
-        创建时间。
+        Creation Time
         """
         return pulumi.get(self, "created_time")
 
@@ -72,7 +72,7 @@ class GetPermissionSetResult:
     @pulumi.getter
     def description(self) -> builtins.str:
         """
-        权限集描述。
+        Permission Set Description
         """
         return pulumi.get(self, "description")
 
@@ -88,7 +88,7 @@ class GetPermissionSetResult:
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        权限集名称。
+        Permission Set Name
         """
         return pulumi.get(self, "name")
 
@@ -96,7 +96,7 @@ class GetPermissionSetResult:
     @pulumi.getter(name="permissionPolicies")
     def permission_policies(self) -> Sequence['outputs.GetPermissionSetPermissionPolicyResult']:
         """
-        权限集下的策略列表。
+        Policy List Under Permission Set
         """
         return pulumi.get(self, "permission_policies")
 
@@ -104,7 +104,7 @@ class GetPermissionSetResult:
     @pulumi.getter(name="permissionSetId")
     def permission_set_id(self) -> builtins.str:
         """
-        权限集 ID。
+        Permission Set ID
         """
         return pulumi.get(self, "permission_set_id")
 
@@ -112,7 +112,7 @@ class GetPermissionSetResult:
     @pulumi.getter(name="relayState")
     def relay_state(self) -> builtins.str:
         """
-        跳转控制台 URL。
+        Console Redirect URL
         """
         return pulumi.get(self, "relay_state")
 
@@ -120,7 +120,7 @@ class GetPermissionSetResult:
     @pulumi.getter(name="sessionDuration")
     def session_duration(self) -> builtins.int:
         """
-        session 过期时间，单位秒。
+        Session Expiration Time (seconds)
         """
         return pulumi.get(self, "session_duration")
 
@@ -128,7 +128,7 @@ class GetPermissionSetResult:
     @pulumi.getter(name="statusNotifications")
     def status_notifications(self) -> Sequence[builtins.str]:
         """
-        状态通知配置。
+        Status Notification Configuration
         """
         return pulumi.get(self, "status_notifications")
 
@@ -136,7 +136,7 @@ class GetPermissionSetResult:
     @pulumi.getter(name="updatedTime")
     def updated_time(self) -> builtins.str:
         """
-        更新时间。
+        Update Time
         """
         return pulumi.get(self, "updated_time")
 

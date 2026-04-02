@@ -26,14 +26,14 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 挂载点创建时间。
+     * Mount point creation time.
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 挂载点创建时间。
+     * @return Mount point creation time.
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -41,14 +41,14 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * DNS 地址。
+     * DNS address.
      * 
      */
     @Import(name="domain")
     private @Nullable Output<String> domain;
 
     /**
-     * @return DNS 地址。
+     * @return DNS address.
      * 
      */
     public Optional<Output<String>> domain() {
@@ -56,14 +56,14 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 文件系统 ID。
+     * File system ID.
      * 
      */
     @Import(name="fileSystemId")
     private @Nullable Output<String> fileSystemId;
 
     /**
-     * @return 文件系统 ID。
+     * @return File system ID.
      * 
      */
     public Optional<Output<String>> fileSystemId() {
@@ -71,14 +71,14 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 挂载点地址。
+     * Mount point address.
      * 
      */
     @Import(name="ip")
     private @Nullable Output<String> ip;
 
     /**
-     * @return 挂载点地址。
+     * @return Mount point address.
      * 
      */
     public Optional<Output<String>> ip() {
@@ -86,14 +86,14 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 挂载点 ID。
+     * Mount point ID.
      * 
      */
     @Import(name="mountPointId")
     private @Nullable Output<String> mountPointId;
 
     /**
-     * @return 挂载点 ID。
+     * @return Mount point ID.
      * 
      */
     public Optional<Output<String>> mountPointId() {
@@ -101,14 +101,14 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 挂载点名称。
+     * Mount point name.
      * 
      */
     @Import(name="mountPointName")
     private @Nullable Output<String> mountPointName;
 
     /**
-     * @return 挂载点名称。
+     * @return Mount point name.
      * 
      */
     public Optional<Output<String>> mountPointName() {
@@ -116,14 +116,14 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 挂载点绑定的权限组信息。
+     * Permission group information bound to the mount point.
      * 
      */
     @Import(name="permissionGroup")
     private @Nullable Output<MountPointPermissionGroupArgs> permissionGroup;
 
     /**
-     * @return 挂载点绑定的权限组信息。
+     * @return Permission group information bound to the mount point.
      * 
      */
     public Optional<Output<MountPointPermissionGroupArgs>> permissionGroup() {
@@ -131,14 +131,14 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 权限组 ID。
+     * Permission group ID.
      * 
      */
     @Import(name="permissionGroupId")
     private @Nullable Output<String> permissionGroupId;
 
     /**
-     * @return 权限组 ID。
+     * @return Permission group ID.
      * 
      */
     public Optional<Output<String>> permissionGroupId() {
@@ -146,14 +146,14 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 挂载点状态。取值：Running：运行中。Creating：创建中。Updating：更新中。Error：异常。Deleting：删除中。DeleteError：删除异常。Deleted：已删除。Stopped：已停止。
+     * Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return 挂载点状态。取值：Running：运行中。Creating：创建中。Updating：更新中。Error：异常。Deleting：删除中。DeleteError：删除异常。Deleted：已删除。Stopped：已停止。
+     * @return Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
      * 
      */
     public Optional<Output<String>> status() {
@@ -161,14 +161,14 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子网 ID。
+     * Subnet ID.
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return 子网 ID。
+     * @return Subnet ID.
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -176,14 +176,14 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 子网名称。
+     * Subnet name.
      * 
      */
     @Import(name="subnetName")
     private @Nullable Output<String> subnetName;
 
     /**
-     * @return 子网名称。
+     * @return Subnet name.
      * 
      */
     public Optional<Output<String>> subnetName() {
@@ -191,14 +191,14 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 挂载点更新时间。
+     * Mount point update time.
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 挂载点更新时间。
+     * @return Mount point update time.
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -206,14 +206,14 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 私有网络 ID。
+     * Private network ID.
      * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
-     * @return 私有网络 ID。
+     * @return Private network ID.
      * 
      */
     public Optional<Output<String>> vpcId() {
@@ -221,14 +221,14 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 私有网络名称。
+     * Private network name.
      * 
      */
     @Import(name="vpcName")
     private @Nullable Output<String> vpcName;
 
     /**
-     * @return 私有网络名称。
+     * @return Private network name.
      * 
      */
     public Optional<Output<String>> vpcName() {
@@ -287,7 +287,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 挂载点创建时间。
+         * @param createdTime Mount point creation time.
          * 
          * @return builder
          * 
@@ -298,7 +298,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 挂载点创建时间。
+         * @param createdTime Mount point creation time.
          * 
          * @return builder
          * 
@@ -308,7 +308,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param domain DNS 地址。
+         * @param domain DNS address.
          * 
          * @return builder
          * 
@@ -319,7 +319,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param domain DNS 地址。
+         * @param domain DNS address.
          * 
          * @return builder
          * 
@@ -329,7 +329,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fileSystemId 文件系统 ID。
+         * @param fileSystemId File system ID.
          * 
          * @return builder
          * 
@@ -340,7 +340,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fileSystemId 文件系统 ID。
+         * @param fileSystemId File system ID.
          * 
          * @return builder
          * 
@@ -350,7 +350,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ip 挂载点地址。
+         * @param ip Mount point address.
          * 
          * @return builder
          * 
@@ -361,7 +361,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ip 挂载点地址。
+         * @param ip Mount point address.
          * 
          * @return builder
          * 
@@ -371,7 +371,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mountPointId 挂载点 ID。
+         * @param mountPointId Mount point ID.
          * 
          * @return builder
          * 
@@ -382,7 +382,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mountPointId 挂载点 ID。
+         * @param mountPointId Mount point ID.
          * 
          * @return builder
          * 
@@ -392,7 +392,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mountPointName 挂载点名称。
+         * @param mountPointName Mount point name.
          * 
          * @return builder
          * 
@@ -403,7 +403,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mountPointName 挂载点名称。
+         * @param mountPointName Mount point name.
          * 
          * @return builder
          * 
@@ -413,7 +413,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param permissionGroup 挂载点绑定的权限组信息。
+         * @param permissionGroup Permission group information bound to the mount point.
          * 
          * @return builder
          * 
@@ -424,7 +424,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param permissionGroup 挂载点绑定的权限组信息。
+         * @param permissionGroup Permission group information bound to the mount point.
          * 
          * @return builder
          * 
@@ -434,7 +434,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param permissionGroupId 权限组 ID。
+         * @param permissionGroupId Permission group ID.
          * 
          * @return builder
          * 
@@ -445,7 +445,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param permissionGroupId 权限组 ID。
+         * @param permissionGroupId Permission group ID.
          * 
          * @return builder
          * 
@@ -455,7 +455,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 挂载点状态。取值：Running：运行中。Creating：创建中。Updating：更新中。Error：异常。Deleting：删除中。DeleteError：删除异常。Deleted：已删除。Stopped：已停止。
+         * @param status Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
          * 
          * @return builder
          * 
@@ -466,7 +466,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status 挂载点状态。取值：Running：运行中。Creating：创建中。Updating：更新中。Error：异常。Deleting：删除中。DeleteError：删除异常。Deleted：已删除。Stopped：已停止。
+         * @param status Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
          * 
          * @return builder
          * 
@@ -476,7 +476,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId 子网 ID。
+         * @param subnetId Subnet ID.
          * 
          * @return builder
          * 
@@ -487,7 +487,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId 子网 ID。
+         * @param subnetId Subnet ID.
          * 
          * @return builder
          * 
@@ -497,7 +497,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetName 子网名称。
+         * @param subnetName Subnet name.
          * 
          * @return builder
          * 
@@ -508,7 +508,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetName 子网名称。
+         * @param subnetName Subnet name.
          * 
          * @return builder
          * 
@@ -518,7 +518,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 挂载点更新时间。
+         * @param updatedTime Mount point update time.
          * 
          * @return builder
          * 
@@ -529,7 +529,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 挂载点更新时间。
+         * @param updatedTime Mount point update time.
          * 
          * @return builder
          * 
@@ -539,7 +539,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 私有网络 ID。
+         * @param vpcId Private network ID.
          * 
          * @return builder
          * 
@@ -550,7 +550,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcId 私有网络 ID。
+         * @param vpcId Private network ID.
          * 
          * @return builder
          * 
@@ -560,7 +560,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcName 私有网络名称。
+         * @param vpcName Private network name.
          * 
          * @return builder
          * 
@@ -571,7 +571,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param vpcName 私有网络名称。
+         * @param vpcName Private network name.
          * 
          * @return builder
          * 

@@ -14,38 +14,38 @@ import java.util.Objects;
 @CustomType
 public final class GetDbAccountTableColumnPrivilege {
     /**
-     * @return 账号的列权限信息。
+     * @return Account column permission information.
      * 
      */
     private List<GetDbAccountTableColumnPrivilegeColumnPrivilege> columnPrivileges;
     /**
-     * @return 对账号进行权限设置的表所属的数据库的名称。
+     * @return Name of the database to which the table belongs for setting permissions for the account.
      * 
      */
     private String dbName;
     /**
-     * @return 账号的表权限信息。
+     * @return Account table permission information.
      * 
      */
     private List<GetDbAccountTableColumnPrivilegeTablePrivilege> tablePrivileges;
 
     private GetDbAccountTableColumnPrivilege() {}
     /**
-     * @return 账号的列权限信息。
+     * @return Account column permission information.
      * 
      */
     public List<GetDbAccountTableColumnPrivilegeColumnPrivilege> columnPrivileges() {
         return this.columnPrivileges;
     }
     /**
-     * @return 对账号进行权限设置的表所属的数据库的名称。
+     * @return Name of the database to which the table belongs for setting permissions for the account.
      * 
      */
     public String dbName() {
         return this.dbName;
     }
     /**
-     * @return 账号的表权限信息。
+     * @return Account table permission information.
      * 
      */
     public List<GetDbAccountTableColumnPrivilegeTablePrivilege> tablePrivileges() {

@@ -22,14 +22,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
     public static final PublicAddressState Empty = new PublicAddressState();
 
     /**
-     * 创建实例的主账号ID。
+     * Main account ID that created the instance.
      * 
      */
     @Import(name="accountId")
     private @Nullable Output<String> accountId;
 
     /**
-     * @return 创建实例的主账号ID。
+     * @return Main account ID that created the instance.
      * 
      */
     public Optional<Output<String>> accountId() {
@@ -37,14 +37,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 是否已开启公网解析功能。true：已开启, false：已关闭。
+     * Whether public DNS resolution is enabled. true: enabled, false: disabled.
      * 
      */
     @Import(name="applyPrivateDnsToPublic")
     private @Nullable Output<Boolean> applyPrivateDnsToPublic;
 
     /**
-     * @return 是否已开启公网解析功能。true：已开启, false：已关闭。
+     * @return Whether public DNS resolution is enabled. true: enabled, false: disabled.
      * 
      */
     public Optional<Output<Boolean>> applyPrivateDnsToPublic() {
@@ -52,14 +52,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 实例的类型，即集群版或单机版。
+     * Instance type: cluster or standalone.
      * 
      */
     @Import(name="archType")
     private @Nullable Output<String> archType;
 
     /**
-     * @return 实例的类型，即集群版或单机版。
+     * @return Instance type: cluster or standalone.
      * 
      */
     public Optional<Output<String>> archType() {
@@ -67,14 +67,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 实例的计费方式等计费信息。
+     * Instance billing method and related billing information.
      * 
      */
     @Import(name="chargeDetail")
     private @Nullable Output<PublicAddressChargeDetailArgs> chargeDetail;
 
     /**
-     * @return 实例的计费方式等计费信息。
+     * @return Instance billing method and related billing information.
      * 
      */
     public Optional<Output<PublicAddressChargeDetailArgs>> chargeDetail() {
@@ -82,14 +82,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * RabbitMQ实例的计算规格。
+     * RabbitMQ instance compute specification.
      * 
      */
     @Import(name="computeSpec")
     private @Nullable Output<String> computeSpec;
 
     /**
-     * @return RabbitMQ实例的计算规格。
+     * @return RabbitMQ instance compute specification.
      * 
      */
     public Optional<Output<String>> computeSpec() {
@@ -97,14 +97,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 实例的创建时间。
+     * Instance creation time.
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 实例的创建时间。
+     * @return Instance creation time.
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -112,14 +112,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * EIP的ID。
+     * EIP ID.
      * 
      */
     @Import(name="eipId")
     private @Nullable Output<String> eipId;
 
     /**
-     * @return EIP的ID。
+     * @return EIP ID.
      * 
      */
     public Optional<Output<String>> eipId() {
@@ -134,14 +134,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 实例的简单描述。
+     * Brief description of the instance.
      * 
      */
     @Import(name="instanceDescription")
     private @Nullable Output<String> instanceDescription;
 
     /**
-     * @return 实例的简单描述。
+     * @return Brief description of the instance.
      * 
      */
     public Optional<Output<String>> instanceDescription() {
@@ -149,14 +149,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * RabbitMQ 实例 ID。
+     * RabbitMQ instance ID.
      * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
-     * @return RabbitMQ 实例 ID。
+     * @return RabbitMQ instance ID.
      * 
      */
     public Optional<Output<String>> instanceId() {
@@ -164,14 +164,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * RabbitMQ 实例名称。
+     * RabbitMQ instance name.
      * 
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
-     * @return RabbitMQ 实例名称。
+     * @return RabbitMQ instance name.
      * 
      */
     public Optional<Output<String>> instanceName() {
@@ -179,14 +179,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 实例状态。
+     * Instance status.
      * 
      */
     @Import(name="instanceStatus")
     private @Nullable Output<String> instanceStatus;
 
     /**
-     * @return 实例状态。
+     * @return Instance status.
      * 
      */
     public Optional<Output<String>> instanceStatus() {
@@ -194,14 +194,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 是否开启了云盘加密。
+     * Whether cloud disk encryption is enabled.
      * 
      */
     @Import(name="isEncrypted")
     private @Nullable Output<Boolean> isEncrypted;
 
     /**
-     * @return 是否开启了云盘加密。
+     * @return Whether cloud disk encryption is enabled.
      * 
      */
     public Optional<Output<Boolean>> isEncrypted() {
@@ -209,14 +209,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 实例所属的IAM项目。
+     * IAM project the instance belongs to.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 实例所属的IAM项目。
+     * @return IAM project the instance belongs to.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -224,14 +224,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 实例总存储空间。单位为 GiB。
+     * Total storage space of the instance, in GiB.
      * 
      */
     @Import(name="storageSpace")
     private @Nullable Output<Integer> storageSpace;
 
     /**
-     * @return 实例总存储空间。单位为 GiB。
+     * @return Total storage space of the instance, in GiB.
      * 
      */
     public Optional<Output<Integer>> storageSpace() {
@@ -239,14 +239,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * VPC的子网ID。
+     * VPC subnet ID.
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return VPC的子网ID。
+     * @return VPC subnet ID.
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -261,14 +261,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 实例已用存储空间。单位为 GiB。
+     * Used storage space of the instance, in GiB.
      * 
      */
     @Import(name="usedStorageSpace")
     private @Nullable Output<Integer> usedStorageSpace;
 
     /**
-     * @return 实例已用存储空间。单位为 GiB。
+     * @return Used storage space of the instance, in GiB.
      * 
      */
     public Optional<Output<Integer>> usedStorageSpace() {
@@ -276,14 +276,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * RabbitMQ WebUI管理员账号名。
+     * RabbitMQ WebUI administrator account name.
      * 
      */
     @Import(name="userName")
     private @Nullable Output<String> userName;
 
     /**
-     * @return RabbitMQ WebUI管理员账号名。
+     * @return RabbitMQ WebUI administrator account name.
      * 
      */
     public Optional<Output<String>> userName() {
@@ -291,14 +291,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
+     * Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
      * 
      */
     @Import(name="version")
     private @Nullable Output<String> version;
 
     /**
-     * @return 支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
+     * @return Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
      * 
      */
     public Optional<Output<String>> version() {
@@ -306,14 +306,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 私有网络（VPC）ID。
+     * Private network (VPC) ID.
      * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
-     * @return 私有网络（VPC）ID。
+     * @return Private network (VPC) ID.
      * 
      */
     public Optional<Output<String>> vpcId() {
@@ -321,14 +321,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 可用区的描述信息。
+     * Description of the availability zone.
      * 
      */
     @Import(name="zoneDescription")
     private @Nullable Output<String> zoneDescription;
 
     /**
-     * @return 可用区的描述信息。
+     * @return Description of the availability zone.
      * 
      */
     public Optional<Output<String>> zoneDescription() {
@@ -336,14 +336,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * 实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
+     * Availability zone ID where the instance is located. For high availability instances across AZs, multiple availability zone IDs are returned.
      * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
-     * @return 实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
+     * @return Availability zone ID where the instance is located. For high availability instances across AZs, multiple availability zone IDs are returned.
      * 
      */
     public Optional<Output<String>> zoneId() {
@@ -397,7 +397,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param accountId 创建实例的主账号ID。
+         * @param accountId Main account ID that created the instance.
          * 
          * @return builder
          * 
@@ -408,7 +408,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param accountId 创建实例的主账号ID。
+         * @param accountId Main account ID that created the instance.
          * 
          * @return builder
          * 
@@ -418,7 +418,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param applyPrivateDnsToPublic 是否已开启公网解析功能。true：已开启, false：已关闭。
+         * @param applyPrivateDnsToPublic Whether public DNS resolution is enabled. true: enabled, false: disabled.
          * 
          * @return builder
          * 
@@ -429,7 +429,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param applyPrivateDnsToPublic 是否已开启公网解析功能。true：已开启, false：已关闭。
+         * @param applyPrivateDnsToPublic Whether public DNS resolution is enabled. true: enabled, false: disabled.
          * 
          * @return builder
          * 
@@ -439,7 +439,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param archType 实例的类型，即集群版或单机版。
+         * @param archType Instance type: cluster or standalone.
          * 
          * @return builder
          * 
@@ -450,7 +450,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param archType 实例的类型，即集群版或单机版。
+         * @param archType Instance type: cluster or standalone.
          * 
          * @return builder
          * 
@@ -460,7 +460,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param chargeDetail 实例的计费方式等计费信息。
+         * @param chargeDetail Instance billing method and related billing information.
          * 
          * @return builder
          * 
@@ -471,7 +471,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param chargeDetail 实例的计费方式等计费信息。
+         * @param chargeDetail Instance billing method and related billing information.
          * 
          * @return builder
          * 
@@ -481,7 +481,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param computeSpec RabbitMQ实例的计算规格。
+         * @param computeSpec RabbitMQ instance compute specification.
          * 
          * @return builder
          * 
@@ -492,7 +492,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param computeSpec RabbitMQ实例的计算规格。
+         * @param computeSpec RabbitMQ instance compute specification.
          * 
          * @return builder
          * 
@@ -502,7 +502,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param createdTime 实例的创建时间。
+         * @param createdTime Instance creation time.
          * 
          * @return builder
          * 
@@ -513,7 +513,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param createdTime 实例的创建时间。
+         * @param createdTime Instance creation time.
          * 
          * @return builder
          * 
@@ -523,7 +523,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param eipId EIP的ID。
+         * @param eipId EIP ID.
          * 
          * @return builder
          * 
@@ -534,7 +534,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param eipId EIP的ID。
+         * @param eipId EIP ID.
          * 
          * @return builder
          * 
@@ -557,7 +557,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param instanceDescription 实例的简单描述。
+         * @param instanceDescription Brief description of the instance.
          * 
          * @return builder
          * 
@@ -568,7 +568,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param instanceDescription 实例的简单描述。
+         * @param instanceDescription Brief description of the instance.
          * 
          * @return builder
          * 
@@ -578,7 +578,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param instanceId RabbitMQ 实例 ID。
+         * @param instanceId RabbitMQ instance ID.
          * 
          * @return builder
          * 
@@ -589,7 +589,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param instanceId RabbitMQ 实例 ID。
+         * @param instanceId RabbitMQ instance ID.
          * 
          * @return builder
          * 
@@ -599,7 +599,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param instanceName RabbitMQ 实例名称。
+         * @param instanceName RabbitMQ instance name.
          * 
          * @return builder
          * 
@@ -610,7 +610,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param instanceName RabbitMQ 实例名称。
+         * @param instanceName RabbitMQ instance name.
          * 
          * @return builder
          * 
@@ -620,7 +620,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param instanceStatus 实例状态。
+         * @param instanceStatus Instance status.
          * 
          * @return builder
          * 
@@ -631,7 +631,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param instanceStatus 实例状态。
+         * @param instanceStatus Instance status.
          * 
          * @return builder
          * 
@@ -641,7 +641,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param isEncrypted 是否开启了云盘加密。
+         * @param isEncrypted Whether cloud disk encryption is enabled.
          * 
          * @return builder
          * 
@@ -652,7 +652,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param isEncrypted 是否开启了云盘加密。
+         * @param isEncrypted Whether cloud disk encryption is enabled.
          * 
          * @return builder
          * 
@@ -662,7 +662,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param projectName 实例所属的IAM项目。
+         * @param projectName IAM project the instance belongs to.
          * 
          * @return builder
          * 
@@ -673,7 +673,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param projectName 实例所属的IAM项目。
+         * @param projectName IAM project the instance belongs to.
          * 
          * @return builder
          * 
@@ -683,7 +683,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param storageSpace 实例总存储空间。单位为 GiB。
+         * @param storageSpace Total storage space of the instance, in GiB.
          * 
          * @return builder
          * 
@@ -694,7 +694,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param storageSpace 实例总存储空间。单位为 GiB。
+         * @param storageSpace Total storage space of the instance, in GiB.
          * 
          * @return builder
          * 
@@ -704,7 +704,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param subnetId VPC的子网ID。
+         * @param subnetId VPC subnet ID.
          * 
          * @return builder
          * 
@@ -715,7 +715,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param subnetId VPC的子网ID。
+         * @param subnetId VPC subnet ID.
          * 
          * @return builder
          * 
@@ -738,7 +738,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param usedStorageSpace 实例已用存储空间。单位为 GiB。
+         * @param usedStorageSpace Used storage space of the instance, in GiB.
          * 
          * @return builder
          * 
@@ -749,7 +749,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param usedStorageSpace 实例已用存储空间。单位为 GiB。
+         * @param usedStorageSpace Used storage space of the instance, in GiB.
          * 
          * @return builder
          * 
@@ -759,7 +759,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param userName RabbitMQ WebUI管理员账号名。
+         * @param userName RabbitMQ WebUI administrator account name.
          * 
          * @return builder
          * 
@@ -770,7 +770,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param userName RabbitMQ WebUI管理员账号名。
+         * @param userName RabbitMQ WebUI administrator account name.
          * 
          * @return builder
          * 
@@ -780,7 +780,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param version 支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
+         * @param version Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
          * 
          * @return builder
          * 
@@ -791,7 +791,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param version 支持的 RabbitMQ 版本。当前支持的版本包括：3.8.18：RabbitMQ 3.8.18 版本。
+         * @param version Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
          * 
          * @return builder
          * 
@@ -801,7 +801,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param vpcId 私有网络（VPC）ID。
+         * @param vpcId Private network (VPC) ID.
          * 
          * @return builder
          * 
@@ -812,7 +812,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param vpcId 私有网络（VPC）ID。
+         * @param vpcId Private network (VPC) ID.
          * 
          * @return builder
          * 
@@ -822,7 +822,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param zoneDescription 可用区的描述信息。
+         * @param zoneDescription Description of the availability zone.
          * 
          * @return builder
          * 
@@ -833,7 +833,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param zoneDescription 可用区的描述信息。
+         * @param zoneDescription Description of the availability zone.
          * 
          * @return builder
          * 
@@ -843,7 +843,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param zoneId 实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
+         * @param zoneId Availability zone ID where the instance is located. For high availability instances across AZs, multiple availability zone IDs are returned.
          * 
          * @return builder
          * 
@@ -854,7 +854,7 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param zoneId 实例所在的可用区 ID。对于跨 AZ 的高可用实例，此处会返回多个可用区 ID。
+         * @param zoneId Availability zone ID where the instance is located. For high availability instances across AZs, multiple availability zone IDs are returned.
          * 
          * @return builder
          * 

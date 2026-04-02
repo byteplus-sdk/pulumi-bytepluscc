@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone.Inputs
     public sealed class ResolverRuleVpCGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// VPC 的地域。
+        /// Region of the VPC
         /// </summary>
         [Input("region")]
         public Input<string>? Region { get; set; }
 
         /// <summary>
-        /// VPC 的 ID。
+        /// VPC ID
         /// </summary>
         [Input("vpcId")]
         public Input<string>? VpcId { get; set; }

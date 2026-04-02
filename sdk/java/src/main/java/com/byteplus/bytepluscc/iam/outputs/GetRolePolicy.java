@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetRolePolicy {
     /**
-     * @return 策略名。
+     * @return Policy name
      * 
      */
     private String policyName;
     /**
-     * @return 策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+     * @return Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
      * 
      */
     private String policyType;
 
     private GetRolePolicy() {}
     /**
-     * @return 策略名。
+     * @return Policy name
      * 
      */
     public String policyName() {
         return this.policyName;
     }
     /**
-     * @return 策略类型，策略类型。System代表系统预设策略，Custom代表自定义策略。
+     * @return Policy type. Policy type. System indicates a system preset policy; Custom indicates a custom policy.
      * 
      */
     public String policyType() {

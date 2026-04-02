@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceKeyPair {
     /**
-     * @return 实例的公钥。
+     * @return Instance public key
      * 
      */
     private @Nullable String keyPairId;
     /**
-     * @return 实例的密钥对名称。
+     * @return Instance key pair name
      * 
      */
     private @Nullable String keyPairName;
 
     private InstanceKeyPair() {}
     /**
-     * @return 实例的公钥。
+     * @return Instance public key
      * 
      */
     public Optional<String> keyPairId() {
         return Optional.ofNullable(this.keyPairId);
     }
     /**
-     * @return 实例的密钥对名称。
+     * @return Instance key pair name
      * 
      */
     public Optional<String> keyPairName() {

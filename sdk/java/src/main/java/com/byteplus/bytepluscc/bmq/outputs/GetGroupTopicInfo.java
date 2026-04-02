@@ -14,37 +14,37 @@ import java.util.Objects;
 @CustomType
 public final class GetGroupTopicInfo {
     /**
-     * @return Topic 的创建时间。
+     * @return Topic creation time.
      * 
      */
     private String createTime;
     /**
-     * @return Topic 的描述语句。
+     * @return Topic description.
      * 
      */
     private String description;
     /**
-     * @return Topic 中未被消费的消息条数。
+     * @return Number of unconsumed messages in the Topic.
      * 
      */
     private Integer lag;
     /**
-     * @return 分区列表。
+     * @return Partition list.
      * 
      */
     private List<GetGroupTopicInfoPartitionInfo> partitionInfos;
     /**
-     * @return Topic 分区数。
+     * @return Number of Topic partitions.
      * 
      */
     private Integer partitions;
     /**
-     * @return 数据在 Topic 中的保留时长，单位为小时。
+     * @return Retention period of data in the Topic, in hours.
      * 
      */
     private Integer retention;
     /**
-     * @return Topic 的状态。
+     * @return Topic status.
      * 
      */
     private String status;
@@ -54,56 +54,56 @@ public final class GetGroupTopicInfo {
      */
     private String topicId;
     /**
-     * @return Topic 的名称。
+     * @return Topic name.
      * 
      */
     private String topicName;
 
     private GetGroupTopicInfo() {}
     /**
-     * @return Topic 的创建时间。
+     * @return Topic creation time.
      * 
      */
     public String createTime() {
         return this.createTime;
     }
     /**
-     * @return Topic 的描述语句。
+     * @return Topic description.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return Topic 中未被消费的消息条数。
+     * @return Number of unconsumed messages in the Topic.
      * 
      */
     public Integer lag() {
         return this.lag;
     }
     /**
-     * @return 分区列表。
+     * @return Partition list.
      * 
      */
     public List<GetGroupTopicInfoPartitionInfo> partitionInfos() {
         return this.partitionInfos;
     }
     /**
-     * @return Topic 分区数。
+     * @return Number of Topic partitions.
      * 
      */
     public Integer partitions() {
         return this.partitions;
     }
     /**
-     * @return 数据在 Topic 中的保留时长，单位为小时。
+     * @return Retention period of data in the Topic, in hours.
      * 
      */
     public Integer retention() {
         return this.retention;
     }
     /**
-     * @return Topic 的状态。
+     * @return Topic status.
      * 
      */
     public String status() {
@@ -117,7 +117,7 @@ public final class GetGroupTopicInfo {
         return this.topicId;
     }
     /**
-     * @return Topic 的名称。
+     * @return Topic name.
      * 
      */
     public String topicName() {

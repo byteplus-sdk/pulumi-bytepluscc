@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class GetDomainRequestBlockRuleBlockRuleResult
     {
         /// <summary>
-        /// 表示列表中一条规则的拦截配置。
+        /// Indicates the interception configuration for a rule in the list.
         /// </summary>
         public readonly Outputs.GetDomainRequestBlockRuleBlockRuleBlockActionResult BlockAction;
         /// <summary>
-        /// 表示该配置模块的生效条件，由一组规则组成。
+        /// Represents the conditions under which this configuration module takes effect, consisting of a set of rules.
         /// </summary>
         public readonly Outputs.GetDomainRequestBlockRuleBlockRuleConditionResult Condition;
         /// <summary>
-        /// 表示规则的名称，长度不超过 20 个字符，可以包含字母、数字、下划线（_）、中划线（-）、汉字。一个汉字占 3 个字符。
+        /// Indicates the name of the rule, which must not exceed 20 characters and can include letters, numbers, underscores (_), hyphens (-), and Chinese characters. One Chinese character counts as 3 characters.
         /// </summary>
         public readonly string RuleName;
 

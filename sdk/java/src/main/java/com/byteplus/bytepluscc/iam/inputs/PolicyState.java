@@ -21,14 +21,14 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
     public static final PolicyState Empty = new PolicyState();
 
     /**
-     * 策略绑定的身份数量。
+     * Number of identities bound to the policy.
      * 
      */
     @Import(name="attachmentCount")
     private @Nullable Output<Integer> attachmentCount;
 
     /**
-     * @return 策略绑定的身份数量。
+     * @return Number of identities bound to the policy.
      * 
      */
     public Optional<Output<Integer>> attachmentCount() {
@@ -36,14 +36,14 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
+     * Category of the system preset policy, usually the service code. This field is not returned for custom policies.
      * 
      */
     @Import(name="category")
     private @Nullable Output<String> category;
 
     /**
-     * @return 系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
+     * @return Category of the system preset policy, usually the service code. This field is not returned for custom policies.
      * 
      */
     public Optional<Output<String>> category() {
@@ -51,14 +51,14 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 策略创建时间。
+     * Policy creation time.
      * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
-     * @return 策略创建时间。
+     * @return Policy creation time.
      * 
      */
     public Optional<Output<String>> createdTime() {
@@ -66,14 +66,14 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 策略描述，长度不超过128。
+     * Policy description, no more than 128 characters.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return 策略描述，长度不超过128。
+     * @return Policy description, no more than 128 characters.
      * 
      */
     public Optional<Output<String>> description() {
@@ -81,14 +81,14 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 是否是服务关联角色的策略，0代表否，1代表是。
+     * Indicates whether the policy is for a service-linked role. 0 means no; 1 means yes.
      * 
      */
     @Import(name="isServiceRolePolicy")
     private @Nullable Output<Integer> isServiceRolePolicy;
 
     /**
-     * @return 是否是服务关联角色的策略，0代表否，1代表是。
+     * @return Indicates whether the policy is for a service-linked role. 0 means no; 1 means yes.
      * 
      */
     public Optional<Output<Integer>> isServiceRolePolicy() {
@@ -96,14 +96,14 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 策略语法内容，例如：{&#34;Statement&#34;:[{&#34;Effect&#34;:&#34;Allow&#34;,&#34;Action&#34;:[&#34;iam:&#34;,&#34;tag:&#34;],&#34;Resource&#34;:[&#34;*&#34;]}]}
+     * Policy syntax content, for example: {&#34;Statement&#34;:[{&#34;Effect&#34;:&#34;Allow&#34;,&#34;Action&#34;:[&#34;iam:&#34;,&#34;tag:&#34;],&#34;Resource&#34;:[&#34;*&#34;]}]}
      * 
      */
     @Import(name="policyDocument")
     private @Nullable Output<String> policyDocument;
 
     /**
-     * @return 策略语法内容，例如：{&#34;Statement&#34;:[{&#34;Effect&#34;:&#34;Allow&#34;,&#34;Action&#34;:[&#34;iam:&#34;,&#34;tag:&#34;],&#34;Resource&#34;:[&#34;*&#34;]}]}
+     * @return Policy syntax content, for example: {&#34;Statement&#34;:[{&#34;Effect&#34;:&#34;Allow&#34;,&#34;Action&#34;:[&#34;iam:&#34;,&#34;tag:&#34;],&#34;Resource&#34;:[&#34;*&#34;]}]}
      * 
      */
     public Optional<Output<String>> policyDocument() {
@@ -111,14 +111,14 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 策略名，长度1~64，支持英文、数字和+=,.{@literal @}-_符号。
+     * Policy name, 1–64 characters. Supports English letters, numbers, and +=,.{@literal @}-_ symbols.
      * 
      */
     @Import(name="policyName")
     private @Nullable Output<String> policyName;
 
     /**
-     * @return 策略名，长度1~64，支持英文、数字和+=,.{@literal @}-_符号。
+     * @return Policy name, 1–64 characters. Supports English letters, numbers, and +=,.{@literal @}-_ symbols.
      * 
      */
     public Optional<Output<String>> policyName() {
@@ -133,14 +133,14 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 策略的TRN。
+     * Policy TRN.
      * 
      */
     @Import(name="policyTrn")
     private @Nullable Output<String> policyTrn;
 
     /**
-     * @return 策略的TRN。
+     * @return Policy TRN.
      * 
      */
     public Optional<Output<String>> policyTrn() {
@@ -148,14 +148,14 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 策略类型。System代表系统预设策略，Custom代表自定义策略。
+     * Policy type. System indicates a system preset policy; Custom indicates a custom policy.
      * 
      */
     @Import(name="policyType")
     private @Nullable Output<String> policyType;
 
     /**
-     * @return 策略类型。System代表系统预设策略，Custom代表自定义策略。
+     * @return Policy type. System indicates a system preset policy; Custom indicates a custom policy.
      * 
      */
     public Optional<Output<String>> policyType() {
@@ -177,14 +177,14 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * 策略更新时间。
+     * Policy update time.
      * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
-     * @return 策略更新时间。
+     * @return Policy update time.
      * 
      */
     public Optional<Output<String>> updatedTime() {
@@ -228,7 +228,7 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param attachmentCount 策略绑定的身份数量。
+         * @param attachmentCount Number of identities bound to the policy.
          * 
          * @return builder
          * 
@@ -239,7 +239,7 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param attachmentCount 策略绑定的身份数量。
+         * @param attachmentCount Number of identities bound to the policy.
          * 
          * @return builder
          * 
@@ -249,7 +249,7 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param category 系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
+         * @param category Category of the system preset policy, usually the service code. This field is not returned for custom policies.
          * 
          * @return builder
          * 
@@ -260,7 +260,7 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param category 系统预设策略所属的分类，通常为服务代码，对于自定义策略该字段不会返回值。
+         * @param category Category of the system preset policy, usually the service code. This field is not returned for custom policies.
          * 
          * @return builder
          * 
@@ -270,7 +270,7 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 策略创建时间。
+         * @param createdTime Policy creation time.
          * 
          * @return builder
          * 
@@ -281,7 +281,7 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param createdTime 策略创建时间。
+         * @param createdTime Policy creation time.
          * 
          * @return builder
          * 
@@ -291,7 +291,7 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 策略描述，长度不超过128。
+         * @param description Policy description, no more than 128 characters.
          * 
          * @return builder
          * 
@@ -302,7 +302,7 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description 策略描述，长度不超过128。
+         * @param description Policy description, no more than 128 characters.
          * 
          * @return builder
          * 
@@ -312,7 +312,7 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isServiceRolePolicy 是否是服务关联角色的策略，0代表否，1代表是。
+         * @param isServiceRolePolicy Indicates whether the policy is for a service-linked role. 0 means no; 1 means yes.
          * 
          * @return builder
          * 
@@ -323,7 +323,7 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isServiceRolePolicy 是否是服务关联角色的策略，0代表否，1代表是。
+         * @param isServiceRolePolicy Indicates whether the policy is for a service-linked role. 0 means no; 1 means yes.
          * 
          * @return builder
          * 
@@ -333,7 +333,7 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param policyDocument 策略语法内容，例如：{&#34;Statement&#34;:[{&#34;Effect&#34;:&#34;Allow&#34;,&#34;Action&#34;:[&#34;iam:&#34;,&#34;tag:&#34;],&#34;Resource&#34;:[&#34;*&#34;]}]}
+         * @param policyDocument Policy syntax content, for example: {&#34;Statement&#34;:[{&#34;Effect&#34;:&#34;Allow&#34;,&#34;Action&#34;:[&#34;iam:&#34;,&#34;tag:&#34;],&#34;Resource&#34;:[&#34;*&#34;]}]}
          * 
          * @return builder
          * 
@@ -344,7 +344,7 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param policyDocument 策略语法内容，例如：{&#34;Statement&#34;:[{&#34;Effect&#34;:&#34;Allow&#34;,&#34;Action&#34;:[&#34;iam:&#34;,&#34;tag:&#34;],&#34;Resource&#34;:[&#34;*&#34;]}]}
+         * @param policyDocument Policy syntax content, for example: {&#34;Statement&#34;:[{&#34;Effect&#34;:&#34;Allow&#34;,&#34;Action&#34;:[&#34;iam:&#34;,&#34;tag:&#34;],&#34;Resource&#34;:[&#34;*&#34;]}]}
          * 
          * @return builder
          * 
@@ -354,7 +354,7 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param policyName 策略名，长度1~64，支持英文、数字和+=,.{@literal @}-_符号。
+         * @param policyName Policy name, 1–64 characters. Supports English letters, numbers, and +=,.{@literal @}-_ symbols.
          * 
          * @return builder
          * 
@@ -365,7 +365,7 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param policyName 策略名，长度1~64，支持英文、数字和+=,.{@literal @}-_符号。
+         * @param policyName Policy name, 1–64 characters. Supports English letters, numbers, and +=,.{@literal @}-_ symbols.
          * 
          * @return builder
          * 
@@ -388,7 +388,7 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param policyTrn 策略的TRN。
+         * @param policyTrn Policy TRN.
          * 
          * @return builder
          * 
@@ -399,7 +399,7 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param policyTrn 策略的TRN。
+         * @param policyTrn Policy TRN.
          * 
          * @return builder
          * 
@@ -409,7 +409,7 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param policyType 策略类型。System代表系统预设策略，Custom代表自定义策略。
+         * @param policyType Policy type. System indicates a system preset policy; Custom indicates a custom policy.
          * 
          * @return builder
          * 
@@ -420,7 +420,7 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param policyType 策略类型。System代表系统预设策略，Custom代表自定义策略。
+         * @param policyType Policy type. System indicates a system preset policy; Custom indicates a custom policy.
          * 
          * @return builder
          * 
@@ -456,7 +456,7 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 策略更新时间。
+         * @param updatedTime Policy update time.
          * 
          * @return builder
          * 
@@ -467,7 +467,7 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param updatedTime 策略更新时间。
+         * @param updatedTime Policy update time.
          * 
          * @return builder
          * 

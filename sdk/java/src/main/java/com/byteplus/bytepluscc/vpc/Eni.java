@@ -20,7 +20,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * 网卡即虚拟网卡。在私有网络里，网卡是挂载在云服务器、负载均衡等云资源上的一种网络接口。每张网卡均有一个主私网IP地址。若有需要，可手动为其分配多个辅助私网IP地址。
+ * A network interface is a virtual network interface. In a private network, it serves as a network interface attached to cloud servers, load balancers, and other cloud resources. Each network interface has a primary private IP address. You can manually assign multiple auxiliary private IP addresses if needed.
  * 
  * ## Example Usage
  * 
@@ -37,168 +37,168 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:vpc/eni:Eni")
 public class Eni extends com.pulumi.resources.CustomResource {
     /**
-     * 网卡所有者ID。
+     * NIC owner ID
      * 
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
-     * @return 网卡所有者ID。
+     * @return NIC owner ID
      * 
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
-     * 网卡创建时间。
+     * NIC creation time
      * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
-     * @return 网卡创建时间。
+     * @return NIC creation time
      * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
-     * 是否开启随云服务器实例删除，true为开启，false为不开启。
+     * Enable release with cloud server instance deletion. true to enable, false to disable
      * 
      */
     @Export(name="deleteOnTermination", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> deleteOnTermination;
 
     /**
-     * @return 是否开启随云服务器实例删除，true为开启，false为不开启。
+     * @return Enable release with cloud server instance deletion. true to enable, false to disable
      * 
      */
     public Output<Boolean> deleteOnTermination() {
         return this.deleteOnTermination;
     }
     /**
-     * 辅助网卡的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头；可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不填默认空字符串。
+     * Description for the auxiliary network interface. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Allowed characters include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return 辅助网卡的描述信息。长度限制为0~ 255个字符，需要以字母、中文或数字开头；可包含英文逗号（,）、点号（.）、下划线（_）、空格（ ）、等号（=）、短横线（-）、中文逗号（，）、中文句号（。），不填默认空字符串。
+     * @return Description for the auxiliary network interface. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Allowed characters include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * 网卡绑定实例的ID，如果网卡未挂载或参数ServiceManaged为true，则InstanceId返回值均为空。
+     * ID of the instance bound to the NIC. If the NIC is not attached or the ServiceManaged parameter is true, InstanceId returns empty
      * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
-     * @return 网卡绑定实例的ID，如果网卡未挂载或参数ServiceManaged为true，则InstanceId返回值均为空。
+     * @return ID of the instance bound to the NIC. If the NIC is not attached or the ServiceManaged parameter is true, InstanceId returns empty
      * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
-     * 为网卡分配私网IPv6地址的数量，传入该参数，系统会自动从网卡所属子网中，分配相应数量的空闲私网IPv6地址，创建时与IPv6Sets不能同时传入。
+     * Number of private IPv6 addresses assigned to the network interface. When this parameter is specified, the system automatically assigns the corresponding number of available private IPv6 addresses from the subnet to which the network interface belongs. Cannot be used together with IPv6Sets during creation.
      * 
      */
     @Export(name="ipv6AddressCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> ipv6AddressCount;
 
     /**
-     * @return 为网卡分配私网IPv6地址的数量，传入该参数，系统会自动从网卡所属子网中，分配相应数量的空闲私网IPv6地址，创建时与IPv6Sets不能同时传入。
+     * @return Number of private IPv6 addresses assigned to the network interface. When this parameter is specified, the system automatically assigns the corresponding number of available private IPv6 addresses from the subnet to which the network interface belongs. Cannot be used together with IPv6Sets during creation.
      * 
      */
     public Output<Integer> ipv6AddressCount() {
         return this.ipv6AddressCount;
     }
     /**
-     * 网卡的IPv6地址列表，例如[2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf]。
+     * IPv6 address list of the network interface, for example [2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf].
      * 
      */
     @Export(name="ipv6Sets", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> ipv6Sets;
 
     /**
-     * @return 网卡的IPv6地址列表，例如[2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf]。
+     * @return IPv6 address list of the network interface, for example [2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf].
      * 
      */
     public Output<List<String>> ipv6Sets() {
         return this.ipv6Sets;
     }
     /**
-     * 网卡的MAC地址。
+     * MAC address of the network interface.
      * 
      */
     @Export(name="macAddress", refs={String.class}, tree="[0]")
     private Output<String> macAddress;
 
     /**
-     * @return 网卡的MAC地址。
+     * @return MAC address of the network interface.
      * 
      */
     public Output<String> macAddress() {
         return this.macAddress;
     }
     /**
-     * 网卡ID。
+     * Network interface ID.
      * 
      */
     @Export(name="networkInterfaceId", refs={String.class}, tree="[0]")
     private Output<String> networkInterfaceId;
 
     /**
-     * @return 网卡ID。
+     * @return Network interface ID.
      * 
      */
     public Output<String> networkInterfaceId() {
         return this.networkInterfaceId;
     }
     /**
-     * 网卡名称，长度限制为1 ~ 128个字符，需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不填默认是辅助网卡的ID。
+     * NIC name. Length must be between 1 and 128 characters, starting with a letter, Chinese character, or number. Can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the ID of the secondary NIC
      * 
      */
     @Export(name="networkInterfaceName", refs={String.class}, tree="[0]")
     private Output<String> networkInterfaceName;
 
     /**
-     * @return 网卡名称，长度限制为1 ~ 128个字符，需要以字母、中文或数字开头，可包含点号（.）、下划线（_）和短横线（-），不填默认是辅助网卡的ID。
+     * @return NIC name. Length must be between 1 and 128 characters, starting with a letter, Chinese character, or number. Can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the ID of the secondary NIC
      * 
      */
     public Output<String> networkInterfaceName() {
         return this.networkInterfaceName;
     }
     /**
-     * 是否为网卡开启源/目的地址检查，开启后，系统会自动阻止源地址或目的地址不是当前网卡的流量，true为开启，false为不开启（默认值）。
+     * Enable source/destination address check for the NIC. When enabled, the system automatically blocks traffic whose source or destination address does not match the current NIC. true to enable, false to disable (default)
      * 
      */
     @Export(name="portSecurityEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> portSecurityEnabled;
 
     /**
-     * @return 是否为网卡开启源/目的地址检查，开启后，系统会自动阻止源地址或目的地址不是当前网卡的流量，true为开启，false为不开启（默认值）。
+     * @return Enable source/destination address check for the NIC. When enabled, the system automatically blocks traffic whose source or destination address does not match the current NIC. true to enable, false to disable (default)
      * 
      */
     public Output<Boolean> portSecurityEnabled() {
         return this.portSecurityEnabled;
     }
     /**
-     * 网卡的主私有IPv4地址，不支持修改地址，可以修改公网IP。如果指定，必须是对应子网中的一个空闲的私网IPv4地址，如果不指定，从对应子网中自动分配一个空闲的私网IPv4地址。例如：192.XX.XX.10。
+     * Primary private IPv4 address of the network interface. Address modification is not supported, but you can modify the public IP. If specified, it must be an available private IPv4 address in the corresponding subnet. If not specified, an available private IPv4 address will be automatically assigned from the corresponding subnet. For example: 192.XX.XX.10.
      * 
      */
     @Export(name="primaryIpAddress", refs={EniPrimaryIpAddress.class}, tree="[0]")
     private Output<EniPrimaryIpAddress> primaryIpAddress;
 
     /**
-     * @return 网卡的主私有IPv4地址，不支持修改地址，可以修改公网IP。如果指定，必须是对应子网中的一个空闲的私网IPv4地址，如果不指定，从对应子网中自动分配一个空闲的私网IPv4地址。例如：192.XX.XX.10。
+     * @return Primary private IPv4 address of the network interface. Address modification is not supported, but you can modify the public IP. If specified, it must be an available private IPv4 address in the corresponding subnet. If not specified, an available private IPv4 address will be automatically assigned from the corresponding subnet. For example: 192.XX.XX.10.
      * 
      */
     public Output<EniPrimaryIpAddress> primaryIpAddress() {
@@ -211,84 +211,84 @@ public class Eni extends com.pulumi.resources.CustomResource {
         return this.privateIpSets;
     }
     /**
-     * 网卡所属项目的名称。
+     * Name of the project to which the NIC belongs
      * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
-     * @return 网卡所属项目的名称。
+     * @return Name of the project to which the NIC belongs
      * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * 为辅助网卡自动分配辅助私网IPv4地址数量，取值1~49。创建时不能与PrivateIpSets同时传入。
+     * Number of auxiliary private IPv4 addresses automatically assigned to the auxiliary network interface. Value range: 1–49. Cannot be used together with PrivateIpSets during creation.
      * 
      */
     @Export(name="secondaryPrivateIpAddressCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> secondaryPrivateIpAddressCount;
 
     /**
-     * @return 为辅助网卡自动分配辅助私网IPv4地址数量，取值1~49。创建时不能与PrivateIpSets同时传入。
+     * @return Number of auxiliary private IPv4 addresses automatically assigned to the auxiliary network interface. Value range: 1–49. Cannot be used together with PrivateIpSets during creation.
      * 
      */
     public Output<Integer> secondaryPrivateIpAddressCount() {
         return this.secondaryPrivateIpAddressCount;
     }
     /**
-     * 辅助网卡加入一个或多个安全组的ID。
+     * ID of one or more security groups joined by the auxiliary network interface.
      * 
      */
     @Export(name="securityGroupIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> securityGroupIds;
 
     /**
-     * @return 辅助网卡加入一个或多个安全组的ID。
+     * @return ID of one or more security groups joined by the auxiliary network interface.
      * 
      */
     public Output<List<String>> securityGroupIds() {
         return this.securityGroupIds;
     }
     /**
-     * 是否为官方服务网卡，true为是，false为否。
+     * Indicates whether this is an official service network interface. true for yes, false for no.
      * 
      */
     @Export(name="serviceManaged", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> serviceManaged;
 
     /**
-     * @return 是否为官方服务网卡，true为是，false为否。
+     * @return Indicates whether this is an official service network interface. true for yes, false for no.
      * 
      */
     public Output<Boolean> serviceManaged() {
         return this.serviceManaged;
     }
     /**
-     * 网卡的绑定状态。Creating：创建中。Available：未挂载。Attaching：挂载中。InUse：已挂载。Detaching：卸载中。Deleting：删除中。
+     * Binding status of the network interface. Creating: In progress. Available: Not attached. Attaching: In progress. InUse: Attached. Detaching: In progress. Deleting: In progress.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return 网卡的绑定状态。Creating：创建中。Available：未挂载。Attaching：挂载中。InUse：已挂载。Detaching：卸载中。Deleting：删除中。
+     * @return Binding status of the network interface. Creating: In progress. Available: Not attached. Attaching: In progress. InUse: Attached. Detaching: In progress. Deleting: In progress.
      * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
-     * 辅助网卡所在子网的ID。
+     * ID of the subnet where the auxiliary network interface resides.
      * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
-     * @return 辅助网卡所在子网的ID。
+     * @return ID of the subnet where the auxiliary network interface resides.
      * 
      */
     public Output<String> subnetId() {
@@ -301,70 +301,70 @@ public class Eni extends com.pulumi.resources.CustomResource {
         return this.tags;
     }
     /**
-     * 网卡类型。primary：主网卡，secondary：辅助网卡
+     * NIC type. primary: primary NIC, secondary: secondary NIC
      * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
-     * @return 网卡类型。primary：主网卡，secondary：辅助网卡
+     * @return NIC type. primary: primary NIC, secondary: secondary NIC
      * 
      */
     public Output<String> type() {
         return this.type;
     }
     /**
-     * 更新网卡的时间。
+     * NIC update time
      * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
-     * @return 更新网卡的时间。
+     * @return NIC update time
      * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
-     * 网卡所属的VPC的ID。
+     * ID of the VPC to which the network interface belongs.
      * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
-     * @return 网卡所属的VPC的ID。
+     * @return ID of the VPC to which the network interface belongs.
      * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
-     * 网卡所属VPC的名称。
+     * Name of the VPC to which the NIC belongs
      * 
      */
     @Export(name="vpcName", refs={String.class}, tree="[0]")
     private Output<String> vpcName;
 
     /**
-     * @return 网卡所属VPC的名称。
+     * @return Name of the VPC to which the NIC belongs
      * 
      */
     public Output<String> vpcName() {
         return this.vpcName;
     }
     /**
-     * 网卡所属可用区的ID。
+     * ID of the availability zone to which the network interface belongs.
      * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
-     * @return 网卡所属可用区的ID。
+     * @return ID of the availability zone to which the network interface belongs.
      * 
      */
     public Output<String> zoneId() {

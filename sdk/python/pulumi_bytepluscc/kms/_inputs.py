@@ -32,11 +32,11 @@ if not MYPY:
     class KeyMultiRegionConfigurationArgsDict(TypedDict):
         multi_region_key_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        多区域密钥的类型。
+        Multi-region key type.
         """
         primary_key: NotRequired[pulumi.Input['KeyMultiRegionConfigurationPrimaryKeyArgsDict']]
         """
-        主多区域键的事务识别号和区域 ID。
+        Primary multi-region key transaction identifier and region ID.
         """
         replica_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input['KeyMultiRegionConfigurationReplicaKeyArgsDict']]]]
 elif False:
@@ -49,8 +49,8 @@ class KeyMultiRegionConfigurationArgs:
                  primary_key: Optional[pulumi.Input['KeyMultiRegionConfigurationPrimaryKeyArgs']] = None,
                  replica_keys: Optional[pulumi.Input[Sequence[pulumi.Input['KeyMultiRegionConfigurationReplicaKeyArgs']]]] = None):
         """
-        :param pulumi.Input[builtins.str] multi_region_key_type: 多区域密钥的类型。
-        :param pulumi.Input['KeyMultiRegionConfigurationPrimaryKeyArgs'] primary_key: 主多区域键的事务识别号和区域 ID。
+        :param pulumi.Input[builtins.str] multi_region_key_type: Multi-region key type.
+        :param pulumi.Input['KeyMultiRegionConfigurationPrimaryKeyArgs'] primary_key: Primary multi-region key transaction identifier and region ID.
         """
         if multi_region_key_type is not None:
             pulumi.set(__self__, "multi_region_key_type", multi_region_key_type)
@@ -63,7 +63,7 @@ class KeyMultiRegionConfigurationArgs:
     @pulumi.getter(name="multiRegionKeyType")
     def multi_region_key_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        多区域密钥的类型。
+        Multi-region key type.
         """
         return pulumi.get(self, "multi_region_key_type")
 
@@ -75,7 +75,7 @@ class KeyMultiRegionConfigurationArgs:
     @pulumi.getter(name="primaryKey")
     def primary_key(self) -> Optional[pulumi.Input['KeyMultiRegionConfigurationPrimaryKeyArgs']]:
         """
-        主多区域键的事务识别号和区域 ID。
+        Primary multi-region key transaction identifier and region ID.
         """
         return pulumi.get(self, "primary_key")
 
@@ -97,11 +97,11 @@ if not MYPY:
     class KeyMultiRegionConfigurationPrimaryKeyArgsDict(TypedDict):
         region: NotRequired[pulumi.Input[builtins.str]]
         """
-        多区域密钥的区域 ID。
+        Multi-region key region ID.
         """
         trn: NotRequired[pulumi.Input[builtins.str]]
         """
-        多区域密钥的 TRN。
+        Multi-region key TRN.
         """
 elif False:
     KeyMultiRegionConfigurationPrimaryKeyArgsDict: TypeAlias = Mapping[str, Any]
@@ -112,8 +112,8 @@ class KeyMultiRegionConfigurationPrimaryKeyArgs:
                  region: Optional[pulumi.Input[builtins.str]] = None,
                  trn: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] region: 多区域密钥的区域 ID。
-        :param pulumi.Input[builtins.str] trn: 多区域密钥的 TRN。
+        :param pulumi.Input[builtins.str] region: Multi-region key region ID.
+        :param pulumi.Input[builtins.str] trn: Multi-region key TRN.
         """
         if region is not None:
             pulumi.set(__self__, "region", region)
@@ -124,7 +124,7 @@ class KeyMultiRegionConfigurationPrimaryKeyArgs:
     @pulumi.getter
     def region(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        多区域密钥的区域 ID。
+        Multi-region key region ID.
         """
         return pulumi.get(self, "region")
 
@@ -136,7 +136,7 @@ class KeyMultiRegionConfigurationPrimaryKeyArgs:
     @pulumi.getter
     def trn(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        多区域密钥的 TRN。
+        Multi-region key TRN.
         """
         return pulumi.get(self, "trn")
 
@@ -149,11 +149,11 @@ if not MYPY:
     class KeyMultiRegionConfigurationReplicaKeyArgsDict(TypedDict):
         region: NotRequired[pulumi.Input[builtins.str]]
         """
-        多区域密钥的区域 ID。
+        Multi-region key region ID.
         """
         trn: NotRequired[pulumi.Input[builtins.str]]
         """
-        多区域密钥的转换。
+        Multi-region key conversion.
         """
 elif False:
     KeyMultiRegionConfigurationReplicaKeyArgsDict: TypeAlias = Mapping[str, Any]
@@ -164,8 +164,8 @@ class KeyMultiRegionConfigurationReplicaKeyArgs:
                  region: Optional[pulumi.Input[builtins.str]] = None,
                  trn: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] region: 多区域密钥的区域 ID。
-        :param pulumi.Input[builtins.str] trn: 多区域密钥的转换。
+        :param pulumi.Input[builtins.str] region: Multi-region key region ID.
+        :param pulumi.Input[builtins.str] trn: Multi-region key conversion.
         """
         if region is not None:
             pulumi.set(__self__, "region", region)
@@ -176,7 +176,7 @@ class KeyMultiRegionConfigurationReplicaKeyArgs:
     @pulumi.getter
     def region(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        多区域密钥的区域 ID。
+        Multi-region key region ID.
         """
         return pulumi.get(self, "region")
 
@@ -188,7 +188,7 @@ class KeyMultiRegionConfigurationReplicaKeyArgs:
     @pulumi.getter
     def trn(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        多区域密钥的转换。
+        Multi-region key conversion.
         """
         return pulumi.get(self, "trn")
 
@@ -201,11 +201,11 @@ if not MYPY:
     class KeyTagArgsDict(TypedDict):
         key: NotRequired[pulumi.Input[builtins.str]]
         """
-        KMS密钥的标签键
+        KMS key label key.
         """
         value: NotRequired[pulumi.Input[builtins.str]]
         """
-        KMS密钥的标签值
+        KMS key label value.
         """
 elif False:
     KeyTagArgsDict: TypeAlias = Mapping[str, Any]
@@ -216,8 +216,8 @@ class KeyTagArgs:
                  key: Optional[pulumi.Input[builtins.str]] = None,
                  value: Optional[pulumi.Input[builtins.str]] = None):
         """
-        :param pulumi.Input[builtins.str] key: KMS密钥的标签键
-        :param pulumi.Input[builtins.str] value: KMS密钥的标签值
+        :param pulumi.Input[builtins.str] key: KMS key label key.
+        :param pulumi.Input[builtins.str] value: KMS key label value.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -228,7 +228,7 @@ class KeyTagArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        KMS密钥的标签键
+        KMS key label key.
         """
         return pulumi.get(self, "key")
 
@@ -240,7 +240,7 @@ class KeyTagArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        KMS密钥的标签值
+        KMS key label value.
         """
         return pulumi.get(self, "value")
 

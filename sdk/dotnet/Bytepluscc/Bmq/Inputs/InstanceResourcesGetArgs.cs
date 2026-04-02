@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq.Inputs
     public sealed class InstanceResourcesGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 资源统计响应数据。
+        /// Resource statistics response data
         /// </summary>
         [Input("storage")]
         public Input<Inputs.InstanceResourcesStorageGetArgs>? Storage { get; set; }

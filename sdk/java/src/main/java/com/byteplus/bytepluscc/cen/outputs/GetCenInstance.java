@@ -11,86 +11,86 @@ import java.util.Objects;
 @CustomType
 public final class GetCenInstance {
     /**
-     * @return 云企业网实例的ID。
+     * @return CEN instance ID
      * 
      */
     private String cenId;
     /**
-     * @return 网络实例的创建时间。
+     * @return Creation time of the network instance
      * 
      */
     private String creationTime;
     /**
-     * @return 网络实例的ID。
+     * @return Network instance ID
      * 
      */
     private String instanceId;
     /**
-     * @return 网络实例所属账号的ID。
+     * @return Account ID for the network instance
      * 
      */
     private String instanceOwnerId;
     /**
-     * @return 网络实例所在的地域。
+     * @return Region where the network instance is located
      * 
      */
     private String instanceRegionId;
     /**
-     * @return 网络实例的类型。
+     * @return Type of the network instance
      * 
      */
     private String instanceType;
     /**
-     * @return 网络实例的加载状态。Attaching：加载中Available：可用
+     * @return Loading status of the network instance. Attaching: Loading; Available: Available
      * 
      */
     private String status;
 
     private GetCenInstance() {}
     /**
-     * @return 云企业网实例的ID。
+     * @return CEN instance ID
      * 
      */
     public String cenId() {
         return this.cenId;
     }
     /**
-     * @return 网络实例的创建时间。
+     * @return Creation time of the network instance
      * 
      */
     public String creationTime() {
         return this.creationTime;
     }
     /**
-     * @return 网络实例的ID。
+     * @return Network instance ID
      * 
      */
     public String instanceId() {
         return this.instanceId;
     }
     /**
-     * @return 网络实例所属账号的ID。
+     * @return Account ID for the network instance
      * 
      */
     public String instanceOwnerId() {
         return this.instanceOwnerId;
     }
     /**
-     * @return 网络实例所在的地域。
+     * @return Region where the network instance is located
      * 
      */
     public String instanceRegionId() {
         return this.instanceRegionId;
     }
     /**
-     * @return 网络实例的类型。
+     * @return Type of the network instance
      * 
      */
     public String instanceType() {
         return this.instanceType;
     }
     /**
-     * @return 网络实例的加载状态。Attaching：加载中Available：可用
+     * @return Loading status of the network instance. Attaching: Loading; Available: Available
      * 
      */
     public String status() {

@@ -16,14 +16,14 @@ public final class DomainConditionalOriginOriginRuleActionsOriginLineArgs extend
     public static final DomainConditionalOriginOriginRuleActionsOriginLineArgs Empty = new DomainConditionalOriginOriginRuleActionsOriginLineArgs();
 
     /**
-     * 表示一个源站的地址。当 InstanceType 是 ip 时，Address 表示一个 IPv4 或者 IPv6 地址。当 InstanceType 是 domain 时，Address 表示一个域名。该域名不能是泛域名。如果您指定了 OriginLines，Address 必填。
+     * Represents the address of an origin server. When InstanceType is ip, Address specifies an IPv4 or IPv6 address. When InstanceType is domain, Address specifies a domain name. The domain name cannot be a wildcard domain. If you specify OriginLines, Address is required.
      * 
      */
     @Import(name="address")
     private @Nullable Output<String> address;
 
     /**
-     * @return 表示一个源站的地址。当 InstanceType 是 ip 时，Address 表示一个 IPv4 或者 IPv6 地址。当 InstanceType 是 domain 时，Address 表示一个域名。该域名不能是泛域名。如果您指定了 OriginLines，Address 必填。
+     * @return Represents the address of an origin server. When InstanceType is ip, Address specifies an IPv4 or IPv6 address. When InstanceType is domain, Address specifies a domain name. The domain name cannot be a wildcard domain. If you specify OriginLines, Address is required.
      * 
      */
     public Optional<Output<String>> address() {
@@ -31,14 +31,14 @@ public final class DomainConditionalOriginOriginRuleActionsOriginLineArgs extend
     }
 
     /**
-     * 表示内容分发网络使用 HTTP 协议访问该源站时所使用的端口，取值范围是 1-65535，默认值是 80。如果源站没有开放该端口，您无需指定该参数。
+     * Indicates the port used by the content delivery network to access the origin server via the HTTP protocol. The valid range is 1–65535, with a default value of 80. If the origin server does not have this port open, you do not need to specify this parameter.
      * 
      */
     @Import(name="httpPort")
     private @Nullable Output<String> httpPort;
 
     /**
-     * @return 表示内容分发网络使用 HTTP 协议访问该源站时所使用的端口，取值范围是 1-65535，默认值是 80。如果源站没有开放该端口，您无需指定该参数。
+     * @return Indicates the port used by the content delivery network to access the origin server via the HTTP protocol. The valid range is 1–65535, with a default value of 80. If the origin server does not have this port open, you do not need to specify this parameter.
      * 
      */
     public Optional<Output<String>> httpPort() {
@@ -46,14 +46,14 @@ public final class DomainConditionalOriginOriginRuleActionsOriginLineArgs extend
     }
 
     /**
-     * 表示内容分发网络使用 HTTPS 协议访问该源站时所使用的端口，取值范围是 1-65535，默认值是 443。如果源站没有开放该端口，您无需指定该参数。
+     * Specifies the port used by the content delivery network to access the origin server via HTTPS. The value range is 1–65535, and the default is 443. If the origin server does not open this port, you do not need to specify this parameter.
      * 
      */
     @Import(name="httpsPort")
     private @Nullable Output<String> httpsPort;
 
     /**
-     * @return 表示内容分发网络使用 HTTPS 协议访问该源站时所使用的端口，取值范围是 1-65535，默认值是 443。如果源站没有开放该端口，您无需指定该参数。
+     * @return Specifies the port used by the content delivery network to access the origin server via HTTPS. The value range is 1–65535, and the default is 443. If the origin server does not open this port, you do not need to specify this parameter.
      * 
      */
     public Optional<Output<String>> httpsPort() {
@@ -61,14 +61,14 @@ public final class DomainConditionalOriginOriginRuleActionsOriginLineArgs extend
     }
 
     /**
-     * 表示源站的类型。该参数有以下取值：ip：表示 IP 地址。domain：表示域名。如果您指定了 OriginLines，InstanceType 必填。
+     * Indicates the type of origin. The parameter has the following values: ip: indicates an IP address. domain: indicates a domain name. InstanceType is required if OriginLines is specified.
      * 
      */
     @Import(name="instanceType")
     private @Nullable Output<String> instanceType;
 
     /**
-     * @return 表示源站的类型。该参数有以下取值：ip：表示 IP 地址。domain：表示域名。如果您指定了 OriginLines，InstanceType 必填。
+     * @return Indicates the type of origin. The parameter has the following values: ip: indicates an IP address. domain: indicates a domain name. InstanceType is required if OriginLines is specified.
      * 
      */
     public Optional<Output<String>> instanceType() {
@@ -76,14 +76,14 @@ public final class DomainConditionalOriginOriginRuleActionsOriginLineArgs extend
     }
 
     /**
-     * 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数的优先级高于全局 OriginHost 参数。该参数值的长度不能超过 1,024 个字符。该参数的默认值与全局 OriginHost 相同。
+     * If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter takes precedence over the global OriginHost parameter. The value of this parameter cannot exceed 1,024 characters. The default value is the same as the global OriginHost.
      * 
      */
     @Import(name="originHost")
     private @Nullable Output<String> originHost;
 
     /**
-     * @return 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数的优先级高于全局 OriginHost 参数。该参数值的长度不能超过 1,024 个字符。该参数的默认值与全局 OriginHost 相同。
+     * @return If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter takes precedence over the global OriginHost parameter. The value of this parameter cannot exceed 1,024 characters. The default value is the same as the global OriginHost.
      * 
      */
     public Optional<Output<String>> originHost() {
@@ -119,7 +119,7 @@ public final class DomainConditionalOriginOriginRuleActionsOriginLineArgs extend
         }
 
         /**
-         * @param address 表示一个源站的地址。当 InstanceType 是 ip 时，Address 表示一个 IPv4 或者 IPv6 地址。当 InstanceType 是 domain 时，Address 表示一个域名。该域名不能是泛域名。如果您指定了 OriginLines，Address 必填。
+         * @param address Represents the address of an origin server. When InstanceType is ip, Address specifies an IPv4 or IPv6 address. When InstanceType is domain, Address specifies a domain name. The domain name cannot be a wildcard domain. If you specify OriginLines, Address is required.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class DomainConditionalOriginOriginRuleActionsOriginLineArgs extend
         }
 
         /**
-         * @param address 表示一个源站的地址。当 InstanceType 是 ip 时，Address 表示一个 IPv4 或者 IPv6 地址。当 InstanceType 是 domain 时，Address 表示一个域名。该域名不能是泛域名。如果您指定了 OriginLines，Address 必填。
+         * @param address Represents the address of an origin server. When InstanceType is ip, Address specifies an IPv4 or IPv6 address. When InstanceType is domain, Address specifies a domain name. The domain name cannot be a wildcard domain. If you specify OriginLines, Address is required.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class DomainConditionalOriginOriginRuleActionsOriginLineArgs extend
         }
 
         /**
-         * @param httpPort 表示内容分发网络使用 HTTP 协议访问该源站时所使用的端口，取值范围是 1-65535，默认值是 80。如果源站没有开放该端口，您无需指定该参数。
+         * @param httpPort Indicates the port used by the content delivery network to access the origin server via the HTTP protocol. The valid range is 1–65535, with a default value of 80. If the origin server does not have this port open, you do not need to specify this parameter.
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class DomainConditionalOriginOriginRuleActionsOriginLineArgs extend
         }
 
         /**
-         * @param httpPort 表示内容分发网络使用 HTTP 协议访问该源站时所使用的端口，取值范围是 1-65535，默认值是 80。如果源站没有开放该端口，您无需指定该参数。
+         * @param httpPort Indicates the port used by the content delivery network to access the origin server via the HTTP protocol. The valid range is 1–65535, with a default value of 80. If the origin server does not have this port open, you do not need to specify this parameter.
          * 
          * @return builder
          * 
@@ -161,7 +161,7 @@ public final class DomainConditionalOriginOriginRuleActionsOriginLineArgs extend
         }
 
         /**
-         * @param httpsPort 表示内容分发网络使用 HTTPS 协议访问该源站时所使用的端口，取值范围是 1-65535，默认值是 443。如果源站没有开放该端口，您无需指定该参数。
+         * @param httpsPort Specifies the port used by the content delivery network to access the origin server via HTTPS. The value range is 1–65535, and the default is 443. If the origin server does not open this port, you do not need to specify this parameter.
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class DomainConditionalOriginOriginRuleActionsOriginLineArgs extend
         }
 
         /**
-         * @param httpsPort 表示内容分发网络使用 HTTPS 协议访问该源站时所使用的端口，取值范围是 1-65535，默认值是 443。如果源站没有开放该端口，您无需指定该参数。
+         * @param httpsPort Specifies the port used by the content delivery network to access the origin server via HTTPS. The value range is 1–65535, and the default is 443. If the origin server does not open this port, you do not need to specify this parameter.
          * 
          * @return builder
          * 
@@ -182,7 +182,7 @@ public final class DomainConditionalOriginOriginRuleActionsOriginLineArgs extend
         }
 
         /**
-         * @param instanceType 表示源站的类型。该参数有以下取值：ip：表示 IP 地址。domain：表示域名。如果您指定了 OriginLines，InstanceType 必填。
+         * @param instanceType Indicates the type of origin. The parameter has the following values: ip: indicates an IP address. domain: indicates a domain name. InstanceType is required if OriginLines is specified.
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class DomainConditionalOriginOriginRuleActionsOriginLineArgs extend
         }
 
         /**
-         * @param instanceType 表示源站的类型。该参数有以下取值：ip：表示 IP 地址。domain：表示域名。如果您指定了 OriginLines，InstanceType 必填。
+         * @param instanceType Indicates the type of origin. The parameter has the following values: ip: indicates an IP address. domain: indicates a domain name. InstanceType is required if OriginLines is specified.
          * 
          * @return builder
          * 
@@ -203,7 +203,7 @@ public final class DomainConditionalOriginOriginRuleActionsOriginLineArgs extend
         }
 
         /**
-         * @param originHost 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数的优先级高于全局 OriginHost 参数。该参数值的长度不能超过 1,024 个字符。该参数的默认值与全局 OriginHost 相同。
+         * @param originHost If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter takes precedence over the global OriginHost parameter. The value of this parameter cannot exceed 1,024 characters. The default value is the same as the global OriginHost.
          * 
          * @return builder
          * 
@@ -214,7 +214,7 @@ public final class DomainConditionalOriginOriginRuleActionsOriginLineArgs extend
         }
 
         /**
-         * @param originHost 如果源站服务器上有多个站点，该参数表示回源请求访问的站点域名。该参数的优先级高于全局 OriginHost 参数。该参数值的长度不能超过 1,024 个字符。该参数的默认值与全局 OriginHost 相同。
+         * @param originHost If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter takes precedence over the global OriginHost parameter. The value of this parameter cannot exceed 1,024 characters. The default value is the same as the global OriginHost.
          * 
          * @return builder
          * 

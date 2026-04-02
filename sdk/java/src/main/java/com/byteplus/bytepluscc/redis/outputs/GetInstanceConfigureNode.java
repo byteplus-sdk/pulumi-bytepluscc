@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceConfigureNode {
     /**
-     * @return 每个节点所属的可用区。
+     * @return The availability zone each node belongs to.
      * 
      */
     private String az;
 
     private GetInstanceConfigureNode() {}
     /**
-     * @return 每个节点所属的可用区。
+     * @return The availability zone each node belongs to.
      * 
      */
     public String az() {

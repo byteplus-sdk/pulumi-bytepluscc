@@ -14,25 +14,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
     public sealed class DefaultNodePoolNodeConfigInstancesDistributionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// 容量重新平衡。取值范围：  - true：开启该功能，当抢占式实例即将被回收前，主动创建新的抢占式实例进行补偿。  - false（默认值）：不开启该功能，则等待抢占式实例被回收后才会去扩容补齐实例数
+        /// Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, a new preemptible instance is proactively created for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count.
         /// </summary>
         [Input("capacityRebalance")]
         public Input<bool>? CapacityRebalance { get; set; }
 
         /// <summary>
-        /// 按量实例替补功能。取值范围：  - true：开启该功能，当所有抢占式实例因库存不足等原因全部购买失败后，尝试购买按量实例  - false（默认值）：不开启该功能，在需要扩容抢占式实例时仅尝试所配置的抢占式实例
+        /// Pay-as-you-go instance fallback feature. Value range:   - true: enables this feature. If all preemptible instances fail to purchase due to insufficient inventory, pay-as-you-go instances will be attempted   - false (default): disables this feature. When scaling preemptible instances, only the configured preemptible instances are attempted
         /// </summary>
         [Input("compensateWithOnDemand")]
         public Input<bool>? CompensateWithOnDemand { get; set; }
 
         /// <summary>
-        /// 基础容量的大小，基础容量部分固定为按量计费实例。取值范围：[0,500]，默认值为0。
+        /// Base capacity size. The base capacity is always pay-as-you-go instances. Value range: [0,500], default: 0
         /// </summary>
         [Input("onDemandBaseCapacity")]
         public Input<int>? OnDemandBaseCapacity { get; set; }
 
         /// <summary>
-        /// 超出基础容量部分，按量计费实例所占的比例。取值范围[0, 100]，0代表超出基础容量的部分仅生产抢占式实例，100代表仅生产按量实例，默认值为0。
+        /// Proportion of pay-as-you-go instances for capacity exceeding the base capacity. Value range [0, 100]. 0 means only preemptible instances are produced for excess capacity; 100 means only pay-as-you-go instances are produced. Default is 0.
         /// </summary>
         [Input("onDemandPercentageAboveBaseCapacity")]
         public Input<int>? OnDemandPercentageAboveBaseCapacity { get; set; }

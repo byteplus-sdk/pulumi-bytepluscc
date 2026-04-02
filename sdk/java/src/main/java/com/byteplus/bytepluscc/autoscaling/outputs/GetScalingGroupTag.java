@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetScalingGroupTag {
     /**
-     * @return 用户标签的标签键。
+     * @return User label tag key
      * 
      */
     private String key;
     /**
-     * @return 用户标签的标签值。
+     * @return The value of the user tag.
      * 
      */
     private String value;
 
     private GetScalingGroupTag() {}
     /**
-     * @return 用户标签的标签键。
+     * @return User label tag key
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return 用户标签的标签值。
+     * @return The value of the user tag.
      * 
      */
     public String value() {

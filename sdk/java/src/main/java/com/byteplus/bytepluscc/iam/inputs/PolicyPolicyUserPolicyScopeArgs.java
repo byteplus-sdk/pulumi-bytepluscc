@@ -16,14 +16,14 @@ public final class PolicyPolicyUserPolicyScopeArgs extends com.pulumi.resources.
     public static final PolicyPolicyUserPolicyScopeArgs Empty = new PolicyPolicyUserPolicyScopeArgs();
 
     /**
-     * 项目名。
+     * Project name.
      * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
-     * @return 项目名。
+     * @return Project name.
      * 
      */
     public Optional<Output<String>> projectName() {
@@ -55,7 +55,7 @@ public final class PolicyPolicyUserPolicyScopeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param projectName 项目名。
+         * @param projectName Project name.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class PolicyPolicyUserPolicyScopeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param projectName 项目名。
+         * @param projectName Project name.
          * 
          * @return builder
          * 

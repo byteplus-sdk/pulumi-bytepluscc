@@ -18,14 +18,14 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
     public static final DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheActionArgs Empty = new DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthResponseConfigCacheActionArgs();
 
     /**
-     * 表示内容分发网络是否缓存鉴权状态码。该参数有以下取值：nocache：表示内容分发网络不缓存鉴权状态码。cache：内容分发网络缓存鉴权状态码。
+     * Indicates whether the CDN caches authentication status codes. The parameter values are: nocache: CDN does not cache authentication status codes. cache: CDN caches authentication status codes.
      * 
      */
     @Import(name="action")
     private @Nullable Output<String> action;
 
     /**
-     * @return 表示内容分发网络是否缓存鉴权状态码。该参数有以下取值：nocache：表示内容分发网络不缓存鉴权状态码。cache：内容分发网络缓存鉴权状态码。
+     * @return Indicates whether the CDN caches authentication status codes. The parameter values are: nocache: CDN does not cache authentication status codes. cache: CDN caches authentication status codes.
      * 
      */
     public Optional<Output<String>> action() {
@@ -33,14 +33,14 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
     }
 
     /**
-     * 缓存 key 指定了用于区分不同请求 URI 的查询参数。每个参数都必须以 $ 开头。
+     * The cache key specifies the query parameters used to distinguish different request URIs. Each parameter must start with $.
      * 
      */
     @Import(name="cacheKeys")
     private @Nullable Output<List<String>> cacheKeys;
 
     /**
-     * @return 缓存 key 指定了用于区分不同请求 URI 的查询参数。每个参数都必须以 $ 开头。
+     * @return The cache key specifies the query parameters used to distinguish different request URIs. Each parameter must start with $.
      * 
      */
     public Optional<Output<List<String>>> cacheKeys() {
@@ -48,14 +48,14 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
     }
 
     /**
-     * 表示鉴权状态码的缓存时间。单位是秒。取值范围是 1-86400。86400秒表示 24小时。
+     * Indicates the cache duration for authentication status codes, measured in seconds. The range is 1–86400. 86400 seconds equals 24 hours.
      * 
      */
     @Import(name="ttl")
     private @Nullable Output<Integer> ttl;
 
     /**
-     * @return 表示鉴权状态码的缓存时间。单位是秒。取值范围是 1-86400。86400秒表示 24小时。
+     * @return Indicates the cache duration for authentication status codes, measured in seconds. The range is 1–86400. 86400 seconds equals 24 hours.
      * 
      */
     public Optional<Output<Integer>> ttl() {
@@ -89,7 +89,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
         }
 
         /**
-         * @param action 表示内容分发网络是否缓存鉴权状态码。该参数有以下取值：nocache：表示内容分发网络不缓存鉴权状态码。cache：内容分发网络缓存鉴权状态码。
+         * @param action Indicates whether the CDN caches authentication status codes. The parameter values are: nocache: CDN does not cache authentication status codes. cache: CDN caches authentication status codes.
          * 
          * @return builder
          * 
@@ -100,7 +100,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
         }
 
         /**
-         * @param action 表示内容分发网络是否缓存鉴权状态码。该参数有以下取值：nocache：表示内容分发网络不缓存鉴权状态码。cache：内容分发网络缓存鉴权状态码。
+         * @param action Indicates whether the CDN caches authentication status codes. The parameter values are: nocache: CDN does not cache authentication status codes. cache: CDN caches authentication status codes.
          * 
          * @return builder
          * 
@@ -110,7 +110,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
         }
 
         /**
-         * @param cacheKeys 缓存 key 指定了用于区分不同请求 URI 的查询参数。每个参数都必须以 $ 开头。
+         * @param cacheKeys The cache key specifies the query parameters used to distinguish different request URIs. Each parameter must start with $.
          * 
          * @return builder
          * 
@@ -121,7 +121,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
         }
 
         /**
-         * @param cacheKeys 缓存 key 指定了用于区分不同请求 URI 的查询参数。每个参数都必须以 $ 开头。
+         * @param cacheKeys The cache key specifies the query parameters used to distinguish different request URIs. Each parameter must start with $.
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
         }
 
         /**
-         * @param cacheKeys 缓存 key 指定了用于区分不同请求 URI 的查询参数。每个参数都必须以 $ 开头。
+         * @param cacheKeys The cache key specifies the query parameters used to distinguish different request URIs. Each parameter must start with $.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
         }
 
         /**
-         * @param ttl 表示鉴权状态码的缓存时间。单位是秒。取值范围是 1-86400。86400秒表示 24小时。
+         * @param ttl Indicates the cache duration for authentication status codes, measured in seconds. The range is 1–86400. 86400 seconds equals 24 hours.
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionAuthRespons
         }
 
         /**
-         * @param ttl 表示鉴权状态码的缓存时间。单位是秒。取值范围是 1-86400。86400秒表示 24小时。
+         * @param ttl Indicates the cache duration for authentication status codes, measured in seconds. The range is 1–86400. 86400 seconds equals 24 hours.
          * 
          * @return builder
          * 
